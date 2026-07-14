@@ -1,31 +1,23 @@
-# Prime Field Technologies — Portfolio
+# Jonathan Simons — Portfolio
 
-Company portfolio site for **Prime Field Technologies, LLC** (Savannah, GA).
+Personal portfolio for **Jonathan Simons, CRNA** — founder of Prime Field Technologies and Simons Medical Innovations.
 
-## Preview locally
+## Preview
 
-Open `index.html` in a browser, or from this folder:
+Open `index.html` in a browser, or:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Then visit `http://localhost:8080`.
+## Partner packet
 
-## Publish on GitHub Pages
+Send-today materials in [`partner-packet/`](partner-packet/):
 
-1. Repo **Settings → Pages**
-2. Source: **Deploy from a branch**
-3. Branch: `main` (or this PR branch), folder: `/ (root)`
-4. Save — site will be at `https://<user>.github.io/<repo>/`
-
-## Partner packet (send today)
-
-Outreach kit for collaborators / developers:
-
-- [`partner-packet/brochure.html`](partner-packet/brochure.html) — print to PDF
-- [`partner-packet/INVENTORY.md`](partner-packet/INVENTORY.md) — apps, papers, domain map
-- [`partner-packet/OUTREACH.md`](partner-packet/OUTREACH.md) — LinkedIn message draft
+- [`one-pager.html`](partner-packet/one-pager.html) — apps + Zenodo + DIU
+- [`brochure.html`](partner-packet/brochure.html)
+- [`INVENTORY.md`](partner-packet/INVENTORY.md)
+- [`OUTREACH.md`](partner-packet/OUTREACH.md)
 
 ## Contact
 

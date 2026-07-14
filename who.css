@@ -1,0 +1,80 @@
+.identity-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.identity-list > div {
+  display: grid;
+  grid-template-columns: minmax(7rem, 9rem) 1fr;
+  gap: 1rem;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.identity-list dt {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.identity-list dd {
+  margin: 0;
+  color: var(--fog);
+  max-width: 42rem;
+}
+
+.paper-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.paper-links a {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--line);
+  transition: padding-left 0.35s var(--ease);
+}
+
+.paper-links a:hover,
+.paper-links a:focus-visible {
+  padding-left: 0.5rem;
+}
+
+.paper-links span {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+}
+
+.paper-links code {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.location a {
+  color: var(--gold);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s var(--ease);
+}
+
+.location a:hover,
+.location a:focus-visible {
+  border-bottom-color: var(--gold);
+}
+
+@media (max-width: 640px) {
+  .identity-list > div {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
