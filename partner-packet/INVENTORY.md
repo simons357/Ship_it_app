@@ -41,7 +41,7 @@ X: [@jrsimons357](https://x.com/jrsimons357) · LinkedIn: [prime-field-technolog
 - **FieldPredict:Stocks™** / **FieldPredict:Sports™** — forecasting
 - **DNASonifiers** — DNA / sequence sonification (physics–art) — URL on request
 - **Harmonic Black Hole Architecture** — SFE explorer + PDF
-- **AI Surgeon VR / Surgeon X** — medical training game
+- **Games (in production)** — strategy title with a wink to RISK; Pac-Man retro-3D; AI Surgeon VR · hub: https://primefield.tech/games
 - **ProVR Tools** — patent-pending haptic training tools
 - Additional **physics / art** visual pieces beyond public explorers — on request
 
