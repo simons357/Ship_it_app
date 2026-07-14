@@ -16,6 +16,7 @@ Send-today materials in [`partner-packet/`](partner-packet/):
 
 - [`ADDRESSES.md`](partner-packet/ADDRESSES.md) — jump list of all source addresses
 - [`SEND-maritime-energy.md`](partner-packet/SEND-maritime-energy.md) — what to send for supply-chain / maritime (+ energy gap)
+- [`AI-SURGEON-VR-animation-script.md`](partner-packet/AI-SURGEON-VR-animation-script.md) — trailer script for script-to-animation tools
 - [`one-pager.html`](partner-packet/one-pager.html) — apps + Zenodo + extras
 - [`brochure.html`](partner-packet/brochure.html)
 - [`INVENTORY.md`](partner-packet/INVENTORY.md)

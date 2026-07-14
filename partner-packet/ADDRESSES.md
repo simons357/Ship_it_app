@@ -71,7 +71,7 @@ Reusable code — not full product UIs. Often Replit / private repos.
 | Solenne | https://solenne.base44.app/ |
 | Kyrana | https://github.com/simons357/kyrana-oracle |
 | FieldPredict™ | _______________ |
-| AI Surgeon VR | _______________ |
+| AI Surgeon VR | Animation script: `partner-packet/AI-SURGEON-VR-animation-script.md` · playable: _______________ |
 
 ---
 
@@ -170,7 +170,7 @@ Some views may require app access; deep-link the Resources page for the letter.
 | Games hub | https://primefield.tech/games |
 | Strategy title (wink to RISK) | https://primefield.tech/risk · playable: _______________ |
 | Pac-Man retro-3D | https://primefield.tech/pacman · playable: _______________ |
-| AI Surgeon VR | _______________ |
+| AI Surgeon VR | Animation script: `partner-packet/AI-SURGEON-VR-animation-script.md` · playable: _______________ |
 
 ---
 
