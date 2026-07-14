@@ -50,6 +50,7 @@ Paste when you have them:
 | --- | --- |
 | DNASonifiers | |
 | ChatVault (if not only on primefield.tech) | |
+| Field Lock / presence-bound keys (demo beyond site route) | |
 | Physics / art apps | |
 | Games (AI Surgeon VR, etc.) | |
 | Other Account A apps | |
@@ -110,6 +111,7 @@ Tip: On each Replit account → **Releases / public repls** → copy the `*.repl
 | Name | Note |
 | --- | --- |
 | DNASonifiers | Physics / art |
+| Field Lock | Presence-bound keys · https://primefield.tech/field-lock |
 | AI Surgeon VR | Games |
 | FieldEncrypt™ + DIU package | Defense |
 | FieldPredict™ | Forecast |
