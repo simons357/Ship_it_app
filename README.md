@@ -14,7 +14,8 @@ python3 -m http.server 8080
 
 Send-today materials in [`partner-packet/`](partner-packet/):
 
-- [`one-pager.html`](partner-packet/one-pager.html) — apps + Zenodo + DIU
+- [`ADDRESSES.md`](partner-packet/ADDRESSES.md) — jump list of all source addresses
+- [`one-pager.html`](partner-packet/one-pager.html) — apps + Zenodo + extras
 - [`brochure.html`](partner-packet/brochure.html)
 - [`INVENTORY.md`](partner-packet/INVENTORY.md)
 - [`OUTREACH.md`](partner-packet/OUTREACH.md)

@@ -29,8 +29,11 @@ X: [@jrsimons357](https://x.com/jrsimons357) · LinkedIn: [prime-field-technolog
 - **ExoRatio** — Kepler orbital ratios ↔ prime-height harmony · https://exo-ratio-014dea2d.base44.app/
 - **Primefield Explorer / SFE–RH Explorer** — primes as resonance field visualization · https://sfe-rh-explorer-v1-07f8121c.base44.app/
 - **Solenne** — AI beauty + telehealth pathway (Simons Medical Innovations) · https://solenne.base44.app/
+- **ChatVault** — the Evernote of AI conversations · https://primefield.tech/chatvault
 - **Kyrana** — quiet oracle (Answer · Why it matters · Next steps) · GitHub: https://github.com/simons357/kyrana-oracle
 - **Ship It** — GitHub without the GitHub site · GitHub: https://github.com/simons357/ship-it-code
+
+**Jump list (all addresses):** [`ADDRESSES.md`](ADDRESSES.md)
 
 ### Named platforms (demos / materials — some links on request or NDA)
 - **FieldEncrypt™** — quantum-resistant encryption (defense / DIU dual-use)
