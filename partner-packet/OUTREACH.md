@@ -25,7 +25,7 @@ You mentioned interest in supply-chain / maritime systems. Two related but diffe
 1. **Ops / software** — Maritime Coherence Dashboard + theory→application letter  
    https://maritime-coherence-dashboard-100b68c0.base44.app/Resources
 
-2. **Surface / drag (NAV-42)** — Adaptive Lattice coating, patent / patent pending  
+2. **Surface / drag (NAV-42)** — Adaptive Lattice coating (provisional on file; still refining)  
    https://nav-42.replit.app/
 
 One-pager PDF attached for broader context. Happy to walk energy / fluids materials on a call if useful.

@@ -14,8 +14,8 @@ What to send the LinkedIn contact who cared about supply-chain management, and w
 
 | Piece | URL | Notes |
 | --- | --- | --- |
-| **NAV-42 Adaptive Lattice** | https://nav-42.replit.app/ | Named coating · patent / patent pending · turbulence / drag for missiles, drones, naval |
-| Patent filing # | _______________ | Paste before serious partner / DIU send |
+| **NAV-42 Adaptive Lattice** | https://nav-42.replit.app/ | Named coating · **provisional** (claims still need work; time to revise) · drag / turbulence |
+| Provisional # | _______________ | Optional; share under NDA when useful — don’t oversell as granted |
 
 If they want **software / supply-chain**, send the dashboard + letter.  
 If they want **hardware / surface / drag / carbon**, lead with **NAV-42**.  
@@ -36,7 +36,7 @@ Optional outreach text: see `OUTREACH.md`.
 | Name | What it is |
 | --- | --- |
 | Resonance / resonant | The physics idea |
-| **NAV-42** | The patented / patent-pending **product** (Adaptive Lattice coating) |
+| **NAV-42** | The **product** (Adaptive Lattice coating) — provisional IP, still being strengthened |
 | Maritime Coherence Dashboard | The **SCM / ops** software demo |
 | SFE / Harmonic Blueprint | The unifying field math / book |
 

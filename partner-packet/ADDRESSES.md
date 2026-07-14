@@ -45,7 +45,7 @@ Reusable code — not full product UIs. Often Replit / private repos.
 | --- | --- |
 | FieldEncrypt™ | _______________ |
 | Field Lock (presence-bound keys) | https://primefield.tech/field-lock |
-| **NAV-42 Adaptive Lattice** (turbulence reduction coating) | https://nav-42.replit.app/ · patent / patent pending — filing #: _______________ |
+| **NAV-42 Adaptive Lattice** (turbulence reduction coating) | https://nav-42.replit.app/ · **provisional** (claims still being built) — #: _______________ |
 | DIU / dual-use package | NDA |
 | Secure communications (company page) | https://primefield.tech/ |
 
@@ -140,14 +140,15 @@ Subtitle: *A Game-Theoretic Framework for Optimizing Global Supply Chain Dynamic
 SFE / DHFA → coherence index → phased pilot → scenario planning (“adjust variables to forecast financial impact”).  
 Some views may require app access; deep-link the Resources page for the letter.
 
-### NAV-42 — Adaptive Lattice (patent)
+### NAV-42 — Adaptive Lattice (provisional)
 
 | Name | Address |
 | --- | --- |
 | **NAV-42 Adaptive Lattice** (demo / tech site) | https://nav-42.replit.app/ |
-| Public framing | Patent pending · adaptive lattice coating · turbulence / drag reduction for missiles, drones, and naval vessels |
+| IP status | **Provisional** — not a granted patent yet; claims / spec still need work before non-provisional conversion |
+| Public framing | Adaptive lattice coating · turbulence / drag reduction for missiles, drones, and naval vessels |
 | What it is | Named product for the resonant / lattice surface path — **not** the SCM dashboard |
-| Filing number | _______________ (paste USPTO / provisional / PCT number) |
+| Provisional number | _______________ (paste when ready; optional for cold outreach) |
 | Spec sheet / white paper (gated inside demo) | Engineering Specification Sheet · Technical Whitepaper (login on site) |
 
 | Surface / drag path | Address |
