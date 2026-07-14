@@ -81,6 +81,9 @@ Reusable code — not full product UIs. Often Replit / private repos.
 | Spectral energy / flow materials (papers) | see Zenodo NS / cascade set below |
 | FieldPredict / forecasting (energy ops) | _______________ |
 | Company (turbulence / coherence) | https://primefield.tech/ |
+| Dedicated energy ops / theory→act demo (if separate from maritime) | _______________ |
+
+> **Public status:** No standalone energy dashboard URL confirmed yet. Theory spine is the NS / spectral-energy Zenodo set. The maritime app’s Resources letter is SCM/maritime-framed (SFE → ops); it does **not** currently dual-highlight energy in the public UI. Paste the energy letter/app URL here when located (Base44 / Replit / Drive).
 
 ---
 
@@ -120,11 +123,27 @@ Better forecasts so others can **verify** results (not greenwash).
 
 **Thesis (plain):** Reduce drag → less friction → less fuel → lower carbon. Even a modest drag cut is commercially large; the aim here is a substantial drag change, not a cosmetic tweak. If it holds on boats (and related surfaces), that is measurable consumption drop — not offset theater.
 
+### Live product — send for supply-chain / ops interest
+
 | Name | Address |
+| --- | --- |
+| **Maritime Coherence Dashboard** (decision support · vessels / routes / environments) | https://maritime-coherence-dashboard-100b68c0.base44.app/ |
+| Workspace ID | `695949a781309ba9100b68c0` |
+| Dashboard (main) | https://maritime-coherence-dashboard-100b68c0.base44.app/MaritimeCoherence |
+| Harmonic Insights (patterns · impact · scenario tuning) | https://maritime-coherence-dashboard-100b68c0.base44.app/HarmonicInsights |
+| Resources — theory→application letter | https://maritime-coherence-dashboard-100b68c0.base44.app/Resources |
+
+**Letter inside Resources (confirmed authored):**  
+*The Harmonic Blueprint: Global Supply Chain Applications* — Jonathan Simons, CEO, Prime Field Technologies LLC · January 2026 · v2.1  
+Subtitle: *A Game-Theoretic Framework for Optimizing Global Supply Chain Dynamics Through Resonance-Based Coordination* · Applications to Maritime Logistics & Maersk Operations.  
+SFE / DHFA → coherence index → phased pilot → scenario planning (“adjust variables to forecast financial impact”).  
+Some views may require app access; deep-link the Resources page for the letter.
+
+| Surface / drag path | Address |
 | --- | --- |
 | Drag reduction / low-friction surface or flow control | _______________ |
 | Lattice / resin paint (honeycomb) — recipe & engineer pack | **Not found publicly** · see `REPORT-lattice-paint.md` · paste private URL: _______________ |
-| Maritime / boat applications | _______________ |
+| Maritime / boat applications (coatings / hull) | _______________ |
 | Resin / coating path (if used for drag / surface performance) | _______________ |
 | Turbulence / propulsion / flow positioning | https://primefield.tech/ |
 | Supporting fluid papers (NS / spectral energy) | see Zenodo in section L |
@@ -173,6 +192,7 @@ Better forecasts so others can **verify** results (not greenwash).
 | Account A | `68b97ad090ef58ec014dea2d` | ExoRatio |
 | Account B | `68e5bda646879d8c07f8121c` | Primefield Explorer |
 | Other | `69330161ec6e5b1f484446df` | Solenne |
+| Maritime | `695949a781309ba9100b68c0` | Maritime Coherence Dashboard |
 | Site assets | `69069eafadbc3e57e4c05772` | primefield.tech |
 
 Dashboard: https://app.base44.com/
@@ -212,5 +232,6 @@ Dashboard: https://app.base44.com/
 | This jump list | `partner-packet/ADDRESSES.md` |
 | Portfolio | `index.html` |
 | One-pager | `partner-packet/one-pager.html` |
+| Send pack — maritime / energy | `partner-packet/SEND-maritime-energy.md` |
 
-*Paste missing URLs anytime — especially weather, resin/maritime, and recipe sources.*
+*Paste missing URLs anytime — especially weather, energy demo, resin/maritime coatings, and recipe sources.*

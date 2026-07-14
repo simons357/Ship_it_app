@@ -15,6 +15,7 @@ python3 -m http.server 8080
 Send-today materials in [`partner-packet/`](partner-packet/):
 
 - [`ADDRESSES.md`](partner-packet/ADDRESSES.md) — jump list of all source addresses
+- [`SEND-maritime-energy.md`](partner-packet/SEND-maritime-energy.md) — what to send for supply-chain / maritime (+ energy gap)
 - [`one-pager.html`](partner-packet/one-pager.html) — apps + Zenodo + extras
 - [`brochure.html`](partner-packet/brochure.html)
 - [`INVENTORY.md`](partner-packet/INVENTORY.md)
