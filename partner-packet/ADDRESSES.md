@@ -43,19 +43,18 @@ Public pages don’t show login email, but live apps resolve to **different work
 | Solenne | `69330161ec6e5b1f484446df` | https://solenne.base44.app/ |
 | Prime Field site assets | `69069eafadbc3e57e4c05772` | https://primefield.tech/ |
 
-### Base44 — still need addresses
+### Games (in production)
 
-Paste when you have them:
+Conservative naming in public materials — avoid trading on board-game trademarks.
 
-| App | Address |
-| --- | --- |
-| DNASonifiers | |
-| ChatVault (if not only on primefield.tech) | |
-| Field Lock / presence-bound keys (demo beyond site route) | |
-| Physics / art apps | |
-| Games (AI Surgeon VR, etc.) | |
-| Other Account A apps | |
-| Other Account B apps | |
+| Game | Note | Address |
+| --- | --- | --- |
+| Strategy title (wink to RISK) | Original strategy / map conquest game | https://primefield.tech/risk · playable URL: _______________ |
+| Pac-Man retro-3D | Retro arcade homage in 3D | https://primefield.tech/pacman · playable URL: _______________ |
+| AI Surgeon VR | Medical training / simulation | _______________ |
+| Games hub | Index page | https://primefield.tech/games |
+
+Paste Base44 / Replit playable links into the blanks when ready.
 
 Dashboard: https://app.base44.com/
 
@@ -113,7 +112,7 @@ Tip: On each Replit account → **Releases / public repls** → copy the `*.repl
 | --- | --- |
 | DNASonifiers | Physics / art |
 | Field Lock | Presence-bound keys · https://primefield.tech/field-lock |
-| AI Surgeon VR | Games |
+| Games | Strategy (wink to RISK) · Pac-Man retro-3D · AI Surgeon VR · https://primefield.tech/games |
 | FieldEncrypt™ + DIU package | Defense |
 | FieldPredict™ | Forecast |
 | ProVR Tools | Patent pending |
