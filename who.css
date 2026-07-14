@@ -72,8 +72,38 @@
   border-bottom-color: var(--gold);
 }
 
+.also {
+  margin-top: clamp(2rem, 5vh, 2.75rem);
+  max-width: 42rem;
+}
+
+.also-list {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.also-list li {
+  display: grid;
+  grid-template-columns: minmax(7rem, 9rem) 1fr;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--fog);
+}
+
+.also-list span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
 @media (max-width: 640px) {
-  .identity-list > div {
+  .identity-list > div,
+  .also-list li {
     grid-template-columns: 1fr;
     gap: 0.35rem;
   }

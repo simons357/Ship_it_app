@@ -32,13 +32,14 @@ X: [@jrsimons357](https://x.com/jrsimons357) · LinkedIn: [prime-field-technolog
 - **Kyrana** — quiet oracle (Answer · Why it matters · Next steps) · GitHub: https://github.com/simons357/kyrana-oracle
 - **Ship It** — GitHub without the GitHub site · GitHub: https://github.com/simons357/ship-it-code
 
-### Named platforms (product line — demos / materials under NDA or rebuild)
-- **FieldEncrypt™** — quantum-resistant encryption (defense / enterprise / HFT)
-- **FieldPredict:Stocks™** — market forecasting
-- **FieldPredict:Sports™** — spread / outcome prediction
-- **Harmonic Black Hole Architecture** — SFE black-hole explorer + supporting PDF
-- **AI Surgeon VR / Surgeon X** — medical simulation + esports training path
-- **ProVR Tools** — patent-pending haptic / Bluetooth surgical training tools with adaptive AI
+### Named platforms (demos / materials — some links on request or NDA)
+- **FieldEncrypt™** — quantum-resistant encryption (defense / DIU dual-use)
+- **FieldPredict:Stocks™** / **FieldPredict:Sports™** — forecasting
+- **DNASonifiers** — DNA / sequence sonification (physics–art) — URL on request
+- **Harmonic Black Hole Architecture** — SFE explorer + PDF
+- **AI Surgeon VR / Surgeon X** — medical training game
+- **ProVR Tools** — patent-pending haptic training tools
+- Additional **physics / art** visual pieces beyond public explorers — on request
 
 ### Note on “X accounts”
 Public scrape cannot log into private X media or Base44 dashboards. Confirmed public handle: **@jrsimons357**. If you have a second X / Base44 / Squarespace login, paste remaining app links here and this inventory will be updated.
