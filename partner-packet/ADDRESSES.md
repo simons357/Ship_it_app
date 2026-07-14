@@ -14,6 +14,7 @@ One place for live links. Open this file and go.
 | --- | --- |
 | Prime Field Technologies | https://primefield.tech/ |
 | ChatVault (the Evernote of AI conversations) | https://primefield.tech/chatvault |
+| Field Lock (presence-bound keys) | https://primefield.tech/field-lock |
 | The Harmonic Blueprint | https://www.theharmonicblueprint.com/ |
 
 ---

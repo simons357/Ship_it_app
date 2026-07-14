@@ -30,6 +30,7 @@ X: [@jrsimons357](https://x.com/jrsimons357) · LinkedIn: [prime-field-technolog
 - **Primefield Explorer / SFE–RH Explorer** — primes as resonance field visualization · https://sfe-rh-explorer-v1-07f8121c.base44.app/
 - **Solenne** — AI beauty + telehealth pathway (Simons Medical Innovations) · https://solenne.base44.app/
 - **ChatVault** — the Evernote of AI conversations · https://primefield.tech/chatvault
+- **Field Lock** — presence-bound keys · https://primefield.tech/field-lock
 - **Kyrana** — quiet oracle (Answer · Why it matters · Next steps) · GitHub: https://github.com/simons357/kyrana-oracle
 - **Ship It** — GitHub without the GitHub site · GitHub: https://github.com/simons357/ship-it-code
 
