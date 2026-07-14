@@ -16,6 +16,7 @@ One place for live links. Open this file and go.
 | ChatVault (the Evernote of AI conversations) | https://primefield.tech/chatvault |
 | Field Lock (presence-bound keys) | https://primefield.tech/field-lock |
 | Games (hub) | https://primefield.tech/games |
+| QStack (code-only recipe) | https://primefield.tech/qstack |
 | The Harmonic Blueprint | https://www.theharmonicblueprint.com/ |
 
 ---
