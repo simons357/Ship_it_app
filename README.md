@@ -19,6 +19,14 @@ Then visit `http://localhost:8080`.
 3. Branch: `main` (or this PR branch), folder: `/ (root)`
 4. Save — site will be at `https://<user>.github.io/<repo>/`
 
+## Partner packet (send today)
+
+Outreach kit for collaborators / developers:
+
+- [`partner-packet/brochure.html`](partner-packet/brochure.html) — print to PDF
+- [`partner-packet/INVENTORY.md`](partner-packet/INVENTORY.md) — apps, papers, domain map
+- [`partner-packet/OUTREACH.md`](partner-packet/OUTREACH.md) — LinkedIn message draft
+
 ## Contact
 
 js@primefieldtechnologies.com
