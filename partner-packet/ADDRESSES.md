@@ -17,7 +17,7 @@ One place for live links, grouped by category.
 | **F. Water** | Fluids, NS, water systems |
 | **G. Natural resources** | O₂ / atmosphere / verification tools |
 | **H. Weather** | Forecasting / verification apps |
-| **I. Maritime & carbon** | Boats, resin, real reduction (not offset games) |
+| **I. Maritime & carbon** | Drag cut → less fuel → real CO₂ drop (boats / surfaces) |
 | **J. Games** | Entertainment / training games |
 | **K. Physics / art** | Visual / sonic explorers |
 | **L. Company & papers** | Sites + Zenodo |
