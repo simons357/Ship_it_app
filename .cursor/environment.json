@@ -1,0 +1,10 @@
+{
+  "name": "Ship It",
+  "install": "if [ -f package.json ]; then npm ci 2>/dev/null || npm install; fi",
+  "ports": [
+    {
+      "name": "Vite",
+      "port": 5173
+    }
+  ]
+}
