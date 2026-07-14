@@ -123,6 +123,7 @@ Better forecasts so others can **verify** results (not greenwash).
 | Name | Address |
 | --- | --- |
 | Drag reduction / low-friction surface or flow control | _______________ |
+| Lattice / resin paint (honeycomb) — recipe & engineer pack | **Not found publicly** · see `REPORT-lattice-paint.md` · paste private URL: _______________ |
 | Maritime / boat applications | _______________ |
 | Resin / coating path (if used for drag / surface performance) | _______________ |
 | Turbulence / propulsion / flow positioning | https://primefield.tech/ |
