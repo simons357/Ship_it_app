@@ -21,6 +21,7 @@ Send-today materials in [`partner-packet/`](partner-packet/):
 - [`brochure.html`](partner-packet/brochure.html)
 - [`INVENTORY.md`](partner-packet/INVENTORY.md)
 - [`OUTREACH.md`](partner-packet/OUTREACH.md)
+- [`INTRO.md`](partner-packet/INTRO.md) — professional partner introduction (who / what)
 
 ## Contact
 
