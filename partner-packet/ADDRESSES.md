@@ -1,6 +1,6 @@
 # Addresses — jump list
 
-One place for live links. Open this file and click.
+One place for live links. Open this file and go.
 
 **Contact:** js@primefieldtechnologies.com  
 **X:** https://x.com/jrsimons357  
@@ -13,33 +13,85 @@ One place for live links. Open this file and click.
 | Name | Address |
 | --- | --- |
 | Prime Field Technologies | https://primefield.tech/ |
+| ChatVault (the Evernote of AI conversations) | https://primefield.tech/chatvault |
 | The Harmonic Blueprint | https://www.theharmonicblueprint.com/ |
 
-## Software (public)
+---
 
-| Name | Tag / note | Address |
-| --- | --- | --- |
-| ExoRatio | Physics · orbits | https://exo-ratio-014dea2d.base44.app/ |
-| Primefield Explorer | Physics · spectral | https://sfe-rh-explorer-v1-07f8121c.base44.app/ |
-| Solenne | AI | https://solenne.base44.app/ |
-| **ChatVault** | **The Evernote of AI conversations** | https://primefield.tech/chatvault |
-| Kyrana | Oracle demo (repo) | https://github.com/simons357/kyrana-oracle |
-| Ship It | GitHub helper (repo) | https://github.com/simons357/ship-it-code |
+## Base44 — two accounts
 
-## Also (addresses on request or NDA)
+Public pages don’t show login email, but live apps resolve to **different workspace IDs** (good proxy for the two accounts). Log into each Base44 account and paste any missing app URLs under the matching block.
 
-| Name | Note |
+### Account A — workspace `68b97ad090ef58ec014dea2d`
+
+| App | Address |
 | --- | --- |
-| DNASonifiers | Physics / art · DNA sonification |
-| Physics / art pieces | Beyond public explorers |
-| AI Surgeon VR | Games · medical training |
-| FieldEncrypt™ | Defense / DIU dual-use |
-| FieldPredict™ | Stocks / sports |
-| Harmonic Black Hole Architecture | Research app + PDF |
-| ProVR Tools | Patent pending |
-| Holographic charging base | Patent / patent pending |
+| ExoRatio | https://exo-ratio-014dea2d.base44.app/ |
 
-## Zenodo (selected)
+### Account B — workspace `68e5bda646879d8c07f8121c`
+
+| App | Address |
+| --- | --- |
+| Primefield Explorer (SFE–RH) | https://sfe-rh-explorer-v1-07f8121c.base44.app/ |
+
+### Other Base44 workspaces seen (confirm which login owns each)
+
+| App | Workspace ID | Address |
+| --- | --- | --- |
+| Solenne | `69330161ec6e5b1f484446df` | https://solenne.base44.app/ |
+| Prime Field site assets | `69069eafadbc3e57e4c05772` | https://primefield.tech/ |
+
+### Base44 — still need addresses
+
+Paste when you have them:
+
+| App | Address |
+| --- | --- |
+| DNASonifiers | |
+| ChatVault (if not only on primefield.tech) | |
+| Physics / art apps | |
+| Games (AI Surgeon VR, etc.) | |
+| Other Account A apps | |
+| Other Account B apps | |
+
+Dashboard: https://app.base44.com/
+
+---
+
+## Replit — apps & papers
+
+Replit profile pages are not readable from this environment (login-walled). Put your **two / many** Replit usernames and every public repl URL here so you can jump instantly.
+
+### Account handles (fill in)
+
+| # | Replit username | Profile |
+| --- | --- | --- |
+| 1 | _______________ | https://replit.com/@_______________ |
+| 2 | _______________ | https://replit.com/@_______________ |
+| 3 | _______________ | https://replit.com/@_______________ |
+
+### Known public apps hosted elsewhere (related)
+
+| Name | Address |
+| --- | --- |
+| Kyrana (GitHub) | https://github.com/simons357/kyrana-oracle |
+| Ship It (GitHub) | https://github.com/simons357/ship-it-code |
+
+### Replit apps (paste URLs)
+
+| App / paper name | Replit address |
+| --- | --- |
+| | |
+| | |
+| | |
+| | |
+| | |
+
+Tip: On each Replit account → **Releases / public repls** → copy the `*.replit.app` or `*.repl.co` link into the table.
+
+---
+
+## Zenodo (selected papers)
 
 | Paper | Address |
 | --- | --- |
@@ -47,17 +99,30 @@ One place for live links. Open this file and click.
 | GCD Spectral Attractor | https://doi.org/10.5281/zenodo.20405598 |
 | QFT on the Prime Manifold | https://doi.org/10.5281/zenodo.20272621 |
 | Phi-Renormalization (NS) | https://doi.org/10.5281/zenodo.20405405 |
+| Montgomery–Dyson / Q6 | https://doi.org/10.5281/zenodo.20184147 |
 | Author search (full set) | https://zenodo.org/search?q=creators.name%3A%22Simons%2C%20Jonathan%22 |
+
+---
+
+## Also (on request / NDA)
+
+| Name | Note |
+| --- | --- |
+| DNASonifiers | Physics / art |
+| AI Surgeon VR | Games |
+| FieldEncrypt™ + DIU package | Defense |
+| FieldPredict™ | Forecast |
+| ProVR Tools | Patent pending |
+| Holographic charging base | Patent / patent pending |
+
+---
 
 ## This packet
 
 | File | Use |
 | --- | --- |
-| Portfolio site | `index.html` |
-| One-pager (PDF) | `partner-packet/one-pager.html` |
-| Brochure | `partner-packet/brochure.html` |
-| This jump list | `partner-packet/ADDRESSES.md` |
+| Jump list (this file) | `partner-packet/ADDRESSES.md` |
+| Portfolio | `index.html` |
+| One-pager PDF | `partner-packet/one-pager.html` |
 
----
-
-*Paste any missing URLs (ChatVault, DNASonifiers, games, etc.) and this list gets updated.*
+*Reply with Base44 / Replit usernames or paste app links and this file will be filled in.*
