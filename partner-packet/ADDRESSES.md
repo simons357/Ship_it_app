@@ -45,6 +45,7 @@ Reusable code — not full product UIs. Often Replit / private repos.
 | --- | --- |
 | FieldEncrypt™ | _______________ |
 | Field Lock (presence-bound keys) | https://primefield.tech/field-lock |
+| **NAV-42 Adaptive Lattice** (turbulence reduction coating) | https://nav-42.replit.app/ · patent / patent pending — filing #: _______________ |
 | DIU / dual-use package | NDA |
 | Secure communications (company page) | https://primefield.tech/ |
 
@@ -139,12 +140,22 @@ Subtitle: *A Game-Theoretic Framework for Optimizing Global Supply Chain Dynamic
 SFE / DHFA → coherence index → phased pilot → scenario planning (“adjust variables to forecast financial impact”).  
 Some views may require app access; deep-link the Resources page for the letter.
 
+### NAV-42 — Adaptive Lattice (patent)
+
+| Name | Address |
+| --- | --- |
+| **NAV-42 Adaptive Lattice** (demo / tech site) | https://nav-42.replit.app/ |
+| Public framing | Patent pending · adaptive lattice coating · turbulence / drag reduction for missiles, drones, and naval vessels |
+| What it is | Named product for the resonant / lattice surface path — **not** the SCM dashboard |
+| Filing number | _______________ (paste USPTO / provisional / PCT number) |
+| Spec sheet / white paper (gated inside demo) | Engineering Specification Sheet · Technical Whitepaper (login on site) |
+
 | Surface / drag path | Address |
 | --- | --- |
-| Drag reduction / low-friction surface or flow control | _______________ |
-| Lattice / resin paint (honeycomb) — recipe & engineer pack | **Not found publicly** · see `REPORT-lattice-paint.md` · paste private URL: _______________ |
-| Maritime / boat applications (coatings / hull) | _______________ |
-| Resin / coating path (if used for drag / surface performance) | _______________ |
+| Drag reduction / low-friction surface or flow control | **NAV-42** — https://nav-42.replit.app/ |
+| Lattice / resin paint (honeycomb) — recipe & engineer pack | Public: NAV-42 demo + gated PDFs · full BOM/SOP still private — paste: _______________ |
+| Maritime / boat applications (coatings / hull) | NAV-42 naval hull / tow-tank framing on demo |
+| Resin / coating path (if used for drag / surface performance) | NAV-42 ceramic-polymer nanocomposite (high-level; details gated) |
 | Turbulence / propulsion / flow positioning | https://primefield.tech/ |
 | Supporting fluid papers (NS / spectral energy) | see Zenodo in section L |
 | Strategy game hub (separate from ops) | https://primefield.tech/risk |
@@ -206,7 +217,7 @@ Dashboard: https://app.base44.com/
 
 | App / paper / recipe | Replit address |
 | --- | --- |
-| | |
+| **NAV-42 Adaptive Lattice** (demo) | https://nav-42.replit.app/ |
 | | |
 
 ### Zenodo (selected)

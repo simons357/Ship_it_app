@@ -20,13 +20,15 @@ Attach: `one-pager.html` → Print → Save as PDF.
 
 Hi [Name] —
 
-You mentioned interest in supply-chain / maritime systems. Here is a live demo and a short theory→application write-up:
+You mentioned interest in supply-chain / maritime systems. Two related but different pieces:
 
-- Dashboard: https://maritime-coherence-dashboard-100b68c0.base44.app/
-- Letter (Resources): https://maritime-coherence-dashboard-100b68c0.base44.app/Resources  
-  *The Harmonic Blueprint: Global Supply Chain Applications* (Jan 2026) — SFE applied to logistics, with a maritime case study and scenario tuning in Harmonic Insights.
+1. **Ops / software** — Maritime Coherence Dashboard + theory→application letter  
+   https://maritime-coherence-dashboard-100b68c0.base44.app/Resources
 
-One-pager PDF attached for broader context. Happy to walk through energy / fluids materials on a call if useful.
+2. **Surface / drag (NAV-42)** — Adaptive Lattice coating, patent / patent pending  
+   https://nav-42.replit.app/
+
+One-pager PDF attached for broader context. Happy to walk energy / fluids materials on a call if useful.
 
 Jonathan Simons  
 js@primefieldtechnologies.com

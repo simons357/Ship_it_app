@@ -6,29 +6,40 @@ What to send the LinkedIn contact who cared about supply-chain management, and w
 
 | Piece | URL | Notes |
 | --- | --- | --- |
-| Maritime Coherence Dashboard | https://maritime-coherence-dashboard-100b68c0.base44.app/ | Live decision-support demo: vessels, routes, environments; coherence before operational risk |
-| Theory→application letter | https://maritime-coherence-dashboard-100b68c0.base44.app/Resources | *The Harmonic Blueprint: Global Supply Chain Applications* — Jonathan Simons, Prime Field Technologies LLC, Jan 2026, v2.1 |
-| Examples / tuning | https://maritime-coherence-dashboard-100b68c0.base44.app/HarmonicInsights | Harmonic patterns, impact charts, scenario planning (“adjust variables to forecast financial impact”) |
+| Maritime Coherence Dashboard | https://maritime-coherence-dashboard-100b68c0.base44.app/ | Live decision-support demo: vessels, routes, environments |
+| Theory→application letter | https://maritime-coherence-dashboard-100b68c0.base44.app/Resources | *Harmonic Blueprint: Global Supply Chain Applications* — Jan 2026 v2.1 |
+| Examples / tuning | https://maritime-coherence-dashboard-100b68c0.base44.app/HarmonicInsights | Scenario planning / harmonic patterns |
 
-**Letter framing (public UI):** SFE / DHFA → supply chains as wave systems → Coherence Index → maritime logistics case study → phased pilot. Projection figures in the paper are illustrative; keep outreach conservative.
+## Also (surface / drag — separate product)
 
-**Access:** Some dashboard views may require registration. Prefer linking `/Resources` for the letter if they hit an access gate on live data views.
+| Piece | URL | Notes |
+| --- | --- | --- |
+| **NAV-42 Adaptive Lattice** | https://nav-42.replit.app/ | Named coating · patent / patent pending · turbulence / drag for missiles, drones, naval |
+| Patent filing # | _______________ | Paste before serious partner / DIU send |
 
-Optional outreach text: see `OUTREACH.md` → “If they asked about supply chain / maritime”.
+If they want **software / supply-chain**, send the dashboard + letter.  
+If they want **hardware / surface / drag / carbon**, lead with **NAV-42**.  
+Same resonant math family; different deliverable.
+
+Optional outreach text: see `OUTREACH.md`.
 
 ## Energy — what we have vs. missing
 
 | Have | Missing |
 | --- | --- |
-| NS / spectral-energy Zenodo stack (theory spine) | Dedicated **energy** dashboard or demo URL (public search did not find one under your Base44 clusters) |
-| Company coherence / turbulence framing on primefield.tech | Separate **energy** letter that dual-highlights energy + maritime side-by-side (if that lived outside this app) |
-| Same math family as maritime letter (SFE) | Paste from Base44 / Replit / Drive / email if you still have the dual piece |
+| NS / spectral-energy Zenodo stack (theory spine) | Dedicated **energy** dashboard URL |
+| Company coherence / turbulence framing | Separate energy letter (if outside NAV-42 + maritime apps) |
+| Same math family (resonance / SFE / NS) | Paste from Base44 / Replit / Drive / email |
 
-**Public note:** The letter currently in Maritime Resources is **maritime / SCM framed** (Maersk / logistics). It is the confirmed theory→act + tuning example. It does **not** explicitly dual-feature energy in the Resources catalog. Unrelated third-party Zenodo “maritime coherence / Hormuz / UCMS” papers (e.g. Brogdon) are **not** yours — do not send those.
+## Naming (so we don’t mix them up)
 
-## One-liner for him
+| Name | What it is |
+| --- | --- |
+| Resonance / resonant | The physics idea |
+| **NAV-42** | The patented / patent-pending **product** (Adaptive Lattice coating) |
+| Maritime Coherence Dashboard | The **SCM / ops** software demo |
+| SFE / Harmonic Blueprint | The unifying field math / book |
 
-Live ops demo + short white paper that walks theory → logistics application → how to tune scenarios:  
-https://maritime-coherence-dashboard-100b68c0.base44.app/Resources
-
-Energy stack for a follow-up call: Zenodo NS / spectral-energy set in `ADDRESSES.md` §E / §L.
+One-liner for SCM: dashboard Resources link.  
+One-liner for coatings: https://nav-42.replit.app/  
+Energy: Zenodo NS set + call.

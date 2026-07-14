@@ -87,8 +87,9 @@ Author search on Zenodo returns a large set under Prime Field affiliation.
 
 | They asked for | Lead with | Support with |
 | --- | --- | --- |
-| **Maritime / supply chain** | **Maritime Coherence Dashboard** — https://maritime-coherence-dashboard-100b68c0.base44.app/ · letter in `/Resources` (*Harmonic Blueprint: Global Supply Chain Applications*, Jan 2026 v2.1) · Harmonic Insights scenario tuning | NS / turbulence papers; drag→fuel→CO₂ surface path (private recipe still blank); LinkedIn NS note |
-| **Energy** | Spectral energy / NS stack (Zenodo); company turbulence & coherence framing | Same fluid papers; **dedicated energy letter/app URL not found publicly yet** — ask Jonathan for Base44/Replit/Drive paste |
+| **Maritime / supply chain** | **Maritime Coherence Dashboard** — https://maritime-coherence-dashboard-100b68c0.base44.app/ · letter in `/Resources` · Harmonic Insights tuning | **NAV-42** surface path (drag) if coatings matter; NS papers |
+| **Energy** | Spectral energy / NS stack (Zenodo); company turbulence & coherence framing | Same fluid papers; **dedicated energy letter/app URL not found publicly yet** |
+| **Military / defense / drag surfaces** | **NAV-42 Adaptive Lattice** — https://nav-42.replit.app/ (patent / patent pending) | Field Lock, FieldEncrypt, DIU vault (NDA) |
 | **AI** | Solenne, Kyrana, AI Surgeon VR, FieldPredict | Adaptive learning / telehealth / prediction platforms |
 | **Quantum** | FieldEncrypt™ (post-quantum posture); Quantum Lens; QFT on Prime Manifold | Zenodo Q-series |
 | **Water** | Fluid regularity (NS on T³), air–sea / free-surface interest through turbulence work | NS + diffuse cascade papers |
@@ -101,6 +102,7 @@ Author search on Zenodo returns a large set under Prime Field affiliation.
 
 List for conversation / NDA vault — **do not dump claim text in cold email**:
 
+- **NAV-42 Adaptive Lattice** — adaptive lattice coating for turbulence / drag reduction (missiles, drones, naval); public demo https://nav-42.replit.app/ · patent / patent pending — **add filing number when sending under NDA**
 - Hollow-base / holographic display over charging base (your patent — include filing number when you send under NDA)
 - ProVR Tools — patent-pending haptic Bluetooth training instruments
 - Airway / medical device lineage from clinical + Zeppelin Designs work (share selectively)
