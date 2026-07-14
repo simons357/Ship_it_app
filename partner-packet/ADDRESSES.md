@@ -57,6 +57,17 @@ Conservative naming in public materials — avoid trading on board-game trademar
 
 Paste Base44 / Replit playable links into the blanks when ready.
 
+### Code-only recipes
+
+Reusable code / notebooks — not full product UIs. Often live on Replit or private repos.
+
+| Recipe | Note | Address |
+| --- | --- | --- |
+| QStack | Code-only recipe | https://primefield.tech/qstack · source: _______________ |
+| _______________ | Code-only | _______________ |
+| _______________ | Code-only | _______________ |
+| _______________ | Code-only | _______________ |
+
 Dashboard: https://app.base44.com/
 
 ---
@@ -103,6 +114,9 @@ Tip: On each Replit account → **Releases / public repls** → copy the `*.repl
 | QFT on the Prime Manifold | https://doi.org/10.5281/zenodo.20272621 |
 | Phi-Renormalization (NS) | https://doi.org/10.5281/zenodo.20405405 |
 | Montgomery–Dyson / Q6 | https://doi.org/10.5281/zenodo.20184147 |
+| Route C (spectral closure) | https://doi.org/10.5281/zenodo.20518294 |
+| Q_N Operator | https://doi.org/10.5281/zenodo.20405591 |
+| GCD / Ramanujan–Möbius | https://doi.org/10.5281/zenodo.20269738 |
 | Author search (full set) | https://zenodo.org/search?q=creators.name%3A%22Simons%2C%20Jonathan%22 |
 
 ---
@@ -114,6 +128,7 @@ Tip: On each Replit account → **Releases / public repls** → copy the `*.repl
 | DNASonifiers | Physics / art |
 | Field Lock | Presence-bound keys · https://primefield.tech/field-lock |
 | Games | Strategy (wink to RISK) · Pac-Man retro-3D · AI Surgeon VR · https://primefield.tech/games |
+| QStack (+ other recipes) | Code-only · https://primefield.tech/qstack |
 | FieldEncrypt™ + DIU package | Defense |
 | FieldPredict™ | Forecast |
 | ProVR Tools | Patent pending |
