@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prime Field Technologies — One Pager</title>
+  <title>Jonathan Simons — One Pager</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -23,10 +23,10 @@
       color: var(--ink);
       font-family: "Plus Jakarta Sans", system-ui, sans-serif;
       font-size: 11.5px;
-      line-height: 1.35;
+      line-height: 1.4;
     }
     .bar {
-      display: flex; justify-content: flex-end; gap: 0.5rem;
+      display: flex; justify-content: flex-end;
       padding: 0.6rem 0.8rem; background: rgba(244,241,233,0.95);
       border-bottom: 1px solid var(--line); position: sticky; top: 0;
     }
@@ -36,61 +36,50 @@
       border-radius: 999px; cursor: pointer;
     }
     .sheet {
-      width: 8.5in;
-      min-height: 11in;
-      max-width: 100%;
+      width: 8.5in; max-width: 100%;
       margin: 0.75rem auto;
       background: var(--paper);
-      padding: 0.55in 0.6in 0.5in;
+      padding: 0.65in 0.7in;
       box-shadow: 0 12px 40px rgba(0,0,0,0.14);
     }
     h1 {
       font-family: "Instrument Serif", Georgia, serif;
-      font-size: 28px; font-weight: 400; margin: 0; line-height: 0.95;
+      font-size: 26px; font-weight: 400; margin: 0; line-height: 1;
     }
-    .tag {
-      font-family: "Instrument Serif", Georgia, serif;
-      font-style: italic; color: var(--gold); font-size: 15px; margin: 0.2rem 0 0.45rem;
-    }
+    .role { color: var(--muted); margin: 0.35rem 0 0.75rem; }
     .who {
-      display: flex; flex-wrap: wrap; gap: 0.35rem 1rem;
+      display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem;
       border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-      padding: 0.4rem 0; margin-bottom: 0.55rem; color: var(--muted);
+      padding: 0.45rem 0; margin-bottom: 0.75rem; color: var(--muted);
     }
-    .who b { color: var(--teal); }
     h2 {
       font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--teal); margin: 0.7rem 0 0.28rem; font-weight: 700;
+      color: var(--teal); margin: 0.9rem 0 0.35rem; font-weight: 700;
     }
-    .blurb { margin: 0 0 0.35rem; color: var(--muted); max-width: 6.9in; }
+    p { margin: 0 0 0.45rem; color: var(--muted); max-width: 6.8in; }
     table { width: 100%; border-collapse: collapse; }
     th, td {
       text-align: left; vertical-align: top;
-      padding: 0.28rem 0.35rem 0.28rem 0;
+      padding: 0.3rem 0.4rem 0.3rem 0;
       border-bottom: 1px solid var(--line);
     }
-    th { color: var(--muted); font-weight: 600; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
-    td a { color: var(--teal); font-weight: 600; text-decoration: none; word-break: break-all; }
-    .name { font-weight: 700; }
-    .cols { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 0.55rem; }
-    ul { margin: 0; padding-left: 1rem; }
-    li { margin: 0.18rem 0; }
-    li a { color: var(--teal); font-weight: 600; text-decoration: none; word-break: break-all; }
-    .diu {
-      border: 1px solid var(--line);
-      background: rgba(26, 102, 90, 0.06);
-      padding: 0.45rem 0.55rem;
-      margin-top: 0.15rem;
+    th {
+      color: var(--muted); font-weight: 600; font-size: 10px;
+      letter-spacing: 0.06em; text-transform: uppercase;
     }
-    .diu p { margin: 0.15rem 0 0; color: var(--muted); }
+    td a { color: var(--teal); font-weight: 600; text-decoration: none; word-break: break-all; }
+    .name { font-weight: 700; color: var(--ink); }
+    ul { margin: 0; padding-left: 1rem; }
+    li { margin: 0.25rem 0; color: var(--muted); }
+    li a { color: var(--teal); font-weight: 600; text-decoration: none; word-break: break-all; }
     .foot {
-      margin-top: 0.55rem; padding-top: 0.35rem;
+      margin-top: 1rem; padding-top: 0.45rem;
       border-top: 1px solid var(--line); color: var(--muted); font-size: 10.5px;
     }
     @media print {
       body { background: #fff; }
       .bar { display: none; }
-      .sheet { margin: 0; box-shadow: none; width: auto; min-height: auto; }
+      .sheet { margin: 0; box-shadow: none; width: auto; }
     }
   </style>
 </head>
@@ -100,23 +89,24 @@
   </div>
 
   <main class="sheet">
-    <h1>Prime Field Technologies</h1>
-    <p class="tag">One-pager · Apps · Zenodo · DIU</p>
+    <h1>Jonathan Simons</h1>
+    <p class="role">CRNA · Founder, Prime Field Technologies, LLC · Savannah, GA</p>
+
     <div class="who">
-      <span><b>Jonathan Simons, CRNA</b> · Founder &amp; CEO</span>
-      <span>Savannah, GA</span>
       <span>js@primefieldtechnologies.com</span>
       <span>https://primefield.tech/</span>
+      <span>linkedin.com/in/prime-field-technologies</span>
     </div>
 
-    <p class="blurb">
-      Dual-use math → product shop: spectral / prime-lattice research (Millennium-class intensity), live apps, encryption &amp; prediction platforms, and defense-facing materials including a <b>DIU</b> military project package.
+    <h2>About</h2>
+    <p>
+      Clinician and founder. Work spans clinical anesthesia, applied research in spectral / harmonic methods, and a small set of software projects. Open to collaboration and consulting.
     </p>
 
-    <h2>Live apps (addresses)</h2>
+    <h2>Selected links</h2>
     <table>
       <thead>
-        <tr><th>App / site</th><th>Address</th></tr>
+        <tr><th>Item</th><th>Address</th></tr>
       </thead>
       <tbody>
         <tr>
@@ -132,74 +122,30 @@
           <td><a href="https://exo-ratio-014dea2d.base44.app/">https://exo-ratio-014dea2d.base44.app/</a></td>
         </tr>
         <tr>
-          <td class="name">Primefield Explorer (SFE–RH)</td>
+          <td class="name">Primefield Explorer</td>
           <td><a href="https://sfe-rh-explorer-v1-07f8121c.base44.app/">https://sfe-rh-explorer-v1-07f8121c.base44.app/</a></td>
         </tr>
         <tr>
-          <td class="name">Solenne (AI)</td>
+          <td class="name">Solenne</td>
           <td><a href="https://solenne.base44.app/">https://solenne.base44.app/</a></td>
-        </tr>
-        <tr>
-          <td class="name">Kyrana (repo)</td>
-          <td><a href="https://github.com/simons357/kyrana-oracle">https://github.com/simons357/kyrana-oracle</a></td>
         </tr>
       </tbody>
     </table>
 
-    <div class="cols">
-      <div>
-        <h2>Selected Zenodo papers</h2>
-        <ul>
-          <li>
-            <b>Quantum Lens</b> — Millennium spectral hub<br />
-            <a href="https://doi.org/10.5281/zenodo.20269842">doi.org/10.5281/zenodo.20269842</a>
-          </li>
-          <li>
-            <b>GCD Spectral Attractor</b> — NS · RH · Simons Field Equation<br />
-            <a href="https://doi.org/10.5281/zenodo.20405598">doi.org/10.5281/zenodo.20405598</a>
-          </li>
-          <li>
-            <b>QFT on the Prime Manifold</b> — NS · RH · Goldbach<br />
-            <a href="https://doi.org/10.5281/zenodo.20272621">doi.org/10.5281/zenodo.20272621</a>
-          </li>
-          <li>
-            <b>Phi-Renormalization</b> — axisymmetric Navier–Stokes<br />
-            <a href="https://doi.org/10.5281/zenodo.20405405">doi.org/10.5281/zenodo.20405405</a>
-          </li>
-          <li>
-            Full author set:<br />
-            <a href="https://zenodo.org/search?q=creators.name%3A%22Simons%2C%20Jonathan%22">zenodo.org search → Simons, Jonathan</a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h2>DIU military project</h2>
-        <div class="diu">
-          <b>Defense Innovation Unit (DIU) package</b>
-          <p>
-            Dual-use submission stack centered on <b>FieldEncrypt™</b> (post-quantum / defense-grade encryption &amp; secure communications) plus spectral / turbulence research applicable to maritime, energy, and contested environments.
-          </p>
-          <p>
-            Prior DIU / government-facing materials available for partner review under NDA — including materials that did not advance in earlier government review.
-          </p>
-          <p>
-            Also relevant: national-defense positioning on <a href="https://primefield.tech/">primefield.tech</a> (propulsion, turbulence control, secure communications).
-          </p>
-        </div>
+    <h2>Selected Zenodo papers</h2>
+    <ul>
+      <li>The Quantum Lens — <a href="https://doi.org/10.5281/zenodo.20269842">doi.org/10.5281/zenodo.20269842</a></li>
+      <li>GCD Spectral Attractor — <a href="https://doi.org/10.5281/zenodo.20405598">doi.org/10.5281/zenodo.20405598</a></li>
+      <li>QFT on the Prime Manifold — <a href="https://doi.org/10.5281/zenodo.20272621">doi.org/10.5281/zenodo.20272621</a></li>
+      <li>Phi-Renormalization (Navier–Stokes) — <a href="https://doi.org/10.5281/zenodo.20405405">doi.org/10.5281/zenodo.20405405</a></li>
+    </ul>
 
-        <h2>Also in scope</h2>
-        <ul>
-          <li>FieldPredict™ (stocks / sports)</li>
-          <li>AI Surgeon VR · ProVR Tools (patent pending)</li>
-          <li>Holographic charging base (patented / patent pending)</li>
-          <li>Maritime · energy · water via NS / turbulence papers</li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="foot">
-      Prime Field Technologies, LLC · js@primefieldtechnologies.com · One-pager for partner discussion (consulting / licensing / joint build). Full inventory on request.
+    <h2>Additional materials</h2>
+    <p>
+      Further research deposits, product documentation, patent materials, and prior defense / DIU-related packages are available on request under appropriate confidentiality terms.
     </p>
+
+    <p class="foot">Jonathan Simons · Prime Field Technologies, LLC · js@primefieldtechnologies.com</p>
   </main>
 </body>
 </html>
