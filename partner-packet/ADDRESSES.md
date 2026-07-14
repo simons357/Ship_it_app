@@ -118,13 +118,15 @@ Better forecasts so others can **verify** results (not greenwash).
 
 ## I. Maritime & real carbon reduction
 
-Strategy here: if resin / coatings go on boats and **actually** perform, that is real carbon reduction — not offset theater.
+**Thesis (plain):** Reduce drag → less friction → less fuel → lower carbon. Even a modest drag cut is commercially large; the aim here is a substantial drag change, not a cosmetic tweak. If it holds on boats (and related surfaces), that is measurable consumption drop — not offset theater.
 
 | Name | Address |
 | --- | --- |
+| Drag reduction / low-friction surface or flow control | _______________ |
 | Maritime / boat applications | _______________ |
-| Resin / coating (performance → carbon reduction) | _______________ |
-| Turbulence / propulsion positioning | https://primefield.tech/ |
+| Resin / coating path (if used for drag / surface performance) | _______________ |
+| Turbulence / propulsion / flow positioning | https://primefield.tech/ |
+| Supporting fluid papers (NS / spectral energy) | see Zenodo in section L |
 | Strategy game hub (separate from ops) | https://primefield.tech/risk |
 
 ---
