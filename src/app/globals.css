@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0c2e36;
+  --ink-soft: #1a4a55;
+  --mist: #e8f1f3;
+  --foam: #f6fbfc;
+  --sea: #1b8f8a;
+  --sea-deep: #0f6a66;
+  --signal: #e07a3d;
+  --line: color-mix(in oklab, var(--ink) 12%, transparent);
+  --background: var(--foam);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-mist: var(--mist);
+  --color-foam: var(--foam);
+  --color-sea: var(--sea);
+  --color-sea-deep: var(--sea-deep);
+  --color-signal: var(--signal);
+  --color-line: var(--line);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(2%, -1.5%, 0) scale(1.04);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-line {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.atmosphere {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.atmosphere::before,
+.atmosphere::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: drift 18s ease-in-out infinite;
+}
+
+.atmosphere::before {
+  width: min(70vw, 640px);
+  height: min(70vw, 640px);
+  top: -12%;
+  right: -8%;
+  background: radial-gradient(
+    circle,
+    color-mix(in oklab, var(--sea) 35%, white) 0%,
+    transparent 70%
+  );
+}
+
+.atmosphere::after {
+  width: min(80vw, 720px);
+  height: min(80vw, 720px);
+  bottom: -20%;
+  left: -15%;
+  background: radial-gradient(
+    circle,
+    color-mix(in oklab, var(--signal) 22%, white) 0%,
+    transparent 72%
+  );
+  animation-delay: -7s;
+}
+
+.hero-rise {
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-rise-delay {
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+.hero-rise-delay-2 {
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.28s both;
+}
+
+.wave-line {
+  animation: pulse-line 4.5s ease-in-out infinite;
+}
