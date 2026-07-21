@@ -407,6 +407,59 @@ a {
   color: var(--gold);
 }
 
+.peek {
+  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(700px 400px at 85% 10%, rgba(47, 143, 123, 0.1), transparent 55%),
+    linear-gradient(180deg, rgba(16, 22, 29, 0.4), transparent);
+}
+
+.peek-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 3.5rem);
+}
+
+.peek-heading {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.peek-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.peek-list li {
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.peek-list h4 {
+  margin: 0.3rem 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+}
+
+.peek-list p {
+  margin: 0;
+  color: var(--fog);
+  max-width: 28rem;
+}
+
+.peek-note {
+  margin: 1.25rem 0 0;
+  color: var(--fog);
+  font-size: 0.92rem;
+  max-width: 28rem;
+}
+
 .ip-note {
   margin-top: 2rem;
   max-width: 38rem;
@@ -517,6 +570,10 @@ a {
 
   .entry-num {
     min-width: 0;
+  }
+
+  .peek-grid {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -12,7 +12,7 @@
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  document.querySelectorAll(".section-intro, .entry, .measure-list li, .contact-block, .ip-note, .coherence-note").forEach((el) => {
+  document.querySelectorAll(".section-intro, .entry, .measure-list li, .peek-list li, .contact-block, .ip-note, .coherence-note, .peek-note").forEach((el) => {
     el.classList.add("reveal");
   });
 
