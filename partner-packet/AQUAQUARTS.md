@@ -9,7 +9,21 @@
 
 ## One-sentence lock
 
-**AquaQuarts** is a memorable tableside water ritual: maximally packed structured water presented in a crystal-lined decanter, rooted in Lithia Springs (Cherokee country), with a leather-tied story tag and a ceremonial blessing / intention layer.
+**AquaQuarts** is a memorable tableside water ritual: maximally packed structured water in a crystal-lined decanter you **keep** — rooted in Lithia Springs (Cherokee country), leather-tied story tag, ceremonial blessing / intention — so every time you see the vessel, you remember the date.
+
+## Origin pivot
+
+Finland was the shipping plan. Lithia Springs changed how we think about water — local mineral heritage (including lithium in the spring story) over imported prestige alone.
+
+## Keep-the-decanter model (win-win)
+
+| Guest gets | Brand / maker gets |
+| --- | --- |
+| Rare pour + ritual at the table | Premium price for the water experience |
+| **Keeps the vase / decanter** | Vessel becomes the lasting brand object |
+| A date they’ll remember when they see it | Repeat sightline / word-of-mouth without a plastic bottle |
+
+Romantic / occasion framing (tasteful): anniversary, proposal, the night that mattered — *hopefully it’s your husband.*
 
 ---
 
@@ -93,4 +107,4 @@ Tableside AquaQuarts can sit next to the water / coherence lane as **ritual cohe
 
 ## Copy/paste (partner one-liner)
 
-> AquaQuarts is a high-end tableside water experience from Lithia Springs — structured water in a crystal-lined decanter, leather-tied story, ceremonial intention — with a patent still to file and an open invitation for Cherokee artisan production partnership.
+> AquaQuarts — buy the water, keep the decanter. Lithia Springs tableside ritual (Finland was the plan until the springs changed the water). Crystal vessel, leather-tied story, ceremonial intention. Patent still to file; exploring Cherokee artisan production as a shared-cost, shared-reward win-win.
