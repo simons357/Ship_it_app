@@ -115,6 +115,7 @@ Reusable code — not full product UIs. Often Replit / private repos.
 | Phi-Renormalization (Navier–Stokes) | https://doi.org/10.5281/zenodo.20405405 |
 | GCD Spectral Attractor (NS · RH · SFE) | https://doi.org/10.5281/zenodo.20405598 |
 | Additional fluid / free-surface demos | _______________ |
+| **If someone asks “purification”** | send pack: `partner-packet/SEND-WATER-PURIFICATION.md` · don’t conflate with AquaQuarts |
 
 ---
 
