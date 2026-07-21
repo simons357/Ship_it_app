@@ -10,6 +10,12 @@
 
 **Vigilant Patch** is a wearable patch concept aimed at depth-of-consciousness / physiologic vigilance with **minutes of pre-recognition** — earlier warning than waiting for a conventional BIS-class number to move — and a path to **many more coupled systems** than a single index.
 
+## Audience line (locked)
+
+> For people who cannot afford to fall asleep. Ever.
+
+OR · ICU · watchstanding · any post where a missed minute is the whole story. Not a lifestyle wearable. Not a nap gadget. Vigilance with lead time.
+
 ---
 
 ## How to say it (safe public language)
