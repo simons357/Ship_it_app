@@ -95,6 +95,7 @@ Author search on Zenodo returns a large set under Prime Field affiliation.
 | **Energy** | Spectral energy / NS stack (Zenodo); company turbulence & coherence framing | Same fluid papers; **dedicated energy letter/app URL not found publicly yet** |
 | **Military / defense / drag surfaces** | **NAV-42 Adaptive Lattice** — https://nav-42.replit.app/ (**provisional**; claims still being built) | Field Lock, FieldEncrypt, DIU vault (NDA) |
 | **AI** | Solenne, Kyrana, AI Surgeon VR, FieldPredict | Adaptive learning / telehealth / prediction platforms |
+| **Clinical / OR** | **Vigilant Patch** (BIS-class vigilance + pre-recognition) | CRNA practice lineage · ProVR · Solenne · `VIGILANT-PATCH.md` |
 | **Quantum** | FieldEncrypt™ (post-quantum posture); Quantum Lens; QFT on Prime Manifold | Zenodo Q-series |
 | **Water** | **AquaQuarts** luxury tableside (Lithia Springs) + NS fluid regularity | `AQUAQUARTS.md` · NS + diffuse cascade papers |
 | **Military / defense** | FieldEncrypt™, secure communications, national-defense positioning; prior government materials available under NDA | Encrypt + spectral / secure-comms framing on primefield.tech |
@@ -109,6 +110,7 @@ List for conversation / NDA vault — **do not dump claim text in cold email**:
 - **NAV-42 Adaptive Lattice** — adaptive lattice coating for turbulence / drag reduction (missiles, drones, naval); public demo https://nav-42.replit.app/ · **provisional** (plenty of room to revise claims before conversion) — share filing # under NDA only when useful
 - **HoloBase** — hollow-base / holographic display over charging cradle (design complete; patent office packet not submitted yet — include filing number when you send under NDA)
 - **AquaQuarts / EZ water** — maximally packed structured water · crystal-lined tableside decanter · Lithia Springs / Cherokee country story · leather-tied web tag · blessing / intention layer · **patent not filed** · process black-boxed · proposed Cherokee artisan vessel partnership (shared costs & rewards)
+- **Vigilant Patch** — wearable anesthesia-adjacent vigilance · BIS-*class* depth job with **minutes of pre-recognition** · multimodal systems beyond a single index · CRNA-designed · file + FDA path before deep disclosure · brief: [`VIGILANT-PATCH.md`](VIGILANT-PATCH.md)
 - **SpectraLock** — spectral locking / presence-bound access naming lane (pairs with Field Lock live demo)
 - ProVR Tools — patent-pending haptic Bluetooth training instruments
 - Airway / medical device lineage from clinical + Zeppelin Designs work (share selectively)
