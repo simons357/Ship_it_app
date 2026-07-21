@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AquaQuarts — Lithia Springs tableside water</title>
+  <meta name="description" content="AquaQuarts is a tableside water ritual from Lithia Springs, Cherokee country — crystal-lined decanter, leather-tied story, ceremonial intention." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0;400;0;600;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="aquaquarts.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top">
+    <a class="mark" href="aquaquarts.html">AquaQuarts</a>
+    <nav>
+      <a href="#ritual">Ritual</a>
+      <a href="#place">Place</a>
+      <a href="#partners">Partners</a>
+      <a class="cta" href="mailto:js@primefieldtechnologies.com">Inquire</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-wash" aria-hidden="true"></div>
+      <div class="hero-caustic" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="brand">AquaQuarts</p>
+        <h1>Water you keep remembering</h1>
+        <p class="lede">
+          The pour is rare. The decanter stays. Every time you see it, you remember the date —
+          dinner, a vow, a quiet yes. Hopefully it’s your husband.
+        </p>
+        <div class="actions">
+          <a class="btn" href="#ritual">The ritual</a>
+          <a class="btn ghost" href="mailto:js@primefieldtechnologies.com">Talk with us</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="ritual">
+      <p class="eyebrow">Guest experience</p>
+      <h2>Buy the water. Keep the vessel.</h2>
+      <p class="body">
+        Super-expensive water is the night. The crystal-lined decanter is what you take home —
+        a win-win: the table gets a ritual; you keep a vase you’ll see for years.
+      </p>
+      <ol class="beats">
+        <li>
+          <span>01</span>
+          <div>
+            <h3>The vessel</h3>
+            <p>A crystal-lined decanter that earns its place on the table — then lives on a shelf, not in recycling.</p>
+          </div>
+        </li>
+        <li>
+          <span>02</span>
+          <div>
+            <h3>The water</h3>
+            <p>Maximally packed structured water. How it is packed stays private until the patent is filed.</p>
+          </div>
+        </li>
+        <li>
+          <span>03</span>
+          <div>
+            <h3>The tag</h3>
+            <p>A website tied in leather around the neck — origin, place, and ritual in one pull.</p>
+          </div>
+        </li>
+        <li>
+          <span>04</span>
+          <div>
+            <h3>The date</h3>
+            <p>Every time you see the decanter, you remember when it was poured. Anniversary. Proposal. The night that mattered.</p>
+          </div>
+        </li>
+        <li>
+          <span>05</span>
+          <div>
+            <h3>The intention</h3>
+            <p>Blessed and intention-infused — a ceremonial layer for the pour, not a medical claim.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block place" id="place">
+      <p class="eyebrow">Origin</p>
+      <h2>Finland was the plan. Lithia Springs changed the water.</h2>
+      <p class="body">
+        The path was going overseas — Finland — to see if we could ship something special here.
+        Then the springs. Lithia Springs, Cherokee country. Lithium in the local water story.
+        It changed how we think about water: not imported prestige alone, but place, mineral heritage, and a vessel worth keeping.
+      </p>
+      <p class="fine">Experience and origin only. No health claims. Process black-boxed until filing.</p>
+    </section>
+
+    <section class="block" id="partners">
+      <p class="eyebrow">Making</p>
+      <h2>Decanter partnership</h2>
+      <p class="body">
+        We are exploring production with Cherokee artisans in Cherokee country — shared costs, shared rewards —
+        so the vessel is crafted with the same care as the water story. Win-win: makers build the heirloom; guests keep it.
+      </p>
+      <p class="body">
+        Nothing here claims a signed Nation endorsement. It is an open invitation to build the decanter together.
+      </p>
+      <a class="btn" href="mailto:js@primefieldtechnologies.com?subject=AquaQuarts%20decanter%20partnership">Start a partnership conversation</a>
+    </section>
+
+    <section class="block contact" id="contact">
+      <p class="eyebrow">Contact</p>
+      <h2>Inquire</h2>
+      <p class="body">Hospitality, private tables, or artisan production.</p>
+      <a class="email" href="mailto:js@primefieldtechnologies.com">js@primefieldtechnologies.com</a>
+      <p class="fine"><a href="index.html">← Jonathan Simons / work</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>AquaQuarts · Lithia Springs</p>
+    <p>Patent pending path · process not public</p>
+  </footer>
+
+  <script>
+    (() => {
+      const top = document.querySelector(".top");
+      const onScroll = () => top && top.classList.toggle("is-scrolled", window.scrollY > 16);
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+    })();
+  </script>
+</body>
+</html>

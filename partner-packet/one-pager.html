@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jonathan Simons — One Pager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0c1116;
+      --muted: #4d5660;
+      --line: rgba(12, 17, 22, 0.14);
+      --gold: #8f7135;
+      --teal: #1a665a;
+      --paper: #f4f1e9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #cfcabe;
+      color: var(--ink);
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      font-size: 11.5px;
+      line-height: 1.4;
+    }
+    .bar {
+      display: flex; justify-content: flex-end;
+      padding: 0.6rem 0.8rem; background: rgba(244,241,233,0.95);
+      border-bottom: 1px solid var(--line); position: sticky; top: 0;
+    }
+    .bar button {
+      border: 1px solid var(--ink); background: var(--ink); color: #fff;
+      font: inherit; font-weight: 600; padding: 0.45rem 0.8rem;
+      border-radius: 999px; cursor: pointer;
+    }
+    .sheet {
+      width: 8.5in; max-width: 100%;
+      margin: 0.75rem auto;
+      background: var(--paper);
+      padding: 0.65in 0.7in;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.14);
+    }
+    h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 26px; font-weight: 400; margin: 0; line-height: 1;
+    }
+    .role { color: var(--muted); margin: 0.35rem 0 0.75rem; }
+    .who {
+      display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem;
+      border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+      padding: 0.45rem 0; margin-bottom: 0.75rem; color: var(--muted);
+    }
+    h2 {
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--teal); margin: 0.9rem 0 0.35rem; font-weight: 700;
+    }
+    p { margin: 0 0 0.45rem; color: var(--muted); max-width: 6.8in; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td {
+      text-align: left; vertical-align: top;
+      padding: 0.3rem 0.4rem 0.3rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    th {
+      color: var(--muted); font-weight: 600; font-size: 10px;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    td a { color: var(--teal); font-weight: 600; text-decoration: none; word-break: break-all; }
+    .name { font-weight: 700; color: var(--ink); }
+    ul { margin: 0; padding-left: 1rem; }
+    li { margin: 0.25rem 0; color: var(--muted); }
+    li a { color: var(--teal); font-weight: 600; text-decoration: none; word-break: break-all; }
+    .foot {
+      margin-top: 1rem; padding-top: 0.45rem;
+      border-top: 1px solid var(--line); color: var(--muted); font-size: 10.5px;
+    }
+    @media print {
+      body { background: #fff; }
+      .bar { display: none; }
+      .sheet { margin: 0; box-shadow: none; width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <button type="button" onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <main class="sheet">
+    <h1>Jonathan Simons</h1>
+    <p class="role">CRNA · Founder, Prime Field Technologies, LLC · Savannah, GA</p>
+
+    <div class="who">
+      <span>js@primefieldtechnologies.com</span>
+      <span>https://primefield.tech/</span>
+      <span>linkedin.com/in/prime-field-technologies</span>
+    </div>
+
+    <h2>About</h2>
+    <p>
+      Clinician and founder. Work spans clinical anesthesia, applied research in spectral / harmonic methods, and a small set of software projects. Open to collaboration and consulting.
+    </p>
+
+    <h2>Selected links</h2>
+    <table>
+      <thead>
+        <tr><th>Item</th><th>Address</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">Prime Field Technologies</td>
+          <td>primefield.tech — Base44 gated for strangers until republish</td>
+        </tr>
+        <tr>
+          <td class="name">The Harmonic Blueprint</td>
+          <td><a href="https://www.theharmonicblueprint.com/">https://www.theharmonicblueprint.com/</a></td>
+        </tr>
+        <tr>
+          <td class="name">ExoRatio</td>
+          <td>Base44 gated — do not cold-send</td>
+        </tr>
+        <tr>
+          <td class="name">Primefield Explorer</td>
+          <td>Base44 gated — do not cold-send</td>
+        </tr>
+        <tr>
+          <td class="name">Solenne</td>
+          <td>Base44 gated — do not cold-send</td>
+        </tr>
+        <tr>
+          <td class="name">ChatVault — the Evernote of AI conversations</td>
+          <td>Public page empty — paste live URL when ready</td>
+        </tr>
+        <tr>
+          <td class="name">Field Lock — presence-bound keys</td>
+          <td><a href="https://field-lock.replit.app/">https://field-lock.replit.app/</a> (Learning Kiosk)</td>
+        </tr>
+        <tr>
+          <td class="name">NAV-42 Adaptive Lattice — provisional (in progress)</td>
+          <td><a href="https://nav-42.replit.app/">https://nav-42.replit.app/</a></td>
+        </tr>
+        <tr>
+          <td class="name">Maritime Coherence Dashboard — supply-chain / ops demo</td>
+          <td>Base44 gated — do not cold-send until republish</td>
+        </tr>
+        <tr>
+          <td class="name">Theory→application letter (inside Resources)</td>
+          <td>Same Maritime host · gated</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Where the rest lives (grouped)</h2>
+    <ul>
+      <li><b>A. Code-only recipes</b> — QStack and similar (quick license lane) · <a href="https://primefield.tech/qstack">primefield.tech/qstack</a></li>
+      <li><b>B. Military</b> — NAV-42 Adaptive Lattice · FieldEncrypt · Field Lock · DIU (NDA)</li>
+      <li><b>C. Quantum</b> — FieldEncrypt + Zenodo spectral / QFT set</li>
+      <li><b>D. AI</b> — ChatVault, Solenne, Kyrana, FieldPredict, AI Surgeon VR</li>
+      <li><b>E–H. Energy · Water · Resources · Weather</b> — NS / spectral-energy papers; dedicated energy demo URL on request</li>
+      <li><b>I. Maritime &amp; carbon</b> — SCM dashboard + letter · NAV-42 coating path (drag → fuel → CO₂)</li>
+      <li><b>J. Games</b> — RISK wink · Pac-Man retro-3D · <a href="https://primefield.tech/games">primefield.tech/games</a></li>
+    </ul>
+    <p>Full grouped jump list: <code>partner-packet/ADDRESSES.md</code></p>
+
+    <h2>Selected Zenodo papers</h2>
+    <ul>
+      <li>The Quantum Lens — <a href="https://doi.org/10.5281/zenodo.20269842">doi.org/10.5281/zenodo.20269842</a></li>
+      <li>GCD Spectral Attractor — <a href="https://doi.org/10.5281/zenodo.20405598">doi.org/10.5281/zenodo.20405598</a></li>
+      <li>QFT on the Prime Manifold — <a href="https://doi.org/10.5281/zenodo.20272621">doi.org/10.5281/zenodo.20272621</a></li>
+      <li>Phi-Renormalization (Navier–Stokes) — <a href="https://doi.org/10.5281/zenodo.20405405">doi.org/10.5281/zenodo.20405405</a></li>
+    </ul>
+
+    <h2>Also (links on request)</h2>
+    <ul>
+      <li><b>Physics / art</b> — additional harmonic / spectral visual pieces beyond the public explorers above</li>
+      <li><b>DNASonifiers</b> — DNA / sequence sonification</li>
+      <li><b>Games</b> — strategy title (wink to RISK); Pac-Man retro-3D; AI Surgeon VR · <a href="https://primefield.tech/games">primefield.tech/games</a></li>
+      <li><b>Code recipes</b> — QStack and others (code only) · <a href="https://primefield.tech/qstack">primefield.tech/qstack</a></li>
+      <li><b>Defense</b> — FieldEncrypt™ and DIU / dual-use package (NDA)</li>
+    </ul>
+
+    <p class="foot">Jonathan Simons · Prime Field Technologies, LLC · js@primefieldtechnologies.com</p>
+  </main>
+</body>
+</html>
