@@ -96,7 +96,7 @@ Author search on Zenodo returns a large set under Prime Field affiliation.
 | **Quantum** | FieldEncrypt™ (post-quantum posture); Quantum Lens; QFT on Prime Manifold | Zenodo Q-series |
 | **Water** | Fluid regularity (NS on T³), air–sea / free-surface interest through turbulence work | NS + diffuse cascade papers |
 | **Military / defense** | FieldEncrypt™, secure communications, national-defense positioning; prior government materials available under NDA | Encrypt + spectral / secure-comms framing on primefield.tech |
-| **Hardware / patent** | Hollow-base holographic projection over charging cradle (patented / patent pending — send claims under NDA) | ProVR Tools (patent pending) |
+| **Hardware / patent** | **HoloBase** hollow-base holographic projection over charging cradle (not yet filed — send claims under NDA) | ProVR Tools (patent pending) · SpectraLock / Field Lock |
 
 ---
 

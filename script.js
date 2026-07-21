@@ -12,13 +12,9 @@
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  document
-    .querySelectorAll(
-      ".section-intro, .work-item, .focus-item, .research-grid article, .about-panel, .contact-block, .also-list, .ip-note"
-    )
-    .forEach((el) => {
-      el.classList.add("reveal");
-    });
+  document.querySelectorAll(".section-intro, .entry, .contact-block, .ip-note").forEach((el) => {
+    el.classList.add("reveal");
+  });
 
   if (!reduceMotion && "IntersectionObserver" in window) {
     const io = new IntersectionObserver(
@@ -30,7 +26,7 @@
           }
         });
       },
-      { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.14, rootMargin: "0px 0px -6% 0px" }
     );
     document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
   } else {
@@ -44,15 +40,12 @@
   const applyFilter = (filter) => {
     let visible = 0;
     workItems.forEach((item) => {
-      const categories = (item.getAttribute("data-category") || "")
-        .split(/\s+/)
-        .filter(Boolean);
+      const categories = (item.getAttribute("data-category") || "").split(/\s+/).filter(Boolean);
       const show = filter === "all" || categories.includes(filter);
       item.classList.toggle("is-hidden", !show);
       if (show) visible += 1;
     });
     if (emptyState) emptyState.hidden = visible > 0;
-
     filterButtons.forEach((btn) => {
       const active = btn.getAttribute("data-filter") === filter;
       btn.classList.toggle("is-active", active);
@@ -61,9 +54,7 @@
   };
 
   filterButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      applyFilter(btn.getAttribute("data-filter") || "all");
-    });
+    btn.addEventListener("click", () => applyFilter(btn.getAttribute("data-filter") || "all"));
   });
 
   const canvas = document.getElementById("field");
@@ -75,7 +66,7 @@
   let height = 0;
   let dpr = 1;
   let raf = 0;
-  let t0 = performance.now();
+  const t0 = performance.now();
 
   const resize = () => {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -92,17 +83,14 @@
 
     const cx = width * 0.62;
     const cy = height * 0.42;
-    const rings = 9;
 
-    for (let i = 0; i < rings; i += 1) {
-      const progress = i / (rings - 1);
+    for (let i = 0; i < 9; i += 1) {
+      const progress = i / 8;
       const radius = Math.min(width, height) * (0.12 + progress * 0.55);
       const pulse = Math.sin(t * 0.55 + progress * 2.4) * 0.5 + 0.5;
-      const alpha = 0.045 + pulse * 0.05;
-
       ctx.beginPath();
       ctx.ellipse(cx, cy, radius * 1.25, radius * 0.72, -0.35 + Math.sin(t * 0.15) * 0.05, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(47, 143, 123, ${alpha})`;
+      ctx.strokeStyle = `rgba(47, 143, 123, ${0.045 + pulse * 0.05})`;
       ctx.lineWidth = 1;
       ctx.stroke();
     }
@@ -110,29 +98,26 @@
     for (let i = 0; i < 5; i += 1) {
       const y = height * (0.2 + i * 0.14);
       ctx.beginPath();
-      for (let x = 0; x <= width; x += 8) {
+      for (let x = 0; x <= width; x += 10) {
         const wave =
           Math.sin((x / width) * Math.PI * (2.2 + i * 0.35) + t * (0.4 + i * 0.08)) * (10 + i * 3) +
           Math.sin((x / width) * Math.PI * 5.5 - t * 0.25 + i) * 4;
-        const yy = y + wave;
-        if (x === 0) ctx.moveTo(x, yy);
-        else ctx.lineTo(x, yy);
+        if (x === 0) ctx.moveTo(x, y + wave);
+        else ctx.lineTo(x, y + wave);
       }
       ctx.strokeStyle = `rgba(201, 164, 92, ${0.05 + i * 0.015})`;
       ctx.lineWidth = 1.25;
       ctx.stroke();
     }
 
-    const nodes = 18;
-    for (let i = 0; i < nodes; i += 1) {
-      const a = (i / nodes) * Math.PI * 2 + t * 0.08;
+    for (let i = 0; i < 18; i += 1) {
+      const a = (i / 18) * Math.PI * 2 + t * 0.08;
       const r = Math.min(width, height) * 0.28;
       const x = cx + Math.cos(a) * r * 1.15;
       const y = cy + Math.sin(a) * r * 0.68;
-      const glow = 0.35 + Math.sin(t + i) * 0.15;
       ctx.beginPath();
       ctx.arc(x, y, 1.6, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(231, 235, 230, ${glow})`;
+      ctx.fillStyle = `rgba(231, 235, 230, ${0.35 + Math.sin(t + i) * 0.15})`;
       ctx.fill();
     }
 
@@ -146,7 +131,5 @@
     if (reduceMotion) draw(performance.now());
   });
 
-  if (reduceMotion) {
-    cancelAnimationFrame(raf);
-  }
+  if (reduceMotion) cancelAnimationFrame(raf);
 })();
