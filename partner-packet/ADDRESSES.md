@@ -8,8 +8,9 @@ One place for live links, grouped by category.
 ## Jump — after “I have a lot of stuff”
 
 Paste-ready **who we are + a few**: `partner-packet/OUTREACH.md` → section *After “I have a lot of stuff”*.  
-Default three: Maritime Coherence Dashboard · NAV-42 · ExoRatio.  
-**Do not cold-send:** Field Lock / ChatVault on primefield.tech — empty shells until real demo URLs are pasted.
+Default three: **Field Lock** (https://field-lock.replit.app/) · Maritime · NAV-42.  
+**Skip:** `primefield.tech/field-lock` and `/chatvault` — empty shells.  
+Field Lock depth (PUF + CTW + photo): `partner-packet/FIELD-LOCK.md`
 
 ---
 
@@ -53,7 +54,7 @@ Reusable code — not full product UIs. Often Replit / private repos.
 | Name | Address |
 | --- | --- |
 | FieldEncrypt™ | _______________ |
-| Field Lock (presence-bound keys) | **public URL empty** — `primefield.tech/field-lock` is a hollow shell · paste live demo: _______________ |
+| Field Lock (presence-bound keys) | **Live kiosk:** https://field-lock.replit.app/ · brief: `FIELD-LOCK.md` · PUF + CTW under NDA · clean PUF photo: _______________ |
 | SpectraLock (spectral locking lane) | pairs with Field Lock · _______________ |
 | **HoloBase** (hollow-base holographic cradle) | design · not yet filed · _______________ |
 | **NAV-42 Adaptive Lattice** (turbulence reduction coating) | https://nav-42.replit.app/ · **provisional** (claims still being built) — #: _______________ |

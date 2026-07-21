@@ -77,14 +77,15 @@ We take spectral / harmonic research — **resonance and coherence** — and shi
 
 **A few to look at** (only links that actually open something):
 
-1. **Maritime Coherence Dashboard** — live ops + Harmonic Insights + the Resources letter  
+1. **Field Lock** — presence-bound single-use keys (Learning Kiosk)  
+   https://field-lock.replit.app/  
+   *(Not primefield.tech/field-lock — that page is empty.)*
+
+2. **Maritime Coherence Dashboard** — live ops + Harmonic Insights + the Resources letter  
    https://maritime-coherence-dashboard-100b68c0.base44.app/
 
-2. **NAV-42 Adaptive Lattice** — turbulence / drag coating (provisional; demo)  
+3. **NAV-42 Adaptive Lattice** — turbulence / drag coating (provisional; demo)  
    https://nav-42.replit.app/
-
-3. **ExoRatio** — primes × orbital ratios (visual research surface)  
-   https://exo-ratio-014dea2d.base44.app/
 
 If one of those lands, tell me which — I’ll send the next layer for *that* lane only (pilot framing, NDA pack, or a focused call). No need to tour the rest until you care.
 
@@ -93,12 +94,13 @@ Prime Field Technologies, LLC
 js@primefieldtechnologies.com  
 https://primefield.tech/
 
-**Do not cold-send right now:**  
-- **Field Lock** — `primefield.tech/field-lock` is an empty shell (looks like a 404). Name it on a call / under NDA until a real demo URL is pasted.  
-- **ChatVault** — same problem on `primefield.tech/chatvault`.  
-- Full inventory, AquaQuarts (unless they asked luxury water), Vigilant medical claims, recipe/BOM, DIU dossier.
+**On call / NDA for Field Lock depth:** PUF (device fingerprint) + CTW entropy analysis + hardware photo — brief: `partner-packet/FIELD-LOCK.md`.
 
-**Default three:** Maritime · NAV-42 · ExoRatio (or Primefield Explorer). Swap #2 → industrial brief if they asked pipes.
+**Do not cold-send right now:**  
+- `primefield.tech/field-lock` or `primefield.tech/chatvault` (hollow shells)  
+- Full inventory, AquaQuarts (unless they asked luxury water), Vigilant medical claims, recipe/BOM, DIU dossier, PUF claim charts  
+
+**Default three:** Field Lock (Replit) · Maritime · NAV-42. Swap #3 → ExoRatio if they want a visual science surface; swap #2 → industrial brief if they asked pipes.
 
 ---
 

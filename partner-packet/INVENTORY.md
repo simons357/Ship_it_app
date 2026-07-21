@@ -32,7 +32,7 @@ X: [@jrsimons357](https://x.com/jrsimons357) · LinkedIn: [prime-field-technolog
 - **EEG earphones** — experimental earphone form-factor for brain-signal / coherence sessions (research kit; not a medical-device claim)
 - **Music OS for your brain** — software layer for sound shaped around measurable neural coherence (pairs with EEG earphones)
 - **ChatVault** — the Evernote of AI conversations · **public URL empty** (primefield.tech/chatvault is a hollow shell) · paste live: _______________
-- **Field Lock** — presence-bound keys · **public URL empty** (primefield.tech/field-lock is a hollow shell — don’t cold-send) · paste live demo: _______________
+- **Field Lock** — presence-bound keys · **live Learning Kiosk** https://field-lock.replit.app/ · PUF + CTW entropy spine (NDA) · `FIELD-LOCK.md` · *(skip empty primefield.tech/field-lock)*
 - **SpectraLock** — spectral locking name in the same presence / encryption lane (pairs with Field Lock)
 - **HoloBase** — hollow-base holographic projection over charging cradle (design; not yet filed)
 - **Kyrana** — quiet oracle (Answer · Why it matters · Next steps) · GitHub: https://github.com/simons357/kyrana-oracle
@@ -113,7 +113,7 @@ List for conversation / NDA vault — **do not dump claim text in cold email**:
 - **HoloBase** — hollow-base / holographic display over charging cradle (design complete; patent office packet not submitted yet — include filing number when you send under NDA)
 - **AquaQuarts / EZ water** — maximally packed structured water · crystal-lined tableside decanter · Lithia Springs / Cherokee country story · leather-tied web tag · blessing / intention layer · **patent not filed** · process black-boxed · proposed Cherokee artisan vessel partnership (shared costs & rewards)
 - **Vigilant Patch** — wearable anesthesia-adjacent vigilance · BIS-*class* depth job with **minutes of pre-recognition** · multimodal systems beyond a single index · CRNA-designed · file + FDA path before deep disclosure · brief: [`VIGILANT-PATCH.md`](VIGILANT-PATCH.md)
-- **SpectraLock** — spectral locking / presence-bound access naming lane (pairs with Field Lock; Field Lock demo URL still blank)
+- **SpectraLock** — spectral locking / presence-bound access naming lane (pairs with Field Lock live kiosk + PUF/CTW spine)
 - ProVR Tools — patent-pending haptic Bluetooth training instruments
 - Airway / medical device lineage from clinical + Zeppelin Designs work (share selectively)
 - FieldEncrypt™ architecture (trade secret / patent strategy — share overview first)
