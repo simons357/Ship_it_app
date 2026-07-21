@@ -1,0 +1,14 @@
+---
+description: When Jonathan asks about Cursor setup, configuration, or which Cursor feature to use, prefer the cursor-setup-advisor guidance and related setup skills.
+alwaysApply: false
+---
+
+# Cursor setup questions
+
+When the user asks how to set up Cursor, which feature to use (Rules, Skills, Subagents, Cloud Agents, Automations, MCP, Plugins, Bugbot), or whether their Cursor environment is configured correctly:
+
+1. Prefer the **cursor-setup-advisor** subagent for multi-step product guidance.
+2. Use **/cursor-setup-check** for a full setup audit.
+3. Use **/choose-cursor-feature** when the question is "what should I use for X?"
+4. Recommend the smallest correct feature; do not stack overlapping config.
+5. Give exact UI paths and official doc links; do not invent product features.

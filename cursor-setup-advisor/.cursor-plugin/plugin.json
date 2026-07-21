@@ -1,0 +1,12 @@
+{
+  "name": "cursor-setup-advisor",
+  "displayName": "Cursor Setup Advisor",
+  "version": "1.0.0",
+  "description": "Personal advisor that helps you navigate Cursor features and set up Rules, Skills, Subagents, Cloud Agents, Automations, MCP, and Plugins correctly.",
+  "author": {
+    "name": "jonathan simons",
+    "email": "simonsmedical@icloud.com"
+  },
+  "license": "MIT",
+  "keywords": ["cursor", "setup", "advisor", "rules", "skills", "subagents", "automations"]
+}
