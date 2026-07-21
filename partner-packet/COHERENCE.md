@@ -68,6 +68,17 @@ Maritime public framing you already use: *live insight into emerging instability
 
 Here coherence = **human–machine alignment that stays true**. The measurable is presence integrity, not a vibes score.
 
+### B2. Brain / music coherence (EEG earphones · Music OS) — experimental
+
+| Measurable | Plain meaning |
+| --- | --- |
+| **Band coherence** | How aligned selected EEG bands stay during a session |
+| **Session delta** \(\Delta C\) | Coherence before vs after a Music OS protocol |
+| **Stability time** | How long a target band-alignment holds |
+| **Stimulus lock** | Correlation between the audio stream and neural response timing |
+
+**Public posture:** experimentation / research kit — **not** a cleared medical device, diagnosis, or treatment claim. Methods black-boxed; list the surface (earphones + Music OS) and the measurable names only.
+
 ### C. Spectral / fluid coherence (research spine — black box on methods)
 
 | Measurable (public-facing names) | Plain meaning |
@@ -85,6 +96,7 @@ Keep equations and recipes off the public site. Partners get: *we can score conc
 - That coherence **predicts** markets or games with a guaranteed edge (sports app not built; finance app exists — still no public performance guarantee).
 - That a single universal number replaces domain data (maritime still needs vessels/routes/environment; finance still needs its signals).
 - That “coherence video” alone is a product — it **explains** the measurable; the dashboard / app **computes** it.
+- That EEG earphones / Music OS **diagnose or treat** medical conditions — list as **experimentation** only until cleared otherwise.
 
 ---
 
@@ -101,6 +113,8 @@ Keep equations and recipes off the public site. Partners get: *we can score conc
 | **Field Lock** | Live | Presence-bound keys = human–machine coherence |
 | **Maritime Coherence Dashboard** | Live | Ops coherence index across vessels / routes / environments |
 | **Financial app** | You have it | Same index → money / regime alignment (link when you paste URL) |
+| **EEG earphones** | Experimental hardware | Capture brain bands for coherence experiments |
+| **Music OS for your brain** | Experimental software | Sound / protocol layer paired with EEG earphones |
 | **Sports** | Not built | Same idea; **coherence video** is the explainer until the app exists |
 | Stack / internals | Black box | How \(C\) is computed stays vaulted |
 

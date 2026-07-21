@@ -29,6 +29,8 @@ X: [@jrsimons357](https://x.com/jrsimons357) · LinkedIn: [prime-field-technolog
 - **ExoRatio** — Kepler orbital ratios ↔ prime-height harmony · https://exo-ratio-014dea2d.base44.app/
 - **Primefield Explorer / SFE–RH Explorer** — primes as resonance field visualization · https://sfe-rh-explorer-v1-07f8121c.base44.app/
 - **Solenne** — AI beauty + telehealth pathway (Simons Medical Innovations) · https://solenne.base44.app/
+- **EEG earphones** — experimental earphone form-factor for brain-signal / coherence sessions (research kit; not a medical-device claim)
+- **Music OS for your brain** — software layer for sound shaped around measurable neural coherence (pairs with EEG earphones)
 - **ChatVault** — the Evernote of AI conversations · https://primefield.tech/chatvault
 - **Field Lock** — presence-bound keys · https://primefield.tech/field-lock
 - **SpectraLock** — spectral locking name in the same presence / encryption lane (pairs with Field Lock)
