@@ -14,7 +14,7 @@
 
   document
     .querySelectorAll(
-      ".section-intro, .work-item, .research-grid article, .about-panel, .contact-block, .also-list, .ip-note"
+      ".section-intro, .work-item, .focus-item, .research-grid article, .about-panel, .contact-block, .also-list, .ip-note"
     )
     .forEach((el) => {
       el.classList.add("reveal");
@@ -44,8 +44,10 @@
   const applyFilter = (filter) => {
     let visible = 0;
     workItems.forEach((item) => {
-      const category = item.getAttribute("data-category");
-      const show = filter === "all" || category === filter;
+      const categories = (item.getAttribute("data-category") || "")
+        .split(/\s+/)
+        .filter(Boolean);
+      const show = filter === "all" || categories.includes(filter);
       item.classList.toggle("is-hidden", !show);
       if (show) visible += 1;
     });

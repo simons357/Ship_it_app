@@ -31,6 +31,8 @@ X: [@jrsimons357](https://x.com/jrsimons357) · LinkedIn: [prime-field-technolog
 - **Solenne** — AI beauty + telehealth pathway (Simons Medical Innovations) · https://solenne.base44.app/
 - **ChatVault** — the Evernote of AI conversations · https://primefield.tech/chatvault
 - **Field Lock** — presence-bound keys · https://primefield.tech/field-lock
+- **SpectraLock** — spectral locking name in the same presence / encryption lane (pairs with Field Lock)
+- **HoloBase** — hollow-base holographic projection over charging cradle (design; not yet filed)
 - **Kyrana** — quiet oracle (Answer · Why it matters · Next steps) · GitHub: https://github.com/simons357/kyrana-oracle
 - **Ship It** — GitHub without the GitHub site · GitHub: https://github.com/simons357/ship-it-code
 
@@ -103,7 +105,8 @@ Author search on Zenodo returns a large set under Prime Field affiliation.
 List for conversation / NDA vault — **do not dump claim text in cold email**:
 
 - **NAV-42 Adaptive Lattice** — adaptive lattice coating for turbulence / drag reduction (missiles, drones, naval); public demo https://nav-42.replit.app/ · **provisional** (plenty of room to revise claims before conversion) — share filing # under NDA only when useful
-- Hollow-base / holographic display over charging base (your patent — include filing number when you send under NDA)
+- **HoloBase** — hollow-base / holographic display over charging cradle (design complete; patent office packet not submitted yet — include filing number when you send under NDA)
+- **SpectraLock** — spectral locking / presence-bound access naming lane (pairs with Field Lock live demo)
 - ProVR Tools — patent-pending haptic Bluetooth training instruments
 - Airway / medical device lineage from clinical + Zeppelin Designs work (share selectively)
 - FieldEncrypt™ architecture (trade secret / patent strategy — share overview first)

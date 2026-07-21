@@ -1,31 +1,32 @@
 # Jonathan Simons — Work Showcase
 
-Personal portfolio site showing a variety of Jonathan’s work across **apps**, **papers**, **studies**, and **designs** (including concepts not yet filed at the patent office).
+Portfolio focused on **ChatVault**, **HoloBase**, **SpectraLock / Field Lock** (presence-bound keys), **water**, and **encryption**, with the fuller catalog underneath.
 
 ## View locally
-
-Open `index.html` in a browser, or from this folder:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Then visit http://localhost:8080
+Visit http://localhost:8080
 
-## What’s on the page
+## Focus set
 
-| Filter | Contents |
+| Piece | What it is |
 | --- | --- |
-| Apps | Prime Field, ExoRatio, Explorer, Solenne, ChatVault, Field Lock, Maritime dashboard, Ship It, Kyrana, Games |
-| Papers | Selected Zenodo DOIs + full authorship search + Harmonic Blueprint |
-| Studies | Fluids / Q₆ lattice / supply-chain / clinical training threads |
-| Designs | Pre-filing concepts (overview only), NAV-42 provisional, ProVR pending, FieldEncrypt vault |
+| **ChatVault** | Evernote of AI conversations · https://primefield.tech/chatvault |
+| **HoloBase** | Hollow-base holographic cradle — design not yet filed |
+| **Field Lock / SpectraLock** | Presence-bound keys · https://primefield.tech/field-lock |
+| **Water** | NS / fluids paper stack + maritime coherence |
+| **Encryption** | FieldEncrypt™ post-quantum posture (NDA for detail) |
 
-Pre-filing designs are listed as **concepts only** — no claim language, recipes, or enabling drawings.
+Filters on the page: All · Apps · Papers · Studies · Designs · Water · Encryption
+
+Pre-filing designs are concepts only — no claim language or enabling drawings.
 
 ## Partner materials
 
-Supporting outreach docs live in [`partner-packet/`](partner-packet/).
+[`partner-packet/`](partner-packet/)
 
 ## Contact
 

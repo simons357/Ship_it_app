@@ -372,6 +372,58 @@ a {
   font-weight: 600;
 }
 
+.focus {
+  padding-top: clamp(3.5rem, 8vh, 5.5rem);
+}
+
+.focus-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  counter-reset: none;
+}
+
+.focus-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem 1.5rem;
+  align-items: start;
+  padding: 1.7rem 0;
+  border-bottom: 1px solid var(--line);
+  transition: padding-left 0.35s var(--ease);
+}
+
+a.focus-item:hover,
+a.focus-item:focus-visible {
+  padding-left: 0.55rem;
+}
+
+.focus-item-static {
+  cursor: default;
+}
+
+.focus-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  line-height: 1;
+  color: var(--signal);
+  min-width: 2.5rem;
+}
+
+.focus-item h3 {
+  margin: 0.35rem 0 0.45rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  font-weight: 400;
+}
+
+.focus-item p {
+  margin: 0;
+  max-width: 42rem;
+  color: var(--fog);
+}
+
 .studies-panel,
 .designs-panel {
   border-top: 1px solid var(--line);
