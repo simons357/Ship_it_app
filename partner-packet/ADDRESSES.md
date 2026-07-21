@@ -97,6 +97,9 @@ Reusable code — not full product UIs. Often Replit / private repos.
 
 | Name | Address |
 | --- | --- |
+| **AquaQuarts / EZ water** (tableside structured water · crystal decanter) | brief: `partner-packet/AQUAQUARTS.md` · patent **not filed** · URL: _______________ |
+| Lithia Springs origin / leather-tied story tag | _______________ |
+| Cherokee artisan decanter partnership (proposed) | explore · split costs & rewards · _______________ |
 | Phi-Renormalization (Navier–Stokes) | https://doi.org/10.5281/zenodo.20405405 |
 | GCD Spectral Attractor (NS · RH · SFE) | https://doi.org/10.5281/zenodo.20405598 |
 | Additional fluid / free-surface demos | _______________ |
