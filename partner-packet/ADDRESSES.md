@@ -266,5 +266,7 @@ Dashboard: https://app.base44.com/
 | Portfolio | `index.html` |
 | One-pager | `partner-packet/one-pager.html` |
 | Send pack — maritime / energy | `partner-packet/SEND-maritime-energy.md` |
+| Peek — defense + art | `partner-packet/PEEK-DEFENSE-ART.md` |
+| Beam · financial efficiency | `partner-packet/BEAM-FINANCIALS.md` |
 
 *Paste missing URLs anytime — especially weather, energy demo, resin/maritime coatings, and recipe sources.*
