@@ -4,10 +4,13 @@ Lean portfolio site: **Focus** (five lead pieces) + **Catalog** (everything else
 
 ## Structure
 
-1. **Hero** — brand, role, one-line stack summary  
-2. **Focus** — ChatVault · HoloBase · Field Lock / SpectraLock · Water · FieldEncrypt  
-3. **Catalog** — Apps / Research / Designs (no repeats of the focus set)  
-4. **Contact** — bio one-liner + email  
+1. **Hero** — brand + coherence stack  
+2. **Focus** — Field Lock · Maritime · Financial coherence  
+3. **Coherence** — locked definition + what can be measured  
+4. **Catalog** — everything else once  
+5. **Contact**
+
+Locked term doc: [`partner-packet/COHERENCE.md`](partner-packet/COHERENCE.md) 
 
 ## Preview
 

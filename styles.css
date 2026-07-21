@@ -361,6 +361,52 @@ a {
     radial-gradient(700px 400px at 90% 0%, var(--gold-soft), transparent 60%);
 }
 
+.coherence {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: radial-gradient(900px 420px at 12% 0%, rgba(47, 143, 123, 0.12), transparent 55%);
+}
+
+.measure-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0;
+}
+
+.measure-list li {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+  max-width: 42rem;
+}
+
+.measure-list h3 {
+  margin: 0.3rem 0 0.4rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  font-weight: 400;
+}
+
+.measure-list p {
+  margin: 0;
+  color: var(--fog);
+}
+
+.coherence-note {
+  margin: 1.5rem 0 0;
+  max-width: 40rem;
+  color: var(--fog);
+  font-size: 0.95rem;
+}
+
+.coherence-note code {
+  font-family: var(--font-body);
+  font-size: 0.9em;
+  color: var(--gold);
+}
+
 .ip-note {
   margin-top: 2rem;
   max-width: 38rem;

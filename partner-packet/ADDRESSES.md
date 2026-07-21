@@ -72,8 +72,9 @@ Reusable code — not full product UIs. Often Replit / private repos.
 | ChatVault — the Evernote of AI conversations | https://primefield.tech/chatvault |
 | Solenne | https://solenne.base44.app/ |
 | Kyrana | https://github.com/simons357/kyrana-oracle |
-| FieldPredict™ | _______________ |
+| FieldPredict™ / financial coherence app | _______________ (you have it — paste public URL) |
 | AI Surgeon VR | Animation script: `partner-packet/AI-SURGEON-VR-animation-script.md` · playable: _______________ |
+| Sports coherence | Not built yet · coherence video is the explainer |
 
 ---
 
