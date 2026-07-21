@@ -6,9 +6,9 @@ What to send the LinkedIn contact who cared about supply-chain management, and w
 
 | Piece | URL | Notes |
 | --- | --- | --- |
-| Maritime Coherence Dashboard | https://maritime-coherence-dashboard-100b68c0.base44.app/ | Live decision-support demo: vessels, routes, environments |
-| Theory→application letter | https://maritime-coherence-dashboard-100b68c0.base44.app/Resources | *Harmonic Blueprint: Global Supply Chain Applications* — Jan 2026 v2.1 |
-| Examples / tuning | https://maritime-coherence-dashboard-100b68c0.base44.app/HarmonicInsights | Scenario planning / harmonic patterns |
+| Maritime Coherence Dashboard | url on file | **Base44 public broken** — “Couldn't load / permissions” for strangers · fix: `BASE44-PUBLIC.md` |
+| Theory→application letter | …/Resources | Same gate — walkthrough / export until republished |
+| Examples / tuning | …/HarmonicInsights | Same gate |
 
 ## Also (surface / drag — separate product)
 

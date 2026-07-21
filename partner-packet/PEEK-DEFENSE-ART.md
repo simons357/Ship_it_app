@@ -31,8 +31,8 @@ Art is a first-class lane — same spectral spine, different surface.
 
 | Piece | What it is | Link / status |
 | --- | --- | --- |
-| **ExoRatio** | Orbital ratios × prime-height harmony — visual research | https://exo-ratio-014dea2d.base44.app/ |
-| **Primefield Explorer** | Primes as resonance field — interactive art/science | https://sfe-rh-explorer-v1-07f8121c.base44.app/ |
+| **ExoRatio** | Orbital ratios × prime-height harmony — visual research | **Base44 gated** — republish public |
+| **Primefield Explorer** | Primes as resonance field — interactive art/science | **Base44 gated** — republish public |
 | **DNASonifiers** | DNA / sequence sonification — physics–art | URL on request / NDA |
 | **Harmonic Blueprint** | Long-form field writing / visual thesis | https://www.theharmonicblueprint.com/ |
 | **Additional spectral visuals** | Physics / art pieces beyond public explorers | On request |
@@ -46,7 +46,7 @@ Art is a first-class lane — same spectral spine, different surface.
 ## Suggested cold stack for a defense+art intro
 
 1. Peek list above (this file)  
-2. Live: Field Lock (https://field-lock.replit.app/) · NAV-42 · ExoRatio or Explorer  
+2. Live: Field Lock (https://field-lock.replit.app/) · NAV-42 · Harmonic Blueprint site (ExoRatio / Explorer gated on Base44)  
 3. Offer: “DIU / prior gov dossier + DNASonifiers vault under NDA”
 
 Skip Vigilant clinical detail and AquaQuarts process on a first defense touch unless they ask.

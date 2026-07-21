@@ -47,8 +47,10 @@ You also have a **PUF** (physically unclonable function) path — silicon / devi
 ## Cold outreach — include Field Lock again
 
 1. **Field Lock** — https://field-lock.replit.app/  
-2. Maritime Coherence Dashboard — https://maritime-coherence-dashboard-100b68c0.base44.app/  
-3. NAV-42 — https://nav-42.replit.app/
+2. **NAV-42** — https://nav-42.replit.app/  
+3. **The Harmonic Blueprint** — https://www.theharmonicblueprint.com/
+
+**Do not add Maritime / ExoRatio / primefield.tech** until Base44 is republished public — see `BASE44-PUBLIC.md`.
 
 Optional on call / NDA: “Same lane includes a PUF + CTW entropy spine; I’ll send the photo and eval pack under NDA.”
 

@@ -47,12 +47,14 @@ Hi [Name] —
 You mentioned interest in supply-chain / maritime systems. Two related but different pieces:
 
 1. **Ops / software** — Maritime Coherence Dashboard + theory→application letter  
-   https://maritime-coherence-dashboard-100b68c0.base44.app/Resources
+   *(Build is real; Base44 public access is currently broken for strangers — I’ll walk you through live or send an export. Fix notes: `BASE44-PUBLIC.md`.)*
 
 2. **Surface / drag (NAV-42)** — Adaptive Lattice coating (provisional on file; still refining)  
    https://nav-42.replit.app/
 
-One-pager PDF attached for broader context. Happy to walk energy / fluids materials on a call if useful.
+Also open: Field Lock kiosk https://field-lock.replit.app/ · Harmonic Blueprint https://www.theharmonicblueprint.com/
+
+Happy to walk energy / fluids materials on a call if useful.
 
 Jonathan Simons  
 js@primefieldtechnologies.com
@@ -61,49 +63,49 @@ js@primefieldtechnologies.com
 
 ## After “I have a lot of stuff” — who we are + a few (recommended)
 
-**Use when:** You already told them the catalog is wide. Don’t dump everything. Send identity + **three** live surfaces. Swap the third pick if they already named a lane (pipes → NAV-42; water experience → AquaQuarts; clinical → Vigilant — never mix lanes cold).
+**Use when:** You already told them the catalog is wide. Don’t dump everything. Send identity + **links that actually open for strangers**.
+
+**Base44 note (2026-07-21):** Maritime, ExoRatio, Explorer, Solenne, and primefield.tech currently show *“Couldn't load the app / You may not have permissions.”* Do **not** cold-send those until you republish them public — see `BASE44-PUBLIC.md`.
 
 **Paste:**
 
 Hi [Name] —
 
-You already know I’ve got a lot of material. Here’s the short version of **who we are and what we do**, plus a few things you can actually open — not the whole shelf.
+You already know I’ve got a lot of material. Here’s the short version of **who we are and what we do**, plus a couple of things you can actually open — not the whole shelf.
 
 **Who we are.**  
-I’m Jonathan Simons — CRNA (25+ years, including owning Winchester Anesthesia in Savannah) and founder of **Prime Field Technologies, LLC** and **Simons Medical Innovations, LLC**. Company overview: https://primefield.tech/
+I’m Jonathan Simons — CRNA (25+ years, including owning Winchester Anesthesia in Savannah) and founder of **Prime Field Technologies, LLC** and **Simons Medical Innovations, LLC**.
 
 **What we do.**  
 We take spectral / harmonic research — **resonance and coherence** — and ship it as working systems: secure presence-bound access, ops dashboards, prediction / finance surfaces, and applied coatings where drag and flow matter. Some pieces are live; some IP is provisional on purpose. Stack detail stays under NDA until there’s a reason to open it.
 
-**A few to look at** (only links that actually open something):
+**A few to look at** (confirmed public):
 
 1. **Field Lock** — presence-bound single-use keys (Learning Kiosk)  
-   https://field-lock.replit.app/  
-   *(Not primefield.tech/field-lock — that page is empty.)*
+   https://field-lock.replit.app/
 
-2. **Maritime Coherence Dashboard** — live ops + Harmonic Insights + the Resources letter  
-   https://maritime-coherence-dashboard-100b68c0.base44.app/
-
-3. **NAV-42 Adaptive Lattice** — turbulence / drag coating (provisional; demo)  
+2. **NAV-42 Adaptive Lattice** — turbulence / drag coating (provisional; demo)  
    https://nav-42.replit.app/
 
-If one of those lands, tell me which — I’ll send the next layer for *that* lane only (pilot framing, NDA pack, or a focused call). No need to tour the rest until you care.
+3. **The Harmonic Blueprint** — field framework / book site  
+   https://www.theharmonicblueprint.com/
+
+If one of those lands, tell me which — I’ll send the next layer for *that* lane only (pilot framing, NDA pack, or a focused call). Ops dashboards and research explorers are in the vault; I’ll open a live walkthrough when you’re ready.
 
 Jonathan Simons  
 Prime Field Technologies, LLC  
-js@primefieldtechnologies.com  
-https://primefield.tech/
+js@primefieldtechnologies.com
 
-**On call / NDA for Field Lock depth:** PUF (device fingerprint) + CTW entropy analysis + hardware photo — brief: `partner-packet/FIELD-LOCK.md`.
+**On call / NDA for Field Lock depth:** PUF + CTW + hardware photo — `partner-packet/FIELD-LOCK.md`.
 
 **Do not cold-send right now:**  
-- `primefield.tech/field-lock` or `primefield.tech/chatvault` (hollow shells)  
-- Full inventory, AquaQuarts (unless they asked luxury water), Vigilant medical claims, recipe/BOM, DIU dossier, PUF claim charts  
+- Any `*.base44.app` or `primefield.tech` product route (permission / empty shell)  
+- Full inventory, AquaQuarts (unless luxury water), Vigilant medical claims, recipe/BOM, DIU dossier, PUF claim charts  
 
-**Default three:** Field Lock (Replit) · Maritime · NAV-42. Swap #3 → ExoRatio if they want a visual science surface; swap #2 → industrial brief if they asked pipes.
+**Default three:** Field Lock · NAV-42 · Harmonic Blueprint. Swap #2 → industrial brief if they asked pipes.
 
 ---
 
 ## Photo guidance
 
-Prefer **https://primefield.tech/** and the one-pager over headshots on first touch. If a photo must go out: keep it small; don’t lead with it. Optional dry line only for informal contacts — see `INTRO.md`.
+Prefer **confirmed public demos** (Field Lock · NAV-42 · Harmonic Blueprint) and the one-pager over headshots on first touch. Do **not** lead with `primefield.tech` or `*.base44.app` until republished — see `BASE44-PUBLIC.md`. If a photo must go out: keep it small; don’t lead with it. Optional dry line only for informal contacts — see `INTRO.md`.

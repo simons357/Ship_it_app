@@ -112,7 +112,7 @@ Keep equations and recipes off the public site. Partners get: *we can score conc
 | Surface | Status | Coherence role |
 | --- | --- | --- |
 | **Field Lock** | Live kiosk · PUF/CTW NDA | Presence-bound keys = human–machine coherence |
-| **Maritime Coherence Dashboard** | Live | Ops coherence index across vessels / routes / environments |
+| **Maritime Coherence Dashboard** | Live build · **Base44 public gated** | Ops coherence index across vessels / routes / environments |
 | **Financial app** | You have it | Same index → money / regime alignment (link when you paste URL) |
 | **EEG earphones** | Experimental hardware | Capture brain bands for coherence experiments |
 | **Music OS for your brain** | Experimental software | Sound / protocol layer paired with EEG earphones |
@@ -124,8 +124,8 @@ Keep equations and recipes off the public site. Partners get: *we can score conc
 
 ## Links
 
-- Maritime hub: https://maritime-coherence-dashboard-100b68c0.base44.app/
-- Maritime main: https://maritime-coherence-dashboard-100b68c0.base44.app/MaritimeCoherence
-- Harmonic Insights: https://maritime-coherence-dashboard-100b68c0.base44.app/HarmonicInsights
-- Theory letter: https://maritime-coherence-dashboard-100b68c0.base44.app/Resources
+- Maritime hub: url on file · **Base44 gated** — see `BASE44-PUBLIC.md`
+- Maritime main / Harmonic Insights / Resources: same host · gated until republish
 - Field Lock: https://field-lock.replit.app/ · brief: `FIELD-LOCK.md` · *(not primefield.tech/field-lock)*
+- NAV-42: https://nav-42.replit.app/
+- Harmonic Blueprint (book): https://www.theharmonicblueprint.com/

@@ -8,9 +8,8 @@ One place for live links, grouped by category.
 ## Jump — after “I have a lot of stuff”
 
 Paste-ready **who we are + a few**: `partner-packet/OUTREACH.md` → section *After “I have a lot of stuff”*.  
-Default three: **Field Lock** (https://field-lock.replit.app/) · Maritime · NAV-42.  
-**Skip:** `primefield.tech/field-lock` and `/chatvault` — empty shells.  
-Field Lock depth (PUF + CTW + photo): `partner-packet/FIELD-LOCK.md`
+Default three: **Field Lock** · **NAV-42** · **Harmonic Blueprint**.  
+**Base44 / primefield.tech currently permission-blocked for strangers** — see `BASE44-PUBLIC.md`. Do not cold-send Maritime, ExoRatio, Explorer, Solenne, or primefield.tech until republished public.
 
 ---
 
@@ -81,7 +80,7 @@ Reusable code — not full product UIs. Often Replit / private repos.
 | Name | Address |
 | --- | --- |
 | ChatVault — the Evernote of AI conversations | **public URL empty** — `primefield.tech/chatvault` hollow · paste live: _______________ |
-| Solenne | https://solenne.base44.app/ |
+| Solenne | **Base44 gated** — https://solenne.base44.app/ · republish public |
 | EEG earphones (experiment kit) | _______________ |
 | Music OS for your brain | _______________ |
 | Kyrana | https://github.com/simons357/kyrana-oracle |
@@ -98,7 +97,7 @@ Reusable code — not full product UIs. Often Replit / private repos.
 | **Vigilant Patch** (BIS-class vigilance · minutes of pre-recognition · multimodal) | brief: `partner-packet/VIGILANT-PATCH.md` · patent/FDA path ahead · _______________ |
 | ProVR haptic training tools | patent pending · _______________ |
 | AI Surgeon VR | Animation script: `partner-packet/AI-SURGEON-VR-animation-script.md` · playable: _______________ |
-| Solenne | https://solenne.base44.app/ |
+| Solenne | **Base44 gated** — https://solenne.base44.app/ · republish public |
 
 ---
 
@@ -159,11 +158,11 @@ Better forecasts so others can **verify** results (not greenwash).
 
 | Name | Address |
 | --- | --- |
-| **Maritime Coherence Dashboard** (decision support · vessels / routes / environments) | https://maritime-coherence-dashboard-100b68c0.base44.app/ |
+| **Maritime Coherence Dashboard** (decision support · vessels / routes / environments) | https://maritime-coherence-dashboard-100b68c0.base44.app/ · **Base44 public broken** — see `BASE44-PUBLIC.md` |
 | Workspace ID | `695949a781309ba9100b68c0` |
-| Dashboard (main) | https://maritime-coherence-dashboard-100b68c0.base44.app/MaritimeCoherence |
-| Harmonic Insights (patterns · impact · scenario tuning) | https://maritime-coherence-dashboard-100b68c0.base44.app/HarmonicInsights |
-| Resources — theory→application letter | https://maritime-coherence-dashboard-100b68c0.base44.app/Resources |
+| Dashboard (main) | …/MaritimeCoherence · gated until republish |
+| Harmonic Insights (patterns · impact · scenario tuning) | …/HarmonicInsights · gated until republish |
+| Resources — theory→application letter | …/Resources · gated until republish |
 
 **Letter inside Resources (confirmed authored):**  
 *The Harmonic Blueprint: Global Supply Chain Applications* — Jonathan Simons, CEO, Prime Field Technologies LLC · January 2026 · v2.1  
@@ -209,8 +208,8 @@ Some views may require app access; deep-link the Resources page for the letter.
 
 | Name | Address |
 | --- | --- |
-| ExoRatio | https://exo-ratio-014dea2d.base44.app/ |
-| Primefield Explorer | https://sfe-rh-explorer-v1-07f8121c.base44.app/ |
+| ExoRatio | **Base44 gated** — url on file · republish public · `BASE44-PUBLIC.md` |
+| Primefield Explorer | **Base44 gated** — url on file · republish public |
 | The Harmonic Blueprint | https://www.theharmonicblueprint.com/ |
 | DNASonifiers | _______________ |
 | Other physics / art pieces | _______________ |

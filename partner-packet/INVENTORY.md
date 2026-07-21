@@ -16,9 +16,9 @@ X: [@jrsimons357](https://x.com/jrsimons357) · LinkedIn: [prime-field-technolog
 | --- | --- | --- |
 | Prime Field Technologies | https://primefield.tech/ | Company · Propulsion · Turbulence · Comms · Coherence |
 | The Harmonic Blueprint | https://www.theharmonicblueprint.com/ | SFE · Physics · Book |
-| ExoRatio | https://exo-ratio-014dea2d.base44.app/ | Research app · Primes · Orbits |
-| Primefield Explorer (SFE–RH) | https://sfe-rh-explorer-v1-07f8121c.base44.app/ | Research app · Riemann · Spectral fields |
-| Solenne | https://solenne.base44.app/ | AI · Beauty · Telehealth |
+| ExoRatio | url on file · **Base44 gated** | Research app · Primes · Orbits |
+| Primefield Explorer (SFE–RH) | url on file · **Base44 gated** | Research app · Riemann · Spectral fields |
+| Solenne | https://solenne.base44.app/ · **Base44 gated** | AI · Beauty · Telehealth |
 | Partner brochure (this packet) | `partner-packet/brochure.html` | Outreach |
 
 ---
@@ -26,9 +26,9 @@ X: [@jrsimons357](https://x.com/jrsimons357) · LinkedIn: [prime-field-technolog
 ## 2. Apps & platforms (full scope)
 
 ### Live / shipped demos
-- **ExoRatio** — Kepler orbital ratios ↔ prime-height harmony · https://exo-ratio-014dea2d.base44.app/
-- **Primefield Explorer / SFE–RH Explorer** — primes as resonance field visualization · https://sfe-rh-explorer-v1-07f8121c.base44.app/
-- **Solenne** — AI beauty + telehealth pathway (Simons Medical Innovations) · https://solenne.base44.app/
+- **ExoRatio** — Kepler orbital ratios ↔ prime-height harmony · **Base44 gated** (permissions error for strangers)
+- **Primefield Explorer / SFE–RH Explorer** — primes as resonance field visualization · **Base44 gated**
+- **Solenne** — AI beauty + telehealth pathway (Simons Medical Innovations) · **Base44 gated**
 - **EEG earphones** — experimental earphone form-factor for brain-signal / coherence sessions (research kit; not a medical-device claim)
 - **Music OS for your brain** — software layer for sound shaped around measurable neural coherence (pairs with EEG earphones)
 - **ChatVault** — the Evernote of AI conversations · **public URL empty** (primefield.tech/chatvault is a hollow shell) · paste live: _______________
@@ -91,7 +91,7 @@ Author search on Zenodo returns a large set under Prime Field affiliation.
 
 | They asked for | Lead with | Support with |
 | --- | --- | --- |
-| **Maritime / supply chain** | **Maritime Coherence Dashboard** — https://maritime-coherence-dashboard-100b68c0.base44.app/ · letter in `/Resources` · Harmonic Insights tuning | **NAV-42** surface path (drag) if coatings matter; NS papers |
+| **Maritime / supply chain** | **Maritime Coherence Dashboard** — url on file · **Base44 public broken** · letter in `/Resources` · Harmonic Insights | **NAV-42** surface path (drag) if coatings matter; NS papers · fix: `BASE44-PUBLIC.md` |
 | **Energy** | Spectral energy / NS stack (Zenodo); company turbulence & coherence framing | Same fluid papers; **dedicated energy letter/app URL not found publicly yet** |
 | **Military / defense / drag surfaces** | **NAV-42 Adaptive Lattice** — https://nav-42.replit.app/ (**provisional**; claims still being built) | Field Lock, FieldEncrypt, DIU vault (NDA) |
 | **Industrial / refinery pipes** | **NAV-42 Industrial** — same lattice coating family · lead with **flow / pump energy** | `NAV42-INDUSTRIAL-PIPES.md` · metered pilot · don’t lead with untested corrosion |
