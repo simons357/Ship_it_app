@@ -98,7 +98,8 @@ Author search on Zenodo returns a large set under Prime Field affiliation.
 | **Clinical / OR** | **Vigilant Patch** (BIS-class vigilance + pre-recognition) | CRNA practice lineage · ProVR · Solenne · `VIGILANT-PATCH.md` |
 | **Quantum** | FieldEncrypt™ (post-quantum posture); Quantum Lens; QFT on Prime Manifold | Zenodo Q-series |
 | **Water** | **AquaQuarts** luxury tableside (Lithia Springs) + NS fluid regularity | `AQUAQUARTS.md` · NS + diffuse cascade papers |
-| **Military / defense** | FieldEncrypt™, secure communications, national-defense positioning; prior government materials available under NDA | Encrypt + spectral / secure-comms framing on primefield.tech |
+| **Military / defense** | FieldEncrypt™, secure communications, national-defense positioning; prior government materials available under NDA | Encrypt + spectral / secure-comms framing on primefield.tech · peek: `PEEK-DEFENSE-ART.md` |
+| **Art / physics–art** | ExoRatio · Explorer · DNASonifiers · Harmonic Blueprint | Why not art? Same coherence spine, visible · `PEEK-DEFENSE-ART.md` |
 | **Hardware / patent** | **HoloBase** · **AquaQuarts / EZ water** (neither filed yet — NDA for process) | ProVR Tools (patent pending) · SpectraLock / Field Lock |
 
 ---
