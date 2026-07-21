@@ -89,7 +89,7 @@ One term. Different surfaces.
 
 ## Partner one-liner
 
-> Vigilant Patch is a CRNA-designed wearable concept for anesthesia-adjacent vigilance: BIS-class depth awareness with minutes of pre-recognition and multimodal system scoring — patent and regulatory path still ahead; methods black-boxed.
+> Vigilant Patch — for people who cannot afford to fall asleep. Ever. CRNA-designed wearable vigilance with BIS-class depth awareness, minutes of pre-recognition, and multimodal system scoring. Patent and regulatory path still ahead; methods black-boxed.
 
 ---
 
