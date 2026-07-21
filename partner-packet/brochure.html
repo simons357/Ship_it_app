@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prime Field Technologies — Partner Brief</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0b1014;
+      --paper: #f3f1ea;
+      --muted: #5c6570;
+      --line: rgba(11, 16, 20, 0.12);
+      --gold: #9a7b3c;
+      --teal: #1f6f62;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      color: var(--ink);
+      background: #d9d5cc;
+      line-height: 1.5;
+    }
+    .page {
+      width: min(880px, 100%);
+      margin: 1.5rem auto;
+      background:
+        radial-gradient(700px 360px at 100% 0%, rgba(31, 111, 98, 0.10), transparent 55%),
+        radial-gradient(600px 320px at 0% 10%, rgba(154, 123, 60, 0.10), transparent 50%),
+        var(--paper);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+    .toolbar {
+      position: sticky; top: 0; z-index: 5;
+      display: flex; gap: 0.75rem; justify-content: flex-end;
+      padding: 0.75rem 1rem;
+      background: rgba(243,241,234,0.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+    .toolbar button, .toolbar a {
+      appearance: none; border: 1px solid var(--line); background: #fff;
+      color: var(--ink); font: inherit; font-size: 0.85rem; font-weight: 600;
+      padding: 0.55rem 0.9rem; border-radius: 999px; cursor: pointer; text-decoration: none;
+    }
+    .toolbar .primary { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .brand {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 0.95; margin: 0 0 0.4rem;
+    }
+    .tagline {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-style: italic; color: var(--gold); font-size: 1.25rem; margin: 0 0 1.25rem;
+    }
+    .lede { max-width: 38rem; color: var(--muted); margin: 0 0 1.5rem; }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem;
+      padding: 1rem 0 1.5rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+      font-size: 0.9rem;
+    }
+    .meta strong { display: block; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); }
+    h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400; font-size: 1.7rem; margin: 2rem 0 0.75rem;
+    }
+    h3 { margin: 1.25rem 0 0.4rem; font-size: 1rem; }
+    p, li { color: var(--ink); }
+    .muted { color: var(--muted); }
+    .grid {
+      display: grid; gap: 0.85rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .domain {
+      border-top: 1px solid var(--line);
+      padding: 0.85rem 0;
+    }
+    .domain b { color: var(--teal); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
+    .domain h3 { margin: 0.2rem 0 0.35rem; font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: 1.2rem; }
+    .domain p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+    ul.clean { list-style: none; padding: 0; margin: 0; }
+    ul.clean li {
+      padding: 0.7rem 0; border-bottom: 1px solid var(--line);
+      display: grid; gap: 0.15rem;
+    }
+    ul.clean a { color: var(--teal); font-weight: 600; text-decoration: none; word-break: break-all; }
+    .papers { columns: 1; }
+    .papers li { break-inside: avoid; margin: 0 0 0.45rem; font-size: 0.9rem; color: var(--muted); }
+    .papers li strong { color: var(--ink); font-weight: 600; }
+    .callout {
+      margin-top: 1.5rem; padding: 1.1rem 1.2rem;
+      border: 1px solid var(--line); background: rgba(31,111,98,0.06);
+    }
+    .callout p { margin: 0; }
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+    @media print {
+      body { background: #fff; }
+      .toolbar { display: none; }
+      .page { margin: 0; width: 100%; box-shadow: none; }
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <button class="primary" type="button" onclick="window.print()">Print / Save PDF</button>
+    <a href="./INVENTORY.md">Full inventory</a>
+  </div>
+
+  <article class="page">
+    <p class="brand">Prime Field Technologies</p>
+    <p class="tagline">Harmony, engineered.</p>
+    <p class="lede">
+      Confidential partner brief for discussion of collaboration, consulting, licensing, or joint build.
+      We turn harmonic / spectral mathematics into platforms spanning encryption, prediction, fluid systems, and intelligent products — backed by an aggressive Zenodo research record that takes direct shots at Millennium-class problems.
+    </p>
+
+    <div class="meta">
+      <div><strong>Founder</strong>Jonathan Simons, CRNA</div>
+      <div><strong>Base</strong>Savannah, Georgia</div>
+      <div><strong>Contact</strong>js@primefieldtechnologies.com</div>
+      <div><strong>Web</strong>primefield.tech</div>
+    </div>
+
+    <h2>What we’re about</h2>
+    <p class="muted">
+      Nature prefers coherent structure. The Simons Field Equation and related spectral / prime-lattice operators are the research spine.
+      The company translates that spine into products for security, forecasting, propulsion &amp; turbulence control, human–machine coherence, and medical/AI ventures under Simons Medical Innovations.
+    </p>
+
+    <h2>Domain coverage they asked about</h2>
+    <div class="grid">
+      <div class="domain">
+        <b>Maritime</b>
+        <h3>Flow, hull, turbulence</h3>
+        <p>Navier–Stokes regularity frameworks, spectral energy control, and dispersive correction / regularization for stable flow simulation — the technical lane for ship and ocean systems.</p>
+      </div>
+      <div class="domain">
+        <b>Energy</b>
+        <h3>Spectral energy &amp; load coherence</h3>
+        <p>Energy-cascade and triad structures from the NS stack; coherence under stress as an engineering posture for grids, plants, and dynamic loads.</p>
+      </div>
+      <div class="domain">
+        <b>AI</b>
+        <h3>Products that ship</h3>
+        <p>Solenne (beauty + telehealth AI), Kyrana, FieldPredict platforms, AI Surgeon VR / ProVR adaptive training.</p>
+      </div>
+      <div class="domain">
+        <b>Quantum</b>
+        <h3>Post-quantum + spectral QFT</h3>
+        <p>FieldEncrypt™ positioning for quantum-resistant security; Quantum Lens and prime-manifold QFT papers connecting Millennium problems under one spectral view.</p>
+      </div>
+      <div class="domain">
+        <b>Water</b>
+        <h3>Fluids as first-class systems</h3>
+        <p>3D Navier–Stokes global regularity program, diffuse cascade / triad equidistribution — water and free-surface dynamics as applications of the same operator stack.</p>
+      </div>
+      <div class="domain">
+        <b>Defense</b>
+        <h3>Secure communications &amp; prior dossiers</h3>
+        <p>National-defense facing encryption and secure-comms work; prior government materials available under NDA for joint evaluation.</p>
+      </div>
+    </div>
+
+    <h2>Live proof (clickable)</h2>
+    <ul class="clean">
+      <li>
+        <span>Company</span>
+        <a href="https://primefield.tech/" target="_blank" rel="noopener">https://primefield.tech/</a>
+      </li>
+      <li>
+        <span>Book / SFE</span>
+        <a href="https://www.theharmonicblueprint.com/" target="_blank" rel="noopener">https://www.theharmonicblueprint.com/</a>
+      </li>
+      <li>
+        <span>ExoRatio — primes in planetary orbits</span>
+        <a href="https://exo-ratio-014dea2d.base44.app/" target="_blank" rel="noopener">https://exo-ratio-014dea2d.base44.app/</a>
+      </li>
+      <li>
+        <span>Primefield Explorer — spectral / RH visualization</span>
+        <a href="https://sfe-rh-explorer-v1-07f8121c.base44.app/" target="_blank" rel="noopener">https://sfe-rh-explorer-v1-07f8121c.base44.app/</a>
+      </li>
+      <li>
+        <span>Solenne — AI beauty &amp; care</span>
+        <a href="https://solenne.base44.app/" target="_blank" rel="noopener">https://solenne.base44.app/</a>
+      </li>
+    </ul>
+
+    <h2>Research intensity (Zenodo)</h2>
+    <p class="muted">
+      Author depositions under Jonathan Simons / Jonathan R. Simons / Jonathan Robert Simons, including Prime Field affiliation.
+      Collection: <a href="https://zenodo.org/search?q=creators.name%3A%22Simons%2C%20Jonathan%22" target="_blank" rel="noopener">Zenodo author search</a>.
+    </p>
+    <ol class="papers">
+      <li><strong>The Quantum Lens</strong> — spectral framework connecting Millennium Prize problems</li>
+      <li><strong>GCD Spectral Attractor</strong> — unified structure for Navier–Stokes, Riemann, and the Simons Field Equation</li>
+      <li><strong>Q_N Operator</strong> — spectral floor route toward the Riemann Hypothesis</li>
+      <li><strong>QFT on the Prime Manifold</strong> — NS, Riemann, and Goldbach under one Hamiltonian</li>
+      <li><strong>Q6 → Strong Goldbach</strong> — spectral non-concentration route</li>
+      <li><strong>BSD Hamiltonian prototype</strong> — prime lattice / Birch–Swinnerton-Dyer</li>
+      <li><strong>Multiple Navier–Stokes regularity papers</strong> — spectral non-concentration, Ring Lemma, Borromean triads, Φ-renormalization, diffuse cascade</li>
+      <li><strong>Ramanujan–Möbius / Montgomery–Dyson</strong> — prime-lattice spectral identities</li>
+    </ol>
+    <p class="muted">Full titled inventory ships with this packet (<code>INVENTORY.md</code>). Additional technical PDFs (including maritime/energy application notes and prior government submissions) available under NDA.</p>
+
+    <h2>Inventions &amp; IP (summary)</h2>
+    <ul>
+      <li><strong>NAV-42 Adaptive Lattice</strong> — turbulence / drag coating (missiles, drones, naval) — provisional (claims in progress) · <a href="https://nav-42.replit.app/" target="_blank" rel="noopener">nav-42.replit.app</a></li>
+      <li>Hollow-base holographic projection over a charging cradle — patented / patent-pending (claims under NDA)</li>
+      <li>ProVR Tools — patent-pending haptic training instruments + adaptive AI</li>
+      <li>FieldEncrypt™ architecture and secure-communications stack</li>
+      <li>Medical AI / device lineage via Simons Medical Innovations and prior clinical practice</li>
+    </ul>
+
+    <div class="callout">
+      <p><strong>Suggested next step.</strong> Short call to lock collaboration shape — consulting advisory, content/IP licensing, joint build, or employment-style engagement. I can open a shared vault with Zenodo PDFs, demos, patent abstracts, and defense materials once we agree how we’re working together.</p>
+    </div>
+
+    <footer>
+      © Prime Field Technologies, LLC · Savannah, GA · js@primefieldtechnologies.com · Prepared as a partner brief, not a public dump of claim text or controlled materials.
+    </footer>
+  </article>
+</body>
+</html>
