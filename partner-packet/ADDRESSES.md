@@ -5,6 +5,13 @@ One place for live links, grouped by category.
 
 ---
 
+## Jump — after “I have a lot of stuff”
+
+Paste-ready **who we are + a few**: `partner-packet/OUTREACH.md` → section *After “I have a lot of stuff”*.  
+Default three: Field Lock · Maritime Coherence Dashboard · NAV-42. Swap third by lane.
+
+---
+
 ## 0. How this is organized
 
 | Group | What it is |
