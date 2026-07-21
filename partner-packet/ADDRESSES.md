@@ -13,6 +13,7 @@ One place for live links, grouped by category.
 | **B. Military / defense** | Dual-use, DIU, secure systems |
 | **C. Quantum** | Encryption, spectral / QFT research |
 | **D. AI** | Products and platforms |
+| **D2. Clinical / OR** | Vigilance, training, medical-adjacent |
 | **E. Energy** | Spectral energy, load / coherence |
 | **F. Water** | Fluids, NS, water systems |
 | **G. Natural resources** | O₂ / atmosphere / verification tools |
@@ -77,6 +78,17 @@ Reusable code — not full product UIs. Often Replit / private repos.
 | FieldPredict™ / financial coherence app | _______________ (you have it — paste public URL) |
 | AI Surgeon VR | Animation script: `partner-packet/AI-SURGEON-VR-animation-script.md` · playable: _______________ |
 | Sports coherence | Not built yet · coherence video is the explainer |
+
+---
+
+## D2. Clinical / OR
+
+| Name | Address |
+| --- | --- |
+| **Vigilant Patch** (BIS-class vigilance · minutes of pre-recognition · multimodal) | brief: `partner-packet/VIGILANT-PATCH.md` · patent/FDA path ahead · _______________ |
+| ProVR haptic training tools | patent pending · _______________ |
+| AI Surgeon VR | Animation script: `partner-packet/AI-SURGEON-VR-animation-script.md` · playable: _______________ |
+| Solenne | https://solenne.base44.app/ |
 
 ---
 

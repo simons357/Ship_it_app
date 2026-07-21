@@ -97,6 +97,7 @@ Keep equations and recipes off the public site. Partners get: *we can score conc
 - That a single universal number replaces domain data (maritime still needs vessels/routes/environment; finance still needs its signals).
 - That “coherence video” alone is a product — it **explains** the measurable; the dashboard / app **computes** it.
 - That EEG earphones / Music OS **diagnose or treat** medical conditions — list as **experimentation** only until cleared otherwise.
+- That Vigilant Patch is **FDA-cleared**, prevents awareness, or **is** BIS — say BIS-*class* job + pre-recognition concept until counsel and data say more.
 
 ---
 
@@ -115,6 +116,7 @@ Keep equations and recipes off the public site. Partners get: *we can score conc
 | **Financial app** | You have it | Same index → money / regime alignment (link when you paste URL) |
 | **EEG earphones** | Experimental hardware | Capture brain bands for coherence experiments |
 | **Music OS for your brain** | Experimental software | Sound / protocol layer paired with EEG earphones |
+| **Vigilant Patch** | Clinical concept | BIS-class vigilance + minutes of pre-recognition + multimodal systems |
 | **Sports** | Not built | Same idea; **coherence video** is the explainer until the app exists |
 | Stack / internals | Black box | How \(C\) is computed stays vaulted |
 
