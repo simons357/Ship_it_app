@@ -83,7 +83,7 @@ Tableside AquaQuarts can sit next to the water / coherence lane as **ritual cohe
 
 | Item | Value |
 | --- | --- |
-| Public brand URL | _______________ |
+| Public brand URL | [`aquaquarts.html`](../aquaquarts.html) (leather-tag destination) |
 | Decanter render / photo | _______________ |
 | Patent counsel / filing target date | _______________ |
 | Cherokee partner contact (private) | _______________ |
