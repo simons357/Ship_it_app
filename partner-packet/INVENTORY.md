@@ -12,10 +12,15 @@ X: [@jrsimons357](https://x.com/jrsimons357) · LinkedIn: [prime-field-technolog
 
 ## 1. Live sites & demos (send these)
 
+**Confirmed public for strangers (2026-07-21):** Field Lock · NAV-42 · Harmonic Blueprint.  
+**Base44 / primefield.tech:** permission error for strangers — see `BASE44-PUBLIC.md`.
+
 | Asset | URL | Domain tags |
 | --- | --- | --- |
-| Prime Field Technologies | https://primefield.tech/ | Company · Propulsion · Turbulence · Comms · Coherence |
+| **Field Lock** (Learning Kiosk) | https://field-lock.replit.app/ | Presence-bound keys · PUF/CTW NDA |
+| **NAV-42 Adaptive Lattice** | https://nav-42.replit.app/ | Coating · Provisional |
 | The Harmonic Blueprint | https://www.theharmonicblueprint.com/ | SFE · Physics · Book |
+| Prime Field Technologies | https://primefield.tech/ · **Base44 gated** | Company |
 | ExoRatio | url on file · **Base44 gated** | Research app · Primes · Orbits |
 | Primefield Explorer (SFE–RH) | url on file · **Base44 gated** | Research app · Riemann · Spectral fields |
 | Solenne | https://solenne.base44.app/ · **Base44 gated** | AI · Beauty · Telehealth |
