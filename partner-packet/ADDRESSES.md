@@ -49,6 +49,7 @@ Reusable code — not full product UIs. Often Replit / private repos.
 | SpectraLock (spectral locking lane) | pairs with Field Lock · _______________ |
 | **HoloBase** (hollow-base holographic cradle) | design · not yet filed · _______________ |
 | **NAV-42 Adaptive Lattice** (turbulence reduction coating) | https://nav-42.replit.app/ · **provisional** (claims still being built) — #: _______________ |
+| **NAV-42 Industrial** (refinery / process pipe coating lane) | brief: `partner-packet/NAV42-INDUSTRIAL-PIPES.md` · lead job: flow efficiency |
 | DIU / dual-use package | NDA |
 | Secure communications (company page) | https://primefield.tech/ |
 

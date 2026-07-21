@@ -94,6 +94,7 @@ Author search on Zenodo returns a large set under Prime Field affiliation.
 | **Maritime / supply chain** | **Maritime Coherence Dashboard** — https://maritime-coherence-dashboard-100b68c0.base44.app/ · letter in `/Resources` · Harmonic Insights tuning | **NAV-42** surface path (drag) if coatings matter; NS papers |
 | **Energy** | Spectral energy / NS stack (Zenodo); company turbulence & coherence framing | Same fluid papers; **dedicated energy letter/app URL not found publicly yet** |
 | **Military / defense / drag surfaces** | **NAV-42 Adaptive Lattice** — https://nav-42.replit.app/ (**provisional**; claims still being built) | Field Lock, FieldEncrypt, DIU vault (NDA) |
+| **Industrial / refinery pipes** | **NAV-42 Industrial** — same lattice coating family · lead with **flow / pump energy** | `NAV42-INDUSTRIAL-PIPES.md` · metered pilot · don’t lead with untested corrosion |
 | **AI** | Solenne, Kyrana, AI Surgeon VR, FieldPredict | Adaptive learning / telehealth / prediction platforms |
 | **Clinical / OR** | **Vigilant Patch** (BIS-class vigilance + pre-recognition) | CRNA practice lineage · ProVR · Solenne · `VIGILANT-PATCH.md` |
 | **Quantum** | FieldEncrypt™ (post-quantum posture); Quantum Lens; QFT on Prime Manifold | Zenodo Q-series |
