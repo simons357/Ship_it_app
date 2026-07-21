@@ -30,8 +30,8 @@ Use this wording everywhere. Do not dilute it into “vibes,” “harmony,” o
    Alignment of vessels, routes, and environments. Ops decision support.
 2. **Finance (you have the app)** — FieldPredict / financial coherence  
    Alignment of signals, positions, and regimes; scenario impact on money.
-3. **Presence / security (live)** — Field Lock  
-   Human–machine coherence: the key stays bound to *who is actually there*.
+3. **Presence / security (named · demo URL blank)** — Field Lock  
+   Human–machine coherence: the key stays bound to *who is actually there*. Don’t cold-send the empty public page.
 4. **Sports (not built yet)** — same index idea; you have the **coherence video** as the visual explainer until the app ships.
 5. **Physics spine (papers)** — spectral non-dispersal / energy cascade work: when energy and modes stay concentrated vs blow apart (theory under water / fluids).
 
@@ -111,7 +111,7 @@ Keep equations and recipes off the public site. Partners get: *we can score conc
 
 | Surface | Status | Coherence role |
 | --- | --- | --- |
-| **Field Lock** | Live | Presence-bound keys = human–machine coherence |
+| **Field Lock** | Named · demo URL blank | Presence-bound keys = human–machine coherence |
 | **Maritime Coherence Dashboard** | Live | Ops coherence index across vessels / routes / environments |
 | **Financial app** | You have it | Same index → money / regime alignment (link when you paste URL) |
 | **EEG earphones** | Experimental hardware | Capture brain bands for coherence experiments |
@@ -128,4 +128,4 @@ Keep equations and recipes off the public site. Partners get: *we can score conc
 - Maritime main: https://maritime-coherence-dashboard-100b68c0.base44.app/MaritimeCoherence
 - Harmonic Insights: https://maritime-coherence-dashboard-100b68c0.base44.app/HarmonicInsights
 - Theory letter: https://maritime-coherence-dashboard-100b68c0.base44.app/Resources
-- Field Lock: https://primefield.tech/field-lock
+- Field Lock: **demo URL blank** — do not send `primefield.tech/field-lock` (empty shell)

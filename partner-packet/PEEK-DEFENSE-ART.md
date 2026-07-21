@@ -10,7 +10,7 @@ Titles and jobs — **not** claim text, BOMs, or controlled attachments.
 
 | Peek card | Public surface | Deeper under NDA |
 | --- | --- | --- |
-| **Field Lock** | Presence-bound keys · https://primefield.tech/field-lock | Architecture, threat model |
+| **Field Lock** | Presence-bound keys · **demo URL blank** (`primefield.tech/field-lock` is empty — don’t cold-link) | Architecture, threat model |
 | **FieldEncrypt™** | Post-quantum posture (name + dual-use framing) | Stack, DIU package |
 | **NAV-42 Adaptive Lattice** | Drag / turbulence coating demo · https://nav-42.replit.app/ · provisional | Spec sheet, recipe, claims |
 | **Secure communications** | Company lane · https://primefield.tech/ | Prior gov materials |
@@ -46,7 +46,7 @@ Art is a first-class lane — same spectral spine, different surface.
 ## Suggested cold stack for a defense+art intro
 
 1. Peek list above (this file)  
-2. Live: Field Lock · NAV-42 · ExoRatio or Explorer  
+2. Live: NAV-42 · ExoRatio or Explorer (Field Lock = name only until demo URL works)  
 3. Offer: “DIU / prior gov dossier + DNASonifiers vault under NDA”
 
 Skip Vigilant clinical detail and AquaQuarts process on a first defense touch unless they ask.

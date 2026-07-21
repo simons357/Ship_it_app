@@ -75,16 +75,16 @@ I’m Jonathan Simons — CRNA (25+ years, including owning Winchester Anesthesi
 **What we do.**  
 We take spectral / harmonic research — **resonance and coherence** — and ship it as working systems: secure presence-bound access, ops dashboards, prediction / finance surfaces, and applied coatings where drag and flow matter. Some pieces are live; some IP is provisional on purpose. Stack detail stays under NDA until there’s a reason to open it.
 
-**A few to look at:**
+**A few to look at** (only links that actually open something):
 
-1. **Field Lock** — presence-bound keys / secure field access  
-   https://primefield.tech/field-lock
-
-2. **Maritime Coherence Dashboard** — live ops + Harmonic Insights + the Resources letter  
+1. **Maritime Coherence Dashboard** — live ops + Harmonic Insights + the Resources letter  
    https://maritime-coherence-dashboard-100b68c0.base44.app/
 
-3. **NAV-42 Adaptive Lattice** — turbulence / drag coating (provisional; demo)  
+2. **NAV-42 Adaptive Lattice** — turbulence / drag coating (provisional; demo)  
    https://nav-42.replit.app/
+
+3. **ExoRatio** — primes × orbital ratios (visual research surface)  
+   https://exo-ratio-014dea2d.base44.app/
 
 If one of those lands, tell me which — I’ll send the next layer for *that* lane only (pilot framing, NDA pack, or a focused call). No need to tour the rest until you care.
 
@@ -93,10 +93,12 @@ Prime Field Technologies, LLC
 js@primefieldtechnologies.com  
 https://primefield.tech/
 
-**Optional fourth** (only if they asked for “something I can click that isn’t defense”):  
-**ChatVault** — https://primefield.tech/chatvault
+**Do not cold-send right now:**  
+- **Field Lock** — `primefield.tech/field-lock` is an empty shell (looks like a 404). Name it on a call / under NDA until a real demo URL is pasted.  
+- **ChatVault** — same problem on `primefield.tech/chatvault`.  
+- Full inventory, AquaQuarts (unless they asked luxury water), Vigilant medical claims, recipe/BOM, DIU dossier.
 
-**Do not attach on this send:** full inventory, AquaQuarts (unless they asked luxury water), Vigilant Patch medical claims, recipe/BOM, DIU dossier.
+**Default three:** Maritime · NAV-42 · ExoRatio (or Primefield Explorer). Swap #2 → industrial brief if they asked pipes.
 
 ---
 

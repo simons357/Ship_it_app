@@ -8,7 +8,8 @@ One place for live links, grouped by category.
 ## Jump — after “I have a lot of stuff”
 
 Paste-ready **who we are + a few**: `partner-packet/OUTREACH.md` → section *After “I have a lot of stuff”*.  
-Default three: Field Lock · Maritime Coherence Dashboard · NAV-42. Swap third by lane.
+Default three: Maritime Coherence Dashboard · NAV-42 · ExoRatio.  
+**Do not cold-send:** Field Lock / ChatVault on primefield.tech — empty shells until real demo URLs are pasted.
 
 ---
 
@@ -52,7 +53,7 @@ Reusable code — not full product UIs. Often Replit / private repos.
 | Name | Address |
 | --- | --- |
 | FieldEncrypt™ | _______________ |
-| Field Lock (presence-bound keys) | https://primefield.tech/field-lock |
+| Field Lock (presence-bound keys) | **public URL empty** — `primefield.tech/field-lock` is a hollow shell · paste live demo: _______________ |
 | SpectraLock (spectral locking lane) | pairs with Field Lock · _______________ |
 | **HoloBase** (hollow-base holographic cradle) | design · not yet filed · _______________ |
 | **NAV-42 Adaptive Lattice** (turbulence reduction coating) | https://nav-42.replit.app/ · **provisional** (claims still being built) — #: _______________ |
@@ -78,7 +79,7 @@ Reusable code — not full product UIs. Often Replit / private repos.
 
 | Name | Address |
 | --- | --- |
-| ChatVault — the Evernote of AI conversations | https://primefield.tech/chatvault |
+| ChatVault — the Evernote of AI conversations | **public URL empty** — `primefield.tech/chatvault` hollow · paste live: _______________ |
 | Solenne | https://solenne.base44.app/ |
 | EEG earphones (experiment kit) | _______________ |
 | Music OS for your brain | _______________ |
