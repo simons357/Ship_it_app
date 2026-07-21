@@ -14,7 +14,24 @@
 
 > For people who cannot afford to fall asleep. Ever.
 
-OR · ICU · watchstanding · any post where a missed minute is the whole story. Not a lifestyle wearable. Not a nap gadget. Vigilance with lead time.
+OR · ICU · **drivers** · watchstanding · any post where a missed minute is the whole story. Not a lifestyle wearable. Not a nap gadget. Vigilance with lead time.
+
+---
+
+## Core behavior (public UX — methods black-boxed)
+
+**Catch the slide before the person feels it.**
+
+| Beat | What happens |
+| --- | --- |
+| 1 | Trajectory moves from **beta-class** (alert) toward **delta-class** (sleep-bound) |
+| 2 | The driver / operator **doesn’t know yet** — subjectively still “fine” |
+| 3 | Patch **counts down** and **estimates the trajectory** |
+| 4 | Enough signal to say: **you are going to sleep** — with minutes of pre-recognition |
+
+Public language may say beta → delta as the familiar EEG story. Exact detectors, thresholds, and fusion math stay vaulted.
+
+Same idea as maritime: instability is already starting before the failure is obvious.
 
 ---
 
@@ -48,7 +65,9 @@ Same coherence language as maritime / Field Lock: alignment holds → stable; al
 | Measurable | Plain meaning |
 | --- | --- |
 | **Vigilance / depth index** | Current estimated state (BIS-*class* job, own math black-boxed) |
-| **Pre-recognition lead time** | Minutes of warning before a threshold event |
+| **Band trajectory** | Slide from beta-class alert toward delta-class sleep-bound |
+| **Trajectory countdown** | Estimated time-to-sleep / time-to-threshold while the person still feels awake |
+| **Pre-recognition lead time** | Minutes of warning before a threshold event or subjective awareness |
 | **Decoherence rate** | How fast multi-system alignment is falling apart |
 | **Multi-system contributions** | Which channels (EEG band set, autonomic, motion, etc.) drive the drop |
 | **Alert latency vs baseline** | Patch warning vs traditional index move (validation study metric) |
@@ -95,7 +114,7 @@ One term. Different surfaces.
 
 ## Partner one-liner
 
-> Vigilant Patch — for people who cannot afford to fall asleep. Ever. CRNA-designed wearable vigilance with BIS-class depth awareness, minutes of pre-recognition, and multimodal system scoring. Patent and regulatory path still ahead; methods black-boxed.
+> Vigilant Patch — for people who cannot afford to fall asleep. Ever. Catches the slide from beta toward delta before the driver even knows; counts down and estimates the trajectory — enough to tell you are going to sleep. CRNA-designed; patent and regulatory path ahead; methods black-boxed.
 
 ---
 
