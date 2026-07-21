@@ -15,9 +15,9 @@ Lean portfolio site: **Focus** (five lead pieces) + **Catalog** (everything else
 python3 -m http.server 8080
 ```
 
-## Partner materials
+## Stack posture
 
-[`partner-packet/`](partner-packet/)
+**Black box for now.** The site shows public surface (live links + named concepts), not internals, recipes, claim language, or enabling drawings. Share stack detail under NDA or after filing.
 
 ## Contact
 
