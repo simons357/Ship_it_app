@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jonathan Simons — Prime Field Technologies — One Pager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0c2e36;
+      --mute: #3d5a62;
+      --line: rgba(12, 46, 54, 0.16);
+      --sea: #1b8f8a;
+      --paper: #f6fbfc;
+      --band: #e8f1f3;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #9aabaf;
+      color: var(--ink);
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      font-size: 11.5px;
+      line-height: 1.45;
+    }
+    .bar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      padding: 0.55rem 0.8rem;
+      background: rgba(246, 251, 252, 0.96);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    .bar button {
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: #fff;
+      font: inherit;
+      font-weight: 600;
+      padding: 0.45rem 0.85rem;
+      cursor: pointer;
+    }
+    .sheet {
+      width: 8.5in;
+      max-width: 100%;
+      min-height: 11in;
+      margin: 0.7rem auto;
+      background: var(--paper);
+      padding: 0.62in 0.68in;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14);
+    }
+    .brand {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: var(--sea);
+      margin: 0 0 0.25rem;
+    }
+    h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: 34px;
+      font-weight: 400;
+      margin: 0;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .tag {
+      margin: 0.45rem 0 0;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .who {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 0.75rem;
+      margin: 0.85rem 0 0.9rem;
+      padding: 0.55rem 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .who p { margin: 0; color: var(--mute); }
+    .who strong { color: var(--ink); }
+    h2 {
+      margin: 0.85rem 0 0.3rem;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sea);
+      font-weight: 700;
+    }
+    p { margin: 0 0 0.4rem; color: var(--mute); max-width: 7in; }
+    .stand {
+      background: var(--band);
+      border-left: 3px solid var(--sea);
+      padding: 0.55rem 0.65rem;
+      margin: 0.35rem 0 0.2rem;
+    }
+    .stand p { margin: 0; color: var(--ink); font-size: 12.5px; }
+    .cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 1rem;
+    }
+    ul {
+      margin: 0.2rem 0 0;
+      padding-left: 1rem;
+      color: var(--mute);
+    }
+    li { margin: 0.22rem 0; }
+    a {
+      color: var(--sea);
+      font-weight: 600;
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .examples {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.25rem;
+    }
+    .examples th,
+    .examples td {
+      text-align: left;
+      vertical-align: top;
+      padding: 0.32rem 0.35rem 0.32rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .examples th {
+      font-size: 9.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mute);
+    }
+    .examples .name { font-weight: 700; color: var(--ink); }
+    .foot {
+      margin-top: 0.95rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 0.75rem;
+      color: var(--mute);
+      font-size: 10.5px;
+    }
+    .foot strong { color: var(--ink); }
+    @media print {
+      body { background: #fff; }
+      .bar { display: none; }
+      .sheet { box-shadow: none; margin: 0; width: 100%; min-height: auto; }
+    }
+    @media (max-width: 720px) {
+      .who, .cols, .foot { grid-template-columns: 1fr; }
+      .sheet { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <button type="button" onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <article class="sheet">
+    <p class="brand">Prime Field Technologies, LLC</p>
+    <h1>Jonathan Simons</h1>
+    <p class="tag">I manage complexity.</p>
+
+    <div class="who">
+      <p>
+        <strong>Who</strong><br />
+        CRNA · 25+ years clinical anesthesia (incl. trauma)<br />
+        Founder, Prime Field Technologies &amp; Simons Medical Innovations<br />
+        Savannah, Georgia
+      </p>
+      <p>
+        <strong>Contact</strong><br />
+        <a href="mailto:js@primefieldtechnologies.com">js@primefieldtechnologies.com</a><br />
+        <a href="https://primefield.tech/" target="_blank" rel="noopener">primefield.tech</a><br />
+        <a href="https://www.theharmonicblueprint.com/" target="_blank" rel="noopener">theharmonicblueprint.com</a>
+      </p>
+    </div>
+
+    <h2>What we stand for</h2>
+    <div class="stand">
+      <p>
+        No bullshit at the moment of action. Clear paths for operators in high-stakes environments.
+        Public work you can open. Depth under NDA when there’s a real reason.
+      </p>
+    </div>
+
+    <h2>What we do</h2>
+    <p>
+      We turn <strong>signal detection, complex operations, and harmonic / spectral mathematics</strong>
+      into working systems — so people can see state early, act in a fast loop, and stay clear when
+      the environment gets loud.
+    </p>
+    <p>
+      In two words: <strong>complexity management</strong>.
+      From the OR to software, coatings, prediction, and secure systems — same spine.
+    </p>
+
+    <div class="cols">
+      <div>
+        <h2>How we do it</h2>
+        <ul>
+          <li>Determine state before path</li>
+          <li>Real-time adaptive loops</li>
+          <li>Custom layers on a standard process</li>
+          <li>Mode-shaped interfaces (calm → crisis)</li>
+          <li>Decision options from many scenario runs</li>
+          <li>Math under the loop — not slide-deck theater</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Who builds it</h2>
+        <ul>
+          <li>Founder-led: Jonathan Simons, CRNA</li>
+          <li>Supported by an <strong>extensive AI team</strong> for research, build, and iteration speed</li>
+          <li>Human operator stays responsible for the call</li>
+          <li>Vault / IP / defense detail: NDA when fit is real</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Examples you can open</h2>
+    <table class="examples">
+      <thead>
+        <tr>
+          <th>Lane</th>
+          <th>Example</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">Company</td>
+          <td>Prime Field Technologies</td>
+          <td><a href="https://primefield.tech/" target="_blank" rel="noopener">primefield.tech</a></td>
+        </tr>
+        <tr>
+          <td class="name">Field / book</td>
+          <td>The Harmonic Blueprint</td>
+          <td><a href="https://www.theharmonicblueprint.com/" target="_blank" rel="noopener">theharmonicblueprint.com</a></td>
+        </tr>
+        <tr>
+          <td class="name">App</td>
+          <td>Field Lock — presence-bound keys</td>
+          <td><a href="https://field-lock.replit.app/" target="_blank" rel="noopener">field-lock.replit.app</a></td>
+        </tr>
+        <tr>
+          <td class="name">IP / demo</td>
+          <td>NAV-42 Adaptive Lattice (provisional)</td>
+          <td><a href="https://nav-42.replit.app/" target="_blank" rel="noopener">nav-42.replit.app</a></td>
+        </tr>
+        <tr>
+          <td class="name">AI</td>
+          <td>Kyrana — quiet oracle demo</td>
+          <td><a href="https://github.com/simons357/kyrana-oracle" target="_blank" rel="noopener">github.com/simons357/kyrana-oracle</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="foot">
+      <div>
+        <strong>Send this when they ask:</strong> Who are you? What’s the company?
+        What do you stand for? What do you do?<br />
+        One page. Live examples. Depth on request.
+      </div>
+      <div>
+        <strong>Next step:</strong> short call after they’ve opened one link —
+        or NDA if they need the vault.
+      </div>
+    </div>
+  </article>
+</body>
+</html>
