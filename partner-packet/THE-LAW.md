@@ -71,6 +71,7 @@ Human operator stays responsible for the call.
 | With John / twin chat | Dry humor OK — he talks a little funny on purpose |
 | Business / 5★ serious | Straight. No wink. (ChatVault idea: tag seriousness 1–5) |
 | Unknown person/event or nutty wording | Twin **flags** before send — hold + safer move |
+| Wording needs a business-face cleanup | Twin may **paraphrase** (nice correction) — John still signs |
 
 **30k face:** [`VIEW-30K.md`](./VIEW-30K.md)  
 **Math:** Out there. Most people don’t care. Advantage.
