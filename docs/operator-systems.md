@@ -7,6 +7,27 @@ You don’t “run” them like a script. You **determine their state**, then dr
 That’s anesthesia.  
 That’s also the architecture.
 
+And this isn’t a new invention in a vacuum. **It has been studied** — in pilots, anesthesiologists, air traffic controllers, and other operators who live inside fast loops with incomplete information. You already have training in that lineage. Weather and anomaly apps are part of the same family: foresight layers that try to say “something’s about to hit the envelope” before the operator is underwater.
+
+---
+
+## 0. The studied lineage (you’re not making this up)
+
+High-stakes operator work has a real research and training tradition. Different names, same problem: **keep a human effective inside a complex system when time is short.**
+
+| Domain | What they trained into people | Product echo |
+| --- | --- | --- |
+| **Aviation / pilots** | CRM, checklists, sterile cockpit, upset recovery, weather decision-making | Standard loop + emergency mode + clear options |
+| **Anesthesia** | Vigilance, crisis manuals, closed-loop monitoring, simulation | State → loop → custom layers → crisis UI |
+| **Air traffic control** | Attention allocation, strip/scan discipline, anomaly handoff | Only the info you need; shed the rest under load |
+| **Human factors / HFACS** | How attention, interface, and org design cause or prevent failure | UI that changes with overwhelm |
+| **Resilience engineering** | Success under variability, not just “follow the binder” | Custom on top of standard; recover, don’t freeze |
+| **Weather / anomaly prediction** | Forecast envelopes, alerts before the hit | Parameter hold + “about to be overwhelmed” trigger |
+
+So when you say *determine state → fast loop → custom layers → emergency mode → decision augmentation*, you’re speaking fluent operator systems — the same dialect as the cockpit and the tower, applied to whatever complex environment you’re in (including a personal archivist / Ship it loop at lower stakes).
+
+**Weather and anomaly apps** are the foresight slice: they don’t fly the plane for you; they widen the moment where you can still choose. That’s the same job as a good “drift / event” detector before emergency mode flips the knobs big and the bullshit off.
+
 ---
 
 ## 1. The story you can tell out loud
@@ -207,6 +228,15 @@ The anesthesia story teaches the product. The product practices the story at low
 - [Complexity management](./complexity-management.md) — vocabulary, chaos vs decoherence, reading list  
 - [Help](./HELP.md) — current Ship it user path  
 
+### Extra reading in *your* training neighborhood
+
+- Aviation CRM / threat-and-error management materials  
+- Anesthesia crisis resource management (ACRM) and OR simulation literature  
+- ATC human-factors attention studies  
+- Cook — “How Complex Systems Fail”  
+- Gawande — *The Checklist Manifesto*  
+- Weather decision support / anomaly alerting product patterns (forecast → envelope → alert → operator choice)
+
 ---
 
-*This is the story spine. Anesthesia is the proof you already live it. Ship it is the practice field. Operator systems is the name of the stack.*
+*This is the story spine. Anesthesia is the proof you already live it. Pilots and controllers studied the same bones. Ship it is the practice field. Operator systems is the name of the stack.*
