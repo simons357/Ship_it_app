@@ -12,6 +12,8 @@
       --mute: #555;
       --paper: #f7f4ef;
       --rx: #9b1c1c;
+      --band: #e8e2d8;
+      --ok: #0f6a66;
     }
     * { box-sizing: border-box; }
     body {
@@ -24,17 +26,17 @@
       max-width: 7in;
       margin: 0.75rem auto 0;
       color: #ccc;
-      font: 13px/1.4 system-ui, sans-serif;
+      font: 13px/1.45 system-ui, sans-serif;
       padding: 0 0.5rem;
     }
+    .hint strong { color: #fff; }
     .pad {
       width: min(7in, 100%);
       margin: 0.75rem auto 1.5rem;
       background: var(--paper);
       border: 2px solid var(--line);
-      padding: 0.45in 0.5in;
+      padding: 0.4in 0.45in;
       box-shadow: 0 10px 28px rgba(0,0,0,0.35);
-      min-height: 9in;
     }
     .top {
       display: grid;
@@ -42,7 +44,7 @@
       gap: 0.5rem;
       border-bottom: 2px solid var(--line);
       padding-bottom: 0.4rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.45rem;
     }
     .who strong {
       display: block;
@@ -60,92 +62,145 @@
       height: 3rem;
       display: grid;
       place-items: center;
-      line-height: 1;
     }
-    .row {
-      display: grid;
-      grid-template-columns: 5.5rem 1fr;
-      gap: 0.35rem;
-      margin: 0.35rem 0;
-      align-items: end;
+    .howto {
+      background: #fff;
+      border: 1.5px solid var(--line);
+      padding: 0.4rem 0.45rem;
+      margin-bottom: 0.55rem;
+      font-family: system-ui, sans-serif;
+      font-size: 12px;
+      line-height: 1.4;
     }
-    .row label {
+    .howto ol { margin: 0.25rem 0 0; padding-left: 1.2rem; }
+    .field {
+      margin: 0.45rem 0;
+    }
+    .field > label {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
       font-size: 9px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--mute);
-      padding-bottom: 0.15rem;
+      margin-bottom: 0.2rem;
     }
-    .line {
-      border: none;
-      border-bottom: 1.5px solid var(--line);
-      background: transparent;
-      font: inherit;
-      padding: 0.2rem 0.1rem;
+    .press-hint {
+      text-transform: none;
+      letter-spacing: 0;
+      color: var(--ok);
+      font-size: 10px;
+      font-family: system-ui, sans-serif;
+    }
+    select, input.line, textarea.line {
       width: 100%;
-      color: var(--ink);
-    }
-    .box {
-      margin-top: 0.6rem;
       border: 1.5px solid var(--line);
-      min-height: 3.2in;
-      padding: 0.4rem;
       background: #fff;
+      font: inherit;
+      padding: 0.45rem 0.4rem;
+      color: var(--ink);
+      border-radius: 0;
     }
-    .box label {
+    select {
+      font-family: system-ui, sans-serif;
+      font-size: 13px;
+      min-height: 2.5rem;
+    }
+    textarea.line {
+      min-height: 5.5rem;
+      resize: vertical;
+    }
+    .help {
+      display: none;
+      margin-top: 0.3rem;
+      padding: 0.4rem 0.45rem;
+      background: var(--band);
+      border: 1px solid var(--line);
+      font-family: system-ui, sans-serif;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    .help.is-open { display: block; }
+    .help b { display: block; margin-bottom: 0.15rem; }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.65rem;
+    }
+    button {
+      font: 600 12px/1 system-ui, sans-serif;
+      border: 1.5px solid var(--line);
+      background: #fff;
+      padding: 0.65rem 0.8rem;
+      cursor: pointer;
+    }
+    button.primary {
+      background: var(--ink);
+      color: #fff;
+    }
+    button.stat {
+      border-color: var(--rx);
+      color: var(--rx);
+    }
+    .out {
+      display: none;
+      margin-top: 0.65rem;
+      border: 2px solid var(--line);
+      background: #fff;
+      padding: 0.5rem;
+    }
+    .out.is-open { display: block; }
+    .out label {
       display: block;
       font-size: 9px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--mute);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.3rem;
     }
-    textarea.line {
-      border: none;
-      border-bottom: none;
-      min-height: 2.6in;
-      resize: vertical;
-      outline: none;
-    }
-    .sig-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.6rem;
-      margin-top: 0.75rem;
+    .out pre {
+      margin: 0;
+      white-space: pre-wrap;
+      font: 11px/1.4 "IBM Plex Mono", Menlo, monospace;
     }
     .checks {
-      margin-top: 0.6rem;
-      font-size: 11px;
+      margin-top: 0.5rem;
+      font-family: system-ui, sans-serif;
+      font-size: 12px;
     }
-    .checks div { margin: 0.2rem 0; }
+    .checks div { margin: 0.25rem 0; }
     footer {
-      margin-top: 0.75rem;
+      margin-top: 0.7rem;
       border-top: 1.5px solid var(--line);
       padding-top: 0.4rem;
       font-size: 9px;
       color: var(--mute);
     }
-    .priority {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin: 0.5rem 0;
-      font-size: 11px;
+    .toast {
+      display: none;
+      margin-top: 0.4rem;
+      color: var(--ok);
+      font-family: system-ui, sans-serif;
+      font-size: 12px;
     }
+    .toast.is-on { display: block; }
     @media print {
       body { background: #fff; }
-      .hint { display: none; }
-      .pad { box-shadow: none; margin: 0; width: 100%; }
+      .hint, .howto, .actions, .help, .toast { display: none !important; }
     }
   </style>
 </head>
 <body>
   <p class="hint">
-    <strong>Order pad</strong> — fill like a prescription, screenshot/send, or print PDF.
-    Twin carries it out per standing orders.
+    <strong>Order pad with menus.</strong>
+    Pick from the dropdowns. If you’re not sure — choose “Not sure…” or
+    <strong>press and hold</strong> any field for plain instructions.
+    Then tap <strong>Build order</strong> and paste into chat.
   </p>
 
-  <form class="pad" aria-label="Prescription-style order pad">
+  <form class="pad" id="pad" aria-label="Prescription-style order pad">
     <div class="top">
       <div class="who">
         <strong>Jonathan Simons, CRNA</strong>
@@ -154,61 +209,318 @@
       <div class="rx-badge" aria-hidden="true">Rx</div>
     </div>
 
-    <div class="row">
-      <label for="date">Date / time</label>
-      <input class="line" id="date" name="date" placeholder="____ / ____ / ________  ____:____" />
-    </div>
-    <div class="row">
-      <label for="regarding">Regarding</label>
-      <input class="line" id="regarding" name="regarding" placeholder="project / person / room / intro" />
-    </div>
-    <div class="row">
-      <label for="to">To (twin)</label>
-      <input class="line" id="to" name="to" value="Cursor twin — execute per standing orders" />
+    <div class="howto">
+      <strong>Clear instructions</strong>
+      <ol>
+        <li>Choose what this is about (dropdown).</li>
+        <li>Choose what you want done (dropdown).</li>
+        <li>If you’re unsure, pick <em>Not sure — twin figure out context</em>.</li>
+        <li>Press and hold any row for a plain-English explainer.</li>
+        <li>Tap <strong>Build order</strong> → Copy → paste into Cursor chat.</li>
+      </ol>
     </div>
 
-    <div class="priority" aria-label="Priority">
-      <label><input type="radio" name="priority" value="stat" /> STAT</label>
-      <label><input type="radio" name="priority" value="routine" checked /> Routine</label>
-      <label><input type="radio" name="priority" value="hold" /> Hold until I’m out of the OR</label>
+    <div class="field" data-help="Date is just when you wrote the order. Use today if you don’t care. Twin uses it for the paper trail.">
+      <label>
+        <span>Date / time</span>
+        <span class="press-hint">hold for help</span>
+      </label>
+      <input class="line" id="date" name="date" />
     </div>
 
-    <div class="box">
-      <label for="order">Rx — ORDER (what to do)</label>
-      <textarea class="line" id="order" name="order" placeholder="1. &#10;2. &#10;3. "></textarea>
+    <div class="field" data-help="What room of your life is this about? Pick the closest match. If none fit, choose Other or Not sure — twin will read your extra notes.">
+      <label>
+        <span>Regarding (what is this about?)</span>
+        <span class="press-hint">hold for help</span>
+      </label>
+      <select id="regarding" name="regarding">
+        <option value="">— pick one —</option>
+        <option value="intro-portfolio">Intro / portfolio presentation</option>
+        <option value="pocket-card">Pocket chart / go-time card</option>
+        <option value="ship-it">Ship it app</option>
+        <option value="github-account">GitHub account setup</option>
+        <option value="prime-field">Prime Field / company face</option>
+        <option value="art">Art / Harmonic Blueprint / explorers</option>
+        <option value="patents">Patents / IP (careful — vault rules)</option>
+        <option value="apps">Apps / live demos</option>
+        <option value="prospect">A person / prospect / partner</option>
+        <option value="operator-docs">Operator docs / standing orders</option>
+        <option value="other">Other (I’ll type details below)</option>
+        <option value="unsure">Not sure — twin figure out context</option>
+      </select>
+      <div class="help" hidden></div>
     </div>
 
-    <div class="row">
-      <label for="sig">Sig — how</label>
-      <input class="line" id="sig" name="sig" placeholder="e.g. draft only · push to branch · don’t merge · wait for me on vault" />
+    <div class="field" data-help="How fast? STAT = do now. Routine = normal. Hold until OR clear = twin drafts only and waits — you’re in the hospital.">
+      <label>
+        <span>Priority</span>
+        <span class="press-hint">hold for help</span>
+      </label>
+      <select id="priority" name="priority">
+        <option value="routine">Routine — do in normal order</option>
+        <option value="stat">STAT — do this first</option>
+        <option value="hold">Hold until I’m out of the OR — draft only, don’t push me</option>
+      </select>
+      <div class="help" hidden></div>
     </div>
-    <div class="row">
-      <label for="disp">Disp — deliver</label>
-      <input class="line" id="disp" name="disp" placeholder="e.g. PR link · pocket card update · reply text I can paste" />
+
+    <div class="field" data-help="This is the prescription: what should happen. Pick a clear action. If you don’t know the computer word, pick Not sure — twin interpret. Add any extra detail in the notes box.">
+      <label>
+        <span>Rx — what do you want done?</span>
+        <span class="press-hint">hold for help</span>
+      </label>
+      <select id="orderType" name="orderType">
+        <option value="">— pick one —</option>
+        <option value="explain">Explain something in plain words</option>
+        <option value="update-card">Update the pocket chart / order pad</option>
+        <option value="update-portfolio">Update intro portfolio page</option>
+        <option value="write-docs">Write / update a brief or checklist</option>
+        <option value="github-help">Help with GitHub (profile, project About, etc.)</option>
+        <option value="prep-talk">Prep what I should say in a room</option>
+        <option value="prospect-review">Run a prospect review packet</option>
+        <option value="send-check">Run send check before something goes public</option>
+        <option value="fix-demo">Fix / improve a demo or app screen</option>
+        <option value="summarize">Summarize where we left off</option>
+        <option value="unsure">Not sure — twin interpret from my notes</option>
+      </select>
+      <div class="help" hidden></div>
+    </div>
+
+    <div class="field" data-help="Optional. Type anything in your own words — even messy. Twin uses this when you chose Not sure, or to add detail to a clear order.">
+      <label>
+        <span>Extra notes (your words — messy is fine)</span>
+        <span class="press-hint">hold for help</span>
+      </label>
+      <textarea class="line" id="notes" name="notes" placeholder="Tell it like you’d tell me on a break…"></textarea>
+      <div class="help" hidden></div>
+    </div>
+
+    <div class="field" data-help="How far should twin go? Draft only = show you first. Push branch = save online in a draft copy. Don’t merge = keep off the official face. Confirm before public = ask you before strangers see it.">
+      <label>
+        <span>Sig — how far can twin go?</span>
+        <span class="press-hint">hold for help</span>
+      </label>
+      <select id="sig" name="sig">
+        <option value="draft-only">Draft only — show me first</option>
+        <option value="push-branch">Save to draft branch online</option>
+        <option value="no-merge">Draft OK — do NOT put on official main</option>
+        <option value="confirm-public">Do the work, but confirm before anything public</option>
+        <option value="unsure">Not sure — twin pick the safest option</option>
+      </select>
+      <div class="help" hidden></div>
+    </div>
+
+    <div class="field" data-help="What should twin hand back when done? Pick the shape you want to receive.">
+      <label>
+        <span>Disp — what to deliver back</span>
+        <span class="press-hint">hold for help</span>
+      </label>
+      <select id="disp" name="disp">
+        <option value="short-reply">Short reply I can read fast</option>
+        <option value="pasteable">Text I can copy/paste</option>
+        <option value="pr-link">Link to the draft / PR</option>
+        <option value="updated-card">Updated pocket chart</option>
+        <option value="checklist">Checklist I can photograph</option>
+        <option value="unsure">Not sure — twin choose useful delivery</option>
+      </select>
+      <div class="help" hidden></div>
     </div>
 
     <div class="checks">
-      <div><label><input type="checkbox" name="gate" /> Run send check before anything forward-facing</label></div>
-      <div><label><input type="checkbox" name="novault" checked /> Do not open / send vault, claims, or secrets</label></div>
-      <div><label><input type="checkbox" name="confirm" /> Confirm with me before merge / public release</label></div>
+      <div><label><input type="checkbox" id="gate" checked /> Run send check before anything forward-facing</label></div>
+      <div><label><input type="checkbox" id="novault" checked /> Do not open / send vault, claims, or secrets</label></div>
+      <div><label><input type="checkbox" id="confirm" checked /> Confirm with me before merge / public release</label></div>
     </div>
 
-    <div class="sig-grid">
-      <div class="row" style="grid-template-columns: 1fr">
-        <label for="signed">Signed</label>
-        <input class="line" id="signed" name="signed" placeholder="J. Simons" />
-      </div>
-      <div class="row" style="grid-template-columns: 1fr">
-        <label for="ask">One ask (if any)</label>
-        <input class="line" id="ask" name="ask" placeholder="________________" />
-      </div>
+    <div class="actions">
+      <button type="button" class="primary" id="build">Build order</button>
+      <button type="button" id="copy">Copy order</button>
+      <button type="button" class="stat" id="unsureAll">I’m not sure — twin figure it out</button>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <div class="out" id="out">
+      <label>Order ready — paste this into Cursor chat</label>
+      <pre id="outText"></pre>
     </div>
 
     <footer>
-      Twin may answer “John would want…” on public/taste items.
-      WAIT on IP vault, money, legal, clinical promises, hard calendar commits.
-      Send-check name still in crockpot.
+      Press-and-hold any field for help. “Not sure” is always a valid order.
+      Twin standing orders apply. Send-check name still in the crockpot.
     </footer>
   </form>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+
+    $("date").value = new Date().toLocaleString();
+
+    const labels = {
+      regarding: {
+        "intro-portfolio": "Intro / portfolio presentation",
+        "pocket-card": "Pocket chart / go-time card",
+        "ship-it": "Ship it app",
+        "github-account": "GitHub account setup",
+        "prime-field": "Prime Field / company face",
+        art: "Art / Harmonic Blueprint / explorers",
+        patents: "Patents / IP (vault rules)",
+        apps: "Apps / live demos",
+        prospect: "A person / prospect / partner",
+        "operator-docs": "Operator docs / standing orders",
+        other: "Other",
+        unsure: "Not sure — twin figure out context",
+      },
+      priority: {
+        routine: "Routine",
+        stat: "STAT",
+        hold: "Hold until OR clear",
+      },
+      orderType: {
+        explain: "Explain something in plain words",
+        "update-card": "Update the pocket chart / order pad",
+        "update-portfolio": "Update intro portfolio page",
+        "write-docs": "Write / update a brief or checklist",
+        "github-help": "Help with GitHub",
+        "prep-talk": "Prep what I should say in a room",
+        "prospect-review": "Run a prospect review packet",
+        "send-check": "Run send check before something goes public",
+        "fix-demo": "Fix / improve a demo or app screen",
+        summarize: "Summarize where we left off",
+        unsure: "Not sure — twin interpret from my notes",
+      },
+      sig: {
+        "draft-only": "Draft only — show me first",
+        "push-branch": "Save to draft branch online",
+        "no-merge": "Draft OK — do NOT put on official main",
+        "confirm-public": "Confirm before anything public",
+        unsure: "Not sure — twin pick the safest option",
+      },
+      disp: {
+        "short-reply": "Short reply I can read fast",
+        pasteable: "Text I can copy/paste",
+        "pr-link": "Link to the draft / PR",
+        "updated-card": "Updated pocket chart",
+        checklist: "Checklist I can photograph",
+        unsure: "Not sure — twin choose useful delivery",
+      },
+    };
+
+    function buildOrder() {
+      const regarding = $("regarding").value || "unsure";
+      const priority = $("priority").value;
+      const orderType = $("orderType").value || "unsure";
+      const notes = $("notes").value.trim();
+      const sig = $("sig").value;
+      const disp = $("disp").value;
+
+      const unsure =
+        regarding === "unsure" ||
+        orderType === "unsure" ||
+        sig === "unsure" ||
+        disp === "unsure";
+
+      let text = `Rx — ORDER\n`;
+      text += `Date/time: ${$("date").value}\n`;
+      text += `Regarding: ${labels.regarding[regarding] || regarding}\n`;
+      text += `Priority: ${labels.priority[priority]}\n\n`;
+      text += `ORDER:\n`;
+      text += `1. ${labels.orderType[orderType] || orderType}\n`;
+      if (notes) text += `2. Extra notes from John: ${notes}\n`;
+      if (unsure) {
+        text += `3. CONTEXT ASSIST: John is not sure on one or more fields. Twin — figure out context from notes + standing orders, then proceed with the safest option.\n`;
+      }
+      text += `\nSig (how): ${labels.sig[sig]}\n`;
+      text += `Disp (deliver): ${labels.disp[disp]}\n`;
+      text += `${$("gate").checked ? "☑" : "☐"} Send check before forward-facing\n`;
+      text += `${$("novault").checked ? "☑" : "☐"} No vault / claims / secrets\n`;
+      text += `${$("confirm").checked ? "☑" : "☐"} Confirm before merge / public release\n`;
+      text += `\nSigned: J. Simons\n`;
+
+      $("outText").textContent = text;
+      $("out").classList.add("is-open");
+      return text;
+    }
+
+    $("build").addEventListener("click", buildOrder);
+
+    $("copy").addEventListener("click", async () => {
+      const text = $("out").classList.contains("is-open")
+        ? $("outText").textContent
+        : buildOrder();
+      try {
+        await navigator.clipboard.writeText(text);
+        $("toast").textContent = "Copied. Paste into Cursor chat.";
+        $("toast").classList.add("is-on");
+      } catch {
+        $("toast").textContent = "Copy failed — select the order text and copy manually.";
+        $("toast").classList.add("is-on");
+      }
+    });
+
+    $("unsureAll").addEventListener("click", () => {
+      $("regarding").value = "unsure";
+      $("orderType").value = "unsure";
+      $("sig").value = "unsure";
+      $("disp").value = "unsure";
+      $("priority").value = "routine";
+      if (!$("notes").value.trim()) {
+        $("notes").value =
+          "I’m not sure how to name this. Please figure out the context and do the sensible next thing.";
+      }
+      buildOrder();
+      $("toast").textContent = "Not-sure order built. Copy and paste into chat.";
+      $("toast").classList.add("is-on");
+    });
+
+    // Long-press / press-and-hold help on each field
+    document.querySelectorAll(".field").forEach((field) => {
+      const help = field.querySelector(".help");
+      if (!help) return;
+      help.textContent = "";
+      const title = document.createElement("b");
+      title.textContent = "What this means";
+      help.appendChild(title);
+      help.appendChild(document.createTextNode(field.dataset.help || ""));
+
+      let timer = null;
+      const open = () => {
+        help.hidden = false;
+        help.classList.add("is-open");
+      };
+      const closeSoon = () => {
+        /* keep open until another opens or click outside — easier on mobile */
+      };
+
+      field.addEventListener("pointerdown", (e) => {
+        if (e.target.closest("select, input, textarea, button, label input")) {
+          // still allow long-press on the label row
+        }
+        timer = window.setTimeout(open, 420);
+      });
+      field.addEventListener("pointerup", () => clearTimeout(timer));
+      field.addEventListener("pointerleave", () => clearTimeout(timer));
+      field.addEventListener("pointercancel", () => clearTimeout(timer));
+
+      // Also open help when focusing select (gentle)
+      const control = field.querySelector("select, textarea, input.line");
+      control?.addEventListener("focus", () => {
+        document.querySelectorAll(".help.is-open").forEach((h) => {
+          if (h !== help) {
+            h.classList.remove("is-open");
+            h.hidden = true;
+          }
+        });
+      });
+
+      // Double-click label toggles help (desktop fallback)
+      field.querySelector("label")?.addEventListener("dblclick", (e) => {
+        e.preventDefault();
+        if (help.classList.contains("is-open")) {
+          help.classList.remove("is-open");
+          help.hidden = true;
+        } else open();
+      });
+    });
+  </script>
 </body>
 </html>

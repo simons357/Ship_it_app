@@ -1,28 +1,30 @@
 # Order pad (prescription format)
 
-When you want work done, **send an order** — same shape as writing a prescription.
+**Use the menus:** open [`ORDER-PAD.html`](./ORDER-PAD.html)
 
-Copy/paste this into chat (or fill `ORDER-PAD.html` and screenshot):
+1. Pick **Regarding** from the dropdown (what this is about)  
+2. Pick **Rx** (what you want done)  
+3. If you’re unsure → choose **Not sure — twin figure out context**  
+   or tap **I’m not sure — twin figure it out**  
+4. **Press and hold** any field for plain instructions  
+5. Tap **Build order** → **Copy** → paste into Cursor chat  
+
+Messy notes are fine. Twin reads them.
+
+---
+
+## Text fallback (if you can’t open the page)
 
 ```text
 Rx — ORDER
-Date/time:
-Regarding:
+Regarding: [or say: not sure — figure out context]
 Priority: STAT / Routine / Hold until OR clear
-
 ORDER:
-1.
-2.
-3.
-
-Sig (how): draft only · push branch · don’t merge · etc.
-Disp (deliver): PR link · updated card · pasteable reply
-☐ Send check before forward-facing
-☑ No vault / claims / secrets
-☐ Confirm before merge / public release
-
+1. [what you want — or: not sure]
+2. Extra notes: …
+Sig: draft only / safest option
+Disp: short reply
+☑ No vault
+☑ Confirm before public
 Signed: J. Simons
-One ask (if any):
 ```
-
-Twin executes per `TWIN-STANDING-ORDERS.md`.
