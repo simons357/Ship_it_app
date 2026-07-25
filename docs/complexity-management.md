@@ -240,19 +240,21 @@ Ranked for *interesting + useful*, not academic cosplay.
 
 ---
 
-## 8. How this ties back to Ship it
+## 8. How this ties back to Ship it (and the anesthesia story)
 
-You’re not building “another send button.” You’re prototyping a **personal complexity interface**:
+You’re not building “another send button.” You’re prototyping an **operator system** at personal scale — same bones as the OR story:
 
-- **Archivist** — where is it, in as many forms as you want  
-- **Dispatcher** — ship it to…  
-- **Process** — standard steps, always Custom  
-- **Human residue** — semi-personal note  
-- **Closure** — boom  
+- **Determine state** — where is it, what form, what’s true right now  
+- **Fast loop** — To → What → Note → Boom  
+- **Custom layers** — as many functions as you need, on top of the standard path  
+- **Hold parameters** — keep the important things in band  
+- **Emergency mode** — when overwhelm is coming: bigger knobs, harder color, only what you need  
+- **Decision augmentation** — clear options after many scenario runs; you still choose  
 - **Outward gate** — sanitize what leaves, unless offense is intentional  
-- **Later:** operator AI that walks A → B → C with you in high-complexity environments
 
-GitHub was one substrate. Anesthesia is another. Life admin is another. The invariant is:
+Full story spine: [operator-systems.md](./operator-systems.md).
+
+GitHub was one substrate. Anesthesia is the master metaphor. Life admin is the practice field. The invariant is:
 
 > Reduce bullshit at the moment of action without pretending the world is simple.
 
@@ -262,7 +264,7 @@ That’s complexity management.
 
 ## 9. One paragraph you can steal
 
-> I manage complexity. In high-stakes and everyday environments alike, I design short standard paths that respect the operator — defaults for speed, Custom for judgment, closure when it’s done, and a hard look at anything that leaves the private system into the world. Process is the skeleton. Complexity is the living thing. Chaos is what happens when tiny differences matter. My job is to keep the human able to act anyway.
+> I manage complexity. People are complex systems — I determine state, drop into a fast loop with clear instructions, and add custom layers for whatever the case needs. When overwhelm is coming, we strip to emergency mode: only the information you need. I stay the operator; the system augments decisions with clear options after running the futures. Process is the skeleton. Complexity is the living thing. My job is to keep the human able to act anyway.
 
 ---
 
@@ -271,7 +273,7 @@ That’s complexity management.
 1. Read Cook’s essay this week (shortest high-impact hit).  
 2. Skim Cynefin’s four domains and map one anesthesia day onto them.  
 3. Read Gleick when you want the chaos intuition in story form.  
-4. Then we can turn this into a tighter “operator systems” manifesto for Ship it — archivist, forms, sanitization gate, AI co-pilot — without the rant eating the product.
+4. Read [operator-systems.md](./operator-systems.md) and try telling the anesthesia story out loud in under two minutes.
 
 ---
 
