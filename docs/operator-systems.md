@@ -7,7 +7,9 @@ You don’t “run” them like a script. You **determine their state**, then dr
 That’s anesthesia.  
 That’s also the architecture.
 
-And this isn’t a new invention in a vacuum. **It has been studied** — in pilots, anesthesiologists, air traffic controllers, and other operators who live inside fast loops with incomplete information. You already have training in that lineage. Weather and anomaly apps are part of the same family: foresight layers that try to say “something’s about to hit the envelope” before the operator is underwater.
+And for you this isn’t a borrowed metaphor. It’s nights of trauma — car accidents, neonates on vasopressors, the kind of week compressed into a shift. You know how overwhelm feels in the body because you’ve stood in it. The “no bullshit / emergency mode / clear options” instinct comes from that, not from a whiteboard.
+
+This also isn’t a new invention in a vacuum. **It has been studied** — in pilots, anesthesiologists, air traffic controllers, and other operators who live inside fast loops with incomplete information. You already have training in that lineage. Weather and anomaly apps are part of the same family: foresight layers that try to say “something’s about to hit the envelope” before the operator is underwater.
 
 ---
 
