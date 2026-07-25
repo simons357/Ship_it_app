@@ -137,9 +137,26 @@ In anesthesia: hemodynamics, airway, depth, surgical phase, trend.
 In Ship it: where is the thing, what form is it in, what’s the intent, who’s the recipient.  
 Operator state, then system state, then path. Always.
 
-### Fast loop with clear instructions
-Complexity doesn’t get managed by a binder. It gets managed by a **rhythm**.  
-Short cycle. Obvious next action. Operator stays inside the loop instead of drowning in menus.
+### Fast loop with clear instructions  
+### (= real-time adaptive technique)
+
+In your language: **real-time adaptive technique**.  
+That’s the loop. Very fast. Sense → adjust → sense → adjust. Not a meeting. Not a binder review. A living control rhythm.
+
+Complexity doesn’t get managed by a manual. It gets managed by that rhythm — **and by the math under it**.
+
+The operator still engages (after the downshift). The glass still obeys the mode. But what makes the stack feel “on auto” is the **adaptive math**: continuous estimation of state, drift, envelope, and when to escalate into emergency options. Clear instructions on the surface. Calculation underneath.
+
+| Layer | Job |
+| --- | --- |
+| **Technique / loop** | Real-time adaptive cycle the operator rides |
+| **Math** | What keeps parameters in band and flags overwhelm early |
+| **Monitors** | Mode-shaped presentation of what the math and senses say |
+| **Operator** | Relax → engage → choose when the futures collapse to options |
+
+Other people have loops. Other people have monitors. **The claim that matters is the math** — the adaptive model that makes the loop trustworthy at speed. Protect it; document where it lives; don’t confuse UI chrome for the engine.
+
+> Note: “I have put everything…” — park the location of the math / notes / code here when you finish that sentence (repo, drive, paper, head). The brief should always know where the engine is.
 
 ### Custom layers
 Standard underneath. Custom on top — for as many functions as you need.  
@@ -165,7 +182,7 @@ Monitors are the first surface that must obey the mode:
 | Mode | Monitor job |
 | --- | --- |
 | **Ready / engage** | Help the operator arrive calm — quiet glass, clear state, no thrash |
-| **Cruise loop** | Hold parameters in band; show drift early; keep the rhythm |
+| **Cruise loop** | Real-time adaptive technique — hold parameters in band; show drift early; keep the rhythm |
 | **Emergency** | Strip to essentials; enlarge what matters; kill the rest |
 
 If the mode changed and the monitor didn’t, the mode is fake.
@@ -228,7 +245,8 @@ The anesthesia story teaches the product. The product practices the story at low
 ## 7. Design rules (no bullshit list)
 
 1. **Relax before engage — then state before path.**  
-2. **One loop, many layers** — don’t fork into twelve apps.  
+2. **One loop, many layers** — real-time adaptive technique underneath; don’t fork into twelve apps.  
+2a. **Math is the engine** — UI without the adaptive model is cosplay; know where the math lives.  
 3. **Always Custom in calm mode; fewer choices in emergency mode.**  
 4. **Hold the envelope** — show drift early.  
 5. **Overwhelm changes the UI**, not just the alert sound — and **ready mode changes the monitors too** (quiet glass to engage; stripped glass in emergency).  
