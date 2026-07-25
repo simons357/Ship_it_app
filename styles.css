@@ -478,6 +478,12 @@ a {
   padding-bottom: clamp(5rem, 12vh, 8rem);
 }
 
+.contact-line {
+  margin: 0 0 1.5rem;
+  font-size: 1.05rem;
+  color: var(--fog);
+}
+
 .contact-block {
   max-width: 40rem;
 }
