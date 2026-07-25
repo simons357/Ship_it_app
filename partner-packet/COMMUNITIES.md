@@ -75,6 +75,8 @@ Math is out there; most people don’t care — so make the **demo** the handsha
 
 ## This week (small)
 
+Full hose: [`DISTRIBUTION-PIPELINE.md`](./DISTRIBUTION-PIPELINE.md)
+
 1. Create / push **math papers GitHub** index (DOI shelf)  
 2. Pick **one** serious community + **one** builder community  
 3. Post once: one-pager idea + one live link  
