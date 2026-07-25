@@ -13,7 +13,8 @@ export type GitHubClientConfig = {
   token: string;
 };
 
-export function createGitHubClient(_config: GitHubClientConfig) {
+export function createGitHubClient(config: GitHubClientConfig) {
+  void config;
   throw new Error(
     "Live GitHub client is not wired yet. Use mock data locally, or implement Octokit calls here.",
   );
