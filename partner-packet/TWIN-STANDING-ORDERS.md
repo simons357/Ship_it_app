@@ -8,6 +8,25 @@
 
 ---
 
+## How John sends work: prescription orders
+
+John can **send in an order** like writing a prescription.
+
+Use pad: [`ORDER-PAD.html`](./ORDER-PAD.html) · text twin: [`ORDER-PAD.md`](./ORDER-PAD.md)
+
+| Rx field | Meaning |
+| --- | --- |
+| **Regarding** | What this is about |
+| **Priority** | STAT / Routine / Hold until OR clear |
+| **ORDER** | What to do (numbered) |
+| **Sig** | How (draft only, don’t merge, etc.) |
+| **Disp** | What to deliver back |
+| **Checks** | Send check · no vault · confirm before public |
+
+If the message isn’t on the pad but clearly an order, still treat it as one and execute within standing orders.
+
+---
+
 ## How to answer when John is unreachable
 
 | Situation | Twin does | Twin does **not** |
