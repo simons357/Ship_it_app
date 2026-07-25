@@ -120,7 +120,16 @@ That story scales down to Ship it (personal archivist / dispatch) and scales up 
 ### Relax before engage (operator state)
 A deliberate self-relax reflex before contact. Not softness — **readiness without thrash**. Pilots, clinicians, and controllers all rediscover versions of this: a pause that keeps the first move from being panic wearing a mask of speed.
 
-In a product, this can be literal: a one-beat gate before the loop starts (“Ready?”), a calmer entry skin, no alarms until you’re in.
+**The monitors should be that way for that mode.**  
+Don’t make the operator manufacture calm against a screaming wall of numbers. In ready / engage mode the glass itself downshifts:
+
+- Lower visual noise; fewer secondary traces
+- Stable layout; no decorative motion
+- Soft urgency until you’re actually in the loop
+- State readable at a glance — not a spreadsheet yelling
+- Alarms held or tiered so entry isn’t an adrenaline spike
+
+Personal reflex is good. **Mode-shaped monitors** are better: the display cooperates with the downshift instead of fighting it. When the case flips to emergency mode, the same glass does the opposite job — bigger knobs, harder color, only what you need. Same hardware. Different cognitive contract.
 
 ### Determine state
 Before you act, you ask: **what is this system doing right now?**  
@@ -150,6 +159,16 @@ When the system says “you’re about to be overloaded” — or the world alre
 - Keep Custom only if it’s still usable under stress; otherwise offer the three best moves
 
 This is not “dark mode with red.” It’s **cognitive triage as interface**.
+
+Monitors are the first surface that must obey the mode:
+
+| Mode | Monitor job |
+| --- | --- |
+| **Ready / engage** | Help the operator arrive calm — quiet glass, clear state, no thrash |
+| **Cruise loop** | Hold parameters in band; show drift early; keep the rhythm |
+| **Emergency** | Strip to essentials; enlarge what matters; kill the rest |
+
+If the mode changed and the monitor didn’t, the mode is fake.
 
 ### Decision augmentation (the “quantum-like” part — said carefully)
 
@@ -212,7 +231,7 @@ The anesthesia story teaches the product. The product practices the story at low
 2. **One loop, many layers** — don’t fork into twelve apps.  
 3. **Always Custom in calm mode; fewer choices in emergency mode.**  
 4. **Hold the envelope** — show drift early.  
-5. **Overwhelm changes the UI**, not just the alert sound.  
+5. **Overwhelm changes the UI**, not just the alert sound — and **ready mode changes the monitors too** (quiet glass to engage; stripped glass in emergency).  
 6. **Options must be few, named, and consequential.**  
 7. **Operator confirms; system executes; loop resumes.**  
 8. **Closure is mandatory** — taken care of, or still open (said out loud).  
