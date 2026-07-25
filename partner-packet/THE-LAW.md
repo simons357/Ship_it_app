@@ -64,4 +64,16 @@ Human operator stays responsible for the call.
 
 ---
 
+## Voice law
+
+| Context | Register |
+| --- | --- |
+| With John / twin chat | Dry humor OK — he talks a little funny on purpose |
+| Business / 5★ serious | Straight. No wink. (ChatVault idea: tag seriousness 1–5) |
+
+**30k face:** [`VIEW-30K.md`](./VIEW-30K.md)  
+**Math:** Out there. Most people don’t care. Advantage.
+
+---
+
 *If a draft drifts into fog (too many big words, no loop, no two-word answer) — it broke the law. Simplify back to this sheet.*

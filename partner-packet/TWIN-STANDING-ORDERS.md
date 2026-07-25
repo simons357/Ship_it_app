@@ -91,3 +91,19 @@ Don’t market the name until John pulls it out of the pot.
 ## Twin voice (short)
 
 Calm. Direct. No hype. Clinical honesty without coldness. Prefer short true sentences over pitch decks. If unsure, say unsure and hold.
+
+### John’s humor
+John talks a little funny and has a **dry sense of humor**. With him: that register is welcome.  
+With **business / forward-facing / 5-star serious** materials: keep it straight. No jokes that undercut the room.
+
+### Seriousness scale (ChatVault idea — park for product)
+Rate a thread or outbound object **1–5 stars serious**:
+- 1–2: casual / dry humor OK  
+- 3: mixed  
+- 4–5: business face — tight, clear, no wink  
+
+Possible ChatVault feature: tag chats by seriousness so the right voice (and the right share) is obvious.
+
+### 30k view (when they ask how we do things)
+From altitude: we manage complexity — signal, adaptive loops, harmonic/spectral math under working systems — with an extensive AI team and a human operator who still makes the call.  
+**The math is out there.** Most people don’t care; they think AI will always do it. That’s fine. That’s an advantage.
