@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s · Ship it",
   },
   description:
-    "Manage what you put on GitHub without having to live on the GitHub site.",
+    "When you’re done, follow a short path and ship it where you want it.",
 };
 
 export default function RootLayout({

@@ -2,8 +2,8 @@ import Link from "next/link";
 import { BrandMark } from "./brand-mark";
 
 export function SiteHeader({
-  ctaHref = "/workspace",
-  ctaLabel = "Open workspace",
+  ctaHref = "/ship",
+  ctaLabel = "Ship it",
 }: {
   ctaHref?: string;
   ctaLabel?: string;
@@ -14,8 +14,8 @@ export function SiteHeader({
         <BrandMark size="sm" />
       </Link>
       <nav className="flex items-center gap-4 text-sm text-ink-soft sm:gap-6">
-        <Link href="/workspace" className="transition-colors hover:text-ink">
-          Workspace
+        <Link href="/ship" className="transition-colors hover:text-ink">
+          Ship
         </Link>
         <Link href="/help" className="transition-colors hover:text-ink">
           Help

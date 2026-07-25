@@ -1,6 +1,8 @@
 # Ship it
 
-Manage what you put on GitHub without living on github.com — pick a repo, browse files, and ship adds, updates, and deletions with a clear commit message.
+When you’re done, don’t reopen the maze. Answer a few short questions, drop a note, and ship it where you want it.
+
+**Path:** To → What happens → Note → Boom
 
 ## Requirements
 
@@ -10,13 +12,8 @@ Manage what you put on GitHub without living on github.com — pick a repo, brow
 ## Local setup
 
 ```bash
-# Install dependencies
 npm install
-
-# Copy environment template (optional until OAuth is wired)
-cp .env.example .env.local
-
-# Start the Next.js dev server
+cp .env.example .env.local   # optional for now
 npm run dev
 ```
 
@@ -33,36 +30,20 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## What's included
 
-- Branded landing page
-- Workspace with sample repositories
-- Repo file browser + ship composer (add / update / delete)
-- Recent ships history (local demo)
-- In-app Help (`/help`) and markdown guide (`docs/HELP.md`)
-- Type stubs ready for a real GitHub API / OAuth connection
+- Branded landing page (`/`)
+- Linear ship flow (`/ship`) — destination, outcome, note, confirmation
+- Always-available **Custom** answers on the choice steps
+- In-app Help (`/help`) and [docs/HELP.md](docs/HELP.md)
 
-## Product flow
+## Product idea
 
-1. Open the workspace and choose a repository
-2. Browse folders and select a file (optional)
-3. Choose Add, Update, or Delete
-4. Set the path, attach a file when needed, write a commit message
-5. Tap **Ship** — demo mode confirms locally; live mode will commit via GitHub
+Finishing something shouldn’t cost another pile of time just to send it. Ship it keeps one standard line you can count on. Presets for speed, Custom when you need it, then a semi-personal note — and it’s taken care of.
 
-## GitHub connection (next step)
-
-1. Create a GitHub OAuth App at https://github.com/settings/developers
-2. Set the callback URL to `http://localhost:3000/api/auth/callback`
-3. Put the client id and secret in `.env.local` (see `.env.example`)
-4. Replace the mock helpers in `src/lib/github/` with live Octokit Contents API calls
-
-## Help
-
-- In-app: [/help](http://localhost:3000/help)
-- Markdown: [docs/HELP.md](docs/HELP.md)
+Live destinations (email, drive, messaging) plug into the same steps later. Demo mode confirms locally today.
 
 ## Brand assets
 
-Original artwork lives in `assets/`. The PNG/JPG uploads in this repo were corrupted during commit (binary bytes replaced), so the UI currently uses a typographic wordmark. Re-export `shipit_final_apple_icon.png` and `shipit_final_desktop_wallpaper.png` as valid binary files when you have the source art again.
+Artwork lives in `assets/`. Some PNG/JPG uploads were corrupted during an earlier commit; re-export the logo/wallpaper as valid binaries when you have the source art. The UI uses a typographic wordmark until then.
 
 ## Stack
 
