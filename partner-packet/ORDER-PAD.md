@@ -11,6 +11,9 @@
 
 Messy notes are fine. Twin reads them.
 
+**Custom menu** — type exactly what you mean (always available).  
+**Quantum menu** — ha ha, but real: many possible moves → collapse to a few clear options → you pick (or ask twin to generate 3).
+
 ---
 
 ## Text fallback (if you can’t open the page)

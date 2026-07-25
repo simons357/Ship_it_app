@@ -282,7 +282,36 @@
         <option value="fix-demo">Fix / improve a demo or app screen</option>
         <option value="summarize">Summarize where we left off</option>
         <option value="unsure">Not sure — twin interpret from my notes</option>
+        <option value="quantum">Quantum menu — show me a few clear options</option>
+        <option value="custom">Custom — I’ll type exactly what I mean</option>
       </select>
+      <div class="help" hidden></div>
+    </div>
+
+    <div class="field" id="quantumField" hidden data-help="Ha ha — but real. Quantum menu = many possible futures, then collapse to a few clear picks. Choose one option, or type Custom below. Twin can also generate the option list for you.">
+      <label>
+        <span>Quantum menu — pick one (or Custom)</span>
+        <span class="press-hint">hold for help</span>
+      </label>
+      <select id="quantumPick" name="quantumPick">
+        <option value="">— collapse to one —</option>
+        <option value="A">Option A — explain where we are in plain words</option>
+        <option value="B">Option B — update the go-time pocket chart</option>
+        <option value="C">Option C — prep what I say in the next room</option>
+        <option value="D">Option D — GitHub account next step only</option>
+        <option value="E">Option E — run send check on something before it goes out</option>
+        <option value="custom">Custom — type my own collapse below</option>
+        <option value="generate">Don’t pick — twin, generate 3 options for me</option>
+      </select>
+      <div class="help" hidden></div>
+    </div>
+
+    <div class="field" id="customField" hidden data-help="Custom layer on top of the standard pad. Type exactly what you want. No menu required.">
+      <label>
+        <span>Custom order (your exact words)</span>
+        <span class="press-hint">hold for help</span>
+      </label>
+      <textarea class="line" id="customOrder" name="customOrder" placeholder="Exactly what you want…"></textarea>
       <div class="help" hidden></div>
     </div>
 
@@ -387,6 +416,17 @@
         "fix-demo": "Fix / improve a demo or app screen",
         summarize: "Summarize where we left off",
         unsure: "Not sure — twin interpret from my notes",
+        quantum: "Quantum menu — show / pick clear options",
+        custom: "Custom — exact words from John",
+      },
+      quantumPick: {
+        A: "Option A — explain where we are in plain words",
+        B: "Option B — update the go-time pocket chart",
+        C: "Option C — prep what I say in the next room",
+        D: "Option D — GitHub account next step only",
+        E: "Option E — run send check before something goes out",
+        custom: "Custom — typed collapse",
+        generate: "Twin: generate 3 options",
       },
       sig: {
         "draft-only": "Draft only — show me first",
@@ -405,11 +445,26 @@
       },
     };
 
+    function syncMenus() {
+      const orderType = $("orderType").value;
+      $("quantumField").hidden = orderType !== "quantum";
+      const qPick = $("quantumPick").value;
+      const showCustom =
+        orderType === "custom" ||
+        (orderType === "quantum" && qPick === "custom");
+      $("customField").hidden = !showCustom;
+    }
+
+    $("orderType").addEventListener("change", syncMenus);
+    $("quantumPick").addEventListener("change", syncMenus);
+
     function buildOrder() {
       const regarding = $("regarding").value || "unsure";
       const priority = $("priority").value;
       const orderType = $("orderType").value || "unsure";
       const notes = $("notes").value.trim();
+      const customOrder = $("customOrder").value.trim();
+      const quantumPick = $("quantumPick").value;
       const sig = $("sig").value;
       const disp = $("disp").value;
 
@@ -417,7 +472,8 @@
         regarding === "unsure" ||
         orderType === "unsure" ||
         sig === "unsure" ||
-        disp === "unsure";
+        disp === "unsure" ||
+        quantumPick === "generate";
 
       let text = `Rx — ORDER\n`;
       text += `Date/time: ${$("date").value}\n`;
@@ -425,9 +481,22 @@
       text += `Priority: ${labels.priority[priority]}\n\n`;
       text += `ORDER:\n`;
       text += `1. ${labels.orderType[orderType] || orderType}\n`;
-      if (notes) text += `2. Extra notes from John: ${notes}\n`;
+      if (orderType === "quantum") {
+        text += `2. Quantum menu collapse: ${
+          labels.quantumPick[quantumPick] || quantumPick || "(not picked)"
+        }\n`;
+        if (quantumPick === "generate") {
+          text += `3. Twin — generate 3 clear options (decision augmentation), then wait for John to collapse to one.\n`;
+        }
+      }
+      if (orderType === "custom" || quantumPick === "custom") {
+        text += `${orderType === "quantum" ? "3" : "2"}. CUSTOM: ${
+          customOrder || "(blank — twin ask what custom means)"
+        }\n`;
+      }
+      if (notes) text += `Notes from John: ${notes}\n`;
       if (unsure) {
-        text += `3. CONTEXT ASSIST: John is not sure on one or more fields. Twin — figure out context from notes + standing orders, then proceed with the safest option.\n`;
+        text += `CONTEXT ASSIST: John is not sure on one or more fields. Twin — figure out context from notes + standing orders, then proceed with the safest option (or offer a quantum menu of 3).\n`;
       }
       text += `\nSig (how): ${labels.sig[sig]}\n`;
       text += `Disp (deliver): ${labels.disp[disp]}\n`;
