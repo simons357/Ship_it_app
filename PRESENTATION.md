@@ -2,6 +2,7 @@
 
 **Use:** Walk into a room (or Zoom) with this path.  
 **Site:** open `index.html` (or the live portfolio URL once hosted).  
+**Glance card:** `partner-packet/OPERATOR-POCKET-CARD.html` — medical one-pager; photograph it; go time.  
 **Time:** ~3–6 minutes for intro; longer only if they pull a thread.
 
 ---
