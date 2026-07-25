@@ -36,6 +36,9 @@ So when you say *determine state → fast loop → custom layers → emergency m
 
 You’re at the head of the table. The patient is not a checklist. They’re a living complex system — physiology interacting with drugs, surgery, blood loss, time, and luck.
 
+**Zeroth move: relax on purpose.**  
+Before you engage, force a downshift — a trained reflex, not a mood. Unclench. Lengthen the breath. Arrive. You can’t determine someone else’s state cleanly if your own nervous system is already sprinting.
+
 **First move: determine state.**  
 Where are we? Stable? Drifting? Compensating? About to tip?
 
@@ -114,11 +117,16 @@ That story scales down to Ship it (personal archivist / dispatch) and scales up 
 
 ## 3. Piece by piece
 
+### Relax before engage (operator state)
+A deliberate self-relax reflex before contact. Not softness — **readiness without thrash**. Pilots, clinicians, and controllers all rediscover versions of this: a pause that keeps the first move from being panic wearing a mask of speed.
+
+In a product, this can be literal: a one-beat gate before the loop starts (“Ready?”), a calmer entry skin, no alarms until you’re in.
+
 ### Determine state
 Before you act, you ask: **what is this system doing right now?**  
 In anesthesia: hemodynamics, airway, depth, surgical phase, trend.  
 In Ship it: where is the thing, what form is it in, what’s the intent, who’s the recipient.  
-State before path. Always.
+Operator state, then system state, then path. Always.
 
 ### Fast loop with clear instructions
 Complexity doesn’t get managed by a binder. It gets managed by a **rhythm**.  
@@ -200,7 +208,7 @@ The anesthesia story teaches the product. The product practices the story at low
 
 ## 7. Design rules (no bullshit list)
 
-1. **State before path.**  
+1. **Relax before engage — then state before path.**  
 2. **One loop, many layers** — don’t fork into twelve apps.  
 3. **Always Custom in calm mode; fewer choices in emergency mode.**  
 4. **Hold the envelope** — show drift early.  
