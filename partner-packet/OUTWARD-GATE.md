@@ -1,6 +1,7 @@
 # Outward Gate
 
-**Name for the event:** before anything faces the world, it is analyzed.
+**Name for the event:** before anything faces the world, it is analyzed.  
+**Label status:** **in the crockpot** — mechanism stays; name not locked.
 
 Not a vibe. A step. Same family as emergency mode and the fast loop — except this one is about the **boundary** between private work and public surface.
 

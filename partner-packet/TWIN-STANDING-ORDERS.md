@@ -61,11 +61,11 @@ Use these when answering “what would John want?”
 
 ## About the name “Outward Gate”
 
-**Status:** interesting — **not sure yet.**  
+**Status:** **in the crockpot.** Interesting. Not locked. Let it simmer.  
 **Keep:** the job (analyze before anything faces the world).  
 **Flexible:** the label. Alternatives if needed later: Forward Check · Send Review · Public Face Check · Sanitize Step.
 
-Don’t market the name until John locks it.
+Don’t market the name until John pulls it out of the pot.
 
 ---
 
