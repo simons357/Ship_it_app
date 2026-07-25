@@ -46,8 +46,12 @@ Before anything leaves:
 - [ ] Claims labeled (demo / provisional / preprint)  
 - [ ] Seriousness = 5★ for business posts  
 - [ ] One ask only  
+- [ ] Unknown person/event reviewed (or flagged)  
+- [ ] Nothing that reads bizarre / nutty on a business face — twin flags if so  
 
-Fail → hold. Pass → Stage 3.
+Fail → hold. Pass → Stage 3.  
+
+If twin sees nutty or unknown: say **FLAG — I’d hold this** + why + safer move.
 
 ---
 
