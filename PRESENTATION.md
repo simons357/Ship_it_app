@@ -37,7 +37,19 @@ Don’t prove the math in the intro. Name it. Offer depth later.
 
 Max **three live clicks** in the intro. The rest is “on the site / under NDA.”
 
-### 4. Ask (15–20 sec)
+Then land the close (section 4) before the ask — story → proof → math is out there → AI complacency advantage → ask.
+
+### 4. Close — the math (20–30 sec)
+> And the math is out there. I’ve put it out.
+
+Beat. Then the advantage — dry, not smug:
+
+> Here’s the part most rooms miss: a lot of people don’t care about math anymore. They think they can get AI to do it for them. All the time. That belief is an advantage — for anyone who still actually has the math, and can run it in a fast loop when it matters.
+
+Optional one-liner if the room is technical:
+> AI is a brilliant intern. It is not a substitute for the model under the loop.
+
+### 5. Ask (15–20 sec)
 > What I’m looking for today is **[one ask]**. Happy to send a one-pager and open the vault under NDA if there’s a fit.
 
 Stop talking. Let them pull.
@@ -50,7 +62,7 @@ Stop talking. Let them pull.
 2. **Lead with work, not headshot** — OR face is fine in life; the site carries the first impression.
 3. **One ask per room** — mixed asks sound lost.
 4. **Art is not dessert** — put it early so they don’t file you as “only defense” or “only apps.”
-5. **Black-box the math** — say you have it; don’t lecture it cold.
+5. **End on the math, don’t lecture it** — “It’s out there.” Then the advantage: people outsourced caring about math to AI. You didn’t.
 6. **Keep partner-packet/** as the deep vault; the site is the intro glass.
 7. **Host it** — GitHub Pages on the new repo is enough for a clean URL.
 
