@@ -9,13 +9,16 @@ export function SiteHeader({
   ctaLabel?: string;
 }) {
   return (
-    <header className="relative z-10 flex items-center justify-between px-6 py-5 sm:px-10">
+    <header className="relative z-10 flex items-center justify-between gap-4 px-6 py-5 sm:px-10">
       <Link href="/" className="transition-opacity hover:opacity-80">
         <BrandMark size="sm" />
       </Link>
-      <nav className="flex items-center gap-6 text-sm text-ink-soft">
+      <nav className="flex items-center gap-4 text-sm text-ink-soft sm:gap-6">
         <Link href="/workspace" className="transition-colors hover:text-ink">
           Workspace
+        </Link>
+        <Link href="/help" className="transition-colors hover:text-ink">
+          Help
         </Link>
         <Link
           href={ctaHref}

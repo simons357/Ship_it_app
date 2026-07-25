@@ -27,8 +27,8 @@ export function RepositoryList() {
               </p>
             </div>
             <div className="flex shrink-0 flex-wrap gap-4 text-sm text-ink-soft sm:justify-end">
-              <span>{repo.openPullRequests} PRs</span>
-              <span>{repo.openIssues} issues</span>
+              <span>{repo.defaultBranch}</span>
+              <span>{repo.fileCount} files</span>
               <span>{formatRelativeDate(repo.updatedAt)}</span>
             </div>
           </Link>

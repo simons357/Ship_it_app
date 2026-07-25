@@ -7,25 +7,28 @@ export type Repository = {
   description: string;
   visibility: RepoVisibility;
   defaultBranch: string;
-  openPullRequests: number;
-  openIssues: number;
+  fileCount: number;
   updatedAt: string;
 };
 
-export type PullRequest = {
+export type RepoEntryKind = "file" | "dir";
+
+export type RepoEntry = {
   id: string;
-  number: number;
-  title: string;
-  author: string;
-  status: "open" | "draft" | "merged";
+  name: string;
+  path: string;
+  kind: RepoEntryKind;
+  sizeLabel?: string;
   updatedAt: string;
 };
 
-export type Issue = {
+export type ShipAction = "add" | "update" | "delete";
+
+export type RecentShip = {
   id: string;
-  number: number;
-  title: string;
-  author: string;
-  labels: string[];
-  updatedAt: string;
+  action: ShipAction;
+  path: string;
+  message: string;
+  sha: string;
+  createdAt: string;
 };

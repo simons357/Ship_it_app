@@ -132,3 +132,7 @@ body {
 .wave-line {
   animation: pulse-line 4.5s ease-in-out infinite;
 }
+
+.ship-confirm {
+  animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}

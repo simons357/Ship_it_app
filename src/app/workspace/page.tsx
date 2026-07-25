@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DemoBanner } from "@/components/demo-banner";
 import { SiteHeader } from "@/components/site-header";
 import { RepositoryList } from "@/components/repository-list";
 
@@ -14,6 +15,7 @@ export default function WorkspacePage() {
         aria-hidden="true"
       />
       <SiteHeader ctaHref="/" ctaLabel="Back home" />
+      <DemoBanner />
 
       <main className="relative z-10 mx-auto w-full max-w-4xl flex-1 px-6 pb-16 pt-8 sm:px-10">
         <header className="mb-10">
@@ -21,8 +23,8 @@ export default function WorkspacePage() {
             Your repos
           </h1>
           <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-soft">
-            Sample repositories for local setup. Once GitHub OAuth is wired,
-            this list becomes your live account.
+            Pick a repository to browse files and ship an add, update, or delete
+            with a clear commit message.
           </p>
         </header>
 

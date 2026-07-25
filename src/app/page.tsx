@@ -31,8 +31,8 @@ export default function Home() {
           </h1>
 
           <p className="hero-rise-delay-2 mt-6 max-w-xl text-lg leading-relaxed text-ink-soft sm:text-xl">
-            Review repos, pull requests, and releases from one calm workspace —
-            without bouncing through github.com for every ship.
+            Connect a repo, add or update files, and ship clear commits — without
+            bouncing through github.com for every change.
           </p>
 
           <div className="hero-rise-delay-2 mt-10 flex flex-wrap items-center gap-4">
@@ -43,17 +43,17 @@ export default function Home() {
               Open workspace
             </Link>
             <Link
-              href="/workspace"
+              href="/help"
               className="rounded-md px-5 py-3 text-base font-medium text-ink-soft underline-offset-4 transition-colors hover:text-ink hover:underline"
             >
-              Browse sample repos
+              How shipping works
             </Link>
           </div>
         </div>
       </main>
 
       <footer className="relative z-10 px-6 py-6 text-sm text-ink-soft sm:px-10">
-        Local sample data for now · Connect GitHub next
+        Demo workspace ready · Connect GitHub when you want live commits
       </footer>
     </div>
   );
