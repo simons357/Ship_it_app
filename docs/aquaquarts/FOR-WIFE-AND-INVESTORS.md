@@ -6,6 +6,7 @@
 **Founder / designer:** Jonathan Simons  
 **Start:** Lithia Springs, Georgia first — not 50 countries  
 
+**Complete brochure (whole scope + filter costs):** [`complete-brochure.html`](complete-brochure.html) · [`COMPLETE-BROCHURE.md`](COMPLETE-BROCHURE.md)  
 **Open this for her (pretty / print to PDF):** [`for-wife.html`](for-wife.html)  
 **Fuller investor brochure:** [`investor-brochure.html`](investor-brochure.html)  
 **Water recipe (quartz + pH + “best in world”):** [`WATER-RECIPE.md`](WATER-RECIPE.md)
