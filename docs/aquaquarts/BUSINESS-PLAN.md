@@ -23,9 +23,11 @@ Make the water course a **memorable ritual**: guests receive intentional water f
 | Vessel | Earthen stone · quartz lining · purple glass — forever object |
 | Ritual | Intention / blessing as hospitality ceremony (no health claim) |
 | Story | Booklet + tag: source, makers, give-back % |
-| Conscience | No single-use plastic bottle for the pour; published charity/stewardship split |
+| Conscience | **No single-use plastic** for the pour — guest keeps stone/glass forever; published charity/stewardship split |
+| Ocean story | Every ritual that replaces a premium plastic bottle is one less bottle in the waste stream that harms marine environments |
 
-**Blind taste is not the product.** NYC tap can win sips; AquaQuarts wins the **date-night table**.
+**Blind taste is not the product.** NYC tap can win sips; AquaQuarts wins the **date-night table**.  
+**Plastic is the contrast:** almost every competing “fancy water” ships in plastic (or glass that is still single-serve dump). AquaQuarts is the heirloom that never becomes bottle trash.
 
 ---
 
