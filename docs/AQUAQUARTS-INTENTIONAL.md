@@ -32,10 +32,22 @@ The product is **design + place + ceremony + keep-the-vessel**, same family as a
 
 1. **Beautiful decanter** — earthen stone · quartz lining · purple glass — tableside art, then **taken home forever**.  
 2. **Pour / ritual** — intentional water (ceremony, not medicine).  
-3. **Little book → website** — scan/open: Lithia Springs origin (film, place, well story); makers; give-back math; **blessing video or page** when a tribal leader, elder, or invited spiritual partner records a real blessing over that edition’s water.  
-4. **Culture infusion (anyone who partners)** — Cherokee-country or other leaders/artisans shape blessing, story, and craft for editions that invite them — paid fairly; they own how their culture appears.  
-5. **Date-night signal** — the date sees a stunning vessel and understands you spent meaningfully: not plastic flex — **charity / global water issues / awareness** + a forever object.  
+3. **Little book on the neck** — tied to the decanter (leather cord / strap); opens the website: Lithia (or local place) film, makers, give-back, blessing when partners opt in.  
+4. **Culture infusion (anyone who partners)** — leaders/artisans shape blessing and craft — paid fairly; they own how their culture appears.  
+5. **Date-night + forever reminder** — at the table they see beauty and meaning; **at home the neck-tied book and vessel keep reminding them of that date.**  
 6. **Give-back** — contracted % to water projects + source/partners (published on the site).
+
+---
+
+## Logistics — prefer local water (default)
+
+| Model | Idea | Footprint / honesty |
+| --- | --- | --- |
+| **A. Local-first (recommended)** | Place / city / country editions use **nearby** spring or approved water — vessel travels or is made local; **water barely moves** | Best match to stewardship story; simplest ops |
+| **B. Classic ship/truck** | Lithia or Finland water to restaurants | Normal freight; don’t greenwash |
+| **C. Airship (future / optional)** | Concept: move limited edition water by **zeppelin/airship** when that capability is real | Can be *lower* than jet freight in some cases — **not** “almost zero carbon.” Only claim if you actually operate or contract airships; don’t sell “our zeppelins” until they exist |
+
+**Default for the brand:** keep water local whenever a Place Edition exists. The decanter and neck-tied book carry the ritual; the spring stays home.
 
 ---
 
@@ -47,7 +59,7 @@ The product is **design + place + ceremony + keep-the-vessel**, same family as a
 | Blessing | Tribal / spiritual partners who **opt in** — their words, their faces, their framing |
 | Makers | Who formed the stone and glass |
 | Stewardship | % to water scarcity awareness / marine plastic contrast / named orgs |
-| Your vessel | “This decanter is yours — no bottle in the ocean from this pour” |
+| Your vessel | Book stays on the neck at home — that date stays with them; no bottle in the ocean from this pour |
 
 Until partners are signed: site shows Lithia + “blessings and cultural partners — invitations open,” not stock “Indian priest” claims.
 

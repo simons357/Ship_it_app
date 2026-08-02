@@ -22,7 +22,8 @@ Make the water course a **memorable ritual**: guests receive intentional water f
 | Water | Natural mineral/spring water from a contracted source (Lithia Springs first; Finland; country/city “best water” editions) |
 | Vessel | Earthen stone · quartz lining · purple glass — forever object |
 | Ritual | Intention / blessing as hospitality ceremony (no health claim) |
-| Story | Little book → website: Lithia Springs origin film, makers, give-back %, blessing when partners opt in |
+| Story | Little **book tied to the neck** of the decanter → website: origin film, makers, give-back %, blessing when partners opt in |
+| Memory | At home, neck-tied book + vessel keep reminding them of the date |
 | Culture | Tribal / spiritual leaders and artisans who choose to bless and shape an edition — paid, credited, in control of their framing |
 | Date-night | Beautiful decanter signals care: money to water charity/awareness, not plastic flex |
 | Conscience | **No single-use plastic** — guest keeps stone/glass forever |
@@ -116,10 +117,11 @@ Until the % is signed, marketing says **“exploring give-back partnerships,”*
 
 1. Source tested spring water under beverage rules.  
 2. No structuring process.  
-3. Fill per hospitality SOP (tableside or controlled pre-fill).  
-4. Present with intention ritual + booklet.  
-5. Guest keeps vessel.  
-6. Remit source + maker + stewardship splits.
+3. **Prefer local water** for Place Editions (avoid hauling water when the story is stewardship).  
+4. Fill per hospitality SOP; **tie little book to decanter neck**.  
+5. Guest keeps vessel + book — home reminder of the date.  
+6. Remit source + maker + stewardship splits.  
+7. Long-haul / airship transport = optional future logistics story only with real assets and honest carbon math — not a current promise.
 
 ---
 
