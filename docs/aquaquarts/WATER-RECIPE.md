@@ -150,6 +150,64 @@ Pour only **after** filtration. Vessel stays inert art.
 
 ---
 
+## 5b. Tech stack to **match** “best in the world” sip
+
+Winners (e.g. Berkeley Springs gold still waters) are almost always: **clean + cold + low off-odor + moderate Ca/Mg/HCO₃ + low sodium**. You match that with a **small beverage train**, not nanomaterials in the vessel.
+
+### House Sip train (deliberate world-class chase)
+
+```
+City/tap or spring
+    → sediment prefilter (5 µm)
+    → catalytic carbon (chlorine / chloramine / mild H₂S odor)
+    → reverse osmosis (RO)          ← blank slate, flat water
+    → optional UV on RO product     ← microbes only; optional
+    → remineralization cartridge     ← Ca / Mg / HCO₃ to target
+    → chill to 4–10 °C
+    → pour into inert AquaQuartz decanter
+```
+
+| Stage | Tech | Job |
+| --- | --- | --- |
+| 1 | Sediment | Protect carbon/RO |
+| 2 | **Catalytic carbon** | Kill disinfectant & sulfur **taste** |
+| 3 | **RO** (or distilled) | Strip everything → flat blank |
+| 4 | UV (optional) | Extra microbe kill on product water |
+| 5 | **Remineralize** | Food-grade minerals to TDS ~200–350, pH ~7.2–7.8 |
+| 6 | Chill | Preference always favors cold |
+| 7 | Inert vessel | Glass / quartz-look glaze — no chemistry |
+
+**Commercial shortcuts restaurants already use:** Everpure / 3M / BWT / Brita Professional coffee–beverage systems; specialty coffee “mineral recipe” kits (e.g. measured Ca/Mg additions to RO). Same idea — don’t reinvent the plant.
+
+### Rough cost (pilot scale)
+
+| Setup | Ballpark |
+| --- | --- |
+| Under-counter catalytic carbon + sediment only (Savannah “make tap decent”) | ~$200–800 + cartridges |
+| Full House Sip: RO + remineralize + chill | ~$1.5k–6k installed (site-dependent) |
+| Lab COA + blind panel vs Evian-class | ~$300–1.5k |
+
+### What to optimize (the actual knobs)
+
+1. **Zero chlorine odor** (carbon first — non-negotiable).  
+2. **TDS 200–350 mg/L** after remineralize.  
+3. **Na as low as you can** in the mineral mix.  
+4. **Ca : Mg** roughly in the “Evian neighborhood” (Ca higher than Mg; don’t overdose Mg).  
+5. **pH 7.2–7.8** via bicarbonate system.  
+6. **Serve cold.**  
+7. Blind test until you tie or beat a reference bottle — then stop tweaking.
+
+### Two honest products
+
+| SKU | Tech | Promise |
+| --- | --- | --- |
+| Lithia / true spring | Source + cold (+ light polish only if partner allows) | Place character |
+| House Sip / “match the best” | RO + remineralize train above | Crafted for preference — label it |
+
+Do **not** run Lithia through RO and still call it Lithia Spring Water.
+
+---
+
 ## 6. Recommended recipe stack (what we ship)
 
 ### SKU 1 — **Lithia Springs Ritual** (launch)
