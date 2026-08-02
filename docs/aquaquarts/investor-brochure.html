@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AquaQuarts — Investor Brochure · Prime Field Technologies</title>
+  <meta name="description" content="AquaQuarts investor brochure: intentional place-water, forever stone-and-glass decanters, Place Editions, stewardship, no plastic." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --deep: #0a1216;
+      --foam: #e7efed;
+      --mist: #9aaeb4;
+      --lithia: #5f9a96;
+      --amethyst: #6b5a7a;
+      --quartz: #c4b8a8;
+      --line: rgba(231, 239, 237, 0.16);
+      --display: "Cormorant Garamond", Georgia, serif;
+      --body: "Outfit", system-ui, sans-serif;
+      --pad: clamp(1.25rem, 4vw, 3rem);
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--foam);
+      font-family: var(--body);
+      font-weight: 300;
+      line-height: 1.55;
+      background:
+        radial-gradient(900px 500px at 90% -5%, rgba(107, 90, 122, 0.25), transparent 55%),
+        radial-gradient(700px 400px at 0% 30%, rgba(95, 154, 150, 0.16), transparent 50%),
+        linear-gradient(165deg, #070d10 0%, var(--deep) 45%, #142028 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .bar {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.65rem var(--pad);
+      background: rgba(7, 13, 16, 0.78);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.8rem;
+    }
+    .bar .mark { font-family: var(--display); font-size: 1.15rem; letter-spacing: 0.02em; }
+    .bar .actions { display: flex; gap: 0.5rem; }
+    .bar button, .bar a.btn {
+      font: 500 0.72rem var(--body);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--foam);
+      padding: 0.45rem 0.85rem;
+      cursor: pointer;
+    }
+    .bar button:hover, .bar a.btn:hover { border-color: var(--lithia); }
+
+    .wrap { width: min(980px, 100%); margin: 0 auto; padding: 0 var(--pad) 4rem; }
+
+    /* Hero */
+    .hero {
+      min-height: min(88vh, 720px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 5.5rem 0 3rem;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 5% 15% auto 0;
+      height: 55%;
+      background:
+        radial-gradient(ellipse at 50% 50%, rgba(196, 184, 168, 0.12), transparent 60%),
+        radial-gradient(ellipse at 70% 40%, rgba(107, 90, 122, 0.32), transparent 55%);
+      animation: drift 16s var(--ease) infinite alternate;
+      pointer-events: none;
+    }
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(1); }
+      to { transform: translate(2%, 3%) scale(1.05); }
+    }
+    .eyebrow {
+      position: relative;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--lithia);
+      margin: 0 0 0.75rem;
+    }
+    .brand {
+      position: relative;
+      font-family: var(--display);
+      font-size: clamp(3.4rem, 11vw, 5.8rem);
+      font-weight: 600;
+      line-height: 0.92;
+      margin: 0 0 1rem;
+    }
+    .hero h1 {
+      position: relative;
+      font-family: var(--display);
+      font-weight: 500;
+      font-style: italic;
+      font-size: clamp(1.35rem, 3.2vw, 1.95rem);
+      color: var(--quartz);
+      max-width: 22ch;
+      margin: 0 0 1rem;
+    }
+    .lede {
+      position: relative;
+      max-width: 40ch;
+      color: var(--mist);
+      margin: 0 0 1.75rem;
+      font-size: 1.05rem;
+    }
+    .cta-row { position: relative; display: flex; flex-wrap: wrap; gap: 0.65rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.1rem;
+      border: 1px solid rgba(95, 154, 150, 0.65);
+      background: rgba(95, 154, 150, 0.12);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .btn.ghost { background: transparent; border-color: var(--line); }
+
+    section { padding: 2.75rem 0 0; }
+    h2 {
+      font-family: var(--display);
+      font-size: clamp(1.7rem, 3.5vw, 2.35rem);
+      font-weight: 600;
+      margin: 0 0 0.75rem;
+      max-width: 20ch;
+    }
+    h3 {
+      font-family: var(--display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.4rem;
+    }
+    .body { color: var(--mist); max-width: 54ch; margin: 0 0 0.85rem; }
+    .fine { font-size: 0.85rem; color: rgba(154, 174, 180, 0.85); max-width: 54ch; }
+
+    .grid2 {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 1.25rem;
+    }
+    @media (min-width: 720px) {
+      .grid2 { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    .panel {
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+    }
+    .panel p { color: var(--mist); margin: 0; font-size: 0.95rem; }
+
+    .beats {
+      list-style: none;
+      margin: 1.5rem 0 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+    .beats li {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr;
+      gap: 0.85rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .beats span {
+      font-family: var(--display);
+      font-size: 1.15rem;
+      color: var(--amethyst);
+    }
+    .beats h3 { margin: 0 0 0.2rem; font-size: 1.2rem; }
+    .beats p { margin: 0; color: var(--mist); font-size: 0.95rem; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.85rem;
+      margin: 1.25rem 0;
+    }
+    .gallery figure { margin: 0; }
+    .gallery img {
+      width: 100%;
+      display: block;
+      border: 1px solid var(--line);
+    }
+    .gallery figcaption {
+      font-size: 0.75rem;
+      color: var(--mist);
+      margin-top: 0.35rem;
+    }
+    .wide { margin: 1.25rem 0; }
+    .wide img { width: 100%; border: 1px solid var(--line); display: block; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 1rem 0 0.5rem;
+    }
+    th, td {
+      border-top: 1px solid var(--line);
+      padding: 0.55rem 0.35rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { color: var(--quartz); font-weight: 500; }
+    td { color: var(--mist); }
+
+    blockquote {
+      margin: 1.25rem 0;
+      padding: 1rem 1.2rem;
+      border-left: 2px solid var(--amethyst);
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--foam);
+    }
+
+    .ask {
+      margin-top: 2.5rem;
+      padding: 1.75rem 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .ask .num {
+      font-family: var(--display);
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin: 0.25rem 0 0.75rem;
+    }
+    .email {
+      font-family: var(--display);
+      font-size: 1.5rem;
+      border-bottom: 1px solid rgba(95, 154, 150, 0.5);
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.78rem;
+      color: rgba(154, 174, 180, 0.75);
+    }
+
+    @media print {
+      .bar { display: none; }
+      body { background: #fff; color: #111; }
+      .brand, h2, h3, blockquote, .ask .num, .email { color: #111; }
+      .lede, .body, .beats p, td, .panel p, figcaption, footer, .fine { color: #333; }
+      .hero { min-height: auto; padding-top: 1rem; }
+      .hero::before { display: none; }
+      .gallery { grid-template-columns: 1fr 1fr; break-inside: avoid; }
+      section { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <span class="mark">AquaQuarts · Investor</span>
+    <div class="actions">
+      <button type="button" onclick="window.print()">Print / PDF</button>
+      <a class="btn" href="mailto:js@primefieldtechnologies.com?subject=AquaQuarts%20investor">Contact</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <header class="hero">
+      <p class="eyebrow">Prime Field Technologies, LLC · Confidential investor overview</p>
+      <p class="brand">AquaQuarts</p>
+      <h1>Intentional water for tables that remember.</h1>
+      <p class="lede">
+        Heirloom stone-and-glass decanters. Named place-water. A neck-tied book with poem or blessing.
+        Guests take the vessel home. Cities show their pride. No throwaway plastic.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="#offer">The offer</a>
+        <a class="btn ghost" href="#ask">The ask</a>
+      </div>
+    </header>
+
+    <section id="problem">
+      <p class="eyebrow">Why this exists</p>
+      <h2>Fancy water is still plastic. Meaning is missing.</h2>
+      <p class="body">
+        Premium bottled water fights on blind sips it often loses to good tap.
+        Single-use plastic still reaches the ocean. Fine dining has wine ritual —
+        and almost nothing equally memorable for water.
+      </p>
+      <p class="body">
+        AquaQuarts sells the night: a forever object, a place’s best water, stewardship you can point to,
+        and a date that stays on the shelf.
+      </p>
+    </section>
+
+    <section id="offer">
+      <p class="eyebrow">What we do</p>
+      <h2>The ritual kit</h2>
+      <ol class="beats">
+        <li>
+          <span>01</span>
+          <div>
+            <h3>The decanter</h3>
+            <p>Earthen stone · quartz-look liner · purple glass. Designed as art. Built to leave with the guest.</p>
+          </div>
+        </li>
+        <li>
+          <span>02</span>
+          <div>
+            <h3>The water</h3>
+            <p>Natural spring or place water — unstructured. Lithia Springs first; local-first for Place Editions.</p>
+          </div>
+        </li>
+        <li>
+          <span>03</span>
+          <div>
+            <h3>The neck book</h3>
+            <p>Tied to the vessel. Opens a site: source film, blessing or poem, give-back %, protect-and-celebrate water.</p>
+          </div>
+        </li>
+        <li>
+          <span>04</span>
+          <div>
+            <h3>The memory</h3>
+            <p>At home the book and decanter keep reminding them of the date — and that the spend meant something.</p>
+          </div>
+        </li>
+        <li>
+          <span>05</span>
+          <div>
+            <h3>Place pride</h3>
+            <p>Cities and countries license editions — their water, their poem, their craft cues — 50-concept palette ready.</p>
+          </div>
+        </li>
+      </ol>
+      <blockquote>
+        Water is life made visible… we protect springs, rivers, and oceans, celebrate the source, and refuse the throwaway bottle.
+      </blockquote>
+    </section>
+
+    <section id="gallery">
+      <p class="eyebrow">Design language</p>
+      <h2>Product gallery</h2>
+      <div class="gallery">
+        <figure>
+          <img src="renders/aquaquarts-place-lithia-neckbook.png" alt="Lithia with neck book" />
+          <figcaption>Lithia · neck book</figcaption>
+        </figure>
+        <figure>
+          <img src="renders/aquaquarts-place-nordic-neckbook.png" alt="Nordic with neck book" />
+          <figcaption>Nordic · neck book</figcaption>
+        </figure>
+        <figure>
+          <img src="renders/aquaquarts-cherokee-lithia-decanter.png" alt="Cherokee-country line" />
+          <figcaption>Cherokee-country craft line</figcaption>
+        </figure>
+        <figure>
+          <img src="renders/aquaquarts-scandinavian-decanter.png" alt="Scandinavian line" />
+          <figcaption>Scandinavian line</figcaption>
+        </figure>
+        <figure>
+          <img src="renders/aquaquarts-place-nyc.png" alt="NYC edition" />
+          <figcaption>Place · NYC</figcaption>
+        </figure>
+        <figure>
+          <img src="renders/aquaquarts-place-iceland.png" alt="Iceland" />
+          <figcaption>Place · Iceland</figcaption>
+        </figure>
+        <figure>
+          <img src="renders/aquaquarts-place-japan.png" alt="Japan" />
+          <figcaption>Place · Japan</figcaption>
+        </figure>
+        <figure>
+          <img src="renders/aquaquarts-place-andes.png" alt="Andes" />
+          <figcaption>Place · Andes</figcaption>
+        </figure>
+        <figure>
+          <img src="renders/aquaquarts-place-kenya.png" alt="Kenya" />
+          <figcaption>Place · Kenya</figcaption>
+        </figure>
+        <figure>
+          <img src="renders/aquaquarts-place-desert-neckbook.png" alt="Desert" />
+          <figcaption>Place · desert / MENA mood</figcaption>
+        </figure>
+      </div>
+      <figure class="wide">
+        <img src="renders/aquaquarts-place-palette-five.png" alt="Five editions" />
+        <figcaption>Campaign row — many places, one ritual</figcaption>
+      </figure>
+    </section>
+
+    <section id="model">
+      <p class="eyebrow">Business model</p>
+      <h2>How money works</h2>
+      <div class="grid2">
+        <div class="panel">
+          <h3>Revenue</h3>
+          <p>Tableside ritual kits · refills after the vessel is owned · DTC heirlooms · Place Edition licenses for cities/countries.</p>
+        </div>
+        <div class="panel">
+          <h3>Indicative pricing</h3>
+          <p>Guest ritual ~$180–$450 (keep decanter) · refill ~$25–$60 · venue share negotiated (~40–50%).</p>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Planning metric</th><th>Base</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>COGS / kit (mid)</td><td>~$110 ($70–$220 range)</td></tr>
+          <tr><td>Guest ASP (ritual)</td><td>~$280</td></tr>
+          <tr><td>Brand after venue cut</td><td>~$154</td></tr>
+          <tr><td>Stewardship</td><td>Published % after unit economics work</td></tr>
+          <tr><td>Pilot capital</td><td><strong>~$40k–$120k</strong> (lean) · up to ~$200k with ops buffer</td></tr>
+          <tr><td>Year 1</td><td>Proof year — expect investment loss at 2 restaurants</td></tr>
+          <tr><td>Path to break-even</td><td>~750 kits/yr at ~$40 contribution, or fewer with strong DTC/refill</td></tr>
+        </tbody>
+      </table>
+      <p class="fine">Planning ranges pending manufacturer quotes. Full model in MANUFACTURERS-AND-FINANCIALS.md.</p>
+    </section>
+
+    <section id="makers">
+      <p class="eyebrow">Supply</p>
+      <h2>Who makes the vessels</h2>
+      <table>
+        <thead>
+          <tr><th>Path</th><th>Role</th><th>Signal</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>SE US / Nordic studios</td><td>Prototypes</td><td>5–50 · ~$40–$250/u</td></tr>
+          <tr><td>Hospitality stone/ceramic OEM</td><td>Hotel-grade mineral look</td><td>Quote</td></tr>
+          <tr><td>Anfora (Mexico)</td><td>Food-grade ceramic bottles</td><td>MOQ ~5k · molds ~$2.7k+</td></tr>
+          <tr><td>Asia stoneware OEM</td><td>Volume Place runs</td><td>MOQ ~1k–3k</td></tr>
+          <tr><td>Studio glass</td><td>Amethyst / local glass accent</td><td>~$8–$40</td></tr>
+          <tr><td>Local artisans</td><td>Pride editions · fair pay</td><td>Project</td></tr>
+        </tbody>
+      </table>
+      <p class="body">Water: Lithia Springs (and local Place sources) under contract — well/source gets paid.</p>
+    </section>
+
+    <section id="scale">
+      <p class="eyebrow">Scale</p>
+      <h2>50 Place Editions — pride without plastic</h2>
+      <p class="body">
+        North America · Europe · MENA &amp; Africa · Asia–Pacific · LatAm &amp; Caribbean —
+        each with water hook, vessel cue, poem/blessing lane. Full list: PLACE-EDITION-PALETTE.md.
+      </p>
+      <p class="body">
+        Pitch: <em>Your best water. Your poem. Your vessel. Guests keep it. The neck book tells your story and funds water protection.</em>
+      </p>
+    </section>
+
+    <section id="company">
+      <p class="eyebrow">Company</p>
+      <h2>Prime Field Technologies, LLC</h2>
+      <p class="body">
+        Founder Jonathan Simons — artist and CRNA — building AquaQuarts as the hospitality lead.
+        Sister lanes (separate diligence): Field Lock (live security demo), clinical Vigilant concept under Simons Medical Innovations.
+        This brochure raises for <strong>AquaQuarts</strong>, not Millennium-prize research.
+      </p>
+    </section>
+
+    <section id="ask" class="ask">
+      <p class="eyebrow">The ask</p>
+      <h2>Fund the pilot</h2>
+      <p class="num">$100k–$200k</p>
+      <p class="body">
+        Use of funds: maker samples &amp; tooling · 100–200 decanters · neck books &amp; story site ·
+        beverage/product insurance · Lithia (or alt) source agreement · legal · 2–3 restaurant pilots.
+      </p>
+      <p class="body">
+        Milestones: physical samples → paid pilot nights → Nordic or first Place MOU conversation.
+        Kill switches honest: if COGS cannot land near target, simplify materials or pause scale.
+      </p>
+      <p class="fine">Not a desal plant. Not a medical device. A brand + craft + hospitality channel.</p>
+      <a class="email" href="mailto:js@primefieldtechnologies.com">js@primefieldtechnologies.com</a>
+    </section>
+
+    <section id="guardrails">
+      <p class="eyebrow">Guardrails investors should hear</p>
+      <h2>What we will not claim</h2>
+      <p class="body">
+        No structured-water health miracles · no lithium dosing · no fake tribal endorsements ·
+        no charity % until contracted · no trademarked spring names without license ·
+        blind taste is not the product — ritual and object are.
+      </p>
+    </section>
+
+    <footer>
+      AquaQuarts Investor Brochure · Prime Field Technologies, LLC · Savannah / Lithia Springs, Georgia ·
+      Master plan: AQUAQUARTS-COMPLETE-BUSINESS-PLAN.md · Visual plan: business-plan.html ·
+      © concept materials for discussion — planning financials pending quotes
+    </footer>
+  </div>
+</body>
+</html>
