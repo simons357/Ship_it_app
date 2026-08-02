@@ -63,6 +63,47 @@ Patent only if vessel system or process is truly inventive — **story and inten
 
 ---
 
+## Dimension B — Finland / Scandinavian flair
+
+Optional second origin line (artist-led; you said this is easy):
+
+| Piece | Note |
+| --- | --- |
+| Water | Source/buy from Finland (or Finnish spring partner) under normal beverage import/label rules |
+| Vessel | Scandinavian design flair — clean form, glass/stone language you control as artist |
+| Story | Nordic restraint + ritual intention — still **no** structure/health claims |
+| Relation to Lithia | **Separate edition**, not a contradiction — “Origins” menu: Georgia · Finland · (later places) |
+
+Do not promise “Finnish government partnership” until a real supply contract exists.
+
+---
+
+## Dimension C — Place editions + water stewardship
+
+**Idea:** Partner with a city / town / region that has a named water source. Their edition uses **their** water story + local design cues. Most of the margin goes to **charity / global water projects** to raise awareness for protecting natural resources.
+
+| Piece | Honest frame |
+| --- | --- |
+| Product | Still intentional water + forever vessel + booklet |
+| Local deal | Municipality or spring co-op licenses name/story; you design the ritual object |
+| Money | Published % to named water charities / local watershed projects (term sheet, not vibes) |
+| Awareness | Campaign layer: protect springs, rivers, access — hospitality as education |
+| Risk | Charity claims need real 501(c)(3) or equivalent partners + accounting; don’t say “most goes to charity” until the split is written |
+
+This is a **stewardship franchise / edition model**, not water *production* technology.
+
+---
+
+## Edition map (keep simple)
+
+| Edition | Source story | Design | Give-back |
+| --- | --- | --- | --- |
+| **Lithia** (core) | Lithia Springs, GA · Cherokee-country craft explore | Stone / quartz / purple glass | Springs + artisan partners when signed |
+| **Finland** (artist line) | Finnish sourced water | Scandinavian flair | Optional Nordic water/environment org |
+| **Place** (civic) | That town’s spring/utility story | Local artist cues | Majority to named water projects (contracted %) |
+
+---
+
 ## Investor one-liner
 
-> Luxury intentional-water ritual for fine dining: forever quartz/purple-glass decanter, Lithia Springs story, optional Cherokee craft partnership, take-home vessel — no medical or “information in water” claims.
+> Luxury intentional-water ritual for fine dining: forever vessel, place-based editions (Lithia Springs, optional Finland/Scandinavian line, civic water editions with published give-back to water projects) — artist-led design, no medical or “information in water” claims.
