@@ -48,17 +48,29 @@ Cinematic still of a fine-dining tableside water ritual: server’s hands presen
 
 ---
 
-## 4) Optional — country “best water” campaign key art
+## 4) Country / city pride — neck book required
 
 ```text
-Elegant campaign image: a row of three distinct heirloom stone-and-purple-glass water decanters on a long slate ledge — one warm earthen Georgia mineral style, one cool Scandinavian greige, one with a subtle local-place variation — each catching window light. Caption space left empty at bottom third. Mood: nations and towns entrust their best water to a forever vessel for restaurants worldwide. Photoreal, no readable flags or text, no plastic.
+Product render of a luxury place-edition water decanter for fine dining, three-quarter view. Tall heirloom stone vessel with quartz-look rim and translucent amethyst purple glass accent. Critically: a small leather-bound booklet is tied to the neck of the decanter with a thin leather cord — visible, elegant, gift-like. Book cover shows only abstract texture, no readable words. Soft restaurant light. Mood: national or city pride through honest materials and craft — NO flags, NO coats of arms, NO sacred symbols, NO stereotypes, NO plastic, NO logos, NO readable text. Photoreal 85mm, museum clarity. Guest will take this home forever; the neck book holds a poem and a reminder to protect water and the environment.
+```
+
+## 5) Campaign key art — many places, one ritual
+
+```text
+Elegant campaign image: five distinct heirloom stone-and-purple-glass water decanters in a row on a long slate ledge — warm Georgia clay, cool Scandinavian greige, desert sand stone, alpine pale stone, volcanic dark stone — each with a tiny leather booklet tied to the neck. Soft window light. Mood: cities and countries show off their best water with pride; protect and celebrate the environment; no plastic bottles. Photoreal, no readable flags or text, no logos, elegant negative space.
+```
+
+## 6) Date-night with neck book (memory)
+
+```text
+Cinematic still, fine dining: stone-and-quartz decanter with purple glass accent on linen, small leather booklet tied to the neck with cord, couple softly out of focus, candlelight. Mood: intentional water, charity and environmental care, forever keepsake. No plastic bottles, no logos, no readable text on book. Photoreal, shallow depth of field.
 ```
 
 ---
 
 ## Quick use
 
-1. Generate Cherokee-country prompt → pick best → iterate (“more quartz at rim”, “less purple”, “shorter neck”).  
-2. Generate Scandinavian prompt the same way.  
-3. Drop finals into `docs/aquaquarts/renders/` when you download them.  
-4. Use in brochure / investor one-pager / maker brief.
+1. Generate Lithia + Scandinavian heroes.  
+2. Generate place-pride prompts with **neck book always visible**.  
+3. Drop finals into `docs/aquaquarts/renders/`.  
+4. Full 5×10 edition list: `PLACE-EDITION-PALETTE.md`.
