@@ -80,6 +80,7 @@ Money path. No professor callback required.
 | **ProVR / AI Surgeon VR / games** | Long-cycle | Hobby or partner only; not near cash |
 | **FieldPredict Stocks/Sports** | Trust + regulation landmine | Deprioritize |
 | **EEG earphones / Music OS** | Hardware + medical-adjacent | Only if you enjoy it; expensive |
+| **ExoRatio** | Negative null-model audit; no sellable signal | **CUT — shit / worthless.** Do not promote, demo, or cite as evidence. Archive or kill the Base44 app. |
 
 ### Tier 3 — do not monetize via “Millennium math”
 

@@ -13,8 +13,9 @@ You are not a fool for posting exploratory work. Leaving known-false Millennium 
 | --- | --- |
 | Phi-renorm algebraic cancel identity (method, not Clay) | Triple Lock / SND≡GNC≡Bridge as a proved Millennium unifier |
 | Ring Lemma as a *conditional* fluids lemma (if you ever reopen) | \(\lambda_{\min}(Q_N)>-1/2\) / “Bridge floor closed” |
-| Apps: Field Lock, NAV-42, Ship It, Vigilant Patch, AquaQuarts | Goldbach via dark states / paper \(v_k\) |
-| Your CRNA + builder story | Quantum Lens / three-in-one “one Hamiltonian solves three” |
+| Apps: Field Lock, NAV-42, Ship It, Vigilant Patch, AquaQuarts | ExoRatio — **CUT / worthless** (negative audit) |
+| Your CRNA + builder story | Goldbach via dark states / paper \(v_k\) |
+| | Quantum Lens / three-in-one “one Hamiltonian solves three” |
 | | BSD Hamiltonian, Montgomery–Dyson “resolved,” κ\* consciousness |
 | | Any “Clay / unconditional NS / RH proved” framing |
 
