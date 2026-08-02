@@ -1,7 +1,8 @@
 # Structured water / AquaQuarts — data freeze
 
 **Date:** 2026-08-02  
-**Your framing (locked):** AquaQuarts = high-end restaurant / tableside **sales experience**, not a Clay or medical product.  
+**Your framing (locked):** AquaQuarts = **intentional water** hospitality ritual (decanter + story + intention) — see `AQUAQUARTS-INTENTIONAL.md`.  
+Not a Clay or medical product. Not “structure stores information” on the label.  
 **Ship It:** Not a fundraise lead (GH UX improved; yours was frustration UX).
 
 ---
