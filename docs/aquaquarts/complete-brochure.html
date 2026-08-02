@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AquaQuartz — Complete Brochure</title>
+  <meta name="description" content="AquaQuartz complete scope: place water, forever decanter, city pride, filter vs full train costs, Lithia and Savannah, investor ask." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a2220;
+      --muted: #5a6662;
+      --paper: #f3f0e8;
+      --panel: #ebe6db;
+      --line: #c9c2b4;
+      --lithia: #3d6f6a;
+      --clay: #8b5a3c;
+      --display: "Cormorant Garamond", Georgia, serif;
+      --body: "Source Sans 3", "Segoe UI", sans-serif;
+      --pad: clamp(1.25rem, 4vw, 2.75rem);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--body);
+      font-weight: 300;
+      line-height: 1.55;
+      background:
+        radial-gradient(ellipse 80% 50% at 100% 0%, rgba(61, 111, 106, 0.12), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 0% 100%, rgba(139, 90, 60, 0.08), transparent 50%),
+        linear-gradient(180deg, #f7f4ec 0%, var(--paper) 40%, #e8e3d6 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+    .bar {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      padding: 0.7rem var(--pad);
+      background: rgba(247, 244, 236, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.85rem;
+    }
+    .bar strong { font-family: var(--display); font-size: 1.25rem; font-weight: 600; }
+    .bar nav { display: flex; flex-wrap: wrap; gap: 0.35rem 0.75rem; align-items: center; }
+    .bar a, .bar button {
+      font: 600 0.68rem var(--body);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      padding: 0.4rem 0.7rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .wrap { width: min(860px, 100%); margin: 0 auto; padding: 2rem var(--pad) 4rem; }
+    h1 {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: clamp(2.6rem, 7vw, 3.6rem);
+      line-height: 1.05;
+      margin: 0 0 0.35rem;
+    }
+    .tag {
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--lithia);
+      margin: 0 0 1rem;
+    }
+    .lede { font-size: 1.12rem; color: var(--muted); max-width: 40rem; margin: 0 0 1.75rem; }
+    .hero-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      margin: 0 0 0.5rem;
+    }
+    .cap { font-size: 0.85rem; color: var(--muted); margin: 0 0 2rem; }
+    h2 {
+      font-family: var(--display);
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin: 2.4rem 0 0.7rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--line);
+    }
+    h3 {
+      font-family: var(--display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 1.4rem 0 0.45rem;
+    }
+    p, li { font-size: 1.02rem; }
+    .note {
+      background: var(--panel);
+      border-left: 3px solid var(--lithia);
+      padding: 1rem 1.15rem;
+      margin: 1.1rem 0;
+    }
+    .note p { margin: 0; }
+    .callout {
+      background: var(--ink);
+      color: #f3f0e8;
+      padding: 1.25rem 1.35rem;
+      margin: 1.1rem 0 1.5rem;
+    }
+    .callout p { margin: 0 0 0.65rem; }
+    .callout p:last-child { margin: 0; }
+    .callout strong { color: #c5e0dc; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.94rem;
+      margin: 0.75rem 0 1.25rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.55rem 0.45rem;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      font-weight: 600;
+      font-size: 0.74rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .money { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.85rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .card {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.4);
+      padding: 1rem;
+    }
+    .card h3 { margin-top: 0; }
+    .card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      margin-bottom: 0.55rem;
+    }
+    .flow {
+      font-family: var(--display);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      background: rgba(255,255,255,0.45);
+      border: 1px solid var(--line);
+      padding: 1rem 1.15rem;
+      margin: 0.75rem 0 1.25rem;
+    }
+    .footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    @media print {
+      .bar { position: static; }
+      .bar button, .no-print { display: none !important; }
+      body { background: white; }
+      .callout, .card, .note { break-inside: avoid; }
+      h2 { break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <strong>AquaQuartz</strong>
+    <nav class="no-print">
+      <a href="#scope">Scope</a>
+      <a href="#city">City</a>
+      <a href="#water">Water tech</a>
+      <a href="#cost">Cost</a>
+      <a href="#money">Ask</a>
+      <button type="button" onclick="window.print()">Print / PDF</button>
+    </nav>
+  </div>
+
+  <main class="wrap">
+    <h1>AquaQuartz</h1>
+    <p class="tag">Intentional place-water · forever vessel · city pride</p>
+    <p class="lede">
+      Complete brochure: what it is, how a city shows off its water, Lithia and Savannah,
+      whether you need a full treatment train or just a good filter — with real cost ranges —
+      order of operations, money, and how the founder stays protected.
+    </p>
+
+    <img class="hero-img" src="renders/aquaquartz-savannah-moss-neck.png" alt="Savannah AquaQuartz decanter with Spanish moss and neck book" />
+    <p class="cap">Savannah Place Edition concept — Spanish moss at the neck, little book, quartz-look liner.</p>
+
+    <h2 id="scope">1. The whole scope (one page)</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>The ritual</h3>
+        <p>Tableside water from a <strong>named place</strong>, poured from a forever stone-and-glass decanter with a neck book. Guest takes the vessel home. No single-use plastic.</p>
+      </div>
+      <div class="card">
+        <h3>The water</h3>
+        <p>Honest place water — not “structured.” Lithia Springs first (heritage mineral). Cities later (Savannah, Nordic, 50 Place Editions). Optional House Sip for contest-level taste.</p>
+      </div>
+      <div class="card">
+        <h3>The object</h3>
+        <p>Earthen body · quartz-look liner · purple/local glass · neck book → website (film, poem/blessing, give-back). Art you keep.</p>
+      </div>
+      <div class="card">
+        <h3>The company</h3>
+        <p>Prime Field Technologies, LLC (or AquaQuartz subsidiary). Trademark, designs, contracts owned by the company. Founder: Jonathan Simons.</p>
+      </div>
+    </div>
+    <p>
+      We sell <strong>art + ritual + place pride + stewardship</strong>.
+      Blind sip contests are optional for some editions — not Lithia’s job.
+    </p>
+
+    <h2 id="city">2. Show off your city</h2>
+    <p>
+      Every Place Edition is civic pride in a glass:
+      <em>this is our water, our vessel, our poem, our give-back.</em>
+      The guest leaves with a forever object that still says the city’s name on the shelf.
+    </p>
+    <table>
+      <thead>
+        <tr><th>Edition</th><th>Water story</th><th>Vessel cue</th><th>Job</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Lithia Springs</strong> (launch)</td>
+          <td>Historic mineral spring through quartz-bearing granite</td>
+          <td>Warm river-clay · amethyst glass</td>
+          <td>Heritage character</td>
+        </tr>
+        <tr>
+          <td><strong>Savannah / Lowcountry</strong></td>
+          <td>Floridan Aquifer + Abercorn Creek — civic pride; past statewide taste win</td>
+          <td>Ochre / tabby · moss glass · Spanish moss at neck</td>
+          <td>Hometown soft sip</td>
+        </tr>
+        <tr>
+          <td><strong>50 Place Editions</strong></td>
+          <td>Local spring or city’s best water under contract</td>
+          <td>Local color on same kit language</td>
+          <td>License / pride later</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <p>
+        <strong>City pitch:</strong> “Your water, held in art, taken home — money back to your watershed.”
+        Restaurants and tourism boards understand that sentence.
+      </p>
+    </div>
+
+    <h2 id="water">3. Do we even need to process?</h2>
+    <p>
+      <strong>Often, no — not the full train.</strong>
+      If the city’s source is already decent (Savannah usually is), a <strong>good catalytic carbon filter + cold serve</strong>
+      removes the crap that makes water taste like pipes: chlorine, chloramine, mild sulfur.
+      That is enough to show off the city honestly.
+    </p>
+    <div class="callout">
+      <p><strong>Default for city / Savannah pilots:</strong> catalytic carbon (+ sediment) → chill → quartz vessel.</p>
+      <p><strong>Only add RO + remineralize</strong> if you want a separate “House Sip” SKU engineered to match contest winners — or if local water still loses a blind test after carbon.</p>
+      <p>Never RO Lithia and still call it Lithia Spring Water.</p>
+    </div>
+
+    <h3>Two paths</h3>
+    <table>
+      <thead>
+        <tr><th>Path</th><th>When</th><th>Promise</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>A. Filter the place</strong></td>
+          <td>City pride editions (Savannah first)</td>
+          <td>“Our water, cleaned of pipe taste” — still that city’s water</td>
+        </tr>
+        <tr>
+          <td><strong>B. House Sip train</strong></td>
+          <td>Chef wants Evian-class preference wins</td>
+          <td>“Crafted for taste” — label as purified + minerals</td>
+        </tr>
+        <tr>
+          <td><strong>C. True spring</strong></td>
+          <td>Lithia (and licensed springs)</td>
+          <td>Leave chemistry alone; serve cold; honest mineral character</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="cost">4. The tech — what each stage costs</h2>
+    <p>Ballpark retail / restaurant-supply pricing (USD, 2026). Install and local codes extra. Cartridges are ongoing.</p>
+
+    <div class="flow">
+      Place water<br />
+      → sediment prefilter<br />
+      → <strong>catalytic carbon</strong> (chlorine / chloramine / mild sulfur taste)<br />
+      → <em>optional:</em> reverse osmosis (flat blank)<br />
+      → <em>optional:</em> remineralize (Ca / Mg / HCO₃)<br />
+      → chill 4–10 °C<br />
+      → inert quartz vessel
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Stage</th><th>What it does</th><th class="money">Gear (approx.)</th><th class="money">Ongoing</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Sediment</strong></td>
+          <td>Protects carbon / RO</td>
+          <td class="money">$20–80 cartridge · often in combo head</td>
+          <td class="money">Replace per schedule</td>
+        </tr>
+        <tr>
+          <td><strong>Catalytic carbon</strong></td>
+          <td>Removes chlorine, chloramine, mild H₂S taste/odor</td>
+          <td class="money"><strong>$350–500</strong> commercial dual head (e.g. Everpure QT-class carbon + catalytic); residential catalytic setups ~$150–400</td>
+          <td class="money">~$80–200 / change · often 6–12 mo or by gallon rating (~20k gal on some heads)</td>
+        </tr>
+        <tr>
+          <td><strong>Reverse osmosis</strong></td>
+          <td>Wipes slate clean → flat water</td>
+          <td class="money">~$400–1,500 under-counter; commercial beverage RO ~$2k–7k+</td>
+          <td class="money">Membranes / prefilters yearly-ish</td>
+        </tr>
+        <tr>
+          <td><strong>Remineralize</strong></td>
+          <td>Puts back Ca / Mg / bicarbonate → TDS ~200–350, pH ~7.2–7.8, low Na</td>
+          <td class="money">~$50–200 cartridge / mineral kit on RO product</td>
+          <td class="money">Cartridges / mineral packs</td>
+        </tr>
+        <tr>
+          <td><strong>Chill</strong></td>
+          <td>4–10 °C — always for preference</td>
+          <td class="money">Restaurant cooler / ice bath / undercounter chiller $0–$1.5k</td>
+          <td class="money">Power / ice</td>
+        </tr>
+        <tr>
+          <td><strong>Quartz vessel</strong></td>
+          <td>Holds it. No chemistry. Art + brand.</td>
+          <td class="money">See unit COGS ~$70–150 goal</td>
+          <td class="money">Guest keeps it</td>
+        </tr>
+        <tr>
+          <td>UV (optional)</td>
+          <td>Extra microbe kill only — <strong>not</strong> a taste filter</td>
+          <td class="money">~$100–400</td>
+          <td class="money">Lamp yearly</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>What to buy for a pilot</h3>
+    <table>
+      <thead>
+        <tr><th>Pilot kit</th><th class="money">Ballpark installed</th><th>Enough?</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>City pride (recommended first)</strong> — sediment + catalytic carbon + chill</td>
+          <td class="money"><strong>~$400–900</strong> gear · +$150–500 install</td>
+          <td>Usually yes for Savannah / good municipal water</td>
+        </tr>
+        <tr>
+          <td><strong>House Sip</strong> — above + RO + remineralize + chill</td>
+          <td class="money"><strong>~$1.5k–6k</strong> depending on commercial vs under-counter</td>
+          <td>When you want to chase “best in the world” blinds</td>
+        </tr>
+        <tr>
+          <td><strong>Lithia spring</strong> — source contract + cold serve (no RO)</td>
+          <td class="money">Water deal + testing; filter only if partner/polish needs it</td>
+          <td>Yes for heritage SKU</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <p>
+        <strong>Catalytic carbon alone</strong> is the high-leverage spend.
+        Commercial dual carbon + catalytic heads commonly land around <strong>$350–500</strong> before install.
+        That is the piece that makes city water stop smelling like the pool.
+      </p>
+    </div>
+
+    <h3>Target chemistry (only if you run House Sip)</h3>
+    <table>
+      <thead>
+        <tr><th>Lever</th><th>Target</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>TDS</td><td>150–400 mg/L (sweet spot ~200–350)</td></tr>
+        <tr><td>pH</td><td>~7.2–7.8</td></tr>
+        <tr><td>Calcium</td><td>~40–100 mg/L</td></tr>
+        <tr><td>Magnesium</td><td>~10–30 mg/L</td></tr>
+        <tr><td>Bicarbonate</td><td>~100–300 mg/L</td></tr>
+        <tr><td>Sodium</td><td>as low as practical</td></tr>
+        <tr><td>Chlorine odor</td><td>none</td></tr>
+        <tr><td>Serve</td><td>cold</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Quartz lining / moss / purple glass do <strong>not</strong> change this chemistry.
+      UV does <strong>not</strong> remove chlorine or sulfur taste. Carbon does.
+    </p>
+
+    <h2>5. The vessel &amp; brand kit</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="renders/aquaquarts-place-lithia-neckbook.png" alt="Lithia neck book" />
+        <h3>Lithia</h3>
+        <p>Heritage mineral · Cherokee-country craft cues · amethyst glass.</p>
+      </div>
+      <div class="card">
+        <img src="renders/aquaquartz-savannah-moss-neck.png" alt="Savannah moss neck" />
+        <h3>Savannah</h3>
+        <p>Tabby / ochre · Spanish moss at neck · hometown pride.</p>
+      </div>
+      <div class="card">
+        <img src="renders/aquaquarts-scandinavian-decanter.png" alt="Nordic decanter" />
+        <h3>Nordic / Place</h3>
+        <p>Same kit language · local color · local water · local poem.</p>
+      </div>
+    </div>
+    <ul>
+      <li>Inert food-safe quartz-look liner (true quartz accent on heroes).</li>
+      <li>Neck book → site: source film, blessing or poem, give-back %.</li>
+      <li>No medical / structured-water claims. No fake tribal endorsements.</li>
+    </ul>
+
+    <h2>6. Order of operations</h2>
+    <ol>
+      <li><strong>Protect</strong> — LLC owns IP; trademark AquaQuartz; NDAs (~$1–4k).</li>
+      <li><strong>Lithia deal</strong> — water + story rights in writing.</li>
+      <li><strong>Samples</strong> — 10–20 vessels (Lithia look) + neck book + simple site (~$10–25k phase).</li>
+      <li><strong>One restaurant</strong> — Savannah or Atlanta/Charleston; catalytic carbon on local water or Lithia cold pour.</li>
+      <li><strong>Learn price / COGS</strong> — then 100–200 unit run + insurance.</li>
+      <li><strong>Savannah edition</strong> — moss-neck samples; city pride story.</li>
+      <li><strong>Optional House Sip</strong> — add RO + remin only if blinds demand it.</li>
+      <li><strong>Place Editions</strong> — after Lithia (and ideally Savannah) work.</li>
+    </ol>
+
+    <h2 id="money">7. Cost to start · what you can make · the ask</h2>
+    <table>
+      <thead>
+        <tr><th>Path</th><th class="money">Capital</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Lean to first pilots</td><td class="money">~$20–40k</td></tr>
+        <tr><td>Full pilot + inventory</td><td class="money">~$40–120k</td></tr>
+        <tr><td><strong>Investor ask</strong></td><td class="money"><strong>$100–200k</strong></td></tr>
+      </tbody>
+    </table>
+    <p>
+      Example night: guest ~$280 (keeps decanter) → restaurant ~45% → brand ~$154 → kit COGS goal ~$110.
+      Year one is usually proof (often a loss). Upside: refills, Place licenses, volume.
+    </p>
+    <div class="callout">
+      <p>We’re raising <strong>$100,000–$200,000</strong> for AquaQuartz under Prime Field Technologies, LLC (or a subsidiary).</p>
+      <p><strong>Use:</strong> trademark &amp; contracts · Lithia rights · sample &amp; first-run decanters · catalytic carbon pilots · neck books &amp; site · insurance · 2–3 restaurant pilots (Georgia / nearby).</p>
+      <p><strong>Start:</strong> Lithia first · Savannah hometown next · Place Editions later.</p>
+      <p><strong>Investor gets:</strong> equity in the company that owns the mark, designs, and contracts.</p>
+      <p><strong>Founder keeps:</strong> creative control and enough ownership that the brand still needs Jon.</p>
+    </div>
+
+    <h2>8. Protect the founder</h2>
+    <p>
+      Idea alone isn’t property. Trademark <strong>AquaQuartz</strong>, assign designs to the LLC,
+      sign Lithia / makers / restaurants to the company, keep founder control.
+      Then “great idea — we don’t need Jon” is legally false unless they buy the company.
+    </p>
+
+    <h2>9. One-line freeze</h2>
+    <div class="note">
+      <p>
+        AquaQuartz = named place water + forever quartz vessel + neck book + city pride + give-back.
+        City editions: <strong>catalytic carbon + cold</strong> is usually enough.
+        Contest sip: add <strong>RO + remineralize</strong> as a labeled House Sip.
+        Lithia: leave the spring alone. The vessel is art — not a chemistry lab.
+      </p>
+    </div>
+
+    <p class="footer">
+      Prime Field Technologies, LLC · Savannah / Lithia Springs, Georgia<br />
+      Detail docs: WATER-RECIPE.md · SAVANNAH-EDITION.md · FOR-WIFE-AND-INVESTORS.md · PLACE-EDITION-PALETTE.md<br />
+      Print this page to PDF · Visual pack: investor-brochure.html
+    </p>
+  </main>
+</body>
+</html>
