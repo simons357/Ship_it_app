@@ -4,6 +4,8 @@
 **Rule:** No Millennium Prize path. Keep only what is true under check, or useful as product.  
 **Emotion filter:** “Closed” labels that later flipped were the damage. This list freezes truth, not hope.
 
+**Shop shutdown:** If you want these off public display, follow `docs/SHOP-SHUTDOWN.md` (Zenodo withdraw/delete steps + paste blurb). This file is the truth map; that file is the click script.
+
 ---
 
 ## A. Papers — KEEP (true enough to retain)
