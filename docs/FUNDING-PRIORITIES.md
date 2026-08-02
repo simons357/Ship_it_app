@@ -40,10 +40,10 @@ Score: (your unfair advantage) × (path to revenue) × (claim honesty) ÷ (capit
 | --- | --- | --- | --- | --- | --- |
 | **1** | **Vigilant / AWARE anesthesia monitoring design** | Simons Medical Innovations | CRNA authority; clear clinical problem; teaching + device path | Design papers + provisional + advisor/clinical site | Can’t file IP or get a clinical collaborator |
 | **2** | **Field Lock** (presence-bound keys) | Prime Field | **Live demo**; security/story sellable without Clay | Pilot licenses / NDA enterprise demos | No paying pilot in N months |
-| **3** | **Ship It** | Prime Field | Real tool; small-team SaaS shape | Subscriptions / seats | No users after polish |
-| **4** | **NAV-42** only as **test-funded** coating R&D | Prime Field | Upside is huge **if** data works (Maersk-class fuel) | SBIR / angel **for tank test**, not for “shipping paint” | Tank/pipe test shows ≥ smooth control drag |
-| **5** | **AquaQuarts** | Either / consumer | Product story; lower tech risk than drag | Small brand raise / partnership | Can’t source/fulfill |
-| **6** | **ProVR / training** | Simons Medical | Education/sim adjacency | Smaller checks; longer cycle | No curriculum buyer |
+| **3** | **NAV-42** only as **test-funded** coating R&D | Prime Field | Upside is huge **if** data works (Maersk-class fuel) | SBIR / angel **for tank test**, not for “shipping paint” | Tank/pipe test shows ≥ smooth control drag |
+| **4** | **AquaQuarts** | Consumer / hospitality | Tableside **gimmick/brand** for high-end restaurants — not science water | Small hospitality pilot | Needs co-packer + no health claims |
+| **5** | **ProVR / training** | Simons Medical | Education/sim adjacency | Smaller checks; longer cycle | No curriculum buyer |
+| **—** | **Ship It** | — | Shelved as raise (GH UX improved; hard to beat) | — | Personal tool only |
 | **—** | MP / Zenodo Clay stack | — | **Not fundable** as science or product | — | Already dead |
 | **—** | ExoRatio | — | Worthless | — | Cut |
 
