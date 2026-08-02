@@ -8,6 +8,7 @@
 
 **Open this for her (pretty / print to PDF):** [`for-wife.html`](for-wife.html)  
 **Fuller investor brochure:** [`investor-brochure.html`](investor-brochure.html)  
+**Water recipe (quartz + pH + “best in world”):** [`WATER-RECIPE.md`](WATER-RECIPE.md)
 
 ---
 
@@ -178,7 +179,19 @@ Finland / other countries = **after** Lithia works.
 
 ---
 
-## 11. Next three actions (this week)
+## 11. Water recipe (short — full doc in WATER-RECIPE.md)
+
+| Question | Answer |
+| --- | --- |
+| Does **quartz lining** help? | **Yes for art/brand/story.** Lithia already formed through quartz-bearing granite — the vessel echoes that. It does **not** meaningfully change pH or make the water “structured.” |
+| Can we make it **best-tasting in the world**? | **Yes for a separate “House Sip”** (or later Place Editions): target TDS ~150–400, Ca/Mg/bicarbonate, low sodium, pH ~7.2–7.8, served cold. That is remineralized purified water or a soft spring — **not** doctored Lithia sold as pure Lithia. |
+| Lithia itself? | Leave it alone (~2,300 TDS, pH ~7.4, high mineral/sodium). Sell as **character / heritage**, like mineral wine — not Evian. |
+
+**Launch recipe:** untouched Lithia + quartz-look forever vessel + neck book + ritual. Optional second water for sip contests later.
+
+---
+
+## 12. Next three actions (this week)
 
 1. Decide: raise vs lean self-fund for Lithia samples.  
 2. Call trademark attorney / filing service for **AquaQuartz**.  
