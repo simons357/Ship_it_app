@@ -46,8 +46,8 @@ Studied ≠ settled in your favor. Keep AquaQuarts in **experience/brand**, not 
 | **Field Lock** | Live kiosk demo; presence-bound keys / PUF–CTW spine (NDA) | Pilot sales + hardening; security/encryption lane |
 | **NAV-42** | Named product, provisional posture, public demo URL | **Test budget only** (lab/tank/pipe ΔP or Cd vs control) |
 | **Vigilant / medical lane** | CRNA + concept brief; Simons Medical LLC | Design + provisional + one clinical advisor; education paper |
-| **Ship It** | Working shipping tool / repo family | Polish + first customers |
-| **AquaQuarts** | Brand/story pack; luxury water framing | Small brand/pilot run — **no medical superiority claim** |
+| **Ship It** | Built from GH frustration; **not a fundraise lead** (GH UX improved; hard to beat) | Shelf — personal tool, not investor story |
+| **AquaQuarts** | High-end restaurant / tableside **brand gimmick** by design | Hospitality SKU only if claims stay lifestyle, not medical |
 | **LLC stack** | Prime Field + Simons Medical | Clean vehicle for capital + IP assignment |
 | **Partner packet** | Brochures, domain briefs | Diligence folder (strip Clay) |
 
