@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AquaQuartz — where everything is</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a2220; --muted: #5a6662; --paper: #f3f0e8; --line: #c9c2b4; --lithia: #3d6f6a;
+      --display: "Cormorant Garamond", Georgia, serif;
+      --body: "Source Sans 3", sans-serif;
+    }
+    body {
+      margin: 0; color: var(--ink); font-family: var(--body); font-weight: 300; line-height: 1.55;
+      background: linear-gradient(180deg, #f7f4ec, var(--paper));
+      padding: clamp(1.25rem, 4vw, 2.5rem);
+    }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    h1 { font-family: var(--display); font-size: 2.4rem; margin: 0 0 0.35rem; }
+    .lede { color: var(--muted); margin: 0 0 1.5rem; }
+    .note {
+      background: #ebe6db; border-left: 3px solid var(--lithia);
+      padding: 0.9rem 1rem; margin: 0 0 1.5rem;
+    }
+    h2 { font-family: var(--display); font-size: 1.4rem; margin: 1.75rem 0 0.6rem; border-top: 1px solid var(--line); padding-top: 0.75rem; }
+    a {
+      display: block; padding: 0.65rem 0.75rem; margin: 0.35rem 0;
+      border: 1px solid var(--line); background: rgba(255,255,255,0.5);
+      color: var(--ink); text-decoration: none;
+    }
+    a:hover { border-color: var(--lithia); }
+    a strong { display: block; font-weight: 600; }
+    a span { display: block; font-size: 0.88rem; color: var(--muted); margin-top: 0.15rem; }
+    code { font-size: 0.85rem; background: #ebe6db; padding: 0.1rem 0.35rem; }
+    ul { padding-left: 1.2rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>AquaQuartz</h1>
+    <p class="lede">Where the files live, and which ones to open.</p>
+
+    <div class="note">
+      <p style="margin:0">
+        <strong>.html</strong> = open in a browser (Chrome, Safari) → use Print → Save as PDF.<br />
+        <strong>.md</strong> = plain text notes for Cursor / GitHub (not meant as the shareable brochure).<br />
+        Everything is in the folder: <code>docs/aquaquarts/</code>
+      </p>
+    </div>
+
+    <h2>Open these (browser)</h2>
+    <a href="complete-brochure.html">
+      <strong>Complete brochure</strong>
+      <span>Whole scope · city pride · filter costs · ask — best single send</span>
+    </a>
+    <a href="for-wife.html">
+      <strong>For wife / plain plan</strong>
+      <span>Order, money, protection — short version</span>
+    </a>
+    <a href="investor-brochure.html">
+      <strong>Investor brochure</strong>
+      <span>Visual pitch with more gallery</span>
+    </a>
+    <a href="business-plan.html">
+      <strong>Business plan (visual)</strong>
+      <span>Place palette overview</span>
+    </a>
+    <a href="brochure.html">
+      <strong>Guest-facing brand brochure</strong>
+      <span>Ritual story (shorter marketing page)</span>
+    </a>
+
+    <h2>Pictures</h2>
+    <p>Folder: <code>docs/aquaquarts/renders/</code></p>
+    <ul>
+      <li>Savannah moss neck: <code>aquaquartz-savannah-moss-neck.png</code></li>
+      <li>Lithia neck book: <code>aquaquarts-place-lithia-neckbook.png</code></li>
+      <li>Logos: <code>logo-aquaquartz-*.png</code></li>
+    </ul>
+
+    <h2>Detail notes (.md — optional)</h2>
+    <p>Only if you want the long written versions inside the repo. Same ideas as the HTML above.</p>
+    <ul>
+      <li><code>COMPLETE-BROCHURE.md</code></li>
+      <li><code>FOR-WIFE-AND-INVESTORS.md</code></li>
+      <li><code>WATER-RECIPE.md</code></li>
+      <li><code>SAVANNAH-EDITION.md</code></li>
+      <li><code>PLACE-EDITION-PALETTE.md</code></li>
+      <li><code>MANUFACTURERS-AND-FINANCIALS.md</code></li>
+    </ul>
+
+    <h2>How to open on your machine</h2>
+    <ol>
+      <li>In Cursor / the repo, go to <code>docs/aquaquarts/</code></li>
+      <li>Right-click <code>index.html</code> or <code>complete-brochure.html</code> → Open in Browser  
+         (or drag the file into Chrome)</li>
+      <li>Print → Save as PDF to text or email</li>
+    </ol>
+    <p style="color:var(--muted);font-size:0.9rem">
+      On GitHub: open the <code>.html</code> file → click “Raw” or download the folder, then open locally.
+      GitHub does not always render HTML as a live page.
+    </p>
+  </div>
+</body>
+</html>
