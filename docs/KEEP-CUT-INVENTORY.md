@@ -64,7 +64,7 @@ Money path. No professor callback required.
 | --- | --- | --- |
 | **Field Lock** | Live kiosk: https://field-lock.replit.app/ · presence-bound keys · PUF/CTW spine | Sell demos / NDA pilots; stop linking empty primefield pages |
 | **Ship It** | Real GitHub shipping tool in this repo family | Polish UX; sell to non-git users / small teams |
-| **NAV-42** (demo live) | https://nav-42.replit.app/ · coating / drag story · provisional IP | Industrial pipes / maritime **pilot narrative**; keep claims modest |
+| **NAV-42** (demo live) | https://nav-42.replit.app/ · coating story · provisional IP | **Freeze % drag claims.** Naïve honeycomb often ↑ drag. Only resume sales after metered pilot. See `NAV42-DRAG-TRUTH.md`. |
 | **Vigilant Patch** | Your CRNA lane — clearest domain authority | One-pager + FDA/regulatory path before deep disclosure |
 | **AquaQuarts** | Luxury water story; productizable without Clay | Tableside / partnership; file IP if you keep building |
 
