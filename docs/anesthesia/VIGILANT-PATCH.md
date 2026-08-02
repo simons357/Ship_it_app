@@ -112,15 +112,10 @@ Do not publish the full sensor bill of materials pre-filing.
 
 ---
 
-## Coherence bridge
+## Note for anesthesia papers / teaching CV
 
-| Domain | Same idea |
-| --- | --- |
-| Maritime | Instability before operational risk |
-| Field Lock | Presence bind before breach |
-| Vigilant Patch | Physiologic / neural decoherence **minutes before** a depth crisis |
-
-One term. Different surfaces.
+Do **not** lean on maritime / Field Lock / prime-lattice “coherence” as scientific support in anesthesia manuscripts.  
+The clinical claim stands on **bedside lag of single indices** and the design goal of **pre-recognition** — not on Millennium or product metaphors.
 
 ---
 

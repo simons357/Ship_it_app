@@ -22,6 +22,7 @@
 
 ## B. Anesthesia research — what is relevant (this is the real lane)
 
+**Isolated package:** `docs/anesthesia/` (INDEX, Vigilant brief, paper pipeline, teaching CV lane).  
 MP / GCD / Bridge / Phi-renorm fluids math is **not** relevant to anesthesia practice or anesthesia journals. Do not force a bridge.
 
 ### Your anesthesia-relevant assets
