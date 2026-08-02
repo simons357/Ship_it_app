@@ -1,7 +1,9 @@
 # AquaQuarts — intentional water (hospitality ritual)
 
 **Locked pitch (your words):** Not competing with a million plastic bottles. Not medical “structured H₃O₂.”  
-**Product:** A **water ritual** — high-end dining, beautiful forever decanter, Georgia story, intention, take-home vessel.
+**Product:** A **water ritual** — high-end dining, beautiful forever decanter, Georgia story, intention, take-home vessel.  
+**Water itself:** Natural / mineral spring water as sourced (Lithia first). **Do not structure it.** Deep dive: `docs/aquaquarts/WATER-DEEP-DIVE.md`.  
+**Designs you already have:** earthen stone · quartz lining · purple glass — Cherokee-facing line + Scandinavian line.
 
 ---
 
