@@ -1,5 +1,7 @@
 # AquaQuarts — Business Plan (Intentional Water)
 
+**→ Master (all-in-one):** [`AQUAQUARTS-COMPLETE-BUSINESS-PLAN.md`](AQUAQUARTS-COMPLETE-BUSINESS-PLAN.md) · visual [`business-plan.html`](business-plan.html)
+
 **Entity:** Prime Field Technologies, LLC (or hospitality sub-brand under it)  
 **Date:** 2026-08-02  
 **Product:** Intentional water ritual for fine dining — natural spring water + forever stone/quartz/purple-glass decanter + booklet + give-back.  
