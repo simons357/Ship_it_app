@@ -134,7 +134,19 @@ Only if Lithia partner agrees in writing.
 | Claim quartz liner raises pH or structures water | Not true at guest scale |
 | Sell lithium mood cures | Liability; not your lane |
 | Ozone/UV theater as “energy activation” | Keep tech boring and safe |
+| Claim a **UV / light burst** removes chlorine or sulfur taste | UV kills microbes; **carbon** removes disinfectant/sulfur odor |
 | Hot-serve mineral water for preference wins | Cold wins |
+
+### Taste cleanup (before the decanter)
+
+| Want to remove | Use |
+| --- | --- |
+| Chlorine taste/smell | Activated carbon |
+| Chloramine | **Catalytic** carbon |
+| Mild hydrogen sulfide (“rotten egg”) | Catalytic carbon (worse cases: dedicated sulfur treatment) |
+| Microbes on a private loop | UV OK as *extra* disinfection — **not** a taste filter |
+
+Pour only **after** filtration. Vessel stays inert art.
 
 ---
 

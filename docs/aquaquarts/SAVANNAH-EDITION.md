@@ -2,7 +2,7 @@
 
 **Status:** Concept ready · after Lithia launch (or parallel restaurant pilot in town)  
 **Palette ID:** A2  
-**Renders:** `renders/aquaquartz-savannah-decanter-moss.png` · `renders/aquaquartz-savannah-decanter-tabby.png` · `renders/aquaquartz-savannah-neckbook.png`
+**Renders:** `renders/aquaquartz-savannah-moss-neck.png` (**lead** — Spanish moss + neck book) · `renders/aquaquartz-savannah-decanter-moss.png` · `renders/aquaquartz-savannah-decanter-tabby.png` · `renders/aquaquartz-savannah-neckbook.png`
 
 ---
 
@@ -23,7 +23,7 @@ No — the water **cannot suck**. Guests forgive “mineral character.” They d
 | Meets all state/federal requirements (2025 CCR) | Safe baseline — still test **your** batch for hospitality |
 | Floridan water often needs only disinfection + fluoride | Soft mineral story; watch for occasional **hydrogen sulfide** (“rotten egg”) on some aquifer taps |
 | Abercorn / I&D treated water has won statewide taste panels | Use as the “sip pride” talking point when the partner water is that plant’s quality |
-| Chlorine / chloramine in distribution | For luxury ritual: **filter or rest** so free chlorine odor is gone before service |
+| Chlorine / chloramine in distribution | For luxury ritual: **catalytic/activated carbon filter** so disinfectant odor is gone before service — **not** a UV “burst” (see below) |
 | Lead is a **plumbing** issue, not “Savannah water is bad” | Serve from controlled fill (restaurant ice filtration / bottled fill SOP), not random old pipes |
 
 **Verdict:** Savannah water can be **decent to excellent** for a Place Edition if you control chlorine odor and pick a clean fill path. It will usually taste **softer / cleaner** than high-TDS Lithia — different product, complementary story (home city vs historic spring).
@@ -43,6 +43,22 @@ No — the water **cannot suck**. Guests forgive “mineral character.” They d
 
 ---
 
+## Can light replace disinfection / kill sulfur & chlorine taste?
+
+**Short answer: no — not for taste.**
+
+| Tool | What it does | What it does **not** do |
+| --- | --- | --- |
+| **UV light** | Kills / inactivates **microbes** (disinfection) | Remove chlorine, chloramine, or hydrogen sulfide **taste/smell** |
+| **“Burst of light” in the decanter** | Looks cool as theater (don’t claim chemistry) | Strip pipe disinfectant or sulfur funk |
+| **Catalytic / activated carbon** (under-counter) | Adsorb / break down chlorine, chloramine, mild H₂S odor | Replace all utility disinfection upstream in the city pipes |
+
+City water is already disinfected so it stays safe in the mains. You are not trying to “get rid of disinfection” as a public-health step — you are trying to **get the taste of leftover disinfectant (and sulfur) out of the glass**. That is a **carbon filter job**, done **before** pour. Optional UV at a restaurant is fine for *extra microbe kill* on a private loop; it is not a chlorine/sulfur eraser.
+
+**Do not** sell a UV quartz decanter as “light-purified better taste.”
+
+---
+
 ## Decanter design language (Savannah)
 
 Shared kit: quartz-look liner · forever take-home · neck book · no plastic.
@@ -53,15 +69,17 @@ Shared kit: quartz-look liner · forever take-home · neck book · no plastic.
 | Glass accent | Spanish-moss green fleck + soft amethyst (brand purple stays) |
 | Form | Amphora or pebble-pitcher; gracious pour for tableside |
 | Neck book | Tidewater poem + protect Abercorn / Savannah River / Floridan stewardship |
-| Avoid | Tourist kitsch (giant peach, cartoon moss, pirate props) |
+| **Spanish moss** | Sparse natural moss wreath **around the neck with the book** — elegant, not a haystack; dried/preserved for food-service hygiene; replaceable |
+| Avoid | Tourist kitsch (giant peach, cartoon moss pile, pirate props) |
 
 ### Candidate sources (visuals in repo)
 
-1. **Moss** — ochre body, moss-green glass, amphora (`aquaquartz-savannah-decanter-moss.png`)  
-2. **Tabby** — grey-beige shell fleck, indigo/purple blade (`aquaquartz-savannah-decanter-tabby.png`)  
-3. **Neck book hero** — courtyard light, book on neck (`aquaquartz-savannah-neckbook.png`)
+1. **Moss + book (lead)** — Spanish moss draped at neck with booklet (`aquaquartz-savannah-moss-neck.png`)  
+2. **Moss glass** — ochre body, moss-green glass, amphora (`aquaquartz-savannah-decanter-moss.png`)  
+3. **Tabby** — grey-beige shell fleck, indigo/purple blade (`aquaquartz-savannah-decanter-tabby.png`)  
+4. **Neck book only** — courtyard light (`aquaquartz-savannah-neckbook.png`)
 
-Pick one lead for samples; keep the other as alt.
+**Lead for Savannah samples:** moss-around-neck + book.
 
 ---
 
