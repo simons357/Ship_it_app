@@ -27,7 +27,7 @@
 | # | Place | Water story hook | Vessel pride cue | Book blessing / poem lane |
 | --- | --- | --- | --- | --- |
 | A1 | **Lithia Springs, GA** | Historic lithia mineral spring | Warm river-clay stone, amethyst glass | Cherokee-country partners opt-in blessing |
-| A2 | **Savannah / Lowcountry** | Coastal plain / artesian heritage | Soft ochre, Spanish-moss green glass fleck | Tidewater poem + stewardship |
+| A2 | **Savannah / Lowcountry** | Floridan Aquifer + Abercorn Creek civic pride (see `SAVANNAH-EDITION.md`) | Soft ochre / tabby, Spanish-moss green glass fleck | Tidewater poem + stewardship |
 | A3 | **New York City** | Catskill/Delaware “champagne of tap” | Cool grey stone, clear quartz collar | City poem; protect upstate watersheds |
 | A4 | **Portland, OR** | Bull Run / Cascade purity | Forest-green glaze rim, tall Nordic-adjacent form | Forest blessing / Cascade poem |
 | A5 | **Denver / Rockies** | Mountain snowmelt story | Pale granite body, thin purple ring | High-country poem |
