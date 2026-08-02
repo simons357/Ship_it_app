@@ -22,9 +22,11 @@ Make the water course a **memorable ritual**: guests receive intentional water f
 | Water | Natural mineral/spring water from a contracted source (Lithia Springs first; Finland; country/city “best water” editions) |
 | Vessel | Earthen stone · quartz lining · purple glass — forever object |
 | Ritual | Intention / blessing as hospitality ceremony (no health claim) |
-| Story | Booklet + tag: source, makers, give-back % |
-| Conscience | **No single-use plastic** for the pour — guest keeps stone/glass forever; published charity/stewardship split |
-| Ocean story | Every ritual that replaces a premium plastic bottle is one less bottle in the waste stream that harms marine environments |
+| Story | Little book → website: Lithia Springs origin film, makers, give-back %, blessing when partners opt in |
+| Culture | Tribal / spiritual leaders and artisans who choose to bless and shape an edition — paid, credited, in control of their framing |
+| Date-night | Beautiful decanter signals care: money to water charity/awareness, not plastic flex |
+| Conscience | **No single-use plastic** — guest keeps stone/glass forever |
+| Ocean story | One less premium plastic bottle in the waste stream that harms marine environments |
 
 **Blind taste is not the product.** NYC tap can win sips; AquaQuarts wins the **date-night table**.  
 **Plastic is the contrast:** almost every competing “fancy water” ships in plastic (or glass that is still single-serve dump). AquaQuarts is the heirloom that never becomes bottle trash.

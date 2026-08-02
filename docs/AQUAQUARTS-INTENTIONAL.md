@@ -10,7 +10,7 @@
 
 ## One-sentence lock
 
-**AquaQuarts** is intentional water for high-end tables: stone / quartz / purple-glass decanter, prayed over or infused with good intention (no health claim), booklet on origin and makers, Lithia Springs / Cherokee-country story, guest keeps the decanter forever; part of proceeds can support Lithia Springs / tribal partners when deals exist.
+**AquaQuarts** is intentional water for high-end tables: beautiful stone / quartz / purple-glass decanter you take home; little book + website showing Lithia Springs (and the blessing when tribal or spiritual leaders partner); culture infused by people who opt in; money toward water charity / awareness; no plastic bottle — so a date sees care for them and for the planet.
 
 ---
 
@@ -30,12 +30,26 @@ The product is **design + place + ceremony + keep-the-vessel**, same family as a
 
 ## What the guest actually buys
 
-1. **Decanter** — stone with quartz, purple glass; beautiful; reusable forever  
-2. **Pour / ritual** — tableside intentional water (prayer / good intention — stated as ritual, not medicine)  
-3. **Booklet** — where made, by whom, how presented; Lithia Springs story  
-4. **Cherokee vibe** — only with **real** artisan/Nation-aligned partnership and fair split; until signed: “exploring partnership”  
-5. **Take-home** — vessel leaves with the guest; brand lives on the shelf at home  
-6. **Give-back** — % to Lithia Springs / partners when term sheet exists  
+1. **Beautiful decanter** — earthen stone · quartz lining · purple glass — tableside art, then **taken home forever**.  
+2. **Pour / ritual** — intentional water (ceremony, not medicine).  
+3. **Little book → website** — scan/open: Lithia Springs origin (film, place, well story); makers; give-back math; **blessing video or page** when a tribal leader, elder, or invited spiritual partner records a real blessing over that edition’s water.  
+4. **Culture infusion (anyone who partners)** — Cherokee-country or other leaders/artisans shape blessing, story, and craft for editions that invite them — paid fairly; they own how their culture appears.  
+5. **Date-night signal** — the date sees a stunning vessel and understands you spent meaningfully: not plastic flex — **charity / global water issues / awareness** + a forever object.  
+6. **Give-back** — contracted % to water projects + source/partners (published on the site).
+
+---
+
+## Little book + website (must-have)
+
+| Page | Content |
+| --- | --- |
+| Origin | Lithia Springs — where the water is from (photos/video of place) |
+| Blessing | Tribal / spiritual partners who **opt in** — their words, their faces, their framing |
+| Makers | Who formed the stone and glass |
+| Stewardship | % to water scarcity awareness / marine plastic contrast / named orgs |
+| Your vessel | “This decanter is yours — no bottle in the ocean from this pour” |
+
+Until partners are signed: site shows Lithia + “blessings and cultural partners — invitations open,” not stock “Indian priest” claims.
 
 ---
 
@@ -45,8 +59,8 @@ The product is **design + place + ceremony + keep-the-vessel**, same family as a
 | --- | --- |
 | Intentional water · water ritual · ceremonial tableside | Treats, heals, structures DNA, stores information |
 | Georgia mineral-spring heritage / Lithia Springs story | Lithium dose / clinical mood claims |
-| Exploring Cherokee artisan production | “Cherokee Nation endorses” before a deal |
-| Keep the decanter | Scientifically superior to all water |
+| Blessing by named partners who agreed to appear | “Cherokee Nation endorses” / generic “Indian priest” without real people |
+| Keep the decanter · money to water causes (with %) | Scientifically superior to all water |
 
 ---
 
