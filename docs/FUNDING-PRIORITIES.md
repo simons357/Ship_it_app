@@ -2,7 +2,8 @@
 
 **Date:** 2026-08-02  
 **Entities (from your materials):** Prime Field Technologies, LLC · Simons Medical Innovations, LLC  
-**Rule:** LLC ≠ proof that NAV-42 works. LLC ≠ license to sell untested %. See `NAV42-DRAG-TRUTH.md`.
+**Rule:** LLC ≠ proof that NAV-42 works. LLC ≠ license to sell untested %. See `NAV42-DRAG-TRUTH.md`.  
+**Clarification:** NAV-42 is **not** “declared shit.” The turbulence-money thesis is real **if measured**. What’s frozen is **untested % sales**. Investor menu: `INVESTOR-HAVE-VS-IDEAS.md`.
 
 ---
 
