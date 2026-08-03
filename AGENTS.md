@@ -14,10 +14,12 @@ If a draft PR is mainly Ship It, Planet Hunter, or Scallion, **close it** or lea
 
 `main` is thin on purpose: branding assets under `assets/` plus this guidance. There is **no** canonical runnable app on `main` right now.
 
-Prefer continuing from open drafts Jonathan still cares about — especially the **anesthesia lane** (`docs/anesthesia/`, see `NEIGHBORHOOD-MAP.md`), portfolio, AquaQuartz, rigor memos, Cursor setup advisor — **not** from Ship It branches.
+Prefer continuing from open drafts Jonathan still cares about — especially the **anesthesia lane** (`docs/anesthesia/`, see `NEIGHBORHOOD-MAP.md` and **A-grade products** in `A-GRADE-PRODUCTS.md`), portfolio, AquaQuartz, rigor memos, Cursor setup advisor — **not** from Ship It branches.
 
-**Fair game:** AI’s role in anesthesia as decision augmentation / teaching / Vigilant-style monitoring design.  
+**Fair game:** AI’s role in anesthesia as **Operator Assist / Quantum Menu** (decision augmentation, cognitive-load reduction) and Vigilant-style monitoring design.  
 **Not fair game as anesthesia science:** Clay/MP stack, κ\* consciousness claims, or SFE/Harmonic Blueprint (renamed Orch-OR) sold as BIS/physics proof. SFE/Blueprint OK only as origin-story / philosophy with hard claim limits — see `docs/anesthesia/NEIGHBORHOOD-MAP.md`.
+
+**Product filter:** Only A-grade anesthesia products in `docs/anesthesia/A-GRADE-PRODUCTS.md`. Lead: Operator Assist. Do not revive abandoned consumer apps.
 
 ## Cursor Cloud
 

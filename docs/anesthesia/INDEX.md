@@ -15,6 +15,7 @@ If no one emails back on the prize stack, this folder is the lane that still bel
 | --- | --- |
 | `INDEX.md` | This map + paper pipeline |
 | `NEIGHBORHOOD-MAP.md` | Plain-English: Clay/κ/ORCH + which older theories fit anesthesia |
+| `A-GRADE-PRODUCTS.md` | Primo products only — Operator Assist / Quantum Menu + Vigilant + Reflex |
 | `VIGILANT-PATCH.md` | Core invention/concept brief (OR / vigilance / pre-recognition) |
 | `AI-SURGEON-VR-animation-script.md` | Training/education adjacent (VR surgeon narrative) |
 | `PAPER-PIPELINE.md` | Concrete paper titles you can write for teaching credit |
