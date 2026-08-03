@@ -6,59 +6,62 @@ Use on the **Jonathan Simons, CRNA** Premium account.
 
 ## Name
 
-**Jonathan Simons, CRNA**
+**Jonathan Robert Simons, CRNA, MBS**
+
+*(LinkedIn display fallback: `Jonathan Simons, CRNA, MBS`)*
 
 ---
 
 ## Headline (≤220 characters)
 
 **Option A (recommended)**  
-CRNA · Airway & Anesthesia Device Inventor · Founder, Simons Medical Innovations · 25+ Years Clinical Practice · Savannah, GA
+CRNA, MBS · Clinical Sensing & Airway Innovation · Founder, Prime Field Technologies (dba Simons Medical) · 30+ Years Clinical · Savannah, GA
 
 **Option B (shorter)**  
-CRNA & Medical Device Inventor | Airway Innovation from the Bedside | Founder, Simons Medical Innovations
+CRNA & Medical Device Concepts | AWARE · VIGILANT ECHO | Founder, Simons Medical (PFT) | Savannah, GA
 
 **Option C (product-forward)**  
-CRNA building safer airway tools | Founder, Simons Medical Innovations | Patents, papers & products from the OR
+CRNA building perioperative sensing tools | Founder, Prime Field Technologies dba Simons Medical | 30+ years clinical
 
 ---
 
 ## About
 
 ```
-I practice anesthesia with one obsession: make the airway safer, cleaner, and simpler.
+Jonathan Robert Simons, CRNA, MBS · Founder, Prime Field Technologies LLC (dba Simons Medical)
+We don't make things. We make things possible.
 
-I’m a Certified Registered Nurse Anesthetist with 25+ years of clinical experience and two decades of airway device research. That bedside lens drives everything I invent—because the best medical products start with a real problem in the room, not a slide deck.
+I’m a Certified Registered Nurse Anesthetist with 30+ years of clinical anesthesia experience. The work on this profile stays in the clinical lane: perioperative sensing concepts, reflex physiology, and medical-device ideas designed to be tested — with hypotheses labeled honestly.
 
-Through Simons Medical Innovations, I develop devices and tools that improve airway management, reduce contamination risk, and cut unnecessary complexity in anesthesia care. Earlier work includes a patented laryngoscope with a disposable blade cover (US patent application 20100191061) and leadership of Winchester Anesthesia, a CRNA-owned private practice in Savannah, GA.
+The question that started it: what exactly changes when consciousness disappears under anesthesia? That led to developmental platforms under Simons Medical:
 
-What you’ll find on this profile:
-• Clinical anesthesia insights from the OR
-• Airway research, papers, and patent updates
-• Product development notes from Simons Medical Innovations
-• Practical posts for CRNAs, anesthesiologists, and perioperative teams
+• AWARE — Conformable disposable eyelid film concept for corneal protection, NIR/SWIR pupillometry, PPG/SpO₂, and exploratory tear chemistry sensing
+• VIGILANT ECHO — Disposable earpiece concept: HRV, vagal tone, SpO₂, acoustic stapedial reflex — the reflex staircase as hardware
+• κ* Framework — Falsifiable research hypothesis for prospective testing; not a clinical index and not yet validated
 
-Open to: clinical collaborations, device feedback from anesthesia teams, and partnerships that put safer airway care into more hands.
+Evidence standard: claims follow the PFT CLAIM_LEDGER. Concepts are developmental until bench and pilot gates survive. Lean experimental design — falsification first, budget-gated validation.
 
-Jonathan Simons, CRNA
+What you’ll find here: anesthesia insights, clinical research notes, and product development updates from Simons Medical.
+
 Savannah, Georgia
-js@simonsmedicalinnovations.com
+jonathansimons357@proton.me
 ```
 
 ---
 
 ## Experience entries
 
-### Founder — Simons Medical Innovations, LLC
-**Date:** 2025 – Present · Savannah, GA
+### Founder — Prime Field Technologies LLC (dba Simons Medical)
+**Date:** (your start date) – Present · Savannah, GA
 
 ```
-Building medical devices rooted in real anesthesia practice.
+Independent R&D — clinical / medical lane (Simons Medical).
 
-• Lead invention and early product development for airway and perioperative tools
-• Translate 25+ years of CRNA experience into safer, more cost-effective designs
-• Focus areas: airway contamination control, intubation workflow, clinician usability
-• Partner with clinical peers for feedback loops before scale
+• Lead developmental sensing platforms: AWARE (eyelid film) and VIGILANT ECHO (earpiece)
+• Anchor concepts in established perioperative physiology; label conjectural thresholds (κ*) clearly
+• Apply lean experimental design: desktop → bench → pilot → scale
+• Translate 30+ years of CRNA practice into falsifiable monitoring concepts
+• Contact: jonathansimons357@proton.me
 ```
 
 ### Owner, CRNA — Winchester Anesthesia, LLC

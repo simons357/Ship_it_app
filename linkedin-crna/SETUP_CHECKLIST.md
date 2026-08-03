@@ -27,7 +27,7 @@ Do this on the Premium account you want as the **anesthesia** profile.
 
 - [ ] Turn on Creator mode → topics: Anesthesia, Airway Management, Medical Devices
 - [ ] Feature: patent link, company page/PDF, Post 01, best paper
-- [ ] Contact info: `js@simonsmedicalinnovations.com`
+- [ ] Contact info: `jonathansimons357@proton.me`
 
 ## 5. Two-account hygiene
 
