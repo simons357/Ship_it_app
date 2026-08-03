@@ -54,7 +54,7 @@ The work began with a question every anesthetist eventually asks: what exactly c
 What you'll find here
 • Clinical / medical concepts — AWARE, VIGILANT ECHO, κ* research (Simons Medical)
 • Spectral mathematics — Q6 / NAV42 finite-section results, numerical frontier, open problems labeled honestly
-• Defense & dual-use concepts — NAV-42, OMEN, Holobase (development / patent track)
+• Defense & dual-use concepts — NAV-42, OMEN (+ counter-UAS / disaster drone app), Holobase
 • Research memory systems — ChatVault + CLAIM_LEDGER evidence standards
 
 Operating rule: established results stated plainly, hypotheses labeled honestly, and every device concept designed to be tested. Archived manuscripts document chronology; they are not represented as peer-reviewed acceptance or solutions to classical open problems.
