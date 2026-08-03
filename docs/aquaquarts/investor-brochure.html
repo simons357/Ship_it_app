@@ -79,12 +79,7 @@
       background:
         radial-gradient(ellipse at 50% 50%, rgba(196, 184, 168, 0.12), transparent 60%),
         radial-gradient(ellipse at 70% 40%, rgba(107, 90, 122, 0.32), transparent 55%);
-      animation: drift 16s var(--ease) infinite alternate;
       pointer-events: none;
-    }
-    @keyframes drift {
-      from { transform: translate(0, 0) scale(1); }
-      to { transform: translate(2%, 3%) scale(1.05); }
     }
     .eyebrow {
       position: relative;
@@ -193,8 +188,12 @@
     .gallery figure { margin: 0; }
     .gallery img {
       width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      object-position: center;
       display: block;
       border: 1px solid var(--line);
+      background: rgba(231, 239, 237, 0.06);
     }
     .gallery figcaption {
       font-size: 0.75rem;

@@ -81,7 +81,6 @@
         radial-gradient(ellipse at 40% 50%, rgba(196, 184, 168, 0.14), transparent 62%),
         radial-gradient(ellipse at 60% 40%, rgba(107, 90, 122, 0.35), transparent 58%);
       filter: blur(2px);
-      animation: drift 14s var(--ease) infinite alternate;
       pointer-events: none;
     }
     .hero::after {
@@ -92,10 +91,6 @@
       background: linear-gradient(transparent, rgba(7, 13, 16, 0.92));
       pointer-events: none;
     }
-    @keyframes drift {
-      from { transform: translate3d(0, 0, 0) scale(1); }
-      to { transform: translate3d(3%, 2%, 0) scale(1.04); }
-    }
     .brand {
       position: relative;
       z-index: 1;
@@ -105,7 +100,6 @@
       line-height: 0.95;
       letter-spacing: 0.01em;
       margin: 0 0 1rem;
-      animation: rise 1.1s var(--ease) both;
     }
     .hero h1 {
       position: relative;
@@ -117,7 +111,6 @@
       margin: 0 0 1rem;
       max-width: 18ch;
       color: var(--quartz);
-      animation: rise 1.1s 0.12s var(--ease) both;
     }
     .lede {
       position: relative;
@@ -126,11 +119,6 @@
       margin: 0 0 1.75rem;
       color: var(--mist);
       font-size: 1.05rem;
-      animation: rise 1.1s 0.22s var(--ease) both;
-    }
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
     }
     .actions { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 0.75rem; }
     .btn {

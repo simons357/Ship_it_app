@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AquaQuartz — Decanter Palette</title>
+  <meta name="description" content="All AquaQuartz decanter concept images in one stable palette. No motion." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a2220;
+      --muted: #5a6662;
+      --paper: #f6f3eb;
+      --panel: #efe9dd;
+      --line: #cfc6b6;
+      --lithia: #3d6f6a;
+      --display: "Cormorant Garamond", Georgia, serif;
+      --body: "Source Sans 3", "Segoe UI", sans-serif;
+      --pad: clamp(1rem, 3.5vw, 2.25rem);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      color: var(--ink);
+      font-family: var(--body);
+      font-weight: 300;
+      line-height: 1.5;
+      background:
+        linear-gradient(180deg, #faf7f0 0%, var(--paper) 45%, #ebe4d6 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+    .bar {
+      position: sticky; top: 0; z-index: 5;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      padding: 0.75rem var(--pad);
+      background: rgba(250, 247, 240, 0.96);
+      border-bottom: 1px solid var(--line);
+    }
+    .bar strong {
+      font-family: var(--display);
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+    .bar nav { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .bar a, .bar button {
+      font: 600 0.7rem var(--body);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      padding: 0.45rem 0.75rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .wrap { width: min(1100px, 100%); margin: 0 auto; padding: 2rem var(--pad) 3.5rem; }
+    h1 {
+      font-family: var(--display);
+      font-size: clamp(2.4rem, 6vw, 3.4rem);
+      font-weight: 600;
+      line-height: 1.05;
+      margin: 0 0 0.4rem;
+    }
+    .lede {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 42rem;
+      margin: 0 0 1.75rem;
+    }
+    h2 {
+      font-family: var(--display);
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 2.25rem 0 0.85rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--line);
+    }
+    .count {
+      color: var(--lithia);
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin: 0 0 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    figure {
+      margin: 0;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+    figure img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+      background: var(--panel);
+    }
+    figcaption {
+      padding: 0.65rem 0.75rem 0.8rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+    figcaption strong {
+      display: block;
+      color: var(--ink);
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+    .wide {
+      margin: 1rem 0 0;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .wide img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      background: var(--panel);
+    }
+    .wide p {
+      margin: 0;
+      padding: 0.7rem 0.85rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .note {
+      background: var(--panel);
+      border-left: 3px solid var(--lithia);
+      padding: 0.9rem 1rem;
+      margin: 1.25rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    @media print {
+      .bar button, .no-print { display: none !important; }
+      .bar { position: static; background: #fff; }
+      body { background: #fff; }
+      figure, .wide { break-inside: avoid; }
+      img { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <strong>AquaQuartz · Decanter Palette</strong>
+    <nav class="no-print">
+      <a href="AquaQuartz-Completed-Brochure.html">Completed brochure</a>
+      <button type="button" onclick="window.print()">Print / PDF</button>
+    </nav>
+  </div>
+
+  <main class="wrap">
+    <h1>Decanter palette</h1>
+    <p class="lede">
+      Every AquaQuartz vessel concept in one place — still, labeled, and ready to show.
+      Nothing moves. Scroll or print.
+    </p>
+    <p class="count">19 vessel images · fixed frames · no animation</p>
+
+    <h2>Launch &amp; hometown</h2>
+    <div class="grid">
+      <figure>
+        <img src="renders/aquaquarts-place-lithia-neckbook.png" alt="Lithia Springs decanter with neck book" width="1536" height="1024" loading="eager" />
+        <figcaption><strong>Lithia Springs</strong> Neck book · warm clay · amethyst collar</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-cherokee-lithia-decanter.png" alt="Cherokee-country Lithia craft line decanter" width="1536" height="1024" loading="eager" />
+        <figcaption><strong>Cherokee-country craft line</strong> Lithia heritage form</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquartz-savannah-moss-neck.png" alt="Savannah moss-neck decanter" width="1536" height="1024" loading="eager" />
+        <figcaption><strong>Savannah · moss neck</strong> Spanish moss · hometown pride</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquartz-savannah-neckbook.png" alt="Savannah neck book decanter" width="1536" height="1024" loading="lazy" />
+        <figcaption><strong>Savannah · neck book</strong> Tabby / ochre vessel</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquartz-savannah-decanter-moss.png" alt="Savannah moss decanter variant" width="1536" height="1024" loading="lazy" />
+        <figcaption><strong>Savannah · moss decanter</strong> Outdoor Lowcountry setting</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquartz-savannah-decanter-tabby.png" alt="Savannah tabby stone decanter" width="1536" height="1024" loading="lazy" />
+        <figcaption><strong>Savannah · tabby</strong> Coastal stone finish</figcaption>
+      </figure>
+    </div>
+
+    <h2>Place Editions</h2>
+    <div class="grid">
+      <figure>
+        <img src="renders/aquaquarts-place-nordic-neckbook.png" alt="Nordic Place Edition decanter" width="1536" height="1024" loading="lazy" />
+        <figcaption><strong>Nordic</strong> Cool stone · neck book</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-scandinavian-decanter.png" alt="Scandinavian line decanter" width="1536" height="1024" loading="lazy" />
+        <figcaption><strong>Scandinavian line</strong> Tall clean form</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-place-nyc.png" alt="New York City Place Edition" width="1536" height="1024" loading="lazy" />
+        <figcaption><strong>New York City</strong> Catskill / Delaware water story</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-place-iceland.png" alt="Iceland Place Edition" width="1536" height="1024" loading="lazy" />
+        <figcaption><strong>Iceland</strong> Glacial / lava greige</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-place-japan.png" alt="Japan Place Edition" width="1536" height="1024" loading="lazy" />
+        <figcaption><strong>Japan</strong> Minimal porcelain-stone</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-place-andes.png" alt="Andes Place Edition" width="1536" height="1024" loading="lazy" />
+        <figcaption><strong>Andes</strong> Mountain mineral body</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-place-kenya.png" alt="Kenya Place Edition" width="1536" height="1024" loading="lazy" />
+        <figcaption><strong>Kenya</strong> Highland red-earth stoneware</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-place-desert-neckbook.png" alt="Desert / MENA Place Edition" width="1536" height="1024" loading="lazy" />
+        <figcaption><strong>Desert / MENA</strong> Warm sand · neck book</figcaption>
+      </figure>
+    </div>
+
+    <h2>Form candidates</h2>
+    <div class="grid">
+      <figure>
+        <img src="renders/aquaquarts-candidate-amphora-sandstone.png" alt="Amphora sandstone candidate" width="1536" height="1024" loading="lazy" />
+        <figcaption><strong>Amphora · sandstone</strong> Classic vessel silhouette</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-candidate-cylinder-basalt.png" alt="Cylinder basalt candidate" width="1536" height="1024" loading="lazy" />
+        <figcaption><strong>Cylinder · basalt</strong> Architectural modern</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-candidate-hourglass-charcoal.png" alt="Hourglass charcoal candidate" width="1536" height="1024" loading="lazy" />
+        <figcaption><strong>Hourglass · charcoal</strong> Sculptural waist</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-candidate-pebble-pitcher.png" alt="Pebble pitcher candidate" width="1536" height="1024" loading="lazy" />
+        <figcaption><strong>Pebble pitcher</strong> Soft pour form</figcaption>
+      </figure>
+    </div>
+
+    <h2>Campaign row</h2>
+    <figure class="wide">
+      <img src="renders/aquaquarts-place-palette-five.png" alt="Five Place Editions in one campaign row" width="1536" height="1024" loading="lazy" />
+      <p>Five editions, one ritual language — cities show their water; guests take the vessel home.</p>
+    </figure>
+
+    <div class="note">
+      These are concept renders for discussion — not final production photography.
+      Open <strong>AquaQuartz-Completed-Brochure.html</strong> for the full story, or print this page to PDF.
+    </div>
+  </main>
+</body>
+</html>
