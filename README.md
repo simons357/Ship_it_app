@@ -20,6 +20,10 @@ Related draft PRs should be closed, not merged: Ship It help (#1), Ship It cloud
 
 Portfolio, operator memos, AquaQuartz, and Cursor setup-advisor drafts are separate from the abandoned list above. Review those on their own merits.
 
+## Anesthesia lane (fair game)
+
+Start here: [docs/anesthesia/NEIGHBORHOOD-MAP.md](docs/anesthesia/NEIGHBORHOOD-MAP.md) — what Clay/κ/ORCH mean, teaching CV + reflex staircase status, and which older theories can sit next to anesthesia honestly.
+
 ## For agents
 
 See [AGENTS.md](AGENTS.md).

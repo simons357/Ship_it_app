@@ -14,7 +14,10 @@ If a draft PR is mainly Ship It, Planet Hunter, or Scallion, **close it** or lea
 
 `main` is thin on purpose: branding assets under `assets/` plus this guidance. There is **no** canonical runnable app on `main` right now.
 
-Prefer continuing from open drafts Jonathan still cares about (portfolio, AquaQuartz, rigor memos, Cursor setup advisor) — **not** from Ship It branches.
+Prefer continuing from open drafts Jonathan still cares about — especially the **anesthesia lane** (`docs/anesthesia/`, see `NEIGHBORHOOD-MAP.md`), portfolio, AquaQuartz, rigor memos, Cursor setup advisor — **not** from Ship It branches.
+
+**Fair game:** AI’s role in anesthesia as decision augmentation / teaching / Vigilant-style monitoring design.  
+**Not fair game as anesthesia science:** Clay/MP stack, κ\* consciousness claims, Orch-OR speculation without a real paper in-repo.
 
 ## Cursor Cloud
 
