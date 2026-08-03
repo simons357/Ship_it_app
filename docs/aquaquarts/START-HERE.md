@@ -1,9 +1,9 @@
-# Open this — nothing else
+# Stop — open the lookbook
 
-**Download / open:**
+Do **not** click around this folder.
 
-[`AquaQuartz-Completed-Brochure.pdf`](AquaQuartz-Completed-Brochure.pdf)
+Download this file from the **repository root**:
 
-That is the finished color picture brochure.
+**[`../../AquaQuartz-LOOKBOOK.pdf`](../../AquaQuartz-LOOKBOOK.pdf)**
 
-Ignore every other `.md` file in this folder. They are notes, not the brochure.
+That is the professional brochure. Everything else here is notes or source.
