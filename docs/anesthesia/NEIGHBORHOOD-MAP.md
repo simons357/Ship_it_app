@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | **Clay / MP stack** | Your Zenodo series aimed at the **Clay Millennium Prize Problems** (Navier–Stokes, Riemann, Goldbach, etc.) via prime-lattice / GCD / “Triple Lock” stories | **No as science for anesthesia.** Optional tiny fluids method note only if fully stripped of Clay language — and even then it is *not* an anesthesia paper |
 | **κ\* paper / κ\*** | In the MP papers, κ\* = \(6/\pi^2\) was sold as a universal threshold — math floor *and* (wrongly) a **“neural coherence threshold for consciousness”** | **Cut the consciousness claim.** Do not use κ\* as anesthesia theory. The number is squarefree-density folklore in number theory, not a clinical constant |
-| **ORCH / Orch OR** | **Not in this git repo.** Usually people mean Penrose–Hameroff *Orchestrated Objective Reduction* (quantum consciousness). No Hameroff/Penrose paper of yours is checked in here | **Do not invent a bridge.** If you have a separate Orch-OR note on your PC, treat it as philosophy/speculative — not anesthesia evidence — unless a real clinical collaborator frames a careful review |
+| **ORCH / Orch OR → renamed** | Your older Orch-OR–style consciousness thread was **renamed / reframed**. In-repo public face: **Simons Field Equation (SFE)** and **The Harmonic Blueprint** (book/site). Draft math packaging also appears as “SFE / Consciousness” inside the Quantum Lens / Millennium tex (NS ↔ anesthesia phase language) | **Partial / careful.** OK as *origin story* and teaching metaphor (you first saw the phase idea in the OR). **Not** OK as “BIS = quantum order parameter proved” or Clay/prime-lattice proof of consciousness. Keep SFE/Blueprint out of anesthesia *science* claims unless stripped to clinical language only |
 | **Reflex staircase** | Your named **crisis-teaching protocol** from practice | **Yes — strong education fit.** File is **missing from git** (still on your PC). Paste → `docs/anesthesia/REFLEX-STAIRCASE.md` |
 | **Teaching CV lane** | Packet for a later **teaching job** when hard clinical work isn’t safe: identity paragraph, paper checklist, what to send a program director | **Yes.** See `CV-TEACHING-LANE.md` |
 
@@ -89,7 +89,17 @@ Source: partner-packet `COHERENCE.md` (showcase branches); Vigilant brief alread
 | Solenne (telehealth) | Weak for *anesthesia faculty* unless tied to preop/PACU education |
 | EEG earphones / Music OS | Research-kit language only — **not** a device paper until counsel + protocol |
 
-### F. Optional non-anesthesia math (only if you still want one fluids line)
+### F. SFE / Harmonic Blueprint (renamed Orch OR) — **origin story, not device proof**
+
+| Face | Where | Anesthesia use |
+| --- | --- | --- |
+| **Simons Field Equation (SFE)** | Named in Zenodo “GCD Spectral Attractor … and the Simons Field Equation”; Quantum Millennium draft “Bridge 5: NS ↔ SFE / Consciousness” | Private/philosophy lane: coherent vs collapsed phase ↔ awake vs anesthetized — **as metaphor / how you thought it**, not as a cleared physiologic model |
+| **The Harmonic Blueprint** | https://www.theharmonicblueprint.com/ | Public book/art face of the field story — fine for “who I am,” not for Vigilant efficacy |
+
+**Safe line:** “I first noticed phase-change / coherence language at the head of the table; later work named it SFE / Harmonic Blueprint.”  
+**Unsafe line:** “Anesthesia is the prime-lattice BEC collapse and BIS reads \(|\langle\hat\psi\rangle|^2\).”
+
+### G. Optional non-anesthesia math (only if you still want one fluids line)
 
 Phi-renorm cancel (Zenodo) can be a **fluids method note** with Clay stripped. It does **not** belong in an anesthesia manuscript.
 
@@ -103,7 +113,7 @@ Phi-renorm cancel (Zenodo) can be a **fluids method note** with Clay stripped. I
 | Goldbach / RH / “NS proved” Zenodo leads | Not true as claimed; poison for clinical credibility |
 | ExoRatio / Planet Hunter | Cut; not clinical |
 | κ\* as consciousness / neural threshold | Explicitly cut in keep/cut inventory |
-| Harmonic Blueprint as anesthesia science | Art/physics book — fine culturally, not monitor evidence |
+| SFE / Harmonic Blueprint **as anesthesia science / BIS physics** | Renamed Orch-OR thread — keep as story/art; don’t cite as monitor proof |
 | Ship It / Scallion | Abandoned products |
 
 ---
@@ -131,10 +141,10 @@ Until those land, **Paper 1** in the pipeline (“When the Number Lags the Room�
 2. Write / dictate Paper 1 vignettes (perspective — fastest CV line).  
 3. Paste reflex staircase + AWARE when you find them.  
 4. Use operator-systems language for any “AI in anesthesia” talk track.  
-5. Leave Clay/κ/Orch-OR out of the anesthesia packet unless you separately decide a *philosophy* note with hard claim limits.
+5. If you mention the renamed Orch-OR work, call it **SFE / Harmonic Blueprint**, and keep it in the philosophy / origin-story lane — not in Vigilant claims.
 
 ---
 
 ## One line
 
-**Your anesthesia neighborhood is Vigilant + teaching (reflex / AWARE / CV lane) + operator-systems theory + training tools — not the Millennium stack, not κ\* consciousness, and not an Orch-OR paper that isn’t even in this repo.**
+**Your anesthesia neighborhood is Vigilant + teaching (reflex / AWARE / CV lane) + operator-systems theory + training tools. The old Orch-OR paper is now SFE / Harmonic Blueprint — use it as OR origin story, not as Clay/BIS physics.**

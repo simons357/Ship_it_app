@@ -17,7 +17,7 @@ If a draft PR is mainly Ship It, Planet Hunter, or Scallion, **close it** or lea
 Prefer continuing from open drafts Jonathan still cares about — especially the **anesthesia lane** (`docs/anesthesia/`, see `NEIGHBORHOOD-MAP.md`), portfolio, AquaQuartz, rigor memos, Cursor setup advisor — **not** from Ship It branches.
 
 **Fair game:** AI’s role in anesthesia as decision augmentation / teaching / Vigilant-style monitoring design.  
-**Not fair game as anesthesia science:** Clay/MP stack, κ\* consciousness claims, Orch-OR speculation without a real paper in-repo.
+**Not fair game as anesthesia science:** Clay/MP stack, κ\* consciousness claims, or SFE/Harmonic Blueprint (renamed Orch-OR) sold as BIS/physics proof. SFE/Blueprint OK only as origin-story / philosophy with hard claim limits — see `docs/anesthesia/NEIGHBORHOOD-MAP.md`.
 
 ## Cursor Cloud
 
