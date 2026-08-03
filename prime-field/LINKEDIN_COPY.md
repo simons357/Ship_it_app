@@ -93,7 +93,7 @@ Contact: jonathansimons357@proton.me
 1. Portfolio / website (“We don't make things…”)  
 2. Zenodo DOI cluster (your best 1–2 archived manuscripts)  
 3. Clinical concept one-pager — AWARE or VIGILANT ECHO  
-4. NAV-42 concept plate (clearly labeled concept + patent track)
+4. NAV-42 concept plate — **one plate only** (remove any duplicate figure under Adaptive Maritime Surface)
 
 ---
 
