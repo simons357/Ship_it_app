@@ -4,24 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AquaQuartz — Completed Brochure</title>
-  <meta name="description" content="AquaQuartz professional brochure: tall forever bottles, Lithia first, Place Editions." />
+  <meta name="description" content="AquaQuartz professional picture brochure — Lithia, Savannah, Place Editions, investor ask." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --ink: #1a1410;
-      --cream: #f3ebe1;
-      --sand: #e6d7c4;
-      --clay: #9a5b3c;
-      --moss: #3f4f3b;
+      --cream: #f4ece2;
+      --sand: #e5d6c2;
       --amethyst: #6e4d8a;
       --charcoal: #121014;
       --muted: #6b5c50;
       --display: "Cormorant Garamond", "Times New Roman", serif;
       --body: "Outfit", "Segoe UI", sans-serif;
     }
-
     * { box-sizing: border-box; }
     html, body { margin: 0; }
     body {
@@ -29,7 +26,7 @@
       font-family: var(--body);
       font-weight: 300;
       line-height: 1.5;
-      background: var(--charcoal);
+      background: #0e0c0f;
       -webkit-font-smoothing: antialiased;
     }
     img {
@@ -41,29 +38,23 @@
     a { color: inherit; text-decoration: none; }
 
     .toolbar {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      padding: 0.75rem 1.25rem;
-      background: rgba(18, 16, 20, 0.92);
+      position: sticky; top: 0; z-index: 50;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      padding: 0.8rem 1.25rem;
+      background: rgba(18,16,20,0.95);
       color: var(--cream);
-      border-bottom: 1px solid rgba(243, 235, 225, 0.12);
+      border-bottom: 1px solid rgba(243,235,225,0.12);
     }
     .toolbar strong {
       font-family: var(--display);
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       font-weight: 600;
-      letter-spacing: 0.02em;
     }
-    .toolbar nav { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .toolbar nav { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .toolbar a, .toolbar button {
       appearance: none;
-      border: 1px solid rgba(243, 235, 225, 0.28);
+      border: 1px solid rgba(243,235,225,0.28);
       background: transparent;
       color: var(--cream);
       font: 500 0.68rem var(--body);
@@ -72,14 +63,16 @@
       padding: 0.5rem 0.8rem;
       cursor: pointer;
     }
-    .toolbar button {
+    .toolbar .pdf {
       background: var(--cream);
       color: var(--ink);
       border-color: var(--cream);
     }
 
+    /* Landscape letter spreads — photos stay whole */
     .page {
       position: relative;
+      width: 100%;
       min-height: 100svh;
       overflow: hidden;
       break-after: page;
@@ -90,423 +83,384 @@
       page-break-after: auto;
     }
 
-    /* —— Cover —— */
+    /* COVER */
     .cover {
       display: grid;
-      align-content: end;
+      grid-template-rows: 1fr auto;
+      background: #171318;
       color: var(--cream);
-      background: var(--charcoal);
     }
-    .cover-media {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 55%;
-    }
-    .cover-shade {
-      position: absolute;
-      inset: 0;
+    .cover-stage {
+      position: relative;
+      min-height: 0;
+      display: grid;
+      place-items: center;
+      padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 3vw, 2rem) 0;
       background:
-        linear-gradient(180deg, rgba(18,16,20,0.15) 0%, rgba(18,16,20,0.08) 42%, rgba(18,16,20,0.88) 100%),
-        radial-gradient(ellipse at 30% 20%, rgba(110,77,138,0.18), transparent 55%);
-      pointer-events: none;
+        radial-gradient(ellipse at 50% 20%, rgba(110,77,138,0.2), transparent 50%),
+        linear-gradient(180deg, #211c22, #121014 70%);
+    }
+    .cover-stage img {
+      width: min(1180px, 100%);
+      height: auto;
+      max-height: 68svh;
+      object-fit: contain;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
     }
     .cover-copy {
-      position: relative;
-      z-index: 1;
-      padding: clamp(1.5rem, 5vw, 3.5rem);
-      max-width: 42rem;
+      padding: clamp(1.1rem, 3vw, 2rem) clamp(1.25rem, 4vw, 3rem) clamp(1.4rem, 3.5vw, 2.4rem);
+      background: linear-gradient(180deg, #161218, #0f0d11);
+      border-top: 1px solid rgba(243,235,225,0.08);
     }
-    .cover .brand {
-      margin: 0 0 0.85rem;
+    .cover-copy .brand {
+      margin: 0 0 0.35rem;
       font-family: var(--display);
       font-weight: 700;
-      font-size: clamp(3.6rem, 11vw, 6.5rem);
-      line-height: 0.9;
+      font-size: clamp(2.8rem, 7vw, 4.6rem);
+      line-height: 0.92;
       letter-spacing: -0.02em;
-      text-shadow: 0 10px 40px rgba(0,0,0,0.45);
     }
-    .cover h1 {
-      margin: 0 0 0.85rem;
+    .cover-copy h1 {
+      margin: 0 0 0.55rem;
       font-family: var(--display);
       font-weight: 500;
-      font-size: clamp(1.7rem, 4.2vw, 2.55rem);
-      line-height: 1.12;
-      max-width: 16ch;
+      font-size: clamp(1.35rem, 3vw, 1.9rem);
+      max-width: 22ch;
+      line-height: 1.15;
     }
-    .cover p {
+    .cover-copy p {
       margin: 0;
-      max-width: 34ch;
-      color: rgba(243, 235, 225, 0.86);
-      font-size: 1.05rem;
+      color: rgba(243,235,225,0.78);
+      max-width: 46ch;
+      font-size: 1rem;
     }
-    .cover-meta {
-      margin-top: 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem 1.25rem;
-      font-size: 0.72rem;
+    .pills {
+      display: flex; flex-wrap: wrap; gap: 0.55rem 1.1rem;
+      margin-top: 0.95rem;
+      font-size: 0.7rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: rgba(243, 235, 225, 0.7);
+      color: rgba(243,235,225,0.65);
     }
-    .cover-meta span::before {
+    .pills span::before {
       content: "";
       display: inline-block;
-      width: 0.45rem;
-      height: 0.45rem;
-      margin-right: 0.55rem;
+      width: 0.4rem; height: 0.4rem;
+      margin-right: 0.45rem;
       border-radius: 50%;
-      background: var(--amethyst);
+      background: #c9a6e0;
       vertical-align: middle;
     }
 
-    /* —— Image chapter pages —— */
-    .chapter {
+    /* SPLIT CHAPTER */
+    .split {
       display: grid;
       background: var(--cream);
+      min-height: 100svh;
     }
-    @media (min-width: 900px) {
-      .chapter { grid-template-columns: 0.9fr 1.1fr; min-height: 100svh; }
-      .chapter.reverse { grid-template-columns: 1.1fr 0.9fr; }
-      .chapter.reverse .chapter-copy { order: 2; }
-      .chapter.reverse .chapter-media { order: 1; }
+    @media (min-width: 800px) {
+      .split { grid-template-columns: 0.92fr 1.08fr; }
+      .split.flip { grid-template-columns: 1.08fr 0.92fr; }
+      .split.flip .copy { order: 2; }
+      .split.flip .photo { order: 1; }
     }
-    .chapter-media {
+    .photo {
       position: relative;
-      min-height: 58svh;
+      min-height: 48svh;
       background: #2a241f;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
     }
-    .chapter-media img {
+    .photo img {
       width: 100%;
       height: 100%;
-      min-height: 58svh;
+      min-height: 48svh;
       object-fit: cover;
       object-position: center;
     }
-    .chapter-copy {
+    .copy {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: clamp(1.75rem, 5vw, 3.75rem);
-      background:
-        linear-gradient(160deg, #f7f0e7 0%, var(--cream) 45%, #e9dccb 100%);
+      padding: clamp(1.5rem, 4vw, 3rem);
+      background: linear-gradient(155deg, #f8f1e8, var(--cream) 50%, #e8d9c6);
     }
     .eyebrow {
-      margin: 0 0 0.7rem;
-      font-size: 0.72rem;
+      margin: 0 0 0.55rem;
+      font-size: 0.7rem;
       font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--amethyst);
     }
-    .chapter-copy h2 {
-      margin: 0 0 0.9rem;
+    .copy h2 {
+      margin: 0 0 0.75rem;
       font-family: var(--display);
       font-weight: 600;
-      font-size: clamp(2.2rem, 4.8vw, 3.4rem);
-      line-height: 1.05;
-      max-width: 10ch;
+      font-size: clamp(2.2rem, 4.5vw, 3.3rem);
+      line-height: 1.02;
+      max-width: 11ch;
     }
-    .chapter-copy .lede {
-      margin: 0 0 1.25rem;
+    .copy .lede {
+      margin: 0 0 1.1rem;
       color: var(--muted);
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       max-width: 34ch;
     }
-    .detail {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      border-top: 1px solid rgba(26, 20, 16, 0.14);
+    .rows {
+      margin: 0; padding: 0; list-style: none;
+      border-top: 1px solid rgba(26,20,16,0.14);
     }
-    .detail li {
+    .rows li {
       display: grid;
-      grid-template-columns: 7.5rem 1fr;
-      gap: 0.75rem;
-      padding: 0.7rem 0;
-      border-bottom: 1px solid rgba(26, 20, 16, 0.14);
+      grid-template-columns: 7rem 1fr;
+      gap: 0.7rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(26,20,16,0.14);
       font-size: 0.95rem;
     }
-    .detail strong {
-      font-weight: 500;
-      color: var(--ink);
-    }
-    .detail span { color: var(--muted); }
+    .rows strong { font-weight: 500; }
+    .rows span { color: var(--muted); }
 
-    /* —— Full bleed quote / brand —— */
-    .bleed {
+    /* FULL PHOTO BAND */
+    .band {
       display: grid;
       align-content: end;
       color: var(--cream);
-      background: var(--charcoal);
+      background: #100e12;
+      min-height: 100svh;
     }
-    .bleed img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
+    .band img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
       object-fit: cover;
+      object-position: center 45%;
     }
-    .bleed-shade {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(18,16,20,0.1) 0%, rgba(18,16,20,0.72) 100%);
+    .band-shade {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(16,14,18,0.05) 0%, rgba(16,14,18,0.18) 40%, rgba(16,14,18,0.82) 100%);
     }
-    .bleed-copy {
-      position: relative;
-      z-index: 1;
-      padding: clamp(1.75rem, 5vw, 3.5rem);
-      max-width: 36rem;
+    .band-copy {
+      position: relative; z-index: 1;
+      padding: clamp(1.5rem, 4vw, 2.8rem);
+      max-width: 38rem;
     }
-    .bleed-copy h2 {
-      margin: 0 0 0.8rem;
+    .band-copy h2 {
+      margin: 0 0 0.6rem;
       font-family: var(--display);
       font-weight: 500;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      line-height: 1.1;
+      font-size: clamp(2.1rem, 4.5vw, 3.1rem);
+      line-height: 1.08;
     }
-    .bleed-copy p {
+    .band-copy p {
       margin: 0;
-      color: rgba(243, 235, 225, 0.88);
+      color: rgba(243,235,225,0.86);
+      max-width: 38ch;
       font-size: 1.05rem;
-      max-width: 36ch;
     }
 
-    /* —— Gallery —— */
+    /* GALLERY */
     .gallery {
-      background:
-        radial-gradient(ellipse at top left, rgba(110,77,138,0.08), transparent 40%),
-        linear-gradient(180deg, #f7f0e7, var(--sand));
-      padding: clamp(1.75rem, 4vw, 3rem);
+      background: linear-gradient(180deg, #f7f0e7, var(--sand));
+      padding: clamp(1.25rem, 3vw, 2rem);
+      min-height: 100svh;
     }
     .gallery-head {
-      max-width: 980px;
-      margin: 0 auto 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto 1rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: end;
     }
     .gallery-head h2 {
-      margin: 0 0 0.55rem;
+      margin: 0;
       font-family: var(--display);
-      font-size: clamp(2.2rem, 5vw, 3.3rem);
+      font-size: clamp(2rem, 4vw, 3rem);
       line-height: 1.05;
     }
     .gallery-head p {
       margin: 0;
       color: var(--muted);
-      max-width: 46ch;
-      font-size: 1.05rem;
+      max-width: 36ch;
+      font-size: 0.98rem;
     }
-    .mosaic {
+    .grid {
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      gap: 0.85rem;
-      grid-template-columns: 1fr;
+      gap: 0.7rem;
+      grid-template-columns: 1fr 1fr;
     }
-    @media (min-width: 720px) {
-      .mosaic { grid-template-columns: repeat(2, 1fr); }
-      .mosaic .wide { grid-column: 1 / -1; }
-    }
-    @media (min-width: 980px) {
-      .mosaic { grid-template-columns: repeat(3, 1fr); }
-      .mosaic .wide { grid-column: span 2; }
-      .mosaic .tall { grid-row: span 2; }
+    @media (min-width: 900px) {
+      .grid { grid-template-columns: repeat(4, 1fr); }
     }
     .tile {
-      position: relative;
       margin: 0;
+      position: relative;
       overflow: hidden;
       background: #2a241f;
-      min-height: 280px;
+      min-height: 220px;
+      aspect-ratio: 4 / 5;
     }
-    .tile.tall { min-height: 100%; }
+    .tile.span2 {
+      grid-column: span 2;
+      aspect-ratio: 16 / 10;
+      min-height: 260px;
+    }
     .tile img {
-      width: 100%;
-      height: 100%;
-      min-height: 280px;
+      width: 100%; height: 100%;
       object-fit: cover;
-      transition: transform 0.8s ease;
     }
-    .tile:hover img { transform: scale(1.03); }
     .tile figcaption {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 1.5rem 1rem 0.9rem;
-      background: linear-gradient(180deg, transparent, rgba(18,16,20,0.82));
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 1.4rem 0.85rem 0.75rem;
+      background: linear-gradient(180deg, transparent, rgba(18,16,20,0.85));
       color: var(--cream);
       font-family: var(--display);
-      font-size: 1.35rem;
+      font-size: 1.2rem;
       font-weight: 600;
     }
     .tile figcaption small {
       display: block;
-      margin-top: 0.15rem;
+      margin-top: 0.1rem;
       font-family: var(--body);
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 400;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: rgba(243, 235, 225, 0.75);
+      color: rgba(243,235,225,0.72);
     }
 
-    /* —— Ritual + ask —— */
-    .closing {
+    /* CLOSING */
+    .close {
       display: grid;
-      background: var(--ink);
+      background: #121014;
       color: var(--cream);
+      min-height: 100svh;
     }
-    @media (min-width: 900px) {
-      .closing { grid-template-columns: 1.05fr 0.95fr; min-height: 100svh; }
+    @media (min-width: 800px) {
+      .close { grid-template-columns: 1.05fr 0.95fr; }
     }
-    .closing-media {
-      position: relative;
-      min-height: 52svh;
-      background: #0c0a0d;
-    }
-    .closing-media img {
-      width: 100%;
-      height: 100%;
-      min-height: 52svh;
-      object-fit: cover;
-    }
-    .closing-copy {
-      padding: clamp(1.75rem, 5vw, 3.5rem);
+    .close .photo img { min-height: 100%; }
+    .close-copy {
+      padding: clamp(1.5rem, 4vw, 2.8rem);
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background:
-        linear-gradient(160deg, #1c1714 0%, #121014 55%, #1a1320 100%);
+      background: linear-gradient(160deg, #1b1613, #121014 55%, #17121d);
     }
-    .closing-copy h2 {
-      margin: 0 0 0.85rem;
+    .close-copy h2 {
+      margin: 0 0 0.7rem;
       font-family: var(--display);
-      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-size: clamp(2.1rem, 4vw, 3rem);
       line-height: 1.05;
     }
-    .closing-copy .lede {
-      margin: 0 0 1.4rem;
-      color: rgba(243, 235, 225, 0.78);
+    .close-copy .lede {
+      margin: 0 0 1.1rem;
+      color: rgba(243,235,225,0.75);
       max-width: 36ch;
     }
     .steps {
-      margin: 0 0 1.75rem;
-      padding: 0;
-      list-style: none;
+      margin: 0 0 1.35rem; padding: 0; list-style: none;
     }
     .steps li {
       display: grid;
-      grid-template-columns: 2.2rem 1fr;
-      gap: 0.75rem;
-      padding: 0.7rem 0;
-      border-top: 1px solid rgba(243, 235, 225, 0.14);
+      grid-template-columns: 2rem 1fr;
+      gap: 0.7rem;
+      padding: 0.6rem 0;
+      border-top: 1px solid rgba(243,235,225,0.14);
     }
-    .steps li:last-child { border-bottom: 1px solid rgba(243, 235, 225, 0.14); }
+    .steps li:last-child { border-bottom: 1px solid rgba(243,235,225,0.14); }
     .steps em {
       font-family: var(--display);
       font-style: normal;
-      font-size: 1.2rem;
       color: #c9a6e0;
+      font-size: 1.15rem;
     }
-    .steps strong {
-      display: block;
-      font-weight: 500;
-      margin-bottom: 0.15rem;
+    .steps strong { display: block; font-weight: 500; margin-bottom: 0.1rem; }
+    .steps span { color: rgba(243,235,225,0.68); font-size: 0.92rem; }
+    .ask {
+      padding: 1.2rem 1.15rem;
+      border: 1px solid rgba(201,166,224,0.35);
+      background: rgba(110,77,138,0.16);
     }
-    .steps span {
-      color: rgba(243, 235, 225, 0.7);
-      font-size: 0.92rem;
-    }
-
-    .ask-box {
-      padding: 1.35rem 1.25rem;
-      border: 1px solid rgba(201, 166, 224, 0.35);
-      background: rgba(110, 77, 138, 0.16);
-    }
-    .ask-box .num {
-      margin: 0 0 0.55rem;
+    .ask .num {
+      margin: 0 0 0.45rem;
       font-family: var(--display);
-      font-size: clamp(2.2rem, 4vw, 2.9rem);
+      font-size: clamp(2rem, 3.5vw, 2.7rem);
       font-weight: 600;
       color: #f0e4ff;
     }
-    .ask-box p {
-      margin: 0 0 0.55rem;
-      color: rgba(243, 235, 225, 0.84);
-      font-size: 0.95rem;
+    .ask p {
+      margin: 0 0 0.45rem;
+      color: rgba(243,235,225,0.84);
+      font-size: 0.93rem;
     }
-    .ask-box p:last-child { margin: 0; }
-    .ask-box strong { color: #fff; font-weight: 500; }
-
-    .footer {
-      margin-top: 1.75rem;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(243, 235, 225, 0.14);
-      color: rgba(243, 235, 225, 0.55);
-      font-size: 0.82rem;
+    .ask p:last-child { margin: 0; }
+    .ask strong { color: #fff; font-weight: 500; }
+    .foot {
+      margin-top: 1.3rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(243,235,225,0.14);
+      color: rgba(243,235,225,0.5);
+      font-size: 0.8rem;
     }
-    .footer a { color: #d7b8ef; }
+    .foot a { color: #d7b8ef; }
 
     @media print {
       .toolbar { display: none !important; }
       body { background: #fff; }
-      .page {
-        min-height: 100vh;
-        height: 100vh;
+      .page, .split, .band, .gallery, .close, .cover {
+        width: 11in;
+        height: 8.5in;
+        min-height: 8.5in;
+        max-height: 8.5in;
         overflow: hidden;
       }
-      .chapter-media,
-      .chapter-media img,
-      .closing-media,
-      .closing-media img {
+      .cover-stage img { max-height: 5.6in; }
+      .photo img, .band img, .close .photo img {
         min-height: 100%;
         height: 100%;
       }
-      .tile:hover img { transform: none; }
       * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
       }
     }
-
     @page {
-      size: Letter portrait;
+      size: Letter landscape;
       margin: 0;
     }
   </style>
 </head>
 <body>
-  <div class="toolbar no-print">
+  <div class="toolbar">
     <strong>AquaQuartz</strong>
     <nav>
-      <a href="#lithia">Lithia</a>
-      <a href="#savannah">Savannah</a>
-      <a href="#places">Places</a>
-      <a href="#ask">Ask</a>
-      <a href="AquaQuartz-Completed-Brochure.pdf">Open PDF</a>
-      <button type="button" onclick="window.print()">Print / Save PDF</button>
+      <a class="pdf" href="AquaQuartz-Completed-Brochure.pdf">Download PDF</a>
+      <button type="button" class="pdf" onclick="window.print()">Print / Save PDF</button>
     </nav>
   </div>
 
-  <!-- 1. COVER -->
+  <!-- 1 COVER — full five-bottle lineup, not cropped -->
   <section class="page cover" aria-label="Cover">
-    <img
-      class="cover-media"
-      src="renders/aquaquarts-place-palette-five.png"
-      alt="Five tall AquaQuartz Place Edition stone bottles on a stone ledge"
-      width="1536"
-      height="1024"
-      fetchpriority="high"
-    />
-    <div class="cover-shade" aria-hidden="true"></div>
+    <div class="cover-stage">
+      <img
+        src="renders/aquaquarts-place-palette-five.png"
+        alt="Five tall AquaQuartz Place Edition bottles"
+        width="1536"
+        height="1024"
+        fetchpriority="high"
+      />
+    </div>
     <div class="cover-copy">
       <p class="brand">AquaQuartz</p>
       <h1>Tall forever bottles for a city’s best water.</h1>
       <p>Named place-water. A vessel the guest keeps. A neck book that tells the story. No plastic.</p>
-      <div class="cover-meta">
+      <div class="pills">
         <span>Lithia Springs first</span>
         <span>Savannah next</span>
         <span>Place Editions later</span>
@@ -514,199 +468,118 @@
     </div>
   </section>
 
-  <!-- 2. LITHIA -->
-  <section class="page chapter" id="lithia" aria-label="Lithia Springs">
-    <div class="chapter-copy">
+  <!-- 2 LITHIA -->
+  <section class="page split" aria-label="Lithia Springs">
+    <div class="copy">
       <p class="eyebrow">Launch edition</p>
       <h2>Lithia Springs</h2>
-      <p class="lede">
-        Warm mineral clay. Quartz collar. Neck book. Georgia spring character —
-        served cold, never stripped of what makes it Lithia.
-      </p>
-      <ul class="detail">
+      <p class="lede">Warm mineral clay. Quartz collar. Neck book. Georgia spring character — served cold, never stripped of what makes it Lithia.</p>
+      <ul class="rows">
         <li><strong>Vessel</strong><span>Tall stone bottle · guest takes it home</span></li>
         <li><strong>Water</strong><span>Historic mineral spring · leave alone, serve cold</span></li>
         <li><strong>Story</strong><span>Quartz country · heritage · stewardship</span></li>
         <li><strong>Job</strong><span>The first bottle people remember</span></li>
       </ul>
     </div>
-    <div class="chapter-media">
-      <img
-        src="renders/aquaquarts-place-lithia-neckbook.png"
-        alt="Lithia Springs AquaQuartz bottle with amethyst collar and neck book"
-        width="1536"
-        height="1024"
-      />
+    <div class="photo">
+      <img src="renders/aquaquarts-place-lithia-neckbook.png" alt="Lithia Springs AquaQuartz bottle with amethyst collar" width="1536" height="1024" />
     </div>
   </section>
 
-  <!-- 3. LITHIA CRAFT -->
-  <section class="page chapter reverse" aria-label="Lithia craft pitcher">
-    <div class="chapter-copy">
-      <p class="eyebrow">Tableside</p>
-      <h2>Craft pitcher</h2>
-      <p class="lede">
-        For the pour at the table — same heritage spring line, form made for service
-        before the forever bottle goes home.
-      </p>
-      <ul class="detail">
-        <li><strong>Feel</strong><span>Cherokee-country craft · warm clay</span></li>
-        <li><strong>Use</strong><span>Restaurant pour · ritual start</span></li>
-        <li><strong>Keep</strong><span>Guest keeps the tall bottle edition</span></li>
-      </ul>
-    </div>
-    <div class="chapter-media">
-      <img
-        src="renders/aquaquarts-cherokee-lithia-decanter.png"
-        alt="Cherokee-country Lithia craft pitcher"
-        width="1536"
-        height="1024"
-      />
-    </div>
-  </section>
-
-  <!-- 4. SAVANNAH BLEED -->
-  <section class="page bleed" id="savannah" aria-label="Savannah">
-    <img
-      src="renders/aquaquartz-savannah-moss-neck.png"
-      alt="Savannah AquaQuartz bottle with moss at the neck in golden light"
-      width="1536"
-      height="1024"
-    />
-    <div class="bleed-shade" aria-hidden="true"></div>
-    <div class="bleed-copy">
+  <!-- 3 SAVANNAH -->
+  <section class="page band" aria-label="Savannah">
+    <img src="renders/aquaquartz-savannah-moss-neck.png" alt="Savannah AquaQuartz bottle with moss at the neck" width="1536" height="1024" />
+    <div class="band-shade" aria-hidden="true"></div>
+    <div class="band-copy">
       <p class="eyebrow" style="color:#d7b8ef">Hometown</p>
       <h2>Savannah / Lowcountry</h2>
-      <p>Moss at the neck. Tabby stone. Hometown water pride — the soft sip of the city, cleaned of pipe taste, held in art.</p>
+      <p>Moss at the neck. Tabby stone. Hometown water pride — the soft sip of the city, held in art the guest keeps.</p>
     </div>
   </section>
 
-  <!-- 5. SAVANNAH DETAIL -->
-  <section class="page chapter" aria-label="Savannah editions">
-    <div class="chapter-copy">
-      <p class="eyebrow">Two finishes</p>
-      <h2>Moss &amp; tabby</h2>
-      <p class="lede">
-        Same ritual kit. Different coastal mineral language — for the restaurant
-        that wants Savannah on the shelf at home.
-      </p>
-      <ul class="detail">
-        <li><strong>Moss neck</strong><span>Garden light · amethyst sphere · paper tags</span></li>
+  <!-- 4 SAVANNAH + CRAFT -->
+  <section class="page split flip" aria-label="Savannah detail">
+    <div class="copy">
+      <p class="eyebrow">Hometown finishes</p>
+      <h2>Moss, tabby, neck book</h2>
+      <p class="lede">Same ritual kit. Coastal mineral language for the restaurant that wants Savannah on the shelf at home.</p>
+      <ul class="rows">
+        <li><strong>Moss neck</strong><span>Garden light · amethyst · paper tags</span></li>
         <li><strong>Tabby</strong><span>Coastal mineral body · Lowcountry grit</span></li>
-        <li><strong>Neck book</strong><span>City story · poem · give-back</span></li>
         <li><strong>Water path</strong><span>Catalytic carbon + cold — usually enough</span></li>
+        <li><strong>Craft pour</strong><span>Tableside pitcher for the Lithia line</span></li>
       </ul>
     </div>
-    <div class="chapter-media">
-      <img
-        src="renders/aquaquartz-savannah-neckbook.png"
-        alt="Savannah AquaQuartz bottle with neck book in courtyard light"
-        width="1536"
-        height="1024"
-      />
+    <div class="photo">
+      <img src="renders/aquaquartz-savannah-neckbook.png" alt="Savannah bottle with neck book in courtyard light" width="1536" height="1024" />
     </div>
   </section>
 
-  <!-- 6. PLACE GALLERY -->
-  <section class="page gallery" id="places" aria-label="Place Editions">
+  <!-- 5 PLACE EDITIONS -->
+  <section class="page gallery" aria-label="Place Editions">
     <div class="gallery-head">
-      <p class="eyebrow">Place Editions</p>
-      <h2>Same bottle. Different place.</h2>
-      <p>Each city licenses its water, poem, and stone. The silhouette stays a bottle — tall enough to pour, proud enough to keep.</p>
+      <div>
+        <p class="eyebrow">Place Editions</p>
+        <h2>Same bottle. Different place.</h2>
+      </div>
+      <p>Each city licenses its water, poem, and stone. Tall enough to pour. Proud enough to keep.</p>
     </div>
-    <div class="mosaic">
-      <figure class="tile wide">
-        <img src="renders/aquaquarts-place-palette-five.png" alt="Five Place Edition bottles" width="1536" height="1024" />
+    <div class="grid">
+      <figure class="tile span2">
+        <img src="renders/aquaquarts-place-palette-five.png" alt="Place Edition row" width="1536" height="1024" />
         <figcaption>Place Edition row<small>One ritual · five cities</small></figcaption>
       </figure>
-      <figure class="tile tall">
-        <img src="renders/aquaquarts-place-nyc.png" alt="New York City Place Edition" width="1536" height="1024" />
-        <figcaption>New York City<small>Catskill / Delaware story</small></figcaption>
+      <figure class="tile">
+        <img src="renders/aquaquarts-place-nyc.png" alt="New York City" width="1536" height="1024" />
+        <figcaption>New York<small>Catskill / Delaware</small></figcaption>
       </figure>
       <figure class="tile">
-        <img src="renders/aquaquarts-place-iceland.png" alt="Iceland Place Edition" width="1536" height="1024" />
-        <figcaption>Iceland<small>Glacial / lava mineral</small></figcaption>
+        <img src="renders/aquaquarts-place-iceland.png" alt="Iceland" width="1536" height="1024" />
+        <figcaption>Iceland<small>Glacial / lava</small></figcaption>
       </figure>
       <figure class="tile">
-        <img src="renders/aquaquarts-place-japan.png" alt="Japan Place Edition" width="1536" height="1024" />
-        <figcaption>Japan<small>Quiet mountain water</small></figcaption>
+        <img src="renders/aquaquarts-place-japan.png" alt="Japan" width="1536" height="1024" />
+        <figcaption>Japan<small>Mountain water</small></figcaption>
       </figure>
       <figure class="tile">
-        <img src="renders/aquaquarts-place-andes.png" alt="Andes Place Edition" width="1536" height="1024" />
-        <figcaption>Andes<small>High-country mineral</small></figcaption>
+        <img src="renders/aquaquarts-place-andes.png" alt="Andes" width="1536" height="1024" />
+        <figcaption>Andes<small>High country</small></figcaption>
       </figure>
       <figure class="tile">
-        <img src="renders/aquaquarts-place-kenya.png" alt="Kenya Place Edition" width="1536" height="1024" />
-        <figcaption>Kenya<small>Highland stoneware</small></figcaption>
+        <img src="renders/aquaquarts-place-kenya.png" alt="Kenya" width="1536" height="1024" />
+        <figcaption>Kenya<small>Highland stone</small></figcaption>
       </figure>
       <figure class="tile">
-        <img src="renders/aquaquarts-place-desert-neckbook.png" alt="Desert Place Edition" width="1536" height="1024" />
-        <figcaption>Desert / MENA<small>Water as gift</small></figcaption>
-      </figure>
-      <figure class="tile">
-        <img src="renders/aquaquarts-place-nordic-neckbook.png" alt="Nordic Place Edition" width="1536" height="1024" />
+        <img src="renders/aquaquarts-place-nordic-neckbook.png" alt="Nordic" width="1536" height="1024" />
         <figcaption>Nordic<small>Northern spring</small></figcaption>
-      </figure>
-      <figure class="tile">
-        <img src="renders/aquaquarts-scandinavian-decanter.png" alt="Scandinavian architectural bottle" width="1536" height="1024" />
-        <figcaption>Scandinavian line<small>Architectural pour</small></figcaption>
-      </figure>
-      <figure class="tile">
-        <img src="renders/aquaquartz-savannah-decanter-tabby.png" alt="Savannah tabby stone vessel" width="1536" height="1024" />
-        <figcaption>Savannah tabby<small>Coastal mineral finish</small></figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- 7. ASK -->
-  <section class="page closing" id="ask" aria-label="The ask">
-    <div class="closing-media">
-      <img
-        src="renders/aquaquarts-place-lithia-neckbook.png"
-        alt="AquaQuartz Lithia bottle — the object investors fund"
-        width="1536"
-        height="1024"
-      />
+  <!-- 6 ASK -->
+  <section class="page close" aria-label="The ask">
+    <div class="photo">
+      <img src="renders/aquaquarts-place-lithia-neckbook.png" alt="AquaQuartz Lithia bottle" width="1536" height="1024" />
     </div>
-    <div class="closing-copy">
-      <p class="eyebrow">What guests buy</p>
-      <h2>The ritual kit</h2>
+    <div class="close-copy">
+      <p class="eyebrow">The ask</p>
+      <h2>Fund the pilot</h2>
       <p class="lede">Bottle + named water + neck book + memory. Plastic never did that.</p>
       <ol class="steps">
-        <li>
-          <em>01</em>
-          <div>
-            <strong>The bottle</strong>
-            <span>Tall stone body · quartz-look rim · leaves with the guest</span>
-          </div>
-        </li>
-        <li>
-          <em>02</em>
-          <div>
-            <strong>The water</strong>
-            <span>Lithia first · Savannah next · Place licenses later</span>
-          </div>
-        </li>
-        <li>
-          <em>03</em>
-          <div>
-            <strong>The neck book</strong>
-            <span>Source film · poem · stewardship · give-back</span>
-          </div>
-        </li>
+        <li><em>01</em><div><strong>Protect</strong><span>LLC · trademark AquaQuartz · NDAs</span></div></li>
+        <li><em>02</em><div><strong>Lithia deal</strong><span>Water + story rights in writing</span></div></li>
+        <li><em>03</em><div><strong>Samples → one restaurant</strong><span>Then Savannah · then Place Editions</span></div></li>
       </ol>
-
-      <div class="ask-box">
+      <div class="ask">
         <p class="num">$100k–$200k</p>
-        <p><strong>Use:</strong> trademark &amp; contracts · Lithia rights · sample &amp; first-run bottles · carbon pilots · neck books &amp; site · insurance · 2–3 restaurant pilots.</p>
+        <p><strong>Use:</strong> trademark &amp; contracts · Lithia rights · bottles · carbon pilots · neck books &amp; site · insurance · 2–3 restaurant pilots.</p>
         <p><strong>Investor gets:</strong> equity in the company that owns the mark, designs, and contracts.</p>
-        <p><strong>Founder keeps:</strong> creative control — Jonathan Simons stays essential to the brand.</p>
+        <p><strong>Founder keeps:</strong> creative control — Jonathan Simons stays essential.</p>
       </div>
-
-      <p class="footer">
+      <p class="foot">
         Prime Field Technologies, LLC · Savannah / Lithia Springs, Georgia<br />
         <a href="mailto:js@primefieldtechnologies.com">js@primefieldtechnologies.com</a>
-        · Send this PDF: <code>AquaQuartz-Completed-Brochure.pdf</code>
+        · File to send: <strong>AquaQuartz-Completed-Brochure.pdf</strong>
       </p>
     </div>
   </section>

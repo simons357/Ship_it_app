@@ -3,99 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AquaQuartz — open these</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;500&display=swap" rel="stylesheet" />
+  <title>AquaQuartz — open the PDF</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Outfit:wght@300;500&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --ink: #1a1410;
-      --cream: #f3ebe1;
-      --amethyst: #6e4d8a;
-      --charcoal: #121014;
-    }
     body {
-      margin: 0;
-      min-height: 100svh;
-      font-family: "Outfit", sans-serif;
-      font-weight: 300;
-      color: var(--cream);
-      background:
-        radial-gradient(ellipse at 20% 0%, rgba(110,77,138,0.28), transparent 45%),
-        linear-gradient(165deg, #1c1714, var(--charcoal) 55%, #141018);
-      line-height: 1.55;
+      margin: 0; min-height: 100svh; display: grid; place-items: center;
+      font-family: Outfit, sans-serif; font-weight: 300;
+      color: #f3ebe1; background: #121014; padding: 2rem 1rem;
     }
-    .wrap { max-width: 640px; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; }
-    h1 {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(2.6rem, 8vw, 3.6rem);
-      margin: 0 0 0.4rem;
-      line-height: 1;
+    .box { max-width: 520px; }
+    h1 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 3rem; margin: 0 0 0.5rem; }
+    p { color: rgba(243,235,225,0.72); margin: 0 0 1.25rem; }
+    a {
+      display: block; padding: 1.2rem 1.3rem; margin: 0.7rem 0;
+      background: #f3ebe1; color: #1a1410; text-decoration: none;
     }
-    .lead { color: rgba(243,235,225,0.75); margin: 0 0 1.25rem; }
-    .note {
-      background: rgba(110,77,138,0.18);
-      border-left: 4px solid #c9a6e0;
-      padding: 1rem 1.15rem;
-      margin: 0 0 1.5rem;
-      color: rgba(243,235,225,0.9);
-    }
-    .note strong { color: #fff; font-weight: 500; }
-    .big {
-      display: block;
-      margin: 0.75rem 0;
-      padding: 1.25rem 1.35rem;
-      background: var(--cream);
-      color: var(--ink);
-      text-decoration: none;
-    }
-    .big.alt {
-      background: transparent;
-      color: var(--cream);
-      border: 1px solid rgba(243,235,225,0.28);
-    }
-    .big strong {
-      display: block;
-      font-size: 1.08rem;
-      margin-bottom: 0.3rem;
-      font-weight: 500;
-    }
-    .big span { opacity: 0.8; font-size: 0.9rem; }
-    .warn {
-      margin-top: 1.75rem;
-      font-size: 0.88rem;
-      color: rgba(243,235,225,0.55);
-    }
+    a strong { display: block; font-weight: 500; margin-bottom: 0.25rem; }
+    a span { opacity: 0.75; font-size: 0.9rem; }
+    a.ghost { background: transparent; color: #f3ebe1; border: 1px solid rgba(243,235,225,0.3); }
+    .warn { margin-top: 1.5rem; font-size: 0.85rem; color: rgba(243,235,225,0.5); }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="box">
     <h1>AquaQuartz</h1>
-    <p class="lead">Picture brochure. Not the markdown notes.</p>
-    <div class="note">
-      <strong>Ignore every <code>.md</code> file</strong> — those are working notes only.<br />
-      Open the PDF or the HTML below. That is the finished look.
-    </div>
-
-    <a class="big" href="AquaQuartz-Completed-Brochure.pdf">
-      <strong>1. Completed brochure PDF ← send this</strong>
-      <span>Full-bleed photos · Lithia · Savannah · Places · ask</span>
+    <p>One file. Color pictures. That is the brochure.</p>
+    <a href="AquaQuartz-Completed-Brochure.pdf">
+      <strong>Download the brochure PDF</strong>
+      <span>AquaQuartz-Completed-Brochure.pdf</span>
     </a>
-    <a class="big alt" href="AquaQuartz-Completed-Brochure.html">
-      <strong>1b. Completed brochure in browser</strong>
-      <span>Same design · Print → Save as PDF if you want a fresh copy</span>
+    <a class="ghost" href="AquaQuartz-Completed-Brochure.html">
+      <strong>Or view in browser</strong>
+      <span>Same design — then Print → Save as PDF if needed</span>
     </a>
-    <a class="big alt" href="AquaQuartz-Decanter-Palette.pdf">
-      <strong>2. Bottle palette PDF</strong>
-      <span>All vessel pictures in one printable set</span>
-    </a>
-    <a class="big alt" href="decanter-palette.html">
-      <strong>2b. Bottle palette in browser</strong>
-      <span>Tall bottles only — no gadget shapes</span>
-    </a>
-
-    <p class="warn">
-      Replit / Base44: drop the whole <code>docs/aquaquarts/</code> folder (HTML + <code>renders/</code>),
-      open <code>AquaQuartz-Completed-Brochure.html</code>. The images only work if <code>renders/</code> travels with the HTML.
-    </p>
+    <p class="warn">Ignore every .md file. Those are notes only.</p>
   </div>
 </body>
 </html>
