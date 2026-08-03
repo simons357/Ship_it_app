@@ -127,7 +127,7 @@ Prefer: `linkedin.com/in/jonathan-simons-crna`
 ## Creator mode / Premium tips
 
 - Turn **Creator mode** on with topics: *Anesthesia, Airway Management, Medical Devices*
-- Featured link button → Simons Medical Innovations site or contact email
+- Featured link button → portfolio site or `jonathansimons357@proton.me`
 - Open to: *Collaboration, Board Member, Consulting* (not job hunting unless you want it)
 - Banner: use `assets/linkedin-banner.png` from this kit
 - Profile photo: head-and-shoulders, solid or softly lit clinical background, CRNA-professional attire (not OR mask covering face for the main photo)

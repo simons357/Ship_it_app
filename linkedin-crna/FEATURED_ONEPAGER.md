@@ -27,5 +27,5 @@ Invent airway and anesthesia tools from real OR problems—safer intubation work
 
 ## Contact
 
-js@simonsmedicalinnovations.com  
+jonathansimons357@proton.me  
 LinkedIn: Jonathan Simons, CRNA
