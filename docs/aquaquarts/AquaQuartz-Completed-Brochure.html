@@ -3,428 +3,314 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AquaQuartz — Completed Brochure</title>
-  <meta name="description" content="AquaQuartz professional picture brochure — Lithia, Savannah, Place Editions, investor ask." />
+  <title>AquaQuartz</title>
+  <meta name="description" content="AquaQuartz — high-end lookbook. Place water in forever bottles." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #1a1410;
-      --cream: #f4ece2;
-      --sand: #e5d6c2;
-      --amethyst: #6e4d8a;
-      --charcoal: #121014;
-      --muted: #6b5c50;
-      --display: "Cormorant Garamond", "Times New Roman", serif;
-      --body: "Outfit", "Segoe UI", sans-serif;
+      --ivory: #f6f0e8;
+      --ink: #14110f;
+      --soft: rgba(246, 240, 232, 0.78);
+      --whisper: rgba(246, 240, 232, 0.55);
+      --amethyst: #8b6aa8;
+      --display: "Bodoni Moda", "Didot", "Times New Roman", serif;
+      --body: "Manrope", "Helvetica Neue", sans-serif;
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; }
     body {
-      color: var(--ink);
+      background: #0a090b;
+      color: var(--ivory);
       font-family: var(--body);
       font-weight: 300;
-      line-height: 1.5;
-      background: #0e0c0f;
+      letter-spacing: 0.01em;
       -webkit-font-smoothing: antialiased;
     }
     img {
       display: block;
-      max-width: 100%;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
-    a { color: inherit; text-decoration: none; }
 
-    .toolbar {
-      position: sticky; top: 0; z-index: 50;
+    /* Screen-only — never in the PDF */
+    .chrome {
+      position: sticky; top: 0; z-index: 40;
       display: flex; justify-content: space-between; align-items: center;
-      gap: 1rem; flex-wrap: wrap;
-      padding: 0.8rem 1.25rem;
-      background: rgba(18,16,20,0.95);
-      color: var(--cream);
-      border-bottom: 1px solid rgba(243,235,225,0.12);
+      padding: 0.85rem 1.25rem;
+      background: rgba(10, 9, 11, 0.94);
+      border-bottom: 1px solid rgba(246,240,232,0.1);
     }
-    .toolbar strong {
+    .chrome span {
       font-family: var(--display);
-      font-size: 1.4rem;
-      font-weight: 600;
+      font-size: 1.25rem;
+      font-weight: 500;
     }
-    .toolbar nav { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .toolbar a, .toolbar button {
+    .chrome a, .chrome button {
       appearance: none;
-      border: 1px solid rgba(243,235,225,0.28);
-      background: transparent;
-      color: var(--cream);
-      font: 500 0.68rem var(--body);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.5rem 0.8rem;
-      cursor: pointer;
-    }
-    .toolbar .pdf {
-      background: var(--cream);
+      border: 0;
+      background: var(--ivory);
       color: var(--ink);
-      border-color: var(--cream);
+      font: 500 0.68rem var(--body);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.65rem 1rem;
+      cursor: pointer;
+      text-decoration: none;
     }
 
-    /* Landscape letter spreads — photos stay whole */
-    .page {
+    .plate {
       position: relative;
       width: 100%;
       min-height: 100svh;
       overflow: hidden;
       break-after: page;
       page-break-after: always;
+      background: #0a090b;
     }
-    .page:last-child {
+    .plate:last-child {
       break-after: auto;
       page-break-after: auto;
     }
 
-    /* COVER */
-    .cover {
-      display: grid;
-      grid-template-rows: 1fr auto;
-      background: #171318;
-      color: var(--cream);
-    }
-    .cover-stage {
-      position: relative;
-      min-height: 0;
-      display: grid;
-      place-items: center;
-      padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 3vw, 2rem) 0;
-      background:
-        radial-gradient(ellipse at 50% 20%, rgba(110,77,138,0.2), transparent 50%),
-        linear-gradient(180deg, #211c22, #121014 70%);
-    }
-    .cover-stage img {
-      width: min(1180px, 100%);
-      height: auto;
-      max-height: 68svh;
-      object-fit: contain;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
-    }
-    .cover-copy {
-      padding: clamp(1.1rem, 3vw, 2rem) clamp(1.25rem, 4vw, 3rem) clamp(1.4rem, 3.5vw, 2.4rem);
-      background: linear-gradient(180deg, #161218, #0f0d11);
-      border-top: 1px solid rgba(243,235,225,0.08);
-    }
-    .cover-copy .brand {
-      margin: 0 0 0.35rem;
-      font-family: var(--display);
-      font-weight: 700;
-      font-size: clamp(2.8rem, 7vw, 4.6rem);
-      line-height: 0.92;
-      letter-spacing: -0.02em;
-    }
-    .cover-copy h1 {
-      margin: 0 0 0.55rem;
-      font-family: var(--display);
-      font-weight: 500;
-      font-size: clamp(1.35rem, 3vw, 1.9rem);
-      max-width: 22ch;
-      line-height: 1.15;
-    }
-    .cover-copy p {
-      margin: 0;
-      color: rgba(243,235,225,0.78);
-      max-width: 46ch;
-      font-size: 1rem;
-    }
-    .pills {
-      display: flex; flex-wrap: wrap; gap: 0.55rem 1.1rem;
-      margin-top: 0.95rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(243,235,225,0.65);
-    }
-    .pills span::before {
-      content: "";
-      display: inline-block;
-      width: 0.4rem; height: 0.4rem;
-      margin-right: 0.45rem;
-      border-radius: 50%;
-      background: #c9a6e0;
-      vertical-align: middle;
-    }
-
-    /* SPLIT CHAPTER */
-    .split {
-      display: grid;
-      background: var(--cream);
-      min-height: 100svh;
-    }
-    @media (min-width: 800px) {
-      .split { grid-template-columns: 0.92fr 1.08fr; }
-      .split.flip { grid-template-columns: 1.08fr 0.92fr; }
-      .split.flip .copy { order: 2; }
-      .split.flip .photo { order: 1; }
-    }
-    .photo {
-      position: relative;
-      min-height: 48svh;
-      background: #2a241f;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-    }
-    .photo img {
+    .full {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
-      min-height: 48svh;
       object-fit: cover;
-      object-position: center;
     }
-    .copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: clamp(1.5rem, 4vw, 3rem);
-      background: linear-gradient(155deg, #f8f1e8, var(--cream) 50%, #e8d9c6);
+    .contain-stage {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 4.5rem 3rem 5.5rem;
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(139,106,168,0.12), transparent 55%),
+        #0d0b0e;
     }
-    .eyebrow {
-      margin: 0 0 0.55rem;
-      font-size: 0.7rem;
+    .contain-stage img {
+      width: min(1080px, 92%);
+      height: auto;
+      max-height: 72svh;
+      object-fit: contain;
+      box-shadow: 0 40px 120px rgba(0,0,0,0.55);
+    }
+
+    .veil {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        180deg,
+        rgba(10,9,11,0.18) 0%,
+        rgba(10,9,11,0.02) 35%,
+        rgba(10,9,11,0.55) 78%,
+        rgba(10,9,11,0.88) 100%
+      );
+    }
+    .veil.soft {
+      background: linear-gradient(
+        180deg,
+        rgba(10,9,11,0.05) 0%,
+        rgba(10,9,11,0.0) 45%,
+        rgba(10,9,11,0.62) 100%
+      );
+    }
+
+    .mark {
+      position: absolute;
+      z-index: 2;
+      left: clamp(1.25rem, 4vw, 3rem);
+      top: clamp(1.1rem, 3vw, 2.2rem);
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+      letter-spacing: 0.04em;
+    }
+
+    .caption {
+      position: absolute;
+      z-index: 2;
+      left: clamp(1.25rem, 4vw, 3rem);
+      right: clamp(1.25rem, 4vw, 3rem);
+      bottom: clamp(1.25rem, 4vw, 2.6rem);
+      max-width: 28rem;
+    }
+    .caption .place {
+      margin: 0 0 0.35rem;
+      font-family: var(--display);
       font-weight: 500;
-      letter-spacing: 0.18em;
+      font-size: clamp(2rem, 4.2vw, 3.1rem);
+      line-height: 1.05;
+    }
+    .caption .line {
+      margin: 0;
+      color: var(--soft);
+      font-size: 0.98rem;
+      font-weight: 300;
+      max-width: 32ch;
+      line-height: 1.45;
+    }
+    .caption .micro {
+      margin: 0 0 0.55rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--amethyst);
     }
-    .copy h2 {
-      margin: 0 0 0.75rem;
+
+    /* Cover: brand is the hero signal */
+    .cover-copy {
+      position: absolute;
+      z-index: 2;
+      left: clamp(1.25rem, 4vw, 3rem);
+      right: clamp(1.25rem, 4vw, 3rem);
+      bottom: clamp(1.25rem, 3.5vw, 2.4rem);
+    }
+    .cover-copy .brand {
+      margin: 0 0 0.4rem;
       font-family: var(--display);
       font-weight: 600;
-      font-size: clamp(2.2rem, 4.5vw, 3.3rem);
-      line-height: 1.02;
-      max-width: 11ch;
+      font-size: clamp(3.4rem, 8vw, 5.8rem);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
     }
-    .copy .lede {
-      margin: 0 0 1.1rem;
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 34ch;
-    }
-    .rows {
-      margin: 0; padding: 0; list-style: none;
-      border-top: 1px solid rgba(26,20,16,0.14);
-    }
-    .rows li {
-      display: grid;
-      grid-template-columns: 7rem 1fr;
-      gap: 0.7rem;
-      padding: 0.65rem 0;
-      border-bottom: 1px solid rgba(26,20,16,0.14);
-      font-size: 0.95rem;
-    }
-    .rows strong { font-weight: 500; }
-    .rows span { color: var(--muted); }
-
-    /* FULL PHOTO BAND */
-    .band {
-      display: grid;
-      align-content: end;
-      color: var(--cream);
-      background: #100e12;
-      min-height: 100svh;
-    }
-    .band img {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center 45%;
-    }
-    .band-shade {
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(16,14,18,0.05) 0%, rgba(16,14,18,0.18) 40%, rgba(16,14,18,0.82) 100%);
-    }
-    .band-copy {
-      position: relative; z-index: 1;
-      padding: clamp(1.5rem, 4vw, 2.8rem);
-      max-width: 38rem;
-    }
-    .band-copy h2 {
-      margin: 0 0 0.6rem;
-      font-family: var(--display);
-      font-weight: 500;
-      font-size: clamp(2.1rem, 4.5vw, 3.1rem);
-      line-height: 1.08;
-    }
-    .band-copy p {
-      margin: 0;
-      color: rgba(243,235,225,0.86);
-      max-width: 38ch;
-      font-size: 1.05rem;
-    }
-
-    /* GALLERY */
-    .gallery {
-      background: linear-gradient(180deg, #f7f0e7, var(--sand));
-      padding: clamp(1.25rem, 3vw, 2rem);
-      min-height: 100svh;
-    }
-    .gallery-head {
-      max-width: 1100px;
-      margin: 0 auto 1rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      align-items: end;
-    }
-    .gallery-head h2 {
+    .cover-copy .promise {
       margin: 0;
       font-family: var(--display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.05;
+      font-weight: 400;
+      font-style: italic;
+      font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+      color: var(--soft);
+      max-width: 24ch;
     }
-    .gallery-head p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 36ch;
-      font-size: 0.98rem;
-    }
-    .grid {
-      max-width: 1100px;
-      margin: 0 auto;
+
+    /* Diptych */
+    .diptych {
       display: grid;
-      gap: 0.7rem;
       grid-template-columns: 1fr 1fr;
+      min-height: 100svh;
     }
-    @media (min-width: 900px) {
-      .grid { grid-template-columns: repeat(4, 1fr); }
-    }
-    .tile {
+    .diptych figure {
       margin: 0;
       position: relative;
       overflow: hidden;
-      background: #2a241f;
-      min-height: 220px;
-      aspect-ratio: 4 / 5;
+      min-height: 50svh;
+      background: #141114;
     }
-    .tile.span2 {
-      grid-column: span 2;
-      aspect-ratio: 16 / 10;
-      min-height: 260px;
-    }
-    .tile img {
-      width: 100%; height: 100%;
+    .diptych img {
+      width: 100%;
+      height: 100%;
+      min-height: 100svh;
       object-fit: cover;
     }
-    .tile figcaption {
-      position: absolute; left: 0; right: 0; bottom: 0;
-      padding: 1.4rem 0.85rem 0.75rem;
-      background: linear-gradient(180deg, transparent, rgba(18,16,20,0.85));
-      color: var(--cream);
+    .diptych figcaption {
+      position: absolute;
+      left: 1.25rem;
+      bottom: 1.25rem;
       font-family: var(--display);
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-    .tile figcaption small {
-      display: block;
-      margin-top: 0.1rem;
-      font-family: var(--body);
-      font-size: 0.68rem;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(243,235,225,0.72);
+      font-size: 1.45rem;
+      font-weight: 500;
+      text-shadow: 0 8px 30px rgba(0,0,0,0.55);
     }
 
-    /* CLOSING */
+    /* Quiet closing — no pitch-deck box */
     .close {
       display: grid;
-      background: #121014;
-      color: var(--cream);
+      grid-template-columns: 1.15fr 0.85fr;
       min-height: 100svh;
+      background: #0a090b;
     }
-    @media (min-width: 800px) {
-      .close { grid-template-columns: 1.05fr 0.95fr; }
+    .close .still {
+      position: relative;
+      overflow: hidden;
+      min-height: 50svh;
     }
-    .close .photo img { min-height: 100%; }
-    .close-copy {
-      padding: clamp(1.5rem, 4vw, 2.8rem);
+    .close .still img {
+      width: 100%;
+      height: 100%;
+      min-height: 100svh;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+    .close .words {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background: linear-gradient(160deg, #1b1613, #121014 55%, #17121d);
+      padding: clamp(2rem, 5vw, 3.5rem);
+      background:
+        linear-gradient(165deg, #121014 0%, #0a090b 60%, #151018 100%);
     }
-    .close-copy h2 {
-      margin: 0 0 0.7rem;
+    .close h2 {
+      margin: 0 0 1rem;
       font-family: var(--display);
-      font-size: clamp(2.1rem, 4vw, 3rem);
+      font-weight: 500;
+      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
       line-height: 1.05;
     }
-    .close-copy .lede {
-      margin: 0 0 1.1rem;
-      color: rgba(243,235,225,0.75);
-      max-width: 36ch;
+    .close .statement {
+      margin: 0 0 1.75rem;
+      color: var(--soft);
+      font-size: 1.05rem;
+      max-width: 28ch;
+      line-height: 1.55;
     }
-    .steps {
-      margin: 0 0 1.35rem; padding: 0; list-style: none;
-    }
-    .steps li {
-      display: grid;
-      grid-template-columns: 2rem 1fr;
-      gap: 0.7rem;
-      padding: 0.6rem 0;
-      border-top: 1px solid rgba(243,235,225,0.14);
-    }
-    .steps li:last-child { border-bottom: 1px solid rgba(243,235,225,0.14); }
-    .steps em {
+    .close .ask-line {
+      margin: 0 0 0.35rem;
       font-family: var(--display);
-      font-style: normal;
-      color: #c9a6e0;
-      font-size: 1.15rem;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 500;
+      color: #e8d9f5;
     }
-    .steps strong { display: block; font-weight: 500; margin-bottom: 0.1rem; }
-    .steps span { color: rgba(243,235,225,0.68); font-size: 0.92rem; }
-    .ask {
-      padding: 1.2rem 1.15rem;
-      border: 1px solid rgba(201,166,224,0.35);
-      background: rgba(110,77,138,0.16);
+    .close .ask-note {
+      margin: 0 0 2rem;
+      color: var(--whisper);
+      font-size: 0.92rem;
+      max-width: 32ch;
+      line-height: 1.5;
     }
-    .ask .num {
-      margin: 0 0 0.45rem;
-      font-family: var(--display);
-      font-size: clamp(2rem, 3.5vw, 2.7rem);
-      font-weight: 600;
-      color: #f0e4ff;
+    .close .contact {
+      margin: 0;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(246,240,232,0.14);
+      color: var(--whisper);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.8;
     }
-    .ask p {
-      margin: 0 0 0.45rem;
-      color: rgba(243,235,225,0.84);
-      font-size: 0.93rem;
+    .close .contact a {
+      color: var(--ivory);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      font-size: 0.95rem;
     }
-    .ask p:last-child { margin: 0; }
-    .ask strong { color: #fff; font-weight: 500; }
-    .foot {
-      margin-top: 1.3rem;
-      padding-top: 0.85rem;
-      border-top: 1px solid rgba(243,235,225,0.14);
-      color: rgba(243,235,225,0.5);
-      font-size: 0.8rem;
+
+    @media (max-width: 820px) {
+      .diptych, .close { grid-template-columns: 1fr; }
+      .diptych img, .close .still img { min-height: 70svh; }
+      .contain-stage { padding: 5rem 1rem 6rem; }
     }
-    .foot a { color: #d7b8ef; }
 
     @media print {
-      .toolbar { display: none !important; }
-      body { background: #fff; }
-      .page, .split, .band, .gallery, .close, .cover {
+      .chrome { display: none !important; }
+      body { background: #000; }
+      .plate, .diptych, .close {
         width: 11in;
         height: 8.5in;
         min-height: 8.5in;
         max-height: 8.5in;
-        overflow: hidden;
       }
-      .cover-stage img { max-height: 5.6in; }
-      .photo img, .band img, .close .photo img {
+      .diptych img, .close .still img, .full {
         min-height: 100%;
         height: 100%;
       }
+      .contain-stage img { max-height: 5.8in; }
       * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
@@ -437,20 +323,20 @@
   </style>
 </head>
 <body>
-  <div class="toolbar">
-    <strong>AquaQuartz</strong>
-    <nav>
-      <a class="pdf" href="AquaQuartz-Completed-Brochure.pdf">Download PDF</a>
-      <button type="button" class="pdf" onclick="window.print()">Print / Save PDF</button>
-    </nav>
+  <div class="chrome">
+    <span>AquaQuartz</span>
+    <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+      <a href="AquaQuartz-Completed-Brochure.pdf">Download PDF</a>
+      <button type="button" onclick="window.print()">Print / Save PDF</button>
+    </div>
   </div>
 
-  <!-- 1 COVER — full five-bottle lineup, not cropped -->
-  <section class="page cover" aria-label="Cover">
-    <div class="cover-stage">
+  <!-- 1 — COVER: brand + the object -->
+  <section class="plate" aria-label="Cover">
+    <div class="contain-stage">
       <img
         src="renders/aquaquarts-place-palette-five.png"
-        alt="Five tall AquaQuartz Place Edition bottles"
+        alt="Five AquaQuartz Place Edition bottles"
         width="1536"
         height="1024"
         fetchpriority="high"
@@ -458,128 +344,104 @@
     </div>
     <div class="cover-copy">
       <p class="brand">AquaQuartz</p>
-      <h1>Tall forever bottles for a city’s best water.</h1>
-      <p>Named place-water. A vessel the guest keeps. A neck book that tells the story. No plastic.</p>
-      <div class="pills">
-        <span>Lithia Springs first</span>
-        <span>Savannah next</span>
-        <span>Place Editions later</span>
-      </div>
+      <p class="promise">Forever bottles for a city’s finest water.</p>
     </div>
   </section>
 
-  <!-- 2 LITHIA -->
-  <section class="page split" aria-label="Lithia Springs">
-    <div class="copy">
-      <p class="eyebrow">Launch edition</p>
-      <h2>Lithia Springs</h2>
-      <p class="lede">Warm mineral clay. Quartz collar. Neck book. Georgia spring character — served cold, never stripped of what makes it Lithia.</p>
-      <ul class="rows">
-        <li><strong>Vessel</strong><span>Tall stone bottle · guest takes it home</span></li>
-        <li><strong>Water</strong><span>Historic mineral spring · leave alone, serve cold</span></li>
-        <li><strong>Story</strong><span>Quartz country · heritage · stewardship</span></li>
-        <li><strong>Job</strong><span>The first bottle people remember</span></li>
-      </ul>
-    </div>
-    <div class="photo">
-      <img src="renders/aquaquarts-place-lithia-neckbook.png" alt="Lithia Springs AquaQuartz bottle with amethyst collar" width="1536" height="1024" />
+  <!-- 2 — LITHIA: one image, almost no words -->
+  <section class="plate" aria-label="Lithia Springs">
+    <img class="full" src="renders/aquaquarts-place-lithia-neckbook.png" alt="Lithia Springs bottle" width="1536" height="1024" />
+    <div class="veil" aria-hidden="true"></div>
+    <p class="mark">AquaQuartz</p>
+    <div class="caption">
+      <p class="micro">Launch</p>
+      <p class="place">Lithia Springs</p>
+      <p class="line">Mineral clay. Quartz collar. The guest keeps the vessel.</p>
     </div>
   </section>
 
-  <!-- 3 SAVANNAH -->
-  <section class="page band" aria-label="Savannah">
-    <img src="renders/aquaquartz-savannah-moss-neck.png" alt="Savannah AquaQuartz bottle with moss at the neck" width="1536" height="1024" />
-    <div class="band-shade" aria-hidden="true"></div>
-    <div class="band-copy">
-      <p class="eyebrow" style="color:#d7b8ef">Hometown</p>
-      <h2>Savannah / Lowcountry</h2>
-      <p>Moss at the neck. Tabby stone. Hometown water pride — the soft sip of the city, held in art the guest keeps.</p>
+  <!-- 3 — SAVANNAH -->
+  <section class="plate" aria-label="Savannah">
+    <img class="full" src="renders/aquaquartz-savannah-moss-neck.png" alt="Savannah bottle with moss" width="1536" height="1024" />
+    <div class="veil soft" aria-hidden="true"></div>
+    <p class="mark">AquaQuartz</p>
+    <div class="caption">
+      <p class="micro">Hometown</p>
+      <p class="place">Savannah</p>
+      <p class="line">Moss at the neck. Lowcountry light. Water pride you take home.</p>
     </div>
   </section>
 
-  <!-- 4 SAVANNAH + CRAFT -->
-  <section class="page split flip" aria-label="Savannah detail">
-    <div class="copy">
-      <p class="eyebrow">Hometown finishes</p>
-      <h2>Moss, tabby, neck book</h2>
-      <p class="lede">Same ritual kit. Coastal mineral language for the restaurant that wants Savannah on the shelf at home.</p>
-      <ul class="rows">
-        <li><strong>Moss neck</strong><span>Garden light · amethyst · paper tags</span></li>
-        <li><strong>Tabby</strong><span>Coastal mineral body · Lowcountry grit</span></li>
-        <li><strong>Water path</strong><span>Catalytic carbon + cold — usually enough</span></li>
-        <li><strong>Craft pour</strong><span>Tableside pitcher for the Lithia line</span></li>
-      </ul>
-    </div>
-    <div class="photo">
-      <img src="renders/aquaquartz-savannah-neckbook.png" alt="Savannah bottle with neck book in courtyard light" width="1536" height="1024" />
+  <!-- 4 — DIPTYCH textures -->
+  <section class="plate diptych" aria-label="Finishes">
+    <figure>
+      <img src="renders/aquaquartz-savannah-neckbook.png" alt="Savannah neck book" width="1536" height="1024" />
+      <figcaption>Neck book</figcaption>
+    </figure>
+    <figure>
+      <img src="renders/aquaquartz-savannah-decanter-tabby.png" alt="Tabby stone vessel" width="1536" height="1024" />
+      <figcaption>Tabby</figcaption>
+    </figure>
+  </section>
+
+  <!-- 5 — NYC full bleed (metropolitan high-end signal) -->
+  <section class="plate" aria-label="New York">
+    <img class="full" src="renders/aquaquarts-place-nyc.png" alt="New York Place Edition" width="1536" height="1024" />
+    <div class="veil" aria-hidden="true"></div>
+    <p class="mark">AquaQuartz</p>
+    <div class="caption">
+      <p class="micro">Place Editions</p>
+      <p class="place">New York</p>
+      <p class="line">Same silhouette. A city’s water, stone, and story.</p>
     </div>
   </section>
 
-  <!-- 5 PLACE EDITIONS -->
-  <section class="page gallery" aria-label="Place Editions">
-    <div class="gallery-head">
-      <div>
-        <p class="eyebrow">Place Editions</p>
-        <h2>Same bottle. Different place.</h2>
-      </div>
-      <p>Each city licenses its water, poem, and stone. Tall enough to pour. Proud enough to keep.</p>
+  <!-- 6 — Place row, held whole -->
+  <section class="plate" aria-label="Place Editions">
+    <div class="contain-stage">
+      <img src="renders/aquaquarts-place-palette-five.png" alt="Place Edition bottles" width="1536" height="1024" />
     </div>
-    <div class="grid">
-      <figure class="tile span2">
-        <img src="renders/aquaquarts-place-palette-five.png" alt="Place Edition row" width="1536" height="1024" />
-        <figcaption>Place Edition row<small>One ritual · five cities</small></figcaption>
-      </figure>
-      <figure class="tile">
-        <img src="renders/aquaquarts-place-nyc.png" alt="New York City" width="1536" height="1024" />
-        <figcaption>New York<small>Catskill / Delaware</small></figcaption>
-      </figure>
-      <figure class="tile">
-        <img src="renders/aquaquarts-place-iceland.png" alt="Iceland" width="1536" height="1024" />
-        <figcaption>Iceland<small>Glacial / lava</small></figcaption>
-      </figure>
-      <figure class="tile">
-        <img src="renders/aquaquarts-place-japan.png" alt="Japan" width="1536" height="1024" />
-        <figcaption>Japan<small>Mountain water</small></figcaption>
-      </figure>
-      <figure class="tile">
-        <img src="renders/aquaquarts-place-andes.png" alt="Andes" width="1536" height="1024" />
-        <figcaption>Andes<small>High country</small></figcaption>
-      </figure>
-      <figure class="tile">
-        <img src="renders/aquaquarts-place-kenya.png" alt="Kenya" width="1536" height="1024" />
-        <figcaption>Kenya<small>Highland stone</small></figcaption>
-      </figure>
-      <figure class="tile">
-        <img src="renders/aquaquarts-place-nordic-neckbook.png" alt="Nordic" width="1536" height="1024" />
-        <figcaption>Nordic<small>Northern spring</small></figcaption>
-      </figure>
+    <p class="mark">AquaQuartz</p>
+    <div class="caption">
+      <p class="micro">The line</p>
+      <p class="place">Place Editions</p>
+      <p class="line">One ritual. Many cities. Licensed water, poem, and stone.</p>
     </div>
   </section>
 
-  <!-- 6 ASK -->
-  <section class="page close" aria-label="The ask">
-    <div class="photo">
-      <img src="renders/aquaquarts-place-lithia-neckbook.png" alt="AquaQuartz Lithia bottle" width="1536" height="1024" />
+  <!-- 7 — Nordic / Iceland whisper of global ambition via image -->
+  <section class="plate diptych" aria-label="World">
+    <figure>
+      <img src="renders/aquaquarts-place-iceland.png" alt="Iceland edition" width="1536" height="1024" />
+      <figcaption>Iceland</figcaption>
+    </figure>
+    <figure>
+      <img src="renders/aquaquarts-place-nordic-neckbook.png" alt="Nordic edition" width="1536" height="1024" />
+      <figcaption>Nordic</figcaption>
+    </figure>
+  </section>
+
+  <!-- 8 — Quiet close -->
+  <section class="plate close" aria-label="Invitation">
+    <div class="still">
+      <img src="renders/aquaquarts-place-lithia-neckbook.png" alt="AquaQuartz Lithia" width="1536" height="1024" />
     </div>
-    <div class="close-copy">
-      <p class="eyebrow">The ask</p>
-      <h2>Fund the pilot</h2>
-      <p class="lede">Bottle + named water + neck book + memory. Plastic never did that.</p>
-      <ol class="steps">
-        <li><em>01</em><div><strong>Protect</strong><span>LLC · trademark AquaQuartz · NDAs</span></div></li>
-        <li><em>02</em><div><strong>Lithia deal</strong><span>Water + story rights in writing</span></div></li>
-        <li><em>03</em><div><strong>Samples → one restaurant</strong><span>Then Savannah · then Place Editions</span></div></li>
-      </ol>
-      <div class="ask">
-        <p class="num">$100k–$200k</p>
-        <p><strong>Use:</strong> trademark &amp; contracts · Lithia rights · bottles · carbon pilots · neck books &amp; site · insurance · 2–3 restaurant pilots.</p>
-        <p><strong>Investor gets:</strong> equity in the company that owns the mark, designs, and contracts.</p>
-        <p><strong>Founder keeps:</strong> creative control — Jonathan Simons stays essential.</p>
-      </div>
-      <p class="foot">
-        Prime Field Technologies, LLC · Savannah / Lithia Springs, Georgia<br />
+    <div class="words">
+      <p class="micro" style="margin:0 0 0.8rem;font-size:0.68rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--amethyst)">Invitation</p>
+      <h2>Lithia first.<br />Then Savannah.<br />Then the world.</h2>
+      <p class="statement">
+        Named water. A vessel kept. A story tied at the neck.
+        No plastic. Prime Field Technologies, LLC.
+      </p>
+      <p class="ask-line">$100k – $200k</p>
+      <p class="ask-note">
+        Trademark, Lithia rights, first bottles, two or three restaurant pilots.
+        Equity in the company that owns the mark and the designs.
+        Creative control remains with Jonathan Simons.
+      </p>
+      <p class="contact">
+        Savannah / Lithia Springs<br />
         <a href="mailto:js@primefieldtechnologies.com">js@primefieldtechnologies.com</a>
-        · File to send: <strong>AquaQuartz-Completed-Brochure.pdf</strong>
       </p>
     </div>
   </section>
