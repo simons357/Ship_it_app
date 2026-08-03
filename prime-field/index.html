@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prime Field Technologies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #000000;
+      --gold: #D4AF58;
+      --gold-hi: #F5DC8C;
+      --ink: #E8E2D4;
+      --muted: #9A917C;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Source Sans 3", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(800px 420px at 50% 0%, rgba(120, 190, 220, 0.08), transparent 55%), #000;
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 24px 24px;
+    }
+    .logo {
+      width: min(420px, 82vw);
+      height: auto;
+      display: block;
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 12px 24px 80px;
+      text-align: center;
+    }
+    h1 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--gold-hi);
+      margin: 28px 0 12px;
+    }
+    p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+    .psi {
+      margin-top: 40px;
+      color: var(--gold);
+      font-size: 1.6rem;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Borromean rings mark replaces the former large Psi at top; small Ψ retained in the lockup -->
+    <img class="logo" src="assets/prime-field-logo.png" alt="Prime Field Technologies — Borromean rings logo" />
+  </header>
+  <main>
+    <h1>Decision science. Fielded systems.</h1>
+    <p>
+      Prime Field Technologies builds tools that help people decide under uncertainty—
+      from research to product.
+    </p>
+    <div class="psi" aria-hidden="true">Ψ</div>
+  </main>
+</body>
+</html>

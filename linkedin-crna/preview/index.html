@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jonathan Simons, CRNA — LinkedIn Kit Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0A1628;
+      --slate: #1C2E45;
+      --teal: #1F7A78;
+      --mist: #D7E6E5;
+      --fog: #EEF4F3;
+      --steel: #8FA3B5;
+      --white: #FFFFFF;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1000px 500px at 10% -10%, rgba(31,122,120,.18), transparent 55%),
+        radial-gradient(800px 400px at 90% 0%, rgba(28,46,69,.12), transparent 50%),
+        linear-gradient(180deg, #f7fbfb 0%, var(--fog) 100%);
+      line-height: 1.5;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
+    h1, h2 { font-family: "Libre Baskerville", serif; font-weight: 700; letter-spacing: -0.02em; }
+    h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 12px; }
+    h2 { font-size: 1.5rem; margin: 0 0 16px; }
+    .lede { font-size: 1.15rem; color: var(--slate); max-width: 42rem; }
+    .eyebrow { color: var(--teal); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; }
+    section { margin-top: 56px; }
+    .banner {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+      box-shadow: 0 20px 50px rgba(10,22,40,.18);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .grid img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(10,22,40,.12);
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid rgba(28,46,69,.08);
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .copy {
+      white-space: pre-wrap;
+      font-size: .98rem;
+      background: var(--fog);
+      border-left: 4px solid var(--teal);
+      padding: 16px 18px;
+      border-radius: 0 10px 10px 0;
+    }
+    ul { padding-left: 1.1rem; }
+    li { margin: .4rem 0; }
+    a { color: var(--teal); }
+    footer { margin-top: 64px; color: var(--steel); font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="eyebrow">LinkedIn Premium · Anesthesia lane</p>
+    <h1>Jonathan Simons, CRNA</h1>
+    <p class="lede">Brand kit preview: banner, profile framing, and post graphics for an anesthesia-first Premium account—papers, patents, and products from the airway.</p>
+
+    <section>
+      <h2>Banner</h2>
+      <img class="banner" src="../assets/linkedin-banner.png" alt="LinkedIn banner for Jonathan Simons, CRNA" />
+    </section>
+
+    <section>
+      <h2>Recommended headline</h2>
+      <div class="card">
+        <div class="copy">CRNA · Airway &amp; Anesthesia Device Inventor · Founder, Simons Medical Innovations · 25+ Years Clinical Practice · Savannah, GA</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Post graphics</h2>
+      <div class="grid">
+        <img src="../assets/post-airway-first.png" alt="Pinned post graphic" />
+        <img src="../assets/post-clinical-note.png" alt="Clinical note graphic" />
+        <img src="../assets/post-patent.png" alt="Patent spotlight graphic" />
+        <img src="../assets/post-product-wip.png" alt="Product WIP graphic" />
+        <img src="../assets/post-carousel-cover.png" alt="Carousel cover graphic" />
+      </div>
+    </section>
+
+    <section>
+      <h2>Profile composition</h2>
+      <img class="banner" src="../assets/profile-preview.png" alt="Profile preview composition" />
+    </section>
+
+    <section>
+      <h2>Start here</h2>
+      <div class="card">
+        <ul>
+          <li><a href="../SETUP_CHECKLIST.md">Setup checklist</a></li>
+          <li><a href="../PROFILE_COPY.md">Paste-ready profile copy</a></li>
+          <li><a href="../CONTENT_PACK.md">30-day anesthesia content pack</a></li>
+          <li><a href="../BRAND.md">Brand system &amp; account split</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>Simons Medical Innovations · Keep quantum / Solenne content on the other LinkedIn.</footer>
+  </div>
+</body>
+</html>
