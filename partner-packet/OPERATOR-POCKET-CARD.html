@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Operator Systems — Pocket Chart</title>
+  <style>
+    @page { size: letter portrait; margin: 0.35in; }
+    :root {
+      --ink: #111;
+      --line: #222;
+      --mute: #444;
+      --crisis: #9b1c1c;
+      --paper: #f7f4ef;
+      --band: #e8e2d8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #333;
+      color: var(--ink);
+      font: 11px/1.25 "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+    }
+    .sheet {
+      width: min(8.5in, 100%);
+      min-height: 11in;
+      margin: 0.5rem auto;
+      padding: 0.35in;
+      background: var(--paper);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    }
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.4rem;
+      border: 2px solid var(--line);
+      padding: 0.35rem 0.45rem;
+      margin-bottom: 0.35rem;
+      background: #fff;
+    }
+    .form-title {
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .form-sub { color: var(--mute); margin-top: 0.15rem; font-size: 10px; }
+    .stamp {
+      border: 2px solid var(--crisis);
+      color: var(--crisis);
+      font-weight: 700;
+      font-size: 12px;
+      padding: 0.35rem 0.5rem;
+      align-self: center;
+      text-align: center;
+      letter-spacing: 0.06em;
+    }
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1.5px solid var(--line);
+      border-top: none;
+      margin-bottom: 0.4rem;
+      background: #fff;
+    }
+    .meta div {
+      padding: 0.25rem 0.35rem;
+      border-right: 1px solid var(--line);
+    }
+    .meta div:last-child { border-right: none; }
+    .meta label {
+      display: block;
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--mute);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 0.35rem;
+    }
+    section {
+      border: 1.5px solid var(--line);
+      background: #fff;
+      break-inside: avoid;
+    }
+    section h2 {
+      margin: 0;
+      padding: 0.22rem 0.35rem;
+      background: var(--band);
+      border-bottom: 1.5px solid var(--line);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    section.crisis h2 {
+      background: var(--crisis);
+      color: #fff;
+      border-bottom-color: var(--crisis);
+    }
+    .body { padding: 0.3rem 0.35rem 0.35rem; }
+    ol, ul { margin: 0; padding-left: 1.1rem; }
+    li { margin: 0.12rem 0; }
+    .step {
+      display: grid;
+      grid-template-columns: 1.4rem 1fr;
+      gap: 0.25rem;
+      padding: 0.2rem 0;
+      border-bottom: 1px dotted #bbb;
+    }
+    .step:last-child { border-bottom: none; }
+    .n {
+      font-weight: 700;
+      color: var(--mute);
+    }
+    .rooms {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.25rem;
+    }
+    .room {
+      border: 1px solid var(--line);
+      padding: 0.25rem 0.3rem;
+      min-height: 2.4rem;
+    }
+    .room strong {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.1rem;
+    }
+    .callout {
+      border: 2px solid var(--line);
+      padding: 0.3rem 0.35rem;
+      margin-top: 0.35rem;
+      background: var(--band);
+      font-weight: 700;
+    }
+    .stack { display: grid; gap: 0.35rem; }
+    .tiny { font-size: 9px; color: var(--mute); }
+    .chk { list-style: none; padding-left: 0; }
+    .chk li::before { content: "☐ "; }
+    footer {
+      margin-top: 0.35rem;
+      border: 1.5px solid var(--line);
+      padding: 0.25rem 0.35rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.35rem;
+      background: #fff;
+      font-size: 9px;
+    }
+    @media print {
+      body { background: #fff; }
+      .sheet { box-shadow: none; margin: 0; width: 100%; min-height: auto; }
+      .no-print { display: none; }
+    }
+    .hint {
+      max-width: 8.5in;
+      margin: 0.75rem auto;
+      color: #ddd;
+      font: 13px/1.4 system-ui, sans-serif;
+      padding: 0 0.5rem 1rem;
+    }
+    .hint a { color: #9fd; }
+  </style>
+</head>
+<body>
+  <p class="hint no-print">
+    <strong>Pocket chart</strong> — open full screen, photograph or Print → PDF.
+    One page. Glance = go time.
+  </p>
+
+  <article class="sheet" aria-label="Operator Systems pocket chart">
+    <header>
+      <div>
+        <div class="form-title">Operator Systems — Pocket Chart</div>
+        <div class="form-sub">Jonathan Simons, CRNA · Prime Field Technologies · “I manage complexity.”</div>
+      </div>
+      <div class="stamp">GO<br />TIME</div>
+    </header>
+
+    <div class="meta">
+      <div><label>Operator</label>J. Simons</div>
+      <div><label>Mode</label>Intro / Partner</div>
+      <div><label>Ask</label>________________</div>
+      <div><label>Date</label>________________</div>
+    </div>
+
+    <div class="grid">
+      <div class="stack">
+        <section>
+          <h2>0 · Pre-engage</h2>
+          <div class="body">
+            <div class="step"><span class="n">0</span><div><strong>Relax on purpose</strong> — downshift before contact. Not soft. Ready.</div></div>
+            <div class="step"><span class="n">1</span><div><strong>Determine state</strong> — where is it / who is it / what’s true now.</div></div>
+            <div class="step"><span class="n">2</span><div><strong>Prospect review</strong> (if a person) — what I’d want to know → Engage / Hold / Vault / Pass.</div></div>
+          </div>
+        </section>
+
+        <section>
+          <h2>1 · Maintenance loop = real-time adaptive technique</h2>
+          <div class="body">
+            <div class="step"><span class="n">3</span><div><strong>Enter fast loop</strong> — clear instructions. Sense → act → sense → act.</div></div>
+            <div class="step"><span class="n">4</span><div><strong>Custom layers</strong> — as many functions as needed, on top of the standard path.</div></div>
+            <div class="step"><span class="n">5</span><div><strong>Hold parameters</strong> — keep the band; catch drift early. Math runs under the loop.</div></div>
+          </div>
+        </section>
+
+        <section class="crisis">
+          <h2>2 · Crisis / overwhelm</h2>
+          <div class="body">
+            <div class="step"><span class="n">6</span><div><strong>Emergency mode</strong> — bigger knobs, harder color, <em>only what you need</em>. No bullshit.</div></div>
+            <div class="step"><span class="n">7</span><div><strong>Decision augmentation</strong> — machine runs many futures → few clear options → <strong>operator chooses</strong>.</div></div>
+          </div>
+        </section>
+
+        <section>
+          <h2>3 · Monitors (mode-shaped)</h2>
+          <div class="body">
+            <ul class="chk">
+              <li><strong>Ready</strong> — quiet glass; help operator arrive calm</li>
+              <li><strong>Cruise</strong> — band + drift visible; keep the rhythm</li>
+              <li><strong>Emergency</strong> — strip to essentials; enlarge what matters</li>
+            </ul>
+            <p class="tiny" style="margin:0.35rem 0 0">If mode changed and glass didn’t → mode is fake.</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="stack">
+        <section>
+          <h2>4 · Intro rooms (proof)</h2>
+          <div class="body">
+            <div class="rooms">
+              <div class="room"><strong>Art</strong>Same spine, visible</div>
+              <div class="room"><strong>Prime Field</strong>Company / systems</div>
+              <div class="room"><strong>Patents</strong>Edges · NDA for depth</div>
+              <div class="room"><strong>Apps</strong>Things you can open</div>
+            </div>
+            <p class="tiny" style="margin:0.35rem 0 0">Max 3 live clicks in intro.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>5 · Close</h2>
+          <div class="body">
+            <ol>
+              <li><strong>Math is out there.</strong> I’ve put it out.</li>
+              <li>Many don’t care anymore — think AI always does it.</li>
+              <li>That’s an <strong>advantage</strong> if you still have the math + fast loop.</li>
+              <li><strong>One ask.</strong> Stop talking.</li>
+            </ol>
+          </div>
+        </section>
+
+        <section>
+          <h2>6 · Send check</h2>
+          <div class="body">
+            <ul class="chk">
+              <li>Secrets / keys?</li>
+              <li>Vault / claims / recipes?</li>
+              <li>Accidental offense / wild claims?</li>
+              <li>Dead links / two Ship Its confusion?</li>
+            </ul>
+            <p class="tiny" style="margin:0.3rem 0 0">
+              Mechanism on. Name in <strong>crockpot</strong> (was: “Outward Gate”).
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2>7 · Twin hold rules</h2>
+          <div class="body">
+            <p style="margin:0 0 0.25rem"><strong>OK:</strong> public facts, taste, “John would want…”</p>
+            <p style="margin:0"><strong>WAIT:</strong> IP vault, money, legal, clinical promises, calendar hard-commits</p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="callout">
+      PATH: Relax → State → Loop → Layers → Hold band → (Crisis: strip + options) → Proof rooms → Math close → One ask → Boom.
+      · ORDERS: Rx pad — menus · Custom · Quantum menu (many futures → few clear picks) · Sign.
+    </div>
+
+    <footer>
+      <div>
+        <strong>CONTACT</strong><br />
+        js@primefieldtechnologies.com<br />
+        primefield.tech
+      </div>
+      <div>
+        <strong>REMEMBER</strong><br />
+        Operator stays the operator.<br />
+        UI without math = cosplay.
+      </div>
+    </footer>
+  </article>
+</body>
+</html>
