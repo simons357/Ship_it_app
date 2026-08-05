@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explainer — Operator Assist / Wave Mode</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0a1628;
+      --teal: #1f7a78;
+      --mist: #d7e6e5;
+      --fog: #eef4f3;
+      --steel: #5c6f82;
+      --paper: #f7faf9;
+      --line: rgba(10, 22, 40, 0.14);
+      --signal: #b45309;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #9aa8b0;
+      color: var(--ink);
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      font-size: 11.5px;
+      line-height: 1.45;
+    }
+    .bar {
+      display: flex; justify-content: flex-end;
+      padding: 0.55rem 0.8rem; background: rgba(247,250,249,0.96);
+      border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 2;
+    }
+    .bar button {
+      border: 1px solid var(--ink); background: var(--ink); color: #fff;
+      font: inherit; font-weight: 600; padding: 0.45rem 0.85rem; cursor: pointer;
+    }
+    .sheet {
+      width: 8.5in; max-width: 100%; min-height: 11in;
+      margin: 0.7rem auto; background: var(--paper);
+      padding: 0.62in 0.68in; box-shadow: 0 12px 40px rgba(0,0,0,0.14);
+    }
+    .brand {
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--teal); font-weight: 700; margin: 0 0 0.35rem;
+    }
+    h1 {
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 30px; font-weight: 700; margin: 0; line-height: 1.08;
+    }
+    .tag { margin: 0.4rem 0 0; font-size: 15px; font-weight: 600; color: var(--steel); }
+    h2 {
+      margin: 0.85rem 0 0.3rem; font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--teal); font-weight: 700;
+    }
+    p { margin: 0 0 0.4rem; color: var(--steel); max-width: 7in; }
+    .stand {
+      background: var(--fog); border-left: 3px solid var(--teal);
+      padding: 0.55rem 0.65rem; margin: 0.45rem 0 0.35rem;
+    }
+    .stand p { margin: 0; color: var(--ink); font-size: 13px; }
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.45rem;
+      margin: 0.55rem 0 0.35rem;
+    }
+    .step {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 0.45rem 0.5rem;
+      min-height: 3.2rem;
+    }
+    .step b {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.2rem;
+    }
+    .step span { color: var(--ink); font-size: 11.5px; }
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 1rem; }
+    ul { margin: 0.2rem 0 0; padding-left: 1rem; color: var(--steel); }
+    li { margin: 0.22rem 0; }
+    .note {
+      margin-top: 0.75rem;
+      padding: 0.5rem 0.6rem;
+      border: 1px dashed var(--line);
+      color: var(--steel);
+      font-size: 11px;
+    }
+    .foot {
+      margin-top: 0.95rem; padding-top: 0.5rem; border-top: 1px solid var(--line);
+      color: var(--steel); font-size: 10.5px;
+      display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    }
+    .foot strong { color: var(--ink); }
+    @media print {
+      body { background: #fff; }
+      .bar { display: none; }
+      .sheet { box-shadow: none; margin: 0; width: 100%; }
+    }
+    @media (max-width: 720px) {
+      .flow, .cols { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <button type="button" onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <article class="sheet">
+    <p class="brand">General explainer 2 of 2 · For David · Simons Medical</p>
+    <h1>Operator Assist · Wave mode</h1>
+    <p class="tag">
+      Emergency decision support for the anesthesia operator — suggestions in seconds, never a takeover.
+    </p>
+
+    <h2>The problem</h2>
+    <p>
+      At the head of the table, cognitive load spikes when the room tilts: alarms, lagging numbers,
+      conflicting trends, and not enough <em>clear, do-able</em> next moves. Most “AI for anesthesia”
+      dumps more data. That raises load.
+    </p>
+
+    <h2>The product idea</h2>
+    <div class="stand">
+      <p>
+        <strong>Wave mode</strong> does not ask to take over. It finds the most likely, do-able candidates,
+        stress-tests them fast (many simulated futures), keeps the survivors with the highest success share
+        against a named goal, and shows them as <strong>visuals</strong> — so you can choose in seconds.
+        Built for emergency decision-making by design.
+      </p>
+    </div>
+
+    <div class="flow">
+      <div class="step"><b>1 · State</b><span>Where are we now?</span></div>
+      <div class="step"><b>2 · Candidates</b><span>Only what’s do-able in this room</span></div>
+      <div class="step"><b>3 · Stress-test</b><span>Run futures hard; keep survivors</span></div>
+      <div class="step"><b>4 · You choose</b><span>Visual menu — human owns the call</span></div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h2>What it is</h2>
+        <ul>
+          <li>Decision assist — not closed-loop control</li>
+          <li>Short menu (few options), not a dashboard novel</li>
+          <li>Ready glass stays quiet; Wave mode sheds noise</li>
+          <li>Success % tied to a named goal + assumptions</li>
+          <li>Custom / “not sure” always allowed</li>
+        </ul>
+      </div>
+      <div>
+        <h2>What it is not</h2>
+        <ul>
+          <li>Not “the computer runs the case”</li>
+          <li>Not a cleared patient monitor (yet)</li>
+          <li>Not quantum-computer marketing</li>
+          <li>Not Millennium / prize math on the glass</li>
+          <li>Not guaranteed outcomes — sim-conditioned</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>How it fits the company</h2>
+    <p>
+      Same spine as the OR: determine state → fast loop → custom layers → emergency mode →
+      decision options. <strong>Vigilant</strong> (pre-recognition / trajectory cues) and
+      <strong>Reflex Staircase</strong> (crisis ladder / teaching) can feed Wave mode —
+      they don’t replace the human.
+    </p>
+
+    <p class="note">
+      Status: developmental product direction from Simons Medical / Prime Field.
+      Honest next proofs: tabletop / sim cases first; hospital CDS path with counsel.
+      Pictures &amp; papers attach after this sheet.
+    </p>
+
+    <div class="foot">
+      <div>
+        <strong>Jonathan Simons, CRNA</strong> · Simons Medical (PFT) · Savannah, GA<br />
+        js@primefieldtechnologies.com
+      </div>
+      <div>
+        Packet: Intro → Company explainer → <strong>this page</strong> → your visuals &amp; papers
+      </div>
+    </div>
+  </article>
+</body>
+</html>
