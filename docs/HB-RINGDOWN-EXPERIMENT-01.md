@@ -2,6 +2,8 @@
 
 ## Cross-Event Spectral Selection in Black-Hole Ringdown
 
+**Status: closed.** See the report: [`HB-RINGDOWN-EXPERIMENT-01-REPORT.md`](HB-RINGDOWN-EXPERIMENT-01-REPORT.md).
+
 ### Purpose
 
 Test whether black-hole ringdown spectra contain reproducible, dimensionless organization beyond a reference null, without assuming in advance that Harmonic Blueprint (HB), prime-indexed structure, Fibonacci structure, or golden-ratio structure is correct.

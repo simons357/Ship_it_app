@@ -1,5 +1,7 @@
 # HB Ringdown Experiment 01 — baseline run summary
 
+**Closed.** Full write-up: [`docs/HB-RINGDOWN-EXPERIMENT-01-REPORT.md`](../docs/HB-RINGDOWN-EXPERIMENT-01-REPORT.md)
+
 Frozen settings: `nodes.json` (`observable=frequency_ratio`, `sigma=0.05`), seed 42, `mc=50000`.
 
 ## TRAIN (`--split train`)

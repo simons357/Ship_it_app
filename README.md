@@ -2,7 +2,11 @@
 
 Cross-event spectral selection test on black-hole ringdown modes.
 
-Full protocol: [`docs/HB-RINGDOWN-EXPERIMENT-01.md`](docs/HB-RINGDOWN-EXPERIMENT-01.md)
+**Status: closed — held-out TEST did not reject H0.**
+
+- Closed report: [`docs/HB-RINGDOWN-EXPERIMENT-01-REPORT.md`](docs/HB-RINGDOWN-EXPERIMENT-01-REPORT.md)
+- Protocol: [`docs/HB-RINGDOWN-EXPERIMENT-01.md`](docs/HB-RINGDOWN-EXPERIMENT-01.md)
+- Numeric summary: [`results/SUMMARY.md`](results/SUMMARY.md)
 
 ## Quick start
 
