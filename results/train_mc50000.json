@@ -1,0 +1,70 @@
+{
+  "split": "train",
+  "observable": "frequency_ratio",
+  "sigma": 0.05,
+  "mc": 50000,
+  "seed": 42,
+  "n_obs": 14,
+  "events": [
+    "GW150914",
+    "GW170104",
+    "GW190521"
+  ],
+  "results": [
+    {
+      "family": "prime_neighbor_ratios",
+      "hypothesis": "prime",
+      "score": 0.9067538329438507,
+      "n_obs": 14,
+      "p_value": 0.08679826403471931,
+      "q_value": 0.12917241655166894,
+      "loo_min_score": 0.880315183743746,
+      "loo_max_score": 0.9299505640866118,
+      "loo_driven_by_one": false
+    },
+    {
+      "family": "integer_rational",
+      "hypothesis": "control",
+      "score": 0.7736182078501007,
+      "n_obs": 14,
+      "p_value": 0.01995960080798384,
+      "q_value": 0.05694886102277954,
+      "loo_min_score": 0.7384348812009187,
+      "loo_max_score": 0.8072903440585787,
+      "loo_driven_by_one": false
+    },
+    {
+      "family": "random_nodes",
+      "hypothesis": "random",
+      "score": 0.7259615742817397,
+      "n_obs": 14,
+      "p_value": 0.10333793324133517,
+      "q_value": 0.12917241655166894,
+      "loo_min_score": 0.6379760629734568,
+      "loo_max_score": 0.7728459411661271,
+      "loo_driven_by_one": false
+    },
+    {
+      "family": "fibonacci_ratios",
+      "hypothesis": "control",
+      "score": 0.6271023212179693,
+      "n_obs": 14,
+      "p_value": 0.022779544409111816,
+      "q_value": 0.05694886102277954,
+      "loo_min_score": 0.5894134547639622,
+      "loo_max_score": 0.7183281142412816,
+      "loo_driven_by_one": false
+    },
+    {
+      "family": "golden_ratio",
+      "hypothesis": "control",
+      "score": 0.2745266919995718,
+      "n_obs": 14,
+      "p_value": 0.9925001499970001,
+      "q_value": 0.9925001499970001,
+      "loo_min_score": 0.19805737191977957,
+      "loo_max_score": 0.3432925522074086,
+      "loo_driven_by_one": false
+    }
+  ]
+}
