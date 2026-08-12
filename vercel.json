@@ -5,6 +5,14 @@
   "trailingSlash": false,
   "headers": [
     {
+      "source": "/TITAN-X-FINAL-Investor-Plan.pdf",
+      "headers": [
+        { "key": "Content-Type", "value": "application/pdf" },
+        { "key": "Content-Disposition", "value": "inline; filename=\"TITAN-X-FINAL-Investor-Plan.pdf\"" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    },
+    {
       "source": "/(.*)",
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" }
