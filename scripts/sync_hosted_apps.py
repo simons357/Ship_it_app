@@ -35,7 +35,7 @@ APPS = [
         "slug": "primefield",
         "base": "https://primefield.tech/",
         "title": "Prime Field Technologies",
-        "routes": ["chatvault", "field-lock", "games"],
+        "routes": ["chatvault", "field-lock", "games", "pacman", "qstack", "risk"],
     },
     {
         "slug": "exoratio",
