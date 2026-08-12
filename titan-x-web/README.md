@@ -14,6 +14,12 @@ Do this **once** in the browser (this agent cannot log into Vercel for you):
 
 After that, every GitHub push that changes the PDF or site updates Vercel automatically. No manual upload.
 
+Live GitHub copy of the site (this branch):  
+https://github.com/simons357/Ship_it_app/tree/cursor/titan-x-business-plan-7465/titan-x-web
+
+Apps folder:  
+https://github.com/simons357/Ship_it_app/tree/cursor/titan-x-business-plan-7465/titan-x-web/apps
+
 ## Base44.app + Replit + public sites → GitHub → Vercel
 
 Live `*.base44.app`, `*.replit.app`, and `solenne.ai` frontends are mirrored into `titan-x-web/apps/`.

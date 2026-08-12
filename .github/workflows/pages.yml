@@ -1,0 +1,59 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - cursor/titan-x-business-plan-7465
+    paths:
+      - "titan-x-web/**"
+      - "TITAN-X-FINAL-Investor-Plan.pdf"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  pages:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync PDF into the site folder
+        run: cp -f TITAN-X-FINAL-Investor-Plan.pdf titan-x-web/TITAN-X-FINAL-Investor-Plan.pdf
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: titan-x-web
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  gh-pages-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync PDF into the site folder
+        run: |
+          cp -f TITAN-X-FINAL-Investor-Plan.pdf titan-x-web/TITAN-X-FINAL-Investor-Plan.pdf
+          touch titan-x-web/.nojekyll
+
+      - uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: titan-x-web
+          branch: gh-pages
+          clean: true
