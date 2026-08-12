@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sfe-rh-explorer-v1-07f8121c.base44.app/sitemap.xml
