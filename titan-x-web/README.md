@@ -2,6 +2,8 @@
 
 Live file to send: `TITAN-X-FINAL-Investor-Plan.pdf`
 
+The site root **opens the plan in the browser**. LinkedIn/X preview image is `og.png` (black TITAN-X on the fire). Icon is `icon.png`.
+
 ## Auto-deploy (GitHub → Vercel)
 
 Do this **once** in the browser (this agent cannot log into Vercel for you):
