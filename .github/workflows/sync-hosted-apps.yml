@@ -1,6 +1,6 @@
-name: Sync Replit apps to GitHub
+name: Sync Base44 and Replit apps to GitHub
 
-# Replit publish → this job mirrors *.replit.app → GitHub → Vercel (after the one-time Vercel import).
+# Publish on Base44 or Replit → this job mirrors *.base44.app / *.replit.app → GitHub → Vercel.
 on:
   schedule:
     - cron: "0 6,18 * * *"
@@ -17,17 +17,17 @@ jobs:
         with:
           ref: ${{ github.ref_name }}
 
-      - name: Mirror live Replit frontends
-        run: python3 scripts/sync_replit_apps.py
+      - name: Mirror live Base44.app and Replit frontends
+        run: python3 scripts/sync_hosted_apps.py
 
       - name: Commit if the mirrors changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add titan-x-web/apps/field-lock titan-x-web/apps/nav-42
+          git add titan-x-web/apps
           if git diff --staged --quiet; then
-            echo "No Replit frontend changes."
+            echo "No frontend changes."
             exit 0
           fi
-          git commit -m "Sync Field Lock and NAV-42 from Replit"
+          git commit -m "Sync Base44.app and Replit app frontends"
           git push
