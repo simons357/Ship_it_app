@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TITAN-X — Consolidated Summary</title>
+  <meta name="description" content="TITAN-X stratospheric persistent aerial platform. Regional deployment concept. Prime Field Technologies LLC." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --void: #070b12;
+      --ink: #0d1520;
+      --panel: #121c2a;
+      --foam: #e8eef6;
+      --mist: #9aadc2;
+      --sky: #5b8fb8;
+      --solar: #c9a24a;
+      --ember: #c45a32;
+      --line: rgba(232, 238, 246, 0.14);
+      --display: "Syne", "Helvetica Neue", sans-serif;
+      --body: "IBM Plex Sans", "Segoe UI", sans-serif;
+      --pad: clamp(1.25rem, 4vw, 3rem);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      background:
+        radial-gradient(ellipse 70% 45% at 80% -10%, rgba(91, 143, 184, 0.22), transparent 55%),
+        radial-gradient(ellipse 50% 35% at 10% 90%, rgba(201, 162, 74, 0.08), transparent 50%),
+        linear-gradient(180deg, #05080f 0%, var(--void) 35%, #0a1220 100%);
+      color: var(--foam);
+      font-family: var(--body);
+      font-weight: 300;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .bar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 0.75rem var(--pad);
+      background: rgba(7, 11, 18, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .bar strong {
+      font-family: var(--display);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 1rem;
+    }
+    .bar button, .bar a {
+      font: 600 0.68rem var(--body);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--foam);
+      padding: 0.45rem 0.85rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .bar button:hover, .bar a:hover { border-color: var(--sky); color: #fff; }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: grid;
+      align-content: end;
+      overflow: hidden;
+    }
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: drift 28s ease-in-out infinite alternate;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(7, 11, 18, 0.25) 0%, rgba(7, 11, 18, 0.15) 40%, rgba(7, 11, 18, 0.92) 100%),
+        linear-gradient(90deg, rgba(7, 11, 18, 0.55) 0%, transparent 55%);
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      padding: 0 var(--pad) clamp(2.5rem, 8vh, 4.5rem);
+      max-width: 42rem;
+      animation: rise 1.1s ease-out both;
+    }
+    .kicker {
+      font: 500 0.72rem var(--body);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--solar);
+      margin: 0 0 0.85rem;
+    }
+    .brand {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: clamp(3.4rem, 12vw, 6.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.5rem;
+      text-shadow: 0 8px 40px rgba(0, 0, 0, 0.45);
+    }
+    .tagline {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: clamp(1.15rem, 2.6vw, 1.55rem);
+      color: var(--foam);
+      margin: 0 0 0.85rem;
+      max-width: 28rem;
+    }
+    .lede {
+      margin: 0;
+      color: var(--mist);
+      font-size: 1.05rem;
+      max-width: 34rem;
+    }
+
+    .wrap {
+      width: min(920px, 100%);
+      margin: 0 auto;
+      padding: 3rem var(--pad) 5rem;
+    }
+    section { margin: 0 0 3rem; animation: rise 0.9s ease-out both; }
+    section:nth-of-type(2) { animation-delay: 0.05s; }
+    section:nth-of-type(3) { animation-delay: 0.1s; }
+    h2 {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(1.55rem, 3vw, 2rem);
+      letter-spacing: -0.02em;
+      margin: 0 0 0.85rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--line);
+    }
+    h3 {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin: 1.4rem 0 0.45rem;
+      color: #d7e4f2;
+    }
+    p, li { font-size: 1.02rem; color: #d5e0ec; }
+    ul { margin: 0.4rem 0 0; padding-left: 1.15rem; }
+    li { margin: 0.35rem 0; }
+    .muted { color: var(--mist); }
+    .solar { color: var(--solar); }
+
+    .glance {
+      display: grid;
+      gap: 1.25rem;
+    }
+    @media (min-width: 760px) {
+      .glance { grid-template-columns: 1.15fr 0.85fr; align-items: start; }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      margin: 0.75rem 0 0;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.65rem 0.55rem;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      font: 600 0.68rem var(--body);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mist);
+    }
+    td:nth-child(2) { color: #fff; font-weight: 500; white-space: nowrap; }
+
+    .mission-grid {
+      display: grid;
+      gap: 0.55rem 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 0.75rem;
+    }
+    .mission-grid span {
+      display: block;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--line);
+      color: #d5e0ec;
+      font-size: 0.98rem;
+    }
+
+    .scene {
+      margin: 2.5rem 0 3rem;
+    }
+    .scene img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border: 1px solid var(--line);
+    }
+    .cap {
+      font-size: 0.85rem;
+      color: var(--mist);
+      margin: 0.55rem 0 0;
+    }
+
+    .callout {
+      margin: 1rem 0 0;
+      padding: 1rem 1.1rem;
+      background: linear-gradient(135deg, rgba(91, 143, 184, 0.12), rgba(201, 162, 74, 0.06));
+      border-left: 3px solid var(--sky);
+      color: #dbe7f4;
+    }
+
+    .bottom {
+      margin-top: 2rem;
+      padding: 1.4rem 1.25rem;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+    .bottom p { margin: 0; color: #e8eef6; font-size: 1.05rem; }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+      color: var(--mist);
+      font-size: 0.88rem;
+    }
+    footer strong { color: var(--foam); font-weight: 500; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes drift {
+      from { transform: scale(1.04) translate3d(0, 0, 0); }
+      to { transform: scale(1.08) translate3d(-1.5%, -1%, 0); }
+    }
+
+    @media print {
+      .bar, .no-print { display: none !important; }
+      body { background: #070b12 !important; }
+      .hero { min-height: 10.5in; page-break-after: always; }
+      .hero-media { animation: none !important; }
+      section, .scene, .bottom { break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+      img {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+    @page { margin: 0.45in; size: letter; }
+  </style>
+</head>
+<body>
+  <div class="bar no-print">
+    <strong>TITAN-X</strong>
+    <span>
+      <a href="../../TITAN-X-Consolidated-Summary.pdf">Open PDF</a>
+      <button type="button" onclick="window.print()">Print / PDF</button>
+    </span>
+  </div>
+
+  <header class="hero">
+    <img class="hero-media" src="renders/titan-x-formation.png" alt="TITAN-X platforms flying in formation at high altitude" />
+    <div class="hero-copy">
+      <p class="kicker">Prime Field Technologies LLC · August 2026</p>
+      <h1 class="brand">TITAN-X</h1>
+      <p class="tagline">Stratospheric Persistent Aerial Platform</p>
+      <p class="lede">Consolidated summary and regional deployment concept — persistent infrastructure between aircraft and satellites.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="glance">
+      <div>
+        <h2>Platform at a Glance</h2>
+        <p>TITAN-X is a free-flight stratospheric aerostat that operates in the altitude band between conventional aircraft and satellites. It carries a <strong>20,000 lb</strong> modular payload, stays aloft indefinitely on helium buoyancy and solar power, and can be reconfigured for different missions by exchanging gondolas and underbelly modules.</p>
+      </div>
+      <div>
+        <table>
+          <thead>
+            <tr><th>Parameter</th><th>Value</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Size</td><td>480 ft × 200 ft</td><td>Swept manta planform</td></tr>
+            <tr><td>Net payload</td><td>20,000 lbs</td><td>≈ school-bus weight</td></tr>
+            <tr><td>Altitude range</td><td>500 – 130,000 ft</td><td>Tree-top to lower stratosphere</td></tr>
+            <tr><td>Endurance</td><td>Indefinite</td><td>Solar + buoyancy</td></tr>
+            <tr><td>Ops carbon</td><td>Near-zero</td><td>No combustion for loiter</td></tr>
+            <tr><td>Unit CAPEX</td><td>$13 million</td><td>Fleet volume; 12 ≈ $156M</td></tr>
+            <tr><td>Annual OPEX</td><td>$2.4 million</td><td>Break-even ~$200K/mo</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Core Advantages</h2>
+      <ul>
+        <li><strong>Indefinite endurance</strong> — solar power is sufficient for continuous station-keeping and operations.</li>
+        <li><strong>High payload</strong> — 20,000 lbs supports substantial sensors, supplies, cabins, or drone loads.</li>
+        <li><strong>Fully modular</strong> — one hull family serves many missions by changing modules.</li>
+        <li><strong>Near-zero operational carbon</strong> for persistent missions.</li>
+        <li><strong>Rockoon capability</strong> — loft rockets to ~100,000 ft for major propellant savings, then recover the platform.</li>
+        <li><strong>Dual-use architecture</strong> — civil, commercial, and defense requirements can share the same platform and cost base.</li>
+      </ul>
+    </section>
+
+    <figure class="scene">
+      <img src="renders/titan-x-wildfire-suppress.png" alt="TITAN-X delivering retardant and water over a mountainous wildfire" />
+      <figcaption class="cap">California firefighting concentration — retardant and water delivery modules, sensors, and incident-command packages on the same modular hull.</figcaption>
+    </figure>
+
+    <section>
+      <h2>Regional Deployment Concept</h2>
+      <p>The preferred operational model is <strong>pre-positioned regional coverage</strong> rather than centralized surge response.</p>
+
+      <h3>1. Major Cities and High-Value Regions</h3>
+      <p>Each major metropolitan area or high-risk region is assigned one TITAN-X (or a small pair). These units remain loaded with modular response packages and can be on station in hours. They function as persistent nodes for disaster response, communications restoration, wide-area observation, and logistics support.</p>
+
+      <h3>2. California Firefighting Concentration</h3>
+      <p>California is a natural early focus because of the scale and frequency of wildfire risk. A dedicated set of units would be configured primarily for firefighting support:</p>
+      <ul>
+        <li>Fire-behavior, thermal, and smoke-plume sensors</li>
+        <li>Retardant or water delivery modules</li>
+        <li>Incident command and communications packages</li>
+        <li>Decision-support tools for incident commanders</li>
+      </ul>
+      <p class="muted">These units remain modular and can shift to other missions in lower-risk periods, preserving utilization.</p>
+
+      <h3>3. Smaller Complementary Platforms</h3>
+      <p>Smaller aerostats or derivative platforms cover secondary roles that do not require the full 20,000 lb capacity: local observation, communications relay, weather and scientific sensing, and lower-cost regional coverage. Full-size TITAN-X units remain the primary regional nodes.</p>
+
+      <p class="callout"><strong>Deployment logic.</strong> Pre-positioning converts response time from days into hours. Civil and commercial utilization helps cover the cost of keeping assets available year-round. The same modular hull can shift between firefighting, disaster, infrastructure, and other configurations without separate fleets.</p>
+    </section>
+
+    <section>
+      <h2>Key Mission Areas</h2>
+      <div class="mission-grid">
+        <span>Disaster response and wildfire support</span>
+        <span>Critical infrastructure monitoring</span>
+        <span>Emergency and temporary communications</span>
+        <span>Maritime domain awareness and ship support</span>
+        <span>Public-safety airborne threat awareness</span>
+        <span>Scientific and high-altitude observation</span>
+        <span>Rockoon launch services</span>
+        <span>Selected dual-use defense configurations</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Economics Snapshot</h2>
+      <p>Capital is staged: pathfinder validation → first full-scale hull → initial operational units → fleet scale-up. Civil and commercial utilization is intended to help underwrite the cost of maintaining persistent regional coverage.</p>
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Value</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Unit CAPEX (volume)</td><td>$13.0 million</td></tr>
+          <tr><td>12-unit fleet CAPEX</td><td>$156 million</td></tr>
+          <tr><td>Annual OPEX per unit</td><td>$2.4 million</td></tr>
+          <tr><td>Target break-even</td><td>~$200,000 / month per unit</td></tr>
+          <tr><td>Planning 10-year fleet ROI</td><td>17.8 : 1</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Summary Position</h2>
+      <p>TITAN-X provides persistent, high-payload capability in the altitude band between aircraft and satellites. The regional deployment model — one (or two) full-size units near major cities, a concentrated firefighting layer in California, and smaller complementary platforms — turns the platform into practical infrastructure rather than a surge-only asset.</p>
+      <p>The same modular architecture supports disaster response, infrastructure protection, public safety, scientific observation, rockoon launch, and selected defense options while sharing a common cost base.</p>
+      <div class="bottom">
+        <p><span class="solar">Bottom line.</span> Indefinite endurance. 20,000 lb modular payload. Near-zero operational carbon for persistent missions. Pre-positioned regional coverage with a California firefighting emphasis. Dual-use economics that allow civil and defense needs to share the same platforms.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p><strong>Prime Field Technologies LLC</strong> · TITAN-X Consolidated Summary · August 2026</p>
+      <p>Planning estimates for discussion with qualified parties. Not guarantees of future performance.</p>
+    </footer>
+  </main>
+</body>
+</html>
