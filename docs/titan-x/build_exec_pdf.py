@@ -213,42 +213,58 @@ def table(data, col_widths):
     return t
 
 
-def kpi_row(items):
+def kpi_grid(items, cols=3):
+    """KPI cards in a grid that fits page width (no clipped/empty right-margin boxes)."""
     sty = styles()
-    cells = []
-    for value, label in items:
-        cells.append(
-            [
-                Paragraph(f"<b>{value}</b>", ParagraphStyle("KpiV", parent=sty["Body"], fontSize=12, textColor=white, leading=14)),
-                Paragraph(label, ParagraphStyle("KpiL", parent=sty["Muted"], fontSize=7.5, leading=9)),
-            ]
-        )
-    # flatten to one row of stacked mini tables
+    usable = letter[0] - 1.2 * inch
+    gap = 0.08 * inch
+    col_w = (usable - gap * (cols - 1)) / cols
     boxes = []
     for value, label in items:
         inner = Table(
             [
                 [Paragraph(f"<b>{value}</b>", ParagraphStyle("kv", fontName="Helvetica-Bold", fontSize=11, textColor=white, leading=13))],
-                [Paragraph(label, ParagraphStyle("kl", fontName="Helvetica", fontSize=7, textColor=MIST, leading=9))],
+                [Paragraph(label, ParagraphStyle("kl", fontName="Helvetica", fontSize=7.5, textColor=MIST, leading=9))],
             ],
-            colWidths=[1.15 * inch],
+            colWidths=[col_w - 4],
         )
         inner.setStyle(
             TableStyle(
                 [
                     ("BOX", (0, 0), (-1, -1), 0.6, LINE),
                     ("BACKGROUND", (0, 0), (-1, -1), PANEL),
-                    ("LEFTPADDING", (0, 0), (-1, -1), 6),
-                    ("RIGHTPADDING", (0, 0), (-1, -1), 6),
-                    ("TOPPADDING", (0, 0), (-1, -1), 6),
-                    ("BOTTOMPADDING", (0, 0), (-1, -1), 6),
+                    ("LEFTPADDING", (0, 0), (-1, -1), 7),
+                    ("RIGHTPADDING", (0, 0), (-1, -1), 7),
+                    ("TOPPADDING", (0, 0), (-1, -1), 7),
+                    ("BOTTOMPADDING", (0, 0), (-1, -1), 7),
                 ]
             )
         )
         boxes.append(inner)
-    row = Table([boxes], colWidths=[1.2 * inch] * len(boxes))
-    row.setStyle(TableStyle([("LEFTPADDING", (0, 0), (-1, -1), 2), ("RIGHTPADDING", (0, 0), (-1, -1), 2)]))
-    return row
+
+    rows = []
+    for i in range(0, len(boxes), cols):
+        chunk = boxes[i : i + cols]
+        while len(chunk) < cols:
+            chunk.append("")
+        rows.append(chunk)
+    grid = Table(rows, colWidths=[col_w] * cols, hAlign="LEFT", spaceBefore=4, spaceAfter=8)
+    grid.setStyle(
+        TableStyle(
+            [
+                ("LEFTPADDING", (0, 0), (-1, -1), 2),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 2),
+                ("TOPPADDING", (0, 0), (-1, -1), 3),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+                ("VALIGN", (0, 0), (-1, -1), "TOP"),
+            ]
+        )
+    )
+    return grid
+
+
+def kpi_row(items):
+    return kpi_grid(items, cols=3)
 
 
 def build():

@@ -1,16 +1,19 @@
-TITAN-X — EXECUTIVE BUSINESS PLAN
+TITAN-X — ONE FILE TO SEND
 
-Do not click around the repo.
-Do not open .md files unless you want long notes.
+Ignore every other PDF / HTML / markdown copy.
 
-Download and open this one PDF:
+Download and open only:
 
   TITAN-X-Executive-Business-Plan.pdf
 
-That is the sendable plan for venture capitalists and business owners
-(financials 2026–2030).
+Branch: cursor/titan-x-business-plan-7465
+PR: https://github.com/simons357/ship_it_app/pull/20
 
-Also available:
-  TITAN-X-Consolidated-Summary.pdf
+Direct link:
+https://github.com/simons357/ship_it_app/blob/cursor/titan-x-business-plan-7465/TITAN-X-Executive-Business-Plan.pdf
+
+You do not need to review code or check boxes for the agent.
+If you have a richer "Version 3" investor PDF on your phone, upload that
+file into this chat so it can be merged into THIS one document.
 
 Prime Field Technologies LLC · August 2026
