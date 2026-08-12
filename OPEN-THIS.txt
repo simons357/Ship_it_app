@@ -1,19 +1,12 @@
-TITAN-X — ONE FILE TO SEND
+TITAN-X — FINAL INVESTOR PLAN
 
-Ignore every other PDF / HTML / markdown copy.
+ONE FILE ONLY:
 
-Download and open only:
+  TITAN-X-FINAL-Investor-Plan.pdf
 
-  TITAN-X-Executive-Business-Plan.pdf
+Also served from the Vercel site folder:
 
-Branch: cursor/titan-x-business-plan-7465
-PR: https://github.com/simons357/ship_it_app/pull/20
+  titan-x-web/
 
-Direct link:
-https://github.com/simons357/ship_it_app/blob/cursor/titan-x-business-plan-7465/TITAN-X-Executive-Business-Plan.pdf
-
-You do not need to review code or check boxes for the agent.
-If you have a richer "Version 3" investor PDF on your phone, upload that
-file into this chat so it can be merged into THIS one document.
-
+Ignore older TITAN-X-Consolidated-Summary.pdf and prior exec drafts.
 Prime Field Technologies LLC · August 2026

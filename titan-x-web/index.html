@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TITAN-X — Final Investor Plan</title>
+  <meta name="description" content="TITAN-X stratospheric persistent aerial platform. Final investor plan — Prime Field Technologies LLC." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --void: #070b12;
+      --foam: #e8eef6;
+      --mist: #9aadc2;
+      --solar: #c9a24a;
+      --sky: #5b8fb8;
+      --line: rgba(232,238,246,.14);
+      --display: "Syne", sans-serif;
+      --body: "IBM Plex Sans", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--foam);
+      font-family: var(--body);
+      font-weight: 300;
+      line-height: 1.55;
+      background:
+        radial-gradient(ellipse 70% 40% at 80% 0%, rgba(91,143,184,.22), transparent 55%),
+        linear-gradient(180deg, #05080f, var(--void) 40%, #0a1220);
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { width: min(960px, 100%); margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+    .brand {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: clamp(3rem, 10vw, 5.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.4rem;
+    }
+    .kicker {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--solar);
+      margin: 0 0 0.75rem;
+    }
+    .tag { font-family: var(--display); font-weight: 600; font-size: 1.25rem; margin: 0 0 0.75rem; }
+    .lede { color: var(--mist); max-width: 38rem; margin: 0 0 1.5rem; }
+    .cta {
+      display: flex; flex-wrap: wrap; gap: 0.65rem;
+      margin: 0 0 2rem;
+    }
+    .cta a {
+      font: 600 0.78rem var(--body);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--void);
+      background: var(--solar);
+      padding: 0.75rem 1.1rem;
+    }
+    .cta a.ghost {
+      color: var(--foam);
+      background: transparent;
+      border: 1px solid var(--line);
+    }
+    .hero {
+      width: 100%;
+      border: 1px solid var(--line);
+      margin: 0 0 0.5rem;
+      display: block;
+    }
+    .cap { color: var(--mist); font-size: 0.85rem; margin: 0 0 2rem; }
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin: 0 0 2rem;
+    }
+    .grid img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      display: block;
+    }
+    h2 {
+      font-family: var(--display);
+      font-size: 1.5rem;
+      border-top: 1px solid var(--line);
+      padding-top: 0.75rem;
+      margin: 2rem 0 0.75rem;
+    }
+    .kpi {
+      display: grid;
+      gap: 0.65rem;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+    .kpi div {
+      border: 1px solid var(--line);
+      padding: 0.85rem 0.75rem;
+      background: rgba(18,28,42,.55);
+    }
+    .kpi strong { display: block; font-family: var(--display); font-size: 1.2rem; margin-bottom: 0.2rem; }
+    .kpi span { font-size: 0.78rem; color: var(--mist); }
+    footer { margin-top: 3rem; color: var(--mist); font-size: 0.85rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="kicker">Prime Field Technologies LLC · August 2026</p>
+    <h1 class="brand">TITAN-X</h1>
+    <p class="tag">Final Investor Plan</p>
+    <p class="lede">Stratospheric persistent aerial platform — one master document synthesizing the consolidated summary, regional deployment concept, and 2026–2030 financial plan.</p>
+    <div class="cta">
+      <a href="TITAN-X-FINAL-Investor-Plan.pdf">Download the final PDF</a>
+      <a class="ghost" href="TITAN-X-FINAL-Investor-Plan.pdf" target="_blank" rel="noopener">Open PDF in browser</a>
+    </div>
+
+    <img class="hero" src="renders/titan-x-wildfire-suppress.jpg" alt="TITAN-X firefighting configuration" />
+    <p class="cap">Firefighting configuration — California early concentration.</p>
+
+    <div class="kpi">
+      <div><strong>$13M</strong><span>Unit CAPEX (fleet volume)</span></div>
+      <div><strong>$156M</strong><span>12-unit fleet CAPEX</span></div>
+      <div><strong>$2.4M</strong><span>Annual OPEX / unit</span></div>
+      <div><strong>$200K</strong><span>Monthly break-even / unit</span></div>
+      <div><strong>17.8 : 1</strong><span>Planning 10-yr fleet ROI</span></div>
+      <div><strong>20,000 lb</strong><span>Net modular payload</span></div>
+    </div>
+
+    <h2>Concept plates</h2>
+    <div class="grid">
+      <div>
+        <img src="renders/titan-x-formation.jpg" alt="TITAN-X formation flight" />
+        <p class="cap">Formation / regional pre-positioning</p>
+      </div>
+      <div>
+        <img src="renders/titan-x-stratosphere.jpg" alt="TITAN-X high-altitude station-keeping" />
+        <p class="cap">Stratospheric station-keeping</p>
+      </div>
+    </div>
+
+    <h2>What to send</h2>
+    <p class="lede" style="margin-bottom:0">Only one file: <strong>TITAN-X-FINAL-Investor-Plan.pdf</strong>. Ignore older summary/exec copies.</p>
+
+    <footer>
+      Prime Field Technologies LLC · Planning estimates for qualified parties · Not an offer to sell securities
+    </footer>
+  </main>
+</body>
+</html>
