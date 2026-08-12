@@ -16,7 +16,6 @@ from reportlab.platypus import (
     TableStyle,
     Image,
     PageBreak,
-    KeepTogether,
 )
 
 ROOT = Path("/workspace")
@@ -50,18 +49,18 @@ def styles():
     def add(name, **kw):
         ss.add(ParagraphStyle(name=name, **kw))
 
-    add("Kicker", fontName="Helvetica", fontSize=8, textColor=SOLAR, leading=11, spaceAfter=8)
-    add("Brand", fontName="Helvetica-Bold", fontSize=40, textColor=FOAM, leading=44, spaceAfter=6)
-    add("Tag", fontName="Helvetica-Bold", fontSize=13, textColor=FOAM, leading=17, spaceAfter=8)
-    add("Lede", fontName="Helvetica", fontSize=10.5, textColor=MIST, leading=15, spaceAfter=12)
-    add("H2", fontName="Helvetica-Bold", fontSize=15, textColor=FOAM, leading=19, spaceBefore=12, spaceAfter=7)
-    add("H3", fontName="Helvetica-Bold", fontSize=11, textColor=FOAM, leading=14, spaceBefore=9, spaceAfter=4)
-    add("Body", fontName="Helvetica", fontSize=9.5, textColor=FOAM, leading=13, spaceAfter=6)
-    add("Muted", fontName="Helvetica", fontSize=8.5, textColor=MIST, leading=11, spaceAfter=5)
-    add("Cap", fontName="Helvetica", fontSize=8, textColor=MIST, leading=10, spaceBefore=3, spaceAfter=8)
-    add("Cell", fontName="Helvetica", fontSize=8, textColor=FOAM, leading=10)
+    add("Kicker", fontName="Helvetica", fontSize=8, textColor=SOLAR, leading=11, spaceAfter=6)
+    add("Brand", fontName="Helvetica-Bold", fontSize=36, textColor=FOAM, leading=40, spaceAfter=4)
+    add("Tag", fontName="Helvetica-Bold", fontSize=12, textColor=FOAM, leading=15, spaceAfter=6)
+    add("Lede", fontName="Helvetica", fontSize=10, textColor=MIST, leading=14, spaceAfter=8)
+    add("H2", fontName="Helvetica-Bold", fontSize=13, textColor=FOAM, leading=16, spaceBefore=8, spaceAfter=5)
+    add("H3", fontName="Helvetica-Bold", fontSize=10.5, textColor=FOAM, leading=13, spaceBefore=6, spaceAfter=3)
+    add("Body", fontName="Helvetica", fontSize=9, textColor=FOAM, leading=12, spaceAfter=4)
+    add("Muted", fontName="Helvetica", fontSize=8, textColor=MIST, leading=10, spaceAfter=4)
+    add("Cap", fontName="Helvetica", fontSize=7.5, textColor=MIST, leading=9, spaceBefore=2, spaceAfter=6)
+    add("Cell", fontName="Helvetica", fontSize=7.5, textColor=FOAM, leading=9.5)
     add("CellHead", fontName="Helvetica-Bold", fontSize=7, textColor=MIST, leading=9)
-    add("TxBullet", fontName="Helvetica", fontSize=9.5, textColor=FOAM, leading=12.5, leftIndent=10, spaceAfter=2)
+    add("TxBullet", fontName="Helvetica", fontSize=9, textColor=FOAM, leading=11.5, leftIndent=10, spaceAfter=1)
     return ss
 
 
@@ -89,10 +88,10 @@ def table(data, widths):
                 ("BACKGROUND", (0, 0), (-1, 0), PANEL),
                 ("LINEBELOW", (0, 0), (-1, -1), 0.4, LINE),
                 ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                ("LEFTPADDING", (0, 0), (-1, -1), 4),
-                ("RIGHTPADDING", (0, 0), (-1, -1), 4),
-                ("TOPPADDING", (0, 0), (-1, -1), 4),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+                ("LEFTPADDING", (0, 0), (-1, -1), 3),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 3),
+                ("TOPPADDING", (0, 0), (-1, -1), 3),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
             ]
         )
     )
@@ -107,8 +106,8 @@ def kpi_grid(items, cols=3):
     for value, label in items:
         inner = Table(
             [
-                [Paragraph(f"<b>{value}</b>", ParagraphStyle("kv", fontName="Helvetica-Bold", fontSize=11, textColor=white, leading=13))],
-                [Paragraph(label, ParagraphStyle("kl", fontName="Helvetica", fontSize=7.5, textColor=MIST, leading=9))],
+                [Paragraph(f"<b>{value}</b>", ParagraphStyle("kv", fontName="Helvetica-Bold", fontSize=10.5, textColor=white, leading=12))],
+                [Paragraph(label, ParagraphStyle("kl", fontName="Helvetica", fontSize=7, textColor=MIST, leading=8.5))],
             ],
             colWidths=[col_w - 4],
         )
@@ -117,10 +116,10 @@ def kpi_grid(items, cols=3):
                 [
                     ("BOX", (0, 0), (-1, -1), 0.6, LINE),
                     ("BACKGROUND", (0, 0), (-1, -1), PANEL),
-                    ("LEFTPADDING", (0, 0), (-1, -1), 6),
-                    ("RIGHTPADDING", (0, 0), (-1, -1), 6),
-                    ("TOPPADDING", (0, 0), (-1, -1), 6),
-                    ("BOTTOMPADDING", (0, 0), (-1, -1), 6),
+                    ("LEFTPADDING", (0, 0), (-1, -1), 5),
+                    ("RIGHTPADDING", (0, 0), (-1, -1), 5),
+                    ("TOPPADDING", (0, 0), (-1, -1), 5),
+                    ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
                 ]
             )
         )
@@ -131,8 +130,18 @@ def kpi_grid(items, cols=3):
         while len(chunk) < cols:
             chunk.append("")
         rows.append(chunk)
-    g = Table(rows, colWidths=[col_w] * cols, hAlign="LEFT", spaceBefore=3, spaceAfter=8)
-    g.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"), ("LEFTPADDING", (0, 0), (-1, -1), 2), ("RIGHTPADDING", (0, 0), (-1, -1), 2), ("TOPPADDING", (0, 0), (-1, -1), 2), ("BOTTOMPADDING", (0, 0), (-1, -1), 2)]))
+    g = Table(rows, colWidths=[col_w] * cols, hAlign="LEFT", spaceBefore=2, spaceAfter=6)
+    g.setStyle(
+        TableStyle(
+            [
+                ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                ("LEFTPADDING", (0, 0), (-1, -1), 2),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 2),
+                ("TOPPADDING", (0, 0), (-1, -1), 2),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 2),
+            ]
+        )
+    )
     return g
 
 
@@ -148,14 +157,14 @@ def build():
         pagesize=letter,
         leftMargin=0.55 * inch,
         rightMargin=0.55 * inch,
-        topMargin=0.5 * inch,
-        bottomMargin=0.5 * inch,
+        topMargin=0.45 * inch,
+        bottomMargin=0.48 * inch,
         title="TITAN-X FINAL Investor Plan",
         author="Prime Field Technologies LLC",
     )
     s = []
 
-    # —— COVER ——
+    # —— COVER (only hard break — one full plate page) ——
     s.append(Paragraph("PRIME FIELD TECHNOLOGIES LLC · FINAL INVESTOR PLAN · AUGUST 2026", sty["Kicker"]))
     s.append(Paragraph("TITAN-X", sty["Brand"]))
     s.append(Paragraph("Stratospheric Persistent Aerial Platform", sty["Tag"]))
@@ -165,7 +174,7 @@ def build():
             sty["Lede"],
         )
     )
-    s.append(fit_image(RENDERS / "titan-x-wildfire-suppress.jpg", usable_w, 4.3 * inch))
+    s.append(fit_image(RENDERS / "titan-x-wildfire-suppress.jpg", usable_w, 5.8 * inch))
     s.append(Paragraph("Cover plate — California firefighting configuration (retardant + water delivery).", sty["Cap"]))
     s.append(PageBreak())
 
@@ -197,7 +206,7 @@ def build():
     )
     s.append(
         Paragraph(
-            "<b>Bottom line from source summary:</b> Indefinite endurance. 20,000 lb modular payload. Near-zero operational carbon for persistent missions. Pre-positioned regional coverage with a California firefighting emphasis. Dual-use economics that allow civil and defense needs to share the same platforms.",
+            "<b>Bottom line:</b> Indefinite endurance. 20,000 lb modular payload. Near-zero operational carbon for persistent missions. Pre-positioned regional coverage with a California firefighting emphasis. Dual-use economics that allow civil and defense needs to share the same platforms.",
             sty["Body"],
         )
     )
@@ -243,7 +252,6 @@ def build():
             sty["Body"],
         )
     )
-    s.append(PageBreak())
 
     # —— 3 PROBLEM / MARKET ——
     s.append(Paragraph("3. Problem and market context", sty["H2"]))
@@ -278,7 +286,7 @@ def build():
     )
 
     # —— 4 DEPLOYMENT ——
-    s.append(Paragraph("4. Regional deployment concept (source lock)", sty["H2"]))
+    s.append(Paragraph("4. Regional deployment concept", sty["H2"]))
     s.append(
         Paragraph(
             "The preferred operational model is <b>pre-positioned regional coverage</b> rather than centralized surge response. Pre-positioning converts response time from days into hours. Civil and commercial utilization helps cover the cost of keeping assets available year-round. The same modular hull can shift between firefighting, disaster, infrastructure, and other configurations without separate fleets.",
@@ -323,10 +331,10 @@ def build():
             sty["Body"],
         )
     )
-    s.append(Spacer(1, 6))
-    s.append(fit_image(RENDERS / "titan-x-formation.jpg", usable_w, 3.4 * inch))
+
+    s.append(Spacer(1, 4))
+    s.append(fit_image(RENDERS / "titan-x-formation.jpg", usable_w, 2.4 * inch))
     s.append(Paragraph("Formation / persistent high-altitude operations — regional pre-positioning on one modular hull family.", sty["Cap"]))
-    s.append(PageBreak())
 
     # —— 5 MISSIONS ——
     s.append(Paragraph("5. Mission areas and configurations", sty["H2"]))
@@ -417,7 +425,6 @@ def build():
             [2.6 * inch, 1.8 * inch, 2.4 * inch],
         )
     )
-    s.append(PageBreak())
 
     # —— 8 FINANCIALS ——
     s.append(Paragraph("8. Financial plan 2026–2030", sty["H2"]))
@@ -510,7 +517,6 @@ def build():
             sty["Body"],
         )
     )
-    s.append(PageBreak())
 
     # —— 10 USE OF FUNDS ——
     s.append(Paragraph("10. Use of funds and milestones", sty["H2"]))
@@ -560,23 +566,14 @@ def build():
     )
     s.append(
         Paragraph(
-            "Return thesis: stand up the planning 12-unit fleet, clear ~$200K/month per-unit break-even via availability + mission mix, and pursue the long-horizon 17.8 : 1 fleet ROI from persistent dual-use utilization — not from a single surge event.",
+            "Return thesis: stand up the planning 12-unit fleet, clear ~$200K/month per-unit break-even via availability + mission mix, and pursue the long-horizon 17.8 : 1 planning ROI from persistent dual-use utilization — not from a single surge event.",
             sty["Body"],
         )
     )
 
-    s.append(Spacer(1, 8))
-    s.append(fit_image(RENDERS / "titan-x-stratosphere.jpg", usable_w, 3.2 * inch))
+    s.append(Spacer(1, 4))
+    s.append(fit_image(RENDERS / "titan-x-stratosphere.jpg", usable_w, 3.8 * inch))
     s.append(Paragraph("High-altitude station-keeping — solar/buoyancy persistence in the aircraft–satellite band.", sty["Cap"]))
-
-    # —— 13 SOURCE MAP ——
-    s.append(Paragraph("13. Document control — what this final merges", sty["H2"]))
-    s.append(
-        Paragraph(
-            "This FINAL plan is the master synthesis available in the Cursor/GitHub workspace. It merges: (1) TITAN-X Consolidated Summary · Regional Deployment Concept (August 2026 source tables and narrative), (2) expanded executive business plan with 2026–2030 financials and unit economics, (3) firefighting, formation, and stratosphere concept plates. If a richer offline “Version 3” PDF exists on another device, upload it to merge any remaining sections into this same master file — do not maintain parallel copies.",
-            sty["Body"],
-        )
-    )
     s.append(
         Paragraph(
             "<font color='#c9a24a'><b>One file to send:</b></font> TITAN-X-FINAL-Investor-Plan.pdf — Prime Field Technologies LLC · August 2026.",
