@@ -1,12 +1,8 @@
-TITAN-X — FINAL INVESTOR PLAN
+TITAN-X
 
-ONE FILE ONLY:
+Download and send ONLY this file:
 
   TITAN-X-FINAL-Investor-Plan.pdf
 
-Also served from the Vercel site folder:
-
-  titan-x-web/
-
-Ignore older TITAN-X-Consolidated-Summary.pdf and prior exec drafts.
-Prime Field Technologies LLC · August 2026
+That is the one PDF with pictures for investors.
+Ignore every other TITAN file.
