@@ -61,40 +61,49 @@
     }
 
     .hero {
-      position: relative;
-      min-height: 100vh; min-height: 100svh;
-      display: grid; align-content: end;
-      overflow: hidden;
-    }
-    .hero-media {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      animation: drift 30s ease-in-out infinite alternate;
-    }
-    .hero::after {
-      content: "";
-      position: absolute; inset: 0;
-      background:
-        linear-gradient(180deg, rgba(7,11,18,.2) 0%, rgba(7,11,18,.12) 35%, rgba(7,11,18,.94) 100%),
-        linear-gradient(90deg, rgba(7,11,18,.55) 0%, transparent 60%);
-    }
-    .hero-copy {
-      position: relative; z-index: 2;
-      padding: 0 var(--pad) clamp(2.2rem, 7vh, 4rem);
-      max-width: 44rem;
+      display: grid;
+      gap: 0.85rem;
+      padding: clamp(1.1rem, 3vh, 1.75rem) var(--pad) 1rem;
       animation: rise 1s ease-out both;
+      border: 0;
+      background: transparent;
+    }
+    .hero.plate-fire {
+      margin: 0 0 1.5rem;
+    }
+    .hero-copy { max-width: 44rem; }
+    .brand {
+      font-family: var(--display); font-weight: 800;
+      font-size: clamp(2.6rem, 9vw, 4.8rem);
+      line-height: 0.92; letter-spacing: -0.03em;
+      margin: 0 0 0.35rem;
+    }
+    .plate, .hero-plate, .scene {
+      margin: 1.25rem 0 1.75rem;
+      background: #04070c;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .plate img, .hero-plate img, .scene img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+      object-position: center center;
+    }
+    .plate .cap, .hero-plate .cap, .scene .cap, .cap {
+      font-size: 0.84rem;
+      color: var(--mist);
+      margin: 0;
+      padding: 0.65rem 0.85rem 0.85rem;
     }
     .kicker {
       font: 500 0.7rem var(--body);
       letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--solar); margin: 0 0 0.75rem;
-    }
-    .brand {
-      font-family: var(--display); font-weight: 800;
-      font-size: clamp(3.2rem, 11vw, 6.2rem);
-      line-height: 0.92; letter-spacing: -0.03em;
-      margin: 0 0 0.4rem;
     }
     .tagline {
       font-family: var(--display); font-weight: 600;
@@ -143,12 +152,9 @@
     td.num, th.num { text-align: right; white-space: nowrap; }
     .snap td:nth-child(2) { color: #fff; font-weight: 500; }
 
-    .scene { margin: 2rem 0 2.5rem; }
-    .scene img {
-      width: 100%; aspect-ratio: 16/9; object-fit: cover;
-      border: 1px solid var(--line);
+    .scene {
+      /* alias kept for markup; styles unified under .plate */
     }
-    .cap { font-size: 0.84rem; color: var(--mist); margin: 0.5rem 0 0; }
 
     .callout {
       margin: 1rem 0 0; padding: 1rem 1.1rem;
@@ -189,21 +195,38 @@
       from { opacity: 0; transform: translateY(16px); }
       to { opacity: 1; transform: none; }
     }
-    @keyframes drift {
-      from { transform: scale(1.03); }
-      to { transform: scale(1.08) translate3d(-1.2%, -0.8%, 0); }
-    }
 
     @media print {
       .bar, .no-print { display: none !important; }
       body { background: #070b12 !important; }
-      .hero { min-height: 10.2in; page-break-after: always; }
-      .hero-media { animation: none !important; }
-      section, .scene, table, .bottom, .kpi { break-inside: avoid; }
+      .hero.plate-fire {
+        page-break-after: always;
+        break-after: page;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin: 0;
+        padding: 0.1in var(--pad) 0.15in;
+      }
+      .plate, .plate-formation {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .hero.plate-fire img, .plate img, .plate-formation img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 5.4in !important;
+        object-fit: contain !important;
+        object-position: center center !important;
+      }
+      .brand { font-size: 42pt !important; }
+      section, table, .bottom, .kpi { break-inside: avoid; }
       a { color: inherit; text-decoration: none; }
-      img { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      img {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
     }
-    @page { margin: 0.4in; size: letter; }
+    @page { margin: 0.5in; size: letter; }
   </style>
 </head>
 <body>
@@ -215,14 +238,15 @@
     </span>
   </div>
 
-  <header class="hero">
-    <img class="hero-media" src="renders/titan-x-formation.png" alt="TITAN-X platforms flying in formation at high altitude" />
+  <header class="hero plate plate-fire">
     <div class="hero-copy">
       <p class="kicker">Prime Field Technologies LLC · Confidential discussion materials · August 2026</p>
       <h1 class="brand">TITAN-X</h1>
       <p class="tagline">Executive Business Plan · 2026–2030</p>
       <p class="lede">Stratospheric persistent aerial platform for venture capitalists and business owners — regional infrastructure between aircraft and satellites.</p>
     </div>
+    <img src="renders/titan-x-wildfire-suppress.jpg" alt="TITAN-X firefighting configuration delivering retardant and water over a wildfire" />
+    <p class="cap">Firefighting configuration — retardant and water delivery. California is the planning early concentration.</p>
   </header>
 
   <main class="wrap">
@@ -261,9 +285,9 @@
       </ul>
     </section>
 
-    <figure class="scene">
-      <img src="renders/titan-x-wildfire-suppress.png" alt="TITAN-X firefighting configuration delivering retardant and water" />
-      <figcaption class="cap">Firefighting configuration — retardant and water delivery with sensors and incident-command packages. California is the planning early concentration.</figcaption>
+    <figure class="plate plate-formation">
+      <img src="renders/titan-x-formation.jpg" alt="TITAN-X platforms flying in formation at high altitude" />
+      <figcaption class="cap">Formation / persistent high-altitude operations — regional pre-positioning on one modular hull family.</figcaption>
     </figure>
 
     <section>
