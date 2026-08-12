@@ -13,37 +13,12 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  pages:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    continue-on-error: true
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Sync PDF into the site folder
-        run: cp -f TITAN-X-FINAL-Investor-Plan.pdf titan-x-web/TITAN-X-FINAL-Investor-Plan.pdf
-
-      - uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: titan-x-web
-
-      - id: deployment
-        uses: actions/deploy-pages@v4
-
   gh-pages-branch:
     runs-on: ubuntu-latest
     steps:
