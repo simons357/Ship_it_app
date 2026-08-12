@@ -1,5 +1,7 @@
 # Harmonic Blueprint Experiment 01
 
+> **Repo note:** GitHub still calls this `Ship_it_app`. That name is historical. The **Ship it** app was abandoned — do not rebuild it. For how repos/agents work, see [`docs/GETTING-STARTED.md`](docs/GETTING-STARTED.md). For agent do/don’t rules, see [`AGENTS.md`](AGENTS.md).
+
 Cross-event spectral selection test on black-hole ringdown modes.
 
 **Status: closed — held-out TEST did not reject H0.**
