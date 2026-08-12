@@ -6,3 +6,7 @@ Download and send ONLY this file:
 
 That is the one PDF with pictures for investors.
 Ignore every other TITAN file.
+
+Vercel: import this GitHub repo once at https://vercel.com/new
+Then every push updates the live site automatically.
+
