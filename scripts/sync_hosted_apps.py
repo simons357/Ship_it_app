@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Mirror published *.base44.app and *.replit.app frontends into titan-x-web/apps/."""
+"""Mirror published app frontends into titan-x-web/apps/.
+
+Sources: *.base44.app, *.replit.app, and other public HTML sites.
+Claude.ai artifacts are not included — they require a public
+claude.ai/public/artifacts/... URL and still render as a Claude shell,
+not downloadable source.
+"""
 
 from __future__ import annotations
 
@@ -53,6 +59,12 @@ APPS = [
         "slug": "nav-42",
         "base": "https://nav-42.replit.app/",
         "title": "NAV-42 Adaptive Lattice",
+        "routes": [],
+    },
+    {
+        "slug": "solenne-ai",
+        "base": "https://solenne.ai/",
+        "title": "Solenne.ai",
         "routes": [],
     },
 ]

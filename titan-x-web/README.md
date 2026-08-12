@@ -14,10 +14,12 @@ Do this **once** in the browser (this agent cannot log into Vercel for you):
 
 After that, every GitHub push that changes the PDF or site updates Vercel automatically. No manual upload.
 
-## Base44.app + Replit → GitHub → Vercel
+## Base44.app + Replit + public sites → GitHub → Vercel
 
-Live `*.base44.app` and `*.replit.app` frontends are mirrored into `titan-x-web/apps/`.
+Live `*.base44.app`, `*.replit.app`, and `solenne.ai` frontends are mirrored into `titan-x-web/apps/`.
 
 **Already running:** GitHub Action `Sync Base44 and Replit apps to GitHub` copies them twice a day (and on manual run). Those commits deploy to Vercel after the import above.
+
+**Claude.ai:** artifacts are not public unless you hit Publish and get a `claude.ai/public/artifacts/…` URL. Kyrana is already on GitHub (`simons357/kyrana-oracle`). Other Claude-built apps cannot be copied from the Claude account itself.
 
 **Optional, for editable Base44 source:** in each Base44 app, GitHub icon → connect to `simons357/Ship_it_app`. Same for Replit: Git panel → Connect to GitHub.
