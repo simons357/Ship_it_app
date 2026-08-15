@@ -1,0 +1,32 @@
+{
+  "id": 19842060,
+  "doi": "10.5281/zenodo.19842060",
+  "conceptrecid": "19842059",
+  "title": "Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal",
+  "date": "2026-04-28",
+  "creators": [
+    "Simons, Jonathan",
+    "Jonathan, Jonathan"
+  ],
+  "files": [
+    {
+      "key": "97a2ec7e0_RingLemma_Paper.pdf",
+      "url": "https://zenodo.org/api/records/19842060/files/97a2ec7e0_RingLemma_Paper.pdf/content",
+      "size": 15165
+    },
+    {
+      "key": "d00ca111b_fig_star_david.png",
+      "url": "https://zenodo.org/api/records/19842060/files/d00ca111b_fig_star_david.png/content",
+      "size": 342015
+    },
+    {
+      "key": "caafc8289_fig_three_spheres.png",
+      "url": "https://zenodo.org/api/records/19842060/files/caafc8289_fig_three_spheres.png/content",
+      "size": 473596
+    }
+  ],
+  "keywords": [
+    "Navier-Stokes, turbulence, vorticity, spectral methods, PDE, harmonic analysis"
+  ],
+  "desc": "<p>This preprint introduces a conditional regularity framework for the 3D incompressible Navier&ndash;Stokes equations based on spectral localization and geometric control of vorticity direction.</p>\n<p>Key contributions include:<br>- The Ring Lemma, bounding vorticity direction gradients by shell frequency<br>- A Spectral Non-Dispersal (SND) condition<br>- A Global Summation Lemma under SND<br>- Global regularity of an augmented Navier&ndash;Stokes system with targeted operators</p>\n<p>No claim"
+}

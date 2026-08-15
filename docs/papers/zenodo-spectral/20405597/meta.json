@@ -1,0 +1,29 @@
+{
+  "id": 20405597,
+  "doi": "10.5281/zenodo.20405597",
+  "conceptrecid": "20405596",
+  "title": "Phi-Renormalization and Axisymmetric-with-Swirl Navier-Stokes: Algebraic Cancellation of the Axis Singularity",
+  "date": "2026-05-27",
+  "creators": [
+    "Simons, Jonathan R."
+  ],
+  "files": [
+    {
+      "key": "Simons_PhiRenorm_Axisymmetric.tex",
+      "url": "https://zenodo.org/api/records/20405597/files/Simons_PhiRenorm_Axisymmetric.tex/content",
+      "size": 26989
+    }
+  ],
+  "keywords": [
+    "axisymmetric Navier-Stokes",
+    "swirl",
+    "axis singularity",
+    "Phi-renormalization",
+    "angular momentum",
+    "Hardy inequality",
+    "Gronwall",
+    "Q1 operator",
+    "regularity"
+  ],
+  "desc": "We prove that in axisymmetric-with-swirl flow, the 1/r^4 axis singularity in the swirl-vorticity equation cancels exactly and algebraically upon substitution Phi = u_theta/r. The forcing (1/r^4) * partial_z(Gamma^2) reduces to partial_z((Phi^epsilon + Phi) * delta_Phi), requiring only the geometric identity Gamma = r^2 * Phi and no Hardy inequalities. This Phi-Renormalization provides a clean route to uniform convergence estimates in the Q1-augmented system without the Gronwall amplification fac"
+}

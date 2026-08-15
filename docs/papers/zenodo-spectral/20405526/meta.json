@@ -1,0 +1,36 @@
+{
+  "id": 20405526,
+  "doi": "10.5281/zenodo.20405526",
+  "conceptrecid": "20405525",
+  "title": "Global Regularity of the Navier-Stokes Equations on T3: Spectral Non-Dispersal, the Ring Lemma, Phi-Renormalization, and the Shell-Conditioned Commutator Estimate",
+  "date": "2026-05-27",
+  "creators": [
+    "Simons, Jonathan R."
+  ],
+  "files": [
+    {
+      "key": "Simons_NS_GlobalRegularity_T3.html",
+      "url": "https://zenodo.org/api/records/20405526/files/Simons_NS_GlobalRegularity_T3.html/content",
+      "size": 18395
+    },
+    {
+      "key": "Simons_NS_GlobalRegularity_T3.tex",
+      "url": "https://zenodo.org/api/records/20405526/files/Simons_NS_GlobalRegularity_T3.tex/content",
+      "size": 15599
+    }
+  ],
+  "keywords": [
+    "Navier-Stokes regularity",
+    "global regularity",
+    "spectral non-dispersal",
+    "Ring Lemma",
+    "Phi-renormalization",
+    "Shell-Spread Poincare",
+    "Constantin-Fefferman criterion",
+    "Clay Millennium Prize",
+    "Littlewood-Paley",
+    "vortex stretching",
+    "Bony paraproduct"
+  ],
+  "desc": "We prove that every Leray-Hopf solution of the incompressible Navier-Stokes equations on T3 with H1 initial data is globally regular, resolving Clay Millennium Prize Statement (B). The proof establishes: (A) global C-infinity regularity for the Q1-augmented system; (B) the Phi-Renormalization theorem canceling the 1/r4 axis singularity algebraically without Hardy inequalities; (C) uniform convergence without the Gronwall amplification factor; (D) exact equivalence between global regularity and t"
+}

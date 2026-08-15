@@ -1,0 +1,38 @@
+{
+  "id": 20552080,
+  "doi": "10.5281/zenodo.20552080",
+  "conceptrecid": "20552079",
+  "title": "Explicit Decay Rate and Quantitative Threshold for the SND Gronwall Inequality: T2 Conditional Closure and GNC\u2013Goldbach Bridge",
+  "date": "2026-06-05",
+  "creators": [
+    "Simons, Jonathan Robert"
+  ],
+  "files": [
+    {
+      "key": "T2_CONDITIONAL_CLOSURE.pdf",
+      "url": "https://zenodo.org/api/records/20552080/files/T2_CONDITIONAL_CLOSURE.pdf/content",
+      "size": 12500
+    },
+    {
+      "key": "T2_CONDITIONAL_CLOSURE.tex",
+      "url": "https://zenodo.org/api/records/20552080/files/T2_CONDITIONAL_CLOSURE.tex/content",
+      "size": 19726
+    }
+  ],
+  "keywords": [
+    "Navier-Stokes",
+    "SND",
+    "spectral non-dispersal",
+    "Gronwall inequality",
+    "Goldbach conjecture",
+    "GNC",
+    "inter-shell flux",
+    "shell energy",
+    "prime lattice",
+    "GCD operator",
+    "T2 closure",
+    "Leray energy class",
+    "paraproduct-free estimate"
+  ],
+  "desc": "We prove that the T2 inter-shell flux dispersal inequality closes conditionally on the Spectral Non-Dispersal (SND) condition, with explicit decay rate \u03b1 = 2\u03bd\u00b2\u00b74^(1/\u03c1\u2080)\u00b7\u03c1\u2080 derived from the Shell-Spread Poincar\u00e9 Inequality.\n\nKey results:\n(1) Lemma 1: The low-frequency inter-shell flux vanishes exactly by incompressibility \u2014 unconditional, no approximation.\n(2) Lemma 2: Under SND and the H^2.3 absorbing ball, |\u03a6_j(t)| \u2264 C_\u03c6\u00b72^(-0.8j)\u00b7X(t)^(1/2)\u00b7D(t)^(1/2) with exponential shell decay.\n(3) Theorem "
+}
