@@ -9,9 +9,11 @@
 
 **Important:** The favorable “PANEL CONSENSUS VERDICT” text in the briefing is **rejected**. It mislabels Theorem H and is not consistent with the manuscripts.
 
+**User note (2026-08-15):** The Zenodo sources above are the **old** papers. The current target named in the ARCHON briefing — `NS_FINAL_MERGED_UNCONDITIONAL.tex` / `NS_PROOF_CHAIN.html` (June 10, 2026 E_c-gap merge) — is **not present** in this VM, this git repo, or Zenodo under those filenames. Prior agent notes place it on Google Drive only. **This panel is suspended for re-run** the moment that file is dropped into `docs/papers/`.
+
 ---
 
-## Executive verdict
+## Executive verdict (old papers only)
 
 | Question | Answer |
 | --- | --- |
