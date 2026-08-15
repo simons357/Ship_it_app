@@ -5,7 +5,7 @@ Clean drafts for arXiv / journal send. Sources are Zenodo archives under
 
 **Cover sentence (every abstract / first page):**
 
-> No Millennium Prize problem is claimed solved in this note.
+> Unconditional global regularity for classical 3D Navier–Stokes is not claimed.
 
 ---
 
@@ -28,8 +28,8 @@ If three: add **#3**.
 ## Do not send (leave on Zenodo as history)
 
 - Triple Lock / three-in-one packs
-- Quantum Lens as Millennium connector
-- Global Regularity claiming Statement (B)
+- Quantum Lens prize-packaging drafts
+- Global Regularity overclaim drafts
 - Q6 dark-state Goldbach paper
 - Montgomery–Dyson “RH resolved”
 - Any draft that asserts unconditional SND for arbitrary large data
