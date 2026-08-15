@@ -1,0 +1,174 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{hyperref,enumitem}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{openproblem}{Open Problem}
+
+\title{\textbf{A Ring Lemma for Band-Limited Vorticity Direction\\
+and a Conditional Spectral Non-Dispersal Criterion}\\[6pt]
+\large on the Three-Dimensional Torus}
+\author{Jonathan Robert Simons\\
+Savannah, Georgia, USA\\
+\texttt{simonsmedicalinnovations@gmail.com}}
+\date{Preprint \quad|\quad Submission draft}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.92\linewidth}{\centering\small
+\textbf{Disclaimer.} No Millennium Prize problem is claimed solved.
+The main regularity statement is \emph{conditional} on Spectral Non-Dispersal (SND).
+Unconditional SND for arbitrary large $H^1$ data remains open.}}
+\end{center}
+\vspace{0.75em}
+
+\begin{abstract}
+We record two fluids-only tools for the incompressible Navier--Stokes equations on
+$\mathbb{T}^3$. First, a \emph{Ring Lemma}: if the velocity is Fourier-supported in a
+single Littlewood--Paley shell $S_{j^*}$, then on the set where vorticity is comparable
+to its $L^2$ norm the vorticity direction satisfies
+$\|\nabla\xi_0\|_{L^\infty(E_c)}\le C\,2^{j^*}$. Second, a \emph{Spectral Non-Dispersal}
+(SND) condition requiring that a positive fraction of enstrophy remain in a dominant
+shell, $\inf_t J(t)/X(t)\ge c_*>0$. Under SND we outline a conditional route to
+$H^1$ control via the Ring Lemma in the concentrated regime and enhanced dissipation
+in the spread regime. We do not claim unconditional global regularity.
+\end{abstract}
+
+\section{Setup}
+
+Let $u$ be a Leray--Hopf solution of
+\[
+\partial_t u+(u\cdot\nabla)u+\nabla p=\nu\Delta u,\qquad \operatorname{div}u=0
+\]
+on $\mathbb{T}^3$, with $u_0\in H^1$ divergence-free. Write $\Delta_j$ for dyadic
+Littlewood--Paley projections and
+\begin{align*}
+X_j(t)&=2^{2j}\|\Delta_j u(t)\|_{L^2}^2,\qquad
+X(t)=\sum_j X_j(t)=\|\nabla u(t)\|_{L^2}^2,\\
+J(t)&=\max_j X_j(t),\qquad
+\rho(t)=J(t)/X(t),\qquad
+j^*(t)=\operatorname{argmax}_j X_j(t).
+\end{align*}
+
+\begin{definition}[SND]
+A solution satisfies \emph{Spectral Non-Dispersal} on an interval $I$ if there exists
+$c_*>0$ such that
+\[
+\inf_{t\in I}\frac{J(t)}{X(t)}\ge c_*.
+\]
+Equivalently, the dominant shell always carries at least fraction $c_*$ of the enstrophy.
+\end{definition}
+
+\begin{remark}
+Some companion notes use an upper-bound convention $\sup_j a_j\le\rho_0$ for normalized
+shell energies $a_j$. Those are related but not identical; this note freezes the
+lower-bound form above.
+\end{remark}
+
+\section{The Ring Lemma}
+
+\begin{lemma}[Ring Lemma]
+Suppose $u\in H^1(\mathbb{T}^3)$ has Fourier support in a single shell
+$S_{j^*}=\{k\in\mathbb{Z}^3:|k|\sim 2^{j^*}\}$. Let $\omega=\operatorname{curl}u$,
+$\xi_0=\omega/|\omega|$ where $\omega\neq 0$, and
+\[
+E_c=\{x:|\omega(x)|\ge c\|\omega\|_{L^2}\}
+\]
+for a fixed $c\in(0,1)$. Then $|E_c|>0$ for $c$ small enough, and
+\[
+\|\nabla\xi_0\|_{L^\infty(E_c)}\le C\,2^{j^*}
+\]
+with $C$ depending only on $c$ and Bernstein constants on $\mathbb{T}^3$.
+The bound persists while Fourier support remains in $S_{j^*}$.
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+On a single shell, Bernstein yields
+$\|\nabla\omega\|_{L^\infty}\lesssim 2^{j^*}\|\omega\|_{L^\infty}
+\lesssim 2^{2j^*}\|\omega\|_{L^2}$ (up to absolute constants).
+On $E_c$,
+\[
+|\nabla\xi_0|\le\frac{|\nabla\omega|}{|\omega|}
++\frac{|\nabla|\omega||}{|\omega|}
+\le\frac{2\|\nabla\omega\|_{L^\infty}}{c\|\omega\|_{L^2}}
+\lesssim\frac{2^{j^*}}{c}.
+\]
+Measure of $E_c$ follows by Chebyshev. Persistence follows from persistence of
+Fourier support under the (smooth) dynamics on short times, or under an augmented
+parabolic approximation.
+\end{proof}
+
+\begin{corollary}[Band-limited CF control]
+Under the Ring Lemma hypotheses, $\nabla\xi_0$ is bounded on $E_c$ by a multiple of the
+shell frequency. In that band-limited regime, geometric vorticity-direction criteria of
+Constantin--Fefferman type apply with an explicit constant depending on $j^*$
+\cite{CF1993}.
+\end{corollary}
+
+\section{Conditional regularity under SND}
+
+\begin{theorem}[Conditional $H^1$ control]
+Let $u_0\in H^1(\mathbb{T}^3)$ be divergence-free and let $u$ be an associated
+Leray--Hopf solution. Suppose SND holds on $[0,T]$ with constant $c_*>0$. Then, in the
+concentrated regime where a dominant shell persists,
+\[
+u\in L^\infty([0,T];H^1)\cap L^2([0,T];H^2)
+\]
+provided the Ring Lemma may be applied to a band-limited approximation of the dominant
+shell contribution and standard dissipative estimates control the complementary spread
+regime. In particular, no finite-time singularity occurs on $[0,T]$ under these
+hypotheses.
+\end{theorem}
+
+\begin{proof}[Proof outline]
+\textbf{Concentrated regime.} SND forces $J\ge c_*X$, so a dominant scale $j^*$ carries a
+fixed enstrophy fraction. Approximating that contribution by a band-limited field and
+applying the Ring Lemma yields a vorticity-direction bound of size $O(2^{j^*})$ on $E_c$,
+feeding a CF-type geometric estimate that prevents vortex-stretching blowup while the
+band persists.
+
+\textbf{Spread regime.} When enstrophy is dispersed across many shells, shell-spread
+Poincar\'e / enhanced dissipation estimates give additional $H^1$ damping
+(companion quantitative notes). Finite occupation time of extreme spread regimes follows
+from energy identities.
+
+\textbf{Glue.} Alternation between regimes under SND keeps $\|\nabla u\|_{L^2}$ from
+blowing up on $[0,T]$. Details of constants and approximation are deferred to the longer
+conditional framework preprint; the present note isolates the geometric lemma and the
+conditional claim.
+\end{proof}
+
+\begin{remark}[What is not claimed]
+We do \emph{not} prove SND for arbitrary large data.
+We do not identify SND with arithmetic operators $1/\gcd$ or even-sum
+prime-partition conditions.
+\end{remark}
+
+\section{Open problem}
+
+\begin{openproblem}
+Prove or disprove that every Leray--Hopf solution with $u_0\in H^1(\mathbb{T}^3)$
+satisfies SND on $[0,\infty)$ for some $c_*=c_*(u_0,\nu)>0$.
+\end{openproblem}
+
+\begin{thebibliography}{9}
+\bibitem{CF1993}
+P.~Constantin and C.~Fefferman,
+\textit{Direction of vorticity and the problem of global regularity for the
+Navier--Stokes equations},
+Indiana Univ.\ Math.\ J.\ \textbf{42} (1993), 775--789.
+
+\bibitem{BKM1984}
+J.~T.~Beale, T.~Kato, and A.~Majda,
+\textit{Remarks on the breakdown of smooth solutions for the 3-D Euler equations},
+Comm.\ Math.\ Phys.\ \textbf{94} (1984), 61--66.
+\end{thebibliography}
+
+\end{document}

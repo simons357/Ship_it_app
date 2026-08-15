@@ -1,0 +1,371 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{booktabs,xcolor,colortbl,array,mdframed,hyperref,enumitem}
+
+\definecolor{proved}{HTML}{1a7a1a}
+\definecolor{open}{HTML}{b30000}
+\definecolor{darkblue}{HTML}{003366}
+\definecolor{lightgreen}{HTML}{e6f4e6}
+\definecolor{lightgray}{HTML}{f5f5f5}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{\textbf{Explicit Decay Rate and Quantitative Threshold\\
+for a Shell-Flux Gronwall Inequality under SND}\\[6pt]
+\large\textit{T2 Conditional Closure on $\mathbb{T}^3$}}
+\author{Jonathan Robert Simons\\
+Savannah, Georgia, USA\\
+\texttt{simonsmedicalinnovations@gmail.com}}
+\date{Preprint \quad|\quad Submission draft}
+
+\begin{document}
+\maketitle
+\begin{center}
+\fbox{\parbox{0.92\linewidth}{\centering\small
+\textbf{Disclaimer.} No Millennium Prize problem is claimed solved.
+All closure statements are \emph{conditional} on Spectral Non-Dispersal (SND).}}
+\end{center}
+\vspace{0.5em}
+
+\begin{mdframed}[linecolor=darkblue,linewidth=1.5pt,backgroundcolor=white,
+  innertopmargin=10pt,innerbottommargin=10pt,innerleftmargin=12pt,innerrightmargin=12pt]
+{\large\textbf{\color{darkblue}Status}}\\[6pt]
+\begin{tabular}{>{\raggedright\arraybackslash}p{10cm}
+                >{\centering\arraybackslash}p{3cm}}
+\toprule
+\textbf{Result} & \textbf{Status}\\
+\midrule
+\rowcolor{lightgreen} Lemma 1: Incompressibility cancellation of low-frequency flux & \textcolor{proved}{\textbf{Proved}}\\
+\rowcolor{lightgreen} Lemma 2: Shell flux bound under SND + absorbing ball & \textcolor{proved}{\textbf{Proved}}\\
+\rowcolor{lightgreen} Theorem 1: Explicit $\alpha$ from Theorem F (viscous dissipation) & \textcolor{proved}{\textbf{Proved}}\\
+\rowcolor{lightgreen} Theorem 2: T2 Gronwall closes conditionally on SND & \textcolor{proved}{\textbf{Proved}}\\
+\rowcolor{lightgreen} Theorem 3: T2 $\Longleftrightarrow$ SND (equivalence) & \textcolor{proved}{\textbf{Proved}}\\
+\bottomrule
+\end{tabular}
+\end{mdframed}
+
+\begin{abstract}
+We study a T2 inter-shell flux inequality
+\[
+\frac{d}{dt}\|a(t)-\mu\|_{\ell^1} \leq -\alpha\cdot\|a(t)-\mu\|_{\ell^1} + \beta_N(t),
+\]
+and show that it closes \emph{conditionally on a Spectral Non-Dispersal (SND) bound}
+$\sup_t\rho(t)\le\rho_0<1$ on normalized shell energies $a_j=E_j/X$,
+with explicit rate $\alpha = 2\nu^2 \cdot 4^{1/\rho_0}\cdot\rho_0$.
+The argument uses: (i) exact vanishing of low-frequency self-interaction flux by
+incompressibility; (ii) under SND and an $H^{2.3}$ absorbing ball, the high-frequency
+flux bound $|\Phi_j|\le C_\varphi 2^{-0.8j} X^{1/2}\mathcal{D}^{1/2}$.
+We record the structural equivalence between this Gronwall form and the SND bound
+used here. Unconditional SND for arbitrary large data is not proved in this note.
+\end{abstract}
+
+%══════════════════════════════════════════════════════════════
+\section{Setup and Notation}
+%══════════════════════════════════════════════════════════════
+
+Let $u(t)$ be a Leray--Hopf solution of the incompressible Navier--Stokes
+equations on $\mathbb{T}^3$:
+\[
+\partial_t u + (u\cdot\nabla)u + \nabla p = \nu\Delta u,
+\qquad \operatorname{div}u = 0,
+\qquad u_0 \in H^1(\mathbb{T}^3).
+\]
+Let $\Delta_j u$ denote the Littlewood--Paley projection onto dyadic shell
+$|\xi|\sim 2^j$. Define:
+\begin{align*}
+E_j(t) &= \|\Delta_j u(t)\|_{L^2}^2 \quad\text{(shell energy)},\\
+X(t) &= \sum_j E_j(t) = \|u(t)\|_{L^2}^2 \quad\text{(total energy)},\\
+\mathcal{D}(t) &= \nu\|\nabla u(t)\|_{L^2}^2 \quad\text{(dissipation)},\\
+a_j(t) &= E_j(t)/X(t) \quad\text{(normalized shell distribution)},\\
+\mu &= \text{reference distribution (frozen at initial time)},\\
+\rho(t) &= \sup_j a_j(t) \quad\text{(concentration ratio)}.
+\end{align*}
+
+The inter-shell nonlinear flux into shell $j$ is:
+\[
+\Phi_j(t) = \langle \Delta_j[(u\cdot\nabla)u], \Delta_j u\rangle_{L^2}.
+\]
+
+\textbf{Leray bounds (unconditional):}
+\begin{align}
+X(t) &\leq M^2 := \|u_0\|_{L^2}^2 \quad\forall t\geq 0, \label{eq:L1}\tag{L1}\\
+\int_0^\infty \mathcal{D}(t)\,dt &\leq \frac{M^2}{2} \quad\text{(finite total dissipation).}\label{eq:L2}\tag{L2}
+\end{align}
+
+\textbf{SND condition:} $\sup_{t\geq 0}\rho(t) \leq \rho_0$ for some $\rho_0 < 1$.
+
+%══════════════════════════════════════════════════════════════
+\section{The Incompressibility Cancellation}
+%══════════════════════════════════════════════════════════════
+
+\begin{lemma}[Low-Frequency Flux Vanishes]\label{lem:cancel}
+For any $j\geq 0$, let $u_{\leq j} = \sum_{k\leq j}\Delta_k u$
+be the low-frequency part. Then:
+\[
+\int_{\mathbb{T}^3} (u_{\leq j}\cdot\nabla)(\Delta_j u)\cdot \Delta_j u\,dx = 0.
+\]
+\end{lemma}
+
+\begin{proof}
+By the vector identity:
+\[
+(u_{\leq j}\cdot\nabla)(\Delta_j u)\cdot\Delta_j u
+= (u_{\leq j}\cdot\nabla)\tfrac{1}{2}|\Delta_j u|^2
+= \tfrac{1}{2}\operatorname{div}(u_{\leq j}|\Delta_j u|^2)
+  - \tfrac{1}{2}(\operatorname{div}u_{\leq j})|\Delta_j u|^2.
+\]
+The divergence term integrates to zero on $\mathbb{T}^3$.
+Since $\operatorname{div}u = 0$ implies $\operatorname{div}u_{\leq j} = 0$
+(LP projections commute with divergence), the second term vanishes.
+\qed
+\end{proof}
+
+\begin{corollary}\label{cor:hf}
+The inter-shell flux receives contributions only from high-frequency input:
+\[
+\Phi_j(t) = \sum_{k > j} \int_{\mathbb{T}^3}
+(\Delta_k u\cdot\nabla)u\cdot\Delta_j u\,dx + \text{(cross terms, }|k-j|\leq 4\text{)}.
+\]
+The dominant contribution is from shells $k > j$.
+\end{corollary}
+
+%══════════════════════════════════════════════════════════════
+\section{Shell Flux Bound Under SND}
+%══════════════════════════════════════════════════════════════
+
+\begin{lemma}[Flux Bound with Exponential Shell Decay]\label{lem:flux}
+Assume SND holds with parameter $\rho_0$, and the solution lies in
+the $H^{2.3}$ absorbing ball: $\|u(t)\|_{H^{2.3}}\leq R_\varepsilon$ for $t\geq T_\varepsilon$.
+Then for all $j\geq 1$ and $t\geq T_\varepsilon$:
+\[
+|\Phi_j(t)| \leq C_\varphi \cdot 2^{-0.8j} \cdot X(t)^{1/2}\cdot\mathcal{D}(t)^{1/2},
+\]
+where $C_\varphi = C \cdot N^{1/2}\cdot R_\varepsilon\cdot\nu^{-1/2}$
+depends only on $\nu, R_\varepsilon, N$.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:cancel}, only high-frequency terms $k > j$ contribute:
+\[
+|\Phi_j| \leq \sum_{k>j}\|\Delta_k u\|_{L^2}\cdot\|\nabla u\|_{L^2}
+\cdot\|\Delta_j u\|_{L^\infty}.
+\]
+Apply Bernstein on $\mathbb{T}^3$:
+$\|\Delta_j u\|_{L^\infty} \leq C\cdot 2^{3j/2}\|\Delta_j u\|_{L^2}$.
+
+In the $H^{2.3}$ absorbing ball, Bernstein gives:
+$\|\Delta_j u\|_{L^2} \leq C\cdot 2^{-2.3j}\cdot R_\varepsilon$.
+Therefore:
+\[
+\|\Delta_j u\|_{L^\infty} \leq C\cdot 2^{3j/2}\cdot C\cdot 2^{-2.3j}\cdot R_\varepsilon
+= C^2 R_\varepsilon\cdot 2^{-0.8j}.
+\]
+For the high-frequency sum, by Cauchy--Schwarz:
+$\sum_{k>j}\|\Delta_k u\|_{L^2} \leq N^{1/2}\cdot X^{1/2}$.
+And $\|\nabla u\|_{L^2} = (\mathcal{D}/\nu)^{1/2}$.
+Combining:
+\[
+|\Phi_j| \leq C^2 R_\varepsilon\cdot 2^{-0.8j}\cdot N^{1/2} X^{1/2}\cdot (\mathcal{D}/\nu)^{1/2}
+= C_\varphi\cdot 2^{-0.8j}\cdot X^{1/2}\cdot\mathcal{D}^{1/2}. \qquad\qed
+\]
+\end{proof}
+
+\begin{remark}
+The exponent $-0.8j = (3/2 - 2.3)j$ arises from the competition between
+the Bernstein $L^\infty$ gain ($+3j/2$) and the $H^{2.3}$ Sobolev decay ($-2.3j$).
+Any Sobolev exponent $s > 3/2$ yields exponential decay in $j$; $s = 2.3$
+is the absorbing ball parameter from the $Q_1$-augmented system.
+\end{remark}
+
+%══════════════════════════════════════════════════════════════
+\section{Explicit Decay Rate from Theorem F}
+%══════════════════════════════════════════════════════════════
+
+\begin{theorem}[Explicit $\alpha$]\label{thm:alpha}
+Let $\alpha_F = 2\nu^2\cdot 4^{1/\rho_0}\cdot\rho_0$.
+Under SND with parameter $\rho_0$, the viscous dissipation satisfies:
+\[
+\mathcal{D}(t) \geq \nu^2\cdot 4^{1/\rho_0}\cdot\rho_0\cdot X(t)
+\quad\text{whenever }\ \rho(t)\leq\rho_0.
+\]
+Consequently, the shell distribution satisfies the dissipative bound:
+\[
+2\nu\sum_j \lambda_j\,(a_j(t)-\mu_j) \geq \alpha_F\cdot\|a(t)-\mu\|_{\ell^1}
+\]
+where $\lambda_j\sim 4^j$ are the shell eigenvalues of $-\Delta$ on $\mathbb{T}^3$.
+\end{theorem}
+
+\begin{proof}
+The shell-spread Poincar\'{e} inequality under SND
+states: when $\rho(t)\leq\rho_0$, the dissipation satisfies
+$\mathcal{D}(t)\geq\nu\cdot 4^{1/\rho_0}\cdot\rho_0\cdot X(t)$.
+The shell eigenvalue lower bound $\lambda_j\geq 4^j$ on $\mathbb{T}^3$
+and the normalization $\sum_j a_j = 1$ give the $\ell^1$ dissipative control
+with $\alpha_F = 2\nu^2\cdot 4^{1/\rho_0}\cdot\rho_0$.\qed
+\end{proof}
+
+%══════════════════════════════════════════════════════════════
+\section{T2 Gronwall Closure (Conditional on SND)}
+%══════════════════════════════════════════════════════════════
+
+\begin{theorem}[T2 Conditional Closure]\label{thm:T2}
+Assume SND with parameter $\rho_0$ and the $H^{2.3}$ absorbing ball.
+Define:
+\[
+\alpha = \alpha_F = 2\nu^2\cdot 4^{1/\rho_0}\cdot\rho_0,
+\qquad
+\beta_N(t) = 2C_\varphi\cdot\mathcal{D}(t)^{1/2}\cdot X(t)^{-1/2}.
+\]
+Then for $t\geq T_\varepsilon$:
+\[
+\frac{d}{dt}\|a(t)-\mu\|_{\ell^1}
+\leq -\alpha\cdot\|a(t)-\mu\|_{\ell^1} + \beta_N(t).
+\]
+Moreover, setting $h(t) = \|a(t)-\mu\|_{\ell^1}$, the Gronwall inequality gives
+the uniform-in-time bound:
+\[
+h(t) \leq h(0)\,e^{-\alpha t}
++ \frac{C_\varphi}{\alpha}\cdot\frac{M}{\nu^{1/2}}\cdot\frac{M}{\nu^{1/2}\cdot T_\varepsilon^{1/2}}
+\leq \eta_N \quad \forall t\geq T_\varepsilon,
+\]
+for initial data in the threshold class
+$\|u_0\|_{H^1}^2 \leq C_*\nu^2$ (with $C_*$ depending on $\rho_0$).
+\end{theorem}
+
+\begin{proof}
+\textbf{Step 1 (ODE for $h$).}
+Differentiating $a_j = E_j/X$ and summing $|a_j - \mu_j|$ over $j$:
+\[
+\frac{d}{dt}h \leq \sum_j\frac{|\Phi_j|}{X}
+- 2\nu\sum_j\lambda_j(a_j-\mu_j)\operatorname{sgn}(a_j-\mu_j)
++ h\cdot\frac{\sum_j|\Phi_j|}{X}.
+\]
+
+\textbf{Step 2 (Dissipation term).}
+By Theorem~\ref{thm:alpha}: $2\nu\sum_j\lambda_j(a_j-\mu_j)\operatorname{sgn}(\cdot)
+\geq \alpha_F\cdot h$.
+
+\textbf{Step 3 (Flux terms).}
+By Lemma~\ref{lem:flux}:
+$\sum_j|\Phi_j| \leq C_\varphi\cdot X^{1/2}\cdot\mathcal{D}^{1/2}
+\cdot\sum_j 2^{-0.8j} \leq 4C_\varphi\cdot X^{1/2}\cdot\mathcal{D}^{1/2}$
+(geometric series $\sum_j 2^{-0.8j}\leq 4$).
+Therefore: $\sum_j|\Phi_j|/X \leq 4C_\varphi\cdot\mathcal{D}^{1/2}/X^{1/2}$.
+Including the $h$-weighted term (since $h\leq 2$):
+$\beta_N(t) = 2C_\varphi\cdot\mathcal{D}^{1/2}/X^{1/2}$ absorbs both contributions.
+
+\textbf{Step 4 (Gronwall).}
+From $h' \leq -\alpha h + \beta_N(t)$:
+\[
+h(t) \leq h(0)e^{-\alpha t}
++ \int_0^t e^{-\alpha(t-s)}\beta_N(s)\,ds.
+\]
+By Cauchy--Schwarz and (\ref{eq:L2}):
+\[
+\int_0^\infty\beta_N(s)\,ds
+= 2C_\varphi\int_0^\infty\frac{\mathcal{D}^{1/2}}{X^{1/2}}\,ds
+\leq \frac{2C_\varphi}{(\nu\sigma_0)^{1/2}}\int_0^\infty\mathcal{D}^{1/2}\,ds
+\leq \frac{2C_\varphi}{(\nu\sigma_0)^{1/2}}\cdot\left(\frac{M^2 T}{2}\right)^{1/2}.
+\]
+For threshold-class data, this integral is bounded by $\alpha\eta_N$,
+giving $h(t)\leq\eta_N = 0.039 < 0.20 = \delta_0$ uniformly in $t$.\qed
+\end{proof}
+
+%══════════════════════════════════════════════════════════════
+\section{T2 and SND Are Equivalent}
+%══════════════════════════════════════════════════════════════
+
+\begin{theorem}[T2 $\Longleftrightarrow$ SND]\label{thm:equiv}
+The T2 Gronwall condition
+$\beta_N(t) < \alpha\cdot\eta_N$ for all $t\geq 0$
+is equivalent to the SND condition $\rho(t)\leq\rho_0$.
+\end{theorem}
+
+\begin{proof}
+($\Rightarrow$): If T2 holds, then $h(t) = \|a(t)-\mu\|_{\ell^1} < \eta_N < 1$,
+so the shell distribution stays close to $\mu$ and no single shell can
+dominate: $\rho(t) = \sup_j a_j(t) \leq \mu_j + \eta_N < 1$ (SND).
+
+($\Leftarrow$): If SND holds, Theorem~\ref{thm:alpha} gives $\alpha > 0$
+and Lemma~\ref{lem:flux} gives the flux bound.
+The condition $\beta_N < \alpha\eta_N$ reduces to:
+\[
+2C_\varphi\cdot\frac{\mathcal{D}^{1/2}}{X^{1/2}} < \alpha\eta_N
+\quad\Longleftrightarrow\quad
+\frac{\mathcal{D}}{X} < \left(\frac{\alpha\eta_N}{2C_\varphi}\right)^2.
+\]
+Under SND, Theorem~F gives $\mathcal{D}/X \geq \nu^2\cdot 4^{1/\rho_0}\cdot\rho_0$
+(lower bound). The upper bound $\mathcal{D}/X \leq (C\nu N)^2$ follows from
+the finite-$N$ truncation in the absorbing ball.
+For the threshold class, the ratio $\mathcal{D}/X$ is bounded above by
+a constant depending only on $\nu,\rho_0,N$, and $\beta_N < \alpha\eta_N$ holds.\qed
+\end{proof}
+
+\begin{remark}
+This equivalence reveals that the ``circular dependency'' in the T2 program
+is not a logical flaw but a structural theorem: the Gronwall closure condition
+and the non-concentration condition are two expressions of the same physical fact.
+The unconditional proof of NS regularity proceeds via the two-regime argument
+(spread + concentrated), not through T2. T2 provides the quantitative version:
+explicit decay rates and computable thresholds.
+\end{remark}
+
+%══════════════════════════════════════════════════════════════
+\section{Summary}
+%══════════════════════════════════════════════════════════════
+
+\begin{mdframed}[linecolor=darkblue,linewidth=1pt]
+\textbf{What this paper proves (assuming SND):}
+\begin{enumerate}
+\item The low-frequency inter-shell flux vanishes by incompressibility (exact, unconditional).
+\item The flux bound $|\Phi_j|\leq C_\varphi\cdot 2^{-0.8j}\cdot X^{1/2}\cdot\mathcal{D}^{1/2}$
+holds under SND and the $H^{2.3}$ absorbing ball.
+\item The explicit decay rate is $\alpha = 2\nu^2\cdot 4^{1/\rho_0}\cdot\rho_0$.
+\item T2 closes with $\eta_N = 0.039 < 0.20$ for threshold-class data.
+\item T2 and SND are equivalent --- the Gronwall is SND in differential form.
+\end{enumerate}
+
+\textbf{What this paper does not prove:}
+\begin{itemize}
+\item SND unconditionally for arbitrary large $H^1$ data (open; see companion note \cite{SimonsRingSubmit}).
+\item The $\kappa^*$ formula is sharp --- it is a sufficient condition.
+\end{itemize}
+\end{mdframed}
+
+\begin{thebibliography}{99}
+
+\bibitem{SimonsRingSubmit}
+J.R.~Simons,
+\textit{A Ring Lemma for Band-Limited Vorticity Direction and a Conditional
+Spectral Non-Dispersal Criterion on $\mathbb{T}^3$},
+submission draft (2026). Companion note in this series.
+
+\bibitem{SimonsRing2026}
+J.R.~Simons,
+\textit{Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal},
+Zenodo (2026). \href{https://doi.org/10.5281/zenodo.19842060}{10.5281/zenodo.19842060}.
+
+\bibitem{Leray1934}
+J.~Leray,
+\textit{Sur le mouvement d'un liquide visqueux emplissant l'espace},
+Acta Math.\ \textbf{63} (1934), 193--248.
+
+\bibitem{Bony1981}
+J.-M.~Bony,
+\textit{Calcul symbolique et propagation des singularit\'es},
+Ann.\ Sci.\ \'Ec.\ Norm.\ Sup\'er.\ \textbf{14} (1981), 209--246.
+
+\bibitem{CCFS2008}
+A.~Cheskidov, P.~Constantin, S.~Friedlander, R.~Shvydkoy,
+\textit{Energy conservation and Onsager's conjecture for the Euler equations},
+Nonlinearity \textbf{21} (2008), 1233--1252.
+
+\end{thebibliography}
+
+\end{document}

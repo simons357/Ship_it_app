@@ -1,0 +1,132 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{hyperref,enumitem}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{gap}{Analytic gaps (open)}
+
+\title{\textbf{Route C: A Spectral Approach to Zero-Density Estimates,\\
+Conditional on Two Analytic Gaps}}
+\author{Jonathan Robert Simons\\
+Savannah, Georgia, USA\\
+\texttt{simonsmedicalinnovations@gmail.com}}
+\date{Preprint \quad|\quad Submission draft}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.92\linewidth}{\centering\small
+\textbf{Disclaimer.} No Millennium Prize problem is claimed solved.
+This note is \emph{conditional}: two analytic gaps remain open.
+We do \emph{not} claim a proof of the Riemann Hypothesis.}}
+\end{center}
+\vspace{0.75em}
+
+\begin{abstract}
+Let $Q_N[i,j]=1/(\gcd(i,j)\sqrt{ij})$. Numerics suggest
+$\lambda_{\min}(Q_N)/\log N\to -1/(2\pi)$ and that the minimizing eigenvector
+$v_N^*$ stays close to the normalized alternating vector
+$\hat v_{\mathrm{alt}}[k]=(-1)^{k+1}/\sqrt{k}$. We outline a Route~C architecture:
+local M\"obius control (Bombieri--Vinogradov scale), a ring/gradient obstruction
+to sparse concentration, and Davis--Kahan perturbation across a spectral gap.
+Closing the architecture would yield a polynomial proximity bound
+$\|v_N^*-\hat v_{\mathrm{alt}}\|\ll N^{-\eta}$ for some $\eta>0$, and thence
+the spectral-limit conjecture --- \emph{conditional} on two gaps stated below.
+We do not claim those gaps are closed, and we do not claim RH.
+\end{abstract}
+
+\section{Operator and numerical targets}
+
+\[
+Q_N[i,j]=\frac{1}{\gcd(i,j)\sqrt{ij}},\qquad 1\le i,j\le N.
+\]
+Write $v_{\mathrm{alt}}[k]=(-1)^{k+1}/\sqrt{k}$ and
+$\hat v_{\mathrm{alt}}=v_{\mathrm{alt}}/\|v_{\mathrm{alt}}\|$.
+Observed for moderate $N$ (to $N=200$ in archived checks):
+\begin{itemize}[leftmargin=1.2em]
+\item $\lambda_{\min}(Q_N)/\log N$ tracks $-1/(2\pi)$;
+\item $|\langle v_N^*,\hat v_{\mathrm{alt}}\rangle|$ stays large;
+\item a positive gap $\lambda_2-\lambda_{\min}$ appears to persist.
+\end{itemize}
+These are numerical observations, not theorems.
+
+\section{Architecture (conditional)}
+
+\begin{theorem}[Route C, conditional template]
+Assume Gap~A (local M\"obius / parity evaluation) and Gap~B (uniform spectral-gap
+lower bound). Then there exist $C,\eta>0$ such that for all large $N$,
+\[
+\|v_N^*-\hat v_{\mathrm{alt}}\|\le C\,N^{-\eta}.
+\]
+In particular, under the same gaps,
+\[
+\frac{\lambda_{\min}(Q_N)}{\log N}\to -\frac{1}{2\pi}.
+\]
+\end{theorem}
+
+\begin{remark}
+A standard bridge from a sufficiently strong spectral-floor statement to
+zero-density / Mertens-type bounds (and thence RH via classical criteria)
+is logically separate. Even if Gaps~A--B close, that bridge must be cited
+and checked independently. This note does not package RH as proved.
+\end{remark}
+
+\section{Inputs already usable as lemmas}
+
+\begin{lemma}[Local M\"obius sketch]
+On blocks of length $M=N^{1/4}$, Bombieri--Vinogradov-scale equidistribution
+suggests a deviation bound of order $M^{5/6}$ after splitting small / medium / large
+divisors. Making this fully uniform in the Route~C ranges is part of Gap~A.
+\end{lemma}
+
+\begin{lemma}[Concentration cost]
+Sparse concentration of a trial vector on ``bad'' blocks forces large gradient /
+oscillation cost relative to a spectral gap. In the fluids companion this is
+the Ring Lemma; here it is only an analogy until Gap~B supplies a proved gap.
+\end{lemma}
+
+\begin{gap}
+\begin{enumerate}[leftmargin=1.2em]
+\item \textbf{Gap A.} Rigorous evaluation
+$v_{\mathrm{alt}}^\top Q_N v_{\mathrm{alt}}\sim -\log N/(2\pi)$
+from the even-$d$ M\"obius subseries, without assuming the target constant
+from zero-density formulae.
+\item \textbf{Gap B.} Analytic lower bound
+$\lambda_2(Q_N)-\lambda_{\min}(Q_N)\ge c_0>0$ uniform in $N$
+(currently numeric).
+\end{enumerate}
+\end{gap}
+
+\section{What is not claimed}
+
+\begin{itemize}[leftmargin=1.2em]
+\item RH, or any unconditional zero-density theorem.
+\item Full-spectrum Bridge floors of the form $\lambda_{\min}(Q_N)>-1/2$
+(false for moderate $N$ on related normalizations).
+\item Closure of Gaps~A--B in this draft.
+\end{itemize}
+
+\begin{thebibliography}{99}
+\bibitem{Littlewood1912}
+J.E.~Littlewood,
+\textit{Quelques cons\'equences de l'hypoth\`ese que la fonction $\zeta(s)$
+de Riemann n'a pas de z\'eros dans le demi-plan $\mathrm{Re}(s)>1/2$},
+C.~R.~Acad.~Sci.~Paris \textbf{154} (1912).
+
+\bibitem{Bombieri}
+E.~Bombieri,
+\textit{On the large sieve},
+Mathematika \textbf{12} (1965), 201--225.
+
+\bibitem{ZenodoRouteC}
+J.R.~Simons,
+\textit{Route C} (archived draft),
+Zenodo \href{https://doi.org/10.5281/zenodo.20518388}{10.5281/zenodo.20518388}.
+\end{thebibliography}
+
+\end{document}

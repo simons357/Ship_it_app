@@ -103,6 +103,8 @@ Keep those Zenodo records as **archive history** if you want timestamps; do not 
 
 ## Practical submit pack (minimum viable reward)
 
+Clean TeX drafts live in **`docs/papers/submit/`** (weekend send queue + README).
+
 If you only do **one**: Paper **1** (Phi-renorm).  
 If you do **two**: **1** + **2** (Ring/SND conditional).  
 If you do **three**: add **3** (T2) as companion.

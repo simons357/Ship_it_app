@@ -1,0 +1,77 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{remark}[theorem]{Remark}
+
+\title{\textbf{A Rayleigh Lower Bound for Normalized Inverse-GCD\\
+Matrices on Distinct Prime Pairs}}
+\author{Jonathan Robert Simons\\
+Savannah, Georgia, USA\\
+\texttt{simonsmedicalinnovations@gmail.com}}
+\date{Preprint \quad|\quad Submission draft}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.92\linewidth}{\centering\small
+\textbf{Disclaimer.} No Millennium Prize problem is claimed solved.
+Restricted Rayleigh bound only; not a full-spectrum floor.}}
+\end{center}
+\vspace{0.75em}
+
+\begin{abstract}
+Let $\widetilde Q_N(i,j)=1/(\gcd(i,j)\sqrt{ij})$ for $1\le i,j\le N$.
+For distinct primes $p,q$ set $v=e_p-e_q$. We prove
+\[
+R(v)=\frac{v^\top\widetilde Q_N v}{\|v\|_2^2}
+=\frac12\Big(\frac1{p^2}+\frac1{q^2}\Big)-\frac1{\sqrt{pq}}
+\;>\;-\frac12.
+\]
+We do not claim a full-spectrum floor $\lambda_{\min}(\widetilde Q_N)>-1/2$
+(false for moderate $N$), nor multi-representation bounds.
+\end{abstract}
+
+\section{Operator}
+
+\[
+\widetilde Q_N(p,p)=\frac1{p^2},\qquad
+\widetilde Q_N(p,q)=\frac1{\sqrt{pq}}\quad(p\neq q\text{ primes}).
+\]
+
+\section{Theorem}
+
+\begin{theorem}
+For distinct primes $p,q$,
+\[
+R(e_p-e_q)=\frac12\Big(\frac1{p^2}+\frac1{q^2}\Big)-\frac1{\sqrt{pq}}\;>\;-\frac12.
+\]
+\end{theorem}
+
+\begin{proof}
+\[
+R+\frac12
+=\frac12+\frac1{2p^2}+\frac1{2q^2}-\frac1{\sqrt{pq}}
+>\frac12-\frac1{\sqrt{pq}}.
+\]
+Since $pq\ge 2\cdot 3=6$, one has $1/\sqrt{pq}\le 1/\sqrt6<1/2$, hence $R+1/2>0$.
+\end{proof}
+
+\begin{remark}
+The Rayleigh quotient may be negative (e.g.\ $(p,q)=(2,3)$ gives $R\approx -0.228$)
+but remains strictly above $-1/2$. Full-spectrum $\lambda_{\min}(\widetilde Q_N)$
+falls below $-1/2$ already for small $N$; the present bound is restricted to
+single prime-pair difference vectors.
+\end{remark}
+
+\section{Open}
+
+Uniform control for multi-representation vectors
+$v=\sum_a(e_{p_a}-e_{q_a})$ over unordered prime partitions of a fixed even
+integer remains open. Numeric checks through $N=200$ stay above $-1/2$ on
+sampled multi-rep vectors; that does not constitute a proof.
+
+\end{document}
