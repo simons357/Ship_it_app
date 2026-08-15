@@ -1,7 +1,8 @@
 # SND / Theorem H — honest status (Tao panel companion)
 
 **Source:** Zenodo `10.5281/zenodo.20518057` (`docs/papers/SND_RING_LEMMA_NS.tex`)  
-**Panel:** `docs/math/TAO-MATH-PANEL-SND-H.md`
+**Panel:** `docs/math/TAO-MATH-PANEL-SND-H.md`  
+**ARCHON final review:** `docs/math/ARCHON-NS-FINAL-REVIEW-PANEL.md` (do **not** submit as Clay Statement (B))
 
 ## Definitions (freeze these)
 
