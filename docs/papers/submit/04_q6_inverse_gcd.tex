@@ -1,0 +1,288 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{booktabs,hyperref,enumitem,array,xcolor,colortbl,mdframed}
+
+\definecolor{proved}{HTML}{1a7a1a}
+\definecolor{open}{HTML}{b30000}
+\definecolor{withdrawn}{HTML}{555555}
+\definecolor{lightgreen}{HTML}{e6f4e6}
+\definecolor{lightred}{HTML}{fde8e8}
+\definecolor{lightgray}{HTML}{f5f5f5}
+\definecolor{darkblue}{HTML}{003366}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{openproblem}{Open Problem}
+
+\newcommand{\Qt}{\widetilde{Q}}
+\newcommand{\lmin}{\lambda_{\min}}
+
+\title{\textbf{The Inverse-GCD Operator $Q_N$:\\
+Definitions, a Restricted Rayleigh Bound,\\
+and Withdrawal of Full-Spectrum Floor Claims}\\[6pt]
+\large\textit{Q6 in proper form --- spectral note, not a prize paper}}
+\author{Jonathan Robert Simons\\
+Savannah, Georgia, USA\\
+\texttt{simonsmedicalinnovations@gmail.com}}
+\date{Corrected preprint \quad|\quad August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.92\linewidth}{\centering\small
+\textbf{Disclaimer.}
+This note defines the inverse-GCD (``Q6'') matrices and proves one
+restricted inequality (Bridge$^*$).
+It does \emph{not} claim Goldbach, the Riemann Hypothesis, or
+Navier--Stokes regularity.
+Full-spectrum floors $\lmin>-1/2$ are \emph{false} for the named matrices.}}
+\end{center}
+\vspace{0.6em}
+
+\begin{mdframed}[linecolor=darkblue,linewidth=1.2pt]
+{\large\textbf{\color{darkblue}Status}}\\[4pt]
+\begin{tabular}{>{\raggedright\arraybackslash}p{9.2cm}
+                >{\centering\arraybackslash}p{3.2cm}}
+\toprule
+\textbf{Claim} & \textbf{Status}\\
+\midrule
+\rowcolor{lightgreen}
+Definitions of $Q_N$, $\Qt_N$, $H_N$ & \textcolor{proved}{\textbf{Locked}}\\
+\rowcolor{lightgreen}
+Bridge$^*$: $R(e_p-e_q)>-1/2$ on $\Qt_N$ & \textcolor{proved}{\textbf{Proved}}\\
+\rowcolor{lightgreen}
+Positive orthant: $v\ge 0\Rightarrow v^\top\Qt_N v\ge 0$ & \textcolor{proved}{\textbf{Proved}}\\
+\rowcolor{lightred}
+$\lmin(Q_N)>-1/2$ for all $N$ & \textcolor{withdrawn}{\textbf{False}}\\
+\rowcolor{lightred}
+$\lmin(\Qt_N)>-1/2$ for all $N$ & \textcolor{withdrawn}{\textbf{False}}\\
+\rowcolor{lightred}
+Dark-state $\Leftrightarrow$ Goldbach (June 2026 draft) & \textcolor{withdrawn}{\textbf{Withdrawn}}\\
+\rowcolor{lightgray}
+Multi-representation Bridge$^*$ & \textcolor{open}{\textbf{Open}}\\
+\bottomrule
+\end{tabular}
+\end{mdframed}
+
+\begin{abstract}
+We give a corrected account of the inverse-GCD operators used in earlier
+``Q6'' drafts. Write
+\[
+Q_N(i,j)=\frac{1}{\gcd(i,j)},\qquad
+\Qt_N(i,j)=\frac{1}{\gcd(i,j)\sqrt{ij}},
+\qquad 1\le i,j\le N,
+\]
+and let $H_N$ be the degree-normalized form of $\Qt_N$.
+We prove that for distinct primes $p,q$,
+\[
+R(e_p-e_q)
+=\frac12\Big(\frac1{p^2}+\frac1{q^2}\Big)-\frac1{\sqrt{pq}}
+\;>\;-\frac12
+\]
+on $\Qt_N$ (Bridge$^*$).
+We also record that every nonnegative vector has nonnegative Rayleigh
+quotient on $\Qt_N$.
+We withdraw the full-spectrum Bridge claim $\lmin>-1/2$: already for
+moderate $N$, $\lmin(Q_N)<-1/2$ and $\lmin(\Qt_N)<-1/2$.
+Earlier dark-state / Goldbach packaging and any Navier--Stokes claim from
+these matrices are withdrawn.
+\end{abstract}
+
+\section{Operators}
+
+\begin{definition}[Raw inverse-GCD]
+\[
+Q_N(i,j)=\frac{1}{\gcd(i,j)},\qquad 1\le i,j\le N.
+\]
+\end{definition}
+
+\begin{definition}[Normalized inverse-GCD]
+\[
+\Qt_N(i,j)=\frac{1}{\gcd(i,j)\sqrt{ij}}.
+\]
+In particular, for distinct primes $p,q\le N$,
+\[
+\Qt_N(p,p)=\frac1{p^2},\qquad
+\Qt_N(p,q)=\frac1{\sqrt{pq}}.
+\]
+\end{definition}
+
+\begin{definition}[Degree-normalized form]
+Let $d_i=\sum_{j=1}^N \Qt_N(i,j)$ and $D=\mathrm{diag}(d_1,\ldots,d_N)$.
+Set
+\[
+H_N = D^{-1/2}\,\Qt_N\,D^{-1/2}.
+\]
+\end{definition}
+
+\begin{remark}[Hygiene]
+These three matrices are different.
+A spectral statement about one does not automatically transfer to another,
+nor to any fluid commutator called ``Theorem~H'' in companion notes.
+\end{remark}
+
+\begin{remark}[Withdrawn identity]
+Some June 2026 drafts asserted
+$1/n=\sum_{d\mid n}\mu(d)\varphi(d)/d^2$.
+This fails already at $n=2$ ($1/2$ versus $3/4$).
+No argument in this note uses that identity.
+\end{remark}
+
+\section{What fails: full-spectrum floors}
+
+\begin{proposition}[Full-spectrum Bridge is false]\label{prop:floorfails}
+There exist $N$ such that
+\[
+\lmin(Q_N)<-1/2
+\qquad\text{and}\qquad
+\lmin(\Qt_N)<-1/2.
+\]
+In particular the universal claims
+$\lmin(Q_N)>-1/2$ and $\lmin(\Qt_N)>-1/2$ for all $N$ are false.
+\end{proposition}
+
+\begin{proof}[Numeric certificate]
+Direct eigendecomposition yields, for example,
+$\lmin(Q_{10})\approx -1.90<-1/2$ and
+$\lmin(\Qt_{20})\approx -0.505<-1/2$.
+Reproducible by the accompanying script
+\texttt{scripts/bridge\_floor\_verify.py}.
+\end{proof}
+
+\begin{remark}
+A claimed universal lower bound $\lmin(H_N)\ge -3/14$ is likewise not
+uniform in small $N$; see the companion verification suite.
+We do not package any $H_N$ floor as a theorem here.
+\end{remark}
+
+\section{Bridge$^*$: single prime pair}
+
+\begin{theorem}[Bridge$^*$, single pair]\label{thm:bridge}
+Let $p\neq q$ be primes and $N\ge\max(p,q)$. For $v=e_p-e_q$,
+\[
+R(v)
+:=\frac{v^\top\Qt_N v}{\|v\|_2^2}
+=\frac12\Big(\frac1{p^2}+\frac1{q^2}\Big)-\frac1{\sqrt{pq}}
+\;>\;-\frac12.
+\]
+\end{theorem}
+
+\begin{proof}
+Since $\|v\|_2^2=2$,
+\[
+v^\top\Qt_N v
+=\Qt_N(p,p)+\Qt_N(q,q)-2\Qt_N(p,q)
+=\frac1{p^2}+\frac1{q^2}-\frac{2}{\sqrt{pq}},
+\]
+hence
+\[
+R=\frac12\Big(\frac1{p^2}+\frac1{q^2}\Big)-\frac1{\sqrt{pq}}.
+\]
+Then
+\[
+R+\frac12
+=\frac12+\frac1{2p^2}+\frac1{2q^2}-\frac1{\sqrt{pq}}
+>\frac12-\frac1{\sqrt{pq}}.
+\]
+Distinct primes force $pq\ge 6$, so $1/\sqrt{pq}\le 1/\sqrt6<1/2$.
+Therefore $R+1/2>0$.
+\end{proof}
+
+\begin{remark}
+The quotient may be negative: $(p,q)=(2,3)$ gives $R\approx -0.228>-1/2$.
+The bound is a \emph{restricted} floor on difference vectors of single
+prime pairs, not a full-spectrum eigenvalue floor.
+\end{remark}
+
+\section{Positive orthant}
+
+\begin{proposition}[Nonnegative cone]\label{prop:cone}
+If $v\in\mathbb{R}^N$ satisfies $v_i\ge 0$ for all $i$, then
+$v^\top\Qt_N v\ge 0$.
+\end{proposition}
+
+\begin{proof}
+Every entry of $\Qt_N$ is positive, so the quadratic form on the
+nonnegative orthant is a sum of nonnegative terms.
+\end{proof}
+
+\section{What is withdrawn}
+
+Earlier public drafts used ``Q6'' as a route to Strong Goldbach via a
+dark-state lemma and a full-spectrum Bridge floor, and bundled the same
+operator into Navier--Stokes / RH packaging. Those claims are withdrawn.
+
+\begin{enumerate}[leftmargin=1.2em]
+\item \textbf{Broken detector.}
+The indicator difference
+$v_k(j)=1_{\mathbb{P}}(j)-1_{\mathbb{P}}(k-j)$
+vanishes on genuine Goldbach pairs $p+(k-p)=k$, so it does not detect
+them.
+\item \textbf{False sign lemma.}
+On raw $Q_N$, for $v=e_p-e_q$,
+$\langle v,Q_N v\rangle=1/p+1/q-2$ is typically negative
+(e.g.\ $(3,7)\mapsto -1.52$).
+A claimed equivalence ``dark state $\Leftrightarrow$ no Goldbach'' does
+not hold as written.
+\item \textbf{No NS map.}
+A spectral floor on $Q_N$, $\Qt_N$, or $H_N$ is not, by itself, a
+bound on $\|(u\cdot\nabla)u\|$ for Leray--Hopf solutions on
+$\mathbb{T}^3$.
+\end{enumerate}
+
+The archive DOIs of those drafts may remain as dated history; they are
+not the claim of this note.
+The corrected public credit for this operator is
+Theorem~\ref{thm:bridge} and Propositions~\ref{prop:floorfails}--\ref{prop:cone}.
+
+\section{Open problem}
+
+\begin{openproblem}[Multi-representation Bridge$^*$]
+For even $k\le N$ let
+$\mathcal{R}(k)=\{p\text{ prime}:2\le p\le k/2,\ k-p\text{ prime}\}$
+and
+$v_k=\sum_{p\in\mathcal{R}(k)}(e_p-e_{k-p})$
+(indices $\le N$).
+Prove or disprove the existence of an absolute $c_0<1/2$ such that
+\[
+R(v_k)=\frac{v_k^\top\Qt_N v_k}{\|v_k\|_2^2}\ge -c_0
+\]
+for all such $k$, whenever $v_k\neq 0$.
+\end{openproblem}
+
+\begin{remark}
+Numeric checks through $N=200$ remain above $-1/2$ on sampled multi-rep
+vectors; that is evidence, not a proof.
+\end{remark}
+
+\section*{Reproducibility}
+
+\begin{verbatim}
+python3 scripts/bridge_floor_verify.py 50
+python3 -m unittest tests.test_bridge_star_h_n -v
+\end{verbatim}
+
+\section*{Acknowledgments}
+This note supersedes the Goldbach-packaged Q6 preprint
+(\href{https://doi.org/10.5281/zenodo.20405589}{10.5281/zenodo.20405589})
+as the author's intended public claim for the inverse-GCD operator.
+
+\begin{thebibliography}{9}
+\bibitem{ZenodoQ6}
+J.R.~Simons,
+\textit{A Q6 Spectral Route to the Strong Goldbach Conjecture}
+(withdrawn as a closure claim; archive only),
+Zenodo \href{https://doi.org/10.5281/zenodo.20405589}{10.5281/zenodo.20405589}.
+
+\bibitem{BridgeStarMD}
+J.R.~Simons,
+\textit{Bridge$^*$ proof draft},
+repository note \texttt{docs/BRIDGE-STAR-PROOF.md} (2026).
+\end{thebibliography}
+
+\end{document}

@@ -16,13 +16,11 @@ Here is what I *can* take credit for, now posted in corrected form on Zenodo:
 
 3. **T2 shell-flux Gronwall.** A quantitative shell Gronwall **assuming** SND. Same honesty rule.
 
-4. **Bridge\*.** On a normalized inverse-GCD matrix, the Rayleigh quotient for a single prime-pair difference vector stays above \(-1/2\). That is a small spectral inequality — not Goldbach, not a full-spectrum floor (the full-spectrum floor is false).
+4. **Q6 / Bridge\*.** I defined the inverse-GCD operator. I do **not** claim it proves Goldbach, RH, or NS. Full-spectrum \(\lambda_{\min}>-1/2\) is false. What stands: a restricted Rayleigh bound on single prime-pair difference vectors (Bridge\*), written up properly as the corrected Q6 note.
 
 5. **Route C (conditional).** A spectral architecture toward zero-density estimates with **two analytic gaps still open**. Not RH proved.
 
 6. **Self-audit.** I also killed my own overclaims: Triple Lock / full-spectrum Bridge / Statement-(B) packaging. Those Zenodo records stay as dated archive with correction notes. Credit includes knowing when you were wrong.
-
-On **Q6:** the inverse-GCD operator is a real object I defined. The story that Q6 closes Goldbach, RH, or Navier–Stokes does not hold. I am not leading with that.
 
 I’m walking away from prize packaging. I’m not necessarily walking away from math forever — just pausing. Products and clinical writing first. The corrected Tier‑1 notes are the public record I want attached to my name.
 

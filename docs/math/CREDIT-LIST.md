@@ -40,11 +40,11 @@ These you can put on a CV, arXiv abstract, or intro packet **without lying**.
    - Credit line: *conditional research note.*  
    - Do **not** add: Bridge floor proved, RH proved.
 
-6. **Bridge\* single-pair inequality (internal, checked)**  
-   - Repo: `docs/BRIDGE-STAR-PROOF.md`  
-   - Claim: on \(\widetilde Q\), \(R(e_p-e_q)>-1/2\) for distinct primes.  
-   - Credit line: *small spectral inequality on normalized inverse-GCD pairs.*  
-   - Do **not** add: Goldbach, Clay, full-spectrum floor.
+6. **Q6 / Bridge\* (proper form)**  
+   - File: `docs/papers/submit/04_q6_inverse_gcd.tex`  
+   - Claim: define \(Q_N\), \(\widetilde Q_N\), \(H_N\); prove \(R(e_p-e_q)>-1/2\) on \(\widetilde Q\); prove nonnegative cone; **withdraw** full-spectrum \(\lambda_{\min}>-1/2\) (false).  
+   - Credit line: *spectral note on inverse-GCD matrices; restricted Rayleigh bound.*  
+   - Do **not** add: Goldbach, RH, NS, dark states, Phi–Q6 as a theorem.
 
 7. **Operator hygiene you forced into the open**  
    - Distinguishing \(Q\), \(\widetilde Q\), \(H_N\), fluids Theorem H; catching false §2.1 Möbius line; catching full-spectrum \(\lambda_{\min}>-1/2\) false.  
