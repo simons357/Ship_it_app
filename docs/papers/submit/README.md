@@ -1,47 +1,18 @@
-# Weekend submit pack
+# Tier 1 corrected documents (Zenodo update pack)
 
-Clean drafts for arXiv / journal send. Sources are Zenodo archives under
-`docs/papers/zenodo-spectral/`; these files strip prize packaging and overclaims.
+These are the **true / claimable** notes. Use them to update Zenodo.
+Do **not** re-upload the old prize-packaging PDFs as your public claim.
 
-**Cover sentence (every abstract / first page):**
+| File | What it is | Zenodo action |
+| --- | --- | --- |
+| `01_phi_renormalization.tex` | Phi \(1/r^4\) cancel + Q₁-augmented | New version of `20405405` + `20405597` |
+| `02_ring_lemma_snd_conditional.tex` | Ring + SND **conditional** | New version of `20518057` (also soft-update `19842060`, `20405585`) |
+| `03_t2_shell_flux_gronwall.tex` | T2 Gronwall under SND | New version of `20552080` (drop Goldbach title) |
+| `04_bridge_star_prime_pairs.tex` | Bridge\* single-pair Rayleigh | **New** Zenodo deposit |
+| `05_route_c_conditional.tex` | Route C, two gaps open | New version of `20518388` |
+| `06_status_errata.tex` | What stands / what is withdrawn | **New** deposit; link from overclaim records |
 
-> Unconditional global regularity for classical 3D Navier–Stokes is not claimed.
+Step-by-step: `ZENODO-UPDATE.md`  
+X column draft: `X-COLUMN-DRAFT.md`
 
----
-
-## Send order
-
-| # | File | Claim | Priority |
-| --- | --- | --- | --- |
-| **1** | `01_phi_renormalization.tex` | Phi \(1/r^4\) cancel + Q₁-augmented axisymmetric system | **Send first** |
-| **2** | `02_ring_lemma_snd_conditional.tex` | Ring Lemma + SND as *sufficient* condition | Send second |
-| **3** | `03_t2_shell_flux_gronwall.tex` | Shell-flux Gronwall **conditional on SND** | Companion to #2 |
-| **4** | `04_bridge_star_prime_pairs.tex` | Single-pair Rayleigh \(R(e_p-e_q)>-1/2\) | Optional micro-note |
-| **5** | `05_route_c_conditional.tex` | Route C architecture **with two gaps open** | Optional / expect pushback |
-
-If you only send one paper this weekend: **#1**.  
-If two: **#1 + #2**.  
-If three: add **#3**.
-
----
-
-## Do not send (leave on Zenodo as history)
-
-- Triple Lock / three-in-one packs
-- Quantum Lens prize-packaging drafts
-- Global Regularity overclaim drafts
-- Q6 dark-state Goldbach paper
-- Montgomery–Dyson “RH resolved”
-- Any draft that asserts unconditional SND for arbitrary large data
-- Original Route C Zenodo with “RH proved” status tables (`20518388` raw)
-
----
-
-## Before you upload
-
-1. Compile each `.tex` locally; fix any bib / missing figure issues.
-2. Keep the disclaimer box on page 1.
-3. arXiv categories: `#1–#3` → `math.AP` (maybe `physics.flu-dyn` secondary for #1); `#4–#5` → `math.NT` / `math.SP`.
-4. Update Zenodo records later if you want DOIs aligned with these cleaned texts — optional.
-
-Archive map and longer notes: `docs/math/PUBLISHABLE-PAPERS.md`.
+**Q6:** operator real; prize claims (Goldbach / RH / NS / full-spectrum floor) **not** correct. Only Bridge\* survives as Tier 1.
