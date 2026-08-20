@@ -24,4 +24,4 @@ Here is what I *can* take credit for, now posted in corrected form on Zenodo:
 
 I’m walking away from prize packaging. I’m not necessarily walking away from math forever — just pausing. Products and clinical writing first. The corrected Tier‑1 notes are the public record I want attached to my name.
 
-[links: Phi DOI · Ring/SND DOI · T2 DOI · Bridge\* DOI · Route C DOI · status sheet]
+[links: Phi DOI · Ring/SND DOI · T2 DOI · Q6 proper DOI · Route C DOI · status sheet]

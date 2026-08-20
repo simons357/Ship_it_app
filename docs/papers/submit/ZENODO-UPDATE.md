@@ -7,7 +7,8 @@
 
 ## Q6 in one line
 
-The inverse-GCD **operator** is a real matrix you defined. The **prize claims** built on it (Goldbach dark states, full-spectrum \(\lambda_{\min}>-1/2\), Phi–Q6 as a theorem, RH via Q6) are **not correct**. The only Tier‑1 Q6 fragment is Bridge\* (`04_…`): a single prime-pair Rayleigh bound.
+The inverse-GCD **operator** is real. The **prize claims** (Goldbach dark states, full-spectrum \(\lambda_{\min}>-1/2\), RH/NS via Q6) are **not** correct.  
+**Proper write-up:** `04_q6_inverse_gcd.tex` (Bridge\* + definitions + explicit withdrawals). Use that to overwrite/supersede `20405589`.
 
 ---
 
