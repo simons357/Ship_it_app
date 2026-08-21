@@ -369,7 +369,7 @@ Drop SIMPLEX. Drop any identification of CONC/SPREAD with inverse-GCD.
             T³ Cartesian                    swirl, keep 1/r^4
          CONC | SPREAD                      tube | off-axis
               |                                  |
-     Ring (almost 1-shell)              localized Hardy +
+     Ring (3-shell / EQ3)               localized Hardy +
      SND-C / H (spread only)            angular viscosity
               \                                  /
                \                                /
@@ -478,6 +478,74 @@ T2 Lemma 1 still kills the low self-flux into each \(\Delta_j\). Keep that.
 - **SPREAD:** \(\sigma\le 1/2\). Mobilize T2 Lemma 1 and the open low term of H.
 
 One-shell August SND is the special case \(X_{j_*}\approx P_{j_*}\). June “no shell above \(\rho_0\)” is implied by SPREAD if \(\rho_0\ge 1/2\), but SPREAD is the better name because H’s diagonal is a three-shell object.
+
+---
+
+## 10. Which spectral pieces might apply
+
+Filter: can it enter an estimate for \(\Pi_{j_*}\), \(\omega\cdot S\omega\), or the \(1/r^4\) tube, on the classical system, no \(Q_1\).
+
+### Use now
+
+| Tool | Role |
+|---|---|
+| LP shells \(X_j\), \(X\), \(J\), \(\rho\), \(j_*\) | Language of every estimate |
+| Triad packet \(P_{j_*}\), \(\sigma\), EQ3 | 3-CONC / SPREAD split |
+| 3-shell Ring (Bernstein on \(E_c\)) | Direction bound in 3-CONC |
+| Bony \(T+T^*+R\) | Split of \(\Pi_{j_*}\) |
+| T2 Lemma 1 (\(\nabla\cdot u=0\) kills low self-flux) | Unconditional, keep |
+| CCFS locality (as a *target* for \(T\)) | Only if restated in energy class |
+| Kato–Ponce on high \(T^*\) | Standard; use in SPREAD |
+| Strain identity \(\sum\lambda_i\cos^2\alpha_i\) | Geometry after Ring, not a spectral closer |
+| Leray \(\int X<\infty\), \(\nu\|\nabla\omega\|_2^2\) | Viscosity budget |
+| Tube split of \(1/r^4\) at \(\delta\sim 2^{-j_*}\) | Swirl track; packet scale |
+
+### Regime hypotheses only (do not treat as proved)
+
+| Tool | Why it is only a regime |
+|---|---|
+| August SND / CONC | \(\inf J/X\ge c_*\) is an assumption |
+| 3-CONC \(\sigma\ge 1/2\), EQ3 | Same |
+| June SND / SPREAD | Opposite of CONC; useful as the other side |
+| SND-C / Theorem H | Wanted bound; low \(T\) open |
+| Theorem G | Needs uniform H as \(\rho\to 0\) |
+| T2-ODE / \(\alpha=2\nu^2 4^{1/\rho_0}\rho_0\) | Rebuild without \(H^{2.3}\) and without F’s \(4^{N-1}\) |
+| “SND on smooth intervals” (Thm E) | True for already-smooth \(u\); does not start the a priori estimate |
+| Small-data / bounded-\(H^2\) pigeonhole | Separate small or subcritical classes |
+
+### Do not put on this track
+
+| Tool | Why |
+|---|---|
+| \(Q_1\) / coherence operator | Different PDE |
+| \(\Phi\) cancel as input to H | Wrong manifold; hidden \(\|\Phi\|_\infty\) |
+| Theorem C / I (\(\varepsilon\to 0\) uniform \(H^1\)) | Glue that fed H; drop |
+| Theorem F as \(4^{N-1}\rho X\) | False as stated |
+| SIMPLEX \(\|a-\mu\|_1\le 0.039\) | Used GCD arithmetic |
+| Inverse-GCD \(Q_N\), \(\widetilde Q_N\), \(H_N\) | Matrix. Not a bound on \((u\cdot\nabla)u\) |
+| Bridge\(^*\) | Single prime-pair Rayleigh; keep in the arithmetic note only |
+| Full-spectrum \(\lambda_{\min}>-1/2\) | False |
+| Triple Lock / GNC / SND \(\equiv\) Bridge | Identification withdrawn |
+| Route C, \(\lambda_{\min}/\log N\), Montgomery–Dyson Q6 | Other equations |
+| “\(Q_6\) with \(\gamma>3/2\) enforces SND” | Not a fluid mechanism |
+| HB / prime node families (ringdown) | Different spectral test; not a commutator |
+| Quantum Lens / prime-manifold Hamiltonian | Off-track |
+
+### How to load the usable spectral stack
+
+```
+classical u
+    LP {X_j}
+        σ = P_{j*}/X
+        σ ≥ 1/2  →  3-shell Ring → ∇ξ on E_c → stretching
+        σ ≤ 1/2  →  T2 Lemma 1 + Bony
+                      R  (EQ3 helps)
+                      T* (Kato–Ponce)
+                      T  (open)
+    swirl: keep 1/r^4, δ ~ 2^{-j*}
+```
+
+Nothing else from the spectral stack needs to sit on those arrows.
 
 ### 8.6 Next writes, in order, for the H track
 
