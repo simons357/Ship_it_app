@@ -31,9 +31,13 @@ ARCHIVE / CORRECTION (August 2026)
 This record is dated history only. The Statement (B) / unconditional
 global regularity claim is WITHDRAWN.
 
+Theorem H in the manuscripts is NOT unconditional SND: it is an SND-C /
+shell estimate under an a priori bound X ≤ M (circular for large-data NS).
+Arithmetic H_N is a different object and does not close NS.
+
 Do not cite this deposit as a proved Navier–Stokes theorem.
-Corrected public notes: Phi-renorm, Ring+SND (conditional), T2 under SND
-(see author submit pack / status errata).
+Corrected public notes: Phi-renorm, Ring+SND (conditional), T2 under SND,
+proper Q6 / Bridge* (see author submit pack / status errata).
 ```
 
 ---
