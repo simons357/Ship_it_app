@@ -378,6 +378,107 @@ Drop SIMPLEX. Drop any identification of CONC/SPREAD with inverse-GCD.
 
 No arrow from \(\Phi\) into \(\Pi_{j_*}\). No arrow from inverse-GCD into either column.
 
+---
+
+## 9. Three-shell equidistribution
+
+This is the older Ring / Borromean object: not one shell, and not all shells. Three consecutive dyadic blocks around the peak.
+
+### 9.1 Definitions
+
+Let \(j_*=\mathrm{argmax}_j X_j\) and write the **triad packet**
+
+\[
+P_{j_*}:=X_{j_*-1}+X_{j_*}+X_{j_*+1},\qquad
+\sigma:=\frac{P_{j_*}}{X}\in(0,1].
+\]
+
+**Packet mass.** \(\sigma\) is the enstrophy fraction in the three adjacent shells.
+
+**Equidistribution on the packet.** There is \(\kappa\ge 1\) such that
+
+\[
+\max_{|k-j_*|\le 1}X_k
+\le\kappa\min_{|k-j_*|\le 1}X_k.
+\]
+
+The clean case is \(\kappa=1\): \(X_{j_*-1}=X_{j_*}=X_{j_*+1}=P_{j_*}/3\), hence
+
+\[
+\rho=\frac{J}{X}=\frac{\sigma}{3}.
+\]
+
+A fully occupied, equidistributed triad (\(\sigma=1\)) has \(\rho=1/3\).
+
+Do not confuse this with strain-axis equidistribution \(\cos^2\alpha_i=1/3\), which would send \(\sum\lambda_i\cos^2\alpha_i=0\). That is a different “three.” Here “shell” means \(\Delta_j\).
+
+### 9.2 Why three, not one
+
+Local NS / Bony interactions that feed \(\Pi_{j_*}\) live on frequencies \(|k|\sim 2^{j_*}\). A product of two dyadic pieces is supported in a bounded number of neighboring shells. The diagonal remainder \(R\) in Theorem H is exactly \(|k-j_*|\le 2\) or \(\le 4\). The smallest packet that can host a local triad is three consecutive shells.
+
+The August Ring Lemma used **one** shell. That makes Bernstein clean and makes CONC look like \(\rho\ge c_*\approx 1\). It is also narrower than the interaction. Three-shell support is the natural Ring hypothesis.
+
+**Almost-band-limited Ring (3-shell).** If \(\mathrm{supp}\,\hat u\subset S_{j_*-1}\cup S_{j_*}\cup S_{j_*+1}\), Bernstein still gives
+
+\[
+\|\nabla\omega\|_\infty\lesssim 2^{2(j_*+1)}\|\omega\|_2\lesssim 4\cdot 2^{2j_*}\|\omega\|_2,
+\]
+
+so on \(E_c=\{|\omega|\ge c\|\omega\|_2\}\)
+
+\[
+\|\nabla\xi_0\|_{L^\infty(E_c)}\le C(c)\,2^{j_*}.
+\]
+
+One extra octave costs a fixed factor, not a derivative. So 3-shell Ring is the same lemma, not a weaker theory.
+
+If only a fraction \(\sigma\) of the enstrophy sits in the packet, apply Ring to the band-limited piece \(u_{\mathrm{pkt}}=\sum_{|k-j_*|\le 1}\Delta_k u\) and treat \(u-u_{\mathrm{pkt}}\) as a remainder of size \((1-\sigma)^{1/2}X^{1/2}\). That is the quantitative “almost 3-shell” statement.
+
+### 9.3 Where it sits in CONC / SPREAD
+
+The one-threshold split \(\rho\gtrless 1/4\) was a placeholder. The 3-shell packet is the right concentrated object.
+
+| Regime | Test | Tools |
+|---|---|---|
+| **3-shell CONC** | \(\sigma\ge 1/2\) | 3-shell Ring on the packet; remainder \(\le X/2\) |
+| **equidistributed 3-shell** | \(\sigma\ge 1/2\) and \(\kappa\le 2\) | same Ring; \(\rho=\sigma/3\in[1/6,1/3]\) |
+| **1-shell spike** | \(X_{j_*}\ge\sigma/2\) inside a heavy packet | August Ring, special case |
+| **SPREAD** | \(\sigma\le 1/2\) (mass outside every triad) | T2 Lemma 1; attempted SND-C / H |
+
+An equidistributed full triad has \(\rho=1/3>1/4\), so it was already on the CONC side of the old split. Good: the phenomenology you care about (local cascade in a triad) is concentrated, not spread.
+
+SPREAD now means: **no three consecutive shells hold half the enstrophy.** That is stronger than “no single shell holds almost everything,” and it matches H’s need that the diagonal neighborhood is not the whole field.
+
+### 9.4 What equidistribution does for H
+
+Helps **only the diagonal** \(R\).
+
+If the three shells around \(j_*\) are comparable, Bernstein constants on \(\Delta_{j_*-1},\Delta_{j_*},\Delta_{j_*+1}\) are of the same order. You do not have one neighbor hiding a much larger \(L^\infty\) piece. That is the right setup for the \(R\) estimate, without Theorem F’s \(4^{N-1}\).
+
+Does **not** help the low paraproduct \(T\) (\(k\le j_*-4\)). Those shells are outside the triad by definition. Equidistribution inside the packet says nothing about the far infrared. That remains the open piece of H.
+
+T2 Lemma 1 still kills the low self-flux into each \(\Delta_j\). Keep that.
+
+### 9.5 What it does not do
+
+- It does not follow from \(\nabla\cdot u=0\) or from Leray. It is a regime, like CONC.
+- It does not cancel \(\omega\cdot S\omega\). Frequency equidistribution is not alignment equidistribution.
+- It does not replace viscosity in the \(1/r^4\) tube. The swirl track is unchanged: \(\delta\sim 2^{-j_*}\) is still the packet scale.
+- Borromean “linkage forces localization” is a picture, not an estimate, until it is rewritten as the 3-shell Bernstein bound above.
+
+### 9.6 Freeze these as the SND re-iterations that matter
+
+\[
+\sigma=\frac{X_{j_*-1}+X_{j_*}+X_{j_*+1}}{X},\qquad
+\rho=\frac{\max_j X_j}{X}.
+\]
+
+- **3-CONC:** \(\sigma\ge 1/2\). Mobilize Ring on three shells.
+- **EQ3:** 3-CONC plus \(\kappa\le 2\). Mobilize the clean diagonal \(R\).
+- **SPREAD:** \(\sigma\le 1/2\). Mobilize T2 Lemma 1 and the open low term of H.
+
+One-shell August SND is the special case \(X_{j_*}\approx P_{j_*}\). June “no shell above \(\rho_0\)” is implied by SPREAD if \(\rho_0\ge 1/2\), but SPREAD is the better name because H’s diagonal is a three-shell object.
+
 ### 8.6 Next writes, in order, for the H track
 
 1. Restate SND-C with frozen SPREAD (\(\rho\le 1/4\)), no Phi, no \(\varepsilon\).
