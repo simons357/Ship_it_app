@@ -547,6 +547,51 @@ classical u
 
 Nothing else from the spectral stack needs to sit on those arrows.
 
+---
+
+## 11. Triple lock vs Bridge\(^*\)
+
+June drafts asserted \(\mathrm{SND}\equiv\mathrm{GNC}\equiv\mathrm{Bridge}\) (20552400 and clones). That triple is withdrawn. Your memory is right that **Bridge was the vertex that had to come out**. What remains is a smaller theorem with the same name family.
+
+### 11.1 What “Bridge” used to mean (withdrawn)
+
+\[
+\lambda_{\min}(Q_N)>-\tfrac12
+\quad\text{for all }N\ge 1
+\]
+
+(or the same floor on \(\widetilde Q_N\) or \(H_N\)). That was the third leg of the triple: one matrix inequality supposed to be SND and GNC. It is **false**. Already \(\lambda_{\min}(Q_{10})\approx-1.90\) and \(\lambda_{\min}(\widetilde Q_{20})\approx-0.505\). So the triple cannot be repaired by putting that floor back.
+
+GNC (dark-state / prime-indicator difference) is also withdrawn as a detector: \(v_k(j)=1_P(j)-1_P(k-j)\) **vanishes** on an actual Goldbach pair. On raw \(Q_N\), \(\langle e_p-e_q,Q_N(e_p-e_q)\rangle=1/p+1/q-2\) is typically \(<-1/2\). So GNC \(\Leftrightarrow\) Bridge was wrong on both sides.
+
+SND (fluids) was never the same statement as a Rayleigh quotient on \(1/\gcd\). That identification is the part that must stay walked back.
+
+### 11.2 What still works: Bridge\(^*\) (single pair)
+
+August note 22045478, Theorem 3.1. On \(\widetilde Q_N(i,j)=1/(\gcd(i,j)\sqrt{ij})\), for distinct primes \(p,q\) and \(v=e_p-e_q\),
+
+\[
+R(v)=\frac{v^\top\widetilde Q_N v}{\|v\|_2^2}
+=\frac12\Big(\frac1{p^2}+\frac1{q^2}\Big)-\frac1{\sqrt{pq}}
+>-\frac12,
+\]
+
+because \(pq\ge 6\) so \(1/\sqrt{pq}\le 1/\sqrt6<1/2\). Two-line identity. Also: \(v\ge 0\Rightarrow v^\top\widetilde Q_N v\ge 0\).
+
+This is a **restricted** floor on one pair of standard-basis vectors, not \(\lambda_{\min}\). \(R\) can be negative (\((2,3)\approx-0.228\)) and still sit above \(-1/2\).
+
+### 11.3 Do not put Bridge\(^*\) back in a triple
+
+| Statement | Status |
+|---|---|
+| \(\mathrm{SND}\equiv\mathrm{GNC}\equiv\mathrm{Bridge}\) (full floor) | Withdrawn, and the floor is false |
+| Bridge\(^*\) on \(e_p-e_q\) | Proved, arithmetic note only |
+| Multi-rep Bridge\(^*\) on \(\sum(e_p-e_{k-p})\) | Open (numeric through \(N=200\) is not a proof) |
+| Bridge\(^*\Rightarrow\) 3-CONC / H / tube | No. Remark 1.4 and §5.3 of that note: no map onto \(\|(u\cdot\nabla)u\|\) |
+| T2-ODE \(\Leftrightarrow\) SPREAD | Fluids-only, separate; not a third vertex |
+
+Keep Bridge\(^*\) as the public claim for the inverse-GCD matrix. Do not reattach it to SND or GNC. The fluids equivalences you can still *try* are T2 Lemma 1 (unconditional) and, later, a rebuilt T2-ODE \(\Leftrightarrow\) SPREAD — both without \(Q_N\).
+
 ### 8.6 Next writes, in order, for the H track
 
 1. Restate SND-C with frozen SPREAD (\(\rho\le 1/4\)), no Phi, no \(\varepsilon\).
