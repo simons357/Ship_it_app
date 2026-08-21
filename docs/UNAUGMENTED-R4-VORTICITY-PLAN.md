@@ -267,3 +267,122 @@ Item 5 is the reason to keep \(1/r^4\). If the angular viscosity does not domina
 | Unaugmented global \(H^1\) bound | Open |
 
 The live question is no longer “does \(\Phi\) cancel the axis?” It is: **in the tube \(r\sim 2^{-j_*}\), does viscosity plus (almost) band-limited direction control beat \(\Gamma\partial_z\Gamma/r^4\)?**
+
+---
+
+## 8. Theorem H and the SND dictionary
+
+Source for H: May T³ note (20405526, archive). Fluids content only. The old closure packaging is ignored.
+
+### 8.1 What Theorem H actually says
+
+Shell flux into the dominant block:
+
+\[
+\Pi_{j_*}=\int_{\mathbb{T}^3}\Delta_{j_*}\bigl[(u\cdot\nabla)u\bigr]\cdot\Delta_{j_*}u\,dx.
+\]
+
+**(SND-C).** There is \(C_*<\infty\) such that whenever \(X\ge\delta_*/4\) and \(\rho=J/X\le\rho_0\) (spread),
+
+\[
+|\Pi_{j_*}|\le C_*\bigl(\nu\,2^{2j_*}X_{j_*}+X^{1/2}\mathcal{D}^{1/2}\bigr),
+\qquad
+\mathcal{D}=\nu\|\Delta u\|_2^2.
+\]
+
+**Theorem H (as written).** SND-C holds in that spread class, by a Bony split \(\Pi_{j_*}=T+T^*+R\):
+
+- diagonal \(R\): Bernstein + Theorem F + Young
+- high \(T^*\): Kato–Ponce + \(X_k\le\rho X\)
+- low \(T\): CCFS locality + “spread makes low shells small”
+
+**Theorem G (as written).** SND-C \(\Rightarrow\) concentration \(\inf J/X\ge c_*\), because if \(\rho(t_k)\to 0\) then F makes \(\mathcal{D}\) explode and SND-C forces \(\dot\rho>0\).
+
+H is a **Cartesian, periodic, velocity-paraproduct** statement. It never sees \(r\), \(\Gamma\), or \(\Phi\).
+
+### 8.2 Where the \(\Phi\) cancel actually hits H
+
+The cancel does not change the Bony algebra on \(\mathbb{T}^3\). It breaks the **glue**.
+
+In the May note the chain was:
+
+\[
+Q_1\ \xrightarrow{\ A\ }\ \text{smooth }u^\varepsilon
+\ \xrightarrow{\ B,\ C\ }\ \Phi\text{-cancel, no Gronwall}
+\ \xrightarrow{\ I\ }\ \text{uniform }H^1\text{ as }\varepsilon\to 0
+\ \xrightarrow{\ H,\ G\ }\ \text{SND-C on the limit }u.
+\]
+
+Three collisions:
+
+1. **Wrong manifold.** \(\Phi=\Gamma/r^2\) lives in cylindrical swirl. H lives in Fourier shells on \(\mathbb{T}^3\). After the cancel, the nonlinearity you are estimating is \(\partial_z(\Phi^2)\), not \(\Delta_{j_*}[(u\cdot\nabla)u]\). H’s \(T+T^*+R\) does not apply to that term unless you rebuild LP in cylindrical modes.
+
+2. **Hidden \(\|\Phi\|_\infty\).** Theorem C uses the cancel to kill Gronwall. The cancel is free only if \(\|\Phi\|_\infty\) is already controlled. That bound is what you do not have. So C does not deliver a uniform \(H^1\) family, and I cannot pass H to an unaugmented limit.
+
+3. **H never needed B.** The commutator estimate is supposed to be a spread-regime bound on \(\Pi_{j_*}\) for Leray–Hopf \(u\) on \(\mathbb{T}^3\). Putting Phi in front of it makes H look dependent on a swirl identity it does not use. That is why H feels broken after you drop the cancel: the **package** broke, not the paraproduct.
+
+**Reconcile:** delete B, C, and I from the H track. State H only for the classical velocity on \(\mathbb{T}^3\), spread class, no \(\varepsilon\), no \(\Phi\). Keep the \(1/r^4\) tube work on a **separate swirl track**.
+
+### 8.3 What is still open inside H itself
+
+Even after the glue is cut, H is not finished.
+
+- **Theorem F is too strong.** \(\mathcal{D}\ge\nu\cdot 4^{N-1}\cdot\rho\cdot X\) with \(N=\lceil X/J\rceil\) treats “\(N\) active shells” as if they sat at exponentially higher frequency. They can be \(N\) consecutive low shells. Super-exponential dissipation as \(\rho\to 0\) is not a theorem. The diagonal step that writes \(2^{j_*}\le(\mathcal{D}/(\nu X_{j_*}))^{1/2}\) from F inherits this.
+- **Low Bony term \(T\).** “Each low shell is \(\le\rho X\)” is true under spread. The **sum** of many low shells need not be small in \(L^\infty\). CCFS locality does not turn that sum into \(O(\rho^{1/2}X^{1/2})\) uniformly as \(\rho\to 0\), which is exactly the limit G uses.
+- **G needs uniformity down to \(\rho\to 0\).** H assumes \(\rho\le\rho_0\). If \(C_*\) blows up as \(\rho_0\to 0\), G’s contradiction fails.
+
+So: cut Phi from H, then the remaining job is a **uniform energy-class bound on the low paraproduct** in the spread class. That is the real Theorem H.
+
+### 8.4 Every SND re-iteration, named so they can be used
+
+Do not use one symbol. Five different statements were all called SND.
+
+| Name to use now | Old label | Formula | Job |
+|---|---|---|---|
+| **CONC** | August SND, May Def, Thm D/G | \(\inf J/X\ge c_*\) | Dominant shell. Ring Lemma. Geometry. |
+| **SPREAD** | June T2 “SND”, May H hypothesis | \(\rho=J/X\le\rho_0<1\) | Extra dissipation. T2 Lemma 1. H’s class. |
+| **SIMPLEX** | May Paper 2 | \(\|a-\mu\|_{\ell^1}\le 0.039\) | Not used. Relied on GCD arithmetic. |
+| **SND-C** | May Def before H | the \(\Pi_{j_*}\) bound above | Commutator in SPREAD only. |
+| **T2-ODE** | June Thm 2–3 | \(\frac{d}{dt}\|a-\mu\|_1\le-\alpha\|a-\mu\|_1+\beta\) | Quantitative SPREAD, if rebuilt without \(H^{2.3}\). |
+
+August CONC and June SPREAD are opposites. That is useful, not a contradiction, once they have two names.
+
+**Two-regime machine (how to mobilize them):**
+
+\[
+\begin{align*}
+\rho&\ge\tfrac14 &&\text{CONC}\ \to\ \text{almost-band-limited Ring}\ \to\ \text{direction on }E_c\\
+\rho&\le\tfrac14 &&\text{SPREAD}\ \to\ \text{T2 Lemma 1 + attempted SND-C (H without Phi)}.
+\end{align*}
+\]
+
+One threshold. No gap. G, if it can be made uniform, is the statement “you cannot stay in deep SPREAD,” i.e. CONC eventually returns. That is optional. The unaugmented bound only needs **each** regime controlled while you are in it.
+
+Drop SIMPLEX. Drop any identification of CONC/SPREAD with inverse-GCD.
+
+### 8.5 How H and the \(1/r^4\) track sit side by side
+
+```
+                classical u, no Q1
+                     /          \
+                    /            \
+            T³ Cartesian                    swirl, keep 1/r^4
+         CONC | SPREAD                      tube | off-axis
+              |                                  |
+     Ring (almost 1-shell)              localized Hardy +
+     SND-C / H (spread only)            angular viscosity
+              \                                  /
+               \                                /
+                 glue by occupation time of each regime
+```
+
+No arrow from \(\Phi\) into \(\Pi_{j_*}\). No arrow from inverse-GCD into either column.
+
+### 8.6 Next writes, in order, for the H track
+
+1. Restate SND-C with frozen SPREAD (\(\rho\le 1/4\)), no Phi, no \(\varepsilon\).
+2. Prove the diagonal and high Bony pieces from Bernstein + T2 Lemma 1 only. Do not quote F’s \(4^{N-1}\).
+3. Isolate the low paraproduct as the single open estimate.
+4. Only then ask whether G can push you out of deep SPREAD.
+
+The swirl track stays the tube lemmas in §5. That is how H is reconciled with dropping the cancel: **H never used the cancel, so stop feeding it through Theorem C.**
