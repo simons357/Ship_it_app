@@ -1,3 +1,5 @@
+**Live Zenodo DOIs:** see `LIVE-DOIS.md` (updated 2026-08-21).
+
 # Where the good papers go
 
 Solid = upload / submit. Exploratory = arXiv/Zenodo with that label.
@@ -38,6 +40,4 @@ Solid = upload / submit. Exploratory = arXiv/Zenodo with that label.
 
 ## Zenodo
 
-I do **not** have your Zenodo login. To have me push updates via API, add a Zenodo personal access token as a secret and say so. Otherwise: download each PDF from  
-https://github.com/simons357/Ship_it_app/tree/cursor/tao-snd-h-panel-a0eb/docs/papers/submit  
-→ New version on the DOI in the table → Publish.
+Corrected PDFs are live. See `LIVE-DOIS.md`.
