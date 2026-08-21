@@ -526,7 +526,7 @@ Filter: can it enter an estimate for \(\Pi_{j_*}\), \(\omega\cdot S\omega\), or 
 | Bridge\(^*\) | Single prime-pair Rayleigh; keep in the arithmetic note only |
 | Full-spectrum \(\lambda_{\min}>-1/2\) | False |
 | Triple Lock / GNC / SND \(\equiv\) Bridge | Identification withdrawn |
-| Route C, \(\lambda_{\min}/\log N\), Montgomery–Dyson Q6 | Other equations |
+| Route C, \(\lambda_{\min}/\log N\), Montgomery–Dyson Q6 | Other equations. Stale “Gap 1 complete” logs are false against the Aug 2026 Q6 audit: spectral-limit, normalization (\(Q_N\) vs \(\widetilde Q_N\) vs \(H_N\)), and operator-to-Mertens are still open. Use the corrected 2026 drafts only; no submission until an independent proof/numeric pass. |
 | “\(Q_6\) with \(\gamma>3/2\) enforces SND” | Not a fluid mechanism |
 | HB / prime node families (ringdown) | Different spectral test; not a commutator |
 | Quantum Lens / prime-manifold Hamiltonian | Off-track |
