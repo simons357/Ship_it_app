@@ -21,10 +21,10 @@
 \newcommand{\Qt}{\widetilde{Q}}
 \newcommand{\lmin}{\lambda_{\min}}
 
-\title{\textbf{The Inverse-GCD Operator $Q_N$:\\
+\title{\textbf{The Inverse-GCD Operator $Q_N$ (Q6):\\
 Definitions, a Restricted Rayleigh Bound,\\
-and Withdrawal of Full-Spectrum Floor Claims}\\[6pt]
-\large\textit{Q6 in proper form --- spectral note, not a prize paper}}
+and an Exploratory Spectral Programme}\\[6pt]
+\large\textit{Crown-jewel operator note --- what is proved and what is open}}
 \author{Jonathan Robert Simons\\
 Savannah, Georgia, USA\\
 \texttt{simonsmedicalinnovations@gmail.com}}
@@ -35,12 +35,12 @@ Savannah, Georgia, USA\\
 
 \begin{center}
 \fbox{\parbox{0.92\linewidth}{\centering\small
-\textbf{Disclaimer.}
-This note defines the inverse-GCD (``Q6'') matrices and proves one
-restricted inequality (Bridge$^*$).
-It does \emph{not} claim Goldbach, the Riemann Hypothesis, or
-Navier--Stokes regularity.
-Full-spectrum floors $\lmin>-1/2$ are \emph{false} for the named matrices.}}
+\textbf{Scope.}
+Q6 is developed here as a spectral operator on $\{1,\ldots,N\}$.
+Proved: Bridge$^*$ on single prime pairs, and the nonnegative cone.
+Exploratory / open: multi-representation bounds.
+False as stated: universal full-spectrum floors $\lmin>-1/2$.
+No Navier--Stokes claim.}}
 \end{center}
 \vspace{0.6em}
 
@@ -211,11 +211,13 @@ Every entry of $\Qt_N$ is positive, so the quadratic form on the
 nonnegative orthant is a sum of nonnegative terms.
 \end{proof}
 
-\section{What is withdrawn}
+\section{Earlier drafts --- corrected status}
 
-Earlier public drafts used ``Q6'' as a route to Strong Goldbach via a
-dark-state lemma and a full-spectrum Bridge floor, and bundled the same
-operator into Navier--Stokes / RH packaging. Those claims are withdrawn.
+Earlier public drafts pushed Q6 toward Strong Goldbach via a
+dark-state lemma and a full-spectrum Bridge floor, and toward
+RH / Navier--Stokes packaging. Those extensions are not supported
+by the arguments as written; they are marked exploratory-failed below
+and are not part of the proved core.
 
 \begin{enumerate}[leftmargin=1.2em]
 \item \textbf{Broken detector.}
@@ -235,10 +237,10 @@ bound on $\|(u\cdot\nabla)u\|$ for Leray--Hopf solutions on
 $\mathbb{T}^3$.
 \end{enumerate}
 
-The archive DOIs of those drafts may remain as dated history; they are
-not the claim of this note.
-The corrected public credit for this operator is
-Theorem~\ref{thm:bridge} and Propositions~\ref{prop:floorfails}--\ref{prop:cone}.
+Older DOIs may remain as dated history.
+The public credit for this operator is
+Theorem~\ref{thm:bridge} and Propositions~\ref{prop:floorfails}--\ref{prop:cone},
+plus the exploratory open problem in the last section.
 
 \section{Open problem}
 
@@ -268,9 +270,9 @@ python3 -m unittest tests.test_bridge_star_h_n -v
 \end{verbatim}
 
 \section*{Acknowledgments}
-This note supersedes the Goldbach-packaged Q6 preprint
+This note supersedes the earlier Q6 preprint
 (\href{https://doi.org/10.5281/zenodo.20405589}{10.5281/zenodo.20405589})
-as the author's intended public claim for the inverse-GCD operator.
+as the author's intended public write-up of the inverse-GCD operator.
 
 \begin{thebibliography}{9}
 \bibitem{ZenodoQ6}
