@@ -4,6 +4,8 @@ Cross-event spectral selection test on black-hole ringdown modes.
 
 **Status: closed — held-out TEST did not reject H0.**
 
+The current scientific product and method are **Domain Architect** and **Functional Role Analysis**. That record is being reconciled in [`docs/domain-architect/`](docs/domain-architect/README.md). This experiment remains a closed null. It is not a gravity theory, a canonical Simons Field Equation, or evidence that nature privileges prime-indexed modes.
+
 - Closed report: [`docs/HB-RINGDOWN-EXPERIMENT-01-REPORT.md`](docs/HB-RINGDOWN-EXPERIMENT-01-REPORT.md)
 - Protocol: [`docs/HB-RINGDOWN-EXPERIMENT-01.md`](docs/HB-RINGDOWN-EXPERIMENT-01.md)
 - Numeric summary: [`results/SUMMARY.md`](results/SUMMARY.md)
