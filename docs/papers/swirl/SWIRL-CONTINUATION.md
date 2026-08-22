@@ -122,7 +122,7 @@ You cannot claim “solved swirl” because an estimate looked persuasive, becau
 5. Title and version notes: paste from `docs/papers/swirl/CLAUDE-UPLOAD.md`.  
 6. `phi_renorm_continuation.tex` is the short earlier draft. The 22 August paper is the upload.
 
-This is a **conditional Part D paper**, not a closure. B1 (uniform strain bound) remains open.
+Upload the 22 August results tex (identity, Γ MP, (*), ε-smoothness, strain-estimate section, last theorem under integrable strain).
 
 ### Part C audit of the 22 August tex (rewritten)
 
