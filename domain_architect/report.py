@@ -77,6 +77,7 @@ class AuditReport:
     notes: list[str] = field(default_factory=list)
     hb_map: dict[str, Any] | None = None
     reconstruction: dict[str, Any] | None = None
+    tuning_export: dict[str, Any] | None = None
 
     def narrative(self) -> str:
         lines = [
@@ -154,6 +155,37 @@ class AuditReport:
             lines.append(
                 f"  recomposed summary: {self.reconstruction.get('recomposed_summary')}"
             )
+        if self.tuning_export:
+            lines.append("")
+            te = self.tuning_export
+            lines.append("Auto tuning export (control variables for intervention apps)")
+            lines.append(f"  domain_book: {te.get('domain_book')}")
+            lines.append(f"  auto_assigned: {te.get('auto_assigned')}")
+            lines.append("Free / selector controls:")
+            controls = te.get("controls") or []
+            shown = False
+            for c in controls:
+                if c.get("status") not in {"free", "protocol_selector"}:
+                    continue
+                shown = True
+                lines.append(
+                    f"  - {c.get('name')} [{c.get('status')}] "
+                    f"role={c.get('role')}/{c.get('subtype')}: {c.get('why')}"
+                )
+                lines.append(f"      intervene: {c.get('default_intervention')}")
+                if c.get("bridge_app_hint"):
+                    lines.append(f"      bridge hint: {c.get('bridge_app_hint')}")
+            if not shown:
+                lines.append("  (none)")
+            fixed = te.get("fixed_structure") or []
+            if fixed:
+                lines.append("Structural / fixed (do not casually retune):")
+                for item in fixed:
+                    lines.append(f"  - {item}")
+            if te.get("statement"):
+                lines.append(str(te["statement"]))
+            if te.get("protocol_reminder"):
+                lines.append(str(te["protocol_reminder"]))
         if self.warnings:
             lines.append("")
             lines.append("Warnings:")
@@ -188,5 +220,6 @@ class AuditReport:
             "notes": self.notes,
             "hb_map": self.hb_map,
             "reconstruction": self.reconstruction,
+            "tuning_export": self.tuning_export,
             "narrative": self.narrative(),
         }

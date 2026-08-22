@@ -37,6 +37,11 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="side-by-side HB map compare of two expressions",
     )
+    parser.add_argument(
+        "--tuning-json",
+        action="store_true",
+        help="emit only the auto tuning/control-variable export as JSON",
+    )
     args = parser.parse_args(argv)
 
     if args.registry:
@@ -90,6 +95,10 @@ def main(argv: list[str] | None = None) -> int:
         parser.error("expression is required unless --registry is set")
 
     report = audit_expression(args.expression)
+    if args.tuning_json:
+        json.dump(report.tuning_export or {}, sys.stdout, indent=2, default=str)
+        sys.stdout.write("\n")
+        return 0
     if args.json:
         json.dump(report.to_dict(), sys.stdout, indent=2, default=str)
         sys.stdout.write("\n")

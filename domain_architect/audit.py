@@ -32,6 +32,7 @@ from .navier_stokes import (
 from .parser import NodeKind, parse_expression
 from .recovery import classify_recovery
 from .report import AuditReport, ConfidenceTaxonomy
+from .tuning_export import build_tuning_export
 from .schema import (
     CANONICAL_SFE_STATUS,
     EvidenceLevel,
@@ -236,6 +237,16 @@ def audit_expression(
         notes=_unique(notes),
     )
     attach_loop_to_report(report)
+    report.tuning_export = build_tuning_export(report).to_dict()
+    report.notes = _unique(
+        list(report.notes)
+        + [
+            "Auto mode: Domain Architect assigns functional roles from structure/"
+            "domain books; it does not require hand-labeling P,H,ψ,λ,Φ.",
+            "Tuning export lists control variables for bridge-style intervention "
+            "apps; freeze protocol before optimizing.",
+        ]
+    )
     report.narrative()
     return report
 
