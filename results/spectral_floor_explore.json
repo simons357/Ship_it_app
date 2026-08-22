@@ -11,7 +11,9 @@
     "qt20_below_half": true,
     "bridge_star_23": -0.22769273490830752,
     "prime_subspace_80": -0.23519989850548106,
-    "prime_subspace_ge_minus_quarter": true
+    "prime_subspace_ge_minus_quarter": true,
+    "h4_min": -0.22487828086763959,
+    "h_floor_minus_one": true
   },
   "rows": [
     {

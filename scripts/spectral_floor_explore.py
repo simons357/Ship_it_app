@@ -246,6 +246,8 @@ def certificates() -> dict:
         "bridge_star_23": 0.5 * (1 / 4 + 1 / 9) - 1 / math.sqrt(6),
         "prime_subspace_80": prime_subspace_min(80),
         "prime_subspace_ge_minus_quarter": prime_subspace_min(80) >= -0.25 - 1e-12,
+        "h4_min": lambda_min(h_matrix(qtilde(4)))[0],
+        "h_floor_minus_one": lambda_min(h_matrix(qtilde(4)))[0] >= -1.0,
     }
 
 

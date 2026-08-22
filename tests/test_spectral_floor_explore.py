@@ -15,6 +15,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from spectral_floor_explore import (  # noqa: E402
     bridge_star_values,
     certificates,
+    h_matrix,
     lambda_min,
     prime_subspace_min,
     qtilde,
@@ -52,6 +53,12 @@ class SpectralFloorExploreTests(unittest.TestCase):
     def test_prime_subspace_floor_minus_quarter(self):
         for n in (3, 10, 20, 40, 80):
             self.assertGreaterEqual(prime_subspace_min(n), -0.25)
+
+    def test_h_full_spectrum_floor_minus_one(self):
+        for n in (4, 10, 20, 40):
+            hmin, _ = lambda_min(h_matrix(qtilde(n)))
+            self.assertGreaterEqual(hmin, -1.0)
+            self.assertGreaterEqual(hmin, -0.25)
 
 
 if __name__ == "__main__":
