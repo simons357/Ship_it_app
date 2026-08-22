@@ -156,7 +156,8 @@ class TestHPrimeComparisonNegative(unittest.TestCase):
     def test_negative_prime_result_is_stored_and_reported(self):
         n = 32
         field = np.zeros(n)
-        field[0:6] = 1.0
+        # Energy on composite / non-prime indices so a prime mask is a poor encoding.
+        field[[0, 1, 4, 6, 8, 9, 10, 12]] = 1.0
         lab = run_selector_lab(field, budget=4, random_seeds=(1, 2, 3), include_optimized=True)
         self.assertTrue(lab.negative)
         self.assertIn("worse than the tested random controls", lab.conclusion.lower())
