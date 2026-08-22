@@ -75,6 +75,8 @@ class AuditReport:
     canonical_sfe_status: str = CANONICAL_SFE_STATUS
     language_flags: list[str] = field(default_factory=list)
     notes: list[str] = field(default_factory=list)
+    hb_map: dict[str, Any] | None = None
+    reconstruction: dict[str, Any] | None = None
 
     def narrative(self) -> str:
         lines = [
@@ -140,6 +142,18 @@ class AuditReport:
                 "Independently necessary structures recorded in E: "
                 + ", ".join(self.extra_structures)
             )
+        if self.reconstruction:
+            lines.append("")
+            lines.append("Reconstruction check (mapper fidelity, not a PDE solve):")
+            lines.append(f"  passed: {self.reconstruction.get('passed')}")
+            lines.append(f"  kind: {self.reconstruction.get('kind')}")
+            lines.append(f"  {self.reconstruction.get('statement')}")
+            missing = self.reconstruction.get("missing_roles") or []
+            if missing:
+                lines.append(f"  missing roles: {', '.join(missing)}")
+            lines.append(
+                f"  recomposed summary: {self.reconstruction.get('recomposed_summary')}"
+            )
         if self.warnings:
             lines.append("")
             lines.append("Warnings:")
@@ -172,5 +186,7 @@ class AuditReport:
             "canonical_sfe_status": self.canonical_sfe_status,
             "language_flags": self.language_flags,
             "notes": self.notes,
+            "hb_map": self.hb_map,
+            "reconstruction": self.reconstruction,
             "narrative": self.narrative(),
         }

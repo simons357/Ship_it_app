@@ -20,6 +20,7 @@ from .checks import (
 from .classify import classify_parse
 from .gravity import newtonian_fra_map, solve_periodic_poisson
 from .identifiability import analyze_product_abx
+from .hb_loop import attach_loop_to_report
 from .navier_stokes import (
     DOMAIN_ID as NS_DOMAIN_ID,
     NS_EXTRA_STRUCTURES,
@@ -234,6 +235,7 @@ def audit_expression(
         canonical_sfe_status=CANONICAL_SFE_STATUS,
         notes=_unique(notes),
     )
+    attach_loop_to_report(report)
     report.narrative()
     return report
 
