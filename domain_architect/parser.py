@@ -182,8 +182,11 @@ def _normalize(text: str) -> str:
             out = out.replace(src, f" {dst} ")
         else:
             out = out.replace(src, dst)
+    # Prefer explicit Laplacian tokens before / after spaced unicode maps.
+    out = out.replace("∇²", "laplacian ")
     out = out.replace(r"\nabla^2", "laplacian ")
     out = out.replace("nabla^2", "laplacian ")
+    out = re.sub(r"\bnabla\s*\^\s*2\b", "laplacian ", out)
     # Common glued ASCII forms from CLI smoke inputs.
     out = re.sub(r"\bpartialt\b", "partial_t", out, flags=re.IGNORECASE)
     out = re.sub(r"\bnablap\b", "nabla p", out, flags=re.IGNORECASE)
