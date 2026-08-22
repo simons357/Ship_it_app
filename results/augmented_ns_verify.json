@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "track": "A-augmented",
+    "note": "Energy-law consistency for Q1. Not a proof of the classical system.",
+    "n": 16,
+    "nu": 0.02,
+    "alpha": 1.0,
+    "beta": 0.5,
+    "t": 0.4,
+    "dt": 0.01
+  },
+  "runs": [
+    {
+      "eps": 0.0,
+      "nu": 0.02,
+      "beta": 0.5,
+      "alpha": 1.0,
+      "n": 16,
+      "t": 0.4,
+      "energy0": 31.006276680299813,
+      "energy_t": 29.54556293452194,
+      "diss_visc": 1.4607183341065904,
+      "diss_q1": 0.0,
+      "residual": 4.588328717858303e-06,
+      "enstrophy0": 93.01883004089945,
+      "enstrophy_t": 90.03723315258941,
+      "max_div": 1.898666613710731e-15
+    },
+    {
+      "eps": 0.05,
+      "nu": 0.02,
+      "beta": 0.5,
+      "alpha": 1.0,
+      "n": 16,
+      "t": 0.4,
+      "energy0": 31.006276680299813,
+      "energy_t": 26.37757719254446,
+      "diss_visc": 1.3803646515164754,
+      "diss_q1": 3.2483392743303994,
+      "residual": 4.438091522729337e-06,
+      "enstrophy0": 93.01883004089945,
+      "enstrophy_t": 80.22311064692929,
+      "max_div": 1.640982361821844e-15
+    },
+    {
+      "eps": 0.2,
+      "nu": 0.02,
+      "beta": 0.5,
+      "alpha": 1.0,
+      "n": 16,
+      "t": 0.4,
+      "energy0": 31.006276680299813,
+      "energy_t": 19.135933638966073,
+      "diss_visc": 1.1801625943450074,
+      "diss_q1": 10.68984137480939,
+      "residual": 0.0003390721793437024,
+      "enstrophy0": 93.01883004089945,
+      "enstrophy_t": 57.99315925653787,
+      "max_div": 1.6869126284391712e-15
+    }
+  ],
+  "checks": {
+    "E1_energy_residual": 0.0003390721793437024,
+    "E2_q1_positive_when_eps": true,
+    "E3_enstrophy_finite": true,
+    "E4_xt_grows_as_eps_falls": true,
+    "E5_max_div": 1.898666613710731e-15
+  }
+}
