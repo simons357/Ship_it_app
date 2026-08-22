@@ -17,7 +17,10 @@ to treat representation of a known equation as derivation.
 ```bash
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units
+python -m domain_architect --sfe-compare SFE-H001 SFE-H002
+python -m domain_architect --decompose-json "partial_t omega = (omega * nabla) u + nu Delta omega"
+python scripts/overnight_honest_loop_demo.py
+python -m unittest discover -s tests -p 'test_*.py'
 ```
 
 ## Harmonic Blueprint Experiment 01

@@ -18,6 +18,7 @@ Approved plain-language explanation:
 | [03 — Reconciliation](03-RECONCILIATION.md) | Six-point response to the August 2026 handoff |
 | [04 — Notation collisions](04-NOTATION-COLLISIONS.md) | `P` / `p` / `ℙ`, `Φ` / `φ` / `ϕ`, and other overloaded symbols |
 | [05 — Rectification](05-RECTIFICATION.md) | Software implementation of the August 2026 corrective specification |
+| [06 — Overnight honest loop](06-OVERNIGHT-HONEST-LOOP.md) | Auto → reconstruct → compare → tuning → incompleteness → SFE×2 |
 
 Machine-readable provenance (original expressions are immutable):
 
@@ -28,6 +29,9 @@ Machine-readable provenance (original expressions are immutable):
 ```bash
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
+python -m domain_architect --sfe-compare SFE-H001 SFE-H002
+python -m domain_architect --incompleteness-json "partial_t omega = nu Delta omega"
+python scripts/overnight_honest_loop_demo.py
 python -m unittest tests.test_domain_architect_acceptance
 ```
 
