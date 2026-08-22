@@ -592,7 +592,7 @@ This is a **restricted** floor on one pair of standard-basis vectors, not \(\lam
 
 Keep Bridge\(^*\) as the public claim for the inverse-GCD matrix. Do not reattach it to SND or GNC. The fluids equivalences you can still *try* are T2 Lemma 1 (unconditional) and, later, a rebuilt T2-ODE \(\Leftrightarrow\) SPREAD — both without \(Q_N\).
 
-A later scan (`docs/SPECTRAL-FLOOR-EXPLORATION.md`) keeps that split and adds one restricted inequality: the prime-supported block of \(\widetilde Q\) satisfies \(\lambda_{\min}\ge-1/4\). That is still arithmetic, not a fluids input.
+A later scan (`docs/SPECTRAL-FLOOR-EXPLORATION.md`) keeps that split. Two arithmetic floors stand: \(\lambda_{\min}(H_N)\ge-1\) on the full index, and \(\lambda_{\min}(\widetilde Q\big|_P)\ge-1/4\) on primes. Neither is a fluids input.
 
 ### 8.6 Next writes, in order, for the H track
 
