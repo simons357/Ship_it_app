@@ -215,6 +215,7 @@ High-value targets:
 - **PR #28:** https://github.com/simons357/Ship_it_app/pull/28  
 - **Title:** Domain Architect: auto-map, reconstruct, compare, incompleteness, drill-down  
 - **Test count at handoff:** 65  
-- **Related frozen notes:** `00-AUDITED-BASELINE.md` … `05-RECTIFICATION.md`, `06-OVERNIGHT-HONEST-LOOP.md`
+- **Related frozen notes:** `00-AUDITED-BASELINE.md` … `05-RECTIFICATION.md`, `06-OVERNIGHT-HONEST-LOOP.md`  
+- **PR body paste fragment:** [`PR-28-GROK-HANDOFF-SECTION.md`](PR-28-GROK-HANDOFF-SECTION.md) (agent `gh` cannot write PR body; paste manually if missing)
 
 Please reply with: (a) architectural objections, (b) concrete counterexamples or failing inputs, (c) which claims you would strike from the software’s self-description.

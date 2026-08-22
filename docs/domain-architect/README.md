@@ -22,6 +22,7 @@ Approved plain-language explanation:
 | [OVERNIGHT-DEMO](OVERNIGHT-DEMO.md) | Wake-up copy-paste commands + artifact index |
 | [GROK-RIGOR-HANDOFF](GROK-RIGOR-HANDOFF.md) | Pasteable working note for adversarial rigor review |
 | [GROK-ATTACK-CHECKLIST](GROK-ATTACK-CHECKLIST.md) | Bullet attack surface for Grok / external review |
+| [PR-28 Grok section](PR-28-GROK-HANDOFF-SECTION.md) | Fragment to paste into PR #28 description |
 
 Machine-readable provenance (original expressions are immutable):
 
