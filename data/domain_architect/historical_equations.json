@@ -81,7 +81,9 @@
     "unknown_definitions": "no unique PDE found",
     "dimensional_status": "unknown",
     "known_limit_status": "not_claimed",
-    "conflicts": ["UHF-H001"],
+    "conflicts": [
+      "UHF-H001"
+    ],
     "audit_disposition": "RETAIN",
     "alias": "FRA-4 / UHF architectural placeholder",
     "notes": "Retain as architecture. Unresolved as a unique physical equation."
@@ -110,7 +112,9 @@
     "unknown_definitions": "name only; no displayed equation",
     "dimensional_status": "unknown",
     "known_limit_status": "not_claimed",
-    "conflicts": ["FRA-H003"],
+    "conflicts": [
+      "FRA-H003"
+    ],
     "audit_disposition": "UNRESOLVED",
     "alias": "UHF-1",
     "notes": "Do not invent a UHF PDE to fill this record."
@@ -139,7 +143,11 @@
     "unknown_definitions": "A_p, f_p, φ(x), δ_p",
     "dimensional_status": "cannot be established; sine argument units unresolved",
     "known_limit_status": "not_established",
-    "conflicts": ["SFE-H002", "SFE-H003", "FRA-H002"],
+    "conflicts": [
+      "SFE-H002",
+      "SFE-H003",
+      "FRA-H002"
+    ],
     "audit_disposition": "RETIRE",
     "alias": "SFE-PUB",
     "notes": "Retired as a physical law or unifier. Original expression is archived and not edited."
@@ -168,7 +176,11 @@
     "unknown_definitions": "Δ; type of each letter",
     "dimensional_status": "unknown",
     "known_limit_status": "not_established",
-    "conflicts": ["SFE-H001", "SFE-H003", "FRA-H002"],
+    "conflicts": [
+      "SFE-H001",
+      "SFE-H003",
+      "FRA-H002"
+    ],
     "audit_disposition": "RETIRE",
     "alias": "SFE-QM",
     "notes": "A Lagrangian density and an Euler–Lagrange equation are different objects. Not merged with SFE-H001."
@@ -197,7 +209,10 @@
     "unknown_definitions": "FRA role inversion (Q_N mapped to P, J mapped to Φ)",
     "dimensional_status": "unknown",
     "known_limit_status": "not_established",
-    "conflicts": ["SFE-H001", "SFE-H002"],
+    "conflicts": [
+      "SFE-H001",
+      "SFE-H002"
+    ],
     "audit_disposition": "RETIRE",
     "alias": "SFE-HAM",
     "notes": "Arithmetic model, not the FRA realization layer. Not a canonical SFE."
@@ -226,7 +241,10 @@
     "unknown_definitions": "no unique formula",
     "dimensional_status": "unknown",
     "known_limit_status": "not_established",
-    "conflicts": ["SFE-H001", "SFE-H002"],
+    "conflicts": [
+      "SFE-H001",
+      "SFE-H002"
+    ],
     "audit_disposition": "RETIRE",
     "alias": "SFE-GCD",
     "notes": "Already withdrawn. Kept in the historical record."
@@ -255,7 +273,9 @@
     "unknown_definitions": "acronym only",
     "dimensional_status": "unknown",
     "known_limit_status": "not_claimed",
-    "conflicts": ["SFE-H001"],
+    "conflicts": [
+      "SFE-H001"
+    ],
     "audit_disposition": "RETIRE",
     "alias": "SFE-FLUX",
     "notes": "Acronym collision, not a definition of the Simons Field Equation."
@@ -313,7 +333,10 @@
     "unknown_definitions": "no PDE, units, or well-posedness",
     "dimensional_status": "unknown",
     "known_limit_status": "not_claimed",
-    "conflicts": ["DHFA-H002", "DHFA-H003"],
+    "conflicts": [
+      "DHFA-H002",
+      "DHFA-H003"
+    ],
     "audit_disposition": "UNRESOLVED",
     "alias": "DHFA-1",
     "notes": "Do not invent an evolution equation to fill this record."
@@ -342,7 +365,10 @@
     "unknown_definitions": "name only",
     "dimensional_status": "unknown",
     "known_limit_status": "not_claimed",
-    "conflicts": ["DHFA-H001", "DHFA-H003"],
+    "conflicts": [
+      "DHFA-H001",
+      "DHFA-H003"
+    ],
     "audit_disposition": "RETIRE",
     "alias": "DHFA-2",
     "notes": "Retired as a definition of DHFA."
@@ -371,7 +397,10 @@
     "unknown_definitions": "no unique PDE",
     "dimensional_status": "unknown",
     "known_limit_status": "not_claimed",
-    "conflicts": ["DHFA-H001", "DHFA-H002"],
+    "conflicts": [
+      "DHFA-H001",
+      "DHFA-H002"
+    ],
     "audit_disposition": "RETAIN",
     "alias": "FRA-6 / DHFA-3",
     "notes": "Retain as architecture only. Movement, dynamics, and energy are not synonyms."
@@ -458,7 +487,9 @@
     "unknown_definitions": "",
     "dimensional_status": "consistent",
     "known_limit_status": "representation of GRV-H001, not a limit of a canonical SFE",
-    "conflicts": ["GRV-H004"],
+    "conflicts": [
+      "GRV-H004"
+    ],
     "audit_disposition": "RETAIN",
     "alias": "GRV-3 / GRV-4 repaired",
     "notes": "FRA map is representation recovery. Do not treat λ_n as both wavelength and 1/k_n²."
@@ -487,7 +518,9 @@
     "unknown_definitions": "nonunique factorization ρ = (aS)(ψ/a)",
     "dimensional_status": "unknown after unconstrained split",
     "known_limit_status": "not_claimed",
-    "conflicts": ["GRV-H003"],
+    "conflicts": [
+      "GRV-H003"
+    ],
     "audit_disposition": "REVISE",
     "alias": "GRV-5",
     "notes": "Default laboratory keeps S_n = ρ_n and does not invent an independent ψ_n."
@@ -549,5 +582,125 @@
     "audit_disposition": "RETAIN",
     "alias": "EXP01-3",
     "notes": "Closed null. Level 3 failure under its own protocol. Do not retune after TEST."
+  },
+  {
+    "equation_id": "NS-B001",
+    "family": "NS-B",
+    "date": "2026-08",
+    "original_source": "Classical incompressible Navier–Stokes (velocity form)",
+    "original_expression": "∂_t u + (u·∇)u = −∇p + νΔu,  ∇·u = 0",
+    "audited_expression": "∂_t u + (u·∇)u = −∇p + νΔu,  ∇·u = 0",
+    "original_symbol_definitions": "u velocity; p pressure; ν viscosity; domain R^3 or periodic box",
+    "original_stated_interpretation": "Unaugmented classical NS Track B",
+    "original_claimed_consequence": "none from Domain Architect; organizational FRA only",
+    "domain": "incompressible fluid dynamics",
+    "units": "must declare length/time; ν has units L^2/T",
+    "function_space": "must declare (e.g. H^s divergence-free)",
+    "operator_domain": "Laplacian / gradient / divergence on declared domain",
+    "boundary_conditions": "required for a usable instance",
+    "initial_conditions": "required",
+    "geometry": "R^3 or torus / bounded domain as declared",
+    "gauge_conditions": "pressure determined up to constants / Leray projection",
+    "source_terms": "optional body force F in E",
+    "nonlinearity": "(u·∇)u advection",
+    "couplings": "nonlinear self-advection",
+    "unknown_definitions": "",
+    "dimensional_status": "consistent when ν carries viscosity units",
+    "known_limit_status": "ν→0 formal Euler limit; P=I recovers unprojected form",
+    "conflicts": [],
+    "audit_disposition": "RETAIN",
+    "alias": "NS-B-VEL",
+    "notes": "Five-finger map is organizational (P≈Leray, H≈advection, ψ≈u, λ≈ν, Φ≈p/response). No Clay/Millennium claim; no SFE derivation."
+  },
+  {
+    "equation_id": "NS-B002",
+    "family": "NS-B",
+    "date": "2026-08",
+    "original_source": "Classical incompressible Navier–Stokes (vorticity form)",
+    "original_expression": "∂_t ω + (u·∇)ω = (ω·∇)u + νΔω,  ω = ∇×u,  ∇·u = 0",
+    "audited_expression": "∂_t ω + (u·∇)ω = (ω·∇)u + νΔω",
+    "original_symbol_definitions": "ω vorticity; u Biot–Savart of ω; ν viscosity",
+    "original_stated_interpretation": "Unaugmented classical NS Track B vorticity transport",
+    "original_claimed_consequence": "none from Domain Architect; organizational FRA only",
+    "domain": "incompressible fluid dynamics",
+    "units": "must declare; ν has units L^2/T",
+    "function_space": "must declare",
+    "operator_domain": "Laplacian and stretch terms on declared domain",
+    "boundary_conditions": "required for a usable instance",
+    "initial_conditions": "required",
+    "geometry": "R^3 or torus / bounded domain as declared",
+    "gauge_conditions": "",
+    "source_terms": "optional",
+    "nonlinearity": "advection and vortex stretching",
+    "couplings": "stretching couples ω to velocity gradients",
+    "unknown_definitions": "",
+    "dimensional_status": "consistent when ν carries viscosity units",
+    "known_limit_status": "ν→0 formal Euler vorticity; known smooth solutions remain test limits",
+    "conflicts": [],
+    "audit_disposition": "RETAIN",
+    "alias": "NS-B-VORT",
+    "notes": "Organizational map: P≈div-free/Leray, H≈stretching/advection, ψ≈ω, λ≈ν, Φ≈observed enstrophy/strain response. Track B only."
+  },
+  {
+    "equation_id": "NS-A001",
+    "family": "NS-A",
+    "date": "2026-08",
+    "original_source": "Augmented Navier–Stokes (Track A)",
+    "original_expression": "∂_t u + (u·∇)u = −∇p + νΔu + ε^α P div(|∇u|^β ∇u),  ∇·u = 0",
+    "audited_expression": "∂_t u + (u·∇)u = −∇p + νΔu + ε^α P div(|∇u|^β ∇u),  ∇·u = 0",
+    "original_symbol_definitions": "u velocity; p pressure; ν viscosity; ε,α,β augmentation parameters; P Leray projector",
+    "original_stated_interpretation": "Track A augmented NS; distinct PDE from classical Track B",
+    "original_claimed_consequence": "none from Domain Architect; organizational FRA only",
+    "domain": "augmented incompressible fluid dynamics",
+    "units": "must declare; ν has units L^2/T",
+    "function_space": "must declare",
+    "operator_domain": "Leray projector and nonlinear augmentation operator",
+    "boundary_conditions": "required",
+    "initial_conditions": "required",
+    "geometry": "R^3 or torus / bounded domain as declared",
+    "gauge_conditions": "Leray projection",
+    "source_terms": "optional",
+    "nonlinearity": "advection plus |∇u|^β augmentation",
+    "couplings": "nonlinear self-advection and augmentation",
+    "unknown_definitions": "",
+    "dimensional_status": "consistent when ν and ε carry stated units",
+    "known_limit_status": "ε→0 formal classical NS (NS-B); not derived from SFE",
+    "conflicts": [
+      "NS-B001"
+    ],
+    "audit_disposition": "RETAIN",
+    "alias": "NS-A-AUG",
+    "notes": "Separate book from NS-B. P here is Leray projector in the augmentation term, not FRA permission P and not primes. RETAIN as adjacent book; do not glue to SFE."
+  },
+  {
+    "equation_id": "NS-PHI001",
+    "family": "NS-PHI",
+    "date": "2026-08",
+    "original_source": "Axisymmetric swirl algebra",
+    "original_expression": "Γ=r u_θ,  Φ=Γ/r^2=u_θ/r,  r^{-4} ∂_z(Γ^2)=∂_z(Φ^2)",
+    "audited_expression": "Γ=r u_θ,  Φ=Γ/r^2=u_θ/r,  r^{-4} ∂_z(Γ^2)=∂_z(Φ^2)",
+    "original_symbol_definitions": "Γ swirl; Φ=Γ/r^2 angular velocity; r cylindrical radius",
+    "original_stated_interpretation": "Swirl / Φ_swirl book; Φ is not FRA realized-output Φ",
+    "original_claimed_consequence": "none from Domain Architect; organizational FRA only",
+    "domain": "axisymmetric swirl algebra",
+    "units": "must declare",
+    "function_space": "must declare",
+    "operator_domain": "cylindrical differential operators",
+    "boundary_conditions": "as declared",
+    "initial_conditions": "as declared",
+    "geometry": "axisymmetric cylindrical",
+    "gauge_conditions": "",
+    "source_terms": "",
+    "nonlinearity": "quadratic in Γ or Φ",
+    "couplings": "",
+    "unknown_definitions": "",
+    "dimensional_status": "consistent when symbols carry stated units",
+    "known_limit_status": "not claimed as SFE or classical NS",
+    "conflicts": [
+      "NS-B001"
+    ],
+    "audit_disposition": "RETAIN",
+    "alias": "NS-PHI-SWIRL",
+    "notes": "Separate book. Do not reuse Φ as the FRA output symbol in the same document as FRA grammar. RETAIN as adjacent fluids algebra."
   }
 ]

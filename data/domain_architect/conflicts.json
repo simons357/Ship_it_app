@@ -102,5 +102,29 @@
     "evidence": "No justified canonical formula exists to compare against SFE-H001.",
     "status": "unresolved",
     "notes": "Canonical SFE status remains unresolved."
+  },
+  {
+    "left_id": "SFE-H001",
+    "right_id": "NS-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "SFE candidate formulas and classical NS are distinct books. Shared letters do not constitute a derivation.",
+    "status": "recorded",
+    "notes": "Domain Architect may route between books. It must not glue SFE to NS-B."
+  },
+  {
+    "left_id": "NS-A001",
+    "right_id": "NS-B001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Track A is an augmented PDE; Track B is classical unaugmented NS. Different equations.",
+    "status": "recorded",
+    "notes": "Keep as adjacent fluids books. Do not collapse into one operator."
+  },
+  {
+    "left_id": "NS-PHI001",
+    "right_id": "NS-B001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Swirl Φ algebra reuses the letter Φ with a different meaning from FRA realized output.",
+    "status": "recorded",
+    "notes": "Alias Φ_swirl when both books appear in one document."
   }
 ]
