@@ -113,14 +113,30 @@ You cannot claim “solved swirl” because an estimate looked persuasive, becau
 
 ---
 
-## What to upload (you, in the browser)
+## What to upload (you, Claude / the browser)
 
-1. Revoke the leaked token.  
+1. Revoke the leaked token. Do not paste another token into chat.  
 2. Do **not** delete old versions.  
 3. On concept `20405404`, **New version**.  
-4. Title something like: *Phi-renormalization continued: corrected 5D energy and the uniform-strain obstruction*.  
-5. Version notes: continues May 2026 preprint; removes Φ maximum-principle reliance; does not claim classical global regularity; cites Shahmurov.  
-6. Use `docs/papers/swirl/phi_renorm_continuation.tex` as the draft. Compile locally. Upload the PDF yourself.
+4. Compile `docs/papers/swirl/Simons_PhiRenorm_Swirl_2026-08-22.tex` locally and upload that PDF.  
+5. Title and version notes: paste from `docs/papers/swirl/CLAUDE-UPLOAD.md`.  
+6. `phi_renorm_continuation.tex` is the short earlier draft. The 22 August paper is the upload.
+
+This is a **conditional Part D paper**, not a closure. B1 (uniform strain bound) remains open.
+
+### Part C audit of the 22 August tex
+
+Desktop file `/Users/jonathansimons/Desktop/Swirl Paper - Latest/Simons_PhiRenorm_Swirl_2026-08-22.tex` was not visible on this VM. The rebuilt file in-repo was audited instead.
+
+| Trap | Status |
+| --- | --- |
+| Closed / “regularity proved” claim | Absent. Status box and §barrier keep B1 open. |
+| Strain called subcritical without scaling | Absent. Pairing is named critical; NS scaling written. |
+| \|f(x)\| ≤ \|f\|_{L²} | Absent. Bound used is Hölder: \|∫ S Φ² r³\| ≤ \|S\|_∞ E. |
+| Bernstein ‖∇u_j‖_∞ ≲ 2^j ‖u_j‖_{L²} | Not used. Listed as excluded; 3D factor 2^{5j/2} recorded. |
+| Universal 6/π² (or any coprime-to-shell constant) | Absent. |
+| Review panel of named mathematicians | Absent. |
+| Inequality reversed to manufacture an upper bound | Not found. (*) is an identity; Gronwall is the standard estimate. |
 
 ---
 

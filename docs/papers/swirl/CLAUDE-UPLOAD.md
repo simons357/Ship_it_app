@@ -1,7 +1,10 @@
-# Upload this version
+# Paste-block for Claude / browser — Zenodo New version
+
+Record (do not delete): https://zenodo.org/records/20405404  
+Action: **New version** on concept `20405404`. Do not use API tokens.
 
 **File:** `docs/papers/swirl/Simons_PhiRenorm_Swirl_2026-08-22.tex`  
-Record: https://zenodo.org/records/20405404 → **New version** (do not delete old DOIs).
+Compile to PDF locally, then upload that PDF.
 
 ## Title
 Phi-renormalization for axisymmetric Navier–Stokes with swirl: the five-dimensional energy identity and the critical strain barrier
