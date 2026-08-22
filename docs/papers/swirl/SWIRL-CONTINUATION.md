@@ -124,9 +124,9 @@ You cannot claim “solved swirl” because an estimate looked persuasive, becau
 
 This is a **conditional Part D paper**, not a closure. B1 (uniform strain bound) remains open.
 
-### Part C audit of the 22 August tex
+### Part C audit of the 22 August tex (rewritten)
 
-Desktop file `/Users/jonathansimons/Desktop/Swirl Paper - Latest/Simons_PhiRenorm_Swirl_2026-08-22.tex` was not visible on this VM. The rebuilt file in-repo was audited instead.
+Desktop file `/Users/jonathansimons/Desktop/Swirl Paper - Latest/Simons_PhiRenorm_Swirl_2026-08-22.tex` was not visible on this VM. Public Zenodo 20405404 / 20405405 / 20405597 was fetched without a token and used as the reference, together with the in-repo draft.
 
 | Trap | Status |
 | --- | --- |
