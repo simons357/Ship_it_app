@@ -20,6 +20,14 @@ from .checks import (
 from .classify import classify_parse
 from .gravity import newtonian_fra_map, solve_periodic_poisson
 from .identifiability import analyze_product_abx
+from .navier_stokes import (
+    DOMAIN_ID as NS_DOMAIN_ID,
+    NS_EXTRA_STRUCTURES,
+    NS_NO_MILLENNIUM,
+    NS_SCOPE_STATEMENT,
+    classical_ns_fra_map,
+    detect_classical_ns,
+)
 from .parser import NodeKind, parse_expression
 from .recovery import classify_recovery
 from .report import AuditReport, ConfidenceTaxonomy
@@ -66,6 +74,12 @@ def audit_expression(
     """Audit one expression. Does not invent a unified theory."""
     context = dict(context or {})
     parsed = parse_expression(expression)
+    ns_detection = detect_classical_ns(expression, parsed)
+    if ns_detection.matched and context.get("domain") not in {"GR", "gravity"}:
+        # Auto-route classical NS into the Track B organizational book.
+        context.setdefault("domain", NS_DOMAIN_ID)
+        context.setdefault("fluids_book", NS_DOMAIN_ID)
+        context.setdefault("ns_form", ns_detection.form)
     classification = classify_parse(parsed, context)
     warnings = list(parsed.warnings) + list(classification.warnings)
     extra = list(classification.extra_structures)
@@ -77,6 +91,17 @@ def audit_expression(
     notes: list[str] = []
     math_status = MathValidationStatus.NOT_PERFORMED
     phys_status = PhysicalValidationStatus.NONE
+
+    if ns_detection.matched and context.get("domain") == NS_DOMAIN_ID:
+        notes.append(NS_SCOPE_STATEMENT)
+        notes.append(NS_NO_MILLENNIUM)
+        notes.append(
+            "Detection reasons: " + "; ".join(ns_detection.reasons)
+        )
+        notes.append(classical_ns_fra_map()["mechanism_sketch"])
+        extra.extend(NS_EXTRA_STRUCTURES)
+        # Organizational classification only — no known-limit recovery claim.
+        evidence = EvidenceLevel.COHERENT_CLASSIFICATION
 
     if parsed.tree is not None:
         dim = check_dimensions(parsed.tree, context.get("units"))
