@@ -1,0 +1,106 @@
+[
+  {
+    "left_id": "SFE-H001",
+    "right_id": "SFE-H002",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Classical prime oscillator versus undefined Δ of a product of FRA letters; different types and claims. No checked transformation connects them.",
+    "status": "recorded",
+    "notes": "Do not synthesize a hybrid SFE. Preserve both historical records."
+  },
+  {
+    "left_id": "SFE-H001",
+    "right_id": "SFE-H003",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Classical oscillator versus Fock Hamiltonian on occupation numbers.",
+    "status": "recorded",
+    "notes": "Neither is a justified canonical SFE."
+  },
+  {
+    "left_id": "SFE-H002",
+    "right_id": "SFE-H003",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Same draft family but different mathematical objects (display string vs Hamiltonian).",
+    "status": "recorded",
+    "notes": "Still not mergeable into one canonical equation."
+  },
+  {
+    "left_id": "SFE-H001",
+    "right_id": "FRA-H002",
+    "relation": "INCOMPATIBLE",
+    "evidence": "SFE-H001 claims a specific field; FRA-H002 is an organizational grammar. Shared letters are not a transformation.",
+    "status": "recorded",
+    "notes": "FRA-H002 remains architecture. SFE-H001 is retired."
+  },
+  {
+    "left_id": "SFE-H002",
+    "right_id": "FRA-H002",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Same letters, conflicting types and role assignments. SFE-H002 also contradicts itself (Lagrangian vs equation of motion).",
+    "status": "recorded",
+    "notes": ""
+  },
+  {
+    "left_id": "SFE-H004",
+    "right_id": "SFE-H006",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Withdrawn prize-attractor claim versus explicitly unresolved canonical status.",
+    "status": "recorded",
+    "notes": "SFE-H004 remains visible as a retired historical record."
+  },
+  {
+    "left_id": "SFE-H005",
+    "right_id": "SFE-H001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Acronym collision only; Shell Flux Estimate is not the Simons Field Equation.",
+    "status": "recorded",
+    "notes": ""
+  },
+  {
+    "left_id": "UHF-H001",
+    "right_id": "FRA-H003",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "UHF-H001 has no displayed equation; FRA-H003 is an architectural placeholder.",
+    "status": "unresolved",
+    "notes": "Do not invent a UHF PDE to force equivalence."
+  },
+  {
+    "left_id": "DHFA-H001",
+    "right_id": "DHFA-H003",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "DHFA-H001 is a symbol V_DHFA(x,t) with no PDE; DHFA-H003 is architecture.",
+    "status": "unresolved",
+    "notes": ""
+  },
+  {
+    "left_id": "DHFA-H002",
+    "right_id": "DHFA-H003",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Directional/harmonic field-analysis label versus evolution-layer architecture.",
+    "status": "recorded",
+    "notes": "DHFA-H002 retired as a definition."
+  },
+  {
+    "left_id": "GRV-H003",
+    "right_id": "GRV-H004",
+    "relation": "INCOMPATIBLE",
+    "evidence": "GRV-H003 sets S_n = ρ_n; GRV-H004 writes ρ_n = S_n ψ_n without a unique rule.",
+    "status": "recorded",
+    "notes": "Default laboratory follows GRV-H003. GRV-H004 is revised, not deleted."
+  },
+  {
+    "left_id": "GRV-H003",
+    "right_id": "GRV-H001",
+    "relation": "SPECIAL_CASE",
+    "evidence": "Modal solution of the Poisson equation on a declared eigenbasis, nonzero modes.",
+    "status": "recorded",
+    "notes": "Representation of established Newtonian gravity, not derivation from SFE."
+  },
+  {
+    "left_id": "SFE-H006",
+    "right_id": "SFE-H001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "No justified canonical formula exists to compare against SFE-H001.",
+    "status": "unresolved",
+    "notes": "Canonical SFE status remains unresolved."
+  }
+]

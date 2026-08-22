@@ -1,4 +1,26 @@
-# Harmonic Blueprint Experiment 01
+# Harmonic Blueprint / Domain Architect
+
+This repository now contains two related research objects. Neither is a
+unified physical theory.
+
+## Domain Architect
+
+Functional Role Analysis and model-auditing software. It classifies
+equations into independently meaningful mathematical roles, records
+historical UHF / SFE / DHFA candidates without merging them, and refuses
+to treat representation of a known equation as derivation.
+
+- Package: `domain_architect/`
+- Notes: [`docs/domain-architect/README.md`](docs/domain-architect/README.md)
+- Canonical SFE status: **unresolved**
+
+```bash
+python -m domain_architect "∇²Φ = 4π G ρ"
+python -m domain_architect --registry
+python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units
+```
+
+## Harmonic Blueprint Experiment 01
 
 Cross-event spectral selection test on black-hole ringdown modes.
 
