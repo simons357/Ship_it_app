@@ -21,6 +21,8 @@ from .classify import classify_parse
 from .gravity import newtonian_fra_map, solve_periodic_poisson
 from .identifiability import analyze_product_abx
 from .hb_loop import attach_loop_to_report
+from .incompleteness import attach_incompleteness
+from .decompose import attach_decomposition
 from .navier_stokes import (
     DOMAIN_ID as NS_DOMAIN_ID,
     NS_EXTRA_STRUCTURES,
@@ -237,6 +239,8 @@ def audit_expression(
         notes=_unique(notes),
     )
     attach_loop_to_report(report)
+    attach_incompleteness(report)
+    attach_decomposition(report)
     report.tuning_export = build_tuning_export(report).to_dict()
     report.notes = _unique(
         list(report.notes)
@@ -245,6 +249,8 @@ def audit_expression(
             "domain books; it does not require hand-labeling P,H,ψ,λ,Φ.",
             "Tuning export lists control variables for bridge-style intervention "
             "apps; freeze protocol before optimizing.",
+            "Incompleteness candidates are book templates only — not Clay/ToE.",
+            "Drill-down stops at defined/measurable/standard operators.",
         ]
     )
     report.narrative()

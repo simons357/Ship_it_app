@@ -78,6 +78,8 @@ class AuditReport:
     hb_map: dict[str, Any] | None = None
     reconstruction: dict[str, Any] | None = None
     tuning_export: dict[str, Any] | None = None
+    incompleteness: dict[str, Any] | None = None
+    decomposition: dict[str, Any] | None = None
 
     def narrative(self) -> str:
         lines = [
@@ -186,6 +188,39 @@ class AuditReport:
                 lines.append(str(te["statement"]))
             if te.get("protocol_reminder"):
                 lines.append(str(te["protocol_reminder"]))
+        if self.incompleteness:
+            lines.append("")
+            inc = self.incompleteness
+            lines.append("Incompleteness / math-complete candidates:")
+            lines.append(f"  complete: {inc.get('is_complete')}")
+            if inc.get("missing_roles"):
+                lines.append(
+                    f"  missing roles: {', '.join(inc['missing_roles'])}"
+                )
+            if inc.get("missing_terms"):
+                lines.append(
+                    f"  missing terms: {', '.join(inc['missing_terms'])}"
+                )
+            for c in inc.get("candidates") or []:
+                lines.append(
+                    f"  - [{c.get('kind')}/{c.get('confidence')}] "
+                    f"{c.get('proposal')}"
+                )
+            if inc.get("equation_sketch"):
+                lines.append(f"  book sketch: {inc['equation_sketch']}")
+            if inc.get("statement"):
+                lines.append(f"  {inc['statement']}")
+        if self.decomposition:
+            lines.append("")
+            dec = self.decomposition
+            lines.append("Drill-down + recompose:")
+            lines.append(
+                f"  book={dec.get('domain_book')} depth={dec.get('depth')} "
+                f"terminals={dec.get('terminal_count')} "
+                f"recompose_ok={dec.get('all_recompose_ok')}"
+            )
+            if dec.get("statement"):
+                lines.append(f"  {dec['statement']}")
         if self.warnings:
             lines.append("")
             lines.append("Warnings:")
@@ -221,5 +256,7 @@ class AuditReport:
             "hb_map": self.hb_map,
             "reconstruction": self.reconstruction,
             "tuning_export": self.tuning_export,
+            "incompleteness": self.incompleteness,
+            "decomposition": self.decomposition,
             "narrative": self.narrative(),
         }

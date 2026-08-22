@@ -125,7 +125,7 @@ class CompareReport:
 
 
 # Required organizational inventory by book (Level 0 reconstruction).
-_BOOK_REQUIREMENTS: dict[str, dict[str, Any]] = {
+BOOK_REQUIREMENTS: dict[str, dict[str, Any]] = {
     "NS-B": {
         "roles": {
             "admissibility",
@@ -193,7 +193,7 @@ def build_hb_map(report: AuditReport) -> HBMap:
 
 def check_reconstruction(report: AuditReport) -> ReconstructionCheck:
     hb = build_hb_map(report)
-    req = _BOOK_REQUIREMENTS.get(hb.domain_book, _BOOK_REQUIREMENTS["generic"])
+    req = BOOK_REQUIREMENTS.get(hb.domain_book, BOOK_REQUIREMENTS["generic"])
     present = set(hb.roles)
     # Treat unresolved-only maps as empty for required roles.
     present_effective = {r for r in present if not r.startswith("unresolved")}
@@ -259,6 +259,10 @@ def check_reconstruction(report: AuditReport) -> ReconstructionCheck:
             )
         ),
     )
+
+
+# Back-compat alias for older imports.
+_BOOK_REQUIREMENTS = BOOK_REQUIREMENTS
 
 
 def compare_reports(left: AuditReport, right: AuditReport) -> CompareReport:
