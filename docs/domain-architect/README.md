@@ -20,6 +20,8 @@ Approved plain-language explanation:
 | [05 — Rectification](05-RECTIFICATION.md) | Software implementation of the August 2026 corrective specification |
 | [06 — Overnight honest loop](06-OVERNIGHT-HONEST-LOOP.md) | Auto → reconstruct → compare → tuning → incompleteness → SFE×2 |
 | [OVERNIGHT-DEMO](OVERNIGHT-DEMO.md) | Wake-up copy-paste commands + artifact index |
+| [GROK-RIGOR-HANDOFF](GROK-RIGOR-HANDOFF.md) | Pasteable working note for adversarial rigor review |
+| [GROK-ATTACK-CHECKLIST](GROK-ATTACK-CHECKLIST.md) | Bullet attack surface for Grok / external review |
 
 Machine-readable provenance (original expressions are immutable):
 
