@@ -1,0 +1,219 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{booktabs,hyperref,enumitem}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\norm}[2]{\|#1\|_{#2}}
+
+\title{Phi-renormalization continued:\\
+corrected five-dimensional energy and the uniform-strain obstruction}
+\author{Jonathan R.\ Simons\\
+Prime Field Technologies LLC, Savannah, Georgia}
+\date{August 2026 \quad|\quad Continuation of Zenodo 20405404}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note continues the author's May 2026 Zenodo preprint
+(concept DOI \href{https://doi.org/10.5281/zenodo.20405404}{10.5281/zenodo.20405404}).
+That deposit introduced the \(\Phi\)-renormalization
+\(\Gamma=ru_\theta\), \(\Phi=\Gamma/r^2=u_\theta/r\) and the algebraic identity
+\(\frac1{r^4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\).
+The present version does three things: (i)~it keeps that identity as the
+author's public antecedent; (ii)~it removes reliance on an unsupported
+\(\Phi\) maximum-principle / Sobolev bound; (iii)~it writes the correct
+lifted equation and \(r^3\,dr\,dz\) energy for \(F=u_\theta/r\), and
+isolates the remaining obstruction
+\[
+  \sup_{\eps\in(0,1]}\int_0^T \norm{u_r^\eps/r}{L^\infty}\,dt<\infty
+\]
+without assuming the desired regularity.
+\textbf{No claim is made that the classical unaugmented axisymmetric-with-swirl
+Navier--Stokes system is globally regular.}
+Shahmurov's 2026 announcements are cited and not used.
+\end{abstract}
+
+\section{Public record}
+
+The May 2026 files are
+\href{https://doi.org/10.5281/zenodo.20405405}{10.5281/zenodo.20405405}
+(\texttt{PhiRenorm\_TrackB.pdf}) and
+\href{https://doi.org/10.5281/zenodo.20405597}{10.5281/zenodo.20405597}.
+The algebraic identity appeared there. The later mathematics of this note
+did not. A linked Zenodo ``New version'' preserves that chronology.
+
+\section{What is proved (algebra)}
+
+\begin{theorem}[Phi-renormalization identity]
+Let \(\Gamma=ru_\theta\) and \(\Phi=u_\theta/r\) on \(\{r>0\}\). Then
+\[
+  \frac1{r^4}\partial_z(\Gamma^2)=\partial_z(\Phi^2).
+\]
+If \(\Gamma^\eps=r^2\Phi^\eps\) likewise,
+\(\frac1{r^4}\partial_z(\Gamma_\eps^2-\Gamma^2)
+=\partial_z\bigl((\Phi^\eps+\Phi)(\Phi^\eps-\Phi)\bigr)\).
+\end{theorem}
+
+\begin{proof}
+\(\Gamma=r^2\Phi\), so \(\Gamma^2=r^4\Phi^2\). Since \(\partial_z(r^4)=0\),
+\(\frac1{r^4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\).
+The difference identity is the same factorization.
+\end{proof}
+
+This is a change of dependent variable. It does not, by itself, bound
+\(\Phi\) in \(L^\infty\) or close a Beale--Kato--Majda integral.
+
+\begin{remark}[Circular Sobolev line, withdrawn as a proof step]
+The May remark \(\norm{\partial_z(\Phi^2)}{L^2}\le 2\norm{\Phi}{\infty}\norm{\partial_z\Phi}{L^2}\)
+``by Sobolev on a bounded domain'' assumes the \(L^\infty\) control that
+classical continuation is trying to prove. It is withdrawn as a load-bearing step
+for the unaugmented system.
+\end{remark}
+
+\section{Corrected \(F\)-equation and five-dimensional energy}
+
+Write \(F:=u_\theta/r\) (the same intensive field as \(\Phi\)).
+The standard axisymmetric calculus gives, for smooth solutions,
+\begin{equation}\label{eq:F}
+\partial_t F+u_r\partial_r F+u_z\partial_z F+2\frac{u_r}{r}F
+=\nu\Bigl(\partial_{rr}+\frac3r\partial_r+\partial_{zz}\Bigr)F.
+\end{equation}
+The extra \(-F/r^2\) damping belongs to the equation for \(u_\theta\), not for \(F\).
+The natural energy measure for~\eqref{eq:F} is the five-dimensional lift
+\[
+  d\mu_5:= r^3\,dr\,dz,
+\]
+not the three-dimensional weight \(r\,dr\,dz\).
+
+\begin{proposition}[Energy identity with strain pairing]
+For smooth compactly supported axisymmetric fields, testing~\eqref{eq:F}
+against \(F\,d\mu_5\) yields
+\begin{equation}\label{eq:energy}
+  \frac12\frac{d}{dt}\int F^2\,d\mu_5
+  +\nu\int |\nabla_5 F|^2\,d\mu_5
+  =-2\int \frac{u_r}{r}\,F^2\,d\mu_5,
+\end{equation}
+up to the usual integration-by-parts justification of the five-dimensional
+viscous form. The right-hand side is the strain pairing.
+\end{proposition}
+
+\begin{proof}[Proof outline]
+The transport field \((u_r,u_z)\) is divergence-free in the axisymmetric
+meridional plane after the \(r\)-weight of incompressibility is used;
+the remaining first-order contribution is the stretching
+\(2(u_r/r)F\). Multiplying by \(F\) and integrating in \(d\mu_5\) produces
+the displayed pairing. The viscous operator on the right of~\eqref{eq:F}
+is (minus) the Dirichlet form of the five-dimensional Laplacian in the lift.
+\end{proof}
+
+\section{The obstruction}
+
+\begin{proposition}[Continuation if the strain is integrable]
+If a smooth axisymmetric solution on \([0,T_*)\) satisfies
+\begin{equation}\label{eq:target}
+  \int_0^{T} \norm{u_r/r}{L^\infty}\,dt<\infty
+  \qquad\text{for every }T<T_*,
+\end{equation}
+then \(\int F^2\,d\mu_5\) remains finite on \([0,T]\) by Gronwall
+on~\eqref{eq:energy}, and the standard swirl continuation criteria apply.
+\end{proposition}
+
+The target for a classical global-regularity proof is therefore to obtain
+\eqref{eq:target} \emph{without assuming}~\eqref{eq:target}.
+A family of regularizations \(u^\eps\) may be used only if the bound is
+uniform in \(\eps\in(0,1]\).
+
+\begin{remark}[Why a cubic energy does not close]
+An inequality of the form \(E'+c\nu D\le C\nu^{-3}E^3\) is supercritical.
+The comparison ODE \(y'=C\nu^{-3}y^3\) explodes in finite time for large \(y(0)\).
+Such an estimate is consistent with both global existence and blowup; it is
+not a global bound.
+\end{remark}
+
+\begin{remark}[Fractional bookkeeping]
+Testing a fractional Laplacian of order \(\sigma\) produces an energy in
+\(\dot H^{\sigma}\), not \(\dot H^{2\sigma}\).
+\end{remark}
+
+\section{What is not claimed}
+
+\begin{itemize}[leftmargin=1.2em]
+\item Classical (unaugmented) large-data global regularity in the
+axisymmetric swirl class.
+\item A maximum principle for \(\Phi\) or \(F\) beyond the classical
+maximum principle for \(\Gamma=ru_\theta\).
+\item Gronwall-free convergence of a \(Q_1\)-approximation to a
+classical solution on a maximal interval that may be finite.
+\item Any prime-lattice, \(Q_6\), or spectral-clock equivalence.
+\end{itemize}
+
+A \(Q_1\)-augmented system with uniformly positive extra viscosity is a
+different PDE. Global smoothness for that PDE, if written carefully, is a
+method note. It is not the classical swirl theorem.
+
+\section{Related announcements}
+
+Shahmurov has released several 2026 preprints on axisymmetric swirl and
+on full-system Navier--Stokes, including
+arXiv:2604.03519, arXiv:2605.01875, and arXiv:2606.07869.
+Those papers use, among other devices, an \((A,W)\) circulation-gradient
+pair and an axis Hardy formula for \(\Gamma\).
+The present note does not employ that construction.
+If a later independent proof of~\eqref{eq:target} is obtained on the
+variables of~\S3, it may be stated as independent, with the May 2026
+Zenodo record as antecedent for the \(\Phi\)-identity only.
+
+\section{Next checkable steps}
+
+\begin{enumerate}[leftmargin=1.2em]
+\item Write~\eqref{eq:energy} with every boundary term and cutoff error
+displayed (no ``up to the usual'').
+\item Attempt a subcritical bound on \(\int (u_r/r)F^2\,d\mu_5\) from
+\(\Gamma\in L^\infty\) (classical) and the five-dimensional dissipation
+alone --- or exhibit the first scaling obstruction.
+\item Independently audit the first Hardy/endpoint lemma in
+arXiv:2606.07869. If it fails, record the exact line. If it holds,
+cite it and keep this route separate.
+\end{enumerate}
+
+\begin{thebibliography}{99}
+
+\bibitem{SimonsPhi2026}
+J.\ R.\ Simons,
+\textit{Phi-Renormalization and Global Regularity for Axisymmetric-with-Swirl Navier--Stokes},
+Zenodo, 27 May 2026.
+\href{https://doi.org/10.5281/zenodo.20405404}{10.5281/zenodo.20405404}.
+
+\bibitem{ShahApr}
+R.\ Shahmurov,
+\textit{Unconditional Axis-Regularity in the 5D Corridor},
+arXiv:2604.03519.
+
+\bibitem{ShahMay}
+R.\ Shahmurov,
+\textit{Large-Data Global Regularity for Three-Dimensional Navier--Stokes I},
+arXiv:2605.01875.
+
+\bibitem{ShahJun}
+R.\ Shahmurov,
+\textit{Global Regularity for Axisymmetric Navier--Stokes Flows with Swirl},
+arXiv:2606.07869.
+
+\bibitem{Lady1968}
+O.\ A.\ Ladyzhenskaya,
+\textit{Unique global solvability of the three-dimensional Cauchy problem
+for the NS equations in the presence of axial symmetry},
+Zap.\ Nauchn.\ Sem.\ LOMI \textbf{7} (1968), 155--177.
+
+\end{thebibliography}
+
+\end{document}
