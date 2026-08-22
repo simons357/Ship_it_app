@@ -1,0 +1,52 @@
+name: Deploy TITAN-X to Vercel
+
+on:
+  push:
+    branches:
+      - main
+      - cursor/titan-x-business-plan-7465
+    paths:
+      - "titan-x-web/**"
+      - "TITAN-X-FINAL-Investor-Plan.pdf"
+      - "vercel.json"
+      - ".github/workflows/deploy-titan-x.yml"
+  pull_request:
+    paths:
+      - "titan-x-web/**"
+      - "TITAN-X-FINAL-Investor-Plan.pdf"
+      - "vercel.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync PDF into the site folder
+        run: cp -f TITAN-X-FINAL-Investor-Plan.pdf titan-x-web/TITAN-X-FINAL-Investor-Plan.pdf
+
+      - name: Deploy to Vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "No VERCEL_TOKEN secret in GitHub."
+            echo "Preferred: import this repo once at https://vercel.com/new (GitHub → simons357/Ship_it_app)."
+            echo "Leave Root Directory as the repo root. vercel.json already points at titan-x-web/."
+            echo "After that, every push deploys without GitHub secrets."
+            echo "Alternative: add VERCEL_TOKEN, VERCEL_ORG_ID, and VERCEL_PROJECT_ID as repo secrets, then re-run this workflow."
+            exit 0
+          fi
+          npm install --global vercel@latest
+          vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
+          if [ "$GITHUB_REF" = "refs/heads/main" ] || [ "$GITHUB_REF" = "refs/heads/cursor/titan-x-business-plan-7465" ]; then
+            vercel deploy --yes --prod --token="$VERCEL_TOKEN"
+          else
+            vercel deploy --yes --token="$VERCEL_TOKEN"
+          fi

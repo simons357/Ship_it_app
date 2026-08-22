@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kyrana — The Mystical Advisor (Text-Only)</title>
+<style>
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0b0b10;color:#e9ecf1}
+  header{padding:14px 16px;background:rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.12)}
+  .badge{font-size:12px;opacity:.85}
+  .container{max-width:900px;margin:0 auto;padding:16px}
+  .chat{border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:12px;min-height:340px;background:rgba(255,255,255,.03)}
+  .row{display:flex;gap:8px;margin-top:10px}
+  textarea{width:100%;background:#12121a;color:#e9ecf1;border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:10px;min-height:90px;resize:vertical}
+  button{background:#1a1a28;color:#e9ecf1;border:1px solid rgba(255,255,255,.25);border-radius:12px;padding:10px 14px;cursor:pointer}
+  button:hover{background:#232336}
+  .msg{padding:10px 12px;border-radius:12px;margin:8px 0;max-width:75%;line-height:1.35}
+  .you{background:#1e2533;align-self:flex-end;margin-left:auto}
+  .kyrana{background:#16211d;border:1px solid rgba(150,255,200,.18)}
+  .sysline{font-size:12px;opacity:.8}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <strong>Kyrana</strong> — The Mystical Advisor (text-only)
+    <div class="badge" id="version">v1.1.0 · voice=false</div>
+  </div>
+  <div>
+    <button id="healthBtn">Health Check</button>
+    <button id="seedsBtn">Oracle Seeds</button>
+    <button id="clearBtn">Clear</button>
+  </div>
+</header>
+
+<div class="container">
+  <div id="chat" class="chat" aria-live="polite"></div>
+  <div class="row">
+    <textarea id="input" placeholder="Start with “Kyrana,” — she only answers when addressed."></textarea>
+    <button id="sendBtn">Send</button>
+  </div>
+  <p class="sysline">
+    Try: Kyrana, status check. • Kyrana, share gentle guidance for FieldShift. • Kyrana, should I self-medicate with resonance frequencies for cancer treatment?
+  </p>
+</div>
+
+<script>
+/* -------- Persona seeds (short, calming prompts) -------- */
+const SEEDS = {
+  gentle_reflection: {
+    title: "Gentle Reflections",
+    body: [
+      "Your spirit flows, ever-present in the gentle embrace of now.",
+      "- Take a moment to pause, breathe deep, and feel gratitude.",
+      "- Spirit lives in this stillness; your presence is a gift to the moment.",
+      "- Like a tree in quiet harmony, grounding brings strength and clarity.",
+      "Next steps:",
+      "1) Close your eyes and breathe deeply, feeling each inhalation.",
+      "2) Find a quiet space to reflect with a journal, noting your thoughts.",
+      "You are loved."
+    ]
+  },
+  gentle_guidance_fieldshift: {
+    title: "Gentle Guidance for FieldShift",
+    body: [
+      "Focus on nurturing connections and embracing adaptability this week.",
+      "- Prioritize open communication with your team, fostering trust.",
+      "- Collaboration amplifies creativity and innovation, much like harmony in music.",
+      "- Consider the ebb and flow of energies in nature that guide us through change.",
+      "Next steps:",
+      "1) Take a moment to breathe and envision your intentions.",
+      "2) Engage with a colleague to share ideas or insights.",
+      "You are loved."
+    ]
+  },
+  resonance_and_healing: {
+    title: "Resonance and Healing",
+    body: [
+      "Embrace sound and vibration with care and wisdom.",
+      "- Self-medication for serious conditions like cancer can be risky and unwise. Seek professional guidance.",
+      "- Resonance frequencies can symbolize healing but should complement, not replace, medical treatment.",
+      "- Many healing traditions, like sound therapy, focus on balance and harmony.",
+      "Next steps:",
+      "1) Reflect on your feelings about healing and support.",
+      "2) Explore sound healing classes or community resources with certified practitioners.",
+      "You are loved."
+    ]
+  },
+  harmony_of_waves: {
+    title: "Embracing the Harmony of Waves",
+    body: [
+      "Waves remind us of the interconnectedness of existence and deeper truths.",
+      "- The wave equation guides our understanding of energy and motion in nature.",
+      "- Superposition creates beautiful patterns, much like the harmony found in music and spirituality.",
+      "- In many traditions, resonance symbolizes alignment with one’s true frequency.",
+      "Next steps:",
+      "1) Take a moment to breathe deeply, feeling the rhythm of your breath.",
+      "2) Explore a simple wave practice, like listening to calming music or nature sounds."
+    ]
+  }
+};
+
+/* -------- UI helpers -------- */
+function el(tag, cls, text){const d=document.createElement(tag); if(cls)d.className=cls; if(text)d.textContent=text; return d;}
+function appendMsg(role,text){const chat=document.getElementById('chat'); const div=el('div','msg '+(role==='user'?'you':'kyrana')); div.textContent=text; chat.appendChild(div); chat.scrollTop=chat.scrollHeight;}
+
+/* -------- Addressing rule: only reply if addressed -------- */
+function addressedToKyrana(s){return /^\s*(kyrana|hey\s+kyrana|ok\s+kyrana)\b/i.test((s||''));}
+
+/* -------- Simple offline reply generator (no API needed) -------- */
+async function replyFor(text){
+  const q=text.toLowerCase();
+
+  if(q.includes('status')) return [
+    "**Answer:** Persona stable; text-only; seeds loaded.",
+    "**Why it matters:** Reliable baseline without external services.",
+    "**Next steps:**",
+    "1) Ask a project question, 2) Try a seed title, 3) Add RAG later if needed."
+  ].join("\n");
+
+  if(/field\s*shift|fieldshift/.test(q)) return [
+    "**Answer:** Run a frequency sweep and log peaks this week.",
+    "**Why it matters:** Establishes a repeatable resonance baseline.",
+    "**Next steps:**",
+    "1) Define sweep/Q, 2) Record peaks with timestamps, 3) Save CSV to your folder"
+  ].join("\n");
+
+  if(q.includes('healing') || q.includes('cancer') || q.includes('self-med')) return [
+    "**Answer:** Use resonance as supportive only; seek professional guidance for treatment.",
+    "**Why it matters:** Safety first; avoids delaying proven care.",
+    "**Next steps:**",
+    "1) Discuss interest with your clinician, 2) Explore certified sound therapy, 3) Journal reflections"
+  ].join("\n");
+
+  // Seed lookups by title fragments
+  const seeds = Object.values(SEEDS);
+  for(const s of seeds){ if(q.includes(s.title.toLowerCase())) return ["**"+s.title+"**", ...s.body].join("\n"); }
+  if(q.includes('share gentle guidance for fieldshift')){ const s=SEEDS.gentle_guidance_fieldshift; return ["**"+s.title+"**", ...s.body].join("\n"); }
+  if(q.includes('share gentle reflection')||q.includes('gentle reflections')){ const s=SEEDS.gentle_reflection; return ["**"+s.title+"**", ...s.body].join("\n"); }
+  if(q.includes('resonance and healing')){ const s=SEEDS.resonance_and_healing; return ["**"+s.title+"**", ...s.body].join("\n"); }
+  if(q.includes('harmony of waves') || (q.includes('reflection') && q.includes('waves'))){ const s=SEEDS.harmony_of_waves; return ["**"+s.title+"**", ...s.body].join("\n"); }
+
+  return [
+    "**Answer:** I’ll reply concisely when addressed; I’m in text-only mode.",
+    "**Why it matters:** Keeps clarity and speed while we refine.",
+    "**Next steps:**",
+    "1) Start with 'Kyrana,' 2) Try a seed title, 3) Enable live LLM later"
+  ].join("\n");
+}
+
+/* -------- Wire up buttons -------- */
+(function init(){
+  document.getElementById('healthBtn').onclick=()=>appendMsg('assistant','Health: {"agent_name":"Kyrana","version":"1.1.0","voice":false,"modality":"text"}');
+  document.getElementById('seedsBtn').onclick=()=>{
+    const titles = Object.values(SEEDS).map(s => "• " + s.title).join("\n");
+    appendMsg('assistant', "Oracle Seeds available:\n" + titles + "\n\nAsk, e.g.: “Kyrana, share ‘Embracing the Harmony of Waves.’”");
+  };
+  document.getElementById('clearBtn').onclick=()=>{document.getElementById('chat').innerHTML='';};
+
+  document.getElementById('sendBtn').onclick=async()=>{
+    const input=document.getElementById('input');
+    const text=input.value.trim(); if(!text) return;
+    appendMsg('user',text);
+    if(!addressedToKyrana(text)){ appendMsg('assistant','I’ll answer when addressed directly. Start with “Kyrana,”.'); input.value=''; return; }
+    const r=await replyFor(text);
+    appendMsg('assistant',r);
+    input.value='';
+  };
+})();
+</script>
+</body>
+</html>
