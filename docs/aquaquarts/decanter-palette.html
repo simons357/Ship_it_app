@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AquaQuartz — Bottle Palette</title>
+  <meta name="description" content="AquaQuartz bottle palette — tall place-water vessels. Static. No motion." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #12201e;
+      --muted: #5c6d69;
+      --spring: #1f4f4a;
+      --water: #3d8a82;
+      --stone: #dfe6e2;
+      --sheet: #f2f5f3;
+      --line: #b7c4bf;
+      --display: "Fraunces", Georgia, serif;
+      --body: "Sora", "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      color: var(--ink);
+      font-family: var(--body);
+      font-weight: 300;
+      line-height: 1.5;
+      background: linear-gradient(180deg, #eef3f1 0%, var(--sheet) 40%, #e4ebe8 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+    .bar {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      padding: 0.7rem clamp(1rem, 3vw, 2rem);
+      background: rgba(242, 245, 243, 0.95);
+      border-bottom: 1px solid var(--line);
+    }
+    .bar .mark {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+    .bar nav { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .bar a, .bar button {
+      font: 500 0.68rem var(--body);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      padding: 0.45rem 0.75rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 88svh;
+      display: grid;
+      align-content: end;
+      color: #f4f8f6;
+      overflow: hidden;
+    }
+    .hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 50%;
+    }
+    .hero-shade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10,24,22,0.15), rgba(10,24,22,0.72));
+      pointer-events: none;
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.5rem, 5vw, 3rem);
+      max-width: 36rem;
+    }
+    .hero .brand {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(3rem, 11vw, 5.5rem);
+      line-height: 0.92;
+      margin: 0 0 0.7rem;
+    }
+    .hero h1 {
+      font-family: var(--display);
+      font-weight: 500;
+      font-size: clamp(1.25rem, 3vw, 1.7rem);
+      margin: 0 0 0.6rem;
+      max-width: 16ch;
+    }
+    .hero p {
+      margin: 0;
+      color: rgba(244,248,246,0.88);
+      max-width: 32ch;
+    }
+
+    .wrap {
+      width: min(980px, 100%);
+      margin: 0 auto;
+      padding: 2.5rem clamp(1rem, 3vw, 2rem) 4rem;
+    }
+    .eyebrow {
+      margin: 0 0 0.45rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--water);
+    }
+    h2 {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin: 0 0 0.6rem;
+      max-width: 14ch;
+    }
+    .intro {
+      color: var(--muted);
+      max-width: 48ch;
+      margin: 0 0 1.75rem;
+    }
+
+    .sheet {
+      display: grid;
+      gap: 2rem;
+    }
+    .sheet article {
+      display: grid;
+      gap: 0.85rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--line);
+    }
+    @media (min-width: 820px) {
+      .sheet article {
+        grid-template-columns: 1.4fr 0.8fr;
+        align-items: end;
+        gap: 1.5rem;
+      }
+      .sheet article.flip { grid-template-columns: 0.8fr 1.4fr; }
+      .sheet article.flip .meta { order: -1; }
+    }
+    .sheet img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+      background: var(--stone);
+    }
+    .meta h3 {
+      font-family: var(--display);
+      font-size: 1.55rem;
+      font-weight: 600;
+      margin: 0 0 0.35rem;
+    }
+    .meta p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .meta .place {
+      display: inline-block;
+      margin-bottom: 0.4rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--spring);
+      font-weight: 500;
+    }
+
+    .wide {
+      margin: 0 0 2rem;
+    }
+    .wide img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 21 / 9;
+      object-fit: cover;
+      background: var(--stone);
+    }
+    .wide p {
+      margin: 0.65rem 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .note {
+      margin-top: 2rem;
+      padding: 1rem 1.15rem;
+      background: var(--stone);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .note a { color: var(--spring); font-weight: 500; }
+
+    @media print {
+      .bar button, .no-print { display: none !important; }
+      .bar { position: static; }
+      .hero { min-height: 60vh; }
+      body { background: #fff; }
+      article { break-inside: avoid; }
+      img { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <span class="mark">AquaQuartz · Bottle palette</span>
+    <nav class="no-print">
+      <a href="AquaQuartz-Completed-Brochure.html">Completed brochure</a>
+      <button type="button" onclick="window.print()">Print / PDF</button>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <img src="renders/aquaquarts-place-palette-five.png" alt="Five tall AquaQuartz bottles" width="1536" height="1024" fetchpriority="high" />
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-copy">
+      <p class="brand">AquaQuartz</p>
+      <h1>The bottle palette</h1>
+      <p>Every place-water bottle in the line — tall, still, and ready to show.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p class="eyebrow">Campaign</p>
+    <h2>One silhouette</h2>
+    <p class="intro">
+      Lead with the tall stone bottles. Same pour language across cities —
+      only the mineral, water, and neck story change.
+    </p>
+    <figure class="wide">
+      <img src="renders/aquaquarts-place-palette-five.png" alt="Five bottles in a row" width="1536" height="1024" loading="lazy" />
+      <p>Place Edition row — terracotta, granite, sandstone, marble, basalt.</p>
+    </figure>
+
+    <p class="eyebrow">Launch &amp; hometown</p>
+    <h2>Lithia · Savannah</h2>
+    <div class="sheet">
+      <article>
+        <img src="renders/aquaquarts-place-lithia-neckbook.png" alt="Lithia Springs" width="1536" height="1024" loading="lazy" />
+        <div class="meta">
+          <span class="place">Launch</span>
+          <h3>Lithia Springs</h3>
+          <p>Warm clay bottle · quartz collar · amethyst ring · neck book. Heritage mineral spring character.</p>
+        </div>
+      </article>
+      <article class="flip">
+        <img src="renders/aquaquarts-cherokee-lithia-decanter.png" alt="Lithia craft pitcher" width="1536" height="1024" loading="lazy" />
+        <div class="meta">
+          <span class="place">Lithia craft</span>
+          <h3>Tableside pitcher</h3>
+          <p>Pour form for the Georgia spring line — handle, tall body, mineral glaze.</p>
+        </div>
+      </article>
+      <article>
+        <img src="renders/aquaquartz-savannah-moss-neck.png" alt="Savannah moss neck" width="1536" height="1024" loading="lazy" />
+        <div class="meta">
+          <span class="place">Savannah</span>
+          <h3>Moss neck</h3>
+          <p>Hometown civic pride. Spanish moss at the neck. Guest takes it home.</p>
+        </div>
+      </article>
+      <article class="flip">
+        <img src="renders/aquaquartz-savannah-neckbook.png" alt="Savannah neck book" width="1536" height="1024" loading="lazy" />
+        <div class="meta">
+          <span class="place">Savannah</span>
+          <h3>Neck book</h3>
+          <p>Tabby / ochre mineral body with the story tied at the neck.</p>
+        </div>
+      </article>
+      <article>
+        <img src="renders/aquaquartz-savannah-decanter-moss.png" alt="Savannah moss decanter" width="1536" height="1024" loading="lazy" />
+        <div class="meta">
+          <span class="place">Savannah</span>
+          <h3>Moss pour</h3>
+          <p>Lowcountry patio setting — soft stone, moss cord, clear glass beside it.</p>
+        </div>
+      </article>
+      <article class="flip">
+        <img src="renders/aquaquartz-savannah-decanter-tabby.png" alt="Savannah tabby" width="1536" height="1024" loading="lazy" />
+        <div class="meta">
+          <span class="place">Savannah</span>
+          <h3>Tabby stone</h3>
+          <p>Coastal mineral finish for the Lowcountry edition.</p>
+        </div>
+      </article>
+    </div>
+
+    <p class="eyebrow" style="margin-top:2.75rem">Place Editions</p>
+    <h2>Cities &amp; countries</h2>
+    <p class="intro">Same bottle language. Local water. Local poem. Local stone.</p>
+    <div class="sheet">
+      <article>
+        <img src="renders/aquaquarts-place-nordic-neckbook.png" alt="Nordic" width="1536" height="1024" loading="lazy" />
+        <div class="meta">
+          <span class="place">Nordic</span>
+          <h3>Northern spring</h3>
+          <p>Cool greige stone · neck book · fjord light.</p>
+        </div>
+      </article>
+      <article class="flip">
+        <img src="renders/aquaquarts-scandinavian-decanter.png" alt="Scandinavian" width="1536" height="1024" loading="lazy" />
+        <div class="meta">
+          <span class="place">Scandinavia</span>
+          <h3>Architectural pour</h3>
+          <p>Tall clean bottle with amethyst core accent.</p>
+        </div>
+      </article>
+      <article>
+        <img src="renders/aquaquarts-place-nyc.png" alt="NYC" width="1536" height="1024" loading="lazy" />
+        <div class="meta">
+          <span class="place">New York City</span>
+          <h3>Watershed pride</h3>
+          <p>Catskill / Delaware “champagne of tap” story.</p>
+        </div>
+      </article>
+      <article class="flip">
+        <img src="renders/aquaquarts-place-iceland.png" alt="Iceland" width="1536" height="1024" loading="lazy" />
+        <div class="meta">
+          <span class="place">Iceland</span>
+          <h3>Glacial mineral</h3>
+          <p>Lava-greige body · clear quartz cues.</p>
+        </div>
+      </article>
+      <article>
+        <img src="renders/aquaquarts-place-japan.png" alt="Japan" width="1536" height="1024" loading="lazy" />
+        <div class="meta">
+          <span class="place">Japan</span>
+          <h3>Mountain quiet</h3>
+          <p>Minimal porcelain-stone · soft water aesthetic.</p>
+        </div>
+      </article>
+      <article class="flip">
+        <img src="renders/aquaquarts-place-andes.png" alt="Andes" width="1536" height="1024" loading="lazy" />
+        <div class="meta">
+          <span class="place">Andes</span>
+          <h3>High country</h3>
+          <p>Mountain mineral body · altitude story.</p>
+        </div>
+      </article>
+      <article>
+        <img src="renders/aquaquarts-place-kenya.png" alt="Kenya" width="1536" height="1024" loading="lazy" />
+        <div class="meta">
+          <span class="place">Kenya</span>
+          <h3>Highland stoneware</h3>
+          <p>Red-earth mineral · city supply pride.</p>
+        </div>
+      </article>
+      <article class="flip">
+        <img src="renders/aquaquarts-place-desert-neckbook.png" alt="Desert" width="1536" height="1024" loading="lazy" />
+        <div class="meta">
+          <span class="place">Desert / MENA</span>
+          <h3>Water as gift</h3>
+          <p>Warm sand stone · neck book · preciousness.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="note">
+      Early squat “pebble / amphora” form experiments are parked — they read like gadgets, not bottles.
+      This palette is the bottle line you show. Full story:
+      <a href="AquaQuartz-Completed-Brochure.html">Completed brochure</a>.
+    </div>
+  </main>
+</body>
+</html>
