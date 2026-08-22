@@ -4,7 +4,17 @@ Feedback on the Flash Extended rewrite (classical 3D system, LP, Bony, geometric
 
 The Domain Architect / Harmonic Blueprint mark is branding. It is not an input to \(\Pi_j\) or \(\omega\cdot S\omega\). HB Experiment 01 already failed to reject its null; do not wire `nodes.json` into this track.
 
-SFE / UHF / DHFA are not in this workspace. Until those files are here, use the frozen names below. Do not invent chapter content from the logo.
+SFE / UHF / DHFA **are** the old Harmonic Blueprint stack, not Gemini’s LP/Bony/BKM sketch. Public names (site + 2025 DHFA/UHF note):
+
+| Acronym | Name | What it is |
+|---|---|---|
+| **SFE** | Simons Field Equation | Chapter-1 field: \(\Phi(x,t)=\sum_p A_p\sin(2\pi f_p t/\varphi(x)+\delta_p)\). Prime-indexed oscillator + coherence attractor. Different PDE from NS and from \(Q_1\). |
+| **UHF** | Unified Harmonics Framework | Wrapper: primes, curvature, zeta, entropy in one recursive story |
+| **DHFA** | Dynamic Harmonic Field Architecture | Time-varying potential \(V_{\mathrm{DHFA}}(x,t)\); standing-wave / coherence engine |
+
+The book text is **not** in this repo. Do not reconstruct chapters from the website one-liner or from Gemini. “Domains” in that book are the thing Domain Architect is trying to remember: more than one domain type, not primes only.
+
+GCD-attractor + SFE was already withdrawn as a closure in the August errata. HB Experiment 01 (this repo) did not reject H0 on a prime-indexed node family. Those two facts stay on the table when Chapter 1 is SFE.
 
 ---
 
@@ -73,11 +83,9 @@ Until SFE / UHF / DHFA are on disk, the book is:
 | A | Track A (separate book) | \(Q_1\), Ladyzhenskaya, \(\varepsilon>0\) | Drafted; different PDE |
 | Q | Arithmetic (separate book) | Bridge\(^*\), Theorem P, \(H_N\ge-1\) | Not a fluids input |
 
-If SFE is a *shell-flux estimate*, it is Chapter 2, and it must not quote Theorem F’s \(4^{N-1}\).  
-If UHF is *ultra-high-frequency / high-high Bony*, it is the \(T^*\) piece of Chapter 2–4, not a new PDE.  
-If DHFA is *directional / harmonic field analysis* (the Domain Architect layer), it may assign signs or domains in an app. It does not prove \(\cos\alpha_3\to 0\).
+SFE / UHF / DHFA are **not** chapters of Track B. They are a separate book. If Domain Architect is an app, each of those names is a *domain slot*: one equation, one test, no glue.
 
-Drop SIMPLEX, GCD-attractor “SFE,” and any HB node family from Chapters 0–6.
+Drop SIMPLEX, withdrawn GCD-attractor closures, and any HB node family from the fluids chapters.
 
 ---
 
@@ -99,7 +107,7 @@ Drop SIMPLEX, GCD-attractor “SFE,” and any HB node family from Chapters 0–
 
 - Starting from this Gemini chain and “then filling SFE → UHF → DHFA” will recreate the May T³ overclaim if Step 3–5 stay as written. The definitions we already froze are stricter and shorter. Use those as the spine; use the sketch as a narrative wrapper.
 - “Domain mapping” sounds like it will assign a sign or a domain type to each shell. That is fine for software. If a later chapter treats a mapped sign as a bound on \(\Pi_j\), the argument is no longer fluids.
-- I cannot audit SFE / UHF / DHFA until those notes are in the repo or on a readable DOI. If SFE is the withdrawn GCD-attractor note, it does not belong after Chapter 2.
+- I cannot line-edit the HB book until those chapters are in the repo. Public SFE is a prime oscillator, not \(\partial_t\omega+(u\cdot\nabla)\omega=(\omega\cdot\nabla)u+\nu\Delta\omega\). Putting SFE as Chapter 1 of the unaugmented NS note mixes books.
 
 ---
 
@@ -108,4 +116,4 @@ Drop SIMPLEX, GCD-attractor “SFE,” and any HB node family from Chapters 0–
 1. Chapter 0–1 as a clean \(\mathbb{T}^3\) note (mostly copy from `UNAUGMENTED-R4-VORTICITY-PLAN.md` §§1–3, 9).
 2. Chapter 2: Bony + T2 Lemma 1, low \(T\) marked open.
 3. Chapter 3: 3-shell Ring, not Biot–Savart depletion.
-4. Only then look at whatever SFE / UHF / DHFA files you have and **translate** them onto this spine. If a paragraph claims depletion for all data, or BKM from \(L^2\), it does not enter.
+4. Send the actual HB/SFE chapter files if you want them audited. Domain Architect can *route* NS vs SFE vs inverse-GCD. It cannot make SFE imply Track B.
