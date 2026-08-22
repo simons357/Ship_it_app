@@ -19,6 +19,7 @@ Approved plain-language explanation:
 | [04 — Notation collisions](04-NOTATION-COLLISIONS.md) | `P` / `p` / `ℙ`, `Φ` / `φ` / `ϕ`, and other overloaded symbols |
 | [05 — Rectification](05-RECTIFICATION.md) | Software implementation of the August 2026 corrective specification |
 | [06 — Overnight honest loop](06-OVERNIGHT-HONEST-LOOP.md) | Auto → reconstruct → compare → tuning → incompleteness → SFE×2 |
+| [OVERNIGHT-DEMO](OVERNIGHT-DEMO.md) | Wake-up copy-paste commands + artifact index |
 
 Machine-readable provenance (original expressions are immutable):
 
