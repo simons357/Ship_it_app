@@ -2,7 +2,8 @@
 
 **Status:** live computational framework, August 2026  
 **Specification:** [`docs/DOMAIN-ARCHITECT.md`](../DOMAIN-ARCHITECT.md)  
-**Mathematics:** [`OPERATIONAL-MATH.md`](OPERATIONAL-MATH.md)
+**Mathematics:** [`OPERATIONAL-MATH.md`](OPERATIONAL-MATH.md)  
+**Implementation audit (rewrite paused):** [`ARCHITECTURE-AUDIT.md`](ARCHITECTURE-AUDIT.md)
 
 Domain Architect analyzes, translates and synthesizes systems by the
 functional roles their components perform.
