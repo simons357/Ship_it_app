@@ -120,6 +120,10 @@ class DomainArchitectHandler(SimpleHTTPRequestHandler):
             data = ICON_SVG.read_bytes() if ICON_SVG.exists() else b""
             self._send(200, data, "image/svg+xml")
             return
+        if parsed.path == "/favicon.svg":
+            fav = STATIC_DIR / "favicon.svg"
+            self._send(200, fav.read_bytes() if fav.exists() else b"", "image/svg+xml")
+            return
         if parsed.path == "/":
             self.path = "/index.html"
         return super().do_GET()

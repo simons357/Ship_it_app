@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" role="img" aria-label="Domain Architect">
+  <rect width="640" height="160" fill="#141816"/>
+  <g transform="translate(24,16)">
+    <g fill="none" stroke="#E8E6DF" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M30 36 V92"/>
+      <path d="M30 44 L58 58"/>
+      <path d="M30 64 H58"/>
+      <path d="M30 84 L58 70"/>
+      <path d="M70 58 L98 44"/>
+      <path d="M70 64 H98"/>
+      <path d="M70 70 L98 84"/>
+      <path d="M98 44 L110 64 L98 84"/>
+    </g>
+    <path d="M64 54 L74 64 L64 74 L54 64 Z" fill="#2EC4D6"/>
+  </g>
+  <text x="172" y="78" fill="#E8E6DF" font-family="Georgia, 'Iowan Old Style', serif" font-size="36" letter-spacing="6">DOMAIN ARCHITECT</text>
+  <text x="172" y="108" fill="#8A918B" font-family="Georgia, 'Iowan Old Style', serif" font-size="13" letter-spacing="3.2">DECOMPOSE</text>
+  <text x="292" y="108" fill="#2EC4D6" font-family="Georgia, 'Iowan Old Style', serif" font-size="13">’</text>
+  <text x="318" y="108" fill="#8A918B" font-family="Georgia, 'Iowan Old Style', serif" font-size="13" letter-spacing="3.2">TRANSLATE</text>
+  <text x="448" y="108" fill="#2EC4D6" font-family="Georgia, 'Iowan Old Style', serif" font-size="13">’</text>
+  <text x="474" y="108" fill="#8A918B" font-family="Georgia, 'Iowan Old Style', serif" font-size="13" letter-spacing="3.2">SYNTHESIZE</text>
+</svg>
