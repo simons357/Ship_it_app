@@ -1,7 +1,11 @@
-"""Frozen scientific vocabulary for Domain Architect.
+"""Frozen scientific vocabulary for Domain Architect v1.0.
 
-The compact FRA grammar is an organizational interface, not a restriction
-on mathematical ontology and not a universal physical equation.
+The live organizing operations are
+
+    DECOMPOSE → CROSS-DOMAIN TRANSLATE → SYNTHESIZE
+
+They are an organizational interface, not a restriction on mathematical
+ontology and not a universal physical equation.
 """
 
 from __future__ import annotations
@@ -11,39 +15,66 @@ from typing import Final
 
 
 PRODUCT_DESCRIPTION: Final[str] = (
-    "Domain Architect is a research tool for Functional Role Analysis of "
-    "mathematical models. It identifies candidate roles for admissibility, "
-    "coupling, state, scale response, sources, geometry, evolution, "
-    "boundaries, forcing, damping, nonlinearities, and realized outputs; "
-    "records the assumptions required by those classifications; and provides "
-    "increasingly formal tests of mathematical compatibility, identifiability, "
-    "equivalence, and computational hypotheses."
+    "Domain Architect analyzes, translates and synthesizes systems by the "
+    "functional roles their components perform. It decomposes a system into "
+    "roles, mechanisms, operators and parameters; tests which mathematical "
+    "structure survives a cross-domain map; and assembles compatible "
+    "mechanisms into candidate architectures. Functional correspondence is a "
+    "hypothesis, not physical equivalence."
 )
 
-ORGANIZING_GRAMMAR: Final[str] = "Φ = ℱ(P, H, ψ, λ; E)"
+ORGANIZING_GRAMMAR: Final[str] = "DECOMPOSE → CROSS-DOMAIN TRANSLATE → SYNTHESIZE"
 
-CANONICAL_SFE_STATUS: Final[str] = "unresolved"
+# Historical research constructs. Not part of the live computational core.
+CANONICAL_SFE_STATUS: Final[str] = "archived — not part of Domain Architect v1.0"
 
-ROLE_GLOSSARY: Final[dict[str, str]] = {
-    "P": "admissibility/selection role",
-    "H": "interaction/coupling role",
-    "ψ": "state/coherence role",
-    "λ": "scale-response role",
-    "E": "additional independently necessary structures",
-    "Φ": "realized output",
-}
+OPEN_ROLES: Final[tuple[str, ...]] = (
+    "selection",
+    "interaction",
+    "transport",
+    "feedback",
+    "dissipation",
+    "forcing",
+    "constraint",
+    "state_transition",
+    "measurement",
+)
 
-EXPANDED_ROLES: Final[dict[str, str]] = {
-    "κ": "spectral coordinate or eigenvalue parameter",
-    "R": "spectral response or transfer function",
-    "S": "source, input, density, or drive",
-    "g": "geometry, metric, topology, or domain",
-    "ℬ": "boundary and initial conditions",
-    "D": "transformation, derivative, propagation, or evolution operator",
-    "Ξ": "loss, damping, or decoherence",
-    "F": "external forcing",
-    "N": "nonlinear response or self-interaction",
-}
+
+class FunctionalRole(str, Enum):
+    """Open role list from the v1.0 paper. Additional roles may be declared."""
+
+    SELECTION = "selection"
+    INTERACTION = "interaction"
+    TRANSPORT = "transport"
+    FEEDBACK = "feedback"
+    DISSIPATION = "dissipation"
+    FORCING = "forcing"
+    CONSTRAINT = "constraint"
+    STATE_TRANSITION = "state_transition"
+    MEASUREMENT = "measurement"
+    STATE = "state"
+    PARAMETER = "parameter"
+    OUTPUT = "output"
+    UNRESOLVED = "unresolved"
+
+
+class CompatibilityClass(str, Enum):
+    DIRECTLY_COMPATIBLE = "DIRECTLY_COMPATIBLE"
+    TRANSFORMABLE = "TRANSFORMABLE"
+    INCOMPATIBLE = "INCOMPATIBLE"
+
+
+class CorrespondenceKind(str, Enum):
+    ANALOGY = "analogy"
+    MATHEMATICAL_CORRESPONDENCE = "mathematical_correspondence"
+    STRUCTURE_PRESERVING_EQUIVALENCE = "structure_preserving_equivalence"
+
+
+class ValidationGate(str, Enum):
+    MATHEMATICAL = "MATHEMATICAL"
+    COMPUTATIONAL = "COMPUTATIONAL"
+    EMPIRICAL = "EMPIRICAL"
 
 
 class EvidenceLevel(IntEnum):
@@ -171,6 +202,7 @@ class Disposition(str, Enum):
     REVISE = "REVISE"
     RETIRE = "RETIRE"
     UNRESOLVED = "UNRESOLVED"
+    ARCHIVED = "ARCHIVED"
 
 
 class MathValidationStatus(str, Enum):
@@ -223,9 +255,10 @@ SCOPE_PROHIBITIONS: Final[tuple[str, ...]] = (
     "all physical theories reduce to the same hidden equation",
     "UHF, SFE, and DHFA are already established physical laws",
     "prime selection is physically privileged",
-    "rewriting a known theory in Functional Role Analysis notation "
+    "rewriting a known theory in functional-role notation "
     "constitutes a derivation of that theory",
     "agreement between AI systems constitutes independent validation",
+    "functional correspondence implies physical equivalence",
 )
 
 SOURCE_STATE_WARNING: Final[str] = (
@@ -236,9 +269,9 @@ SOURCE_STATE_WARNING: Final[str] = (
 )
 
 REPRESENTATION_NOT_DERIVATION: Final[str] = (
-    "Domain Architect expresses the Newtonian Poisson solution using "
-    "Functional Role Analysis. This establishes representational "
-    "compatibility, not derivation from a canonical SFE."
+    "Domain Architect represents the Newtonian Poisson equation by functional "
+    "roles. This establishes representational compatibility, not derivation "
+    "of gravity from a more general theory."
 )
 
 IDENTIFIABILITY_FULL_RANK: Final[str] = (

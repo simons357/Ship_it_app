@@ -40,6 +40,8 @@ SPECIAL_OPERATORS = {
     "div": "Divergence",
     "curl": "Curl",
     "partial": "Partial",
+    "dot": "Dot",
+    "ddot": "DDot",
 }
 
 LATEX_MACROS = {
@@ -187,7 +189,7 @@ _TOKEN_RE = re.compile(
     r"""
     (\d+\.\d+|\d+)                # number
     | ([A-Za-z][A-Za-z0-9]*)      # identifier
-    | (==|=|\+|\-|\*|/|\^|\_)     # operators
+    | (''|'|==|=|\+|\-|\*|/|\^|\_)  # operators, including Newton primes
     | ([\(\)\[\],])               # grouping
     | (\S)                        # leftover
     """,
@@ -214,11 +216,17 @@ _ATOMIC_IDENTIFIERS = frozenset(LATEX_MACROS) | frozenset(SPECIAL_OPERATORS) | {
     "munu",
     "barh",
     "hbar",
+    "dot",
+    "ddot",
 }
+
+_DERIV_TOKEN = re.compile(r"^([A-Za-z])(d|dd|dot|ddot)$")
 
 
 def _expand_identifier(tok: str) -> list[str]:
     if tok in _ATOMIC_IDENTIFIERS or not tok.isalpha():
+        return [tok]
+    if _DERIV_TOKEN.fullmatch(tok):
         return [tok]
     if tok.islower() and 2 <= len(tok) <= 4:
         return list(tok)
@@ -329,17 +337,33 @@ class _Parser:
 
     def parse_postfix(self) -> ASTNode:
         node = self.parse_primary()
-        while self.peek() == "_":
-            self.take()
-            idx = self.parse_primary()
-            names = _flatten_index_names(idx)
-            existing = list(node.indices) if node.kind == NodeKind.INDEXED else []
-            node = ASTNode(
-                kind=NodeKind.INDEXED,
-                name=node.name,
-                children=[node, idx],
-                indices=existing + names,
-            )
+        while True:
+            nxt = self.peek()
+            if nxt == "_":
+                self.take()
+                idx = self.parse_primary()
+                names = _flatten_index_names(idx)
+                existing = list(node.indices) if node.kind == NodeKind.INDEXED else []
+                node = ASTNode(
+                    kind=NodeKind.INDEXED,
+                    name=node.name,
+                    children=[node, idx],
+                    indices=existing + names,
+                )
+                continue
+            if nxt in {"'", "''"}:
+                order = 2 if self.take() == "''" else 1
+                if self.peek() == "'":
+                    self.take()
+                    order += 1
+                node = ASTNode(
+                    kind=NodeKind.DERIVATIVE,
+                    name=f"dt{order}",
+                    value=order,
+                    children=[node],
+                )
+                continue
+            break
         return node
 
     def parse_primary(self) -> ASTNode:
@@ -366,12 +390,30 @@ class _Parser:
             return ASTNode(kind=NodeKind.NUMBER, value=value, name=tok)
         if re.fullmatch(r"[A-Za-z][A-Za-z0-9]*", tok):
             self.take()
+            deriv = _DERIV_TOKEN.fullmatch(tok)
+            if deriv:
+                order = {"d": 1, "dd": 2, "dot": 1, "ddot": 2}[deriv.group(2)]
+                return ASTNode(
+                    kind=NodeKind.DERIVATIVE,
+                    name=f"dt{order}",
+                    value=order,
+                    children=[ASTNode(kind=NodeKind.SYMBOL, name=deriv.group(1))],
+                )
             if tok.lower() in SPECIAL_OPERATORS:
                 op_name = SPECIAL_OPERATORS[tok.lower()]
                 operand = None
                 if self._starts_implicit_mul(self.peek()) or self.peek() == "(":
                     operand = self.parse_pow()
                 children = [operand] if operand is not None else []
+                if op_name in {"Dot", "DDot"}:
+                    order = 1 if op_name == "Dot" else 2
+                    inner = children[0] if children else ASTNode(kind=NodeKind.UNKNOWN)
+                    return ASTNode(
+                        kind=NodeKind.DERIVATIVE,
+                        name=f"dt{order}",
+                        value=order,
+                        children=[inner],
+                    )
                 if op_name == "Laplacian":
                     return ASTNode(
                         kind=NodeKind.APPLY,
@@ -444,6 +486,44 @@ def parse_expression(text: str) -> ParseResult:
 
 def find_equalities(tree: ASTNode) -> list[ASTNode]:
     return [n for n in tree.walk() if n.kind == NodeKind.EQUALITY]
+
+
+def derivative_order(node: ASTNode) -> int:
+    """Return the total time-derivative order wrapping a symbol, else 0."""
+    if node.kind == NodeKind.DERIVATIVE:
+        inner = derivative_order(node.children[0]) if node.children else 0
+        return int(node.value or 1) + inner
+    if node.kind == NodeKind.MUL:
+        return max((derivative_order(c) for c in node.children), default=0)
+    return 0
+
+
+def derivative_base(node: ASTNode) -> str | None:
+    if node.kind == NodeKind.DERIVATIVE and node.children:
+        return derivative_base(node.children[0]) or (
+            node.children[0].name if node.children[0].kind == NodeKind.SYMBOL else None
+        )
+    if node.kind == NodeKind.SYMBOL:
+        return node.name
+    if node.kind == NodeKind.MUL:
+        bases = [derivative_base(c) for c in node.children]
+        named = [b for b in bases if b]
+        return named[0] if named else None
+    return node.name if node.kind in {NodeKind.SYMBOL, NodeKind.INDEXED} else None
+
+
+def flatten_sum(node: ASTNode) -> list[tuple[int, ASTNode]]:
+    """Flatten +/− into a list of (sign, term) pairs."""
+    if node.kind == NodeKind.ADD:
+        out: list[tuple[int, ASTNode]] = []
+        for child in node.children:
+            out.extend(flatten_sum(child))
+        return out
+    if node.kind == NodeKind.SUB and len(node.children) == 2:
+        left = flatten_sum(node.children[0])
+        right = [( -s, t) for s, t in flatten_sum(node.children[1])]
+        return left + right
+    return [(1, node)]
 
 
 def looks_like_laplacian_poisson(tree: ASTNode) -> bool:

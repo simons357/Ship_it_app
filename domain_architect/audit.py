@@ -1,4 +1,4 @@
-"""Top-level Functional Role Analysis pipeline."""
+"""Analysis-mode entry: DECOMPOSE plus mathematical checks."""
 
 from __future__ import annotations
 
@@ -9,28 +9,24 @@ import numpy as np
 from .checks import (
     GeometryRecord,
     TypeRecord,
-    check_dimensions,
     check_types,
     classify_permission,
     decompose_source_state,
     expand_environment,
-    warn_scale_ambiguity,
     ScaleResponseRecord,
+    warn_scale_ambiguity,
 )
-from .classify import classify_parse
-from .gravity import newtonian_fra_map, solve_periodic_poisson
+from .decompose import decompose
+from .gravity import newtonian_role_map, solve_periodic_poisson
 from .identifiability import analyze_product_abx
-from .parser import NodeKind, parse_expression
+from .parser import NodeKind
 from .recovery import classify_recovery
 from .report import AuditReport, ConfidenceTaxonomy
 from .schema import (
-    CANONICAL_SFE_STATUS,
     EvidenceLevel,
     MathType,
     MathValidationStatus,
     PhysicalValidationStatus,
-    RecoveryKind,
-    ScaleResponseSubtype,
 )
 
 
@@ -50,7 +46,13 @@ def _looks_like_einstein(text: str) -> bool:
 
 
 def _looks_like_linearized_gravity(text: str) -> bool:
-    return "Box" in text or "square" in text.lower() or "□" in text or "bar h" in text.lower() or "barh" in text.replace(" ", "").lower()
+    return (
+        "Box" in text
+        or "square" in text.lower()
+        or "□" in text
+        or "bar h" in text.lower()
+        or "barh" in text.replace(" ", "").lower()
+    )
 
 
 def audit_expression(
@@ -63,11 +65,12 @@ def audit_expression(
     geometry: GeometryRecord | None = None,
     scale_records: list[ScaleResponseRecord] | None = None,
 ) -> AuditReport:
-    """Audit one expression. Does not invent a unified theory."""
+    """Decompose one expression. Does not invent a unified theory."""
     context = dict(context or {})
-    parsed = parse_expression(expression)
-    classification = classify_parse(parsed, context)
-    warnings = list(parsed.warnings) + list(classification.warnings)
+    dec = decompose(expression, context=context)
+    parsed = dec.parsed
+    classification = dec.classification
+    warnings = list(dec.warnings)
     extra = list(classification.extra_structures)
     evidence = EvidenceLevel.COHERENT_CLASSIFICATION
     recovery_kind = None
@@ -78,16 +81,15 @@ def audit_expression(
     math_status = MathValidationStatus.NOT_PERFORMED
     phys_status = PhysicalValidationStatus.NONE
 
-    if parsed.tree is not None:
-        dim = check_dimensions(parsed.tree, context.get("units"))
-        warnings.append(dim.message)
-        if dim.consistent is True:
+    if dec.dimensions is not None:
+        if dec.dimensions.consistent is True:
             math_status = MathValidationStatus.PASSED
-        elif dim.consistent is False:
+            evidence = max(evidence, EvidenceLevel.MATHEMATICAL_COMPATIBILITY)
+        elif dec.dimensions.consistent is False:
             math_status = MathValidationStatus.FAILED
 
-        type_warnings = check_types(type_records or [], parsed.tree)
-        warnings.extend(type_warnings)
+    if parsed.tree is not None:
+        warnings.extend(check_types(type_records or [], parsed.tree))
 
     if scale_records:
         warnings.extend(warn_scale_ambiguity(scale_records))
@@ -116,7 +118,7 @@ def audit_expression(
         recovery_statement = rec.statement
         evidence = rec.evidence_level
         phys_status = PhysicalValidationStatus.BENCHMARK_REPRESENTATION
-        notes.append(newtonian_fra_map()["label"])
+        notes.append(newtonian_role_map()["label"])
         extra.extend(["geometry", "boundary", "zero_mode_solvability"])
         if rho is not None:
             solved = solve_periodic_poisson(
@@ -164,35 +166,46 @@ def audit_expression(
         )
         warnings.append(
             "General relativity is not reduced to a five-component mapping. "
-            "Independently necessary structure is recorded in E."
+            "Independently necessary structure is recorded explicitly."
         )
         notes.append(
-            "Functional Role Analysis may organize GR objects; it does not "
-            "imply that GR consists of exactly P, H, ψ, λ, Φ."
+            "Domain Architect may organize GR objects by function; it does not "
+            "claim that GR consists of a fixed role list."
         )
 
     if _looks_like_linearized_gravity(expression):
         extra.extend(["wave operator D", "metric perturbation", "harmonic gauge"])
         notes.append(
-            "Linearized gravity FRA example: D = wave operator, Φ = metric "
-            "perturbation, S = stress-energy, H = coupling, P or B = "
-            "gauge/admissibility. Additional roles are declared, not hidden."
+            "Linearized gravity example: D = wave operator (state transition), "
+            "metric perturbation = state, T = forcing, gauge = constraint."
         )
 
     if geometry is not None:
         extra.extend(f"{k}={v}" for k, v in expand_environment(geometry).items())
 
-    notes.append(f"Canonical SFE status: {CANONICAL_SFE_STATUS}.")
+    notes.append("SFE, UHF, DHFA and the Harmonic Blueprint are archived historical reference.")
     notes.append(
-        "HB, UHF, SFE, and DHFA remain research constructs. Their status is "
-        "determined by audit, not assumed in advance."
+        "Functional correspondence is a hypothesis to investigate, not evidence "
+        "of physical equivalence."
     )
+
+    role_assignments = []
+    for a in classification.assignments:
+        payload = {
+            "symbol": a.symbol,
+            "candidate_role": a.candidate_role,
+            "subtype": a.subtype,
+            "math_type": a.math_type.value if isinstance(a.math_type, MathType) else a.math_type,
+            "confidence": a.confidence,
+            "justification": a.justification,
+        }
+        role_assignments.append(payload)
 
     report = AuditReport(
         input_expression=expression,
         highest_evidence_level=evidence,
         ast_pretty=parsed.tree.pretty() if parsed.tree is not None else "",
-        role_assignments=[a.__dict__ | {"math_type": a.math_type.value} for a in classification.assignments],
+        role_assignments=role_assignments,
         warnings=_unique(warnings),
         confidence=ConfidenceTaxonomy(
             parser_confidence=parsed.parser_confidence,
@@ -206,7 +219,8 @@ def audit_expression(
         poisson_compatibility=poisson,
         identifiability=ident,
         extra_structures=_unique(extra),
-        canonical_sfe_status=CANONICAL_SFE_STATUS,
+        architecture_pretty=dec.tree.pretty(),
+        pattern=classification.pattern,
         notes=_unique(notes),
     )
     report.narrative()
