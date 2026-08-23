@@ -158,6 +158,13 @@ class TestEinsteinHandling(unittest.TestCase):
         self.assertIn("not reduced to a five-component mapping", " ".join(report.warnings).lower())
 
 
+class TestDerivativeTokensDoNotBreakPoisson(unittest.TestCase):
+    def test_poisson_still_parses(self):
+        report = audit_expression("∇²Φ = 4π G ρ")
+        self.assertTrue(any(a["candidate_role"] == "state" for a in report.role_assignments))
+        self.assertTrue(any(a["candidate_role"] == "forcing" for a in report.role_assignments))
+
+
 class TestRegistryImmutability(unittest.TestCase):
     def test_cannot_overwrite_original_expression(self):
         from domain_architect.registry import EquationRecord, EquationRegistry

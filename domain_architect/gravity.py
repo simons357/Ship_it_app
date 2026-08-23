@@ -1,8 +1,7 @@
 """Poisson gravity laboratory with explicit zero-mode handling.
 
-The laboratory represents the established Newtonian Poisson problem in
-Functional Role Analysis language. It does not derive gravity from a
-canonical SFE.
+The laboratory represents the established Newtonian Poisson problem by
+functional roles. It does not derive gravity.
 """
 
 from __future__ import annotations
@@ -40,7 +39,7 @@ class GravitySolveResult:
     statement: str
     scale_coordinate: str
     scale_response: str
-    fra_map: str
+    role_map: str
     divided_by_k_squared: bool
 
 
@@ -105,7 +104,7 @@ def solve_periodic_poisson(
                 statement=REPRESENTATION_NOT_DERIVATION,
                 scale_coordinate="kappa_n = k_n",
                 scale_response="R_g(kappa_n) = 1/kappa_n^2",
-                fra_map="Phi_{g,n} = -P_n H_g R_g(kappa_n) S_n",
+                role_map="Phi = inverse_Laplacian(4 π G ρ) on the orthogonal complement of constants",
                 divided_by_k_squared=False,
             )
 
@@ -139,7 +138,7 @@ def solve_periodic_poisson(
         statement=REPRESENTATION_NOT_DERIVATION,
         scale_coordinate="kappa_n = k_n",
         scale_response="R_g(kappa_n) = 1/kappa_n^2",
-        fra_map="Phi_{g,n} = -P_n H_g R_g(kappa_n) S_n",
+        role_map="Phi = inverse_Laplacian(4 π G ρ) on the orthogonal complement of constants",
         divided_by_k_squared=True,
     )
 
@@ -148,7 +147,7 @@ def _wavenumbers(n: int, length: float) -> np.ndarray:
     return 2.0 * np.pi * np.fft.fftfreq(n, d=length / n)
 
 
-def newtonian_fra_map() -> dict[str, str]:
+def newtonian_role_map() -> dict[str, str]:
     return {
         "recovery_kind": RecoveryKind.REPRESENTATION_RECOVERY.value,
         "label": "Functional-role representation of established Newtonian Poisson gravity.",
@@ -156,5 +155,9 @@ def newtonian_fra_map() -> dict[str, str]:
         "scale_coordinate_subtype": ScaleResponseSubtype.SPECTRAL_COORDINATE.value,
         "scale_response_subtype": ScaleResponseSubtype.TRANSFER_FUNCTION.value,
         "evidence_level": str(int(EvidenceLevel.MATHEMATICAL_COMPATIBILITY)),
-        "canonical_sfe_used": "false",
     }
+
+
+def newtonian_fra_map() -> dict[str, str]:
+    """Historical alias. Prefer newtonian_role_map."""
+    return newtonian_role_map()
