@@ -41,7 +41,7 @@ def classify_recovery(
             statement=REPRESENTATION_NOT_DERIVATION
             if "poisson" in target_theory.lower() or "newton" in target_theory.lower()
             else (
-                f"Functional Role Analysis represents {target_theory}. "
+                f"Domain Architect represents {target_theory}. "
                 "This is architectural compatibility, not derivation."
             ),
         )

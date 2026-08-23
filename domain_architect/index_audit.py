@@ -22,6 +22,7 @@ class CanonicalIndexAudit:
     degenerate: bool
     selector_acts_on: str
     symmetry_preserved: bool | None
+    index_is_object_invariant: bool
     valid_for_physical_prime_test: bool
     allowed_as_encoding_experiment: bool
     answers: dict[str, str]
@@ -67,7 +68,7 @@ def audit_canonical_index(
             "Degenerate eigenvalues are present. Any orthogonal mixture of "
             "an eigenspace may be assigned different integer labels. Prime "
             "membership of those labels is therefore basis- and order-"
-            "dependent and is invalid for physical interpretation."
+            "dependent. The index is not an invariant of the object."
         )
     if basis_dependent:
         warnings.append(
@@ -109,6 +110,7 @@ def audit_canonical_index(
         degenerate=degenerate,
         selector_acts_on=selector_acts_on,
         symmetry_preserved=symmetry_preserved,
+        index_is_object_invariant=valid and not degenerate,
         valid_for_physical_prime_test=valid and not degenerate,
         allowed_as_encoding_experiment=True,
         answers=answers,

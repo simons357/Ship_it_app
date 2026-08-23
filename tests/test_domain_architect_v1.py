@@ -41,7 +41,8 @@ class TestDecomposeOscillator(unittest.TestCase):
         self.assertEqual(roles["k"], FunctionalRole.INTERACTION)
         self.assertEqual(roles["f"], FunctionalRole.FORCING)
         levels = {n.level for n in dec.tree.walk()}
-        self.assertTrue({"SYSTEM", "FUNCTIONAL_ROLE", "MECHANISM", "PARAMETER"} <= levels)
+        self.assertTrue({"SYSTEM", "FUNCTIONAL_ROLE", "MECHANISM"} <= levels)
+        self.assertNotIn("PARAMETER", levels)
         for hyp in dec.hypotheses():
             self.assertTrue(hyp.rationale)
             self.assertGreaterEqual(hyp.confidence, 0.0)
@@ -119,7 +120,7 @@ class TestMechanicalElectricalTranslation(unittest.TestCase):
         )
         report = classify_compatibility("c", left, "R", right)
         self.assertEqual(report.verdict, CompatibilityClass.INCOMPATIBLE)
-        self.assertIn("no explicit transformation", " ".join(report.reasons).lower())
+        self.assertIn("no explicit executable transformation", " ".join(report.reasons).lower())
 
 
 class TestSynthesisRefusesIllegal(unittest.TestCase):

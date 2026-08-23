@@ -8,7 +8,7 @@ from typing import Any
 
 from .schema import (
     FORBIDDEN_CLAIM_PHRASES,
-    ORGANIZING_GRAMMAR,
+    PRIMARY_OPERATIONS,
     PRODUCT_DESCRIPTION,
     EvidenceLevel,
     MathValidationStatus,
@@ -82,7 +82,7 @@ class AuditReport:
             "",
             PRODUCT_DESCRIPTION,
             "",
-            f"Primary operations: {ORGANIZING_GRAMMAR}",
+            f"Primary operations: {PRIMARY_OPERATIONS}",
             f"Highest evidence level actually supported: {self.highest_evidence_level.label}",
             "",
             f"Input: {self.input_expression}",

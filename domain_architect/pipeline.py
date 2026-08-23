@@ -19,7 +19,6 @@ CANDIDATE ARCHITECTURE
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
 from typing import Any
 
 import numpy as np
@@ -33,38 +32,11 @@ from .dynamics import (
     second_order_field,
     simulate,
 )
-from .residual import ResidualAnalysis, recover_missing_damping
+from .cycle import CycleReport
+from .residual import recover_missing_damping
 from .schema import ValidationGate
-from .synthesize import CandidateArchitecture, inverse_design_architecture, synthesize
+from .synthesize import CandidateArchitecture, Provenance, inverse_design_architecture, synthesize
 from .translate import TranslationRecord, mechanical_electrical_translation
-
-
-@dataclass
-class CycleReport:
-    mode: str
-    target: str
-    constraints: list[str]
-    decomposition: Decomposition | None
-    translation: TranslationRecord | None
-    candidate: CandidateArchitecture | None
-    prediction: dict[str, Any] | None
-    residual: ResidualAnalysis | None
-    validation_gate: ValidationGate
-    notes: list[str] = field(default_factory=list)
-
-    def to_dict(self) -> dict[str, Any]:
-        return {
-            "mode": self.mode,
-            "target": self.target,
-            "constraints": list(self.constraints),
-            "decomposition": None if self.decomposition is None else self.decomposition.to_dict(),
-            "translation": None if self.translation is None else self.translation.to_dict(),
-            "candidate": None if self.candidate is None else self.candidate.to_dict(),
-            "prediction": self.prediction,
-            "residual": None if self.residual is None else self.residual.to_dict(),
-            "validation_gate": self.validation_gate.value,
-            "notes": list(self.notes),
-        }
 
 
 def cycle_missing_damping(
@@ -106,8 +78,24 @@ def cycle_missing_damping(
         components=["state x", "inertia", "restoring", "linear_damping"],
         replaced={"missing": "linear_damping"},
         hypothesis="Insert γ ẋ with γ̂ from the role-restricted least-squares fit.",
-        provenance=[],
+        provenance=[
+            Provenance(
+                source="equation-error OLS on {1, x, ẋ}",
+                original_domain="second_order_ode",
+                functional_role="dissipation",
+                translation=None,
+                assumptions=["linear constant-coefficient plant", "role-restricted library"],
+                compatibility_checks=["role_restricted_least_squares"],
+                modifications=["insert linear_damping"],
+                evidence=[analysis.rationale],
+                validation_status=gate.value,
+            )
+        ],
         validation_gate=gate,
+        notes=[
+            "The fit is ordinary least squares on a three-term library. "
+            "That method is equation-error identification, not Domain Architect itself."
+        ],
     )
     return CycleReport(
         mode="analysis",
@@ -212,7 +200,7 @@ def cycle_drag_reduction() -> CycleReport:
             "schematic surrogate, not a Navier–Stokes result."
         ),
         provenance=[],
-        validation_gate=ValidationGate.COMPUTATIONAL,
+        validation_gate=ValidationGate.MATHEMATICAL,
     )
     return CycleReport(
         mode="synthesis",
@@ -223,13 +211,16 @@ def cycle_drag_reduction() -> CycleReport:
         candidate=candidate,
         prediction=optimum,
         residual=None,
-        validation_gate=ValidationGate.COMPUTATIONAL,
+        validation_gate=ValidationGate.MATHEMATICAL,
         notes=[
             "TARGET → DECOMPOSE → TRANSLATE → SYNTHESIZE → SIMULATE → OPTIMIZE.",
             "DA does not need to solve Navier–Stokes regularity to run this workflow.",
             f"Surrogate optimum D_R = {optimum['D_R']:.4f} at h={optimum['h']}, "
             f"slip={optimum['slip']}, compliance={optimum['compliance']}.",
+            "The score is a schematic surrogate (constrained grid search), "
+            "not a computational validation of Domain Architect.",
         ],
+        method_credits=["constrained grid search on an invented surrogate"],
     )
 
 

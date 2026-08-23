@@ -1,8 +1,9 @@
-"""Domain Architect v1.0 — decompose, translate, synthesize.
+"""Domain Architect — decompose, translate, synthesize.
 
 This package is a computational framework for functional-role architecture.
 It is not a physical theory and it does not assume that corresponding
-functions are physically equivalent.
+functions are physically equivalent. SFE and the Harmonic Blueprint are
+not part of the live import surface.
 
 Primary operations:
 
@@ -10,7 +11,7 @@ Primary operations:
 """
 
 from .schema import (
-    ORGANIZING_GRAMMAR,
+    PRIMARY_OPERATIONS,
     PRODUCT_DESCRIPTION,
     CompatibilityClass,
     CorrespondenceKind,
@@ -19,26 +20,30 @@ from .schema import (
     ValidationGate,
 )
 from .audit import audit_expression
+from .cycle import CycleReport, CycleSpec, run_cycle
 from .decompose import decompose
 from .pipeline import run_benchmarks, run_named_cycle
 from .report import AuditReport
 from .translate import translate, translate_expressions
 
 __all__ = [
-    "ORGANIZING_GRAMMAR",
+    "PRIMARY_OPERATIONS",
     "PRODUCT_DESCRIPTION",
     "AuditReport",
     "CompatibilityClass",
     "CorrespondenceKind",
+    "CycleReport",
+    "CycleSpec",
     "EvidenceLevel",
     "FunctionalRole",
     "ValidationGate",
     "audit_expression",
     "decompose",
     "run_benchmarks",
+    "run_cycle",
     "run_named_cycle",
     "translate",
     "translate_expressions",
 ]
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"

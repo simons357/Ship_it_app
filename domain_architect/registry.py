@@ -13,7 +13,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
-from .schema import CANONICAL_SFE_STATUS, ConflictRelation, Disposition
+from .historical import CANONICAL_SFE_STATUS
+from .schema import ConflictRelation, Disposition
 
 
 PACKAGE_DATA = Path(__file__).resolve().parent.parent / "data" / "domain_architect"

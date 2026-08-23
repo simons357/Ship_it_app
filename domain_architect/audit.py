@@ -183,7 +183,6 @@ def audit_expression(
     if geometry is not None:
         extra.extend(f"{k}={v}" for k, v in expand_environment(geometry).items())
 
-    notes.append("SFE, UHF, DHFA and the Harmonic Blueprint are archived historical reference.")
     notes.append(
         "Functional correspondence is a hypothesis to investigate, not evidence "
         "of physical equivalence."

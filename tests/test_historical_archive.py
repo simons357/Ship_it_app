@@ -15,7 +15,8 @@ import numpy as np
 
 from domain_architect.index_audit import audit_canonical_index
 from domain_architect.registry import EquationRegistry
-from domain_architect.schema import CANONICAL_SFE_STATUS, ConflictRelation
+from domain_architect.historical import CANONICAL_SFE_STATUS
+from domain_architect.schema import ConflictRelation
 from domain_architect.selectors import run_selector_lab
 
 

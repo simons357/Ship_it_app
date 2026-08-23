@@ -23,10 +23,8 @@ PRODUCT_DESCRIPTION: Final[str] = (
     "hypothesis, not physical equivalence."
 )
 
-ORGANIZING_GRAMMAR: Final[str] = "DECOMPOSE → CROSS-DOMAIN TRANSLATE → SYNTHESIZE"
-
-# Historical research constructs. Not part of the live computational core.
-CANONICAL_SFE_STATUS: Final[str] = "archived — not part of Domain Architect v1.0"
+PRIMARY_OPERATIONS: Final[str] = "DECOMPOSE → CROSS-DOMAIN TRANSLATE → SYNTHESIZE"
+ORGANIZING_GRAMMAR: Final[str] = PRIMARY_OPERATIONS  # compatibility alias
 
 OPEN_ROLES: Final[tuple[str, ...]] = (
     "selection",
@@ -68,7 +66,6 @@ class CompatibilityClass(str, Enum):
 class CorrespondenceKind(str, Enum):
     ANALOGY = "analogy"
     MATHEMATICAL_CORRESPONDENCE = "mathematical_correspondence"
-    STRUCTURE_PRESERVING_EQUIVALENCE = "structure_preserving_equivalence"
 
 
 class ValidationGate(str, Enum):
@@ -226,8 +223,10 @@ FORBIDDEN_CLAIM_PHRASES: Final[tuple[str, ...]] = (
     "derives newtonian gravity",
     "derivation of gravity",
     "confirms the sfe",
+    "canonical sfe",
     "validates uhf",
     "validates dhfa",
+    "harmonic blueprint is",
     "discovers",
     "fundamental structure of nature",
     "unified theory",

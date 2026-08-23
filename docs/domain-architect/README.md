@@ -3,7 +3,7 @@
 **Status:** live computational framework, August 2026  
 **Specification:** [`docs/DOMAIN-ARCHITECT.md`](../DOMAIN-ARCHITECT.md)  
 **Mathematics:** [`OPERATIONAL-MATH.md`](OPERATIONAL-MATH.md)  
-**Implementation audit (rewrite paused):** [`ARCHITECTURE-AUDIT.md`](ARCHITECTURE-AUDIT.md)
+**Implementation audit:** [`ARCHITECTURE-AUDIT.md`](ARCHITECTURE-AUDIT.md) — items 1–6, 8, 9, 10 accepted in the SFE/HB dump
 
 Domain Architect analyzes, translates and synthesizes systems by the
 functional roles their components perform.
@@ -27,6 +27,8 @@ python -m domain_architect cycle control
 python -m domain_architect cycle drag
 python -m domain_architect benchmark
 python -m domain_architect --archive
+python -m domain_architect app
+python -m domain_architect app --install-shortcut
 ```
 
 ```bash

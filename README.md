@@ -12,39 +12,46 @@ Domain Architect tests which structures survive translation and assembles
 compatible mechanisms into candidate architectures. Correspondence is a
 hypothesis, not physical equivalence.
 
+SFE and the Harmonic Blueprint are **not** the live product. They remain
+in [`docs/archive/`](docs/archive/README.md).
+
 Specification: [`docs/DOMAIN-ARCHITECT.md`](docs/DOMAIN-ARCHITECT.md)
+
+## Desktop app
 
 ```bash
 pip install -r requirements.txt
+python -m domain_architect app
+```
+
+That opens a local window at `http://127.0.0.1:8765/`. Put it on your Desktop:
+
+```bash
+python -m domain_architect app --install-shortcut
+```
+
+On macOS this writes `Domain Architect.command`. On Linux it writes
+`Domain Architect.desktop`. Double-click to launch.
+
+## Command line
+
+```bash
 python -m domain_architect "m*xdd + c*xd + k*x = f"
 python -m domain_architect translate --example mechanical-electrical
 python -m domain_architect cycle missing-damping
-python -m domain_architect benchmark
+python -m domain_architect --archive
 ```
 
-## Layout
+## What is standard, and what is DA
 
-| Path | Role |
-|---|---|
-| `domain_architect/` | Live v1.0 package |
-| `docs/DOMAIN-ARCHITECT.md` | Concept paper |
-| `docs/domain-architect/` | Software and operational math |
-| `docs/archive/` | Archived SFE / UHF / DHFA / Harmonic Blueprint |
-| `data/domain_architect/` | Immutable historical equation inventory |
-| `hb_ringdown_test.py` | Closed HB Experiment 01 (historical) |
+Lumped mechanical–electrical analogy, RK4, saturated PD, and
+equation-error least squares are **standard methods used by** Domain
+Architect. They are not Domain Architect itself. DA is the role
+assignment, the broken-structure record, the substitution gate, and
+the provenance requirement.
 
 ## Tests
 
 ```bash
-python -m unittest tests.test_domain_architect_v1 tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_historical_archive
-```
-
-## Historical archive
-
-The Simons Field Equation, Unified Harmonic Framework, DHFA, and the
-Harmonic Blueprint book/experiment are retained as reference. They are
-not loaded into the live decompose / translate / synthesize path.
-
-```bash
-python -m domain_architect --archive
+python -m unittest tests.test_sfe_hb_dump tests.test_domain_architect_v1 tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_historical_archive
 ```

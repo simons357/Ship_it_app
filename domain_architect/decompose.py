@@ -100,7 +100,7 @@ def decompose(
 ) -> Decomposition:
     """Recursively separate a system according to function.
 
-    SYSTEM → SUBSYSTEM → FUNCTIONAL ROLE → MECHANISM → OPERATOR → PARAMETER
+    Depth follows independently functioning parts. Levels are not padded.
     """
     context = dict(context or {})
     parsed = parse_expression(expression)
@@ -116,19 +116,23 @@ def decompose(
         name=name or expression,
         attributes={"pattern": classification.pattern},
     )
-    subsystem = ArchitectureNode(
-        level="SUBSYSTEM",
-        name=classification.pattern,
-        attributes={"ast": parsed.tree.pretty() if parsed.tree is not None else ""},
-    )
-    system.children.append(subsystem)
+    if classification.pattern != "unclassified":
+        subsystem = ArchitectureNode(
+            level="SUBSYSTEM",
+            name=classification.pattern,
+            attributes={"ast": parsed.tree.pretty() if parsed.tree is not None else ""},
+        )
+        system.children.append(subsystem)
+        parent = subsystem
+    else:
+        parent = system
 
     by_role: dict[str, list[RoleHypothesis]] = {}
     for hyp in classification.hypotheses:
         by_role.setdefault(hyp.role.value, []).append(hyp)
 
     if not by_role:
-        subsystem.children.append(
+        parent.children.append(
             ArchitectureNode(
                 level="FUNCTIONAL_ROLE",
                 name=FunctionalRole.UNRESOLVED.value,
@@ -157,24 +161,16 @@ def decompose(
                     "alternate_roles": list(hyp.alternate_roles),
                 },
             )
-            operator = ArchitectureNode(
-                level="OPERATOR",
-                name=hyp.subtype,
-                role=hyp.role.value,
-                attributes={"math_type": hyp.signature.math_type.value},
-            )
-            parameter = ArchitectureNode(
-                level="PARAMETER",
-                name=hyp.symbol,
-                role=FunctionalRole.PARAMETER.value
-                if hyp.role != FunctionalRole.STATE
-                else hyp.role.value,
-                attributes={"domain": hyp.signature.domain, "codomain": hyp.signature.codomain},
-            )
-            operator.children.append(parameter)
-            mechanism.children.append(operator)
+            if hyp.subtype and hyp.subtype not in {"unknown", hyp.symbol}:
+                operator = ArchitectureNode(
+                    level="OPERATOR",
+                    name=hyp.subtype,
+                    role=hyp.role.value,
+                    attributes={"math_type": hyp.signature.math_type.value},
+                )
+                mechanism.children.append(operator)
             role_node.children.append(mechanism)
-        subsystem.children.append(role_node)
+        parent.children.append(role_node)
 
     return Decomposition(
         expression=expression,

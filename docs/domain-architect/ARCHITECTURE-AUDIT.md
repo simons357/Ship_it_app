@@ -1,9 +1,10 @@
 # Architecture audit — Domain Architect v1.0 code vs v1.0 paper
 
-**Status:** audit only. No rewrite in this revision.  
+**Status:** decisions recorded. SFE/HB dump implemented on `cursor/sfe-rewrite-domain-architect-9d6b`.  
 **Auditor:** implementation critic (Grok), 2026-08-23  
 **Canonical reference:** [`docs/DOMAIN-ARCHITECT.md`](../DOMAIN-ARCHITECT.md)  
-**Code under review:** `domain_architect/` on `cursor/domain-architect-v1-f929`
+**Human decision (2026-08-23):** accept 1–6, 8, 9, 10. Leave QStack/QNav absent.  
+**Code under review:** original v1.0 on `cursor/domain-architect-v1-f929`
 
 This note answers the request: audit the existing software against the
 new canonical definition **before** refactoring. It is deliberately

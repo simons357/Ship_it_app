@@ -9,12 +9,12 @@ import sys
 from .audit import audit_expression
 from .pipeline import run_benchmarks, run_named_cycle
 from .registry import EquationRegistry
-from .schema import ORGANIZING_GRAMMAR, PRODUCT_DESCRIPTION
+from .schema import PRIMARY_OPERATIONS, PRODUCT_DESCRIPTION
 from .synthesize import inverse_design_architecture
 from .translate import mechanical_electrical_translation, translate_expressions
 
 
-_COMMANDS = {"decompose", "translate", "synthesize", "cycle", "benchmark"}
+_COMMANDS = {"decompose", "translate", "synthesize", "cycle", "benchmark", "app"}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -62,6 +62,14 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     p_bm = sub.add_parser("benchmark", help="run the v1.0 computational benchmarks")
+    p_app = sub.add_parser("app", help="launch the Domain Architect desktop app")
+    p_app.add_argument("--port", type=int, default=8765)
+    p_app.add_argument("--no-browser", action="store_true")
+    p_app.add_argument(
+        "--install-shortcut",
+        action="store_true",
+        help="write a Desktop / applications shortcut and exit",
+    )
 
     args = parser.parse_args(argv)
     as_json = bool(getattr(args, "json", False))
@@ -83,10 +91,19 @@ def main(argv: list[str] | None = None) -> int:
     if command == "benchmark":
         payload = run_benchmarks()
         return _emit(payload, as_json, _benchmark_text(payload))
+    if command == "app":
+        from .app import install_desktop_shortcut, serve
+
+        if args.install_shortcut:
+            path = install_desktop_shortcut()
+            print(f"Desktop shortcut written: {path}")
+            return 0
+        serve(port=args.port, open_browser=not args.no_browser)
+        return 0
 
     parser.print_help()
     print()
-    print(f"Primary operations: {ORGANIZING_GRAMMAR}")
+    print(f"Primary operations: {PRIMARY_OPERATIONS}")
     return 0
 
 
