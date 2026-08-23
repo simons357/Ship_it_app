@@ -13,6 +13,7 @@ to treat representation of a known equation as derivation.
 - Package: `domain_architect/`
 - Notes: [`docs/domain-architect/README.md`](docs/domain-architect/README.md)
 - Canonical SFE status: **unresolved**
+- Zenodo correction index: [`docs/zenodo/CORRECTION-INDEX-2026.md`](docs/zenodo/CORRECTION-INDEX-2026.md)
 
 ```bash
 python -m domain_architect "∇²Φ = 4π G ρ"
