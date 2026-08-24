@@ -3,6 +3,8 @@ import assert from "node:assert/strict";
 import {
   SCHEMA_VERSION,
   ingestPaste,
+  ingestBulk,
+  ingestTextFile,
   searchEntries,
   exportVault,
   importVault,
@@ -11,6 +13,13 @@ import {
   createStore,
   DEMO_ENTRIES,
   assertNotAutoProved,
+  emptyEntry,
+  listTags,
+  listBooks,
+  listArtifacts,
+  vaultStats,
+  safeId,
+  statusClass,
 } from "../js/engine.mjs";
 
 test("ingest keeps raw text and will not let a summary replace it", () => {
@@ -47,6 +56,9 @@ test("search supports AND, OR, phrase, and field filters", () => {
   assert.equal(searchEntries(entries, "ai:Claude").length, 1);
   assert.equal(searchEntries(entries, "", { visibility: "private" }).length, 1);
   assert.equal(searchEntries(entries, "mnemonic", { visibility: "professional" }).length, 0);
+  assert.equal(searchEntries(entries, "", { book: "Research & Ideas" }).length, 2);
+  assert.equal(searchEntries(entries, "", { tag: "teaching" }).length, 1);
+  assert.equal(searchEntries(entries, "", { starred: true }).length, 1);
 });
 
 test("export round-trips metadata needed to restore a record", () => {
@@ -58,6 +70,7 @@ test("export round-trips metadata needed to restore a record", () => {
   const euler = restored.find((e) => e.title.includes("Euler"));
   assert.ok(euler.raw_content.includes("e^{iπ}"));
   assert.equal(euler.source_ai, "Grok");
+  assert.ok(euler.related_projects.includes("Research & Ideas"));
   const ns = restored.find((e) => e.title.includes("Navier"));
   assert.equal(ns.key_claims[0].status, "CONJECTURAL");
   const professional = exportVault(DEMO_ENTRIES, { includePrivate: false });
@@ -71,8 +84,10 @@ test("store updates local state only after confirmed operations", () => {
   assert.equal(store.list().length, 1);
   store.replaceAfterSuccess(a.id, updateEntry(a, { title: "Alpha" }));
   assert.equal(store.get(a.id).title, "Alpha");
+  store.addMany([ingestPaste("beta"), ingestPaste("gamma")]);
+  assert.equal(store.list().length, 3);
   store.deleteConfirmed(a.id);
-  assert.equal(store.list().length, 0);
+  assert.equal(store.list().length, 2);
   assert.throws(() => store.deleteConfirmed("missing"));
 });
 
@@ -85,4 +100,105 @@ test("human review can set CONJECTURAL; PROVED requires human flag", () => {
   assert.equal(proved.key_claims[0].status, "PROVED");
   const refused = reviewLedgerItem(entry, "key_claims", claimId, "PROVED", { humanReviewed: false });
   assert.equal(refused.key_claims[0].status, "UNREVIEWED");
+});
+
+test("import sanitizes ledger ids and never keeps auto-PROVED gaps or stale human_reviewed", () => {
+  const poisoned = {
+    format: "chatvault-export",
+    schema_version: SCHEMA_VERSION,
+    entries: [
+      {
+        id: `ent_" onclick="alert(1)`,
+        title: "x",
+        raw_content: "hello",
+        open_gaps: [
+          {
+            id: `lg_" onclick="alert(1)`,
+            text: "gap",
+            status: "PROVED",
+            human_reviewed: false,
+          },
+        ],
+        key_claims: [
+          {
+            id: "ok_claim",
+            text: "c",
+            status: "PROVED",
+            human_reviewed: false,
+          },
+        ],
+        theorems: [
+          {
+            id: "thm_1",
+            text: "t",
+            status: "not-a-status",
+            human_reviewed: true,
+          },
+        ],
+      },
+    ],
+  };
+  const [entry] = importVault(poisoned);
+  assert.equal(entry.open_gaps[0].status, "UNREVIEWED");
+  assert.equal(entry.open_gaps[0].human_reviewed, false);
+  assert.equal(entry.key_claims[0].status, "UNREVIEWED");
+  assert.equal(entry.key_claims[0].human_reviewed, false);
+  assert.equal(entry.theorems[0].status, "UNREVIEWED");
+  assert.match(entry.id, /^[A-Za-z0-9._-]+$/);
+  assert.match(entry.open_gaps[0].id, /^[A-Za-z0-9._-]+$/);
+  assert.equal(statusClass(entry.open_gaps[0].status), "unreviewed");
+  assert.equal(statusClass(`PROVED"><img`), "unreviewed");
+  assert.ok(safeId(`lg_" onclick="alert(1)`).match(/^[A-Za-z0-9._-]+$/));
+});
+
+test("emptyEntry does not spread hostile extra keys onto ledger rows", () => {
+  const entry = emptyEntry({
+    raw_content: "body",
+    key_claims: [{ text: "c", status: "OPEN", onclick: "alert(1)", extra: "nope" }],
+  });
+  assert.equal(entry.key_claims[0].status, "OPEN");
+  assert.equal(entry.key_claims[0].onclick, undefined);
+  assert.equal(entry.key_claims[0].extra, undefined);
+});
+
+test("bulk ingest splits on --- and keeps each raw chunk", () => {
+  const raw = "TITLE: One\n\nfirst body\n---\nTITLE: Two\nCLAIM: split works\n\nsecond body";
+  const { entries, errors } = ingestBulk(raw);
+  assert.equal(entries.length, 2);
+  assert.equal(errors.length, 0);
+  assert.equal(entries[0].title, "One");
+  assert.equal(entries[1].title, "Two");
+  assert.ok(entries[0].raw_content.includes("first body"));
+  assert.ok(entries[1].raw_content.includes("second body"));
+  assert.throws(() => ingestBulk("   \n---\n   "));
+});
+
+test("text file ingest indexes raw bytes and restores ChatVault JSON bundles", () => {
+  const note = ingestTextFile("notes.md", "TITLE: File note\n\nmarkdown body");
+  assert.equal(note.kind, "entry");
+  assert.equal(note.entries[0].source_file, "notes.md");
+  assert.equal(note.entries[0].source_type, "markdown");
+  assert.equal(note.entries[0].raw_content.includes("markdown body"), true);
+  const bundle = exportVault(DEMO_ENTRIES);
+  const restored = ingestTextFile("vault.json", JSON.stringify(bundle));
+  assert.equal(restored.kind, "bundle");
+  assert.equal(restored.entries.length, DEMO_ENTRIES.length);
+  assert.throws(() => ingestTextFile("photo.png", "nope"));
+});
+
+test("tags, books, artifacts, and dashboard stats are derived without an LLM", () => {
+  const tags = listTags(DEMO_ENTRIES);
+  assert.ok(tags.find((t) => t.tag === "euler" && t.count === 1));
+  const books = listBooks(DEMO_ENTRIES);
+  assert.ok(books.find((b) => b.name === "Research & Ideas" && b.count === 2));
+  const artifacts = listArtifacts(DEMO_ENTRIES);
+  assert.ok(artifacts.some((a) => a.kind === "claim"));
+  assert.ok(artifacts.some((a) => a.kind === "gap"));
+  assert.ok(artifacts.some((a) => a.kind === "action"));
+  const stats = vaultStats(DEMO_ENTRIES);
+  assert.equal(stats.total, 3);
+  assert.equal(stats.starred, 1);
+  assert.equal(stats.private, 1);
+  assert.equal(stats.books, 2);
+  assert.ok(stats.claims >= 2);
 });

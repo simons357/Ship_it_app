@@ -1,7 +1,7 @@
 # ChatVault — OS for your AI
 
-Local-first engine for the ChatVault product. This is the version-controlled
-build that can actually be maintained, tested, and shown to an acquirer.
+Local-first vault for AI conversations and research notes. Glass look from
+the Base44 app **OS for your AI**; engine and data model from this folder.
 
 It is **not** an App Store binary and **not** a certified production release.
 
@@ -25,17 +25,29 @@ cd chatvault
 node --test tests/engine.test.mjs
 ```
 
+## Brand marks
+
+The CSS vault dial is gone. The product uses the owner marks copied into
+`assets/` (see `assets/README.md`):
+
+- sidebar / favicon: dark vault-door mark
+- dashboard: original light-field upload
+- backdrop: morph-glass grain from the Base44 skin
+
+They are local files. The app does not hotlink `media.base44.com`.
+
 ## What this is
 
 The live Base44 app `6a58e103fedcde66a0a7710e` is the recognized **OS for your AI**
 UI (glass, conversation vault). That host is not source-controlled and is not
-private. This folder is the **engine** that has to sit behind the tagline if
-ChatVault is going to be more than a chat clipper:
+private. This folder is the **engine** behind the tagline:
 
 - immutable raw text
 - source AI / source file provenance
 - CLAIM_LEDGER (`UNREVIEWED` … `PROVED` / `WITHDRAWN`) that never auto-PROVED
 - fielded search (AND, OR, `"phrases"`, `claim:`, `theorem:`, `gap:`, `ai:`)
+- books, tags, and artifacts derived from records (no extraction LLM)
+- bulk paste and txt/md/json/csv/html ingest
 - private vs professional export
 - round-trip JSON restore
 
@@ -45,5 +57,6 @@ remain the historical baseline if/when they are exported.
 ## Honest limits
 
 - No accounts, no iOS package, no paid subscription.
-- Ingest is structured paste, not OCR/PDF/DOCX yet.
+- Ingest is structured paste and text files, not OCR/PDF/DOCX yet.
 - Demo fixtures are labeled research-memory examples, not solved theorems.
+- Semantic / LLM search from the Base44 skin is intentionally absent.

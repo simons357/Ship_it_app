@@ -1,7 +1,22 @@
-# Harmonic Blueprint / Domain Architect
+# Harmonic Blueprint / Domain Architect / ChatVault
 
-This repository now contains two related research objects. Neither is a
-unified physical theory.
+This repository is a workshop. It now contains three related objects.
+Neither research package is a unified physical theory. ChatVault is a
+local product prototype, not an App Store release.
+
+## ChatVault
+
+Local-first AI conversation vault: morph-glass **OS for your AI** look,
+`ChatVaultEntry` engine, CLAIM_LEDGER, fielded search.
+
+- App: [`chatvault/`](chatvault/)
+- Audit packet: [`docs/chatvault-audit/README.md`](docs/chatvault-audit/README.md)
+
+```bash
+cd chatvault
+python3 -m http.server 4173   # open http://127.0.0.1:4173/
+node --test tests/engine.test.mjs
+```
 
 ## Domain Architect
 
@@ -52,6 +67,7 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 
 | Path | Role |
 |------|------|
+| `chatvault/` | Local-first ChatVault PWA (glass skin + claim ledger engine) |
 | `hb_ringdown_test.py` | Spectral proximity statistic, MC null, BH-FDR, leave-one-event-out |
 | `nodes.json` | Frozen node families + sigma + default observable |
 | `data/qnm_events.csv` | Per-mode ringdown table with TRAIN/TEST splits |

@@ -5,13 +5,13 @@ One row per feature. Columns are builds we could actually reach.
 
 | Feature | A landing+Drive `6a58f25d…` | B glass `6a58e103…` | C paper `6a362391…` | Claude original | git `chatvault/` engine |
 | --- | --- | --- | --- | --- | --- |
-| Morph-glass “OS for your AI” UI | P (tagline, not glass vault) | W | A | U | P (glass-like, not pixel clone) |
+| Morph-glass “OS for your AI” UI | P (tagline, not glass vault) | W | A | U | W (owner marks + glass grain, git engine) |
 | Conversation vault grid | A | W | A | U | W |
 | Paper/document vault | A | A | W (empty) | U | A |
 | Marketing landing | W | A | A | U | A |
 | Google Drive import | P (OAuth wall) | P (Connect Drive) | A | U | A |
 | Paste ingest | A | W | A | U | W |
-| Bulk paste | A | W | A | U | A |
+| Bulk paste | A | W | A | U | W |
 | Media ingest | A | P (UI present) | A | U | A |
 | PDF/DOCX/OCR | A | A | P (upload copy) | U | A |
 | Immutable raw text | A | B (`raw_content` null on export) | U | U | W |
@@ -19,9 +19,9 @@ One row per feature. Columns are builds we could actually reach.
 | Source AI provenance | A | P (`pasted` only) | A | U | W |
 | ChatVaultEntry claims/theorems/gaps | A | A | A | U | W |
 | CLAIM_LEDGER / no auto-PROVED | A | A | A | U | W |
-| Books / collections | A | W | A | U | P (`related_projects`) |
+| Books / collections | A | W | A | U | W (`related_projects`) |
 | Tags | A | W | A | U | W |
-| Artifacts extraction | A | B (0 items) | A | U | A |
+| Artifacts extraction | A | B (0 items) | A | U | W (derived from ledger; no LLM) |
 | Plain search | A | W | P | U | W |
 | Semantic / LLM search | A | W | W (copy) | U | A |
 | OR / phrase / field search | A | A | A | U | W |
