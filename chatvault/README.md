@@ -14,6 +14,10 @@ python3 -m http.server 4173
 
 Then open http://127.0.0.1:4173/
 
+Installable as a PWA from that origin (manifest + `sw.js`). iOS home-screen
+install still requires Safari’s Share → Add to Home Screen; there is no App
+Store binary.
+
 ## Engine tests
 
 ```bash

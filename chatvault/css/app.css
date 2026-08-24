@@ -211,6 +211,17 @@ textarea { width: 100%; min-height: 220px; resize: vertical; }
   color: var(--danger);
   min-height: 1.2rem;
 }
+.notice {
+  color: var(--ok);
+  min-height: 0;
+}
+.pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+.fatal h1 { color: var(--danger); }
 .empty {
   color: var(--muted);
   padding: 2rem 0;

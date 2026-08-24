@@ -13,6 +13,7 @@ import {
 } from "./engine.mjs";
 
 const STORAGE_KEY = "chatvault.engine.v1";
+const PAGE_SIZE = 50;
 const root = document.getElementById("app");
 
 function loadPersisted() {
@@ -46,6 +47,8 @@ const state = {
   notice: "",
   error: "",
   ingestText: "",
+  page: 0,
+  fatal: null,
 };
 
 function set(patch) {
@@ -76,10 +79,21 @@ function filtered() {
 function renderVault() {
   const rows = filtered();
   const emptyVault = store.list().length === 0;
+  const pageCount = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
+  if (state.page >= pageCount) state.page = pageCount - 1;
+  const pageRows = rows.slice(state.page * PAGE_SIZE, (state.page + 1) * PAGE_SIZE);
+  const pager =
+    rows.length > PAGE_SIZE
+      ? `<p class="pager">
+          <button class="btn ghost" id="page-prev" ${state.page === 0 ? "disabled" : ""}>Previous</button>
+          <span class="meta">Page ${state.page + 1} of ${pageCount} · ${rows.length} matches</span>
+          <button class="btn ghost" id="page-next" ${state.page >= pageCount - 1 ? "disabled" : ""}>Next</button>
+        </p>`
+      : "";
   const cards = emptyVault
     ? `<p class="empty">Vault is empty on this device (not a failed load). <button class="btn ghost" id="load-demo">Load example fixtures</button></p>`
     : rows.length
-    ? rows
+    ? pageRows
         .map((e) => {
           const statuses = [...(e.key_claims || []), ...(e.theorems || []), ...(e.open_gaps || [])]
             .map((x) => x.status)
@@ -120,6 +134,8 @@ function renderVault() {
       </select>
     </div>
     <p class="error">${escapeHtml(state.error)}</p>
+    <p class="notice">${escapeHtml(state.notice)}</p>
+    ${pager}
     <div class="grid">${cards}</div>
   `;
 }
@@ -271,16 +287,37 @@ function shell(inner) {
   `;
 }
 
+function renderFatal(err) {
+  const message = err && err.message ? err.message : String(err || "Unknown render error");
+  root.innerHTML = `<main class="main">
+    <div class="panel fatal">
+      <h1>ChatVault stopped rendering</h1>
+      <p>This is an error boundary, not an empty vault. The last error was:</p>
+      <pre class="raw">${escapeHtml(message)}</pre>
+      <p><button class="btn" id="recover">Reload vault view</button></p>
+    </div>
+  </main>`;
+}
+
 function render() {
-  let inner = "";
-  if (state.view === "vault") inner = renderVault();
-  else if (state.view === "detail") inner = renderDetail(store.get(state.selectedId));
-  else if (state.view === "ingest") inner = renderIngest();
-  else if (state.view === "export") inner = renderExport();
-  else if (state.view === "privacy") inner = renderPrivacy();
-  else if (state.view === "disclaimer") inner = renderDisclaimer();
-  else inner = renderGuide();
-  root.innerHTML = shell(inner);
+  if (state.fatal) {
+    renderFatal(state.fatal);
+    return;
+  }
+  try {
+    let inner = "";
+    if (state.view === "vault") inner = renderVault();
+    else if (state.view === "detail") inner = renderDetail(store.get(state.selectedId));
+    else if (state.view === "ingest") inner = renderIngest();
+    else if (state.view === "export") inner = renderExport();
+    else if (state.view === "privacy") inner = renderPrivacy();
+    else if (state.view === "disclaimer") inner = renderDisclaimer();
+    else inner = renderGuide();
+    root.innerHTML = shell(inner);
+  } catch (err) {
+    state.fatal = err;
+    renderFatal(err);
+  }
 }
 
 function downloadJson(name, obj) {
@@ -293,9 +330,14 @@ function downloadJson(name, obj) {
 }
 
 root.addEventListener("click", (ev) => {
+  if (ev.target.id === "recover") {
+    state.fatal = null;
+    set({ view: "vault", error: "", notice: "Recovered from a render error." });
+    return;
+  }
   const viewBtn = ev.target.closest("[data-view]");
   if (viewBtn) {
-    set({ view: viewBtn.dataset.view, error: "" });
+    set({ view: viewBtn.dataset.view, error: "", notice: "", page: 0 });
     return;
   }
   const open = ev.target.closest("[data-open]");
@@ -308,9 +350,17 @@ root.addEventListener("click", (ev) => {
     set({ view: "vault", error: "" });
     return;
   }
+  if (ev.target.id === "page-prev") {
+    set({ page: Math.max(0, state.page - 1) });
+    return;
+  }
+  if (ev.target.id === "page-next") {
+    set({ page: state.page + 1 });
+    return;
+  }
   if (ev.target.id === "do-search") {
     const q = document.getElementById("q")?.value ?? state.query;
-    set({ query: q, error: "" });
+    set({ query: q, error: "", notice: "", page: 0 });
     return;
   }
   if (ev.target.id === "do-ingest") {
@@ -361,8 +411,8 @@ root.addEventListener("input", (ev) => {
 
 root.addEventListener("change", (ev) => {
   if (ev.target.id === "q") set({ query: ev.target.value });
-  if (ev.target.id === "vis") set({ visibility: ev.target.value });
-  if (ev.target.id === "ai") set({ source_ai: ev.target.value });
+  if (ev.target.id === "vis") set({ visibility: ev.target.value, page: 0 });
+  if (ev.target.id === "ai") set({ source_ai: ev.target.value, page: 0 });
   if (ev.target.id === "restore" && ev.target.files?.[0]) {
     const file = ev.target.files[0];
     file.text().then((text) => {
@@ -388,8 +438,23 @@ root.addEventListener("change", (ev) => {
 
 root.addEventListener("keydown", (ev) => {
   if (ev.target.id === "q" && ev.key === "Enter") {
-    set({ query: ev.target.value });
+    set({ query: ev.target.value, page: 0 });
   }
 });
+
+window.addEventListener("error", (ev) => {
+  state.fatal = ev.error || new Error(ev.message || "window error");
+  render();
+});
+window.addEventListener("unhandledrejection", (ev) => {
+  state.fatal = ev.reason instanceof Error ? ev.reason : new Error(String(ev.reason));
+  render();
+});
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js").catch(() => {
+    /* PWA optional; engine still runs */
+  });
+}
 
 render();
