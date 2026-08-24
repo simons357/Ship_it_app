@@ -38,7 +38,7 @@
       "disclaimer_last_updated": "2026-07-16",
       "sample_conversation_created_date": "2026-07-16T14:33:42.607000",
       "verified_version_number": null,
-      "notes": "Working conversation vault with demo SaaS chats. Does not implement ChatVaultEntry research schema."
+      "notes": "Working conversation vault with demo SaaS chats and morph-glass UI. Tagline OS for your AI. Editor URL hides the shareable link and can freeze; use preview-- host. Does not implement ChatVaultEntry research schema."
     },
     {
       "label": "FEATURE-SOURCE",

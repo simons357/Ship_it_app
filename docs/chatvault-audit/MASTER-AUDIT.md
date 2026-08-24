@@ -99,7 +99,13 @@ UI title **Your Paper Vault**. Filters All/Latest/Draft/Archived all at 0. Supre
 
 ### Blank-preview defect — explained
 
-`https://app.base44.com/apps/6a58e103fedcde66a0a7710e/editor/preview` is not the app. Unauthenticated GET returns the Base44 editor shell (Monaco). In a browser it is a **login wall** (“Welcome to Base44”). The 23 August “blank white screen” is therefore an **environment/auth/preview-host mistake**, not proof that Candidate 1 is empty. The working surface is `preview--<id>.base44.app`. That host was not a white screen on 24 August 2026.
+`https://app.base44.com/apps/6a58e103fedcde66a0a7710e/editor/preview` is not the app. Unauthenticated GET returns the Base44 editor shell (Monaco). In a browser it is a **login wall** (“Welcome to Base44”). The editor can freeze on a phone and does not show a shareable URL. That matches Jonathan’s report that Base44 hides the URL and the screen freezes.
+
+The working surface is the preview host, which shows the morph-glass UI and the saying **OS for your AI**:
+
+**https://preview--6a58e103fedcde66a0a7710e.base44.app/**
+
+The published host `https://6a58e103fedcde66a0a7710e.base44.app/` still 404s (`App not found`). Until Base44 publishes it, use the `preview--` URL above. Do not send `app.base44.com/.../editor/preview` to anyone.
 
 ---
 
@@ -388,8 +394,8 @@ Do not say or imply any of the following until a later audit closes them:
 
 ## What Jonathan should do next
 
-1. Look at `evidence/screenshots/chatvault_01_main_vault.webp`. Reply whether that dark “Conversation Vault / OS for your AI” UI is the ChatVault he recognizes.
-2. Export the three Base44 apps and, if they still exist, the Claude/HTML/React/Replit trees. Attach them to a follow-up. Do not delete Base44 records.
-3. Treat Candidate 1 as a **demo conversation OS** to fork from, and the ChatVaultEntry schema as a **repair backlog**, unless he explicitly wants to abandon the research-memory product.
+1. Phase 1 identity is locked: Claude original = historical baseline; parked Base44 = latest. Keep both.
+2. Export the three Base44 apps and, if they still exist, the Claude-origin files. Attach them to a follow-up. Do not delete Base44 records.
+3. Treat Candidate 1 as the **look** to keep, and the git `chatvault/` engine as the **competitive layer** (provenance + CLAIM_LEDGER + fielded search). Do not market either as App Store ready.
 
 No production certification. No patentability conclusion. No App Store readiness conclusion.
