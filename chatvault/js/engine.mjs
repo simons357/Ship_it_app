@@ -213,11 +213,18 @@ export function ingestPaste(raw, overrides = {}) {
   if (summary && summary === rawText) {
     throw new Error("Summary must not replace raw content.");
   }
+  const sourceAi =
+    overrides.source_ai && overrides.source_ai !== "unknown"
+      ? overrides.source_ai
+      : parsed.source_ai;
+  const visibility = overrides.visibility || parsed.visibility;
   return emptyEntry({
     ...parsed,
     ...overrides,
     title,
     summary,
+    source_ai: sourceAi,
+    visibility,
     raw_content: rawText,
     content_text: parsed.body || rawText,
     related_projects: overrides.related_projects || parsed.related_projects,

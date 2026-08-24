@@ -161,6 +161,17 @@ test("emptyEntry does not spread hostile extra keys onto ledger rows", () => {
   assert.equal(entry.key_claims[0].extra, undefined);
 });
 
+test("form defaults do not clobber SOURCE_AI structured lines", () => {
+  const entry = ingestPaste(
+    "TITLE: Probe\nSOURCE_AI: Grok\n\nbody of the probe",
+    { source_ai: "unknown", visibility: "professional" }
+  );
+  assert.equal(entry.source_ai, "Grok");
+  assert.equal(entry.visibility, "professional");
+  const forced = ingestPaste("TITLE: Probe\nSOURCE_AI: Grok\n\nbody", { source_ai: "Claude" });
+  assert.equal(forced.source_ai, "Claude");
+});
+
 test("bulk ingest splits on --- and keeps each raw chunk", () => {
   const raw = "TITLE: One\n\nfirst body\n---\nTITLE: Two\nCLAIM: split works\n\nsecond body";
   const { entries, errors } = ingestBulk(raw);
