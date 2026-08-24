@@ -24,26 +24,39 @@ document.querySelectorAll(".tab").forEach((btn) => {
     btn.classList.add("active");
     document.getElementById(btn.dataset.pane).classList.add("active");
     document.body.classList.toggle("mark-open", btn.dataset.pane === "mark");
+    if (btn.dataset.pane === "mark") {
+      const renders = document.getElementById("rendersStudio");
+      if (renders && !renders.hidden && window.bindStudio) window.bindStudio();
+    }
   });
 });
 
 function showMarkView(which) {
   const lab = document.getElementById("lambdaFrame");
   const renders = document.getElementById("rendersStudio");
-  const labBtn = document.getElementById("viewLab");
-  const renBtn = document.getElementById("viewRenders");
+  const buttons = {
+    gold: document.getElementById("viewGold"),
+    silver: document.getElementById("viewSilver"),
+    lab: document.getElementById("viewLab"),
+  };
   const labOn = which === "lab";
   if (lab) lab.hidden = !labOn;
   if (renders) renders.hidden = labOn;
-  if (labBtn) labBtn.classList.toggle("ghost", !labOn);
-  if (renBtn) renBtn.classList.toggle("ghost", labOn);
-  if (!labOn && window.bindStudio) window.bindStudio();
+  Object.entries(buttons).forEach(([key, el]) => {
+    if (!el) return;
+    el.classList.toggle("ghost", key !== which);
+  });
+  if (!labOn && window.bindStudio) {
+    window.bindStudio();
+    if (window.applyStudioPreset) window.applyStudioPreset(which === "silver" ? "silver" : "gold");
+  }
 }
 
-const viewLab = $("viewLab");
-const viewRenders = $("viewRenders");
-if (viewLab) viewLab.addEventListener("click", () => showMarkView("lab"));
-if (viewRenders) viewRenders.addEventListener("click", () => showMarkView("renders"));
+["viewGold", "viewSilver", "viewLab"].forEach((id) => {
+  const el = $(id);
+  if (!el) return;
+  el.addEventListener("click", () => showMarkView(id.replace("view", "").toLowerCase()));
+});
 
 document.querySelectorAll(".example").forEach((btn) => {
   btn.addEventListener("click", () => {

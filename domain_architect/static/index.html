@@ -98,14 +98,15 @@
 
       <section id="mark" class="pane">
         <div class="mark-switch row">
-          <button type="button" id="viewLab">Lambda Lab</button>
-          <button type="button" id="viewRenders" class="ghost">Black &amp; gold / Silver</button>
+          <button type="button" id="viewGold">Black &amp; gold</button>
+          <button type="button" id="viewSilver" class="ghost">All silver</button>
+          <button type="button" id="viewLab" class="ghost">Lambda Lab</button>
         </div>
-        <iframe id="lambdaFrame" class="lambda-frame" src="/lambda-lab.html" title="Lambda Lab"></iframe>
-        <div id="rendersStudio" class="studio" hidden>
+        <iframe id="lambdaFrame" class="lambda-frame" src="/lambda-lab.html" title="Lambda Lab" hidden></iframe>
+        <div id="rendersStudio" class="studio">
           <div class="studio-preview card">
             <h2>Official mark</h2>
-            <p class="hint">The two 3D looks you liked: black plate with gold DOMAIN, or all silver. Sliders retune metal, light, swirl, and type. Lambda Lab next door is the vector construction tool.</p>
+            <p class="hint">Black &amp; gold and all silver both stay. These are the two 3D lockups. Lambda Lab is the vector construction tool if you want to reshape the A.</p>
             <canvas id="markCanvas" width="1024" height="1024" aria-label="Domain Architect mark"></canvas>
             <p id="markNote" class="hint"></p>
           </div>

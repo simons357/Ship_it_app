@@ -378,6 +378,14 @@ function bindStudio() {
     if (fav) fav.href = `/favicon.svg?ts=${stamp}`;
   });
   sync();
+  window._studioSync = sync;
+}
+
+function applyStudioPreset(name) {
+  if (name === "silver") params = { ...PRESETS.silver };
+  else params = { ...PRESETS.gold };
+  if (typeof window._studioSync === "function") window._studioSync();
 }
 
 window.bindStudio = bindStudio;
+window.applyStudioPreset = applyStudioPreset;

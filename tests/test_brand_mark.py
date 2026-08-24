@@ -133,6 +133,22 @@ class TestLambdaLab(unittest.TestCase):
         self.assertIn('data-v="silver"', text)
         self.assertIn("function lambdaPaths", text)
 
+    def test_mark_tab_keeps_gold_and_silver_as_peers(self):
+        html = (
+            Path(__file__).resolve().parents[1]
+            / "domain_architect"
+            / "static"
+            / "index.html"
+        ).read_text(encoding="utf-8")
+        self.assertIn('id="viewGold"', html)
+        self.assertIn('id="viewSilver"', html)
+        self.assertIn('id="viewLab"', html)
+        self.assertIn("Black &amp; gold", html)
+        self.assertIn("All silver", html)
+        self.assertIn('id="lambdaFrame"', html)
+        self.assertIn("hidden", html.split('id="lambdaFrame"', 1)[1][:80])
+        self.assertNotIn('id="rendersStudio" class="studio" hidden', html)
+
 
 class TestBrandApi(unittest.TestCase):
     def test_presets_endpoint(self):
