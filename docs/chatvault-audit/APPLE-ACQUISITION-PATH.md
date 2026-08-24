@@ -6,6 +6,8 @@ the first maintainable backend for that look.
 
 ## Best version (reconfirmed)
 
+Jonathan identified the split on 24 August 2026: Claude built the original last year; the parked Base44 app is the latest. That is now the Phase 1 identity lock. Do not replace the Claude original. Do not treat Base44 as the only copy that ever existed.
+
 Live preview hash of Base44 `6a58e103fedcde66a0a7710e` still matches the audit freeze:
 
 `720a21e0e061997909f4ea6ca85caeff60a08af8b1d5157081746a76ff6ba8de`

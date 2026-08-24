@@ -5,6 +5,8 @@
   "branch": "cursor/chatvault-master-audit-3618",
   "audit_utc": "2026-08-24T03:20:00Z",
   "v1_19_status": "unverified",
+  "jonathan_identification_utc": "2026-08-24",
+  "jonathan_identification": "Claude did the original last year; the parked Base44 app looks like the latest.",
   "production_certification": false,
   "patentability_conclusion": false,
   "app_store_readiness": false,
