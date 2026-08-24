@@ -10,6 +10,17 @@ explorations of the same idea.
 | `domain-architect-mono.svg` | Black / white stamp |
 | `domain-architect-favicon.svg` | 32×32 micro-icon |
 | `domain-architect-flat.svg` | Identity-sheet presentation on paper |
+| `da_app_icon.png` | Premium raster app icon |
+| `da_wordmark.png` | Raster lockup |
+| `da_mono.png` | Raster monochrome stamp |
+| `da_favicon.png` | Raster micro-icon study |
+| `da_flat_vector.png` | Raster identity sheet |
+
+Reading, left to right:
+
+1. vertical spine and three branches — decompose a system
+2. cyan diamond — the only chromatic element; cross-domain translation
+3. three branches closing to an apex — synthesize a candidate architecture
 
 Reading, left to right:
 
