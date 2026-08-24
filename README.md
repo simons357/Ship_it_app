@@ -24,7 +24,9 @@ pip install -r requirements.txt
 python -m domain_architect app
 ```
 
-That opens a local window at `http://127.0.0.1:8765/`. Put it on your Desktop:
+That opens a local window at `http://127.0.0.1:8765/`. The **Mark** tab is
+the slider studio for the official chrome-A + rainbow-triskelion icon
+(Gold DOMAIN, All silver, live colors and geometry). Put the app on your Desktop:
 
 ```bash
 python -m domain_architect app --install-shortcut
@@ -53,5 +55,5 @@ the provenance requirement.
 ## Tests
 
 ```bash
-python -m unittest tests.test_sfe_hb_dump tests.test_domain_architect_v1 tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_historical_archive
+python -m unittest tests.test_sfe_hb_dump tests.test_domain_architect_v1 tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_historical_archive tests.test_brand_mark
 ```

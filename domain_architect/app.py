@@ -16,6 +16,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from .audit import audit_expression
+from .brand import PRESETS, apply_mark_from_params, render_mark_svg
 from .cycle import CycleSpec, run_cycle
 from .historical import HISTORICAL_NOTE
 from .pipeline import run_benchmarks, run_named_cycle
@@ -90,6 +91,21 @@ def handle_api(path: str, payload: dict) -> tuple[int, bytes, str]:
             payload_out = registry.export()
             payload_out["note"] = HISTORICAL_NOTE
             return _json_bytes(payload_out)
+        if path == "/api/brand/presets":
+            return _json_bytes({name: params.to_dict() for name, params in PRESETS.items()})
+        if path == "/api/brand/render":
+            name = str(payload.get("preset") or "").strip()
+            svg = render_mark_svg(PRESETS[name] if name in PRESETS else payload)
+            return 200, svg.encode("utf-8"), "image/svg+xml"
+        if path == "/api/brand/apply":
+            result = apply_mark_from_params(payload, REPO_ROOT)
+            return _json_bytes(
+                {
+                    "ok": True,
+                    "written": result["written"],
+                    "params": result["params"],
+                }
+            )
     except Exception as exc:
         return _json_bytes({"error": str(exc)}, 400)
     return _json_bytes({"error": f"unknown endpoint {path}"}, 404)

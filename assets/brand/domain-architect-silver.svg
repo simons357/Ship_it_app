@@ -8,29 +8,29 @@
       <stop offset="100%" stop-color="#86898c"/>
     </linearGradient>
     <linearGradient id="aGrad" gradientTransform="rotate(-38.0 512.0 307.2)">
-      <stop offset="0%" stop-color="#f2f2f2"/>
-      <stop offset="48%" stop-color="#d8d8d8"/>
-      <stop offset="100%" stop-color="#8c8c8c"/>
+      <stop offset="0%" stop-color="#f3f3f3"/>
+      <stop offset="48%" stop-color="#dcdcdc"/>
+      <stop offset="100%" stop-color="#8f8f8f"/>
     </linearGradient>
     <linearGradient id="aHi" gradientTransform="rotate(-38.0 512.0 307.2)">
       <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="40%" stop-color="#f2f2f2"/>
-      <stop offset="100%" stop-color="#d8d8d8"/>
+      <stop offset="40%" stop-color="#f3f3f3"/>
+      <stop offset="100%" stop-color="#dcdcdc"/>
     </linearGradient>
     <linearGradient id="domainGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#f6ebc8"/>
-      <stop offset="55%" stop-color="#e6c35a"/>
-      <stop offset="100%" stop-color="#957e3a"/>
-    </linearGradient>
-    <linearGradient id="archGrad" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#f7f7f7"/>
       <stop offset="55%" stop-color="#e8e8e8"/>
       <stop offset="100%" stop-color="#969696"/>
     </linearGradient>
+    <linearGradient id="archGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fafafa"/>
+      <stop offset="55%" stop-color="#f0f0f0"/>
+      <stop offset="100%" stop-color="#9c9c9c"/>
+    </linearGradient>
     <radialGradient id="sphereGrad" cx="35%" cy="30%">
       <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="35%" stop-color="#f6ebc8"/>
-      <stop offset="100%" stop-color="#957e3a"/>
+      <stop offset="35%" stop-color="#f7f7f7"/>
+      <stop offset="100%" stop-color="#969696"/>
     </radialGradient>
     <filter id="grain">
       <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7"/>
@@ -49,9 +49,9 @@
     <clipPath id="inner">
       <rect x="56.32" y="56.32" width="911.36" height="911.36" rx="171.008"/>
     </clipPath>
-    <linearGradient id="arm0" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff2828"/><stop offset="55%" stop-color="#d6b200"/><stop offset="100%" stop-color="#7af400"/></linearGradient>
-    <linearGradient id="arm1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#28ff28"/><stop offset="55%" stop-color="#00d6b2"/><stop offset="100%" stop-color="#007af4"/></linearGradient>
-    <linearGradient id="arm2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2828ff"/><stop offset="55%" stop-color="#b200d6"/><stop offset="100%" stop-color="#f4007a"/></linearGradient>
+    <linearGradient id="arm0" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f64b31"/><stop offset="55%" stop-color="#cdc708"/><stop offset="100%" stop-color="#5ceb09"/></linearGradient>
+    <linearGradient id="arm1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#31f64b"/><stop offset="55%" stop-color="#08cdc7"/><stop offset="100%" stop-color="#095ceb"/></linearGradient>
+    <linearGradient id="arm2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4b31f6"/><stop offset="55%" stop-color="#c708cd"/><stop offset="100%" stop-color="#eb095c"/></linearGradient>
   </defs>
   <rect width="1024" height="1024" rx="204.8" fill="url(#frameGrad)"/>
   <rect x="56.32" y="56.32" width="911.36" height="911.36" rx="171.008" fill="#161616"/>
@@ -74,5 +74,5 @@
   <circle cx="512.0" cy="307.2" r="28.7" fill="url(#sphereGrad)"/>
   <text x="512.0" y="737.3" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-weight="700" font-size="56.3" letter-spacing="7.0" fill="url(#domainGrad)">DOMAIN</text>
   <text x="512.0" y="839.7" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-weight="700" font-size="73.7" letter-spacing="4.2" fill="url(#archGrad)">ARCHITECT</text>
-  <text x="512.0" y="921.6" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-weight="600" font-size="28.7" letter-spacing="6.1" fill="#d4b45a">DECOMPOSE · TRANSLATE · SYNTHESIZE</text>
+  <text x="512.0" y="921.6" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-weight="600" font-size="28.7" letter-spacing="6.1" fill="#d0d0d0">DECOMPOSE · TRANSLATE · SYNTHESIZE</text>
 </svg>

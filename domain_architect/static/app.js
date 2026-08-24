@@ -23,6 +23,7 @@ document.querySelectorAll(".tab").forEach((btn) => {
     document.querySelectorAll(".pane").forEach((p) => p.classList.remove("active"));
     btn.classList.add("active");
     document.getElementById(btn.dataset.pane).classList.add("active");
+    if (btn.dataset.pane === "mark" && window.bindStudio) window.bindStudio();
   });
 });
 

@@ -23,6 +23,7 @@
       <button class="tab" data-pane="translate">Translate</button>
       <button class="tab" data-pane="synthesize">Synthesize</button>
       <button class="tab" data-pane="cycle">Cycle</button>
+      <button class="tab" data-pane="mark">Mark</button>
       <button class="tab" data-pane="archive">Archive</button>
     </nav>
 
@@ -95,6 +96,33 @@
         <pre id="cyOut" class="out"></pre>
       </section>
 
+      <section id="mark" class="pane">
+        <div class="studio">
+          <div class="studio-preview card">
+            <h2>Official mark</h2>
+            <p class="hint">Chrome A, rainbow triskelion, gold or silver wordmark. These two factory looks match the renders you liked. Sliders retune metal, light, swirl, and type.</p>
+            <canvas id="markCanvas" width="1024" height="1024" aria-label="Domain Architect mark"></canvas>
+            <p id="markNote" class="hint"></p>
+          </div>
+          <div class="studio-controls card">
+            <div class="row">
+              <button id="presetGold" type="button">Gold DOMAIN</button>
+              <button id="presetSilver" class="ghost" type="button">All silver</button>
+              <button id="presetIcon" class="ghost" type="button">App icon</button>
+            </div>
+            <label class="chk"><input id="wordmarkOn" type="checkbox" checked /> Wordmark</label>
+            <label class="chk"><input id="taglineOn" type="checkbox" checked /> Tagline</label>
+            <label class="chk"><input id="frameOn" type="checkbox" checked /> Chrome frame</label>
+            <div id="colors" class="color-grid"></div>
+            <div id="sliders"></div>
+            <div class="row">
+              <button id="applyMark" type="button">Use as app icon</button>
+              <button id="downloadPng" class="ghost" type="button">Download PNG</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="archive" class="pane">
         <div class="card">
           <h2>Historical archive</h2>
@@ -105,6 +133,7 @@
       </section>
     </main>
   </div>
+  <script src="/studio.js"></script>
   <script src="/app.js"></script>
 </body>
 </html>
