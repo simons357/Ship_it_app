@@ -332,8 +332,11 @@ def apply_mark_files(svg: str, repo_root: str | Path) -> list[str]:
     """Write the live app icon + favicon from an SVG string."""
     root = Path(repo_root)
     payload = svg.encode("utf-8")
-    if b"<svg" not in payload.lower():
+    lower = payload.lower()
+    if b"<svg" not in lower:
         raise ValueError("not an SVG document")
+    if b"<script" in lower or b"javascript:" in lower:
+        raise ValueError("script not allowed in SVG")
     if len(payload) > 2_000_000:
         raise ValueError("SVG too large")
     written = []
@@ -341,6 +344,17 @@ def apply_mark_files(svg: str, repo_root: str | Path) -> list[str]:
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(payload)
         written.append(str(path))
+    return written
+
+
+def apply_svg_document(svg: str, repo_root: str | Path) -> list[str]:
+    """Write a Lambda Lab (or other) SVG as the live icon and official lockup."""
+    root = Path(repo_root)
+    written = apply_mark_files(svg, root)
+    official = root / "assets" / "brand" / "domain-architect-official.svg"
+    official.parent.mkdir(parents=True, exist_ok=True)
+    official.write_text(svg, encoding="utf-8")
+    written.append(str(official))
     return written
 
 

@@ -97,16 +97,21 @@
       </section>
 
       <section id="mark" class="pane">
-        <div class="studio">
+        <div class="mark-switch row">
+          <button type="button" id="viewLab">Lambda Lab</button>
+          <button type="button" id="viewRenders" class="ghost">Black &amp; gold / Silver</button>
+        </div>
+        <iframe id="lambdaFrame" class="lambda-frame" src="/lambda-lab.html" title="Lambda Lab"></iframe>
+        <div id="rendersStudio" class="studio" hidden>
           <div class="studio-preview card">
             <h2>Official mark</h2>
-            <p class="hint">Chrome A, rainbow triskelion, gold or silver wordmark. These two factory looks match the renders you liked. Sliders retune metal, light, swirl, and type.</p>
+            <p class="hint">The two 3D looks you liked: black plate with gold DOMAIN, or all silver. Sliders retune metal, light, swirl, and type. Lambda Lab next door is the vector construction tool.</p>
             <canvas id="markCanvas" width="1024" height="1024" aria-label="Domain Architect mark"></canvas>
             <p id="markNote" class="hint"></p>
           </div>
           <div class="studio-controls card">
             <div class="row">
-              <button id="presetGold" type="button">Gold DOMAIN</button>
+              <button id="presetGold" type="button">Black &amp; gold</button>
               <button id="presetSilver" class="ghost" type="button">All silver</button>
               <button id="presetIcon" class="ghost" type="button">App icon</button>
             </div>

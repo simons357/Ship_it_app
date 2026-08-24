@@ -34,7 +34,7 @@ This file is the human decision log. Nothing in it is implemented by being writt
 
 Implied by those rows and implemented with them: **C3, C7, C8, C17, C18, C19, C20**. Git **G1–G2** stay unmarked (G1 auditor rec: do not merge #31 as-is — still draft).
 
-**Recorded 2026-08-24 (logo).** Jonathan Simons sent two 3D renders of the chrome open-A + rainbow triskelion (gold DOMAIN vs all-silver) and said he already had a slider program for the mark. **L1** official mark = those renders. **L2** wire through app/favicon/shortcut and put the manipulator in the desktop **Mark** tab. **L3** amended: that triskelion *is* the brand; still no primes / field-equation motifs.
+**Recorded 2026-08-24 (logo).** Jonathan Simons sent two 3D renders of the chrome open-A + rainbow triskelion (gold DOMAIN vs all-silver) and said he already had a slider program for the mark. He then pasted **Lambda Lab** (the construction HTML). **L1** official looks = black & gold + silver 3D lockups; construction tool = Lambda Lab in the Mark tab. **L2** both tools can write header/favicon/shortcut SVG. **L3** amended: triskelion/triskele is brand geometry; still no primes / field-equation motifs.
 
 Live software today (verified 2026-08-24 before this rewrite): local desktop app at `http://127.0.0.1:8765/`, CLI, 51 unit tests green. That package was a three-verb UI around Firestone analogy, equation-error OLS, RK4, saturated PD, FFT Poisson, and a three-pattern classifier. This rewrite implements the marked table.
 

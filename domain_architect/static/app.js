@@ -23,9 +23,27 @@ document.querySelectorAll(".tab").forEach((btn) => {
     document.querySelectorAll(".pane").forEach((p) => p.classList.remove("active"));
     btn.classList.add("active");
     document.getElementById(btn.dataset.pane).classList.add("active");
-    if (btn.dataset.pane === "mark" && window.bindStudio) window.bindStudio();
+    document.body.classList.toggle("mark-open", btn.dataset.pane === "mark");
   });
 });
+
+function showMarkView(which) {
+  const lab = document.getElementById("lambdaFrame");
+  const renders = document.getElementById("rendersStudio");
+  const labBtn = document.getElementById("viewLab");
+  const renBtn = document.getElementById("viewRenders");
+  const labOn = which === "lab";
+  if (lab) lab.hidden = !labOn;
+  if (renders) renders.hidden = labOn;
+  if (labBtn) labBtn.classList.toggle("ghost", !labOn);
+  if (renBtn) renBtn.classList.toggle("ghost", labOn);
+  if (!labOn && window.bindStudio) window.bindStudio();
+}
+
+const viewLab = $("viewLab");
+const viewRenders = $("viewRenders");
+if (viewLab) viewLab.addEventListener("click", () => showMarkView("lab"));
+if (viewRenders) viewRenders.addEventListener("click", () => showMarkView("renders"));
 
 document.querySelectorAll(".example").forEach((btn) => {
   btn.addEventListener("click", () => {

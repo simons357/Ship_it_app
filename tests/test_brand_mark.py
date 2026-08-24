@@ -14,6 +14,7 @@ from domain_architect.brand import (
     MarkParams,
     apply_mark_files,
     apply_mark_from_params,
+    apply_svg_document,
     icon_params,
     preset_svg,
     render_mark_svg,
@@ -88,10 +89,23 @@ class TestApply(unittest.TestCase):
             icon = (root / "assets" / "domain-architect.svg").read_text(encoding="utf-8")
             self.assertNotIn(">DOMAIN</text>", icon)
 
+    def test_script_svg_is_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaises(ValueError):
+                apply_mark_files('<svg><script>alert(1)</script></svg>', tmp)
+
+    def test_apply_svg_document(self):
+        svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="#0A0D11"/></svg>'
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            written = apply_svg_document(svg, root)
+            self.assertTrue(any(p.endswith("favicon.svg") for p in written))
+            official = root / "assets" / "brand" / "domain-architect-official.svg"
+            self.assertEqual(official.read_text(encoding="utf-8"), svg)
+
     def test_write_factory_marks(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            # Seed the retired spine so preservation can run.
             brand = root / "assets" / "brand"
             brand.mkdir(parents=True)
             (brand / "domain-architect.svg").write_text(
@@ -104,6 +118,20 @@ class TestApply(unittest.TestCase):
             self.assertIn("#2EC4D6", (brand / "exploratory-spine.svg").read_text(encoding="utf-8"))
             self.assertIn("DOMAIN", Path(paths["gold"]).read_text(encoding="utf-8"))
             self.assertNotIn("DOMAIN", Path(paths["icon"]).read_text(encoding="utf-8"))
+
+
+class TestLambdaLab(unittest.TestCase):
+    def test_lab_file_is_the_construction_tool(self):
+        path = Path(__file__).resolve().parents[1] / "domain_architect" / "static" / "lambda-lab.html"
+        text = path.read_text(encoding="utf-8")
+        self.assertIn("Lambda Lab", text)
+        self.assertIn("watch the 40", text)
+        self.assertIn("Triskele", text)
+        self.assertIn("Use as app icon", text)
+        self.assertIn("/api/brand/apply", text)
+        self.assertIn('data-v="gold"', text)
+        self.assertIn('data-v="silver"', text)
+        self.assertIn("function lambdaPaths", text)
 
 
 class TestBrandApi(unittest.TestCase):

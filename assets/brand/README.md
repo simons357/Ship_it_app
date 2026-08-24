@@ -7,10 +7,17 @@ looks match the source renders:
 - **Gold DOMAIN** — gold `DOMAIN`, silver `ARCHITECT`, gold tagline and sphere
 - **All silver** — silver wordmark, silver sphere, slightly cooler rainbow
 
-The live app icon is the same geometry without type. Sliders in the
-desktop **Mark** tab (`python -m domain_architect app`) retune metal,
-light, swirl, grain, and colors. **Use as app icon** writes the current
-look into the files below.
+The live app icon is the same geometry without type. The desktop **Mark**
+tab now hosts two tools:
+
+- **Lambda Lab** — the vector construction program (stance, weight, cleaved
+  left leg, triskele/lines, diamond node, silver/gold/black finishes, and
+  a 40px reduction strip)
+- **Black & gold / Silver** — the two 3D lockup looks (gold DOMAIN on a
+  black plate, or all silver)
+
+**Use as app icon** in either tool writes the current look into the files
+below.
 
 ```bash
 python -m domain_architect.brand --apply

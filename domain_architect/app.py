@@ -16,7 +16,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from .audit import audit_expression
-from .brand import PRESETS, apply_mark_from_params, render_mark_svg
+from .brand import PRESETS, apply_mark_from_params, apply_svg_document, render_mark_svg
 from .cycle import CycleSpec, run_cycle
 from .historical import HISTORICAL_NOTE
 from .pipeline import run_benchmarks, run_named_cycle
@@ -98,12 +98,17 @@ def handle_api(path: str, payload: dict) -> tuple[int, bytes, str]:
             svg = render_mark_svg(PRESETS[name] if name in PRESETS else payload)
             return 200, svg.encode("utf-8"), "image/svg+xml"
         if path == "/api/brand/apply":
+            svg = payload.get("svg")
+            if isinstance(svg, str) and svg.strip():
+                written = apply_svg_document(svg, REPO_ROOT)
+                return _json_bytes({"ok": True, "written": written, "source": "svg"})
             result = apply_mark_from_params(payload, REPO_ROOT)
             return _json_bytes(
                 {
                     "ok": True,
                     "written": result["written"],
                     "params": result["params"],
+                    "source": "params",
                 }
             )
     except Exception as exc:
