@@ -25,8 +25,9 @@ document.querySelectorAll(".tab").forEach((btn) => {
     document.getElementById(btn.dataset.pane).classList.add("active");
     document.body.classList.toggle("mark-open", btn.dataset.pane === "mark");
     if (btn.dataset.pane === "mark") {
-      const renders = document.getElementById("rendersStudio");
-      if (renders && !renders.hidden && window.bindStudio) window.bindStudio();
+      const silverOn = $("viewSilver") && !$("viewSilver").classList.contains("ghost");
+      const labOn = $("viewLab") && !$("viewLab").classList.contains("ghost");
+      showMarkView(labOn ? "lab" : silverOn ? "silver" : "gold");
     }
   });
 });
@@ -46,10 +47,12 @@ function showMarkView(which) {
     if (!el) return;
     el.classList.toggle("ghost", key !== which);
   });
-  if (!labOn && window.bindStudio) {
-    window.bindStudio();
-    if (window.applyStudioPreset) window.applyStudioPreset(which === "silver" ? "silver" : "gold");
-  }
+  if (labOn) return;
+  if (window.bindStudio) window.bindStudio();
+  const innerId = which === "silver" ? "presetSilver" : "presetGold";
+  const inner = document.getElementById(innerId);
+  if (inner) inner.click();
+  else if (window.applyStudioPreset) window.applyStudioPreset(which === "silver" ? "silver" : "gold");
 }
 
 ["viewGold", "viewSilver", "viewLab"].forEach((id) => {

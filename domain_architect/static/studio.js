@@ -331,10 +331,16 @@ function bindStudio() {
   });
   document.getElementById("presetGold").addEventListener("click", () => {
     params = { ...PRESETS.gold };
+    document.getElementById("presetGold").classList.remove("ghost");
+    document.getElementById("presetSilver").classList.add("ghost");
+    document.getElementById("presetIcon").classList.add("ghost");
     sync();
   });
   document.getElementById("presetSilver").addEventListener("click", () => {
     params = { ...PRESETS.silver };
+    document.getElementById("presetGold").classList.add("ghost");
+    document.getElementById("presetSilver").classList.remove("ghost");
+    document.getElementById("presetIcon").classList.add("ghost");
     sync();
   });
   document.getElementById("presetIcon").addEventListener("click", () => {
