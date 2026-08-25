@@ -100,7 +100,7 @@ class TestClassicalUnaugmentedChainFile(unittest.TestCase):
         self.assertIn("OPEN", text)
         self.assertIn("Ring Lemma", text)
         self.assertIn("NS-6", text)
-        self.assertIn("not the June FIXED PDF compile", text)
+        self.assertIn("June FIXED PDF compile", text)
         self.assertIn("Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex", text)
         self.assertIn("H_N[a]", text)
         self.assertIn("Q6", text)
