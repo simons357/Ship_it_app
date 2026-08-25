@@ -101,6 +101,13 @@ The August 1 audit of the Zenodo “implies” manuscript
 is the same split: keep Lipschitz (Lemma 3.1) and conditional Weyl
 (Theorem 4.1); cut the false T2 closure; leave Lemma 6.1 as the kink.
 
+**Localized reparation** is that split on a numbered chain: cut the
+diseased step, keep healthy tissue on both sides, search a catalog for
+the hook, re-insert an OPEN graft. See
+[`LOCALIZED-REPAIR.md`](LOCALIZED-REPAIR.md). The June FIXED `.tex`
+source was requested and did not arrive; surgery uses the filed PDF
+plus the audit.
+
 This is how those papers are already honest when they are written as
 conditional theorems. The function makes that split first-class so DA
 does not try to glue the leftovers or to synthesize a PD loop as a
@@ -110,11 +117,13 @@ Run it:
 
 ```
 python -m domain_architect cycle leftover-repair
+python -m domain_architect cycle localized-repair
 python -m domain_architect translate --example snd-vs-h
 ```
 
 In the desktop app: Decompose the Ring SND and Q6 \(H_N\) buttons,
-Translate **SND vs H_N (lab, not glue)**, Cycle **NS leftover repair**.
+Translate **SND vs H_N (lab, not glue)**, Cycle **NS leftover repair**
+or **Paper2 surgery**.
 
 ## What this does not do
 

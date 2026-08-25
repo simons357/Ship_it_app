@@ -5,7 +5,8 @@
 **Mathematics:** [`OPERATIONAL-MATH.md`](OPERATIONAL-MATH.md)  
 **Implementation audit:** [`ARCHITECTURE-AUDIT.md`](ARCHITECTURE-AUDIT.md) — items 1–6, 8, 9, 10 accepted in the SFE/HB dump  
 **Validation challenge 01:** [`DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md`](DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md) — live score **FAIL**  
-**Leftover-split lab:** [`LEFTOVER-REPAIR.md`](LEFTOVER-REPAIR.md) — usable Ring SND + Q6 \(H_N\); three NS leftovers stay OPEN
+**Leftover-split lab:** [`LEFTOVER-REPAIR.md`](LEFTOVER-REPAIR.md) — usable Ring SND + Q6 \(H_N\); three NS leftovers stay OPEN  
+**Localized reparation:** [`LOCALIZED-REPAIR.md`](LOCALIZED-REPAIR.md) — surgical cut-and-graft on the Paper2 chain; Lemma 6.1 stays OPEN
 
 Domain Architect analyzes, translates and synthesizes systems by the
 functional roles their components perform.
@@ -28,6 +29,7 @@ python -m domain_architect cycle missing-damping
 python -m domain_architect cycle control
 python -m domain_architect cycle drag
 python -m domain_architect cycle leftover-repair
+python -m domain_architect cycle localized-repair
 python -m domain_architect translate --example snd-vs-h
 python -m domain_architect benchmark
 python -m domain_architect --archive

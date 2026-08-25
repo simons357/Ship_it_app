@@ -6,6 +6,7 @@ Do **not** merge the “implies” title with the conditional-framework title.
 | Face | File | What it is |
 |---|---|---|
 | June reading PDF | [`Paper2_NS_Regularity_SND_FIXED.pdf`](Paper2_NS_Regularity_SND_FIXED.pdf) | *Spectral Non-Concentration as a Conditional Regularity Criterion.* Corrected June 2026. 7 pages. SHA-256 `7de9444d…`. GNC absent. \(C_N\eta_N\) marked numerical/conditional. T2 is a **program**, not a closed proof. |
+| June FIXED TeX | **not received** | Filename `Paper2_NS_Regularity_SND_FIXED.tex` was requested. Only the PDF is on disk. Do not invent the source. Do not treat the August TeX as that compile. |
 | Mac “SND 2” PDF | [`Paper2_NS_Regularity_SND.pdf`](Paper2_NS_Regularity_SND.pdf) | Local iOS/Quartz export 21 July 2026, 561 297 bytes. Running header *SND implies global regularity*. **Not** the Zenodo bytes. |
 | Zenodo “implies” deposit | [`zenodo-20272545/Paper2_NS_Regularity_SND.pdf`](zenodo-20272545/Paper2_NS_Regularity_SND.pdf) | Public record [10.5281/zenodo.20272545](https://doi.org/10.5281/zenodo.20272545). 360 856 bytes. Live title prefixed **[Claim withdrawn - see errata]**. |
 | August repaired TeX | [`Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex) | 1 August 2026. Title is already the *conditional framework*. GNC incomplete; false gcd removed; Route J NUMERICAL/UNDER AUDIT; T2 Gronwall **withdrawn**; simplex **OPEN**. |
@@ -50,5 +51,6 @@ Conditional Weyl: *if* frozen gap and quantitative operator-norm closeness, then
 - **Public withdrawn “implies” claim:** Zenodo `20272545` plus the August 1 audit.
 - **Mac “SND 2” export:** file it, do not cite it as the Zenodo bytes or as a closed theorem.
 - **Do not merge them into one claim.**
+- **Localized reparation** (DA surgery on this chain) uses the June FIXED PDF plus the August 1 audit. The June `.tex` source is still missing. See [`docs/domain-architect/LOCALIZED-REPAIR.md`](../../domain-architect/LOCALIZED-REPAIR.md).
 
 The June Paper2 PDF cites Zenodo `10.5281/zenodo.19842060` as GCD Paper1. Live record at that DOI is a superseded Ring/SND paper. Current Q6 face: [`docs/papers/gcd/`](../gcd/README.md). Current Ring face: [`docs/papers/ring/`](../ring/README.md). Errata: [`docs/papers/status-errata/`](../status-errata/README.md).

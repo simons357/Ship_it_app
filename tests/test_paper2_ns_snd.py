@@ -122,6 +122,12 @@ class TestPaper2ImpliesFacesAreNotTheJunePdf(unittest.TestCase):
         faces = FACES.read_text(encoding="utf-8")
         self.assertIn("Claim withdrawn", faces)
         self.assertIn("Lemma 6.1 OPEN", faces)
+        self.assertIn("Paper2_NS_Regularity_SND_FIXED.tex", faces)
+        self.assertIn("not received", faces.lower())
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file(),
+            "June FIXED TeX was not attached; do not invent it",
+        )
 
 
 if __name__ == "__main__":

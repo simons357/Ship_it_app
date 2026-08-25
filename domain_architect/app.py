@@ -24,6 +24,7 @@ from .registry import EquationRegistry
 from .schema import PRIMARY_OPERATIONS, PRODUCT_DESCRIPTION
 from .synthesize import inverse_design_architecture
 from .leftover_repair import leftover_repair
+from .localized_repair import localized_repair
 from .translate import (
     mechanical_electrical_translation,
     snd_vs_h_translation,
@@ -85,6 +86,15 @@ def handle_api(path: str, payload: dict) -> tuple[int, bytes, str]:
             return _json_bytes(report.to_dict())
         if path == "/api/leftover-repair":
             return _json_bytes(leftover_repair())
+        if path == "/api/localized-repair":
+            chain = payload.get("chain")
+            excise = payload.get("excise")
+            return _json_bytes(
+                localized_repair(
+                    chain=str(chain) if chain else None,
+                    excise=excise,
+                )
+            )
         if path == "/api/inverse-cycle":
             spec = CycleSpec(
                 target=str(payload.get("target") or "x★"),

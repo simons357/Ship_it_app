@@ -57,7 +57,7 @@ Send **one** of these, as `.tex`, if you still want the pack source rather than 
 | PAPER_A inverse-GCD source | `PAPER_A_Inverse_GCD_CORRECTED.tex` |
 | PAPER_B Möbius \(Q_6\) source | `PAPER_B_Mobius_GCD_Q6.tex` |
 | Ring June 19 source | `c8a03f315_RingLemma_Simons_June19_2026.tex` |
-| June Paper2 **source** of the FIXED PDF | `Paper2_NS_Regularity_SND_FIXED.tex` | still useful if you have it |
+| June Paper2 **source** of the FIXED PDF | `Paper2_NS_Regularity_SND_FIXED.tex` | **still not in this VM.** A message that is only the filename is not an attachment. Send the `.tex` as one file, or paste it, or git-push it. Caption: “this is the source of the June FIXED PDF.” Do not merge it with the August TeX. |
 | Anesthesia face | `PAPER1_REBUILT_Coherence_Index.md` |
 | Pack swirl complete (older than 22 August) | `NS_PhiRenorm_complete.tex` |
 

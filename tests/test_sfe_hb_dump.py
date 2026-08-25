@@ -53,6 +53,7 @@ class TestLivePathDropsSfeHb(unittest.TestCase):
             "classify.py",
             "leftover_repair.py",
             "lab_cases.py",
+            "localized_repair.py",
         ]
         for name in live:
             tree = ast.parse((root / name).read_text(encoding="utf-8"))

@@ -238,9 +238,13 @@ def run_named_cycle(name: str) -> CycleReport:
         from .leftover_repair import cycle_leftover_repair
 
         return cycle_leftover_repair()
+    if name in {"localized-repair", "surgery", "paper2-surgery"}:
+        from .localized_repair import cycle_localized_repair
+
+        return cycle_localized_repair()
     raise ValueError(
         f"unknown cycle {name!r}; expected missing-damping, control, "
-        "mechanical-electrical, drag, or leftover-repair"
+        "mechanical-electrical, drag, leftover-repair, or localized-repair"
     )
 
 

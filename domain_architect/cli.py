@@ -62,7 +62,7 @@ def main(argv: list[str] | None = None) -> int:
         "name",
         nargs="?",
         default="missing-damping",
-        help="missing-damping | control | mechanical-electrical | drag | leftover-repair",
+        help="missing-damping | control | mechanical-electrical | drag | leftover-repair | localized-repair",
     )
 
     p_bm = sub.add_parser("benchmark", help="run the v1.0 computational benchmarks")

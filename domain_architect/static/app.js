@@ -117,6 +117,12 @@ $("cyLeftover").addEventListener("click", async () => {
   show($("cyOut"), await api("/api/cycle", { name: "leftover-repair" }));
 });
 
+$("cySurgery").addEventListener("click", async () => {
+  $("cyName").value = "localized-repair";
+  $("cyOut").textContent = "Running Paper2 localized reparation…";
+  show($("cyOut"), await api("/api/cycle", { name: "localized-repair" }));
+});
+
 $("arRun").addEventListener("click", async () => {
   $("arOut").textContent = "Loading archive…";
   show($("arOut"), await api("/api/archive"));
