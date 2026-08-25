@@ -23,6 +23,10 @@ LIVE_FORBIDDEN = (
     "harmonic blueprint",
     "uhf",
     "dhfa",
+    "d_master",
+    "c_master",
+    "q_uhf",
+    "k_dhfa",
 )
 
 LIVE_ROOT = Path(__file__).resolve().parents[1] / "domain_architect"
@@ -47,6 +51,22 @@ PRIME_FIELD_COHERENCE_SHA256 = (
 )
 MAY16_TRACK_B_SHA256 = (
     "477a857f8ab4e066d1ef2be7e05786a4dd101cd31b325ab484e4f0ddef11f6cd"
+)
+ARCHIVE_SFE_HB = (
+    Path(__file__).resolve().parents[1] / "docs" / "archive" / "sfe-hb"
+)
+UHSA_SYNTHESIS = (
+    ARCHIVE_SFE_HB
+    / "Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md"
+)
+UHSA_SYNTHESIS_SHA256 = (
+    "2baa96ea58fb8a42c385c26495a5a034cd6a406ff7f865c7c294506adfe31b1e"
+)
+LIVE_FORBIDDEN_TOKENS = (
+    "d_master",
+    "c_master",
+    "q_uhf",
+    "k_dhfa",
 )
 
 
@@ -99,6 +119,13 @@ class TestLivePathDropsSfeHb(unittest.TestCase):
                 imported & banned,
                 f"{name} imports historical archive modules: {imported & banned}",
             )
+            hay = source.lower()
+            for token in LIVE_FORBIDDEN_TOKENS:
+                self.assertNotIn(
+                    token,
+                    hay,
+                    f"{name} must not contain archived UHSA token {token!r}",
+                )
 
 
 class TestExecutableTransformation(unittest.TestCase):
@@ -222,6 +249,91 @@ class TestPrimeFieldBatchStaysArchived(unittest.TestCase):
         self.assertIn("PhiRenorm_TrackB_May16_e075.pdf", faces)
         self.assertIn("duplicate", faces.lower())
         self.assertIn("**Not** SFE", faces)
+
+
+class TestUhsaSessionSynthesisStaysArchived(unittest.TestCase):
+    """19 Aug 2026 UHSA dump stays historical. Live DA must not import it."""
+
+    def test_synthesis_is_in_archive_not_in_live_package(self):
+        self.assertTrue(UHSA_SYNTHESIS.is_file(), UHSA_SYNTHESIS)
+        raw = UHSA_SYNTHESIS.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), UHSA_SYNTHESIS_SHA256)
+        self.assertEqual(len(raw), 15924)
+        text = raw.decode("utf-8")
+        self.assertIn("Historical session synthesis only", text)
+        self.assertIn("Not live Domain Architect", text)
+        self.assertIn("NOT CLAIMED", text)
+        self.assertIn("Not June Paper2 FIXED", text)
+        self.assertIn("Not QStack product", text)
+        self.assertIn("import into `domain_architect/`", text)
+        self.assertIn("HN = D^((-1)/2)*Qtilde*D^((-1)/2)", text)
+        self.assertIn("Action 1 is inverted", text)
+        self.assertIn("§8 hurdles stay OPEN", text)
+        self.assertIn("D_Master", text)
+        self.assertIn("C_Master", text)
+        self.assertIn("Q_UHF", text)
+        self.assertIn("K_DHFA", text)
+        self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
+        self.assertFalse((LIVE_ROOT / "uhf.py").is_file())
+        self.assertFalse((LIVE_ROOT / "dhfa.py").is_file())
+        self.assertFalse((LIVE_ROOT / "d_master.py").is_file())
+        self.assertFalse((LIVE_ROOT / "c_master.py").is_file())
+        self.assertFalse((LIVE_ROOT / "q_uhf.py").is_file())
+        self.assertFalse((LIVE_ROOT / "k_dhfa.py").is_file())
+        live_names = " ".join(p.name for p in LIVE_ROOT.iterdir())
+        self.assertNotIn("d_master", live_names)
+        self.assertNotIn("c_master", live_names)
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("archive only", note.lower())
+        self.assertIn("Not live Domain Architect", note)
+        self.assertIn("NOT CLAIMED", note)
+        self.assertIn("import into `domain_architect/`", note)
+        self.assertIn("Action 1 is inverted", note)
+        self.assertIn("Do not stamp DA-VC-01", note)
+        self.assertIn("DA-VC-01 remains **FAIL**", note)
+        self.assertNotIn("DA-VC-01 PASS", note)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("sfe-hb/", archive_index)
+        self.assertIn("not live DA", archive_index)
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn(
+            "Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md",
+            lookup,
+        )
+        faces = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "papers"
+            / "ns-snd"
+            / "FACES.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("sfe-hb/", faces)
+        self.assertIn("Not** a Paper2 face", faces)
+        gcd = (
+            Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("sfe-hb/", gcd)
+        self.assertIn("Do not glue it to NS regularity", gcd)
+
+    def test_live_package_has_no_uhsa_master_operators(self):
+        skip = {"historical.py"}
+        for path in sorted(LIVE_ROOT.glob("*.py")):
+            if path.name in skip:
+                continue
+            hay = path.read_text(encoding="utf-8").lower()
+            for token in LIVE_FORBIDDEN_TOKENS:
+                self.assertNotIn(
+                    token,
+                    hay,
+                    f"{path.name} must not contain archived UHSA token {token!r}",
+                )
 
 
 class TestNoPaddedParameterLevel(unittest.TestCase):

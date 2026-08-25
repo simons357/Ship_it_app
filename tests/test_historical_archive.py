@@ -179,9 +179,28 @@ class TestPrimeFieldArchiveIntake(unittest.TestCase):
         self.assertIn("prime-field-2026-08-25/", index)
         self.assertIn("not live DA", index)
         self.assertIn("not FIXED.tex", index)
+        self.assertIn("sfe-hb/", index)
         self.assertFalse(
             (ROOT / "docs" / "papers" / "ns-snd" / "Paper2_NS_Regularity_SND_FIXED.tex").is_file()
         )
+
+
+class TestUhsaSessionDumpIsHistorical(unittest.TestCase):
+    def test_uhsa_synthesis_stays_under_archive_sfe_hb(self):
+        path = (
+            ROOT
+            / "docs"
+            / "archive"
+            / "sfe-hb"
+            / "Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md"
+        )
+        self.assertTrue(path.is_file(), path)
+        text = path.read_text(encoding="utf-8")
+        self.assertIn("Historical session synthesis only", text)
+        self.assertIn("Not live Domain Architect", text)
+        self.assertIn("NOT CLAIMED", text)
+        self.assertFalse((LIVE_ROOT / "d_master.py").is_file())
+        self.assertFalse((LIVE_ROOT / "c_master.py").is_file())
 
 
 if __name__ == "__main__":

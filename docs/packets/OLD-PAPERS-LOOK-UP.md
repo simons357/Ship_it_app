@@ -76,3 +76,11 @@ Also filed from the later six-file drop (still older than 22 August, **not** a c
 April `CLAY_FINAL`, `SERPENT_FINAL`, `WHAT_I_FOUND`, unconditional `simons_ns_overleaf` mains, zips of the whole pack, SFE/HB/QStack dumps.
 
 Shahmurov: cite only. I can fetch arXiv if needed. You do not upload him.
+
+---
+
+## Already pasted (historical dump — not a paper drop)
+
+| What | Filed as |
+|---|---|
+| 19 Aug 2026 *Unified Harmonic Spectral Architecture: Session Master Synthesis* | [`docs/archive/sfe-hb/Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md`](../archive/sfe-hb/Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md). **Archive only.** Not live DA. Not Clay. Not FIXED.tex. Not QStack. §7 GCD \(Q_N\) PD stays with [`docs/papers/gcd/`](../papers/gcd/). §8 OPEN. Action 1 inverted. Map: [`docs/archive/sfe-hb/README.md`](../archive/sfe-hb/README.md). |

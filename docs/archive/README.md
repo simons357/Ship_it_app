@@ -9,6 +9,7 @@ part of the live Domain Architect computational framework.
 | [`OVERLEAF_VALUE_AUDIT_2026-08-15.md`](OVERLEAF_VALUE_AUDIT_2026-08-15.md) | Desktop-pack vs April Overleaf Clay/QStack exports | historical hygiene — not DA; swirl face on this branch is the 22 August TeX |
 | [`qstack/`](qstack/) | March 2026 Q1-approximation regularity PDF (`qstack_regularity_paper.pdf`) | **archive only** — not live DA, not Clay, not the 22 August swirl TeX, not Paper2 FIXED. Do not import into `domain_architect/`. |
 | [`prime-field-2026-08-25/`](prime-field-2026-08-25/) | SFE / Prime Field / cosmic-scale / exoplanet drop (whitepaper, SFE PDFs, Kepler CSVs, analyzer JSX, `prime_field_coherence.py`) | **archive only** — not live DA, not Clay, not FIXED.tex, not DA-VC-01. Do not import into `domain_architect/`. Cosmic Scale and Prime Resonance PDF re-uploads were duplicates. May 16 Track B PDF was a **duplicate** of the existing swirl Zenodo face, not filed here. |
+| [`sfe-hb/`](sfe-hb/) | 19 Aug 2026 *Unified Harmonic Spectral Architecture: Session Master Synthesis* (SFE / \(\mathcal{Q}_6\) / HB “spectral unification” dump) | **archive only** — not live DA, not Clay, not FIXED.tex, not QStack, not a proof of RH/NS/YM/BSD/Hodge. Do not import `D_Master` / `C_Master` into `domain_architect/`. §7 GCD \(Q_N\) PD is the arithmetic book, not NS/RH. §8 stays OPEN. Action 1 inverted: DA does not live inside DHFA/SFE. |
 
 Machine-readable historical inventory remains at
 `data/domain_architect/` and is available from the CLI as

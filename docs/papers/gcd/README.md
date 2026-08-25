@@ -13,6 +13,8 @@ Concept: [10.5281/zenodo.20405588](https://doi.org/10.5281/zenodo.20405588)
 
 **What is false / withdrawn:** \(\lambda_{\min}>-1/2\) for all \(N\); dark-state \(\Leftrightarrow\) Goldbach; any Navier–Stokes claim from these matrices.
 
+The 19 Aug 2026 UHSA session dump ([`docs/archive/sfe-hb/`](../../archive/sfe-hb/)) repeats \(Q_N\) positive-definiteness in its §7 “bedrock.” That arithmetic fact belongs **here**. Do not glue it to NS regularity, RH, YM, BSD, or Hodge. The dump is archive-only, not a Q6 product face.
+
 DA leftover-split lab (this definition beside Ring SND; not a joint operator): [`docs/domain-architect/LEFTOVER-REPAIR.md`](../../domain-architect/LEFTOVER-REPAIR.md).
 
 ## Older public face (withdrawn claims)
