@@ -244,7 +244,7 @@ function renderVault() {
             ? `<p class="clamp snippet"><span class="hit-field">${escapeHtml(snippet.field)}${snippet.ledger_status ? ` · ${escapeHtml(snippet.ledger_status)}` : ""}</span> ${highlightSnippet(snippet)}</p>`
             : `<p class="clamp">${escapeHtml((e.summary || e.content_text || "").slice(0, 220))}</p>`;
           const rankMeta = searching
-            ? `<span class="hit-meta">BM25F ${hit.score.toFixed(2)}${hit.matched_fields.length ? ` · ${escapeHtml(hit.matched_fields.slice(0, 3).join(" · "))}` : ""}</span>`
+            ? `<span class="hit-meta">score ${hit.score.toFixed(2)}${hit.matched_fields.length ? ` · ${escapeHtml(hit.matched_fields.slice(0, 3).join(" · "))}` : ""}</span>`
             : `<span>${escapeHtml((e.related_projects || [])[0] || "")}</span>`;
           return `<article class="card" data-open="${escapeHtml(e.id)}">
             <div class="card-top">
@@ -284,10 +284,10 @@ function renderVault() {
     <p class="banner">Knowledge capture with provenance and a claim ledger. It does not prove theorems, verify science, or replace a human review.</p>
     <div class="search-panel">
       <div class="toolbar">
-        <input type="search" id="q" placeholder='BM25F: euler identity · "finite-time blow-up" · claim:definitional · gap:blow-up · ai:Claude' value="${escapeHtml(state.query)}" />
+        <input type="search" id="q" placeholder='euler identity · "finite-time blow-up" · claim:definitional · gap:blow-up · ai:Claude' value="${escapeHtml(state.query)}" />
         <button class="btn ghost" id="do-search">Search</button>
       </div>
-      <p class="help">Ranked BM25F over title, claims, theorems, gaps, tags, and raw text. AND by default. OR, "phrases", and field prefixes. Ledger status is shown, never used as a score. No LLM ranking.</p>
+      <p class="help">Type the words you remember. Best match first. Quotes for an exact phrase. <code>claim:</code> <code>gap:</code> <code>ai:</code> to look in one slot. Status on a card is the ledger, not the rank.</p>
       <div class="filters">
         <button class="chip" id="star-filter" aria-pressed="${state.starredOnly ? "true" : "false"}">${state.starredOnly ? "★ Starred" : "☆ Starred"}</button>
         <select id="vis">
@@ -624,11 +624,21 @@ function renderGuide() {
         <li>Raw text is immutable after ingest.</li>
         <li>Source AI and source file stay attached.</li>
         <li>Claims, theorems, and gaps are searchable fields with statuses.</li>
-        <li>Search is BM25F: inverted index, field boosts, ranked hits, highlighted snippets. AND by default, with OR, "phrases", and field prefixes. It is not a boolean dump and not an LLM.</li>
-        <li>BM25F means: rare words count more, a word in a title or claim beats the same word buried in a long body, and results are ordered by score instead of dump order. You do not need to tune it. Type like a person; use <code>claim:</code> or quotes when you already know the field or the exact phrase.</li>
         <li>Private material can be kept off professional export.</li>
         <li>Books, tags, and artifacts are derived from your records. They are not a second database and not an LLM.</li>
       </ol>
+    </div>
+    <div class="panel" style="margin-top:1rem">
+      <h3>How to search — you type, the engine ranks</h3>
+      <p>You do not pick an algorithm. The box already ranks. Type the words you remember.</p>
+      <ul>
+        <li><code>euler identity</code> — both words must appear. Best match first, not oldest first.</li>
+        <li><code>"finite-time blow-up"</code> — that exact phrase.</li>
+        <li><code>euler OR navier-stokes</code> — either topic.</li>
+        <li><code>claim:definitional</code> / <code>gap:blow-up</code> / <code>ai:Claude</code> — look only in that slot.</li>
+      </ul>
+      <p>Yellow highlights are the words that scored. A teal field label (claim, gap, title) tells you <em>where</em> they hit. OPEN / CONJECTURAL on a card is the ledger, not a popularity score — an open gap can still win the ranking.</p>
+      <p class="meta">The ranker under the box is BM25F. Rare words count more. A hit in a title or claim beats the same word buried in a long paste. You never have to tune it. If a wrong card comes first, that is my bug: send the query and the record that should have won.</p>
     </div>
   `;
 }
