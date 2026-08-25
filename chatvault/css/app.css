@@ -163,7 +163,7 @@ body {
   padding: 0.85rem;
   margin: 1rem 0;
 }
-input, textarea, select, button.btn {
+input, textarea, select {
   font: inherit;
   color: var(--ink);
 }
@@ -186,6 +186,7 @@ textarea { width: 100%; min-height: 240px; resize: vertical; }
 select { min-width: 140px; }
 
 .btn {
+  font: inherit;
   background: var(--accent);
   color: var(--accent-ink);
   border: 0;

@@ -974,7 +974,7 @@ window.addEventListener("hashchange", () => {
 });
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./sw.js?v=0.4.0").catch(() => {
+  navigator.serviceWorker.register("./sw.js?v=0.4.1").catch(() => {
     /* PWA optional; engine still runs */
   });
 }
