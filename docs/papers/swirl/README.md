@@ -3,6 +3,10 @@
 This is **not** live Domain Architect. DA may route to this book. It must
 not glue swirl \(\Phi = u_\theta/r\) to FRA output \(\Phi\).
 
+Faces (not a compile of 22 August): [`FACES.md`](FACES.md). Older April/June
+TeX and the 30 June PDF stay on disk. They do **not** replace
+[`Simons_PhiRenorm_Swirl_2026-08-22.tex`](Simons_PhiRenorm_Swirl_2026-08-22.tex).
+
 ## Paper (22 August 2026)
 
 [`Simons_PhiRenorm_Swirl_2026-08-22.tex`](Simons_PhiRenorm_Swirl_2026-08-22.tex)
@@ -10,6 +14,20 @@ not glue swirl \(\Phi = u_\theta/r\) to FRA output \(\Phi\).
 **Phi-renormalization for axisymmetric Navier–Stokes with swirl: identity, circulation principle, and the five-dimensional energy**
 
 Four theorems: the algebraic identity \(\frac1{r^4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) with \(\Gamma=ru_\theta\), \(\Phi=u_\theta/r\); the \(\Gamma\) maximum principle; the intensive energy identity in the \(r^3\) measure; global smoothness of the \(\varepsilon\)-hyperviscous system. Classical unaugmented swirl remains open. Strain estimates are recorded, not closed.
+
+## Older faces (not 22 August)
+
+Filed from the 25 August 2026 six-file drop. Distinct bytes from the May
+Zenodo PDF and from the 22 August TeX. **Not** a compile of 22 August.
+Classical unaugmented swirl remains **OPEN**. Clay **NOT CLAIMED**.
+
+| Face | File | Date on the face |
+|---|---|---|
+| 30 June PDF | [`Simons_PhiRenorm_Swirl_2026-06-30.pdf`](Simons_PhiRenorm_Swirl_2026-06-30.pdf) | pdfTeX 2026-06-30; face **April 2026** *Conditional Reduction* |
+| Pack complete TeX | [`NS_PhiRenorm_complete.tex`](NS_PhiRenorm_complete.tex) | April 2026 preprint; older than 22 August |
+| FINAL v2 TeX | [`PhiRenorm_FINAL_v2.tex`](PhiRenorm_FINAL_v2.tex) | June 2026 Track B; dashboard `tabular` is byte-corrupted; Clay **Not claimed** |
+
+Map: [`FACES.md`](FACES.md).
 
 ## Public May 2026 deposit
 

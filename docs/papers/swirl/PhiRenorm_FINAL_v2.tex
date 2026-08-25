@@ -1,0 +1,250 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{booktabs,xcolor,colortbl,array,mdframed,hyperref,enumitem}
+
+\definecolor{proved}{HTML}{1a7a1a}
+\definecolor{open}{HTML}{b30000}
+\definecolor{notclaimed}{HTML}{555555}
+\definecolor{lightgreen}{HTML}{e6f4e6}
+\definecolor{lightred}{HTML}{fde8e8}
+\definecolor{lightgray}{HTML}{f5f5f5}
+\definecolor{darkblue}{HTML}{003366}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\norm}[2]{\|{#1}\|_{#2}}
+\newcommand{\ddt}{\tfrac{d}{dt}}
+\newcommand{\PP}{\mathbb{P}}
+
+\title{\textbf{Phi-Renormalization and Global Regularity\\
+for Axisymmetric-with-Swirl Navier--Stokes}\\[6pt]
+\large\textit{Algebraic Cancellation of the Axis Singularity,
+Gronwall-Free Convergence,\\and the Prime Index Connection}}
+\author{Jonathan Robert Simons, CRNA, MBS\\[4pt]
+Prime Field Technologies LLC\\
+Savannah, Georgia\\[4pt]
+\texttt{jonathansimons357@proton.me}}
+\date{June 2026 \quad|\quad Preprint (Track B)}
+
+\begin{document}
+\maketitle
+
+%%â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+%% PROOF STATUS DASHBOARD
+%%â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+\begin{mdframed}[linecolor=darkblue,linewidth=1.5pt,backgroundcolor=white,
+  innertopmargin=10pt,innerbottommargin=10pt,
+  innerleftmargin=12pt,innerrightmargin=12pt]
+{\large\textbf{\color{darkblue}Proof Status Dashboard}}\\[6pt]
+{\small\textit{All results are for the axisymmetric-with-swirl class
+unless stated otherwise.}}\\[8pt]
+\begin{tabular}{>{\raggedright\arraybackslash}p{8.2cm}
+                ×Ù[\š[™×\œ˜^X˜XÚÜÛ\Ú\Ì‹Û_Bˆ×˜YÙÙYšYÚ\œ˜^X˜XÚÜÛ\Ú\Ì‹Û__B—Ü[B—^™Ô™\İ[H	ˆ^™Ôİ]\ßH	ˆ^™ÓØØ][ÛŸW—ZY[B—›İØÛÛÜÛYÚÜ™Y[ŸB”İXœİ]][Ûˆ	Ø[[XO\W×]I	OWØ[[XKÜ—Œ]W×]KÜ‰ˆ	ˆ^ÛÛÜÜ›İ™Y^×^™ÑÛ™__H	ˆÌˆ—›İØÛÛÜÛYÚÜ™Y[ŸB”KT™[›Ü›X[^˜][Ûˆ	KÜ—	Ø[˜Ù[È[ÙXœ˜ZXØ[Bˆ	ˆ^ÛÛÜÜ›İ™Y^×^™Ô›İ™Y_H	ˆUÇ&Vg·F†Ó§†—&Væ÷&×ÒÅÀ¥Ç&÷v6öÆ÷'¶Æ–v‡Fw&VVçĞ¤æò†&G’–æWVÆ—G’&WV—&V@¢bÇFW‡F6öÆ÷'·&÷fVG×µÇFW‡F&gµ–W7×ÒbF†ÕqÉ•™íÑ¡´éÁ¡¥É•¹½Éµôqp)qÉ½İ½±½Éí±¥¡ÑÉ••¹ô(‘qA¡¤•áÑ•¹‘Ì½¹Ñ¥¹Õ½ÕÍ±äÑ¼Ñ¡”…á¥Ì€‘ÈôÀ(€€˜qÑ•áÑ½±½ÉíÁÉ½Ù•‘õíqÑ•áÑ‰™íAÉ½Ù•‘õô€˜qLÈqp)qÉ½İ½±½Éí±¥¡ÑÉ••¹ô)±½‰…°€‘yq¥¹™Ñä™½È€‘E|Äµ…Õµ•¹Ñ•ÍåÍÑ•´(€€˜qÑ•áÑ½±½ÉíÁÉ½Ù•‘õíqÑ•áÑ‰™íAÉ½Ù•‘õô€˜Q¡µùqÉ•™íÑ¡´é±½‰…±ôqp)qÉ½İ½±½Éí±¥¡ÑÉ••¹ô)É½¹İ…±°µ™É•”½¹Ù•É•¹”…ĞÉ…Ñ”€‘q•ÁÍyìĞ¼¡q‰•Ñ„¬È¥ô(€€˜qÑ•áÑ½±½ÉíÁÉ½Ù•‘õíqÑ•áÑ‰™íAÉ½Ù•‘õô€˜Q¡µ\ref{thm:convergence} \\
+\rowcolor{lightgreen}
+Phi--$Q_6$ prime lattice correspondence
+  & \textcolor{proved}{\textbf{Proved}} & Prop~\ref{prop:correspondence} \\
+\rowcolor{lightgreen}
+Axis / spectral loci as dual quantization sites
+  & \textcolor{proved}{\textbf{Stated}} & \S5 \\
+\midrule
+\rowcolor{lightred}
+Classical system: global regularity (no augmentation)
+  & \textcolor{open}{\textbf{Open}} & \S6 \\
+\rowcolor{lightgray}
+Clay Millennium Problem (general data)
+  & \textcolor{notclaimed}{\textbf{Not claimed}} & --- \\
+\bottomrule
+\end{tabular}
+\end{mdframed}
+
+\vspace{8pt}
+
+%%â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+%% ABSTRACT
+%%â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+\begin{abstract}
+We study the 3D incompressible Navier--Stokes equations for
+axisymmetric-with-swirl initial data.
+The central obstacle is the $1/r^4$ centrifugal singularity on the
+symmetry axis $r=0$, which resists standard energy methods and
+classically requires Hardy-type inequalities with borderline weights
+in 3D cylindrical geometry.
+
+We introduce the \emph{Phi-Renormalization}
+(Definition~\ref{def:phi}): the substitution
+\[
+  \Gamma = r u_\theta, \qquad \Phi = \frac{\Gamma}{r^2} = \frac{u_\theta}{r},
+\]
+transforms the singular centrifugal term via the algebraic identity
+\[
+  \frac{1}{r^4}\,\partial_z\!\bigl(\Gamma^2\bigr) = \partial_z\!\bigl(\Phi^2\bigr),
+\]
+eliminating the $1/r^4$ singularity \emph{exactly and algebraically},
+with no Hardy inequality and no approximation.
+The variable $\Phi$ is well-defined and $C^\infty$ up to the axis.
+
+Three results follow.
+\textbf{(I)} Global $C^\infty$ regularity for the $Q_1$-augmented system
+at every $\eps>0$ (Theorem~\ref{thm:global}).
+\textbf{(II)} Gronwall-free convergence $u^\eps\to u$ at rate
+$O(\eps^{4/(\beta+2)})$ uniformly in time, via a multi-component
+stability energy that simultaneously tracks the vorticity direction,
+swirl, and axial vorticity (Theorem~\ref{thm:convergence}).
+\textbf{(III)} A structural correspondence between the $\Phi$-field
+and the prime-index coupling lattice
+$M_{ij} = 1/\gcd(i,j)$ of the $Q_6$ operator
+(Proposition~\ref{prop:correspondence}):
+axis singularities in physical space and spectral concentration
+events in frequency space are the same instability in dual coordinates,
+both resolved by the same prime-indexed arithmetic structure.
+
+This is TrackPˆÙˆH™YK]˜XÚÈÛÛ™][Û˜[™Yİ[\š]H›ÙÜ˜[K‚•H™\İ[\ÈÛÛ\]H[™Ù[‹XÛÛZ[™Y‚—[™ØXœİ˜XİB‚‰Ix¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ —ÙXİ[ÛÒ[›ÙXİ[ÛŸB‰Ix¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ ‚—İXœÙXİ[ÛÕH^\Ş[[Y]šXÈÛ\ÜÈ[™]ÈÙ[˜[Y™šXİ[_B‚•HÑ[˜ÛÛ\™\ÜÚX›H˜]šY\‹KTİÚÙ\È\]X][ÛœÈ[ˆŞ[[™šXØ[˜ÛÛÜ™[˜]\È	
+‹]KŠI›Üˆ^\Ş[[Y]šXË]Ú]\İÚ\›]B‰HHWÜ—]ÜŸH
+ÈW×]W]×]_H
+ÈWŞ—]ŞŸIŠ	WÜ‹W×]KWŞ‰[™\[™[Ùˆ	]I
+Bœ›ÙXÙK[ˆH›ÜXÚ]H›Ü›][][Û‹H\›B—Âˆœ˜XŞÌ_^Ü—W\X[Ş—WšYÛ
+Ø[[XWŒ—šYÜŠKˆ\]XYØ[[XHHˆW×]K—Bš[ˆH\]X][Ûˆ›ÜˆH˜YX[›ÜXÚ]HÛÛ\Û™[	ÛYYØWÜ‰‚\È	—È	\È\›H›İÜÈ\ˆİ[™\™	ŒI\İ[X]\È™\]Z\™B˜ÛÛ›Û[™Â—Âˆ[Ì•WW[—ËMBˆšYÛ\X[ŞŠØ[[XWŒŠWšYÜŸŒˆ————BÚXÚ›Ü˜Ù\ÈH\™H[™\]X[]HÚ]ÙZYÚ	—ËMIKKB˜›Ü™\›[™H[ˆÑŞ[[™šXØ[Ù[ÛY]H[™YÚH™\İšXİ]™B›ÛˆHÛ\ÜÈÙˆYZ\ÜÚX›H]K‚‚•H™\ÛÛ][ÛˆÙˆ\ÈÚ[™İ[\š]H\ÈHÙ[˜[XÚšXØ[˜ÛÛšX][ÛˆÙˆ\È\\‹‚‚—İXœÙXİ[ÛÔš[ÜˆÛÜšßB‚•Ú]İ]İÚ\›
+	W×]W\]Z]ˆ	
+NˆÛØ˜[™Yİ[\š]H\ÈÛ\ÜÚXØ[ŠY^š[œÚØ^XUÆ6—FW´ÆG““c‡ÒÂV¶†÷g6¶–’ÒÕ—VF÷f–6‡åÆ6—FWµU““c‡Ò’à¥v—F‚7v—&ÂæBÆ&vRFF¢÷Vâà¥'F–Â&W7VÇG2–æ6ÇVFS ¤6†RÒÔÆVWåÆ6—FW´6†TÆVS#Ò‡6ÖÆÂ7v—&Â’À¤6†VâÒÔfærÒÕ¦†æwåÆ6—FW´4e£#‡Ò‡7v—&Â–âDÅåÆ–ægG•÷BÅã5÷‚B’À¤†÷RÒÔÆ—åÆ6—FW´†÷TÆ“#gÒ†&Æ÷r×WæÇ—6—2v—F‚&÷VæF'’Æ–W"’à¤Fæ6†–çåÆ6—FW´Fæ6†–ã#wÒW‡Æ–6—FÇ’–FVçF–f–W2F†RC÷%ãBBFW&Ğ¦2F†Rö'7G'V7F–öâFòF—&V7BVæW&w’ÖWF†öG2à¤æò&–÷"v÷&²VÆ–Ö–æFW2—Bv—F†÷WB†&G’–æWVÆ—G’à ¥Ç7V'6V7F–öç´Ö–â&W7VÇG7Ğ ¥Æ&Vv–ç¶VçVÖW&FWÕ¶Æ&VÃÒ…Å&öÖâ¢•Ğ¥Æ—FVÒÇFW‡F&gµ†’Õ&Væ÷&ÖÆ—¦F–öâ…F†V÷&V×åÇ&Vg·F†Ó§†—&Væ÷&×Ò’çĞ¢F†R7V'7F—GWF–öâEÅ†’ÒUõÇF†WF÷"BVÆ–Ö–æFW2F†RC÷%ãB@¢6–æwVÆ&—G’f–W&RÆvV'&–2–FVçF—G’à¢æò†&G’–æWVÆ—G’âæòvV–v‡Bâæò&÷†–ÖF–öâà ¥Æ—FVÒÇFW‡F&g´vÆö&Â&VwVÆ&—G’…F†V÷&V×åÇ&Vg·F†Ó¦vÆö&ÇÒ’çĞ¢f÷"WfW'’EÆW0À…¹•Ù•Éä‘¥Ù•É•¹”µ™É•”€‘!xÄ(€…á¥Íåµµ•ÑÉ¥Œµİ¥Ñ µÍİ¥É°‘…ÑÕ´°Ñ¡”€‘E|Äµ…Õµ•¹Ñ•ÍåÍÑ•´(€¡…Ì„Õ¹¥ÅÕ”±½‰…°€‘yq¥¹™ÑäÍ½±ÕÑ¥½¸¸()q¥Ñ•´qÑ•áÑ‰™íÉ½¹İ…±°µÉ•”½¹Ù•É•¹”€¡Q¡•½É•µùqÉ•™íÑ¡´é½¹Ù•É•¹•ô¤¹ô(€€‘Õyq•ÁÍqÑ¼Ô…ĞÉ…Ñ”€‘<¡q•ÁÍyìĞ¼¡q‰•Ñ„¬È¥ô¤°Õ¹¥™½Éµ±ä¥¸€‘Ğ°(€q•µÁ¡íİ¥Ñ¡½ÕÑôÑ¡”•áÁ½¹•¹Ñ¥…°É½¹İ…±°™…Ñ½È(€€‘q•áÁp…q‰¥°¡q¥¹Ñ|ÁyQqñq¹…‰±„Õqñ}í1xÑõxÉp±‘Ñq‰¥È¤¸()q¥Ñ•´qÑ•áÑ‰™íA¡¤´´‘E|Ø½ÉÉ•ÍÁ½¹‘•¹”€¡AÉ½Á½Í¥Ñ¥½¹ùqÉ•™íÁÉ½Àé½ÉÉ•ÍÁ½¹‘•¹•ô¤¹ô(€Q¡”A¡¤µI•¹½Éµ…±¥é…Ñ¥½¸…¹Ñ¡”€‘E|ØÁÉ¥µ”½ÕÁ±¥¹œ±…ÑÑ¥”(€…É”Ñİ¼•áÁÉ•ÍÍ¥½¹Ì½˜Ñ¡”Í…µ”…É¥Ñ¡µ•Ñ¥ŒÉ•Õ±…É¥Ñäµ•¡…¹¥Í´°(€±¥¹­•‰äÑ¡”ÁÉ¥µ”™…Ñ½É¥é…Ñ¥½¸ÍÑÉÕÑÕÉ”½˜Ñ¡”¥¹Ñ••ÉÌ¸)q•¹‘í•¹Õµ•É…Ñ•ô()qÍÕ‰Í•Ñ¥½¹í=É…¹¥é…Ñ¥½¹ô()M•Ñ¥½¹\ref{sec:phirenorm}: the Phi-Renormalization and its proof.
+Section~\ref{sec:augmented}: the $Q_1$-augmented system and global smoothness.
+SectionW™YÜÙXÎ˜ÛÛ™\™Ù[˜Ù_NˆÜ›ÛØ[Yœ™YHÛÛ™\™Ù[˜ÙK‚”ÙXİ[ÛŸ—™YÜÙXÎœš[Y_NˆHš[YH]XÙHÛÜœ™\ÜÛ™[˜ÙK‚”ÙXİ[Û•Ç&Vg·6V3¦÷VçÓ¢F†RöæR&VÖ–æ–ær÷VâVW7F–öâà ¢R^)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H ¥Ç6V7F–öçµF†R†’Õ&Væ÷&ÖÆ—¦F–öçĞ¥ÆÆ&VÇ·6V3§†—&Væ÷&×Ğ¢R^)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H  ¥Æ&Vv–ç¶FVf–æ—F–öçÕµ†’Õ7V'7F—GWF–öåÕÆÆ&VÇ¶FVc§†—Ğ¤f÷"â†—7–ÖÖWG&–2×v—F‚×7v—&ÂfVÆö6—G’f–VÆBGRBv—F€§7v—&Â6ö×öæVçBGUõÇF†WFBÂFVf–æS ¥Æ&Vv–ç¶Æ–vâ§Ğ¢ÄvÖÖ‡"Ç¢ÇB’c£Ò%ÂÇUõÇF†WF‡"Ç¢ÇB¢ÇVEÇFW‡G²†æwVÆ"ÖöÖVçGVÒFVç6—G’—ÒÅÅÀ¢Å†’‡"Ç¢ÇB’c£ÒÆg&7µÄvÖÖ×·%ã'ÒÒÆg&7·UõÇF†WF×·'Ğ¢ÇVEÇFW‡G²‡7V6–f–2æwVÆ"ÖöÖVçGVÒ—Òà¥ÆVæG¶Æ–vâ§Ğ¤f÷"F†RVvÖVçFVB6öÇWF–öâGUåÆW2B†FVf–æVB–âÅ5Ç&Vg·6V3¦VvÖVçFVGÒ“ ¢EÄvÖÖåÆW2£Ò"UåÆW5õÇF†WFBÅÃ°¢EÅ†•åÆW2£ÒÄvÖÖåÆW2÷%ã"BÅÃ°¢EÆFVÇFÅ†’£ÒÅ†•åÆW2ÒÅ†’Bà¥ÆVæG¶FVf–æ—F–öçĞ ¥Ç&w&‡µ&VwVÆ&—G’BF†R†—2çĞ¢EÅ†’B—2vVÆÂÖFVf–æVBæB6Öö÷F‚WFòG#ÓC¢F†R†—7–ÖÖWG'¦6öæF—F–öâ&WV—&W2GUõÇF†WFÅ÷·#ÓÓÓBÂ6ğ¥Å°¢Å†•Æ&–wÅ÷·#ÓĞ¢ÒÆÆ–Õ÷·%ÇFòÕÆg&7·UõÇF†WF×·'Ğ¢ÒÇ'F–Å÷"UõÇF†WFÆ&–wÅ÷·#ÓÒÀ¥ÅĞ§v†–6‚—2f–æ—FRf÷"GUÆ–â…ã"B'’F†R6ö&öÆWbG&6RF†V÷&VÒà¤–â'F–7VÆ"ÂEÅ†’BW‡FVæG2FòD5åÆ–ægG’BgVæ7F–öâ7&÷72F†R†—0§v†VæWfW"GUåÆW5Æ–â5åÆ–ægG’Bà ¥Æ&Vv–ç·F†V÷&V×Õµ†’Õ&Væ÷&ÖÆ—¦F–öåÕÆÆ&VÇ·F†Ó§†—&Væ÷&×Ğ¥v—F‚F†Ræ÷FF–öâöbFVf–æ—F–öçåÇ&Vg¶FVc§†—Ó ¥Æ&Vv–ç¶Æ–vçĞ¢Æg&7³×·%ãGÕÂÅÇ'F–Å÷¥ÂÆ&–vÂ…ÄvÖÖõÆW5ã"ÒÄvÖÖã%Æ&–w"¢cÒÇ'F–Å÷¥ÂÆ&–vÂ‚…Å†•åÆW2µÅ†’•ÂÅÆFVÇFÅ†•Æ&–w"’À¢ÆÆ&VÇ¶W¦–FVçF—G—ÕÅÅ³GEĞ¢Æg&7³×·%ãGÕÂÅÇ'F–Å÷¥ÂÆ&–vÂ…ÄvÖÖã%Æ&–w"¢cÒÇ'F–Å÷¥ÂÆ&–vÂ…Å†•ã%Æ&–w"’à¢ÆÆ&VÇ¶W¦–FVçF—G’Ö6Æ76–6ÇĞ¥ÆVæG¶Æ–vçĞ¥F†RC÷%ãBB†—26–æwVÆ&—G’—2VÆ–Ö–æFVBW†7FÇ’æBÆvV'&–6ÆÇ’à¤æò†&G’–æWVÆ—G’ÂæòvV–v‡BgVæ7F–öâÂæò&÷†–ÖF–öâ—2&WV—&VBà¥ÆVæG·F†V÷&V×Ğ ¥Æ&Vv–ç·&öögĞ¤f7F÷"W6–ærF†RF–ffW&Væ6Röb7V&W2–FVçF—G“ ¥Æ&Vv–ç¶Æ–vâ§Ğ¢ÄvÖÖõÆW5ã"ÒÄvÖÖã ¢cÒÆ&–vÂ‡%ã%Å†•åÆW5Æ&–w"•ã"ÒÆ&–vÂ‡%ã%Å†•Æ&–w"•ã%ÅÀ¢cÒ%ãEÆ&–vÂ…Å†•åÆW2µÅ†•Æ&–w"•Æ&–vÂ…Å†•åÆW2ÕÅ†•Æ&–w"¢Ò%ãEÆ&–vÂ…Å†•åÆW2µÅ†•Æ&–w"•ÆFVÇFÅ†’à¥ÆVæG¶Æ–vâ§Ğ¥F†W&Vf÷&S ¥Å°¢Æg&7³×·%ãGÕÂÅÇ'F–Å÷¥ÂÆ&–vÂ…ÄvÖÖõÆW5ã"ÒÄvÖÖã%Æ&–w"¢ÒÆg&7³×·%ãGÕÂÅÇ'F–Å÷¥ÂÄ&–vÅ·%ãEÆ&–vÂ…Å†•åÆW2µÅ†•Æ&–w"•ÆFVÇFÅ†•Ä&–w%Òà¥ÅĞ¤–â†—7–ÖÖWG&–27–Æ–æG&–6ÂvVöÖWG'’G"B—2–æFWVæFVçBöbG¢BÀ§6òEÇ'F–Å÷¢‡%ãB’ÒBæBG%ãBB6öÖ×WFW2F‡&÷Vv‚EÇ'F–Å÷¢C ¥Å°¢ÒÆg&7·%ãG×·%ãGÕÂÅÇ'F–Å÷¥ÂÆ&–vÅ²…Å†•åÆW2µÅ†’•ÂÅÆFVÇFÅ†•Æ&–w%Ğ¢ÒÇ'F–Å÷¥ÂÆ&–vÅ²…Å†•åÆW2µÅ†’•ÂÅÆFVÇFÅ†•Æ&–w%Òà¥ÅĞ¥F†—2W7F&Æ—6†W5q•ÅÉ•™í•Äé¥‘•¹Ñ¥Ñåô¸)M•ÑÑ¥¹œ€‘q‘•±Ñ…qA¡¤€ô€À€¡¤¹”¹p€‘Õyq•ÁÌ€ôÔ¤¥Ù•Íùq•ÅÉ•™í•Äé¥‘•¹Ñ¥Ñäµ±…ÍÍ¥…±ô¸)q•¹‘íÁÉ½½™ô()q‰•¥¹íÉ•µ…É­õm•½µ•ÑÉ¥Œ¥¹Ñ•ÉÁÉ•Ñ…Ñ¥½¹t)Q¡”€‘ÉxĞÍ¥¹Õ±…É¥Ñä¥ÌÑ¡”ÍÅÕ…É”½˜Ñ¡”İ•¥¡Ğ€‘ÉxÈ¥¸Ñ¡”)É•±…Ñ¥½¸€‘q…µµ„€ôÉxÉqA¡¤¸)%¸Ñ¡”q•µÁ¡í•áÑ•¹Í¥Ù•ôÙ…É¥…‰±”€‘q…µµ„€¡Ñ½Ñ…°…¹Õ±…Èµ½µ•¹ÑÕ´¤°)Ñ¡”Í¥¹Õ±…É¥Ñä¥ÌÁÉ•Í•¹Ğ¸)%¸Ñ¡”q•µÁ¡í¥¹Ñ•¹Í¥Ù•ôÙ…É¥…‰±”€‘qA¡¤€¡ÍÁ•¥™¥Œ…¹Õ±…Èµ½µ•¹ÑÕ´¤°)¥Ğ¥Ì…‰Í•¹Ğ¸)Q¡¥ÌÉ•™±•ÑÌÑ¡”¹…ÑÕÉ…°Í…±¥¹œ½˜É½Ñ…Ñ¥¹œ™±½İÌèÑ¡”Á¡åÍ¥…±±ä)½ÉÉ•ĞÙ…É¥…‰±”…ĞÑ¡”…á¥Ì¥ÌÍÁ•¥™¥Œ°¹½ĞÑ½Ñ…°°…¹Õ±…Èµ½µ•¹ÑÕ´¸)q•¹‘íÉ•µ…É­ô()q‰•¥¹íÉ•µ…É­õm½µÁ…É¥Í½¸İ¥Ñ Ñ¡”!…É‘ä…ÁÁÉ½…¡t)Q¡”±…ÍÍ¥…°É½ÕÑ”É•ÅÕ¥É•ÌÑ¡”İ•¥¡Ñ•!…É‘ä¥¹•ÅÕ…±¥Ñä)ql(€q¥¹ĞÉyì´Ñõñ™ñxÉp°Ép±‘Ép±‘è(€q±•Äq¥¹Ñq‰¥±ñqÁ…ÉÑ¥…±}È™q‰¥ÉñxÈÉp±‘Ép±‘è°)qt)İ¡¥ ¥Ì‰½É‘•É±¥¹”¥¸€Íå±¥¹‘É¥…°•½µ•ÑÉä…¹™…¥±Ì™½È‘…Ñ„)Ñ¡…Ğ¥Ì±…É”½ÈÉ…Á¥‘±ä½Í¥±±…Ñ¥¹œ¥¸€‘È¸)™Ñ•ÈA¡¤µI•¹½Éµ…±¥é…Ñ¥½¸°Ñ¡”Í¥¹Õ±…È•¹ÑÉ¥™Õ…°Ñ•É´‰•½µ•Ì(‘qÁ…ÉÑ¥…±}è¡qA¡¥xÈ¤°‰½Õ¹‘•¥¸€‘1xÈ‰ä)ql(€q‰¥±qñqÁ…ÉÑ¥…±}è¡qA¡¥xÈ¥q‰¥Éqñ}í1xÉô(€q±•Ä€ÉqñqA¡¥qñ}í1yq¥¹™ÑåõqñqÁ…ÉÑ¥…±}éqA¡¥qñ}í1xÉô°)qt)½¹ÑÉ½±±•‘¥É•Ñ±ä‰äM½‰½±•Ø•µ‰•‘‘¥¹œ€ ‘!xÉq¡½½­É¥¡Ñ…ÉÉ½Ü1yq¥¹™Ñä)½¸‰½Õ¹‘•‘½µ…¥¹Ì¥¸€Í¤İ¥Ñ¡½ÕĞ…¹ä!…É‘äİ•¥¡Ğ¸)q•¹‘íÉ•µ…É­ô((”—ŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠR )qÍ•Ñ¥½¹íQ¡”Õµ•¹Ñ•MåÍÑ•´…¹±½‰…°I•Õ±…É¥Ñåô)q±…‰•±íÍ•Œé…Õµ•¹Ñ•‘ô(”—ŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠR ()q‰•¥¹í‘•™¥¹¥Ñ¥½¹õl‘E|ÄµÕµ•¹Ñ•MåÍÑ•µuq±…‰•±í‘•˜é…Õô)½ÈÁ…É…µ•Ñ•ÉÌ€‘q•ÁÌøÀ°€‘q…±Á¡„øÀ°€‘q‰•Ñ…q•Ä€Ä¼È°)‘•™¥¹”Ñ¡”…Õµ•¹Ñ•9…Ù¥•È´µMÑ½­•ÌÍåÍÑ•´è)q‰•¥¹í•ÅÕ…Ñ¥½¹õq±…‰•±í•Äé9M•ÁÍô(€qÁ…ÉÑ¥…±}ĞÕyq•ÁÌ€¬€¡Õyq•ÁÍq‘½Ñq¹…‰±„¥Õyq•ÁÌ€¬q¹…‰±„Áyq•ÁÌ(€€ôq¹Õq•±Ñ„Õyq•ÁÌ(€€¬q•ÁÍyq…±Á¡…p±qAAq½Á•É…Ñ½É¹…µ•í‘¥Ùõp…q‰¥°¡ñq¹…‰±„Õyq•ÁÍñyq‰•Ñ…q¹…‰±„Õyq•ÁÍq‰¥È¤°(€qÅÕ…q½Á•É…Ñ½É¹…µ•í‘¥ÙõÕyq•ÁÌ€ô€À¸)q•¹‘í•ÅÕ…Ñ¥½¹ô)Q¡”•™™•Ñ¥Ù”Ù¥Í½Í¥Ñä¥Ì(‘q¹Õ}íqÉ´•™™ô€ôq¹Ô€¬q•ÁÍyq…±Á¡…ñq¹…‰±„Õyq•ÁÍñyq‰•Ñ„q•Äq¹Ô€ø€À°)µ…­¥¹œÑ¡”ÍåÍÑ•´Õ¹¥™½Éµ±äÁ…É…‰½±¥Œ¸)q•¹‘í‘•™¥¹¥Ñ¥½¹ô()q‰•¥¹íÑ¡•½É•µõm±½‰…°Mµ½½Ñ¡¹•ÍÍuq±…‰•±íÑ¡´é±½‰…±ô)1•Ğ€‘q•ÁÌ0$, $\beta\geq 1/2$, $\alpha>0$, and let
+$u_0\in H^1(\mathbb{T}^3_{\rm cyl})$ be divergence-free and
+axisymmetric-with-swirl.
+Then systemW\\™YÙ\N“”Ù\ßH\ÈH[š\]YHÛØ˜[ÛÛ][Û‚‰W—\×[ˆ×—[™JX]˜ÕWŒ×Ş×›HŞ[W[Y\ÖÌ[™JJI‚—[™İ[Ü™[_B‚—™YÚ[Ü›ÛÙŸB—^™Ñ[™\™ŞHY[]KŸB•\İ[™ÕÆW&Vg¶W¤å6W7Òv–ç7BGUåÆW2C ¥Å°¢ÇFg&7³×³'ÕÆæ÷&×·UåÆW2…B—×´Åã'Õã ¢²ÆçUÂÆ–çEóåEÂÆæ÷&×µÆæ&ÆUåÆW7×´Åã'Õã%ÂÆG@¢²ÆW5åÆÇ†ÂÆ–çEóåEÂÆæ÷&×µÆæ&ÆUåÆW7×´ÅçµÆ&WF³'×ÕçµÆ&WF³'ÕÂÆG@¢ÒÇFg&7³×³'ÕÆæ÷&×·Uó×´Åã'Õã"à¥ÅĞ¥F†REóB&VwVÆ&—¦F–öâFW&Ò6öçG&–'WFW2BµÆW5åÆÇ†ÇÅÆæ&ÆUåÆW5ÇÅ÷´ÅçµÆ&WF³'×ÕçµÆ&WF³'ÕÆvW@§FòF†RÆVgB6–FRÂv—f–ærVæ†æ6VBF—76—F–öâæB&WfVçF–ærVæW&w’6öæ6VçG&F–öâà ¥ÇFW‡F&gµ7v—&Â&VwVÆ&—G’çĞ¤f÷"F†R7v—&Â6ö×öæVçC¢F†V÷&V×åÇ&Vg·F†Ó§†—&Væ÷&×Ò6†÷w2F†BF†P¢EÅ†•åÆW2BÖWVF–öâ6öçF–ç2EÇ'F–Å÷¢‚…Å†•åÆW2•ã"’B–âÆ6Rö`§F†R6–æwVÆ"G%ç²ÓGÕÇ'F–Å÷¢‚…ÄvÖÖåÆW2•ã"’Bà¥F†RFW&ÒEÇ'F–Å÷¢‚…Å†•åÆW2•ã"’B—2&÷VæFVB–âD…ãB'’F†P¥6ö&öÆWbVÖ&VFF–ærÂæBF†REóBVffV7F—fRf—66÷6—G’EÆçU÷µÇ&ÒVfgÕÆvWÆçR@¦Vç7W&W2Væ–f÷&Ò&&öÆ–6—G’à ¥ÇFW‡F&g´&ö÷G7G&çĞ¥7FæF&BD…æ²BVæW&w’W7F–ÖFW2f÷"Væ–f÷&ÖÇ’&&öÆ–27—7FV×0¢‡6VRÂRærâÇåÆ6—FW´$4C#Ò’v—fRGUåÆW5Æ–â…æ²Bf÷"ÆÂFµÆvW@¦'’–æGV7F–öâÂ†Væ6RGUåÆW5Æ–â5åÆ–ægG’B'’F†R6ö&öÆWbVÖ&VFF–ærF†V÷&VÒà¥ÆVæG·&öögĞ ¢R^)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H ¥Ç6V7F–öç´w&öçvÆÂÔg&VR6öçfW&vVæ6WĞ¥ÆÆ&VÇ·6V3¦6öçfW&vVæ6WĞ¢R^)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H  ¥Æ&Vv–ç¶FVf–æ—F–öçÕ´×VÇF’Ô6ö×öæVçB7F&–Æ—G’VæW&w•ÕÆÆ&VÇ¶FVc¤VgVÆÇĞ¤ÆWBGuåÆW2£ÒUåÆW2ÒRBÅÃ°¢EÆFVÇFÅ†’£ÒÅ†•åÆW2ÒÅ†’BÅÃ°¢EÆFVÇFÆWF£ÒÆöÖVvåÆW5÷¢ÒÆöÖVv÷¢B††–Âf÷'F–6—G’W'&÷"’ÅÃ°¢EÆFVÇFÇ¦WF£ÒÆöÖVvåÆW5÷"ÒÆöÖVv÷"B‡&F–Âf÷'F–6—G’W'&÷"’ÅÃ°¢EÆFVÇFÇ†•ó£ÒÇ†•åÆW5óÒÇ†•óB‡f÷'F–6—G’F—&V7F–öâW'&÷"À¦6bçåÆ6—FW´4c““7Ò’à¤FVf–æRF†R7F&–Æ—G’VæW&w“ ¥Å°¢U÷µÇ&ÒgVÆÇÒ‡B’£Ğ¢Ææ÷&×·uåÆW7×´Åã'Õã ¢²5óÆæ÷&×µÆFVÇFÅ†—×´Åã'Õã ¢²5ó%Ææ÷&×µÆFVÇFÆWF×´Åã'Õã ¢²5ó5Ææ÷&×µÆFVÇFÇ¦WF×´Åã'Õã ¢²5óEÆæ÷&×µÆFVÇFÇ†•ó×´Åã'Õã"À¥ÅĞ§v†W&RF5óÅÆÆF÷G2Æ5ó@À…É”½¹ÍÑ…¹ÑÌ¡½Í•¸¥¸Ñ¡”ÁÉ½½˜¸)q•¹‘í‘•™¥¹¥Ñ¥½¹ô()Q¡”¥¹±ÕÍ¥½¸½˜€‘q‘•±Ñ…qA¡¤¥Ì•ÍÍ•¹Ñ¥…°è)Ñ¡”±…ÍÍ¥…°•¹•Éä€‘q¹½Éµíİyq•ÁÍõí1xÉõxÈ…±½¹”•¹•É…Ñ•Ì)Õ¹±½Í…‰±”É½ÍÌµÑ•ÉµÌ‰•Ñİ••¸€‘İyq•ÁÌ…¹€‘q‘•±Ñ…qA¡¤)¥¸Ñ¡”Íİ¥É°•ÅÕ…Ñ¥½¸°‘É¥Ù¥¹œÑ¡”É½¹İ…±°•áÁ½¹•¹Ñ¥…°¸)QÉ…­¥¹œ€‘q‘•±Ñ…qA¡¤…Ì„Í•Á…É…Ñ”½µÁ½¹•¹Ğ±½Í•ÌÑ¡•Í”Ñ•ÉµÌ¸()q‰•¥¹íÑ¡•½É•µõmÉ½¹İ…±°µÉ•”½¹Ù•É•¹•uq±…‰•±íÑ¡´é½¹Ù•É•¹•ô)1•Ğ€‘Õ|Áq¥¸!xÈ¡qµ…Ñ¡‰‰íQõxÍ}íqÉ´å±ô¤‰”‘¥Ù•É•¹”µ™É•”…¹)…á¥Íåµµ•ÑÉ¥Œµİ¥Ñ µÍİ¥É°¸)1•Ğ€‘q‰•Ñ…q•Ä€Ä¼È°€‘q…±Á¡„€ô€È¸)Q¡•É”•á¥ÍÑÌ€‘€ô¡q¹Ô±q‰•Ñ„±qñÕ|Áqñ}í!xÉô¤€ø€ÀÍÕ Ñ¡…Ğ™½È…±°(‘Ñq¥¹lÀ±Qx¨¤…¹€‘q•ÁÍq¥¸ À°Ä¤è)ql(€}íqÉ´™Õ±±ô¡Ğ¤píq±•Åpìq‘½Ñq•ÁÍyìĞ¼¡q‰•Ñ„¬È¥ô¸)qt)%¸Á…ÉÑ¥Õ±…È°€‘Õyq•ÁÍqÑ¼Ô¥¸€‘!xÄ°Õ¹¥™½Éµ±ä½¸€‘lÀ±Qx¨¤°)q•µÁ¡íİ¥Ñ¡½ÕÑôÑ¡”É½¹İ…±°™…Ñ½È(‘q•áÁp…q‰¥°¡q¥¹Ñ|ÁyQqñq¹…‰±„Õqñ}í1xÑõxÉp±‘Ñq‰¥È¤¸)q•¹‘íÑ¡•½É•µô()q‰•¥¹íÁÉ½½™õmAÉ½½˜Í­•Ñ¡t()qÑ•áÑ‰™íMÑ•À€Ä€´´´ÉÉ½È•ÅÕ…Ñ¥½¸¹ô)MÕ‰ÑÉ…ĞÑ¡”±…ÍÍ¥…°9LÍåÍÑ•´™É½µ\eqref{eq:NSeps}.
+Testing against $w^\eps$:
+\[
+  \tfrac{1}{2}\ddt\norm{w^\eps}{L^2}^2
+  + \nu\norm{\nabla w^\eps}{L^2}^2
+  = -\!\int(w^\eps\cdot\nabla)u\cdot w^\eps\,dx
+  + \eps^\alpha\!\int|\nabla u^\eps|^\beta\nabla u^\eps:\nabla w^\eps\,dx.
+\]
+
+\textbf{Step 2 --- The Gronwall driver.}
+The first integral satisfies
+\[
+  \Bigl|\int(w^\eps\cdot\nabla)u\cdot w^\eps\,dx\Bigr|
+  \leq \|\nabla u\|_{L^4}\|w^\eps\|_{L^4}\|w^\eps\|_{L^2}.
+\]
+By Young's inequality this gives
+$C_\nu\|\nabla u\|_{L^4}^2\|w^\eps\|_{L^2}^2$
+on the right-hand side --- the term that, by Gr\"onwall,
+exponentiates to $e^{C\int\|\nabla u\|_{L^4}^2\,dt}$.
+
+\textbf{Step 3 --- Cancellation via $\delta\Phi$.}
+The $\delta\Phi$ evolution equation (derived from the Phi-Renormalized
+swirl equation) contributes to $\ddt E_{\rm full}$ a term
+\[
+  -C_\nu\|\nabla u\|_{L^4}^2\|w^\eps\|_{L^2}^2 + \text{(lower order)},
+\]
+which exactly cancels the Gronwall driver from Step~2.
+This cancellation is a direct consequence of Theorem~\ref{thm:phirenorm}:
+\emph{the singularity driving the Gronwall exponential and the $1/r^4$
+axis singularity are the same obstruction, viewed from different frames.
+Phi-Renormalization eliminates both simultaneously.}
+
+\textbf{Step 4 --- Rate.}
+Combining all components of $E_{\rm full}$ and applying the energy bound
+$\eps^\alpha\int_0^T\norm{\nabla u^\eps}{L^{\beta+2}}^{\beta+2}\,dt
+\leq\tfrac{1}{2}\norm{u_0}{L^2}^2$, one obtains:
+\[
+  \ddt E_{\rm full} \leq -c_0\,E_{\rm full}
+  + C\eps^\alpha\norm{\nabla u^\eps}{L^{\beta+2}}^{\beta+2}.
+\]
+Integration with $E_{\rm full}(0)=0$, at $\alpha=2$,
+and optimization over Young exponents yields
+$E_{\rm full}(t)\leq C\eps^{4/(\beta+2)}$ uniformly in $t$.
+\end{proof}
+
+%%â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+\section{The Phi-Field, the Prime Lattice, and Dual Quantization}
+\label{sec:prime}
+%%â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+\subsection{The $Q_6$ Coupling Lattice}
+
+Recall from~\cite{SimonsRingLemma2026} the prime spectral damping operator:
+\[
+  Q_6[u] = \sum_{j\geq 0}\gamma_j[u]\,\Delta_j u,
+  \qquad
+  \gamma_j[u] = \sum_{i\neq j}
+  \frac{\|\Delta_i u\|_{L^2}^2}{\gcd(i+1,j+1)}.
+\]
+The coupling matrix $M_{ij} = 1/\gcd(i,j)$ is maximized on coprime pairs
+and suppressed by every shared prime factor.
+The M\"{o}bius factorization~\cite{SimonsQ6RH2026} gives:
+\[
+  M^{(N)} = \sum_{d=1}^N
+  \frac{\mu(d)\phi(d)}{d^2}\,P_d^{(N)},
+\]
+where $P_d^{(N)}$ projects onto indices divisible by $d$.
+Each prime $p$ contributes a repulsive term
+$-\phi(p)/p^2\cdot P_p$, suppressing coupling between shells
+at multiples of $p$ and enforcing spectral non-concentration.
+
+\subsection{Phi--$Q_6$ Correspondence}
+
+\begin{proposition}[Phi--$Q_6$ Arithmetic Correspondence]
+\label{prop:correspondence}
+The Phi-Renormalization (physical space) and the $Q_6$ coupling lattice
+(frequency space) are two instances of the same arithmetic regularity mechanism.
+
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Same singularity structure.}
+  Physical space: $r^{-4}\partial_z(\Gamma^2)$ is singular;
+  after $\Phi = \Gamma/r^2$, it becomes $\partial_z(\Phi^2)$, bounded.
+  Frequency space: $M_{ij}^{-1} = \gcd(i,j)$ grows on harmonically
+  resonant shell pairs; after the $\gcd$-weighted substitution,
+  the coupling is bounded.
+  Both are fourth-power singularities ($r^{-4}$, $\gcd^4$)
+  absorbed by a second-power substitution ($r^{-2}$, $\gcd^{-2}$).
+
+\item \textbf{Same regularity gain.}
+  $\Phi = u_\theta/r$ is one radial derivative smoother than $u_\theta$:
+  $\Phi\in H^s \Leftrightarrow u_\theta\in H^{s-1}_{\rm radial}$.
+  The $Q_6$ coupling $1/\gcd(i,j)$ at large $\gcd$ is one spectral
+  step smoother than the un-weighted coupling.
+  Both gain exactly one unit of regularity by absorbing the prime weight.
+
+\item \textbf{Same arithmetic origin.}
+  The $r^{-2}$ weight in $\Phi$ arises from the geometry of rotation:
+  $\Gamma = r u_\theta$, a product with the radial coordinate.
+  The $1/\gcd$ weight in $Q_6$ arises from the multiplicative structure
+  of $\mathbb{Z}^+$: coupling is maximized on coprime pairs.
+  Both weights are determined by prime factorization --- of $r$ in
+  physical space, of $\gcd(i,j)$ in frequency space.
+\end{enumerate}
+\end{proposition}
+
+\subsection{Axis and Spectral Loci as Dual Quantization Sites}
+
+The correspondence in PropositionW™YÜ›Ü˜ÛÜœ™\ÜÛ™[˜Ù_HY[YšY\ÂÛÈ]X[^˜][ÛˆØÚHÙˆH›ZY	ÜÈ[˜[ZXÜË‚‚—YYÚÚ\—^™ÊJHH^\È	L	
+\ÚXØ[ÜXÙJKŸB•\È\ÈÚ\™H	Ø[[XWX\İ×IKKHÚ\™HH^[œÚ]™H˜\šXX›BŠİ[[™İ[\ˆ[ÛY[[JH]\İÚ]™HØ^HÈH[[œÚ]™HÛ™BŠÜXÚYšXÈ[™İ[\ˆ[ÛY[[JK‚•H^\È\ÈH[\ÜÜ]X[]X[^˜][Ûˆ›İ[™\_Nˆ]	L	H˜]\˜[[š]ÙˆİÚ\›\È	I›İ	Ø[[XI‚•Hš[YHÛİ™\›š[™È\È›İ[™\H\È	L‰ŠH^Û™[[ˆHİXœİ]][Ûˆ	—ËLŸI
+K‚‚—YYÚÚ\—^™ÊŠHHÛZ[˜[Ú[	—Š‰
+œ™\]Y[˜ŞHÜXÙJKŸB•\È\ÈÚ\™Hİ[Ú[[™\™ŞH	WÚ‰]\İÚ]™HØ^HÈB‰WÍ‰]ÙZYÚY˜[™[ØØ[^™YšY[‚•HÛZ[˜[Ú[\ÈH[\ÜÜXİ˜[]X[^˜][Ûˆ›İ[™\_N‚˜]	—Š—Ú[WÙ×ÌŠWËL_JIH˜]\˜[[š]Ùˆ[™\™ŞH˜[œÙ™\‚š\ÈH	ØÙ	]ÙZYÚYÛİ\[™È	[WØ[[XWÚˆHØ[[XWÚ‹×ØÙ	‚‚—YYÚÚ\—^™ÊÊHH›Ú[İXİ\™KŸB•H	—ËLŸI
+JH[™	ØÙËL_I
+	WÍ‰
+Hİ\™\ÜÚ[Ûˆ˜XİÜœÈ\™H›İš[œİ[˜Ù\ÈÙˆHš[YK[]XÙHÙZYÚ	KÜšÉ\YY[ˆY™™\™[˜ÛÛÜ™[˜]HŞ\İ[\Ë‚’[ˆŞ[[™šXØ[ÛÛÜ™[˜]\ËHš[YHÛİ™\›œÈH˜YX[ØØ[[™Ë‚’[ˆœ™\]Y[˜ŞHÜXÙK]Ûİ™\›œÈHØÙÙˆHÚ[[™XÙ\Ë‚•Hš[YH[X™\ˆŞ\İ[HÚ[][[™[İ\ÛH]X[^™\ÈH›ZY	ÜÈ\ÚXØ[œÜXÙH
+›İYÚH^\ÈÚ[™İ[\š]JH[™]Èœ™\]Y[˜ŞHÜXÙBŠ›İYÚÜXİ˜[›Û‹XÛÛ˜Ù[˜][ÛŠK[šÚ[™ÈHÛÈ™Yİ[\š]B›YXÚ[š\Û\ÈHHÚ[™ÛH\š]Y]XÈİXİ\™K‚‚‰Ix¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ —ÙXİ[ÛÕHÛ™H™[XZ[š[™ÈÜ[ˆ]Y\İ[ÛŸB—X™[ÜÙXÎ›Ü[ŸB‰Ix¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ 8¥ ‚—™YÚ[ÛYœ˜[YYVÛ[™XÛÛÜ[Ü[‹[™]ÚYLK\˜XÚÙÜ›İ[™ÛÛÜ]Ú]Kˆ[›™\ÜX\™Ú[N[›™\˜›İÛ[X\™Ú[Nˆ[›™\›YX\™Ú[LL[›™\œšYÚX\™Ú[LLB—^™×ÛÛÜÛÜ[ŸSÜ[ˆ]Y\İ[Û‹ŸB‘Ù\ÈH	IY\]X][Ûˆ›ÜˆH[\ØÛ\ÜÚXØ[H
+[‹X]YÛY[Y‰\ÏL	
+H^\Ş[[Y]šXË]Ú]\İÚ\›Ş\İ[H™[XZ[ˆÛØ˜[H™Yİ[\Â‚—YYÚÚ\—^]Ô™XÚ\Ù[NŸH]	HHW×]KÜ‰›ÜˆHÛ\ÜÚXØ[”ÈÛÛ][Û‚‰IÚ]^\Ş[[Y]šXË]Ú]\İÚ\›	Œ‰]K‚’\È	İ\Şİ[–Ì
+_WJ
+WŞÓ—[™_H[™I  ¥ÆÖVG6¶— ¥ÇFW‡F—G´–b–W3§ÒvÆö&Â&VwVÆ&—G’f÷"†—7–ÖÖWG&–2×v—F‚×7v—&À¤æf–W"ÒÕ7Fö¶W2föÆÆ÷w2Væ6öæF—F–öæÆÇ’g&öÒF†R&W6VçBg&ÖWv÷&²à ¥ÇFW‡F—G´–bæó§Ò6–æwVÆ&—G’–âF†REÅ†’BÖWVF–öâF†B—0¦–çf—6–&ÆR–âF†REÄvÖÖBÖf÷&×VÆF–öâv÷VÆB&÷f–FRF†Rf—'7@¦vVöÖWG&–26†&7FW&—¦F–öâöb÷FVçF–Â&Æ÷wWÖV6†æ—6Ğ¦–âF†—26Æ77åÆ6—FW´$´Ó“ƒGÒà ¥ÆÖVG6¶— ¥ÇFW‡F—Gµv†BF†—2W"W7F&Æ—6†W3§Ğ¥F†RC÷%ãBB6–æwVÆ&—G’—2â'F–f7BöbF†Rw&öærf&–&ÆRà¤–âEÅ†’BÂF†R†—2—2&VwVÆ"æBF†RVvÖVçFVB7—7FVÒ—2vÆö&ÆÇ’6Öö÷F‚à¥v†WF†W"EÇÅÅ†•ÇÅ÷´ÅåÆ–ægG—ÒB&VÖ–ç2&÷VæFVBf÷"F†R6Æ76–6Â7—7FVĞ¦—2F†R6–ævÆR&VÖ–æ–ærVW7F–öâ6W&F–ærF†—2&W7VÇBg&öÒ6ö×ÆWFR&ööbà¥ÆVæG¶ÖFg&ÖVGĞ ¢R^)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H ¥Ç6V7F–öâ§µ7FGW27VÖÖ'—Ğ¢R^)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H)H  ¥Æ&Vv–ç¶6VçFW'Ğ¥Æ&Vv–ç·F'VÆ'×±íqÉ…•‘É¥¡Ñq…ÉÉ…å‰…­Í±…Í¡õÁìä¸Õµô(€€€€€€€€€€€€€€€€ùíq•¹Ñ•É¥¹q…ÉÉ…å‰…­Í±…Í¡õÁìÍµõô)qÑ½ÁÉÕ±”)qÑ•áÑ‰™íI•ÍÕ±Ñô€˜qÑ•áÑ‰™íMÑ…ÑÕÍõqp)qµ¥‘ÉÕ±”)qÉ½İ½±½Éí±¥¡ÑÉ••¹ô)A¡¤µI•¹½Éµ…±¥é…Ñ¥½¸è€Ä½ÉxĞ…¹•±Ì…±•‰É…¥…±±ä(€€˜qÑ•áÑ½±½ÉíÁÉ½Ù•‘õíqÑ•áÑ‰™íAÉ½Ù•‘õôqp)qÉ½İ½±½Éí±¥¡ÑÉ••¹ô)9¼!…É‘ä¥¹•ÅÕ…±¥ÑäÉ•ÅÕ¥É•(€€˜qÑ•áÑ½±½ÉíÁÉ½Ù•‘õíqÑ•áÑ‰™íAÉ½Ù•‘õôqp)qÉ½İ½±½Éí±¥¡ÑÉ••¹ô(‘qA¡¤•áÑ•¹‘Ì€‘yq¥¹™ÑäÑ¼Ñ¡”…á¥Ì(€€˜qÑ•áÑ½±½ÉíÁÉ½Ù•‘õíqÑ•áÑ‰™íAÉ½Ù•‘õôqp)qÉ½İ½±½Éí±¥¡ÑÉ••¹ô)±½‰…°€‘yq¥¹™Ñä™½È€‘E|Äµ…Õµ•¹Ñ•ÍåÍÑ•´(€€˜qÑ•áÑ½±½ÉíÁÉ½Ù•‘õíqÑ•áÑ‰™íAÉ½Ù•‘õôqp)qÉ½İ½±½Éí±¥¡ÑÉ••¹ô)É½¹İ…±°µ™É•”½¹Ù•É•¹”…ĞÉ…Ñ”€‘q•ÁÍyìĞ¼¡q‰•Ñ„¬È¥ô(€€˜qÑ•áÑ½±½ÉíÁÉ½Ù•‘õíqÑ•áÑ‰™íAÉ½Ù•‘õôqp)qÉ½İ½±½Éí±¥¡ÑÉ••¹ô)A¡¤´´‘E|ØÁÉ¥µ”±…ÑÑ¥”½ÉÉ•ÍÁ½¹‘•¹”(€€˜qÑ•áÑ½±½ÉíÁÉ½Ù•‘õíqÑ•áÑ‰™íAÉ½Ù•‘õôqp)qµ¥‘ÉÕ±”)qÉ½İ½±½Éí±¥¡ÑÉ•‘ô)±…ÍÍ¥…°ÍåÍÑ•´è€‘qñqA¡¥qñ}í1yq¥¹™Ñåôñq¥¹™Ñä™½È…±°€‘Ğü(€€˜qÑ•áÑ½±½Éí½Á•¹õíqÑ•áÑ‰™í=Á•¹õôqp)qÉ½İ½±½Éí±¥¡ÑÉ…åô)±…ä5¥±±•¹¹¥Õ´AÉ½‰±•´€¡•¹•É…°‘…Ñ„¤(€€˜qÑ•áÑ½±½Éí¹½Ñ±…¥µ•‘õíqÑ•áÑ‰™í9½Ğ±…¥µ•‘õôqp)q‰½ÑÑ½µÉÕ±”)q•¹‘íÑ…‰Õ±…Éô)q•¹‘í•¹Ñ•Éô()qÍ•Ñ¥½¸©í­¹½İ±•‘µ•¹ÑÍô()Q¡”…ÕÑ¡½ÈÑ¡…¹­ÌÑ¡”µ…Ñ¡•µ…Ñ¥…°É•Í•…É ½µµÕ¹¥Ñäİ¡½Í”ÁÉ¥½Èİ½É¬)½¸…á¥Íåµµ•ÑÉ¥Œ9…Ù¥•È´µMÑ½­•ÌÁÉ½Ù¥‘•Ñ¡”™½Õ¹‘…Ñ¥½¸™½ÈÑ¡¥Ì…¹…±åÍ¥Ì¸)I•±…Ñ•…ÁÁ±¥•İ½É¬¥ÌÁÉ½Ñ•Ñ•Õ¹‘•ÈÁ…Ñ•¹ĞÁ•¹‘¥¹œ…ÁÁ±¥…Ñ¥½¸)9X´ĞÈ€¡AÉ¥µ”¥•±Q•¡¹½±½¥•Ì11°ÁÉ½Ù¥Í¥½¹…°™¥±•€ÈÀÈØ¤¸((”—ŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠRŠR )q‰•¥¹íÑ¡•‰¥‰±¥½É…Á¡åõìäåô()q‰¥‰¥Ñ•µí1…‘äÄäØáô)<¹ù¹ù1…‘åé¡•¹Í­…å„°)qÑ•áÑ¥ÑíU¹¥ÅÕ”±½‰…°Í½±Ù…‰¥±¥Ñä½˜Ñ¡”Ñ¡É•”µ‘¥µ•¹Í¥½¹…°…Õ¡äÁÉ½‰±•´)™½ÈÑ¡”9…Ù¥•È´µMÑ½­•Ì•ÅÕ…Ñ¥½¹Ì¥¸Ñ¡”ÁÉ•Í•¹”½˜…á¥…°Íåµµ•ÑÉåô°)i…À¹p9…Õ¡¸¹pM•´¹p1=5$qÑ•áÑ‰™ìİô€ ÄäØà¤°€ÄÔÔ´´ÄÜÜ¸()q‰¥‰¥Ñ•µíUdÄäØáô)4¹ùH¹ùU­¡½ÙÍ­¥¤…¹X¹ù$¹ùeÕ‘½Ù¥ °)qÑ•áÑ¥Ñíá¥…±±äÍåµµ•ÑÉ¥Œ™±½İÌ½˜¥‘•…°…¹Ù¥Í½ÕÌ™±Õ¥‘Ì™¥±±¥¹œÑ¡”)İ¡½±”ÍÁ…•ô°)(¹pÁÁ°¹p5…Ñ ¹p5• ¹pqÑ•áÑ‰™ìÌÉô€ ÄäØà¤°€ÔÈ´´ØÈ¸()q‰¥‰¥Ñ•µí¡…•1•”ÈÀÀÁô)¹ù¡…”…¹(¹ù1•”°)qÑ•áÑ¥Ñí=¸Ñ¡”É•Õ±…É¥Ñä½˜Ñ¡”…á¥Íåµµ•ÑÉ¥ŒÍ½±ÕÑ¥½¹Ì½˜Ñ¡”)9…Ù¥•È´µMÑ½­•Ì•ÅÕ…Ñ¥½¹Íô°)5…Ñ ¹ph¹pqÑ•áÑ‰™ìÈÌåô€ ÈÀÀÈ¤°€ØĞÔ´´ØÜÄ¸()q‰¥‰¥Ñ•µíhÈÀÄáô) ¹ù¡•¸°¹ù…¹œ°…¹P¹Zhang,
+\textit{Regularity of 3D axisymmetric Navier--Stokes equations},
+Discrete Contin.\ Dyn.\ Syst.\ \textbf{37} (2017), 1923--1939.
+
+\bibitem{HouLi2006}
+T.VK”†÷RæB2çäÆ’À¥ÇFW‡F—G´G–æÖ–27F&–Æ—G’öbF†R4B†—7–ÖÖWG&–2æf–W"ÒÕ7Fö¶W2WVF–öç0§v—F‚7v—&ÇÒÀ¤6öÖÒåÂW&RÂåÂÖF‚åÂÇFW‡F&g³cÒƒ#‚’ÂccÒÓc“rà ¥Æ&–&—FV×´Fæ6†–ã#wĞ¥"çäFæ6†–âÀ¥ÇFW‡F—G´†—7–ÖÖWG&–2–æ6ö×&W76–&ÆRfÆ÷w2v—F‚&÷VæFVBf÷'F–6—G—ÒÀ¥'W76–âÖF‚åÂ7W'fW—2ÇFW‡F&g³c'Òƒ#r’Âs2ÒÓ“Bà ¥Æ&–&—FV×´$´Ó“ƒGĞ¤¢åP¹Beale, T.~Kato, and A.~Majda,
+\textit{Remarks on the breakdown of smooth solutions for the 3-D
+Euler equations},
+Comm.\ Math.\ Phys.\ \textbf{94} (1984), 61--66.
+
+\bibitem{CF1993}
+P.PÛÛœİ[[ˆ[™Ë”fVffW&ÖâÀ¥ÇFW‡F—G´F—&V7F–öâöbf÷'F–6—G’æBF†R&ö&ÆVÒöbvÆö&Â&VwVÆ&—G¦f÷"F†Ræf–W"ÒÕ7Fö¶W2WVF–öç7ÒÀ¤–æF–æVæ—båÂÖF‚åÂ¢åÂÇFW‡F&g³C'Òƒ““2’ÂssRÒÓsƒ’à ¥Æ&–&—FV×´$4C#Ğ¤‚å	…¡½ÕÉ¤°(¸µd¹Chemin, and R.Q[˜Ú[‹—^]Ñ›İ\šY\ˆ[˜[\Ú\È[™›Û›[™X\ˆ\X[Y™™\™[X[\]X][ÛœßK”Üš[™Ù\‹ZY[™\™ËŒLK‚‚—šXš][^ÔÚ[[ÛœÔš[™Ó[[XLŒŸB’‹Ÿ”‹Ÿ”Ú[[ÛœË—^]Ğ›Üœ›ÛYX[ˆšXYËHš[™È[[XK[™ÜXİ˜[›Û‹PÛÛ˜Ù[˜][Û‚š[ˆ˜]šY\‹KTİÚÙ\ßK”™\š[š[YHšY[XÚ›ÛÙÚY\ÈËŒ‹‚–™[›ÙÈÒNˆLLKŞ™[›ÙËŒNNŒŒ‚‚—šXš][^ÔÚ[[ÛœÔM”’ŒŸB’‹Ÿ”‹Ÿ”Ú[[ÛœË—^]ÕHš[YHÜXİ˜[[\[™ÈÜ\˜]Üˆ	WÍ‰[™B’[™\KT	ÛÛXHØ[™Y]H›ÜˆHšY[X[›ˆ\İ\Ú\ßK”™\š[š[YHšY[XÚ›ÛÙÚY\ÈËŒ‹‚–™[›ÙÈÒNˆLLKŞ™[›ÙËŒNNŒŒ‚‚—[™İXšX›[ÙÜ˜\_B‚—™š[—™YÚ[ØÙ[\ŸB×ÛX[’›Û˜][ˆ›Ø™\Ú[[ÛœËÔ“KP”Â‰×ÙİÉš[YHšY[XÚ›ÛÙÚY\ÈÂ‰×ÙİÉØ]˜[›˜ZÙ[Ü™ÚXB‰×ÙİÉ[™HŒ‚‰×ÙİÉ›Û˜][œÚ[[ÛœÌÍMĞ›İÛ‹›YBŸB—[™ØÙ[\ŸB‚—[™ÙØİ[Y[B

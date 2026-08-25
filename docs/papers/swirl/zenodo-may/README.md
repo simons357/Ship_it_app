@@ -10,3 +10,5 @@ Controlling theorem paper: [`../Simons_PhiRenorm_Swirl_2026-08-22.tex`](../Simon
 | [`Simons_PhiRenorm_Axisymmetric.tex`](Simons_PhiRenorm_Axisymmetric.tex) | [10.5281/zenodo.20405597](https://doi.org/10.5281/zenodo.20405597) | Short companion TeX |
 
 Keep the algebraic identity. Do not cash Q1-augmented smoothness or “Gronwall-free” May lines as classical unaugmented regularity. Prime-lattice overlay is not 22 August load-bearing math.
+
+Later older faces (still not 22 August): 30 June PDF, pack `NS_PhiRenorm_complete.tex`, and `PhiRenorm_FINAL_v2.tex` in [`../FACES.md`](../FACES.md). Those bytes are distinct from this May PDF.

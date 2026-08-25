@@ -60,9 +60,11 @@ Send **one** of these, as `.tex`, if you still want the pack source rather than 
 | June Paper2 **source** of the FIXED PDF | `Paper2_NS_Regularity_SND_FIXED.tex` | **still not in this VM.** A message that is only the filename is not an attachment. Send the `.tex` as one file, or paste it, or git-push it. Caption: “this is the source of the June FIXED PDF.” Do not merge it with the August TeX. |
 | June 14 Clay-submit (historical / withdrawn-claim only) | `2f30e8c4f_NS_ClaySubmit_Jonathan_Simons_2026-06-14.tex` | **still not in this VM.** Selecting a Mac path is not an attachment. Send this **one** `.tex` file. Do not zip. Caption: “June 14 ClaySubmit, historical face.” **Not** FIXED. **Not** August. Classical regularity stays **NOT CLAIMED** even if that draft claimed Clay. |
 | Anesthesia face | `PAPER1_REBUILT_Coherence_Index.md` |
-| Pack swirl complete (older than 22 August) | `NS_PhiRenorm_complete.tex` |
+| Pack swirl complete (older than 22 August) | `NS_PhiRenorm_complete.tex` | **filed** as [`docs/papers/swirl/NS_PhiRenorm_complete.tex`](../papers/swirl/NS_PhiRenorm_complete.tex). April 2026 *Conditional Reduction*. Older than 22 August. **Not** a compile of the 22 August TeX. Same title family as [`Simons_PhiRenorm_Swirl_2026-06-30.pdf`](../papers/swirl/Simons_PhiRenorm_Swirl_2026-06-30.pdf). |
 
 If the 21 August Zenodo PDFs **are** those pack faces, skip the hunt. Caption the drop: “this is newer than the 21 August Zenodo PDF” or “this is the same.”
+
+Also filed from the later six-file drop (still older than 22 August, **not** a compile of that TeX): `Simons_PhiRenorm_Swirl_2026-06-30.pdf`, `PhiRenorm_FINAL_v2.tex`. Map: [`docs/papers/swirl/FACES.md`](../papers/swirl/FACES.md).
 
 ---
 
