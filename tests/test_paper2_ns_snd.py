@@ -576,9 +576,7 @@ class TestAprilSpectralCoherenceFilenameIsMay18ImpliesAlias(unittest.TestCase):
         self.assertNotEqual(identity, "august_repaired")
         self.assertFalse(fixed_tex.is_file(), "do not invent FIXED TeX from this alias")
         self.assertNotEqual(hashlib.sha256(raw).hexdigest(), PDF_SHA256)
-        self.assertEqual(PDF_SHA256, (
-            "7de9444d18054fc8f49a52c3fd7ed2f086a7c7d6d1e95bad350c378535c41b"
-        ))
+        self.assertEqual(hashlib.sha256(PDF.read_bytes()).hexdigest(), PDF_SHA256)
         self.assertIn("Implies Global Regularity", tex)
         self.assertIn(r"\date{May 18, 2026}", tex)
         self.assertNotIn("Conditional Regularity Criterion", tex)
