@@ -1,6 +1,7 @@
 # Turbulence reduction (program)
 
 **Status:** Domain Architect *program*, August 2026  
+**Operator contract:** [`docs/domain-architect/DA-MODE.md`](../../domain-architect/DA-MODE.md)  
 **Not a single plant. Not 3D Navier–Stokes. Clay is NOT CLAIMED.**  
 **DA does not file patents. Public literature only. No classified programs.**
 

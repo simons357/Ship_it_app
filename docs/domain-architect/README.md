@@ -1,6 +1,7 @@
 # Domain Architect v1.0
 
 **Status:** live computational framework, August 2026  
+**Operator contract:** [`DA-MODE.md`](DA-MODE.md) — honesty, missing claim ledger, NS not reopened, four-slot turbulence program  
 **Specification:** [`docs/DOMAIN-ARCHITECT.md`](../DOMAIN-ARCHITECT.md)  
 **Mathematics:** [`OPERATIONAL-MATH.md`](OPERATIONAL-MATH.md)  
 **Implementation audit:** [`ARCHITECTURE-AUDIT.md`](ARCHITECTURE-AUDIT.md) — items 1–6, 8, 9, 10 accepted in the SFE/HB dump  
