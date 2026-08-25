@@ -127,6 +127,21 @@ class TestRingReadmeAndFacesSplitTheBook(unittest.TestCase):
         self.assertIn("c8a03f315_RingLemma_Simons_June19_2026.tex", readme)
         self.assertIn("KAPPA-SND-CF-BKM-FRAGMENT.md", readme)
         self.assertIn("NOT CLAIMED", readme)
+        self.assertIn("HTTP **302**", faces)
+        self.assertIn("then **200**", faces)
+        self.assertIn("untrusted alias", faces.lower())
+        self.assertIn("not overwritten", faces.lower())
+        self.assertIn("a73d949f51a122", faces)
+        lookup = (ROOT / "docs" / "packets" / "OLD-PAPERS-LOOK-UP.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("c8a03f315_RingLemma_Simons_June19_2026.tex", lookup)
+        self.assertIn("a73d949f", lookup)
+        self.assertIn("filed", lookup.lower())
+        self.assertNotIn(
+            "still not in this VM** under that pack name",
+            lookup,
+        )
 
 
 class TestPastedKappaSndIsNotRingLemmaFinal(unittest.TestCase):
@@ -198,6 +213,8 @@ class TestPastedKappaSndIsNotRingLemmaFinal(unittest.TestCase):
 
 
 class TestJune19PackIsFiledAugmentedNotThePaste(unittest.TestCase):
+    ALIAS = "c8a03f315_RingLemma_Simons_June19_2026.tex"
+
     def test_hash_size_and_date(self):
         raw = JUNE19.read_bytes()
         self.assertEqual(hashlib.sha256(raw).hexdigest(), JUNE19_SHA256)
@@ -211,10 +228,32 @@ class TestJune19PackIsFiledAugmentedNotThePaste(unittest.TestCase):
         self.assertNotEqual(hashlib.sha256(raw).hexdigest(), TEX_SHA256)
         self.assertNotEqual(hashlib.sha256(raw).hexdigest(), PDF_SHA256)
 
+    def test_not_an_alias_of_april_final_and_not_kappa_snd(self):
+        june = JUNE19.read_text(encoding="utf-8")
+        april = TEX.read_text(encoding="utf-8")
+        self.assertNotEqual(JUNE19.read_bytes(), TEX.read_bytes())
+        self.assertIn(r"\date{April 2026", april)
+        self.assertNotIn(r"\date{June 19, 2026", april)
+        self.assertIn("prop:zeta-spread", june)
+        self.assertNotIn("prop:zeta-spread", april)
+        self.assertNotIn(r"\kappa_j", june)
+        self.assertNotIn(r"E_{\min}", june)
+        self.assertNotIn(r"H_N[a]", june)
+        self.assertNotIn("Paper2_NS_Regularity_SND_FIXED", june)
+        self.assertNotIn("Statement B", june)
+        self.assertIn(r"\textcolor{open}{\textbf{Open}}", june)
+        self.assertIn(r"\textcolor{notclaimed}{\textbf{Not claimed}}", june)
+        self.assertFalse(
+            (RING / self.ALIAS).is_file(),
+            "do not re-file the Base44 hash-prefix name as a second copy",
+        )
+        self.assertFalse((NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file())
+
     def test_pdf_bytes_unchanged(self):
         pdf = PDF.read_bytes()
         self.assertEqual(hashlib.sha256(pdf).hexdigest(), PDF_SHA256)
         self.assertEqual(len(pdf), 241673)
+        self.assertNotEqual(pdf, JUNE19.read_bytes())
 
 
 if __name__ == "__main__":

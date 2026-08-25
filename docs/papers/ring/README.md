@@ -34,9 +34,12 @@ Unique labels `lem:triad_bound_formal` / `prop:CF_integrability` /
 `thm:CF93_theorem` / \(E_{\min}\) are **absent**. Map: [`FACES.md`](FACES.md).
 
 [`RingLemma_Simons_June19_2026.tex`](RingLemma_Simons_June19_2026.tex) — Base44
-`c8a03f315_RingLemma_Simons_June19_2026.tex` (HTTP 200). `\date{June 19, 2026}`.
-SHA-256 `a73d949f…`. Still augmented; classical SND **Open**; Clay **NOT CLAIMED**.
-**Not** the unaugmented \(\kappa\)-SND paste.
+`c8a03f315_RingLemma_Simons_June19_2026.tex` (HTTP **302** then **200**).
+`\date{June 19, 2026}`. SHA-256 `a73d949f51a122…`. 44 368 bytes. **Not** an
+alias of `RingLemma_Final.tex` (`4602065ef68a…`). Still augmented; classical
+SND **Open**; Clay **NOT CLAIMED**. **No** \(\kappa_j\). **Not** the
+unaugmented \(\kappa\)-SND paste. **Not** a compile of the 21 Aug PDF
+(left in place). Hash-prefix filename is untrusted; do not re-file it.
 
 Unaugmented \(\kappa\)-SND / CF93 / BKM tail paste: classification only
 [`KAPPA-SND-CF-BKM-FRAGMENT.md`](KAPPA-SND-CF-BKM-FRAGMENT.md). Full TeX not
