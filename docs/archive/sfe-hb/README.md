@@ -42,3 +42,20 @@ Ring SND (\(\inf J/X\ge c_*\)). Q6 arithmetic \(H_N\) \(\neq\) Paper2
 
 The paste duplicates the title and §1. That is a chat artifact, not a
 second paper. **Do not use as closed.**
+
+## Frankie 14 Aug 2026 `SPECTRAL_UNIFICATION_PAPER.tex` — not received
+
+Mac path
+`/Users/jonathansimons/Desktop/RH_Proof_Chain_Synthesis/01_canonical_sources/frankie_raw_handoff_2026-08-14/RH_2026_COMPLETE_RAW_GATHERING/files/SPECTRAL_UNIFICATION_PAPER.tex`
+was **not readable** on this VM. Base44 public URL for
+`SPECTRAL_UNIFICATION_PAPER.tex` (app `69b28657b0df374441f0302e`) returned
+HTTP **302** then CDN **403** with **0 bytes**. Conversation-folder API
+paths returned **404** (`App not found`). **Do not invent TeX.** SHA /
+`\title` / `\date` are **unknown**.
+
+This is **not** a second copy of the 19 Aug UHSA markdown above. Do not
+substitute that paste for the missing TeX. Receipt:
+[`SPECTRAL_UNIFICATION_PAPER.MISSING.md`](SPECTRAL_UNIFICATION_PAPER.MISSING.md).
+Sibling `SND_GNC_BRIDGE_EXTRACTED.txt` is a different Frankie file; not
+overwritten here. **Not** live Domain Architect. Do **not** import into
+`domain_architect/`.
