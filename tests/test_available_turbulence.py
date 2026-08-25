@@ -23,6 +23,14 @@ class TestSloganStillRefuses(unittest.TestCase):
         self.assertEqual(cand.name, "inverse_design[refused]")
         self.assertFalse(any("control u" in c for c in cand.components))
 
+    def test_eight_to_twelve_slogan_is_not_a_setpoint(self):
+        cand = inverse_design_architecture(
+            "8-12% net turbulent skin-friction drag reduction",
+            ["aircraft cruise"],
+        )
+        self.assertEqual(cand.name, "inverse_design[refused]")
+        self.assertFalse(any("control u" in c for c in cand.components))
+
 
 class TestCatalogHasSuction(unittest.TestCase):
     def test_discrete_suction_is_a_forcing_mechanism(self):
@@ -59,6 +67,19 @@ class TestAvailableTurbulenceStack(unittest.TestCase):
         self.assertEqual(riblet["geometry"]["s_plus"], [12, 16])
         self.assertEqual(riblet["geometry"]["h_plus"], [8, 12])
         self.assertEqual(payload["operating_regime"]["mach"], [0.75, 0.85])
+        self.assertEqual(payload["operating_regime"]["altitude_ft"], [30000, 40000])
+        self.assertEqual(payload["operating_regime"]["re_tau_panel"], [1000, 5000])
+        self.assertIn("submarine hull", payload["operating_regime"]["secondary"])
+        overlay = payload["licensing_overlay"]
+        self.assertTrue(overlay["da_does_not_file"])
+        self.assertEqual(overlay["claimed_first_cycle_lab"]["da_status"], "refused")
+        kept = {p["id"]: p["kept"] for p in overlay["pieces"]}
+        self.assertTrue(kept["cruise-regime"])
+        self.assertTrue(kept["riblet-geometry"])
+        self.assertFalse(kept["resonant-film"])
+        self.assertFalse(kept["first-cycle-9-14-lab"])
+        self.assertFalse(kept["provisional-patent"])
+        self.assertIn("partial", overlay["da_verdict"])
         self.assertAlmostEqual(payload["commercial_band"]["low"], 0.08)
         self.assertAlmostEqual(payload["commercial_band"]["high"], 0.12)
         self.assertTrue(payload["commercial_band"]["inside_selected_envelope"])

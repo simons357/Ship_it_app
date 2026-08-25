@@ -56,7 +56,7 @@ def available_mechanisms() -> tuple[dict[str, Any], ...]:
             "name": "sawtooth riblets",
             "available_now": True,
             "how": (
-                "grooved film or machined grooves; triangular or trapezoidal; "
+                "embossed or molded film; triangular or trapezoidal; "
                 "spacing s+ about 12–16; height h+ about 8–12"
             ),
             "role": "constraint",
@@ -120,7 +120,10 @@ def available_mechanisms() -> tuple[dict[str, Any], ...]:
             "id": "locally-resonant-film",
             "name": "locally resonant polymer film",
             "available_now": False,
-            "how": "thin phononic / locally resonant polymer, 50–300 µm, optional sparse actuators",
+            "how": (
+                "thin phononic / locally resonant polymer, 50–300 µm, "
+                "optional sparse piezoelectric or plasma assist"
+            ),
             "role": "constraint",
             "literature_cf_reduction": None,
             "field_ready": False,
@@ -207,6 +210,75 @@ def _stack_candidate(
     return loop
 
 
+def _licensing_overlay(envelope: dict[str, Any]) -> dict[str, Any]:
+    """External hybrid-film sketch. DA keeps geometry/regime; refuses the rest."""
+    commercial_high = 0.12
+    return {
+        "name": "hybrid riblet + locally resonant film",
+        "source": "external licensing sketch, not a Domain Architect CFD result",
+        "da_verdict": (
+            "partial — riblet geometry and cruise regime kept; "
+            "resonant film not selected; 9–14% lab not awarded; "
+            "patent filing is attorney-owned"
+        ),
+        "commercial_target": {"low": 0.08, "high": commercial_high},
+        "claimed_first_cycle_lab": {
+            "low": 0.09,
+            "high": 0.14,
+            "da_status": "refused",
+            "reason": "not a Domain Architect measurement or simulation",
+        },
+        "inside_selected_envelope": envelope["selected_high"] >= commercial_high - 1e-12,
+        "pieces": [
+            {
+                "id": "cruise-regime",
+                "kept": True,
+                "role": "constraint",
+                "note": "application context only; not LES",
+            },
+            {
+                "id": "riblet-geometry",
+                "kept": True,
+                "role": "constraint",
+                "note": "s+ 12–16, h+ 8–12, embossed/molded film",
+            },
+            {
+                "id": "resonant-film",
+                "kept": False,
+                "role": "constraint",
+                "note": "not field-ready; no DA skin-friction envelope",
+            },
+            {
+                "id": "piezo-plasma-assist",
+                "kept": False,
+                "role": "forcing",
+                "note": "optional overlay; not in the default stack",
+            },
+            {
+                "id": "first-cycle-9-14-lab",
+                "kept": False,
+                "role": "output",
+                "note": "expected lab band is not a DA result",
+            },
+            {
+                "id": "provisional-patent",
+                "kept": False,
+                "role": "constraint",
+                "note": "attorney-owned; DA does not file claims",
+            },
+        ],
+        "licensing_package_owed": [
+            "wind-tunnel and simulation performance data",
+            "manufacturing specification",
+            "application process",
+            "durability and maintenance data",
+            "cost / payback model",
+            "field-of-use options",
+        ],
+        "da_does_not_file": True,
+    }
+
+
 def available_turbulence_system() -> dict[str, Any]:
     """Assemble the stack and attach the 15% analog check."""
     analog = turbulence_intensity_lab()
@@ -230,7 +302,8 @@ def available_turbulence_system() -> dict[str, Any]:
         "Default stack: sawtooth riblets (passive) plus discrete suction (active).",
         "Literature ranges are not added. DA does not certify a tank result.",
         "Commercial 8–12% is a licensing band inside the selected envelope, not a hardware certificate.",
-        "Locally resonant film is catalogued and not selected.",
+        "Hybrid resonant-film overlay is catalogued and not selected. 9–14% lab is refused.",
+        "Patent filing is attorney-owned. DA does not file claims.",
         "The computational gate is the lumped analog, not the hardware.",
         "Clay is NOT CLAIMED.",
     ]
@@ -270,7 +343,9 @@ def available_turbulence_system() -> dict[str, Any]:
         "operating_regime": {
             "primary": "aircraft cruise boundary layer",
             "mach": [0.75, 0.85],
-            "secondary": ["ship hull", "internal duct"],
+            "altitude_ft": [30000, 40000],
+            "re_tau_panel": [1000, 5000],
+            "secondary": ["ship hull", "submarine hull", "internal duct"],
             "notes": "Application context. DA did not run LES or a wind tunnel.",
         },
         "commercial_band": {
@@ -283,10 +358,13 @@ def available_turbulence_system() -> dict[str, Any]:
                 "envelope. DA desired remains 15%."
             ),
         },
+        "licensing_overlay": _licensing_overlay(envelope),
         "empirical_next": [
             "wall-resolved LES of the selected riblet geometry",
-            "modular panel drag measurement at the application Re",
-            "durability (abrasion, UV, temperature, fluid)",
+            "down-select two or three geometries",
+            "modular test panels 10–30 cm",
+            "direct drag measurement (balance or oil-film interferometry)",
+            "durability coupons (abrasion, UV, temperature, fluid)",
         ],
         "stack": selected,
         "catalog": catalog,

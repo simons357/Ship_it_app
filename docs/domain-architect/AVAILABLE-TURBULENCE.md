@@ -39,10 +39,33 @@ Literature highs are **not added**. The selected-high envelope (suction
 number. That is an envelope check, not a proof and not a flight number.
 
 Application context (not CFD): aircraft cruise boundary layer, Mach
-about 0.75–0.85. Secondary notes only: ship hull, internal duct.
+about 0.75–0.85, altitude about 30 000–40 000 ft, panel \(Re_\tau\)
+about 1 000–5 000. Secondary notes only: ship hull, submarine hull,
+internal duct.
+
+## Grok hybrid overlay vs what DA kept
+
+An external licensing sketch asked for a **hybrid riblet + locally
+resonant film** at **8–12%**, with a hoped-for first-cycle lab band of
+9–14% and a provisional-patent package.
+
+| Piece | DA |
+|---|---|
+| Cruise regime + riblet \(s^+\), \(h^+\) | **kept** as application context / geometry |
+| Embossed / molded riblet film | **kept** as how the riblet is applied |
+| Discrete suction | **kept and selected** (available; envelope can contain 15%) |
+| Locally resonant / phononic film | **catalogued, not selected** |
+| Piezo / plasma assist | **not selected** |
+| 9–14% first-cycle lab | **refused** (not a DA measurement) |
+| Provisional patent / claim outlines | **attorney-owned**; DA does not file |
+
+DA desired remains **15%** (`x → 0.85`). The 8–12% figure is the
+commercial band, not a replacement setpoint. A13 still refuses slogans
+such as “8–12% drag reduction” unless written as \(x\to x^\star\).
 
 Empirical gates DA does not award: wall-resolved LES of the selected
-riblet geometry, modular panel drag measurement, durability.
+riblet geometry, down-select, modular panels, direct drag measurement,
+durability.
 
 ## Run it
 
@@ -63,4 +86,6 @@ Sibling analog: [`TURBULENCE-INTENSITY.md`](TURBULENCE-INTENSITY.md).
 - It does not close NS-open.
 - It does not revive an archived coating dump as the plant.
 - It does not certify a phononic / locally resonant film.
+- It does not award a 9–14% laboratory result.
+- It does not file a provisional patent.
 - It does not make “decrease turbulence” a legal inverse-design target.
