@@ -9,25 +9,13 @@ Paste this whole file as the first message in that chat. Then work from the repo
 
 ---
 
-## 0. What Jon just said (do this)
+## 0. Current snapshot (25 August 2026, HEAD `c119015`)
 
-He checked a **damaged copy** of the Navier–Stokes challenge (Markdown/LaTeX broken in transit). He does **not** want that copy to overwrite the clean file.
+Live product is still dump-era Domain Architect. The Grok rewrite is **not** in Python. DA-VC-01 is still **FAIL**. Unaugmented swirl is still **OPEN**. Paper2 simplex is still **OPEN**.
 
-**Authoritative challenge (do not overwrite):**
+Paper2 now has **two faces** under `docs/papers/ns-snd/`. They are **not** a compile pair. Diff: `docs/papers/ns-snd/FACES.md`.
 
-`docs/domain-architect/DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md`
-
-He listed items he thought were already in that clean file:
-
-- unaugmented equation
-- spectral barycenter \(\Lambda = Y/X\)
-- centered transfer \(M - \Lambda N\)
-- DA-NS-1 closure target
-- rejection and validation tests
-
-**Correction for you:** the clean file **does** have the unaugmented plant, rejection tests, and validation tests. It does **not** contain \(\Lambda = Y/X\), \(M-\Lambda N\), or a label `DA-NS-1`. Those strings are **not anywhere in this repo**. Do not invent them into DA-VC-01. If Jon still wants that spectral-barycenter apparatus, file it as a **separate** note and keep DA-VC-01 unchanged until he pastes a clean source.
-
-He said the damaged copy adds **no new proof or mechanism**.
+**Do not overwrite DA-VC-01.** The clean file has the unaugmented plant and the tests. It does **not** contain \(\Lambda = Y/X\), \(M-\Lambda N\), or `DA-NS-1`. Those strings are not in this repo. A damaged paste does not replace it.
 
 ---
 
@@ -37,7 +25,7 @@ He said the damaged copy adds **no new proof or mechanism**.
 |---|---|
 | Repo | https://github.com/simons357/Ship_it_app |
 | Branch | `cursor/sfe-rewrite-domain-architect-9d6b` |
-| HEAD when this handoff was written | Paper2 SND/GNC filed at `docs/papers/ns-snd/` (after `f724588`) |
+| HEAD when this handoff was written | `c119015` *File the June Paper2 FIXED PDF as a second face, not a TeX compile* |
 | Draft PR | https://github.com/simons357/Ship_it_app/pull/31 — **stay draft. Do not merge.** |
 | Other PR | `#30` (`cursor/domain-architect-v1-f929`) — **leave alone** unless Jon says otherwise |
 | Preferred base | `main` |
@@ -225,6 +213,8 @@ python3 -m unittest tests.test_sfe_hb_dump tests.test_domain_architect_v1 tests.
 4. Asked to separate DA + NS from **Chat Vault** into one ChatGPT packet.
 5. Named `DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md`. Created. Live FAIL.
 6. Checked a damaged copy; **do not overwrite** the clean file. Asked for this handoff.
+7. Dropped `Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`. Filed as Book D (August face).
+8. Dropped `Paper2_NS_Regularity_SND_FIXED.pdf`. Filed as the June face. **Not** a compile of the TeX.
 
 Notion Chat Vault was not readable from the cloud agent (MCP needsAuth). Packets were compiled from the repo, which is the cleaner source.
 
@@ -232,6 +222,6 @@ Notion Chat Vault was not readable from the cloud agent (MCP needsAuth). Packets
 
 ## 10. One paragraph you can tell Jon
 
-Domain Architect is the product. Axisymmetric swirl is a separate book. The 22 August paper keeps the algebraic identity and leaves classical unaugmented regularity open. Paper2 SND/GNC is a third book: conditional spectral NS on \(\mathbb{T}^3\), simplex OPEN, not a swirl estimate. DA-VC-01 is the honest lab test of the swirl plant; it fails today because synthesize still invents a PD loop. The May geometry essay is a correspondence hypothesis, not a theorem. The clean challenge file is the authority; a broken paste with \(\Lambda=Y/X\) / \(M-\Lambda N\) / DA-NS-1 must not replace it.
+Domain Architect is the product. Axisymmetric swirl is a separate book. The 22 August paper keeps the algebraic identity and leaves classical unaugmented regularity open. Paper2 SND/GNC is a third book with two faces (June PDF, August TeX) that are not a compile pair; simplex OPEN; not a swirl estimate. DA-VC-01 is the honest lab test of the swirl plant; it fails today because synthesize still invents a PD loop. The May geometry essay is a correspondence hypothesis, not a theorem. The clean challenge file is the authority; a broken paste with \(\Lambda=Y/X\) / \(M-\Lambda N\) / DA-NS-1 must not replace it.
 
 End of handoff.
