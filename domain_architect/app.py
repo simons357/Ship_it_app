@@ -179,6 +179,24 @@ class DomainArchitectHandler(SimpleHTTPRequestHandler):
             return
         if parsed.path == "/":
             self.path = "/index.html"
+            parsed_path = "/index.html"
+        else:
+            parsed_path = parsed.path
+        if parsed_path.endswith((".html", ".js", ".css")):
+            rel = parsed_path.lstrip("/")
+            path = (STATIC_DIR / rel).resolve()
+            root = STATIC_DIR.resolve()
+            if not path.is_relative_to(root) or not path.is_file():
+                self._send(404, b"not found", "text/plain; charset=utf-8")
+                return
+            suffix = path.suffix
+            ctype = {
+                ".html": "text/html; charset=utf-8",
+                ".js": "text/javascript; charset=utf-8",
+                ".css": "text/css; charset=utf-8",
+            }.get(suffix, "application/octet-stream")
+            self._send(200, path.read_bytes(), ctype)
+            return
         return super().do_GET()
 
     def do_POST(self) -> None:
