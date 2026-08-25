@@ -49,6 +49,7 @@ python -m domain_architect cycle leftover-repair
 python -m domain_architect cycle localized-repair
 python -m domain_architect cycle localized-repair --excise 2
 python -m domain_architect cycle available-turbulence
+python -m domain_architect synthesize --target "x → 0.85" --constraint "hardware already available"
 python -m domain_architect --archive
 ```
 

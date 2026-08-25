@@ -13,13 +13,14 @@ Not 3D Navier–Stokes. Not a tank certificate. Clay is NOT CLAIMED.
 
 from __future__ import annotations
 
+import re
 from typing import Any
 
 from .catalog import default_catalog
 from .cycle import CycleReport
 from .decompose import decompose
 from .schema import CorrespondenceKind, ValidationGate
-from .synthesize import Provenance, inverse_design_architecture
+from .synthesize import Provenance, inverse_design_architecture, is_recognized_setpoint
 from .turbulence_intensity import (
     BELOW_INDUSTRY_FRACTION,
     INDUSTRY_STANDARD_X,
@@ -36,6 +37,22 @@ REFUSED = (
     "no lab-only slip as field hardware",
     "no phononic film as a DA-certified layer",
     "no licensing band as a tank result",
+    "no 9–14% first-cycle lab as a DA result",
+    "no provisional patent filing by Domain Architect",
+)
+
+# Synthesize of x → 0.85 stays the analog PD loop unless the caller
+# actually asks for field hardware. "manufacturable" alone is not enough.
+_HARDWARE_CONSTRAINT_MARKERS = (
+    "hardware already available",
+    "available-tech",
+    "available-turbulence",
+    "available stack",
+    "available now",
+    "field-ready hardware",
+    "riblet",
+    "discrete suction",
+    "discrete-suction",
 )
 
 # Hardware catalog id → live DA mechanism id. Unselected rows may still
@@ -210,6 +227,103 @@ def _stack_candidate(
     return loop
 
 
+def wants_available_hardware(constraints: list[str]) -> bool:
+    """True when inverse design should assemble the field-ready stack."""
+    blob = " ".join(str(c) for c in constraints).lower()
+    return any(marker in blob for marker in _HARDWARE_CONSTRAINT_MARKERS)
+
+
+def is_desired_intensity_setpoint(target: str) -> bool:
+    """The DA 15% plug-in: recognized x★ = 0.85, not a drag slogan."""
+    if not is_recognized_setpoint(target):
+        return False
+    match = re.search(r"(?:=|→|->)\s*([0-9]*\.?[0-9]+)", target or "")
+    if match is None:
+        return False
+    try:
+        value = float(match.group(1))
+    except ValueError:
+        return False
+    return abs(value - (1.0 - BELOW_INDUSTRY_FRACTION)) < 1e-9
+
+
+def maybe_available_stack(
+    target: str,
+    constraints: list[str],
+) -> dict[str, Any] | None:
+    """Inverse-design payload for the available-tech stack, or None.
+
+    A13 still refuses slogans. Bare ``x → 0.85`` with only a saturation
+    constraint stays the analog PD loop. Hardware language selects this
+    stack. The analog can realize 15%; hardware stays unverified.
+    """
+    if not is_desired_intensity_setpoint(target):
+        return None
+    if not wants_available_hardware(constraints):
+        return None
+    payload = available_turbulence_system()
+    out = dict(payload["candidate"])
+    out["board"] = payload["board"]
+    out["protocol"] = "available-turbulence"
+    out["realized_or_desired"] = payload["realized_or_desired"]
+    return out
+
+
+def _stack_board(payload: dict[str, Any]) -> dict[str, Any]:
+    """Human-readable keep/refuse board. Not a tank certificate."""
+    analog = payload.get("analog") or {}
+    overlay = payload.get("licensing_overlay") or {}
+    lines = [
+        "AVAILABLE-TECH TURBULENCE STACK",
+        payload.get("headline") or "",
+        (
+            "desired {setpoint}  analog relative reduction={red:.3f}  "
+            "hardware_realized={hw}  envelope_contains_15%={env}"
+        ).format(
+            setpoint=(payload.get("desired") or {}).get("as_setpoint"),
+            red=float(analog.get("relative_reduction") or 0.0),
+            hw=(payload.get("states") or {}).get("hardware_realized", {}).get("value"),
+            env=payload.get("envelope_can_contain_target"),
+        ),
+        (
+            "commercial band 8–12% is a licensing target inside the selected "
+            "envelope, not a tank number. Percentages were not added."
+        ),
+        "",
+        "SELECTED",
+    ]
+    for row in payload.get("stack") or []:
+        lit = row.get("literature_cf_reduction") or {}
+        low = 100.0 * float(lit.get("low") or 0.0)
+        high = 100.0 * float(lit.get("high") or 0.0)
+        lines.append(
+            f"  {row['id']}  {row['role']}  literature {low:.0f}–{high:.0f}%"
+        )
+    lines.append("NOT SELECTED")
+    for row in payload.get("catalog") or []:
+        if row.get("selected"):
+            continue
+        lines.append(f"  {row['id']}  {row.get('notes') or 'not selected'}")
+    lines.append("GROK HYBRID SKETCH")
+    for piece in overlay.get("pieces") or []:
+        mark = "kept" if piece.get("kept") else "refused"
+        lines.append(f"  {mark}  {piece.get('id')}  {piece.get('note')}")
+    lines.extend(
+        [
+            "Clay is NOT CLAIMED.",
+            "Not 3D Navier–Stokes. Not a tank certificate.",
+        ]
+    )
+    return {
+        "kind": "available-turbulence",
+        "text": "\n".join(lines),
+        "selected": [m["id"] for m in payload.get("stack") or []],
+        "refused_overlay": [
+            p["id"] for p in overlay.get("pieces") or [] if not p.get("kept")
+        ],
+    }
+
+
 def _licensing_overlay(envelope: dict[str, Any]) -> dict[str, Any]:
     """External hybrid-film sketch. DA keeps geometry/regime; refuses the rest."""
     commercial_high = 0.12
@@ -309,7 +423,7 @@ def available_turbulence_system() -> dict[str, Any]:
     ]
     candidate = _stack_candidate(setpoint, constraints, selected, notes)
     analog_realized = bool(analog["reduced_vs_control"])
-    return {
+    payload = {
         "protocol": "available-turbulence",
         "headline": (
             "desired x → 0.85 (15% below industry); analog realized; "
@@ -381,6 +495,8 @@ def available_turbulence_system() -> dict[str, Any]:
         "validation_gate": analog["validation_gate"],
         "notes": notes,
     }
+    payload["board"] = _stack_board(payload)
+    return payload
 
 
 def cycle_available_turbulence() -> CycleReport:

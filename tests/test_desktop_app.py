@@ -70,6 +70,8 @@ class TestLauncherStartsApp(unittest.TestCase):
                     self.assertIn("Intensity vs control", html)
                     self.assertIn("available-turbulence", html)
                     self.assertIn("Available 15% stack", html)
+                    self.assertIn("id=\"syAvailable\"", html)
+                    self.assertIn("hardware already available", html)
                     self.assertEqual(response.headers.get("Cache-Control"), "no-store")
                     self.assertIn("Excise this step", html)
                     self.assertIn("id=\"cyExciseK\"", html)

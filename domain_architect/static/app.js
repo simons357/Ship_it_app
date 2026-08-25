@@ -14,7 +14,14 @@ async function api(path, body) {
 }
 
 function show(el, payload) {
-  el.textContent = JSON.stringify(payload, null, 2);
+  const board =
+    payload && payload.board && payload.board.text
+      ? payload.board.text
+      : payload && payload.prediction && payload.prediction.board && payload.prediction.board.text
+        ? payload.prediction.board.text
+        : "";
+  const json = JSON.stringify(payload, null, 2);
+  el.textContent = board ? board + "\n\n" + json : json;
 }
 
 document.querySelectorAll(".tab").forEach((btn) => {
@@ -103,6 +110,16 @@ $("syRun").addEventListener("click", async () => {
   show($("syOut"), await api("/api/synthesize", {
     target: $("syTarget").value,
     constraints,
+  }));
+});
+
+$("syAvailable").addEventListener("click", async () => {
+  $("syTarget").value = "x → 0.85";
+  $("syConstraints").value = "|u| ≤ 6, manufacturable, hardware already available";
+  $("syOut").textContent = "Assembling available-tech 15% stack…";
+  show($("syOut"), await api("/api/synthesize", {
+    target: "x → 0.85",
+    constraints: ["|u| ≤ 6", "manufacturable", "hardware already available"],
   }));
 });
 

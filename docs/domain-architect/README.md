@@ -28,6 +28,7 @@ reference**. They are not part of the live core. See
 python -m domain_architect "m*xdd + c*xd + k*x = f"
 python -m domain_architect translate --example mechanical-electrical
 python -m domain_architect synthesize --target "x=1" --constraint "|u|<=6"
+python -m domain_architect synthesize --target "x → 0.85" --constraint "|u| ≤ 6" --constraint "hardware already available"
 python -m domain_architect cycle missing-damping
 python -m domain_architect cycle control
 python -m domain_architect cycle drag

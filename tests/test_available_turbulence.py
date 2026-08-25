@@ -10,6 +10,9 @@ from domain_architect.app import handle_api
 from domain_architect.available_turbulence import (
     available_turbulence_system,
     cycle_available_turbulence,
+    is_desired_intensity_setpoint,
+    maybe_available_stack,
+    wants_available_hardware,
 )
 from domain_architect.catalog import default_catalog
 from domain_architect.pipeline import run_named_cycle
@@ -99,6 +102,21 @@ class TestAvailableTurbulenceStack(unittest.TestCase):
         self.assertGreater(payload["analog"]["relative_reduction"], 0.12)
         self.assertLess(payload["analog"]["relative_reduction"], 0.18)
         self.assertEqual(payload["candidate"]["name"], "available_turbulence_stack")
+        board = payload["board"]["text"]
+        self.assertIn("AVAILABLE-TECH TURBULENCE STACK", board)
+        self.assertIn("SELECTED", board)
+        self.assertIn("sawtooth-riblets", board)
+        self.assertIn("discrete-suction", board)
+        self.assertIn("NOT SELECTED", board)
+        self.assertIn("locally-resonant-film", board)
+        self.assertIn("refused", board)
+        self.assertIn("first-cycle-9-14-lab", board)
+        self.assertIn("provisional-patent", board)
+        self.assertIn("kept", board)
+        self.assertIn("riblet-geometry", board)
+        self.assertIn("NOT CLAIMED", board.upper())
+        self.assertEqual(payload["board"]["selected"], ["sawtooth-riblets", "discrete-suction"])
+        self.assertIn("resonant-film", payload["board"]["refused_overlay"])
         joined = " ".join(payload["candidate"]["components"])
         self.assertIn("riblet_geometry", joined)
         self.assertIn("discrete_suction", joined)
@@ -152,6 +170,84 @@ class TestAvailableTurbulenceStack(unittest.TestCase):
         self.assertIn("hardware_realized=False", text)
         self.assertIn("envelope_contains_15%=True", text)
         self.assertIn("literature ranges are not added", text.lower())
+        self.assertIn("AVAILABLE-TECH TURBULENCE STACK", text)
+        self.assertIn("GROK HYBRID SKETCH", text)
+        self.assertIn("refused", text)
+        self.assertIn("first-cycle-9-14-lab", text)
+
+
+class TestSynthesizeHardwarePath(unittest.TestCase):
+    def test_hardware_language_selects_the_stack(self):
+        self.assertTrue(is_desired_intensity_setpoint("x → 0.85"))
+        self.assertTrue(is_desired_intensity_setpoint("x=0.85"))
+        self.assertFalse(is_desired_intensity_setpoint("x=1"))
+        self.assertFalse(is_desired_intensity_setpoint("decrease turbulence"))
+        self.assertTrue(wants_available_hardware(["hardware already available"]))
+        self.assertFalse(wants_available_hardware(["|u| ≤ 6", "manufacturable"]))
+        stacked = maybe_available_stack(
+            "x → 0.85",
+            ["|u| ≤ 6", "hardware already available"],
+        )
+        self.assertIsNotNone(stacked)
+        self.assertEqual(stacked["name"], "available_turbulence_stack")
+        self.assertEqual(stacked["protocol"], "available-turbulence")
+        self.assertEqual(stacked["realized_or_desired"], "desired")
+        self.assertIn("riblet_geometry", " ".join(stacked["components"]))
+        self.assertIn("AVAILABLE-TECH TURBULENCE STACK", stacked["board"]["text"])
+        analog = maybe_available_stack("x → 0.85", ["|u| ≤ 6"])
+        self.assertIsNone(analog)
+        hijack = maybe_available_stack("x=1", ["hardware already available"])
+        self.assertIsNone(hijack)
+        slogan = maybe_available_stack(
+            "decrease turbulence",
+            ["hardware already available"],
+        )
+        self.assertIsNone(slogan)
+        cand = inverse_design_architecture("x → 0.85", ["|u| ≤ 6"])
+        self.assertEqual(cand.name, "inverse_design[second_order_linear]")
+
+    def test_synthesize_api_and_cli_use_the_stack_path(self):
+        import io
+        from contextlib import redirect_stdout
+
+        from domain_architect.cli import main
+
+        status, body, _ = handle_api(
+            "/api/synthesize",
+            {
+                "target": "x → 0.85",
+                "constraints": ["|u| ≤ 6", "hardware already available"],
+            },
+        )
+        self.assertEqual(status, 200)
+        payload = json.loads(body)
+        self.assertEqual(payload["name"], "available_turbulence_stack")
+        self.assertIn("AVAILABLE-TECH TURBULENCE STACK", payload["board"]["text"])
+        status, body, _ = handle_api(
+            "/api/synthesize",
+            {"target": "x → 0.85", "constraints": ["|u| ≤ 6"]},
+        )
+        self.assertEqual(status, 200)
+        analog = json.loads(body)
+        self.assertEqual(analog["name"], "inverse_design[second_order_linear]")
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            code = main(
+                [
+                    "synthesize",
+                    "--target",
+                    "x → 0.85",
+                    "--constraint",
+                    "|u| ≤ 6",
+                    "--constraint",
+                    "hardware already available",
+                ]
+            )
+        self.assertEqual(code, 0)
+        text = buf.getvalue()
+        self.assertIn("available_turbulence_stack", text)
+        self.assertIn("AVAILABLE-TECH TURBULENCE STACK", text)
+        self.assertIn("riblet_geometry", text)
 
 
 if __name__ == "__main__":

@@ -33,6 +33,7 @@ analog 15% as a **desired** state, run `available-turbulence`
 python -m domain_architect cycle turbulence-intensity
 python -m domain_architect synthesize --target "decrease turbulence"
 python -m domain_architect synthesize --target "x → 0.85" --constraint "|u| ≤ 6"
+python -m domain_architect synthesize --target "x → 0.85" --constraint "|u| ≤ 6" --constraint "hardware already available"
 ```
 
 Desktop Cycle tab: **Intensity vs control**.

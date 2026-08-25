@@ -97,8 +97,13 @@ def main(argv: list[str] | None = None) -> int:
     if command == "translate":
         return _print_translate(args, as_json)
     if command == "synthesize":
-        cand = inverse_design_architecture(args.target, list(args.constraint))
-        return _emit(cand.to_dict(), as_json, _synth_text(cand.to_dict()))
+        from .available_turbulence import maybe_available_stack
+
+        stacked = maybe_available_stack(args.target, list(args.constraint))
+        payload = stacked or inverse_design_architecture(
+            args.target, list(args.constraint)
+        ).to_dict()
+        return _emit(payload, as_json, _synth_text(payload))
     if command == "cycle":
         report = run_named_cycle(
             args.name,
@@ -183,10 +188,14 @@ def _print_translate(args: argparse.Namespace, as_json: bool) -> int:
 def _synth_text(payload: dict) -> str:
     lines = [
         "Domain Architect — SYNTHESIZE",
+        payload.get("name") or "",
         payload["hypothesis"],
         "components: " + ", ".join(payload["components"]),
         f"validation gate: {payload['validation_gate']}",
     ]
+    board = payload.get("board") or {}
+    if isinstance(board, dict) and board.get("text"):
+        lines.append(board["text"])
     return "\n".join(lines)
 
 
@@ -228,6 +237,9 @@ def _cycle_text(payload: dict) -> str:
                 prediction.get("envelope_can_contain_target"),
             )
         )
+        board = prediction.get("board") or {}
+        if isinstance(board, dict) and board.get("text"):
+            lines.append(board["text"])
     elif isinstance(prediction, dict) and prediction.get("headline"):
         lines.append(prediction["headline"])
         still = prediction.get("still_open") or []

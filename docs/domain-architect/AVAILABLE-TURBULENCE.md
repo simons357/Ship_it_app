@@ -73,9 +73,13 @@ durability.
 python -m domain_architect cycle available-turbulence
 python -m domain_architect synthesize --target "decrease turbulence"
 python -m domain_architect synthesize --target "x → 0.85" --constraint "|u| ≤ 6"
+python -m domain_architect synthesize --target "x → 0.85" --constraint "|u| ≤ 6" --constraint "hardware already available"
 ```
 
-Desktop Cycle tab: **Available 15% stack**.
+Desktop Cycle tab: **Available 15% stack**. Desktop Synthesize tab: the same
+button fills \(x\to 0.85\) plus `hardware already available` and assembles
+the stack. Bare \(x\to 0.85\) without that constraint is still the analog
+PD loop.
 
 Sibling analog: [`TURBULENCE-INTENSITY.md`](TURBULENCE-INTENSITY.md).
 

@@ -26,7 +26,7 @@ from .synthesize import inverse_design_architecture
 from .leftover_repair import leftover_repair
 from .localized_repair import localized_repair
 from .open_board import open_board
-from .available_turbulence import available_turbulence_system
+from .available_turbulence import available_turbulence_system, maybe_available_stack
 from .turbulence_intensity import turbulence_intensity_lab
 from .translate import (
     mechanical_electrical_translation,
@@ -81,6 +81,9 @@ def handle_api(path: str, payload: dict) -> tuple[int, bytes, str]:
             if not target:
                 return _json_bytes({"error": "target is required"}, 400)
             constraints = [str(c) for c in payload.get("constraints") or []]
+            stacked = maybe_available_stack(target, constraints)
+            if stacked is not None:
+                return _json_bytes(stacked)
             cand = inverse_design_architecture(target, constraints)
             return _json_bytes(cand.to_dict())
         if path == "/api/cycle":

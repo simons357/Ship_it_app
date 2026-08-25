@@ -81,7 +81,11 @@
           <label>Constraints (comma-separated)
             <input id="syConstraints" value="|u| ≤ 6, manufacturable" />
           </label>
-          <button id="syRun" type="button">Synthesize</button>
+          <div class="row">
+            <button id="syRun" type="button">Synthesize</button>
+            <button id="syAvailable" class="ghost" type="button">Available 15% stack</button>
+          </div>
+          <p class="hint">Bare <code>x → 0.85</code> still gets the analog PD loop. Add <code>hardware already available</code> (or click Available 15% stack) to assemble riblets plus discrete suction. The slogan “decrease turbulence” still refuses A13. Hardware 15% is not a tank certificate.</p>
         </div>
         <pre id="syOut" class="out"></pre>
       </section>
