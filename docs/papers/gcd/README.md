@@ -59,3 +59,19 @@ Errata for the stack: [`docs/papers/status-errata/`](../status-errata/README.md)
 PAPER_A, PAPER_B, and `GCD_Spectral_Paper1_UPDATED_*` are **pack-only, not on this VM**. They never lived in Overleaf exports. Do not hunt them as Overleaf-required. Policy: [`docs/packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md`](../../packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md). Drive Missing Fifteen: still needed via upload/paste/Zenodo; MAGNUM prefixes are mix-TeX aliases, **not** Q6. Packet: [`docs/packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md`](../../packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md).
 
 `GCD_Spectral_Dynamics_Report_Jonathan_Simons_2026` is **not received** (filename-only drop). **Not** this August PDF. **Not** MAGNUM. Receipt: [`GCD_Spectral_Dynamics_Report_Jonathan_Simons_2026.MISSING.md`](GCD_Spectral_Dynamics_Report_Jonathan_Simons_2026.MISSING.md).
+
+## Gap 1 Reconciliation handoff (arrived; seam OPEN)
+
+[`GAP1_RECONCILIATION_HANDOFF.md`](GAP1_RECONCILIATION_HANDOFF.md) from Base44
+`907cc125a_` (HTTP **302** then **200**). SHA-256 `5c2f4994ea44…`. 8 147
+bytes. June 8, 2026. **Not** this August PDF (`a2391122…`). Two operators
+\(1/(\mathrm{gcd}\sqrt{ij})\) vs \(\mu(i/g)\mu(j/g)g/\sqrt{ij}\) are
+**NOT identical**. Numerical \(\lambda_{\min}/\log N\) toward \(-1/(2\pi)\)
+is **NOT a theorem**. Step F / Fujii remainder **OPEN**. Do **not** invent
+the 10–20 line closure. Do **not** claim \(C\approx 0.04706\) completes a
+proof. Source “NS unconditional” / “RH follows” **rejected**. Q6 PD stands
+as inverse-GCD arithmetic; all-\(N\) floor **withdrawn**. Clay
+**NOT CLAIMED**. **Not** live DA. **Not** Nav42 paint. Receipt:
+[`GAP1_RECONCILIATION_HANDOFF.RECEIPT.md`](GAP1_RECONCILIATION_HANDOFF.RECEIPT.md).
+Sibling Track C E8 / Chat Vault / 2.2 Hz dump:
+[`docs/archive/nav-42-cbfd-2026-04/GROK-E8-NAV42-SUPERSTRUCTURE.RECEIPT.md`](../../archive/nav-42-cbfd-2026-04/GROK-E8-NAV42-SUPERSTRUCTURE.RECEIPT.md).
