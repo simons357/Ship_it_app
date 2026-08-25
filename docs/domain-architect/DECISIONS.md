@@ -101,7 +101,7 @@ Fill this first. Details for each ID are below.
 | **A10** | Unlock `m = STATE_TRANSITION`; inertia ≠ state transition | ACCEPT | **yes** | | |
 | **A11** | Cut gravity / Einstein / `y=abx` from default decompose | ACCEPT | **yes** | | |
 | **A12** | Empty default `KNOWN_UNITS`; gravity units only in Poisson example | ACCEPT | **yes** | | |
-| **A13** | Inverse design fail-closed unless target is a recognized object | ACCEPT | **yes** | | |
+| **A13** | Inverse design fail-closed unless target is a recognized object | ACCEPT | **yes** | ACCEPT | S1 refuse is in (`inverse_design[refused]`). DA-VC-01 still FAIL pending A5. |
 | **A14** | Generic translate must not emit role-name maps (`k→G`); INCOMPATIBLE / no-map | ACCEPT | **yes** | | |
 | **A15** | Folder-first rewrite (`core/math/mechanisms/…`) | REJECT | no | | |
 | **A16** | Pause *feature* work until A5 and A10–A14 are decided | ACCEPT | n/a (process) | | |
@@ -386,7 +386,7 @@ A prior human mark on 2026-08-23 accepted old items 1–6, 8, 9, 10. The dump th
 
 **Blocking if P1 = rewrite.**
 
-**Current.** `inverse_design_architecture("maximize profit", …)` emits the same PD loop as `"x=1"`. Constraints are not parsed. No `g_i(x)≤0` object.
+**Current.** Implemented: `inverse_design_architecture` refuses unless the target matches a recognized setpoint (`x=1`, `x★ = 1`, `x → 1.0`). `"maximize profit"` and unaugmented-NS slogans return `inverse_design[refused]` with no `control u`. Constraints are still not parsed into `g_i(x)≤0` objects. DA-VC-01 overall stays FAIL until A5.
 
 **Question.** Synthesize refuses unless the target is a recognized state/objective object. `"maximize profit"` must not emit a controller.
 

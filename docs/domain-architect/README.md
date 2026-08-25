@@ -4,9 +4,10 @@
 **Specification:** [`docs/DOMAIN-ARCHITECT.md`](../DOMAIN-ARCHITECT.md)  
 **Mathematics:** [`OPERATIONAL-MATH.md`](OPERATIONAL-MATH.md)  
 **Implementation audit:** [`ARCHITECTURE-AUDIT.md`](ARCHITECTURE-AUDIT.md) — items 1–6, 8, 9, 10 accepted in the SFE/HB dump  
-**Validation challenge 01:** [`DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md`](DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md) — live score **FAIL**  
-**Leftover-split lab:** [`LEFTOVER-REPAIR.md`](LEFTOVER-REPAIR.md) — usable Ring SND + Q6 \(H_N\); three NS leftovers stay OPEN  
-**Localized reparation:** [`LOCALIZED-REPAIR.md`](LOCALIZED-REPAIR.md) — `excise k` on an n-step chain; default dataset is the classical unaugmented 9-step chain; leftover cut is 7–8; graft stays OPEN
+**Validation challenge 01:** [`DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md`](DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md) — live score **FAIL** (A13 S1 refuse is in; A5 T1 still owed)  
+**Leftover-split lab:** [`LEFTOVER-REPAIR.md`](LEFTOVER-REPAIR.md) — usable Ring SND + Q6 \(H_N\); three NS leftovers are conditional closes  
+**Localized reparation:** [`LOCALIZED-REPAIR.md`](LOCALIZED-REPAIR.md) — `excise k` on an n-step chain; default dataset is the classical unaugmented 9-step chain; leftover cut is 7–8; graft stays a hypothesis  
+**Honest OPEN board:** [`OPEN-BOARD.md`](OPEN-BOARD.md) — withdrawn / rejected / missing taken off the OPEN chorus
 
 Domain Architect analyzes, translates and synthesizes systems by the
 functional roles their components perform.
@@ -31,6 +32,7 @@ python -m domain_architect cycle drag
 python -m domain_architect cycle leftover-repair
 python -m domain_architect cycle localized-repair
 python -m domain_architect cycle localized-repair --excise 2
+python -m domain_architect cycle open-board
 python -m domain_architect translate --example snd-vs-h
 python -m domain_architect benchmark
 python -m domain_architect --archive

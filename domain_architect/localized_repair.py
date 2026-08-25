@@ -468,7 +468,7 @@ def _simplex_catalog(computation: dict[str, Any]) -> list[GraftCandidate]:
             id="pd-inverse-design",
             name="Inverse-design a PD loop to force smallness",
             kind="refused",
-            provides="vacuous controller (A13 hole)",
+            provides="refused PD loop (A13 closed)",
             score=0.0,
             accepted=False,
             closed=False,
@@ -854,7 +854,7 @@ def run_surgery(
             "Default leftover cut is steps 7–8 (simplex + dynamic SND).",
             "Continuation (step 9) stays OPEN / INCOMPLETE.",
             "NS-11 / Clay Statement B is not claimed.",
-            "A13 is unchanged: synthesize of NS regularity still emits a PD loop.",
+            "A13: synthesize of NS regularity is fail-closed (no PD loop).",
             board["text"],
         ],
     }

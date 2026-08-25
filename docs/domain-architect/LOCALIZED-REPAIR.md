@@ -22,9 +22,10 @@ Sibling protocol: [`LEFTOVER-REPAIR.md`](LEFTOVER-REPAIR.md).
 Classical chain: [`docs/papers/ns-snd/NS_UNAUGMENTED_PROOF_CHAIN.md`](../papers/ns-snd/NS_UNAUGMENTED_PROOF_CHAIN.md).  
 Paper2 faces: [`docs/papers/ns-snd/FACES.md`](../papers/ns-snd/FACES.md).
 
-Live software is still dump-era three-verb DA. This protocol does
-**not** implement A13. Synthesize of “prove NS regular” still emits a
-PD loop. That hole is unchanged.
+Live software is still dump-era three-verb DA plus leftover-split,
+localized reparation, honest OPEN-board, and A13 fail-closed inverse
+design. Synthesize of “prove NS regular” **refuses** a PD loop. That
+does **not** close NS-open. DA-VC-01 overall stays **FAIL** until A5.
 
 ## Operation: `excise k`
 
@@ -119,7 +120,7 @@ satisfy.” They are not a proof.
 - It does not prove classical 3D Navier–Stokes / Clay Statement B.
 - It does not make the June FIXED PDF a compile of the August TeX.
 - It does not identify NS-6 with Ring-book \(\inf J/X\).
-- It does not fix A13.
+- Inverse design of NS regularity is A13 fail-closed (no PD loop). Surgery still does not prove the graft.
 - It does not award `TRANSFORMABLE`.
 
 Run it:
@@ -127,6 +128,7 @@ Run it:
 ```
 python -m domain_architect cycle localized-repair
 python -m domain_architect cycle localized-repair --excise K
+python -m domain_architect cycle open-board
 ```
 
 In the desktop app: Cycle **Classical unaugmented (default cut 7–8)**,

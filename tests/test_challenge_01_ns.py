@@ -7,7 +7,7 @@ import unittest
 from pathlib import Path
 
 from domain_architect.audit import audit_expression
-from domain_architect.schema import CorrespondenceKind, ValidationGate
+from domain_architect.schema import CorrespondenceKind
 from domain_architect.synthesize import inverse_design_architecture
 from domain_architect.translate import translate_expressions
 
@@ -54,20 +54,26 @@ class TestChallenge01LiveLab(unittest.TestCase):
         self.assertEqual(record.kind, CorrespondenceKind.ANALOGY)
         self.assertIn("no_checked_structure_map", record.broken)
 
-    def test_baseline_s1_still_emits_vacuous_pd_loop(self):
-        """Characterization of the live A13 hole. Flip this when inverse design
-        fail-closes; the challenge score cannot go green while this passes.
+    def test_s1_fail_closes_without_pd_loop(self):
+        """A13: inverse design of unaugmented NS must not emit a PD plant.
+
+        DA-VC-01 overall stays FAIL until A5 (declared T) also lands.
+        NS-open stays OPEN. Do not treat A13 refuse as a DA-VC-01 pass.
         """
         cand = inverse_design_architecture(
             "global smoothness of unaugmented axisymmetric Navier-Stokes with swirl",
             ["classical NS", "no hyperviscosity", "no (A,W)"],
         )
-        self.assertEqual(cand.validation_gate, ValidationGate.MATHEMATICAL)
-        self.assertIn("CONTROL", cand.hypothesis)
-        self.assertTrue(
+        self.assertEqual(cand.name, "inverse_design[refused]")
+        self.assertIn("will not emit", cand.hypothesis)
+        self.assertFalse(
             any("control u" in c for c in cand.components),
             cand.components,
         )
+        joined = " ".join(cand.components + [cand.hypothesis] + cand.notes).lower()
+        self.assertIn("strain", joined)
+        self.assertIn("not claimed", joined)
+        self.assertNotIn("clay is claimed", joined)
 
 
 if __name__ == "__main__":

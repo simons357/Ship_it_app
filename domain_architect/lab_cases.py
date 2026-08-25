@@ -147,9 +147,10 @@ NS_LEFTOVERS: tuple[LeftoverSpec, ...] = (
         "missing_role": "independent smallness of the intensive strain u^r/r",
         "put_back": (
             "If ∫||u^r/r||_∞ dt < ∞ then continuation of the unaugmented "
-            "swirl class closes. Keep the identity. Leave the integral OPEN."
+            "swirl class closes. Keep the identity. σ stays a named "
+            "hypothesis (CONDITIONAL close, not a regularity proof)."
         ),
-        "status": "OPEN",
+        "status": "CONDITIONAL",
     },
     {
         "id": "ring-snd",
@@ -168,10 +169,10 @@ NS_LEFTOVERS: tuple[LeftoverSpec, ...] = (
         "missing_role": "independent spectral non-dispersal of enstrophy",
         "put_back": (
             "If inf J/X ≥ c_* then the Ring/T2-conditional estimates run. "
-            "Unconditional SND stays OPEN. Do not glue this to Paper2 "
-            "operator-norm SND."
+            "Unconditional SND stays a hypothesis (CONDITIONAL close). "
+            "Do not glue this to Paper2 operator-norm SND."
         ),
-        "status": "OPEN",
+        "status": "CONDITIONAL",
     },
     {
         "id": "paper2-simplex",
@@ -191,10 +192,10 @@ NS_LEFTOVERS: tuple[LeftoverSpec, ...] = (
         "put_back": (
             "If ||a-μ||_ℓ¹ is small enough then the frozen-gap Weyl "
             "perturbation keeps evolving λ_min above -1/2. That is "
-            "Paper2 Lemma 6.1 (simplex / SND stability), still OPEN. "
+            "Paper2 Lemma 6.1 (simplex / SND stability), CONDITIONAL. "
             "Do not accept §7 'T2 Closed'. This H_N[a] is not Q6 H_N."
         ),
-        "status": "OPEN",
+        "status": "CONDITIONAL",
     },
 )
 
@@ -203,5 +204,5 @@ LEFTOVER_SPLIT_STEPS = (
     "Decompose that leftover as its own system. Do not decompose the whole theorem as if the leftover were already closed.",
     "Name the missing role (independent concentration / smallness constraint) without naming a shared estimate.",
     "Reconstruct the main problem as: coercive part (keep) + independent diagnostic (hypothesis) ⇒ the rest of the estimates close.",
-    "Put that conditional theorem back into each original book separately. Leave each diagnostic OPEN. Do not set σ_swirl = σ_ring = σ_simplex = σ_H.",
+    "Put that conditional theorem back into each original book separately. Close each leftover as CONDITIONAL: if σ then the rest runs; σ is not proved. Do not set σ_swirl = σ_ring = σ_simplex = σ_H.",
 )

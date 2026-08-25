@@ -11,7 +11,8 @@ Protocol
 4. Reconstruct from the ground: coercive part (keep) + independent
    concentration diagnostic (hypothesis) ⇒ the rest closes.
 5. Put the conditional theorem back into each original book.
-   Leave each diagnostic OPEN. Do not identify the leftovers.
+   Close each leftover as CONDITIONAL (if σ then the rest runs).
+   σ stays a hypothesis. Do not identify the leftovers.
 
 The three NS leftovers are swirl strain, unconditional Ring SND, and
 Paper2 simplex closeness. Usable Ring SND and Q6 H_N sit beside them
@@ -89,6 +90,7 @@ def leftover_repair() -> dict[str, Any]:
             "put-backs."
         ),
         "closed": False,
+        "honest_close": "CONDITIONAL",
     }
     return {
         "protocol": "leftover-split",
@@ -117,7 +119,8 @@ def leftover_repair() -> dict[str, Any]:
         "notes": list(SND_VS_H_NOTES)
         + [
             "This function does not prove Navier–Stokes regularity.",
-            "Each leftover stays OPEN after put-back.",
+            "Each leftover is a CONDITIONAL close: if σ then the rest of "
+            "that book runs. σ stays a hypothesis. Clay / NS-open stays OPEN.",
         ],
         "validation_gate": ValidationGate.MATHEMATICAL.value,
         "kind": CorrespondenceKind.ANALOGY.value,
@@ -131,7 +134,7 @@ def cycle_leftover_repair() -> CycleReport:
         name="leftover_split_conditional",
         components=[
             "coercive quadratic / energy (already works; keep)",
-            "independent concentration diagnostic (missing; OPEN)",
+            "independent concentration diagnostic (hypothesis; CONDITIONAL)",
             "conditional implication (if diagnostic then the rest closes)",
         ],
         replaced={},
@@ -162,7 +165,7 @@ def cycle_leftover_repair() -> CycleReport:
         notes=[
             "Not a PD controller. Inverse design is not used.",
             "Not TRANSFORMABLE. Not Clay.",
-            "Each diagnostic remains OPEN.",
+            "Each σ remains a hypothesis. Honest close is CONDITIONAL, not Clay.",
         ],
     )
     snd = decompose(RING_SND_LAB, name="ring_snd")

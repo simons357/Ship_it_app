@@ -1,7 +1,7 @@
 # Leftover-split: SND, theory H, and the three NS failures
 
 **Status:** a Domain Architect lab protocol, August 2026  
-**Not a Navier–Stokes proof.** Each leftover stays **OPEN** after put-back.
+**Not a Navier–Stokes proof.** Each leftover is a **CONDITIONAL** close: if \(\sigma\) then the rest of that book runs. \(\sigma\) is not proved. Clay / NS-open stays **OPEN**.
 
 This note records what happens when the usable Ring SND criterion and the
 standing Q6 definition of \(H_N\) are decomposed in live DA, placed side by
@@ -9,9 +9,12 @@ side, and then run through a leftover-split reconstruction with the three
 NS pieces that still fail.
 
 Canonical product spec: [`docs/DOMAIN-ARCHITECT.md`](../DOMAIN-ARCHITECT.md).  
-Live software is still dump-era three-verb DA. This protocol does **not**
-implement A13 (fail-closed inverse design). Synthesize of “prove swirl
-regular” still emits a PD loop. That hole is unchanged.
+Live software is still dump-era three-verb DA plus leftover-split,
+localized reparation, and A13 fail-closed inverse design. Synthesize of
+“prove swirl regular” now **refuses** a PD loop. That does **not** close
+NS-open. Inverse design of a recognized setpoint (`x=1`) still emits a
+controller. DA-VC-01 overall stays **FAIL** until A5 (declared \(T\))
+lands.
 
 ## What we can use (not the “don’t use” list)
 
@@ -31,7 +34,7 @@ HN = D^((-1)/2)*Qtilde*D^((-1)/2)
 
 Take only the parts that do not close. Leave what already stands.
 
-| # | Book | Already works | Leftover (OPEN) | Lab string |
+| # | Book | Already works | Leftover (CONDITIONAL) | Lab string |
 |---|---|---|---|---|
 | 1 | B — swirl | \(\frac1{r^4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\); \(\Gamma\) maximum principle | \(\int\|u^r/r\|_\infty\,dt\) not bounded by energy | `Istrain = urad/r` |
 | 2 | Ring + SND | Ring lemma *if* SND | Energy does not give \(\inf J/X\ge c_*\) for large \(H^1\) data | `J/X >= cstar` |
@@ -85,16 +88,16 @@ Reconstruct:  E (keep) + σ (hypothesis)  ⇒  the rest of the estimates close
         ↓
 Put that conditional theorem back into each original book
         ↓
-Leave each σ OPEN
+Leave each σ as a named hypothesis (CONDITIONAL close)
 ```
 
-**Put-back (still OPEN):**
+**Put-back (CONDITIONAL close):**
 
 - Swirl: if \(\int\|u^r/r\|_\infty\,dt<\infty\) then continuation closes. Keep the identity.
-- Ring: if \(\inf J/X\ge c_*\) then the conditional estimates run. Unconditional SND open.
+- Ring: if \(\inf J/X\ge c_*\) then the conditional estimates run. Unconditional SND is the hypothesis.
 - Paper2: if \(\|a-\mu\|_{\ell^1}\) is small enough then Weyl keeps the gap.
   That leftover is **Lemma 6.1** in the August 1 Paper2 audit. Do not
-  accept §7 “T2 Closed.” Simplex stays OPEN.
+  accept §7 “T2 Closed”. Simplex is CONDITIONAL, not a closed T2.
 
 The August 1 audit of the Zenodo “implies” manuscript
 ([`docs/papers/ns-snd/NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md`](../papers/ns-snd/NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md))
@@ -118,17 +121,18 @@ Run it:
 ```
 python -m domain_architect cycle leftover-repair
 python -m domain_architect cycle localized-repair
+python -m domain_architect cycle open-board
 python -m domain_architect translate --example snd-vs-h
 ```
 
 In the desktop app: Decompose the Ring SND and Q6 \(H_N\) buttons,
-Translate **SND vs H_N (lab, not glue)**, Cycle **NS leftover repair**
-or **Classical unaugmented (default cut 7–8)**.
+Translate **SND vs H_N (lab, not glue)**, Cycle **NS leftover repair**,
+**Classical unaugmented (default cut 7–8)**, or **Honest OPEN board**.
 
 ## What this does not do
 
 - It does not prove classical unaugmented Navier–Stokes.
 - It does not make the three leftovers the same estimate.
 - It does not revive the all-\(N\) floor, Goldbach, or `SND ≡ GNC ≡ Bridge`.
-- It does not fix A13. Inverse design of NS regularity still emits a PD loop.
+- Inverse design of NS regularity is A13 fail-closed (no PD loop). That still does not prove regularity. DA-VC-01 stays **FAIL** until A5.
 - It does not award `TRANSFORMABLE` or structure-preserving equivalence.

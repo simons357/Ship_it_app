@@ -249,10 +249,14 @@ def run_named_cycle(name: str, **kwargs: Any) -> CycleReport:
         from .localized_repair import cycle_localized_repair
 
         return cycle_localized_repair(chain=chain, excise=excise)
+    if name in {"open-board", "openboard", "close-open"}:
+        from .open_board import cycle_open_board
+
+        return cycle_open_board()
     raise ValueError(
         f"unknown cycle {name!r}; expected missing-damping, control, "
-        "mechanical-electrical, drag, leftover-repair, or localized-repair "
-        "(use --excise K to cut a single step)"
+        "mechanical-electrical, drag, leftover-repair, localized-repair "
+        "(use --excise K to cut a single step), or open-board"
     )
 
 

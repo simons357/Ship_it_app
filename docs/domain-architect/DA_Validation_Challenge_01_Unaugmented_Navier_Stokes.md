@@ -201,12 +201,13 @@ Recorded against `python3 -m domain_architect app` / `/api/*`.
 | D2 Decompose | `unclassified`, Level 0 | Partial. Not a fluids parse. |
 | T1 without declared \(T\) | `kind: analogy`, confidence 0.2, `broken: no_checked_structure_map`, symbols mapped by name onto `Phi` | Fail as correspondence. Honest as “no structure map.” |
 | T2 | `kind: analogy`, `no_checked_structure_map` | Pass the **refuse** half. |
-| S1 Synthesize | `inverse_design[second_order_linear]`, PD loop, `validation_gate: MATHEMATICAL` | **Hard fail (A13).** |
+| S1 Synthesize | `inverse_design[refused]`; no PD loop; leftover named as strain pairing \(\int(u^r/r)\Phi^2 r^3\) | **Pass the refuse half (A13).** Not a regularity proof. |
 
 **Challenge score: FAIL.**
 
-The refuse-on-T2 and the Phi-gravity warning are the only live
-behaviors that already match the spec. They are not enough.
+A13 (S1 refuse) and the refuse-on-T2 / Phi-gravity warning now match the
+spec. T1 still has no declared \(T\) (**A5**). D1/D2 stay unclassified.
+That is not enough for a pass. NS-open stays **OPEN**.
 
 ---
 
@@ -290,8 +291,6 @@ A later passing run must attach the JSON, not an AI paragraph.
 | NS-open | OPEN |
 | Φ glue | not awarded (warning present) |
 | Cosmic SPE | refused on T2 |
-| Vacuous inverse design | present (blocking) |
+| Vacuous inverse design | **closed** (A13 fail-closed; S1 refuses a PD plant) |
 
-Next DA work that would change this score: implement A13 so S1
-refuses, and A5 so T1 can carry \(\Gamma\mapsto r^2\Phi\) with the
-algebraic witness, still without closing NS-open.
+Next DA work that would change this score: implement **A5** so T1 can carry \(\Gamma\mapsto r^2\Phi\) with the algebraic witness, still without closing NS-open. Do **not** treat A13 refuse as a DA-VC-01 pass.

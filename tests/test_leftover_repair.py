@@ -104,19 +104,20 @@ class TestSndVsHSideBySide(unittest.TestCase):
 
 
 class TestLeftoverRepairProtocol(unittest.TestCase):
-    def test_three_open_pieces_and_conditional_put_back(self):
+    def test_three_conditional_pieces_and_put_back(self):
         payload = leftover_repair()
         self.assertEqual(payload["protocol"], "leftover-split")
         self.assertEqual(len(payload["pieces"]), 3)
         self.assertEqual(len(NS_LEFTOVERS), 3)
         ids = [p["id"] for p in payload["pieces"]]
         self.assertEqual(ids, ["swirl-strain", "ring-snd", "paper2-simplex"])
-        self.assertTrue(all(p["status"] == "OPEN" for p in payload["pieces"]))
+        self.assertTrue(all(p["status"] == "CONDITIONAL" for p in payload["pieces"]))
         self.assertFalse(payload["reconstruction"]["closed"])
+        self.assertEqual(payload["reconstruction"]["honest_close"], "CONDITIONAL")
         self.assertEqual(payload["kind"], "analogy")
         re_embed = payload["re_embed"]
         self.assertEqual(len(re_embed), 3)
-        self.assertTrue(all(row["status"] == "OPEN" for row in re_embed))
+        self.assertTrue(all(row["status"] == "CONDITIONAL" for row in re_embed))
         paper2 = next(row for row in re_embed if row["id"] == "paper2-simplex")
         self.assertIn("Lemma 6.1", paper2["put_back"])
         self.assertIn("T2 Closed", paper2["put_back"])
@@ -131,7 +132,7 @@ class TestLeftoverRepairProtocol(unittest.TestCase):
         blob = json.dumps(report.to_dict()).lower()
         self.assertNotIn("control u = k", blob)
         self.assertIn("leftover-split", blob)
-        self.assertIn("open", blob)
+        self.assertIn("conditional", blob)
         self.assertEqual(report.translation.kind, CorrespondenceKind.ANALOGY)
         self.assertEqual(report.translation.mapping, {})
         self.assertFalse(
@@ -155,13 +156,16 @@ class TestLeftoverRepairProtocol(unittest.TestCase):
         self.assertEqual(len(payload["pieces"]), 3)
         self.assertEqual(payload["snd_vs_h"]["translation"]["mapping"], {})
 
-    def test_inverse_design_of_ns_is_still_the_a13_hole(self):
-        """Leftover repair must not silently 'fix' A13 by rewriting inverse design."""
+    def test_inverse_design_of_ns_fail_closes_a13(self):
         cand = inverse_design_architecture(
             "global smoothness of unaugmented axisymmetric Navier-Stokes with swirl",
             ["classical NS"],
         )
-        self.assertTrue(any("control u" in c for c in cand.components))
+        self.assertEqual(cand.name, "inverse_design[refused]")
+        self.assertFalse(any("control u" in c for c in cand.components))
+        blob = " ".join(cand.components + [cand.hypothesis] + cand.notes).lower()
+        self.assertIn("a13", blob)
+        self.assertNotIn("control u = k", blob)
 
 
 if __name__ == "__main__":

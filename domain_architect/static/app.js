@@ -123,6 +123,12 @@ $("cySurgery").addEventListener("click", async () => {
   show($("cyOut"), await api("/api/cycle", { name: "localized-repair" }));
 });
 
+$("cyOpenBoard").addEventListener("click", async () => {
+  $("cyName").value = "open-board";
+  $("cyOut").textContent = "Classifying the OPEN pile…";
+  show($("cyOut"), await api("/api/cycle", { name: "open-board" }));
+});
+
 $("cyExciseStep").addEventListener("click", async () => {
   const raw = ($("cyExciseK").value || "").trim();
   const k = Number.parseInt(raw, 10);

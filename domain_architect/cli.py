@@ -62,7 +62,7 @@ def main(argv: list[str] | None = None) -> int:
         "name",
         nargs="?",
         default="missing-damping",
-        help="missing-damping | control | mechanical-electrical | drag | leftover-repair | localized-repair",
+        help="missing-damping | control | mechanical-electrical | drag | leftover-repair | localized-repair | open-board",
     )
     p_cy.add_argument(
         "--excise",
@@ -204,7 +204,14 @@ def _cycle_text(payload: dict) -> str:
             f"({res.get('operator_class')}) recovered={res.get('recovered_parameter')}"
         )
     prediction = payload.get("prediction") or {}
-    if isinstance(prediction, dict) and prediction.get("board"):
+    if isinstance(prediction, dict) and prediction.get("headline"):
+        lines.append(prediction["headline"])
+        still = prediction.get("still_open") or []
+        if still:
+            lines.append(
+                "still open: " + ", ".join(row.get("id", "") for row in still)
+            )
+    elif isinstance(prediction, dict) and prediction.get("board"):
         lines.append(prediction["board"].get("text") or "")
     elif prediction:
         lines.append(f"prediction: {payload['prediction']}")

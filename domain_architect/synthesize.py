@@ -2,12 +2,21 @@
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from typing import Any
 
 from .compatibility import CompatibilityReport, Transformation
 from .decompose import ArchitectureNode, Decomposition
 from .schema import CompatibilityClass, ValidationGate
+
+# A13: inverse design is fail-closed unless the target is a recognized
+# setpoint / objective object. "x=1" and "x → 1.0" stay legal. Open PDEs,
+# Clay slogans, and "maximize profit" must not emit a PD loop.
+_RECOGNIZED_SETPOINT = re.compile(
+    r"^\s*x[★*]?\s*(?:=|→|->)\s*\S",
+    re.IGNORECASE,
+)
 
 
 @dataclass
@@ -160,12 +169,19 @@ def required_roles_for_target(
     return list(dict.fromkeys(roles))
 
 
+def is_recognized_setpoint(target: str) -> bool:
+    """True only for a concrete state objective such as ``x=1`` or ``x → 1.0``."""
+    return bool(_RECOGNIZED_SETPOINT.match((target or "").strip()))
+
+
 def inverse_design_architecture(
     target: str,
     constraints: list[str],
     *,
     plant: str = "second_order_linear",
 ) -> CandidateArchitecture:
+    if not is_recognized_setpoint(target):
+        return _fail_closed_inverse_design(target, constraints)
     roles = required_roles_for_target(
         has_dynamics=True,
         needs_feedback=True,
@@ -209,4 +225,73 @@ def inverse_design_architecture(
         ],
         validation_gate=ValidationGate.MATHEMATICAL,
         notes=["Run the computational gate with domain_architect.dynamics."],
+    )
+
+
+def _fail_closed_inverse_design(
+    target: str,
+    constraints: list[str],
+) -> CandidateArchitecture:
+    """A13: refuse a PD plant for an unrecognized objective or an open PDE."""
+    lowered = (target or "").lower()
+    swirlish = any(
+        token in lowered
+        for token in (
+            "navier",
+            "swirl",
+            "unaugmented",
+            "global smoothness",
+            "global regularity",
+        )
+    )
+    leftover = (
+        "the strain pairing ∫(u^r/r) Φ² r³ (lab: Istrain = urad/r). "
+        "That is Book B continuation, still unproved."
+        if swirlish
+        else (
+            "an independent smallness / concentration hypothesis that energy "
+            "does not give. Leftover-split names it; it is not a controller."
+        )
+    )
+    return CandidateArchitecture(
+        name="inverse_design[refused]",
+        components=[
+            "keep coercive / energy estimates already proved",
+            "independent leftover σ (not derived from energy, not a PD loop)",
+            f"conditional continuation if σ holds — {leftover}",
+        ],
+        replaced={},
+        hypothesis=(
+            f"A13 fail-closed: {target!r} is not a recognized setpoint. "
+            "Domain Architect will not emit STATE → MEASURE → COMPARE → "
+            "CONTROL → TRANSITION as the architecture of an open PDE or an "
+            "unrecognized objective. "
+            f"The missing mechanism is {leftover} "
+            "NS-open stays OPEN. Clay is NOT CLAIMED."
+        ),
+        provenance=[
+            Provenance(
+                source="target+constraints",
+                original_domain="open-problem",
+                functional_role="constraint",
+                translation=None,
+                assumptions=[
+                    "target is not a recognized x★ setpoint",
+                    "do not invent a controller for an open PDE",
+                ],
+                compatibility_checks=["A13 fail-closed"],
+                modifications=["refused PD loop"],
+                evidence=[f"constraints={constraints}"],
+                validation_status=ValidationGate.MATHEMATICAL.value,
+            )
+        ],
+        validation_gate=ValidationGate.MATHEMATICAL,
+        notes=[
+            "A13: inverse design fail-closed.",
+            "This is not a PD controller.",
+            "This is not a regularity proof.",
+            "Clay NOT CLAIMED.",
+            "Fix path: leftover-repair (conditional σ) or localized-repair "
+            "(default cut 7–8). Do not glue Ring J/X to Q6 H_N.",
+        ],
     )

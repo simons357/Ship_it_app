@@ -286,12 +286,13 @@ class TestCycleAndApi(unittest.TestCase):
         self.assertIn("localized-repair", text)
         self.assertNotIn("excise-2", text)
 
-    def test_inverse_design_of_ns_is_still_the_a13_hole(self):
+    def test_inverse_design_of_ns_fail_closes_a13(self):
         cand = inverse_design_architecture(
             "global smoothness of unaugmented axisymmetric Navier-Stokes with swirl",
             ["classical NS"],
         )
-        self.assertTrue(any("control u" in c for c in cand.components))
+        self.assertEqual(cand.name, "inverse_design[refused]")
+        self.assertFalse(any("control u" in c for c in cand.components))
 
 
 if __name__ == "__main__":

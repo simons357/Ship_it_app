@@ -95,7 +95,7 @@ Leray energy boundedness is **not** SND smallness. That leftover has the same *s
 
 ## Relation to Domain Architect
 
-Live DA is dump-era three-verb demo. It does not implement this paper. Inverse design of “prove regularity from SND” would currently emit a vacuous PD loop (DA-VC-01 FAIL). That is a DA bug, not a theorem of this paper.
+Live DA leftover-split and localized reparation operate on this paper’s leftovers. Inverse design of “prove regularity from SND” is A13 fail-closed (`inverse_design[refused]`; no PD loop). That is a DA honesty gate, not a theorem of this paper. DA-VC-01 overall stays FAIL until A5. Clay is NOT CLAIMED.
 
 ## Compile
 
