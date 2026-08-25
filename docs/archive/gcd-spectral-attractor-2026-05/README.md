@@ -9,29 +9,28 @@
 
 # GCD Spectral Attractor (May 2026 mix) — archive only
 
-This folder keeps a **withdrawn mix paper** and a **missing-receipt** for a
-Frankie Mac path. They are **not** the same object.
+This folder keeps a **withdrawn mix paper**. Frankie
+`224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` is an **alias** of those
+bytes (same SHA). **Not** a second copy.
 
 Live inverse-GCD / Q6 arithmetic remains
 [`docs/papers/gcd/04_q6_inverse_gcd.pdf`](../../papers/gcd/04_q6_inverse_gcd.pdf)
 (SHA-256 `a239112289a1…`). Do **not** overwrite that PDF.
 
-## Frankie `GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` — not received
+## Frankie MAGNUM TeX — alias of the mix file (not re-filed)
 
-Mac path
-`/Users/jonathansimons/Desktop/RH_Proof_Chain_Synthesis/01_canonical_sources/frankie_raw_handoff_2026-08-14/RH_2026_COMPLETE_RAW_GATHERING/files/ARCHIVE/math_drafts/GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex`
-was **not readable** on this VM. Uploads had no MAGNUM file. Base44 public URL
-for `GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` (app `69b28657b0df374441f0302e`)
-returned HTTP **302** then CDN **403** with **0 bytes** — the same empty forbid
-as an invented filename. **Do not invent TeX.** MAGNUM SHA / `\title` / `\date`
-are **unknown**.
+Bare `GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` was HTTP **302** then CDN **403**,
+0 bytes. Hash-prefix
+`https://base44.app/api/apps/69b28657b0df374441f0302e/files/mp/public/69b28657b0df374441f0302e/224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex`
+was HTTP **302** then CDN **200**, 37 366 bytes, SHA-256 `f41194c76cf4…`.
+Same bytes as [`Simons_GCD_Spectral_Attractor_Unified.tex`](Simons_GCD_Spectral_Attractor_Unified.tex).
+No-extension URL `…/224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM` was **302** then
+**403**, 0 bytes.
 
-Receipt: [`GCD_SPECTRAL_ATTRACTOR_MAGNUM.MISSING.md`](GCD_SPECTRAL_ATTRACTOR_MAGNUM.MISSING.md).
+Receipt: [`GCD_SPECTRAL_ATTRACTOR_MAGNUM.ALIAS.md`](GCD_SPECTRAL_ATTRACTOR_MAGNUM.ALIAS.md).
+**Do not invent a second copy.**
 
-Do **not** treat the Zenodo TeX below as those MAGNUM bytes. Different
-filename. No MAGNUM SHA to compare.
-
-## Public mix TeX (Zenodo 20405599) — filed here, not as MAGNUM
+## Public mix TeX (Zenodo 20405599) — filed here; MAGNUM is an alias
 
 [`Simons_GCD_Spectral_Attractor_Unified.tex`](Simons_GCD_Spectral_Attractor_Unified.tex)
 
@@ -46,9 +45,11 @@ filename. No MAGNUM SHA to compare.
 | md5 (Zenodo) | `4668827389bbf4d893957bb253a34a98` |
 | Lines (`wc -l`) | 1089 |
 
-Fetched 25 August 2026 from the public record. **Not invented.** **Not** MAGNUM.
+Fetched 25 August 2026 from the public record, then matched to Base44
+`224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` (HTTP **302** then **200**).
+**Not invented.** MAGNUM is an **alias** of these bytes — **not re-filed.**
 Title page glues NS, RH, SFE, Goldbach, Yang–Mills, BSD, P vs NP, and Clay
-into one “spectral attractor.” **Archive only.**
+into one “spectral attractor.” **Archive only.** Do not invent TeX.
 
 ## Not a Q6 arithmetic duplicate
 

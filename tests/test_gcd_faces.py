@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Q6 arithmetic stays in gcd/. MAGNUM TeX was not received. Mix attractor is archive-only."""
+"""Q6 arithmetic stays in gcd/. MAGNUM hash-prefix is an alias of the archived mix TeX."""
 
 from __future__ import annotations
 
@@ -20,6 +20,7 @@ MIX_SHA256 = "f41194c76cf422a227d6b7489d4a6c95bf7f717404213e6a02a29239a14aeec5"
 MIX_MD5 = "4668827389bbf4d893957bb253a34a98"
 HN_LAB = "HN = D^((-1)/2)*Qtilde*D^((-1)/2)"
 MAGNUM_NAME = "GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex"
+HASH_PREFIX = "224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM"
 
 
 class TestQ6PdfIsCurrentArithmeticFace(unittest.TestCase):
@@ -44,41 +45,44 @@ class TestQ6PdfIsCurrentArithmeticFace(unittest.TestCase):
         self.assertIn("NOT CLAIMED", readme)
 
 
-class TestMagnumTexWasNotReceived(unittest.TestCase):
-    def test_no_invented_magnum_bytes(self):
+class TestMagnumHashPrefixIsMixAlias(unittest.TestCase):
+    def test_no_second_magnum_tex_copy(self):
         invented = [
             GCD / MAGNUM_NAME,
             ARCHIVE / MAGNUM_NAME,
+            ARCHIVE / f"{HASH_PREFIX}.tex",
             ROOT / "docs" / "archive" / MAGNUM_NAME,
             NS_SND / MAGNUM_NAME,
             LIVE_ROOT / MAGNUM_NAME,
         ]
         for path in invented:
-            self.assertFalse(path.is_file(), f"do not invent {path}")
+            self.assertFalse(path.is_file(), f"do not re-file {path}")
         named = list((ROOT / "docs").rglob("GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex"))
         self.assertEqual(named, [])
+        self.assertFalse((ARCHIVE / "GCD_SPECTRAL_ATTRACTOR_MAGNUM.MISSING.md").is_file())
 
-    def test_missing_receipt_locks_the_hunt(self):
-        receipt = ARCHIVE / "GCD_SPECTRAL_ATTRACTOR_MAGNUM.MISSING.md"
+    def test_alias_receipt_locks_the_fetch(self):
+        receipt = ARCHIVE / "GCD_SPECTRAL_ATTRACTOR_MAGNUM.ALIAS.md"
         self.assertTrue(receipt.is_file(), receipt)
         text = receipt.read_text(encoding="utf-8")
-        self.assertIn("not received", text.lower())
-        self.assertIn("Do not invent TeX", text)
-        self.assertIn("invent TeX", text)
-        self.assertIn("unknown", text.lower())
+        self.assertIn("alias", text.lower())
+        self.assertIn("not re-filed", text.lower())
+        self.assertIn(HASH_PREFIX, text)
         self.assertIn("HTTP **302**", text)
+        self.assertIn("**200**", text)
         self.assertIn("**403**", text)
-        self.assertIn("0 bytes", text)
-        self.assertIn("69b28657b0df374441f0302e", text)
-        self.assertIn("ARCHIVE/math_drafts/GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex", text)
-        self.assertIn("a239112289a1", text)
+        self.assertIn("37 366", text)
         self.assertIn("f41194c76cf4", text)
-        self.assertIn("Not** used as a MAGNUM", text)
+        self.assertIn("a239112289a1", text)
+        self.assertIn("May 25, 2026", text)
+        self.assertIn("The GCD Spectral Attractor", text)
         self.assertIn(HN_LAB, text)
         self.assertIn("import into `domain_architect/`", text)
-        self.assertIn("SPECTRAL_UNIFICATION_PAPER", text)
-        self.assertIn("SND_GNC_BRIDGE_EXTRACTED.txt", text)
+        self.assertIn("Do not invent", text)
+        self.assertIn("Overleaf audit", text)
+        self.assertIn("July 23", text)
         self.assertIn("7de9444d", text)
+        self.assertNotIn("DA-VC-01 PASS", text)
 
 
 class TestMayMixTexStaysArchivedAndIsNotQ6(unittest.TestCase):
@@ -110,8 +114,10 @@ class TestMayMixTexStaysArchivedAndIsNotQ6(unittest.TestCase):
             encoding="utf-8"
         )
         for text in (note, faces, readme, index, lookup):
-            self.assertIn("not received", text.lower())
+            self.assertIn(HASH_PREFIX, text)
             self.assertIn("GCD_SPECTRAL_ATTRACTOR_MAGNUM", text)
+            self.assertIn("alias", text.lower())
+            self.assertIn("not re-filed", text.lower())
         for text in (note, faces, readme):
             self.assertIn("archive only", text.lower())
             self.assertIn("f41194c76cf4", text)
@@ -124,8 +130,6 @@ class TestMayMixTexStaysArchivedAndIsNotQ6(unittest.TestCase):
         self.assertIn("Do not invent TeX", note)
         self.assertIn("import into `domain_architect/`", note)
         self.assertIn("NOT CLAIMED", note)
-        self.assertIn("Not** MAGNUM", note)
-        self.assertIn("not** magnum", faces.lower())
         self.assertIn("OVERLEAF-VS-PACK-AUDIT-2026-08-15.md", faces)
         self.assertIn("OVERLEAF-VS-PACK-AUDIT-2026-08-15.md", readme)
         self.assertIn("pack-only", faces.lower())

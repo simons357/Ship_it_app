@@ -28,13 +28,14 @@ The 19 Aug 2026 UHSA session dump ([`docs/archive/sfe-hb/`](../../archive/sfe-hb
 
 DA leftover-split lab (this definition beside Ring SND; not a joint operator): [`docs/domain-architect/LEFTOVER-REPAIR.md`](../../domain-architect/LEFTOVER-REPAIR.md).
 
-## Frankie MAGNUM TeX — not received
+## Frankie MAGNUM TeX — alias of the mix file (not re-filed)
 
-`GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` from the 14 Aug 2026 Frankie handoff
-`ARCHIVE/math_drafts` did **not** reach this VM. Base44 public URL (app
-`69b28657b0df374441f0302e`) was HTTP **302** then CDN **403**, 0 bytes.
-**Do not invent TeX.** Receipt:
-[`docs/archive/gcd-spectral-attractor-2026-05/GCD_SPECTRAL_ATTRACTOR_MAGNUM.MISSING.md`](../../archive/gcd-spectral-attractor-2026-05/GCD_SPECTRAL_ATTRACTOR_MAGNUM.MISSING.md).
+Bare `GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` was HTTP **302** then CDN **403**.
+Hash-prefix `224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` was HTTP **302**
+then CDN **200**, 37 366 bytes, SHA-256 `f41194c76cf4…` — **same bytes** as
+the May mix TeX below. No-extension URL was **403**. **Do not invent a
+second copy.** Receipt:
+[`docs/archive/gcd-spectral-attractor-2026-05/GCD_SPECTRAL_ATTRACTOR_MAGNUM.ALIAS.md`](../../archive/gcd-spectral-attractor-2026-05/GCD_SPECTRAL_ATTRACTOR_MAGNUM.ALIAS.md).
 
 ## Mix metaphysics (not this book)
 
@@ -42,8 +43,9 @@ May 25 2026 Zenodo TeX *The GCD Spectral Attractor* (NS / RH / SFE / Clay)
 is **archive only**. Zenodo [10.5281/zenodo.20405599](https://doi.org/10.5281/zenodo.20405599).
 It is archived at
 [`docs/archive/gcd-spectral-attractor-2026-05/`](../../archive/gcd-spectral-attractor-2026-05/).
-SHA-256 `f41194c76cf4…`. **Not** MAGNUM. **Not** a duplicate of this August
-PDF. **Not** live DA. Clay **NOT CLAIMED**.
+SHA-256 `f41194c76cf4…`. MAGNUM hash-prefix is this file (**alias — not
+re-filed**). **Not** a duplicate of this August PDF. **Not** live DA. Clay
+**NOT CLAIMED**.
 
 ## Older public face (withdrawn claims)
 
