@@ -408,6 +408,9 @@ class TestAprilSpectralCoherenceFilenameIsMay18ImpliesAlias(unittest.TestCase):
     AUGUST_SHA256 = (
         "1ff7a211c00d660c30365e5913727f0129cfc5cd76f1f40ed9a47f468c746cc3"
     )
+    POLISHED_SHA256 = (
+        "b9249af37f3624548d7bee69f26fc2fc0d93c22e744c54cd110810725cd80817"
+    )
     ALIAS = "5dfeb6b64_Paper2_April_Spectral_Coherence_DRAFT.tex"
     DOWNLOADS_DRAFT = "675001cd1_Simons_NS_Paper2_DRAFT.tex"
 
@@ -418,15 +421,19 @@ class TestAprilSpectralCoherenceFilenameIsMay18ImpliesAlias(unittest.TestCase):
         self.assertEqual(raw.count(b"\n"), 664)
         june = PDF.read_bytes()
         august = PAPER.read_bytes()
+        polished = (NS_SND / "NS_Regularity_Final_Polished.tex").read_bytes()
         self.assertEqual(hashlib.sha256(june).hexdigest(), PDF_SHA256)
         self.assertEqual(hashlib.sha256(august).hexdigest(), self.AUGUST_SHA256)
+        self.assertEqual(hashlib.sha256(polished).hexdigest(), self.POLISHED_SHA256)
         self.assertEqual(PDF_SHA256, (
             "7de9444d18054fc8f49a52c3fd7ed2f086a7c7d7d6d1e95bad350c378535c41b"
         ))
         self.assertNotEqual(raw, june)
         self.assertNotEqual(raw, august)
+        self.assertNotEqual(raw, polished)
         self.assertNotEqual(self.DRAFT_SHA256, PDF_SHA256)
         self.assertNotEqual(self.DRAFT_SHA256, self.AUGUST_SHA256)
+        self.assertNotEqual(self.DRAFT_SHA256, self.POLISHED_SHA256)
         tex = raw.decode("utf-8")
         self.assertIn("Implies Global Regularity", tex)
         self.assertIn(r"\date{May 18, 2026}", tex)
@@ -474,7 +481,7 @@ class TestAprilSpectralCoherenceFilenameIsMay18ImpliesAlias(unittest.TestCase):
         self.assertIn("**Not** FIXED", faces)
         self.assertIn("**Not** August", faces)
         self.assertIn("**Not** Clay", faces)
-        self.assertIn("not a compile of June PDF", faces.lower())
+        self.assertIn("not a compile of june pdf", faces.lower())
         self.assertIn("7de9444d", faces)
         self.assertIn("7de9444d", readme)
         self.assertIn("NOT CLAIMED", faces)
