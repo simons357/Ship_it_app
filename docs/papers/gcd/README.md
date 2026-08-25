@@ -39,7 +39,8 @@ DA leftover-split lab (this definition beside Ring SND; not a joint operator): [
 ## Mix metaphysics (not this book)
 
 May 25 2026 Zenodo TeX *The GCD Spectral Attractor* (NS / RH / SFE / Clay)
-is archived at
+is **archive only**. Zenodo [10.5281/zenodo.20405599](https://doi.org/10.5281/zenodo.20405599).
+It is archived at
 [`docs/archive/gcd-spectral-attractor-2026-05/`](../../archive/gcd-spectral-attractor-2026-05/).
 SHA-256 `f41194c76cf4…`. **Not** MAGNUM. **Not** a duplicate of this August
 PDF. **Not** live DA. Clay **NOT CLAIMED**.

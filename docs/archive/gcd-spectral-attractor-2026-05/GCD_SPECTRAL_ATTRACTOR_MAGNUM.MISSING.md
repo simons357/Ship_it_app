@@ -31,7 +31,7 @@ This is a **different object** from:
 
 `/Users/jonathansimons/Desktop/RH_Proof_Chain_Synthesis/01_canonical_sources/frankie_raw_handoff_2026-08-14/RH_2026_COMPLETE_RAW_GATHERING/files/ARCHIVE/math_drafts/GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex`
 
-`/Users` is not mounted on this VM.
+`/Users` is not mounted on this VM. Do not invent TeX.
 
 ## Hunt (25 August 2026)
 
