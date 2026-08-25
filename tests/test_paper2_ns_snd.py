@@ -784,5 +784,147 @@ class TestCleanPdfIsNotPaper2OrFixed(unittest.TestCase):
         )
 
 
+class TestSnd2UploadsAreMacAliasesNotFixed(unittest.TestCase):
+    """Paper2_NS_Regularity_SND_2 / Base44 hashes are aliases. Classify by SHA.
+
+    FIXED only if SHA-256 is 7de9444d… (title *Conditional Regularity Criterion*).
+    These SND_2 uploads are Mac SND 2 (9e53d664…, *Implies*, May 18, 2026).
+    """
+
+    MAC = NS_SND / "Paper2_NS_Regularity_SND.pdf"
+    MAC_SHA256 = (
+        "9e53d6640cc3808696afbcbec8f78c08de860b4816680ff43cdc816ce5c60cb0"
+    )
+    ZENODO_SHA256 = (
+        "87610856449007e7bdca3b87d82683e463b299484b3906a0dda27a18bec416a3"
+    )
+    CLEAN_SHA256 = (
+        "8b4cff04c308b77e9ec5837f5a27c1c82fefadf141465f67fc0e4c4236caf4d4"
+    )
+    DRAFT_TEX_SHA256 = (
+        "f51ed5c05ec3886603a69de942b890dc76c73b3860fe089a056b4665ab8cc4cb"
+    )
+    ALIAS_NAMES = (
+        "Paper2_NS_Regularity_SND_2_963e.pdf",
+        "Paper2_NS_Regularity_SND_2_7a79.pdf",
+    )
+    UPLOAD_DIRS = (
+        Path("/home/ubuntu/.cursor/projects/workspace/uploads"),
+        ROOT / "uploads",
+    )
+
+    def _classify(self, digest: str) -> str:
+        if digest == PDF_SHA256:
+            return "FIXED"
+        if digest == self.MAC_SHA256:
+            return "MAC_SND2"
+        if digest == self.ZENODO_SHA256:
+            return "ZENODO_20272545"
+        if digest == self.CLEAN_SHA256:
+            return "CLEAN_SWIRL"
+        if digest == self.DRAFT_TEX_SHA256:
+            return "ZENODO_20269536_TEX"
+        return "UNKNOWN"
+
+    def test_filed_mac_snd2_is_not_fixed_unless_sha_matches(self):
+        raw = self.MAC.read_bytes()
+        digest = hashlib.sha256(raw).hexdigest()
+        self.assertEqual(digest, self.MAC_SHA256)
+        self.assertEqual(len(raw), 561297)
+        self.assertEqual(self._classify(digest), "MAC_SND2")
+        self.assertNotEqual(digest, PDF_SHA256)
+        self.assertNotEqual(self._classify(digest), "FIXED")
+        self.assertNotEqual(digest, self.ZENODO_SHA256)
+        self.assertNotEqual(digest, self.CLEAN_SHA256)
+        self.assertNotEqual(digest, self.DRAFT_TEX_SHA256)
+        june = PDF.read_bytes()
+        self.assertEqual(hashlib.sha256(june).hexdigest(), PDF_SHA256)
+        self.assertEqual(PDF_SHA256, (
+            "7de9444d18054fc8f49a52c3fd7ed2f086a7c7d7d6d1e95bad350c378535c41b"
+        ))
+        self.assertNotEqual(raw, june)
+        try:
+            from pypdf import PdfReader
+        except ImportError:
+            self.skipTest("pypdf not installed")
+        mac_text = PdfReader(str(self.MAC)).pages[0].extract_text() or ""
+        june_text = PdfReader(str(PDF)).pages[0].extract_text() or ""
+        self.assertIn("IMPLIES GLOBAL", mac_text.upper())
+        self.assertIn("May 18, 2026", mac_text)
+        self.assertNotIn("Conditional Regularity Criterion", mac_text)
+        self.assertNotIn("Corrected June 2026", mac_text)
+        self.assertIn("Conditional Regularity Criterion", june_text)
+        self.assertIn("Corrected June 2026", june_text)
+        self.assertNotIn("IMPLIES GLOBAL", june_text.upper())
+
+    def test_snd2_filename_aliases_are_not_refiled(self):
+        extras = sorted(
+            p.name
+            for p in NS_SND.glob("Paper2_NS_Regularity_SND_2*.pdf")
+        )
+        self.assertEqual(extras, [], f"do not re-file SND_2 aliases: {extras}")
+        for name in self.ALIAS_NAMES:
+            self.assertFalse(
+                (NS_SND / name).is_file(),
+                f"do not re-file {name}; it is a Mac SND 2 alias",
+            )
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file()
+        )
+
+    def test_uploads_hash_to_mac_snd2_not_fixed_when_present(self):
+        seen = []
+        for directory in self.UPLOAD_DIRS:
+            if not directory.is_dir():
+                continue
+            for name in self.ALIAS_NAMES:
+                path = directory / name
+                if not path.is_file():
+                    continue
+                digest = hashlib.sha256(path.read_bytes()).hexdigest()
+                seen.append((str(path), digest))
+                label = self._classify(digest)
+                if digest == PDF_SHA256:
+                    self.assertEqual(label, "FIXED")
+                else:
+                    self.assertNotEqual(label, "FIXED")
+                    self.assertEqual(digest, self.MAC_SHA256)
+                    self.assertEqual(label, "MAC_SND2")
+                    self.assertNotEqual(digest, PDF_SHA256)
+                    self.assertNotEqual(digest, self.ZENODO_SHA256)
+        if not seen:
+            self.skipTest("SND_2 uploads not present in this environment")
+
+    def test_faces_record_snd2_aliases_not_fixed(self):
+        faces = FACES.read_text(encoding="utf-8")
+        readme = README.read_text(encoding="utf-8")
+        hay = faces.lower()
+        self.assertIn("9e53d664", faces)
+        self.assertIn("9e53d664", readme)
+        self.assertIn("SND_2", faces)
+        self.assertIn("963e", faces)
+        self.assertIn("7a79", faces)
+        self.assertIn("Paper2_NS_Regularity_SND_2_963e.pdf", faces)
+        self.assertIn("Paper2_NS_Regularity_SND_2_7a79.pdf", faces)
+        self.assertIn("aliases", hay)
+        self.assertIn("not re-filed", hay)
+        self.assertIn("Implies Global Regularity", faces)
+        self.assertIn("May 18, 2026", faces)
+        self.assertIn("7de9444d", faces)
+        self.assertIn("87610856", faces)
+        self.assertIn("f51ed5c05ec3", faces)
+        self.assertIn("**Not** FIXED", faces)
+        self.assertIn("NOT CLAIMED", faces)
+        self.assertIn("DA-VC-01 **FAIL**", faces)
+        self.assertIn("Letters collide", faces)
+        self.assertIn("Dominant-Shell", faces)
+        self.assertIn("Q6-augmented", faces)
+        self.assertIn("SND_2_963e", readme)
+        self.assertIn("7de9444d", readme)
+        self.assertIn("not re-filed", readme.lower())
+        self.assertNotIn("DA-VC-01 PASS", faces)
+        self.assertNotIn("DA-VC-01 PASS", readme)
+
+
 if __name__ == "__main__":
     raise SystemExit(unittest.main())

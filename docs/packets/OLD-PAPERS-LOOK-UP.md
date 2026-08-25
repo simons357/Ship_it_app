@@ -34,7 +34,7 @@ If the paperclip errors again: paste the **exact error text**, or put the file i
 | May swirl short TeX | `docs/papers/swirl/zenodo-may/Simons_PhiRenorm_Axisymmetric.tex` | [10.5281/zenodo.20405597](https://doi.org/10.5281/zenodo.20405597) |
 | Paper2 August TeX | `docs/papers/ns-snd/` | (from you, in chat) |
 | Paper2 June FIXED PDF | `docs/papers/ns-snd/Paper2_NS_Regularity_SND_FIXED.pdf` | (from you; SHA `7de9444d…`) |
-| Paper2 Mac “SND 2” PDF | `docs/papers/ns-snd/Paper2_NS_Regularity_SND.pdf` | (from you; not the Zenodo bytes) |
+| Paper2 Mac “SND 2” PDF | `docs/papers/ns-snd/Paper2_NS_Regularity_SND.pdf` | SHA `9e53d664…`. Uploads `Paper2_NS_Regularity_SND_2_963e.pdf` / `_7a79.pdf` (Base44 `SND_2` hashes) are **aliases — not re-filed**. **Not** FIXED `7de9444d…`. **Not** Zenodo `20272545`. **Not** `20269536`. |
 | Paper2 Zenodo “implies” | `docs/papers/ns-snd/zenodo-20272545/` | [10.5281/zenodo.20272545](https://doi.org/10.5281/zenodo.20272545) — **claim withdrawn** |
 | Paper2 Zenodo superseded TeX | `docs/papers/ns-snd/zenodo-20269536/` (alias; bytes already at `Simons_NS_Paper2_DRAFT_original.tex`) | [10.5281/zenodo.20269536](https://doi.org/10.5281/zenodo.20269536) — **[Superseded]** *Criteria* record title; file is May 18 *Implies* TeX SHA `f51ed5c05ec3…`. **Not** FIXED `7de9444d…`. **Not** `20272545`. |
 | Paper2 August 1 audit | `docs/papers/ns-snd/NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md` | (from you) |
