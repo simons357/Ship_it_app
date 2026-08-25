@@ -95,6 +95,19 @@ class TestExciseStepTwo(unittest.TestCase):
         self.assertIn("lemma-3-1", remaining)
         self.assertIn("theorem-4-1", remaining)
         self.assertNotIn("frozen-gap", remaining)
+        self.assertEqual(payload["operation"]["excise"], [2])
+        self.assertEqual(payload["operation"]["reinsert"], 2)
+        self.assertFalse(payload["operation"]["fix_is_a_proof"])
+        self.assertTrue(payload["operation"]["order_preserved"])
+        indices = [s["index"] for s in payload["repaired_chain"]]
+        self.assertEqual(indices, list(range(1, 11)))
+        self.assertTrue(payload["repaired_chain"][1]["id"].endswith("-graft"))
+        self.assertEqual(payload["repaired_chain"][0]["id"], "leray-setup")
+        self.assertEqual(payload["repaired_chain"][2]["id"], "lemma-3-1")
+        self.assertIn("EXCISE", payload["board"]["text"])
+        self.assertIn("GRAFT", payload["board"]["text"])
+        self.assertIn("frozen-gap", payload["board"]["text"])
+        self.assertIn("Yes.", payload["answer"])
 
     def test_toy_chain_excise_2(self):
         payload = localized_repair(chain="toy", excise=2)
@@ -143,6 +156,21 @@ class TestCycleAndApi(unittest.TestCase):
             report = run_named_cycle(name)
             self.assertEqual(report.mode, "localized-repair")
             self.assertEqual(report.prediction["protocol"], "localized-reparation")
+
+    def test_named_cycle_excise_two(self):
+        report = run_named_cycle("excise-2")
+        self.assertEqual(report.mode, "localized-repair")
+        self.assertEqual(report.prediction["operation"]["excise"], [2])
+        self.assertEqual(report.prediction["repaired_chain"][1]["index"], 2)
+        self.assertTrue(report.prediction["repaired_chain"][1]["id"].endswith("-graft"))
+        self.assertIn("Step 2", report.candidate.hypothesis)
+        self.assertIn("Yes.", report.notes[0])
+
+    def test_api_cycle_excise_two(self):
+        status, body, _ = handle_api("/api/cycle", {"name": "excise-2"})
+        self.assertEqual(status, 200)
+        report = json.loads(body)
+        self.assertEqual(report["prediction"]["operation"]["excise"], [2])
 
     def test_api_default_and_excise_two(self):
         status, body, _ = handle_api("/api/localized-repair", {})

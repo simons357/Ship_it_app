@@ -30,6 +30,7 @@ python -m domain_architect cycle control
 python -m domain_architect cycle drag
 python -m domain_architect cycle leftover-repair
 python -m domain_architect cycle localized-repair
+python -m domain_architect cycle excise-2
 python -m domain_architect translate --example snd-vs-h
 python -m domain_architect benchmark
 python -m domain_architect --archive

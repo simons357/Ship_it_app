@@ -52,29 +52,38 @@ fits the interface is Lemma 6.1 restated as an independent hypothesis.
 
 ## The “step 2 isn’t working” case
 
+Yes. DA can **excise #2, restore the interface, and re-insert at slot 2**.
+“Fix” here means: rank a finite catalog and graft the best honest hook.
+It does **not** mean: prove the excised claim.
+
+On the Paper2 10-step chain, step 2 is frozen gap / Route J. Neighbors
+are the Leray setup (1) and Lemma 3.1 (3). The accepted graft is an
+independent frozen-gap hypothesis, still **OPEN**. Route J numerics
+\(N\le 800\) are a diagnostic, not a theorem. The withdrawn Q6 floor
+is refused.
+
 ```
-python -m domain_architect cycle localized-repair
+python -m domain_architect cycle excise-2
+python -m domain_architect cycle localized-repair --excise 2
 ```
 
-That is the default Paper2 surgery.
+POST `/api/localized-repair` with `{"excise": 2}`.
 
-To excise **step 2** of a 10-step chain, fix the interface, and
-re-insert:
+In the desktop app: Cycle **Excise step 2**.
 
-```
-python -m domain_architect cycle surgery
-```
-
-or POST `/api/localized-repair` with `{"excise": 2}`.
-
-On the Paper2 chain, step 2 is frozen gap / Route J. Neighbors are the
-Leray setup and Lemma 3.1. The accepted graft is an independent frozen-gap
-hypothesis, still OPEN. Route J numerics \(N\le 800\) are a diagnostic,
-not a theorem. The withdrawn Q6 floor is refused.
+The repaired chain keeps numbering 1–10. Slot 2 is the graft. Steps 3–10
+are the original later steps, still in order.
 
 On the toy chain (`{"chain": "toy", "excise": 2}`), step 2 is
 “energy implies smallness.” Neighbors are energy and continuation. The
 graft is independent smallness \(\sigma\), still OPEN.
+
+Default Paper2 surgery (not the #2 case) still cuts the dynamical kink
+6–8:
+
+```
+python -m domain_architect cycle localized-repair
+```
 
 ## Candidate search (finite, honest)
 
@@ -108,7 +117,8 @@ Run it:
 
 ```
 python -m domain_architect cycle localized-repair
-python -m domain_architect cycle surgery
+python -m domain_architect cycle excise-2
 ```
 
-In the desktop app: Cycle **Paper2 surgery (localized reparation)**.
+In the desktop app: Cycle **Paper2 surgery (default cut 6–8)** or
+**Excise step 2**.

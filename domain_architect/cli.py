@@ -62,7 +62,17 @@ def main(argv: list[str] | None = None) -> int:
         "name",
         nargs="?",
         default="missing-damping",
-        help="missing-damping | control | mechanical-electrical | drag | leftover-repair | localized-repair",
+        help="missing-damping | control | mechanical-electrical | drag | leftover-repair | localized-repair | excise-2",
+    )
+    p_cy.add_argument(
+        "--excise",
+        default=None,
+        help="step number(s) to cut, e.g. 2 or 6,7,8 (localized-repair only)",
+    )
+    p_cy.add_argument(
+        "--chain",
+        default=None,
+        help="paper2 | toy (localized-repair only)",
     )
 
     p_bm = sub.add_parser("benchmark", help="run the v1.0 computational benchmarks")
@@ -90,7 +100,11 @@ def main(argv: list[str] | None = None) -> int:
         cand = inverse_design_architecture(args.target, list(args.constraint))
         return _emit(cand.to_dict(), as_json, _synth_text(cand.to_dict()))
     if command == "cycle":
-        report = run_named_cycle(args.name)
+        report = run_named_cycle(
+            args.name,
+            chain=getattr(args, "chain", None),
+            excise=getattr(args, "excise", None),
+        )
         return _emit(report.to_dict(), as_json, _cycle_text(report.to_dict()))
     if command == "benchmark":
         payload = run_benchmarks()
@@ -189,7 +203,10 @@ def _cycle_text(payload: dict) -> str:
             f"missing role: {res.get('missing_role')} "
             f"({res.get('operator_class')}) recovered={res.get('recovered_parameter')}"
         )
-    if payload.get("prediction"):
+    prediction = payload.get("prediction") or {}
+    if isinstance(prediction, dict) and prediction.get("board"):
+        lines.append(prediction["board"].get("text") or "")
+    elif prediction:
         lines.append(f"prediction: {payload['prediction']}")
     for note in payload.get("notes") or []:
         lines.append(f"- {note}")

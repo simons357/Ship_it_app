@@ -123,6 +123,12 @@ $("cySurgery").addEventListener("click", async () => {
   show($("cyOut"), await api("/api/cycle", { name: "localized-repair" }));
 });
 
+$("cyExcise2").addEventListener("click", async () => {
+  $("cyName").value = "excise-2";
+  $("cyOut").textContent = "Excising step 2 and re-inserting the graft…";
+  show($("cyOut"), await api("/api/localized-repair", { excise: 2 }));
+});
+
 $("arRun").addEventListener("click", async () => {
   $("arOut").textContent = "Loading archive…";
   show($("arOut"), await api("/api/archive"));

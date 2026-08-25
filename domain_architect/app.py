@@ -82,7 +82,11 @@ def handle_api(path: str, payload: dict) -> tuple[int, bytes, str]:
             return _json_bytes(cand.to_dict())
         if path == "/api/cycle":
             name = str(payload.get("name") or "missing-damping")
-            report = run_named_cycle(name)
+            report = run_named_cycle(
+                name,
+                chain=payload.get("chain"),
+                excise=payload.get("excise"),
+            )
             return _json_bytes(report.to_dict())
         if path == "/api/leftover-repair":
             return _json_bytes(leftover_repair())

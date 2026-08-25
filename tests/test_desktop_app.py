@@ -64,7 +64,8 @@ class TestLauncherStartsApp(unittest.TestCase):
                     self.assertIn("SND vs H_N (lab, not glue)", html)
                     self.assertIn("leftover-repair", html)
                     self.assertIn("localized-repair", html)
-                    self.assertIn("Paper2 surgery", html)
+                    self.assertIn("excise-2", html)
+                    self.assertIn("Excise step 2", html)
                     return
                 except OSError as exc:
                     last_error = exc

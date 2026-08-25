@@ -600,6 +600,29 @@ def _graft_step(chosen: GraftCandidate, index: int) -> ProofStep:
     )
 
 
+def _mark_line(step: ProofStep, mark: str) -> str:
+    return f"{step.index:>2}  {mark:<8}  {step.id}  [{step.status}]"
+
+
+def chain_board(
+    original: tuple[ProofStep, ...] | list[ProofStep],
+    excised: list[ProofStep],
+    repaired: list[ProofStep],
+) -> dict[str, Any]:
+    """Human-readable before/after of the numbered chain."""
+    cut_ids = {s.id for s in excised}
+    before = [
+        _mark_line(step, "EXCISE" if step.id in cut_ids else "keep")
+        for step in original
+    ]
+    after = [
+        _mark_line(step, "GRAFT" if step.id.endswith("-graft") else "keep")
+        for step in repaired
+    ]
+    text = "BEFORE\n" + "\n".join(before) + "\n\nAFTER\n" + "\n".join(after)
+    return {"before": before, "after": after, "text": text}
+
+
 def run_surgery(
     steps: tuple[ProofStep, ...],
     *,
@@ -629,8 +652,36 @@ def run_surgery(
     if not inserted:
         repaired.append(graft)
 
+    board = chain_board(steps, excised, repaired)
+    slots = sorted(excised_indices)
+    operation = {
+        "excise": slots,
+        "fix": (
+            "Restore the cut interface with the best catalog hook. "
+            "That hook is an OPEN hypothesis unless a real estimate fits. "
+            "DA does not invent a proof of the excised claim."
+        ),
+        "fix_kind": "interface_graft",
+        "fix_is_a_proof": False,
+        "reinsert": insert_at,
+        "neighbors": {
+            "proximal_index": None if proximal is None else proximal.index,
+            "distal_index": None if distal is None else distal.index,
+        },
+        "order_preserved": [s.index for s in repaired] == sorted(s.index for s in repaired),
+    }
+    answer = (
+        f"Yes. DA excised step(s) {slots}, kept the healthy neighbors, "
+        f"ranked a finite catalog, and re-inserted {chosen.id} at slot "
+        f"{insert_at}. The graft is OPEN. Fix means restore the interface, "
+        "not close the theorem."
+    )
+
     return {
+        "answer": answer,
         "protocol": "localized-reparation",
+        "operation": operation,
+        "board": board,
         "metaphor": (
             "Surgery: keep healthy tissue on both sides of the cut, "
             "excise the diseased step, hook the best logical graft to "
@@ -679,6 +730,7 @@ def run_surgery(
             "Even after 6.1, continuation (step 9) is still OPEN.",
             "Step 10 classical NS is not claimed.",
             "A13 is unchanged: synthesize of NS regularity still emits a PD loop.",
+            board["text"],
         ],
     }
 
@@ -723,6 +775,28 @@ def cycle_localized_repair(
         ],
     )
     chosen = payload["chosen"]
+    excised_ids = [step["id"] for step in payload["excised"]]
+    if excised_ids == ["frozen-gap"]:
+        hypothesis = (
+            "Step 2 (frozen gap / Route J) is not working as a theorem. "
+            "Excise it. Keep step 1 and step 3. Re-insert an independent "
+            "frozen-gap hypothesis at slot 2. Theorem 4.1 still consumes "
+            "FG as a hypothesis. This does not prove Route J for all N."
+        )
+    elif excised_ids == ["toy-energy-implies-smallness"]:
+        hypothesis = (
+            "Step 2 (energy implies smallness) is diseased. Excise it. "
+            "Keep energy and continuation. Re-insert independent "
+            "smallness σ as an OPEN hypothesis."
+        )
+    else:
+        hypothesis = (
+            "Cut the diseased / unproved middle of the Paper2 chain. "
+            "Keep Lipschitz and conditional Weyl. Re-insert Lemma 6.1 "
+            "as an independent hypothesis. Do not derive it from energy "
+            "or from local existence. Continuation and classical NS stay "
+            "unclaimed."
+        )
     candidate = CandidateArchitecture(
         name="localized_reparation_open",
         components=[
@@ -734,13 +808,7 @@ def cycle_localized_repair(
             step["id"]: "excised"
             for step in payload["excised"]
         },
-        hypothesis=(
-            "Cut the diseased / unproved middle of the Paper2 chain. "
-            "Keep Lipschitz and conditional Weyl. Re-insert Lemma 6.1 "
-            "as an independent hypothesis. Do not derive it from energy "
-            "or from local existence. Continuation and classical NS stay "
-            "unclaimed."
-        ),
+        hypothesis=hypothesis,
         provenance=[
             Provenance(
                 source="localized reparation / surgery",
@@ -784,6 +852,11 @@ def cycle_localized_repair(
         prediction=payload,
         residual=None,
         validation_gate=ValidationGate.MATHEMATICAL,
-        notes=list(payload["notes"]) + [payload["metaphor"]],
+        notes=[
+            payload["answer"],
+            payload["board"]["text"],
+            payload["metaphor"],
+            "Not a PD controller. Inverse design is not used.",
+        ],
         method_credits=["localized reparation", "leftover-split protocol"],
     )
