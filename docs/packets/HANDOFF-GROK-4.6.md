@@ -101,6 +101,7 @@ Logo (confirmed): **Black & gold** and **All silver** 3D lockups both stay. **La
 
 - `docs/packets/DA-AND-NS-CHATGPT.md`
 - `docs/packets/HANDOFF-GROK-4.6.md` (this document)
+- `docs/packets/OLD-PAPERS-LOOK-UP.md` — pack / Zenodo faces still not in this git repo
 
 ### App
 
