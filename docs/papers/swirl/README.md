@@ -20,7 +20,7 @@ Four theorems: the algebraic identity \(\frac1{r^4}\partial_z(\Gamma^2)=\partial
 
 ## Status note
 
-[`SWIRL-CONTINUATION.md`](SWIRL-CONTINUATION.md) is the 22 August reconstruction of what stands. [`phi_renorm_continuation.tex`](phi_renorm_continuation.tex) is the earlier continuation sketch.
+[`SWIRL-CONTINUATION.md`](SWIRL-CONTINUATION.md) is the 22 August reconstruction of what stands. [`phi_renorm_continuation.tex`](phi_renorm_continuation.tex) is the earlier continuation sketch. Plain English: [`WHERE-WE-STAND.md`](WHERE-WE-STAND.md).
 
 ## May 2026 geometry-bridge essay
 
