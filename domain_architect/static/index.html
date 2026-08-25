@@ -40,7 +40,12 @@
             <button class="ghost example" data-fill="decExpr" data-value="xdd + k*x = 0" type="button">Incomplete oscillator</button>
             <button class="ghost example" data-fill="decExpr" data-value="∇²Φ = 4π G ρ" type="button">Poisson benchmark</button>
             <button class="ghost example" data-fill="decExpr" data-value="(1/r^4)*dz(Gamma^2) = dz(Phi^2)" type="button">Swirl identity</button>
+            <button class="ghost example" data-fill="decExpr" data-value="J/X >= cstar" type="button">Ring SND (usable)</button>
+            <button class="ghost example" data-fill="decExpr" data-value="HN = D^((-1)/2)*Qtilde*D^((-1)/2)" type="button">Q6 H_N (def only)</button>
+            <button class="ghost example" data-fill="decExpr" data-value="Istrain = urad/r" type="button">Swirl leftover</button>
+            <button class="ghost example" data-fill="decExpr" data-value="ell1(a - mu) = 0" type="button">Simplex leftover</button>
           </div>
+          <p class="hint">Ring SND is the usable criterion inf J/X ≥ c_*. Q6 H_N is the standing definition, not the withdrawn all-N floor. The leftover buttons are the parts that still fail. Different books. Do not glue them. After decompose, Translate SND vs H_N and Cycle leftover-repair put them side by side.</p>
         </div>
         <pre id="decOut" class="out"></pre>
       </section>
@@ -48,7 +53,7 @@
       <section id="translate" class="pane">
         <div class="card">
           <h2>Cross-domain translate</h2>
-          <p class="hint">A legal map records preserved structure, broken structure, and an executable T. Analogy is not substitution.</p>
+          <p class="hint">A legal map records preserved structure, broken structure, and an executable T. Analogy is not substitution. SND vs H_N fills both sides and refuses a letter map.</p>
           <div class="split">
             <label>System A
               <input id="trLeft" value="m*xdd + c*xd + k*x = f" />
@@ -60,6 +65,7 @@
           <div class="row">
             <button id="trRun" type="button">Translate</button>
             <button id="trExample" class="ghost" type="button">Mechanical ↔ electrical</button>
+            <button id="trSndVsH" class="ghost" type="button">SND vs H_N (lab, not glue)</button>
           </div>
         </div>
         <pre id="trOut" class="out"></pre>
@@ -83,16 +89,20 @@
       <section id="cycle" class="pane">
         <div class="card">
           <h2>Run a cycle</h2>
-          <p class="hint">Examples use standard methods (RK4, OLS, Firestone analogy). Those methods are not Domain Architect itself.</p>
+          <p class="hint">Examples use standard methods (RK4, OLS, Firestone analogy). Those methods are not Domain Architect itself. Leftover repair takes only what still fails in NS, reconstructs a conditional architecture, and puts each leftover back into its own book. It does not prove regularity.</p>
           <label>Named cycle
             <select id="cyName">
               <option value="missing-damping">Missing damping (paper §16)</option>
               <option value="control">Inverse control</option>
               <option value="mechanical-electrical">Mechanical–electrical</option>
               <option value="drag">Drag surrogate (schematic)</option>
+              <option value="leftover-repair">NS leftover repair (three OPEN pieces)</option>
             </select>
           </label>
-          <button id="cyRun" type="button">Run cycle</button>
+          <div class="row">
+            <button id="cyRun" type="button">Run cycle</button>
+            <button id="cyLeftover" class="ghost" type="button">NS leftover repair</button>
+          </div>
         </div>
         <pre id="cyOut" class="out"></pre>
       </section>

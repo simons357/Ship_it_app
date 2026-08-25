@@ -45,6 +45,7 @@ python3 -m domain_architect app --install-shortcut
 python -m domain_architect "m*xdd + c*xd + k*x = f"
 python -m domain_architect translate --example mechanical-electrical
 python -m domain_architect cycle missing-damping
+python -m domain_architect cycle leftover-repair
 python -m domain_architect --archive
 ```
 

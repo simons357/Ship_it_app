@@ -59,6 +59,10 @@ class TestLauncherStartsApp(unittest.TestCase):
                     self.assertEqual(response.status, 200)
                     self.assertIn("Domain Architect", html)
                     self.assertIn("Swirl identity", html)
+                    self.assertIn("Ring SND (usable)", html)
+                    self.assertIn("Q6 H_N (def only)", html)
+                    self.assertIn("SND vs H_N (lab, not glue)", html)
+                    self.assertIn("leftover-repair", html)
                     return
                 except OSError as exc:
                     last_error = exc

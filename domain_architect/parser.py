@@ -189,7 +189,7 @@ _TOKEN_RE = re.compile(
     r"""
     (\d+\.\d+|\d+)                # number
     | ([A-Za-z][A-Za-z0-9]*)      # identifier
-    | (''|'|==|=|\+|\-|\*|/|\^|\_)  # operators, including Newton primes
+    | (''|'|==|<=|>=|=|<|>|\+|\-|\*|/|\^|\_)  # operators, including Newton primes
     | ([\(\)\[\],])               # grouping
     | (\S)                        # leftover
     """,
@@ -218,6 +218,15 @@ _ATOMIC_IDENTIFIERS = frozenset(LATEX_MACROS) | frozenset(SPECIAL_OPERATORS) | {
     "hbar",
     "dot",
     "ddot",
+    # Q6 / Ring lab tokens. Identifiers, not a claim they share a book.
+    "Qtilde",
+    "Qhat",
+    "invsqrt",
+    "cstar",
+    "HN",
+    "urad",
+    "ell1",
+    "Istrain",
 }
 
 _DERIV_TOKEN = re.compile(r"^([A-Za-z])(d|dd|dot|ddot)$")
@@ -277,10 +286,10 @@ class _Parser:
 
     def parse_equality(self) -> ASTNode:
         left = self.parse_add()
-        if self.peek() in {"=", "=="}:
-            self.take()
+        if self.peek() in {"=", "==", ">=", "<=", ">", "<"}:
+            op = self.take()
             right = self.parse_add()
-            return ASTNode(kind=NodeKind.EQUALITY, children=[left, right])
+            return ASTNode(kind=NodeKind.EQUALITY, name=op, children=[left, right])
         return left
 
     def parse_add(self) -> ASTNode:
@@ -312,7 +321,23 @@ class _Parser:
     def _starts_implicit_mul(self, tok: str | None) -> bool:
         if tok is None:
             return False
-        if tok in {")", "]", ",", "+", "-", "=", "==", "*", "/", "^", "_"}:
+        if tok in {
+            ")",
+            "]",
+            ",",
+            "+",
+            "-",
+            "=",
+            "==",
+            ">=",
+            "<=",
+            ">",
+            "<",
+            "*",
+            "/",
+            "^",
+            "_",
+        }:
             return False
         return True
 

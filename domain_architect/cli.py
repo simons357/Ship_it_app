@@ -11,7 +11,11 @@ from .pipeline import run_benchmarks, run_named_cycle
 from .registry import EquationRegistry
 from .schema import PRIMARY_OPERATIONS, PRODUCT_DESCRIPTION
 from .synthesize import inverse_design_architecture
-from .translate import mechanical_electrical_translation, translate_expressions
+from .translate import (
+    mechanical_electrical_translation,
+    snd_vs_h_translation,
+    translate_expressions,
+)
 
 
 _COMMANDS = {"decompose", "translate", "synthesize", "cycle", "benchmark", "app"}
@@ -45,7 +49,7 @@ def main(argv: list[str] | None = None) -> int:
     p_tr.add_argument("--b", dest="right", help="right expression")
     p_tr.add_argument(
         "--example",
-        choices=("mechanical-electrical",),
+        choices=("mechanical-electrical", "snd-vs-h"),
         help="run a built-in translation pair",
     )
 
@@ -58,7 +62,7 @@ def main(argv: list[str] | None = None) -> int:
         "name",
         nargs="?",
         default="missing-damping",
-        help="missing-damping | control | mechanical-electrical | drag",
+        help="missing-damping | control | mechanical-electrical | drag | leftover-repair",
     )
 
     p_bm = sub.add_parser("benchmark", help="run the v1.0 computational benchmarks")
@@ -141,7 +145,9 @@ def _print_decompose(expression: str, as_json: bool) -> int:
 
 
 def _print_translate(args: argparse.Namespace, as_json: bool) -> int:
-    if args.example == "mechanical-electrical" or not (args.left and args.right):
+    if args.example == "snd-vs-h":
+        record = snd_vs_h_translation()
+    elif args.example == "mechanical-electrical" or not (args.left and args.right):
         record = mechanical_electrical_translation()
     else:
         record = translate_expressions(args.left, args.right)

@@ -7,6 +7,13 @@ from typing import Any
 
 from .compatibility import CompatibilityReport, Transformation, classify_compatibility
 from .decompose import Decomposition, decompose
+from .lab_cases import (
+    DIFFERENT_LEFTOVER_WARNING,
+    Q6_HN_LAB,
+    RING_SND_LAB,
+    SND_VS_H_NOTES,
+    leftover_family,
+)
 from .schema import CompatibilityClass, CorrespondenceKind, FunctionalRole
 from .signature import FunctionalSignature
 
@@ -69,7 +76,46 @@ def translate(left: Decomposition, right: Decomposition) -> TranslationRecord:
         and right.classification.pattern == "second_order_linear_ode"
     ):
         return _translate_second_order(left, right)
+    left_fam = leftover_family(left.parsed.tokens)
+    right_fam = leftover_family(right.parsed.tokens)
+    if left_fam and right_fam and left_fam != right_fam:
+        if {left_fam, right_fam} == {"ring", "q6"}:
+            notes: list[str] | tuple[str, ...] = SND_VS_H_NOTES
+        else:
+            notes = [
+                DIFFERENT_LEFTOVER_WARNING,
+                f"{left_fam} vs {right_fam}: shared role, not a shared estimate.",
+            ]
+        return translate_refuse_glue(left, right, notes=notes)
     return _translate_generic(left, right)
+
+
+def snd_vs_h_translation() -> TranslationRecord:
+    """Side-by-side Ring SND and Q6 H_N. Analogy only; no letter map."""
+    return translate(
+        decompose(RING_SND_LAB, name="ring_snd"),
+        decompose(Q6_HN_LAB, name="q6_hn"),
+    )
+
+
+def translate_refuse_glue(
+    left: Decomposition,
+    right: Decomposition,
+    *,
+    notes: list[str] | tuple[str, ...],
+) -> TranslationRecord:
+    """A14 locally: do not emit a role-name map across leftover books."""
+    return TranslationRecord(
+        left_name=left.tree.name,
+        right_name=right.tree.name,
+        mapping={},
+        preserved=[],
+        broken=["no_checked_structure_map", "different_books", "no_executable_T"],
+        assumptions=["none: leftover books are not identified"],
+        confidence=0.1,
+        kind=CorrespondenceKind.ANALOGY,
+        notes=list(notes),
+    )
 
 
 def translate_expressions(

@@ -87,6 +87,16 @@ $("trExample").addEventListener("click", async () => {
   show($("trOut"), await api("/api/translate", { example: "mechanical-electrical" }));
 });
 
+$("trSndVsH").addEventListener("click", async () => {
+  $("trLeft").value = "J/X >= cstar";
+  $("trRight").value = "HN = D^((-1)/2)*Qtilde*D^((-1)/2)";
+  $("trOut").textContent = "Translating Ring SND vs Q6 H_N (lab, not glue)…";
+  show($("trOut"), await api("/api/translate", {
+    left: $("trLeft").value,
+    right: $("trRight").value,
+  }));
+});
+
 $("syRun").addEventListener("click", async () => {
   $("syOut").textContent = "Synthesizing…";
   const constraints = $("syConstraints").value.split(",").map((s) => s.trim()).filter(Boolean);
@@ -99,6 +109,12 @@ $("syRun").addEventListener("click", async () => {
 $("cyRun").addEventListener("click", async () => {
   $("cyOut").textContent = "Running cycle…";
   show($("cyOut"), await api("/api/cycle", { name: $("cyName").value }));
+});
+
+$("cyLeftover").addEventListener("click", async () => {
+  $("cyName").value = "leftover-repair";
+  $("cyOut").textContent = "Running leftover repair…";
+  show($("cyOut"), await api("/api/cycle", { name: "leftover-repair" }));
 });
 
 $("arRun").addEventListener("click", async () => {

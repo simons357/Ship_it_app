@@ -234,9 +234,13 @@ def run_named_cycle(name: str) -> CycleReport:
         return cycle_mechanical_electrical()
     if name in {"drag", "drag-reduction"}:
         return cycle_drag_reduction()
+    if name in {"leftover-repair", "leftover", "snd-vs-h"}:
+        from .leftover_repair import cycle_leftover_repair
+
+        return cycle_leftover_repair()
     raise ValueError(
         f"unknown cycle {name!r}; expected missing-damping, control, "
-        "mechanical-electrical, or drag"
+        "mechanical-electrical, drag, or leftover-repair"
     )
 
 

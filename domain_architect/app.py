@@ -23,7 +23,12 @@ from .pipeline import run_benchmarks, run_named_cycle
 from .registry import EquationRegistry
 from .schema import PRIMARY_OPERATIONS, PRODUCT_DESCRIPTION
 from .synthesize import inverse_design_architecture
-from .translate import mechanical_electrical_translation, translate_expressions
+from .leftover_repair import leftover_repair
+from .translate import (
+    mechanical_electrical_translation,
+    snd_vs_h_translation,
+    translate_expressions,
+)
 
 STATIC_DIR = Path(__file__).resolve().parent / "static"
 ICON_SVG = Path(__file__).resolve().parent.parent / "assets" / "domain-architect.svg"
@@ -55,7 +60,9 @@ def handle_api(path: str, payload: dict) -> tuple[int, bytes, str]:
             return _json_bytes(report.to_dict())
         if path == "/api/translate":
             example = payload.get("example")
-            if example == "mechanical-electrical" or not (
+            if example == "snd-vs-h":
+                record = snd_vs_h_translation()
+            elif example == "mechanical-electrical" or not (
                 payload.get("left") and payload.get("right")
             ):
                 record = mechanical_electrical_translation()
@@ -76,6 +83,8 @@ def handle_api(path: str, payload: dict) -> tuple[int, bytes, str]:
             name = str(payload.get("name") or "missing-damping")
             report = run_named_cycle(name)
             return _json_bytes(report.to_dict())
+        if path == "/api/leftover-repair":
+            return _json_bytes(leftover_repair())
         if path == "/api/inverse-cycle":
             spec = CycleSpec(
                 target=str(payload.get("target") or "x★"),

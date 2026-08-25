@@ -13,4 +13,6 @@ Earlier same-day file: [10.5281/zenodo.22045474](https://doi.org/10.5281/zenodo.
 
 That is **not** Paper2 SND (operator-norm closeness of a GCD shell mix to equidistributed \(\mu\)). Same three letters, two definitions. Do not glue.
 
+DA leftover-split lab (usable Ring SND beside Q6 \(H_N\); three NS leftovers stay OPEN): [`docs/domain-architect/LEFTOVER-REPAIR.md`](../../domain-architect/LEFTOVER-REPAIR.md).
+
 April record [10.5281/zenodo.19842060](https://doi.org/10.5281/zenodo.19842060) is marked superseded. Paper2’s June PDF cited that DOI as “GCD Spectral Operators and the Frozen Spectral Gap.” The live record is a Ring/SND paper, not that title. Do not trust that bibliography line.

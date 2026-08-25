@@ -18,6 +18,17 @@ from .parser import (
     derivative_order,
     flatten_sum,
 )
+from .lab_cases import (
+    BOTH_BOOKS_WARNING,
+    Q6_HN_WARNINGS,
+    RING_SND_WARNINGS,
+    SIMPLEX_LEFTOVER_WARNINGS,
+    SWIRL_LEFTOVER_WARNINGS,
+    tokens_look_like_q6_hn,
+    tokens_look_like_ring_snd,
+    tokens_look_like_simplex_leftover,
+    tokens_look_like_swirl_leftover,
+)
 from .schema import FunctionalRole, MathType, SOURCE_STATE_WARNING
 from .signature import FunctionalSignature, RoleHypothesis
 
@@ -25,6 +36,7 @@ from .signature import FunctionalSignature, RoleHypothesis
 # Names that must never auto-promote to a physical interpretation.
 NAME_GUARD = {
     "H": "H is an identifier. It is not automatically a Hamiltonian or coupling.",
+    "HN": "H_N is an identifier. It is not FRA coupling H and not a Hamiltonian.",
     "P": "P is an identifier. It is not automatically a projector or a prime selector.",
     "lambda": "λ is an identifier. It is not automatically a wavelength or eigenvalue.",
     "Phi": "Φ is an identifier. It is not automatically a gravitational potential.",
@@ -92,7 +104,36 @@ def classify_parse(parsed: ParseResult, context: dict | None = None) -> Classifi
         declared = sum(1 for a in result.assignments if a.confidence >= 0.6)
         result.role_classification_confidence = min(0.85, 0.25 + 0.15 * declared)
         result.definition_completeness = min(1.0, declared / max(len(unique), 1))
+    result.warnings.extend(_book_collision_warnings(parsed.tokens))
     return result
+
+
+def _book_collision_warnings(tokens: list[str]) -> list[str]:
+    """Name the book a lab string belongs to. Do not glue books."""
+    warnings: list[str] = []
+    ring = tokens_look_like_ring_snd(tokens)
+    q6 = tokens_look_like_q6_hn(tokens)
+    swirl_left = tokens_look_like_swirl_leftover(tokens)
+    simplex = tokens_look_like_simplex_leftover(tokens)
+    if ring:
+        warnings.extend(RING_SND_WARNINGS)
+    if q6:
+        warnings.append(Q6_HN_WARNINGS[0])
+        if "D" in set(tokens):
+            warnings.append(Q6_HN_WARNINGS[1])
+    if swirl_left:
+        warnings.extend(SWIRL_LEFTOVER_WARNINGS)
+    if simplex:
+        warnings.extend(SIMPLEX_LEFTOVER_WARNINGS)
+    n_books = sum([ring, q6, swirl_left, simplex])
+    if ring and q6:
+        warnings.append(BOTH_BOOKS_WARNING)
+    elif n_books >= 2:
+        warnings.append(
+            "These tokens mix leftover books. Do not glue them. "
+            "A shared concentration shape is not a structure map T."
+        )
+    return warnings
 
 
 def _add(
