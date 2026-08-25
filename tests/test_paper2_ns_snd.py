@@ -150,5 +150,35 @@ class TestPaper2ImpliesFacesAreNotTheJunePdf(unittest.TestCase):
         )
 
 
+class TestJune14ClaySubmitDidNotArrive(unittest.TestCase):
+    """Mac ClaySubmit was selected but never uploaded. Do not invent it."""
+
+    CLAY_SUBMIT = "2f30e8c4f_NS_ClaySubmit_Jonathan_Simons_2026-06-14.tex"
+
+    def test_claysubmit_is_absent_and_not_a_fixed_or_clay_solution(self):
+        faces = FACES.read_text(encoding="utf-8")
+        readme = README.read_text(encoding="utf-8")
+        self.assertIn(self.CLAY_SUBMIT, faces)
+        self.assertIn("June 14 Clay-submit", faces)
+        self.assertIn("not received", faces.lower())
+        self.assertIn("**Not** FIXED", faces)
+        self.assertIn("NOT CLAIMED", faces)
+        self.assertIn("not a compile of the FIXED PDF", faces.lower())
+        self.assertIn("Clay solution", faces)
+        self.assertIn(self.CLAY_SUBMIT, readme)
+        self.assertIn("NOT CLAIMED", readme)
+        invented = [
+            NS_SND / self.CLAY_SUBMIT,
+            NS_SND / "historical" / self.CLAY_SUBMIT,
+            ROOT / "docs" / "archive" / self.CLAY_SUBMIT,
+            ROOT / "docs" / "papers" / "ns-snd" / "historical" / self.CLAY_SUBMIT,
+        ]
+        for path in invented:
+            self.assertFalse(path.is_file(), f"do not invent {path}")
+        tex = PAPER.read_text(encoding="utf-8")
+        self.assertNotIn("ClaySubmit", tex)
+        self.assertNotIn("2f30e8c4f", tex)
+
+
 if __name__ == "__main__":
     raise SystemExit(unittest.main())

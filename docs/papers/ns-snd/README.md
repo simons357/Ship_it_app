@@ -16,6 +16,7 @@ DA may later route to this book. It must **not** glue:
 |---|---|---|
 | June reading PDF | [`Paper2_NS_Regularity_SND_FIXED.pdf`](Paper2_NS_Regularity_SND_FIXED.pdf) | Corrected June 2026 |
 | June FIXED TeX | *not received* | Filename requested; PDF only |
+| June 14 Clay-submit | *not received* | `2f30e8c4f_NS_ClaySubmit_Jonathan_Simons_2026-06-14.tex` — not FIXED; not August; Clay **NOT CLAIMED** here |
 | Mac “SND 2” PDF | [`Paper2_NS_Regularity_SND.pdf`](Paper2_NS_Regularity_SND.pdf) | iOS export 21 July 2026; *implies* header |
 | Zenodo “implies” | [`zenodo-20272545/`](zenodo-20272545/README.md) | Public deposit; live title **claim withdrawn** |
 | August TeX | [`Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex) | 1 August 2026 |

@@ -58,6 +58,7 @@ Send **one** of these, as `.tex`, if you still want the pack source rather than 
 | PAPER_B Möbius \(Q_6\) source | `PAPER_B_Mobius_GCD_Q6.tex` |
 | Ring June 19 source | `c8a03f315_RingLemma_Simons_June19_2026.tex` |
 | June Paper2 **source** of the FIXED PDF | `Paper2_NS_Regularity_SND_FIXED.tex` | **still not in this VM.** A message that is only the filename is not an attachment. Send the `.tex` as one file, or paste it, or git-push it. Caption: “this is the source of the June FIXED PDF.” Do not merge it with the August TeX. |
+| June 14 Clay-submit (historical / withdrawn-claim only) | `2f30e8c4f_NS_ClaySubmit_Jonathan_Simons_2026-06-14.tex` | **still not in this VM.** Selecting a Mac path is not an attachment. Send this **one** `.tex` file. Do not zip. Caption: “June 14 ClaySubmit, historical face.” **Not** FIXED. **Not** August. Classical regularity stays **NOT CLAIMED** even if that draft claimed Clay. |
 | Anesthesia face | `PAPER1_REBUILT_Coherence_Index.md` |
 | Pack swirl complete (older than 22 August) | `NS_PhiRenorm_complete.tex` |
 

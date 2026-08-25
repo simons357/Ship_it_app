@@ -7,6 +7,7 @@ Do **not** merge the “implies” title with the conditional-framework title.
 |---|---|---|
 | June reading PDF | [`Paper2_NS_Regularity_SND_FIXED.pdf`](Paper2_NS_Regularity_SND_FIXED.pdf) | *Spectral Non-Concentration as a Conditional Regularity Criterion.* Corrected June 2026. 7 pages. SHA-256 `7de9444d…`. GNC absent. \(C_N\eta_N\) marked numerical/conditional. T2 is a **program**, not a closed proof. |
 | June FIXED TeX | **not received** | Filename `Paper2_NS_Regularity_SND_FIXED.tex` was requested. Only the PDF is on disk. Do not invent the source. Do not treat the August TeX as that compile. |
+| June 14 Clay-submit | **not received** | Filename `2f30e8c4f_NS_ClaySubmit_Jonathan_Simons_2026-06-14.tex` (Mac Downloads; 1677 lines claimed). Bytes never reached this VM. **Not** FIXED. **Not** the August controlling face. Historical / withdrawn-claim face only if it later arrives. Classical regularity is **NOT CLAIMED** in current governance even if that draft claimed Clay. Do not treat it as a compile of the FIXED PDF or as a Clay solution. |
 | Mac “SND 2” PDF | [`Paper2_NS_Regularity_SND.pdf`](Paper2_NS_Regularity_SND.pdf) | Local iOS/Quartz export 21 July 2026, 561 297 bytes. Running header *SND implies global regularity*. **Not** the Zenodo bytes. |
 | Zenodo “implies” deposit | [`zenodo-20272545/Paper2_NS_Regularity_SND.pdf`](zenodo-20272545/Paper2_NS_Regularity_SND.pdf) | Public record [10.5281/zenodo.20272545](https://doi.org/10.5281/zenodo.20272545). 360 856 bytes. Live title prefixed **[Claim withdrawn - see errata]**. |
 | August repaired TeX | [`Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex) | 1 August 2026. Title is already the *conditional framework*. GNC incomplete; false gcd removed; Route J NUMERICAL/UNDER AUDIT; T2 Gronwall **withdrawn**; simplex **OPEN**. |
@@ -51,6 +52,7 @@ Conditional Weyl: *if* frozen gap and quantitative operator-norm closeness, then
 - **Cleaner honesty on the product \(C_N\eta_N\):** June FIXED PDF.
 - **Public withdrawn “implies” claim:** Zenodo `20272545` plus the August 1 audit.
 - **Mac “SND 2” export:** file it, do not cite it as the Zenodo bytes or as a closed theorem.
+- **June 14 Clay-submit:** not on disk. Do not invent it. If it arrives, file as historical / withdrawn-claim — not live DA math, not FIXED, not August.
 - **Do not merge them into one claim.**
 - **Localized reparation** (DA surgery) uses the **classical unaugmented chain** [`NS_UNAUGMENTED_PROOF_CHAIN.md`](NS_UNAUGMENTED_PROOF_CHAIN.md). Controlling face: August repaired TeX. Default cut is leftover **7–8**, not step 2 (Ring Lemma is already PROVED). This is **not** the June FIXED PDF compile. See [`docs/domain-architect/LOCALIZED-REPAIR.md`](../../domain-architect/LOCALIZED-REPAIR.md).
 
