@@ -34,6 +34,9 @@ not award it as physical equivalence. The DA reading is
 theorem paper does not use Q6 / primes / spectral clock as load-bearing
 mathematics.
 
+One paste-ready file for a **new** ChatGPT chat (not Chat Vault):
+[`docs/packets/DA-AND-NS-CHATGPT.md`](../../packets/DA-AND-NS-CHATGPT.md).
+
 ## Try it in Domain Architect
 
 Launch the desktop app, open **Decompose**, and click **Swirl identity** (or paste the lines below). Live Decompose currently returns `unclassified` at Level 0 and warns that \(\Phi\) is an identifier, not a gravitational potential. That is expected: this lab is not a fluids solver, and swirl \(\Phi=u_\theta/r\) must not be glued to FRA output \(\Phi\).
