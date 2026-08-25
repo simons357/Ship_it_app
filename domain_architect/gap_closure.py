@@ -85,8 +85,8 @@ CLOSURE_CATALOG: tuple[ClosureMove, ...] = (
         ),
         patch_sketch=(
             "Replace claim 'H ⇒ Clay B' by two arrows: "
-            "(i) H: (X≤M,ρ≤ρ₀)⇒SND-C; (ii) OPEN: produce M=M(‖u₀‖_{H¹}) or "
-            "remove M from C_*"
+            "(i) H: (X≤M,ρ≤ρ₀)⇒SND-C; (ii) closure target: produce "
+            "M=M(‖u₀‖_{H¹}) or remove M from C_*"
         ),
         success_test=(
             "DA registry marks SND-C001 ↔ CLAY-B001 INCOMPATIBLE; audits of "
