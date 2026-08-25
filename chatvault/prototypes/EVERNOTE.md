@@ -5,11 +5,11 @@
 **Source:** Jonathan paste titled “Chatvault” in the ChatVault build thread. Markdown fences that split `<style>` / `<script>` were stripped; the React/Tailwind body is otherwise the paste.  
 **This is not the live product.**
 
-Canonical **look:** Base44 morph-glass [OS for your AI](https://preview--6a58e103fedcde66a0a7710e.base44.app/).  
+Canonical **look:** steel vault skin in `chatvault/css/app.css` (charcoal + amber signal). Morph-glass look lock reversed 25 Aug 2026. Tagline stays **OS for your AI**.  
 Canonical **engine:** git `chatvault/` — `ChatVaultEntry`, `CLAIM_LEDGER`, `chatvault-hybrid-0.2.0`.  
 Stripe stays off.
 
-This dump is **not** ChatVault 2, **not** glass, and **not** Replit. ChatVault 2 (if present) lives as its own snapshot — do not overwrite it. Do not replace `chatvault/index.html`, `js/app.js`, `js/engine.mjs`, or `js/search.mjs` with this file.
+This dump is **not** ChatVault 2, **not** the live steel-vault PWA, and **not** Replit. ChatVault 2 (if present) lives as its own snapshot — do not overwrite it. Do not replace `chatvault/index.html`, `js/app.js`, `js/engine.mjs`, or `js/search.mjs` with this file.
 
 Standing rule: top-of-market, not a thinner Evernote. **This paste is the thinner Evernote.** Archive only.
 
@@ -92,4 +92,4 @@ Do not take: JSON-upload copy that has no file input, alert() success toasts, or
 
 ## Verdict
 
-Third HTML dump. Distinct from ChatVault 2 (Lucide + Anthropic + `localStorage` + projects/analytics) and from glass (morph, Drive, Harmonic Watch, LLM rank). Archive it under `chatvault/prototypes/`. Ship the glass PWA + hybrid ranker.
+Third HTML dump. Distinct from ChatVault 2 (Lucide + Anthropic + `localStorage` + projects/analytics) and from glass (morph, Drive, Harmonic Watch, LLM rank). Archive it under `chatvault/prototypes/`. Ship the steel-vault PWA + hybrid ranker.

@@ -5,7 +5,7 @@ One row per feature. Columns are builds we could actually reach.
 
 | Feature | A landing+Drive `6a58f25d…` | B glass `6a58e103…` | C paper `6a362391…` | Claude original | git `chatvault/` engine |
 | --- | --- | --- | --- | --- | --- |
-| Morph-glass “OS for your AI” UI | P (tagline, not glass vault) | W | A | U | W (owner marks + glass grain, git engine) |
+| Morph-glass “OS for your AI” UI | P (tagline, not glass vault) | W | A | U | A (look lock reversed; steel vault skin + owner marks) |
 | Conversation vault grid | A | W | A | U | W |
 | Paper/document vault | A | A | W (empty) | U | A |
 | Marketing landing | W | A | A | U | A |

@@ -121,7 +121,7 @@ That file is **FEATURE-SOURCE / HISTORICAL HTML**, not the live product. Snapsho
 
 Its search box is `useMemo` + `.includes()` on summary/content/tags/keywords — a boolean filter, not BM25F. Its ingest `fetch("https://api.anthropic.com/v1/messages")` from the browser (no API key in headers) is a defect and is forbidden to ship. A companion “PRODUCTION-READY MVP REVIEW” (DOMPurify, Stripe, Product Hunt, 85% ready, $100K–$1M Year 1) is untrusted marketing about a different/imagined build.
 
-Do not replace this hybrid engine or the glass look with that prototype. Stripe stays off. Projects in that paste are already Books here.
+Do not replace this hybrid engine or the steel-vault skin with that prototype. Stripe stays off. Projects in that paste are already Books here.
 
 ## Prototype dump 3 — Evernote HTML
 
@@ -129,6 +129,6 @@ Archived 25 August 2026 at `prototypes/chatvault-evernote-prototype.html` (notes
 
 Search is `title` / `preview` / `tags` `.includes()` plus a platform select and All vs Starred. No inverted index. The floating 🤖 assistant is `setTimeout(1000)` plus keyword if/else. Its COPY claims Advanced search, `tag:work platform:chatgpt`, folders, archive, PDF export, Cmd+F, and right-click — none of that is in the HTML.
 
-Do not port substring-only search, the “Evernote of AI Conversations” tagline (conflicts with locked **OS for your AI**), or the canned assistant as product. Canonical search remains `chatvault-hybrid-0.2.0`. Canonical look remains glass.
+Do not port substring-only search, the “Evernote of AI Conversations” tagline (conflicts with locked **OS for your AI**), or the canned assistant as product. Canonical search remains `chatvault-hybrid-0.2.0`. Canonical look is the steel-vault skin in `chatvault/css/app.css` (glass look lock reversed).
 
 ChatVault 2 files were not overwritten. Live `index.html` / `app.js` / `engine.mjs` / `search.mjs` were not replaced with this dump.
