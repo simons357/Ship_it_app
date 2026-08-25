@@ -625,6 +625,7 @@ function renderGuide() {
         <li>Source AI and source file stay attached.</li>
         <li>Claims, theorems, and gaps are searchable fields with statuses.</li>
         <li>Search is BM25F: inverted index, field boosts, ranked hits, highlighted snippets. AND by default, with OR, "phrases", and field prefixes. It is not a boolean dump and not an LLM.</li>
+        <li>BM25F means: rare words count more, a word in a title or claim beats the same word buried in a long body, and results are ordered by score instead of dump order. You do not need to tune it. Type like a person; use <code>claim:</code> or quotes when you already know the field or the exact phrase.</li>
         <li>Private material can be kept off professional export.</li>
         <li>Books, tags, and artifacts are derived from your records. They are not a second database and not an LLM.</li>
       </ol>

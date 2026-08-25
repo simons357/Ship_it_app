@@ -24,6 +24,20 @@ Web search for “search engine component for Chat Vault” and `search_engine.p
 
 If the zip, Replit project, or Claude export is found: hash it, store read-only, diff it against `js/search.mjs`. Do not overwrite this engine blindly. Do not import `stripe_helper`.
 
+## What BM25F does (plain language)
+
+You do not have to learn information-retrieval jargon to use this.
+
+- **Index:** every record is broken into words once, like a book index. Search does not reread the whole vault from scratch as a blob dump.
+- **Rare words win:** `navier-stokes` matters more than `the` or `note`.
+- **Field boosts:** the same word in a **title** or a **claim** outranks the same word mentioned once in a long body. That is the “F” in BM25F.
+- **Length fair play:** a short title is not punished for being short; a long paste is not rewarded just for repeating a word.
+- **Ranked list:** the best match is first. The old engine was a yes/no filter in store order. That is what “plain jane” felt like.
+- **Phrases and fields:** `"finite-time blow-up"` must appear as that phrase. `gap:blow-up` only looks in open gaps. `ai:Claude` is provenance, not a vibe.
+- **Ledger status is a label, not a score.** An OPEN gap can outrank a PROVED claim if the words match better. That is deliberate.
+
+You type. The engine ranks. If a result looks wrong, that is a bug in the ranker — tell me the query and the record that should have won.
+
 ## What ships now
 
 `js/search.mjs` — `chatvault-bm25f-0.1.0`
