@@ -1270,5 +1270,111 @@ class TestMacDownloadsDraftOriginalIsMay18ImpliesAlias(unittest.TestCase):
         )
 
 
+class TestT2ShellFluxGronwallWasNotReceived(unittest.TestCase):
+    """iCloud zenodo-pdfs 03_t2_shell_flux_gronwall.tex did not arrive.
+
+    Do not invent Gronwall. T2 stays not closed. Not June FIXED 7de9444d.
+    Do not overwrite DA-VC-01, 675001cd1 DRAFT, Frankie, or Ring CF.
+    """
+
+    NAME = "03_t2_shell_flux_gronwall.tex"
+    RECEIPT = NS_SND / "03_t2_shell_flux_gronwall.MISSING.md"
+    ICLOUD = Path(
+        "/Users/jonathansimons/Library/Mobile Documents/"
+        "com~apple~CloudDocs/Downloads/zenodo-pdfs/03_t2_shell_flux_gronwall.tex"
+    )
+    CHALLENGE = (
+        ROOT
+        / "docs"
+        / "domain-architect"
+        / "DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md"
+    )
+    RING_FINAL = ROOT / "docs" / "papers" / "ring" / "RingLemma_Final.tex"
+
+    def test_tex_bytes_are_absent_and_receipt_locks_the_hunt(self):
+        invented = [
+            NS_SND / self.NAME,
+            NS_SND / "zenodo-pdfs" / self.NAME,
+            ROOT / "docs" / "archive" / self.NAME,
+            ROOT / "domain_architect" / self.NAME,
+        ]
+        for path in invented:
+            self.assertFalse(path.is_file(), f"do not invent {path}")
+        named = list((ROOT / "docs").rglob(self.NAME))
+        self.assertEqual(named, [])
+        self.assertFalse(self.ICLOUD.is_file())
+        self.assertTrue(self.RECEIPT.is_file(), self.RECEIPT)
+        text = self.RECEIPT.read_text(encoding="utf-8")
+        self.assertNotIn("\\title{", text)
+        self.assertNotIn("\\begin{document}", text)
+        self.assertIn("not received", text.lower())
+        self.assertIn("Do **not** invent Gronwall", text)
+        self.assertIn("**Not closed.**", text)
+        self.assertIn("unknown", text.lower())
+        self.assertIn("HTTP **302**", text)
+        self.assertIn("**403**", text)
+        self.assertIn("0 bytes", text)
+        self.assertIn("69b28657b0df374441f0302e", text)
+        self.assertIn("zenodo-pdfs/03_t2_shell_flux_gronwall.tex", text)
+        self.assertIn("7de9444d", text)
+        self.assertIn("ddba329536ee", text)
+        self.assertIn("withdrawn", text.lower())
+        self.assertIn("7–8", text)
+        self.assertIn("675001cd1", text)
+        self.assertIn("SPECTRAL_UNIFICATION_PAPER", text)
+        self.assertIn("Ring CF", text)
+        self.assertIn("DA-VC-01", text)
+        self.assertNotIn("DA-VC-01 PASS", text)
+
+    def test_missing_file_is_not_june_fixed_pdf_7de9444d(self):
+        june = PDF.read_bytes()
+        digest = hashlib.sha256(june).hexdigest()
+        self.assertEqual(digest, PDF_SHA256)
+        self.assertEqual(
+            digest,
+            "7de9444d18054fc8f49a52c3fd7ed2f086a7c7d7d6d1e95bad350c378535c41b",
+        )
+        self.assertEqual(len(june), 309576)
+        receipt = self.RECEIPT.read_bytes()
+        self.assertNotEqual(hashlib.sha256(receipt).hexdigest(), PDF_SHA256)
+        self.assertNotEqual(receipt, june)
+        self.assertFalse((NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file())
+        self.assertNotEqual(self.RECEIPT.name, "Paper2_NS_Regularity_SND_FIXED.pdf")
+
+    def test_t2_stays_not_closed_and_da_vc_01_untouched(self):
+        faces = FACES.read_text(encoding="utf-8")
+        readme = README.read_text(encoding="utf-8")
+        lookup = (
+            ROOT / "docs" / "packets" / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        chain = CHAIN.read_text(encoding="utf-8")
+        august = PAPER.read_text(encoding="utf-8")
+        challenge = self.CHALLENGE.read_text(encoding="utf-8")
+        for text in (faces, readme, lookup):
+            self.assertIn(self.NAME, text)
+            self.assertIn("not received", text.lower())
+            self.assertIn("03_t2_shell_flux_gronwall.MISSING.md", text)
+        self.assertIn("**Not closed.**", faces)
+        self.assertIn("T2 stays **not closed**", faces)
+        self.assertIn("T2 stays **not closed**", readme)
+        self.assertIn("not closed", lookup.lower())
+        self.assertIn("T2 Gronwall **withdrawn**", faces)
+        self.assertIn("That label was incorrect and is withdrawn", august)
+        self.assertTrue(
+            "7–8" in faces and "7–8" in chain,
+            "FACES and the unaugmented chain must still name leftover 7–8",
+        )
+        self.assertIn("| 7 |", chain)
+        self.assertIn("OPEN", chain)
+        self.assertIn("NOT CLAIMED", chain)
+        self.assertIn("675001cd1_Simons_NS_Paper2_DRAFT.tex", faces)
+        self.assertIn("SPECTRAL_UNIFICATION_PAPER.tex", faces)
+        self.assertTrue(self.RING_FINAL.is_file(), self.RING_FINAL)
+        self.assertIn("**FAIL**", challenge)
+        self.assertNotIn("DA-VC-01 PASS", faces)
+        self.assertNotIn("DA-VC-01 PASS", readme)
+        self.assertNotIn("DA-VC-01 PASS", challenge)
+
+
 if __name__ == "__main__":
     raise SystemExit(unittest.main())
