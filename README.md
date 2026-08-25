@@ -18,23 +18,26 @@ paper is a **separate book** in [`docs/papers/swirl/`](docs/papers/swirl/README.
 
 Specification: [`docs/DOMAIN-ARCHITECT.md`](docs/DOMAIN-ARCHITECT.md)
 
-## Desktop app
+## Open the app
+
+This is a local desktop app. It is not a public website.
+
+**On a Mac:** double-click `Open Domain Architect.command` in this folder.
+
+Or in Terminal, from this folder:
 
 ```bash
-pip install -r requirements.txt
-python -m domain_architect app
+python3 -m domain_architect app
 ```
 
-That opens a local window at `http://127.0.0.1:8765/`. The **Mark** tab
-hosts Lambda Lab (the vector construction program) plus the black-and-gold
-and all-silver 3D lockups. Put the app on your Desktop:
+That opens `http://127.0.0.1:8765/` on *your* computer. The **Mark** tab
+hosts Lambda Lab plus the black-and-gold and all-silver 3D lockups.
+
+To put a launcher on your Desktop after you have opened it once:
 
 ```bash
-python -m domain_architect app --install-shortcut
+python3 -m domain_architect app --install-shortcut
 ```
-
-On macOS this writes `Domain Architect.command`. On Linux it writes
-`Domain Architect.desktop`. Double-click to launch.
 
 ## Command line
 
@@ -56,5 +59,5 @@ the provenance requirement.
 ## Tests
 
 ```bash
-python -m unittest tests.test_sfe_hb_dump tests.test_domain_architect_v1 tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_historical_archive tests.test_brand_mark
+python -m unittest tests.test_sfe_hb_dump tests.test_domain_architect_v1 tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_historical_archive tests.test_brand_mark tests.test_desktop_app
 ```
