@@ -12,6 +12,8 @@ from domain_architect.available_turbulence import (
     cycle_available_turbulence,
     is_desired_intensity_setpoint,
     maybe_available_stack,
+    riblet_spacing_m,
+    shear_velocity,
     wants_available_hardware,
 )
 from domain_architect.catalog import default_catalog
@@ -33,6 +35,16 @@ class TestSloganStillRefuses(unittest.TestCase):
         )
         self.assertEqual(cand.name, "inverse_design[refused]")
         self.assertFalse(any("control u" in c for c in cand.components))
+
+
+class TestRibletWallUnits(unittest.TestCase):
+    def test_spacing_scales_as_nu_over_utau(self):
+        u_tau = shear_velocity(10.0, 0.002)
+        self.assertAlmostEqual(u_tau, 10.0 * (0.001 ** 0.5), places=9)
+        s = riblet_spacing_m(s_plus=16.0, nu=1.2e-6, u_tau=u_tau)
+        self.assertAlmostEqual(s, 16.0 * 1.2e-6 / u_tau, places=12)
+        self.assertGreater(s, 4e-5)
+        self.assertLess(s, 8e-5)
 
 
 class TestCatalogHasSuction(unittest.TestCase):
@@ -67,16 +79,34 @@ class TestAvailableTurbulenceStack(unittest.TestCase):
         self.assertFalse(resonant["field_ready"])
         self.assertIsNone(resonant["literature_cf_reduction"])
         riblet = next(m for m in payload["stack"] if m["id"] == "sawtooth-riblets")
-        self.assertEqual(riblet["geometry"]["s_plus"], [12, 16])
-        self.assertEqual(riblet["geometry"]["h_plus"], [8, 12])
-        self.assertEqual(payload["operating_regime"]["mach"], [0.75, 0.85])
-        self.assertEqual(payload["operating_regime"]["altitude_ft"], [30000, 40000])
+        self.assertEqual(riblet["geometry"]["s_plus"], [15, 17])
+        self.assertAlmostEqual(riblet["geometry"]["h_over_s"], 0.5)
+        self.assertEqual(payload["operating_regime"]["primary"], "large cargo / container ship hull")
+        self.assertEqual(payload["operating_regime"]["aircraft_cruise"]["mach"], [0.75, 0.85])
+        self.assertEqual(
+            payload["operating_regime"]["aircraft_cruise"]["altitude_ft"],
+            [30000, 40000],
+        )
         self.assertEqual(payload["operating_regime"]["re_tau_panel"], [1000, 5000])
-        self.assertIn("submarine hull", payload["operating_regime"]["secondary"])
+        self.assertIn("aircraft cruise", payload["operating_regime"]["secondary"])
+        ship = payload["ship_package"]
+        self.assertEqual(ship["primary_market"], "large cargo / container ships")
+        self.assertEqual(ship["realized_or_desired"], "desired")
+        self.assertTrue(ship["cf_reduction_target"]["contains_8pct"])
+        self.assertFalse(ship["cf_reduction_target"]["contains_12pct"])
+        self.assertTrue(ship["da_does_not_file"])
+        self.assertEqual(ship["validation_gate"], "empirical[unverified]")
+        hull_ids = [row["id"] for row in ship["not_selected_for_hull"]]
+        self.assertIn("discrete-suction", hull_ids)
+        self.assertIn("locally-resonant-film", hull_ids)
+        s_um = ship["stations"][0]["s_um_band"]
+        self.assertGreater(s_um[0], 30.0)
+        self.assertLess(s_um[1], 120.0)
         overlay = payload["licensing_overlay"]
         self.assertTrue(overlay["da_does_not_file"])
         self.assertEqual(overlay["claimed_first_cycle_lab"]["da_status"], "refused")
         kept = {p["id"]: p["kept"] for p in overlay["pieces"]}
+        self.assertTrue(kept["ship-regime"])
         self.assertTrue(kept["cruise-regime"])
         self.assertTrue(kept["riblet-geometry"])
         self.assertFalse(kept["resonant-film"])
@@ -103,7 +133,8 @@ class TestAvailableTurbulenceStack(unittest.TestCase):
         self.assertLess(payload["analog"]["relative_reduction"], 0.18)
         self.assertEqual(payload["candidate"]["name"], "available_turbulence_stack")
         board = payload["board"]["text"]
-        self.assertIn("AVAILABLE-TECH TURBULENCE STACK", board)
+        self.assertIn("SHIP PRODUCT (MAERSK-CLASS)", board)
+        self.assertIn("contains_12%=False", board)
         self.assertIn("SELECTED", board)
         self.assertIn("sawtooth-riblets", board)
         self.assertIn("discrete-suction", board)
@@ -171,6 +202,8 @@ class TestAvailableTurbulenceStack(unittest.TestCase):
         self.assertIn("envelope_contains_15%=True", text)
         self.assertIn("literature ranges are not added", text.lower())
         self.assertIn("AVAILABLE-TECH TURBULENCE STACK", text)
+        self.assertIn("SHIP PRODUCT (MAERSK-CLASS)", text)
+        self.assertIn("contains_12%=False", text)
         self.assertIn("GROK HYBRID SKETCH", text)
         self.assertIn("refused", text)
         self.assertIn("first-cycle-9-14-lab", text)

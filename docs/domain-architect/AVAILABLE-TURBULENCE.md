@@ -38,10 +38,13 @@ Literature highs are **not added**. The selected-high envelope (suction
 8–12% sits inside that envelope; it is a licensing target, not a tank
 number. That is an envelope check, not a proof and not a flight number.
 
-Application context (not CFD): aircraft cruise boundary layer, Mach
-about 0.75–0.85, altitude about 30 000–40 000 ft, panel \(Re_\tau\)
-about 1 000–5 000. Secondary notes only: ship hull, submarine hull,
-internal duct.
+Application context (not CFD): **primary** large cargo / container hull
+(Maersk-class), 12–22 kn, \(Re_L\sim 10^9\). Aircraft cruise is secondary.
+
+Ship product spec: [`SHIP-RIBLET-PACKAGE.md`](SHIP-RIBLET-PACKAGE.md).
+Durable trapezoid riblets **contain 8%** Cf (Bechert 8.2%) and **do not
+contain 12%**. Resonant film stays unselected. Hull suction is not the
+Maersk film product.
 
 ## Grok hybrid overlay vs what DA kept
 

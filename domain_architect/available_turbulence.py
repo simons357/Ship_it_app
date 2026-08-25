@@ -55,6 +55,23 @@ _HARDWARE_CONSTRAINT_MARKERS = (
     "discrete-suction",
 )
 
+SEAWATER_NU_15C = 1.2e-6  # m²/s, order of magnitude for 15 °C seawater
+
+
+def shear_velocity(U: float, cf: float) -> float:
+    """u_τ = U √(C_f / 2). First-order station estimate, not a CFD profile."""
+    if U <= 0.0 or cf <= 0.0:
+        raise ValueError("U and cf must be positive")
+    return float(U) * (float(cf) / 2.0) ** 0.5
+
+
+def riblet_spacing_m(*, s_plus: float, nu: float, u_tau: float) -> float:
+    """s = s+ ν / u_τ. Wall units, not a manufactured tolerance."""
+    if s_plus <= 0.0 or nu <= 0.0 or u_tau <= 0.0:
+        raise ValueError("s_plus, nu, and u_tau must be positive")
+    return float(s_plus) * float(nu) / float(u_tau)
+
+
 # Hardware catalog id → live DA mechanism id. Unselected rows may still
 # point at a catalog entry so the refuse path is explicit.
 HARDWARE_TO_CATALOG = {
@@ -73,17 +90,23 @@ def available_mechanisms() -> tuple[dict[str, Any], ...]:
             "name": "sawtooth riblets",
             "available_now": True,
             "how": (
-                "embossed or molded film; triangular or trapezoidal; "
-                "spacing s+ about 12–16; height h+ about 8–12"
+                "embossed or molded film in a fouling-release carrier; "
+                "trapezoidal preferred; s+ about 15–17; h/s = 0.5"
             ),
             "role": "constraint",
-            "geometry": {"s_plus": [12, 16], "h_plus": [8, 12], "section": "triangular-or-trapezoidal"},
+            "geometry": {
+                "s_plus": [15, 17],
+                "h_over_s": 0.5,
+                "h_plus": [7.5, 8.5],
+                "section": "trapezoidal-durable",
+            },
             "literature_cf_reduction": {"low": 0.04, "high": 0.10},
             "field_ready": True,
             "selected": True,
             "notes": (
-                "Bechert-class riblets. Typical lab skin-friction cut 5–10%. "
-                "Flight and marine installs usually sit in the lower half."
+                "Bechert 1997 oil-channel: trapezoid about 8.2% at s+≈17, "
+                "h/s=0.5; thin blades 9.9% are not field-durable. "
+                "Marine fouling-release riblets: about 6% in Couette (Bressy 2018)."
             ),
         },
         {
@@ -304,6 +327,21 @@ def _stack_board(payload: dict[str, Any]) -> dict[str, Any]:
         if row.get("selected"):
             continue
         lines.append(f"  {row['id']}  {row.get('notes') or 'not selected'}")
+    lines.append("SHIP PRODUCT (MAERSK-CLASS)")
+    ship = payload.get("ship_package") or {}
+    cf = ship.get("cf_reduction_target") or {}
+    lines.append(
+        "  desired Cf {lo:.0f}–{hi:.0f}%  durable lab ceiling {lab:.1f}%  "
+        "contains_8%={c8}  contains_12%={c12}".format(
+            lo=100.0 * float(cf.get("low") or 0.0),
+            hi=100.0 * float(cf.get("high") or 0.0),
+            lab=100.0 * float(cf.get("durable_lab_high") or 0.0),
+            c8=cf.get("contains_8pct"),
+            c12=cf.get("contains_12pct"),
+        )
+    )
+    lines.append("  selected: trapezoidal riblets in fouling-release carrier")
+    lines.append("  not selected: hull suction, resonant film, thin blades")
     lines.append("GROK HYBRID SKETCH")
     for piece in overlay.get("pieces") or []:
         mark = "kept" if piece.get("kept") else "refused"
@@ -331,7 +369,7 @@ def _licensing_overlay(envelope: dict[str, Any]) -> dict[str, Any]:
         "name": "hybrid riblet + locally resonant film",
         "source": "external licensing sketch, not a Domain Architect CFD result",
         "da_verdict": (
-            "partial — riblet geometry and cruise regime kept; "
+            "partial — riblet geometry kept; ship hull is now the primary regime; "
             "resonant film not selected; 9–14% lab not awarded; "
             "patent filing is attorney-owned"
         ),
@@ -345,16 +383,22 @@ def _licensing_overlay(envelope: dict[str, Any]) -> dict[str, Any]:
         "inside_selected_envelope": envelope["selected_high"] >= commercial_high - 1e-12,
         "pieces": [
             {
+                "id": "ship-regime",
+                "kept": True,
+                "role": "constraint",
+                "note": "primary market: large cargo / container hull; not a towing-tank result",
+            },
+            {
                 "id": "cruise-regime",
                 "kept": True,
                 "role": "constraint",
-                "note": "application context only; not LES",
+                "note": "secondary application context only; not LES",
             },
             {
                 "id": "riblet-geometry",
                 "kept": True,
                 "role": "constraint",
-                "note": "s+ 12–16, h+ 8–12, embossed/molded film",
+                "note": "s+ 15–17, h/s = 0.5, trapezoidal, embossed fouling-release film",
             },
             {
                 "id": "resonant-film",
@@ -393,6 +437,186 @@ def _licensing_overlay(envelope: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _ship_stations() -> list[dict[str, Any]]:
+    """First-order s from s+ ν / u_τ at two cargo speeds. Not a hull map."""
+    stations = (
+        {"id": "slow-steamer", "speed_kn": 15.0, "U": 7.72, "cf": 0.002},
+        {"id": "container-cruise", "speed_kn": 22.0, "U": 11.32, "cf": 0.002},
+    )
+    out = []
+    for row in stations:
+        u_tau = shear_velocity(row["U"], row["cf"])
+        s16 = riblet_spacing_m(s_plus=16.0, nu=SEAWATER_NU_15C, u_tau=u_tau)
+        s17 = riblet_spacing_m(s_plus=17.0, nu=SEAWATER_NU_15C, u_tau=u_tau)
+        h = 0.5 * s16
+        out.append(
+            {
+                **row,
+                "u_tau": u_tau,
+                "s_m_at_splus_16": s16,
+                "s_m_at_splus_17": s17,
+                "h_m_at_hs_0_5": h,
+                "s_um_band": [round(1e6 * s16, 1), round(1e6 * s17, 1)],
+            }
+        )
+    return out
+
+
+def _ship_package() -> dict[str, Any]:
+    """Maersk-class hull product spec. Resonant film stays unselected."""
+    stations = _ship_stations()
+    durable_lab_high = 0.082  # Bechert trapezoid, not blades
+    marine_couette = 0.06  # Bressy 2018 Intersleek-class riblets
+    cf_lo, cf_hi = 0.08, 0.12
+    fuel_lo, fuel_hi = 0.04, 0.08
+    return {
+        "name": "ship-hull riblet film",
+        "primary_market": "large cargo / container ships",
+        "customer": "Maersk-class liner and similar",
+        "realized_or_desired": "desired",
+        "cf_reduction_target": {
+            "low": cf_lo,
+            "high": cf_hi,
+            "plug_in": "desired",
+            "durable_lab_high": durable_lab_high,
+            "marine_couette_high": marine_couette,
+            "contains_8pct": durable_lab_high >= cf_lo - 1e-12,
+            "contains_12pct": durable_lab_high >= cf_hi - 1e-12,
+            "notes": (
+                "8% sits at the Bechert trapezoid lab ceiling. "
+                "12% is not contained by established marine-durable riblets. "
+                "In-service net is usually lower because of fouling."
+            ),
+        },
+        "fuel_translation": {
+            "low": fuel_lo,
+            "high": fuel_hi,
+            "basis": (
+                "frictional resistance is about 70–90% of calm-water RT for "
+                "low-speed bulkers/tankers and about 50–65% for faster "
+                "container ships (Wärtsilä / standard split). "
+                "4–8% fuel is consistent with 6–10% Cf only if that Cf is "
+                "actually achieved on a clean hull. Not a DA measurement."
+            ),
+            "da_status": "hypothesis",
+        },
+        "product_stack": [
+            {
+                "id": "trapezoidal-riblets",
+                "selected": True,
+                "role": "constraint",
+                "geometry": {
+                    "s_plus": [15, 17],
+                    "h_over_s": 0.5,
+                    "section": "trapezoidal",
+                    "physical_s_um": "about 50–90 µm at cargo u_τ",
+                },
+                "carrier": "fouling-release fluoropolymer or silicone, embossed",
+                "literature": "Bechert 1997 JFM 338:59; Bressy et al. 2018 Biofouling",
+            }
+        ],
+        "not_selected_for_hull": [
+            {
+                "id": "discrete-suction",
+                "reason": "HLFC hardware; pumps and seawater fouling are not a Maersk film product",
+            },
+            {
+                "id": "locally-resonant-film",
+                "reason": (
+                    "no established skin-friction envelope at ship Re. "
+                    "Kramer-class compliant walls have mixed replication. "
+                    "Not an archived coating dump."
+                ),
+            },
+            {
+                "id": "thin-blade-riblets",
+                "reason": "Bechert 9.9% is real in oil channel and not field-durable",
+            },
+        ],
+        "stations": stations,
+        "coating_approaches": [
+            {
+                "id": "embossed-fouling-release",
+                "established": True,
+                "what": (
+                    "emboss trapezoidal riblets into a fouling-release system "
+                    "already used on commercial hulls"
+                ),
+                "evidence": "Bressy 2018: up to 6% vs smooth in Taylor–Couette; fouling still the limiter",
+            },
+            {
+                "id": "molded-film",
+                "established": True,
+                "what": "pre-molded riblet film applied as sheets, aligned with local streamlines",
+                "evidence": "3M-class riblet films; yaw and application alignment are known failure modes",
+            },
+            {
+                "id": "phononic-overlay",
+                "established": False,
+                "what": "50–300 µm locally resonant polymer over or co-molded with riblets",
+                "evidence": "not selected; no DA Cf envelope; must be physically tested before any claim",
+            },
+        ],
+        "validation_plan": [
+            "wall-resolved LES of trapezoid s+=15–17 at Re_τ about 1000–2000 (not Re_L 1e9)",
+            "Taylor–Couette or oil-film Cf on 10–30 cm coupons vs smooth FR control",
+            "towing-tank panels at the highest reachable Re, same control",
+            "static plus dynamic seawater fouling; confirm grooves do not fill",
+            "abrasion, UV, temperature, and dry-dock handling coupons",
+            "ISO 19030 in-service comparison is later; it is not this first cycle",
+        ],
+        "durability": [
+            "survive dry-dock blasting/handling and fender abrasion",
+            "keep s and h after biofilm and slime; fouling-release is mandatory",
+            "no biocide requirement beyond the carrier's existing approval path",
+            "target life aligned with a coating interval, not a DA number",
+        ],
+        "must_physically_test": [
+            "clean-hull Cf vs smooth FR control at the same Re_τ band",
+            "fouled-hull Cf; static biofilm is expected to hurt riblets",
+            "yaw / cross-flow; misaligned riblets can increase Cf",
+            "full-scale application tolerance on a curved hull",
+            "any phononic overlay, separately, against a riblet-only control",
+        ],
+        "risks": [
+            "12% net Cf at ship Re is outside the durable riblet literature",
+            "fouling can erase a lab Cf gain (Bressy: more biofilm at rest)",
+            "tunnel Re does not equal ship Re_L ~ 1e9",
+            "yawed flow on a real hull",
+            "phononic / locally resonant layers are not an established Cf mechanism at ship Re",
+        ],
+        "requested_roadmap": {
+            "horizon": "6–12 months",
+            "da_status": "requested plan, not a Domain Architect schedule certificate",
+            "gates": [
+                "geometry freeze: trapezoid s+=15–17, h/s=0.5, two physical s from cargo u_τ",
+                "coupon manufacture in an existing FR system",
+                "clean Cf (Couette or tunnel) vs smooth FR",
+                "fouling exposure and re-test",
+                "one towing-tank campaign",
+                "data room for a coatings partner; no ISO 19030 claim yet",
+            ],
+        },
+        "patent_ideas_attorney_owned": [
+            "method of embossing trapezoidal s+=15–17 riblets into a specified fouling-release chemistry",
+            "shipyard application process that preserves local streamline alignment",
+            "do not claim an unproven phononic burst-frequency mechanism as the invention",
+        ],
+        "da_does_not_file": True,
+        "maersk_note": (
+            "Domain Architect can offer a fouling-release trapezoidal riblet "
+            "film sized in wall units to cargo-ship shear, aimed at a desired "
+            "6–8% clean-hull Cf cut (lab ceiling about 8%). An 8–12% net Cf "
+            "target at full scale is a commercial stretch, not a measured result. "
+            "A resonant overlay is a separate experiment, not part of the "
+            "field-ready stack. Next evidence: coupon Cf and fouling, then a "
+            "partner towing-tank. DA does not file patents."
+        ),
+        "kind": CorrespondenceKind.ANALOGY.value,
+        "validation_gate": "empirical[unverified]",
+    }
+
+
 def available_turbulence_system() -> dict[str, Any]:
     """Assemble the stack and attach the 15% analog check."""
     analog = turbulence_intensity_lab()
@@ -415,7 +639,8 @@ def available_turbulence_system() -> dict[str, Any]:
         ),
         "Default stack: sawtooth riblets (passive) plus discrete suction (active).",
         "Literature ranges are not added. DA does not certify a tank result.",
-        "Commercial 8–12% is a licensing band inside the selected envelope, not a hardware certificate.",
+        "Commercial 8–12% is a licensing band. Durable trapezoid riblets contain 8%, not 12%.",
+        "Ship-primary product is a fouling-release riblet film. Suction and resonant film are not the hull stack.",
         "Hybrid resonant-film overlay is catalogued and not selected. 9–14% lab is refused.",
         "Patent filing is attorney-owned. DA does not file claims.",
         "The computational gate is the lumped analog, not the hardware.",
@@ -455,12 +680,17 @@ def available_turbulence_system() -> dict[str, Any]:
         },
         "target_cut": BELOW_INDUSTRY_FRACTION,
         "operating_regime": {
-            "primary": "aircraft cruise boundary layer",
-            "mach": [0.75, 0.85],
-            "altitude_ft": [30000, 40000],
+            "primary": "large cargo / container ship hull",
+            "customer": "Maersk-class liner and similar",
+            "speed_kn": [12, 22],
+            "re_L_full_scale": "O(1e9)",
             "re_tau_panel": [1000, 5000],
-            "secondary": ["ship hull", "submarine hull", "internal duct"],
-            "notes": "Application context. DA did not run LES or a wind tunnel.",
+            "secondary": ["aircraft cruise", "submarine hull", "internal duct"],
+            "aircraft_cruise": {
+                "mach": [0.75, 0.85],
+                "altitude_ft": [30000, 40000],
+            },
+            "notes": "Application context. DA did not run LES or a towing tank.",
         },
         "commercial_band": {
             "low": 0.08,
@@ -473,6 +703,7 @@ def available_turbulence_system() -> dict[str, Any]:
             ),
         },
         "licensing_overlay": _licensing_overlay(envelope),
+        "ship_package": _ship_package(),
         "empirical_next": [
             "wall-resolved LES of the selected riblet geometry",
             "down-select two or three geometries",

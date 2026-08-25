@@ -9,7 +9,8 @@
 **Localized reparation:** [`LOCALIZED-REPAIR.md`](LOCALIZED-REPAIR.md) — `excise k` on an n-step chain; default dataset is the classical unaugmented 9-step chain; leftover cut is 7–8; graft stays a hypothesis  
 **Honest OPEN board:** [`OPEN-BOARD.md`](OPEN-BOARD.md) — withdrawn / rejected / missing taken off the OPEN chorus  
 **Intensity vs control:** [`TURBULENCE-INTENSITY.md`](TURBULENCE-INTENSITY.md) — lumped \(x\to x^\star\) against a no-actuation arm; not 3D NS  
-**Available-tech stack:** [`AVAILABLE-TURBULENCE.md`](AVAILABLE-TURBULENCE.md) — riblets + discrete suction; 15% is the **desired** state; not a tank certificate
+**Available-tech stack:** [`AVAILABLE-TURBULENCE.md`](AVAILABLE-TURBULENCE.md) — riblets + discrete suction; 15% is the **desired** analog state  
+**Ship-hull package:** [`SHIP-RIBLET-PACKAGE.md`](SHIP-RIBLET-PACKAGE.md) — Maersk-class fouling-release riblets; 8–12% Cf is desired; 12% is outside the durable literature
 
 Domain Architect analyzes, translates and synthesizes systems by the
 functional roles their components perform.
