@@ -158,6 +158,12 @@ $("cyAvailable").addEventListener("click", async () => {
   show($("cyOut"), await api("/api/cycle", { name: "available-turbulence" }));
 });
 
+$("cyProgram").addEventListener("click", async () => {
+  $("cyName").value = "turbulence-reduction";
+  $("cyOut").textContent = "Opening turbulence-reduction program (4 apps)…";
+  show($("cyOut"), await api("/api/cycle", { name: "turbulence-reduction" }));
+});
+
 $("cyExciseStep").addEventListener("click", async () => {
   const raw = ($("cyExciseK").value || "").trim();
   const k = Number.parseInt(raw, 10);

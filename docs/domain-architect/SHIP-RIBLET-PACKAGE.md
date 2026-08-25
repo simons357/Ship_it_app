@@ -1,6 +1,7 @@
 # Ship-hull riblet package (Maersk-class)
 
 **Status:** Domain Architect product spec, August 2026  
+**Program:** [`docs/projects/turbulence-reduction/`](../projects/turbulence-reduction/README.md) · application **ships** (ACTIVE)  
 **Cycle:** `available-turbulence` → `ship_package`  
 **Not 3D Navier–Stokes. Not a tank certificate. Clay is NOT CLAIMED.**  
 **DA does not file patents.**
@@ -99,6 +100,7 @@ Domain Architect can offer a fouling-release trapezoidal riblet film sized in wa
 
 ```
 python -m domain_architect cycle available-turbulence
+python -m domain_architect cycle turbulence-reduction
 ```
 
-Payload key: `prediction.ship_package`. Sibling: [`AVAILABLE-TURBULENCE.md`](AVAILABLE-TURBULENCE.md).
+Payload key: `prediction.ship_package`. Program parent: [`docs/projects/turbulence-reduction/`](../projects/turbulence-reduction/README.md). Sibling: [`AVAILABLE-TURBULENCE.md`](AVAILABLE-TURBULENCE.md).
