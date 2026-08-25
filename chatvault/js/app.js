@@ -640,6 +640,7 @@ function renderGuide() {
       <p>Yellow highlights are the words that scored. A teal field label (claim, gap, title) tells you <em>where</em> they hit. OPEN / CONJECTURAL on a card is the ledger, not a popularity score — an open gap can still win the ranking.</p>
       <p class="meta">The box ranks. Rare words count more. A hit in a title or claim beats the same word buried in a long paste. A near-miss spelling or a plural still counts. You never have to tune it. If a wrong card comes first, that is my bug: send the query and the record that should have won.</p>
     </div>
+    <p class="meta">A React-CDN “ChatVault 2” HTML paste was recovered as historical source under docs/chatvault-audit/. It is not this product. Projects there are Books here.</p>
   `;
 }
 

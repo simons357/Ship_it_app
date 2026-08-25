@@ -10,4 +10,4 @@ Lines whose path starts with `/tmp/chatvault-probe/bundles/` are **not in git**.
 
 Re-fetch those URLs and compare SHA-256 before any legal, product-repo, or App Store action. If the hash moved, this audit’s freeze is stale.
 
-HTML snapshots under `evidence/html-snapshots/` are committed copies of the preview documents (same hashes as the `/tmp/...html` lines).
+HTML snapshots under `evidence/html-snapshots/` include committed copies of the Base44 preview documents (same hashes as the `/tmp/...html` lines) plus later recovered FEATURE-SOURCE HTML (`CHATVAULT_V2_REACT_CDN.html` and siblings). Those recovered files are historical, not the live product.

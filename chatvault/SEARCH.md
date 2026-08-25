@@ -10,7 +10,7 @@ lost component and what now ships.
 | This workshop (`Ship_it_app`) | No `search_engine.py`. Mentions only in `docs/chatvault-audit/` as a **missing** Replit zip. |
 | `simons357` GitHub | `Ship_it_app`, `ship-it-code`, `kyrana-oracle`. Zero ChatVault source. GitHub code search for `search_engine` under the user: empty. |
 | Named archive | `356582767_chatvault_source2.zip` with `app.py`, `models.py`, **`search_engine.py`**, `stripe_helper.py`, `replit_auth.py`. Labelled FEATURE-SOURCE. **Not in this environment.** Stripe stays off. |
-| Claude-origin / HTML V2–V7 / `/app/chatvault` | Still missing. Historical baseline if recovered. |
+| Claude-origin / HTML V2–V7 / `/app/chatvault` | **Partial recover 25 Aug 2026:** React-CDN “ChatVault 2” paste archived as FEATURE-SOURCE / HISTORICAL HTML (`docs/chatvault-audit/evidence/html-snapshots/CHATVAULT_V2_REACT_CDN.html`). Substring `.includes()` search + browser Anthropic `fetch`. **Not** the live product. Other V-series HTML still missing. |
 | Jonathan paste “Evernote of AI Conversations” HTML (archived 25 Aug 2026) | Recovered: `docs/chatvault-audit/evidence/html-snapshots/CHATVAULT_EVERNOTE.html`. Assistant is canned `generateAssistantResponse` if/else + `setTimeout`. Search is `.includes()` on title/preview/tags. Not an engine. |
 | Live Replit app `https://chat-vault-winchesterane.replit.app/` (probed 25 Aug 2026) | **Up.** Title “Chat Vault - The Smart Repository…”. Author **Prime Field Technologies**. Last-Modified **19 Dec 2025**. SPA `/assets/index-B1k4Rveo.js` (~1.6MB). Client copy: full-text search + OpenAI summaries/tags. **No BM25 / Whoosh / MiniSearch / harmonic string in the browser bundle.** Search implementation is not in this JS; likely server-side or a simple substring. |
 | Replit editor `https://replit.com/@winchesterane/Chat-Vault-2` | **`Repl not found` (404).** Profile `@winchesterane` redirects to Replit login. Not a public repo. |
@@ -77,3 +77,26 @@ Evernote-style Semantic and Base44’s LLM toggle are (7) without (1)–(5). Tha
 - Recovered Replit `search_engine.py` (still lost)
 
 A Semantic toggle that buries claims is a regression. The dense layer plugs into the same RRF when it earns its place.
+
+## Recovered “ChatVault 2” HTML (25 Aug 2026)
+
+Jonathan pasted a single-file React-in-HTML titled **ChatVault - AI Conversation Organizer** (CDN Tailwind + React 18 UMD + Babel + Lucide, purple gradient, `localStorage` `chatVaultChats` / `chatVaultProjects`).
+
+That file is **FEATURE-SOURCE / HISTORICAL HTML**, not the live product. Snapshots and triage:
+
+- `docs/chatvault-audit/evidence/html-snapshots/CHATVAULT_V2_REACT_CDN.html`
+- `docs/chatvault-audit/CHATVAULT2-TRIAGE.md`
+
+Its search box is `useMemo` + `.includes()` on summary/content/tags/keywords — a boolean filter, not BM25F. Its ingest `fetch("https://api.anthropic.com/v1/messages")` from the browser (no API key in headers) is a defect and is forbidden to ship. A companion “PRODUCTION-READY MVP REVIEW” (DOMPurify, Stripe, Product Hunt, 85% ready, $100K–$1M Year 1) is untrusted marketing about a different/imagined build.
+
+Do not replace this hybrid engine or the glass look with that prototype. Stripe stays off. Projects in that paste are already Books here.
+
+## Prototype dump 3 — Evernote HTML
+
+Archived 25 August 2026 at `prototypes/chatvault-evernote-prototype.html` (notes: `prototypes/EVERNOTE.md`). Third paste. Distinct from ChatVault 2, Base44 glass, and Replit. Not the live product.
+
+Search is `title` / `preview` / `tags` `.includes()` plus a platform select and All vs Starred. No inverted index. The floating 🤖 assistant is `setTimeout(1000)` plus keyword if/else. Its COPY claims Advanced search, `tag:work platform:chatgpt`, folders, archive, PDF export, Cmd+F, and right-click — none of that is in the HTML.
+
+Do not port substring-only search, the “Evernote of AI Conversations” tagline (conflicts with locked **OS for your AI**), or the canned assistant as product. Canonical search remains `chatvault-hybrid-0.2.0`. Canonical look remains glass.
+
+ChatVault 2 files were not overwritten. Live `index.html` / `app.js` / `engine.mjs` / `search.mjs` were not replaced with this dump.
