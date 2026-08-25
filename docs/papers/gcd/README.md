@@ -31,10 +31,10 @@ DA leftover-split lab (this definition beside Ring SND; not a joint operator): [
 ## Frankie MAGNUM TeX — alias of the mix file (not re-filed)
 
 Bare `GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` was HTTP **302** then CDN **403**.
-Hash-prefix `224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` was HTTP **302**
-then CDN **200**, 37 366 bytes, SHA-256 `f41194c76cf4…` — **same bytes** as
-the May mix TeX below. No-extension URL was **403**. **Do not invent a
-second copy.** Receipt:
+Hash-prefixes `224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` and `f246f9e41_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex`
+were each HTTP **302** then CDN **200**, 37 366 bytes, SHA-256 `f41194c76cf4…`
+— **same bytes** as the May mix TeX below. No-extension URL was **403**.
+**Do not invent a second copy.** Receipt:
 [`docs/archive/gcd-spectral-attractor-2026-05/GCD_SPECTRAL_ATTRACTOR_MAGNUM.ALIAS.md`](../../archive/gcd-spectral-attractor-2026-05/GCD_SPECTRAL_ATTRACTOR_MAGNUM.ALIAS.md).
 
 ## Mix metaphysics (not this book)

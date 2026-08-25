@@ -21,6 +21,7 @@ MIX_MD5 = "4668827389bbf4d893957bb253a34a98"
 HN_LAB = "HN = D^((-1)/2)*Qtilde*D^((-1)/2)"
 MAGNUM_NAME = "GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex"
 HASH_PREFIX = "224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM"
+HASH_PREFIX_F246 = "f246f9e41_GCD_SPECTRAL_ATTRACTOR_MAGNUM"
 
 
 class TestQ6PdfIsCurrentArithmeticFace(unittest.TestCase):
@@ -51,6 +52,7 @@ class TestMagnumHashPrefixIsMixAlias(unittest.TestCase):
             GCD / MAGNUM_NAME,
             ARCHIVE / MAGNUM_NAME,
             ARCHIVE / f"{HASH_PREFIX}.tex",
+            ARCHIVE / f"{HASH_PREFIX_F246}.tex",
             ROOT / "docs" / "archive" / MAGNUM_NAME,
             NS_SND / MAGNUM_NAME,
             LIVE_ROOT / MAGNUM_NAME,
@@ -68,6 +70,7 @@ class TestMagnumHashPrefixIsMixAlias(unittest.TestCase):
         self.assertIn("alias", text.lower())
         self.assertIn("not re-filed", text.lower())
         self.assertIn(HASH_PREFIX, text)
+        self.assertIn(HASH_PREFIX_F246, text)
         self.assertIn("HTTP **302**", text)
         self.assertIn("**200**", text)
         self.assertIn("**403**", text)
@@ -115,6 +118,7 @@ class TestMayMixTexStaysArchivedAndIsNotQ6(unittest.TestCase):
         )
         for text in (note, faces, readme, index, lookup):
             self.assertIn(HASH_PREFIX, text)
+            self.assertIn(HASH_PREFIX_F246, text)
             self.assertIn("GCD_SPECTRAL_ATTRACTOR_MAGNUM", text)
             self.assertIn("alias", text.lower())
             self.assertIn("not re-filed", text.lower())

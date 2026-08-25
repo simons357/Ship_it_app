@@ -2,8 +2,8 @@
 
 Do **not** glue this book to Paper2 NS, Ring SND, RH, Goldbach, Clay, or SFE.
 Do **not** overwrite [`04_q6_inverse_gcd.pdf`](04_q6_inverse_gcd.pdf).
-Do **not** invent a second `GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex`. Hash-prefix
-`224b718b3_…` is an **alias** of the archived mix TeX.
+Do **not** invent a second `GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex`. Hash-prefixes
+`224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM` and `f246f9e41_GCD_SPECTRAL_ATTRACTOR_MAGNUM` are **aliases** of the archived mix TeX.
 
 **Usable theory H** on this branch remains
 `HN = D^((-1)/2)*Qtilde*D^((-1)/2)`.
@@ -14,7 +14,7 @@ Letters collide: Q6 \(H_N\) \(\neq\) Paper2 \(H_N[a]\) \(\neq\) FRA \(H\).
 | Face | File | What it is |
 |---|---|---|
 | Controlling public PDF (21 August 2026) | [`04_q6_inverse_gcd.pdf`](04_q6_inverse_gcd.pdf) | Zenodo [10.5281/zenodo.22050962](https://doi.org/10.5281/zenodo.22050962). Title *The Inverse-GCD Operator \(Q_N\) (Q6): Definitions, a Restricted Rayleigh Bound, and an Exploratory Spectral Programme.* Face *Corrected preprint — August 2026*. 4 pages, 238 962 bytes. SHA-256 `a239112289a1a150d7a7a2212ec7f3649382b81542b49d5d2300f8611df3d6b1`. **Do not overwrite.** |
-| Frankie MAGNUM TeX | **alias — not re-filed** | Base44 `224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` (HTTP **302** then **200**, 37 366 bytes). SHA-256 `f41194c76cf4…`. `\title` *The GCD Spectral Attractor*; `\date{May 25, 2026}`. **Same bytes** as [`docs/archive/gcd-spectral-attractor-2026-05/Simons_GCD_Spectral_Attractor_Unified.tex`](../../archive/gcd-spectral-attractor-2026-05/Simons_GCD_Spectral_Attractor_Unified.tex). Bare name without hash was **403**. No-extension URL was **403**. Receipt: [`docs/archive/gcd-spectral-attractor-2026-05/GCD_SPECTRAL_ATTRACTOR_MAGNUM.ALIAS.md`](../../archive/gcd-spectral-attractor-2026-05/GCD_SPECTRAL_ATTRACTOR_MAGNUM.ALIAS.md). **Archive only.** **Not** the August Q6 PDF (`a2391122…`). Clay **NOT CLAIMED**. |
+| Frankie MAGNUM TeX | **alias — not re-filed** | Base44 `224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` and `f246f9e41_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` (each HTTP **302** then **200**, 37 366 bytes). SHA-256 `f41194c76cf4…`. `\title` *The GCD Spectral Attractor*; `\date{May 25, 2026}`. **Same bytes** as [`docs/archive/gcd-spectral-attractor-2026-05/Simons_GCD_Spectral_Attractor_Unified.tex`](../../archive/gcd-spectral-attractor-2026-05/Simons_GCD_Spectral_Attractor_Unified.tex). Bare name without hash was **403**. Receipt: [`docs/archive/gcd-spectral-attractor-2026-05/GCD_SPECTRAL_ATTRACTOR_MAGNUM.ALIAS.md`](../../archive/gcd-spectral-attractor-2026-05/GCD_SPECTRAL_ATTRACTOR_MAGNUM.ALIAS.md). **Archive only.** **Not** the August Q6 PDF (`a2391122…`). Clay **NOT CLAIMED**. |
 | May 2026 mix TeX (withdrawn) | [`docs/archive/gcd-spectral-attractor-2026-05/Simons_GCD_Spectral_Attractor_Unified.tex`](../../archive/gcd-spectral-attractor-2026-05/Simons_GCD_Spectral_Attractor_Unified.tex) | Zenodo [10.5281/zenodo.20405599](https://doi.org/10.5281/zenodo.20405599). `\title` *The GCD Spectral Attractor* (NS / RH / SFE / Clay). `\date{May 25, 2026}`. 37 366 bytes. SHA-256 `f41194c76cf4…`. **Archive only.** MAGNUM hash-prefix is this file. **Not** a duplicate of the August Q6 PDF. **Not** live DA. Clay **NOT CLAIMED**. |
 | Older prize-stack PDF | Zenodo [10.5281/zenodo.20271457](https://doi.org/10.5281/zenodo.20271457) | *Ramanujan–Möbius / prime lattice*. Live title **[Claim withdrawn]**. History only. Do not cite as current. **Not** re-filed here. |
 

@@ -7,7 +7,7 @@
 > Goldbach; NS from these matrices. Q6 \(H_N\) \(\neq\) Paper2 \(H_N[a]\)
 > \(\neq\) FRA \(H\).
 
-# `224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` — alias of mix TeX
+# `224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM` and `f246f9e41_GCD_SPECTRAL_ATTRACTOR_MAGNUM` — aliases of mix TeX
 
 **Found?** Yes, as a Base44 hash-prefix fetch. **Not re-filed.** HTTP **302**
 then **200** for the `.tex` URL. SHA-256
@@ -36,6 +36,8 @@ Do not invent TeX. Do not import into `domain_architect/`.
 | Bare `GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` (no hash) | **302** then CDN **403** | 0 |
 | `224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` | **302** then CDN **200** | 37 366 |
 | `224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM` (no extension) | **302** then CDN **403** | 0 |
+| `f246f9e41_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` | **302** then CDN **200** | 37 366 |
+| `f246f9e41_GCD_SPECTRAL_ATTRACTOR_MAGNUM` (no extension) | *not re-probed; `.tex` already matched mix SHA* | — |
 
 Known-good pattern is hash prefix + original name + `.tex`. Bare name stays
 empty. No-extension URL is **not** the file.

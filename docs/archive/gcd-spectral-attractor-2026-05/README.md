@@ -10,7 +10,8 @@
 # GCD Spectral Attractor (May 2026 mix) — archive only
 
 This folder keeps a **withdrawn mix paper**. Frankie
-`224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` is an **alias** of those
+`224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` and
+`f246f9e41_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` are **aliases** of those
 bytes (same SHA). **Not** a second copy.
 
 Live inverse-GCD / Q6 arithmetic remains
@@ -46,7 +47,7 @@ Receipt: [`GCD_SPECTRAL_ATTRACTOR_MAGNUM.ALIAS.md`](GCD_SPECTRAL_ATTRACTOR_MAGNU
 | Lines (`wc -l`) | 1089 |
 
 Fetched 25 August 2026 from the public record, then matched to Base44
-`224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` (HTTP **302** then **200**).
+`224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` and `f246f9e41_GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` (HTTP **302** then **200**).
 **Not invented.** MAGNUM is an **alias** of these bytes — **not re-filed.**
 Title page glues NS, RH, SFE, Goldbach, Yang–Mills, BSD, P vs NP, and Clay
 into one “spectral attractor.” **Archive only.** Do not invent TeX.
