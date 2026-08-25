@@ -37,8 +37,8 @@ Savannah, Georgia, USA\\
 \fbox{\parbox{0.92\linewidth}{\centering\small
 \textbf{Scope.}
 Q6 is developed here as a spectral operator on $\{1,\ldots,N\}$.
-Proved: Bridge$^*$ on single prime pairs, and the nonnegative cone.
-Exploratory / open: multi-representation bounds.
+Proved: Bridge$^*$ on single prime pairs, multi-representation Goldbach
+vectors, and the nonnegative cone.
 False as stated: universal full-spectrum floors $\lmin>-1/2$.
 No Navier--Stokes claim.}}
 \end{center}
@@ -63,8 +63,8 @@ $\lmin(Q_N)>-1/2$ for all $N$ & \textcolor{withdrawn}{\textbf{False}}\\
 $\lmin(\Qt_N)>-1/2$ for all $N$ & \textcolor{withdrawn}{\textbf{False}}\\
 \rowcolor{lightred}
 Dark-state $\Leftrightarrow$ Goldbach (June 2026 draft) & \textcolor{withdrawn}{\textbf{Withdrawn}}\\
-\rowcolor{lightgray}
-Multi-representation Bridge$^*$ & \textcolor{open}{\textbf{Open}}\\
+\rowcolor{lightgreen}
+Multi-representation Bridge$^*$ & \textcolor{proved}{\textbf{Proved}}\\
 \bottomrule
 \end{tabular}
 \end{mdframed}
@@ -78,13 +78,11 @@ Q_N(i,j)=\frac{1}{\gcd(i,j)},\qquad
 \qquad 1\le i,j\le N,
 \]
 and let $H_N$ be the degree-normalized form of $\Qt_N$.
-We prove that for distinct primes $p,q$,
-\[
-R(e_p-e_q)
-=\frac12\Big(\frac1{p^2}+\frac1{q^2}\Big)-\frac1{\sqrt{pq}}
-\;>\;-\frac12
-\]
-on $\Qt_N$ (Bridge$^*$).
+We prove Bridge$^*$ for single prime pairs $v=e_p-e_q$ and for
+multi-representation vectors
+$v_k=\sum_{p\in\mathcal{R}(k)}(e_p-e_{k-p})$ (even $k$): both satisfy
+$R>-1/2$ on $\Qt_N$. The multi-rep case reduces to the pair case by a
+nonnegative cross-term identity.
 We also record that every nonnegative vector has nonnegative Rayleigh
 quotient on $\Qt_N$.
 We withdraw the full-spectrum Bridge claim $\lmin>-1/2$: already for
@@ -239,27 +237,64 @@ $\mathbb{T}^3$.
 
 Older DOIs may remain as dated history.
 The public credit for this operator is
-Theorem~\ref{thm:bridge} and Propositions~\ref{prop:floorfails}--\ref{prop:cone},
-plus the exploratory open problem in the last section.
+Theorem~\ref{thm:bridge}, Theorem~\ref{thm:multirep}, and
+Propositions~\ref{prop:floorfails}--\ref{prop:cone}.
 
-\section{Open problem}
+\section{Bridge$^*$: multi-representation}
 
-\begin{openproblem}[Multi-representation Bridge$^*$]
-For even $k\le N$ let
-$\mathcal{R}(k)=\{p\text{ prime}:2\le p\le k/2,\ k-p\text{ prime}\}$
-and
-$v_k=\sum_{p\in\mathcal{R}(k)}(e_p-e_{k-p})$
-(indices $\le N$).
-Prove or disprove the existence of an absolute $c_0<1/2$ such that
+\begin{lemma}[Cross-term factorization]\label{lem:cross}
+For distinct primes $p\neq q$ and $r\neq s$,
 \[
-R(v_k)=\frac{v_k^\top\Qt_N v_k}{\|v_k\|_2^2}\ge -c_0
+\widetilde Q_N(p,r)-\widetilde Q_N(p,s)-\widetilde Q_N(q,r)+\widetilde Q_N(q,s)
+=\Bigl(p^{-1/2}-q^{-1/2}\Bigr)\Bigl(r^{-1/2}-s^{-1/2}\Bigr).
 \]
-for all such $k$, whenever $v_k\neq 0$.
-\end{openproblem}
+In particular, if $p<q$ and $r<s$, the cross term is strictly positive.
+\end{lemma}
+
+\begin{proof}
+Each off-diagonal entry is $(\,\cdot\,)^{-1/2}$ for distinct primes, so the
+left-hand side factors as claimed.
+\end{proof}
+
+\begin{theorem}[Bridge$^*$, multi-representation]\label{thm:multirep}
+Let $k\le N$ be even and
+\[
+\mathcal{R}(k)=\{p\text{ prime}:2\le p<k/2,\ k-p\text{ prime}\}.
+\]
+Set $v_k=\sum_{p\in\mathcal{R}(k)}(e_p-e_{k-p})$ (indices $\le N$).
+If $v_k\neq 0$, then
+\[
+R(v_k)=\frac{v_k^\top\Qt_N v_k}{\|v_k\|_2^2}
+\;>\;-\frac12.
+\]
+\end{theorem}
+
+\begin{proof}
+Distinct unordered Goldbach pairs for fixed $k$ are pairwise disjoint as
+sets of prime sites: a shared prime forces the same complementary prime.
+Write $v_k=\sum_{a=1}^{m}v_a$ with $v_a=e_{p_a}-e_{q_a}$, $p_a<q_a=k-p_a$.
+Then $\|v_k\|_2^2=\sum_a\|v_a\|_2^2=2m$ and
+\[
+v_k^\top\Qt_N v_k
+=\sum_a v_a^\top\Qt_N v_a
++2\sum_{a<b}v_a^\top\Qt_N v_b.
+\]
+Each diagonal block equals $\|v_a\|_2^2\,R(v_a)$ with $R(v_a)>-1/2$ by
+Theorem~\ref{thm:bridge}. Each cross block equals the factorization in
+Lemma~\ref{lem:cross} with $p_a<q_a$ and $p_b<q_b$, hence is positive.
+Therefore
+\[
+R(v_k)
+\ge\frac{\sum_a\|v_a\|_2^2\,R(v_a)}{\sum_a\|v_a\|_2^2}
+\ge\min_a R(v_a)
+\;>\;-\frac12.
+\]
+\end{proof}
 
 \begin{remark}
-Numeric checks through $N=200$ remain above $-1/2$ on sampled multi-rep
-vectors; that is evidence, not a proof.
+The worst multi-rep Rayleigh through $N=200$ coincides with a single-pair
+case (e.g.\ $k=8$, pair $(3,5)$, $R\approx-0.183$). Richer multi-rep
+vectors sit strictly higher because of positive cross terms.
 \end{remark}
 
 \section*{Reproducibility}

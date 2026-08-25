@@ -77,13 +77,27 @@ def mat_norm(N: int) -> np.ndarray:
     return A
 
 
-def goldbach_vk(k: int, N: int, primes: set[int]) -> np.ndarray:
+def goldbach_vk_broken_indicator(k: int, N: int, primes: set[int]) -> np.ndarray:
+    """June-5 detector: vanishes on genuine Goldbach pairs — do not use for Bridge*."""
     v = np.zeros(N)
     for j in range(1, N + 1):
         if j in primes:
             v[j - 1] += 1.0
         if 1 <= k - j <= N and (k - j) in primes:
             v[j - 1] -= 1.0
+    return v
+
+
+def goldbach_multirep_vk(k: int, N: int, primes: set[int]) -> np.ndarray:
+    """Correct Bridge* multi-rep: sum (e_p - e_{k-p}) over unordered Goldbach pairs."""
+    v = np.zeros(N)
+    for p in range(2, (k + 1) // 2):
+        q = k - p
+        if q > N or p > N:
+            continue
+        if p in primes and q in primes and p != q:
+            v[p - 1] += 1.0
+            v[q - 1] -= 1.0
     return v
 
 
@@ -107,7 +121,7 @@ def main() -> None:
         P = set(primes_upto(N))
         worst = None
         for k in range(4, N + 1, 2):
-            v = goldbach_vk(k, N, P)
+            v = goldbach_multirep_vk(k, N, P)
             nrm = np.linalg.norm(v)
             if nrm < 1e-12:
                 continue
@@ -122,9 +136,9 @@ def main() -> None:
 
     print(
         "\nConclusion template:\n"
-        "  • Full-spectrum Bridge λ_min(Q)>−½ or λ_min(Q̃)>−½: FAILS (open item as written is false for these matrices).\n"
-        "  • Restricted GNC Rayleigh on Q̃: still above −½ in this range — candidate corrected conjecture.\n"
-        "  • Fix §2.1 Möbius identity before any analytic floor proof.\n"
+        "  • Full-spectrum Bridge λ_min(Q)>−½ or λ_min(Q̃)>−½: FAILS (false for these matrices).\n"
+        "  • Restricted Bridge* on multi-rep Goldbach vectors: proved R>-½; numeric check in this range.\n"
+        "  • Broken June-5 indicator detector is not used here.\n"
     )
 
 

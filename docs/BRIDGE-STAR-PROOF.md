@@ -12,14 +12,14 @@
 \[
 v_{p,q}:=e_p-e_q\qquad (p+q=k,\ p\neq q\text{ primes}).
 \]
-Multi-rep: \(v=\sum_a(e_{p_a}-e_{q_a})\) over unordered Goldbach partitions.
+Multi-rep: \(v_k=\sum_{p\in\mathcal{R}(k)}(e_p-e_{k-p})\) over unordered Goldbach partitions.
 
-**Conjecture (Bridge\*).** For every such \(v\not\equiv 0\),
+**Bridge\*.** For every such \(v\not\equiv 0\),
 \[
 R(v):=\frac{v^\top\tilde Q_N v}{\|v\|_2^2}>-\frac12.
 \]
 
-**Status:** single-pair **proved** (§2); multi-rep **numeric** + lemma open (§3).  
+**Status:** single-pair **proved** (§2); multi-rep **proved** (§3).  
 **Not claimed:** full \(\lambda_{\min}(\tilde Q_N)>-1/2\) (false).
 
 ---
@@ -92,30 +92,37 @@ Distinct primes ⇒ \(pq\ge 2\cdot 3=6\), hence
 
 ---
 
-## 3. Multi-representation — structure
+## 3. Multi-representation **[Proved]**
 
 Let
 \[
-\mathcal{R}(k)=\{p\in\mathbb{P}:2\le p\le k/2,\;k-p\in\mathbb{P}\}.
+\mathcal{R}(k)=\{p\in\mathbb{P}:2\le p<k/2,\;k-p\in\mathbb{P}\}.
 \]
-Set \(v=\sum_{p\in\mathcal{R}(k)}(e_p-e_{k-p})\) (sites \(\le N\)).
+Set \(v_k=\sum_{p\in\mathcal{R}(k)}(e_p-e_{k-p})\) (sites \(\le N\)).
 
-Same-pair blocks contribute as in §2 (each \(>-\|v_{\mathrm{pair}}\|^2/2\)).  
-Cross terms among distinct partitions can push \(R\) negative; still \(>-1/2\) in checks.
+### Lemma (cross-term factorization) **[Proved]**
 
-### Target lemma **[Open]**
-
-**Lemma (Cross-term control).** There exists absolute \(c_0<1/2\) such that for all even \(k\le N\),
+For distinct primes \(p\neq q\), \(r\neq s\),
 \[
-v^\top\tilde Q_N v\ge -c_0\|v\|_2^2.
+\widetilde Q(p,r)-\widetilde Q(p,s)-\widetilde Q(q,r)+\widetilde Q(q,s)
+=\bigl(p^{-1/2}-q^{-1/2}\bigr)\bigl(r^{-1/2}-s^{-1/2}\bigr).
 \]
+If \(p<q\) and \(r<s\), the cross term is **strictly positive**.
 
-**Numeric:** worst multi-rep \(R\) for \(N\le 200\) among summed partition vectors ≈ \(-0.15\) at \(k=10\) (single effective pair after cancellation); for richer multi-rep, values sit higher (e.g. \(k=100\): \(R\approx +0.025\)). Full cone/GNC scan: `scripts/bridge_floor_verify.py` (extend for summed \(v\)).
+### Theorem (multi-rep Bridge\*) **[Proved]**
 
-**Attack:**
-1. Cauchy–Schwarz on off-pair blocks vs \(\|v\|^2\sim\#\mathcal{R}(k)\).  
-2. Average Goldbach estimates on \(\sum p^{-1/2}\).  
-3. Restrict \(\tilde Q\) to the prime support of \(v\) (small indefinite matrix).
+Write \(v_k=\sum_a v_a\) with disjoint pair vectors \(v_a=e_{p_a}-e_{q_a}\), \(p_a<q_a\). Then
+\[
+v_k^\top\widetilde Q v_k
+=\sum_a v_a^\top\widetilde Q v_a
++2\sum_{a<b}v_a^\top\widetilde Q v_b
+\ge\sum_a \|v_a\|_2^2 R(v_a),
+\]
+so \(R(v_k)\ge\min_a R(v_a)>-1/2\) by §2.
+
+**Numeric:** worst multi-rep \(R\) through \(N=200\) coincides with a single-pair case (\(\approx -0.183\) at \(k=8\), pair \((3,5)\)). Richer multi-rep sit higher because of positive crosses.
+
+Formal write-up: `docs/papers/submit/04_q6_inverse_gcd.tex` Theorem (multi-representation).
 
 ---
 
@@ -123,8 +130,7 @@ v^\top\tilde Q_N v\ge -c_0\|v\|_2^2.
 
 **Proposition (cone).** If \(v\ge 0\), \(\|v\|_2=1\), then \(v^\top\tilde Q_N v\ge 0\).
 
-All entries of \(\tilde Q_N\) are positive ⇒ quadratic form on the positive orthant is nonnegative.  
-(Formal Gram via correct \(g=\mu*(1/\mathrm{id})\) factorization + \(D^{-1/2}\) conjugation — writeup pending.)
+All entries of \(\tilde Q_N\) are positive ⇒ quadratic form on the positive orthant is nonnegative.
 
 ---
 
@@ -133,12 +139,12 @@ All entries of \(\tilde Q_N\) are positive ⇒ quadratic form on the positive or
 | Claim | Status |
 | --- | --- |
 | Bridge\* single-pair on \(\tilde Q_N\) | **Proved** (§2) |
-| Bridge\* multi-pair | Lemma open (§3) |
+| Bridge\* multi-pair | **Proved** (§3) |
 | June 5 dark-state ↔ Goldbach | **False** (§0) |
 | June 5 paper \(v_k\) as Goldbach detector | **Broken** (§0.1) |
 | Full \(\lambda_{\min}(\tilde Q)>-1/2\) | **False** — abandoned |
-| NS via \(H_N\), \(\lambda_{\min}\ge-3/14\) | Separate — need matrix one-liner |
-| Clay large-data | **Not** this note |
+| NS via \(H_N\), \(\lambda_{\min}\ge-3/14\) | Separate — false at small \(N\) |
+| Large-data SND / noncircular \(M\) | **Hard** — not this note |
 
 ---
 
@@ -148,4 +154,4 @@ Replace “Bridge: \(\lambda_{\min}(Q_N)>-1/2\)” and the dark-state lemma with
 
 > **Bridge\*:** \(R(v)>-1/2\) for Goldbach test vectors \(v=\sum(e_p-e_q)\), and \(v^\top\tilde Q v\ge 0\) on the SND cone.
 
-Equivalence arrows only after that rewrite + §2.1 identity fix. See `docs/papers/SND_GNC_BRIDGE_REVISED.md`.
+See `docs/papers/SND_GNC_BRIDGE_REVISED.md` and `docs/math/CLOSURE-ATTACK-PLAN.md`.

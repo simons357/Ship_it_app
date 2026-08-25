@@ -81,6 +81,48 @@ class TestBridgeStarAndHN(unittest.TestCase):
             mx = float(np.linalg.eigvalsh(H_matrix(N))[-1])
             self.assertAlmostEqual(mx, 1.0, places=6)
 
+    def test_cross_term_factorization(self):
+        # (1/√p - 1/√q)(1/√r - 1/√s) for distinct primes
+        for p, q, r, s in [(3, 5, 7, 11), (2, 3, 5, 7), (5, 13, 11, 17)]:
+            cross = (
+                1 / (p * r) ** 0.5
+                - 1 / (p * s) ** 0.5
+                - 1 / (q * r) ** 0.5
+                + 1 / (q * s) ** 0.5
+            )
+            fact = (p**-0.5 - q**-0.5) * (r**-0.5 - s**-0.5)
+            self.assertAlmostEqual(cross, fact, places=12)
+            if p < q and r < s:
+                self.assertGreater(cross, 0.0)
+
+    def test_multirep_bridge_star(self):
+        def primes_upto(n: int) -> set[int]:
+            s = [True] * (n + 1)
+            s[0] = s[1] = False
+            for i in range(2, int(n**0.5) + 1):
+                if s[i]:
+                    s[i * i :: i] = [False] * len(s[i * i :: i])
+            return {i for i, b in enumerate(s) if b}
+
+        N = 80
+        Qt = mat_tilde(N)
+        P = primes_upto(N)
+        for k in range(4, N + 1, 2):
+            v = np.zeros(N)
+            for p in range(2, (k + 1) // 2):
+                q = k - p
+                if p in P and q in P and q <= N:
+                    v[p - 1] += 1.0
+                    v[q - 1] -= 1.0
+            nrm2 = float(v @ v)
+            if nrm2 < 1e-12:
+                continue
+            R = float(v @ Qt @ v) / nrm2
+            self.assertGreater(R, -0.5, msg=f"k={k} R={R}")
+
+    def test_tilde_Q_floor_fails(self):
+        self.assertLess(float(np.linalg.eigvalsh(mat_tilde(20))[0]), -0.5)
+
 
 if __name__ == "__main__":
     unittest.main()
