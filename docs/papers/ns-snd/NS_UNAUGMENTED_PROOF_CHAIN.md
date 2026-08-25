@@ -40,7 +40,7 @@ Hard rules: classical Clay NOT CLAIMED. Dynamic SND OPEN. Leray boundedness ≠ 
 
 Controlling face (Desktop pack name): `06_navier_stokes_shelf/03_conditional_unaugmented_SND/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`
 
-Status cross-check: July 23 ledger NS-6…NS-11; `NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md`; `CLOSURE_DRIFT_LEDGER.md`.
+Status cross-check: July 23 ledger NS-6…NS-11; `NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md`; `CLOSURE_DRIFT_LEDGER.md` (**still missing** on this VM; Drive `TRIPLE_LOCK_VERIFIED_DETAILS_2026-08-02.md` is same ledger family, **different document** — partial only). Frankie `ns_routej_bridge_recovery/CURRENT_CLAIM_LEDGER.md` is the file for Route J (“does it have J?”) and is **still missing**; Drive `74ecca4e5` millennium progress report **cannot answer Route J**. Packet: [`docs/packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md`](../../packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md).
 
 ## Domain Architect note
 

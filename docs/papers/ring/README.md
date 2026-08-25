@@ -40,6 +40,7 @@ alias of `RingLemma_Final.tex` (`4602065ef68a…`). Still augmented; classical
 SND **Open**; Clay **NOT CLAIMED**. **No** \(\kappa_j\). **Not** the
 unaugmented \(\kappa\)-SND paste. **Not** a compile of the 21 Aug PDF
 (left in place). Hash-prefix filename is untrusted; do not re-file it.
+Drive offered Final as stand-in — **REJECT as identity**.
 
 Unaugmented \(\kappa\)-SND / CF93 / BKM tail paste: classification only
 [`KAPPA-SND-CF-BKM-FRAGMENT.md`](KAPPA-SND-CF-BKM-FRAGMENT.md). Full TeX not

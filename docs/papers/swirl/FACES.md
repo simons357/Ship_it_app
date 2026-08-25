@@ -25,5 +25,6 @@ The algebraic identity \(\frac1{r^4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) wi
 - **Public May deposit:** Zenodo `20405405` / `20405597`.
 - **April/June older sources:** file them; do not compile them as 22 August; do not cash Q1 smoothness or “Gronwall-free” May/June lines as Clay.
 - **Do not merge them into one claim.**
+- **Drive Missing Fifteen:** `SYNTHESIS-AXISYMMETRIC-SND-BRIDGE.md` is **still missing**. Do **not** glue swirl leftover / Ring \(J/X\) / Paper2 SND. Packet [`docs/packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md`](../../packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md).
 - **Equation Explorer slider `phi`:** historical toy [`docs/archive/sfe-hb/equation_explorer_simons_field.py`](../../archive/sfe-hb/equation_explorer_simons_field.py). **Not** swirl \(\Phi=u_\theta/r\). **Not** this book. **Not** live DA.
 - **April Overleaf Clay/SERPENT drafts:** **quarantine**, **not received** on this VM. **Not** the 22 August TeX. **Not** pack `NS_PhiRenorm_complete.tex` (already filed as historical). `CLAY_FINAL` / `SERPENT_FINAL` / `WHAT_I_FOUND` are **not** this book. Policy [`docs/packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md`](../../packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md). Receipt [`docs/archive/overleaf-2026-04/`](../../archive/overleaf-2026-04/). Clay **NOT CLAIMED**.

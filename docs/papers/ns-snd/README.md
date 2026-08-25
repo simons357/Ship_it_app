@@ -15,7 +15,7 @@ DA may later route to this book. It must **not** glue:
 | Face | File | Date on the face |
 |---|---|---|
 | June reading PDF | [`Paper2_NS_Regularity_SND_FIXED.pdf`](Paper2_NS_Regularity_SND_FIXED.pdf) | Corrected June 2026. SHA `7de9444d…`. Mac Downloads `/Users/jonathansimons/Downloads/Paper2_NS_Regularity_SND_FIXED.pdf` is an **alias** of these bytes — path **not readable** here; Cursor uploads matched git. **Do not re-file.** Still **no TeX**. |
-| June FIXED TeX | *not received* | Filename requested; PDF only |
+| June FIXED TeX | *not received* | Filename requested; PDF only. Base44 25 Aug: still absent. **Stop Paper 2 reconstruction.** August REPAIRED and April 23 *Spectral Coherence* are **not** that source. Git PDF `7de9444d…` is **not** the TeX. |
 | June 14 Clay-submit | *not received* | `2f30e8c4f_NS_ClaySubmit_Jonathan_Simons_2026-06-14.tex` — not FIXED; not August; Clay **NOT CLAIMED** here |
 | May 18 “implies” draft TeX | [`Simons_NS_Paper2_DRAFT_original.tex`](Simons_NS_Paper2_DRAFT_original.tex) | `\date{May 18, 2026}`; title *…Implies Global Regularity…*. 664 lines. Historical draft. **Not** FIXED. **Not** August controlling face. §7 T2-closed vs §8 OPEN. Leftover 7–8. Clay **NOT CLAIMED**. **Do not use as closed.** Same SHA `f51ed5c05ec3…`: Base44 `5dfeb6b64_Paper2_April_Spectral_Coherence_DRAFT.tex`; Downloads / Base44 `675001cd1_Simons_NS_Paper2_DRAFT.tex` (`675001cd1_` hash prefix); Zenodo [10.5281/zenodo.20269536](https://doi.org/10.5281/zenodo.20269536) (`Simons_NS_Paper2_DRAFT.tex`). Do not re-file. |
 | April Spectral Coherence DRAFT | *filename alias — not re-filed* | Public Base44 URL (HTTP **302** then HTTP **200**). Path `5dfeb6b64_Paper2_April_Spectral_Coherence_DRAFT.tex` is untrusted. Title page is May 18 *Implies Global Regularity*, not April *A Spectral Coherence Criterion* / Q6 Dominant-Shell, not June *Conditional Regularity Criterion*. **Not** Final Polished. **Not** FIXED. **Not** August. **Not** Clay. **Not** a compile of June PDF `7de9444d…`. |
@@ -33,6 +33,8 @@ DA may later route to this book. It must **not** glue:
 | Classical unaugmented chain | [`NS_UNAUGMENTED_PROOF_CHAIN.md`](NS_UNAUGMENTED_PROOF_CHAIN.md) | DA default dataset; leftover 7–8; Clay not claimed |
 
 The PDFs are **not** compiles of the TeX. Diff: [`FACES.md`](FACES.md).
+Drive offered August REPAIRED as June FIXED TeX — **REJECT as identity**.
+Packet: [`docs/packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md`](../../packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md).
 
 **Spectral Non-Concentration** — conditional framework / criterion for 3D Navier–Stokes on \(\mathbb{T}^3\).
 

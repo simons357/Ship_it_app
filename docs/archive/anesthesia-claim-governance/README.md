@@ -26,7 +26,8 @@ Receipt: [`CURRENT_CLAIM_LEDGER_JULY23_FULL.MISSING.md`](CURRENT_CLAIM_LEDGER_JU
 | Object | Relation to this folder |
 |---|---|
 | `PAPER1_REBUILT_Coherence_Index.md` | Controlling anesthesia **manuscript** (pack `face_manuscript/`). **Not this ledger.** Also not on this VM. |
-| Frankie `CURRENT_CLAIM_LEDGER.md` | `ns_routej_bridge_recovery/` sibling. **Different file.** |
+| Frankie `CURRENT_CLAIM_LEDGER.md` | `ns_routej_bridge_recovery/` sibling. **Different file.** Drive `74ecca4e5` millennium progress report is **not** that ledger. **Cannot answer Route J from a progress report.** |
+| Drive Missing Fifteen | Packet [`docs/packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md`](../../packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md). **Cannot see July 23 governance \(J\) without bytes.** |
 | NS chain “July 23 ledger NS-6…NS-11” | Mention in [`NS_UNAUGMENTED_PROOF_CHAIN.md`](../../papers/ns-snd/NS_UNAUGMENTED_PROOF_CHAIN.md). **Not** proof this unread file is that table. |
 | June FIXED PDF `7de9444d…` | Paper2 reading face. **Not** this ledger. |
 | Ring SND \(\inf J/X \ge c_*\) | Ring book. **Not** stamped here. |

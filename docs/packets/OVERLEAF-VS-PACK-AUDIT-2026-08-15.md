@@ -11,6 +11,12 @@
 > DA-VC-01 **FAIL**. Letters collide. \(\kappa\)-SND \(\neq\) \(J/X\). T2
 > **OPEN**. GNC **incomplete**. Do **not** import CLAY / SERPENT /
 > `simons_ns_overleaf` / WHAT_I_FOUND into `domain_architect/`.
+>
+> **Missing Fifteen overlay (25 August 2026):** Drive substitutes are
+> **not** identity. Packet:
+> [`MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md`](MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md).
+> August REPAIRED is **not** the June FIXED TeX. `RingLemma_Final.tex` is
+> **not** June 19. MAGNUM hash-prefixes are mix-TeX aliases, not Q6.
 
 # Overleaf value audit vs controlling pack — policy
 
@@ -74,6 +80,9 @@ Use these, **not** Overleaf. Do not invent missing TeX.
 
 Paper2 June vs August are **not** a compile pair. Map:
 [`docs/papers/ns-snd/FACES.md`](../papers/ns-snd/FACES.md).
+Drive Missing Fifteen: August REPAIRED **REJECT as identity** for June
+FIXED TeX. Packet:
+[`MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md`](MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md).
 
 ---
 
@@ -87,9 +96,9 @@ lived** in the exported Overleaf trees. This is **not** a fake Overleaf hunt.
 | `PAPER_A_Inverse_GCD_CORRECTED.tex` | **pack-only, not on this VM** |
 | `PAPER_B_Mobius_GCD_Q6.tex` | **pack-only, not on this VM** |
 | `GCD_Spectral_Paper1_UPDATED_2026-08-14.tex` | **pack-only, not on this VM** |
-| Anesthesia CI `PAPER1_REBUILT_Coherence_Index.md` | **pack-only, not on this VM.** Controlling anesthesia **manuscript**. Overleaf is not this face. |
-| July 23 claim ledger `CURRENT_CLAIM_LEDGER_JULY23_FULL.md` | **governance, not the CI face.** **not received.** Receipt: [`docs/archive/anesthesia-claim-governance/CURRENT_CLAIM_LEDGER_JULY23_FULL.MISSING.md`](../archive/anesthesia-claim-governance/CURRENT_CLAIM_LEDGER_JULY23_FULL.MISSING.md). **Not** Frankie `ns_routej_bridge_recovery/CURRENT_CLAIM_LEDGER.md`. |
-| June FIXED **TeX** `Paper2_NS_Regularity_SND_FIXED.tex` | **still not received** (PDF `7de9444d…` is filed) |
+| Anesthesia CI `PAPER1_REBUILT_Coherence_Index.md` | **pack-only, not on this VM.** Controlling anesthesia **manuscript**. Overleaf is not this face. Drive offered `PAPER1_BJA_VIGILANT_JOURNAL.md` — qualify; neither is in this VM. |
+| July 23 claim ledger `CURRENT_CLAIM_LEDGER_JULY23_FULL.md` | **governance, not the CI face.** **not received.** Receipt: [`docs/archive/anesthesia-claim-governance/CURRENT_CLAIM_LEDGER_JULY23_FULL.MISSING.md`](../archive/anesthesia-claim-governance/CURRENT_CLAIM_LEDGER_JULY23_FULL.MISSING.md). **Not** Frankie `ns_routej_bridge_recovery/CURRENT_CLAIM_LEDGER.md`. Drive `74ecca4e5` progress report is **not** either ledger. **Cannot answer Route J from a progress report.** **Cannot see July 23 governance \(J\) without bytes.** |
+| June FIXED **TeX** `Paper2_NS_Regularity_SND_FIXED.tex` | **still not received** (PDF `7de9444d…` is filed). Drive offered August REPAIRED as stand-in — **REJECT as identity**. See [`MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md`](MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md). |
 
 Current public Q6 PDF is already in `docs/papers/gcd/`. Do not hunt PAPER_A/B
 as Overleaf sources.

@@ -55,6 +55,10 @@ Map: [`SPECTRAL_UNIFICATION_PAPER.md`](SPECTRAL_UNIFICATION_PAPER.md).
 Do **not** import into `domain_architect/`. Sibling
 `SND_GNC_BRIDGE_EXTRACTED.txt` is still a different file.
 
+Drive said this TeX was **gone**. Git already has it (Base44 `7d5c64a34_`).
+Header “Status: Proved” stays **rejected**. Packet:
+[`docs/packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md`](../../packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md).
+
 ## Equation Explorer matplotlib paste — archive only
 
 [`equation_explorer_simons_field.py`](equation_explorer_simons_field.py)

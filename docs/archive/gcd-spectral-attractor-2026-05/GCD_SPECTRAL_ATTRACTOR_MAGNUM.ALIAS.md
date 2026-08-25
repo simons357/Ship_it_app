@@ -15,6 +15,11 @@ then **200** for the `.tex` URL. SHA-256
 **byte-identical** to
 [`Simons_GCD_Spectral_Attractor_Unified.tex`](Simons_GCD_Spectral_Attractor_Unified.tex)
 (Zenodo [10.5281/zenodo.20405599](https://doi.org/10.5281/zenodo.20405599)).
+Original path `/app/ARCHIVE/math_drafts/GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex`.
+25 Aug 2026 ChatVault/ProofVersion indexed `f246f9e41_` as the verified
+Magnum URL. `224b718b3_GCD_SPECTRAL_ATTRACTOR_MAGNUM` did **not** resolve
+as a `ChatVaultEntry` or `ProofVersion` record — **index miss**, same SHA.
+Report: [`docs/packets/BASE44-RECOVERY-REPORT-FOR-GROK-2026-08-25.md`](../../packets/BASE44-RECOVERY-REPORT-FOR-GROK-2026-08-25.md).
 
 **`\title`:** *The GCD Spectral Attractor* / *On the Common Root of
 Navier–Stokes Regularity, the Riemann Hypothesis, the Simons Field
@@ -58,3 +63,8 @@ Clay. GCD matrix theorem that stands remains the August Q6 PDF.
 - Overwriting `04_q6_inverse_gcd.pdf`, June FIXED, Overleaf audit, July 23
   ledger receipts, `SPECTRAL_UNIFICATION_PAPER`, or
   `SND_GNC_BRIDGE_EXTRACTED.txt`.
+
+Drive said `224b718b3_` / `f246f9e41_` MAGNUM were **gone**. They are
+**aliases of this mix TeX**, same SHA `f41194c7…`, **not** Q6 PDF
+`a2391122…`. Two receipts, one identity. Packet:
+[`docs/packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md`](../../packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md).

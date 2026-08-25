@@ -11,7 +11,13 @@
 
 **Found?** Yes. Base44 hash-prefix
 `7d5c64a34_SPECTRAL_UNIFICATION_PAPER.tex` HTTP **302** then **200**.
+Original paths `/app/SPECTRAL_UNIFICATION_PAPER.tex` and
+`/app/GOLD/SPECTRAL_UNIFICATION_PAPER.tex`.
 Bare `SPECTRAL_UNIFICATION_PAPER.tex` was **403** / 0 bytes.
+25 Aug 2026 Base44 recovery report:
+[`docs/packets/BASE44-RECOVERY-REPORT-FOR-GROK-2026-08-25.md`](../../packets/BASE44-RECOVERY-REPORT-FOR-GROK-2026-08-25.md).
+Historical “proved” language is **rejected**. `CLAIM_LEDGER.md` is
+authority **once recovered**.
 
 | | |
 |---|---|
@@ -46,3 +52,7 @@ stays [`docs/papers/gcd/`](../../papers/gcd/)
 
 Sibling `SND_GNC_BRIDGE_EXTRACTED.txt` is a **different** file (still missing).
 Do not overwrite June FIXED, DRAFT_original, MAGNUM mix TeX, or Overleaf policy.
+
+Drive said this TeX was **gone**. It is **archived** here (SHA `4ea7ccd72dc6…`).
+Header “Status: Proved” **rejected**. Not live DA. Not Clay. Packet:
+[`docs/packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md`](../../packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md).

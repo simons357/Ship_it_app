@@ -79,3 +79,5 @@ Frankie receipts (`SPECTRAL_UNIFICATION_PAPER`, `SND_GNC_BRIDGE_EXTRACTED.txt`).
 - Do **not** use as closed.
 
 Map: [`docs/papers/gcd/FACES.md`](../../papers/gcd/FACES.md).
+Drive said MAGNUM **gone**; git already has these mix bytes (SHA `f41194c7…`).
+Packet: [`docs/packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md`](../../packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md).
