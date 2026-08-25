@@ -66,7 +66,7 @@ Overleaf is **optional only as a PDF printer**: upload **fresh TeX from the pack
 | Positive GCD | *(absent from Overleaf dirs; older TeX may sit loose in Downloads)* | `GCD_Spectral_Paper1_UPDATED_2026-08-14.tex` |
 | Ring Lemma | Embedded as section inside Apr Clay/SERPENT/WHAT_I_FOUND | `06_…/01_ring_lemma/c8a03f315_RingLemma_Simons_June19_2026.tex` + Zenodo PDF `19a2b85fc_…` |
 | Phi-renorm / swirl | *(not in named Overleaf export folders)* | `NS_PhiRenorm_complete.tex` / PDF in `07_…/NS/` |
-| NS Paper2 / SND | Apr `simons_ns_overleaf` **unconditional Clay** TeX | `Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex` + `Paper2_NS_Regularity_SND_FIXED.pdf` + Aug 1 audit |
+| NS Paper2 / SND | Apr `simons_ns_overleaf` **unconditional Clay** TeX | **In this git repo:** [`docs/papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](../papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex) (conditional; simplex OPEN). Desktop-pack PDF `Paper2_NS_Regularity_SND_FIXED.pdf` remains off-repo. |
 | QStack / de-aug bridges | `overleaf_package` Jun PDFs + Apr SERPENT/CLAY | Historical only; de-aug **OPEN** per NS shelf |
 | Anesthesia CI | *(nothing Overleaf)* | `08_…/ANESTHESIA/face_manuscript/PAPER1_REBUILT_Coherence_Index.md` |
 

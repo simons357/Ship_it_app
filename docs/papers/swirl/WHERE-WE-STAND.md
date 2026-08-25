@@ -72,6 +72,17 @@ Leave the geometry essay on the shelf as a personal hypothesis. It does not help
 
 ---
 
+## Paper2 (periodic 3D, SND/GNC) is a different book
+
+The repaired August 1 manuscript is filed at
+[`docs/papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](../ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex).
+
+It is **full 3D Navier–Stokes on the torus**, not axisymmetric swirl. SND means the energy is not stuck in one dyadic shell. The thin proved part is a Weyl perturbation fact: *if* a frozen spectral gap and a quantitative operator-norm closeness both hold, the evolving gap stays. The physics arrow — that unaugmented Leray–Hopf actually stays close on the simplex — is **open**. A false gcd identity was removed. “T2 Closed Gronwall” is withdrawn. Classical 3D regularity is not claimed.
+
+Same leftover *shape* as swirl (an energy bound does not give the smallness you need). **Not the same leftover.** Do not feed Paper2’s GCD matrix \(H_N\) into the swirl strain term, and do not feed swirl \(\Phi=u_\theta/r\) into Paper2.
+
+---
+
 ## One sentence
 
-You keep the Phi rewrite; you do not keep the universal-geometry story as mathematics; the swirl problem is now cleanly named as control of \(u^r/r\); that line is still open.
+You keep the Phi rewrite; you do not keep the universal-geometry story as mathematics; the swirl problem is now cleanly named as control of \(u^r/r\); that line is still open. Paper2 is a separate conditional spectral framework on \(\mathbb{T}^3\); its open simplex is not a swirl estimate.

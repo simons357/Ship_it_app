@@ -37,7 +37,7 @@ He said the damaged copy adds **no new proof or mechanism**.
 |---|---|
 | Repo | https://github.com/simons357/Ship_it_app |
 | Branch | `cursor/sfe-rewrite-domain-architect-9d6b` |
-| HEAD when this handoff was written | `644759a` *Add DA validation challenge 01 for unaugmented Navier-Stokes* |
+| HEAD when this handoff was written | Paper2 SND/GNC filed at `docs/papers/ns-snd/` (after `f724588`) |
 | Draft PR | https://github.com/simons357/Ship_it_app/pull/31 — **stay draft. Do not merge.** |
 | Other PR | `#30` (`cursor/domain-architect-v1-f929`) — **leave alone** unless Jon says otherwise |
 | Preferred base | `main` |
@@ -64,14 +64,16 @@ Stale rival brief: `docs/domain-architect/ARCHITECTURE-AUDIT.md` (do not treat a
 
 SFE, UHF, DHFA, Harmonic Blueprint are **not** canonical. Archive only: `docs/archive/`.
 
-**Two books, one letter Phi:**
+**Books stay split. One letter is not one object.**
 
-| Book | What | Phi |
+| Book | What | Collision to refuse |
 |---|---|---|
-| A — DA | role architecture lab | identifier / declared output. Not gravity by default |
+| A — DA | role architecture lab | identifier / declared output \(\Phi\). Not gravity by default |
 | B — axisymmetric NS with swirl | fluids paper | \(\Phi = u_\theta/r = \Gamma/r^2\) |
+| D — Paper2 SND/GNC | periodic 3D NS on \(\mathbb{T}^3\) | shell-helical \(H_N\); SND/GNC. **Not** FRA \(H\), **not** swirl \(\Phi\) |
 
 Do not glue swirl \(\Phi\) to FRA output \(\Phi\) or Newtonian \(\Phi_g\).
+Do not glue Paper2 \(H_N\) / SND / GNC into the swirl rewrite or into DA as a Clay stamp.
 
 Jon: `accept grok table` → **P1 = rewrite**. Blocking if rewrite: **A5, A10, A11, A12, A13, A14**. Do not invent QStack/QNav. Do not dump again. Do not folder-shuffle and call it a rewrite.
 
@@ -98,6 +100,12 @@ Logo (confirmed): **Black & gold** and **All silver** 3D lockups both stay. **La
 - `docs/papers/swirl/PHI_GEOMETRY_BRIDGE.md` — May essay (CMB/Saturn/Kabbalah). **Hypothesis, not theorems**
 - `docs/papers/swirl/DA-ON-PHI-GEOMETRY.md` — DA reading; SPE refused
 - `docs/papers/swirl/README.md`
+
+### Paper2 SND/GNC (separate book — not swirl)
+
+- `docs/papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex` — 1 August 2026 repaired conditional draft
+- `docs/papers/ns-snd/README.md` — proved vs open; do not glue \(H_N\) to FRA or swirl
+- Tests: `tests/test_paper2_ns_snd.py`
 
 ### Packet for a *new* ChatGPT chat (not Chat Vault)
 
@@ -158,6 +166,7 @@ Tests that lock this: `tests/test_challenge_01_ns.py` (includes a characterizati
 - Do not add \(\Lambda=Y/X\), \(M-\Lambda N\), or `DA-NS-1` to that file unless Jon provides a **clean** source and says to merge.
 - Do not claim unaugmented swirl is solved. Do not claim \(\varepsilon\)-smoothness is the unaugmented theorem.
 - Do not glue swirl \(\Phi\) to gravity, FRA, CMB, Saturn, Kabbalah, Riemann zeros, or a cosmic lattice.
+- Do not glue Paper2 SND / GNC / \(H_N\) into swirl or into a Clay claim. Simplex lemma is **OPEN**. “T2 Closed Gronwall” is withdrawn.
 - Do not treat `PHI_GEOMETRY_BRIDGE.md` as Book B theorems. Q6 / primes / spectral clock: packaging; strip from any submit (`SWIRL-CONTINUATION.md`).
 - Do not implement another dump. Do not create QStack/QNav.
 - Do not merge PR #31. Do not touch PR #30.
@@ -200,7 +209,7 @@ If numpy/pandas missing: `python3 -m pip install -r requirements.txt`
 ## 8. Tests to run
 
 ```bash
-python3 -m unittest tests.test_sfe_hb_dump tests.test_domain_architect_v1 tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_historical_archive tests.test_brand_mark tests.test_desktop_app tests.test_phi_geometry_bridge tests.test_challenge_01_ns
+python3 -m unittest tests.test_sfe_hb_dump tests.test_domain_architect_v1 tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_historical_archive tests.test_brand_mark tests.test_desktop_app tests.test_phi_geometry_bridge tests.test_challenge_01_ns tests.test_paper2_ns_snd
 ```
 
 ---
@@ -220,6 +229,6 @@ Notion Chat Vault was not readable from the cloud agent (MCP needsAuth). Packets
 
 ## 10. One paragraph you can tell Jon
 
-Domain Architect is the product. Axisymmetric swirl is a separate book. The 22 August paper keeps the algebraic identity and leaves classical unaugmented regularity open. DA-VC-01 is the honest lab test of that plant; it fails today because synthesize still invents a PD loop. The May geometry essay is a correspondence hypothesis, not a theorem. The clean challenge file is the authority; a broken paste with \(\Lambda=Y/X\) / \(M-\Lambda N\) / DA-NS-1 must not replace it.
+Domain Architect is the product. Axisymmetric swirl is a separate book. The 22 August paper keeps the algebraic identity and leaves classical unaugmented regularity open. Paper2 SND/GNC is a third book: conditional spectral NS on \(\mathbb{T}^3\), simplex OPEN, not a swirl estimate. DA-VC-01 is the honest lab test of the swirl plant; it fails today because synthesize still invents a PD loop. The May geometry essay is a correspondence hypothesis, not a theorem. The clean challenge file is the authority; a broken paste with \(\Lambda=Y/X\) / \(M-\Lambda N\) / DA-NS-1 must not replace it.
 
 End of handoff.

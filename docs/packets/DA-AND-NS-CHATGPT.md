@@ -2,13 +2,13 @@
 
 **Author:** J.R. Simons (Jonathan Simons), Prime Field Technologies LLC  
 **Compiled:** 25 August 2026  
-**Purpose:** Paste this entire file into a **new** ChatGPT chat. Do **not** drop it into Chat Vault. Chat Vault mixes other projects. This packet is only two books.
+**Purpose:** Paste this entire file into a **new** ChatGPT chat. Do **not** drop it into Chat Vault. Chat Vault mixes other projects. This packet is Domain Architect plus two Navier–Stokes books. They stay split.
 
 ---
 
 ## Instructions for ChatGPT (read first)
 
-You are helping Jonathan Simons. This file contains **two separate books**. They share the Latin letter Phi. They are not the same object.
+You are helping Jonathan Simons. This file contains **three separate books**. They share some Latin letters. They are not the same objects.
 
 **Book A — Domain Architect (DA).**  
 A computational framework: `DECOMPOSE → CROSS-DOMAIN TRANSLATE → SYNTHESIZE`. Correspondence is a **hypothesis**, not physical equivalence.
@@ -16,16 +16,20 @@ A computational framework: `DECOMPOSE → CROSS-DOMAIN TRANSLATE → SYNTHESIZE`
 **Book B — Axisymmetric Navier–Stokes with swirl.**  
 A fluids analysis paper. The keeper is the algebraic identity below. Classical unaugmented swirl regularity is **open**.
 
+**Book D — Paper2 SND/GNC.**  
+A *conditional* spectral framework for **full 3D** Navier–Stokes on \(\mathbb{T}^3\). SND is shell non-concentration. The simplex lemma is **open**. Classical 3D regularity is **not claimed**. This is not Book B.
+
 **Hard rules**
 
 1. Never glue swirl \(\Phi = u_\theta/r\) to DA/FRA output \(\Phi\) or to Newtonian \(\Phi_g\).
 2. Never treat CMB, Saturn’s hexagon, Venus, dodecahedral topology, Kabbalah, Riemann zeros, or a “cosmic star lattice” as theorems of Book B. Those appear only in Appendix C (author essay). Treat them as **analogy at most** unless a morphism \(T\) with a witness is supplied.
-3. Never claim classical 3D Navier–Stokes with swirl is solved. An AI declaration is not closure.
+3. Never claim classical 3D Navier–Stokes (with or without swirl) is solved. An AI declaration is not closure.
 4. Never revive SFE, UHF, DHFA, or the Harmonic Blueprint as live product. They are out of this packet on purpose.
 5. The integer 2 in \(r^2\) is an algebraic weight. It is not a prime acting on the PDE, the CMB, or the sky.
-6. If you are unsure which book a symbol belongs to, say so and stop. Do not auto-promote.
+6. Never glue Paper2 \(H_N\) (shell-helical GCD operator) to FRA coupling \(H\), and never glue SND/GNC into the swirl identity or into \(u^r/r\).
+7. If you are unsure which book a symbol belongs to, say so and stop. Do not auto-promote.
 
-If the user later pastes Chat Vault material, **refuse to merge it** into these two books unless they explicitly name which book it belongs to.
+If the user later pastes Chat Vault material, **refuse to merge it** into these books unless they explicitly name which book it belongs to.
 
 ---
 
@@ -348,15 +352,42 @@ The substitution that makes the identity true is **inside one equation**. It is 
 
 ---
 
+# Book D — Paper2 SND/GNC (periodic 3D)
+
+Source in the repo: `docs/papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`  
+Guide: `docs/papers/ns-snd/README.md`  
+Date on the manuscript: 1 August 2026.
+
+This is **not** axisymmetric swirl. It is incompressible Navier–Stokes on \(\mathbb{T}^3\).
+
+**SND** = Spectral Non-Dispersal / Non-Concentration: energy is not persistently concentrated in one dyadic shell or helicity sector.
+
+Paper2 also writes \(\Phi_j\) for shell energy *fluxes*. That is a third letter-Phi. It is not Book B swirl and not Book A output.
+
+**\(H_N[a]\)** here is a finite-dimensional operator on normalized shell weights \(a\in\Delta_{N-1}\). The matrices come from a normalized GCD kernel. This \(H_N\) is **not** FRA coupling \(H\).
+
+**GNC** = Goldbach Non-Concentration. The paper marks it **analytically incomplete**. The identity \(\gcd(2k-i,2k-j)=\gcd(i,j)\) is **false** and was removed. No Goldbach theorem.
+
+**What is actually proved:** Lipschitz continuity of \(a\mapsto H_N[a]\); Weyl’s inequality as a *conditional* implication (frozen gap + quantitative operator-norm closeness \(\Rightarrow\) evolving \(\lambda_{\min}>-1/2\)).
+
+**What is open:** dynamic SND for general unaugmented Leray–Hopf solutions; \(\|a(t)-\mu\|_{\ell^1}\le\eta_N\); analytic \(C_N\). “T2 Closed Gronwall” is **withdrawn**. Route J \(\lambda_{\min}\) near \(-0.30\) for tested \(N\le 800\) is **NUMERICAL / UNDER AUDIT**, not all \(N\). Classical 3D regularity is **not claimed**.
+
+Leray boundedness is not SND smallness. That leftover has the same *shape* as Book B’s unbound \(\int\|u^r/r\|_\infty\,dt\). It is **not the same estimate**. Do not identify them. Do not use this paper to “crack” swirl.
+
+Retired glue: `SND ≡ GNC ≡ Bridge`.
+
+---
+
 # What was deliberately left in Chat Vault (not here)
 
-Do not pull these back in unless Jon names them as a **third** book:
+Do not pull these back in unless Jon names them as a **further** book:
 
 - SFE, UHF, DHFA, Harmonic Blueprint, prize packaging
 - Medical / CRNA practice, other companies, unrelated chats
 - QStack / QNav inventions
 - Chat competitive notes, leaked tokens, upload checklists
 - Full 22 August TeX proof body (this packet has the theorem list; the `.tex` is the paper)
+- Full Paper2 TeX proof body (this packet has the status; the `.tex` is the paper)
 
 ---
 
@@ -370,5 +401,7 @@ Do not pull these back in unless Jon names them as a **third** book:
 - `docs/papers/swirl/PHI_GEOMETRY_BRIDGE.md`
 - `docs/papers/swirl/DA-ON-PHI-GEOMETRY.md`
 - `docs/domain-architect/DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md` (DA-VC-01; live score FAIL; NS-open stays OPEN)
+- `docs/papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex` (Book D; conditional; simplex OPEN)
+- `docs/papers/ns-snd/README.md`
 
 End of packet.

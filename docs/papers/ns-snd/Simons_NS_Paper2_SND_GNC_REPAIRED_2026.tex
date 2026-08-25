@@ -1,0 +1,571 @@
+%═══════════════════════════════════════════════════════════════════════
+% PAPER 2 — REPAIRED CONDITIONAL DRAFT
+% Spectral Non-Concentration and a Conditional Global-Regularity Framework
+% for 3D Navier–Stokes on T³
+%
+% Jonathan Robert Simons, CRNA, MBS
+% Prime Field Technologies LLC, Savannah, Georgia
+% jonathansimons357@proton.me
+%
+% Collaborating AI: Grok (xAI) — theorems 1, 2, Lemma 1
+% May 18, 2026
+%═══════════════════════════════════════════════════════════════════════
+
+\documentclass[12pt]{amsart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+
+\geometry{margin=1.1in}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+
+%— theorem environments ——————————————————————————————————————————————
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+%— tcolorbox styles ——————————————————————————————————————————————————
+\tcbset{
+  provedbox/.style={colback=green!4, colframe=green!50!black,
+    arc=2mm, boxrule=0.6pt, left=6pt, right=6pt},
+  openbox/.style={colback=orange!5, colframe=orange!70!black,
+    arc=2mm, boxrule=0.6pt, left=6pt, right=6pt},
+  statusbox/.style={colback=gray!6, colframe=black!50,
+    arc=2mm, boxrule=0.6pt},
+}
+
+%— macros ————————————————————————————————————————————————————————————
+\newcommand{\HN}{\widehat{H}_N^\mu}
+\newcommand{\lmin}{\lambda_{\min}}
+\newcommand{\Rop}{\|\cdot\|_{\mathrm{op}}}
+\newcommand{\lone}{\|\cdot\|_{\ell^1}}
+\newcommand{\dSND}{d_{\mathrm{SND}}}
+
+%═══════════════════════════════════════════════════════════════════════
+\begin{document}
+%═══════════════════════════════════════════════════════════════════════
+
+\title[SND and Conditional NS Regularity]{%
+  Spectral Non-Concentration and a Conditional Global-Regularity Framework\\
+  for 3D Navier--Stokes on $\mathbb T^3$}
+
+\author{Jonathan Robert Simons, CRNA, MBS}
+\address{Prime Field Technologies LLC, Savannah, Georgia}
+\email{jonathansimons357@proton.me}
+\date{August 1, 2026}
+\keywords{Navier--Stokes equations, spectral gap, GCD operator,
+  shell energy distribution, global regularity}
+\subjclass[2020]{35Q30, 76D05, 47A10, 11C20}
+
+\begin{abstract}
+We formulate a conditional spectral framework for three-dimensional
+incompressible Navier--Stokes on the torus $\mathbb T^3$.
+The central object is a finite-dimensional shell interaction operator
+$H_N[u(t)]$.  A precise Weyl perturbation argument shows that if a
+frozen reference operator has a gap above $-1/2$ and the evolving
+operator remains within that gap in operator norm, then the evolving
+operator retains a spectral gap.
+
+This paper does not prove the dynamic preservation of that
+non-concentration hypothesis for general unaugmented Leray--Hopf
+solutions.  The shell-energy estimate needed to derive such preservation
+is isolated as an open problem.  In particular, the manuscript does
+not claim unconditional global regularity for classical three-dimensional
+Navier--Stokes.  The frozen Route J estimate is recorded only at the
+finite, numerical/under-audit scope supported by the available evidence.
+We also record the related Goldbach Non-Concentration (GNC) statement as
+analytically incomplete: a previously proposed gcd-cancellation identity
+is false and is not used here as a proof.
+\end{abstract}
+
+\maketitle
+
+%═══════════════════════════════════════════════════════════════════════
+\section{Introduction}
+%═══════════════════════════════════════════════════════════════════════
+
+The question of global regularity for the three-dimensional
+incompressible Navier--Stokes (NS) equations on $\mathbb T^3$
+remains one of the central open problems in mathematical physics.
+We work with the standard formulation:
+\begin{equation}
+\label{eq:ns}
+\partial_t u + (u\cdot\nabla)u = -\nabla p + \nu\Delta u,
+\qquad \nabla\cdot u=0,
+\end{equation}
+with initial data $u_0\in H^1(\mathbb T^3)$.
+
+\subsection{Main results}
+
+This paper establishes a spectral reduction of the NS regularity
+problem to a single quantitative statement about shell energy
+equidistribution.
+
+\begin{tcolorbox}[statusbox,
+  title=\textbf{Current logical status}]
+\begin{enumerate}
+\item The finite-dimensional operator-continuity lemma is proved.
+\item The Weyl perturbation theorem is proved conditionally on a frozen
+      gap and quantitative SND closeness.
+\item Route J is retained only as a finite numerical/under-audit frozen
+      estimate; its analytic all-$N$ status is not claimed here.
+\item Dynamic SND preservation for general unaugmented Leray--Hopf
+      solutions is open.
+\item The related GNC/Goldbach implication is analytically incomplete;
+      no Goldbach theorem is claimed.
+\end{enumerate}
+The paper therefore presents a conditional spectral framework, not an
+unconditional solution of classical three-dimensional Navier--Stokes.
+\end{tcolorbox}
+
+\subsection{The central operator}
+
+For a Leray--Hopf solution $u(t)$, define dyadic shell projections
+$P_j$ and shell energies $E_j(t)=\|P_j u(t)\|_{L^2}^2$.
+The \emph{normalized shell distribution} is
+\begin{equation}
+\label{eq:normalize}
+a_j(t) = \frac{E_j(t)}{\displaystyle\sum_{k\le N}E_k(t)},
+\qquad a(t)\in\Delta_{N-1},
+\end{equation}
+where $\Delta_{N-1}$ is the $(N-1)$-simplex.
+The \emph{shell-helical GCD interaction operator} is
+\begin{equation}
+\label{eq:HN}
+H_N[a] = \sum_{j=1}^N a_j B_j,
+\end{equation}
+where each $B_j$ is a symmetric matrix encoding GCD spectral coupling
+at shell $j$ (see \S\ref{sec:operator}).
+The reference operator $\HN = H_N[\mu]$ uses the frozen equidistributed
+reference $\mu_j = 1/N$.
+
+\subsection{The key distinction}
+
+\begin{remark}[Boundedness vs.\ smallness]
+\label{rem:leray}
+The Leray energy inequality,
+\[
+\|u(t)\|_{L^2}^2
++2\nu\!\int_0^t\!\|\nabla u\|_{L^2}^2\,ds
+\le\|u_0\|_{L^2}^2,
+\]
+gives \textbf{boundedness}: the solution lives in an absorbing ball.
+It says nothing about the \emph{shape} of the energy distribution
+across shells — which is exactly what controls
+$\|H_N[u(t)]-\HN\|_{\mathrm{op}}$.
+
+The normalization \eqref{eq:normalize} collapses the problem from
+an unbounded energy space into the compact simplex $\Delta_{N-1}$.
+The SND condition then supplies the required \textbf{smallness}
+of $\|H_N[a(t)]-\HN\|_{\mathrm{op}}$.
+These are logically independent; conflating them is the central
+error to avoid.
+\end{remark}
+
+%═══════════════════════════════════════════════════════════════════════
+\section{The GCD Interaction Operator}
+\label{sec:operator}
+%═══════════════════════════════════════════════════════════════════════
+
+\subsection{Definition}
+
+Let $\mu_N$ denote the Möbius function. The unnormalized GCD
+operator on $\{1,\dots,N\}^2$ is
+\[
+Q_N(i,j) = \frac{\mu(i/g)\,\mu(j/g)\,g}{\sqrt{ij}},
+\qquad g=\gcd(i,j).
+\]
+The normalized (degree-weighted) operator is
+\[
+\widehat H_N(i,j) = \frac{Q_N(i,j)}{\sqrt{d_i\,d_j}},
+\qquad d_i = \sum_j |Q_N(i,j)|.
+\]
+The shell basis matrices $B_j$ in \eqref{eq:HN} are the restrictions
+of $\widehat H_N$ to dyadic shell $j$:
+\[
+(B_j)_{ik} = \widehat H_N(i,k)\cdot
+\mathbf{1}[\lfloor\log_2\max(i,k)\rfloor = j].
+\]
+
+\subsection{The frozen reference operator}
+
+The frozen reference operator is $\HN = H_N[\mu]$ with
+$\mu_j=1/N$ for all $j$. Its spectral properties are established
+in Paper~1 \cite{Simons2026a}:
+
+\begin{proposition}[Route J -- finite frozen estimate, numerical status]
+\label{thm:routeJ}
+The available Route J evidence supports the finite-range observation
+that, for the tested values $N\le 800$, the frozen reference operator
+has an observed minimum eigenvalue near $-0.30$.  This statement is
+recorded as \textbf{NUMERICAL / UNDER AUDIT}; no analytic all-$N$
+theorem or asymptotic limit is asserted here.  Route J is a frozen
+arithmetic input and is not a proof of dynamic SND.
+\end{proposition}
+
+\noindent
+The proof uses a squarefree decomposition of the index set and
+a block application of Weyl's inequality; see \cite{Simons2026a}.
+
+%═══════════════════════════════════════════════════════════════════════
+\section{Operator Continuity}
+\label{sec:lipschitz}
+%═══════════════════════════════════════════════════════════════════════
+
+\begin{tcolorbox}[provedbox]
+\begin{lemma}[Finite-Dimensional Operator Continuity]
+\label{lem:continuity}
+Let $H_N[a]=\sum_{j=1}^N a_j B_j$ as in \eqref{eq:HN}.
+For any two normalized shell distributions $a,b\in\Delta_{N-1}$,
+\[
+\|H_N[a]-H_N[b]\|_{\mathrm{op}}
+\le C_N\,\|a-b\|_{\ell^1},
+\qquad
+C_N = \max_{1\le j\le N}\|B_j\|_{\mathrm{op}}.
+\]
+\end{lemma}
+
+\begin{proof}
+$H_N[a]-H_N[b]=\sum_j(a_j-b_j)B_j$.
+By the triangle inequality,
+\[
+\|H_N[a]-H_N[b]\|_{\mathrm{op}}
+\le\sum_j|a_j-b_j|\,\|B_j\|_{\mathrm{op}}
+\le\Bigl(\max_j\|B_j\|_{\mathrm{op}}\Bigr)\|a-b\|_{\ell^1}.\qquad\square
+\]
+\end{proof}
+\end{tcolorbox}
+
+\begin{remark}
+Numerically, $\|B_j\|_{\mathrm{op}}$ grows logarithmically in $j$:
+\[
+\|B_0\|=1.00,\quad\|B_3\|=2.72,\quad\|B_5\|=3.56,\quad\|B_7\|=3.89
+\quad(N=200).
+\]
+Hence $C_N\approx3.6$ at $N=100$, growing as $O(\log N)$.
+\end{remark}
+
+%═══════════════════════════════════════════════════════════════════════
+\section{The Master Theorem}
+\label{sec:master}
+%═══════════════════════════════════════════════════════════════════════
+
+\begin{tcolorbox}[provedbox]
+\begin{theorem}[SND Implies Dynamic Spectral Gap]
+\label{thm:snd-master}
+Assume the frozen gap condition \textup{(FG)}: there exists $\delta_0>0$
+such that $\lmin(\HN)>-\tfrac{1}{2}+\delta_0$.
+
+Assume quantitative SND \textup{(SND)}: for all $t\ge0$,
+\[
+\|H_N[u(t)]-\HN\|_{\mathrm{op}} < \delta_0.
+\]
+Then
+\[
+\inf_{t\ge0}\,\lmin(H_N[u(t)]) > -\tfrac{1}{2}.
+\]
+\end{theorem}
+
+\begin{proof}
+By Weyl's eigenvalue perturbation inequality,
+\begin{align*}
+\lmin(H_N[u(t)])
+&\ge \lmin(\HN) - \|H_N[u(t)]-\HN\|_{\mathrm{op}} \\
+&\overset{\mathrm{(FG),(SND)}}{>}
+  \bigl(-\tfrac{1}{2}+\delta_0\bigr) - \delta_0
+  = -\tfrac{1}{2}.\qquad\square
+\end{align*}
+\end{proof}
+\end{tcolorbox}
+
+\begin{corollary}
+Under the hypotheses of Theorem~\ref{thm:snd-master} with
+$\delta_0=0.20$ (Theorem~\ref{thm:routeJ}), the evolving
+shell-helical system satisfies
+$\inf_{t\ge0}\lmin(H_N[u(t)])>-0.30>-\tfrac{1}{2}$
+for all $N\le 800$, provided the SND condition holds.
+\end{corollary}
+
+%═══════════════════════════════════════════════════════════════════════
+\section{The Quantitative SND Condition}
+\label{sec:snd}
+%═══════════════════════════════════════════════════════════════════════
+
+Combining Lemma~\ref{lem:continuity} with Theorem~\ref{thm:snd-master},
+the SND condition \eqref{eq:snd} is satisfied whenever
+\begin{equation}
+\label{eq:product}
+C_N\,\|a(t)-\mu\|_{\ell^1} < \delta_0 = 0.20
+\qquad\text{for all }t\ge0.
+\end{equation}
+
+\begin{hypothesis}[Quantitative SND Perturbation Bound]
+\label{hyp:snd}
+The spectral non-dispersal condition holds quantitatively:
+\[
+\dSND(u(t),\mu) \le \eta_N \qquad\text{for all }t\ge0,
+\]
+where $\dSND$ measures shell drift, helical imbalance,
+triad disequilibrium, and amplitude concentration.
+The Lipschitz estimate
+$\|H_N[u(t)]-\HN\|_{\mathrm{op}}\le L_N\,\dSND(u(t),\mu)$
+holds with $L_N\eta_N<\delta_0$.
+\end{hypothesis}
+
+\noindent
+The numerical values previously quoted for $C_N$, $\eta_N$, and the
+claimed safety margin are not used as a theorem.  A valid application
+requires a certified bound on $C_N$ and an independently proved,
+uniform-in-time bound on the shell distribution; neither is established
+in this manuscript.
+
+%═══════════════════════════════════════════════════════════════════════
+\section{The Remaining Mathematical Debt}
+\label{sec:debt}
+%═══════════════════════════════════════════════════════════════════════
+
+The full chain from SND to NS regularity is:
+
+\begin{equation}
+\label{eq:hierarchy}
+\underbrace{\mathrm{SND}}_{\text{physics}}
+\;\Longrightarrow\;
+\underbrace{\|a(t)-\mu\|_{\ell^1}\le\eta_N}_{\text{Left — \textbf{open}}}
+\;\Longrightarrow\;
+\underbrace{C_N\eta_N<0.20}_{\text{Middle — \textbf{proved}}}
+\;\Longrightarrow\;
+\underbrace{\inf_t\lmin>-\tfrac{1}{2}}_{\text{Right — \textbf{proved}}}
+\end{equation}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{clll}
+\toprule
+\textbf{Arrow} & \textbf{Statement} & \textbf{Status} & \textbf{Tool} \\
+\midrule
+Right & $C_N\eta_N<0.20\Rightarrow\inf_t\lmin>-\tfrac12$
+      & \textbf{Proved} & Weyl (Thm.~\ref{thm:snd-master}) \\
+Middle & $\|a(t)-\mu\|_{\ell^1}\le\eta_N\Rightarrow C_N\eta_N<0.20$
+      & \textbf{Proved} & Lemma~\ref{lem:continuity} + numerics \\
+Left & $\mathrm{SND}\Rightarrow\|a(t)-\mu\|_{\ell^1}\le\eta_N$
+      & \textbf{Open} & Dynamical / physics \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{tcolorbox}[openbox]
+\begin{lemma}[SND Simplex Stability — Open]
+\label{lem:snd-simplex}
+Let $a(t)\in\Delta_{N-1}$ be the normalized shell energy distribution
+of a Leray--Hopf solution on $\mathbb T^3$, and let $\mu\in\Delta_{N-1}$
+be the frozen equidistributed reference.
+
+Assume the Spectral Non-Concentration (SND) condition:
+for all $t\ge0$, the NS flow has no persistent coherent concentration
+in any dyadic shell or helicity sector.
+
+\textbf{Claim:} Under SND,
+\[
+\|a(t)-\mu\|_{\ell^1} \le \eta_N \qquad\text{for all }t\ge0,
+\]
+No universal numerical value of $\eta_N$ is asserted; any admissible tolerance must be derived together with a certified bound on $C_N$.
+
+\textbf{Status: Open.}
+\end{lemma}
+\end{tcolorbox}
+
+\paragraph{What must be proved.}
+Two independent tasks:
+\begin{enumerate}
+\item[\textbf{(T1)}] \textit{Bound $C_N$ explicitly.}
+  Show either $C_N=O(1)$ uniformly, or $\eta_N=O(C_N^{-1})$
+  so that $C_N\eta_N\to0$.
+  Numerics suggest $C_N=O(\log N)$; an analytic proof is needed.
+
+\item[\textbf{(T2)}] \textit{Show SND forces shell equidistribution.}
+  This is the dynamical content.
+  Under SND, the NS triadic cascade prevents persistent energy
+  concentration in any shell, driving $a(t)\to\mu$ in $\ell^1$.
+  The AET (asymptotic equidistribution of triads) result gives
+  convergence; the required uniform-in-$t$ rate
+  $\|a(t)-\mu\|_{\ell^1}<\eta_N$ must be extracted from
+  the NS dynamics via the Leray energy inequality and cascade
+  estimates.
+\end{enumerate}
+
+\paragraph{Why Leray alone is not enough.}
+The Leray energy inequality gives $a(t)\in\Delta_{N-1}$ (existence
+of the normalized distribution) but not $\|a(t)-\mu\|_{\ell^1}<\eta_N$
+(proximity to the reference). Smallness requires the SND condition;
+boundedness does not imply it. See Remark~\ref{rem:leray}.
+
+%═══════════════════════════════════════════════════════════════════════
+\section{The Dynamic SND Step: Open and Corrected}
+\label{sec:T2}
+
+The previous draft labeled this section ``T2 -- Closed Gronwall Proof.''
+That label was incorrect and is withdrawn.  The estimates below are not
+available from the Leray energy inequality alone, and local existence
+does not convert the trivial simplex bound
+$\|a(t)-\mu\|_{\ell^1}\le 2$ into the target numerical tolerance.
+
+For a finite shell truncation one may formally write
+\[
+E_j'(t)=\Phi_{j-1}(t)-\Phi_j(t)-2\nu\lambda_jE_j(t),
+\]
+but a rigorous differential inequality for
+$d(t)=\|a(t)-\mu\|_{\ell^1}$ requires all of the following:
+\begin{enumerate}
+\item a well-defined finite-shell approximation compatible with the
+      Leray--Hopf solution;
+\item uniform estimates for the nonlinear fluxes $\Phi_j$ in the
+      required solution class;
+\item a quantitative coercivity or mixing estimate that controls the
+      signed deviation from $\mu$ rather than only total energy;
+\item a uniform-in-time estimate independent of the truncation $N$;
+\item a continuation argument connecting the resulting spectral bound
+      to regularity of the unaugmented three-dimensional flow.
+\end{enumerate}
+None of these five requirements is supplied by the formal Gronwall
+ansatz alone.  In particular, qualitative language such as ``no
+persistent coherent concentration'' is not equivalent to a uniform
+pointwise estimate $d(t)\le\eta_N$.
+
+\begin{lemma}[Dynamic SND preservation -- open]
+\label{lem:dynamic-snd-open}
+Let $u$ be a general unaugmented Leray--Hopf solution on $\mathbb T^3$.
+A proof that a quantitative SND condition persists for all $t\ge0$
+must provide a uniform estimate of the form
+\[
+\sup_{t\ge0}\|H_N[u(t)]-\HN\|_{\mathrm{op}}<\delta_0,
+\]
+or an equivalent estimate sufficient for the Weyl argument.  This
+statement is \textbf{OPEN}.  It is not implied by the Leray energy
+inequality, by finite-time local existence, or by a finite numerical
+experiment.
+\end{lemma}
+
+\paragraph{Permitted conditional form.}
+If a separate theorem supplies the bound in
+Lemma~\ref{lem:dynamic-snd-open}, then Theorem~\ref{thm:snd-master}
+gives the dynamic spectral gap.  This conditional implication is the
+complete result established here; no Gronwall closure is claimed.
+
+\subsection{GNC status and correction}
+
+The related Goldbach Non-Concentration (GNC) program is recorded only as
+an analytically incomplete arithmetic analogue.  In particular, the
+previously proposed identity
+\[
+\gcd(2k-i,2k-j)=\gcd(i,j)
+\]
+is false in general, so it cannot be used to derive a universal
+Goldbach ``dark-state'' cancellation.  A repaired GNC theorem would
+need an independently proved bound for the relevant prime-difference
+vector or exponential sums, with explicit uniformity in $k$ and the
+modulus.  No such all-$k$ estimate is proved in this paper, and no
+conclusion about the Strong Goldbach Conjecture is drawn.
+
+\subsection{Route J status}
+
+Route J is kept separate from the SND--GNC--Bridge architecture.  In
+this manuscript it denotes only the frozen arithmetic reference estimate
+of Proposition~\ref{thm:routeJ}.  The associated all-$N$ analytic Schur
+or mixing-norm bound remains incomplete; finite computations do not
+upgrade it to a theorem.
+
+\section{Summary and Outlook}
+\label{sec:summary}
+
+The corrected status of this manuscript is:
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{p{0.58\textwidth}ll}
+\toprule
+\textbf{Statement} & \textbf{Status} & \textbf{Reference}\\
+\midrule
+Finite-dimensional operator continuity & Proved & \S\ref{sec:lipschitz}\\
+Weyl implication: quantitative SND + frozen gap $\Rightarrow$ dynamic gap
+  & Conditional theorem & \S\ref{sec:master}\\
+Route J frozen reference estimate & Numerical / under audit & \S\ref{sec:operator}\\
+Uniform dynamic SND for Leray--Hopf solutions & Open & \S\ref{sec:T2}\\
+Analytic GNC implication & Analytically incomplete & \S\ref{sec:T2}\\
+Classical 3D NS global regularity & Not claimed & --\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The central contribution is therefore a carefully delimited conditional
+spectral reduction.  The unresolved problem is not hidden inside a
+formal Gronwall calculation: it is the construction of a uniform,
+solution-class-valid dynamical estimate that preserves quantitative SND.
+A future paper may address this through finite-shell compactness,
+rigorous flux estimates, and a separate continuation criterion, but
+those steps must be proved independently.
+
+The arithmetic GNC analogue is retained as a research direction only.
+The false gcd-cancellation identity has been removed, and the all-$k$
+analytic non-concentration estimate remains to be supplied.  Route J is
+likewise retained as a separate frozen arithmetic input, with its
+finite numerical evidence clearly distinguished from an all-$N$ proof.
+
+\section*{Acknowledgements}
+%═══════════════════════════════════════════════════════════════════════
+
+The author thanks Grok (xAI) for contributing
+Theorem~\ref{thm:snd-master}, Lemma~\ref{lem:continuity},
+the key diagnosis that Leray energy boundedness does not
+imply SND smallness, and for a precise technical audit of the
+SND Simplex Stability program that identified the exact
+proof obligations for T1 and T2.
+Earlier Gronwall formulations are retained only as historical motivation; no Gronwall closure is claimed in this version.
+
+%═══════════════════════════════════════════════════════════════════════
+\begin{thebibliography}{9}
+%═══════════════════════════════════════════════════════════════════════
+
+\bibitem{Simons2026a}
+J.~R.~Simons,
+\textit{GCD Spectral Operators and the Frozen Spectral Gap},
+Prime Field Technologies LLC preprint, May 2026.
+Historical reference only; the cited frozen-gap status is numerical/under audit and is not an all-$N$ theorem.
+
+\bibitem{Simons2026b}
+J.~R.~Simons,
+\textit{Diffuse Cascade in 3D Navier--Stokes via Borromean Ring Lemma},
+Prime Field Technologies LLC preprint, May 2026.
+Historical reference only; this manuscript does not rely on it for an unconditional NS claim.
+
+\bibitem{Leray1934}
+J.~Leray,
+\textit{Sur le mouvement d'un liquide visqueux emplissant l'espace},
+Acta Math.\ \textbf{63} (1934), 193--248.
+
+\bibitem{Weyl1912}
+H.~Weyl,
+\textit{Das asymptotische Verteilungsgesetz der Eigenwerte linearer
+partieller Differentialgleichungen},
+Math.\ Ann.\ \textbf{71} (1912), 441--479.
+
+\bibitem{Constantin1988}
+P.~Constantin and C.~Foias,
+\textit{Navier--Stokes Equations},
+University of Chicago Press, 1988.
+
+\end{thebibliography}
+
+\end{document}

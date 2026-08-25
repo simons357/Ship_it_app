@@ -38,6 +38,10 @@ not award it as physical equivalence. The DA reading is
 theorem paper does not use Q6 / primes / spectral clock as load-bearing
 mathematics.
 
+**Different NS book (do not merge):** periodic 3D spectral Paper2 lives in
+[`docs/papers/ns-snd/`](../ns-snd/README.md). SND / GNC / shell \(H_N\)
+are not the swirl identity and are not a path that closes \(u^r/r\).
+
 One paste-ready file for a **new** ChatGPT chat (not Chat Vault):
 [`docs/packets/DA-AND-NS-CHATGPT.md`](../../packets/DA-AND-NS-CHATGPT.md).
 
