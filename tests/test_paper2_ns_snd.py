@@ -394,6 +394,96 @@ class TestDraftOriginalIsHistoricalImpliesFace(unittest.TestCase):
         )
 
 
+class TestAprilSpectralCoherenceFilenameIsMay18ImpliesAlias(unittest.TestCase):
+    """Desktop/Base44 April Spectral Coherence DRAFT is the May 18 implies TeX.
+
+    Filename claimed April Q6 / *A Spectral Coherence Criterion*. Bytes are
+    Simons_NS_Paper2_DRAFT_original.tex. Not FIXED. Not August. Not Clay.
+    """
+
+    DRAFT = NS_SND / "Simons_NS_Paper2_DRAFT_original.tex"
+    DRAFT_SHA256 = (
+        "f51ed5c05ec3886603a69de942b890dc76c73b3860fe089a056b4665ab8cc4cb"
+    )
+    AUGUST_SHA256 = (
+        "1ff7a211c00d660c30365e5913727f0129cfc5cd76f1f40ed9a47f468c746cc3"
+    )
+    ALIAS = "5dfeb6b64_Paper2_April_Spectral_Coherence_DRAFT.tex"
+    DOWNLOADS_DRAFT = "675001cd1_Simons_NS_Paper2_DRAFT.tex"
+
+    def test_alias_is_not_refiled_and_not_fixed_or_august(self):
+        raw = self.DRAFT.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), self.DRAFT_SHA256)
+        self.assertEqual(len(raw), 26998)
+        self.assertEqual(raw.count(b"\n"), 664)
+        june = PDF.read_bytes()
+        august = PAPER.read_bytes()
+        self.assertEqual(hashlib.sha256(june).hexdigest(), PDF_SHA256)
+        self.assertEqual(hashlib.sha256(august).hexdigest(), self.AUGUST_SHA256)
+        self.assertEqual(PDF_SHA256, (
+            "7de9444d18054fc8f49a52c3fd7ed2f086a7c7d7d6d1e95bad350c378535c41b"
+        ))
+        self.assertNotEqual(raw, june)
+        self.assertNotEqual(raw, august)
+        self.assertNotEqual(self.DRAFT_SHA256, PDF_SHA256)
+        self.assertNotEqual(self.DRAFT_SHA256, self.AUGUST_SHA256)
+        tex = raw.decode("utf-8")
+        self.assertIn("Implies Global Regularity", tex)
+        self.assertIn(r"\date{May 18, 2026}", tex)
+        self.assertNotIn("A Spectral Coherence Criterion", tex)
+        self.assertNotIn("Dominant-Shell Damping", tex)
+        self.assertNotIn("Corrected June 2026", tex)
+        self.assertNotIn("Conditional Regularity Criterion", tex)
+        self.assertNotIn("Conditional Global-Regularity Framework", tex)
+        self.assertNotIn("Goldbach", tex)
+        self.assertNotIn("GNC", tex)
+        self.assertFalse(
+            (NS_SND / "Paper2_April_Spectral_Coherence_DRAFT.tex").is_file(),
+            "duplicate of May 18 draft; do not re-file under the Desktop name",
+        )
+        self.assertFalse(
+            (NS_SND / self.ALIAS).is_file(),
+            "do not re-file the Base44 hash-prefix name as a second copy",
+        )
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file(),
+            "do not invent June FIXED TeX from the April Spectral filename",
+        )
+        self.assertFalse(
+            (NS_SND / self.DOWNLOADS_DRAFT).is_file(),
+            "do not invent the still-absent Downloads draft from a line count",
+        )
+
+    def test_faces_record_alias_and_reject_expected_april_q6_family(self):
+        faces = FACES.read_text(encoding="utf-8")
+        readme = README.read_text(encoding="utf-8")
+        self.assertIn("April Spectral Coherence DRAFT", faces)
+        self.assertIn("April Spectral Coherence DRAFT", readme)
+        self.assertIn("5dfeb6b64", faces)
+        self.assertIn("5dfeb6b64", readme)
+        self.assertIn(self.ALIAS, faces)
+        self.assertIn("f51ed5c05ec3", faces)
+        self.assertIn("f51ed5c05ec3", readme)
+        self.assertIn("664", faces)
+        self.assertIn("May 18, 2026", faces)
+        self.assertIn("Implies Global Regularity", faces)
+        self.assertIn("not re-filed", faces.lower())
+        self.assertIn("not that family", faces.lower())
+        self.assertIn("A Spectral Coherence Criterion", faces)
+        self.assertIn("Dominant-Shell", faces)
+        self.assertIn("**Not** FIXED", faces)
+        self.assertIn("**Not** August", faces)
+        self.assertIn("**Not** Clay", faces)
+        self.assertIn("not a compile of June PDF", faces.lower())
+        self.assertIn("7de9444d", faces)
+        self.assertIn("7de9444d", readme)
+        self.assertIn("NOT CLAIMED", faces)
+        self.assertIn("do not use as closed", faces.lower())
+        self.assertIn("Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex", faces)
+        self.assertIn("675001cd1_Simons_NS_Paper2_DRAFT.tex", faces)
+        self.assertIn("still absent", faces.lower())
+
+
 class TestCleanPdfIsNotPaper2OrFixed(unittest.TestCase):
     """April 2026 Phi-renorm CLEAN ReportLab. Not Paper2. Not FIXED. Not Clay."""
 
