@@ -29,20 +29,25 @@ REFUSED = (
     "no identifying x with enstrophy of a field",
 )
 
+# Industry-standard operating intensity on this analog is the no-actuation
+# equilibrium. The desired endpoint is 15% below that.
+INDUSTRY_STANDARD_X = 1.0
+BELOW_INDUSTRY_FRACTION = 0.15
+
 
 def turbulence_intensity_lab(
     *,
-    x_eq: float = 1.0,
-    reduction: float = 0.5,
+    x_eq: float = INDUSTRY_STANDARD_X,
+    reduction: float = BELOW_INDUSTRY_FRACTION,
     omega: float = 1.5,
     zeta: float = 0.8,
     u_max: float = 6.0,
     t_final: float = 8.0,
 ) -> dict[str, Any]:
-    """Compare no-actuation baseline vs PD to a lower recognized setpoint."""
+    """Compare no-actuation industry baseline vs PD to 15% below it."""
     if not 0.0 < reduction < 1.0:
         raise ValueError("reduction must be in (0, 1)")
-    x_star = (1.0 - reduction) * x_eq
+    x_star = round((1.0 - reduction) * x_eq, 4)
     target = f"x → {x_star}"
     if not is_recognized_setpoint(target):
         raise RuntimeError(f"lab setpoint {target!r} is not recognized")
@@ -89,13 +94,21 @@ def turbulence_intensity_lab(
     return {
         "protocol": "turbulence-intensity",
         "definition": (
-            "x is a lumped intensity analog. Decreased turbulence means "
-            f"terminal x on the treated arm is below the no-actuation control "
-            f"arm. Desired setpoint x★ = {x_star} vs baseline equilibrium "
-            f"x_eq = {x_eq} (reduction {reduction:.0%})."
+            "x is a lumped intensity analog. Industry-standard intensity on "
+            f"this plant is the no-actuation equilibrium x_eq = {x_eq}. "
+            f"Desired endpoint is {reduction:.0%} below that: x★ = {x_star}."
         ),
         "plant": plant,
-        "desired": {"symbol": "x★", "value": x_star, "as_setpoint": target},
+        "industry_standard": {
+            "meaning": "no-actuation equilibrium on this analog",
+            "x": x_eq,
+        },
+        "desired": {
+            "symbol": "x★",
+            "value": x_star,
+            "as_setpoint": target,
+            "below_industry_fraction": reduction,
+        },
         "control_arm": {
             "actuation": "u = 0",
             "terminal_x": x_c,
@@ -154,6 +167,10 @@ def cycle_turbulence_intensity(**kwargs: Any) -> CycleReport:
             ),
             "Computational gate is on this lumped analog only.",
             "Not a coating. Not 3D Navier–Stokes. Clay is NOT CLAIMED.",
+            (
+                f"Endpoint is {payload['desired']['below_industry_fraction']:.0%} "
+                "below the industry-standard no-actuation intensity."
+            ),
             "A13 still refuses the slogan 'decrease turbulence' without x → x★.",
             f"Synthesize of the setpoint is {candidate.name}.",
         ],

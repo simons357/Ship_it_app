@@ -27,15 +27,18 @@ class TestIntensityVersusControl(unittest.TestCase):
     def test_treated_is_below_no_actuation_arm(self):
         payload = turbulence_intensity_lab()
         self.assertEqual(payload["protocol"], "turbulence-intensity")
-        self.assertEqual(payload["desired"]["as_setpoint"], "x → 0.5")
-        self.assertAlmostEqual(payload["desired"]["value"], 0.5)
-        self.assertGreater(payload["control_arm"]["terminal_x"], 0.9)
-        self.assertLess(payload["treated_arm"]["terminal_x"], 0.7)
+        self.assertEqual(payload["desired"]["as_setpoint"], "x → 0.85")
+        self.assertAlmostEqual(payload["desired"]["value"], 0.85)
+        self.assertAlmostEqual(payload["desired"]["below_industry_fraction"], 0.15)
+        self.assertAlmostEqual(payload["industry_standard"]["x"], 1.0)
+        self.assertGreater(payload["control_arm"]["terminal_x"], 0.95)
+        self.assertAlmostEqual(payload["treated_arm"]["terminal_x"], 0.85, places=3)
         self.assertLess(
             payload["treated_arm"]["terminal_x"],
             0.9 * payload["control_arm"]["terminal_x"],
         )
-        self.assertGreater(payload["relative_reduction"], 0.3)
+        self.assertGreater(payload["relative_reduction"], 0.12)
+        self.assertLess(payload["relative_reduction"], 0.18)
         self.assertTrue(payload["reduced_vs_control"])
         self.assertTrue(payload["treated_arm"]["settled"])
         self.assertLessEqual(payload["treated_arm"]["max_control"], 6.0 + 1e-9)

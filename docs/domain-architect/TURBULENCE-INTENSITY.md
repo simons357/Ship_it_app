@@ -12,10 +12,12 @@ is allowed to: a concrete \(x\to x^\star\), compared against a
 
 - **State** \(x(t)\): lumped intensity analog. Not enstrophy of a field.
 - **Plant:** \(\ddot x + 2\zeta\omega\dot x + \omega^2 x = \omega^2 x_{\mathrm{eq}} + u\)
-- **Control arm:** \(u=0\). Equilibrium \(x_{\mathrm{eq}}\) (baseline).
+- **Industry standard** on this analog: no-actuation equilibrium
+  \(x_{\mathrm{eq}}=1\). That is the control arm, \(u=0\).
 - **Treated arm:** recognized setpoint \(x\to x^\star\) with
-  \(x^\star=(1-r)x_{\mathrm{eq}}\), default \(r=1/2\). Saturated PD plus
-  the feedforward \(\omega^2(x^\star-x_{\mathrm{eq}})\). Constraint \(|u|\le u_{\max}\).
+  \(x^\star=0.85\,x_{\mathrm{eq}}\) (**15% below** that industry baseline).
+  Saturated PD plus the feedforward \(\omega^2(x^\star-x_{\mathrm{eq}})\).
+  Constraint \(|u|\le u_{\max}\).
 - **Decreased vs control:** terminal treated \(x\) is below \(0.9\) of
   terminal control \(x\), treated arm settled, constraint held.
 
@@ -26,7 +28,7 @@ Computational gate is **on this analog only**.
 ```
 python -m domain_architect cycle turbulence-intensity
 python -m domain_architect synthesize --target "decrease turbulence"
-python -m domain_architect synthesize --target "x → 0.5" --constraint "|u| ≤ 6"
+python -m domain_architect synthesize --target "x → 0.85" --constraint "|u| ≤ 6"
 ```
 
 Desktop Cycle tab: **Intensity vs control**.
