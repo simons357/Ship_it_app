@@ -15,5 +15,6 @@ This packet does not delete, overwrite, or silently alter any Base44 record or h
 | [CHATVAULT-EVERNOTE-TRIAGE.md](CHATVAULT-EVERNOTE-TRIAGE.md) | Historical “Evernote of AI Conversations” HTML: seed demo, substring search, canned assistant |
 | [evidence/](evidence/) | Screenshots, HTML snapshots, one JSON export, SHA-256 sums, visual-test log |
 | [CHATVAULT2-TRIAGE.md](CHATVAULT2-TRIAGE.md) | Honest triage of recovered React-CDN “ChatVault 2” HTML (FEATURE-SOURCE / HISTORICAL; not the live product) |
+| [GROK-RESEARCH-HUNT.md](GROK-RESEARCH-HUNT.md) | Negative hunt: xAI Grok ChatVault research mentioned; file not on this VM — paste or attach |
 
 Nothing in this folder is a ChatVault product repository. Source for the live Base44 apps is still inside Base44 until Jonathan exports it.
