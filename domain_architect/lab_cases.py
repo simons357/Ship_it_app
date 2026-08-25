@@ -190,8 +190,9 @@ NS_LEFTOVERS: tuple[LeftoverSpec, ...] = (
         "missing_role": "independent simplex closeness of shell weights to μ",
         "put_back": (
             "If ||a-μ||_ℓ¹ is small enough then the frozen-gap Weyl "
-            "perturbation keeps evolving λ_min above -1/2. The simplex "
-            "lemma stays OPEN. This H_N[a] is not Q6 H_N."
+            "perturbation keeps evolving λ_min above -1/2. That is "
+            "Paper2 Lemma 6.1 (simplex / SND stability), still OPEN. "
+            "Do not accept §7 'T2 Closed'. This H_N[a] is not Q6 H_N."
         ),
         "status": "OPEN",
     },

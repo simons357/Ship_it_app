@@ -10,14 +10,17 @@ DA may later route to this book. It must **not** glue:
 - SND / GNC / “Bridge” identities to the swirl rewrite \(\frac1{r^4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\)
 - Route J numerics to a Clay/Millennium claim
 
-## Two faces (not a compile pair)
+## Faces (not a compile pair)
 
 | Face | File | Date on the face |
 |---|---|---|
+| June reading PDF | [`Paper2_NS_Regularity_SND_FIXED.pdf`](Paper2_NS_Regularity_SND_FIXED.pdf) | Corrected June 2026 |
+| Mac “SND 2” PDF | [`Paper2_NS_Regularity_SND.pdf`](Paper2_NS_Regularity_SND.pdf) | iOS export 21 July 2026; *implies* header |
+| Zenodo “implies” | [`zenodo-20272545/`](zenodo-20272545/README.md) | Public deposit; live title **claim withdrawn** |
 | August TeX | [`Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex) | 1 August 2026 |
-| June PDF | [`Paper2_NS_Regularity_SND_FIXED.pdf`](Paper2_NS_Regularity_SND_FIXED.pdf) | Corrected June 2026 |
+| August 1 audit | [`NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md`](NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md) | Lemma 6.1 OPEN; §7 T2 not closed |
 
-The PDF is **not** a compile of the TeX. Diff: [`FACES.md`](FACES.md).
+The PDFs are **not** compiles of the TeX. Diff: [`FACES.md`](FACES.md).
 
 **Spectral Non-Concentration** — conditional framework / criterion for 3D Navier–Stokes on \(\mathbb{T}^3\).
 

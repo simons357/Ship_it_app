@@ -33,7 +33,10 @@ If the paperclip errors again: paste the **exact error text**, or put the file i
 | May swirl PDF | `docs/papers/swirl/zenodo-may/PhiRenorm_TrackB.pdf` | [10.5281/zenodo.20405405](https://doi.org/10.5281/zenodo.20405405) |
 | May swirl short TeX | `docs/papers/swirl/zenodo-may/Simons_PhiRenorm_Axisymmetric.tex` | [10.5281/zenodo.20405597](https://doi.org/10.5281/zenodo.20405597) |
 | Paper2 August TeX | `docs/papers/ns-snd/` | (from you, in chat) |
-| Paper2 June PDF | `docs/papers/ns-snd/` | (from you, in chat) |
+| Paper2 June FIXED PDF | `docs/papers/ns-snd/Paper2_NS_Regularity_SND_FIXED.pdf` | (from you; SHA `7de9444d…`) |
+| Paper2 Mac “SND 2” PDF | `docs/papers/ns-snd/Paper2_NS_Regularity_SND.pdf` | (from you; not the Zenodo bytes) |
+| Paper2 Zenodo “implies” | `docs/papers/ns-snd/zenodo-20272545/` | [10.5281/zenodo.20272545](https://doi.org/10.5281/zenodo.20272545) — **claim withdrawn** |
+| Paper2 August 1 audit | `docs/papers/ns-snd/NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md` | (from you) |
 | Swirl 22 August | `docs/papers/swirl/Simons_PhiRenorm_Swirl_2026-08-22.tex` | (already on this branch) |
 
 Ring SND in that PDF is \(\inf J/X\ge c_*\). Paper2 SND is closeness of a GCD mix to \(\mu\). Same letters, two definitions.
@@ -54,7 +57,7 @@ Send **one** of these, as `.tex`, if you still want the pack source rather than 
 | PAPER_A inverse-GCD source | `PAPER_A_Inverse_GCD_CORRECTED.tex` |
 | PAPER_B Möbius \(Q_6\) source | `PAPER_B_Mobius_GCD_Q6.tex` |
 | Ring June 19 source | `c8a03f315_RingLemma_Simons_June19_2026.tex` |
-| June Paper2 **source** of the FIXED PDF | `Paper2_NS_Regularity_SND_FIXED.tex` |
+| June Paper2 **source** of the FIXED PDF | `Paper2_NS_Regularity_SND_FIXED.tex` | still useful if you have it |
 | Anesthesia face | `PAPER1_REBUILT_Coherence_Index.md` |
 | Pack swirl complete (older than 22 August) | `NS_PhiRenorm_complete.tex` |
 

@@ -85,6 +85,43 @@ class TestPaper2IsItsOwnBook(unittest.TestCase):
         self.assertIn("Do not identify them", readme)
         self.assertIn("nonlinear shell fluxes", readme)
         self.assertIn("Paper2_NS_Regularity_SND_FIXED.pdf", readme)
+        self.assertIn("NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md", readme)
+        self.assertIn("zenodo-20272545", readme)
+        self.assertIn("Lemma 6.1 OPEN", readme)
+
+
+class TestPaper2ImpliesFacesAreNotTheJunePdf(unittest.TestCase):
+    IMPLIES_MAC = NS_SND / "Paper2_NS_Regularity_SND.pdf"
+    IMPLIES_MAC_SHA256 = (
+        "9e53d6640cc3808696afbcbec8f78c08de860b4816680ff43cdc816ce5c60cb0"
+    )
+    ZENODO = NS_SND / "zenodo-20272545" / "Paper2_NS_Regularity_SND.pdf"
+    ZENODO_SHA256 = (
+        "87610856449007e7bdca3b87d82683e463b299484b3906a0dda27a18bec416a3"
+    )
+    AUDIT = NS_SND / "NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md"
+
+    def test_three_pdfs_are_distinct_bytes(self):
+        mac = self.IMPLIES_MAC.read_bytes()
+        zen = self.ZENODO.read_bytes()
+        june = PDF.read_bytes()
+        self.assertEqual(hashlib.sha256(mac).hexdigest(), self.IMPLIES_MAC_SHA256)
+        self.assertEqual(hashlib.sha256(zen).hexdigest(), self.ZENODO_SHA256)
+        self.assertEqual(hashlib.sha256(june).hexdigest(), PDF_SHA256)
+        self.assertNotEqual(mac, zen)
+        self.assertNotEqual(mac, june)
+        self.assertNotEqual(zen, june)
+
+    def test_audit_names_the_kink_and_withdrawn_doi(self):
+        audit = self.AUDIT.read_text(encoding="utf-8")
+        self.assertIn("10.5281/zenodo.20272545", audit)
+        self.assertIn("Lemma 6.1", audit)
+        self.assertIn("OPEN", audit)
+        self.assertIn("T2", audit)
+        self.assertIn("not an unconditional proof", audit.lower())
+        faces = FACES.read_text(encoding="utf-8")
+        self.assertIn("Claim withdrawn", faces)
+        self.assertIn("Lemma 6.1 OPEN", faces)
 
 
 if __name__ == "__main__":

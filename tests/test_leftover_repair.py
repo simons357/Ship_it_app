@@ -117,6 +117,9 @@ class TestLeftoverRepairProtocol(unittest.TestCase):
         re_embed = payload["re_embed"]
         self.assertEqual(len(re_embed), 3)
         self.assertTrue(all(row["status"] == "OPEN" for row in re_embed))
+        paper2 = next(row for row in re_embed if row["id"] == "paper2-simplex")
+        self.assertIn("Lemma 6.1", paper2["put_back"])
+        self.assertIn("T2 Closed", paper2["put_back"])
         joined = " ".join(payload["refused"]).lower()
         self.assertIn("pd", joined)
         self.assertIn("clay", joined)

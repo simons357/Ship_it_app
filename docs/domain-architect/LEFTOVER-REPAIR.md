@@ -92,7 +92,14 @@ Leave each σ OPEN
 
 - Swirl: if \(\int\|u^r/r\|_\infty\,dt<\infty\) then continuation closes. Keep the identity.
 - Ring: if \(\inf J/X\ge c_*\) then the conditional estimates run. Unconditional SND open.
-- Paper2: if \(\|a-\mu\|_{\ell^1}\) is small enough then Weyl keeps the gap. Simplex lemma open.
+- Paper2: if \(\|a-\mu\|_{\ell^1}\) is small enough then Weyl keeps the gap.
+  That leftover is **Lemma 6.1** in the August 1 Paper2 audit. Do not
+  accept §7 “T2 Closed.” Simplex stays OPEN.
+
+The August 1 audit of the Zenodo “implies” manuscript
+([`docs/papers/ns-snd/NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md`](../papers/ns-snd/NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md))
+is the same split: keep Lipschitz (Lemma 3.1) and conditional Weyl
+(Theorem 4.1); cut the false T2 closure; leave Lemma 6.1 as the kink.
 
 This is how those papers are already honest when they are written as
 conditional theorems. The function makes that split first-class so DA
