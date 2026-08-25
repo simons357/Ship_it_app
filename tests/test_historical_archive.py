@@ -183,6 +183,14 @@ class TestPrimeFieldArchiveIntake(unittest.TestCase):
         self.assertFalse(
             (ROOT / "docs" / "papers" / "ns-snd" / "Paper2_NS_Regularity_SND_FIXED.tex").is_file()
         )
+        self.assertFalse(
+            (ROOT / "docs" / "archive" / "sfe-hb" / "SPECTRAL_UNIFICATION_PAPER.tex").is_file()
+        )
+        missing = (
+            ROOT / "docs" / "archive" / "sfe-hb" / "SPECTRAL_UNIFICATION_PAPER.MISSING.md"
+        )
+        self.assertTrue(missing.is_file(), missing)
+        self.assertIn("not received", missing.read_text(encoding="utf-8").lower())
 
 
 class TestUhsaSessionDumpIsHistorical(unittest.TestCase):
