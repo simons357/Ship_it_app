@@ -62,11 +62,10 @@ UHSA_SYNTHESIS = (
 UHSA_SYNTHESIS_SHA256 = (
     "4d49cd1ee629e6c2fbf0ad93fa08c107d6d4587ea5a06121930ecbdeb848e363"
 )
-SPECTRAL_UNIFICATION_MISSING = (
-    ARCHIVE_SFE_HB / "SPECTRAL_UNIFICATION_PAPER.MISSING.md"
-)
-SPECTRAL_UNIFICATION_MISSING_SHA256 = (
-    "52eca0a3bdc854ea3e105272a61b1faab3d2c7e388dbddf414d8175b61a31eb4"
+SPECTRAL_UNIFICATION_TEX = ARCHIVE_SFE_HB / "SPECTRAL_UNIFICATION_PAPER.tex"
+SPECTRAL_UNIFICATION_NOTE = ARCHIVE_SFE_HB / "SPECTRAL_UNIFICATION_PAPER.md"
+SPECTRAL_UNIFICATION_SHA256 = (
+    "4ea7ccd72dc60d773e603aee0328a10ad254376c465d1ee1ddee849d35f2291c"
 )
 EQUATION_EXPLORER = ARCHIVE_SFE_HB / "equation_explorer_simons_field.py"
 EQUATION_EXPLORER_SHA256 = (
@@ -364,57 +363,55 @@ class TestUhsaSessionSynthesisStaysArchived(unittest.TestCase):
                 )
 
 
-class TestSpectralUnificationPaperNotInvented(unittest.TestCase):
-    """Frankie SPECTRAL_UNIFICATION_PAPER.tex did not arrive. Do not invent TeX."""
+class TestSpectralUnificationPaperArchived(unittest.TestCase):
+    """Frankie SPECTRAL_UNIFICATION_PAPER.tex is archive-only overclaim. Not Clay."""
 
-    def test_tex_bytes_are_absent_and_receipt_is_archived(self):
-        root = Path(__file__).resolve().parents[1]
-        tex_hits = []
-        for folder in (root / "docs", root / "domain_architect", root / "tests", root / "data"):
-            tex_hits.extend(folder.rglob("SPECTRAL_UNIFICATION_PAPER.tex"))
-        self.assertEqual(tex_hits, [], tex_hits)
+    def test_tex_is_archived_not_live_and_not_proved(self):
+        self.assertTrue(SPECTRAL_UNIFICATION_TEX.is_file(), SPECTRAL_UNIFICATION_TEX)
+        self.assertTrue(SPECTRAL_UNIFICATION_NOTE.is_file(), SPECTRAL_UNIFICATION_NOTE)
+        self.assertFalse(
+            (ARCHIVE_SFE_HB / "SPECTRAL_UNIFICATION_PAPER.MISSING.md").is_file()
+        )
         self.assertFalse((LIVE_ROOT / "SPECTRAL_UNIFICATION_PAPER.tex").is_file())
-        self.assertFalse((ARCHIVE_SFE_HB / "SPECTRAL_UNIFICATION_PAPER.tex").is_file())
-        self.assertTrue(SPECTRAL_UNIFICATION_MISSING.is_file())
-        raw = SPECTRAL_UNIFICATION_MISSING.read_bytes()
-        self.assertEqual(hashlib.sha256(raw).hexdigest(), SPECTRAL_UNIFICATION_MISSING_SHA256)
-        self.assertEqual(len(raw), 3447)
-        text = raw.decode("utf-8")
-        self.assertIn("not received", text.lower())
-        self.assertIn("Do **not** invent TeX", text)
-        self.assertIn("Not live Domain Architect", text)
-        self.assertIn("NOT CLAIMED", text)
-        self.assertIn("302", text)
-        self.assertIn("403", text)
-        self.assertIn("404", text)
-        self.assertIn("69b28657b0df374441f0302e", text)
-        self.assertIn("69b2865953e46e195fc302f0", text)
-        self.assertIn("unknown", text.lower())
-        self.assertIn("Not June Paper2 FIXED", text)
-        self.assertIn("7de9444d", text)
-        self.assertIn("f51ed5c05ec3", text)
-        self.assertIn("SND_GNC_BRIDGE_EXTRACTED.txt", text)
-        self.assertIn("duplicate that archive", text)
-        self.assertNotIn("\\title{", text)
-        self.assertNotIn("\\begin{document}", text)
-        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
-        self.assertIn("SPECTRAL_UNIFICATION_PAPER.tex", note)
-        self.assertIn("not received", note.lower())
-        self.assertIn("Do not invent TeX", note)
+        raw = SPECTRAL_UNIFICATION_TEX.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), SPECTRAL_UNIFICATION_SHA256)
+        self.assertEqual(len(raw), 10586)
+        tex = raw.decode("utf-8")
+        self.assertIn(r"\title{\textbf{One Operator, Three Millennia}", tex)
+        self.assertIn("June 10, 2026", tex)
+        self.assertIn("UNIF-JS-2026", tex)
+        self.assertIn("Status: Proved", tex)
+        note = SPECTRAL_UNIFICATION_NOTE.read_text(encoding="utf-8")
+        self.assertIn("4ea7ccd72dc6", note)
+        self.assertIn("7d5c64a34_SPECTRAL_UNIFICATION_PAPER", note)
+        self.assertIn("HTTP **302**", note)
+        self.assertIn("**200**", note)
+        self.assertIn("**403**", note)
+        self.assertIn("NOT CLAIMED", note)
+        self.assertIn("rejected", note.lower())
+        self.assertIn("withdrawn", note.lower())
+        self.assertIn("Not live Domain Architect", note)
+        self.assertIn("7de9444d", note)
+        self.assertIn("f51ed5c05ec3", note)
+        self.assertIn("SND_GNC_BRIDGE_EXTRACTED.txt", note)
         self.assertIn("import into `domain_architect/`", note)
+        readme = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("SPECTRAL_UNIFICATION_PAPER.tex", readme)
+        self.assertIn("7d5c64a34_", readme)
+        self.assertIn("import into `domain_architect/`", readme)
         archive_index = (
             Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
         ).read_text(encoding="utf-8")
-        self.assertIn("SPECTRAL_UNIFICATION_PAPER.MISSING.md", archive_index)
-        self.assertIn("not received", archive_index.lower())
+        self.assertIn("SPECTRAL_UNIFICATION_PAPER.md", archive_index)
+        self.assertIn("4ea7ccd72dc6", archive_index)
         lookup = (
             Path(__file__).resolve().parents[1]
             / "docs"
             / "packets"
             / "OLD-PAPERS-LOOK-UP.md"
         ).read_text(encoding="utf-8")
-        self.assertIn("SPECTRAL_UNIFICATION_PAPER.tex", lookup)
-        self.assertIn("not received", lookup.lower())
+        self.assertIn("7d5c64a34_SPECTRAL_UNIFICATION_PAPER.tex", lookup)
+        self.assertIn("archived", lookup.lower())
         faces = (
             Path(__file__).resolve().parents[1]
             / "docs"
@@ -423,9 +420,9 @@ class TestSpectralUnificationPaperNotInvented(unittest.TestCase):
             / "FACES.md"
         ).read_text(encoding="utf-8")
         self.assertIn("SPECTRAL_UNIFICATION_PAPER.tex", faces)
-        self.assertIn("not received", faces.lower())
         self.assertIn("**Not** a Paper2 face", faces)
         self.assertIn("**Not** a compile of the FIXED PDF", faces)
+        self.assertIn("4ea7ccd72dc6", faces)
         for path in LIVE_ROOT.glob("*.py"):
             self.assertNotIn(
                 "SPECTRAL_UNIFICATION",

@@ -30,6 +30,7 @@ Letters collide: Q6 \(H_N\) \(\neq\) Paper2 \(H_N[a]\) \(\neq\) FRA \(H\).
 - **PAPER_A / PAPER_B / `GCD_Spectral_Paper1_UPDATED_*`:** pack-only, **not on this VM**. They **never lived** in Overleaf exports. Do not hunt them as Overleaf-required. Policy [`docs/packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md`](../../packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md).
 - **April Overleaf CLAY/SERPENT mains:** **not** Q6 arithmetic. **Not received.** Receipt [`docs/archive/overleaf-2026-04/`](../../archive/overleaf-2026-04/). Clay **NOT CLAIMED**.
 
-Sibling Frankie files `SPECTRAL_UNIFICATION_PAPER.tex` and
-`SND_GNC_BRIDGE_EXTRACTED.txt` are **different objects**. Do not overwrite
-those receipts. June FIXED PDF (`7de9444d…`) is Paper2, not this book.
+Sibling Frankie `SPECTRAL_UNIFICATION_PAPER.tex` is archived under
+[`docs/archive/sfe-hb/`](../../archive/sfe-hb/) (June 10 overclaim, not Q6
+arithmetic). `SND_GNC_BRIDGE_EXTRACTED.txt` is a **different** object. Do not
+overwrite those files. June FIXED PDF (`7de9444d…`) is Paper2, not this book.
