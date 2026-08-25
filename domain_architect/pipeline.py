@@ -241,6 +241,7 @@ def run_named_cycle(name: str, **kwargs: Any) -> CycleReport:
 
         return cycle_leftover_repair()
     if name in {"excise-2", "surgery-2", "step-2"}:
+        # Hidden/test alias. User-facing command is localized-repair --excise K.
         from .localized_repair import cycle_localized_repair
 
         return cycle_localized_repair(chain=chain or "paper2", excise=2)
@@ -250,8 +251,8 @@ def run_named_cycle(name: str, **kwargs: Any) -> CycleReport:
         return cycle_localized_repair(chain=chain, excise=excise)
     raise ValueError(
         f"unknown cycle {name!r}; expected missing-damping, control, "
-        "mechanical-electrical, drag, leftover-repair, localized-repair, "
-        "or excise-2"
+        "mechanical-electrical, drag, leftover-repair, or localized-repair "
+        "(use --excise K to cut a single step)"
     )
 
 

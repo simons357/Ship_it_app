@@ -82,41 +82,69 @@ class TestPaper2DefaultSurgery(unittest.TestCase):
         self.assertIn("t2 closed", joined)
 
 
-class TestExciseStepTwo(unittest.TestCase):
-    def test_paper2_step_2_frozen_gap(self):
+class TestExciseK(unittest.TestCase):
+    def _assert_graft_at(self, payload, k, excised_id, proximal_id, distal_id):
+        self.assertEqual([s["id"] for s in payload["excised"]], [excised_id])
+        self.assertEqual(payload["proximal"]["id"], proximal_id)
+        self.assertEqual(payload["distal"]["id"], distal_id)
+        self.assertEqual(payload["operation"]["excise"], [k])
+        self.assertEqual(payload["operation"]["reinsert"], k)
+        self.assertFalse(payload["operation"]["fix_is_a_proof"])
+        self.assertTrue(payload["operation"]["order_preserved"])
+        self.assertFalse(payload["closed"])
+        original = {s["index"]: s["id"] for s in payload["original_chain"]}
+        for step in payload["repaired_chain"]:
+            if step["index"] == k:
+                self.assertTrue(step["id"].endswith("-graft"))
+                self.assertEqual(step["status"], "open")
+            else:
+                self.assertEqual(step["id"], original[step["index"]])
+        indices = [s["index"] for s in payload["repaired_chain"]]
+        self.assertEqual(indices, sorted(indices))
+        self.assertIn(k, indices)
+
+    def test_paper2_excise_2_still_works(self):
         payload = localized_repair(excise=2)
-        excised = [s["id"] for s in payload["excised"]]
-        self.assertEqual(excised, ["frozen-gap"])
-        self.assertEqual(payload["proximal"]["id"], "leray-setup")
-        self.assertEqual(payload["distal"]["id"], "lemma-3-1")
+        self._assert_graft_at(
+            payload, 2, "frozen-gap", "leray-setup", "lemma-3-1"
+        )
         self.assertEqual(payload["chosen"]["id"], "independent-frozen-gap-hypothesis")
         self.assertFalse(payload["chosen"]["closed"])
         remaining = {s["id"] for s in payload["repaired_chain"]}
         self.assertIn("lemma-3-1", remaining)
         self.assertIn("theorem-4-1", remaining)
         self.assertNotIn("frozen-gap", remaining)
-        self.assertEqual(payload["operation"]["excise"], [2])
-        self.assertEqual(payload["operation"]["reinsert"], 2)
-        self.assertFalse(payload["operation"]["fix_is_a_proof"])
-        self.assertTrue(payload["operation"]["order_preserved"])
-        indices = [s["index"] for s in payload["repaired_chain"]]
-        self.assertEqual(indices, list(range(1, 11)))
-        self.assertTrue(payload["repaired_chain"][1]["id"].endswith("-graft"))
-        self.assertEqual(payload["repaired_chain"][0]["id"], "leray-setup")
-        self.assertEqual(payload["repaired_chain"][2]["id"], "lemma-3-1")
+        self.assertEqual([s["index"] for s in payload["repaired_chain"]], list(range(1, 11)))
         self.assertIn("EXCISE", payload["board"]["text"])
         self.assertIn("GRAFT", payload["board"]["text"])
         self.assertIn("frozen-gap", payload["board"]["text"])
         self.assertIn("Yes.", payload["answer"])
 
+    def test_excise_8_cuts_t2_closed(self):
+        payload = localized_repair(excise=8)
+        self._assert_graft_at(
+            payload, 8, "t2-closed", "local-existence-as-target", "continuation"
+        )
+        self.assertNotIn("t2-closed", {s["id"] for s in payload["repaired_chain"]})
+        self.assertTrue(payload["repaired_chain"][7]["id"].endswith("-graft"))
+        self.assertEqual(payload["repaired_chain"][6]["id"], "local-existence-as-target")
+        self.assertEqual(payload["repaired_chain"][8]["id"], "continuation")
+
+    def test_excise_6_cuts_lemma_6_1(self):
+        payload = localized_repair(excise=6)
+        self._assert_graft_at(
+            payload, 6, "lemma-6-1", "product-arithmetic", "local-existence-as-target"
+        )
+        self.assertEqual(payload["chosen"]["id"], "independent-simplex-hypothesis")
+        self.assertNotIn("lemma-6-1", {s["id"] for s in payload["repaired_chain"]})
+
     def test_toy_chain_excise_2(self):
         payload = localized_repair(chain="toy", excise=2)
         self.assertEqual(payload["chain_name"], "toy")
-        self.assertEqual([s["id"] for s in payload["excised"]], ["toy-energy-implies-smallness"])
-        self.assertEqual(payload["proximal"]["id"], "toy-energy")
-        self.assertEqual(payload["distal"]["id"], "toy-continuation")
+        self._assert_graft_at(
+            payload, 2, "toy-energy-implies-smallness", "toy-energy", "toy-continuation"
+        )
         self.assertEqual(payload["chosen"]["id"], "independent-smallness-hypothesis")
-        self.assertFalse(payload["closed"])
         self.assertIn("energy-implies-smallness", {c["id"] for c in payload["candidates"]})
 
     def test_bad_index_raises(self):
@@ -157,8 +185,15 @@ class TestCycleAndApi(unittest.TestCase):
             self.assertEqual(report.mode, "localized-repair")
             self.assertEqual(report.prediction["protocol"], "localized-reparation")
 
-    def test_named_cycle_excise_two(self):
-        report = run_named_cycle("excise-2")
+    def test_named_cycle_excise_k_and_hidden_alias(self):
+        report = run_named_cycle("localized-repair", excise=8)
+        self.assertEqual(report.mode, "localized-repair")
+        self.assertEqual(report.prediction["operation"]["excise"], [8])
+        self.assertTrue(report.prediction["repaired_chain"][7]["id"].endswith("-graft"))
+        self.assertIn("Step 8", report.candidate.hypothesis)
+        self.assertFalse(report.prediction["closed"])
+
+        report = run_named_cycle("excise-2")  # hidden/test alias
         self.assertEqual(report.mode, "localized-repair")
         self.assertEqual(report.prediction["operation"]["excise"], [2])
         self.assertEqual(report.prediction["repaired_chain"][1]["index"], 2)
@@ -166,21 +201,44 @@ class TestCycleAndApi(unittest.TestCase):
         self.assertIn("Step 2", report.candidate.hypothesis)
         self.assertIn("Yes.", report.notes[0])
 
-    def test_api_cycle_excise_two(self):
+    def test_api_cycle_hidden_alias_excise_two(self):
         status, body, _ = handle_api("/api/cycle", {"name": "excise-2"})
         self.assertEqual(status, 200)
         report = json.loads(body)
         self.assertEqual(report["prediction"]["operation"]["excise"], [2])
 
-    def test_api_default_and_excise_two(self):
+    def test_api_default_and_excise_k(self):
         status, body, _ = handle_api("/api/localized-repair", {})
         self.assertEqual(status, 200)
         payload = json.loads(body)
         self.assertEqual(payload["chosen"]["id"], "independent-simplex-hypothesis")
+        self.assertFalse(payload["closed"])
         status, body, _ = handle_api("/api/localized-repair", {"excise": 2})
         self.assertEqual(status, 200)
         payload = json.loads(body)
         self.assertEqual(payload["excised"][0]["id"], "frozen-gap")
+        self.assertFalse(payload["closed"])
+        status, body, _ = handle_api("/api/localized-repair", {"excise": 8})
+        self.assertEqual(status, 200)
+        payload = json.loads(body)
+        self.assertEqual(payload["excised"][0]["id"], "t2-closed")
+        self.assertTrue(payload["repaired_chain"][7]["id"].endswith("-graft"))
+        self.assertEqual(payload["operation"]["reinsert"], 8)
+
+    def test_cli_help_advertises_excise_k_not_excise_2(self):
+        import io
+        from contextlib import redirect_stderr, redirect_stdout
+
+        from domain_architect.cli import main
+
+        buf = io.StringIO()
+        with self.assertRaises(SystemExit):
+            with redirect_stdout(buf), redirect_stderr(buf):
+                main(["cycle", "--help"])
+        text = buf.getvalue()
+        self.assertIn("--excise", text)
+        self.assertIn("localized-repair", text)
+        self.assertNotIn("excise-2", text)
 
     def test_inverse_design_of_ns_is_still_the_a13_hole(self):
         cand = inverse_design_architecture(

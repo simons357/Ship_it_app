@@ -1,15 +1,14 @@
-"""Localized reparation: cut diseased proof steps and graft an honest hook.
+"""Localized reparation: excise step k of an n-step chain and graft an honest hook.
 
 This is surgical leftover-split on a numbered chain. If a proof has n steps
-and step k is diseased or open, Domain Architect keeps the healthy tissue
-before and after the cut, searches a finite catalog for the most logical
-hook, and re-inserts a graft. The graft may be an OPEN hypothesis. It is
-not a closed theorem.
+and some step k is not working, Domain Architect excises that step, keeps
+the tissue on both sides of the cut, searches a finite catalog for the most
+logical hook, and re-inserts a graft at the same slot. k is an index, not
+a product. The graft may be an OPEN hypothesis. It is not a closed theorem.
 
-Default chain: Paper2 (June FIXED PDF + August 1 audit of the “implies”
-face). Keep Lemma 3.1 and Theorem 4.1. Cut §7 “T2 Closed” and the misuse
-of local existence as the 0.039 bound. Re-insert Lemma 6.1 as an OPEN
-hypothesis, not a theorem.
+Paper2 is the example dataset, not the operation. Named protocol
+“Paper2 surgery” (no --excise) still cuts the dynamical kink 6–8.
+Any other k is ``localized_repair(excise=k)``.
 
 This does not close Navier–Stokes. It does not call inverse design.
 It does not glue Ring SND, Q6 H_N, or swirl leftovers onto Paper2.
@@ -113,9 +112,10 @@ class GraftCandidate:
 
 
 # ---------------------------------------------------------------------------
-# Paper2 chain (10 steps). Step 2 is Route J / frozen gap — the example of
-# “#2 isn’t working.” Steps 6–8 are the dynamical kink the August 1 audit
-# names. Faces: June FIXED PDF + Aug 1 audit. Not a compile of August TeX.
+# Paper2 chain (10 steps): example dataset for generic excise-k.
+# Frozen gap at k=2 is one failing step, not the product. Named protocol
+# “Paper2 surgery” cuts the dynamical kink 6–8. Faces: June FIXED PDF +
+# Aug 1 audit. Not a compile of August TeX.
 # ---------------------------------------------------------------------------
 
 PAPER2_CHAIN: tuple[ProofStep, ...] = (
@@ -274,7 +274,7 @@ TOY_CHAIN: tuple[ProofStep, ...] = (
         provides="σ small",
         requires="energy bound",
         source="toy chain",
-        notes="This is the #2 that is not working.",
+        notes="Example of a diseased step (here k=2 on the toy chain).",
     ),
     ProofStep(
         index=3,
@@ -463,9 +463,9 @@ def _frozen_gap_catalog() -> list[GraftCandidate]:
             accepted=True,
             closed=False,
             reason=(
-                "Step 2 is Route J / Hypothesis 2.1. The honest hook is to "
-                "keep it as a hypothesis feeding Theorem 4.1, not to stamp "
-                "it a theorem."
+                "On the Paper2 example dataset, k=2 is Route J / Hypothesis "
+                "2.1. The honest hook is to keep it as a hypothesis feeding "
+                "Theorem 4.1, not to stamp it a theorem."
             ),
         ),
         GraftCandidate(
@@ -539,13 +539,46 @@ def _toy_catalog() -> list[GraftCandidate]:
     ]
 
 
+def _generic_interface_catalog(excised: list[ProofStep]) -> list[GraftCandidate]:
+    labels = ", ".join(s.id for s in excised) or "cut"
+    return [
+        GraftCandidate(
+            id="independent-interface-hypothesis",
+            name=f"Independent OPEN hypothesis at the {labels} interface",
+            kind="hypothesis",
+            provides="whatever the distal step requires (assumed, not proved)",
+            score=1.0,
+            accepted=True,
+            closed=False,
+            reason=(
+                "Honest hook for an arbitrary cut: re-state the missing "
+                "interface as a hypothesis. This is not a proof of the "
+                "excised claim."
+            ),
+        ),
+        GraftCandidate(
+            id="pd-inverse-design",
+            name="Inverse-design a PD loop",
+            kind="refused",
+            provides="vacuous controller",
+            score=0.0,
+            accepted=False,
+            closed=False,
+            reason="A13 fail-closed. Not a proof of the excised step.",
+            refused_because="a13_fail_closed",
+        ),
+    ]
+
+
 def _catalog_for(chain_name: str, excised: list[ProofStep]) -> list[GraftCandidate]:
     ids = {s.id for s in excised}
     if chain_name.startswith("toy"):
         return _toy_catalog()
     if ids & {"frozen-gap"} and not (ids & {"lemma-6-1", "t2-closed", "local-existence-as-target"}):
         return _frozen_gap_catalog()
-    return _simplex_catalog(simplex_concentration_diagnostic())
+    if ids & {"lemma-6-1", "t2-closed", "local-existence-as-target"}:
+        return _simplex_catalog(simplex_concentration_diagnostic())
+    return _generic_interface_catalog(excised)
 
 
 def _normalize_excise(
@@ -740,7 +773,7 @@ def localized_repair(
     chain: str | None = None,
     excise: list[int] | int | None = None,
 ) -> dict[str, Any]:
-    """Public entry: default Paper2 surgery, or a named chain / explicit cut."""
+    """Public entry: default Paper2 surgery, or ``excise=k`` on a named chain."""
     name = (chain or "paper2").replace("_", "-")
     if name not in CHAINS:
         raise ValueError(
@@ -762,7 +795,7 @@ def cycle_localized_repair(
     chain: str | None = None,
     excise: list[int] | int | None = None,
 ) -> CycleReport:
-    """Named cycle: surgical excision on the Paper2 chain (or a toy chain)."""
+    """Named cycle: surgical excision of step k on an n-step chain."""
     payload = localized_repair(chain=chain, excise=excise)
     simplex = decompose(SIMPLEX_LEFTOVER_LAB, name="paper2-simplex")
     ring = decompose(RING_SND_LAB, name="ring_snd")
@@ -775,23 +808,18 @@ def cycle_localized_repair(
         ],
     )
     chosen = payload["chosen"]
-    excised_ids = [step["id"] for step in payload["excised"]]
-    if excised_ids == ["frozen-gap"]:
+    slots = payload["operation"]["excise"]
+    insert_at = payload["operation"]["reinsert"]
+    if len(slots) == 1:
         hypothesis = (
-            "Step 2 (frozen gap / Route J) is not working as a theorem. "
-            "Excise it. Keep step 1 and step 3. Re-insert an independent "
-            "frozen-gap hypothesis at slot 2. Theorem 4.1 still consumes "
-            "FG as a hypothesis. This does not prove Route J for all N."
-        )
-    elif excised_ids == ["toy-energy-implies-smallness"]:
-        hypothesis = (
-            "Step 2 (energy implies smallness) is diseased. Excise it. "
-            "Keep energy and continuation. Re-insert independent "
-            "smallness σ as an OPEN hypothesis."
+            f"Step {slots[0]} of an n-step chain is not working. "
+            "Excise it. Restore the interface. Re-insert the best honest "
+            f"catalog hook at slot {insert_at} as an OPEN hypothesis. "
+            "This does not prove the excised claim."
         )
     else:
         hypothesis = (
-            "Cut the diseased / unproved middle of the Paper2 chain. "
+            "Paper2 surgery: cut the diseased / unproved dynamical kink. "
             "Keep Lipschitz and conditional Weyl. Re-insert Lemma 6.1 "
             "as an independent hypothesis. Do not derive it from energy "
             "or from local existence. Continuation and classical NS stay "
@@ -836,8 +864,8 @@ def cycle_localized_repair(
     return CycleReport(
         mode="localized-repair",
         target=(
-            "excise the diseased Paper2 steps, graft the honest OPEN hook, "
-            "re-insert into the original chain"
+            "excise failing step(s) on a numbered chain, graft the honest "
+            "OPEN hook, re-insert into the same chain"
         ),
         constraints=[
             "keep Lemma 3.1 and Theorem 4.1",

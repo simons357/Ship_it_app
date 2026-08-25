@@ -123,10 +123,16 @@ $("cySurgery").addEventListener("click", async () => {
   show($("cyOut"), await api("/api/cycle", { name: "localized-repair" }));
 });
 
-$("cyExcise2").addEventListener("click", async () => {
-  $("cyName").value = "excise-2";
-  $("cyOut").textContent = "Excising step 2 and re-inserting the graft…";
-  show($("cyOut"), await api("/api/localized-repair", { excise: 2 }));
+$("cyExciseStep").addEventListener("click", async () => {
+  const raw = ($("cyExciseK").value || "").trim();
+  const k = Number.parseInt(raw, 10);
+  if (!Number.isInteger(k) || k < 1) {
+    $("cyOut").textContent = "Enter a step number k to excise on the n-step chain.";
+    return;
+  }
+  $("cyName").value = "localized-repair";
+  $("cyOut").textContent = `Excising step ${k} and re-inserting the graft…`;
+  show($("cyOut"), await api("/api/localized-repair", { excise: k }));
 });
 
 $("arRun").addEventListener("click", async () => {

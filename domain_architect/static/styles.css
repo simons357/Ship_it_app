@@ -81,6 +81,15 @@ input, select {
 }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.excise-k {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+.excise-k label { margin: 0; width: auto; }
+.excise-k input { width: 5.5rem; }
 
 button {
   background: var(--gold);

@@ -89,7 +89,7 @@
       <section id="cycle" class="pane">
         <div class="card">
           <h2>Run a cycle</h2>
-          <p class="hint">Examples use standard methods (RK4, OLS, Firestone analogy). Those methods are not Domain Architect itself. Leftover repair takes only what still fails in NS. Localized reparation is surgery: if step #2 of a 10-step chain is not working, DA excises it, grafts an OPEN hook, and re-inserts at slot 2. Neither proves regularity.</p>
+          <p class="hint">Examples use standard methods (RK4, OLS, Firestone analogy). Those methods are not Domain Architect itself. Leftover repair takes only what still fails in NS. Localized reparation is surgery on an n-step chain: if step k is not working, DA excises that step, grafts an OPEN hook, and re-inserts at the same slot. Paper2 surgery is a different named protocol: the default cut of the known diseased/open dynamical kink (6–8). Neither proves regularity.</p>
           <label>Named cycle
             <select id="cyName">
               <option value="missing-damping">Missing damping (paper §16)</option>
@@ -98,14 +98,18 @@
               <option value="drag">Drag surrogate (schematic)</option>
               <option value="leftover-repair">NS leftover repair (three OPEN pieces)</option>
               <option value="localized-repair">Paper2 surgery (default cut 6–8)</option>
-              <option value="excise-2">Excise step 2 and re-insert</option>
             </select>
           </label>
+          <div class="excise-k">
+            <label for="cyExciseK">Step k
+              <input id="cyExciseK" type="number" min="1" step="1" placeholder="k" />
+            </label>
+            <button id="cyExciseStep" class="ghost" type="button">Excise this step</button>
+          </div>
           <div class="row">
             <button id="cyRun" type="button">Run cycle</button>
             <button id="cyLeftover" class="ghost" type="button">NS leftover repair</button>
             <button id="cySurgery" class="ghost" type="button">Paper2 surgery</button>
-            <button id="cyExcise2" class="ghost" type="button">Excise step 2</button>
           </div>
         </div>
         <pre id="cyOut" class="out"></pre>

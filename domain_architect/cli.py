@@ -62,12 +62,12 @@ def main(argv: list[str] | None = None) -> int:
         "name",
         nargs="?",
         default="missing-damping",
-        help="missing-damping | control | mechanical-electrical | drag | leftover-repair | localized-repair | excise-2",
+        help="missing-damping | control | mechanical-electrical | drag | leftover-repair | localized-repair",
     )
     p_cy.add_argument(
         "--excise",
         default=None,
-        help="step number(s) to cut, e.g. 2 or 6,7,8 (localized-repair only)",
+        help="cut step k of an n-step chain (localized-repair). Example: --excise 2",
     )
     p_cy.add_argument(
         "--chain",
