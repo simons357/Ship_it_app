@@ -36,6 +36,18 @@ ARCHIVE_QSTACK = (
 QSTACK_SHA256 = (
     "3ea9a93ac39d35e773f550c12b6f1e643f6fd65247ccf9b094d108789e7f96e8"
 )
+ARCHIVE_PRIME_FIELD = (
+    Path(__file__).resolve().parents[1]
+    / "docs"
+    / "archive"
+    / "prime-field-2026-08-25"
+)
+PRIME_FIELD_COHERENCE_SHA256 = (
+    "62728c7436fa7bd3093ed8a18da155eee22fd6bbe4121378aaf5df4273a9decf"
+)
+MAY16_TRACK_B_SHA256 = (
+    "477a857f8ab4e066d1ef2be7e05786a4dd101cd31b325ab484e4f0ddef11f6cd"
+)
 
 
 class TestLivePathDropsSfeHb(unittest.TestCase):
@@ -54,7 +66,7 @@ class TestLivePathDropsSfeHb(unittest.TestCase):
 
     def test_core_modules_do_not_import_historical(self):
         root = Path(__file__).resolve().parents[1] / "domain_architect"
-        banned = {"historical"}
+        banned = {"historical", "prime_field_coherence"}
         live = [
             "decompose.py",
             "translate.py",
@@ -69,11 +81,20 @@ class TestLivePathDropsSfeHb(unittest.TestCase):
             "localized_repair.py",
         ]
         for name in live:
-            tree = ast.parse((root / name).read_text(encoding="utf-8"))
+            source = (root / name).read_text(encoding="utf-8")
+            self.assertNotIn(
+                "prime_field_coherence",
+                source,
+                f"{name} must not mention the archived Prime Field sketch",
+            )
+            tree = ast.parse(source)
             imported = set()
             for node in ast.walk(tree):
                 if isinstance(node, ast.ImportFrom) and node.module:
                     imported.add(node.module.split(".")[-1])
+                if isinstance(node, ast.Import):
+                    for alias in node.names:
+                        imported.add(alias.name.split(".")[-1])
             self.assertFalse(
                 imported & banned,
                 f"{name} imports historical archive modules: {imported & banned}",
@@ -146,6 +167,61 @@ class TestQstackRegularityPdfStaysArchived(unittest.TestCase):
         self.assertIn("qstack/", archive_index)
         self.assertIn("not live DA", archive_index)
         self.assertNotIn("qstack_regularity", " ".join(p.name for p in LIVE_ROOT.iterdir()))
+
+
+class TestPrimeFieldBatchStaysArchived(unittest.TestCase):
+    def test_coherence_py_is_in_archive_not_in_live_package(self):
+        py = ARCHIVE_PRIME_FIELD / "prime_field_coherence.py"
+        self.assertTrue(py.is_file(), py)
+        raw = py.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), PRIME_FIELD_COHERENCE_SHA256)
+        self.assertEqual(len(raw), 23513)
+        self.assertFalse((LIVE_ROOT / "prime_field_coherence.py").is_file())
+        self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
+        self.assertFalse((LIVE_ROOT / "uhf.py").is_file())
+        self.assertFalse((LIVE_ROOT / "dhfa.py").is_file())
+        note = ARCHIVE_PRIME_FIELD.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("archive only", note.lower())
+        self.assertIn("Not live Domain Architect", note)
+        self.assertIn("NOT CLAIMED", note)
+        self.assertIn("import into `domain_architect/`", note)
+        self.assertIn("not live DA", note.lower())
+        self.assertIn("Do not stamp DA-VC-01", note)
+        self.assertNotIn("DA-VC-01 PASS", note)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("prime-field-2026-08-25/", archive_index)
+        self.assertIn("not live DA", archive_index)
+        self.assertNotIn(
+            "prime_field_coherence",
+            " ".join(p.name for p in LIVE_ROOT.iterdir()),
+        )
+
+    def test_may16_track_b_was_duplicate_swirl_face_not_sfe(self):
+        may = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "papers"
+            / "swirl"
+            / "zenodo-may"
+            / "PhiRenorm_TrackB.pdf"
+        )
+        self.assertTrue(may.is_file(), may)
+        self.assertEqual(hashlib.sha256(may.read_bytes()).hexdigest(), MAY16_TRACK_B_SHA256)
+        self.assertEqual(may.stat().st_size, 13524)
+        self.assertFalse((ARCHIVE_PRIME_FIELD / "PhiRenorm_TrackB_May16.pdf").is_file())
+        self.assertFalse((ARCHIVE_PRIME_FIELD / "PhiRenorm_TrackB.pdf").is_file())
+        faces = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "papers"
+            / "swirl"
+            / "FACES.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("PhiRenorm_TrackB_May16_e075.pdf", faces)
+        self.assertIn("duplicate", faces.lower())
+        self.assertIn("**Not** SFE", faces)
 
 
 class TestNoPaddedParameterLevel(unittest.TestCase):
