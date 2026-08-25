@@ -369,5 +369,6 @@ Do not pull these back in unless Jon names them as a **third** book:
 - `docs/papers/swirl/SWIRL-CONTINUATION.md` (status only; no credentials)
 - `docs/papers/swirl/PHI_GEOMETRY_BRIDGE.md`
 - `docs/papers/swirl/DA-ON-PHI-GEOMETRY.md`
+- `docs/domain-architect/DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md` (DA-VC-01; live score FAIL; NS-open stays OPEN)
 
 End of packet.

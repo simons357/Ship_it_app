@@ -37,6 +37,9 @@ mathematics.
 One paste-ready file for a **new** ChatGPT chat (not Chat Vault):
 [`docs/packets/DA-AND-NS-CHATGPT.md`](../../packets/DA-AND-NS-CHATGPT.md).
 
+DA validation challenge 01 (unaugmented swirl; live score FAIL):
+[`docs/domain-architect/DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md`](../../domain-architect/DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md).
+
 ## Try it in Domain Architect
 
 Launch the desktop app, open **Decompose**, and click **Swirl identity** (or paste the lines below). Live Decompose currently returns `unclassified` at Level 0 and warns that \(\Phi\) is an identifier, not a gravitational potential. That is expected: this lab is not a fluids solver, and swirl \(\Phi=u_\theta/r\) must not be glued to FRA output \(\Phi\).

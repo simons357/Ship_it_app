@@ -3,7 +3,8 @@
 **Status:** live computational framework, August 2026  
 **Specification:** [`docs/DOMAIN-ARCHITECT.md`](../DOMAIN-ARCHITECT.md)  
 **Mathematics:** [`OPERATIONAL-MATH.md`](OPERATIONAL-MATH.md)  
-**Implementation audit:** [`ARCHITECTURE-AUDIT.md`](ARCHITECTURE-AUDIT.md) — items 1–6, 8, 9, 10 accepted in the SFE/HB dump
+**Implementation audit:** [`ARCHITECTURE-AUDIT.md`](ARCHITECTURE-AUDIT.md) — items 1–6, 8, 9, 10 accepted in the SFE/HB dump  
+**Validation challenge 01:** [`DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md`](DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md) — live score **FAIL**
 
 Domain Architect analyzes, translates and synthesizes systems by the
 functional roles their components perform.
