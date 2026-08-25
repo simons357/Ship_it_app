@@ -151,6 +151,9 @@ class TestRingReadmeAndFacesSplitTheBook(unittest.TestCase):
         self.assertIn("NAV-42 Patent Pending", faces)
         self.assertIn("branding", faces.lower())
         self.assertIn(r"A_3", faces)
+        self.assertIn("GROK-E8-NAV42-SUPERSTRUCTURE.RECEIPT.md", faces)
+        self.assertIn("spectral floor", faces)
+        self.assertIn("Goldbach-closed **REJECTED**", faces)
 
 
 class TestPastedKappaSndIsNotRingLemmaFinal(unittest.TestCase):

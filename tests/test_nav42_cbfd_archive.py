@@ -12,6 +12,7 @@ ARCHIVE = ROOT / "docs" / "archive" / "nav-42-cbfd-2026-04"
 DA_PY = ROOT / "domain_architect"
 BH_TOY = ARCHIVE / "sfe_black_hole_simulator_paste.py"
 BH_RECEIPT = ARCHIVE / "SFE_BLACK_HOLE_SIMULATOR.RECEIPT.md"
+E8_RECEIPT = ARCHIVE / "GROK-E8-NAV42-SUPERSTRUCTURE.RECEIPT.md"
 
 
 class TestNav42CbfdArchive(unittest.TestCase):
@@ -43,6 +44,11 @@ class TestNav42CbfdArchive(unittest.TestCase):
         self.assertIn("chat paste arrived", text.lower())
         self.assertIn("does not depend on", text.lower())
         self.assertIn("SFE_BLACK_HOLE_SIMULATOR.RECEIPT.md", text)
+        self.assertIn("GROK-E8-NAV42-SUPERSTRUCTURE.RECEIPT.md", text)
+        self.assertIn("Chat Vault", text)
+        self.assertIn("2.2 Hz", text)
+        self.assertIn("Goldbach-closed", text)
+        self.assertIn("REJECTED", text)
 
     def test_readme_points_at_tracks(self) -> None:
         text = (ARCHIVE / "README.md").read_text(encoding="utf-8")
@@ -57,6 +63,9 @@ class TestNav42CbfdArchive(unittest.TestCase):
         self.assertIn("qc_coherence", index)
         self.assertIn("sfe_field", index)
         self.assertIn("SFE_BLACK_HOLE_SIMULATOR.RECEIPT.md", index)
+        self.assertIn("GROK-E8-NAV42-SUPERSTRUCTURE.RECEIPT.md", index)
+        self.assertIn("2.2 Hz paint", index)
+        self.assertIn("Chat Vault", index)
 
     def test_faces_keep_a3_off_paper2_and_ring(self) -> None:
         ns = (ROOT / "docs" / "papers" / "ns-snd" / "FACES.md").read_text(
@@ -82,6 +91,12 @@ class TestNav42CbfdArchive(unittest.TestCase):
         )
         self.assertIn("sfe_black_hole_simulator_paste.py", swirl)
         self.assertIn(r"\Phi=u_\theta/r", swirl)
+        self.assertIn("GROK-E8-NAV42-SUPERSTRUCTURE.RECEIPT.md", ns)
+        self.assertIn("GROK-E8-NAV42-SUPERSTRUCTURE.RECEIPT.md", ring)
+        self.assertIn("GROK-E8-NAV42-SUPERSTRUCTURE.RECEIPT.md", swirl)
+        self.assertIn("spectral floor", ns)
+        self.assertIn("spectral floor", ring)
+        self.assertIn("spectral floor", swirl)
 
     def test_queued_track_c_receipts_exist_outside_live_da(self) -> None:
         archive = ARCHIVE
@@ -130,6 +145,13 @@ class TestNav42CbfdArchive(unittest.TestCase):
         self.assertIn("SFE Black Hole Simulator", lookup)
         self.assertIn("chat paste **arrived**", lookup)
         self.assertIn("SFE_BLACK_HOLE_SIMULATOR.RECEIPT.md", lookup)
+        self.assertTrue((archive / "GROK-E8-NAV42-SUPERSTRUCTURE.RECEIPT.md").is_file())
+        self.assertIn("GROK-E8-NAV42-SUPERSTRUCTURE.RECEIPT.md", lookup)
+        self.assertIn("GAP1_RECONCILIATION_HANDOFF.md", lookup)
+        self.assertIn("5c2f4994ea44", lookup)
+        self.assertIn("Goldbach-closed **REJECTED**", lookup)
+        self.assertIn("2.2 Hz paint", lookup)
+        self.assertIn("Chat Vault", lookup)
 
     def test_live_domain_architect_python_has_no_nav42_toys(self) -> None:
         forbidden = (
@@ -143,6 +165,11 @@ class TestNav42CbfdArchive(unittest.TestCase):
             "sfe_field",
             "Black Hole Simulator",
             "Coherence Collapse",
+            "Chat Vault",
+            "2.2 Hz",
+            "resonant paint",
+            "Super E8",
+            "Leech",
         )
         hits: list[str] = []
         for path in DA_PY.glob("*.py"):
@@ -201,6 +228,46 @@ class TestNav42CbfdArchive(unittest.TestCase):
         self.assertTrue(np.allclose(field[r < 0.2], 0.0))
         zero = mod.sfe_field(X, Y, 0.0)
         np.testing.assert_allclose(zero, 0.0, atol=1e-12)
+
+    def test_e8_nav42_superstructure_is_track_c_rejected(self) -> None:
+        self.assertTrue(E8_RECEIPT.is_file(), E8_RECEIPT)
+        receipt = E8_RECEIPT.read_text(encoding="utf-8")
+        self.assertIn("Track C", receipt)
+        self.assertIn("NOT CLAIMED", receipt)
+        self.assertIn("**Not** Domain Architect", receipt)
+        collapsed = " ".join(receipt.lower().replace("*", " ").split())
+        self.assertIn("rejected as product strategy", collapsed)
+        self.assertIn("chat vault", collapsed)
+        self.assertIn("2.2 hz", collapsed)
+        self.assertIn("not a lab formula", collapsed)
+        self.assertIn("goldbach", collapsed)
+        self.assertIn("rejected", collapsed)
+        self.assertIn("not measured", collapsed)
+        self.assertIn("15–25%", receipt)
+        self.assertIn("personal overlay was withdrawn from public stacking", collapsed)
+        self.assertIn("not filed", collapsed)
+        self.assertIn("5c2f4994ea44", receipt)
+        self.assertIn("NOT identical", receipt)
+        self.assertIn("NOT a theorem", receipt)
+        self.assertIn("OPEN", receipt)
+        self.assertIn("0.04706", receipt)
+        self.assertIn(r"\Phi=u_\theta/r", receipt)
+        self.assertIn("HN = D^((-1)/2)*Qtilde*D^((-1)/2)", receipt)
+        self.assertIn("inf J/X", receipt)
+        self.assertIn("do not dump the sixteen", collapsed)
+        self.assertIn("do not add chat vault", collapsed)
+        self.assertFalse((DA_PY / "chat_vault.py").is_file())
+        self.assertFalse((DA_PY / "resonant_paint.py").is_file())
+        self.assertFalse((DA_PY / "e8_visualizer.py").is_file())
+        self.assertFalse((DA_PY / "nav42.py").is_file())
+        html = (DA_PY / "static" / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn("Chat Vault", html)
+        self.assertNotIn("2.2 Hz", html)
+        self.assertNotIn("resonant paint", html)
+        self.assertNotIn("E8 visualizer", html)
+        self.assertNotIn("Equation Explorer", html)
+        self.assertNotIn("Goldbach closed", receipt)
+        self.assertNotIn("DA-VC-01 PASS", receipt)
 
 
 if __name__ == "__main__":

@@ -114,6 +114,9 @@ class TestOlderSwirlFacesAreNotACompileOf22August(unittest.TestCase):
         self.assertIn("OVERLEAF-VS-PACK-AUDIT-2026-08-15.md", faces)
         self.assertIn("CLAY_FINAL", faces)
         self.assertIn("NS_PhiRenorm_complete.tex", faces)
+        self.assertIn("GROK-E8-NAV42-SUPERSTRUCTURE.RECEIPT.md", faces)
+        self.assertIn("spectral floor", faces)
+        self.assertIn(r"\Phi=u_\theta/r", faces)
         self.assertNotIn("Paper2_NS_Regularity_SND_FIXED.tex", "".join(
             p.name for p in NS_SND.iterdir() if p.is_file()
         ))

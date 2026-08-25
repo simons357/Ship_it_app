@@ -1524,6 +1524,9 @@ class TestNav42A3IsNotPaper2Snd(unittest.TestCase):
         self.assertIn("not paper2 operator snd", collapsed)
         self.assertIn("Alignment Functionals", faces)
         self.assertIn("not received", collapsed)
+        self.assertIn("GROK-E8-NAV42-SUPERSTRUCTURE.RECEIPT.md", faces)
+        self.assertIn("spectral floor", faces)
+        self.assertIn("Goldbach-closed **REJECTED**", faces)
         self.assertFalse(
             (ROOT / "docs" / "papers" / "ns-snd" / "Alignment_Functionals.tex").is_file()
         )

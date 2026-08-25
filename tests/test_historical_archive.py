@@ -246,6 +246,7 @@ class TestEquationExplorerIsHistorical(unittest.TestCase):
         self.assertIn("nav-42-cbfd-2026-04/", index)
         self.assertIn("sfe_black_hole_simulator_paste.py", index)
         self.assertIn("SFE_BLACK_HOLE_SIMULATOR.RECEIPT.md", index)
+        self.assertIn("GROK-E8-NAV42-SUPERSTRUCTURE.RECEIPT.md", index)
 
 
 if __name__ == "__main__":

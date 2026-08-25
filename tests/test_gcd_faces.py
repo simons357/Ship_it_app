@@ -193,5 +193,75 @@ class TestGcdSpectralDynamicsReportWasNotReceived(unittest.TestCase):
         self.assertNotRegex(text, r"(?i)report SHA-256:\s*[0-9a-f]{64}")
 
 
+GAP1 = GCD / "GAP1_RECONCILIATION_HANDOFF.md"
+GAP1_RECEIPT = GCD / "GAP1_RECONCILIATION_HANDOFF.RECEIPT.md"
+GAP1_SHA256 = "5c2f4994ea44f589b50502a448ee85f7f4ce1c1ec9290d5761ca1bb7ce8f6960"
+
+
+class TestGap1ReconciliationHandoffArrived(unittest.TestCase):
+    def test_hash_title_and_two_operators(self) -> None:
+        self.assertTrue(GAP1.is_file(), GAP1)
+        raw = GAP1.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), GAP1_SHA256)
+        self.assertEqual(len(raw), 8147)
+        self.assertEqual(raw.count(b"\n"), 217)
+        self.assertNotEqual(hashlib.sha256(raw).hexdigest(), Q6_SHA256)
+        self.assertNotEqual(hashlib.sha256(raw).hexdigest(), MIX_SHA256)
+        text = raw.decode("utf-8")
+        self.assertIn("Gap 1 Reconciliation", text)
+        self.assertIn("June 8, 2026", text)
+        self.assertIn("1 / (gcd(i,j) · √(i·j))", text)
+        self.assertIn("μ(i/g) · μ(j/g) · g / √(i·j)", text)
+        self.assertIn("Frobenius difference at N=30 is 9.05", text)
+        self.assertIn("They are different matrices", text)
+        self.assertIn("Step F", text)
+        self.assertIn("Fujii", text)
+        self.assertFalse(
+            (GCD / "907cc125a_GAP1_RECONCILIATION_HANDOFF.md").is_file(),
+            "do not re-file the Base44 hash-prefix name as a second copy",
+        )
+        self.assertFalse((LIVE_ROOT / "GAP1_RECONCILIATION_HANDOFF.md").is_file())
+        self.assertFalse((LIVE_ROOT / "gap1.py").is_file())
+
+    def test_receipt_keeps_seam_open_and_rejects_closure(self) -> None:
+        self.assertTrue(GAP1_RECEIPT.is_file(), GAP1_RECEIPT)
+        receipt = GAP1_RECEIPT.read_text(encoding="utf-8")
+        faces = (GCD / "FACES.md").read_text(encoding="utf-8")
+        readme = (GCD / "README.md").read_text(encoding="utf-8")
+        lookup = (ROOT / "docs" / "packets" / "OLD-PAPERS-LOOK-UP.md").read_text(
+            encoding="utf-8"
+        )
+        for text in (receipt, faces, readme, lookup):
+            collapsed = " ".join(text.lower().replace("*", " ").split())
+            self.assertIn("5c2f4994ea44", text)
+            self.assertIn("not identical", collapsed)
+            self.assertIn("not a theorem", collapsed)
+            self.assertIn("open", collapsed)
+            self.assertIn("10–20 line", text)
+            self.assertIn("0.04706", text)
+            self.assertIn("not live da", collapsed.replace("domain architect", "da"))
+        self.assertIn("HTTP **302**", receipt)
+        self.assertIn("**200**", receipt)
+        self.assertIn("907cc125a_", receipt)
+        self.assertIn(HN_LAB, receipt)
+        self.assertIn("a239112289a1", receipt)
+        self.assertIn("f41194c76cf4", receipt)
+        self.assertIn("NOT CLAIMED", receipt)
+        self.assertIn("rejected", receipt.lower())
+        self.assertIn("NS regularity", receipt)
+        self.assertIn("RH follows", receipt)
+        self.assertIn("withdrawn", receipt.lower())
+        self.assertIn("Goldbach", receipt)
+        self.assertIn("Nav42 paint", receipt)
+        self.assertIn("import into `domain_architect/`", receipt)
+        self.assertNotIn("DA-VC-01 PASS", receipt)
+        self.assertNotIn("Goldbach closed", receipt)
+        collapsed = " ".join(receipt.lower().replace("*", " ").split())
+        self.assertIn("not identical", collapsed)
+        self.assertIn("not a theorem", collapsed)
+        self.assertIn("not clay", collapsed)
+        self.assertIn("do not invent", collapsed)
+
+
 if __name__ == "__main__":
     raise SystemExit(unittest.main())
