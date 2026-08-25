@@ -191,6 +191,15 @@ class TestPrimeFieldArchiveIntake(unittest.TestCase):
         )
         self.assertTrue(missing.is_file(), missing)
         self.assertIn("not received", missing.read_text(encoding="utf-8").lower())
+        overleaf = (
+            ROOT / "docs" / "archive" / "overleaf-2026-04" / "OVERLEAF-EXPORTS.MISSING.md"
+        )
+        self.assertTrue(overleaf.is_file(), overleaf)
+        self.assertIn("not received", overleaf.read_text(encoding="utf-8").lower())
+        self.assertIn("overleaf-2026-04/", index)
+        self.assertIn("CLAY_FINAL", index)
+        self.assertFalse((LIVE_ROOT / "clay_final.py").is_file())
+        self.assertFalse((LIVE_ROOT / "serpent_final.py").is_file())
 
 
 class TestUhsaSessionDumpIsHistorical(unittest.TestCase):

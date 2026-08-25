@@ -542,6 +542,156 @@ class TestEquationExplorerStaysArchived(unittest.TestCase):
         self.assertEqual(static_hits, [])
 
 
+class TestAprilOverleafExportsStayQuarantined(unittest.TestCase):
+    """CLAY_FINAL / SERPENT / simons_ns_overleaf / WHAT_I_FOUND are not DA."""
+
+    ROOT = Path(__file__).resolve().parents[1]
+    LIVE_ROOT = ROOT / "domain_architect"
+    QUARANTINE = ROOT / "docs" / "archive" / "overleaf-2026-04"
+    POLICY = ROOT / "docs" / "packets" / "OVERLEAF-VS-PACK-AUDIT-2026-08-15.md"
+    PRODUCT_MODULES = (
+        "clay_final.py",
+        "serpent.py",
+        "serpent_final.py",
+        "what_i_found.py",
+        "simons_ns_overleaf.py",
+        "overleaf_package.py",
+        "CLAY_FINAL.py",
+        "SERPENT_FINAL.py",
+    )
+    EXPORT_TREES = (
+        "219709d19_CLAY_FINAL_OVERLEAF",
+        "e399df8e7_SERPENT_FINAL_OVERLEAF",
+        "8a2077729_WHAT_I_FOUND_OVERLEAF",
+        "b6e5416c8_simons_ns_overleaf",
+        "3673bad0d_simons_overleaf_FINAL",
+        "overleaf_package",
+    )
+    LIVE_MODULES = (
+        "decompose.py",
+        "translate.py",
+        "synthesize.py",
+        "compatibility.py",
+        "cycle.py",
+        "realization.py",
+        "audit.py",
+        "classify.py",
+        "leftover_repair.py",
+        "lab_cases.py",
+        "localized_repair.py",
+    )
+
+    def test_live_package_has_no_overleaf_product_modules(self):
+        for name in self.PRODUCT_MODULES:
+            self.assertFalse(
+                (self.LIVE_ROOT / name).is_file(),
+                f"do not import Overleaf museum {name} into live DA",
+            )
+        live_names = " ".join(p.name for p in self.LIVE_ROOT.iterdir())
+        for token in (
+            "clay_final",
+            "serpent_final",
+            "what_i_found",
+            "simons_ns_overleaf",
+            "overleaf_package",
+        ):
+            self.assertNotIn(token, live_names)
+        for tree in self.EXPORT_TREES:
+            self.assertFalse((self.LIVE_ROOT / tree).exists(), tree)
+            self.assertFalse((self.QUARANTINE / tree).exists(), tree)
+        for folder in (self.ROOT / "docs", self.LIVE_ROOT):
+            for name in ("CLAY_FINAL.tex", "SERPENT_FINAL.tex", "WHAT_I_FOUND.tex"):
+                hits = list(folder.rglob(name))
+                self.assertEqual(hits, [], hits)
+
+    def test_core_modules_do_not_import_overleaf_museum(self):
+        banned = {
+            "clay_final",
+            "serpent_final",
+            "what_i_found",
+            "simons_ns_overleaf",
+            "overleaf_package",
+            "CLAY_FINAL",
+            "SERPENT_FINAL",
+            "WHAT_I_FOUND",
+        }
+        for name in self.LIVE_MODULES:
+            source = (self.LIVE_ROOT / name).read_text(encoding="utf-8")
+            tree = ast.parse(source)
+            imported = set()
+            for node in ast.walk(tree):
+                if isinstance(node, ast.ImportFrom) and node.module:
+                    imported.add(node.module.split(".")[-1])
+                if isinstance(node, ast.Import):
+                    for alias in node.names:
+                        imported.add(alias.name.split(".")[-1])
+            self.assertFalse(
+                imported & banned,
+                f"{name} imports Overleaf museum: {imported & banned}",
+            )
+            hay = source
+            for token in (
+                "CLAY_FINAL",
+                "SERPENT_FINAL",
+                "WHAT_I_FOUND",
+                "simons_ns_overleaf",
+            ):
+                self.assertNotIn(
+                    token,
+                    hay,
+                    f"{name} must not load Overleaf museum token {token!r}",
+                )
+
+    def test_quarantine_receipt_and_policy_are_filed(self):
+        receipt = self.QUARANTINE / "OVERLEAF-EXPORTS.MISSING.md"
+        note = self.QUARANTINE / "README.md"
+        self.assertTrue(self.POLICY.is_file(), self.POLICY)
+        self.assertTrue(receipt.is_file(), receipt)
+        self.assertTrue(note.is_file(), note)
+        policy = self.POLICY.read_text(encoding="utf-8")
+        missing = receipt.read_text(encoding="utf-8")
+        banner = note.read_text(encoding="utf-8")
+        self.assertIn("Policy banner", policy)
+        self.assertIn("not a new", policy.lower())
+        self.assertIn("Ignore existing Overleaf projects", policy)
+        self.assertIn("PDF printer", policy)
+        self.assertIn("No Overleaf login", policy)
+        self.assertIn("NOT CLAIMED", policy)
+        self.assertIn("DA-VC-01", policy)
+        self.assertIn("FAIL", policy)
+        self.assertIn("not received", missing.lower())
+        self.assertIn("Do **not** invent TeX", missing)
+        self.assertIn("quarantine", banner.lower())
+        self.assertIn("import into `domain_architect/`", banner)
+        for token in (
+            "CLAY_FINAL",
+            "SERPENT_FINAL",
+            "WHAT_I_FOUND",
+            "simons_ns_overleaf",
+            "overleaf_package",
+        ):
+            self.assertIn(token, missing)
+            self.assertIn(token, policy)
+        self.assertNotIn("\\title{", missing)
+        self.assertNotIn("\\begin{document}", missing)
+        self.assertNotIn("DA-VC-01 PASS", policy)
+        archive_index = (self.ROOT / "docs" / "archive" / "README.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("overleaf-2026-04/", archive_index)
+        self.assertIn("OVERLEAF-VS-PACK-AUDIT-2026-08-15.md", archive_index)
+        lookup = (
+            self.ROOT / "docs" / "packets" / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("OVERLEAF-VS-PACK-AUDIT-2026-08-15.md", lookup)
+        self.assertIn("not received", lookup.lower())
+        qstack = (
+            self.ROOT / "docs" / "archive" / "qstack" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("overleaf_package", qstack)
+        self.assertIn("not received", qstack.lower())
+
+
 class TestNoPaddedParameterLevel(unittest.TestCase):
     def test_mechanism_is_not_wrapped_in_dummy_parameter(self):
         dec = decompose("m*xdd + c*xd + k*x = f")

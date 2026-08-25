@@ -51,3 +51,5 @@ DA leftover-split lab (usable Ring SND beside Q6 \(H_N\); three NS leftovers sta
 April record [10.5281/zenodo.19842060](https://doi.org/10.5281/zenodo.19842060) is marked superseded. Paper2’s June PDF cited that DOI as “GCD Spectral Operators and the Frozen Spectral Gap.” The live record is a Ring/SND paper, not that title. Do not trust that bibliography line.
 
 Zenodo [10.5281/zenodo.20269536](https://doi.org/10.5281/zenodo.20269536) is Paper2 May 18 TeX, not this book. Its status note pointing at `22045474` as a Paper2 “corrected version” is stale.
+
+April Overleaf Clay/SERPENT/WHAT_I_FOUND trees that embed a Ring section are **quarantine**, **not received** here, and **not** this book’s June 19 TeX. Policy: [`docs/packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md`](../../packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md). Receipt: [`docs/archive/overleaf-2026-04/`](../../archive/overleaf-2026-04/).

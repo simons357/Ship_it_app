@@ -102,6 +102,7 @@ Logo (confirmed): **Black & gold** and **All silver** 3D lockups both stay. **La
 - `docs/packets/DA-AND-NS-CHATGPT.md`
 - `docs/packets/HANDOFF-GROK-4.6.md` (this document)
 - `docs/packets/OLD-PAPERS-LOOK-UP.md` — how to send files; Zenodo faces already pulled
+- `docs/packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md` — **policy**: ignore old Overleaf for scientific control; PDF printer only
 
 ### App
 

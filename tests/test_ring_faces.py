@@ -142,6 +142,11 @@ class TestRingReadmeAndFacesSplitTheBook(unittest.TestCase):
             "still not in this VM** under that pack name",
             lookup,
         )
+        self.assertIn("OVERLEAF-VS-PACK-AUDIT-2026-08-15.md", faces)
+        self.assertIn("OVERLEAF-VS-PACK-AUDIT-2026-08-15.md", readme)
+        self.assertIn("CLAY_FINAL", faces)
+        self.assertIn("a73d949f", faces)
+        self.assertIn("kappa", faces.lower())
 
 
 class TestPastedKappaSndIsNotRingLemmaFinal(unittest.TestCase):

@@ -26,6 +26,8 @@ Letters collide: Q6 \(H_N\) \(\neq\) Paper2 \(H_N[a]\) \(\neq\) FRA \(H\).
 - **May mix / attractor metaphysics:** archive only. Do not upgrade NS / RH /
   Goldbach claims. Do not import into `domain_architect/`.
 - **Do not merge them into one claim.**
+- **PAPER_A / PAPER_B / `GCD_Spectral_Paper1_UPDATED_*`:** pack-only, **not on this VM**. They **never lived** in Overleaf exports. Do not hunt them as Overleaf-required. Policy [`docs/packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md`](../../packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md).
+- **April Overleaf CLAY/SERPENT mains:** **not** Q6 arithmetic. **Not received.** Receipt [`docs/archive/overleaf-2026-04/`](../../archive/overleaf-2026-04/). Clay **NOT CLAIMED**.
 
 Sibling Frankie files `SPECTRAL_UNIFICATION_PAPER.tex` and
 `SND_GNC_BRIDGE_EXTRACTED.txt` are **different objects**. Do not overwrite

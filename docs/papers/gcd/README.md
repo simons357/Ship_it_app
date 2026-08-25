@@ -50,3 +50,5 @@ PDF. **Not** live DA. Clay **NOT CLAIMED**.
 [10.5281/zenodo.20271457](https://doi.org/10.5281/zenodo.20271457) — *Ramanujan–Möbius / prime lattice*. Title now marked claim withdrawn. Do not cite as current.
 
 Errata for the stack: [`docs/papers/status-errata/`](../status-errata/README.md).
+
+PAPER_A, PAPER_B, and `GCD_Spectral_Paper1_UPDATED_*` are **pack-only, not on this VM**. They never lived in Overleaf exports. Do not hunt them as Overleaf-required. Policy: [`docs/packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md`](../../packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md).

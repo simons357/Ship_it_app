@@ -7,6 +7,15 @@ You looked them up. The chat uploader failed. That is on this channel, not on yo
 
 What actually landed in chat earlier: Paper2 TeX, Paper2 June PDF, and the Overleaf audit. That is all.
 
+The Overleaf audit is now **policy**, not a pending question. Canonical file:
+[`OVERLEAF-VS-PACK-AUDIT-2026-08-15.md`](OVERLEAF-VS-PACK-AUDIT-2026-08-15.md).
+**Ignore existing Overleaf projects for scientific control.** They are
+April–June 2026 NS / Clay / QStack snapshots. Overleaf is a PDF printer
+only. Named export trees were **not** on this VM — receipts:
+[`docs/archive/overleaf-2026-04/`](../archive/overleaf-2026-04/). Do **not**
+treat April unconditional Clay TeX as FIXED `7de9444d…` or as August
+REPAIRED. Hard rule: no Clay NS proved / no RH proved.
+
 ---
 
 ## How to send a file so it actually arrives
@@ -75,6 +84,18 @@ Also filed from the later six-file drop (still older than 22 August, **not** a c
 ## Do not send
 
 April `CLAY_FINAL`, `SERPENT_FINAL`, `WHAT_I_FOUND`, unconditional `simons_ns_overleaf` mains, zips of the whole pack, SFE/HB/QStack dumps.
+Those Overleaf exports are **quarantine**. Policy:
+[`OVERLEAF-VS-PACK-AUDIT-2026-08-15.md`](OVERLEAF-VS-PACK-AUDIT-2026-08-15.md).
+This VM has **no** `219709d19_CLAY_FINAL_OVERLEAF/`,
+`e399df8e7_SERPENT_FINAL_OVERLEAF/`, `8a2077729_WHAT_I_FOUND_OVERLEAF/`,
+`b6e5416c8_simons_ns_overleaf/`, `3673bad0d_simons_overleaf_FINAL/`, or
+Frankie `overleaf_package/` bytes. Receipt:
+[`docs/archive/overleaf-2026-04/OVERLEAF-EXPORTS.MISSING.md`](../archive/overleaf-2026-04/OVERLEAF-EXPORTS.MISSING.md).
+Do not invent TeX. Do not import into `domain_architect/`.
+
+PAPER_A, PAPER_B, `GCD_Spectral_Paper1_UPDATED_*`, and anesthesia CI
+**never lived in Overleaf exports**. They are **pack-only, not on this VM**
+unless already filed elsewhere. Do not hunt them as Overleaf-required.
 
 Shahmurov: cite only. I can fetch arXiv if needed. You do not upload him.
 
@@ -84,6 +105,7 @@ Shahmurov: cite only. I can fetch arXiv if needed. You do not upload him.
 
 | What | Filed as |
 |---|---|
+| 15 Aug 2026 *Overleaf value audit vs controlling pack* | Policy [`OVERLEAF-VS-PACK-AUDIT-2026-08-15.md`](OVERLEAF-VS-PACK-AUDIT-2026-08-15.md). **Not** a theorem. Old Overleaf is **not** control. Named export trees **not received** — [`docs/archive/overleaf-2026-04/`](../archive/overleaf-2026-04/). |
 | 19 Aug 2026 *Unified Harmonic Spectral Architecture: Session Master Synthesis* | [`docs/archive/sfe-hb/Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md`](../archive/sfe-hb/Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md). **Archive only.** Not live DA. Not Clay. Not FIXED.tex. Not QStack. §7 GCD \(Q_N\) PD stays with [`docs/papers/gcd/`](../papers/gcd/). §8 OPEN. Action 1 inverted. Map: [`docs/archive/sfe-hb/README.md`](../archive/sfe-hb/README.md). |
 | Frankie 14 Aug 2026 `SPECTRAL_UNIFICATION_PAPER.tex` | **not received.** Mac `RH_Proof_Chain_Synthesis/.../SPECTRAL_UNIFICATION_PAPER.tex` unreadable here. Base44 `69b28657b0df374441f0302e` public URL: HTTP **302** then **403**, 0 bytes. Conversation `69b2865953e46e195fc302f0` file API: **404**. **Do not invent TeX.** SHA / `\title` / `\date` unknown. **Not** a substitute for the 19 Aug UHSA markdown. Receipt: [`docs/archive/sfe-hb/SPECTRAL_UNIFICATION_PAPER.MISSING.md`](../archive/sfe-hb/SPECTRAL_UNIFICATION_PAPER.MISSING.md). Not live DA. Not Clay. Not FIXED (`7de9444d…`). Not DRAFT_original (`f51ed5c05ec3…`). |
 | Frankie 14 Aug 2026 `GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` | **not received.** Mac `…/ARCHIVE/math_drafts/GCD_SPECTRAL_ATTRACTOR_MAGNUM.tex` unreadable here. Base44 `69b28657b0df374441f0302e` public URL: HTTP **302** then CDN **403**, 0 bytes. **Do not invent TeX.** SHA / `\title` / `\date` unknown. **Not** an alias of [`docs/papers/gcd/04_q6_inverse_gcd.pdf`](../papers/gcd/04_q6_inverse_gcd.pdf) (SHA `a2391122…`). Public mix sibling Zenodo [10.5281/zenodo.20405599](https://doi.org/10.5281/zenodo.20405599) TeX is archived at [`docs/archive/gcd-spectral-attractor-2026-05/`](../archive/gcd-spectral-attractor-2026-05/) (SHA `f41194c7…`, May 25 2026) — **not** MAGNUM without a SHA match. Receipt: [`docs/archive/gcd-spectral-attractor-2026-05/GCD_SPECTRAL_ATTRACTOR_MAGNUM.MISSING.md`](../archive/gcd-spectral-attractor-2026-05/GCD_SPECTRAL_ATTRACTOR_MAGNUM.MISSING.md). Not live DA. Not Clay. Not FIXED. Do not overwrite `SPECTRAL_UNIFICATION_PAPER` or `SND_GNC_BRIDGE_EXTRACTED.txt`. |

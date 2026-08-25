@@ -40,9 +40,11 @@ Local copies: [`zenodo-may/`](zenodo-may/README.md).
 
 ## Status note
 
-Old April Overleaf Clay/SERPENT drafts are **quarantine**. Hygiene note:
-[`docs/archive/OVERLEAF_VALUE_AUDIT_2026-08-15.md`](../../archive/OVERLEAF_VALUE_AUDIT_2026-08-15.md).
-On this branch, compile [`Simons_PhiRenorm_Swirl_2026-08-22.tex`](Simons_PhiRenorm_Swirl_2026-08-22.tex), not those projects.
+Old April Overleaf Clay/SERPENT drafts are **quarantine**. Policy:
+[`docs/packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md`](../../packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md).
+Named export trees were **not** on this VM:
+[`docs/archive/overleaf-2026-04/`](../../archive/overleaf-2026-04/).
+On this branch, compile [`Simons_PhiRenorm_Swirl_2026-08-22.tex`](Simons_PhiRenorm_Swirl_2026-08-22.tex) in a **blank** Overleaf project if you need a PDF, not those April projects. Pack `NS_PhiRenorm_complete.tex` is already filed as historical Book B.
 
 [`SWIRL-CONTINUATION.md`](SWIRL-CONTINUATION.md) is the 22 August reconstruction of what stands. [`phi_renorm_continuation.tex`](phi_renorm_continuation.tex) is the earlier continuation sketch. Plain English: [`WHERE-WE-STAND.md`](WHERE-WE-STAND.md).
 

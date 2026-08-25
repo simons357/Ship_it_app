@@ -22,6 +22,20 @@ def collapsed(text: str) -> str:
     return " ".join(text.split())
 
 
+def looks_like_april_overleaf_unconditional_clay(tex: str) -> bool:
+    """April Overleaf Clay/SERPENT/ns_overleaf mains. Not FIXED. Not August."""
+    markers = (
+        "CLAY_FINAL",
+        "SERPENT_FINAL",
+        "WHAT_I_FOUND",
+        "Theorem D Clay Equivalence",
+        "unconditional Leray–Hopf global regularity",
+        "unconditional Leray--Hopf global regularity",
+        "unconditional Leray-Hopf global regularity",
+    )
+    return any(marker in tex for marker in markers)
+
+
 def classify_paper2_tex_title_page(tex: str) -> str:
     """Identify a Paper2 TeX face from title + date, never from an untrusted filename."""
     june_title = "Conditional Regularity Criterion" in tex
@@ -41,6 +55,8 @@ def classify_paper2_tex_title_page(tex: str) -> str:
         return "april_spectral_coherence"
     if implies and may18:
         return "may18_implies_draft"
+    if looks_like_april_overleaf_unconditional_clay(tex):
+        return "april_overleaf_unconditional_clay"
     return "unknown"
 
 
@@ -1374,6 +1390,130 @@ class TestT2ShellFluxGronwallWasNotReceived(unittest.TestCase):
         self.assertNotIn("DA-VC-01 PASS", faces)
         self.assertNotIn("DA-VC-01 PASS", readme)
         self.assertNotIn("DA-VC-01 PASS", challenge)
+
+
+class TestAprilOverleafClayIsNotFixedOrAugust(unittest.TestCase):
+    """Apr Overleaf unconditional Clay TeX is quarantine, not FIXED 7de9444d.
+
+    Named export trees were not on this VM. Do not invent them. Do not treat
+    CLAY_FINAL / SERPENT / simons_ns_overleaf as August REPAIRED.
+    """
+
+    POLICY = (
+        ROOT / "docs" / "packets" / "OVERLEAF-VS-PACK-AUDIT-2026-08-15.md"
+    )
+    RECEIPT = (
+        ROOT
+        / "docs"
+        / "archive"
+        / "overleaf-2026-04"
+        / "OVERLEAF-EXPORTS.MISSING.md"
+    )
+    OVERLEAF_NAMES = (
+        "CLAY_FINAL.tex",
+        "SERPENT_FINAL.tex",
+        "WHAT_I_FOUND.tex",
+        "219709d19_CLAY_FINAL_OVERLEAF",
+        "e399df8e7_SERPENT_FINAL_OVERLEAF",
+        "8a2077729_WHAT_I_FOUND_OVERLEAF",
+        "b6e5416c8_simons_ns_overleaf",
+        "3673bad0d_simons_overleaf_FINAL",
+    )
+    AUGUST_SHA256 = (
+        "1ff7a211c00d660c30365e5913727f0129cfc5cd76f1f40ed9a47f468c746cc3"
+    )
+    DRAFT_SHA256 = (
+        "f51ed5c05ec3886603a69de942b890dc76c73b3860fe089a056b4665ab8cc4cb"
+    )
+
+    def test_named_overleaf_tex_is_absent_from_ns_snd_and_live_da(self):
+        live = ROOT / "domain_architect"
+        for name in (
+            "CLAY_FINAL.tex",
+            "SERPENT_FINAL.tex",
+            "WHAT_I_FOUND.tex",
+            "main.tex",
+        ):
+            self.assertFalse((NS_SND / name).is_file(), name)
+            self.assertFalse((live / name).is_file(), name)
+        for folder in (
+            "219709d19_CLAY_FINAL_OVERLEAF",
+            "e399df8e7_SERPENT_FINAL_OVERLEAF",
+            "8a2077729_WHAT_I_FOUND_OVERLEAF",
+            "b6e5416c8_simons_ns_overleaf",
+            "3673bad0d_simons_overleaf_FINAL",
+            "overleaf_package",
+        ):
+            self.assertFalse((NS_SND / folder).is_dir(), folder)
+            self.assertFalse((live / folder).is_dir(), folder)
+            self.assertFalse(
+                (ROOT / "docs" / "archive" / "overleaf-2026-04" / folder).is_dir(),
+                folder,
+            )
+        self.assertFalse((NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file())
+
+    def test_synthetic_overleaf_clay_is_not_fixed_or_august(self):
+        snippet = (
+            r"\title{CLAY_FINAL}"
+            "\nTheorem D Clay Equivalence\n"
+            "unconditional Leray--Hopf global regularity / Clay\n"
+            "SERPENT_FINAL WHAT_I_FOUND\n"
+        )
+        identity = classify_paper2_tex_title_page(snippet)
+        self.assertEqual(identity, "april_overleaf_unconditional_clay")
+        self.assertNotEqual(identity, "june_fixed_source")
+        self.assertNotEqual(identity, "august_repaired")
+        self.assertNotEqual(identity, "may18_implies_draft")
+        self.assertTrue(looks_like_april_overleaf_unconditional_clay(snippet))
+        digest = hashlib.sha256(snippet.encode("utf-8")).hexdigest()
+        self.assertNotEqual(digest, PDF_SHA256)
+        self.assertNotEqual(digest, self.AUGUST_SHA256)
+        self.assertNotEqual(digest, self.DRAFT_SHA256)
+        self.assertEqual(PDF_SHA256[:8], "7de9444d")
+        self.assertEqual(self.AUGUST_SHA256[:8], "1ff7a211")
+
+    def test_filed_august_and_may18_are_not_overleaf_clay(self):
+        august = PAPER.read_text(encoding="utf-8")
+        draft = (NS_SND / "Simons_NS_Paper2_DRAFT_original.tex").read_text(
+            encoding="utf-8"
+        )
+        self.assertEqual(classify_paper2_tex_title_page(august), "august_repaired")
+        self.assertEqual(classify_paper2_tex_title_page(draft), "may18_implies_draft")
+        self.assertFalse(looks_like_april_overleaf_unconditional_clay(august))
+        self.assertFalse(looks_like_april_overleaf_unconditional_clay(draft))
+        self.assertNotIn("CLAY_FINAL", august)
+        self.assertNotIn("SERPENT_FINAL", august)
+        self.assertNotIn("WHAT_I_FOUND", august)
+        self.assertNotIn("Theorem D Clay Equivalence", august)
+        self.assertEqual(hashlib.sha256(PAPER.read_bytes()).hexdigest(), self.AUGUST_SHA256)
+        self.assertEqual(hashlib.sha256(PDF.read_bytes()).hexdigest(), PDF_SHA256)
+        self.assertNotEqual(self.AUGUST_SHA256, PDF_SHA256)
+
+    def test_policy_and_faces_refuse_overleaf_as_control(self):
+        policy = self.POLICY.read_text(encoding="utf-8")
+        receipt = self.RECEIPT.read_text(encoding="utf-8")
+        faces = FACES.read_text(encoding="utf-8")
+        readme = README.read_text(encoding="utf-8")
+        for text in (policy, receipt, faces, readme):
+            self.assertIn("simons_ns_overleaf", text)
+            self.assertIn("CLAY_FINAL", text)
+            self.assertIn("7de9444d", text)
+        self.assertIn("policy, not a new", policy.lower())
+        self.assertIn("Ignore existing Overleaf projects", policy)
+        self.assertIn("PDF printer", policy)
+        self.assertIn("No Overleaf login", policy)
+        self.assertIn("not received", receipt.lower())
+        self.assertIn("Do **not** invent TeX", receipt)
+        self.assertIn("**Not** August REPAIRED", faces)
+        self.assertIn("OVERLEAF-VS-PACK-AUDIT-2026-08-15.md", faces)
+        self.assertIn("OVERLEAF-VS-PACK-AUDIT-2026-08-15.md", readme)
+        self.assertIn("NOT CLAIMED", faces)
+        self.assertIn("DA-VC-01 **FAIL**", faces)
+        self.assertIn("T2 **OPEN**", faces)
+        self.assertIn("GNC **incomplete**", faces)
+        self.assertNotIn("DA-VC-01 PASS", policy)
+        self.assertNotIn("DA-VC-01 PASS", faces)
+        self.assertNotRegex(policy, r"overleaf\.com/project/[0-9A-Za-z]{12,}")
 
 
 if __name__ == "__main__":

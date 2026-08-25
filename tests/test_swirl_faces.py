@@ -110,6 +110,10 @@ class TestOlderSwirlFacesAreNotACompileOf22August(unittest.TestCase):
         self.assertIn("not a compile of 22 august", readme.lower())
         self.assertIn("NOT CLAIMED", readme)
         self.assertIn(r"u_\theta/r", readme)
+        self.assertIn("OVERLEAF-VS-PACK-AUDIT-2026-08-15.md", readme)
+        self.assertIn("OVERLEAF-VS-PACK-AUDIT-2026-08-15.md", faces)
+        self.assertIn("CLAY_FINAL", faces)
+        self.assertIn("NS_PhiRenorm_complete.tex", faces)
         self.assertNotIn("Paper2_NS_Regularity_SND_FIXED.tex", "".join(
             p.name for p in NS_SND.iterdir() if p.is_file()
         ))
