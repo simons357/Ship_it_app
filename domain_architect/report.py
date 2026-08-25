@@ -80,6 +80,7 @@ class AuditReport:
     tuning_export: dict[str, Any] | None = None
     incompleteness: dict[str, Any] | None = None
     decomposition: dict[str, Any] | None = None
+    gap_closure: dict[str, Any] | None = None
 
     def narrative(self) -> str:
         lines = [
@@ -258,5 +259,6 @@ class AuditReport:
             "tuning_export": self.tuning_export,
             "incompleteness": self.incompleteness,
             "decomposition": self.decomposition,
+            "gap_closure": self.gap_closure,
             "narrative": self.narrative(),
         }

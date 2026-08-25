@@ -126,5 +126,109 @@
     "evidence": "Swirl Φ algebra reuses the letter Φ with a different meaning from FRA realized output.",
     "status": "recorded",
     "notes": "Alias Φ_swirl when both books appear in one document."
+  },
+  {
+    "left_id": "SND-HYP001",
+    "right_id": "NS-B001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "SND-HYP adds an explicit spectral-gap hypothesis on top of classical NS-B. Adjacent books; hypothesis is not a theorem.",
+    "status": "recorded",
+    "notes": "KEEP framing: unaugmented NS + SND as hypothesis."
+  },
+  {
+    "left_id": "SND-C001",
+    "right_id": "SND-U001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "SND-C assumes X≤M (and ρ≤ρ₀) with C_* depending on M; SND-U claims unconditional J/X≥c_* for all H¹ data. Broken weld TH-H1.",
+    "status": "recorded",
+    "notes": "Suggested closure: split theorems; forbid H→Clay glue until M-free lemma exists."
+  },
+  {
+    "left_id": "SND-C001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Airtight SND-C given X≤M does not resolve Clay Statement B. Circular for large-data regularity.",
+    "status": "recorded",
+    "notes": "Broken weld: TH-H1. DA refuses unconditional Clay routing."
+  },
+  {
+    "left_id": "THM-H001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Theorem H as written produces SND-C under X≤M; Clay B requires M-free H¹ control from data alone.",
+    "status": "recorded",
+    "notes": "Naming fraud if status tables green H as unconditional."
+  },
+  {
+    "left_id": "THM-H001",
+    "right_id": "SND-U001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Theorem H ≠ unconditional SND. Briefing substitution error.",
+    "status": "recorded",
+    "notes": "See ARCHON adversarial verdict."
+  },
+  {
+    "left_id": "SND-U001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Both are unproved prize packaging; neither is established. Retire both as proved claims.",
+    "status": "recorded",
+    "notes": "Do not synthesize a hybrid 'almost Clay' claim."
+  },
+  {
+    "left_id": "SND-HYP001",
+    "right_id": "SND-U001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Hypothesis book explicitly does not claim proved unconditional SND.",
+    "status": "recorded",
+    "notes": "Keep HYP; retire U."
+  },
+  {
+    "left_id": "SND-HYP001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Conditional SND hypothesis framing is the honest KEEP path; Clay-B packaging is parked.",
+    "status": "recorded",
+    "notes": ""
+  },
+  {
+    "left_id": "NS-B001",
+    "right_id": "SND-U001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Classical NS-B organizational book does not entail unconditional SND.",
+    "status": "recorded",
+    "notes": "No SFE-glue and no Clay-glue from NS-B alone."
+  },
+  {
+    "left_id": "NS-B001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Domain Architect routes NS-B as organizational FRA only; it must not claim Millennium closure.",
+    "status": "recorded",
+    "notes": "NS_NO_MILLENNIUM invariant."
+  },
+  {
+    "left_id": "NS-Q1001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Q1 approximants do not freely pass SND to Leray–Hopf; gap TH-H7-Q1.",
+    "status": "recorded",
+    "notes": "Suggested closure: prove ε-uniform J/X and liminf passage."
+  },
+  {
+    "left_id": "NS-Q1001",
+    "right_id": "SND-U001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Hyperdissipative SND for ε>0 is not unconditional SND for NS-B.",
+    "status": "recorded",
+    "notes": ""
+  },
+  {
+    "left_id": "SND-C001",
+    "right_id": "SND-HYP001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Both are conditional books; SND-C is a specific shell-flux estimate under X≤M, SND-HYP is the abstract spectral-gap assumption.",
+    "status": "recorded",
+    "notes": "Do not collapse; both honest if not glued to Clay-B."
   }
 ]

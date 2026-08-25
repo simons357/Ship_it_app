@@ -145,6 +145,51 @@ BOOK_REQUIREMENTS: dict[str, dict[str, Any]] = {
             "Φ≈p/response; E⊃R³, IC/BC, Biot–Savart}"
         ),
     },
+    "SND-C": {
+        "roles": {
+            "admissibility",
+            "interaction",
+            "state",
+            "scale_response",
+            "realized_output",
+            "environment",
+        },
+        "extras": {
+            "hypothesis X<=M",
+            "spread regime rho<=rho_0",
+            "dominant shell flux bound",
+        },
+        "recompose": (
+            "SND-C' ≈ shell-flux bound under (X≤M, ρ≤ρ₀); C_* may depend on M; "
+            "NOT Clay Statement B"
+        ),
+    },
+    "SND-U": {
+        "roles": set(),  # refused as complete book
+        "extras": set(),
+        "recompose": (
+            "SND-U refused: unconditional J/X≥c_* for all H¹ is not a frozen "
+            "proved book while X≤M remains in the keystone"
+        ),
+    },
+    "SND-HYP": {
+        "roles": {
+            "admissibility",
+            "interaction",
+            "state",
+            "scale_response",
+            "realized_output",
+            "environment",
+        },
+        "extras": {
+            "SND hypothesis (assumed, not proved)",
+            "initial_conditions",
+        },
+        "recompose": (
+            "NS + SND hypothesis: assume inf J/X≥c_*>0; conditional regularity "
+            "toolkit only (KEEP framing)"
+        ),
+    },
     "gravity-poisson": {
         "roles": {"realized_output", "source", "scale_response"},
         "extras": {"geometry", "boundary"},
@@ -159,7 +204,17 @@ BOOK_REQUIREMENTS: dict[str, dict[str, Any]] = {
 
 
 def infer_book(report: AuditReport) -> str:
-    joined = " ".join(report.notes + report.warnings).lower()
+    joined = " ".join(
+        [report.input_expression] + report.notes + report.warnings
+    ).lower()
+    if "snd-u" in joined or "unconditional snd" in joined or (
+        "clay" in joined and "statement" in joined
+    ):
+        return "SND-U"
+    if "snd-c" in joined or ("x<=m" in joined.replace(" ", "") or "x≤m" in joined):
+        return "SND-C"
+    if "snd hypothesis" in joined or "conditional snd" in joined:
+        return "SND-HYP"
     if "ns-b" in joined or "navier" in joined:
         return "NS-B"
     if report.recovery_kind or (

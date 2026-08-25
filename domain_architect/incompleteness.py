@@ -14,6 +14,7 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass, field
 from typing import Any
 
+from .gap_closure import gap_closure_candidates_for_incompleteness
 from .hb_loop import BOOK_REQUIREMENTS, build_hb_map
 from .report import AuditReport
 from .schema import CANONICAL_SFE_STATUS
@@ -21,6 +22,55 @@ from .schema import CANONICAL_SFE_STATUS
 
 # Honest book templates for candidate sketches (not physical discoveries).
 _BOOK_SKETCHES: dict[str, dict[str, Any]] = {
+    "SND-C": {
+        "full_sketch": (
+            "SND-C: under X≤M, ρ≤ρ₀, X≥δ_*: bound dominant-shell flux Π_{j*} "
+            "by C_*(ν,δ_*,M,ρ₀). Conditional book — not Clay Statement B."
+        ),
+        "role_terms": {
+            "admissibility": "P ≈ Leray / div-free (inherited from NS-B)",
+            "interaction": "H ≈ shell flux / vortex stretching in spread regime",
+            "state": "ψ ≈ enstrophy shell profile (X_j), ρ=J/X",
+            "scale_response": "λ ≈ ν plus a priori ceiling M (hypothesis)",
+            "realized_output": "Φ ≈ Π_{j*} bound / spectral gap signal",
+            "environment": "E ⊃ T³, IC, hypothesis X≤M",
+        },
+        "term_hints": {},
+        "disclaimer": (
+            "SND-C is a conditional spectral book. C_* depending on M does not "
+            "resolve Clay Statement B. Do not glue to SND-U."
+        ),
+    },
+    "SND-U": {
+        "full_sketch": (
+            "(REFUSED as proved) SND-U: J/X≥c_* for all H¹ data without X≤M. "
+            "Not established in current manuscripts."
+        ),
+        "role_terms": {},
+        "term_hints": {},
+        "disclaimer": (
+            "SND-U / Clay-B packaging is parked. Domain Architect refuses "
+            "unconditional routing while the keystone assumes X≤M."
+        ),
+    },
+    "SND-HYP": {
+        "full_sketch": (
+            "Unaugmented NS + SND as hypothesis: assume inf J/X≥c_*>0, then "
+            "run conditional regularity chain (KEEP framing)."
+        ),
+        "role_terms": {
+            "admissibility": "P ≈ Leray",
+            "interaction": "H ≈ stretch under spectral gap hypothesis",
+            "state": "ψ ≈ u or ω",
+            "scale_response": "λ ≈ ν",
+            "realized_output": "Φ ≈ controlled enstrophy production under SND",
+            "environment": "E ⊃ domain, IC, SND hypothesis (not proved)",
+        },
+        "term_hints": {},
+        "disclaimer": (
+            "Honest conditional framework. SND is an assumption, not a theorem."
+        ),
+    },
     "NS-B": {
         "full_sketch": (
             "∂_t ω = (ω·∇)u + ν Δω   with   ∇·u = 0, "
@@ -240,6 +290,18 @@ def analyze_incompleteness(report: AuditReport) -> IncompletenessReport:
                     honesty_note=sketch_book["disclaimer"],
                 )
             )
+
+    # Weld / Clay-illegal glue → candidated closures (refuse unconditional claims).
+    for weld in gap_closure_candidates_for_incompleteness(report.input_expression):
+        candidates.append(
+            CandidateCompletion(
+                kind=str(weld.get("kind") or "gap_closure_weld"),
+                proposal=str(weld.get("proposal") or ""),
+                book_source=str(weld.get("book_source") or book),
+                confidence=str(weld.get("confidence") or "template"),
+                honesty_note=str(weld.get("honesty_note") or sketch_book["disclaimer"]),
+            )
+        )
 
     is_complete = not missing_roles and book != "generic"
     # Soft completeness: extras/terms may still be incomplete.

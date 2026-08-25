@@ -7,11 +7,17 @@ import json
 import sys
 
 from .audit import audit_expression
+from .gap_closure import (
+    diagnose_gap,
+    ranked_top_closures,
+    snd_c_vs_snd_u_compare,
+)
 from .hb_loop import compare_reports
 from .incompleteness import sketch_from_roles
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 from .sfe_compare import compare_sfe_pair, list_sfe_candidates
+from .snd_claims import anatomize_claim
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -75,7 +81,101 @@ def main(argv: list[str] | None = None) -> int:
             "as the expression argument (e.g. 'admissibility,interaction,state')"
         ),
     )
+    parser.add_argument(
+        "--gap-closure",
+        action="store_true",
+        help=(
+            "diagnose NS/SND/Theorem-H broken welds and print "
+            "'Broken weld: … Suggested closure: …' (refuses unconditional Clay glue)"
+        ),
+    )
+    parser.add_argument(
+        "--snd-dual",
+        action="store_true",
+        help="dual compare SND-C (X≤M) vs SND-U (claimed unconditional); marks INCOMPATIBLE",
+    )
+    parser.add_argument(
+        "--list-closures",
+        action="store_true",
+        help="list ranked top closure moves for Theorem-H / SND gaps",
+    )
+    parser.add_argument(
+        "--snd-claim",
+        action="store_true",
+        help="anatomize SND/Clay claim language via inventory (refuse overclaims)",
+    )
     args = parser.parse_args(argv)
+
+    if args.snd_claim:
+        if not args.expression:
+            parser.error("--snd-claim requires a claim string")
+        audit = anatomize_claim(args.expression)
+        if args.json:
+            json.dump(audit.to_dict(), sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print("SND / Clay claim anatomizer")
+            print(f"  refused: {audit.refused}")
+            print(f"  allowed_routing: {audit.allowed_routing}")
+            for reason in audit.refusal_reasons:
+                print(f"  {reason}")
+            for hit in audit.hits:
+                print(
+                    f"  hit {hit.claim_id}: status={hit.status} "
+                    f"({hit.status_detail}) markers={hit.matched_markers}"
+                )
+            for note in audit.notes:
+                print(f"  note: {note}")
+        return 2 if audit.refused else 0
+
+    if args.list_closures:
+        moves = ranked_top_closures(5)
+        payload = {
+            "canonical_sfe_status": CANONICAL_SFE_STATUS,
+            "closures": [m.to_dict() for m in moves],
+        }
+        if args.json:
+            json.dump(payload, sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print("Ranked closure moves (tractable first):")
+            for m in moves:
+                print(f"  {m.tractability_rank}. [{m.kind}] {m.headline()}")
+                print(f"     Patch: {m.patch_sketch}")
+        return 0
+
+    if args.snd_dual:
+        dual = snd_c_vs_snd_u_compare()
+        if args.json:
+            json.dump(dual, sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print(dual["narrative"])
+            print()
+            print(f"Relation: {dual['relation']}")
+            print(f"Why: {dual['why_incompatible']}")
+            print(f"Suggested closure: {dual['suggested_closure']}")
+            print()
+            right = dual["right"]
+            print(
+                f"SND-U refuses unconditional Clay: "
+                f"{right.get('refuses_unconditional_clay')}"
+            )
+            for f in right.get("findings") or []:
+                print(f"  {f.get('narrative')}")
+        return 0
+
+    if args.gap_closure:
+        if not args.expression:
+            parser.error("--gap-closure requires an expression / claim string")
+        gap = diagnose_gap(args.expression)
+        if args.json or args.incompleteness_json:
+            json.dump(gap.to_dict(), sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print(gap.narrative())
+        # Non-zero exit when refusing Clay glue — forces honest CI routing.
+        return 2 if gap.refuses_unconditional_clay else 0
 
     if args.list_sfe:
         items = list_sfe_candidates()
