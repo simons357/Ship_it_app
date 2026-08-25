@@ -32,10 +32,16 @@ product: trapezoidal riblets in a fouling-release carrier.
 | Hussein et al., *New J. Phys.* (2023) phononic subsurface | Locally resonant metamaterial can attenuate wall-bounded disturbances in DNS. Stabilization / transition delay, not a hull film. | numerical |
 | Lin et al., AIAA (2026) resonant phononic material | Channel DNS: about **1.3%** class drag change near a damping threshold. Sensitive to damping. | numerical |
 | IMO CII in force 1 Jan 2023 (Uzun et al. 2023) | Fouling raises frictional resistance and makes CII/EEXI harder. Coatings matter because slime and hard fouling raise power. | regulation / literature |
+| International / AkzoNobel Intersleek 1100SR product literature | Manufacturer claim: **up to 9% fuel** vs *conventional antifouling*, plus ~1.2% speed-loss over a docking cycle. **Not a riblet Cf.** Smooth FR vs SPC, not grooved vs smooth FR. | vendor / marketing |
+| AkzoNobel International whitepaper, Sea Asia 2025 | Three LNG ships, Intersleek 1100SR, 60-month ISO 19030-style review; CII within agreed limits. **Smooth FR in service**, not an embossed-riblet hull. | vendor case study |
+| Koley, Wang & Katz, *J. Fluid Mech.* (2024) | Turbulent BL over a compliant surface: deformation scaling and critical-layer coupling. Not a marine Cf envelope. | laboratory |
+| Wang, Koley & Katz, *J. Fluid Mech.* (2025) | High-Re viscoelastic wall: flow–deformation coupling. Historical compliant-wall Cf is **mixed** (reduction, nil, or increase). This paper is FSI, not a hull product. | laboratory |
 
-Do **not** add 8% riblet + 1% phononic + 16% coupon. Those are different
-plants, different Re, and different quantities (Cf vs total drag vs
-vendor immersion).
+**Proven in public literature:** riblets can cut *clean* laboratory Cf by roughly 5–10% (geometry- and Re-dependent); durable trapezoids sit near **8%** in oil; embossed FR riblets sit near **6%** in Couette; fouling can erase that. Smooth commercial FR coatings are a real, licensed hull product; their fuel claims are vs conventional AF, not vs a grooved sister coating.
+
+**Not proven:** an 8–12% *net* Cf at cargo \(Re_L\sim 10^9\); a phononic or viscoelastic overlay that adds to riblets on a ship; manufacturer “9% fuel” as a riblet number; plasma as a Maersk film.
+
+Do **not** add 8% riblet + 1% phononic + 9% Intersleek fuel + 16% coupon. Those are different plants, different Re, and different quantities.
 
 Plasma actuators appear in public flow-control reviews. They are **not**
 a scalable Maersk hull product (power, seawater, fouling of electrodes).

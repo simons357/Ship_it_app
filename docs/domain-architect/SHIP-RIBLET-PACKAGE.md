@@ -20,7 +20,7 @@
 
 Stay inside established fluid mechanics: Bechert / Walsh riblets, marine fouling-release coatings, the usual frictional vs residual split. Do not invent a burst-frequency coating as a proven Cf mechanism.
 
-Public 2023–2026 notes (conservative): vendor antifoul-stamped riblet immersions exist (MicroTau AIAA SciTech 2023) but are **not** a DA hull Cf. Flexible “gradient riblet” coupons have reported **16.8%** at **0.5 m/s** (ACS Omega 2023) — wrong Re for cargo. Phononic-subsurface DNS (Hussein et al. 2023; Lin et al. 2026) is **order-1% class in channels**, not a marine field coating, and is **not added** to the riblet envelope. IMO CII (in force 1 Jan 2023) makes fouling control material to ratings; a riblet that slimes worse than the incumbent FR can hurt CII.
+Public 2023–2026 notes (conservative): vendor antifoul-stamped riblet immersions exist (MicroTau AIAA SciTech 2023) but are **not** a DA hull Cf. Flexible “gradient riblet” coupons have reported **16.8%** at **0.5 m/s** (ACS Omega 2023) — wrong Re for cargo. Phononic-subsurface DNS (Hussein et al. 2023; Lin et al. 2026) is **order-1% class in channels**, not a marine field coating, and is **not added** to the riblet envelope. Compliant-wall JFM (2024–2025) is laboratory FSI; historical Kramer-class Cf is mixed. IMO CII (in force 1 Jan 2023) makes fouling control material to ratings; a riblet that slimes worse than the incumbent FR can hurt CII. Intersleek-class “up to 9% fuel vs conventional AF” is a **vendor smoothness/fouling claim**, not a grooved-riblet Cf, and is **not added** to Bechert.
 
 ## First-order riblet geometry
 
