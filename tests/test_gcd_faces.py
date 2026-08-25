@@ -146,5 +146,51 @@ class TestMayMixTexStaysArchivedAndIsNotQ6(unittest.TestCase):
         self.assertNotIn(MAGNUM_NAME, [p.name for p in GCD.iterdir() if p.is_file()])
 
 
+class TestGcdSpectralDynamicsReportWasNotReceived(unittest.TestCase):
+    STEM = "GCD_Spectral_Dynamics_Report_Jonathan_Simons_2026"
+
+    def test_no_invented_report_bytes(self):
+        invented = [
+            GCD / self.STEM,
+            GCD / f"{self.STEM}.pdf",
+            GCD / f"{self.STEM}.tex",
+            GCD / f"{self.STEM}.md",
+            ARCHIVE / f"{self.STEM}.tex",
+            LIVE_ROOT / f"{self.STEM}.pdf",
+        ]
+        for path in invented:
+            self.assertFalse(path.is_file(), f"do not invent {path}")
+        named = [
+            p
+            for p in (ROOT / "docs").rglob("*")
+            if p.is_file() and "GCD_Spectral_Dynamics_Report" in p.name
+            and not p.name.endswith(".MISSING.md")
+        ]
+        self.assertEqual(named, [])
+
+    def test_missing_receipt_refuses_substitutes(self):
+        receipt = GCD / f"{self.STEM}.MISSING.md"
+        self.assertTrue(receipt.is_file(), receipt)
+        text = receipt.read_text(encoding="utf-8")
+        faces = (GCD / "FACES.md").read_text(encoding="utf-8")
+        readme = (GCD / "README.md").read_text(encoding="utf-8")
+        lookup = (ROOT / "docs" / "packets" / "OLD-PAPERS-LOOK-UP.md").read_text(
+            encoding="utf-8"
+        )
+        for blob in (text, faces, readme, lookup):
+            self.assertIn(self.STEM, blob)
+            self.assertIn("not received", blob.lower())
+        self.assertIn("a239112289a1", text)
+        self.assertIn("f41194c76cf4", text)
+        self.assertIn("NOT CLAIMED", text)
+        self.assertIn("**403**", text)
+        self.assertIn("0 bytes", text)
+        self.assertIn("not an attachment", text.lower())
+        self.assertIn("Do **not** invent the report", text)
+        self.assertIn("import into `domain_architect/`", text)
+        self.assertNotIn("DA-VC-01 PASS", text)
+        self.assertNotRegex(text, r"(?i)report SHA-256:\s*[0-9a-f]{64}")
+
+
 if __name__ == "__main__":
     raise SystemExit(unittest.main())

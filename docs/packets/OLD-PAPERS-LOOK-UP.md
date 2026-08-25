@@ -87,6 +87,7 @@ Send **one** of these, as `.tex`, if you still want the pack source rather than 
 | What | Pack name |
 |---|---|
 | GCD Paper1 updated source | `GCD_Spectral_Paper1_UPDATED_2026-08-14.tex` |
+| GCD Spectral Dynamics Report | `GCD_Spectral_Dynamics_Report_Jonathan_Simons_2026` | **still not in this VM.** Filename-only message; extension unknown. Base44 bare probes **403** / 0 bytes. Zenodo exact search **0** hits. **Not** Q6 PDF `a2391122…`. **Not** MAGNUM mix `f41194c7…`. Do **not** invent. Receipt: [`docs/papers/gcd/GCD_Spectral_Dynamics_Report_Jonathan_Simons_2026.MISSING.md`](../papers/gcd/GCD_Spectral_Dynamics_Report_Jonathan_Simons_2026.MISSING.md). |
 | PAPER_A inverse-GCD source | `PAPER_A_Inverse_GCD_CORRECTED.tex` |
 | PAPER_B Möbius \(Q_6\) source | `PAPER_B_Mobius_GCD_Q6.tex` |
 | Ring June 19 source | `c8a03f315_RingLemma_Simons_June19_2026.tex` | **filed** as [`docs/papers/ring/RingLemma_Simons_June19_2026.tex`](../papers/ring/RingLemma_Simons_June19_2026.tex). SHA-256 `a73d949f…`. Same *Borromean Triads* augmented book as `RingLemma_Final.tex`; classical SND **Open**. **Not** a compile of the 21 Aug PDF. **Not** the \(\kappa\)-SND / \(E_{\min}\) unaugmented paste. **Not** Clay. Drive offered `RingLemma_Final.tex` (21 216 B) as stand-in — **REJECT as identity** (June 19 is 44 368 B, SHA `a73d949f51a122…`). |
