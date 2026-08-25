@@ -13,7 +13,8 @@ compatible mechanisms into candidate architectures. Correspondence is a
 hypothesis, not physical equivalence.
 
 SFE and the Harmonic Blueprint are **not** the live product. They remain
-in [`docs/archive/`](docs/archive/README.md).
+in [`docs/archive/`](docs/archive/README.md). The axisymmetric swirl
+paper is a **separate book** in [`docs/papers/swirl/`](docs/papers/swirl/README.md).
 
 Specification: [`docs/DOMAIN-ARCHITECT.md`](docs/DOMAIN-ARCHITECT.md)
 
