@@ -1,10 +1,11 @@
-const CACHE = "chatvault-engine-v0.2.1";
+const CACHE = "chatvault-engine-v0.3.0";
 const ASSETS = [
   "./",
   "./index.html",
   "./css/app.css",
   "./js/app.js",
   "./js/engine.mjs",
+  "./js/search.mjs",
   "./manifest.webmanifest",
   "./assets/chatvault-mark-dark.jpg",
   "./assets/chatvault-mark-light.png",

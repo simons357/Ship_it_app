@@ -8,6 +8,8 @@ import {
   ingestBulk,
   ingestTextFile,
   searchEntries,
+  searchVault,
+  SEARCH_ENGINE_VERSION,
   exportVault,
   importVault,
   updateEntry,
@@ -154,8 +156,8 @@ const ICONS = {
   disclaimer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5h.01"/></svg>',
 };
 
-function filtered() {
-  return searchEntries(store.list(), state.query, {
+function activeFilters() {
+  return {
     visibility: state.visibility || undefined,
     source_ai: state.source_ai || undefined,
     source_type: state.source_type || undefined,
@@ -163,7 +165,29 @@ function filtered() {
     tag: state.tag || undefined,
     project: state.project || undefined,
     starred: state.starredOnly || undefined,
-  });
+  };
+}
+
+function rankedSearch() {
+  return searchVault(store.list(), state.query, activeFilters());
+}
+
+function highlightSnippet(snippet) {
+  const text = String(snippet.text || "");
+  const marks = [...(snippet.marks || [])].sort((a, b) => a[0] - b[0]);
+  if (!marks.length) return escapeHtml(text);
+  let out = "";
+  let cursor = 0;
+  for (const [start, end] of marks) {
+    const s = Math.max(0, Math.min(text.length, start));
+    const e = Math.max(s, Math.min(text.length, end));
+    if (s < cursor) continue;
+    out += escapeHtml(text.slice(cursor, s));
+    out += `<mark>${escapeHtml(text.slice(s, e))}</mark>`;
+    cursor = e;
+  }
+  out += escapeHtml(text.slice(cursor));
+  return out;
 }
 
 function booksForUi() {
@@ -186,12 +210,14 @@ function tagChips(entries, active) {
 }
 
 function renderVault() {
-  const rows = filtered();
+  const ranked = rankedSearch();
+  const rows = ranked.hits;
   const emptyVault = store.list().length === 0;
   const pageCount = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
   if (state.page >= pageCount) state.page = pageCount - 1;
   const pageRows = rows.slice(state.page * PAGE_SIZE, (state.page + 1) * PAGE_SIZE);
   const stats = vaultStats(store.list());
+  const searching = Boolean(String(state.query || "").trim());
   const pager =
     rows.length > PAGE_SIZE
       ? `<p class="pager">
@@ -204,14 +230,22 @@ function renderVault() {
     ? `<p class="empty">Vault is empty on this device (not a failed load). <button class="btn ghost" id="load-demo">Load example fixtures</button></p>`
     : rows.length
     ? pageRows
-        .map((e) => {
+        .map((hit) => {
+          const e = hit.entry;
           const statuses = [...(e.key_claims || []), ...(e.theorems || []), ...(e.open_gaps || [])]
             .map((x) => x.status)
             .filter(Boolean);
-          const status = statuses[0] || "NOTE";
+          const status = (hit.snippets.find((s) => s.ledger_status) || {}).ledger_status || statuses[0] || "NOTE";
           const tags = [...(e.search_tags || [])].slice(0, 4)
             .map((t) => `<span class="tag">${escapeHtml(t)}</span>`)
             .join("");
+          const snippet = hit.snippets[0];
+          const body = searching && snippet
+            ? `<p class="clamp snippet"><span class="hit-field">${escapeHtml(snippet.field)}${snippet.ledger_status ? ` · ${escapeHtml(snippet.ledger_status)}` : ""}</span> ${highlightSnippet(snippet)}</p>`
+            : `<p class="clamp">${escapeHtml((e.summary || e.content_text || "").slice(0, 220))}</p>`;
+          const rankMeta = searching
+            ? `<span class="hit-meta">BM25F ${hit.score.toFixed(2)}${hit.matched_fields.length ? ` · ${escapeHtml(hit.matched_fields.slice(0, 3).join(" · "))}` : ""}</span>`
+            : `<span>${escapeHtml((e.related_projects || [])[0] || "")}</span>`;
           return `<article class="card" data-open="${escapeHtml(e.id)}">
             <div class="card-top">
               <div>
@@ -222,11 +256,11 @@ function renderVault() {
               <button class="icon-btn${e.starred ? " star" : ""}" data-star="${escapeHtml(e.id)}" aria-label="Star">${e.starred ? "★" : "☆"}</button>
             </div>
             <h3>${escapeHtml(e.title)}</h3>
-            <p class="clamp">${escapeHtml((e.summary || e.content_text || "").slice(0, 220))}</p>
+            ${body}
             <div class="chips">${tags}</div>
             <div class="card-foot">
               <span>${escapeHtml(e.project_category || e.source_type)}</span>
-              <span>${escapeHtml((e.related_projects || [])[0] || "")}</span>
+              ${rankMeta}
             </div>
           </article>`;
         })
@@ -243,17 +277,17 @@ function renderVault() {
       <header class="hero">
         <h1>Conversation Vault</h1>
         <p class="kicker">OS for your AI</p>
-        <p class="meta">${stats.total} conversations indexed · ${stats.starred} starred · local engine ${escapeHtml(SCHEMA_VERSION)}</p>
+        <p class="meta">${stats.total} conversations indexed · ${stats.starred} starred · ${searching ? `${ranked.total} ranked · ${ranked.took_ms.toFixed(1)} ms ·` : ""} ${escapeHtml(SEARCH_ENGINE_VERSION)}</p>
       </header>
       <button class="btn" data-view="ingest">+ Ingest</button>
     </div>
     <p class="banner">Knowledge capture with provenance and a claim ledger. It does not prove theorems, verify science, or replace a human review.</p>
     <div class="search-panel">
       <div class="toolbar">
-        <input type="search" id="q" placeholder="Search raw text, claims, theorems, gaps… Use OR, quotes, claim:" value="${escapeHtml(state.query)}" />
+        <input type="search" id="q" placeholder='BM25F: euler identity · "finite-time blow-up" · claim:definitional · gap:blow-up · ai:Claude' value="${escapeHtml(state.query)}" />
         <button class="btn ghost" id="do-search">Search</button>
       </div>
-      <p class="help">Fielded search is local. There is no semantic / LLM search in this engine.</p>
+      <p class="help">Ranked BM25F over title, claims, theorems, gaps, tags, and raw text. AND by default. OR, "phrases", and field prefixes. Ledger status is shown, never used as a score. No LLM ranking.</p>
       <div class="filters">
         <button class="chip" id="star-filter" aria-pressed="${state.starredOnly ? "true" : "false"}">${state.starredOnly ? "★ Starred" : "☆ Starred"}</button>
         <select id="vis">
@@ -590,7 +624,7 @@ function renderGuide() {
         <li>Raw text is immutable after ingest.</li>
         <li>Source AI and source file stay attached.</li>
         <li>Claims, theorems, and gaps are searchable fields with statuses.</li>
-        <li>Search is AND by default, with OR, "phrases", and field prefixes.</li>
+        <li>Search is BM25F: inverted index, field boosts, ranked hits, highlighted snippets. AND by default, with OR, "phrases", and field prefixes. It is not a boolean dump and not an LLM.</li>
         <li>Private material can be kept off professional export.</li>
         <li>Books, tags, and artifacts are derived from your records. They are not a second database and not an LLM.</li>
       </ol>

@@ -2,9 +2,20 @@
  * ChatVault engine — local-first knowledge capture.
  *
  * Competitive core: provenance, immutable raw text, CLAIM_LEDGER
- * statuses that never auto-promote to PROVED, and fielded search
- * (AND / OR / phrase). This is not a truth engine and not an LLM.
+ * statuses that never auto-promote to PROVED, and BM25F fielded
+ * retrieval (AND / OR / phrase / field:). This is not a truth engine
+ * and not an LLM.
  */
+
+export {
+  SEARCH_ENGINE_VERSION,
+  searchEntries,
+  searchVault,
+  parseQuery,
+  tokenize,
+  buildIndex,
+  ndcgAt,
+} from "./search.mjs";
 
 export const SCHEMA_VERSION = "chatvault-engine-0.2.0";
 
@@ -321,122 +332,6 @@ export function updateEntry(entry, patch) {
     throw new Error("Summary must not replace raw content.");
   }
   return next;
-}
-
-function tokenize(text) {
-  return String(text || "")
-    .toLowerCase()
-    .split(/[^a-z0-9π∞=+\-*/^_{}()[\]|]+/i)
-    .filter((t) => t.length > 0);
-}
-
-function fieldBlob(entry, field) {
-  if (field === "raw" || field === "content") return `${entry.raw_content}\n${entry.content_text}`;
-  if (field === "title") return entry.title;
-  if (field === "summary") return entry.summary;
-  if (field === "tag") return [...entry.search_tags, ...entry.project_tags].join(" ");
-  if (field === "claim") return (entry.key_claims || []).map((c) => c.text).join(" ");
-  if (field === "theorem") return (entry.theorems || []).map((c) => c.text).join(" ");
-  if (field === "gap") return (entry.open_gaps || []).map((c) => c.text).join(" ");
-  if (field === "question") return (entry.open_questions || []).join(" ");
-  if (field === "action") return (entry.action_items || []).join(" ");
-  if (field === "book") return (entry.related_projects || []).join(" ");
-  if (field === "source") return `${entry.source_type} ${entry.source_file}`;
-  if (field === "ai") return entry.source_ai;
-  if (field === "status") {
-    return [...(entry.key_claims || []), ...(entry.theorems || []), ...(entry.open_gaps || [])]
-      .map((c) => c.status)
-      .join(" ");
-  }
-  if (field === "visibility") return entry.visibility;
-  if (field === "all") {
-    return [
-      entry.title,
-      entry.raw_content,
-      entry.content_text,
-      entry.summary,
-      entry.source_ai,
-      entry.source_file,
-      fieldBlob(entry, "tag"),
-      fieldBlob(entry, "claim"),
-      fieldBlob(entry, "theorem"),
-      fieldBlob(entry, "gap"),
-      fieldBlob(entry, "question"),
-      fieldBlob(entry, "action"),
-      fieldBlob(entry, "book"),
-    ].join("\n");
-  }
-  return fieldBlob(entry, "all");
-}
-
-function parseQuery(q) {
-  const raw = String(q || "").trim();
-  if (!raw) return { mode: "empty" };
-  const orParts = raw.split(/\s+OR\s+|\s+\|\s+/i);
-  if (orParts.length > 1) {
-    return { mode: "or", clauses: orParts.map(parseAndClause) };
-  }
-  return { mode: "and", ...parseAndClause(raw) };
-}
-
-function parseAndClause(text) {
-  const terms = [];
-  const phrases = [];
-  const re = /(?:(\w+):)?(?:"([^"]+)"|(\S+))/g;
-  let m;
-  while ((m = re.exec(text))) {
-    const field = (m[1] || "all").toLowerCase();
-    const phrase = m[2];
-    const term = m[3];
-    if (phrase) phrases.push({ field, phrase: phrase.toLowerCase() });
-    else if (term) terms.push({ field, term: term.toLowerCase() });
-  }
-  return { terms, phrases };
-}
-
-function clauseMatches(entry, clause) {
-  for (const p of clause.phrases) {
-    const blob = fieldBlob(entry, p.field).toLowerCase();
-    if (!blob.includes(p.phrase)) return false;
-  }
-  for (const t of clause.terms) {
-    const blob = fieldBlob(entry, t.field).toLowerCase();
-    const tokens = new Set(tokenize(blob));
-    if (blob.includes(t.term) || tokens.has(t.term)) continue;
-    return false;
-  }
-  return true;
-}
-
-export function searchEntries(entries, query, filters = {}) {
-  const parsed = parseQuery(query);
-  const tagFilter = filters.tag ? String(filters.tag).toLowerCase() : "";
-  const bookFilter = filters.book ? String(filters.book).toLowerCase() : "";
-  return (entries || []).filter((entry) => {
-    if (entry.archived && !filters.includeArchived) return false;
-    if (filters.visibility && entry.visibility !== filters.visibility) return false;
-    if (filters.source_ai && entry.source_ai !== filters.source_ai) return false;
-    if (filters.source_type && entry.source_type !== filters.source_type) return false;
-    if (filters.project && entry.project_category !== filters.project) return false;
-    if (filters.starred && !entry.starred) return false;
-    if (tagFilter) {
-      const tags = [...(entry.search_tags || []), ...(entry.project_tags || [])].map((t) =>
-        String(t).toLowerCase()
-      );
-      if (!tags.includes(tagFilter)) return false;
-    }
-    if (bookFilter) {
-      const books = (entry.related_projects || []).map((b) => String(b).toLowerCase());
-      if (bookFilter === "(unfiled)") {
-        if (books.length) return false;
-      } else if (!books.includes(bookFilter)) {
-        return false;
-      }
-    }
-    if (parsed.mode === "empty") return true;
-    if (parsed.mode === "or") return parsed.clauses.some((c) => clauseMatches(entry, c));
-    return clauseMatches(entry, parsed);
-  });
 }
 
 export function listTags(entries) {

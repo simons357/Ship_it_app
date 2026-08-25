@@ -3,7 +3,9 @@
 **Date:** 24 August 2026  
 **Repo:** `github.com/simons357/Ship_it_app` (workshop). This is **not** a dedicated ChatVault product repo. A fresh GitHub repo was requested; this agent cannot create one.
 
-**Which build won:** The morph-glass Base44 app `6a58e103fedcde66a0a7710e` is the canonical **look** (OS for your AI). The git tree `chatvault/` is the canonical **engine / data model** (ChatVaultEntry, CLAIM_LEDGER, fielded search). Glass is a skin. It does not win the backend.
+**Which build won:** The morph-glass Base44 app `6a58e103fedcde66a0a7710e` is the canonical **look** (OS for your AI). The git tree `chatvault/` is the canonical **engine / data model** (ChatVaultEntry, CLAIM_LEDGER, BM25F fielded retrieval). Glass is a skin. It does not win the backend.
+
+**Search engine:** Public GitHub “ChatVault” repos (rajz3006 hybrid Chroma, marcoshernanz WhatsApp BERT+BM25, Chrome exporters) are other people’s products. Jonathan’s Replit zip `356582767_chatvault_source2.zip` / `search_engine.py` is still missing. This tree now ships `chatvault/js/search.mjs` — BM25F with field boosts, inverted index, snippets, and an nDCG eval harness. Ledger status is never a ranking signal. Do not paste a Base44 Semantic toggle over this.
 
 **Brand marks:** The owner vault-door logos from that glass app are now local files under `chatvault/assets/` (light original upload, dark UI mark, morph-glass backdrop). Do not replace them with a CSS dial. Do not hotlink Base44.
 

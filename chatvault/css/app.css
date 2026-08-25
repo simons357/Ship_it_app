@@ -233,6 +233,24 @@ select { min-width: 140px; }
 .card h3 { margin: 0.15rem 0 0.2rem; font-size: 1.05rem; line-height: 1.3; }
 .card p, .panel p { color: var(--muted); font-size: 0.9rem; line-height: 1.45; }
 .clamp { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.snippet mark {
+  background: rgba(94, 234, 212, 0.28);
+  color: var(--ink);
+  padding: 0 0.12em;
+  border-radius: 3px;
+}
+.hit-field {
+  display: inline-block;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-right: 0.35rem;
+}
+.hit-meta {
+  color: #9ee8d8;
+  font-variant-numeric: tabular-nums;
+}
 .card-foot {
   margin-top: auto;
   display: flex;

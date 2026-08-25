@@ -22,8 +22,11 @@ One row per feature. Columns are builds we could actually reach.
 | Books / collections | A | W | A | U | W (`related_projects`) |
 | Tags | A | W | A | U | W |
 | Artifacts extraction | A | B (0 items) | A | U | W (derived from ledger; no LLM) |
-| Plain search | A | W | P | U | W |
-| Semantic / LLM search | A | W | W (copy) | U | A |
+| Plain search | A | W | P | U | W (BM25F match gate) |
+| Ranked BM25F + inverted index | A | A | A | U | W |
+| Highlighted snippets | A | A | A | U | W |
+| Search eval (nDCG / MRR) | A | A | A | U | W |
+| Semantic / LLM search | A | W | W (copy) | U | A (next: dense + RRF, not a toggle) |
 | OR / phrase / field search | A | A | A | U | W |
 | Private vs professional | A | A | A | U | W |
 | Per-item JSON export | A | W | A | U | W |
