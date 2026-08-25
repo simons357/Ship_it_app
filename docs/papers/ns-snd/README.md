@@ -20,6 +20,7 @@ DA may later route to this book. It must **not** glue:
 | Zenodo “implies” | [`zenodo-20272545/`](zenodo-20272545/README.md) | Public deposit; live title **claim withdrawn** |
 | August TeX | [`Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex) | 1 August 2026 |
 | August 1 audit | [`NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md`](NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md) | Lemma 6.1 OPEN; §7 T2 not closed |
+| Classical unaugmented chain | [`NS_UNAUGMENTED_PROOF_CHAIN.md`](NS_UNAUGMENTED_PROOF_CHAIN.md) | DA default dataset; leftover 7–8; Clay not claimed |
 
 The PDFs are **not** compiles of the TeX. Diff: [`FACES.md`](FACES.md).
 

@@ -14,6 +14,7 @@ PAPER = NS_SND / "Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex"
 PDF = NS_SND / "Paper2_NS_Regularity_SND_FIXED.pdf"
 README = NS_SND / "README.md"
 FACES = NS_SND / "FACES.md"
+CHAIN = NS_SND / "NS_UNAUGMENTED_PROOF_CHAIN.md"
 PDF_SHA256 = "7de9444d18054fc8f49a52c3fd7ed2f086a7c7d7d6d1e95bad350c378535c41b"
 
 
@@ -88,6 +89,25 @@ class TestPaper2IsItsOwnBook(unittest.TestCase):
         self.assertIn("NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md", readme)
         self.assertIn("zenodo-20272545", readme)
         self.assertIn("Lemma 6.1 OPEN", readme)
+        self.assertIn("NS_UNAUGMENTED_PROOF_CHAIN.md", readme)
+
+
+class TestClassicalUnaugmentedChainFile(unittest.TestCase):
+    def test_chain_file_exists_and_is_open_not_claimed(self):
+        self.assertTrue(CHAIN.is_file(), CHAIN)
+        text = CHAIN.read_text(encoding="utf-8")
+        self.assertIn("NOT CLAIMED", text)
+        self.assertIn("OPEN", text)
+        self.assertIn("Ring Lemma", text)
+        self.assertIn("NS-6", text)
+        self.assertIn("not the June FIXED PDF compile", text)
+        self.assertIn("Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex", text)
+        self.assertIn("H_N[a]", text)
+        self.assertIn("Q6", text)
+        faces = FACES.read_text(encoding="utf-8")
+        self.assertIn("NS_UNAUGMENTED_PROOF_CHAIN.md", faces)
+        self.assertIn("Ring Lemma is PROVED", faces)
+        self.assertTrue("7–8" in faces or "7-8" in faces)
 
 
 class TestPaper2ImpliesFacesAreNotTheJunePdf(unittest.TestCase):

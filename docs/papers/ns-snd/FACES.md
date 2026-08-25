@@ -11,6 +11,7 @@ Do **not** merge the “implies” title with the conditional-framework title.
 | Zenodo “implies” deposit | [`zenodo-20272545/Paper2_NS_Regularity_SND.pdf`](zenodo-20272545/Paper2_NS_Regularity_SND.pdf) | Public record [10.5281/zenodo.20272545](https://doi.org/10.5281/zenodo.20272545). 360 856 bytes. Live title prefixed **[Claim withdrawn - see errata]**. |
 | August repaired TeX | [`Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex) | 1 August 2026. Title is already the *conditional framework*. GNC incomplete; false gcd removed; Route J NUMERICAL/UNDER AUDIT; T2 Gronwall **withdrawn**; simplex **OPEN**. |
 | August 1 audit | [`NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md`](NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md) | Independent status of the Zenodo “implies” manuscript. Names the kink: Lemma 6.1 OPEN; §7 T2 “closed” contradicts §8 OPEN. |
+| Classical unaugmented chain | [`NS_UNAUGMENTED_PROOF_CHAIN.md`](NS_UNAUGMENTED_PROOF_CHAIN.md) | Numbered Statement-B / Leray–Hopf program Domain Architect uses. Step 2 Ring Lemma is PROVED. Frozen gap is step 4. Leftover is 7–8. Clay not claimed. **Not** the June FIXED PDF compile. |
 
 ## June vs August (kept from the two-face filing)
 
@@ -51,6 +52,6 @@ Conditional Weyl: *if* frozen gap and quantitative operator-norm closeness, then
 - **Public withdrawn “implies” claim:** Zenodo `20272545` plus the August 1 audit.
 - **Mac “SND 2” export:** file it, do not cite it as the Zenodo bytes or as a closed theorem.
 - **Do not merge them into one claim.**
-- **Localized reparation** (DA surgery on this chain) uses the June FIXED PDF plus the August 1 audit. The June `.tex` source is still missing. See [`docs/domain-architect/LOCALIZED-REPAIR.md`](../../domain-architect/LOCALIZED-REPAIR.md).
+- **Localized reparation** (DA surgery) uses the **classical unaugmented chain** [`NS_UNAUGMENTED_PROOF_CHAIN.md`](NS_UNAUGMENTED_PROOF_CHAIN.md). Controlling face: August repaired TeX. Default cut is leftover **7–8**, not step 2 (Ring Lemma is already PROVED). This is **not** the June FIXED PDF compile. See [`docs/domain-architect/LOCALIZED-REPAIR.md`](../../domain-architect/LOCALIZED-REPAIR.md).
 
 The June Paper2 PDF cites Zenodo `10.5281/zenodo.19842060` as GCD Paper1. Live record at that DOI is a superseded Ring/SND paper. Current Q6 face: [`docs/papers/gcd/`](../gcd/README.md). Current Ring face: [`docs/papers/ring/`](../ring/README.md). Errata: [`docs/papers/status-errata/`](../status-errata/README.md).

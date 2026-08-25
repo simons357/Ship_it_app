@@ -6,7 +6,7 @@
 **Implementation audit:** [`ARCHITECTURE-AUDIT.md`](ARCHITECTURE-AUDIT.md) — items 1–6, 8, 9, 10 accepted in the SFE/HB dump  
 **Validation challenge 01:** [`DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md`](DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md) — live score **FAIL**  
 **Leftover-split lab:** [`LEFTOVER-REPAIR.md`](LEFTOVER-REPAIR.md) — usable Ring SND + Q6 \(H_N\); three NS leftovers stay OPEN  
-**Localized reparation:** [`LOCALIZED-REPAIR.md`](LOCALIZED-REPAIR.md) — `excise k` on an n-step chain; Paper2 is the example dataset; graft stays OPEN
+**Localized reparation:** [`LOCALIZED-REPAIR.md`](LOCALIZED-REPAIR.md) — `excise k` on an n-step chain; default dataset is the classical unaugmented 9-step chain; leftover cut is 7–8; graft stays OPEN
 
 Domain Architect analyzes, translates and synthesizes systems by the
 functional roles their components perform.

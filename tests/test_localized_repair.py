@@ -2,6 +2,7 @@
 """Localized reparation cuts diseased steps and grafts an OPEN hook.
 
 It does not close Navier–Stokes and it does not call inverse design.
+Default dataset: classical unaugmented 9-step chain. Leftover cut is 7–8.
 """
 
 from __future__ import annotations
@@ -24,37 +25,63 @@ from domain_architect.schema import CorrespondenceKind, ValidationGate
 from domain_architect.synthesize import inverse_design_architecture
 
 
+class TestClassicalDefaultChain(unittest.TestCase):
+    def test_nine_program_steps_step_two_is_proved_ring_lemma(self):
+        self.assertEqual(len(PAPER2_CHAIN), 9)
+        self.assertEqual(PAPER2_CHAIN[1].id, "ring-lemma-ns6")
+        self.assertIn("ring-lemma", PAPER2_CHAIN[1].id)
+        self.assertEqual(PAPER2_CHAIN[1].index, 2)
+        self.assertEqual(PAPER2_CHAIN[1].status, "healthy")
+        self.assertIn("PROVED", PAPER2_CHAIN[1].notes)
+        self.assertEqual(PAPER2_CHAIN[3].id, "frozen-gap-route-j")
+        self.assertEqual(PAPER2_CHAIN[3].index, 4)
+        self.assertEqual(PAPER2_CHAIN[3].status, "open")
+        self.assertIn("NUMERICAL", PAPER2_CHAIN[3].notes)
+        self.assertEqual(PAPER2_CHAIN[6].id, "lemma-6-1-simplex")
+        self.assertEqual(PAPER2_CHAIN[7].id, "dynamic-snd-ns10")
+        self.assertEqual(PAPER2_CHAIN[8].id, "continuation")
+        self.assertNotIn("not_claimed", {s.status for s in PAPER2_CHAIN})
+
+
 class TestPaper2DefaultSurgery(unittest.TestCase):
-    def test_keeps_lipschitz_and_weyl_cuts_t2(self):
+    def test_keeps_proved_steps_cuts_leftover_7_and_8(self):
         payload = localized_repair()
         self.assertEqual(payload["protocol"], "localized-reparation")
         self.assertEqual(payload["chain_name"], "paper2")
         self.assertFalse(payload["closed"])
         original_ids = [s["id"] for s in payload["original_chain"]]
-        self.assertEqual(len(original_ids), 10)
-        self.assertEqual(original_ids[1], "frozen-gap")
+        self.assertEqual(len(original_ids), 9)
+        self.assertEqual(original_ids[1], "ring-lemma-ns6")
+        self.assertIn("ring-lemma", original_ids[1])
         excised = {s["id"] for s in payload["excised"]}
-        self.assertIn("t2-closed", excised)
-        self.assertIn("local-existence-as-target", excised)
-        self.assertIn("lemma-6-1", excised)
-        self.assertNotIn("lemma-3-1", excised)
-        self.assertNotIn("theorem-4-1", excised)
+        self.assertIn("lemma-6-1-simplex", excised)
+        self.assertIn("dynamic-snd-ns10", excised)
+        self.assertTrue(any("lemma-6-1" in i for i in excised))
+        self.assertTrue(any("dynamic-snd" in i for i in excised))
+        self.assertNotIn("ring-lemma-ns6", excised)
+        self.assertFalse(any("ring-lemma" in i for i in excised))
         remaining = {s["id"] for s in payload["repaired_chain"]}
-        self.assertIn("lemma-3-1", remaining)
-        self.assertIn("theorem-4-1", remaining)
-        self.assertIn("leray-setup", remaining)
+        self.assertIn("ring-lemma-ns6", remaining)
+        self.assertIn("lemma-3-1-continuity", remaining)
+        self.assertIn("weyl-master", remaining)
+        self.assertIn("conditional-h1", remaining)
+        self.assertIn("leray-energy", remaining)
         self.assertIn("continuation", remaining)
-        self.assertNotIn("t2-closed", remaining)
+        self.assertNotIn("lemma-6-1-simplex", remaining)
+        self.assertNotIn("dynamic-snd-ns10", remaining)
         self.assertEqual(payload["chosen"]["id"], "independent-simplex-hypothesis")
         self.assertTrue(payload["chosen"]["accepted"])
         self.assertFalse(payload["chosen"]["closed"])
         self.assertEqual(payload["kind"], CorrespondenceKind.ANALOGY.value)
-        self.assertIn("FIXED.tex", payload["june_fixed_tex"])
-        self.assertIn("did not", payload["june_fixed_tex"])
+        self.assertNotIn("TRANSFORMABLE", payload["kind"].upper())
+        self.assertIn("not the June FIXED PDF compile", payload["not_june_fixed_compile"])
+        self.assertIn("Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex", payload["controlling_face"])
+        self.assertEqual(payload["not_claimed"][0]["id"], "classical-ns-11")
+        self.assertEqual(payload["not_claimed"][0]["status"], "not_claimed")
 
     def test_proximal_and_distal_are_healthy_neighbors(self):
         payload = localized_repair()
-        self.assertEqual(payload["proximal"]["id"], "product-arithmetic")
+        self.assertEqual(payload["proximal"]["id"], "conditional-h1")
         self.assertEqual(payload["proximal"]["status"], "healthy")
         self.assertEqual(payload["distal"]["id"], "continuation")
         self.assertEqual(payload["distal"]["status"], "open")
@@ -79,7 +106,10 @@ class TestPaper2DefaultSurgery(unittest.TestCase):
         joined = " ".join(payload["refused"]).lower()
         self.assertIn("pd", joined)
         self.assertIn("clay", joined)
-        self.assertIn("t2 closed", joined)
+        blob = json.dumps(payload).lower()
+        self.assertNotIn("control u = k", blob)
+        self.assertIn("transformable", joined)
+        self.assertIn("no TRANSFORMABLE stamp", " ".join(payload["refused"]))
 
 
 class TestExciseK(unittest.TestCase):
@@ -103,40 +133,44 @@ class TestExciseK(unittest.TestCase):
         self.assertEqual(indices, sorted(indices))
         self.assertIn(k, indices)
 
-    def test_paper2_excise_2_still_works(self):
+    def test_paper2_excise_2_still_works_as_generic_k(self):
         payload = localized_repair(excise=2)
         self._assert_graft_at(
-            payload, 2, "frozen-gap", "leray-setup", "lemma-3-1"
+            payload, 2, "ring-lemma-ns6", "leray-energy", "lemma-3-1-continuity"
         )
-        self.assertEqual(payload["chosen"]["id"], "independent-frozen-gap-hypothesis")
+        self.assertEqual(payload["chosen"]["id"], "independent-ring-geometry-hypothesis")
         self.assertFalse(payload["chosen"]["closed"])
         remaining = {s["id"] for s in payload["repaired_chain"]}
-        self.assertIn("lemma-3-1", remaining)
-        self.assertIn("theorem-4-1", remaining)
-        self.assertNotIn("frozen-gap", remaining)
-        self.assertEqual([s["index"] for s in payload["repaired_chain"]], list(range(1, 11)))
+        self.assertIn("lemma-3-1-continuity", remaining)
+        self.assertIn("weyl-master", remaining)
+        self.assertNotIn("ring-lemma-ns6", remaining)
+        self.assertEqual([s["index"] for s in payload["repaired_chain"]], list(range(1, 10)))
         self.assertIn("EXCISE", payload["board"]["text"])
         self.assertIn("GRAFT", payload["board"]["text"])
-        self.assertIn("frozen-gap", payload["board"]["text"])
+        self.assertIn("ring-lemma-ns6", payload["board"]["text"])
         self.assertIn("Yes.", payload["answer"])
+        blob = json.dumps(payload).lower()
+        self.assertIn("does not prove clay", blob)
+        by_id = {c["id"]: c for c in payload["candidates"]}
+        self.assertEqual(by_id["clay-from-ring-lemma"]["kind"], "refused")
 
-    def test_excise_8_cuts_t2_closed(self):
+    def test_excise_8_cuts_dynamic_snd(self):
         payload = localized_repair(excise=8)
         self._assert_graft_at(
-            payload, 8, "t2-closed", "local-existence-as-target", "continuation"
+            payload, 8, "dynamic-snd-ns10", "lemma-6-1-simplex", "continuation"
         )
-        self.assertNotIn("t2-closed", {s["id"] for s in payload["repaired_chain"]})
+        self.assertNotIn("dynamic-snd-ns10", {s["id"] for s in payload["repaired_chain"]})
         self.assertTrue(payload["repaired_chain"][7]["id"].endswith("-graft"))
-        self.assertEqual(payload["repaired_chain"][6]["id"], "local-existence-as-target")
+        self.assertEqual(payload["repaired_chain"][6]["id"], "lemma-6-1-simplex")
         self.assertEqual(payload["repaired_chain"][8]["id"], "continuation")
 
-    def test_excise_6_cuts_lemma_6_1(self):
-        payload = localized_repair(excise=6)
+    def test_excise_7_cuts_lemma_6_1(self):
+        payload = localized_repair(excise=7)
         self._assert_graft_at(
-            payload, 6, "lemma-6-1", "product-arithmetic", "local-existence-as-target"
+            payload, 7, "lemma-6-1-simplex", "conditional-h1", "dynamic-snd-ns10"
         )
         self.assertEqual(payload["chosen"]["id"], "independent-simplex-hypothesis")
-        self.assertNotIn("lemma-6-1", {s["id"] for s in payload["repaired_chain"]})
+        self.assertNotIn("lemma-6-1-simplex", {s["id"] for s in payload["repaired_chain"]})
 
     def test_toy_chain_excise_2(self):
         payload = localized_repair(chain="toy", excise=2)
@@ -178,12 +212,17 @@ class TestCycleAndApi(unittest.TestCase):
         self.assertEqual(report.translation.kind, CorrespondenceKind.ANALOGY)
         self.assertEqual(report.translation.mapping, {})
         self.assertFalse(report.prediction["closed"])
+        self.assertEqual(report.translation.kind, CorrespondenceKind.ANALOGY)
 
     def test_named_cycle_aliases(self):
         for name in ("localized-repair", "surgery", "paper2-surgery"):
             report = run_named_cycle(name)
             self.assertEqual(report.mode, "localized-repair")
             self.assertEqual(report.prediction["protocol"], "localized-reparation")
+            excised = {s["id"] for s in report.prediction["excised"]}
+            self.assertIn("lemma-6-1-simplex", excised)
+            self.assertIn("dynamic-snd-ns10", excised)
+            self.assertNotIn("ring-lemma-ns6", excised)
 
     def test_named_cycle_excise_k_and_hidden_alias(self):
         report = run_named_cycle("localized-repair", excise=8)
@@ -198,6 +237,7 @@ class TestCycleAndApi(unittest.TestCase):
         self.assertEqual(report.prediction["operation"]["excise"], [2])
         self.assertEqual(report.prediction["repaired_chain"][1]["index"], 2)
         self.assertTrue(report.prediction["repaired_chain"][1]["id"].endswith("-graft"))
+        self.assertEqual(report.prediction["excised"][0]["id"], "ring-lemma-ns6")
         self.assertIn("Step 2", report.candidate.hypothesis)
         self.assertIn("Yes.", report.notes[0])
 
@@ -213,15 +253,21 @@ class TestCycleAndApi(unittest.TestCase):
         payload = json.loads(body)
         self.assertEqual(payload["chosen"]["id"], "independent-simplex-hypothesis")
         self.assertFalse(payload["closed"])
+        excised = {s["id"] for s in payload["excised"]}
+        self.assertIn("lemma-6-1-simplex", excised)
+        self.assertIn("dynamic-snd-ns10", excised)
+        self.assertNotIn("ring-lemma-ns6", excised)
         status, body, _ = handle_api("/api/localized-repair", {"excise": 2})
         self.assertEqual(status, 200)
         payload = json.loads(body)
-        self.assertEqual(payload["excised"][0]["id"], "frozen-gap")
+        self.assertEqual(payload["excised"][0]["id"], "ring-lemma-ns6")
+        self.assertEqual(payload["proximal"]["id"], "leray-energy")
+        self.assertEqual(payload["distal"]["id"], "lemma-3-1-continuity")
         self.assertFalse(payload["closed"])
         status, body, _ = handle_api("/api/localized-repair", {"excise": 8})
         self.assertEqual(status, 200)
         payload = json.loads(body)
-        self.assertEqual(payload["excised"][0]["id"], "t2-closed")
+        self.assertEqual(payload["excised"][0]["id"], "dynamic-snd-ns10")
         self.assertTrue(payload["repaired_chain"][7]["id"].endswith("-graft"))
         self.assertEqual(payload["operation"]["reinsert"], 8)
 
@@ -246,12 +292,6 @@ class TestCycleAndApi(unittest.TestCase):
             ["classical NS"],
         )
         self.assertTrue(any("control u" in c for c in cand.components))
-
-    def test_paper2_chain_step_two_is_frozen_gap(self):
-        self.assertEqual(PAPER2_CHAIN[1].id, "frozen-gap")
-        self.assertEqual(PAPER2_CHAIN[1].index, 2)
-        self.assertEqual(PAPER2_CHAIN[5].id, "lemma-6-1")
-        self.assertEqual(PAPER2_CHAIN[7].id, "t2-closed")
 
 
 if __name__ == "__main__":

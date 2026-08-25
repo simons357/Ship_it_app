@@ -123,7 +123,7 @@ python -m domain_architect translate --example snd-vs-h
 
 In the desktop app: Decompose the Ring SND and Q6 \(H_N\) buttons,
 Translate **SND vs H_N (lab, not glue)**, Cycle **NS leftover repair**
-or **Paper2 surgery**.
+or **Classical unaugmented (default cut 7–8)**.
 
 ## What this does not do
 

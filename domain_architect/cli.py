@@ -72,7 +72,7 @@ def main(argv: list[str] | None = None) -> int:
     p_cy.add_argument(
         "--chain",
         default=None,
-        help="paper2 | toy (localized-repair only)",
+        help="paper2 | classical | unaugmented | toy (localized-repair only)",
     )
 
     p_bm = sub.add_parser("benchmark", help="run the v1.0 computational benchmarks")

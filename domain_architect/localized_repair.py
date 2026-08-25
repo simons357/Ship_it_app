@@ -6,12 +6,13 @@ the tissue on both sides of the cut, searches a finite catalog for the most
 logical hook, and re-inserts a graft at the same slot. k is an index, not
 a product. The graft may be an OPEN hypothesis. It is not a closed theorem.
 
-Paper2 is the example dataset, not the operation. Named protocol
-“Paper2 surgery” (no --excise) still cuts the dynamical kink 6–8.
-Any other k is ``localized_repair(excise=k)``.
+Default dataset: the classical unaugmented NS chain (9 program steps).
+Controlling face: August repaired TeX. Named protocol (no --excise) cuts
+the OPEN dynamical leftover 7–8 (simplex + dynamic SND). Step 2 is the
+Ring Lemma and is already PROVED. Any other k is ``localized_repair(excise=k)``.
 
 This does not close Navier–Stokes. It does not call inverse design.
-It does not glue Ring SND, Q6 H_N, or swirl leftovers onto Paper2.
+It does not glue Ring-book fluids SND (J/X) with Paper2 operator SND.
 """
 
 from __future__ import annotations
@@ -47,6 +48,8 @@ REFUSED = (
     "no treating local existence ||a-μ||_1 ≤ 2 as the 0.039 bound",
     "no treating energy as simplex smallness",
     "no glue of Ring J/X or Q6 H_N into Paper2 H_N[a]",
+    "no identifying NS-6 ring geometry with Ring-book inf J/X",
+    "no treating Ring Lemma (NS-6) as Clay Statement B",
     "no accepting §7 T2 Closed",
     "no claiming Lemma 6.1 is proved by this graft",
 )
@@ -112,147 +115,169 @@ class GraftCandidate:
 
 
 # ---------------------------------------------------------------------------
-# Paper2 chain (10 steps): example dataset for generic excise-k.
-# Frozen gap at k=2 is one failing step, not the product. Named protocol
-# “Paper2 surgery” cuts the dynamical kink 6–8. Faces: June FIXED PDF +
-# Aug 1 audit. Not a compile of August TeX.
+# Classical unaugmented NS chain (9 program steps). Controlling face:
+# August repaired TeX. Not the June FIXED PDF compile. Named protocol
+# cuts leftover 7–8. Step 2 is Ring Lemma (NS-6), already PROVED.
+# NS-11 / Clay Statement B is not a program step; it is not claimed.
 # ---------------------------------------------------------------------------
 
 PAPER2_CHAIN: tuple[ProofStep, ...] = (
     ProofStep(
         index=1,
-        id="leray-setup",
+        id="leray-energy",
         status="healthy",
         claim=(
-            "Leray–Hopf solutions of 3D Navier–Stokes on T^3; normalized "
-            "shell weights a(t) live on the simplex Δ_{N-1}."
+            "Leray–Hopf energy inequality: a(t) exists on the simplex "
+            "(boundedness, not smallness)."
         ),
-        provides="a(t) ∈ Δ_{N-1}, hence ||a-μ||_1 ≤ 2",
-        requires="periodic 3D NS",
-        source="Paper2 setup (every honest face)",
-        notes="Boundedness on the simplex is not closeness to μ.",
+        provides="a(t) ∈ Δ_{N-1}",
+        requires="periodic 3D NS on T^3",
+        source="NS_UNAUGMENTED_PROOF_CHAIN.md step 1",
+        notes="STANDARD / INHERITED. Boundedness is not closeness to μ.",
     ),
     ProofStep(
         index=2,
-        id="frozen-gap",
-        status="open",
+        id="ring-lemma-ns6",
+        status="healthy",
         claim=(
-            "Frozen gap (FG) / Route J: λ_min(Ĥ_N^μ) > -1/2 + δ_0 at the "
-            "equidistributed μ. June FIXED cites this as Hypothesis 2.1. "
-            "August TeX marks Route J NUMERICAL / UNDER AUDIT, N ≤ 800."
+            "Ring Lemma (NS-6): static three-shell lower bound for "
+            "Q_N / H_N geometry."
         ),
-        provides="δ_0 > 0 frozen at μ",
-        requires="equidistributed μ_j = 1/N",
-        source="Paper2 Hypothesis 2.1 / Route J",
-        notes="Not an all-N theorem. Do not replace this with the withdrawn Q6 floor.",
+        provides="static three-shell lower bound on Q_N / H_N geometry",
+        requires="GCD / shell operator geometry",
+        source="NS_UNAUGMENTED_PROOF_CHAIN.md step 2",
+        notes=(
+            "PROVED standalone; not Clay alone. This is not Ring-book "
+            "fluids inf J/X ≥ c_* unless the source says so."
+        ),
     ),
     ProofStep(
         index=3,
-        id="lemma-3-1",
+        id="lemma-3-1-continuity",
         status="healthy",
         claim=(
-            "Lemma 3.1: H_N[a] = Σ_j a_j B_j is Lipschitz, "
+            "Finite-N operator continuity (Lemma 3.1): "
             "||H_N[a]-H_N[b]||_op ≤ C_N ||a-b||_1."
         ),
         provides="C_N Lipschitz constant (finite N, triangle inequality)",
         requires="finite-N shell operator H_N[a]",
-        source="Paper2 Lemma 3.1 (audit: stands)",
-        notes="Elementary. This H_N[a] is not Q6 H_N and not FRA coupling H.",
+        source="NS_UNAUGMENTED_PROOF_CHAIN.md step 3",
+        notes="PROVED Lipschitz. Paper2 H_N[a] is not Q6 H_N.",
     ),
     ProofStep(
         index=4,
-        id="theorem-4-1",
-        status="healthy",
+        id="frozen-gap-route-j",
+        status="open",
         claim=(
-            "Theorem 4.1 (conditional Weyl): if FG and "
-            "||H_N[a]-Ĥ_N^μ||_op < δ_0, then λ_min(H_N[a]) > -1/2."
+            "Frozen gap (Route J): λ_min(Ĥ_N^μ) > -1/2 + δ_0 for tested "
+            "N ≤ 800. No analytic all-N claim."
         ),
-        provides="conditional dynamic spectral gap",
-        requires="FG and quantitative operator-norm SND",
-        source="Paper2 Theorem 4.1 (audit: stands)",
-        notes="A valid implication. It is not a proof that SND holds for Leray–Hopf.",
+        provides="δ_0 > 0 frozen at μ (numerical / under audit)",
+        requires="equidistributed μ_j = 1/N",
+        source="NS_UNAUGMENTED_PROOF_CHAIN.md step 4",
+        notes="NUMERICAL / UNDER AUDIT. Frozen gap is step 4, not step 2.",
     ),
     ProofStep(
         index=5,
-        id="product-arithmetic",
+        id="weyl-master",
         status="healthy",
         claim=(
-            "If C_N ||a-μ||_1 < δ_0, Lipschitz feeds Theorem 4.1. "
-            "Manuscript safety δ_0 = 0.20. The product C_N η_N is "
-            "numerical/conditional on the June FIXED face, not an all-N theorem."
+            "Weyl master implication (Paper2 Thm): quantitative SND + "
+            "frozen gap ⇒ dynamic spectral gap "
+            "inf_t λ_min(H_N[u(t)]) > -1/2."
         ),
-        provides="target ||a-μ||_1 < η_* = δ_0 / C_N (needs certified C_N)",
-        requires="Lemma 3.1 and a value of δ_0",
-        source="Paper2 quantitative SND reduction",
-        notes=(
-            f"August 1 audit quotes a target 0.039 against local existence 2. "
-            f"Formula: η_* = {DELTA_0} / C_N."
-        ),
+        provides="conditional dynamic spectral gap",
+        requires="FG and quantitative operator-norm SND",
+        source="NS_UNAUGMENTED_PROOF_CHAIN.md step 5",
+        notes="PROVED conditional on SND + FG. Not a proof that SND holds.",
     ),
     ProofStep(
         index=6,
-        id="lemma-6-1",
-        status="open",
+        id="conditional-h1",
+        status="healthy",
         claim=(
-            "Lemma 6.1: uniform-in-time simplex / SND stability, "
-            "||a(t)-μ||_1 ≤ η_* for all t ≥ 0."
+            "Global summation / conditional H^1 bound (NS-7, NS-8): if "
+            "[SND] holds for all t, then dangerous-regime time is finite "
+            "and global H^1 follows."
         ),
-        provides="the smallness Weyl actually needs",
-        requires="NS dynamics of a(t), not energy",
-        source="Paper2 Lemma 6.1 (audit: OPEN)",
-        notes="The kink. Leftover-split leftover. Do not treat as proved.",
+        provides="conditional global H^1",
+        requires="[SND] for all t",
+        source="NS_UNAUGMENTED_PROOF_CHAIN.md step 6",
+        notes="PROVED conditional on [SND]. Not unconditional regularity.",
     ),
     ProofStep(
         index=7,
-        id="local-existence-as-target",
-        status="diseased",
+        id="lemma-6-1-simplex",
+        status="open",
         claim=(
-            "Use local existence ||a-μ||_1 ≤ 2 as if it were the target "
-            f"{ETA_STAR_AUDIT} bound."
+            "SND simplex stability (Lemma 6.1): ||a(t)-μ||_1 ≤ η_N "
+            "uniform in t for classical Leray–Hopf."
         ),
-        provides="nothing usable (2 is not η_*)",
-        requires="local existence",
-        source="August 1 audit, internal contradiction in §7",
-        notes="Local existence is healthy as a trivial simplex bound. It is diseased as a substitute for Lemma 6.1.",
+        provides="the smallness Weyl actually needs",
+        requires="NS dynamics of a(t), not energy",
+        source="NS_UNAUGMENTED_PROOF_CHAIN.md step 7",
+        notes="OPEN leftover. Do not treat as proved.",
     ),
     ProofStep(
         index=8,
-        id="t2-closed",
-        status="diseased",
+        id="dynamic-snd-ns10",
+        status="open",
         claim=(
-            "Section 7 ‘T2 Closed (conditional on SND)’ / Gronwall closure. "
-            "June FIXED marks T2 as a program. August TeX withdraws the label. "
-            "The implies face’s §7 contradicts its own §8 OPEN list."
+            "Dynamic [SND] preservation (NS-10): unaugmented classical "
+            "flow keeps ||H_N[u(t)]-Ĥ_N^μ||_op < δ_0 for all t ≥ 0."
         ),
-        provides="a false closure",
-        requires="transfer estimate and positive damping (not derived)",
-        source="Paper2 §7 (audit: do not accept)",
-        notes="Cut this. Do not re-insert as a theorem.",
+        provides="uniform quantitative operator-norm SND",
+        requires="classical unaugmented Leray–Hopf dynamics",
+        source="NS_UNAUGMENTED_PROOF_CHAIN.md step 8",
+        notes="OPEN leftover. Not implied by energy or by ε→0.",
     ),
     ProofStep(
         index=9,
         id="continuation",
         status="open",
         claim=(
-            "Continuation criterion from a spectral gap / non-concentration "
-            "statement to global regularity of the Leray–Hopf solution."
+            "Continuation: spectral gap / non-concentration ⇒ smooth "
+            "Leray–Hopf continuation (must be supplied explicitly)."
         ),
         provides="classical smoothness, if supplied",
         requires="uniform spectral gap plus an explicit continuation theorem",
-        source="August 1 audit, missing classical bridge",
-        notes="Even a proof of Lemma 6.1 still owes this step.",
-    ),
-    ProofStep(
-        index=10,
-        id="classical-ns",
-        status="not_claimed",
-        claim="Unconditional classical 3D Navier–Stokes regularity on T^3.",
-        provides="Clay / Millennium",
-        requires="the whole chain closed",
-        source="every honest Paper2 face",
-        notes="Not claimed. DA must not synthesize a PD loop to fill this.",
+        source="NS_UNAUGMENTED_PROOF_CHAIN.md step 9",
+        notes="OPEN / INCOMPLETE in repaired Paper2. Default surgery does not cut this.",
     ),
 )
+
+NOT_CLAIMED: tuple[ProofStep, ...] = (
+    ProofStep(
+        index=11,
+        id="classical-ns-11",
+        status="not_claimed",
+        claim="Classical global regularity (NS-11 / Clay Statement B).",
+        provides="Clay / Millennium",
+        requires="the whole chain closed",
+        source="NS_UNAUGMENTED_PROOF_CHAIN.md conclusion",
+        notes="NOT CLAIMED. DA must not synthesize a PD loop to fill this.",
+    ),
+)
+
+DEFAULT_CUT_IDS = {
+    "lemma-6-1-simplex",
+    "dynamic-snd-ns10",
+    "lemma-6-1",
+    "local-existence-as-target",
+    "t2-closed",
+    "toy-energy-implies-smallness",
+}
+
+LEFTOVER_IDS = {
+    "lemma-6-1-simplex",
+    "dynamic-snd-ns10",
+    "lemma-6-1",
+    "t2-closed",
+    "local-existence-as-target",
+}
+
+RING_LEMMA_IDS = {"ring-lemma-ns6", "ring-lemma"}
+FROZEN_GAP_IDS = {"frozen-gap-route-j", "frozen-gap"}
 
 
 TOY_CHAIN: tuple[ProofStep, ...] = (
@@ -291,7 +316,8 @@ TOY_CHAIN: tuple[ProofStep, ...] = (
 
 CHAINS: dict[str, tuple[ProofStep, ...]] = {
     "paper2": PAPER2_CHAIN,
-    "paper2-june-fixed": PAPER2_CHAIN,
+    "classical": PAPER2_CHAIN,
+    "unaugmented": PAPER2_CHAIN,
     "toy": TOY_CHAIN,
     "toy-excise-2": TOY_CHAIN,
 }
@@ -452,6 +478,63 @@ def _simplex_catalog(computation: dict[str, Any]) -> list[GraftCandidate]:
     ]
 
 
+def _ring_geometry_catalog() -> list[GraftCandidate]:
+    return [
+        GraftCandidate(
+            id="independent-ring-geometry-hypothesis",
+            name="NS-6 Ring Lemma as an independent OPEN hypothesis",
+            kind="hypothesis",
+            provides=(
+                "static three-shell lower bound for Q_N / H_N geometry "
+                "(assumed after the cut, not used as Clay)"
+            ),
+            score=1.0,
+            accepted=True,
+            closed=False,
+            reason=(
+                "Generic excise-k at slot 2. On this chain step 2 is the "
+                "Ring Lemma (NS-6), already PROVED. Cutting it re-inserts "
+                "an OPEN ring-geometry hypothesis. Neighbors are Leray "
+                "energy (1) and Lemma 3.1 (3). This does not prove Clay "
+                "Statement B. This is not Ring-book fluids inf J/X ≥ c_*."
+            ),
+        ),
+        GraftCandidate(
+            id="ring-snd-glue",
+            name="Glue Ring SND inf J/X ≥ c_*",
+            kind="refused",
+            provides="J/X (different book)",
+            score=0.0,
+            accepted=False,
+            closed=False,
+            reason="Different book. Ring-book fluids SND is not NS-6 operator geometry.",
+            refused_because="different_books",
+        ),
+        GraftCandidate(
+            id="clay-from-ring-lemma",
+            name="Treat NS-6 as a Clay proof",
+            kind="refused",
+            provides="nothing (standalone geometry is not Statement B)",
+            score=0.0,
+            accepted=False,
+            closed=False,
+            reason="Standalone Ring Lemma is not Clay Statement B.",
+            refused_because="not_clay",
+        ),
+        GraftCandidate(
+            id="pd-inverse-design",
+            name="Inverse-design a PD loop",
+            kind="refused",
+            provides="vacuous controller",
+            score=0.0,
+            accepted=False,
+            closed=False,
+            reason="A13 fail-closed. Not a proof of the excised step.",
+            refused_because="a13_fail_closed",
+        ),
+    ]
+
+
 def _frozen_gap_catalog() -> list[GraftCandidate]:
     return [
         GraftCandidate(
@@ -463,9 +546,9 @@ def _frozen_gap_catalog() -> list[GraftCandidate]:
             accepted=True,
             closed=False,
             reason=(
-                "On the Paper2 example dataset, k=2 is Route J / Hypothesis "
-                "2.1. The honest hook is to keep it as a hypothesis feeding "
-                "Theorem 4.1, not to stamp it a theorem."
+                "On the classical chain, frozen gap / Route J is step 4, "
+                "not step 2. The honest hook is to keep it as a hypothesis "
+                "feeding Weyl, not to stamp it a theorem."
             ),
         ),
         GraftCandidate(
@@ -574,9 +657,11 @@ def _catalog_for(chain_name: str, excised: list[ProofStep]) -> list[GraftCandida
     ids = {s.id for s in excised}
     if chain_name.startswith("toy"):
         return _toy_catalog()
-    if ids & {"frozen-gap"} and not (ids & {"lemma-6-1", "t2-closed", "local-existence-as-target"}):
+    if ids & RING_LEMMA_IDS and not (ids & LEFTOVER_IDS):
+        return _ring_geometry_catalog()
+    if ids & FROZEN_GAP_IDS and not (ids & LEFTOVER_IDS):
         return _frozen_gap_catalog()
-    if ids & {"lemma-6-1", "t2-closed", "local-existence-as-target"}:
+    if ids & LEFTOVER_IDS:
         return _simplex_catalog(simplex_concentration_diagnostic())
     return _generic_interface_catalog(excised)
 
@@ -586,12 +671,11 @@ def _normalize_excise(
     excise: list[int] | int | None,
 ) -> list[int]:
     if excise is None:
-        return [s.index for s in steps if s.status in {"diseased", "open"} and s.id in {
-            "lemma-6-1",
-            "local-existence-as-target",
-            "t2-closed",
-            "toy-energy-implies-smallness",
-        }]
+        return [
+            s.index
+            for s in steps
+            if s.status in {"diseased", "open"} and s.id in DEFAULT_CUT_IDS
+        ]
     if isinstance(excise, int):
         excise = [excise]
     indices = [int(i) for i in excise]
@@ -722,23 +806,30 @@ def run_surgery(
         ),
         "chain_name": chain_name,
         "source_faces": [
-            "docs/papers/ns-snd/Paper2_NS_Regularity_SND_FIXED.pdf",
+            "docs/papers/ns-snd/NS_UNAUGMENTED_PROOF_CHAIN.md",
+            "docs/papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex",
             "docs/papers/ns-snd/NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md",
             "docs/papers/ns-snd/FACES.md",
         ]
-        if chain_name.startswith("paper2")
+        if chain_name in {"paper2", "classical", "unaugmented"}
         else ["toy chain"],
-        "june_fixed_tex": (
-            "Paper2_NS_Regularity_SND_FIXED.tex was requested and did not "
-            "arrive. Surgery uses the filed June FIXED PDF plus the August 1 "
-            "audit. Do not invent the TeX source."
-        )
-        if chain_name.startswith("paper2")
-        else None,
+        "controlling_face": (
+            "docs/papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex"
+            if chain_name in {"paper2", "classical", "unaugmented"}
+            else None
+        ),
+        "not_june_fixed_compile": (
+            "This chain is not the June FIXED PDF compile."
+            if chain_name in {"paper2", "classical", "unaugmented"}
+            else None
+        ),
         "original_chain": [s.to_dict() for s in steps],
         "excised": [s.to_dict() for s in excised],
         "proximal": None if proximal is None else proximal.to_dict(),
         "distal": None if distal is None else distal.to_dict(),
+        "not_claimed": [s.to_dict() for s in NOT_CLAIMED]
+        if chain_name in {"paper2", "classical", "unaugmented"}
+        else [],
         "interface": {
             "delta_0": DELTA_0,
             "eta_star_audit": ETA_STAR_AUDIT,
@@ -758,10 +849,11 @@ def run_surgery(
         "kind": CorrespondenceKind.ANALOGY.value,
         "notes": [
             "Localized reparation does not prove Navier–Stokes regularity.",
-            "Lemma 3.1 and Theorem 4.1 stay. Lemma 6.1 stays OPEN.",
-            "Section 7 T2 Closed is not re-inserted.",
-            "Even after 6.1, continuation (step 9) is still OPEN.",
-            "Step 10 classical NS is not claimed.",
+            "Step 2 Ring Lemma (NS-6) is PROVED. Default surgery does not cut it.",
+            "Lemma 3.1, Weyl master, and conditional H^1 stay.",
+            "Default leftover cut is steps 7–8 (simplex + dynamic SND).",
+            "Continuation (step 9) stays OPEN / INCOMPLETE.",
+            "NS-11 / Clay Statement B is not claimed.",
             "A13 is unchanged: synthesize of NS regularity still emits a PD loop.",
             board["text"],
         ],
@@ -773,11 +865,11 @@ def localized_repair(
     chain: str | None = None,
     excise: list[int] | int | None = None,
 ) -> dict[str, Any]:
-    """Public entry: default Paper2 surgery, or ``excise=k`` on a named chain."""
+    """Public entry: default classical leftover cut 7–8, or ``excise=k``."""
     name = (chain or "paper2").replace("_", "-")
     if name not in CHAINS:
         raise ValueError(
-            f"unknown chain {name!r}; expected paper2, paper2-june-fixed, toy"
+            f"unknown chain {name!r}; expected paper2, classical, unaugmented, toy"
         )
     if isinstance(excise, str):
         excise = [int(part) for part in excise.replace(" ", "").split(",") if part]
@@ -819,11 +911,10 @@ def cycle_localized_repair(
         )
     else:
         hypothesis = (
-            "Paper2 surgery: cut the diseased / unproved dynamical kink. "
-            "Keep Lipschitz and conditional Weyl. Re-insert Lemma 6.1 "
-            "as an independent hypothesis. Do not derive it from energy "
-            "or from local existence. Continuation and classical NS stay "
-            "unclaimed."
+            "Classical unaugmented surgery: cut the OPEN dynamical leftover "
+            "7–8 (simplex + dynamic SND). Keep Ring Lemma (PROVED), Lipschitz, "
+            "Weyl, and conditional H^1. Re-insert Lemma 6.1 / dynamic SND as "
+            "an independent hypothesis. Continuation and Clay stay unclaimed."
         )
     candidate = CandidateArchitecture(
         name="localized_reparation_open",
@@ -840,12 +931,12 @@ def cycle_localized_repair(
         provenance=[
             Provenance(
                 source="localized reparation / surgery",
-                original_domain="paper2-ns-snd",
+                original_domain="classical-unaugmented-ns",
                 functional_role="constraint",
                 translation=None,
                 assumptions=[
                     "do not identify leftovers",
-                    "do not accept §7 T2 Closed",
+                    "do not glue J/X with operator SND",
                     "graft remains OPEN",
                 ],
                 compatibility_checks=["glue refused", "no executable T", "no PD"],
@@ -858,7 +949,7 @@ def cycle_localized_repair(
         notes=[
             "Not a PD controller. Inverse design is not used.",
             "Not TRANSFORMABLE. Not Clay.",
-            "June FIXED.tex source was not attached; PDF + audit are the faces.",
+            "August repaired TeX is the controlling face. Not the June FIXED PDF compile.",
         ],
     )
     return CycleReport(
@@ -868,8 +959,8 @@ def cycle_localized_repair(
             "OPEN hook, re-insert into the same chain"
         ),
         constraints=[
-            "keep Lemma 3.1 and Theorem 4.1",
-            "do not accept T2 Closed",
+            "keep Ring Lemma (PROVED), Lemma 3.1, Weyl master, conditional H^1",
+            "cut leftover 7–8, not step 2",
             "do not emit a PD loop",
             "do not glue books",
             "no Clay claim",

@@ -119,7 +119,7 @@ $("cyLeftover").addEventListener("click", async () => {
 
 $("cySurgery").addEventListener("click", async () => {
   $("cyName").value = "localized-repair";
-  $("cyOut").textContent = "Running Paper2 localized reparation…";
+  $("cyOut").textContent = "Running classical unaugmented surgery (default cut 7–8)…";
   show($("cyOut"), await api("/api/cycle", { name: "localized-repair" }));
 });
 

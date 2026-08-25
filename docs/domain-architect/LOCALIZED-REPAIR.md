@@ -13,10 +13,13 @@ of a different book.
 
 This is leftover-split applied to a numbered chain. Jon’s metaphor is
 the right one: you cut out the bad part and hook the good part to each
-end. k is an index in the chain, not a product name.
+end. k is an index in the chain, not a product name. **`#2` was an
+example index.** On the controlling classical chain, **#2 is Ring Lemma
+and is already PROVED.**
 
 Canonical product spec: [`docs/DOMAIN-ARCHITECT.md`](../DOMAIN-ARCHITECT.md).  
 Sibling protocol: [`LEFTOVER-REPAIR.md`](LEFTOVER-REPAIR.md).  
+Classical chain: [`docs/papers/ns-snd/NS_UNAUGMENTED_PROOF_CHAIN.md`](../papers/ns-snd/NS_UNAUGMENTED_PROOF_CHAIN.md).  
 Paper2 faces: [`docs/papers/ns-snd/FACES.md`](../papers/ns-snd/FACES.md).
 
 Live software is still dump-era three-verb DA. This protocol does
@@ -36,49 +39,53 @@ In the desktop Cycle tab: enter a step number and **Excise this step**.
 The repaired chain keeps its numbering. Slot k is the graft. Neighbors
 stay in order.
 
-## Default chain: Paper2 (example dataset)
+## Default chain: classical unaugmented NS (controlling dataset)
 
-Paper2 is the example **dataset**, not the operation. The filename
-`Paper2_NS_Regularity_SND_FIXED.tex` was requested. The **PDF** is
-filed. The **TeX source did not arrive**. Surgery uses:
+This is the **controlling classical chain**. Controlling face: August
+repaired TeX
+[`Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](../papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex)
+(Desktop pack name:
+`06_navier_stokes_shelf/03_conditional_unaugmented_SND/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`).
+Cross-check: [`NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md`](../papers/ns-snd/NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md).
 
-- June FIXED PDF [`Paper2_NS_Regularity_SND_FIXED.pdf`](../papers/ns-snd/Paper2_NS_Regularity_SND_FIXED.pdf)
-- August 1 audit [`NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md`](../papers/ns-snd/NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md)
+This chain is **not** the June FIXED PDF compile.
 
-Do not invent the missing TeX. Do not treat the August repaired TeX as
-a compile of that PDF.
+Step 2 Ring Lemma (NS-6) is **not** Ring-book fluids
+\(\inf J/X\ge c_*\) unless the source says so. Paper2 \(H_N[a]\) is not
+Q6 \(H_N\).
 
 | # | Step | Status | What surgery does |
 |---|---|---|---|
-| 1 | Leray–Hopf setup; \(a(t)\) on the simplex | healthy | keep |
-| 2 | Frozen gap / Route J (Hypothesis 2.1) | OPEN / numerical | keep unless you excise this k |
-| 3 | Lemma 3.1 Lipschitz of \(H_N[a]=\sum a_j B_j\) | healthy | keep |
-| 4 | Theorem 4.1 conditional Weyl | healthy | keep |
-| 5 | Product \(C_N\|a-\mu\|_1<\delta_0\) | healthy as an implication | keep; \(\delta_0=0.20\) is manuscript safety, not all-\(N\) |
-| 6 | Lemma 6.1 uniform simplex / SND stability | OPEN (the kink) | cut and re-insert as **hypothesis** |
-| 7 | Local existence \(\|a-\mu\|_1\le 2\) used as the 0.039 bound | diseased | cut; do not re-insert |
-| 8 | §7 “T2 Closed” Gronwall | diseased | cut; do not re-insert |
-| 9 | Continuation from spectral gap to Leray–Hopf smoothness | OPEN | keep as still owed |
-| 10 | Classical 3D NS regularity | not claimed | not claimed |
+| 1 | Leray–Hopf energy; \(a(t)\) on the simplex | healthy — STANDARD / INHERITED | keep |
+| 2 | Ring Lemma (NS-6), standalone | healthy — **PROVED** | keep (already proved; not the default cut) |
+| 3 | Lemma 3.1 Lipschitz of \(H_N[a]\) | healthy — PROVED | keep |
+| 4 | Frozen gap / Route J, \(N\le 800\) | OPEN — NUMERICAL / UNDER AUDIT | keep unless you excise this k; no all-\(N\) |
+| 5 | Weyl master implication | healthy — PROVED on SND+FG | keep |
+| 6 | Conditional \(H^1\) (NS-7, NS-8) | healthy — PROVED on [SND] | keep |
+| 7 | Lemma 6.1 simplex stability | OPEN leftover | **default cut**; re-insert as **hypothesis** |
+| 8 | Dynamic SND (NS-10) | OPEN leftover | **default cut**; re-insert as **hypothesis** |
+| 9 | Continuation to smooth Leray–Hopf | OPEN / INCOMPLETE | keep as still owed |
 
-**Paper2 surgery** is a different named protocol: the default cut of the
-known diseased/open dynamical kink (6–8). It is not “excise step 2.”
+NS-11 / Clay Statement B is **not claimed**.
+
+Default auto-excise is leftover **7 and 8**, not step 2, and not a
+“diseased T2 closed” slot unless that false closure is still present
+as a cut.
 
 ```
 python -m domain_architect cycle localized-repair
 ```
 
-Desktop: Cycle **Paper2 surgery (default cut 6–8)**.
+Desktop: Cycle **Classical unaugmented (default cut 7–8)**.
 
-Proximal tissue is step 5 (the Lipschitz target). Distal tissue is
-step 9 (continuation). The hook that actually fits the interface is
-Lemma 6.1 restated as an independent hypothesis.
+Proximal tissue is step 6 (conditional \(H^1\)). Distal tissue is
+step 9 (continuation). The hook that fits is Lemma 6.1 / dynamic SND
+restated as an independent OPEN hypothesis.
 
-Frozen gap at k=2 is one example of a failing step on this chain.
-Neighbors are the Leray setup (1) and Lemma 3.1 (3). The accepted graft
-is an independent frozen-gap hypothesis, still **OPEN**. Route J
-numerics \(N\le 800\) are a diagnostic, not a theorem. The withdrawn Q6
-floor is refused.
+Generic `excise=2` still works as **cut slot 2**. On this chain that
+slot is Ring Lemma. Neighbors are step 1 and step 3. The accepted graft
+is an independent ring-geometry hypothesis, still **OPEN**. That does
+**not** prove Clay.
 
 On the toy chain (`{"chain": "toy", "excise": 2}`), step 2 is
 “energy implies smallness.” Neighbors are energy and continuation. The
@@ -86,8 +93,9 @@ graft is independent smallness \(\sigma\), still OPEN.
 
 ## Candidate search (finite, honest)
 
-For the Paper2 simplex interface Weyl needs \(\|a-\mu\|_1\le\eta_*\)
-with audit figure \(\eta_*\approx 0.039\) against \(\delta_0=0.20\):
+For the simplex / dynamic-SND interface Weyl needs
+\(\|a-\mu\|_1\le\eta_*\) with audit figure \(\eta_*\approx 0.039\)
+against \(\delta_0=0.20\):
 
 | Candidate | Score | Re-insert? |
 |---|---|---|
@@ -106,9 +114,11 @@ satisfy.” They are not a proof.
 ## What this does not do
 
 - It does not prove Lemma 6.1.
+- It does not prove dynamic SND (NS-10).
 - It does not prove continuation (step 9).
-- It does not prove classical 3D Navier–Stokes.
+- It does not prove classical 3D Navier–Stokes / Clay Statement B.
 - It does not make the June FIXED PDF a compile of the August TeX.
+- It does not identify NS-6 with Ring-book \(\inf J/X\).
 - It does not fix A13.
 - It does not award `TRANSFORMABLE`.
 
@@ -119,5 +129,5 @@ python -m domain_architect cycle localized-repair
 python -m domain_architect cycle localized-repair --excise K
 ```
 
-In the desktop app: Cycle **Paper2 surgery (default cut 6–8)**, or enter
-k and **Excise this step**.
+In the desktop app: Cycle **Classical unaugmented (default cut 7–8)**,
+or enter k and **Excise this step**.
