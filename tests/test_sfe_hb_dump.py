@@ -68,11 +68,16 @@ SPECTRAL_UNIFICATION_MISSING = (
 SPECTRAL_UNIFICATION_MISSING_SHA256 = (
     "52eca0a3bdc854ea3e105272a61b1faab3d2c7e388dbddf414d8175b61a31eb4"
 )
+EQUATION_EXPLORER = ARCHIVE_SFE_HB / "equation_explorer_simons_field.py"
+EQUATION_EXPLORER_SHA256 = (
+    "191d0738ed9f6703793388dc9545dd6c9f9f67b2eb9647cb535b445f0f921743"
+)
 LIVE_FORBIDDEN_TOKENS = (
     "d_master",
     "c_master",
     "q_uhf",
     "k_dhfa",
+    "simons_field",
 )
 
 
@@ -92,7 +97,7 @@ class TestLivePathDropsSfeHb(unittest.TestCase):
 
     def test_core_modules_do_not_import_historical(self):
         root = Path(__file__).resolve().parents[1] / "domain_architect"
-        banned = {"historical", "prime_field_coherence"}
+        banned = {"historical", "prime_field_coherence", "simons_field"}
         live = [
             "decompose.py",
             "translate.py",
@@ -112,6 +117,16 @@ class TestLivePathDropsSfeHb(unittest.TestCase):
                 "prime_field_coherence",
                 source,
                 f"{name} must not mention the archived Prime Field sketch",
+            )
+            self.assertNotIn(
+                "simons_field",
+                source,
+                f"{name} must not mention the archived Equation Explorer",
+            )
+            self.assertNotIn(
+                "equation explorer",
+                source.lower(),
+                f"{name} must not host the archived Equation Explorer",
             )
             tree = ast.parse(source)
             imported = set()
@@ -172,6 +187,13 @@ class TestDesktopApi(unittest.TestCase):
         text = report["narrative"].lower()
         self.assertIn("domain architect", text)
         self.assertNotIn("canonical sfe", text)
+        self.assertNotIn("equation explorer", text)
+
+    def test_desktop_html_has_no_equation_explorer_tab(self):
+        html = (LIVE_ROOT / "static" / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn("Equation Explorer", html)
+        self.assertNotIn("simons_field", html)
+        self.assertIn("DECOMPOSE", html)
 
     def test_archive_is_opt_in(self):
         status, body, _ctype = handle_api("/api/archive", {})
@@ -410,6 +432,114 @@ class TestSpectralUnificationPaperNotInvented(unittest.TestCase):
                 path.read_text(encoding="utf-8"),
                 path.name,
             )
+
+
+class TestEquationExplorerStaysArchived(unittest.TestCase):
+    """Jon matplotlib SFE slider paste stays historical. Live DA must not import it."""
+
+    def test_script_is_in_archive_not_in_live_package(self):
+        self.assertTrue(EQUATION_EXPLORER.is_file(), EQUATION_EXPLORER)
+        raw = EQUATION_EXPLORER.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), EQUATION_EXPLORER_SHA256)
+        self.assertEqual(len(raw), 3730)
+        text = raw.decode("utf-8")
+        self.assertIn("Historical toy only", text)
+        self.assertIn("Not live Domain Architect", text)
+        self.assertIn("NOT CLAIMED", text)
+        self.assertIn("Not June Paper2 FIXED", text)
+        self.assertIn("Not Ring SND", text)
+        self.assertIn("Not Q6 H_N", text)
+        self.assertIn("does not depend on x", text)
+        self.assertIn("phi += A * sin(2*pi*f*t/spatial_mod + delta)", text)
+        self.assertIn(
+            "phi += A * np.sin(2 * np.pi * f * t / spatial_mod + delta)",
+            text,
+        )
+        self.assertIn("Equation Explorer: Simons Field", text)
+        self.assertIn("import into `domain_architect/`", text)
+        self.assertIn("Do not add an Equation Explorer tab", text)
+        self.assertIn("prime_field_coherence.py", text)
+        self.assertIn("def simons_field", text)
+        self.assertIn("init_spatial_mod = 1.618", text)
+        self.assertIn("init_primes = [2, 3, 5, 7, 11]", text)
+        self.assertIn("plt.show()", text)
+        self.assertFalse((LIVE_ROOT / "equation_explorer_simons_field.py").is_file())
+        self.assertFalse((LIVE_ROOT / "simons_field.py").is_file())
+        self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
+        live_names = " ".join(p.name for p in LIVE_ROOT.iterdir())
+        self.assertNotIn("equation_explorer", live_names)
+        self.assertNotIn("simons_field", live_names)
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("archive only", note.lower())
+        self.assertIn("Not live Domain Architect", note)
+        self.assertIn("NOT CLAIMED", note)
+        self.assertIn("import into `domain_architect/`", note)
+        self.assertIn("does not depend on `x`", note)
+        self.assertIn("Do not add an Equation Explorer tab", note)
+        self.assertIn("equation_explorer_simons_field.py", note)
+        self.assertIn("Do not stamp DA-VC-01", note)
+        self.assertNotIn("DA-VC-01 PASS", note)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("sfe-hb/", archive_index)
+        self.assertIn("equation_explorer_simons_field.py", archive_index)
+        self.assertIn("not live DA", archive_index)
+        self.assertIn("Do not add an Equation Explorer tab", archive_index)
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("equation_explorer_simons_field.py", lookup)
+        self.assertIn("does not depend on `x`", lookup)
+        faces = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "papers"
+            / "ns-snd"
+            / "FACES.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("equation_explorer_simons_field.py", faces)
+        self.assertIn("Not** a Paper2 face", faces)
+        swirl = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "papers"
+            / "swirl"
+            / "FACES.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("equation_explorer_simons_field.py", swirl)
+        self.assertIn(r"\Phi=u_\theta/r", swirl)
+        gcd = (
+            Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("sfe-hb/", gcd)
+        self.assertIn("not** q6", gcd.lower())
+        ring = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "papers"
+            / "ring"
+            / "FACES.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("equation_explorer_simons_field.py", ring)
+        self.assertIn("Not** Ring SND", ring)
+        html = (LIVE_ROOT / "static" / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn("Equation Explorer", html)
+        self.assertNotIn("simons_field", html)
+        for path in sorted(LIVE_ROOT.glob("*.py")):
+            if path.name == "historical.py":
+                continue
+            hay = path.read_text(encoding="utf-8")
+            self.assertNotIn("simons_field", hay, path.name)
+            self.assertNotIn("Equation Explorer", hay, path.name)
+
+    def test_live_package_has_no_equation_explorer_module(self):
+        self.assertFalse((LIVE_ROOT / "equation_explorer_simons_field.py").is_file())
+        static_hits = list((LIVE_ROOT / "static").rglob("*explorer*"))
+        self.assertEqual(static_hits, [])
 
 
 class TestNoPaddedParameterLevel(unittest.TestCase):

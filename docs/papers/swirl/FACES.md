@@ -25,3 +25,4 @@ The algebraic identity \(\frac1{r^4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) wi
 - **Public May deposit:** Zenodo `20405405` / `20405597`.
 - **April/June older sources:** file them; do not compile them as 22 August; do not cash Q1 smoothness or “Gronwall-free” May/June lines as Clay.
 - **Do not merge them into one claim.**
+- **Equation Explorer slider `phi`:** historical toy [`docs/archive/sfe-hb/equation_explorer_simons_field.py`](../../archive/sfe-hb/equation_explorer_simons_field.py). **Not** swirl \(\Phi=u_\theta/r\). **Not** this book. **Not** live DA.

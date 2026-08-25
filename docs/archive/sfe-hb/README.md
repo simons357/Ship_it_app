@@ -59,3 +59,22 @@ substitute that paste for the missing TeX. Receipt:
 Sibling `SND_GNC_BRIDGE_EXTRACTED.txt` is a different Frankie file; not
 overwritten here. **Not** live Domain Architect. Do **not** import into
 `domain_architect/`.
+
+## Equation Explorer matplotlib paste — archive only
+
+[`equation_explorer_simons_field.py`](equation_explorer_simons_field.py)
+
+SHA-256 `191d0738ed9f…`. Chat paste (25 August 2026) titled
+*Equation Explorer: Simons Field Φ(x,t)*. Numpy + matplotlib sliders
+for `t`, golden-ratio `spatial_mod` (1.618), and prime modes
+`[2, 3, 5, 7, 11]`.
+
+This is **historical toy UI**. It is **not** the live product.
+
+- **Archive only.** Not live Domain Architect. Do **not** import into `domain_architect/`. Do not add an Equation Explorer tab to the desktop app. Do not create `sfe.py` or a live `simons_field` module.
+- **Not** the NS PDE. **Not Clay.** Clay is **NOT CLAIMED**. **Not** June Paper2 FIXED. **Not** Ring SND (\(\inf J/X\ge c_*\)). **Not** Q6 arithmetic \(H_N\).
+- **Φ letters collide.** Slider `phi` / Spatial Mod ϕ is a golden-ratio scale knob. It is **not** swirl \(\Phi=u_\theta/r\), **not** DA output \(\Phi\), **not** Newtonian \(\Phi_g\), **not** Paper2 \(\Phi_j\).
+- The sine sum **does not depend on `x`**:
+  `phi += A * sin(2*pi*f*t/spatial_mod + delta)`.
+  The plot is a flat-in-\(x\) oscillation vs a dummy space grid. Not a spatial field. Toy UI only.
+- **Not** the 19 Aug UHSA session synthesis above. **Not** `prime_field_coherence.py` (that sketch stays under [`docs/archive/prime-field-2026-08-25/`](../prime-field-2026-08-25/); not a live module).

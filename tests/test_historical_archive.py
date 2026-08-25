@@ -211,5 +211,27 @@ class TestUhsaSessionDumpIsHistorical(unittest.TestCase):
         self.assertFalse((LIVE_ROOT / "c_master.py").is_file())
 
 
+class TestEquationExplorerIsHistorical(unittest.TestCase):
+    def test_explorer_stays_under_archive_sfe_hb(self):
+        path = (
+            ROOT
+            / "docs"
+            / "archive"
+            / "sfe-hb"
+            / "equation_explorer_simons_field.py"
+        )
+        self.assertTrue(path.is_file(), path)
+        text = path.read_text(encoding="utf-8")
+        self.assertIn("Historical toy only", text)
+        self.assertIn("Not live Domain Architect", text)
+        self.assertIn("NOT CLAIMED", text)
+        self.assertIn("does not depend on x", text)
+        self.assertIn("def simons_field", text)
+        self.assertFalse((LIVE_ROOT / "simons_field.py").is_file())
+        self.assertFalse((LIVE_ROOT / "equation_explorer_simons_field.py").is_file())
+        index = (ROOT / "docs" / "archive" / "README.md").read_text(encoding="utf-8")
+        self.assertIn("equation_explorer_simons_field.py", index)
+
+
 if __name__ == "__main__":
     unittest.main()
