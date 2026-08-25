@@ -30,11 +30,19 @@ Selected because it is field-available, not because DA ran CFD:
    `discrete_suction`.
 
 Not selected: LEBU blades (parasitic drag), superhydrophobic slip (not
-field-ready), Kramer-class compliant wall (replication mixed).
+field-ready), Kramer-class compliant wall (replication mixed), locally
+resonant polymer film (licensing overlay, no DA envelope).
 
 Literature highs are **not added**. The selected-high envelope (suction
-20%) **can contain** the 15% target. That is an envelope check, not a
-proof and not a flight number.
+20%) **can contain** the 15% target. A separate **commercial band**
+8–12% sits inside that envelope; it is a licensing target, not a tank
+number. That is an envelope check, not a proof and not a flight number.
+
+Application context (not CFD): aircraft cruise boundary layer, Mach
+about 0.75–0.85. Secondary notes only: ship hull, internal duct.
+
+Empirical gates DA does not award: wall-resolved LES of the selected
+riblet geometry, modular panel drag measurement, durability.
 
 ## Run it
 
@@ -54,4 +62,5 @@ Sibling analog: [`TURBULENCE-INTENSITY.md`](TURBULENCE-INTENSITY.md).
 - It does not add 8% + 10% and call the sum a theorem.
 - It does not close NS-open.
 - It does not revive an archived coating dump as the plant.
+- It does not certify a phononic / locally resonant film.
 - It does not make “decrease turbulence” a legal inverse-design target.

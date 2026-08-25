@@ -34,6 +34,8 @@ REFUSED = (
     "no Clay / unaugmented smoothness",
     "no archived coating dump as this plant",
     "no lab-only slip as field hardware",
+    "no phononic film as a DA-certified layer",
+    "no licensing band as a tank result",
 )
 
 # Hardware catalog id → live DA mechanism id. Unselected rows may still
@@ -54,10 +56,11 @@ def available_mechanisms() -> tuple[dict[str, Any], ...]:
             "name": "sawtooth riblets",
             "available_now": True,
             "how": (
-                "grooved film or machined grooves, spacing s+ about 12–20, "
-                "height/spacing about 0.5"
+                "grooved film or machined grooves; triangular or trapezoidal; "
+                "spacing s+ about 12–16; height h+ about 8–12"
             ),
             "role": "constraint",
+            "geometry": {"s_plus": [12, 16], "h_plus": [8, 12], "section": "triangular-or-trapezoidal"},
             "literature_cf_reduction": {"low": 0.04, "high": 0.10},
             "field_ready": True,
             "selected": True,
@@ -113,6 +116,20 @@ def available_mechanisms() -> tuple[dict[str, Any], ...]:
             "selected": False,
             "notes": "Kramer-class. Replication is mixed. Not selected.",
         },
+        {
+            "id": "locally-resonant-film",
+            "name": "locally resonant polymer film",
+            "available_now": False,
+            "how": "thin phononic / locally resonant polymer, 50–300 µm, optional sparse actuators",
+            "role": "constraint",
+            "literature_cf_reduction": None,
+            "field_ready": False,
+            "selected": False,
+            "notes": (
+                "Licensing overlay, not field hardware. Not selected. "
+                "No DA skin-friction envelope. Not an archived coating dump."
+            ),
+        },
     )
 
 
@@ -133,8 +150,9 @@ def _bind_catalog(row: dict[str, Any]) -> dict[str, Any]:
 
 
 def _envelope(selected: list[dict[str, Any]]) -> dict[str, Any]:
-    highs = [m["literature_cf_reduction"]["high"] for m in selected]
-    lows = [m["literature_cf_reduction"]["low"] for m in selected]
+    ranged = [m for m in selected if m.get("literature_cf_reduction")]
+    highs = [m["literature_cf_reduction"]["high"] for m in ranged]
+    lows = [m["literature_cf_reduction"]["low"] for m in ranged]
     selected_high = max(highs) if highs else 0.0
     selected_low = min(lows) if lows else 0.0
     target_cut = BELOW_INDUSTRY_FRACTION
@@ -201,6 +219,7 @@ def available_turbulence_system() -> dict[str, Any]:
         "manufacturable",
         "hardware already available",
         "no lab-only slip",
+        "no phononic film as certified layer",
     ]
     notes = [
         (
@@ -210,6 +229,8 @@ def available_turbulence_system() -> dict[str, Any]:
         ),
         "Default stack: sawtooth riblets (passive) plus discrete suction (active).",
         "Literature ranges are not added. DA does not certify a tank result.",
+        "Commercial 8–12% is a licensing band inside the selected envelope, not a hardware certificate.",
+        "Locally resonant film is catalogued and not selected.",
         "The computational gate is the lumped analog, not the hardware.",
         "Clay is NOT CLAIMED.",
     ]
@@ -246,6 +267,27 @@ def available_turbulence_system() -> dict[str, Any]:
             },
         },
         "target_cut": BELOW_INDUSTRY_FRACTION,
+        "operating_regime": {
+            "primary": "aircraft cruise boundary layer",
+            "mach": [0.75, 0.85],
+            "secondary": ["ship hull", "internal duct"],
+            "notes": "Application context. DA did not run LES or a wind tunnel.",
+        },
+        "commercial_band": {
+            "low": 0.08,
+            "high": 0.12,
+            "source": "licensing target, not a Domain Architect CFD result",
+            "inside_selected_envelope": envelope["selected_high"] >= 0.12 - 1e-12,
+            "relation_to_desired": (
+                "8–12% is a commercial band inside the selected literature "
+                "envelope. DA desired remains 15%."
+            ),
+        },
+        "empirical_next": [
+            "wall-resolved LES of the selected riblet geometry",
+            "modular panel drag measurement at the application Re",
+            "durability (abrasion, UV, temperature, fluid)",
+        ],
         "stack": selected,
         "catalog": catalog,
         **envelope,
