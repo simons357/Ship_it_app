@@ -26,6 +26,7 @@ from .synthesize import inverse_design_architecture
 from .leftover_repair import leftover_repair
 from .localized_repair import localized_repair
 from .open_board import open_board
+from .turbulence_intensity import turbulence_intensity_lab
 from .translate import (
     mechanical_electrical_translation,
     snd_vs_h_translation,
@@ -102,6 +103,8 @@ def handle_api(path: str, payload: dict) -> tuple[int, bytes, str]:
             )
         if path == "/api/open-board":
             return _json_bytes(open_board())
+        if path == "/api/turbulence-intensity":
+            return _json_bytes(turbulence_intensity_lab())
         if path == "/api/inverse-cycle":
             spec = CycleSpec(
                 target=str(payload.get("target") or "x★ = 1"),

@@ -62,7 +62,7 @@ def main(argv: list[str] | None = None) -> int:
         "name",
         nargs="?",
         default="missing-damping",
-        help="missing-damping | control | mechanical-electrical | drag | leftover-repair | localized-repair | open-board",
+        help="missing-damping | control | mechanical-electrical | drag | leftover-repair | localized-repair | open-board | turbulence-intensity",
     )
     p_cy.add_argument(
         "--excise",
@@ -211,6 +211,17 @@ def _cycle_text(payload: dict) -> str:
             lines.append(
                 "still open: " + ", ".join(row.get("id", "") for row in still)
             )
+    elif isinstance(prediction, dict) and prediction.get("protocol") == "turbulence-intensity":
+        lines.append(prediction.get("definition") or "")
+        lines.append(
+            "control x={:.4f}  treated x={:.4f}  relative reduction={:.3f}  "
+            "reduced_vs_control={}".format(
+                prediction["control_arm"]["terminal_x"],
+                prediction["treated_arm"]["terminal_x"],
+                prediction["relative_reduction"],
+                prediction["reduced_vs_control"],
+            )
+        )
     elif isinstance(prediction, dict) and prediction.get("board"):
         lines.append(prediction["board"].get("text") or "")
     elif prediction:

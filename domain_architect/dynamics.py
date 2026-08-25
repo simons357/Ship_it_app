@@ -36,6 +36,22 @@ def second_order_field(omega: float, zeta: float) -> VectorField:
     return f
 
 
+def produced_intensity_field(omega: float, zeta: float, x_eq: float) -> VectorField:
+    """Lumped intensity analog: ẍ + 2ζω ẋ + ω² x = ω² x_eq + u.
+
+    Uncontrolled (u=0) equilibrium is the baseline intensity x_eq.
+    This is not a k-equation and not 3D Navier–Stokes.
+    """
+
+    def f(state: np.ndarray, action: float, t: float) -> np.ndarray:
+        _ = t
+        x, v = float(state[0]), float(state[1])
+        acc = (omega**2) * x_eq + action - 2.0 * zeta * omega * v - (omega**2) * x
+        return np.array([v, acc], dtype=float)
+
+    return f
+
+
 def pd_control(
     state: np.ndarray,
     target: float,

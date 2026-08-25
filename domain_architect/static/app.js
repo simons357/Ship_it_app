@@ -129,6 +129,12 @@ $("cyOpenBoard").addEventListener("click", async () => {
   show($("cyOut"), await api("/api/cycle", { name: "open-board" }));
 });
 
+$("cyIntensity").addEventListener("click", async () => {
+  $("cyName").value = "turbulence-intensity";
+  $("cyOut").textContent = "Running intensity vs no-actuation control…";
+  show($("cyOut"), await api("/api/cycle", { name: "turbulence-intensity" }));
+});
+
 $("cyExciseStep").addEventListener("click", async () => {
   const raw = ($("cyExciseK").value || "").trim();
   const k = Number.parseInt(raw, 10);

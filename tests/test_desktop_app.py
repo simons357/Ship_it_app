@@ -66,6 +66,8 @@ class TestLauncherStartsApp(unittest.TestCase):
                     self.assertIn("localized-repair", html)
                     self.assertIn("open-board", html)
                     self.assertIn("Honest OPEN board", html)
+                    self.assertIn("turbulence-intensity", html)
+                    self.assertIn("Intensity vs control", html)
                     self.assertIn("Excise this step", html)
                     self.assertIn("id=\"cyExciseK\"", html)
                     self.assertNotIn("Excise step 2", html)
