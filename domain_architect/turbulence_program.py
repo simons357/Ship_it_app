@@ -3,10 +3,10 @@
 Program
     turbulence-reduction
 Applications
-    ships       ACTIVE   (Maersk-class hull; ship_package)
-    missiles    QUEUED   (high-speed external flow)
-    submarines  QUEUED
-    drones      QUEUED
+    ships        ACTIVE   (Maersk-class hull; ship_package)
+    aircraft     QUEUED   (cruise transport; drones / UAV sit here)
+    submarines   QUEUED
+    hypersonic   QUEUED   (high-speed atmospheric flow; not a weapon design)
 
 Correspondence is analogy, not a declared T across platforms.
 Not 3D Navier–Stokes. Clay is NOT CLAIMED. DA does not file patents.
@@ -23,15 +23,18 @@ from .schema import CorrespondenceKind, ValidationGate
 from .synthesize import CandidateArchitecture, Provenance
 
 
-APPLICATION_ORDER = ("ships", "missiles", "submarines", "drones")
+APPLICATION_ORDER = ("ships", "aircraft", "submarines", "hypersonic")
 
 REFUSED = (
     "no 3D Navier–Stokes regularity claim",
     "no Clay / unaugmented smoothness",
     "no adding literature percentages as a proof",
     "no one stack copied across platforms without a new study",
-    "no phononic film as a DA-certified layer",
+    "no phononic / resonant / viscoelastic film as a DA-certified Cf layer",
     "no 9–14% lab as a DA result",
+    "no 8–12% copied onto aircraft, submarines, or hypersonic",
+    "no classified military programs",
+    "no weapon design",
     "no provisional patent filing by Domain Architect",
 )
 
@@ -94,21 +97,25 @@ def applications() -> tuple[dict[str, Any], ...]:
                 "contains_12pct"
             ),
             "validation_gate": ship_pkg.get("validation_gate"),
+            "includes": ["container", "tanker", "bulker"],
         },
         _queued_application(
-            id="missiles",
-            title="high-speed missiles",
+            id="aircraft",
+            title="aircraft (cruise transport; drones included)",
             regime=(
-                "high-Re external flow; compressibility and heat may dominate "
-                "skin friction. Not a hull coating study."
+                "transonic cruise for transport; low-to-moderate Re mixed "
+                "laminar/turbulent patches for drones / UAV. Weight, "
+                "durability, maintenance, and certification dominate."
             ),
             why_separate=(
-                "Ship wall units and fouling-release chemistry do not transfer. "
-                "Need a new decompose of the compressible near-wall layer."
+                "Ship seawater u_τ and fouling-release chemistry do not "
+                "transfer. Flight-test public numbers are total-aircraft "
+                "drag, not a copied ship Cf envelope. Drones are the same "
+                "slot at a different Re, not a fifth project."
             ),
-            spec="docs/projects/turbulence-reduction/missiles.md",
+            spec="docs/projects/turbulence-reduction/aircraft.md",
             next_study="new DA application study after ships; do not copy ship_package",
-            not_a_weapon_design=True,
+            includes=["commercial / transport cruise", "drones / UAV"],
         ),
         _queued_application(
             id="submarines",
@@ -125,18 +132,22 @@ def applications() -> tuple[dict[str, Any], ...]:
             next_study="new DA application study; do not copy ship_package",
         ),
         _queued_application(
-            id="drones",
-            title="drones",
+            id="hypersonic",
+            title="hypersonic vehicles (public literature only)",
             regime=(
-                "low-to-moderate Re; mixed laminar/turbulent patches; "
-                "mass and power budgets dominate."
+                "high-Mach atmospheric external flow. Heat, pressure, and "
+                "plasma sheaths can dominate skin friction. Public "
+                "literature only. Not a weapon design."
             ),
             why_separate=(
-                "A 50–90 µm ship riblet is the wrong scale and the wrong "
-                "weight budget. Need a new decompose."
+                "Ship wall units and fouling-release chemistry do not transfer. "
+                "Need a new decompose of the compressible, high-enthalpy "
+                "near-wall layer. Do not invent classified access."
             ),
-            spec="docs/projects/turbulence-reduction/drones.md",
-            next_study="new DA application study after ships and/or missiles",
+            spec="docs/projects/turbulence-reduction/hypersonic.md",
+            next_study="new DA application study after ships; public literature only",
+            not_a_weapon_design=True,
+            public_literature_only=True,
         ),
     )
 
@@ -176,7 +187,7 @@ def turbulence_reduction_program() -> dict[str, Any]:
         "protocol": "turbulence-reduction",
         "headline": (
             "turbulence-reduction program: ships ACTIVE; "
-            "missiles, submarines, drones QUEUED"
+            "aircraft (drones included), submarines, hypersonic QUEUED"
         ),
         "project": "turbulence-reduction",
         "home": "docs/projects/turbulence-reduction/README.md",
@@ -192,8 +203,10 @@ def turbulence_reduction_program() -> dict[str, Any]:
         "notes": [
             "This is a program, not a single plant.",
             "Ships (Maersk-class) is the live application. See ship_package.",
-            "Missiles, submarines, and drones are queued slots for later DA studies.",
+            "Aircraft (drones included), submarines, and hypersonic are queued.",
+            "Resonant / phononic / viscoelastic overlay is catalogued, not certified.",
             "Do not copy the ship riblet envelope onto those platforms.",
+            "Hypersonic is a public-literature flow-regime slot, not a weapon design.",
             "Clay is NOT CLAIMED.",
         ],
     }
@@ -210,9 +223,9 @@ def cycle_turbulence_reduction() -> CycleReport:
         components=[
             "program: turbulence-reduction",
             "application ships (ACTIVE)",
-            "application missiles (QUEUED)",
+            "application aircraft including drones (QUEUED)",
             "application submarines (QUEUED)",
-            "application drones (QUEUED)",
+            "application hypersonic (QUEUED)",
         ],
         replaced={},
         hypothesis=(
@@ -232,7 +245,7 @@ def cycle_turbulence_reduction() -> CycleReport:
                 ],
                 compatibility_checks=["application slots named"],
                 modifications=[],
-                evidence=["ships ACTIVE; missiles/submarines/drones QUEUED"],
+                evidence=["ships ACTIVE; aircraft/submarines/hypersonic QUEUED"],
                 validation_status=ValidationGate.MATHEMATICAL.value,
             )
         ],

@@ -20,8 +20,8 @@ Specification: [`docs/DOMAIN-ARCHITECT.md`](docs/DOMAIN-ARCHITECT.md)
 
 Turbulence reduction is a **program** under Domain Architect, not a
 single plant: [`docs/projects/turbulence-reduction/README.md`](docs/projects/turbulence-reduction/README.md).
-Ships (Maersk-class) is ACTIVE. High-speed missiles, submarines, and
-drones are QUEUED slots for later DA studies.
+Ships (Maersk-class) is ACTIVE. Aircraft (drones included), submarines,
+and hypersonic vehicles are QUEUED slots for later DA studies.
 
 ## Open the app
 

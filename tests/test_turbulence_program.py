@@ -32,9 +32,12 @@ class TestTurbulenceReductionProgram(unittest.TestCase):
         self.assertEqual(payload["protocol"], "turbulence-reduction")
         self.assertEqual(payload["project"], "turbulence-reduction")
         self.assertEqual(payload["application_order"], list(APPLICATION_ORDER))
-        self.assertEqual(payload["application_order"], ["ships", "missiles", "submarines", "drones"])
+        self.assertEqual(
+            payload["application_order"],
+            ["ships", "aircraft", "submarines", "hypersonic"],
+        )
         self.assertEqual(payload["active"], ["ships"])
-        self.assertEqual(payload["queued"], ["missiles", "submarines", "drones"])
+        self.assertEqual(payload["queued"], ["aircraft", "submarines", "hypersonic"])
         self.assertEqual(payload["kind"], CorrespondenceKind.ANALOGY.value)
         self.assertEqual(payload["validation_gate"], ValidationGate.MATHEMATICAL.value)
 
@@ -50,7 +53,7 @@ class TestTurbulenceReductionProgram(unittest.TestCase):
         self.assertFalse(ships["envelope_awarded"])
         self.assertIn("Maersk", ships["operating_regime"])
 
-        for slot in ("missiles", "submarines", "drones"):
+        for slot in ("aircraft", "submarines", "hypersonic"):
             row = payload["by_id"][slot]
             self.assertEqual(row["status"], "QUEUED")
             self.assertFalse(row["envelope_awarded"])
@@ -59,17 +62,23 @@ class TestTurbulenceReductionProgram(unittest.TestCase):
             self.assertNotIn("contains_8pct", row)
             self.assertNotIn("product_stack", row)
 
-        missiles = payload["by_id"]["missiles"]
-        self.assertTrue(missiles["not_a_weapon_design"])
-        self.assertIn("compressibility", missiles["operating_regime"])
+        aircraft = payload["by_id"]["aircraft"]
+        self.assertIn("drones / UAV", aircraft["includes"])
+
+        hypersonic = payload["by_id"]["hypersonic"]
+        self.assertTrue(hypersonic["not_a_weapon_design"])
+        self.assertTrue(hypersonic["public_literature_only"])
+        self.assertIn("plasma", hypersonic["operating_regime"])
 
         board = payload["board"]["text"]
         self.assertIn("TURBULENCE REDUCTION PROGRAM", board)
         self.assertIn("QUEUED", board)
         self.assertIn("ships", board)
-        self.assertIn("missiles", board)
+        self.assertIn("aircraft", board)
         self.assertIn("submarines", board)
+        self.assertIn("hypersonic", board)
         self.assertIn("drones", board)
+        self.assertNotIn("  missiles  ", board)
         self.assertIn("12% contained=False", board)
 
         blob = json.dumps(payload).lower()
@@ -108,7 +117,7 @@ class TestTurbulenceReductionProgram(unittest.TestCase):
         cycle = json.loads(body)
         self.assertEqual(cycle["mode"], "turbulence-reduction")
         prediction = cycle["prediction"]
-        self.assertEqual(prediction["queued"], ["missiles", "submarines", "drones"])
+        self.assertEqual(prediction["queued"], ["aircraft", "submarines", "hypersonic"])
 
     def test_cli_prints_program_board(self):
         from domain_architect.cli import main
@@ -121,8 +130,9 @@ class TestTurbulenceReductionProgram(unittest.TestCase):
         self.assertIn("TURBULENCE REDUCTION PROGRAM", text)
         self.assertIn("QUEUED", text)
         self.assertIn("ships", text)
-        self.assertIn("missiles", text)
+        self.assertIn("aircraft", text)
         self.assertIn("submarines", text)
+        self.assertIn("hypersonic", text)
         self.assertIn("drones", text)
         self.assertIn("12% contained=False", text)
         self.assertNotIn("NAV-42", text)

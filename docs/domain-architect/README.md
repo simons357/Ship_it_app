@@ -11,7 +11,7 @@
 **Intensity vs control:** [`TURBULENCE-INTENSITY.md`](TURBULENCE-INTENSITY.md) — lumped \(x\to x^\star\) against a no-actuation arm; not 3D NS  
 **Available-tech stack:** [`AVAILABLE-TURBULENCE.md`](AVAILABLE-TURBULENCE.md) — riblets + discrete suction; 15% is the **desired** analog state  
 **Ship-hull package:** [`SHIP-RIBLET-PACKAGE.md`](SHIP-RIBLET-PACKAGE.md) — Maersk-class fouling-release riblets; 8–12% Cf is desired; 12% is outside the durable literature  
-**Turbulence-reduction program:** [`docs/projects/turbulence-reduction/README.md`](../projects/turbulence-reduction/README.md) — one DA project, four applications (ships ACTIVE; missiles, submarines, drones QUEUED)
+**Turbulence-reduction program:** [`docs/projects/turbulence-reduction/README.md`](../projects/turbulence-reduction/README.md) — one DA project, four applications (ships ACTIVE; aircraft including drones, submarines, hypersonic QUEUED)
 
 Domain Architect analyzes, translates and synthesizes systems by the
 functional roles their components perform.

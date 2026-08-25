@@ -74,6 +74,7 @@ class TestLauncherStartsApp(unittest.TestCase):
                     self.assertIn("turbulence-reduction", html)
                     self.assertIn("Turbulence reduction (4 apps)", html)
                     self.assertIn("id=\"cyProgram\"", html)
+                    self.assertIn("drones included", html)
                     self.assertIn("hardware already available", html)
                     self.assertEqual(response.headers.get("Cache-Control"), "no-store")
                     self.assertIn("Excise this step", html)
