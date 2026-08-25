@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import unittest
 from pathlib import Path
 
@@ -21,6 +22,18 @@ class TestPhiGeometryBridgeFiles(unittest.TestCase):
         self.assertIn("Phi-Renormalization as Universal Geometry", essay)
         self.assertIn("not physical equivalence", reading)
         self.assertIn("refused", reading.lower())
+
+    def test_older_swirl_faces_are_not_the_22_aug_compile(self):
+        faces = (SWIRL / "FACES.md").read_text(encoding="utf-8")
+        self.assertIn("not a compile of 22 August", faces.lower())
+        controlling = SWIRL / "Simons_PhiRenorm_Swirl_2026-08-22.tex"
+        digest = hashlib.sha256(controlling.read_bytes()).hexdigest()
+        self.assertEqual(
+            digest,
+            "eec7aa57b32ac4d87378b6029fa8e0ea68f8cb9c4925c73a06b7841283a89c35",
+        )
+        june = SWIRL / "Simons_PhiRenorm_Swirl_2026-06-30.pdf"
+        self.assertNotEqual(june.read_bytes(), controlling.read_bytes())
 
 
 class TestSwirlIdentityIsNotGravityOrCosmos(unittest.TestCase):

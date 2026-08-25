@@ -241,5 +241,91 @@ class TestFinalPolishedIsADistinctFace(unittest.TestCase):
         )
 
 
+class TestV7ArXivDocxIsADistinctFace(unittest.TestCase):
+    """Word v7 export is another Q6/lambda_H face. Not FIXED. Not Clay."""
+
+    DOCX = NS_SND / "NS_Regularity_v7_ArXiv.docx"
+    TXT = NS_SND / "NS_Regularity_v7_ArXiv.txt"
+    DOCX_SHA256 = (
+        "ca055da6db23aa58ed04747c2e9ea505ada3d373054f74ac3dd8d841c796046e"
+    )
+    TXT_SHA256 = (
+        "4488187effbfd6b1ab31abe59d639765d259f9d8bbf510674f71daa58e858d0c"
+    )
+
+    def test_hash_lock_distinct_from_polished_and_august(self):
+        self.assertTrue(self.DOCX.is_file(), self.DOCX)
+        self.assertTrue(self.TXT.is_file(), self.TXT)
+        docx = self.DOCX.read_bytes()
+        txt = self.TXT.read_bytes()
+        self.assertEqual(hashlib.sha256(docx).hexdigest(), self.DOCX_SHA256)
+        self.assertEqual(hashlib.sha256(txt).hexdigest(), self.TXT_SHA256)
+        self.assertEqual(len(docx), 34637)
+        polished = (NS_SND / "NS_Regularity_Final_Polished.tex").read_bytes()
+        august = PAPER.read_bytes()
+        self.assertNotEqual(docx, polished)
+        self.assertNotEqual(docx, august)
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file(),
+            "do not invent June FIXED TeX from the v7 Word filename",
+        )
+        extract = txt.decode("utf-8")
+        self.assertIn("Self-Adaptive Spectral Damping", extract)
+        self.assertIn("Open Problem (The Spectral Non-Dispersal Condition)", extract)
+        self.assertIn("[SND]", extract)
+        self.assertIn("Open — precisely stated", extract)
+        self.assertNotIn("Goldbach", extract)
+        self.assertNotIn("GNC", extract)
+        self.assertNotIn("Lemma 6.1", extract)
+        self.assertNotIn("Corrected June 2026", extract)
+
+    def test_faces_mark_v7_not_fixed_not_clay(self):
+        faces = FACES.read_text(encoding="utf-8")
+        readme = README.read_text(encoding="utf-8")
+        self.assertIn("NS_Regularity_v7_ArXiv.docx", faces)
+        self.assertIn("NS_Regularity_v7_ArXiv.txt", faces)
+        self.assertIn("ca055da6db23", faces)
+        self.assertIn("READOUT_v7_Millennium_Publisher_Match.md", faces)
+        self.assertIn("not on disk", faces.lower())
+        self.assertIn("NS_Regularity_v7_ArXiv.docx", readme)
+        self.assertIn("NOT CLAIMED", readme)
+        self.assertIn("do not use as closed", faces.lower())
+        self.assertFalse(
+            (ROOT / "READOUT_v7_Millennium_Publisher_Match.md").is_file()
+        )
+        self.assertFalse(
+            (NS_SND / "READOUT_v7_Millennium_Publisher_Match.md").is_file()
+        )
+
+
+class TestShellStressIsNumericalNotTheorem(unittest.TestCase):
+    XLSX = NS_SND / "shell-stress" / "Simons_NS_Shell_Stress_Test.xlsx"
+    NOTE = NS_SND / "shell-stress" / "README.md"
+    XLSX_SHA256 = (
+        "ddba329536ee6bf6148c495813347725b7658b2bd33a0d4f47685543f980f3d7"
+    )
+
+    def test_hash_lock_and_readme_forbids_theorem_claim(self):
+        self.assertTrue(self.XLSX.is_file(), self.XLSX)
+        self.assertTrue(self.NOTE.is_file(), self.NOTE)
+        raw = self.XLSX.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), self.XLSX_SHA256)
+        self.assertEqual(len(raw), 287973)
+        note = self.NOTE.read_text(encoding="utf-8")
+        self.assertIn("not a theorem", note.lower())
+        self.assertIn("route j", note.lower())
+        self.assertIn("all-", note.lower())
+        self.assertIn("Not Clay", note)
+        self.assertIn("24", note)
+        self.assertIn("not an axisymmetric-swirl", note.lower())
+        faces = FACES.read_text(encoding="utf-8")
+        self.assertIn("Simons_NS_Shell_Stress_Test.xlsx", faces)
+        self.assertIn("Route J", faces)
+        self.assertIn("ddba329536ee", faces)
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file()
+        )
+
+
 if __name__ == "__main__":
     raise SystemExit(unittest.main())

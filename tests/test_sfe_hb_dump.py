@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import ast
+import hashlib
 import unittest
 from pathlib import Path
 
@@ -22,6 +23,18 @@ LIVE_FORBIDDEN = (
     "harmonic blueprint",
     "uhf",
     "dhfa",
+)
+
+LIVE_ROOT = Path(__file__).resolve().parents[1] / "domain_architect"
+ARCHIVE_QSTACK = (
+    Path(__file__).resolve().parents[1]
+    / "docs"
+    / "archive"
+    / "qstack"
+    / "qstack_regularity_paper.pdf"
+)
+QSTACK_SHA256 = (
+    "3ea9a93ac39d35e773f550c12b6f1e643f6fd65247ccf9b094d108789e7f96e8"
 )
 
 
@@ -112,6 +125,27 @@ class TestDesktopApi(unittest.TestCase):
         payload = __import__("json").loads(body)
         ids = [eq["equation_id"] for eq in payload["equations"]]
         self.assertIn("SFE-H001", ids)
+
+
+class TestQstackRegularityPdfStaysArchived(unittest.TestCase):
+    def test_pdf_is_in_archive_not_in_live_package(self):
+        self.assertTrue(ARCHIVE_QSTACK.is_file(), ARCHIVE_QSTACK)
+        raw = ARCHIVE_QSTACK.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), QSTACK_SHA256)
+        self.assertEqual(len(raw), 191238)
+        self.assertFalse((LIVE_ROOT / "qstack.py").is_file())
+        self.assertFalse((LIVE_ROOT / "qnav.py").is_file())
+        note = ARCHIVE_QSTACK.parent.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("archive only", note.lower())
+        self.assertIn("Not Clay", note)
+        self.assertIn("Not live Domain Architect", note)
+        self.assertIn("import into `domain_architect/`", note)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("qstack/", archive_index)
+        self.assertIn("not live DA", archive_index)
+        self.assertNotIn("qstack_regularity", " ".join(p.name for p in LIVE_ROOT.iterdir()))
 
 
 class TestNoPaddedParameterLevel(unittest.TestCase):
