@@ -19,7 +19,7 @@ If a later manuscript (`Strong Draft: Alignment Functionals…` or similar) actu
 
 - CBFD / NAV-42 **branding** as CFD post-processing.
 - Geophysical add-ons (tropical cyclones, Rossby/Froude hybrids \(H_{\mathrm{geo}}\)).
-- **Q Operating System / Fluid-Q / \(Q_c,Q_r,S,F\)** hierarchical notes (queued Grok dump; cylinder-wake demo). Receipt: [`Q-OS-FLUID-Q.RECEIPT.md`](Q-OS-FLUID-Q.RECEIPT.md).
+- **Q Operating System / Fluid-Q / \(Q_c,Q_r,S,F\)** hierarchical notes (Grok outline arrived; 11 524-byte *Master Notes* **not received**; cylinder-wake demo **not** live DA). Receipt: [`Q-OS-FLUID-Q.RECEIPT.md`](Q-OS-FLUID-Q.RECEIPT.md).
 - Numpy toys named `qc_coherence` / `qr_resonance` (Welch-PSD fidelity). Filed as [`qc_qr_toys.py`](qc_qr_toys.py). Paste 2 adds unused `entropy` / `correlate` imports and a demo; paste 3 is identical to paste 1. **Not** copied into live DA. **Forbidden** in live `domain_architect/*.py`.
 - SFE “black hole simulator” matplotlib paste: [`sfe_black_hole_simulator_paste.py`](sfe_black_hole_simulator_paste.py). **Not** Track A. Do not add an Equation Explorer tab.
 - Title-only *Strong Draft: Alignment Functionals for Navier–Stokes Regularity*: **not received**. [`Alignment_Functionals_Strong_Draft.MISSING.md`](Alignment_Functionals_Strong_Draft.MISSING.md).

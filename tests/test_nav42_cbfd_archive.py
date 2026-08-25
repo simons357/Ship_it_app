@@ -70,6 +70,13 @@ class TestNav42CbfdArchive(unittest.TestCase):
         self.assertTrue((archive / "Alignment_Functionals_Strong_Draft.MISSING.md").is_file())
         self.assertTrue((archive / "qc_qr_toys.py").is_file())
         self.assertTrue((archive / "Q-OS-FLUID-Q.RECEIPT.md").is_file())
+        qos = (archive / "Q-OS-FLUID-Q.RECEIPT.md").read_text(encoding="utf-8")
+        self.assertIn("not received", qos.lower())
+        self.assertIn("11524", qos)
+        self.assertIn("cylinder-wake", qos)
+        self.assertIn("rejected", qos.lower())
+        self.assertIn("NOT CLAIMED", qos)
+        self.assertIn("Not Track A", qos)
         self.assertTrue((archive / "sfe_black_hole_simulator_paste.py").is_file())
         missing = (archive / "Alignment_Functionals_Strong_Draft.MISSING.md").read_text(
             encoding="utf-8"
@@ -100,6 +107,7 @@ class TestNav42CbfdArchive(unittest.TestCase):
         self.assertIn("nav-42-cbfd-2026-04", lookup)
         self.assertIn("Alignment Functionals", lookup)
         self.assertIn("qc_coherence", lookup)
+        self.assertIn("11524", lookup)
 
     def test_live_domain_architect_python_has_no_nav42_toys(self) -> None:
         forbidden = (
