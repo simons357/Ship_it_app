@@ -10,7 +10,7 @@ enstrophy production. Forbidden in live domain_architect/*.py.
 Paste 2 (25 Aug 2026) is the same two functions plus unused imports
 `scipy.stats.entropy` and `scipy.signal.correlate` (never called) and a
 `__main__` demo on `[0.8, 0.1, 0.05, 0.05]`. Those unused imports are
-**not** copied here. A third identical paste is still queued.
+**not** copied here. Paste 3 (this message) is the same as paste 1; not re-filed.
 """
 
 from __future__ import annotations
