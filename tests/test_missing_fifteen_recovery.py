@@ -140,7 +140,8 @@ class TestJuneFixedTexStillMissingStopReconstruction(unittest.TestCase):
         self.assertIn("REJECT as identity", faces)
         self.assertIn("April 23", base44)
         self.assertIn("Dominant-Shell", base44)
-        self.assertIn("not the April 23", base44.lower())
+        collapsed_base44 = " ".join(base44.lower().replace("*", " ").split())
+        self.assertIn("not the april 23", collapsed_base44)
         named = list((ROOT / "docs").rglob("Paper2_NS_Regularity_SND_FIXED.tex"))
         self.assertEqual(named, [])
 

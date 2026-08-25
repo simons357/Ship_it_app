@@ -1,8 +1,8 @@
 > **Missing-receipt banner (25 August 2026).** Filename-only chat drop.
 > **Not** the August Q6 PDF (`a2391122…`). **Not** MAGNUM / mix TeX
 > (`f41194c76cf4…`). **Not** `GCD_Spectral_Paper1_UPDATED_2026-08-14.tex`.
-> **Not** PAPER_A / PAPER_B. Clay is **NOT CLAIMED**. Do **not** invent the
-> report. Do **not** import into `domain_architect/`.
+> **Not** PAPER_A / PAPER_B. Clay is **NOT CLAIMED**. Do **not** invent the report.
+> Do **not** import into `domain_architect/`.
 
 # `GCD_Spectral_Dynamics_Report_Jonathan_Simons_2026` — not received
 
