@@ -516,7 +516,7 @@ class TestAprilSpectralCoherenceFilenameIsMay18ImpliesAlias(unittest.TestCase):
         )
         self.assertFalse(
             (NS_SND / self.DOWNLOADS_DRAFT).is_file(),
-            "do not invent the still-absent Downloads draft from a line count",
+            "do not re-file the 675001cd1_ Base44 hash-prefix name as a second copy",
         )
 
     def test_faces_record_alias_and_reject_expected_april_q6_family(self):
@@ -548,7 +548,7 @@ class TestAprilSpectralCoherenceFilenameIsMay18ImpliesAlias(unittest.TestCase):
         self.assertIn("do not use as closed", faces.lower())
         self.assertIn("Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex", faces)
         self.assertIn("675001cd1_Simons_NS_Paper2_DRAFT.tex", faces)
-        self.assertIn("still absent", faces.lower())
+        self.assertIn("hash prefix", faces.lower())
         self.assertIn("base44.app", faces)
         self.assertIn("69b28657b0df374441f0302e", faces)
         self.assertIn("HTTP **302**", faces)
@@ -1056,6 +1056,124 @@ class TestMacDownloadsFixedPdfIsGitAlias(unittest.TestCase):
         self.assertIn("DA-VC-01 **FAIL**", faces)
         self.assertNotIn("DA-VC-01 PASS", faces)
         self.assertNotIn("DA-VC-01 PASS", readme)
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file()
+        )
+
+
+class TestDownloads675001cd1IsMay18ImpliesAlias(unittest.TestCase):
+    """Downloads/Base44 675001cd1_Simons_NS_Paper2_DRAFT.tex is May 18 implies.
+
+    Claude/Base44 hash prefix. SHA matches DRAFT_original f51ed5c05ec3….
+    Alias only — do not re-file. Not FIXED. Not August. Not Final Polished.
+    Not Clay. Title page is Implies / May 18, not Conditional Regularity Criterion.
+    """
+
+    DRAFT = NS_SND / "Simons_NS_Paper2_DRAFT_original.tex"
+    DRAFT_SHA256 = (
+        "f51ed5c05ec3886603a69de942b890dc76c73b3860fe089a056b4665ab8cc4cb"
+    )
+    AUGUST_SHA256 = (
+        "1ff7a211c00d660c30365e5913727f0129cfc5cd76f1f40ed9a47f468c746cc3"
+    )
+    POLISHED_SHA256 = (
+        "b9249af37f3624548d7bee69f26fc2fc0d93c22e744c54cd110810725cd80817"
+    )
+    ALIAS = "675001cd1_Simons_NS_Paper2_DRAFT.tex"
+    MAC = Path("/Users/jonathansimons/Downloads") / ALIAS
+    BASE44 = (
+        "https://base44.app/api/apps/69b28657b0df374441f0302e/files/mp/"
+        f"public/69b28657b0df374441f0302e/{ALIAS}"
+    )
+
+    def test_sha_matches_draft_original_not_fixed_august_or_polished(self):
+        raw = self.DRAFT.read_bytes()
+        digest = hashlib.sha256(raw).hexdigest()
+        self.assertEqual(digest, self.DRAFT_SHA256)
+        self.assertEqual(digest[:8], "f51ed5c0")
+        self.assertEqual(len(raw), 26998)
+        self.assertEqual(raw.count(b"\n"), 664)
+        june = PDF.read_bytes()
+        august = PAPER.read_bytes()
+        polished = (NS_SND / "NS_Regularity_Final_Polished.tex").read_bytes()
+        self.assertEqual(hashlib.sha256(june).hexdigest(), PDF_SHA256)
+        self.assertEqual(PDF_SHA256[:8], "7de9444d")
+        self.assertEqual(hashlib.sha256(august).hexdigest(), self.AUGUST_SHA256)
+        self.assertEqual(self.AUGUST_SHA256[:8], "1ff7a211")
+        self.assertEqual(hashlib.sha256(polished).hexdigest(), self.POLISHED_SHA256)
+        self.assertEqual(self.POLISHED_SHA256[:8], "b9249af37f"[:8])
+        self.assertEqual(len(polished.splitlines()), 825)
+        self.assertNotEqual(raw, june)
+        self.assertNotEqual(raw, august)
+        self.assertNotEqual(raw, polished)
+        self.assertNotEqual(digest, PDF_SHA256)
+        self.assertNotEqual(digest, self.AUGUST_SHA256)
+        self.assertNotEqual(digest, self.POLISHED_SHA256)
+        tex = raw.decode("utf-8")
+        self.assertEqual(classify_paper2_tex_title_page(tex), "may18_implies_draft")
+        self.assertNotEqual(classify_paper2_tex_title_page(tex), "june_fixed_source")
+        self.assertIn("Implies Global Regularity", tex)
+        self.assertIn(r"\date{May 18, 2026}", tex)
+        self.assertIn("PAPER 2 — SUBMISSION DRAFT", tex)
+        self.assertNotIn("Conditional Regularity Criterion", tex)
+        self.assertNotIn("Corrected June 2026", tex)
+        self.assertNotIn("Conditional Global-Regularity Framework", tex)
+        self.assertFalse(
+            (NS_SND / self.ALIAS).is_file(),
+            "do not re-file the 675001cd1_ hash-prefix name as a second copy",
+        )
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file(),
+            "do not invent June FIXED TeX from this alias",
+        )
+        self.assertFalse(
+            self.MAC.is_file(),
+            "Mac Downloads is not mounted on this VM",
+        )
+
+    def test_faces_record_alias_not_absent_not_fixed_not_clay(self):
+        faces = FACES.read_text(encoding="utf-8")
+        readme = README.read_text(encoding="utf-8")
+        note = (NS_SND / "zenodo-20269536" / "README.md").read_text(encoding="utf-8")
+        hay = faces.lower()
+        self.assertIn(self.ALIAS, faces)
+        self.assertIn(self.ALIAS, readme)
+        self.assertIn(self.ALIAS, note)
+        self.assertIn(self.BASE44, faces)
+        self.assertIn("Claude/Base44 hash prefix", faces)
+        self.assertIn("HTTP **302**", faces)
+        self.assertIn("HTTP **200**", faces)
+        self.assertIn("media.base44.com", faces)
+        self.assertIn("Last-Modified", faces)
+        self.assertIn("f51ed5c05ec3", faces)
+        self.assertIn(
+            "f51ed5c05ec3886603a69de942b890dc76c73b3860fe089a056b4665ab8cc4cb",
+            faces,
+        )
+        self.assertIn("26998", faces.replace(" ", "").replace(",", ""))
+        self.assertIn("664", faces)
+        self.assertIn("Implies Global Regularity", faces)
+        self.assertIn("May 18, 2026", faces)
+        self.assertIn("PAPER 2 — SUBMISSION DRAFT", faces)
+        self.assertIn("not re-filed", hay)
+        self.assertIn("do not re-file", hay)
+        self.assertIn("untrusted alias", hay)
+        self.assertIn("do not assume draft_original until hashed", hay)
+        self.assertIn("**Not** Final Polished", faces)
+        self.assertIn("b9249af37f", faces)
+        self.assertIn("825", faces)
+        self.assertIn("1ff7a211", faces)
+        self.assertIn("7de9444d", faces)
+        self.assertIn("**Not** Clay", faces)
+        self.assertIn("NOT CLAIMED", faces)
+        self.assertIn("do not use as closed", hay)
+        self.assertIn("675001cd1", readme)
+        self.assertIn("HTTP **302**", readme)
+        self.assertIn("HTTP **200**", readme)
+        self.assertIn("hash prefix", readme.lower())
+        for line in faces.splitlines():
+            if "675001cd1" in line:
+                self.assertNotIn("still absent", line.lower(), line)
         self.assertFalse(
             (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file()
         )

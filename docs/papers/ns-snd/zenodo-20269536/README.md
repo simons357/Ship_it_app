@@ -30,7 +30,7 @@ SHA-256 of the Zenodo TeX:
 
 That is **byte-identical** to [`../Simons_NS_Paper2_DRAFT_original.tex`](../Simons_NS_Paper2_DRAFT_original.tex). No second copy in this folder.
 
-Same SHA as the Base44 / Desktop alias `5dfeb6b64_Paper2_April_Spectral_Coherence_DRAFT.tex`. Three sources, **one face**.
+Same SHA as the Base44 / Desktop alias `5dfeb6b64_Paper2_April_Spectral_Coherence_DRAFT.tex` and as Downloads / Base44 `675001cd1_Simons_NS_Paper2_DRAFT.tex` (`675001cd1_` is a Claude/Base44 hash prefix). Several filenames, **one face**.
 
 ## TeX title page (not the Zenodo filename)
 
