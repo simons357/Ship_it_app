@@ -22,6 +22,18 @@ Four theorems: the algebraic identity \(\frac1{r^4}\partial_z(\Gamma^2)=\partial
 
 [`SWIRL-CONTINUATION.md`](SWIRL-CONTINUATION.md) is the 22 August reconstruction of what stands. [`phi_renorm_continuation.tex`](phi_renorm_continuation.tex) is the earlier continuation sketch.
 
+## May 2026 geometry-bridge essay
+
+[`PHI_GEOMETRY_BRIDGE.md`](PHI_GEOMETRY_BRIDGE.md) is the author’s
+essay *The Phi-Renormalization as Universal Geometry*. It links the
+axis identity to CMB, Saturn, a dodecahedral lattice, and Kabbalah.
+
+That essay is a **correspondence hypothesis**. Domain Architect does
+not award it as physical equivalence. The DA reading is
+[`DA-ON-PHI-GEOMETRY.md`](DA-ON-PHI-GEOMETRY.md). The 22 August
+theorem paper does not use Q6 / primes / spectral clock as load-bearing
+mathematics.
+
 ## Try it in Domain Architect
 
 Launch the desktop app, open **Decompose**, and click **Swirl identity** (or paste the lines below). Live Decompose currently returns `unclassified` at Level 0 and warns that \(\Phi\) is an identifier, not a gravitational potential. That is expected: this lab is not a fluids solver, and swirl \(\Phi=u_\theta/r\) must not be glued to FRA output \(\Phi\).
