@@ -18,6 +18,8 @@ Four theorems: the algebraic identity \(\frac1{r^4}\partial_z(\Gamma^2)=\partial
 - PDF: https://zenodo.org/records/20405405/files/PhiRenorm_TrackB.pdf
 - Short companion: https://doi.org/10.5281/zenodo.20405597
 
+## Status note
+
 Old April Overleaf Clay/SERPENT drafts are **quarantine**. Hygiene note:
 [`docs/archive/OVERLEAF_VALUE_AUDIT_2026-08-15.md`](../../archive/OVERLEAF_VALUE_AUDIT_2026-08-15.md).
 On this branch, compile [`Simons_PhiRenorm_Swirl_2026-08-22.tex`](Simons_PhiRenorm_Swirl_2026-08-22.tex), not those projects.
