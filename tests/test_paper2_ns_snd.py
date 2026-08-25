@@ -327,5 +327,141 @@ class TestShellStressIsNumericalNotTheorem(unittest.TestCase):
         )
 
 
+class TestDraftOriginalIsHistoricalImpliesFace(unittest.TestCase):
+    """May 18 submission draft. Not FIXED. Not August controlling face. Not Clay."""
+
+    DRAFT = NS_SND / "Simons_NS_Paper2_DRAFT_original.tex"
+    DRAFT_SHA256 = (
+        "f51ed5c05ec3886603a69de942b890dc76c73b3860fe089a056b4665ab8cc4cb"
+    )
+    AUGUST_SHA256 = (
+        "1ff7a211c00d660c30365e5913727f0129cfc5cd76f1f40ed9a47f468c746cc3"
+    )
+    POLISHED_SHA256 = (
+        "b9249af37f3624548d7bee69f26fc2fc0d93c22e744c54cd110810725cd80817"
+    )
+
+    def test_hash_lock_and_not_june_or_august_or_polished(self):
+        self.assertTrue(self.DRAFT.is_file(), self.DRAFT)
+        raw = self.DRAFT.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), self.DRAFT_SHA256)
+        self.assertEqual(len(raw), 26998)
+        self.assertEqual(raw.count(b"\n"), 664)
+        august = PAPER.read_bytes()
+        polished = (NS_SND / "NS_Regularity_Final_Polished.tex").read_bytes()
+        self.assertEqual(hashlib.sha256(august).hexdigest(), self.AUGUST_SHA256)
+        self.assertEqual(hashlib.sha256(polished).hexdigest(), self.POLISHED_SHA256)
+        self.assertNotEqual(raw, august)
+        self.assertNotEqual(raw, polished)
+        self.assertNotEqual(self.DRAFT.resolve(), PAPER.resolve())
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file(),
+            "do not invent June FIXED TeX from this draft filename",
+        )
+        tex = raw.decode("utf-8")
+        self.assertIn("PAPER 2 — SUBMISSION DRAFT", tex)
+        self.assertIn("Implies Global Regularity", tex)
+        self.assertIn(r"\date{May 18, 2026}", tex)
+        self.assertIn(r"\mathbb T^3", tex)
+        self.assertIn("SND Simplex Stability — Open", tex)
+        self.assertIn("T2 — Closed Gronwall Proof", tex)
+        self.assertIn("T2 — Closed (conditional on SND)", tex)
+        self.assertIn("Open", tex)
+        self.assertNotIn("Corrected June 2026", tex)
+        self.assertNotIn("Conditional Regularity Criterion", tex)
+        self.assertNotIn("Conditional Global-Regularity Framework", tex)
+        self.assertNotIn("Goldbach", tex)
+        self.assertNotIn("GNC", tex)
+        self.assertNotIn("QStack", tex)
+        self.assertNotIn("ClaySubmit", tex)
+        self.assertNotIn("Self-Adaptive Spectral Damping", tex)
+
+    def test_faces_mark_draft_not_fixed_not_august_not_clay(self):
+        faces = FACES.read_text(encoding="utf-8")
+        readme = README.read_text(encoding="utf-8")
+        self.assertIn("Simons_NS_Paper2_DRAFT_original.tex", faces)
+        self.assertIn("Simons_NS_Paper2_DRAFT_original.tex", readme)
+        self.assertIn("f51ed5c05ec3", faces)
+        self.assertIn("664", faces)
+        self.assertIn("Draft", faces)
+        self.assertIn("august controlling", faces.lower())
+        self.assertIn("NOT CLAIMED", faces)
+        self.assertIn("NOT CLAIMED", readme)
+        self.assertIn("do not use as closed", faces.lower())
+        self.assertIn("7–8", faces)
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file()
+        )
+
+
+class TestCleanPdfIsNotPaper2OrFixed(unittest.TestCase):
+    """April 2026 Phi-renorm CLEAN ReportLab. Not Paper2. Not FIXED. Not Clay."""
+
+    CLEAN = NS_SND / "00a14f6d9_NS_Simons_2026_CLEAN.pdf"
+    CLEAN_SHA256 = (
+        "8b4cff04c308b77e9ec5837f5a27c1c82fefadf141465f67fc0e4c4236caf4d4"
+    )
+    AUDIT = NS_SND / "NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md"
+    AUDIT_SHA256 = (
+        "53ef73976701da0b6c767c4280b9fcae1ccc71ebb6f06e299681d6ef2e276462"
+    )
+
+    def test_hash_lock_distinct_from_three_paper2_pdfs(self):
+        self.assertTrue(self.CLEAN.is_file(), self.CLEAN)
+        raw = self.CLEAN.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), self.CLEAN_SHA256)
+        self.assertEqual(len(raw), 19393)
+        mac = (NS_SND / "Paper2_NS_Regularity_SND.pdf").read_bytes()
+        zen = (NS_SND / "zenodo-20272545" / "Paper2_NS_Regularity_SND.pdf").read_bytes()
+        june = PDF.read_bytes()
+        self.assertEqual(hashlib.sha256(june).hexdigest(), PDF_SHA256)
+        self.assertNotEqual(raw, mac)
+        self.assertNotEqual(raw, zen)
+        self.assertNotEqual(raw, june)
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file(),
+            "CLEAN is not the June FIXED TeX and must not invent it",
+        )
+        try:
+            from pypdf import PdfReader
+        except ImportError:
+            self.skipTest("pypdf not installed")
+        reader = PdfReader(str(self.CLEAN))
+        self.assertEqual(len(reader.pages), 8)
+        meta_title = str(reader.metadata.title) if reader.metadata else ""
+        self.assertIn("anonymous", meta_title.lower())
+        text = "\n".join((page.extract_text() or "") for page in reader.pages)
+        self.assertIn("Phi-Renormalization", text)
+        self.assertIn("April 2026", text)
+        self.assertIn("Axisymmetric", text)
+        self.assertNotIn("Conditional Regularity Criterion", text)
+        self.assertNotIn("Corrected June 2026", text)
+
+    def test_faces_and_audit_duplicate_note(self):
+        faces = FACES.read_text(encoding="utf-8")
+        readme = README.read_text(encoding="utf-8")
+        audit = self.AUDIT.read_bytes()
+        self.assertEqual(hashlib.sha256(audit).hexdigest(), self.AUDIT_SHA256)
+        self.assertIn("00a14f6d9_NS_Simons_2026_CLEAN.pdf", faces)
+        self.assertIn("00a14f6d9_NS_Simons_2026_CLEAN.pdf", readme)
+        self.assertIn("8b4cff04c308", faces)
+        self.assertIn("Phi-Renormalization", faces)
+        self.assertIn("a Paper2 SND face", faces)
+        self.assertIn("duplicate", faces.lower())
+        self.assertIn("53ef73976701", faces)
+        self.assertIn("NOT CLAIMED", faces)
+        self.assertIn("**Not** Clay", faces)
+        self.assertIn("QStack is **not** in live DA", faces)
+        self.assertNotIn("DA-VC-01 PASS", faces)
+        self.assertNotIn("DA-VC-01 PASS", readme)
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file()
+        )
+        self.assertFalse(
+            (NS_SND / "NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026_aad8.md").is_file(),
+            "do not file a second copy of the identical Aug 1 audit",
+        )
+
+
 if __name__ == "__main__":
     raise SystemExit(unittest.main())

@@ -17,13 +17,15 @@ DA may later route to this book. It must **not** glue:
 | June reading PDF | [`Paper2_NS_Regularity_SND_FIXED.pdf`](Paper2_NS_Regularity_SND_FIXED.pdf) | Corrected June 2026 |
 | June FIXED TeX | *not received* | Filename requested; PDF only |
 | June 14 Clay-submit | *not received* | `2f30e8c4f_NS_ClaySubmit_Jonathan_Simons_2026-06-14.tex` — not FIXED; not August; Clay **NOT CLAIMED** here |
+| May 18 “implies” draft TeX | [`Simons_NS_Paper2_DRAFT_original.tex`](Simons_NS_Paper2_DRAFT_original.tex) | `\date{May 18, 2026}`; title *…Implies Global Regularity…*. 664 lines. Historical draft. **Not** FIXED. **Not** August controlling face. §7 T2-closed vs §8 OPEN. Leftover 7–8. Clay **NOT CLAIMED**. **Do not use as closed.** |
+| April 2026 CLEAN swirl PDF | [`00a14f6d9_NS_Simons_2026_CLEAN.pdf`](00a14f6d9_NS_Simons_2026_CLEAN.pdf) | ReportLab 8 pp; face *Phi-Renormalization … with Swirl*, April 2026. **Not** Paper2. **Not** FIXED. **Not** August. **Not** Clay. Distinct from all three Paper2 PDFs. |
 | Mac “Final Polished” TeX | [`NS_Regularity_Final_Polished.tex`](NS_Regularity_Final_Polished.tex) | `\date{2026}`; title *Global Regularity … via Self-Adaptive Spectral Damping*. 825 lines. **Not** FIXED. **Not** August. Body conditional on [SND] (OPEN). Title overclaims. **Do not use as closed.** Clay **NOT CLAIMED** |
 | Word “v7 ArXiv” docx | [`NS_Regularity_v7_ArXiv.docx`](NS_Regularity_v7_ArXiv.docx) | Word 15 Aug 2026; same title family as Final Polished. Distinct bytes. Extract [`NS_Regularity_v7_ArXiv.txt`](NS_Regularity_v7_ArXiv.txt). **Not** FIXED. **Not** August. [SND] OPEN. Clay **NOT CLAIMED**. **Do not use as closed.** |
 | Shell stress xlsx | [`shell-stress/`](shell-stress/README.md) | \(24^3\) periodic shell numerics. Not a theorem. Not all-\(N\) Route J. Not Clay. Not FIXED |
 | Mac “SND 2” PDF | [`Paper2_NS_Regularity_SND.pdf`](Paper2_NS_Regularity_SND.pdf) | iOS export 21 July 2026; *implies* header |
 | Zenodo “implies” | [`zenodo-20272545/`](zenodo-20272545/README.md) | Public deposit; live title **claim withdrawn** |
 | August TeX | [`Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex) | 1 August 2026 |
-| August 1 audit | [`NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md`](NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md) | Lemma 6.1 OPEN; §7 T2 not closed |
+| August 1 audit | [`NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md`](NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md) | Lemma 6.1 OPEN; §7 T2 not closed. Re-upload was a **duplicate**; not filed twice. |
 | Classical unaugmented chain | [`NS_UNAUGMENTED_PROOF_CHAIN.md`](NS_UNAUGMENTED_PROOF_CHAIN.md) | DA default dataset; leftover 7–8; Clay not claimed |
 
 The PDFs are **not** compiles of the TeX. Diff: [`FACES.md`](FACES.md).
@@ -91,4 +93,4 @@ Live DA is dump-era three-verb demo. It does not implement this paper. Inverse d
 
 ## Compile
 
-Overleaf is a PDF printer only. Compile the August TeX as its own project if you need a new PDF. Do not merge it with the June FIXED PDF, with April Clay/SERPENT mains, with `NS_Regularity_Final_Polished.tex`, with `NS_Regularity_v7_ArXiv.docx`, or with the 22 August swirl TeX. The Final Polished source and the v7 Word export are different \(\mathbb{R}^3\) Q6 / \(\lambda_H\) drafts: **do not use as closed**. The shell-stress workbook is numerics, not a theorem.
+Overleaf is a PDF printer only. Compile the August TeX as its own project if you need a new PDF. Do not merge it with the June FIXED PDF, with `Simons_NS_Paper2_DRAFT_original.tex`, with `00a14f6d9_NS_Simons_2026_CLEAN.pdf`, with April Clay/SERPENT mains, with `NS_Regularity_Final_Polished.tex`, with `NS_Regularity_v7_ArXiv.docx`, or with the 22 August swirl TeX. The May 18 draft is an historical “implies” face: **do not use as closed**. The CLEAN PDF is an April 2026 Phi-renorm swirl ReportLab, not Paper2 and **not** FIXED. The Final Polished source and the v7 Word export are different \(\mathbb{R}^3\) Q6 / \(\lambda_H\) drafts: **do not use as closed**. The shell-stress workbook is numerics, not a theorem.
