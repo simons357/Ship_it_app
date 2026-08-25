@@ -185,7 +185,7 @@ class TestPrimeFieldBatchStaysArchived(unittest.TestCase):
         self.assertIn("Not live Domain Architect", note)
         self.assertIn("NOT CLAIMED", note)
         self.assertIn("import into `domain_architect/`", note)
-        self.assertIn("not live DA", note.lower())
+        self.assertIn("not live da", note.lower())
         self.assertIn("Do not stamp DA-VC-01", note)
         self.assertNotIn("DA-VC-01 PASS", note)
         archive_index = (
