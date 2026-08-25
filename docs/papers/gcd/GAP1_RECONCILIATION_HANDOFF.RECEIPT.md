@@ -95,7 +95,7 @@ here:**
   **REJECTED**. Goldbach stays **withdrawn**.
 
 Q6 PD as inverse-GCD arithmetic **stands**. Do **not** glue it to NS,
-RH, Goldbach, SFE, Nav42 paint, or live DA.
+RH, Goldbach, SFE, Nav42 paint, or live DA. Do **not** import into `domain_architect/`.
 
 ## What this is not
 
