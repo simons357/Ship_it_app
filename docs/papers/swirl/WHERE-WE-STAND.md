@@ -74,8 +74,11 @@ Leave the geometry essay on the shelf as a personal hypothesis. It does not help
 
 ## Paper2 (periodic 3D, SND/GNC) is a different book
 
-The repaired August 1 manuscript is filed at
-[`docs/papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](../ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex).
+Two faces, not a compile pair: August TeX
+[`docs/papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](../ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex)
+and June PDF
+[`docs/papers/ns-snd/Paper2_NS_Regularity_SND_FIXED.pdf`](../ns-snd/Paper2_NS_Regularity_SND_FIXED.pdf).
+Diff: [`docs/papers/ns-snd/FACES.md`](../ns-snd/FACES.md).
 
 It is **full 3D Navier–Stokes on the torus**, not axisymmetric swirl. SND means the energy is not stuck in one dyadic shell. The thin proved part is a Weyl perturbation fact: *if* a frozen spectral gap and a quantitative operator-norm closeness both hold, the evolving gap stays. The physics arrow — that unaugmented Leray–Hopf actually stays close on the simplex — is **open**. A false gcd identity was removed. “T2 Closed Gronwall” is withdrawn. Classical 3D regularity is not claimed.
 

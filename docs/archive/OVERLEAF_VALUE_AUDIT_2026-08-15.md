@@ -66,7 +66,7 @@ Overleaf is **optional only as a PDF printer**: upload **fresh TeX from the pack
 | Positive GCD | *(absent from Overleaf dirs; older TeX may sit loose in Downloads)* | `GCD_Spectral_Paper1_UPDATED_2026-08-14.tex` |
 | Ring Lemma | Embedded as section inside Apr Clay/SERPENT/WHAT_I_FOUND | `06_…/01_ring_lemma/c8a03f315_RingLemma_Simons_June19_2026.tex` + Zenodo PDF `19a2b85fc_…` |
 | Phi-renorm / swirl | *(not in named Overleaf export folders)* | `NS_PhiRenorm_complete.tex` / PDF in `07_…/NS/` |
-| NS Paper2 / SND | Apr `simons_ns_overleaf` **unconditional Clay** TeX | **In this git repo:** [`docs/papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](../papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex) (conditional; simplex OPEN). Desktop-pack PDF `Paper2_NS_Regularity_SND_FIXED.pdf` remains off-repo. |
+| NS Paper2 / SND | Apr `simons_ns_overleaf` **unconditional Clay** TeX | **In this git repo:** August TeX [`docs/papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](../papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex) and June PDF [`docs/papers/ns-snd/Paper2_NS_Regularity_SND_FIXED.pdf`](../papers/ns-snd/Paper2_NS_Regularity_SND_FIXED.pdf). They are **not** a compile pair. Diff: [`FACES.md`](../papers/ns-snd/FACES.md). Simplex OPEN. |
 | QStack / de-aug bridges | `overleaf_package` Jun PDFs + Apr SERPENT/CLAY | Historical only; de-aug **OPEN** per NS shelf |
 | Anesthesia CI | *(nothing Overleaf)* | `08_…/ANESTHESIA/face_manuscript/PAPER1_REBUILT_Coherence_Index.md` |
 
@@ -129,7 +129,7 @@ Nothing in the old Overleaf exports is required for Zenodo Wave 1 or anesthesia 
 | Goal | Need Overleaf? | What to use |
 |---|---|---|
 | **Zenodo Wave 1** (Paper1 / PAPER_A / PAPER_B) | **No** for content. Optional for PDF if you lack local LaTeX. | Upload `.tex` (+ PDF if you want) from `07_zenodo_final_pack_2026-08-15/` |
-| **Zenodo Wave 2** (Ring / Phi / Paper2) | **No.** Ring + Phi PDFs already in pack; Paper2 has reading PDF `Paper2_NS_Regularity_SND_FIXED.pdf` | Prefer pack NS folder |
+| **Zenodo Wave 2** (Ring / Phi / Paper2) | **No.** Ring + Phi stay in the pack. Paper2 June PDF and August TeX are now in `docs/papers/ns-snd/` | Prefer git ns-snd faces; do not merge them |
 | **Anesthesia A1** | **No.** Face is Markdown in `08_publish_queue_…/ANESTHESIA/` | Export Word/PDF from that MD; Overleaf irrelevant |
 
 ---

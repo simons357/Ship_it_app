@@ -354,9 +354,11 @@ The substitution that makes the identity true is **inside one equation**. It is 
 
 # Book D — Paper2 SND/GNC (periodic 3D)
 
-Source in the repo: `docs/papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`  
-Guide: `docs/papers/ns-snd/README.md`  
-Date on the manuscript: 1 August 2026.
+Source in the repo (two faces, **not** a compile pair):
+- August TeX: `docs/papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex` (1 August 2026; includes GNC correction)
+- June PDF: `docs/papers/ns-snd/Paper2_NS_Regularity_SND_FIXED.pdf` (corrected June 2026; GNC absent; Gronwall is a program)
+- Diff: `docs/papers/ns-snd/FACES.md`  
+Guide: `docs/papers/ns-snd/README.md`
 
 This is **not** axisymmetric swirl. It is incompressible Navier–Stokes on \(\mathbb{T}^3\).
 
@@ -401,7 +403,9 @@ Do not pull these back in unless Jon names them as a **further** book:
 - `docs/papers/swirl/PHI_GEOMETRY_BRIDGE.md`
 - `docs/papers/swirl/DA-ON-PHI-GEOMETRY.md`
 - `docs/domain-architect/DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md` (DA-VC-01; live score FAIL; NS-open stays OPEN)
-- `docs/papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex` (Book D; conditional; simplex OPEN)
+- `docs/papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex` (August TeX; conditional; simplex OPEN)
+- `docs/papers/ns-snd/Paper2_NS_Regularity_SND_FIXED.pdf` (June PDF; not a compile of the TeX)
+- `docs/papers/ns-snd/FACES.md`
 - `docs/papers/ns-snd/README.md`
 
 End of packet.

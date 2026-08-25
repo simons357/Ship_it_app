@@ -10,13 +10,18 @@ DA may later route to this book. It must **not** glue:
 - SND / GNC / “Bridge” identities to the swirl rewrite \(\frac1{r^4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\)
 - Route J numerics to a Clay/Millennium claim
 
-## Paper (repaired manuscript, dated 1 August 2026)
+## Two faces (not a compile pair)
 
-[`Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex)
+| Face | File | Date on the face |
+|---|---|---|
+| August TeX | [`Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex) | 1 August 2026 |
+| June PDF | [`Paper2_NS_Regularity_SND_FIXED.pdf`](Paper2_NS_Regularity_SND_FIXED.pdf) | Corrected June 2026 |
 
-**Spectral Non-Concentration and a Conditional Global-Regularity Framework for 3D Navier–Stokes on \(\mathbb{T}^3\)**
+The PDF is **not** a compile of the TeX. Diff: [`FACES.md`](FACES.md).
 
-Author: J.R. Simons. Header date May 18, 2026; body dated 1 August 2026.
+**Spectral Non-Concentration** — conditional framework / criterion for 3D Navier–Stokes on \(\mathbb{T}^3\).
+
+Author: J.R. Simons. Original draft 18 May 2026.
 
 Object: **periodic 3D Navier–Stokes on the torus**, not axisymmetric swirl.
 
@@ -77,4 +82,4 @@ Live DA is dump-era three-verb demo. It does not implement this paper. Inverse d
 
 ## Compile
 
-Overleaf is a PDF printer only. Compile this file as its own project. Do not merge it with April Clay/SERPENT mains or with the 22 August swirl TeX.
+Overleaf is a PDF printer only. Compile the August TeX as its own project if you need a new PDF. Do not merge it with the June FIXED PDF, with April Clay/SERPENT mains, or with the 22 August swirl TeX.

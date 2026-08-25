@@ -104,6 +104,8 @@ Logo (confirmed): **Black & gold** and **All silver** 3D lockups both stay. **La
 ### Paper2 SND/GNC (separate book — not swirl)
 
 - `docs/papers/ns-snd/Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex` — 1 August 2026 repaired conditional draft
+- `docs/papers/ns-snd/Paper2_NS_Regularity_SND_FIXED.pdf` — June 2026 reading PDF. **Not** a compile of the TeX
+- `docs/papers/ns-snd/FACES.md` — June PDF vs August TeX
 - `docs/papers/ns-snd/README.md` — proved vs open; do not glue \(H_N\) to FRA or swirl
 - Tests: `tests/test_paper2_ns_snd.py`
 
@@ -167,6 +169,7 @@ Tests that lock this: `tests/test_challenge_01_ns.py` (includes a characterizati
 - Do not claim unaugmented swirl is solved. Do not claim \(\varepsilon\)-smoothness is the unaugmented theorem.
 - Do not glue swirl \(\Phi\) to gravity, FRA, CMB, Saturn, Kabbalah, Riemann zeros, or a cosmic lattice.
 - Do not glue Paper2 SND / GNC / \(H_N\) into swirl or into a Clay claim. Simplex lemma is **OPEN**. “T2 Closed Gronwall” is withdrawn.
+- Do not treat `Paper2_NS_Regularity_SND_FIXED.pdf` as a compile of the August TeX. They are two faces (`docs/papers/ns-snd/FACES.md`).
 - Do not treat `PHI_GEOMETRY_BRIDGE.md` as Book B theorems. Q6 / primes / spectral clock: packaging; strip from any submit (`SWIRL-CONTINUATION.md`).
 - Do not implement another dump. Do not create QStack/QNav.
 - Do not merge PR #31. Do not touch PR #30.
