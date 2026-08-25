@@ -19,13 +19,29 @@ Earlier same-day file: [10.5281/zenodo.22045474](https://doi.org/10.5281/zenodo.
 
 That is **not** Paper2 SND (operator-norm closeness of a GCD shell mix to equidistributed \(\mu\)). Same three letters, two definitions. Do not glue.
 
-## Older source (not 21 August)
+**That \(J/X\) criterion is not** \(\kappa_j=E_j/E\le\kappa^*<1\) (upper bound on
+shell energy fraction). Same three letters, a naming collision. Do not glue.
+The 21 Aug PDF Remark 1.2 already refuses to identify them.
+
+## Older sources (not 21 August)
 
 [`RingLemma_Final.tex`](RingLemma_Final.tex) — Base44 `492e0654f_RingLemma_Final.tex`.
 Title *Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal.*
 Face date **April 2026**; filed as a June 20-ish source. SHA-256 `4602065ef68a…`.
 **Not** a compile of the 21 Aug Zenodo PDF (different title; PDF created 2026-08-20).
-Standalone Ring lemma. **Not** Clay. **Not** FIXED.tex. Map: [`FACES.md`](FACES.md).
+Standalone Ring lemma + augmented NS. **Not** Clay. **Not** FIXED.tex.
+Unique labels `lem:triad_bound_formal` / `prop:CF_integrability` /
+`thm:CF93_theorem` / \(E_{\min}\) are **absent**. Map: [`FACES.md`](FACES.md).
+
+[`RingLemma_Simons_June19_2026.tex`](RingLemma_Simons_June19_2026.tex) — Base44
+`c8a03f315_RingLemma_Simons_June19_2026.tex` (HTTP 200). `\date{June 19, 2026}`.
+SHA-256 `a73d949f…`. Still augmented; classical SND **Open**; Clay **NOT CLAIMED**.
+**Not** the unaugmented \(\kappa\)-SND paste.
+
+Unaugmented \(\kappa\)-SND / CF93 / BKM tail paste: classification only
+[`KAPPA-SND-CF-BKM-FRAGMENT.md`](KAPPA-SND-CF-BKM-FRAGMENT.md). Full TeX not
+received. **CONDITIONAL.** Clay **NOT CLAIMED.** \(E_{\min}>0\) is a flag, not
+a free CF closure.
 
 DA leftover-split lab (usable Ring SND beside Q6 \(H_N\); three NS leftovers stay OPEN): [`docs/domain-architect/LEFTOVER-REPAIR.md`](../../domain-architect/LEFTOVER-REPAIR.md).
 

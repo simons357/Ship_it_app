@@ -17,7 +17,7 @@ regular” still emits a PD loop. That hole is unchanged.
 
 | Object | Usable equation | Don’t use |
 |---|---|---|
-| **SND** | Ring: \(\inf_t J(t)/X(t)\ge c_*>0\), \(X=\|\nabla u\|_{L^2}^2\), \(J\) dominant Littlewood–Paley shell of enstrophy | Paper2 operator-norm \(\|H_N[a]-\widehat H_N^\mu\|_{\mathrm{op}}<\delta_0\); `SND ≡ GNC ≡ Bridge` |
+| **SND** | Ring: \(\inf_t J(t)/X(t)\ge c_*>0\), \(X=\|\nabla u\|_{L^2}^2\), \(J\) dominant Littlewood–Paley shell of enstrophy | Paper2 operator-norm \(\|H_N[a]-\widehat H_N^\mu\|_{\mathrm{op}}<\delta_0\); pasted \(\kappa_j=E_j/E\le\kappa^*<1\) (upper bound on shell **energy**; naming collision with “Spectral Non-Dispersal”); `SND ≡ GNC ≡ Bridge`. Do not import \(\kappa\)-SND or \(E_{\min}>0\) as Spe/`TRANSFORMABLE`. |
 | **Theory H** | Q6 definition \(H_N=D^{-1/2}\widetilde Q_N D^{-1/2}\) | All-\(N\) floor \(\lambda_{\min}(H_N)>-1/2\); FRA coupling \(H\); Paper2 \(H_N[a]=\sum a_j B_j\); fluids “Theorem H” (not in this repo; C-GLUE-4) |
 
 Lab strings (parser-safe):
