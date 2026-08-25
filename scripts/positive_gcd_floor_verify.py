@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Positive-GCD Q checks: Theorems A/B; kill C' on zero-diag; open C on PD.
+"""Positive-GCD Q checks: Theorems A/B/C (PD); kill C' on zero-diag.
 
 Usage:
   python3 scripts/positive_gcd_floor_verify.py [Nmax]
