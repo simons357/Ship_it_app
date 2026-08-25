@@ -101,6 +101,23 @@ class TestAvailableTurbulenceStack(unittest.TestCase):
         self.assertIn("not claimed", blob)
         self.assertNotIn("nav-42", blob)
 
+    def test_cli_prints_desired_and_analog_not_hardware_certificate(self):
+        import io
+        from contextlib import redirect_stdout
+
+        from domain_architect.cli import main
+
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            code = main(["cycle", "available-turbulence"])
+        self.assertEqual(code, 0)
+        text = buf.getvalue()
+        self.assertIn("desired x → 0.85", text)
+        self.assertIn("analog relative reduction=0.150", text)
+        self.assertIn("hardware_realized=False", text)
+        self.assertIn("envelope_contains_15%=True", text)
+        self.assertIn("literature ranges are not added", text.lower())
+
 
 if __name__ == "__main__":
     raise SystemExit(unittest.main())

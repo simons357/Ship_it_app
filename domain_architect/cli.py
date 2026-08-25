@@ -204,14 +204,8 @@ def _cycle_text(payload: dict) -> str:
             f"({res.get('operator_class')}) recovered={res.get('recovered_parameter')}"
         )
     prediction = payload.get("prediction") or {}
-    if isinstance(prediction, dict) and prediction.get("headline"):
-        lines.append(prediction["headline"])
-        still = prediction.get("still_open") or []
-        if still:
-            lines.append(
-                "still open: " + ", ".join(row.get("id", "") for row in still)
-            )
-    elif isinstance(prediction, dict) and prediction.get("protocol") == "turbulence-intensity":
+    protocol = prediction.get("protocol") if isinstance(prediction, dict) else None
+    if protocol == "turbulence-intensity":
         lines.append(prediction.get("definition") or "")
         lines.append(
             "control x={:.4f}  treated x={:.4f}  relative reduction={:.3f}  "
@@ -222,7 +216,7 @@ def _cycle_text(payload: dict) -> str:
                 prediction["reduced_vs_control"],
             )
         )
-    elif isinstance(prediction, dict) and prediction.get("protocol") == "available-turbulence":
+    elif protocol == "available-turbulence":
         lines.append(prediction.get("headline") or "")
         analog = prediction.get("analog") or {}
         lines.append(
@@ -234,6 +228,13 @@ def _cycle_text(payload: dict) -> str:
                 prediction.get("envelope_can_contain_target"),
             )
         )
+    elif isinstance(prediction, dict) and prediction.get("headline"):
+        lines.append(prediction["headline"])
+        still = prediction.get("still_open") or []
+        if still:
+            lines.append(
+                "still open: " + ", ".join(row.get("id", "") for row in still)
+            )
     elif isinstance(prediction, dict) and prediction.get("board"):
         lines.append(prediction["board"].get("text") or "")
     elif prediction:
