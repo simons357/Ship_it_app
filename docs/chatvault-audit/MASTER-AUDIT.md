@@ -241,7 +241,7 @@ Do **not** merge products by renaming Base44 apps.
 | `media_url` | `file_url` / `linked_files` | copy |
 | `conversation_date` or `created_date` | `item_date` | never rewrite; prefer conversation_date when set |
 | *(absent)* | `key_claims`, `theorems`, `open_gaps`, `action_items`, `open_questions`, `related_entities`, `extraction_types` | empty arrays; do not auto-fill from summary |
-| `harmonic_note` | notes | keep as extra field, do not drop |
+| `harmonic_note` | notes | keep as extra field, do not drop; **never a ranker / never a score** |
 
 ### Other sources
 

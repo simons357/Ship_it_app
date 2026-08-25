@@ -29,6 +29,7 @@ One row per feature. Columns are builds we could actually reach.
 | Highlighted snippets | A | A | A | U | W |
 | Search eval (nDCG / MRR) | A | A | A | U | W |
 | Semantic / LLM search | A | W | W (copy) | U | A (dense model later; no LLM rank toggle) |
+| Harmonic Watch / `harmonic_note` | A | W (panel prints ingest string; **not a ranker**) | A | U | P (stored as notes; **never a score**) |
 | OR / phrase / field search | A | A | A | U | W |
 | Private vs professional | A | A | A | U | W |
 | Per-item JSON export | A | W | A | U | W |

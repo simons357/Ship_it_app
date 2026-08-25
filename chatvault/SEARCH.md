@@ -28,6 +28,28 @@ Web search for “search engine component for Chat Vault” and `search_engine.p
 
 If the zip, Replit project, or Claude export is found: hash it, store read-only, diff it against `js/search.mjs`. Do not overwrite this engine blindly. Do not import `stripe_helper`.
 
+## Stack that is actually proven (25 Aug 2026)
+
+You asked whether a **harmonic search engine** existed, or whether someone invented it.
+
+**Proven, in the live Base44 glass bundle** (`index-DXcRcOPA.js`):
+
+| Piece | What it is |
+| --- | --- |
+| Plain search | Client-side keyword filter on the conversation list |
+| Semantic search | `InvokeLLM`: “You are ranking conversations by relevance…” — an LLM reorders ids. Not BM25. Not embeddings. |
+| **Harmonic Watch** | A detail-page panel. It only renders `conversation.harmonic_note` |
+| `harmonic_note` | A **string field**. Ingest prompt: “a one-line cross-conversation pattern or insight this conversation resonates with (e.g. echoes the auth-refactor thread).” |
+| Export evidence | Seed chat `designing_a_rate_limiter…` has `"harmonic_note": null` |
+
+So “harmonic engine” in the glass app is **LLM-written resonance copy**, branded Harmonic Watch. It is not a ranker, not an index, and not experimental retrieval. That name collides with Harmonic Blueprint / Domain Architect research in this workshop. Easy to remember as an engine. It was not one.
+
+Git hybrid (`chatvault-hybrid-0.2.0`) does **not** use ledger status or `harmonic_note` as a score. `status:OPEN` is a field query. PROVED vs OPEN is a label on the card. `harmonic_note` is preserved on import/export as notes and is never indexed.
+
+**Named, source still missing (Replit Flask):** `search_engine.py` in zip `356582767_chatvault_source2.zip` / local `Downloads/chatvault_source (1)`. Live host `chat-vault-winchesterane.replit.app` advertises full-text search + OpenAI tags. No `harmonic` / `bm25` string in that public JS. Editor source is private.
+
+If the zip lands and contains a module actually named harmonic-engine, that is new evidence. Until then: you were not crazy, and you were not given a secret ranker. You were given a field and a label.
+
 ## What BM25F does (plain language)
 
 You do not have to learn information-retrieval jargon to use this.
@@ -68,6 +90,7 @@ Evernote-style Semantic and Base44’s LLM toggle are (7) without (1)–(5). Tha
 - RM3 expansion from the top hits
 - Hard match gate: AND, `OR`, `"phrases"`, `claim:` / `theorem:` / `gap:` / `ai:`
 - Snippets; ledger status shown and never used as a score
+- `harmonic_note` stored as notes, never scored
 - Eval: `tests/search-eval.test.mjs`
 
 ## What is not here yet (and must not be faked)
@@ -75,8 +98,17 @@ Evernote-style Semantic and Base44’s LLM toggle are (7) without (1)–(5). Tha
 - Dense MiniLM/E5 + cross-encoder (needs a vendored model and your real corpus)
 - ChatGPT / Claude export parsers feeding the index
 - Recovered Replit `search_engine.py` (still lost)
+- **E8 / lattice ranking** — see below; not shipped
 
 A Semantic toggle that buries claims is a regression. The dense layer plugs into the same RRF when it earns its place.
+
+## EXPERIMENTAL / not shipped — E8 lattice ranking
+
+Searched this PR (`chatvault/`, `docs/chatvault-audit/`, `SEARCH.md`, `js/search.mjs`), git history of those paths, Base44 glass bundle strings, and the Grok ChatVault research hunt.
+
+**Result:** no ChatVault design note proposed E8 (or any root lattice) as a retrieval ranker. The live “harmonic” surface is Harmonic Watch printing `harmonic_note`. Hybrid eval has no E8 signal and no owner-corpus numbers that could justify one.
+
+E8 → H4 folding geometry exists in a **different book** (swirl/geometry session). It is **not** a ChatVault feature. Do not implement E8 ranking unless it clearly beats `chatvault-hybrid-0.2.0` nDCG/MRR on Jonathan’s real vault (that eval set is not here; it will not appear by wishing). Label if revived: **EXPERIMENTAL / not shipped**.
 
 ## Recovered “ChatVault 2” HTML (25 Aug 2026)
 

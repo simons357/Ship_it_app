@@ -172,6 +172,14 @@ test("form defaults do not clobber SOURCE_AI structured lines", () => {
   assert.equal(forced.source_ai, "Claude");
 });
 
+test("harmonic_note is preserved on import and is not a ledger status", () => {
+  const entry = ingestPaste("TITLE: Rate limiter\n\nbody");
+  entry.harmonic_note = "echoes the auth-refactor thread";
+  const restored = importVault(exportVault([entry]))[0];
+  assert.equal(restored.harmonic_note, "echoes the auth-refactor thread");
+  assert.equal(restored.key_claims.length, 0);
+});
+
 test("bulk ingest splits on --- and keeps each raw chunk", () => {
   const raw = "TITLE: One\n\nfirst body\n---\nTITLE: Two\nCLAIM: split works\n\nsecond body";
   const { entries, errors } = ingestBulk(raw);

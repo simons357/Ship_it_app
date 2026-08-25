@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { ingestPaste, DEMO_ENTRIES } from "../js/engine.mjs";
+import { ingestPaste, reviewLedgerItem, DEMO_ENTRIES } from "../js/engine.mjs";
 import {
   SEARCH_ENGINE_VERSION,
   searchEntries,
@@ -151,6 +151,60 @@ test("one-edit typos and stems still retrieve the intended record", () => {
   assert.equal(typo.hits[0].entry.id, titleHit.id);
   const stemmed = searchVault([titleHit, limiter], "rate limiters");
   assert.equal(stemmed.hits[0].entry.id, limiter.id);
+});
+
+test("OPEN can outrank PROVED; harmonic_note is never a score", () => {
+  const openGap = ingestPaste(
+    [
+      "TITLE: Spectral bound still missing",
+      "GAP: A complete a-priori bound preventing finite-time blow-up is missing.",
+      "",
+      "The spectral bound is the open problem in this note.",
+    ].join("\n")
+  );
+  let provedWeak = ingestPaste(
+    [
+      "TITLE: Unrelated logistics",
+      "CLAIM: Token bucket exists.",
+      "",
+      "No spectral discussion. A hallway mention of a bound.",
+    ].join("\n")
+  );
+  provedWeak = reviewLedgerItem(
+    provedWeak,
+    "key_claims",
+    provedWeak.key_claims[0].id,
+    "PROVED",
+    { humanReviewed: true }
+  );
+  provedWeak.harmonic_note = "echoes the spectral bound thread across the whole vault";
+  const ranked = searchVault([provedWeak, openGap], "spectral bound");
+  assert.equal(ranked.hits[0].entry.id, openGap.id);
+  assert.equal(provedWeak.key_claims[0].status, "PROVED");
+  assert.equal(openGap.open_gaps[0].status, "OPEN");
+
+  const withNote = searchVault(
+    [{ ...openGap, harmonic_note: "one-line cross-conversation pattern about spectral bound resonance" }],
+    "spectral bound"
+  );
+  const withoutNote = searchVault([{ ...openGap, harmonic_note: "" }], "spectral bound");
+  assert.equal(withNote.hits[0].score, withoutNote.hits[0].score);
+  assert.equal(withNote.hits[0].matched_fields.includes("status"), false);
+});
+
+test("status: remains a field query and is not an unfielded quality boost", () => {
+  const openOnly = ingestPaste("TITLE: Open gap card\nGAP: finite-time blow-up bound is missing.\n\nRaw.");
+  const draft = ingestPaste("TITLE: Reviewed claim card\nCLAIM: Token bucket exists.\n\nRaw.");
+  const provedOnly = reviewLedgerItem(
+    draft,
+    "key_claims",
+    draft.key_claims[0].id,
+    "PROVED",
+    { humanReviewed: true }
+  );
+  const fielded = searchVault([openOnly, provedOnly], "status:OPEN");
+  assert.equal(fielded.total, 1);
+  assert.equal(fielded.hits[0].entry.id, openOnly.id);
 });
 
 test("RRF prefers documents that win more than one list", () => {

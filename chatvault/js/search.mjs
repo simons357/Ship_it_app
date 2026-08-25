@@ -11,6 +11,8 @@
  *
  * Boolean syntax is only the match gate (AND / OR / phrase / field:).
  * Ledger status is displayed and is never a ranking signal.
+ * `harmonic_note` (Base44 Harmonic Watch copy) is never indexed or scored.
+ * E8 / lattice ranking is not implemented.
  *
  * This is the strongest stack that stays local, offline, and model-free.
  * A MiniLM/E5 + cross-encoder layer can plug into the same RRF later;
@@ -37,6 +39,11 @@ export const SEARCH_FIELDS = Object.freeze({
   status: { boost: 2.4, b: 0.2 },
   source: { boost: 1.4, b: 0.3 },
 });
+
+/** Unfielded rank uses these. `status:` still works; PROVED is not a quality boost. */
+export const RANK_FIELDS = Object.freeze(
+  Object.fromEntries(Object.entries(SEARCH_FIELDS).filter(([name]) => name !== "status"))
+);
 
 const FIELD_ALIASES = Object.freeze({
   raw: "content",
@@ -355,8 +362,9 @@ function weightedTf(doc, index, term, allowedFields) {
 }
 
 function fieldsForTerm(field) {
-  if (!field || field === "all") return Object.keys(SEARCH_FIELDS);
-  return SEARCH_FIELDS[field] ? [field] : Object.keys(SEARCH_FIELDS);
+  if (!field || field === "all") return Object.keys(RANK_FIELDS);
+  if (field === "status") return ["status"];
+  return SEARCH_FIELDS[field] ? [field] : Object.keys(RANK_FIELDS);
 }
 
 function bm25FromTfw(tfw, term, index) {
@@ -434,7 +442,7 @@ function scoreNgrams(doc, index, parsed) {
       ? fieldsForTerm(clause.terms[0].field)
       : clause.phrases[0]
       ? fieldsForTerm(clause.phrases[0].field)
-      : Object.keys(SEARCH_FIELDS);
+      : Object.keys(RANK_FIELDS);
     let score = 0;
     for (const gram of grams) {
       let tfw = 0;
@@ -456,7 +464,7 @@ function scoreNgrams(doc, index, parsed) {
 
 function boostedTermWeight(doc, term) {
   let w = 0;
-  for (const [field, cfg] of Object.entries(SEARCH_FIELDS)) {
+  for (const [field, cfg] of Object.entries(RANK_FIELDS)) {
     const { tf } = fieldTermFrequency(doc, field, term);
     if (tf) w += cfg.boost * tf;
   }
@@ -748,7 +756,7 @@ function tieBreak(entry) {
 function scoreExpanded(doc, index, extraTerms) {
   let score = 0;
   for (const term of extraTerms) {
-    const tfw = weightedTf(doc, index, term, Object.keys(SEARCH_FIELDS));
+    const tfw = weightedTf(doc, index, term, Object.keys(RANK_FIELDS));
     score += bm25FromTfw(tfw, term, index);
   }
   return score;

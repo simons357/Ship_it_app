@@ -45,7 +45,7 @@ private. This folder is the **engine** behind the tagline:
 - immutable raw text
 - source AI / source file provenance
 - CLAIM_LEDGER (`UNREVIEWED` … `PROVED` / `WITHDRAWN`) that never auto-PROVED
-- Hybrid ranked search (BM25F + n-grams + TF-IDF + RRF + RM3) over title, claims, theorems, gaps, and raw text, with snippets
+- Hybrid ranked search (BM25F + n-grams + TF-IDF + RRF + RM3) over title, claims, theorems, gaps, and raw text, with snippets. Ledger status and `harmonic_note` are not scores.
 - books, tags, and artifacts derived from records (no extraction LLM)
 - bulk paste and txt/md/json/csv/html ingest
 - private vs professional export

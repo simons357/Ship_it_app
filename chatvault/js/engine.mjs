@@ -156,6 +156,7 @@ export function emptyEntry(partial = {}) {
     visibility: VISIBILITY.includes(partial.visibility) ? partial.visibility : "professional",
     starred: Boolean(partial.starred),
     archived: Boolean(partial.archived),
+    harmonic_note: asString(partial.harmonic_note),
   };
 }
 
