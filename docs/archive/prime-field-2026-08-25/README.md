@@ -5,8 +5,7 @@ reference**. They are **not** live Domain Architect.
 
 Live product remains Domain Architect
 ([`docs/DOMAIN-ARCHITECT.md`](../../DOMAIN-ARCHITECT.md)). SFE, UHF,
-DHFA, Harmonic Blueprint, and QStack stay **archive-only**. Do **not**
-import any of this into `domain_architect/`. Do not make SFE canonical.
+DHFA, Harmonic Blueprint, and QStack stay **archive-only**. Do **not** import any of this into `domain_architect/`. Do not make SFE canonical.
 Do not stamp DA-VC-01. Clay is **NOT CLAIMED**. Do not glue swirl
 \(\Phi = u_\theta/r\) to FRA output \(\Phi\) or to these SFE \(\Phi\)
 fields. This batch is **not** `Paper2_NS_Regularity_SND_FIXED.tex`
@@ -14,8 +13,7 @@ fields. This batch is **not** `Paper2_NS_Regularity_SND_FIXED.tex`
 
 ## Status in this repo
 
-- **Archive only.** Not live Domain Architect. Do **not** import into
-  `domain_architect/`. Do not create `sfe.py`, `uhf.py`, `dhfa.py`,
+- **Archive only.** Not live Domain Architect. Do **not** import into `domain_architect/`. Do not create `sfe.py`, `uhf.py`, `dhfa.py`,
   `qstack.py`, or a live `prime_field_coherence` module.
 - **Not Clay.** Cosmic-scale / prime-lattice / exoplanet numerics are
   not a Navier–Stokes proof and not a Riemann proof.
