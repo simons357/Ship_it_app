@@ -86,6 +86,12 @@ class TestNav42CbfdArchive(unittest.TestCase):
         self.assertIn("qc_coherence", toys)
         self.assertIn("qr_resonance", toys)
         self.assertIn("Forbidden in live domain_architect", toys)
+        self.assertIn("unused", toys.lower())
+        self.assertIn("entropy", toys)
+        self.assertIn("correlate", toys)
+        self.assertNotIn("from scipy.stats import entropy", toys)
+        self.assertIn("[0.8, 0.1, 0.05, 0.05]", toys)
+        self.assertIn("L1-uniform", toys)
         self.assertFalse((DA_PY / "qc_qr_toys.py").is_file())
         self.assertFalse((DA_PY / "sfe_black_hole_simulator_paste.py").is_file())
         lookup = (ROOT / "docs" / "packets" / "OLD-PAPERS-LOOK-UP.md").read_text(
