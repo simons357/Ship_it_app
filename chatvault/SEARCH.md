@@ -12,7 +12,8 @@ lost component and what now ships.
 | Named archive | `356582767_chatvault_source2.zip` with `app.py`, `models.py`, **`search_engine.py`**, `stripe_helper.py`, `replit_auth.py`. Labelled FEATURE-SOURCE. **Not in this environment.** Stripe stays off. |
 | Claude-origin / HTML V2–V7 / `/app/chatvault` | Still missing. Historical baseline if recovered. |
 | Live Replit app `https://chat-vault-winchesterane.replit.app/` (probed 25 Aug 2026) | **Up.** Title “Chat Vault - The Smart Repository…”. Author **Prime Field Technologies**. Last-Modified **19 Dec 2025**. SPA `/assets/index-B1k4Rveo.js` (~1.6MB). Client copy: full-text search + OpenAI summaries/tags. **No BM25 / Whoosh / MiniSearch / harmonic string in the browser bundle.** Search implementation is not in this JS; likely server-side or a simple substring. |
-| Replit editor `https://replit.com/@winchesterane/Chat-Vault-2` | **404** without Jonathan’s Replit login. Source still not downloaded. |
+| Replit editor `https://replit.com/@winchesterane/Chat-Vault-2` | **`Repl not found` (404).** Profile `@winchesterane` redirects to Replit login. Not a public repo. |
+| Live app ` /__repl` | Redirects to `https://replit.com/replid/71d6861a-bc89-4f3e-b8ae-5647ab8e05d4`. That UUID also **404s**. Deployed host is still up; editor source is private, renamed, or deleted. |
 | Jonathan’s Mac `Downloads/chatvault_source (1)/pyproject.toml` | Seen as an open local file in Cursor. **Not on this VM.** That folder is the most likely FEATURE-SOURCE zip. Upload or attach it. |
 | Public GitHub name collision | Other people’s products. Not Jonathan’s engine. Do not copy them. |
 
