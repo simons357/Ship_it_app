@@ -17,6 +17,7 @@ DA may later route to this book. It must **not** glue:
 | June reading PDF | [`Paper2_NS_Regularity_SND_FIXED.pdf`](Paper2_NS_Regularity_SND_FIXED.pdf) | Corrected June 2026 |
 | June FIXED TeX | *not received* | Filename requested; PDF only |
 | June 14 Clay-submit | *not received* | `2f30e8c4f_NS_ClaySubmit_Jonathan_Simons_2026-06-14.tex` — not FIXED; not August; Clay **NOT CLAIMED** here |
+| Mac “Final Polished” TeX | [`NS_Regularity_Final_Polished.tex`](NS_Regularity_Final_Polished.tex) | `\date{2026}`; title *Global Regularity … via Self-Adaptive Spectral Damping*. 825 lines. **Not** FIXED. **Not** August. Body conditional on [SND] (OPEN). Title overclaims. **Do not use as closed.** Clay **NOT CLAIMED** |
 | Mac “SND 2” PDF | [`Paper2_NS_Regularity_SND.pdf`](Paper2_NS_Regularity_SND.pdf) | iOS export 21 July 2026; *implies* header |
 | Zenodo “implies” | [`zenodo-20272545/`](zenodo-20272545/README.md) | Public deposit; live title **claim withdrawn** |
 | August TeX | [`Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex`](Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex) | 1 August 2026 |
@@ -88,4 +89,4 @@ Live DA is dump-era three-verb demo. It does not implement this paper. Inverse d
 
 ## Compile
 
-Overleaf is a PDF printer only. Compile the August TeX as its own project if you need a new PDF. Do not merge it with the June FIXED PDF, with April Clay/SERPENT mains, or with the 22 August swirl TeX.
+Overleaf is a PDF printer only. Compile the August TeX as its own project if you need a new PDF. Do not merge it with the June FIXED PDF, with April Clay/SERPENT mains, with `NS_Regularity_Final_Polished.tex`, or with the 22 August swirl TeX. The Final Polished source is a different \(\mathbb{R}^3\) Q6 / \(\lambda_H\) draft: **do not use as closed**.

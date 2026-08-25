@@ -180,5 +180,66 @@ class TestJune14ClaySubmitDidNotArrive(unittest.TestCase):
         self.assertNotIn("2f30e8c4f", tex)
 
 
+class TestFinalPolishedIsADistinctFace(unittest.TestCase):
+    """Mac 'NS Regularity Final Polished.tex' is not FIXED and not August."""
+
+    POLISHED = NS_SND / "NS_Regularity_Final_Polished.tex"
+    POLISHED_SHA256 = (
+        "b9249af37f3624548d7bee69f26fc2fc0d93c22e744c54cd110810725cd80817"
+    )
+    AUGUST_SHA256 = (
+        "1ff7a211c00d660c30365e5913727f0129cfc5cd76f1f40ed9a47f468c746cc3"
+    )
+
+    def test_hash_lock_and_not_a_june_or_august_compile(self):
+        self.assertTrue(self.POLISHED.is_file(), self.POLISHED)
+        raw = self.POLISHED.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), self.POLISHED_SHA256)
+        self.assertEqual(raw.count(b"\n"), 825)
+        august = PAPER.read_bytes()
+        self.assertEqual(hashlib.sha256(august).hexdigest(), self.AUGUST_SHA256)
+        self.assertNotEqual(raw, august)
+        self.assertNotEqual(self.POLISHED.resolve(), PAPER.resolve())
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file(),
+            "do not invent June FIXED TeX from this filename",
+        )
+        tex = raw.decode("utf-8")
+        self.assertIn(
+            "Global Regularity of the Three-Dimensional Incompressible", tex
+        )
+        self.assertIn("Self-Adaptive Spectral Damping", tex)
+        self.assertIn(r"\date{2026}", tex)
+        self.assertIn(r"\documentclass[12pt]{amsart}", tex)
+        self.assertNotIn("Corrected June 2026", tex)
+        self.assertNotIn("Conditional Regularity Criterion", tex)
+        self.assertNotIn("Goldbach", tex)
+        self.assertNotIn("GNC", tex)
+        self.assertNotIn("Lemma 6.1", tex)
+        self.assertIn("Conditional global regularity of classical NS", tex)
+        self.assertIn(r"\begin{openproblem}[The Spectral Non-Dispersal Condition]", tex)
+        self.assertIn(r"\Qsix", tex)
+        self.assertIn(r"\lH", tex)
+        self.assertIn(r"\R^3", tex)
+        self.assertNotIn(r"\mathbb T^3", tex)
+
+    def test_faces_and_readme_mark_it_not_closed(self):
+        faces = FACES.read_text(encoding="utf-8")
+        readme = README.read_text(encoding="utf-8")
+        self.assertIn("NS_Regularity_Final_Polished.tex", faces)
+        self.assertIn("NS_Regularity_Final_Polished.tex", readme)
+        self.assertIn("Self-Adaptive Spectral Damping", faces)
+        self.assertIn("do not use as closed", faces.lower())
+        self.assertIn("do not use as closed", readme.lower())
+        self.assertIn("825", faces)
+        self.assertIn("b9249af37f", faces)
+        self.assertIn("NOT CLAIMED", faces)
+        self.assertIn("NOT CLAIMED", readme)
+        self.assertIn("not a compile pair", faces.lower())
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file()
+        )
+
+
 if __name__ == "__main__":
     raise SystemExit(unittest.main())
