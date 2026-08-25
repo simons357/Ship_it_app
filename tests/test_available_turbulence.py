@@ -99,6 +99,9 @@ class TestAvailableTurbulenceStack(unittest.TestCase):
         hull_ids = [row["id"] for row in ship["not_selected_for_hull"]]
         self.assertIn("discrete-suction", hull_ids)
         self.assertIn("locally-resonant-film", hull_ids)
+        self.assertFalse(ship["hybrid_request"]["overlay_selected"])
+        self.assertFalse(ship["hybrid_request"]["percentages_were_added"])
+        self.assertIn("da_primary", ship["hybrid_request"])
         s_um = ship["stations"][0]["s_um_band"]
         self.assertGreater(s_um[0], 30.0)
         self.assertLess(s_um[1], 120.0)
