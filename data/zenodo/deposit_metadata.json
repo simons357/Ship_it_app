@@ -1,0 +1,319 @@
+{
+  "schema_version": "2026-08-23",
+  "author": "Jonathan Robert Simons",
+  "status_index_doi": "10.5281/zenodo.22050978",
+  "status_index_url": "https://doi.org/10.5281/zenodo.22050978",
+  "presentation_rule": "Clean title and honest abstract/PDF on top; correction/errata block only in description (never in title).",
+  "inventory_source": "Live Zenodo API audit 2026-08-23 + KEEP-CUT inventory (August 2026) + docs/domain-architect audited baseline.",
+  "deposits": [
+    {
+      "record_id": 22050962,
+      "doi": "10.5281/zenodo.22050962",
+      "conceptrecid": "20405588",
+      "slug": "q6-mobius-gcd-v2",
+      "disposition": "KEEP",
+      "alias": "Möbius–GCD Q6 v2.1 (crown-jewel operator note)",
+      "current_title_live": "The Inverse-GCD Operator Q_N (Q6): Definitions, a Restricted Rayleigh Bound, and an Exploratory Spectral Programme",
+      "clean_title": "The Inverse-GCD Operator Q_N (Q6): Definitions, a Restricted Rayleigh Bound, and an Exploratory Spectral Programme",
+      "errata_in_title": false,
+      "supersedes_record_ids": [20405589],
+      "claims_withdrawn": [
+        "Full-spectrum λ_min(Q_N) > -1/2 on named inverse-GCD matrices",
+        "Goldbach dark-state packaging",
+        "Navier–Stokes regularity via Q6",
+        "Riemann Hypothesis via Q6"
+      ],
+      "notes": "Primary public Q6 home. RH not proved; Q6 has no RH claim."
+    },
+    {
+      "record_id": 22050974,
+      "doi": "10.5281/zenodo.22050974",
+      "conceptrecid": "20405404",
+      "slug": "phi-renorm-long",
+      "disposition": "KEEP",
+      "alias": "Φ-renorm swirl algebra (long concept)",
+      "current_title_live": "Phi-Renormalization for Axisymmetric Navier-Stokes with Swirl: Algebraic Cancellation of the 1/r^4 Axis Term",
+      "clean_title": "Phi-Renormalization for Axisymmetric Navier-Stokes with Swirl: Algebraic Cancellation of the 1/r^4 Axis Term",
+      "errata_in_title": false,
+      "supersedes_record_ids": [20405405],
+      "claims_withdrawn": [
+        "Unconditional classical 3D Navier–Stokes global regularity",
+        "Millennium / Clay Statement (B)"
+      ],
+      "notes": "Q1-augmented / Phi system only."
+    },
+    {
+      "record_id": 22050975,
+      "doi": "10.5281/zenodo.22050975",
+      "conceptrecid": "20405596",
+      "slug": "phi-renorm-short",
+      "disposition": "KEEP",
+      "alias": "Φ-renorm swirl algebra (short concept)",
+      "current_title_live": "Phi-Renormalization for Axisymmetric Navier-Stokes with Swirl: Algebraic Cancellation of the 1/r^4 Axis Term",
+      "clean_title": "Phi-Renormalization for Axisymmetric Navier-Stokes with Swirl: Algebraic Cancellation of the 1/r^4 Axis Term",
+      "errata_in_title": false,
+      "supersedes_record_ids": [20405597],
+      "claims_withdrawn": [
+        "Unconditional classical 3D Navier–Stokes global regularity"
+      ],
+      "notes": "Companion short concept to 22050974."
+    },
+    {
+      "record_id": 22050976,
+      "doi": "10.5281/zenodo.22050976",
+      "conceptrecid": "20518056",
+      "slug": "ring-snd-conditional",
+      "disposition": "KEEP",
+      "alias": "Unaugmented NS + SND hypothesis framing (Ring + SND conditional)",
+      "current_title_live": "A Ring Lemma for Band-Limited Vorticity Direction and a Conditional Spectral Non-Dispersal Criterion",
+      "clean_title": "A Ring Lemma for Band-Limited Vorticity Direction and a Conditional Spectral Non-Dispersal Criterion",
+      "errata_in_title": false,
+      "supersedes_record_ids": [20518057, 19842060, 20405585],
+      "claims_withdrawn": [
+        "Unconditional global regularity for classical 3D Navier–Stokes",
+        "SND as proved for all Leray–Hopf data without hypothesis"
+      ],
+      "notes": "Honest conditional framing; SND remains an open hypothesis for unaugmented NS."
+    },
+    {
+      "record_id": 22050965,
+      "doi": "10.5281/zenodo.22050965",
+      "conceptrecid": "20552079",
+      "slug": "t2-under-snd",
+      "disposition": "KEEP",
+      "alias": "T2 shell-flux Gronwall under SND",
+      "current_title_live": "Explicit Decay Rate and Quantitative Threshold for a Shell-Flux Gronwall Inequality under SND",
+      "clean_title": "Explicit Decay Rate and Quantitative Threshold for a Shell-Flux Gronwall Inequality under SND",
+      "errata_in_title": false,
+      "supersedes_record_ids": [20552080],
+      "claims_withdrawn": [
+        "GNC–Goldbach bridge",
+        "Unconditional T2 closure without SND"
+      ],
+      "notes": "Conditional on SND only."
+    },
+    {
+      "record_id": 22050963,
+      "doi": "10.5281/zenodo.22050963",
+      "conceptrecid": "20518249",
+      "slug": "route-c-exploratory",
+      "disposition": "KEEP",
+      "alias": "Route C exploratory (zero-density architecture)",
+      "current_title_live": "Route C: A Spectral Approach to Zero-Density Estimates, Conditional on Two Analytic Gaps",
+      "clean_title": "Route C: A Spectral Approach to Zero-Density Estimates, Conditional on Two Analytic Gaps",
+      "errata_in_title": false,
+      "supersedes_record_ids": [20518388],
+      "claims_withdrawn": [
+        "Riemann Hypothesis proved",
+        "ARCHON RH proved packaging"
+      ],
+      "notes": "Exploratory conditional note. RH not proved."
+    },
+    {
+      "record_id": 22050978,
+      "doi": "10.5281/zenodo.22050978",
+      "conceptrecid": null,
+      "slug": "status-errata-index",
+      "disposition": "KEEP",
+      "alias": "Status and correction index",
+      "current_title_live": "Status and Errata: What Stands and What Is Withdrawn",
+      "clean_title": "Status and Errata: What Stands and What Is Withdrawn",
+      "errata_in_title": false,
+      "supersedes_record_ids": [],
+      "claims_withdrawn": [],
+      "notes": "Single dignified public index; title is intentionally a status sheet."
+    },
+    {
+      "record_id": null,
+      "doi": null,
+      "conceptrecid": null,
+      "slug": "domain-architect-fra",
+      "disposition": "KEEP",
+      "alias": "Domain Architect / Functional Role Analysis",
+      "current_title_live": null,
+      "clean_title": "Domain Architect: Functional Role Analysis for Model Auditing (software + methods note)",
+      "errata_in_title": false,
+      "supersedes_record_ids": [],
+      "claims_withdrawn": [
+        "Canonical Simons Field Equation resolved",
+        "Millennium-from-SFE",
+        "Clay / Millennium regularity"
+      ],
+      "notes": "Repo-only as of 2026-08-23 (domain_architect/ + docs/domain-architect/). No Zenodo deposit yet; optional future deposit."
+    },
+    {
+      "record_id": 20405589,
+      "doi": "10.5281/zenodo.20405589",
+      "conceptrecid": "20405588",
+      "slug": "q6-goldbach-archive",
+      "disposition": "PARK_ARCHIVE",
+      "alias": "Q6 Goldbach dark-state packaging",
+      "current_title_live": "A Q6 Spectral Route to the Strong Goldbach Conjecture: Spectral Non-Concentration and the Inverse-GCD Operator",
+      "clean_title": "A Q6 Spectral Route to the Strong Goldbach Conjecture: Spectral Non-Concentration and the Inverse-GCD Operator",
+      "errata_in_title": false,
+      "superseded_by": "10.5281/zenodo.22050962",
+      "claims_withdrawn": [
+        "Goldbach via dark states",
+        "Full-spectrum λ_min floor",
+        "Bridge conjecture as load-bearing"
+      ],
+      "notes": "Older concept version; live concept page now points to 22050962. Add description errata; do not put banners in title."
+    },
+    {
+      "record_id": 20518057,
+      "doi": "10.5281/zenodo.20518057",
+      "conceptrecid": "20518056",
+      "slug": "snd-framework-old",
+      "disposition": "PARK_ARCHIVE",
+      "alias": "Older SND conditional framework (pre-Ring+SND merge)",
+      "current_title_live": "Spectral Non-Dispersal, the Ring Lemma, and a Conditional Regularity Framework for the Navier–Stokes Equations on T³",
+      "clean_title": "Spectral Non-Dispersal, the Ring Lemma, and a Conditional Regularity Framework for the Navier–Stokes Equations on T³",
+      "errata_in_title": false,
+      "superseded_by": "10.5281/zenodo.22050976",
+      "claims_withdrawn": [
+        "Unconditional NS regularity implied by framework as written"
+      ],
+      "notes": "Superseded by corrected Ring+SND note. Soft description pointer only."
+    },
+    {
+      "record_id": 20405526,
+      "doi": "10.5281/zenodo.20405526",
+      "conceptrecid": "20405525",
+      "slug": "global-regularity-statement-b",
+      "disposition": "PARK_ARCHIVE",
+      "alias": "Global Regularity / Clay Statement (B) packaging",
+      "current_title_live": "[Claim withdrawn - see errata] Global Regularity of the Navier-Stokes Equations on T3: Spectral Non-Dispersal, the Ring Lemma, Phi-Renormalization, and the Shell-Conditioned Commutator Estimate",
+      "clean_title": "Global Regularity of the Navier-Stokes Equations on T3: Spectral Non-Dispersal, the Ring Lemma, Phi-Renormalization, and the Shell-Conditioned Commutator Estimate",
+      "errata_in_title": true,
+      "errata_banner_pattern": "[Claim withdrawn - see errata]",
+      "claims_withdrawn": [
+        "Clay Statement (B) proved",
+        "Unconditional global regularity for classical 3D NS on T³"
+      ],
+      "notes": "URGENT title fix: remove banner; move withdrawal to description."
+    },
+    {
+      "record_id": 20269843,
+      "doi": "10.5281/zenodo.20269843",
+      "conceptrecid": "20269842",
+      "slug": "quantum-lens-millennium",
+      "disposition": "PARK_ARCHIVE",
+      "alias": "Quantum Lens Millennium connector",
+      "current_title_live": "[Superseded - see errata] The Quantum Lens: A Spectral Framework Connecting the Millennium Prize Problems",
+      "clean_title": "The Quantum Lens: A Spectral Framework Connecting the Millennium Prize Problems",
+      "errata_in_title": true,
+      "errata_banner_pattern": "[Superseded - see errata]",
+      "claims_withdrawn": [
+        "Millennium-from-SFE glue",
+        "Six Millennium problems connected via Q6 hub"
+      ],
+      "notes": "URGENT title fix."
+    },
+    {
+      "record_id": 20405593,
+      "doi": "10.5281/zenodo.20405593",
+      "conceptrecid": "20405592",
+      "slug": "montgomery-dyson-q6",
+      "disposition": "PARK_ARCHIVE",
+      "alias": "Montgomery–Dyson as Q6 identity",
+      "current_title_live": "[Superseded - see errata] The Montgomery–Dyson Coincidence as a Q6 Prime Lattice Eigenvalue Identity",
+      "clean_title": "The Montgomery–Dyson Coincidence as a Q6 Prime Lattice Eigenvalue Identity",
+      "errata_in_title": true,
+      "errata_banner_pattern": "[Superseded - see errata]",
+      "claims_withdrawn": [
+        "Montgomery–Dyson coincidence resolved via Q6",
+        "RH progress claim"
+      ],
+      "notes": "URGENT title fix."
+    },
+    {
+      "record_id": 20552171,
+      "doi": "10.5281/zenodo.20552171",
+      "conceptrecid": "20552170",
+      "slug": "three-in-one-millennium",
+      "disposition": "PARK_ARCHIVE",
+      "alias": "Three-in-one / Prime Manifold Hamiltonian",
+      "current_title_live": "[Claim withdrawn - see errata] A Quantum Field Theory on the Prime Manifold: Navier–Stokes, Riemann, and Goldbach Under a Single Hamiltonian",
+      "clean_title": "A Quantum Field Theory on the Prime Manifold: Navier–Stokes, Riemann, and Goldbach Under a Single Hamiltonian",
+      "errata_in_title": true,
+      "errata_banner_pattern": "[Claim withdrawn - see errata]",
+      "claims_withdrawn": [
+        "Millennium-from-SFE",
+        "Single Hamiltonian solves NS/RH/Goldbach",
+        "Full-spectrum λ_min > -1/2 as governing inequality"
+      ],
+      "notes": "URGENT title fix."
+    },
+    {
+      "record_id": 20552400,
+      "doi": "10.5281/zenodo.20552400",
+      "conceptrecid": "20552399",
+      "slug": "triple-lock",
+      "disposition": "PARK_ARCHIVE",
+      "alias": "Triple Lock SND ≡ GNC ≡ Bridge",
+      "current_title_live": "[Claim withdrawn - see errata] A Universal Non-Concentration Principle: SND ≡ GNC ≡ Bridge",
+      "clean_title": "A Universal Non-Concentration Principle: SND ≡ GNC ≡ Bridge",
+      "errata_in_title": true,
+      "errata_banner_pattern": "[Claim withdrawn - see errata]",
+      "claims_withdrawn": [
+        "SND ≡ GNC ≡ Bridge identity",
+        "Triple Lock unconditional closure",
+        "Full-spectrum λ_min claims",
+        "SFE→NS/RH glue"
+      ],
+      "notes": "URGENT title fix. Bridge packaging retired."
+    },
+    {
+      "record_id": 20272545,
+      "doi": "10.5281/zenodo.20272545",
+      "conceptrecid": "20272544",
+      "slug": "snd-implies-ns-unconditional",
+      "disposition": "PARK_ARCHIVE",
+      "alias": "SND implies global NS regularity (May packaging)",
+      "current_title_live": "[Claim withdrawn - see errata] Spectral Non-Concentration Implies Global Regularity for 3D Navier–Stokes on T³",
+      "clean_title": "Spectral Non-Concentration Implies Global Regularity for 3D Navier–Stokes on T³",
+      "errata_in_title": true,
+      "errata_banner_pattern": "[Claim withdrawn - see errata]",
+      "superseded_by": "10.5281/zenodo.22050976",
+      "claims_withdrawn": [
+        "Unconditional global regularity for 3D NS",
+        "SND as proved closure"
+      ],
+      "notes": "URGENT title fix."
+    },
+    {
+      "record_id": 19842060,
+      "doi": "10.5281/zenodo.19842060",
+      "conceptrecid": "19842059",
+      "slug": "ring-lemma-early",
+      "disposition": "PARK_ARCHIVE",
+      "alias": "Early Ring Lemma / Borromean note",
+      "current_title_live": "[Superseded - see errata] Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal",
+      "clean_title": "Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal",
+      "errata_in_title": true,
+      "errata_banner_pattern": "[Superseded - see errata]",
+      "superseded_by": "10.5281/zenodo.22050976",
+      "claims_withdrawn": [
+        "Unconditional regularity implied by early SND packaging"
+      ],
+      "notes": "URGENT title fix."
+    },
+    {
+      "record_id": 20405585,
+      "doi": "10.5281/zenodo.20405585",
+      "conceptrecid": "20405584",
+      "slug": "ring-lemma-borromean-may",
+      "disposition": "PARK_ARCHIVE",
+      "alias": "Ring Lemma Borromean (May conditional toolkit)",
+      "current_title_live": "[Superseded - see errata] Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal: A Conditional Regularity Framework for 3D Navier-Stokes",
+      "clean_title": "Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal: A Conditional Regularity Framework for 3D Navier-Stokes",
+      "errata_in_title": true,
+      "errata_banner_pattern": "[Superseded - see errata]",
+      "superseded_by": "10.5281/zenodo.22050976",
+      "claims_withdrawn": [
+        "Unconditional global regularity"
+      ],
+      "notes": "URGENT title fix."
+    }
+  ]
+}
