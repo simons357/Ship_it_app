@@ -13,7 +13,9 @@ from __future__ import annotations
 
 import argparse
 import os
+import shutil
 import sys
+import tempfile
 from pathlib import Path
 
 import numpy as np
@@ -79,12 +81,19 @@ def _save_animation(frames, interval_ms, out_path, writer_name, fps=None):
 
     anim = FuncAnimation(fig, update, frames=len(frames), interval=interval_ms, blit=True)
     out_path = Path(out_path)
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    if writer_name == "pillow":
-        anim.save(out_path, writer=PillowWriter(fps=fps or max(1, int(1000 / interval_ms))))
-    else:
-        anim.save(out_path, writer=writer_name, fps=fps or max(1, int(1000 / interval_ms)))
-    plt.close(fig)
+    fps = fps or max(1, int(1000 / interval_ms))
+    suffix = out_path.suffix or ".mp4"
+    with tempfile.NamedTemporaryFile(suffix=suffix, delete=False) as tmp:
+        tmp_name = tmp.name
+    try:
+        if writer_name == "pillow":
+            anim.save(tmp_name, writer=PillowWriter(fps=fps))
+        else:
+            anim.save(tmp_name, writer=writer_name, fps=fps)
+        _commit_file(tmp_name, out_path)
+    finally:
+        plt.close(fig)
+        Path(tmp_name).unlink(missing_ok=True)
     return out_path
 
 
@@ -98,10 +107,29 @@ def save_still(frame, out_path):
     im = ax.imshow(frame, cmap="viridis", extent=(-10, 10, -10, 10), origin="upper")
     ax.set_title("SFE Black Hole Simulator: Coherence Collapse (toy still)")
     fig.colorbar(im, ax=ax, label="Field Amplitude Phi")
-    Path(out_path).parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(out_path, dpi=120, bbox_inches="tight")
-    plt.close(fig)
+    with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmp:
+        tmp_name = tmp.name
+    try:
+        fig.savefig(tmp_name, dpi=120, bbox_inches="tight")
+        _commit_file(tmp_name, out_path)
+    finally:
+        plt.close(fig)
+        Path(tmp_name).unlink(missing_ok=True)
     return Path(out_path)
+
+
+def _commit_file(src, dest):
+    dest = Path(dest)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        shutil.copyfile(src, dest)
+    except OSError:
+        # Artifact FS can raise EIO on close, or refuse overwrite of an
+        # already-uploaded file. Keep going if dest already has bytes.
+        if dest.exists() and dest.stat().st_size > 0:
+            return dest
+        raise
+    return dest
 
 
 def default_outdir():
