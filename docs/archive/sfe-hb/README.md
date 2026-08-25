@@ -77,3 +77,4 @@ This is **historical toy UI**. It is **not** the live product.
   `phi += A * sin(2*pi*f*t/spatial_mod + delta)`.
   The plot is a flat-in-\(x\) oscillation vs a dummy space grid. Not a spatial field. Toy UI only.
 - **Not** the 19 Aug UHSA session synthesis above. **Not** `prime_field_coherence.py` (that sketch stays under [`docs/archive/prime-field-2026-08-25/`](../prime-field-2026-08-25/); not a live module).
+- **Not** the queued SFE “black hole simulator” matplotlib paste. That toy is archived under [`docs/archive/nav-42-cbfd-2026-04/sfe_black_hole_simulator_paste.py`](../nav-42-cbfd-2026-04/sfe_black_hole_simulator_paste.py) (Track C). Do **not** add an Equation Explorer tab. Do **not** import into `domain_architect/`.

@@ -1516,5 +1516,18 @@ class TestAprilOverleafClayIsNotFixedOrAugust(unittest.TestCase):
         self.assertNotRegex(policy, r"overleaf\.com/project/[0-9A-Za-z]{12,}")
 
 
+class TestNav42A3IsNotPaper2Snd(unittest.TestCase):
+    def test_faces_refuse_april_a3_as_operator_snd(self) -> None:
+        faces = FACES.read_text(encoding="utf-8")
+        self.assertIn("nav-42-cbfd-2026-04", faces)
+        collapsed = " ".join(faces.lower().replace("*", " ").split())
+        self.assertIn("not paper2 operator snd", collapsed)
+        self.assertIn("Alignment Functionals", faces)
+        self.assertIn("not received", collapsed)
+        self.assertFalse(
+            (ROOT / "docs" / "papers" / "ns-snd" / "Alignment_Functionals.tex").is_file()
+        )
+
+
 if __name__ == "__main__":
     raise SystemExit(unittest.main())

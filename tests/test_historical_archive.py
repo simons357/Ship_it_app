@@ -243,6 +243,7 @@ class TestEquationExplorerIsHistorical(unittest.TestCase):
         self.assertFalse((LIVE_ROOT / "equation_explorer_simons_field.py").is_file())
         index = (ROOT / "docs" / "archive" / "README.md").read_text(encoding="utf-8")
         self.assertIn("equation_explorer_simons_field.py", index)
+        self.assertIn("nav-42-cbfd-2026-04/", index)
 
 
 if __name__ == "__main__":

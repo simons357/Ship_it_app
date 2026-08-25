@@ -186,6 +186,7 @@ class TestStillMissingExactNames(unittest.TestCase):
             "CURRENT_CLAIM_LEDGER_JULY23_FULL.md",
             "Paper2_NS_Regularity_SND_FIXED.tex",
             "PAPER1_REBUILT_Coherence_Index.md",
+            "GCD_Spectral_Dynamics_Report_Jonathan_Simons_2026",
         ):
             self.assertIn(name, missing)
         self.assertIn("Do **not** glue swirl leftover", missing)

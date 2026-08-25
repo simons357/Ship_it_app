@@ -147,6 +147,10 @@ class TestRingReadmeAndFacesSplitTheBook(unittest.TestCase):
         self.assertIn("CLAY_FINAL", faces)
         self.assertIn("a73d949f", faces)
         self.assertIn("kappa", faces.lower())
+        self.assertIn("nav-42-cbfd-2026-04", faces)
+        self.assertIn("NAV-42 Patent Pending", faces)
+        self.assertIn("branding", faces.lower())
+        self.assertIn(r"A_3", faces)
 
 
 class TestPastedKappaSndIsNotRingLemmaFinal(unittest.TestCase):

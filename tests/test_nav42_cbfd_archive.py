@@ -42,6 +42,12 @@ class TestNav42CbfdArchive(unittest.TestCase):
         self.assertIn("TRACK-A.md", text)
         self.assertIn("TRACK-BC.md", text)
         self.assertIn("do **not** dump", text.lower())
+        bc = (ARCHIVE / "TRACK-BC.md").read_text(encoding="utf-8")
+        self.assertIn("do not dump", bc.lower())
+        index = (ROOT / "docs" / "archive" / "README.md").read_text(encoding="utf-8")
+        self.assertIn("nav-42-cbfd-2026-04/", index)
+        self.assertIn("not live DA", index)
+        self.assertIn("qc_coherence", index)
 
     def test_faces_keep_a3_off_paper2_and_ring(self) -> None:
         ns = (ROOT / "docs" / "papers" / "ns-snd" / "FACES.md").read_text(
@@ -52,8 +58,12 @@ class TestNav42CbfdArchive(unittest.TestCase):
         )
         self.assertIn("nav-42-cbfd-2026-04", ns)
         self.assertIn("A_3", ns)
+        collapsed_ns = " ".join(ns.lower().replace("*", " ").split())
+        self.assertIn("not paper2 operator snd", collapsed_ns)
         self.assertIn("nav-42-cbfd-2026-04", ring)
         self.assertIn("Patent Pending", ring)
+        self.assertIn("branding", ring.lower())
+        self.assertIn(r"A_3", ring)
 
     def test_queued_track_c_receipts_exist_outside_live_da(self) -> None:
         archive = ARCHIVE
@@ -66,9 +76,24 @@ class TestNav42CbfdArchive(unittest.TestCase):
         )
         self.assertIn("not received", missing.lower())
         self.assertIn("NOT CLAIMED", missing)
+        collapsed = " ".join(missing.lower().replace("*", " ").split())
+        self.assertIn("not an attachment", collapsed)
+        self.assertIn("403", missing)
+        self.assertIn("Stanley", missing)
+        self.assertIn("7de9444d", missing)
         toys = (archive / "qc_qr_toys.py").read_text(encoding="utf-8")
         self.assertIn("archive only", toys.lower())
         self.assertIn("qc_coherence", toys)
+        self.assertIn("qr_resonance", toys)
+        self.assertIn("Forbidden in live domain_architect", toys)
+        self.assertFalse((DA_PY / "qc_qr_toys.py").is_file())
+        self.assertFalse((DA_PY / "sfe_black_hole_simulator_paste.py").is_file())
+        lookup = (ROOT / "docs" / "packets" / "OLD-PAPERS-LOOK-UP.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("nav-42-cbfd-2026-04", lookup)
+        self.assertIn("Alignment Functionals", lookup)
+        self.assertIn("qc_coherence", lookup)
 
     def test_live_domain_architect_python_has_no_nav42_toys(self) -> None:
         forbidden = (
