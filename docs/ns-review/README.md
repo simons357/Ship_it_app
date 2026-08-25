@@ -1,12 +1,16 @@
-# NS / SND review notes
+# NS / SND review docs
 
-Adversarial audits of Navier–Stokes / Spectral Non-Dispersal claims in this repository.
-
-| Document | Role |
+| Doc | Role |
 | --- | --- |
-| [`ARCHON-PANEL-ADVERSARIAL-VERDICT.md`](./ARCHON-PANEL-ADVERSARIAL-VERDICT.md) | 2026-08-25 attack on favorable ARCHON panel / Theorem H / Clay (B) |
-| `../zenodo/CORRECTION-INDEX-2026.md` | Public KEEP vs PARK Zenodo framing |
-| `../zenodo/deposits/ring-snd-conditional.md` | KEEP DOI `22050976` — SND as hypothesis |
-| `../zenodo/deposits/global-regularity-statement-b.md` | PARK DOI `20405526` — Statement (B) packaging |
+| [`ARCHON-PANEL-ADVERSARIAL-VERDICT.md`](./ARCHON-PANEL-ADVERSARIAL-VERDICT.md) | Adversarial audit: Theorem H ≠ unconditional SND; Clay (B) not resolved |
+| [`DA-GAP-CLOSURE-PLAYBOOK.md`](./DA-GAP-CLOSURE-PLAYBOOK.md) | **Closer playbook:** Broken at X → close by Y; DA runtime refuse path |
+| [`THEOREM-H-ATTACK-PLAN.md`](./THEOREM-H-ATTACK-PLAN.md) | Analytic attack routes on the \(X\le M\) gap (bootstrap first) |
+| [`COMPETITIVE-POSITION-2026.md`](./COMPETITIVE-POSITION-2026.md) | One-page honest race card |
 
-Related prior audits live on branch `cursor/tao-snd-h-panel-a0eb` under `docs/math/` (not necessarily merged here).
+**Runtime:**
+
+```bash
+python3 -m domain_architect --gap-closure '…claim…'
+python3 -m domain_architect --snd-dual
+python3 scripts/da_ns_gap_closure_demo.py
+```
