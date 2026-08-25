@@ -1,4 +1,4 @@
-const CACHE = "chatvault-engine-v0.3.1";
+const CACHE = "chatvault-engine-v0.3.2";
 const ASSETS = [
   "./",
   "./index.html",
