@@ -12,6 +12,8 @@ This packet does not delete, overwrite, or silently alter any Base44 record or h
 | --- | --- |
 | [MASTER-AUDIT.md](MASTER-AUDIT.md) | Required 12-section audit and decision language |
 | [VERSION-MANIFEST.json](VERSION-MANIFEST.json) | Verified identities, hashes, labels |
+| [CHATVAULT-EVERNOTE-TRIAGE.md](CHATVAULT-EVERNOTE-TRIAGE.md) | Historical “Evernote of AI Conversations” HTML: seed demo, substring search, canned assistant |
 | [evidence/](evidence/) | Screenshots, HTML snapshots, one JSON export, SHA-256 sums, visual-test log |
+| [CHATVAULT2-TRIAGE.md](CHATVAULT2-TRIAGE.md) | Honest triage of recovered React-CDN “ChatVault 2” HTML (FEATURE-SOURCE / HISTORICAL; not the live product) |
 
 Nothing in this folder is a ChatVault product repository. Source for the live Base44 apps is still inside Base44 until Jonathan exports it.
