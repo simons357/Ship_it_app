@@ -25,7 +25,7 @@ class TestPhiGeometryBridgeFiles(unittest.TestCase):
 
     def test_older_swirl_faces_are_not_the_22_aug_compile(self):
         faces = (SWIRL / "FACES.md").read_text(encoding="utf-8")
-        self.assertIn("not a compile of 22 August", faces.lower())
+        self.assertIn("not a compile of 22 august", faces.lower())
         controlling = SWIRL / "Simons_PhiRenorm_Swirl_2026-08-22.tex"
         digest = hashlib.sha256(controlling.read_bytes()).hexdigest()
         self.assertEqual(

@@ -21,7 +21,7 @@ Workbook title: *SIMONS NS SHELL STRESS TEST*. Subtitle: reproducible numerical 
 
 - **Not** a theorem.
 - **Not** all-\(N\) Route J (\(\lambda_{\min}(\widehat H_N^\mu)>-1/2\) for every \(N\)). Grid is \(N=24\) spatial, not the Paper2 frozen-gap \(N\le 800\) matrix audit.
-- **Not** Clay / unconditional NS.
+- Not Clay / unconditional NS.
 - **Not** the June FIXED PDF and **not** `Paper2_NS_Regularity_SND_FIXED.tex` (that TeX was not received; do not invent it).
 - **Not** Book B swirl. Do not glue these shell ratios to \(\Phi=u_\theta/r\).
 - **Not** live Domain Architect.

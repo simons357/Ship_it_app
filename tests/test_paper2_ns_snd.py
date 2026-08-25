@@ -315,7 +315,7 @@ class TestShellStressIsNumericalNotTheorem(unittest.TestCase):
         self.assertIn("not a theorem", note.lower())
         self.assertIn("route j", note.lower())
         self.assertIn("all-", note.lower())
-        self.assertIn("Not Clay", note)
+        self.assertIn("not clay", note.lower())
         self.assertIn("24", note)
         self.assertIn("not an axisymmetric-swirl", note.lower())
         faces = FACES.read_text(encoding="utf-8")

@@ -97,14 +97,14 @@ class TestOlderSwirlFacesAreNotACompileOf22August(unittest.TestCase):
     def test_faces_and_readme_split_the_book(self):
         faces = FACES.read_text(encoding="utf-8")
         readme = README.read_text(encoding="utf-8")
-        self.assertIn("not a compile of 22 August", faces.lower())
+        self.assertIn("not a compile of 22 august", faces.lower())
         self.assertIn("Simons_PhiRenorm_Swirl_2026-06-30.pdf", faces)
         self.assertIn("NS_PhiRenorm_complete.tex", faces)
         self.assertIn("PhiRenorm_FINAL_v2.tex", faces)
         self.assertIn("NOT CLAIMED", faces)
         self.assertIn("eec7aa57b32a", faces)
         self.assertIn("2ca8744763cd", faces)
-        self.assertIn("not a compile of 22 August", readme.lower())
+        self.assertIn("not a compile of 22 august", readme.lower())
         self.assertIn("NOT CLAIMED", readme)
         self.assertIn(r"u_\theta/r", readme)
         self.assertNotIn("Paper2_NS_Regularity_SND_FIXED.tex", "".join(
