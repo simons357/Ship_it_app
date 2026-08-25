@@ -31,7 +31,8 @@ Sibling toy (same sine-sum bug, slider UI):
 
 ## What the kernel actually does
 
-The harmonic sum is **independent of \(x\) and \(y\)**:
+The harmonic sum is **independent of \(x\) and \(y\)** (the sine sum
+**does not depend** on space):
 
 ```
 Phi += A * sin(2 * pi * f_p * t / phi_mod + delta)
