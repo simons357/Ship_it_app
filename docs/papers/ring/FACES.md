@@ -32,3 +32,5 @@ Ring Lemma: on a single LP shell, \(\|\nabla\xi\|_{L^\infty}\) is controlled by 
 - **April / June-era source:** `RingLemma_Final.tex`. File it; do not compile it as the 21 Aug PDF; do not cash the augmented Main Theorem as Clay.
 - **June 19 pack TeX** `c8a03f315_RingLemma_Simons_June19_2026.tex`: **not received**. Do not invent it.
 - **Do not merge them into one claim.**
+
+Zenodo [10.5281/zenodo.20269536](https://doi.org/10.5281/zenodo.20269536) is a superseded **Paper2** May 18 TeX (SHA `f51ed5c05ec3…`), not this Ring book. Its status note points at `22045474` as a “corrected version”; that DOI is Ring (`02_ring_lemma_snd_conditional.pdf`), not a Paper2 FIXED repair. Do not glue them.

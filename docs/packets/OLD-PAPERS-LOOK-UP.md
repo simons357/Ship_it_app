@@ -36,12 +36,13 @@ If the paperclip errors again: paste the **exact error text**, or put the file i
 | Paper2 June FIXED PDF | `docs/papers/ns-snd/Paper2_NS_Regularity_SND_FIXED.pdf` | (from you; SHA `7de9444d…`) |
 | Paper2 Mac “SND 2” PDF | `docs/papers/ns-snd/Paper2_NS_Regularity_SND.pdf` | (from you; not the Zenodo bytes) |
 | Paper2 Zenodo “implies” | `docs/papers/ns-snd/zenodo-20272545/` | [10.5281/zenodo.20272545](https://doi.org/10.5281/zenodo.20272545) — **claim withdrawn** |
+| Paper2 Zenodo superseded TeX | `docs/papers/ns-snd/zenodo-20269536/` (alias; bytes already at `Simons_NS_Paper2_DRAFT_original.tex`) | [10.5281/zenodo.20269536](https://doi.org/10.5281/zenodo.20269536) — **[Superseded]** *Criteria* record title; file is May 18 *Implies* TeX SHA `f51ed5c05ec3…`. **Not** FIXED `7de9444d…`. **Not** `20272545`. |
 | Paper2 August 1 audit | `docs/papers/ns-snd/NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md` | (from you) |
 | Swirl 22 August | `docs/papers/swirl/Simons_PhiRenorm_Swirl_2026-08-22.tex` | (already on this branch) |
 
 Ring SND in that PDF is \(\inf J/X\ge c_*\). Paper2 SND is closeness of a GCD mix to \(\mu\). Same letters, two definitions.
 
-The June Paper2 PDF cites `10.5281/zenodo.19842060` as GCD Paper1. Live Zenodo at that DOI is a **superseded Ring/SND** paper, not that title. `10.5281/zenodo.19842061` currently resolves to an unrelated record. Do not hunt those two as Paper1.
+The June Paper2 PDF cites `10.5281/zenodo.19842060` as GCD Paper1. Live Zenodo at that DOI is a **superseded Ring/SND** paper, not that title. `10.5281/zenodo.19842061` currently resolves to an unrelated record. Do not hunt those two as Paper1. Zenodo `20269536` repeats those related-record cites and points at `22045474` as a “corrected version”; `22045474` is Ring, not Paper2 FIXED.
 
 Withdrawn GCD prize paper (history only): [10.5281/zenodo.20271457](https://doi.org/10.5281/zenodo.20271457).
 
@@ -60,7 +61,7 @@ Send **one** of these, as `.tex`, if you still want the pack source rather than 
 | RingLemma_Final TeX | `492e0654f_RingLemma_Final.tex` | **filed** as [`docs/papers/ring/RingLemma_Final.tex`](../papers/ring/RingLemma_Final.tex). April 2026 *Borromean Triads* face; June 20-ish drop. **Not** a compile of the 21 Aug Zenodo PDF. **Not** FIXED.tex. **Not** Clay. Map: [`docs/papers/ring/FACES.md`](../papers/ring/FACES.md). |
 | June Paper2 **source** of the FIXED PDF | `Paper2_NS_Regularity_SND_FIXED.tex` | **still not in this VM.** A message that is only the filename is not an attachment. Send the `.tex` as one file, or paste it, or git-push it. Caption: “this is the source of the June FIXED PDF.” Do not merge it with the August TeX. |
 | June 14 Clay-submit (historical / withdrawn-claim only) | `2f30e8c4f_NS_ClaySubmit_Jonathan_Simons_2026-06-14.tex` | **still not in this VM.** Selecting a Mac path is not an attachment. Send this **one** `.tex` file. Do not zip. Caption: “June 14 ClaySubmit, historical face.” **Not** FIXED. **Not** August. Classical regularity stays **NOT CLAIMED** even if that draft claimed Clay. |
-| April Spectral Coherence draft | `5dfeb6b64_Paper2_April_Spectral_Coherence_DRAFT.tex` | Mac Desktop path was unreadable. Base44 session-scratch of that name is **the same bytes** as [`Simons_NS_Paper2_DRAFT_original.tex`](../papers/ns-snd/Simons_NS_Paper2_DRAFT_original.tex) (SHA `f51ed5c05ec3…`, May 18 *Implies*). **Not re-filed.** **Not** FIXED. **Not** August. **Not** Clay. **Not** April *A Spectral Coherence Criterion* / Q6 Dominant-Shell. Map: [`docs/papers/ns-snd/FACES.md`](../papers/ns-snd/FACES.md). |
+| April Spectral Coherence draft | `5dfeb6b64_Paper2_April_Spectral_Coherence_DRAFT.tex` | Fetched from Base44 public URL (HTTP **302** then **200**). **Same bytes** as [`Simons_NS_Paper2_DRAFT_original.tex`](../papers/ns-snd/Simons_NS_Paper2_DRAFT_original.tex) (SHA `f51ed5c05ec3…`, May 18 *Implies*) and as Zenodo [10.5281/zenodo.20269536](https://doi.org/10.5281/zenodo.20269536). **Not re-filed.** Filename is untrusted. **Not** FIXED. **Not** August. **Not** Clay. **Not** April *A Spectral Coherence Criterion* / Q6 Dominant-Shell. Map: [`docs/papers/ns-snd/FACES.md`](../papers/ns-snd/FACES.md). |
 | Anesthesia face | `PAPER1_REBUILT_Coherence_Index.md` |
 | Pack swirl complete (older than 22 August) | `NS_PhiRenorm_complete.tex` | **filed** as [`docs/papers/swirl/NS_PhiRenorm_complete.tex`](../papers/swirl/NS_PhiRenorm_complete.tex). April 2026 *Conditional Reduction*. Older than 22 August. **Not** a compile of the 22 August TeX. Same title family as [`Simons_PhiRenorm_Swirl_2026-06-30.pdf`](../papers/swirl/Simons_PhiRenorm_Swirl_2026-06-30.pdf). |
 

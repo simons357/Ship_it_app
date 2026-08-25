@@ -30,3 +30,5 @@ Standalone Ring lemma. **Not** Clay. **Not** FIXED.tex. Map: [`FACES.md`](FACES.
 DA leftover-split lab (usable Ring SND beside Q6 \(H_N\); three NS leftovers stay OPEN): [`docs/domain-architect/LEFTOVER-REPAIR.md`](../../domain-architect/LEFTOVER-REPAIR.md).
 
 April record [10.5281/zenodo.19842060](https://doi.org/10.5281/zenodo.19842060) is marked superseded. Paper2’s June PDF cited that DOI as “GCD Spectral Operators and the Frozen Spectral Gap.” The live record is a Ring/SND paper, not that title. Do not trust that bibliography line.
+
+Zenodo [10.5281/zenodo.20269536](https://doi.org/10.5281/zenodo.20269536) is Paper2 May 18 TeX, not this book. Its status note pointing at `22045474` as a Paper2 “corrected version” is stale.

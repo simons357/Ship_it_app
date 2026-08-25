@@ -22,6 +22,28 @@ def collapsed(text: str) -> str:
     return " ".join(text.split())
 
 
+def classify_paper2_tex_title_page(tex: str) -> str:
+    """Identify a Paper2 TeX face from title + date, never from an untrusted filename."""
+    june_title = "Conditional Regularity Criterion" in tex
+    june_date = "Corrected June 2026" in tex
+    implies = "Implies Global Regularity" in tex
+    may18 = r"\date{May 18, 2026}" in tex
+    august = "Conditional Global-Regularity Framework" in tex
+    april_coherence = (
+        "A Spectral Coherence Criterion" in tex
+        or "Dominant-Shell Damping" in tex
+    )
+    if june_title and june_date:
+        return "june_fixed_source"
+    if august:
+        return "august_repaired"
+    if april_coherence:
+        return "april_spectral_coherence"
+    if implies and may18:
+        return "may18_implies_draft"
+    return "unknown"
+
+
 class TestPaper2IsItsOwnBook(unittest.TestCase):
     def test_repaired_tex_and_readme_exist(self):
         self.assertTrue(PAPER.is_file(), PAPER)
@@ -88,6 +110,7 @@ class TestPaper2IsItsOwnBook(unittest.TestCase):
         self.assertIn("Paper2_NS_Regularity_SND_FIXED.pdf", readme)
         self.assertIn("NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md", readme)
         self.assertIn("zenodo-20272545", readme)
+        self.assertIn("zenodo-20269536", readme)
         self.assertIn("Lemma 6.1 OPEN", readme)
         self.assertIn("NS_UNAUGMENTED_PROOF_CHAIN.md", readme)
 
@@ -148,6 +171,41 @@ class TestPaper2ImpliesFacesAreNotTheJunePdf(unittest.TestCase):
             (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file(),
             "June FIXED TeX was not attached; do not invent it",
         )
+
+    def test_zenodo_20272545_sha_is_not_june_fixed_7de9444d(self):
+        zen = self.ZENODO.read_bytes()
+        june = PDF.read_bytes()
+        zen_sha = hashlib.sha256(zen).hexdigest()
+        june_sha = hashlib.sha256(june).hexdigest()
+        self.assertEqual(zen_sha, self.ZENODO_SHA256)
+        self.assertEqual(self.ZENODO_SHA256[:8], "87610856")
+        self.assertEqual(june_sha, PDF_SHA256)
+        self.assertEqual(
+            PDF_SHA256,
+            "7de9444d18054fc8f49a52c3fd7ed2f086a7c7d7d6d1e95bad350c378535c41b",
+        )
+        self.assertNotEqual(zen_sha, PDF_SHA256)
+        self.assertNotEqual(zen, june)
+        self.assertEqual(len(zen), 360856)
+        self.assertEqual(len(june), 309576)
+
+    def test_faces_mark_zenodo_20272545_not_june_fixed(self):
+        faces = FACES.read_text(encoding="utf-8")
+        readme = README.read_text(encoding="utf-8")
+        note = (NS_SND / "zenodo-20272545" / "README.md").read_text(encoding="utf-8")
+        for text in (faces, readme, note):
+            self.assertIn("20272545", text)
+            self.assertIn("Claim withdrawn", text)
+            self.assertIn("87610856", text)
+            self.assertIn("NOT the June FIXED PDF", text)
+            self.assertIn("7de9444d", text)
+        self.assertIn("Implies Global Regularity", faces)
+        self.assertIn("20269536", faces)
+        self.assertIn("distinct", faces.lower())
+        self.assertIn("NOT CLAIMED", faces)
+        self.assertNotIn("DA-VC-01 PASS", faces)
+        self.assertNotIn("DA-VC-01 PASS", readme)
+        self.assertNotIn("DA-VC-01 PASS", note)
 
 
 class TestJune14ClaySubmitDidNotArrive(unittest.TestCase):
@@ -491,6 +549,172 @@ class TestAprilSpectralCoherenceFilenameIsMay18ImpliesAlias(unittest.TestCase):
         self.assertIn("Simons_NS_Paper2_SND_GNC_REPAIRED_2026.tex", faces)
         self.assertIn("675001cd1_Simons_NS_Paper2_DRAFT.tex", faces)
         self.assertIn("still absent", faces.lower())
+        self.assertIn("base44.app", faces)
+        self.assertIn("69b28657b0df374441f0302e", faces)
+        self.assertIn("HTTP **302**", faces)
+        self.assertIn("HTTP **200**", faces)
+        self.assertIn("untrusted alias", faces.lower())
+        self.assertIn("HTTP **302**", readme)
+        self.assertIn("HTTP **200**", readme)
+        self.assertIn("untrusted", readme.lower())
+
+    def test_title_page_is_may18_implies_not_june_fixed_unless_fixed_source(self):
+        """This alias is not FIXED PDF 7de9444d unless the title page actually is FIXED TeX."""
+        raw = self.DRAFT.read_bytes()
+        tex = raw.decode("utf-8")
+        identity = classify_paper2_tex_title_page(tex)
+        fixed_tex = NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex"
+        if identity == "june_fixed_source":
+            self.assertTrue(fixed_tex.is_file(), "June title page must be filed as FIXED TeX")
+            self.assertEqual(hashlib.sha256(fixed_tex.read_bytes()).hexdigest(), self.DRAFT_SHA256)
+            self.assertIn("Conditional Regularity Criterion", tex)
+            self.assertIn("Corrected June 2026", tex)
+            return
+        self.assertEqual(identity, "may18_implies_draft")
+        self.assertNotEqual(identity, "june_fixed_source")
+        self.assertNotEqual(identity, "april_spectral_coherence")
+        self.assertNotEqual(identity, "august_repaired")
+        self.assertFalse(fixed_tex.is_file(), "do not invent FIXED TeX from this alias")
+        self.assertNotEqual(hashlib.sha256(raw).hexdigest(), PDF_SHA256)
+        self.assertEqual(PDF_SHA256, (
+            "7de9444d18054fc8f49a52c3fd7ed2f086a7c7d6d1e95bad350c378535c41b"
+        ))
+        self.assertIn("Implies Global Regularity", tex)
+        self.assertIn(r"\date{May 18, 2026}", tex)
+        self.assertNotIn("Conditional Regularity Criterion", tex)
+        self.assertNotIn("Corrected June 2026", tex)
+        self.assertIn("T2 — Closed Gronwall Proof", tex)
+        self.assertNotIn("QStack", tex)
+
+
+class TestZenodo20269536IsMay18ImpliesAlias(unittest.TestCase):
+    """Zenodo 10.5281/zenodo.20269536 is the May 18 implies TeX, not FIXED.
+
+    Record title is *[Superseded] …Criteria…*. File bytes match
+    Simons_NS_Paper2_DRAFT_original.tex (SHA f51ed5c05ec3…). Not a new face.
+    Not June FIXED 7de9444d…. Not 20272545. Not Ring. Not swirl.
+    """
+
+    DRAFT = NS_SND / "Simons_NS_Paper2_DRAFT_original.tex"
+    DRAFT_SHA256 = (
+        "f51ed5c05ec3886603a69de942b890dc76c73b3860fe089a056b4665ab8cc4cb"
+    )
+    AUGUST_SHA256 = (
+        "1ff7a211c00d660c30365e5913727f0129cfc5cd76f1f40ed9a47f468c746cc3"
+    )
+    ZENODO_IMPLIES_PDF = NS_SND / "zenodo-20272545" / "Paper2_NS_Regularity_SND.pdf"
+    ZENODO_IMPLIES_SHA256 = (
+        "87610856449007e7bdca3b87d82683e463b299484b3906a0dda27a18bec416a3"
+    )
+    RING_PDF = ROOT / "docs" / "papers" / "ring" / "02_ring_lemma_snd_conditional.pdf"
+    RING_PDF_SHA256 = (
+        "0304f039406c7a95868b326b62f6c9ed4ea6b8c8386dc86ebd088a1a2ab114a3"
+    )
+    RING_TEX = ROOT / "docs" / "papers" / "ring" / "RingLemma_Final.tex"
+    RING_TEX_SHA256 = (
+        "4602065ef68a6eb8402e2c99d708d7be888c4b959122ff8ba4dafbc073440157"
+    )
+    NOTE = NS_SND / "zenodo-20269536" / "README.md"
+    DOI = "10.5281/zenodo.20269536"
+
+    def test_sha_is_may18_draft_and_not_fixed_unless_bytes_match(self):
+        raw = self.DRAFT.read_bytes()
+        june = PDF.read_bytes()
+        draft_sha = hashlib.sha256(raw).hexdigest()
+        june_sha = hashlib.sha256(june).hexdigest()
+        self.assertEqual(draft_sha, self.DRAFT_SHA256)
+        self.assertEqual(june_sha, PDF_SHA256)
+        self.assertEqual(
+            PDF_SHA256,
+            "7de9444d18054fc8f49a52c3fd7ed2f086a7c7d7d6d1e95bad350c378535c41b",
+        )
+        self.assertEqual(len(raw), 26998)
+        self.assertEqual(raw.count(b"\n"), 664)
+        self.assertNotEqual(raw, june)
+        self.assertNotEqual(draft_sha, PDF_SHA256)
+        zen_pdf = self.ZENODO_IMPLIES_PDF.read_bytes()
+        self.assertEqual(
+            hashlib.sha256(zen_pdf).hexdigest(), self.ZENODO_IMPLIES_SHA256
+        )
+        self.assertNotEqual(raw, zen_pdf)
+        self.assertNotEqual(draft_sha, self.ZENODO_IMPLIES_SHA256)
+        august = PAPER.read_bytes()
+        self.assertEqual(hashlib.sha256(august).hexdigest(), self.AUGUST_SHA256)
+        self.assertNotEqual(raw, august)
+        ring_pdf = self.RING_PDF.read_bytes()
+        ring_tex = self.RING_TEX.read_bytes()
+        self.assertEqual(hashlib.sha256(ring_pdf).hexdigest(), self.RING_PDF_SHA256)
+        self.assertEqual(hashlib.sha256(ring_tex).hexdigest(), self.RING_TEX_SHA256)
+        self.assertNotEqual(draft_sha, self.RING_PDF_SHA256)
+        self.assertNotEqual(draft_sha, self.RING_TEX_SHA256)
+        tex = raw.decode("utf-8")
+        self.assertIn("Implies Global Regularity", tex)
+        self.assertIn(r"\date{May 18, 2026}", tex)
+        self.assertNotIn("Corrected June 2026", tex)
+        self.assertNotIn("Conditional Regularity Criterion", tex)
+        self.assertNotIn("A Spectral Coherence Criterion", tex)
+
+    def test_doi_is_alias_not_a_second_copy(self):
+        self.assertTrue(self.NOTE.is_file(), self.NOTE)
+        note = self.NOTE.read_text(encoding="utf-8")
+        self.assertIn(self.DOI, note)
+        self.assertIn("f51ed5c05ec3", note)
+        self.assertIn("7de9444d", note)
+        self.assertIn("87610856", note)
+        self.assertIn("Superseded", note)
+        self.assertIn("Criteria", note)
+        self.assertIn("2026-05-18", note)
+        self.assertIn("simons, jonathan", note)
+        self.assertIn("Simons_NS_Paper2_DRAFT.tex", note)
+        self.assertIn("22045474", note)
+        self.assertIn("19842060", note)
+        self.assertIn("do not re-file", note.lower())
+        extras = [
+            p
+            for p in (NS_SND / "zenodo-20269536").iterdir()
+            if p.name != "README.md"
+        ]
+        self.assertEqual(extras, [], f"do not duplicate the TeX under {extras}")
+        self.assertFalse((NS_SND / "Simons_NS_Paper2_DRAFT.tex").is_file())
+        self.assertFalse(
+            (NS_SND / "zenodo-20269536" / "Simons_NS_Paper2_DRAFT.tex").is_file()
+        )
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file()
+        )
+
+    def test_faces_record_doi_and_reject_fixed_ring_swirl(self):
+        faces = FACES.read_text(encoding="utf-8")
+        readme = README.read_text(encoding="utf-8")
+        ring_faces = (ROOT / "docs" / "papers" / "ring" / "FACES.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn(self.DOI, faces)
+        self.assertIn(self.DOI, readme)
+        self.assertIn("zenodo-20269536", faces)
+        self.assertIn("zenodo-20269536", readme)
+        self.assertIn("2026-05-18", faces)
+        self.assertIn("2026-08-21", faces)
+        self.assertIn("simons, jonathan", faces)
+        self.assertIn("Superseded - see errata", faces)
+        self.assertIn("Spectral Non-Concentration Criteria", faces)
+        self.assertIn("f51ed5c05ec3", faces)
+        self.assertIn("7de9444d", faces)
+        self.assertIn("87610856", faces)
+        self.assertIn("0304f039", faces)
+        self.assertIn("4602065ef68a", faces)
+        self.assertIn("this DOI is not an alias of FIXED", faces)
+        self.assertIn("**Not** swirl", faces)
+        self.assertIn("22045474", faces)
+        self.assertIn("19842060", faces)
+        self.assertIn("do not remap", faces.lower())
+        self.assertIn("do not revive those maps", faces.lower())
+        self.assertIn("NOT CLAIMED", faces)
+        self.assertIn("do not use as closed", faces.lower())
+        self.assertIn("not re-filed", faces.lower())
+        self.assertIn(self.DOI, ring_faces)
+        self.assertIn("not this Ring book", ring_faces)
+        self.assertIn("Paper2", ring_faces)
 
 
 class TestCleanPdfIsNotPaper2OrFixed(unittest.TestCase):
