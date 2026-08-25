@@ -26,4 +26,4 @@ Conditional Weyl: *if* frozen gap and quantitative operator-norm closeness, then
 - **Cleaner honesty on the product \(C_N\eta_N\):** June PDF (numerical/conditional, not “proved”).
 - **Do not merge them into one claim.** If a single source is required, say which face you are compiling. Do not cite the PDF as “the August paper” or the TeX as “the June FIXED PDF.”
 
-Neither face is Domain Architect. Neither face is the 22 August swirl paper. Neither face is Clay.
+The June Paper2 PDF cites Zenodo `10.5281/zenodo.19842060` as GCD Paper1. Live record at that DOI is a superseded Ring/SND paper. Current Q6 face: [`docs/papers/gcd/`](../gcd/README.md). Current Ring face: [`docs/papers/ring/`](../ring/README.md). Errata: [`docs/papers/status-errata/`](../status-errata/README.md).

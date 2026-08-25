@@ -13,6 +13,8 @@ Four theorems: the algebraic identity \(\frac1{r^4}\partial_z(\Gamma^2)=\partial
 
 ## Public May 2026 deposit
 
+Local copies: [`zenodo-may/`](zenodo-may/README.md).
+
 - Concept DOI: https://doi.org/10.5281/zenodo.20405404
 - Latest file DOI: https://doi.org/10.5281/zenodo.20405405
 - PDF: https://zenodo.org/records/20405405/files/PhiRenorm_TrackB.pdf
