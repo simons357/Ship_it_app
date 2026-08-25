@@ -2,7 +2,7 @@
 
 [`Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md`](Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md)
 
-SHA-256 `2baa96ea58fb…`. 15 924 bytes. Chat paste of 19 August 2026
+SHA-256 `4d49cd1ee629…`. 15 899 bytes. Chat paste of 19 August 2026
 *Unified Harmonic Spectral Architecture: Session Master Synthesis*
 (Jonathan Simons, CRNA). Base44 / Claude-era unification dump.
 

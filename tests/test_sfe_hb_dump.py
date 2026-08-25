@@ -60,7 +60,7 @@ UHSA_SYNTHESIS = (
     / "Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md"
 )
 UHSA_SYNTHESIS_SHA256 = (
-    "2baa96ea58fb8a42c385c26495a5a034cd6a406ff7f865c7c294506adfe31b1e"
+    "4d49cd1ee629e6c2fbf0ad93fa08c107d6d4587ea5a06121930ecbdeb848e363"
 )
 LIVE_FORBIDDEN_TOKENS = (
     "d_master",
@@ -258,7 +258,7 @@ class TestUhsaSessionSynthesisStaysArchived(unittest.TestCase):
         self.assertTrue(UHSA_SYNTHESIS.is_file(), UHSA_SYNTHESIS)
         raw = UHSA_SYNTHESIS.read_bytes()
         self.assertEqual(hashlib.sha256(raw).hexdigest(), UHSA_SYNTHESIS_SHA256)
-        self.assertEqual(len(raw), 15924)
+        self.assertEqual(len(raw), 15899)
         text = raw.decode("utf-8")
         self.assertIn("Historical session synthesis only", text)
         self.assertIn("Not live Domain Architect", text)

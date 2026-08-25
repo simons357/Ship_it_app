@@ -1,13 +1,13 @@
 > **Filing banner (25 August 2026).** Historical session synthesis only.
-> **Not** live Domain Architect. **Not** a proof of RH / NS / YM / BSD / Hodge.
-> Clay is **NOT CLAIMED**. **Not** June Paper2 FIXED. **Not** QStack product.
+> Not live Domain Architect. Not a proof of RH / NS / YM / BSD / Hodge.
+> Clay is **NOT CLAIMED**. Not June Paper2 FIXED. Not QStack product.
 > DA-VC-01 remains **FAIL**. Correspondence is a hypothesis, not physical
 > equivalence. Do not stamp TRANSFORMABLE / SPE without a real \(T\).
 >
 > Live product stays DECOMPOSE → CROSS-DOMAIN TRANSLATE → SYNTHESIZE
 > ([`docs/DOMAIN-ARCHITECT.md`](../../DOMAIN-ARCHITECT.md)). SFE / UHF / DHFA /
 > Harmonic Blueprint / QStack / `D_Master` / `C_Master` / `Q_UHF` / `K_DHFA`
-> are **not canonical**. Do **not** import them into `domain_architect/`.
+> are **not canonical**. Do not import into `domain_architect/`.
 >
 > **§7 bedrock (do not upgrade).** GCD matrix \(Q_N\) positive-definite is the
 > real inverse-GCD / Q6 arithmetic fact. Usable theory H is
