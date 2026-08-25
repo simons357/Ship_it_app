@@ -2,12 +2,16 @@
 
 from __future__ import annotations
 
+import importlib.util
+import os
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE = ROOT / "docs" / "archive" / "nav-42-cbfd-2026-04"
 DA_PY = ROOT / "domain_architect"
+BH_TOY = ARCHIVE / "sfe_black_hole_simulator_paste.py"
+BH_RECEIPT = ARCHIVE / "SFE_BLACK_HOLE_SIMULATOR.RECEIPT.md"
 
 
 class TestNav42CbfdArchive(unittest.TestCase):
@@ -36,6 +40,9 @@ class TestNav42CbfdArchive(unittest.TestCase):
         self.assertIn("qc_coherence", text)
         self.assertIn("Forbidden", text)
         self.assertIn("cylinder-wake", text)
+        self.assertIn("chat paste arrived", text.lower())
+        self.assertIn("does not depend on", text.lower())
+        self.assertIn("SFE_BLACK_HOLE_SIMULATOR.RECEIPT.md", text)
 
     def test_readme_points_at_tracks(self) -> None:
         text = (ARCHIVE / "README.md").read_text(encoding="utf-8")
@@ -48,6 +55,8 @@ class TestNav42CbfdArchive(unittest.TestCase):
         self.assertIn("nav-42-cbfd-2026-04/", index)
         self.assertIn("not live DA", index)
         self.assertIn("qc_coherence", index)
+        self.assertIn("sfe_field", index)
+        self.assertIn("SFE_BLACK_HOLE_SIMULATOR.RECEIPT.md", index)
 
     def test_faces_keep_a3_off_paper2_and_ring(self) -> None:
         ns = (ROOT / "docs" / "papers" / "ns-snd" / "FACES.md").read_text(
@@ -64,6 +73,15 @@ class TestNav42CbfdArchive(unittest.TestCase):
         self.assertIn("Patent Pending", ring)
         self.assertIn("branding", ring.lower())
         self.assertIn(r"A_3", ring)
+        self.assertIn("sfe_black_hole_simulator_paste.py", ns)
+        self.assertIn("sfe_black_hole_simulator_paste.py", ring)
+        collapsed_ring = " ".join(ring.lower().replace("*", " ").split())
+        self.assertIn("not ring snd", collapsed_ring)
+        swirl = (ROOT / "docs" / "papers" / "swirl" / "FACES.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("sfe_black_hole_simulator_paste.py", swirl)
+        self.assertIn(r"\Phi=u_\theta/r", swirl)
 
     def test_queued_track_c_receipts_exist_outside_live_da(self) -> None:
         archive = ARCHIVE
@@ -78,6 +96,7 @@ class TestNav42CbfdArchive(unittest.TestCase):
         self.assertIn("NOT CLAIMED", qos)
         self.assertIn("Not Track A", qos)
         self.assertTrue((archive / "sfe_black_hole_simulator_paste.py").is_file())
+        self.assertTrue((archive / "SFE_BLACK_HOLE_SIMULATOR.RECEIPT.md").is_file())
         missing = (archive / "Alignment_Functionals_Strong_Draft.MISSING.md").read_text(
             encoding="utf-8"
         )
@@ -108,6 +127,9 @@ class TestNav42CbfdArchive(unittest.TestCase):
         self.assertIn("Alignment Functionals", lookup)
         self.assertIn("qc_coherence", lookup)
         self.assertIn("11524", lookup)
+        self.assertIn("SFE Black Hole Simulator", lookup)
+        self.assertIn("chat paste **arrived**", lookup)
+        self.assertIn("SFE_BLACK_HOLE_SIMULATOR.RECEIPT.md", lookup)
 
     def test_live_domain_architect_python_has_no_nav42_toys(self) -> None:
         forbidden = (
@@ -118,6 +140,9 @@ class TestNav42CbfdArchive(unittest.TestCase):
             "NAV-42",
             "NAV_42",
             "Q Operating System",
+            "sfe_field",
+            "Black Hole Simulator",
+            "Coherence Collapse",
         )
         hits: list[str] = []
         for path in DA_PY.glob("*.py"):
@@ -126,6 +151,56 @@ class TestNav42CbfdArchive(unittest.TestCase):
                 if token in body:
                     hits.append(f"{path.name}:{token}")
         self.assertEqual(hits, [], msg="live DA must not import Track C toys")
+
+    def test_sfe_black_hole_paste_arrived_as_track_c_disk_mask(self) -> None:
+        receipt = BH_RECEIPT.read_text(encoding="utf-8")
+        self.assertIn("chat paste", receipt.lower())
+        self.assertIn("arrived", receipt.lower())
+        self.assertIn("NOT CLAIMED", receipt)
+        self.assertIn("Not Domain Architect", receipt)
+        self.assertIn("does not depend", receipt.lower())
+        self.assertIn("disk", receipt.lower())
+        collapsed = " ".join(receipt.lower().replace("*", " ").split())
+        self.assertIn("not gr", collapsed)
+        self.assertIn("not swirl", collapsed)
+        self.assertIn("not track a", collapsed)
+        self.assertIn("not live da", collapsed.replace("domain architect", "da"))
+        toy = BH_TOY.read_text(encoding="utf-8")
+        self.assertIn("Historical toy only", toy)
+        self.assertIn("does not depend on x or y", toy)
+        self.assertIn("primes is None", toy)
+        self.assertNotIn("primes=[2,3,5,7]", toy)
+        self.assertIn(
+            "Phi += A * np.sin(2 * np.pi * f_p * t / phi_mod + delta)",
+            toy,
+        )
+        self.assertIn("Gamma = np.abs(Phi) / (r + 1e-5)", toy)
+        self.assertIn("if __name__ ==", toy)
+        html = (DA_PY / "static" / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn("Black Hole Simulator", html)
+        self.assertNotIn("sfe_field", html)
+        self.assertNotIn("Equation Explorer", html)
+        os.environ.setdefault("MPLBACKEND", "Agg")
+        spec = importlib.util.spec_from_file_location("sfe_bh_archive_toy", BH_TOY)
+        assert spec is not None and spec.loader is not None
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        import numpy as np
+
+        x = np.linspace(-10.0, 10.0, 81)
+        y = np.linspace(-10.0, 10.0, 81)
+        X, Y = np.meshgrid(x, y)
+        flat = np.zeros_like(X)
+        for p in (2, 3, 5, 7):
+            flat = flat + np.sin(2 * np.pi * p * 0.1)
+        field = mod.sfe_field(X, Y, 0.1, epsilon=0.5)
+        r = np.sqrt(X**2 + Y**2)
+        expected = np.where(np.abs(flat) / (r + 1e-5) >= 0.5, 0.0, flat)
+        np.testing.assert_allclose(field, expected, rtol=0, atol=1e-12)
+        self.assertTrue(np.allclose(field[r > 8], flat[r > 8]))
+        self.assertTrue(np.allclose(field[r < 0.2], 0.0))
+        zero = mod.sfe_field(X, Y, 0.0)
+        np.testing.assert_allclose(zero, 0.0, atol=1e-12)
 
 
 if __name__ == "__main__":

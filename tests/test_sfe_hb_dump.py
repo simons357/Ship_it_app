@@ -127,6 +127,11 @@ class TestLivePathDropsSfeHb(unittest.TestCase):
                 source.lower(),
                 f"{name} must not host the archived Equation Explorer",
             )
+            self.assertNotIn(
+                "sfe_field",
+                source,
+                f"{name} must not mention the archived SFE black-hole toy",
+            )
             tree = ast.parse(source)
             imported = set()
             for node in ast.walk(tree):
@@ -192,6 +197,8 @@ class TestDesktopApi(unittest.TestCase):
         html = (LIVE_ROOT / "static" / "index.html").read_text(encoding="utf-8")
         self.assertNotIn("Equation Explorer", html)
         self.assertNotIn("simons_field", html)
+        self.assertNotIn("Black Hole Simulator", html)
+        self.assertNotIn("sfe_field", html)
         self.assertIn("DECOMPOSE", html)
 
     def test_archive_is_opt_in(self):
@@ -474,6 +481,8 @@ class TestEquationExplorerStaysArchived(unittest.TestCase):
         self.assertIn("does not depend on `x`", note)
         self.assertIn("Do not add an Equation Explorer tab", note)
         self.assertIn("equation_explorer_simons_field.py", note)
+        self.assertIn("sfe_black_hole_simulator_paste.py", note)
+        self.assertIn("chat paste arrived", note.lower())
         self.assertIn("Do not stamp DA-VC-01", note)
         self.assertNotIn("DA-VC-01 PASS", note)
         archive_index = (
@@ -491,6 +500,8 @@ class TestEquationExplorerStaysArchived(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("equation_explorer_simons_field.py", lookup)
         self.assertIn("does not depend on `x`", lookup)
+        self.assertIn("sfe_black_hole_simulator_paste.py", lookup)
+        self.assertIn("SFE Black Hole Simulator", lookup)
         faces = (
             Path(__file__).resolve().parents[1]
             / "docs"
@@ -500,6 +511,7 @@ class TestEquationExplorerStaysArchived(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("equation_explorer_simons_field.py", faces)
         self.assertIn("Not** a Paper2 face", faces)
+        self.assertIn("sfe_black_hole_simulator_paste.py", faces)
         swirl = (
             Path(__file__).resolve().parents[1]
             / "docs"
@@ -509,6 +521,7 @@ class TestEquationExplorerStaysArchived(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("equation_explorer_simons_field.py", swirl)
         self.assertIn(r"\Phi=u_\theta/r", swirl)
+        self.assertIn("sfe_black_hole_simulator_paste.py", swirl)
         gcd = (
             Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
         ).read_text(encoding="utf-8")
@@ -523,15 +536,20 @@ class TestEquationExplorerStaysArchived(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("equation_explorer_simons_field.py", ring)
         self.assertIn("Not** Ring SND", ring)
+        self.assertIn("sfe_black_hole_simulator_paste.py", ring)
         html = (LIVE_ROOT / "static" / "index.html").read_text(encoding="utf-8")
         self.assertNotIn("Equation Explorer", html)
         self.assertNotIn("simons_field", html)
+        self.assertNotIn("Black Hole Simulator", html)
+        self.assertNotIn("sfe_field", html)
         for path in sorted(LIVE_ROOT.glob("*.py")):
             if path.name == "historical.py":
                 continue
             hay = path.read_text(encoding="utf-8")
             self.assertNotIn("simons_field", hay, path.name)
             self.assertNotIn("Equation Explorer", hay, path.name)
+            self.assertNotIn("sfe_field", hay, path.name)
+            self.assertNotIn("Black Hole Simulator", hay, path.name)
 
     def test_live_package_has_no_equation_explorer_module(self):
         self.assertFalse((LIVE_ROOT / "equation_explorer_simons_field.py").is_file())

@@ -1,11 +1,17 @@
-"""Historical toy only (queued 25 August 2026 with the NAV-42 dump).
+"""Historical toy only (queued, then chat-paste arrived 25 August 2026).
 
 Not live Domain Architect. Do not import into domain_architect/.
 Do not add an Equation Explorer tab. Not Track A A_3. Not Clay.
 This Phi is not swirl Phi=u_theta/r, not DA Phi, not Paper2 Phi_j.
 
+Sine sum does not depend on x or y:
+    Phi += A * sin(2*pi*f_p*t/phi_mod + delta)
+The only spatial structure is a disk mask Gamma = abs(Phi)/(r+1e-5).
+That is not GR, not an event horizon, not an NS collapse criterion.
+
 SFE / UHF / DHFA stay archive. Sibling toy:
 docs/archive/sfe-hb/equation_explorer_simons_field.py
+Receipt: SFE_BLACK_HOLE_SIMULATOR.RECEIPT.md
 """
 
 import numpy as np

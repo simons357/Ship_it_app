@@ -244,6 +244,8 @@ class TestEquationExplorerIsHistorical(unittest.TestCase):
         index = (ROOT / "docs" / "archive" / "README.md").read_text(encoding="utf-8")
         self.assertIn("equation_explorer_simons_field.py", index)
         self.assertIn("nav-42-cbfd-2026-04/", index)
+        self.assertIn("sfe_black_hole_simulator_paste.py", index)
+        self.assertIn("SFE_BLACK_HOLE_SIMULATOR.RECEIPT.md", index)
 
 
 if __name__ == "__main__":

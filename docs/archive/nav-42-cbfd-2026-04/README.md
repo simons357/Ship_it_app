@@ -49,4 +49,5 @@ DECOMPOSE → CROSS-DOMAIN TRANSLATE → SYNTHESIZE.
 Queued 25 Aug 2026 follow-ups in this folder (Track C / missing receipts,
 not a DA rewrite): `Alignment_Functionals_Strong_Draft.MISSING.md`,
 `qc_qr_toys.py`, `Q-OS-FLUID-Q.RECEIPT.md`,
-`sfe_black_hole_simulator_paste.py`.
+`sfe_black_hole_simulator_paste.py` (**chat paste arrived**; receipt
+[`SFE_BLACK_HOLE_SIMULATOR.RECEIPT.md`](SFE_BLACK_HOLE_SIMULATOR.RECEIPT.md)).
