@@ -163,7 +163,7 @@ class TestJune14ClaySubmitDidNotArrive(unittest.TestCase):
         self.assertIn("not received", faces.lower())
         self.assertIn("**Not** FIXED", faces)
         self.assertIn("NOT CLAIMED", faces)
-        self.assertIn("not a compile of the FIXED PDF", faces.lower())
+        self.assertIn("a compile of the fixed pdf", faces.lower())
         self.assertIn("Clay solution", faces)
         self.assertIn(self.CLAY_SUBMIT, readme)
         self.assertIn("NOT CLAIMED", readme)
