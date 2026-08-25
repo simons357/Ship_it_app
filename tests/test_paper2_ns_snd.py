@@ -925,6 +925,31 @@ class TestSnd2UploadsAreMacAliasesNotFixed(unittest.TestCase):
         self.assertNotIn("DA-VC-01 PASS", faces)
         self.assertNotIn("DA-VC-01 PASS", readme)
 
+    def test_icloud_snd2_path_is_mac_implies_alias_not_fixed(self):
+        """Unreadable iCloud SND 2 path aliases Mac 9e53d664…, not FIXED/Zenodo."""
+        faces = FACES.read_text(encoding="utf-8")
+        alias = (
+            "/Users/jonathansimons/Library/Mobile Documents/"
+            "com~apple~CloudDocs/Paper2_NS_Regularity_SND 2.pdf"
+        )
+        self.assertIn(alias, faces)
+        hay = faces.lower()
+        self.assertIn("not readable", hay)
+        self.assertIn("9e53d664", faces)
+        self.assertIn("Implies", faces)
+        self.assertIn("7de9444d", faces)
+        self.assertIn("87610856", faces)
+        self.assertIn("NOT CLAIMED", faces)
+        mac = hashlib.sha256(self.MAC.read_bytes()).hexdigest()
+        self.assertEqual(mac, self.MAC_SHA256)
+        self.assertNotEqual(mac, PDF_SHA256)
+        self.assertNotEqual(mac, self.ZENODO_SHA256)
+        self.assertEqual(
+            PDF_SHA256,
+            "7de9444d18054fc8f49a52c3fd7ed2f086a7c7d7d6d1e95bad350c378535c41b",
+        )
+        self.assertEqual(self.ZENODO_SHA256[:8], "87610856")
+
 
 if __name__ == "__main__":
     raise SystemExit(unittest.main())
