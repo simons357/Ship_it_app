@@ -68,6 +68,8 @@ class TestLauncherStartsApp(unittest.TestCase):
                     self.assertIn("Honest OPEN board", html)
                     self.assertIn("turbulence-intensity", html)
                     self.assertIn("Intensity vs control", html)
+                    self.assertIn("available-turbulence", html)
+                    self.assertIn("Available 15% stack", html)
                     self.assertIn("Excise this step", html)
                     self.assertIn("id=\"cyExciseK\"", html)
                     self.assertNotIn("Excise step 2", html)

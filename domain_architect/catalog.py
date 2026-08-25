@@ -149,6 +149,21 @@ def default_catalog() -> list[Mechanism]:
             "wall impedance Z",
             {"c": "compliance"},
         ),
+        Mechanism(
+            "discrete_suction",
+            "discrete wall suction",
+            "fluid_surface",
+            FunctionalSignature(
+                FunctionalRole.FORCING,
+                MathType.UNKNOWN,
+                "wall_normal_mass_flux",
+                "near_wall_flow",
+                constraints=frozenset({"mass_flow_limit", "manufacturable"}),
+            ),
+            "v_wall = −v_suction",
+            {"v_suction": "inward wall-normal speed"},
+            notes="Existing HLFC / porous-panel hardware. Not a CFD result.",
+        ),
     ]
 
 

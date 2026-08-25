@@ -262,11 +262,19 @@ def run_named_cycle(name: str, **kwargs: Any) -> CycleReport:
         from .turbulence_intensity import cycle_turbulence_intensity
 
         return cycle_turbulence_intensity()
+    if name in {
+        "available-turbulence",
+        "turbulence-system",
+        "available-stack",
+    }:
+        from .available_turbulence import cycle_available_turbulence
+
+        return cycle_available_turbulence()
     raise ValueError(
         f"unknown cycle {name!r}; expected missing-damping, control, "
         "mechanical-electrical, drag, leftover-repair, localized-repair "
-        "(use --excise K to cut a single step), open-board, or "
-        "turbulence-intensity"
+        "(use --excise K to cut a single step), open-board, "
+        "turbulence-intensity, or available-turbulence"
     )
 
 

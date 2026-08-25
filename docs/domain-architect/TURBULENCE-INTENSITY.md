@@ -23,6 +23,10 @@ is allowed to: a concrete \(x\to x^\star\), compared against a
 
 Computational gate is **on this analog only**.
 
+For a **hardware catalog** (riblets + discrete suction) with the same
+analog 15% as a **desired** state, run `available-turbulence`
+([`AVAILABLE-TURBULENCE.md`](AVAILABLE-TURBULENCE.md)).
+
 ## Run it
 
 ```

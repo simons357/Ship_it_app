@@ -135,6 +135,12 @@ $("cyIntensity").addEventListener("click", async () => {
   show($("cyOut"), await api("/api/cycle", { name: "turbulence-intensity" }));
 });
 
+$("cyAvailable").addEventListener("click", async () => {
+  $("cyName").value = "available-turbulence";
+  $("cyOut").textContent = "Assembling available-tech 15% stack…";
+  show($("cyOut"), await api("/api/cycle", { name: "available-turbulence" }));
+});
+
 $("cyExciseStep").addEventListener("click", async () => {
   const raw = ($("cyExciseK").value || "").trim();
   const k = Number.parseInt(raw, 10);

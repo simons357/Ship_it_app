@@ -111,6 +111,7 @@ class TestLivePathDropsSfeHb(unittest.TestCase):
             "localized_repair.py",
             "open_board.py",
             "turbulence_intensity.py",
+            "available_turbulence.py",
         ]
         for name in live:
             source = (root / name).read_text(encoding="utf-8")

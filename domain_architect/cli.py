@@ -62,7 +62,7 @@ def main(argv: list[str] | None = None) -> int:
         "name",
         nargs="?",
         default="missing-damping",
-        help="missing-damping | control | mechanical-electrical | drag | leftover-repair | localized-repair | open-board | turbulence-intensity",
+        help="missing-damping | control | mechanical-electrical | drag | leftover-repair | localized-repair | open-board | turbulence-intensity | available-turbulence",
     )
     p_cy.add_argument(
         "--excise",
@@ -220,6 +220,18 @@ def _cycle_text(payload: dict) -> str:
                 prediction["treated_arm"]["terminal_x"],
                 prediction["relative_reduction"],
                 prediction["reduced_vs_control"],
+            )
+        )
+    elif isinstance(prediction, dict) and prediction.get("protocol") == "available-turbulence":
+        lines.append(prediction.get("headline") or "")
+        analog = prediction.get("analog") or {}
+        lines.append(
+            "desired {}  analog relative reduction={:.3f}  "
+            "hardware_realized={}  envelope_contains_15%={}".format(
+                prediction.get("desired", {}).get("as_setpoint"),
+                analog.get("relative_reduction") or 0.0,
+                prediction.get("states", {}).get("hardware_realized", {}).get("value"),
+                prediction.get("envelope_can_contain_target"),
             )
         )
     elif isinstance(prediction, dict) and prediction.get("board"):

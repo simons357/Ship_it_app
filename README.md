@@ -48,6 +48,7 @@ python -m domain_architect cycle missing-damping
 python -m domain_architect cycle leftover-repair
 python -m domain_architect cycle localized-repair
 python -m domain_architect cycle localized-repair --excise 2
+python -m domain_architect cycle available-turbulence
 python -m domain_architect --archive
 ```
 
