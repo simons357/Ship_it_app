@@ -1061,6 +1061,95 @@ class TestMacDownloadsFixedPdfIsGitAlias(unittest.TestCase):
         )
 
 
+class TestMacDownloadsDraftOriginalIsMay18ImpliesAlias(unittest.TestCase):
+    """Jon Downloads DRAFT_original path: unreadable here; uploads match git.
+
+    Same SHA as May 18 implies TeX f51ed5c05ec3…. Do not re-file.
+    Not June FIXED 7de9444d…. Not Clay. wc 664 vs Mac 665 is expected.
+    """
+
+    DOWNLOADS = Path(
+        "/Users/jonathansimons/Downloads/Simons_NS_Paper2_DRAFT_original.tex"
+    )
+    DRAFT = NS_SND / "Simons_NS_Paper2_DRAFT_original.tex"
+    DRAFT_SHA256 = (
+        "f51ed5c05ec3886603a69de942b890dc76c73b3860fe089a056b4665ab8cc4cb"
+    )
+    UPLOAD_NAMES = (
+        "Simons_NS_Paper2_DRAFT_original_94c2.tex",
+        "Simons_NS_Paper2_DRAFT_original_5171.tex",
+        "Simons_NS_Paper2_DRAFT_original_3cbb.tex",
+    )
+    UPLOAD_DIR = Path("/home/ubuntu/.cursor/projects/workspace/uploads")
+
+    def test_git_draft_sha_is_may18_implies_not_fixed(self):
+        raw = self.DRAFT.read_bytes()
+        digest = hashlib.sha256(raw).hexdigest()
+        self.assertEqual(digest, self.DRAFT_SHA256)
+        self.assertEqual(len(raw), 26998)
+        self.assertEqual(raw.count(b"\n"), 664)
+        self.assertNotEqual(digest, PDF_SHA256)
+        self.assertEqual(
+            PDF_SHA256,
+            "7de9444d18054fc8f49a52c3fd7ed2f086a7c7d7d6d1e95bad350c378535c41b",
+        )
+        tex = raw.decode("utf-8")
+        self.assertEqual(classify_paper2_tex_title_page(tex), "may18_implies_draft")
+        self.assertIn("Implies Global Regularity", tex)
+        self.assertIn(r"\date{May 18, 2026}", tex)
+        self.assertNotIn("Corrected June 2026", tex)
+        self.assertNotIn("Conditional Regularity Criterion", tex)
+        self.assertNotIn("ClaySubmit", tex)
+
+    def test_mac_downloads_path_unreadable_uploads_match_when_present(self):
+        self.assertFalse(
+            self.DOWNLOADS.is_file(),
+            "Mac Downloads is not mounted on this VM",
+        )
+        if self.UPLOAD_DIR.is_dir():
+            for name in self.UPLOAD_NAMES:
+                path = self.UPLOAD_DIR / name
+                if not path.is_file():
+                    continue
+                digest = hashlib.sha256(path.read_bytes()).hexdigest()
+                self.assertEqual(digest, self.DRAFT_SHA256)
+                self.assertNotEqual(digest, PDF_SHA256)
+        extras = sorted(
+            p.name
+            for p in NS_SND.glob("Simons_NS_Paper2_DRAFT_original_*.tex")
+        )
+        self.assertEqual(
+            extras,
+            [],
+            f"do not re-file Downloads DRAFT_original aliases: {extras}",
+        )
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file(),
+            "do not invent June FIXED TeX from this Downloads alias",
+        )
+
+    def test_faces_record_downloads_draft_alias_not_fixed_not_clay(self):
+        faces = FACES.read_text(encoding="utf-8")
+        hay = faces.lower()
+        self.assertIn(
+            "/Users/jonathansimons/Downloads/Simons_NS_Paper2_DRAFT_original.tex",
+            faces,
+        )
+        self.assertIn("not readable", hay)
+        self.assertIn("do not re-file", hay)
+        self.assertIn("f51ed5c05ec3", faces)
+        self.assertIn("664", faces)
+        self.assertIn("665", faces)
+        self.assertIn("7de9444d", faces)
+        self.assertIn("5dfeb6b64", faces)
+        self.assertIn("20269536", faces)
+        self.assertIn("Implies Global Regularity", faces)
+        self.assertIn("NOT CLAIMED", faces)
+        self.assertIn("**Not** Clay", faces)
+        self.assertNotIn("DA-VC-01 PASS", faces)
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file()
+        )
 
 
 if __name__ == "__main__":
