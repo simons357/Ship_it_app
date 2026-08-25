@@ -17,8 +17,9 @@ from the 15 August 2026 value audit.
 [`OVERLEAF-EXPORTS.MISSING.md`](OVERLEAF-EXPORTS.MISSING.md).
 
 If bytes later arrive, file them **here** with this banner. Do **not**
-promote them into `docs/papers/` or `domain_architect/`. Identify from
-`\title` + `\date` + SHA, never from the folder name alone.
+promote them into `docs/papers/` or `domain_architect/`. Do **not**
+import into `domain_architect/`. Identify from `\title` + `\date` + SHA,
+never from the folder name alone.
 
 ## What these were (15 Aug inventory)
 

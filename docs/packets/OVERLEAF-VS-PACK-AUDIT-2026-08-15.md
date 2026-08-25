@@ -87,7 +87,8 @@ lived** in the exported Overleaf trees. This is **not** a fake Overleaf hunt.
 | `PAPER_A_Inverse_GCD_CORRECTED.tex` | **pack-only, not on this VM** |
 | `PAPER_B_Mobius_GCD_Q6.tex` | **pack-only, not on this VM** |
 | `GCD_Spectral_Paper1_UPDATED_2026-08-14.tex` | **pack-only, not on this VM** |
-| Anesthesia CI `PAPER1_REBUILT_Coherence_Index.md` | **pack-only, not on this VM** |
+| Anesthesia CI `PAPER1_REBUILT_Coherence_Index.md` | **pack-only, not on this VM.** Controlling anesthesia **manuscript**. Overleaf is not this face. |
+| July 23 claim ledger `CURRENT_CLAIM_LEDGER_JULY23_FULL.md` | **governance, not the CI face.** **not received.** Receipt: [`docs/archive/anesthesia-claim-governance/CURRENT_CLAIM_LEDGER_JULY23_FULL.MISSING.md`](../archive/anesthesia-claim-governance/CURRENT_CLAIM_LEDGER_JULY23_FULL.MISSING.md). **Not** Frankie `ns_routej_bridge_recovery/CURRENT_CLAIM_LEDGER.md`. |
 | June FIXED **TeX** `Paper2_NS_Regularity_SND_FIXED.tex` | **still not received** (PDF `7de9444d…` is filed) |
 
 Current public Q6 PDF is already in `docs/papers/gcd/`. Do not hunt PAPER_A/B

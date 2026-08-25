@@ -1498,7 +1498,7 @@ class TestAprilOverleafClayIsNotFixedOrAugust(unittest.TestCase):
             self.assertIn("simons_ns_overleaf", text)
             self.assertIn("CLAY_FINAL", text)
             self.assertIn("7de9444d", text)
-        self.assertIn("policy, not a new", policy.lower())
+        self.assertIn("this is **policy**, not a new", policy.lower())
         self.assertIn("Ignore existing Overleaf projects", policy)
         self.assertIn("PDF printer", policy)
         self.assertIn("No Overleaf login", policy)
