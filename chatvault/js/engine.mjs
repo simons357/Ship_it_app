@@ -2,9 +2,9 @@
  * ChatVault engine — local-first knowledge capture.
  *
  * Competitive core: provenance, immutable raw text, CLAIM_LEDGER
- * statuses that never auto-promote to PROVED, and BM25F fielded
- * retrieval (AND / OR / phrase / field:). This is not a truth engine
- * and not an LLM.
+ * statuses that never auto-promote to PROVED, and hybrid fielded
+ * retrieval (BM25F + n-grams + TF-IDF + RRF). This is not a truth
+ * engine and not an LLM.
  */
 
 export {

@@ -45,7 +45,7 @@ private. This folder is the **engine** behind the tagline:
 - immutable raw text
 - source AI / source file provenance
 - CLAIM_LEDGER (`UNREVIEWED` … `PROVED` / `WITHDRAWN`) that never auto-PROVED
-- BM25F ranked search over an inverted index (AND, OR, `"phrases"`, `claim:`, `theorem:`, `gap:`, `ai:`), with snippets and field boosts
+- Hybrid ranked search (BM25F + n-grams + TF-IDF + RRF + RM3) over title, claims, theorems, gaps, and raw text, with snippets
 - books, tags, and artifacts derived from records (no extraction LLM)
 - bulk paste and txt/md/json/csv/html ingest
 - private vs professional export
@@ -59,5 +59,5 @@ remain the historical baseline if/when they are exported.
 - No accounts, no iOS package, no paid subscription.
 - Ingest is structured paste and text files, not OCR/PDF/DOCX yet.
 - Demo fixtures are labeled research-memory examples, not solved theorems.
-- Semantic / LLM search from the Base44 skin is intentionally absent. Dense retrieval + RRF is the next retrieval layer, not a replacement for BM25F.
+- Semantic / LLM search from the Base44 skin is intentionally absent. Hybrid RRF is in. A dense model is next only if it beats this eval.
 - Jonathan’s Replit `search_engine.py` was not in this environment. See `SEARCH.md`.

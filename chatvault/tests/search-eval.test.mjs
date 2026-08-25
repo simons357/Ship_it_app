@@ -132,6 +132,21 @@ function topics(corpus) {
       query: "ai:Claude",
       grades: { ns: 3 },
     },
+    {
+      name: "one-edit typo still ranks Euler first",
+      query: "eulr identity",
+      grades: { euler: 3, logistics: 1 },
+    },
+    {
+      name: "unhyphenated blow-up phrase still prefers the gap note",
+      query: "finite time blow up",
+      grades: { ns: 3, party: 1 },
+    },
+    {
+      name: "plural stem finds the rate limiter note",
+      query: "rate limiters",
+      grades: { limiter: 3, investor: 1 },
+    },
   ];
 }
 
@@ -141,7 +156,7 @@ function booleanOrder(entries, query) {
   return entries.filter((e) => wanted.has(e.id)).map((e) => e.stable);
 }
 
-test("BM25F mean nDCG@5 clears 0.90 on the graded vault fixture", () => {
+test("hybrid mean nDCG@5 clears 0.90 on the graded vault fixture", () => {
   const corpus = evalCorpus();
   const entries = Object.values(corpus);
   const byStable = Object.fromEntries(entries.map((e) => [e.id, e.stable]));

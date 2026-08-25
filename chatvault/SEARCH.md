@@ -38,24 +38,38 @@ You do not have to learn information-retrieval jargon to use this.
 
 You type. The engine ranks. If a result looks wrong, that is a bug in the ranker — tell me the query and the record that should have won.
 
+## What the most powerful tools are
+
+Industry stack for a serious search box, in order:
+
+1. **BM25F** — exact words, field boosts (title / claim beat a long body)
+2. **Character n-grams + stems + one-edit typos** — you do not have to spell perfectly
+3. **A second vector ranker** — TF-IDF cosine now; a MiniLM/E5 embedding later
+4. **RRF (k=60)** — fuse the lists so one lucky signal cannot dominate
+5. **RM3** — peek at the top hits, add their distinctive words, search again
+6. **Cross-encoder rerank** — needs a local model file (~20–100MB). Not shipped until it beats this eval on *your* corpus
+7. **Ask-the-vault RAG** — only with citations to immutable raw. An LLM that ranks or “summarizes away” claims is a downgrade
+
+Evernote-style Semantic and Base44’s LLM toggle are (7) without (1)–(5). That is not “more powerful.”
+
 ## What ships now
 
-`js/search.mjs` — `chatvault-bm25f-0.1.0`
+`js/search.mjs` — `chatvault-hybrid-0.2.0`
 
-- Fielded inverted index over title, claims, theorems, gaps, questions, actions, tags, books, summary, raw/content, source AI, ledger status, source file
-- **BM25F** (Robertson / Zaragoza): per-field boost + length normalization, then IDF
-- Hard match gate: AND (default), `OR` / `|`, `"phrases"`, `claim:` `theorem:` `gap:` `ai:` and aliases
-- Ranked hits with scores
-- Snippets with mark offsets; ledger rows keep their status in the hit
-- Ledger status is **never** a ranking signal (OPEN must not sink below PROVED)
-- Eval: `tests/search-eval.test.mjs` (nDCG@5 / MRR on a graded fixture)
+- Fielded inverted index
+- BM25F + stem + one-edit typo matching
+- Character 3-gram BM25
+- Field-weighted TF-IDF cosine
+- Reciprocal Rank Fusion (k=60)
+- RM3 expansion from the top hits
+- Hard match gate: AND, `OR`, `"phrases"`, `claim:` / `theorem:` / `gap:` / `ai:`
+- Snippets; ledger status shown and never used as a score
+- Eval: `tests/search-eval.test.mjs`
 
-This is Phase 1 of retrieval. It is a search engine. The previous in-memory boolean filter was not.
+## What is not here yet (and must not be faked)
 
-## What is not here yet (and should not be faked)
-
-- Dense embeddings + RRF fusion + cross-encoder rerank (Phase 2). Needs a local model and an eval set built from *your* corpus, not SaaS seed chats.
+- Dense MiniLM/E5 + cross-encoder (needs a vendored model and your real corpus)
 - ChatGPT / Claude export parsers feeding the index
 - Recovered Replit `search_engine.py` (still lost)
 
-Phase 2 is allowed only when it beats BM25F on the eval set. A Semantic toggle that buries claims is a regression.
+A Semantic toggle that buries claims is a regression. The dense layer plugs into the same RRF when it earns its place.

@@ -10,14 +10,17 @@ import {
   bestWindow,
   ndcgAt,
   mrr,
+  stem,
+  editDistanceAtMost,
+  reciprocalRankFusion,
 } from "../js/search.mjs";
 
 function ids(hits) {
   return hits.map((h) => h.entry.id);
 }
 
-test("search engine version is BM25F, not a boolean filter", () => {
-  assert.match(SEARCH_ENGINE_VERSION, /bm25f/i);
+test("search engine version is hybrid, not a boolean filter", () => {
+  assert.match(SEARCH_ENGINE_VERSION, /hybrid/i);
   const result = searchVault(DEMO_ENTRIES, "euler identity");
   assert.equal(result.engine, SEARCH_ENGINE_VERSION);
   assert.ok(result.hits[0].score > 0);
@@ -132,4 +135,33 @@ test("nDCG and MRR helpers match textbook values", () => {
   assert.equal(ndcgAt(["a", "b", "c"], grades, 3), 1);
   assert.ok(ndcgAt(["c", "b", "a"], grades, 3) < 1);
   assert.equal(mrr(["c", "a"], { a: 3 }), 0.5);
+});
+
+test("one-edit typos and stems still retrieve the intended record", () => {
+  assert.equal(stem("limiters"), stem("limiter"));
+  assert.equal(editDistanceAtMost("eulr", "euler", 1), true);
+  assert.equal(editDistanceAtMost("euler", "navier", 1), false);
+  const titleHit = ingestPaste(
+    ["TITLE: Euler identity as a definitional fact", "SOURCE_AI: Grok", "", "Short body."].join("\n")
+  );
+  const limiter = ingestPaste(
+    ["TITLE: Token bucket rate limiter notes", "", "Implement the rate limiter."].join("\n")
+  );
+  const typo = searchVault([limiter, titleHit], "eulr identity");
+  assert.equal(typo.hits[0].entry.id, titleHit.id);
+  const stemmed = searchVault([titleHit, limiter], "rate limiters");
+  assert.equal(stemmed.hits[0].entry.id, limiter.id);
+});
+
+test("RRF prefers documents that win more than one list", () => {
+  const scores = reciprocalRankFusion(
+    [
+      ["a", "b"],
+      ["a", "c"],
+      ["b", "a"],
+    ],
+    60
+  );
+  assert.ok(scores.get("a") > scores.get("b"));
+  assert.ok(scores.get("a") > scores.get("c"));
 });
