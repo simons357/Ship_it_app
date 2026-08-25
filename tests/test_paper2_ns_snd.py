@@ -951,5 +951,117 @@ class TestSnd2UploadsAreMacAliasesNotFixed(unittest.TestCase):
         self.assertEqual(self.ZENODO_SHA256[:8], "87610856")
 
 
+class TestMacDownloadsFixedPdfIsGitAlias(unittest.TestCase):
+    """Jon Downloads FIXED path: unreadable here; uploads match git 7de9444d….
+
+    Do not re-file. Still no TeX. Not Mac SND 2, not Zenodo 20272545,
+    not DRAFT_original.
+    """
+
+    DOWNLOADS = Path(
+        "/Users/jonathansimons/Downloads/Paper2_NS_Regularity_SND_FIXED.pdf"
+    )
+    MAC_SND2_SHA256 = (
+        "9e53d6640cc3808696afbcbec8f78c08de860b4816680ff43cdc816ce5c60cb0"
+    )
+    ZENODO_SHA256 = (
+        "87610856449007e7bdca3b87d82683e463b299484b3906a0dda27a18bec416a3"
+    )
+    DRAFT_TEX_SHA256 = (
+        "f51ed5c05ec3886603a69de942b890dc76c73b3860fe089a056b4665ab8cc4cb"
+    )
+    UPLOAD_NAMES = (
+        "Paper2_NS_Regularity_SND_FIXED_1de7.pdf",
+        "Paper2_NS_Regularity_SND_FIXED_9af5.pdf",
+        "Paper2_NS_Regularity_SND_FIXED_2_60ee.pdf",
+        "Paper2_NS_Regularity_SND_FIXED_2_5f63.pdf",
+    )
+    UPLOAD_DIR = Path("/home/ubuntu/.cursor/projects/workspace/uploads")
+
+    def test_git_fixed_sha_and_june_title_page(self):
+        raw = PDF.read_bytes()
+        digest = hashlib.sha256(raw).hexdigest()
+        self.assertEqual(digest, PDF_SHA256)
+        self.assertEqual(
+            digest,
+            "7de9444d18054fc8f49a52c3fd7ed2f086a7c7d7d6d1e95bad350c378535c41b",
+        )
+        self.assertEqual(len(raw), 309576)
+        self.assertNotEqual(digest, self.MAC_SND2_SHA256)
+        self.assertNotEqual(digest, self.ZENODO_SHA256)
+        self.assertNotEqual(digest, self.DRAFT_TEX_SHA256)
+        try:
+            from pypdf import PdfReader
+        except ImportError:
+            self.skipTest("pypdf not installed")
+        text = PdfReader(str(PDF)).pages[0].extract_text() or ""
+        self.assertIn("Conditional Regularity Criterion", text)
+        self.assertIn("Corrected June 2026", text)
+        self.assertNotIn("IMPLIES GLOBAL", text.upper())
+
+    def test_mac_downloads_path_unreadable_uploads_match_when_present(self):
+        self.assertFalse(
+            self.DOWNLOADS.is_file(),
+            "Mac Downloads is not mounted on this VM",
+        )
+        if self.UPLOAD_DIR.is_dir():
+            for name in self.UPLOAD_NAMES:
+                path = self.UPLOAD_DIR / name
+                if not path.is_file():
+                    continue
+                digest = hashlib.sha256(path.read_bytes()).hexdigest()
+                self.assertEqual(digest, PDF_SHA256)
+                self.assertNotEqual(digest, self.MAC_SND2_SHA256)
+                self.assertNotEqual(digest, self.ZENODO_SHA256)
+        extras = sorted(
+            p.name
+            for p in NS_SND.glob("Paper2_NS_Regularity_SND_FIXED_*.pdf")
+        )
+        self.assertEqual(
+            extras,
+            [],
+            f"do not re-file Downloads FIXED aliases: {extras}",
+        )
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file(),
+            "TeX never arrived; do not invent it",
+        )
+
+    def test_faces_record_downloads_alias_and_still_no_tex(self):
+        faces = FACES.read_text(encoding="utf-8")
+        readme = README.read_text(encoding="utf-8")
+        hay = faces.lower()
+        self.assertIn(
+            "/Users/jonathansimons/Downloads/Paper2_NS_Regularity_SND_FIXED.pdf",
+            faces,
+        )
+        self.assertIn(
+            "/Users/jonathansimons/Downloads/Paper2_NS_Regularity_SND_FIXED.pdf",
+            readme,
+        )
+        self.assertIn("alias of this sha", hay)
+        self.assertIn("not readable", hay)
+        self.assertIn("do not re-file", hay)
+        self.assertIn("no tex", hay)
+        self.assertIn(
+            "7de9444d18054fc8f49a52c3fd7ed2f086a7c7d7d6d1e95bad350c378535c41b",
+            faces,
+        )
+        self.assertIn("7de9444d", readme)
+        self.assertIn("9e53d664", faces)
+        self.assertIn("87610856", faces)
+        self.assertIn("f51ed5c05ec3", faces)
+        self.assertIn("Conditional Regularity Criterion", faces)
+        self.assertIn("NOT CLAIMED", faces)
+        self.assertIn("DA-VC-01 **FAIL**", faces)
+        self.assertNotIn("DA-VC-01 PASS", faces)
+        self.assertNotIn("DA-VC-01 PASS", readme)
+        self.assertFalse(
+            (NS_SND / "Paper2_NS_Regularity_SND_FIXED.tex").is_file()
+        )
+
+
+
+
 if __name__ == "__main__":
     raise SystemExit(unittest.main())
