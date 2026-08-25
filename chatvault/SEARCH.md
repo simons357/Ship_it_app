@@ -11,7 +11,9 @@ lost component and what now ships.
 | `simons357` GitHub | `Ship_it_app`, `ship-it-code`, `kyrana-oracle`. Zero ChatVault source. GitHub code search for `search_engine` under the user: empty. |
 | Named archive | `356582767_chatvault_source2.zip` with `app.py`, `models.py`, **`search_engine.py`**, `stripe_helper.py`, `replit_auth.py`. Labelled FEATURE-SOURCE. **Not in this environment.** Stripe stays off. |
 | Claude-origin / HTML V2–V7 / `/app/chatvault` | Still missing. Historical baseline if recovered. |
-| Linear / Notion | MCP servers unauthenticated here. Not searched. |
+| Live Replit app `https://chat-vault-winchesterane.replit.app/` (probed 25 Aug 2026) | **Up.** Title “Chat Vault - The Smart Repository…”. Author **Prime Field Technologies**. Last-Modified **19 Dec 2025**. SPA `/assets/index-B1k4Rveo.js` (~1.6MB). Client copy: full-text search + OpenAI summaries/tags. **No BM25 / Whoosh / MiniSearch / harmonic string in the browser bundle.** Search implementation is not in this JS; likely server-side or a simple substring. |
+| Replit editor `https://replit.com/@winchesterane/Chat-Vault-2` | **404** without Jonathan’s Replit login. Source still not downloaded. |
+| Jonathan’s Mac `Downloads/chatvault_source (1)/pyproject.toml` | Seen as an open local file in Cursor. **Not on this VM.** That folder is the most likely FEATURE-SOURCE zip. Upload or attach it. |
 | Public GitHub name collision | Other people’s products. Not Jonathan’s engine. Do not copy them. |
 
 Public name collisions (do not merge, do not vendor):
