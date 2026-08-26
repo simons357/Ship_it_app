@@ -67,6 +67,17 @@ body[data-dock="top-right"] main { padding-right: min(420px, 42vw); }
 }
 .card h2 { margin: 0 0 8px; font-size: 22px; font-weight: 500; }
 .hint { color: var(--mute); margin: 0 0 16px; line-height: 1.45; }
+.lanes-banner {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #101412;
+  color: var(--mute);
+  line-height: 1.45;
+}
+.lanes-banner strong { color: var(--gold); font-weight: 600; }
+.inquiry-card textarea { min-height: 88px; resize: vertical; }
 
 label { display: block; margin: 10px 0; color: var(--mute); font-size: 13px; }
 input, select, textarea {

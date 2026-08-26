@@ -7,11 +7,12 @@ import json
 import tempfile
 import threading
 import unittest
+import urllib.error
 import urllib.request
 from http.server import ThreadingHTTPServer
 from pathlib import Path
 
-from domain_architect.chatvault_bridge import drain_audit
+from domain_architect.chatvault_bridge import drain_audit, inquire
 from domain_architect.cli import main
 from domain_architect.drain_server import DrainQueue
 from domain_architect.site_server import SiteHandler
@@ -37,6 +38,18 @@ class TestDrainAuditFormat(unittest.TestCase):
         blob = json.dumps(payload)
         self.assertNotIn('"status": "PROVED"', blob)
         self.assertNotIn('"status":"PROVED"', blob)
+
+    def test_inquire_is_fra_lane_and_optional_drain(self):
+        payload = inquire("x = y")
+        self.assertEqual(payload["lane"], "inquiry")
+        self.assertEqual(payload["ok"], True)
+        self.assertIsNone(payload["drain"])
+        self.assertEqual(payload["canonical_sfe_status"], "unresolved")
+        self.assertIn("narrative", payload["audit"])
+        filed = inquire("∇²Φ = 4π G ρ", drain=True)
+        self.assertEqual(filed["drain"]["format"], "chatvault-export")
+        self.assertEqual(filed["drain"]["entries"][0]["source_type"], "da_audit")
+        self.assertNotIn("PROVED", json.dumps(filed["drain"]["entries"][0].get("theorems")))
 
     def test_queue_consume_stays_chatvault_export(self):
         queue = DrainQueue()
@@ -80,6 +93,9 @@ class TestDaHomepageChatVault(unittest.TestCase):
         self.assertIn("OS for your AI", html)
         self.assertIn("ChatVault", html)
         self.assertIn("cv-search-form", html)
+        self.assertIn("da-inquiry-form", html)
+        self.assertIn("Inquiry", html)
+        self.assertIn("Two boxes", html)
         self.assertIn("/chatvault/", html)
         self.assertIn("chatvault-mark-dark.jpg", html)
         self.assertIn("apple-mobile-web-app-capable", html)
@@ -176,6 +192,40 @@ class TestDaSiteServiceWorker(unittest.TestCase):
         self.assertEqual(payload.get("canonical_sfe_status"), "unresolved")
         blob = json.dumps(payload)
         self.assertNotIn('"status": "PROVED"', blob)
+
+    def test_inquiry_post_is_fra_and_can_file_without_proving(self) -> None:
+        req = urllib.request.Request(
+            f"{self.origin}/api/inquiry",
+            data=json.dumps({"inquiry": "∇²Φ = 4π G ρ", "drain": True}).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        with urllib.request.urlopen(req) as res:
+            self.assertEqual(res.status, 200)
+            payload = json.loads(res.read().decode("utf-8"))
+        self.assertEqual(payload.get("ok"), True)
+        self.assertEqual(payload.get("lane"), "inquiry")
+        self.assertIn("narrative", payload.get("audit") or {})
+        self.assertEqual(payload.get("canonical_sfe_status"), "unresolved")
+        drain = payload.get("drain") or {}
+        self.assertEqual(drain.get("format"), "chatvault-export")
+        entry = drain["entries"][0]
+        self.assertEqual(entry["origin_class"], "human_record")
+        self.assertEqual(entry["source_type"], "da_audit")
+        self.assertEqual(entry["source_ai"], "DomainArchitect")
+        blob = json.dumps(payload)
+        self.assertNotIn('"status": "PROVED"', blob)
+
+    def test_inquiry_rejects_empty_box(self) -> None:
+        req = urllib.request.Request(
+            f"{self.origin}/api/inquiry",
+            data=json.dumps({"inquiry": "   "}).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        with self.assertRaises(urllib.error.HTTPError) as caught:
+            urllib.request.urlopen(req)
+        self.assertEqual(caught.exception.code, 400)
 
     def test_manifest_content_type(self) -> None:
         with urllib.request.urlopen(f"{self.origin}/manifest.webmanifest") as res:

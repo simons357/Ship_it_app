@@ -30,11 +30,11 @@ python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
 python -m domain_architect --drain-chatvault "∇²Φ = 4π G ρ" -o /tmp/da-drain.json
 python3 -m domain_architect --ingest-chatvault PATH
-python -m domain_architect --site   # http://127.0.0.1:8765/ — FRA lab + ChatVault PWA
+python -m domain_architect --site   # http://127.0.0.1:8765/ — ChatVault search + DA inquiry
 python -m unittest tests.test_domain_architect_acceptance tests.test_chatvault_bridge
 ```
 
-Finished audits can drain into ChatVault as `origin_class: human_record`. Domain Architect does not prove theorems. ChatVault’s tagline is **OS for your AI**.
+Finished inquiries and audits can file into ChatVault as `origin_class: human_record`. Domain Architect does not prove theorems. ChatVault is the search box (**OS for your AI**). Domain Architect is the inquiry box.
 
 Related closed experiment in this repository:
 

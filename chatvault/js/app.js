@@ -33,6 +33,7 @@ import {
   postInboxExport,
   pullDaDrain,
 } from "./drain.mjs";
+import { postInquiry, inquiryNarrative } from "./inquiry.mjs";
 import { SKINS, SKIN_IDS, loadSkin, saveSkin, applySkin } from "./skins.mjs";
 
 const STORAGE_KEY = "chatvault.engine.v1";
@@ -109,6 +110,10 @@ const state = {
   page: 0,
   extraBooks: loadExtraBooks(),
   fatal: null,
+  inquiryText: "∇²Φ = 4π G ρ",
+  inquiryBusy: false,
+  inquiryNarrative: "",
+  inquiryOrigin: "",
 };
 
 function persistExtraBooks() {
@@ -366,6 +371,17 @@ function renderVault() {
         </select>
       </div>
       <div class="chips">${tagChips(store.list(), state.tag)}</div>
+    </div>
+    <div class="inquiry-panel">
+      <p class="kicker">Inquiry — Domain Architect</p>
+      <p class="help">Search (above) ranks this vault. Inquiry asks Domain Architect FRA. Same origin when you run <code>python3 -m domain_architect --site</code>. Not a proof engine.</p>
+      <textarea id="da-inquiry" rows="3" placeholder="Paste an equation or ask what a term does.">${escapeHtml(state.inquiryText)}</textarea>
+      <p class="toolbar">
+        <button class="btn" id="do-inquire"${state.inquiryBusy ? " disabled" : ""}>Inquire</button>
+        <button class="btn ghost" id="do-inquire-file"${state.inquiryBusy ? " disabled" : ""}>Inquire + file in vault</button>
+      </p>
+      ${state.inquiryOrigin ? `<p class="meta">Last inquiry via ${escapeHtml(state.inquiryOrigin)}</p>` : ""}
+      ${state.inquiryNarrative ? `<pre class="raw inquiry-out">${escapeHtml(state.inquiryNarrative)}</pre>` : ""}
     </div>
     <p class="error">${escapeHtml(state.error)}</p>
     <p class="notice">${escapeHtml(state.notice)}</p>
@@ -722,7 +738,7 @@ function renderGuide() {
       <ol>
         <li>Raw text is immutable after ingest. Slide a finished chat onto ingest when the conversation is done.</li>
         <li>AI conversations vs real records: <code>origin_class</code> is <code>ai_generated</code> or <code>human_record</code>. Search <code>origin:ai</code> / <code>origin:human</code>.</li>
-        <li>Source AI and source file stay attached. Domain Architect audits drain in as real FRA reports, not proofs.</li>
+        <li>Source AI and source file stay attached. Domain Architect inquiries and audits drain in as real FRA reports, not proofs.</li>
         <li>Claims, theorems, and gaps are searchable fields with statuses.</li>
         <li>Private material can be kept off professional export.</li>
         <li>Books, tags, and artifacts are derived from your records. They are not a second database and not an LLM.</li>
@@ -730,7 +746,8 @@ function renderGuide() {
     </div>
     <div class="panel" style="margin-top:1rem">
       <h3>How to search — you type, the engine ranks</h3>
-      <p>You do not pick an algorithm. The box already ranks. Type the words you remember.</p>
+      <p>Two boxes. The search box ranks ChatVault. The inquiry box asks Domain Architect. They are not the same engine.</p>
+      <p>You do not pick an algorithm. The search box already ranks. Type the words you remember.</p>
       <ul>
         <li><code>euler identity</code> — both words must appear. Best match first, not oldest first.</li>
         <li><code>"finite-time blow-up"</code> — that exact phrase.</li>
@@ -982,6 +999,52 @@ root.addEventListener("click", (ev) => {
     set({ query: q, error: "", notice: "", page: 0 });
     return;
   }
+  if (ev.target.id === "do-inquire" || ev.target.id === "do-inquire-file") {
+    const drain = ev.target.id === "do-inquire-file";
+    const text = document.getElementById("da-inquiry")?.value ?? state.inquiryText;
+    set({
+      inquiryText: text,
+      inquiryBusy: true,
+      error: "",
+      notice: drain ? "Inquiring and filing…" : "Inquiring…",
+    });
+    postInquiry(text, { drain })
+      .then((result) => {
+        const narrative = inquiryNarrative(result);
+        if (drain && result.drain?.format === "chatvault-export") {
+          const entries = importVault(result.drain);
+          if (entries.length) store.addMany(entries);
+          set({
+            inquiryBusy: false,
+            inquiryText: text,
+            inquiryNarrative: narrative,
+            inquiryOrigin: result.origin || "",
+            error: "",
+            notice: `Filed ${entries.length} Domain Architect inquiry report(s) as human FRA records.`,
+            selectedId: entries[0]?.id || state.selectedId,
+            page: 0,
+          });
+          return;
+        }
+        set({
+          inquiryBusy: false,
+          inquiryText: text,
+          inquiryNarrative: narrative,
+          inquiryOrigin: result.origin || "",
+          error: "",
+          notice: "Inquiry is FRA, not vault search. File it to keep the report.",
+        });
+      })
+      .catch((err) =>
+        set({
+          inquiryBusy: false,
+          inquiryText: text,
+          error: err.message || String(err),
+          notice: "",
+        })
+      );
+    return;
+  }
   if (ev.target.id === "pull-da") {
     pullDaDrain()
       .then((result) => {
@@ -1116,6 +1179,7 @@ root.addEventListener("click", (ev) => {
 
 root.addEventListener("input", (ev) => {
   if (ev.target.id === "q") state.query = ev.target.value;
+  if (ev.target.id === "da-inquiry") state.inquiryText = ev.target.value;
   if (ev.target.id === "ingest") state.ingestText = ev.target.value;
   if (ev.target.id === "ingest-book") state.ingestBook = ev.target.value;
 });
@@ -1208,6 +1272,10 @@ root.addEventListener("keydown", (ev) => {
   if (ev.target.id === "q" && ev.key === "Enter") {
     set({ query: ev.target.value, page: 0 });
   }
+  if (ev.target.id === "da-inquiry" && (ev.ctrlKey || ev.metaKey) && ev.key === "Enter") {
+    ev.preventDefault();
+    document.getElementById("do-inquire")?.click();
+  }
   if (ev.target.id === "new-tag" && ev.key === "Enter") {
     document.getElementById("add-tags")?.click();
   }
@@ -1219,7 +1287,7 @@ window.addEventListener("hashchange", () => {
 });
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./sw.js?v=0.7.0").catch(() => {
+  navigator.serviceWorker.register("./sw.js?v=0.8.0").catch(() => {
     /* PWA optional; engine still runs */
   });
 }

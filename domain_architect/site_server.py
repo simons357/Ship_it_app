@@ -7,6 +7,7 @@ http://127.0.0.1:8765/da-sw.js   Combined-origin service worker (skips /chatvaul
 http://127.0.0.1:8765/chatvault/ ChatVault PWA (same localStorage origin)
 POST /api/audit                  FRA audit JSON (never cached by the DA worker)
 GET/POST /api/drain/...          ChatVault drain queue
+POST /api/inquiry                FRA inquiry JSON (optional drain export; never a proof)
 GET/POST /api/inbox              Repo inbox JSON sidecars (loopback POST, no binary upload)
 """
 
@@ -20,7 +21,7 @@ from typing import Any
 from urllib.parse import unquote, urlparse
 
 from .audit import audit_expression
-from .chatvault_bridge import CHATVAULT_EXPORT_FORMAT, drain_audit
+from .chatvault_bridge import CHATVAULT_EXPORT_FORMAT, drain_audit, inquire
 from .chatvault_ingest import list_inbox_files, write_inbox_payload
 from .drain_server import QUEUE, _json_response
 
@@ -145,12 +146,21 @@ class SiteHandler(BaseHTTPRequestHandler):
             _json_response(self, 400, {"ok": False, "error": "invalid JSON"})
             return
         if path == "/api/audit":
-            expression = str(data.get("expression") or "")
+            expression = str(data.get("expression") or data.get("inquiry") or "")
             if not expression.strip():
                 _json_response(self, 400, {"ok": False, "error": "expression required"})
                 return
             report = audit_expression(expression)
             _json_response(self, 200, report.to_dict())
+            return
+        if path == "/api/inquiry":
+            text = str(data.get("inquiry") or data.get("expression") or "")
+            try:
+                payload = inquire(text, drain=bool(data.get("drain")))
+            except ValueError as err:
+                _json_response(self, 400, {"ok": False, "error": str(err)})
+                return
+            _json_response(self, 200, payload)
             return
         if path == "/api/drain/queue":
             try:

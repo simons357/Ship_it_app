@@ -101,6 +101,7 @@ test("snippet origin toggle maps AI vs human without auto-PROVE", () => {
 
 test("DA service worker skips POST, APIs, and nested ChatVault", () => {
   assert.equal(shouldHandleFetchInDaWorker("POST", "/api/audit"), false);
+  assert.equal(shouldHandleFetchInDaWorker("POST", "/api/inquiry"), false);
   assert.equal(shouldHandleFetchInDaWorker("POST", "/api/drain/queue"), false);
   assert.equal(shouldHandleFetchInDaWorker("GET", "/chatvault/js/engine.mjs"), false);
   assert.equal(shouldHandleFetchInDaWorker("GET", "/api/drain/health"), false);

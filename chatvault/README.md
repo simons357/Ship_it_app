@@ -20,13 +20,15 @@ python3 -m http.server 4173
 
 Then open http://127.0.0.1:4173/
 
-Domain Architect homepage with the ChatVault search dock (opens the app on query):
+Domain Architect homepage with the ChatVault **search** dock and DA **inquiry** box:
 
 ```bash
 python -m domain_architect --site
 ```
 
 Then http://127.0.0.1:8765/  and  http://127.0.0.1:8765/chatvault/
+
+Search ranks the vault. Inquiry POSTs `/api/inquiry` (FRA). Same origin, two engines.
 
 Installable as a PWA from that origin (manifest + `sw.js`). iOS home-screen
 install still requires Safari’s Share → Add to Home Screen; there is no App

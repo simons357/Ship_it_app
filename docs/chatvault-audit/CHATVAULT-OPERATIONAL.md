@@ -13,7 +13,14 @@ When a chat is done, drain it into ChatVault. When a paper, letter, picture, or 
 
 ## 1. Is ChatVault hooked to Domain Architect?
 
-**Yes, as a drain. Not as DA’s brain.**
+**Yes. ChatVault is the search box. Domain Architect is the inquiry box. Not DA’s brain.**
+
+| Box | Engine | What it does |
+| --- | --- | --- |
+| **Search** | ChatVault hybrid ranker | Finds records already in the local vault |
+| **Inquiry** | Domain Architect FRA | Audits an equation or term. Optional file-into-vault. Does not prove theorems |
+
+They share one loopback origin (`python3 -m domain_architect --site`) so vault `localStorage` is the same. Inquiry POSTs `/api/inquiry`. Search never calls FRA. FRA never ranks the vault.
 
 ChatVault can sit on the same loopback origin as a Domain Architect homepage so a finished FRA audit can land in the vault. Domain Architect remains an auditor. ChatVault remains **OS for your AI**.
 
@@ -23,7 +30,8 @@ ChatVault can sit on the same loopback origin as a Domain Architect homepage so 
 | CLI | `python -m domain_architect --drain-chatvault "∇²Φ = 4π G ρ" -o audit.json` |
 | Loopback drain | `python -m domain_architect --drain-server` then ChatVault **Ingest → Drain → Pull** (`127.0.0.1:7847`) |
 | One-origin site | `python -m domain_architect --site` → [http://127.0.0.1:8765/](http://127.0.0.1:8765/) (DA homepage) and [http://127.0.0.1:8765/chatvault/](http://127.0.0.1:8765/chatvault/) (the PWA). Same `localStorage` origin. |
-| Homepage dock | ChatVault logo + search. Typing a query **opens the app** (`/chatvault/?q=…`) unless the user picks “Show hits here.” |
+| Homepage dock | ChatVault logo + **search** box. Typing a query ranks the vault here or opens `/chatvault/?q=…` |
+| Inquiry box | DA homepage **Inquiry** card and ChatVault vault-page inquiry panel. `POST /api/inquiry` |
 
 Domain Architect remains a Functional Role Analysis auditor. Canonical SFE status stays **unresolved**. A DA audit lands in ChatVault as `source_type: da_audit`, `origin_class: human_record`, `source_ai: DomainArchitect`. Nothing is auto-PROVED. DA does not prove Navier–Stokes or Riemann.
 
@@ -78,7 +86,7 @@ Pipeline, in order:
 **Not scores:** ledger status, `harmonic_note`, E8 / lattice.  
 **Origin field** is searchable (`origin:ai` / `origin:human`) and is **not** an unfielded quality boost.
 
-Schema: **`chatvault-engine-0.3.0`**. PWA cache: **`chatvault-engine-v0.7.0`**.
+Schema: **`chatvault-engine-0.3.0`**. PWA cache: **`chatvault-engine-v0.8.0`**.
 
 License unit (ranker only, not the PWA): `chatvault/js/search.mjs`. Import API: `chatvault/js/ENGINE.md`. Internals: `docs/chatvault-audit/CHATVAULT-ENGINE-INTERNALS.md`. DA homepage catalog: `#da-engines`.
 

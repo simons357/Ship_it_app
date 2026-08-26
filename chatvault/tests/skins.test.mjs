@@ -89,29 +89,34 @@ test("CSS skins are variable overrides with no glass and no backdrop-filter", ()
   assert.match(css, /--bg:\s*#fff7e8/);
 });
 
-test("PWA cache and asset query are 0.7.0; rankedSearch and drain module stay wired", () => {
+test("PWA cache and asset query are 0.8.0; rankedSearch, drain, and inquiry stay wired", () => {
   const sw = read("sw.js");
   const html = read("index.html");
   const app = read("js/app.js");
   const boot = read("js/skin-boot.js");
   const css = read("css/app.css");
-  assert.match(sw, /chatvault-engine-v0\.7\.0/);
+  assert.match(sw, /chatvault-engine-v0\.8\.0/);
   assert.match(sw, /drain\.mjs/);
+  assert.match(sw, /inquiry\.mjs/);
   assert.doesNotMatch(sw, /0\.5\.0/);
   assert.doesNotMatch(sw, /chatvault-glass-bg/);
   assert.match(sw, /skins\.mjs/);
   assert.match(sw, /skin-boot\.js/);
-  assert.match(html, /app\.css\?v=0\.7\.0/);
-  assert.match(html, /app\.js\?v=0\.7\.0/);
-  assert.match(html, /skin-boot\.js\?v=0\.7\.0/);
-  assert.match(html, /connect-src 'self' http:\/\/127\.0\.0\.1:7847 http:\/\/localhost:7847/);
-  assert.match(app, /sw\.js\?v=0\.7\.0/);
+  assert.match(html, /app\.css\?v=0\.8\.0/);
+  assert.match(html, /app\.js\?v=0\.8\.0/);
+  assert.match(html, /skin-boot\.js\?v=0\.8\.0/);
+  assert.match(html, /connect-src 'self' http:\/\/127\.0\.0\.1:7847 http:\/\/localhost:7847 http:\/\/127\.0\.0\.1:8765 http:\/\/localhost:8765/);
+  assert.match(app, /sw\.js\?v=0\.8\.0/);
   assert.match(app, /function rankedSearch/);
   assert.match(app, /ingestDroppedFiles/);
   assert.match(app, /pullDaDrain/);
   assert.match(app, /loadInboxFromRepo/);
+  assert.match(app, /postInquiry/);
+  assert.match(app, /do-inquire/);
+  assert.match(app, /Inquiry — Domain Architect/);
   assert.doesNotMatch(app, /ingestTextFile/);
   assert.match(css, /\.dropzone/);
+  assert.match(css, /\.inquiry-panel/);
   assert.match(css, /\.badge\.origin-ai/);
   assert.match(css, /\.badge\.origin-human/);
   assert.match(css, /\.vault-media/);

@@ -79,8 +79,7 @@ def audit_to_entry(report: AuditReport) -> dict[str, Any]:
     }
 
 
-def drain_audit(expression: str) -> dict[str, Any]:
-    report = audit_expression(expression)
+def drain_report(report: AuditReport) -> dict[str, Any]:
     entry = audit_to_entry(report)
     return {
         "format": CHATVAULT_EXPORT_FORMAT,
@@ -91,6 +90,27 @@ def drain_audit(expression: str) -> dict[str, Any]:
         "count": 1,
         "entries": [entry],
     }
+
+
+def drain_audit(expression: str) -> dict[str, Any]:
+    return drain_report(audit_expression(expression))
+
+
+def inquire(text: str, *, drain: bool = False) -> dict[str, Any]:
+    """FRA inquiry for the DA/ChatVault inquiry box. Not a search ranker."""
+    inquiry = str(text or "").strip()
+    if not inquiry:
+        raise ValueError("inquiry required")
+    report = audit_expression(inquiry)
+    payload: dict[str, Any] = {
+        "ok": True,
+        "lane": "inquiry",
+        "inquiry": inquiry,
+        "audit": report.to_dict(),
+        "canonical_sfe_status": report.canonical_sfe_status,
+        "drain": drain_report(report) if drain else None,
+    }
+    return payload
 
 
 def write_drain(payload: dict[str, Any], path: str | Path) -> Path:

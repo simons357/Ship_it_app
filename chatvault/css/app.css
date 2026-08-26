@@ -273,6 +273,15 @@ body {
   padding: 0.85rem;
   margin: 1rem 0;
 }
+.inquiry-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.85rem;
+  margin: 1rem 0;
+}
+.inquiry-panel textarea { min-height: 88px; }
+.inquiry-out { max-height: 22rem; overflow: auto; }
 input, textarea, select {
   font: inherit;
   color: var(--ink);

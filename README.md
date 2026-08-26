@@ -42,6 +42,8 @@ to treat representation of a known equation as derivation.
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
 python -m domain_architect --site
+# Search box (ChatVault) + Inquiry box (DA FRA): http://127.0.0.1:8765/
+# ChatVault app (same two boxes):                  http://127.0.0.1:8765/chatvault/
 python3 -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_chatvault_bridge tests.test_chatvault_ingest
 ```
 

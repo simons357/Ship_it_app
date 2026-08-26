@@ -3,6 +3,9 @@
 Aiming to be the best is the standard. This file records the hunt for the
 lost component and what now ships.
 
+Search (this file) is ChatVault. Inquiry is Domain Architect FRA
+(`POST /api/inquiry`). Do not mix the two engines.
+
 ## What was searched (25 August 2026)
 
 | Place | Result |

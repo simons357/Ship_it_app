@@ -20,6 +20,7 @@ import {
   shareIngestOverrides,
   snippetIngestOverrides,
 } from "./da-search.mjs";
+import { inquiryNarrative, postInquiry } from "/chatvault/js/inquiry.mjs";
 
 const STORAGE_KEY = "chatvault.engine.v1";
 const DOCK_KEY = "da.cvdock.v1";
@@ -59,6 +60,8 @@ const posEl = document.getElementById("cv-dock-pos");
 const modeEl = document.getElementById("cv-mode");
 const snipEl = document.getElementById("cv-snip");
 const outEl = document.getElementById("da-out");
+const relatedEl = document.getElementById("da-related");
+const inquiryEl = document.getElementById("da-inquiry");
 const diveEl = document.getElementById("cv-web-dive");
 const installBtn = document.getElementById("cv-install");
 const sourceTypeEl = document.getElementById("cv-source-type");
@@ -120,6 +123,30 @@ function escapeHtml(s) {
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;");
+}
+
+function renderRelatedInquiry(query) {
+  if (!relatedEl) return;
+  const q = String(query || "").trim();
+  if (!q) {
+    relatedEl.hidden = true;
+    relatedEl.innerHTML = "";
+    return;
+  }
+  const ranked = searchVault(store.list(), q);
+  relatedEl.hidden = false;
+  if (!ranked.hits.length) {
+    relatedEl.innerHTML = `<p class="hint">No related ChatVault hits on this device. Inquiry is FRA, not search. File the report to put it in the vault.</p>`;
+    return;
+  }
+  relatedEl.innerHTML = `<p class="cv-dive-kicker">Related ChatVault hits</p>${ranked.hits
+    .slice(0, 5)
+    .map((hit) => {
+      const e = hit.entry;
+      const origin = e.origin_class === "ai_generated" ? "AI" : "Real";
+      return `<a class="cv-hit" href="${chatvaultUrl("", `detail/${e.id}`)}"><strong>${escapeHtml(e.title)}</strong><br/><span class="hint">${escapeHtml(origin)} · ${escapeHtml(e.source_ai)} · score ${hit.score.toFixed(2)}</span></a>`;
+    })
+    .join("")}`;
 }
 
 function renderHits(query) {
@@ -393,34 +420,31 @@ document.getElementById("cv-send-repo")?.addEventListener("click", () => {
   });
 });
 
-async function audit(expression, drain) {
-  outEl.textContent = "Auditing…";
-  const path = drain ? "/api/drain/queue" : "/api/audit";
-  const res = await fetch(path, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ expression }),
-  });
-  const data = await res.json();
-  if (!res.ok) throw new Error(data.error || res.statusText);
-  if (drain && data.format === "chatvault-export") {
-    const entries = importVault(data);
+async function runInquiry(drain) {
+  const expression = String(inquiryEl?.value || "").trim();
+  outEl.textContent = drain ? "Inquiring and filing…" : "Inquiring…";
+  const data = await postInquiry(expression, { drain });
+  const narrative = inquiryNarrative(data);
+  if (drain && data.drain?.format === "chatvault-export") {
+    const entries = importVault(data.drain);
     if (entries.length) store.addMany(entries);
-    outEl.textContent = `Drained ${entries.length} audit(s) into ChatVault.\n\n${entries[0]?.summary || ""}`;
+    lastFiled = entries;
+    outEl.textContent = `Filed ${entries.length} inquiry report(s) into ChatVault.\n\n${entries[0]?.summary || narrative}`;
+    renderRelatedInquiry(expression);
     return;
   }
-  outEl.textContent = data.narrative || JSON.stringify(data, null, 2);
+  outEl.textContent = narrative || JSON.stringify(data.audit, null, 2);
+  renderRelatedInquiry(expression);
 }
 
-document.getElementById("da-audit")?.addEventListener("click", () => {
-  const expression = document.getElementById("da-expr")?.value || "";
-  audit(expression, false).catch((err) => {
+document.getElementById("da-inquiry-form")?.addEventListener("submit", (ev) => {
+  ev.preventDefault();
+  runInquiry(false).catch((err) => {
     outEl.textContent = `${err.message}\n\nStart the site: python3 -m domain_architect --site`;
   });
 });
-document.getElementById("da-drain")?.addEventListener("click", () => {
-  const expression = document.getElementById("da-expr")?.value || "";
-  audit(expression, true).catch((err) => {
+document.getElementById("da-inquire-file")?.addEventListener("click", () => {
+  runInquiry(true).catch((err) => {
     outEl.textContent = `${err.message}\n\nStart the site: python3 -m domain_architect --site`;
   });
 });

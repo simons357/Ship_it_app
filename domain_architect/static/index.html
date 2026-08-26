@@ -93,17 +93,21 @@
       </aside>
 
       <main>
-        <section class="card">
-          <h2>Paste an equation</h2>
-          <p class="hint">Domain Architect identifies what each component does. Correspondence is a hypothesis, not physical equivalence. It does not prove Navier–Stokes or Riemann. Finished audits drain into ChatVault as real FRA records.</p>
-          <label>Expression
-            <input id="da-expr" value="∇²Φ = 4π G ρ" />
-          </label>
-          <div class="row">
-            <button type="button" id="da-audit">Audit</button>
-            <button type="button" class="ghost" id="da-drain">Audit + drain to ChatVault</button>
-          </div>
+        <p class="lanes-banner">Two boxes. <strong>Search</strong> (dock) is ChatVault. <strong>Inquiry</strong> is Domain Architect. Same origin — not the same engine.</p>
+        <section class="card inquiry-card" id="da-inquiry-card">
+          <h2>Inquiry</h2>
+          <p class="hint">Ask Domain Architect. Paste an equation or a term. FRA identifies what each component does. It does not prove Navier–Stokes or Riemann, and it does not rank the vault. File the report into ChatVault as a real FRA record.</p>
+          <form id="da-inquiry-form">
+            <label for="da-inquiry">Ask Domain Architect
+              <textarea id="da-inquiry" rows="3" placeholder="∇²Φ = 4π G ρ">∇²Φ = 4π G ρ</textarea>
+            </label>
+            <div class="row">
+              <button type="submit" id="da-inquire">Inquire</button>
+              <button type="button" class="ghost" id="da-inquire-file">Inquire + file in ChatVault</button>
+            </div>
+          </form>
           <pre id="da-out" class="out">Ready.</pre>
+          <div id="da-related" class="cv-hits" hidden></div>
         </section>
         <section class="card engine-card">
           <h2>What is on the engine</h2>
@@ -179,14 +183,14 @@
           <h3>Shipped</h3>
           <ul>
             <li>Combined PWA (Domain Architect, standalone, Share Target GET)</li>
-            <li>ChatVault as the site search</li>
+            <li>ChatVault as the site <em>search</em> box; Domain Architect as the <em>inquiry</em> box</li>
             <li>Origin AI vs human</li>
             <li>Snippet and file ingest on search (not a whole conversation)</li>
             <li>Audio / video / PDF human-record stubs + repo inbox (<code>--ingest-chatvault</code>)</li>
             <li>File this search</li>
             <li>Share Target GET (iOS/Android share-to-DA)</li>
             <li>Deep-dive tabs (DuckDuckGo, Wikipedia, Semantic Scholar / Google Scholar)</li>
-            <li>FRA audit drain</li>
+            <li>FRA inquiry drain (Inquire + file)</li>
           </ul>
           <h3>Next</h3>
           <ul>
