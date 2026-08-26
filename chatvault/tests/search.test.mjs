@@ -219,3 +219,43 @@ test("RRF prefers documents that win more than one list", () => {
   assert.ok(scores.get("a") > scores.get("b"));
   assert.ok(scores.get("a") > scores.get("c"));
 });
+
+test("origin:ai and origin:human filter; unfielded ai does not rank-boost every AI chat", () => {
+  const grokChat = ingestPaste("TITLE: Token bucket notes\n\nDesign a limiter with a bucket.", {
+    source_ai: "Grok",
+  });
+  const claudeChat = ingestPaste("TITLE: Cooking caramel\n\nHow to brown onions slowly.", {
+    source_ai: "Claude",
+  });
+  const letter = ingestPaste("TITLE: Handwritten letter to a colleague\n\nDear colleague, about fluids on Tuesday.", {
+    source_ai: "human",
+    source_type: "letter",
+  });
+  assert.equal(grokChat.origin_class, "ai_generated");
+  assert.equal(claudeChat.origin_class, "ai_generated");
+  assert.equal(letter.origin_class, "human_record");
+
+  const parsedAi = parseQuery("origin:ai");
+  assert.equal(parsedAi.terms[0].field, "origin");
+  assert.equal(parsedAi.terms[0].term, "ai_generated");
+  const parsedHuman = parseQuery("origin:human");
+  assert.equal(parsedHuman.terms[0].term, "human_record");
+
+  const corpus = [grokChat, claudeChat, letter];
+  const aiHits = searchEntries(corpus, "origin:ai");
+  assert.equal(aiHits.length, 2);
+  assert.ok(aiHits.every((e) => e.origin_class === "ai_generated"));
+  const humanHits = searchEntries(corpus, "origin:human");
+  assert.equal(humanHits.length, 1);
+  assert.equal(humanHits[0].id, letter.id);
+
+  const uiFilter = searchEntries(corpus, "", { origin_class: "human_record" });
+  assert.equal(uiFilter.length, 1);
+  assert.equal(uiFilter[0].id, letter.id);
+
+  const unfielded = searchVault(corpus, "ai");
+  const unfieldedIds = unfielded.hits.map((h) => h.entry.id);
+  assert.equal(unfieldedIds.includes(grokChat.id), false);
+  assert.equal(unfieldedIds.includes(claudeChat.id), false);
+  assert.equal(unfieldedIds.includes(letter.id), false);
+});

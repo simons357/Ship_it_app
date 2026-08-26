@@ -221,3 +221,16 @@ test("tags, books, artifacts, and dashboard stats are derived without an LLM", (
   assert.equal(stats.books, 2);
   assert.ok(stats.claims >= 2);
 });
+
+test("DEMO_ENTRIES split AI chats from the human record", () => {
+  assert.equal(DEMO_ENTRIES[0].source_ai, "Grok");
+  assert.equal(DEMO_ENTRIES[0].origin_class, "ai_generated");
+  assert.equal(DEMO_ENTRIES[1].source_ai, "Claude");
+  assert.equal(DEMO_ENTRIES[1].origin_class, "ai_generated");
+  assert.equal(DEMO_ENTRIES[2].source_ai, "human");
+  assert.equal(DEMO_ENTRIES[2].origin_class, "human_record");
+  const stats = vaultStats(DEMO_ENTRIES);
+  assert.equal(stats.by_origin.ai_generated, 2);
+  assert.equal(stats.by_origin.human_record, 1);
+  assert.equal(SCHEMA_VERSION, "chatvault-engine-0.3.0");
+});

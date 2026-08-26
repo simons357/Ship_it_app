@@ -89,20 +89,31 @@ test("CSS skins are variable overrides with no glass and no backdrop-filter", ()
   assert.match(css, /--bg:\s*#fff7e8/);
 });
 
-test("PWA cache and asset query are 0.5.0; old glass cache name is gone", () => {
+test("PWA cache and asset query are 0.6.0; drain module is cached; old glass cache name is gone", () => {
   const sw = read("sw.js");
   const html = read("index.html");
   const app = read("js/app.js");
   const boot = read("js/skin-boot.js");
-  assert.match(sw, /chatvault-engine-v0\.5\.0/);
-  assert.doesNotMatch(sw, /0\.4\.1/);
+  const css = read("css/app.css");
+  assert.match(sw, /chatvault-engine-v0\.6\.0/);
+  assert.match(sw, /drain\.mjs/);
+  assert.doesNotMatch(sw, /0\.5\.0/);
   assert.doesNotMatch(sw, /chatvault-glass-bg/);
   assert.match(sw, /skins\.mjs/);
   assert.match(sw, /skin-boot\.js/);
-  assert.match(html, /app\.css\?v=0\.5\.0/);
-  assert.match(html, /app\.js\?v=0\.5\.0/);
-  assert.match(html, /skin-boot\.js\?v=0\.5\.0/);
-  assert.match(app, /sw\.js\?v=0\.5\.0/);
+  assert.match(html, /app\.css\?v=0\.6\.0/);
+  assert.match(html, /app\.js\?v=0\.6\.0/);
+  assert.match(html, /skin-boot\.js\?v=0\.6\.0/);
+  assert.match(html, /connect-src 'self' http:\/\/127\.0\.0\.1:7847 http:\/\/localhost:7847/);
+  assert.match(app, /sw\.js\?v=0\.6\.0/);
+  assert.match(app, /ingestDroppedFiles/);
+  assert.match(app, /pullDaDrain/);
+  assert.doesNotMatch(app, /ingestTextFile/);
+  assert.match(css, /\.dropzone/);
+  assert.match(css, /\.badge\.origin-ai/);
+  assert.match(css, /\.badge\.origin-human/);
+  assert.match(css, /\.vault-media/);
+  assert.match(css, /\.banner\.warn/);
   assert.match(boot, /chatvault\.skin\.v1/);
   assert.doesNotMatch(boot, /glass/);
 });
@@ -118,5 +129,5 @@ test("skin switcher is in the live shell; glass is not offered", () => {
 
 test("search ranking and ledger schema versions stay locked", () => {
   assert.equal(SEARCH_ENGINE_VERSION, "chatvault-hybrid-0.2.0");
-  assert.equal(SCHEMA_VERSION, "chatvault-engine-0.2.0");
+  assert.equal(SCHEMA_VERSION, "chatvault-engine-0.3.0");
 });
