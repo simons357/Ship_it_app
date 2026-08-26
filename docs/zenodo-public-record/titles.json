@@ -1,0 +1,246 @@
+{
+  "as_of": "2026-08-26",
+  "fact_check": {
+    "records_status": "published",
+    "access": "open",
+    "stamped_utc": "2026-08-21T12:42–12:44Z",
+    "owner_id": 1627782,
+    "gone": [
+      {
+        "id": 20518058,
+        "http": 410,
+        "note": "HTTP 410 GONE. Do not file a deletion/takedown on the remaining published records."
+      }
+    ]
+  },
+  "this_agent_cannot_log_in": true,
+  "never_password": true,
+  "token_scopes_if_later": ["deposit:write", "deposit:actions"],
+  "status_note": {
+    "ids": [22050978, 22045484, 22045483],
+    "latest_id": 22050978,
+    "doi": "10.5281/zenodo.22050978",
+    "current_title": "Status and Errata: What Stands and What Is Withdrawn",
+    "restore_title": "August 2026 status note: live stack and walked-back prize language",
+    "upload_pdf": "status_note_public_facing.pdf",
+    "record_url": "https://zenodo.org/records/22050978",
+    "also_edit_urls": [
+      "https://zenodo.org/records/22045484",
+      "https://zenodo.org/records/22045483"
+    ],
+    "description_html": "<p>Author status sheet for the 2026 spectral preprint stack. Page 1 states the live exploratory work and why the August 2026 action happened: prize-claim language was walked back; the files were never unpublished and never tombstoned. Page 2 is the errata. Public titles should be the original wording, without a retraction stamp. This is not a Zenodo takedown. Live Route C: <a href=\"https://doi.org/10.5281/zenodo.22050963\">10.5281/zenodo.22050963</a>. Live Φ-renormalization: <a href=\"https://doi.org/10.5281/zenodo.22050974\">10.5281/zenodo.22050974</a>. Unconditional 3D Navier–Stokes, the Riemann hypothesis, and Goldbach are not claimed.</p>"
+  },
+  "calm_pointer_html": "<p>August 2026: prize-claim language in this deposit is walked back. The file remains published and open. See page 2 of the status note <a href=\"https://doi.org/10.5281/zenodo.22050978\">10.5281/zenodo.22050978</a>. Live Route C: <a href=\"https://doi.org/10.5281/zenodo.22050963\">10.5281/zenodo.22050963</a>. Live Φ-renormalization: <a href=\"https://doi.org/10.5281/zenodo.22050974\">10.5281/zenodo.22050974</a>. Unconditional 3D Navier–Stokes, the Riemann hypothesis, and Goldbach are not claimed.</p>",
+  "live_clean_pointer_html": "<p>Related status note (page 2 is the errata for walked-back prize language on older drafts): <a href=\"https://doi.org/10.5281/zenodo.22050978\">10.5281/zenodo.22050978</a>. This record’s public title is already clean; do not stamp it.</p>",
+  "live_clean": [
+    {
+      "id": 22050963,
+      "doi": "10.5281/zenodo.22050963",
+      "record_url": "https://zenodo.org/records/22050963",
+      "title": "Route C: A Spectral Approach to Zero-Density Estimates, Conditional on Two Analytic Gaps",
+      "file": "05_route_c_conditional.pdf",
+      "action": "leave_title",
+      "optional_upload_pdf": "optional/22050963_with_reader_notice.pdf",
+      "note": "Title already clean. Prefer a description pointer over wrapping the scientific PDF."
+    },
+    {
+      "id": 22050974,
+      "doi": "10.5281/zenodo.22050974",
+      "record_url": "https://zenodo.org/records/22050974",
+      "title": "Phi-Renormalization for Axisymmetric Navier-Stokes with Swirl: Algebraic Cancellation of the 1/r^4 Axis Term",
+      "file": "01_phi_renormalization.pdf",
+      "action": "leave_title",
+      "optional_upload_pdf": "optional/22050974_with_reader_notice.pdf",
+      "note": "Title already clean. Prefer a description pointer over wrapping the scientific PDF."
+    },
+    {
+      "id": 22050975,
+      "doi": "10.5281/zenodo.22050975",
+      "record_url": "https://zenodo.org/records/22050975",
+      "title": "Phi-Renormalization for Axisymmetric Navier-Stokes with Swirl: Algebraic Cancellation of the 1/r^4 Axis Term",
+      "action": "leave_title",
+      "note": "Sibling of 22050974. Title already clean."
+    },
+    {
+      "id": 21071991,
+      "doi": "10.5281/zenodo.21071991",
+      "record_url": "https://zenodo.org/records/21071991",
+      "title": "Phi-Renormalization for Axisymmetric-with-Swirl Navier–Stokes: A Conditional Reduction of Global Regularity",
+      "action": "leave_title",
+      "note": "June Phi; title already clean. Optional description pointer only."
+    },
+    {
+      "id": 20518388,
+      "doi": "10.5281/zenodo.20518388",
+      "record_url": "https://zenodo.org/records/20518388",
+      "title": "Route C: Spectral Closure of the Zero-Density Law — Conditional on Two Analytic Gaps\"",
+      "action": "leave_title",
+      "optional_cleanup": "Strip the stray trailing quote only. Do not stamp this title.",
+      "optional_restore_title": "Route C: Spectral Closure of the Zero-Density Law — Conditional on Two Analytic Gaps"
+    },
+    {
+      "id": 22050962,
+      "concept_id": 20405588,
+      "doi": "10.5281/zenodo.22050962",
+      "record_url": "https://zenodo.org/records/22050962",
+      "title": "The Inverse-GCD Operator Q_N (Q6): Definitions, a Restricted Rayleigh Bound, and an Exploratory Spectral Programme",
+      "action": "leave_title",
+      "note": "Latest Q6 note is already cleaner than 22045478."
+    }
+  ],
+  "restore": [
+    {
+      "id": 20405526,
+      "concept_id": 20405525,
+      "doi": "10.5281/zenodo.20405526",
+      "record_url": "https://zenodo.org/records/20405526",
+      "concept_url": "https://zenodo.org/records/20405525",
+      "current_title": "[Claim withdrawn - see errata] Global Regularity of the Navier-Stokes Equations on T3: Spectral Non-Dispersal, the Ring Lemma, Phi-Renormalization, and the Shell-Conditioned Commutator Estimate",
+      "restore_title": "Global Regularity of the Navier-Stokes Equations on T3: Spectral Non-Dispersal, the Ring Lemma, Phi-Renormalization, and the Shell-Conditioned Commutator Estimate",
+      "kind": "notice",
+      "upload_pdf": "notices/20405526_public_facing_notice.pdf",
+      "files_on_record": ["tex", "html"]
+    },
+    {
+      "id": 20269843,
+      "concept_id": 20269842,
+      "doi": "10.5281/zenodo.20269843",
+      "record_url": "https://zenodo.org/records/20269843",
+      "concept_url": "https://zenodo.org/records/20269842",
+      "current_title": "[Superseded - see errata] The Quantum Lens: A Spectral Framework Connecting the Millennium Prize Problems",
+      "restore_title": "The Quantum Lens: A Spectral Framework Connecting the Millennium Prize Problems",
+      "kind": "notice",
+      "upload_pdf": "notices/20269843_public_facing_notice.pdf",
+      "files_on_record": ["tex"]
+    },
+    {
+      "id": 20405593,
+      "concept_id": 20405592,
+      "doi": "10.5281/zenodo.20405593",
+      "record_url": "https://zenodo.org/records/20405593",
+      "concept_url": "https://zenodo.org/records/20405592",
+      "current_title": "[Superseded - see errata] The Montgomery–Dyson Coincidence as a Q6 Prime Lattice Eigenvalue Identity",
+      "restore_title": "The Montgomery–Dyson Coincidence as a Q6 Prime Lattice Eigenvalue Identity",
+      "kind": "notice",
+      "upload_pdf": "notices/20405593_public_facing_notice.pdf",
+      "files_on_record": ["tex"]
+    },
+    {
+      "id": 20518294,
+      "concept_id": 20518249,
+      "doi": "10.5281/zenodo.20518294",
+      "record_url": "https://zenodo.org/records/20518294",
+      "current_title": "[Superseded - see errata] Route C: Spectral Closure of the Zero-Density Law — Conditional on Two Analytic Gaps\"",
+      "restore_title": "Route C: Spectral Closure of the Zero-Density Law — Conditional on Two Analytic Gaps",
+      "kind": "notice",
+      "upload_pdf": "notices/20518294_public_facing_notice.pdf",
+      "files_on_record": ["webloc"],
+      "note": "Strip the stray trailing quote as well as the prefix. Live Route C is 10.5281/zenodo.22050963."
+    },
+    {
+      "id": 20518250,
+      "concept_id": 20518249,
+      "doi": "10.5281/zenodo.20518250",
+      "record_url": "https://zenodo.org/records/20518250",
+      "current_title": "[Superseded - see errata] Route C: Spectral Closure of the Zero-Density Law — Conditional on Two Analytic Gaps\"",
+      "restore_title": "Route C: Spectral Closure of the Zero-Density Law — Conditional on Two Analytic Gaps",
+      "kind": "notice",
+      "upload_pdf": "notices/20518250_public_facing_notice.pdf",
+      "files_on_record": ["webloc"],
+      "note": "Older version of the same concept as 20518294. Edit this version URL too."
+    },
+    {
+      "id": 20552400,
+      "concept_id": 20552399,
+      "doi": "10.5281/zenodo.20552400",
+      "record_url": "https://zenodo.org/records/20552400",
+      "current_title": "[Claim withdrawn - see errata] A Universal Non-Concentration Principle: SND ≡ GNC ≡ Bridge",
+      "restore_title": "A Universal Non-Concentration Principle: SND ≡ GNC ≡ Bridge",
+      "kind": "wrap",
+      "source_pdf": "20552400_SND_GNC_BRIDGE_UNIFIED.pdf",
+      "upload_pdf": "20552400_public_facing.pdf"
+    },
+    {
+      "id": 20552682,
+      "concept_id": 20552681,
+      "doi": "10.5281/zenodo.20552682",
+      "record_url": "https://zenodo.org/records/20552682",
+      "current_title": "[Claim withdrawn - see errata] The Prime Lattice as a Prototype for the BSD Hamiltonian: Rank as Spectral Multiplicity and the Zeta-Function Case of the Birch and Swinnerton-Dyer Conjecture",
+      "restore_title": "The Prime Lattice as a Prototype for the BSD Hamiltonian: Rank as Spectral Multiplicity and the Zeta-Function Case of the Birch and Swinnerton-Dyer Conjecture",
+      "kind": "wrap",
+      "source_pdf": "20552682_BSD_SPECTRAL_FRAMEWORK.pdf",
+      "upload_pdf": "20552682_public_facing.pdf"
+    },
+    {
+      "id": 20552171,
+      "concept_id": 20552170,
+      "doi": "10.5281/zenodo.20552171",
+      "record_url": "https://zenodo.org/records/20552171",
+      "current_title": "[Claim withdrawn - see errata] A Quantum Field Theory on the Prime Manifold: Navier–Stokes, Riemann, and Goldbach Under a Single Hamiltonian",
+      "restore_title": "A Quantum Field Theory on the Prime Manifold: Navier–Stokes, Riemann, and Goldbach Under a Single Hamiltonian",
+      "kind": "wrap",
+      "source_pdf": "20552171_THREE_IN_ONE_QUANTUM_MILLENNIUM.pdf",
+      "upload_pdf": "20552171_public_facing.pdf"
+    },
+    {
+      "id": 20552223,
+      "concept_id": 20272621,
+      "doi": "10.5281/zenodo.20552223",
+      "record_url": "https://zenodo.org/records/20552223",
+      "also_edit_urls": ["https://zenodo.org/records/20272621"],
+      "current_title": "[Claim withdrawn - see errata] A Quantum Field Theory on the Prime Manifold: Navier–Stokes, Riemann Hypothesis, and Goldbach Under a Single Hamiltonian",
+      "restore_title": "A Quantum Field Theory on the Prime Manifold: Navier–Stokes, Riemann Hypothesis, and Goldbach Under a Single Hamiltonian",
+      "kind": "wrap",
+      "source_pdf": "20552223_THREE_IN_ONE_NS_RH_GOLDBACH.pdf",
+      "upload_pdf": "20552223_public_facing.pdf"
+    },
+    {
+      "id": 19842060,
+      "concept_id": 19842059,
+      "doi": "10.5281/zenodo.19842060",
+      "record_url": "https://zenodo.org/records/19842060",
+      "concept_url": "https://zenodo.org/records/19842059",
+      "current_title": "[Superseded - see errata] Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal",
+      "restore_title": "Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal",
+      "kind": "wrap",
+      "source_pdf": "19842060_97a2ec7e0_RingLemma_Paper.pdf",
+      "upload_pdf": "19842060_public_facing.pdf"
+    },
+    {
+      "id": 20272545,
+      "concept_id": 20272544,
+      "doi": "10.5281/zenodo.20272545",
+      "record_url": "https://zenodo.org/records/20272545",
+      "concept_url": "https://zenodo.org/records/20272544",
+      "current_title": "[Claim withdrawn - see errata] Spectral Non-Concentration Implies Global Regularity for 3D Navier–Stokes on T³",
+      "restore_title": "Spectral Non-Concentration Implies Global Regularity for 3D Navier–Stokes on T³",
+      "kind": "wrap",
+      "source_pdf": "20272545_Paper2_NS_Regularity_SND.pdf",
+      "upload_pdf": "20272545_public_facing.pdf"
+    },
+    {
+      "id": 20405591,
+      "concept_id": 20405590,
+      "doi": "10.5281/zenodo.20405591",
+      "record_url": "https://zenodo.org/records/20405591",
+      "concept_url": "https://zenodo.org/records/20405590",
+      "also_edit_urls": ["https://zenodo.org/records/20405590"],
+      "current_title": "[Claim withdrawn - see errata] The Q_N Operator: Self-Adjointness, Spectral Floor, and a Route to the Riemann Hypothesis via Renormalized GCD Eigenvalues",
+      "restore_title": "The Q_N Operator: Self-Adjointness, Spectral Floor, and a Route to the Riemann Hypothesis via Renormalized GCD Eigenvalues",
+      "kind": "notice",
+      "upload_pdf": "notices/20405591_public_facing_notice.pdf",
+      "files_on_record": ["tex"]
+    }
+  ],
+  "optional_rename": [
+    {
+      "id": 22045478,
+      "concept_id": 20405588,
+      "doi": "10.5281/zenodo.22045478",
+      "record_url": "https://zenodo.org/records/22045478",
+      "current_title": "The Inverse-GCD Operator Q_N: Definitions, a Restricted Rayleigh Bound, and Withdrawal of Full-Spectrum Floor Claims",
+      "restore_title": "The Inverse-GCD Operator Q_N: Definitions and a Restricted Rayleigh Bound",
+      "note": "Optional. Latest sibling 10.5281/zenodo.22050962 / concept 20405588 is already cleaner. Do not put WITHDRAWN in the new title."
+    }
+  ]
+}

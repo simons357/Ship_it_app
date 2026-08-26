@@ -37,6 +37,7 @@ to treat representation of a known equation as derivation.
 
 - Package: `domain_architect/`
 - Notes: [`docs/domain-architect/README.md`](docs/domain-architect/README.md)
+- Zenodo title restore pack (this repo does not write to zenodo.org): [`docs/zenodo-public-record/README.md`](docs/zenodo-public-record/README.md)
 - Canonical SFE status: **unresolved**
 
 ```bash
@@ -48,7 +49,7 @@ python -m domain_architect --route-c          # DA only; not ChatVault; does not
 # Search box (ChatVault) + Inquiry box (DA FRA): http://127.0.0.1:8765/
 # Route C PDF:                                   http://127.0.0.1:8765/faces/05_route_c_conditional.pdf
 # ChatVault app (same two boxes):                  http://127.0.0.1:8765/chatvault/
-python3 -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_chatvault_bridge tests.test_chatvault_ingest tests.test_track_b_mobius tests.test_route_c
+python3 -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_chatvault_bridge tests.test_chatvault_ingest tests.test_track_b_mobius tests.test_route_c tests.test_zenodo_public_record
 ```
 
 ## Harmonic Blueprint Experiment 01

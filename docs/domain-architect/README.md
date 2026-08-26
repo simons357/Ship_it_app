@@ -35,7 +35,7 @@ python3 -m domain_architect --ingest-chatvault PATH
 python -m domain_architect --site   # http://127.0.0.1:8765/ — ChatVault search + DA inquiry
 python -m domain_architect --track-b-mobius   # RH Track B Möbius–GCD attack; does not claim RH
 python -m domain_architect --route-c          # Route C face in DA; not ChatVault; does not claim RH
-python -m unittest tests.test_domain_architect_acceptance tests.test_chatvault_bridge tests.test_track_b_mobius tests.test_route_c
+python -m unittest tests.test_domain_architect_acceptance tests.test_chatvault_bridge tests.test_track_b_mobius tests.test_route_c tests.test_zenodo_public_record
 ```
 
 Finished inquiries and audits can file into ChatVault as `origin_class: human_record`. Domain Architect does not prove theorems. ChatVault is the search box (**OS for your AI**). Domain Architect is the inquiry box.
@@ -44,6 +44,10 @@ Related closed experiment in this repository:
 
 - Protocol: [`docs/HB-RINGDOWN-EXPERIMENT-01.md`](../HB-RINGDOWN-EXPERIMENT-01.md)
 - Report: [`docs/HB-RINGDOWN-EXPERIMENT-01-REPORT.md`](../HB-RINGDOWN-EXPERIMENT-01-REPORT.md)
+
+Owner restore pack for public Zenodo titles (this software does not write to zenodo.org; Domain Architect did not withdraw those deposits):
+
+- [`docs/zenodo-public-record/README.md`](../zenodo-public-record/README.md) — strip retraction stamps; prize-claim language is walked back; files stay published.
 
 Primary sources named in the handoff but **not present in this repository**:
 
