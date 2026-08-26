@@ -5,12 +5,16 @@ from __future__ import annotations
 
 import json
 import tempfile
+import threading
 import unittest
+import urllib.request
+from http.server import ThreadingHTTPServer
 from pathlib import Path
 
 from domain_architect.chatvault_bridge import drain_audit
 from domain_architect.cli import main
 from domain_architect.drain_server import DrainQueue
+from domain_architect.site_server import SiteHandler
 
 
 class TestDrainAuditFormat(unittest.TestCase):
@@ -78,6 +82,32 @@ class TestDaHomepageChatVault(unittest.TestCase):
         self.assertIn("cv-search-form", html)
         self.assertIn("/chatvault/", html)
         self.assertIn("chatvault-mark-dark.jpg", html)
+        self.assertIn("apple-mobile-web-app-capable", html)
+        self.assertIn("Domain Architect", html)
+        self.assertIn("cv-file-search", html)
+        self.assertIn("File into ChatVault", html)
+        self.assertIn("Does not have to be a whole conversation", html)
+        self.assertIn("da-ideas", html)
+        self.assertIn("cv-web-dive", html)
+        self.assertIn("Not this product", html)
+        self.assertIn("in-vault web crawler", html)
+
+    def test_manifest_is_combined_origin_pwa(self):
+        manifest_path = (
+            Path(__file__).resolve().parents[1] / "domain_architect" / "static" / "manifest.webmanifest"
+        )
+        payload = json.loads(manifest_path.read_text(encoding="utf-8"))
+        self.assertEqual(payload["name"], "Domain Architect")
+        self.assertEqual(payload["short_name"], "DA")
+        self.assertEqual(payload["start_url"], "/")
+        self.assertEqual(payload["scope"], "/")
+        self.assertEqual(payload["display"], "standalone")
+        self.assertEqual(payload["theme_color"], "#141816")
+        self.assertEqual(payload["share_target"]["action"], "/")
+        self.assertEqual(payload["share_target"]["method"], "GET")
+        self.assertEqual(payload["share_target"]["params"]["title"], "title")
+        self.assertEqual(payload["share_target"]["params"]["text"], "text")
+        self.assertEqual(payload["share_target"]["params"]["url"], "url")
 
     def test_cli_module_advertises_site(self):
         from domain_architect import cli
@@ -85,6 +115,51 @@ class TestDaHomepageChatVault(unittest.TestCase):
         src = Path(cli.__file__).read_text(encoding="utf-8")
         self.assertIn("--site", src)
         self.assertIn("serve_site", src)
+
+
+class TestDaSiteServiceWorker(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.httpd = ThreadingHTTPServer(("127.0.0.1", 0), SiteHandler)
+        cls.port = cls.httpd.server_address[1]
+        cls.thread = threading.Thread(target=cls.httpd.serve_forever, daemon=True)
+        cls.thread.start()
+        cls.origin = f"http://127.0.0.1:{cls.port}"
+
+    @classmethod
+    def tearDownClass(cls) -> None:
+        cls.httpd.shutdown()
+        cls.httpd.server_close()
+
+    def test_sw_is_javascript_and_skips_chatvault(self) -> None:
+        with urllib.request.urlopen(f"{self.origin}/da-sw.js") as res:
+            ctype = res.headers.get("Content-Type", "")
+            self.assertIn("javascript", ctype)
+            self.assertEqual(res.headers.get("Service-Worker-Allowed"), "/")
+            body = res.read().decode("utf-8")
+        self.assertIn("/chatvault/", body)
+        self.assertIn('req.method !== "GET"', body)
+
+    def test_audit_post_still_works(self) -> None:
+        req = urllib.request.Request(
+            f"{self.origin}/api/audit",
+            data=json.dumps({"expression": "x = y"}).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        with urllib.request.urlopen(req) as res:
+            self.assertEqual(res.status, 200)
+            payload = json.loads(res.read().decode("utf-8"))
+        self.assertIn("narrative", payload)
+        self.assertEqual(payload.get("canonical_sfe_status"), "unresolved")
+        blob = json.dumps(payload)
+        self.assertNotIn('"status": "PROVED"', blob)
+
+    def test_manifest_content_type(self) -> None:
+        with urllib.request.urlopen(f"{self.origin}/manifest.webmanifest") as res:
+            self.assertIn("manifest", res.headers.get("Content-Type", ""))
+            payload = json.loads(res.read().decode("utf-8"))
+        self.assertEqual(payload["scope"], "/")
 
 
 if __name__ == "__main__":
