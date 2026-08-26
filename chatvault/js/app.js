@@ -4,9 +4,10 @@ import {
   LEDGER_STATUSES,
   SOURCE_AIS,
   SOURCE_TYPES,
+  ORIGIN_CLASSES,
+  MAX_PASTE_CHARS,
   ingestPaste,
   ingestBulk,
-  ingestTextFile,
   searchEntries,
   searchVault,
   SEARCH_ENGINE_VERSION,
@@ -22,6 +23,13 @@ import {
   uniqueProjects,
   statusClass,
 } from "./engine.mjs";
+import {
+  DA_DRAIN_URLS,
+  MAX_IMAGE_BYTES,
+  classifyFilename,
+  ingestNamedSource,
+  pullDaDrain,
+} from "./drain.mjs";
 import { SKINS, SKIN_IDS, loadSkin, saveSkin, applySkin } from "./skins.mjs";
 
 const STORAGE_KEY = "chatvault.engine.v1";
@@ -63,11 +71,13 @@ function loadExtraBooks() {
 }
 
 const store = createStore(loadPersisted());
+let persistOk = true;
 store.subscribe((entries) => {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(exportVault(entries)));
+    persistOk = true;
   } catch {
-    /* quota */
+    persistOk = false;
   }
 });
 
@@ -77,6 +87,7 @@ const state = {
   visibility: "",
   source_ai: "",
   source_type: "",
+  origin_class: "",
   book: "",
   tag: "",
   project: "",
@@ -90,6 +101,8 @@ const state = {
   ingestAi: "unknown",
   ingestVis: "professional",
   ingestBook: "",
+  ingestOrigin: "",
+  ingestType: "",
   page: 0,
   extraBooks: loadExtraBooks(),
   fatal: null,
@@ -118,9 +131,23 @@ function syncHash() {
   if (location.hash !== next) history.replaceState(null, "", next);
 }
 
+function launchQuery() {
+  try {
+    const fromSearch = new URLSearchParams(location.search).get("q");
+    const hash = (location.hash || "").slice(1);
+    const qPart = hash.includes("?") ? hash.slice(hash.indexOf("?") + 1) : "";
+    const fromHash = new URLSearchParams(qPart).get("q");
+    return fromSearch || fromHash || "";
+  } catch {
+    return "";
+  }
+}
+
 function applyHash() {
-  const raw = (location.hash || "#vault").slice(1);
+  const raw = (location.hash || "#vault").slice(1).split("?")[0];
   const [view, rest] = raw.split("/");
+  const q = launchQuery();
+  if (q) state.query = q;
   if (view === "detail" && rest) {
     state.view = "detail";
     state.selectedId = rest;
@@ -128,7 +155,7 @@ function applyHash() {
   }
   if (view === "ingest") {
     state.view = "ingest";
-    state.ingestTab = rest === "bulk" || rest === "files" ? rest : "single";
+    state.ingestTab = rest === "bulk" || rest === "files" || rest === "drain" ? rest : "single";
     return;
   }
   if (view === "tags") {
@@ -163,6 +190,7 @@ function activeFilters() {
     visibility: state.visibility || undefined,
     source_ai: state.source_ai || undefined,
     source_type: state.source_type || undefined,
+    origin_class: state.origin_class || undefined,
     book: state.book || undefined,
     tag: state.tag || undefined,
     project: state.project || undefined,
@@ -170,8 +198,15 @@ function activeFilters() {
   };
 }
 
-function rankedSearch() {
-  return searchVault(store.list(), state.query, activeFilters());
+function originBadge(entry) {
+  const origin = entry.origin_class === "ai_generated" ? "ai_generated" : "human_record";
+  const label = origin === "ai_generated" ? "AI conversation" : "Real record";
+  return `<span class="badge origin-${origin === "ai_generated" ? "ai" : "human"}">${label}</span>`;
+}
+
+function persistBanner() {
+  if (persistOk) return "";
+  return `<p class="banner warn">This vault is larger than browser localStorage (often 5–10 MB). Records are in this session — export JSON now. IndexedDB is the next persistence step.</p>`;
 }
 
 function highlightSnippet(snippet) {
@@ -252,6 +287,7 @@ function renderVault() {
             <div class="card-top">
               <div>
                 <span class="badge">${escapeHtml(e.source_ai)}</span>
+                ${originBadge(e)}
                 <span class="badge ${escapeHtml(e.visibility)}">${escapeHtml(e.visibility)}</span>
                 <span class="badge ${escapeHtml(statusClass(status))}">${escapeHtml(status)}</span>
               </div>
@@ -277,19 +313,20 @@ function renderVault() {
   return `
     <div class="hero-row">
       <header class="hero">
-        <h1>Conversation Vault</h1>
+        <h1>ChatVault</h1>
         <p class="kicker">OS for your AI</p>
-        <p class="meta">${stats.total} conversations indexed · ${stats.starred} starred · ${searching ? `${ranked.total} ranked · ${ranked.took_ms.toFixed(1)} ms ·` : ""} ${escapeHtml(SEARCH_ENGINE_VERSION)}</p>
+        <p class="meta">${stats.total} records indexed · ${stats.by_origin?.ai_generated || 0} AI · ${stats.by_origin?.human_record || 0} real · ${stats.starred} starred · ${searching ? `${ranked.total} ranked · ${ranked.took_ms.toFixed(1)} ms ·` : ""} ${escapeHtml(SEARCH_ENGINE_VERSION)}</p>
       </header>
       <button class="btn" data-view="ingest">+ Ingest</button>
     </div>
-    <p class="banner">Knowledge capture with provenance and a claim ledger. It does not prove theorems, verify science, or replace a human review.</p>
+    <p class="banner">OS for your AI. Provenance for chats, and a searchable shelf for real papers, letters, pictures, and movies. It does not prove theorems.</p>
+    ${persistBanner()}
     <div class="search-panel">
       <div class="toolbar">
-        <input type="search" id="q" placeholder='euler identity · "finite-time blow-up" · claim:definitional · gap:blow-up · ai:Claude' value="${escapeHtml(state.query)}" />
+        <input type="search" id="q" placeholder='euler identity · origin:ai · origin:human · claim:definitional · ai:Claude' value="${escapeHtml(state.query)}" />
         <button class="btn ghost" id="do-search">Search</button>
       </div>
-      <p class="help">Type the words you remember. Best match first. Quotes for an exact phrase. <code>claim:</code> <code>gap:</code> <code>ai:</code> to look in one slot. Status on a card is the ledger, not the rank.</p>
+      <p class="help">Type the words you remember. Best match first. Quotes for an exact phrase. <code>origin:ai</code> vs <code>origin:human</code> splits AI chats from real records. <code>claim:</code> <code>gap:</code> <code>ai:</code> look in one slot. Status on a card is the ledger, not the rank.</p>
       <div class="filters">
         <button class="chip" id="star-filter" aria-pressed="${state.starredOnly ? "true" : "false"}">${state.starredOnly ? "★ Starred" : "☆ Starred"}</button>
         <select id="vis">
@@ -300,6 +337,13 @@ function renderVault() {
         <select id="ai">
           <option value="">Source AI: all</option>
           ${SOURCE_AIS.map((a) => `<option${state.source_ai === a ? " selected" : ""}>${escapeHtml(a)}</option>`).join("")}
+        </select>
+        <select id="origin">
+          <option value="">Origin: all</option>
+          ${ORIGIN_CLASSES.map((o) => {
+            const label = o === "ai_generated" ? "AI conversations" : "Real records";
+            return `<option value="${escapeHtml(o)}"${state.origin_class === o ? " selected" : ""}>${label}</option>`;
+          }).join("")}
         </select>
         <select id="stype">
           <option value="">Source type: all</option>
@@ -338,6 +382,21 @@ function ledgerList(entry, field) {
     .join("")}</ul>`;
 }
 
+function renderRaw(entry) {
+  if (entry.file_url && String(entry.file_url).startsWith("data:image/")) {
+    return `<img class="vault-media" src="${escapeHtml(entry.file_url)}" alt="${escapeHtml(entry.title)}" />`;
+  }
+  if (["movie", "audio", "pdf", "docx", "picture"].includes(entry.source_type) && !entry.file_url) {
+    return `<pre class="raw">${escapeHtml(entry.raw_content)}</pre>
+      <p class="help">Binary stays on disk. This is a searchable stub (filename, type, size). ChatVault is OS for your AI — not a media locker.</p>`;
+  }
+  const raw = String(entry.raw_content || "");
+  if (raw.length > 200000) {
+    return `<pre class="raw">${escapeHtml(raw.slice(0, 200000))}\n\n… viewer truncated (${raw.length} chars stored) …</pre>`;
+  }
+  return `<pre class="raw">${escapeHtml(raw)}</pre>`;
+}
+
 function renderDetail(entry) {
   if (!entry) {
     return `<p class="empty">That record is gone. If a delete failed, it would still be listed in the vault.</p>`;
@@ -351,6 +410,7 @@ function renderDetail(entry) {
     <div class="hero-row">
       <header class="hero">
         <p><span class="badge">${escapeHtml(entry.source_ai)}</span>
+           ${originBadge(entry)}
            <span class="badge">${escapeHtml(entry.source_type)}</span>
            <span class="badge ${escapeHtml(entry.visibility)}">${escapeHtml(entry.visibility)}</span></p>
         <h1>${escapeHtml(entry.title)}</h1>
@@ -366,7 +426,7 @@ function renderDetail(entry) {
     <div class="detail">
       <div class="panel">
         <h3>Raw content (immutable)</h3>
-        <pre class="raw">${escapeHtml(entry.raw_content)}</pre>
+        ${renderRaw(entry)}
         <h3>Optional summary</h3>
         <p>${escapeHtml(entry.summary || "—")}</p>
       </div>
@@ -415,19 +475,32 @@ function renderIngest() {
   return `
     <button class="back" data-view="vault">← Back to vault</button>
     <header class="hero">
-      <h1>Ingest a conversation</h1>
-      <p class="kicker">Raw text is stored first. Summaries never replace it.</p>
+      <h1>Slide it in</h1>
+      <p class="kicker">OS for your AI</p>
+      <p class="meta">Drop a finished chat, a ChatGPT export, a Domain Architect audit, or a real paper / letter / picture / movie. Huge paste cap (${MAX_PASTE_CHARS.toLocaleString()} chars). Browser storage is still ~5–10 MB until IndexedDB.</p>
     </header>
     <div class="tabs">
       <button class="tab" data-ingest-tab="single" aria-current="${tab === "single"}">Single</button>
       <button class="tab" data-ingest-tab="bulk" aria-current="${tab === "bulk"}">Bulk</button>
       <button class="tab" data-ingest-tab="files" aria-current="${tab === "files"}">Files</button>
+      <button class="tab" data-ingest-tab="drain" aria-current="${tab === "drain"}">Drain</button>
     </div>
-    <div class="panel">
-      <p class="banner">Structured lines are optional: TITLE, SOURCE_AI, CLAIM, THEOREM, GAP, ACTION, QUESTION, TAG, BOOK, VISIBILITY. CLAIM_LEDGER starts at UNREVIEWED. Nothing is auto-PROVED. No LLM is called.</p>
+    <div class="panel drop-target" id="ingest-drop">
+      <p class="banner">Structured lines are optional: TITLE, SOURCE_AI, SOURCE_TYPE, ORIGIN, CLAIM, THEOREM, GAP, ACTION, QUESTION, TAG, BOOK, VISIBILITY. CLAIM_LEDGER starts at UNREVIEWED. Nothing is auto-PROVED. No LLM is called. Origin marks AI conversations vs real records.</p>
       <div class="ingest-meta">
         <select id="ingest-ai">
           ${SOURCE_AIS.map((a) => `<option${state.ingestAi === a ? " selected" : ""}>${escapeHtml(a)}</option>`).join("")}
+        </select>
+        <select id="ingest-origin">
+          <option value=""${state.ingestOrigin === "" ? " selected" : ""}>Origin: infer</option>
+          ${ORIGIN_CLASSES.map((o) => {
+            const label = o === "ai_generated" ? "AI conversation" : "Real record";
+            return `<option value="${escapeHtml(o)}"${state.ingestOrigin === o ? " selected" : ""}>${label}</option>`;
+          }).join("")}
+        </select>
+        <select id="ingest-type">
+          <option value=""${state.ingestType === "" ? " selected" : ""}>Type: infer</option>
+          ${SOURCE_TYPES.map((a) => `<option${state.ingestType === a ? " selected" : ""}>${escapeHtml(a)}</option>`).join("")}
         </select>
         <select id="ingest-vis">
           <option value="professional"${state.ingestVis === "professional" ? " selected" : ""}>professional</option>
@@ -437,13 +510,21 @@ function renderIngest() {
       </div>
       ${
         tab === "files"
-          ? `<p><label>Upload txt / md / json / csv / html <input type="file" id="ingest-files" accept=".txt,.md,.markdown,.json,.csv,.html,.htm,text/plain" multiple /></label></p>
-             <p class="help">JSON ChatVault exports restore the bundle. Other text files become new records with source_file set.</p>`
-          : `<textarea id="ingest" placeholder="${tab === "bulk" ? "Paste several records separated by a line of ---" : "Paste your conversation here…"}">${escapeHtml(state.ingestText)}</textarea>`
+          ? `<div class="dropzone" id="dropzone">
+               <p><strong>Drop the whole conversation or any file here.</strong></p>
+               <p class="help">txt md json csv html · ChatGPT conversations.json · DA audit JSON · pictures under ${(MAX_IMAGE_BYTES / (1024 * 1024)).toFixed(0)} MB · movies / pdf / audio become searchable stubs</p>
+               <p><label>Choose files <input type="file" id="ingest-files" multiple /></label></p>
+             </div>`
+          : tab === "drain"
+          ? `<p>Domain Architect is a math auditor, not this vault’s brain. When an audit finishes, drain it here.</p>
+             <p class="help">1. <code>python -m domain_architect --drain-server</code><br/>2. <code>python -m domain_architect --drain-chatvault "∇²Φ = 4πGρ"</code><br/>3. Pull. Or drop the JSON on Files. Loopback only: ${escapeHtml(DA_DRAIN_URLS[0])}</p>
+             <p><button class="btn" id="pull-da">Pull from Domain Architect</button></p>`
+          : `<textarea id="ingest" placeholder="${tab === "bulk" ? "Paste several records separated by a line of ---" : "Paste the whole conversation here, then extract & index."}">${escapeHtml(state.ingestText)}</textarea>`
       }
       <p class="error">${escapeHtml(state.error)}</p>
       <p class="notice">${escapeHtml(state.notice)}</p>
-      ${tab === "files" ? "" : `<p><button class="btn" id="do-ingest">${tab === "bulk" ? "Index all chunks" : "Extract &amp; index"}</button> <span class="help">Parses locally. Uses AI to extract is not a feature of this engine.</span></p>`}
+      ${persistBanner()}
+      ${tab === "files" || tab === "drain" ? "" : `<p><button class="btn" id="do-ingest">${tab === "bulk" ? "Index all chunks" : "Extract &amp; index"}</button> <span class="help">Parses locally. Uses AI to extract is not a feature of this engine.</span></p>`}
     </div>
   `;
 }
@@ -549,7 +630,9 @@ function renderDashboard() {
       </header>
     </div>
     <div class="stats">
-      <div class="stat"><b>${stats.total}</b><span>Total conversations</span></div>
+      <div class="stat"><b>${stats.total}</b><span>Total records</span></div>
+      <div class="stat"><b>${stats.by_origin?.ai_generated || 0}</b><span>AI conversations</span></div>
+      <div class="stat"><b>${stats.by_origin?.human_record || 0}</b><span>Real records</span></div>
       <div class="stat"><b>${stats.starred}</b><span>Starred</span></div>
       <div class="stat"><b>${stats.private}</b><span>Private</span></div>
       <div class="stat"><b>${stats.claims}</b><span>Claims</span></div>
@@ -557,6 +640,7 @@ function renderDashboard() {
       <div class="stat"><b>${stats.gaps}</b><span>Open gaps</span></div>
     </div>
     <div class="detail">
+      <div class="panel"><h3>By origin</h3>${barRows(stats.by_origin) || '<p class="meta">None</p>'}</div>
       <div class="panel"><h3>By source AI</h3>${barRows(stats.by_ai) || '<p class="meta">None</p>'}</div>
       <div class="panel"><h3>By ledger status</h3>${barRows(stats.by_status) || '<p class="meta">None</p>'}</div>
     </div>
@@ -618,13 +702,14 @@ function renderGuide() {
   return `
     <header class="hero">
       <h1>Why this engine</h1>
-      <p class="kicker">The tagline is “OS for your AI.” The product is provenance + retrieval.</p>
+      <p class="kicker">The tagline is “OS for your AI.” The product is provenance + retrieval — for AI chats and for real papers, letters, pictures, and movies.</p>
     </header>
     <div class="panel">
       <p>Clippers already exist. ChatVault competes by refusing to collapse a conversation into a vibes summary.</p>
       <ol>
-        <li>Raw text is immutable after ingest.</li>
-        <li>Source AI and source file stay attached.</li>
+        <li>Raw text is immutable after ingest. Slide a finished chat onto ingest when the conversation is done.</li>
+        <li>AI conversations vs real records: <code>origin_class</code> is <code>ai_generated</code> or <code>human_record</code>. Search <code>origin:ai</code> / <code>origin:human</code>.</li>
+        <li>Source AI and source file stay attached. Domain Architect audits drain in as real FRA reports, not proofs.</li>
         <li>Claims, theorems, and gaps are searchable fields with statuses.</li>
         <li>Private material can be kept off professional export.</li>
         <li>Books, tags, and artifacts are derived from your records. They are not a second database and not an LLM.</li>
@@ -637,6 +722,7 @@ function renderGuide() {
         <li><code>euler identity</code> — both words must appear. Best match first, not oldest first.</li>
         <li><code>"finite-time blow-up"</code> — that exact phrase.</li>
         <li><code>euler OR navier-stokes</code> — either topic.</li>
+        <li><code>origin:ai</code> / <code>origin:human</code> — AI chats vs real papers, letters, pictures, movies.</li>
         <li><code>claim:definitional</code> / <code>gap:blow-up</code> / <code>ai:Claude</code> — look only in that slot.</li>
       </ul>
       <p>Accent highlights are the words that scored. A field label (claim, gap, title) tells you <em>where</em> they hit. OPEN / CONJECTURAL on a card is the ledger, not a popularity score — an open gap can still win the ranking.</p>
@@ -676,7 +762,7 @@ function shell(inner) {
       ${nav("privacy", "Privacy", ICONS.privacy)}
       ${nav("disclaimer", "Disclaimer", ICONS.disclaimer)}
       ${skinSwitcher()}
-      <p class="foot">${escapeHtml(skin.label)} · local engine · not App Store certified</p>
+      <p class="foot">${escapeHtml(skin.label)} · OS for your AI · local engine</p>
     </aside>
     <main class="main">${inner}</main>
   `;
@@ -730,11 +816,57 @@ function downloadJson(name, obj) {
 
 function ingestOverrides() {
   const related = state.ingestBook.trim() ? [state.ingestBook.trim()] : undefined;
-  return {
+  const patch = {
     source_ai: state.ingestAi,
     visibility: state.ingestVis,
     related_projects: related,
   };
+  if (state.ingestOrigin) patch.origin_class = state.ingestOrigin;
+  if (state.ingestType) patch.source_type = state.ingestType;
+  return patch;
+}
+
+function applyIngestResults(results, fileCount) {
+  const entries = results.flatMap((r) => r.entries || []);
+  const errors = results.flatMap((r) => r.errors || []);
+  if (!entries.length) {
+    throw new Error(errors[0]?.message || "Nothing ingestible in those files.");
+  }
+  store.addMany(entries);
+  const fail = errors.length ? ` ${errors.length} skipped.` : "";
+  const quota = persistOk ? "" : " localStorage quota hit — export JSON now.";
+  set({
+    view: "vault",
+    error: "",
+    notice: `Indexed ${entries.length} record(s) from ${fileCount} source(s).${fail}${quota}`,
+    selectedId: entries[0]?.id || null,
+  });
+}
+
+function readFilePayload(file) {
+  const mime = file.type || "";
+  const kind = classifyFilename(file.name, mime);
+  if (kind === "picture" && file.size <= MAX_IMAGE_BYTES) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve({ dataUrl: String(reader.result || ""), mime, size: file.size });
+      reader.onerror = () => reject(reader.error || new Error("Could not read image."));
+      reader.readAsDataURL(file);
+    });
+  }
+  if (kind === "picture" || kind === "movie" || kind === "audio" || kind === "pdf" || kind === "docx") {
+    return Promise.resolve({ mime, size: file.size });
+  }
+  return file.text().then((text) => ({ text, mime, size: file.size }));
+}
+
+function ingestDroppedFiles(fileList) {
+  const files = [...fileList];
+  return Promise.all(
+    files.map((file) =>
+      readFilePayload(file).then((payload) => ingestNamedSource(file.name, payload, ingestOverrides()))
+    )
+  ).then((results) => applyIngestResults(results, files.length));
 }
 
 function toggleStar(id) {
@@ -838,6 +970,27 @@ root.addEventListener("click", (ev) => {
     set({ query: q, error: "", notice: "", page: 0 });
     return;
   }
+  if (ev.target.id === "pull-da") {
+    pullDaDrain()
+      .then((result) => {
+        if (!result.entries.length) {
+          set({
+            notice: `Drain at ${result.origin} had nothing queued. Start python -m domain_architect --drain-server, then --drain-chatvault, or drop the JSON on Files.`,
+            error: "",
+          });
+          return;
+        }
+        store.addMany(result.entries);
+        set({
+          view: "vault",
+          error: "",
+          notice: `Pulled ${result.entries.length} Domain Architect audit(s) from ${result.origin}.`,
+          selectedId: result.entries[0]?.id || null,
+        });
+      })
+      .catch((err) => set({ error: err.message || String(err) }));
+    return;
+  }
   if (ev.target.id === "do-ingest") {
     try {
       if (state.ingestTab === "bulk") {
@@ -927,10 +1080,13 @@ root.addEventListener("change", (ev) => {
   if (ev.target.id === "q") set({ query: ev.target.value, page: 0 });
   if (ev.target.id === "vis") set({ visibility: ev.target.value, page: 0 });
   if (ev.target.id === "ai") set({ source_ai: ev.target.value, page: 0 });
+  if (ev.target.id === "origin") set({ origin_class: ev.target.value, page: 0 });
   if (ev.target.id === "stype") set({ source_type: ev.target.value, page: 0 });
   if (ev.target.id === "project") set({ project: ev.target.value, page: 0 });
   if (ev.target.id === "book") set({ book: ev.target.value, page: 0 });
   if (ev.target.id === "ingest-ai") state.ingestAi = ev.target.value;
+  if (ev.target.id === "ingest-origin") state.ingestOrigin = ev.target.value;
+  if (ev.target.id === "ingest-type") state.ingestType = ev.target.value;
   if (ev.target.id === "ingest-vis") state.ingestVis = ev.target.value;
   if (ev.target.id === "set-vis") {
     const current = store.get(state.selectedId);
@@ -952,22 +1108,7 @@ root.addEventListener("change", (ev) => {
     return;
   }
   if (ev.target.id === "ingest-files" && ev.target.files?.length) {
-    const files = [...ev.target.files];
-    Promise.all(
-      files.map((file) =>
-        file.text().then((text) => ingestTextFile(file.name, text, ingestOverrides()))
-      )
-    )
-      .then((results) => {
-        const entries = results.flatMap((r) => r.entries);
-        store.addMany(entries);
-        set({
-          view: "vault",
-          error: "",
-          notice: `Indexed ${entries.length} record(s) from ${files.length} file(s).`,
-        });
-      })
-      .catch((err) => set({ error: err.message || String(err) }));
+    ingestDroppedFiles(ev.target.files).catch((err) => set({ error: err.message || String(err) }));
     return;
   }
   if (ev.target.dataset?.reviewField && ev.target.dataset?.reviewId) {
@@ -978,6 +1119,44 @@ root.addEventListener("change", (ev) => {
     });
     store.replaceAfterSuccess(current.id, next);
     set({ error: "", notice: "Ledger updated." });
+  }
+});
+
+function ingestDropZone(ev) {
+  return ev.target.closest?.("#ingest-drop") || ev.target.closest?.("#dropzone") || null;
+}
+
+root.addEventListener("dragenter", (ev) => {
+  const zone = ingestDropZone(ev);
+  if (!zone) return;
+  ev.preventDefault();
+  document.getElementById("dropzone")?.classList.add("drag");
+  document.getElementById("ingest-drop")?.classList.add("drag");
+});
+
+root.addEventListener("dragover", (ev) => {
+  const zone = ingestDropZone(ev);
+  if (!zone) return;
+  ev.preventDefault();
+  if (ev.dataTransfer) ev.dataTransfer.dropEffect = "copy";
+});
+
+root.addEventListener("dragleave", (ev) => {
+  const zone = ingestDropZone(ev);
+  if (!zone) return;
+  if (zone.contains(ev.relatedTarget)) return;
+  zone.classList.remove("drag");
+  document.getElementById("dropzone")?.classList.remove("drag");
+});
+
+root.addEventListener("drop", (ev) => {
+  const zone = ingestDropZone(ev);
+  if (!zone) return;
+  ev.preventDefault();
+  document.getElementById("dropzone")?.classList.remove("drag");
+  document.getElementById("ingest-drop")?.classList.remove("drag");
+  if (ev.dataTransfer?.files?.length) {
+    ingestDroppedFiles(ev.dataTransfer.files).catch((err) => set({ error: err.message || String(err) }));
   }
 });
 
@@ -996,7 +1175,7 @@ window.addEventListener("hashchange", () => {
 });
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./sw.js?v=0.5.0").catch(() => {
+  navigator.serviceWorker.register("./sw.js?v=0.6.0").catch(() => {
     /* PWA optional; engine still runs */
   });
 }

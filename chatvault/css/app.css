@@ -415,6 +415,8 @@ select { min-width: 140px; }
 .badge.open, .badge.conjectural { color: var(--accent); border-color: var(--accent); }
 .badge.unreviewed, .badge.note { color: var(--muted); }
 .badge.withdrawn { color: #ff8a9a; }
+.badge.origin-ai { color: var(--accent); border-color: var(--accent); }
+.badge.origin-human { color: var(--ok); border-color: var(--ok); }
 
 .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
 .chip, .tag {
@@ -479,6 +481,33 @@ select { min-width: 140px; }
   margin: 0.8rem 0;
   font-size: 0.88rem;
   font-weight: 600;
+}
+.banner.warn {
+  background: color-mix(in srgb, var(--danger) 14%, transparent);
+  border-color: var(--danger);
+  color: var(--ink);
+}
+.dropzone {
+  border: 1.5px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 1.4rem 1rem;
+  text-align: center;
+  background: var(--surface-2);
+  color: var(--ink);
+}
+.dropzone.drag,
+.drop-target.drag {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+.vault-media {
+  display: block;
+  max-width: 100%;
+  max-height: 52vh;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
 }
 .error { color: var(--danger); min-height: 1.1rem; font-weight: 700; }
 .notice { color: var(--ok); font-weight: 700; }
