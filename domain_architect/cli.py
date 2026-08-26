@@ -9,6 +9,7 @@ from pathlib import Path
 
 from .audit import audit_expression
 from .chatvault_bridge import drain_audit, try_enqueue, write_drain
+from .chatvault_ingest import DEFAULT_INBOX, ingest_path
 from .drain_server import serve
 from .site_server import DEFAULT_SITE_PORT, serve_site
 from .registry import EquationRegistry
@@ -46,6 +47,15 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="serve Domain Architect homepage + ChatVault on 127.0.0.1:8765",
     )
+    parser.add_argument(
+        "--ingest-chatvault",
+        metavar="PATH",
+        help="ingest a file or directory into the ChatVault repo inbox (JSON sidecars + local media copy)",
+    )
+    parser.add_argument(
+        "--inbox",
+        help="inbox directory for --ingest-chatvault (default: chatvault/inbox)",
+    )
     parser.add_argument("--drain-host", default="127.0.0.1")
     parser.add_argument("--drain-port", type=int, default=7847)
     parser.add_argument("--site-port", type=int, default=DEFAULT_SITE_PORT)
@@ -57,6 +67,28 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.drain_server:
         serve(args.drain_host, args.drain_port)
+        return 0
+
+    if args.ingest_chatvault:
+        inbox = Path(args.inbox) if args.inbox else DEFAULT_INBOX
+        result = ingest_path(args.ingest_chatvault, inbox)
+        print(f"Wrote {len(result.written)} ChatVault sidecar(s) ({result.count} record(s)) to {inbox}")
+        for warning in result.warnings:
+            print(f"warning: {warning}", file=sys.stderr)
+        for skipped in result.skipped:
+            print(f"skipped: {skipped}", file=sys.stderr)
+        if args.output and result.entries:
+            write_drain(
+                {
+                    "format": "chatvault-export",
+                    "schema_version": result.entries[0].get("schema_version"),
+                    "source": "chatvault-inbox",
+                    "count": result.count,
+                    "entries": result.entries,
+                },
+                args.output,
+            )
+            print(f"Also wrote combined export to {args.output}")
         return 0
 
     if args.registry:
@@ -78,7 +110,9 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if not args.expression:
-        parser.error("expression is required unless --registry, --drain-server, or --site is set")
+        parser.error(
+            "expression is required unless --registry, --drain-server, --site, or --ingest-chatvault is set"
+        )
 
     if args.drain_chatvault:
         payload = drain_audit(args.expression)

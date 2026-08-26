@@ -30,6 +30,13 @@ export function drainOrigins() {
   return [...extra, ...DA_DRAIN_URLS];
 }
 export const MAX_IMAGE_BYTES = 12 * 1024 * 1024;
+export const BROWSER_STUB_NOTICE =
+  "Indexed as human record stub (binary not stored in the browser vault; use CLI --ingest-chatvault to copy into the repo inbox).";
+export const INBOX_INDEX_PATHS = Object.freeze([
+  "/api/inbox",
+  "/chatvault/inbox/index.json",
+  "./inbox/index.json",
+]);
 
 const TEXT_NAME = /\.(txt|md|markdown|json|csv|html|htm|xml|rtf|log)$/i;
 
@@ -200,12 +207,44 @@ export function ingestDaAudit(obj, overrides = {}) {
   return { kind: "da_audit", entries: [entry], errors: [] };
 }
 
-export function ingestMediaStub({ filename, mime, size, dataUrl }, overrides = {}) {
+export function isBrowserMediaStub(entry) {
+  const type = entry?.source_type;
+  if (!["movie", "audio", "pdf", "docx", "picture"].includes(type)) return false;
+  if (entry?.file_url && String(entry.file_url).startsWith("data:")) return false;
+  return !entry?.media_path;
+}
+
+function mediaStubRaw({ filename, mime, size, stored, mediaPath, sha256 }) {
+  const lines = [
+    `REAL ${String(classifyFilename(filename, mime) || "RECORD").toUpperCase()} ${stored ? "" : "STUB "}${filename}`,
+    `mime=${mime || "unknown"}`,
+    `size=${size || 0}`,
+    `stored=${stored ? "data-url" : mediaPath ? "repo-media" : "metadata-only"}`,
+  ];
+  if (mediaPath) lines.push(`media_path=${mediaPath}`);
+  if (sha256) lines.push(`sha256=${sha256}`);
+  if (!stored && !mediaPath) {
+    lines.push(
+      "The binary is not in this vault. ChatVault indexes a searchable stub so you can look it up next to AI chats."
+    );
+    lines.push(BROWSER_STUB_NOTICE);
+  }
+  return `${lines.filter(Boolean).join("\n")}\n`;
+}
+
+export function ingestMediaStub({ filename, mime, size, dataUrl, mediaPath, sha256 }, overrides = {}) {
   const kind = classifyFilename(filename, mime);
   const stored = Boolean(dataUrl) && kind === "picture";
-  const raw = stored
-    ? `REAL ${kind.toUpperCase()} ${filename}\nmime=${mime || "unknown"}\nsize=${size || 0}\nstored=data-url\n`
-    : `REAL ${kind.toUpperCase()} STUB ${filename}\nmime=${mime || "unknown"}\nsize=${size || 0}\nstored=metadata-only\nThe binary is not in this vault. ChatVault indexes a searchable stub so you can look it up next to AI chats.\n`;
+  const raw = mediaStubRaw({
+    filename,
+    mime,
+    size,
+    stored,
+    mediaPath: mediaPath || "",
+    sha256,
+  });
+  const tags = ["real-record", kind];
+  if (mediaPath) tags.push("inbox");
   const entry = emptyEntry({
     title: String(filename || kind),
     source_type: kind === "other" ? "other" : kind,
@@ -213,16 +252,21 @@ export function ingestMediaStub({ filename, mime, size, dataUrl }, overrides = {
     origin_class: "human_record",
     source_file: filename,
     file_url: stored ? dataUrl : "",
+    media_path: mediaPath || "",
+    linked_files: mediaPath ? [mediaPath] : [],
     raw_content: raw,
     content_text: raw,
     summary: stored
       ? `Real ${kind} stored as a data URL (${size || 0} bytes).`
-      : `Real ${kind} stub — filename, type, and size only (${size || 0} bytes). Not a media locker.`,
-    search_tags: ["real-record", kind],
+      : mediaPath
+        ? `Real ${kind} stub with repo media at ${mediaPath} (${size || 0} bytes). Not a theorem.`
+        : `Real ${kind} stub — filename, type, and size only (${size || 0} bytes). ${BROWSER_STUB_NOTICE}`,
+    search_tags: tags,
     ...overrides,
     origin_class: "human_record",
     source_ai: overrides.source_ai && overrides.source_ai !== "unknown" ? overrides.source_ai : "human",
     source_type: overrides.source_type || (kind === "other" ? "other" : kind),
+    media_path: mediaPath || overrides.media_path || "",
   });
   return { kind: "media", entries: [entry], errors: [] };
 }
@@ -245,39 +289,156 @@ function tryJsonSpecial(text, filename, overrides) {
   return null;
 }
 
+function textSourceType(filename, overrides = {}) {
+  if (overrides.source_type) return overrides.source_type;
+  const lower = String(filename || "").toLowerCase();
+  if (lower.endsWith(".md") || lower.endsWith(".markdown")) return "markdown";
+  if (lower.endsWith(".json")) return "json";
+  if (lower.endsWith(".csv")) return "csv";
+  if (lower.endsWith(".html") || lower.endsWith(".htm")) return "html";
+  if (lower.endsWith(".txt") || lower.endsWith(".rtf") || lower.endsWith(".log")) return "letter";
+  return "other";
+}
+
+function humanTextOverrides(filename, overrides = {}) {
+  return {
+    source_ai: "human",
+    origin_class: "human_record",
+    source_type: textSourceType(filename, overrides),
+    ...overrides,
+    origin_class: overrides.origin_class || "human_record",
+    source_ai:
+      overrides.source_ai && overrides.source_ai !== "unknown" ? overrides.source_ai : "human",
+    source_type: overrides.source_type || textSourceType(filename),
+  };
+}
+
 export function ingestNamedSource(filename, payload = {}, overrides = {}) {
   const name = String(filename || "untitled");
   const mime = payload.mime || "";
   const size = payload.size || (payload.text ? payload.text.length : 0);
   const kind = classifyFilename(name, mime);
+  const mediaMeta = {
+    filename: name,
+    mime,
+    size,
+    dataUrl: payload.dataUrl || "",
+    mediaPath: payload.mediaPath || payload.media_path || "",
+    sha256: payload.sha256 || "",
+  };
 
   if (kind === "picture" && payload.dataUrl && size <= MAX_IMAGE_BYTES) {
-    return ingestMediaStub({ filename: name, mime, size, dataUrl: payload.dataUrl }, overrides);
+    return ingestMediaStub(mediaMeta, overrides);
   }
   if (kind === "picture" || kind === "movie" || kind === "audio" || kind === "pdf" || kind === "docx") {
-    return ingestMediaStub({ filename: name, mime, size, dataUrl: "" }, overrides);
+    return ingestMediaStub({ ...mediaMeta, dataUrl: kind === "picture" ? payload.dataUrl || "" : "" }, overrides);
   }
   if (payload.text != null) {
     const special = String(name).toLowerCase().endsWith(".json") || mime === "application/json"
       ? tryJsonSpecial(payload.text, name, overrides)
       : null;
     if (special) return special;
+    const textOverrides = humanTextOverrides(name, overrides);
     if (TEXT_NAME.test(name) || kind === "text") {
-      return ingestTextFile(name, payload.text, overrides);
+      return ingestTextFile(name, payload.text, textOverrides);
     }
     return {
       kind: "entry",
       entries: [
         ingestPaste(payload.text, {
-          ...overrides,
+          ...textOverrides,
           source_file: name,
-          source_type: overrides.source_type || "other",
         }),
       ],
       errors: [],
     };
   }
-  return ingestMediaStub({ filename: name, mime, size, dataUrl: payload.dataUrl || "" }, overrides);
+  return ingestMediaStub(mediaMeta, overrides);
+}
+
+export function ingestNoticeForResults(results, { fileCount } = {}) {
+  const list = Array.isArray(results) ? results : [results];
+  const entries = list.flatMap((r) => r.entries || []);
+  const errors = list.flatMap((r) => r.errors || []);
+  const stubs = entries.filter(isBrowserMediaStub);
+  const inbox = entries.filter((e) => e.media_path);
+  const nFiles = fileCount != null ? fileCount : list.length;
+  const fail = errors.length ? ` ${errors.length} skipped.` : "";
+  if (!entries.length) return errors[0]?.message || "Nothing ingestible.";
+  if (stubs.length) {
+    return `Indexed ${entries.length} record(s) from ${nFiles} source(s).${fail} ${BROWSER_STUB_NOTICE}`;
+  }
+  if (inbox.length) {
+    return `Indexed ${entries.length} record(s) from ${nFiles} source(s).${fail} Repo media copied beside the JSON sidecar.`;
+  }
+  return `Indexed ${entries.length} record(s) from ${nFiles} source(s).${fail}`;
+}
+
+function inboxFileUrl(name, indexUrl) {
+  const raw = String(name || "");
+  if (/^https?:\/\//i.test(raw) || raw.startsWith("/")) return raw;
+  if (indexUrl.endsWith("/api/inbox")) return `/chatvault/inbox/${raw}`;
+  const dir = indexUrl.replace(/index\.json$/, "");
+  return `${dir}${raw}`;
+}
+
+export async function loadInboxFromRepo(fetchImpl = fetch) {
+  let lastErr = new Error(
+    "Repo inbox is not reachable. Start python3 -m domain_architect --site so /chatvault/inbox/ is served."
+  );
+  for (const url of INBOX_INDEX_PATHS) {
+    try {
+      const res = await fetchImpl(url);
+      if (!res.ok) {
+        lastErr = new Error(`Inbox ${url} returned ${res.status}.`);
+        continue;
+      }
+      const payload = await res.json();
+      if (payload && payload.format === "chatvault-export") {
+        return { origin: url, entries: importVault(payload), files: [] };
+      }
+      const files = (payload.files || [])
+        .map((item) => (typeof item === "string" ? item : item.url || item.name || ""))
+        .filter(Boolean);
+      const entries = [];
+      const errors = [];
+      for (const file of files) {
+        const fileUrl = inboxFileUrl(file, url);
+        try {
+          const fileRes = await fetchImpl(fileUrl);
+          if (!fileRes.ok) {
+            errors.push({ file, message: `${fileUrl} returned ${fileRes.status}` });
+            continue;
+          }
+          const body = await fileRes.json();
+          if (body && body.format === "chatvault-export") {
+            entries.push(...importVault(body));
+          } else if (body && body.id && (body.raw_content || body.title)) {
+            entries.push(...importVault({ format: "chatvault-export", entries: [body] }));
+          }
+        } catch (err) {
+          errors.push({ file, message: err.message || String(err) });
+        }
+      }
+      return { origin: url, entries, files, errors };
+    } catch (err) {
+      lastErr = err;
+    }
+  }
+  throw lastErr;
+}
+
+export async function postInboxExport(payload, fetchImpl = fetch) {
+  const res = await fetchImpl("/api/inbox", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  const body = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    throw new Error(body.error || `Inbox POST returned ${res.status}. Loopback --site writes JSON sidecars only.`);
+  }
+  return body;
 }
 
 export async function pullDaDrain(fetchImpl = fetch) {

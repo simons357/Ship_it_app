@@ -179,6 +179,7 @@ export function emptyEntry(partial = {}) {
     raw_content: asString(partial.raw_content, asString(partial.content_text)),
     summary: asString(partial.summary),
     file_url: asString(partial.file_url),
+    media_path: asString(partial.media_path),
     key_claims: (partial.key_claims || []).map((c) => normalizeLedgerObject(c, "UNREVIEWED")),
     theorems: (partial.theorems || []).map((c) => normalizeLedgerObject(c, "UNREVIEWED")),
     open_gaps: (partial.open_gaps || []).map((c) => normalizeLedgerObject(c, "OPEN")),
