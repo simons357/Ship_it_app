@@ -37,7 +37,7 @@ to treat representation of a known equation as derivation.
 
 - Package: `domain_architect/`
 - Notes: [`docs/domain-architect/README.md`](docs/domain-architect/README.md)
-- Zenodo title restore pack (this repo does not write to zenodo.org): [`docs/zenodo-public-record/README.md`](docs/zenodo-public-record/README.md)
+- Zenodo title restore pack (writes only with a PAT via `api_restore_titles.py --apply`; never a password): [`docs/zenodo-public-record/README.md`](docs/zenodo-public-record/README.md)
 - Canonical SFE status: **unresolved**
 
 ```bash

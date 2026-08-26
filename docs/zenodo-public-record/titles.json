@@ -11,13 +11,40 @@
         "http": 410,
         "note": "HTTP 410 GONE. Do not file a deletion/takedown on the remaining published records."
       }
+    ],
+    "may14_resolved": [
+      {
+        "id": 20183673,
+        "title": "Diffuse Cascade in 3D Navier–Stokes: Time-Resolved Evidence for Triad Equidistribution",
+        "note": "Found via public records API (User-Agent). Was missing from the earlier restore list."
+      },
+      {
+        "id": 20184148,
+        "title": "The Montgomery–Dyson Coincidence Resolved by the Q6 Prime Lattice Operator",
+        "note": "Found via public records API (User-Agent). Was missing from the earlier restore list."
+      }
+    ],
+    "unrelated_ids": [
+      {
+        "id": 19842061,
+        "http": 200,
+        "resolves_to": 19842159,
+        "note": "Resolves to an unrelated paper (Women Empowerment vs. Electoral Incentives…). Not a Simons May 14 record. Do not invent a DOI."
+      }
     ]
   },
   "this_agent_cannot_log_in": true,
   "never_password": true,
-  "token_scopes_if_later": ["deposit:write", "deposit:actions"],
+  "token_scopes_if_later": [
+    "deposit:write",
+    "deposit:actions"
+  ],
   "status_note": {
-    "ids": [22050978, 22045484, 22045483],
+    "ids": [
+      22050978,
+      22045484,
+      22045483
+    ],
     "latest_id": 22050978,
     "doi": "10.5281/zenodo.22050978",
     "current_title": "Status and Errata: What Stands and What Is Withdrawn",
@@ -28,9 +55,9 @@
       "https://zenodo.org/records/22045484",
       "https://zenodo.org/records/22045483"
     ],
-    "description_html": "<p>Author status sheet for the 2026 spectral preprint stack. Page 1 states the live exploratory work and why the August 2026 action happened: prize-claim language was walked back; the files were never unpublished and never tombstoned. Page 2 is the errata. Public titles should be the original wording, without a retraction stamp. This is not a Zenodo takedown. Live Route C: <a href=\"https://doi.org/10.5281/zenodo.22050963\">10.5281/zenodo.22050963</a>. Live Φ-renormalization: <a href=\"https://doi.org/10.5281/zenodo.22050974\">10.5281/zenodo.22050974</a>. Unconditional 3D Navier–Stokes, the Riemann hypothesis, and Goldbach are not claimed.</p>"
+    "description_html": "<p>Author status sheet for the 2026 spectral preprint stack. Page 1 is the live exploratory stack with a footnote. Page 2 is the errata: prize-claim language walked back; the files were never unpublished and never tombstoned. Public titles should be the original wording, without a retraction stamp. This is not a Zenodo takedown. Live Route C: <a href=\"https://doi.org/10.5281/zenodo.22050963\">10.5281/zenodo.22050963</a>. Live Φ-renormalization: <a href=\"https://doi.org/10.5281/zenodo.22050974\">10.5281/zenodo.22050974</a>. Live Ring: <a href=\"https://doi.org/10.5281/zenodo.22050976\">10.5281/zenodo.22050976</a>. Live Q6 note: <a href=\"https://doi.org/10.5281/zenodo.22050962\">10.5281/zenodo.22050962</a>. Unconditional 3D Navier–Stokes, the Riemann hypothesis, and Goldbach are not claimed.</p>"
   },
-  "calm_pointer_html": "<p>August 2026: prize-claim language in this deposit is walked back. The file remains published and open. See page 2 of the status note <a href=\"https://doi.org/10.5281/zenodo.22050978\">10.5281/zenodo.22050978</a>. Live Route C: <a href=\"https://doi.org/10.5281/zenodo.22050963\">10.5281/zenodo.22050963</a>. Live Φ-renormalization: <a href=\"https://doi.org/10.5281/zenodo.22050974\">10.5281/zenodo.22050974</a>. Unconditional 3D Navier–Stokes, the Riemann hypothesis, and Goldbach are not claimed.</p>",
+  "calm_pointer_html": "<p>August 2026: prize-claim language in this deposit is walked back. The file remains published and open. See the footnote on page 1 and the errata on page 2 of the status note <a href=\"https://doi.org/10.5281/zenodo.22050978\">10.5281/zenodo.22050978</a>. Live Route C: <a href=\"https://doi.org/10.5281/zenodo.22050963\">10.5281/zenodo.22050963</a>. Live Φ-renormalization: <a href=\"https://doi.org/10.5281/zenodo.22050974\">10.5281/zenodo.22050974</a>. Live Ring: <a href=\"https://doi.org/10.5281/zenodo.22050976\">10.5281/zenodo.22050976</a>. Unconditional 3D Navier–Stokes, the Riemann hypothesis, and Goldbach are not claimed.</p>",
   "live_clean_pointer_html": "<p>Related status note (page 2 is the errata for walked-back prize language on older drafts): <a href=\"https://doi.org/10.5281/zenodo.22050978\">10.5281/zenodo.22050978</a>. This record’s public title is already clean; do not stamp it.</p>",
   "live_clean": [
     {
@@ -86,6 +113,38 @@
       "title": "The Inverse-GCD Operator Q_N (Q6): Definitions, a Restricted Rayleigh Bound, and an Exploratory Spectral Programme",
       "action": "leave_title",
       "note": "Latest Q6 note is already cleaner than 22045478."
+    },
+    {
+      "id": 22050976,
+      "concept_id": 20518056,
+      "doi": "10.5281/zenodo.22050976",
+      "record_url": "https://zenodo.org/records/22050976",
+      "title": "A Ring Lemma for Band-Limited Vorticity Direction and a Conditional Spectral Non-Dispersal Criterion",
+      "file": "02_ring_lemma_snd_conditional.pdf",
+      "action": "leave_title",
+      "note": "Live Ring paper. Title already clean. Prefer a description pointer; do not stamp."
+    },
+    {
+      "id": 22050965,
+      "concept_id": 20552079,
+      "doi": "10.5281/zenodo.22050965",
+      "record_url": "https://zenodo.org/records/22050965",
+      "title": "Explicit Decay Rate and Quantitative Threshold for a Shell-Flux Gronwall Inequality under SND",
+      "file": "03_t2_shell_flux_gronwall.pdf",
+      "action": "leave_title",
+      "note": "Live T2 / shell-flux Gronwall note. Title already clean."
+    },
+    {
+      "id": 20269738,
+      "concept_id": 20269737,
+      "doi": "10.5281/zenodo.20269738",
+      "record_url": "https://zenodo.org/records/20269738",
+      "title": "Spectral Properties of the GCD Operator and the Ramanujan–Möbius Identity",
+      "action": "leave_title",
+      "files_on_record": [
+        "tex"
+      ],
+      "note": "May 18 2026. Public API title is already clean. Later version on the same concept is stamped 20271457 (restore that one)."
     }
   ],
   "restore": [
@@ -99,7 +158,10 @@
       "restore_title": "Global Regularity of the Navier-Stokes Equations on T3: Spectral Non-Dispersal, the Ring Lemma, Phi-Renormalization, and the Shell-Conditioned Commutator Estimate",
       "kind": "notice",
       "upload_pdf": "notices/20405526_public_facing_notice.pdf",
-      "files_on_record": ["tex", "html"]
+      "files_on_record": [
+        "tex",
+        "html"
+      ]
     },
     {
       "id": 20269843,
@@ -111,7 +173,9 @@
       "restore_title": "The Quantum Lens: A Spectral Framework Connecting the Millennium Prize Problems",
       "kind": "notice",
       "upload_pdf": "notices/20269843_public_facing_notice.pdf",
-      "files_on_record": ["tex"]
+      "files_on_record": [
+        "tex"
+      ]
     },
     {
       "id": 20405593,
@@ -123,7 +187,9 @@
       "restore_title": "The Montgomery–Dyson Coincidence as a Q6 Prime Lattice Eigenvalue Identity",
       "kind": "notice",
       "upload_pdf": "notices/20405593_public_facing_notice.pdf",
-      "files_on_record": ["tex"]
+      "files_on_record": [
+        "tex"
+      ]
     },
     {
       "id": 20518294,
@@ -134,7 +200,9 @@
       "restore_title": "Route C: Spectral Closure of the Zero-Density Law — Conditional on Two Analytic Gaps",
       "kind": "notice",
       "upload_pdf": "notices/20518294_public_facing_notice.pdf",
-      "files_on_record": ["webloc"],
+      "files_on_record": [
+        "webloc"
+      ],
       "note": "Strip the stray trailing quote as well as the prefix. Live Route C is 10.5281/zenodo.22050963."
     },
     {
@@ -146,7 +214,9 @@
       "restore_title": "Route C: Spectral Closure of the Zero-Density Law — Conditional on Two Analytic Gaps",
       "kind": "notice",
       "upload_pdf": "notices/20518250_public_facing_notice.pdf",
-      "files_on_record": ["webloc"],
+      "files_on_record": [
+        "webloc"
+      ],
       "note": "Older version of the same concept as 20518294. Edit this version URL too."
     },
     {
@@ -187,7 +257,9 @@
       "concept_id": 20272621,
       "doi": "10.5281/zenodo.20552223",
       "record_url": "https://zenodo.org/records/20552223",
-      "also_edit_urls": ["https://zenodo.org/records/20272621"],
+      "also_edit_urls": [
+        "https://zenodo.org/records/20272621"
+      ],
       "current_title": "[Claim withdrawn - see errata] A Quantum Field Theory on the Prime Manifold: Navier–Stokes, Riemann Hypothesis, and Goldbach Under a Single Hamiltonian",
       "restore_title": "A Quantum Field Theory on the Prime Manifold: Navier–Stokes, Riemann Hypothesis, and Goldbach Under a Single Hamiltonian",
       "kind": "wrap",
@@ -251,7 +323,10 @@
       "restore_title": "Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal: A Conditional Regularity Framework for 3D Navier-Stokes",
       "kind": "notice",
       "upload_pdf": "notices/20405585_public_facing_notice.pdf",
-      "files_on_record": ["tex", "html"]
+      "files_on_record": [
+        "tex",
+        "html"
+      ]
     },
     {
       "id": 20405599,
@@ -263,7 +338,9 @@
       "restore_title": "The GCD Spectral Attractor: A Unified Structural Framework for Navier-Stokes, the Riemann Hypothesis, and the Simons Field Equation",
       "kind": "notice",
       "upload_pdf": "notices/20405599_public_facing_notice.pdf",
-      "files_on_record": ["tex"]
+      "files_on_record": [
+        "tex"
+      ]
     },
     {
       "id": 20269536,
@@ -275,7 +352,9 @@
       "restore_title": "Spectral Non-Concentration Criteria for Navier–Stokes Regularity on T³",
       "kind": "notice",
       "upload_pdf": "notices/20269536_public_facing_notice.pdf",
-      "files_on_record": ["tex"]
+      "files_on_record": [
+        "tex"
+      ]
     },
     {
       "id": 20405591,
@@ -283,12 +362,58 @@
       "doi": "10.5281/zenodo.20405591",
       "record_url": "https://zenodo.org/records/20405591",
       "concept_url": "https://zenodo.org/records/20405590",
-      "also_edit_urls": ["https://zenodo.org/records/20405590"],
+      "also_edit_urls": [
+        "https://zenodo.org/records/20405590"
+      ],
       "current_title": "[Claim withdrawn - see errata] The Q_N Operator: Self-Adjointness, Spectral Floor, and a Route to the Riemann Hypothesis via Renormalized GCD Eigenvalues",
       "restore_title": "The Q_N Operator: Self-Adjointness, Spectral Floor, and a Route to the Riemann Hypothesis via Renormalized GCD Eigenvalues",
       "kind": "notice",
       "upload_pdf": "notices/20405591_public_facing_notice.pdf",
-      "files_on_record": ["tex"]
+      "files_on_record": [
+        "tex"
+      ]
+    },
+    {
+      "id": 20183673,
+      "concept_id": 20183672,
+      "doi": "10.5281/zenodo.20183673",
+      "record_url": "https://zenodo.org/records/20183673",
+      "concept_url": "https://zenodo.org/records/20183672",
+      "current_title": "[Superseded - see errata] Diffuse Cascade in 3D Navier–Stokes: Time-Resolved Evidence for Triad Equidistribution",
+      "restore_title": "Diffuse Cascade in 3D Navier–Stokes: Time-Resolved Evidence for Triad Equidistribution",
+      "kind": "wrap",
+      "source_pdf": "20183673.pdf",
+      "upload_pdf": "20183673_public_facing.pdf",
+      "published": "2026-05-14",
+      "note": "May 14 record; ID resolved via public API. 19842061 is unrelated."
+    },
+    {
+      "id": 20184148,
+      "concept_id": 20184147,
+      "doi": "10.5281/zenodo.20184148",
+      "record_url": "https://zenodo.org/records/20184148",
+      "concept_url": "https://zenodo.org/records/20184147",
+      "current_title": "[Claim withdrawn - see errata] The Montgomery–Dyson Coincidence Resolved by the Q6 Prime Lattice Operator",
+      "restore_title": "The Montgomery–Dyson Coincidence Resolved by the Q6 Prime Lattice Operator",
+      "kind": "wrap",
+      "source_pdf": "20184148.pdf",
+      "upload_pdf": "20184148_public_facing.pdf",
+      "published": "2026-05-14",
+      "note": "May 14 record; ID resolved via public API. Not 19842061."
+    },
+    {
+      "id": 20271879,
+      "concept_id": 20271878,
+      "doi": "10.5281/zenodo.20271879",
+      "record_url": "https://zenodo.org/records/20271879",
+      "concept_url": "https://zenodo.org/records/20271878",
+      "current_title": "[Superseded - see errata] Spectral Properties of GCD Operators and Ramanujan Quadratic Forms",
+      "restore_title": "Spectral Properties of GCD Operators and Ramanujan Quadratic Forms",
+      "kind": "wrap",
+      "source_pdf": "20271879.pdf",
+      "upload_pdf": "20271879_public_facing.pdf",
+      "published": "2026-05-18",
+      "note": "May 18. Distinct concept from 20269738/20271457. Source PDF bytes match 20271457.pdf; titles differ."
     }
   ],
   "optional_rename": [
@@ -301,5 +426,13 @@
       "restore_title": "The Inverse-GCD Operator Q_N: Definitions and a Restricted Rayleigh Bound",
       "note": "Optional. Latest sibling 10.5281/zenodo.22050962 / concept 20405588 is already cleaner. Do not put WITHDRAWN in the new title."
     }
-  ]
+  ],
+  "apply_command": "python3 docs/zenodo-public-record/api_restore_titles.py --apply",
+  "token_env_names": [
+    "ZENODO_TOKEN",
+    "ZENODO_ACCESS_TOKEN",
+    "ZENODO_PAT",
+    "ZENODO_API_TOKEN"
+  ],
+  "owner_action": "Create a Zenodo personal access token at https://zenodo.org/account/settings/applications/tokens/new/ with scopes deposit:write and deposit:actions. Send it as env ZENODO_TOKEN (or ZENODO_ACCESS_TOKEN). Tell the agent: use this token. Do not send the zenodo.org password. Do not click Edit on each record."
 }

@@ -1,8 +1,9 @@
-"""Public-facing Zenodo restore pack: clean titles, page-1 honesty, page-2 errata."""
+"""Public-facing Zenodo restore pack: clean titles, page-1 footnote, page-2 errata."""
 
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 import unittest
@@ -13,11 +14,17 @@ from pypdf import PdfReader
 _REPO = Path(__file__).resolve().parents[1]
 _PACK = _REPO / "docs" / "zenodo-public-record"
 _GEN = _PACK / "generate_public_record.py"
+_API = _PACK / "api_restore_titles.py"
 _TITLES = _PACK / "titles.json"
 _OUT = _PACK / "out"
 
-_PAGE1_FORBIDDEN = ("Claim withdrawn", "[Superseded")
+_PAGE1_FORBIDDEN = ("Claim withdrawn", "[Superseded", "WITHDRAWN")
 _PAUSE = "I am pausing this research line"
+_FOOTNOTE_NEEDLES = (
+    "prize-claim language walked back",
+    "page 2 of this file",
+    "10.5281/zenodo.22050978",
+)
 
 
 def _page_text(path: Path, index: int) -> str:
@@ -59,7 +66,7 @@ class TestZenodoPublicRecord(unittest.TestCase):
         for rec in self.titles.get("optional_rename", []):
             self.assertNotIn("withdrawn", rec["restore_title"].lower())
 
-    def test_status_note_page1_clean_page2_errata(self) -> None:
+    def test_status_note_page1_footnote_page2_errata(self) -> None:
         page1 = _page_text(self.status, 0)
         page2 = _page_text(self.status, 1)
         for blob in _PAGE1_FORBIDDEN:
@@ -67,8 +74,12 @@ class TestZenodoPublicRecord(unittest.TestCase):
         self.assertNotIn(_PAUSE, page1)
         self.assertNotIn(_PAUSE, page2)
         self.assertIn("errata", page2.lower())
-        self.assertIn("walked back", page1.lower())
         self.assertIn("live", page1.lower())
+        for needle in _FOOTNOTE_NEEDLES:
+            self.assertIn(needle, page1, msg=f"missing footnote text {needle!r}")
+        self.assertIn("10.5281/zenodo.22050976", page1)
+        self.assertNotIn("Why the August 2026 action happened", page1)
+        self.assertIn("Why the August 2026 action happened", page2)
         self.assertGreaterEqual(len(PdfReader(str(self.status)).pages), 2)
         meta = _meta_title(self.status)
         self.assertNotIn("Withdrawn", meta)
@@ -85,8 +96,16 @@ class TestZenodoPublicRecord(unittest.TestCase):
             page2 = _page_text(pdf, 1)
             for blob in _PAGE1_FORBIDDEN:
                 self.assertNotIn(blob, page1, msg=f"{pdf} page1 has {blob!r}")
+                self.assertNotIn(blob, page2, msg=f"{pdf} page2 has {blob!r}")
             self.assertNotIn(_PAUSE, page1)
             self.assertIn("errata", page2.lower())
+            for needle in _FOOTNOTE_NEEDLES:
+                self.assertIn(
+                    needle,
+                    page1,
+                    msg=f"{pdf} page1 missing footnote {needle!r}",
+                )
+            self.assertNotIn("Why the August 2026 action happened", page1)
             self.assertEqual(_meta_title(pdf), rec["restore_title"])
             reader = PdfReader(str(pdf))
             if rec["kind"] == "wrap":
@@ -105,6 +124,8 @@ class TestZenodoPublicRecord(unittest.TestCase):
             for blob in _PAGE1_FORBIDDEN:
                 self.assertNotIn(blob, page1)
             self.assertIn("OPTIONAL", page1)
+            self.assertIn("prize-claim language walked back", page1)
+            self.assertIn("10.5281/zenodo.22050978", page1)
 
     def test_unicode_titles_render(self) -> None:
         pdf = _OUT / "20552400_public_facing.pdf"
@@ -113,7 +134,6 @@ class TestZenodoPublicRecord(unittest.TestCase):
             "SND" in page1 and "GNC" in page1 and "Bridge" in page1,
             msg=page1[:400],
         )
-        # DejaVu should keep the identity glyph; fall back to the letters.
         self.assertIn("Universal Non-Concentration Principle", page1)
 
     def test_exact_restore_map(self) -> None:
@@ -138,13 +158,80 @@ class TestZenodoPublicRecord(unittest.TestCase):
             by_id[20271457],
             "The Ramanujan–Möbius Identity and Prime Lattice Spectral Theory: GCD Operators, Spectral Floors, and the Arithmetic Casimir Constant",
         )
+        self.assertEqual(
+            by_id[20183673],
+            "Diffuse Cascade in 3D Navier–Stokes: Time-Resolved Evidence for Triad Equidistribution",
+        )
+        self.assertEqual(
+            by_id[20184148],
+            "The Montgomery–Dyson Coincidence Resolved by the Q6 Prime Lattice Operator",
+        )
+        self.assertEqual(
+            by_id[20271879],
+            "Spectral Properties of GCD Operators and Ramanujan Quadratic Forms",
+        )
         self.assertIn(20272622, by_id)
         self.assertIn(20405585, by_id)
         self.assertIn(20269536, by_id)
+        self.assertNotIn(20269738, by_id)
+        self.assertNotIn(19842061, by_id)
         self.assertEqual(
             self.titles["optional_rename"][0]["restore_title"],
             "The Inverse-GCD Operator Q_N: Definitions and a Restricted Rayleigh Bound",
         )
+
+    def test_live_clean_includes_ring_q6_and_may18_gcd(self) -> None:
+        live = {row["id"]: row for row in self.titles["live_clean"]}
+        self.assertEqual(
+            live[22050976]["title"],
+            "A Ring Lemma for Band-Limited Vorticity Direction and a Conditional Spectral Non-Dispersal Criterion",
+        )
+        self.assertEqual(
+            live[20269738]["title"],
+            "Spectral Properties of the GCD Operator and the Ramanujan–Möbius Identity",
+        )
+        self.assertEqual(
+            live[22050962]["doi"],
+            "10.5281/zenodo.22050962",
+        )
+        self.assertEqual(self.titles["fact_check"]["unrelated_ids"][0]["id"], 19842061)
+
+    def test_paste_sheet_is_not_a_click_edit_checklist(self) -> None:
+        paste = (_OUT / "PASTE_TITLES.md").read_text(encoding="utf-8")
+        self.assertIn("api_restore_titles.py --apply", paste)
+        self.assertNotIn("Click **Edit**", paste)
+        jobs = (_OUT / "RESTORE_JOBS.md").read_text(encoding="utf-8")
+        self.assertIn("api_restore_titles.py --apply", jobs)
+        self.assertIn("20183673", jobs)
+        self.assertIn("20184148", jobs)
+
+    def test_api_restore_dry_run_and_apply_without_token(self) -> None:
+        env = {k: v for k, v in os.environ.items() if not k.startswith("ZENODO")}
+        dry = subprocess.run(
+            [sys.executable, str(_API)],
+            cwd=_REPO,
+            env=env,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        self.assertEqual(dry.returncode, 0, msg=dry.stderr)
+        self.assertIn("20183673", dry.stdout)
+        self.assertIn("22050978", dry.stdout)
+        self.assertIn("--apply", dry.stdout)
+        applied = subprocess.run(
+            [sys.executable, str(_API), "--apply"],
+            cwd=_REPO,
+            env=env,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        self.assertEqual(applied.returncode, 2, msg=applied.stdout)
+        err = applied.stderr.lower()
+        self.assertIn("personal access token", err)
+        self.assertIn("deposit:write", err)
+        self.assertNotIn("password", applied.stdout.lower())
 
 
 if __name__ == "__main__":

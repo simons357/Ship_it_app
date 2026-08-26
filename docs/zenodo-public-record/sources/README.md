@@ -1,6 +1,6 @@
 # Source PDFs for reproducible wrapping
 
-Copies of Jonathan Simons’ already-public Zenodo files, retrieved 26 August 2026.
+Copies of Jonathan Simons’ already-public Zenodo files.
 Used only so `generate_public_record.py` can prepend a clean cover + errata.
 
 | File | Record |
@@ -13,6 +13,9 @@ Used only so `generate_public_record.py` can prepend a clean cover + errata.
 | `20272545.pdf` | wrap 20272545 |
 | `20271457.pdf` | wrap 20271457 |
 | `20272622.pdf` | wrap 20272622 |
+| `20183673.pdf` | wrap 20183673 (May 14 Diffuse Cascade) |
+| `20184148.pdf` | wrap 20184148 (May 14 Montgomery–Dyson Resolved) |
+| `20271879.pdf` | wrap 20271879 (May 18 GCD / Ramanujan quadratic forms) |
 | `22050963_05_route_c_conditional.pdf` | optional reader notice |
 | `22050974_01_phi_renormalization.pdf` | optional reader notice |
 
