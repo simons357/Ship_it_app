@@ -2,9 +2,10 @@
 
     python -m domain_architect --site
 
-http://127.0.0.1:8765/           DA homepage (ChatVault search dock)
+http://127.0.0.1:8765/           DA homepage (ChatVault search dock + PWA)
+http://127.0.0.1:8765/da-sw.js   Combined-origin service worker (skips /chatvault/)
 http://127.0.0.1:8765/chatvault/ ChatVault PWA (same localStorage origin)
-POST /api/audit                  FRA audit JSON
+POST /api/audit                  FRA audit JSON (never cached by the DA worker)
 GET/POST /api/drain/...          ChatVault drain queue
 """
 
@@ -41,6 +42,8 @@ def _content_type(path: Path) -> str:
         return "text/javascript; charset=utf-8"
     if path.suffix == ".js":
         return "text/javascript; charset=utf-8"
+    if path.suffix == ".webmanifest":
+        return "application/manifest+json"
     guessed, _ = mimetypes.guess_type(str(path))
     return guessed or "application/octet-stream"
 
@@ -64,6 +67,9 @@ class SiteHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-Type", _content_type(path))
         self.send_header("Content-Length", str(len(data)))
+        if path.name == "da-sw.js":
+            self.send_header("Service-Worker-Allowed", "/")
+            self.send_header("Cache-Control", "no-cache")
         self.end_headers()
         self.wfile.write(data)
 

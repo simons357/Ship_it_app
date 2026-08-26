@@ -6,6 +6,8 @@
     <title>Domain Architect — FRA lab</title>
     <meta name="description" content="Domain Architect is a Functional Role Analysis auditor. ChatVault is OS for your AI. They are not the same product. DA does not prove theorems." />
     <meta name="theme-color" content="#141816" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Domain Architect" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; worker-src 'self'; base-uri 'none'; object-src 'none'" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="apple-touch-icon" href="/chatvault/assets/icon-192.png" />
@@ -31,7 +33,7 @@
           <div>
             <p class="cv-kicker">OS for your AI</p>
             <p class="cv-name">ChatVault</p>
-            <p class="cv-sub">Local vault on this origin. Not Domain Architect’s brain.</p>
+            <p class="cv-sub">The search engine for this site. Local vault — not Domain Architect’s brain.</p>
           </div>
         </div>
         <form id="cv-search-form" class="cv-search">
@@ -40,7 +42,9 @@
           <div class="cv-actions">
             <button type="submit" id="cv-go">Search vault</button>
             <button type="button" class="ghost" id="cv-open">Open app</button>
-            <button type="button" class="ghost" id="cv-web" title="Opens DuckDuckGo in a new tab. Not ChatVault retrieval.">Web</button>
+            <button type="button" class="ghost" id="cv-web" title="Vault hits here, then web hunts in new tabs. Not ChatVault retrieval.">Deep dive</button>
+            <button type="button" class="ghost" id="cv-file-search" title="File the query as a human record. Not a conversation dump.">File this search</button>
+            <button type="button" class="ghost" id="cv-install" hidden>Install DA</button>
           </div>
         </form>
         <div class="cv-choices">
@@ -52,15 +56,32 @@
           </label>
           <label>On search
             <select id="cv-mode">
-              <option value="open">Open ChatVault</option>
               <option value="here">Show hits here</option>
+              <option value="open">Open ChatVault</option>
             </select>
           </label>
         </div>
         <div id="cv-hits" class="cv-hits" hidden></div>
-        <div id="cv-drop" class="cv-drop">
-          <p><strong>Slide anything in.</strong> Finished AI chats, ChatGPT <code>conversations.json</code>, papers, letters, pictures, movies, DA audits.</p>
-          <textarea id="cv-snip" rows="3" placeholder="Quick capture — paste a snippet, letter, or note. Does not have to be a whole conversation."></textarea>
+        <div id="cv-web-dive" class="cv-web-dive" hidden></div>
+        <div id="cv-drop" class="cv-drop cv-capture">
+          <p class="cv-capture-kicker">File into ChatVault</p>
+          <p class="hint">Paste a snippet, URL, letter, or note. Does not have to be a whole conversation. Drop files here too.</p>
+          <textarea id="cv-snip" rows="3" placeholder="Paste a snippet, URL, letter, or note. Does not have to be a whole conversation."></textarea>
+          <div class="cv-capture-meta">
+            <fieldset class="cv-origin">
+              <legend class="sr-only">Origin</legend>
+              <label><input type="radio" name="cv-origin" value="human_record" checked /> Real / human</label>
+              <label><input type="radio" name="cv-origin" value="ai_generated" /> AI</label>
+            </fieldset>
+            <label class="cv-type-label">Type
+              <select id="cv-source-type">
+                <option value="other">Snippet / other</option>
+                <option value="letter">Letter</option>
+                <option value="paper">Paper</option>
+                <option value="conversation">Conversation</option>
+              </select>
+            </label>
+          </div>
           <div class="cv-actions">
             <button type="button" id="cv-ingest">Index snippet</button>
             <label class="ghost file-btn">Choose files<input id="cv-files" type="file" multiple /></label>
@@ -94,6 +115,29 @@
             <li>Optional RM3 expansion, fused again</li>
           </ol>
           <p class="hint">Indexed fields: title, claim, theorem, gap, question, action, tag, book, summary, content, ai, source, origin. Ledger status and Harmonic Watch notes are never scores. AI conversations vs real papers/pictures/movies use <code>origin:ai</code> / <code>origin:human</code>.</p>
+        </section>
+        <section class="card ideas-card" id="da-ideas">
+          <h2>Recommendations</h2>
+          <p class="hint">Shipped on this origin vs next. Honest list — nothing here is a promise of a web crawler or a proof engine.</p>
+          <h3>Shipped</h3>
+          <ul>
+            <li>Combined PWA (Domain Architect, standalone, Share Target GET)</li>
+            <li>ChatVault as the site search</li>
+            <li>Origin AI vs human</li>
+            <li>Snippet and file ingest on search (not a whole conversation)</li>
+            <li>File this search</li>
+            <li>Share Target GET (iOS/Android share-to-DA)</li>
+            <li>Deep-dive tabs (DuckDuckGo, Wikipedia, Semantic Scholar / Google Scholar)</li>
+            <li>FRA audit drain</li>
+          </ul>
+          <h3>Next</h3>
+          <ul>
+            <li>IndexedDB (localStorage quota)</li>
+            <li>File Handling API</li>
+            <li>ChatGPT / Claude export helper</li>
+            <li>Optional RM3 already in the engine — expose a toggle</li>
+          </ul>
+          <p class="hint">Not this product: in-vault web crawler, Evernote, Stripe, auto-PROVE, theorem proving. Glass is not a ChatVault skin. Base44 preview is a different schema.</p>
         </section>
       </main>
     </div>

@@ -2,8 +2,8 @@
   "name": "Domain Architect",
   "short_name": "DA",
   "description": "Functional Role Analysis lab. ChatVault is the search engine — OS for your AI.",
-  "start_url": "./index.html",
-  "scope": "../",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#141816",
   "theme_color": "#141816",
@@ -19,5 +19,15 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "share_target": {
+    "action": "/",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
 }
