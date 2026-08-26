@@ -4,12 +4,13 @@ Audit date: 24 August 2026
 Auditor: Cursor Grok 4.6 (cloud agent on `github.com/simons357/Ship_it_app`)  
 Prepared for: Jonathan Robert Simons, CRNA, MBS (`jonathansimons357@proton.me`)
 
-**Start here:** [MASTER-AUDIT.md](MASTER-AUDIT.md)
+**Start here:** [CHATVAULT-REPORT-FOR-CLAUDE.md](CHATVAULT-REPORT-FOR-CLAUDE.md) (26 Aug 2026 skeptic briefing). Background freeze: [MASTER-AUDIT.md](MASTER-AUDIT.md) (24 Aug; look-lock dated).
 
 This packet does not delete, overwrite, or silently alter any Base44 record or historical source. It records what could be reached from this GitHub workshop environment, freezes hashes of reachable preview bundles, and states labels for the next handoff.
 
 | File | Role |
 | --- | --- |
+| [CHATVAULT-REPORT-FOR-CLAUDE.md](CHATVAULT-REPORT-FOR-CLAUDE.md) | Standalone evidence report for a skeptical reviewer (26 Aug 2026) |
 | [MASTER-AUDIT.md](MASTER-AUDIT.md) | Required 12-section audit and decision language |
 | [VERSION-MANIFEST.json](VERSION-MANIFEST.json) | Verified identities, hashes, labels |
 | [CHATVAULT-EVERNOTE-TRIAGE.md](CHATVAULT-EVERNOTE-TRIAGE.md) | Historical “Evernote of AI Conversations” HTML: seed demo, substring search, canned assistant |
