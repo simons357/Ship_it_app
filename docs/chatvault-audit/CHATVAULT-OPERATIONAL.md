@@ -76,7 +76,7 @@ Pipeline, in order:
 **Not scores:** ledger status, `harmonic_note`, E8 / lattice.  
 **Origin field** is searchable (`origin:ai` / `origin:human`) and is **not** an unfielded quality boost.
 
-Schema: **`chatvault-engine-0.3.0`**. PWA cache: **`chatvault-engine-v0.6.0`**.
+Schema: **`chatvault-engine-0.3.0`**. PWA cache: **`chatvault-engine-v0.6.1`**.
 
 ---
 

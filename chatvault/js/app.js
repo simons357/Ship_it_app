@@ -198,6 +198,10 @@ function activeFilters() {
   };
 }
 
+function rankedSearch() {
+  return searchVault(store.list(), state.query, activeFilters());
+}
+
 function originBadge(entry) {
   const origin = entry.origin_class === "ai_generated" ? "ai_generated" : "human_record";
   const label = origin === "ai_generated" ? "AI conversation" : "Real record";
@@ -1175,7 +1179,7 @@ window.addEventListener("hashchange", () => {
 });
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./sw.js?v=0.6.0").catch(() => {
+  navigator.serviceWorker.register("./sw.js?v=0.6.1").catch(() => {
     /* PWA optional; engine still runs */
   });
 }

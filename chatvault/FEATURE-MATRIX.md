@@ -42,7 +42,7 @@ One row per feature. Columns are builds we could actually reach.
 | Editor opens on phone | B (login/freeze) | B (login/freeze) | B | U | n/a |
 | Published `*.base44.app` | B 404 | B 404 | B 404 | n/a | n/a |
 | Stripe | A | A (Recharts “stripe”, not billing) | A | U | A |
-| PWA | A | P (manifest warnings) | A | U | W (manifest + service worker v0.6.0; CSP loopback drain) |
+| PWA | A | P (manifest warnings) | A | U | W (manifest + service worker v0.6.1; CSP loopback drain) |
 | Origin AI vs real (`origin_class`) | A | A | A | U | W (`origin:ai` / `origin:human`; not a rank boost) |
 | ChatGPT export / DA drain | A | A | A | U | W (file drop or `127.0.0.1:7847`; DA is FRA, not a proof) |
 | Real user research corpus | U | Unproven (looks like seed) | Empty | U | Fixtures only |
