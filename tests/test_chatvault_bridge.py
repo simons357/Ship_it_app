@@ -107,6 +107,7 @@ class TestDaHomepageChatVault(unittest.TestCase):
         self.assertIn("Field Lock", html)
         self.assertIn("teaching kiosk", html)
         self.assertIn("field-lock.replit.app", html)
+        self.assertIn("engines/fieldlock/", html)
         self.assertIn("Domain Architect FRA", html)
         self.assertNotIn("we license Tanto", html.lower())
         self.assertNotIn("Evernote", html)
