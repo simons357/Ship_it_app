@@ -48,6 +48,7 @@ known theory.
 | Tensor free-index check | `checks.check_types` |
 | Geometry / gauge expansion of `E` | `GeometryRecord` |
 | GR extra-structure warnings | `audit.py` |
+| RH Track B Möbius–GCD lock, identities, missing Mertens bridge | `track_b_mobius.py` (does not claim RH) |
 | Equal-budget selector laboratory | `selectors.py` |
 | Train / validation / held-out protocol hash | `protocol.py` |
 | Null and counterexample registry | `null_results.json`, `EquationRegistry.record_null` |

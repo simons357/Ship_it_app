@@ -102,5 +102,13 @@
     "evidence": "No justified canonical formula exists to compare against SFE-H001.",
     "status": "unresolved",
     "notes": "Canonical SFE status remains unresolved."
+  },
+  {
+    "left_id": "ARITH-TB001",
+    "right_id": "ARITH-TB002",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "Exact identities relate M(N) to Q_N and μ_N, but no noncircular estimate upgrades O(N) control to O_ε(N^{1/2+ε}).",
+    "status": "unresolved",
+    "notes": "The missing object is the analytic bridge, not the operator definition. RH is not claimed."
   }
 ]

@@ -23,6 +23,12 @@ from .identifiability import analyze_product_abx
 from .parser import NodeKind, parse_expression
 from .recovery import classify_recovery
 from .report import AuditReport, ConfidenceTaxonomy
+from .track_b_mobius import (
+    LOCKED_OPERATOR,
+    looks_like_locked_operator,
+    quarantined_operator_hit,
+    verify_identities,
+)
 from .schema import (
     CANONICAL_SFE_STATUS,
     EvidenceLevel,
@@ -149,7 +155,46 @@ def audit_expression(
         }
         evidence = max(evidence, EvidenceLevel.MATHEMATICAL_COMPATIBILITY)
 
-    if _looks_like_einstein(expression):
+    track_b = looks_like_locked_operator(expression)
+    quarantine = quarantined_operator_hit(expression)
+    if quarantine:
+        warnings.append(quarantine)
+        notes.append(
+            "RH Track B is locked to "
+            f"{LOCKED_OPERATOR}. Historical inverse-GCD, positive-GCD, "
+            "Route C −1/(2π), and the −1/2 moat are quarantined."
+        )
+    if track_b:
+        extra.extend(
+            [
+                "RH Track B Möbius–GCD (not NS vorticity Track B)",
+                "cubefree rank-one channels h(d) u_d u_d^T",
+                "Littlewood–Mertens realization (not assumed)",
+            ]
+        )
+        check = verify_identities(12)
+        if check.ok:
+            math_status = MathValidationStatus.PASSED
+            evidence = max(evidence, EvidenceLevel.MATHEMATICAL_COMPATIBILITY)
+            notes.append(
+                f"Finite identities hold at N={check.n}: cubefree decomposition, "
+                "first-row M(N)=e_1^T Q μ, and the quadratic split. These are "
+                "algebraic. They are not RH."
+            )
+        else:
+            math_status = MathValidationStatus.FAILED
+            warnings.append(f"RH Track B identity check failed at N={check.n}.")
+        notes.append(
+            "Missing bridge: Track B operator control does not yet imply "
+            "|M(N)|=O_ε(N^{1/2+ε}). First-row Hölder and the Q-form dual are "
+            "obstructions. RH is not claimed."
+        )
+        notes.append(
+            "This book is not classical NS Track B, SND, GNC, Goldbach, or "
+            "the Harmonic Blueprint."
+        )
+
+    if (not track_b) and _looks_like_einstein(expression):
         extra.extend(
             [
                 "spacetime geometry",

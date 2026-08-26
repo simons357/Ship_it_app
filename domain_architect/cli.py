@@ -59,6 +59,16 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--drain-host", default="127.0.0.1")
     parser.add_argument("--drain-port", type=int, default=7847)
     parser.add_argument("--site-port", type=int, default=DEFAULT_SITE_PORT)
+    parser.add_argument(
+        "--track-b-mobius",
+        nargs="?",
+        const="48",
+        metavar="N",
+        help=(
+            "run the RH Track B (Möbius–GCD) attack: identities, spectral "
+            "snapshot, and missing-bridge routes. Does not claim RH."
+        ),
+    )
     args = parser.parse_args(argv)
 
     if args.site:
@@ -91,6 +101,23 @@ def main(argv: list[str] | None = None) -> int:
             print(f"Also wrote combined export to {args.output}")
         return 0
 
+    if args.track_b_mobius is not None:
+        from .track_b_mobius import attack
+
+        n = int(args.track_b_mobius)
+        report = attack(identity_ns=(min(6, n), min(12, n), min(24, n)), spectral_n=n, adversarial_n=n)
+        payload = report.to_dict()
+        if args.json or args.output:
+            text = json.dumps(payload, indent=2, default=str)
+            if args.output:
+                Path(args.output).write_text(text + "\n", encoding="utf-8")
+            else:
+                sys.stdout.write(text)
+                sys.stdout.write("\n")
+        else:
+            print(report.narrative())
+        return 0
+
     if args.registry:
         registry = EquationRegistry.load_default()
         payload = registry.export()
@@ -111,7 +138,8 @@ def main(argv: list[str] | None = None) -> int:
 
     if not args.expression:
         parser.error(
-            "expression is required unless --registry, --drain-server, --site, or --ingest-chatvault is set"
+            "expression is required unless --registry, --drain-server, --site, "
+            "--ingest-chatvault, or --track-b-mobius is set"
         )
 
     if args.drain_chatvault:

@@ -25,6 +25,7 @@ Drain a Domain Architect FRA audit (not a proof) into ChatVault JSON:
 ```bash
 python3 -m domain_architect --drain-chatvault "∇²Φ = 4π G ρ" -o /tmp/da-drain.json
 python3 -m domain_architect --ingest-chatvault PATH   # any source → chatvault/inbox JSON (+ media copy)
+python3 -m domain_architect --track-b-mobius          # RH Track B Möbius–GCD attack; does not claim RH
 ```
 
 ## Domain Architect
@@ -42,9 +43,10 @@ to treat representation of a known equation as derivation.
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
 python -m domain_architect --site
+python -m domain_architect --track-b-mobius
 # Search box (ChatVault) + Inquiry box (DA FRA): http://127.0.0.1:8765/
 # ChatVault app (same two boxes):                  http://127.0.0.1:8765/chatvault/
-python3 -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_chatvault_bridge tests.test_chatvault_ingest
+python3 -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_chatvault_bridge tests.test_chatvault_ingest tests.test_track_b_mobius
 ```
 
 ## Harmonic Blueprint Experiment 01

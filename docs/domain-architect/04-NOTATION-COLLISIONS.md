@@ -31,6 +31,7 @@ Functional Role Analysis reuses short letters that already have other meanings i
 | \(H\) | coupling / interaction | Hamiltonian in a declared mechanics model |
 | \(H_g=4\pi G\) | Newtonian coupling in the gravity benchmark | — |
 | \(H_N\) | — | degree-normalized inverse-GCD matrix |
+| \(Q_N\) (RH Track B) | — | \(Q_N(i,j)=\mu(\gcd(i,j))/\gcd(i,j)\). Not \(1/\gcd\), not NS-B |
 | \(\hat H_{\mathrm{SFE}}\) | — | retired Fock operator from prize-packaged drafts |
 
 ## Scale response

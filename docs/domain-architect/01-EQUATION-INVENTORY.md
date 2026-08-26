@@ -107,6 +107,8 @@ These are real research objects in this repo family. They are **not** UHF, SFE, 
 | NS-Φ | \(\Gamma=ru_\theta\), \(\Phi=\Gamma/r^2=u_\theta/r\), \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) | axisymmetric swirl algebra | **Do not reuse \(\Phi\)** as the FRA output symbol in the same document |
 | ARITH-H | \(H_N=D^{-1/2}\widetilde Q_N D^{-1/2}\) | inverse-GCD / spectral floor | Separate arithmetic book. \(H_N\) is not coupling \(H\) |
 | ARITH-B | Bridge* pair Rayleigh \(R(e_p-e_q)>-1/2\) | pair vectors only | Keep only as arithmetic, if at all. Not a fluids or SFE input |
+| ARITH-TB-Q | \(Q_N(i,j)=\mu(\gcd(i,j))/\gcd(i,j)\) | **RH Track B** Möbius–GCD | Locked operator. Exact cubefree identities. **Not** inverse-GCD, **not** NS-B vorticity |
+| ARITH-TB-MERTENS | \(M(N)=O_\varepsilon(N^{1/2+\varepsilon})\) | Littlewood–Mertens / RH equivalent | **UNRESOLVED** realization. Not an input. First-row control is only \(O(N)\) |
 
 ---
 

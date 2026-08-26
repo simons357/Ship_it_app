@@ -107,3 +107,14 @@ These are not historical enemies. They are defects to fix before a gravity labor
 | C-GRV-0 | Zero mode of periodic Poisson | Already excluded (“nonzero modes”). Keep the zero-mean constraint as \(\mathcal B\) / solvability, not as a hidden \(P\) |
 | C-GRV-λ | Writing \(\lambda_n^2\) hides that the operator is the inverse Laplacian | Prefer \(D=(-\nabla^2)\) and \(\lambda_n=k_n^{-2}\) **or** keep \(\lambda_n=k_n^{-1}\) but state that the model applies \(\lambda_n^2\). Do not switch mid-note |
 | C-GRV-J | Identifiability Jacobian does not see a discrete prime mask | Treat selector comparisons as discrete experiments, not as \(\mathrm{rank}(J)\) |
+
+---
+
+## 9. RH Track B versus other books
+
+| ID | Left | Right | Object | Resolution |
+|---|---|---|---|---|
+| C-TB-1 | RH Track B \(Q_N(i,j)=\mu(\gcd(i,j))/\gcd(i,j)\) | Inverse-GCD \(1/\gcd\) or \(1/(\gcd\sqrt{ij})\) | Operator | **Do not substitute.** Different spectra and proof obligations |
+| C-TB-2 | RH Track B | Inventory NS-B (classical vorticity) | The name “Track B” | Different books. RH Track B is Möbius–GCD. NS-B stays fluids |
+| C-TB-3 | First-row identity \(M(N)=e_1^{\mathsf T}Q_N\boldsymbol\mu_N\) | Hölder \(O(N)\) bound treated as RH-scale | Inequality | **Obstruction.** Generic pairing of \((\boldsymbol\mu_N,\mathbf 1)\) is \(\Theta(N)\) |
+| C-TB-4 | Littlewood–Mertens realization | Route C \(-1/(2\pi)\) or \(\lambda_{\min}>-1/2\) | Inputs | **Quarantine** those historical claims. They are not this operator |
