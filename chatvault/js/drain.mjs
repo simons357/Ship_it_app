@@ -289,27 +289,14 @@ function tryJsonSpecial(text, filename, overrides) {
   return null;
 }
 
-function textSourceType(filename, overrides = {}) {
-  if (overrides.source_type) return overrides.source_type;
-  const lower = String(filename || "").toLowerCase();
-  if (lower.endsWith(".md") || lower.endsWith(".markdown")) return "markdown";
-  if (lower.endsWith(".json")) return "json";
-  if (lower.endsWith(".csv")) return "csv";
-  if (lower.endsWith(".html") || lower.endsWith(".htm")) return "html";
-  if (lower.endsWith(".txt") || lower.endsWith(".rtf") || lower.endsWith(".log")) return "letter";
-  return "other";
-}
-
-function humanTextOverrides(filename, overrides = {}) {
+function humanTextOverrides(overrides = {}) {
   return {
     source_ai: "human",
     origin_class: "human_record",
-    source_type: textSourceType(filename, overrides),
     ...overrides,
     origin_class: overrides.origin_class || "human_record",
     source_ai:
       overrides.source_ai && overrides.source_ai !== "unknown" ? overrides.source_ai : "human",
-    source_type: overrides.source_type || textSourceType(filename),
   };
 }
 
@@ -338,7 +325,7 @@ export function ingestNamedSource(filename, payload = {}, overrides = {}) {
       ? tryJsonSpecial(payload.text, name, overrides)
       : null;
     if (special) return special;
-    const textOverrides = humanTextOverrides(name, overrides);
+    const textOverrides = humanTextOverrides(overrides);
     if (TEXT_NAME.test(name) || kind === "text") {
       return ingestTextFile(name, payload.text, textOverrides);
     }

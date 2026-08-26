@@ -329,6 +329,7 @@ function sourceTypeFromName(filename) {
   if (lower.endsWith(".json")) return "json";
   if (lower.endsWith(".csv")) return "csv";
   if (lower.endsWith(".html") || lower.endsWith(".htm")) return "html";
+  if (lower.endsWith(".txt") || lower.endsWith(".rtf") || lower.endsWith(".log")) return "letter";
   return "conversation";
 }
 
