@@ -12,8 +12,8 @@ One row per feature. Columns are builds we could actually reach.
 | Google Drive import | P (OAuth wall) | P (Connect Drive) | A | U | A |
 | Paste ingest | A | W | A | U | W |
 | Bulk paste | A | W | A | U | W |
-| Media ingest | A | P (UI present) | A | U | A |
-| PDF/DOCX/OCR | A | A | P (upload copy) | U | A |
+| Media ingest | A | P (UI present) | A | U | P (pictures ≤12MB data URL; movies/audio metadata stubs) |
+| PDF/DOCX/OCR | A | A | P (upload copy) | U | P (searchable stub; no text extract / OCR) |
 | Immutable raw text | A | B (`raw_content` null on export) | U | U | W |
 | AI summary | A | W | P (Supreme Search) | U | P (optional; never replaces raw) |
 | Source AI provenance | A | P (`pasted` only) | A | U | W |
@@ -42,7 +42,9 @@ One row per feature. Columns are builds we could actually reach.
 | Editor opens on phone | B (login/freeze) | B (login/freeze) | B | U | n/a |
 | Published `*.base44.app` | B 404 | B 404 | B 404 | n/a | n/a |
 | Stripe | A | A (Recharts “stripe”, not billing) | A | U | A |
-| PWA | A | P (manifest warnings) | A | U | W (manifest + service worker) |
+| PWA | A | P (manifest warnings) | A | U | W (manifest + service worker v0.6.0; CSP loopback drain) |
+| Origin AI vs real (`origin_class`) | A | A | A | U | W (`origin:ai` / `origin:human`; not a rank boost) |
+| ChatGPT export / DA drain | A | A | A | U | W (file drop or `127.0.0.1:7847`; DA is FRA, not a proof) |
 | Real user research corpus | U | Unproven (looks like seed) | Empty | U | Fixtures only |
 
 **IDs**

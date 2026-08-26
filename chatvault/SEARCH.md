@@ -88,15 +88,18 @@ Evernote-style Semantic and Base44’s LLM toggle are (7) without (1)–(5). Tha
 - Field-weighted TF-IDF cosine
 - Reciprocal Rank Fusion (k=60)
 - RM3 expansion from the top hits
-- Hard match gate: AND, `OR`, `"phrases"`, `claim:` / `theorem:` / `gap:` / `ai:`
+- Hard match gate: AND, `OR`, `"phrases"`, `claim:` / `theorem:` / `gap:` / `ai:` / `origin:ai` / `origin:human`
+- `origin` is a designation. It is **not** in `RANK_FIELDS` and **not** in the unfielded `all` haystack. Typing `ai` must not boost every AI chat.
 - Snippets; ledger status shown and never used as a score
 - `harmonic_note` stored as notes, never scored
+- ChatGPT `conversations.json` walker and Domain Architect audit JSON drain (`js/drain.mjs`)
 - Eval: `tests/search-eval.test.mjs`
 
 ## What is not here yet (and must not be faked)
 
 - Dense MiniLM/E5 + cross-encoder (needs a vendored model and your real corpus)
-- ChatGPT / Claude export parsers feeding the index
+- ChatGPT `conversations.json` walker ships in `js/drain.mjs`. Claude export still needs a dedicated walker.
+- A hosted web crawler. The DA homepage **Web** button opens DuckDuckGo in a new tab. That is not ChatVault retrieval.
 - Recovered Replit `search_engine.py` (still lost)
 - **E8 / lattice ranking** — see below; not shipped
 

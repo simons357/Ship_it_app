@@ -6,16 +6,24 @@ local product prototype, not an App Store release.
 
 ## ChatVault
 
-Local-first AI conversation vault: morph-glass **OS for your AI** look,
-`ChatVaultEntry` engine, CLAIM_LEDGER, fielded search.
+Local-first vault — tagline **OS for your AI**. Git PWA in `chatvault/` is
+the canonical engine (`ChatVaultEntry`, CLAIM_LEDGER, hybrid search,
+`origin_class` AI vs real). Base44 glass is a different schema.
 
 - App: [`chatvault/`](chatvault/)
+- Operational report: [`docs/chatvault-audit/CHATVAULT-OPERATIONAL.md`](docs/chatvault-audit/CHATVAULT-OPERATIONAL.md)
 - Audit packet: [`docs/chatvault-audit/README.md`](docs/chatvault-audit/README.md)
 
 ```bash
 cd chatvault
 python3 -m http.server 4173   # open http://127.0.0.1:4173/
-node --test tests/engine.test.mjs
+node --test tests/*.mjs
+```
+
+Drain a Domain Architect FRA audit (not a proof) into ChatVault JSON:
+
+```bash
+python -m domain_architect --drain-chatvault "∇²Φ = 4π G ρ" -o /tmp/da-drain.json
 ```
 
 ## Domain Architect
@@ -32,7 +40,8 @@ to treat representation of a known equation as derivation.
 ```bash
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units
+python -m domain_architect --site
+python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_chatvault_bridge
 ```
 
 ## Harmonic Blueprint Experiment 01
@@ -67,7 +76,7 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 
 | Path | Role |
 |------|------|
-| `chatvault/` | Local-first ChatVault PWA (glass skin + claim ledger engine) |
+| `chatvault/` | Local-first ChatVault PWA (Steel default; origin split; DA drain hook) |
 | `hb_ringdown_test.py` | Spectral proximity statistic, MC null, BH-FDR, leave-one-event-out |
 | `nodes.json` | Frozen node families + sigma + default observable |
 | `data/qnm_events.csv` | Per-mode ringdown table with TRAIN/TEST splits |

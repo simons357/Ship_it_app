@@ -1,11 +1,15 @@
 # ChatVault — OS for your AI
 
-Local-first vault for AI conversations and research notes. **Steel** is the
-default skin (charcoal + amber). **Ink**, **Signal**, and **Day** are
-selectable in the sidebar; the choice persists as `chatvault.skin.v1`.
-Morph-glass is not a selectable skin.
+Local-first vault for **finished AI conversations** and **real records**
+(papers, letters, pictures, movies). **Steel** is the default skin
+(charcoal + amber). **Ink**, **Signal**, and **Day** are selectable in
+the sidebar; the choice persists as `chatvault.skin.v1`. Morph-glass is
+not a selectable skin.
 
 It is **not** an App Store binary and **not** a certified production release.
+
+**Operational briefing** (forward this):
+[`docs/chatvault-audit/CHATVAULT-OPERATIONAL.md`](../docs/chatvault-audit/CHATVAULT-OPERATIONAL.md)
 
 ## What to open
 
@@ -16,9 +20,34 @@ python3 -m http.server 4173
 
 Then open http://127.0.0.1:4173/
 
+Domain Architect homepage with the ChatVault search dock (opens the app on query):
+
+```bash
+python -m domain_architect --site
+```
+
+Then http://127.0.0.1:8765/  and  http://127.0.0.1:8765/chatvault/
+
 Installable as a PWA from that origin (manifest + `sw.js`). iOS home-screen
 install still requires Safari’s Share → Add to Home Screen; there is no App
 Store binary.
+
+## Drain a finished chat
+
+Emit `{ "format": "chatvault-export", "schema_version": "chatvault-engine-0.3.0", "entries": […] }`
+and drop it on Ingest → Files. ChatGPT `conversations.json` is walked the
+same way. Origin is `ai_generated` vs `human_record` (`origin:ai` /
+`origin:human` in search).
+
+Domain Architect is a FRA auditor, not this vault’s brain:
+
+```bash
+python -m domain_architect --drain-server          # 127.0.0.1:7847
+python -m domain_architect --drain-chatvault "∇²Φ = 4π G ρ" -o /tmp/da-drain.json
+```
+
+Then Ingest → Drain → Pull, or drop the JSON. Loopback only. DA does not
+prove theorems. CLAIM_LEDGER never auto-PROVED.
 
 ## Engine tests
 
@@ -50,7 +79,9 @@ behind the tagline, with selectable skins (Steel default):
 - CLAIM_LEDGER (`UNREVIEWED` … `PROVED` / `WITHDRAWN`) that never auto-PROVED
 - Hybrid ranked search (BM25F + n-grams + TF-IDF + RRF + RM3) over title, claims, theorems, gaps, and raw text, with snippets. Ledger status and `harmonic_note` are not scores.
 - books, tags, and artifacts derived from records (no extraction LLM)
-- bulk paste and txt/md/json/csv/html ingest
+- bulk paste, ChatGPT `conversations.json`, DA drain JSON, and file drop
+  (pictures optional data URL; movies/pdf/audio are stubs)
+- `origin_class` (`ai_generated` | `human_record`) and `origin:ai` / `origin:human`
 - private vs professional export
 - round-trip JSON restore
 
@@ -60,7 +91,9 @@ remain the historical baseline if/when they are exported.
 ## Honest limits
 
 - No accounts, no iOS package, no paid subscription.
-- Ingest is structured paste and text files, not OCR/PDF/DOCX yet.
+- Ingest is structured paste, ChatGPT export JSON, DA audit JSON, and
+  file drop. Pictures can store a data URL (≤12 MB). Movies / PDF / audio
+  are **metadata stubs**, not a media locker. No OCR yet.
 - Demo fixtures are labeled research-memory examples, not solved theorems.
 - Semantic / LLM search from the Base44 skin is intentionally absent. Hybrid RRF is in. A dense model is next only if it beats this eval.
 - Jonathan’s Replit `search_engine.py` was not in this environment. See `SEARCH.md`.
