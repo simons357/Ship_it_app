@@ -173,7 +173,9 @@ export function fieldText(entry, field) {
   if (key === "question") return (entry.open_questions || []).join(" ");
   if (key === "action") return (entry.action_items || []).join(" ");
   if (key === "book") return (entry.related_projects || []).join(" ");
-  if (key === "source") return `${entry.source_type || ""} ${entry.source_file || ""}`;
+  if (key === "source") {
+    return `${entry.source_type || ""} ${entry.source_file || ""} ${entry.media_path || ""}`;
+  }
   if (key === "ai") return entry.source_ai || "";
   if (key === "status") {
     return [...(entry.key_claims || []), ...(entry.theorems || []), ...(entry.open_gaps || [])]

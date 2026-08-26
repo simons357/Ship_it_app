@@ -78,6 +78,8 @@ Pipeline, in order:
 
 Schema: **`chatvault-engine-0.3.0`**. PWA cache: **`chatvault-engine-v0.6.1`**.
 
+License unit (ranker only, not the PWA): `chatvault/js/search.mjs`. Import API: `chatvault/js/ENGINE.md`. Internals: `docs/chatvault-audit/CHATVAULT-ENGINE-INTERNALS.md`. DA homepage catalog: `#da-engines`.
+
 ---
 
 ## 4. Origin split (AI vs real)

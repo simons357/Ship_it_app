@@ -1,8 +1,13 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { ingestPaste, reviewLedgerItem, DEMO_ENTRIES } from "../js/engine.mjs";
 import {
   SEARCH_ENGINE_VERSION,
+  RANK_FIELDS,
+  SEARCH_FIELDS,
   searchEntries,
   searchVault,
   buildIndex,
@@ -20,6 +25,7 @@ function ids(hits) {
 }
 
 test("search engine version is hybrid, not a boolean filter", () => {
+  assert.equal(SEARCH_ENGINE_VERSION, "chatvault-hybrid-0.2.0");
   assert.match(SEARCH_ENGINE_VERSION, /hybrid/i);
   const result = searchVault(DEMO_ENTRIES, "euler identity");
   assert.equal(result.engine, SEARCH_ENGINE_VERSION);
@@ -258,4 +264,28 @@ test("origin:ai and origin:human filter; unfielded ai does not rank-boost every 
   assert.equal(unfieldedIds.includes(grokChat.id), false);
   assert.equal(unfieldedIds.includes(claudeChat.id), false);
   assert.equal(unfieldedIds.includes(letter.id), false);
+});
+
+test("origin and status are searchable fields but not RANK_FIELDS", () => {
+  assert.equal("origin" in SEARCH_FIELDS, true);
+  assert.equal("status" in SEARCH_FIELDS, true);
+  assert.equal("origin" in RANK_FIELDS, false);
+  assert.equal("status" in RANK_FIELDS, false);
+  assert.equal("title" in RANK_FIELDS, true);
+  assert.equal("content" in RANK_FIELDS, true);
+});
+
+test("search.mjs is a standalone ranker: no DOM, no localStorage, no engine import", () => {
+  const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+  const src = readFileSync(join(root, "js/search.mjs"), "utf8");
+  const api = readFileSync(join(root, "js/ENGINE.md"), "utf8");
+  assert.doesNotMatch(src, /\blocalStorage\b/);
+  assert.doesNotMatch(src, /\bdocument\./);
+  assert.doesNotMatch(src, /\bwindow\./);
+  assert.doesNotMatch(src, /from\s+["']\.\/engine\.mjs["']/);
+  assert.match(src, /export function searchVault/);
+  assert.doesNotMatch(src, /export function rankedSearch/);
+  assert.match(api, /chatvault-hybrid-0\.2\.0/);
+  assert.match(api, /import \{/);
+  assert.match(api, /What you do not get/);
 });

@@ -82,6 +82,8 @@ Evernote-style Semantic and Base44’s LLM toggle are (7) without (1)–(5). Tha
 
 `js/search.mjs` — `chatvault-hybrid-0.2.0`
 
+Importable ranker API: `js/ENGINE.md`. Internals: `docs/chatvault-audit/CHATVAULT-ENGINE-INTERNALS.md`. This file is the hunt record; those two are the productized engine surface.
+
 - Fielded inverted index
 - BM25F + stem + one-edit typo matching
 - Character 3-gram BM25

@@ -92,6 +92,26 @@ class TestDaHomepageChatVault(unittest.TestCase):
         self.assertIn("Not this product", html)
         self.assertIn("in-vault web crawler", html)
 
+    def test_homepage_engines_catalog_is_honest(self):
+        page = Path(__file__).resolve().parents[1] / "domain_architect" / "static" / "index.html"
+        html = page.read_text(encoding="utf-8")
+        self.assertIn("cv-search-form", html)
+        self.assertIn('id="da-engines"', html)
+        self.assertIn("Engines Jonathan can offer", html)
+        self.assertIn("chatvault-hybrid-0.2.0", html)
+        self.assertIn("chatvault/js/search.mjs", html)
+        self.assertIn("Not in this workshop yet", html)
+        self.assertIn("Tanto", html)
+        self.assertIn("VibraScan", html)
+        self.assertIn("locate and attach", html)
+        self.assertIn("Field Lock", html)
+        self.assertIn("teaching kiosk", html)
+        self.assertIn("field-lock.replit.app", html)
+        self.assertIn("Domain Architect FRA", html)
+        self.assertNotIn("we license Tanto", html.lower())
+        self.assertNotIn("Evernote", html)
+        self.assertNotIn("Stripe", html)
+
     def test_manifest_is_combined_origin_pwa(self):
         manifest_path = (
             Path(__file__).resolve().parents[1] / "domain_architect" / "static" / "manifest.webmanifest"

@@ -51,6 +51,9 @@ prove theorems. CLAIM_LEDGER never auto-PROVED.
 
 ## Engine tests
 
+Hybrid ranker (the license unit) is `js/search.mjs` — version `chatvault-hybrid-0.2.0`.
+API: [`js/ENGINE.md`](js/ENGINE.md). Internals: [`docs/chatvault-audit/CHATVAULT-ENGINE-INTERNALS.md`](../docs/chatvault-audit/CHATVAULT-ENGINE-INTERNALS.md).
+
 ```bash
 cd chatvault
 node --test tests/*.mjs
