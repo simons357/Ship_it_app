@@ -331,11 +331,10 @@ def build_status_pdf(path: Path) -> None:
     page1_status(story, s, STATUS_TITLE, lead)
     story.append(PageBreak())
     extra = (
-        "The 2026 records listed in titles.json remain published and open. "
-        "Nothing was deleted. What is walked back is the prize-claim language "
-        "in those drafts, not the existence of the files. Titles on those "
-        "records must be restored to the original wording (agent path: "
-        "api_restore_titles.py --apply with a Zenodo personal access token)."
+        "The 2026 records remain published and open. Nothing was deleted. "
+        "What is walked back is the prize-claim language in those drafts, not "
+        "the existence of the files. Public titles should be the original "
+        "wording, without a retraction stamp."
     )
     page2_errata(story, s, extra)
     _build(doc, story)

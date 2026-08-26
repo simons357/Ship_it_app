@@ -231,7 +231,9 @@ class TestZenodoPublicRecord(unittest.TestCase):
         err = applied.stderr.lower()
         self.assertIn("personal access token", err)
         self.assertIn("deposit:write", err)
-        self.assertNotIn("password", applied.stdout.lower())
+        self.assertIn("use this token", err)
+        self.assertIn("will not log in with a password", applied.stdout.lower())
+        self.assertNotIn("enter your password", applied.stdout.lower())
 
 
 if __name__ == "__main__":
