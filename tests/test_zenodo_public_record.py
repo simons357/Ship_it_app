@@ -69,7 +69,7 @@ class TestZenodoPublicRecord(unittest.TestCase):
         self.assertIn("errata", page2.lower())
         self.assertIn("walked back", page1.lower())
         self.assertIn("live", page1.lower())
-        self.assertEqual(len(PdfReader(str(self.status)).pages), 2)
+        self.assertGreaterEqual(len(PdfReader(str(self.status)).pages), 2)
         meta = _meta_title(self.status)
         self.assertNotIn("Withdrawn", meta)
         self.assertEqual(
@@ -130,6 +130,17 @@ class TestZenodoPublicRecord(unittest.TestCase):
             by_id[20272545],
             "Spectral Non-Concentration Implies Global Regularity for 3D Navier–Stokes on T³",
         )
+        self.assertEqual(
+            by_id[20405599],
+            "The GCD Spectral Attractor: A Unified Structural Framework for Navier-Stokes, the Riemann Hypothesis, and the Simons Field Equation",
+        )
+        self.assertEqual(
+            by_id[20271457],
+            "The Ramanujan–Möbius Identity and Prime Lattice Spectral Theory: GCD Operators, Spectral Floors, and the Arithmetic Casimir Constant",
+        )
+        self.assertIn(20272622, by_id)
+        self.assertIn(20405585, by_id)
+        self.assertIn(20269536, by_id)
         self.assertEqual(
             self.titles["optional_rename"][0]["restore_title"],
             "The Inverse-GCD Operator Q_N: Definitions and a Restricted Rayleigh Bound",

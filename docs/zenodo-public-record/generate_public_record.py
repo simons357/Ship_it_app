@@ -13,6 +13,8 @@ personal access token (never a password).
 from __future__ import annotations
 
 import json
+import logging
+import warnings
 from pathlib import Path
 
 from pypdf import PdfWriter
@@ -118,6 +120,8 @@ def load_titles() -> dict:
 
 
 def register_fonts() -> None:
+    logging.getLogger("pypdf").setLevel(logging.ERROR)
+    warnings.filterwarnings("ignore", message="Annotation sizes differ")
     regular = FONT_DIR / "DejaVuSerif.ttf"
     bold = FONT_DIR / "DejaVuSerif-Bold.ttf"
     if not regular.is_file() or not bold.is_file():
@@ -260,7 +264,7 @@ def page2_errata(
         _p(
             story,
             "h2",
-            "Records whose public titles must be restored (files stay up)",
+            "Public titles must be restored (files stay up)",
             s,
         )
         _p(
@@ -268,12 +272,13 @@ def page2_errata(
             "body",
             "On 21 August 2026 some public titles were prefixed. Strip those "
             "prefixes and any stray trailing quote. Edit each stamped version "
-            "URL (concept URLs often show only the latest version).",
+            "URL. The exact paste list is PASTE_TITLES.md in this pack and "
+            f"titles.json; do not leave a retraction stamp on the public title. "
+            f"{len(restore)} stamped records are listed there, including "
+            "10.5281/zenodo.20552682 (BSD Hamiltonian prototype) and "
+            "10.5281/zenodo.20552400 (SND ≡ GNC ≡ Bridge).",
             s,
         )
-        for rec in restore:
-            line = f"{rec['doi']} — {rec['restore_title']}"
-            _p(story, "tiny", _esc(line), s)
     else:
         _p(
             story,
@@ -476,6 +481,9 @@ def main() -> None:
         doi = rec["doi"]
         if kind == "wrap":
             source = SRC / rec["source_pdf"]
+            fallback = SRC / f"{rec['id']}.pdf"
+            if not source.is_file() and fallback.is_file():
+                source = fallback
             if not source.is_file():
                 raise FileNotFoundError(f"missing source PDF: {source}")
             cover = tmp / f"cover_{rec['id']}.pdf"

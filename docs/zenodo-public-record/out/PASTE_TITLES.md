@@ -39,6 +39,21 @@ Log in as the record owner. Open each **version** URL. Edit → replace Title �
 - `https://zenodo.org/records/20272545`
   - **Paste:** Spectral Non-Concentration Implies Global Regularity for 3D Navier–Stokes on T³
 
+- `https://zenodo.org/records/20271457`
+  - **Paste:** The Ramanujan–Möbius Identity and Prime Lattice Spectral Theory: GCD Operators, Spectral Floors, and the Arithmetic Casimir Constant
+
+- `https://zenodo.org/records/20272622`
+  - **Paste:** The Quantum Millennium: A Spectral Unification of the Navier–Stokes Problem and the Millennium Prize Conjectures
+
+- `https://zenodo.org/records/20405585`
+  - **Paste:** Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal: A Conditional Regularity Framework for 3D Navier-Stokes
+
+- `https://zenodo.org/records/20405599`
+  - **Paste:** The GCD Spectral Attractor: A Unified Structural Framework for Navier-Stokes, the Riemann Hypothesis, and the Simons Field Equation
+
+- `https://zenodo.org/records/20269536`
+  - **Paste:** Spectral Non-Concentration Criteria for Navier–Stokes Regularity on T³
+
 - `https://zenodo.org/records/20405591`
   - **Paste:** The Q_N Operator: Self-Adjointness, Spectral Floor, and a Route to the Riemann Hypothesis via Renormalized GCD Eigenvalues
 

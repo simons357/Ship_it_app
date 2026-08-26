@@ -45,8 +45,15 @@ Do this first. It is what the public sees in search results.
 | https://zenodo.org/records/19842060 | Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal |
 | https://zenodo.org/records/20272545 | Spectral Non-Concentration Implies Global Regularity for 3D Navier–Stokes on T³ |
 | https://zenodo.org/records/20405591 | The Q_N Operator: Self-Adjointness, Spectral Floor, and a Route to the Riemann Hypothesis via Renormalized GCD Eigenvalues |
+| https://zenodo.org/records/20271457 | The Ramanujan–Möbius Identity and Prime Lattice Spectral Theory: GCD Operators, Spectral Floors, and the Arithmetic Casimir Constant |
+| https://zenodo.org/records/20272622 | The Quantum Millennium: A Spectral Unification of the Navier–Stokes Problem and the Millennium Prize Conjectures |
+| https://zenodo.org/records/20405585 | Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal: A Conditional Regularity Framework for 3D Navier-Stokes |
+| https://zenodo.org/records/20405599 | The GCD Spectral Attractor: A Unified Structural Framework for Navier-Stokes, the Riemann Hypothesis, and the Simons Field Equation |
+| https://zenodo.org/records/20269536 | Spectral Non-Concentration Criteria for Navier–Stokes Regularity on T³ |
 
-Also open the concept URL if it still shows a stamped title (concept IDs often resolve to latest): `20405525`, `20269842`, `20405592`, `19842059`, `20272544`, `20405590`, `20272621`. If the concept page is already the version you just edited, you are done for that pair.
+Also open the concept URL if it still shows a stamped title (concept IDs often resolve to latest): `20405525`, `20269842`, `20405592`, `19842059`, `20272544`, `20405590`, `20272621`, `20405584`, `20405598`, `20269535`, `20269737`. If the concept page is already the version you just edited, you are done for that pair.
+
+If a search hit still starts with a bracket prefix and is not in this table, paste the original title with the prefix removed. Do not leave the stamp. Do not request deletion.
 
 ### Rename the status note (not a restore-to-original)
 
@@ -107,8 +114,8 @@ After the titles are clean (or in the same Edit / New version session):
 | Record | Upload this file |
 | --- | --- |
 | 22050978 (status note) | `out/status_note_public_facing.pdf` |
-| 20552400, 20552682, 20552171, 20552223, 19842060, 20272545 | `out/<id>_public_facing.pdf` (cover + errata + original pages) |
-| 20405526, 20269843, 20405593, 20518294, 20518250, 20405591 | `out/notices/<id>_public_facing_notice.pdf` (2-page notice; TeX/webloc-only records) |
+| 20552400, 20552682, 20552171, 20552223, 19842060, 20272545, 20271457, 20272622 | `out/<id>_public_facing.pdf` (cover + errata + original pages) |
+| 20405526, 20269843, 20405593, 20518294, 20518250, 20405591, 20405585, 20405599, 20269536 | `out/notices/<id>_public_facing_notice.pdf` (2-page notice; TeX/webloc-only records) |
 
 Wrapped June PDFs: **page 1** clean public face, **page 2** errata, **page 3+** original draft.
 

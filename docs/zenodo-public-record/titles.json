@@ -157,7 +157,7 @@
       "current_title": "[Claim withdrawn - see errata] A Universal Non-Concentration Principle: SND ≡ GNC ≡ Bridge",
       "restore_title": "A Universal Non-Concentration Principle: SND ≡ GNC ≡ Bridge",
       "kind": "wrap",
-      "source_pdf": "20552400_SND_GNC_BRIDGE_UNIFIED.pdf",
+      "source_pdf": "20552400.pdf",
       "upload_pdf": "20552400_public_facing.pdf"
     },
     {
@@ -168,7 +168,7 @@
       "current_title": "[Claim withdrawn - see errata] The Prime Lattice as a Prototype for the BSD Hamiltonian: Rank as Spectral Multiplicity and the Zeta-Function Case of the Birch and Swinnerton-Dyer Conjecture",
       "restore_title": "The Prime Lattice as a Prototype for the BSD Hamiltonian: Rank as Spectral Multiplicity and the Zeta-Function Case of the Birch and Swinnerton-Dyer Conjecture",
       "kind": "wrap",
-      "source_pdf": "20552682_BSD_SPECTRAL_FRAMEWORK.pdf",
+      "source_pdf": "20552682.pdf",
       "upload_pdf": "20552682_public_facing.pdf"
     },
     {
@@ -179,7 +179,7 @@
       "current_title": "[Claim withdrawn - see errata] A Quantum Field Theory on the Prime Manifold: Navier–Stokes, Riemann, and Goldbach Under a Single Hamiltonian",
       "restore_title": "A Quantum Field Theory on the Prime Manifold: Navier–Stokes, Riemann, and Goldbach Under a Single Hamiltonian",
       "kind": "wrap",
-      "source_pdf": "20552171_THREE_IN_ONE_QUANTUM_MILLENNIUM.pdf",
+      "source_pdf": "20552171.pdf",
       "upload_pdf": "20552171_public_facing.pdf"
     },
     {
@@ -191,7 +191,7 @@
       "current_title": "[Claim withdrawn - see errata] A Quantum Field Theory on the Prime Manifold: Navier–Stokes, Riemann Hypothesis, and Goldbach Under a Single Hamiltonian",
       "restore_title": "A Quantum Field Theory on the Prime Manifold: Navier–Stokes, Riemann Hypothesis, and Goldbach Under a Single Hamiltonian",
       "kind": "wrap",
-      "source_pdf": "20552223_THREE_IN_ONE_NS_RH_GOLDBACH.pdf",
+      "source_pdf": "20552223.pdf",
       "upload_pdf": "20552223_public_facing.pdf"
     },
     {
@@ -203,7 +203,7 @@
       "current_title": "[Superseded - see errata] Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal",
       "restore_title": "Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal",
       "kind": "wrap",
-      "source_pdf": "19842060_97a2ec7e0_RingLemma_Paper.pdf",
+      "source_pdf": "19842060.pdf",
       "upload_pdf": "19842060_public_facing.pdf"
     },
     {
@@ -215,8 +215,67 @@
       "current_title": "[Claim withdrawn - see errata] Spectral Non-Concentration Implies Global Regularity for 3D Navier–Stokes on T³",
       "restore_title": "Spectral Non-Concentration Implies Global Regularity for 3D Navier–Stokes on T³",
       "kind": "wrap",
-      "source_pdf": "20272545_Paper2_NS_Regularity_SND.pdf",
+      "source_pdf": "20272545.pdf",
       "upload_pdf": "20272545_public_facing.pdf"
+    },
+    {
+      "id": 20271457,
+      "concept_id": 20269737,
+      "doi": "10.5281/zenodo.20271457",
+      "record_url": "https://zenodo.org/records/20271457",
+      "current_title": "[Claim withdrawn - see errata] The Ramanujan–Möbius Identity and Prime Lattice Spectral Theory: GCD Operators, Spectral Floors, and the Arithmetic Casimir Constant",
+      "restore_title": "The Ramanujan–Möbius Identity and Prime Lattice Spectral Theory: GCD Operators, Spectral Floors, and the Arithmetic Casimir Constant",
+      "kind": "wrap",
+      "source_pdf": "20271457.pdf",
+      "upload_pdf": "20271457_public_facing.pdf"
+    },
+    {
+      "id": 20272622,
+      "concept_id": 20272621,
+      "doi": "10.5281/zenodo.20272622",
+      "record_url": "https://zenodo.org/records/20272622",
+      "current_title": "[Claim withdrawn - see errata] The Quantum Millennium: A Spectral Unification of the Navier–Stokes Problem and the Millennium Prize Conjectures",
+      "restore_title": "The Quantum Millennium: A Spectral Unification of the Navier–Stokes Problem and the Millennium Prize Conjectures",
+      "kind": "wrap",
+      "source_pdf": "20272622.pdf",
+      "upload_pdf": "20272622_public_facing.pdf",
+      "note": "Older version on the same concept as 20552223. Edit this version URL too."
+    },
+    {
+      "id": 20405585,
+      "concept_id": 20405584,
+      "doi": "10.5281/zenodo.20405585",
+      "record_url": "https://zenodo.org/records/20405585",
+      "concept_url": "https://zenodo.org/records/20405584",
+      "current_title": "[Superseded - see errata] Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal: A Conditional Regularity Framework for 3D Navier-Stokes",
+      "restore_title": "Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal: A Conditional Regularity Framework for 3D Navier-Stokes",
+      "kind": "notice",
+      "upload_pdf": "notices/20405585_public_facing_notice.pdf",
+      "files_on_record": ["tex", "html"]
+    },
+    {
+      "id": 20405599,
+      "concept_id": 20405598,
+      "doi": "10.5281/zenodo.20405599",
+      "record_url": "https://zenodo.org/records/20405599",
+      "concept_url": "https://zenodo.org/records/20405598",
+      "current_title": "[Claim withdrawn - see errata] The GCD Spectral Attractor: A Unified Structural Framework for Navier-Stokes, the Riemann Hypothesis, and the Simons Field Equation",
+      "restore_title": "The GCD Spectral Attractor: A Unified Structural Framework for Navier-Stokes, the Riemann Hypothesis, and the Simons Field Equation",
+      "kind": "notice",
+      "upload_pdf": "notices/20405599_public_facing_notice.pdf",
+      "files_on_record": ["tex"]
+    },
+    {
+      "id": 20269536,
+      "concept_id": 20269535,
+      "doi": "10.5281/zenodo.20269536",
+      "record_url": "https://zenodo.org/records/20269536",
+      "concept_url": "https://zenodo.org/records/20269535",
+      "current_title": "[Superseded - see errata] Spectral Non-Concentration Criteria for Navier–Stokes Regularity on T³",
+      "restore_title": "Spectral Non-Concentration Criteria for Navier–Stokes Regularity on T³",
+      "kind": "notice",
+      "upload_pdf": "notices/20269536_public_facing_notice.pdf",
+      "files_on_record": ["tex"]
     },
     {
       "id": 20405591,
