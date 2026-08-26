@@ -5,6 +5,7 @@
   try {
     var saved = localStorage.getItem(KEY);
     if (saved && ALLOWED[saved]) skin = saved;
+    else if (saved) localStorage.setItem(KEY, "steel");
   } catch (err) {
     /* private mode */
   }

@@ -48,7 +48,15 @@ export function normalizeSkin(value) {
 export function loadSkin(storage) {
   const store = storage === undefined ? globalThis.localStorage : storage;
   try {
-    return normalizeSkin(store?.getItem?.(SKIN_STORAGE_KEY));
+    const skin = normalizeSkin(store?.getItem?.(SKIN_STORAGE_KEY));
+    if (store?.getItem?.(SKIN_STORAGE_KEY) !== skin) {
+      try {
+        store?.setItem?.(SKIN_STORAGE_KEY, skin);
+      } catch {
+        /* quota */
+      }
+    }
+    return skin;
   } catch {
     return DEFAULT_SKIN;
   }

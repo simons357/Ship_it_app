@@ -46,6 +46,9 @@ test("skin persistence writes only allowed ids", () => {
   assert.equal(loadSkin(storage), "signal");
   assert.equal(saveSkin("glass", storage), "steel");
   assert.equal(storage.getItem(SKIN_STORAGE_KEY), "steel");
+  storage.setItem(SKIN_STORAGE_KEY, "glass");
+  assert.equal(loadSkin(storage), "steel");
+  assert.equal(storage.getItem(SKIN_STORAGE_KEY), "steel");
 });
 
 test("applySkin sets data-skin and theme-color", () => {
