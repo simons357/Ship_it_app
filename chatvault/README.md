@@ -1,8 +1,9 @@
 # ChatVault — OS for your AI
 
-Local-first vault for AI conversations and research notes. **Steel vault**
-skin in this folder (charcoal + amber signal); engine and data model from
-the same folder. Morph-glass is no longer the shipped look.
+Local-first vault for AI conversations and research notes. **Steel** is the
+default skin (charcoal + amber). **Ink**, **Signal**, and **Day** are
+selectable in the sidebar; the choice persists as `chatvault.skin.v1`.
+Morph-glass is not a selectable skin.
 
 It is **not** an App Store binary and **not** a certified production release.
 
@@ -23,7 +24,7 @@ Store binary.
 
 ```bash
 cd chatvault
-node --test tests/engine.test.mjs tests/search.test.mjs tests/search-eval.test.mjs
+node --test tests/*.mjs
 ```
 
 ## Brand marks
@@ -33,7 +34,7 @@ The CSS vault dial is gone. The product uses the owner marks copied into
 
 - sidebar / favicon: dark vault-door mark
 - dashboard: original light-field upload
-- backdrop: none — live chrome is solid charcoal, not the morph-glass grain
+- backdrop: none — live chrome is solid fills via `--bg` (Steel / Ink / Signal / Day). Morph-glass grain stays on disk and is not a skin.
 
 They are local files. The app does not hotlink `media.base44.com`.
 
@@ -42,7 +43,7 @@ They are local files. The app does not hotlink `media.base44.com`.
 The live Base44 app `6a58e103fedcde66a0a7710e` was the morph-glass **OS for your AI**
 UI (conversation vault). That host is not source-controlled and is not
 private. Jonathan reversed that look lock. This folder is the **engine**
-behind the tagline, with the steel-vault skin:
+behind the tagline, with selectable skins (Steel default):
 
 - immutable raw text
 - source AI / source file provenance

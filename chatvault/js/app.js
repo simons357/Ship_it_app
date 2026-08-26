@@ -22,11 +22,13 @@ import {
   uniqueProjects,
   statusClass,
 } from "./engine.mjs";
+import { SKINS, SKIN_IDS, loadSkin, saveSkin, applySkin } from "./skins.mjs";
 
 const STORAGE_KEY = "chatvault.engine.v1";
 const BOOKS_KEY = "chatvault.books.extra.v1";
 const PAGE_SIZE = 50;
 const root = document.getElementById("app");
+const currentSkin = { id: applySkin(loadSkin()) };
 
 function escapeHtml(s) {
   return String(s ?? "")
@@ -637,14 +639,27 @@ function renderGuide() {
         <li><code>euler OR navier-stokes</code> — either topic.</li>
         <li><code>claim:definitional</code> / <code>gap:blow-up</code> / <code>ai:Claude</code> — look only in that slot.</li>
       </ul>
-      <p>Amber highlights are the words that scored. An amber field label (claim, gap, title) tells you <em>where</em> they hit. OPEN / CONJECTURAL on a card is the ledger, not a popularity score — an open gap can still win the ranking.</p>
+      <p>Accent highlights are the words that scored. A field label (claim, gap, title) tells you <em>where</em> they hit. OPEN / CONJECTURAL on a card is the ledger, not a popularity score — an open gap can still win the ranking.</p>
       <p class="meta">The box ranks. Rare words count more. A hit in a title or claim beats the same word buried in a long paste. A near-miss spelling or a plural still counts. You never have to tune it. If a wrong card comes first, that is my bug: send the query and the record that should have won.</p>
     </div>
     <p class="meta">A React-CDN “ChatVault 2” HTML paste was recovered as historical source under docs/chatvault-audit/. It is not this product. Projects there are Books here.</p>
   `;
 }
 
+function skinSwitcher() {
+  const buttons = SKIN_IDS.map((id) => {
+    const skin = SKINS[id];
+    const pressed = currentSkin.id === id ? "true" : "false";
+    return `<button type="button" class="skin-btn" data-set-skin="${id}" aria-pressed="${pressed}" title="${escapeHtml(skin.blurb)}"><span class="skin-swatch" data-skin="${id}" aria-hidden="true"></span>${escapeHtml(skin.label)}</button>`;
+  }).join("");
+  return `<div class="skin-switch" role="group" aria-label="Skin">
+      <span class="skin-switch-label">Skin</span>
+      ${buttons}
+    </div>`;
+}
+
 function shell(inner) {
+  const skin = SKINS[currentSkin.id] || SKINS.steel;
   return `
     <aside class="sidebar">
       <div class="brand">
@@ -660,7 +675,8 @@ function shell(inner) {
       ${nav("guide", "Guide", ICONS.guide)}
       ${nav("privacy", "Privacy", ICONS.privacy)}
       ${nav("disclaimer", "Disclaimer", ICONS.disclaimer)}
-      <p class="foot">Steel vault · local engine · not App Store certified</p>
+      ${skinSwitcher()}
+      <p class="foot">${escapeHtml(skin.label)} · local engine · not App Store certified</p>
     </aside>
     <main class="main">${inner}</main>
   `;
@@ -739,6 +755,12 @@ root.addEventListener("click", (ev) => {
   if (ev.target.id === "recover") {
     state.fatal = null;
     set({ view: "vault", error: "", notice: "Recovered from a render error." });
+    return;
+  }
+  const skinBtn = ev.target.closest("[data-set-skin]");
+  if (skinBtn) {
+    currentSkin.id = applySkin(saveSkin(skinBtn.dataset.setSkin));
+    set({ notice: `Skin: ${SKINS[currentSkin.id].label}.` });
     return;
   }
   const ingestTab = ev.target.closest("[data-ingest-tab]");
@@ -974,7 +996,7 @@ window.addEventListener("hashchange", () => {
 });
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./sw.js?v=0.4.1").catch(() => {
+  navigator.serviceWorker.register("./sw.js?v=0.5.0").catch(() => {
     /* PWA optional; engine still runs */
   });
 }

@@ -129,6 +129,6 @@ Archived 25 August 2026 at `prototypes/chatvault-evernote-prototype.html` (notes
 
 Search is `title` / `preview` / `tags` `.includes()` plus a platform select and All vs Starred. No inverted index. The floating 🤖 assistant is `setTimeout(1000)` plus keyword if/else. Its COPY claims Advanced search, `tag:work platform:chatgpt`, folders, archive, PDF export, Cmd+F, and right-click — none of that is in the HTML.
 
-Do not port substring-only search, the “Evernote of AI Conversations” tagline (conflicts with locked **OS for your AI**), or the canned assistant as product. Canonical search remains `chatvault-hybrid-0.2.0`. Canonical look is the steel-vault skin in `chatvault/css/app.css` (glass look lock reversed).
+Do not port substring-only search, the “Evernote of AI Conversations” tagline (conflicts with locked **OS for your AI**), or the canned assistant as product. Canonical search remains `chatvault-hybrid-0.2.0`. Canonical look is the skin switcher in `chatvault/css/app.css` (Steel default; glass is not selectable).
 
 ChatVault 2 files were not overwritten. Live `index.html` / `app.js` / `engine.mjs` / `search.mjs` were not replaced with this dump.

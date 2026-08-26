@@ -5,7 +5,7 @@
 **Source:** Jonathan paste titled “Chatvault” in the ChatVault build thread. Markdown fences that split `<style>` / `<script>` were stripped; the React/Tailwind body is otherwise the paste.  
 **This is not the live product.**
 
-Canonical **look:** steel vault skin in `chatvault/css/app.css` (charcoal + amber signal). Morph-glass look lock reversed 25 Aug 2026. Tagline stays **OS for your AI**.  
+Canonical **look:** selectable skins in `chatvault/css/app.css` (Steel default: charcoal + amber). Morph-glass is **not** a selectable skin. Tagline stays **OS for your AI**.  
 Canonical **engine:** git `chatvault/` — `ChatVaultEntry`, `CLAIM_LEDGER`, `chatvault-hybrid-0.2.0`.  
 Stripe stays off.
 
