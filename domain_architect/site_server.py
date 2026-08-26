@@ -8,6 +8,8 @@ http://127.0.0.1:8765/chatvault/ ChatVault PWA (same localStorage origin)
 POST /api/audit                  FRA audit JSON (never cached by the DA worker)
 GET/POST /api/drain/...          ChatVault drain queue
 POST /api/inquiry                FRA inquiry JSON (optional drain export; never a proof)
+GET  /api/route-c                Route C exploratory face metadata (not ChatVault)
+GET  /faces/*.pdf                DA research faces (Route C PDF)
 GET/POST /api/inbox              Repo inbox JSON sidecars (loopback POST, no binary upload)
 """
 
@@ -24,6 +26,7 @@ from .audit import audit_expression
 from .chatvault_bridge import CHATVAULT_EXPORT_FORMAT, drain_audit, inquire
 from .chatvault_ingest import list_inbox_files, write_inbox_payload
 from .drain_server import QUEUE, _json_response
+from .route_c import face as route_c_face
 
 REPO = Path(__file__).resolve().parents[1]
 STATIC = Path(__file__).resolve().parent / "static"
@@ -51,6 +54,8 @@ def _content_type(path: Path) -> str:
         return "text/javascript; charset=utf-8"
     if path.suffix == ".js":
         return "text/javascript; charset=utf-8"
+    if path.suffix == ".pdf":
+        return "application/pdf"
     if path.suffix == ".webmanifest":
         return "application/manifest+json"
     guessed, _ = mimetypes.guess_type(str(path))
@@ -109,6 +114,9 @@ class SiteHandler(BaseHTTPRequestHandler):
                 },
             )
             return
+        if path == "/api/route-c":
+            _json_response(self, 200, route_c_face())
+            return
         if path.startswith("/chatvault/"):
             rel = path[len("/chatvault/") :] or "index.html"
             target = _safe(CHATVAULT, rel)
@@ -116,6 +124,14 @@ class SiteHandler(BaseHTTPRequestHandler):
                 html = target / "index.html"
                 listing = target / "index.json"
                 target = html if html.is_file() else listing if listing.is_file() else html
+            if target:
+                self._file(target)
+                return
+            _json_response(self, 404, {"ok": False, "error": "not found"})
+            return
+        if path.startswith("/faces/"):
+            rel = path[len("/faces/") :]
+            target = _safe(STATIC / "faces", rel)
             if target:
                 self._file(target)
                 return
@@ -220,4 +236,5 @@ def serve_site(host: str = "127.0.0.1", port: int = DEFAULT_SITE_PORT) -> None:
     print(f"Domain Architect + ChatVault at http://{host}:{port}/")
     print(f"ChatVault app at http://{host}:{port}/chatvault/")
     print(f"Repo inbox JSON at http://{host}:{port}/chatvault/inbox/")
+    print(f"Route C PDF at http://{host}:{port}/faces/05_route_c_conditional.pdf")
     httpd.serve_forever()

@@ -49,6 +49,7 @@ known theory.
 | Geometry / gauge expansion of `E` | `GeometryRecord` |
 | GR extra-structure warnings | `audit.py` |
 | RH Track B Möbius–GCD lock, identities, missing Mertens bridge | `track_b_mobius.py` (does not claim RH) |
+| Route C exploratory face (`05_route_c_conditional.pdf`) | `route_c.py` + `/faces/` (DA only; not ChatVault; does not claim RH) |
 | Equal-budget selector laboratory | `selectors.py` |
 | Train / validation / held-out protocol hash | `protocol.py` |
 | Null and counterexample registry | `null_results.json`, `EquationRegistry.record_null` |

@@ -110,5 +110,13 @@
     "evidence": "Exact identities relate M(N) to Q_N and μ_N, but no noncircular estimate upgrades O(N) control to O_ε(N^{1/2+ε}).",
     "status": "unresolved",
     "notes": "The missing object is the analytic bridge, not the operator definition. RH is not claimed."
+  },
+  {
+    "left_id": "ARITH-TB001",
+    "right_id": "ARITH-RC001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Track B is μ(gcd)/gcd. Route C is 1/(gcd √ij). Different spectra and proof obligations.",
+    "status": "recorded",
+    "notes": "Keep Route C exploratory in DA. Do not file it into ChatVault. Do not import −1/(2π) into Track B."
   }
 ]

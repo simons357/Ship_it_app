@@ -118,3 +118,4 @@ These are not historical enemies. They are defects to fix before a gravity labor
 | C-TB-2 | RH Track B | Inventory NS-B (classical vorticity) | The name “Track B” | Different books. RH Track B is Möbius–GCD. NS-B stays fluids |
 | C-TB-3 | First-row identity \(M(N)=e_1^{\mathsf T}Q_N\boldsymbol\mu_N\) | Hölder \(O(N)\) bound treated as RH-scale | Inequality | **Obstruction.** Generic pairing of \((\boldsymbol\mu_N,\mathbf 1)\) is \(\Theta(N)\) |
 | C-TB-4 | Littlewood–Mertens realization | Route C \(-1/(2\pi)\) or \(\lambda_{\min}>-1/2\) | Inputs | **Quarantine** those historical claims. They are not this operator |
+| C-TB-5 | RH Track B \(\mu(\gcd)/\gcd\) | Route C \(1/(\gcd\sqrt{ij})\) in `05_route_c_conditional.pdf` | Book | **Incompatible operators.** Keep Route C exploratory in Domain Architect. Do not file the PDF into ChatVault |

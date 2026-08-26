@@ -44,9 +44,11 @@ python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
 python -m domain_architect --site
 python -m domain_architect --track-b-mobius
+python -m domain_architect --route-c          # DA only; not ChatVault; does not claim RH
 # Search box (ChatVault) + Inquiry box (DA FRA): http://127.0.0.1:8765/
+# Route C PDF:                                   http://127.0.0.1:8765/faces/05_route_c_conditional.pdf
 # ChatVault app (same two boxes):                  http://127.0.0.1:8765/chatvault/
-python3 -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_chatvault_bridge tests.test_chatvault_ingest tests.test_track_b_mobius
+python3 -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_chatvault_bridge tests.test_chatvault_ingest tests.test_track_b_mobius tests.test_route_c
 ```
 
 ## Harmonic Blueprint Experiment 01

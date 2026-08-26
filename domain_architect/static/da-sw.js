@@ -2,7 +2,7 @@
  * Network-first GET for the DA shell. Never cache POST.
  * Skip /chatvault/ so the nested ChatVault worker keeps the vault app.
  */
-const CACHE = "da-shell-v2";
+const CACHE = "da-shell-v3";
 const SHELL = [
   "/",
   "/styles.css",
@@ -38,6 +38,7 @@ self.addEventListener("fetch", (event) => {
   if (url.origin !== self.location.origin) return;
   if (url.pathname.startsWith("/chatvault/")) return;
   if (url.pathname.startsWith("/api/")) return;
+  if (url.pathname.startsWith("/faces/")) return;
 
   event.respondWith(
     fetch(req)

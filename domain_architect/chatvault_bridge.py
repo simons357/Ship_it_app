@@ -98,10 +98,19 @@ def drain_audit(expression: str) -> dict[str, Any]:
 
 def inquire(text: str, *, drain: bool = False) -> dict[str, Any]:
     """FRA inquiry for the DA/ChatVault inquiry box. Not a search ranker."""
+    from .route_c import face as route_c_face, looks_like_route_c_operator
+
     inquiry = str(text or "").strip()
     if not inquiry:
         raise ValueError("inquiry required")
     report = audit_expression(inquiry)
+    route_c = looks_like_route_c_operator(inquiry)
+    drain_refused = None
+    if drain and route_c:
+        drain = False
+        drain_refused = (
+            "Route C stays in Domain Architect. Not filed into ChatVault."
+        )
     payload: dict[str, Any] = {
         "ok": True,
         "lane": "inquiry",
@@ -110,6 +119,11 @@ def inquire(text: str, *, drain: bool = False) -> dict[str, Any]:
         "canonical_sfe_status": report.canonical_sfe_status,
         "drain": drain_report(report) if drain else None,
     }
+    if route_c:
+        payload["route_c"] = route_c_face()
+        payload["chatvault"] = False
+    if drain_refused:
+        payload["drain_refused"] = drain_refused
     return payload
 
 

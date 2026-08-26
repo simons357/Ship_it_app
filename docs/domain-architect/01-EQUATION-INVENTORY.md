@@ -109,6 +109,7 @@ These are real research objects in this repo family. They are **not** UHF, SFE, 
 | ARITH-B | Bridge* pair Rayleigh \(R(e_p-e_q)>-1/2\) | pair vectors only | Keep only as arithmetic, if at all. Not a fluids or SFE input |
 | ARITH-TB-Q | \(Q_N(i,j)=\mu(\gcd(i,j))/\gcd(i,j)\) | **RH Track B** Möbius–GCD | Locked operator. Exact cubefree identities. **Not** inverse-GCD, **not** NS-B vorticity |
 | ARITH-TB-MERTENS | \(M(N)=O_\varepsilon(N^{1/2+\varepsilon})\) | Littlewood–Mertens / RH equivalent | **UNRESOLVED** realization. Not an input. First-row control is only \(O(N)\) |
+| ARITH-RC-Q | \(Q_N[i,j]=1/(\gcd(i,j)\sqrt{ij})\) | **Route C** exploratory / conditional | August 2026 face in Domain Architect only. Gaps A and B open. **Not ChatVault.** RH not claimed |
 
 ---
 

@@ -69,6 +69,14 @@ def main(argv: list[str] | None = None) -> int:
             "snapshot, and missing-bridge routes. Does not claim RH."
         ),
     )
+    parser.add_argument(
+        "--route-c",
+        action="store_true",
+        help=(
+            "print the Route C exploratory face (05_route_c_conditional.pdf). "
+            "Does not claim RH and does not file into ChatVault."
+        ),
+    )
     args = parser.parse_args(argv)
 
     if args.site:
@@ -118,6 +126,24 @@ def main(argv: list[str] | None = None) -> int:
             print(report.narrative())
         return 0
 
+    if args.route_c:
+        from .route_c import face, narrative
+
+        payload = face()
+        payload["audit"] = audit_expression(payload["operator"]).to_dict()
+        if args.json or args.output:
+            text = json.dumps(payload, indent=2, default=str)
+            if args.output:
+                Path(args.output).write_text(text + "\n", encoding="utf-8")
+            else:
+                sys.stdout.write(text)
+                sys.stdout.write("\n")
+        else:
+            print(narrative())
+            print()
+            print(audit_expression(payload["operator"]).narrative())
+        return 0
+
     if args.registry:
         registry = EquationRegistry.load_default()
         payload = registry.export()
@@ -139,10 +165,24 @@ def main(argv: list[str] | None = None) -> int:
     if not args.expression:
         parser.error(
             "expression is required unless --registry, --drain-server, --site, "
-            "--ingest-chatvault, or --track-b-mobius is set"
+            "--ingest-chatvault, --track-b-mobius, or --route-c is set"
         )
 
     if args.drain_chatvault:
+        from .route_c import looks_like_route_c_operator
+
+        if looks_like_route_c_operator(args.expression):
+            print(
+                "Route C stays in Domain Architect. Not filed into ChatVault.",
+                file=sys.stderr,
+            )
+            report = audit_expression(args.expression)
+            if args.json:
+                sys.stdout.write(json.dumps(report.to_dict(), indent=2, default=str))
+                sys.stdout.write("\n")
+            else:
+                print(report.narrative())
+            return 0
         payload = drain_audit(args.expression)
         queued = try_enqueue(payload, host=args.drain_host, port=args.drain_port)
         if args.output:

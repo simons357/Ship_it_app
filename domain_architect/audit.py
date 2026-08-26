@@ -29,6 +29,10 @@ from .track_b_mobius import (
     quarantined_operator_hit,
     verify_identities,
 )
+from .route_c import (
+    ROUTE_C_OPERATOR,
+    looks_like_route_c_operator,
+)
 from .schema import (
     CANONICAL_SFE_STATUS,
     EvidenceLevel,
@@ -156,13 +160,33 @@ def audit_expression(
         evidence = max(evidence, EvidenceLevel.MATHEMATICAL_COMPATIBILITY)
 
     track_b = looks_like_locked_operator(expression)
-    quarantine = quarantined_operator_hit(expression)
+    route_c = looks_like_route_c_operator(expression)
+    quarantine = None if route_c else quarantined_operator_hit(expression)
     if quarantine:
         warnings.append(quarantine)
         notes.append(
             "RH Track B is locked to "
             f"{LOCKED_OPERATOR}. Historical inverse-GCD, positive-GCD, "
             "Route C −1/(2π), and the −1/2 moat are quarantined."
+        )
+    if route_c:
+        extra.extend(
+            [
+                "Route C exploratory face (not RH Track B)",
+                "normalized inverse-GCD 1/(gcd √ij)",
+                "Gap A and Gap B open",
+            ]
+        )
+        notes.append(
+            f"Route C operator locked: {ROUTE_C_OPERATOR}. "
+            "August 2026 conditional preprint. PDF at /faces/05_route_c_conditional.pdf."
+        )
+        notes.append(
+            "Gaps A and B remain open. Numerics are not theorems. "
+            "RH is not claimed. This face is not ChatVault."
+        )
+        notes.append(
+            "Do not import this operator or the −1/(2π) limit into RH Track B."
         )
     if track_b:
         extra.extend(

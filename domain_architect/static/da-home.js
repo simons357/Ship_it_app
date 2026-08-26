@@ -448,6 +448,17 @@ document.getElementById("da-inquire-file")?.addEventListener("click", () => {
     outEl.textContent = `${err.message}\n\nStart the site: python3 -m domain_architect --site`;
   });
 });
+document.getElementById("da-load-route-c")?.addEventListener("click", () => {
+  fetch("/api/route-c")
+    .then((res) => res.json())
+    .then((face) => {
+      if (inquiryEl) inquiryEl.value = face.operator || "";
+      return runInquiry(false);
+    })
+    .catch((err) => {
+      outEl.textContent = `${err.message}\n\nStart the site: python3 -m domain_architect --site`;
+    });
+});
 
 try {
   applyDock(localStorage.getItem(DOCK_KEY) || "top-right");

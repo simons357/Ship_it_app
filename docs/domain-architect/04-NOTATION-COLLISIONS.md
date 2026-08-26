@@ -32,6 +32,7 @@ Functional Role Analysis reuses short letters that already have other meanings i
 | \(H_g=4\pi G\) | Newtonian coupling in the gravity benchmark | — |
 | \(H_N\) | — | degree-normalized inverse-GCD matrix |
 | \(Q_N\) (RH Track B) | — | \(Q_N(i,j)=\mu(\gcd(i,j))/\gcd(i,j)\). Not \(1/\gcd\), not NS-B |
+| \(Q_N\) (Route C) | — | \(Q_N[i,j]=1/(\gcd(i,j)\sqrt{ij})\). Exploratory DA face. Not ChatVault, not Track B |
 | \(\hat H_{\mathrm{SFE}}\) | — | retired Fock operator from prize-packaged drafts |
 
 ## Scale response

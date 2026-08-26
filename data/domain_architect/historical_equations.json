@@ -574,7 +574,7 @@
     "unknown_definitions": "",
     "dimensional_status": "not applicable",
     "known_limit_status": "not_claimed",
-    "conflicts": ["ARITH-TB002"],
+    "conflicts": ["ARITH-TB002", "ARITH-RC001"],
     "audit_disposition": "RETAIN",
     "alias": "RH-TB-Q",
     "notes": "Not inverse-GCD 1/gcd, not 1/(gcd√ij), not gcd/√ij, not NS-B vorticity, not Route C. Name collision: DA inventory Track B is classical NS."
@@ -607,5 +607,34 @@
     "audit_disposition": "UNRESOLVED",
     "alias": "RH-TB-MERTENS",
     "notes": "First-row Hölder only gives O(N). Quadratic split at RH scale is equivalent to the target. Do not import Route C or λ_min>-1/2."
+  },
+  {
+    "equation_id": "ARITH-RC001",
+    "family": "ARITH-ROUTE-C",
+    "date": "2026-08",
+    "original_source": "05_route_c_conditional.pdf / 05_route_c_conditional.tex",
+    "original_expression": "Q_N[i,j] = 1/(gcd(i,j)*sqrt(i*j))",
+    "audited_expression": "Q_N[i,j] = 1/(gcd(i,j)√(ij)), 1 ≤ i,j ≤ N",
+    "original_symbol_definitions": "normalized inverse-GCD matrix; not μ(gcd)/gcd",
+    "original_stated_interpretation": "Route C exploratory architecture toward a spectral-limit conjecture",
+    "original_claimed_consequence": "conditional on Gap A and Gap B; RH not claimed",
+    "domain": "arithmetic / spectral number theory",
+    "units": "not applicable",
+    "function_space": "R^N",
+    "operator_domain": "indices {1,…,N}",
+    "boundary_conditions": "",
+    "initial_conditions": "",
+    "geometry": "",
+    "gauge_conditions": "",
+    "source_terms": "",
+    "nonlinearity": "",
+    "couplings": "Q_N",
+    "unknown_definitions": "Gap A and Gap B open",
+    "dimensional_status": "not applicable",
+    "known_limit_status": "not_claimed",
+    "conflicts": ["ARITH-TB001"],
+    "audit_disposition": "RETAIN",
+    "alias": "ROUTE-C-Q",
+    "notes": "August 2026 corrected preprint. Exploratory. Not ChatVault. Live DOI 10.5281/zenodo.22050963. PDF at domain_architect/static/faces/05_route_c_conditional.pdf."
   }
 ]

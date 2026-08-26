@@ -4,7 +4,9 @@ Aiming to be the best is the standard. This file records the hunt for the
 lost component and what now ships.
 
 Search (this file) is ChatVault. Inquiry is Domain Architect FRA
-(`POST /api/inquiry`). Do not mix the two engines.
+(`POST /api/inquiry`). Do not mix the two engines. Route C
+(`05_route_c_conditional.pdf`) lives in Domain Architect only. Do not
+drain, inbox, or file that face into ChatVault.
 
 ## What was searched (25 August 2026)
 

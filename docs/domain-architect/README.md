@@ -19,6 +19,7 @@ Approved plain-language explanation:
 | [04 — Notation collisions](04-NOTATION-COLLISIONS.md) | `P` / `p` / `ℙ`, `Φ` / `φ` / `ϕ`, and other overloaded symbols |
 | [05 — Rectification](05-RECTIFICATION.md) | Software implementation of the August 2026 corrective specification |
 | [RH Track B — Möbius–GCD](TRACK-B-MOBIUS.md) | Locked RH operator, exact identities, missing Mertens bridge. RH not claimed |
+| [Route C](ROUTE-C.md) | Exploratory conditional face in DA only. Not ChatVault. RH not claimed |
 
 Machine-readable provenance (original expressions are immutable):
 
@@ -33,7 +34,8 @@ python -m domain_architect --drain-chatvault "∇²Φ = 4π G ρ" -o /tmp/da-dra
 python3 -m domain_architect --ingest-chatvault PATH
 python -m domain_architect --site   # http://127.0.0.1:8765/ — ChatVault search + DA inquiry
 python -m domain_architect --track-b-mobius   # RH Track B Möbius–GCD attack; does not claim RH
-python -m unittest tests.test_domain_architect_acceptance tests.test_chatvault_bridge tests.test_track_b_mobius
+python -m domain_architect --route-c          # Route C face in DA; not ChatVault; does not claim RH
+python -m unittest tests.test_domain_architect_acceptance tests.test_chatvault_bridge tests.test_track_b_mobius tests.test_route_c
 ```
 
 Finished inquiries and audits can file into ChatVault as `origin_class: human_record`. Domain Architect does not prove theorems. ChatVault is the search box (**OS for your AI**). Domain Architect is the inquiry box.

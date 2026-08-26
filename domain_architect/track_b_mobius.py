@@ -523,14 +523,16 @@ def quarantined_operator_hit(text: str) -> str | None:
     compact = text.lower().replace(" ", "").replace("\\", "")
     if looks_like_locked_operator(text):
         return None
+    from .route_c import looks_like_route_c_operator
+
+    if looks_like_route_c_operator(text):
+        return None
     if "1/(2pi)" in compact or "1/(2π)" in compact or "1/2π" in compact:
         return "Route C −1/(2π) limit is quarantined for RH Track B"
     if "lambda_min" in compact and ">-1/2" in compact.replace(" ", ""):
         return "λ_min > −1/2 moat is quarantined; it is false for inverse-GCD and not this operator"
     if "gcd(i,j)/sqrt" in compact or "gcd(i,j)/sqrt" in compact:
         return "positive-GCD operator gcd/√ij is not RH Track B"
-    if "1/(gcd" in compact and "sqrt" in compact:
-        return "normalized inverse-GCD 1/(gcd √ij) is not RH Track B"
     if "1/gcd" in compact:
         return "raw inverse-GCD 1/gcd is not RH Track B"
     return None
