@@ -38,11 +38,14 @@ export const SEARCH_FIELDS = Object.freeze({
   ai: { boost: 2.8, b: 0.2 },
   status: { boost: 2.4, b: 0.2 },
   source: { boost: 1.4, b: 0.3 },
+  origin: { boost: 2.4, b: 0.2 },
 });
 
-/** Unfielded rank uses these. `status:` still works; PROVED is not a quality boost. */
+/** Unfielded rank uses these. `status:` and `origin:` are designations, not quality boosts. */
 export const RANK_FIELDS = Object.freeze(
-  Object.fromEntries(Object.entries(SEARCH_FIELDS).filter(([name]) => name !== "status"))
+  Object.fromEntries(
+    Object.entries(SEARCH_FIELDS).filter(([name]) => name !== "status" && name !== "origin")
+  )
 );
 
 const FIELD_ALIASES = Object.freeze({
@@ -58,6 +61,8 @@ const FIELD_ALIASES = Object.freeze({
   tags: "tag",
   books: "book",
   visibility: "visibility",
+  real: "origin",
+  designation: "origin",
 });
 
 const PHRASE_BONUS = 2.4;
@@ -176,6 +181,7 @@ export function fieldText(entry, field) {
       .join(" ");
   }
   if (key === "visibility") return entry.visibility || "";
+  if (key === "origin") return entry.origin_class || "";
   if (key === "all") {
     return [
       fieldText(entry, "title"),
@@ -208,6 +214,15 @@ function resolveField(name) {
   return FIELD_ALIASES[raw] || raw;
 }
 
+function normalizeFieldTerm(field, term) {
+  if (field !== "origin") return term;
+  if (term === "ai" || term === "generated" || term === "ai_generated") return "ai_generated";
+  if (term === "human" || term === "real" || term === "record" || term === "human_record") {
+    return "human_record";
+  }
+  return term;
+}
+
 export function parseQuery(q) {
   const raw = String(q || "").trim();
   if (!raw) return { mode: "empty", raw };
@@ -227,8 +242,8 @@ function parseAndClause(text) {
     const field = resolveField(m[1] || "all");
     const phrase = m[2];
     const term = m[3];
-    if (phrase) phrases.push({ field, phrase: phrase.toLowerCase() });
-    else if (term) terms.push({ field, term: term.toLowerCase() });
+    if (phrase) phrases.push({ field, phrase: normalizeFieldTerm(field, phrase.toLowerCase()) });
+    else if (term) terms.push({ field, term: normalizeFieldTerm(field, term.toLowerCase()) });
   }
   return { terms, phrases };
 }
@@ -284,6 +299,7 @@ function passesFilters(entry, filters = {}) {
   if (filters.visibility && entry.visibility !== filters.visibility) return false;
   if (filters.source_ai && entry.source_ai !== filters.source_ai) return false;
   if (filters.source_type && entry.source_type !== filters.source_type) return false;
+  if (filters.origin_class && entry.origin_class !== filters.origin_class) return false;
   if (filters.project && entry.project_category !== filters.project) return false;
   if (filters.starred && !entry.starred) return false;
   const tagFilter = filters.tag ? String(filters.tag).toLowerCase() : "";

@@ -17,7 +17,8 @@ export {
   ndcgAt,
 } from "./search.mjs";
 
-export const SCHEMA_VERSION = "chatvault-engine-0.2.0";
+export const SCHEMA_VERSION = "chatvault-engine-0.3.0";
+export const MAX_PASTE_CHARS = 50_000_000;
 
 export const LEDGER_STATUSES = Object.freeze([
   "UNREVIEWED",
@@ -34,20 +35,44 @@ export const SOURCE_AIS = Object.freeze([
   "Claude",
   "Grok",
   "Base44",
+  "DomainArchitect",
   "human",
   "unknown",
 ]);
 
-export const SOURCE_TYPES = Object.freeze([
-  "conversation",
-  "markdown",
-  "json",
+export const ORIGIN_CLASSES = Object.freeze(["ai_generated", "human_record"]);
+
+export const HUMAN_SOURCE_TYPES = Object.freeze([
+  "letter",
+  "paper",
+  "app",
+  "picture",
+  "movie",
+  "audio",
+  "image",
   "pdf",
   "docx",
-  "image",
+  "da_audit",
+]);
+
+export const SOURCE_TYPES = Object.freeze([
+  "conversation",
+  "transcript",
+  "markdown",
+  "json",
   "csv",
   "code",
   "html",
+  "letter",
+  "paper",
+  "app",
+  "picture",
+  "movie",
+  "audio",
+  "image",
+  "pdf",
+  "docx",
+  "da_audit",
   "other",
 ]);
 
@@ -83,6 +108,17 @@ export function safeId(value, prefix = "id") {
 export function normalizeStatus(status) {
   const s = String(status || "UNREVIEWED").toUpperCase();
   return LEDGER_STATUSES.includes(s) ? s : "UNREVIEWED";
+}
+
+export function inferOriginClass(partial = {}) {
+  if (ORIGIN_CLASSES.includes(partial.origin_class)) return partial.origin_class;
+  const type = asString(partial.source_type).toLowerCase();
+  if (HUMAN_SOURCE_TYPES.includes(type)) return "human_record";
+  const ai = partial.source_ai;
+  if (ai === "human" || ai === "DomainArchitect") return "human_record";
+  if (ai && ai !== "unknown" && SOURCE_AIS.includes(ai)) return "ai_generated";
+  if (type === "conversation" || type === "transcript") return "ai_generated";
+  return "human_record";
 }
 
 export function statusClass(status) {
@@ -127,12 +163,15 @@ function normalizeLedgerObject(item, defaultStatus = "UNREVIEWED") {
 
 export function emptyEntry(partial = {}) {
   const ingested = asString(partial.ingested_at, nowIso());
+  const source_type = SOURCE_TYPES.includes(partial.source_type) ? partial.source_type : "conversation";
+  const source_ai = SOURCE_AIS.includes(partial.source_ai) ? partial.source_ai : "unknown";
   return {
     schema_version: SCHEMA_VERSION,
     id: safeId(partial.id, "ent"),
     title: asString(partial.title, "Untitled"),
-    source_type: SOURCE_TYPES.includes(partial.source_type) ? partial.source_type : "conversation",
-    source_ai: SOURCE_AIS.includes(partial.source_ai) ? partial.source_ai : "unknown",
+    source_type,
+    source_ai,
+    origin_class: inferOriginClass({ ...partial, source_type, source_ai }),
     source_file: asString(partial.source_file),
     project_tags: asArray(partial.project_tags),
     project_category: asString(partial.project_category),
@@ -161,7 +200,7 @@ export function emptyEntry(partial = {}) {
 }
 
 const STRUCTURED_LINE =
-  /^(CLAIM|THEOREM|GAP|ACTION|QUESTION|TAG|BOOK|SOURCE_AI|SOURCE_TYPE|SOURCE_FILE|VISIBILITY|PROJECT|SUMMARY|TITLE|STATUS)\s*:\s*(.+)$/i;
+  /^(CLAIM|THEOREM|GAP|ACTION|QUESTION|TAG|BOOK|SOURCE_AI|SOURCE_TYPE|SOURCE_FILE|VISIBILITY|PROJECT|SUMMARY|TITLE|STATUS|ORIGIN_CLASS|ORIGIN)\s*:\s*(.+)$/i;
 
 export function parseStructuredPaste(raw) {
   const lines = String(raw || "").split(/\r?\n/);
@@ -169,7 +208,7 @@ export function parseStructuredPaste(raw) {
     title: "",
     summary: "",
     source_ai: "unknown",
-    source_type: "conversation",
+    source_type: "",
     source_file: "",
     visibility: "professional",
     project_category: "",
@@ -180,6 +219,7 @@ export function parseStructuredPaste(raw) {
     open_questions: [],
     search_tags: [],
     related_projects: [],
+    origin_class: "",
   };
   const body = [];
   for (const line of lines) {
@@ -196,7 +236,13 @@ export function parseStructuredPaste(raw) {
     else if (kind === "SOURCE_TYPE" && SOURCE_TYPES.includes(value.toLowerCase())) {
       extracted.source_type = value.toLowerCase();
     } else if (kind === "SOURCE_FILE") extracted.source_file = value;
-    else if (kind === "VISIBILITY" && VISIBILITY.includes(value.toLowerCase())) {
+    else if (kind === "ORIGIN_CLASS" || kind === "ORIGIN") {
+      const v = value.toLowerCase().replace(/[\s-]+/g, "_");
+      if (v === "ai" || v === "ai_generated" || v === "generated") extracted.origin_class = "ai_generated";
+      else if (v === "human" || v === "human_record" || v === "real" || v === "record") {
+        extracted.origin_class = "human_record";
+      }
+    } else if (kind === "VISIBILITY" && VISIBILITY.includes(value.toLowerCase())) {
       extracted.visibility = value.toLowerCase();
     } else if (kind === "PROJECT") extracted.project_category = value;
     else if (kind === "TAG") extracted.search_tags.push(value);
@@ -215,6 +261,11 @@ export function ingestPaste(raw, overrides = {}) {
   if (!rawText.trim()) {
     throw new Error("Cannot ingest empty text. Raw content is required.");
   }
+  if (rawText.length > MAX_PASTE_CHARS) {
+    throw new Error(
+      `Paste exceeds ${MAX_PASTE_CHARS} characters. Split the conversation or drop it as a file.`
+    );
+  }
   const parsed = parseStructuredPaste(rawText);
   const title =
     overrides.title ||
@@ -230,12 +281,15 @@ export function ingestPaste(raw, overrides = {}) {
       ? overrides.source_ai
       : parsed.source_ai;
   const visibility = overrides.visibility || parsed.visibility;
+  const sourceType =
+    overrides.source_type || parsed.source_type || sourceTypeFromName(overrides.source_file || parsed.source_file);
   return emptyEntry({
     ...parsed,
     ...overrides,
     title,
     summary,
     source_ai: sourceAi,
+    source_type: sourceType || undefined,
     visibility,
     raw_content: rawText,
     content_text: parsed.body || rawText,
@@ -300,7 +354,7 @@ export function ingestTextFile(filename, text, overrides = {}) {
       ingestPaste(trimmed, {
         ...overrides,
         source_file: name,
-        source_type: overrides.source_type || sourceTypeFromName(name),
+        source_type: overrides.source_type,
       }),
     ],
     errors: [],
@@ -416,6 +470,8 @@ export function vaultStats(entries) {
   const by_status = {};
   const by_visibility = { private: 0, professional: 0 };
   const by_project = {};
+  const by_origin = { ai_generated: 0, human_record: 0 };
+  const by_source_type = {};
   let starred = 0;
   let claims = 0;
   let theorems = 0;
@@ -423,6 +479,9 @@ export function vaultStats(entries) {
   for (const entry of list) {
     by_ai[entry.source_ai] = (by_ai[entry.source_ai] || 0) + 1;
     by_visibility[entry.visibility] = (by_visibility[entry.visibility] || 0) + 1;
+    const origin = ORIGIN_CLASSES.includes(entry.origin_class) ? entry.origin_class : inferOriginClass(entry);
+    by_origin[origin] = (by_origin[origin] || 0) + 1;
+    by_source_type[entry.source_type] = (by_source_type[entry.source_type] || 0) + 1;
     if (entry.starred) starred += 1;
     if (entry.project_category) {
       by_project[entry.project_category] = (by_project[entry.project_category] || 0) + 1;
@@ -449,6 +508,8 @@ export function vaultStats(entries) {
     by_status,
     by_visibility,
     by_project,
+    by_origin,
+    by_source_type,
   };
 }
 
