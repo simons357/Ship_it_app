@@ -1,0 +1,1230 @@
+[
+  {
+    "id": "success",
+    "name": "1) Normal Mission",
+    "description": "All conditions met: correct people, place, and time. Key generated successfully.",
+    "steps": [
+      {
+        "id": "step1",
+        "narrative": "Mission begins. The Field Lock module powers on inside the FIPS 140-3 cryptographic boundary.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Field Lock module initialized"
+          },
+          {
+            "type": "info",
+            "message": "FIPS 140-3 boundary active - all secrets protected"
+          }
+        ],
+        "animations": [],
+        "delay": 2500
+      },
+      {
+        "id": "step2",
+        "narrative": "<b>1) Excite:</b> The module plays an internal acoustic 'score' - a unique pattern of ultrasound pulses into the device's physical structure.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Excite phase: Playing internal acoustic score"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-excite"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 3000
+      },
+      {
+        "id": "step3",
+        "narrative": "<b>2) Sense:</b> Microphones capture the resulting speckle pattern - how sound bounces around the unique physical structure.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Sense phase: Capturing acoustic speckle pattern"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-sense"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 3000
+      },
+      {
+        "id": "step4",
+        "narrative": "<b>3) Clean:</b> FFT transforms the signal, extracts prime-frequency bins, and applies error correction to produce a stable fingerprint.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Clean phase: FFT \u2192 prime bins \u2192 ECC"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-clean"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 3500
+      },
+      {
+        "id": "step5",
+        "narrative": "<b>4) Derive:</b> The 256-bit code from the fingerprint is fed into a KDF (Key Derivation Function) to produce cryptographic key material.",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "Derive phase: 256-bit code \u2192 KDF"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-derive"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 3000
+      },
+      {
+        "id": "step6",
+        "narrative": "<b>Presence check:</b> Wearables use UWB time-of-flight, BLE RSSI, and motion sensors to confirm authorized personnel are physically present.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Checking presence tokens from wearables..."
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Intel (Capt. Rodriguez) present - UWB verified"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Med (Lt. Chen) present - UWB verified"
+          },
+          {
+            "type": "ok",
+            "message": "Quorum: 2 of 2 required personnel confirmed"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "arr-pres"
+            ],
+            "action": "arrow-ok"
+          }
+        ],
+        "delay": 4000
+      },
+      {
+        "id": "step7",
+        "narrative": "<b>5) Gate:</b> The Gate validates N-of-M quorum (2 of 2), geofence (within operational zone), and time window (mission hours). All checks pass!",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "Gate validation: Quorum 2/2 \u2713"
+          },
+          {
+            "type": "ok",
+            "message": "Gate validation: Geofence (Lat: 34.05\u00b0N, Lon: -118.24\u00b0W) \u2713"
+          },
+          {
+            "type": "ok",
+            "message": "Gate validation: Time window 14:00-18:00 UTC \u2713"
+          },
+          {
+            "type": "ok",
+            "message": "All conditions satisfied. Key generation approved."
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-gate"
+            ],
+            "action": "glow"
+          }
+        ],
+        "delay": 4500
+      },
+      {
+        "id": "step8",
+        "narrative": "<b>Attestation:</b> The host device requests proof that the Field Lock module is in a safe, un-tampered state before accepting the key.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Host requesting attestation..."
+          },
+          {
+            "type": "ok",
+            "message": "Attestation: Measured boot verified"
+          },
+          {
+            "type": "ok",
+            "message": "Attestation: Firmware v2.1.3 (signed) verified"
+          },
+          {
+            "type": "ok",
+            "message": "Attestation: Security policy compliant"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-attest"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 4000
+      },
+      {
+        "id": "step9",
+        "narrative": "<b>Key Handoff:</b> The Field Lock module provides a session key handle (non-exportable) plus an audit snippet. The key is born!",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "Session key generated (handle: 0x7f3a9b2c)"
+          },
+          {
+            "type": "ok",
+            "message": "Key is non-exportable and time-limited (TTL: 45s)"
+          },
+          {
+            "type": "info",
+            "message": "Audit log: Mission Alpha-7, 2 personnel, coords verified"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "arr-key"
+            ],
+            "action": "arrow-ok"
+          },
+          {
+            "elementIds": [
+              "bx-session"
+            ],
+            "action": "glow"
+          }
+        ],
+        "delay": 4000
+      },
+      {
+        "id": "step10",
+        "narrative": "<b>Secure Transport:</b> The session key is used to establish TLS/MLS/HPKE with post-quantum cryptography over the radio link.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Establishing secure channel..."
+          },
+          {
+            "type": "ok",
+            "message": "TLS 1.3 + Kyber (PQC) handshake successful"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "arr-net1"
+            ],
+            "action": "arrow-ok"
+          },
+          {
+            "elementIds": [
+              "bx-network"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 3500
+      },
+      {
+        "id": "step11",
+        "narrative": "<b>Service Uses Key:</b> The relying service validates the session and processes the secure request. Mission accomplished!",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "Service authenticated session"
+          },
+          {
+            "type": "ok",
+            "message": "Secure communication established"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Mission data transmitted successfully"
+          },
+          {
+            "type": "info",
+            "message": "Key will auto-expire in 30 seconds"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "arr-net2"
+            ],
+            "action": "arrow-ok"
+          },
+          {
+            "elementIds": [
+              "bx-service"
+            ],
+            "action": "glow"
+          }
+        ],
+        "delay": 4000
+      },
+      {
+        "id": "step12",
+        "narrative": "<b>Complete!</b> The key vaporizes after use. Even if this traffic was recorded, there's no persistent secret to steal. The key existed for seconds, then vanished.",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "Session complete"
+          },
+          {
+            "type": "info",
+            "message": "Key auto-destructed (TTL expired)"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Zero persistent secrets remain"
+          }
+        ],
+        "animations": [],
+        "delay": 3000
+      }
+    ]
+  },
+  {
+    "id": "jam-success",
+    "name": "2) Jammed Radio",
+    "description": "Radio communications are blocked, but local conditions still allow key generation.",
+    "steps": [
+      {
+        "id": "step1",
+        "narrative": "Mission begins in a hostile environment. Enemy forces are jamming radio communications.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Field Lock module initialized"
+          },
+          {
+            "type": "warn",
+            "message": "\u26a0 Radio interference detected - possible jamming"
+          }
+        ],
+        "animations": [],
+        "delay": 2500
+      },
+      {
+        "id": "step2",
+        "narrative": "Despite radio jamming, the Field Lock module can still generate keys locally by validating physical presence and conditions.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Operating in degraded comms mode"
+          },
+          {
+            "type": "info",
+            "message": "Local validation will proceed"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-excite"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 3000
+      },
+      {
+        "id": "step3",
+        "narrative": "Steps 1-4 proceed normally: Excite, Sense, Clean, Derive. The acoustic fingerprint doesn't need radio.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Excite \u2192 Sense \u2192 Clean \u2192 Derive"
+          },
+          {
+            "type": "ok",
+            "message": "Physical fingerprint captured successfully"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-sense",
+              "bx-clean",
+              "bx-derive"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 3500
+      },
+      {
+        "id": "step4",
+        "narrative": "Wearables verify presence using short-range UWB and BLE - no long-range radio needed. All personnel confirmed present.",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "\u2713 Fires (Sgt. Kim) present - UWB verified"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Comms (Cpl. Davis) present - UWB verified"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Intel (Capt. Rodriguez) present - UWB verified"
+          },
+          {
+            "type": "ok",
+            "message": "Quorum: 3 of 3 personnel confirmed (local verification)"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "arr-pres"
+            ],
+            "action": "arrow-ok"
+          }
+        ],
+        "delay": 4000
+      },
+      {
+        "id": "step5",
+        "narrative": "Gate validates all local conditions: quorum (3/3), geofence (GPS still works), time window. Key approved despite jamming!",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "Gate: Quorum 3/3 \u2713"
+          },
+          {
+            "type": "ok",
+            "message": "Gate: Geofence verified (GPS independent of comms) \u2713"
+          },
+          {
+            "type": "ok",
+            "message": "Gate: Time window valid \u2713"
+          },
+          {
+            "type": "ok",
+            "message": "Key generation approved - local mode"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-gate"
+            ],
+            "action": "glow"
+          }
+        ],
+        "delay": 4000
+      },
+      {
+        "id": "step6",
+        "narrative": "Attestation and key generation proceed normally. The key is generated even without radio contact!",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "Attestation verified locally"
+          },
+          {
+            "type": "ok",
+            "message": "Session key generated (handle: 0x9c4e1f7a)"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-attest",
+              "bx-session"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 3500
+      },
+      {
+        "id": "step7",
+        "narrative": "<b>Radio Remains Jammed:</b> The secure data is encrypted and queued locally. When jamming lifts, it will be transmitted securely.",
+        "logs": [
+          {
+            "type": "warn",
+            "message": "\u26a0 Radio still jammed - cannot transmit yet"
+          },
+          {
+            "type": "info",
+            "message": "Encrypted payload queued for transmission"
+          },
+          {
+            "type": "ok",
+            "message": "Key generation succeeded despite jamming"
+          },
+          {
+            "type": "info",
+            "message": "Payload will auto-send when radio link restored"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-network"
+            ],
+            "action": "dim"
+          }
+        ],
+        "delay": 4000
+      },
+      {
+        "id": "step8",
+        "narrative": "<b>Key Point:</b> Field Lock separates local authorization from network transmission. You can approve actions even when cut off from command.",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "\u2713 Authorization granted (local)"
+          },
+          {
+            "type": "info",
+            "message": "Transmission pending radio restoration"
+          },
+          {
+            "type": "ok",
+            "message": "Mission can proceed despite denied communications"
+          }
+        ],
+        "animations": [],
+        "delay": 3000
+      }
+    ]
+  },
+  {
+    "id": "quorum",
+    "name": "3) Quorum Not Met",
+    "description": "Not enough authorized personnel are present. Key generation is denied.",
+    "steps": [
+      {
+        "id": "step1",
+        "narrative": "Mission requires 2-of-3 personnel. Only one team member has arrived so far.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Field Lock module initialized"
+          },
+          {
+            "type": "info",
+            "message": "Required quorum: 2 of 3 personnel"
+          }
+        ],
+        "animations": [],
+        "delay": 2500
+      },
+      {
+        "id": "step2",
+        "narrative": "Steps 1-4 (Excite, Sense, Clean, Derive) complete normally. The physical fingerprint is ready.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Physical fingerprint generation: Excite \u2192 Sense \u2192 Clean \u2192 Derive"
+          },
+          {
+            "type": "ok",
+            "message": "256-bit code ready for key derivation"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-excite",
+              "bx-sense",
+              "bx-clean",
+              "bx-derive"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 3500
+      },
+      {
+        "id": "step3",
+        "narrative": "Presence check: Only 1 of 3 required personnel detected. Lt. Chen is present, but Capt. Rodriguez and Sgt. Patel are absent.",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "\u2713 Med (Lt. Chen) present - UWB verified"
+          },
+          {
+            "type": "warn",
+            "message": "\u2717 Intel (Capt. Rodriguez) ABSENT"
+          },
+          {
+            "type": "warn",
+            "message": "\u2717 Fires (Sgt. Patel) ABSENT"
+          },
+          {
+            "type": "warn",
+            "message": "Presence: 1 of 3 detected"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "arr-pres"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 4000
+      },
+      {
+        "id": "step4",
+        "narrative": "<b>Gate Validation FAILS:</b> Quorum requirement not met. Only 1/3 personnel present, but 2/3 required. Key generation denied.",
+        "logs": [
+          {
+            "type": "deny",
+            "message": "\u2717 Gate: Quorum FAILED (1/3, need 2/3)"
+          },
+          {
+            "type": "deny",
+            "message": "Cannot proceed without required personnel"
+          },
+          {
+            "type": "deny",
+            "message": "Key generation DENIED"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-gate"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 4000
+      },
+      {
+        "id": "step5",
+        "narrative": "<b>DENY Path:</b> No key is generated. The system refuses to proceed, and any sensitive data remains inaccessible.",
+        "logs": [
+          {
+            "type": "deny",
+            "message": "Session request REJECTED"
+          },
+          {
+            "type": "info",
+            "message": "No key material generated"
+          },
+          {
+            "type": "info",
+            "message": "All intermediate values zeroized"
+          },
+          {
+            "type": "deny",
+            "message": "Mission cannot proceed - wait for additional personnel"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "arr-deny",
+              "bx-deny"
+            ],
+            "action": "arrow-deny"
+          },
+          {
+            "elementIds": [
+              "bx-session",
+              "bx-network",
+              "bx-service"
+            ],
+            "action": "dim"
+          }
+        ],
+        "delay": 4000
+      },
+      {
+        "id": "step6",
+        "narrative": "<b>Security Principle:</b> Even if an insider tries to bypass the quorum, they can't generate keys alone. The cryptographic boundary enforces policy.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Policy enforcement: N-of-M quorum is cryptographically binding"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Insider threat mitigated - single person cannot authorize"
+          },
+          {
+            "type": "info",
+            "message": "System awaiting arrival of additional authorized personnel"
+          }
+        ],
+        "animations": [],
+        "delay": 3000
+      }
+    ]
+  },
+  {
+    "id": "geofence",
+    "name": "4) Wrong Place/Time",
+    "description": "Personnel are present but outside the authorized geofence or time window.",
+    "steps": [
+      {
+        "id": "step1",
+        "narrative": "Mission window: 14:00-18:00 UTC in operational zone. Team has assembled, but something is wrong...",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Field Lock module initialized"
+          },
+          {
+            "type": "info",
+            "message": "Checking geofence and time window..."
+          }
+        ],
+        "animations": [],
+        "delay": 2500
+      },
+      {
+        "id": "step2",
+        "narrative": "Physical fingerprint generation (steps 1-4) completes successfully. The device is genuine.",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "Excite \u2192 Sense \u2192 Clean \u2192 Derive completed"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-excite",
+              "bx-sense",
+              "bx-clean",
+              "bx-derive"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 3000
+      },
+      {
+        "id": "step3",
+        "narrative": "Presence check passes: All 2 of 2 required personnel are physically present and verified.",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "\u2713 Intel (Capt. Rodriguez) present - UWB verified"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Comms (Cpl. Davis) present - UWB verified"
+          },
+          {
+            "type": "ok",
+            "message": "Quorum: 2 of 2 confirmed"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "arr-pres"
+            ],
+            "action": "arrow-ok"
+          }
+        ],
+        "delay": 3500
+      },
+      {
+        "id": "step4",
+        "narrative": "<b>Gate FAILS:</b> Geofence check reveals the team is 15km outside the authorized operational zone!",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "Gate: Quorum 2/2 \u2713"
+          },
+          {
+            "type": "deny",
+            "message": "\u2717 Gate: Geofence FAILED"
+          },
+          {
+            "type": "deny",
+            "message": "Current: Lat 34.18\u00b0N, Lon -118.40\u00b0W"
+          },
+          {
+            "type": "deny",
+            "message": "Required: Within 5km of Lat 34.05\u00b0N, Lon -118.24\u00b0W"
+          },
+          {
+            "type": "deny",
+            "message": "Distance: 15.2 km (outside authorized zone)"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-gate"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 4500
+      },
+      {
+        "id": "step5",
+        "narrative": "<b>DENY:</b> Even with the right people present, location policy is violated. No key is generated.",
+        "logs": [
+          {
+            "type": "deny",
+            "message": "Key generation DENIED - geofence violation"
+          },
+          {
+            "type": "info",
+            "message": "Mission must be conducted within authorized zone"
+          },
+          {
+            "type": "info",
+            "message": "No key material generated; all values zeroized"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "arr-deny",
+              "bx-deny"
+            ],
+            "action": "arrow-deny"
+          },
+          {
+            "elementIds": [
+              "bx-session",
+              "bx-network",
+              "bx-service"
+            ],
+            "action": "dim"
+          }
+        ],
+        "delay": 4000
+      },
+      {
+        "id": "step6",
+        "narrative": "<b>Alternative Scenario:</b> Even if location was correct, a time window violation would also trigger denial. For example, attempting access at 02:00 UTC (outside 14:00-18:00).",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Example: Time window violations also deny access"
+          },
+          {
+            "type": "info",
+            "message": "Authorized hours: 14:00-18:00 UTC"
+          },
+          {
+            "type": "warn",
+            "message": "Attempt at 02:00 UTC would be DENIED"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Time-bound policies prevent off-hours misuse"
+          }
+        ],
+        "animations": [],
+        "delay": 4000
+      },
+      {
+        "id": "step7",
+        "narrative": "<b>Security Principle:</b> Geofence and time windows ensure keys can only be used in approved contexts. Stolen devices are useless outside constraints.",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "\u2713 Spatial and temporal controls enforced cryptographically"
+          },
+          {
+            "type": "info",
+            "message": "Even correct personnel cannot override location/time policy"
+          }
+        ],
+        "animations": [],
+        "delay": 3000
+      }
+    ]
+  },
+  {
+    "id": "relay",
+    "name": "5) Relay Attack",
+    "description": "An adversary tries to relay presence signals from a remote location. UWB distance bounding detects the attack.",
+    "steps": [
+      {
+        "id": "step1",
+        "narrative": "An adversary has captured the presence tokens and is trying to relay them from a remote location to fool the system.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Field Lock module initialized"
+          },
+          {
+            "type": "warn",
+            "message": "\u26a0 Suspicious: Presence signals detected but validating..."
+          }
+        ],
+        "animations": [],
+        "delay": 2500
+      },
+      {
+        "id": "step2",
+        "narrative": "Physical fingerprint generation completes. The device itself is genuine.",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "Excite \u2192 Sense \u2192 Clean \u2192 Derive completed"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-excite",
+              "bx-sense",
+              "bx-clean",
+              "bx-derive"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 3000
+      },
+      {
+        "id": "step3",
+        "narrative": "<b>UWB Distance Bounding:</b> Ultra-wideband measures round-trip signal time. The attacker's relay introduces latency that exceeds physical proximity limits.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "UWB time-of-flight challenge initiated..."
+          },
+          {
+            "type": "warn",
+            "message": "Measuring round-trip time for presence tokens..."
+          },
+          {
+            "type": "attack",
+            "message": "\u26a0 ANOMALY DETECTED"
+          },
+          {
+            "type": "attack",
+            "message": "UWB round-trip time: 180 nanoseconds"
+          },
+          {
+            "type": "attack",
+            "message": "Expected for 3m distance: <30 nanoseconds"
+          },
+          {
+            "type": "attack",
+            "message": "Calculated distance: ~54 meters (impossible for claimed proximity)"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "arr-pres"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 5000
+      },
+      {
+        "id": "step4",
+        "narrative": "<b>Relay Attack Detected!</b> The presence signals are being relayed from a distance, not from someone actually present. This is a relay attack!",
+        "logs": [
+          {
+            "type": "deny",
+            "message": "\u2717 RELAY ATTACK DETECTED"
+          },
+          {
+            "type": "deny",
+            "message": "Distance bounding check FAILED"
+          },
+          {
+            "type": "deny",
+            "message": "Signals do not match physical proximity"
+          },
+          {
+            "type": "attack",
+            "message": "Likely remote adversary relaying captured tokens"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-gate"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 4000
+      },
+      {
+        "id": "step5",
+        "narrative": "<b>DENY:</b> The system refuses key generation. The attacker cannot succeed even with valid presence tokens if they're not physically present.",
+        "logs": [
+          {
+            "type": "deny",
+            "message": "Key generation DENIED - relay attack blocked"
+          },
+          {
+            "type": "info",
+            "message": "No key material generated"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 UWB distance bounding prevented remote access"
+          },
+          {
+            "type": "info",
+            "message": "Incident logged for security review"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "arr-deny",
+              "bx-deny"
+            ],
+            "action": "arrow-deny"
+          },
+          {
+            "elementIds": [
+              "bx-session",
+              "bx-network",
+              "bx-service"
+            ],
+            "action": "dim"
+          }
+        ],
+        "delay": 4000
+      },
+      {
+        "id": "step6",
+        "narrative": "<b>Security Principle:</b> UWB time-of-flight is measured in nanoseconds. Signal relay introduces detectable latency. Physics defeats the relay attack.",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "\u2713 UWB operates at ~4 GHz with cm-level accuracy"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Speed of light: 30 cm/nanosecond"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Any relay adds round-trip latency \u2192 measurable distance"
+          },
+          {
+            "type": "info",
+            "message": "Relay attacks require physical presence impossible to fake"
+          }
+        ],
+        "animations": [],
+        "delay": 3000
+      }
+    ]
+  },
+  {
+    "id": "quantum",
+    "name": "6) Recorded + \"Quantum\"",
+    "description": "An adversary records today's traffic and tries to decrypt it later, even with a quantum computer.",
+    "steps": [
+      {
+        "id": "step1",
+        "narrative": "Today: An adversary records all network traffic during a successful mission. Everything is captured.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Mission proceeding normally..."
+          },
+          {
+            "type": "attack",
+            "message": "\u26a0 Adversary recording all encrypted traffic"
+          },
+          {
+            "type": "attack",
+            "message": "Recording for future 'harvest now, decrypt later' attack"
+          }
+        ],
+        "animations": [],
+        "delay": 3000
+      },
+      {
+        "id": "step2",
+        "narrative": "Field Lock generates a fresh, single-use session key based on physical conditions (people, place, time). Normal mission succeeds.",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "Session key generated (handle: 0x4a8f2e91)"
+          },
+          {
+            "type": "ok",
+            "message": "TLS 1.3 + Kyber (PQC) established"
+          },
+          {
+            "type": "ok",
+            "message": "Encrypted mission data transmitted"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Mission completed successfully"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-excite",
+              "bx-sense",
+              "bx-clean",
+              "bx-derive",
+              "bx-gate",
+              "bx-session",
+              "bx-network",
+              "bx-service"
+            ],
+            "action": "highlight"
+          }
+        ],
+        "delay": 4000
+      },
+      {
+        "id": "step3",
+        "narrative": "<b>Key Self-Destructs:</b> After 45 seconds, the session key automatically expires and is zeroized. It no longer exists anywhere.",
+        "logs": [
+          {
+            "type": "info",
+            "message": "Key TTL expired (45 seconds)"
+          },
+          {
+            "type": "info",
+            "message": "Key material zeroized from all memory"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Zero persistent secrets remain in system"
+          }
+        ],
+        "animations": [],
+        "delay": 3500
+      },
+      {
+        "id": "step4",
+        "narrative": "<b>10 Years Later:</b> The adversary has built (or rented) a quantum computer. They attempt to decrypt the recorded traffic.",
+        "logs": [
+          {
+            "type": "attack",
+            "message": "10 years later: Adversary attempts decryption"
+          },
+          {
+            "type": "attack",
+            "message": "Quantum computer available (or cryptanalysis breakthrough)"
+          },
+          {
+            "type": "attack",
+            "message": "Analyzing recorded traffic from 10 years ago..."
+          }
+        ],
+        "animations": [],
+        "delay": 3500
+      },
+      {
+        "id": "step5",
+        "narrative": "<b>No Secret to Steal:</b> The session key existed for only 45 seconds, then vanished. There's no persistent secret to recover, even with infinite computing power.",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "\u2713 No persistent key material in recording"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Key was single-use and time-bounded (TTL: 45s)"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Physical conditions (people, place, time) can't be recreated"
+          },
+          {
+            "type": "deny",
+            "message": "Decryption attempt FAILED - no recoverable secret"
+          }
+        ],
+        "animations": [
+          {
+            "elementIds": [
+              "bx-deny"
+            ],
+            "action": "arrow-deny"
+          }
+        ],
+        "delay": 4500
+      },
+      {
+        "id": "step6",
+        "narrative": "<b>Additional Protection:</b> Even the transport layer used post-quantum cryptography (Kyber), so the recorded traffic resists quantum cryptanalysis anyway.",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "\u2713 TLS used Kyber (PQC key exchange)"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Double protection: PQC + ephemeral Field Lock keys"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Recorded traffic is cryptographically worthless"
+          }
+        ],
+        "animations": [],
+        "delay": 4000
+      },
+      {
+        "id": "step7",
+        "narrative": "<b>Security Principle:</b> Field Lock keys are born, used once, and vaporized. 'Harvest now, decrypt later' attacks fail because there's nothing to harvest.",
+        "logs": [
+          {
+            "type": "ok",
+            "message": "\u2713 No stored secrets = nothing to steal"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Keys exist only when conditions met, only for seconds"
+          },
+          {
+            "type": "ok",
+            "message": "\u2713 Future quantum computers cannot recover what never persisted"
+          },
+          {
+            "type": "info",
+            "message": "Field Lock: Future-proof against cryptanalytic advances"
+          }
+        ],
+        "animations": [],
+        "delay": 3000
+      }
+    ]
+  }
+]
