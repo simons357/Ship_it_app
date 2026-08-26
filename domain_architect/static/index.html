@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Domain Architect — FRA lab</title>
+    <meta name="description" content="Domain Architect is a Functional Role Analysis auditor. ChatVault is OS for your AI. They are not the same product. DA does not prove theorems." />
+    <meta name="theme-color" content="#141816" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; worker-src 'self'; base-uri 'none'; object-src 'none'" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="apple-touch-icon" href="/chatvault/assets/icon-192.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-dock="top-right">
+    <div class="shell">
+      <header class="titlebar">
+        <img class="mark" src="./favicon.svg" alt="" width="52" height="52" />
+        <div>
+          <h1>Domain Architect</h1>
+          <p class="ops">FUNCTIONAL ROLE ANALYSIS · CANONICAL SFE UNRESOLVED</p>
+        </div>
+        <a class="ghost open-cv" href="/chatvault/">Open ChatVault</a>
+      </header>
+
+      <aside id="cv-dock" class="cv-dock" aria-label="ChatVault search">
+        <div class="cv-brand">
+          <a class="cv-logo" href="/chatvault/" title="Open ChatVault">
+            <img src="/chatvault/assets/chatvault-mark-dark.jpg" alt="ChatVault" width="72" height="72" />
+          </a>
+          <div>
+            <p class="cv-kicker">OS for your AI</p>
+            <p class="cv-name">ChatVault</p>
+            <p class="cv-sub">Local vault on this origin. Not Domain Architect’s brain.</p>
+          </div>
+        </div>
+        <form id="cv-search-form" class="cv-search">
+          <label class="sr-only" for="cv-q">Search ChatVault</label>
+          <input id="cv-q" name="q" type="search" placeholder='euler identity · origin:ai · origin:human · claim:blow-up' autocomplete="off" />
+          <div class="cv-actions">
+            <button type="submit" id="cv-go">Search vault</button>
+            <button type="button" class="ghost" id="cv-open">Open app</button>
+            <button type="button" class="ghost" id="cv-web" title="Opens DuckDuckGo in a new tab. Not ChatVault retrieval.">Web</button>
+          </div>
+        </form>
+        <div class="cv-choices">
+          <label>Dock
+            <select id="cv-dock-pos">
+              <option value="top-right">Top right</option>
+              <option value="bottom">Bottom</option>
+            </select>
+          </label>
+          <label>On search
+            <select id="cv-mode">
+              <option value="open">Open ChatVault</option>
+              <option value="here">Show hits here</option>
+            </select>
+          </label>
+        </div>
+        <div id="cv-hits" class="cv-hits" hidden></div>
+        <div id="cv-drop" class="cv-drop">
+          <p><strong>Slide anything in.</strong> Finished AI chats, ChatGPT <code>conversations.json</code>, papers, letters, pictures, movies, DA audits.</p>
+          <textarea id="cv-snip" rows="3" placeholder="Quick capture — paste a snippet, letter, or note. Does not have to be a whole conversation."></textarea>
+          <div class="cv-actions">
+            <button type="button" id="cv-ingest">Index snippet</button>
+            <label class="ghost file-btn">Choose files<input id="cv-files" type="file" multiple /></label>
+          </div>
+          <p id="cv-status" class="hint"></p>
+        </div>
+      </aside>
+
+      <main>
+        <section class="card">
+          <h2>Paste an equation</h2>
+          <p class="hint">Domain Architect identifies what each component does. Correspondence is a hypothesis, not physical equivalence. It does not prove Navier–Stokes or Riemann. Finished audits drain into ChatVault as real FRA records.</p>
+          <label>Expression
+            <input id="da-expr" value="∇²Φ = 4π G ρ" />
+          </label>
+          <div class="row">
+            <button type="button" id="da-audit">Audit</button>
+            <button type="button" class="ghost" id="da-drain">Audit + drain to ChatVault</button>
+          </div>
+          <pre id="da-out" class="out">Ready.</pre>
+        </section>
+        <section class="card engine-card">
+          <h2>What is on the engine</h2>
+          <p class="hint">ChatVault hybrid ranker <code>chatvault-hybrid-0.2.0</code>. Local, offline, no LLM ranker.</p>
+          <ol class="engine-list">
+            <li>Boolean match gate (AND / OR / phrases / <code>field:</code>)</li>
+            <li>BM25F on words, stems, one-edit typos (K1=1.2)</li>
+            <li>Character 3-gram BM25</li>
+            <li>Field-weighted TF-IDF cosine</li>
+            <li>Reciprocal Rank Fusion, k=60</li>
+            <li>Optional RM3 expansion, fused again</li>
+          </ol>
+          <p class="hint">Indexed fields: title, claim, theorem, gap, question, action, tag, book, summary, content, ai, source, origin. Ledger status and Harmonic Watch notes are never scores. AI conversations vs real papers/pictures/movies use <code>origin:ai</code> / <code>origin:human</code>.</p>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="./da-home.js"></script>
+  </body>
+</html>
