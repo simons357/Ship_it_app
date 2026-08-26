@@ -118,5 +118,21 @@
     "evidence": "Track B is μ(gcd)/gcd. Route C is 1/(gcd √ij). Different spectra and proof obligations.",
     "status": "recorded",
     "notes": "Keep Route C exploratory in DA. Do not file it into ChatVault. Do not import −1/(2π) into Track B."
+  },
+  {
+    "left_id": "ARITH-RC000",
+    "right_id": "ARITH-RC001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "June poster uses Q_N=1/gcd and RH ⇔ λ_min/log N → -1/(2π). August face uses 1/(gcd √ij). Different operators.",
+    "status": "recorded",
+    "notes": "June poster is SUPERSEDED. Keep the August PDF as the live DA face. Not ChatVault. RH is not claimed."
+  },
+  {
+    "left_id": "ARITH-TB001",
+    "right_id": "ARITH-RC000",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Track B is μ(gcd)/gcd. June Route C poster is inverse-GCD 1/gcd.",
+    "status": "recorded",
+    "notes": "Quarantine inverse-GCD for Track B. Do not revive the June poster as RH Track B."
   }
 ]

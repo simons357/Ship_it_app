@@ -98,15 +98,21 @@ def drain_audit(expression: str) -> dict[str, Any]:
 
 def inquire(text: str, *, drain: bool = False) -> dict[str, Any]:
     """FRA inquiry for the DA/ChatVault inquiry box. Not a search ranker."""
-    from .route_c import face as route_c_face, looks_like_route_c_operator
+    from .route_c import (
+        face as route_c_face,
+        looks_like_route_c_operator,
+        looks_like_superseded_june_route_c,
+        superseded_june_face,
+    )
 
     inquiry = str(text or "").strip()
     if not inquiry:
         raise ValueError("inquiry required")
     report = audit_expression(inquiry)
     route_c = looks_like_route_c_operator(inquiry)
+    june = looks_like_superseded_june_route_c(inquiry)
     drain_refused = None
-    if drain and route_c:
+    if drain and (route_c or june):
         drain = False
         drain_refused = (
             "Route C stays in Domain Architect. Not filed into ChatVault."
@@ -121,6 +127,9 @@ def inquire(text: str, *, drain: bool = False) -> dict[str, Any]:
     }
     if route_c:
         payload["route_c"] = route_c_face()
+        payload["chatvault"] = False
+    if june:
+        payload["route_c_superseded"] = superseded_june_face()
         payload["chatvault"] = False
     if drain_refused:
         payload["drain_refused"] = drain_refused

@@ -30,8 +30,10 @@ from .track_b_mobius import (
     verify_identities,
 )
 from .route_c import (
+    JUNE_OPERATOR,
     ROUTE_C_OPERATOR,
     looks_like_route_c_operator,
+    looks_like_superseded_june_route_c,
 )
 from .schema import (
     CANONICAL_SFE_STATUS,
@@ -160,6 +162,7 @@ def audit_expression(
         evidence = max(evidence, EvidenceLevel.MATHEMATICAL_COMPATIBILITY)
 
     track_b = looks_like_locked_operator(expression)
+    june = looks_like_superseded_june_route_c(expression)
     route_c = looks_like_route_c_operator(expression)
     quarantine = None if route_c else quarantined_operator_hit(expression)
     if quarantine:
@@ -168,6 +171,27 @@ def audit_expression(
             "RH Track B is locked to "
             f"{LOCKED_OPERATOR}. Historical inverse-GCD, positive-GCD, "
             "Route C −1/(2π), and the −1/2 moat are quarantined."
+        )
+    if june:
+        extra.extend(
+            [
+                "June 2026 Route C poster SUPERSEDED",
+                "inverse-GCD 1/gcd is not the live Route C operator",
+                "RH_Riemann_final.tex / zenodo.20518388 archive",
+            ]
+        )
+        notes.append(
+            f"SUPERSEDED: June 2026 inverse-GCD poster {JUNE_OPERATOR}. "
+            "Same family as RH_Riemann_final.tex. DOI 10.5281/zenodo.20518388 is archive."
+        )
+        notes.append(
+            f"Use the August face instead: {ROUTE_C_OPERATOR} "
+            "at /faces/05_route_c_conditional.pdf (DOI 10.5281/zenodo.22050963)."
+        )
+        notes.append(
+            "Withdrawn on this operator: RH ⇔ λ_min/log N → -1/(2π), "
+            "Ring Lemma / V_N* locked rows, and κ* = 6/π² as an RH floor. "
+            "RH is not claimed. Not ChatVault."
         )
     if route_c:
         extra.extend(

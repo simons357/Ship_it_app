@@ -169,9 +169,11 @@ def main(argv: list[str] | None = None) -> int:
         )
 
     if args.drain_chatvault:
-        from .route_c import looks_like_route_c_operator
+        from .route_c import looks_like_route_c_operator, looks_like_superseded_june_route_c
 
-        if looks_like_route_c_operator(args.expression):
+        if looks_like_route_c_operator(args.expression) or looks_like_superseded_june_route_c(
+            args.expression
+        ):
             print(
                 "Route C stays in Domain Architect. Not filed into ChatVault.",
                 file=sys.stderr,
