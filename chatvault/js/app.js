@@ -28,6 +28,9 @@ import {
   MAX_IMAGE_BYTES,
   classifyFilename,
   ingestNamedSource,
+  ingestNoticeForResults,
+  loadInboxFromRepo,
+  postInboxExport,
   pullDaDrain,
 } from "./drain.mjs";
 import { SKINS, SKIN_IDS, loadSkin, saveSkin, applySkin } from "./skins.mjs";
@@ -391,8 +394,10 @@ function renderRaw(entry) {
     return `<img class="vault-media" src="${escapeHtml(entry.file_url)}" alt="${escapeHtml(entry.title)}" />`;
   }
   if (["movie", "audio", "pdf", "docx", "picture"].includes(entry.source_type) && !entry.file_url) {
-    return `<pre class="raw">${escapeHtml(entry.raw_content)}</pre>
-      <p class="help">Binary stays on disk. This is a searchable stub (filename, type, size). ChatVault is OS for your AI — not a media locker.</p>`;
+    const media = entry.media_path
+      ? `<p class="help">Repo media: <code>${escapeHtml(entry.media_path)}</code>. Binary is not in BM25 raw_content.</p>`
+      : `<p class="help">Indexed as human record stub (binary not stored in the browser vault; use CLI --ingest-chatvault to copy into the repo inbox).</p>`;
+    return `<pre class="raw">${escapeHtml(entry.raw_content)}</pre>${media}`;
   }
   const raw = String(entry.raw_content || "");
   if (raw.length > 200000) {
@@ -518,11 +523,15 @@ function renderIngest() {
                <p><strong>Drop the whole conversation or any file here.</strong></p>
                <p class="help">txt md json csv html · ChatGPT conversations.json · DA audit JSON · pictures under ${(MAX_IMAGE_BYTES / (1024 * 1024)).toFixed(0)} MB · movies / pdf / audio become searchable stubs</p>
                <p><label>Choose files <input type="file" id="ingest-files" multiple /></label></p>
+               <p><button class="btn ghost" id="load-inbox">Load inbox from repo</button></p>
              </div>`
           : tab === "drain"
-          ? `<p>Domain Architect is a math auditor, not this vault’s brain. When an audit finishes, drain it here.</p>
-             <p class="help">1. <code>python -m domain_architect --drain-server</code><br/>2. <code>python -m domain_architect --drain-chatvault "∇²Φ = 4πGρ"</code><br/>3. Pull. Or drop the JSON on Files. Loopback only: ${escapeHtml(DA_DRAIN_URLS[0])}</p>
-             <p><button class="btn" id="pull-da">Pull from Domain Architect</button></p>`
+          ? `<p>Domain Architect is a math auditor, not this vault’s brain. When an audit finishes, drain it here. The repo inbox is how sounds, video, papers, and letters get into git — not only localStorage.</p>
+             <p class="help">1. <code>python3 -m domain_architect --drain-server</code><br/>2. <code>python3 -m domain_architect --drain-chatvault "∇²Φ = 4πGρ"</code><br/>3. Pull. Or drop the JSON on Files. Loopback only: ${escapeHtml(DA_DRAIN_URLS[0])}</p>
+             <p class="help">Any-source into the repo: <code>python3 -m domain_architect --ingest-chatvault PATH</code> writes JSON under <code>chatvault/inbox/</code>.</p>
+             <p><button class="btn" id="pull-da">Pull from Domain Architect</button>
+                <button class="btn ghost" id="load-inbox">Load inbox from repo</button>
+                <button class="btn ghost" id="send-inbox">Send this vault JSON to repo</button></p>`
           : `<textarea id="ingest" placeholder="${tab === "bulk" ? "Paste several records separated by a line of ---" : "Paste the whole conversation here, then extract & index."}">${escapeHtml(state.ingestText)}</textarea>`
       }
       <p class="error">${escapeHtml(state.error)}</p>
@@ -837,12 +846,11 @@ function applyIngestResults(results, fileCount) {
     throw new Error(errors[0]?.message || "Nothing ingestible in those files.");
   }
   store.addMany(entries);
-  const fail = errors.length ? ` ${errors.length} skipped.` : "";
   const quota = persistOk ? "" : " localStorage quota hit — export JSON now.";
   set({
     view: "vault",
     error: "",
-    notice: `Indexed ${entries.length} record(s) from ${fileCount} source(s).${fail}${quota}`,
+    notice: `${ingestNoticeForResults(results, { fileCount })}${quota}`,
     selectedId: entries[0]?.id || null,
   });
 }
@@ -979,7 +987,7 @@ root.addEventListener("click", (ev) => {
       .then((result) => {
         if (!result.entries.length) {
           set({
-            notice: `Drain at ${result.origin} had nothing queued. Start python -m domain_architect --drain-server, then --drain-chatvault, or drop the JSON on Files.`,
+            notice: `Drain at ${result.origin} had nothing queued. Start python3 -m domain_architect --drain-server, then --drain-chatvault, or drop the JSON on Files.`,
             error: "",
           });
           return;
@@ -990,6 +998,38 @@ root.addEventListener("click", (ev) => {
           error: "",
           notice: `Pulled ${result.entries.length} Domain Architect audit(s) from ${result.origin}.`,
           selectedId: result.entries[0]?.id || null,
+        });
+      })
+      .catch((err) => set({ error: err.message || String(err) }));
+    return;
+  }
+  if (ev.target.id === "load-inbox") {
+    loadInboxFromRepo()
+      .then((result) => {
+        if (!result.entries.length) {
+          set({
+            notice: `Inbox at ${result.origin} had no sidecars. Run python3 -m domain_architect --ingest-chatvault PATH.`,
+            error: "",
+          });
+          return;
+        }
+        store.addMany(result.entries);
+        set({
+          view: "vault",
+          error: "",
+          notice: `Loaded ${result.entries.length} inbox record(s) from ${result.origin}.`,
+          selectedId: result.entries[0]?.id || null,
+        });
+      })
+      .catch((err) => set({ error: err.message || String(err) }));
+    return;
+  }
+  if (ev.target.id === "send-inbox") {
+    postInboxExport(exportVault(store.list()))
+      .then((result) => {
+        set({
+          notice: `Wrote ${result.count || 0} sidecar(s) to the repo inbox. Large media is not uploaded; use CLI --ingest-chatvault.`,
+          error: "",
         });
       })
       .catch((err) => set({ error: err.message || String(err) }));
@@ -1179,7 +1219,7 @@ window.addEventListener("hashchange", () => {
 });
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./sw.js?v=0.6.1").catch(() => {
+  navigator.serviceWorker.register("./sw.js?v=0.7.0").catch(() => {
     /* PWA optional; engine still runs */
   });
 }

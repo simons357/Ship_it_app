@@ -33,9 +33,11 @@ The DA homepage ChatVault dock is live search/ingest, not a “coming soon” pl
 
 ## 2. Will it work?
 
-**Yes for text chats, ChatGPT `conversations.json`, DA audit JSON, and snippets.**  
-**Partial for binaries.** Pictures under ~12 MB can store as data URLs. Movies, audio, PDF, DOCX become **searchable stubs** (filename, type, size) — not a media locker.  
-**No hosted cloud.** Records live in this browser’s `localStorage` (`chatvault.engine.v1`). Paste cap is 50 million characters; browser quota is still often 5–10 MB. Export JSON when the quota banner appears. IndexedDB is the next persistence step.  
+**Yes for text chats, ChatGPT `conversations.json`, DA audit JSON, snippets, and any-source file drop.**  
+**Partial for binaries in the browser.** Pictures under ~12 MB can store as data URLs. Movies, audio, PDF, DOCX become **searchable stubs** (filename, type, size) — not a media locker.  
+**Into the git repo:** `python3 -m domain_architect --ingest-chatvault PATH` writes `chatvault-export` JSON under `chatvault/inbox/` and copies media under `chatvault/inbox/media/` (gitignored when large). The PWA **Load inbox from repo** merges those sidecars. Loopback `POST /api/inbox` writes JSON only (no 100 MB video upload).  
+**No hosted cloud.** Browser records live in `localStorage` (`chatvault.engine.v1`). Paste cap is 50 million characters; browser quota is still often 5–10 MB. Export JSON when the quota banner appears. IndexedDB is the next persistence step.  
+**No transcription / OCR in this version.** A wav/mp4 is findable as a human record stub (`origin:human`); the bytes stay on disk.  
 **No silent auto-drain from ChatGPT/Claude/Grok products.** When a conversation is finished, slide the whole thread (or the official export JSON) onto ingest / the DA search drop zone. Other AIs should emit ChatVault export JSON at the end of a session.
 
 Standalone PWA (engine only):
@@ -76,7 +78,7 @@ Pipeline, in order:
 **Not scores:** ledger status, `harmonic_note`, E8 / lattice.  
 **Origin field** is searchable (`origin:ai` / `origin:human`) and is **not** an unfielded quality boost.
 
-Schema: **`chatvault-engine-0.3.0`**. PWA cache: **`chatvault-engine-v0.6.1`**.
+Schema: **`chatvault-engine-0.3.0`**. PWA cache: **`chatvault-engine-v0.7.0`**.
 
 License unit (ranker only, not the PWA): `chatvault/js/search.mjs`. Import API: `chatvault/js/ENGINE.md`. Internals: `docs/chatvault-audit/CHATVAULT-ENGINE-INTERNALS.md`. DA homepage catalog: `#da-engines`.
 
@@ -105,7 +107,7 @@ When your conversation with Jonathan is complete:
 
 Quick capture (not a whole chat): paste a snippet on the DA dock and **Index snippet**. Still a vault record.
 
-Non-AI bytes (sound, video, scans): drop the file. ChatVault indexes a stub or a small image so it is findable next to the chats.
+Non-AI bytes (sound, video, scans): drop the file. ChatVault indexes a stub or a small image so it is findable next to the chats (`origin:human`). To put the record **in the repo**, run `python3 -m domain_architect --ingest-chatvault PATH` (JSON sidecar committed; large media gitignored) or **Send last to repo** on the DA dock (`POST /api/inbox`, JSON only).
 
 ---
 
@@ -117,6 +119,7 @@ Non-AI bytes (sound, video, scans): drop the file. ChatVault indexes a stub or a
 4. **Dense MiniLM/E5 + cross-encoder** into the same RRF, only if it beats this eval on Jonathan’s corpus.
 5. **Multi-device sync** via export/import or a real backend. There is no ChatVault cloud today.
 6. **Web search** on the DA dock is a DuckDuckGo tab, not an in-vault crawler. Do not pretend otherwise.
+7. **Audio transcription** is not in v1. A filed wav is a searchable stub.
 
 ---
 

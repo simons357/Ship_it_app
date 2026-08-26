@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { ingestPaste, reviewLedgerItem, DEMO_ENTRIES } from "../js/engine.mjs";
+import { ingestNamedSource } from "../js/drain.mjs";
 import {
   SEARCH_ENGINE_VERSION,
   RANK_FIELDS,
@@ -288,4 +289,20 @@ test("search.mjs is a standalone ranker: no DOM, no localStorage, no engine impo
   assert.match(api, /chatvault-hybrid-0\.2\.0/);
   assert.match(api, /import \{/);
   assert.match(api, /What you do not get/);
+});
+
+test("origin:human finds a filed wav and mp4 stub", () => {
+  const wav = ingestNamedSource("lab-session.wav", { mime: "audio/wav", size: 48 }).entries[0];
+  const movie = ingestNamedSource("lab-session.mp4", { mime: "video/mp4", size: 96 }).entries[0];
+  const chat = ingestPaste("TITLE: Token bucket chat\n\nUse a refill interval.", { source_ai: "Grok" });
+  assert.equal(wav.origin_class, "human_record");
+  assert.equal(movie.origin_class, "human_record");
+  assert.equal(chat.origin_class, "ai_generated");
+  const human = searchEntries([wav, movie, chat], "origin:human");
+  assert.equal(human.length, 2);
+  assert.ok(human.every((e) => e.origin_class === "human_record"));
+  const named = searchEntries([wav, chat], "lab-session.wav");
+  assert.equal(named.length, 1);
+  assert.equal(named[0].id, wav.id);
+  assert.equal(wav.raw_content.includes("\u0000"), false);
 });

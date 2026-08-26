@@ -8,8 +8,11 @@ import {
   ingestDaAudit,
   ingestMediaStub,
   ingestNamedSource,
+  ingestNoticeForResults,
   looksLikeChatGptExport,
   looksLikeDaAudit,
+  loadInboxFromRepo,
+  postInboxExport,
   pullDaDrain,
 } from "../js/drain.mjs";
 
@@ -168,4 +171,87 @@ test("pullDaDrain imports a chatvault-export from loopback", async () => {
   assert.equal(result.entries.length, 1);
   assert.equal(result.entries[0].origin_class, "human_record");
   assert.equal(result.count, 1);
+});
+
+test("ingestNamedSource files audio, video, pdf, image, and text as human records", () => {
+  const wav = ingestNamedSource("voice.wav", { mime: "audio/wav", size: 64 });
+  assert.equal(wav.kind, "media");
+  assert.equal(wav.entries[0].origin_class, "human_record");
+  assert.equal(wav.entries[0].source_type, "audio");
+  assert.equal(wav.entries[0].source_ai, "human");
+  assert.equal(wav.entries[0].file_url, "");
+  assert.match(wav.entries[0].raw_content, /metadata-only/);
+  assert.match(wav.entries[0].summary, /CLI --ingest-chatvault/);
+  assert.equal(wav.entries[0].raw_content.includes("\u0000"), false);
+
+  const mp4 = ingestNamedSource("clip.mp4", { mime: "video/mp4", size: 2048 });
+  assert.equal(mp4.entries[0].origin_class, "human_record");
+  assert.equal(mp4.entries[0].source_type, "movie");
+
+  const pdf = ingestNamedSource("paper.pdf", { mime: "application/pdf", size: 512 });
+  assert.equal(pdf.entries[0].origin_class, "human_record");
+  assert.equal(pdf.entries[0].source_type, "pdf");
+
+  const pic = ingestNamedSource("scan.png", {
+    mime: "image/png",
+    size: 40,
+    dataUrl: "data:image/png;base64,iVBORw0KGgo=",
+  });
+  assert.equal(pic.entries[0].origin_class, "human_record");
+  assert.equal(pic.entries[0].source_type, "picture");
+  assert.match(pic.entries[0].file_url, /^data:image\/png/);
+
+  const letter = ingestNamedSource("field-note.txt", { text: "Dear colleague, the recording is on the bench." });
+  assert.equal(letter.entries[0].origin_class, "human_record");
+  assert.equal(letter.entries[0].source_type, "letter");
+  assert.match(letter.entries[0].raw_content, /recording is on the bench/);
+
+  assert.equal(looksLikeChatGptExport({ mime: "audio/wav" }), false);
+  const notice = ingestNoticeForResults([wav, mp4], { fileCount: 2 });
+  assert.match(notice, /Indexed 2/);
+  assert.match(notice, /binary not stored in the browser vault/);
+});
+
+test("a wav is never treated as a ChatGPT conversation dump", () => {
+  const riff = "RIFF....WAVEfmt ";
+  const wav = ingestNamedSource("conversations.wav", { mime: "audio/wav", size: riff.length, text: riff });
+  assert.equal(wav.kind, "media");
+  assert.equal(wav.entries[0].source_type, "audio");
+  assert.equal(wav.entries[0].origin_class, "human_record");
+  assert.equal(wav.entries[0].source_ai, "human");
+});
+
+test("loadInboxFromRepo merges chatvault-export sidecars", async () => {
+  const stub = ingestNamedSource("lab.wav", { mime: "audio/wav", size: 32 }).entries[0];
+  const bundle = exportVault([stub]);
+  const fetchImpl = async (url) => {
+    if (url === "/api/inbox") {
+      return {
+        ok: true,
+        json: async () => ({ format: "chatvault-inbox-index", files: [{ name: "lab.json", url: "/chatvault/inbox/lab.json" }] }),
+      };
+    }
+    if (url === "/chatvault/inbox/lab.json") {
+      return { ok: true, json: async () => bundle };
+    }
+    return { ok: false, status: 404, json: async () => ({}) };
+  };
+  const loaded = await loadInboxFromRepo(fetchImpl);
+  assert.equal(loaded.entries.length, 1);
+  assert.equal(loaded.entries[0].origin_class, "human_record");
+  assert.equal(loaded.entries[0].source_type, "audio");
+});
+
+test("postInboxExport posts JSON only", async () => {
+  const entry = ingestNamedSource("clip.mp4", { mime: "video/mp4", size: 99 }).entries[0];
+  const fetchImpl = async (url, opts) => {
+    assert.equal(url, "/api/inbox");
+    assert.equal(opts.method, "POST");
+    const body = JSON.parse(opts.body);
+    assert.equal(body.format, "chatvault-export");
+    assert.equal(body.entries[0].source_type, "movie");
+    return { ok: true, json: async () => ({ ok: true, count: 1, written: ["x.json"] }) };
+  };
+  const posted = await postInboxExport(exportVault([entry]), fetchImpl);
+  assert.equal(posted.count, 1);
 });

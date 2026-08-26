@@ -1,4 +1,4 @@
-const CACHE = "chatvault-engine-v0.6.1";
+const CACHE = "chatvault-engine-v0.7.0";
 const ASSETS = [
   "./",
   "./index.html",
@@ -32,6 +32,11 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+  const url = new URL(event.request.url);
+  if (url.pathname.includes("/api/") || url.pathname.includes("/inbox/")) {
+    event.respondWith(fetch(event.request));
+    return;
+  }
   event.respondWith(
     fetch(event.request)
       .then((response) => {

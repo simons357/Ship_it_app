@@ -44,6 +44,7 @@ Domain Architect is a FRA auditor, not this vault’s brain:
 ```bash
 python -m domain_architect --drain-server          # 127.0.0.1:7847
 python -m domain_architect --drain-chatvault "∇²Φ = 4π G ρ" -o /tmp/da-drain.json
+python3 -m domain_architect --ingest-chatvault PATH  # any source into chatvault/inbox/
 ```
 
 Then Ingest → Drain → Pull, or drop the JSON. Loopback only. DA does not
@@ -82,8 +83,9 @@ behind the tagline, with selectable skins (Steel default):
 - CLAIM_LEDGER (`UNREVIEWED` … `PROVED` / `WITHDRAWN`) that never auto-PROVED
 - Hybrid ranked search (BM25F + n-grams + TF-IDF + RRF + RM3) over title, claims, theorems, gaps, and raw text, with snippets. Ledger status and `harmonic_note` are not scores.
 - books, tags, and artifacts derived from records (no extraction LLM)
-- bulk paste, ChatGPT `conversations.json`, DA drain JSON, and file drop
-  (pictures optional data URL; movies/pdf/audio are stubs)
+- bulk paste, ChatGPT `conversations.json`, DA drain JSON, file drop
+  (pictures optional data URL; movies/pdf/audio are stubs), and CLI
+  `--ingest-chatvault` into `chatvault/inbox/`
 - `origin_class` (`ai_generated` | `human_record`) and `origin:ai` / `origin:human`
 - private vs professional export
 - round-trip JSON restore
@@ -94,9 +96,7 @@ remain the historical baseline if/when they are exported.
 ## Honest limits
 
 - No accounts, no iOS package, no paid subscription.
-- Ingest is structured paste, ChatGPT export JSON, DA audit JSON, and
-  file drop. Pictures can store a data URL (≤12 MB). Movies / PDF / audio
-  are **metadata stubs**, not a media locker. No OCR yet.
+- Ingest is structured paste, ChatGPT export JSON, DA audit JSON, file drop, and CLI `--ingest-chatvault`. Pictures can store a data URL (≤12 MB). Movies / PDF / audio are **metadata stubs** in the browser; the CLI copies binaries into `chatvault/inbox/media/` (gitignored when large). No OCR or audio transcription yet.
 - Demo fixtures are labeled research-memory examples, not solved theorems.
 - Semantic / LLM search from the Base44 skin is intentionally absent. Hybrid RRF is in. A dense model is next only if it beats this eval.
 - Jonathan’s Replit `search_engine.py` was not in this environment. See `SEARCH.md`.

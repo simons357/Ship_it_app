@@ -10,7 +10,7 @@ import {
   ingestPaste,
   searchVault,
 } from "/chatvault/js/engine.mjs";
-import { ingestNamedSource } from "/chatvault/js/drain.mjs";
+import { ingestNamedSource, classifyFilename, ingestNoticeForResults, loadInboxFromRepo, postInboxExport } from "/chatvault/js/drain.mjs";
 import {
   defaultSearchMode,
   deepDiveLinks,
@@ -64,6 +64,7 @@ const installBtn = document.getElementById("cv-install");
 const sourceTypeEl = document.getElementById("cv-source-type");
 
 let deferredInstall = null;
+let lastFiled = [];
 
 function setStatus(text) {
   if (statusEl) statusEl.textContent = text || "";
@@ -190,6 +191,7 @@ function runDeepDive() {
 function indexSnippet(raw, overrides) {
   const entry = ingestPaste(raw, overrides);
   store.add(entry);
+  lastFiled = [entry];
   return entry;
 }
 
@@ -245,26 +247,33 @@ async function ingestFiles(fileList) {
   const results = [];
   for (const file of files) {
     const mime = file.type || "";
+    const kind = classifyFilename(file.name, mime);
     let payload;
-    if (mime.startsWith("image/") && file.size <= 12 * 1024 * 1024) {
+    if (kind === "picture" && file.size <= 12 * 1024 * 1024) {
       payload = await new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.onload = () => resolve({ dataUrl: String(reader.result || ""), mime, size: file.size });
         reader.onerror = () => reject(reader.error || new Error("read failed"));
         reader.readAsDataURL(file);
       });
-    } else if (mime.startsWith("video/") || mime.startsWith("audio/") || mime === "application/pdf") {
+    } else if (kind === "picture" || kind === "movie" || kind === "audio" || kind === "pdf" || kind === "docx") {
       payload = { mime, size: file.size };
     } else {
       const text = await file.text();
       payload = { text, mime, size: file.size };
     }
-    results.push(ingestNamedSource(file.name, payload, { visibility: "professional" }));
+    results.push(
+      ingestNamedSource(file.name, payload, {
+        visibility: "professional",
+        origin_class: selectedOrigin(),
+      })
+    );
   }
   const entries = results.flatMap((r) => r.entries || []);
   if (!entries.length) throw new Error("Nothing ingestible.");
   store.addMany(entries);
-  setStatus(`Indexed ${entries.length} record(s) into ChatVault.`);
+  lastFiled = entries;
+  setStatus(ingestNoticeForResults(results, { fileCount: files.length }));
 }
 
 function registerDaServiceWorker() {
@@ -344,6 +353,33 @@ snipEl?.addEventListener("keydown", (ev) => {
 document.getElementById("cv-files")?.addEventListener("change", (ev) => {
   if (!ev.target.files?.length) return;
   ingestFiles(ev.target.files).catch((err) => setStatus(err.message || String(err)));
+});
+
+document.getElementById("cv-inbox")?.addEventListener("click", () => {
+  loadInboxFromRepo()
+    .then((result) => {
+      if (!result.entries.length) {
+        setStatus(`Inbox at ${result.origin} had no sidecars. Run python3 -m domain_architect --ingest-chatvault PATH.`);
+        return;
+      }
+      store.addMany(result.entries);
+      lastFiled = result.entries;
+      setStatus(`Loaded ${result.entries.length} inbox record(s) from ${result.origin}.`);
+    })
+    .catch((err) => setStatus(err.message || String(err)));
+});
+
+document.getElementById("cv-send-repo")?.addEventListener("click", () => {
+  const payload = lastFiled.length ? exportVault(lastFiled) : null;
+  if (!payload) {
+    setStatus("Index a file or snippet first, then send the JSON sidecar to the repo inbox.");
+    return;
+  }
+  postInboxExport(payload)
+    .then((result) => {
+      setStatus(`Wrote ${result.count || 0} sidecar(s) to the repo inbox. Large media is not uploaded; use CLI --ingest-chatvault.`);
+    })
+    .catch((err) => setStatus(err.message || String(err)));
 });
 
 ["dragover", "dragleave", "drop"].forEach((type) => {

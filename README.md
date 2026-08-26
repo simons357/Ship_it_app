@@ -23,7 +23,8 @@ node --test tests/*.mjs
 Drain a Domain Architect FRA audit (not a proof) into ChatVault JSON:
 
 ```bash
-python -m domain_architect --drain-chatvault "∇²Φ = 4π G ρ" -o /tmp/da-drain.json
+python3 -m domain_architect --drain-chatvault "∇²Φ = 4π G ρ" -o /tmp/da-drain.json
+python3 -m domain_architect --ingest-chatvault PATH   # any source → chatvault/inbox JSON (+ media copy)
 ```
 
 ## Domain Architect
@@ -41,7 +42,7 @@ to treat representation of a known equation as derivation.
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
 python -m domain_architect --site
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_chatvault_bridge
+python3 -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_chatvault_bridge tests.test_chatvault_ingest
 ```
 
 ## Harmonic Blueprint Experiment 01

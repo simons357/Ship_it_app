@@ -135,6 +135,7 @@ class TestDaHomepageChatVault(unittest.TestCase):
         src = Path(cli.__file__).read_text(encoding="utf-8")
         self.assertIn("--site", src)
         self.assertIn("serve_site", src)
+        self.assertIn("--ingest-chatvault", src)
 
 
 class TestDaSiteServiceWorker(unittest.TestCase):
