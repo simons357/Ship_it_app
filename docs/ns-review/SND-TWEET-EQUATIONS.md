@@ -14,6 +14,14 @@
 
 ---
 
+## Clay Statement B (problem header)
+
+**Clay Millennium Statement (B) on \(T^3\):** prove global existence of smooth solutions to the 3D incompressible Navier–Stokes equations on the 3-torus for all \(t \ge 0\), with no finite-time blowup, for suitable \(H^1\) divergence-free initial data.
+
+**DA plain text:** `Clay Statement B on T^3: global regularity for suitable H^1 data — NOT resolved in repo inventory`
+
+---
+
 ## Central condition (boxed in image)
 
 \[
@@ -48,6 +56,20 @@ Tweet table status: **“Proved”** in small / bounded-\(H^2\) / large-data reg
 
 ---
 
+## Auxiliary theorems (table rows — transcribed claims)
+
+| ID | LaTeX / claim | Key tool (tweet) |
+| --- | --- | --- |
+| **Thm A** | \(Q_1\)-augmented NS globally \(C^\infty\) | Strict dissipation |
+| **Thm B** | Phi-Renorm cancels \(1/r^4\) axis singularity; \(\Phi = \Gamma/r^2\) gauge | \(\Phi=\Gamma/r^2\) |
+| **Thm C** | Convergence \(u^\epsilon \to u\), no Grönwall; rate \(O(\epsilon^{4/(\beta+2)})\) | Rate \(O(\epsilon^{4/(\beta+2)})\) |
+| **Thm F** | Shell-Spread Poincaré inequality | Bony paraproduct |
+| **Thm I** | Geometric Bridge, \(F^* \to 0\) | Constantin–Fefferman |
+
+**DA routing:** Thm A/C → `NS-Q1` book; Thm B → `NS-PHI001` (phi-renorm); Thm F/I → geometry toolkit (no auto Clay route).
+
+---
+
 ## Full argument chain (table in image)
 
 | Result | Tweet status | Key tool |
@@ -68,9 +90,17 @@ Tweet table status: **“Proved”** in small / bounded-\(H^2\) / large-data reg
 
 ## Mechanism bullets (image prose)
 
-1. **\(Q_1\) Simons Coherence Operator** — targeted dissipation.
+1. **\(Q_1\) Simons Coherence Operator** — targeted dissipation; prevents energy concentration in a single Fourier shell.
 2. **Ring Lemma** — three interlocked Littlewood–Paley shells; Borromean topological constraint.
-3. **Bypass Lemma** — normalize \(H_N[u]\) by total energy \(\Sigma(t)\); pure shell-ratio observable; **\(5\times\)** safety margin stated.
+3. **Triadic Energy Balance** — prevents geometric chaos in the vorticity direction (prose in mechanism section).
+4. **Bypass Lemma** — normalize \(H_N[u]\) by total energy \(\Sigma(t)\); pure shell-ratio observable; **\(5\times\)** safety margin stated.
+
+---
+
+## Scope note (image footer)
+
+- Extension from \(T^3\) to \(\mathbb{R}^3\) (Clay Statement A) is **explicitly separate** — not covered on this slide.
+- Tweet still marks **Main result: no blowup on \(T^3\)** as **Proved** — DA refuses unconditional Clay routing (see audit doc).
 
 ---
 
