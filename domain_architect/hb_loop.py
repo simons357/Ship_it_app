@@ -195,6 +195,69 @@ BOOK_REQUIREMENTS: dict[str, dict[str, Any]] = {
         "extras": {"geometry", "boundary"},
         "recompose": "∇²Φ = 4πGρ with spectral R(κ)=1/κ² (κ≠0); P=I recovers Newtonian",
     },
+    "NS-Q1": {
+        "roles": {
+            "admissibility",
+            "interaction",
+            "state",
+            "scale_response",
+            "realized_output",
+            "environment",
+        },
+        "extras": {
+            "hyperdissipation epsilon",
+            "epsilon->0 limit to NS-B",
+            "snd_limit_passage (not established)",
+        },
+        "recompose": (
+            "Q1' ≈ NS-B + ε(-Δ)^{1+δ}u; SND passage to Leray–Hopf limit is "
+            "an open analytic slot (TH-H7-Q1)"
+        ),
+    },
+    "RING-BVB": {
+        "roles": {
+            "admissibility",
+            "interaction",
+            "state",
+            "scale_response",
+            "realized_output",
+            "environment",
+        },
+        "extras": {
+            "band-limited shell S_j* support",
+            "direction Lipschitz on E_c",
+            "not global CF for arbitrary Leray-Hopf",
+        },
+        "recompose": (
+            "Ring+BVB on E_c: band-limited geometric control — toolkit only; "
+            "does NOT imply SND-U or Clay B"
+        ),
+    },
+    "CSTAR-ARITH": {
+        "roles": set(),
+        "extras": {"arithmetic zeta(2)^{-1} analogy"},
+        "recompose": (
+            "c_*=6/π² is squarefree density — not a continuum NS SND floor"
+        ),
+    },
+    "BOOT-M": {
+        "roles": {
+            "admissibility",
+            "interaction",
+            "state",
+            "scale_response",
+            "realized_output",
+            "environment",
+        },
+        "extras": {
+            "bootstrap target M=M(||u0||_{H^1})",
+            "must not assume X<=M in keystone input",
+        },
+        "recompose": (
+            "Bootstrap lemma slot: derive enstrophy ceiling from H¹ data alone "
+            "before feeding Theorem H — closes TH-H3 if proved"
+        ),
+    },
     "generic": {
         "roles": set(),
         "extras": set(),
@@ -204,15 +267,56 @@ BOOK_REQUIREMENTS: dict[str, dict[str, Any]] = {
 
 
 def infer_book(report: AuditReport) -> str:
+    """Infer domain book from the input expression (authoritative) then fallbacks.
+
+    Notes/warnings are secondary only: incompleteness and decompose modules may
+    mention other books (e.g. SND-U) and must not flip classification of SND-C.
+    """
+    if report.hb_map and report.hb_map.get("domain_book"):
+        cached = str(report.hb_map["domain_book"])
+        if cached != "generic":
+            return cached
+
+    expr = report.input_expression.lower()
+    expr_compact = expr.replace(" ", "")
+
+    # Expression-first (authoritative markers).
+    if "bootstrap" in expr and (
+        "m=" in expr_compact or "x<=m" in expr_compact or "m(||u" in expr_compact
+    ):
+        return "BOOT-M"
+    if "snd-c" in expr or "shell-conditioned" in expr or "shell conditioned" in expr:
+        return "SND-C"
+    if "theorem h" in expr and (
+        "x<=m" in expr_compact or "x≤m" in report.input_expression
+    ):
+        return "SND-C"
+    if "snd-u" in expr or "unconditional snd" in expr or (
+        "clay" in expr and "statement" in expr and "b" in expr
+    ):
+        return "SND-U"
+    if "snd hypothesis" in expr or "conditional snd" in expr:
+        return "SND-HYP"
+    if "ring lemma" in expr or "bvb" in expr or "e_c" in expr or "e_c=" in expr:
+        return "RING-BVB"
+    if "c_*=6/pi" in expr_compact or "c*=6/pi" in expr_compact or "6/pi^2" in expr:
+        return "CSTAR-ARITH"
+    if "q1" in expr or "hyperdissipat" in expr or "epsilon" in expr_compact:
+        return "NS-Q1"
+    if "ns-b" in expr or "navier" in expr or "partial_t" in expr_compact:
+        return "NS-B"
+
+    # Secondary: joined text (legacy fallback when expression is ambiguous).
     joined = " ".join(
         [report.input_expression] + report.notes + report.warnings
     ).lower()
+    joined_compact = joined.replace(" ", "")
+    if "snd-c" in joined or "x<=m" in joined_compact or "x≤m" in joined:
+        return "SND-C"
     if "snd-u" in joined or "unconditional snd" in joined or (
         "clay" in joined and "statement" in joined
     ):
         return "SND-U"
-    if "snd-c" in joined or ("x<=m" in joined.replace(" ", "") or "x≤m" in joined):
-        return "SND-C"
     if "snd hypothesis" in joined or "conditional snd" in joined:
         return "SND-HYP"
     if "ns-b" in joined or "navier" in joined:

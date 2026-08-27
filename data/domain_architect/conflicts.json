@@ -230,5 +230,85 @@
     "evidence": "Both are conditional books; SND-C is a specific shell-flux estimate under X≤M, SND-HYP is the abstract spectral-gap assumption.",
     "status": "recorded",
     "notes": "Do not collapse; both honest if not glued to Clay-B."
+  },
+  {
+    "left_id": "RING-LEM001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Ring Lemma is band-limited on E_c with shell support; does not rescue Clay B if Theorem H fails.",
+    "status": "recorded",
+    "notes": "ARCHON Gap H6: Ring+BVB does not replace proved SND law for all data."
+  },
+  {
+    "left_id": "BVB-EC001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "BVB on E_c is conditional geometry; complement/global CF not Clay-grade.",
+    "status": "recorded",
+    "notes": "Toolkit only."
+  },
+  {
+    "left_id": "RING-LEM001",
+    "right_id": "SND-U001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Band-limited Ring geometry does not imply unconditional SND for all H¹ data.",
+    "status": "recorded",
+    "notes": ""
+  },
+  {
+    "left_id": "CSTAR-ARITH001",
+    "right_id": "SND-U001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "c*=6/π² is arithmetic zeta(2)^{-1} analogy, not a proved continuum SND floor.",
+    "status": "recorded",
+    "notes": "Gap H5. DA refuses arithmetic→fluids routing."
+  },
+  {
+    "left_id": "CSTAR-ARITH001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Arithmetic density is not load-bearing for Clay Statement B.",
+    "status": "recorded",
+    "notes": ""
+  },
+  {
+    "left_id": "BOOT-M001",
+    "right_id": "SND-C001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Bootstrap M from H¹ data is the candidate de-circularization path for Theorem H input — open analytic slot.",
+    "status": "recorded",
+    "notes": "If proved, feeds H without smuggling conclusion; still need M-free c_* (TH-H3)."
+  },
+  {
+    "left_id": "BOOT-M001",
+    "right_id": "CLAY-B001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "Bootstrap lemma alone does not close Clay B; would partially address TH-H3 M-circularity only.",
+    "status": "recorded",
+    "notes": "Candidate completion — not a resolution claim."
+  },
+  {
+    "left_id": "SFE-H002",
+    "right_id": "NS-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "SFE prize-packaging and classical NS are distinct books. No derivation glue.",
+    "status": "recorded",
+    "notes": "SFE→NS glue forbidden."
+  },
+  {
+    "left_id": "SFE-H003",
+    "right_id": "NS-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Fock Hamiltonian SFE and classical NS are incompatible books.",
+    "status": "recorded",
+    "notes": "SFE→NS glue forbidden."
+  },
+  {
+    "left_id": "RING-LEM001",
+    "right_id": "BVB-EC001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Ring Lemma supplies geometric hypotheses; BVB bridge uses E_c — adjacent toolkit books.",
+    "status": "recorded",
+    "notes": "Keep as method chain; do not route to Clay-B."
   }
 ]

@@ -89,6 +89,19 @@ class TestSndDualCompare(unittest.TestCase):
         self.assertIn("X≤M", dual["why_incompatible"])
 
 
+class TestInferBookExpressionFirst(unittest.TestCase):
+    def test_snd_c_not_flipped_by_snd_u_notes(self):
+        from domain_architect.audit import audit_expression
+        from domain_architect.gap_closure import EXPR_SND_C
+        from domain_architect.hb_loop import build_hb_map, compare_reports
+
+        left = audit_expression(EXPR_NS_B)
+        right = audit_expression(EXPR_SND_C)
+        cmp = compare_reports(left, right)
+        self.assertEqual(cmp.right.domain_book, "SND-C")
+        self.assertNotEqual(cmp.right.domain_book, "SND-U")
+
+
 class TestRegistryConflicts(unittest.TestCase):
     def test_snd_c_clay_incompatible_in_registry(self):
         reg = EquationRegistry.load_default()

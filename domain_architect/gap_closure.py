@@ -195,6 +195,86 @@ CLOSURE_CATALOG: tuple[ClosureMove, ...] = (
         tractability_rank=5,
         kind="structural",
     ),
+    ClosureMove(
+        break_id="TH-H3-BOOT",
+        where_da=(
+            "Bootstrap lemma slot BOOT-M001: candidate M=M(||u₀||_{H¹}) "
+            "compatible with SND-C001; open analytic completion at TH-H3"
+        ),
+        where_math=(
+            "Derive enstrophy ceiling from H¹ data before feeding Theorem H; "
+            "must not assume X≤M as keystone input"
+        ),
+        why=(
+            "If M is derived from u₀ alone (not from regularity we are proving), "
+            "SND-C stops smuggling the Clay conclusion — but c_* must still drop M."
+        ),
+        closure_move=(
+            "Prove bootstrap lemma: ∃ M=M(||u₀‖_{H¹}) with X(t)≤M on [0,T*) "
+            "using only energy/enstrophy identities available to Leray–Hopf"
+        ),
+        patch_sketch=(
+            "Lemma (Bootstrap-M): from u₀∈H¹ div-free, produce M depending only "
+            "on ‖u₀‖_{H¹}, ν, geometry s.t. sup_{t∈[0,T)} X(t)≤M. Then feed "
+            "Theorem H as conditional on derived M, not assumed M."
+        ),
+        success_test=(
+            "DA registry marks BOOT-M001 ↔ SND-C001 COMPATIBLE_DISTINCT; "
+            "incompleteness lists bootstrap candidate; H→Clay still refused "
+            "until c_* is M-free"
+        ),
+        fake_closure_risk=(
+            "Using smooth approximant enstrophy bounds as if they were "
+            "Leray–Hopf a priori bounds"
+        ),
+        tractability_rank=2,
+        kind="analytic",
+    ),
+    ClosureMove(
+        break_id="TH-H5",
+        where_da=(
+            "CSTAR-ARITH001 RETIRE: c*=6/π² glued to fluids SND floor; "
+            "registry INCOMPATIBLE with SND-U001"
+        ),
+        where_math="zeta(2)^{-1} squarefree density vs fluids c_*(δ_KT, ν)",
+        why="Arithmetic packaging is analogy, not continuum NS threshold.",
+        closure_move=(
+            "Remove c*=6/π² from fluids SND claims; keep as arithmetic note only"
+        ),
+        patch_sketch=(
+            "Public text: fluids c_* is data-dependent when present; "
+            "6/π² is Triple Lock analogy only"
+        ),
+        success_test=(
+            "DA refuses c*=6/pi^2 as NS SND threshold; CSTAR-ARITH001 RETIRE"
+        ),
+        fake_closure_risk="Renaming arithmetic density as 'universal fluids constant'",
+        tractability_rank=6,
+        kind="structural",
+    ),
+    ClosureMove(
+        break_id="TH-H6",
+        where_da=(
+            "RING-LEM001/BVB-EC001 INCOMPATIBLE with CLAY-B001 rescue; "
+            "band-limited geometry ≠ unconditional SND"
+        ),
+        where_math="Ring on E_c with shell support; not global CF",
+        why="ARCHON panel: Ring+BVB does not replace proved SND for all data.",
+        closure_move=(
+            "Keep Ring+BVB as toolkit; forbid routing Ring→Clay B rescue"
+        ),
+        patch_sketch=(
+            "Explicit: Ring Lemma hypotheses (shell support, E_c) must be "
+            "stated; no Main Theorem rescue via Ring alone"
+        ),
+        success_test=(
+            "Registry RING-LEM001↔CLAY-B001 INCOMPATIBLE; gap router refuses "
+            "Ring+BVB implies Clay"
+        ),
+        fake_closure_risk="Treating band-limited CF as global regularity",
+        tractability_rank=7,
+        kind="structural",
+    ),
 )
 
 
@@ -357,6 +437,24 @@ def detect_claim_markers(expression: str) -> dict[str, bool]:
             or "conditional snd" in raw
             or ("inf" in compact and "j" in compact and "x" in compact and "c" in compact)
         ),
+        "cstar_arithmetic": (
+            "6/pi^2" in compact
+            or "6/pi^2" in raw
+            or "zeta(2)" in compact
+            or "c_*=6" in compact
+        ),
+        "ring_bvb": (
+            "ring lemma" in raw
+            or "ringlemma" in compact
+            or "bvb" in raw
+            or "e_c" in raw
+            or "beale" in raw
+        ),
+        "bootstrap_m": (
+            "bootstrap" in raw
+            or "m=||u0||" in compact
+            or "m(||u" in compact
+        ),
         "ns_classical": (
             "partial_t" in compact
             or "∂_t" in expression
@@ -496,17 +594,74 @@ def diagnose_gap(expression: str) -> GapClosureReport:
             )
         )
 
+    if markers["cstar_arithmetic"] and (markers["snd_u"] or markers["clay_b"] or markers["snd_c"]):
+        move = _move_by_id("TH-H5")
+        findings.append(
+            WeldFinding(
+                break_id="TH-H5",
+                severity="refuse",
+                broken_weld=(
+                    "c_*=6/π² (arithmetic) cited as continuum NS SND floor "
+                    "while claiming SND/Clay"
+                ),
+                suggested_closure=move.closure_move,
+                markers_hit=[k for k, v in markers.items() if v],
+                move=move,
+            )
+        )
+
+    if markers["ring_bvb"] and (markers["snd_u"] or markers["clay_b"]):
+        move = _move_by_id("TH-H6")
+        findings.append(
+            WeldFinding(
+                break_id="TH-H6",
+                severity="refuse",
+                broken_weld=(
+                    "Ring Lemma / BVB on E_c used to rescue Clay B or "
+                    "unconditional SND — band-limited toolkit only"
+                ),
+                suggested_closure=move.closure_move,
+                markers_hit=[k for k, v in markers.items() if v],
+                move=move,
+            )
+        )
+
+    if markers["bootstrap_m"] and markers["snd_c"] and not (
+        markers["snd_u"] or markers["clay_b"]
+    ):
+        move = _move_by_id("TH-H3-BOOT")
+        findings.append(
+            WeldFinding(
+                break_id="TH-H3-BOOT",
+                severity="warn",
+                broken_weld=(
+                    "Bootstrap M from H¹ data is the candidate slot to "
+                    "de-circularize Theorem H input — still open"
+                ),
+                suggested_closure=move.closure_move,
+                markers_hit=[k for k, v in markers.items() if v],
+                relation=ConflictRelation.INSUFFICIENT_INFORMATION.value,
+                move=move,
+            )
+        )
+
     refuses = any(f.severity == "refuse" for f in findings)
     if markers["ns_classical"] and not (
         markers["snd_u"] or markers["clay_b"] or markers["snd_c"]
     ):
         book = "NS-B"
+    elif markers["bootstrap_m"]:
+        book = "BOOT-M"
     elif markers["snd_c"] or markers["x_le_m"]:
         book = "SND-C"
     elif markers["snd_u"] or markers["clay_b"]:
         book = "SND-U"
     elif markers["q1"]:
         book = "NS-Q1"
+    elif markers["ring_bvb"]:
+        book = "RING-BVB"
+    elif markers["cstar_arithmetic"]:
+        book = "CSTAR-ARITH"
     elif markers["snd_hypothesis"]:
         book = "SND-HYP"
     else:

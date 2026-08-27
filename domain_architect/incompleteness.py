@@ -113,6 +113,72 @@ _BOOK_SKETCHES: dict[str, dict[str, Any]] = {
             "Poisson equation — not a derivation from a canonical SFE."
         ),
     },
+    "NS-Q1": {
+        "full_sketch": (
+            "Q1: ∂_t u + (u·∇)u = −∇p + νΔu − ε(-Δ)^{1+δ}u; "
+            "ε→0 limit to NS-B. SND passage is open (TH-H7-Q1)."
+        ),
+        "role_terms": {
+            "admissibility": "P ≈ Leray",
+            "interaction": "H ≈ advection under hyperdissipation",
+            "state": "ψ ≈ u",
+            "scale_response": "λ ≈ ν, ε",
+            "realized_output": "Φ ≈ p / enstrophy response",
+            "environment": "E ⊃ IC, ε→0 limit slot",
+        },
+        "term_hints": {},
+        "disclaimer": (
+            "Q1 approximants may hold SND for ε>0; liminf passage to "
+            "Leray–Hopf is not established as Clay-grade."
+        ),
+    },
+    "RING-BVB": {
+        "full_sketch": (
+            "Ring Lemma on shell S_{j*}: direction Lipschitz on E_c. "
+            "BVB bridge — band-limited toolkit; not Clay rescue."
+        ),
+        "role_terms": {
+            "admissibility": "P ≈ shell support / band-limit",
+            "interaction": "H ≈ vorticity direction control on E_c",
+            "state": "ψ ≈ ω direction field",
+            "scale_response": "λ ≈ shell scale 2^{j*}",
+            "realized_output": "Φ ≈ geometric bound / flux bridge",
+            "environment": "E ⊃ E_c={|ω|≥c 2^{j*}||u||_{L2}}",
+        },
+        "term_hints": {},
+        "disclaimer": (
+            "Ring+BVB does not rescue Clay B or SND-U. Global CF not established."
+        ),
+    },
+    "BOOT-M": {
+        "full_sketch": (
+            "Bootstrap (OPEN): M=M(||u₀‖_{H¹}) with X(t)≤M derived from "
+            "data — candidate de-circularization for Theorem H input."
+        ),
+        "role_terms": {
+            "admissibility": "P ≈ Leray / H¹ data",
+            "interaction": "H ≈ enstrophy production bound",
+            "state": "ψ ≈ u",
+            "scale_response": "λ ≈ ν",
+            "realized_output": "Φ ≈ X(t) ceiling M",
+            "environment": "E ⊃ H¹ IC, energy identities",
+        },
+        "term_hints": {},
+        "disclaimer": (
+            "Candidate analytic slot only. Proving bootstrap does not alone "
+            "close Clay B; c_* must still be M-free (TH-H3)."
+        ),
+    },
+    "CSTAR-ARITH": {
+        "full_sketch": (
+            "c_*=6/π²=ζ(2)^{-1} — arithmetic analogy; not continuum NS floor."
+        ),
+        "role_terms": {},
+        "term_hints": {},
+        "disclaimer": (
+            "Refuse routing arithmetic density to fluids SND threshold."
+        ),
+    },
     "generic": {
         "full_sketch": "(no frozen book sketch)",
         "role_terms": {},
