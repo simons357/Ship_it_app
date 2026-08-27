@@ -10,7 +10,13 @@ GET/POST /api/drain/...          ChatVault drain queue
 POST /api/inquiry                FRA inquiry JSON (optional drain export; never a proof)
 GET  /api/route-c                Route C exploratory face metadata (not ChatVault)
 GET  /api/universe               Universe / SFE picture (unresolved; not ChatVault)
-GET  /faces/*.pdf                DA research faces (Route C PDF)
+GET  /api/swirl-with-cancel      Live Φ-renorm swirl face (not Clay; not ChatVault)
+GET  /api/swirl-without-cancel   Pre-cancel 1/r^4 swirl face (OPEN; not ChatVault)
+GET  /api/swirl-compare          WITH vs WITHOUT cancel comparison
+GET  /api/ns-unaugmented         Classical 3D NS OPEN face (not Clay; not ChatVault)
+GET  /api/honest-mistake         June 2026 packaging note (not ChatVault)
+GET  /api/ns-regularity-realization  Hypothesized NS regularity experiment (not a theorem)
+GET  /faces/*                    DA research faces (PDFs, archive, superseded)
 GET/POST /api/inbox              Repo inbox JSON sidecars (loopback POST, no binary upload)
 """
 
@@ -27,7 +33,11 @@ from .audit import audit_expression
 from .chatvault_bridge import CHATVAULT_EXPORT_FORMAT, drain_audit, inquire
 from .chatvault_ingest import list_inbox_files, write_inbox_payload
 from .drain_server import QUEUE, _json_response
+from .honest_mistake import face as honest_face
+from .ns_regularity_realization import experiment as ns_realization_face
+from .ns_unaugmented import face as ns_face, t3_archive_face
 from .route_c import face as route_c_face, superseded_june_face
+from .swirl import compare_faces, with_cancel_face, without_cancel_face
 from .universe import face as universe_face
 
 REPO = Path(__file__).resolve().parents[1]
@@ -124,6 +134,27 @@ class SiteHandler(BaseHTTPRequestHandler):
             return
         if path == "/api/universe":
             _json_response(self, 200, universe_face())
+            return
+        if path == "/api/swirl-with-cancel":
+            _json_response(self, 200, with_cancel_face())
+            return
+        if path == "/api/swirl-without-cancel":
+            _json_response(self, 200, without_cancel_face())
+            return
+        if path == "/api/swirl-compare":
+            _json_response(self, 200, compare_faces())
+            return
+        if path == "/api/ns-unaugmented":
+            _json_response(self, 200, ns_face())
+            return
+        if path == "/api/ns-t3-archive":
+            _json_response(self, 200, t3_archive_face())
+            return
+        if path == "/api/honest-mistake":
+            _json_response(self, 200, honest_face())
+            return
+        if path == "/api/ns-regularity-realization":
+            _json_response(self, 200, ns_realization_face())
             return
         if path.startswith("/chatvault/"):
             rel = path[len("/chatvault/") :] or "index.html"
@@ -245,4 +276,7 @@ def serve_site(host: str = "127.0.0.1", port: int = DEFAULT_SITE_PORT) -> None:
     print(f"ChatVault app at http://{host}:{port}/chatvault/")
     print(f"Repo inbox JSON at http://{host}:{port}/chatvault/inbox/")
     print(f"Route C PDF at http://{host}:{port}/faces/05_route_c_conditional.pdf")
+    print(f"Swirl WITH cancel PDF at http://{host}:{port}/faces/01_phi_renormalization.pdf")
+    print(f"Swirl WITHOUT cancel PDF at http://{host}:{port}/faces/swirl_without_cancel.pdf")
+    print(f"Unaugmented NS PDF at http://{host}:{port}/faces/ns_unaugmented_classical.pdf")
     httpd.serve_forever()

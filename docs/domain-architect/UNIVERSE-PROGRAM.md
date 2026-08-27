@@ -17,7 +17,15 @@ conditional. They remain published.
 
 June 2026 posters stay on the desk as a dated archive. They are not the live
 face. Prize-claim language from earlier drafts is walked back on page 2 of
-the status note; the files themselves remain open.
+the status note; the files themselves remain open. The June packaging is
+recorded as [an honest mistake](HONEST-MISTAKE.md). Titles were restored
+26 August 2026. Do not re-stamp them.
+
+Swirl WITH/WITHOUT Φ-cancel and classical unaugmented 3D NS live as
+separate Domain Architect faces ([SWIRL.md](SWIRL.md),
+[NS-UNAUGMENTED.md](NS-UNAUGMENTED.md)). They are not this universe
+picture and not Clay proofs.
+
 
 ## What is open
 

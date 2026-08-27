@@ -35,6 +35,22 @@ from .route_c import (
     looks_like_route_c_operator,
     looks_like_superseded_june_route_c,
 )
+from .swirl import (
+    audit_notes as swirl_audit_notes,
+    looks_like_swirl_compare,
+    looks_like_swirl_with_cancel,
+    looks_like_swirl_without_cancel,
+)
+from .ns_unaugmented import (
+    NS_OPERATOR,
+    looks_like_ns_t3_archive,
+    looks_like_ns_unaugmented,
+)
+from .honest_mistake import looks_like_honest_mistake, HONEST_MISTAKE_PARAGRAPH
+from .ns_regularity_realization import (
+    looks_like_ns_regularity_realization,
+    experiment as ns_regularity_experiment,
+)
 from .universe import looks_like_universe_inquiry, universe_notes
 from .schema import (
     CANONICAL_SFE_STATUS,
@@ -165,7 +181,16 @@ def audit_expression(
     track_b = looks_like_locked_operator(expression)
     june = looks_like_superseded_june_route_c(expression)
     route_c = looks_like_route_c_operator(expression)
-    quarantine = None if route_c else quarantined_operator_hit(expression)
+    swirl_compare = looks_like_swirl_compare(expression)
+    swirl_without = looks_like_swirl_without_cancel(expression)
+    swirl_with = looks_like_swirl_with_cancel(expression)
+    ns_realization = looks_like_ns_regularity_realization(expression)
+    honest = looks_like_honest_mistake(expression)
+    ns_open = looks_like_ns_unaugmented(expression) and not ns_realization
+    ns_t3 = looks_like_ns_t3_archive(expression) and not ns_realization
+    quarantine = None if (
+        route_c or swirl_with or swirl_without or swirl_compare or ns_open or ns_realization or honest
+    ) else quarantined_operator_hit(expression)
     if quarantine:
         warnings.append(quarantine)
         notes.append(
@@ -243,10 +268,106 @@ def audit_expression(
             "the Harmonic Blueprint."
         )
 
+    if swirl_compare:
+        more_extra, more_notes = swirl_audit_notes("compare")
+        extra.extend(more_extra)
+        notes.extend(more_notes)
+    elif swirl_without:
+        more_extra, more_notes = swirl_audit_notes("without")
+        extra.extend(more_extra)
+        notes.extend(more_notes)
+    elif swirl_with:
+        more_extra, more_notes = swirl_audit_notes("with")
+        extra.extend(more_extra)
+        notes.extend(more_notes)
+    if ns_t3 and not swirl_with and not swirl_without and not swirl_compare:
+        extra.extend(
+            [
+                "June T³ NS one-pager SUPERSEDED as a proof graphic",
+                "20405526 prize packaging archive",
+            ]
+        )
+        notes.append(
+            "SUPERSEDED as a proof: June T³ one-pager / zenodo.20405526 prize packaging. "
+            "Title restored; prize language walked back (status note 10.5281/zenodo.22050978)."
+        )
+        notes.append(
+            "The classical unaugmented NS equation stays visible as OPEN, not as a withdrawn stamp. "
+            "Use /faces/ns_unaugmented_classical.pdf."
+        )
+    if ns_open and not swirl_with and not swirl_without and not swirl_compare:
+        extra.extend(
+            [
+                "classical unaugmented 3D Navier–Stokes",
+                "OPEN / not proved",
+            ]
+        )
+        notes.append(
+            f"Unaugmented classical NS: {NS_OPERATOR}. "
+            "PDF at /faces/ns_unaugmented_classical.pdf. Status: OPEN / not proved."
+        )
+        notes.append(
+            "No Q1, no fractional hyperdissipation, no Φ-system. "
+            "Live Phi 22050974 is a different (Q1-augmented swirl) book. "
+            "Live Ring 22050976 is conditional SND, not Clay NS."
+        )
+        notes.append(
+            "Clay Statement B is not claimed. RH is not claimed. Not ChatVault. "
+            "20405526 is archive packaging, not a live proof."
+        )
+
+    if ns_realization:
+        extra.extend(
+            [
+                "hypothesized NS regularity realization",
+                "not a theorem DA endorses",
+                "Clay NS not claimed",
+            ]
+        )
+        notes.append(
+            "HYPOTHESIZED realization only: unconditional global smoothness / "
+            "regularity of unaugmented classical 3D NS. Domain Architect does "
+            "not endorse this as a theorem."
+        )
+        notes.append(
+            "Clay Navier–Stokes is not claimed. RH is not claimed. Not ChatVault."
+        )
+        classified = ns_regularity_experiment()
+        notes.append(
+            "Finger classes: "
+            + "; ".join(
+                f"{row['id']}={row['classification']}" for row in classified["fingers"]
+            )
+        )
+        notes.append(
+            "None of the other desk fingers close from this assumption. "
+            "Next attempt: pick ONE missing lemma, not glue."
+        )
+
+    if honest:
+        extra.extend(
+            [
+                "honest mistake on June 2026 packaging",
+                "titles restored; prize language walked back",
+            ]
+        )
+        notes.append(HONEST_MISTAKE_PARAGRAPH)
+        notes.append(
+            "This is a careful note, not a retraction banner. "
+            "Do not re-stamp titles. RH is not claimed. Clay NS is not claimed. "
+            "Not ChatVault."
+        )
+
     universe = (
         (not track_b)
         and (not route_c)
         and (not june)
+        and (not swirl_compare)
+        and (not swirl_with)
+        and (not swirl_without)
+        and (not ns_open)
+        and (not ns_realization)
+        and (not honest)
         and looks_like_universe_inquiry(expression)
     )
     if universe:

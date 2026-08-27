@@ -59,6 +59,12 @@ class UniverseLooksLike(unittest.TestCase):
         self.assertFalse(looks_like_universe_inquiry("classical unaugmented Navier-Stokes on T3"))
         self.assertFalse(looks_like_universe_inquiry("Phi-renormalization for axisymmetric swirl"))
         self.assertFalse(looks_like_universe_inquiry("Navier-Stokes on T3"))
+        self.assertFalse(looks_like_universe_inquiry("Honest mistake on the June 2026 packaging."))
+        self.assertFalse(
+            looks_like_universe_inquiry(
+                "Hypothesized realization: unconditional global smoothness of classical NS"
+            )
+        )
         self.assertFalse(looks_like_universe_inquiry("x = y"))
 
 
@@ -127,9 +133,14 @@ class UniverseDoesNotDrain(unittest.TestCase):
 class UniverseHomepage(unittest.TestCase):
     def test_hero_is_a_live_desk_not_a_retraction(self) -> None:
         html = _HOME.read_text(encoding="utf-8")
-        lowered = html.lower()
+        hero = html.split('id="da-program"', 1)[1].split('id="da-honest-mistake"', 1)[0]
+        universe_card = html.split('id="da-universe-card"', 1)[1].split("</section>", 1)[0]
         for phrase in _FORBIDDEN_PUBLIC:
-            self.assertNotIn(phrase, lowered)
+            self.assertNotIn(phrase, hero.lower())
+            self.assertNotIn(phrase, universe_card.lower())
+        self.assertNotIn("tombstoned", html.lower())
+        self.assertNotIn("ai withdrew", html.lower())
+        self.assertNotIn("files were fake", html.lower())
         self.assertIn(
             "Domain Architect is inquiry. Paste an equation; see roles, collisions, and what remains open.",
             html,

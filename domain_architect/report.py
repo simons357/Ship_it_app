@@ -93,6 +93,31 @@ class AuditReport:
             for note in self.notes:
                 lines.append(note)
             lines.append("")
+        swirl_book = any(
+            item.startswith("swirl ") or item.startswith("classical unaugmented")
+            for item in self.extra_structures
+        )
+        if swirl_book and not universe_picture:
+            lines.append(
+                "Swirl / NS book (FRA classifier, not a proof; Clay NS not claimed):"
+            )
+            for note in self.notes:
+                lines.append(note)
+            lines.append("")
+        realization = "hypothesized NS regularity realization" in self.extra_structures
+        if realization and not universe_picture:
+            lines.append(
+                "Hypothesized NS regularity (FRA classifier, not a theorem; Clay NS not claimed):"
+            )
+            for note in self.notes:
+                lines.append(note)
+            lines.append("")
+        honest_note = "honest mistake on June 2026 packaging" in self.extra_structures
+        if honest_note and not universe_picture and not realization:
+            lines.append("Honest-mistake note (not a proof; not ChatVault):")
+            for note in self.notes:
+                lines.append(note)
+            lines.append("")
         lines.extend(
             [
                 f"Input: {self.input_expression}",

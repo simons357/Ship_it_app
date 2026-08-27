@@ -62,6 +62,10 @@ def _other_book(text: str) -> bool:
             return True
     if "navier" in lowered and "universe" not in lowered and "sfe" not in lowered:
         return True
+    if "honest mistake" in lowered:
+        return True
+    if "hypothesized realization" in lowered or "ns regularity realization" in lowered:
+        return True
     return False
 
 

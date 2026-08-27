@@ -437,6 +437,23 @@ async function runInquiry(drain) {
   renderRelatedInquiry(expression);
 }
 
+function loadFace(apiPath, { prompt } = {}) {
+  fetch(apiPath)
+    .then((res) => res.json())
+    .then((face) => {
+      const text =
+        prompt ||
+        face.operator ||
+        face.prompt ||
+        "";
+      if (inquiryEl) inquiryEl.value = text;
+      return runInquiry(false);
+    })
+    .catch((err) => {
+      outEl.textContent = `${err.message}\n\nStart the site: python3 -m domain_architect --site`;
+    });
+}
+
 document.getElementById("da-inquiry-form")?.addEventListener("submit", (ev) => {
   ev.preventDefault();
   runInquiry(false).catch((err) => {
@@ -449,14 +466,59 @@ document.getElementById("da-inquire-file")?.addEventListener("click", () => {
   });
 });
 document.getElementById("da-load-route-c")?.addEventListener("click", () => {
-  fetch("/api/route-c")
-    .then((res) => res.json())
+  loadFace("/api/route-c");
+});
+document.getElementById("da-load-swirl-with")?.addEventListener("click", () => {
+  loadFace("/api/swirl-with-cancel");
+});
+document.getElementById("da-load-swirl-without")?.addEventListener("click", () => {
+  loadFace("/api/swirl-without-cancel");
+});
+document.getElementById("da-compare-swirl")?.addEventListener("click", () => {
+  loadFace("/api/swirl-compare", {
+    prompt:
+      "axisymmetric Navier-Stokes with swirl: with vs without cancellation",
+  });
+});
+document.getElementById("da-load-ns-unaugmented")?.addEventListener("click", () => {
+  loadFace("/api/ns-unaugmented");
+});
+document.getElementById("da-inquire-swirl-with")?.addEventListener("click", () => {
+  loadFace("/api/swirl-with-cancel");
+});
+document.getElementById("da-inquire-swirl-without")?.addEventListener("click", () => {
+  loadFace("/api/swirl-without-cancel");
+});
+document.getElementById("da-inquire-swirl-compare")?.addEventListener("click", () => {
+  loadFace("/api/swirl-compare", {
+    prompt:
+      "axisymmetric Navier-Stokes with swirl: with vs without cancellation",
+  });
+});
+document.getElementById("da-inquire-ns")?.addEventListener("click", () => {
+  loadFace("/api/ns-unaugmented");
+});
+document.getElementById("da-inquire-honest-mistake")?.addEventListener("click", () => {
+  loadFace("/api/honest-mistake");
+});
+document.getElementById("da-run-ns-realization")?.addEventListener("click", () => {
+  const fallback =
+    "Hypothesized realization: unconditional global smoothness / regularity of classical 3D incompressible Navier–Stokes (unaugmented; no Q1, no hyperdissipation, no Φ-system). Run this hypothesized realization against the other desk fingers. Domain Architect does not endorse this as a theorem.";
+  const realizationOut = document.getElementById("da-ns-realization-out");
+  if (realizationOut) realizationOut.textContent = "Inquiring…";
+  fetch("/api/ns-regularity-realization")
+    .then((res) => (res.ok ? res.json() : { prompt: fallback }))
     .then((face) => {
-      if (inquiryEl) inquiryEl.value = face.operator || "";
+      if (inquiryEl) inquiryEl.value = face.prompt || fallback;
       return runInquiry(false);
     })
+    .then(() => {
+      if (realizationOut && outEl) realizationOut.textContent = outEl.textContent;
+    })
     .catch((err) => {
-      outEl.textContent = `${err.message}\n\nStart the site: python3 -m domain_architect --site`;
+      const msg = `${err.message}\n\nStart the site: python3 -m domain_architect --site`;
+      if (realizationOut) realizationOut.textContent = msg;
+      if (outEl) outEl.textContent = msg;
     });
 });
 document.getElementById("da-inquire-universe")?.addEventListener("click", () => {

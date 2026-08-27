@@ -28,7 +28,51 @@ export function inquiryPayload(text, { drain = false } = {}) {
 }
 
 export function inquiryNarrative(payload) {
-  return String(payload?.audit?.narrative || "");
+  const chunks = [];
+  const cmp = payload?.swirl_comparison;
+  if (cmp && (cmp.with_cancel || cmp.without_cancel)) {
+    chunks.push("Swirl comparison (Domain Architect; not a proof; Clay NS not claimed):");
+    if (cmp.with_cancel) {
+      chunks.push(
+        `WITH cancel: ${cmp.with_cancel.operator} [${cmp.with_cancel.status}] ${cmp.with_cancel.pdf_url || ""}`
+      );
+    }
+    if (cmp.without_cancel) {
+      chunks.push(
+        `WITHOUT cancel: ${cmp.without_cancel.operator} [${cmp.without_cancel.status}] ${cmp.without_cancel.pdf_url || ""}`
+      );
+    }
+    for (const line of cmp.difference || []) {
+      chunks.push(`  - ${line}`);
+    }
+    for (const gap of cmp.gaps || []) {
+      chunks.push(`Gap ${gap.id || ""}: UNFILLED. ${gap.statement || ""}`);
+      const nxt = gap.next_attempt || {};
+      if (nxt.lemma) chunks.push(`  Next attempt: ${nxt.lemma}`);
+    }
+    chunks.push("");
+  }
+  if (payload?.ns_unaugmented) {
+    chunks.push(
+      `Unaugmented NS face: ${payload.ns_unaugmented.operator} [${payload.ns_unaugmented.status}]. Clay NS is not claimed.`
+    );
+    chunks.push("");
+  }
+  if (payload?.honest_mistake?.paragraph) {
+    chunks.push(payload.honest_mistake.paragraph);
+    chunks.push("");
+  }
+  const realization = payload?.ns_regularity_realization;
+  if (realization?.fingers) {
+    chunks.push("Hypothesized NS regularity realization. Not endorsed. Not a theorem.");
+    chunks.push("Finger classifications:");
+    for (const row of realization.fingers) {
+      chunks.push(`  - ${row.id}: ${row.classification}`);
+    }
+    chunks.push("");
+  }
+  if (payload?.audit?.narrative) chunks.push(payload.audit.narrative);
+  return chunks.join("\n");
 }
 
 export async function postInquiry(text, { drain = false, fetchImpl = fetch } = {}) {

@@ -13,13 +13,16 @@ Approved plain-language explanation:
 
 Domain Architect is inquiry. ChatVault is search. They are not the same engine.
 The live desk cites Route C `10.5281/zenodo.22050963` (exploratory),
-Φ-renormalization `10.5281/zenodo.22050974` (Q1-augmented swirl; not Clay),
-Ring `10.5281/zenodo.22050976`, and Q6 `10.5281/zenodo.22050962`. June posters
-are a dated archive on that desk.
+Φ-renormalization `10.5281/zenodo.22050974` (Q1-augmented swirl WITH cancel; not Clay),
+the pre-cancel swirl 1/r^4 face (OPEN obstruction), classical unaugmented 3D NS
+(OPEN / not proved), Ring `10.5281/zenodo.22050976`, and Q6 `10.5281/zenodo.22050962`.
+June posters are a dated archive on that desk.
 
 | Document | Purpose |
 |---|---|
 | [Universe program](UNIVERSE-PROGRAM.md) | What is live, what is open, what DA is for, what is not claimed |
+| [Honest mistake](HONEST-MISTAKE.md) | June 2026 packaging walked back; titles restored; not a proof |
+| [NS regularity realization](NS-REGULARITY-REALIZATION.md) | Hypothesized unaugmented NS smoothness vs the other fingers. Not endorsed |
 | [00 — Audited baseline](00-AUDITED-BASELINE.md) | Frozen framework, terminology, evidence levels |
 | [01 — Equation inventory](01-EQUATION-INVENTORY.md) | Historical UHF / SFE / DHFA / gravity / prime-index formulas found in this repo family |
 | [02 — Conflict table](02-CONFLICT-TABLE.md) | Incompatible definitions, units, domains, and claims |
@@ -28,6 +31,8 @@ are a dated archive on that desk.
 | [05 — Rectification](05-RECTIFICATION.md) | Software implementation of the August 2026 corrective specification |
 | [RH Track B — Möbius–GCD](TRACK-B-MOBIUS.md) | Locked RH operator, exact identities, missing Mertens bridge. RH not claimed |
 | [Route C](ROUTE-C.md) | Exploratory conditional face in DA only. Not ChatVault. RH not claimed |
+| [Swirl WITH vs WITHOUT](SWIRL.md) | Live Phi 22050974 WITH cancel vs pre-cancel 1/r^4 axis term. Danchin 2007 names the hole. Q1 ≠ classical. Not Clay. Not ChatVault |
+| [Unaugmented NS](NS-UNAUGMENTED.md) | Classical 3D NS, OPEN / not proved. Not Clay. Not ChatVault |
 
 Machine-readable provenance (original expressions are immutable):
 
@@ -44,7 +49,13 @@ python -m domain_architect --site   # http://127.0.0.1:8765/ — ChatVault searc
 python -m domain_architect --track-b-mobius   # RH Track B Möbius–GCD attack; does not claim RH
 python -m domain_architect --route-c          # Route C face in DA; not ChatVault; does not claim RH
 python -m domain_architect --universe         # universe / SFE picture; unresolved; not a proof
-python -m unittest tests.test_domain_architect_acceptance tests.test_chatvault_bridge tests.test_track_b_mobius tests.test_route_c tests.test_universe tests.test_zenodo_public_record
+python -m domain_architect --swirl-with-cancel
+python -m domain_architect --swirl-without-cancel
+python -m domain_architect --swirl-compare
+python -m domain_architect --ns-unaugmented   # classical 3D NS; OPEN; not Clay
+python -m domain_architect --honest-mistake   # June packaging note; not a proof; not ChatVault
+python -m domain_architect --ns-regularity-realization  # hypothesized NS smoothness; not a theorem
+python -m unittest tests.test_domain_architect_acceptance tests.test_chatvault_bridge tests.test_track_b_mobius tests.test_route_c tests.test_fluids_faces tests.test_universe tests.test_zenodo_public_record tests.test_ns_regularity_realization
 ```
 
 Finished inquiries and audits can file into ChatVault as `origin_class: human_record`. Domain Architect does not prove theorems. ChatVault is the search box (**OS for your AI**). Domain Architect is the inquiry box.

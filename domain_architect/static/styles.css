@@ -86,6 +86,8 @@ body[data-dock="top-right"] main { padding-right: min(420px, 42vw); }
   text-transform: uppercase;
 }
 .program-hero p { color: var(--paper); line-height: 1.5; margin: 0 0 12px; }
+.honest-card p { color: var(--paper); line-height: 1.55; margin: 0 0 12px; }
+.realization-card .hint { margin-bottom: 8px; }
 .desk-list {
   margin: 0 0 14px;
   padding-left: 1.2rem;

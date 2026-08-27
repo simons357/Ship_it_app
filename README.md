@@ -47,10 +47,19 @@ python -m domain_architect --site
 python -m domain_architect --track-b-mobius
 python -m domain_architect --route-c          # DA only; not ChatVault; does not claim RH
 python -m domain_architect --universe         # universe / SFE picture; unresolved; not a proof
+python -m domain_architect --swirl-with-cancel
+python -m domain_architect --swirl-without-cancel
+python -m domain_architect --swirl-compare
+python -m domain_architect --ns-unaugmented   # OPEN; not Clay
+python -m domain_architect --honest-mistake   # June packaging note; not a proof
+python -m domain_architect --ns-regularity-realization  # hypothesized; not a theorem
 # Search box (ChatVault) + Inquiry box (DA FRA): http://127.0.0.1:8765/
 # Route C PDF:                                   http://127.0.0.1:8765/faces/05_route_c_conditional.pdf
+# Swirl WITH cancel:                             http://127.0.0.1:8765/faces/01_phi_renormalization.pdf
+# Swirl WITHOUT cancel:                          http://127.0.0.1:8765/faces/swirl_without_cancel.pdf
+# Unaugmented NS:                                http://127.0.0.1:8765/faces/ns_unaugmented_classical.pdf
 # ChatVault app (same two boxes):                  http://127.0.0.1:8765/chatvault/
-python3 -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_chatvault_bridge tests.test_chatvault_ingest tests.test_track_b_mobius tests.test_route_c tests.test_universe tests.test_zenodo_public_record
+python3 -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_chatvault_bridge tests.test_chatvault_ingest tests.test_track_b_mobius tests.test_route_c tests.test_fluids_faces tests.test_universe tests.test_zenodo_public_record tests.test_ns_regularity_realization
 ```
 
 ## Harmonic Blueprint Experiment 01

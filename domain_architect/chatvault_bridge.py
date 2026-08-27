@@ -98,11 +98,33 @@ def drain_audit(expression: str) -> dict[str, Any]:
 
 def inquire(text: str, *, drain: bool = False) -> dict[str, Any]:
     """FRA inquiry for the DA/ChatVault inquiry box. Not a search ranker."""
+    from .honest_mistake import (
+        face as honest_face,
+        looks_like_honest_mistake,
+    )
+    from .ns_regularity_realization import (
+        experiment as ns_realization_experiment,
+        looks_like_ns_regularity_realization,
+    )
+    from .ns_unaugmented import (
+        face as ns_face,
+        looks_like_ns_t3_archive,
+        looks_like_ns_unaugmented,
+        t3_archive_face,
+    )
     from .route_c import (
         face as route_c_face,
         looks_like_route_c_operator,
         looks_like_superseded_june_route_c,
         superseded_june_face,
+    )
+    from .swirl import (
+        compare_faces,
+        looks_like_swirl_compare,
+        looks_like_swirl_with_cancel,
+        looks_like_swirl_without_cancel,
+        with_cancel_face,
+        without_cancel_face,
     )
     from .universe import (
         face as universe_face,
@@ -115,12 +137,48 @@ def inquire(text: str, *, drain: bool = False) -> dict[str, Any]:
     report = audit_expression(inquiry)
     route_c = looks_like_route_c_operator(inquiry)
     june = looks_like_superseded_june_route_c(inquiry)
-    universe = (not route_c) and (not june) and looks_like_universe_inquiry(inquiry)
+    swirl_compare = looks_like_swirl_compare(inquiry)
+    swirl_without = looks_like_swirl_without_cancel(inquiry)
+    swirl_with = looks_like_swirl_with_cancel(inquiry)
+    ns_realization = looks_like_ns_regularity_realization(inquiry)
+    honest = looks_like_honest_mistake(inquiry)
+    ns_open = looks_like_ns_unaugmented(inquiry) and not ns_realization
+    ns_t3 = looks_like_ns_t3_archive(inquiry) and not ns_realization
+    universe = (
+        (not route_c)
+        and (not june)
+        and (not swirl_compare)
+        and (not swirl_with)
+        and (not swirl_without)
+        and (not ns_open)
+        and (not ns_realization)
+        and (not honest)
+        and looks_like_universe_inquiry(inquiry)
+    )
     drain_refused = None
     if drain and (route_c or june):
         drain = False
         drain_refused = (
             "Route C stays in Domain Architect. Not filed into ChatVault."
+        )
+    if drain and (swirl_compare or swirl_with or swirl_without):
+        drain = False
+        drain_refused = "Swirl faces stay in Domain Architect. Not filed into ChatVault."
+    if drain and (ns_open or ns_t3):
+        drain = False
+        drain_refused = (
+            "Unaugmented NS stays in Domain Architect. Not filed into ChatVault."
+        )
+    if drain and ns_realization:
+        drain = False
+        drain_refused = (
+            "NS regularity realization stays in Domain Architect. "
+            "Hypothesized, not a theorem. Not filed into ChatVault."
+        )
+    if drain and honest:
+        drain = False
+        drain_refused = (
+            "The honest-mistake note stays in Domain Architect. Not filed into ChatVault."
         )
     if drain and universe:
         drain = False
@@ -141,6 +199,31 @@ def inquire(text: str, *, drain: bool = False) -> dict[str, Any]:
         payload["chatvault"] = False
     if june:
         payload["route_c_superseded"] = superseded_june_face()
+        payload["chatvault"] = False
+    if swirl_compare:
+        payload["swirl_with_cancel"] = with_cancel_face()
+        payload["swirl_without_cancel"] = without_cancel_face()
+        payload["swirl_comparison"] = compare_faces()
+        payload["chatvault"] = False
+    elif swirl_without:
+        payload["swirl_without_cancel"] = without_cancel_face()
+        payload["swirl_comparison"] = compare_faces()
+        payload["chatvault"] = False
+    elif swirl_with:
+        payload["swirl_with_cancel"] = with_cancel_face()
+        payload["swirl_comparison"] = compare_faces()
+        payload["chatvault"] = False
+    if ns_open:
+        payload["ns_unaugmented"] = ns_face()
+        payload["chatvault"] = False
+    if ns_t3:
+        payload["ns_t3_archive"] = t3_archive_face()
+        payload["chatvault"] = False
+    if ns_realization:
+        payload["ns_regularity_realization"] = ns_realization_experiment()
+        payload["chatvault"] = False
+    if honest:
+        payload["honest_mistake"] = honest_face()
         payload["chatvault"] = False
     if universe:
         payload["universe"] = universe_face()
