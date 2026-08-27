@@ -1,0 +1,154 @@
+{
+  "ok": true,
+  "lane": "inquiry",
+  "engine": "domain_architect",
+  "not_engine": "chatvault",
+  "book": "Hypothesized unconditional closed NS (unaugmented)",
+  "title": "Hypothesized unaugmented NS regularity — finger classifications",
+  "prompt": "Hypothesized realization: unconditional global smoothness / regularity of classical 3D incompressible Navier–Stokes (unaugmented; no Q1, no hyperdissipation, no Φ-system). Run this hypothesized realization against the other desk fingers. Domain Architect does not endorse this as a theorem.",
+  "operator": "∂_t u + (u·∇)u = −∇p + νΔu,  ∇·u = 0",
+  "status": "hypothesized_realization_not_endorsed",
+  "proof": false,
+  "endorsed": false,
+  "theorem": false,
+  "rh_claimed": false,
+  "clay_ns_claimed": false,
+  "claims_rh": false,
+  "claims_ns": false,
+  "chatvault": false,
+  "closed_fingers": 0,
+  "allowed_classes": [
+    "obstruction",
+    "open",
+    "does_not_follow",
+    "independent"
+  ],
+  "classifications": {
+    "swirl_with_cancel": "independent",
+    "swirl_without_cancel": "open",
+    "unaugmented_classical_ns": "open",
+    "snd": "does_not_follow",
+    "ring_lemma": "does_not_follow",
+    "gnc_goldbach": "does_not_follow",
+    "bridge": "does_not_follow",
+    "inverse_gcd_floor": "does_not_follow",
+    "route_c": "open",
+    "track_b_mobius": "obstruction",
+    "sfe_universe": "open",
+    "q1_vs_classical": "independent"
+  },
+  "fingers": [
+    {
+      "id": "swirl_with_cancel",
+      "name": "Swirl WITH 1/r^4 cancel (Φ-renorm, Q1-augmented)",
+      "classification": "independent",
+      "reason": "r^{-4}∂z(Γ²)=∂z(Φ²) is an algebraic identity on the Q1-augmented Φ-system (live 10.5281/zenodo.22050974). Classical unaugmented regularity does not produce Q1 or this identity, and the identity does not produce classical regularity.",
+      "closed_by_this_experiment": false,
+      "doi": "10.5281/zenodo.22050974"
+    },
+    {
+      "id": "swirl_without_cancel",
+      "name": "Swirl WITHOUT cancel (axisymmetric-with-swirl still carrying 1/r^4)",
+      "classification": "open",
+      "reason": "The 1/r^4 centrifugal axis term is still in the unaugmented swirl equations. Domain Architect does not endorse the hypothesized realization, so this finger stays open. The Φ-cancel identity still does not follow.",
+      "closed_by_this_experiment": false,
+      "if_hypothesis_were_a_theorem": "Regularity of this subclass would follow from full 3D classical NS regularity. The algebraic 1/r^4 cancel would still not follow."
+    },
+    {
+      "id": "unaugmented_classical_ns",
+      "name": "Unaugmented classical 3D NS",
+      "classification": "open",
+      "reason": "This is the object the experiment assumes closed. The live problem remains open. Domain Architect does not endorse the assumption. Clay Statement A/B are not claimed.",
+      "closed_by_this_experiment": false,
+      "if_hypothesis_were_a_theorem": "Assumed closed inside this experiment only."
+    },
+    {
+      "id": "snd",
+      "name": "SND (spectral non-dispersal)",
+      "classification": "does_not_follow",
+      "reason": "SND is a separate hypothesis. Global smoothness of classical NS does not force the SND criterion, and DA does not treat SND as an identity with NS regularity.",
+      "closed_by_this_experiment": false
+    },
+    {
+      "id": "ring_lemma",
+      "name": "Ring Lemma (conditional; SND still hypothesis)",
+      "classification": "does_not_follow",
+      "reason": "Live Ring 10.5281/zenodo.22050976 is conditional on SND. NS regularity does not discharge SND, so the Ring Lemma stays conditional.",
+      "closed_by_this_experiment": false,
+      "doi": "10.5281/zenodo.22050976"
+    },
+    {
+      "id": "gnc_goldbach",
+      "name": "GNC / Goldbach",
+      "classification": "does_not_follow",
+      "reason": "Goldbach / GNC is number-theoretic. Smoothness of a fluid PDE does not give even Goldbach.",
+      "closed_by_this_experiment": false
+    },
+    {
+      "id": "bridge",
+      "name": "Bridge (SND ≡ GNC ≡ Bridge packaging)",
+      "classification": "does_not_follow",
+      "reason": "The June triple lock SND ≡ GNC ≡ Bridge does not hold. Assuming NS smoothness does not restore that glue.",
+      "closed_by_this_experiment": false
+    },
+    {
+      "id": "inverse_gcd_floor",
+      "name": "inverse-GCD floor λ_min > −1/2",
+      "classification": "does_not_follow",
+      "reason": "A spectral floor on an arithmetic kernel is a different book. NS smoothness does not force λ_min(Q_N) > −1/2. Live Q6 10.5281/zenodo.22050962 is a restricted Rayleigh bound, not that floor.",
+      "closed_by_this_experiment": false,
+      "doi": "10.5281/zenodo.22050962"
+    },
+    {
+      "id": "route_c",
+      "name": "Route C operator 1/(gcd√ij), Gaps A/B",
+      "classification": "open",
+      "reason": "Live operator is Q_N[i,j]=1/(gcd(i,j)·√(ij)), not June 1/gcd. Gaps A and B remain open. NS regularity does not close them. RH is not claimed.",
+      "closed_by_this_experiment": false,
+      "doi": "10.5281/zenodo.22050963"
+    },
+    {
+      "id": "track_b_mobius",
+      "name": "Track B μ(gcd)/gcd (Mertens bridge missing)",
+      "classification": "obstruction",
+      "reason": "Locked operator Q_N=μ(gcd)/gcd. First-row Hölder is O(N); the Littlewood–Mertens bridge is missing. Do not glue swirl, SND, or GNC into this book. NS regularity does not supply the bridge.",
+      "closed_by_this_experiment": false
+    },
+    {
+      "id": "sfe_universe",
+      "name": "SFE / universe program",
+      "classification": "open",
+      "reason": "Canonical SFE and the unified picture stay unresolved. NS regularity is not a theory of everything and does not name a canonical Simons Field Equation.",
+      "closed_by_this_experiment": false
+    },
+    {
+      "id": "q1_vs_classical",
+      "name": "Q1 vs classical",
+      "classification": "independent",
+      "reason": "Q1 (and fractional hyperdissipation / the Φ-system) is a different PDE from unaugmented classical NS. The hypothesized realization is about the classical equation only.",
+      "closed_by_this_experiment": false
+    }
+  ],
+  "next_attempt": [
+    "Φ-cancel is an algebraic identity on an augmented swirl system; it does not imply unaugmented Clay NS.",
+    "Q1 ≠ classical.",
+    "Track B is missing a Mertens bridge; do not glue swirl / SND / GNC into Track B.",
+    "Route C Gaps A/B still open; the live operator is 1/(gcd√ij), not the June 1/gcd poster.",
+    "SND remains a hypothesis; the Ring Lemma is conditional on it.",
+    "Assuming smoothness of NS does not force zeros on the critical line, Goldbach, or a spectral floor.",
+    "Keep fingers separate. Next attempt should pick ONE missing lemma (Mertens bridge OR Gap A/B OR classical Beale–Kato–Majda / unaugmented enstrophy), not glue them."
+  ],
+  "live_cites": [
+    "10.5281/zenodo.22050963",
+    "10.5281/zenodo.22050974",
+    "10.5281/zenodo.22050962",
+    "10.5281/zenodo.22050976",
+    "10.5281/zenodo.22050978"
+  ],
+  "notes": [
+    "This is a hypothesized realization, not a theorem Domain Architect endorses.",
+    "Clay Navier–Stokes is not claimed. RH is not claimed.",
+    "Domain Architect is a local FRA classifier, not a proof engine.",
+    "None of the other desk fingers close from this assumption."
+  ]
+}

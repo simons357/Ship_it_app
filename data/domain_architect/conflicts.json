@@ -102,5 +102,77 @@
     "evidence": "No justified canonical formula exists to compare against SFE-H001.",
     "status": "unresolved",
     "notes": "Canonical SFE status remains unresolved."
+  },
+  {
+    "left_id": "ARITH-TB001",
+    "right_id": "ARITH-TB002",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "Exact identities relate M(N) to Q_N and μ_N, but no noncircular estimate upgrades O(N) control to O_ε(N^{1/2+ε}).",
+    "status": "unresolved",
+    "notes": "The missing object is the analytic bridge, not the operator definition. RH is not claimed."
+  },
+  {
+    "left_id": "ARITH-TB001",
+    "right_id": "ARITH-RC001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Track B is μ(gcd)/gcd. Route C is 1/(gcd √ij). Different spectra and proof obligations.",
+    "status": "recorded",
+    "notes": "Keep Route C exploratory in DA. Do not file it into ChatVault. Do not import −1/(2π) into Track B."
+  },
+  {
+    "left_id": "ARITH-RC000",
+    "right_id": "ARITH-RC001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "June poster uses Q_N=1/gcd and RH ⇔ λ_min/log N → -1/(2π). August face uses 1/(gcd √ij). Different operators.",
+    "status": "recorded",
+    "notes": "June poster is SUPERSEDED. Keep the August PDF as the live DA face. Not ChatVault. RH is not claimed."
+  },
+  {
+    "left_id": "ARITH-TB001",
+    "right_id": "ARITH-RC000",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Track B is μ(gcd)/gcd. June Route C poster is inverse-GCD 1/gcd.",
+    "status": "recorded",
+    "notes": "Quarantine inverse-GCD for Track B. Do not revive the June poster as RH Track B."
+  },
+  {
+    "left_id": "NS-B001",
+    "right_id": "NS-A001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Classical unaugmented NS has no Q1 term. NS-A001 adds hyperdissipation / fractional dissipation.",
+    "status": "recorded",
+    "notes": "Keep both visible. Q1 results do not close NS-B001. Clay is not claimed. Not ChatVault."
+  },
+  {
+    "left_id": "NS-PHI000",
+    "right_id": "NS-PHI001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "WITHOUT cancel keeps (1/r^4)∂z(Γ²). WITH cancel uses r^{-4}∂z(Γ²)=∂z(Φ²) on the Q1-augmented / Φ system.",
+    "status": "recorded",
+    "notes": "Same swirl class, different operators. WITH does not solve WITHOUT. Danchin 2007 names the 1/r^4 hole; naming it does not cancel it (GAP-SWIRL-AXIS UNFILLED). Clay is not claimed. Not ChatVault."
+  },
+  {
+    "left_id": "NS-B001",
+    "right_id": "NS-PHI001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Classical 3D NS versus axisymmetric-with-swirl Φ-identity on a Q1-augmented system. Different PDEs.",
+    "status": "recorded",
+    "notes": "Live Phi is not unaugmented NS. LPS Thm 3.2 is for the Q1-augmented PDE. Q1 ≠ classical (GAP-Q1-CLASSICAL UNFILLED). Do not treat 22050974 as Clay Statement B."
+  },
+  {
+    "left_id": "NS-T3001",
+    "right_id": "NS-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "June T³ one-pager / 20405526 packaged Clay Statement B as closed. NS-B001 is the same PDE kept OPEN.",
+    "status": "recorded",
+    "notes": "SUPERSEDED packaging. Keep the equation visible as OPEN, not as a withdrawn stamp. Not ChatVault."
+  },
+  {
+    "left_id": "ARITH-TB001",
+    "right_id": "NS-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Name collision: RH Track B is Möbius–GCD. Inventory NS-B is classical vorticity / unaugmented NS.",
+    "status": "recorded",
+    "notes": "Different books. RH is not claimed. Clay NS is not claimed."
   }
 ]

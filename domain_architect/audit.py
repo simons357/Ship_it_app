@@ -23,6 +23,35 @@ from .identifiability import analyze_product_abx
 from .parser import NodeKind, parse_expression
 from .recovery import classify_recovery
 from .report import AuditReport, ConfidenceTaxonomy
+from .track_b_mobius import (
+    LOCKED_OPERATOR,
+    looks_like_locked_operator,
+    quarantined_operator_hit,
+    verify_identities,
+)
+from .route_c import (
+    JUNE_OPERATOR,
+    ROUTE_C_OPERATOR,
+    looks_like_route_c_operator,
+    looks_like_superseded_june_route_c,
+)
+from .swirl import (
+    audit_notes as swirl_audit_notes,
+    looks_like_swirl_compare,
+    looks_like_swirl_with_cancel,
+    looks_like_swirl_without_cancel,
+)
+from .ns_unaugmented import (
+    NS_OPERATOR,
+    looks_like_ns_t3_archive,
+    looks_like_ns_unaugmented,
+)
+from .honest_mistake import looks_like_honest_mistake, HONEST_MISTAKE_PARAGRAPH
+from .ns_regularity_realization import (
+    looks_like_ns_regularity_realization,
+    experiment as ns_regularity_experiment,
+)
+from .universe import looks_like_universe_inquiry, universe_notes
 from .schema import (
     CANONICAL_SFE_STATUS,
     EvidenceLevel,
@@ -149,7 +178,209 @@ def audit_expression(
         }
         evidence = max(evidence, EvidenceLevel.MATHEMATICAL_COMPATIBILITY)
 
-    if _looks_like_einstein(expression):
+    track_b = looks_like_locked_operator(expression)
+    june = looks_like_superseded_june_route_c(expression)
+    route_c = looks_like_route_c_operator(expression)
+    swirl_compare = looks_like_swirl_compare(expression)
+    swirl_without = looks_like_swirl_without_cancel(expression)
+    swirl_with = looks_like_swirl_with_cancel(expression)
+    ns_realization = looks_like_ns_regularity_realization(expression)
+    honest = looks_like_honest_mistake(expression)
+    ns_open = looks_like_ns_unaugmented(expression) and not ns_realization
+    ns_t3 = looks_like_ns_t3_archive(expression) and not ns_realization
+    quarantine = None if (
+        route_c or swirl_with or swirl_without or swirl_compare or ns_open or ns_realization or honest
+    ) else quarantined_operator_hit(expression)
+    if quarantine:
+        warnings.append(quarantine)
+        notes.append(
+            "RH Track B is locked to "
+            f"{LOCKED_OPERATOR}. Historical inverse-GCD, positive-GCD, "
+            "Route C −1/(2π), and the −1/2 moat are quarantined."
+        )
+    if june:
+        extra.extend(
+            [
+                "June 2026 Route C poster SUPERSEDED",
+                "inverse-GCD 1/gcd is not the live Route C operator",
+                "RH_Riemann_final.tex / zenodo.20518388 archive",
+            ]
+        )
+        notes.append(
+            f"SUPERSEDED: June 2026 inverse-GCD poster {JUNE_OPERATOR}. "
+            "Same family as RH_Riemann_final.tex. DOI 10.5281/zenodo.20518388 is archive."
+        )
+        notes.append(
+            f"Use the August face instead: {ROUTE_C_OPERATOR} "
+            "at /faces/05_route_c_conditional.pdf (DOI 10.5281/zenodo.22050963)."
+        )
+        notes.append(
+            "Withdrawn on this operator: RH ⇔ λ_min/log N → -1/(2π), "
+            "Ring Lemma / V_N* locked rows, and κ* = 6/π² as an RH floor. "
+            "RH is not claimed. Not ChatVault."
+        )
+    if route_c:
+        extra.extend(
+            [
+                "Route C exploratory face (not RH Track B)",
+                "normalized inverse-GCD 1/(gcd √ij)",
+                "Gap A and Gap B open",
+            ]
+        )
+        notes.append(
+            f"Route C operator locked: {ROUTE_C_OPERATOR}. "
+            "August 2026 conditional preprint. PDF at /faces/05_route_c_conditional.pdf."
+        )
+        notes.append(
+            "Gaps A and B remain open. Numerics are not theorems. "
+            "RH is not claimed. This face is not ChatVault."
+        )
+        notes.append(
+            "Do not import this operator or the −1/(2π) limit into RH Track B."
+        )
+    if track_b:
+        extra.extend(
+            [
+                "RH Track B Möbius–GCD (not NS vorticity Track B)",
+                "cubefree rank-one channels h(d) u_d u_d^T",
+                "Littlewood–Mertens realization (not assumed)",
+            ]
+        )
+        check = verify_identities(12)
+        if check.ok:
+            math_status = MathValidationStatus.PASSED
+            evidence = max(evidence, EvidenceLevel.MATHEMATICAL_COMPATIBILITY)
+            notes.append(
+                f"Finite identities hold at N={check.n}: cubefree decomposition, "
+                "first-row M(N)=e_1^T Q μ, and the quadratic split. These are "
+                "algebraic. They are not RH."
+            )
+        else:
+            math_status = MathValidationStatus.FAILED
+            warnings.append(f"RH Track B identity check failed at N={check.n}.")
+        notes.append(
+            "Missing bridge: Track B operator control does not yet imply "
+            "|M(N)|=O_ε(N^{1/2+ε}). First-row Hölder and the Q-form dual are "
+            "obstructions. RH is not claimed."
+        )
+        notes.append(
+            "This book is not classical NS Track B, SND, GNC, Goldbach, or "
+            "the Harmonic Blueprint."
+        )
+
+    if swirl_compare:
+        more_extra, more_notes = swirl_audit_notes("compare")
+        extra.extend(more_extra)
+        notes.extend(more_notes)
+    elif swirl_without:
+        more_extra, more_notes = swirl_audit_notes("without")
+        extra.extend(more_extra)
+        notes.extend(more_notes)
+    elif swirl_with:
+        more_extra, more_notes = swirl_audit_notes("with")
+        extra.extend(more_extra)
+        notes.extend(more_notes)
+    if ns_t3 and not swirl_with and not swirl_without and not swirl_compare:
+        extra.extend(
+            [
+                "June T³ NS one-pager SUPERSEDED as a proof graphic",
+                "20405526 prize packaging archive",
+            ]
+        )
+        notes.append(
+            "SUPERSEDED as a proof: June T³ one-pager / zenodo.20405526 prize packaging. "
+            "Title restored; prize language walked back (status note 10.5281/zenodo.22050978)."
+        )
+        notes.append(
+            "The classical unaugmented NS equation stays visible as OPEN, not as a withdrawn stamp. "
+            "Use /faces/ns_unaugmented_classical.pdf."
+        )
+    if ns_open and not swirl_with and not swirl_without and not swirl_compare:
+        extra.extend(
+            [
+                "classical unaugmented 3D Navier–Stokes",
+                "OPEN / not proved",
+            ]
+        )
+        notes.append(
+            f"Unaugmented classical NS: {NS_OPERATOR}. "
+            "PDF at /faces/ns_unaugmented_classical.pdf. Status: OPEN / not proved."
+        )
+        notes.append(
+            "No Q1, no fractional hyperdissipation, no Φ-system. "
+            "Live Phi 22050974 is a different (Q1-augmented swirl) book. "
+            "Live Ring 22050976 is conditional SND, not Clay NS."
+        )
+        notes.append(
+            "Clay Statement B is not claimed. RH is not claimed. Not ChatVault. "
+            "20405526 is archive packaging, not a live proof."
+        )
+
+    if ns_realization:
+        extra.extend(
+            [
+                "hypothesized NS regularity realization",
+                "not a theorem DA endorses",
+                "Clay NS not claimed",
+            ]
+        )
+        notes.append(
+            "HYPOTHESIZED realization only: unconditional global smoothness / "
+            "regularity of unaugmented classical 3D NS. Domain Architect does "
+            "not endorse this as a theorem."
+        )
+        notes.append(
+            "Clay Navier–Stokes is not claimed. RH is not claimed. Not ChatVault."
+        )
+        classified = ns_regularity_experiment()
+        notes.append(
+            "Finger classes: "
+            + "; ".join(
+                f"{row['id']}={row['classification']}" for row in classified["fingers"]
+            )
+        )
+        notes.append(
+            "None of the other desk fingers close from this assumption. "
+            "Next attempt: pick ONE missing lemma, not glue."
+        )
+
+    if honest:
+        extra.extend(
+            [
+                "honest mistake on June 2026 packaging",
+                "titles restored; prize language walked back",
+            ]
+        )
+        notes.append(HONEST_MISTAKE_PARAGRAPH)
+        notes.append(
+            "This is a careful note, not a retraction banner. "
+            "Do not re-stamp titles. RH is not claimed. Clay NS is not claimed. "
+            "Not ChatVault."
+        )
+
+    universe = (
+        (not track_b)
+        and (not route_c)
+        and (not june)
+        and (not swirl_compare)
+        and (not swirl_with)
+        and (not swirl_without)
+        and (not ns_open)
+        and (not ns_realization)
+        and (not honest)
+        and looks_like_universe_inquiry(expression)
+    )
+    if universe:
+        extra.extend(
+            [
+                "Universe / SFE picture",
+                "canonical SFE unresolved",
+                "exploratory desk, not a proof",
+            ]
+        )
+        notes.extend(universe_notes())
+
+    if (not track_b) and _looks_like_einstein(expression):
         extra.extend(
             [
                 "spacetime geometry",

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Domain Architect — FRA lab</title>
+    <meta name="description" content="Domain Architect is inquiry: paste an equation; see roles, collisions, and what remains open. ChatVault is search. Not the same engine. Universe / SFE picture unresolved." />
+    <meta name="theme-color" content="#141816" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Domain Architect" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; worker-src 'self'; base-uri 'none'; object-src 'none'" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="apple-touch-icon" href="/chatvault/assets/icon-192.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-dock="top-right">
+    <div class="shell">
+      <header class="titlebar">
+        <img class="mark" src="./favicon.svg" alt="" width="52" height="52" />
+        <div>
+          <h1>Domain Architect</h1>
+          <p class="ops">FUNCTIONAL ROLE ANALYSIS · LIVE DESK · SFE UNRESOLVED</p>
+        </div>
+        <a class="ghost open-cv" href="/chatvault/">Open ChatVault</a>
+      </header>
+
+      <aside id="cv-dock" class="cv-dock" aria-label="ChatVault search">
+        <div class="cv-brand">
+          <a class="cv-logo" href="/chatvault/" title="Open ChatVault">
+            <img src="/chatvault/assets/chatvault-mark-dark.jpg" alt="ChatVault" width="72" height="72" />
+          </a>
+          <div>
+            <p class="cv-kicker">OS for your AI</p>
+            <p class="cv-name">ChatVault</p>
+            <p class="cv-sub">The search engine for this site. Local vault — not Domain Architect’s brain.</p>
+          </div>
+        </div>
+        <form id="cv-search-form" class="cv-search">
+          <label class="sr-only" for="cv-q">Search ChatVault</label>
+          <input id="cv-q" name="q" type="search" placeholder='euler identity · origin:ai · origin:human · claim:blow-up' autocomplete="off" />
+          <div class="cv-actions">
+            <button type="submit" id="cv-go">Search vault</button>
+            <button type="button" class="ghost" id="cv-open">Open app</button>
+            <button type="button" class="ghost" id="cv-web" title="Vault hits here, then web hunts in new tabs. Not ChatVault retrieval.">Deep dive</button>
+            <button type="button" class="ghost" id="cv-file-search" title="File the query as a human record. Not a conversation dump.">File this search</button>
+            <button type="button" class="ghost" id="cv-install" hidden>Install DA</button>
+          </div>
+        </form>
+        <div class="cv-choices">
+          <label>Dock
+            <select id="cv-dock-pos">
+              <option value="top-right">Top right</option>
+              <option value="bottom">Bottom</option>
+            </select>
+          </label>
+          <label>On search
+            <select id="cv-mode">
+              <option value="here">Show hits here</option>
+              <option value="open">Open ChatVault</option>
+            </select>
+          </label>
+        </div>
+        <div id="cv-hits" class="cv-hits" hidden></div>
+        <div id="cv-web-dive" class="cv-web-dive" hidden></div>
+        <div id="cv-drop" class="cv-drop cv-capture">
+          <p class="cv-capture-kicker">File into ChatVault</p>
+          <p class="hint">Paste a snippet, URL, letter, or note. Does not have to be a whole conversation. Drop audio, video, PDF, pictures, or text — wav/mp4/pdf index as human-record stubs in the browser; CLI copies binaries into the repo inbox.</p>
+          <textarea id="cv-snip" rows="3" placeholder="Paste a snippet, URL, letter, or note. Does not have to be a whole conversation."></textarea>
+          <div class="cv-capture-meta">
+            <fieldset class="cv-origin">
+              <legend class="sr-only">Origin</legend>
+              <label><input type="radio" name="cv-origin" value="human_record" checked /> Real / human</label>
+              <label><input type="radio" name="cv-origin" value="ai_generated" /> AI</label>
+            </fieldset>
+            <label class="cv-type-label">Type
+              <select id="cv-source-type">
+                <option value="other">Snippet / other</option>
+                <option value="letter">Letter</option>
+                <option value="paper">Paper</option>
+                <option value="conversation">Conversation</option>
+              </select>
+            </label>
+          </div>
+          <div class="cv-actions">
+            <button type="button" id="cv-ingest">Index snippet</button>
+            <label class="ghost file-btn">Choose files<input id="cv-files" type="file" multiple accept="audio/*,video/*,image/*,.pdf,.txt,.md,.json,.wav,.mp3,.mp4,.mov" /></label>
+            <button type="button" class="ghost" id="cv-inbox">Load inbox from repo</button>
+            <button type="button" class="ghost" id="cv-send-repo">Send last to repo</button>
+          </div>
+          <p id="cv-status" class="hint"></p>
+        </div>
+      </aside>
+
+      <main>
+        <section class="card program-hero" id="da-program">
+          <p class="hero-kicker">Program</p>
+          <h2>A live desk, not a closed theory</h2>
+          <p>Domain Architect is inquiry. Paste an equation; see roles, collisions, and what remains open. It does not prove theorems.</p>
+          <p>ChatVault is search. Same origin, not the same engine.</p>
+          <p>Live desk — exploratory records, still published:</p>
+          <ul class="desk-list">
+            <li>Route C — <a href="https://doi.org/10.5281/zenodo.22050963">10.5281/zenodo.22050963</a> — exploratory; RH not claimed.</li>
+            <li>Φ-renormalization — <a href="https://doi.org/10.5281/zenodo.22050974">10.5281/zenodo.22050974</a> — Q1-augmented swirl; not Clay. DA: <a href="/faces/01_phi_renormalization.pdf">01_phi_renormalization.pdf</a></li>
+            <li>Swirl WITHOUT cancel — 1/r<sup>4</sup> axis term still present; OPEN obstruction. DA: <a href="/faces/swirl_without_cancel.pdf">swirl_without_cancel.pdf</a></li>
+            <li>Classical unaugmented 3D NS — OPEN / not proved. DA: <a href="/faces/ns_unaugmented_classical.pdf">ns_unaugmented_classical.pdf</a>. 20405526 is archive packaging.</li>
+            <li>Ring lemma — <a href="https://doi.org/10.5281/zenodo.22050976">10.5281/zenodo.22050976</a> — conditional; not a theorem.</li>
+            <li>Q6 inverse-GCD note — <a href="https://doi.org/10.5281/zenodo.22050962">10.5281/zenodo.22050962</a> — restricted Rayleigh bound; not RH.</li>
+          </ul>
+          <p>The universe / SFE / unified picture is unresolved. That question is being worked at this desk.</p>
+          <p>There is no theory of everything, and no “one Hamiltonian, three prizes.”</p>
+          <p>June 2026 posters remain on the desk as a dated archive. They are not the live face.</p>
+        </section>
+        <section class="card honest-card" id="da-honest-mistake">
+          <p class="hero-kicker">A note</p>
+          <h2>An honest mistake</h2>
+          <p>June 2026 treated a very complex problem as closed: unconditional classical 3D incompressible Navier–Stokes smoothness/regularity packaged as prize-ready, often glued to RH / Goldbach via SND ≡ GNC ≡ Bridge / inverse-GCD floor. That packaging does not hold. Walking back prize language was necessary. Stamping every Zenodo title with [Claim withdrawn] was a second mistake; titles were restored 26 Aug 2026. Public cite stack stays live: Route C <a href="https://doi.org/10.5281/zenodo.22050963">10.5281/zenodo.22050963</a>, Φ-renorm <a href="https://doi.org/10.5281/zenodo.22050974">10.5281/zenodo.22050974</a>, inverse-GCD note <a href="https://doi.org/10.5281/zenodo.22050962">10.5281/zenodo.22050962</a>, Ring Lemma <a href="https://doi.org/10.5281/zenodo.22050976">10.5281/zenodo.22050976</a>, status <a href="https://doi.org/10.5281/zenodo.22050978">10.5281/zenodo.22050978</a>.</p>
+          <div class="row">
+            <button type="button" class="ghost" id="da-inquire-honest-mistake">Inquire this note</button>
+          </div>
+          <p class="hint">Inquiry only. It does not file into ChatVault. Titles are not re-stamped. RH and Clay NS are not claimed.</p>
+        </section>
+        <p class="lanes-banner">Two boxes. <strong>Search</strong> (dock) is ChatVault. <strong>Inquiry</strong> is Domain Architect. Same origin — not the same engine.</p>
+        <section class="card inquiry-card" id="da-inquiry-card">
+          <h2>Inquiry</h2>
+          <p class="hint">Ask Domain Architect. Paste an equation or a term. FRA identifies what each component does. It does not prove Navier–Stokes or Riemann, and it does not rank the vault. File the report into ChatVault as a real FRA record.</p>
+          <form id="da-inquiry-form">
+            <label for="da-inquiry">Ask Domain Architect
+              <textarea id="da-inquiry" rows="3" placeholder="∇²Φ = 4π G ρ">∇²Φ = 4π G ρ</textarea>
+            </label>
+            <div class="row">
+              <button type="submit" id="da-inquire">Inquire</button>
+              <button type="button" class="ghost" id="da-inquire-file">Inquire + file in ChatVault</button>
+              <button type="button" class="ghost" id="da-load-route-c">Load Route C face</button>
+              <button type="button" class="ghost" id="da-load-swirl-with">Load swirl WITH cancel</button>
+              <button type="button" class="ghost" id="da-load-swirl-without">Load swirl WITHOUT cancel</button>
+              <button type="button" class="ghost" id="da-compare-swirl">Compare swirl</button>
+              <button type="button" class="ghost" id="da-load-ns-unaugmented">Load unaugmented NS</button>
+            </div>
+          </form>
+          <p class="hint">Route C, swirl, unaugmented NS, the honest-mistake note, and the hypothesized NS regularity experiment live in Domain Architect only. Those loaders inquire the face and do not file into ChatVault. Clay NS and RH are not claimed.</p>
+          <pre id="da-out" class="out">Ready.</pre>
+          <div id="da-related" class="cv-hits" hidden></div>
+        </section>
+        <section class="card universe-card" id="da-universe-card">
+          <h2>Universe picture</h2>
+          <p class="hint">This card is Domain Architect inquiry, not ChatVault search. It returns unresolved / exploratory. It is not a proof. It does not file into ChatVault.</p>
+          <div class="row">
+            <button type="button" id="da-inquire-universe">Inquire the open picture</button>
+          </div>
+          <pre id="da-universe-out" class="out">Unresolved. Ask Domain Architect; do not expect a proof.</pre>
+        </section>
+        <section class="card" id="da-swirl-card">
+          <h2>Swirl faces</h2>
+          <p class="hint">Axisymmetric-with-swirl. Domain Architect only. Clay NS is not claimed. Not ChatVault.</p>
+          <p class="hint"><strong>WITH cancel</strong> (live Phi): <code>r^{-4}∂z(Γ²)=∂z(Φ²)</code> · Q1-augmented · DOI 10.5281/zenodo.22050974</p>
+          <p class="hint"><strong>WITHOUT cancel</strong>: <code>D_t Ω = (1/r^4)∂z(Γ²)+ν L_cyl Ω</code> · the 1/r^4 term is still there · OPEN obstruction. Danchin (2007) names that axis energy-method obstruction in the live Phi note; naming it does not cancel it. No separate pre-cancel Zenodo PDF was found.</p>
+          <div class="row">
+            <a class="ghost" href="/faces/01_phi_renormalization.pdf">Open WITH-cancel PDF</a>
+            <a class="ghost" href="/faces/swirl_without_cancel.pdf">Open WITHOUT-cancel PDF</a>
+            <button type="button" class="ghost" id="da-inquire-swirl-with">Inquire WITH</button>
+            <button type="button" class="ghost" id="da-inquire-swirl-without">Inquire WITHOUT</button>
+            <button type="button" class="ghost" id="da-inquire-swirl-compare">Compare</button>
+          </div>
+        </section>
+        <section class="card" id="da-ns-card">
+          <h2>Unaugmented NS face</h2>
+          <p class="hint">Classical 3D incompressible Navier–Stokes, no Q1 / Φ augmentation. OPEN / not proved. Not Clay. Not ChatVault.</p>
+          <p class="hint"><code>∂t u + (u·∇)u = −∇p + νΔu</code>, <code>∇·u = 0</code></p>
+          <p class="hint">Live fluids cites are Phi 22050974 (Q1-augmented swirl; LPS bootstrap is for that PDE) and Ring 22050976 — different books, not this PDE. Q1 ≠ classical. June T³ one-pager / 20405526 is SUPERSEDED as a proof graphic.</p>
+          <div class="row">
+            <a class="ghost" href="/faces/ns_unaugmented_classical.pdf">Open unaugmented NS PDF</a>
+            <a class="ghost" href="/faces/02_ring_lemma_snd_conditional.pdf">Related Ring PDF (conditional SND)</a>
+            <a class="ghost" href="/faces/superseded/tweet_ns_t3_onepager.png">Archive T³ one-pager</a>
+            <button type="button" class="ghost" id="da-inquire-ns">Inquire unaugmented NS</button>
+          </div>
+        </section>
+        <section class="card realization-card" id="da-ns-realization-card">
+          <h2>Hypothesized NS regularity</h2>
+          <p class="hint">Assume — as an experiment, not as a theorem — unconditional global smoothness of unaugmented classical 3D Navier–Stokes (no Q1, no hyperdissipation, no Φ-system). Domain Architect then classifies the other desk fingers. It does not endorse the assumption. Clay NS is not claimed.</p>
+          <div class="row">
+            <button type="button" id="da-run-ns-realization">Run the realization</button>
+          </div>
+          <pre id="da-ns-realization-out" class="out">Hypothesized. Not endorsed. Not a proof.</pre>
+        </section>
+        <section class="card" id="da-archive-card">
+          <h2>Archive / SUPERSEDED desktop pack</h2>
+          <p class="hint">June 2026 graphics, kept visible. Not live Route C. Not a Clay proof. Inverse-GCD is not the live Route C operator.</p>
+          <div class="row">
+            <a class="ghost" href="/faces/superseded/tweet_inverse_gcd_route_c.png">SUPERSEDED inverse-GCD Route C poster</a>
+            <a class="ghost" href="/faces/superseded/tweet_gcd_spectral_operator.png">Archive GCD Spectral Operator / Track B graphic</a>
+            <a class="ghost" href="/faces/superseded/tweet_ns_t3_onepager.png">Archive NS T³ one-pager</a>
+            <a class="ghost" href="/faces/superseded/june_phi_conditional.pdf">Archive June Phi (21071991)</a>
+            <a class="ghost" href="/faces/archive/Simons_NS_GlobalRegularity_T3.tex">Archive 20405526 TeX</a>
+          </div>
+        </section>
+        <section class="card" id="da-route-c-card">
+          <h2>Route C face</h2>
+          <p class="hint">August 2026 conditional preprint. Exploratory. RH not claimed. Not ChatVault.</p>
+          <p class="hint"><code>Q_N[i,j] = 1/(gcd(i,j)·√(ij))</code> · Gaps A and B open · DOI 10.5281/zenodo.22050963</p>
+          <p class="hint">The June 2026 inverse-GCD poster (<code>Q_N=1/gcd</code>, DOI 20518388, <code>RH_Riemann_final.tex</code>) is superseded. Not this face.</p>
+          <div class="row">
+            <a class="ghost" href="/faces/05_route_c_conditional.pdf">Open PDF</a>
+            <a class="ghost" href="/faces/superseded/june_2026_rh_poster.jpg">Superseded June poster</a>
+          </div>
+        </section>
+        <section class="card engine-card">
+          <h2>What is on the engine</h2>
+          <p class="hint">ChatVault hybrid ranker <code>chatvault-hybrid-0.2.0</code>. Local, offline, no LLM ranker.</p>
+          <ol class="engine-list">
+            <li>Boolean match gate (AND / OR / phrases / <code>field:</code>)</li>
+            <li>BM25F on words, stems, one-edit typos (K1=1.2)</li>
+            <li>Character 3-gram BM25</li>
+            <li>Field-weighted TF-IDF cosine</li>
+            <li>Reciprocal Rank Fusion, k=60</li>
+            <li>Optional RM3 expansion, fused again</li>
+          </ol>
+          <p class="hint">Indexed fields: title, claim, theorem, gap, question, action, tag, book, summary, content, ai, source, origin. Ledger status and Harmonic Watch notes are never scores. AI conversations vs real papers/pictures/movies use <code>origin:ai</code> / <code>origin:human</code>.</p>
+        </section>
+        <section class="card engines-card" id="da-engines">
+          <h2>Engines Jonathan can offer</h2>
+          <p class="hint">Names on this list are not automatically licensable. Only rows with files in this workshop are real. This is not a commercial license and not legal advice.</p>
+          <table class="engines-table">
+            <thead>
+              <tr>
+                <th>Engine</th>
+                <th>Status</th>
+                <th>Where</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">ChatVault Hybrid Search</th>
+                <td>In this repo. Version <code>chatvault-hybrid-0.2.0</code>.</td>
+                <td><code>chatvault/js/search.mjs</code> — ranker only. API: <code>chatvault/js/ENGINE.md</code>. Internals: <code>docs/chatvault-audit/CHATVAULT-ENGINE-INTERNALS.md</code>. Not the PWA, not CLAIM_LEDGER, not Domain Architect.</td>
+              </tr>
+              <tr>
+                <th scope="row">Domain Architect FRA</th>
+                <td>In this repo. Auditor, not a search ranker.</td>
+                <td><code>domain_architect/</code> — Functional Role Analysis. Canonical SFE unresolved. Does not prove theorems. Not the ChatVault license unit.</td>
+              </tr>
+              <tr>
+                <th scope="row">Tanto</th>
+                <td>Not in this workshop yet</td>
+                <td>Hunt stub — locate and attach source. Do not license until the files exist.</td>
+              </tr>
+              <tr>
+                <th scope="row">VibraScan</th>
+                <td>Not in this workshop yet</td>
+                <td>Hunt stub — locate and attach source. Do not license until the files exist.</td>
+              </tr>
+              <tr>
+                <th scope="row">Field Lock</th>
+                <td>Found as a teaching kiosk, not an engine SDK in this tree.</td>
+                <td>Live demo <a href="https://field-lock.replit.app/">field-lock.replit.app</a>. Kiosk snapshot in this repo: <code>engines/fieldlock/</code> (public HTML + <code>/api/scenarios</code> JSON; minified React bundle not vendored). Partner brief on other branches (<code>partner-packet/FIELD-LOCK.md</code>). Presence-bound auth story / Learning Kiosk. PUF/CTW source is not here. Do not license as an engine until SDK files exist.</td>
+              </tr>
+              <tr>
+                <th scope="row">Drone diagnose</th>
+                <td>Not in this workshop yet</td>
+                <td>Hunt stub — locate and attach source. Do not license until the files exist.</td>
+              </tr>
+              <tr>
+                <th scope="row">Parkinson micro-vibration</th>
+                <td>Not in this workshop yet</td>
+                <td>Hunt stub — locate and attach source. Do not license until the files exist.</td>
+              </tr>
+              <tr>
+                <th scope="row">Savannah marsh acoustics</th>
+                <td>Not in this workshop yet</td>
+                <td>Hunt stub — locate and attach source. Do not license until the files exist.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="card ideas-card" id="da-ideas">
+          <h2>Recommendations</h2>
+          <p class="hint">Shipped on this origin vs next. Honest list — nothing here is a promise of a web crawler or a proof engine.</p>
+          <h3>Shipped</h3>
+          <ul>
+            <li>Combined PWA (Domain Architect, standalone, Share Target GET)</li>
+            <li>ChatVault as the site <em>search</em> box; Domain Architect as the <em>inquiry</em> box</li>
+            <li>Origin AI vs human</li>
+            <li>Snippet and file ingest on search (not a whole conversation)</li>
+            <li>Audio / video / PDF human-record stubs + repo inbox (<code>--ingest-chatvault</code>)</li>
+            <li>File this search</li>
+            <li>Share Target GET (iOS/Android share-to-DA)</li>
+            <li>Deep-dive tabs (DuckDuckGo, Wikipedia, Semantic Scholar / Google Scholar)</li>
+            <li>FRA inquiry drain (Inquire + file)</li>
+            <li>Route C face in Domain Architect only (not ChatVault)</li>
+            <li>Swirl WITH/WITHOUT cancel faces in Domain Architect only (not ChatVault; not Clay NS)</li>
+            <li>Unaugmented classical NS face in Domain Architect only (OPEN; not Clay; not ChatVault)</li>
+            <li>Universe picture card (DA inquiry; unresolved; not a proof)</li>
+            <li>Honest-mistake note (June packaging; titles restored)</li>
+            <li>Hypothesized unaugmented NS regularity realization (not a theorem)</li>
+          </ul>
+          <h3>Next</h3>
+          <ul>
+            <li>IndexedDB (localStorage quota)</li>
+            <li>File Handling API</li>
+            <li>ChatGPT / Claude export helper</li>
+            <li>Optional RM3 already in the engine — expose a toggle</li>
+          </ul>
+          <p class="hint">Not this product: in-vault web crawler, note-taking rebrands, billing, auto-PROVE, theorem proving. Glass is not a ChatVault skin. Base44 preview is a different schema.</p>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="./da-home.js"></script>
+  </body>
+</html>

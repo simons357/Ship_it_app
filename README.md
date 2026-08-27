@@ -1,7 +1,32 @@
-# Harmonic Blueprint / Domain Architect
+# Harmonic Blueprint / Domain Architect / ChatVault
 
-This repository now contains two related research objects. Neither is a
-unified physical theory.
+This repository is a workshop. It now contains three related objects.
+Neither research package is a unified physical theory. ChatVault is a
+local product prototype, not an App Store release.
+
+## ChatVault
+
+Local-first vault — tagline **OS for your AI**. Git PWA in `chatvault/` is
+the canonical engine (`ChatVaultEntry`, CLAIM_LEDGER, hybrid search,
+`origin_class` AI vs real). Base44 glass is a different schema.
+
+- App: [`chatvault/`](chatvault/)
+- Operational report: [`docs/chatvault-audit/CHATVAULT-OPERATIONAL.md`](docs/chatvault-audit/CHATVAULT-OPERATIONAL.md)
+- Audit packet: [`docs/chatvault-audit/README.md`](docs/chatvault-audit/README.md)
+
+```bash
+cd chatvault
+python3 -m http.server 4173   # open http://127.0.0.1:4173/
+node --test tests/*.mjs
+```
+
+Drain a Domain Architect FRA audit (not a proof) into ChatVault JSON:
+
+```bash
+python3 -m domain_architect --drain-chatvault "∇²Φ = 4π G ρ" -o /tmp/da-drain.json
+python3 -m domain_architect --ingest-chatvault PATH   # any source → chatvault/inbox JSON (+ media copy)
+python3 -m domain_architect --track-b-mobius          # RH Track B Möbius–GCD attack; does not claim RH
+```
 
 ## Domain Architect
 
@@ -12,12 +37,29 @@ to treat representation of a known equation as derivation.
 
 - Package: `domain_architect/`
 - Notes: [`docs/domain-architect/README.md`](docs/domain-architect/README.md)
+- Zenodo title restore pack (writes only with a PAT via `api_restore_titles.py --apply`; never a password): [`docs/zenodo-public-record/README.md`](docs/zenodo-public-record/README.md)
 - Canonical SFE status: **unresolved**
 
 ```bash
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units
+python -m domain_architect --site
+python -m domain_architect --track-b-mobius
+python -m domain_architect --route-c          # DA only; not ChatVault; does not claim RH
+python -m domain_architect --universe         # universe / SFE picture; unresolved; not a proof
+python -m domain_architect --swirl-with-cancel
+python -m domain_architect --swirl-without-cancel
+python -m domain_architect --swirl-compare
+python -m domain_architect --ns-unaugmented   # OPEN; not Clay
+python -m domain_architect --honest-mistake   # June packaging note; not a proof
+python -m domain_architect --ns-regularity-realization  # hypothesized; not a theorem
+# Search box (ChatVault) + Inquiry box (DA FRA): http://127.0.0.1:8765/
+# Route C PDF:                                   http://127.0.0.1:8765/faces/05_route_c_conditional.pdf
+# Swirl WITH cancel:                             http://127.0.0.1:8765/faces/01_phi_renormalization.pdf
+# Swirl WITHOUT cancel:                          http://127.0.0.1:8765/faces/swirl_without_cancel.pdf
+# Unaugmented NS:                                http://127.0.0.1:8765/faces/ns_unaugmented_classical.pdf
+# ChatVault app (same two boxes):                  http://127.0.0.1:8765/chatvault/
+python3 -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_chatvault_bridge tests.test_chatvault_ingest tests.test_track_b_mobius tests.test_route_c tests.test_fluids_faces tests.test_swirl tests.test_universe tests.test_zenodo_public_record tests.test_ns_regularity_realization
 ```
 
 ## Harmonic Blueprint Experiment 01
@@ -52,6 +94,7 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 
 | Path | Role |
 |------|------|
+| `chatvault/` | Local-first ChatVault PWA (Steel default; origin split; DA drain hook) |
 | `hb_ringdown_test.py` | Spectral proximity statistic, MC null, BH-FDR, leave-one-event-out |
 | `nodes.json` | Frozen node families + sigma + default observable |
 | `data/qnm_events.csv` | Per-mode ringdown table with TRAIN/TEST splits |
