@@ -104,8 +104,8 @@ These are real research objects in this repo family. They are **not** UHF, SFE, 
 |---|---|---|---|
 | NS-B | \(\partial_t\omega+(u\cdot\nabla)\omega=(\omega\cdot\nabla)u+\nu\Delta\omega\), \(\nabla\cdot u=0\) | Track B, classical unaugmented NS | Route as a separate domain. OPEN / not proved. DA face `ns_unaugmented_classical.pdf`. Do not derive from SFE |
 | NS-A | \(Q_1[u]=-\varepsilon^\alpha\lvert\nabla u\rvert^\beta\Delta u\) (or fractional hyperdissipation) | Track A, augmented NS | Different PDE. Live Phi is Q1-augmented swirl, not Clay NS |
-| NS-Φ-0 | \(D_t\Omega=(1/r^4)\partial_z(\Gamma^2)+\nu L_{\mathrm{cyl}}\Omega\) | swirl WITHOUT cancel | OPEN axis obstruction. DA face `swirl_without_cancel.pdf` |
-| NS-Φ | \(\Gamma=ru_\theta\), \(\Phi=\Gamma/r^2=u_\theta/r\), \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) | swirl WITH cancel (live Phi 22050974) | Algebra on the Q1-augmented / Φ system. **Do not reuse \(\Phi\)** as the FRA output symbol. Not Clay NS |
+| NS-Φ-0 | \(D_t\Omega=(1/r^4)\partial_z(\Gamma^2)+\nu L_{\mathrm{cyl}}\Omega\) | swirl WITHOUT cancel | OPEN axis obstruction. DA face `swirl_without_cancel.pdf`. Danchin 2007 (live 22050974 [6]) **names** the \(1/r^4\) energy-method hole; naming it does not cancel it |
+| NS-Φ | \(\Gamma=ru_\theta\), \(\Phi=\Gamma/r^2=u_\theta/r\), \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) | swirl WITH cancel (live Phi 22050974) | Algebra on the Q1-augmented / Φ system. LPS Thm 3.2 bootstraps **that** PDE. **Q1 ≠ classical.** **Do not reuse \(\Phi\)** as the FRA output symbol. Not Clay NS |
 | ARITH-H | \(H_N=D^{-1/2}\widetilde Q_N D^{-1/2}\) | inverse-GCD / spectral floor | Separate arithmetic book. \(H_N\) is not coupling \(H\) |
 | ARITH-B | Bridge* pair Rayleigh \(R(e_p-e_q)>-1/2\) | pair vectors only | Keep only as arithmetic, if at all. Not a fluids or SFE input |
 | ARITH-TB-Q | \(Q_N(i,j)=\mu(\gcd(i,j))/\gcd(i,j)\) | **RH Track B** Möbius–GCD | Locked operator. Exact cubefree identities. **Not** inverse-GCD, **not** NS-B vorticity |

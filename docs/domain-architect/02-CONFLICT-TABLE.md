@@ -83,6 +83,8 @@ Columns:
 | C-GLUE-2 | Triple lock `SND ≡ GNC ≡ Bridge` | August audits: identity false | Equivalence | **RETIRED** |
 | C-GLUE-3 | \(\lambda_{\min}(Q_N)>-1/2\) for all \(N\) | Computed counterexamples (\(Q_{10}\approx-1.90\), later \(H_4\approx-0.225\)) | Spectral floor | Full-spectrum claim **retired**. Do not import into FRA |
 | C-GLUE-4 | Phi-cancel as a path to Theorem H | Identity \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) is algebra only | Φ-cancel | Keep the identity in the swirl book. Do not feed it to SFE or FRA \(\Phi\) |
+| C-SWIRL-AXIS | WITHOUT \(D_t\Omega=(1/r^4)\partial_z(\Gamma^2)+\cdots\) | WITH \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) | Same swirl class, different operators | **UNFILLED.** Danchin 2007 names the \(1/r^4\) hole; he does not cancel it. Next attempt: Chen–Fang–Zhang \(L^\infty_t L^3_x\) swirl criterion (not a bound in hand) |
+| C-Q1-CLASSICAL | Q1-augmented / Φ system (live 22050974) | unaugmented 3D NS (NS-B) | Different PDEs | **UNFILLED.** LPS bootstrap is for Q1. Q1 ≠ classical. Next attempt: ε-independence of \(C(\varepsilon)=2\sup_t\|u^r_\varepsilon/r\|_\infty\) (June 21071991 OP2) |
 
 ---
 
