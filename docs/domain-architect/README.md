@@ -4,14 +4,22 @@
 **Product:** Domain Architect  
 **Method:** Functional Role Analysis  
 **Canonical SFE status:** unresolved  
+**Universe / unified picture:** unresolved — [Universe program](UNIVERSE-PROGRAM.md)  
 **This folder is not a theory of everything, a canonical Simons Field Equation, or a proof of physical prime indexing.**
 
 Approved plain-language explanation:
 
 > Paste an equation. Domain Architect identifies what each component does, how the components connect, and which parameters can be tested or tuned.
 
+Domain Architect is inquiry. ChatVault is search. They are not the same engine.
+The live desk cites Route C `10.5281/zenodo.22050963` (exploratory),
+Φ-renormalization `10.5281/zenodo.22050974` (Q1-augmented swirl; not Clay),
+Ring `10.5281/zenodo.22050976`, and Q6 `10.5281/zenodo.22050962`. June posters
+are a dated archive on that desk.
+
 | Document | Purpose |
 |---|---|
+| [Universe program](UNIVERSE-PROGRAM.md) | What is live, what is open, what DA is for, what is not claimed |
 | [00 — Audited baseline](00-AUDITED-BASELINE.md) | Frozen framework, terminology, evidence levels |
 | [01 — Equation inventory](01-EQUATION-INVENTORY.md) | Historical UHF / SFE / DHFA / gravity / prime-index formulas found in this repo family |
 | [02 — Conflict table](02-CONFLICT-TABLE.md) | Incompatible definitions, units, domains, and claims |
@@ -35,7 +43,8 @@ python3 -m domain_architect --ingest-chatvault PATH
 python -m domain_architect --site   # http://127.0.0.1:8765/ — ChatVault search + DA inquiry
 python -m domain_architect --track-b-mobius   # RH Track B Möbius–GCD attack; does not claim RH
 python -m domain_architect --route-c          # Route C face in DA; not ChatVault; does not claim RH
-python -m unittest tests.test_domain_architect_acceptance tests.test_chatvault_bridge tests.test_track_b_mobius tests.test_route_c tests.test_zenodo_public_record
+python -m domain_architect --universe         # universe / SFE picture; unresolved; not a proof
+python -m unittest tests.test_domain_architect_acceptance tests.test_chatvault_bridge tests.test_track_b_mobius tests.test_route_c tests.test_universe tests.test_zenodo_public_record
 ```
 
 Finished inquiries and audits can file into ChatVault as `origin_class: human_record`. Domain Architect does not prove theorems. ChatVault is the search box (**OS for your AI**). Domain Architect is the inquiry box.
