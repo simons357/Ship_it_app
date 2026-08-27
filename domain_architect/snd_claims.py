@@ -45,6 +45,14 @@ REFUSAL_PATTERNS: tuple[tuple[str, str], ...] = (
         "REFUSE: Theorem H as written is SND-C under X<=M, not SND-U",
     ),
     (
+        r"clay\s+(statement\s+)?b\s*(<=>|<->|iff|equivalent\s+to)\s*\[?snd",
+        "REFUSE: Clay⇔SND equivalence is not established; broken weld TH-H2",
+    ),
+    (
+        r"global\s+regularity.*(proved|resolved|no\s+(finite-time\s+)?blowup)",
+        "REFUSE: unconditional global regularity / Clay B is NOT resolved",
+    ),
+    (
         r"c\s*\*\s*=\s*6\s*/\s*pi\s*\^\s*2.*(fluids|ns|navier|snd\s+floor|threshold)",
         "REFUSE: c*=6/pi^2 is arithmetic analogy, not continuum SND floor",
     ),

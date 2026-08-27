@@ -258,6 +258,26 @@ BOOK_REQUIREMENTS: dict[str, dict[str, Any]] = {
             "before feeding Theorem H — closes TH-H3 if proved"
         ),
     },
+    "SND-BYPASS": {
+        "roles": {
+            "admissibility",
+            "interaction",
+            "state",
+            "scale_response",
+            "realized_output",
+            "environment",
+        },
+        "extras": {
+            "tilde_H_N normalized by Sigma(t)",
+            "lambda_min/lambda_max shell-helical ratio",
+            "5× safety margin (tweet Bypass Lemma)",
+            "not identical to J/X SND-U book",
+        },
+        "recompose": (
+            "Bypass' ≈ inf λ_min(tilde_H_N)/λ_max(tilde_H_N) > −1/2; "
+            "shell-helical operator book — distinct from inf J/X≥c_*"
+        ),
+    },
     "generic": {
         "roles": set(),
         "extras": set(),
@@ -281,6 +301,21 @@ def infer_book(report: AuditReport) -> str:
     expr_compact = expr.replace(" ", "")
 
     # Expression-first (authoritative markers).
+    if (
+        "bypass lemma" in expr
+        or "tilde_h_n" in expr_compact
+        or "shell-helical" in expr
+        or "shell helical" in expr
+        or ("lambda_min" in expr_compact and "lambda_max" in expr_compact)
+    ):
+        return "SND-BYPASS"
+    if (
+        "inf" in expr_compact
+        and "j" in expr_compact
+        and "x" in expr_compact
+        and ("c_" in expr_compact or "c*" in expr_compact)
+    ):
+        return "SND-HYP"
     if "bootstrap" in expr and (
         "m=" in expr_compact or "x<=m" in expr_compact or "m(||u" in expr_compact
     ):
@@ -319,6 +354,12 @@ def infer_book(report: AuditReport) -> str:
         return "SND-U"
     if "snd hypothesis" in joined or "conditional snd" in joined:
         return "SND-HYP"
+    if (
+        "bypass lemma" in joined
+        or "tilde_h_n" in joined_compact
+        or ("lambda_min" in joined_compact and "lambda_max" in joined_compact)
+    ):
+        return "SND-BYPASS"
     if "ns-b" in joined or "navier" in joined:
         return "NS-B"
     if report.recovery_kind or (

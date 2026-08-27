@@ -455,6 +455,24 @@ def detect_claim_markers(expression: str) -> dict[str, bool]:
             or "m=||u0||" in compact
             or "m(||u" in compact
         ),
+        "bypass_lemma": (
+            "bypass lemma" in raw
+            or "tilde_h_n" in compact
+            or "tildehn" in compact
+            or "shell-helical" in raw
+            or "shellhelical" in compact
+            or ("lambdamin" in compact and "lambdamax" in compact)
+            or ("lambda_min" in raw and "lambda_max" in raw)
+        ),
+        "clay_equiv": (
+            ("<=>" in expression or "<->" in expression or "iff" in raw)
+            and "clay" in raw
+            and "snd" in raw
+        ),
+        "global_regularity_proved": (
+            ("global regularity" in raw or "no blowup" in raw or "no finite-time blowup" in raw)
+            and ("proved" in raw or "resolved" in raw or "no blowup" in raw)
+        ),
         "ns_classical": (
             "partial_t" in compact
             or "∂_t" in expression
@@ -556,6 +574,43 @@ def diagnose_gap(expression: str) -> GapClosureReport:
                 move=move,
             )
         )
+
+    # Tweet Thm D style: Clay ⇔ [SND] packaged as proved equivalence
+    if markers["clay_equiv"] and not any(f.break_id == "TH-H2" for f in findings):
+        move = _move_by_id("TH-H2")
+        findings.append(
+            WeldFinding(
+                break_id="TH-H2",
+                severity="refuse",
+                broken_weld=(
+                    "Clay ⇔ SND equivalence is not established; "
+                    "SND-U remains open and SND-C assumes X≤M"
+                ),
+                suggested_closure=move.closure_move,
+                markers_hit=[k for k, v in markers.items() if v],
+                move=move,
+            )
+        )
+
+    # Tweet main-result style: global regularity / no blowup marked proved
+    if markers["global_regularity_proved"] and not (
+        markers["x_le_m"] or markers["snd_c"] or markers["thm_h"]
+    ):
+        move = _move_by_id("TH-H2")
+        if not any(f.break_id == "TH-H2" for f in findings):
+            findings.append(
+                WeldFinding(
+                    break_id="TH-H2",
+                    severity="refuse",
+                    broken_weld=(
+                        "Global regularity / no-blowup on T³ marked proved "
+                        "without M-free keystone — Clay Statement B NOT resolved"
+                    ),
+                    suggested_closure=move.closure_move,
+                    markers_hit=[k for k, v in markers.items() if v],
+                    move=move,
+                )
+            )
 
     # Standalone unconditional Clay / SND-U without any conditional honesty markers
     if (markers["snd_u"] or markers["clay_b"]) and not findings:
@@ -660,6 +715,8 @@ def diagnose_gap(expression: str) -> GapClosureReport:
         book = "NS-Q1"
     elif markers["ring_bvb"]:
         book = "RING-BVB"
+    elif markers["bypass_lemma"]:
+        book = "SND-BYPASS"
     elif markers["cstar_arithmetic"]:
         book = "CSTAR-ARITH"
     elif markers["snd_hypothesis"]:

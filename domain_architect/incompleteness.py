@@ -169,6 +169,25 @@ _BOOK_SKETCHES: dict[str, dict[str, Any]] = {
             "close Clay B; c_* must still be M-free (TH-H3)."
         ),
     },
+    "SND-BYPASS": {
+        "full_sketch": (
+            "Bypass / shell-helical: inf λ_min(tilde_H_N)/λ_max(tilde_H_N) > −1/2 "
+            "with tilde_H_N = H_N/Sigma(t). Tweet June 2026 central condition."
+        ),
+        "role_terms": {
+            "admissibility": "P ≈ Leray / T³ periodic",
+            "interaction": "H ≈ shell-helical operator H_N[u]",
+            "state": "ψ ≈ u(t) on which H_N acts",
+            "scale_response": "λ ≈ extremal eigenvalue ratio floor −1/2",
+            "realized_output": "Φ ≈ normalized shell-ratio observable",
+            "environment": "E ⊃ Sigma(t) energy normalization, 5× margin claim",
+        },
+        "term_hints": {},
+        "disclaimer": (
+            "Distinct from inf J/X≥c_* (SND-U/HYP). Notation H_N collides with "
+            "arithmetic inverse-GCD book — keep aliases separate."
+        ),
+    },
     "CSTAR-ARITH": {
         "full_sketch": (
             "c_*=6/π²=ζ(2)^{-1} — arithmetic analogy; not continuum NS floor."
