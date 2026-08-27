@@ -15,6 +15,7 @@ Domain Architect does not claim Clay NS or RH. Do not file into ChatVault.
 
 from __future__ import annotations
 
+import hashlib
 from pathlib import Path
 from typing import Any
 
@@ -36,6 +37,11 @@ SWIRL_WITH_TITLE = (
 SWIRL_WITHOUT_TITLE = (
     "Axisymmetric Navier–Stokes with swirl: the 1/r^4 axis term "
     "(without Φ-renormalization)"
+)
+# Byte-identical to live Zenodo 22050974 file 01_phi_renormalization.pdf
+# (fetched 2026-08-27). Do not regenerate or re-stamp that PDF.
+LIVE_WITH_PDF_SHA256 = (
+    "735ab6586a1edb0fee29e6c797a0a12c82a0d2a4e24e667b8d65c6899a2e3c55"
 )
 
 # Named citations from the live 10.5281/zenodo.22050974 PDF (fetched 2026-08-27).
@@ -492,8 +498,16 @@ def without_cancel_pdf_path() -> Path:
     return STATIC_FACES / SWIRL_WITHOUT_PDF_NAME
 
 
+def with_cancel_pdf_sha256() -> str | None:
+    path = with_cancel_pdf_path()
+    if not path.is_file():
+        return None
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
 def with_cancel_face() -> dict[str, Any]:
     path = with_cancel_pdf_path()
+    digest = with_cancel_pdf_sha256()
     return {
         "ok": True,
         "lane": "inquiry",
@@ -512,6 +526,8 @@ def with_cancel_face() -> dict[str, Any]:
         "pdf_url": f"/faces/{SWIRL_WITH_PDF_NAME}",
         "pdf_present": path.is_file(),
         "pdf_bytes": path.stat().st_size if path.is_file() else 0,
+        "pdf_sha256": digest,
+        "pdf_matches_live_zenodo": digest == LIVE_WITH_PDF_SHA256,
         "doi_live": SWIRL_WITH_DOI,
         "doi_sibling": SWIRL_WITH_DOI_SIBLING,
         "doi_june_archive": SWIRL_WITH_DOI_JUNE,
