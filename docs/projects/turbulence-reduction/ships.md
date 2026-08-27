@@ -86,7 +86,12 @@ mode: misalignment and yaw.
 - Thin blades (Bechert 9.9% laboratory, not durable).
 - Discrete suction (aerospace HLFC; pumps and seawater fouling).
 - Locally resonant / phononic overlay (50–300 µm): **separate experiment**
-  vs a riblet-only control. No DA envelope.
+  vs a riblet-only control. No DA envelope. That overlay is a skin-friction
+  DNS hypothesis (~order 1% in channels), **not** an ultrasonic antifouling
+  product.
+- Ultrasonic / acoustic hull transducers: **not this slot**. Commercial
+  biofilm-deterrent hardware (mixed public evidence); not riblets; not a
+  phononic Cf mechanism; does not replace FR coatings; no DA envelope.
 - Kramer-class viscoelastic / compliant wall: mixed replication.
 - Plasma: not a hull film.
 - Superhydrophobic slip: not field-durable in seawater.
