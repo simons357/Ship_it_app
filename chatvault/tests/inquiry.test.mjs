@@ -30,6 +30,42 @@ test("inquiry narrative reads the FRA report, not a vault hit list", () => {
   );
 });
 
+test("swirl comparison narrative prints UNFILLED gaps and the next-attempt lemma", () => {
+  const text = inquiryNarrative({
+    swirl_comparison: {
+      with_cancel: {
+        operator: "r^{-4} ∂z(Γ²) = ∂z(Φ²)",
+        status: "q1_augmented_algebraic_identity",
+        pdf_url: "/faces/01_phi_renormalization.pdf",
+      },
+      without_cancel: {
+        operator: "D_t Ω = (1/r^4) ∂z(Γ²) + ν L_cyl Ω",
+        status: "open_axis_obstruction",
+        pdf_url: "/faces/swirl_without_cancel.pdf",
+      },
+      difference: ["WITHOUT keeps the 1/r^4 axis term."],
+      gaps: [
+        {
+          id: "GAP-SWIRL-AXIS",
+          statement: "Danchin (2007) names the 1/r^4 hole; naming it does not cancel it.",
+          next_attempt: { lemma: "Chen–Fang–Zhang L^∞_t L^3_x swirl criterion" },
+        },
+        {
+          id: "GAP-Q1-CLASSICAL",
+          statement: "Q1 ≠ classical. LPS bootstraps the augmented PDE only.",
+          next_attempt: { lemma: "ε-independence of C(ε)=2 sup_t ‖u^r_ε/r‖_∞" },
+        },
+      ],
+    },
+  });
+  assert.match(text, /UNFILLED/);
+  assert.match(text, /GAP-SWIRL-AXIS/);
+  assert.match(text, /Danchin/);
+  assert.match(text, /Chen/);
+  assert.match(text, /Q1 ≠ classical/);
+  assert.doesNotMatch(text, /Clay NS is proved/);
+});
+
 test("postInquiry hits /api/inquiry and files a ChatVault export when drain=true", async () => {
   const calls = [];
   const drain = {

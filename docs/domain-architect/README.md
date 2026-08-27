@@ -55,7 +55,7 @@ python -m domain_architect --swirl-compare
 python -m domain_architect --ns-unaugmented   # classical 3D NS; OPEN; not Clay
 python -m domain_architect --honest-mistake   # June packaging note; not a proof; not ChatVault
 python -m domain_architect --ns-regularity-realization  # hypothesized NS smoothness; not a theorem
-python -m unittest tests.test_domain_architect_acceptance tests.test_chatvault_bridge tests.test_track_b_mobius tests.test_route_c tests.test_fluids_faces tests.test_universe tests.test_zenodo_public_record tests.test_ns_regularity_realization
+python -m unittest tests.test_domain_architect_acceptance tests.test_chatvault_bridge tests.test_track_b_mobius tests.test_route_c tests.test_fluids_faces tests.test_swirl tests.test_universe tests.test_zenodo_public_record tests.test_ns_regularity_realization
 ```
 
 Finished inquiries and audits can file into ChatVault as `origin_class: human_record`. Domain Architect does not prove theorems. ChatVault is the search box (**OS for your AI**). Domain Architect is the inquiry box.

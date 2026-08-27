@@ -149,7 +149,7 @@
     "relation": "INCOMPATIBLE",
     "evidence": "WITHOUT cancel keeps (1/r^4)∂z(Γ²). WITH cancel uses r^{-4}∂z(Γ²)=∂z(Φ²) on the Q1-augmented / Φ system.",
     "status": "recorded",
-    "notes": "Same swirl class, different operators. WITH does not solve WITHOUT. Clay is not claimed. Not ChatVault."
+    "notes": "Same swirl class, different operators. WITH does not solve WITHOUT. Danchin 2007 names the 1/r^4 hole; naming it does not cancel it (GAP-SWIRL-AXIS UNFILLED). Clay is not claimed. Not ChatVault."
   },
   {
     "left_id": "NS-B001",
@@ -157,7 +157,7 @@
     "relation": "COMPATIBLE_DISTINCT",
     "evidence": "Classical 3D NS versus axisymmetric-with-swirl Φ-identity on a Q1-augmented system. Different PDEs.",
     "status": "recorded",
-    "notes": "Live Phi is not unaugmented NS. Do not treat 22050974 as Clay Statement B."
+    "notes": "Live Phi is not unaugmented NS. LPS Thm 3.2 is for the Q1-augmented PDE. Q1 ≠ classical (GAP-Q1-CLASSICAL UNFILLED). Do not treat 22050974 as Clay Statement B."
   },
   {
     "left_id": "NS-T3001",

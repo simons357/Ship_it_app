@@ -59,7 +59,7 @@ python -m domain_architect --ns-regularity-realization  # hypothesized; not a th
 # Swirl WITHOUT cancel:                          http://127.0.0.1:8765/faces/swirl_without_cancel.pdf
 # Unaugmented NS:                                http://127.0.0.1:8765/faces/ns_unaugmented_classical.pdf
 # ChatVault app (same two boxes):                  http://127.0.0.1:8765/chatvault/
-python3 -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_chatvault_bridge tests.test_chatvault_ingest tests.test_track_b_mobius tests.test_route_c tests.test_fluids_faces tests.test_universe tests.test_zenodo_public_record tests.test_ns_regularity_realization
+python3 -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_chatvault_bridge tests.test_chatvault_ingest tests.test_track_b_mobius tests.test_route_c tests.test_fluids_faces tests.test_swirl tests.test_universe tests.test_zenodo_public_record tests.test_ns_regularity_realization
 ```
 
 ## Harmonic Blueprint Experiment 01
