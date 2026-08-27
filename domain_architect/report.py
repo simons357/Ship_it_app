@@ -86,13 +86,23 @@ class AuditReport:
             f"Highest evidence level actually supported: {self.highest_evidence_level.label}",
             f"Canonical SFE status: {self.canonical_sfe_status}.",
             "",
-            f"Input: {self.input_expression}",
-            "",
-            "Abstract syntax tree:",
-            self.ast_pretty or "(unparsed)",
-            "",
-            "Role assignments (structural candidates, not physical identities):",
         ]
+        universe_picture = "Universe / SFE picture" in self.extra_structures
+        if universe_picture:
+            lines.append("Program status (unresolved / exploratory, not a proof):")
+            for note in self.notes:
+                lines.append(note)
+            lines.append("")
+        lines.extend(
+            [
+                f"Input: {self.input_expression}",
+                "",
+                "Abstract syntax tree:",
+                self.ast_pretty or "(unparsed)",
+                "",
+                "Role assignments (structural candidates, not physical identities):",
+            ]
+        )
         if not self.role_assignments:
             lines.append("  none — symbols were not assigned physical roles from their names")
         for item in self.role_assignments:
@@ -148,6 +158,8 @@ class AuditReport:
         if self.notes:
             lines.append("")
             for note in self.notes:
+                if note in lines:
+                    continue
                 lines.append(note)
         text = "\n".join(lines)
         cleaned, flags = sanitize_language(text)

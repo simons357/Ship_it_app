@@ -94,6 +94,7 @@ class UniverseAudit(unittest.TestCase):
         self.assertIn(DOI_PHI, notes)
         self.assertIn("Universe / SFE picture", extra)
         self.assertIn("not a proof", narrative)
+        self.assertLess(narrative.find("program status"), narrative.find("abstract syntax tree"))
         self.assertNotIn("withdrawn", notes.lower())
         self.assertNotIn("tombstoned", notes.lower())
         self.assertNotIn("proves the riemann", narrative)
