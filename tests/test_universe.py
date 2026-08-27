@@ -56,6 +56,7 @@ class UniverseLooksLike(unittest.TestCase):
         self.assertFalse(looks_like_universe_inquiry(ROUTE_C_OPERATOR))
         self.assertFalse(looks_like_universe_inquiry(LOCKED_OPERATOR))
         self.assertFalse(looks_like_universe_inquiry("Q1-augmented swirl without cancel"))
+        self.assertFalse(looks_like_universe_inquiry("classical unaugmented Navier-Stokes on T3"))
         self.assertFalse(looks_like_universe_inquiry("x = y"))
 
 

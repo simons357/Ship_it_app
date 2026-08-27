@@ -55,6 +55,8 @@ def _other_book(text: str) -> bool:
         return True
     if "swirl" in lowered and "universe" not in lowered and "sfe" not in lowered:
         return True
+    if "unaugmented" in lowered and "universe" not in lowered and "sfe" not in lowered:
+        return True
     return False
 
 
@@ -117,9 +119,19 @@ def live_desk() -> list[dict[str, str]]:
             "note": "exploratory; RH not claimed",
         },
         {
-            "name": "Φ-renormalization",
+            "name": "Φ-renormalization (swirl WITH cancel)",
             "doi": DOI_PHI,
-            "note": "Q1-augmented swirl; not Clay",
+            "note": "Q1-augmented swirl; not Clay; DA face /faces/01_phi_renormalization.pdf",
+        },
+        {
+            "name": "Swirl WITHOUT cancel",
+            "doi": "",
+            "note": "1/r^4 axis term still present; DA face /faces/swirl_without_cancel.pdf; OPEN obstruction",
+        },
+        {
+            "name": "Classical unaugmented 3D NS",
+            "doi": "10.5281/zenodo.20405526",
+            "note": "OPEN / not proved; DA face /faces/ns_unaugmented_classical.pdf; 20405526 is archive packaging",
         },
         {
             "name": "Ring lemma",
