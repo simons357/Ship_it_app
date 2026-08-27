@@ -57,6 +57,11 @@ def _other_book(text: str) -> bool:
         return True
     if "unaugmented" in lowered and "universe" not in lowered and "sfe" not in lowered:
         return True
+    if "phirenorm" in compact or "phi-renormalization" in lowered:
+        if "universe" not in lowered and "sfe" not in lowered:
+            return True
+    if "navier" in lowered and "universe" not in lowered and "sfe" not in lowered:
+        return True
     return False
 
 
@@ -119,19 +124,9 @@ def live_desk() -> list[dict[str, str]]:
             "note": "exploratory; RH not claimed",
         },
         {
-            "name": "Φ-renormalization (swirl WITH cancel)",
+            "name": "Φ-renormalization",
             "doi": DOI_PHI,
-            "note": "Q1-augmented swirl; not Clay; DA face /faces/01_phi_renormalization.pdf",
-        },
-        {
-            "name": "Swirl WITHOUT cancel",
-            "doi": "",
-            "note": "1/r^4 axis term still present; DA face /faces/swirl_without_cancel.pdf; OPEN obstruction",
-        },
-        {
-            "name": "Classical unaugmented 3D NS",
-            "doi": "10.5281/zenodo.20405526",
-            "note": "OPEN / not proved; DA face /faces/ns_unaugmented_classical.pdf; 20405526 is archive packaging",
+            "note": "Q1-augmented swirl; not Clay",
         },
         {
             "name": "Ring lemma",
@@ -193,6 +188,7 @@ def universe_notes() -> list[str]:
         desk,
         "There is no theory of everything. There is no one Hamiltonian, three prizes.",
         "June 2026 posters are a dated archive on this desk, not the live face.",
+        "Swirl and classical Navier–Stokes questions stay on their own Domain Architect faces. They are not this picture and not Clay proofs.",
         "Domain Architect is inquiry. ChatVault is search. This picture is not ChatVault.",
     ]
 
