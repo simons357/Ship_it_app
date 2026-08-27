@@ -459,6 +459,26 @@ document.getElementById("da-load-route-c")?.addEventListener("click", () => {
       outEl.textContent = `${err.message}\n\nStart the site: python3 -m domain_architect --site`;
     });
 });
+document.getElementById("da-inquire-universe")?.addEventListener("click", () => {
+  const fallback =
+    "Universe / SFE / unified picture. What is live on this desk, and what remains unresolved?";
+  const universeOut = document.getElementById("da-universe-out");
+  if (universeOut) universeOut.textContent = "Inquiring…";
+  fetch("/api/universe")
+    .then((res) => (res.ok ? res.json() : { prompt: fallback }))
+    .then((face) => {
+      if (inquiryEl) inquiryEl.value = face.prompt || fallback;
+      return runInquiry(false);
+    })
+    .then(() => {
+      if (universeOut && outEl) universeOut.textContent = outEl.textContent;
+    })
+    .catch((err) => {
+      const msg = `${err.message}\n\nStart the site: python3 -m domain_architect --site`;
+      if (universeOut) universeOut.textContent = msg;
+      if (outEl) outEl.textContent = msg;
+    });
+});
 
 try {
   applyDock(localStorage.getItem(DOCK_KEY) || "top-right");

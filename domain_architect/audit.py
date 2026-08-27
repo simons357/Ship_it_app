@@ -35,6 +35,7 @@ from .route_c import (
     looks_like_route_c_operator,
     looks_like_superseded_june_route_c,
 )
+from .universe import looks_like_universe_inquiry, universe_notes
 from .schema import (
     CANONICAL_SFE_STATUS,
     EvidenceLevel,
@@ -241,6 +242,22 @@ def audit_expression(
             "This book is not classical NS Track B, SND, GNC, Goldbach, or "
             "the Harmonic Blueprint."
         )
+
+    universe = (
+        (not track_b)
+        and (not route_c)
+        and (not june)
+        and looks_like_universe_inquiry(expression)
+    )
+    if universe:
+        extra.extend(
+            [
+                "Universe / SFE picture",
+                "canonical SFE unresolved",
+                "exploratory desk, not a proof",
+            ]
+        )
+        notes.extend(universe_notes())
 
     if (not track_b) and _looks_like_einstein(expression):
         extra.extend(

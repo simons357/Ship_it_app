@@ -104,6 +104,10 @@ def inquire(text: str, *, drain: bool = False) -> dict[str, Any]:
         looks_like_superseded_june_route_c,
         superseded_june_face,
     )
+    from .universe import (
+        face as universe_face,
+        looks_like_universe_inquiry,
+    )
 
     inquiry = str(text or "").strip()
     if not inquiry:
@@ -111,11 +115,18 @@ def inquire(text: str, *, drain: bool = False) -> dict[str, Any]:
     report = audit_expression(inquiry)
     route_c = looks_like_route_c_operator(inquiry)
     june = looks_like_superseded_june_route_c(inquiry)
+    universe = (not route_c) and (not june) and looks_like_universe_inquiry(inquiry)
     drain_refused = None
     if drain and (route_c or june):
         drain = False
         drain_refused = (
             "Route C stays in Domain Architect. Not filed into ChatVault."
+        )
+    if drain and universe:
+        drain = False
+        drain_refused = (
+            "Universe / SFE picture stays in Domain Architect inquiry. "
+            "Unresolved. Not filed into ChatVault."
         )
     payload: dict[str, Any] = {
         "ok": True,
@@ -130,6 +141,9 @@ def inquire(text: str, *, drain: bool = False) -> dict[str, Any]:
         payload["chatvault"] = False
     if june:
         payload["route_c_superseded"] = superseded_june_face()
+        payload["chatvault"] = False
+    if universe:
+        payload["universe"] = universe_face()
         payload["chatvault"] = False
     if drain_refused:
         payload["drain_refused"] = drain_refused

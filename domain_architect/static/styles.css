@@ -77,6 +77,22 @@ body[data-dock="top-right"] main { padding-right: min(420px, 42vw); }
   line-height: 1.45;
 }
 .lanes-banner strong { color: var(--gold); font-weight: 600; }
+.program-hero .hero-kicker {
+  margin: 0 0 6px;
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.program-hero p { color: var(--paper); line-height: 1.5; margin: 0 0 12px; }
+.desk-list {
+  margin: 0 0 14px;
+  padding-left: 1.2rem;
+  line-height: 1.55;
+  color: var(--mute);
+}
+.desk-list a { color: var(--gold); }
 .inquiry-card textarea { min-height: 88px; resize: vertical; }
 
 label { display: block; margin: 10px 0; color: var(--mute); font-size: 13px; }

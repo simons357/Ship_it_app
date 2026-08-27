@@ -77,6 +77,14 @@ def main(argv: list[str] | None = None) -> int:
             "Does not claim RH and does not file into ChatVault."
         ),
     )
+    parser.add_argument(
+        "--universe",
+        action="store_true",
+        help=(
+            "print the universe / SFE picture face. Unresolved, exploratory, "
+            "not a proof, and not filed into ChatVault."
+        ),
+    )
     args = parser.parse_args(argv)
 
     if args.site:
@@ -144,6 +152,24 @@ def main(argv: list[str] | None = None) -> int:
             print(audit_expression(payload["operator"]).narrative())
         return 0
 
+    if args.universe:
+        from .universe import UNIVERSE_PROMPT, face, narrative
+
+        payload = face()
+        payload["audit"] = audit_expression(UNIVERSE_PROMPT).to_dict()
+        if args.json or args.output:
+            text = json.dumps(payload, indent=2, default=str)
+            if args.output:
+                Path(args.output).write_text(text + "\n", encoding="utf-8")
+            else:
+                sys.stdout.write(text)
+                sys.stdout.write("\n")
+        else:
+            print(narrative())
+            print()
+            print(audit_expression(UNIVERSE_PROMPT).narrative())
+        return 0
+
     if args.registry:
         registry = EquationRegistry.load_default()
         payload = registry.export()
@@ -165,17 +191,31 @@ def main(argv: list[str] | None = None) -> int:
     if not args.expression:
         parser.error(
             "expression is required unless --registry, --drain-server, --site, "
-            "--ingest-chatvault, --track-b-mobius, or --route-c is set"
+            "--ingest-chatvault, --track-b-mobius, --route-c, or --universe is set"
         )
 
     if args.drain_chatvault:
         from .route_c import looks_like_route_c_operator, looks_like_superseded_june_route_c
+        from .universe import looks_like_universe_inquiry
 
         if looks_like_route_c_operator(args.expression) or looks_like_superseded_june_route_c(
             args.expression
         ):
             print(
                 "Route C stays in Domain Architect. Not filed into ChatVault.",
+                file=sys.stderr,
+            )
+            report = audit_expression(args.expression)
+            if args.json:
+                sys.stdout.write(json.dumps(report.to_dict(), indent=2, default=str))
+                sys.stdout.write("\n")
+            else:
+                print(report.narrative())
+            return 0
+        if looks_like_universe_inquiry(args.expression):
+            print(
+                "Universe / SFE picture stays in Domain Architect inquiry. "
+                "Unresolved. Not filed into ChatVault.",
                 file=sys.stderr,
             )
             report = audit_expression(args.expression)

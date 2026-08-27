@@ -2,7 +2,7 @@
  * Network-first GET for the DA shell. Never cache POST.
  * Skip /chatvault/ so the nested ChatVault worker keeps the vault app.
  */
-const CACHE = "da-shell-v3";
+const CACHE = "da-shell-v4";
 const SHELL = [
   "/",
   "/styles.css",

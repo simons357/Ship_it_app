@@ -9,6 +9,7 @@ POST /api/audit                  FRA audit JSON (never cached by the DA worker)
 GET/POST /api/drain/...          ChatVault drain queue
 POST /api/inquiry                FRA inquiry JSON (optional drain export; never a proof)
 GET  /api/route-c                Route C exploratory face metadata (not ChatVault)
+GET  /api/universe               Universe / SFE picture (unresolved; not ChatVault)
 GET  /faces/*.pdf                DA research faces (Route C PDF)
 GET/POST /api/inbox              Repo inbox JSON sidecars (loopback POST, no binary upload)
 """
@@ -27,6 +28,7 @@ from .chatvault_bridge import CHATVAULT_EXPORT_FORMAT, drain_audit, inquire
 from .chatvault_ingest import list_inbox_files, write_inbox_payload
 from .drain_server import QUEUE, _json_response
 from .route_c import face as route_c_face, superseded_june_face
+from .universe import face as universe_face
 
 REPO = Path(__file__).resolve().parents[1]
 STATIC = Path(__file__).resolve().parent / "static"
@@ -119,6 +121,9 @@ class SiteHandler(BaseHTTPRequestHandler):
             return
         if path == "/api/route-c-superseded":
             _json_response(self, 200, superseded_june_face())
+            return
+        if path == "/api/universe":
+            _json_response(self, 200, universe_face())
             return
         if path.startswith("/chatvault/"):
             rel = path[len("/chatvault/") :] or "index.html"
