@@ -139,6 +139,30 @@ class EquationRegistry:
         if nl_path.exists():
             for raw in json.loads(nl_path.read_text()):
                 registry.nulls.append(NullRecord(**raw))
+        tweet_path = root / "snd_tweet_equations.json"
+        if tweet_path.exists():
+            payload = json.loads(tweet_path.read_text())
+            for raw in payload.get("equations", []):
+                mapped = {
+                    "equation_id": raw["equation_id"],
+                    "family": raw["family"],
+                    "date": payload.get("source", {}).get("date", ""),
+                    "original_source": payload.get("source", {}).get("tweet_url", ""),
+                    "original_expression": raw.get("da_expression", raw.get("plain_text", "")),
+                    "audited_expression": raw.get("da_expression", raw.get("plain_text", "")),
+                    "original_symbol_definitions": raw.get("symbol_definitions", ""),
+                    "original_stated_interpretation": raw.get("plain_text", ""),
+                    "original_claimed_consequence": raw.get("tweet_status", ""),
+                    "domain": raw.get("family", ""),
+                    "conflicts": raw.get("conflicts", []),
+                    "audit_disposition": raw.get("audit_disposition", Disposition.UNRESOLVED.value),
+                    "alias": raw.get("label", ""),
+                    "notes": raw.get("notes", ""),
+                }
+                registry.add_equation(
+                    EquationRecord(**_filter_eq(mapped)),
+                    overwrite=False,
+                )
         return registry
 
     def add_equation(self, record: EquationRecord, *, overwrite: bool = False) -> None:
