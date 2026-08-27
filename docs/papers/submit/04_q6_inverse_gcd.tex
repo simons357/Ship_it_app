@@ -15,7 +15,7 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{definition}[theorem]{Definition}
-\newtheorem{remark}[theorem]{Remark}
+\newtheorem{corollary}[theorem]{Corollary}
 \newtheorem*{openproblem}{Open Problem}
 
 \newcommand{\Qt}{\widetilde{Q}}
@@ -196,6 +196,15 @@ The quotient may be negative: $(p,q)=(2,3)$ gives $R\approx -0.228>-1/2$.
 The bound is a \emph{restricted} floor on difference vectors of single
 prime pairs, not a full-spectrum eigenvalue floor.
 \end{remark}
+
+\begin{corollary}[Uniform pair floor]\label{cor:sharp}
+For distinct primes $p,q$, $R(e_p-e_q)>-1/\sqrt{pq}\ge -1/\sqrt6\approx -0.408$.
+\end{corollary}
+
+\begin{proof}
+From Theorem~\ref{thm:bridge}, $R+1/2>\tfrac12-1/\sqrt{pq}$, hence $R>-1/\sqrt{pq}$.
+Distinct primes give $pq\ge 6$.
+\end{proof}
 
 \section{Positive orthant}
 

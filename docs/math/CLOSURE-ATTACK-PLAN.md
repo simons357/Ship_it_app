@@ -55,9 +55,24 @@ DA ranking (impact × closability): multi-rep Bridge\* ≫ Paper1 A–C packagin
 | Gap | Why stuck | What would close it |
 |-----|-----------|---------------------|
 | Noncircular large-data SND / \(M\) independent of \(X\) | Needs new a-priori; circularity of Thm H | New estimate or abandon NS route |
-| Route C Gap B (bootstrap) | Same hardness family | Independent of Gap A |
+| Route C Gap B (uniform \(\lambda_2-\lambda_{\min}\)) | Real analysis | Independent spectral gap proof |
+| Route C Gap A′ (spectral limit) | \(\lambda_{\min}/\log N\to -1/(2\pi)\) numeric only | Trial vector + rigorous limit |
 | Classical Phi without \(Q_1\) | \(1/r^4\) remainder | Different cancellation or accept augmentation |
 | Full \(\widetilde Q\) spectrum \(>-1/2\) | **Already false** | Kill theorem only |
+
+---
+
+## KILLED this DA pass (Aug 27)
+
+| Claim | Why killed | Evidence |
+|-------|------------|----------|
+| Route C Lemma A (\(\mu\varphi/d^2\)) | False at \(\gcd=2\) | `route_c_gap_a_verify.py` max entry error |
+| \(R(v_{\mathrm{alt}})\to -1/(2\pi)\) | Ratio \(\to 4\)–\(6\times\) target, growing | N=500,1000 verifier |
+| \(v_{\mathrm{alt}}^\top Q v\sim -\log N/(2\pi)\) | Same divergence | Same script |
+| Zero-diag positive-GCD \(>-1/2\) | \(\lambda_{\min}(\widehat Q_5)\approx -0.79\) | `positive_gcd_floor_verify.py` |
+
+**Reframe:** spectral target is \(\lambda_{\min}/\log N\to -1/(2\pi)\), not \(R(v_{\mathrm{alt}})\).  
+**Proved auxiliary:** parity split Lemmas in `05_route_c_conditional.tex`.
 
 ---
 

@@ -104,7 +104,7 @@ H_N=D^{-1/2}\widetilde Q_N D^{-1/2}.
 R=\frac12\Big(\frac1{p^2}+\frac1{q^2}\Big)-\frac1{\sqrt{pq}}\;>\;-\frac12,
 \]
 
-proved for every distinct prime pair (\(pq\ge 6\Rightarrow 1/\sqrt{pq}<1/2\)). Multi-rep summed vectors stay above \(-1/2\) numerically through \(N=200\) (worst \(\approx -0.183\) at \(k=8\), single pair \((3,5)\)). Cross-term lemma still **open** as a uniform analytic statement.
+proved for every distinct prime pair (\(pq\ge 6\Rightarrow 1/\sqrt{pq}<1/2\)). Multi-rep summed vectors: **proved** via nonnegative cross-term factorization (`04_q6_inverse_gcd.tex`); worst numeric \(\approx -0.183\) at \(k=8\), pair \((3,5)\).
 
 This scrap is **number theory**, not NS closure.
 
@@ -157,7 +157,7 @@ The present SND + Theorem H package is a **conditional framework**. Ring Lemma /
 See `scripts/bridge_floor_verify.py`, `scripts/h_n_bridge_star_check.py`, and `/opt/cursor/artifacts/`.
 
 - Full-spectrum Bridge on \(Q\) / \(\widetilde Q\): **fails**.  
-- Bridge\* single-pair: **proved**; multi-rep: **numeric OK**, lemma open.  
+- Bridge\* single-pair + multi-rep: **proved**; full-spectrum floor: **false**.  
 - \(H_N\): \(\lambda_{\max}=1\); \(\lambda_{\min}>-1/2\) in range; \(-3/14\) **not** universal.
 
 ---

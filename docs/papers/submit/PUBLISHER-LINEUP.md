@@ -17,12 +17,13 @@ Solid = upload / submit. Exploratory = arXiv/Zenodo with that label.
 
 **Proved core**
 - Operator definitions: \(Q_N\), \(\widetilde Q_N\), \(H_N\)
-- Bridge*: \(R(e_p-e_q)>-1/2\)
+- Bridge*: single pair + multi-rep \(R(v_k)>-1/2\)
 - Nonnegative cone
+- Positive-GCD companion (`07_positive_gcd_paper1_abc.pdf`)
 
 **Exploratory / open**
-- Multi-representation Bridge*
-- Any larger spectral programme built on Q6
+- Route C spectral limit \(\lambda_{\min}/\log N\to -1/(2\pi)\) (Gap A′)
+- Uniform spectral gap (Gap B)
 
 **Not supported as written** (correct the old DOI; keep as history or replace with #4)
 - Dark-state Goldbach route

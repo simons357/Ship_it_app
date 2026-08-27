@@ -14,7 +14,7 @@
 | ARCHON 10-expert review (Zenodo papers) | `ARCHON-NS-FINAL-REVIEW-PANEL.md` |
 | Dominant shell ≠ Q6; what \(c_*\) is | `SPECTRAL-OBJECT-MAP.md` + chat answers |
 | Zenodo spectral mirror (14 DOIs) | `docs/papers/zenodo-spectral/` |
-| Bridge\* single-pair proved; full-spectrum Bridge false; \(-3/14\) not universal | `scripts/*`, `tests/test_bridge_star_h_n.py` |
+| Positive-GCD A/B/C + Route C kills | `07_positive_gcd_paper1_abc.tex`, `route_c_gap_a_verify.py` |
 | Phi-cancel optional rewire (T2 for Gronwall; Phi ↛ H) | `PHI-OPTIONAL-REWIRE.md`, `PHI-FREE-SND-CHAIN.md` |
 | Prior floor / Bridge\* / keep-cut audit carried forward | `docs/BRIDGE-*.md`, `docs/FLOOR-ATTACK.md`, … |
 
@@ -44,7 +44,6 @@ python3 scripts/h_n_bridge_star_check.py 400
 | --- | --- |
 | Re-run ARCHON on June 10 merge | `NS_FINAL_MERGED_UNCONDITIONAL.tex` / `NS_PROOF_CHAIN.html` not in repo/Zenodo |
 | Prove unconditional SND / non-circular \(M\) | Open math; not available from mirrored sources |
-| Bridge\* multi-rep analytic lemma | Still open (numeric OK through \(N=200\)) |
 
 **If those files appear in `docs/papers/`:** re-open ARCHON focusing only on “does Theorem H derive \(M\) from \(\|u_0\|_{H^1}\) alone?”
 

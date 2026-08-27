@@ -51,12 +51,16 @@ T2 shell-flux Gronwall \emph{conditional on SND}
 & T2 submit note
 (update of \texttt{20552080}; Goldbach material removed)\\
 \rowcolor{lightgreen}
-Bridge$^*$: $R(e_p-e_q)>-1/2$ on normalized
-inverse-GCD for a single prime pair
-& New Bridge$^*$ note
-(not a full-spectrum floor)\\
+Bridge$^*$: $R(e_p-e_q)>-1/2$ and multi-rep $R(v_k)>-1/2$
+on normalized inverse-GCD
+& Q6 / Bridge$^*$ notes
+(\texttt{04\_q6\_inverse\_gcd.tex}, \texttt{07\_positive\_gcd\_paper1\_abc.tex})\\
+\rowcolor{lightgreen}
+Positive-GCD $Q_{ij}=\gcd/\sqrt{ij}$: pair bounds + $Q_N\succ 0$
+& \texttt{07\_positive\_gcd\_paper1\_abc.tex}\\
 \rowcolor{lightgreen}
 Route~C architecture \emph{conditional on two analytic gaps}
+(reframed: false $v_{\mathrm{alt}}$ target killed)
 & Route~C conditional note
 (update of \texttt{20518388}; RH not claimed)\\
 \bottomrule
@@ -93,6 +97,12 @@ Three-in-one / Triple Lock
 Full-spectrum floor $\lambda_{\min}>-1/2$
 for the named inverse-GCD matrices
 & Numerically false; do not cite as proved\\
+\rowcolor{lightred}
+Route~C Lemma~A ($\mu\varphi/d^2$) and $R(v_{\mathrm{alt}})\to -1/(2\pi)$
+& Refuted; see \texttt{route\_c\_gap\_a\_verify.py}\\
+\rowcolor{lightred}
+Universal $\lambda_{\min}(H_N)\ge -3/14$ for all $N$
+& False at small $N$ (tests)\\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -106,9 +116,11 @@ Navier--Stokes, or that a full-spectrum Bridge floor holds --- does
 The corrected public write-up is the note
 \emph{The Inverse-GCD Operator \(Q_N\)}
 (\texttt{04\_q6\_inverse\_gcd.tex}): definitions, Bridge$^*$
-(single prime-pair Rayleigh bound), nonnegative cone, and explicit
-withdrawal of false floors.
-Phi--Q6 ``correspondence'' is withdrawn as a load-bearing claim.
+(single pair and multi-representation Goldbach vectors), nonnegative cone,
+positive-GCD companion (\texttt{07\_positive\_gcd\_paper1\_abc.tex}),
+and explicit withdrawal of false floors.
+Route~C archived Lemma~A ($\mu\varphi/d^2$) and $R(v_{\mathrm{alt}})\to -1/(2\pi)$
+are withdrawn; see \texttt{05\_route\_c\_conditional.tex}.
 Use that note as a new version of
 \texttt{10.5281/zenodo.20405589}.
 

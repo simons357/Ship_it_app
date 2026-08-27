@@ -38,9 +38,11 @@ be its diagonally normalized form. We study three non-concentration readings:
 
 **[Withdrawn]** Full-spectrum Bridge \(\lambda_{\min}(Q_N)>-1/2\) (and the same for \(\tilde Q_N\)): false for the named matrices (counterexamples for small \(N\)).
 
-**[Proved]** Single Goldbach-pair case of Bridge\* on \(\tilde Q_N\) with \(v=e_p-e_q\) (§4.1).  
+**[Proved]** Single Goldbach-pair and multi-representation cases of Bridge\* on \(\tilde Q_N\) (§4.1–4.2).  
+**[Proved]** Nonnegative cone: \(v\ge 0\Rightarrow v^\top\tilde Q_N v\ge 0\) (§4.3).  
 **[Withdrawn]** June 5 dark-state ↔ Goldbach lemma; June 5 \(v_k=\chi-\chi\circ(k-\cdot)\) as Goldbach detector (§3.2).  
-**[Open]** Multi-representation cross-term lemma for Bridge\*; frame/Riesz form of SND arithmetic steps in companion NS files; Route C gaps for RH.
+**[Open]** Route C spectral limit (reframed Gap A′); Gap B uniform spectral gap.  
+**[Killed]** Route C archived Lemma A (\(\mu\varphi/d^2\)); \(R(v_{\mathrm{alt}})\to -1/(2\pi)\).
 
 Threshold \(\kappa_*=6/\pi^2=\zeta(2)^{-1}\) remains the squarefree density; it is **not** identified with \(\lambda_{\min}(Q_N)\) in this revision.
 
@@ -54,7 +56,8 @@ Three Clay problems live in three vocabularies. The structural question is still
 
 June 5 named the finish line as \(\lambda_{\min}(Q_N)>-1/2\).  
 **Computation shows that inequality fails** for \(Q_N\) and for \(\tilde Q_N\) as full-spectrum statements.  
-The finish line in this revision is **Bridge\*** (restricted Rayleigh), plus whatever normalized \(H_N\) the NS track actually proves \(\lambda_{\min}(H_N)\ge -3/14\) for (companion file — paste matrix definition when locked).
+The finish line in this revision is **Bridge\*** (restricted Rayleigh on Goldbach test vectors + cone positivity).  
+Universal \(\lambda_{\min}(H_N)\ge -3/14\) is **false** at small \(N\); do not cite as NS evidence.
 
 ---
 
@@ -139,7 +142,7 @@ v_k:=\sum_{\substack{p\le k/2\\p,\,k-p\in\mathbb{P}}}(e_p-e_{k-p}).
 
 > Stronger June 5 GNC with threshold \(\kappa_*=6/\pi^2\) on a mixed \(H_N\) is **not** used until \(H_N\) is defined and checked.
 
-### 3.3 Bridge\* (restricted floor) **[Partially proved]**
+### 3.3 Bridge\* (restricted floor) **[Proved on Goldbach class]**
 
 **Definition (Bridge\*).**  
 (i) For every Goldbach test vector \(v_k\) as above with \(v_k\not\equiv 0\),
@@ -166,14 +169,17 @@ since \(pq\ge 6\). Hence \(R>-1/2\).
 
 (Note: \(R\) can be negative, e.g. \((2,3)\mapsto\approx-0.228\); the June 5 “exact square \(\ge 0\)” used the wrong diagonal \(1/p\).)
 
-### 4.2 Multi-representation **[Open lemma]**
+### 4.2 Multi-representation **[Proved]**
 
-Cross terms among several partitions can make \(R\) negative (still \(>-1/2\) in checks through \(N\sim 200\)).  
-**Lemma (needed):** \(R(v_k)\ge -c_0\) for some absolute \(c_0<1/2\). See `docs/BRIDGE-STAR-PROOF.md`.
+Write \(v_k=\sum_a v_a\) with disjoint pair vectors \(v_a=e_{p_a}-e_{q_a}\), \(p_a<q_a\).
+Cross terms between distinct pairs factor as
+\((p^{-1/2}-q^{-1/2})(r^{-1/2}-s^{-1/2})>0\), hence
+\(R(v_k)\ge\min_a R(v_a)>-1/2\). See `04_q6_inverse_gcd.tex` Theorem (multi-rep).
 
-### 4.3 Cone positivity **[Expected / numeric]**
+### 4.3 Cone positivity **[Proved]**
 
-All entries of \(\tilde Q_N\) are positive ⇒ Rayleigh on \(v\ge 0\) is nonnegative (formal Gram writeup pending correct \(g(d)\) factorization conjugated by \(D^{-1/2}\)).
+All entries of \(\tilde Q_N\) are positive ⇒ \(v^\top\tilde Q_N v\ge 0\) for \(v\ge 0\)
+(entrywise sum of nonnegative terms).
 
 ---
 
@@ -182,13 +188,13 @@ All entries of \(\tilde Q_N\) are positive ⇒ Rayleigh on \(v\ge 0\) is nonnega
 June 5 Main Theorem claimed SND ⇔ GNC ⇔ full-spectrum Bridge on one \(Q_N\).  
 **As written, that theorem is not kept** (Bridge clause false; \(Q_N\)/\(H_N\) identification broken).
 
-**Revised structural claim [Open to re-prove after 4.2]:**
+**Revised structural claim [Partially proved]:**
 \[
-\mathrm{SND(cone\ control)}\;\longleftrightarrow\;
-\mathrm{GNC^*}\;\longleftrightarrow\;
-\mathrm{Bridge^*}.
+\mathrm{Bridge^*}\;\text{(Goldbach class + cone)}\;\Longrightarrow\;
+\mathrm{GNC^*}.
 \]
-Arrows must be rewritten without using \(\lambda_{\min}(Q_N)>-1/2\).
+Full SND ⇔ GNC ⇔ Bridge equivalence from June 5 is **not** kept (full-spectrum Bridge false).
+NS implications remain **[Conditional]** on SND and companion gaps.
 
 **Remark (still valid):** A structural equivalence, once proved for Bridge\*, does **not** by itself give unconditional Clay; it says one restricted inequality feeds three readings.
 
@@ -208,11 +214,10 @@ Arrows must be rewritten without using \(\lambda_{\min}(Q_N)>-1/2\).
 
 ## 7. Single open problem (revised)
 
-**Open A (Bridge\*).** Prove the multi-rep lemma: \(R_k>-1/2\) for all even \(k\le N\).  
-**Open B (NS track).** Lock \(H_N(i,j)=\ldots\) with \(\lambda_{\min}\ge -3/14\); fix Riesz/frame step; derive \(M\) from data.  
-**Open C (RH track).** Route C gaps — only after the RH operator matches Open A/B.
-
-Abandoned as stated: “Prove \(\lambda_{\min}(Q_N)>-1/2\) for all \(N\).”
+**Open A (NS).** Prove SND for arbitrary \(u_0\in H^1(\mathbb{T}^3)\), or produce non-circular \(M\).  
+**Open B (RH track).** Route C Gap A′ (spectral limit) and Gap B (uniform gap) — see `05_route_c_conditional.tex`.  
+**Closed.** Multi-rep Bridge\*; cone positivity; positive-GCD \(Q_N\succ 0\) (`07_positive_gcd_paper1_abc.tex`).  
+**Killed.** \(\lambda_{\min}(Q_N)>-1/2\); universal \(H_N\ge -3/14\); Route C Lemma A; \(R(v_{\mathrm{alt}})\to -1/(2\pi)\).
 
 ---
 

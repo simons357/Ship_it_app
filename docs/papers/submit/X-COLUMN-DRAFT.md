@@ -16,9 +16,9 @@ Here is what I *can* take credit for, now posted in corrected form on Zenodo:
 
 3. **T2 shell-flux Gronwall.** A quantitative shell Gronwall **assuming** SND. Same honesty rule.
 
-4. **Q6 / Bridge\*.** I defined the inverse-GCD operator. I do **not** claim it proves Goldbach, RH, or NS. Full-spectrum \(\lambda_{\min}>-1/2\) is false. What stands: a restricted Rayleigh bound on single prime-pair difference vectors (Bridge\*), written up properly as the corrected Q6 note.
+4. **Q6 / Bridge\*.** Inverse-GCD operator: Bridge\* for single pairs and multi-representation Goldbach vectors; positive-GCD companion with \(Q_N\succ 0\). Full-spectrum \(\lambda_{\min}>-1/2\) is false. No Goldbach/RH/NS claim.
 
-5. **Route C (conditional).** A spectral architecture toward zero-density estimates with **two analytic gaps still open**. Not RH proved.
+5. **Route C (conditional).** Reframed after killing false Lemma A and \(R(v_{\mathrm{alt}})\to -1/(2\pi)\). Spectral limit and uniform gap remain open. Not RH proved.
 
 6. **Self-audit.** I also killed my own overclaims: Triple Lock / full-spectrum Bridge / Statement-(B) packaging. Those Zenodo records stay as dated archive with correction notes. Credit includes knowing when you were wrong.
 

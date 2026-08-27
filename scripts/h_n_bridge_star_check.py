@@ -106,7 +106,7 @@ def main() -> None:
         "\nConclusion:\n"
         "  • H_N: λ_max=1; λ_min>-1/2 in checked range; −3/14 NOT universal.\n"
         "  • Bridge* single-pair: analytic >−1/2.\n"
-        "  • Bridge* multi-rep: numeric >−1/2 (worst near single-pair (3,5)).\n"
+        "  • Bridge* multi-rep: proved (cross terms); worst near single-pair (3,5).\n"
         "  • Neither object closes Navier–Stokes / Clay Statement (B).\n"
     )
 

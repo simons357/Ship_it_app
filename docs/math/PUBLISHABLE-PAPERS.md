@@ -57,10 +57,8 @@ This is your best paper.
 
 | | |
 | --- | --- |
-| **Source** | `docs/BRIDGE-STAR-PROOF.md` |
-| **What you claim** | \(R(e_p-e_q)>-1/2\) on \(\widetilde Q_{ij}=1/(\gcd\sqrt{ij})\) |
-| **Strip** | Goldbach, dark states, full-spectrum Bridge, prize packaging |
-| **Honesty line** | Restricted inequality only; multi-rep open |
+| **Honesty line** | Restricted inequality on Goldbach test vectors; multi-rep **proved** |
+| **Source** | `04_q6_inverse_gcd.tex`, `07_positive_gcd_paper1_abc.tex` |
 | **Venue shape** | arXiv math.NT / math.SP one-pager, or keep as Zenodo only |
 
 ---

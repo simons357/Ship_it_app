@@ -123,6 +123,54 @@ class TestBridgeStarAndHN(unittest.TestCase):
     def test_tilde_Q_floor_fails(self):
         self.assertLess(float(np.linalg.eigvalsh(mat_tilde(20))[0]), -0.5)
 
+    def test_route_c_mobius_lemma_a_false_at_gcd2(self):
+        # 1/gcd = sum mu phi/d^2 fails at gcd=2: LHS 1/2, RHS 3/4
+        def mu(n):
+            if n == 1:
+                return 1
+            x, c, p = n, 0, 2
+            while p * p <= x:
+                if x % p == 0:
+                    x //= p
+                    c += 1
+                    if x % p == 0:
+                        return 0
+                p += 1
+            if x > 1:
+                c += 1
+            return -1 if c % 2 else 1
+
+        def phi(n):
+            r, x, p = n, n, 2
+            while p * p <= x:
+                if x % p == 0:
+                    while x % p == 0:
+                        x //= p
+                    r -= r // p
+                p += 1
+            if x > 1:
+                r -= r // x
+            return r
+
+        rhs = sum(mu(d) * phi(d) / (d * d) for d in (1, 2))
+        self.assertAlmostEqual(rhs, 0.75)
+        self.assertNotAlmostEqual(rhs, 0.5)
+
+    def test_positive_gcd_zero_diag_kill(self):
+        N = 5
+        Q = np.array([[gcd(i, j) / (i * j) ** 0.5 for j in range(1, N + 1)] for i in range(1, N + 1)])
+        Qh = Q.copy()
+        np.fill_diagonal(Qh, 0.0)
+        self.assertLess(float(np.linalg.eigvalsh(Qh)[0]), -0.5)
+
+    def test_uniform_pair_floor(self):
+        # R > -1/sqrt(pq) >= -1/sqrt(6)
+        bound = -1 / 6**0.5
+        for p, q in [(2, 3), (3, 5), (5, 7), (11, 13)]:
+            R = 0.5 * (1 / p**2 + 1 / q**2) - 1 / (p * q) ** 0.5
+            self.assertGreater(R, -1 / (p * q) ** 0.5 - 1e-12)
+            self.assertGreater(R, bound - 1e-12)
+
 
 if __name__ == "__main__":
     unittest.main()

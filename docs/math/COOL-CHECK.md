@@ -9,9 +9,10 @@ Old ARCHON briefing “everything else is solid / Statement (B)” is **rejected
 | --- | --- |
 | `docs/math/TAO-MATH-PANEL-SND-H.md` | Honest — NS not solved |
 | `docs/math/ARCHON-NS-FINAL-REVIEW-PANEL.md` | Rejects Statement (B); keystone fails |
-| Submit TeX `01`–`05` | No Statement (B); conditional / operator-only claims |
+| Submit TeX `01`–`07` | No Statement (B); conditional / operator-only claims |
 | `06_status_errata` + `ARCHIVE-FIX` | Withdraw overclaim DOIs |
-| Bridge\* / \(H_N\) scripts | Proved single-pair; refute full-spectrum / −3/14 universal |
+| Bridge\* / \(H_N\) scripts | Proved pair + multi-rep; refute full-spectrum / −3/14 universal |
+| `route_c_gap_a_verify.py` | Killed archived Lemma A; \(R(v_{\mathrm{alt}})\not\to -1/(2\pi)\) |
 
 **Zenodo archive-only (stamp notice, do not delete):**  
 `20405526`, `20269843`, `20405589` (or replace with proper Q6), `20405593`, `20552171`, `20552400`
