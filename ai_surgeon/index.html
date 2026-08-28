@@ -10,7 +10,7 @@
   :root{
     --bg:#05070a; --panel:#0b1016; --panel2:#111922;
     --steel:#c8d3dd; --steel-dim:#7d8996;
-    --cyan:#3fd0e8; --cyan-dim:#1d6f80;
+    --cyan:#3fd0e8; --cyan-dim:#1d6f80; --gold:#d4af37;
     --red:#e2454a; --amber:#e0a63c; --green:#4bd08a;
     --line:#1c2731;
   }
@@ -25,6 +25,7 @@
   .brandrow{display:flex;align-items:center;gap:12px;margin-bottom:12px}
   .brandmark{width:52px;height:52px;border-radius:4px;object-fit:cover;
     border:1px solid var(--line);flex:0 0 auto}
+  .brandmark.cg{object-fit:contain;background:#000;border-radius:50%;padding:2px}
   .brand{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
   h1{font-size:30px;font-weight:600;color:#eef4f8;line-height:1.08;letter-spacing:-.015em}
   .sub{margin-top:12px;font-size:13px;line-height:1.6;color:var(--steel-dim);max-width:36em}
@@ -90,6 +91,25 @@
 
   footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);
     font-size:10.5px;line-height:1.7;color:#57626d}
+  footer .lock{display:block;margin-top:10px;letter-spacing:.16em;text-transform:uppercase;
+    font-size:9.5px;color:var(--gold)}
+  footer .lock span{color:var(--cyan)}
+
+  .gallery{display:grid;gap:10px;margin-top:8px}
+  .gallery a{display:block;border:1px solid var(--line);border-radius:6px;overflow:hidden;
+    background:#07090c;text-decoration:none;color:inherit}
+  .gallery img{display:block;width:100%;height:168px;object-fit:cover;object-position:center top;
+    background:#000}
+  .gallery span{display:block;padding:8px 10px 10px;font-size:11px;line-height:1.45;color:var(--steel-dim)}
+  .gallery span b{display:block;color:#eef4f8;font-size:11px;letter-spacing:.12em;
+    text-transform:uppercase;font-weight:600;margin-bottom:3px}
+
+  .demo-slot{margin-top:8px;border:1px dashed var(--cyan-dim);border-radius:6px;
+    padding:16px 15px;background:#07090c}
+  .demo-slot b{display:block;color:#eef4f8;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;font-weight:600;margin-bottom:8px}
+  .demo-slot p{font-size:12px;line-height:1.55;color:var(--steel-dim)}
+  .demo-slot code{font-size:10.5px;color:var(--cyan)}
 </style>
 </head>
 <body>
@@ -103,10 +123,10 @@
       <h1>AI Surgeon</h1>
     </div>
   </div>
-  <p class="sub">Identify before you cut. Study one, see one, do one, teach one — with the study
-  put back in front of the knife, where it belongs. Touch the structure to name it; twist, spread,
-  pinch, or swipe only after it unlocks. Two seats, one case: you and the head of the bed, not a
-  second world. Teaching is worth the most points, because it is the only phase that proves you
+  <p class="sub">Identify before you cut. Twist to choose, touch to commit. Study one, see one,
+  do one, teach one — with the study put back in front of the knife, where it belongs.
+  Surgery and anaesthesia are two seats of the same case, not two products, and not a second
+  world. Teaching is worth the most points, because it is the only phase that proves you
   understood it.</p>
 
   <figure class="hero">
@@ -115,7 +135,8 @@
     <figcaption class="cap">
       <b>The field</b>
       Phone first. Then a tablet on a mat. VR is the same build on a headset. Two modules are open:
-      open appendectomy, and tube thoracostomy under a live monitor.
+      open appendectomy, and tube thoracostomy under a live monitor. Phone stills (identify, lab,
+      verse, anatomy) use the scanned-mesh PNGs — they do not replace those modules.
     </figcaption>
   </figure>
 
@@ -127,11 +148,18 @@
   <div class="docs">
     <a href="ai-surgeon-prototype.html">Play appendectomy</a>
     <a href="ai-surgeon-module02-trauma.html">Play trauma</a>
+    <a href="screens.html">Phone stills</a>
+    <a href="screens.html#identify">Identify</a>
+    <a href="screens.html#lab">The Lab</a>
+    <a href="screens.html#verse">Surgery Verse</a>
+    <a href="screens.html#anesthesia">The Pen</a>
     <a href="docs/AI-Surgeon-Storyboard.pdf">Storyboard (product bible)</a>
     <a href="docs/AI-Surgeon-Systems-and-Progression.md">Systems &amp; progression</a>
     <a href="docs/CITATIONS.md">Citations</a>
     <a href="docs/SOURCE-LOCK.md">What the docs locked</a>
     <a href="docs/bible/AI-Surgeon-Final-Final.pdf">2025 final plan</a>
+    <a href="phone.html">Phone stills</a>
+    <a href="generators/AI-Surgeon-Brochure.pdf">Brochure</a>
   </div>
 
   <p class="cite" id="about-cites">
@@ -147,6 +175,82 @@
   supervised surgical training. No store checkout on this hub — schools, hospital systems, and
   STEM grants are who the plans say pay; the phone modules are what ships first.</p>
 </header>
+
+<!-- screens-stills:begin -->
+<h2 class="sec">Phone stills · August 2026 visual spec</h2>
+<p class="nonclaim">Same app. Twist to choose, touch to commit. Real stills in identify / lab / verse / anatomy.
+Full Module 12 and Module 21 stay where they are.</p>
+
+<a class="mod play" href="screens.html#identify">
+  <img class="mthumb" src="stills/06-cecum-appendix-b.png" alt="Cecum and appendix mesh">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Identify before you cut</span><span class="mstate">Open</span></div>
+    <div class="mname">ASK · MISS · HIT</div>
+    <div class="mdesc">Touch the appendix on the scanned mesh. Wrong structure names what you grabbed.
+    You do not get the knife until you can name what you are looking at.</div>
+    <div class="meta">
+      <span class="tag">Playable</span>
+      <span class="tag">One tap</span>
+      <span class="tag">Wet shader still</span>
+    </div>
+  </div>
+</a>
+
+<a class="mod play" href="screens.html#lab">
+  <img class="mthumb" src="stills/05-cecum-appendix-a.png" alt="Lab anatomy">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">The Lab</span><span class="mstate">Open</span></div>
+    <div class="mname">FIELD · ADD · SUBTRACT</div>
+    <div class="mdesc">Same meshes as the case. Toggle peritoneum, bowel wall, mesoappendix, arteries.
+    If you are lost, go and look at it alone.</div>
+    <div class="meta">
+      <span class="tag">Playable</span>
+      <span class="tag">Layer toggles</span>
+    </div>
+  </div>
+</a>
+
+<a class="mod play" href="screens.html#study">
+  <img class="mthumb" src="stills/12-study-one.png" alt="Study One card">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Study · See · Do One</span><span class="mstate">Open</span></div>
+    <div class="mname">Venous congestion first. Then the attending. Then you operate.</div>
+    <div class="mdesc">Pathophysiology card, name-before-divide, call for the instrument by name.
+    Gesture after the name lands: swipe, two-finger, pinch, hold.</div>
+    <div class="meta">
+      <span class="tag">Playable</span>
+      <span class="tag">#study #see #do #call</span>
+    </div>
+  </div>
+</a>
+
+<a class="mod play" href="screens.html#anatomy">
+  <img class="mthumb" src="stills/05-cecum-appendix-a.png" alt="Raw cecum appendix">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Anatomy</span><span class="mstate">Open</span></div>
+    <div class="mname">Raw cecum / appendix meshes</div>
+    <div class="mdesc">The stills used in identify, lab, and verse. Production art is sourced
+    (BodyParts3D / Z-Anatomy / Visible Human), not Figma primitives.</div>
+    <div class="meta">
+      <span class="tag">Playable viewer</span>
+    </div>
+  </div>
+</a>
+
+<a class="mod play" href="screens.html">
+  <img class="mthumb" src="stills/03-hardware-ladder.png" alt="Hardware ladder">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">All 16 stills</span><span class="mstate">Open</span></div>
+    <div class="mname">Phone screen map</div>
+    <div class="mdesc">Playable drills and pitch stills (hardware ladder, art fidelity, tablet + mat,
+    twist stylus). Brochure PDF from brochure.py.</div>
+    <div class="meta">
+      <span class="tag">screens.html</span>
+      <span class="tag">Pitch stills labelled</span>
+    </div>
+  </div>
+</a>
+<!-- screens-stills:end -->
 
 <h2 class="sec">Year 0 — skills lab · not yet built</h2>
 
@@ -164,6 +268,20 @@
     </div>
   </div>
 </div>
+
+<a class="mod play" href="screens.html#nib">
+  <img class="mthumb" src="stills/11-the-nib.png" alt="The Nib">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Phone tier · The Nib</span><span class="mstate">Open</span></div>
+    <div class="mname">Twist raises the tray. Touch takes the instrument.</div>
+    <div class="mdesc">Skills-lab preview of the twist stylus. Not the full knots / suturing lab.
+    No menu, no double-tap. Only tools legal for the step.</div>
+    <div class="meta">
+      <span class="tag">Playable</span>
+      <span class="tag">Twist to choose</span>
+    </div>
+  </div>
+</a>
 
 <h2 class="sec">Year 1 — minor procedures · not yet built</h2>
 
@@ -265,6 +383,21 @@
   </div>
 </a>
 
+<a class="mod play" href="screens.html#trauma" style="border-left-color:var(--red)">
+  <img class="mthumb" src="stills/16-trauma-pneumo.png" alt="Case 07 tension pneumothorax">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Case 07 · phone still</span><span class="mstate hard">Open</span></div>
+    <div class="mname">Tension pneumothorax</div>
+    <div class="mdesc">Stills-matched decision screen: needle buys time, tube is definitive, fluid is
+    the wrong physiology. Death enabled. This does not replace Module 21’s ten-step case.</div>
+    <div class="meta">
+      <span class="tag acu hi">Acuity ×2.5</span>
+      <span class="tag">Playable still</span>
+      <span class="tag">Patient death enabled</span>
+    </div>
+  </div>
+</a>
+
 <div class="mod pitch">
   <img class="mthumb" src="art/hero-surgical-table.jpg" alt="">
   <div class="mbody">
@@ -339,14 +472,27 @@
   </div>
 </div>
 
+<h2 class="sec">Phone stills · twist to choose, touch to commit</h2>
+<div class="rules" id="phone-stills">
+  <div class="rule"><b>Playable chrome</b><span>The stills player at
+    <a href="screens.html" style="color:var(--cyan)">screens.html</a> is the same product on a
+    phone frame — not a second app. Open
+    <a href="screens.html#identify" style="color:var(--cyan)">#identify</a>,
+    <a href="screens.html#lab" style="color:var(--cyan)">#lab</a>,
+    <a href="screens.html#verse" style="color:var(--cyan)">#verse</a>,
+    <a href="screens.html#anesthesia" style="color:var(--cyan)">#anesthesia</a>.
+    It does not replace the 3D appendectomy or the live-monitor trauma module.</span></div>
+</div>
+
 <h2 class="sec">Surgery Verse — two seats, one case</h2>
 <div class="rules" id="surgery-verse">
   <div class="rule"><b>Not a world</b><span>The 2025 Claude note said deliver the plan and
     <em>leave the metaverse out</em>. Surgery Verse here is a seat name, not a second universe
-    to raise against.</span></div>
-  <div class="rule"><b>Two seats</b><span>Surgeon and the head of the bed on <em>one case seed</em> —
-    same patient, same clock, real roles. Brochure also allows assist and scrub. Pitch. The
-    playable modules today are single-seat with an AI attending.</span></div>
+    to raise against. Surgery and anaesthesia are two seats of the same case, not two products.</span></div>
+  <div class="rule"><b>Two seats</b><span>Surgery and anaesthesia are two seats of the same case,
+    not two products. Locked seats: <em>surgeon</em>, <em>anaesthesia</em>, <em>scrub</em>. Same
+    seed, same clock. Pitch on this hub; the phone stills page is the Verse mock. Playable
+    HTML today is still single-seat with an AI attending.</span></div>
   <div class="rule"><b>Same case</b><span>Head-to-head is the same seed, separate runs: errors first,
     time second. Speed winning outright would teach people to rush.</span></div>
 </div>
@@ -381,7 +527,8 @@
     structures while you watch.</span></div>
   <div class="rule"><b>Do one</b><span>25 points a step. You identify the structure, <em>call the
     scrub for the instrument by name</em>, then perform the maneuver by gesture.
-    Touch to identify; twist, spread, pinch, or swipe to act — and only after the name lands.</span></div>
+    Twist to choose, touch to commit — then swipe, spread, pinch, or hold to act,
+    and only after the name lands.</span></div>
   <div class="rule"><b>Teach one</b><span>40 points a step — the most in the game. A junior asks you
     why, and you have to be right. The real Teach One — supervising a junior with a two-second
     interrupt window — is specified and not yet this multiple-choice placeholder.</span></div>

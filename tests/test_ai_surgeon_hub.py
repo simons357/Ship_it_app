@@ -28,6 +28,7 @@ class TestHubCopy(unittest.TestCase):
     def test_identify_before_you_cut_and_phases(self):
         h = self.html.lower()
         self.assertIn("identify before you cut", h)
+        self.assertIn("twist to choose, touch to commit", h)
         self.assertIn("study one", h)
         self.assertIn("see one", h)
         self.assertIn("do one", h)
@@ -37,10 +38,10 @@ class TestHubCopy(unittest.TestCase):
 
     def test_two_seats_one_case_not_a_metaverse(self):
         h = self.html.lower()
-        self.assertIn("two seats, one case", h)
-        self.assertIn("surgery verse", h)
-        self.assertIn("leave the metaverse out", h)
-        self.assertIn("not a second universe", h)
+        self.assertIn("two seats of the same case", h)
+        self.assertIn("surgeon", h)
+        self.assertIn("anaesthesia", h)
+        self.assertIn("scrub", h)
 
     def test_hardware_ladder(self):
         h = self.html.lower()

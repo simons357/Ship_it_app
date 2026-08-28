@@ -72,7 +72,7 @@ Locked in storyboard + systems (and already on the hub):
 
 - Study 10 / card (gated). See 5 / step. Do 25 / step. Teach 40 / step.
 - Identify before you cut: gesture stays locked until the structure is named.
-- Touch / tap to identify; swipe, two-finger spread, pinch, press-and-hold to act. Twist belongs on the later instrument-mat / VR map (same four verbs, rotary actuation).
+- **Twist to choose, touch to commit** (screens catalog / phone stills). Swipe, two-finger spread, pinch, press-and-hold to act on the playable HTML modules.
 - Acuity multiplies reward **and** penalty (routine ×1.0 … septic ×2.5; trauma ×2.0).
 - Coherence = accuracy + hesitation; high coherence removes hints, tightens gestures, speeds deterioration. Load is a second axis: accurate-and-overloaded is held, not pushed.
 - Patient death voids the case. **Disabled in entry modules. Enabled from trauma onward.**
@@ -89,11 +89,11 @@ Locked in storyboard + systems (and already on the hub):
 
 ## Surgery Verse seats
 
-The phrase **“Surgery Verse” does not appear** in the 2025 PDF, the citations txt, bigbiz, or the Claude screenshot. What *does* lock:
+The phrase **“Surgery Verse”** is on the August 2026 stills catalog (`stills/07-surgery-verse.png`) and in `screens_engine.py`. It does **not** appear in the 2025 PDF / citations txt / bigbiz / Claude screenshot.
 
-- **Two seats, one case** — surgeon and the head of the bed (brochure: primary, assist, scrub, anaesthetic on one seed).
-- Trauma already has an AI anaesthesia voice; the anaesthesia *track* is a stub.
-- Claude instruction: **do not deliver a metaverse.** Hub treats Surgery Verse as the two-seat name, not a world.
+Locked seats: **surgeon, anaesthesia, scrub** — two (or three) seats on one case seed, not two products, not a metaverse. Claude: **do not deliver a metaverse.** Hub treats Verse as the seat name.
+
+Catalog line: “Surgery and anaesthesia are two seats of the same case, not two products.”
 
 ## Who pays, what ships first (bigbiz + 2026 brochure — hub copy only)
 

@@ -33,7 +33,7 @@ not a clinical reference.
 ```bash
 python3 -m ai_surgeon          # http://127.0.0.1:8770/  (not DA's 8765)
 node --test ai_surgeon/tests/*.mjs
-python3 -m unittest tests.test_ai_surgeon
+python3 -m unittest tests.test_ai_surgeon tests.test_ai_surgeon_screens tests.test_ai_surgeon_hub tests.test_ai_surgeon_docs tests.test_ai_surgeon_screens
 ```
 
 ## Harmonic Blueprint Experiment 01
@@ -79,5 +79,5 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 ## Tests
 
 ```bash
-python -m unittest tests/test_hb_ringdown.py tests/test_ai_surgeon.py
+python -m unittest tests/test_hb_ringdown.py tests/test_ai_surgeon.py tests/test_ai_surgeon_hub.py tests/test_ai_surgeon_docs.py
 ```

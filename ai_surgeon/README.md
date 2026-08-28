@@ -18,6 +18,9 @@ Then open:
 - Prefixed: http://127.0.0.1:8770/ai-surgeon/
 - Open appendectomy: http://127.0.0.1:8770/ai-surgeon-prototype.html
 - Tube thoracostomy (trauma): http://127.0.0.1:8770/ai-surgeon-module02-trauma.html
+- Phone stills (identify / lab / verse / anatomy): http://127.0.0.1:8770/screens.html
+- Brochure PDF: http://127.0.0.1:8770/generators/AI-Surgeon-Brochure.pdf
+- Phone stills: http://127.0.0.1:8770/screens.html
 
 From this directory, relative assets also work with:
 
@@ -32,8 +35,13 @@ python3 -m http.server 8770
 | Hub `index.html` | Playable map. Two modules open; the rest are honest pitch cards. |
 | `ai-surgeon-prototype.html` | **Playable.** Open appendectomy — study / see / do / teach, profile, ask-the-attending, handover. |
 | `ai-surgeon-module02-trauma.html` | **Playable.** Tube thoracostomy — live monitor, needle decays, tube holds, patient loss on. |
+| `screens.html` | **Playable chrome** on the design stills (identify / lab / verse / pen). Not a replacement for the 3D modules. |
 | Teach One (supervise a junior) | Specified in the progression note; the HTML is still the multiple-choice placeholder. |
-| Skills lab, finger I&D, lap chole, hernia, anastomosis, cric, DCL, chief, anaesthesia track | Pitch · not playable. |
+| `screens.html` | **Playable stills.** Identify-before-cut, The Lab, Study/See/Do One, The Pen, The Nib, Verse seats, Case 07 phone still. |
+| Hardware ladder / art fidelity / tablet+mat / twist-stylus hardware | Pitch stills on `screens.html`. |
+| Skills lab, finger I&D, lap chole, hernia, anastomosis, cric, DCL, chief, anaesthesia track | Pitch · not playable. Module 04 The Pen is a still, not the full ladder. |
+
+How to rebuild the brochure and mockup PNGs: [`SCREENS.md`](SCREENS.md).
 
 ## Source of truth
 
@@ -50,6 +58,6 @@ python3 -m http.server 8770
 Prototype anatomy is still placeholder geometry (the storyboard says so). Not a clinical reference.
 
 ```bash
-python3 -m unittest tests.test_ai_surgeon tests.test_ai_surgeon_hub tests.test_ai_surgeon_docs
+python3 -m unittest tests.test_ai_surgeon tests.test_ai_surgeon_hub tests.test_ai_surgeon_docs tests.test_ai_surgeon_screens
 node --test ai_surgeon/tests/*.mjs
 ```

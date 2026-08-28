@@ -49,12 +49,24 @@ def _content_type(path: Path) -> str:
         return "image/jpeg"
     if path.suffix == ".png":
         return "image/png"
+    if path.suffix == ".webp":
+        return "image/webp"
+    if path.suffix == ".svg":
+        return "image/svg+xml"
+    if path.suffix.lower() == ".mp4":
+        return "video/mp4"
+    if path.suffix.lower() == ".webm":
+        return "video/webm"
     if path.suffix == ".html":
         return "text/html; charset=utf-8"
     if path.suffix == ".txt":
         return "text/plain; charset=utf-8"
     if path.suffix == ".pages":
         return "application/octet-stream"
+    if path.suffix == ".css":
+        return "text/css; charset=utf-8"
+    if path.suffix == ".json":
+        return "application/json; charset=utf-8"
     guessed, _ = mimetypes.guess_type(str(path))
     return guessed or "application/octet-stream"
 
@@ -105,6 +117,8 @@ def serve(host: str = "127.0.0.1", port: int = DEFAULT_PORT) -> None:
     print(f"Prefixed path     http://{host}:{port}{PREFIX}/")
     print(f"Appendectomy      http://{host}:{port}/ai-surgeon-prototype.html")
     print(f"Trauma module 02  http://{host}:{port}/ai-surgeon-module02-trauma.html")
+    print(f"Phone screens     http://{host}:{port}/screens.html")
+    print(f"Brochure PDF      http://{host}:{port}/generators/AI-Surgeon-Brochure.pdf")
     httpd.serve_forever()
 
 
