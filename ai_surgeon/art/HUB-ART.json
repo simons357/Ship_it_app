@@ -1,0 +1,52 @@
+{
+  "product": "AI Surgeon",
+  "studio": "Chronogate",
+  "house": "Prime Field Technologies",
+  "journal": "The Field Journal",
+  "note": "AI Surgeon is the game. CG reticle is chrome. Wordmark belongs on About/Credits. Not a medical device.",
+  "video": {
+    "status": "missing",
+    "author_mac_path": "/Users/jonathansimons/Downloads/8098483949091603692 2.MP4",
+    "searched": ["workspace", "uploads", "assets"],
+    "hub_slot": "#field-demo"
+  },
+  "pieces": [
+    {
+      "id": "surgery-verse",
+      "file": "art/surgery-verse.png",
+      "title": "Surgery Verse — three seats, wheel, leaderboard"
+    },
+    {
+      "id": "hardware-ladder",
+      "file": "art/hardware-ladder.png",
+      "title": "Hardware ladder — phone / iPad / VR"
+    },
+    {
+      "id": "anesthesia-the-pen",
+      "file": "art/anesthesia-the-pen.png",
+      "title": "Anesthesia mode — The Pen"
+    },
+    {
+      "id": "identify-before-you-cut",
+      "file": "art/identify-before-you-cut.png",
+      "title": "Identify before you cut — ASK / MISS / HIT"
+    },
+    {
+      "id": "biomechanical-ai-key",
+      "file": "art/biomechanical-ai-key.webp",
+      "title": "Biomechanical AI key art"
+    },
+    {
+      "id": "cg-reticle-logo",
+      "file": "art/cg-reticle-logo.png",
+      "title": "CG reticle logo — cyan C, gold G",
+      "use": "chrome"
+    },
+    {
+      "id": "chronogate-wordmark",
+      "file": "art/chronogate-wordmark.png",
+      "title": "CHRONOGATE · THE FIELD JOURNAL · PRIME FIELD TECHNOLOGIES",
+      "use": "credits"
+    }
+  ]
+}

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#05070a">
+<title>AI Surgeon — The Pen</title>
+<style>
+  :root{
+    --bg:#05070a; --panel:#0b1016; --panel2:#111922;
+    --steel:#c8d3dd; --steel-dim:#7d8996;
+    --cyan:#3fd0e8; --cyan-dim:#1d6f80; --gold:#d4af37;
+    --red:#e2454a; --amber:#e0a63c; --green:#4bd08a;
+    --line:#1c2731;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+  body{background:var(--bg);color:var(--steel);min-height:100%;
+    font-family:ui-sans-serif,-apple-system,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+    font-size:14px;letter-spacing:.01em;
+    padding:calc(env(safe-area-inset-top) + 22px) 18px calc(env(safe-area-inset-bottom) + 40px);
+    max-width:640px;margin:0 auto}
+  .brandrow{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .brandmark{width:52px;height:52px;border-radius:4px;object-fit:cover;border:1px solid var(--line)}
+  .cg-chrome{width:28px;height:28px;object-fit:contain;background:#000;border-radius:50%;
+    border:1px solid var(--line);padding:2px}
+  .brand{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);margin-bottom:6px}
+  h1{font-size:30px;font-weight:600;color:#eef4f8;line-height:1.08;letter-spacing:-.015em}
+  .sub{margin-top:12px;font-size:13px;line-height:1.6;color:var(--steel-dim)}
+  .honest{margin-top:10px;font-size:12px;line-height:1.55;color:#6a757f;border:1px solid var(--line);
+    border-radius:5px;padding:11px 13px}
+  .honest b{color:var(--amber);font-weight:600}
+  h2.sec{font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--steel-dim);
+    margin:28px 0 12px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+  .hero{position:relative;margin:16px 0 8px;border-radius:6px;overflow:hidden;
+    border:1px solid var(--line);background:#05070a}
+  .hero img{display:block;width:100%;height:210px;object-fit:cover;object-position:center 40%}
+  .hero .cap{position:absolute;left:0;right:0;bottom:0;padding:14px 14px 12px;
+    background:linear-gradient(0deg,rgba(5,7,10,.96),rgba(5,7,10,.12));
+    font-size:11px;line-height:1.5;color:var(--steel-dim)}
+  .hero .cap b{display:block;color:#eef4f8;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;font-weight:600;margin-bottom:4px}
+  .toggle{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+  .toggle button{background:var(--panel);border:1px solid var(--line);color:var(--steel-dim);
+    padding:12px 10px;border-radius:5px;font:inherit;letter-spacing:.14em;text-transform:uppercase;
+    font-size:11px;cursor:pointer}
+  .toggle button.on{border-color:var(--cyan);color:var(--cyan);background:#0c1820}
+  .toggle button.on.curr{border-color:var(--amber);color:var(--amber)}
+  .modeblurb{margin-top:10px;font-size:12.5px;line-height:1.55;color:var(--steel-dim)}
+  .gates{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+  .gate{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:12px 10px;
+    text-align:center;cursor:pointer;color:inherit}
+  .gate b{display:block;font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--steel-dim);margin-bottom:6px}
+  .gate span{display:block;font-size:13px;color:#eef4f8;font-weight:600}
+  .gate em{display:block;margin-top:6px;font-style:normal;font-size:10px;color:var(--green);
+    letter-spacing:.1em;text-transform:uppercase}
+  .gate.lock em{color:var(--red)}
+  .gate.on{border-color:var(--cyan)}
+  .anatomy{display:grid;gap:8px}
+  .zone{display:grid;grid-template-columns:92px 1fr;gap:0;background:var(--panel);
+    border:1px solid var(--line);border-radius:5px;overflow:hidden}
+  .zone img{width:92px;height:100%;min-height:88px;object-fit:cover;background:#07090c}
+  .zone .b{padding:12px 13px}
+  .zone .k{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:4px}
+  .zone .n{font-size:15px;font-weight:600;color:#e8eff5}
+  .zone .d{font-size:12px;line-height:1.5;color:var(--steel-dim);margin-top:5px}
+  .penpad{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:12px 0}
+  .penpad button{background:var(--panel2);border:1px solid var(--line);color:#eef4f8;
+    padding:16px 8px;border-radius:5px;font:inherit;cursor:pointer}
+  .penpad button b{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan)}
+  .penpad button i{display:block;font-style:normal;font-size:11px;color:var(--steel-dim);margin-top:4px}
+  .penpad button:active,.penpad button.flash{border-color:var(--gold);color:var(--gold)}
+  .coh{display:flex;align-items:center;gap:8px;margin:10px 0;font-size:10px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--steel-dim)}
+  .coh .bar{flex:1;height:5px;background:#131c25;border-radius:3px;overflow:hidden}
+  .coh .bar i{display:block;height:100%;width:50%;background:var(--amber)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:14px;margin-top:10px}
+  .who{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}
+  .say{font-size:13.5px;line-height:1.55;color:#dbe5ec}
+  .say em{font-style:normal;color:var(--cyan)}
+  .opts{display:grid;gap:7px;margin-top:12px}
+  .opts button{background:var(--panel2);border:1px solid var(--line);color:#d6e1e9;
+    padding:11px 12px;border-radius:4px;font:inherit;font-size:12.5px;text-align:left;cursor:pointer}
+  .opts button.right{border-color:var(--green);color:var(--green)}
+  .opts button.wrong{border-color:var(--red);color:var(--red)}
+  .cta{display:inline-block;margin-top:12px;border:1px solid var(--cyan-dim);color:var(--cyan);
+    border-radius:4px;padding:10px 12px;text-decoration:none;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;background:transparent;font:inherit;cursor:pointer}
+  .cta.ghost{border-color:var(--line);color:var(--steel-dim)}
+  .meta{font-size:12px;line-height:1.55;color:var(--steel-dim);margin-top:8px}
+  .fine{font-size:11px;line-height:1.5;color:#6a757f;margin-top:8px}
+  video#cam{width:100%;max-height:180px;object-fit:cover;background:#000;border-radius:5px;
+    border:1px solid var(--line);margin-top:8px;display:none}
+  video#cam.on{display:block}
+  .docs{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .docs a{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);
+    border:1px solid var(--cyan-dim);border-radius:3px;padding:7px 10px;text-decoration:none}
+  footer{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);
+    font-size:10.5px;line-height:1.7;color:#57626d}
+  footer .lock{display:block;margin-top:10px;letter-spacing:.16em;text-transform:uppercase;
+    font-size:9.5px;color:var(--gold)}
+  footer .lock span{color:var(--cyan)}
+  .log{font-size:11px;color:var(--steel-dim);min-height:1.4em;margin-top:8px}
+  #stage{min-height:120px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brandrow">
+    <img class="cg-chrome" src="art/cg-reticle-logo.png" width="28" height="28"
+         alt="Chronogate CG reticle — cyan C, gold G">
+    <img class="brandmark" src="stills/10-twist-stylus.png" width="52" height="52"
+         alt="Twist stylus still — barrel, detent, nib">
+    <div>
+      <div class="brand">Simons Medical Innovations · Chronogate</div>
+      <h1>The Pen</h1>
+    </div>
+  </div>
+  <p class="sub">One object in the hand. It is the knife. It is the clamp. It is the
+  retractor. Twist to choose. Click the top to fire. Squeeze to clamp, retract, or
+  hold-to-ligate. See one first. Then do one. Study your anatomy.</p>
+  <p class="honest" id="honest"><b>Honest.</b> Software cannot make a stylus feel like a
+    Kelly clamp. The Pen is the <em>language</em>. Until yours is down, <em>Apple Pencil Pro
+    is every instrument</em> — one object, not a tray of toys. iPhone does not take a Pencil;
+    phone v1 stays finger on glass. iPad is the desk. Not a medical device. Not cleared tracking.
+</header>
+
+<figure class="hero">
+  <img src="stills/11-the-nib.png" alt="The Nib — twist stylus on the field">
+  <figcaption class="cap">
+    <b>Min-movement stylus</b>
+    A pen already feels natural. Tiny fake instruments would not. Phone first.
+  </figcaption>
+</figure>
+
+<h2 class="sec">Exploration or curriculum</h2>
+<div class="toggle" id="mode-toggle">
+  <button type="button" id="btn-explore" class="on">Exploration</button>
+  <button type="button" id="btn-curr" class="curr">Curriculum</button>
+</div>
+<p class="modeblurb" id="mode-blurb"></p>
+<p class="fine">Always fun. Coherence and movement stay on in both modes. Curriculum is
+  what counts — Lab, then See One, then Do One. High stakes. Everyone is trying to win.
+  Scores high enough can read as medical education. The product is still completely benign:
+  you program it any way you want.</p>
+
+<div class="gates">
+  <button type="button" class="gate" id="gate-lab" data-stage="lab"><b>Gate 1</b><span>The Lab</span><em id="lab-state">Open</em></button>
+  <button type="button" class="gate" id="gate-see" data-stage="see"><b>Gate 2</b><span>See One</span><em id="see-state">—</em></button>
+  <button type="button" class="gate" id="gate-do" data-stage="do"><b>Gate 3</b><span>Do One</span><em id="do-state">—</em></button>
+</div>
+
+<div class="coh">Coherence <div class="bar"><i id="coh-bar"></i></div><span id="coh-n">50</span></div>
+<p class="log" id="log">Twist · click · squeeze. Q / E twist. Space click. F squeeze. Apple Pencil on this pad: nib tap = click, tilt = twist, pressure = squeeze.</p>
+
+<h2 class="sec" id="apple-pencil">Apple Pencil Pro · until yours is down</h2>
+<figure class="hero">
+  <img src="art/apple-pencil-pro-instrument.png" alt="Apple Pencil Pro annotated: nib tap, squeeze, barrel roll, hover">
+  <figcaption class="cap">
+    <b>One object. All instruments.</b>
+    Barrel roll = twist. Squeeze = clamp / ligate. Nib tap = click (Apple has no clicker cap).
+    Hover = look before you cut. Same three events as the Chronogate pen.
+  </figcaption>
+</figure>
+<p class="meta">Use Apple’s hardware until the custom click-cap / knurl / squeeze barrel exists.
+  Do not buy miniature Kellys. Pencil Pro is the desk. Phone still ships first without Apple.</p>
+<div class="card" id="pencil-pad-card">
+  <div class="who">Pointer field · pointerType pen</div>
+  <p class="say">Put an Apple Pencil (or any stylus the browser reports as <em>pen</em>) on this pad.
+    Finger still uses the three buttons. Native Pencil Pro squeeze and barrel roll are iPadOS;
+    Safari gets pressure, tilt, and nib tap. We do not invent a Web squeeze API.</p>
+  <div id="pencil-pad" style="margin-top:10px;height:160px;border:1px dashed var(--cyan-dim);border-radius:6px;background:#07090c;touch-action:none;display:flex;align-items:center;justify-content:center;color:var(--steel-dim);font-size:12px;letter-spacing:.12em;text-transform:uppercase">Nib here · iPad + Pencil</div>
+  <p class="fine" id="pencil-note"></p>
+</div>
+
+<h2 class="sec">Anatomy of the Pen</h2>
+<div class="anatomy">
+  <div class="zone">
+    <img src="stills/11-the-nib.png" alt="Nib">
+    <div class="b"><div class="k">Nib</div><div class="n">Where it points</div>
+      <div class="d">The field index. Vision looks here first. On glass, the reticle stands in.</div></div>
+  </div>
+  <div class="zone">
+    <img src="stills/10-twist-stylus.png" alt="Twist grip">
+    <div class="b"><div class="k">Twist grip</div><div class="n">Choose · plunger · tray</div>
+      <div class="d">Roll the detent. Eyes stay on the field. Summons the tray. No menu.</div></div>
+  </div>
+  <div class="zone">
+    <img src="stills/01-anesthesia-pen.png" alt="Top click and squeeze">
+    <div class="b"><div class="k">Top click · squeeze zone</div><div class="n">Fire · clamp · ligate</div>
+      <div class="d">Click commits, incises, goes next. Squeeze is clamp and retractor.
+      Hold the squeeze to ligate. Same object at the head of the bed: twist is the plunger.</div></div>
+  </div>
+</div>
+
+<div class="penpad" id="penpad">
+  <button type="button" data-pen="twist"><b>Twist</b><i>choose / tray</i></button>
+  <button type="button" data-pen="click"><b>Click</b><i>commit / fire</i></button>
+  <button type="button" data-pen="squeeze"><b>Squeeze</b><i>clamp / ligate</i></button>
+</div>
+
+<div id="stage"></div>
+
+<h2 class="sec">Vision commands</h2>
+<div class="card">
+  <div class="who">Phone camera · not a cleared tracker</div>
+  <p class="say">The camera sees the pen and the hand. Mechanical twist / click / squeeze
+    still work if you deny the camera. This stub does not claim millimetre pose or tool ID.</p>
+  <video id="cam" playsinline muted></video>
+  <p class="fine" id="vision-note"></p>
+  <button type="button" class="cta" id="btn-vision">Open camera</button>
+  <button type="button" class="cta ghost" id="btn-vision-off">Stop</button>
+</div>
+
+<div class="docs">
+  <a href="index.html">← Residency hub</a>
+  <a href="docs/THE-PEN.md">The Pen spec</a>
+  <a href="docs/APPLE-PENCIL.md">Apple Pencil stand-in</a>
+  <a href="docs/THEIRS-medical-big-picture.md">Theirs · medical</a>
+  <a href="screens.html#nib">The Nib still</a>
+  <a href="screens.html#anesthesia">Airway mapping</a>
+  <a href="screens.html#lab">The Lab</a>
+  <a href="ai-surgeon-prototype.html">Play appendectomy</a>
+  <a href="ai-surgeon-module02-trauma.html">Play trauma</a>
+</div>
+
+<footer>
+  Phone first. Then a tablet on a mat. Then VR — the same build, not a second product.
+  Not a medical device, not a clinical reference, not a substitute for supervised training.
+  <span class="lock">Chronogate · <span>The Field Journal</span> · Prime Field Technologies</span>
+</footer>
+
+<script src="ai-surgeon-systems.js"></script>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const M = AISS.Mode;
+  const P = AISS.Pen;
+  const C = AISS.Coherence;
+  M.restore();
+  AISS.Profile.restore();
+  const qMode = new URLSearchParams(location.search).get('mode');
+  if (qMode === 'curriculum' || qMode === 'exploration') M.set(qMode);
+
+  const SCENARIO = {
+    see: {
+      who: 'AI Attending — See One',
+      say: 'Watch the Pen, not a tray of toys. I twist — that summons the legal tray, Kelly only. I squeeze — that is the clamp on the mesoappendix. I click the top — that fires the transect. You name the structure while I work. You do not operate yet.',
+      next: 'You saw it. Anatomy still stands between you and the knife if this is curriculum.'
+    },
+    lab: {
+      prompt: 'Study your anatomy. Where do the three taeniae of the cecum converge?',
+      opts: [
+        { t: 'At the ileocecal valve', ok: false },
+        { t: 'At the base of the appendix', ok: true },
+        { t: 'At the hepatic flexure', ok: false }
+      ]
+    },
+    do: {
+      who: 'AI Attending — Do One',
+      say: 'Same scenario. Mesoappendix first. Identify it in your head — then <em>squeeze</em> to clamp. Click would incise the wrong plane. Twist only if you need the tray.',
+      need: 'squeeze',
+      role: 'clamp'
+    }
+  };
+
+  let stage = 'lab';
+  let awaiting = null;
+  let labTries = 0;
+
+  function paintCoh() {
+    const v = Math.round(C.v);
+    $('coh-bar').style.width = v + '%';
+    $('coh-bar').style.background = v > 72 ? 'var(--green)' : v > 34 ? 'var(--cyan)' : 'var(--amber)';
+    $('coh-n').textContent = v + ' · ' + C.band();
+  }
+
+  function gateCopy() {
+    const explore = M.is('exploration');
+    $('lab-state').textContent = explore || M.labCleared ? 'Cleared' : 'Required';
+    $('lab-state').parentElement.classList.toggle('lock', !explore && !M.labCleared);
+    $('see-state').textContent = explore || M.seenOne ? 'Seen' : (M.canSeeOne() ? 'Open' : 'Lab first');
+    $('see-state').parentElement.classList.toggle('lock', !M.canSeeOne());
+    $('do-state').textContent = M.canDoOne() ? 'Open' : 'See One first';
+    $('do-state').parentElement.classList.toggle('lock', !M.canDoOne());
+    $('gate-lab').classList.toggle('on', stage === 'lab');
+    $('gate-see').classList.toggle('on', stage === 'see');
+    $('gate-do').classList.toggle('on', stage === 'do');
+  }
+
+  function modeBlurb() {
+    $('btn-explore').classList.toggle('on', M.is('exploration'));
+    $('btn-curr').classList.toggle('on', M.is('curriculum'));
+    $('mode-blurb').innerHTML = M.is('exploration')
+      ? '<strong style="color:var(--cyan)">Exploration.</strong> Anything goes. Zero penalty. Skip the Lab if you want. Coherence still watches your hands. It cannot dock you. Fun is the point.'
+      : '<strong style="color:var(--amber)">Curriculum.</strong> It counts. You must study in the Lab, then See One, then Do One. Clock, score, and coherence matter. High stakes. Completely benign — a training sim, not a device.';
+    gateCopy();
+  }
+
+  function log(msg) { $('log').textContent = msg; }
+
+  function goStage(name) {
+    if (name === 'see' && !M.canSeeOne()) {
+      log('Curriculum: study in the Lab first.');
+      name = 'lab';
+    }
+    if (name === 'do' && !M.canDoOne()) {
+      log('Curriculum: See One before Do One. Anatomy is the gate.');
+      name = M.canSeeOne() ? 'see' : 'lab';
+    }
+    stage = name;
+    awaiting = null;
+    const root = $('stage');
+    if (name === 'lab') {
+      const q = SCENARIO.lab;
+      root.innerHTML = `<div class="card">
+        <div class="who">The Lab · anatomy gate</div>
+        <p class="say">${q.prompt}</p>
+        <div class="opts" id="lab-opts">${q.opts.map((o,i)=>`<button type="button" data-i="${i}">${o.t}</button>`).join('')}</div>
+        <p class="fine">Same meshes as the case. If you are lost, look at it alone —
+          <a href="screens.html#lab" style="color:var(--cyan)">open The Lab stills</a>.</p>
+      </div>`;
+      root.querySelectorAll('#lab-opts button').forEach((b) => {
+        b.addEventListener('click', () => gradeLab(+b.getAttribute('data-i'), b));
+      });
+    } else if (name === 'see') {
+      root.innerHTML = `<div class="card">
+        <div class="who">${SCENARIO.see.who}</div>
+        <p class="say">${SCENARIO.see.say}</p>
+        <p class="meta">Watch: twist (tray) → squeeze (clamp the mesoappendix) → click (transect).</p>
+        <button type="button" class="cta" id="seen-btn">I saw it</button>
+      </div>`;
+      $('seen-btn').addEventListener('click', () => {
+        M.markSeen();
+        C.hit(true);
+        paintCoh();
+        log('See One complete. Now you do one.');
+        modeBlurb();
+        goStage('do');
+      });
+      /* Auto-demo the three gestures so See One is actually seen. */
+      const seq = ['twist', 'squeeze', 'click'];
+      let i = 0;
+      const tick = () => {
+        if (stage !== 'see' || i >= seq.length) return;
+        flash(seq[i]);
+        P.fire(seq[i], { demo: true, role: seq[i] === 'squeeze' ? 'clamp' : seq[i] === 'click' ? 'knife' : 'tray' });
+        i++;
+        setTimeout(tick, 900);
+      };
+      setTimeout(tick, 400);
+    } else {
+      awaiting = SCENARIO.do.need;
+      root.innerHTML = `<div class="card">
+        <div class="who">${SCENARIO.do.who}</div>
+        <p class="say">${SCENARIO.do.say}</p>
+        <p class="meta">Need: <em>squeeze</em> — clamp. The Pen is the Kelly here. Not a tiny fake clamp.</p>
+      </div>`;
+    }
+    gateCopy();
+    paintCoh();
+  }
+
+  function gradeLab(i, btn) {
+    const ok = SCENARIO.lab.opts[i].ok;
+    labTries++;
+    document.querySelectorAll('#lab-opts button').forEach((b) => b.classList.remove('right', 'wrong'));
+    btn.classList.add(ok ? 'right' : 'wrong');
+    C.hit(ok);
+    paintCoh();
+    if (ok) {
+      M.markLab();
+      log('Lab cleared. Anatomy first — then you watch, then you operate.');
+      modeBlurb();
+      setTimeout(() => goStage('see'), 700);
+    } else {
+      const delta = M.score(-5);
+      log(delta === 0
+        ? 'Wrong. Exploration: no penalty. Look again. The taeniae meet at the base.'
+        : 'Wrong. Curriculum takes five. The three taeniae meet at the appendiceal base.');
+    }
+  }
+
+  function flash(g) {
+    document.querySelectorAll('#penpad [data-pen]').forEach((b) => {
+      b.classList.toggle('flash', b.getAttribute('data-pen') === g);
+    });
+    setTimeout(() => {
+      document.querySelectorAll('#penpad [data-pen]').forEach((b) => b.classList.remove('flash'));
+    }, 220);
+  }
+
+  function onPen(g) {
+    flash(g);
+    const ev = P.fire(g, { stage, role: g === 'squeeze' ? 'clamp' : g === 'click' ? 'knife' : 'tray' });
+    paintCoh();
+    if (stage !== 'do' || !awaiting) {
+      log(g.toUpperCase() + ' · ' + ev.action + (M.is('exploration') ? ' · exploration, no penalty' : ''));
+      return;
+    }
+    const ok = P.matches(g, awaiting);
+    C.hit(ok);
+    paintCoh();
+    if (ok) {
+      awaiting = null;
+      log('Clamped. That was the mesoappendix. The Pen was the Kelly — not a toy.');
+      $('stage').insertAdjacentHTML('beforeend',
+        `<p class="fine">Mapped onto existing actions: squeeze → clamp / retract / ligate.
+         Click → incise. Twist → tray. Play the full case:
+         <a href="ai-surgeon-prototype.html" style="color:var(--cyan)">open appendectomy</a>.</p>`);
+    } else {
+      const delta = M.score(-8);
+      log(delta === 0
+        ? 'Wrong gesture. Exploration lets you try again at zero cost. Squeeze to clamp.'
+        : 'Wrong gesture. Curriculum: that miss counts. Squeeze — clamp, not click.');
+    }
+  }
+
+  $('btn-explore').addEventListener('click', () => { M.set('exploration'); modeBlurb(); });
+  $('btn-curr').addEventListener('click', () => { M.set('curriculum'); modeBlurb(); });
+  document.querySelectorAll('.gate').forEach((b) => {
+    b.addEventListener('click', () => goStage(b.getAttribute('data-stage')));
+  });
+  document.querySelectorAll('#penpad [data-pen]').forEach((b) => {
+    b.addEventListener('click', () => onPen(b.getAttribute('data-pen')));
+  });
+
+  if (AISS.ApplePencil && $('pencil-pad')) {
+    $('pencil-note').textContent = AISS.ApplePencil.NOTE;
+    AISS.ApplePencil.bind($('pencil-pad'), (g, detail) => {
+      const via = (detail && detail.via) || 'pen';
+      log('Apple Pencil · ' + g + ' via ' + via);
+      onPen(g);
+    });
+  }
+
+  window.addEventListener('keydown', (ev) => {
+    const tag = (ev.target && ev.target.tagName) || '';
+    if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+    if (ev.key === 'q' || ev.key === 'Q' || ev.key === 'ArrowLeft') onPen('twist');
+    if (ev.key === 'e' || ev.key === 'E' || ev.key === 'ArrowRight') onPen('twist');
+    if (ev.key === ' ' || ev.key === 'Enter') { ev.preventDefault(); onPen('click'); }
+    if (ev.key === 'f' || ev.key === 'F') onPen('squeeze');
+  });
+
+  $('btn-vision').addEventListener('click', async () => {
+    $('vision-note').textContent = AISS.Vision.NOTE;
+    try {
+      await AISS.Vision.start($('cam'));
+      $('cam').classList.add('on');
+      $('vision-note').textContent = AISS.Vision.NOTE + ' Feed live. Not FDA-cleared. Not millimetre tracking.';
+    } catch (err) {
+      $('vision-note').textContent = 'Camera denied or missing. Twist, click, and squeeze still work. ' + AISS.Vision.NOTE;
+    }
+  });
+  $('btn-vision-off').addEventListener('click', () => {
+    AISS.Vision.stop();
+    $('cam').classList.remove('on');
+    $('cam').srcObject = null;
+    $('vision-note').textContent = 'Camera off. The Pen is mechanical.';
+  });
+  $('vision-note').textContent = AISS.Vision.NOTE;
+
+  modeBlurb();
+  goStage(M.is('curriculum') && !M.labCleared ? 'lab' : 'lab');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{
+  "product": "AI Surgeon",
+  "disclaimer": "Training simulation and concept screens. Not a medical device. Not cleared by any regulator. Not a substitute for supervised clinical training.",
+  "one_app": "Surgery and anaesthesia are two seats of the same case, not two products.",
+  "interaction": {
+    "rule": "Twist to choose, touch to commit.",
+    "forbidden": ["double-tap", "long-press", "dropdown-menu"]
+  },
+  "economy": {
+    "study_per_card": 10,
+    "see_per_step": 5,
+    "do_per_step": 25,
+    "teach_per_step": 40,
+    "identify_hit": 15,
+    "identify_miss": -5
+  },
+  "stills": [
+    {"id": "01", "file": "stills/01-anesthesia-pen.png", "title": "Anesthesia / The Pen", "kind": "playable", "route": "anesthesia"},
+    {"id": "02", "file": "stills/02-art-fidelity.png", "title": "Art fidelity", "kind": "pitch", "route": "stills"},
+    {"id": "03", "file": "stills/03-hardware-ladder.png", "title": "Hardware ladder", "kind": "pitch", "route": "hardware"},
+    {"id": "04", "file": "stills/04-identify-before-you-cut.png", "title": "Identify before you cut", "kind": "playable", "route": "identify"},
+    {"id": "05", "file": "stills/05-cecum-appendix-a.png", "title": "Cecum / appendix mesh A", "kind": "playable", "route": "anatomy"},
+    {"id": "06", "file": "stills/06-cecum-appendix-b.png", "title": "Cecum / appendix mesh B", "kind": "playable", "route": "anatomy"},
+    {"id": "07", "file": "stills/07-surgery-verse.png", "title": "Surgery Verse", "kind": "playable", "route": "verse"},
+    {"id": "08", "file": "stills/08-tablet-pencil-mat.png", "title": "Tablet + pencil + mat", "kind": "pitch", "route": "tablet"},
+    {"id": "09", "file": "stills/09-the-lab.png", "title": "The Lab", "kind": "playable", "route": "lab"},
+    {"id": "10", "file": "stills/10-twist-stylus.png", "title": "Twist stylus hardware", "kind": "pitch", "route": "stylus"},
+    {"id": "11", "file": "stills/11-the-nib.png", "title": "The Nib", "kind": "playable", "route": "nib"},
+    {"id": "12", "file": "stills/12-study-one.png", "title": "Study One", "kind": "playable", "route": "study"},
+    {"id": "13", "file": "stills/13-see-one.png", "title": "See One", "kind": "playable", "route": "see"},
+    {"id": "14", "file": "stills/14-do-one.png", "title": "Do One", "kind": "playable", "route": "do"},
+    {"id": "15", "file": "stills/15-call-for-instrument.png", "title": "Call for the instrument", "kind": "playable", "route": "call"},
+    {"id": "16", "file": "stills/16-trauma-pneumo.png", "title": "Trauma case 07", "kind": "playable", "route": "trauma"}
+  ],
+  "mockups": [
+    "generators/screen-01-study-one.png",
+    "generators/screen-02-see-one.png",
+    "generators/screen-03-do-one-decision.png",
+    "generators/screen-04-scrub-tech.png",
+    "generators/screen-05-trauma-vitals.png",
+    "generators/screen-06-teach-one.png"
+  ],
+  "brochure": "generators/AI-Surgeon-Brochure.pdf",
+  "sibling_modules": [
+    {"href": "ai-surgeon-prototype.html", "title": "Module 12 · Open appendectomy", "note": "Ingested prototype. Do not replace."},
+    {"href": "ai-surgeon-module02-trauma.html", "title": "Module 21 · Tube thoracostomy", "note": "Playable trauma module. Case 07 phone still is a sibling screen, not a replacement."}
+  ]
+}
