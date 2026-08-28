@@ -72,6 +72,8 @@ class TestHubCopy(unittest.TestCase):
         self.assertIn("docs/THE-PEN.md", self.html)
         self.assertIn('href="manga/"', self.html)
         self.assertIn("For a daughter and a son", self.html)
+        self.assertIn('href="dojo.html"', self.html)
+        self.assertIn("Cartoon dojo", self.html)
         self.assertTrue((ROOT / "ai_surgeon" / "phone.html").is_file())
         self.assertTrue((ROOT / "ai_surgeon" / "ai-surgeon-prototype.html").is_file())
         self.assertTrue((ROOT / "ai_surgeon" / "ai-surgeon-module02-trauma.html").is_file())

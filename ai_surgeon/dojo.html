@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>道場 · Kuroto Dojo</title>
+<style>
+  :root{--red:#e31c23;--paper:#f4ead6;--ink:#140a0a;--gold:#d4af37;--teal:#2a6f7a;--line:#3a2020}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0c0707;color:var(--paper);font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",ui-sans-serif,system-ui,sans-serif}
+  .wrap{max-width:720px;margin:0 auto;padding:0 0 48px}
+  a.hub{display:block;padding:12px 18px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#cfc4b0;text-decoration:none;background:#140a0a}
+  header img{display:block;width:100%;height:auto}
+  header .cap{padding:16px 20px 8px}
+  h1{font-size:28px;letter-spacing:.08em;color:var(--red)}
+  .sub{font-size:14px;line-height:1.55;color:#cfc4b0;margin-top:8px}
+  .row{display:flex;flex-wrap:wrap;gap:8px;padding:0 20px 12px}
+  button{background:#1a1010;border:1px solid var(--line);color:var(--paper);padding:10px 12px;border-radius:3px;font:inherit;cursor:pointer}
+  button.on{border-color:var(--red);color:var(--red)}
+  .stage{margin:0 20px;border:1px solid var(--line);background:#120808;min-height:220px;position:relative;overflow:hidden}
+  canvas#fx{display:block;width:100%;height:220px}
+  .coach{padding:14px 20px;font-size:16px;line-height:1.55}
+  .meter{display:flex;align-items:center;gap:8px;padding:0 20px 12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9a8b8b}
+  .meter i{flex:1;height:6px;background:#2a1515;border-radius:3px;overflow:hidden;display:block}
+  .meter i b{display:block;height:100%;width:0;background:var(--gold)}
+  video#cam{display:none;width:100%;max-height:140px;object-fit:cover;background:#000}
+  video#cam.on{display:block}
+  .fine{padding:0 20px;font-size:12px;color:#8a7a7a;line-height:1.5}
+  .log{padding:8px 20px;min-height:1.4em;color:var(--gold);font-size:13px}
+  footer{padding:20px;font-size:11px;color:#6a5555;line-height:1.6}
+  footer a{color:var(--teal)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="hub" href="index.html">← Residency hub · cartoon dojo, not a training case</a>
+  <header>
+    <img src="art/dojo_speed_racer_style.png" alt="Speed Racer cel: Jun in leopard stance, broom and ribbon, samurai bows">
+    <div class="cap">
+      <h1>道場 DOJO</h1>
+      <p class="sub">Budget Japanese cartoon. Speed lines. Same story as the manga.
+      Fake fight. Real exercise. No toy sword. What is around you: broom, ribbon, sand, empty hands.
+      Japanese pilots fly F-35s — Jun’s sky is not a stretch. Twist / click / squeeze is the same Pen.</p>
+    </div>
+  </header>
+
+  <div class="row" id="skills"></div>
+  <div class="row">
+    <button type="button" id="btn-cam">Camera (optional)</button>
+    <button type="button" id="btn-cam-off">Camera off</button>
+    <button type="button" data-pen="twist">Twist</button>
+    <button type="button" data-pen="click">Click · palm</button>
+    <button type="button" data-pen="squeeze">Squeeze · root</button>
+  </div>
+  <div class="stage">
+    <canvas id="fx" width="720" height="220"></canvas>
+    <video id="cam" playsinline muted></video>
+  </div>
+  <div class="meter">Motion <i><b id="mot"></b></i> <span id="mot-n">still</span></div>
+  <p class="coach" id="coach">Load the storyboard.</p>
+  <p class="log" id="log"></p>
+  <p class="fine">Hold the pose for leopard (keep still). Move slowly for tai chi (too fast fails).
+  Keyboard: Space hold = leopard. Q/E = twist. F = squeeze. Enter = palm.
+  Camera uses cheap frame-diff — not pose AI, not a medical device, not Carradine, not a fatality engine.</p>
+  <footer>
+    Storyboard: <a href="engine/storyboard.json">engine/storyboard.json</a> ·
+    Godot: <a href="engine/README.md">engine/README.md</a> ·
+    Manga: <a href="manga/">黒塔と湖</a><br>
+    There is no Warrior. Just the Surgeon. 武は守り. Residue of love.
+  </footer>
+</div>
+<script src="ai-surgeon-systems.js"></script>
+<script src="dojo.js"></script>
+</body>
+</html>
