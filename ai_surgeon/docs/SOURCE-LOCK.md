@@ -17,6 +17,10 @@ Desk map of the 28 Aug 2026 user drop. Independent of ChatVault, Domain Architec
 | `CITATIONS.md` | Named sources only. |
 | `AI-Surgeon-Storyboard.pdf` | August 2026 product storyboard (sibling ingest). **Supersedes VR-first framing for what to build.** |
 | `AI-Surgeon-Systems-and-Progression.md` | Scoring, coherence, teach-one, handover (sibling ingest). |
+| `WARRIOR-SURGEON.md` | 28 Aug 2026 novel drop — what it locked, and where it conflicts with final+cites. |
+| `THEIRS-medical-big-picture.md` | ACC / trauma / assistant / look-then-cut (same blob, medical voice). |
+| `HARRISONS-arthurian-lady-of-the-lake.md` | Oracle / Lake / songs. Hub/about: **one** atmosphere beat. Not a fantasy OR. |
+| `warrior-surgeon/` | Identical `.docx`, full extract, hashes. |
 
 The 2025 “final final” PDF is the **business bible**. The August 2026 storyboard is the **product bible** for modules, phases, and hardware order. Where they conflict, the hub follows the storyboard for *what ships*, and archives the 2025 plan without pretending it is the current raise.
 
@@ -26,7 +30,7 @@ The 2025 “final final” PDF is the **business bible**. The August 2026 storyb
 
 **August 2026 desk (storyboard / systems / brochure):** OR-literate, specific, small-team. “The game will not let you cut something you cannot name.” Phone first. Four to six modules. Identify before you cut. Teaching is worth the most points. Anatomy sourced, not modelled.
 
-**Hub copy uses the 2026 desk voice.** The 2025 voice stays in `bible/`.
+**Hub copy uses the 2026 desk voice.** The 2025 voice stays in `bible/`. Warrior Surgeon’s military-novel voice stays in `THEIRS-medical-big-picture.md` / `WARRIOR-SURGEON.md`. Harrison’s Lady of the Lake is **one atmosphere beat** on hub/about, not a Camelot operating room. F-22 / Tower / Occam must not land on playable chrome.
 
 ## Claims the 2025 plans make (archived, not repeated as current facts)
 
@@ -115,8 +119,17 @@ Constraints taken from that:
 
 ## What this agent changed vs left alone
 
-**Changed:** `index.html` copy (voice, identify-before-you-cut, hardware ladder, two seats, cite strip, who-pays, extra honest stubs). Docs bible + `CITATIONS.md`. Tests for those invariants.
+**Changed:** `index.html` copy (voice, identify-before-you-cut, hardware ladder, two seats, cite strip, who-pays, extra honest stubs). Docs bible + `CITATIONS.md`. Warrior Surgeon extract + voice split. Tests for those invariants.
 
-**Left as sibling playable cases:** `ai-surgeon-prototype.html`, `ai-surgeon-module02-trauma.html`, `ai-surgeon-systems.js` — labels/copy on the hub only, not a game rewrite.
+**Left as sibling playable cases:** `ai-surgeon-prototype.html`, `ai-surgeon-module02-trauma.html`, `ai-surgeon-systems.js` — labels/copy on the hub only, not a game rewrite. Repo HTML won over the 28 Aug CDN uploads.
 
-**Left as stubs:** skills lab, finger I&D, lap chole, hernia, anastomosis, cric, DCL, CABG, craniotomy, anaesthesia track, tablet+mat, Surgery Verse seats.
+**Left as stubs:** skills lab, finger I&D, lap chole, hernia, anastomosis, cric, DCL, CABG, craniotomy, anaesthesia track, tablet+mat, Surgery Verse seats. Jungle / Roman / Civil War floors from Warrior Surgeon are not hub modules.
+
+## Two voices (later ingest — merge, do not overwrite this lock)
+
+Both Warrior Surgeon `.docx` uploads were the **same bytes**. Split by voice in [`VOICE-LOCK.md`](VOICE-LOCK.md):
+
+- **THEIRS** = medical big picture → [`THEIRS-medical-big-picture.md`](THEIRS-medical-big-picture.md)
+- **HARRISON’S** = Arthurian Lady of the Lake → [`HARRISONS-arthurian-lady-of-the-lake.md`](HARRISONS-arthurian-lady-of-the-lake.md)
+
+No Harrison’s Principles quotations were in the drop. None are invented. Lake / mist is hub atmosphere only. Chronogate cyan / gold chrome stays. Playable prototype / trauma / systems files are not rewritten here.

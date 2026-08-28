@@ -50,8 +50,15 @@ These are production sources for the desk, not papers invented for the pitch:
 
 ---
 
+## Harrison’s Principles of Internal Medicine
+
+Not quoted in the dropped files. Do not invent Harrison’s sentences, editions, or page numbers. On this desk Harrison’s is the **Lady of the Lake** role — mythic authority that gives the sword — documented in [`HARRISONS-arthurian-lady-of-the-lake.md`](HARRISONS-arthurian-lady-of-the-lake.md). Clinical product voice stays in [`THEIRS-medical-big-picture.md`](THEIRS-medical-big-picture.md).
+
+---
+
 ## What is *not* a citation
 
 - Unreal Engine 5, Unity XR, TensorFlow, OpenAI GPT — technology names in the 2025 stack slide, not papers.
 - “BlueTools” haptic instruments, Vuzix-style glasses, blockchain credentialing — product ideas in the 2025 plan, not shipped, not cited science.
 - CEUs, medical-school scholarships, and “fully funded tuition” — incentives described in the plans, not awarded from this hub.
+- **Warrior Surgeon** (`docs/warrior-surgeon/`) — a fiction novel, not a paper. Do not cite it as evidence for markets, skill retention, or clinical outcomes.

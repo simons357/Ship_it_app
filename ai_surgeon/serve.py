@@ -63,6 +63,8 @@ def _content_type(path: Path) -> str:
         return "text/plain; charset=utf-8"
     if path.suffix == ".pages":
         return "application/octet-stream"
+    if path.suffix == ".docx":
+        return "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     if path.suffix == ".css":
         return "text/css; charset=utf-8"
     if path.suffix == ".json":
