@@ -31,6 +31,16 @@
   .brand{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
   h1{font-size:30px;font-weight:600;color:#eef4f8;line-height:1.08;letter-spacing:-.015em}
   .sub{margin-top:12px;font-size:13px;line-height:1.6;color:var(--steel-dim);max-width:36em}
+  .voices{position:relative;margin-top:14px;padding:14px 14px 12px;border:1px solid var(--line);
+    border-radius:5px;overflow:hidden;background:linear-gradient(180deg,#071018,var(--panel))}
+  .voices::before{content:"";position:absolute;inset:-40% -20% auto -20%;height:160px;pointer-events:none;
+    background:radial-gradient(ellipse at 50% 0%,rgba(63,208,232,.16),transparent 68%),
+               radial-gradient(ellipse at 80% 30%,rgba(212,175,55,.08),transparent 55%)}
+  .voices p{position:relative;font-size:12.5px;line-height:1.55;color:var(--steel-dim);margin:0}
+  .voices p + p{margin-top:10px}
+  .voices p b{display:block;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin-bottom:4px}
+  .voices p.mine b{color:var(--cyan)}
 
   .hero{position:relative;margin:18px 0 8px;border-radius:6px;overflow:hidden;
     border:1px solid var(--line);min-height:168px;background:#05070a}
@@ -134,6 +144,14 @@
   Surgery and anaesthesia are two seats of the same case, not two products, and not a second
   world. Teaching is worth the most points, because it is the only phase that proves you
   understood it.</p>
+  <div class="voices" id="two-voices">
+    <p class="mine" id="medical-big-picture"><b>Medical big picture · theirs</b>
+      Identify before you cut. Cases, physiology, trauma, anaesthesia, coherence — death-enabled
+      from trauma onward. This is what the playable product is.</p>
+    <p class="lake" id="harrisons-lake"><b>Harrison’s · Lady of the Lake</b>
+      Mythic authority that gives the sword from the water. Lake and mist are atmosphere on this
+      hub, not a fantasy reskin of the OR. No Harrison’s quotations are invented here.</p>
+  </div>
 
   <figure class="hero">
     <img class="field" src="art/hero-surgical-table.jpg"
@@ -171,8 +189,13 @@
     <a href="docs/AI-Surgeon-Storyboard.pdf">Storyboard (product bible)</a>
     <a href="docs/AI-Surgeon-Systems-and-Progression.md">Systems &amp; progression</a>
     <a href="docs/CITATIONS.md">Citations</a>
+    <a href="docs/VOICE-LOCK.md">Two voices</a>
+    <a href="docs/THEIRS-medical-big-picture.md">Theirs · medical</a>
+    <a href="docs/HARRISONS-arthurian-lady-of-the-lake.md">Harrison’s · lake</a>
     <a href="docs/SOURCE-LOCK.md">What the docs locked</a>
     <a href="docs/bible/AI-Surgeon-Final-Final.pdf">2025 final plan</a>
+    <a href="docs/WARRIOR-SURGEON.md">Warrior Surgeon (narrative)</a>
+    <a href="phone.html">Phone player</a>
     <a href="credits.html">About / Credits</a>
     <a href="generators/AI-Surgeon-Brochure.pdf">Brochure</a>
     <a href="SCREENS.md">How to run generators</a>
@@ -386,8 +409,9 @@ Full Module 12 and Module 21 stay where they are.</p>
     <div class="mtop"><span class="mnum">Module 21</span><span class="mstate hard">Open · unstable</span></div>
     <div class="mname">Tube Thoracostomy</div>
     <div class="mdesc">Tension pneumothorax with a haemothorax underneath it. The monitor is live and
-    the physiology does not pause while you think. Needle first if you must, but the needle only
-    buys you time — and the whole case turns on which border of which rib you cross.</div>
+    the physiology does not pause while you think. Look at the rib you are crossing before you cut.
+    Needle first if you must, but the needle only buys you time — and the whole case turns on which
+    border of which rib you cross. Anaesthesia is a seat on this clock, not a spectator.</div>
     <div class="meta">
       <span class="tag acu hi">Acuity ×2.0</span>
       <span class="tag">10 steps</span>
@@ -641,6 +665,13 @@ Full Module 12 and Module 21 stay where they are.</p>
 <div class="rules">
   <div class="rule"><b>The game</b><span>AI Surgeon. Clinical training game from Simons Medical
     Innovations, LLC. Not ChatVault, not Domain Architect, not RH, not NS.</span></div>
+  <div class="rule"><b>Medical big picture</b><span>Theirs. Identify before you cut. Cases,
+    physiology, trauma, anaesthesia, coherence — death-enabled from trauma onward. This is what
+    the playable product is. <a href="docs/THEIRS-medical-big-picture.md" style="color:var(--cyan)">THEIRS</a>.</span></div>
+  <div class="rule"><b>Harrison’s</b><span>The Lady of the Lake. Mythic authority that gives the
+    sword from the water. Lake and mist are atmosphere, not a fantasy reskin of the OR. No
+    Harrison’s quotations are invented here.
+    <a href="docs/HARRISONS-arthurian-lady-of-the-lake.md" style="color:var(--cyan)">Harrison’s</a>.</span></div>
   <div class="rule"><b>The house</b><span><em>Chronogate</em> · <em>The Field Journal</em> ·
     <em>Prime Field Technologies</em>. Full lock on
     <a href="credits.html" style="color:var(--cyan)">credits.html</a>.</span></div>

@@ -66,6 +66,20 @@ class TestHubCopy(unittest.TestCase):
         self.assertIn("Open Appendectomy", self.html)
         self.assertIn("Tube Thoracostomy", self.html)
         self.assertIn("Playable", self.html)
+        self.assertIn('href="phone.html"', self.html)
+        self.assertIn("docs/WARRIOR-SURGEON.md", self.html)
+        self.assertTrue((ROOT / "ai_surgeon" / "phone.html").is_file())
+        self.assertTrue((ROOT / "ai_surgeon" / "ai-surgeon-prototype.html").is_file())
+        self.assertTrue((ROOT / "ai_surgeon" / "ai-surgeon-module02-trauma.html").is_file())
+
+    def test_warrior_surgeon_aligns_without_lore_dump(self):
+        h = self.html
+        self.assertIn("Look at the rib you are crossing before you cut", h)
+        self.assertIn("Anaesthesia is a seat on this clock", h)
+        self.assertNotIn("John Occam", h)
+        self.assertNotIn("F-22", h)
+        self.assertNotIn("Kyranna", h)
+        self.assertNotIn("Black Tower", h)
 
     def test_honest_stubs_for_unbuilt(self):
         h = self.html

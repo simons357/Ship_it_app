@@ -46,6 +46,10 @@ How to rebuild the brochure and mockup PNGs: [`SCREENS.md`](SCREENS.md).
 - `docs/AI-Surgeon-Storyboard.pdf` — 31 beats, HUD, four phases (product bible)
 - `docs/AI-Surgeon-Systems-and-Progression.md` — two-axis load, handover scoring, competencies
 - `docs/SOURCE-LOCK.md` — what the dropped docs locked
+- `docs/VOICE-LOCK.md` — two voices: THEIRS (medical) vs Harrison’s (Lady of the Lake)
+- `docs/THEIRS-medical-big-picture.md` — user medical big picture (drives the playable product)
+- `docs/HARRISONS-arthurian-lady-of-the-lake.md` — Harrison’s as Arthurian authority that gives the sword
+- `docs/WARRIOR-SURGEON.md` — novel vs final+cites; repo HTML won over the CDN uploads
 - `docs/CITATIONS.md` — sources named in the 2025 plans, not invented papers
 - `docs/bible/` — 2025 final plan / extracts (archived investor voice)
 - `ai-surgeon-systems.js` — shared engine (`AISS`) wired into both playable modules
@@ -60,6 +64,6 @@ How to rebuild the brochure and mockup PNGs: [`SCREENS.md`](SCREENS.md).
 Prototype anatomy is still placeholder geometry (the storyboard says so). Not a clinical reference.
 
 ```bash
-python3 -m unittest tests.test_ai_surgeon tests.test_ai_surgeon_hub tests.test_ai_surgeon_docs tests.test_ai_surgeon_screens tests.test_ai_surgeon_brand
+python3 -m unittest tests.test_ai_surgeon tests.test_ai_surgeon_hub tests.test_ai_surgeon_docs tests.test_ai_surgeon_screens tests.test_ai_surgeon_brand tests.test_ai_surgeon_voices
 node --test ai_surgeon/tests/*.mjs
 ```

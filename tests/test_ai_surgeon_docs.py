@@ -44,6 +44,13 @@ class TestBiblePresent(unittest.TestCase):
         self.assertIn("phone → tablet + mat → VR", lock)
         self.assertIn("except metaverse", lock)
         self.assertIn("two seats", lock.lower())
+        self.assertTrue((DOCS / "VOICE-LOCK.md").is_file())
+        self.assertTrue((DOCS / "THEIRS-medical-big-picture.md").is_file())
+        self.assertTrue((DOCS / "HARRISONS-arthurian-lady-of-the-lake.md").is_file())
+        self.assertTrue((DOCS / "WARRIOR-SURGEON.md").is_file())
+        lock = (DOCS / "WARRIOR-SURGEON.md").read_text(encoding="utf-8")
+        self.assertIn("Playable UI follows the HTML prototypes", lock)
+        self.assertIn("The repo HTML won", lock)
 
 
 class TestCitationsAreTranscribedNotInvented(unittest.TestCase):
