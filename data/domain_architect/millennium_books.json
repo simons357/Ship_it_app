@@ -1,0 +1,494 @@
+{
+  "version": "1.0",
+  "honesty_preamble": "Domain Architect operates on theory books. It does NOT prove Millennium problems.",
+  "canonical_sfe_status": "unresolved",
+  "problems": {
+    "NS": {
+      "id": "NS",
+      "clay_name": "Navier-Stokes (Clay Statement B)",
+      "status": "OPEN",
+      "alias": "NAVIER-STOKES",
+      "honest_note": "Clay Statement B NOT proved. SND-C is conditional under X≤M. DA refuses H→Clay glue.",
+      "books": [
+        {
+          "book_id": "NS-B",
+          "label": "Classical NS-B (vorticity/velocity)",
+          "status": "REFERENCE",
+          "honest_status": "Organizational FRA book — not a Millennium proof.",
+          "expression": "partial_t omega = (omega * nabla) u + nu Delta omega; div u = 0",
+          "roles": [
+            "admissibility",
+            "interaction",
+            "state",
+            "scale_response",
+            "realized_output",
+            "environment"
+          ],
+          "terms": [
+            "viscosity",
+            "advection",
+            "incompressibility",
+            "time_evolution"
+          ],
+          "equation_refs": ["NS-B001", "NS-B002"],
+          "claims": [
+            {
+              "claim_id": "NS-B-CLASSICAL",
+              "label": "Classical 3D incompressible NS",
+              "expression": "partial_t omega = (omega * nabla) u + nu Delta omega",
+              "status": "REFERENCE",
+              "equation_ref": "NS-B001",
+              "roles": ["admissibility", "interaction", "state", "scale_response"]
+            }
+          ],
+          "notes": "Honest baseline PDE book. Does not entail SND or Clay B."
+        },
+        {
+          "book_id": "SND-C",
+          "label": "SND-C conditional (Theorem H as written)",
+          "status": "CONDITIONAL",
+          "honest_status": "Conditional under X≤M — NOT Clay Statement B.",
+          "expression": "SND-C under X<=M, rho<=rho_0: |Pi_{j*}| <= C_*(nu,delta_*,M,rho_0)",
+          "roles": [
+            "admissibility",
+            "interaction",
+            "state",
+            "scale_response",
+            "realized_output",
+            "environment"
+          ],
+          "terms": ["shell_flux", "enstrophy_ceiling", "spread_regime"],
+          "equation_refs": ["SND-C001", "THM-H001"],
+          "claims": [
+            {
+              "claim_id": "SND-C001",
+              "label": "Theorem H / SND-C",
+              "expression": "Theorem H: (X>=delta_*, X<=M, rho<=rho_0) => SND-C with C_*=C_*(nu,delta_*,M,rho_0,C_S)",
+              "status": "CONDITIONAL",
+              "equation_ref": "SND-C001",
+              "roles": ["interaction", "scale_response", "realized_output"]
+            },
+            {
+              "claim_id": "THM-D-CLAY",
+              "label": "Theorem D Clay⇔SND (tweet)",
+              "expression": "Clay Statement B <=> [SND]",
+              "status": "RETIRE",
+              "equation_ref": "SND-TWEET-THM-D001",
+              "roles": [],
+              "notes": "CUT target — illegal equivalence glue."
+            }
+          ],
+          "notes": "Keystone assumes X≤M. Registry marks INCOMPATIBLE with CLAY-B001 and SND-U001."
+        },
+        {
+          "book_id": "SND-U",
+          "label": "SND-U claimed unconditional",
+          "status": "REFUSE",
+          "honest_status": "Claimed unconditional — DA RETIRE; not established.",
+          "expression": "SND-U claimed: J/X >= c_* for all t>=0, all u0 in H^1(T^3) (unconditional)",
+          "roles": [],
+          "terms": ["spectral_gap", "J_over_X"],
+          "equation_refs": ["SND-U001"],
+          "claims": [
+            {
+              "claim_id": "SND-U001",
+              "label": "Unconditional SND",
+              "expression": "J/X >= c_* for all H^1 data without X<=M",
+              "status": "RETIRE",
+              "equation_ref": "SND-U001"
+            }
+          ],
+          "notes": "Parked claim book. Splice to SND-C is INCOMPATIBLE (TH-H1)."
+        },
+        {
+          "book_id": "CLAY-B",
+          "label": "Clay Statement B packaging",
+          "status": "RETIRE",
+          "honest_status": "Millennium Statement B — NOT resolved in repo inventory.",
+          "expression": "Clay Statement B claimed resolved via Theorem H / unconditional SND on T^3",
+          "roles": [],
+          "terms": ["global_regularity", "millennium"],
+          "equation_refs": ["CLAY-B001"],
+          "claims": [
+            {
+              "claim_id": "CLAY-B001",
+              "label": "Clay B resolved",
+              "expression": "Clay Statement B resolved via Theorem H / unconditional SND",
+              "status": "RETIRE",
+              "equation_ref": "CLAY-B001"
+            }
+          ],
+          "notes": "Disposition RETIRE. Any splice from SND-C or Theorem H is refused."
+        },
+        {
+          "book_id": "BOOT-M",
+          "label": "Bootstrap M lemma slot",
+          "status": "OPEN",
+          "honest_status": "Candidate de-circularization — open analytic slot.",
+          "expression": "Bootstrap (OPEN): M=M(||u0||_{H^1}) with X(t)<=M derived from data",
+          "roles": [
+            "admissibility",
+            "interaction",
+            "state",
+            "scale_response",
+            "realized_output",
+            "environment"
+          ],
+          "terms": ["bootstrap", "enstrophy_ceiling"],
+          "equation_refs": ["BOOT-M001"],
+          "claims": [
+            {
+              "claim_id": "BOOT-M001",
+              "label": "Bootstrap M from H¹ data",
+              "expression": "Lemma (Bootstrap-M): M=M(||u0||_{H^1}) with sup X(t)<=M on [0,T*)",
+              "status": "OPEN",
+              "equation_ref": "BOOT-M001",
+              "roles": ["scale_response", "environment"]
+            }
+          ],
+          "notes": "COMPATIBLE_DISTINCT splice to SND-C001. Does not alone close Clay B."
+        },
+        {
+          "book_id": "SND-HYP",
+          "label": "NS + SND hypothesis",
+          "status": "CONDITIONAL",
+          "honest_status": "KEEP framing — SND is hypothesis, not theorem.",
+          "expression": "Assume SND: inf_t J(t)/X(t) >= c_* > 0 on unaugmented NS (hypothesis)",
+          "roles": [
+            "admissibility",
+            "interaction",
+            "state",
+            "scale_response",
+            "realized_output",
+            "environment"
+          ],
+          "terms": ["snd_hypothesis"],
+          "equation_refs": ["SND-HYP001"],
+          "claims": [
+            {
+              "claim_id": "SND-HYP001",
+              "label": "SND as hypothesis",
+              "expression": "Assume SND hypothesis on classical NS-B",
+              "status": "CONDITIONAL",
+              "equation_ref": "SND-HYP001"
+            }
+          ],
+          "notes": "Adjacent to NS-B; COMPATIBLE_DISTINCT. Not SND-U."
+        },
+        {
+          "book_id": "SFE",
+          "label": "Simons Field Equation (historical)",
+          "status": "RETIRE",
+          "honest_status": "SFE canonical UNRESOLVED — no NS glue.",
+          "expression": "SFE historical candidate — unresolved canonical status",
+          "roles": ["interaction", "state", "scale_response"],
+          "terms": ["sfe"],
+          "equation_refs": ["SFE-H002"],
+          "claims": [
+            {
+              "claim_id": "SFE-H002",
+              "label": "SFE historical",
+              "expression": "SFE prize-packaging candidate",
+              "status": "RETIRE",
+              "equation_ref": "SFE-H002"
+            }
+          ],
+          "notes": "INCOMPATIBLE with NS-B001. SFE→NS splice must refuse."
+        },
+        {
+          "book_id": "NS-Q1",
+          "label": "Q1 hyperdissipative approximant",
+          "status": "OPEN",
+          "honest_status": "ε→0 limit; SND passage not established (TH-H7-Q1).",
+          "expression": "Q1: partial_t u + (u·∇)u = -∇p + νΔu - ε(-Δ)^{1+δ}u",
+          "roles": [
+            "admissibility",
+            "interaction",
+            "state",
+            "scale_response",
+            "realized_output",
+            "environment"
+          ],
+          "terms": ["hyperdissipation", "epsilon_limit"],
+          "equation_refs": ["NS-Q1-001"],
+          "claims": [],
+          "notes": "Do not splice Q1→Clay without proved SND limit passage."
+        }
+      ],
+      "welds": [
+        {
+          "weld_id": "W-NS-SNDC-CLAY",
+          "left_id": "SND-C001",
+          "right_id": "CLAY-B001",
+          "relation": "INCOMPATIBLE",
+          "evidence": "SND-C assumes X≤M; Clay B requires M-free H¹ control. TH-H1.",
+          "status": "INCOMPATIBLE",
+          "notes": "Primary illegal glue — DA refuses."
+        },
+        {
+          "weld_id": "W-NS-SNDC-SNDU",
+          "left_id": "SND-C001",
+          "right_id": "SND-U001",
+          "relation": "INCOMPATIBLE",
+          "evidence": "Conditional vs claimed unconditional SND. Broken weld TH-H1.",
+          "status": "INCOMPATIBLE"
+        },
+        {
+          "weld_id": "W-NS-THMD-CLAY",
+          "left_id": "SND-TWEET-THM-D001",
+          "right_id": "CLAY-B001",
+          "relation": "INCOMPATIBLE",
+          "evidence": "Clay⇔SND equivalence exceeds proved manuscripts. TH-H2.",
+          "status": "INCOMPATIBLE",
+          "notes": "CUT target for demo."
+        },
+        {
+          "weld_id": "W-NS-BOOT-SNDC",
+          "left_id": "BOOT-M001",
+          "right_id": "SND-C001",
+          "relation": "COMPATIBLE_DISTINCT",
+          "evidence": "Bootstrap M candidate de-circularizes Theorem H input — open slot.",
+          "status": "COMPATIBLE",
+          "requires_weld_lemma": true,
+          "notes": "Allowed splice with explicit weld lemma; still need M-free c_*."
+        },
+        {
+          "weld_id": "W-NS-SFE-NSB",
+          "left_id": "SFE-H002",
+          "right_id": "NS-B001",
+          "relation": "INCOMPATIBLE",
+          "evidence": "SFE prize-packaging and classical NS are distinct books.",
+          "status": "INCOMPATIBLE",
+          "notes": "SFE→NS glue forbidden — demo illegal splice."
+        },
+        {
+          "weld_id": "W-NS-NSB-SNDHYP",
+          "left_id": "SND-HYP001",
+          "right_id": "NS-B001",
+          "relation": "COMPATIBLE_DISTINCT",
+          "evidence": "SND hypothesis adjacent to classical NS-B.",
+          "status": "COMPATIBLE",
+          "requires_weld_lemma": true
+        },
+        {
+          "weld_id": "W-NS-Q1-CLAY",
+          "left_id": "NS-Q1-001",
+          "right_id": "CLAY-B001",
+          "relation": "INCOMPATIBLE",
+          "evidence": "Q1 ε→0 does not freely pass SND to Leray–Hopf. TH-H7-Q1.",
+          "status": "INCOMPATIBLE"
+        }
+      ]
+    },
+    "RH": {
+      "id": "RH",
+      "clay_name": "Riemann Hypothesis",
+      "status": "OPEN",
+      "alias": "RIEMANN",
+      "honest_note": "RH NOT proved. Q6 operator book is arithmetic KEEP — no RH claim. Route C exploratory.",
+      "books": [
+        {
+          "book_id": "RH-ROUTE-C",
+          "label": "Route C exploratory",
+          "status": "OPEN",
+          "honest_status": "Exploratory RH route — not a proof.",
+          "expression": "Route C: exploratory RH correspondence (organizational)",
+          "roles": ["state", "scale_response", "realized_output", "environment"],
+          "terms": ["zeta", "critical_line"],
+          "equation_refs": [],
+          "claims": [
+            {
+              "claim_id": "RH-ROUTE-C001",
+              "label": "Route C exploratory framing",
+              "expression": "RH Route C — exploratory; no closure claim",
+              "status": "OPEN",
+              "roles": ["scale_response", "realized_output"]
+            }
+          ],
+          "notes": "Skeleton book for compare/incompleteness paths."
+        },
+        {
+          "book_id": "Q6",
+          "label": "Q6 arithmetic operator",
+          "status": "REFERENCE",
+          "honest_status": "Arithmetic KEEP — explicitly NOT an RH proof book.",
+          "expression": "Q6 operator on arithmetic lattice — no RH claim",
+          "roles": ["interaction", "state", "scale_response", "environment"],
+          "terms": ["arithmetic", "prime_structure"],
+          "equation_refs": [],
+          "claims": [
+            {
+              "claim_id": "Q6-ARITH001",
+              "label": "Q6 arithmetic operator",
+              "expression": "Q6 arithmetic operator — organizational; RH not claimed",
+              "status": "REFERENCE",
+              "roles": ["interaction", "state"]
+            }
+          ],
+          "notes": "Withdrawn Triple Lock / Bridge paths must not glue Q6→NS or Q6→RH proof."
+        },
+        {
+          "book_id": "RH-MD",
+          "label": "Montgomery-Dyson coincidence",
+          "status": "REFERENCE",
+          "honest_status": "Archive / coincidence — not a proof weld.",
+          "expression": "Montgomery-Dyson pair correlation coincidence (archive)",
+          "roles": ["realized_output", "environment"],
+          "terms": ["pair_correlation", "random_matrix"],
+          "equation_refs": [],
+          "claims": [
+            {
+              "claim_id": "RH-MD001",
+              "label": "Montgomery-Dyson archive",
+              "expression": "Montgomery-Dyson coincidence — empirical archive only",
+              "status": "REFERENCE"
+            }
+          ],
+          "notes": "REFERENCE only. Splice to RH-ROUTE-C requires explicit lemma — not proof."
+        }
+      ],
+      "welds": [
+        {
+          "weld_id": "W-RH-Q6-RH",
+          "left_id": "Q6-ARITH001",
+          "right_id": "RH-ROUTE-C001",
+          "relation": "INSUFFICIENT_INFORMATION",
+          "evidence": "Q6 is arithmetic KEEP; RH Route C is exploratory. No checked weld lemma.",
+          "status": "OPEN",
+          "notes": "Splice would require: explicit operator→zeta correspondence lemma, not prize glue."
+        },
+        {
+          "weld_id": "W-RH-MD-RH",
+          "left_id": "RH-MD001",
+          "right_id": "RH-ROUTE-C001",
+          "relation": "COMPATIBLE_DISTINCT",
+          "evidence": "Empirical coincidence archive adjacent to exploratory route — not proof.",
+          "status": "COMPATIBLE",
+          "requires_weld_lemma": true,
+          "notes": "Organizational only."
+        },
+        {
+          "weld_id": "W-RH-Q6-NS",
+          "left_id": "Q6-ARITH001",
+          "right_id": "NS-B001",
+          "relation": "INCOMPATIBLE",
+          "evidence": "Withdrawn Triple Lock / Q6→NS glue. Arithmetic operator ≠ fluids NS.",
+          "status": "INCOMPATIBLE",
+          "notes": "DA refuses cross-prize bullshit glue."
+        }
+      ]
+    },
+    "YANG-MILLS": {
+      "id": "YANG-MILLS",
+      "clay_name": "Yang-Mills existence and mass gap",
+      "status": "OPEN",
+      "honest_note": "Mass gap is OPEN hypothesis — stub book only.",
+      "books": [
+        {
+          "book_id": "YM-STUB",
+          "label": "Yang-Mills mass gap stub",
+          "status": "OPEN",
+          "honest_status": "Organizational stub — mass gap OPEN.",
+          "expression": "Yang-Mills on R^4 — mass gap hypothesis (OPEN)",
+          "roles": ["admissibility", "interaction", "state", "scale_response"],
+          "terms": ["gauge", "mass_gap"],
+          "equation_refs": [],
+          "claims": [],
+          "notes": "Template for future theory splicing when repo content exists."
+        }
+      ],
+      "welds": []
+    },
+    "PVSNP": {
+      "id": "PVSNP",
+      "clay_name": "P vs NP",
+      "status": "OPEN",
+      "honest_note": "Organizational stub — no repo content unless added.",
+      "books": [
+        {
+          "book_id": "PVSNP-STUB",
+          "label": "P vs NP organizational stub",
+          "status": "OPEN",
+          "honest_status": "Stub — no closure claim.",
+          "expression": "P vs NP — organizational placeholder",
+          "roles": ["admissibility", "interaction"],
+          "terms": ["complexity"],
+          "equation_refs": [],
+          "claims": [],
+          "notes": "Expand when repo has complexity-theoretic book content."
+        }
+      ],
+      "welds": []
+    },
+    "BSD": {
+      "id": "BSD",
+      "clay_name": "Birch and Swinnerton-Dyer conjecture",
+      "status": "OPEN",
+      "honest_note": "Stub book — BSD NOT proved.",
+      "books": [
+        {
+          "book_id": "BSD-STUB",
+          "label": "BSD stub",
+          "status": "OPEN",
+          "honest_status": "Organizational stub.",
+          "expression": "BSD conjecture — L-function rank correspondence (OPEN)",
+          "roles": ["state", "realized_output", "environment"],
+          "terms": ["elliptic_curve", "L_function"],
+          "equation_refs": [],
+          "claims": [],
+          "notes": "Template for future splicing."
+        }
+      ],
+      "welds": []
+    },
+    "HODGE": {
+      "id": "HODGE",
+      "clay_name": "Hodge conjecture",
+      "status": "OPEN",
+      "honest_note": "Stub book — Hodge NOT proved.",
+      "books": [
+        {
+          "book_id": "HODGE-STUB",
+          "label": "Hodge stub",
+          "status": "OPEN",
+          "honest_status": "Organizational stub.",
+          "expression": "Hodge conjecture — (p,p) classes (OPEN)",
+          "roles": ["state", "realized_output", "environment"],
+          "terms": ["cohomology", "algebraic_cycles"],
+          "equation_refs": [],
+          "claims": [],
+          "notes": "Template for future splicing."
+        }
+      ],
+      "welds": []
+    },
+    "POINCARE": {
+      "id": "POINCARE",
+      "clay_name": "Poincaré conjecture",
+      "status": "SOLVED_REFERENCE",
+      "honest_note": "Perelman proof exists — DA marks REFERENCE only, not re-proof.",
+      "books": [
+        {
+          "book_id": "POINCARE-REF",
+          "label": "Poincaré reference (Perelman)",
+          "status": "REFERENCE",
+          "honest_status": "Solved externally — REFERENCE book for compare only.",
+          "expression": "Poincaré conjecture — Perelman proof (external reference)",
+          "roles": ["admissibility", "state", "environment"],
+          "terms": ["ricci_flow", "surgery"],
+          "equation_refs": [],
+          "claims": [
+            {
+              "claim_id": "POINCARE-REF001",
+              "label": "Perelman reference",
+              "expression": "Poincaré conjecture resolved by Perelman (2003) — external",
+              "status": "REFERENCE"
+            }
+          ],
+          "notes": "DA does not re-prove. Use for weld template comparisons only."
+        }
+      ],
+      "welds": []
+    }
+  }
+}
