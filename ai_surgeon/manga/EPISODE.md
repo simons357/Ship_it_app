@@ -3,7 +3,7 @@
 One kids’ manga / cartoon **special**. Runtime target: **~90 minutes**.
 
 This folder is the **script + playable manga pages**. This machine cannot emit a finished
-television file. A parent reads the episode in the browser. Godot and Unreal later consume
+television file. **Not a finished TV file.** A parent reads the episode in the browser. Godot and Unreal later consume
 the same beats (`engine/storyboard.json` + `manga/script.json`).
 
 Open: `python3 -m ai_surgeon` → [http://127.0.0.1:8770/manga/](http://127.0.0.1:8770/manga/)
