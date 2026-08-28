@@ -18,6 +18,14 @@ from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 from .sfe_compare import compare_sfe_pair, list_sfe_candidates
 from .snd_claims import anatomize_claim
+from .theory_splicer import (
+    cut,
+    express,
+    insert,
+    list_millennium_problems,
+    screen,
+    splice,
+)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -104,7 +112,136 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="anatomize SND/Clay claim language via inventory (refuse overclaims)",
     )
+    parser.add_argument(
+        "--list-millennium",
+        action="store_true",
+        help="list Clay Millennium problems and honest status (not proved)",
+    )
+    parser.add_argument(
+        "--splice-screen",
+        metavar="MILLENNIUM_ID",
+        help="screen all welds in a millennium problem book (NS, RH, …)",
+    )
+    parser.add_argument(
+        "--splice-cut",
+        nargs=2,
+        metavar=("BOOK", "CLAIM_ID"),
+        help="CUT — remove a claim from a theory book",
+    )
+    parser.add_argument(
+        "--splice-insert",
+        nargs=3,
+        metavar=("BOOK", "ROLE", "CANDIDATE"),
+        help="INSERT — add candidate completion at incompleteness gap",
+    )
+    parser.add_argument(
+        "--splice-join",
+        nargs=2,
+        metavar=("BOOK_A", "BOOK_B"),
+        help="SPLICE — attempt to join two books (refuse if incompatible)",
+    )
+    parser.add_argument(
+        "--theory-express",
+        metavar="BOOK",
+        help="EXPRESS — reconstruct book from roles and check closure",
+    )
     args = parser.parse_args(argv)
+
+    if args.list_millennium:
+        items = list_millennium_problems()
+        if args.json:
+            json.dump({"millennium_problems": items}, sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print("Millennium problems (honest status — DA does not prove these):")
+            for item in items:
+                print(
+                    f"  {item['id']}: {item['clay_name']} — {item['status']}"
+                )
+                print(f"    {item['honest_note']}")
+                print(f"    books: {', '.join(item['books'])}")
+        return 0
+
+    if args.splice_screen:
+        report = screen(args.splice_screen)
+        if args.json:
+            json.dump(report.to_dict(), sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print(f"Theory splicer — SCREEN {report.millennium_id}")
+            print(report.statement)
+            print(f"bullshit_destroyed: {report.bullshit_destroyed}")
+            for w in report.welds:
+                print(
+                    f"  [{w.get('screen_verdict', '?')}] {w['weld_id']}: "
+                    f"{w['relation']} — {w['evidence'][:80]}"
+                )
+        return 2 if report.bullshit_destroyed else 0
+
+    if args.splice_cut:
+        book, claim = args.splice_cut
+        result = cut(book, claim)
+        if args.json:
+            json.dump(result.to_dict(), sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print(f"{result.operation}: success={result.success}")
+            print(f"  bullshit_destroyed={result.bullshit_destroyed}")
+            print(f"  {result.message}")
+            if result.bullshit_flags:
+                for f in result.bullshit_flags:
+                    print(f"  flag: {f}")
+            if result.suggested_fix:
+                print(f"  fix: {result.suggested_fix}")
+        return 0 if result.success else 2
+
+    if args.splice_insert:
+        book, role, candidate = args.splice_insert
+        result = insert(book, role, candidate)
+        if args.json:
+            json.dump(result.to_dict(), sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print(f"{result.operation}: success={result.success}")
+            print(f"  bullshit_destroyed={result.bullshit_destroyed}")
+            print(f"  {result.message}")
+            if result.suggested_fix:
+                print(f"  fix: {result.suggested_fix}")
+        return 0 if result.success else 2
+
+    if args.splice_join:
+        book_a, book_b = args.splice_join
+        result = splice(book_a, book_b)
+        if args.json:
+            json.dump(result.to_dict(), sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print(f"{result.operation}: success={result.success}")
+            print(f"  weld_id={result.weld_id}")
+            print(f"  bullshit_destroyed={result.bullshit_destroyed}")
+            print(f"  {result.message}")
+            if result.bullshit_flags:
+                for f in result.bullshit_flags:
+                    print(f"  flag: {f}")
+            if result.suggested_fix:
+                print(f"  fix: {result.suggested_fix}")
+        return 0 if result.success else 2
+
+    if args.theory_express:
+        result = express(args.theory_express)
+        if args.json:
+            json.dump(result.to_dict(), sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print(f"{result.operation}: success={result.success}")
+            print(f"  bullshit_destroyed={result.bullshit_destroyed}")
+            print(f"  {result.message}")
+            if result.bullshit_flags:
+                for f in result.bullshit_flags:
+                    print(f"  flag: {f}")
+            if result.suggested_fix:
+                print(f"  fix: {result.suggested_fix}")
+        return 0 if result.success else 2
 
     if args.snd_claim:
         if not args.expression:
