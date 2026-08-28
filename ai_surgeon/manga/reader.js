@@ -54,10 +54,27 @@
     pages[i].scrollIntoView({ block: "start" });
   }
 
+  function showIndex(n) {
+    i = clamp(n);
+    paint();
+  }
+
   function go(d) {
     if (!paged) return;
-    i = clamp(i + d);
-    paint();
+    showIndex(i + d);
+  }
+
+  function fromHash() {
+    const hash = (location.hash || "").replace(/^#/, "");
+    if (!hash) return;
+    const idx = pages.findIndex(function (p) {
+      return p.id === hash || (p.getAttribute("data-page") || "").indexOf(hash) !== -1;
+    });
+    if (idx >= 0) {
+      paged = true;
+      document.body.classList.remove("scroll-all");
+      showIndex(idx);
+    }
   }
 
   bar.addEventListener("click", function (ev) {
@@ -93,5 +110,7 @@
     }
   });
 
+  window.addEventListener("hashchange", fromHash);
   paint();
+  fromHash();
 })();
