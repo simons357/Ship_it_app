@@ -7,7 +7,7 @@
 | Layer | What | Cost |
 |---|---|---|
 | **Storyboard JSON** | `engine/storyboard.json` — 12 manga beats + dojo skills | Already written |
-| **Play now** | `dojo.html` — Speed Racer cel, camera optional, exercise holds | This repo, port 8770 |
+| **Play now** | `dojo.html` — Speed Racer cel (leopard / tai chi / broom-ribbon-sand / bow-then-palms), camera optional | This repo, port 8770 |
 | **Budget team engine** | Godot 4 project in `engine/godot/` — free, the JSON loads as data | Hire 1–2 Godot people when you want |
 | **Later studio** | Unreal 5 imports the **same** JSON as a DataTable | Only when there is a real art/animation bill |
 
@@ -38,7 +38,7 @@ This is not David Carradine’s show and not that trademark. It is bare-hand, su
 ## Team (when you hire)
 
 1. **Storyboard owner** — this JSON + the manga. Does not rewrite Solomon.
-2. **Godot gameplay** — loads JSON, ships dojo + chapter select.
+2. **Godot gameplay** — loads JSON, plays the four dojo skills (`engine/godot/scripts/Dojo.gd`). Does not re-author the twelve chapters.
 3. **Cel art** — Speed Racer limited palette. No photoreal organs in the cartoon.
 4. **Move coach (optional)** — real tai chi / karate teacher to check the eight counts are not harmful. Not a medical device. Not PT.
 

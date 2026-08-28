@@ -18,6 +18,14 @@
     "kirana": "武は守り — the warrior fights for life.",
     "ending": "Something is left, but a residue of love."
   },
+  "respect": {
+    "for": "a daughter who loves Japanese things; respect, not costume",
+    "modernity": "Japan Air Self-Defense Force flies F-35s; Jun’s sky cadet is not foreign to that",
+    "not_ip": ["David Carradine", "Kung Fu television series", "Warner Bros. television IP"],
+    "not_slurs": true,
+    "not_a_medical_device": true,
+    "camera": "optional frame-diff only — not pose AI, not cleared tracking, not PT"
+  },
   "cast": [
     {"id": "jun", "name": "奥村淳", "name_en": "Okumura Jun", "role": "sky cadet, healer-student"},
     {"id": "solomon", "name": "ソロモン先生", "name_en": "Solomon-sensei", "role": "teacher"},
@@ -44,7 +52,8 @@
     "title": "道場",
     "why": "Gaming engine lets the story teach skills with the body. Fake fight. Real exercise. No bought sword tray — fight with what is around you. Japanese pilots fly F-35s; Jun’s sky is not foreign to that. Bare-hand, leopard, tai chi. Cartoon. Nobody is wasted.",
     "weapons_from_the_room": ["broom", "ribbon", "sand", "voice", "empty hands"],
-    "not": ["miniature toy swords", "blood fatality", "pay-to-win stances", "racial caricature"],
+    "disclaimer": "Not a medical device. Not pose AI. Camera is frame-diff only. Not supervised martial-arts training. Not PT. Cartoon spar. Nobody is wasted.",
+    "not": ["miniature toy swords", "blood fatality", "pay-to-win stances", "racial caricature", "David Carradine IP"],
     "skills": [
       {
         "id": "leopard",
