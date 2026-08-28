@@ -241,6 +241,8 @@
   const C = AISS.Coherence;
   M.restore();
   AISS.Profile.restore();
+  const qMode = new URLSearchParams(location.search).get('mode');
+  if (qMode === 'curriculum' || qMode === 'exploration') M.set(qMode);
 
   const SCENARIO = {
     see: {

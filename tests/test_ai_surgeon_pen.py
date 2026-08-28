@@ -135,6 +135,7 @@ class TestPenHubAndScreen(unittest.TestCase):
         self.assertIn("ai-surgeon-systems.js", html)
         self.assertIn('id="btn-explore"', html)
         self.assertIn('id="btn-curr"', html)
+        self.assertIn("URLSearchParams(location.search)", html)
         self.assertIn('id="gate-lab"', html)
         self.assertIn('id="gate-see"', html)
         self.assertIn('id="gate-do"', html)

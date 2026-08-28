@@ -159,6 +159,8 @@
         <p class="meta">Twist to choose, click the top to commit, squeeze to clamp. Surgery and anaesthesia are two seats of the same case.
         Module 12 appendectomy and Module 21 trauma stay on the hub — this page does not replace them. The Pen is one object, not a tray of toys.</p>
         <a class="cta" href="pen.html">Open The Pen trainer</a>
+        <a class="cta" href="pen.html?mode=curriculum">Curriculum</a>
+        <a class="cta" href="pen.html?mode=exploration">Exploration</a>
         <a class="cta" href="index.html">← Residency hub</a>
       </div>
       <div class="hub-grid">
