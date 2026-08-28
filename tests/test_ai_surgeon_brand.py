@@ -53,10 +53,17 @@ class TestBrandLock(unittest.TestCase):
         cls.credits = CREDITS.read_text(encoding="utf-8")
 
     def test_cg_logo_is_chrome_ai_surgeon_is_the_game(self):
-        self.assertIn("art/cg-reticle-logo.png", self.hub)
-        self.assertIn("brandmark cg", self.hub)
+        self.assertIn('class="cg-chrome" src="art/cg-reticle-logo.png"', self.hub)
+        self.assertIn("art/hero-surgical-table.jpg", self.hub)
+        self.assertIn("art/key-art-x.jpg", self.hub)
         self.assertIn("<h1>AI Surgeon</h1>", self.hub)
         self.assertIn("art/cg-reticle-logo.png", self.credits)
+        proto = (SURGEON / "ai-surgeon-prototype.html").read_text(encoding="utf-8")
+        trauma = (SURGEON / "ai-surgeon-module02-trauma.html").read_text(encoding="utf-8")
+        screens = (SURGEON / "screens.html").read_text(encoding="utf-8")
+        self.assertIn("art/cg-reticle-logo.png", proto)
+        self.assertIn("art/cg-reticle-logo.png", trauma)
+        self.assertIn("art/cg-reticle-logo.png", screens)
 
     def test_chronogate_lock_on_hub_and_credits(self):
         for body in (self.hub, self.credits):

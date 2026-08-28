@@ -26,6 +26,8 @@
   .brandmark{width:52px;height:52px;border-radius:4px;object-fit:cover;
     border:1px solid var(--line);flex:0 0 auto}
   .brandmark.cg{object-fit:contain;background:#000;border-radius:50%;padding:2px}
+  .brandrow .cg-chrome{width:28px;height:28px;object-fit:contain;background:#000;border-radius:50%;
+    border:1px solid var(--line);flex:0 0 auto;padding:2px}
   .brand{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
   h1{font-size:30px;font-weight:600;color:#eef4f8;line-height:1.08;letter-spacing:-.015em}
   .sub{margin-top:12px;font-size:13px;line-height:1.6;color:var(--steel-dim);max-width:36em}
@@ -116,8 +118,12 @@
 
 <header>
   <div class="brandrow">
-    <img class="brandmark cg" src="art/cg-reticle-logo.png" width="52" height="52"
+    <!-- chronogate-chrome:begin -->
+    <img class="cg-chrome" src="art/cg-reticle-logo.png" width="28" height="28"
          alt="Chronogate CG reticle — cyan C, gold G">
+    <!-- chronogate-chrome:end -->
+    <img class="brandmark" src="art/key-art-x.jpg" width="52" height="52"
+         alt="AI Surgeon key art: metallic X and surgical instruments">
     <div>
       <div class="brand">Simons Medical Innovations</div>
       <h1>AI Surgeon</h1>
