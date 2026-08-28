@@ -39,6 +39,8 @@ class TestStoryboard(unittest.TestCase):
         self.assertNotIn("katana_mall", board["dojo"]["weapons_from_the_room"])
         self.assertEqual(board["dojo"]["skills"][2]["options"], ["broom", "ribbon", "sand", "empty"])
         self.assertIn("There is no Warrior", board["moral"]["solomon"])
+        self.assertEqual(board["episode"]["runtime_minutes"], 90)
+        self.assertEqual(board["episode"]["current"], "You are loved.")
         self.assertTrue(board["respect"]["not_slurs"])
         self.assertTrue(board["respect"]["not_a_medical_device"])
         self.assertIn("David Carradine", board["respect"]["not_ip"])

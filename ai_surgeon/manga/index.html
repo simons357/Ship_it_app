@@ -67,16 +67,41 @@
     text-align:center;background:var(--panel)}
   footer.end .last{font-size:18px;margin-top:8px}
   footer.end .src{margin-top:16px;font-size:12px;color:var(--muted)}
+  .honest{margin:8px 22px 18px;padding:12px 14px;background:#1a1612;color:#efe6d4;
+    font-family:ui-sans-serif,system-ui,sans-serif;font-size:12px;line-height:1.55;
+    letter-spacing:.02em}
+  .honest a{color:#9ad4dc}
+  .love{margin:0 22px 18px;padding:14px 16px;background:linear-gradient(#fff6e0,#f3ead6);
+    border:1px solid var(--gold);text-align:center}
+  .love strong{display:block;font-size:18px;letter-spacing:.12em;color:var(--vermilion)}
+  .love span{font-size:13px;color:var(--muted)}
+  .act{margin:28px 22px 12px;padding:10px 14px;background:#1a1612;color:#e0a63c;
+    font-family:ui-sans-serif,system-ui,sans-serif;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase}
+  .law{display:block;font-size:11px;letter-spacing:.14em;color:var(--lake);
+    margin-top:8px;font-family:ui-sans-serif,system-ui,sans-serif}
+  .readerbar{position:sticky;bottom:0;z-index:20;display:flex;flex-wrap:wrap;gap:8px;
+    align-items:center;justify-content:center;padding:10px 12px;background:#1a1612;
+    color:#efe6d4;font-family:ui-sans-serif,system-ui,sans-serif;font-size:12px}
+  .readerbar button{background:var(--vermilion);color:#fff;border:0;padding:8px 12px;
+    cursor:pointer;letter-spacing:.08em}
+  .readerbar button:disabled{opacity:.35;cursor:default}
+  .readerbar .readermode{background:#2a6f7a}
+  .readerpos{min-width:12em;text-align:center;color:#cfc4b0}
+  .readerlove{flex:1 1 100%;text-align:center;color:#e0a63c;letter-spacing:.1em}
+  .is-hidden-page{display:none !important}
+  body.scroll-all .readerlove{display:none}
+  .links{padding:0 28px 16px;font-size:13px}
 </style>
 </head>
 <body>
 <div class="stage">
 <a class="hub" href="../index.html">← Residency hub · this is the gift, not the cases</a>
 
-<header class="cover">
+<header class="cover" data-page="cover" data-t="00:00">
   <img src="art/manga_cover_kuroto.png" alt="Cover: Jun, Kirana at the lake, the tower in mist">
   <div class="covercap">
-    <div class="ruby">MANGA · マンガ</div>
+    <div class="ruby">MANGA · マンガ · ONE EPISODE</div>
     <h1>黒塔と湖<br>Kuro-tō to Mizūmi</h1>
     <p class="gift">For my daughter and my son.<br>
     He is a good writer. This manga follows his story — every beat he put down —
@@ -85,14 +110,27 @@
   </div>
 </header>
 
+<p class="honest">Kids’ cartoon special, ~90 minutes of story. What you can open here is the
+<strong>script + manga pages</strong> — not a finished TV file (this machine cannot paint
+a whole anime). Read it as a parent. Godot/Unreal take the same beats later.
+Bible: <a href="EPISODE.md">EPISODE.md</a> · timed script: <a href="script.json">script.json</a>.
+A Japanese musician look-consult is welcome later. Original cel. No IP theft.</p>
+
+<div class="love">
+  <strong>You are loved.</strong>
+  <span>あなたは、愛されている。 — the current under every room, even when nobody says it.</span>
+</div>
+
 <nav class="toc">
+  <a href="#cold">00 愛</a>
   <a href="#ch01">01 空</a><a href="#ch02">02 砂</a><a href="#ch03">03 光</a>
   <a href="#ch04">04 約束</a><a href="#ch05">05 蟻</a><a href="#ch06">06 金</a>
-  <a href="#ch07">07 火</a><a href="#ch08">08 鏡</a><a href="#ch09">09 湖</a>
+  <a href="#ch07">07 火</a><a href="#rest">休息</a><a href="#ch08">08 鏡</a><a href="#ch09">09 湖</a>
   <a href="#ch10">10 歌</a><a href="#ch11">11 影なし</a><a href="#ch12">12 残り香</a>
 </nav>
+<p class="links">Residency hub stays the game. This gift stays the story.</p>
 
-<section class="cast">
+<section class="cast" data-page="cast" data-t="00:00">
   <h2>登場人物 · the leads</h2>
   <p><b>奥村 淳</b> Okumura Jun. Sky cadet. His name keeps Occam’s razor:
     cut away what is not needed. Intelligent. Moral. He teaches with his hands.</p>
@@ -105,8 +143,33 @@
   <p><b>蓮と誠</b> Ren and Makoto. Assistant and patient. Two seats of the same case.</p>
 </section>
 
+<!-- 00 cold open -->
+<article id="cold" data-page="00 愛" data-t="00:00–02:00">
+  <span class="bang">第00話</span>
+  <h2 class="ch">あなたは、愛されている</h2>
+  <p class="chsub">Cold open · the children already know the water</p>
+  <figure class="panel">
+    <img src="art/manga_cold_open.png" alt="Kaito and Hana on the pier at dawn, ribbon on a reed">
+    <figcaption>Panel 00 — Before the tower. A brother, a sister, a ribbon that waits.</figcaption>
+  </figure>
+  <p class="narr">Dawn in a fishing town. 海斗 and 花 hold hands on the pier the way children do
+  when the grown-up they love is late. One window of the childhood house is still warm.
+  A crimson ribbon is already tied to a reed. Nobody has taught them the word <i>episode</i>.
+  They only know the water is cold and the day is allowed.</p>
+  <p class="narr">「帰ってくる？」 Hana asks.</p>
+  <p class="narr">「いい人なら、海がおぼえてる。」 If he is good, the water will remember him.</p>
+  <div class="box lake">The wind does not wait for a title card. It says the only sentence
+  this whole show is for: <b>You are loved.</b></div>
+  <div class="box lesson"><em>A small law of the house</em>Love is not a prize you get after
+  the last floor. It is the weather you walk out into. Honor the people who left a light in
+  the window, even when they are not in the room.
+  <span class="law">Honor father and mother · you are loved before you earn it</span></div>
+</article>
+
+<div class="act" data-page="Act I" data-t="02:00">Act I · The door that is not locked · 02:00–30:00</div>
+
 <!-- 01 -->
-<article id="ch01">
+<article id="ch01" data-page="01 空の上" data-t="02:00–09:00">
   <span class="bang">第01話</span>
   <h2 class="ch">空の上</h2>
   <p class="chsub">Above the sky · he wrote the climb. We follow it.</p>
@@ -137,11 +200,12 @@
   fingertips, then in his chest, his cells begin to divide and evaporate. He scatters and
   reassembles somewhere else. He blacks out.</p>
   <div class="box lesson"><em>Lesson</em>When the sky is bigger than you, you still speak a name
-  you trust. That is the first suture: you do not face the dark alone.</div>
+  you trust. That is the first suture: you do not face the dark alone.
+  <span class="law">You are loved — call the name that loves you back</span></div>
 </article>
 
 <!-- 02 -->
-<article id="ch02">
+<article id="ch02" data-page="02 砂の門" data-t="09:00–17:00">
   <span class="bang">第02話</span>
   <h2 class="ch">砂の門</h2>
   <p class="chsub">1023 · the beach that remembers</p>
@@ -175,14 +239,29 @@
   meet me in the white room. Just remember: you can leave whenever you want.」</p>
   <div class="box lesson"><em>Lesson</em>A true teacher never locks the door. Courage that cannot
   walk away is not courage. It is a cage with a nicer name.</div>
+  <figure class="panel">
+    <img src="art/manga_ch02_rest.png" alt="Jun and Solomon at the hometown beach; children in the surf; rest is allowed">
+    <figcaption>Panel 02 — The rest of the day is yours. That is not a trick.</figcaption>
+  </figure>
   <p class="narr">Jun charges into the surf until the waves take him. Underwater he opens his
   eyes so he can feel the salt. He bursts back, gasping, and the panic leaves him. Every
   sensation is frighteningly accurate. He walks inland toward his childhood home, a living ghost
   on hot pavement. Neighbors wave. He waves them off. He needs to walk.</p>
+  <p class="narr">Rain finds him the way memory does — warm sheets, then gone. He steps into a
+  shop because it is decent to get out of the wet. He takes a bottle of water. He does not
+  slip it under his tunic. He runs Solomon’s key through the register. Paying is a small law:
+  do not steal, even when the world looks like a dream you could cheat.</p>
+  <p class="narr">The front door of the childhood house is locked. The spare key is not under
+  the pot — only a dirt-stained outline. He could kick it. He does not. This is still their house.
+  Honor is not a speech. It is leaving a door unsmashed because the people who love you
+  taught you whose it is.</p>
+  <div class="box lesson"><em>Lesson</em>A true teacher never locks the door. Courage that cannot
+  walk away is not courage. It is a cage with a nicer name. Rest is part of the training.
+  <span class="law">Leave when you want · do not steal · honor the house · rest</span></div>
 </article>
 
 <!-- 03 -->
-<article id="ch03">
+<article id="ch03" data-page="03 導く光" data-t="17:00–25:00">
   <span class="bang">第03話</span>
   <h2 class="ch">導く光</h2>
   <p class="chsub">The Oracle in the childhood room · his guiding light</p>
@@ -225,11 +304,12 @@
   key as a lanyard. He walks toward the light.</p>
   <div class="box lesson"><em>Lesson</em>The people who love you can be proud of you and still
   not be in the room. Do the next right thing anyway. The ribbon is so you remember who you are
-  when the tower tries to rename you.</div>
+  when the tower tries to rename you. You are loved — that is not a floor you climb.
+  <span class="law">Honor parents · keep the vow clean · do not cheapen the Name</span></div>
 </article>
 
 <!-- 04 -->
-<article id="ch04">
+<article id="ch04" data-page="04 約束" data-t="25:00–30:00">
   <span class="bang">第04話</span>
   <h2 class="ch">約束</h2>
   <p class="chsub">The contract · no Warrior, just the Surgeon</p>
@@ -262,11 +342,15 @@
   <p class="narr">And for the first time in a long time, Jun feels ready.</p>
   <div class="box lesson"><em>Lesson</em>Titles that sound like winning are often a way to
   stop healing. If someone asks you to become a warrior, ask what you would have to stop
-  saving. Solomon is not the villain of this story. He is the first correct sentence.</div>
+  saving. Solomon is not the villain of this story. He is the first correct sentence.
+  The zeroes on a page are not why a decent person signs. You are loved without a fortune.
+  <span class="law">No other gods · do not covet rank · a promise is not owning a soul</span></div>
 </article>
 
+<div class="act" data-page="Act II" data-t="30:00">Act II · Look first · 30:00–70:00</div>
+
 <!-- 05 -->
-<article id="ch05">
+<article id="ch05" data-page="05 蟻の縫い" data-t="30:00–40:00">
   <span class="bang">第05話</span>
   <h2 class="ch">蟻の縫い</h2>
   <p class="chsub">Look first. Then help. The boy who fetches is a seat.</p>
@@ -278,7 +362,8 @@
   drying plants. Above the door, a ceremonial mask with beads in geometric shapes — like the
   light-pattern on Kirana’s sleeve. Jun lifts it. A small child, no older than five, bursts in,
   sees the mask, and falls.</p>
-  <p class="narr">Jun drops it at once. Palms open. 「大丈夫。I’m sorry.」 The boy does not know
+  <p class="narr">Jun drops it at once. Palms open. He puts the mask back on its peg before he
+  speaks. It was never his to keep. 「大丈夫。I’m sorry.」 The boy does not know
   the words. He grabs Jun’s arm and pulls him into the jungle. His name, Jun will learn, is
   海斗 — Kaito. His calloused feet do not slow. Jun’s do. He finds not pride but adrenaline,
   and he catches up. That is a lesson too: do not pretend you are already native to someone
@@ -299,11 +384,13 @@
   Hold onto the high. It won’t always feel this good.」</p>
   <div class="box lesson"><em>Lesson</em>Identify before you cut. The boy who fetches is not
   scenery. He is the other seat. Guilt can make a child run for ants. Kindness makes him a
-  colleague. If you cannot say the language, say the tone.</div>
+  colleague. If you cannot say the language, say the tone. You are loved — the women put their
+  hands on him and the warmth is not a score.
+  <span class="law">Look first · do not steal the mask · do not fake a language you do not have</span></div>
 </article>
 
 <!-- 06 -->
-<article id="ch06">
+<article id="ch06" data-page="06 金の時間" data-t="40:00–50:00">
   <span class="bang">第06話</span>
   <h2 class="ch">金の時間</h2>
   <p class="chsub">The old-empire cellar · unless he is dying, fix him</p>
@@ -311,7 +398,8 @@
   A halo names him Assistant. Heart rate 115. 「Salve, domine.」 Jun does not speak Latin,
   yet he understands. 「Hello.」 The boy hears 「Salve.」</p>
   <p class="narr">A weathered man drags in a wounded soldier like a dog. The halo says
-  Prisoner. His true name, which Jun asks and uses, is 誠 — Makoto. The trainer laughs
+  Prisoner. His true name, which Jun asks and uses, is 誠 — Makoto. Jun says it twice so the
+  room has to hear a person. The trainer laughs
   and kicks. 「Nisi moritur, refice eum. Unless he’s dying, fix him. Time is gold.」</p>
   <p class="narr">Jun’s voice is quiet. 「My time is worth more than you know.」 He means:
   Makoto’s time is worth more than you know.</p>
@@ -330,11 +418,12 @@
   <p class="narr">Solomon almost smiles. 「Spoken like a true surgeon.」</p>
   <div class="box lesson"><em>Lesson</em>Time is gold because a person is in it. Mockery is
   not a vital sign. If a halo says Prisoner, say a name anyway. Look, then reduce, then cut
-  only what is already dead.</div>
+  only what is already dead. The silver is not a trophy. He tosses it to the teacher.
+  <span class="law">Do not kill · do not steal the coins · do not lie about a name</span></div>
 </article>
 
 <!-- 07 -->
-<article id="ch07">
+<article id="ch07" data-page="07 良いも悪いも" data-t="50:00–58:00">
   <span class="bang">第07話</span>
   <h2 class="ch">良いも悪いも</h2>
   <p class="chsub">The tent · the clock does not pause</p>
@@ -353,20 +442,51 @@
   yourself. Take your days.」</p>
   <div class="box lesson"><em>Lesson</em>The clock does not pause for your feelings. That is
   not permission to become cruel. Do the work. Then rest. The good and the bad are both
-  teachers. A halo you cannot see might be the one that would make you vain.</div>
+  teachers. A halo you cannot see might be the one that would make you vain.
+  <span class="law">Do not kill · then keep the rest day</span></div>
+</article>
+
+<!-- rest day he was told to take -->
+<article id="rest" data-page="休息" data-t="58:00–63:00">
+  <span class="bang">間奏</span>
+  <h2 class="ch">休みの日</h2>
+  <p class="chsub">Solomon told him to take the days. We show them. The extract left this quiet.</p>
+  <figure class="panel">
+    <img src="art/manga_ch02_rest.png" alt="Rest day: crate, beach, children, tea">
+    <figcaption>Panel rest — If you never rest, you will start to believe you are the Tower.</figcaption>
+  </figure>
+  <p class="narr">Jun does not sneak a fourth case. He sits on the crate beside ソロモン先生.
+  The children from the cold open run the same surf. Tea in chipped cups. The sun is ordinary
+  on purpose.</p>
+  <p class="narr">「If I rest, someone waits.」</p>
+  <p class="narr">Solomon watches a pelican. 「If you never rest, you will start to believe you
+  are the Tower. You are not. You are loved. Drink the tea.」</p>
+  <p class="narr">Jun sleeps without earning it first. That is the hardest technique in the
+  book, and it is not in the book. Rest is how love stays in the hands.</p>
+  <div class="box lesson"><em>A small law of the house</em>Work, then rest. A day that is only
+  winning is a machine. Children need to see a hero nap.
+  <span class="law">Remember the rest day</span></div>
 </article>
 
 <!-- 08 -->
-<article id="ch08">
+<article id="ch08" data-page="08 鏡" data-t="63:00–70:00">
   <span class="bang">第08話</span>
   <h2 class="ch">鏡</h2>
   <p class="chsub">He searches. The sparse hours — filled as a hunt, not as despair.</p>
+  <figure class="panel">
+    <img src="art/manga_ch08_stars.png" alt="Jun on the hometown beach at night; stars with halos; the people who love him far in the light">
+    <figcaption>Panel 08 — They love you. They are not in the room. Search anyway.</figcaption>
+  </figure>
   <p class="narr">He cannot sleep. He puts on the black hooded tunic. He walks the empty tent,
   the Roman hallway, the rainforest. Solomon is there too, face in a watch, hunting her for
   a different reason. Jun lies in the shadows and watches an ant carry the weight of the world.
   He recognizes himself. He ties her crimson ribbon around his wrist. Every heartbeat thinks
   of her — not as hunger. As a question he has not finished asking.</p>
-  <p class="narr">On his childhood beach the stars have their own halos. He sleeps. He dreams
+  <p class="narr">On his childhood beach the stars have their own halos. He sleeps. In the gold
+  of the sky he almost sees them — father, mother, the window that stayed lit. Honor is also
+  this: wanting to get home before time eats the photograph, without stealing time from
+  anyone else.</p>
+  <p class="narr">He dreams
   a kaleidoscope, then a figure in an endless black that is not morbid: a cloak of night that
   pulls anxiety out of him. 「Wake up. The time is now.」 He splashes water. In the mirror his
   face becomes hers. She does not steal his breath to own it. She shares courage. She shows
@@ -374,11 +494,14 @@
   what they were told. He climbs into the mirror after her.</p>
   <div class="box lesson"><em>Lesson</em>When you cannot find the person you need, become
   someone a child could trust in the meantime. The ant does not wait for applause. Search
-  is not the same as surrender.</div>
+  is not the same as surrender. You are loved even in the quiet.
+  <span class="law">Honor parents · search is not surrender</span></div>
 </article>
 
+<div class="act" data-page="Act III" data-t="70:00">Act III · Ask to see its light · 70:00–90:00</div>
+
 <!-- 09 -->
-<article id="ch09">
+<article id="ch09" data-page="09 湖" data-t="70:00–78:00">
   <span class="bang">第09話</span>
   <h2 class="ch">湖</h2>
   <p class="chsub">Avalon · her name · the well · light has no shadows</p>
@@ -409,11 +532,14 @@
   Healer, my King.」</div>
   <div class="box lesson"><em>Lesson</em>武は守り. If she says Warrior, she means the courage
   that protects a lake. If he says Surgeon, he means the hands that repair a child. They are
-  not two destinies. They are one person who refuses to take life in order to feel tall.</div>
+  not two destinies. They are one person who refuses to take life in order to feel tall.
+  Faith is not a gadget. Midsummer here is white cloth, song, and a well — a rite children
+  can stand beside.
+  <span class="law">Keep faith · no idols of the Tower · keep the vow clean</span></div>
 </article>
 
 <!-- 10 -->
-<article id="ch10">
+<article id="ch10" data-page="10 歌" data-t="78:00–82:00">
   <span class="bang">第10話</span>
   <h2 class="ch">歌</h2>
   <p class="chsub">His words. We do not replace a good writer. We keep the songs.</p>
@@ -453,10 +579,21 @@ I just had the most beautiful
 Beautiful dream</div>
   <p class="narr">A Japanese refrain he adds only so the children can sing it too:</p>
   <div class="box lake">すべては きみに かえってくる。<br>It all comes back to you.</div>
+  <figure class="panel">
+    <img src="art/manga_ch10_guitar.png" alt="Jun writes with a guitar in the cabin; Kirana at the lake beyond the window">
+    <figcaption>Panel 10 — Ask for a guitar. Do not use the tools to write the songs.</figcaption>
+  </figure>
+  <p class="narr">He asked. The Tower gave him a guitar. He does not let the blue tools touch
+  the prayer. That would be stealing a soul’s work and calling it efficient. The songs stay
+  his words. A Japanese player — a musician — is welcome later to say how this should look
+  and sound. Exposure, not theft. Original cel. No famous-band costume.</p>
+  <div class="box lesson"><em>Lesson</em>The most powerful songs are prayers. Write about what
+  you love. You are loved — that is why the refrain returns.
+  <span class="law">Do not steal the tools to fake a prayer</span></div>
 </article>
 
 <!-- 11 — the sparse climb he never wrote -->
-<article id="ch11">
+<article id="ch11" data-page="11 光に影なし" data-t="82:00–87:00">
   <span class="bang">第11話</span>
   <h2 class="ch">光に影なし</h2>
   <p class="chsub">He never wrote the climb back. This is the fill. Same storyline. Good
@@ -467,6 +604,10 @@ Beautiful dream</div>
   <p class="narr">Solomon is quiet a long time. 「My job was to recruit a pilot. I did not
   know they were hunting a lake.」 That sentence is how a good man begins to change sides
   without a speech.</p>
+  <figure class="panel">
+    <img src="art/manga_ch11_choir.png" alt="Jun, Kaito, Hana, and children at the river — a choir learning to wash a wound, not an army">
+    <figcaption>Panel 11a — Winning is a child who sleeps. Choir, not army.</figcaption>
+  </figure>
   <p class="narr">Jun does as she said. He starts with the people he has helped. He does not
   enchant them into soldiers. He asks Kaito if he wants to learn to wash a wound. He asks
   Hana if she wants to name the trees that make the sap. He asks Ren if he will hold again,
@@ -477,6 +618,10 @@ Beautiful dream</div>
   depends on it — because it does. High stakes. Everyone is trying to win. Winning, in this
   manga, is a child who sleeps. He writes prayers that sound like songs. He does not use the
   blue tools to write them.</p>
+  <figure class="panel">
+    <img src="art/manga_ch11_light.png" alt="Jun asks the Tower to show its light; Solomon puts away his watch; a candle with no shadow">
+    <figcaption>Panel 11b — Ask to see its light. Copies have no warmth.</figcaption>
+  </figure>
   <p class="narr">At the heart of the Tower there is a chamber that claims to be light.
   Scientists call it the equation. Older mouths called it a spell. Jun does what she told
   him. He asks to see its light.</p>
@@ -492,11 +637,12 @@ Beautiful dream</div>
   <div class="box lesson"><em>Lesson</em>Evil is often a machine that wants your hours and
   calls it destiny. You do not beat it by becoming a sharper machine. You beat it by asking
   for light, and by being the sort of person a sister and a brother could copy without
-  becoming cruel.</div>
+  becoming cruel. You are loved — that is the one copy that is not a fake.
+  <span class="law">Do not lie · no other gods · no idols of power · choir not army</span></div>
 </article>
 
 <!-- 12 — residue of love -->
-<article id="ch12">
+<article id="ch12" data-page="12 愛の残り香" data-t="87:00–90:00">
   <span class="bang">最終話</span>
   <h2 class="ch">愛の残り香</h2>
   <p class="chsub">The last page he never wrote. Something is left.</p>
@@ -528,22 +674,28 @@ Beautiful dream</div>
   that rewarded the opposite. The leads taught a lesson in everything they did: leave the
   door unlocked, say the name, fetch the ant, hold the arm, take the good with the bad,
   ask for light, write the prayer, keep Solomon close, become the warrior who does not
-  need a war.</div>
+  need a war. You are loved. That was the current the whole time.</div>
   <p class="narr">Jun looks at the children. He thinks of a daughter and a son who will
   read this someday, and he wants them to inherit not the tower, not the rank, not the
   key — only the habit of being kind when it would be easier to be impressive.</p>
+  <div class="box lake">You are loved.<br>あなたは、愛されている。</div>
 </article>
 
-<footer class="end">
-  <div class="ruby">THE END</div>
+<footer class="end" data-page="end" data-t="90:00">
+  <div class="ruby">THE END · ~90 MIN SCRIPT</div>
   <p class="last">Something is left, but a residue of love.<br>
-  残り香は、愛だった。</p>
+  残り香は、愛だった。<br>
+  You are loved.</p>
   <p class="src">Follows the original storyline of <i>Warrior Surgeon</i>.
   Sparse places filled for this manga gift. Songs in chapter 10 are his.
+  This is the script + manga pages for one kids’ episode, not a finished TV file.
   Not a medical device. Not the playable cases.
   <a href="../index.html">Residency hub</a> ·
-  <a href="README.md">How the beats map</a></p>
+  <a href="README.md">How the beats map</a> ·
+  <a href="EPISODE.md">Episode bible</a> ·
+  <a href="script.json">90-min script</a></p>
 </footer>
 </div>
+<script src="reader.js"></script>
 </body>
 </html>

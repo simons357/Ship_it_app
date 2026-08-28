@@ -5,7 +5,11 @@ A **manga** gift for a daughter and a son.
 Built from the Warrior Surgeon story (the original writer). Same storyline.
 Sparse places filled. Japanese characters. Good conquers evil. Wholesome,
 intelligent, moral leads who teach a lesson in everything they do.
-The last thing left is a residue of love.
+The last thing left is a residue of love. **You are loved** is the current under every room.
+
+This is one kids’ episode: a **~90 min script + playable manga pages**, not a finished
+TV file. Bible: [`EPISODE.md`](EPISODE.md). Timed script: [`script.json`](script.json)
+(Godot/Unreal can eat the same beats). A Japanese musician look-consult is welcome later.
 
 Read it: [`index.html`](index.html) — `http://127.0.0.1:8770/manga/`
 
@@ -30,6 +34,10 @@ Playable training cases stay on the residency hub. This folder is the gift.
 | His songs, kept in his words | 10 歌 |
 | *(sparse — he never wrote the climb back)* asked to show its light | 11 光に影なし |
 | *(sparse — he never wrote the last page)* residue of love | 12 愛の残り香 |
+| Cold open / rest day / choir (fills for a ~90 min show) | 00 愛 · 休みの日 · 11 choir |
+
+The Ten small laws of the house are story events (pay for water, don’t smash the door, put
+the mask back, name Makoto, rest, tell Solomon the truth, ask for light). Not a lecture.
 
 ## What was made wholesome for the gift
 

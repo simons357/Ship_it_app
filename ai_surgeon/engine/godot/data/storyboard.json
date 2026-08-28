@@ -16,7 +16,18 @@
   "moral": {
     "solomon": "There is no Warrior. Just the Surgeon.",
     "kirana": "武は守り — the warrior fights for life.",
-    "ending": "Something is left, but a residue of love."
+    "ending": "Something is left, but a residue of love.",
+    "current": "You are loved."
+  },
+  "episode": {
+    "id": "ep01",
+    "runtime_minutes": 90,
+    "current": "You are loved.",
+    "current_ja": "あなたは、愛されている。",
+    "honest": "Script + manga pages. Not a finished television file.",
+    "bible": "../manga/EPISODE.md",
+    "script": "../manga/script.json",
+    "musician_consult": "A Japanese player (musician) is welcome later. Original cel. No IP theft."
   },
   "respect": {
     "for": "a daughter who loves Japanese things; respect, not costume",

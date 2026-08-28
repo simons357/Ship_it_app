@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import socket
 import threading
 import unittest
@@ -32,13 +33,22 @@ class TestMangaGift(unittest.TestCase):
         for name in (
             "manga_cover_kuroto.png",
             "manga_ch01_sky.png",
+            "manga_ch02_rest.png",
             "manga_ch03_oracle.png",
             "manga_ch05_ants.png",
+            "manga_ch08_stars.png",
+            "manga_ch10_guitar.png",
+            "manga_ch11_choir.png",
+            "manga_ch11_light.png",
             "manga_ch12_residue.png",
+            "manga_cold_open.png",
         ):
             path = MANGA / "art" / name
             self.assertTrue(path.is_file(), path)
             self.assertGreater(path.stat().st_size, 50_000, name)
+        self.assertTrue((MANGA / "EPISODE.md").is_file())
+        self.assertTrue((MANGA / "script.json").is_file())
+        self.assertTrue((MANGA / "reader.js").is_file())
 
     def test_japanese_leads_and_same_spine(self):
         h = self.html
@@ -62,8 +72,42 @@ class TestMangaGift(unittest.TestCase):
         self.assertIn("残り香は、愛だった", self.html)
         self.assertIn("good conquers evil", h)
         self.assertIn("look first", h)
+        self.assertIn("you are loved", h)
+        self.assertIn("あなたは、愛されている", self.html)
+        self.assertGreaterEqual(self.html.count("You are loved"), 6)
         self.assertNotIn("whiskey", h)
         self.assertNotIn("nude", h)
+
+    def test_commandments_as_story_not_lecture(self):
+        h = self.html
+        self.assertIn("This is still their house", h)
+        self.assertIn("puts the mask back", h)
+        self.assertIn("You cannot duplicate a soul", h)
+        self.assertIn("They are a choir", h)
+        self.assertIn("Drink the tea", h)
+        self.assertIn("Jun does not lie", h)
+        self.assertIn("武は守り", h)
+        self.assertNotIn("Sunday-school dump", h)
+        bible = (MANGA / "EPISODE.md").read_text(encoding="utf-8")
+        self.assertIn("Ten small laws of the house", bible)
+        self.assertIn("You are loved", bible)
+        self.assertIn("Japanese player", bible)
+        self.assertIn("not a finished", bible.lower())
+
+    def test_ninety_minute_script_keeps_his_songs(self):
+        script = json.loads((MANGA / "script.json").read_text(encoding="utf-8"))
+        self.assertEqual(script["runtime_minutes"], 90)
+        self.assertEqual(script["current"], "You are loved.")
+        self.assertIn("not a finished", script["honest"].lower())
+        self.assertIn("his words, not replaced", script["songs"])
+        self.assertIn("Japanese player", script["musician_consult"])
+        ids = [scene["id"] for act in script["acts"] for scene in act["scenes"]]
+        self.assertIn("c01", ids)
+        self.assertIn("a3s05", ids)
+        h = self.html
+        self.assertIn("She’s got curves like mountains", h)
+        self.assertIn("reader.js", h)
+        self.assertIn("~90 min", h)
 
     def test_maps_original_beats(self):
         r = self.readmes
@@ -98,11 +142,27 @@ class TestMangaServe(unittest.TestCase):
             body = res.read().decode("utf-8", errors="replace")
             self.assertEqual(res.status, 200)
             self.assertIn("黒塔と湖", body)
+            self.assertIn("You are loved", body)
             conn.request("GET", "/manga/art/manga_cover_kuroto.png")
             res = conn.getresponse()
             png = res.read()
             self.assertEqual(res.status, 200)
             self.assertGreater(len(png), 50_000)
+            conn.request("GET", "/manga/EPISODE.md")
+            res = conn.getresponse()
+            bible = res.read().decode("utf-8", errors="replace")
+            self.assertEqual(res.status, 200)
+            self.assertIn("You are loved", bible)
+            conn.request("GET", "/manga/script.json")
+            res = conn.getresponse()
+            script = json.loads(res.read().decode("utf-8"))
+            self.assertEqual(res.status, 200)
+            self.assertEqual(script["runtime_minutes"], 90)
+            conn.request("GET", "/manga/reader.js")
+            res = conn.getresponse()
+            js = res.read().decode("utf-8", errors="replace")
+            self.assertEqual(res.status, 200)
+            self.assertIn("You are loved", js)
             conn.close()
         finally:
             httpd.shutdown()
