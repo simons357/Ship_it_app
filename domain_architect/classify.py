@@ -70,11 +70,13 @@ def classify_parse(parsed: ParseResult, context: dict | None = None) -> Classifi
     symbols = parsed.tree.symbols()
     unique = list(dict.fromkeys(symbols))
     for name in unique:
-        if name in NAME_GUARD and name not in context:
+        if name in NAME_GUARD and name not in context and "roles" not in context:
             result.warnings.append(NAME_GUARD[name])
 
     # Structural hints only. Never promote a name-only match to a physical law.
-    if parsed.tree.kind == NodeKind.EQUALITY:
+    if context.get("domain") == "NS-B" or context.get("fluids_book") == "NS-B":
+        _assign_classical_ns(parsed, result, context)
+    elif parsed.tree.kind == NodeKind.EQUALITY:
         _classify_equality(parsed.tree, result, context)
     else:
         _classify_term(parsed.tree, result, context, side="expression")
@@ -89,6 +91,70 @@ def classify_parse(parsed: ParseResult, context: dict | None = None) -> Classifi
         )
         result.definition_completeness = min(1.0, declared / max(len(unique), 1))
     return result
+
+
+def _assign_classical_ns(
+    parsed: ParseResult, result: Classification, context: dict
+) -> None:
+    """Apply the declared classical NS organizational map (Level 0–1)."""
+    from .navier_stokes import (
+        CLASSICAL_NS_ROLE_MAP,
+        DOMAIN_ID,
+        NS_EXTRA_STRUCTURES,
+        detect_classical_ns,
+    )
+
+    detection = detect_classical_ns(parsed.original, parsed)
+    form = detection.form or context.get("ns_form", "vorticity")
+    result.extra_structures.extend(NS_EXTRA_STRUCTURES)
+    result.warnings.append(
+        f"Routed to {DOMAIN_ID}: organizational FRA map only; not a "
+        "derivation from SFE and not a regularity claim."
+    )
+    finger_symbols = {
+        "P": "P",
+        "H": "H",
+        "psi": "u" if form in {"velocity", "incompressibility"} else "omega",
+        "lambda": "nu",
+        "Phi": "p" if form == "velocity" else "Phi",
+    }
+    for finger, default_symbol in finger_symbols.items():
+        meta = CLASSICAL_NS_ROLE_MAP[finger]
+        symbol = default_symbol
+        present = {s for s in parsed.tree.symbols()}
+        if finger == "psi":
+            if "omega" in present and form != "velocity":
+                symbol = "omega"
+            elif "u" in present:
+                symbol = "u"
+        elif finger == "lambda" and "nu" in present:
+            symbol = "nu"
+        elif finger == "Phi" and "p" in present:
+            symbol = "p"
+        result.assignments.append(
+            RoleAssignment(
+                symbol=symbol,
+                candidate_role=meta["candidate_role"],
+                subtype=meta["subtype"],
+                math_type=MathType(meta["math_type"]),
+                confidence=0.7,
+                justification=(
+                    f"Declared classical NS ({DOMAIN_ID}) organizational map: "
+                    f"{meta['label']}."
+                ),
+            )
+        )
+    e_meta = CLASSICAL_NS_ROLE_MAP["E"]
+    result.assignments.append(
+        RoleAssignment(
+            symbol="E",
+            candidate_role=e_meta["candidate_role"],
+            subtype=e_meta["subtype"],
+            math_type=MathType.UNKNOWN,
+            confidence=0.7,
+            justification=f"Extras for {DOMAIN_ID}: {e_meta['label']}.",
+        )
+    )
 
 
 def _classify_equality(tree: ASTNode, result: Classification, context: dict) -> None:

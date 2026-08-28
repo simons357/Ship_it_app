@@ -1,0 +1,3196 @@
+{
+  "scanned_at": "2026-08-28T08:49:28.666485+00:00",
+  "source_files": [
+    "data/domain_architect/historical_equations.json",
+    "data/domain_architect/snd_tweet_equations.json",
+    "data/domain_architect/snd_claim_inventory.json",
+    "data/domain_architect/millennium_books.json"
+  ],
+  "objects": [
+    {
+      "object_id": "obj-eq-FRA-H001",
+      "label": "FRA-H001: (P, H, \u03c8, \u03bb) \u2192 \u03a6",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "(P, H, \u03c8, \u03bb) \u2192 \u03a6",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "(P, H, \u03c8, \u03bb) \u2192 \u03a6",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "H",
+          "P",
+          "\u03a6",
+          "\u03bb",
+          "\u03c8"
+        ],
+        "book_id": "FRA-H001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "FRA"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#FRA-H001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-FRA-H002",
+      "label": "FRA-H002: \u03a6 = \u2131(P, H, \u03c8, \u03bb; E)",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "\u03a6 = \u2131(P, H, \u03c8, \u03bb; E)",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "\u03a6 = \u2131(P, H, \u03c8, \u03bb; E)",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "E",
+          "H",
+          "P",
+          "\u03a6",
+          "\u03bb",
+          "\u03c8"
+        ],
+        "book_id": "FRA-H002",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "FRA"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#FRA-H002"
+      ]
+    },
+    {
+      "object_id": "obj-eq-FRA-H003",
+      "label": "FRA-H003: \ud835\udcb0 = \u2131_U(P_U, H_U, \u03c8_U, \u03bb_U; E_U)",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "\ud835\udcb0 = \u2131_U(P_U, H_U, \u03c8_U, \u03bb_U; E_U)",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "\ud835\udcb0 = \u2131_U(P_U, H_U, \u03c8_U, \u03bb_U; E_U)",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "E_U",
+          "H_U",
+          "P_U",
+          "_U",
+          "\u03bb",
+          "\u03c8"
+        ],
+        "book_id": "FRA-H003",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "FRA"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#FRA-H003"
+      ]
+    },
+    {
+      "object_id": "obj-eq-UHF-H001",
+      "label": "UHF-H001: (no equation found)",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "(no equation found)",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "(no equation found)",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "equation",
+          "found",
+          "no"
+        ],
+        "book_id": "UHF-H001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "FRA"
+      ],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "historical_equations.json#UHF-H001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-SFE-H001",
+      "label": "SFE-H001: \u03a6(x,t) = \u03a3_p A_p sin(2\u03c0 f_p t / \u03c6_pub(x) + \u03b4_p)",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "\u03a6(x,t) = \u03a3_p A_p sin(2\u03c0 f_p t / \u03c6_pub(x) + \u03b4_p)",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "\u03a6(x,t) = \u03a3_p A_p sin(2\u03c0 f_p t / \u03c6_pub(x) + \u03b4_p)",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "A_p",
+          "_p",
+          "_pub",
+          "f_p",
+          "sin",
+          "t",
+          "x",
+          "\u03a6",
+          "\u03c0"
+        ],
+        "book_id": "SFE-H001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "SFE"
+      ],
+      "status": "PARK",
+      "source_refs": [
+        "historical_equations.json#SFE-H001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-SFE-H002",
+      "label": "SFE-H002: \u0394((P \u00b7 H \u00b7 \u03c8)\u00b2 \u00b7 \u03bb) = \u03a6",
+      "shape": {
+        "shape_id": "shape-generic-\u03bb\u03a6-34c76f0512e9",
+        "source": "\u0394((P \u00b7 H \u00b7 \u03c8)\u00b2 \u00b7 \u03bb) = \u03a6",
+        "fingers": {
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "realized_output",
+          "scale_response"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [
+          "boundary",
+          "geometry",
+          "operator_domain"
+        ],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "\u0394((P \u00b7 H \u00b7 \u03c8)\u00b2 \u00b7 \u03bb) = \u03a6",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "H",
+          "P",
+          "\u03a6",
+          "\u03bb",
+          "\u03c8"
+        ],
+        "book_id": "SFE-H002",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "SFE"
+      ],
+      "status": "PARK",
+      "source_refs": [
+        "historical_equations.json#SFE-H002"
+      ]
+    },
+    {
+      "object_id": "obj-eq-SFE-H003",
+      "label": "SFE-H003: \u0124_SFE = \u03a3_n n^{-1/2} N\u0302_n + (g/2) \u03a3_{ij} N\u0302_i N\u0302_j",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "\u0124_SFE = \u03a3_n n^{-1/2} N\u0302_n + (g/2) \u03a3_{ij} N\u0302_i N\u0302_j / gcd(i,j) \u2212 \u03a3_n J_n (\u00e2_n + \u00e2_n\u2020)",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "\u0124_SFE = \u03a3_n n^{-1/2} N\u0302_n + (g/2) \u03a3_{ij} N\u0302_i N\u0302_j / gcd(i,j) \u2212 \u03a3_n J_n (\u00e2_n + \u00e2_n\u2020)",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "J_n",
+          "N",
+          "_",
+          "_SFE",
+          "_i",
+          "_j",
+          "_n",
+          "g",
+          "gcd",
+          "i",
+          "ij",
+          "j",
+          "n"
+        ],
+        "book_id": "SFE-H003",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "SFE"
+      ],
+      "status": "PARK",
+      "source_refs": [
+        "historical_equations.json#SFE-H003"
+      ]
+    },
+    {
+      "object_id": "obj-eq-SFE-H004",
+      "label": "SFE-H004: GCD-attractor SFE / one attractor, three prizes",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "GCD-attractor SFE / one attractor, three prizes",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "GCD-attractor SFE / one attractor, three prizes",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "GCD",
+          "SFE",
+          "attractor",
+          "one",
+          "prizes",
+          "three"
+        ],
+        "book_id": "SFE-H004",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "SFE"
+      ],
+      "status": "PARK",
+      "source_refs": [
+        "historical_equations.json#SFE-H004"
+      ]
+    },
+    {
+      "object_id": "obj-eq-SFE-H005",
+      "label": "SFE-H005: SFE = Shell Flux Estimate",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "SFE = Shell Flux Estimate",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "SFE = Shell Flux Estimate",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "Estimate",
+          "Flux",
+          "SFE",
+          "Shell"
+        ],
+        "book_id": "SFE-H005",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "SFE"
+      ],
+      "status": "PARK",
+      "source_refs": [
+        "historical_equations.json#SFE-H005"
+      ]
+    },
+    {
+      "object_id": "obj-eq-SFE-H006",
+      "label": "SFE-H006: (none justified)",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "(none justified)",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "(none justified)",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "justified",
+          "none"
+        ],
+        "book_id": "SFE-H006",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "SFE"
+      ],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "historical_equations.json#SFE-H006"
+      ]
+    },
+    {
+      "object_id": "obj-eq-DHFA-H001",
+      "label": "DHFA-H001: V_DHFA(x,t)",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "V_DHFA(x,t)",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "V_DHFA(x,t)",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "V_DHFA",
+          "t",
+          "x"
+        ],
+        "book_id": "DHFA-H001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "historical_equations.json#DHFA-H001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-DHFA-H002",
+      "label": "DHFA-H002: (name collision) Directional / harmonic field anal",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "(name collision) Directional / harmonic field analysis",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "(name collision) Directional / harmonic field analysis",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "Directional",
+          "analysis",
+          "collision",
+          "field",
+          "harmonic",
+          "name"
+        ],
+        "book_id": "DHFA-H002",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "PARK",
+      "source_refs": [
+        "historical_equations.json#DHFA-H002"
+      ]
+    },
+    {
+      "object_id": "obj-eq-DHFA-H003",
+      "label": "DHFA-H003: \u2202_t \u03a6 = \u2131_D(P_D, H_D, \u03c8_D, \u03bb_D; \u03a6, F, \u039e, E_D)",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "\u2202_t \u03a6 = \u2131_D(P_D, H_D, \u03c8_D, \u03bb_D; \u03a6, F, \u039e, E_D)",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "\u2202_t \u03a6 = \u2131_D(P_D, H_D, \u03c8_D, \u03bb_D; \u03a6, F, \u039e, E_D)",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "E_D",
+          "F",
+          "H_D",
+          "P_D",
+          "_D",
+          "_t",
+          "\u03a6",
+          "\u03bb",
+          "\u03c8"
+        ],
+        "book_id": "DHFA-H003",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#DHFA-H003"
+      ]
+    },
+    {
+      "object_id": "obj-eq-GRV-H001",
+      "label": "GRV-H001: \u2207\u00b2\u03a6_g = 4\u03c0 G \u03c1",
+      "shape": {
+        "shape_id": "shape-gravity-poisson-H\u03bb\u03a6-6259b152ba02",
+        "source": "\u2207\u00b2\u03a6_g = 4\u03c0 G \u03c1",
+        "fingers": {
+          "H": "coupling",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response",
+          "S": "source"
+        },
+        "role_topology": [
+          "coupling",
+          "realized_output",
+          "scale_response",
+          "source"
+        ],
+        "compatibility_class": "gravity-poisson",
+        "dependency_hints": [
+          "boundary",
+          "geometry",
+          "operator_domain",
+          "zero_mode_solvability"
+        ],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "\u2207\u00b2\u03a6_g = 4\u03c0 G \u03c1",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "G",
+          "_g",
+          "\u03a6",
+          "\u03c0"
+        ],
+        "book_id": "GRV-H001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#GRV-H001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-GRV-H002",
+      "label": "GRV-H002: \u2212\u2207\u00b2 u_n = k_n\u00b2 u_n",
+      "shape": {
+        "shape_id": "shape-generic-\u03bb\u03a6-34c76f0512e9",
+        "source": "\u2212\u2207\u00b2 u_n = k_n\u00b2 u_n",
+        "fingers": {
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "realized_output",
+          "scale_response"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [
+          "boundary",
+          "geometry",
+          "operator_domain"
+        ],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "\u2212\u2207\u00b2 u_n = k_n\u00b2 u_n",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "k_n",
+          "u_n"
+        ],
+        "book_id": "GRV-H002",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#GRV-H002"
+      ]
+    },
+    {
+      "object_id": "obj-eq-GRV-H003",
+      "label": "GRV-H003: \u03a6_{g,n} = \u2212P_n H_g R_g(\u03ba_n) S_n with \u03ba_n=k_n, R_g=",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "\u03a6_{g,n} = \u2212P_n H_g R_g(\u03ba_n) S_n with \u03ba_n=k_n, R_g=1/\u03ba_n\u00b2, H_g=4\u03c0G, S_n=\u03c1_n, P_n=1",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "\u03a6_{g,n} = \u2212P_n H_g R_g(\u03ba_n) S_n with \u03ba_n=k_n, R_g=1/\u03ba_n\u00b2, H_g=4\u03c0G, S_n=\u03c1_n, P_n=1",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "G",
+          "H_g",
+          "P_n",
+          "R_g",
+          "S_n",
+          "_",
+          "_n",
+          "g",
+          "k_n",
+          "n",
+          "with",
+          "\u03a6",
+          "\u03c0"
+        ],
+        "book_id": "GRV-H003",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#GRV-H003"
+      ]
+    },
+    {
+      "object_id": "obj-eq-GRV-H004",
+      "label": "GRV-H004: \u03c1_n retained as one source/state object unless a p",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "\u03c1_n retained as one source/state object unless a polar (or other unique) rule is declared",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "\u03c1_n retained as one source/state object unless a polar (or other unique) rule is declared",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "_n",
+          "a",
+          "as",
+          "declared",
+          "is",
+          "object",
+          "one",
+          "or",
+          "other",
+          "polar",
+          "retained",
+          "rule",
+          "source",
+          "state",
+          "unique",
+          "unless"
+        ],
+        "book_id": "GRV-H004",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "historical_equations.json#GRV-H004"
+      ]
+    },
+    {
+      "object_id": "obj-eq-GRV-H005",
+      "label": "GRV-H005: \u25a1 h\u0304_{\u03bc\u03bd} = \u2212(16\u03c0 G / c\u2074) T_{\u03bc\u03bd}",
+      "shape": {
+        "shape_id": "shape-generic-\u03a6-4062bdafc22c",
+        "source": "\u25a1 h\u0304_{\u03bc\u03bd} = \u2212(16\u03c0 G / c\u2074) T_{\u03bc\u03bd}",
+        "fingers": {
+          "D": "evolution_operator",
+          "\u03a6": "realized_output",
+          "S": "source"
+        },
+        "role_topology": [
+          "evolution_operator",
+          "realized_output",
+          "source"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [
+          "constraints",
+          "coupling",
+          "curvature",
+          "gauge",
+          "gauge/diffeomorphism freedom",
+          "harmonic gauge",
+          "initial_data",
+          "metric",
+          "metric g_{\u03bc\u03bd}",
+          "metric perturbation",
+          "spacetime geometry",
+          "stress-energy T_{\u03bc\u03bd}",
+          "wave operator D"
+        ],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "\u25a1 h\u0304_{\u03bc\u03bd} = \u2212(16\u03c0 G / c\u2074) T_{\u03bc\u03bd}",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "G",
+          "T_",
+          "_",
+          "c",
+          "h",
+          "\u03c0"
+        ],
+        "book_id": "GRV-H005",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#GRV-H005"
+      ]
+    },
+    {
+      "object_id": "obj-eq-EXP-H001",
+      "label": "EXP-H001: S(R) = N^{-1} \u03a3_i exp[\u2212d(x_i,R)\u00b2 / (2\u03c3\u00b2)], \u03c3 = 0.0",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "S(R) = N^{-1} \u03a3_i exp[\u2212d(x_i,R)\u00b2 / (2\u03c3\u00b2)], \u03c3 = 0.05 frozen",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "S(R) = N^{-1} \u03a3_i exp[\u2212d(x_i,R)\u00b2 / (2\u03c3\u00b2)], \u03c3 = 0.05 frozen",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "N",
+          "R",
+          "S",
+          "_i",
+          "d",
+          "exp",
+          "frozen",
+          "x_i"
+        ],
+        "book_id": "EXP-H001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#EXP-H001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-NS-B001",
+      "label": "NS-B001: \u2202_t u + (u\u00b7\u2207)u = \u2212\u2207p + \u03bd\u0394u,  \u2207\u00b7u = 0",
+      "shape": {
+        "shape_id": "shape-NS-B-PH\u03c8\u03bb\u03a6E-1aad1bd25045",
+        "source": "\u2202_t u + (u\u00b7\u2207)u = \u2212\u2207p + \u03bd\u0394u,  \u2207\u00b7u = 0",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response",
+          "\u03c8": "state"
+        },
+        "role_topology": [
+          "admissibility",
+          "environment",
+          "interaction",
+          "realized_output",
+          "scale_response",
+          "state"
+        ],
+        "compatibility_class": "NS-B",
+        "dependency_hints": [
+          "Biot-Savart reconstruction",
+          "boundary_conditions",
+          "domain R^3",
+          "incompressibility constraint",
+          "initial_conditions"
+        ],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "\u2202_t u + (u\u00b7\u2207)u = \u2212\u2207p + \u03bd\u0394u,  \u2207\u00b7u = 0",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "_t",
+          "p",
+          "u"
+        ],
+        "book_id": "NS-B001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#NS-B001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-NS-B002",
+      "label": "NS-B002: \u2202_t \u03c9 + (u\u00b7\u2207)\u03c9 = (\u03c9\u00b7\u2207)u + \u03bd\u0394\u03c9",
+      "shape": {
+        "shape_id": "shape-NS-B-PH\u03c8\u03bb\u03a6E-1aad1bd25045",
+        "source": "\u2202_t \u03c9 + (u\u00b7\u2207)\u03c9 = (\u03c9\u00b7\u2207)u + \u03bd\u0394\u03c9",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response",
+          "\u03c8": "state"
+        },
+        "role_topology": [
+          "admissibility",
+          "environment",
+          "interaction",
+          "realized_output",
+          "scale_response",
+          "state"
+        ],
+        "compatibility_class": "NS-B",
+        "dependency_hints": [
+          "Biot-Savart reconstruction",
+          "boundary_conditions",
+          "domain R^3",
+          "incompressibility constraint",
+          "initial_conditions"
+        ],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "\u2202_t \u03c9 + (u\u00b7\u2207)\u03c9 = (\u03c9\u00b7\u2207)u + \u03bd\u0394\u03c9",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "_t",
+          "u"
+        ],
+        "book_id": "NS-B002",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#NS-B002"
+      ]
+    },
+    {
+      "object_id": "obj-eq-NS-A001",
+      "label": "NS-A001: \u2202_t u + (u\u00b7\u2207)u = \u2212\u2207p + \u03bd\u0394u + \u03b5^\u03b1 P div(|\u2207u|^\u03b2 \u2207u),",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "\u2202_t u + (u\u00b7\u2207)u = \u2212\u2207p + \u03bd\u0394u + \u03b5^\u03b1 P div(|\u2207u|^\u03b2 \u2207u),  \u2207\u00b7u = 0",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "\u2202_t u + (u\u00b7\u2207)u = \u2212\u2207p + \u03bd\u0394u + \u03b5^\u03b1 P div(|\u2207u|^\u03b2 \u2207u),  \u2207\u00b7u = 0",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "P",
+          "_t",
+          "div",
+          "p",
+          "u"
+        ],
+        "book_id": "NS-A001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#NS-A001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-NS-PHI001",
+      "label": "NS-PHI001: \u0393=r u_\u03b8,  \u03a6=\u0393/r^2=u_\u03b8/r,  r^{-4} \u2202_z(\u0393^2)=\u2202_z(\u03a6^2)",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "\u0393=r u_\u03b8,  \u03a6=\u0393/r^2=u_\u03b8/r,  r^{-4} \u2202_z(\u0393^2)=\u2202_z(\u03a6^2)",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "\u0393=r u_\u03b8,  \u03a6=\u0393/r^2=u_\u03b8/r,  r^{-4} \u2202_z(\u0393^2)=\u2202_z(\u03a6^2)",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "_z",
+          "r",
+          "u_",
+          "\u03a6"
+        ],
+        "book_id": "NS-PHI001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#NS-PHI001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-SND-HYP001",
+      "label": "SND-HYP001: Assume SND: inf_t J(t)/X(t) >= c_* > 0 on unaugmen",
+      "shape": {
+        "shape_id": "shape-SND-HYP-PH\u03c8\u03bb\u03a6E-73d0f1eb7ee5",
+        "source": "Assume SND: inf_t J(t)/X(t) >= c_* > 0 on unaugmented NS (hypothesis)",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "SND-HYP",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Assume SND: inf_t J(t)/X(t) >= c_* > 0 on unaugmented NS (hypothesis)",
+        "notation": "SND_shell_flux",
+        "domain": "unspecified",
+        "hypothesis_tags": [
+          "SND-U_or_floor",
+          "hypothesis_framing"
+        ],
+        "symbols": [
+          "Assume",
+          "J",
+          "NS",
+          "SND",
+          "X",
+          "c_",
+          "hypothesis",
+          "inf_t",
+          "on",
+          "t",
+          "unaugmented"
+        ],
+        "book_id": "SND-HYP001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#SND-HYP001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-SND-C001",
+      "label": "SND-C001: SND-C under X<=M, rho<=rho_0, X>=delta_*: |Pi_{j*}",
+      "shape": {
+        "shape_id": "shape-SND-C-PH\u03c8\u03bb\u03a6E-c1abef5378cb",
+        "source": "SND-C under X<=M, rho<=rho_0, X>=delta_*: |Pi_{j*}| <= C_*(nu,delta_*,M,rho_0)",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "SND-C",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "SND-C under X<=M, rho<=rho_0, X>=delta_*: |Pi_{j*}| <= C_*(nu,delta_*,M,rho_0)",
+        "notation": "NS_PDE",
+        "domain": "RH_operator",
+        "hypothesis_tags": [
+          "SND-U_or_floor",
+          "X<=M",
+          "rho<=rho_0"
+        ],
+        "symbols": [
+          "C",
+          "C_",
+          "M",
+          "Pi_",
+          "SND",
+          "X",
+          "delta_",
+          "j",
+          "nu",
+          "rho",
+          "rho_0",
+          "under"
+        ],
+        "book_id": "SND-C001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#SND-C001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-SND-U001",
+      "label": "SND-U001: SND-U claimed: J/X >= c_* for all t>=0, all u0 in ",
+      "shape": {
+        "shape_id": "shape-SND-U-generic-6844df8d211f",
+        "source": "SND-U claimed: J/X >= c_* for all t>=0, all u0 in H^1(T^3) (unconditional)",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "SND-U",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "SND-U claimed: J/X >= c_* for all t>=0, all u0 in H^1(T^3) (unconditional)",
+        "notation": "generic",
+        "domain": "T\u00b3",
+        "hypothesis_tags": [
+          "SND-U_or_floor",
+          "unconditional_claim"
+        ],
+        "symbols": [
+          "H",
+          "J",
+          "SND",
+          "T",
+          "U",
+          "X",
+          "all",
+          "c_",
+          "claimed",
+          "for",
+          "in",
+          "t",
+          "u0",
+          "unconditional"
+        ],
+        "book_id": "SND-U001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "PARK",
+      "source_refs": [
+        "historical_equations.json#SND-U001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-THM-H001",
+      "label": "THM-H001: Theorem H: (X>=delta_*, X<=M, rho<=rho_0) => SND-C",
+      "shape": {
+        "shape_id": "shape-SND-C-PH\u03c8\u03bb\u03a6E-c1abef5378cb",
+        "source": "Theorem H: (X>=delta_*, X<=M, rho<=rho_0) => SND-C with C_*=C_*(nu,delta_*,M,rho_0,C_S)",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "SND-C",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Theorem H: (X>=delta_*, X<=M, rho<=rho_0) => SND-C with C_*=C_*(nu,delta_*,M,rho_0,C_S)",
+        "notation": "NS_PDE",
+        "domain": "RH_operator",
+        "hypothesis_tags": [
+          "SND-U_or_floor",
+          "X<=M",
+          "rho<=rho_0"
+        ],
+        "symbols": [
+          "C",
+          "C_",
+          "C_S",
+          "H",
+          "M",
+          "SND",
+          "Theorem",
+          "X",
+          "delta_",
+          "nu",
+          "rho",
+          "rho_0",
+          "with"
+        ],
+        "book_id": "THM-H001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#THM-H001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-CLAY-B001",
+      "label": "CLAY-B001: Clay Statement B claimed resolved via Theorem H / ",
+      "shape": {
+        "shape_id": "shape-SND-U-generic-6844df8d211f",
+        "source": "Clay Statement B claimed resolved via Theorem H / unconditional SND on T^3",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "SND-U",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Clay Statement B claimed resolved via Theorem H / unconditional SND on T^3",
+        "notation": "Clay_packaging",
+        "domain": "T\u00b3",
+        "hypothesis_tags": [
+          "Clay_B",
+          "unconditional_claim"
+        ],
+        "symbols": [
+          "B",
+          "Clay",
+          "H",
+          "SND",
+          "Statement",
+          "T",
+          "Theorem",
+          "claimed",
+          "on",
+          "resolved",
+          "unconditional",
+          "via"
+        ],
+        "book_id": "CLAY-B001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "CLAY",
+        "NS"
+      ],
+      "status": "PARK",
+      "source_refs": [
+        "historical_equations.json#CLAY-B001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-NS-Q1001",
+      "label": "NS-Q1001: Q1: partial_t u + (u\u00b7\u2207)u = -\u2207p + \u03bd\u0394u - \u03b5(-\u0394)^{1+\u03b4}",
+      "shape": {
+        "shape_id": "shape-NS-Q1-PH\u03c8\u03bb\u03a6E-623a2b33aa9d",
+        "source": "Q1: partial_t u + (u\u00b7\u2207)u = -\u2207p + \u03bd\u0394u - \u03b5(-\u0394)^{1+\u03b4}u",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "NS-Q1",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Q1: partial_t u + (u\u00b7\u2207)u = -\u2207p + \u03bd\u0394u - \u03b5(-\u0394)^{1+\u03b4}u",
+        "notation": "NS_PDE",
+        "domain": "unspecified",
+        "hypothesis_tags": [
+          "Q1_hyperdissipation"
+        ],
+        "symbols": [
+          "Q1",
+          "p",
+          "partial_t",
+          "u"
+        ],
+        "book_id": "NS-Q1001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#NS-Q1001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-RING-LEM001",
+      "label": "RING-LEM001: Ring Lemma: on shell S_{j*}, direction of omega is",
+      "shape": {
+        "shape_id": "shape-RING-BVB-PH\u03c8\u03bb\u03a6E-cda460770d50",
+        "source": "Ring Lemma: on shell S_{j*}, direction of omega is Lipschitz on E_c={|omega|>=c 2^{j*}||u||_{L2}}",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "RING-BVB",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Ring Lemma: on shell S_{j*}, direction of omega is Lipschitz on E_c={|omega|>=c 2^{j*}||u||_{L2}}",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "E_c",
+          "L2",
+          "Lemma",
+          "Lipschitz",
+          "Ring",
+          "S_",
+          "_",
+          "c",
+          "direction",
+          "is",
+          "j",
+          "of",
+          "omega",
+          "on",
+          "shell",
+          "u"
+        ],
+        "book_id": "RING-LEM001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#RING-LEM001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-BVB-EC001",
+      "label": "BVB-EC001: BVB on E_c: weighted integral bound linking vortic",
+      "shape": {
+        "shape_id": "shape-RING-BVB-PH\u03c8\u03bb\u03a6E-cda460770d50",
+        "source": "BVB on E_c: weighted integral bound linking vorticity direction to shell flux (band-limited)",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "RING-BVB",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "BVB on E_c: weighted integral bound linking vorticity direction to shell flux (band-limited)",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "BVB",
+          "E_c",
+          "band",
+          "bound",
+          "direction",
+          "flux",
+          "integral",
+          "limited",
+          "linking",
+          "on",
+          "shell",
+          "to",
+          "vorticity",
+          "weighted"
+        ],
+        "book_id": "BVB-EC001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#BVB-EC001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-CSTAR-ARITH001",
+      "label": "CSTAR-ARITH001: c_* = 6/pi^2 = zeta(2)^{-1} (squarefree/coprime de",
+      "shape": {
+        "shape_id": "shape-CSTAR-ARITH-generic-437a343edebf",
+        "source": "c_* = 6/pi^2 = zeta(2)^{-1} (squarefree/coprime density analogy)",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "CSTAR-ARITH",
+        "dependency_hints": [
+          "harmonic gauge",
+          "metric perturbation",
+          "wave operator D"
+        ],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "c_* = 6/pi^2 = zeta(2)^{-1} (squarefree/coprime density analogy)",
+        "notation": "RH_zeta",
+        "domain": "arithmetic_lattice",
+        "hypothesis_tags": [
+          "SND-U_or_floor"
+        ],
+        "symbols": [
+          "analogy",
+          "c_",
+          "coprime",
+          "density",
+          "pi",
+          "squarefree",
+          "zeta"
+        ],
+        "book_id": "CSTAR-ARITH001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "PARK",
+      "source_refs": [
+        "historical_equations.json#CSTAR-ARITH001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-BOOT-M001",
+      "label": "BOOT-M001: Bootstrap lemma (OPEN): M = M(||u0||_{H^1}) s.t. X",
+      "shape": {
+        "shape_id": "shape-BOOT-M-PH\u03c8\u03bb\u03a6E-6ead91f1088b",
+        "source": "Bootstrap lemma (OPEN): M = M(||u0||_{H^1}) s.t. X(t)<=M for all t in [0,T*) without circular input to Theorem H",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "BOOT-M",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Bootstrap lemma (OPEN): M = M(||u0||_{H^1}) s.t. X(t)<=M for all t in [0,T*) without circular input to Theorem H",
+        "notation": "SND_shell_flux",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "Bootstrap",
+          "H",
+          "M",
+          "OPEN",
+          "T",
+          "Theorem",
+          "X",
+          "_",
+          "all",
+          "circular",
+          "for",
+          "in",
+          "input",
+          "lemma",
+          "s",
+          "t",
+          "to",
+          "u0",
+          "without"
+        ],
+        "book_id": "BOOT-M001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#BOOT-M001"
+      ]
+    },
+    {
+      "object_id": "obj-tweet-SND-TWEET-CENTER001",
+      "label": "Central spectral condition (Bypass / shell-helical)",
+      "shape": {
+        "shape_id": "shape-SND-BYPASS-PH\u03c8\u03bb\u03a6E-843ef741afeb",
+        "source": "inf_{t>=0} lambda_min(tilde_H_N[u(t)]) / lambda_max(tilde_H_N[u(t)]) > -1/2",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "SND-BYPASS",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "inf_{t>=0} lambda_min(tilde_H_N[u(t)]) / lambda_max(tilde_H_N[u(t)]) > -1/2",
+        "notation": "shell_helical_operator",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "inf_",
+          "lambda_max",
+          "lambda_min",
+          "t",
+          "tilde_H_N",
+          "u"
+        ],
+        "book_id": "SND-BYPASS",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "snd_tweet_equations.json#SND-TWEET-CENTER001"
+      ]
+    },
+    {
+      "object_id": "obj-tweet-SND-TWEET-SND001",
+      "label": "[SND] spectral non-dispersal",
+      "shape": {
+        "shape_id": "shape-SND-HYP-PH\u03c8\u03bb\u03a6E-73d0f1eb7ee5",
+        "source": "inf_t J(t)/X(t) >= c_* > 0",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "SND-HYP",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "inf_t J(t)/X(t) >= c_* > 0",
+        "notation": "SND_shell_flux",
+        "domain": "unspecified",
+        "hypothesis_tags": [
+          "SND-U_or_floor"
+        ],
+        "symbols": [
+          "J",
+          "X",
+          "c_",
+          "inf_t",
+          "t"
+        ],
+        "book_id": "SND-HYP",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "snd_tweet_equations.json#SND-TWEET-SND001"
+      ]
+    },
+    {
+      "object_id": "obj-tweet-SND-TWEET-THM-D001",
+      "label": "Theorem D \u2014 Clay equivalence claim",
+      "shape": {
+        "shape_id": "shape-SND-U-generic-6844df8d211f",
+        "source": "Clay Statement B <=> [SND]",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "SND-U",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Clay Statement B <=> [SND]",
+        "notation": "Clay_packaging",
+        "domain": "unspecified",
+        "hypothesis_tags": [
+          "Clay_B"
+        ],
+        "symbols": [
+          "B",
+          "Clay",
+          "SND",
+          "Statement"
+        ],
+        "book_id": "SND-U",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "CLAY",
+        "NS"
+      ],
+      "status": "PARK",
+      "source_refs": [
+        "snd_tweet_equations.json#SND-TWEET-THM-D001"
+      ]
+    },
+    {
+      "object_id": "obj-tweet-SND-TWEET-THM-H001",
+      "label": "Theorem H (SND-C)",
+      "shape": {
+        "shape_id": "shape-SND-C-PH\u03c8\u03bb\u03a6E-c1abef5378cb",
+        "source": "Theorem H (SND-C): (X>=delta_*, X<=M, rho<=rho_0) => |Pi_{j*}| <= C_*(nu,delta_*,M,rho_0,C_S)",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "SND-C",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Theorem H (SND-C): (X>=delta_*, X<=M, rho<=rho_0) => |Pi_{j*}| <= C_*(nu,delta_*,M,rho_0,C_S)",
+        "notation": "NS_PDE",
+        "domain": "RH_operator",
+        "hypothesis_tags": [
+          "SND-U_or_floor",
+          "X<=M",
+          "rho<=rho_0"
+        ],
+        "symbols": [
+          "C",
+          "C_",
+          "C_S",
+          "H",
+          "M",
+          "Pi_",
+          "SND",
+          "Theorem",
+          "X",
+          "delta_",
+          "j",
+          "nu",
+          "rho",
+          "rho_0"
+        ],
+        "book_id": "SND-C",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "snd_tweet_equations.json#SND-TWEET-THM-H001"
+      ]
+    },
+    {
+      "object_id": "obj-tweet-SND-TWEET-BYPASS001",
+      "label": "Bypass Lemma",
+      "shape": {
+        "shape_id": "shape-SND-BYPASS-PH\u03c8\u03bb\u03a6E-843ef741afeb",
+        "source": "Bypass Lemma: tilde_H_N norm bound with 5\u00d7 safety margin on T^3",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "SND-BYPASS",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Bypass Lemma: tilde_H_N norm bound with 5\u00d7 safety margin on T^3",
+        "notation": "shell_helical_operator",
+        "domain": "T\u00b3",
+        "hypothesis_tags": [
+          "bypass_lemma"
+        ],
+        "symbols": [
+          "Bypass",
+          "Lemma",
+          "T",
+          "bound",
+          "margin",
+          "norm",
+          "on",
+          "safety",
+          "tilde_H_N",
+          "with"
+        ],
+        "book_id": "SND-BYPASS",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "snd_tweet_equations.json#SND-TWEET-BYPASS001"
+      ]
+    },
+    {
+      "object_id": "obj-tweet-SND-TWEET-RING001",
+      "label": "Ring Lemma",
+      "shape": {
+        "shape_id": "shape-RING-BVB-PH\u03c8\u03bb\u03a6E-cda460770d50",
+        "source": "Ring Lemma: Borromean triadic cancellation on interlocked Littlewood-Paley shells",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "RING-BVB",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Ring Lemma: Borromean triadic cancellation on interlocked Littlewood-Paley shells",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "Borromean",
+          "Lemma",
+          "Littlewood",
+          "Paley",
+          "Ring",
+          "cancellation",
+          "interlocked",
+          "on",
+          "shells",
+          "triadic"
+        ],
+        "book_id": "RING-BVB",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "KEEP",
+      "source_refs": [
+        "snd_tweet_equations.json#SND-TWEET-RING001"
+      ]
+    },
+    {
+      "object_id": "obj-tweet-SND-TWEET-MAIN001",
+      "label": "Main result",
+      "shape": {
+        "shape_id": "shape-SND-C-PH\u03c8\u03bb\u03a6E-c1abef5378cb",
+        "source": "Main result: global regularity on T^3 \u2014 no finite-time blowup (proved)",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "SND-C",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Main result: global regularity on T^3 \u2014 no finite-time blowup (proved)",
+        "notation": "generic",
+        "domain": "T\u00b3",
+        "hypothesis_tags": [],
+        "symbols": [
+          "Main",
+          "T",
+          "blowup",
+          "finite",
+          "global",
+          "no",
+          "on",
+          "proved",
+          "regularity",
+          "result",
+          "time"
+        ],
+        "book_id": "SND-C",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "CLAY",
+        "NS"
+      ],
+      "status": "PARK",
+      "source_refs": [
+        "snd_tweet_equations.json#SND-TWEET-MAIN001"
+      ]
+    },
+    {
+      "object_id": "obj-claim-SND-U",
+      "label": "Unconditional Spectral Non-Dispersal",
+      "shape": {
+        "shape_id": "shape-SND-HYP-PH\u03c8\u03bb\u03a6E-73d0f1eb7ee5",
+        "source": "inf_t J(t)/X(t) >= c_* > 0 for all suitable H^1(T^3) / Leray-Hopf data, with c_* from data and nu only (no a priori X<=M).",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "SND-HYP",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "inf_t J(t)/X(t) >= c_* > 0 for all suitable H^1(T^3) / Leray-Hopf data, with c_* from data and nu only (no a priori X<=M).",
+        "notation": "SND_shell_flux",
+        "domain": "T\u00b3",
+        "hypothesis_tags": [
+          "SND-U_or_floor",
+          "X<=M"
+        ],
+        "symbols": [
+          "H",
+          "Hopf",
+          "J",
+          "Leray",
+          "M",
+          "T",
+          "X",
+          "a",
+          "all",
+          "and",
+          "c_",
+          "data",
+          "for",
+          "from",
+          "inf_t",
+          "no",
+          "nu",
+          "only",
+          "priori",
+          "suitable"
+        ],
+        "book_id": "SND-HYP",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "snd_claim_inventory.json#SND-U",
+        "zenodo:KEEP:10.5281/zenodo.22050976"
+      ]
+    },
+    {
+      "object_id": "obj-claim-SND-C",
+      "label": "Conditional shell-flux / Spectral Non-Dispersal (conditioned)",
+      "shape": {
+        "shape_id": "shape-SND-C-PH\u03c8\u03bb\u03a6E-c1abef5378cb",
+        "source": "Shell-conditioned bound on dominant-shell flux Pi_{j*} in the spread regime rho<=rho_0, with C_*=C_*(nu, delta_*, M, rho_0, C_S), assuming X<=M.",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "SND-C",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Shell-conditioned bound on dominant-shell flux Pi_{j*} in the spread regime rho<=rho_0, with C_*=C_*(nu, delta_*, M, rho_0, C_S), assuming X<=M.",
+        "notation": "NS_PDE",
+        "domain": "RH_operator",
+        "hypothesis_tags": [
+          "SND-U_or_floor",
+          "X<=M",
+          "rho<=rho_0"
+        ],
+        "symbols": [
+          "C_",
+          "C_S",
+          "M",
+          "Pi_",
+          "Shell",
+          "X",
+          "assuming",
+          "bound",
+          "conditioned",
+          "delta_",
+          "dominant",
+          "flux",
+          "in",
+          "j",
+          "nu",
+          "on",
+          "regime",
+          "rho",
+          "rho_0",
+          "shell"
+        ],
+        "book_id": "SND-C",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "snd_claim_inventory.json#SND-C",
+        "zenodo:KEEP:10.5281/zenodo.22050976"
+      ]
+    },
+    {
+      "object_id": "obj-claim-CLAY-B",
+      "label": "Clay Millennium Statement (B) \u2014 3D Navier-Stokes global regularity",
+      "shape": {
+        "shape_id": "shape-SND-U-generic-6844df8d211f",
+        "source": "Global regularity for suitable H^1 data on T^3 without an extra unproved structural hypothesis (SND-U or a priori X<=M).",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "SND-U",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Global regularity for suitable H^1 data on T^3 without an extra unproved structural hypothesis (SND-U or a priori X<=M).",
+        "notation": "generic",
+        "domain": "T\u00b3",
+        "hypothesis_tags": [
+          "X<=M",
+          "hypothesis_framing"
+        ],
+        "symbols": [
+          "Global",
+          "H",
+          "M",
+          "SND",
+          "T",
+          "U",
+          "X",
+          "a",
+          "an",
+          "data",
+          "extra",
+          "for",
+          "hypothesis",
+          "on",
+          "or",
+          "priori",
+          "regularity",
+          "structural",
+          "suitable",
+          "unproved"
+        ],
+        "book_id": "SND-U",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "PARK",
+      "source_refs": [
+        "snd_claim_inventory.json#CLAY-B",
+        "zenodo:KEEP:10.5281/zenodo.22050976",
+        "zenodo:PARK:10.5281/zenodo.20405526"
+      ]
+    },
+    {
+      "object_id": "obj-claim-THEOREM-H-MISLABEL",
+      "label": "Briefing mislabel: Theorem H = SND for all H^1 data",
+      "shape": {
+        "shape_id": "shape-SND-C-PH\u03c8\u03bb\u03a6E-c1abef5378cb",
+        "source": "Favorable ARCHON roleplay packaging that substitutes SND-U for SND-C.",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response"
+        },
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "SND-C",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Favorable ARCHON roleplay packaging that substitutes SND-U for SND-C.",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "ARCHON",
+          "C",
+          "Favorable",
+          "SND",
+          "U",
+          "for",
+          "packaging",
+          "roleplay",
+          "substitutes",
+          "that"
+        ],
+        "book_id": "SND-C",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "PARK",
+      "source_refs": [
+        "snd_claim_inventory.json#THEOREM-H-MISLABEL"
+      ]
+    },
+    {
+      "object_id": "obj-claim-CSTAR-ARITHMETIC",
+      "label": "c_* = 6/pi^2 as continuum NS SND floor",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "zeta(2)^{-1} squarefree/coprime density from arithmetic Triple Lock packaging.",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [
+          "harmonic gauge",
+          "metric perturbation",
+          "wave operator D"
+        ],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "zeta(2)^{-1} squarefree/coprime density from arithmetic Triple Lock packaging.",
+        "notation": "RH_zeta",
+        "domain": "arithmetic_lattice",
+        "hypothesis_tags": [],
+        "symbols": [
+          "Lock",
+          "Triple",
+          "arithmetic",
+          "coprime",
+          "density",
+          "from",
+          "packaging",
+          "squarefree",
+          "zeta"
+        ],
+        "book_id": "generic",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "PARK",
+      "source_refs": [
+        "snd_claim_inventory.json#CSTAR-ARITHMETIC"
+      ]
+    },
+    {
+      "object_id": "obj-book-NS-B",
+      "label": "Classical NS-B (vorticity/velocity)",
+      "shape": {
+        "shape_id": "shape-NS-B-PH\u03c8\u03bb\u03a6E-1aad1bd25045",
+        "source": "NS-B",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response",
+          "\u03c8": "state"
+        },
+        "role_topology": [
+          "admissibility",
+          "environment",
+          "interaction",
+          "realized_output",
+          "scale_response",
+          "state"
+        ],
+        "compatibility_class": "NS-B",
+        "dependency_hints": [
+          "viscosity",
+          "advection",
+          "incompressibility",
+          "time_evolution"
+        ],
+        "notes": [
+          "Extracted from theory book NS-B."
+        ]
+      },
+      "texture": {
+        "source": "NS-B",
+        "notation": "NS_PDE",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "Delta",
+          "div",
+          "nabla",
+          "nu",
+          "omega",
+          "partial_t",
+          "u"
+        ],
+        "book_id": "NS-B",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book NS-B status=REFERENCE"
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "millennium_books.json#NS-B"
+      ]
+    },
+    {
+      "object_id": "obj-book-SND-C",
+      "label": "SND-C conditional (Theorem H as written)",
+      "shape": {
+        "shape_id": "shape-SND-C-PH\u03c8\u03bb\u03a6E-105234ead017",
+        "source": "SND-C",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response",
+          "\u03c8": "state"
+        },
+        "role_topology": [
+          "admissibility",
+          "environment",
+          "interaction",
+          "realized_output",
+          "scale_response",
+          "state"
+        ],
+        "compatibility_class": "SND-C",
+        "dependency_hints": [
+          "shell_flux",
+          "enstrophy_ceiling",
+          "spread_regime"
+        ],
+        "notes": [
+          "Extracted from theory book SND-C."
+        ]
+      },
+      "texture": {
+        "source": "SND-C",
+        "notation": "NS_PDE",
+        "domain": "RH_operator",
+        "hypothesis_tags": [
+          "SND-U_or_floor",
+          "X<=M",
+          "rho<=rho_0"
+        ],
+        "symbols": [
+          "C",
+          "C_",
+          "M",
+          "Pi_",
+          "SND",
+          "X",
+          "delta_",
+          "j",
+          "nu",
+          "rho",
+          "rho_0",
+          "under"
+        ],
+        "book_id": "SND-C",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book SND-C status=CONDITIONAL"
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "millennium_books.json#SND-C"
+      ]
+    },
+    {
+      "object_id": "obj-book-SND-U",
+      "label": "SND-U claimed unconditional",
+      "shape": {
+        "shape_id": "shape-SND-U-generic-8872ecb0d800",
+        "source": "SND-U",
+        "fingers": {},
+        "role_topology": [],
+        "compatibility_class": "SND-U",
+        "dependency_hints": [
+          "spectral_gap",
+          "J_over_X"
+        ],
+        "notes": [
+          "Extracted from theory book SND-U."
+        ]
+      },
+      "texture": {
+        "source": "SND-U",
+        "notation": "generic",
+        "domain": "T\u00b3",
+        "hypothesis_tags": [
+          "SND-U_or_floor",
+          "unconditional_claim"
+        ],
+        "symbols": [
+          "H",
+          "J",
+          "SND",
+          "T",
+          "U",
+          "X",
+          "all",
+          "c_",
+          "claimed",
+          "for",
+          "in",
+          "t",
+          "u0",
+          "unconditional"
+        ],
+        "book_id": "SND-U",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book SND-U status=REFUSE"
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "PARK",
+      "source_refs": [
+        "millennium_books.json#SND-U"
+      ]
+    },
+    {
+      "object_id": "obj-book-CLAY-B",
+      "label": "Clay Statement B packaging",
+      "shape": {
+        "shape_id": "shape-SND-U-generic-8872ecb0d800",
+        "source": "CLAY-B",
+        "fingers": {},
+        "role_topology": [],
+        "compatibility_class": "SND-U",
+        "dependency_hints": [
+          "global_regularity",
+          "millennium"
+        ],
+        "notes": [
+          "Extracted from theory book CLAY-B."
+        ]
+      },
+      "texture": {
+        "source": "CLAY-B",
+        "notation": "Clay_packaging",
+        "domain": "T\u00b3",
+        "hypothesis_tags": [
+          "Clay_B",
+          "unconditional_claim"
+        ],
+        "symbols": [
+          "B",
+          "Clay",
+          "H",
+          "SND",
+          "Statement",
+          "T",
+          "Theorem",
+          "claimed",
+          "on",
+          "resolved",
+          "unconditional",
+          "via"
+        ],
+        "book_id": "CLAY-B",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book CLAY-B status=RETIRE"
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "PARK",
+      "source_refs": [
+        "millennium_books.json#CLAY-B"
+      ]
+    },
+    {
+      "object_id": "obj-book-BOOT-M",
+      "label": "Bootstrap M lemma slot",
+      "shape": {
+        "shape_id": "shape-BOOT-M-PH\u03c8\u03bb\u03a6E-b446e766ffe8",
+        "source": "BOOT-M",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response",
+          "\u03c8": "state"
+        },
+        "role_topology": [
+          "admissibility",
+          "environment",
+          "interaction",
+          "realized_output",
+          "scale_response",
+          "state"
+        ],
+        "compatibility_class": "BOOT-M",
+        "dependency_hints": [
+          "bootstrap",
+          "enstrophy_ceiling"
+        ],
+        "notes": [
+          "Extracted from theory book BOOT-M."
+        ]
+      },
+      "texture": {
+        "source": "BOOT-M",
+        "notation": "SND_shell_flux",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "Bootstrap",
+          "H",
+          "M",
+          "OPEN",
+          "X",
+          "_",
+          "data",
+          "derived",
+          "from",
+          "t",
+          "u0",
+          "with"
+        ],
+        "book_id": "BOOT-M",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book BOOT-M status=OPEN"
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "millennium_books.json#BOOT-M"
+      ]
+    },
+    {
+      "object_id": "obj-book-SND-HYP",
+      "label": "NS + SND hypothesis",
+      "shape": {
+        "shape_id": "shape-SND-HYP-PH\u03c8\u03bb\u03a6E-5279a1f5237c",
+        "source": "SND-HYP",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response",
+          "\u03c8": "state"
+        },
+        "role_topology": [
+          "admissibility",
+          "environment",
+          "interaction",
+          "realized_output",
+          "scale_response",
+          "state"
+        ],
+        "compatibility_class": "SND-HYP",
+        "dependency_hints": [
+          "snd_hypothesis"
+        ],
+        "notes": [
+          "Extracted from theory book SND-HYP."
+        ]
+      },
+      "texture": {
+        "source": "SND-HYP",
+        "notation": "SND_shell_flux",
+        "domain": "unspecified",
+        "hypothesis_tags": [
+          "SND-U_or_floor",
+          "hypothesis_framing"
+        ],
+        "symbols": [
+          "Assume",
+          "J",
+          "NS",
+          "SND",
+          "X",
+          "c_",
+          "hypothesis",
+          "inf_t",
+          "on",
+          "t",
+          "unaugmented"
+        ],
+        "book_id": "SND-HYP",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book SND-HYP status=CONDITIONAL"
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "millennium_books.json#SND-HYP"
+      ]
+    },
+    {
+      "object_id": "obj-book-SFE",
+      "label": "Simons Field Equation (historical)",
+      "shape": {
+        "shape_id": "shape-SFE-H\u03c8\u03bb-c69ab192d42f",
+        "source": "SFE",
+        "fingers": {
+          "H": "interaction",
+          "\u03bb": "scale_response",
+          "\u03c8": "state"
+        },
+        "role_topology": [
+          "interaction",
+          "scale_response",
+          "state"
+        ],
+        "compatibility_class": "SFE",
+        "dependency_hints": [
+          "sfe"
+        ],
+        "notes": [
+          "Extracted from theory book SFE."
+        ]
+      },
+      "texture": {
+        "source": "SFE",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "SFE",
+          "candidate",
+          "canonical",
+          "historical",
+          "status",
+          "unresolved"
+        ],
+        "book_id": "SFE",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book SFE status=RETIRE"
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "PARK",
+      "source_refs": [
+        "millennium_books.json#SFE"
+      ]
+    },
+    {
+      "object_id": "obj-book-NS-Q1",
+      "label": "Q1 hyperdissipative approximant",
+      "shape": {
+        "shape_id": "shape-NS-Q1-PH\u03c8\u03bb\u03a6E-94ed7db73a46",
+        "source": "NS-Q1",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response",
+          "\u03c8": "state"
+        },
+        "role_topology": [
+          "admissibility",
+          "environment",
+          "interaction",
+          "realized_output",
+          "scale_response",
+          "state"
+        ],
+        "compatibility_class": "NS-Q1",
+        "dependency_hints": [
+          "hyperdissipation",
+          "epsilon_limit"
+        ],
+        "notes": [
+          "Extracted from theory book NS-Q1."
+        ]
+      },
+      "texture": {
+        "source": "NS-Q1",
+        "notation": "NS_PDE",
+        "domain": "unspecified",
+        "hypothesis_tags": [
+          "Q1_hyperdissipation"
+        ],
+        "symbols": [
+          "Q1",
+          "p",
+          "partial_t",
+          "u"
+        ],
+        "book_id": "NS-Q1",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book NS-Q1 status=OPEN"
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "millennium_books.json#NS-Q1"
+      ]
+    },
+    {
+      "object_id": "obj-book-RH-ROUTE-C",
+      "label": "Route C exploratory",
+      "shape": {
+        "shape_id": "shape-RH-ROUTE-C-\u03c8\u03bb\u03a6E-d9d12b41e526",
+        "source": "RH-ROUTE-C",
+        "fingers": {
+          "E": "environment",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response",
+          "\u03c8": "state"
+        },
+        "role_topology": [
+          "environment",
+          "realized_output",
+          "scale_response",
+          "state"
+        ],
+        "compatibility_class": "RH-ROUTE-C",
+        "dependency_hints": [
+          "zeta",
+          "critical_line"
+        ],
+        "notes": [
+          "Extracted from theory book RH-ROUTE-C."
+        ]
+      },
+      "texture": {
+        "source": "RH-ROUTE-C",
+        "notation": "generic",
+        "domain": "RH_operator",
+        "hypothesis_tags": [],
+        "symbols": [
+          "C",
+          "RH",
+          "Route",
+          "correspondence",
+          "exploratory",
+          "organizational"
+        ],
+        "book_id": "RH-ROUTE-C",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book RH-ROUTE-C status=OPEN"
+        ]
+      },
+      "millennium_tags": [
+        "RH"
+      ],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "millennium_books.json#RH-ROUTE-C"
+      ]
+    },
+    {
+      "object_id": "obj-book-Q6",
+      "label": "Q6 arithmetic operator",
+      "shape": {
+        "shape_id": "shape-Q6-H\u03c8\u03bbE-01200c14ad8e",
+        "source": "Q6",
+        "fingers": {
+          "E": "environment",
+          "H": "interaction",
+          "\u03bb": "scale_response",
+          "\u03c8": "state"
+        },
+        "role_topology": [
+          "environment",
+          "interaction",
+          "scale_response",
+          "state"
+        ],
+        "compatibility_class": "Q6",
+        "dependency_hints": [
+          "arithmetic",
+          "prime_structure"
+        ],
+        "notes": [
+          "Extracted from theory book Q6."
+        ]
+      },
+      "texture": {
+        "source": "Q6",
+        "notation": "Q6_lattice",
+        "domain": "arithmetic_lattice",
+        "hypothesis_tags": [],
+        "symbols": [
+          "Q6",
+          "RH",
+          "arithmetic",
+          "claim",
+          "lattice",
+          "no",
+          "on",
+          "operator"
+        ],
+        "book_id": "Q6",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book Q6 status=REFERENCE"
+        ]
+      },
+      "millennium_tags": [
+        "RH"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "millennium_books.json#Q6"
+      ]
+    },
+    {
+      "object_id": "obj-book-RH-MD",
+      "label": "Montgomery-Dyson coincidence",
+      "shape": {
+        "shape_id": "shape-RH-MD-\u03a6E-802a0c5d33ce",
+        "source": "RH-MD",
+        "fingers": {
+          "E": "environment",
+          "\u03a6": "realized_output"
+        },
+        "role_topology": [
+          "environment",
+          "realized_output"
+        ],
+        "compatibility_class": "RH-MD",
+        "dependency_hints": [
+          "pair_correlation",
+          "random_matrix"
+        ],
+        "notes": [
+          "Extracted from theory book RH-MD."
+        ]
+      },
+      "texture": {
+        "source": "RH-MD",
+        "notation": "generic",
+        "domain": "RH_operator",
+        "hypothesis_tags": [],
+        "symbols": [
+          "Dyson",
+          "Montgomery",
+          "archive",
+          "coincidence",
+          "correlation",
+          "pair"
+        ],
+        "book_id": "RH-MD",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book RH-MD status=REFERENCE"
+        ]
+      },
+      "millennium_tags": [
+        "RH"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "millennium_books.json#RH-MD"
+      ]
+    },
+    {
+      "object_id": "obj-book-YM-STUB",
+      "label": "Yang-Mills mass gap stub",
+      "shape": {
+        "shape_id": "shape-YM-STUB-PH\u03c8\u03bb-5b6d15b11feb",
+        "source": "YM-STUB",
+        "fingers": {
+          "P": "admissibility",
+          "H": "interaction",
+          "\u03bb": "scale_response",
+          "\u03c8": "state"
+        },
+        "role_topology": [
+          "admissibility",
+          "interaction",
+          "scale_response",
+          "state"
+        ],
+        "compatibility_class": "YM-STUB",
+        "dependency_hints": [
+          "gauge",
+          "mass_gap"
+        ],
+        "notes": [
+          "Extracted from theory book YM-STUB."
+        ]
+      },
+      "texture": {
+        "source": "YM-STUB",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [
+          "hypothesis_framing"
+        ],
+        "symbols": [
+          "Mills",
+          "OPEN",
+          "R",
+          "Yang",
+          "gap",
+          "hypothesis",
+          "mass",
+          "on"
+        ],
+        "book_id": "YM-STUB",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book YM-STUB status=OPEN"
+        ]
+      },
+      "millennium_tags": [
+        "YANG-MILLS"
+      ],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "millennium_books.json#YM-STUB"
+      ]
+    },
+    {
+      "object_id": "obj-book-PVSNP-STUB",
+      "label": "P vs NP organizational stub",
+      "shape": {
+        "shape_id": "shape-PVSNP-STUB-PH-3a06f4d95589",
+        "source": "PVSNP-STUB",
+        "fingers": {
+          "P": "admissibility",
+          "H": "interaction"
+        },
+        "role_topology": [
+          "admissibility",
+          "interaction"
+        ],
+        "compatibility_class": "PVSNP-STUB",
+        "dependency_hints": [
+          "complexity"
+        ],
+        "notes": [
+          "Extracted from theory book PVSNP-STUB."
+        ]
+      },
+      "texture": {
+        "source": "PVSNP-STUB",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "NP",
+          "P",
+          "organizational",
+          "placeholder",
+          "vs"
+        ],
+        "book_id": "PVSNP-STUB",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book PVSNP-STUB status=OPEN"
+        ]
+      },
+      "millennium_tags": [
+        "PVSNP"
+      ],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "millennium_books.json#PVSNP-STUB"
+      ]
+    },
+    {
+      "object_id": "obj-book-BSD-STUB",
+      "label": "BSD stub",
+      "shape": {
+        "shape_id": "shape-BSD-STUB-\u03c8\u03a6E-04f48202e967",
+        "source": "BSD-STUB",
+        "fingers": {
+          "E": "environment",
+          "\u03a6": "realized_output",
+          "\u03c8": "state"
+        },
+        "role_topology": [
+          "environment",
+          "realized_output",
+          "state"
+        ],
+        "compatibility_class": "BSD-STUB",
+        "dependency_hints": [
+          "elliptic_curve",
+          "L_function"
+        ],
+        "notes": [
+          "Extracted from theory book BSD-STUB."
+        ]
+      },
+      "texture": {
+        "source": "BSD-STUB",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "BSD",
+          "L",
+          "OPEN",
+          "conjecture",
+          "correspondence",
+          "function",
+          "rank"
+        ],
+        "book_id": "BSD-STUB",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book BSD-STUB status=OPEN"
+        ]
+      },
+      "millennium_tags": [
+        "BSD"
+      ],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "millennium_books.json#BSD-STUB"
+      ]
+    },
+    {
+      "object_id": "obj-book-HODGE-STUB",
+      "label": "Hodge stub",
+      "shape": {
+        "shape_id": "shape-HODGE-STUB-\u03c8\u03a6E-79f0b3713458",
+        "source": "HODGE-STUB",
+        "fingers": {
+          "E": "environment",
+          "\u03a6": "realized_output",
+          "\u03c8": "state"
+        },
+        "role_topology": [
+          "environment",
+          "realized_output",
+          "state"
+        ],
+        "compatibility_class": "HODGE-STUB",
+        "dependency_hints": [
+          "cohomology",
+          "algebraic_cycles"
+        ],
+        "notes": [
+          "Extracted from theory book HODGE-STUB."
+        ]
+      },
+      "texture": {
+        "source": "HODGE-STUB",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "Hodge",
+          "OPEN",
+          "classes",
+          "conjecture",
+          "p"
+        ],
+        "book_id": "HODGE-STUB",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book HODGE-STUB status=OPEN"
+        ]
+      },
+      "millennium_tags": [
+        "HODGE"
+      ],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "millennium_books.json#HODGE-STUB"
+      ]
+    },
+    {
+      "object_id": "obj-book-POINCARE-REF",
+      "label": "Poincar\u00e9 reference (Perelman)",
+      "shape": {
+        "shape_id": "shape-POINCARE-REF-P\u03c8E-c70ca4de3793",
+        "source": "POINCARE-REF",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "\u03c8": "state"
+        },
+        "role_topology": [
+          "admissibility",
+          "environment",
+          "state"
+        ],
+        "compatibility_class": "POINCARE-REF",
+        "dependency_hints": [
+          "ricci_flow",
+          "surgery"
+        ],
+        "notes": [
+          "Extracted from theory book POINCARE-REF."
+        ]
+      },
+      "texture": {
+        "source": "POINCARE-REF",
+        "notation": "generic",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "Perelman",
+          "Poincar",
+          "conjecture",
+          "external",
+          "proof",
+          "reference"
+        ],
+        "book_id": "POINCARE-REF",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book POINCARE-REF status=REFERENCE"
+        ]
+      },
+      "millennium_tags": [
+        "POINCARE"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "millennium_books.json#POINCARE-REF"
+      ]
+    }
+  ],
+  "object_count": 61,
+  "keep_count": 29,
+  "hypothesis_count": 15,
+  "park_count": 17,
+  "coverage_gaps": [
+    "data/zenodo/deposit_metadata.json not present \u2014 Zenodo KEEP/PARK not indexed"
+  ],
+  "millennium_coverage": {
+    "FRA": 4,
+    "SFE": 6,
+    "NS": 26,
+    "CLAY": 3,
+    "RH": 3,
+    "YANG-MILLS": 1,
+    "PVSNP": 1,
+    "BSD": 1,
+    "HODGE": 1,
+    "POINCARE": 1
+  },
+  "zenodo_refs": [],
+  "doc_refs": [
+    "docs/ns-review/ARCHON-PANEL-ADVERSARIAL-VERDICT.md",
+    "docs/ns-review/COMPETITIVE-POSITION-2026.md",
+    "docs/ns-review/DA-FULL-CHAIN-REPORT.md",
+    "docs/ns-review/DA-GAP-CLOSURE-PLAYBOOK.md",
+    "docs/ns-review/DA-RESOLUTION-CLUES.md",
+    "docs/ns-review/PR-DRAFT-COMPETITIVE-PACKAGE.md",
+    "docs/ns-review/README.md",
+    "docs/ns-review/SND-TWEET-DA-AUDIT.md",
+    "docs/ns-review/SND-TWEET-EQUATIONS.md",
+    "docs/ns-review/THEOREM-H-ATTACK-PLAN.md",
+    "docs/domain-architect/00-AUDITED-BASELINE.md",
+    "docs/domain-architect/01-EQUATION-INVENTORY.md",
+    "docs/domain-architect/02-CONFLICT-TABLE.md",
+    "docs/domain-architect/03-RECONCILIATION.md",
+    "docs/domain-architect/04-NOTATION-COLLISIONS.md",
+    "docs/domain-architect/05-RECTIFICATION.md",
+    "docs/domain-architect/06-OVERNIGHT-HONEST-LOOP.md",
+    "docs/domain-architect/GROK-ATTACK-CHECKLIST.md",
+    "docs/domain-architect/GROK-RIGOR-HANDOFF.md",
+    "docs/domain-architect/OVERNIGHT-DEMO.md",
+    "docs/domain-architect/PR-28-GROK-HANDOFF-SECTION.md",
+    "docs/domain-architect/README.md",
+    "docs/domain-architect/SHAPE-TEXTURE-ONTOLOGY.md",
+    "docs/domain-architect/THEORY-SPLICER-PLAYBOOK.md"
+  ],
+  "honesty": "Library scan maps what exists \u2014 does not invent missing proofs."
+}

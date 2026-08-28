@@ -1,0 +1,68 @@
+{
+  "schema_version": "2026-08-25",
+  "title": "SND / Theorem H / Clay B claim inventory",
+  "source_audit": "docs/ns-review/ARCHON-PANEL-ADVERSARIAL-VERDICT.md",
+  "presentation_rule": "Never route unconditional regularity or Clay B resolved. Favorable ARCHON roleplay is not peer review.",
+  "claims": [
+    {
+      "claim_id": "SND-U",
+      "label": "Unconditional Spectral Non-Dispersal",
+      "status": "open",
+      "status_detail": "hypothesis",
+      "definition": "inf_t J(t)/X(t) >= c_* > 0 for all suitable H^1(T^3) / Leray-Hopf data, with c_* from data and nu only (no a priori X<=M).",
+      "clay_relevance": "Necessary structural ingredient (with a clean SND=>regularity arrow) for Statement B to be in play.",
+      "zenodo_keep_doi": "10.5281/zenodo.22050976",
+      "notes": "Not proved in available manuscripts. Do not green as Theorem H."
+    },
+    {
+      "claim_id": "SND-C",
+      "label": "Conditional shell-flux / Spectral Non-Dispersal (conditioned)",
+      "status": "conditional",
+      "status_detail": "proved_under_X_le_M",
+      "definition": "Shell-conditioned bound on dominant-shell flux Pi_{j*} in the spread regime rho<=rho_0, with C_*=C_*(nu, delta_*, M, rho_0, C_S), assuming X<=M.",
+      "clay_relevance": "Circular for Clay B: uses the enstrophy ceiling Statement B must produce.",
+      "theorem_label": "Theorem H (as written in 20518057 / claim paper)",
+      "zenodo_keep_doi": "10.5281/zenodo.22050976",
+      "notes": "Legitimate toolkit lemma. Not unconditional SND."
+    },
+    {
+      "claim_id": "CLAY-B",
+      "label": "Clay Millennium Statement (B) — 3D Navier-Stokes global regularity",
+      "status": "not_resolved",
+      "status_detail": "open",
+      "definition": "Global regularity for suitable H^1 data on T^3 without an extra unproved structural hypothesis (SND-U or a priori X<=M).",
+      "clay_relevance": "Prize problem remains open on available sources.",
+      "zenodo_park_doi": "10.5281/zenodo.20405526",
+      "zenodo_keep_doi": "10.5281/zenodo.22050976",
+      "notes": "PARK Statement B packaging; KEEP conditional Ring+SND framing."
+    },
+    {
+      "claim_id": "THEOREM-H-MISLABEL",
+      "label": "Briefing mislabel: Theorem H = SND for all H^1 data",
+      "status": "refuted_as_written",
+      "status_detail": "naming_fraud_vs_manuscript",
+      "definition": "Favorable ARCHON roleplay packaging that substitutes SND-U for SND-C.",
+      "clay_relevance": "Must not be used in deposits or marketing.",
+      "notes": "Panel consensus is not peer review."
+    },
+    {
+      "claim_id": "CSTAR-ARITHMETIC",
+      "label": "c_* = 6/pi^2 as continuum NS SND floor",
+      "status": "analogy_only",
+      "status_detail": "not_continuum_floor",
+      "definition": "zeta(2)^{-1} squarefree/coprime density from arithmetic Triple Lock packaging.",
+      "clay_relevance": "Not load-bearing for continuum NS proofs.",
+      "notes": "Fluids small-data c_* is data-dependent when present."
+    }
+  ],
+  "refused_routings": [
+    "unconditional regularity",
+    "unconditional global regularity",
+    "clay statement b resolved",
+    "clay b solved",
+    "millennium prize solved",
+    "snd for all data proved",
+    "theorem h equals unconditional snd",
+    "c_*=6/pi^2 is the fluids snd threshold"
+  ]
+}

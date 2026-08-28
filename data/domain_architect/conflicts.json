@@ -102,5 +102,245 @@
     "evidence": "No justified canonical formula exists to compare against SFE-H001.",
     "status": "unresolved",
     "notes": "Canonical SFE status remains unresolved."
+  },
+  {
+    "left_id": "SFE-H001",
+    "right_id": "NS-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "SFE candidate formulas and classical NS are distinct books. Shared letters do not constitute a derivation.",
+    "status": "recorded",
+    "notes": "Domain Architect may route between books. It must not glue SFE to NS-B."
+  },
+  {
+    "left_id": "NS-A001",
+    "right_id": "NS-B001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Track A is an augmented PDE; Track B is classical unaugmented NS. Different equations.",
+    "status": "recorded",
+    "notes": "Keep as adjacent fluids books. Do not collapse into one operator."
+  },
+  {
+    "left_id": "NS-PHI001",
+    "right_id": "NS-B001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Swirl Φ algebra reuses the letter Φ with a different meaning from FRA realized output.",
+    "status": "recorded",
+    "notes": "Alias Φ_swirl when both books appear in one document."
+  },
+  {
+    "left_id": "SND-HYP001",
+    "right_id": "NS-B001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "SND-HYP adds an explicit spectral-gap hypothesis on top of classical NS-B. Adjacent books; hypothesis is not a theorem.",
+    "status": "recorded",
+    "notes": "KEEP framing: unaugmented NS + SND as hypothesis."
+  },
+  {
+    "left_id": "SND-C001",
+    "right_id": "SND-U001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "SND-C assumes X≤M (and ρ≤ρ₀) with C_* depending on M; SND-U claims unconditional J/X≥c_* for all H¹ data. Broken weld TH-H1.",
+    "status": "recorded",
+    "notes": "Suggested closure: split theorems; forbid H→Clay glue until M-free lemma exists."
+  },
+  {
+    "left_id": "SND-C001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Airtight SND-C given X≤M does not resolve Clay Statement B. Circular for large-data regularity.",
+    "status": "recorded",
+    "notes": "Broken weld: TH-H1. DA refuses unconditional Clay routing."
+  },
+  {
+    "left_id": "THM-H001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Theorem H as written produces SND-C under X≤M; Clay B requires M-free H¹ control from data alone.",
+    "status": "recorded",
+    "notes": "Naming fraud if status tables green H as unconditional."
+  },
+  {
+    "left_id": "THM-H001",
+    "right_id": "SND-U001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Theorem H ≠ unconditional SND. Briefing substitution error.",
+    "status": "recorded",
+    "notes": "See ARCHON adversarial verdict."
+  },
+  {
+    "left_id": "SND-U001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Both are unproved prize packaging; neither is established. Retire both as proved claims.",
+    "status": "recorded",
+    "notes": "Do not synthesize a hybrid 'almost Clay' claim."
+  },
+  {
+    "left_id": "SND-HYP001",
+    "right_id": "SND-U001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Hypothesis book explicitly does not claim proved unconditional SND.",
+    "status": "recorded",
+    "notes": "Keep HYP; retire U."
+  },
+  {
+    "left_id": "SND-HYP001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Conditional SND hypothesis framing is the honest KEEP path; Clay-B packaging is parked.",
+    "status": "recorded",
+    "notes": ""
+  },
+  {
+    "left_id": "NS-B001",
+    "right_id": "SND-U001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Classical NS-B organizational book does not entail unconditional SND.",
+    "status": "recorded",
+    "notes": "No SFE-glue and no Clay-glue from NS-B alone."
+  },
+  {
+    "left_id": "NS-B001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Domain Architect routes NS-B as organizational FRA only; it must not claim Millennium closure.",
+    "status": "recorded",
+    "notes": "NS_NO_MILLENNIUM invariant."
+  },
+  {
+    "left_id": "NS-Q1001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Q1 approximants do not freely pass SND to Leray–Hopf; gap TH-H7-Q1.",
+    "status": "recorded",
+    "notes": "Suggested closure: prove ε-uniform J/X and liminf passage."
+  },
+  {
+    "left_id": "NS-Q1001",
+    "right_id": "SND-U001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Hyperdissipative SND for ε>0 is not unconditional SND for NS-B.",
+    "status": "recorded",
+    "notes": ""
+  },
+  {
+    "left_id": "SND-C001",
+    "right_id": "SND-HYP001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Both are conditional books; SND-C is a specific shell-flux estimate under X≤M, SND-HYP is the abstract spectral-gap assumption.",
+    "status": "recorded",
+    "notes": "Do not collapse; both honest if not glued to Clay-B."
+  },
+  {
+    "left_id": "RING-LEM001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Ring Lemma is band-limited on E_c with shell support; does not rescue Clay B if Theorem H fails.",
+    "status": "recorded",
+    "notes": "ARCHON Gap H6: Ring+BVB does not replace proved SND law for all data."
+  },
+  {
+    "left_id": "BVB-EC001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "BVB on E_c is conditional geometry; complement/global CF not Clay-grade.",
+    "status": "recorded",
+    "notes": "Toolkit only."
+  },
+  {
+    "left_id": "RING-LEM001",
+    "right_id": "SND-U001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Band-limited Ring geometry does not imply unconditional SND for all H¹ data.",
+    "status": "recorded",
+    "notes": ""
+  },
+  {
+    "left_id": "CSTAR-ARITH001",
+    "right_id": "SND-U001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "c*=6/π² is arithmetic zeta(2)^{-1} analogy, not a proved continuum SND floor.",
+    "status": "recorded",
+    "notes": "Gap H5. DA refuses arithmetic→fluids routing."
+  },
+  {
+    "left_id": "CSTAR-ARITH001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Arithmetic density is not load-bearing for Clay Statement B.",
+    "status": "recorded",
+    "notes": ""
+  },
+  {
+    "left_id": "BOOT-M001",
+    "right_id": "SND-C001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Bootstrap M from H¹ data is the candidate de-circularization path for Theorem H input — open analytic slot.",
+    "status": "recorded",
+    "notes": "If proved, feeds H without smuggling conclusion; still need M-free c_* (TH-H3)."
+  },
+  {
+    "left_id": "BOOT-M001",
+    "right_id": "CLAY-B001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "Bootstrap lemma alone does not close Clay B; would partially address TH-H3 M-circularity only.",
+    "status": "recorded",
+    "notes": "Candidate completion — not a resolution claim."
+  },
+  {
+    "left_id": "SFE-H002",
+    "right_id": "NS-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "SFE prize-packaging and classical NS are distinct books. No derivation glue.",
+    "status": "recorded",
+    "notes": "SFE→NS glue forbidden."
+  },
+  {
+    "left_id": "SFE-H003",
+    "right_id": "NS-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Fock Hamiltonian SFE and classical NS are incompatible books.",
+    "status": "recorded",
+    "notes": "SFE→NS glue forbidden."
+  },
+  {
+    "left_id": "RING-LEM001",
+    "right_id": "BVB-EC001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Ring Lemma supplies geometric hypotheses; BVB bridge uses E_c — adjacent toolkit books.",
+    "status": "recorded",
+    "notes": "Keep as method chain; do not route to Clay-B."
+  },
+  {
+    "left_id": "SND-TWEET-CENTER001",
+    "right_id": "SND-TWEET-SND001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Tweet central lambda_min/lambda_max ratio of tilde_H_N is not the same observable as inf J/X≥c_*.",
+    "status": "recorded",
+    "notes": "June 2026 one-page summary conflates both under 'single spectral condition'."
+  },
+  {
+    "left_id": "SND-TWEET-THM-D001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Clay⇔SND equivalence in tweet exceeds proved manuscripts; DA gap router refuses TH-H2.",
+    "status": "recorded",
+    "notes": "See docs/ns-review/SND-TWEET-DA-AUDIT.md"
+  },
+  {
+    "left_id": "SND-TWEET-MAIN001",
+    "right_id": "CLAY-B001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Tweet main result marks global regularity proved; CLAY-B001 disposition RETIRE.",
+    "status": "recorded",
+    "notes": ""
+  },
+  {
+    "left_id": "SND-TWEET-CENTER001",
+    "right_id": "SND-U001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Shell-helical eigenvalue ratio book does not establish unconditional J/X floor.",
+    "status": "recorded",
+    "notes": "Notation H_N collision with ARITH-H documented."
   }
 ]
