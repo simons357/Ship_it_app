@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "version": "0.1.0",
+    "updated": "2026-08-28",
+    "source_of_truth": "docs/KEEP-CUT-INVENTORY.md",
+    "platform_spine": "packages/shared_core"
+  },
+  "url_policy": {
+    "prefer_live_over_hub_route": true,
+    "hub_domain": "https://primefield.tech",
+    "notes": "Field Lock: use Replit kiosk, not hollow /field-lock hub route."
+  },
+  "kernel_modules": [
+    "config",
+    "link_resolver",
+    "product_registry",
+    "search",
+    "ledger",
+    "spells",
+    "vault_export",
+    "auth",
+    "telemetry",
+    "branding"
+  ],
+  "products": {
+    "field-lock": {
+      "name": "Field Lock",
+      "tier": 1,
+      "status": "live",
+      "keep_cut": "KEEP",
+      "host": "replit",
+      "modules": ["auth", "search", "link_resolver", "telemetry"],
+      "urls": {
+        "canonical": "https://field-lock.replit.app/",
+        "hub": "https://primefield.tech/field-lock",
+        "repo": null
+      },
+      "notes": "Presence-bound keys; PUF/CTW spine. NDA depth for architecture."
+    },
+    "ship-it": {
+      "name": "Ship It",
+      "tier": 1,
+      "status": "live",
+      "keep_cut": "KEEP",
+      "host": "github",
+      "modules": ["search", "link_resolver", "config", "telemetry"],
+      "urls": {
+        "canonical": "https://github.com/simons357/ship-it-code",
+        "app_branch": "cursor/ship-it-app-e279",
+        "repo": "https://github.com/simons357/Ship_it_app"
+      },
+      "notes": "Next.js app on ship-it-code branch; assets in this repo."
+    },
+    "nav-42": {
+      "name": "NAV-42",
+      "tier": 1,
+      "status": "live",
+      "keep_cut": "KEEP",
+      "host": "replit",
+      "modules": ["search", "link_resolver", "telemetry"],
+      "urls": {
+        "canonical": "https://nav-42.replit.app/",
+        "hub": null,
+        "repo": null
+      },
+      "notes": "Freeze false % drag claims until metered pilot."
+    },
+    "vigilant-patch": {
+      "name": "Vigilant Patch",
+      "tier": 1,
+      "status": "development",
+      "keep_cut": "KEEP",
+      "host": "tbd",
+      "modules": ["auth", "search", "telemetry"],
+      "urls": {
+        "canonical": null,
+        "hub": null,
+        "repo": null
+      },
+      "notes": "CRNA lane; FDA path before deep disclosure. Clinical partition required."
+    },
+    "aquaquarts": {
+      "name": "AquaQuarts",
+      "tier": 1,
+      "status": "development",
+      "keep_cut": "KEEP",
+      "host": "github",
+      "modules": ["link_resolver", "branding"],
+      "urls": {
+        "canonical": null,
+        "brochure_branches": ["cursor/aquaquartz-pro-brochure-694a", "cursor/aquaquartz-stable-brochure-80c6"],
+        "repo": null
+      },
+      "notes": "Luxury water; productizable without Clay math."
+    },
+    "chatvault": {
+      "name": "ChatVault",
+      "tier": 2,
+      "status": "hollow",
+      "keep_cut": "KEEP",
+      "host": "base44",
+      "modules": ["auth", "vault_export", "search"],
+      "urls": {
+        "canonical": null,
+        "hub": "https://primefield.tech/chatvault",
+        "repo": null
+      },
+      "notes": "Hollow public URL — ship MVP or drop from catalog. See CHATVAULT-HOOKUP.md."
+    },
+    "kyrana": {
+      "name": "Kyrana",
+      "tier": 2,
+      "status": "live",
+      "keep_cut": "KEEP",
+      "host": "github",
+      "modules": ["search", "spells"],
+      "urls": {
+        "canonical": "https://github.com/simons357/kyrana-oracle",
+        "hub": null,
+        "repo": "https://github.com/simons357/kyrana-oracle"
+      },
+      "notes": "Oracle skin — wire to PFPI search instead of hard-coded responses."
+    },
+    "solenne": {
+      "name": "Solenne",
+      "tier": 2,
+      "status": "gated",
+      "keep_cut": "KEEP",
+      "host": "base44",
+      "modules": ["auth", "link_resolver"],
+      "urls": {
+        "canonical": "https://solenne.base44.app/",
+        "hub": null,
+        "repo": null
+      },
+      "notes": "Fix Base44 public permissions or take offline."
+    },
+    "maritime-dashboard": {
+      "name": "Maritime Coherence Dashboard",
+      "tier": 2,
+      "status": "gated",
+      "keep_cut": "KEEP",
+      "host": "base44",
+      "modules": ["link_resolver", "search"],
+      "urls": {
+        "canonical": "https://maritime-coherence-dashboard-100b68c0.base44.app/",
+        "hub": null,
+        "repo": null
+      },
+      "notes": "Maritime partner demo; permissions may block strangers."
+    },
+    "sfe-rh-explorer": {
+      "name": "Primefield Explorer / SFE-RH",
+      "tier": 2,
+      "status": "gated",
+      "keep_cut": "KEEP",
+      "host": "base44",
+      "modules": ["search", "spells"],
+      "urls": {
+        "canonical": "https://sfe-rh-explorer-v1-07f8121c.base44.app/",
+        "hub": null,
+        "repo": null
+      },
+      "notes": "Explorer skin for math corpus — should call PFPI not local silo."
+    },
+    "exo-ratio": {
+      "name": "ExoRatio",
+      "tier": 2,
+      "status": "cut",
+      "keep_cut": "CUT",
+      "host": "base44",
+      "modules": [],
+      "urls": {
+        "canonical": "https://exo-ratio-014dea2d.base44.app/",
+        "hub": null,
+        "repo": null
+      },
+      "notes": "CUT — negative null audit. Do not promote or index as evidence."
+    },
+    "harmonic-blueprint": {
+      "name": "Harmonic Blueprint",
+      "tier": 3,
+      "status": "live",
+      "keep_cut": "COLD_ARCHIVE",
+      "host": "web",
+      "modules": ["search", "branding"],
+      "urls": {
+        "canonical": "https://www.theharmonicblueprint.com/",
+        "hub": null,
+        "repo": "https://github.com/simons357/Ship_it_app"
+      },
+      "notes": "Expository brand; HB Experiment 01 in this repo."
+    },
+    "math-corpus": {
+      "name": "Math / DA Corpus",
+      "tier": 3,
+      "status": "live",
+      "keep_cut": "KEEP",
+      "host": "github",
+      "modules": ["search", "ledger", "spells"],
+      "urls": {
+        "canonical": "https://github.com/simons357/Ship_it_app",
+        "docs": "docs/math/",
+        "zenodo_index": "docs/papers/zenodo-spectral/INDEX.json"
+      },
+      "notes": "Primary PFPI ingest source on this branch."
+    },
+    "cosmos": {
+      "name": "Cosmos App",
+      "tier": null,
+      "status": "unknown",
+      "keep_cut": null,
+      "host": "unknown",
+      "modules": ["search", "product_registry"],
+      "urls": {
+        "canonical": null,
+        "hub": null,
+        "repo": null
+      },
+      "notes": "Not found in git — needs URL/repo from Jonathan. Target: dashboard skin on spine."
+    }
+  }
+}

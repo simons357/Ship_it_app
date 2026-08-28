@@ -2,6 +2,7 @@
 
 **Date:** 2026-08-28  
 **Branch evidence:** `cursor/tao-snd-h-panel-a0eb` (math/audit repo) + portfolio history on `intro-portfolio-e279` / `work-showcase-b71c` / `gh-pages`  
+**Platform context:** ChatVault is a **vault + search Lego block** on the shared platform spine, not a standalone stack. See [`MODULAR-PLATFORM-LEGO.md`](MODULAR-PLATFORM-LEGO.md). Registry entry: `packages/shared_core/product_registry.json` → `chatvault` (`status: hollow`).  
 **Direct answer:** **No — not “just a link.”** A URL alone is not a safe or honest hookup today. Ship a working MVP, verify public access, then link from catalog/outreach with explicit auth and secrets rules.
 
 ---
@@ -157,7 +158,7 @@ Use when the product is **not** in repo (current state):
 | Cold-send today? | **No** |
 | Just a link when live? | **Link + auth + storage policy + secret redaction + incognito verify** |
 | Closest working pattern | Field Lock Replit kiosk + NDA depth (`FIELD-LOCK.md`) |
-| Related docs (other branches) | `partner-packet/BASE44-PUBLIC.md`, `FIELD-LOCK.md`, `DISTRIBUTION-PIPELINE.md`, `docs/KEEP-CUT-INVENTORY.md` |
+| Related docs (other branches) | `partner-packet/BASE44-PUBLIC.md`, `FIELD-LOCK.md`, `DISTRIBUTION-PIPELINE.md`, `docs/KEEP-CUT-INVENTORY.md`, [`MODULAR-PLATFORM-LEGO.md`](MODULAR-PLATFORM-LEGO.md) |
 
 ---
 
