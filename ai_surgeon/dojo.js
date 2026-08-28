@@ -359,6 +359,10 @@
         this.rect(x, y, w, h);
       };
     }
+    if (!Dojo.camStream) {
+      Dojo.motion = Dojo.spaceHeld ? 0.02 : Dojo.motion * 0.82;
+      if (Dojo.motion < 0.005) Dojo.motion = 0;
+    }
     paintCel(ctx, t);
     const dt = Dojo.lastT ? t - Dojo.lastT : 16;
     Dojo.lastT = t;
@@ -445,7 +449,8 @@
     if (s.kind === 'choose' && g === 'twist') {
       const opts = s.options || [];
       if (!opts.length) return;
-      const i = (Math.max(0, opts.indexOf(Dojo.chosen)) + 1) % opts.length;
+      const cur = opts.indexOf(Dojo.chosen);
+      const i = cur < 0 ? 0 : (cur + 1) % opts.length;
       choose(opts[i]);
       return;
     }
