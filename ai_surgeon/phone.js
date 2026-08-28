@@ -37,6 +37,8 @@
       dead: false,
       points: 590,
     },
+    penNeed: "squeeze",
+    penDid: false,
   };
 
   const STILLS = [
@@ -154,11 +156,18 @@
     }).join("");
     return `${chrome("AI SURGEON · ONE APP", "Phone screens", state.points, state.coherence)}
       <div class="pad">
-        <p class="meta">Twist to choose, touch to commit. Surgery and anaesthesia are two seats of the same case.
-        Module 12 appendectomy and Module 21 trauma stay on the hub — this page does not replace them.</p>
+        <p class="meta">Twist to choose, click the top to commit, squeeze to clamp. Surgery and anaesthesia are two seats of the same case.
+        Module 12 appendectomy and Module 21 trauma stay on the hub — this page does not replace them. The Pen is one object, not a tray of toys.</p>
+        <a class="cta" href="pen.html">Open The Pen trainer</a>
         <a class="cta" href="index.html">← Residency hub</a>
       </div>
-      <div class="hub-grid">${cards}
+      <div class="hub-grid">
+        <a class="hub-card playable" href="#pen">
+          <img src="stills/10-twist-stylus.png" alt="">
+          <div class="b"><div class="k">The Pen · Playable</div>
+          <div class="n">Knife, clamp, retractor — one stylus</div>
+          <div class="d">Exploration vs curriculum. See one, then do one.</div></div></a>
+        ${cards}
         <a class="hub-card" href="generators/AI-Surgeon-Brochure.pdf">
           <img src="generators/screen-01-study-one.png" alt="">
           <div class="b"><div class="k">Brochure</div><div class="n">Concept PDF</div>
@@ -753,6 +762,65 @@
     });
   }
 
+  function penView() {
+    const M = window.AISS && AISS.Mode;
+    if (M) M.restore();
+    const mode = M ? M.current : "exploration";
+    const canDo = M ? M.canDoOne() : true;
+    const lab = M ? M.labCleared : false;
+    const seen = M ? M.seenOne : false;
+    const coh = window.AISS && AISS.Coherence ? Math.round(AISS.Coherence.v) : state.coherence;
+    const footer = state.penDid
+      ? `<div class="card teal">Clamped. The Pen was the Kelly — not a toy. <a class="cta" href="pen.html">Full trainer</a></div>`
+      : `<div class="card amber">See one first on the full trainer, or squeeze now if you are in exploration.</div>`;
+    return `${chrome("THE PEN · " + mode.toUpperCase(), "One object in the hand", state.points, coh)}
+      <div class="field" style="min-height:200px">
+        <img class="cover" src="stills/10-twist-stylus.png" alt="The Pen — twist stylus">
+      </div>
+      <div class="pad">
+        <p class="meta">Knife. Clamp. Retractor. Twist / click / squeeze. Software cannot make this feel like a Kelly. The Pen is the language.</p>
+        <div class="chips">
+          <button class="chip ${mode === "exploration" ? "on" : ""}" data-mode="exploration">Exploration</button>
+          <button class="chip ${mode === "curriculum" ? "on" : ""}" data-mode="curriculum">Curriculum</button>
+        </div>
+        <p class="fine">${mode === "exploration"
+          ? "Anything goes. Zero penalty. Coherence still watches."
+          : "It counts. Lab " + (lab ? "cleared" : "required") + ". See One " + (seen ? "done" : "required") + ". Do One " + (canDo ? "open" : "gated") + "."}</p>
+        <div class="chips" style="margin-top:8px">
+          <button class="chip" data-pen="twist">twist</button>
+          <button class="chip" data-pen="click">click the top</button>
+          <button class="chip" data-pen="squeeze">squeeze</button>
+        </div>
+        ${footer}
+        <a class="cta" href="pen.html">Open The Pen screen</a>
+        <p class="fine">Same gestures on <a href="ai-surgeon-prototype.html">appendectomy</a> and <a href="ai-surgeon-module02-trauma.html">trauma</a>. Not a medical device. Not cleared tracking.</p>
+      </div>`;
+  }
+  function bindPenView() {
+    const M = window.AISS && AISS.Mode;
+    view().querySelectorAll("[data-mode]").forEach((b) => {
+      b.addEventListener("click", () => {
+        if (M) M.set(b.getAttribute("data-mode"));
+        render();
+      });
+    });
+    view().querySelectorAll("[data-pen]").forEach((b) => {
+      b.addEventListener("click", () => {
+        const g = b.getAttribute("data-pen");
+        if (window.AISS && AISS.Pen) AISS.Pen.fire(g, { role: g === "squeeze" ? "clamp" : g === "click" ? "knife" : "tray" });
+        if (g === "squeeze") {
+          state.penDid = true;
+          state.points += 25;
+          if (window.AISS && AISS.Coherence) AISS.Coherence.hit(true);
+        } else if (M && M.is("curriculum")) {
+          state.points += 0;
+          if (window.AISS && AISS.Coherence) AISS.Coherence.hit(false);
+        }
+        render();
+      });
+    });
+  }
+
   function pitch(still, title, note) {
     return `${chrome("PITCH STILL", title, state.points, 70)}
       <img class="still-full" src="${still}" alt="${title}">
@@ -768,7 +836,7 @@
     tablet: ["stills/08-tablet-pencil-mat.png", "Tablet + pencil + mat",
       "Desk tier. Hands on the mat, eyes on the field. Conductive pads, no battery in the cheap version."],
     stylus: ["stills/10-twist-stylus.png", "Twist stylus",
-      "A barrel, a detent ring, a nib. No radio, no battery, no firmware. Out of the box it is a scalpel."],
+      "A barrel, a detent ring, a nib. No radio, no battery, no firmware. Out of the box it is a scalpel — the same Pen as knife, clamp, and retractor. Not a tray of toys."],
     stills: ["stills/04-identify-before-you-cut.png", "Stills", "All sixteen stills are on the hub."],
   };
 
@@ -777,7 +845,7 @@
     const root = view();
     const map = {
       hub, identify, lab, study, see, do: doOne, call: callView,
-      anesthesia, nib, verse, trauma: traumaView, anatomy,
+      anesthesia, nib, verse, trauma: traumaView, anatomy, pen: penView,
     };
     if (map[r]) root.innerHTML = map[r]();
     else if (PITCH[r]) root.innerHTML = pitch(...PITCH[r]);
@@ -797,6 +865,7 @@
     if (r === "verse") bindVerse();
     if (r === "trauma") bindTrauma();
     if (r === "anatomy") bindAnatomy();
+    if (r === "pen") bindPenView();
   }
 
   window.addEventListener("hashchange", render);
@@ -814,6 +883,17 @@
       state.tool = legal[state.trayIndex % legal.length];
       state.trayOpen = false;
       render();
+    }
+    if (route() === "pen") {
+      if (ev.key === "f" || ev.key === "F") {
+        const b = document.querySelector("[data-pen='squeeze']");
+        if (b) b.click();
+      }
+      if (ev.key === " " || ev.key === "Enter") {
+        ev.preventDefault();
+        const b = document.querySelector("[data-pen='click']");
+        if (b) b.click();
+      }
     }
   });
   document.addEventListener("DOMContentLoaded", render);

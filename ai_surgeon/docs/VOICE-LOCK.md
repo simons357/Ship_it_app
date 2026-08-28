@@ -15,19 +15,20 @@ Source blob (kept, not overwritten): [`warrior-surgeon/`](warrior-surgeon/).
 
 ## Keep the split
 
-- **THEIRS** = cases, physiology, identify-before-you-cut, trauma, anaesthesia, coherence, death-enabled. Warrior Surgeon *clinical* beats + storyboard + systems + prototypes + cites that are clinical.
+- **THEIRS** = cases, physiology, identify-before-you-cut, trauma, anaesthesia, coherence, death-enabled, **the Pen** (min-movement stylus: twist / click / squeeze). Warrior Surgeon *clinical* beats + storyboard + systems + prototypes + cites that are clinical. Pen spec: [`THE-PEN.md`](THE-PEN.md).
 - **HARRISON’S** = Harrison’s Principles of Internal Medicine as the Lady of the Lake: lake, mist, Avalon, oath, Excalibur-from-water. Serious. Not parody. **Not a fantasy reskin of the OR.** Not grey textbook chrome.
 - Hub / About: **one line** of medical big picture, **one** Lady of the Lake / Harrison’s beat. Chronogate cyan / gold chrome stays. Lake / mist is **atmosphere only**.
 - **Do not invent Harrison’s quotations.** The dropped files never quote *Harrison’s Principles of Internal Medicine*. This desk does not mint any.
 
 ## Sibling files this lock does not rewrite
 
-Playable cases and shared engine stay with their agents:
+Playable cases and shared engine stay with their agents. Additive Pen wiring is allowed; do not replace the cases:
 
 - `ai-surgeon-prototype.html` (appendectomy)
 - `ai-surgeon-module02-trauma.html` (tube thoracostomy)
 - `ai-surgeon-systems.js` / `trauma_physiology.js`
 - Brochure / phone stills / screens
+- `docs/THE-PEN.md` + `pen.html` are THEIRS (instrument language), not Harrison’s
 
 ## Non-claims
 

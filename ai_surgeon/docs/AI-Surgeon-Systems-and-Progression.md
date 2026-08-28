@@ -144,3 +144,7 @@ The scrub tech gets the best lines. *"That is a Mayo. You asked for a Mayo. You 
 Built and playtested: profile selection, two-axis adaptive difficulty, phone sensor fusion, voice instrument calls, gaze and attention tracking, free-text ask-the-attending over a 66-document index of the module's own content, three decision forks, the handover mechanic, seven-domain competency tracking, unlocks, and the fenced humor system.
 
 Next, in order: the real Teach One described at the top of this document, because the current one is a placeholder and you know it. Then Module 01, the finger. Then the anaesthesia monks. Laparoscopic technique gets its own skills-lab strand before Module 13, because the fulcrum effect and working off a screen are motor skills that have to be taught separately from the anatomy — you cannot learn lap surgery by doing open surgery faster.
+
+## The Pen (additive — THEIRS)
+
+One object in the hand: a min-movement stylus. Twist / click the top / squeeze map onto the existing incise / clamp / ligate / retract actions. No toy tray. `AISS.Mode` is `exploration` (zero penalty) or `curriculum` (Lab → See One → Do One). `AISS.Vision` is a camera stub and does not claim FDA-cleared tracking. Spec: `docs/THE-PEN.md`. Screen: `pen.html`. The Pen is the language; life-size steel is later. Not a medical device.

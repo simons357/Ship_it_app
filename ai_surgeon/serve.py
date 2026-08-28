@@ -120,6 +120,7 @@ def serve(host: str = "127.0.0.1", port: int = DEFAULT_PORT) -> None:
     print(f"Appendectomy      http://{host}:{port}/ai-surgeon-prototype.html")
     print(f"Trauma module 02  http://{host}:{port}/ai-surgeon-module02-trauma.html")
     print(f"Phone screens     http://{host}:{port}/screens.html")
+    print(f"The Pen           http://{host}:{port}/pen.html")
     print(f"Brochure PDF      http://{host}:{port}/generators/AI-Surgeon-Brochure.pdf")
     httpd.serve_forever()
 

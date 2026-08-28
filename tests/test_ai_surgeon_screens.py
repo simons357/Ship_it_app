@@ -207,6 +207,7 @@ class TestHubAndArtifacts(unittest.TestCase):
         self.assertIn("#lab", hub)
         self.assertIn("#verse", hub)
         self.assertIn("#anesthesia", hub)
+        self.assertIn("pen.html", hub)
         self.assertIn("Not a medical device", hub)
         self.assertIn("phone.js", screens)
 
@@ -214,7 +215,7 @@ class TestHubAndArtifacts(unittest.TestCase):
         js = (SURGEON / "phone.js").read_text(encoding="utf-8")
         for route in (
             "identify", "lab", "study", "see", "do", "call",
-            "anesthesia", "nib", "verse", "trauma", "anatomy",
+            "anesthesia", "nib", "verse", "trauma", "anatomy", "pen",
         ):
             self.assertIn(route, js)
 

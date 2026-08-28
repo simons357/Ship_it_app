@@ -490,3 +490,107 @@ def errors_first(errors_a: int, time_a: float, errors_b: int, time_b: float) -> 
     if time_b < time_a:
         return "b"
     return "tie"
+
+
+# --- The Pen: one object, three gestures ---------------------------------
+
+PEN_GESTURES = ("twist", "click", "squeeze")
+PEN_MODES = ("exploration", "curriculum")
+PEN_ALIAS = {
+    "twist": ("twist",),
+    "click": ("click", "swipe", "tap"),
+    "squeeze": ("squeeze", "pinch", "spread", "hold"),
+}
+LEGACY_TO_PEN = {
+    "swipe": "click",
+    "tap": "click",
+    "click": "click",
+    "pinch": "squeeze",
+    "spread": "squeeze",
+    "hold": "squeeze",
+    "twist": "twist",
+}
+PEN_ACTION = {
+    "twist": "choose",
+    "click": "incise",
+    "squeeze": "clamp",
+}
+LAB_ANATOMY_GATE = (
+    {
+        "id": "taeniae",
+        "prompt": "Where do the three taeniae of the cecum converge?",
+        "answer": "base of the appendix",
+    },
+    {
+        "id": "split",
+        "prompt": "A McBurney gridiron incision does what to the three flat muscles?",
+        "answer": "splits them — never divides",
+    },
+)
+
+
+def pen_normalize(gesture: str) -> str:
+    g = (gesture or "").strip().lower()
+    return LEGACY_TO_PEN.get(g, g)
+
+
+def pen_matches(pen_or_legacy: str, required_legacy: str) -> bool:
+    g = pen_normalize(pen_or_legacy)
+    need = (required_legacy or "").strip().lower()
+    if g == need:
+        return True
+    return need in PEN_ALIAS.get(g, ())
+
+
+def pen_resolve(pen_gesture: str, required_legacy: str) -> str:
+    if pen_matches(pen_gesture, required_legacy):
+        return required_legacy
+    return pen_normalize(pen_gesture)
+
+
+def pen_action(gesture: str, role: str | None = None) -> str:
+    if role in {"knife", "incise"}:
+        return "incise"
+    if role == "clamp":
+        return "clamp"
+    if role in {"retractor", "retract"}:
+        return "retract"
+    if role == "ligate":
+        return "ligate"
+    if role == "plunger":
+        return "plunger"
+    g = pen_normalize(gesture)
+    return PEN_ACTION.get(g, g)
+
+
+def pen_score(mode: str, points: int) -> int:
+    if mode not in PEN_MODES:
+        raise ValueError(f"unknown pen mode: {mode}")
+    if mode == "exploration" and points < 0:
+        return 0
+    return int(points)
+
+
+def curriculum_can_see_one(lab_cleared: bool) -> bool:
+    return bool(lab_cleared)
+
+
+def curriculum_can_do_one(lab_cleared: bool, seen_one: bool) -> bool:
+    return bool(lab_cleared and seen_one)
+
+
+def pen_gates(mode: str, lab_cleared: bool, seen_one: bool) -> dict[str, Any]:
+    if mode not in PEN_MODES:
+        raise ValueError(f"unknown pen mode: {mode}")
+    explore = mode == "exploration"
+    return {
+        "mode": mode,
+        "lab_cleared": bool(lab_cleared),
+        "seen_one": bool(seen_one),
+        "can_see_one": True if explore else curriculum_can_see_one(lab_cleared),
+        "can_do_one": True if explore else curriculum_can_do_one(lab_cleared, seen_one),
+        "penalty": 0 if explore else 1,
+        "clock": not explore,
+        "death_enabled": False if explore else None,
+        "fun": True,
+    }

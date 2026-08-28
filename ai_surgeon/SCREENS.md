@@ -60,8 +60,9 @@ pip install reportlab cairosvg
 - `#lab` — FIELD / ADD / SUBTRACT layer toggles
 - `#anatomy` — raw meshes A/B
 - `#study` `#see` `#do` `#call` — Study / See / Do One + sterile back table
-- `#anesthesia` — The Pen: twist = plunger, airway MASK/LMA/ETT, tool drill
-- `#nib` — twist raises the tray, touch takes the instrument
+- `#anesthesia` — The Pen at the head of the bed: twist = plunger, airway MASK/LMA/ETT
+- `#pen` — THEIRS instrument language: one stylus, exploration vs curriculum, twist / click / squeeze
+- `#nib` — twist raises the tray, click takes the instrument (same Pen)
 - `#verse` — surgeon / anaesthesia / scrub, case spin
 - `#trauma` — Case 07 tension pneumothorax (phone still). Death enabled.
 
@@ -83,4 +84,6 @@ pip install reportlab cairosvg
 
 Twist to choose, touch to commit. No double-tap, no long-press, no dropdown.
 On a phone without the physical nib, the on-screen knob / `Q` `E` / arrows
-stand in for the twist; a tap commits.
+stand in for the twist; a click (tap / Enter) commits; `F` squeezes.
+The dedicated trainer is [`pen.html`](pen.html). Spec: [`docs/THE-PEN.md`](docs/THE-PEN.md).
+The Pen is the language, not a Kelly clamp. Not a tray of toy instruments.

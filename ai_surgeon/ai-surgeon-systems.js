@@ -1106,6 +1106,283 @@ AISS.resetAll = function (){
   AISS.Ask.reset();
   AISS.Handover.reset();
   AISS.Humor.reset();
+  if (AISS.Pen) AISS.Pen.reset();
+  if (AISS.Coherence) AISS.Coherence.reset();
+  if (AISS.Vision) AISS.Vision.reset();
+  /* Mode is a player preference. Do not wipe exploration vs curriculum. */
+};
+
+/* ==========================================================================
+   14. MODE — exploration (anything goes) vs curriculum (it counts)
+
+   THEIRS / The Pen. Exploration: zero penalty, gates optional, death off.
+   Curriculum: Lab then See One then Do One; clock, score, coherence matter.
+   Not a medical-device mode. Not FDA tracking.
+   ========================================================================== */
+
+AISS.Mode = {
+  current: 'exploration',   // 'exploration' | 'curriculum'
+  labCleared: false,
+  seenOne: false,
+
+  set(mode){
+    if (mode !== 'exploration' && mode !== 'curriculum') return this.current;
+    this.current = mode;
+    try { localStorage.setItem('aiss.mode', mode); } catch(e){}
+    return this.current;
+  },
+  restore(){
+    let k = null;
+    try { k = localStorage.getItem('aiss.mode'); } catch(e){}
+    if (k === 'exploration' || k === 'curriculum') this.current = k;
+    try {
+      this.labCleared = localStorage.getItem('aiss.lab') === '1';
+      this.seenOne = localStorage.getItem('aiss.seen') === '1';
+    } catch(e){}
+    return this.current;
+  },
+  is(mode){ return this.current === mode; },
+
+  /* Negative deltas vanish in exploration. Positive scores still land. */
+  score(n){
+    const v = Number(n) || 0;
+    if (this.current === 'exploration' && v < 0) return 0;
+    return v;
+  },
+
+  markLab(){
+    this.labCleared = true;
+    try { localStorage.setItem('aiss.lab', '1'); } catch(e){}
+  },
+  markSeen(){
+    this.seenOne = true;
+    try { localStorage.setItem('aiss.seen', '1'); } catch(e){}
+  },
+  clearGates(){
+    this.labCleared = false;
+    this.seenOne = false;
+    try {
+      localStorage.removeItem('aiss.lab');
+      localStorage.removeItem('aiss.seen');
+    } catch(e){}
+  },
+
+  /* Curriculum: you must study in the Lab, then See One, then Do One.
+     Exploration: anything goes. */
+  canDoOne(){
+    if (this.current === 'exploration') return true;
+    return !!(this.labCleared && this.seenOne);
+  },
+  canSeeOne(){
+    if (this.current === 'exploration') return true;
+    return !!this.labCleared;
+  },
+  clockActive(){ return this.current === 'curriculum'; },
+  deathEnabled(moduleAllows){
+    if (this.current === 'exploration') return false;
+    return !!moduleAllows;
+  }
+};
+
+/* ==========================================================================
+   15. THE PEN — one object: knife, clamp, retractor
+
+   Twist = choose / plunger / tray. Click the top = commit / fire / next.
+   Squeeze = clamp / retract / hold-to-ligate. No double-tap. No long-press.
+   Maps onto existing module actions instead of adding toy instruments.
+   ========================================================================== */
+
+AISS.Pen = {
+  GESTURES: ['twist', 'click', 'squeeze'],
+  ALIAS: {
+    twist:  ['twist'],
+    click:  ['click', 'swipe', 'tap'],
+    squeeze:['squeeze', 'pinch', 'spread', 'hold']
+  },
+  ACTION: {
+    twist:  'choose',
+    click:  'incise',
+    squeeze:'clamp'
+  },
+  history: [],
+  listeners: [],
+  last: null,
+
+  reset(){ this.history = []; this.last = null; },
+
+  on(fn){ this.listeners.push(fn); return () => {
+    this.listeners = this.listeners.filter(x => x !== fn);
+  }; },
+
+  normalize(g){
+    const s = String(g || '').toLowerCase();
+    if (s === 'twist' || s === 'click' || s === 'squeeze') return s;
+    if (s === 'swipe' || s === 'tap') return 'click';
+    if (s === 'pinch' || s === 'spread' || s === 'hold') return 'squeeze';
+    return s;
+  },
+
+  /* True when a Pen event satisfies a module's legacy required gesture. */
+  matches(penOrLegacy, requiredLegacy){
+    const g = this.normalize(penOrLegacy);
+    const need = String(requiredLegacy || '').toLowerCase();
+    if (g === need) return true;
+    return (this.ALIAS[g] || []).indexOf(need) >= 0;
+  },
+
+  /* If the Pen gesture is legal for this step, return the step's own
+     gesture so existing STEPS tables do not have to change. */
+  resolve(penGesture, requiredLegacy){
+    if (this.matches(penGesture, requiredLegacy)) return requiredLegacy;
+    return this.normalize(penGesture);
+  },
+
+  promptFor(legacy){
+    const k = String(legacy || '');
+    if (k === 'swipe' || k === 'tap' || k === 'click')
+      return 'Click the top to fire — incise, commit, next. (Swipe still works.)';
+    if (k === 'pinch')
+      return 'Squeeze to clamp. (Pinch still works.)';
+    if (k === 'spread')
+      return 'Squeeze to retract or split. (Two-finger spread still works.)';
+    if (k === 'hold')
+      return 'Squeeze and hold to ligate.';
+    if (k === 'twist')
+      return 'Twist to choose — tray, plunger, airway.';
+    return 'Twist to choose. Click the top to commit. Squeeze to clamp.';
+  },
+
+  actionFor(gesture, detail){
+    const g = this.normalize(gesture);
+    const role = detail && detail.role;
+    if (role === 'knife' || role === 'incise') return 'incise';
+    if (role === 'clamp') return 'clamp';
+    if (role === 'retractor' || role === 'retract') return 'retract';
+    if (role === 'ligate') return 'ligate';
+    if (role === 'plunger') return 'plunger';
+    if (g === 'twist') return 'choose';
+    if (g === 'click') return 'incise';
+    if (g === 'squeeze'){
+      const step = detail && detail.step;
+      if (step === 'hold' || step === 'ligate') return 'ligate';
+      if (step === 'spread' || step === 'retract') return 'retract';
+      return 'clamp';
+    }
+    return this.ACTION[g] || g;
+  },
+
+  fire(gesture, detail){
+    const g = this.normalize(gesture);
+    const ev = {
+      gesture: g,
+      action: this.actionFor(g, detail),
+      at: (typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now(),
+      detail: detail || {}
+    };
+    this.last = ev;
+    this.history.push(ev);
+    if (this.history.length > 48) this.history.shift();
+    if (AISS.Coherence) AISS.Coherence.onPen(ev);
+    this.listeners.forEach(fn => { try { fn(ev); } catch(e){} });
+    return ev;
+  }
+};
+
+/* Shared coherence meter the Pen screen and modules can both read.
+   Module-local `Coh` objects stay in charge of those HTML files. */
+AISS.Coherence = {
+  v: 50,
+  hits: 0,
+  misses: 0,
+  moves: 0,
+
+  reset(){ this.v = 50; this.hits = 0; this.misses = 0; this.moves = 0; },
+
+  onPen(ev){
+    this.moves++;
+    /* Movement monitoring: phone tremor if live, else a gentle tick. */
+    const trem = (AISS.Sensors && AISS.Sensors.motion) ? AISS.Sensors.tremor : 0.15;
+    this.v += (ev && ev.gesture === 'squeeze' ? -trem * 4 : -trem * 1.5);
+    this.v = Math.max(0, Math.min(100, this.v));
+  },
+
+  hit(ok){
+    if (ok){ this.hits++; this.v = Math.min(100, this.v + 6); }
+    else { this.misses++; this.v = Math.max(0, this.v - (AISS.Mode.is('exploration') ? 1 : 8)); }
+    return this.v;
+  },
+
+  band(){
+    return this.v > 72 ? 'advanced' : this.v > 34 ? 'steady' : 'supported';
+  }
+};
+
+/* ==========================================================================
+   16. VISION COMMANDS — camera sees the pen and the hand
+
+   Phone-tier stub. Opens getUserMedia when the player asks. Does not
+   pretend to be FDA-cleared tracking, 6-DoF navigation, or millimetre
+   pose. Mechanical twist / click / squeeze still work with the camera off.
+   ========================================================================== */
+
+AISS.Vision = {
+  CLEARED: false,
+  NOTE: 'Phone camera sees the pen and the hand. Vision-command stub — not cleared instrument tracking, not a medical device.',
+  streaming: false,
+  stream: null,
+  last: null,
+
+  reset(){ this.stop(); this.last = null; },
+
+  supported(){
+    return typeof navigator !== 'undefined'
+      && navigator.mediaDevices
+      && typeof navigator.mediaDevices.getUserMedia === 'function';
+  },
+
+  async start(videoEl){
+    if (!this.supported()){
+      this.last = { kind:'unavailable', text:'No camera API in this browser. Twist, click, and squeeze still work.' };
+      return this.last;
+    }
+    const stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: 'user', width: { ideal: 640 }, height: { ideal: 480 } },
+      audio: false
+    });
+    this.stream = stream;
+    this.streaming = true;
+    if (videoEl){
+      videoEl.srcObject = stream;
+      try { await videoEl.play(); } catch(e){}
+    }
+    this.last = {
+      kind:'stub',
+      cleared: false,
+      text: this.NOTE
+    };
+    return this.last;
+  },
+
+  stop(){
+    if (this.stream){
+      this.stream.getTracks().forEach(t => { try { t.stop(); } catch(e){} });
+    }
+    this.stream = null;
+    this.streaming = false;
+  },
+
+  /* Honest: we do not solve pose here. We report that the feed is live. */
+  interpret(){
+    if (!this.streaming){
+      return { kind:'off', command:null, text:'Camera off. The Pen is mechanical.' };
+    }
+    return {
+      kind:'stub',
+      command: AISS.Pen.last ? AISS.Pen.last.gesture : null,
+      text: 'Feed live. Not a cleared tracker. Last mechanical gesture stands.',
+      cleared: false
+    };
+  }
 };
 
 })(typeof window !== 'undefined' ? window : globalThis);

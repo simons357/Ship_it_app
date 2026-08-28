@@ -63,6 +63,13 @@
   #gesture{margin-top:10px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
     color:var(--steel-dim);display:flex;align-items:center;gap:7px;min-height:13px}
   #gesture span.g{color:var(--amber)}
+  #penpad{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:10px}
+  #penpad button{background:var(--panel2);border:1px solid var(--line);color:var(--steel);
+    padding:9px 6px;border-radius:4px;font:inherit;font-size:9.5px;letter-spacing:.12em;
+    text-transform:uppercase;cursor:pointer}
+  #penpad button b{display:block;color:var(--cyan);font-size:10px}
+  #penpad button:active{border-color:var(--gold);color:var(--gold)}
+  #mode-row{display:flex;gap:8px;margin-top:8px}
 
   /* choices */
   #choices{display:grid;gap:7px;margin-top:11px}
@@ -196,6 +203,11 @@
     <div class="who" id="who">AI Attending</div>
     <div id="say"></div>
     <div id="gesture"></div>
+    <div id="penpad" aria-label="The Pen">
+      <button type="button" data-pen="twist"><b>Twist</b> choose</button>
+      <button type="button" data-pen="click"><b>Click</b> fire</button>
+      <button type="button" data-pen="squeeze"><b>Squeeze</b> clamp</button>
+    </div>
     <div id="choices"></div>
     <div id="askwrap">
       <input id="askin" type="text" autocomplete="off" autocapitalize="none"
@@ -216,11 +228,16 @@
   <p>Study one. See one. Do one. Teach one. You do not get a scalpel until you can name what is under it — and you do not get an instrument until you ask the scrub for it by name.</p>
   <div class="rule"></div>
   <div class="kv"><b>Case</b><span>Ellis, M. — 19y, fourteen hours of right lower quadrant pain. Open appendectomy, McBurney gridiron approach. Seven layers, one artery, one base.</span></div>
-  <div class="kv"><b>Control</b><span>Tap a structure to identify it. Call for your instrument. Then perform the maneuver — swipe to incise, two-finger spread to split or retract, pinch to clamp, press-and-hold to ligate.</span></div>
+  <div class="kv"><b>Control</b><span>The Pen is one object: twist to choose, click the top to incise, squeeze to clamp / retract / ligate. On glass, swipe, two-finger spread, pinch, and press-and-hold still work. No double-tap menus. Identify before you cut. Call for the instrument by name.</span></div>
   <div class="kv"><b>Points</b><span>Study is worth ten. Operating alone is worth twenty-five a step. Teaching is worth forty. Errors cost you, and on a sicker patient they cost you more.</span></div>
   <div class="kv"><b>Coherence</b><span>Accuracy and hesitation are tracked continuously. The module gets harder when you are ahead of it and quieter when you are behind.</span></div>
   <div class="kv"><b>Safety</b><span>Patient safety outranks your score. Handing the case over when you are past what you can hold is the highest-scoring decision in this product — higher than staying and getting away with it.</span></div>
   <div class="rule"></div>
+  <div class="kv"><b>The Pen</b><span>Not a tray of toy instruments. Software cannot make this stylus feel like a Kelly — it is the language. Exploration: anything goes, zero penalty. Curriculum: it counts; study in the Lab (the cards below) first.</span></div>
+  <div id="mode-row" class="btnrow">
+    <button class="btn ghost" id="mode-explore">Exploration</button>
+    <button class="btn ghost" id="mode-curr">Curriculum</button>
+  </div>
   <div class="kv"><b>Who are you</b><span>The module scales to this. Answer honestly; there is no advantage in claiming more.</span></div>
   <div id="profs"></div>
   <div class="rule"></div>
@@ -547,7 +564,9 @@ const Score = {
   add(n, why){
     /* Acuity multiplies both directions. Profile then scales the penalty —
        more is expected of a clinician than of someone who has never been in
-       a room, and the rewards move less than the penalties do.            */
+       a room, and the rewards move less than the penalties do.
+       Exploration mode zeroes penalties — anything goes. Curriculum counts. */
+    if (window.AISS && AISS.Mode) n = AISS.Mode.score(n);
     const p = window.AISS ? AISS.Profile.current : { expect:1, reward:1 };
     const scale = n < 0 ? p.expect : p.reward;
     const v = Math.round(n * CASE.acuity * scale);
@@ -934,11 +953,14 @@ function toast(msg){
   el('gesture').innerHTML = msg;
 }
 const GESTURE_TEXT = {
-  swipe:'Swipe across the structure',
-  spread:'Two fingers — spread apart',
-  pinch:'Two fingers — pinch together',
-  hold:'Press and hold',
-  tap:'Tap to identify'
+  swipe:'Click the top to incise — or swipe across the structure',
+  spread:'Squeeze to retract / split — or two fingers spread apart',
+  pinch:'Squeeze to clamp — or two fingers pinch together',
+  hold:'Squeeze and hold to ligate',
+  tap:'Click the top to commit — or tap',
+  click:'Click the top — fire / next / incise',
+  squeeze:'Squeeze — clamp, retract, hold-to-ligate',
+  twist:'Twist — choose / tray / plunger'
 };
 
 /* --------------------- ASK THE ATTENDING (free text) ---------------------- */
@@ -1217,7 +1239,8 @@ const Game = {
         el('who').textContent = 'AI Attending — you have the field';
         setTimeout(()=>{
           el('choices').innerHTML = '';
-          el('gesture').innerHTML = name + ' in your hand. <span class="g">' + GESTURE_TEXT[s.gesture] + '</span>';
+          el('gesture').innerHTML = name + ' in your hand. <span class="g">'
+            + ((window.AISS && AISS.Pen && AISS.Pen.promptFor(s.gesture)) || GESTURE_TEXT[s.gesture]) + '</span>';
         }, 450);
       } else {
         if(btn) btn.classList.add('wrong');
@@ -1261,6 +1284,12 @@ const Game = {
   gestureDone(kind, hitId){
     if(this.phase!=='do' || this.awaiting!=='gesture') return;
     const s = this.step();
+    if (window.AISS && AISS.Pen){
+      AISS.Pen.fire(kind, { step:s.gesture, role: s.instr && /clamp|Kelly|hemostat/i.test(s.instr) ? 'clamp'
+        : /retractor/i.test(s.instr||'') ? 'retract'
+        : /tie|ligat/i.test(s.instr||'') ? 'ligate' : 'knife' });
+      kind = AISS.Pen.resolve(kind, s.gesture);
+    }
     const rightGesture = kind === s.gesture;
     const rightPlace = this.matches(hitId, s);
     const secs = (performance.now()-this.stepStart)/1000;
@@ -1314,11 +1343,15 @@ const Game = {
     if(this.i < len){ this.render(); return; }
     // phase transition
     this.i = 0;
-    if(this.phase === 'brief'){ this.phase = 'see'; this.interstitial(
+    if(this.phase === 'brief'){ this.phase = 'see';
+      if (window.AISS && AISS.Mode) AISS.Mode.markLab();
+      this.interstitial(
       'Pre-op study complete',
       'You know what the appendix is, why this one has to come out, and why the pain moved. <em>Now you may scrub in.</em><br><br>Study is worth ten points a card. Operating is worth twenty-five a step. Teaching is worth forty. That ratio is deliberate.',
       ()=>this.render()); return; }
-    if(this.phase === 'see'){ this.phase = 'do'; this.resetField(); this.interstitial(
+    if(this.phase === 'see'){ this.phase = 'do'; this.resetField();
+      if (window.AISS && AISS.Mode) AISS.Mode.markSeen();
+      this.interstitial(
       'See One complete',
       'You have watched the whole procedure and named every layer. Now you hold the instruments — or rather, you do not, until you ask the scrub for them by name. The attending calls the step. You find the structure, call for the instrument, and perform the maneuver.',
       ()=>this.render()); return; }
@@ -1436,6 +1469,45 @@ el('strap').onclick = async () => {
 
 el('asksend').onclick = doAsk;
 el('askin').addEventListener('keydown', e => { if(e.key === 'Enter') doAsk(); });
+
+(function bindPen(){
+  AISS.Mode.restore();
+  const paintMode = () => {
+    const x = el('mode-explore'), c = el('mode-curr');
+    if (!x || !c) return;
+    x.style.borderColor = AISS.Mode.is('exploration') ? 'var(--cyan)' : '';
+    x.style.color = AISS.Mode.is('exploration') ? 'var(--cyan)' : '';
+    c.style.borderColor = AISS.Mode.is('curriculum') ? 'var(--amber)' : '';
+    c.style.color = AISS.Mode.is('curriculum') ? 'var(--amber)' : '';
+  };
+  paintMode();
+  el('mode-explore').onclick = () => { AISS.Mode.set('exploration'); paintMode(); };
+  el('mode-curr').onclick = () => { AISS.Mode.set('curriculum'); paintMode(); };
+  document.querySelectorAll('#penpad [data-pen]').forEach(b => {
+    b.onclick = () => {
+      const g = b.getAttribute('data-pen');
+      const s = Game.step && Game.step();
+      if (Game.awaiting === 'gesture') {
+        Game.gestureDone(g, lastIdentified);
+      } else {
+        AISS.Pen.fire(g, { step: s && s.gesture });
+        if (g === 'twist') {
+          toast('Tray summoned. Call for the instrument by name — twist does not skip the scrub.');
+        }
+      }
+    };
+  });
+  window.addEventListener('keydown', e => {
+    if (e.target && (e.target.id === 'askin' || e.target.tagName === 'INPUT')) return;
+    const map = { q:'twist', Q:'twist', ArrowLeft:'twist', e:'twist', E:'twist', ArrowRight:'twist',
+                  f:'squeeze', F:'squeeze' };
+    let g = map[e.key];
+    if (e.key === ' ' || e.key === 'Enter') { if (e.key === ' ') e.preventDefault(); g = 'click'; }
+    if (!g) return;
+    const btn = document.querySelector('#penpad [data-pen="'+g+'"]');
+    if (btn) btn.click();
+  });
+})();
 
 el('start').onclick = () => {
   el('veil').classList.add('gone');

@@ -6,7 +6,9 @@ Surgical-training novel extracted from the identical 28 Aug 2026 `Warrior_Surgeo
 
 This voice **drives the playable product** together with the HTML prototypes and `ai-surgeon-systems.js` — not as a lore dump, as cases, physiology, identify-before-you-cut, trauma, anaesthesia, coherence, death-enabled. Full text: [`warrior-surgeon/Warrior-Surgeon.extracted.txt`](warrior-surgeon/Warrior-Surgeon.extracted.txt).
 
-Playable files this voice must not rewrite: `ai-surgeon-prototype.html`, `ai-surgeon-module02-trauma.html`.
+Playable files this voice must not rewrite: `ai-surgeon-prototype.html`, `ai-surgeon-module02-trauma.html`. Pen gestures are mapped onto those cases; the cases themselves stay sibling-owned.
+
+**The Pen** is this voice’s instrument: one object in the hand — knife, clamp, retractor — by twist / click / squeeze. Spec: [`THE-PEN.md`](THE-PEN.md). Hub screen: [`../pen.html`](../pen.html). Harrison’s lake is not this object.
 
 **Not a medical device.** Do not invent Harrison’s quotations, editions, or page numbers.
 
@@ -58,3 +60,11 @@ These ideas already live on the civilian hub; this novel is why they are not opt
 | Study the injury | Study one → see one → do one → teach one |
 
 Where it **conflicts**, keep both documents and let the playable UI follow the HTML + systems.js. Conflicts are listed in [`WARRIOR-SURGEON.md`](WARRIOR-SURGEON.md).
+
+## The Pen (this voice’s instrument)
+
+One object in the hand. Not a tray of tiny fake instruments. Twist to choose. Click the top to commit / fire / incise. Squeeze to clamp, retract, or hold-to-ligate. See one first, then do one. Anatomy is a gate. Exploration = anything goes, zero penalty. Curriculum = it counts; you study in the Lab first.
+
+Always fun. Coherence and movement stay on. Vision commands watch the pen and the hand — phone-tier, not cleared tracking. Phone ships first. The Pen is the language; life-size steel is later.
+
+Spec: [`THE-PEN.md`](THE-PEN.md). Screen: [`../pen.html`](../pen.html).

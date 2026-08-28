@@ -82,3 +82,47 @@ test("progress tracks domains and names a weakest fix", () => {
   assert.equal(w.key, "instrument");
   assert.match(AISS.Progress.table(), /Instrument naming is your weakest/);
 });
+
+test("Pen mode exploration zeroes penalties and skips gates", () => {
+  AISS.Mode.set("exploration");
+  AISS.Mode.clearGates();
+  assert.equal(AISS.Mode.current, "exploration");
+  assert.equal(AISS.Mode.score(-8), 0);
+  assert.equal(AISS.Mode.score(25), 25);
+  assert.equal(AISS.Mode.canDoOne(), true);
+  assert.equal(AISS.Mode.deathEnabled(true), false);
+  AISS.Mode.set("curriculum");
+  assert.equal(AISS.Mode.score(-8), -8);
+  assert.equal(AISS.Mode.canSeeOne(), false);
+  assert.equal(AISS.Mode.canDoOne(), false);
+  AISS.Mode.markLab();
+  assert.equal(AISS.Mode.canSeeOne(), true);
+  assert.equal(AISS.Mode.canDoOne(), false);
+  AISS.Mode.markSeen();
+  assert.equal(AISS.Mode.canDoOne(), true);
+  assert.equal(AISS.Mode.deathEnabled(true), true);
+  AISS.Mode.set("exploration");
+});
+
+test("Pen gestures map onto incise clamp ligate retract", () => {
+  assert.equal(AISS.Pen.normalize("swipe"), "click");
+  assert.equal(AISS.Pen.normalize("pinch"), "squeeze");
+  assert.equal(AISS.Pen.matches("click", "swipe"), true);
+  assert.equal(AISS.Pen.matches("squeeze", "hold"), true);
+  assert.equal(AISS.Pen.matches("click", "hold"), false);
+  assert.equal(AISS.Pen.resolve("squeeze", "pinch"), "pinch");
+  assert.equal(AISS.Pen.actionFor("click", { role: "knife" }), "incise");
+  assert.equal(AISS.Pen.actionFor("squeeze", { role: "clamp" }), "clamp");
+  assert.equal(AISS.Pen.actionFor("squeeze", { role: "retract" }), "retract");
+  const ev = AISS.Pen.fire("twist", { role: "plunger" });
+  assert.equal(ev.gesture, "twist");
+  assert.equal(ev.action, "plunger");
+});
+
+test("Vision stub refuses a clearance claim", () => {
+  assert.equal(AISS.Vision.CLEARED, false);
+  assert.match(AISS.Vision.NOTE, /not cleared/i);
+  assert.match(AISS.Vision.NOTE, /not a medical device/i);
+  const off = AISS.Vision.interpret();
+  assert.equal(off.kind, "off");
+});

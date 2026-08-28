@@ -71,6 +71,13 @@
   #gesture{margin-top:10px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
     color:var(--steel-dim);display:flex;align-items:center;gap:7px;min-height:13px}
   #gesture span.g{color:var(--amber)}
+  #penpad{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:10px}
+  #penpad button{background:var(--panel2);border:1px solid var(--line);color:var(--steel);
+    padding:9px 6px;border-radius:4px;font:inherit;font-size:9.5px;letter-spacing:.12em;
+    text-transform:uppercase;cursor:pointer}
+  #penpad button b{display:block;color:var(--cyan);font-size:10px}
+  #penpad button:active{border-color:var(--gold);color:var(--gold)}
+  #mode-row{display:flex;gap:8px;margin-top:8px}
 
   #choices{display:grid;gap:7px;margin-top:11px}
   .ch{background:var(--panel2);border:1px solid var(--line);color:#d6e1e9;
@@ -207,6 +214,11 @@
     <div class="who" id="who">AI Attending</div>
     <div id="say"></div>
     <div id="gesture"></div>
+    <div id="penpad" aria-label="The Pen">
+      <button type="button" data-pen="twist"><b>Twist</b> choose</button>
+      <button type="button" data-pen="click"><b>Click</b> fire</button>
+      <button type="button" data-pen="squeeze"><b>Squeeze</b> clamp</button>
+    </div>
     <div id="choices"></div>
     <div id="askwrap">
       <input id="askin" type="text" autocomplete="off" autocapitalize="none"
@@ -233,7 +245,12 @@
   <div class="rule"></div>
   <div class="kv"><b>Acuity</b><span>×2.0 — trauma, unstable. Every point you earn and every point you lose is doubled.</span></div>
   <div class="kv"><b>Patient loss</b><span>Enabled in this module. If he arrests and you cannot get him back, the case is void.</span></div>
-  <div class="kv"><b>Sequence</b><span>Study one → See one → Do one → Teach one. No instruments until the study cards are done.</span></div>
+  <div class="kv"><b>Sequence</b><span>Study one → See one → Do one → Teach one. No instruments until the study cards are done. The Pen is one object: twist, click the top, squeeze — mapped onto incise / clamp / retract. Not a tray of toys.</span></div>
+  <div class="kv"><b>The Pen</b><span>Exploration: anything goes, zero penalty, death off. Curriculum: it counts. Software cannot make a phone stylus feel like a Kelly. The Pen is the language.</span></div>
+  <div id="mode-row" class="btnrow">
+    <button class="btn ghost" id="mode-explore">Exploration</button>
+    <button class="btn ghost" id="mode-curr">Curriculum</button>
+  </div>
   <div class="rule"></div>
   <div class="kv"><b>Who are you</b><span>The module scales to this. Answer honestly; there is no advantage in claiming more.</span></div>
   <div id="profs"></div>
@@ -471,6 +488,7 @@ const CASE = { name:'Vasquez, D. — 23y, blunt chest trauma', acuity:2.0, acuit
 const Score = {
   pts:0, errors:0, log:[],
   add(n, why){
+    if (window.AISS && AISS.Mode) n = AISS.Mode.score(n);
     const p = window.AISS ? AISS.Profile.current : { expect:1, reward:1 };
     const scale = n < 0 ? p.expect : p.reward;
     const v = Math.round(n * CASE.acuity * scale);
@@ -961,11 +979,14 @@ function identify(u){
 }
 
 const GESTURE_TEXT = {
-  swipe:'Swipe across the structure',
-  spread:'Two fingers — spread apart',
-  pinch:'Two fingers — pinch together',
-  hold:'Press and hold',
-  tap:'Tap the structure'
+  swipe:'Click the top to incise — or swipe',
+  spread:'Squeeze to retract / split — or two fingers spread',
+  pinch:'Squeeze to clamp — or pinch',
+  hold:'Squeeze and hold',
+  tap:'Click the top to commit — or tap',
+  click:'Click the top — fire / next',
+  squeeze:'Squeeze — clamp / retract / ligate',
+  twist:'Twist — choose / tray'
 };
 
 function askContext(){
@@ -1144,7 +1165,8 @@ const Game = {
         Gas.restore('AI Attending — you have the field');
         setTimeout(()=>{
           el('choices').innerHTML='';
-          el('gesture').innerHTML = name + '. <span class="g">' + GESTURE_TEXT[s.gesture] + '</span>';
+          el('gesture').innerHTML = name + '. <span class="g">'
+            + ((window.AISS && AISS.Pen && AISS.Pen.promptFor(s.gesture)) || GESTURE_TEXT[s.gesture]) + '</span>';
         }, 420);
       } else {
         if (btn) btn.classList.add('wrong');
@@ -1188,6 +1210,11 @@ const Game = {
     if(this.over) return;
     if(this.phase!=='do' || this.awaiting!=='gesture') return;
     const s = this.step();
+    if (window.AISS && AISS.Pen){
+      AISS.Pen.fire(kind, { step:s.gesture, role: /clamp|Kelly/i.test(s.instr||'') ? 'clamp'
+        : /retractor|finger/i.test(s.instr||'') ? 'retract' : 'knife' });
+      kind = AISS.Pen.resolve(kind, s.gesture);
+    }
     const rightGesture = kind === s.gesture;
     const rightPlace = hitId === s.target;
     const secs = (performance.now()-this.stepStart)/1000;
@@ -1256,6 +1283,7 @@ const Game = {
     this.i = 0;
     if(this.phase === 'brief'){
       this.phase = 'see';
+      if (window.AISS && AISS.Mode) AISS.Mode.markLab();
       this.interstitial('Pre-op study complete',
         'You know what the air is doing to his venous return, why the film is irrelevant, and which border of which rib you are allowed to cross. <em>Now watch it done once.</em><br><br>The monitor is live from here. Study is ten points a card. Operating is twenty-five a step. Teaching is forty. Everything is doubled by acuity.',
         ()=>{ Vitals.live = true; this.render(); });
@@ -1263,6 +1291,7 @@ const Game = {
     }
     if(this.phase === 'see'){
       this.phase = 'do';
+      if (window.AISS && AISS.Mode) AISS.Mode.markSeen();
       resetField();
       Object.assign(Vitals, TraumaPhys.resetForDoOne());
       Vitals.live = false;
@@ -1327,6 +1356,10 @@ const Game = {
 
   arrest(){
     if(this.over) return;
+    if (window.AISS && AISS.Mode && !AISS.Mode.deathEnabled(true)){
+      el('gesture').innerHTML = 'Exploration: death is off. The clock still runs. Get the tube in.';
+      return;
+    }
     this.over = true; Vitals.arrested = true; Vitals.live = false;
     let extra = '';
     if (window.AISS && !AISS.Handover.taken){
@@ -1422,6 +1455,43 @@ el('strap').onclick = async () => {
 };
 el('asksend').onclick = doAsk;
 el('askin').addEventListener('keydown', e => { if(e.key === 'Enter') doAsk(); });
+
+(function bindPen(){
+  if (!window.AISS) return;
+  AISS.Mode.restore();
+  const paintMode = () => {
+    const x = el('mode-explore'), c = el('mode-curr');
+    if (!x || !c) return;
+    x.style.borderColor = AISS.Mode.is('exploration') ? 'var(--cyan)' : '';
+    x.style.color = AISS.Mode.is('exploration') ? 'var(--cyan)' : '';
+    c.style.borderColor = AISS.Mode.is('curriculum') ? 'var(--amber)' : '';
+    c.style.color = AISS.Mode.is('curriculum') ? 'var(--amber)' : '';
+  };
+  paintMode();
+  el('mode-explore').onclick = () => { AISS.Mode.set('exploration'); paintMode(); };
+  el('mode-curr').onclick = () => { AISS.Mode.set('curriculum'); paintMode(); };
+  document.querySelectorAll('#penpad [data-pen]').forEach(b => {
+    b.onclick = () => {
+      const g = b.getAttribute('data-pen');
+      const s = Game.step && Game.step();
+      if (Game.awaiting === 'gesture') Game.gestureDone(g, lastIdentified);
+      else {
+        AISS.Pen.fire(g, { step: s && s.gesture });
+        if (g === 'twist') el('gesture').innerHTML = 'Tray summoned. Call for it by name.';
+      }
+    };
+  });
+  window.addEventListener('keydown', e => {
+    if (e.target && (e.target.id === 'askin' || e.target.tagName === 'INPUT')) return;
+    const map = { q:'twist', Q:'twist', ArrowLeft:'twist', e:'twist', E:'twist', ArrowRight:'twist',
+                  f:'squeeze', F:'squeeze' };
+    let g = map[e.key];
+    if (e.key === ' ' || e.key === 'Enter') { if (e.key === ' ') e.preventDefault(); g = 'click'; }
+    if (!g) return;
+    const btn = document.querySelector('#penpad [data-pen="'+g+'"]');
+    if (btn) btn.click();
+  });
+})();
 
 document.getElementById('start').onclick = () => {
   document.getElementById('veil').classList.add('gone');

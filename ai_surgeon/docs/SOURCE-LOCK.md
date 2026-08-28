@@ -19,6 +19,7 @@ Desk map of the 28 Aug 2026 user drop. Independent of ChatVault, Domain Architec
 | `AI-Surgeon-Systems-and-Progression.md` | Scoring, coherence, teach-one, handover (sibling ingest). |
 | `WARRIOR-SURGEON.md` | 28 Aug 2026 novel drop — what it locked, and where it conflicts with final+cites. |
 | `THEIRS-medical-big-picture.md` | ACC / trauma / assistant / look-then-cut (same blob, medical voice). |
+| `THE-PEN.md` | THEIRS instrument: one pen as knife / clamp / retractor. Twist, click the top, squeeze. Exploration vs curriculum. |
 | `HARRISONS-arthurian-lady-of-the-lake.md` | Oracle / Lake / songs. Hub/about: **one** atmosphere beat. Not a fantasy OR. |
 | `warrior-surgeon/` | Identical `.docx`, full extract, hashes. |
 
@@ -77,6 +78,7 @@ Locked in storyboard + systems (and already on the hub):
 - Study 10 / card (gated). See 5 / step. Do 25 / step. Teach 40 / step.
 - Identify before you cut: gesture stays locked until the structure is named.
 - **Twist to choose, touch to commit** (screens catalog / phone stills). Swipe, two-finger spread, pinch, press-and-hold to act on the playable HTML modules.
+- **The Pen** (THEIRS, [`THE-PEN.md`](THE-PEN.md)): one object — twist / click the top / squeeze — mapped onto those same actions. Not a tray of toy instruments. Phone + vision first. Not a Kelly clamp in the hand; the Pen is the language.
 - Acuity multiplies reward **and** penalty (routine ×1.0 … septic ×2.5; trauma ×2.0).
 - Coherence = accuracy + hesitation; high coherence removes hints, tightens gestures, speeds deterioration. Load is a second axis: accurate-and-overloaded is held, not pushed.
 - Patient death voids the case. **Disabled in entry modules. Enabled from trauma onward.**

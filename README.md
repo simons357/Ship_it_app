@@ -33,7 +33,7 @@ not a clinical reference.
 ```bash
 python3 -m ai_surgeon          # http://127.0.0.1:8770/  (not DA's 8765)
 node --test ai_surgeon/tests/*.mjs
-python3 -m unittest tests.test_ai_surgeon tests.test_ai_surgeon_hub tests.test_ai_surgeon_docs tests.test_ai_surgeon_screens tests.test_ai_surgeon_brand tests.test_ai_surgeon_voices
+python3 -m unittest tests.test_ai_surgeon tests.test_ai_surgeon_hub tests.test_ai_surgeon_docs tests.test_ai_surgeon_screens tests.test_ai_surgeon_brand tests.test_ai_surgeon_voices tests.test_ai_surgeon_pen
 ```
 
 ## Harmonic Blueprint Experiment 01
