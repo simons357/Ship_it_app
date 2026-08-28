@@ -28,6 +28,8 @@ Do **not** import `../js/app.js` (PWA). `rankedSearch` there is a local wrapper 
 
 `../js/engine.mjs` re-exports `searchVault` plus ingest/ledger. Import that only if you want ChatVault records, not if you want the ranker alone.
 
+Runnable copy for another product: `examples/search-engine-hook/hook.mjs` (`node examples/search-engine-hook/hook.mjs`).
+
 ---
 
 ## What you must supply
@@ -130,6 +132,16 @@ Pipeline (short): match gate → BM25F (K1=1.2, stems, substring, one-edit) → 
 - A MiniLM/E5 model, a web crawler, E8 ranking, Harmonic Watch as a score
 
 Ledger status, `harmonic_note`, and E8 are never ranking signals in this file.
+
+This is a local ranker over **your** array of records. It does not crawl the web.
+
+---
+
+## Hosting / CORS
+
+- **Copy `search.mjs` into the other app** (recommended). The module has no network. Same-origin or `file:` / Node import — CORS does not apply.
+- **Same origin as Domain Architect** (`python3 -m domain_architect --site`): `import { searchVault } from "/chatvault/js/search.mjs"` works. DA homepage currently imports `searchVault` from `/chatvault/js/engine.mjs` because it also uses the vault store.
+- **Separate host, `<script type="module">` import of this repo’s URL:** browsers require CORS on the **GET** of the `.mjs` file and a JavaScript MIME type. `site_server.py` sends `Access-Control-Allow-Origin: *` on **OPTIONS** only; static GET does **not**. Cross-origin import from the loopback site will fail until you copy the file or add CORS on GET. DA/ChatVault CSP is `script-src 'self'` / `connect-src 'self'` — that is their shell, not a CDN for yours.
 
 ---
 

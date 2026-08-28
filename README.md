@@ -78,6 +78,7 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 | Path | Role |
 |------|------|
 | `chatvault/` | Local-first ChatVault PWA (Steel default; origin split; DA drain hook) |
+| `chatvault/js/search.mjs` | Hybrid ranker (`chatvault-hybrid-0.2.0`). Hook: `examples/search-engine-hook/` |
 | `hb_ringdown_test.py` | Spectral proximity statistic, MC null, BH-FDR, leave-one-event-out |
 | `nodes.json` | Frozen node families + sigma + default observable |
 | `data/qnm_events.csv` | Per-mode ringdown table with TRAIN/TEST splits |

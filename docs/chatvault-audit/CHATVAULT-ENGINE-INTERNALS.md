@@ -281,7 +281,7 @@ Eval: `chatvault/tests/search-eval.test.mjs` — synthetic seven-doc set, mean n
 
 ## 12. Public functions other products could import
 
-Import from `chatvault/js/search.mjs` (not `app.js`, not `engine.mjs` unless you also want the ledger).
+Import from `chatvault/js/search.mjs` (not `app.js`, not `engine.mjs` unless you also want the ledger). Copy-paste hook: `examples/search-engine-hook/hook.mjs`.
 
 | Export | Use |
 | --- | --- |
