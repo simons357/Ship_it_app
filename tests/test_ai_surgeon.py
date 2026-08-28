@@ -53,6 +53,14 @@ class Layout(unittest.TestCase):
         self.assertNotIn("OS for your AI", html)
         self.assertNotIn("Navier", html)
 
+    def test_loading_screens_use_the_two_stills(self) -> None:
+        proto = (ROOT / "ai-surgeon-prototype.html").read_text(encoding="utf-8")
+        trauma = (ROOT / "ai-surgeon-module02-trauma.html").read_text(encoding="utf-8")
+        self.assertIn('url("art/hero-surgical-table.jpg")', proto)
+        self.assertIn('src="art/key-art-x.jpg"', proto)
+        self.assertIn('url("art/key-art-x.jpg")', trauma)
+        self.assertIn('src="art/hero-surgical-table.jpg"', trauma)
+
     def test_modules_load_local_systems_not_cdn(self) -> None:
         proto = (ROOT / "ai-surgeon-prototype.html").read_text(encoding="utf-8")
         trauma = (ROOT / "ai-surgeon-module02-trauma.html").read_text(encoding="utf-8")
