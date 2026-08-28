@@ -92,9 +92,9 @@ Jonathan’s portfolio today runs on **competing operating systems**: Replit (Fi
 | **config** | Load registry, env overrides, feature flags | ✅ `packages/shared_core/config.py` | — |
 | **link_resolver** | Canonical URLs; warn on hollow/dead routes | ✅ `packages/shared_core/link_resolver.py` | — |
 | **product_registry** | Single catalog: tier, status, modules, URLs | ✅ `product_registry.json` | — |
-| **search (PFPI)** | Full-text + tags + optional vectors | Partial — ingest planned | Meilisearch or SQLite FTS |
-| **ledger (DA)** | KEEP/CUT/LEAD/KILLED truth tags | Partial — markdown source | Parse to `ledger.json` |
-| **spells** | Pattern-hunter registry + run API | Partial — scripts exist | PFPI `/spells/run` |
+| **search (PFPI)** | Full-text + tags + optional vectors | ✅ `tools/pfpi/` SQLite FTS5 | Meilisearch optional Phase 2 |
+| **ledger (DA)** | KEEP/CUT/LEAD/KILLED truth tags | ✅ `tools/pfpi/ledger.json` | Sync from new DA reports |
+| **spells** | Pattern-hunter registry + run API | ✅ registry + `spell_runner.py` + `/v1/spells/run` | MCP adapter Phase 3 |
 | **vault_export** | Chat/thread import schema | Schema only | ChatVault MVP host |
 | **auth** | OAuth, API keys, partitions (public/partner/clinical) | No | Supabase/Clerk/Replit auth |
 | **telemetry** | Product events, spell runs, search queries | No | PostHog / self-host |
@@ -201,10 +201,12 @@ Ship_it_app/
 │       ├── product_registry.json    # Single product catalog
 │       └── spell_registry.json      # Spell script registry
 ├── tools/
-│   └── pfpi/                        # Phase 1 — search spine (planned)
-│       ├── ingest.py
-│       ├── serve.py
-│       └── ledger.json              # Parsed from DA report
+│   └── pfpi/                        # Phase 1 — search spine ✅
+│       ├── ingest.py                # SQLite FTS5 ingest
+│       ├── search.py                # CLI search
+│       ├── serve.py                 # FastAPI GET /v1/search, POST /v1/spells/run
+│       ├── ledger.json              # Parsed from DA report
+│       └── ledger.py                # Ledger loader/filter
 ├── connectors/                      # Phase 2 — external ingest (planned)
 │   ├── zenodo_sync.py
 │   ├── github_ingest.py
@@ -234,10 +236,11 @@ Ship_it_app/
 | 3 | Config loader + env overrides | ✅ v0 scaffold |
 | 4 | Spell registry pointing at existing scripts | ✅ v0 scaffold |
 | 5 | Architecture docs (this file + search report) | ✅ |
-| 6 | PFPI SQLite ingest of `docs/**` + `INDEX.json` | **Next** — 1–2 days |
-| 7 | `ledger.json` parser from DA report | **Next** |
-| 8 | Static PFPI demo page | **Next** |
-| 9 | Unit tests for spine modules | ✅ v0 |
+| 6 | PFPI SQLite ingest of `docs/**` + `INDEX.json` | ✅ `python3 -m tools.pfpi.ingest` |
+| 7 | `ledger.json` parser from DA report | ✅ `tools/pfpi/ledger.json` |
+| 8 | Static PFPI demo page | ✅ `docs/products/pfpi-demo.html` |
+| 9 | Unit tests for spine modules | ✅ `tests/test_shared_core.py`, `tests/test_pfpi.py` |
+| 10 | Spell runner + REST API | ✅ `scripts/run_spell.py`, `tools/pfpi/serve.py` |
 
 ### NEEDS external Codex / Replit / connectors
 
@@ -336,7 +339,31 @@ print(link_status("chatvault"))   # hollow — do not cold-send
 
 ```bash
 python -m unittest tests/test_shared_core.py
+python -m unittest tests/test_pfpi.py -v
 ```
+
+---
+
+## 10. Implemented — Phase 1 PFPI (2026-08-28)
+
+The modular platform doc has been translated into runnable code:
+
+| Component | Path | Run |
+| --- | --- | --- |
+| **Ingest** | `tools/pfpi/ingest.py` | `python3 -m tools.pfpi.ingest` |
+| **CLI search** | `tools/pfpi/search.py` | `python3 -m tools.pfpi.search "Bridge star" --limit 5` |
+| **DA ledger** | `tools/pfpi/ledger.json` | `python3 -c "from tools.pfpi.ledger import filter_ledger; print(len(filter_ledger(status='LEAD')))"` |
+| **Spell runner** | `packages/shared_core/spell_runner.py` | `python3 scripts/run_spell.py sfe_bh_overlay 200` |
+| **REST API** | `tools/pfpi/serve.py` | `python3 -m tools.pfpi.serve` → `GET /v1/search?q=…` |
+| **Demo UI** | `docs/products/pfpi-demo.html` | Open after starting serve on port 8765 |
+| **API docs** | `docs/products/PFPI-API.md` | Endpoint reference |
+
+**Still needs external input:**
+
+- **VR Surgeon** — no storyboard in repo; see [`VR-SURGEON-UNREAL-PIPELINE.md`](VR-SURGEON-UNREAL-PIPELINE.md)
+- **Cosmos app** — URL/repo unknown
+- **ChatVault MVP** — hollow shell; auth + storage host TBD
+- **Replit/Base44 connectors** — Phase 2
 
 ---
 
