@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#05070a">
+<title>AI Surgeon — Residency</title>
+<style>
+  :root{
+    --bg:#05070a; --panel:#0b1016; --panel2:#111922;
+    --steel:#c8d3dd; --steel-dim:#7d8996;
+    --cyan:#3fd0e8; --cyan-dim:#1d6f80;
+    --red:#e2454a; --amber:#e0a63c; --green:#4bd08a;
+    --line:#1c2731;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+  body{background:var(--bg);color:var(--steel);min-height:100%;
+    font-family:ui-sans-serif,-apple-system,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+    font-size:14px;letter-spacing:.01em;
+    padding:calc(env(safe-area-inset-top) + 26px) 18px calc(env(safe-area-inset-bottom) + 40px);
+    max-width:640px;margin:0 auto}
+
+  header{margin-bottom:22px}
+  .brandrow{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .brandmark{width:52px;height:52px;border-radius:4px;object-fit:cover;
+    border:1px solid var(--line);flex:0 0 auto}
+  .brand{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
+  h1{font-size:30px;font-weight:600;color:#eef4f8;line-height:1.08;letter-spacing:-.015em}
+  .sub{margin-top:12px;font-size:13px;line-height:1.6;color:var(--steel-dim);max-width:36em}
+
+  .hero{position:relative;margin:18px 0 8px;border-radius:6px;overflow:hidden;
+    border:1px solid var(--line);min-height:168px;background:#05070a}
+  .hero img.field{display:block;width:100%;height:210px;object-fit:cover;object-position:center 42%}
+  .hero .cap{position:absolute;left:0;right:0;bottom:0;padding:14px 14px 12px;
+    background:linear-gradient(0deg,rgba(5,7,10,.96),rgba(5,7,10,.15));
+    font-size:11px;line-height:1.5;color:var(--steel-dim)}
+  .hero .cap b{display:block;color:#eef4f8;font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;font-weight:600;margin-bottom:4px}
+
+  /* progress spine */
+  .spine{display:flex;gap:3px;margin:22px 0 6px}
+  .spine i{flex:1;height:3px;border-radius:2px;background:#131c25}
+  .spine i.on{background:var(--cyan)}
+  .spinelab{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--steel-dim)}
+
+  h2.sec{font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--steel-dim);
+    margin:30px 0 12px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+
+  a.mod,div.mod{display:block;text-decoration:none;color:inherit;background:var(--panel);
+    border:1px solid var(--line);border-left:2px solid var(--cyan);border-radius:5px;
+    padding:14px 15px;margin-bottom:10px;transition:.15s}
+  a.mod:active{background:var(--panel2)}
+  div.mod{border-left-color:#2a3742;opacity:.46}
+  a.mod.play,div.mod.pitch{display:grid;grid-template-columns:96px 1fr;gap:0;padding:0;overflow:hidden}
+  a.mod.play .mthumb,div.mod.pitch .mthumb{width:96px;height:100%;min-height:118px;object-fit:cover;display:block;background:#07090c}
+  a.mod.play .mbody,div.mod.pitch .mbody{padding:14px 15px}
+  div.mod.pitch{opacity:.92;border-left-color:var(--amber)}
+  .mtop{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:5px}
+  .mnum{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--steel-dim)}
+  .mstate{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--green)}
+  .mstate.locked{color:var(--steel-dim)}
+  .mstate.hard{color:var(--red)}
+  .mstate.pitch{color:var(--amber)}
+  .mname{font-size:16px;font-weight:600;color:#e8eff5;line-height:1.25}
+  .mdesc{font-size:12px;line-height:1.55;color:var(--steel-dim);margin-top:6px}
+  .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .tag{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel-dim);
+    border:1px solid var(--line);border-radius:3px;padding:3px 7px}
+  .tag.acu{color:var(--amber);border-color:#3a2f18}
+  .tag.acu.hi{color:var(--red);border-color:#3d1e20}
+
+  .rules{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:15px;margin-top:8px}
+  .rule{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:12.5px;line-height:1.5}
+  .rule:last-child{border-bottom:0;padding-bottom:0}
+  .rule b{min-width:96px;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--steel);font-weight:500;padding-top:3px}
+  .rule span{color:var(--steel-dim)}
+  .rule span em{font-style:normal;color:var(--cyan)}
+
+  .docs{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .docs a{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);
+    border:1px solid var(--cyan-dim);border-radius:3px;padding:7px 10px;text-decoration:none}
+
+  .cite{margin-top:18px;padding:12px 14px;border:1px solid var(--line);border-radius:5px;
+    font-size:11px;line-height:1.55;color:#6a757f}
+  .cite a{color:var(--cyan);text-decoration:none}
+  .nonclaim{margin-top:10px;font-size:11px;line-height:1.55;color:#6a757f}
+
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);
+    font-size:10.5px;line-height:1.7;color:#57626d}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brandrow">
+    <img class="brandmark" src="art/key-art-x.jpg" width="52" height="52"
+         alt="AI Surgeon key art: metallic X and surgical instruments">
+    <div>
+      <div class="brand">Simons Medical Innovations</div>
+      <h1>AI Surgeon</h1>
+    </div>
+  </div>
+  <p class="sub">Identify before you cut. Study one, see one, do one, teach one — with the study
+  put back in front of the knife, where it belongs. Touch the structure to name it; twist, spread,
+  pinch, or swipe only after it unlocks. Two seats, one case: you and the head of the bed, not a
+  second world. Teaching is worth the most points, because it is the only phase that proves you
+  understood it.</p>
+
+  <figure class="hero">
+    <img class="field" src="art/hero-surgical-table.jpg"
+         alt="AI Surgeon field: circuit tray on a surgical table, teal and magenta instrument light">
+    <figcaption class="cap">
+      <b>The field</b>
+      Phone first. Then a tablet on a mat. VR is the same build on a headset. Two modules are open:
+      open appendectomy, and tube thoracostomy under a live monitor.
+    </figcaption>
+  </figure>
+
+  <div class="spine">
+    <i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+  <div class="spinelab"><span>Skills lab → Chief</span><span>2 of 40+ built</span></div>
+
+  <div class="docs">
+    <a href="ai-surgeon-prototype.html">Play appendectomy</a>
+    <a href="ai-surgeon-module02-trauma.html">Play trauma</a>
+    <a href="docs/AI-Surgeon-Storyboard.pdf">Storyboard (product bible)</a>
+    <a href="docs/AI-Surgeon-Systems-and-Progression.md">Systems &amp; progression</a>
+    <a href="docs/CITATIONS.md">Citations</a>
+    <a href="docs/SOURCE-LOCK.md">What the docs locked</a>
+    <a href="docs/bible/AI-Surgeon-Final-Final.pdf">2025 final plan</a>
+  </div>
+
+  <p class="cite" id="about-cites">
+    Cite strip — sources <em>named</em> in the 2025 cited plan, not measured on this desk:
+    Market Research Future (2024); HolonIQ (2024); Stanford University Study (2023);
+    Harvard Medical School (2023); Newzoo (2024); U.S. Department of Education (2024);
+    Bloomberg Technology (2024).
+    Full list, the 37% laparoscopic caution, and the do-not-invent-papers rule:
+    <a href="docs/CITATIONS.md">CITATIONS</a>.
+    Clinical content and design: Jonathan Simons, CRNA.
+  </p>
+  <p class="nonclaim">Not a medical device. Not a clinical reference. Not a substitute for
+  supervised surgical training. No store checkout on this hub — schools, hospital systems, and
+  STEM grants are who the plans say pay; the phone modules are what ships first.</p>
+</header>
+
+<h2 class="sec">Year 0 — skills lab · not yet built</h2>
+
+<div class="mod pitch">
+  <img class="mthumb" src="art/key-art-x.jpg" alt="">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Module 00.1 – 00.5</span><span class="mstate pitch">Pitch</span></div>
+    <div class="mname">Knots · Suturing · Sterile Technique · The Tray · Local Blocks</div>
+    <div class="mdesc">No patient, no acuity, no monitor. Drills. This is where the gesture vocabulary
+    and the Bluetooth instruments get taught, and where the scrub-tech naming drill lives — every
+    case above gets better if this one is good.</div>
+    <div class="meta">
+      <span class="tag">Pitch · not playable</span>
+      <span class="tag">Tablet + mat later</span>
+    </div>
+  </div>
+</div>
+
+<h2 class="sec">Year 1 — minor procedures · not yet built</h2>
+
+<div class="mod pitch">
+  <img class="mthumb" src="art/hero-surgical-table.jpg" alt="">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Module 01</span><span class="mstate pitch">Pitch · next to build</span></div>
+    <div class="mname">I&amp;D of a Finger, with Washout</div>
+    <div class="mdesc">Felon. The fibrous septa that make the pulp a compartment, the digital
+    neurovascular bundles at two-and-ten and four-and-eight, and the flexor sheath you are hoping is
+    not involved. Small anatomy, real stakes, one sharp learnable error.</div>
+    <div class="meta">
+      <span class="tag acu">Acuity ×1.0</span>
+      <span class="tag">Pitch · not playable</span>
+      <span class="tag">Patient loss disabled</span>
+    </div>
+  </div>
+</div>
+
+<h2 class="sec">Year 2 — core general surgery</h2>
+
+<a class="mod play" href="ai-surgeon-prototype.html">
+  <img class="mthumb" src="art/hero-surgical-table.jpg" alt="">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Module 12</span><span class="mstate">Open</span></div>
+    <div class="mname">Open Appendectomy</div>
+    <div class="mdesc">McBurney gridiron approach. Three flat muscles split and not one of them cut.
+    Follow the taenia libera to the base, control the mesoappendix before it retracts somewhere you
+    cannot see, and leave a stump you will not have to apologise for later. Identify before you cut.</div>
+    <div class="meta">
+      <span class="tag acu">Acuity ×1.0</span>
+      <span class="tag">11 steps</span>
+      <span class="tag">4 study cards</span>
+      <span class="tag">Patient loss disabled</span>
+      <span class="tag">Playable</span>
+    </div>
+  </div>
+</a>
+
+<div class="mod pitch">
+  <img class="mthumb" src="art/key-art-x.jpg" alt="">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Module 13</span><span class="mstate pitch">Pitch</span></div>
+    <div class="mname">Laparoscopic Cholecystectomy</div>
+    <div class="mdesc">Calot’s triangle. Fulcrum effect and working off a screen are a separate
+    skills-lab strand — you cannot learn lap surgery by doing open surgery faster. Not built.</div>
+    <div class="meta">
+      <span class="tag">Pitch · not playable</span>
+      <span class="tag">Brochure ladder 03</span>
+    </div>
+  </div>
+</div>
+
+<div class="mod pitch">
+  <img class="mthumb" src="art/hero-surgical-table.jpg" alt="">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Module 14</span><span class="mstate pitch">Pitch</span></div>
+    <div class="mname">Inguinal Hernia</div>
+    <div class="mdesc">Named on the brochure ladder after the gallbladder. Pitch and still only —
+    no fake case behind this card.</div>
+    <div class="meta">
+      <span class="tag">Pitch · not playable</span>
+      <span class="tag">Brochure ladder 04</span>
+    </div>
+  </div>
+</div>
+
+<div class="mod pitch">
+  <img class="mthumb" src="art/key-art-x.jpg" alt="">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Module 15</span><span class="mstate pitch">Pitch</span></div>
+    <div class="mname">Bowel Anastomosis</div>
+    <div class="mdesc">Named next on that same ladder. Not authored as steps, tray, or scoring yet.</div>
+    <div class="meta">
+      <span class="tag">Pitch · not playable</span>
+      <span class="tag">Brochure ladder 05</span>
+    </div>
+  </div>
+</div>
+
+<h2 class="sec">Year 3 — trauma</h2>
+
+<a class="mod play" href="ai-surgeon-module02-trauma.html" style="border-left-color:var(--red)">
+  <img class="mthumb" src="art/key-art-x.jpg" alt="">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Module 21</span><span class="mstate hard">Open · unstable</span></div>
+    <div class="mname">Tube Thoracostomy</div>
+    <div class="mdesc">Tension pneumothorax with a haemothorax underneath it. The monitor is live and
+    the physiology does not pause while you think. Needle first if you must, but the needle only
+    buys you time — and the whole case turns on which border of which rib you cross.</div>
+    <div class="meta">
+      <span class="tag acu hi">Acuity ×2.0</span>
+      <span class="tag">10 steps</span>
+      <span class="tag">4 study cards</span>
+      <span class="tag">Live vitals</span>
+      <span class="tag">Patient loss enabled</span>
+      <span class="tag">Playable</span>
+    </div>
+  </div>
+</a>
+
+<div class="mod pitch">
+  <img class="mthumb" src="art/hero-surgical-table.jpg" alt="">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Module 22</span><span class="mstate pitch">Pitch</span></div>
+    <div class="mname">Cricothyroidotomy</div>
+    <div class="mdesc">Sixty seconds of anatomy and a lifetime of consequence. The module where you and
+    the head of the bed are working the same airway at the same time — two seats, one case.</div>
+    <div class="meta">
+      <span class="tag">Pitch · not playable</span>
+      <span class="tag">Two seats</span>
+    </div>
+  </div>
+</div>
+
+<div class="mod pitch">
+  <img class="mthumb" src="art/key-art-x.jpg" alt="">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Module 24</span><span class="mstate pitch">Pitch</span></div>
+    <div class="mname">Damage Control Laparotomy</div>
+    <div class="mdesc">Four quadrants packed, bleeding controlled, contamination stopped, abdomen left
+    open. The hardest thing to teach here is stopping early.</div>
+    <div class="meta">
+      <span class="tag">Pitch · not playable</span>
+    </div>
+  </div>
+</div>
+
+<h2 class="sec">Year 5 — chief</h2>
+
+<div class="mod pitch">
+  <img class="mthumb" src="art/hero-surgical-table.jpg" alt="">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Module 41</span><span class="mstate pitch">Pitch</span></div>
+    <div class="mname">Cardiac — CABG</div>
+    <div class="mdesc">Where the points are. Also where they are taken away fastest. Top of the
+    brochure ladder with neuro. Not a playable case.</div>
+    <div class="meta">
+      <span class="tag">Pitch · not playable</span>
+    </div>
+  </div>
+</div>
+
+<div class="mod pitch">
+  <img class="mthumb" src="art/key-art-x.jpg" alt="">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Module 43</span><span class="mstate pitch">Pitch</span></div>
+    <div class="mname">Neurosurgery — Craniotomy</div>
+    <div class="mdesc">Top of the ladder. Highest multiplier in the game, and the only module where
+    a single wrong structure ends the case outright. Pitch only.</div>
+    <div class="meta">
+      <span class="tag">Pitch · not playable</span>
+    </div>
+  </div>
+</div>
+
+<h2 class="sec">Parallel track — the head of the bed</h2>
+
+<div class="mod pitch" style="border-left-color:#4a3f6b">
+  <img class="mthumb" src="art/key-art-x.jpg" alt="">
+  <div class="mbody">
+    <div class="mtop"><span class="mnum">Anaesthesia track</span><span class="mstate pitch">Pitch</span></div>
+    <div class="mname">Blame Anesthesia</div>
+    <div class="mdesc">A second ladder running alongside the surgical one. Airway, induction
+    pharmacology, the machine, neuraxial, and the crises — laryngospasm, MH, anaphylaxis, LAST. Named
+    for the oldest joke in the operating room, which stops being funny somewhere around the third
+    module. Trauma already has an AI voice at the head of the bed; this track is not a second game.</div>
+    <div class="meta">
+      <span class="tag">Robed · faceless · does not walk</span>
+      <span class="tag">Pitch · not playable</span>
+      <span class="tag">Two seats, one case</span>
+    </div>
+  </div>
+</div>
+
+<h2 class="sec">Surgery Verse — two seats, one case</h2>
+<div class="rules" id="surgery-verse">
+  <div class="rule"><b>Not a world</b><span>The 2025 Claude note said deliver the plan and
+    <em>leave the metaverse out</em>. Surgery Verse here is a seat name, not a second universe
+    to raise against.</span></div>
+  <div class="rule"><b>Two seats</b><span>Surgeon and the head of the bed on <em>one case seed</em> —
+    same patient, same clock, real roles. Brochure also allows assist and scrub. Pitch. The
+    playable modules today are single-seat with an AI attending.</span></div>
+  <div class="rule"><b>Same case</b><span>Head-to-head is the same seed, separate runs: errors first,
+    time second. Speed winning outright would teach people to rush.</span></div>
+</div>
+
+<h2 class="sec">Hardware ladder</h2>
+<div class="rules" id="hardware">
+  <div class="rule"><b>Phone</b><span>What ships first. Browser, no install, on a device the player
+    already owns. Both open modules run here.</span></div>
+  <div class="rule"><b>Tablet + mat</b><span>Larger field and optional Bluetooth instrument replicas
+    (the 2025 plan’s haptic toolkit / BlueTools). Like a stylus: later, and never required.
+    Not shipped.</span></div>
+  <div class="rule"><b>VR</b><span>The same codebase on a headset (WebXR). A later phase of this
+    build, not a separate AAA title.</span></div>
+</div>
+
+<h2 class="sec">Who pays · what ships first</h2>
+<div class="rules" id="who-pays">
+  <div class="rule"><b>Who pays</b><span>Schools, nursing programs, hospital systems, and STEM
+    grants fund prizes and licenses. Advertisers may fund rewards. The 2025 plan also lists
+    hardware, institutional subscriptions, and optional coaching tiers. This hub has no checkout.</span></div>
+  <div class="rule"><b>Ships first</b><span>The phone residency loop — study / see / do / teach —
+    with a handful of modules. Not pre-orders, not a store, not scholarships issued from this
+    page.</span></div>
+</div>
+
+<h2 class="sec">How it is scored</h2>
+
+<div class="rules">
+  <div class="rule"><b>Study one</b><span>10 points a card. You cannot be handed an instrument until
+    the anatomy and physiology cards are done.</span></div>
+  <div class="rule"><b>See one</b><span>5 points a step. The attending demonstrates; you name the
+    structures while you watch.</span></div>
+  <div class="rule"><b>Do one</b><span>25 points a step. You identify the structure, <em>call the
+    scrub for the instrument by name</em>, then perform the maneuver by gesture.
+    Touch to identify; twist, spread, pinch, or swipe to act — and only after the name lands.</span></div>
+  <div class="rule"><b>Teach one</b><span>40 points a step — the most in the game. A junior asks you
+    why, and you have to be right. The real Teach One — supervising a junior with a two-second
+    interrupt window — is specified and not yet this multiple-choice placeholder.</span></div>
+  <div class="rule"><b>Acuity</b><span>Multiplies rewards <em>and</em> penalties. Routine ×1.0 through
+    septic ×2.5. Trauma runs at ×2.0.</span></div>
+  <div class="rule"><b>Coherence</b><span>Watches how right you are and how long you hesitate, then
+    moves the game. High coherence removes hints, tightens gesture tolerance, and <em>speeds the
+    patient's deterioration up</em>. Load is a second axis: accurate and overloaded is held, not pushed.</span></div>
+  <div class="rule"><b>The monitor</b><span>You are responsible for noticing. A drifting pressure or a
+    falling end-tidal that you <em>do not call out</em> is a scored error even if the surgery was
+    perfect. Calling the wrong thing costs a little — crying wolf has a price in a real room too.</span></div>
+  <div class="rule"><b>Asking</b><span>Questions go both ways. You can ask the attending what you are
+    looking at, why this instrument, or what happens if you are wrong here. Asking costs a little and
+    is <em>worth more than guessing silently</em>.</span></div>
+  <div class="rule"><b>Handover</b><span>Patient safety is number one. Handing over inside the window
+    is worth more than staying and getting away with it. The button is visible in every Do One phase.</span></div>
+  <div class="rule"><b>Losing the patient</b><span>Voids the case and costs rank. Disabled in entry
+    modules. Enabled from trauma onward. Death-enabled is a teaching rule, not a gore setting.</span></div>
+</div>
+
+<footer>
+  Phone first. Then a tablet on a mat. Then VR — the same build, not a second product.
+  Bluetooth instrument replicas are optional.<br><br>
+  Serve locally on port 8770 — <code>python3 -m ai_surgeon</code> — not on Domain Architect's 8765.
+  Prototype content for design review. Not a medical device, not a clinical reference, and not a
+  substitute for supervised surgical training.
+</footer>
+
+</body>
+</html>

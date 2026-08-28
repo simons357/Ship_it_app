@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#0A1218"/><stop offset="1" stop-color="#060A0D"/>
+  </linearGradient>
+  <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#2A1418"/><stop offset="1" stop-color="#140A0C"/>
+  </linearGradient>
+  <radialGradient id="lamp" cx="0.5" cy="0.32" r="0.62">
+    <stop offset="0" stop-color="#3D2126" stop-opacity="0.95"/>
+    <stop offset="1" stop-color="#0E0709" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="tissue1" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#B4736A"/><stop offset="1" stop-color="#7E4A46"/>
+  </linearGradient>
+  <linearGradient id="tissue2" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#C98F80"/><stop offset="1" stop-color="#8E5A50"/>
+  </linearGradient>
+  <linearGradient id="fat" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#D9B776"/><stop offset="1" stop-color="#9B7C46"/>
+  </linearGradient>
+  <linearGradient id="drape" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#1E4750"/><stop offset="1" stop-color="#123037"/>
+  </linearGradient>
+</defs>
+<rect width="390" height="844" rx="0" fill="url(#bg)"/>
+<text x="22" y="26" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#E9EFF1">9:41</text>
+<g fill="#E9EFF1"><rect x="330" y="18" width="3" height="7" rx="1"/><rect x="336" y="15" width="3" height="10" rx="1"/>
+<rect x="342" y="12" width="3" height="13" rx="1"/><rect x="350" y="14" width="16" height="9" rx="2.5" opacity="0.5"/>
+<rect x="352" y="16" width="10" height="5" rx="1"/></g>
+
+<path d="M22 62 l-8 8 l8 8" stroke="#7C9299" stroke-width="2" fill="none" stroke-linecap="round"/>
+<text x="40" y="66" font-family="DejaVu Sans" font-size="9" font-weight="bold" fill="#31B9A4" letter-spacing="1.4">PHASE 1 OF 4 &#183; STUDY ONE</text>
+<text x="40" y="80" font-family="DejaVu Sans" font-size="12.5" font-weight="bold" fill="#E9EFF1">Acute appendicitis</text>
+<text x="368" y="68" text-anchor="end" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#E9EFF1">40</text>
+<text x="368" y="80" text-anchor="end" font-family="DejaVu Sans" font-size="8" fill="#546A72" letter-spacing="0.8">POINTS</text>
+<text x="22" y="99" font-family="DejaVu Sans" font-size="8" fill="#546A72" letter-spacing="0.8">COHERENCE</text>
+<rect x="86" y="92" width="96" height="4" rx="2" fill="#22333D"/>
+<rect x="86" y="92" width="59" height="4" rx="2" fill="#DFA33C"/>
+<text x="190" y="99" font-family="DejaVu Sans" font-size="8" font-weight="bold" fill="#DFA33C">61</text>
+<line x1="0" y1="112" x2="390" y2="112" stroke="#22333D" stroke-width="1"/>
+<rect x="22" y="130" width="346" height="22" rx="11" fill="#12262B" stroke="#1B6A5F" stroke-width="1" opacity="1"/><text x="34" y="145" font-family="DejaVu Sans" font-size="8.5" fill="#31B9A4" font-weight="normal" text-anchor="start" letter-spacing="0">LOCKED &#183; You cannot scrub in until 4 of 4 cards are complete</text><rect x="22" y="164" width="346" height="176" rx="14" fill="#111C23" stroke="#22333D" stroke-width="1" opacity="1"/><text x="40" y="190" font-family="DejaVu Sans" font-size="8.5" fill="#31B9A4" font-weight="bold" text-anchor="start" letter-spacing="1.2">CARD 3 OF 4 &#183; PATHOPHYSIOLOGY</text><text x="40" y="212" font-family="DejaVu Sans" font-size="11.5" fill="#E9EFF1" font-weight="normal" text-anchor="start" letter-spacing="0">The lumen obstructs. Mucus keeps being</text><text x="40" y="228" font-family="DejaVu Sans" font-size="11.5" fill="#E9EFF1" font-weight="normal" text-anchor="start" letter-spacing="0">secreted, so intraluminal pressure rises —</text><text x="40" y="244" font-family="DejaVu Sans" font-size="11.5" fill="#E9EFF1" font-weight="normal" text-anchor="start" letter-spacing="0">past venous pressure before it passes</text><text x="40" y="260" font-family="DejaVu Sans" font-size="11.5" fill="#E9EFF1" font-weight="normal" text-anchor="start" letter-spacing="0">arterial.</text><rect x="40" y="270" width="310" height="1" rx="0" fill="#22333D" opacity="1"/><text x="40" y="292" font-family="DejaVu Sans" font-size="12" fill="#E9EFF1" font-weight="bold" text-anchor="start" letter-spacing="0">So which comes first?</text><text x="40" y="312" font-family="DejaVu Sans" font-size="9" fill="#7C9299" font-weight="normal" text-anchor="start" letter-spacing="0">Points ride on the answer. The attending asks this again mid-case.</text><rect x="22" y="352" width="346" height="46" rx="12" fill="#17242C" stroke="#22333D" stroke-width="1" opacity="1"/><circle cx="46" cy="375" r="11" fill="none" stroke="#22333D" stroke-width="1.4"/><text x="46" y="379" font-family="DejaVu Sans" font-size="11" fill="#7C9299" font-weight="bold" text-anchor="middle" letter-spacing="0">A</text><text x="68" y="373" font-family="DejaVu Sans" font-size="10.5" fill="#C3D2D7" font-weight="normal" text-anchor="start" letter-spacing="0">Arterial ischaemia, then venous congestion</text><rect x="22" y="406" width="346" height="46" rx="12" fill="#0F2C2B" stroke="#31B9A4" stroke-width="1.4" opacity="1"/><circle cx="46" cy="429" r="11" fill="none" stroke="#31B9A4" stroke-width="1.4"/><text x="46" y="433" font-family="DejaVu Sans" font-size="11" fill="#31B9A4" font-weight="bold" text-anchor="middle" letter-spacing="0">B</text><text x="68" y="427" font-family="DejaVu Sans" font-size="10.5" fill="#E9EFF1" font-weight="bold" text-anchor="start" letter-spacing="0">Venous congestion, then arterial ischaemia</text><text x="68" y="441" font-family="DejaVu Sans" font-size="8.5" fill="#31B9A4" font-weight="normal" text-anchor="start" letter-spacing="0">Correct. Congestion precedes ischaemia. +10</text><rect x="22" y="460" width="346" height="46" rx="12" fill="#17242C" stroke="#22333D" stroke-width="1" opacity="1"/><circle cx="46" cy="483" r="11" fill="none" stroke="#22333D" stroke-width="1.4"/><text x="46" y="487" font-family="DejaVu Sans" font-size="11" fill="#7C9299" font-weight="bold" text-anchor="middle" letter-spacing="0">C</text><text x="68" y="481" font-family="DejaVu Sans" font-size="10.5" fill="#C3D2D7" font-weight="normal" text-anchor="start" letter-spacing="0">Simultaneous — the wall fails all at once</text><rect x="22" y="528" width="346" height="74" rx="14" fill="#101A20" stroke="#22333D" stroke-width="1" opacity="1"/><text x="40" y="552" font-family="DejaVu Sans" font-size="8.5" fill="#546A72" font-weight="bold" text-anchor="start" letter-spacing="1.2">REMAINING</text><text x="40" y="573" font-family="DejaVu Sans" font-size="10" fill="#E9EFF1" font-weight="normal" text-anchor="start" letter-spacing="0">Card 4 — Referred pain: why periumbilical first,</text><text x="40" y="588" font-family="DejaVu Sans" font-size="10" fill="#E9EFF1" font-weight="normal" text-anchor="start" letter-spacing="0">then right lower quadrant</text><rect x="22" y="620" width="346" height="52" rx="26" fill="#1B6A5F" stroke="#31B9A4" stroke-width="1.4" opacity="1"/><text x="195" y="651" font-family="DejaVu Sans" font-size="12.5" fill="#DFF7F2" font-weight="bold" text-anchor="middle" letter-spacing="1.4">CONTINUE  →</text><text x="195" y="700" font-family="DejaVu Sans" font-size="9" fill="#546A72" font-weight="normal" text-anchor="middle" letter-spacing="0">Studying: 10 pts/card  ·  Observing: 5/step</text><text x="195" y="716" font-family="DejaVu Sans" font-size="9" fill="#546A72" font-weight="normal" text-anchor="middle" letter-spacing="0">Operating alone: 25/step  ·  Teaching: 40/step</text></svg>

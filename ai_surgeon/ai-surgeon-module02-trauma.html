@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#05070a">
+<title>AI Surgeon — Module 02 · Trauma</title>
+<style>
+  :root{
+    --bg:#05070a; --panel:#0b1016; --panel2:#111922;
+    --steel:#c8d3dd; --steel-dim:#7d8996;
+    --cyan:#3fd0e8; --cyan-dim:#1d6f80;
+    --red:#e2454a; --amber:#e0a63c; --green:#4bd08a;
+    --line:#1c2731;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+  html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--steel);
+    font-family:ui-sans-serif,-apple-system,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+    font-size:14px;letter-spacing:.01em;overscroll-behavior:none}
+  #stage{position:fixed;inset:0}
+  canvas{display:block;touch-action:none}
+
+  #rail{position:fixed;top:0;left:0;right:0;padding:calc(env(safe-area-inset-top) + 8px) 12px 8px;
+    background:linear-gradient(180deg,rgba(5,7,10,.96),rgba(5,7,10,.55) 78%,rgba(5,7,10,0));z-index:20;pointer-events:none}
+  .railtop{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .mod{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--steel-dim)}
+  .phase{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan)}
+  .title{font-size:15px;font-weight:600;color:#e8eff5;margin-top:2px}
+
+  /* ---------- anaesthesia monitor ---------- */
+  #mon{margin-top:8px;border:1px solid var(--line);border-radius:4px;background:rgba(6,10,14,.82);
+    display:flex;align-items:stretch;overflow:hidden;height:52px}
+  #trace{flex:1;display:block}
+  .vitals{width:104px;border-left:1px solid var(--line);padding:4px 7px;display:flex;
+    flex-direction:column;justify-content:space-between}
+  .v{display:flex;justify-content:space-between;align-items:baseline;font-size:9px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--steel-dim);line-height:1}
+  .v b{font-size:14px;font-weight:600;letter-spacing:0;font-variant-numeric:tabular-nums}
+  #vHR b{color:var(--green)} #vBP b{color:var(--green)} #vO2 b{color:var(--cyan)}
+
+  #coh{margin-top:8px}
+  .cohrow{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--steel-dim);margin-bottom:4px}
+  .bar{height:3px;background:#131c25;border-radius:2px;overflow:hidden;position:relative}
+  .bar>i{display:block;height:100%;width:50%;background:var(--cyan);
+    transition:width .5s cubic-bezier(.2,.7,.3,1),background .5s}
+  .ticks{position:absolute;inset:0;display:flex;justify-content:space-between}
+  .ticks span{width:1px;background:rgba(255,255,255,.10)}
+
+  #label{position:fixed;left:50%;transform:translateX(-50%) translateY(-6px);
+    top:calc(env(safe-area-inset-top) + 156px);z-index:22;
+    background:rgba(11,16,22,.92);border:1px solid var(--line);border-left:2px solid var(--cyan);
+    padding:7px 12px;border-radius:3px;max-width:82vw;opacity:0;transition:.22s;pointer-events:none}
+  #label.on{opacity:1;transform:translateX(-50%) translateY(0)}
+  #label b{display:block;font-size:12.5px;color:#e8eff5;letter-spacing:.02em}
+  #label i{display:block;font-style:normal;font-size:10.5px;color:var(--steel-dim);margin-top:3px;line-height:1.45}
+
+  #console{position:fixed;left:0;right:0;bottom:0;z-index:21;
+    padding:14px 12px calc(env(safe-area-inset-bottom) + 12px);
+    background:linear-gradient(0deg,rgba(5,7,10,.98) 62%,rgba(5,7,10,0));}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:12px}
+  .who{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan-dim);margin-bottom:6px;
+    display:flex;align-items:center;gap:6px}
+  .who::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--cyan);
+    box-shadow:0 0 7px var(--cyan);animation:pulse 2.4s infinite}
+  .who.gas{color:#8f7bbd} .who.gas::before{background:#8f7bbd;box-shadow:0 0 7px #8f7bbd}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.28}}
+  #say{font-size:13.5px;line-height:1.5;color:#dbe5ec;min-height:40px}
+  #say em{font-style:normal;color:var(--cyan)}
+  #gesture{margin-top:10px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--steel-dim);display:flex;align-items:center;gap:7px;min-height:13px}
+  #gesture span.g{color:var(--amber)}
+
+  #choices{display:grid;gap:7px;margin-top:11px}
+  .ch{background:var(--panel2);border:1px solid var(--line);color:#d6e1e9;
+    padding:11px 12px;border-radius:4px;font-size:12.5px;text-align:left;line-height:1.4;
+    font-family:inherit;cursor:pointer;transition:.15s}
+  .ch:active{background:#18232e}
+  .ch.right{border-color:var(--green);color:var(--green)}
+  .ch.wrong{border-color:var(--red);color:var(--red);opacity:.65}
+
+  .btnrow{display:flex;gap:8px;margin-top:11px}
+  .btn{flex:1;background:transparent;border:1px solid var(--cyan-dim);color:var(--cyan);
+    padding:11px;border-radius:4px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    font-family:inherit;cursor:pointer}
+  .btn:active{background:rgba(63,208,232,.10)}
+  .btn.ghost{border-color:var(--line);color:var(--steel-dim)}
+  .hide{display:none !important}
+
+  #vr{position:fixed;right:12px;top:calc(env(safe-area-inset-top) + 8px);z-index:25;
+    background:rgba(11,16,22,.9);border:1px solid var(--cyan-dim);color:var(--cyan);
+    padding:7px 10px;border-radius:3px;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+    font-family:inherit;cursor:pointer}
+  #hub{position:fixed;left:12px;top:calc(env(safe-area-inset-top) + 8px);z-index:25;
+    background:rgba(11,16,22,.9);border:1px solid var(--line);color:var(--steel-dim);
+    padding:7px 10px;border-radius:3px;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+    font-family:inherit;text-decoration:none}
+
+  #ret{position:fixed;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;z-index:16;
+    pointer-events:none;opacity:.30;transition:opacity .3s}
+  #ret.on{opacity:.85}
+  #ret::before,#ret::after{content:"";position:absolute;background:var(--cyan)}
+  #ret::before{left:50%;top:0;width:1px;height:100%;margin-left:-.5px}
+  #ret::after{top:50%;left:0;height:1px;width:100%;margin-top:-.5px}
+  #ret i{position:absolute;inset:7px;border:1px solid var(--cyan);border-radius:50%;
+    transform:scale(.6);transition:transform .25s}
+  #ret.on i{transform:scale(1)}
+
+  #askwrap{margin-top:10px;display:none;gap:7px}
+  #askwrap.on{display:flex}
+  #askin{flex:1;background:var(--panel2);border:1px solid var(--line);border-radius:4px;
+    color:#d6e1e9;font-family:inherit;font-size:12.5px;padding:10px 11px;min-width:0}
+  #askin:focus{outline:none;border-color:var(--cyan-dim)}
+  #asksend{background:transparent;border:1px solid var(--cyan-dim);color:var(--cyan);border-radius:4px;
+    font-family:inherit;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;padding:0 13px;cursor:pointer}
+  #answer{margin-top:9px;font-size:12.5px;line-height:1.5;color:#cfdae3;
+    border-left:2px solid var(--cyan-dim);padding-left:10px;display:none}
+  #answer.on{display:block}
+  #answer strong{color:#eef4f8}
+  .gloss{color:var(--steel-dim);font-size:.86em}
+
+  .dbrow,.pgrow{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);
+    font-size:11.5px;line-height:1.5;align-items:baseline}
+  .dbrow b,.pgrow b{min-width:96px;font-size:9px;letter-spacing:.15em;text-transform:uppercase;
+    color:var(--steel);font-weight:500}
+  .dbrow span{color:var(--steel-dim);flex:1}
+  .pgrow b{min-width:132px;text-transform:none;letter-spacing:.02em;font-size:11.5px;color:#cfdae3}
+  .pgrow span{color:var(--amber);font-variant-numeric:tabular-nums;min-width:86px}
+  .pgrow span.life{color:var(--steel-dim);min-width:0;flex:1;text-align:right}
+  .pgfix{margin-top:10px;font-size:11.5px;line-height:1.55;color:var(--steel-dim);
+    border-left:2px solid var(--amber);padding-left:10px}
+  .pgfix b{color:#eef4f8;font-weight:500}
+  .safety{margin-top:10px;border:1px solid #3d1e20;border-left:2px solid var(--red);
+    border-radius:4px;padding:9px 11px;font-size:11.5px;line-height:1.5;color:#e8c6c7}
+
+  .prof{background:var(--panel);border:1px solid var(--line);border-left:2px solid #2a3742;
+    border-radius:4px;padding:10px 12px;text-align:left;font-family:inherit;cursor:pointer;
+    color:#d6e1e9;transition:.15s}
+  .prof.sel{border-left-color:var(--cyan);background:var(--panel2)}
+  .prof b{display:block;font-size:12.5px;font-weight:600;color:#e8eff5}
+  .prof span{display:block;font-size:11px;line-height:1.45;color:var(--steel-dim);margin-top:3px}
+  #profs{display:grid;gap:7px;margin:2px 0}
+  #sensorline{font-size:10.5px;line-height:1.5;color:#57626d}
+  #veil .loadmark{width:56px;height:56px;border-radius:4px;object-fit:cover;
+    border:1px solid var(--line);margin-bottom:4px;flex:0 0 auto}
+
+  #trail{position:fixed;inset:0;z-index:15;pointer-events:none}
+
+  /* crisis flash */
+  #crisis{position:fixed;inset:0;z-index:16;pointer-events:none;opacity:0;
+    box-shadow:inset 0 0 140px 30px rgba(226,69,74,.55);transition:opacity .35s}
+  #crisis.on{opacity:1}
+
+  #veil{position:fixed;inset:0;z-index:40;display:flex;flex-direction:column;
+    justify-content:flex-start;padding:28px;gap:14px;transition:opacity .5s;overflow-y:auto;
+    background:
+      linear-gradient(180deg,rgba(12,4,6,.82),rgba(5,7,10,.94)),
+      url("art/key-art-x.jpg") center 40% / cover no-repeat,
+      var(--bg)}
+  #veil.gone{opacity:0;pointer-events:none}
+  #veil h1{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--red);font-weight:500}
+  #veil h2{font-size:26px;font-weight:600;color:#eef4f8;line-height:1.2;letter-spacing:-.01em}
+  #veil p{font-size:13px;line-height:1.6;color:var(--steel-dim);max-width:34em}
+  #veil .rule{height:1px;background:var(--line);margin:4px 0}
+  .kv{display:flex;gap:10px;font-size:11.5px;color:var(--steel-dim);line-height:1.7}
+  .kv b{color:var(--steel);font-weight:500;min-width:78px;letter-spacing:.1em;font-size:9.5px;
+    text-transform:uppercase;padding-top:3px}
+</style>
+</head>
+<body>
+
+<div id="stage"></div>
+<svg id="trail"><path id="trailPath" fill="none" stroke="#3fd0e8" stroke-width="2" stroke-linecap="round" opacity="0"/></svg>
+<div id="crisis"></div>
+
+<div id="rail">
+  <div class="railtop">
+    <div class="mod" id="modName">Module 02 · Trauma Surgery</div>
+    <div class="phase" id="phaseName">Pre-Op Study</div>
+  </div>
+  <div class="title" id="stepTitle">Tube Thoracostomy</div>
+
+  <div id="mon">
+    <canvas id="trace"></canvas>
+    <div class="vitals">
+      <div class="v" id="vHR"><span>HR</span><b>128</b></div>
+      <div class="v" id="vBP"><span>NIBP</span><b>84/52</b></div>
+      <div class="v" id="vO2"><span>SpO₂</span><b>88</b></div>
+    </div>
+  </div>
+
+  <div id="coh">
+    <div class="cohrow"><span>Coherence Monitor</span><span><span id="scoreVal" style="color:var(--amber);margin-right:12px">0 pts</span><span id="cohVal">50</span></span></div>
+    <div class="bar"><i id="cohBar"></i><div class="ticks"><span></span><span></span><span></span><span></span><span></span></div></div>
+  </div>
+</div>
+
+<a id="hub" href="index.html">Residency</a>
+<button id="vr" class="hide">Enter VR</button>
+
+<div id="label"><b></b><i></i></div>
+
+<div id="console">
+  <div class="card">
+    <div class="who" id="who">AI Attending</div>
+    <div id="say"></div>
+    <div id="gesture"></div>
+    <div id="choices"></div>
+    <div id="askwrap">
+      <input id="askin" type="text" autocomplete="off" autocapitalize="none"
+             placeholder="Ask the attending anything…">
+      <button id="asksend">Ask</button>
+    </div>
+    <div id="answer"></div>
+    <div class="btnrow" id="btnrow"></div>
+  </div>
+</div>
+
+<div id="ret"><i></i></div>
+
+<div id="veil">
+  <img class="loadmark" src="art/hero-surgical-table.jpg" width="56" height="56" alt="AI Surgeon field">
+  <h1>Simons Medical Innovations · AI Surgeon</h1>
+  <h2>Module 02 — Trauma<br>Tube Thoracostomy</h2>
+  <div class="rule"></div>
+  <p>Twenty-three year old restrained driver, high-speed frontal impact. Awake, agitated, air hunger.
+  Absent breath sounds on the right, hyperresonant to percussion, trachea beginning to shift left.
+  Radial pulse thready. He has been in your bay for ninety seconds.</p>
+  <p>Nobody is going to hand you a chest film. This one is a clinical diagnosis and the clock is
+  already running.</p>
+  <div class="rule"></div>
+  <div class="kv"><b>Acuity</b><span>×2.0 — trauma, unstable. Every point you earn and every point you lose is doubled.</span></div>
+  <div class="kv"><b>Patient loss</b><span>Enabled in this module. If he arrests and you cannot get him back, the case is void.</span></div>
+  <div class="kv"><b>Sequence</b><span>Study one → See one → Do one → Teach one. No instruments until the study cards are done.</span></div>
+  <div class="rule"></div>
+  <div class="kv"><b>Who are you</b><span>The module scales to this. Answer honestly; there is no advantage in claiming more.</span></div>
+  <div id="profs"></div>
+  <div class="rule"></div>
+  <div class="btnrow">
+    <button class="btn ghost" id="sensors">Use my phone's sensors</button>
+    <button class="btn ghost" id="strap">Pair a heart rate strap</button>
+  </div>
+  <div id="sensorline">Optional. Motion and heart rate estimate load so the case can hold or push.
+    Nothing is recorded and nothing leaves this device — only the band is kept for debrief.</div>
+  <div class="rule"></div>
+  <button class="btn" id="start">Take the Trauma Bay</button>
+</div>
+
+<script src="vendor/three.min.js"></script>
+<script src="ai-surgeon-systems.js"></script>
+<script src="trauma_physiology.js"></script>
+<script>
+/* ==========================================================================
+   AI SURGEON — Module 02 · Trauma Surgery
+   Tube thoracostomy for tension pneumothorax with haemothorax.
+   Simons Medical Innovations, LLC
+   Approach: safe triangle, 5th intercostal space, mid-axillary line,
+   blunt dissection over the superior border of the rib below.
+   ========================================================================== */
+
+/* ----------------------------- ANATOMY MODEL ----------------------------- */
+const LAYERS = [
+  { id:'skin', name:'Skin — safe triangle', depth:0, color:0xc99a83,
+    note:'Fifth intercostal space, at or just anterior to the mid-axillary line. The safe triangle is bounded by the lateral border of pectoralis major, the anterior border of latissimus dorsi, and a horizontal line at the level of the nipple, with its apex in the axilla.' },
+  { id:'subcut', name:'Subcutaneous fat', depth:1, color:0xe3c88f,
+    note:'Deeper and less forgiving than it looks on a thin patient. Chest wall thickness here is the reason a standard angiocath sometimes never reaches the pleura.' },
+  { id:'serratus', name:'Serratus anterior', depth:2, color:0xb85c5c,
+    note:'Digitations arising from the upper ribs. You are working at its posterior edge, in front of latissimus dorsi. Spread it; do not cut across it.' },
+  { id:'intercostal', name:'Intercostal muscles', depth:3, color:0xa54f4f,
+    note:'External, internal and innermost. You cross them at the superior border of the rib below — never at the inferior border of the rib above, where the bundle runs.' },
+  { id:'endo', name:'Endothoracic fascia', depth:4, color:0xd8c9a8,
+    note:'Thin areolar layer between the innermost intercostal muscle and the parietal pleura.' },
+  { id:'pleura', name:'Parietal pleura', depth:5, color:0xe6e2d4,
+    note:'The last barrier. Puncture it with the tip of a closed clamp under control, then open the clamp. Under tension, air leaves before you finish the motion.' }
+];
+
+const STRUCTS = [
+  { id:'ribLower', name:'Sixth rib — superior border', color:0xe8e2d0,
+    note:'Your working surface. Walk the clamp up and over the top of this rib. The space above it is safe; the space below the rib above it is not.' },
+  { id:'ribUpper', name:'Fifth rib — inferior border', color:0xe8e2d0,
+    note:'The subcostal groove on the underside of this rib carries the neurovascular bundle. This is the surface you stay away from.' },
+  { id:'van', name:'Intercostal neurovascular bundle', color:0xb0242a,
+    note:'Vein, artery, nerve — VAN, from superior to inferior — running in the subcostal groove at the inferior margin of each rib. Tear the artery here and you have created a second problem inside the first one.' },
+  { id:'lung', name:'Right lung — collapsed', color:0xcf9a94,
+    note:'Collapsed away from the chest wall under positive pleural pressure. Once you break the seal it will begin to re-expand. Sweep with your finger before any tube goes in to be certain nothing is stuck to the wall.' },
+  { id:'blood', name:'Haemothorax', color:0x7d1a20,
+    note:'Blood in the pleural space, most likely from an intercostal or internal mammary vessel or from the lung itself. Volume and rate of output are what decide whether this man also needs a thoracotomy.' },
+  { id:'diaphragm', name:'Right hemidiaphragm', color:0xc07f76,
+    note:'On full expiration it can rise to the fourth or fifth intercostal space. Go lower than the fifth space and you are in liver, not lung.' },
+  { id:'tube', name:'Chest tube — 28 French', color:0x2f4550,
+    note:'Directed posteriorly and apically. Every drainage hole, including the sentinel hole, must sit inside the pleural space.' }
+];
+
+/* ---------------------- PRE-OP: ANATOMY & PHYSIOLOGY ---------------------- */
+const BRIEF = [
+  { title:'What a tension pneumothorax is actually doing',
+    body:'Air enters the pleural space through a one-way flap and cannot get out. Pleural pressure rises above atmospheric. The lung on that side collapses, and then the mediastinum is pushed toward the other side. The lethal part is not the collapsed lung — it is what the shift does to the great veins. The superior and inferior vena cava kink and are compressed, venous return falls, preload falls, and cardiac output follows it down. This is obstructive shock. That is why a young man with one good lung and a saturation of eighty-eight is still about to die.',
+    q:'In tension pneumothorax, what kills the patient first?',
+    opts:[
+      {t:'Loss of venous return from mediastinal shift and caval compression — obstructive shock.',ok:true},
+      {t:'Hypoxaemia from the collapsed lung, which the other lung cannot compensate for.',ok:false},
+      {t:'Direct compression of the myocardium by intrapleural air.',ok:false}
+    ]},
+  { title:'Why you do not wait for the film',
+    body:'Tension pneumothorax is a clinical diagnosis. Respiratory distress, absent breath sounds, hyperresonance, hypotension. Tracheal deviation and distended neck veins are taught as classic and are both unreliable — deviation is late, and the neck veins will be flat if the patient has also bled. A patient who is unstable with these findings gets decompressed at the bedside. Sending him to radiology to confirm what you already know is how these patients die in the lift.',
+    q:'Hypotensive trauma patient, absent breath sounds on the right, hyperresonant, flat neck veins because he is also hypovolaemic. What now?',
+    opts:[
+      {t:'Decompress immediately — flat neck veins do not rule it out in a patient who has bled.',ok:true},
+      {t:'Portable chest radiograph first, since flat neck veins argue against tension.',ok:false},
+      {t:'Fluid resuscitate to restore the neck veins, then reassess before decompressing.',ok:false}
+    ]},
+  { title:'The safe triangle and the bundle',
+    body:'The safe triangle is bounded by the lateral border of pectoralis major in front, the anterior border of latissimus dorsi behind, and a horizontal line at about the level of the nipple below, with its apex in the axilla. In practice that puts you in the fourth or fifth intercostal space. Inside each intercostal space, the neurovascular bundle — vein, artery, then nerve from top to bottom — sits in the subcostal groove on the underside of the rib above. So you pass over the top of the lower rib. Note that the bundle is best protected under the rib posteriorly and becomes more exposed as you move laterally and anteriorly, and collateral branches run near the lower rib as well; over-the-top is the safest line, not an absolute guarantee.',
+    q:'Why do you dissect over the superior border of the rib below rather than the inferior border of the rib above?',
+    opts:[
+      {t:'The neurovascular bundle runs in the subcostal groove at the inferior margin of the rib above.',ok:true},
+      {t:'The superior border of the lower rib is thinner and easier to cut through.',ok:false},
+      {t:'The pleura is only adherent to the rib above, so entry there causes lung injury.',ok:false}
+    ]},
+  { title:'Needle, finger, tube',
+    body:'Needle decompression buys minutes. It does not treat anything. Adult chest wall thickness at the second intercostal space in the mid-clavicular line frequently exceeds the length of a standard cannula, which is why current teaching favours the fourth or fifth space in the anterior axillary line in adults — thinner wall, higher success. Once the needle works, the patient still has a pneumothorax and now also has a catheter that will kink or block. The definitive answer is a tube. In a patient being hand-ventilated or already intubated, finger thoracostomy alone is a legitimate step and is often faster than a needle.',
+    q:'Your needle decompression works — a rush of air, the pressure comes up. What must happen next?',
+    opts:[
+      {t:'A definitive tube thoracostomy — the needle is temporising only and will fail.',ok:true},
+      {t:'Nothing further if the vitals normalise; the cannula can be left to drain.',ok:false},
+      {t:'A chest radiograph, and a tube only if a residual pneumothorax is seen.',ok:false}
+    ]}
+];
+
+/* ------------------------------- PROCEDURE ------------------------------- */
+const STEPS = [
+  { id:'needle', target:'skin', gesture:'hold', opensTo:null, instr:'Fourteen-gauge cannula, three and a quarter inch',
+    say:'He will not survive a full prep. Fifth space, anterior axillary line, over the top of the rib. <em>Identify the site, then press and hold to advance.</em>',
+    demo:'Straight in, perpendicular, over the rib below. Listen for the hiss. That sound is you buying four minutes and nothing more.',
+    relief:0.55,
+    teach:'Your junior asks why current teaching moved needle decompression from the second space mid-clavicular to the fifth space anterior axillary in adults.',
+    opts:[
+      {t:'Chest wall thickness at the second space often exceeds the cannula length, so the needle never reaches pleura.',ok:true},
+      {t:'The internal mammary artery runs through the second intercostal space mid-clavicular line.',ok:false},
+      {t:'The second space is outside the safe triangle and risks brachial plexus injury.',ok:false}
+    ]},
+
+  { id:'landmark', target:'skin', gesture:'tap', opensTo:null, instr:'One percent lidocaine with epinephrine',
+    say:'Now do it properly. Arm abducted above his head. Find the triangle: pec major in front, lat dorsi behind, nipple line below. <em>Identify the site and infiltrate.</em>',
+    demo:'Infiltrate skin, then track down onto the periosteum of the rib below and over its superior border. The periosteum and the parietal pleura are what actually hurt.',
+    teach:'Where does local anaesthetic matter most in this procedure, and why?',
+    opts:[
+      {t:'The rib periosteum and the parietal pleura — both are somatically innervated and exquisitely sensitive.',ok:true},
+      {t:'The skin only — the deeper layers have no somatic innervation.',ok:false},
+      {t:'The visceral pleura, which is the most pain-sensitive surface in the chest.',ok:false}
+    ]},
+
+  { id:'incise', target:'skin', gesture:'swipe', opensTo:0, instr:'Scalpel, ten blade',
+    say:'Transverse incision, two to three centimetres, over the rib below your target space. <em>Swipe along the skin.</em>',
+    demo:'Cut over the rib itself, not over the space. The rib is your backstop — the blade cannot fall into the chest.',
+    teach:'Why is the skin incision placed directly over a rib rather than over the intercostal space?',
+    opts:[
+      {t:'The rib acts as a backstop so the blade cannot enter the pleural space uncontrolled.',ok:true},
+      {t:'Incising over the space would divide the neurovascular bundle immediately.',ok:false},
+      {t:'It creates a straight tract, which is required for the tube to sit apically.',ok:false}
+    ]},
+
+  { id:'dissect', target:'subcut', gesture:'spread', opensTo:2, instr:'Kelly clamp',
+    say:'Blunt dissection through fat and onto the chest wall. <em>Two fingers — spread.</em> No blade past the skin.',
+    demo:'Open the clamp, withdraw it open, reinsert closed. Repeat. You are making a tract wide enough for your finger.',
+    teach:'After the skin, the entire tract is made bluntly. What is the argument for that?',
+    opts:[
+      {t:'Blunt dissection separates tissue planes without dividing vessels, and lets you feel the rib before you cross it.',ok:true},
+      {t:'It is faster than sharp dissection, which matters in an unstable patient.',ok:false},
+      {t:'Sharp dissection would violate the endothoracic fascia, which must stay intact.',ok:false}
+    ]},
+
+  { id:'overrib', target:'ribLower', gesture:'spread', opensTo:3, instr:'Kelly clamp',
+    say:'Walk the clamp down onto the rib and then up and over its top edge. <em>Spread over the superior border.</em> Stay off the underside of the rib above.',
+    demo:'Feel bone, then feel the edge, then feel it give. Everything you need is in your fingertips here, not your eyes.',
+    teach:'You tear an intercostal artery. What has that just changed about this patient?',
+    opts:[
+      {t:'He now has an ongoing arterial bleed into the pleural space that may itself require thoracotomy.',ok:true},
+      {t:'Very little — intercostal arteries are small and reliably tamponade against the rib.',ok:false},
+      {t:'He will develop an air leak, since the artery runs with the bronchial supply.',ok:false}
+    ]},
+
+  { id:'enter', target:'pleura', gesture:'pinch', opensTo:5, instr:'Kelly clamp',
+    say:'Parietal pleura. Tip of the closed clamp, controlled push, then open it. <em>Pinch to puncture.</em> Expect the air before you see it.',
+    demo:'A short, deliberate, controlled puncture. The hand that pushes is braced against the chest wall so it cannot travel.',
+    relief:1.0,
+    teach:'Why is the clamp hand braced against the chest wall on entry?',
+    opts:[
+      {t:'It limits the depth of travel so the clamp stops at the pleura instead of entering lung.',ok:true},
+      {t:'It steadies the patient against the force of the puncture.',ok:false},
+      {t:'It maintains the sterile field by anchoring the glove.',ok:false}
+    ]},
+
+  { id:'sweep', target:'lung', gesture:'hold', instr:'Your finger — no instrument',
+    say:'Finger in. Sweep three hundred and sixty degrees. <em>Press and hold to sweep.</em> You are confirming pleural space, feeling for adhesions, and making sure that is lung and not liver.',
+    demo:'Feel lung slide under the pad of your finger. Feel the diaphragm below. Feel for anything tethered to the wall — a tube pushed into an adhesion tears lung.',
+    teach:'The finger sweep is the single step most often skipped when the patient is crashing. What does skipping it cost you?',
+    opts:[
+      {t:'You lose the only check for adhesions and for abdominal contents in the chest before a rigid tube goes in.',ok:true},
+      {t:'Nothing clinically — it is a legacy step from before ultrasound was available.',ok:false},
+      {t:'It only confirms the space is not obliterated; the tube would find its own way regardless.',ok:false}
+    ]},
+
+  { id:'insert', target:'lung', gesture:'swipe', instr:'Twenty-eight French chest tube',
+    say:'Tube along your finger, clamp on the tip to steer. Aim posteriorly and apically. <em>Swipe to advance.</em>',
+    demo:'Posterior and apical drains both air and blood in a supine patient. Advance until every hole is in, then a few centimetres more.',
+    teach:'Why posterior and apical rather than simply as far in as it will go?',
+    opts:[
+      {t:'In a supine patient, posterior and apical placement drains both the dependent blood and the apical air.',ok:true},
+      {t:'It avoids the pulmonary hilum, which sits anteriorly.',ok:false},
+      {t:'Apical placement is required to keep the sentinel hole outside the chest wall.',ok:false}
+    ]},
+
+  { id:'secure', target:'tube', gesture:'hold', instr:'Oh-silk on a cutting needle',
+    say:'Anchor it. A tube that migrates two centimetres brings its sentinel hole outside the chest and gives you a sucking wound of your own making. <em>Press and hold to suture.</em>',
+    demo:'Heavy anchoring stitch, then wrap the tails around the tube. No purse-string — it necroses the skin and scars badly.',
+    teach:'What happens if the most proximal drainage hole ends up outside the parietal pleura?',
+    opts:[
+      {t:'Air is entrained from outside into the pleural space and subcutaneous emphysema develops — the drain now causes the problem.',ok:true},
+      {t:'Nothing, provided the distal holes remain inside the pleural space.',ok:false},
+      {t:'The underwater seal stops swinging, which is the only consequence.',ok:false}
+    ]},
+
+  { id:'confirm', target:'tube', gesture:'tap', instr:'Underwater seal drainage system',
+    say:'Connect and confirm. <em>Tap the tube to check your three signs.</em> Then tell me what the drain output means.',
+    demo:'Fogging on the tube, a column that swings with respiration, and drainage. Then the film — to check position, not to make the diagnosis.',
+    teach:'Fifteen hundred millilitres drains immediately, then two hundred millilitres an hour for three hours. What does that mean?',
+    opts:[
+      {t:'That crosses the classic thresholds for operative exploration — he needs a thoracotomy, not another tube.',ok:true},
+      {t:'It is expected after decompression of a large haemothorax; continue to observe.',ok:false},
+      {t:'It indicates the tube is in the fissure and should be repositioned.',ok:false}
+    ]}
+];
+
+const TRAY = ['Scalpel, ten blade','Kelly clamp','Mayo scissors','Fourteen-gauge cannula, three and a quarter inch',
+  'One percent lidocaine with epinephrine','Twenty-eight French chest tube','Oh-silk on a cutting needle',
+  'Underwater seal drainage system','Your finger — no instrument','Yankauer suction','Rib spreader',
+  'Metzenbaum scissors','Needle driver','Trocar','Babcock clamp'];
+
+/* ---------------------------- COHERENCE ENGINE --------------------------- */
+const Coh = {
+  v:50, hintLevel:1, _clockMul:1,
+  hit(quality){ this.v += (quality - 0.45) * 16; this.v = Math.max(4, Math.min(100, this.v)); this.apply(); },
+  slow(seconds){ if(seconds > 12) this.v -= 4; this.v = Math.max(4, this.v); this.apply(); },
+  apply(){
+    this.hintLevel = this.v > 72 ? 0 : this.v > 40 ? 1 : 2;
+    this._clockMul = 1;
+    if (window.AISS){
+      const t = AISS.tuning(this.v);
+      this.hintLevel = Math.max(this.hintLevel, t.hintFloor);
+      this._clockMul = t.clockRate;
+      this.adaptNote = t.note;
+    }
+    const bar = document.getElementById('cohBar');
+    bar.style.width = this.v + '%';
+    bar.style.background = this.v > 72 ? 'var(--green)' : this.v > 34 ? 'var(--cyan)' : 'var(--amber)';
+    document.getElementById('cohVal').textContent = Math.round(this.v);
+  },
+  band(){ return this.v > 72 ? 'advanced' : this.v > 34 ? 'steady' : 'supported'; },
+  /* High coherence makes the patient deteriorate faster. Load can hold that clock. */
+  clockRate(){
+    const base = this.v > 72 ? 1.45 : this.v > 40 ? 1.0 : 0.62;
+    return base * (this._clockMul || 1);
+  }
+};
+
+/* -------------------------------- SCORING -------------------------------- */
+const CASE = { name:'Vasquez, D. — 23y, blunt chest trauma', acuity:2.0, acuityLabel:'Trauma · unstable' };
+const Score = {
+  pts:0, errors:0, log:[],
+  add(n, why){
+    const p = window.AISS ? AISS.Profile.current : { expect:1, reward:1 };
+    const scale = n < 0 ? p.expect : p.reward;
+    const v = Math.round(n * CASE.acuity * scale);
+    this.pts += v; this.log.push({v, why});
+    if(v < 0) this.errors++;
+    this.paint(v);
+  },
+  paint(delta){
+    const e = document.getElementById('scoreVal');
+    e.textContent = this.pts + ' pts';
+    if(delta){
+      e.style.color = delta > 0 ? 'var(--green)' : 'var(--red)';
+      setTimeout(()=>e.style.color = 'var(--amber)', 700);
+    }
+  }
+};
+const PTS = { brief:10, briefMiss:-4, see:5, doStep:25, doMiss:-8, wrongInstrument:-6, teach:40, teachMiss:-12, ask:-2 };
+
+/* ------------------------- PHYSIOLOGY / THE MONITOR ----------------------- */
+/* The patient is a differential equation with a bad attitude. */
+const Vitals = {
+  hr:128, sbp:84, dbp:52, spo2:88,
+  relief:0,            // 0 = full tension, 1 = fully decompressed
+  live:false,          // is the clock running
+  arrested:false,
+  timeCritical:0,
+
+  targets(){ return TraumaPhys.targets(this.relief); },
+
+  update(dt){
+    if(!this.live || this.arrested) return;
+    const next = TraumaPhys.step(this, dt, Coh.clockRate());
+    this.hr = next.hr; this.sbp = next.sbp; this.dbp = next.dbp; this.spo2 = next.spo2;
+    this.relief = next.relief; this.timeCritical = next.timeCritical;
+    if (window.AISS) AISS.Handover.assess(TraumaPhys.severity(this), this.timeCritical);
+    if (next.critical){
+      document.getElementById('crisis').classList.add('on');
+      Gas.crisisNag();
+    } else {
+      document.getElementById('crisis').classList.remove('on');
+    }
+    if (next.arrest && !this.arrested) Game.arrest();
+    this.paint();
+  },
+
+  give(amount){ this.relief = TraumaPhys.give(this.relief, amount); },
+
+  paint(){
+    const hr = Math.round(this.hr), sbp = Math.round(this.sbp), dbp = Math.round(this.dbp), o2 = Math.round(this.spo2);
+    document.querySelector('#vHR b').textContent = hr;
+    document.querySelector('#vBP b').textContent = sbp + '/' + dbp;
+    document.querySelector('#vO2 b').textContent = o2;
+    document.querySelector('#vHR b').style.color = hr > 140 ? 'var(--red)' : hr > 115 ? 'var(--amber)' : 'var(--green)';
+    document.querySelector('#vBP b').style.color = sbp < 70 ? 'var(--red)' : sbp < 95 ? 'var(--amber)' : 'var(--green)';
+    document.querySelector('#vO2 b').style.color = o2 < 85 ? 'var(--red)' : o2 < 93 ? 'var(--amber)' : 'var(--green)';
+  }
+};
+
+/* ------------------------- ANAESTHESIA — THE VOICE ------------------------ */
+/* Real role: he is your second set of eyes on the physiology.
+   Real tradition: when it goes wrong, it was anaesthesia's fault.            */
+const Gas = {
+  lastNag:0,
+  blame:[
+    'For the record, that was not us.',
+    'Everything is fine at my end of the drape.',
+    'Whatever just happened, my chart says he was stable.',
+    'I want it noted that the pressure was fine before you touched him.',
+    'Not anaesthesia. Writing that down.',
+    'He was perfect until about four seconds ago.'
+  ],
+  say(line){
+    el('who').textContent = 'Anaesthesia';
+    el('who').classList.add('gas');
+    el('say').innerHTML = line;
+  },
+  restore(text){
+    el('who').classList.remove('gas');
+    el('who').textContent = text || 'AI Attending — you have the field';
+  },
+  /* Called on any error. The gag, plus a real physiology callout. */
+  onError(){
+    const line = this.blame[Math.floor(Math.random()*this.blame.length)];
+    el('gesture').innerHTML += ' <span style="color:#8f7bbd">Anaesthesia: "' + line + '"</span>';
+  },
+  crisisNag(){
+    const t = performance.now();
+    if(t - this.lastNag < 9000) return;
+    this.lastNag = t;
+    const sbp = Math.round(Vitals.sbp), o2 = Math.round(Vitals.spo2);
+    const lines = [
+      'Pressure is ' + sbp + ' systolic and I am losing him. Whatever you are doing, do it now.',
+      'Sat is ' + o2 + '. I am bagging against a wall of resistance — that is your side of the drape, not mine.',
+      'I have no preload to work with. Nothing I push is going to fix a mechanical problem.',
+      'He is ' + sbp + ' over nothing. I can give you fluid or I can give you time. Not both.'
+    ];
+    const l = lines[Math.floor(Math.random()*lines.length)];
+    const prev = el('gesture').innerHTML;
+    el('gesture').innerHTML = '<span style="color:#8f7bbd">Anaesthesia: "' + l + '"</span>';
+    setTimeout(()=>{ if(el('gesture').innerHTML.indexOf('Anaesthesia') === 0 || el('gesture').textContent.startsWith('Anaesthesia')) el('gesture').innerHTML = prev; }, 4200);
+  }
+};
+
+/* ------------------------------ ECG CANVAS ------------------------------- */
+const Trace = (()=>{
+  let c, x, w, h, buf = [], phase = 0, respPhase = 0;
+  function init(){
+    c = document.getElementById('trace');
+    x = c.getContext('2d');
+    resize();
+  }
+  function resize(){
+    if(!c) return;
+    const r = c.getBoundingClientRect();
+    const dpr = Math.min(devicePixelRatio||1, 2);
+    w = Math.max(80, Math.floor(r.width)); h = Math.max(30, Math.floor(r.height));
+    c.width = w*dpr; c.height = h*dpr;
+    if(x){ x.setTransform(dpr,0,0,dpr,0,0); }
+    buf = new Array(w).fill(0);
+  }
+  /* A crude but readable QRS: P, sharp R, T. */
+  function beat(p){
+    if(p < 0.10) return 0.10*Math.sin(p/0.10*Math.PI);            // P
+    if(p < 0.16) return 0;
+    if(p < 0.19) return -0.14;                                     // Q
+    if(p < 0.23) return 1.0;                                       // R
+    if(p < 0.27) return -0.30;                                     // S
+    if(p < 0.42) return 0;
+    if(p < 0.60) return 0.22*Math.sin((p-0.42)/0.18*Math.PI);      // T
+    return 0;
+  }
+  function draw(dt){
+    if(!x) return;
+    const bps = Vitals.hr/60;
+    phase += dt*bps;
+    if(phase > 1) phase -= 1;
+    respPhase += dt*0.35;
+    // amplitude falls with perfusion — a visible tell that he is dying
+    const amp = 0.35 + 0.55*Math.min(1, Math.max(0,(Vitals.sbp-45)/70));
+    const jitter = Vitals.sbp < 70 ? (Math.random()-0.5)*0.06 : 0;
+    buf.push(beat(phase)*amp + jitter + Math.sin(respPhase)*0.03);
+    while(buf.length > w) buf.shift();
+
+    x.clearRect(0,0,w,h);
+    x.fillStyle = '#060a0e'; x.fillRect(0,0,w,h);
+    // baseline grid
+    x.strokeStyle = 'rgba(255,255,255,.04)'; x.lineWidth = 1;
+    for(let i=0;i<w;i+=22){ x.beginPath(); x.moveTo(i,0); x.lineTo(i,h); x.stroke(); }
+    const mid = h*0.55;
+    const crit = Vitals.sbp < 70 || Vitals.spo2 < 85;
+    x.strokeStyle = Vitals.arrested ? '#e2454a' : crit ? '#e0a63c' : '#4bd08a';
+    x.lineWidth = 1.4; x.beginPath();
+    for(let i=0;i<buf.length;i++){
+      const y = Vitals.arrested ? mid + (Math.random()-0.5)*2 : mid - buf[i]*h*0.40;
+      i ? x.lineTo(i,y) : x.moveTo(i,y);
+    }
+    x.stroke();
+    // sweep head
+    x.fillStyle = x.strokeStyle;
+    const lastY = Vitals.arrested ? mid : mid - buf[buf.length-1]*h*0.40;
+    x.beginPath(); x.arc(buf.length-1, lastY, 1.8, 0, 7); x.fill();
+  }
+  return { init, resize, draw };
+})();
+
+/* ------------------------------- 3D SCENE -------------------------------- */
+let renderer, scene, camera, camGroup, raycaster, pickables = [], controllers = [];
+let fieldGroup, deepGroup, lungMesh, tubeMesh, bloodMesh;
+const clock = new THREE.Clock();
+
+function initScene(){
+  renderer = new THREE.WebGLRenderer({antialias:true, alpha:false});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.xr.enabled = true;
+  document.getElementById('stage').appendChild(renderer.domElement);
+
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x05070a);
+  scene.fog = new THREE.Fog(0x05070a, 3.2, 8);
+
+  camera = new THREE.PerspectiveCamera(52, innerWidth/innerHeight, 0.05, 60);
+  camGroup = new THREE.Group();
+  camGroup.add(camera);
+  camGroup.position.set(0, 1.55, 1.5);
+  scene.add(camGroup);
+  camera.lookAt(0, 1.0, 0);
+
+  const key = new THREE.SpotLight(0xffffff, 1.6, 12, 0.60, 0.55, 1.2);
+  key.position.set(0.5, 3.4, 1.0); key.target.position.set(0,1,0);
+  scene.add(key, key.target);
+  scene.add(new THREE.HemisphereLight(0x22303c, 0x05070a, 0.55));
+  const rim = new THREE.DirectionalLight(0x3fd0e8, 0.32);
+  rim.position.set(-2, 1.6, -1.6); scene.add(rim);
+
+  buildTable();
+  buildDeep();     // ribs, bundle, lung, diaphragm — built first, sits under
+  buildField();    // chest wall layers stacked on top
+
+  raycaster = new THREE.Raycaster();
+  setupXRControllers();
+  window.addEventListener('resize', onResize);
+  renderer.setAnimationLoop(tick);
+}
+
+function buildTable(){
+  const t = new THREE.Mesh(new THREE.BoxGeometry(2.4, 0.07, 1.1),
+    new THREE.MeshStandardMaterial({color:0x0f1720, roughness:.85, metalness:.3}));
+  t.position.set(0, 0.94, 0); scene.add(t);
+  const drape = new THREE.Mesh(new THREE.BoxGeometry(2.2, 0.012, 0.98),
+    new THREE.MeshStandardMaterial({color:0x1d4a52, roughness:.95}));
+  drape.position.set(0, 0.985, 0); scene.add(drape);
+  const grid = new THREE.GridHelper(6, 24, 0x14202a, 0x0c141c);
+  grid.position.y = 0.001; scene.add(grid);
+}
+
+function mk(group, geo, colorHex, id, extra){
+  const s = STRUCTS.find(x=>x.id===id);
+  const m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial(Object.assign({
+    color:colorHex, roughness:.45, metalness:.03
+  }, extra||{})));
+  m.userData = {kind:'struct', id:id, name:s?s.name:id, note:s?s.note:''};
+  group.add(m); pickables.push(m);
+  return m;
+}
+
+/* Ribs run across the field; the bundle hugs the underside of the upper rib. */
+function buildDeep(){
+  deepGroup = new THREE.Group();
+  deepGroup.position.set(0, 0.90, 0.02);
+  scene.add(deepGroup);
+
+  const ribGeo = () => new THREE.CylinderGeometry(0.030, 0.030, 0.86, 14);
+  const upper = mk(deepGroup, ribGeo(), 0xe8e2d0, 'ribUpper');
+  upper.rotation.z = Math.PI/2; upper.rotation.y = 0.07;
+  upper.position.set(0, 0.052, -0.10);
+
+  const lower = mk(deepGroup, ribGeo(), 0xe8e2d0, 'ribLower');
+  lower.rotation.z = Math.PI/2; lower.rotation.y = 0.07;
+  lower.position.set(0, 0.052, 0.075);
+
+  // neurovascular bundle in the subcostal groove of the upper rib
+  const van = mk(deepGroup, new THREE.CylinderGeometry(0.011, 0.011, 0.84, 10), 0xb0242a, 'van');
+  van.rotation.z = Math.PI/2; van.rotation.y = 0.07;
+  van.position.set(0, 0.026, -0.088);
+
+  // collapsed lung — scales up as relief arrives
+  lungMesh = mk(deepGroup, new THREE.SphereGeometry(0.16, 30, 22), 0xcf9a94, 'lung');
+  lungMesh.scale.set(1.35, 0.42, 0.85);
+  lungMesh.position.set(-0.02, -0.055, -0.02);
+
+  // haemothorax pooled dependently
+  bloodMesh = mk(deepGroup, new THREE.SphereGeometry(0.20, 24, 12, 0, Math.PI*2, Math.PI*0.55, Math.PI*0.45), 0x7d1a20, 'blood',
+    {roughness:.28, metalness:.12});
+  bloodMesh.position.set(0, -0.115, 0.03);
+  bloodMesh.scale.set(1.1, 0.9, 0.8);
+
+  const dia = mk(deepGroup, new THREE.CylinderGeometry(0.30, 0.30, 0.02, 26), 0xc07f76, 'diaphragm');
+  dia.position.set(0, -0.155, 0.02);
+
+  // the tube, hidden until placed
+  const curve = new THREE.CatmullRomCurve3([
+    new THREE.Vector3( 0.30, 0.22, 0.34),
+    new THREE.Vector3( 0.16, 0.10, 0.16),
+    new THREE.Vector3( 0.02, 0.03,-0.02),
+    new THREE.Vector3(-0.14, 0.02,-0.16)
+  ]);
+  tubeMesh = mk(deepGroup, new THREE.TubeGeometry(curve, 40, 0.016, 10, false), 0x2f4550, 'tube',
+    {roughness:.25, metalness:.15, transparent:true, opacity:0.92});
+  tubeMesh.visible = false;
+}
+
+/* Chest wall, superficial to deep, sitting over the ribs. */
+function buildField(){
+  fieldGroup = new THREE.Group();
+  fieldGroup.position.set(0, 0.99, 0.02);
+  scene.add(fieldGroup);
+  LAYERS.forEach((L, i) => {
+    const w = 0.66 - i*0.048, h = 0.44 - i*0.034;
+    const m = new THREE.Mesh(new THREE.BoxGeometry(w, 0.014, h),
+      new THREE.MeshStandardMaterial({color:L.color, roughness:.72, metalness:.02}));
+    m.position.y = 0.012 - i*0.014;
+    m.userData = {kind:'layer', id:L.id, index:i, name:L.name, note:L.note};
+    fieldGroup.add(m); pickables.push(m);
+  });
+}
+
+function openLayer(index){
+  const m = fieldGroup.children[index];
+  if(!m || m.userData.opened) return;
+  m.userData.opening = true; m.userData.opened = true;
+}
+function openThrough(index){ for(let i=0;i<=index;i++) openLayer(i); }
+
+function resetField(){
+  fieldGroup.children.forEach(m=>{
+    m.userData.opening = false; m.userData.opened = false;
+    m.rotation.x = 0; m.position.z = 0;
+    m.material.opacity = 1; m.material.transparent = false;
+  });
+  tubeMesh.visible = false;
+  lungMesh.scale.set(1.35, 0.42, 0.85);
+}
+
+function pickTargets(){ return pickables.filter(p => p.visible && p.parent.visible && !p.userData.opened); }
+
+function highlight(id){
+  pickables.forEach(p => {
+    const on = p.userData.id === id;
+    p.material.emissive = new THREE.Color(on ? 0x1a5f6c : 0x000000);
+    p.material.emissiveIntensity = on ? 1 : 0;
+  });
+}
+
+function onResize(){
+  camera.aspect = innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+  const t = document.getElementById('trail');
+  t.setAttribute('viewBox', `0 0 ${innerWidth} ${innerHeight}`);
+  t.setAttribute('width', innerWidth); t.setAttribute('height', innerHeight);
+  Trace.resize();
+}
+
+function tick(){
+  const dt = Math.min(clock.getDelta(), 0.05), t = clock.elapsedTime;
+
+  fieldGroup.children.forEach(m => {
+    if(m.userData.opening){
+      m.rotation.x = Math.min(m.rotation.x + dt*1.7, Math.PI*0.42);
+      m.position.z = Math.min(m.position.z + dt*0.11, 0.17);
+      m.material.transparent = true;
+      m.material.opacity = Math.max(0.14, m.material.opacity - dt*0.6);
+    }
+  });
+
+  // Lung re-expands with relief. This is the whole visual payoff of the module.
+  const r = Vitals.relief;
+  const sx = 1.35 - 0.19*r, sy = 0.42 + 0.50*r, sz = 0.85 + 0.22*r;
+  lungMesh.scale.lerp(new THREE.Vector3(sx, sy, sz), Math.min(1, dt*2.4));
+  // and it starts to move with respiration once it is inflating
+  if(r > 0.15) lungMesh.position.y = -0.055 + Math.sin(t*1.5)*0.006*r;
+  const drained = tubeMesh.visible ? 1 : 0;
+  bloodMesh.scale.y += ((0.9 - 0.85*drained) - bloodMesh.scale.y) * Math.min(1, dt*1.1);
+  bloodMesh.visible = bloodMesh.scale.y > 0.08;
+
+  Vitals.update(dt);
+  Trace.draw(dt);
+
+  if(window.AISS){
+    AISS.Gaze.update(dt, THREE, camera, raycaster, pickTargets());
+    const rEl = el('ret');
+    if(rEl) rEl.classList.toggle('on', !!AISS.Gaze.lookingAt);
+  }
+
+  if(!renderer.xr.isPresenting){
+    camGroup.position.x = Math.sin(t*0.16)*0.22;
+    camera.lookAt(0, 1.0, 0.02);
+  }
+  renderer.render(scene, camera);
+}
+
+/* ------------------------------ WEBXR SETUP ------------------------------ */
+function setupXRControllers(){
+  for(let i=0;i<2;i++){
+    const c = renderer.xr.getController(i);
+    c.addEventListener('selectstart', ()=>{ c.userData.pressT = performance.now(); });
+    c.addEventListener('selectend', ()=>{ xrAct(c, performance.now() - (c.userData.pressT||0)); });
+    const ray = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0), new THREE.Vector3(0,0,-1.4)]),
+      new THREE.LineBasicMaterial({color:0x3fd0e8}));
+    c.add(ray); camGroup.add(c); controllers.push(c);
+  }
+  if(navigator.xr){
+    navigator.xr.isSessionSupported('immersive-vr').then(ok=>{
+      if(ok) document.getElementById('vr').classList.remove('hide');
+    }).catch(()=>{});
+  }
+}
+document.getElementById('vr').onclick = async () => {
+  if(renderer.xr.isPresenting){ renderer.xr.getSession().end(); return; }
+  try{
+    const s = await navigator.xr.requestSession('immersive-vr', {optionalFeatures:['local-floor','bounded-floor','hand-tracking']});
+    await renderer.xr.setSession(s);
+    document.getElementById('vr').textContent = 'Exit VR';
+    s.addEventListener('end', ()=>{ document.getElementById('vr').textContent = 'Enter VR'; });
+  }catch(e){ el('gesture').textContent = 'VR session unavailable on this device.'; }
+};
+function xrAct(controller, heldMs){
+  const tmp = new THREE.Matrix4().identity().extractRotation(controller.matrixWorld);
+  raycaster.ray.origin.setFromMatrixPosition(controller.matrixWorld);
+  raycaster.ray.direction.set(0,0,-1).applyMatrix4(tmp);
+  const hits = raycaster.intersectObjects(pickTargets(), false);
+  if(!hits.length) return;
+  const u = hits[0].object.userData;
+  if(heldMs < 420) identify(u);
+  else Game.gestureDone(heldMs > 900 ? 'hold' : 'swipe', u.id);
+}
+
+/* --------------------------- TOUCH GESTURE INPUT -------------------------- */
+const Touch = (()=>{
+  let pts = new Map(), startT = 0, path = [], startDist = 0, holdTimer = null, moved = false;
+  const svgPath = () => document.getElementById('trailPath');
+  function begin(e){
+    for(const t of e.changedTouches||[e]) pts.set(t.identifier ?? 'm', {x:t.clientX,y:t.clientY,x0:t.clientX,y0:t.clientY});
+    if(pts.size === 1){
+      startT = performance.now(); moved = false; path = [];
+      const p = [...pts.values()][0]; path.push([p.x,p.y]);
+      holdTimer = setTimeout(()=>{ if(!moved){ fire('hold', p.x, p.y); pts.clear(); } }, 620);
+    }
+    if(pts.size === 2){
+      clearTimeout(holdTimer);
+      const [a,b] = [...pts.values()];
+      startDist = Math.hypot(a.x-b.x, a.y-b.y);
+    }
+  }
+  function move(e){
+    for(const t of e.changedTouches||[e]){
+      const p = pts.get(t.identifier ?? 'm'); if(!p) continue;
+      p.x = t.clientX; p.y = t.clientY;
+    }
+    if(pts.size === 1){
+      const p = [...pts.values()][0];
+      if(Math.hypot(p.x-p.x0, p.y-p.y0) > 14) moved = true;
+      path.push([p.x,p.y]);
+      if(path.length > 1){
+        svgPath().setAttribute('d', 'M' + path.map(q=>q.join(' ')).join(' L'));
+        svgPath().setAttribute('opacity','0.9');
+      }
+    }
+  }
+  function end(e){
+    clearTimeout(holdTimer);
+    const had = pts.size, first = [...pts.values()][0];
+    if(had === 2){
+      const [a,b] = [...pts.values()];
+      const d = Math.hypot(a.x-b.x, a.y-b.y);
+      fire(d > startDist*1.16 ? 'spread' : d < startDist*0.86 ? 'pinch' : 'tap', a.x, a.y);
+    } else if(had === 1 && first){
+      const dt = performance.now() - startT;
+      const dist = Math.hypot(first.x-first.x0, first.y-first.y0);
+      fire(dist > 46 ? 'swipe' : 'tap', first.x, first.y);
+    }
+    pts.clear();
+    svgPath().setAttribute('opacity','0');
+    setTimeout(()=>svgPath().setAttribute('d',''), 220);
+  }
+  function fire(kind, x, y){
+    const u = pickAt(x, y);
+    if(kind === 'tap'){
+      if(u) identify(u);
+      if(Game.awaiting === 'gesture' && Game.step() && Game.step().gesture === 'tap') Game.gestureDone('tap', u?u.id:null);
+      return;
+    }
+    Game.gestureDone(kind, u ? u.id : null);
+  }
+  function pickAt(x,y){
+    const nd = new THREE.Vector2((x/innerWidth)*2-1, -(y/innerHeight)*2+1);
+    raycaster.setFromCamera(nd, camera);
+    const hits = raycaster.intersectObjects(pickTargets(), false);
+    return hits.length ? hits[0].object.userData : null;
+  }
+  return { attach(el){
+    el.addEventListener('touchstart', e=>{e.preventDefault();begin(e)}, {passive:false});
+    el.addEventListener('touchmove',  e=>{e.preventDefault();move(e)},  {passive:false});
+    el.addEventListener('touchend',   e=>{e.preventDefault();end(e)},   {passive:false});
+    const syn = e => ({changedTouches:null, clientX:e.clientX, clientY:e.clientY, identifier:'m'});
+    let down=false;
+    el.addEventListener('mousedown', e=>{down=true;  begin(syn(e))});
+    el.addEventListener('mousemove', e=>{if(down)    move(syn(e))});
+    el.addEventListener('mouseup',   e=>{down=false; end(syn(e))});
+  }};
+})();
+
+/* ------------------------------ IDENTIFY --------------------------------- */
+const el = id => document.getElementById(id);
+let lastIdentified = null;
+function identify(u){
+  lastIdentified = u.id;
+  highlight(u.id);
+  const L = el('label');
+  L.querySelector('b').textContent = u.name;
+  L.querySelector('i').textContent = Coh.hintLevel === 0 ? '' : u.note;
+  L.classList.add('on');
+  clearTimeout(identify._t);
+  identify._t = setTimeout(()=>L.classList.remove('on'), 5200);
+  Game.identified(u.id);
+}
+
+const GESTURE_TEXT = {
+  swipe:'Swipe across the structure',
+  spread:'Two fingers — spread apart',
+  pinch:'Two fingers — pinch together',
+  hold:'Press and hold',
+  tap:'Tap the structure'
+};
+
+function askContext(){
+  const s = Game.step();
+  const u = lastIdentified ? Game.lookup(lastIdentified) : null;
+  return {
+    lastStructure: u ? { name:u.name, note:u.note } : null,
+    stepSay: s ? s.say : null,
+    stepDemo: s ? s.demo : null,
+    instrument: s ? s.instr : null,
+    consequence: 'You lose points, and in this module you can lose the patient.'
+  };
+}
+function doAsk(){
+  if (!window.AISS) return;
+  const q = el('askin').value.trim();
+  if (!q) return;
+  const a = AISS.Ask.answer(q, askContext());
+  Score.add(PTS.ask, 'asked a question');
+  Coh.hit(0.6);
+  el('answer').innerHTML = a.text;
+  el('answer').classList.add('on');
+  el('askin').value = '';
+  el('askin').blur();
+}
+function showAsk(on){
+  const wrap = el('askwrap');
+  if (!wrap) return;
+  wrap.classList.toggle('on', !!on);
+  if (!on){ el('answer').classList.remove('on'); el('answer').innerHTML=''; }
+}
+
+/* ------------------------------ GAME LOOP -------------------------------- */
+const Game = {
+  phase:'brief', i:0, awaiting:null, stepStart:0, over:false,
+
+  begin(){ this.phase='brief'; this.i=0; Coh.apply(); Score.paint(); this.render(); },
+  step(){ return this.phase==='brief' ? null : STEPS[this.i]; },
+
+  renderBrief(){
+    const b = BRIEF[this.i];
+    el('phaseName').textContent = 'Pre-Op Study';
+    el('stepTitle').textContent = CASE.name;
+    Gas.restore('Anatomy & physiology — ' + (this.i+1) + ' of ' + BRIEF.length);
+    el('who').textContent = 'Anatomy & physiology — ' + (this.i+1) + ' of ' + BRIEF.length;
+    el('say').innerHTML = '<strong style="color:#eef4f8">'+b.title+'</strong><br><br>'+b.body;
+    el('gesture').innerHTML=''; el('choices').innerHTML=''; el('btnrow').innerHTML='';
+    this.stepStart = performance.now();
+    const go = document.createElement('button');
+    go.className='btn'; go.textContent='I have read this';
+    go.onclick = () => {
+      el('say').innerHTML = b.q; el('btnrow').innerHTML='';
+      this.awaiting = 'answer';
+      b.opts.slice().sort(()=>Math.random()-0.5).forEach(o=>{
+        const c = document.createElement('button');
+        c.className='ch'; c.textContent=o.t;
+        c.onclick = ()=>this.answerBrief(c, o, b);
+        el('choices').appendChild(c);
+      });
+    };
+    el('btnrow').appendChild(go);
+  },
+
+  answerBrief(btn, o, b){
+    if(this.awaiting !== 'answer') return;
+    this.awaiting = null;
+    [...el('choices').children].forEach(c=>c.style.pointerEvents='none');
+    if (window.AISS){
+      AISS.Stress.response((performance.now()-this.stepStart)/1000);
+      AISS.Progress.mark('anatomy', !!o.ok);
+    }
+    if(o.ok){ btn.classList.add('right'); Coh.hit(0.9); Score.add(PTS.brief,'pre-op study'); }
+    else {
+      btn.classList.add('wrong'); Coh.hit(0.15); Score.add(PTS.briefMiss,'pre-op study missed');
+      [...el('choices').children].forEach(c=>{ if(b.opts.find(x=>x.t===c.textContent && x.ok)) c.classList.add('right'); });
+    }
+    setTimeout(()=>this.next(), o.ok ? 800 : 2800);
+  },
+
+  render(){
+    if(this.over) return;
+    if(this.phase === 'brief'){ this.renderBrief(); return; }
+    const s = this.step();
+    el('phaseName').textContent = {see:'See One', do:'Do One', teach:'Teach One'}[this.phase];
+    el('stepTitle').textContent = 'Tube Thoracostomy — step ' + (this.i+1) + ' of ' + STEPS.length;
+    el('choices').innerHTML=''; el('btnrow').innerHTML='';
+    this.stepStart = performance.now();
+
+    if(this.phase === 'see'){
+      Gas.restore('AI Attending — demonstrating');
+      el('say').innerHTML = s.say.replace(/<em>.*?<\/em>/,'');
+      el('gesture').innerHTML = Coh.hintLevel === 2 ? s.demo : '';
+      const b = document.createElement('button');
+      b.className='btn'; b.textContent='Advance';
+      b.onclick = ()=>{ Score.add(PTS.see,'observed'); this.autoDemo(s); };
+      el('btnrow').appendChild(b);
+      const t = document.createElement('button');
+      t.className='btn ghost'; t.textContent='Identify first';
+      t.onclick = ()=>{ const u=this.lookup(s.target); if(u) identify(u); };
+      el('btnrow').appendChild(t);
+    }
+
+    if(this.phase === 'do'){
+      Gas.restore('AI Attending — you have the field');
+      el('say').innerHTML = s.say;
+      this.awaiting = 'identify';
+      el('gesture').innerHTML = 'Tap the structure to identify it';
+      showAsk(true);
+      const h = document.createElement('button');
+      h.className = 'btn ghost'; h.textContent = 'Hand it over';
+      h.onclick = ()=>this.offerHandover();
+      el('btnrow').appendChild(h);
+    } else { showAsk(this.phase === 'teach'); }
+
+    if(this.phase === 'teach'){
+      Gas.restore('You — teaching a junior');
+      el('who').textContent = 'You — teaching a junior';
+      el('say').innerHTML = s.teach;
+      el('gesture').innerHTML = '';
+      this.awaiting = 'answer';
+      s.opts.slice().sort(()=>Math.random()-0.5).forEach(o=>{
+        const b=document.createElement('button');
+        b.className='ch'; b.textContent=o.t;
+        b.onclick = ()=>this.answer(b,o);
+        el('choices').appendChild(b);
+      });
+    }
+    highlight(s.target);
+  },
+
+  lookup(id){ const p = pickables.find(x=>x.userData.id===id); return p ? p.userData : null; },
+
+  perform(s){
+    if(s.opensTo !== null && s.opensTo !== undefined) openThrough(s.opensTo);
+    if(s.id === 'insert'){ tubeMesh.visible = true; }
+    if(s.relief) Vitals.give(s.relief);
+  },
+
+  autoDemo(s){
+    const u = this.lookup(s.target);
+    if(u) identify(u);
+    this.perform(s);
+    setTimeout(()=>this.next(), 900);
+  },
+
+  identified(id){
+    if(this.phase!=='do' || this.awaiting!=='identify') return;
+    const s = this.step();
+    const right = id === s.target;
+    if (window.AISS){
+      AISS.Progress.mark('anatomy', right);
+      AISS.Stress.response((performance.now()-this.stepStart)/1000);
+    }
+    if(right){ Coh.hit(0.75); this.callScrub(s); }
+    else {
+      Coh.hit(0.1); Score.add(PTS.doMiss,'wrong structure');
+      el('gesture').innerHTML = 'Not that structure. Look again.';
+      Gas.onError();
+    }
+  },
+
+  callScrub(s){
+    this.awaiting = 'instrument';
+    el('who').textContent = 'Scrub tech — waiting on you';
+    el('who').classList.remove('gas');
+    el('gesture').innerHTML = 'Structure confirmed. <span class="g">Call for your instrument.</span>';
+    const n = window.AISS ? AISS.Profile.current.distractors : (Coh.hintLevel===0 ? 4 : 2);
+    const take = (name, btn) => {
+      if(this.awaiting !== 'instrument') return;
+      if (window.AISS) AISS.Progress.mark('instrument', name === s.instr);
+      if(name === s.instr){
+        if (btn) btn.classList.add('right');
+        Coh.hit(0.85);
+        if (window.AISS) AISS.Haptic.ok();
+        this.awaiting = 'gesture';
+        Gas.restore('AI Attending — you have the field');
+        setTimeout(()=>{
+          el('choices').innerHTML='';
+          el('gesture').innerHTML = name + '. <span class="g">' + GESTURE_TEXT[s.gesture] + '</span>';
+        }, 420);
+      } else {
+        if (btn) btn.classList.add('wrong');
+        Coh.hit(0.2);
+        Score.add(PTS.wrongInstrument,'wrong instrument');
+        el('gesture').innerHTML = 'That is not what this step needs. Ask again.';
+        Gas.onError();
+        if (window.AISS){
+          const line = AISS.Humor.line('wrong-instrument', {
+            unstable: Vitals.sbp < 70 || Vitals.spo2 < 85, harmed: Vitals.arrested, behind: Coh.v < 34
+          });
+          if (line) el('gesture').innerHTML += ' <span style="color:var(--steel-dim)">' + line.s + '</span>';
+        }
+      }
+    };
+    const wrong = TRAY.filter(t=>t!==s.instr).sort(()=>Math.random()-0.5).slice(0, n);
+    [s.instr, ...wrong].sort(()=>Math.random()-0.5).forEach(name=>{
+      const b = document.createElement('button');
+      b.className='ch'; b.textContent = '"' + name + '."';
+      b.onclick = ()=>take(name, b);
+      el('choices').appendChild(b);
+    });
+    if (window.AISS && AISS.Voice.supported){
+      const v = document.createElement('button');
+      v.className = 'btn ghost'; v.textContent = 'Say it out loud';
+      v.onclick = ()=>{
+        v.textContent = 'Listening…';
+        const ok = AISS.Voice.listen(said=>{
+          v.textContent = 'Say it out loud';
+          const m = AISS.Voice.match(said, TRAY);
+          if(!m){ el('gesture').innerHTML = 'The scrub did not catch that. Say the instrument, or tap it.'; return; }
+          take(m, [...el('choices').children].find(c=>c.textContent.indexOf(m) >= 0));
+        });
+        if(!ok) v.textContent = 'Say it out loud';
+      };
+      el('btnrow').appendChild(v);
+    }
+  },
+
+  gestureDone(kind, hitId){
+    if(this.over) return;
+    if(this.phase!=='do' || this.awaiting!=='gesture') return;
+    const s = this.step();
+    const rightGesture = kind === s.gesture;
+    const rightPlace = hitId === s.target;
+    const secs = (performance.now()-this.stepStart)/1000;
+    if (window.AISS){
+      AISS.Progress.mark('technique', rightGesture && rightPlace && hitId !== 'van' && hitId !== 'ribUpper');
+      AISS.Stress.response(secs);
+    }
+
+    // The one that actually hurts: crossing at the wrong border.
+    if(hitId === 'van' || hitId === 'ribUpper'){
+      Coh.hit(0.02); Score.add(PTS.doMiss*2, 'intercostal bundle injured');
+      Vitals.sbp -= 9;
+      el('gesture').innerHTML = '<span style="color:var(--red)">You crossed under the rib above. That is the bundle. He is now bleeding from an intercostal artery.</span>';
+      Gas.onError();
+      return;
+    }
+
+    if(rightGesture && rightPlace){
+      Coh.hit(secs < 6 ? 0.95 : 0.7); Coh.slow(secs);
+      this.perform(s);
+      Score.add(PTS.doStep, s.id);
+      el('gesture').innerHTML = '<span class="g">Done.</span>';
+      el('choices').innerHTML='';
+      this.awaiting = null;
+      if(s.id === 'needle') setTimeout(()=>{ Gas.say('There is your hiss. Pressure is coming up. That will not hold and you know it — get me a tube.'); }, 500);
+      if(s.id === 'enter')  setTimeout(()=>{ Gas.say('That is the whole chest emptying. Look at the pressure. Fine, that one was you.'); }, 500);
+      setTimeout(()=>this.next(), 1500);
+    } else if(!rightGesture){
+      Coh.hit(0.25); Score.add(PTS.doMiss,'wrong maneuver');
+      el('gesture').innerHTML = 'Wrong maneuver. <span class="g">' + GESTURE_TEXT[s.gesture] + '</span>';
+      Gas.onError();
+    } else {
+      Coh.hit(0.3); Score.add(PTS.doMiss,'right maneuver, wrong place');
+      el('gesture').innerHTML = 'Right maneuver, wrong place.';
+      Gas.onError();
+    }
+  },
+
+  answer(btn, o){
+    if(this.awaiting !== 'answer') return;
+    this.awaiting = null;
+    const secs = (performance.now()-this.stepStart)/1000;
+    if (window.AISS){
+      AISS.Progress.mark('teaching', !!o.ok);
+      AISS.Stress.response(secs);
+    }
+    [...el('choices').children].forEach(c=>c.style.pointerEvents='none');
+    if(o.ok){
+      btn.classList.add('right'); Coh.hit(secs<10?0.95:0.72); Coh.slow(secs);
+      Score.add(PTS.teach,'taught it correctly');
+    } else {
+      btn.classList.add('wrong');
+      [...el('choices').children].forEach(c=>{
+        if(this.step().opts.find(x=>x.t===c.textContent && x.ok)) c.classList.add('right');
+      });
+      Coh.hit(0.05); Score.add(PTS.teachMiss,'taught it wrong');
+    }
+    setTimeout(()=>this.next(), o.ok ? 900 : 2800);
+  },
+
+  next(){
+    if(this.over) return;
+    this.i++;
+    const len = this.phase === 'brief' ? BRIEF.length : STEPS.length;
+    if(this.i < len){ this.render(); return; }
+    this.i = 0;
+    if(this.phase === 'brief'){
+      this.phase = 'see';
+      this.interstitial('Pre-op study complete',
+        'You know what the air is doing to his venous return, why the film is irrelevant, and which border of which rib you are allowed to cross. <em>Now watch it done once.</em><br><br>The monitor is live from here. Study is ten points a card. Operating is twenty-five a step. Teaching is forty. Everything is doubled by acuity.',
+        ()=>{ Vitals.live = true; this.render(); });
+      return;
+    }
+    if(this.phase === 'see'){
+      this.phase = 'do';
+      resetField();
+      Object.assign(Vitals, TraumaPhys.resetForDoOne());
+      Vitals.live = false;
+      if (window.AISS) AISS.Handover.reset();
+      this.interstitial('See One complete',
+        'Reset. He is tensioning again and this time nobody is going to do it for you.<br><br>Find the structure. Call for the instrument by name. Perform the maneuver. If the pressure goes below sixty systolic and stays there, you are going to lose him. The handover button is on every Do One step — using it inside the window scores higher than staying and getting away with it.',
+        ()=>{ Vitals.live = true; this.render(); });
+      return;
+    }
+    if(this.phase === 'do'){
+      this.phase = 'teach'; Vitals.live = false;
+      document.getElementById('crisis').classList.remove('on');
+      if (window.AISS && !AISS.Handover.taken){
+        const r = AISS.Handover.pushedOn(true);
+        if (r.points) Score.add(r.points, 'stayed — ' + r.tag);
+        AISS.Progress.mark('safety', r.tag === 'inbounds' || r.tag === 'gambleWon');
+      }
+      this.interstitial('Do One complete',
+        'Tube is in, lung is up, he is off your table. Coherence band: <em>' + Coh.band() + '</em>.<br><br>Now the part that decides whether you are trusted with a junior.',
+        ()=>this.render());
+      return;
+    }
+    this.finish();
+  },
+
+  interstitial(title, body, then){
+    showAsk(false);
+    Gas.restore('AI Attending');
+    el('who').textContent = 'AI Attending';
+    el('say').innerHTML = '<strong style="color:#eef4f8">'+title+'</strong><br><br>'+body;
+    el('gesture').innerHTML=''; el('choices').innerHTML=''; el('btnrow').innerHTML='';
+    const b=document.createElement('button'); b.className='btn'; b.textContent='Continue';
+    b.onclick = then; el('btnrow').appendChild(b);
+  },
+
+  offerHandover(){
+    showAsk(false);
+    this.awaiting = 'handover';
+    el('who').textContent = 'AI Attending — standing by';
+    el('who').classList.remove('gas');
+    el('say').innerHTML = '<strong style="color:#eef4f8">You can stop.</strong><br><br>'
+      + 'You can hand this case over to me right now. There is no penalty hidden in that button. '
+      + 'Recognising the edge of what you can hold is worth more than getting away with staying past it — '
+      + 'including when you get away with it.';
+    el('choices').innerHTML=''; el('btnrow').innerHTML='';
+    const a = document.createElement('button');
+    a.className='btn'; a.textContent='Turn it over';
+    a.onclick = ()=>{
+      const r = AISS.Handover.handOver({ harmed: !!Vitals.arrested || this.over });
+      Score.add(r.points, 'handover — ' + r.tag);
+      AISS.Progress.mark('safety', r.tag === 'correct' || r.tag === 'early');
+      Vitals.live = false;
+      document.getElementById('crisis').classList.remove('on');
+      this.over = true;
+      this.interstitial('Handed over', r.line, ()=>this.finish());
+    };
+    const b = document.createElement('button');
+    b.className='btn ghost'; b.textContent='I have it';
+    b.onclick = ()=>{ this.awaiting=null; this.render(); };
+    el('btnrow').appendChild(a); el('btnrow').appendChild(b);
+  },
+
+  arrest(){
+    if(this.over) return;
+    this.over = true; Vitals.arrested = true; Vitals.live = false;
+    let extra = '';
+    if (window.AISS && !AISS.Handover.taken){
+      const r = AISS.Handover.pushedOn(false);
+      Score.add(r.points, 'stayed past the envelope');
+      AISS.Progress.mark('safety', false);
+      extra = '<br><br>' + r.line;
+    }
+    el('phaseName').textContent = 'Case void';
+    el('who').textContent = 'AI Attending';
+    el('who').classList.remove('gas');
+    el('say').innerHTML = '<strong style="color:var(--red)">He arrested.</strong><br><br>' +
+      'You had a mechanical problem and you treated it slowly. Obstructive shock does not wait for you to find the right answer — it waits for you to relieve the pressure, and nothing else you do counts until you have.<br><br>' +
+      'Case void. No points carried. <span style="color:#8f7bbd">Anaesthesia would like it noted that his end-tidal was fine.</span>' + extra;
+    el('gesture').innerHTML = ''; el('choices').innerHTML='';
+    showAsk(false);
+    el('btnrow').innerHTML='';
+    const b=document.createElement('button'); b.className='btn'; b.textContent='Run it again';
+    b.onclick = ()=>location.reload(); el('btnrow').appendChild(b);
+  },
+
+  finish(){
+    showAsk(false);
+    const v = Math.round(Coh.v);
+    const bar = window.AISS ? AISS.Profile.current.clear : 72;
+    const harmFree = !Vitals.arrested && (!window.AISS || !AISS.Handover.summary() || AISS.Handover.summary().outcome !== 'gambleLost');
+    const L = window.AISS ? AISS.Progress.commit({ harmFree }) : { safeStreak:0, bestSafe:0 };
+    const verdict = v >= bar
+      ? 'Cleared at your level. The next trauma case up the ladder starts where this one left off.'
+      : v > bar - 25
+      ? 'Provisional. Repeat the Do One phase. Your anatomy holds up; your sequencing under pressure does not yet.'
+      : 'Not cleared. Go back to the intercostal anatomy and the physiology of obstructive shock, then repeat See One.';
+    el('phaseName').textContent = 'Debrief';
+    el('stepTitle').textContent = 'Tube Thoracostomy — complete';
+    el('who').textContent = 'AI Attending — debrief';
+    el('who').classList.remove('gas');
+    const blame = Score.errors > 0
+      ? '<br><br><span style="color:#8f7bbd">Anaesthesia has filed his note. It says the patient was haemodynamically stable throughout and that any instability coincided with surgical manipulation. It is a very good note.</span>'
+      : '<br><br><span style="color:#8f7bbd">Anaesthesia has nothing to say, which from him is a compliment.</span>';
+    const names = {}; pickables.forEach(p => names[p.userData.id] = p.userData.name);
+    const gazeIds = LAYERS.map(l=>l.id).concat(STRUCTS.map(o=>o.id));
+    el('say').innerHTML = '<strong style="color:#eef4f8">'+Score.pts+' points · '+Score.errors+' errors · coherence '+v+(window.AISS ? '/'+bar+' needed' : '')+'</strong>'
+      + '<br><span style="color:var(--steel-dim);font-size:11.5px">Case: '+CASE.name+' — '+CASE.acuityLabel+' (×'+CASE.acuity.toFixed(1)+')</span>'
+      + '<br><br>'+verdict
+      + (window.AISS ? '<div class="safety">Patient safety is the first number on this page. Harm-free streak: <b>'+(L.safeStreak||0)+'</b> (best '+(L.bestSafe||0)+'). Not speed, and not points.</div>'
+        + '<div style="margin-top:14px">' + AISS.Progress.table() + '</div>'
+        + '<div style="margin-top:14px">' + AISS.debrief({ gazeIds, names }) + '</div>' : '')
+      + blame;
+    el('gesture').innerHTML=''; el('choices').innerHTML='';
+    el('btnrow').innerHTML='';
+    const b=document.createElement('button'); b.className='btn'; b.textContent='Run it again';
+    b.onclick = ()=>location.reload(); el('btnrow').appendChild(b);
+  }
+};
+
+/* -------------------------------- BOOT ----------------------------------- */
+(function buildProfiles(){
+  const wrap = el('profs');
+  if (!wrap || !window.AISS) return;
+  AISS.Profile.restore();
+  AISS.Profile.all().forEach(p => {
+    const b = document.createElement('button');
+    b.className = 'prof' + (AISS.Profile.is(p.key) ? ' sel' : '');
+    b.innerHTML = '<b>' + p.label + '</b><span>' + p.blurb + '</span>';
+    b.onclick = () => {
+      AISS.Profile.set(p.key);
+      [...wrap.children].forEach(c=>c.classList.remove('sel'));
+      b.classList.add('sel');
+    };
+    wrap.appendChild(b);
+  });
+})();
+
+el('sensors').onclick = async () => {
+  const r = await AISS.Sensors.start();
+  el('sensorline').innerHTML = r.motion
+    ? 'Reading: ' + AISS.Sensors.available().join(', ') + '. Nothing is recorded and nothing leaves this device.'
+    : 'This browser did not grant motion access, so load is estimated from input timing instead.';
+  el('sensors').classList.add('hide');
+};
+el('strap').onclick = async () => {
+  if(!AISS.Stress.supported()){
+    el('sensorline').textContent = 'This browser has no Web Bluetooth, so a strap cannot be paired here.';
+    return;
+  }
+  try {
+    const name = await AISS.Stress.connect();
+    el('strap').textContent = name;
+    el('sensorline').innerHTML = 'Paired. Heart rate is compared against your own rolling baseline. The rate is not stored.';
+  } catch(e){
+    el('sensorline').textContent = 'No strap paired. Load will be estimated from how you move and answer instead.';
+  }
+};
+el('asksend').onclick = doAsk;
+el('askin').addEventListener('keydown', e => { if(e.key === 'Enter') doAsk(); });
+
+document.getElementById('start').onclick = () => {
+  document.getElementById('veil').classList.add('gone');
+  setTimeout(()=>{ document.getElementById('veil').style.display='none'; }, 520);
+  if (window.AISS){
+    AISS.Voice.init();
+    AISS.resetAll();
+    AISS.Progress.init('trauma-thoracostomy');
+    AISS.Ask.build({ layers:LAYERS, organs:STRUCTS, brief:BRIEF, steps:STEPS });
+  }
+  initScene();
+  Trace.init();
+  Touch.attach(renderer.domElement);
+  Vitals.paint();
+  Game.begin();
+};
+</script>
+</body>
+</html>

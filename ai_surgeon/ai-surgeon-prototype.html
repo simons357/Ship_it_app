@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#05070a">
+<title>AI Surgeon — Residency Module 01</title>
+<style>
+  :root{
+    --bg:#05070a; --panel:#0b1016; --panel2:#111922;
+    --steel:#c8d3dd; --steel-dim:#7d8996;
+    --cyan:#3fd0e8; --cyan-dim:#1d6f80;
+    --red:#e2454a; --amber:#e0a63c; --green:#4bd08a;
+    --line:#1c2731;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+  html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--steel);
+    font-family:ui-sans-serif,-apple-system,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+    font-size:14px;letter-spacing:.01em;overscroll-behavior:none}
+  #stage{position:fixed;inset:0}
+  canvas{display:block;touch-action:none}
+
+  /* ---------- top status rail ---------- */
+  #rail{position:fixed;top:0;left:0;right:0;padding:calc(env(safe-area-inset-top) + 8px) 12px 8px;
+    background:linear-gradient(180deg,rgba(5,7,10,.96),rgba(5,7,10,0));z-index:20;pointer-events:none}
+  .railtop{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .mod{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--steel-dim)}
+  .phase{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan)}
+  .title{font-size:15px;font-weight:600;color:#e8eff5;margin-top:2px}
+
+  /* coherence monitor */
+  #coh{margin-top:9px}
+  .cohrow{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--steel-dim);margin-bottom:4px}
+  .bar{height:3px;background:#131c25;border-radius:2px;overflow:hidden;position:relative}
+  .bar>i{display:block;height:100%;width:50%;background:var(--cyan);
+    transition:width .5s cubic-bezier(.2,.7,.3,1),background .5s}
+  .ticks{position:absolute;inset:0;display:flex;justify-content:space-between}
+  .ticks span{width:1px;background:rgba(255,255,255,.10)}
+
+  /* ---------- structure label ---------- */
+  #label{position:fixed;left:50%;transform:translateX(-50%) translateY(-6px);
+    top:calc(env(safe-area-inset-top) + 96px);z-index:22;
+    background:rgba(11,16,22,.92);border:1px solid var(--line);border-left:2px solid var(--cyan);
+    padding:7px 12px;border-radius:3px;max-width:82vw;opacity:0;transition:.22s;pointer-events:none}
+  #label.on{opacity:1;transform:translateX(-50%) translateY(0)}
+  #label b{display:block;font-size:12.5px;color:#e8eff5;letter-spacing:.02em}
+  #label i{display:block;font-style:normal;font-size:10.5px;color:var(--steel-dim);margin-top:3px;line-height:1.45}
+
+  /* ---------- bottom console ---------- */
+  #console{position:fixed;left:0;right:0;bottom:0;z-index:21;
+    padding:14px 12px calc(env(safe-area-inset-bottom) + 12px);
+    background:linear-gradient(0deg,rgba(5,7,10,.98) 62%,rgba(5,7,10,0));}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:12px}
+  .who{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan-dim);margin-bottom:6px;
+    display:flex;align-items:center;gap:6px}
+  .who::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--cyan);
+    box-shadow:0 0 7px var(--cyan);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.28}}
+  #say{font-size:13.5px;line-height:1.5;color:#dbe5ec;min-height:40px}
+  #say em{font-style:normal;color:var(--cyan)}
+  #gesture{margin-top:10px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--steel-dim);display:flex;align-items:center;gap:7px;min-height:13px}
+  #gesture span.g{color:var(--amber)}
+
+  /* choices */
+  #choices{display:grid;gap:7px;margin-top:11px}
+  .ch{background:var(--panel2);border:1px solid var(--line);color:#d6e1e9;
+    padding:11px 12px;border-radius:4px;font-size:12.5px;text-align:left;line-height:1.4;
+    font-family:inherit;cursor:pointer;transition:.15s}
+  .ch:active{background:#18232e}
+  .ch.right{border-color:var(--green);color:var(--green)}
+  .ch.wrong{border-color:var(--red);color:var(--red);opacity:.65}
+
+  .btnrow{display:flex;gap:8px;margin-top:11px}
+  .btn{flex:1;background:transparent;border:1px solid var(--cyan-dim);color:var(--cyan);
+    padding:11px;border-radius:4px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    font-family:inherit;cursor:pointer}
+  .btn:active{background:rgba(63,208,232,.10)}
+  .btn.ghost{border-color:var(--line);color:var(--steel-dim)}
+  .hide{display:none !important}
+
+  /* vr entry */
+  #vr{position:fixed;right:12px;top:calc(env(safe-area-inset-top) + 8px);z-index:25;
+    background:rgba(11,16,22,.9);border:1px solid var(--cyan-dim);color:var(--cyan);
+    padding:7px 10px;border-radius:3px;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+    font-family:inherit;cursor:pointer}
+
+  /* gesture trail */
+  #trail{position:fixed;inset:0;z-index:15;pointer-events:none}
+
+  /* ---------- gaze reticle ---------- */
+  #ret{position:fixed;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;z-index:16;
+    pointer-events:none;opacity:.30;transition:opacity .3s}
+  #ret.on{opacity:.85}
+  #ret::before,#ret::after{content:"";position:absolute;background:var(--cyan)}
+  #ret::before{left:50%;top:0;width:1px;height:100%;margin-left:-.5px}
+  #ret::after{top:50%;left:0;height:1px;width:100%;margin-top:-.5px}
+  #ret i{position:absolute;inset:7px;border:1px solid var(--cyan);border-radius:50%;
+    transform:scale(.6);transition:transform .25s}
+  #ret.on i{transform:scale(1)}
+
+  /* ---------- ask the attending ---------- */
+  #askwrap{margin-top:10px;display:none;gap:7px}
+  #askwrap.on{display:flex}
+  #askin{flex:1;background:var(--panel2);border:1px solid var(--line);border-radius:4px;
+    color:#d6e1e9;font-family:inherit;font-size:12.5px;padding:10px 11px;min-width:0}
+  #askin:focus{outline:none;border-color:var(--cyan-dim)}
+  #asksend{background:transparent;border:1px solid var(--cyan-dim);color:var(--cyan);border-radius:4px;
+    font-family:inherit;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;padding:0 13px;cursor:pointer}
+  #answer{margin-top:9px;font-size:12.5px;line-height:1.5;color:#cfdae3;
+    border-left:2px solid var(--cyan-dim);padding-left:10px;display:none}
+  #answer.on{display:block}
+  #answer strong{color:#eef4f8}
+  .gloss{color:var(--steel-dim);font-size:.86em}
+
+  /* decision forks */
+  .ch .why{display:block;margin-top:5px;font-size:11px;line-height:1.45;color:var(--steel-dim)}
+  .ch.locked{opacity:.4}
+
+  /* debrief blocks */
+  .dbrow,.pgrow{display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);
+    font-size:11.5px;line-height:1.5;align-items:baseline}
+  .dbrow b,.pgrow b{min-width:96px;font-size:9px;letter-spacing:.15em;text-transform:uppercase;
+    color:var(--steel);font-weight:500}
+  .dbrow span{color:var(--steel-dim);flex:1}
+  .pgrow b{min-width:132px;text-transform:none;letter-spacing:.02em;font-size:11.5px;color:#cfdae3}
+  .pgrow span{color:var(--amber);font-variant-numeric:tabular-nums;min-width:86px}
+  .pgrow span.life{color:var(--steel-dim);min-width:0;flex:1;text-align:right}
+  .pgfix{margin-top:10px;font-size:11.5px;line-height:1.55;color:var(--steel-dim);
+    border-left:2px solid var(--amber);padding-left:10px}
+  .pgfix b{color:#eef4f8;font-weight:500}
+  .safety{margin-top:10px;border:1px solid #3d1e20;border-left:2px solid var(--red);
+    border-radius:4px;padding:9px 11px;font-size:11.5px;line-height:1.5;color:#e8c6c7}
+
+  /* profile picker */
+  .prof{background:var(--panel);border:1px solid var(--line);border-left:2px solid #2a3742;
+    border-radius:4px;padding:10px 12px;text-align:left;font-family:inherit;cursor:pointer;
+    color:#d6e1e9;transition:.15s}
+  .prof.sel{border-left-color:var(--cyan);background:var(--panel2)}
+  .prof b{display:block;font-size:12.5px;font-weight:600;color:#e8eff5}
+  .prof span{display:block;font-size:11px;line-height:1.45;color:var(--steel-dim);margin-top:3px}
+  #profs{display:grid;gap:7px;margin:2px 0}
+  #sensorline{font-size:10.5px;line-height:1.5;color:#57626d}
+
+  #hub{position:fixed;left:12px;top:calc(env(safe-area-inset-top) + 8px);z-index:25;
+    background:rgba(11,16,22,.9);border:1px solid var(--line);color:var(--steel-dim);
+    padding:7px 10px;border-radius:3px;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+    font-family:inherit;text-decoration:none}
+
+  /* opening / closing screens — surgical-table still is the load / scrub-in field */
+  #veil{position:fixed;inset:0;z-index:40;display:flex;flex-direction:column;
+    justify-content:flex-start;padding:28px;gap:14px;transition:opacity .5s;
+    overflow-y:auto;
+    background:
+      linear-gradient(180deg,rgba(5,7,10,.78),rgba(5,7,10,.94)),
+      url("art/hero-surgical-table.jpg") center 38% / cover no-repeat,
+      var(--bg)}
+  #veil .loadmark{width:56px;height:56px;border-radius:4px;object-fit:cover;
+    border:1px solid var(--line);margin-bottom:4px}
+  #veil.gone{opacity:0;pointer-events:none}
+  #veil h1{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan);font-weight:500}
+  #veil h2{font-size:26px;font-weight:600;color:#eef4f8;line-height:1.2;letter-spacing:-.01em}
+  #veil p{font-size:13px;line-height:1.6;color:var(--steel-dim);max-width:34em}
+  #veil .rule{height:1px;background:var(--line);margin:4px 0}
+  .kv{display:flex;gap:10px;font-size:11.5px;color:var(--steel-dim);line-height:1.7}
+  .kv b{color:var(--steel);font-weight:500;min-width:74px;letter-spacing:.1em;font-size:9.5px;
+    text-transform:uppercase;padding-top:3px}
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<svg id="trail"><path id="trailPath" fill="none" stroke="#3fd0e8" stroke-width="2" stroke-linecap="round" opacity="0"/></svg>
+
+<div id="rail">
+  <div class="railtop">
+    <div class="mod" id="modName">Module 01 · General Surgery</div>
+    <div class="phase" id="phaseName">See One</div>
+  </div>
+  <div class="title" id="stepTitle">Open Appendectomy</div>
+  <div id="coh">
+    <div class="cohrow"><span>Coherence Monitor</span><span><span id="scoreVal" style="color:var(--amber);margin-right:12px">0 pts</span><span id="cohVal">50</span></span></div>
+    <div class="bar"><i id="cohBar"></i><div class="ticks"><span></span><span></span><span></span><span></span><span></span></div></div>
+  </div>
+</div>
+
+<a id="hub" href="index.html">Residency</a>
+<button id="vr" class="hide">Enter VR</button>
+
+<div id="label"><b></b><i></i></div>
+
+<div id="console">
+  <div class="card">
+    <div class="who" id="who">AI Attending</div>
+    <div id="say"></div>
+    <div id="gesture"></div>
+    <div id="choices"></div>
+    <div id="askwrap">
+      <input id="askin" type="text" autocomplete="off" autocapitalize="none"
+             placeholder="Ask the attending anything…">
+      <button id="asksend">Ask</button>
+    </div>
+    <div id="answer"></div>
+    <div class="btnrow" id="btnrow"></div>
+  </div>
+</div>
+
+<div id="ret"><i></i></div>
+
+<div id="veil">
+  <img class="loadmark" src="art/key-art-x.jpg" width="56" height="56" alt="AI Surgeon key art">
+  <h1>Simons Medical Innovations</h1>
+  <h2>AI Surgeon</h2>
+  <p>Study one. See one. Do one. Teach one. You do not get a scalpel until you can name what is under it — and you do not get an instrument until you ask the scrub for it by name.</p>
+  <div class="rule"></div>
+  <div class="kv"><b>Case</b><span>Ellis, M. — 19y, fourteen hours of right lower quadrant pain. Open appendectomy, McBurney gridiron approach. Seven layers, one artery, one base.</span></div>
+  <div class="kv"><b>Control</b><span>Tap a structure to identify it. Call for your instrument. Then perform the maneuver — swipe to incise, two-finger spread to split or retract, pinch to clamp, press-and-hold to ligate.</span></div>
+  <div class="kv"><b>Points</b><span>Study is worth ten. Operating alone is worth twenty-five a step. Teaching is worth forty. Errors cost you, and on a sicker patient they cost you more.</span></div>
+  <div class="kv"><b>Coherence</b><span>Accuracy and hesitation are tracked continuously. The module gets harder when you are ahead of it and quieter when you are behind.</span></div>
+  <div class="kv"><b>Safety</b><span>Patient safety outranks your score. Handing the case over when you are past what you can hold is the highest-scoring decision in this product — higher than staying and getting away with it.</span></div>
+  <div class="rule"></div>
+  <div class="kv"><b>Who are you</b><span>The module scales to this. Answer honestly; there is no advantage in claiming more.</span></div>
+  <div id="profs"></div>
+  <div class="rule"></div>
+  <div class="btnrow">
+    <button class="btn ghost" id="sensors">Use my phone's sensors</button>
+    <button class="btn ghost" id="strap">Pair a heart rate strap</button>
+  </div>
+  <div id="sensorline">Optional. Motion, orientation and heart rate are read to estimate how hard you
+    are working and adjust the case in both directions. Nothing is recorded and nothing leaves this
+    device — only the band, settled through overloaded, is kept for your debrief.</div>
+  <div class="btnrow">
+    <button class="btn" id="start">Scrub In</button>
+  </div>
+</div>
+
+<script src="vendor/three.min.js"></script>
+<script src="ai-surgeon-systems.js"></script>
+<script>
+/* ==========================================================================
+   AI SURGEON — phone-first prototype with optional WebXR
+   Simons Medical Innovations, LLC
+   Anatomy: open appendectomy, McBurney gridiron (muscle-splitting) approach.
+   ========================================================================== */
+
+/* ----------------------------- ANATOMY MODEL ----------------------------- */
+/* Layers are ordered superficial -> deep, exactly as encountered. */
+const LAYERS = [
+  { id:'skin',   name:'Skin', depth:0.00, thick:0.10, color:0xc99a83,
+    note:'Oblique incision at McBurney\'s point — junction of the lateral third and medial two-thirds of a line from the right ASIS to the umbilicus.' },
+  { id:'campers',name:'Camper\'s & Scarpa\'s fascia', depth:0.10, thick:0.16, color:0xe3c88f,
+    note:'Subcutaneous fat. Camper\'s is the fatty superficial layer, Scarpa\'s the deeper membranous layer.' },
+  { id:'eo',     name:'External oblique aponeurosis', depth:0.26, thick:0.09, color:0xe8e0cd,
+    note:'Fibers run inferomedially — hand-in-pocket direction. Split along the fibers, do not cut across them.' },
+  { id:'io',     name:'Internal oblique', depth:0.35, thick:0.13, color:0xb85c5c,
+    note:'Fibers cross the external oblique — close to right angles higher up, and increasingly oblique as you approach the inguinal region. Spread bluntly; this is the muscle-splitting step that spares the segmental nerves.' },
+  { id:'ta',     name:'Transversus abdominis', depth:0.48, thick:0.11, color:0xa54f4f,
+    note:'Deepest of the three flat muscles. Fibers run transversely. Split, never divide.' },
+  { id:'tf',     name:'Transversalis fascia & preperitoneal fat', depth:0.59, thick:0.08, color:0xd8c9a8,
+    note:'Thin fascial sheet with a variable fat layer just outside the peritoneum.' },
+  { id:'perit',  name:'Parietal peritoneum', depth:0.67, thick:0.05, color:0xe6e2d4,
+    note:'Tent it with two hemostats and confirm no bowel is caught between them before you open it.' }
+];
+
+const ORGANS = [
+  { id:'cecum',  name:'Cecum', color:0xc98a7a,
+    note:'The three taeniae coli converge on the base of the appendix. Follow the taenia libera down and it will take you there every time.' },
+  { id:'taenia', name:'Taenia libera', color:0xe0d7c0,
+    note:'The anterior longitudinal muscle band of the colon. Your roadmap to the appendiceal base.' },
+  { id:'app',    name:'Appendix', color:0xcf7f74,
+    note:'Vermiform appendix. Its base is fixed at the confluence of the taeniae; the tip is anywhere. Classic cadaveric series put retrocecal at ~65%, but modern operative and CT series suggest nearer 30-40%, with pelvic positions commoner than the old figure implies.' },
+  { id:'meso',   name:'Mesoappendix', color:0xd9a86f,
+    note:'Fold of mesentery carrying the appendicular artery. If it is not controlled, it retracts and bleeds where you cannot see it.' },
+  { id:'artery', name:'Appendicular artery', color:0xb0242a,
+    note:'Branch of the ileocolic artery, itself off the superior mesenteric. Functionally an end artery — an accessory branch from the posterior cecal artery exists in a minority, but do not count on it. Ligate deliberately.' },
+  { id:'ileum',  name:'Terminal ileum', color:0xd6a08c,
+    note:'Identify it and protect it. Along with the cecal serosa, it is what careless retraction tears in this approach.' }
+];
+
+/* ------------------------------ PROCEDURE -------------------------------- */
+/* Each step: what the attending says, what the resident must identify first,
+   the gesture required, and the question a teacher must be able to answer.   */
+const STEPS = [
+  { id:'incise', target:'skin', gesture:'swipe', instr:'Scalpel, ten blade',
+    say:'Find McBurney\'s point. Your incision runs oblique, perpendicular to the line from the anterior superior iliac spine to the umbilicus. <em>Identify the layer, then swipe along it.</em>',
+    demo:'Watch the line. Three to five centimetres, no more — the muscle split gives you the exposure, not the skin.',
+    teach:'Your junior asks why the classic McBurney incision is oblique rather than vertical. What do you tell them?',
+    opts:[
+      {t:'It lies parallel to the external oblique fibers, which is what makes the muscle split possible.',ok:true},
+      {t:'It follows Langer\'s lines — that is the Lanz incision, placed transversely for a finer scar.',ok:false},
+      {t:'It avoids the rectus sheath, which cannot be closed.',ok:false}
+    ]},
+
+  { id:'subcut', target:'campers', gesture:'swipe', instr:'Electrocautery',
+    say:'Through Camper\'s and Scarpa\'s. Small bleeders here — you are lateral, in superficial circumflex iliac territory. <em>Identify, then swipe.</em>',
+    demo:'Note the two-layer structure: fatty superficial, membranous deep.',
+    teach:'A subcutaneous bleeder at McBurney\'s point will not stop. Where does that vessel arise?',
+    opts:[
+      {t:'The femoral artery — superficial circumflex iliac laterally, superficial epigastric more medially.',ok:true},
+      {t:'The external iliac artery, via the inferior epigastric.',ok:false},
+      {t:'The ileocolic artery, via the appendicular branch.',ok:false}
+    ]},
+
+  { id:'eo', target:'eo', gesture:'swipe', instr:'Metzenbaum scissors',
+    say:'External oblique aponeurosis. Its fibers run inferomedially — hand-in-pocket. <em>Open it along the fibers.</em>',
+    demo:'Nick it, then extend along the fiber direction. Cutting across it costs you a closure you will regret.',
+    teach:'The aponeurosis is cut sharply — but always in line with its fibers. Why in line?',
+    opts:[
+      {t:'It preserves tensile strength and gives a closure that holds, lowering incisional hernia risk.',ok:true},
+      {t:'Cutting across it would divide the ilioinguinal nerve.',ok:false},
+      {t:'The aponeurosis has no blood supply and will necrose if cut transversely.',ok:false}
+    ]},
+
+  { id:'io', target:'io', gesture:'spread', instr:'Kelly clamp',
+    say:'Internal oblique. Its fibers cross the external oblique at right angles — that crossing is what makes this a gridiron incision. <em>Two fingers, spread bluntly.</em>',
+    demo:'No blade. Blunt spread with a clamp, then your fingers, along the fiber direction.',
+    teach:'The muscle-splitting technique protects a specific structure. Which?',
+    opts:[
+      {t:'The segmental nerves running between internal oblique and transversus abdominis.',ok:true},
+      {t:'The inferior epigastric vessels.',ok:false},
+      {t:'The spermatic cord.',ok:false}
+    ]},
+
+  { id:'ta', target:'ta', gesture:'spread', instr:'Richardson retractor',
+    say:'Transversus abdominis, fibers running transversely. <em>Same technique — spread, do not divide.</em>',
+    demo:'You are now through all three flat muscles without cutting a single one.',
+    teach:'Name the three flat muscles of the anterolateral abdominal wall, superficial to deep.',
+    opts:[
+      {t:'External oblique, internal oblique, transversus abdominis.',ok:true},
+      {t:'Transversus abdominis, external oblique, internal oblique.',ok:false},
+      {t:'Rectus abdominis, external oblique, transversus abdominis.',ok:false}
+    ]},
+
+  { id:'perit', target:'perit', gesture:'pinch', opens:[5,6], alias:['tf'], instr:'Two hemostats',
+    say:'Transversalis fascia, preperitoneal fat, then peritoneum. <em>Pinch to tent it with two hemostats.</em> Confirm no bowel between them before you open.',
+    demo:'Tent, palpate, release, re-grasp. Bowel caught in that grip is the classic entry injury.',
+    teach:'You tent the peritoneum and feel something slide between the clamps. What do you do?',
+    opts:[
+      {t:'Release both clamps, re-grasp, and confirm the fold is free before incising.',ok:true},
+      {t:'Incise quickly — the clamps will protect the bowel.',ok:false},
+      {t:'Cut between the clamps with cautery — the heat will seal any bowel that is caught.',ok:false}
+    ]},
+
+  { id:'deliver', target:'cecum', gesture:'tap', instr:'Babcock clamp',
+    say:'You are in the peritoneal cavity. Sweep for the cecum and deliver it into the wound. <em>Identify the cecum.</em>',
+    demo:'Follow the anterior taenia — taenia libera — distally. It converges on the appendiceal base.',
+    teach:'Your junior cannot find the appendix. What is the single most reliable landmark?',
+    opts:[
+      {t:'Follow the taeniae coli — all three converge on the appendiceal base.',ok:true},
+      {t:'Follow the terminal ileum to the ileocecal valve and the appendix is always just proximal.',ok:false},
+      {t:'The appendix always lies in the right paracolic gutter.',ok:false}
+    ]},
+
+  { id:'meso', target:'meso', gesture:'pinch', instr:'Kelly clamp',
+    say:'Mesoappendix, carrying the appendicular artery. <em>Pinch to clamp it.</em> Take it in bites you can control.',
+    demo:'Clamp, divide, ligate. The artery has no collateral — a slipped tie retracts out of your field.',
+    teach:'Trace the appendicular artery back to the aorta.',
+    opts:[
+      {t:'Appendicular → ileocolic → superior mesenteric → aorta.',ok:true},
+      {t:'Appendicular → right colic → inferior mesenteric → aorta.',ok:false},
+      {t:'Appendicular → ileocolic → inferior mesenteric → aorta.',ok:false}
+    ]},
+
+  { id:'ligate', target:'app', gesture:'hold', instr:'Two-oh silk tie',
+    say:'Base of the appendix, at the confluence of the taeniae. Crush the base, advance the clamp distally, and tie in the crushed groove. <em>Press and hold to ligate.</em>',
+    demo:'The crush creates a defined groove so the tie cannot slide off the stump. The clamp moves toward the tip, never toward the cecum.',
+    teach:'How long a stump do you leave, and why does it matter?',
+    opts:[
+      {t:'About three to five millimetres — long enough to hold a tie, short enough to avoid stump appendicitis later.',ok:true},
+      {t:'A long stump — it gives the tie more purchase and prevents cecal leak.',ok:false},
+      {t:'Flush with the cecum — any residual stump will become inflamed.',ok:false}
+    ]},
+
+  { id:'transect', target:'app', gesture:'swipe', instr:'Mayo scissors',
+    say:'Transect distal to your tie. <em>Swipe to divide.</em> Specimen off the field.',
+    demo:'Cut between the tie and the clamp. Cautery to the mucosa of the stump if you were taught that way.',
+    teach:'The specimen is off. What determines whether this was a therapeutic or a negative appendectomy?',
+    opts:[
+      {t:'Histopathology — gross appearance alone is unreliable in early appendicitis.',ok:true},
+      {t:'The white cell count at the time of the operation.',ok:false},
+      {t:'Whether the appendix was retrocecal.',ok:false}
+    ]},
+
+  { id:'close', target:'eo', gesture:'spread', closing:true, instr:'Needle driver, oh-Vicryl',
+    say:'Close in layers: peritoneum, then let the muscle split fall back together, then the external oblique aponeurosis, then skin. <em>Identify the strength layer and spread to approximate it.</em>',
+    demo:'The split muscles need no sutures — they reappose themselves. That is the point of the approach.',
+    teach:'Which layer carries the closure of a gridiron incision?',
+    opts:[
+      {t:'The external oblique aponeurosis — it is the strength layer.',ok:true},
+      {t:'The internal oblique, sutured to transversus abdominis.',ok:false},
+      {t:'The skin, closed under tension to reappose the deeper layers.',ok:false}
+    ]}
+];
+
+/* ---------------------- PRE-OP: ANATOMY & PHYSIOLOGY ---------------------- */
+/* You study before you scrub. No instruments until this is done. */
+const BRIEF = [
+  { title:'What the appendix is',
+    body:'A blind-ended tube, six to ten centimetres, arising from the posteromedial wall of the cecum roughly two centimetres below the ileocecal valve. Its wall is dense with lymphoid tissue — gut-associated lymphoid tissue, most abundant in adolescence and involuting with age. It is not vestigial in the way it is usually taught: current thinking is that it acts as a reservoir for commensal flora that can repopulate the colon after an enteric illness.',
+    q:'Where exactly does the appendix arise?',
+    opts:[
+      {t:'Posteromedial cecum, about two centimetres below the ileocecal valve, where the taeniae converge.',ok:true},
+      {t:'From the terminal ileum, just proximal to the ileocecal valve.',ok:false},
+      {t:'From the ascending colon, at the level of the hepatic flexure.',ok:false}
+    ]},
+  { title:'Why it becomes surgical',
+    body:'The lumen obstructs — a fecalith, lymphoid hyperplasia after a viral illness, rarely a tumour. Mucus keeps being secreted behind the obstruction, so pressure rises. Rising intraluminal pressure exceeds venous pressure first: the wall becomes congested, then ischaemic. Bacteria translocate through the compromised wall. Then gangrene, then perforation. That cascade is why appendicitis is a clock and not a wait-and-see.',
+    q:'Why does venous outflow fail before arterial inflow?',
+    opts:[
+      {t:'Venous pressure is lower, so rising luminal pressure occludes veins first — congestion precedes ischaemia.',ok:true},
+      {t:'The appendicular vein is an end vessel and the artery is not.',ok:false},
+      {t:'Arterial spasm from inflammatory mediators occurs before any venous change.',ok:false}
+    ]},
+  { title:'Why the pain moves',
+    body:'Early on, the appendix is distended but the parietal peritoneum is untouched. Visceral afferents from a midgut structure enter the cord at about T10, and the brain localises that poorly — the patient feels it around the umbilicus. As inflammation reaches the serosa and irritates the overlying parietal peritoneum, somatic afferents take over and the pain becomes sharp, localised, and exactly where you are going to cut.',
+    q:'A patient describes pain that started around the umbilicus and moved to the right lower quadrant. What happened?',
+    opts:[
+      {t:'Visceral T10 referred pain gave way to somatic pain once the parietal peritoneum became involved.',ok:true},
+      {t:'The appendix physically migrated from a pelvic to a retrocecal position.',ok:false},
+      {t:'The appendix perforated and the pain localised to the collection.',ok:false}
+    ]},
+  { title:'Whether to operate at all',
+    body:'This is genuinely contested and you should know that before someone asks you. Several randomised trials have shown that a substantial proportion of uncomplicated appendicitis without a fecalith can be treated with antibiotics alone, though a meaningful number of those patients come back and have surgery within a year. Complicated appendicitis — perforation, abscess, a fecalith — is a different question. The module is teaching you the operation. It is not claiming the operation is always the answer.',
+    q:'Your junior asks whether every appendicitis needs an operation. What is the honest answer?',
+    opts:[
+      {t:'No — uncomplicated cases can often be managed with antibiotics, with a real recurrence rate. Complicated disease is a different discussion.',ok:true},
+      {t:'Yes — non-operative management has been shown to be unsafe and is no longer used.',ok:false},
+      {t:'Yes — the appendix has no function, so removal carries no downside.',ok:false}
+    ]}
+];
+
+/* ------------------------------- THE TRAY -------------------------------- */
+/* You do not get an instrument. You call for it, by name, from the scrub. */
+const TRAY = ['Scalpel, ten blade','Electrocautery','Metzenbaum scissors','Mayo scissors',
+  'Kelly clamp','Two hemostats','Richardson retractor','Babcock clamp','Army-Navy retractor',
+  'Two-oh silk tie','Needle driver, oh-Vicryl','Yankauer suction','DeBakey forceps','Bone rongeur'];
+
+/* ------------------------------ DECISIONS -------------------------------- */
+/* Forks. Nothing here is marked correct. Every option carries the rationale
+   a real person would give for it, and a consequence that is applied to the
+   rest of the case and reported in the debrief. You commit and you own it.  */
+const DECISIONS = [
+  { id:'incision-length', at:'step:incise',
+    prompt:'Before you cut. This is a nineteen-year-old and the scar will be on her for sixty years. How long is your incision?',
+    options:[
+      { t:'Three centimetres.',
+        rationale:'Smallest scar, and the muscle split is what gives exposure anyway. You can always extend.',
+        consequence:'Three centimetres. Working through a small window — gesture tolerance is tighter for the rest of the case, and if the appendix does not deliver you will be extending under worse conditions than you would have now.',
+        cost:0, tag:'small-incision' },
+      { t:'Five centimetres.',
+        rationale:'Adequate exposure the first time. A slightly longer scar is a smaller problem than an inadequate view.',
+        consequence:'Five centimetres. Comfortable exposure, and a scar she will notice. Nobody has ever been harmed by being able to see.',
+        cost:0, tag:'big-incision' },
+      { t:'Feel for the point, mark it, and decide after palpating under anaesthesia.',
+        rationale:'The examination changes once she is asleep and the guarding is gone. Site the incision over what you actually feel.',
+        consequence:'You palpate first. It costs you thirty seconds and it puts the incision where the disease is rather than where the textbook line is. This is what experienced surgeons do and it is why their incisions look lucky.',
+        cost:0, tag:'palpate-first' }
+    ]},
+
+  { id:'retrocecal', at:'step:deliver',
+    prompt:'The appendix will not deliver. It is retrocecal and adherent, and you are pulling on something you cannot fully see. What now?',
+    options:[
+      { t:'Pull harder and get it up into the wound.',
+        rationale:'It is usually only a few adhesions and traction will free them.',
+        consequence:'Traction on an inflamed appendix you cannot see. It came, and you will not know until later whether the tip is still in there. This is the commonest way a retained appendiceal tip happens.',
+        cost:-10, tag:'traction' },
+      { t:'Mobilise the cecum along the white line of Toldt and bring the whole thing medially.',
+        rationale:'Move the organ to the light rather than the light to the organ. This is the standard answer and it is standard because it works.',
+        consequence:'You mobilise the cecum. It costs time and it gives you the base under direct vision. Nothing about the rest of the case is now being done blind.',
+        cost:6, tag:'mobilise' },
+      { t:'Extend the incision.',
+        rationale:'Exposure is the problem, so fix the exposure.',
+        consequence:'You extend. It works, and the scar is now longer than it needed to be, because the exposure problem was the cecum being tethered rather than the wound being small.',
+        cost:0, tag:'extend' },
+      { t:'Take it retrograde — divide the base first, then work back to the tip.',
+        rationale:'When the tip is inaccessible, the base is still fixed and findable. Control what you can reach.',
+        consequence:'Retrograde appendicectomy. A legitimate and slightly advanced answer. You control the base, then the mesoappendix in stages back to the tip.',
+        cost:6, tag:'retrograde' }
+    ]},
+
+  { id:'stump', at:'step:ligate',
+    prompt:'The stump. This is genuinely contested and your answer says something about how you were trained.',
+    options:[
+      { t:'Simple ligation. Leave it.',
+        rationale:'Modern practice in most centres. No evidence that burying it reduces leak, and inversion narrows the cecum.',
+        consequence:'Simple ligation. This is what most surgeons do now and you can defend it in any room.',
+        cost:0, tag:'simple' },
+      { t:'Ligate and invert with a purse-string.',
+        rationale:'How it was taught for a century. Buries a raw surface and reassures you about the seal.',
+        consequence:'Ligated and inverted. Defensible, traditional, and it costs you a few minutes and a slightly smaller caecal lumen. Some very good surgeons still do this.',
+        cost:0, tag:'invert' },
+      { t:'The base is necrotic and involves the cecum — this needs a partial caecectomy.',
+        rationale:'You cannot tie a ligature onto tissue that will not hold it. If the base is gone, ligating it is a leak you have scheduled for day four.',
+        consequence:'You recognised that the base was not ligatable. In the version of this case where that is true, this is the only right answer and the other two are a faecal fistula. In this case it was not true, and you have done a bigger operation than she needed.',
+        cost:-4, tag:'caecectomy' }
+    ]}
+];
+
+/* ---------------------------- COHERENCE ENGINE --------------------------- */
+/* Tracks correctness and hesitation and shifts difficulty in both directions. */
+const Coh = {
+  v:50, hintLevel:1, tolerance:0.5,
+  hit(quality){                     // quality 0..1
+    this.v += (quality - 0.45) * 16;
+    this.v = Math.max(4, Math.min(100, this.v));
+    this.apply();
+  },
+  slow(seconds){                    // hesitation penalty, gentle
+    if(seconds > 12) this.v -= 4;
+    this.v = Math.max(4, this.v);
+    this.apply();
+  },
+  apply(){
+    // High coherence -> fewer hints, tighter gesture tolerance, harder prompts.
+    this.hintLevel = this.v > 72 ? 0 : this.v > 40 ? 1 : 2;
+    this.tolerance = this.v > 72 ? 0.34 : this.v > 40 ? 0.5 : 0.72;
+
+    /* Performance is one axis. Load is the other. Profile sets the floor,
+       stress moves it. Someone performing well at high arousal is about to
+       fail and should not be pushed; someone performing badly at low arousal
+       is bored, not overwhelmed, and should be. */
+    if (window.AISS){
+      const t = AISS.tuning(this.v);
+      this.hintLevel = Math.max(this.hintLevel, t.hintFloor);
+      this.tolerance = Math.min(0.85, this.tolerance * t.toleranceMul);
+      this.clockRate = t.clockRate;
+      this.adaptNote = t.note;
+    }
+
+    const bar = document.getElementById('cohBar');
+    bar.style.width = this.v + '%';
+    bar.style.background = this.v > 72 ? 'var(--green)' : this.v > 34 ? 'var(--cyan)' : 'var(--amber)';
+    document.getElementById('cohVal').textContent = Math.round(this.v);
+  },
+  band(){ return this.v > 72 ? 'advanced' : this.v > 34 ? 'steady' : 'supported'; }
+};
+
+/* -------------------------------- SCORING -------------------------------- */
+/* Study is worth little. Operating alone is worth a lot. Acuity multiplies
+   both the reward and the penalty. Losing the patient wipes the case.        */
+const CASE = { name:'Ellis, M. — 19y, 14h RLQ pain', acuity:1.0, acuityLabel:'Routine · uncomplicated' };
+
+const Score = {
+  pts:0, errors:0, log:[],
+  add(n, why){
+    /* Acuity multiplies both directions. Profile then scales the penalty —
+       more is expected of a clinician than of someone who has never been in
+       a room, and the rewards move less than the penalties do.            */
+    const p = window.AISS ? AISS.Profile.current : { expect:1, reward:1 };
+    const scale = n < 0 ? p.expect : p.reward;
+    const v = Math.round(n * CASE.acuity * scale);
+    this.pts += v; this.log.push({v, why});
+    if(v < 0) this.errors++;
+    this.paint(v);
+  },
+  paint(delta){
+    const e = document.getElementById('scoreVal');
+    e.textContent = this.pts + ' pts';
+    if(delta){
+      e.style.color = delta > 0 ? 'var(--green)' : 'var(--red)';
+      setTimeout(()=>e.style.color = 'var(--amber)', 700);
+    }
+  }
+};
+const PTS = { brief:10, briefMiss:-4, see:5, doStep:25, doMiss:-8, wrongInstrument:-6,
+              teach:40, teachMiss:-12, ask:-2 };
+
+/* ------------------------------- 3D SCENE -------------------------------- */
+let renderer, scene, camera, camGroup, raycaster, pickables = [], controllers = [];
+let openDepth = 0;        // how many layers have been opened
+let organGroup, fieldGroup;
+const clock = new THREE.Clock();
+
+function initScene(){
+  renderer = new THREE.WebGLRenderer({antialias:true, alpha:false});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.xr.enabled = true;
+  document.getElementById('stage').appendChild(renderer.domElement);
+
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x05070a);
+  scene.fog = new THREE.Fog(0x05070a, 3.2, 8);
+
+  camera = new THREE.PerspectiveCamera(52, innerWidth/innerHeight, 0.05, 60);
+  camGroup = new THREE.Group();
+  camGroup.add(camera);
+  camGroup.position.set(0, 1.55, 1.5);
+  scene.add(camGroup);
+  camera.lookAt(0, 1.0, 0);
+
+  // Operating light: one hard key from above, cool fill, faint rim.
+  const key = new THREE.SpotLight(0xffffff, 1.5, 12, 0.62, 0.55, 1.2);
+  key.position.set(0.4, 3.4, 1.1); key.target.position.set(0,1,0);
+  scene.add(key, key.target);
+  scene.add(new THREE.HemisphereLight(0x22303c, 0x05070a, 0.55));
+  const rim = new THREE.DirectionalLight(0x3fd0e8, 0.35);
+  rim.position.set(-2, 1.6, -1.6); scene.add(rim);
+
+  buildTable();
+  buildField();
+  buildOrgans();
+
+  raycaster = new THREE.Raycaster();
+  setupXRControllers();
+
+  window.addEventListener('resize', onResize);
+  renderer.setAnimationLoop(tick);
+}
+
+function buildTable(){
+  const t = new THREE.Mesh(
+    new THREE.BoxGeometry(2.4, 0.07, 1.1),
+    new THREE.MeshStandardMaterial({color:0x0f1720, roughness:.85, metalness:.3})
+  );
+  t.position.set(0, 0.94, 0);
+  scene.add(t);
+
+  // Sterile drape with a fenestration over the right lower quadrant.
+  const drape = new THREE.Mesh(
+    new THREE.BoxGeometry(2.2, 0.012, 0.98),
+    new THREE.MeshStandardMaterial({color:0x1d4a52, roughness:.95})
+  );
+  drape.position.set(0, 0.985, 0);
+  scene.add(drape);
+
+  const grid = new THREE.GridHelper(6, 24, 0x14202a, 0x0c141c);
+  grid.position.y = 0.001; scene.add(grid);
+}
+
+/* Stacked layers of the abdominal wall inside the drape fenestration. */
+function buildField(){
+  fieldGroup = new THREE.Group();
+  fieldGroup.position.set(0, 0.99, 0.02);
+  scene.add(fieldGroup);
+
+  LAYERS.forEach((L, i) => {
+    const w = 0.60 - i*0.045, h = 0.42 - i*0.032;
+    const m = new THREE.Mesh(
+      new THREE.BoxGeometry(w, 0.014, h),
+      new THREE.MeshStandardMaterial({color:L.color, roughness:.72, metalness:.02})
+    );
+    m.position.y = 0.012 - i*0.014;
+    m.userData = {kind:'layer', id:L.id, index:i, name:L.name, note:L.note};
+    fieldGroup.add(m);
+    pickables.push(m);
+  });
+}
+
+/* Cecum, appendix, mesoappendix — revealed once the peritoneum is open. */
+function buildOrgans(){
+  organGroup = new THREE.Group();
+  organGroup.position.set(0, 0.90, 0.02);
+  organGroup.visible = false;
+  scene.add(organGroup);
+
+  const mk = (geo, colorHex, id) => {
+    const o = ORGANS.find(x=>x.id===id);
+    const m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({
+      color:colorHex, roughness:.42, metalness:.03
+    }));
+    m.userData = {kind:'organ', id:id, name:o.name, note:o.note};
+    organGroup.add(m); pickables.push(m);
+    return m;
+  };
+
+  const cec = mk(new THREE.SphereGeometry(0.16, 28, 20), 0xc98a7a, 'cecum');
+  cec.scale.set(1, .82, 1.05); cec.position.set(-0.06, 0.06, 0);
+
+  // taenia libera: a band running over the anterior cecum to the base
+  const tae = mk(new THREE.TorusGeometry(0.155, 0.011, 8, 40, Math.PI*0.85), 0xe0d7c0, 'taenia');
+  tae.position.copy(cec.position); tae.rotation.set(Math.PI/2, 0, -0.5);
+
+  // appendix: curved tube off the base
+  const curve = new THREE.CatmullRomCurve3([
+    new THREE.Vector3(0.02, -0.02, 0.09),
+    new THREE.Vector3(0.10, -0.05, 0.13),
+    new THREE.Vector3(0.19, -0.04, 0.11),
+    new THREE.Vector3(0.25, 0.01, 0.05)
+  ]);
+  const app = mk(new THREE.TubeGeometry(curve, 40, 0.019, 10, false), 0xcf7f74, 'app');
+
+  // mesoappendix: a thin fold following the appendix
+  const meso = mk(new THREE.TubeGeometry(curve, 40, 0.048, 3, false), 0xd9a86f, 'meso');
+  meso.material.transparent = true; meso.material.opacity = 0.55;
+  meso.position.y = -0.035;
+
+  // appendicular artery inside the meso
+  const art = mk(new THREE.TubeGeometry(curve, 40, 0.006, 8, false), 0xb0242a, 'artery');
+  art.position.y = -0.030;
+
+  const ile = mk(new THREE.CylinderGeometry(0.045, 0.045, 0.34, 18), 0xd6a08c, 'ileum');
+  ile.rotation.set(0, 0, Math.PI/2.4); ile.position.set(-0.24, 0.0, 0.06);
+}
+
+/* Opening a layer: drop it away and expose the next. */
+function openLayer(index){
+  const m = fieldGroup.children[index];
+  if(!m || m.userData.opened) return;
+  m.userData.opening = true;
+  m.userData.opened  = true;   // no longer a valid pick target
+  if(index >= LAYERS.length - 1){
+    organGroup.visible = true;
+    organGroup.scale.set(0.01,0.01,0.01);
+    organGroup.userData.grow = true;
+  }
+  openDepth = Math.max(openDepth, index + 1);
+}
+
+/* Closing: restore the deep layers so the resident can reappose them. */
+function closeField(fromIndex){
+  organGroup.visible = false;
+  fieldGroup.children.forEach((m,i)=>{
+    if(i < fromIndex) return;
+    m.userData.opening = false; m.userData.opened = false;
+    m.rotation.x = 0; m.position.z = 0;
+    m.material.opacity = 1; m.material.transparent = false;
+  });
+}
+
+/* Only unopened layers and visible organs can be picked. */
+function pickTargets(){
+  return pickables.filter(p => p.parent.visible && !p.userData.opened);
+}
+
+function highlight(id){
+  pickables.forEach(p => {
+    const on = p.userData.id === id;
+    p.material.emissive = new THREE.Color(on ? 0x1a5f6c : 0x000000);
+    p.material.emissiveIntensity = on ? 1 : 0;
+  });
+}
+
+function onResize(){
+  camera.aspect = innerWidth/innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+  const t = document.getElementById('trail');
+  t.setAttribute('viewBox', `0 0 ${innerWidth} ${innerHeight}`);
+  t.setAttribute('width', innerWidth); t.setAttribute('height', innerHeight);
+}
+
+function tick(){
+  const dt = clock.getDelta(), t = clock.elapsedTime;
+
+  // layers peeling open
+  fieldGroup.children.forEach((m,i) => {
+    if(m.userData.opening){
+      m.rotation.x = Math.min(m.rotation.x + dt*1.7, Math.PI*0.42);
+      m.position.z = Math.min(m.position.z + dt*0.11, 0.16);
+      m.material.transparent = true;
+      m.material.opacity = Math.max(0.15, m.material.opacity - dt*0.6);
+    }
+  });
+
+  if(organGroup.userData.grow){
+    const s = Math.min(1, organGroup.scale.x + dt*2.2);
+    organGroup.scale.set(s,s,s);
+    if(s>=1) organGroup.userData.grow = false;
+  }
+  if(organGroup.visible) organGroup.position.y = 0.90 + Math.sin(t*0.9)*0.003; // respiratory drift
+
+  // gentle orbit in non-VR so the field reads as three-dimensional
+  if(!renderer.xr.isPresenting){
+    camGroup.position.x = Math.sin(t*0.16)*0.22;
+    camera.lookAt(0, 1.0, 0.02);
+  }
+
+  /* Where attention is actually pointed. On a phone this is the centre of
+     the screen; in a headset the same call is real head gaze.            */
+  if(window.AISS){
+    AISS.Gaze.update(dt, THREE, camera, raycaster, pickTargets());
+    const r = el('ret');
+    if(r) r.classList.toggle('on', !!AISS.Gaze.lookingAt);
+    Game.attentionCheck(dt);
+  }
+
+  renderer.render(scene, camera);
+}
+
+/* ------------------------------ WEBXR SETUP ------------------------------ */
+function setupXRControllers(){
+  for(let i=0;i<2;i++){
+    const c = renderer.xr.getController(i);
+    c.addEventListener('selectstart', ()=>{ c.userData.pressT = performance.now(); });
+    c.addEventListener('selectend', ()=>{
+      const held = performance.now() - (c.userData.pressT||0);
+      xrAct(c, held);
+    });
+    const ray = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0), new THREE.Vector3(0,0,-1.4)]),
+      new THREE.LineBasicMaterial({color:0x3fd0e8})
+    );
+    c.add(ray);
+    camGroup.add(c);
+    controllers.push(c);
+  }
+  if(navigator.xr){
+    navigator.xr.isSessionSupported('immersive-vr').then(ok=>{
+      if(ok) document.getElementById('vr').classList.remove('hide');
+    }).catch(()=>{});
+  }
+}
+
+document.getElementById('vr').onclick = async () => {
+  if(renderer.xr.isPresenting){ renderer.xr.getSession().end(); return; }
+  try{
+    const s = await navigator.xr.requestSession('immersive-vr', {optionalFeatures:['local-floor','bounded-floor','hand-tracking']});
+    await renderer.xr.setSession(s);
+    document.getElementById('vr').textContent = 'Exit VR';
+    s.addEventListener('end', ()=>{ document.getElementById('vr').textContent = 'Enter VR'; });
+  }catch(e){ toast('VR session unavailable on this device.'); }
+};
+
+/* In VR: a short trigger pull identifies, a long pull performs the action. */
+function xrAct(controller, heldMs){
+  const tmp = new THREE.Matrix4().identity().extractRotation(controller.matrixWorld);
+  raycaster.ray.origin.setFromMatrixPosition(controller.matrixWorld);
+  raycaster.ray.direction.set(0,0,-1).applyMatrix4(tmp);
+  const hits = raycaster.intersectObjects(pickTargets(), false);
+  if(!hits.length) return;
+  const u = hits[0].object.userData;
+  if(heldMs < 420) identify(u);
+  else Game.gestureDone(heldMs > 900 ? 'hold' : 'swipe', u.id);
+}
+
+/* --------------------------- TOUCH GESTURE INPUT -------------------------- */
+/* swipe | spread (two-finger pinch-out) | pinch (two-finger pinch-in) | hold | tap */
+const Touch = (()=>{
+  let pts = new Map(), startT = 0, path = [], startDist = 0, holdTimer = null, moved = false;
+  const svgPath = () => document.getElementById('trailPath');
+
+  function begin(e){
+    for(const t of e.changedTouches||[e]){
+      pts.set(t.identifier ?? 'm', {x:t.clientX,y:t.clientY,x0:t.clientX,y0:t.clientY});
+      if(window.AISS) AISS.Sensors.touch(t);
+    }
+    if(pts.size === 1){
+      startT = performance.now(); moved = false; path = [];
+      const p = [...pts.values()][0]; path.push([p.x,p.y]);
+      holdTimer = setTimeout(()=>{ if(!moved){ fire('hold', p.x, p.y); pts.clear(); } }, 620);
+    }
+    if(pts.size === 2){
+      clearTimeout(holdTimer);
+      const [a,b] = [...pts.values()];
+      startDist = Math.hypot(a.x-b.x, a.y-b.y);
+    }
+  }
+  function move(e){
+    for(const t of e.changedTouches||[e]){
+      const p = pts.get(t.identifier ?? 'm'); if(!p) continue;
+      p.x = t.clientX; p.y = t.clientY;
+    }
+    if(pts.size === 1){
+      const p = [...pts.values()][0];
+      if(Math.hypot(p.x-p.x0, p.y-p.y0) > 14) moved = true;
+      path.push([p.x,p.y]);
+      if(path.length > 1){
+        svgPath().setAttribute('d', 'M' + path.map(q=>q.join(' ')).join(' L'));
+        svgPath().setAttribute('opacity','0.9');
+      }
+    }
+  }
+  function end(e){
+    clearTimeout(holdTimer);
+    /* Tremor from the drawn path — a steady hand draws close to a line. */
+    if(window.AISS && path.length > 5) AISS.Sensors && AISS.Stress.path(path);
+    const had = pts.size;
+    const first = [...pts.values()][0];
+    if(had === 2){
+      const [a,b] = [...pts.values()];
+      const d = Math.hypot(a.x-b.x, a.y-b.y);
+      fire(d > startDist*1.16 ? 'spread' : d < startDist*0.86 ? 'pinch' : 'tap', a.x, a.y);
+    } else if(had === 1 && first){
+      const dt = performance.now() - startT;
+      const dist = Math.hypot(first.x-first.x0, first.y-first.y0);
+      fire(dist > 46 ? 'swipe' : 'tap', first.x, first.y);
+    }
+    pts.clear();
+    svgPath().setAttribute('opacity','0');
+    setTimeout(()=>svgPath().setAttribute('d',''), 220);
+  }
+  function fire(kind, x, y){
+    const u = pickAt(x, y);
+    if(kind === 'tap'){
+      if(u) identify(u);
+      /* Identify consumes the first tap. A tap-gesture step still has to be
+         completed after the instrument is in hand — otherwise Do One stalls
+         on deliver / any other tap maneuver. */
+      if(Game.awaiting === 'gesture' && Game.step() && Game.step().gesture === 'tap')
+        Game.gestureDone('tap', u ? u.id : null);
+      return;
+    }
+    Game.gestureDone(kind, u ? u.id : null);
+  }
+  function pickAt(x,y){
+    const nd = new THREE.Vector2((x/innerWidth)*2-1, -(y/innerHeight)*2+1);
+    raycaster.setFromCamera(nd, camera);
+    const hits = raycaster.intersectObjects(pickTargets(), false);
+    return hits.length ? hits[0].object.userData : null;
+  }
+  return { attach(el){
+    el.addEventListener('touchstart', e=>{e.preventDefault();begin(e)}, {passive:false});
+    el.addEventListener('touchmove',  e=>{e.preventDefault();move(e)},  {passive:false});
+    el.addEventListener('touchend',   e=>{e.preventDefault();end(e)},   {passive:false});
+    // desktop fallback
+    const syn = e => ({changedTouches:null, clientX:e.clientX, clientY:e.clientY});
+    let down=false;
+    el.addEventListener('mousedown', e=>{down=true;  begin(syn(e))});
+    el.addEventListener('mousemove', e=>{if(down)    move(syn(e))});
+    el.addEventListener('mouseup',   e=>{down=false; end(syn(e))});
+  }};
+})();
+
+/* ------------------------------ IDENTIFY --------------------------------- */
+let lastIdentified = null;
+function identify(u){
+  lastIdentified = u.id;
+  highlight(u.id);
+  const L = document.getElementById('label');
+  L.querySelector('b').textContent = u.name;
+  L.querySelector('i').textContent = Coh.hintLevel === 0 ? '' : u.note;
+  L.classList.add('on');
+  clearTimeout(identify._t);
+  identify._t = setTimeout(()=>L.classList.remove('on'), 5200);
+  Game.identified(u.id);
+}
+
+/* -------------------------------- UI ------------------------------------- */
+const el = id => document.getElementById(id);
+function toast(msg){
+  el('gesture').innerHTML = msg;
+}
+const GESTURE_TEXT = {
+  swipe:'Swipe across the structure',
+  spread:'Two fingers — spread apart',
+  pinch:'Two fingers — pinch together',
+  hold:'Press and hold',
+  tap:'Tap to identify'
+};
+
+/* --------------------- ASK THE ATTENDING (free text) ---------------------- */
+/* Not a menu of three. Type anything. It is answered out of this module's own
+   anatomy, physiology, technique and instrument content, plus the general
+   questions every field produces. Asking costs two points and is worth far
+   more than guessing silently, which is the opposite of what games teach.  */
+function askContext(){
+  const s = (Game.phase === 'brief') ? null : Game.step();
+  const u = lastIdentified ? Game.lookup(lastIdentified) : null;
+  return {
+    lastStructure: u ? { name:u.name, note:u.note } : null,
+    stepSay: s ? s.say : null,
+    stepDemo: s ? s.demo : null,
+    instrument: s ? s.instr : null
+  };
+}
+
+function doAsk(){
+  const q = el('askin').value.trim();
+  if(!q) return;
+  const a = AISS.Ask.answer(q, askContext());
+  Score.add(PTS.ask, 'asked a question');
+  Coh.hit(0.6);                       // asking is not an error
+  el('answer').innerHTML = a.text;
+  el('answer').classList.add('on');
+  el('askin').value = '';
+  el('askin').blur();
+}
+
+function showAsk(on){
+  el('askwrap').classList.toggle('on', !!on);
+  if(!on){ el('answer').classList.remove('on'); el('answer').innerHTML=''; }
+}
+
+/* ------------------------------ GAME LOOP -------------------------------- */
+const Game = {
+  phase:'brief',    // brief | see | do | teach
+  i:0,              // step index
+  awaiting:null,    // 'identify' | 'instrument' | 'gesture' | 'answer' | null
+  stepStart:0,
+
+  begin(){
+    this.phase='brief'; this.i=0; Coh.apply(); Score.paint(); this.render();
+  },
+
+  step(){ return STEPS[this.i]; },
+
+  /* --- pre-op study phase: you do not touch the patient until this is done --- */
+  renderBrief(){
+    const b = BRIEF[this.i];
+    el('phaseName').textContent = 'Pre-Op Study';
+    el('stepTitle').textContent = CASE.name;
+    el('who').textContent = 'Anatomy & physiology — ' + (this.i+1) + ' of ' + BRIEF.length;
+    el('say').innerHTML = '<strong style="color:#eef4f8">'+b.title+'</strong><br><br>'+b.body;
+    el('gesture').innerHTML = ''; el('choices').innerHTML = ''; el('btnrow').innerHTML = '';
+    this.stepStart = performance.now();
+    const go = document.createElement('button');
+    go.className = 'btn'; go.textContent = 'I have read this';
+    go.onclick = () => {
+      el('say').innerHTML = b.q;
+      el('btnrow').innerHTML = '';
+      this.awaiting = 'answer';
+      b.opts.map((o,k)=>({...o,k})).sort(()=>Math.random()-0.5).forEach(o=>{
+        const c = document.createElement('button');
+        c.className='ch'; c.textContent=o.t;
+        c.onclick = ()=>this.answerBrief(c, o, b);
+        el('choices').appendChild(c);
+      });
+    };
+    el('btnrow').appendChild(go);
+  },
+
+  answerBrief(btn, o, b){
+    if(this.awaiting !== 'answer') return;
+    this.awaiting = null;
+    [...el('choices').children].forEach(c=>c.style.pointerEvents='none');
+    AISS.Stress.response((performance.now()-this.stepStart)/1000);
+    AISS.Progress.mark('anatomy', !!o.ok);
+    if(o.ok){ btn.classList.add('right'); Coh.hit(0.9); Score.add(PTS.brief,'pre-op study'); }
+    else {
+      btn.classList.add('wrong'); Coh.hit(0.15); Score.add(PTS.briefMiss,'pre-op study missed');
+      [...el('choices').children].forEach(c=>{ if(b.opts.find(x=>x.t===c.textContent && x.ok)) c.classList.add('right'); });
+    }
+    setTimeout(()=>this.next(), o.ok ? 800 : 2600);
+  },
+
+  render(){
+    if(this.phase === 'brief'){ this.renderBrief(); return; }
+    const s = this.step();
+    el('phaseName').textContent = {see:'See One', do:'Do One', teach:'Teach One'}[this.phase];
+    el('stepTitle').textContent = 'Open Appendectomy — step ' + (this.i+1) + ' of ' + STEPS.length;
+    el('choices').innerHTML = ''; el('btnrow').innerHTML = '';
+    this.stepStart = performance.now();
+    if(s.closing) closeField(2);   // restore deep layers for the closure step
+
+    if(this.phase === 'see'){
+      el('who').textContent = 'AI Attending — demonstrating';
+      el('say').innerHTML = s.say.replace(/<em>.*?<\/em>/,'');
+      el('gesture').innerHTML = Coh.hintLevel === 2 ? s.demo : '';
+      const b = document.createElement('button');
+      b.className='btn'; b.textContent='Advance';
+      b.onclick = ()=>{ Score.add(PTS.see, 'observed'); this.autoDemo(s); };
+      el('btnrow').appendChild(b);
+      const t = document.createElement('button');
+      t.className='btn ghost'; t.textContent='Identify first';
+      t.onclick = ()=>{ const u = this.lookup(s.target); if(u) identify(u); };
+      el('btnrow').appendChild(t);
+    }
+
+    if(this.phase === 'do'){
+      /* A fork, if this step has one. Nothing is marked correct; you commit
+         and you carry it. */
+      const d = window.AISS ? AISS.Decisions.pending(DECISIONS, 'step:' + s.id) : null;
+      if(d){ this.fork(d); return; }
+
+      el('who').textContent = 'AI Attending — you have the field';
+      el('say').innerHTML = s.say;
+      this.awaiting = 'identify';
+      this.nudged = false; this.sinceStep = 0;
+      el('gesture').innerHTML = 'Tap the structure to identify it';
+      showAsk(true);
+      const h = document.createElement('button');
+      h.className = 'btn ghost'; h.textContent = 'Hand it over';
+      h.onclick = ()=>this.offerHandover();
+      el('btnrow').appendChild(h);
+    } else { showAsk(this.phase === 'teach'); }
+
+    if(this.phase === 'teach'){
+      el('who').textContent = 'You — teaching a junior';
+      el('say').innerHTML = s.teach;
+      el('gesture').innerHTML = '';
+      this.awaiting = 'answer';
+      const opts = s.opts.map((o,k)=>({...o,k})).sort(()=>Math.random()-0.5);
+      opts.forEach(o=>{
+        const b=document.createElement('button');
+        b.className='ch'; b.textContent=o.t;
+        b.onclick = ()=>this.answer(b,o);
+        el('choices').appendChild(b);
+      });
+    }
+    highlight(this.step().target);
+  },
+
+  /* --- a fork in the road. Stated rationale, committed, and yours. --- */
+  fork(d){
+    this.awaiting = 'decision';
+    showAsk(false);
+    AISS.Decisions.present(d, {
+      who:  t => el('who').textContent = t,
+      say:  h => el('say').innerHTML = h,
+      clear:() => { el('choices').innerHTML=''; el('btnrow').innerHTML=''; el('gesture').innerHTML=''; },
+      option:(html, cb) => {
+        const b = document.createElement('button');
+        b.className = 'ch'; b.innerHTML = html; b.onclick = cb;
+        el('choices').appendChild(b);
+      },
+      lock: () => [...el('choices').children].forEach(c=>{ c.style.pointerEvents='none'; c.classList.add('locked'); }),
+      commit:(html, then) => {
+        el('say').innerHTML = html;
+        el('choices').innerHTML = '';
+        const b = document.createElement('button');
+        b.className='btn'; b.textContent='I own that';
+        b.onclick = then; el('btnrow').appendChild(b);
+      }
+    }, (o) => {
+      if(o.cost) Score.add(o.cost, 'consequence of your decision');
+      AISS.Progress.mark('judgement', (o.cost || 0) >= 0);
+      this.awaiting = null;
+      el('btnrow').innerHTML = '';
+      this.render();
+    });
+  },
+
+  /* --- you are hunting in the wrong quadrant and the attending has noticed --- */
+  attentionCheck(dt){
+    if(this.phase !== 'do' || this.awaiting !== 'identify') return;
+    this.sinceStep = (this.sinceStep || 0) + dt;
+    if(this.nudged || this.sinceStep < 9) return;
+    const s = this.step();
+    if(AISS.Gaze.looked(s.target)) return;
+    this.nudged = true;
+    if(Coh.hintLevel === 0) return;              // clinician profile gets nothing
+    el('gesture').innerHTML = 'You have not looked at it yet. <span class="g">It is not where you are searching.</span>';
+  },
+
+  /* --- patient safety outranks the score, and the scoring says so --- */
+  offerHandover(){
+    showAsk(false);
+    this.awaiting = 'handover';
+    el('who').textContent = 'AI Attending — standing by';
+    el('say').innerHTML = '<strong style="color:#eef4f8">You can stop.</strong><br><br>'
+      + 'You can hand this case over to me right now and I will finish it. There is no penalty '
+      + 'hidden in that button. In this product, recognising the edge of what you can hold is worth '
+      + 'more than getting away with staying past it — including when you get away with it.';
+    el('choices').innerHTML=''; el('btnrow').innerHTML='';
+    const a = document.createElement('button');
+    a.className='btn'; a.textContent='Turn it over';
+    a.onclick = ()=>{
+      const r = AISS.Handover.handOver({ harmed:false });
+      Score.add(r.points, 'handover — ' + r.tag);
+      AISS.Progress.mark('safety', r.tag === 'correct' || r.tag === 'early');
+      this.interstitial('Handed over', r.line, ()=>{ this.awaiting=null; this.finish(); });
+    };
+    const b = document.createElement('button');
+    b.className='btn ghost'; b.textContent='I have it';
+    b.onclick = ()=>{ this.awaiting=null; this.render(); };
+    el('btnrow').appendChild(a); el('btnrow').appendChild(b);
+  },
+
+  lookup(id){
+    const p = pickables.find(x=>x.userData.id===id);
+    return p ? p.userData : null;
+  },
+
+  matches(id, s){
+    return id === s.target || (s.alias || []).includes(id);
+  },
+
+  perform(s){
+    if(s.opens){ s.opens.forEach(openLayer); return; }
+    const u = this.lookup(s.target);
+    if(u && u.kind === 'layer') openLayer(u.index);
+  },
+
+  autoDemo(s){
+    const u = this.lookup(s.target);
+    if(u) identify(u);
+    if(!s.closing) this.perform(s);
+    setTimeout(()=>this.next(), 900);
+  },
+
+  identified(id){
+    if(this.phase!=='do' || this.awaiting!=='identify') return;
+    const s = this.step();
+    const right = this.matches(id, s);
+    AISS.Progress.mark('anatomy', right);
+    AISS.Stress.response((performance.now()-this.stepStart)/1000);
+    if(right){
+      Coh.hit(0.75);
+      this.callScrub(s);
+    } else {
+      Coh.hit(0.1);
+      Score.add(PTS.doMiss, 'wrong structure');
+      el('gesture').innerHTML = 'Not that structure. Look again.';
+      this.quip('minor-error');
+    }
+  },
+
+  /* OR humor. Fenced — never with an unstable patient, never after harm,
+     never from the head of the bed, and never at the player while behind. */
+  quip(when){
+    const l = AISS.Humor.line(when, {
+      unstable: !!this.unstable, harmed: !!this.harmed, behind: Coh.v < 34
+    });
+    if(!l) return;
+    setTimeout(()=>{
+      el('who').textContent = l.who === 'scrub' ? 'Scrub tech' : 'AI Attending';
+      el('say').innerHTML = '<span style="color:var(--steel-dim)">' + l.s + '</span>';
+    }, 550);
+  },
+
+  /* --- you do not get an instrument. You ask for it, by name. --- */
+  callScrub(s){
+    this.awaiting = 'instrument';
+    el('who').textContent = 'Scrub tech — waiting on you';
+    el('gesture').innerHTML = 'Structure confirmed. <span class="g">Call for your instrument.</span>';
+
+    const take = (name, btn) => {
+      if(this.awaiting !== 'instrument') return;
+      AISS.Progress.mark('instrument', name === s.instr);
+      if(name === s.instr){
+        if(btn) btn.classList.add('right');
+        Coh.hit(0.85); AISS.Haptic.ok();
+        this.awaiting = 'gesture';
+        el('who').textContent = 'AI Attending — you have the field';
+        setTimeout(()=>{
+          el('choices').innerHTML = '';
+          el('gesture').innerHTML = name + ' in your hand. <span class="g">' + GESTURE_TEXT[s.gesture] + '</span>';
+        }, 450);
+      } else {
+        if(btn) btn.classList.add('wrong');
+        Coh.hit(0.2);
+        Score.add(PTS.wrongInstrument, 'wrong instrument');
+        el('gesture').innerHTML = 'That is not what this step needs. Ask again.';
+        this.quip('wrong-instrument');
+      }
+    };
+
+    /* The tray gets fuller the more is expected of you. */
+    const n = AISS.Profile.current.distractors;
+    const wrong = TRAY.filter(t => t !== s.instr).sort(()=>Math.random()-0.5).slice(0, n);
+    [s.instr, ...wrong].sort(()=>Math.random()-0.5).forEach(name=>{
+      const b = document.createElement('button');
+      b.className = 'ch'; b.textContent = '"' + name + '."';
+      b.onclick = ()=>take(name, b);
+      el('choices').appendChild(b);
+    });
+
+    /* On hardware that has speech recognition you say it out loud instead,
+       because that is what the job is. Silent fallback everywhere else. */
+    if(AISS.Voice.supported){
+      const v = document.createElement('button');
+      v.className = 'btn ghost'; v.textContent = 'Say it out loud';
+      v.onclick = ()=>{
+        v.textContent = 'Listening…';
+        const ok = AISS.Voice.listen(said=>{
+          v.textContent = 'Say it out loud';
+          const m = AISS.Voice.match(said, TRAY);
+          if(!m){ el('gesture').innerHTML = 'The scrub did not catch that. Say the instrument, or tap it.'; return; }
+          el('gesture').innerHTML = 'You said: <span class="g">' + m + '</span>';
+          take(m, [...el('choices').children].find(c=>c.textContent.indexOf(m) >= 0));
+        });
+        if(!ok) v.textContent = 'Say it out loud';
+      };
+      el('btnrow').appendChild(v);
+    }
+  },
+
+  gestureDone(kind, hitId){
+    if(this.phase!=='do' || this.awaiting!=='gesture') return;
+    const s = this.step();
+    const rightGesture = kind === s.gesture;
+    const rightPlace = this.matches(hitId, s);
+    const secs = (performance.now()-this.stepStart)/1000;
+    AISS.Progress.mark('technique', rightGesture && rightPlace);
+    AISS.Stress.response(secs);
+
+    if(rightGesture && rightPlace){
+      Coh.hit(secs < 6 ? 0.95 : 0.7);
+      Coh.slow(secs);
+      AISS.Haptic.step();
+      this.quip(secs > 22 ? 'slow' : secs < 3 ? 'fast' : 'idle');
+      if(!s.closing) this.perform(s);
+      Score.add(PTS.doStep, s.id);
+      el('gesture').innerHTML = '<span class="g">Done.</span>';
+      el('choices').innerHTML = '';
+      this.awaiting = null;
+      setTimeout(()=>this.next(), 750);
+    } else if(!rightGesture){
+      Coh.hit(0.25); Score.add(PTS.doMiss, 'wrong maneuver');
+      el('gesture').innerHTML = 'Wrong maneuver. <span class="g">' + GESTURE_TEXT[s.gesture] + '</span>';
+    } else {
+      Coh.hit(0.3); Score.add(PTS.doMiss, 'right maneuver, wrong place');
+      el('gesture').innerHTML = 'Right maneuver, wrong place.';
+    }
+  },
+
+  answer(btn, o){
+    if(this.awaiting !== 'answer') return;
+    this.awaiting = null;
+    const secs = (performance.now()-this.stepStart)/1000;
+    AISS.Progress.mark('teaching', !!o.ok);
+    AISS.Stress.response(secs);
+    [...el('choices').children].forEach(c=>c.style.pointerEvents='none');
+    if(o.ok){
+      btn.classList.add('right'); Coh.hit(secs<10?0.95:0.72); Coh.slow(secs);
+      Score.add(PTS.teach, 'taught it correctly');
+      this.quip('teach-correct');
+    } else {
+      btn.classList.add('wrong');
+      [...el('choices').children].forEach(c=>{
+        if(this.step().opts.find(x=>x.t===c.textContent && x.ok)) c.classList.add('right');
+      });
+      Coh.hit(0.05); Score.add(PTS.teachMiss, 'taught it wrong');
+    }
+    setTimeout(()=>this.next(), o.ok ? 900 : 2600);
+  },
+
+  next(){
+    this.i++;
+    const len = this.phase === 'brief' ? BRIEF.length : STEPS.length;
+    if(this.i < len){ this.render(); return; }
+    // phase transition
+    this.i = 0;
+    if(this.phase === 'brief'){ this.phase = 'see'; this.interstitial(
+      'Pre-op study complete',
+      'You know what the appendix is, why this one has to come out, and why the pain moved. <em>Now you may scrub in.</em><br><br>Study is worth ten points a card. Operating is worth twenty-five a step. Teaching is worth forty. That ratio is deliberate.',
+      ()=>this.render()); return; }
+    if(this.phase === 'see'){ this.phase = 'do'; this.resetField(); this.interstitial(
+      'See One complete',
+      'You have watched the whole procedure and named every layer. Now you hold the instruments — or rather, you do not, until you ask the scrub for them by name. The attending calls the step. You find the structure, call for the instrument, and perform the maneuver.',
+      ()=>this.render()); return; }
+    if(this.phase === 'do'){ this.phase = 'teach'; this.interstitial(
+      'Do One complete',
+      'Coherence band: <em>' + Coh.band() + '</em>. You can perform it. The last question is whether you understand it well enough to be responsible for someone else doing it.',
+      ()=>this.render()); return; }
+    this.finish();
+  },
+
+  resetField(){
+    openDepth = 0;
+    organGroup.visible = false; organGroup.scale.set(1,1,1);
+    closeField(0);
+  },
+
+  interstitial(title, body, then){
+    el('who').textContent = 'AI Attending';
+    el('say').innerHTML = '<strong style="color:#eef4f8">'+title+'</strong><br><br>'+body;
+    el('gesture').innerHTML=''; el('choices').innerHTML='';
+    el('btnrow').innerHTML='';
+    const b=document.createElement('button'); b.className='btn'; b.textContent='Continue';
+    b.onclick = then; el('btnrow').appendChild(b);
+  },
+
+  finish(){
+    showAsk(false);
+    const v = Math.round(Coh.v);
+    const bar = AISS.Profile.current.clear;
+    const harmFree = !AISS.Handover.summary() || AISS.Handover.summary().outcome !== 'gambleLost';
+    const L = AISS.Progress.commit({ harmFree });
+
+    const verdict = v >= bar
+      ? 'Cleared at your level. The next case up the ladder starts where this one left off.'
+      : v > bar - 25
+      ? 'Provisional. Repeat the Do One phase before you advance; the anatomy is sound and the sequencing is not yet automatic.'
+      : 'Not cleared. Go back to the anterolateral abdominal wall and the ileocolic supply, then repeat See One.';
+
+    const names = {}; pickables.forEach(p => names[p.userData.id] = p.userData.name);
+    const gazeIds = LAYERS.map(l=>l.id).concat(ORGANS.map(o=>o.id));
+    const unlocks = AISS.Rewards.earned(AISS.Progress);
+
+    el('phaseName').textContent = 'Debrief';
+    el('stepTitle').textContent = 'Open Appendectomy — complete';
+    el('who').textContent = 'AI Attending — debrief';
+    el('say').innerHTML =
+      '<strong style="color:#eef4f8">'+Score.pts+' points &nbsp;·&nbsp; coherence '+v+'/'+bar+' needed &nbsp;·&nbsp; '+Score.errors+' errors</strong>'
+      + '<br><span style="color:var(--steel-dim);font-size:11.5px">Case: '+CASE.name+' — '+CASE.acuityLabel+' (×'+CASE.acuity.toFixed(1)+')</span>'
+      + '<br><br>'+verdict
+      + '<div class="safety">Patient safety is the first number on this page and the last one. '
+      + 'Harm-free streak: <b>'+(L.safeStreak||0)+'</b> consecutive cases (best '+(L.bestSafe||0)+'). '
+      + 'That is the streak that counts toward institutional awards. Not speed, and not points.</div>'
+      + '<div style="margin-top:14px">' + AISS.Progress.table() + '</div>'
+      + '<div style="margin-top:14px">' + AISS.debrief({ gazeIds, names }) + '</div>'
+      + (unlocks.length
+          ? '<div style="margin-top:12px;font-size:11.5px;line-height:1.55;color:var(--steel-dim)"><b style="color:var(--cyan)">Unlocked:</b> '
+            + unlocks.map(u=>u.what).join(' ') + '</div>'
+          : '')
+      + '<br><span style="color:var(--steel-dim);font-size:11.5px">Your errors and your time are what a friend\'s run gets compared against. Same case, same seed — fewest errors wins, and the clock only breaks the tie.</span>';
+    el('gesture').innerHTML=''; el('choices').innerHTML='';
+    el('btnrow').innerHTML='';
+    const b=document.createElement('button'); b.className='btn'; b.textContent='Run it again';
+    b.onclick = ()=>{ Coh.v = 50; Coh.apply(); Score.pts = 0; Score.errors = 0; Score.log = []; Score.paint();
+                      AISS.resetAll(); AISS.Progress.init('appendectomy');
+                      this.resetField(); this.begin(); };
+    el('btnrow').appendChild(b);
+  }
+};
+
+/* ------------------------------- BOOT ------------------------------------ */
+
+/* Who is holding the phone. This sets hint floor, tray size, jargon, how much
+   a mistake costs and where the clearance bar sits. Answer honestly — there is
+   no advantage in claiming more than you are. */
+(function buildProfiles(){
+  const wrap = el('profs');
+  AISS.Profile.restore();
+  AISS.Profile.all().forEach(p => {
+    const b = document.createElement('button');
+    b.className = 'prof' + (AISS.Profile.is(p.key) ? ' sel' : '');
+    b.innerHTML = '<b>' + p.label + '</b><span>' + p.blurb + '</span>';
+    b.onclick = () => {
+      AISS.Profile.set(p.key);
+      [...wrap.children].forEach(c=>c.classList.remove('sel'));
+      b.classList.add('sel');
+    };
+    wrap.appendChild(b);
+  });
+})();
+
+/* Sensors are opt-in and must be requested from a real tap — iOS requires it. */
+el('sensors').onclick = async () => {
+  const r = await AISS.Sensors.start();
+  el('sensorline').innerHTML = r.motion
+    ? 'Reading: ' + AISS.Sensors.available().join(', ')
+      + '. Hand steadiness is now measured directly rather than inferred. Nothing is recorded and nothing leaves this device.'
+    : 'This browser did not grant motion access, so load is estimated from input timing and gesture steadiness instead. Everything still works.';
+  el('sensors').classList.add('hide');
+};
+
+el('strap').onclick = async () => {
+  if(!AISS.Stress.supported()){
+    el('sensorline').textContent = 'This browser has no Web Bluetooth, so a strap cannot be paired here. Chrome on Android and desktop Chrome can.';
+    return;
+  }
+  try {
+    const name = await AISS.Stress.connect();
+    el('strap').textContent = name;
+    el('sensorline').innerHTML = 'Paired. Heart rate is compared against your own rolling baseline, not a population number. '
+      + 'The rate is not stored and not transmitted — only the band is kept, for your debrief.';
+  } catch(e){
+    el('sensorline').textContent = 'No strap paired. Load will be estimated from how you move and answer instead.';
+  }
+};
+
+el('asksend').onclick = doAsk;
+el('askin').addEventListener('keydown', e => { if(e.key === 'Enter') doAsk(); });
+
+el('start').onclick = () => {
+  el('veil').classList.add('gone');
+  setTimeout(()=>el('veil').style.display='none', 520);
+
+  AISS.Voice.init();
+  AISS.resetAll();
+  AISS.Progress.init('appendectomy');
+  AISS.Ask.build({ layers:LAYERS, organs:ORGANS, brief:BRIEF, steps:STEPS });
+
+  initScene();
+  Touch.attach(renderer.domElement);
+  onResize();
+  Game.begin();
+};
+</script>
+</body>
+</html>
