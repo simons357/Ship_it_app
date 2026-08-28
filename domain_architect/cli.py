@@ -18,6 +18,14 @@ from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 from .sfe_compare import compare_sfe_pair, list_sfe_candidates
 from .snd_claims import anatomize_claim
+from .library_index import inventory_summary, load_manifest, scan_library
+from .shape_texture import (
+    extract_shape,
+    extract_texture,
+    navigate_millennium,
+    shape_match,
+    texture_translate,
+)
 from .theory_splicer import (
     cut,
     express,
@@ -145,7 +153,120 @@ def main(argv: list[str] | None = None) -> int:
         metavar="BOOK",
         help="EXPRESS — reconstruct book from roles and check closure",
     )
+    parser.add_argument(
+        "--shape",
+        metavar="TEXT",
+        help="extract shape (role skeleton / compatibility class) from expression or book",
+    )
+    parser.add_argument(
+        "--texture",
+        metavar="TEXT",
+        help="extract texture (notation, domain, hypothesis tags) from expression or book",
+    )
+    parser.add_argument(
+        "--shape-compare",
+        nargs=2,
+        metavar=("A", "B"),
+        help="shape vs texture decomposition compare of two sources",
+    )
+    parser.add_argument(
+        "--library-scan",
+        action="store_true",
+        help="index library assets and print object inventory",
+    )
+    parser.add_argument(
+        "--navigate",
+        metavar="MILLENNIUM_ID",
+        help="one-theory-at-a-time: list library objects sharing shape with target problem",
+    )
     args = parser.parse_args(argv)
+
+    if args.library_scan:
+        manifest = scan_library(write_manifest=True)
+        if args.json:
+            json.dump(manifest, sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print("Domain Architect — Library Scan")
+            print(inventory_summary(manifest))
+            print(f"  sources: {', '.join(manifest.get('source_files', []))}")
+            for gap in manifest.get("coverage_gaps", []):
+                print(f"  gap: {gap}")
+            print(f"  manifest: data/domain_architect/library_manifest.json")
+        return 0
+
+    if args.navigate:
+        nav = navigate_millennium(args.navigate)
+        if args.json:
+            json.dump(nav.to_dict(), sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print(f"Domain Architect — Navigate {nav.millennium_id}")
+            print(nav.statement)
+            print(f"  matching objects: {len(nav.matching_objects)}")
+            for m in nav.matching_objects[:8]:
+                print(f"    - {m.get('object_id')}: {m.get('label', '')[:60]}")
+            if nav.texture_mismatches:
+                print("  texture mismatches:")
+                for tm in nav.texture_mismatches[:5]:
+                    print(f"    - {tm.get('object_id')}: {tm.get('notation')} tags={tm.get('texture_delta')}")
+            if nav.missing_welds:
+                print("  missing welds:")
+                for w in nav.missing_welds[:5]:
+                    print(f"    - {w}")
+            if nav.coverage_gaps:
+                print("  coverage gaps:")
+                for g in nav.coverage_gaps:
+                    print(f"    - {g}")
+        return 0
+
+    if args.shape:
+        shape = extract_shape(args.shape)
+        if args.json:
+            json.dump(shape.to_dict(), sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print(f"Shape: {shape.shape_id}")
+            print(f"  compatibility_class: {shape.compatibility_class}")
+            print(f"  fingers: {shape.fingers}")
+            print(f"  role_topology: {shape.role_topology}")
+            if shape.dependency_hints:
+                print(f"  dependencies: {shape.dependency_hints}")
+        return 0
+
+    if args.texture:
+        texture = extract_texture(args.texture)
+        if args.json:
+            json.dump(texture.to_dict(), sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print(f"Texture: {texture.notation} @ {texture.domain}")
+            print(f"  hypothesis_tags: {texture.hypothesis_tags}")
+            print(f"  book_id: {texture.book_id}")
+        return 0
+
+    if args.shape_compare:
+        a, b = args.shape_compare
+        match = shape_match(a, b)
+        translation = texture_translate(a, b)
+        if args.json:
+            json.dump(
+                {"match": match.to_dict(), "translation": translation.to_dict()},
+                sys.stdout,
+                indent=2,
+                default=str,
+            )
+            sys.stdout.write("\n")
+        else:
+            print(f"Shape compare: {match.verdict.value}")
+            print(f"  {match.statement}")
+            print(f"  shared_fingers: {match.shared_fingers}")
+            if match.texture_delta:
+                print(f"  texture_delta: {match.texture_delta}")
+            print("  candidate chart change (hypothesis only):")
+            for rw in translation.candidate_rewrites:
+                print(f"    - {rw}")
+        return 0
 
     if args.list_millennium:
         items = list_millennium_problems()

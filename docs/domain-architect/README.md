@@ -23,6 +23,7 @@ Approved plain-language explanation:
 | [GROK-RIGOR-HANDOFF](GROK-RIGOR-HANDOFF.md) | Pasteable working note for adversarial rigor review |
 | [GROK-ATTACK-CHECKLIST](GROK-ATTACK-CHECKLIST.md) | Bullet attack surface for Grok / external review |
 | [PR-28 Grok section](PR-28-GROK-HANDOFF-SECTION.md) | Fragment to paste into PR #28 description |
+| [Shape–Texture Ontology](SHAPE-TEXTURE-ONTOLOGY.md) | Jonathan Simons insight formalized — shape vs texture navigation |
 
 Machine-readable provenance (original expressions are immutable):
 
