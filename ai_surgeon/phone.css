@@ -37,6 +37,10 @@ a { color: var(--teal); text-decoration: none; }
   text-transform: uppercase;
 }
 .desk b { color: var(--teal); font-weight: 600; }
+.desk img.cg-chrome {
+  width: 18px; height: 18px; object-fit: contain; border-radius: 50%;
+  background: #000; vertical-align: middle; margin-right: 8px;
+}
 .phone-wrap {
   width: min(100vw, var(--phone-w));
   height: var(--phone-h);

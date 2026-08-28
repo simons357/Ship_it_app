@@ -51,11 +51,11 @@ How to rebuild the brochure and mockup PNGs: [`SCREENS.md`](SCREENS.md).
 - `ai-surgeon-systems.js` — shared engine (`AISS`) wired into both playable modules
 - `trauma_physiology.js` — trauma vitals loop shared with the headless playtest
 - `art/hero-surgical-table.jpg` — hub hero, appendectomy card, load field
-- `art/key-art-x.jpg` — pitch-card still (CG reticle is now the chrome mark)
+- `art/key-art-x.jpg` — pitch-card still and trauma load field
 - `art/cg-reticle-logo.png` — Chronogate CG reticle, small in chrome
 - `art/chronogate-wordmark.png` — About/Credits wordmark
 - `credits.html` — Chronogate · The Field Journal · Prime Field Technologies
-- `docs/bible/AI-Surgeon-Final-With-Citations.txt` — latest citations bible
+- `docs/bible/AI-Surgeon-Final-With-Citations.txt` — 2025 citations bible
 
 Prototype anatomy is still placeholder geometry (the storyboard says so). Not a clinical reference.
 

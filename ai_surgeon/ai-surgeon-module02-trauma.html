@@ -95,7 +95,8 @@
   #hub{position:fixed;left:12px;top:calc(env(safe-area-inset-top) + 8px);z-index:25;
     background:rgba(11,16,22,.9);border:1px solid var(--line);color:var(--steel-dim);
     padding:7px 10px;border-radius:3px;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
-    font-family:inherit;text-decoration:none}
+    font-family:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+  #hub .cg-chrome{width:16px;height:16px;object-fit:contain;border-radius:50%;background:#000;display:block}
 
   #ret{position:fixed;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;z-index:16;
     pointer-events:none;opacity:.30;transition:opacity .3s}
@@ -196,7 +197,7 @@
   </div>
 </div>
 
-<a id="hub" href="index.html">Residency</a>
+<a id="hub" href="index.html"><img class="cg-chrome" src="art/cg-reticle-logo.png" width="16" height="16" alt="">Residency</a>
 <button id="vr" class="hide">Enter VR</button>
 
 <div id="label"><b></b><i></i></div>
