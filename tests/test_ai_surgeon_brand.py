@@ -119,6 +119,25 @@ class TestCitationsBibleAndSystems(unittest.TestCase):
         self.assertIn("AISS.Handover", js)
         self.assertGreater(js.count("\n"), 1000)
 
+    def test_systems_runtime_is_superset_of_32d8_drop(self):
+        """Keep the richer runtime. Do not clobber Pen/Mode with the shorter drop."""
+        raw = (SURGEON / "ai-surgeon-systems.js").read_bytes()
+        js = raw.decode("utf-8")
+        drop_bytes = 51327
+        self.assertGreater(len(raw), drop_bytes)
+        for token in (
+            "AISS.Ask",
+            "AISS.Handover",
+            "AISS.Humor",
+            "AISS.Gaze",
+            "AISS.Stress",
+            "AISS.resetAll",
+        ):
+            self.assertIn(token, js)
+        for token in ("AISS.Pen", "AISS.Mode", "AISS.Coherence", "AISS.Vision"):
+            self.assertIn(token, js)
+        self.assertIn("if (AISS.Pen) AISS.Pen.reset();", js)
+
 
 class TestBrandServed(unittest.TestCase):
     def test_loopback_serves_webp_logo_credits_and_cites(self):

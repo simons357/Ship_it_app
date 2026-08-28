@@ -135,3 +135,11 @@ Both Warrior Surgeon `.docx` uploads were the **same bytes**. Split by voice in 
 - **HARRISON’S** = Arthurian Lady of the Lake → [`HARRISONS-arthurian-lady-of-the-lake.md`](HARRISONS-arthurian-lady-of-the-lake.md)
 
 No Harrison’s Principles quotations were in the drop. None are invented. Lake / mist is hub atmosphere only. Chronogate cyan / gold chrome stays. Playable prototype / trauma / systems files are not rewritten here.
+
+## Shared systems.js vs the 32d8 drop
+
+Latest drop: `ai-surgeon-systems_32d8.js` (SHA-256 `1a58702b611f45f409a0031046514259c380fcf33bd6e2bd1db0626a31bc77c4`, 51327 bytes). Ask, Handover, Humor, Gaze, Stress, `RETENTION = 'derived-band-only'`, and `resetAll` through Humor are that file.
+
+Runtime `ai_surgeon/ai-surgeon-systems.js` is a **superset**. The Pen commit kept the drop as a prefix and added `AISS.Mode`, `AISS.Pen`, `AISS.Coherence`, `AISS.Vision`, plus extra `resetAll` hooks. Do **not** replace the runtime with the shorter drop.
+
+Citations bible: `bible/AI-Surgeon-Final-With-Citations.txt` matches `Ai_surgeon_final_w_cits_1e55.txt` (SHA-256 `a574e53709a2ef2c9a7d34d22d7cef6e67130d12a2b2dfb629636cdd8aa570d7`).
