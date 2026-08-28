@@ -136,9 +136,9 @@
   }
 
   function drawJun(ctx, x, y, pose, t) {
-    const squat = pose === 'leopard' ? 18 : pose === 'bow' ? 22 : 8;
-    const hipY = y - 52 + squat;
-    const headY = hipY - 58;
+    const squat = pose === 'leopard' ? 22 : pose === 'bow' ? 26 : 6;
+    const hipY = y - 64 + squat;
+    const headY = hipY - 64;
     drawCape(ctx, x + 8, hipY - 20, t, pose);
 
     let lFootX = x - 28;
@@ -181,21 +181,21 @@
     ctx.fill();
     ctx.stroke();
     ctx.fillStyle = GOLD;
-    ctx.font = '700 12px sans-serif';
-    ctx.fillText('5', x - 4, hipY - 4);
+    ctx.font = '700 16px sans-serif';
+    ctx.fillText('5', x - 5, hipY - 2);
 
     limb(ctx, x - 12, hipY - 18, lHand.x, lHand.y, 6, PAPER);
     limb(ctx, x + 12, hipY - 18, rHand.x, rHand.y, 6, PAPER);
     disc(ctx, lHand.x, lHand.y, 7, GOLD, INK);
     disc(ctx, rHand.x, rHand.y, 7, GOLD, INK);
 
-    disc(ctx, x, headY, 16, PAPER, INK);
+    disc(ctx, x, headY, 18, PAPER, INK);
     ctx.fillStyle = PAPER;
-    ctx.fillRect(x - 16, headY - 18, 32, 14);
-    ctx.strokeRect(x - 16, headY - 18, 32, 14);
+    ctx.fillRect(x - 18, headY - 20, 36, 16);
+    ctx.strokeRect(x - 18, headY - 20, 36, 16);
     ctx.fillStyle = RED;
-    ctx.font = '700 14px sans-serif';
-    ctx.fillText('J', x - 5, headY - 6);
+    ctx.font = '700 16px sans-serif';
+    ctx.fillText('J', x - 6, headY - 6);
 
     if (pose === 'broom') drawBroom(ctx, rHand.x, rHand.y);
     if (pose === 'ribbon') drawRibbon(ctx, rHand.x, rHand.y, t);
@@ -519,6 +519,10 @@
   });
   window.addEventListener('keydown', (ev) => {
     if (ev.repeat && ev.key !== ' ') return;
+    if (ev.key === '1' || ev.key === '2' || ev.key === '3' || ev.key === '4') {
+      pick(Number(ev.key) - 1);
+      return;
+    }
     if (ev.key === 'q' || ev.key === 'Q' || ev.key === 'e' || ev.key === 'E') onPen('twist');
     if (ev.key === 'Enter') { ev.preventDefault(); onPen('click'); }
     if (ev.key === 'f' || ev.key === 'F') onPen('squeeze');

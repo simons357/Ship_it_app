@@ -95,6 +95,7 @@ class TestDojoPage(unittest.TestCase):
         self.assertIn("prop-", js)
         self.assertIn("KurotoDojo", js)
         self.assertIn("sampleCam", js)
+        self.assertIn("Number(ev.key) - 1", js)
         art = SURGEON / "art" / "dojo_speed_racer_style.png"
         self.assertTrue(art.is_file())
         self.assertGreater(art.stat().st_size, 20_000)
