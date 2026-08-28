@@ -3,6 +3,7 @@
 Product desk for **AI Surgeon** (Simons Medical Innovations, LLC). Not ChatVault, not Domain Architect, not a medical device.
 
 - **Hub:** [`../index.html`](../index.html)
+- **About / Credits (Chronogate lock):** [`../credits.html`](../credits.html)
 - **What the dropped files locked:** [`SOURCE-LOCK.md`](SOURCE-LOCK.md)
 - **Named sources only:** [`CITATIONS.md`](CITATIONS.md)
 - **Canonical 2025 plan + extracts:** [`bible/`](bible/)

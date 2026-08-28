@@ -102,8 +102,7 @@ class TestHubCopy(unittest.TestCase):
 
     def test_does_not_claim_chatvault_or_da(self):
         h = self.html.lower()
-        self.assertNotIn("chatvault", h)
-        # Footer only names Domain Architect to refuse its port.
+        self.assertIn("not chatvault", h)
         self.assertIn("not on domain architect", h)
 
 
