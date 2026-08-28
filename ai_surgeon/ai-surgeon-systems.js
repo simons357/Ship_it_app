@@ -1288,6 +1288,105 @@ AISS.Pen = {
   }
 };
 
+/* Apple Pencil Pro (and any `pointerType === 'pen'` stylus) until the
+   custom Chronogate pen exists. One object = all instruments.
+   Native squeeze / barrel roll are iPadOS. The web mapping is honest. */
+AISS.ApplePencil = {
+  SOURCE: 'apple-pencil',
+  NOTE: 'Apple Pencil Pro is every instrument until the custom pen. iPhone does not take a Pencil. Not a medical device. Apple’s marks are Apple’s.',
+  lastVia: null,
+  _bound: null,
+  _squeezeAt: 0,
+  _twistAt: 0,
+
+  bind(el, fire){
+    if (!el || this._bound === el) return el;
+    this.unbind();
+    const self = this;
+    const emit = typeof fire === 'function' ? fire : function(g, d){ return AISS.Pen.fire(g, d); };
+    let down = null;
+    let lastAz = null;
+    let lastTilt = null;
+
+    function src(via){
+      return { source: self.SOURCE, via: via };
+    }
+
+    function onDown(e){
+      if (e.pointerType !== 'pen') return;
+      down = {
+        t: (typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now(),
+        x: e.clientX, y: e.clientY, p: e.pressure || 0
+      };
+      lastAz = typeof e.azimuthAngle === 'number' ? e.azimuthAngle : null;
+      lastTilt = typeof e.tiltX === 'number' ? e.tiltX : null;
+      try { el.setPointerCapture(e.pointerId); } catch (err) {}
+    }
+
+    function onMove(e){
+      if (e.pointerType !== 'pen') return;
+      const now = (typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now();
+      if (typeof e.azimuthAngle === 'number' && lastAz != null){
+        const d = Math.abs(e.azimuthAngle - lastAz);
+        const wrapped = Math.min(d, Math.abs(d - Math.PI * 2));
+        if (wrapped > 0.22 && now - self._twistAt > 180){
+          self._twistAt = now;
+          self.lastVia = 'barrel-or-tilt';
+          emit('twist', src('barrel-or-tilt'));
+          lastAz = e.azimuthAngle;
+        }
+      } else if (typeof e.tiltX === 'number' && lastTilt != null){
+        if (Math.abs(e.tiltX - lastTilt) > 12 && now - self._twistAt > 180){
+          self._twistAt = now;
+          self.lastVia = 'tilt';
+          emit('twist', src('tilt'));
+          lastTilt = e.tiltX;
+        }
+      }
+      if (down && (e.pressure || 0) >= 0.72 && now - self._squeezeAt > 220){
+        self._squeezeAt = now;
+        self.lastVia = 'pressure';
+        emit('squeeze', src('pressure'));
+      }
+    }
+
+    function onUp(e){
+      if (e.pointerType !== 'pen' || !down) { down = null; return; }
+      const now = (typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now();
+      const dt = now - down.t;
+      const dx = e.clientX - down.x;
+      const dy = e.clientY - down.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dt < 280 && dist < 14){
+        self.lastVia = 'nib-tap';
+        emit('click', src('nib-tap'));
+      }
+      down = null;
+      lastAz = null;
+      lastTilt = null;
+    }
+
+    el.addEventListener('pointerdown', onDown);
+    el.addEventListener('pointermove', onMove);
+    el.addEventListener('pointerup', onUp);
+    el.addEventListener('pointercancel', onUp);
+    this._bound = el;
+    this._handlers = { onDown, onMove, onUp };
+    return el;
+  },
+
+  unbind(){
+    const el = this._bound;
+    if (!el || !this._handlers) { this._bound = null; return; }
+    el.removeEventListener('pointerdown', this._handlers.onDown);
+    el.removeEventListener('pointermove', this._handlers.onMove);
+    el.removeEventListener('pointerup', this._handlers.onUp);
+    el.removeEventListener('pointercancel', this._handlers.onUp);
+    this._bound = null;
+    this._handlers = null;
+  }
+};
+
 /* Shared coherence meter the Pen screen and modules can both read.
    Module-local `Coh` objects stay in charge of those HTML files. */
 AISS.Coherence = {

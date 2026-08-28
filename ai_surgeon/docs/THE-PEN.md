@@ -231,11 +231,14 @@ If the camera is denied, the Pen still works.
 
 | Tier | What your hands do | Ships |
 |---|---|---|
-| **Phone** | The Pen language on glass, or a cheap mechanical pen the camera can see. | **v1. First.** |
-| **Tablet + mat** | Larger field. Optional life-size steel (the 2025 BlueTools idea). Like a stylus: later, never required. | Not shipped. |
+| **Phone** | The Pen language on glass, or a cheap mechanical pen the camera can see. **iPhone does not take Apple Pencil.** | **v1. First.** |
+| **iPad + Apple Pencil Pro** | **One object = all instruments** until the custom Chronogate pen exists. Barrel roll = twist. Squeeze = clamp / ligate. Nib tap = click (Apple has no clicker cap). Hover = look before you cut. | **Desk tier, now.** Not a tray of toys. Spec: [`APPLE-PENCIL.md`](APPLE-PENCIL.md). |
+| **Custom Pen** | Click cap, knurled twist, squeeze barrel. Same three events. | When yours is down. |
+| **Tablet + mat** | Optional life-size steel later. Never required to learn the language. | Not shipped. |
 | **VR** | Same codebase, headset. Same score ledger. | Later phase of this build, not a second product. |
 
 v1 does not require VR. v1 does not require a mat of steel toys.
+v1 on a phone does not require Apple.
 
 ---
 
@@ -244,7 +247,9 @@ v1 does not require VR. v1 does not require a mat of steel toys.
 | Path | Role |
 |---|---|
 | This file | Design lock |
-| [`../pen.html`](../pen.html) | Hub screen: anatomy, mode toggle, See One / Do One / Lab, coherence, vision stub |
+| [`APPLE-PENCIL.md`](APPLE-PENCIL.md) | Apple Pencil Pro stand-in until the custom pen |
+| [`../pen.html`](../pen.html) | Hub screen: anatomy, mode toggle, Apple Pencil field |
+| [`../art/apple-pencil-pro-instrument.png`](../art/apple-pencil-pro-instrument.png) | Annotated Pencil Pro — one object, all instruments |
 | [`../index.html`](../index.html) `#the-pen` | Hub card |
 | [`../ai-surgeon-systems.js`](../ai-surgeon-systems.js) | `AISS.Mode`, `AISS.Pen`, `AISS.Coherence`, `AISS.Vision` |
 | [`../ai-surgeon-prototype.html`](../ai-surgeon-prototype.html) | Appendectomy — Pen gestures map onto incise / clamp / ligate / retract |

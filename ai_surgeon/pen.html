@@ -121,10 +121,10 @@
   <p class="sub">One object in the hand. It is the knife. It is the clamp. It is the
   retractor. Twist to choose. Click the top to fire. Squeeze to clamp, retract, or
   hold-to-ligate. See one first. Then do one. Study your anatomy.</p>
-  <p class="honest" id="honest"><b>Honest.</b> Software cannot make a phone stylus feel like a
-    Kelly clamp. The Pen is the <em>language</em>. Life-size steel is the tablet / VR ladder
-    later. v1 is min-movement plus vision — not a mat of toy instruments.
-    Not a medical device. Not cleared tracking.</p>
+  <p class="honest" id="honest"><b>Honest.</b> Software cannot make a stylus feel like a
+    Kelly clamp. The Pen is the <em>language</em>. Until yours is down, <em>Apple Pencil Pro
+    is every instrument</em> — one object, not a tray of toys. iPhone does not take a Pencil;
+    phone v1 stays finger on glass. iPad is the desk. Not a medical device. Not cleared tracking.
 </header>
 
 <figure class="hero">
@@ -153,7 +153,27 @@
 </div>
 
 <div class="coh">Coherence <div class="bar"><i id="coh-bar"></i></div><span id="coh-n">50</span></div>
-<p class="log" id="log">Twist · click · squeeze. Q / E twist. Space click. F squeeze.</p>
+<p class="log" id="log">Twist · click · squeeze. Q / E twist. Space click. F squeeze. Apple Pencil on this pad: nib tap = click, tilt = twist, pressure = squeeze.</p>
+
+<h2 class="sec" id="apple-pencil">Apple Pencil Pro · until yours is down</h2>
+<figure class="hero">
+  <img src="art/apple-pencil-pro-instrument.png" alt="Apple Pencil Pro annotated: nib tap, squeeze, barrel roll, hover">
+  <figcaption class="cap">
+    <b>One object. All instruments.</b>
+    Barrel roll = twist. Squeeze = clamp / ligate. Nib tap = click (Apple has no clicker cap).
+    Hover = look before you cut. Same three events as the Chronogate pen.
+  </figcaption>
+</figure>
+<p class="meta">Use Apple’s hardware until the custom click-cap / knurl / squeeze barrel exists.
+  Do not buy miniature Kellys. Pencil Pro is the desk. Phone still ships first without Apple.</p>
+<div class="card" id="pencil-pad-card">
+  <div class="who">Pointer field · pointerType pen</div>
+  <p class="say">Put an Apple Pencil (or any stylus the browser reports as <em>pen</em>) on this pad.
+    Finger still uses the three buttons. Native Pencil Pro squeeze and barrel roll are iPadOS;
+    Safari gets pressure, tilt, and nib tap. We do not invent a Web squeeze API.</p>
+  <div id="pencil-pad" style="margin-top:10px;height:160px;border:1px dashed var(--cyan-dim);border-radius:6px;background:#07090c;touch-action:none;display:flex;align-items:center;justify-content:center;color:var(--steel-dim);font-size:12px;letter-spacing:.12em;text-transform:uppercase">Nib here · iPad + Pencil</div>
+  <p class="fine" id="pencil-note"></p>
+</div>
 
 <h2 class="sec">Anatomy of the Pen</h2>
 <div class="anatomy">
@@ -197,6 +217,7 @@
 <div class="docs">
   <a href="index.html">← Residency hub</a>
   <a href="docs/THE-PEN.md">The Pen spec</a>
+  <a href="docs/APPLE-PENCIL.md">Apple Pencil stand-in</a>
   <a href="docs/THEIRS-medical-big-picture.md">Theirs · medical</a>
   <a href="screens.html#nib">The Nib still</a>
   <a href="screens.html#anesthesia">Airway mapping</a>
@@ -403,6 +424,15 @@
   document.querySelectorAll('#penpad [data-pen]').forEach((b) => {
     b.addEventListener('click', () => onPen(b.getAttribute('data-pen')));
   });
+
+  if (AISS.ApplePencil && $('pencil-pad')) {
+    $('pencil-note').textContent = AISS.ApplePencil.NOTE;
+    AISS.ApplePencil.bind($('pencil-pad'), (g, detail) => {
+      const via = (detail && detail.via) || 'pen';
+      log('Apple Pencil · ' + g + ' via ' + via);
+      onPen(g);
+    });
+  }
 
   window.addEventListener('keydown', (ev) => {
     const tag = (ev.target && ev.target.tagName) || '';

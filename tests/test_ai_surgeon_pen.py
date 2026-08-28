@@ -46,6 +46,27 @@ class TestPenSpec(unittest.TestCase):
         self.assertNotIn("excalibur", low)
         self.assertNotIn("avalon", low)
 
+
+class TestApplePencilStandIn(unittest.TestCase):
+    def test_spec_says_one_object_until_custom(self):
+        spec = (SURGEON / "docs" / "APPLE-PENCIL.md").read_text(encoding="utf-8")
+        low = spec.lower()
+        self.assertIn("apple pencil pro", low)
+        self.assertIn("every instrument", low)
+        self.assertIn("does not take apple pencil", low)
+        self.assertIn("barrel roll", low)
+        self.assertIn("no clicker cap", low)
+        self.assertIn("not a medical device", low)
+        self.assertIn("THE-PEN.md", spec)
+        art = SURGEON / "art" / "apple-pencil-pro-instrument.png"
+        self.assertTrue(art.is_file())
+        self.assertGreater(art.stat().st_size, 20_000)
+
+    def test_pen_spec_points_at_apple_stand_in(self):
+        spec = (SURGEON / "docs" / "THE-PEN.md").read_text(encoding="utf-8")
+        self.assertIn("APPLE-PENCIL.md", spec)
+        self.assertIn("Apple Pencil Pro", spec)
+
     def test_theirs_points_at_the_pen(self):
         theirs = (SURGEON / "docs" / "THEIRS-medical-big-picture.md").read_text(
             encoding="utf-8"
@@ -103,6 +124,8 @@ class TestPenHubAndScreen(unittest.TestCase):
         self.assertIn("zero penalty", hub.lower())
         self.assertIn("must study in the Lab", hub)
         self.assertIn("cannot make a phone stylus feel like a Kelly", hub)
+        self.assertIn("Apple Pencil Pro", hub)
+        self.assertIn("docs/APPLE-PENCIL.md", hub)
         self.assertIn("twist to choose, touch to commit", hub.lower())
         self.assertNotIn("John Occam", hub)
         self.assertNotIn("Excalibur", hub)
@@ -121,6 +144,9 @@ class TestPenHubAndScreen(unittest.TestCase):
         self.assertIn("not a cleared tracker", html.lower())
         self.assertIn("not a medical device", html.lower())
         self.assertIn("stills/10-twist-stylus.png", html)
+        self.assertIn("apple-pencil-pro-instrument.png", html)
+        self.assertIn('id="pencil-pad"', html)
+        self.assertIn("AISS.ApplePencil", html)
         self.assertNotIn("Avalon", html)
 
     def test_systems_and_prototypes_wire_pen_without_dropping_cases(self):
@@ -129,6 +155,8 @@ class TestPenHubAndScreen(unittest.TestCase):
         self.assertIn("exploration", systems)
         self.assertIn("curriculum", systems)
         self.assertIn("AISS.Pen", systems)
+        self.assertIn("AISS.ApplePencil", systems)
+        self.assertIn("pointerType", systems)
         self.assertIn("AISS.Vision", systems)
         self.assertIn("CLEARED: false", systems)
         self.assertIn("not cleared", systems.lower())
@@ -169,6 +197,16 @@ class TestPenServed(unittest.TestCase):
             spec = res.read().decode("utf-8", errors="replace")
             self.assertEqual(res.status, 200)
             self.assertIn("min-movement", spec.lower())
+            conn.request("GET", "/docs/APPLE-PENCIL.md")
+            res = conn.getresponse()
+            apple = res.read().decode("utf-8", errors="replace")
+            self.assertEqual(res.status, 200)
+            self.assertIn("Apple Pencil Pro", apple)
+            conn.request("GET", "/art/apple-pencil-pro-instrument.png")
+            res = conn.getresponse()
+            png = res.read()
+            self.assertEqual(res.status, 200)
+            self.assertGreater(len(png), 20_000)
             conn.request("GET", "/")
             res = conn.getresponse()
             hub = res.read().decode("utf-8", errors="replace")

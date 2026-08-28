@@ -20,6 +20,7 @@ Desk map of the 28 Aug 2026 user drop. Independent of ChatVault, Domain Architec
 | `WARRIOR-SURGEON.md` | 28 Aug 2026 novel drop — what it locked, and where it conflicts with final+cites. |
 | `THEIRS-medical-big-picture.md` | ACC / trauma / assistant / look-then-cut (same blob, medical voice). |
 | `THE-PEN.md` | THEIRS instrument: one pen as knife / clamp / retractor. Twist, click the top, squeeze. Exploration vs curriculum. |
+| `APPLE-PENCIL.md` | Apple Pencil Pro is every instrument until the custom pen. iPhone has no Pencil. |
 | `HARRISONS-arthurian-lady-of-the-lake.md` | Oracle / Lake / songs. Hub/about: **one** atmosphere beat. Not a fantasy OR. |
 | `warrior-surgeon/` | Identical `.docx`, full extract, hashes. |
 
