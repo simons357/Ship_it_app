@@ -1,0 +1,779 @@
+import {
+  COH_INSUFFICIENT,
+  FAILURE,
+  canContribute,
+  coarseLocation,
+  emptyEncounter,
+  emptySession,
+  newId,
+} from "./contracts.js";
+import { hydrate, loadState, putOriginal, rememberDevice, saveState } from "./db.js";
+import { confirmNonHuman, excludeProbableHuman, markUnknown, processSignal } from "./wildlife.js";
+import { HubTransport, LocalBroadcastTransport, OfflineQueue, flushQueue } from "./sync.js";
+import { bearingDeg, distanceM, projectRelative, watchPosition } from "./geo.js";
+import { listInputs, pickPreferredInput, startRecording } from "./audio.js";
+
+const $ = (id) => document.getElementById(id);
+let state = rememberDevice(loadState());
+const queue = new OfflineQueue(state);
+const localTransport = new LocalBroadcastTransport();
+const hubUrl = localStorage.getItem("listener.hub") || "";
+const transport = hubUrl ? new HubTransport(hubUrl) : localTransport;
+
+let fix = null;
+let stopWatch = null;
+let rec = null;
+let recStarted = 0;
+let heading = 0;
+
+function persist() {
+  saveState(state);
+}
+
+function toast(msg) {
+  const el = $("toast");
+  if (!el) return;
+  el.hidden = false;
+  el.textContent = msg;
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => {
+    el.hidden = true;
+  }, 4200);
+}
+
+function anotherListenerAvailable() {
+  return state.pairedDevices.length > 0 || state.sessions.length > 0;
+}
+
+function unprojectTap(start, leftPct, topPct, spanM = 120) {
+  const dx = ((leftPct - 50) / 38) * spanM;
+  const dy = ((58 - topPct) / 38) * spanM;
+  const mLat = 111320;
+  const mLon = 111320 * Math.cos((start.lat * Math.PI) / 180);
+  return {
+    lat: start.lat + dy / mLat,
+    lon: start.lon + dx / (mLon || 1),
+  };
+}
+
+function captionForMode(mode) {
+  const el = $("mapCaption");
+  if (!el) return;
+  el.hidden = false;
+  if (mode === "satellite") el.textContent = "SATELLITE · MapKit on iPhone · relative plot here";
+  else if (mode === "hybrid") el.textContent = "HYBRID · MapKit on iPhone · relative plot here";
+  else el.textContent = "FIELD · GPS-relative plot · no scraped map tiles";
+}
+
+function session() {
+  return state.sessions.find((s) => s.id === state.activeSessionId) || null;
+}
+
+function sessionCrumbs() {
+  const s = session();
+  if (!s) return [];
+  return state.breadcrumbs.filter((b) => b.sessionId === s.id);
+}
+
+function sessionNotes() {
+  const s = session();
+  if (!s) return [];
+  return state.notes.filter((n) => n.sessionId === s.id);
+}
+
+function sessionEncounters() {
+  const s = session();
+  if (!s) return [];
+  return state.encounters.filter((e) => e.sessionId === s.id && !e.excluded);
+}
+
+function showOnboard() {
+  const el = $("onboard");
+  const inner = $("onboardInner");
+  const s = session();
+  const paired = state.pairedDevices.length > 0 || (s && s.role === "scout");
+  if (s && s.status === "active") {
+    el.classList.remove("show");
+    return;
+  }
+  el.classList.add("show");
+  if (!state._sawHello) {
+    inner.innerHTML = `
+      <div class="word">LISTENER</div>
+      <h1>What the wild is saying.</h1>
+      <p>A field instrument for non-human sound. Private on this phone until you choose otherwise.</p>
+      <button class="wide" id="helloGo">CONTINUE</button>`;
+    $("helloGo").onclick = () => {
+      state._sawHello = true;
+      persist();
+      showOnboard();
+    };
+    return;
+  }
+  if (!state._askedBase && anotherListenerAvailable()) {
+    inner.innerHTML = `
+      <div class="word">LISTENER</div>
+      <h1>Another Listener is available.</h1>
+      <p class="leave">LEAVE AS BASE?</p>
+      <p>Leave this phone still. Take the other one walking. You do not need to know how they find each other.</p>
+      <div class="doors">
+        <button class="wide" data-door="listen">LEAVE AS BASE</button>
+        <button class="wide" style="background:#0d1a15" data-door="scout">USE THIS AS SCOUT</button>
+      </div>`;
+    inner.querySelectorAll("[data-door]").forEach((btn) => {
+      btn.onclick = () => {
+        state._askedBase = true;
+        persist();
+        beginDoor(btn.dataset.door);
+      };
+    });
+    return;
+  }
+  inner.innerHTML = `
+    <div class="word">LISTENER</div>
+    <h1>How do you want to begin?</h1>
+    <p>Leave a phone still, or take this one walking. You do not need to know the network.</p>
+    ${paired || anotherListenerAvailable() ? `<p class="leave">Another Listener is available. LEAVE AS BASE?</p>` : ""}
+    <div class="doors">
+      <button class="wide" data-door="listen">LISTEN HERE</button>
+      <button class="wide" style="margin-top:8px;background:#0d1a15" data-door="scout">GO SCOUT</button>
+      <button class="wide" style="margin-top:8px;background:#0d1a15" data-door="broadcast">START A BROADCAST</button>
+    </div>`;
+  inner.querySelectorAll("[data-door]").forEach((btn) => {
+    btn.onclick = () => beginDoor(btn.dataset.door);
+  });
+}
+
+async function ensureGeo() {
+  if (stopWatch) return;
+  stopWatch = watchPosition(
+    (next) => {
+      fix = next;
+      heading = next.heading ?? heading;
+      const s = session();
+      if (s && s.role === "scout" && s.status === "active" && next.lat != null) {
+        state.breadcrumbs.push({
+          id: newId("bc"),
+          sessionId: s.id,
+          t: next.t,
+          lat: next.lat,
+          lon: next.lon,
+          accuracy: next.accuracy,
+          heading: next.heading,
+          quality: next.quality,
+        });
+        persist();
+      }
+      renderField();
+    },
+    () => {
+      if (session()) toast("GPS unavailable — marks stay session-relative. RETURN still works on what you record.");
+      renderField();
+    }
+  );
+}
+
+async function beginDoor(door) {
+  await ensureGeo();
+  const s = emptySession({
+    door,
+    role: door === "scout" ? "scout" : door === "broadcast" ? "hub" : "base",
+    startLat: fix?.lat ?? null,
+    startLon: fix?.lon ?? null,
+    startAccuracy: fix?.accuracy ?? null,
+    startGpsQuality: fix?.quality || "unknown",
+    title: door === "broadcast" ? "Field broadcast" : "Field session",
+    localFrame: !fix,
+  });
+  if (s.startLat == null) {
+    s.localFrame = true;
+    s.startLat = 0;
+    s.startLon = 0;
+  }
+  if (door === "broadcast") {
+    const b = {
+      id: newId("bcst"),
+      sessionId: s.id,
+      title: "Field broadcast",
+      startedAt: Date.now(),
+      watchers: 1,
+      sensorOptIn: false,
+    };
+    s.broadcastId = b.id;
+    state.broadcasts.push(b);
+  }
+  state.sessions.push(s);
+  state.activeSessionId = s.id;
+  state.nodes.push({
+    id: state.deviceId,
+    sessionId: s.id,
+    role: s.role,
+    name: s.role === "base" ? "BASE · YOU" : s.role === "scout" ? "SCOUT · YOU" : "HUB · YOU",
+    lat: s.startLat,
+    lon: s.startLon,
+    nearby: true,
+    synchronized: false,
+    lastSeen: Date.now(),
+  });
+  queue.enqueue("session.open", { sessionId: s.id, role: s.role, inviteCode: s.inviteCode });
+  persist();
+  $("onboard").classList.remove("show");
+  if (door === "scout") openSheet("scout");
+  else if (door === "broadcast") showTab("broadcast");
+  renderAll();
+}
+
+function setMapMode(mode) {
+  const s = session();
+  if (s) s.mapMode = mode;
+  $("field").className = mode;
+  $("mapmodes").querySelectorAll("button").forEach((b) => {
+    b.classList.toggle("on", b.dataset.mode === mode);
+  });
+  captionForMode(mode);
+  persist();
+}
+
+function showTab(name) {
+  document.querySelectorAll(".tabs button").forEach((b) => {
+    b.classList.toggle("on", b.dataset.tab === name);
+  });
+  $("library").style.display = name === "library" ? "block" : "none";
+  $("broadcast").style.display = name === "broadcast" ? "block" : "none";
+  if (name === "library") renderLibrary();
+  if (name === "broadcast") renderBroadcast();
+}
+
+function renderField() {
+  const s = session();
+  const net = $("network");
+  if (!s) {
+    net.textContent = "● WAITING\nNO SESSION";
+    net.classList.remove("warn");
+  } else {
+    const n = state.nodes.filter((x) => x.sessionId === s.id).length;
+    const fading = s.startGpsQuality === "fading" || fix?.quality === "fading" || (!fix && s.startGpsQuality === "unknown");
+    net.classList.toggle("warn", fading);
+    net.innerHTML = fading
+      ? `● GPS ${fix?.quality === "fading" ? "FADING" : "UNAVAILABLE"}<br>${n} LISTENER${n === 1 ? "" : "S"}`
+      : `● FIELD READY<br>${n} LISTENER${n === 1 ? "" : "S"}`;
+  }
+
+  $("coh").textContent = COH_INSUFFICIENT.display;
+  $("cohStatus").textContent = COH_INSUFFICIENT.status;
+  $("needle").style.transform = `rotate(${heading || 0}deg)`;
+
+  const start = s && s.startLat != null ? { lat: s.startLat, lon: s.startLon } : null;
+  const you = fix && fix.lat != null ? { lat: fix.lat, lon: fix.lon } : start;
+  const markers = $("markers");
+  markers.innerHTML = "";
+  const crumbs = $("crumbs");
+  crumbs.innerHTML = "";
+  crumbs.classList.toggle("return", Boolean(s?.returnActive));
+
+  if (s && start) {
+    const p0 = projectRelative(start, start) || { left: 22, top: 62 };
+    markers.insertAdjacentHTML(
+      "beforeend",
+      `<button class="start" style="left:${p0.left}%;top:${p0.top}%"><i></i><b>START</b></button>`
+    );
+  }
+
+  state.nodes
+    .filter((n) => s && n.sessionId === s.id && n.lat != null)
+    .forEach((n) => {
+      const p = (start && projectRelative(start, n)) || { left: 58, top: 46 };
+      markers.insertAdjacentHTML(
+        "beforeend",
+        `<button class="node ${n.role}" style="left:${p.left}%;top:${p.top}%"><i></i><b>${n.name}</b></button>`
+      );
+    });
+
+  if (s && you && (!state.nodes.some((n) => n.id === state.deviceId && n.lat != null))) {
+    const p = (start && projectRelative(start, you)) || { left: 58, top: 46 };
+    const label = s.role === "base" ? "BASE · YOU" : s.role === "scout" ? "SCOUT · YOU" : "YOU";
+    markers.insertAdjacentHTML(
+      "beforeend",
+      `<button class="node ${s.role}" style="left:${p.left}%;top:${p.top}%"><i></i><b>${label}</b></button>`
+    );
+  }
+
+  sessionNotes().forEach((note) => {
+    if (note.excluded || note.lat == null || !start) return;
+    const p = projectRelative(start, note);
+    if (!p) return;
+    const mystery = note.kind === "mystery";
+    markers.insertAdjacentHTML(
+      "beforeend",
+      `<button class="event ${mystery ? "unknown" : ""}" style="left:${p.left}%;top:${p.top}%"><i></i><span>${note.kind.toUpperCase()}</span></button>`
+    );
+  });
+
+  const pts = sessionCrumbs();
+  if (start && pts.length) {
+    const d = pts
+      .map((c, i) => {
+        const p = projectRelative(start, c);
+        if (!p) return "";
+        return `${i ? "L" : "M"} ${p.left} ${p.top}`;
+      })
+      .join(" ");
+    crumbs.innerHTML = `<path d="${d}" />`;
+  }
+
+  const live = $("livecard");
+  const last = sessionEncounters().at(-1);
+  if (!s) {
+    live.querySelector("b").textContent = "Start a session to listen";
+    live.querySelectorAll("small")[0].textContent = "LIVE FIELD";
+    live.querySelectorAll("small")[1].textContent = "Private by default.";
+    $("liveMeta").innerHTML = "PRIVATE<br>ON DEVICE";
+  } else if (last) {
+    live.querySelectorAll("small")[0].textContent =
+      last.kind === "unknown" ? "UNKNOWN · BIOLOGICAL CANDIDATE" : "FIELD NOTE · NON-HUMAN";
+    live.querySelector("b").textContent = last.label;
+    live.querySelectorAll("small")[1].textContent = "Original kept on this phone.";
+    $("liveMeta").innerHTML = last.contributed ? "IN LIBRARY" : "NOT<br>CONTRIBUTED";
+  } else if (s.returnActive && start && you) {
+    const m = distanceM(you, start);
+    const brg = bearingDeg(you, start);
+    live.querySelectorAll("small")[0].textContent = "RETURN · SAFETY AID";
+    live.querySelector("b").textContent = "Trail back to Session Start";
+    live.querySelectorAll("small")[1].textContent =
+      m != null ? `${Math.round(m)} m · not a map replacement` : "Highlighting your breadcrumb";
+    $("liveMeta").innerHTML = brg != null ? `BEARING<br>${Math.round((brg + 360) % 360)}°` : "START";
+  } else {
+    live.querySelectorAll("small")[0].textContent = "LIVE FIELD";
+    live.querySelector("b").textContent = "Listening for the wild";
+    live.querySelectorAll("small")[1].textContent =
+      s.startGpsQuality === "fading" || fix?.quality === "fading"
+        ? "GPS fading — still recording locally."
+        : "No invented animals. UNKNOWN stays UNKNOWN.";
+    $("liveMeta").innerHTML = "PRIVATE<br>ON DEVICE";
+  }
+}
+
+function renderLibrary() {
+  const list = $("libraryList");
+  const rows = state.library;
+  if (!rows.length) {
+    list.innerHTML = `<div class="signal"><small>PRIVATE SESSION LIBRARY IS SEPARATE</small><b>Nothing contributed yet</b><span>Sharing a card is not the same as sending the original.</span></div>`;
+    return;
+  }
+  list.innerHTML = rows
+    .map(
+      (r) => `<div class="signal"><small>${r.coarseLabel} · ${r.provenance}</small><b>${r.label}</b><span>${r.summary}</span></div>`
+    )
+    .join("");
+}
+
+function renderBroadcast() {
+  const s = session();
+  const b = state.broadcasts.find((x) => x.sessionId === s?.id);
+  $("bcastLive").textContent = b ? "● LIVE BROADCAST" : "○ BROADCAST READY";
+  $("bcastTitle").textContent = b?.title || "No broadcast yet";
+  const nodes = s ? state.nodes.filter((n) => n.sessionId === s.id).length : 0;
+  $("bcastBody").innerHTML = `
+    <div class="viewer"><b>${b ? `${b.watchers} watching` : "0 watching"}</b><small>Watching needs no microphone and no precise location.</small></div>
+    <div class="viewer"><b>FIELD · ${nodes} node${nodes === 1 ? "" : "s"}</b><small>Human speech is excluded from wildlife encounters. Sensor contribution is opt-in.</small></div>
+    <div class="viewer"><b>Invite ${s?.inviteCode || "—"}</b><small>Pair another Listener. Transport can change. The session stays on the phone if the link drops.</small></div>`;
+}
+
+function closeSheet() {
+  $("overlay").classList.remove("show");
+}
+
+function openSheet(type) {
+  const s = session();
+  const sheet = $("sheet");
+  const views = {
+    session: () => `
+      <small class="label">LISTENER SESSION</small>
+      <h2>Start a Session</h2>
+      <p>Every Listener keeps its own evidence. If the link drops we keep recording and sync when you're back.</p>
+      <div class="choices">
+        <button data-door="listen">⌂ HOME FIELD</button>
+        <button data-door="scout">⌁ WANDER / SCOUT</button>
+        <button data-door="broadcast">● BROADCAST</button>
+        <button data-act="pair">＋ ADD STATION</button>
+      </div>
+      <button class="wide" data-act="listen-now">START LISTENING</button>`,
+    scout: () => `
+      <small class="label">STUPIDLY EASY SETUP</small>
+      <h2>Go Scout</h2>
+      <p>Take this phone. Listener checks location, microphone and connected AirPods, starts your breadcrumb trail, and links to a Base when one is there.</p>
+      <div class="choices" id="micChoices"></div>
+      <p id="micActive">Active input will show here.</p>
+      <button class="wide" data-act="wander">START WANDER</button>`,
+    note: () => `
+      <small class="label">FIELD NOTE · AUTO-STAMPED</small>
+      <h2>What happened?</h2>
+      <div class="choices">
+        <button data-note="saw">👁 SAW IT</button>
+        <button data-note="heard">👂 HEARD IT</button>
+        <button data-note="photo">📷 PHOTO</button>
+        <button data-note="video">🎞 VIDEO</button>
+        <button data-note="mystery">❓ MYSTERY</button>
+        <button data-note="human">🗣 HUMAN SPEECH</button>
+      </div>
+      <textarea id="noteText" rows="3" placeholder="Optional words from you — never a transcript of the recording."></textarea>
+      <input id="noteFile" type="file" accept="image/*,video/*" hidden>
+      <button class="wide" data-act="save-note">SAVE EVIDENCE</button>`,
+    contribute: () => contributeHTML(),
+    invite: () => `
+      <small class="label">JOIN THE FIELD</small>
+      <h2>Invite somebody</h2>
+      <p>Watching requires no microphone or precise location. Joining as a node is a separate yes.</p>
+      <p><b>Pair code ${s?.inviteCode || "—"}</b></p>
+      <div class="choices">
+        <button data-act="watch">👀 JUST WATCH</button>
+        <button data-act="node">＋ JOIN AS NODE</button>
+      </div>
+      <button class="wide" data-act="copy-code">COPY PAIR CODE</button>`,
+  };
+  sheet.innerHTML = (views[type] || views.session)();
+  $("overlay").classList.add("show");
+  bindSheet(type);
+}
+
+function contributeHTML() {
+  const pending = sessionEncounters();
+  if (!pending.length) {
+    return `<small class="label">CONTRIBUTE · OPT-IN</small><h2>Send us your Listener signals.</h2><p>Nothing in this session is ready. Save a non-human field note first. Sharing a card later is a different button.</p><button class="wide" data-act="close">OK</button>`;
+  }
+  const options = pending
+    .map((e) => `<button data-enc="${e.id}">${e.label}<br><small>${e.humanSpeechGate}</small></button>`)
+    .join("");
+  return `
+    <small class="label">CONTRIBUTE · OPT-IN</small>
+    <h2>Send us your Listener signals.</h2>
+    <p>Only non-human biological evidence. Precise home, raw Wander routes, and private media stay here unless you change that.</p>
+    <div class="choices">${options}</div>
+    <p>Human-speech exclusion must be confirmed before the common library gets anything.</p>
+    <button class="ghost" data-act="confirm-wild">THIS IS NOT HUMAN SPEECH</button>
+    <div class="choices">
+      <button data-flag="audio">✓ ORIGINAL AUDIO</button>
+      <button data-flag="features">✓ SIGNAL FEATURES</button>
+      <button data-flag="coarse">✓ COARSE LOCATION</button>
+      <button data-flag="provenance">✓ PROVENANCE</button>
+    </div>
+    <button class="wide" data-act="contribute-now" disabled>CONTRIBUTE SAFELY</button>
+    <button class="ghost" data-act="share-card">SHARE A CARD ONLY</button>`;
+}
+
+function bindSheet(type) {
+  const sheet = $("sheet");
+  let noteKind = "mystery";
+  let selectedEnc = sessionEncounters().at(-1)?.id || null;
+  let flags = { audio: true, features: true, coarse: true, provenance: true };
+  let wildOk = false;
+
+  if (type === "scout") fillMics();
+
+  sheet.onclick = async (ev) => {
+    const t = ev.target.closest("button");
+    if (!t) return;
+    if (t.dataset.door) {
+      closeSheet();
+      await beginDoor(t.dataset.door);
+      return;
+    }
+    if (t.dataset.note) {
+      noteKind = t.dataset.note;
+      sheet.querySelectorAll("[data-note]").forEach((b) => b.classList.toggle("on", b === t));
+      if (noteKind === "photo" || noteKind === "video") $("noteFile").click();
+      return;
+    }
+    if (t.dataset.enc) {
+      selectedEnc = t.dataset.enc;
+      sheet.querySelectorAll("[data-enc]").forEach((b) => b.classList.toggle("on", b === t));
+      return;
+    }
+    if (t.dataset.flag) {
+      flags[t.dataset.flag] = !flags[t.dataset.flag];
+      t.classList.toggle("on");
+      return;
+    }
+    const act = t.dataset.act;
+    if (act === "close") closeSheet();
+    if (act === "listen-now") {
+      closeSheet();
+      if (!session()) await beginDoor("listen");
+    }
+    if (act === "wander") {
+      const s = session();
+      if (s) s.role = "scout";
+      closeSheet();
+      await startMic();
+      renderAll();
+    }
+    if (act === "save-note") await saveNote(noteKind, $("noteText")?.value || "");
+    if (act === "pair" || act === "watch" || act === "node") {
+      const s = session();
+      if (act === "node" && s) {
+        state.pairedDevices.push({ id: newId("dev"), role: "node", at: Date.now() });
+        queue.enqueue("node.join", { sessionId: s.id, watchOnly: false });
+      }
+      if (act === "watch" && s) queue.enqueue("broadcast.watch", { sessionId: s.id });
+      persist();
+      closeSheet();
+      renderAll();
+    }
+    if (act === "copy-code") {
+      const s = session();
+      if (s) navigator.clipboard?.writeText(s.inviteCode);
+    }
+    if (act === "confirm-wild") {
+      const enc = state.encounters.find((e) => e.id === selectedEnc);
+      if (!enc) return;
+      const next = confirmNonHuman(enc);
+      if (next.ok) {
+        Object.assign(enc, next.encounter);
+        wildOk = true;
+        persist();
+        const go = sheet.querySelector("[data-act=contribute-now]");
+        if (go) go.disabled = !canContribute(enc).ok;
+      } else {
+        alert(next.reason);
+      }
+    }
+    if (act === "contribute-now") await contributeSelected(selectedEnc, flags, wildOk);
+    if (act === "share-card") shareCard(selectedEnc);
+  };
+}
+
+async function fillMics() {
+  const box = document.getElementById("micChoices");
+  const line = document.getElementById("micActive");
+  if (!box) return;
+  let inputs = [];
+  try {
+    inputs = await listInputs();
+  } catch {
+    inputs = [];
+  }
+  const pref = pickPreferredInput(inputs);
+  box.innerHTML = `
+    <button data-mic="airpods">🎧 AIRPODS<br><small>${inputs.some((i) => i.airpods) ? "supported" : "use if supported"}</small></button>
+    <button data-mic="phone" class="on">📱 IPHONE MIC<br><small>${pref.label}</small></button>`;
+  if (line) line.textContent = `Active input · ${pref.label}`;
+}
+
+async function startMic() {
+  const inputs = await listInputs().catch(() => []);
+  const pref = pickPreferredInput(inputs);
+  $("micLine").textContent = `MIC · ${pref.label.toUpperCase()} · ARMING`;
+  $("micLine").classList.add("on");
+  try {
+    rec = await startRecording(pref.id);
+    recStarted = Date.now();
+    $("micLine").textContent = `MIC · ${pref.label.toUpperCase()} · RECORDING · ORIGINAL PRESERVED`;
+  } catch {
+    $("micLine").textContent = "MIC · PERMISSION NEEDED · STILL LISTENING WHEN YOU ALLOW IT";
+    $("micLine").classList.remove("on");
+  }
+}
+
+async function stopMicToOriginal() {
+  if (!rec) return null;
+  const blob = await rec.stop();
+  rec = null;
+  const id = newId("aud");
+  putOriginal(id, blob, { mime: blob.type, startedAt: recStarted, bytes: blob.size });
+  $("micLine").textContent = "MIC · IDLE · LAST ORIGINAL KEPT";
+  $("micLine").classList.remove("on");
+  return id;
+}
+
+async function saveNote(kind, text) {
+  const s = session();
+  if (!s) {
+    closeSheet();
+    await beginDoor("listen");
+    return saveNote(kind, text);
+  }
+  const file = document.getElementById("noteFile")?.files?.[0];
+  let mediaId = null;
+  if (file) {
+    mediaId = newId("med");
+    putOriginal(mediaId, file, { mime: file.type, name: file.name, bytes: file.size });
+  }
+  let audioId = null;
+  if (kind === "heard" && rec) audioId = await stopMicToOriginal();
+
+  const note = {
+    id: newId("note"),
+    sessionId: s.id,
+    t: Date.now(),
+    kind: kind === "human" ? "heard" : kind,
+    excluded: kind === "human",
+    text,
+    mediaId,
+    lat: fix?.lat ?? s.startLat,
+    lon: fix?.lon ?? s.startLon,
+  };
+  state.notes.push(note);
+
+  let enc = emptyEncounter({
+    sessionId: s.id,
+    label: kind === "mystery" ? "UNKNOWN" : text.trim() || kind.toUpperCase(),
+    kind: "unknown",
+    provenance: "user",
+    originalAudioId: audioId,
+    lat: note.lat,
+    lon: note.lon,
+    contributingNodeIds: [state.deviceId],
+  });
+  const decision = processSignal({ probableHumanSpeech: kind === "human" });
+  if (!decision.createEncounter) {
+    enc = excludeProbableHuman(enc);
+    state.exclusions = state.exclusions || [];
+    state.exclusions.push({
+      id: enc.id,
+      t: Date.now(),
+      internalLabel: decision.internalLabel,
+      transcript: null,
+      speakerId: null,
+    });
+    persist();
+    closeSheet();
+    toast("Probable human speech kept off the wildlife record.");
+    renderAll();
+    return;
+  }
+  enc = markUnknown(enc);
+  enc.label = decision.label || enc.label;
+  state.encounters.push(enc);
+  queue.enqueue("note.add", { noteId: note.id, encounterId: enc.id });
+  persist();
+  closeSheet();
+  renderAll();
+}
+
+async function contributeSelected(id, flags) {
+  const enc = state.encounters.find((e) => e.id === id);
+  const gate = canContribute(enc);
+  if (!gate.ok) {
+    alert(gate.reason);
+    return;
+  }
+  const coarse = flags.coarse ? coarseLocation(enc.lat, enc.lon) : null;
+  const row = {
+    id: newId("lib"),
+    encounterId: enc.id,
+    label: enc.label,
+    provenance: enc.provenance,
+    coarse,
+    coarseLabel: coarse ? `${coarse.lat}, ${coarse.lon}` : "LOCATION HELD",
+    summary: "Listener contribution · original stays referenced · not a species claim",
+    includeAudio: Boolean(flags.audio && enc.originalAudioId),
+    includeFeatures: Boolean(flags.features),
+    sharedPublic: false,
+  };
+  enc.contributed = true;
+  state.library.push(row);
+  queue.enqueue("library.contribute", { libraryId: row.id });
+  persist();
+  closeSheet();
+  showTab("library");
+  renderAll();
+}
+
+function shareCard(id) {
+  const enc = state.encounters.find((e) => e.id === id);
+  if (!enc) return;
+  enc.shared = true;
+  state.cards.push({
+    id: newId("card"),
+    encounterId: enc.id,
+    contributed: false,
+    shared: true,
+  });
+  persist();
+  closeSheet();
+  alert("Card ready to share. The original was not sent to the library.");
+}
+
+function toggleReturn() {
+  const s = session();
+  if (!s) return;
+  s.returnActive = !s.returnActive;
+  persist();
+  renderField();
+}
+
+function renderAll() {
+  renderField();
+  renderLibrary();
+  renderBroadcast();
+}
+
+$("overlay").addEventListener("click", (e) => {
+  if (e.target === $("overlay")) closeSheet();
+});
+document.querySelectorAll(".tabs button").forEach((b) => {
+  b.onclick = () => showTab(b.dataset.tab);
+});
+$("mapmodes").querySelectorAll("button").forEach((b) => {
+  b.onclick = () => setMapMode(b.dataset.mode);
+});
+$("btnSession").onclick = () => openSheet("session");
+$("btnNote").onclick = () => openSheet("note");
+$("btnReturn").onclick = toggleReturn;
+$("btnScout").onclick = async () => {
+  if (!session()) await beginDoor("scout");
+  else openSheet("scout");
+};
+$("btnContribute").onclick = () => openSheet("contribute");
+$("btnInvite").onclick = () => openSheet("invite");
+
+window.addEventListener("beforeunload", persist);
+
+function markField(ev) {
+  const s = session();
+  if (!s || s.status !== "active") return;
+  if (ev.target.closest("button")) return;
+  const rect = $("field").getBoundingClientRect();
+  const left = ((ev.clientX - rect.left) / rect.width) * 100;
+  const top = ((ev.clientY - rect.top) / rect.height) * 100;
+  const origin = { lat: s.startLat ?? 0, lon: s.startLon ?? 0 };
+  const pt = unprojectTap(origin, left, top);
+  state.breadcrumbs.push({
+    id: newId("bc"),
+    sessionId: s.id,
+    t: Date.now(),
+    lat: pt.lat,
+    lon: pt.lon,
+    accuracy: null,
+    heading,
+    quality: fix ? fix.quality : "unknown",
+    source: fix ? "gps-tap" : "manual",
+  });
+  persist();
+  renderField();
+}
+
+$("field").addEventListener("click", markField);
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js").catch(() => {});
+}
+
+if (new URLSearchParams(location.search).has("paired") && !state.pairedDevices.length) {
+  state.pairedDevices.push({ id: "paired-local", role: "base", at: Date.now() });
+}
+
+flushQueue(queue, transport).then((res) => {
+  if (res && res.ok === false) toast(FAILURE.scoutLost);
+}).catch(() => toast(FAILURE.scoutLost));
+
+hydrate().then((next) => {
+  state = rememberDevice(next);
+  showOnboard();
+  renderAll();
+  captionForMode(session()?.mapMode || "field");
+  ensureGeo();
+});
+showOnboard();
+renderAll();
+ensureGeo();

@@ -1,29 +1,48 @@
 # LISTENER
 
-New product. New workspace. Not a continuation of anything else in this repo.
+What the wild is saying.
 
-This GitHub repo (`Ship_it_app`) is a working vault. LISTENER lives only in this folder so it cannot get crossed with old threads.
+A wildlife-only acoustic field instrument. Not Ship It. Not Listener search. Not a generic checklist.
 
-## Status
+Build from [`MASTER_SPEC.md`](MASTER_SPEC.md). Keep the visual/product behavior in [`inbox/index.html`](inbox/index.html).
 
-- Workspace: **open**
-- Product spec: **waiting on ChatGPT pre-design** (put it in `inbox/`)
-- Ship It / Listener search: **parked** — see `PARKED-THREADS.md`
-
-## Open the project home
+## Run the iPhone preview
 
 ```bash
 cd listener/app
 python3 -m http.server 4173
 ```
 
-Then open http://127.0.0.1:4173/
+Open http://127.0.0.1:4173/ on a phone-sized viewport.
 
-## Layout
+## Native App Store target
 
-| Path | Role |
-| --- | --- |
-| `app/` | Project home (placeholder until the design arrives) |
-| `inbox/` | Drop the ChatGPT pre-design here |
-| `PARKED-THREADS.md` | Hard stop on the bad Listener search thread |
-| `AGENTS.md` | Rules so later agents do not mix projects |
+```text
+listener/ios/Listener.xcodeproj
+```
+
+See [`ios/README.md`](ios/README.md) and [`store/APP-STORE.md`](store/APP-STORE.md).
+
+## Tests
+
+```bash
+python3 -m unittest listener.tests.test_listener_core
+```
+
+or:
+
+```bash
+python3 -m unittest discover -s listener/tests
+```
+
+## Non-negotiables
+
+- Non-human biological signals only for encounters and the library
+- Privacy by default
+- No invented animal positions
+- No fake COH values
+- No forced species IDs
+- Originals preserved
+- Sharing ≠ contributing
+- Offline must not lose the Session
+- UI stays simple

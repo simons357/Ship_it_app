@@ -1,33 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#020504">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="LISTENER">
   <title>LISTENER</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <meta name="description" content="What the wild is saying. A wildlife-only field instrument.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
-  <main class="wrap">
-    <p class="eyebrow">New project</p>
-    <h1>LISTENER</h1>
-    <p class="lede">
-      Fresh workspace. Built from your ChatGPT pre-design — not from Ship It,
-      not from Listener search, not from Wildlife Marsh.
-    </p>
+  <div id="onboard" class="onboard show">
+    <div id="onboardInner"></div>
+  </div>
 
-    <section class="cards">
-      <article class="card go">
-        <h2>This thread</h2>
-        <p>LISTENER. Send the ChatGPT pre-design into <code>listener/inbox/</code> and we build from that.</p>
-      </article>
-      <article class="card stop">
-        <h2>Parked</h2>
-        <p>Ship It <strong>Listener search</strong> is stopped. That hunt did not work and will not be mixed into this app.</p>
-      </article>
-    </section>
+  <div id="field" class="field">
+    <svg id="crumbs" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+    <div id="markers"></div>
+  </div>
 
-    <p class="foot">Vault folder <code>listener/</code> · isolated from <code>main</code> science work</p>
-  </main>
+  <header>
+    <div class="brand">LISTENER<small>WHAT THE WILD IS SAYING</small></div>
+    <div class="network" id="network">● WAITING<br>NO SESSION</div>
+  </header>
+
+  <div class="tabs">
+    <button class="on" data-tab="field">FIELD</button>
+    <button data-tab="broadcast">BROADCAST</button>
+    <button data-tab="library">SIGNALS</button>
+  </div>
+  <div class="mapmodes" id="mapmodes">
+    <button data-mode="field" class="on">FIELD</button>
+    <button data-mode="satellite">SAT</button>
+    <button data-mode="hybrid">HYBRID</button>
+  </div>
+  <div class="mapcap" id="mapCaption" hidden>FIELD · GPS-relative plot</div>
+
+  <div class="instrument">
+    <small>FIELD COHERENCE · DA</small>
+    <strong id="coh">—</strong>
+    <div class="ok" id="cohStatus">INSUFFICIENT FIELD DATA</div>
+  </div>
+  <div class="compass"><div class="needle" id="needle">↑</div></div>
+  <div class="mic" id="micLine">MIC · IDLE</div>
+
+  <div class="livecard" id="livecard">
+    <div>
+      <small>LIVE FIELD</small>
+      <b>Listening for the wild</b>
+      <small>No invented animals. UNKNOWN stays UNKNOWN.</small>
+    </div>
+    <div class="dual" id="liveMeta">PRIVATE<br>ON DEVICE</div>
+  </div>
+
+  <div class="actions">
+    <button id="btnSession">＋ SESSION</button>
+    <button id="btnNote">FIELD NOTE</button>
+    <button id="btnReturn">↶ RETURN</button>
+    <button class="primary" id="btnScout">GO SCOUT</button>
+  </div>
+
+  <div class="library" id="library">
+    <h1>LISTENER SIGNAL LIBRARY</h1>
+    <div class="sub">Contributed non-human signals only · provenance never silently merged</div>
+    <div id="libraryList"></div>
+    <button class="wide" id="btnContribute">SEND US YOUR LISTENER SIGNALS</button>
+  </div>
+
+  <div class="broadcast" id="broadcast">
+    <div class="red" id="bcastLive">○ BROADCAST READY</div>
+    <h1 id="bcastTitle">No broadcast yet</h1>
+    <p style="color:#9fb0a7;font-size:11px">People join the party. Listener nodes join the field. Watching is not contributing.</p>
+    <div id="bcastBody"></div>
+    <button class="wide" style="margin-top:14px" id="btnInvite">INVITE PEOPLE / ADD A NODE</button>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+  <div class="overlay" id="overlay"><div class="sheet" id="sheet"></div></div>
+
+  <script type="module" src="./js/app.js"></script>
 </body>
 </html>
