@@ -35,7 +35,8 @@ let recStarted = 0;
 let heading = 0;
 let firstSoundArmed = false;
 let firstSoundMicDenied = false;
-let wantDoors = false;
+let showInstrument = false;
+let recordBusy = false;
 
 function persist() {
   saveState(state);
@@ -113,29 +114,37 @@ function allowLocalOriginalFallback() {
   }
 }
 
-function rainFirstHTML() {
+function recordHomeHTML() {
+  const recording = Boolean(rec);
+  const denied = firstSoundMicDenied && !rec;
+  const kept = Boolean(firstSoundEncounter()) && !recording;
+  let status = "Tap START. Tap STOP when you are done.";
+  if (recording) status = "Recording. Original stays on this phone.";
+  else if (denied) status = FAILURE.micDenied;
+  else if (kept) status = "Saved on this phone. Not sent anywhere. UNKNOWN stays UNKNOWN.";
   return `
       <div class="word">LISTENER</div>
-      <h1>The rain is the first sound.</h1>
-      <p class="moment">THIS IS THE FIRST SOUND</p>
-      <p>Session on this phone. Original stays here. UNKNOWN stays UNKNOWN. Not a species.</p>
-      <button class="wide rain-cta" id="helloRain" type="button">LISTEN TO THIS RAIN</button>
-      <button class="wide" id="helloFirst" type="button">THIS IS THE FIRST SOUND</button>
-      <button class="ghost" id="helloGo" type="button">OTHER WAYS TO BEGIN</button>`;
+      <p class="record-status" id="recordStatus">${status}</p>
+      <button class="record-btn ${recording ? "stop" : "start"}" id="recordBtn" type="button">${recording ? "STOP" : "START"}</button>
+      <button class="ghost instrument-link" id="openInstrument" type="button">Field instrument</button>`;
 }
 
-function bindRainFirst() {
-  const rain = $("helloRain");
-  const first = $("helloFirst");
-  const go = $("helloGo");
-  if (rain) rain.onclick = () => beginFirstSound();
-  if (first) first.onclick = () => beginFirstSound();
-  if (go) {
-    go.onclick = () => {
-      wantDoors = true;
-      state._sawHello = true;
-      persist();
-      showOnboard();
+function bindRecordHome() {
+  const btn = $("recordBtn");
+  const open = $("openInstrument");
+  if (btn) {
+    btn.onclick = () => {
+      if (rec) stopRecord();
+      else startRecord();
+    };
+  }
+  if (open) {
+    open.onclick = async () => {
+      showInstrument = true;
+      $("onboard").classList.remove("show");
+      if (!session() || session().status !== "active") {
+        await beginDoor("listen");
+      }
     };
   }
 }
@@ -143,58 +152,13 @@ function bindRainFirst() {
 function showOnboard() {
   const el = $("onboard");
   const inner = $("onboardInner");
-  const s = session();
-  const paired = state.pairedDevices.length > 0 || (s && s.role === "scout");
-  if (s && s.status === "active") {
+  if (showInstrument) {
     el.classList.remove("show");
     return;
   }
   el.classList.add("show");
-  if (!wantDoors) {
-    inner.innerHTML = rainFirstHTML();
-    bindRainFirst();
-    return;
-  }
-  if (!state._askedBase && anotherListenerAvailable()) {
-    inner.innerHTML = `
-      <div class="word">LISTENER</div>
-      <h1>Another Listener is available.</h1>
-      <p class="leave">LEAVE AS BASE?</p>
-      <p>Leave this phone still. Take the other one walking. You do not need to know how they find each other.</p>
-      <div class="doors">
-        <button class="wide rain-cta" id="helloRain" type="button">LISTEN TO THIS RAIN</button>
-        <button class="wide" data-door="listen">LEAVE AS BASE</button>
-        <button class="wide" style="background:#0d1a15" data-door="scout">USE THIS AS SCOUT</button>
-      </div>`;
-    bindRainFirst();
-    inner.querySelectorAll("[data-door]").forEach((btn) => {
-      btn.onclick = () => {
-        state._askedBase = true;
-        persist();
-        beginDoor(btn.dataset.door);
-      };
-    });
-    return;
-  }
-  inner.innerHTML = `
-    <div class="word">LISTENER</div>
-    <h1>How do you want to begin?</h1>
-    <p class="moment">THIS IS THE FIRST SOUND</p>
-    <p>Session on this phone. Original stays here. UNKNOWN stays UNKNOWN.</p>
-    <button class="wide rain-cta" id="helloRain" type="button">LISTEN TO THIS RAIN</button>
-    <button class="wide" id="doorFirst" type="button">THIS IS THE FIRST SOUND</button>
-    <p>Leave a phone still, or take this one walking. You do not need to know the network.</p>
-    ${paired || anotherListenerAvailable() ? `<p class="leave">Another Listener is available. LEAVE AS BASE?</p>` : ""}
-    <div class="doors">
-      <button class="wide" data-door="listen">LISTEN HERE</button>
-      <button class="wide" style="margin-top:8px;background:#0d1a15" data-door="scout">GO SCOUT</button>
-      <button class="wide" style="margin-top:8px;background:#0d1a15" data-door="broadcast">START A BROADCAST</button>
-    </div>`;
-  bindRainFirst();
-  $("doorFirst").onclick = () => beginFirstSound();
-  inner.querySelectorAll("[data-door]").forEach((btn) => {
-    btn.onclick = () => beginDoor(btn.dataset.door);
-  });
+  inner.innerHTML = recordHomeHTML();
+  bindRecordHome();
 }
 
 async function ensureGeo() {
@@ -226,7 +190,7 @@ async function ensureGeo() {
   );
 }
 
-async function beginDoor(door) {
+async function beginDoor(door, opts = {}) {
   await ensureGeo();
   const s = emptySession({
     door,
@@ -270,35 +234,59 @@ async function beginDoor(door) {
   });
   queue.enqueue("session.open", { sessionId: s.id, role: s.role, inviteCode: s.inviteCode });
   persist();
-  $("onboard").classList.remove("show");
-  if (door === "scout") openSheet("scout");
-  else if (door === "broadcast") showTab("broadcast");
+  if (!opts.stayOnboard) {
+    showInstrument = true;
+    $("onboard").classList.remove("show");
+    if (door === "scout") openSheet("scout");
+    else if (door === "broadcast") showTab("broadcast");
+  }
   renderAll();
+}
+
+async function startRecord() {
+  if (recordBusy || rec) return;
+  recordBusy = true;
+  const btn = $("recordBtn");
+  if (btn) btn.disabled = true;
+  try {
+    firstSoundArmed = true;
+    firstSoundMicDenied = false;
+    if (!session() || session().status !== "active") {
+      await beginDoor("listen", { stayOnboard: true });
+    }
+    const s = session();
+    if (s) s.firstSoundAt = s.firstSoundAt || Date.now();
+    persist();
+    const armed = await startMic({ firstSound: true });
+    firstSoundMicDenied = Boolean(armed?.denied);
+    if (firstSoundMicDenied) toast(FAILURE.micDenied);
+    showOnboard();
+    renderAll();
+  } finally {
+    recordBusy = false;
+  }
+}
+
+async function stopRecord() {
+  if (recordBusy) return;
+  recordBusy = true;
+  const btn = $("recordBtn");
+  if (btn) btn.disabled = true;
+  try {
+    await saveFirstSound("heard", "");
+    showOnboard();
+  } finally {
+    recordBusy = false;
+  }
 }
 
 async function beginFirstSound() {
   if (rec && firstSoundArmed) {
-    $("onboard").classList.remove("show");
-    openSheet("first-sound");
+    if (showInstrument) openSheet("first-sound");
+    else showOnboard();
     return;
   }
-  state._sawHello = true;
-  persist();
-  $("onboard").classList.remove("show");
-  firstSoundArmed = true;
-  firstSoundMicDenied = false;
-  if (!session() || session().status !== "active") {
-    await beginDoor("listen");
-  }
-  const s = session();
-  if (s) s.firstSoundAt = s.firstSoundAt || Date.now();
-  persist();
-  showTab("field");
-  const armed = await startMic({ firstSound: true });
-  firstSoundMicDenied = Boolean(armed?.denied);
-  if (firstSoundMicDenied) toast(FAILURE.micDenied);
-  openSheet("first-sound");
-  renderAll();
+  await startRecord();
 }
 
 function setMapMode(mode) {
@@ -870,7 +858,7 @@ async function saveFirstSound(kind, text) {
   closeSheet();
   toast(
     audioId
-      ? "First sound kept on this phone. Original preserved. Not contributed."
+      ? "Saved on this phone. Original preserved. Not sent anywhere."
       : "Session is still here. No original yet — this phone needs the microphone."
   );
   renderAll();

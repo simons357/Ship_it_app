@@ -10,14 +10,17 @@ struct RootView: View {
     @StateObject private var audio = AudioService()
     @StateObject private var sync = SyncQueue()
     @State private var tab = 0
+    @State private var showInstrument = false
 
     var session: Session? { sessions.first }
 
     var body: some View {
         ZStack {
             Color(red: 0.008, green: 0.02, blue: 0.016).ignoresSafeArea()
-            if session == nil {
-                OnboardingView(location: location, sync: sync)
+            if !showInstrument || session == nil {
+                RecordHomeView(location: location, audio: audio, sync: sync) {
+                    showInstrument = true
+                }
             } else {
                 VStack(spacing: 0) {
                     header
@@ -61,68 +64,108 @@ struct RootView: View {
     }
 }
 
-struct OnboardingView: View {
+struct RecordHomeView: View {
     @Environment(\.modelContext) private var context
-    @Query private var pairs: [DevicePair]
+    @Query(filter: #Predicate<Session> { $0.status == "active" }) private var sessions: [Session]
+    @Query private var encounters: [Encounter]
     @ObservedObject var location: LocationService
+    @ObservedObject var audio: AudioService
     @ObservedObject var sync: SyncQueue
-    @State private var hello = true
+    var openInstrument: () -> Void
+    @State private var micDenied = false
+    @State private var saved = false
+
+    var session: Session? { sessions.first }
 
     var body: some View {
-        VStack(spacing: 18) {
+        VStack(spacing: 28) {
             Text("LISTENER").tracking(6).font(.caption.weight(.black))
-            if hello {
-                Text(ListenerCopy.product).font(.title)
-                Text("The rain is the first sound. Session on this phone. Original stays here. UNKNOWN stays UNKNOWN. Not a species.")
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.secondary)
-                Button(ListenerCopy.listenRain) { openFirstSound() }.buttonStyle(WideButton())
-                Button(ListenerCopy.firstSound) { openFirstSound() }.buttonStyle(WideButton(alt: true))
-                Button("OTHER WAYS TO BEGIN") { hello = false }.buttonStyle(WideButton(alt: true))
-            } else {
-                Text("How do you want to begin?").font(.title2)
-                if !pairs.isEmpty {
-                    Text(ListenerCopy.leaveAsBase).foregroundStyle(.secondary)
-                }
-                Button(ListenerCopy.listenRain) { openFirstSound() }.buttonStyle(WideButton())
-                Button(ListenerCopy.firstSound) { openFirstSound() }.buttonStyle(WideButton(alt: true))
-                Button("LISTEN HERE") { open(.listen, role: .base) }.buttonStyle(WideButton())
-                Button("GO SCOUT") { open(.scout, role: .scout) }.buttonStyle(WideButton(alt: true))
-                Button("START A BROADCAST") { open(.broadcast, role: .hub) }.buttonStyle(WideButton(alt: true))
+            Text(statusLine)
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.secondary)
+                .padding(.horizontal, 28)
+            Spacer()
+            Button(audio.recording ? ListenerCopy.stop : ListenerCopy.start) {
+                if audio.recording { stopRecord() } else { startRecord() }
             }
+            .frame(width: 260, height: 260)
+            .background(audio.recording ? Color(red: 0.36, green: 0.12, blue: 0.14) : Color(red: 0.12, green: 0.36, blue: 0.24))
+            .foregroundStyle(.white)
+            .font(.system(size: 52, weight: .black))
+            .clipShape(Circle())
+            .shadow(color: audio.recording ? Color.red.opacity(0.45) : Color.green.opacity(0.45), radius: 28)
+            Spacer()
+            Button("Field instrument") {
+                if session == nil { ensureSession() }
+                openInstrument()
+            }
+            .font(.footnote)
+            .foregroundStyle(.secondary)
         }
         .padding(28)
     }
 
-    private func open(_ door: Door, role: Role) {
-        let session = Session(door: door, role: role)
+    private var statusLine: String {
+        if audio.recording { return "Recording. Original stays on this phone." }
+        if micDenied { return ListenerCopy.micDenied }
+        if saved || encounters.contains(where: { $0.sessionId == session?.id }) {
+            return "Saved on this phone. Not sent anywhere. UNKNOWN stays UNKNOWN."
+        }
+        return "Tap START. Tap STOP when you are done."
+    }
+
+    private func ensureSession() {
+        if session != nil { return }
+        let next = Session(door: .listen, role: .base)
         if let loc = location.last {
-            session.startLat = loc.coordinate.latitude
-            session.startLon = loc.coordinate.longitude
-            session.startAccuracy = loc.horizontalAccuracy
-            session.startGpsQuality = location.quality
+            next.startLat = loc.coordinate.latitude
+            next.startLon = loc.coordinate.longitude
+            next.startAccuracy = loc.horizontalAccuracy
+            next.startGpsQuality = location.quality
         }
-        context.insert(session)
-        let name = role == .base ? "BASE · YOU" : role == .scout ? "SCOUT · YOU" : "HUB · YOU"
-        context.insert(FieldNode(sessionId: session.id, role: role, name: name, coordinate: session.startCoordinate))
-        if door == .broadcast {
-            let room = BroadcastRoom(sessionId: session.id, title: "Field broadcast")
-            session.broadcastId = room.id
-            context.insert(room)
-        }
+        context.insert(next)
+        context.insert(FieldNode(sessionId: next.id, role: .base, name: "BASE · YOU", coordinate: next.startCoordinate))
         sync.enqueue(context: context, type: "session.open", payload: [
-            "sessionId": session.id.uuidString,
-            "invite": session.inviteCode,
+            "sessionId": next.id.uuidString,
+            "invite": next.inviteCode,
         ])
         try? context.save()
     }
 
-    private func openFirstSound() {
-        open(.listen, role: .base)
-        if let session = (try? context.fetch(FetchDescriptor<Session>()))?.first(where: { $0.status == "active" }) {
-            session.title = "First sound"
-            try? context.save()
+    private func startRecord() {
+        ensureSession()
+        do {
+            try audio.start()
+            micDenied = false
+        } catch {
+            micDenied = true
         }
+    }
+
+    private func stopRecord() {
+        let url = audio.recording ? audio.stop() : audio.lastOriginalURL
+        guard let current = (try? context.fetch(FetchDescriptor<Session>()))?.first(where: { $0.status == "active" }) else { return }
+        let note = FieldNote(
+            sessionId: current.id,
+            kind: .heard,
+            text: "",
+            mediaPath: url?.path,
+            coordinate: location.last?.coordinate ?? current.startCoordinate
+        )
+        context.insert(note)
+        let enc = Encounter(sessionId: current.id, label: "UNKNOWN", kind: .unknown)
+        enc.lat = note.lat
+        enc.lon = note.lon
+        enc.originalAudioPath = url?.path
+        enc.contributed = false
+        enc.shared = false
+        context.insert(enc)
+        sync.enqueue(context: context, type: "note.add", payload: [
+            "note": note.id.uuidString,
+            "firstSound": "true",
+        ])
+        try? context.save()
+        saved = true
     }
 }
 
@@ -179,10 +222,7 @@ struct FieldView: View {
         .sheet(isPresented: $scoutOpen) { ScoutSheet(session: session, audio: audio) }
         .sheet(isPresented: $firstSoundOpen) { FirstSoundSheet(session: session, location: location, audio: audio, sync: sync) }
         .onAppear {
-            let empty = encounters.filter { $0.sessionId == session.id && !$0.excluded }.isEmpty
-            if session.title == "First sound" && empty {
-                firstSoundOpen = true
-            }
+            // Field instrument is opt-in. Do not auto-open a first-sound sheet.
         }
         .onChange(of: location.last) { _, loc in
             guard session.role == Role.scout.rawValue, let loc else { return }

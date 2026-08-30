@@ -15,19 +15,19 @@ Owner: Jonathan Simons.
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-**Phone URL:** https://shaped-bit-57sa6gs.shipstatic.com/
+**Phone URL:** https://listener-session.surge.sh/
 
 This is the LISTENER Session PWA (field instrument). It is not the parked Listener search wildlife-marsh hunt.
 
 1. Open the HTTPS link in **Safari** (not Chrome).
 2. Share → **Add to Home Screen**.
-3. Tap **LISTEN TO THIS RAIN** (first screen — this is the first sound).
-4. Allow **microphone** + **location** if asked.
-5. Session + original stay on the phone. UNKNOWN stays UNKNOWN. Not a species. Not contributed unless you opt in.
+3. Tap **START**. Allow the microphone if asked. Tap **STOP** when you are done.
+4. The recording stays on the phone. UNKNOWN stays UNKNOWN. Not a species. Not sent anywhere unless you opt in.
+5. **Field instrument** is a small later link. You do not need it to record.
 
-Claim the host so it stays live past 3 days: https://my.shipstatic.com/claim/1666a104f9280e0ab733893a33c491e6
+The same PWA is also on the random shipstatic hosts (fallback): https://nova-bolt-57jc24t.shipstatic.com/ and the earlier https://shaped-bit-57sa6gs.shipstatic.com/. Shipstatic named hosts like `listener.shipstatic.com` need an account; they 404 until someone claims a deploy and runs `ship domains set listener.shipstatic.com <deployment>`. Claim the latest shipstatic copy so it stays live past 3 days: https://my.shipstatic.com/claim/ae3b1170565c1686b8f9e820f0bd3266
 
-The same app is on `origin/gh-pages` under `listener/` (existing Pages apps were left in place). The GitHub Pages URL would be https://simons357.github.io/Ship_it_app/listener/ after Pages is enabled in the repo: Settings → Pages → Deploy from a branch → `gh-pages` / root. This environment cannot turn Pages on (`has_pages: false`). Until then that github.io path 404s — use the phone URL above.
+The same app is on `origin/gh-pages` under `listener/` (existing Pages apps were left in place). The stable GitHub Pages name is https://simons357.github.io/Ship_it_app/listener/ after Pages is enabled in the repo: Settings → Pages → Deploy from a branch → `gh-pages` / root. This environment cannot turn Pages on (`has_pages: false`). Until then that github.io path 404s — use the surge phone URL above.
 
 ## Local preview (this VM only — the phone cannot reach it)
 
