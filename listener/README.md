@@ -15,17 +15,25 @@ Owner: Jonathan Simons.
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-**Phone URL:** https://viral-tide-8sf86bc.shipstatic.com/listener
+**Phone URL:** (republished with this commit — see latest shipstatic URL in the PR)
 
-This is the LISTENER Session PWA. First screen is **LISTEN TO THIS RAIN**. It becomes **STOP**. It is not the parked Listener search wildlife-marsh hunt.
+This is LISTENER. First screen is one **START** button. It becomes **STOP**. No mode quiz. No rain button.
 
 1. Open the HTTPS link in **Safari** (not Chrome).
 2. Share → **Add to Home Screen**.
-3. Tap **LISTEN TO THIS RAIN**. Allow the microphone if asked. Tap **STOP** when you are done.
-4. Session + original stay on the phone. UNKNOWN stays UNKNOWN. Not a species. Not sent anywhere unless you opt in.
-5. **Field instrument** is a small later link. You do not need it to record.
+3. Tap **START**. Allow the microphone. Put the phone down. Tap **STOP**.
+4. If Listener does not know the sound, it asks **What was that?** Type `rain`. Add a picture if you want. Tap **KEEP**.
+5. No AirPods → local field around this phone. AirPods → scout. Safari cannot flip Personal Hotspot; that is a phone setting.
+6. Weather and search are **yours**. Point them at your apps:
 
-That `/listener` path is the same rain-first Session PWA as the root copy https://viral-tide-8sf86bc.shipstatic.com/. Earlier hosts https://turbo-nebula-ppbq555.shipstatic.com/listener and https://shaped-bit-57sa6gs.shipstatic.com/ are still up with older first screens. Shipstatic platform names like `listener.shipstatic.com` need a signed-in account; they 404 until someone claims a deploy and runs `ship domains set listener.shipstatic.com <deployment>`. Claim this host so it stays live past 3 days: https://my.shipstatic.com/claim/1bfde93559fc6b4c87632cf95b19e5e4
+```js
+localStorage.setItem("listener.weather", "https://YOUR-WEATHER/current")
+localStorage.setItem("listener.search", "https://YOUR-CHATVAULT/listener")
+```
+
+Weather GET `?lat=&lon=` should return `{ label, tempC, wet, source }`.
+Search POST `index` receives a kept hearing. Search GET `?q=` returns `{ results }`.
+Nothing is sent until you connect your search.
 
 The same app is on `origin/gh-pages` under `listener/` (existing Pages apps were left in place). The stable GitHub Pages name is https://simons357.github.io/Ship_it_app/listener/ after Pages is enabled in the repo: Settings → Pages → Deploy from a branch → `gh-pages` / root. This environment cannot turn Pages on (`has_pages: false`). Until then that github.io path 404s — use the `/listener` phone URL above.
 

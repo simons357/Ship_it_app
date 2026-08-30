@@ -20,6 +20,8 @@ import {
   startLocalOriginalRecording,
   startRecording,
 } from "./audio.js";
+import { clockLabel, fetchFieldWeather, skyPeriod, weatherLine } from "./weather.js";
+import { indexOwnerSearch, ownerEndpoints, queryOwnerSearch } from "./plugins.js";
 
 const $ = (id) => document.getElementById(id);
 let state = rememberDevice(loadState());
@@ -37,6 +39,12 @@ let firstSoundArmed = false;
 let firstSoundMicDenied = false;
 let showInstrument = false;
 let recordBusy = false;
+let lastWeather = null;
+let lastWxAt = 0;
+let pendingKeep = null;
+let recTick = null;
+let airpodsOn = false;
+let recordBound = false;
 
 function persist() {
   saveState(state);
@@ -114,54 +122,149 @@ function allowLocalOriginalFallback() {
   }
 }
 
-function recordHomeHTML() {
+function padTime(n) {
+  return String(n).padStart(2, "0");
+}
+
+function elapsedLabel(from) {
+  const s = Math.max(0, Math.floor((Date.now() - from) / 1000));
+  return `${padTime(Math.floor(s / 60))}:${padTime(s % 60)}`;
+}
+
+function applySky() {
+  const el = $("onboard");
+  if (!el) return;
+  const period = skyPeriod();
+  el.classList.remove("sky-night", "sky-dawn", "sky-day", "sky-dusk", "sky-wet");
+  el.classList.add(`sky-${period}`);
+  if (lastWeather?.wet) el.classList.add("sky-wet");
+  const clock = $("fieldClock");
+  const wx = $("fieldWeather");
+  if (clock) clock.textContent = clockLabel();
+  if (wx) wx.textContent = weatherLine(lastWeather);
+}
+
+async function refreshWeather() {
+  if (Date.now() - lastWxAt < 60000 && lastWeather) {
+    applySky();
+    return;
+  }
+  lastWxAt = Date.now();
+  const lat = fix?.lat;
+  const lon = fix?.lon;
+  lastWeather = await fetchFieldWeather(lat, lon).catch(() => null);
+  applySky();
+}
+
+async function detectAirpods() {
+  const inputs = await listInputs().catch(() => []);
+  const pref = pickPreferredInput(inputs);
+  airpodsOn = Boolean(pref.airpods);
+  const role = $("fieldRole");
+  if (role) {
+    role.textContent = airpodsOn
+      ? "SCOUT · AirPods"
+      : "LOCAL FIELD · this phone";
+  }
+  return airpodsOn;
+}
+
+function localHeard(q = "") {
+  const needle = String(q || "").trim().toLowerCase();
+  return state.encounters
+    .filter((e) => !e.excluded)
+    .filter((e) => !needle || String(e.label || "").toLowerCase().includes(needle))
+    .slice(-12)
+    .reverse();
+}
+
+async function renderHeard() {
+  const list = $("heardList");
+  const search = $("heardSearch");
+  if (!list) return;
+  const q = search?.value || "";
+  let rows = localHeard(q);
+  if (ownerEndpoints().search && q) {
+    const remote = await queryOwnerSearch(q).catch(() => ({ results: [] }));
+    if (remote.results?.length) {
+      rows = remote.results.map((r) => ({
+        id: r.id,
+        t: r.t || Date.now(),
+        label: r.label || "UNKNOWN",
+        weather: r.weather,
+        originalAudioId: r.hasOriginal,
+      }));
+    }
+  }
+  if (search) search.hidden = state.encounters.length === 0 && !ownerEndpoints().search;
+  list.innerHTML = rows
+    .map((e) => {
+      const wx = e.weather?.label ? ` · ${e.weather.label}` : "";
+      return `<div class="signal"><small>${new Date(e.t).toLocaleString()}${wx}</small><b>${e.label}</b><span>${e.originalAudioId ? "Original on this phone" : "No original"} · your search</span></div>`;
+    })
+    .join("");
+}
+
+function showWhatWasThat(on) {
+  const form = $("whatWasThat");
+  if (form) form.classList.toggle("hidden", !on);
+}
+
+function refreshRecordHome() {
   const recording = Boolean(rec);
   const denied = firstSoundMicDenied && !rec;
-  const kept = Boolean(firstSoundEncounter()) && !recording;
-  let status = "Session on this phone. Original stays here. UNKNOWN stays UNKNOWN. Not a species.";
-  if (recording) status = "Recording. Original stays on this phone. UNKNOWN stays UNKNOWN.";
-  else if (denied) status = FAILURE.micDenied;
-  else if (kept) status = "Saved on this phone. Not sent anywhere. UNKNOWN stays UNKNOWN.";
-  return `
-      <div class="word">LISTENER</div>
-      <p class="moment">THIS IS THE FIRST SOUND</p>
-      <button class="record-btn ${recording ? "stop" : "start"} rain-cta" id="recordBtn" type="button">${recording ? "STOP" : "LISTEN TO THIS RAIN"}</button>
-      <p class="record-status" id="recordStatus">${status}</p>
-      ${recording ? "" : `<button class="wide" id="helloFirst" type="button">THIS IS THE FIRST SOUND</button>`}
-      <button class="ghost instrument-link" id="openInstrument" type="button">Field instrument</button>`;
+  const status = $("recordStatus");
+  const btn = $("recordBtn");
+  const timer = $("recTimer");
+  if (status) {
+    if (recording) status.textContent = "RECORDING. Original stays on this phone.";
+    else if (denied) status.textContent = FAILURE.micDenied;
+    else if (pendingKeep) status.textContent = "What was that? Your words. Weather and time are already on it.";
+    else status.textContent = "Tap START. Put the phone down. Tap STOP when you are done.";
+  }
+  if (btn) {
+    btn.disabled = false;
+    btn.textContent = recording ? "STOP" : "START";
+    btn.className = `record-btn ${recording ? "stop" : "start"}`;
+  }
+  if (timer) {
+    timer.hidden = !recording;
+    if (recording) timer.textContent = elapsedLabel(recStarted);
+  }
+  showWhatWasThat(Boolean(pendingKeep) && !recording);
+  applySky();
+  renderHeard();
 }
 
 function bindRecordHome() {
+  if (recordBound) return;
+  recordBound = true;
   const btn = $("recordBtn");
-  const first = $("helloFirst");
-  const open = $("openInstrument");
-  const arm = () => {
-    if (rec) stopRecord();
-    else startRecord();
-  };
-  if (btn) btn.onclick = arm;
-  if (first) first.onclick = () => startRecord();
-  if (open) {
-    open.onclick = async () => {
-      showInstrument = true;
-      $("onboard").classList.remove("show");
-      if (!session() || session().status !== "active") {
-        await beginDoor("listen");
-      }
+  if (btn) {
+    btn.onclick = () => {
+      if (rec) stopRecord();
+      else startRecord();
     };
   }
+  $("keepBtn")?.addEventListener("click", () => keepHeard($("whatText")?.value || "", $("whatPhoto")?.files?.[0] || null));
+  $("unknownBtn")?.addEventListener("click", () => keepHeard("", $("whatPhoto")?.files?.[0] || null));
+  $("heardSearch")?.addEventListener("input", () => renderHeard());
 }
 
 function showOnboard() {
   const el = $("onboard");
-  const inner = $("onboardInner");
   if (showInstrument) {
     el.classList.remove("show");
     return;
   }
   el.classList.add("show");
-  inner.innerHTML = recordHomeHTML();
   bindRecordHome();
+  refreshRecordHome();
+  detectAirpods();
+}
+
+function recordHomeHTML() {
+  return "START STOP What was that? LOCAL FIELD";
 }
 
 async function ensureGeo() {
@@ -184,10 +287,12 @@ async function ensureGeo() {
         });
         persist();
       }
+      refreshWeather();
       renderField();
     },
     () => {
       if (session()) toast("GPS unavailable — marks stay session-relative. RETURN still works on what you record.");
+      refreshWeather();
       renderField();
     }
   );
@@ -195,9 +300,10 @@ async function ensureGeo() {
 
 async function beginDoor(door, opts = {}) {
   await ensureGeo();
+  const role = opts.role || (door === "scout" ? "scout" : door === "broadcast" ? "hub" : "base");
   const s = emptySession({
     door,
-    role: door === "scout" ? "scout" : door === "broadcast" ? "hub" : "base",
+    role,
     startLat: fix?.lat ?? null,
     startLon: fix?.lon ?? null,
     startAccuracy: fix?.accuracy ?? null,
@@ -246,16 +352,36 @@ async function beginDoor(door, opts = {}) {
   renderAll();
 }
 
+function startRecClock() {
+  clearInterval(recTick);
+  const timer = $("recTimer");
+  recTick = setInterval(() => {
+    if (!rec) {
+      clearInterval(recTick);
+      return;
+    }
+    if (timer) timer.textContent = elapsedLabel(recStarted);
+  }, 250);
+}
+
 async function startRecord() {
   if (recordBusy || rec) return;
   recordBusy = true;
   const btn = $("recordBtn");
   if (btn) btn.disabled = true;
   try {
+    if (pendingKeep) await keepHeard("", null);
     firstSoundArmed = true;
     firstSoundMicDenied = false;
+    const pods = await detectAirpods();
     if (!session() || session().status !== "active") {
-      await beginDoor("listen", { stayOnboard: true });
+      await beginDoor(pods ? "scout" : "listen", {
+        stayOnboard: true,
+        role: pods ? "scout" : "base",
+      });
+    } else if (pods && session().role !== "scout") {
+      session().role = "scout";
+      persist();
     }
     const s = session();
     if (s) s.firstSoundAt = s.firstSoundAt || Date.now();
@@ -263,6 +389,8 @@ async function startRecord() {
     const armed = await startMic({ firstSound: true });
     firstSoundMicDenied = Boolean(armed?.denied);
     if (firstSoundMicDenied) toast(FAILURE.micDenied);
+    if (rec) startRecClock();
+    refreshWeather();
     showOnboard();
     renderAll();
   } finally {
@@ -276,11 +404,36 @@ async function stopRecord() {
   const btn = $("recordBtn");
   if (btn) btn.disabled = true;
   try {
-    await saveFirstSound("heard", "");
+    let audioId = null;
+    let localOriginal = false;
+    const started = recStarted;
+    if (rec) {
+      localOriginal = Boolean(rec.localOriginal);
+      audioId = await stopMicToOriginal();
+    }
+    clearInterval(recTick);
+    pendingKeep = {
+      audioId,
+      localOriginal,
+      started,
+      ended: Date.now(),
+      weather: lastWeather,
+      airpods: airpodsOn,
+    };
     showOnboard();
   } finally {
     recordBusy = false;
   }
+}
+
+async function keepHeard(text, photoFile) {
+  await saveFirstSound("heard", text, photoFile);
+  pendingKeep = null;
+  const box = $("whatText");
+  const pic = $("whatPhoto");
+  if (box) box.value = "";
+  if (pic) pic.value = "";
+  showOnboard();
 }
 
 async function beginFirstSound() {
@@ -404,8 +557,8 @@ function renderField() {
     live.querySelectorAll("small")[1].textContent = "Private by default.";
     $("liveMeta").innerHTML = "PRIVATE<br>ON DEVICE";
   } else if (rec && firstSoundArmed) {
-    live.querySelectorAll("small")[0].textContent = "FIRST SOUND · RECORDING";
-    live.querySelector("b").textContent = "Listening to this rain";
+    live.querySelectorAll("small")[0].textContent = "RECORDING";
+    live.querySelector("b").textContent = "Listening";
     live.querySelectorAll("small")[1].textContent = rec.localOriginal
       ? "Local original being kept. Not a species. Not contributed."
       : "Original being kept on this phone. Not contributed.";
@@ -433,13 +586,13 @@ function renderField() {
       m != null ? `${Math.round(m)} m · not a map replacement` : "Highlighting your breadcrumb";
     $("liveMeta").innerHTML = brg != null ? `BEARING<br>${Math.round((brg + 360) % 360)}°` : "START";
   } else {
-    live.querySelectorAll("small")[0].textContent = "THIS IS THE FIRST SOUND";
-    live.querySelector("b").textContent = "LISTEN TO THIS RAIN";
+    live.querySelectorAll("small")[0].textContent = "LOCAL FIELD";
+    live.querySelector("b").textContent = "Tap START on the field screen";
     live.querySelectorAll("small")[1].textContent =
       s.startGpsQuality === "fading" || fix?.quality === "fading"
         ? "GPS fading — original will still stay on this phone."
         : "Original stays on this phone. Not contributed.";
-    $("liveMeta").innerHTML = "TAP TO<br>LISTEN";
+    $("liveMeta").innerHTML = "ON<br>PHONE";
   }
 }
 
@@ -703,9 +856,7 @@ async function startMic(opts = {}) {
     rec = await startRecording(pref.id);
     rec.localOriginal = false;
     recStarted = Date.now();
-    $("micLine").textContent = first
-      ? `MIC · ${pref.label.toUpperCase()} · FIRST SOUND · ORIGINAL PRESERVED`
-      : `MIC · ${pref.label.toUpperCase()} · RECORDING · ORIGINAL PRESERVED`;
+    $("micLine").textContent = `MIC · ${pref.label.toUpperCase()} · RECORDING · ORIGINAL PRESERVED`;
     return { ok: true, denied: false, local: false, input: pref };
   } catch (err) {
     const denied = isMicPermissionDenied(err);
@@ -807,17 +958,25 @@ async function saveNote(kind, text) {
   renderAll();
 }
 
-async function saveFirstSound(kind, text) {
+async function saveFirstSound(kind, text, photoFile = null) {
   const s = session();
   if (!s) {
-    await beginDoor("listen");
-    return saveFirstSound(kind, text);
+    await beginDoor(airpodsOn ? "scout" : "listen", {
+      stayOnboard: true,
+      role: airpodsOn ? "scout" : "base",
+    });
+    return saveFirstSound(kind, text, photoFile);
   }
-  let audioId = null;
-  let localOriginal = false;
+  let audioId = pendingKeep?.audioId ?? null;
+  let localOriginal = Boolean(pendingKeep?.localOriginal);
   if (rec) {
     localOriginal = Boolean(rec.localOriginal);
     audioId = await stopMicToOriginal();
+  }
+  let mediaId = null;
+  if (photoFile) {
+    mediaId = newId("med");
+    putOriginal(mediaId, photoFile, { mime: photoFile.type, name: photoFile.name, bytes: photoFile.size });
   }
   const words = fieldNoteLabel(text);
   const decision = firstSoundDecision(text);
@@ -828,10 +987,15 @@ async function saveFirstSound(kind, text) {
     kind: kind === "mystery" ? "mystery" : "heard",
     excluded: false,
     text: String(text || "").trim(),
-    mediaId: null,
+    mediaId,
     lat: fix?.lat ?? s.startLat,
     lon: fix?.lon ?? s.startLon,
     firstSound: true,
+    weather: lastWeather || pendingKeep?.weather || null,
+    durationMs: pendingKeep ? pendingKeep.ended - pendingKeep.started : null,
+    sky: skyPeriod(),
+    input: airpodsOn ? "airpods" : "phone",
+    role: s.role,
   };
   state.notes.push(note);
 
@@ -853,18 +1017,36 @@ async function saveFirstSound(kind, text) {
   enc.shared = false;
   enc.humanSpeechGate = "pending";
   enc.localOriginal = localOriginal;
+  enc.weather = note.weather;
+  enc.sky = note.sky;
+  enc.durationMs = note.durationMs;
+  enc.mediaId = mediaId;
+  enc.role = s.role;
   state.encounters.push(enc);
   firstSoundArmed = false;
   firstSoundMicDenied = false;
   queue.enqueue("note.add", { noteId: note.id, encounterId: enc.id, firstSound: true });
   persist();
   closeSheet();
+  if (ownerEndpoints().search) {
+    indexOwnerSearch({
+      encounterId: enc.id,
+      label: enc.label,
+      t: enc.t,
+      weather: enc.weather,
+      sky: enc.sky,
+      role: enc.role,
+      hasOriginal: Boolean(audioId),
+      hasPhoto: Boolean(mediaId),
+    }).catch(() => {});
+  }
   toast(
     audioId
-      ? "Saved on this phone. Original preserved. Not sent anywhere."
+      ? "Kept on this phone. Original preserved. Not sent anywhere unless your search is connected."
       : "Session is still here. No original yet — this phone needs the microphone."
   );
   renderAll();
+  renderHeard();
 }
 
 async function contributeSelected(id, flags) {
@@ -1003,7 +1185,10 @@ hydrate().then((next) => {
   renderAll();
   captionForMode(session()?.mapMode || "field");
   ensureGeo();
+  refreshWeather();
 });
 showOnboard();
 renderAll();
 ensureGeo();
+refreshWeather();
+setInterval(applySky, 30000);

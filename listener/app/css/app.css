@@ -223,45 +223,114 @@ header {
   font-weight: 800;
 }
 #onboardInner {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   width: min(420px, 100%);
   text-align: center;
 }
+.sky {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.onboard.sky-night { background: linear-gradient(180deg, #02010a 0%, #0a1028 42%, #161022 100%); }
+.onboard.sky-dawn { background: linear-gradient(180deg, #141828 0%, #c46b4a 52%, #f0c38a 100%); }
+.onboard.sky-day { background: linear-gradient(180deg, #3d7eb0 0%, #7eb6d9 45%, #d5e8ef 100%); }
+.onboard.sky-dusk { background: linear-gradient(180deg, #1c1640 0%, #e07a3d 48%, #2a1420 100%); }
+.onboard.sky-wet .sky {
+  background: repeating-linear-gradient(185deg, transparent 0 14px, #ffffff14 15px 16px);
+  animation: rainfall 0.7s linear infinite;
+}
+@keyframes rainfall {
+  to { background-position: 0 28px; }
+}
+.field-clock {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-shadow: 0 2px 18px #0008;
+}
+.field-wx, .field-role {
+  font-size: 12px;
+  letter-spacing: .08em;
+  color: #d7e6dc;
+  text-shadow: 0 1px 10px #000a;
+}
+.field-role { color: var(--green); }
 .record-status {
-  color: var(--muted);
+  color: #e8f3ec;
   font-size: 16px;
   line-height: 1.4;
-  max-width: 280px;
-  margin: 12px 0 0;
+  max-width: 300px;
+  margin: 4px 0 0;
+  text-shadow: 0 1px 12px #0008;
+}
+.rec-timer {
+  font-size: 42px;
+  font-weight: 950;
+  letter-spacing: .12em;
+  color: #ff8078;
 }
 .record-btn {
-  width: min(68vw, 260px);
+  width: min(72vw, 280px);
   flex: 0 0 auto;
   aspect-ratio: 1;
   border-radius: 50%;
   border: 3px solid var(--green);
   background: #1f5c3d;
   color: white;
-  font-size: clamp(16px, 4.6vw, 24px);
+  font-size: clamp(42px, 13vw, 72px);
   font-weight: 950;
-  letter-spacing: .06em;
-  line-height: 1.15;
-  padding: 22px;
-  white-space: normal;
+  letter-spacing: .14em;
+  line-height: 1;
+  padding: 0;
   box-shadow: 0 0 80px #7dffa566;
 }
 .record-btn.stop {
-  font-size: clamp(42px, 13vw, 72px);
-  letter-spacing: .14em;
   background: #5c1f24;
   border-color: #ff8078;
   box-shadow: 0 0 80px #ff807866;
   animation: recpulse 1.2s ease-in-out infinite;
 }
+.what-was {
+  width: min(360px, 100%);
+  text-align: left;
+}
+.what-was label {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  letter-spacing: .12em;
+  color: #e8f3ec;
+}
+.what-was .photo-link {
+  margin: 10px 0;
+  color: var(--green);
+  cursor: pointer;
+}
+.what-was input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.heard-search {
+  width: min(360px, 100%);
+  margin-top: 8px;
+}
+.heard-list {
+  width: min(360px, 100%);
+  max-height: 28vh;
+  overflow: auto;
+  text-align: left;
+}
+.heard-list .signal { margin: 6px 0; }
 @keyframes recpulse {
   0%, 100% { box-shadow: 0 0 48px #ff807866; }
   50% { box-shadow: 0 0 92px #ff8078aa; }
@@ -438,6 +507,7 @@ header {
   font-weight: 950;
   letter-spacing: .28em;
   font-size: 13px;
+  text-shadow: 0 1px 12px #000a;
 }
 .onboard h1 { letter-spacing: .04em; font-size: 24px; margin: 10px 0 4px; }
 .onboard p { color: var(--muted); text-align: center; max-width: 280px; }

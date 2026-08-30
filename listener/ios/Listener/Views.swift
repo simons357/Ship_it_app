@@ -85,20 +85,15 @@ struct RecordHomeView: View {
                 .foregroundStyle(.secondary)
                 .padding(.horizontal, 28)
             Spacer()
-            Button(audio.recording ? ListenerCopy.stop : ListenerCopy.listenRain) {
+            Button(audio.recording ? ListenerCopy.stop : ListenerCopy.start) {
                 if audio.recording { stopRecord() } else { startRecord() }
             }
             .frame(width: 260, height: 260)
             .background(audio.recording ? Color(red: 0.36, green: 0.12, blue: 0.14) : Color(red: 0.12, green: 0.36, blue: 0.24))
             .foregroundStyle(.white)
-            .font(.system(size: audio.recording ? 52 : 22, weight: .black))
-            .multilineTextAlignment(.center)
+            .font(.system(size: 52, weight: .black))
             .clipShape(Circle())
             .shadow(color: audio.recording ? Color.red.opacity(0.45) : Color.green.opacity(0.45), radius: 28)
-            if !audio.recording {
-                Button(ListenerCopy.firstSound) { startRecord() }
-                    .font(.headline.weight(.bold))
-            }
             Spacer()
             Button("Field instrument") {
                 if session == nil { ensureSession() }

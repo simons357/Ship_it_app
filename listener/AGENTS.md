@@ -15,5 +15,6 @@ You are working on **LISTENER**, a new product. This folder is the whole project
 - Do not touch or continue **Listener search** (`bc-37b9c6b6-57c6-441f-a66b-4dc980ccae18`). It is parked. Read `PARKED-THREADS.md`.
 - Do not import Wildlife Marsh, `primefield.tech/wildlife-marsh`, or Marsh game work.
 - Do not revive Ship It, Planet Hunter, or Scallion.
-- Do not fold ChatVault, Descent, Kyrana, Domain Architect, or AI Surgeon into this app.
+- Do not copy ChatVault, Descent, Kyrana, Domain Architect, or AI Surgeon source trees into this folder.
+- The owner may plug their own apps into LISTENER through `app/js/plugins.js` (weather URL, ChatVault search URL). That is invited.
 - Do not edit `domain_architect/`, `hb_ringdown_test.py`, or other `main` science files for LISTENER work.

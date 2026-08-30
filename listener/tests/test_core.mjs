@@ -25,6 +25,8 @@ import {
 } from "../app/js/wildlife.js";
 import { gpsQuality, distanceM, projectRelative } from "../app/js/geo.js";
 import { makeLocalOriginalBlob } from "../app/js/audio.js";
+import { skyPeriod, weatherLine } from "../app/js/weather.js";
+import { ownerEndpoints } from "../app/js/plugins.js";
 
 test("coarse location rounds to ~11 km and never stays exact", () => {
   const c = coarseLocation(32.01234, -81.09876);
@@ -193,6 +195,16 @@ test("local original is a kept file, never a species label", async () => {
   const blob = makeLocalOriginalBlob({ seconds: 0.4, hz: 180 });
   assert.equal(blob.type, "audio/wav");
   assert.ok(blob.size > 44);
+});
+
+test("sky is from this clock; weather is the owner's app", () => {
+  assert.equal(["night", "dawn", "day", "dusk"].includes(skyPeriod(new Date("2026-08-30T12:00:00"))), true);
+  assert.equal(skyPeriod(new Date("2026-08-30T12:00:00")), "day");
+  assert.equal(skyPeriod(new Date("2026-08-30T22:00:00")), "night");
+  const line = weatherLine(null, new Date("2026-08-30T12:00:00"));
+  assert.match(line, /your weather not connected|waiting on your weather/);
+  assert.equal(ownerEndpoints().weather, "");
+  assert.equal(ownerEndpoints().search, "");
 });
 
 test("relative plot stays finite", () => {

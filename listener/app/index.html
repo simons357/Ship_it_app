@@ -10,17 +10,29 @@
   <meta name="description" content="What the wild is saying. A wildlife-only field instrument.">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
-  <link rel="stylesheet" href="./css/app.css?v=5">
+  <link rel="stylesheet" href="./css/app.css?v=6">
 </head>
 <body>
-  <div id="onboard" class="onboard show">
+  <div id="onboard" class="onboard show sky-night">
+    <div id="sky" class="sky" aria-hidden="true"></div>
     <div id="onboardInner">
       <div class="word">LISTENER</div>
-      <p class="moment">THIS IS THE FIRST SOUND</p>
-      <button class="record-btn start rain-cta" id="recordBtn" type="button">LISTEN TO THIS RAIN</button>
-      <p class="record-status">Session on this phone. Original stays here. UNKNOWN stays UNKNOWN. Not a species.</p>
-      <button class="wide" id="helloFirst" type="button">THIS IS THE FIRST SOUND</button>
-      <button class="ghost instrument-link" id="openInstrument" type="button">Field instrument</button>
+      <div class="field-clock" id="fieldClock"></div>
+      <div class="field-wx" id="fieldWeather">Sky from this clock. Weather when we have a place.</div>
+      <div class="field-role" id="fieldRole">LOCAL FIELD · this phone</div>
+      <p class="record-status" id="recordStatus">Tap START. Put the phone down. Tap STOP when you are done.</p>
+      <div class="rec-timer" id="recTimer" hidden>00:00</div>
+      <button class="record-btn start" id="recordBtn" type="button">START</button>
+      <form id="whatWasThat" class="what-was hidden">
+        <label for="whatText">What was that?</label>
+        <input id="whatText" type="text" placeholder="rain, a bird, or leave UNKNOWN" autocomplete="off">
+        <label class="photo-link" for="whatPhoto">Add a picture</label>
+        <input id="whatPhoto" type="file" accept="image/*" capture="environment">
+        <button class="wide" id="keepBtn" type="button">KEEP</button>
+        <button class="ghost" id="unknownBtn" type="button">I don't know</button>
+      </form>
+      <input id="heardSearch" class="heard-search" type="search" placeholder="Search what you kept" hidden>
+      <div id="heardList" class="heard-list"></div>
     </div>
   </div>
 
@@ -88,6 +100,6 @@
   <div class="toast" id="toast" hidden></div>
   <div class="overlay" id="overlay"><div class="sheet" id="sheet"></div></div>
 
-  <script type="module" src="./js/app.js?v=5"></script>
+  <script type="module" src="./js/app.js?v=6"></script>
 </body>
 </html>
