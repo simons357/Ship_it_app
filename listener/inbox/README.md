@@ -1,12 +1,9 @@
 # Design inbox
 
-Owner ChatGPT pre-design, ingested.
+Owner ChatGPT pre-design is here.
 
-| File | Role |
-| --- | --- |
-| `MASTER-BUILD-SPEC.md` | Spec text as received |
-| `index.html` | Visual/product prototype to preserve |
-| `index-2.html` | Same prototype as uploaded |
-| `IMG_1058.HEIC` | Phone reference still |
+- `MASTER-BUILD-SPEC.md` — product spec
+- `index-2.html` / `index.html` — visual prototype (copy this look)
+- `IMG_1058.HEIC` — phone screenshot (HEIC; ffmpeg could not convert on this VM)
 
-Do not rebuild LISTENER from Ship It Listener search.
+Canonical working app: `../app/`

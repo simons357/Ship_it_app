@@ -36,6 +36,11 @@ class Hub(BaseHTTPRequestHandler):
         parts = urlparse(self.path).path.strip("/").split("/")
         if parts[:2] == ["v1", "health"]:
             return self._json(200, {"ok": True, "role": "hub"})
+        if parts[:2] == ["v1", "presence"]:
+            path = _path("presence.json")
+            if not path.exists():
+                return self._json(200, [])
+            return self._json(200, json.loads(path.read_text()))
         if parts[:2] == ["v1", "sessions"] and len(parts) == 4 and parts[3] == "events":
             path = _path(parts[2], "events.json")
             if not path.exists():
@@ -50,8 +55,15 @@ class Hub(BaseHTTPRequestHandler):
             event = json.loads(raw.decode() or "{}")
         except json.JSONDecodeError:
             return self._json(400, {"error": "bad json"})
+        parts = urlparse(self.path).path.strip("/").split("/")
         payload = event.get("payload") or {}
         session_id = payload.get("sessionId") or event.get("sessionId") or "unknown"
+        if parts[:2] == ["v1", "presence"]:
+            path = _path("presence.json")
+            rows = json.loads(path.read_text()) if path.exists() else []
+            rows.append({**event, "receivedAt": __import__("time").time()})
+            path.write_text(json.dumps(rows))
+            return self._json(200, {"ok": True, "role": "hub", "stored": True})
         path = _path(session_id, "events.json")
         rows = json.loads(path.read_text()) if path.exists() else []
         rows.append(event)

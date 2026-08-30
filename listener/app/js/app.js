@@ -768,7 +768,7 @@ flushQueue(queue, transport).then((res) => {
 }).catch(() => toast(FAILURE.scoutLost));
 
 hydrate().then((next) => {
-  state = rememberDevice(next);
+  Object.assign(state, rememberDevice(next));
   showOnboard();
   renderAll();
   captionForMode(session()?.mapMode || "field");
