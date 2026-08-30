@@ -15,9 +15,9 @@ Owner: Jonathan Simons.
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-**Phone URL:** https://solar-vector-38g9nga.shipstatic.com/
+**Phone URL:** https://dreamy-mesh-96uwn35.shipstatic.com/
 
-Claim so it stays live past 3 days: https://my.shipstatic.com/claim/6bfd75ffd4afd603cdfe8b1ed8800925
+Claim so it stays live past 3 days: https://my.shipstatic.com/claim/b195a4fdb7269553204da36b1f9b8c50
 
 This is LISTENER. One **START** button. It becomes **STOP**. No mode quiz.
 
