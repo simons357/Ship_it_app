@@ -15,9 +15,9 @@ Owner: Jonathan Simons.
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-**Phone URL:** https://spectral-rune-5gz4wnv.shipstatic.com/
+**Phone URL:** https://hyped-thread-7f9tcvw.shipstatic.com/
 
-Claim so it stays live past 3 days: https://my.shipstatic.com/claim/63a0eec8e08e1401d29d36115a5b4242
+Claim so it stays live past 3 days: https://my.shipstatic.com/claim/6c86f539e82aa8c0630e184a047c28d9
 
 This is LISTENER. One **START** button. It becomes **STOP**. No mode quiz.
 
