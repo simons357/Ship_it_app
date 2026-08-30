@@ -1,12 +1,12 @@
 self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open("listener-v12").then((c) => c.addAll(["./", "./index.html", "./css/app.css"])));
+  e.waitUntil(caches.open("listener-v13").then((c) => c.addAll(["./", "./index.html", "./css/app.css"])));
   self.skipWaiting();
 });
 self.addEventListener("activate", (e) => {
   e.waitUntil(
     caches
       .keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== "listener-v12").map((k) => caches.delete(k))))
+      .then((keys) => Promise.all(keys.filter((k) => k !== "listener-v13").map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });

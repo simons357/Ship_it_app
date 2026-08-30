@@ -10,17 +10,20 @@
   <meta name="apple-mobile-web-app-title" content="LISTENER">
   <title>LISTENER</title>
   <meta name="description" content="What the wild is saying. A wildlife-only field instrument.">
+  <meta name="listener-build" content="cursor-grok-start-stop">
+  <!-- LISTENER build: cursor-grok START/STOP/ON AIR. Not the Claude Savannah-marsh demo. -->
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=12">
-  <link rel="stylesheet" href="./css/app.css?v=12">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=13">
+  <link rel="stylesheet" href="./css/app.css?v=13">
 </head>
 <body class="listening">
   <div id="onboard" class="onboard show sky-night">
     <div id="sky" class="sky" aria-hidden="true"></div>
     <div id="onboardInner">
-      <img class="rune" src="./icons/icon-192.png?v=12" alt="" width="88" height="88">
+      <img class="rune" src="./icons/icon-192.png?v=13" alt="" width="88" height="88">
       <div class="word">LISTENER</div>
       <div class="tag">WHAT THE WILD IS SAYING</div>
+      <div class="build-mark">START / STOP / ON AIR</div>
       <div class="field-clock" id="fieldClock"></div>
       <div class="field-wx" id="fieldWeather" hidden></div>
       <div class="field-role" id="fieldRole" hidden></div>
@@ -105,6 +108,6 @@
   <div class="toast" id="toast" hidden></div>
   <div class="overlay" id="overlay"><div class="sheet" id="sheet"></div></div>
 
-  <script type="module" src="./js/app.js?v=12"></script>
+  <script type="module" src="./js/app.js?v=13"></script>
 </body>
 </html>

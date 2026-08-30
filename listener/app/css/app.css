@@ -299,6 +299,12 @@ body.listening #field {
   color: #d7e6dc;
   text-shadow: 0 1px 10px #000a;
 }
+.build-mark {
+  font-size: 8px;
+  letter-spacing: .22em;
+  color: #9fb0a7;
+  text-shadow: 0 1px 10px #000a;
+}
 .onboard.sky-wet .sky {
   background: repeating-linear-gradient(185deg, transparent 0 14px, #ffffff14 15px 16px);
   animation: rainfall 0.7s linear infinite;

@@ -15,11 +15,13 @@ Owner: Jonathan Simons.
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-**Phone URL:** https://dreamy-dust-7649kh8.shipstatic.com/
+**This build (Cursor Grok, START / STOP / ON AIR):** https://kinetic-bolt-28pxsch.shipstatic.com/
 
-Claim so it stays live past 3 days: https://my.shipstatic.com/claim/43045a75608088880245004639157041
+Claim so it stays live past 3 days: https://my.shipstatic.com/claim/d2d168e64949bc657c072185d82ea903
 
-Do not use leftover random hosts such as `spectral-rune-…`. Those are old free deploys, not the product name. A name like Listener needs your Shipstatic or GitHub Pages account.
+If the first screen says **START / STOP / ON AIR** under the title, you have this build. If it says Savannah marsh, Air mode, Water mode, Party mode, or lists clapper rails / painted buntings, that is Claude’s demo, not this app.
+
+The hostname is still random Shipstatic junk, not the product name. A name like Listener needs your Shipstatic or GitHub Pages account. Old hosts such as `dreamy-dust-…` and `spectral-rune-…` are leftovers.
 
 This is LISTENER. One **START** button. It becomes **STOP**. No mode quiz.
 
