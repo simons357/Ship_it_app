@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#020504">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="LISTENER">
@@ -11,12 +12,13 @@
   <meta name="description" content="What the wild is saying. A wildlife-only field instrument.">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
-  <link rel="stylesheet" href="./css/app.css?v=9">
+  <link rel="stylesheet" href="./css/app.css?v=10">
 </head>
 <body class="listening">
   <div id="onboard" class="onboard show sky-night">
     <div id="sky" class="sky" aria-hidden="true"></div>
     <div id="onboardInner">
+      <img class="rune" src="./icons/icon-192.png" alt="" width="88" height="88">
       <div class="word">LISTENER</div>
       <div class="tag">WHAT THE WILD IS SAYING</div>
       <div class="field-clock" id="fieldClock"></div>
@@ -103,6 +105,6 @@
   <div class="toast" id="toast" hidden></div>
   <div class="overlay" id="overlay"><div class="sheet" id="sheet"></div></div>
 
-  <script type="module" src="./js/app.js?v=9"></script>
+  <script type="module" src="./js/app.js?v=10"></script>
 </body>
 </html>

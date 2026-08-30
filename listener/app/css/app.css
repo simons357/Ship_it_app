@@ -357,7 +357,7 @@ body.listening #field {
   color: #ff8078;
 }
 .record-btn {
-  width: min(72vw, 280px);
+  width: min(58vw, 240px);
   flex: 0 0 auto;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -600,11 +600,21 @@ body.listening #field {
   display: none;
   z-index: 60;
   background: #020504;
-  padding: calc(28px + env(safe-area-inset-top)) 18px calc(24px + env(safe-area-inset-bottom));
-  place-items: center;
-  overflow: auto;
+  padding: calc(28px + env(safe-area-inset-top)) 20px calc(24px + env(safe-area-inset-bottom));
+  overflow: hidden;
 }
-.onboard.show { display: grid; }
+.onboard.show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rune {
+  width: 88px;
+  height: 88px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 8px 28px #0008;
+}
 .onboard .word {
   font-weight: 950;
   letter-spacing: .28em;
@@ -613,6 +623,7 @@ body.listening #field {
 }
 .onboard h1 { letter-spacing: .04em; font-size: 24px; margin: 10px 0 4px; }
 .onboard p { color: var(--muted); text-align: center; max-width: 280px; }
+.onboard p.record-status { color: #f4faf6; max-width: 320px; }
 .onboard .doors { width: min(360px, 100%); }
 .hidden { display: none !important; }
 .note-preview { max-width: 100%; border-radius: 12px; margin: 10px 0; }
