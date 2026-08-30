@@ -15,9 +15,11 @@ Owner: Jonathan Simons.
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-**Phone URL:** https://hyped-thread-7f9tcvw.shipstatic.com/
+**Phone URL:** https://dreamy-dust-7649kh8.shipstatic.com/
 
-Claim so it stays live past 3 days: https://my.shipstatic.com/claim/6c86f539e82aa8c0630e184a047c28d9
+Claim so it stays live past 3 days: https://my.shipstatic.com/claim/43045a75608088880245004639157041
+
+Do not use leftover random hosts such as `spectral-rune-…`. Those are old free deploys, not the product name. A name like Listener needs your Shipstatic or GitHub Pages account.
 
 This is LISTENER. One **START** button. It becomes **STOP**. No mode quiz.
 
