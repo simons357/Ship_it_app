@@ -17,13 +17,13 @@ Owner: Jonathan Simons.
 
 **Phone URL:** https://turbo-nebula-ppbq555.shipstatic.com/listener
 
-This is the LISTENER Session PWA. First screen is one **START** button. It becomes **STOP**. It is not the parked Listener search wildlife-marsh hunt.
+This is the LISTENER Session PWA. First screen is **LISTEN TO THIS RAIN**. It becomes **STOP**. It is not the parked Listener search wildlife-marsh hunt.
 
 1. Open the HTTPS link in **Safari** (not Chrome).
 2. Share → **Add to Home Screen**.
-3. Tap **START**. Allow the microphone if asked. Tap **STOP** when you are done.
-4. The recording stays on the phone. UNKNOWN stays UNKNOWN. Not a species. Not sent anywhere unless you opt in.
-5. **Field instrument** is a small later link. You do not need it to record. Rain / first-sound and **LISTEN HERE** stay on that instrument path.
+3. Tap **LISTEN TO THIS RAIN**. Allow the microphone if asked. Tap **STOP** when you are done.
+4. Session + original stay on the phone. UNKNOWN stays UNKNOWN. Not a species. Not sent anywhere unless you opt in.
+5. **Field instrument** is a small later link. You do not need it to record.
 
 That `/listener` path is the same current Session PWA as the random-host copy https://micro-logic-epb9xn6.shipstatic.com/ (and the same files at https://turbo-nebula-ppbq555.shipstatic.com/). The original random host https://shaped-bit-57sa6gs.shipstatic.com/ is still up as a fallback with an older first screen. Shipstatic platform names like `listener.shipstatic.com` need a signed-in account; they 404 until someone claims a deploy and runs `ship domains set listener.shipstatic.com <deployment>`. Claim the named-path host so it stays live past 3 days: https://my.shipstatic.com/claim/8be6864512eaf096ed33942d91d59c56
 

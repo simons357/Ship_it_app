@@ -226,9 +226,9 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10px;
   width: min(420px, 100%);
-  height: 100%;
   min-height: min(640px, 86vh);
   text-align: center;
 }
@@ -246,12 +246,17 @@ header {
   border: 3px solid var(--green);
   background: #1f5c3d;
   color: white;
-  font-size: clamp(42px, 13vw, 72px);
+  font-size: clamp(18px, 5.2vw, 28px);
   font-weight: 950;
-  letter-spacing: .14em;
+  letter-spacing: .06em;
+  line-height: 1.15;
+  padding: 28px;
+  white-space: normal;
   box-shadow: 0 0 80px #7dffa566;
 }
 .record-btn.stop {
+  font-size: clamp(42px, 13vw, 72px);
+  letter-spacing: .14em;
   background: #5c1f24;
   border-color: #ff8078;
   box-shadow: 0 0 80px #ff807866;
@@ -433,7 +438,7 @@ header {
   letter-spacing: .28em;
   font-size: 13px;
 }
-.onboard h1 { letter-spacing: .04em; font-size: 28px; margin: 18px 0 10px; }
+.onboard h1 { letter-spacing: .04em; font-size: 24px; margin: 10px 0 4px; }
 .onboard p { color: var(--muted); text-align: center; max-width: 280px; }
 .onboard .doors { width: min(360px, 100%); }
 .hidden { display: none !important; }

@@ -118,26 +118,30 @@ function recordHomeHTML() {
   const recording = Boolean(rec);
   const denied = firstSoundMicDenied && !rec;
   const kept = Boolean(firstSoundEncounter()) && !recording;
-  let status = "Tap START. Tap STOP when you are done.";
-  if (recording) status = "Recording. Original stays on this phone.";
+  let status = "Session on this phone. Original stays here. UNKNOWN stays UNKNOWN. Not a species.";
+  if (recording) status = "Recording. Original stays on this phone. UNKNOWN stays UNKNOWN.";
   else if (denied) status = FAILURE.micDenied;
   else if (kept) status = "Saved on this phone. Not sent anywhere. UNKNOWN stays UNKNOWN.";
   return `
       <div class="word">LISTENER</div>
+      <h1>${recording ? "Listening to this rain" : "The rain is the first sound."}</h1>
+      <p class="moment">THIS IS THE FIRST SOUND</p>
       <p class="record-status" id="recordStatus">${status}</p>
-      <button class="record-btn ${recording ? "stop" : "start"}" id="recordBtn" type="button">${recording ? "STOP" : "START"}</button>
+      <button class="record-btn ${recording ? "stop" : "start"} rain-cta" id="recordBtn" type="button">${recording ? "STOP" : "LISTEN TO THIS RAIN"}</button>
+      ${recording ? "" : `<button class="wide" id="helloFirst" type="button">THIS IS THE FIRST SOUND</button>`}
       <button class="ghost instrument-link" id="openInstrument" type="button">Field instrument</button>`;
 }
 
 function bindRecordHome() {
   const btn = $("recordBtn");
+  const first = $("helloFirst");
   const open = $("openInstrument");
-  if (btn) {
-    btn.onclick = () => {
-      if (rec) stopRecord();
-      else startRecord();
-    };
-  }
+  const arm = () => {
+    if (rec) stopRecord();
+    else startRecord();
+  };
+  if (btn) btn.onclick = arm;
+  if (first) first.onclick = () => startRecord();
   if (open) {
     open.onclick = async () => {
       showInstrument = true;

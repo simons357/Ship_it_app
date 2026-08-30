@@ -85,15 +85,20 @@ struct RecordHomeView: View {
                 .foregroundStyle(.secondary)
                 .padding(.horizontal, 28)
             Spacer()
-            Button(audio.recording ? ListenerCopy.stop : ListenerCopy.start) {
+            Button(audio.recording ? ListenerCopy.stop : ListenerCopy.listenRain) {
                 if audio.recording { stopRecord() } else { startRecord() }
             }
             .frame(width: 260, height: 260)
             .background(audio.recording ? Color(red: 0.36, green: 0.12, blue: 0.14) : Color(red: 0.12, green: 0.36, blue: 0.24))
             .foregroundStyle(.white)
-            .font(.system(size: 52, weight: .black))
+            .font(.system(size: audio.recording ? 52 : 22, weight: .black))
+            .multilineTextAlignment(.center)
             .clipShape(Circle())
             .shadow(color: audio.recording ? Color.red.opacity(0.45) : Color.green.opacity(0.45), radius: 28)
+            if !audio.recording {
+                Button(ListenerCopy.firstSound) { startRecord() }
+                    .font(.headline.weight(.bold))
+            }
             Spacer()
             Button("Field instrument") {
                 if session == nil { ensureSession() }
@@ -111,7 +116,7 @@ struct RecordHomeView: View {
         if saved || encounters.contains(where: { $0.sessionId == session?.id }) {
             return "Saved on this phone. Not sent anywhere. UNKNOWN stays UNKNOWN."
         }
-        return "Tap START. Tap STOP when you are done."
+        return "The rain is the first sound. Session on this phone. Original stays here. UNKNOWN stays UNKNOWN. Not a species."
     }
 
     private func ensureSession() {
