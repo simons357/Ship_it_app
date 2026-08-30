@@ -213,6 +213,7 @@ test("ON AIR stays hidden until recording — display:flex must not leak past [h
   const html = await readFile(new URL("../app/index.html", import.meta.url), "utf8");
   assert.match(html, /id="onAir"[^>]*hidden/);
   assert.match(html, /id="recordBtn"[^>]*>START</);
+  assert.equal(/id="recordBtn"[^>]*\bstart\b/.test(html), false);
   assert.match(html, /icon-192\.png/);
   assert.equal(html.includes("LISTEN TO THIS RAIN"), false);
   assert.match(css, /\.on-air\[hidden\][\s\S]*display:\s*none\s*!important/);

@@ -240,7 +240,7 @@ function refreshRecordHome() {
   if (btn) {
     btn.disabled = false;
     btn.textContent = recording ? "STOP" : "START";
-    btn.className = `record-btn ${recording ? "stop" : "start"}`;
+    btn.className = recording ? "record-btn stop" : "record-btn";
   }
   if (air) air.hidden = !recording;
   const meter = $("liveMeter");
@@ -541,7 +541,7 @@ function renderField() {
     const p0 = projectRelative(start, start) || { left: 22, top: 62 };
     markers.insertAdjacentHTML(
       "beforeend",
-      `<button class="start" style="left:${p0.left}%;top:${p0.top}%"><i></i><b>START</b></button>`
+      `<button class="session-origin" style="left:${p0.left}%;top:${p0.top}%"><i></i><b>START</b></button>`
     );
   }
 

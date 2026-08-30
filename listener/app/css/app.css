@@ -119,7 +119,7 @@ header {
   letter-spacing: .08em;
 }
 .mapmodes .on { color: white; border-color: #547765; }
-.node, .event, .start {
+.node, .event, .session-origin {
   position: absolute;
   z-index: 6;
   border: 0;
@@ -128,7 +128,7 @@ header {
   text-align: center;
   transform: translate(-50%, -50%);
 }
-.node i, .start i, .event i {
+.node i, .session-origin i, .event i {
   display: block;
   width: 13px;
   height: 13px;
@@ -137,14 +137,14 @@ header {
   background: var(--green);
   box-shadow: 0 0 24px var(--green);
 }
-.node b, .start b { font-size: 8px; }
+.node b, .session-origin b { font-size: 8px; }
 .node.scout i { background: var(--green); }
 .node.base i { background: var(--green); }
 .node.remote i, .node.node i {
   background: var(--cyan);
   box-shadow: 0 0 24px var(--cyan);
 }
-.start i {
+.session-origin i {
   width: 10px;
   height: 10px;
   background: white;
@@ -377,6 +377,8 @@ body.listening #field {
 .record-btn {
   width: min(58vw, 240px);
   flex: 0 0 auto;
+  align-self: center;
+  margin-inline: auto;
   aspect-ratio: 1;
   border-radius: 50%;
   border: 3px solid var(--green);
