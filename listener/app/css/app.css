@@ -80,7 +80,7 @@ header {
 .network.warn { color: var(--amber); }
 .tabs {
   position: fixed;
-  z-index: 22;
+  z-index: 45;
   top: calc(68px + env(safe-area-inset-top));
   left: 50%;
   transform: translateX(-50%);
