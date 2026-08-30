@@ -13,7 +13,23 @@ Owner: Jonathan Simons.
 - Optional hub: `hub/hub.py`
 - Parked threads stay parked — `PARKED-THREADS.md`
 
-## Open the iPhone preview
+## Open on iPhone (Session app — not the parked Listener search)
+
+**Phone URL:** https://shaped-bit-57sa6gs.shipstatic.com/
+
+This is the LISTENER Session PWA (field instrument). It is not the parked Listener search wildlife-marsh hunt.
+
+1. Open the HTTPS link in **Safari** (not Chrome).
+2. Share → **Add to Home Screen**.
+3. **LISTEN HERE** to start a Session.
+4. Allow **microphone** + **location** if asked.
+5. Rain / first sound stays on the phone; not contributed unless you opt in.
+
+Claim the host so it stays live past 3 days: https://my.shipstatic.com/claim/1666a104f9280e0ab733893a33c491e6
+
+The same app is on `origin/gh-pages` under `listener/` (existing Pages apps were left in place). The GitHub Pages URL would be https://simons357.github.io/Ship_it_app/listener/ after Pages is enabled in the repo: Settings → Pages → Deploy from a branch → `gh-pages` / root. This environment cannot turn Pages on (`has_pages: false`). Until then that github.io path 404s — use the phone URL above.
+
+## Local preview (this VM only — the phone cannot reach it)
 
 ```bash
 cd listener/app
