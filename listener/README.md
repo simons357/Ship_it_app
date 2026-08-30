@@ -4,6 +4,10 @@ New product. Isolated under `listener/`. Not Ship It. Not the parked Listener se
 
 Owner: Jonathan Simons.
 
+## Hand this to Base44
+
+Do not explain the product. Paste `BASE44_PROMPT.txt` into a new Base44 app. Steps are in `BASE44.md`.
+
 ## Status
 
 - Spec: ingested (`MASTER_SPEC.md`, `inbox/MASTER-BUILD-SPEC.md`)
