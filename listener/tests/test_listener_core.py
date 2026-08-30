@@ -40,6 +40,7 @@ class WildlifeOnly(unittest.TestCase):
         self.assertIn("No invented animals", APP)
         self.assertIn('id="recordBtn"', HTML)
         self.assertIn(">START<", HTML)
+        self.assertIn("ON AIR", HTML)
         self.assertIn("What was that?", HTML)
         self.assertIn("LOCAL FIELD", APP)
         self.assertNotIn("LISTEN TO THIS RAIN", HTML)

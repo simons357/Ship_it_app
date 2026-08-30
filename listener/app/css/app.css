@@ -271,6 +271,29 @@ header {
   margin: 4px 0 0;
   text-shadow: 0 1px 12px #0008;
 }
+.on-air {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #ff4d4d;
+  font-size: 22px;
+  font-weight: 950;
+  letter-spacing: .28em;
+  text-shadow: 0 0 18px #ff4d4d88;
+}
+.on-air i {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ff2a2a;
+  box-shadow: 0 0 16px #ff2a2a;
+  animation: onair 0.8s ease-in-out infinite;
+}
+@keyframes onair {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px #ff2a2a; }
+  50% { opacity: 0.15; box-shadow: 0 0 0 #ff2a2a; }
+}
 .rec-timer {
   font-size: 42px;
   font-weight: 950;

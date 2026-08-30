@@ -74,6 +74,7 @@ struct RecordHomeView: View {
     var openInstrument: () -> Void
     @State private var micDenied = false
     @State private var saved = false
+    @State private var airPulse = true
 
     var session: Session? { sessions.first }
 
@@ -84,6 +85,13 @@ struct RecordHomeView: View {
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.secondary)
                 .padding(.horizontal, 28)
+            if audio.recording {
+                HStack(spacing: 10) {
+                    Circle().fill(Color.red).frame(width: 16, height: 16).opacity(0.2)
+                        .overlay(Circle().fill(Color.red).frame(width: 16, height: 16).opacity(airPulse ? 1 : 0.15))
+                    Text("ON AIR").font(.title2.weight(.black)).tracking(4).foregroundStyle(.red)
+                }
+            }
             Spacer()
             Button(audio.recording ? ListenerCopy.stop : ListenerCopy.start) {
                 if audio.recording { stopRecord() } else { startRecord() }
@@ -103,6 +111,9 @@ struct RecordHomeView: View {
             .foregroundStyle(.secondary)
         }
         .padding(28)
+        .onChange(of: audio.recording) { _, on in
+            if on { airPulse.toggle() }
+        }
     }
 
     private var statusLine: String {
@@ -111,7 +122,7 @@ struct RecordHomeView: View {
         if saved || encounters.contains(where: { $0.sessionId == session?.id }) {
             return "Saved on this phone. Not sent anywhere. UNKNOWN stays UNKNOWN."
         }
-        return "The rain is the first sound. Session on this phone. Original stays here. UNKNOWN stays UNKNOWN. Not a species."
+        return "Tap START. Put the phone down. Tap STOP when you are done."
     }
 
     private func ensureSession() {

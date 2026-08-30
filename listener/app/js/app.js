@@ -218,6 +218,7 @@ function refreshRecordHome() {
   const status = $("recordStatus");
   const btn = $("recordBtn");
   const timer = $("recTimer");
+  const air = $("onAir");
   if (status) {
     if (recording) status.textContent = "RECORDING. Original stays on this phone.";
     else if (denied) status.textContent = FAILURE.micDenied;
@@ -229,6 +230,7 @@ function refreshRecordHome() {
     btn.textContent = recording ? "STOP" : "START";
     btn.className = `record-btn ${recording ? "stop" : "start"}`;
   }
+  if (air) air.hidden = !recording;
   if (timer) {
     timer.hidden = !recording;
     if (recording) timer.textContent = elapsedLabel(recStarted);
