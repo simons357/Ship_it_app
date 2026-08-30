@@ -80,4 +80,6 @@ cd listener && python3 -m unittest tests.test_listener_core && node --test tests
 
 Complex underneath. Obvious on top. No networking vocabulary unless the user opens diagnostics.
 
+The mark is a home node with rings going out — listening for non-human biological signals. Black tile, amber glow. Do not replace it.
+
 Product test: leave one phone as BASE and scout with the other in under a minute.

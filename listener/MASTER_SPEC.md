@@ -14,6 +14,14 @@ Complex underneath. Obvious on top.
 
 If a normal user must understand networking, routing, synchronization or signal processing to use a feature, the feature is not finished.
 
+## Mark
+
+The LISTENER icon is a home node with rings going out: listening for intelligent life that is **not human** — animals, insects, birds, and the weather they live in.
+
+Same family as Descent: solid black tile, one warm amber handmade glow. Not Descent’s inward spiral. Not a cartoon zoo. Not a photoreal slate. Not SETI chrome.
+
+Assets: `app/icons/home-node.png` (source) and the sized `icon-*.png` / iOS AppIcon set.
+
 ## Three doors
 
 - **LISTEN** — One-device wildlife listening. Home Field can designate a stationary device as BASE.

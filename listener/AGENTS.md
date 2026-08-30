@@ -10,6 +10,10 @@ You are working on **LISTENER**, a new product. This folder is the whole project
 - Keep it a premium distributed field instrument. Do not turn it into a generic wildlife checklist.
 - Non-negotiables: wildlife-only encounters/library, privacy by default, no invented animal positions, no fake COH, no forced species IDs, originals preserved, sharing ≠ contributing, offline must not lose the Session, UI stays simple.
 
+## Mark
+
+Black tile. One warm amber handmade stroke. A **home node** in the center, then **rings going out** — listening for non-human biological signals (animals, insects, birds, and the weather they live in). Same family as Descent (black + amber glow), not Descent’s inward spiral, not a cartoon animal, not a photoreal carving, not a satellite dish. Do not replace this mark or invent a new first-screen logo.
+
 ## Do not
 
 - Do not touch or continue **Listener search** (`bc-37b9c6b6-57c6-441f-a66b-4dc980ccae18`). It is parked. Read `PARKED-THREADS.md`.
