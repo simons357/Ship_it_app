@@ -215,6 +215,19 @@ header {
 .livecard .dual { color: var(--green); font-size: 8px; text-align: right; }
 .livecard.cta { cursor: pointer; border-color: #547765; }
 .livecard.rec { border-color: var(--green); }
+body.listening header,
+body.listening .tabs,
+body.listening .mapmodes,
+body.listening .mapcap,
+body.listening .instrument,
+body.listening .compass,
+body.listening .mic,
+body.listening .livecard,
+body.listening .actions,
+body.listening #field {
+  visibility: hidden;
+  pointer-events: none;
+}
 .onboard .moment {
   color: var(--amber);
   font-size: 14px;
@@ -229,7 +242,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   width: min(420px, 100%);
   text-align: center;
 }
@@ -238,11 +251,54 @@ header {
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  overflow: hidden;
 }
-.onboard.sky-night { background: linear-gradient(180deg, #02010a 0%, #0a1028 42%, #161022 100%); }
+.onboard.sky-night {
+  background: radial-gradient(circle at 78% 18%, #2a3358 0 6%, transparent 28%),
+    linear-gradient(180deg, #02010a 0%, #0a1028 42%, #0d1a14 100%);
+}
+.onboard.sky-night .sky {
+  background-image:
+    radial-gradient(1px 1px at 12% 22%, #fff, transparent),
+    radial-gradient(1px 1px at 28% 38%, #fff8, transparent),
+    radial-gradient(1.5px 1.5px at 44% 14%, #fff, transparent),
+    radial-gradient(1px 1px at 61% 31%, #fff6, transparent),
+    radial-gradient(1px 1px at 73% 48%, #fff, transparent),
+    radial-gradient(1px 1px at 88% 19%, #fff9, transparent),
+    radial-gradient(1px 1px at 18% 62%, #fff5, transparent),
+    radial-gradient(1.4px 1.4px at 52% 71%, #fff, transparent);
+}
+.onboard.sky-night .sky:before {
+  content: "";
+  position: absolute;
+  top: 11%;
+  right: 16%;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #f4f0dc;
+  box-shadow: 0 0 50px #fff6;
+}
 .onboard.sky-dawn { background: linear-gradient(180deg, #141828 0%, #c46b4a 52%, #f0c38a 100%); }
 .onboard.sky-day { background: linear-gradient(180deg, #3d7eb0 0%, #7eb6d9 45%, #d5e8ef 100%); }
+.onboard.sky-day .sky:before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 14%;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #ffe08a;
+  box-shadow: 0 0 60px #ffd76a88;
+}
 .onboard.sky-dusk { background: linear-gradient(180deg, #1c1640 0%, #e07a3d 48%, #2a1420 100%); }
+.tag {
+  font-size: 9px;
+  letter-spacing: .28em;
+  color: #d7e6dc;
+  text-shadow: 0 1px 10px #000a;
+}
 .onboard.sky-wet .sky {
   background: repeating-linear-gradient(185deg, transparent 0 14px, #ffffff14 15px 16px);
   animation: rainfall 0.7s linear infinite;
@@ -306,7 +362,7 @@ header {
   aspect-ratio: 1;
   border-radius: 50%;
   border: 3px solid var(--green);
-  background: #1f5c3d;
+  background: radial-gradient(circle at 35% 30%, #2d8a56, #1f5c3d 62%);
   color: white;
   font-size: clamp(42px, 13vw, 72px);
   font-weight: 950;
@@ -314,16 +370,39 @@ header {
   line-height: 1;
   padding: 0;
   box-shadow: 0 0 80px #7dffa566;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
+.record-btn:active { transform: scale(0.97); }
 .record-btn.stop {
-  background: #5c1f24;
+  background: radial-gradient(circle at 35% 30%, #8a2d36, #5c1f24 62%);
   border-color: #ff8078;
   box-shadow: 0 0 80px #ff807866;
   animation: recpulse 1.2s ease-in-out infinite;
 }
+.live-meter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+  height: 36px;
+  width: min(280px, 80vw);
+}
+.live-meter i {
+  flex: 1;
+  height: 18%;
+  border-radius: 2px;
+  background: #7dffa533;
+}
+.live-meter i.on { background: var(--green); box-shadow: 0 0 8px #7dffa588; }
 .what-was {
   width: min(360px, 100%);
   text-align: left;
+  background: #07100de8;
+  border: 1px solid #416d58;
+  border-radius: 20px;
+  padding: 16px 14px 14px;
+  backdrop-filter: blur(16px);
 }
 .what-was label {
   display: block;

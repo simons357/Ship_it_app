@@ -106,3 +106,35 @@ export async function startRecording(deviceId) {
     },
   };
 }
+
+/** Live field level. Not a transcript. Not a species. */
+export function attachLevelMeter(stream, onLevel) {
+  if (!stream || typeof AudioContext === "undefined") return () => {};
+  const ctx = new AudioContext();
+  const src = ctx.createMediaStreamSource(stream);
+  const analyser = ctx.createAnalyser();
+  analyser.fftSize = 256;
+  src.connect(analyser);
+  const data = new Uint8Array(analyser.frequencyBinCount);
+  let raf = 0;
+  const tick = () => {
+    analyser.getByteTimeDomainData(data);
+    let sum = 0;
+    for (let i = 0; i < data.length; i++) {
+      const v = (data[i] - 128) / 128;
+      sum += v * v;
+    }
+    onLevel(Math.min(1, Math.sqrt(sum / data.length) * 3.6));
+    raf = requestAnimationFrame(tick);
+  };
+  tick();
+  return () => {
+    cancelAnimationFrame(raf);
+    try {
+      src.disconnect();
+      ctx.close();
+    } catch {
+      /* already closed */
+    }
+  };
+}

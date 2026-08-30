@@ -17,6 +17,7 @@ import {
   isMicUnavailable,
   listInputs,
   pickPreferredInput,
+  attachLevelMeter,
   startLocalOriginalRecording,
   startRecording,
 } from "./audio.js";
@@ -43,6 +44,7 @@ let lastWeather = null;
 let lastWxAt = 0;
 let pendingKeep = null;
 let recTick = null;
+let stopMeter = null;
 let airpodsOn = false;
 let recordBound = false;
 
@@ -141,6 +143,13 @@ function applySky() {
   const clock = $("fieldClock");
   const wx = $("fieldWeather");
   if (clock) clock.textContent = clockLabel();
+  const theme = {
+    night: "#02010a",
+    dawn: "#141828",
+    day: "#3d7eb0",
+    dusk: "#1c1640",
+  }[period];
+  if (theme) document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme);
   if (wx) {
     wx.hidden = !lastWeather;
     if (lastWeather) wx.textContent = weatherLine(lastWeather);
@@ -198,11 +207,11 @@ async function renderHeard() {
       }));
     }
   }
-  if (search) search.hidden = state.encounters.length === 0 && !ownerEndpoints().search;
+  if (search) search.hidden = true;
   list.innerHTML = rows
     .map((e) => {
       const wx = e.weather?.label ? ` · ${e.weather.label}` : "";
-      return `<div class="signal"><small>${new Date(e.t).toLocaleString()}${wx}</small><b>${e.label}</b><span>${e.originalAudioId ? "Original on this phone" : "No original"} · your search</span></div>`;
+      return `<div class="signal"><small>${new Date(e.t).toLocaleString()}${wx}</small><b>${e.label}</b><span>${e.originalAudioId ? "Original on this phone" : "No original"}</span></div>`;
     })
     .join("");
 }
@@ -231,6 +240,8 @@ function refreshRecordHome() {
     btn.className = `record-btn ${recording ? "stop" : "start"}`;
   }
   if (air) air.hidden = !recording;
+  const meter = $("liveMeter");
+  if (meter) meter.hidden = !recording;
   if (timer) {
     timer.hidden = !recording;
     if (recording) timer.textContent = elapsedLabel(recStarted);
@@ -255,13 +266,30 @@ function bindRecordHome() {
   $("heardSearch")?.addEventListener("input", () => renderHeard());
 }
 
+function tap() {
+  try {
+    navigator.vibrate?.(12);
+  } catch {
+    /* no haptic */
+  }
+}
+
+function paintMeter(level) {
+  const bars = $("liveMeter")?.querySelectorAll("i") || [];
+  bars.forEach((el, i) => {
+    el.classList.toggle("on", level * bars.length > i);
+  });
+}
+
 function showOnboard() {
   const el = $("onboard");
   if (showInstrument) {
     el.classList.remove("show");
+    document.body.classList.remove("listening");
     return;
   }
   el.classList.add("show");
+  document.body.classList.add("listening");
   bindRecordHome();
   refreshRecordHome();
   detectAirpods();
@@ -393,7 +421,12 @@ async function startRecord() {
     const armed = await startMic({ firstSound: true });
     firstSoundMicDenied = Boolean(armed?.denied);
     if (firstSoundMicDenied) toast(FAILURE.micDenied);
-    if (rec) startRecClock();
+    if (rec) {
+      tap();
+      startRecClock();
+      stopMeter?.();
+      stopMeter = rec.stream ? attachLevelMeter(rec.stream, paintMeter) : () => {};
+    }
     refreshWeather();
     showOnboard();
     renderAll();
@@ -415,6 +448,10 @@ async function stopRecord() {
       localOriginal = Boolean(rec.localOriginal);
       audioId = await stopMicToOriginal();
     }
+    stopMeter?.();
+    stopMeter = null;
+    paintMeter(0);
+    tap();
     clearInterval(recTick);
     pendingKeep = {
       audioId,
