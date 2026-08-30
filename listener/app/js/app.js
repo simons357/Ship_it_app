@@ -640,8 +640,6 @@ function openSheet(type) {
         <button data-door="broadcast">● BROADCAST</button>
         <button data-act="pair">＋ ADD STATION</button>
       </div>
-      <button class="wide rain-cta" data-act="first-sound">LISTEN TO THIS RAIN</button>
-      <button class="wide" data-act="first-sound" style="margin-top:8px">THIS IS THE FIRST SOUND</button>
       <button class="ghost" data-act="listen-now">START LISTENING</button>`,
     scout: () => `
       <small class="label">STUPIDLY EASY SETUP</small>
