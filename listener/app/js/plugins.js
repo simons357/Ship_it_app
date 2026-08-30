@@ -38,6 +38,7 @@ export async function fetchOwnerWeather(lat, lon) {
     lon: Number.isFinite(lon) ? lon : null,
     label: String(data.label || data.weather || "").trim() || "unknown weather",
     wet: data.wet === true || /rain|drizzle|thunder|storm/i.test(String(data.label || "")),
+    snow: data.snow === true || /snow|sleet|blizzard|ice/i.test(String(data.label || "")),
     tempC: Number.isFinite(data.tempC) ? data.tempC : null,
     code: data.code ?? null,
   };

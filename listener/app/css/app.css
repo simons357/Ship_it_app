@@ -306,6 +306,17 @@ body.listening #field {
 @keyframes rainfall {
   to { background-position: 0 28px; }
 }
+.onboard.sky-snow .sky {
+  background: radial-gradient(1px 1px at 20% 10%, #fff, transparent),
+    radial-gradient(1px 1px at 40% 30%, #fff8, transparent),
+    radial-gradient(1.4px 1.4px at 70% 18%, #fff, transparent),
+    radial-gradient(1px 1px at 85% 55%, #fff9, transparent),
+    radial-gradient(1px 1px at 15% 70%, #fff6, transparent);
+  animation: snowfall 8s linear infinite;
+}
+@keyframes snowfall {
+  to { background-position: 0 80px; }
+}
 .field-clock {
   font-size: 28px;
   font-weight: 800;

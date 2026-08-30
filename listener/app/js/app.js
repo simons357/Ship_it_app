@@ -137,9 +137,12 @@ function applySky() {
   const el = $("onboard");
   if (!el) return;
   const period = skyPeriod();
-  el.classList.remove("sky-night", "sky-dawn", "sky-day", "sky-dusk", "sky-wet");
+  el.classList.remove("sky-night", "sky-dawn", "sky-day", "sky-dusk", "sky-wet", "sky-snow");
   el.classList.add(`sky-${period}`);
   if (lastWeather?.wet) el.classList.add("sky-wet");
+  if (lastWeather?.snow || /snow|sleet|blizzard/i.test(String(lastWeather?.label || ""))) {
+    el.classList.add("sky-snow");
+  }
   const clock = $("fieldClock");
   const wx = $("fieldWeather");
   if (clock) clock.textContent = clockLabel();

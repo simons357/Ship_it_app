@@ -18,6 +18,10 @@ export function isWetLabel(label) {
   return /rain|drizzle|thunder|storm/i.test(String(label || ""));
 }
 
+export function isSnowLabel(label) {
+  return /snow|sleet|blizzard|ice/i.test(String(label || ""));
+}
+
 /** Only your weather. If it is not plugged in, we say so. */
 export async function fetchFieldWeather(lat, lon) {
   if (!ownerEndpoints().weather) return null;
