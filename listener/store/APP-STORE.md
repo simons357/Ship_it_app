@@ -1,50 +1,52 @@
 # LISTENER — App Store pack
 
-**Status: not submitted.** This Linux workspace cannot enroll in Apple Developer, sign, or upload.
+Owner: Jonathan Simons  
+Bundle ID: `tech.primefield.listener`  
+Display name: LISTENER  
+Category: Navigation (primary) / Lifestyle (secondary)  
+Age rating: 4+ (no user-generated public chat required for V1; Broadcast watching is local)
 
-## What is ready
+## Honest status
 
-- Native target: `listener/ios/Listener.xcodeproj`
-- Bundle ID: `tech.primefield.listener`
-- Display name: LISTENER
-- Category: Navigation (field instrument + RETURN safety aid)
-- Privacy policy page: `listener/app/privacy.html` (host on HTTPS before review)
-- iPhone preview: `listener/app/` (same product doors and visual language)
+This pack is listing copy and a Mac/Xcode checklist. **We cannot enroll in the Apple Developer Program ($99/year) or upload a binary from the Linux cloud VM.** Open `listener/ios/Listener.xcodeproj` on a Mac to archive and send to TestFlight.
 
-## Listing
+## Privacy nutrition (App Store Connect)
 
-**Name:** LISTENER
+| Data | Collected | Linked to identity | Used for tracking | Purpose |
+| --- | --- | --- | --- | --- |
+| Precise location | Yes, on device | No | No | App functionality (Session Start, breadcrumb, RETURN) |
+| Coarse location | Only if the user contributes | No | No | App functionality |
+| Audio | Yes, on device | No | No | App functionality (wildlife evidence). Not transcribed. No speaker ID. |
+| Photos | Only if the user attaches a field-note photo | No | No | App functionality |
+| Product interaction | Optional local session log | No | No | App functionality |
 
-**Subtitle:** What the wild is saying
+Default: exact home coordinates, raw Wander routes, precise node positions, and private media stay on the phone.
 
-**Promotional text:** Leave one phone still. Walk with the other. Listen to the non-human world.
+Sharing a Listener Card is **not** contributing the original to the Signal Library.
 
-**Description:**
+Privacy policy (host this file on HTTPS before review): `listener/app/privacy.html`
 
-LISTENER is a wildlife-only field instrument. It turns phones, AirPods, and later sensors into a simple field network.
+## Usage strings (already in Info.plist)
 
-LISTEN HERE leaves this phone as Base.
-GO SCOUT walks with a breadcrumb and RETURN back to Session Start.
-BROADCAST lets people watch. Watching is not contributing a sensor.
+- Microphone: Listener uses the microphone to record wildlife sounds around you. Recordings stay on this phone until you choose to share or contribute.
+- Location: Listener uses your location to mark where you started, draw your wander, and help you find your way back. Exact location stays private unless you choose otherwise.
+- Camera / Photos: Listener can attach a photo to a field note.
 
-Private by default. Exact home coordinates, raw Wander routes, and originals stay on the phone unless you take a separate action. Sharing a Listener Card is not sending the original to the Signal Library.
+## Review notes
 
-LISTENER does not transcribe speech and does not identify speakers. Probable human speech is excluded from wildlife encounters and cannot enter the common library.
+LISTENER is a wildlife-only field instrument. Probable human speech does not create a wildlife encounter and cannot be contributed. Field Coherence (DA) shows an em dash and **INSUFFICIENT FIELD DATA** until two or more nearby synchronized nodes produce a real measurement. RETURN highlights a recorded trail back to Session Start. It is a safety aid, not a replacement for Maps.
 
-Field Coherence is a real instrument. If the field is not ready it reads — / INSUFFICIENT FIELD DATA. UNKNOWN stays UNKNOWN. No forced species names.
+Map modes FIELD / SATELLITE / HYBRID use MapKit on iPhone. The web preview does not scrape or redistribute Apple or Google tiles.
 
-**Keywords:** wildlife, field, listening, nature, acoustic, scout, map
+## Screenshots to capture on an iPhone
 
-**Age rating:** 4+
+1. Onboarding — “What the wild is saying.”
+2. Three doors — LISTEN HERE / GO SCOUT / START A BROADCAST
+3. Field with BASE, instrument showing —, RETURN off
+4. Field note sheet (SAW / HEARD / PHOTO / MYSTERY)
+5. SIGNALS library + **SEND US YOUR LISTENER SIGNALS**
+6. Broadcast watch vs join-as-node
 
-**Review notes:** Training / nature listening. Not a medical device. RETURN is a breadcrumb highlight, not a navigation replacement. Microphone and location are used only for the field session.
+## Mac upload steps
 
-## Your steps on a Mac
-
-1. Enroll in the Apple Developer Program ($99/year). We cannot do this for you.
-2. Open `listener/ios/Listener.xcodeproj` in Xcode 15+.
-3. Set your Team on the LISTENER target.
-4. Host `privacy.html` at a public HTTPS URL and paste it into App Store Connect.
-5. Archive → Upload → TestFlight → Submit for Review.
-
-Until step 5, admission stays **not submitted**.
+See `listener/ios/README.md`. Short version: paid Apple Developer team → Archive → App Store Connect → TestFlight → submit.

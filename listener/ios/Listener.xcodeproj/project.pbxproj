@@ -12,6 +12,7 @@
 		A10000000000000000000003 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000003 /* Services.swift */; };
 		A10000000000000000000004 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000004 /* Views.swift */; };
 		A10000000000000000000005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000005 /* Assets.xcassets */; };
+		A10000000000000000000006 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000007 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		B10000000000000000000004 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		B10000000000000000000005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B10000000000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B10000000000000000000007 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 				B10000000000000000000004 /* Views.swift */,
 				B10000000000000000000005 /* Assets.xcassets */,
 				B10000000000000000000006 /* Info.plist */,
+				B10000000000000000000007 /* PrivacyInfo.xcprivacy */,
 			);
 			path = Listener;
 			sourceTree = "<group>";
@@ -118,6 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A10000000000000000000005 /* Assets.xcassets in Resources */,
+				A10000000000000000000006 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

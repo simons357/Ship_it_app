@@ -299,11 +299,16 @@ struct NoteSheet: View {
             coordinate: location.last?.coordinate ?? session.startCoordinate
         )
         context.insert(note)
+        if human {
+            // Probable human speech: keep an internal exclusion only. No wildlife encounter.
+            try? context.save()
+            dismiss()
+            return
+        }
         let enc = Encounter(sessionId: session.id, label: kind == .mystery ? "UNKNOWN" : (text.isEmpty ? kind.rawValue.uppercased() : text))
         enc.lat = note.lat
         enc.lon = note.lon
         enc.originalAudioPath = mediaPath
-        if human { enc.excludeAsHuman() }
         context.insert(enc)
         sync.enqueue(context: context, type: "note.add", payload: ["note": note.id.uuidString])
         try? context.save()
