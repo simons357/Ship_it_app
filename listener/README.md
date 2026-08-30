@@ -15,7 +15,7 @@ Owner: Jonathan Simons.
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-**Phone URL:** https://micro-logic-epb9xn6.shipstatic.com/
+**Phone URL:** https://turbo-nebula-ppbq555.shipstatic.com/listener
 
 This is the LISTENER Session PWA. First screen is one **START** button. It becomes **STOP**. It is not the parked Listener search wildlife-marsh hunt.
 
@@ -23,11 +23,9 @@ This is the LISTENER Session PWA. First screen is one **START** button. It becom
 2. Share → **Add to Home Screen**.
 3. Tap **START**. Allow the microphone if asked. Tap **STOP** when you are done.
 4. The recording stays on the phone. UNKNOWN stays UNKNOWN. Not a species. Not sent anywhere unless you opt in.
-5. **Field instrument** is a small later link. You do not need it to record.
+5. **Field instrument** is a small later link. You do not need it to record. Rain / first-sound and **LISTEN HERE** stay on that instrument path.
 
-Claim this host so it stays live past 3 days: https://my.shipstatic.com/claim/c455be36935f81005a99906697589445
-
-Older hosts (wrong first screen — do not use): https://nova-bolt-57jc24t.shipstatic.com/ and https://shaped-bit-57sa6gs.shipstatic.com/
+That `/listener` path is the same current Session PWA as the random-host copy https://micro-logic-epb9xn6.shipstatic.com/ (and the same files at https://turbo-nebula-ppbq555.shipstatic.com/). The original random host https://shaped-bit-57sa6gs.shipstatic.com/ is still up as a fallback with an older first screen. Shipstatic platform names like `listener.shipstatic.com` need a signed-in account; they 404 until someone claims a deploy and runs `ship domains set listener.shipstatic.com <deployment>`. Claim the named-path host so it stays live past 3 days: https://my.shipstatic.com/claim/8be6864512eaf096ed33942d91d59c56
 
 The same app is on `origin/gh-pages` under `listener/` (existing Pages apps were left in place). The stable GitHub Pages name is https://simons357.github.io/Ship_it_app/listener/ after Pages is enabled in the repo: Settings → Pages → Deploy from a branch → `gh-pages` / root. This environment cannot turn Pages on (`has_pages: false`). Until then that github.io path 404s — use the `/listener` phone URL above.
 
