@@ -417,7 +417,7 @@ function openSheet(type) {
         <button data-note="human">🗣 HUMAN SPEECH</button>
       </div>
       <textarea id="noteText" rows="3" placeholder="Optional words from you — never a transcript of the recording."></textarea>
-      <input id="noteFile" type="file" accept="image/*,video/*" hidden>
+      <input id="noteFile" type="file" accept="image/*,video/*" style="display:none">
       <button class="wide" data-act="save-note">SAVE EVIDENCE</button>`,
     contribute: () => contributeHTML(),
     invite: () => `

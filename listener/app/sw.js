@@ -1,5 +1,5 @@
 self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open("listener-v1").then((c) => c.addAll(["./", "./index.html", "./css/app.css"])));
+  e.waitUntil(caches.open("listener-v2").then((c) => c.addAll(["./", "./index.html", "./css/app.css"])));
   self.skipWaiting();
 });
 self.addEventListener("activate", (e) => {
