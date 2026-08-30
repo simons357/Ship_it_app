@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { readFile } from "node:fs/promises";
 import {
   FAILURE,
   canContribute,
@@ -205,6 +206,17 @@ test("sky is from this clock; weather is the owner's app", () => {
   assert.match(line, /your weather not connected|waiting on your weather/);
   assert.equal(ownerEndpoints().weather, "");
   assert.equal(ownerEndpoints().search, "");
+});
+
+test("ON AIR stays hidden until recording — display:flex must not leak past [hidden]", async () => {
+  const css = await readFile(new URL("../app/css/app.css", import.meta.url), "utf8");
+  const html = await readFile(new URL("../app/index.html", import.meta.url), "utf8");
+  assert.match(html, /id="onAir"[^>]*hidden/);
+  assert.match(html, /id="recordBtn"[^>]*>START</);
+  assert.match(html, /icon-192\.png/);
+  assert.equal(html.includes("LISTEN TO THIS RAIN"), false);
+  assert.match(css, /\.on-air\[hidden\][\s\S]*display:\s*none\s*!important/);
+  assert.match(css, /\.live-meter\[hidden\]/);
 });
 
 test("relative plot stays finite", () => {

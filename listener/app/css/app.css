@@ -349,6 +349,13 @@ body.listening #field {
   letter-spacing: .28em;
   text-shadow: 0 0 18px #ff4d4d88;
 }
+.on-air[hidden],
+.live-meter[hidden],
+.rec-timer[hidden],
+.field-wx[hidden],
+.field-role[hidden] {
+  display: none !important;
+}
 .on-air i {
   width: 18px;
   height: 18px;
