@@ -40,10 +40,16 @@ class WildlifeOnly(unittest.TestCase):
         self.assertIn("No invented animals", APP)
         self.assertIn("THIS IS THE FIRST SOUND", APP)
         self.assertIn("LISTEN TO THIS RAIN", APP)
+        self.assertIn("LISTEN TO THIS RAIN", HTML)
+        self.assertIn("THIS IS THE FIRST SOUND", HTML)
+        self.assertIn("UNKNOWN stays UNKNOWN", HTML)
+        self.assertIn("rain-cta", HTML)
 
     def test_first_sound_is_unknown_not_contributed(self):
         self.assertIn("firstSoundDecision", WILD)
         self.assertIn("saveFirstSound", APP)
+        self.assertIn("rainFirstHTML", APP)
+        self.assertIn("wantDoors", APP)
         self.assertIn("humanSpeechGate = \"pending\"", APP)
         self.assertIn("THIS IS NOT HUMAN SPEECH", APP)
         self.assertIn("This phone needs the microphone", JS)

@@ -35,6 +35,7 @@ let recStarted = 0;
 let heading = 0;
 let firstSoundArmed = false;
 let firstSoundMicDenied = false;
+let wantDoors = false;
 
 function persist() {
   saveState(state);
@@ -112,6 +113,33 @@ function allowLocalOriginalFallback() {
   }
 }
 
+function rainFirstHTML() {
+  return `
+      <div class="word">LISTENER</div>
+      <h1>The rain is the first sound.</h1>
+      <p class="moment">THIS IS THE FIRST SOUND</p>
+      <p>Session on this phone. Original stays here. UNKNOWN stays UNKNOWN. Not a species.</p>
+      <button class="wide rain-cta" id="helloRain" type="button">LISTEN TO THIS RAIN</button>
+      <button class="wide" id="helloFirst" type="button">THIS IS THE FIRST SOUND</button>
+      <button class="ghost" id="helloGo" type="button">OTHER WAYS TO BEGIN</button>`;
+}
+
+function bindRainFirst() {
+  const rain = $("helloRain");
+  const first = $("helloFirst");
+  const go = $("helloGo");
+  if (rain) rain.onclick = () => beginFirstSound();
+  if (first) first.onclick = () => beginFirstSound();
+  if (go) {
+    go.onclick = () => {
+      wantDoors = true;
+      state._sawHello = true;
+      persist();
+      showOnboard();
+    };
+  }
+}
+
 function showOnboard() {
   const el = $("onboard");
   const inner = $("onboardInner");
@@ -122,22 +150,9 @@ function showOnboard() {
     return;
   }
   el.classList.add("show");
-  if (!state._sawHello) {
-    inner.innerHTML = `
-      <div class="word">LISTENER</div>
-      <h1>What the wild is saying.</h1>
-      <p class="moment">The rain is the first sound.</p>
-      <p>Keep the original on this phone. Not a species. Not contributed.</p>
-      <button class="wide" id="helloFirst">THIS IS THE FIRST SOUND</button>
-      <button class="wide" id="helloRain" style="margin-top:8px;background:#0d1a15">LISTEN TO THIS RAIN</button>
-      <button class="ghost" id="helloGo">CONTINUE</button>`;
-    $("helloFirst").onclick = () => beginFirstSound();
-    $("helloRain").onclick = () => beginFirstSound();
-    $("helloGo").onclick = () => {
-      state._sawHello = true;
-      persist();
-      showOnboard();
-    };
+  if (!wantDoors) {
+    inner.innerHTML = rainFirstHTML();
+    bindRainFirst();
     return;
   }
   if (!state._askedBase && anotherListenerAvailable()) {
@@ -147,9 +162,11 @@ function showOnboard() {
       <p class="leave">LEAVE AS BASE?</p>
       <p>Leave this phone still. Take the other one walking. You do not need to know how they find each other.</p>
       <div class="doors">
+        <button class="wide rain-cta" id="helloRain" type="button">LISTEN TO THIS RAIN</button>
         <button class="wide" data-door="listen">LEAVE AS BASE</button>
         <button class="wide" style="background:#0d1a15" data-door="scout">USE THIS AS SCOUT</button>
       </div>`;
+    bindRainFirst();
     inner.querySelectorAll("[data-door]").forEach((btn) => {
       btn.onclick = () => {
         state._askedBase = true;
@@ -162,9 +179,10 @@ function showOnboard() {
   inner.innerHTML = `
     <div class="word">LISTENER</div>
     <h1>How do you want to begin?</h1>
-    <p class="moment">LISTEN TO THIS RAIN</p>
-    <p>The original stays on this phone. UNKNOWN stays UNKNOWN.</p>
-    <button class="wide" id="doorFirst">THIS IS THE FIRST SOUND</button>
+    <p class="moment">THIS IS THE FIRST SOUND</p>
+    <p>Session on this phone. Original stays here. UNKNOWN stays UNKNOWN.</p>
+    <button class="wide rain-cta" id="helloRain" type="button">LISTEN TO THIS RAIN</button>
+    <button class="wide" id="doorFirst" type="button">THIS IS THE FIRST SOUND</button>
     <p>Leave a phone still, or take this one walking. You do not need to know the network.</p>
     ${paired || anotherListenerAvailable() ? `<p class="leave">Another Listener is available. LEAVE AS BASE?</p>` : ""}
     <div class="doors">
@@ -172,6 +190,7 @@ function showOnboard() {
       <button class="wide" style="margin-top:8px;background:#0d1a15" data-door="scout">GO SCOUT</button>
       <button class="wide" style="margin-top:8px;background:#0d1a15" data-door="broadcast">START A BROADCAST</button>
     </div>`;
+  bindRainFirst();
   $("doorFirst").onclick = () => beginFirstSound();
   inner.querySelectorAll("[data-door]").forEach((btn) => {
     btn.onclick = () => beginDoor(btn.dataset.door);
@@ -386,8 +405,9 @@ function renderField() {
   const shown = first && (!last || last.id === first.id || last.firstSound) ? first : last;
   live.classList.toggle("cta", Boolean(s && !shown && !rec && !s.returnActive));
   live.classList.toggle("rec", Boolean(rec && firstSoundArmed));
+  live.classList.toggle("rain", Boolean((s && !shown && !rec && !s.returnActive) || (rec && firstSoundArmed)));
   if (!s) {
-    live.classList.remove("cta", "rec");
+    live.classList.remove("cta", "rec", "rain");
     live.querySelector("b").textContent = "Start a session to listen";
     live.querySelectorAll("small")[0].textContent = "LIVE FIELD";
     live.querySelectorAll("small")[1].textContent = "Private by default.";
@@ -476,7 +496,8 @@ function openSheet(type) {
         <button data-door="broadcast">● BROADCAST</button>
         <button data-act="pair">＋ ADD STATION</button>
       </div>
-      <button class="wide" data-act="first-sound">THIS IS THE FIRST SOUND</button>
+      <button class="wide rain-cta" data-act="first-sound">LISTEN TO THIS RAIN</button>
+      <button class="wide" data-act="first-sound" style="margin-top:8px">THIS IS THE FIRST SOUND</button>
       <button class="ghost" data-act="listen-now">START LISTENING</button>`,
     scout: () => `
       <small class="label">STUPIDLY EASY SETUP</small>

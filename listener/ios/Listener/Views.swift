@@ -73,18 +73,19 @@ struct OnboardingView: View {
             Text("LISTENER").tracking(6).font(.caption.weight(.black))
             if hello {
                 Text(ListenerCopy.product).font(.title)
-                Text("The rain is the first sound. Keep the original on this phone. Not a species. Not contributed.")
+                Text("The rain is the first sound. Session on this phone. Original stays here. UNKNOWN stays UNKNOWN. Not a species.")
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.secondary)
-                Button(ListenerCopy.firstSound) { openFirstSound() }.buttonStyle(WideButton())
-                Button(ListenerCopy.listenRain) { openFirstSound() }.buttonStyle(WideButton(alt: true))
-                Button("CONTINUE") { hello = false }.buttonStyle(WideButton(alt: true))
+                Button(ListenerCopy.listenRain) { openFirstSound() }.buttonStyle(WideButton())
+                Button(ListenerCopy.firstSound) { openFirstSound() }.buttonStyle(WideButton(alt: true))
+                Button("OTHER WAYS TO BEGIN") { hello = false }.buttonStyle(WideButton(alt: true))
             } else {
                 Text("How do you want to begin?").font(.title2)
                 if !pairs.isEmpty {
                     Text(ListenerCopy.leaveAsBase).foregroundStyle(.secondary)
                 }
-                Button(ListenerCopy.firstSound) { openFirstSound() }.buttonStyle(WideButton())
+                Button(ListenerCopy.listenRain) { openFirstSound() }.buttonStyle(WideButton())
+                Button(ListenerCopy.firstSound) { openFirstSound() }.buttonStyle(WideButton(alt: true))
                 Button("LISTEN HERE") { open(.listen, role: .base) }.buttonStyle(WideButton())
                 Button("GO SCOUT") { open(.scout, role: .scout) }.buttonStyle(WideButton(alt: true))
                 Button("START A BROADCAST") { open(.broadcast, role: .hub) }.buttonStyle(WideButton(alt: true))

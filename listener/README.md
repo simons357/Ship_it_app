@@ -21,9 +21,9 @@ This is the LISTENER Session PWA (field instrument). It is not the parked Listen
 
 1. Open the HTTPS link in **Safari** (not Chrome).
 2. Share → **Add to Home Screen**.
-3. **LISTEN HERE** to start a Session.
+3. Tap **LISTEN TO THIS RAIN** (first screen — this is the first sound).
 4. Allow **microphone** + **location** if asked.
-5. Rain / first sound stays on the phone; not contributed unless you opt in.
+5. Session + original stay on the phone. UNKNOWN stays UNKNOWN. Not a species. Not contributed unless you opt in.
 
 Claim the host so it stays live past 3 days: https://my.shipstatic.com/claim/1666a104f9280e0ab733893a33c491e6
 

@@ -217,9 +217,43 @@ header {
 .livecard.rec { border-color: var(--green); }
 .onboard .moment {
   color: var(--amber);
-  font-size: 12px;
-  letter-spacing: .08em;
+  font-size: 14px;
+  letter-spacing: .12em;
   text-align: center;
+  font-weight: 800;
+}
+#onboardInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(420px, 100%);
+  text-align: center;
+}
+#onboardInner .wide,
+#onboardInner .ghost {
+  width: 100%;
+}
+#onboardInner .wide + .wide,
+#onboardInner .wide + .ghost {
+  margin-top: 10px;
+}
+.rain-cta {
+  font-size: clamp(20px, 6.4vw, 30px);
+  letter-spacing: .07em;
+  line-height: 1.15;
+  padding: 28px 16px;
+  min-height: 92px;
+  background: #1f5c3d;
+  border: 2px solid var(--green);
+  box-shadow: 0 0 40px #7dffa566;
+}
+.livecard.rain {
+  border-color: var(--green);
+  box-shadow: 0 0 28px #7dffa544;
+}
+.livecard.rain b {
+  font-size: 16px;
+  color: var(--green);
 }
 .mic {
   position: fixed;
