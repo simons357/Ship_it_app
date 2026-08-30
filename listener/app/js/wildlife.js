@@ -87,14 +87,26 @@ export function processSignal(input = {}) {
       candidateSpecies,
     };
   }
+  const words = String(input.label || "").trim();
   return {
     createEncounter: true,
     contribute: "opt-in-after-confirm",
     kind: "unknown",
     internalLabel: "unknown-biological-candidate",
-    label: input.label || "UNKNOWN",
+    label: words || "UNKNOWN",
     transcript,
     speakerId,
     candidateSpecies,
   };
+}
+
+/**
+ * First Listener sound — rain, a mystery, the user's words.
+ * Non-human. Not a species. Not contributed until they opt in.
+ */
+export function firstSoundDecision(userWords = "") {
+  return processSignal({
+    probableHumanSpeech: false,
+    label: String(userWords || "").trim() || "UNKNOWN",
+  });
 }

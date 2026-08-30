@@ -73,15 +73,18 @@ struct OnboardingView: View {
             Text("LISTENER").tracking(6).font(.caption.weight(.black))
             if hello {
                 Text(ListenerCopy.product).font(.title)
-                Text("A field instrument for non-human sound. Private on this phone until you choose otherwise.")
+                Text("The rain is the first sound. Keep the original on this phone. Not a species. Not contributed.")
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.secondary)
-                Button("CONTINUE") { hello = false }.buttonStyle(WideButton())
+                Button(ListenerCopy.firstSound) { openFirstSound() }.buttonStyle(WideButton())
+                Button(ListenerCopy.listenRain) { openFirstSound() }.buttonStyle(WideButton(alt: true))
+                Button("CONTINUE") { hello = false }.buttonStyle(WideButton(alt: true))
             } else {
                 Text("How do you want to begin?").font(.title2)
                 if !pairs.isEmpty {
                     Text(ListenerCopy.leaveAsBase).foregroundStyle(.secondary)
                 }
+                Button(ListenerCopy.firstSound) { openFirstSound() }.buttonStyle(WideButton())
                 Button("LISTEN HERE") { open(.listen, role: .base) }.buttonStyle(WideButton())
                 Button("GO SCOUT") { open(.scout, role: .scout) }.buttonStyle(WideButton(alt: true))
                 Button("START A BROADCAST") { open(.broadcast, role: .hub) }.buttonStyle(WideButton(alt: true))
@@ -112,6 +115,14 @@ struct OnboardingView: View {
         ])
         try? context.save()
     }
+
+    private func openFirstSound() {
+        open(.listen, role: .base)
+        if let session = (try? context.fetch(FetchDescriptor<Session>()))?.first(where: { $0.status == "active" }) {
+            session.title = "First sound"
+            try? context.save()
+        }
+    }
 }
 
 struct FieldView: View {
@@ -125,6 +136,7 @@ struct FieldView: View {
     @Query private var encounters: [Encounter]
     @State private var noteOpen = false
     @State private var scoutOpen = false
+    @State private var firstSoundOpen = false
 
     var body: some View {
         ZStack {
@@ -164,6 +176,13 @@ struct FieldView: View {
         }
         .sheet(isPresented: $noteOpen) { NoteSheet(session: session, location: location, audio: audio, sync: sync) }
         .sheet(isPresented: $scoutOpen) { ScoutSheet(session: session, audio: audio) }
+        .sheet(isPresented: $firstSoundOpen) { FirstSoundSheet(session: session, location: location, audio: audio, sync: sync) }
+        .onAppear {
+            let empty = encounters.filter { $0.sessionId == session.id && !$0.excluded }.isEmpty
+            if session.title == "First sound" && empty {
+                firstSoundOpen = true
+            }
+        }
         .onChange(of: location.last) { _, loc in
             guard session.role == Role.scout.rawValue, let loc else { return }
             context.insert(Breadcrumb(sessionId: session.id, loc: loc))
@@ -215,20 +234,96 @@ struct FieldView: View {
 
     private var liveCard: some View {
         let last = encounters.filter { $0.sessionId == session.id && !$0.excluded }.last
-        return HStack {
-            VStack(alignment: .leading) {
-                Text(last == nil ? "LIVE FIELD" : "FIELD NOTE · NON-HUMAN").font(.system(size: 8)).foregroundStyle(.secondary)
-                Text(last?.label ?? "Listening for the wild").font(.subheadline.bold())
-                Text(last == nil ? "No invented animals. UNKNOWN stays UNKNOWN." : ListenerCopy.sharingIsNotContributing)
-                    .font(.system(size: 10)).foregroundStyle(.secondary)
+        let first = last != nil && encounters.filter { $0.sessionId == session.id && !$0.excluded }.count == 1
+        return Button {
+            if last == nil { firstSoundOpen = true }
+        } label: {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(last == nil ? ListenerCopy.firstSound : (first ? "FIRST SOUND · ON THIS PHONE" : "FIELD NOTE · NON-HUMAN"))
+                        .font(.system(size: 8)).foregroundStyle(.secondary)
+                    Text(last?.label ?? ListenerCopy.listenRain).font(.subheadline.bold())
+                    Text(last == nil ? "Original stays on this phone. Not contributed." : (first ? ListenerCopy.firstSoundKept : ListenerCopy.sharingIsNotContributing))
+                        .font(.system(size: 10)).foregroundStyle(.secondary)
+                }
+                Spacer()
+                Text(last == nil ? "TAP TO\nLISTEN" : (last?.contributed == true ? "IN LIBRARY" : "NOT\nCONTRIBUTED"))
+                    .font(.system(size: 8)).foregroundStyle(Color(red: 0.49, green: 1, blue: 0.65))
             }
-            Spacer()
-            Text(last?.contributed == true ? "IN LIBRARY" : "PRIVATE\nON DEVICE")
-                .font(.system(size: 8)).foregroundStyle(Color(red: 0.49, green: 1, blue: 0.65))
+            .padding()
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 17))
+            .padding(.horizontal)
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+struct FirstSoundSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var context
+    @Bindable var session: Session
+    @ObservedObject var location: LocationService
+    @ObservedObject var audio: AudioService
+    @ObservedObject var sync: SyncQueue
+    @State private var kind = NoteKind.heard
+    @State private var text = ""
+    @State private var micDenied = false
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text("FIRST SOUND · ON THIS PHONE").font(.caption)
+            Text(micDenied ? "Microphone is off" : "Listening to this rain").font(.title)
+            Text(micDenied ? ListenerCopy.micDenied : "The original is being kept. This is not a species and it is not contributed.")
+                .foregroundStyle(.secondary)
+            if micDenied {
+                Button("TRY THE MICROPHONE AGAIN") { arm() }.buttonStyle(WideButton())
+            }
+            HStack {
+                Button("👂 HEARD") { kind = .heard }
+                Button("❓ MYSTERY") { kind = .mystery }
+            }
+            TextField("Your words — rain, or leave UNKNOWN.", text: $text, axis: .vertical)
+            Button(micDenied ? "KEEP A FIELD NOTE" : "STOP AND KEEP") { save() }.buttonStyle(WideButton())
+            Button("KEEP THE SESSION") { dismiss() }
         }
         .padding()
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 17))
-        .padding(.horizontal)
+        .onAppear { arm() }
+    }
+
+    private func arm() {
+        do {
+            try audio.start()
+            micDenied = false
+        } catch {
+            micDenied = true
+        }
+    }
+
+    private func save() {
+        let url = audio.recording ? audio.stop() : audio.lastOriginalURL
+        let words = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        let label = words.isEmpty ? "UNKNOWN" : words
+        let note = FieldNote(
+            sessionId: session.id,
+            kind: kind,
+            text: words,
+            mediaPath: url?.path,
+            coordinate: location.last?.coordinate ?? session.startCoordinate
+        )
+        context.insert(note)
+        let enc = Encounter(sessionId: session.id, label: label, kind: .unknown)
+        enc.lat = note.lat
+        enc.lon = note.lon
+        enc.originalAudioPath = url?.path
+        enc.contributed = false
+        enc.shared = false
+        context.insert(enc)
+        sync.enqueue(context: context, type: "note.add", payload: [
+            "note": note.id.uuidString,
+            "firstSound": "true",
+        ])
+        try? context.save()
+        dismiss()
     }
 }
 

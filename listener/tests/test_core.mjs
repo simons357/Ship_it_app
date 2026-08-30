@@ -13,15 +13,18 @@ import {
   emptyBroadcast,
   emptyNote,
   emptyCard,
+  fieldNoteLabel,
 } from "../app/js/contracts.js";
 import {
   confirmNonHuman,
   excludeProbableHuman,
   featuresSuggestHumanSpeech,
+  firstSoundDecision,
   mustNotTranscribe,
   processSignal,
 } from "../app/js/wildlife.js";
 import { gpsQuality, distanceM, projectRelative } from "../app/js/geo.js";
+import { makeLocalOriginalBlob } from "../app/js/audio.js";
 
 test("coarse location rounds to ~11 km and never stays exact", () => {
   const c = coarseLocation(32.01234, -81.09876);
@@ -56,6 +59,50 @@ test("UNKNOWN is first-class and never invents a species", () => {
   assert.equal(decision.candidateSpecies, null);
   assert.equal(decision.transcript, null);
   assert.equal(decision.label, "UNKNOWN");
+});
+
+test("first sound is rain or UNKNOWN — never a species, never auto-contributed", () => {
+  const rain = firstSoundDecision("rain");
+  assert.equal(rain.createEncounter, true);
+  assert.equal(rain.kind, "unknown");
+  assert.equal(rain.label, "rain");
+  assert.equal(rain.candidateSpecies, null);
+  assert.equal(rain.transcript, null);
+  assert.equal(rain.speakerId, null);
+  assert.equal(rain.contribute, "opt-in-after-confirm");
+  assert.equal(firstSoundDecision("").label, "UNKNOWN");
+  assert.equal(fieldNoteLabel(""), "UNKNOWN");
+  assert.equal(fieldNoteLabel("  rain  "), "rain");
+
+  let enc = emptyEncounter({ kind: "unknown", label: "rain", firstSound: true });
+  assert.equal(enc.firstSound, true);
+  assert.equal(enc.contributed, false);
+  assert.equal(canContribute(enc).ok, false);
+  enc = confirmNonHuman(enc).encounter;
+  assert.equal(canContribute(enc).ok, true);
+  assert.equal(enc.kind, "unknown");
+  assert.equal(enc.label, "rain");
+  const payload = contributionPayload(enc, { lat: 32.05, lon: -80.97 }, { contributeLibrary: false });
+  assert.equal(payload.ok, false);
+});
+
+test("rain-like broadband is not human speech", () => {
+  assert.equal(
+    featuresSuggestHumanSpeech({
+      rms: 0.12,
+      peakHz: 6500,
+      modulationHz: 0.4,
+      bandEnergySpeech: 1.5,
+      bandEnergyTotal: 12,
+    }),
+    false
+  );
+});
+
+test("mic denied copy is honest and keeps the session", () => {
+  assert.match(FAILURE.micDenied, /microphone to keep the original/i);
+  assert.match(FAILURE.micDenied, /session is still here/i);
+  assert.equal(/getUserMedia|NotAllowedError|permission denied/i.test(FAILURE.micDenied), false);
 });
 
 test("speech-like features exclude without transcription", () => {
@@ -140,6 +187,12 @@ test("GPS quality is honest", () => {
   assert.equal(gpsQuality(30), "fair");
   assert.equal(gpsQuality(80), "fading");
   assert.equal(gpsQuality(undefined), "unknown");
+});
+
+test("local original is a kept file, never a species label", async () => {
+  const blob = makeLocalOriginalBlob({ seconds: 0.4, hz: 180 });
+  assert.equal(blob.type, "audio/wav");
+  assert.ok(blob.size > 44);
 });
 
 test("relative plot stays finite", () => {

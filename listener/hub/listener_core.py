@@ -5,6 +5,7 @@ from __future__ import annotations
 from typing import Any
 
 FAILURE_SCOUT_LOST = "Scout connection lost. Still recording — we'll sync when you're back."
+FAILURE_MIC_DENIED = "This phone needs the microphone to keep the original. Your session is still here."
 COH_INSUFFICIENT = {"display": "—", "status": "INSUFFICIENT FIELD DATA", "computed": False}
 
 
@@ -23,7 +24,7 @@ def coarse_location(lat: float, lon: float) -> dict[str, Any] | None:
     }
 
 
-def process_signal(*, probable_human_speech: bool = False) -> dict[str, Any]:
+def process_signal(*, probable_human_speech: bool = False, label: str | None = None) -> dict[str, Any]:
     if probable_human_speech:
         return {
             "createEncounter": False,
@@ -34,6 +35,7 @@ def process_signal(*, probable_human_speech: bool = False) -> dict[str, Any]:
             "speakerId": None,
             "candidateSpecies": None,
         }
+    words = (label or "").strip() or "UNKNOWN"
     return {
         "createEncounter": True,
         "contribute": "opt-in-after-confirm",
@@ -42,8 +44,13 @@ def process_signal(*, probable_human_speech: bool = False) -> dict[str, Any]:
         "transcript": None,
         "speakerId": None,
         "candidateSpecies": None,
-        "label": "UNKNOWN",
+        "label": words,
     }
+
+
+def first_sound_decision(user_words: str = "") -> dict[str, Any]:
+    """Rain or any first listen: UNKNOWN or the user's words. Never a species."""
+    return process_signal(probable_human_speech=False, label=user_words)
 
 
 def can_contribute(encounter: dict[str, Any] | None) -> dict[str, Any]:

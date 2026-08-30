@@ -5,13 +5,21 @@ import {
   coarseLocation,
   emptyEncounter,
   emptySession,
+  fieldNoteLabel,
   newId,
 } from "./contracts.js";
 import { hydrate, loadState, putOriginal, rememberDevice, saveState } from "./db.js";
-import { confirmNonHuman, excludeProbableHuman, markUnknown, processSignal } from "./wildlife.js";
+import { confirmNonHuman, excludeProbableHuman, firstSoundDecision, markUnknown, processSignal } from "./wildlife.js";
 import { HubTransport, LocalBroadcastTransport, OfflineQueue, flushQueue } from "./sync.js";
 import { bearingDeg, distanceM, projectRelative, watchPosition } from "./geo.js";
-import { listInputs, pickPreferredInput, startRecording } from "./audio.js";
+import {
+  isMicPermissionDenied,
+  isMicUnavailable,
+  listInputs,
+  pickPreferredInput,
+  startLocalOriginalRecording,
+  startRecording,
+} from "./audio.js";
 
 const $ = (id) => document.getElementById(id);
 let state = rememberDevice(loadState());
@@ -25,6 +33,8 @@ let stopWatch = null;
 let rec = null;
 let recStarted = 0;
 let heading = 0;
+let firstSoundArmed = false;
+let firstSoundMicDenied = false;
 
 function persist() {
   saveState(state);
@@ -87,6 +97,21 @@ function sessionEncounters() {
   return state.encounters.filter((e) => e.sessionId === s.id && !e.excluded);
 }
 
+function firstSoundEncounter() {
+  const s = session();
+  return (
+    state.encounters.find((e) => e.firstSound && !e.excluded && (!s || e.sessionId === s.id)) || null
+  );
+}
+
+function allowLocalOriginalFallback() {
+  try {
+    return new URLSearchParams(location.search).has("localOriginal");
+  } catch {
+    return false;
+  }
+}
+
 function showOnboard() {
   const el = $("onboard");
   const inner = $("onboardInner");
@@ -101,8 +126,13 @@ function showOnboard() {
     inner.innerHTML = `
       <div class="word">LISTENER</div>
       <h1>What the wild is saying.</h1>
-      <p>A field instrument for non-human sound. Private on this phone until you choose otherwise.</p>
-      <button class="wide" id="helloGo">CONTINUE</button>`;
+      <p class="moment">The rain is the first sound.</p>
+      <p>Keep the original on this phone. Not a species. Not contributed.</p>
+      <button class="wide" id="helloFirst">THIS IS THE FIRST SOUND</button>
+      <button class="wide" id="helloRain" style="margin-top:8px;background:#0d1a15">LISTEN TO THIS RAIN</button>
+      <button class="ghost" id="helloGo">CONTINUE</button>`;
+    $("helloFirst").onclick = () => beginFirstSound();
+    $("helloRain").onclick = () => beginFirstSound();
     $("helloGo").onclick = () => {
       state._sawHello = true;
       persist();
@@ -132,6 +162,9 @@ function showOnboard() {
   inner.innerHTML = `
     <div class="word">LISTENER</div>
     <h1>How do you want to begin?</h1>
+    <p class="moment">LISTEN TO THIS RAIN</p>
+    <p>The original stays on this phone. UNKNOWN stays UNKNOWN.</p>
+    <button class="wide" id="doorFirst">THIS IS THE FIRST SOUND</button>
     <p>Leave a phone still, or take this one walking. You do not need to know the network.</p>
     ${paired || anotherListenerAvailable() ? `<p class="leave">Another Listener is available. LEAVE AS BASE?</p>` : ""}
     <div class="doors">
@@ -139,6 +172,7 @@ function showOnboard() {
       <button class="wide" style="margin-top:8px;background:#0d1a15" data-door="scout">GO SCOUT</button>
       <button class="wide" style="margin-top:8px;background:#0d1a15" data-door="broadcast">START A BROADCAST</button>
     </div>`;
+  $("doorFirst").onclick = () => beginFirstSound();
   inner.querySelectorAll("[data-door]").forEach((btn) => {
     btn.onclick = () => beginDoor(btn.dataset.door);
   });
@@ -220,6 +254,31 @@ async function beginDoor(door) {
   $("onboard").classList.remove("show");
   if (door === "scout") openSheet("scout");
   else if (door === "broadcast") showTab("broadcast");
+  renderAll();
+}
+
+async function beginFirstSound() {
+  if (rec && firstSoundArmed) {
+    $("onboard").classList.remove("show");
+    openSheet("first-sound");
+    return;
+  }
+  state._sawHello = true;
+  persist();
+  $("onboard").classList.remove("show");
+  firstSoundArmed = true;
+  firstSoundMicDenied = false;
+  if (!session() || session().status !== "active") {
+    await beginDoor("listen");
+  }
+  const s = session();
+  if (s) s.firstSoundAt = s.firstSoundAt || Date.now();
+  persist();
+  showTab("field");
+  const armed = await startMic({ firstSound: true });
+  firstSoundMicDenied = Boolean(armed?.denied);
+  if (firstSoundMicDenied) toast(FAILURE.micDenied);
+  openSheet("first-sound");
   renderAll();
 }
 
@@ -323,17 +382,37 @@ function renderField() {
 
   const live = $("livecard");
   const last = sessionEncounters().at(-1);
+  const first = firstSoundEncounter();
+  const shown = first && (!last || last.id === first.id || last.firstSound) ? first : last;
+  live.classList.toggle("cta", Boolean(s && !shown && !rec && !s.returnActive));
+  live.classList.toggle("rec", Boolean(rec && firstSoundArmed));
   if (!s) {
+    live.classList.remove("cta", "rec");
     live.querySelector("b").textContent = "Start a session to listen";
     live.querySelectorAll("small")[0].textContent = "LIVE FIELD";
     live.querySelectorAll("small")[1].textContent = "Private by default.";
     $("liveMeta").innerHTML = "PRIVATE<br>ON DEVICE";
-  } else if (last) {
-    live.querySelectorAll("small")[0].textContent =
-      last.kind === "unknown" ? "UNKNOWN · BIOLOGICAL CANDIDATE" : "FIELD NOTE · NON-HUMAN";
-    live.querySelector("b").textContent = last.label;
-    live.querySelectorAll("small")[1].textContent = "Original kept on this phone.";
-    $("liveMeta").innerHTML = last.contributed ? "IN LIBRARY" : "NOT<br>CONTRIBUTED";
+  } else if (rec && firstSoundArmed) {
+    live.querySelectorAll("small")[0].textContent = "FIRST SOUND · RECORDING";
+    live.querySelector("b").textContent = "Listening to this rain";
+    live.querySelectorAll("small")[1].textContent = rec.localOriginal
+      ? "Local original being kept. Not a species. Not contributed."
+      : "Original being kept on this phone. Not contributed.";
+    $("liveMeta").innerHTML = "REC<br>ON PHONE";
+  } else if (shown) {
+    const isFirst = Boolean(shown.firstSound);
+    live.querySelectorAll("small")[0].textContent = isFirst
+      ? "FIRST SOUND · ON THIS PHONE"
+      : shown.kind === "unknown"
+        ? "UNKNOWN · BIOLOGICAL CANDIDATE"
+        : "FIELD NOTE · NON-HUMAN";
+    live.querySelector("b").textContent = shown.label;
+    live.querySelectorAll("small")[1].textContent = isFirst
+      ? shown.originalAudioId
+        ? "Original preserved. Not contributed."
+        : "Session kept. No original yet — microphone was off."
+      : "Original kept on this phone.";
+    $("liveMeta").innerHTML = shown.contributed ? "IN LIBRARY" : "NOT<br>CONTRIBUTED";
   } else if (s.returnActive && start && you) {
     const m = distanceM(you, start);
     const brg = bearingDeg(you, start);
@@ -343,13 +422,13 @@ function renderField() {
       m != null ? `${Math.round(m)} m · not a map replacement` : "Highlighting your breadcrumb";
     $("liveMeta").innerHTML = brg != null ? `BEARING<br>${Math.round((brg + 360) % 360)}°` : "START";
   } else {
-    live.querySelectorAll("small")[0].textContent = "LIVE FIELD";
-    live.querySelector("b").textContent = "Listening for the wild";
+    live.querySelectorAll("small")[0].textContent = "THIS IS THE FIRST SOUND";
+    live.querySelector("b").textContent = "LISTEN TO THIS RAIN";
     live.querySelectorAll("small")[1].textContent =
       s.startGpsQuality === "fading" || fix?.quality === "fading"
-        ? "GPS fading — still recording locally."
-        : "No invented animals. UNKNOWN stays UNKNOWN.";
-    $("liveMeta").innerHTML = "PRIVATE<br>ON DEVICE";
+        ? "GPS fading — original will still stay on this phone."
+        : "Original stays on this phone. Not contributed.";
+    $("liveMeta").innerHTML = "TAP TO<br>LISTEN";
   }
 }
 
@@ -397,7 +476,8 @@ function openSheet(type) {
         <button data-door="broadcast">● BROADCAST</button>
         <button data-act="pair">＋ ADD STATION</button>
       </div>
-      <button class="wide" data-act="listen-now">START LISTENING</button>`,
+      <button class="wide" data-act="first-sound">THIS IS THE FIRST SOUND</button>
+      <button class="ghost" data-act="listen-now">START LISTENING</button>`,
     scout: () => `
       <small class="label">STUPIDLY EASY SETUP</small>
       <h2>Go Scout</h2>
@@ -419,6 +499,7 @@ function openSheet(type) {
       <textarea id="noteText" rows="3" placeholder="Optional words from you — never a transcript of the recording."></textarea>
       <input id="noteFile" type="file" accept="image/*,video/*" style="display:none">
       <button class="wide" data-act="save-note">SAVE EVIDENCE</button>`,
+    "first-sound": () => firstSoundHTML(),
     contribute: () => contributeHTML(),
     invite: () => `
       <small class="label">JOIN THE FIELD</small>
@@ -434,6 +515,29 @@ function openSheet(type) {
   sheet.innerHTML = (views[type] || views.session)();
   $("overlay").classList.add("show");
   bindSheet(type);
+}
+
+function firstSoundHTML() {
+  const denied = firstSoundMicDenied && !rec;
+  const local = Boolean(rec?.localOriginal);
+  return `
+    <small class="label">FIRST SOUND · ON THIS PHONE</small>
+    <h2>${denied ? "Microphone is off" : "Listening to this rain"}</h2>
+    <p>${
+      denied
+        ? FAILURE.micDenied
+        : local
+          ? "A local original is being kept on this phone. Not a species. Not contributed."
+          : "The original is being kept. This is not a species and it is not contributed. No invented animals. UNKNOWN stays UNKNOWN."
+    }</p>
+    <div class="choices">
+      <button data-note="heard" class="on">👂 HEARD</button>
+      <button data-note="mystery">❓ MYSTERY</button>
+    </div>
+    <textarea id="noteText" rows="3" placeholder="Your words — rain, or leave UNKNOWN."></textarea>
+    ${denied ? `<button class="wide" data-act="first-sound-retry">TRY THE MICROPHONE AGAIN</button>` : ""}
+    <button class="${denied ? "ghost" : "wide"}" data-act="save-first-sound">${denied ? "KEEP A FIELD NOTE" : "STOP AND KEEP"}</button>
+    <button class="ghost" data-act="close">KEEP THE SESSION</button>`;
 }
 
 function contributeHTML() {
@@ -463,7 +567,7 @@ function contributeHTML() {
 
 function bindSheet(type) {
   const sheet = $("sheet");
-  let noteKind = "mystery";
+  let noteKind = type === "first-sound" ? "heard" : "mystery";
   let selectedEnc = sessionEncounters().at(-1)?.id || null;
   let flags = { audio: true, features: true, coarse: true, provenance: true };
   let wildOk = false;
@@ -499,6 +603,24 @@ function bindSheet(type) {
     if (act === "listen-now") {
       closeSheet();
       if (!session()) await beginDoor("listen");
+    }
+    if (act === "first-sound") {
+      closeSheet();
+      await beginFirstSound();
+      return;
+    }
+    if (act === "first-sound-retry") {
+      firstSoundMicDenied = false;
+      const armed = await startMic({ firstSound: true });
+      firstSoundMicDenied = Boolean(armed?.denied);
+      if (firstSoundMicDenied) toast(FAILURE.micDenied);
+      openSheet("first-sound");
+      renderAll();
+      return;
+    }
+    if (act === "save-first-sound") {
+      await saveFirstSound(noteKind === "mystery" ? "mystery" : "heard", $("noteText")?.value || "");
+      return;
     }
     if (act === "wander") {
       const s = session();
@@ -559,18 +681,41 @@ async function fillMics() {
   if (line) line.textContent = `Active input · ${pref.label}`;
 }
 
-async function startMic() {
+async function startMic(opts = {}) {
   const inputs = await listInputs().catch(() => []);
   const pref = pickPreferredInput(inputs);
+  const first = Boolean(opts.firstSound);
   $("micLine").textContent = `MIC · ${pref.label.toUpperCase()} · ARMING`;
   $("micLine").classList.add("on");
   try {
     rec = await startRecording(pref.id);
+    rec.localOriginal = false;
     recStarted = Date.now();
-    $("micLine").textContent = `MIC · ${pref.label.toUpperCase()} · RECORDING · ORIGINAL PRESERVED`;
-  } catch {
-    $("micLine").textContent = "MIC · PERMISSION NEEDED · STILL LISTENING WHEN YOU ALLOW IT";
+    $("micLine").textContent = first
+      ? `MIC · ${pref.label.toUpperCase()} · FIRST SOUND · ORIGINAL PRESERVED`
+      : `MIC · ${pref.label.toUpperCase()} · RECORDING · ORIGINAL PRESERVED`;
+    return { ok: true, denied: false, local: false, input: pref };
+  } catch (err) {
+    const denied = isMicPermissionDenied(err);
+    if (allowLocalOriginalFallback() || (!denied && isMicUnavailable(err))) {
+      try {
+        rec = await startLocalOriginalRecording();
+        recStarted = Date.now();
+        $("micLine").textContent = "MIC · LOCAL ORIGINAL · RECORDING · NOT A SPECIES";
+        $("micLine").classList.add("on");
+        return { ok: true, denied: false, local: true, input: { label: "local original" } };
+      } catch {
+        /* fall through to honest copy */
+      }
+    }
+    if (denied) {
+      $("micLine").textContent = "MIC · PERMISSION NEEDED · SESSION STILL HERE";
+      $("micLine").classList.remove("on");
+      return { ok: false, denied: true, local: false, input: pref };
+    }
+    $("micLine").textContent = "MIC · UNAVAILABLE · SESSION STILL HERE";
     $("micLine").classList.remove("on");
+    return { ok: false, denied: false, local: false, input: pref };
   }
 }
 
@@ -650,6 +795,66 @@ async function saveNote(kind, text) {
   renderAll();
 }
 
+async function saveFirstSound(kind, text) {
+  const s = session();
+  if (!s) {
+    await beginDoor("listen");
+    return saveFirstSound(kind, text);
+  }
+  let audioId = null;
+  let localOriginal = false;
+  if (rec) {
+    localOriginal = Boolean(rec.localOriginal);
+    audioId = await stopMicToOriginal();
+  }
+  const words = fieldNoteLabel(text);
+  const decision = firstSoundDecision(text);
+  const note = {
+    id: newId("note"),
+    sessionId: s.id,
+    t: Date.now(),
+    kind: kind === "mystery" ? "mystery" : "heard",
+    excluded: false,
+    text: String(text || "").trim(),
+    mediaId: null,
+    lat: fix?.lat ?? s.startLat,
+    lon: fix?.lon ?? s.startLon,
+    firstSound: true,
+  };
+  state.notes.push(note);
+
+  let enc = emptyEncounter({
+    sessionId: s.id,
+    label: decision.label || words,
+    kind: "unknown",
+    provenance: "user",
+    originalAudioId: audioId,
+    lat: note.lat,
+    lon: note.lon,
+    contributingNodeIds: [state.deviceId],
+    firstSound: true,
+  });
+  enc = markUnknown(enc);
+  enc.label = decision.label || words;
+  enc.firstSound = true;
+  enc.contributed = false;
+  enc.shared = false;
+  enc.humanSpeechGate = "pending";
+  enc.localOriginal = localOriginal;
+  state.encounters.push(enc);
+  firstSoundArmed = false;
+  firstSoundMicDenied = false;
+  queue.enqueue("note.add", { noteId: note.id, encounterId: enc.id, firstSound: true });
+  persist();
+  closeSheet();
+  toast(
+    audioId
+      ? "First sound kept on this phone. Original preserved. Not contributed."
+      : "Session is still here. No original yet — this phone needs the microphone."
+  );
+  renderAll();
+}
+
 async function contributeSelected(id, flags) {
   const enc = state.encounters.find((e) => e.id === id);
   const gate = canContribute(enc);
@@ -726,6 +931,19 @@ $("btnScout").onclick = async () => {
 };
 $("btnContribute").onclick = () => openSheet("contribute");
 $("btnInvite").onclick = () => openSheet("invite");
+$("livecard").onclick = () => {
+  if (rec && firstSoundArmed) {
+    openSheet("first-sound");
+    return;
+  }
+  if (!firstSoundEncounter()) beginFirstSound();
+};
+$("livecard").addEventListener("keydown", (ev) => {
+  if (ev.key === "Enter" || ev.key === " ") {
+    ev.preventDefault();
+    $("livecard").click();
+  }
+});
 
 window.addEventListener("beforeunload", persist);
 

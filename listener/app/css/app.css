@@ -213,6 +213,14 @@ header {
 .livecard small { font-size: 7px; color: var(--muted); display: block; }
 .livecard b { font-size: 12px; }
 .livecard .dual { color: var(--green); font-size: 8px; text-align: right; }
+.livecard.cta { cursor: pointer; border-color: #547765; }
+.livecard.rec { border-color: var(--green); }
+.onboard .moment {
+  color: var(--amber);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-align: center;
+}
 .mic {
   position: fixed;
   z-index: 15;

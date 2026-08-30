@@ -19,6 +19,10 @@ enum ListenerCopy {
     static let cohStatus = "INSUFFICIENT FIELD DATA"
     static let leaveAsBase = "Another Listener is available. LEAVE AS BASE?"
     static let sharingIsNotContributing = "Sharing a card is not contributing the original."
+    static let firstSound = "THIS IS THE FIRST SOUND"
+    static let listenRain = "LISTEN TO THIS RAIN"
+    static let micDenied = "This phone needs the microphone to keep the original. Your session is still here."
+    static let firstSoundKept = "The first sound is on this phone. Original preserved. Not contributed."
 }
 
 @Model

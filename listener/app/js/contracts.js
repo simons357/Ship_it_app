@@ -19,6 +19,8 @@ export const PROVENANCE = Object.freeze([
 export const FAILURE = Object.freeze({
   scoutLost:
     "Scout connection lost. Still recording — we'll sync when you're back.",
+  micDenied:
+    "This phone needs the microphone to keep the original. Your session is still here.",
 });
 
 export const COH_INSUFFICIENT = Object.freeze({
@@ -87,7 +89,14 @@ export function emptyEncounter(partial = {}) {
     humanSpeechGate: partial.humanSpeechGate || "pending",
     shared: false,
     contributed: false,
+    firstSound: Boolean(partial.firstSound),
   };
+}
+
+/** User words or UNKNOWN. Never invent a species. */
+export function fieldNoteLabel(text) {
+  const words = String(text || "").trim();
+  return words || "UNKNOWN";
 }
 
 export function canContribute(encounter) {

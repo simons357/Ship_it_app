@@ -36,7 +36,17 @@ class WildlifeOnly(unittest.TestCase):
     def test_app_never_claims_species(self):
         self.assertNotIn("Barred Owl", APP)
         self.assertNotIn("Frog chorus", APP)
+        self.assertNotIn("rain frog", APP.lower())
         self.assertIn("No invented animals", APP)
+        self.assertIn("THIS IS THE FIRST SOUND", APP)
+        self.assertIn("LISTEN TO THIS RAIN", APP)
+
+    def test_first_sound_is_unknown_not_contributed(self):
+        self.assertIn("firstSoundDecision", WILD)
+        self.assertIn("saveFirstSound", APP)
+        self.assertIn("humanSpeechGate = \"pending\"", APP)
+        self.assertIn("THIS IS NOT HUMAN SPEECH", APP)
+        self.assertIn("This phone needs the microphone", JS)
 
 
 class Coherence(unittest.TestCase):
@@ -89,6 +99,9 @@ class SwiftContracts(unittest.TestCase):
         self.assertIn("probableHumanExcluded", models)
         self.assertIn("INSUFFICIENT FIELD DATA", models)
         self.assertIn("sharingIsNotContributing", models)
+        self.assertIn("THIS IS THE FIRST SOUND", models)
+        self.assertIn("LISTEN TO THIS RAIN", models)
+        self.assertIn("This phone needs the microphone", models)
 
 
 class ExecutableRules(unittest.TestCase):
@@ -99,6 +112,8 @@ class ExecutableRules(unittest.TestCase):
             can_contribute,
             coarse_location,
             coherence_from_field,
+            first_sound_decision,
+            FAILURE_MIC_DENIED,
             FAILURE_SCOUT_LOST,
             process_signal,
         )
@@ -107,7 +122,9 @@ class ExecutableRules(unittest.TestCase):
         cls.process_signal = staticmethod(process_signal)
         cls.can_contribute = staticmethod(can_contribute)
         cls.coherence_from_field = staticmethod(coherence_from_field)
+        cls.first_sound_decision = staticmethod(first_sound_decision)
         cls.FAILURE_SCOUT_LOST = FAILURE_SCOUT_LOST
+        cls.FAILURE_MIC_DENIED = FAILURE_MIC_DENIED
 
     def test_coarse_location_grid(self):
         c = self.coarse_location(32.01234, -81.09876)
@@ -129,6 +146,25 @@ class ExecutableRules(unittest.TestCase):
         self.assertTrue(d["createEncounter"])
         self.assertEqual(d["kind"], "unknown")
         self.assertIsNone(d["candidateSpecies"])
+
+    def test_rain_first_sound_is_unknown_not_a_species(self):
+        d = self.first_sound_decision("rain")
+        self.assertTrue(d["createEncounter"])
+        self.assertEqual(d["kind"], "unknown")
+        self.assertEqual(d["label"], "rain")
+        self.assertIsNone(d["candidateSpecies"])
+        self.assertIsNone(d["transcript"])
+        self.assertEqual(d["contribute"], "opt-in-after-confirm")
+        pending = {"kind": "unknown", "label": "rain", "humanSpeechGate": "pending"}
+        self.assertFalse(self.can_contribute(pending)["ok"])
+        empty = self.first_sound_decision("")
+        self.assertEqual(empty["label"], "UNKNOWN")
+
+    def test_mic_denied_copy(self):
+        self.assertIn("microphone to keep the original", self.FAILURE_MIC_DENIED)
+        self.assertIn("session is still here", self.FAILURE_MIC_DENIED.lower())
+        self.assertNotIn("getUserMedia", self.FAILURE_MIC_DENIED)
+        self.assertNotIn("NotAllowedError", self.FAILURE_MIC_DENIED)
 
     def test_failure_copy(self):
         self.assertIn("Scout connection lost. Still recording", self.FAILURE_SCOUT_LOST)

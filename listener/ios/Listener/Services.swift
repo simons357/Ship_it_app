@@ -49,6 +49,7 @@ final class AudioService: ObservableObject {
     @Published var activeInput = "iPhone mic"
     @Published var recording = false
     @Published var lastOriginalURL: URL?
+    @Published var denied = false
 
     private var recorder: AVAudioRecorder?
     private let originals: URL
@@ -79,6 +80,11 @@ final class AudioService: ObservableObject {
 
     func start() throws {
         refreshInput()
+        let session = AVAudioSession.sharedInstance()
+        if session.recordPermission == .denied {
+            denied = true
+            throw NSError(domain: "listener.audio", code: 1, userInfo: [NSLocalizedDescriptionKey: ListenerCopy.micDenied])
+        }
         let name = "listen-\(Int(Date().timeIntervalSince1970)).m4a"
         let url = originals.appendingPathComponent(name)
         let settings: [String: Any] = [
@@ -90,6 +96,7 @@ final class AudioService: ObservableObject {
         recorder = try AVAudioRecorder(url: url, settings: settings)
         recorder?.record()
         recording = true
+        denied = false
         lastOriginalURL = url
     }
 
