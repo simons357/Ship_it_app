@@ -1,12 +1,12 @@
 # Design inbox
 
-Drop the ChatGPT pre-design here.
+Owner ChatGPT pre-design, ingested.
 
-Accepted:
+| File | Role |
+| --- | --- |
+| `MASTER-BUILD-SPEC.md` | Spec text as received |
+| `index.html` | Visual/product prototype to preserve |
+| `index-2.html` | Same prototype as uploaded |
+| `IMG_1058.HEIC` | Phone reference still |
 
-- Markdown / text exports of the design chat
-- Screenshots, PDFs, wireframes
-- Zip of a prototype
-- Links (Figma, Claude artifact, ChatGPT share, Replit, Base44)
-
-Until something lands in this folder, LISTENER has a name and a workspace only — no invented product spec.
+Do not rebuild LISTENER from Ship It Listener search.

@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#020504">
+<title>LISTENER</title>
+<style>
+:root{--bg:#020504;--panel:#07100de8;--line:#29483b;--green:#7dffa5;--muted:#91a49a;--cyan:#82ddff;--amber:#ffd176}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:#f1f7f3;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;overflow:hidden}button{font:inherit}
+#field{position:fixed;inset:0;background:
+radial-gradient(circle at 68% 32%,#5d7258 0 4%,transparent 5%),
+linear-gradient(24deg,transparent 45%,#86917c45 46% 49%,transparent 50%),
+repeating-linear-gradient(116deg,#102017 0 30px,#1d3324 31px 65px,#0b1912 66px 94px)}
+#field:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,transparent 12%,#0004 60%,#000d 100%);pointer-events:none}
+header{position:fixed;z-index:20;top:0;left:0;right:0;padding:14px 16px;display:flex;justify-content:space-between;background:linear-gradient(#020504f4,transparent)}
+.brand{font-weight:950;letter-spacing:.23em}.brand small{display:block;color:var(--muted);font-size:7px;margin-top:4px;letter-spacing:.15em}.network{font-size:8px;color:var(--green);text-align:right}
+.tabs{position:fixed;z-index:22;top:68px;left:50%;transform:translateX(-50%);display:flex;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px;backdrop-filter:blur(14px)}
+.tabs button{border:0;background:none;color:#83978c;padding:8px 12px;border-radius:999px;font-size:8px}.tabs .on{background:#18382a;color:white}
+.node{position:absolute;z-index:6;border:0;background:none;color:white;text-align:center}.node i{display:block;width:13px;height:13px;border-radius:50%;margin:auto;background:var(--green);box-shadow:0 0 24px var(--green)}.node b{font-size:8px}.base{left:22%;top:62%}.scout{left:58%;top:46%}.remote{left:76%;top:27%}.remote i{background:var(--cyan);box-shadow:0 0 24px var(--cyan)}
+.route{position:absolute;z-index:3;left:20%;top:35%;width:45%;height:38%;border:3px solid var(--green);border-color:var(--green) transparent var(--green) var(--green);border-radius:45% 35% 52% 32%;transform:rotate(-8deg);filter:drop-shadow(0 0 7px var(--green))}
+.event{position:absolute;z-index:7;border:0;background:none;color:white}.event i{display:block;width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 25px var(--green);margin:auto}.event span{font-size:8px}.owl{left:37%;top:30%}.frog{left:68%;top:65%}.unknown{left:46%;top:72%}.unknown i{background:var(--amber);box-shadow:0 0 25px var(--amber)}
+.instrument{position:fixed;z-index:15;left:14px;top:112px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:11px 13px;backdrop-filter:blur(12px);min-width:118px}.instrument small{display:block;font-size:7px;color:var(--muted);letter-spacing:.12em}.instrument strong{font-size:20px}.instrument .ok{font-size:7px;color:var(--green)}
+.compass{position:fixed;z-index:15;right:15px;top:112px;width:70px;height:70px;border-radius:50%;border:1px solid #49695a;background:var(--panel);display:grid;place-items:center}.compass:before{content:"N";position:absolute;top:5px;font-size:7px;color:var(--muted)}.needle{font-size:25px;transform:rotate(34deg)}
+.livecard{position:fixed;z-index:15;left:14px;right:14px;bottom:105px;background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:12px 13px;backdrop-filter:blur(14px);display:flex;justify-content:space-between;align-items:center}.livecard small{font-size:7px;color:var(--muted);display:block}.livecard b{font-size:12px}.livecard .dual{color:var(--green);font-size:8px}
+.actions{position:fixed;z-index:18;left:50%;bottom:15px;transform:translateX(-50%);display:flex;background:#07100ef2;border:1px solid var(--line);border-radius:999px;padding:5px;backdrop-filter:blur(15px)}.actions button{border:0;background:none;color:#a7b7ae;padding:10px 11px;font-size:8px;white-space:nowrap}.actions .primary{background:#18382a;color:white;border-radius:999px}
+.overlay{display:none;position:fixed;z-index:50;inset:0;background:#000c;align-items:flex-end}.sheet{width:100%;max-height:86vh;overflow:auto;background:#08110e;border-top:1px solid #416d58;border-radius:26px 26px 0 0;padding:20px 18px 34px}.sheet h2{margin:5px 0 4px}.sheet p{font-size:11px;line-height:1.5;color:#a6b6ad}.choices{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:15px 0}.choices button{border:1px solid var(--line);background:#0d1a15;color:white;border-radius:14px;padding:16px 8px}.wide{width:100%;padding:14px;border:1px solid #547765;border-radius:14px;background:#18382a;color:white;font-weight:800}
+.library{display:none;position:fixed;z-index:40;inset:0;background:#030705;padding:100px 16px 90px;overflow:auto}.library h1{font-size:23px;margin:0}.library .sub{color:var(--muted);font-size:10px;margin:5px 0 18px}.signal{border:1px solid var(--line);border-radius:16px;padding:13px;margin:9px 0;background:#07100d}.signal small{color:var(--muted);font-size:8px}.signal b{display:block;margin:4px 0}.signal span{font-size:9px;color:var(--green)}
+.broadcast{display:none;position:fixed;z-index:40;inset:0;background:radial-gradient(circle at 50% 20%,#142d20,#020504 60%);padding:100px 16px 90px;overflow:auto}.broadcast h1{margin:0}.broadcast .red{color:#ff8078;font-size:9px}.broadcast .viewer{border:1px solid var(--line);background:#07100d;border-radius:17px;padding:15px;margin-top:15px}.broadcast .viewer b{display:block}.broadcast .viewer small{color:var(--muted)}
+</style>
+</head>
+<body>
+<div id="field">
+ <div class="route"></div>
+ <button class="node base"><i></i><b>BASE · PORCH</b></button>
+ <button class="node scout"><i></i><b>SCOUT · YOU</b></button>
+ <button class="node remote"><i></i><b>NODE · TYBEE</b></button>
+ <button class="event owl"><i></i><span>OWL</span></button>
+ <button class="event frog"><i></i><span>FROG</span></button>
+ <button class="event unknown"><i></i><span>MYSTERY</span></button>
+</div>
+
+<header><div class="brand">LISTENER<small>WHAT THE WILD IS SAYING</small></div><div class="network">● FIELD READY<br>3 LISTENERS</div></header>
+<div class="tabs"><button class="on" onclick="showField(this)">FIELD</button><button onclick="showBroadcast(this)">BROADCAST</button><button onclick="showLibrary(this)">SIGNALS</button></div>
+
+<div class="instrument"><small>FIELD COHERENCE · DA</small><strong>—</strong><div class="ok">INSUFFICIENT FIELD DATA</div></div>
+<div class="compass"><div class="needle">↑</div></div>
+
+<div class="livecard"><div><small>LIVE EVENT · NON-HUMAN BIOLOGICAL</small><b>🦉 Barred Owl candidate</b><small>Base + Scout observed · 22 sec ago</small></div><div class="dual">2-STATION<br>EVIDENCE</div></div>
+
+<div class="actions"><button onclick="openSheet('session')">＋ SESSION</button><button onclick="openSheet('note')">FIELD NOTE</button><button onclick="alert('RETURN highlights your saved breadcrumb trail back to Session Start.')">↶ RETURN</button><button class="primary" onclick="openSheet('scout')">GO SCOUT</button></div>
+
+<div class="library" id="library">
+ <h1>LISTENER SIGNAL LIBRARY</h1><div class="sub">A growing record of the non-human world · contributed signals retain provenance</div>
+ <div class="signal"><small>WILMINGTON ISLAND · TONIGHT</small><b>🦉 Barred Owl candidate</b><span>2 Listener nodes · original audio preserved</span></div>
+ <div class="signal"><small>TYBEE ISLAND · TONIGHT</small><b>🐸 Frog chorus</b><span>Listener contribution · coarse location shared</span></div>
+ <div class="signal"><small>SAVANNAH · TONIGHT</small><b>🦗 Insect activity</b><span>Reference match pending</span></div>
+ <div class="signal"><small>UNKNOWN · BIOLOGICAL CANDIDATE</small><b>◆ Signal 000184</b><span>Keep it. Re-analyze later.</span></div>
+ <button class="wide" onclick="openSheet('contribute')">SEND US YOUR LISTENER SIGNALS</button>
+</div>
+
+<div class="broadcast" id="broadcast">
+ <div class="red">● LIVE BROADCAST</div><h1>SAVANNAH AFTER DARK</h1>
+ <p style="color:#9fb0a7;font-size:11px">People join the party. Listener nodes join the field.</p>
+ <div class="viewer"><b>14 people listening</b><small>Wilmington · Tybee · Savannah</small></div>
+ <div class="viewer"><b>FIELD ACTIVE · 3 nodes</b><small>Human speech excluded from wildlife encounters. Sensor contribution is opt-in.</small></div>
+ <div class="viewer"><b>🦉 Owl event</b><small>Open FIELD · X-RAY · SPECTRUM · CARD</small></div>
+ <button class="wide" style="margin-top:14px" onclick="openSheet('join')">INVITE PEOPLE / ADD A NODE</button>
+</div>
+
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeSheet()"><div class="sheet" id="sheet"></div></div>
+
+<script>
+const sheet=document.getElementById('sheet'), overlay=document.getElementById('overlay');
+function activate(btn){document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('on'));btn.classList.add('on')}
+function showField(b){activate(b);library.style.display='none';broadcast.style.display='none'}
+function showLibrary(b){activate(b);library.style.display='block';broadcast.style.display='none'}
+function showBroadcast(b){activate(b);broadcast.style.display='block';library.style.display='none'}
+function closeSheet(){overlay.style.display='none'}
+function openSheet(type){
+ let c={
+ scout:`<small>STUPIDLY EASY SETUP</small><h2>Go Scout</h2><p>Take this phone. Listener checks location, microphone and connected AirPods, starts your breadcrumb trail and links to available Base/Hub devices.</p><div class="choices"><button>🎧 AIRPODS<br><small>use if supported</small></button><button>📱 iPHONE MIC<br><small>automatic fallback</small></button></div><button class="wide" onclick="closeSheet()">START WANDER</button>`,
+ session:`<small>LISTENER SESSION</small><h2>Start a Session</h2><p>All participating Listener devices keep their own evidence. Connected nodes exchange lightweight event reports and synchronize later if the network drops.</p><div class="choices"><button>⌂ HOME FIELD</button><button>⌁ WANDER / SCOUT</button><button>● BROADCAST</button><button>＋ ADD STATION</button></div><button class="wide" onclick="closeSheet()">START LISTENING</button>`,
+ note:`<small>FIELD NOTE · AUTO-STAMPED</small><h2>What happened?</h2><div class="choices"><button>👁 SAW IT</button><button>👂 HEARD IT</button><button>📷 PHOTO</button><button>❓ MYSTERY</button></div><button class="wide" onclick="closeSheet()">SAVE EVIDENCE</button>`,
+ contribute:`<small>CONTRIBUTE · OPT-IN</small><h2>Send us your Listener signals.</h2><p>Contribute non-human biological observations to the Signal Library. Precise home coordinates and private routes are stripped by default. Sharing publicly is a separate choice.</p><div class="choices"><button>✓ ORIGINAL AUDIO</button><button>✓ SIGNAL FEATURES</button><button>✓ COARSE LOCATION</button><button>✓ PROVENANCE</button></div><button class="wide" onclick="closeSheet()">CONTRIBUTE SAFELY</button>`,
+ join:`<small>JOIN THE FIELD</small><h2>Invite somebody</h2><p>Watching requires no microphone or precise location. A guest can separately choose to contribute their device as a wildlife Listener node.</p><div class="choices"><button>👀 JUST WATCH</button><button>📡 JOIN AS NODE</button></div><button class="wide" onclick="closeSheet()">CREATE INVITE / QR</button>`
+ }[type]; sheet.innerHTML=c;overlay.style.display='flex'
+}
+</script>
+</body></html>

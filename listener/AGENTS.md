@@ -5,8 +5,10 @@ You are working on **LISTENER**, a new product. This folder is the whole project
 ## Do
 
 - Keep all LISTENER files under `listener/`.
-- Treat `inbox/` as the incoming design drop. ChatGPT pre-design goes there first.
-- Build from those files, not from other apps in this repo.
+- Build from `MASTER_SPEC.md` and keep the visual/product behavior in `inbox/index.html`.
+- Treat `inbox/` as the incoming design drop.
+- Keep it a premium distributed field instrument. Do not turn it into a generic wildlife checklist.
+- Non-negotiables: wildlife-only encounters/library, privacy by default, no invented animal positions, no fake COH, no forced species IDs, originals preserved, sharing ≠ contributing, offline must not lose the Session, UI stays simple.
 
 ## Do not
 
