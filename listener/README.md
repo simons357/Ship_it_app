@@ -15,25 +15,18 @@ Owner: Jonathan Simons.
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-**Phone URL:** (republished with this commit — see latest shipstatic URL in the PR)
+**Phone URL:** https://solar-vector-38g9nga.shipstatic.com/
 
-This is LISTENER. First screen is one **START** button. It becomes **STOP**. No mode quiz. No rain button.
+Claim so it stays live past 3 days: https://my.shipstatic.com/claim/6bfd75ffd4afd603cdfe8b1ed8800925
 
-1. Open the HTTPS link in **Safari** (not Chrome).
+This is LISTENER. One **START** button. It becomes **STOP**. No mode quiz.
+
+1. Open the link in **Safari**.
 2. Share → **Add to Home Screen**.
-3. Tap **START**. Allow the microphone. Put the phone down. Tap **STOP**.
-4. If Listener does not know the sound, it asks **What was that?** Type `rain`. Add a picture if you want. Tap **KEEP**.
-5. No AirPods → local field around this phone. AirPods → scout. Safari cannot flip Personal Hotspot; that is a phone setting.
-6. Weather and search are **yours**. Point them at your apps:
+3. Tap **START**. Allow the microphone. Put the phone down.
+4. Tap **STOP**. If it does not know the sound, type what it was (rain) and tap **KEEP**.
 
-```js
-localStorage.setItem("listener.weather", "https://YOUR-WEATHER/current")
-localStorage.setItem("listener.search", "https://YOUR-CHATVAULT/listener")
-```
-
-Weather GET `?lat=&lon=` should return `{ label, tempC, wet, source }`.
-Search POST `index` receives a kept hearing. Search GET `?q=` returns `{ results }`.
-Nothing is sent until you connect your search.
+Later: your weather and ChatVault can plug in through `app/js/plugins.js`. Not now.
 
 The same app is on `origin/gh-pages` under `listener/` (existing Pages apps were left in place). The stable GitHub Pages name is https://simons357.github.io/Ship_it_app/listener/ after Pages is enabled in the repo: Settings → Pages → Deploy from a branch → `gh-pages` / root. This environment cannot turn Pages on (`has_pages: false`). Until then that github.io path 404s — use the `/listener` phone URL above.
 

@@ -141,7 +141,10 @@ function applySky() {
   const clock = $("fieldClock");
   const wx = $("fieldWeather");
   if (clock) clock.textContent = clockLabel();
-  if (wx) wx.textContent = weatherLine(lastWeather);
+  if (wx) {
+    wx.hidden = !lastWeather;
+    if (lastWeather) wx.textContent = weatherLine(lastWeather);
+  }
 }
 
 async function refreshWeather() {
@@ -162,9 +165,8 @@ async function detectAirpods() {
   airpodsOn = Boolean(pref.airpods);
   const role = $("fieldRole");
   if (role) {
-    role.textContent = airpodsOn
-      ? "SCOUT · AirPods"
-      : "LOCAL FIELD · this phone";
+    role.hidden = !airpodsOn;
+    if (airpodsOn) role.textContent = "SCOUT · AirPods";
   }
   return airpodsOn;
 }
@@ -219,7 +221,7 @@ function refreshRecordHome() {
   if (status) {
     if (recording) status.textContent = "RECORDING. Original stays on this phone.";
     else if (denied) status.textContent = FAILURE.micDenied;
-    else if (pendingKeep) status.textContent = "What was that? Your words. Weather and time are already on it.";
+    else if (pendingKeep) status.textContent = "What was that?";
     else status.textContent = "Tap START. Put the phone down. Tap STOP when you are done.";
   }
   if (btn) {

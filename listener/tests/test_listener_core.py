@@ -41,7 +41,7 @@ class WildlifeOnly(unittest.TestCase):
         self.assertIn('id="recordBtn"', HTML)
         self.assertIn(">START<", HTML)
         self.assertIn("What was that?", HTML)
-        self.assertIn("LOCAL FIELD", HTML)
+        self.assertIn("LOCAL FIELD", APP)
         self.assertNotIn("LISTEN TO THIS RAIN", HTML)
         self.assertNotIn("THIS IS THE FIRST SOUND", HTML)
         self.assertIn("record-btn", HTML)

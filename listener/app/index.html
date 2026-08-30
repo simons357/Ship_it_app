@@ -10,7 +10,7 @@
   <meta name="description" content="What the wild is saying. A wildlife-only field instrument.">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
-  <link rel="stylesheet" href="./css/app.css?v=6">
+  <link rel="stylesheet" href="./css/app.css?v=7">
 </head>
 <body>
   <div id="onboard" class="onboard show sky-night">
@@ -18,8 +18,8 @@
     <div id="onboardInner">
       <div class="word">LISTENER</div>
       <div class="field-clock" id="fieldClock"></div>
-      <div class="field-wx" id="fieldWeather">Sky from this clock. Weather when we have a place.</div>
-      <div class="field-role" id="fieldRole">LOCAL FIELD · this phone</div>
+      <div class="field-wx" id="fieldWeather" hidden></div>
+      <div class="field-role" id="fieldRole" hidden></div>
       <p class="record-status" id="recordStatus">Tap START. Put the phone down. Tap STOP when you are done.</p>
       <div class="rec-timer" id="recTimer" hidden>00:00</div>
       <button class="record-btn start" id="recordBtn" type="button">START</button>
@@ -100,6 +100,6 @@
   <div class="toast" id="toast" hidden></div>
   <div class="overlay" id="overlay"><div class="sheet" id="sheet"></div></div>
 
-  <script type="module" src="./js/app.js?v=6"></script>
+  <script type="module" src="./js/app.js?v=7"></script>
 </body>
 </html>
