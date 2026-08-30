@@ -227,9 +227,8 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   width: min(420px, 100%);
-  min-height: min(640px, 86vh);
   text-align: center;
 }
 .record-status {
@@ -240,17 +239,18 @@ header {
   margin: 12px 0 0;
 }
 .record-btn {
-  width: min(78vw, 320px);
+  width: min(68vw, 260px);
+  flex: 0 0 auto;
   aspect-ratio: 1;
   border-radius: 50%;
   border: 3px solid var(--green);
   background: #1f5c3d;
   color: white;
-  font-size: clamp(18px, 5.2vw, 28px);
+  font-size: clamp(16px, 4.6vw, 24px);
   font-weight: 950;
   letter-spacing: .06em;
   line-height: 1.15;
-  padding: 28px;
+  padding: 22px;
   white-space: normal;
   box-shadow: 0 0 80px #7dffa566;
 }
@@ -429,8 +429,9 @@ header {
   display: none;
   z-index: 60;
   background: #020504;
-  padding: calc(72px + env(safe-area-inset-top)) 22px 40px;
+  padding: calc(28px + env(safe-area-inset-top)) 18px calc(24px + env(safe-area-inset-bottom));
   place-items: center;
+  overflow: auto;
 }
 .onboard.show { display: grid; }
 .onboard .word {

@@ -124,10 +124,9 @@ function recordHomeHTML() {
   else if (kept) status = "Saved on this phone. Not sent anywhere. UNKNOWN stays UNKNOWN.";
   return `
       <div class="word">LISTENER</div>
-      <h1>${recording ? "Listening to this rain" : "The rain is the first sound."}</h1>
       <p class="moment">THIS IS THE FIRST SOUND</p>
-      <p class="record-status" id="recordStatus">${status}</p>
       <button class="record-btn ${recording ? "stop" : "start"} rain-cta" id="recordBtn" type="button">${recording ? "STOP" : "LISTEN TO THIS RAIN"}</button>
+      <p class="record-status" id="recordStatus">${status}</p>
       ${recording ? "" : `<button class="wide" id="helloFirst" type="button">THIS IS THE FIRST SOUND</button>`}
       <button class="ghost instrument-link" id="openInstrument" type="button">Field instrument</button>`;
 }
