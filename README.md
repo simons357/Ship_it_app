@@ -1,9 +1,86 @@
-# Harmonic Blueprint / Domain Architect
+# Domain Architect
 
-This repository now contains two related research objects. Neither is a
-unified physical theory.
+Paste an equation. Domain Architect identifies what each component does,
+how the components connect, and which parameters can be tested or tuned.
+It does not prove theorems. Canonical SFE status is **unresolved**.
 
-## Domain Architect
+## Where the app is
+
+There is no separate public Domain Architect website yet. GitHub Pages
+for this repo is TITAN-X, not DA. The missing handoff zip
+`Domain_Architect_Working_App_v1_4.zip` is still not in this repository.
+
+The app **is** this repo:
+
+```bash
+python3 -m domain_architect --site
+```
+
+Then open **http://127.0.0.1:8765/**
+
+On a phone, import this GitHub repo into **Replit** (branch
+`cursor/domain-architect-app-f96b`) and click Run. Inquiry is FRA. The
+search dock is ChatVault — same origin, not the same engine.
+
+Download the working tree as a zip:
+
+https://github.com/simons357/Ship_it_app/archive/refs/heads/cursor/domain-architect-app-f96b.zip
+
+## Your tools (Claude, Replit, GPT, Grok)
+
+| Tool | What it is for DA |
+| --- | --- |
+| **Replit** | The working **app**. Import this repo, click Run, open the webview. |
+| **Claude / GPT / Grok** | Chat. Not the app. Point them at this repo and they can run the CLI. |
+| **Cursor** | Same code. `python3 -m domain_architect --site` on a computer. |
+
+Paste this into Claude, GPT, or Grok if the repo is in the chat:
+
+```
+Domain Architect is in this workspace. It is an FRA auditor, not a proof engine.
+Canonical SFE status: unresolved. Do not claim Clay NS or RH.
+App: python3 main.py   or   python3 -m domain_architect --site
+CLI: python3 -m domain_architect "∇²Φ = 4π G ρ"
+Inquiry box is DA. Search box is ChatVault. Not the same engine.
+```
+
+CLI without the site:
+
+```bash
+python3 -m domain_architect "∇²Φ = 4π G ρ"
+python3 -m domain_architect --registry
+```
+
+This repository is a workshop. It also contains ChatVault and a closed
+Harmonic Blueprint experiment. Neither research package is a unified
+physical theory. ChatVault is a local product prototype, not an App
+Store release.
+
+## ChatVault
+
+Local-first vault — tagline **OS for your AI**. Git PWA in `chatvault/` is
+the canonical engine (`ChatVaultEntry`, CLAIM_LEDGER, hybrid search,
+`origin_class` AI vs real). Base44 glass is a different schema.
+
+- App: [`chatvault/`](chatvault/)
+- Operational report: [`docs/chatvault-audit/CHATVAULT-OPERATIONAL.md`](docs/chatvault-audit/CHATVAULT-OPERATIONAL.md)
+- Audit packet: [`docs/chatvault-audit/README.md`](docs/chatvault-audit/README.md)
+
+```bash
+cd chatvault
+python3 -m http.server 4173   # open http://127.0.0.1:4173/
+node --test tests/*.mjs
+```
+
+Drain a Domain Architect FRA audit (not a proof) into ChatVault JSON:
+
+```bash
+python3 -m domain_architect --drain-chatvault "∇²Φ = 4π G ρ" -o /tmp/da-drain.json
+python3 -m domain_architect --ingest-chatvault PATH   # any source → chatvault/inbox JSON (+ media copy)
+python3 -m domain_architect --track-b-mobius          # RH Track B Möbius–GCD attack; does not claim RH
+```
+
+## Domain Architect (CLI and desk faces)
 
 Functional Role Analysis and model-auditing software. It classifies
 equations into independently meaningful mathematical roles, records
@@ -11,13 +88,29 @@ historical UHF / SFE / DHFA candidates without merging them, and refuses
 to treat representation of a known equation as derivation.
 
 - Package: `domain_architect/`
+- App: `python3 -m domain_architect --site` → http://127.0.0.1:8765/ (Replit: import repo, Run)
 - Notes: [`docs/domain-architect/README.md`](docs/domain-architect/README.md)
+- Zenodo title restore pack (writes only with a PAT via `api_restore_titles.py --apply`; never a password): [`docs/zenodo-public-record/README.md`](docs/zenodo-public-record/README.md)
 - Canonical SFE status: **unresolved**
 
 ```bash
-python -m domain_architect "∇²Φ = 4π G ρ"
-python -m domain_architect --registry
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units
+python -m domain_architect --site
+python -m domain_architect --track-b-mobius
+python -m domain_architect --route-c          # DA only; not ChatVault; does not claim RH
+python -m domain_architect --universe         # universe / SFE picture; unresolved; not a proof
+python -m domain_architect --swirl-with-cancel
+python -m domain_architect --swirl-without-cancel
+python -m domain_architect --swirl-compare
+python -m domain_architect --ns-unaugmented   # OPEN; not Clay
+python -m domain_architect --honest-mistake   # June packaging note; not a proof
+python -m domain_architect --ns-regularity-realization  # hypothesized; not a theorem
+# Search box (ChatVault) + Inquiry box (DA FRA): http://127.0.0.1:8765/
+# Route C PDF:                                   http://127.0.0.1:8765/faces/05_route_c_conditional.pdf
+# Swirl WITH cancel:                             http://127.0.0.1:8765/faces/01_phi_renormalization.pdf
+# Swirl WITHOUT cancel:                          http://127.0.0.1:8765/faces/swirl_without_cancel.pdf
+# Unaugmented NS:                                http://127.0.0.1:8765/faces/ns_unaugmented_classical.pdf
+# ChatVault app (same two boxes):                  http://127.0.0.1:8765/chatvault/
+python3 -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_chatvault_bridge tests.test_chatvault_ingest tests.test_track_b_mobius tests.test_route_c tests.test_fluids_faces tests.test_swirl tests.test_universe tests.test_zenodo_public_record tests.test_ns_regularity_realization
 ```
 
 ## Harmonic Blueprint Experiment 01
@@ -52,6 +145,8 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 
 | Path | Role |
 |------|------|
+| `domain_architect/` | Domain Architect FRA app (`--site` serves the PWA) |
+| `chatvault/` | Local-first ChatVault PWA (Steel default; origin split; DA drain hook) |
 | `hb_ringdown_test.py` | Spectral proximity statistic, MC null, BH-FDR, leave-one-event-out |
 | `nodes.json` | Frozen node families + sigma + default observable |
 | `data/qnm_events.csv` | Per-mode ringdown table with TRAIN/TEST splits |

@@ -86,13 +86,48 @@ class AuditReport:
             f"Highest evidence level actually supported: {self.highest_evidence_level.label}",
             f"Canonical SFE status: {self.canonical_sfe_status}.",
             "",
-            f"Input: {self.input_expression}",
-            "",
-            "Abstract syntax tree:",
-            self.ast_pretty or "(unparsed)",
-            "",
-            "Role assignments (structural candidates, not physical identities):",
         ]
+        universe_picture = "Universe / SFE picture" in self.extra_structures
+        if universe_picture:
+            lines.append("Program status (unresolved / exploratory, not a proof):")
+            for note in self.notes:
+                lines.append(note)
+            lines.append("")
+        swirl_book = any(
+            item.startswith("swirl ") or item.startswith("classical unaugmented")
+            for item in self.extra_structures
+        )
+        if swirl_book and not universe_picture:
+            lines.append(
+                "Swirl / NS book (FRA classifier, not a proof; Clay NS not claimed):"
+            )
+            for note in self.notes:
+                lines.append(note)
+            lines.append("")
+        realization = "hypothesized NS regularity realization" in self.extra_structures
+        if realization and not universe_picture:
+            lines.append(
+                "Hypothesized NS regularity (FRA classifier, not a theorem; Clay NS not claimed):"
+            )
+            for note in self.notes:
+                lines.append(note)
+            lines.append("")
+        honest_note = "honest mistake on June 2026 packaging" in self.extra_structures
+        if honest_note and not universe_picture and not realization:
+            lines.append("Honest-mistake note (not a proof; not ChatVault):")
+            for note in self.notes:
+                lines.append(note)
+            lines.append("")
+        lines.extend(
+            [
+                f"Input: {self.input_expression}",
+                "",
+                "Abstract syntax tree:",
+                self.ast_pretty or "(unparsed)",
+                "",
+                "Role assignments (structural candidates, not physical identities):",
+            ]
+        )
         if not self.role_assignments:
             lines.append("  none — symbols were not assigned physical roles from their names")
         for item in self.role_assignments:
@@ -148,6 +183,8 @@ class AuditReport:
         if self.notes:
             lines.append("")
             for note in self.notes:
+                if note in lines:
+                    continue
                 lines.append(note)
         text = "\n".join(lines)
         cleaned, flags = sanitize_language(text)

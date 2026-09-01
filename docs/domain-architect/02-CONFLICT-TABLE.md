@@ -83,6 +83,8 @@ Columns:
 | C-GLUE-2 | Triple lock `SND ≡ GNC ≡ Bridge` | August audits: identity false | Equivalence | **RETIRED** |
 | C-GLUE-3 | \(\lambda_{\min}(Q_N)>-1/2\) for all \(N\) | Computed counterexamples (\(Q_{10}\approx-1.90\), later \(H_4\approx-0.225\)) | Spectral floor | Full-spectrum claim **retired**. Do not import into FRA |
 | C-GLUE-4 | Phi-cancel as a path to Theorem H | Identity \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) is algebra only | Φ-cancel | Keep the identity in the swirl book. Do not feed it to SFE or FRA \(\Phi\) |
+| C-SWIRL-AXIS | WITHOUT \(D_t\Omega=(1/r^4)\partial_z(\Gamma^2)+\cdots\) | WITH \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) | Same swirl class, different operators | **UNFILLED.** Danchin 2007 names the \(1/r^4\) hole; he does not cancel it. Next attempt: Chen–Fang–Zhang \(L^\infty_t L^3_x\) swirl criterion (not a bound in hand) |
+| C-Q1-CLASSICAL | Q1-augmented / Φ system (live 22050974) | unaugmented 3D NS (NS-B) | Different PDEs | **UNFILLED.** LPS bootstrap is for Q1. Q1 ≠ classical. Next attempt: ε-independence of \(C(\varepsilon)=2\sup_t\|u^r_\varepsilon/r\|_\infty\) (June 21071991 OP2) |
 
 ---
 
@@ -107,3 +109,16 @@ These are not historical enemies. They are defects to fix before a gravity labor
 | C-GRV-0 | Zero mode of periodic Poisson | Already excluded (“nonzero modes”). Keep the zero-mean constraint as \(\mathcal B\) / solvability, not as a hidden \(P\) |
 | C-GRV-λ | Writing \(\lambda_n^2\) hides that the operator is the inverse Laplacian | Prefer \(D=(-\nabla^2)\) and \(\lambda_n=k_n^{-2}\) **or** keep \(\lambda_n=k_n^{-1}\) but state that the model applies \(\lambda_n^2\). Do not switch mid-note |
 | C-GRV-J | Identifiability Jacobian does not see a discrete prime mask | Treat selector comparisons as discrete experiments, not as \(\mathrm{rank}(J)\) |
+
+---
+
+## 9. RH Track B versus other books
+
+| ID | Left | Right | Object | Resolution |
+|---|---|---|---|---|
+| C-TB-1 | RH Track B \(Q_N(i,j)=\mu(\gcd(i,j))/\gcd(i,j)\) | Inverse-GCD \(1/\gcd\) or \(1/(\gcd\sqrt{ij})\) | Operator | **Do not substitute.** Different spectra and proof obligations |
+| C-TB-2 | RH Track B | Inventory NS-B (classical vorticity) | The name “Track B” | Different books. RH Track B is Möbius–GCD. NS-B stays fluids |
+| C-TB-3 | First-row identity \(M(N)=e_1^{\mathsf T}Q_N\boldsymbol\mu_N\) | Hölder \(O(N)\) bound treated as RH-scale | Inequality | **Obstruction.** Generic pairing of \((\boldsymbol\mu_N,\mathbf 1)\) is \(\Theta(N)\) |
+| C-TB-4 | Littlewood–Mertens realization | Route C \(-1/(2\pi)\) or \(\lambda_{\min}>-1/2\) | Inputs | **Quarantine** those historical claims. They are not this operator |
+| C-TB-5 | RH Track B \(\mu(\gcd)/\gcd\) | Route C \(1/(\gcd\sqrt{ij})\) in `05_route_c_conditional.pdf` | Book | **Incompatible operators.** Keep Route C exploratory in Domain Architect. Do not file the PDF into ChatVault |
+| C-TB-6 | June 2026 poster \(Q_N=1/\gcd\) / `RH_Riemann_final.tex` / zenodo.20518388 | August Route C face | Face | **SUPERSEDED.** Inverse-GCD poster is archive only. Live operator is \(1/(\gcd\sqrt{ij})\) |

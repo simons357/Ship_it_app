@@ -1,0 +1,151 @@
+{
+  "manifest_version": "chatvault-audit-2026-08-24",
+  "auditor": "Cursor Grok 4.6 cloud agent",
+  "repository": "github.com/simons357/Ship_it_app",
+  "branch": "cursor/chatvault-master-audit-3618",
+  "audit_utc": "2026-08-24T03:20:00Z",
+  "v1_19_status": "unverified",
+  "jonathan_identification_utc": "2026-08-24",
+  "jonathan_identification": "Claude did the original last year; the parked Base44 app looks like the latest.",
+  "production_certification": false,
+  "patentability_conclusion": false,
+  "app_store_readiness": false,
+  "preservation_rule": "Do not delete, overwrite, or silently alter any source or Base44 record.",
+  "candidates": [
+    {
+      "label": "CANONICAL-CANDIDATE",
+      "id": "6a58e103fedcde66a0a7710e",
+      "reported_name": "OS for your AI",
+      "verified_html_title": "ChatVault — AI conversation vault",
+      "verified_og_title": "ChatVault — Operating System for your AI",
+      "status_reported": "Ready",
+      "last_updated_reported": "2026-08-24T02:28:00Z",
+      "public_host": "https://6a58e103fedcde66a0a7710e.base44.app/",
+      "public_host_http": "404 App not found",
+      "preview_host": "https://preview--6a58e103fedcde66a0a7710e.base44.app/",
+      "preview_host_http": 200,
+      "editor_preview": "https://app.base44.com/apps/6a58e103fedcde66a0a7710e/editor/preview",
+      "editor_preview_result": "Base44 login wall (not a blank app crash)",
+      "runtime": "Base44 hosted React SPA",
+      "js_bytes": 1150051,
+      "js_sha256": "720a21e0e061997909f4ea6ca85caeff60a08af8b1d5157081746a76ff6ba8de",
+      "html_sha256": "cb013457fe6bfb5cdc6f14938cbd8a30f0330cf1656142e1b4b0c5d17f86705c",
+      "css_sha256": "7a885535c7ee77cc0c54012ee79415305c2c7f93c2597cb1e92003b77fac6890",
+      "js_bundle": "/assets/index-DXcRcOPA.js",
+      "css_bundle": "/assets/index-BJdBWkWy.css",
+      "entities": ["Conversation", "Book", "Artifact"],
+      "routes": ["/ingest", "/books", "/tags", "/artifacts", "/dashboard", "/guide", "/disclaimer", "/showcase"],
+      "disclaimer_last_updated": "2026-07-16",
+      "sample_conversation_created_date": "2026-07-16T14:33:42.607000",
+      "verified_version_number": null,
+      "notes": "Working conversation vault with demo SaaS chats and morph-glass UI. Tagline OS for your AI. Editor URL hides the shareable link and can freeze; use preview-- host. Does not implement ChatVaultEntry research schema."
+    },
+    {
+      "label": "FEATURE-SOURCE",
+      "id": "6a58f25d90370ad28d426a88",
+      "reported_name": "Your AI-powered operating system for centralized knowledge management and intelligent information retrieval.",
+      "verified_html_title": "Base44 APP",
+      "status_reported": "Ready",
+      "last_updated_reported": "2026-08-17",
+      "public_host": "https://6a58f25d90370ad28d426a88.base44.app/",
+      "public_host_http": "404 App not found",
+      "preview_host": "https://preview--6a58f25d90370ad28d426a88.base44.app/",
+      "preview_host_http": 200,
+      "js_bytes": 388367,
+      "js_sha256": "bf8b3cd13a99f74a55504d7515608bbce26f8b8735839382fee21299e7a2f043",
+      "html_sha256": "6478e55f6c22b397335dfb0f8409bc2ef923bc326d1e94e6609cadaeb79f8ff6",
+      "css_sha256": "98aefa4edb014677e793cd8c281dfdb4ddbe10eb2f546defdfaba2331ad990b5",
+      "js_bundle": "/assets/index-oJLKHp-g.js",
+      "entities": ["Document"],
+      "routes": ["/drive"],
+      "verified_version_number": null,
+      "notes": "Marketing landing page plus Google Drive OAuth import stub. Not a complete vault."
+    },
+    {
+      "label": ["PROCESSING", "FEATURE-SOURCE", "ARCHIVE-DO-NOT-DELETE"],
+      "id": "6a36239133fe30857adcef89",
+      "reported_name": "A secure, AI-powered central repository for all your documents, research, and collaborative knowledge.",
+      "verified_html_title": "Base44 APP",
+      "verified_ui_title": "Your Paper Vault",
+      "status_reported": "Processing",
+      "last_updated_reported": "2026-07-27",
+      "public_host": "https://6a36239133fe30857adcef89.base44.app/",
+      "public_host_http": "404 App not found",
+      "preview_host": "https://preview--6a36239133fe30857adcef89.base44.app/",
+      "preview_host_http": 200,
+      "js_bytes": 509552,
+      "js_sha256": "ba579c77de0a1f6c4962f6b4a565c65d220e3c1a7cd6743059a263a17455894c",
+      "html_sha256": "150a07aca3211dc365d4b4ab4d750877cae35b00552c414c8fc35dd71f22e9ff",
+      "css_sha256": "57ba0fcc1ddc366275b95817e484c4b8bd5c03ed5cf42249d93570b8cf8547e8",
+      "js_bundle": "/assets/index-CcQAsgPf.js",
+      "entities": ["Paper"],
+      "verified_version_number": null,
+      "notes": "Paper/document vault with version/draft/archive filters and Supreme Search. Preview loaded empty (0 papers). Do not treat Processing status as canonical."
+    },
+    {
+      "label": "HISTORICAL-BASELINE",
+      "id": "claude-origin-unlocated",
+      "reported_name": "Original Claude ChatVault (Jonathan: first version, last year)",
+      "location_in_this_environment": null,
+      "nearest_public_evidence": [
+        "2026-07-14 git: ChatVault listed as Evernote of AI conversations at https://primefield.tech/chatvault",
+        "2026-07-21 git: that URL marked a hollow shell; do not cold-send",
+        "2026-08-03 git: ChatVaultEntry + CLAIM_LEDGER described in prime-field/PORTFOLIO.md (concept text, not running source)",
+        "2026-08-17 git: portfolio review Rank 11, as-is $0 empty shell",
+        "2026-08-24 live: https://primefield.tech/chatvault in-app 404"
+      ],
+      "verified_version_number": null,
+      "notes": "Preserve as historical baseline even though exact source was not in this checkout. Jonathan still needs to export or attach the Claude-origin files."
+    },
+    {
+      "label": "EXPERIMENTAL",
+      "id": "local-react-3d-described-not-present",
+      "reported_location": "/app/chatvault",
+      "reported_files": ["src/ChatVaultUI.jsx", "src/store.js", "src/index.js", "public/index.html", "package.json", "README.md"],
+      "reported_stack": "React 18, R3F, Drei, Three.js, Zustand, react-scripts 5.0.1, package version 1.0.0",
+      "present_in_this_environment": false
+    },
+    {
+      "label": "FEATURE-SOURCE",
+      "id": "replit-flask-zip-described-not-present",
+      "reported_file": "356582767_chatvault_source2.zip",
+      "reported_files": ["app.py", "models.py", "search_engine.py", "stripe_helper.py", "replit_auth.py", "gunicorn_config.py", "static/index.html", "replit.md", "pyproject.toml"],
+      "reported_pyproject_version": "0.1.0",
+      "present_in_this_environment": false,
+      "stripe_activation": "forbidden without separate authorization and security review"
+    },
+    {
+      "label": "ARCHIVE-DO-NOT-DELETE",
+      "id": "html-gtd-series-described-not-present",
+      "reported_paths": [
+        "/app/ARCHIVE/chatvault_old/CHATVAULT_V2.html",
+        "/app/ARCHIVE/chatvault_old/CHATVAULT_V3.html",
+        "/app/ARCHIVE/chatvault_old/CHATVAULT_V4.html",
+        "/app/ARCHIVE/chatvault_old/CHATVAULT_V5.html",
+        "/app/ARCHIVE/chatvault_old/CHATVAULT_V6.html",
+        "/app/ARCHIVE/chatvault_old/CHATVAULT_V6_AUDIT.md",
+        "/app/ARCHIVE/chatvault_old/CHATVAULT_SPEC.md",
+        "/app/ARCHIVE/chatvault_old/CHATVAULT2_REPO_BLUEPRINT.md",
+        "/app/CHATVAULT_V7.html"
+      ],
+      "warning": "CHATVAULT_V7.html internally titled ChatVault v6 · GTD. Filename is not a version identifier.",
+      "present_in_this_environment": false
+    }
+  ],
+  "unrelated_public_hosts_checked": [
+    {"url": "https://chat-vault.base44.app/", "title": "Aegis Messenger", "app_id": "69dd04ce17b86e8662f2f5b8", "jonathan_product": false},
+    {"url": "https://knowledge-vault.base44.app/", "title": "Knowledge Weaver", "app_id": "69a8887802b9617f96cfee90", "jonathan_product": false}
+  ],
+  "intended_chatvaultentry_fields": [
+    "title", "source_type", "source_ai", "project_tags", "content_text", "file_url",
+    "summary", "key_claims", "theorems", "open_gaps", "action_items", "related_projects",
+    "search_tags", "linked_files", "open_questions", "related_entities", "item_date",
+    "extraction_types", "project_category"
+  ],
+  "candidate_1_conversation_fields_verified": [
+    "id", "title", "source", "raw_content", "clean_content", "summary", "labels",
+    "second_order_labels", "tag_tree", "book_ids", "project", "location", "importance",
+    "readiness_score", "starred", "harmonic_note", "media_url", "media_type",
+    "conversation_date", "created_date", "updated_date", "created_by_id", "is_sample"
+  ]
+}
