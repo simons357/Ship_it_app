@@ -1,12 +1,18 @@
-run = "python3 -m domain_architect --site --site-host 0.0.0.0 --site-port 8080"
-entrypoint = "domain_architect/__main__.py"
+run = "python3 main.py"
+entrypoint = "main.py"
 hidden = [".git", "__pycache__", ".venv"]
+modules = ["python-3.12"]
 
 [nix]
 channel = "stable-24_05"
 
 [deployment]
-run = ["sh", "-c", "python3 -m domain_architect --site --site-host 0.0.0.0 --site-port 8080"]
+run = ["python3", "main.py"]
+deploymentTarget = "cloudrun"
+
+[[ports]]
+localPort = 8080
+externalPort = 80
 
 [env]
 PYTHONUNBUFFERED = "1"

@@ -18,9 +18,27 @@ python3 -m domain_architect --site
 
 Then open **http://127.0.0.1:8765/**
 
-On a phone, import this GitHub repo into **Replit** and click Run. The
-`.replit` file starts the same PWA on port 8080. Inquiry is FRA. The
+On a phone, import this GitHub repo into **Replit** (branch
+`cursor/domain-architect-app-f96b`) and click Run. Inquiry is FRA. The
 search dock is ChatVault — same origin, not the same engine.
+
+## Your tools (Claude, Replit, GPT, Grok)
+
+| Tool | What it is for DA |
+| --- | --- |
+| **Replit** | The working **app**. Import this repo, click Run, open the webview. |
+| **Claude / GPT / Grok** | Chat. Not the app. Point them at this repo and they can run the CLI. |
+| **Cursor** | Same code. `python3 -m domain_architect --site` on a computer. |
+
+Paste this into Claude, GPT, or Grok if the repo is in the chat:
+
+```
+Domain Architect is in this workspace. It is an FRA auditor, not a proof engine.
+Canonical SFE status: unresolved. Do not claim Clay NS or RH.
+App: python3 main.py   or   python3 -m domain_architect --site
+CLI: python3 -m domain_architect "∇²Φ = 4π G ρ"
+Inquiry box is DA. Search box is ChatVault. Not the same engine.
+```
 
 CLI without the site:
 

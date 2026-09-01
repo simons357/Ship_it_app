@@ -69,6 +69,8 @@ def resolve_site_port(explicit: int | None = None, env: dict[str, str] | None = 
     raw = source.get("PORT")
     if raw:
         return int(raw)
+    if source.get("REPL_ID") or source.get("REPLIT_DEV_DOMAIN"):
+        return 8080
     return DEFAULT_SITE_PORT
 
 

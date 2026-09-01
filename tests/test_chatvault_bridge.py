@@ -174,12 +174,19 @@ class TestSiteBindHost(unittest.TestCase):
         )
         self.assertEqual(resolve_site_port(env={"PORT": "8080"}), 8080)
         self.assertEqual(resolve_site_port(8080, env={"PORT": "9999"}), 8080)
+        self.assertEqual(resolve_site_port(env={"REPL_ID": "abc"}), 8080)
 
     def test_rejects_lan_bind(self):
         from domain_architect.site_server import resolve_site_host
 
         with self.assertRaises(ValueError):
             resolve_site_host("192.168.1.5", env={})
+
+    def test_replit_entrypoint_calls_serve_site(self):
+        src = Path(__file__).resolve().parents[1] / "main.py"
+        text = src.read_text(encoding="utf-8")
+        self.assertIn("serve_site", text)
+        self.assertIn("domain_architect.site_server", text)
 
 
 class TestDaSiteServiceWorker(unittest.TestCase):
