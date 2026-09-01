@@ -1,8 +1,31 @@
-# Harmonic Blueprint / Domain Architect / ChatVault
+# Domain Architect
 
-This repository is a workshop. It now contains three related objects.
-Neither research package is a unified physical theory. ChatVault is a
-local product prototype, not an App Store release.
+Paste an equation. Domain Architect identifies what each component does,
+how the components connect, and which parameters can be tested or tuned.
+It does not prove theorems. Canonical SFE status is **unresolved**.
+
+## Open the app
+
+```bash
+python3 -m domain_architect --site
+```
+
+Then open **http://127.0.0.1:8765/**
+
+That page is the Domain Architect app. The **Inquiry** box is FRA. The
+search dock is ChatVault — same origin, not the same engine.
+
+CLI without the site:
+
+```bash
+python3 -m domain_architect "∇²Φ = 4π G ρ"
+python3 -m domain_architect --registry
+```
+
+This repository is a workshop. It also contains ChatVault and a closed
+Harmonic Blueprint experiment. Neither research package is a unified
+physical theory. ChatVault is a local product prototype, not an App
+Store release.
 
 ## ChatVault
 
@@ -28,7 +51,7 @@ python3 -m domain_architect --ingest-chatvault PATH   # any source → chatvault
 python3 -m domain_architect --track-b-mobius          # RH Track B Möbius–GCD attack; does not claim RH
 ```
 
-## Domain Architect
+## Domain Architect (CLI and desk faces)
 
 Functional Role Analysis and model-auditing software. It classifies
 equations into independently meaningful mathematical roles, records
@@ -36,13 +59,12 @@ historical UHF / SFE / DHFA candidates without merging them, and refuses
 to treat representation of a known equation as derivation.
 
 - Package: `domain_architect/`
+- App: `python3 -m domain_architect --site` → http://127.0.0.1:8765/
 - Notes: [`docs/domain-architect/README.md`](docs/domain-architect/README.md)
 - Zenodo title restore pack (writes only with a PAT via `api_restore_titles.py --apply`; never a password): [`docs/zenodo-public-record/README.md`](docs/zenodo-public-record/README.md)
 - Canonical SFE status: **unresolved**
 
 ```bash
-python -m domain_architect "∇²Φ = 4π G ρ"
-python -m domain_architect --registry
 python -m domain_architect --site
 python -m domain_architect --track-b-mobius
 python -m domain_architect --route-c          # DA only; not ChatVault; does not claim RH
@@ -94,6 +116,7 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 
 | Path | Role |
 |------|------|
+| `domain_architect/` | Domain Architect FRA app (`--site` serves the PWA) |
 | `chatvault/` | Local-first ChatVault PWA (Steel default; origin split; DA drain hook) |
 | `hb_ringdown_test.py` | Spectral proximity statistic, MC null, BH-FDR, leave-one-event-out |
 | `nodes.json` | Frozen node families + sigma + default observable |

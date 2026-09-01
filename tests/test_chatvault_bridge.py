@@ -96,6 +96,7 @@ class TestDaHomepageChatVault(unittest.TestCase):
         self.assertIn("da-inquiry-form", html)
         self.assertIn("Inquiry", html)
         self.assertIn("Two boxes", html)
+        self.assertLess(html.find('id="da-inquiry-card"'), html.find('id="da-program"'))
         self.assertIn("/chatvault/", html)
         self.assertIn("chatvault-mark-dark.jpg", html)
         self.assertIn("apple-mobile-web-app-capable", html)

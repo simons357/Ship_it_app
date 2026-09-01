@@ -42,6 +42,9 @@ body { display: flex; }
   background: linear-gradient(180deg, #171c19 0%, #121614 100%);
   position: relative;
 }
+.shell > .titlebar { order: 0; }
+.shell > main { order: 1; }
+.shell > .cv-dock { order: 2; }
 
 .titlebar {
   display: flex;
@@ -95,6 +98,10 @@ body[data-dock="top-right"] main { padding-right: min(420px, 42vw); }
   color: var(--mute);
 }
 .desk-list a { color: var(--gold); }
+.inquiry-card {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px rgba(196, 163, 90, 0.25);
+}
 .inquiry-card textarea { min-height: 88px; resize: vertical; }
 
 label { display: block; margin: 10px 0; color: var(--mute); font-size: 13px; }
