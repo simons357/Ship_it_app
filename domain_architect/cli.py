@@ -11,7 +11,7 @@ from .audit import audit_expression
 from .chatvault_bridge import drain_audit, try_enqueue, write_drain
 from .chatvault_ingest import DEFAULT_INBOX, ingest_path
 from .drain_server import serve
-from .site_server import DEFAULT_SITE_PORT, serve_site
+from .site_server import resolve_site_host, resolve_site_port, serve_site
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 
@@ -58,7 +58,12 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--drain-host", default="127.0.0.1")
     parser.add_argument("--drain-port", type=int, default=7847)
-    parser.add_argument("--site-port", type=int, default=DEFAULT_SITE_PORT)
+    parser.add_argument(
+        "--site-host",
+        default=None,
+        help="bind host for --site (127.0.0.1, or 0.0.0.0 on Replit)",
+    )
+    parser.add_argument("--site-port", type=int, default=None)
     parser.add_argument(
         "--track-b-mobius",
         nargs="?",
@@ -133,7 +138,9 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     if args.site:
-        serve_site(args.drain_host, args.site_port)
+        host = resolve_site_host(args.site_host)
+        port = resolve_site_port(args.site_port)
+        serve_site(host, port)
         return 0
 
     if args.drain_server:

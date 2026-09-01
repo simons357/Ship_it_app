@@ -152,8 +152,34 @@ class TestDaHomepageChatVault(unittest.TestCase):
 
         src = Path(cli.__file__).read_text(encoding="utf-8")
         self.assertIn("--site", src)
+        self.assertIn("--site-host", src)
         self.assertIn("serve_site", src)
         self.assertIn("--ingest-chatvault", src)
+
+
+class TestSiteBindHost(unittest.TestCase):
+    def test_default_is_loopback(self):
+        from domain_architect.site_server import resolve_site_host, resolve_site_port
+
+        self.assertEqual(resolve_site_host(env={}), "127.0.0.1")
+        self.assertEqual(resolve_site_port(env={}), 8765)
+
+    def test_replit_binds_all_interfaces_and_port_env(self):
+        from domain_architect.site_server import resolve_site_host, resolve_site_port
+
+        self.assertEqual(resolve_site_host(env={"REPL_ID": "abc"}), "0.0.0.0")
+        self.assertEqual(
+            resolve_site_host(env={"REPLIT_DEV_DOMAIN": "example.replit.dev"}),
+            "0.0.0.0",
+        )
+        self.assertEqual(resolve_site_port(env={"PORT": "8080"}), 8080)
+        self.assertEqual(resolve_site_port(8080, env={"PORT": "9999"}), 8080)
+
+    def test_rejects_lan_bind(self):
+        from domain_architect.site_server import resolve_site_host
+
+        with self.assertRaises(ValueError):
+            resolve_site_host("192.168.1.5", env={})
 
 
 class TestDaSiteServiceWorker(unittest.TestCase):

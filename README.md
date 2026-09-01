@@ -4,7 +4,13 @@ Paste an equation. Domain Architect identifies what each component does,
 how the components connect, and which parameters can be tested or tuned.
 It does not prove theorems. Canonical SFE status is **unresolved**.
 
-## Open the app
+## Where the app is
+
+There is no separate public Domain Architect website yet. GitHub Pages
+for this repo is TITAN-X, not DA. The missing handoff zip
+`Domain_Architect_Working_App_v1_4.zip` is still not in this repository.
+
+The app **is** this repo:
 
 ```bash
 python3 -m domain_architect --site
@@ -12,7 +18,8 @@ python3 -m domain_architect --site
 
 Then open **http://127.0.0.1:8765/**
 
-That page is the Domain Architect app. The **Inquiry** box is FRA. The
+On a phone, import this GitHub repo into **Replit** and click Run. The
+`.replit` file starts the same PWA on port 8080. Inquiry is FRA. The
 search dock is ChatVault — same origin, not the same engine.
 
 CLI without the site:
@@ -59,7 +66,7 @@ historical UHF / SFE / DHFA candidates without merging them, and refuses
 to treat representation of a known equation as derivation.
 
 - Package: `domain_architect/`
-- App: `python3 -m domain_architect --site` → http://127.0.0.1:8765/
+- App: `python3 -m domain_architect --site` → http://127.0.0.1:8765/ (Replit: import repo, Run)
 - Notes: [`docs/domain-architect/README.md`](docs/domain-architect/README.md)
 - Zenodo title restore pack (writes only with a PAT via `api_restore_titles.py --apply`; never a password): [`docs/zenodo-public-record/README.md`](docs/zenodo-public-record/README.md)
 - Canonical SFE status: **unresolved**

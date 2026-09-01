@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import json
 import mimetypes
+import os
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
@@ -44,7 +45,31 @@ REPO = Path(__file__).resolve().parents[1]
 STATIC = Path(__file__).resolve().parent / "static"
 CHATVAULT = REPO / "chatvault"
 DEFAULT_SITE_PORT = 8765
+ALLOWED_SITE_HOSTS = frozenset({"127.0.0.1", "localhost", "0.0.0.0"})
 MAX_INBOX_POST_BYTES = 2 * 1024 * 1024
+
+
+def resolve_site_host(explicit: str | None = None, env: dict[str, str] | None = None) -> str:
+    """Loopback by default. 0.0.0.0 only when asked, or on Replit."""
+    source = env if env is not None else os.environ
+    host = (explicit or "").strip() or (
+        "0.0.0.0"
+        if source.get("REPL_ID") or source.get("REPLIT_DEV_DOMAIN")
+        else "127.0.0.1"
+    )
+    if host not in ALLOWED_SITE_HOSTS:
+        raise ValueError("Site server binds loopback, or 0.0.0.0 for Replit.")
+    return host
+
+
+def resolve_site_port(explicit: int | None = None, env: dict[str, str] | None = None) -> int:
+    source = env if env is not None else os.environ
+    if explicit is not None:
+        return int(explicit)
+    raw = source.get("PORT")
+    if raw:
+        return int(raw)
+    return DEFAULT_SITE_PORT
 
 
 def _is_loopback(handler: BaseHTTPRequestHandler) -> bool:
@@ -268,9 +293,9 @@ class SiteHandler(BaseHTTPRequestHandler):
         )
 
 
-def serve_site(host: str = "127.0.0.1", port: int = DEFAULT_SITE_PORT) -> None:
-    if host not in ("127.0.0.1", "localhost"):
-        raise ValueError("Site server binds loopback only.")
+def serve_site(host: str | None = None, port: int | None = None) -> None:
+    host = resolve_site_host(host)
+    port = resolve_site_port(port)
     httpd = ThreadingHTTPServer((host, port), SiteHandler)
     print(f"Domain Architect + ChatVault at http://{host}:{port}/")
     print(f"ChatVault app at http://{host}:{port}/chatvault/")
