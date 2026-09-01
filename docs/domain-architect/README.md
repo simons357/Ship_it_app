@@ -41,11 +41,11 @@ Machine-readable provenance (original expressions are immutable):
 - `data/domain_architect/null_results.json`
 
 ```bash
+python -m domain_architect --site   # Domain Architect app: http://127.0.0.1:8765/
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
 python -m domain_architect --drain-chatvault "∇²Φ = 4π G ρ" -o /tmp/da-drain.json
 python3 -m domain_architect --ingest-chatvault PATH
-python -m domain_architect --site   # http://127.0.0.1:8765/ — ChatVault search + DA inquiry
 python -m domain_architect --track-b-mobius   # RH Track B Möbius–GCD attack; does not claim RH
 python -m domain_architect --route-c          # Route C face in DA; not ChatVault; does not claim RH
 python -m domain_architect --universe         # universe / SFE picture; unresolved; not a proof
