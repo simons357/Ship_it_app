@@ -187,6 +187,10 @@ class TestSiteBindHost(unittest.TestCase):
         text = src.read_text(encoding="utf-8")
         self.assertIn("serve_site", text)
         self.assertIn("domain_architect.site_server", text)
+        req = Path(__file__).resolve().parents[1] / "requirements-da.txt"
+        self.assertIn("numpy", req.read_text(encoding="utf-8"))
+        replit = Path(__file__).resolve().parents[1] / ".replit"
+        self.assertIn("requirements-da.txt", replit.read_text(encoding="utf-8"))
 
 
 class TestDaSiteServiceWorker(unittest.TestCase):

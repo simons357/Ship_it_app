@@ -22,6 +22,10 @@ On a phone, import this GitHub repo into **Replit** (branch
 `cursor/domain-architect-app-f96b`) and click Run. Inquiry is FRA. The
 search dock is ChatVault — same origin, not the same engine.
 
+Download the working tree as a zip:
+
+https://github.com/simons357/Ship_it_app/archive/refs/heads/cursor/domain-architect-app-f96b.zip
+
 ## Your tools (Claude, Replit, GPT, Grok)
 
 | Tool | What it is for DA |

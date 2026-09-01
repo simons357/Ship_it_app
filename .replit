@@ -1,4 +1,4 @@
-run = "python3 main.py"
+run = "python3 -m pip install -q -r requirements-da.txt && python3 main.py"
 entrypoint = "main.py"
 hidden = [".git", "__pycache__", ".venv"]
 modules = ["python-3.12"]
@@ -7,7 +7,7 @@ modules = ["python-3.12"]
 channel = "stable-24_05"
 
 [deployment]
-run = ["python3", "main.py"]
+run = ["sh", "-c", "python3 -m pip install -q -r requirements-da.txt && python3 main.py"]
 deploymentTarget = "cloudrun"
 
 [[ports]]
