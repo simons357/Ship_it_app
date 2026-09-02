@@ -612,6 +612,23 @@ def _ship_package() -> dict[str, Any]:
             "field-ready stack. Next evidence: coupon Cf and fouling, then a "
             "partner towing-tank. DA does not file patents."
         ),
+        "hybrid_request": {
+            "asked_primary": (
+                "riblets plus a resonant/phononic or viscoelastic overlay "
+                "at 8–12% net Cf"
+            ),
+            "da_primary": "trapezoidal riblets in a fouling-release carrier",
+            "overlay_selected": False,
+            "percentages_were_added": False,
+            "notes": [
+                "The overlay is catalogued, not selected.",
+                "Public phononic-subsurface DNS is order-1% class in channels, "
+                "not a marine field Cf, and is not added to the riblet envelope.",
+                "Kramer-class viscoelastic walls have mixed replication.",
+                "Plasma actuators are not a Maersk hull film.",
+                "8% is contained by durable trapezoid literature. 12% is not.",
+            ],
+        },
         "kind": CorrespondenceKind.ANALOGY.value,
         "validation_gate": "empirical[unverified]",
     }

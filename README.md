@@ -18,6 +18,11 @@ paper is a **separate book** in [`docs/papers/swirl/`](docs/papers/swirl/README.
 
 Specification: [`docs/DOMAIN-ARCHITECT.md`](docs/DOMAIN-ARCHITECT.md)
 
+Turbulence reduction is a **program** under Domain Architect, not a
+single plant: [`docs/projects/turbulence-reduction/README.md`](docs/projects/turbulence-reduction/README.md).
+Ships (Maersk-class) is ACTIVE. Aircraft (drones included), submarines,
+and hypersonic vehicles are QUEUED slots for later DA studies.
+
 ## Open the app
 
 This is a local desktop app. It is not a public website.
@@ -49,6 +54,7 @@ python -m domain_architect cycle leftover-repair
 python -m domain_architect cycle localized-repair
 python -m domain_architect cycle localized-repair --excise 2
 python -m domain_architect cycle available-turbulence
+python -m domain_architect cycle turbulence-reduction
 python -m domain_architect synthesize --target "x → 0.85" --constraint "hardware already available"
 python -m domain_architect --archive
 ```
@@ -64,5 +70,5 @@ the provenance requirement.
 ## Tests
 
 ```bash
-python -m unittest tests.test_sfe_hb_dump tests.test_domain_architect_v1 tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_historical_archive tests.test_brand_mark tests.test_desktop_app tests.test_phi_geometry_bridge tests.test_challenge_01_ns
+python -m unittest tests.test_sfe_hb_dump tests.test_domain_architect_v1 tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_historical_archive tests.test_brand_mark tests.test_desktop_app tests.test_phi_geometry_bridge tests.test_challenge_01_ns tests.test_available_turbulence tests.test_turbulence_program
 ```

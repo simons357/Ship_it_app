@@ -1,6 +1,7 @@
 # Available-tech turbulence stack (15% desired)
 
 **Status:** a Domain Architect lab cycle, August 2026  
+**Program:** [`docs/projects/turbulence-reduction/`](../projects/turbulence-reduction/README.md) — analog 15% is a separate lumped setpoint from the ship commercial band  
 **Not 3D Navier–Stokes. Not a tank certificate. Clay is NOT CLAIMED.**
 
 The slogan “decrease turbulence” is still **not** a recognized setpoint.

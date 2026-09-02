@@ -93,7 +93,7 @@
       <section id="cycle" class="pane">
         <div class="card">
           <h2>Run a cycle</h2>
-          <p class="hint">Examples use standard methods (RK4, OLS, Firestone analogy). Those methods are not Domain Architect itself. Leftover repair takes only what still fails in NS. Localized reparation is surgery on an n-step chain: if step k is not working, DA excises that step, grafts an OPEN hook, and re-inserts at the same slot. Default classical surgery cuts leftover 7–8 (simplex + dynamic SND). Step 2 is Ring Lemma and is already PROVED. Open-board takes the OPEN chorus, closes withdrawn/rejected/missing items, and names the real leftovers. A13 fail-closes inverse design of NS. Turbulence-intensity is a lumped x → x★ against a no-actuation control arm. Available-turbulence assembles riblets plus discrete suction with that same 15% as a desired state — not a tank certificate and not 3D NS. Neither proves regularity.</p>
+          <p class="hint">Examples use standard methods (RK4, OLS, Firestone analogy). Those methods are not Domain Architect itself. Leftover repair takes only what still fails in NS. Localized reparation is surgery on an n-step chain: if step k is not working, DA excises that step, grafts an OPEN hook, and re-inserts at the same slot. Default classical surgery cuts leftover 7–8 (simplex + dynamic SND). Step 2 is Ring Lemma and is already PROVED. Open-board takes the OPEN chorus, closes withdrawn/rejected/missing items, and names the real leftovers. A13 fail-closes inverse design of NS. Turbulence-intensity is a lumped x → x★ against a no-actuation control arm. Available-turbulence assembles riblets plus discrete suction with that same 15% as a desired state — not a tank certificate and not 3D NS. Turbulence-reduction is the program: ships ACTIVE (Maersk-class hull); aircraft (drones included), submarines, and hypersonic QUEUED. Do not copy the ship envelope onto those platforms. None of this proves regularity.</p>
           <label>Named cycle
             <select id="cyName">
               <option value="missing-damping">Missing damping (paper §16)</option>
@@ -102,6 +102,7 @@
               <option value="drag">Drag surrogate (schematic)</option>
               <option value="turbulence-intensity">Intensity vs control (lumped x → x★)</option>
               <option value="available-turbulence">Available tech stack (riblets+suction, 15% desired)</option>
+              <option value="turbulence-reduction">Turbulence reduction (4 apps)</option>
               <option value="leftover-repair">NS leftover repair (three CONDITIONAL leftovers)</option>
               <option value="localized-repair">Classical unaugmented (default cut 7–8)</option>
               <option value="open-board">Honest OPEN board (close the noise)</option>
@@ -120,6 +121,7 @@
             <button id="cyOpenBoard" class="ghost" type="button">Honest OPEN board</button>
             <button id="cyIntensity" class="ghost" type="button">Intensity vs control</button>
             <button id="cyAvailable" class="ghost" type="button">Available 15% stack</button>
+            <button id="cyProgram" class="ghost" type="button">Turbulence reduction (4 apps)</button>
           </div>
         </div>
         <pre id="cyOut" class="out"></pre>
