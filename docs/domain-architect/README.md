@@ -1,43 +1,70 @@
-# Domain Architect — Functional Role Analysis
+# Domain Architect v1.0
 
-**Status:** scientific rectification, August 2026 — software plus historical registry  
-**Product:** Domain Architect  
-**Method:** Functional Role Analysis  
-**Canonical SFE status:** unresolved  
-**This folder is not a theory of everything, a canonical Simons Field Equation, or a proof of physical prime indexing.**
+**Status:** live computational framework, August 2026  
+**Operator contract:** [`DA-MODE.md`](DA-MODE.md) — honesty, missing claim ledger, NS not reopened, four-slot turbulence program  
+**Specification:** [`docs/DOMAIN-ARCHITECT.md`](../DOMAIN-ARCHITECT.md)  
+**Mathematics:** [`OPERATIONAL-MATH.md`](OPERATIONAL-MATH.md)  
+**Implementation audit:** [`ARCHITECTURE-AUDIT.md`](ARCHITECTURE-AUDIT.md) — items 1–6, 8, 9, 10 accepted in the SFE/HB dump  
+**Validation challenge 01:** [`DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md`](DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md) — live score **FAIL** (A13 S1 refuse is in; A5 T1 still owed)  
+**Leftover-split lab:** [`LEFTOVER-REPAIR.md`](LEFTOVER-REPAIR.md) — usable Ring SND + Q6 \(H_N\); three NS leftovers are conditional closes  
+**Localized reparation:** [`LOCALIZED-REPAIR.md`](LOCALIZED-REPAIR.md) — `excise k` on an n-step chain; default dataset is the classical unaugmented 9-step chain; leftover cut is 7–8; graft stays a hypothesis  
+**Honest OPEN board:** [`OPEN-BOARD.md`](OPEN-BOARD.md) — withdrawn / rejected / missing taken off the OPEN chorus  
+**Intensity vs control:** [`TURBULENCE-INTENSITY.md`](TURBULENCE-INTENSITY.md) — lumped \(x\to x^\star\) against a no-actuation arm; not 3D NS  
+**Available-tech stack:** [`AVAILABLE-TURBULENCE.md`](AVAILABLE-TURBULENCE.md) — riblets + discrete suction; 15% is the **desired** analog state  
+**Ship-hull package:** [`SHIP-RIBLET-PACKAGE.md`](SHIP-RIBLET-PACKAGE.md) — Maersk-class fouling-release riblets; 8–12% Cf is desired; 12% is outside the durable literature  
+**Turbulence-reduction program:** [`docs/projects/turbulence-reduction/README.md`](../projects/turbulence-reduction/README.md) — one DA project, four applications (ships ACTIVE; aircraft including drones, submarines, hypersonic QUEUED)
 
-Approved plain-language explanation:
+Domain Architect analyzes, translates and synthesizes systems by the
+functional roles their components perform.
 
-> Paste an equation. Domain Architect identifies what each component does, how the components connect, and which parameters can be tested or tuned.
-
-| Document | Purpose |
-|---|---|
-| [00 — Audited baseline](00-AUDITED-BASELINE.md) | Frozen framework, terminology, evidence levels |
-| [01 — Equation inventory](01-EQUATION-INVENTORY.md) | Historical UHF / SFE / DHFA / gravity / prime-index formulas found in this repo family |
-| [02 — Conflict table](02-CONFLICT-TABLE.md) | Incompatible definitions, units, domains, and claims |
-| [03 — Reconciliation](03-RECONCILIATION.md) | Six-point response to the August 2026 handoff |
-| [04 — Notation collisions](04-NOTATION-COLLISIONS.md) | `P` / `p` / `ℙ`, `Φ` / `φ` / `ϕ`, and other overloaded symbols |
-| [05 — Rectification](05-RECTIFICATION.md) | Software implementation of the August 2026 corrective specification |
-
-Machine-readable provenance (original expressions are immutable):
-
-- `data/domain_architect/historical_equations.json`
-- `data/domain_architect/conflicts.json`
-- `data/domain_architect/null_results.json`
-
-```bash
-python -m domain_architect "∇²Φ = 4π G ρ"
-python -m domain_architect --registry
-python -m unittest tests.test_domain_architect_acceptance
+```
+DECOMPOSE → CROSS-DOMAIN TRANSLATE → SYNTHESIZE
 ```
 
-Related closed experiment in this repository:
+SFE, UHF, DHFA and the Harmonic Blueprint are **archived historical
+reference**. They are not part of the live core. See
+[`docs/archive/`](../archive/README.md).
 
-- Protocol: [`docs/HB-RINGDOWN-EXPERIMENT-01.md`](../HB-RINGDOWN-EXPERIMENT-01.md)
-- Report: [`docs/HB-RINGDOWN-EXPERIMENT-01-REPORT.md`](../HB-RINGDOWN-EXPERIMENT-01-REPORT.md)
+## Commands
 
-Primary sources named in the handoff but **not present in this repository**:
+```bash
+python -m domain_architect "m*xdd + c*xd + k*x = f"
+python -m domain_architect translate --example mechanical-electrical
+python -m domain_architect synthesize --target "x=1" --constraint "|u|<=6"
+python -m domain_architect synthesize --target "x → 0.85" --constraint "|u| ≤ 6" --constraint "hardware already available"
+python -m domain_architect cycle missing-damping
+python -m domain_architect cycle control
+python -m domain_architect cycle drag
+python -m domain_architect cycle leftover-repair
+python -m domain_architect cycle localized-repair
+python -m domain_architect cycle localized-repair --excise 2
+python -m domain_architect cycle open-board
+python -m domain_architect cycle turbulence-intensity
+python -m domain_architect cycle available-turbulence
+python -m domain_architect cycle turbulence-reduction
+python -m domain_architect translate --example snd-vs-h
+python -m domain_architect benchmark
+python -m domain_architect --archive
+python -m domain_architect app
+python -m domain_architect app --install-shortcut
+```
 
-- `The_Audited_Harmonic_Blueprint.{pdf,docx,md}`
-- `Domain_Architect_Working_App_v1_4.zip`
-- `GUIDE.md`
+```bash
+python -m unittest tests.test_domain_architect_v1 tests.test_domain_architect_acceptance tests.test_domain_architect_units
+```
+
+## What the software actually does
+
+| Operation | Module | Working mathematics |
+|---|---|---|
+| DECOMPOSE | `decompose.py` | AST → functional architecture tree with role + confidence + rationale |
+| TRANSLATE | `translate.py` | mechanical ↔ electrical LTI map with explicit `T` and SI-dimension breakage |
+| compatibility | `compatibility.py` | DIRECTLY COMPATIBLE / TRANSFORMABLE / INCOMPATIBLE |
+| SYNTHESIZE | `synthesize.py` | candidate architecture + provenance; refuses illegal substitutions |
+| state / control | `dynamics.py` | RK4 of `ẋ = F(x,u,t)` and saturated PD |
+| residual | `residual.py` | missing-role classification and role-restricted least squares |
+| cycle | `pipeline.py` | paper §16 damping recovery, inverse design, analog, drag surrogate, available-tech stack, turbulence-reduction program |
+
+Functional correspondence is a hypothesis, not physical equivalence.
+A mathematically coherent architecture is not automatically realizable.
+The empirical validation gate is never self-awarded.

@@ -1,65 +1,74 @@
-# Harmonic Blueprint / Domain Architect
+# Domain Architect
 
-This repository now contains two related research objects. Neither is a
-unified physical theory.
+Computational framework for **functional-role architecture**.
 
-## Domain Architect
-
-Functional Role Analysis and model-auditing software. It classifies
-equations into independently meaningful mathematical roles, records
-historical UHF / SFE / DHFA candidates without merging them, and refuses
-to treat representation of a known equation as derivation.
-
-- Package: `domain_architect/`
-- Notes: [`docs/domain-architect/README.md`](docs/domain-architect/README.md)
-- Canonical SFE status: **unresolved**
-
-```bash
-python -m domain_architect "∇²Φ = 4π G ρ"
-python -m domain_architect --registry
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units
+```
+DECOMPOSE → CROSS-DOMAIN TRANSLATE → SYNTHESIZE
 ```
 
-## Harmonic Blueprint Experiment 01
+Systems from different domains may be physically unrelated while still
+containing mathematical structures that perform corresponding functions.
+Domain Architect tests which structures survive translation and assembles
+compatible mechanisms into candidate architectures. Correspondence is a
+hypothesis, not physical equivalence.
 
-Cross-event spectral selection test on black-hole ringdown modes.
+SFE and the Harmonic Blueprint are **not** the live product. They remain
+in [`docs/archive/`](docs/archive/README.md). The axisymmetric swirl
+paper is a **separate book** in [`docs/papers/swirl/`](docs/papers/swirl/README.md).
 
-**Status: closed — held-out TEST did not reject H0.**
+Specification: [`docs/DOMAIN-ARCHITECT.md`](docs/DOMAIN-ARCHITECT.md)
 
-- Closed report: [`docs/HB-RINGDOWN-EXPERIMENT-01-REPORT.md`](docs/HB-RINGDOWN-EXPERIMENT-01-REPORT.md)
-- Protocol: [`docs/HB-RINGDOWN-EXPERIMENT-01.md`](docs/HB-RINGDOWN-EXPERIMENT-01.md)
-- Numeric summary: [`results/SUMMARY.md`](results/SUMMARY.md)
+Turbulence reduction is a **program** under Domain Architect, not a
+single plant: [`docs/projects/turbulence-reduction/README.md`](docs/projects/turbulence-reduction/README.md).
+Ships (Maersk-class) is ACTIVE. Aircraft (drones included), submarines,
+and hypersonic vehicles are QUEUED slots for later DA studies.
 
-## Quick start
+## Open the app
+
+This is a local desktop app. It is not a public website.
+
+**On a Mac:** double-click `Open Domain Architect.command` in this folder.
+
+Or in Terminal, from this folder:
 
 ```bash
-pip install -r requirements.txt
-python scripts/build_qnm_table.py   # refresh data/qnm_events.csv if needed
-python hb_ringdown_test.py \
-  --csv data/qnm_events.csv \
-  --nodes nodes.json \
-  --mc 50000 \
-  --split test
+python3 -m domain_architect app
 ```
 
-Exploratory TRAIN run (freeze choices before TEST):
+That opens `http://127.0.0.1:8765/` on *your* computer. The **Mark** tab
+hosts Lambda Lab plus the black-and-gold and all-silver 3D lockups.
+
+To put a launcher on your Desktop after you have opened it once:
 
 ```bash
-python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 50000 --split train
+python3 -m domain_architect app --install-shortcut
 ```
 
-## Layout
+## Command line
 
-| Path | Role |
-|------|------|
-| `hb_ringdown_test.py` | Spectral proximity statistic, MC null, BH-FDR, leave-one-event-out |
-| `nodes.json` | Frozen node families + sigma + default observable |
-| `data/qnm_events.csv` | Per-mode ringdown table with TRAIN/TEST splits |
-| `scripts/build_qnm_table.py` | Rebuild CSV from measured + Kerr-fit sources |
-| `tests/test_hb_ringdown.py` | Unit / smoke tests |
+```bash
+python -m domain_architect "m*xdd + c*xd + k*x = f"
+python -m domain_architect translate --example mechanical-electrical
+python -m domain_architect cycle missing-damping
+python -m domain_architect cycle leftover-repair
+python -m domain_architect cycle localized-repair
+python -m domain_architect cycle localized-repair --excise 2
+python -m domain_architect cycle available-turbulence
+python -m domain_architect cycle turbulence-reduction
+python -m domain_architect synthesize --target "x → 0.85" --constraint "hardware already available"
+python -m domain_architect --archive
+```
+
+## What is standard, and what is DA
+
+Lumped mechanical–electrical analogy, RK4, saturated PD, and
+equation-error least squares are **standard methods used by** Domain
+Architect. They are not Domain Architect itself. DA is the role
+assignment, the broken-structure record, the substitution gate, and
+the provenance requirement.
 
 ## Tests
 
 ```bash
-python -m unittest tests/test_hb_ringdown.py
+python -m unittest tests.test_sfe_hb_dump tests.test_domain_architect_v1 tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_historical_archive tests.test_brand_mark tests.test_desktop_app tests.test_phi_geometry_bridge tests.test_challenge_01_ns tests.test_available_turbulence tests.test_turbulence_program
 ```

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lambda Lab — Domain Architect</title>
+<style>
+:root{
+  --bg:#0A0D11; --panel:#10151B; --panel2:#141A22; --line:rgba(255,255,255,.09);
+  --ink:#E6ECF2; --mute:#6F7C89; --accent:#18C8E6;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+  -webkit-font-smoothing:antialiased}
+header{padding:22px 20px 16px;border-bottom:1px solid var(--line)}
+h1{margin:0;font-size:15px;font-weight:500;letter-spacing:.22em;text-transform:uppercase}
+header p{margin:7px 0 0;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  color:var(--mute);text-transform:uppercase}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:0;align-items:start}
+@media(max-width:900px){.wrap{grid-template-columns:1fr}}
+.stage{padding:26px 20px 40px;min-width:0}
+.canvas{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  padding:26px;display:flex;justify-content:center;position:relative;overflow:hidden}
+.canvas::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:44px 44px;opacity:.5}
+.canvas svg{position:relative;width:100%;max-width:400px;height:auto}
+.strip{margin-top:22px;border:1px solid var(--line);border-radius:14px;background:var(--panel);
+  padding:18px 20px}
+.striplab{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--mute);
+  text-transform:uppercase;margin-bottom:16px}
+.sizes{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.size{text-align:center}
+.size span{display:block;font-family:var(--mono);font-size:9.5px;color:var(--mute);margin-top:7px}
+.readout{margin-top:18px;font-family:var(--mono);font-size:10.5px;line-height:1.9;
+  color:var(--mute);letter-spacing:.05em}
+.readout b{color:var(--accent);font-weight:400}
+aside{border-left:1px solid var(--line);padding:26px 22px 60px;min-height:100vh;background:var(--panel2)}
+@media(max-width:900px){aside{border-left:0;border-top:1px solid var(--line);min-height:0}}
+fieldset{border:0;border-top:1px solid var(--line);margin:0 0 4px;padding:18px 0 6px}
+fieldset:first-of-type{border-top:0;padding-top:0}
+legend{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--mute);
+  text-transform:uppercase;padding:0}
+.row{margin:15px 0}
+.row label{display:flex;justify-content:space-between;font-size:12px;margin-bottom:7px;
+  color:#B8C4D0}
+.row label i{font-family:var(--mono);font-style:normal;color:var(--accent);font-size:11px}
+input[type=range]{-webkit-appearance:none;width:100%;height:16px;background:transparent;margin:0}
+input[type=range]::-webkit-slider-runnable-track{height:2px;background:rgba(255,255,255,.16)}
+input[type=range]::-moz-range-track{height:2px;background:rgba(255,255,255,.16)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:16px;
+  background:var(--ink);margin-top:-7px;border-radius:1px;cursor:grab}
+input[type=range]::-moz-range-thumb{width:11px;height:16px;background:var(--ink);
+  border:0;border-radius:1px;cursor:grab}
+input[type=range]:focus-visible::-webkit-slider-thumb{background:var(--accent);
+  outline:2px solid var(--accent);outline-offset:2px}
+.seg{display:flex;gap:6px;flex-wrap:wrap}
+.seg button{flex:1;min-width:64px;background:transparent;border:1px solid var(--line);
+  color:#B8C4D0;font-family:var(--mono);font-size:10px;letter-spacing:.12em;padding:8px 4px;
+  border-radius:4px;cursor:pointer;text-transform:uppercase}
+.seg button[aria-pressed=true]{border-color:var(--accent);color:var(--accent)}
+.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.acts{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.acts button{flex:1;min-width:100px;background:var(--ink);color:#0A0D11;border:0;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;padding:11px 8px;border-radius:4px;
+  cursor:pointer;text-transform:uppercase;font-weight:600}
+.acts button.ghost{background:transparent;color:#B8C4D0;border:1px solid var(--line);font-weight:400}
+.acts button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.note{font-family:var(--mono);font-size:10px;color:var(--mute);margin-top:12px;line-height:1.8}
+@media(prefers-reduced-motion:no-preference){.canvas svg{transition:opacity .12s}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Lambda Lab</h1>
+  <p>Domain Architect &nbsp;·&nbsp; drag to shape the mark &nbsp;·&nbsp; watch the 40&nbsp;px render</p>
+</header>
+<div class="wrap">
+  <main class="stage">
+    <div class="canvas" id="canvas"></div>
+    <section class="strip">
+      <div class="striplab">Reduction — where marks die</div>
+      <div class="sizes" id="sizes"></div>
+      <div class="readout" id="readout"></div>
+    </section>
+  </main>
+  <aside>
+    <fieldset>
+      <legend>Frame</legend>
+      <div class="row"><label>Stance <i id="v_hw"></i></label>
+        <input type="range" id="hw" min="70" max="220" value="150"></div>
+      <div class="row"><label>Apex height <i id="v_apex"></i></label>
+        <input type="range" id="apex" min="60" max="220" value="104"></div>
+      <div class="row"><label>Apex cut <i id="v_trunc"></i></label>
+        <input type="range" id="trunc" min="0" max="90" value="0"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Weight</legend>
+      <div class="row"><label>At apex <i id="v_w0"></i></label>
+        <input type="range" id="w0" min="6" max="70" value="26"></div>
+      <div class="row"><label>At foot <i id="v_w1"></i></label>
+        <input type="range" id="w1" min="6" max="80" value="26"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Decompose left leg</legend>
+      <div class="row"><label>Cuts <i id="v_cuts"></i></label>
+        <input type="range" id="cuts" min="0" max="4" value="0"></div>
+      <div class="row"><label>Gap <i id="v_gap"></i></label>
+        <input type="range" id="gap" min="4" max="60" value="24"></div>
+      <div class="row"><label>Displacement <i id="v_disp"></i></label>
+        <input type="range" id="disp" min="0" max="40" value="0"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Interior</legend>
+      <div class="seg" id="interior">
+        <button data-v="none" aria-pressed="true">None</button>
+        <button data-v="lines" aria-pressed="false">Lines</button>
+        <button data-v="tris" aria-pressed="false">Triskele</button>
+        <button data-v="both" aria-pressed="false">Both</button>
+      </div>
+      <div class="row"><label>Position <i id="v_iy"></i></label>
+        <input type="range" id="iy" min="180" max="370" value="300"></div>
+      <div class="row"><label>Scale <i id="v_isc"></i></label>
+        <input type="range" id="isc" min="40" max="150" value="100"></div>
+      <div class="row"><label>Line count <i id="v_nb"></i></label>
+        <input type="range" id="nb" min="1" max="6" value="3"></div>
+      <div class="row"><label>Line weight <i id="v_bw"></i></label>
+        <input type="range" id="bw" min="5" max="30" value="13"></div>
+      <div class="row"><label>Curl <i id="v_curl"></i></label>
+        <input type="range" id="curl" min="40" max="330" value="215"></div>
+      <div class="row"><label>Arm weight <i id="v_aw"></i></label>
+        <input type="range" id="aw" min="8" max="46" value="26"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Node</legend>
+      <div class="seg" id="nodeset">
+        <button data-v="none" aria-pressed="false">None</button>
+        <button data-v="diamond" aria-pressed="true">Diamond</button>
+        <button data-v="dot" aria-pressed="false">Dot</button>
+      </div>
+      <div class="row"><label>Size <i id="v_ns"></i></label>
+        <input type="range" id="ns" min="6" max="40" value="15"></div>
+      <div class="row"><label>Height <i id="v_ny"></i></label>
+        <input type="range" id="ny" min="90" max="400" value="300"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Finish</legend>
+      <div class="seg" id="finish">
+        <button data-v="silver" aria-pressed="true">Silver</button>
+        <button data-v="gold" aria-pressed="false">Gold</button>
+        <button data-v="flat" aria-pressed="false">Flat</button>
+        <button data-v="mono" aria-pressed="false">Black</button>
+        <button data-v="rev" aria-pressed="false">White</button>
+      </div>
+      <div class="row" style="margin-top:14px"><label>Plate corner <i id="v_rx"></i></label>
+        <input type="range" id="rx" min="0" max="256" value="112"></div>
+      <div class="seg" id="plateset" style="margin-top:6px">
+        <button data-v="on" aria-pressed="true">Plate on</button>
+        <button data-v="off" aria-pressed="false">Plate off</button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Presets</legend>
+      <div class="seg" id="presets">
+        <button data-p="tapered">Tapered</button>
+        <button data-p="heavy">Heavy</button>
+        <button data-p="cleaved">Cleaved</button>
+        <button data-p="lines">Lines</button>
+        <button data-p="triskele">Triskele</button>
+        <button data-p="datum">Datum</button>
+      </div>
+      <div class="acts">
+        <button id="apply">Use as app icon</button>
+        <button id="dlsvg" class="ghost">Download SVG</button>
+      </div>
+      <div class="acts">
+        <button id="dlpng" class="ghost">Download PNG</button>
+        <button id="copy" class="ghost">Copy SVG code</button>
+      </div>
+      <p class="note" id="msg">Exports at 1024 px. SVG is editable vector. Gold is black plate + gold metal; Silver is the chrome plate.</p>
+    </fieldset>
+  </aside>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+const S = {interior:'none', node:'diamond', finish:'silver', plate:'on'};
+const IDS = ['hw','apex','trunc','w0','w1','cuts','gap','disp','iy','isc','nb','bw','curl','aw','ns','ny','rx'];
+const num = id => +$(id).value;
+let svgUid = 0;
+const BASE = 412;
+function cross(a,b,c,d){
+  const x1=a[0],y1=a[1],x2=b[0],y2=b[1],x3=c[0],y3=c[1],x4=d[0],y4=d[1];
+  const den=(x1-x2)*(y3-y4)-(y1-y2)*(x3-x4);
+  if(Math.abs(den)<1e-9) return [(x1+x3)/2,(y1+y3)/2];
+  const t=((x1-x3)*(y3-y4)-(y1-y3)*(x3-x4))/den;
+  return [x1+t*(x2-x1), y1+t*(y2-y1)];
+}
+function legFrame(side){
+  const hw=num('hw'), ay=num('apex'), w0=num('w0'), w1=num('w1');
+  const A=[256+side*num('trunc')/2, ay], F=[256+side*hw, BASE];
+  const dx=F[0]-A[0], dy=F[1]-A[1], L=Math.hypot(dx,dy)||1;
+  const n=[-dy/L*side, dx/L*side];
+  const P=t=>[A[0]+t*dx, A[1]+t*dy];
+  const hwAt=t=>(w0+(w1-w0)*t)/2;
+  return {P,n,hwAt,
+    out:t=>{const p=P(t),h=hwAt(t);return [p[0]+n[0]*h,p[1]+n[1]*h];},
+    inn:t=>{const p=P(t),h=hwAt(t);return [p[0]-n[0]*h,p[1]-n[1]*h];}};
+}
+function poly(pts){return 'M '+pts.map(p=>p[0].toFixed(2)+' '+p[1].toFixed(2)).join(' L ')+' Z';}
+function lambdaPaths(){
+  const L=legFrame(-1), R=legFrame(1), TE=1.14;
+  const cuts=num('cuts'), gapv=num('gap'), disp=num('disp');
+  const total=Math.hypot(num('hw'), BASE-num('apex'))||1;
+  const g=gapv/total;
+  let segs=[];
+  if(cuts===0) segs=[[0,1]];
+  else{
+    const span=1/(cuts+1);
+    for(let i=0;i<=cuts;i++){
+      let t0=i*span+(i?g/2:0), t1=(i+1)*span-(i<cuts?g/2:0);
+      segs.push([Math.max(0,t0),Math.min(1,t1)]);
+    }
+  }
+  const tip=cross(L.out(0),L.out(1),R.out(0),R.out(1));
+  const innerV=cross(L.inn(0),L.inn(1),R.inn(0),R.inn(1));
+  const head=poly([L.out(segs[0][1]), tip, R.out(TE), R.inn(TE), innerV, L.inn(segs[0][1])]);
+  const rest=segs.slice(1).map((s,i)=>{
+    const d=disp*(i+1), o=[L.n[0]*d, L.n[1]*d];
+    const e=(s[1]>=1)?TE:s[1];
+    const q=[L.out(s[0]),L.out(e),L.inn(e),L.inn(s[0])].map(p=>[p[0]+o[0],p[1]+o[1]]);
+    return poly(q);
+  });
+  return [head,...rest];
+}
+function armPath(cx,cy,rot,r0,c,turn,w0,taper){
+  const n=76, L=[], R=[];
+  for(let i=0;i<=n;i++){
+    const u=i/n, r=r0+c*u, a=(rot+turn*u)*Math.PI/180;
+    const px=cx+r*Math.cos(a), py=cy+r*Math.sin(a);
+    const da=turn*Math.PI/180/n;
+    let tx=c/n*Math.cos(a)-r*Math.sin(a)*da, ty=c/n*Math.sin(a)+r*Math.cos(a)*da;
+    const m=Math.hypot(tx,ty)||1; const nx=-ty/m, ny=tx/m;
+    const w=w0*Math.pow(Math.max(0,1-u),1.35)/2;
+    L.push([px+nx*w,py+ny*w]); R.push([px-nx*w,py-ny*w]);
+  }
+  return poly(L.concat(R.reverse()));
+}
+function build(size, force){
+  const fin = force || S.finish;
+  const mono = fin==='mono'||fin==='rev';
+  const silver = fin==='silver';
+  const gold = fin==='gold';
+  svgUid += 1;
+  const id = 'm'+svgUid;
+  const ink = fin==='mono' ? '#0C1015'
+    : fin==='rev' ? '#FFFFFF'
+    : gold ? '#E6C35A'
+    : silver ? `url(#${id}sil)`
+    : '#E6ECF2';
+  const acc = gold ? '#E6C35A' : (mono ? ink : '#18C8E6');
+  const plateFill = fin==='mono' ? '#FFFFFF'
+    : fin==='rev' ? '#000000'
+    : gold ? '#0A0D11'
+    : `url(#${id}plate)`;
+  const showPlate = S.plate==='on';
+  const rx=num('rx'), trunc=num('trunc'), apex=num('apex');
+  const top = trunc>0 ? apex : 0;
+  const iy=num('iy'), sc=num('isc')/100, nb=num('nb'), bw=num('bw');
+  const curl=num('curl'), aw=num('aw');
+  let inner='';
+  if(S.interior==='lines'||S.interior==='both'){
+    const gap=(bw+16), len=170*sc, w=Math.min(len, 2*(num('hw'))*(iy-apex)/(BASE-apex)-30);
+    for(let i=0;i<nb;i++){
+      const y=iy+i*gap;
+      const maxw=2*(num('hw'))*(y-apex)/(BASE-apex)-34;
+      const ww=Math.max(20,Math.min(w,maxw));
+      inner+=`<rect x="${(256-ww/2).toFixed(1)}" y="${y.toFixed(1)}" width="${ww.toFixed(1)}" height="${bw}" rx="${bw/2}" fill="${ink}"/>`;
+    }
+  }
+  if(S.interior==='tris'||S.interior==='both'){
+    const cy = S.interior==='both' ? iy-56*sc : iy;
+    const r0=16*sc, c=78*sc, w=aw*sc;
+    [270,30,150].forEach(r=>{ inner+=`<path d="${armPath(256,cy,r,r0,c,curl,w,1.35)}" fill="${S.interior==='both'?acc:ink}"/>`; });
+  }
+  let nodeEl='';
+  const ns=num('ns'), ny=num('ny');
+  if(S.node==='diamond') nodeEl=`<path d="M 256 ${ny-ns*1.2} L ${256+ns} ${ny} L 256 ${ny+ns*1.2} L ${256-ns} ${ny} Z" fill="${acc}"/>`;
+  if(S.node==='dot') nodeEl=`<circle cx="256" cy="${ny}" r="${ns}" fill="${acc}"/>`;
+  const cap = trunc>0 ? `<rect x="${256-trunc*0.62}" y="${apex-7}" width="${trunc*1.24}" height="10" rx="5" fill="${acc}"/>` : '';
+  const paths = lambdaPaths().map(d=>`<path d="${d}" fill="${ink}"/>`).join('');
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="${size}" height="${size}">
+<defs>
+<linearGradient id="${id}sil" gradientUnits="userSpaceOnUse" x1="100" y1="90" x2="380" y2="420">
+<stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#EDF2F7"/><stop offset="1" stop-color="#C3CEDA"/></linearGradient>
+<linearGradient id="${id}plate" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="360" y2="512">
+<stop offset="0" stop-color="#151B22"/><stop offset="1" stop-color="#0C1015"/></linearGradient>
+<clipPath id="${id}clip"><rect x="0" y="${top}" width="512" height="${BASE-top}"/></clipPath>
+</defs>
+${showPlate?`<rect width="512" height="512" rx="${rx}" fill="${plateFill}"/>`:''}
+<g clip-path="url(#${id}clip)">${paths}${inner}</g>${cap}${nodeEl}
+</svg>`;
+}
+function render(){
+  IDS.forEach(id=>{ const el=$('v_'+id); if(el) el.textContent=$(id).value; });
+  $('canvas').innerHTML = build(400);
+  const sizes=[96,64,40,24];
+  $('sizes').innerHTML = sizes.map(s=>`<div class="size">${build(s)}<span>${s}px</span></div>`).join('')
+    + `<div class="size">${build(64,'mono')}<span>1&#8209;col</span></div>`;
+  const total=Math.hypot(num('hw'),BASE-num('apex'));
+  const ang=(Math.atan2(num('hw'),BASE-num('apex'))*180/Math.PI).toFixed(1);
+  $('readout').innerHTML =
+    `half&#8209;angle <b>${ang}&deg;</b> &nbsp; leg <b>${total.toFixed(0)}</b> &nbsp; `+
+    `taper <b>${(num('w1')/num('w0')).toFixed(2)}&times;</b> &nbsp; `+
+    `cuts <b>${num('cuts')}</b> &nbsp; interior <b>${S.interior}</b>`;
+}
+IDS.forEach(id=>$(id).addEventListener('input',render));
+function segGroup(wrapId,key){
+  const w=$(wrapId);
+  w.addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b) return;
+    [...w.querySelectorAll('button')].forEach(x=>x.setAttribute('aria-pressed', x===b));
+    S[key]=b.dataset.v; render();
+  });
+}
+segGroup('interior','interior'); segGroup('nodeset','node');
+segGroup('finish','finish'); segGroup('plateset','plate');
+const PRESETS={
+  tapered:{hw:152,apex:100,trunc:0,w0:16,w1:52,cuts:0,disp:0,interior:'none',node:'none'},
+  heavy:{hw:150,apex:104,trunc:0,w0:40,w1:40,cuts:0,disp:0,interior:'none',node:'none'},
+  cleaved:{hw:150,apex:104,trunc:0,w0:24,w1:24,cuts:2,gap:30,disp:14,interior:'none',node:'diamond',ns:15,ny:300},
+  lines:{hw:150,apex:104,trunc:0,w0:26,w1:26,cuts:0,disp:0,interior:'lines',iy:296,nb:3,bw:14,node:'diamond',ns:14,ny:254},
+  triskele:{hw:150,apex:104,trunc:0,w0:26,w1:26,cuts:0,disp:0,interior:'tris',iy:292,isc:100,curl:215,aw:26,node:'diamond',ns:12,ny:292},
+  datum:{hw:158,apex:132,trunc:56,w0:22,w1:34,cuts:0,disp:0,interior:'lines',iy:300,nb:3,bw:12,node:'none'}
+};
+$('presets').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  const p=PRESETS[b.dataset.p]; if(!p) return;
+  Object.entries(p).forEach(([k,v])=>{
+    if($(k)) $(k).value=v;
+    else if(k in S){
+      S[k]=v;
+      const map={interior:'interior',node:'nodeset'};
+      if(map[k]) [...$(map[k]).querySelectorAll('button')]
+        .forEach(x=>x.setAttribute('aria-pressed', x.dataset.v===v));
+    }
+  });
+  render();
+});
+function say(t){ $('msg').textContent=t; }
+function saveBlob(blob,name){
+  const u=URL.createObjectURL(blob), a=document.createElement('a');
+  a.href=u; a.download=name; document.body.appendChild(a); a.click();
+  a.remove(); setTimeout(()=>URL.revokeObjectURL(u),1500);
+}
+$('dlsvg').onclick=()=>{
+  saveBlob(new Blob([build(1024)],{type:'image/svg+xml'}),'domain-architect-lambda.svg');
+  say('SVG saved — editable vector at 1024 px.');
+};
+$('dlpng').onclick=()=>{
+  const svg=build(1024), img=new Image();
+  const url=URL.createObjectURL(new Blob([svg],{type:'image/svg+xml'}));
+  img.onload=()=>{
+    const cv=document.createElement('canvas'); cv.width=cv.height=1024;
+    cv.getContext('2d').drawImage(img,0,0,1024,1024);
+    cv.toBlob(b=>{ saveBlob(b,'domain-architect-lambda.png'); say('PNG saved at 1024 px.'); });
+    URL.revokeObjectURL(url);
+  };
+  img.onerror=()=>say('PNG export failed — use Download SVG instead.');
+  img.src=url;
+};
+$('copy').onclick=async()=>{
+  try{ await navigator.clipboard.writeText(build(1024)); say('SVG code copied to clipboard.'); }
+  catch{ say('Clipboard blocked — use Download SVG instead.'); }
+};
+$('apply').onclick=async()=>{
+  say('Writing app icon…');
+  try{
+    const res=await fetch('/api/brand/apply',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({svg:build(1024)})
+    });
+    const payload=await res.json();
+    if(payload.error){ say(payload.error); return; }
+    say('Applied as app icon + favicon.');
+    const stamp=Date.now();
+    const header=window.parent && window.parent.document.querySelector('.titlebar .mark');
+    if(header) header.src=`/icon.svg?ts=${stamp}`;
+    const fav=window.parent && window.parent.document.querySelector("link[rel='icon']");
+    if(fav) fav.href=`/favicon.svg?ts=${stamp}`;
+  }catch{
+    say('Apply failed — is the desktop app running?');
+  }
+};
+render();
+</script>
+</body>
+</html>

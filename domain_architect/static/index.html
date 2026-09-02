@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Domain Architect</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="titlebar">
+      <img class="mark" src="/icon.svg" alt="" />
+      <div>
+        <h1>Domain Architect</h1>
+        <p class="ops">DECOMPOSE → CROSS-DOMAIN TRANSLATE → SYNTHESIZE</p>
+      </div>
+      <button id="shortcutBtn" class="ghost" type="button">Install desktop shortcut</button>
+    </header>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-pane="decompose">Decompose</button>
+      <button class="tab" data-pane="translate">Translate</button>
+      <button class="tab" data-pane="synthesize">Synthesize</button>
+      <button class="tab" data-pane="cycle">Cycle</button>
+      <button class="tab" data-pane="mark">Mark</button>
+      <button class="tab" data-pane="archive">Archive</button>
+    </nav>
+
+    <main>
+      <section id="decompose" class="pane active">
+        <div class="card">
+          <h2>Decompose a system</h2>
+          <p class="hint">Paste an equation. Domain Architect assigns role + confidence + rationale. Correspondence is a hypothesis, not physical equivalence.</p>
+          <label>Expression
+            <input id="decExpr" value="m*xdd + c*xd + k*x = f" />
+          </label>
+          <div class="row">
+            <button id="decRun" type="button">Decompose</button>
+            <button class="ghost example" data-fill="decExpr" data-value="xdd + k*x = 0" type="button">Incomplete oscillator</button>
+            <button class="ghost example" data-fill="decExpr" data-value="∇²Φ = 4π G ρ" type="button">Poisson benchmark</button>
+            <button class="ghost example" data-fill="decExpr" data-value="(1/r^4)*dz(Gamma^2) = dz(Phi^2)" type="button">Swirl identity</button>
+            <button class="ghost example" data-fill="decExpr" data-value="J/X >= cstar" type="button">Ring SND (usable)</button>
+            <button class="ghost example" data-fill="decExpr" data-value="HN = D^((-1)/2)*Qtilde*D^((-1)/2)" type="button">Q6 H_N (def only)</button>
+            <button class="ghost example" data-fill="decExpr" data-value="Istrain = urad/r" type="button">Swirl leftover</button>
+            <button class="ghost example" data-fill="decExpr" data-value="ell1(a - mu) = 0" type="button">Simplex leftover</button>
+          </div>
+          <p class="hint">Ring SND is the usable criterion inf J/X ≥ c_*. Q6 H_N is the standing definition, not the withdrawn all-N floor. The leftover buttons are the parts that still fail. Different books. Do not glue them. After decompose, Translate SND vs H_N and Cycle leftover-repair put them side by side.</p>
+        </div>
+        <pre id="decOut" class="out"></pre>
+      </section>
+
+      <section id="translate" class="pane">
+        <div class="card">
+          <h2>Cross-domain translate</h2>
+          <p class="hint">A legal map records preserved structure, broken structure, and an executable T. Analogy is not substitution. SND vs H_N fills both sides and refuses a letter map.</p>
+          <div class="split">
+            <label>System A
+              <input id="trLeft" value="m*xdd + c*xd + k*x = f" />
+            </label>
+            <label>System B
+              <input id="trRight" value="L*qdd + R*qd + kC*q = v" />
+            </label>
+          </div>
+          <div class="row">
+            <button id="trRun" type="button">Translate</button>
+            <button id="trExample" class="ghost" type="button">Mechanical ↔ electrical</button>
+            <button id="trSndVsH" class="ghost" type="button">SND vs H_N (lab, not glue)</button>
+          </div>
+        </div>
+        <pre id="trOut" class="out"></pre>
+      </section>
+
+      <section id="synthesize" class="pane">
+        <div class="card">
+          <h2>Synthesize from a target</h2>
+          <p class="hint">Desired outcome → required architecture. The candidate is a hypothesis. Validation is mathematical, then computational, then empirical.</p>
+          <label>Target state
+            <input id="syTarget" value="x★ = 1" />
+          </label>
+          <label>Constraints (comma-separated)
+            <input id="syConstraints" value="|u| ≤ 6, manufacturable" />
+          </label>
+          <div class="row">
+            <button id="syRun" type="button">Synthesize</button>
+            <button id="syAvailable" class="ghost" type="button">Available 15% stack</button>
+          </div>
+          <p class="hint">Bare <code>x → 0.85</code> still gets the analog PD loop. Add <code>hardware already available</code> (or click Available 15% stack) to assemble riblets plus discrete suction. The slogan “decrease turbulence” still refuses A13. Hardware 15% is not a tank certificate.</p>
+        </div>
+        <pre id="syOut" class="out"></pre>
+      </section>
+
+      <section id="cycle" class="pane">
+        <div class="card">
+          <h2>Run a cycle</h2>
+          <p class="hint">Examples use standard methods (RK4, OLS, Firestone analogy). Those methods are not Domain Architect itself. Leftover repair takes only what still fails in NS. Localized reparation is surgery on an n-step chain: if step k is not working, DA excises that step, grafts an OPEN hook, and re-inserts at the same slot. Default classical surgery cuts leftover 7–8 (simplex + dynamic SND). Step 2 is Ring Lemma and is already PROVED. Open-board takes the OPEN chorus, closes withdrawn/rejected/missing items, and names the real leftovers. A13 fail-closes inverse design of NS. Turbulence-intensity is a lumped x → x★ against a no-actuation control arm. Available-turbulence assembles riblets plus discrete suction with that same 15% as a desired state — not a tank certificate and not 3D NS. Turbulence-reduction is the program: ships ACTIVE (Maersk-class hull); aircraft (drones included), submarines, and hypersonic QUEUED. Do not copy the ship envelope onto those platforms. None of this proves regularity.</p>
+          <label>Named cycle
+            <select id="cyName">
+              <option value="missing-damping">Missing damping (paper §16)</option>
+              <option value="control">Inverse control</option>
+              <option value="mechanical-electrical">Mechanical–electrical</option>
+              <option value="drag">Drag surrogate (schematic)</option>
+              <option value="turbulence-intensity">Intensity vs control (lumped x → x★)</option>
+              <option value="available-turbulence">Available tech stack (riblets+suction, 15% desired)</option>
+              <option value="turbulence-reduction">Turbulence reduction (4 apps)</option>
+              <option value="leftover-repair">NS leftover repair (three CONDITIONAL leftovers)</option>
+              <option value="localized-repair">Classical unaugmented (default cut 7–8)</option>
+              <option value="open-board">Honest OPEN board (close the noise)</option>
+            </select>
+          </label>
+          <div class="excise-k">
+            <label for="cyExciseK">Step k
+              <input id="cyExciseK" type="number" min="1" step="1" placeholder="k" />
+            </label>
+            <button id="cyExciseStep" class="ghost" type="button">Excise this step</button>
+          </div>
+          <div class="row">
+            <button id="cyRun" type="button">Run cycle</button>
+            <button id="cyLeftover" class="ghost" type="button">NS leftover repair</button>
+            <button id="cySurgery" class="ghost" type="button">Default cut 7–8</button>
+            <button id="cyOpenBoard" class="ghost" type="button">Honest OPEN board</button>
+            <button id="cyIntensity" class="ghost" type="button">Intensity vs control</button>
+            <button id="cyAvailable" class="ghost" type="button">Available 15% stack</button>
+            <button id="cyProgram" class="ghost" type="button">Turbulence reduction (4 apps)</button>
+          </div>
+        </div>
+        <pre id="cyOut" class="out"></pre>
+      </section>
+
+      <section id="mark" class="pane">
+        <div class="mark-switch row">
+          <button type="button" id="viewGold">Black &amp; gold</button>
+          <button type="button" id="viewSilver" class="ghost">All silver</button>
+          <button type="button" id="viewLab" class="ghost">Lambda Lab</button>
+        </div>
+        <iframe id="lambdaFrame" class="lambda-frame" src="/lambda-lab.html" title="Lambda Lab" hidden></iframe>
+        <div id="rendersStudio" class="studio">
+          <div class="studio-preview card">
+            <h2>Official mark</h2>
+            <p class="hint">Black &amp; gold and all silver both stay. These are the two 3D lockups. Lambda Lab is the vector construction tool if you want to reshape the A.</p>
+            <canvas id="markCanvas" width="1024" height="1024" aria-label="Domain Architect mark"></canvas>
+            <p id="markNote" class="hint"></p>
+          </div>
+          <div class="studio-controls card">
+            <div class="row">
+              <button id="presetGold" type="button">Black &amp; gold</button>
+              <button id="presetSilver" class="ghost" type="button">All silver</button>
+              <button id="presetIcon" class="ghost" type="button">App icon</button>
+            </div>
+            <label class="chk"><input id="wordmarkOn" type="checkbox" checked /> Wordmark</label>
+            <label class="chk"><input id="taglineOn" type="checkbox" checked /> Tagline</label>
+            <label class="chk"><input id="frameOn" type="checkbox" checked /> Chrome frame</label>
+            <div id="colors" class="color-grid"></div>
+            <div id="sliders"></div>
+            <div class="row">
+              <button id="applyMark" type="button">Use as app icon</button>
+              <button id="downloadPng" class="ghost" type="button">Download PNG</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="archive" class="pane">
+        <div class="card">
+          <h2>Historical archive</h2>
+          <p class="hint">SFE, UHF, DHFA and the Harmonic Blueprint are retained as reference. They are not part of the live product.</p>
+          <button id="arRun" type="button">Show archive</button>
+        </div>
+        <pre id="arOut" class="out"></pre>
+      </section>
+    </main>
+  </div>
+  <script src="/studio.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

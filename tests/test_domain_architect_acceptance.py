@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Acceptance tests A–H from the August 2026 scientific rectification."""
+"""Kept mathematical hygiene tests from the 2026 rectification.
+
+Historical SFE / prime-selector tests live in test_historical_archive.py.
+"""
 
 from __future__ import annotations
 
@@ -11,16 +14,11 @@ from domain_architect.audit import audit_expression
 from domain_architect.checks import classify_permission
 from domain_architect.gravity import solve_periodic_poisson
 from domain_architect.identifiability import analyze_product_abx
-from domain_architect.index_audit import audit_canonical_index
 from domain_architect.recovery import classify_recovery
-from domain_architect.registry import EquationRegistry
 from domain_architect.schema import (
-    CANONICAL_SFE_STATUS,
-    ConflictRelation,
     EvidenceLevel,
     RecoveryKind,
 )
-from domain_architect.selectors import run_selector_lab
 
 
 class TestASymbolAmbiguity(unittest.TestCase):
@@ -77,21 +75,6 @@ class TestCPoissonZeroMode(unittest.TestCase):
         )
 
 
-class TestDDegeneratePrimeIndexing(unittest.TestCase):
-    def test_degenerate_spectrum_warns_basis_dependence(self):
-        eigenvalues = np.array([1.0, 1.0, 4.0, 9.0])
-        audit = audit_canonical_index(
-            eigenvalues,
-            selector_acts_on="individual_basis_vectors",
-        )
-        self.assertTrue(audit.degenerate)
-        self.assertTrue(audit.basis_dependent)
-        self.assertFalse(audit.valid_for_physical_prime_test)
-        joined = " ".join(audit.warnings).lower()
-        self.assertIn("basis", joined)
-        self.assertIn("prime", joined)
-
-
 class TestEParameterRedundancy(unittest.TestCase):
     def test_abx_not_separately_identifiable(self):
         report = analyze_product_abx(np.array([1.0, 2.0, 3.0]))
@@ -118,8 +101,8 @@ class TestFRepresentationVersusDerivation(unittest.TestCase):
         )
         self.assertIn("represent", narrative)
         self.assertNotIn("derives newtonian gravity", narrative)
-        self.assertNotIn("derivation from a canonical sfe", narrative.replace("not derivation", ""))
-        self.assertIn("not derivation from a canonical sfe", narrative)
+        self.assertIn("not derivation", narrative)
+        self.assertNotIn("canonical sfe", narrative)
         rec = classify_recovery(
             known_equation_rewritten=True,
             independent_broader_model=False,
@@ -128,56 +111,12 @@ class TestFRepresentationVersusDerivation(unittest.TestCase):
         self.assertEqual(rec.kind, RecoveryKind.REPRESENTATION_RECOVERY)
 
 
-class TestGHistoricalConflict(unittest.TestCase):
-    def test_incompatible_sfe_candidates_are_preserved(self):
-        registry = EquationRegistry.load_default()
-        self.assertIn("SFE-H001", registry.equations)
-        self.assertIn("SFE-H002", registry.equations)
-        status = registry.refuse_hybrid("SFE-H001", "SFE-H002")
-        self.assertEqual(status, "preserved_both_flagged_conflict")
-        pairs = {
-            frozenset({c.left_id, c.right_id}): c
-            for c in registry.conflicts
-        }
-        self.assertIn(frozenset({"SFE-H001", "SFE-H002"}), pairs)
-        self.assertEqual(
-            pairs[frozenset({"SFE-H001", "SFE-H002"})].relation,
-            ConflictRelation.INCOMPATIBLE.value,
-        )
-        e1 = registry.equations["SFE-H001"].original_expression
-        e2 = registry.equations["SFE-H002"].original_expression
-        self.assertNotEqual(e1, e2)
-        hybrid = " ".join([e1, e2])
-        self.assertNotIn(hybrid, [eq.original_expression for eq in registry.equations.values()])
-        self.assertEqual(registry.canonical_sfe_status(), CANONICAL_SFE_STATUS)
-
-
-class TestHPrimeComparisonNegative(unittest.TestCase):
-    def test_negative_prime_result_is_stored_and_reported(self):
-        n = 32
-        field = np.zeros(n)
-        # Energy on composite / non-prime indices so a prime mask is a poor encoding.
-        field[[0, 1, 4, 6, 8, 9, 10, 12]] = 1.0
-        lab = run_selector_lab(field, budget=4, random_seeds=(1, 2, 3), include_optimized=True)
-        self.assertTrue(lab.negative)
-        self.assertIn("worse than the tested random controls", lab.conclusion.lower())
-        self.assertNotIn("prime structure is fundamental", lab.conclusion.lower())
-        registry = EquationRegistry()
-        rec = registry.record_null(
-            kind="prime selector failed",
-            statement=lab.conclusion,
-            evidence=str(lab.metrics),
-            source="acceptance Test H",
-        )
-        self.assertEqual(registry.prominent_nulls()[0].null_id, rec.null_id)
-        self.assertIn("worse", registry.prominent_nulls()[0].statement.lower())
-
-
 class TestLanguageAndScope(unittest.TestCase):
-    def test_canonical_sfe_unresolved_on_every_report(self):
+    def test_live_reports_do_not_revive_sfe(self):
         report = audit_expression("Hψ")
-        self.assertEqual(report.canonical_sfe_status, CANONICAL_SFE_STATUS)
-        self.assertIn("unresolved", report.narrative().lower())
+        narrative = report.narrative().lower()
+        self.assertIn("decompose", narrative)
+        self.assertNotIn("canonical sfe status: unresolved", narrative)
 
     def test_role_confidence_does_not_imply_physics(self):
         report = audit_expression("∇²Φ = 4π G ρ")

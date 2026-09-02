@@ -41,7 +41,7 @@ def classify_recovery(
             statement=REPRESENTATION_NOT_DERIVATION
             if "poisson" in target_theory.lower() or "newton" in target_theory.lower()
             else (
-                f"Functional Role Analysis represents {target_theory}. "
+                f"Domain Architect represents {target_theory}. "
                 "This is architectural compatibility, not derivation."
             ),
         )
@@ -55,8 +55,7 @@ def classify_recovery(
             statement=(
                 f"An independently specified broader model reduces to "
                 f"{target_theory} under the controlled limit {controlled_limit}. "
-                "This is known-limit recovery, not a new physical derivation "
-                "from a canonical SFE unless that SFE exists independently."
+                "This is known-limit recovery, not a new physical derivation."
             ),
         )
     return RecoveryRecord(

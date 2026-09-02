@@ -7,9 +7,8 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from .schema import (
-    CANONICAL_SFE_STATUS,
     FORBIDDEN_CLAIM_PHRASES,
-    ORGANIZING_GRAMMAR,
+    PRIMARY_OPERATIONS,
     PRODUCT_DESCRIPTION,
     EvidenceLevel,
     MathValidationStatus,
@@ -45,7 +44,7 @@ def sanitize_language(text: str) -> tuple[str, list[str]]:
     cleaned = text
     replacements = (
         (r"\bderives Newtonian gravity from the SFE\b",
-         "expresses the Newtonian Poisson solution using Functional Role Analysis"),
+         "represents the Newtonian Poisson equation using functional roles"),
         (r"\bderives gravity\b", "represents the stated gravity equation"),
         (r"\bproves\b", "is consistent with"),
         (r"\bdiscovers\b", "records"),
@@ -72,27 +71,39 @@ class AuditReport:
     identifiability: dict[str, Any] | None = None
     index_audit: dict[str, Any] | None = None
     extra_structures: list[str] = field(default_factory=list)
-    canonical_sfe_status: str = CANONICAL_SFE_STATUS
+    architecture_pretty: str = ""
+    pattern: str = ""
     language_flags: list[str] = field(default_factory=list)
     notes: list[str] = field(default_factory=list)
 
     def narrative(self) -> str:
         lines = [
-            "Domain Architect — Functional Role Analysis report",
+            "Domain Architect — Functional Role Decomposition",
             "",
             PRODUCT_DESCRIPTION,
             "",
-            f"Organizing grammar (organizational, not a universal law): {ORGANIZING_GRAMMAR}",
+            f"Primary operations: {PRIMARY_OPERATIONS}",
             f"Highest evidence level actually supported: {self.highest_evidence_level.label}",
-            f"Canonical SFE status: {self.canonical_sfe_status}.",
             "",
             f"Input: {self.input_expression}",
-            "",
-            "Abstract syntax tree:",
-            self.ast_pretty or "(unparsed)",
-            "",
-            "Role assignments (structural candidates, not physical identities):",
         ]
+        if self.pattern:
+            lines.extend(["", f"Detected pattern: {self.pattern}"])
+        lines.extend(
+            [
+                "",
+                "Abstract syntax tree:",
+                self.ast_pretty or "(unparsed)",
+            ]
+        )
+        if self.architecture_pretty:
+            lines.extend(["", "Functional architecture:", self.architecture_pretty])
+        lines.extend(
+            [
+                "",
+                "Role assignments (role + confidence + rationale):",
+            ]
+        )
         if not self.role_assignments:
             lines.append("  none — symbols were not assigned physical roles from their names")
         for item in self.role_assignments:
@@ -137,8 +148,7 @@ class AuditReport:
         if self.extra_structures:
             lines.append("")
             lines.append(
-                "Independently necessary structures recorded in E: "
-                + ", ".join(self.extra_structures)
+                "Independently necessary structures: " + ", ".join(self.extra_structures)
             )
         if self.warnings:
             lines.append("")
@@ -160,6 +170,8 @@ class AuditReport:
             "highest_evidence_level": int(self.highest_evidence_level),
             "highest_evidence_label": self.highest_evidence_level.label,
             "ast_pretty": self.ast_pretty,
+            "architecture_pretty": self.architecture_pretty,
+            "pattern": self.pattern,
             "role_assignments": self.role_assignments,
             "warnings": self.warnings,
             "confidence": self.confidence.as_dict(),
@@ -169,7 +181,6 @@ class AuditReport:
             "identifiability": self.identifiability,
             "index_audit": self.index_audit,
             "extra_structures": self.extra_structures,
-            "canonical_sfe_status": self.canonical_sfe_status,
             "language_flags": self.language_flags,
             "notes": self.notes,
             "narrative": self.narrative(),

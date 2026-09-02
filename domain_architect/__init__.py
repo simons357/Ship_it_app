@@ -1,37 +1,49 @@
-"""Domain Architect — Functional Role Analysis and model-auditing tools.
+"""Domain Architect — decompose, translate, synthesize.
 
-This package is a research architecture for classifying mathematical models
-into independently meaningful roles. It is not a physical theory, a
-canonical Simons Field Equation, or a proof engine.
+This package is a computational framework for functional-role architecture.
+It is not a physical theory and it does not assume that corresponding
+functions are physically equivalent. SFE and the Harmonic Blueprint are
+not part of the live import surface.
 
-Organizational grammar (not a universal physical equation):
+Primary operations:
 
-    Φ = ℱ(P, H, ψ, λ; E)
-
-P, H, ψ, λ, and Φ are role names. They do not imply that every equation
-has exactly four inputs and one output.
+    DECOMPOSE → CROSS-DOMAIN TRANSLATE → SYNTHESIZE
 """
 
 from .schema import (
-    CANONICAL_SFE_STATUS,
+    PRIMARY_OPERATIONS,
     PRODUCT_DESCRIPTION,
+    CompatibilityClass,
+    CorrespondenceKind,
     EvidenceLevel,
-    PermissionSubtype,
-    RecoveryKind,
-    ScaleResponseSubtype,
+    FunctionalRole,
+    ValidationGate,
 )
 from .audit import audit_expression
+from .cycle import CycleReport, CycleSpec, run_cycle
+from .decompose import decompose
+from .pipeline import run_benchmarks, run_named_cycle
 from .report import AuditReport
+from .translate import translate, translate_expressions
 
 __all__ = [
-    "CANONICAL_SFE_STATUS",
+    "PRIMARY_OPERATIONS",
     "PRODUCT_DESCRIPTION",
     "AuditReport",
+    "CompatibilityClass",
+    "CorrespondenceKind",
+    "CycleReport",
+    "CycleSpec",
     "EvidenceLevel",
-    "PermissionSubtype",
-    "RecoveryKind",
-    "ScaleResponseSubtype",
+    "FunctionalRole",
+    "ValidationGate",
     "audit_expression",
+    "decompose",
+    "run_benchmarks",
+    "run_cycle",
+    "run_named_cycle",
+    "translate",
+    "translate_expressions",
 ]
 
-__version__ = "0.2.0"
+__version__ = "1.1.0"

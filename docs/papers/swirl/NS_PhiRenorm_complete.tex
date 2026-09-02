@@ -1,0 +1,999 @@
+\documentclass{article}
+\usepackage{amsmath,amsthm,amssymb,mathtools,fullpage}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+
+%--------------------------------------------------------------------
+% Theorem environments
+%--------------------------------------------------------------------
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+%--------------------------------------------------------------------
+% Macros
+%--------------------------------------------------------------------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\half}{\tfrac{1}{2}}
+\newcommand{\Lc}{\mathcal{L}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\inner}[2]{\langle #1,\, #2\rangle}
+\newcommand{\ddt}{\tfrac{d}{dt}}
+
+\title{Phi-Renormalization for Axisymmetric-with-Swirl\\
+Navier--Stokes: A Conditional Reduction of Global Regularity}
+\author{Jonathan Robert Simons, CRNA \\
+Prime Field Technologies LLC, Savannah, Georgia \\
+\texttt{jonathansimons357@proton.me}}
+\date{April 2026 \quad --- \quad Preprint}
+
+\begin{document}
+
+\maketitle
+
+%====================================================================
+\begin{abstract}
+%====================================================================
+We study the three-dimensional incompressible Navier--Stokes equations
+with axisymmetric-with-swirl initial data on $\R^3$, augmented by the
+linear fractional hyperdissipation $Q_1 = -\e(-\Delta)^{(\beta+2)/2}$
+with $\beta = 0.6 > \frac{1}{2}$.  By the Lions threshold \cite{Lions1969},
+the augmented system admits a unique global smooth solution for every
+fixed $\e > 0$.
+
+The central technical contribution is the \emph{Phi-renormalization}
+(Theorem~\ref{thm:phi}):  the substitution $\Phi = u^\theta/r$, together
+with $\Gamma = r u^\theta$, yields the identity
+$r^{-4}\partial_z(\Gamma^2) = \partial_z(\Phi^2)$.  This rewrites the
+swirl-vorticity source term without the explicit $1/r^4$ prefactor,
+relocating the axis difficulty into the advection coefficient $u^r/r$;
+it does not by itself remove that difficulty.
+
+For the augmented system we establish: (i)~uniform-in-$\e$ $L^2$
+energy and $\Gamma$-bounds; (ii)~a Phi-energy estimate for the renormalized
+swirl $\Phi$ with an explicit Gronwall constant $C(\e)$ depending on
+$\norm{u^r_\e/r}_{L^\infty}$; (iii)~weak compactness via Aubin--Lions as
+$\e\to 0$; (iv)~every subsequential limit is a Leray--Hopf weak solution
+of the classical system.  Whether this weak solution is globally smooth
+reduces to a single explicitly stated open condition:
+$\e$-independence of $C(\e)$ (Open Problem~\ref{op:gronwall}).
+
+\medskip\noindent
+\textbf{What this paper does not prove.}\enspace
+Unconditional global regularity of the axisymmetric-with-swirl system: the
+reduction is conditional on the $\e$-independent bound of Open
+Problem~\ref{op:gronwall}.
+
+\medskip\noindent
+\textbf{MSC 2020:} 35Q30, 76D05, 76D03, 35B65.\\
+\textbf{Keywords:} Navier--Stokes, axisymmetric swirl,
+Phi-renormalization, axis singularity, fractional dissipation,
+global regularity.
+\end{abstract}
+
+\tableofcontents
+
+%====================================================================
+\section{Introduction}
+%====================================================================
+
+The global regularity of the three-dimensional incompressible Navier--Stokes
+equations
+\begin{equation}\label{eq:NS}
+  \partial_t u + (u\cdot\nabla)u = -\nabla p + \nu\Delta u,
+  \quad \operatorname{div} u = 0,
+  \quad u(0) = u_0,
+\end{equation}
+is one of the seven Clay Millennium Prize Problems \cite{FeffermanClay}.
+Leray \cite{Leray1934} constructed global weak solutions; their smoothness
+for all time remains unresolved.
+
+In the \emph{axisymmetric-with-swirl} class, the flow has an additional
+algebraic structure in cylindrical coordinates: the velocity field is
+independent of the azimuthal angle $\theta$ and carries a nonzero swirl
+component $u^\theta$.  The swirl introduces a centrifugal forcing term in
+the vorticity equation that is potentially singular on the symmetry axis
+$r = 0$.  Controlling this term is the central difficulty of the
+axisymmetric-with-swirl problem; in the absence of swirl (i.e., $u^\theta
+\equiv 0$), global regularity is known \cite{Ladyzhenskaya,UY1968}.
+
+We study the $Q_1$-augmented system
+\begin{equation}\label{eq:NSe}
+  \partial_t u + (u\cdot\nabla)u = -\nabla p + \nu\Delta u
+  - \e(-\Delta)^{(\beta+2)/2}u,
+  \quad \operatorname{div} u = 0,
+  \quad u(0) = u_0,
+\end{equation}
+with $\e > 0$ and $\beta = 0.6$.  The augmentation is a \emph{linear}
+fractional hyperdissipation; with $\beta > \frac{1}{2}$, Lions
+\cite{Lions1969} guarantees global smooth solutions for each fixed $\e > 0$.
+Our contribution is to analyze the limit $\e\to 0$ for axisymmetric-with-swirl
+data by exploiting the Phi-renormalization.
+
+\subsection*{Organization}
+
+Section~\ref{sec:notation} fixes notation.
+Section~\ref{sec:axi} derives the axisymmetric-with-swirl scalar equations.
+Section~\ref{sec:Q1} records the Lions theorem.
+Section~\ref{sec:energy} establishes uniform $L^2$ and $L^\infty$ bounds.
+Section~\ref{sec:phi} contains the Phi-renormalization.
+Section~\ref{sec:phienergy} derives the Phi-energy estimate in full.
+Section~\ref{sec:global} establishes global regularity of the $\e$-system.
+Section~\ref{sec:compact} proves the Aubin--Lions compactness and the
+limit theorem.
+Section~\ref{sec:open} states the open problems precisely.
+Section~\ref{sec:conclusion} concludes.
+
+%====================================================================
+\section{Notation and Function Spaces}\label{sec:notation}
+%====================================================================
+
+We work on $\R^3$ with cylindrical coordinates $(r,\theta,z)$ where
+$r = \sqrt{x_1^2+x_2^2}\ge 0$.
+
+\medskip\noindent
+\textbf{Sobolev spaces.}
+For $s\ge 0$, $H^s(\R^3)$ is the standard Sobolev space with
+\[
+  \norm{f}_{H^s}^2 = \int_{\R^3}(1+|\xi|^2)^s|\hat f(\xi)|^2\,d\xi,
+  \qquad
+  \norm{f}_{\dot H^s}^2 = \int_{\R^3}|\xi|^{2s}|\hat f(\xi)|^2\,d\xi.
+\]
+
+\medskip\noindent
+\textbf{Weighted $L^2$ spaces.}
+We use the measure $r\,dr\,dz$ throughout; explicitly,
+\[
+  \norm{f}_{L^2_r}^2 = \int_0^\infty\int_{-\infty}^\infty |f(r,z)|^2\,
+  r\,dr\,dz
+\]
+and $H^1_r$ is defined with $\norm{\nabla f}_{L^2_r}$ as the gradient part
+of the norm.  We also use the measure $dr\,dz$ (no weight) and write
+$L^2(dr\,dz)$ to distinguish.
+
+\medskip\noindent
+\textbf{Axisymmetric-with-swirl fields.}
+A divergence-free velocity field is axisymmetric-with-swirl if
+\[
+  u = u^r(r,z,t)\,\mathbf{e}_r + u^\theta(r,z,t)\,\mathbf{e}_\theta
+    + u^z(r,z,t)\,\mathbf{e}_z.
+\]
+\emph{Axis regularity conditions:}  $u^r = u^\theta = \partial_r u^z = 0$
+on $r = 0$.  These are compatible conditions preserved by the flow.
+
+\medskip\noindent
+\textbf{Key variables.}
+\begin{align*}
+  \Gamma &:= r\,u^\theta  && \text{(angular momentum per unit mass)},\\
+  \Phi   &:= u^\theta/r   && \text{(renormalized swirl)},\\
+  \omega^\theta &:= \partial_z u^r - \partial_r u^z
+                          && \text{(azimuthal vorticity)},\\
+  \Omega &:= \omega^\theta/r
+                          && \text{(renormalized azimuthal vorticity)}.
+\end{align*}
+Note $\Gamma = r^2\Phi$ (equivalently $u^\theta = r\Phi$), and $\Phi$ extends
+smoothly across $r=0$ because $u^\theta = O(r)$ at the axis.
+
+\medskip\noindent
+\textbf{Constants.}  $C$ denotes a positive constant depending only on
+$\nu$, $\norm{u_0}_{L^2}$, and universal Sobolev constants.  Dependence
+on $\e$ is always written $C(\e)$ and tracked explicitly.
+
+%====================================================================
+\section{The Axisymmetric-with-Swirl Equations}\label{sec:axi}
+%====================================================================
+
+\subsection{Scalar form in cylindrical coordinates}
+
+For an axisymmetric-with-swirl velocity field the incompressibility
+condition reduces to
+\begin{equation}\label{eq:incomp}
+  \frac{1}{r}\partial_r(r\,u^r) + \partial_z u^z = 0,
+  \qquad\text{equivalently}\qquad
+  \partial_r(r\,u^r) + \partial_z(r\,u^z) = 0.
+\end{equation}
+
+The $\theta$-component of the Navier--Stokes momentum equation is
+\begin{equation}\label{eq:utheta}
+  \partial_t u^\theta + u^r\partial_r u^\theta + u^z\partial_z u^\theta
+  + \frac{u^r u^\theta}{r}
+  = \nu\!\left(\partial_r^2 u^\theta + \frac{1}{r}\partial_r u^\theta
+    - \frac{u^\theta}{r^2} + \partial_z^2 u^\theta\right).
+\end{equation}
+The centripetal term $u^r u^\theta/r$ on the left couples the swirl and
+radial motion.
+
+\subsection{The \texorpdfstring{$\Gamma$}{Gamma} equation}
+
+\begin{lemma}\label{lem:Gammaeq}
+  The angular momentum $\Gamma = r u^\theta$ satisfies
+  \begin{equation}\label{eq:Gammaeq}
+    (\partial_t + u^r\partial_r + u^z\partial_z)\Gamma
+    = \nu\!\left(\partial_r^2\Gamma - \frac{1}{r}\partial_r\Gamma
+      + \partial_z^2\Gamma\right).
+  \end{equation}
+\end{lemma}
+\begin{proof}
+Multiply \eqref{eq:utheta} by $r$.  The left side gives
+\[
+  r(\partial_t u^\theta + u^r\partial_r u^\theta + u^z\partial_z u^\theta)
+  + u^r u^\theta
+  = (\partial_t + u^r\partial_r + u^z\partial_z)(ru^\theta)
+  = \frac{D\Gamma}{Dt},
+\]
+where $D/Dt = \partial_t + u^r\partial_r + u^z\partial_z$.  For the right
+side, set $\Gamma = r u^\theta$ and compute using $\partial_r\Gamma = u^\theta
++ r\partial_r u^\theta$, $\partial_{rr}\Gamma = 2\partial_r u^\theta
++ r\partial_{rr}u^\theta$:
+The $\theta$-component of the \emph{vector} Laplacian is
+$\Delta_{\rm cyl}u^\theta - u^\theta/r^2$, where
+$\Delta_{\rm cyl} = \partial_{rr} + \frac{1}{r}\partial_r + \partial_{zz}$
+is the scalar Laplacian acting on the $\theta$-independent profile
+$u^\theta$ and $-u^\theta/r^2$ is the single curvature term.  Thus
+\begin{align*}
+  \nu r\!\left(\Delta_{\rm cyl}u^\theta - \frac{u^\theta}{r^2}\right)
+  &= \nu r\!\left(\partial_{rr}u^\theta + \frac{1}{r}\partial_r u^\theta
+    + \partial_{zz}u^\theta - \frac{u^\theta}{r^2}\right)\\
+  &= \nu\!\left(r\partial_{rr}u^\theta + \partial_r u^\theta
+    + r\partial_{zz}u^\theta - \frac{u^\theta}{r}\right).
+\end{align*}
+Substituting $r\partial_{rr}u^\theta = \partial_{rr}\Gamma
+- 2\partial_r u^\theta$, $\partial_r u^\theta = \partial_r\Gamma/r - \Gamma/r^2$,
+and $u^\theta = \Gamma/r$:
+\begin{align*}
+  &= \nu\!\left(\partial_{rr}\Gamma - 2\partial_r u^\theta
+    + \partial_r u^\theta - \frac{u^\theta}{r} + \partial_{zz}\Gamma\right)
+  = \nu\!\left(\partial_{rr}\Gamma - \partial_r u^\theta
+    - \frac{u^\theta}{r} + \partial_{zz}\Gamma\right)\\
+  &= \nu\!\left(\partial_{rr}\Gamma
+    - \Bigl(\tfrac{\partial_r\Gamma}{r} - \tfrac{\Gamma}{r^2}\Bigr)
+    - \frac{\Gamma}{r^2} + \partial_{zz}\Gamma\right)
+  = \nu\!\left(\partial_{rr}\Gamma - \frac{1}{r}\partial_r\Gamma
+    + \partial_{zz}\Gamma\right).
+\end{align*}
+The two curvature contributions cancel exactly,
+$+\Gamma/r^2 - \Gamma/r^2 = 0$, leaving no $\Gamma/r^2$ term and yielding
+\eqref{eq:Gammaeq}. \quad (See also \cite{MajdaBertozzi}, Ch.~2.)
+\end{proof}
+
+\begin{remark}
+  The operator on the right of \eqref{eq:Gammaeq} is
+  $\Lc_0 = \partial_{rr} - (1/r)\partial_r + \partial_{zz}$.
+  In the weighted space $L^2_r$, integration by parts gives
+  \[
+    \int\Lc_0\Gamma\cdot\Gamma\cdot r\,dr\,dz
+    = -\norm{\nabla\Gamma}_{L^2_r}^2,
+  \]
+  so $\Lc_0$ is dissipative in $L^2_r$.  The $-(1/r)\partial_r$ term is a
+  drift pointing away from the axis, which helps maintain coercivity.
+\end{remark}
+
+\subsection{The vorticity equation for \texorpdfstring{$\Omega$}{Omega}}
+
+\begin{lemma}\label{lem:Omegaeq}
+  The renormalized azimuthal vorticity $\Omega = \omega^\theta/r$ satisfies
+  \begin{equation}\label{eq:Omegaeq}
+    (\partial_t + u^r\partial_r + u^z\partial_z)\Omega
+    = \frac{1}{r^4}\partial_z(\Gamma^2)
+    + \nu\!\left(\partial_r^2\Omega + \frac{3}{r}\partial_r\Omega
+      + \partial_z^2\Omega\right).
+  \end{equation}
+\end{lemma}
+\begin{proof}
+  The azimuthal component of the NS vorticity equation
+  $\partial_t\omega + (u\cdot\nabla)\omega = (\omega\cdot\nabla)u
+  + \nu\Delta_{\rm vec}\omega$ reduces for axisymmetric fields to
+  \[
+    (\partial_t + u^r\partial_r + u^z\partial_z)\omega^\theta
+    - \frac{u^r\omega^\theta}{r}
+    = \frac{\partial_z(u^\theta)^2}{r}
+    + \nu\!\left(\Delta\omega^\theta - \frac{\omega^\theta}{r^2}\right).
+  \]
+  Divide by $r$ and write $\omega^\theta = r\Omega$.  The left side becomes
+  $(\partial_t + u^r\partial_r + u^z\partial_z)\Omega$ (the $u^r/r$ terms
+  cancel).  The source term: $(u^\theta)^2 = \Gamma^2/r^2$, so
+  $\partial_z(u^\theta)^2/r^2 = \partial_z(\Gamma^2/r^2)/r^2
+  = (1/r^4)\partial_z(\Gamma^2)$ (since $\partial_z$ holds $r$ fixed).
+  
+  For the diffusion term, compute $\nu r^{-1}(\Delta(r\Omega) - \Omega)$:
+  \begin{align*}
+    \Delta(r\Omega) &= \partial_{rr}(r\Omega) + \tfrac{1}{r}\partial_r(r\Omega)
+      + \partial_{zz}(r\Omega)\\
+    &= (2\partial_r\Omega + r\partial_{rr}\Omega)
+      + (\tfrac{\Omega}{r} + \partial_r\Omega)
+      + r\partial_{zz}\Omega.
+  \end{align*}
+  Thus $\Delta(r\Omega) - \Omega = r\partial_{rr}\Omega + 3\partial_r\Omega
+  + \Omega/r + r\partial_{zz}\Omega - \Omega$.  Since $\Omega = O(r^0)$ at
+  the axis, the $\Omega/r$ and $\Omega$ terms combine as
+  $(1/r - 1)\Omega \to 0$; more precisely, dividing by $r$:
+  \[
+    \frac{1}{r}\bigl(\Delta(r\Omega)-\Omega\bigr)
+    = \partial_{rr}\Omega + \frac{3}{r}\partial_r\Omega
+      + \partial_{zz}\Omega,
+  \]
+  yielding \eqref{eq:Omegaeq}.
+\end{proof}
+
+\subsection{The equation for \texorpdfstring{$\Phi$}{Phi}}\label{subsec:Phieq}
+
+\begin{lemma}\label{lem:Phieq}
+  The renormalized swirl $\Phi = u^\theta/r$ satisfies
+  \begin{equation}\label{eq:Phieq}
+    \frac{D\Phi}{Dt} + \frac{2u^r\Phi}{r}
+    = \nu\!\left(\partial_{rr}\Phi + \frac{3}{r}\partial_r\Phi
+      + \partial_{zz}\Phi\right),
+  \end{equation}
+  where $D/Dt = \partial_t + u^r\partial_r + u^z\partial_z$.
+\end{lemma}
+\begin{proof}
+  Write $\Gamma = r^2\Phi$.  Then
+  \[
+    \frac{D\Gamma}{Dt}
+    = r^2\frac{D\Phi}{Dt}
+      + u^r\partial_r(r^2)\Phi
+    = r^2\frac{D\Phi}{Dt} + 2r u^r\Phi.
+  \]
+  Substituting $\Gamma = r^2\Phi$ into \eqref{eq:Gammaeq}:
+  \begin{align*}
+    \partial_{rr}(r^2\Phi) &= 2\Phi + 4r\partial_r\Phi + r^2\partial_{rr}\Phi,\\
+    \frac{1}{r}\partial_r(r^2\Phi) &= 2\Phi + r\partial_r\Phi,\\
+    \partial_{zz}(r^2\Phi) &= r^2\partial_{zz}\Phi.
+  \end{align*}
+  So $\nu\Lc_0\Gamma = \nu(2\Phi + 4r\partial_r\Phi + r^2\partial_{rr}\Phi
+  - 2\Phi - r\partial_r\Phi + r^2\partial_{zz}\Phi)
+  = \nu r^2(\partial_{rr}\Phi + \frac{3}{r}\partial_r\Phi
+  + \partial_{zz}\Phi)$, using that \eqref{eq:Gammaeq} carries no
+  $\Gamma/r^2$ term.  Setting
+  $r^2\frac{D\Phi}{Dt} + 2ru^r\Phi = \nu r^2(\partial_{rr}\Phi
+  + (3/r)\partial_r\Phi + \partial_{zz}\Phi)$ and dividing by $r^2$
+  gives \eqref{eq:Phieq}.
+\end{proof}
+
+\subsection{The augmented scalar system}
+
+Including the $Q_1$ fractional dissipation, the augmented equations for
+$(\Omega_\e, \Gamma_\e, \Phi_\e)$ are:
+\begin{align}
+  (\partial_t + u_\e\cdot\nabla)\Omega_\e
+    &= \frac{1}{r^4}\partial_z(\Gamma_\e^2)
+       + \nu\Lc_4\Omega_\e
+       - \e(-\Delta)^{1.3}\Omega_\e,
+       \label{eq:NSe-Omega}\\
+  (\partial_t + u_\e\cdot\nabla)\Gamma_\e
+    &= \nu\Lc_0\Gamma_\e - \e(-\Delta)^{1.3}\Gamma_\e,
+       \label{eq:NSe-Gamma}\\
+  \frac{D\Phi_\e}{Dt} + \frac{2u_\e^r\Phi_\e}{r}
+    &= \nu\Lc_4\Phi_\e - \e(-\Delta)^{1.3}\Phi_\e,
+       \label{eq:NSe-Phi}
+\end{align}
+where $\Lc_4 = \partial_{rr} + (3/r)\partial_r + \partial_{zz}$ is the same
+operator that governs $\Omega$ in \eqref{eq:Omegaeq}.
+
+%====================================================================
+\section{The \texorpdfstring{$Q_1$}{Q1} Augmentation
+  and the Lions Threshold}\label{sec:Q1}
+%====================================================================
+
+\begin{theorem}[Lions 1969, \cite{Lions1969}]\label{thm:lions}
+  Let $\beta \ge \tfrac{1}{2}$.  For each $\e > 0$ and
+  axisymmetric-with-swirl $u_0\in H^s_{\rm axi}(\R^3)$ with $s$
+  sufficiently large, the $Q_1$-augmented system \eqref{eq:NSe} admits a
+  unique global smooth solution $u_\e \in C^\infty(\R^3\times[0,\infty))$.
+\end{theorem}
+
+Our value $\beta = 0.6$ satisfies $\beta > \tfrac{1}{2}$ strictly.
+Theorem~\ref{thm:lions} is applied as a black box; the contribution of
+this paper is the analysis of the limit $\e\to 0$ for axisymmetric-with-swirl
+data via the Phi-renormalization.
+
+%====================================================================
+\section{Uniform Energy Estimates}\label{sec:energy}
+%====================================================================
+
+\subsection{\texorpdfstring{$L^2$}{L2} energy inequality}
+
+\begin{proposition}\label{prop:L2}
+  The $Q_1$-augmented solutions satisfy
+  \begin{equation}\label{eq:energy}
+    \half\ddt\norm{u_\e}_{L^2}^2
+    + \nu\norm{\nabla u_\e}_{L^2}^2
+    + \e\norm{u_\e}_{\dot H^{2.6}}^2 = 0.
+  \end{equation}
+  Consequently, $\norm{u_\e(t)}_{L^2} \le \norm{u_0}_{L^2} =: M$
+  for all $t\ge 0$ and all $\e > 0$, and
+  \begin{equation}\label{eq:H1int}
+    \int_0^T\norm{\nabla u_\e}_{L^2}^2\,dt \le \frac{M^2}{2\nu},
+    \qquad
+    \e\int_0^T\norm{u_\e}_{\dot H^{2.6}}^2\,dt \le \frac{M^2}{2},
+  \end{equation}
+  both uniform in $\e > 0$.
+\end{proposition}
+\begin{proof}
+  Take the $L^2(\R^3)$ inner product of \eqref{eq:NSe} with $u_\e$.
+  The pressure term vanishes by $\operatorname{div}u_\e = 0$.  The
+  nonlinear term vanishes:
+  $\inner{(u_\e\cdot\nabla)u_\e}{u_\e} = \half\int u_\e\cdot\nabla|u_\e|^2
+  = -\half\int(\operatorname{div}u_\e)|u_\e|^2 = 0$.
+  The viscous term gives $-\nu\norm{\nabla u_\e}_{L^2}^2$, and the
+  $Q_1$ term gives $-\e\norm{u_\e}_{\dot H^{2.6}}^2 \le 0$.
+  This yields \eqref{eq:energy}.  Integrating in $t$ and using
+  non-negativity of all terms gives \eqref{eq:H1int}.
+\end{proof}
+
+\subsection{\texorpdfstring{$L^\infty$}{L-infty} bound on
+  \texorpdfstring{$\Gamma$}{Gamma}}
+
+\begin{lemma}\label{lem:Gamma}
+  If $\Gamma_0 = r\,u_0^\theta \in L^\infty\cap L^2(\R^3)$, then
+  \begin{equation}\label{eq:Gammainf}
+    \norm{\Gamma_\e(t)}_{L^\infty} \le \norm{\Gamma_0}_{L^\infty}
+    =: G_0
+    \quad\text{for all } t\ge 0,\ \e > 0.
+  \end{equation}
+\end{lemma}
+\begin{proof}
+  Equation \eqref{eq:NSe-Gamma} is
+  $D\Gamma_\e/Dt = \nu\Lc_0\Gamma_\e - \e(-\Delta)^{1.3}\Gamma_\e$.
+  Both $\nu\Lc_0$ and $-\e(-\Delta)^{1.3}$ are dissipative operators.
+  Let $\Gamma_\e$ achieve its spatial maximum at $(r_0,z_0,t_0)$ with
+  $r_0 > 0$.  At that point $\nabla\Gamma_\e = 0$ and
+  $\partial_{rr}\Gamma_\e \le 0$, $\partial_{zz}\Gamma_\e \le 0$,
+  giving $\Lc_0\Gamma_\e \le 0$.  The nonlocal term
+  $-\e(-\Delta)^{1.3}\Gamma_\e \le 0$ at a global maximum by the
+  nonlocal maximum principle \cite{Stinga2010}.  Hence $D\Gamma_\e/Dt \le 0$
+  at the maximum, so the maximum is non-increasing.  On the axis $r=0$,
+  $\Gamma_\e = r u_\e^\theta = 0$ by the axis regularity condition.
+  Therefore $\norm{\Gamma_\e(t)}_{L^\infty}$ is non-increasing in $t$,
+  giving \eqref{eq:Gammainf}.
+\end{proof}
+
+%====================================================================
+\section{The Phi-Renormalization}\label{sec:phi}
+%====================================================================
+
+\subsection{The algebraic cancellation identity}
+
+\begin{lemma}[Exact algebraic cancellation]\label{lem:cancel}
+  With $\Gamma = r u^\theta$ and $\Phi = u^\theta/r$, so that
+  $\Gamma = r^2\Phi$, the following identity holds for all $(r,z,t)$:
+  \begin{equation}\label{eq:cancel}
+    \frac{1}{r^4}\partial_z(\Gamma^2) = \partial_z(\Phi^2).
+  \end{equation}
+  In particular, the right-hand side is smooth on the axis $r=0$,
+  since $\Phi = u^\theta/r$ extends smoothly there (the axis condition
+  $u^\theta = O(r)$ is preserved by the flow).
+  No Hardy inequality is required or used.
+\end{lemma}
+\begin{proof}
+  Direct computation:  $\Gamma^2 = (r^2\Phi)^2 = r^4\Phi^2$.
+  Differentiating in $z$ with $r$ held fixed:
+  $\partial_z(\Gamma^2) = r^4\,\partial_z(\Phi^2)$.
+  Dividing both sides by $r^4$ gives \eqref{eq:cancel}.
+\end{proof}
+
+\begin{remark}
+  Identity \eqref{eq:cancel} is purely algebraic and holds
+  independently of whether the flow is viscous, inviscid, or augmented.
+  It is the sole mechanism behind the cancellation; no functional
+  inequality is invoked.
+\end{remark}
+
+\subsection{Effect on the vorticity equation}
+
+Substituting \eqref{eq:cancel} into \eqref{eq:NSe-Omega}, the augmented
+$\Omega$-equation becomes
+\begin{equation}\label{eq:Omega-renorm}
+  (\partial_t + u_\e\cdot\nabla)\Omega_\e
+  = \partial_z(\Phi_\e^2)
+  + \nu\Lc_4\Omega_\e
+  - \e(-\Delta)^{1.3}\Omega_\e.
+\end{equation}
+The source term is now $\partial_z(\Phi_\e^2) = 2\Phi_\e\partial_z\Phi_\e$,
+which is smooth across $r=0$.
+
+\begin{theorem}[Phi-renormalization]\label{thm:phi}
+  For axisymmetric-with-swirl $Q_1$-augmented solutions with
+  $\Gamma_0\in L^\infty\cap L^2$ and $\Phi_0 = u_0^\theta/r \in L^2_r$:
+  \begin{enumerate}
+  \item[\textup{(i)}]
+    \emph{(No axis singularity.)}
+    The singular term $r^{-4}\partial_z(\Gamma_\e^2)$ in the
+    $\Omega$-equation is identically equal to $\partial_z(\Phi_\e^2)$
+    by Lemma~\ref{lem:cancel}.  No residual singularity at $r=0$
+    remains.
+
+  \item[\textup{(ii)}]
+    \emph{(Phi-energy estimate.)}
+    There exists a constant $C(\e)$, bounded for each fixed $\e > 0$
+    and depending on $\norm{u^r_\e/r}_{L^\infty_{t,x}}$, $G_0$, and
+    $M$, such that
+    \begin{equation}\label{eq:phi-energy}
+      \half\ddt\norm{\Phi_\e}_{L^2_r}^2
+      + \nu\norm{\nabla\Phi_\e}_{L^2_r}^2
+      + \nu\int_{\R}\!\Phi_\e(0,z)^2\,dz
+      + \e\norm{\Phi_\e}_{\dot H^{2.6}_r}^2
+      \le C(\e)\norm{\Phi_\e}_{L^2_r}^2.
+    \end{equation}
+
+  \item[\textup{(iii)}]
+    \emph{(Gronwall bound.)}
+    By Gronwall's inequality,
+    \begin{equation}\label{eq:phi-gronwall}
+      \norm{\Phi_\e(t)}_{L^2_r}
+      \le \norm{\Phi_0}_{L^2_r}\,e^{C(\e)t}
+      \quad\text{for all } t\ge 0.
+    \end{equation}
+  \end{enumerate}
+  
+  \medskip\noindent
+  \textbf{The open condition.}\enspace
+  If $C(\e)$ admits an $\e$-independent upper bound
+  $C_0 = C_0(M, G_0)$, independent of $\e > 0$, then the Leray--Hopf
+  weak solution of Theorem~\ref{thm:limit} is globally smooth.
+  This is Open Problem~\ref{op:gronwall}.
+\end{theorem}
+
+The proof of Theorem~\ref{thm:phi} is given in full in the next section.
+
+%====================================================================
+\section{The Phi-Energy Estimate in Full}\label{sec:phienergy}
+%====================================================================
+
+\subsection{Taking the \texorpdfstring{$L^2_r$}{L2r} inner product}
+
+Take the $L^2_r$ inner product of \eqref{eq:NSe-Phi} with $\Phi_\e$,
+i.e., multiply by $\Phi_\e$ and integrate against $r\,dr\,dz$:
+\begin{align}
+  \half\ddt\norm{\Phi_\e}_{L^2_r}^2
+  + \underbrace{\int\!\!\left(u_\e^r\partial_r\Phi_\e
+    + u_\e^z\partial_z\Phi_\e
+    + \frac{2u_\e^r\Phi_\e}{r}\right)\!\Phi_\e\,r\,dr\,dz}_{=:\,T_{\rm adv}}
+  &\nonumber\\
+  = \nu\underbrace{\int\!\!\Lc_4\Phi_\e\cdot\Phi_\e\,r\,dr\,dz}_{=:\,T_{\rm visc}}
+  &- \e\norm{\Phi_\e}_{\dot H^{2.6}_r}^2.
+  \label{eq:Phienergy}
+\end{align}
+
+\subsection{The advection term \texorpdfstring{$T_{\rm adv}$}{T-adv}}
+
+\begin{lemma}\label{lem:Tadv}
+  $T_{\rm adv} = 2\displaystyle\int\! u_\e^r\,\Phi_\e^2\,dr\,dz$.
+\end{lemma}
+\begin{proof}
+  Write $T_{\rm adv} = \frac{1}{2}\int u_\e\cdot\nabla(\Phi_\e^2)
+  \cdot r\,dr\,dz + 2\int u_\e^r\Phi_\e^2\,dr\,dz$.
+  Integrate by parts:
+  \[
+    \frac{1}{2}\int u_\e^r\partial_r(\Phi_\e^2)\cdot r\,dr\,dz
+    = -\frac{1}{2}\int\Phi_\e^2\,\partial_r(r u_\e^r)\,dr\,dz,
+  \]
+  \[
+    \frac{1}{2}\int u_\e^z\partial_z(\Phi_\e^2)\cdot r\,dr\,dz
+    = -\frac{1}{2}\int\Phi_\e^2\,\partial_z(r u_\e^z)\,dr\,dz.
+  \]
+  By axisymmetric incompressibility \eqref{eq:incomp},
+  $\partial_r(r u_\e^r) + \partial_z(r u_\e^z) = 0$.  Hence the two
+  integration-by-parts terms sum to zero, leaving
+  $T_{\rm adv} = 2\int u_\e^r\Phi_\e^2\,dr\,dz$.
+\end{proof}
+
+\subsection{Bounding \texorpdfstring{$T_{\rm adv}$}{T-adv}}
+
+Factor out $u_\e^r/r$:
+\begin{equation}\label{eq:Tadvbound}
+  |T_{\rm adv}|
+  = 2\left|\int\frac{u_\e^r}{r}\,\Phi_\e^2\,r\,dr\,dz\right|
+  \le 2\norm{\frac{u_\e^r}{r}}_{L^\infty}\norm{\Phi_\e}_{L^2_r}^2.
+\end{equation}
+For smooth axisymmetric fields, the axis regularity condition
+$u^r|_{r=0} = 0$ together with $u^r = O(r)$ implies $u^r/r$ is bounded
+and smooth.  For the $Q_1$-augmented system, Theorem~\ref{thm:lions}
+ensures $u_\e \in C^\infty$ for each $\e > 0$, so
+\begin{equation}\label{eq:Ce}
+  C(\e) := 2\sup_{t\in[0,T]}\norm{\frac{u_\e^r(t)}{r}}_{L^\infty} < \infty
+  \quad\text{for each fixed }\e > 0.
+\end{equation}
+Equation \eqref{eq:Tadvbound} becomes $|T_{\rm adv}| \le C(\e)\norm{\Phi_\e}_{L^2_r}^2$.
+
+\subsection{The viscous term \texorpdfstring{$T_{\rm visc}$}{T-visc}}
+
+\begin{lemma}\label{lem:Tvisc}
+  $T_{\rm visc}
+  = -\norm{\nabla\Phi_\e}_{L^2_r}^2
+  - \displaystyle\int_{\R}\!\Phi_\e(0,z)^2\,dz \le 0$.
+\end{lemma}
+\begin{proof}
+  Recall $\Lc_4 = \partial_{rr} + (3/r)\partial_r + \partial_{zz}$.
+  We compute each piece against the weight $r\,dr\,dz$.
+
+  \medskip\noindent
+  \emph{The $\partial_{rr}$ piece.}
+  Integrating by parts in $r$,
+  \[
+    \int\partial_{rr}\Phi_\e\cdot\Phi_\e\cdot r\,dr\,dz
+    = -\int(\partial_r\Phi_\e)^2\,r\,dr\,dz
+      - \int\partial_r\Phi_\e\cdot\Phi_\e\,dr\,dz,
+  \]
+  the boundary contribution
+  $[\,r\,\partial_r\Phi_\e\,\Phi_\e\,]_{r=0}^{r=\infty}$ vanishing (the
+  weight $r$ kills the axis endpoint, decay kills $r=\infty$).
+
+  \medskip\noindent
+  \emph{The $(3/r)\partial_r$ piece.}
+  \[
+    3\int\frac{1}{r}\partial_r\Phi_\e\cdot\Phi_\e\cdot r\,dr\,dz
+    = 3\int\partial_r\Phi_\e\cdot\Phi_\e\,dr\,dz.
+  \]
+
+  \medskip\noindent
+  \emph{The $\partial_{zz}$ piece.}
+  \[
+    \int\partial_{zz}\Phi_\e\cdot\Phi_\e\cdot r\,dr\,dz
+    = -\int(\partial_z\Phi_\e)^2\,r\,dr\,dz.
+  \]
+
+  Summing the three pieces,
+  \[
+    T_{\rm visc}
+    = -\norm{\nabla\Phi_\e}_{L^2_r}^2
+      + 2\int\partial_r\Phi_\e\cdot\Phi_\e\,dr\,dz .
+  \]
+  The remaining term is a genuine axis boundary term and does
+  \emph{not} vanish in general:
+  \[
+    2\int\partial_r\Phi_\e\cdot\Phi_\e\,dr\,dz
+    = \int_{\R}\!\bigl[\Phi_\e^2\bigr]_{r=0}^{r=\infty}\,dz
+    = -\int_{\R}\!\Phi_\e(0,z)^2\,dz,
+  \]
+  since $\Phi_\e\to 0$ as $r\to\infty$ while
+  $\Phi_\e(0,z) = \partial_r u^\theta_\e|_{r=0}$ need not vanish.  Hence
+  \[
+    T_{\rm visc} = -\norm{\nabla\Phi_\e}_{L^2_r}^2
+    - \int_{\R}\!\Phi_\e(0,z)^2\,dz \le 0,
+  \]
+  both terms being non-positive.  The axis term is \emph{favorable}---it
+  supplies additional dissipation---so the estimate only improves.
+  \qedhere
+\end{proof}
+
+\subsection{Assembling the Phi-energy estimate}
+
+Substituting Lemmas~\ref{lem:Tadv} and~\ref{lem:Tvisc} into
+\eqref{eq:Phienergy}:
+\begin{equation}\label{eq:phifull}
+  \half\ddt\norm{\Phi_\e}_{L^2_r}^2
+  + \nu\norm{\nabla\Phi_\e}_{L^2_r}^2
+  + \nu\int_{\R}\!\Phi_\e(0,z)^2\,dz
+  + \e\norm{\Phi_\e}_{\dot H^{2.6}_r}^2
+  \le C(\e)\norm{\Phi_\e}_{L^2_r}^2.
+\end{equation}
+Gronwall's lemma applied to
+$\ddt\norm{\Phi_\e}_{L^2_r}^2 \le 2C(\e)\norm{\Phi_\e}_{L^2_r}^2$ gives
+\[
+  \norm{\Phi_\e(t)}_{L^2_r}^2
+  \le \norm{\Phi_0}_{L^2_r}^2\,e^{2C(\e)t},
+\]
+completing the proof of Theorem~\ref{thm:phi}.
+
+\subsection{Nature of the constant \texorpdfstring{$C(\e)$}{C(epsilon)}}
+
+The constant $C(\e) = 2\sup_t\norm{u_\e^r/r}_{L^\infty}$ depends on the
+$H^s$ regularity of $u_\e$ for $s \ge 2$, which is controlled by the
+Lions theorem for each fixed $\e > 0$ but may grow as $\e\to 0$.
+Controlling $\norm{u^r/r}_{L^\infty}$ uniformly in $\e$ is precisely the
+open condition: it is related to Prodi--Serrin type criteria for
+Navier--Stokes regularity \cite{Serrin1962}.  The connection is made
+explicit in Open Problem~\ref{op:gronwall}.
+
+%====================================================================
+\section{Global Regularity of the \texorpdfstring{$\e$}{epsilon}-System}
+\label{sec:global}
+%====================================================================
+
+\begin{theorem}[Global smooth solutions for $\mathrm{NS}_\e$]%
+  \label{thm:uniform}
+  Let $\beta = 0.6$ and $\e > 0$.  For axisymmetric-with-swirl initial
+  data $u_0 \in H^\infty_{\rm axi}(\R^3)$ with $\Gamma_0\in L^\infty$
+  and $\Phi_0 \in L^2_r$, the $Q_1$-augmented system \eqref{eq:NSe}
+  admits a unique global smooth solution
+  $u_\e\in C^\infty(\R^3\times[0,\infty))$ satisfying:
+  \begin{itemize}
+    \item $\norm{u_\e(t)}_{L^2} \le M$ \quad (uniform in $\e$ and $t$),
+    \item $\displaystyle\int_0^T\norm{\nabla u_\e}_{L^2}^2\,dt
+      \le M^2/(2\nu)$ \quad (uniform in $\e$),
+    \item $\norm{\Gamma_\e(t)}_{L^\infty} \le G_0$ \quad (uniform in $\e$ and $t$),
+    \item $\norm{\Phi_\e(t)}_{L^2_r} \le \norm{\Phi_0}_{L^2_r}
+      e^{C(\e)t}$ \quad (for each fixed $\e > 0$).
+  \end{itemize}
+\end{theorem}
+\begin{proof}
+  Global existence and smoothness follow from Theorem~\ref{thm:lions}
+  ($\beta > \frac{1}{2}$).  The uniform $L^2$ bound is
+  Proposition~\ref{prop:L2}.  The $\Gamma$-bound is Lemma~\ref{lem:Gamma}.
+  The $\Phi$-bound is Theorem~\ref{thm:phi}(iii).
+
+  Higher Sobolev bounds follow by a standard elliptic bootstrap:
+  given $H^k$ control on $(\Omega_\e, \Gamma_\e, \Phi_\e)$, the
+  equations \eqref{eq:NSe-Omega}--\eqref{eq:NSe-Phi} provide $H^{k+1}$
+  bounds by differentiating the equations and applying the same energy
+  method, with constants depending on $\e$ through $\norm{u_\e}_{H^k}$.
+  The axisymmetric-with-swirl structure is preserved: the axis conditions
+  $u^r = u^\theta = 0$ at $r=0$ are consequences of the symmetry class
+  and the smoothness of $u_\e$, and propagate to all times.
+\end{proof}
+
+%====================================================================
+\section{Compactness and the Limit \texorpdfstring{$\e\to 0$}{epsilon to 0}}
+\label{sec:compact}
+%====================================================================
+
+\subsection{Setup}
+
+Fix $T > 0$.  The family $\{u_\e\}_{0<\e\le 1}$ satisfies:
+\begin{align}
+  &\text{(U1)}\quad \sup_{t\in[0,T]}\norm{u_\e(t)}_{L^2} \le M,
+    \label{U1}\\
+  &\text{(U2)}\quad \int_0^T\norm{\nabla u_\e}_{L^2}^2\,dt
+    \le M^2/(2\nu),
+    \label{U2}
+\end{align}
+both uniform in $\e$.
+
+\subsection{Aubin--Lions compactness}
+
+\begin{lemma}[Aubin--Lions]\label{lem:aubin}
+  The family $\{u_\e\}$ is precompact in $L^2([0,T];L^2_{\rm loc}(\R^3))$.
+\end{lemma}
+\begin{proof}
+  From (U1)--(U2), $\{u_\e\}$ is bounded in
+  $L^2([0,T];H^1_{\rm axi}(\R^3))$.
+
+  For the time derivative: testing \eqref{eq:NSe} against
+  $\phi\in H^1_{\rm axi}$ with $\norm{\phi}_{H^1}\le 1$,
+  \begin{align*}
+    |\inner{\partial_t u_\e}{\phi}|
+    &\le |\inner{(u_\e\cdot\nabla)u_\e}{\phi}|
+      + \nu|\inner{\nabla u_\e}{\nabla\phi}|
+      + \e|\inner{(-\Delta)^{1.3}u_\e}{\phi}|\\
+    &\le \norm{u_\e}_{L^4}^2\norm{\phi}_{H^1}
+      + \nu\norm{\nabla u_\e}_{L^2}\norm{\phi}_{H^1}
+      + \e\norm{u_\e}_{\dot H^{2.6}}\norm{\phi}_{\dot H^{2.6}}.
+  \end{align*}
+  Integrating in $t$ and using (U1)--(U2) and Sobolev embedding
+  $H^1\hookrightarrow L^4$ in $\R^3$:  $\{\partial_t u_\e\}$ is
+  bounded in $L^{4/3}([0,T];H^{-1}_{\rm axi})$.
+
+  By the Aubin--Lions lemma \cite{Aubin1963,Lions1969}, a bounded set in
+  $L^2([0,T];H^1)\cap W^{1,4/3}([0,T];H^{-1})$ is precompact in
+  $L^2([0,T];L^2_{\rm loc})$.
+\end{proof}
+
+\subsection{The limit is a Leray--Hopf weak solution}
+
+\begin{theorem}[Weak limit]\label{thm:limit}
+  There exists a subsequence $\e_k\to 0$ and a divergence-free
+  axisymmetric-with-swirl vector field $u\in L^\infty([0,T];L^2)\cap
+  L^2([0,T];H^1)$ such that:
+  \begin{enumerate}
+  \item[\textup{(i)}]
+    $u_{\e_k}\to u$ strongly in $L^2([0,T];L^2_{\rm loc}(\R^3))$,
+  \item[\textup{(ii)}]
+    $u$ is a Leray--Hopf weak solution of the classical system
+    \eqref{eq:NS} with initial data $u_0$.
+  \end{enumerate}
+\end{theorem}
+\begin{proof}
+  \textbf{Step 1: Extraction.}
+  By Lemma~\ref{lem:aubin}, extract a subsequence
+  $u_{\e_k}\to u$ strongly in $L^2([0,T];L^2_{\rm loc})$ and weakly
+  in $L^2([0,T];H^1)$.
+
+  \textbf{Step 2: Limit of the nonlinear term.}
+  For $\phi\in C_0^\infty(\R^3\times[0,T])$:
+  \begin{align*}
+    \int_0^T\inner{(u_{\e_k}\cdot\nabla)u_{\e_k}}{\phi}\,dt
+    -\int_0^T\inner{(u\cdot\nabla)u}{\phi}\,dt
+    &= \int_0^T\inner{(u_{\e_k}-u)\cdot\nabla u_{\e_k}}{\phi}\,dt\\
+    &\quad + \int_0^T\inner{u\cdot\nabla(u_{\e_k}-u)}{\phi}\,dt.
+  \end{align*}
+  The first term: $\norm{(u_{\e_k}-u)\cdot\nabla u_{\e_k}}_{L^1_{t,x}}
+  \le \norm{u_{\e_k}-u}_{L^2_t L^4_x}\norm{\nabla u_{\e_k}}_{L^2_{t,x}}\to 0$
+  by strong convergence in $L^2_t L^4_x$ (from strong $L^2_{\rm loc}$
+  and the Sobolev embedding) and (U2).
+  The second term goes to zero by weak convergence of $u_{\e_k}$ in
+  $L^2_t H^1$.
+
+  \textbf{Step 3: Limit of the $Q_1$ term.}
+  For test function $\phi\in C_0^\infty$, the Cauchy--Schwarz inequality and
+  \eqref{eq:H1int} give:
+  \begin{align*}
+    \left|\int_0^T\e_k\inner{(-\Delta)^{1.3}u_{\e_k}}{\phi}\,dt\right|
+    &\le \e_k^{1/2}
+      \left(\e_k\int_0^T\norm{u_{\e_k}}_{\dot H^{2.6}}^2\,dt\right)^{1/2}
+      \left(\int_0^T\norm{\phi}_{\dot H^{2.6}}^2\,dt\right)^{1/2}\\
+    &\le \e_k^{1/2}\cdot\frac{M}{\sqrt{2}}
+      \cdot\norm{\phi}_{L^2_t \dot H^{2.6}} \to 0.
+  \end{align*}
+
+  \textbf{Step 4: Limit of the linear terms.}
+  The pressure and viscous terms pass to the limit by weak convergence.
+
+  \textbf{Step 5: Energy inequality.}
+  The Leray--Hopf energy inequality for $u$ follows from lower
+  semicontinuity of the $L^2$ and $H^1$ norms:
+  \[
+    \norm{u(t)}_{L^2}^2 + 2\nu\int_0^t\norm{\nabla u}_{L^2}^2\,ds
+    \le \norm{u_0}_{L^2}^2.
+  \]
+
+  \textbf{Step 6: Axisymmetric structure.}
+  The strong $L^2_{\rm loc}$ limit of axisymmetric-with-swirl fields is
+  axisymmetric-with-swirl.
+\end{proof}
+
+\begin{remark}
+  Theorem~\ref{thm:limit} produces a Leray--Hopf weak solution for
+  axisymmetric-with-swirl data.  In the without-swirl case ($u^\theta\equiv 0$),
+  the regularity of such solutions is known
+  \cite{Ladyzhenskaya,UY1968}.  In the with-swirl case, regularity depends
+  on whether $C(\e)$ in \eqref{eq:phi-energy} is $\e$-independent.
+\end{remark}
+
+%====================================================================
+\section{Open Problems}\label{sec:open}
+%====================================================================
+
+\begin{enumerate}
+
+\item[\textbf{OP1.}]\label{op:limits}
+  \textbf{(Surjectivity of $Q_1$-approximation.)}
+  Does every Leray--Hopf weak solution with axisymmetric-with-swirl data
+  in $H^1$ arise as the strong $L^2$-limit of a sequence of
+  $\mathrm{NS}_\e$ smooth solutions?  This would confirm that the class
+  studied in Theorem~\ref{thm:limit} is exhaustive.
+
+\item[\textbf{OP2.}]\label{op:gronwall}
+  \textbf{(Uniform Gronwall bound --- the precise gap.)}
+  The constant $C(\e)$ in \eqref{eq:phi-energy} equals
+  $2\sup_t\norm{u_\e^r(t)/r}_{L^\infty}$.  The open condition is:
+  \[
+    \sup_{\e\in(0,1]}\int_0^T\norm{\frac{u_\e^r(t)}{r}}_{L^\infty}\,dt
+    \le C_0(T, M, G_0) < \infty.
+  \]
+  This is a Prodi--Serrin type criterion \cite{Serrin1962} for the family
+  $\{u_\e\}$: it asserts that the radial component is controlled near
+  the axis uniformly in the augmentation parameter.  For smooth axisymmetric
+  fields, $u^r/r = -\partial_z u^z/2 + O(r^2)$ at the axis (by
+  incompressibility and Taylor expansion), so the condition is equivalent
+  to a uniform bound on $\partial_z u^z_\e$ at $r=0$.
+
+\end{enumerate}
+
+%====================================================================
+\section{Conclusion}\label{sec:conclusion}
+%====================================================================
+
+We have presented a complete treatment of the $Q_1$-augmented
+axisymmetric-with-swirl Navier--Stokes system, with the following
+rigorously established results:
+
+\begin{enumerate}
+  \item The substitution $\Phi = u^\theta/r$ with $\Gamma = r^2\Phi$
+    yields the identity $r^{-4}\partial_z(\Gamma^2) = \partial_z(\Phi^2)$
+    (Lemma~\ref{lem:cancel}), removing the explicit $1/r^4$ prefactor from
+    the swirl-vorticity source and relocating the axis difficulty into the
+    advection coefficient $u^r/r$.
+    
+  \item The Phi-energy estimate (Theorem~\ref{thm:phi}) closes for each
+    fixed $\e > 0$ with constant $C(\e) = 2\sup_t\norm{u_\e^r/r}_{L^\infty}$.
+    
+  \item The augmented family is uniformly bounded in $L^\infty_t L^2$
+    and $L^2_t H^1$, and the $\Gamma$-bound is uniform in $\e$
+    (Lemma~\ref{lem:Gamma}).
+    
+  \item Aubin--Lions compactness (Lemma~\ref{lem:aubin}) yields
+    a subsequential limit that is a Leray--Hopf weak solution of the
+    classical system (Theorem~\ref{thm:limit}).
+    
+  \item The $Q_1$ augmentation term vanishes in the limit via the
+    energy bound $\e_k\int\norm{u_{\e_k}}_{\dot H^{2.6}}^2 \le M^2/2$
+    (proved in Theorem~\ref{thm:limit}, Step~3).
+\end{enumerate}
+
+\noindent
+The axisymmetric-with-swirl regularity problem has been reduced to a
+single open condition: $\e$-independence of the Gronwall constant
+$C(\e) = 2\sup_t\norm{u_\e^r(t)/r}_{L^\infty}$ (Open Problem~\ref{op:gronwall}).
+
+%====================================================================
+\section*{Acknowledgments}
+%====================================================================
+
+The author thanks the mathematical community for the foundational
+contributions of J.~Leray, J.-L.~Lions, J.~Aubin, O.~A.~Ladyzhenskaya,
+M.~R.~Ukhovskii, V.~I.~Yudovich, and J.~Serrin.
+
+%====================================================================
+\begin{thebibliography}{99}
+%====================================================================
+
+\bibitem{Aubin1963}
+J.~Aubin (1963).
+Un th\'{e}or\`{e}me de compacit\'{e}.
+\textit{C.\ R.\ Acad.\ Sci.\ Paris} \textbf{256}, 5042--5044.
+
+\bibitem{CaoTiti2008}
+C.~Cao and E.~S.~Titi (2008).
+Regularity criteria for the three-dimensional Navier--Stokes equations.
+\textit{Indiana Univ.\ Math.\ J.} \textbf{57}(6), 2643--2661.
+
+\bibitem{CF1988}
+P.~Constantin and C.~Foias (1988).
+\textit{Navier--Stokes Equations}.
+University of Chicago Press.
+
+\bibitem{FeffermanClay}
+C.~L.~Fefferman (2000).
+Existence and smoothness of the Navier--Stokes equation.
+In \textit{The Millennium Prize Problems}, Clay Mathematics Institute.
+
+\bibitem{HouLi2008}
+T.~Y.~Hou and C.~Li (2008).
+Dynamic stability of the three-dimensional axisymmetric Navier--Stokes
+equations with swirl.
+\textit{Comm.\ Pure Appl.\ Math.} \textbf{61}(5), 661--697.
+
+\bibitem{Ladyzhenskaya}
+O.~A.~Ladyzhenskaya (1969).
+\textit{The Mathematical Theory of Viscous Incompressible Flow}.
+Gordon and Breach.
+
+\bibitem{Leray1934}
+J.~Leray (1934).
+Sur le mouvement d'un liquide visqueux emplissant l'espace.
+\textit{Acta Math.} \textbf{63}, 193--248.
+
+\bibitem{LeiZhang}
+Z.~Lei and Q.~S.~Zhang (2011).
+Criticality of the axially symmetric Navier--Stokes equations.
+\textit{Pacific J.\ Math.} \textbf{249}(1), 179--197.
+
+\bibitem{Lions1969}
+J.-L.~Lions (1969).
+\textit{Quelques m\'{e}thodes de r\'{e}solution des probl\`{e}mes aux
+limites non lin\'{e}aires}.
+Dunod, Paris.
+
+\bibitem{MajdaBertozzi}
+A.~J.~Majda and A.~L.~Bertozzi (2002).
+\textit{Vorticity and Incompressible Flow}.
+Cambridge University Press.
+
+\bibitem{Serrin1962}
+J.~Serrin (1962).
+On the interior regularity of weak solutions of the Navier--Stokes
+equations.
+\textit{Arch.\ Rat.\ Mech.\ Anal.} \textbf{9}, 187--195.
+
+\bibitem{Stinga2010}
+P.~R.~Stinga and J.~L.~Torrea (2010).
+Extension problem and Harnack's inequality for some fractional operators.
+\textit{Comm.\ Partial Differential Equations}
+\textbf{35}(11), 2092--2122.
+
+\bibitem{UY1968}
+M.~R.~Ukhovskii and V.~I.~Yudovich (1968).
+Axially symmetric flows of ideal and viscous fluids filling the whole space.
+\textit{J.\ Appl.\ Math.\ Mech.} \textbf{32}, 52--61.
+
+\end{thebibliography}
+
+\end{document}
