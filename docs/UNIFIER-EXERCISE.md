@@ -55,15 +55,49 @@ Output: `results/unifier_exercise.json`
 
 On 4000 random states around the anchors, permutation importance (fraction of \(\mathbb{E}|\Delta R|\) when that coordinate is shuffled) is dominated by the **external leftovers**, not by the SFE oscillator knobs.
 
-Typical ranking from the run:
+Ranking from the 4000-draw run (`results/unifier_exercise.json`):
 
-1. \(\log(\rho_\Lambda^{1/4}/v)\) — vacuum-energy hierarchy  
-2. \(\log(M_{\mathrm{Pl}}/v)\) — Planck / electroweak hierarchy  
-3. then the gauge logs, then the coherence knobs  
+1. \(\log(\rho_\Lambda^{1/4}/v)\) — 0.28  
+2. \(\log(M_{\mathrm{Pl}}/v)\) — 0.23  
+3. \(S_c\) (coherence entropy) — 0.18  
+4. \(\delta\) (phase disorder) — 0.11  
+5. \(|\nabla C|\) — 0.08  
+
+Prime amplitudes, frequencies, and the three gauge logs are at the bottom (\(\le 0.01\)). Sampling widths matter: hierarchy and the cosmological constant were given more room because that is where the real residuals live. Even so, the SFE oscillator knobs do not move the four-force score.  
 
 The quiet+observed target state has \(R\approx 1\) **by construction** (we sat it on the anchors). That only shows the score is well-defined. It does not show a unifier program.
 
 So: as an exercise, the method works. As a unifier, it does not. The score tells you what you already know if you have looked at unification for five minutes — the cosmological constant and the Planck hierarchy are the variables that kill \(R\). Prime amplitudes and phase offsets do not move the four-force residuals unless you write a map that puts them in. That map is the missing Cosmos object.
+
+---
+
+## Combinatorial search (which ones are involved)
+
+Cardinality is unknown, so every subset of size \(1\ldots 5\) was locked at the target while the complement stayed random.
+
+\[
+\mathrm{lock}\,R=\mathbb{E}[R\mid x_S=x_S^\star]
+\]
+
+All \(\binom{15}{k}\) for \(k\le 5\), 256 draws. `scripts/unifier_combo.py`.
+
+| \(k\) | Best set | lock \(R\) |
+|---:|---|---:|
+| 0 | all random | 0.066 |
+| 1 | vacuum energy | 0.139 |
+| 2 | vacuum + Planck | 0.248 |
+| 3 | those two + \(S_c\) | 0.411 |
+| 4 | those three + \(\delta\) | 0.577 |
+| 5 | those four + \(\lvert\nabla C\rvert\) | 0.703 |
+
+Core in every best set of size \(\ge 2\): \(\log(\rho_\Lambda^{1/4}/v)\) and \(\log(M_{\mathrm{Pl}}/v)\).  
+23 sets reach lock \(R\ge 0.5\). None of size \(\le 5\) reach 0.8. Gauge logs and the SFE oscillator knobs never enter a best set.
+
+Domain Architect does not replace this search or the missing map \(F\). When \(F\) exists, point the same lock-\(R\) scan at predicted couplings.
+
+```
+python3 scripts/unifier_combo.py --n 256 --kmax 5 --out results/unifier_combo.json
+```
 
 ---
 

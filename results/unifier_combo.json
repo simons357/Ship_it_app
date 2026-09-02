@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "exercise": true,
+    "not_a_unifier": true,
+    "note": "lock_R = E[R | named coords at target, others random]. DA does not compute F. This is subset search on the score.",
+    "n": 256,
+    "kmax": 5,
+    "baseline_R_all_random": 0.06577498672639565
+  },
+  "best_by_k": [
+    {
+      "k": 1,
+      "set": [
+        "log_cc_ratio"
+      ],
+      "lock_R": 0.13901891497479635
+    },
+    {
+      "k": 2,
+      "set": [
+        "log_hierarchy",
+        "log_cc_ratio"
+      ],
+      "lock_R": 0.24817959595603284
+    },
+    {
+      "k": 3,
+      "set": [
+        "S_coh",
+        "log_hierarchy",
+        "log_cc_ratio"
+      ],
+      "lock_R": 0.41096035535411946
+    },
+    {
+      "k": 4,
+      "set": [
+        "delta_spread",
+        "S_coh",
+        "log_hierarchy",
+        "log_cc_ratio"
+      ],
+      "lock_R": 0.5765353655099384
+    },
+    {
+      "k": 5,
+      "set": [
+        "delta_spread",
+        "S_coh",
+        "grad_coh",
+        "log_hierarchy",
+        "log_cc_ratio"
+      ],
+      "lock_R": 0.7025753247381421
+    }
+  ],
+  "greedy_forward": [
+    {
+      "k": 1,
+      "set": [
+        "log_cc_ratio"
+      ],
+      "lock_R": 0.13901891497479635
+    },
+    {
+      "k": 2,
+      "set": [
+        "log_cc_ratio",
+        "log_hierarchy"
+      ],
+      "lock_R": 0.24817959595603284
+    },
+    {
+      "k": 3,
+      "set": [
+        "log_cc_ratio",
+        "log_hierarchy",
+        "S_coh"
+      ],
+      "lock_R": 0.41096035535411946
+    },
+    {
+      "k": 4,
+      "set": [
+        "log_cc_ratio",
+        "log_hierarchy",
+        "S_coh",
+        "delta_spread"
+      ],
+      "lock_R": 0.5765353655099384
+    },
+    {
+      "k": 5,
+      "set": [
+        "log_cc_ratio",
+        "log_hierarchy",
+        "S_coh",
+        "delta_spread",
+        "grad_coh"
+      ],
+      "lock_R": 0.7025753247381421
+    },
+    {
+      "k": 6,
+      "set": [
+        "log_cc_ratio",
+        "log_hierarchy",
+        "S_coh",
+        "delta_spread",
+        "grad_coh",
+        "kappa_att"
+      ],
+      "lock_R": 0.7880462997558623
+    },
+    {
+      "k": 7,
+      "set": [
+        "log_cc_ratio",
+        "log_hierarchy",
+        "S_coh",
+        "delta_spread",
+        "grad_coh",
+        "kappa_att",
+        "log_qcd_ratio"
+      ],
+      "lock_R": 0.8451436499545502
+    },
+    {
+      "k": 8,
+      "set": [
+        "log_cc_ratio",
+        "log_hierarchy",
+        "S_coh",
+        "delta_spread",
+        "grad_coh",
+        "kappa_att",
+        "log_qcd_ratio",
+        "phi_scale"
+      ],
+      "lock_R": 0.8755930398200344
+    }
+  ],
+  "n_sets_lock_ge_0.5": 23,
+  "n_sets_lock_ge_0.8": 0,
+  "smallest_half": {
+    "k": 4,
+    "set": [
+      "delta_spread",
+      "S_coh",
+      "log_hierarchy",
+      "log_cc_ratio"
+    ],
+    "lock_R": 0.5765353655099384
+  },
+  "smallest_80": null,
+  "core_in_best_sets_k_ge_2": [
+    "log_cc_ratio",
+    "log_hierarchy"
+  ],
+  "candidates": {
+    "must_lock_external": [
+      "log_cc_ratio",
+      "log_hierarchy"
+    ],
+    "must_lock_internal": [
+      "S_coh",
+      "delta_spread"
+    ],
+    "weak_on_this_score": [
+      "A_mean",
+      "f_mean",
+      "phi_scale",
+      "p_cut",
+      "log_alpha_em",
+      "log_alpha_s",
+      "sin2_theta_w",
+      "log_weak_ratio"
+    ]
+  }
+}
