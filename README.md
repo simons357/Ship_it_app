@@ -23,3 +23,4 @@ python3 scripts/spectral_floor_explore.py --nmax 80
 - HB Experiment 01: closed null. Protocol and report stay under `docs/HB-*.md`. Do not retune `nodes.json`.
 - Domain Architect / Gemini unaugmented rewrite: audit only, [`docs/DOMAIN-ARCHITECT-SKETCH-AUDIT.md`](docs/DOMAIN-ARCHITECT-SKETCH-AUDIT.md).
 - SFE / UHF / DHFA and any prize-packaged stack.
+- Unifier-program exercise (reconstructed 16-vector, not Cosmos): [`docs/UNIFIER-EXERCISE.md`](docs/UNIFIER-EXERCISE.md).

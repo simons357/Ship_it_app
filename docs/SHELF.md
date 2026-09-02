@@ -32,6 +32,8 @@ Files that remain for history: `docs/HB-RINGDOWN-EXPERIMENT-01.md`, `docs/HB-RIN
 
 Track A does not imply Track B. Track Q does not imply either fluids track.
 
+A Domain Architect “unifier program” drill lives in `docs/UNIFIER-EXERCISE.md`. It is an exercise. It does not unshelve SFE and it is not a unifier.
+
 ---
 
 ## How to treat a shelved paragraph if it comes back
