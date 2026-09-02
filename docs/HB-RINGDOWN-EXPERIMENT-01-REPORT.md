@@ -1,5 +1,7 @@
 # Harmonic Blueprint Experiment 01 — Closed Report
 
+**Shelved.** Off the live desk (`docs/SHELF.md`). Archive only. Do not retune `nodes.json`.
+
 **Status:** closed  
 **Date:** 2026-08-10  
 **Branch / PR:** `cursor/hb-ringdown-experiment-d70f`  

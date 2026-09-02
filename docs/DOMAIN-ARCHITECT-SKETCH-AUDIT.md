@@ -1,5 +1,7 @@
 # Domain Architect unaugmented sketch: what to keep
 
+**Shelved as an outline.** SFE, HB, Domain Architect, and Millennium packaging are off the live desk (`docs/SHELF.md`). This file is only an audit of a Gemini rewrite. Steps 0–2 that are classical NS may already live on Track B; do not restart from this sketch.
+
 Feedback on the Flash Extended rewrite (classical 3D system, LP, Bony, geometric depletion, cubic enstrophy, BKM). Fluids only. This is a table of contents, not a closed argument.
 
 The Domain Architect / Harmonic Blueprint mark is branding. It is not an input to \(\Pi_j\) or \(\omega\cdot S\omega\). HB Experiment 01 already failed to reject its null; do not wire `nodes.json` into this track.

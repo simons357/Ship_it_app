@@ -1,5 +1,7 @@
 # Harmonic Blueprint Experiment 01
 
+**Shelved.** Harmonic Blueprint is off the live desk (`docs/SHELF.md`). This file is archive. Do not retune `nodes.json`.
+
 ## Cross-Event Spectral Selection in Black-Hole Ringdown
 
 **Status: closed.** See the report: [`HB-RINGDOWN-EXPERIMENT-01-REPORT.md`](HB-RINGDOWN-EXPERIMENT-01-REPORT.md).

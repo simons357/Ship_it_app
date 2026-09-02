@@ -2,6 +2,8 @@
 
 Working note. Fluids only. No augmentation. Do not cancel the axis weight.
 
+SFE, Harmonic Blueprint, and Millennium-packaged notes are shelved (`docs/SHELF.md`). They are not inputs here.
+
 Sources used: August Phi note (22045467), August Ring+SND (22045474), June T2 (20552080), August Q6 hygiene (22045478). Older bundled closures are not used as load-bearing steps.
 
 ---

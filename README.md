@@ -1,43 +1,25 @@
-# Harmonic Blueprint Experiment 01
+# Live notes: Track A, Track B, inverse-GCD floor
 
-Cross-event spectral selection test on black-hole ringdown modes.
+SFE, Harmonic Blueprint, and Millennium-packaged papers are **shelved**. See [`docs/SHELF.md`](docs/SHELF.md).
 
-**Status: closed — held-out TEST did not reject H0.**
+This repo’s working math is three separate tracks. Do not glue them.
 
-- Closed report: [`docs/HB-RINGDOWN-EXPERIMENT-01-REPORT.md`](docs/HB-RINGDOWN-EXPERIMENT-01-REPORT.md)
-- Protocol: [`docs/HB-RINGDOWN-EXPERIMENT-01.md`](docs/HB-RINGDOWN-EXPERIMENT-01.md)
-- Numeric summary: [`results/SUMMARY.md`](results/SUMMARY.md)
+| Track | Note | PDE / object |
+|---|---|---|
+| **A** | [`docs/AUGMENTED-NS-PROOF-CHAIN.md`](docs/AUGMENTED-NS-PROOF-CHAIN.md) | \(Q_1\)-augmented NS, \(\varepsilon>0\) |
+| **B** | [`docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`](docs/UNAUGMENTED-R4-VORTICITY-PLAN.md) | Classical NS, keep \(1/r^4\) |
+| **Q** | [`docs/SPECTRAL-FLOOR-EXPLORATION.md`](docs/SPECTRAL-FLOOR-EXPLORATION.md) | Inverse-GCD floors only |
 
-## Quick start
-
-```bash
-pip install -r requirements.txt
-python scripts/build_qnm_table.py   # refresh data/qnm_events.csv if needed
-python hb_ringdown_test.py \
-  --csv data/qnm_events.csv \
-  --nodes nodes.json \
-  --mc 50000 \
-  --split test
-```
-
-Exploratory TRAIN run (freeze choices before TEST):
+## Checks
 
 ```bash
-python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 50000 --split train
+python3 -m unittest tests/test_augmented_ns_verify.py tests/test_spectral_floor_explore.py
+python3 scripts/augmented_ns_verify.py --n 16 --t 0.4 --dt 0.01 --nu 0.02 --eps 0.0 0.05 0.2
+python3 scripts/spectral_floor_explore.py --nmax 80
 ```
 
-## Layout
+## Shelved (do not use as input)
 
-| Path | Role |
-|------|------|
-| `hb_ringdown_test.py` | Spectral proximity statistic, MC null, BH-FDR, leave-one-event-out |
-| `nodes.json` | Frozen node families + sigma + default observable |
-| `data/qnm_events.csv` | Per-mode ringdown table with TRAIN/TEST splits |
-| `scripts/build_qnm_table.py` | Rebuild CSV from measured + Kerr-fit sources |
-| `tests/test_hb_ringdown.py` | Unit / smoke tests |
-
-## Tests
-
-```bash
-python -m unittest tests/test_hb_ringdown.py
-```
+- HB Experiment 01: closed null. Protocol and report stay under `docs/HB-*.md`. Do not retune `nodes.json`.
+- Domain Architect / Gemini unaugmented rewrite: audit only, [`docs/DOMAIN-ARCHITECT-SKETCH-AUDIT.md`](docs/DOMAIN-ARCHITECT-SKETCH-AUDIT.md).
+- SFE / UHF / DHFA and any prize-packaged stack.

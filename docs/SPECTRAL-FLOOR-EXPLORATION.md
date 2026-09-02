@@ -7,7 +7,7 @@ The mixup was the **matrix and the constant**, not the idea of a floor.
 - \(H_N\) **does** have a full-spectrum floor: \(\lambda_{\min}(H_N)\ge-1\), by a two-line pairing. That is the only unrestricted eigenvalue bound in the trio that is actually a theorem.
 - On prime-supported vectors, \(\widetilde Q\) itself sits above \(-1/4\). That is the useful restricted floor (Theorem P).
 
-No Goldbach, no RH, no Navier–Stokes map. Do not reattach this to SND or GNC.
+No Goldbach, no RH, no Navier–Stokes map. Do not reattach this to SND or GNC. SFE, Harmonic Blueprint, and Millennium-packaged notes are shelved (`docs/SHELF.md`).
 
 Sources I could actually read: August inverse-GCD (22045478), August errata (22045484), August Ring+SND (22045474), June T2 PDF, May T³ TeX (archive only). Zenodo HTML/API is 403 from this machine. There is no phone corpus, no extra GitHub math repo, and no local store of older drafts beyond `/tmp/simons-papers`.
 

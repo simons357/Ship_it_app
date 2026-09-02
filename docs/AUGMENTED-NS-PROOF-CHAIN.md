@@ -2,7 +2,7 @@
 
 Draft. Augmented system only. This is a different PDE from the classical (unaugmented) equations.
 
-Does **not** close Track B. No inverse-GCD, no Bridge, no Route C.
+Does **not** close Track B. No inverse-GCD, no Bridge, no Route C. SFE, Harmonic Blueprint, and Millennium-packaged notes are shelved (`docs/SHELF.md`).
 
 The extra dissipation is the Ladyzhenskaya / \(p\)-Laplacian term already known to give global regularity in three dimensions when the power is large enough. The chain below records that fact in your \(Q_1\) notation and lists numerical checks.
 
