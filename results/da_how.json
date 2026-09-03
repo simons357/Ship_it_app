@@ -2,6 +2,7 @@
   "meta": {
     "question": "how did a typed catalog plus a count become 'possible' and 'X candidates'?",
     "cosmos_internals_found": false,
+    "cosmos_app_list_found": true,
     "not_a_unifier": true,
     "hand_not_capped_at_five": true
   },
@@ -60,7 +61,7 @@
       "id": "X3",
       "reason": "count slots on a screen",
       "verdict": "open",
-      "why": "X is the number of knobs the UI exposed. Names still missing here."
+      "why": "Official Topology vs Gauge table is now in the repo: X=16 named slots. That closes the missing-names block. It does not close P3."
     },
     {
       "id": "X4",
@@ -70,7 +71,7 @@
     }
   ],
   "enumerator": {
-    "catalog_source": "reconstructed 16, not Cosmo export",
+    "catalog_source": "reconstructed 16; official Cosmo 16 is a different catalog",
     "open_types_not_capped_at_five": [
       "gauge",
       "gravity_gauge",
@@ -324,13 +325,13 @@
     }
   ],
   "how_far": [
-    "Cosmos internals are not in the repo; this is the legal-reason list",
+    "Cosmo 16 names are in; core equation is still not in the repo",
     "P1 (n > k) is the only 'possible' that works before names exist",
     "X comes from a type-classifier on a catalog, not from F",
     "on this reconstructed 16: X_eligible=15, possible_by_count=True",
     "dropping any one type still leaves X > 6, so 'possible' is robust to a missing finger",
     "candidate \u2260 success; 'able' here means type-correct and numerous enough",
-    "next blocked on Cosmo names or a real producing-map F"
+    "official Cosmo 16/16 is not P3; produce still fails on that catalog"
   ],
-  "next_da_move": "If the Cosmo export includes its type tags (harmonic / gauge / topological / other), replace OPEN_TYPES and re-count X. Do not treat the count as F."
+  "next_da_move": "P3 still needs a public F. Official Cosmo names do not write that map. Do not treat the count or the UI 16/16 as F."
 }

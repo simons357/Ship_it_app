@@ -2,7 +2,8 @@
   "meta": {
     "line": "R = exp(-1/2 \u03c7\u00b2_ext) \u00b7 exp(-1/2 \u03c7\u00b2_int)",
     "method": "five-finger DA, then 16 candidate fates, then the same five general questions on each",
-    "cosmos_app_list_found": false,
+    "cosmos_app_list_found": true,
+    "this_list_is_cosmo_export": false,
     "not_a_unifier": true,
     "n": 400,
     "seed": 1
@@ -1804,7 +1805,7 @@
     "16 candidates each got a general category and a fate",
     "each of the 16 then got the same five general questions (kind / nature / score / produce / next), then smaller pieces",
     "topological vs gauge: only \u03b8_QCD is topological on this list; vacuum is a fork",
-    "next blocked on Cosmo names or a real producing-map F"
+    "Cosmo names are in; next blocked on a public producing-map F"
   ],
-  "next_da_move": "Replace names from the Cosmo export, keep the same five-finger recursion and the same category-fate table. Do not call this F."
+  "next_da_move": "Official Cosmo 16 is a different catalog (docs/COSMO-SIXTEEN.md). Keep this recursion on the score. Do not call this F."
 }

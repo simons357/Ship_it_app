@@ -169,7 +169,17 @@
       "gauge3_alone": "fail",
       "nature4_alone": "fail",
       "glued": false,
-      "why": "Screened the same way. Score is not F. Cosmos export still missing."
+      "why": "Screened the same way. Score is not F. Official Cosmo 16 is a different catalog."
+    },
+    {
+      "deck": "PUB",
+      "alone": true,
+      "name": "CosmoEvolution 3D / Domain Architect (public app)",
+      "kind": "topological",
+      "gauge3_alone": "fail",
+      "nature4_alone": "fail",
+      "glued": false,
+      "why": "Official 16 is in docs/COSMO-SIXTEEN.md. UI 16/16 is not a DA pass. F is not public."
     }
   ],
   "SIX": [
@@ -350,19 +360,216 @@
       "delta_lock_R": null
     }
   ],
+  "COSMO": [
+    {
+      "deck": "COSMO",
+      "alone": true,
+      "id": 1,
+      "name": "Koide ratio (charged leptons)",
+      "cluster": "koide",
+      "app_match": "exact",
+      "produce_alone": "fail",
+      "nature_alone": "fail",
+      "glued": false,
+      "why": "formula predates DA; app papers say the spectral-zeta derivation has not been completed"
+    },
+    {
+      "deck": "COSMO",
+      "alone": true,
+      "id": 2,
+      "name": "tau mass",
+      "cluster": "koide",
+      "app_match": "exact 0.006%",
+      "produce_alone": "fail",
+      "nature_alone": "fail",
+      "glued": false,
+      "why": "output of the 1981 formula given e and \u03bc, not of a public DA map"
+    },
+    {
+      "deck": "COSMO",
+      "alone": true,
+      "id": 3,
+      "name": "fermion generations",
+      "cluster": "count",
+      "app_match": "exact",
+      "produce_alone": "fail",
+      "nature_alone": "fail",
+      "glued": false,
+      "why": "'topological invariant' is a slogan until a public F outputs 3"
+    },
+    {
+      "deck": "COSMO",
+      "alone": true,
+      "id": 4,
+      "name": "charge quantization |e|=|p|",
+      "cluster": "charge",
+      "app_match": "exact",
+      "produce_alone": "fail",
+      "nature_alone": "fail",
+      "glued": false,
+      "why": "winding slogan; no public F that produces |e|=|p| from a named topology"
+    },
+    {
+      "deck": "COSMO",
+      "alone": true,
+      "id": 5,
+      "name": "\u03b1^{-1}",
+      "cluster": "alpha",
+      "app_match": "good 0.03%",
+      "produce_alone": "fail",
+      "nature_alone": "open",
+      "glued": false,
+      "why": "sitting at the measured 137 is not a prediction"
+    },
+    {
+      "deck": "COSMO",
+      "alone": true,
+      "id": 6,
+      "name": "sin\u00b2\u03b8_W",
+      "cluster": "weinberg",
+      "app_match": "good",
+      "produce_alone": "fail",
+      "nature_alone": "open",
+      "glued": false,
+      "why": "3/8 \u2192 0.231 is standard GUT running, not a public topological F. App manifold sweep: 0/10 geometries match cos \u03b8_W \u2248 0.878"
+    },
+    {
+      "deck": "COSMO",
+      "alone": true,
+      "id": 7,
+      "name": "m_\u03bc / m_e",
+      "cluster": "koide",
+      "app_match": "good",
+      "produce_alone": "fail",
+      "nature_alone": "fail",
+      "glued": false,
+      "why": "recursive rewrite of the 1981 formula"
+    },
+    {
+      "deck": "COSMO",
+      "alone": true,
+      "id": 8,
+      "name": "Higgs VEV v",
+      "cluster": "vev",
+      "app_match": "good ~1%",
+      "produce_alone": "fail",
+      "nature_alone": "open",
+      "glued": false,
+      "why": "'\u2248246' sits at the measured value; no public F"
+    },
+    {
+      "deck": "COSMO",
+      "alone": true,
+      "id": 9,
+      "name": "Higgs mass",
+      "cluster": "higgs_mass",
+      "app_match": "good ~1%",
+      "produce_alone": "fail",
+      "nature_alone": "fail",
+      "glued": false,
+      "why": "'\u2248125' sits at the measured value"
+    },
+    {
+      "deck": "COSMO",
+      "alone": true,
+      "id": 10,
+      "name": "CKM \u03b8_12",
+      "cluster": "flavor",
+      "app_match": "approx ~3%",
+      "produce_alone": "fail",
+      "nature_alone": "fail",
+      "glued": false,
+      "why": "'\u224813\u00b0' sits at the measured value"
+    },
+    {
+      "deck": "COSMO",
+      "alone": true,
+      "id": 11,
+      "name": "\u03b1_s(M_Z)",
+      "cluster": "alpha_s",
+      "app_match": "approx",
+      "produce_alone": "fail",
+      "nature_alone": "open",
+      "glued": false,
+      "why": "sitting at 0.118 is not a prediction"
+    },
+    {
+      "deck": "COSMO",
+      "alone": true,
+      "id": 12,
+      "name": "m_p / m_e",
+      "cluster": "hadron",
+      "app_match": "approx",
+      "produce_alone": "fail",
+      "nature_alone": "fail",
+      "glued": false,
+      "why": "sitting at 1836 is not a prediction"
+    },
+    {
+      "deck": "COSMO",
+      "alone": true,
+      "id": 13,
+      "name": "\u039b (cosmological constant)",
+      "cluster": "vacuum",
+      "app_match": "order of magnitude",
+      "produce_alone": "fail",
+      "nature_alone": "open",
+      "glued": false,
+      "why": "order-of-magnitude / 'derivable' is not \u03c7\u00b2_ext \u2264 \u03b5\u00b2 from a public F"
+    },
+    {
+      "deck": "COSMO",
+      "alone": true,
+      "id": 14,
+      "name": "Newton G",
+      "cluster": "planck",
+      "app_match": "order of magnitude",
+      "produce_alone": "fail",
+      "nature_alone": "open",
+      "glued": false,
+      "why": "order-of-magnitude is not a public F"
+    },
+    {
+      "deck": "COSMO",
+      "alone": true,
+      "id": 15,
+      "name": "Planck length \u2113_P",
+      "cluster": "planck",
+      "app_match": "order of magnitude",
+      "produce_alone": "fail",
+      "nature_alone": "fail",
+      "glued": false,
+      "why": "not independent of G"
+    },
+    {
+      "deck": "COSMO",
+      "alone": true,
+      "id": 16,
+      "name": "\u03a3 m_\u03bd",
+      "cluster": "neutrino",
+      "app_match": "predicted, untested",
+      "produce_alone": "fail",
+      "nature_alone": "fail",
+      "glued": false,
+      "why": "F is private, so 0.06 eV cannot be checked as a derivation. Open as a number to kill"
+    }
+  ],
   "counts": {
     "GQ": 8,
-    "PUB": 9,
-    "SIX": 16
+    "PUB": 10,
+    "SIX": 16,
+    "COSMO": 16
   },
   "how_far": [
     "GQ 8 pairs, each alone",
-    "PUB 9 claims, gauge3 and nature4 not glued",
+    "PUB 10 claims, gauge3 and nature4 not glued",
     "SIX 16 slots, singleton lock-R only",
+    "COSMO 16 official slots, produce fails alone for each",
     "isolation did not promote anyone to a unifier",
     "Einstein/equivalence/QFT-on-curved still pass alone",
     "vacuum\u2192gravity still fails alone",
-    "MSSM-class still open as gauge3 alone and fail as nature4 alone"
+    "MSSM-class still open as gauge3 alone and fail as nature4 alone",
+    "Cosmo 16/16 does not survive isolation"
   ],
-  "next_da_move": "Stay on the GQ leftovers. Do not re-bundle into a 16-slogan."
+  "next_da_move": "Stay on the GQ leftovers. Do not re-bundle Cosmo into a 16-slogan."
 }

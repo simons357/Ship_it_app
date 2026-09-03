@@ -1,21 +1,39 @@
 {
   "slot": "U",
-  "cosmos_list_found": false,
+  "cosmos_list_found": true,
+  "cosmos_core_equation_public": false,
   "n_claimed": 16,
-  "n_confirmed": null,
+  "n_confirmed": 16,
+  "source": "https://cosmoevolution3d.base44.app",
+  "catalog": "docs/COSMO-SIXTEEN.md",
   "possibility_claim": {
     "statement": "unification is possible with about 16 variables",
     "verdict": "open",
-    "why": "A finite n is a real narrowing IF the names exist and one map F of those n hits the four couplings. The app saying 'possible' is not the check. The check is \u03c7\u00b2_ext(F(x)) \u2264 \u03b5\u00b2."
+    "why": "Names exist. A finite n is a real narrowing IF one public map F of those n hits the four couplings. The app saying 16/16 is not the check. The check is \u03c7\u00b2_ext(F(x)) \u2264 \u03b5\u00b2. F is still private."
   },
   "layers": [
     {
       "layer": 0,
-      "name": "count only",
+      "name": "official Cosmo 16 (Topology vs Gauge table)",
       "pieces": [
-        "n \u2248 16 (unconfirmed)"
+        "Koide",
+        "m_tau",
+        "generations",
+        "charge",
+        "alpha",
+        "sin2_theta_W",
+        "m_mu/m_e",
+        "v",
+        "m_H",
+        "CKM_theta12",
+        "alpha_s",
+        "m_p/m_e",
+        "Lambda",
+        "G",
+        "ell_P",
+        "sum_m_nu"
       ],
-      "status": "stuck: names missing"
+      "status": "names found; 16th is sum m_nu, not R; F still private"
     },
     {
       "layer": 1,
@@ -66,11 +84,10 @@
       "status": "do not drill these first"
     }
   ],
-  "rebuild": "Rebuild only after names exist: write F from the surviving pieces (layer 2, then 3) to the four couplings. If F needs a layer-4 knob, that knob was misclassified and goes back in. That is the drill.",
+  "rebuild": "Names exist. Rebuild is still blocked on a public F from a named topology to the four couplings plus G_N and \u039b. Sitting at measured values is not that map. Do not glue this table to the reconstructed 4\u00d74.",
   "how_to_get_the_16": [
-    "Paste or screenshot the Cosmos variable screen into this repo",
-    "Export a JSON/CSV of the knobs from the app",
-    "Type the 16 names in one message"
+    "Done: official table is docs/COSMO-SIXTEEN.md / scripts/da_cosmo.py",
+    "Still missing: the public producing-map (core equation is trade secret)"
   ],
-  "next_da_move": "identify names, then re-run lock-R on those names only"
+  "next_da_move": "Run the isolated Cosmo screen (da_cosmo). Do not treat 16/16 as a pass."
 }

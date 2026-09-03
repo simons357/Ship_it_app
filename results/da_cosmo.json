@@ -1,0 +1,774 @@
+{
+  "meta": {
+    "catalog": "official CosmoEvolution 3D Topology vs Gauge table",
+    "cosmos_list_found": true,
+    "cosmos_core_equation_public": false,
+    "this_list_is_reconstructed_R": false,
+    "not_a_unifier": true,
+    "do_not_accept_16_of_16": true,
+    "source": {
+      "url": "https://cosmoevolution3d.base44.app",
+      "table": "Topology vs Gauge (home)",
+      "key_findings": "https://cosmoevolution3d.base44.app/key-findings",
+      "ingested": "2026-09-03",
+      "host_typo": "bass44 \u2192 base44",
+      "core_equation_public": false,
+      "research_disclaimer": "App: research and educational only; not established physics. Core DA equation is private / trade secret."
+    }
+  },
+  "sixteen": [
+    {
+      "id": 1,
+      "name": "Koide ratio (charged leptons)",
+      "measured": "0.666661(7)",
+      "app_claim": "exactly 2/3",
+      "app_match": "exact",
+      "cluster": "koide",
+      "predates_da": true,
+      "sits_at_measured": false,
+      "public_F": false,
+      "hand": [
+        {
+          "name": "kind",
+          "verdict": "open",
+          "why": "empirical mass-ratio (Koide 1981)"
+        },
+        {
+          "name": "nature",
+          "verdict": "fail",
+          "why": "lepton-mass pattern, not a force leftover"
+        },
+        {
+          "name": "score",
+          "verdict": "fail",
+          "why": "not in the reconstructed lock-R vector"
+        },
+        {
+          "name": "produce",
+          "verdict": "fail",
+          "why": "formula predates DA; app papers say the spectral-zeta derivation has not been completed"
+        },
+        {
+          "name": "next_piece",
+          "verdict": "open",
+          "why": "keep as a data fact; do not count tau and m\u03bc/me as two extra hits"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "tau mass",
+      "measured": "1776.86 MeV",
+      "app_claim": "Koide from e, \u03bc \u2192 1776.97 MeV",
+      "app_match": "exact 0.006%",
+      "cluster": "koide",
+      "predates_da": true,
+      "sits_at_measured": false,
+      "public_F": false,
+      "hand": [
+        {
+          "name": "kind",
+          "verdict": "open",
+          "why": "same Koide relation, written as m_\u03c4"
+        },
+        {
+          "name": "nature",
+          "verdict": "fail",
+          "why": "same cluster as #1, not a new leftover"
+        },
+        {
+          "name": "score",
+          "verdict": "fail",
+          "why": "not an independent score input"
+        },
+        {
+          "name": "produce",
+          "verdict": "fail",
+          "why": "output of the 1981 formula given e and \u03bc, not of a public DA map"
+        },
+        {
+          "name": "next_piece",
+          "verdict": "open",
+          "why": "collapse into the Koide cluster; one relation, not three predictions"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "fermion generations",
+      "measured": "3",
+      "app_claim": "topological invariant",
+      "app_match": "exact",
+      "cluster": "count",
+      "predates_da": false,
+      "sits_at_measured": true,
+      "public_F": false,
+      "hand": [
+        {
+          "name": "kind",
+          "verdict": "open",
+          "why": "counting fact of the SM"
+        },
+        {
+          "name": "nature",
+          "verdict": "fail",
+          "why": "family count, not a coupling"
+        },
+        {
+          "name": "score",
+          "verdict": "fail",
+          "why": "not in lock-R"
+        },
+        {
+          "name": "produce",
+          "verdict": "fail",
+          "why": "'topological invariant' is a slogan until a public F outputs 3"
+        },
+        {
+          "name": "next_piece",
+          "verdict": "open",
+          "why": "counting facts are real; they are not a producing-map"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "charge quantization |e|=|p|",
+      "measured": "1 \u00b1 10^{-21}",
+      "app_claim": "winding conservation",
+      "app_match": "exact",
+      "cluster": "charge",
+      "predates_da": true,
+      "sits_at_measured": true,
+      "public_F": false,
+      "hand": [
+        {
+          "name": "kind",
+          "verdict": "open",
+          "why": "empirical / already in SM (Dirac quantization, U(1) embeddings)"
+        },
+        {
+          "name": "nature",
+          "verdict": "fail",
+          "why": "already-known constraint, not a new leftover"
+        },
+        {
+          "name": "score",
+          "verdict": "fail",
+          "why": "not in lock-R"
+        },
+        {
+          "name": "produce",
+          "verdict": "fail",
+          "why": "winding slogan; no public F that produces |e|=|p| from a named topology"
+        },
+        {
+          "name": "next_piece",
+          "verdict": "open",
+          "why": "treat as a known constraint, not a DA derivation"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "\u03b1^{-1}",
+      "measured": "137.035999\u2026",
+      "app_claim": "U(1) eigenvalue \u2248137",
+      "app_match": "good 0.03%",
+      "cluster": "alpha",
+      "predates_da": false,
+      "sits_at_measured": true,
+      "public_F": false,
+      "hand": [
+        {
+          "name": "kind",
+          "verdict": "open",
+          "why": "EM coupling (must-hit observable)"
+        },
+        {
+          "name": "nature",
+          "verdict": "open",
+          "why": "yes \u2014 drop it and you are not unifying the forces"
+        },
+        {
+          "name": "score",
+          "verdict": "fail",
+          "why": "in the reconstructed 16 as log_alpha_em; decorative on lock-R"
+        },
+        {
+          "name": "produce",
+          "verdict": "fail",
+          "why": "sitting at the measured 137 is not a prediction"
+        },
+        {
+          "name": "next_piece",
+          "verdict": "open",
+          "why": "still must-hit for nature4; needs a public F, not an eigenvalue slogan"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "sin\u00b2\u03b8_W",
+      "measured": "0.23122",
+      "app_claim": "3/8 at unification \u2192 0.231",
+      "app_match": "good",
+      "cluster": "weinberg",
+      "predates_da": true,
+      "sits_at_measured": true,
+      "public_F": false,
+      "hand": [
+        {
+          "name": "kind",
+          "verdict": "open",
+          "why": "weak mixing (must-hit)"
+        },
+        {
+          "name": "nature",
+          "verdict": "open",
+          "why": "yes \u2014 a four-force unifier has to hit it"
+        },
+        {
+          "name": "score",
+          "verdict": "fail",
+          "why": "in the reconstructed 16 as sin2_theta_w; decorative on lock-R"
+        },
+        {
+          "name": "produce",
+          "verdict": "fail",
+          "why": "3/8 \u2192 0.231 is standard GUT running, not a public topological F. App manifold sweep: 0/10 geometries match cos \u03b8_W \u2248 0.878"
+        },
+        {
+          "name": "next_piece",
+          "verdict": "fail",
+          "why": "this is the gauge3 / GUT number; already screened. Manifold test already failed in-app"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "m_\u03bc / m_e",
+      "measured": "206.768",
+      "app_claim": "recursive Koide",
+      "app_match": "good",
+      "cluster": "koide",
+      "predates_da": true,
+      "sits_at_measured": false,
+      "public_F": false,
+      "hand": [
+        {
+          "name": "kind",
+          "verdict": "open",
+          "why": "same Koide cluster as #1 and #2"
+        },
+        {
+          "name": "nature",
+          "verdict": "fail",
+          "why": "not an independent leftover"
+        },
+        {
+          "name": "score",
+          "verdict": "fail",
+          "why": "not an independent score input"
+        },
+        {
+          "name": "produce",
+          "verdict": "fail",
+          "why": "recursive rewrite of the 1981 formula"
+        },
+        {
+          "name": "next_piece",
+          "verdict": "open",
+          "why": "do not triple-count Koide"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Higgs VEV v",
+      "measured": "246.22 GeV",
+      "app_claim": "domain ground-state \u2248246",
+      "app_match": "good ~1%",
+      "cluster": "vev",
+      "predates_da": false,
+      "sits_at_measured": true,
+      "public_F": false,
+      "hand": [
+        {
+          "name": "kind",
+          "verdict": "open",
+          "why": "electroweak scale"
+        },
+        {
+          "name": "nature",
+          "verdict": "open",
+          "why": "yes \u2014 it is the scale the leftovers are measured against"
+        },
+        {
+          "name": "score",
+          "verdict": "open",
+          "why": "enters lock-R as the denominator of hierarchy / vacuum / QCD ratios"
+        },
+        {
+          "name": "produce",
+          "verdict": "fail",
+          "why": "'\u2248246' sits at the measured value; no public F"
+        },
+        {
+          "name": "next_piece",
+          "verdict": "open",
+          "why": "keep as the scale leftover, not as a DA eigenvalue"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Higgs mass",
+      "measured": "125.10 GeV",
+      "app_claim": "first excitation \u2248125",
+      "app_match": "good ~1%",
+      "cluster": "higgs_mass",
+      "predates_da": false,
+      "sits_at_measured": true,
+      "public_F": false,
+      "hand": [
+        {
+          "name": "kind",
+          "verdict": "open",
+          "why": "SM scalar mass"
+        },
+        {
+          "name": "nature",
+          "verdict": "fail",
+          "why": "SM parameter, not a force coupling"
+        },
+        {
+          "name": "score",
+          "verdict": "fail",
+          "why": "not in lock-R"
+        },
+        {
+          "name": "produce",
+          "verdict": "fail",
+          "why": "'\u2248125' sits at the measured value"
+        },
+        {
+          "name": "next_piece",
+          "verdict": "open",
+          "why": "related to v; still not G_N or \u039b"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "CKM \u03b8_12",
+      "measured": "13.04\u00b0",
+      "app_claim": "interface winding \u224813\u00b0",
+      "app_match": "approx ~3%",
+      "cluster": "flavor",
+      "predates_da": false,
+      "sits_at_measured": true,
+      "public_F": false,
+      "hand": [
+        {
+          "name": "kind",
+          "verdict": "open",
+          "why": "flavor mixing angle"
+        },
+        {
+          "name": "nature",
+          "verdict": "fail",
+          "why": "flavor, not a force leftover"
+        },
+        {
+          "name": "score",
+          "verdict": "fail",
+          "why": "not in the reconstructed lock-R vector"
+        },
+        {
+          "name": "produce",
+          "verdict": "fail",
+          "why": "'\u224813\u00b0' sits at the measured value"
+        },
+        {
+          "name": "next_piece",
+          "verdict": "open",
+          "why": "flavor is a different book from nature4"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "\u03b1_s(M_Z)",
+      "measured": "0.1181",
+      "app_claim": "SU(3) spectral flow \u22480.118",
+      "app_match": "approx",
+      "cluster": "alpha_s",
+      "predates_da": false,
+      "sits_at_measured": true,
+      "public_F": false,
+      "hand": [
+        {
+          "name": "kind",
+          "verdict": "open",
+          "why": "strong coupling (must-hit)"
+        },
+        {
+          "name": "nature",
+          "verdict": "open",
+          "why": "yes"
+        },
+        {
+          "name": "score",
+          "verdict": "fail",
+          "why": "in the reconstructed 16 as log_alpha_s; decorative on lock-R"
+        },
+        {
+          "name": "produce",
+          "verdict": "fail",
+          "why": "sitting at 0.118 is not a prediction"
+        },
+        {
+          "name": "next_piece",
+          "verdict": "open",
+          "why": "still must-hit for nature4"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "m_p / m_e",
+      "measured": "1836.15",
+      "app_claim": "baryon eigenvalue \u22481836",
+      "app_match": "approx",
+      "cluster": "hadron",
+      "predates_da": false,
+      "sits_at_measured": true,
+      "public_F": false,
+      "hand": [
+        {
+          "name": "kind",
+          "verdict": "open",
+          "why": "baryon / lepton mass ratio"
+        },
+        {
+          "name": "nature",
+          "verdict": "fail",
+          "why": "not a force leftover"
+        },
+        {
+          "name": "score",
+          "verdict": "fail",
+          "why": "not in lock-R"
+        },
+        {
+          "name": "produce",
+          "verdict": "fail",
+          "why": "sitting at 1836 is not a prediction"
+        },
+        {
+          "name": "next_piece",
+          "verdict": "open",
+          "why": "hadron mass is a different book"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "\u039b (cosmological constant)",
+      "measured": "1.1\u00d710^{-52} m^{-2}",
+      "app_claim": "domain web tension (order of magnitude)",
+      "app_match": "order of magnitude",
+      "cluster": "vacuum",
+      "predates_da": false,
+      "sits_at_measured": false,
+      "public_F": false,
+      "hand": [
+        {
+          "name": "kind",
+          "verdict": "open",
+          "why": "vacuum leftover (must-hit)"
+        },
+        {
+          "name": "nature",
+          "verdict": "open",
+          "why": "yes \u2014 drop \u039b and you are not talking about nature"
+        },
+        {
+          "name": "score",
+          "verdict": "open",
+          "why": "in the reconstructed 16 as log_cc_ratio; default lock-R mover"
+        },
+        {
+          "name": "produce",
+          "verdict": "fail",
+          "why": "order-of-magnitude / 'derivable' is not \u03c7\u00b2_ext \u2264 \u03b5\u00b2 from a public F"
+        },
+        {
+          "name": "next_piece",
+          "verdict": "open",
+          "why": "this is the GQ leftover the score already hit; still no F"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Newton G",
+      "measured": "6.674\u00d710^{-11}",
+      "app_claim": "Planck spectral gap (order of magnitude)",
+      "app_match": "order of magnitude",
+      "cluster": "planck",
+      "predates_da": false,
+      "sits_at_measured": false,
+      "public_F": false,
+      "hand": [
+        {
+          "name": "kind",
+          "verdict": "open",
+          "why": "gravity leftover (must-hit)"
+        },
+        {
+          "name": "nature",
+          "verdict": "open",
+          "why": "yes"
+        },
+        {
+          "name": "score",
+          "verdict": "open",
+          "why": "in the reconstructed 16 as log_hierarchy; default lock-R mover"
+        },
+        {
+          "name": "produce",
+          "verdict": "fail",
+          "why": "order-of-magnitude is not a public F"
+        },
+        {
+          "name": "next_piece",
+          "verdict": "open",
+          "why": "same GQ leftover as Planck; do not also count \u2113_P as a second hit"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Planck length \u2113_P",
+      "measured": "1.616\u00d710^{-35} m",
+      "app_claim": "domain foam cell (order of magnitude)",
+      "app_match": "order of magnitude",
+      "cluster": "planck",
+      "predates_da": false,
+      "sits_at_measured": false,
+      "public_F": false,
+      "hand": [
+        {
+          "name": "kind",
+          "verdict": "open",
+          "why": "definitional rewrite of G: \u2113_P = sqrt(\u0127G/c\u00b3)"
+        },
+        {
+          "name": "nature",
+          "verdict": "fail",
+          "why": "same leftover as #14, not a new one"
+        },
+        {
+          "name": "score",
+          "verdict": "fail",
+          "why": "same hierarchy piece as G"
+        },
+        {
+          "name": "produce",
+          "verdict": "fail",
+          "why": "not independent of G"
+        },
+        {
+          "name": "next_piece",
+          "verdict": "open",
+          "why": "collapse G and \u2113_P into one Planck leftover"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "\u03a3 m_\u03bd",
+      "measured": "< 0.12 eV (bound)",
+      "app_claim": "\u2248 0.06 eV",
+      "app_match": "predicted, untested",
+      "cluster": "neutrino",
+      "predates_da": false,
+      "sits_at_measured": false,
+      "public_F": false,
+      "hand": [
+        {
+          "name": "kind",
+          "verdict": "open",
+          "why": "the only forward number on the table"
+        },
+        {
+          "name": "nature",
+          "verdict": "fail",
+          "why": "neutrino masses, not a force leftover"
+        },
+        {
+          "name": "score",
+          "verdict": "fail",
+          "why": "not in lock-R"
+        },
+        {
+          "name": "produce",
+          "verdict": "fail",
+          "why": "F is private, so 0.06 eV cannot be checked as a derivation. Open as a number to kill"
+        },
+        {
+          "name": "next_piece",
+          "verdict": "open",
+          "why": "wait for cosmology / 0\u03bd\u03b2\u03b2; still not nature4"
+        }
+      ]
+    }
+  ],
+  "clusters": {
+    "n_slots": 16,
+    "n_clusters": 13,
+    "groups": {
+      "koide": [
+        "Koide ratio (charged leptons)",
+        "tau mass",
+        "m_\u03bc / m_e"
+      ],
+      "count": [
+        "fermion generations"
+      ],
+      "charge": [
+        "charge quantization |e|=|p|"
+      ],
+      "alpha": [
+        "\u03b1^{-1}"
+      ],
+      "weinberg": [
+        "sin\u00b2\u03b8_W"
+      ],
+      "vev": [
+        "Higgs VEV v"
+      ],
+      "higgs_mass": [
+        "Higgs mass"
+      ],
+      "flavor": [
+        "CKM \u03b8_12"
+      ],
+      "alpha_s": [
+        "\u03b1_s(M_Z)"
+      ],
+      "hadron": [
+        "m_p / m_e"
+      ],
+      "vacuum": [
+        "\u039b (cosmological constant)"
+      ],
+      "planck": [
+        "Newton G",
+        "Planck length \u2113_P"
+      ],
+      "neutrino": [
+        "\u03a3 m_\u03bd"
+      ]
+    },
+    "note": "16 UI slots collapse to 13 clusters once Koide is one relation and G \u2261 \u2113_P. \u03b1, sin\u00b2\u03b8_W, and \u03b1_s stay three leftovers. v and m_H stay two objects. Still no public F."
+  },
+  "app_level": [
+    {
+      "name": "DA_predicts_16_of_16",
+      "app_says": "gauge 0/16, DA 16/16 (4 exact, 5 good, 6 approx, 1 predicted)",
+      "verdict": "fail",
+      "why": "Core equation is private. Several slots sit at the measured value. Koide is counted three times. G and \u2113_P are one leftover. Weinberg 3/8 is standard GUT running. Manifold sweep already failed."
+    },
+    {
+      "name": "public_producing_map_F",
+      "app_says": "core DA equation is private / trade secret",
+      "verdict": "fail",
+      "why": "P3 requires a public F and \u03c7\u00b2_ext \u2264 \u03b5\u00b2. A hidden equation is not a check."
+    },
+    {
+      "name": "manifold_lambda_ratio_is_cos_theta_W",
+      "app_says": "10 standard geometries, 0 match cos \u03b8_W \u2248 0.878; highest Bolza 0.717",
+      "verdict": "fail",
+      "why": "The app already recorded this as a DA prediction fail for every known exact-spectrum topology. A tuned torus aspect ratio is a fit, not a prediction (tuning trap)."
+    },
+    {
+      "name": "gauge_couplings_should_not_meet",
+      "app_says": "SM miss + no superpartners \u21d2 topological unification",
+      "verdict": "fail",
+      "why": "Non-convergence is only gauge3. Our screen already has SM fail and MSSM-class open as gauge3, fail as nature4. A miss is not a topology."
+    },
+    {
+      "name": "scenario_B_strengthening",
+      "app_says": "unification is topological, not gauge",
+      "verdict": "fail",
+      "why": "Slogan. Collapse still requires a public F. Waveform has not collapsed."
+    }
+  ],
+  "split_55": {
+    "source": "https://cosmoevolution3d.base44.app/key-findings  (finding 03)",
+    "n": 55,
+    "gauge": 1,
+    "harmonic": 19,
+    "anomaly_to_H": 2,
+    "unresolved": 26,
+    "both": 7,
+    "names_extracted": false,
+    "note": "Counts only. Full 55 names were not extracted from the minified bundle. Do not invent the missing names. The official 16 is the named table."
+  },
+  "overlap_with_reconstructed_16": {
+    "in_both_catalogs": [
+      "\u03b1 (EM)",
+      "sin\u00b2\u03b8_W",
+      "\u03b1_s",
+      "v (as scale in hierarchy / vacuum)",
+      "G / Planck",
+      "\u039b",
+      "CKM \u03b8_12 (Cosmo named; reconstructed 16 did not carry it as a lock-R input)"
+    ],
+    "cosmo_only": [
+      "Koide cluster (K, m_\u03c4, m_\u03bc/m_e)",
+      "generations = 3",
+      "charge quantization",
+      "Higgs mass",
+      "m_p/m_e",
+      "\u2113_P (duplicate of G)",
+      "\u03a3 m_\u03bd"
+    ],
+    "reconstruction_only": [
+      "\u03b8_QCD",
+      "S_c, \u03b4, A, f, \u03c6, \u03ba, |\u2207C|",
+      "R (output; Cosmo 16th is \u03a3 m_\u03bd, not R)"
+    ],
+    "do_not_glue": true
+  },
+  "gauge3": {
+    "level": "gauge3",
+    "verdict": "fail",
+    "why": "The app does not claim a 3-meet. It treats the SM miss as evidence for topology. That is still only gauge3, and it is not a pass."
+  },
+  "nature4": {
+    "level": "nature4",
+    "verdict": "fail",
+    "why": "No public F hits (g_s, g_w, g_em, G_N) with \u039b in the sum. G and \u039b are order-of-magnitude slogans. Couplings sit at measured values."
+  },
+  "produce_all_fail": true,
+  "collapsed": false,
+  "how_far": [
+    "Cosmo 16 names are in the repo (list-found = true)",
+    "core equation still private (P3 / collapse still fail)",
+    "produce fails for all 16 slots",
+    "app 16/16 claim fails the same screen as everyone else",
+    "manifold \u03bb1/\u03bb2 = cos \u03b8_W already failed in the app (0/10)",
+    "Koide is one 1981 relation counted three times",
+    "G and \u2113_P are one leftover",
+    "Weinberg 3/8 \u2192 0.231 is standard GUT running",
+    "G and \u039b remain the same GQ leftovers the score already hit",
+    "\u03a3 m_\u03bd \u2248 0.06 eV is the only forward number; untested; F still hidden",
+    "55-parameter split is counts only; names not extracted",
+    "reconstructed 4\u00d74 stays a different catalog; 16th there is R, here \u03a3 m_\u03bd"
+  ],
+  "next_da_move": "Blocked on a public producing-map from a named topology to (g_s, g_w, g_em, G_N, \u039b). Do not retune, do not glue catalogs, do not treat 16/16 as a pass."
+}

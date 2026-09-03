@@ -150,18 +150,33 @@
       },
       "gauge3_verdict": "fail",
       "nature4_verdict": "fail",
-      "note": "Screened the same way. Score is not F. Cosmos export still missing."
+      "note": "Screened the same way. Score is not F. Official Cosmo 16 is a different catalog."
+    },
+    {
+      "name": "CosmoEvolution 3D / Domain Architect (public app)",
+      "kind": "topological",
+      "checks": {
+        "one_F": "core equation is private / trade secret",
+        "gauge3": "app predicts couplings should NOT meet; a miss is not a 3-meet",
+        "gravity": "claimed via Planck spectral gap (order of magnitude)",
+        "vacuum": "claimed via domain web tension (order of magnitude)",
+        "falsifiable": "yes \u2014 manifold \u03bb1/\u03bb2, neutrino sum, Koide deviation",
+        "not_killed": "manifold sweep already failed for every known exact-spectrum topology"
+      },
+      "gauge3_verdict": "fail",
+      "nature4_verdict": "fail",
+      "note": "Official 16 is in docs/COSMO-SIXTEEN.md. UI 16/16 is not a DA pass. F is not public."
     }
   ],
   "counts": {
     "gauge3": {
       "pass": 0,
-      "fail": 7,
+      "fail": 8,
       "open": 2
     },
     "nature4": {
       "pass": 0,
-      "fail": 9,
+      "fail": 10,
       "open": 0
     }
   },
@@ -172,7 +187,7 @@
   "passed_nature4": [],
   "discernment": "Yes. Gauge-coupling meeting (gauge3) is a real, fail-able claim. Four-force unification with gravity and vacuum in the same F (nature4) is a stricter claim. Nothing on this list passes nature4. MSSM-class GUTs stay open as gauge3. Minimal SU(5) and the SM miss. That is discernment. It is not a unifier in this repo.",
   "how_far": [
-    "screened 9 published-or-local claims",
+    "screened 10 published-or-local claims",
     "gauge3 open: ['MSSM / SUSY SU(5) or SO(10)', 'Heterotic / type-II string landscape']",
     "nature4 pass: none",
     "3-meet \u2260 4-force unifier; do not glue the levels",

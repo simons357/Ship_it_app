@@ -23,7 +23,7 @@
     "collapse_rule": "exists F and \u03c7\u00b2_ext(F(x)) \u2264 \u03b5\u00b2",
     "emerged": false,
     "n_open": 1,
-    "n_killed": 20,
+    "n_killed": 21,
     "still_in_superposition": [
       "possible_by_count"
     ],
@@ -33,6 +33,7 @@
       "unfalsifiable_might_be_true",
       "R_is_a_unifier",
       "width_means_structurally_special",
+      "cosmo_16_of_16",
       "drop_log_alpha_em",
       "drop_log_alpha_s",
       "drop_sin2_theta_w",
@@ -116,6 +117,14 @@
       "falsifiable": true,
       "verdict": "fail",
       "why": "already flattened; default ranking was a sampling choice"
+    },
+    {
+      "name": "cosmo_16_of_16",
+      "statement": "the Cosmo app predicts all 16 Topology vs Gauge slots",
+      "killer": "public F and \u03c7\u00b2_ext \u2264 \u03b5\u00b2, or the manifold / sitting / double-count screen fails it",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "names are in; core equation is private; manifold \u03bb1/\u03bb2 already failed in-app"
     },
     {
       "name": "drop_log_alpha_em",
@@ -317,7 +326,7 @@
     "F_exists is fail; possible_by_count stays open",
     "must-hits are logically entangled with the unifier claim",
     "oscillators are not entangled with the couplings",
-    "next blocked on Cosmo names or a real producing-map F"
+    "Cosmo names are in; 16/16 UI is fail; collapse still requires public F"
   ],
-  "next_da_move": "Keep using the same collapse rule. Do not treat survival or unfalsifiability as emergence."
+  "next_da_move": "Keep using the same collapse rule. Official Cosmo names do not collapse the waveform. Do not treat survival or unfalsifiability as emergence."
 }

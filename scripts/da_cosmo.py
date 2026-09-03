@@ -165,7 +165,7 @@ COSMO_SIXTEEN = [
         "fail",
         "still must-hit for nature4; needs a public F, not an eigenvalue slogan",
         "open",
-        "gauge",
+        "alpha",
         False,
         True,
     ),
@@ -185,7 +185,7 @@ COSMO_SIXTEEN = [
         "fail",
         "this is the gauge3 / GUT number; already screened. Manifold test already failed in-app",
         "fail",
-        "gauge",
+        "weinberg",
         True,
         True,
     ),
@@ -223,7 +223,7 @@ COSMO_SIXTEEN = [
         "fail",
         "keep as the scale leftover, not as a DA eigenvalue",
         "open",
-        "higgs",
+        "vev",
         False,
         True,
     ),
@@ -242,7 +242,7 @@ COSMO_SIXTEEN = [
         "fail",
         "related to v; still not G_N or Λ",
         "open",
-        "higgs",
+        "higgs_mass",
         False,
         True,
     ),
@@ -280,7 +280,7 @@ COSMO_SIXTEEN = [
         "fail",
         "still must-hit for nature4",
         "open",
-        "gauge",
+        "alpha_s",
         False,
         True,
     ),
@@ -481,7 +481,8 @@ def unique_clusters(rows: list[dict]) -> dict:
         "groups": groups,
         "note": (
             "16 UI slots collapse to 13 clusters once Koide is one relation "
-            "and G ≡ ℓ_P. Still no public F."
+            "and G ≡ ℓ_P. α, sin²θ_W, and α_s stay three leftovers. "
+            "v and m_H stay two objects. Still no public F."
         ),
     }
 
