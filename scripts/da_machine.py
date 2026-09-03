@@ -65,6 +65,7 @@ SLOTS = {
             "tests.test_da_ground",
             "tests.test_da_pipe",
             "tests.test_da_desk",
+            "tests.test_da_compute",
             "-v",
         ],
     },
@@ -120,7 +121,7 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
     if re.search(
-        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up|anti-?bullshit",
+        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up|anti-?bullshit|comput(e|ing)|dedalus|sympy|gwosc",
         text,
     ):
         return {"domain": "U", "verdict": "open", "reason": "looks like score U / SM Lagrangian / waveform; run sm or how"}
@@ -680,6 +681,23 @@ def cmd_desk() -> int:
     return 0
 
 
+def cmd_compute() -> int:
+    from da_compute import run as compute_run
+
+    payload = compute_run()
+    print("DA compute. A library sits on one slot. It is not a theorem.")
+    for t in payload["tech"]:
+        print(f"  [{t['status']}] {t['slot']} {t['name']}")
+    append_run(
+        "U",
+        "List computing techniques we can borrow or wire in",
+        "open",
+        "FFT/eigh/identities/arXiv wired; sympy/LP/LMFDB/GWOSC borrow; DNS/QNM-glue/LLM-proof refuse",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_smbreak() -> int:
     from da_sm_break import run as break_run
 
@@ -762,6 +780,7 @@ def main() -> int:
     sub.add_parser("ground", help="spectrum destination: reconstruct, ablate, program review")
     sub.add_parser("pipe", help="now-bench: live science pipes + falsify every verdict")
     sub.add_parser("desk", help="write-up roster + corpus method (papers, not a vote)")
+    sub.add_parser("compute", help="computing techniques already wired, legal to borrow, or refuse")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -815,6 +834,8 @@ def main() -> int:
         return cmd_pipe()
     if args.cmd == "desk":
         return cmd_desk()
+    if args.cmd == "compute":
+        return cmd_compute()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":

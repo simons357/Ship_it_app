@@ -243,12 +243,19 @@
       "claim": "Write the whole desk down; type the corpus method",
       "verdict": "open",
       "note": "write-up in docs/DA-DESK.md; corpus method pass; pairing-writes-F fail; all benches listed"
+    },
+    {
+      "t": "2026-09-03T06:10:13.511609+00:00",
+      "domain": "U",
+      "claim": "List computing techniques we can borrow or wire in",
+      "verdict": "open",
+      "note": "FFT/eigh/identities/arXiv wired; sympy/LP/LMFDB/GWOSC borrow; DNS/QNM-glue/LLM-proof refuse"
     }
   ],
   "counts": {
-    "scored": 34,
+    "scored": 35,
     "pass": 8,
     "fail": 4,
-    "open": 22
+    "open": 23
   }
 }
