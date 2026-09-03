@@ -49,6 +49,7 @@ python -m domain_architect --shape-play B
 python -m domain_architect --energy-play B
 python -m domain_architect --overlay B
 python -m domain_architect --scan B
+python -m domain_architect --consult scan
 python -m domain_architect --see B
 python -m domain_architect --refuse-splice SEE B
 python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_desk tests.test_domain_architect_visual

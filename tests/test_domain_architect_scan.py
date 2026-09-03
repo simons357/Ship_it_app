@@ -49,6 +49,7 @@ class TestScanAnatomy(unittest.TestCase):
         self.assertNotIn("millennium", text)
         self.assertIn("looks_like_fit", text)
         self.assertIn("anatomy", text)
+        self.assertIn("leray", text)
 
 
 class TestScanCli(unittest.TestCase):

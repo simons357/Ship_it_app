@@ -10,6 +10,7 @@ from dataclasses import asdict, dataclass
 from typing import Any, Final
 
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
+from .think_tank import consult
 
 
 COSMOEVOLUTION_URL: Final[str] = "https://cosmoevolution3d.base44.app"
@@ -244,6 +245,16 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
         ),
         "command": "python -m domain_architect --scan B",
         "do_not": "Drop Q, SFE, gravity, or Cosmo into a Track B hole because the symbols rhyme.",
+    },
+    {
+        "priority": "3i",
+        "move": (
+            "Ask the inner think tank who actually knows this field. "
+            "Leray, BKM, CKN, Hadamard, Whitney, Weyl, Hamming. "
+            "Insight is not a weld."
+        ),
+        "command": "python -m domain_architect --consult scan",
+        "do_not": "Treat a famous name as a fill for the empty slot.",
     },
     {
         "priority": "4",
@@ -501,6 +512,7 @@ def proceed_report() -> dict[str, Any]:
         "library_objects": {k: dict(v) for k, v in LIBRARY_OBJECTS.items()},
         "next_moves": list(NEXT_MOVES),
         "refused_as_close": list(REFUSED_AS_CLOSE),
+        "think_tank": consult("scan"),
         "where_we_go": (
             "Shrink the machine. Navigate by shape first, then one lemma or "
             "one scan. Think tank plus visual appendage in this package. "
@@ -543,6 +555,13 @@ def format_proceed(report: dict[str, Any] | None = None) -> str:
             f"Forbidden: {arm['forbidden']}"
         )
         lines.append(f"      {arm['command']}")
+    tank = data.get("think_tank") or {}
+    if tank.get("members_on_this_move"):
+        lines.append("")
+        lines.append("Inner think tank on the live scan (insight is not a weld)")
+        for member in tank["members_on_this_move"]:
+            lines.append(f"  {member['name']} — {member['knows']}")
+        lines.append("      python -m domain_architect --consult scan")
     lines.append("")
     lines.append("Books (unglued)")
     for book in data["books"]:

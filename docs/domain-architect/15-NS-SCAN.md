@@ -42,5 +42,26 @@ Against `CLIP-T3-WELD` the computer currently reports:
 Nothing in the catalog fills the hole. Smooth stays false. Identified
 stays true.
 
+## Who on the inner tank actually knows this
+
+```bash
+python -m domain_architect --consult scan
+```
+
+Not Cosmo. Not a vote. These seats own this move:
+
+| Seat | Who | Note |
+|---|---|---|
+| Fluids | Leray | Energy is already stacked. It is not the weld. |
+| Fluids | Beale–Kato–Majda | The dangerous integral is stretching, not \(E\). |
+| Fluids | Caffarelli–Kohn–Nirenberg | Holes can remain; the object is still the same equation. That does not skip an open identity. |
+| Fluids | Constantin–Fefferman | Alignment is a different piece. |
+| Well-posedness | Hadamard | Cylinder Young is a neighboring problem. Extra \(E\). |
+| Geometry | Whitney | Filling the other side is an extension, not \(\mathbb{T}^3\). |
+| Geometry | Weyl | PDE / \(J/X\) / SND-C are charts of one form. |
+| Computing | Shannon, Hamming, Dijkstra | Many views, one source. You cannot test-in a missing identity. Do not leak Q into B. |
+
+Insight is not a weld. `--consult` does not move the picture. `--scan` still does.
+
 The picture is on the see-desk (`see-scan.svg`). CosmoEvolution is not
 this scan.

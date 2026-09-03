@@ -35,6 +35,7 @@ class TestProceedMap(unittest.TestCase):
         self.assertIn("ChatVault", text)
         self.assertIn("shape first", text.lower())
         self.assertIn("think tank", text.lower())
+        self.assertIn("leray", text.lower())
         self.assertIn("visual appendage", text.lower())
         self.assertNotIn("unified theory", text.lower())
         arms = {a["id"] for a in report["appendages"]}

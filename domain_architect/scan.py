@@ -18,6 +18,7 @@ from typing import Any, Final
 from .desk import LIBRARY_OBJECTS, SHAPE_ROLES
 from .overlay import LAYERS, overlay_report
 from .registry import EquationRegistry
+from .think_tank import consult
 
 
 FAMILY_BOOK: Final[dict[str, str]] = {
@@ -405,6 +406,7 @@ def scan_report(target: str = "B") -> dict[str, Any]:
         "pieces": pieces,
         "leftover": holes,
         "focus": first,
+        "think_tank": consult("scan"),
         "counts": {
             "pieces": len(pieces),
             "views": len(views),
@@ -474,6 +476,12 @@ def format_scan(report: dict[str, Any] | None = None) -> str:
         f"  wrong-object (other books / retired grammar): {len(wrong)}  "
         "none of these fill the hole"
     )
+    tank = data.get("think_tank") or {}
+    if tank.get("notes"):
+        lines.append("")
+        lines.append("Think tank (insight is not a weld)")
+        for note in tank["notes"]:
+            lines.append(f"  {note['name']}: {note['says']}")
     lines.append("")
     lines.append("Endpoint: " + data["endpoint"])
     lines.append("Next: " + data["next"])

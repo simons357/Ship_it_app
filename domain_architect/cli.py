@@ -17,6 +17,7 @@ from .shape_play import format_shape_play, shape_play
 from .energy_play import energy_play, format_energy_play
 from .overlay import format_overlay, overlay_report
 from .scan import format_scan, scan_report
+from .think_tank import consult, format_consult
 from .visual import follow, format_follow
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
@@ -46,6 +47,13 @@ def main(argv: list[str] | None = None) -> int:
         "--proceed",
         action="store_true",
         help="print computing-bench desk: layers, unglued books, next legal moves",
+    )
+    parser.add_argument(
+        "--consult",
+        metavar="TOPIC",
+        nargs="?",
+        const="scan",
+        help="ask the inner think tank about a live move (scan / anatomy)",
     )
     parser.add_argument(
         "--refuse-splice",
@@ -129,6 +137,15 @@ def main(argv: list[str] | None = None) -> int:
             sys.stdout.write("\n")
         else:
             print(format_proceed(payload))
+        return 0
+
+    if args.consult is not None:
+        payload = consult(args.consult)
+        if args.json:
+            json.dump(payload, sys.stdout, indent=2)
+            sys.stdout.write("\n")
+        else:
+            print(format_consult(payload))
         return 0
 
     if args.refuse_splice:
@@ -358,7 +375,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if not args.expression:
         parser.error(
-            "expression is required unless --registry, --proceed, "
+            "expression is required unless --registry, --proceed, --consult, "
             "--refuse-splice, --shape-compare, --clip, --chain, "
             "--geometry, --tube, --gap, --shape-play, --energy-play, --overlay, --scan, or --see is set"
         )

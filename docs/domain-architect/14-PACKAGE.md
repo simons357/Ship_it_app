@@ -19,6 +19,9 @@ python -m domain_architect --tube B --json
 python -m domain_architect --proceed
 # think tank only — the picture does not move
 
+python -m domain_architect --consult scan
+# same appendage: names and notes. Insight is not a weld.
+
 python -m domain_architect --refuse-splice SEE B
 # REFUSED — the visual appendage cannot write classical Navier–Stokes
 
@@ -36,7 +39,7 @@ and a plain expression audit.
 
 Commands that do **not** move the picture:
 
-`--proceed`, `--registry`, `--refuse-splice`.
+`--proceed`, `--consult`, `--registry`, `--refuse-splice`.
 
 Open `see.html` after any math command. The gold strip says what you
 were just doing. The four charts (cylinder, energy, overlay, gap) stay
