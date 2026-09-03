@@ -63,6 +63,7 @@ SLOTS = {
             "tests.test_da_harmonic",
             "tests.test_da_ground",
             "tests.test_da_pipe",
+            "tests.test_da_desk",
             "-v",
         ],
     },
@@ -118,7 +119,7 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
     if re.search(
-        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank",
+        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up",
         text,
     ):
         return {"domain": "U", "verdict": "open", "reason": "looks like score U / SM Lagrangian / waveform; run sm or how"}
@@ -658,6 +659,24 @@ def cmd_pipe() -> int:
     return 0
 
 
+def cmd_desk() -> int:
+    from da_desk import run as desk_run
+
+    payload = desk_run()
+    print("DA desk. Write-up: docs/DA-DESK.md")
+    print("Corpus = published papers. Pair 2–3. Score the sentence.")
+    for r in payload["corpus_rules"]:
+        print(f"  [{r['verdict']}] {r['id']}: {r['statement']}")
+    append_run(
+        "U",
+        "Write the whole desk down; type the corpus method",
+        "open",
+        "write-up in docs/DA-DESK.md; corpus method pass; pairing-writes-F fail; all benches listed",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_smbreak() -> int:
     from da_sm_break import run as break_run
 
@@ -739,6 +758,7 @@ def main() -> int:
     sub.add_parser("harmonic", help="typed harmonic vocabulary from mathematics; not a unifier")
     sub.add_parser("ground", help="spectrum destination: reconstruct, ablate, program review")
     sub.add_parser("pipe", help="now-bench: live science pipes + falsify every verdict")
+    sub.add_parser("desk", help="write-up roster + corpus method (papers, not a vote)")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -790,6 +810,8 @@ def main() -> int:
         return cmd_ground()
     if args.cmd == "pipe":
         return cmd_pipe()
+    if args.cmd == "desk":
+        return cmd_desk()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":

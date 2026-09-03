@@ -76,6 +76,11 @@ class DaMachineTests(unittest.TestCase):
         self.assertEqual(r["domain"], "U")
         self.assertEqual(r["verdict"], "open")
 
+    def test_desk_writeup_lands_in_u(self):
+        r = classify_claim("write up the whole desk and the corpus method")
+        self.assertEqual(r["domain"], "U")
+        self.assertEqual(r["verdict"], "open")
+
     def test_tube_hardy_lands_in_b_and_solved_ns_fails(self):
         r = classify_claim("localized tube Hardy for Gamma, keep 1/r^4")
         self.assertEqual(r["domain"], "B")

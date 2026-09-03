@@ -229,12 +229,19 @@
       "claim": "Pipe current hard science into the think tank; falsify every pass/fail",
       "verdict": "open",
       "note": "additive now-bench; GWTC/EHT/DESI/LMFDB typed; glue fail; omniscience fail; killers on every verdict"
+    },
+    {
+      "t": "2026-09-03T06:04:42.658048+00:00",
+      "domain": "U",
+      "claim": "Write the whole desk down; type the corpus method",
+      "verdict": "open",
+      "note": "write-up in docs/DA-DESK.md; corpus method pass; pairing-writes-F fail; all benches listed"
     }
   ],
   "counts": {
-    "scored": 32,
+    "scored": 33,
     "pass": 8,
     "fail": 4,
-    "open": 20
+    "open": 21
   }
 }

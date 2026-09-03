@@ -1,0 +1,473 @@
+{
+  "meta": {
+    "question": "write the whole desk down; type the corpus method",
+    "writeup": "docs/DA-DESK.md",
+    "dated": "2026-09-03",
+    "corpus_means": "published papers, not the person",
+    "not_a_unifier": true,
+    "vote_cannot_close": true,
+    "program_review": true,
+    "does_not_retune_nodes": true
+  },
+  "slots": {
+    "A": "Q1-augmented NS, eps>0; Theorem A for this PDE; not B",
+    "B": "classical NS, keep 1/r^4; regularity open",
+    "Q": "inverse-GCD only; full floor false",
+    "U": "process / SM / score; not a unifier"
+  },
+  "corpus_rules": [
+    {
+      "id": "K1",
+      "name": "draw_from_papers",
+      "statement": "DA may draw from published work, including people who are gone",
+      "verdict": "pass",
+      "why": "The unit is the paper trail. Alive or not does not matter."
+    },
+    {
+      "id": "K2",
+      "name": "pair_two_or_three",
+      "statement": "Sit one corpus next to two or three others and emit one sentence",
+      "verdict": "pass",
+      "why": "That is the lead. The sentence still has to be scored."
+    },
+    {
+      "id": "K3",
+      "name": "slot_and_killer",
+      "statement": "The sentence names one slot and a check that could kill it",
+      "verdict": "pass",
+      "why": "Otherwise it is not a proposal."
+    },
+    {
+      "id": "K4",
+      "name": "pairing_writes_F",
+      "statement": "The pairing writes a theory of everything / F",
+      "verdict": "fail",
+      "why": "A corpus method is not a producing-map."
+    },
+    {
+      "id": "K5",
+      "name": "pairing_closes_B",
+      "statement": "The pairing closes classical regularity",
+      "verdict": "fail",
+      "why": "Leray + BKM + CKN are constraints. Domain B stays open."
+    },
+    {
+      "id": "K6",
+      "name": "pairing_unshelves",
+      "statement": "The pairing unshelves SFE or retunes nodes.json",
+      "verdict": "fail",
+      "why": "Motive may come back. The close may not."
+    },
+    {
+      "id": "K7",
+      "name": "vote_replaces_check",
+      "statement": "A vote of names replaces a check",
+      "verdict": "fail",
+      "why": "A program review types demands. It does not collapse the wave."
+    }
+  ],
+  "pairs": [
+    {
+      "id": "Y1",
+      "name": "einstein_weinberg_pdg",
+      "statement": "Einstein + Weinberg + PDG \u2192 Einstein+T_SM",
+      "verdict": "open",
+      "why": "The couple already passes. The numbers stay inputs.",
+      "primary": "Einstein (GR)",
+      "companions": [
+        "Weinberg",
+        "PDG"
+      ],
+      "may_emit": "two-sided couple",
+      "couple": "pass",
+      "numbers": "fail"
+    },
+    {
+      "id": "Y2",
+      "name": "weyl_wigner_vN",
+      "statement": "Weyl + Wigner + von Neumann \u2192 (X, D, \u03c3, Rep)",
+      "verdict": "pass",
+      "why": "Ground language. Not the couplings.",
+      "primary": "Weyl",
+      "companions": [
+        "Wigner",
+        "von Neumann"
+      ],
+      "may_emit": "vocabulary of the destination"
+    },
+    {
+      "id": "Y3",
+      "name": "leray_bkm_ckn",
+      "statement": "Leray + BKM + CKN \u2192 constraints on B",
+      "verdict": "open",
+      "why": "Energy, continuation, partial regularity. Not a regularity pass.",
+      "primary": "Leray",
+      "companions": [
+        "Beale\u2013Kato\u2013Majda",
+        "Caffarelli\u2013Kohn\u2013Nirenberg"
+      ],
+      "may_emit": "constraints"
+    },
+    {
+      "id": "Y4",
+      "name": "lvk_eht_ipta",
+      "statement": "LVK + EHT + IPTA \u2192 black holes are seen",
+      "verdict": "pass",
+      "why": "Observation on U. Not 1/r^4 and not primes.",
+      "primary": "LVK",
+      "companions": [
+        "EHT",
+        "IPTA"
+      ],
+      "may_emit": "strain and images exist"
+    },
+    {
+      "id": "Y5",
+      "name": "lmfdb_nt_bridge",
+      "statement": "LMFDB + math.NT + Bridge* \u2192 arithmetic only",
+      "verdict": "pass",
+      "why": "Stays on Q. No map onto (u\u00b7\u2207)u.",
+      "primary": "LMFDB",
+      "companions": [
+        "math.NT",
+        "Bridge*"
+      ],
+      "may_emit": "Q hygiene"
+    },
+    {
+      "id": "Y6",
+      "name": "hb_sfe_cosmo",
+      "statement": "HB + SFE + Cosmo Superagent \u2192 F",
+      "verdict": "fail",
+      "why": "The refused pairing. Motive is not a producing-map.",
+      "primary": "HB",
+      "companions": [
+        "SFE",
+        "Cosmo Superagent"
+      ],
+      "may_emit": "nothing legal on the desk"
+    },
+    {
+      "id": "Y7",
+      "name": "primes_qnm_ns",
+      "statement": "primes + QNMs + NS \u2192 one theorem",
+      "verdict": "fail",
+      "why": "Three slots. The word spectrum is not glue.",
+      "primary": "LMFDB",
+      "companions": [
+        "EHT / LVK",
+        "Track B"
+      ],
+      "may_emit": "nothing glued"
+    }
+  ],
+  "dream_team": [
+    {
+      "name": "Leray",
+      "slot": "B",
+      "side": "paper",
+      "owns": "kinetic energy + weak solutions",
+      "settles": "\u222bX dt < \u221e and the energy inequality",
+      "cannot": "bound X in L^\u221e; we already failed that close",
+      "suggest": "keep energy; do not close the cubic ODE from it"
+    },
+    {
+      "name": "Beale\u2013Kato\u2013Majda",
+      "slot": "B",
+      "side": "paper",
+      "owns": "continuation criterion",
+      "settles": "\u222b\u2016\u03c9\u2016_\u221e dt < \u221e \u21d2 regular",
+      "cannot": "BKM-from-L\u00b2 (forbidden on this desk)",
+      "suggest": "if you want a criterion, use L^\u221e, not \u2016\u03c9\u2016\u2082"
+    },
+    {
+      "name": "Caffarelli\u2013Kohn\u2013Nirenberg",
+      "slot": "B",
+      "side": "paper",
+      "owns": "partial regularity",
+      "settles": "singular set has parabolic measure zero",
+      "cannot": "no finite-time blowup",
+      "suggest": "partial regularity is not a global pass"
+    },
+    {
+      "name": "Constantin\u2013Fefferman",
+      "slot": "B",
+      "side": "paper",
+      "owns": "geometric depletion if aligned",
+      "settles": "stretching small when vorticity is aligned",
+      "cannot": "force cos \u03b1_3 \u2192 0 for all data (Biot\u2013Savart slogan)",
+      "suggest": "Ring bounds |\u2207\u03be| on E_c; it does not give alignment"
+    },
+    {
+      "name": "Ladyzhenskaya",
+      "slot": "A",
+      "side": "paper",
+      "owns": "p-Laplacian / extra dissipation",
+      "settles": "global regularity for the modified stress, \u03b2 \u2265 1/2, \u03b5 > 0",
+      "cannot": "\u03b5 \u2192 0, Track A \u21d2 B",
+      "suggest": "leave Theorem A on A; do not import it into the tube"
+    },
+    {
+      "name": "Einstein",
+      "slot": "U",
+      "side": "paper",
+      "owns": "G_\u03bc\u03bd + \u039b g_\u03bc\u03bd = 8\u03c0 G T_\u03bc\u03bd",
+      "settles": "working couple of geometry to T_SM",
+      "cannot": "values of G and \u039b",
+      "suggest": "keep the two-sided equation; do not hunt F inside L_SM"
+    },
+    {
+      "name": "Weinberg",
+      "slot": "U",
+      "side": "paper",
+      "owns": "(Z, A) = R(\u03b8_W)(W\u00b3, B)",
+      "settles": "the rotation is real",
+      "cannot": "a topological output of \u03b8_W",
+      "suggest": "\u03b8_W stays an input; 3/8 \u2192 0.231 is GUT running, not this Lagrangian"
+    },
+    {
+      "name": "experiment / PDG",
+      "slot": "U",
+      "side": "nature",
+      "owns": "the measured numbers",
+      "settles": "what L_SM consumes (g_s, \u03b1, v, m_H, CKM, \u2026)",
+      "cannot": "why those numbers",
+      "suggest": "a number on the poster is an input until a public F writes it"
+    },
+    {
+      "name": "neutrino / cosmology data",
+      "slot": "U",
+      "side": "nature",
+      "owns": "\u03a3 m_\u03bd bound, \u039b seen",
+      "settles": "minimal poster SM is incomplete; \u039b is in the Einstein equation",
+      "cannot": "Cosmo 0.06 eV as a derivation (F private)",
+      "suggest": "keep \u03a3 m_\u03bd as a number to kill; do not count it as DA produce"
+    },
+    {
+      "name": "operator",
+      "slot": "meta",
+      "side": "desk",
+      "owns": "runs the machine",
+      "settles": "one sentence, one slot, one check",
+      "cannot": "need chops; the machine is the chops",
+      "suggest": "ask which sentence / which slot / which check"
+    }
+  ],
+  "program_review": [
+    {
+      "name": "Einstein",
+      "owns": "equivalence + a two-sided field equation",
+      "looks_at_da": "DA already keeps G_\u03bc\u03bd+\u039bg = 8\u03c0G T_SM. Good. Catalogs without a principle are not a theory.",
+      "improve_program": "Every slot states the principle before the list. Covariance, an action, what is forbidden.",
+      "how_to_derive": "Write the principle, then the operator, then compute the spectrum as a consequence. Do not start from eigenvalues and hope they remember the metric.",
+      "cannot": "cannot output G or \u039b; cannot close a theorem by sitting here",
+      "side": "review"
+    },
+    {
+      "name": "Tesla",
+      "owns": "a resonator you can tune and detune",
+      "looks_at_da": "A program that cannot be detuned is a slogan. DA's checkers are the closest thing to an apparatus on this desk.",
+      "improve_program": "Every claim names the knob you turn and the script that must move. If nothing is detunable, it does not sit.",
+      "how_to_derive": "Build the resonator first (name D). Listen second (compute \u03c3(D)). Standing waves are what a built operator does, not a universe brand.",
+      "cannot": "cannot derive SU(3) or Einstein's equation; not a ToE chair",
+      "side": "review"
+    },
+    {
+      "name": "Feynman",
+      "owns": "a kernel you can compute with",
+      "looks_at_da": "If the vocabulary does not produce a number you can get wrong, it is a stamp collection.",
+      "improve_program": "No new name sits until it has a fail-able computation. Refuse councils. Refuse vibes.",
+      "how_to_derive": "Pick (X, D). Compute one \u03bb, one matrix element, or one \u03c7\u00b2 you can miss. That is how you derive a DA-like program: the check is the program.",
+      "cannot": "cannot vote the destination into a pass; cannot unshelve SFE",
+      "side": "review"
+    },
+    {
+      "name": "Weyl",
+      "owns": "gauge + representations of compact groups",
+      "looks_at_da": "DA says 'harmonic math' and 'gauge' in the same breath too often. Those are different additions.",
+      "improve_program": "Do not utter gauge until G and the reps are named. Peter\u2013Weyl is not SU(3)\u00d7SU(2)\u00d7U(1).",
+      "how_to_derive": "Climb G3 only after G0\u2013G2. The group is an input. The harmonics of that group are the output.",
+      "cannot": "cannot choose nature's G from a Laplacian on S^2",
+      "side": "review"
+    },
+    {
+      "name": "Wigner",
+      "owns": "particles as representations; spectrum with a group",
+      "looks_at_da": "A spectrum with no group is a hydrogen textbook, not a particle table.",
+      "improve_program": "Type every mode by the representation it sits in. If you cannot, you are not at the ground of matter.",
+      "how_to_derive": "The program asks: which group, which rep, which operator that commutes with the group. Then the spectrum is classified, not wished.",
+      "cannot": "cannot turn a classification into the numerical couplings",
+      "side": "review"
+    },
+    {
+      "name": "von Neumann",
+      "owns": "spectral theorem: operator on a Hilbert space",
+      "looks_at_da": "Talk of a harmonic universe that never names the Hilbert space and the operator is not mathematics.",
+      "improve_program": "G0 and G1 are mandatory. No slot opens with 'modes' alone.",
+      "how_to_derive": "A DA-like program is: specify H, specify a self-adjoint D, diagonalize, store the residual. That is the whole machine at ground level.",
+      "cannot": "cannot pick D from poetry; cannot make {\u03bb_n} write F",
+      "side": "review"
+    }
+  ],
+  "now_bench": [
+    {
+      "name": "LVK collaboration",
+      "slot": "U",
+      "side": "now",
+      "reads": "GWTC-5.0 strain and catalogs",
+      "settles": "390 compact-binary detections through O4b",
+      "cannot": "classical NS; primes; F",
+      "suggest": "keep GW data on U as GR in the strong field; do not import it into the tube"
+    },
+    {
+      "name": "EHT collaboration",
+      "slot": "U",
+      "side": "now",
+      "reads": "M87* / Sgr A* visibilities and images",
+      "settles": "a stable ring; time-varying polarization",
+      "cannot": "HB Experiment 01; nodes.json",
+      "suggest": "treat the image as a reconstructed observable; do not retune the shelved ringdown test"
+    },
+    {
+      "name": "DESI collaboration",
+      "slot": "U",
+      "side": "now",
+      "reads": "galaxy BAO + Ly\u03b1 forest",
+      "settles": "a live tension with plain \u039bCDM; a \u03a3m_\u03bd bound",
+      "cannot": "write F; finish nature4",
+      "suggest": "\u039b is an input that data may challenge; Cosmo produce still fails"
+    },
+    {
+      "name": "IPTA / NANOGrav",
+      "slot": "U",
+      "side": "now",
+      "reads": "pulsar timing arrays",
+      "settles": "a nHz common-spectrum process exists at current evidence",
+      "cannot": "name the source; glue to LVK band or to HB",
+      "suggest": "keep the nHz spectrum on U, separate from LVK and from Q"
+    },
+    {
+      "name": "PDG + LHC analyses",
+      "slot": "U",
+      "side": "now",
+      "reads": "particle catalogs",
+      "settles": "the consumed numbers this year",
+      "cannot": "why those numbers",
+      "suggest": "refresh the poster inputs; do not call a PDG update a derivation"
+    },
+    {
+      "name": "LMFDB / analytic NT",
+      "slot": "Q",
+      "side": "now",
+      "reads": "L-functions, modular forms, gap tables",
+      "settles": "arithmetic facts that can kill a false floor",
+      "cannot": "black holes; fluids",
+      "suggest": "keep Q arithmetic; a new gap paper is not \u03c9\u00b7S\u03c9"
+    },
+    {
+      "name": "math.AP authors (current)",
+      "slot": "B",
+      "side": "now",
+      "reads": "preprints and papers on NSE / Euler",
+      "settles": "nothing until a lemma hits the Track B checker",
+      "cannot": "close domain B by announcement",
+      "suggest": "if it keeps 1/r^4 and names a check, score it; regularity stays open"
+    }
+  ],
+  "pipes": [
+    {
+      "name": "LVK_GWTC5",
+      "slot": "U",
+      "asof": "2026-05-26"
+    },
+    {
+      "name": "EHT_M87",
+      "slot": "U",
+      "asof": "2026-02"
+    },
+    {
+      "name": "DESI_DR2",
+      "slot": "U",
+      "asof": "2025-03-19"
+    },
+    {
+      "name": "IPTA_NANOGrav",
+      "slot": "U",
+      "asof": "2026-02"
+    },
+    {
+      "name": "PDG_LHC",
+      "slot": "U",
+      "asof": "rolling"
+    },
+    {
+      "name": "LMFDB_NT",
+      "slot": "Q",
+      "asof": "2026-09"
+    },
+    {
+      "name": "arXiv_math_AP",
+      "slot": "B",
+      "asof": "rolling"
+    },
+    {
+      "name": "Euclid_JWST_Planck",
+      "slot": "U",
+      "asof": "rolling"
+    },
+    {
+      "name": "IceCube_neutrino",
+      "slot": "U",
+      "asof": "rolling"
+    }
+  ],
+  "forms": [
+    "time_series",
+    "spectrum",
+    "image_map",
+    "catalog",
+    "graph",
+    "satellite",
+    "holographic_boundary"
+  ],
+  "ground": [
+    "space",
+    "operator",
+    "spectrum_and_modes",
+    "representations",
+    "action",
+    "numbers"
+  ],
+  "reconstruct_pass": [
+    "sphere_laplacian",
+    "torus_fourier",
+    "compact_group",
+    "hodge"
+  ],
+  "reconstruct_fail": [
+    "to_sm_couplings",
+    "to_einstein_constants",
+    "to_ns_regularity"
+  ],
+  "ablate": [
+    "drop_operator",
+    "drop_compact_group",
+    "drop_hodge",
+    "keep_the_bag",
+    "drop_Ylm_keep_LP",
+    "overtones_only"
+  ],
+  "vocab_n": 27,
+  "counts": {
+    "dream_team": 10,
+    "program_review": 6,
+    "now_bench": 7,
+    "pipes": 9,
+    "corpus_rules_pass": 3,
+    "corpus_rules_fail": 4,
+    "pairs_pass": 3,
+    "pairs_fail": 2,
+    "pairs_open": 2
+  },
+  "next_da_move": "Use the write-up. Next B write is still Hardy \u2192 I_tube, then low Bony T. Corpus pairings emit scored sentences, not F."
+}
