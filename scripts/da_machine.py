@@ -52,6 +52,7 @@ SLOTS = {
             "tests.test_da_wave",
             "tests.test_da_game",
             "tests.test_da_screen",
+            "tests.test_da_gq",
             "-v",
         ],
     },
@@ -440,6 +441,25 @@ def cmd_screen() -> int:
     return 0
 
 
+def cmd_gq() -> int:
+    from da_gq import run as gq_run
+
+    payload = gq_run()
+    print("DA gravity + quantum. What is coupled? Each pair separate.")
+    print(payload["what_is_coupled"])
+    for p in payload["pairs"]:
+        print(f"  [{p['verdict']}] {p['name']}: {p['coupling']}")
+    print("leftovers:", payload["leftovers"])
+    append_run(
+        "U",
+        "Start at gravity + quantum: what is coupled?",
+        "open",
+        "universal couple is (g,T) via G; vacuum leftover fails as a prediction; gauge3 not coupled to G",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_check(domain: str) -> int:
     domains = list(SLOTS) if domain == "all" else [domain]
     rc = 0
@@ -467,6 +487,7 @@ def main() -> int:
     sub.add_parser("wave", help="waveform rules: superposition, entanglement, collapse, falsification")
     sub.add_parser("game", help="Shapley on the score vs the unifier-claim game")
     sub.add_parser("screen", help="screen published unification claims at gauge3 vs nature4")
+    sub.add_parser("gq", help="start at gravity + quantum: what is coupled")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -498,6 +519,8 @@ def main() -> int:
         return cmd_game()
     if args.cmd == "screen":
         return cmd_screen()
+    if args.cmd == "gq":
+        return cmd_gq()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":

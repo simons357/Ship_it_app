@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "start": "gravity + quantum",
+    "question": "what is coupled?",
+    "not_a_unifier": true,
+    "not_quantum_lens": true,
+    "do_not_glue_to_gauge3": true
+  },
+  "what_is_coupled": "One universal pair: metric \u2194 stress-energy, strength G. Quantum fields couple to a classical metric. Their vacuum couples through the same G and overshoots \u039b. That is the start. The three SM gauges are a different coupling.",
+  "pairs": [
+    {
+      "name": "Einstein",
+      "left": "G_\u03bc\u03bd (curvature)",
+      "right": "T_\u03bc\u03bd (stress-energy)",
+      "coupling": "8\u03c0 G",
+      "status": "working classical + QFT source",
+      "verdict": "pass",
+      "note": "Universal. Everything with energy sources curvature the same way. One constant, G."
+    },
+    {
+      "name": "equivalence",
+      "left": "g_\u03bc\u03bd (metric)",
+      "right": "every matter worldline / kinetic term",
+      "coupling": "minimal coupling (\u221a\u2212g, g^\u03bc\u03bd)",
+      "status": "working; tested",
+      "verdict": "pass",
+      "note": "The same metric enters every species. That is why gravity is not a fourth SM gauge click."
+    },
+    {
+      "name": "Lambda",
+      "left": "\u039b g_\u03bc\u03bd",
+      "right": "g_\u03bc\u03bd",
+      "coupling": "\u039b (or \u03c1_\u039b = \u039b/8\u03c0G)",
+      "status": "working as a term; origin open",
+      "verdict": "open",
+      "note": "Observed. Sits on the left of Einstein. Not derived from the SM vacuum."
+    },
+    {
+      "name": "QFT_on_curved",
+      "left": "quantum fields \u03c8, A",
+      "right": "classical g_\u03bc\u03bd",
+      "coupling": "D_\u03bc[g], \u221a\u2212g",
+      "status": "working semiclassical",
+      "verdict": "pass",
+      "note": "Hawking, inflation perturbations, etc. Fields are quantum. Geometry is not."
+    },
+    {
+      "name": "vacuum_to_gravity",
+      "left": "\u27e80|T_\u03bc\u03bd|0\u27e9 ~ k_UV\u2074",
+      "right": "G_\u03bc\u03bd via 8\u03c0G",
+      "coupling": "same G",
+      "status": "the leftover",
+      "verdict": "fail",
+      "note": "This coupling is why \u03c1_\u039b is a problem. Naive QFT vacuum overshoots the observed \u039b by a huge factor. Not a pass."
+    },
+    {
+      "name": "hierarchy",
+      "left": "M_Pl = 1/\u221aG",
+      "right": "v (electroweak)",
+      "coupling": "G v\u00b2 ~ 10\u207b\u00b3\u00b2",
+      "status": "the other leftover",
+      "verdict": "open",
+      "note": "Gravity is weak at v because M_Pl is huge. A fact. Not a derivation."
+    },
+    {
+      "name": "graviton_to_SM",
+      "left": "quantized h_\u03bc\u03bd",
+      "right": "SM fields",
+      "coupling": "\u03ba = \u221a(8\u03c0G)",
+      "status": "not established as a complete theory",
+      "verdict": "open",
+      "note": "Effective EFT exists (soft gravitons). A finite UV theory that outputs G and \u039b is not on the desk."
+    },
+    {
+      "name": "gauge3_to_G",
+      "left": "\u03b1_em, \u03b1_s, \u03b1_w",
+      "right": "G_N",
+      "coupling": "no working F",
+      "status": "not coupled in any screened program",
+      "verdict": "fail",
+      "note": "The screen: MSSM-class can meet the three gauges. None of them output G from that same map."
+    }
+  ],
+  "working": [
+    "Einstein",
+    "equivalence",
+    "QFT_on_curved"
+  ],
+  "leftovers": [
+    "vacuum_to_gravity",
+    "hierarchy"
+  ],
+  "why_the_score_cared": "lock-R, Born, and Shapley all put mass on log(\u03c1_\u039b^{1/4}/v) and log(M_Pl/v) because those are the two leftovers of this one coupling.",
+  "how_far": [
+    "named the actual couple: (g_\u03bc\u03bd, T_\u03bc\u03bd) with strength G",
+    "ran each pair separately",
+    "working: Einstein, equivalence, QFT-on-curved",
+    "leftovers: vacuum\u2192gravity (fail as a prediction), hierarchy (open as a fact)",
+    "graviton\u2194SM is EFT-open, not a UV F",
+    "gauge3 is not coupled to G in any screened program",
+    "start here; do not glue a GUT meet onto this pair"
+  ],
+  "next_da_move": "Stay on this pair. A nature4 pass needs G and \u039b as outputs of one F. That F is not on the desk."
+}

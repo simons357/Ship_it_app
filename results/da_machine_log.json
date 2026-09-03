@@ -103,12 +103,19 @@
       "claim": "Screen published unification claims at gauge3 vs nature4",
       "verdict": "open",
       "note": "nothing passes nature4; MSSM-class stays open as gauge3; SU(5) minimal and SM fail"
+    },
+    {
+      "t": "2026-09-03T00:33:43.018529+00:00",
+      "domain": "U",
+      "claim": "Start at gravity + quantum: what is coupled?",
+      "verdict": "open",
+      "note": "universal couple is (g,T) via G; vacuum leftover fails as a prediction; gauge3 not coupled to G"
     }
   ],
   "counts": {
-    "scored": 14,
+    "scored": 15,
     "pass": 3,
     "fail": 0,
-    "open": 11
+    "open": 12
   }
 }

@@ -59,3 +59,6 @@ out of that same \(F\).
 
 That is how you discern unification: same checker, two
 levels, published claims, no slogans.
+
+Starting at gravity + quantum, and naming what is actually
+coupled, is [`docs/DA-GRAVITY-QUANTUM.md`](DA-GRAVITY-QUANTUM.md).
