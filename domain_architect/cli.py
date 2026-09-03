@@ -17,6 +17,7 @@ from .shape_play import format_shape_play, shape_play
 from .energy_play import energy_play, format_energy_play
 from .overlay import format_overlay, overlay_report
 from .scan import format_scan, scan_report
+from .shell import format_shell, shell_report
 from .think_tank import consult, format_consult
 from .visual import follow, format_follow
 from .registry import EquationRegistry
@@ -120,6 +121,13 @@ def main(argv: list[str] | None = None) -> int:
         nargs="?",
         const="ANY",
         help="anatomy machine: leftover holes vs pieces (no book = method; B = worked example)",
+    )
+    parser.add_argument(
+        "--shell",
+        metavar="BOOK",
+        nargs="?",
+        const="B",
+        help="inside plus outer shell; silhouette may identify a known object (B / Q)",
     )
     parser.add_argument(
         "--see",
@@ -327,6 +335,19 @@ def main(argv: list[str] | None = None) -> int:
         _follow_math("scan", payload.get("book", "B"), json_mode=args.json)
         return 0
 
+    if args.shell is not None:
+        payload = shell_report(args.shell)
+        if payload.get("error"):
+            print(payload["error"], file=sys.stderr)
+            return 2
+        if args.json:
+            json.dump(payload, sys.stdout, indent=2)
+            sys.stdout.write("\n")
+        else:
+            print(format_shell(payload))
+        _follow_math("shell", payload.get("book", "B"), json_mode=args.json)
+        return 0
+
     if args.see is not None:
         book = args.see.strip().upper()
         if book not in {"B", "NS", "TRACKB", "NAVIERSTOKES", "NAVIER-STOKES"}:
@@ -377,7 +398,7 @@ def main(argv: list[str] | None = None) -> int:
         parser.error(
             "expression is required unless --registry, --proceed, --consult, "
             "--refuse-splice, --shape-compare, --clip, --chain, "
-            "--geometry, --tube, --gap, --shape-play, --energy-play, --overlay, --scan, or --see is set"
+            "--geometry, --tube, --gap, --shape-play, --energy-play, --overlay, --scan, --shell, or --see is set"
         )
 
     report = audit_expression(args.expression)

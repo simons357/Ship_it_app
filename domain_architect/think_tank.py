@@ -235,7 +235,54 @@ INSIGHTS: Final[dict[str, tuple[dict[str, str], ...]]] = {
             ),
             "fills_gap": "no",
         },
-    )
+    ),
+    "shell": (
+        {
+            "name": "Hermann Weyl",
+            "on": "the giveaway",
+            "says": (
+                "The outer form is the object. If that silhouette is already "
+                "in the catalog, you already know what you are looking at."
+            ),
+            "fills_gap": "no",
+        },
+        {
+            "name": "Hassler Whitney",
+            "on": "invented shell",
+            "says": (
+                "Wrapping a manufactured outside around the interior is an "
+                "extension. Extra structure. Not the original object."
+            ),
+            "fills_gap": "no",
+        },
+        {
+            "name": "Jean Leray",
+            "on": "the inside",
+            "says": (
+                "The interior you can see is the energy class and the projector. "
+                "Putting a skin on it does not bound vorticity."
+            ),
+            "fills_gap": "no",
+        },
+        {
+            "name": "Caffarelli–Kohn–Nirenberg",
+            "on": "holes in the skin",
+            "says": (
+                "Holes in the shell can remain. The outline can still be the "
+                "same object. That is identification, not a filled weld."
+            ),
+            "fills_gap": "no",
+        },
+        {
+            "name": "Jacques Hadamard",
+            "on": "play shell",
+            "says": (
+                "Even-reflect is a neighboring problem. A neighboring outline "
+                "is not a dead giveaway of the original."
+            ),
+            "fills_gap": "no",
+        },
+    ),
 }
 
 
@@ -256,6 +303,10 @@ def _norm_topic(token: str) -> str:
         "THINK": "method",
         "TANK": "method",
         "CONSULT": "method",
+        "SHELL": "shell",
+        "OUTSIDE": "shell",
+        "SILHOUETTE": "shell",
+        "GIVEAWAY": "shell",
     }
     return aliases.get(key, "method")
 

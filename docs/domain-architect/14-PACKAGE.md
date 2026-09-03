@@ -34,7 +34,7 @@ python -m domain_architect --shape-compare SEE VIZ
 Math commands that refresh the picture:
 
 `--tube`, `--gap`, `--overlay`, `--energy-play`, `--shape-play`,
-`--chain`, `--geometry`, `--clip`, `--shape-compare`, `--scan`, `--see`,
+`--chain`, `--geometry`, `--clip`, `--shape-compare`, `--scan`, `--shell`, `--see`,
 and a plain expression audit.
 
 Commands that do **not** move the picture:

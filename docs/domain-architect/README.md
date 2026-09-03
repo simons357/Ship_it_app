@@ -28,6 +28,7 @@ Approved plain-language explanation:
 | [13 — See](13-NS-SEE.md) | Human picture desk: SVG first, math under the fold |
 | [14 — Package](14-PACKAGE.md) | Think tank + visual appendage; picture slaves the math |
 | [15 — Scan](15-NS-SCAN.md) | Break into rudimentary pieces; match leftover holes; do not weld |
+| [16 — Shell](16-NS-SHELL.md) | Inside plus outer shape; silhouette may already be identified |
 
 Machine-readable provenance (original expressions are immutable):
 
@@ -50,6 +51,7 @@ python -m domain_architect --energy-play B
 python -m domain_architect --overlay B
 python -m domain_architect --scan
 python -m domain_architect --scan B
+python -m domain_architect --shell B
 python -m domain_architect --consult
 python -m domain_architect --see B
 python -m domain_architect --refuse-splice SEE B

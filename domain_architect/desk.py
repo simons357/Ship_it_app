@@ -94,7 +94,7 @@ APPENDAGES: Final[tuple[dict[str, str], ...]] = (
         "command": (
             "auto after --tube / --gap / --overlay / --energy-play / "
             "--shape-play / --chain / --geometry / --clip / --shape-compare / "
-            "--scan / --see"
+            "--scan / --shell / --see"
         ),
     },
 )
@@ -255,6 +255,16 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
         ),
         "command": "python -m domain_architect --consult scan",
         "do_not": "Treat a famous name as a fill for the empty slot.",
+    },
+    {
+        "priority": "3j",
+        "move": (
+            "Look at the inside. Put a shell on the outside so the object "
+            "has a shape. If that silhouette is already in the catalog, "
+            "it is a dead giveaway. An invented shell is play."
+        ),
+        "command": "python -m domain_architect --shell B",
+        "do_not": "Promote even-reflect to the object, or treat a giveaway as smoothness.",
     },
     {
         "priority": "4",

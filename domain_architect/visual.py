@@ -18,6 +18,7 @@ from .energy_play import energy_play
 from .gap import gap_report
 from .overlay import overlay_report
 from .scan import scan_report
+from .shell import shell_report
 from .shape_play import play_cylinder
 
 
@@ -45,6 +46,7 @@ FOCUS_LINE: Final[dict[str, str]] = {
     "shape-compare": "Live math: shape first, then texture",
     "audit": "Live math: role audit of an expression",
     "scan": "Live math: scan leftover holes against every rudimentary piece",
+    "shell": "Live math: inside plus outer shell — silhouette may already be known",
     "see": "Visual appendage — slave of the math, not Cosmo",
 }
 TITLES: Final[dict[str, str]] = {
@@ -62,6 +64,7 @@ TITLES: Final[dict[str, str]] = {
     "shape-compare": "Shape first, then texture",
     "audit": "Role audit of an expression",
     "scan": "Scan — match the hole, do not weld",
+    "shell": "Shell — inside, outer shape, dead giveaway",
     "see": "See desk — pictures first, math under the fold",
 }
 
@@ -318,6 +321,27 @@ def svg_scan(report: dict[str, Any] | None = None) -> str:
 </svg>'''
 
 
+def svg_shell(report: dict[str, Any] | None = None) -> str:
+    """Interior organs, outer identity shell, dashed play shell."""
+    data = report or shell_report("B")
+    give = data.get("giveaway") or {}
+    names = ", ".join(give.get("catalog") or [])
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 260" role="img" aria-label="Inside plus outer shell">
+  <rect width="520" height="260" fill="{PAPER}"/>
+  <text x="16" y="28" font-family="Georgia, serif" font-size="16" fill="{INK}">Inside, then a shell — the outline can already be known</text>
+  <ellipse cx="160" cy="140" rx="120" ry="88" fill="none" stroke="{PLAY}" stroke-width="2" stroke-dasharray="7 6"/>
+  <ellipse cx="160" cy="140" rx="78" ry="58" fill="none" stroke="{READY}" stroke-width="5"/>
+  <circle cx="160" cy="140" r="36" fill="#d7efe9" stroke="{READY}" stroke-width="2"/>
+  <text x="160" y="136" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="{INK}">inside</text>
+  <text x="160" y="154" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="{READY}">stacked</text>
+  <text x="300" y="88" font-family="Georgia, serif" font-size="13" fill="{READY}">identity shell = T³</text>
+  <text x="300" y="110" font-family="Georgia, serif" font-size="12" fill="{READY}">giveaway: {escape(names)}</text>
+  <text x="300" y="148" font-family="Georgia, serif" font-size="13" fill="{PLAY}">dashed = even-reflect play</text>
+  <text x="300" y="168" font-family="Georgia, serif" font-size="12" fill="{OPEN}">not the original object</text>
+  <text x="16" y="242" font-family="Georgia, serif" font-size="11" fill="{INK}">Dead giveaway names the object. It does not fill holes. CLIP-T3-OUTER is extra E.</text>
+</svg>'''
+
+
 def render_html(state: dict[str, Any] | None = None) -> str:
     overlay = overlay_report()
     gap = gap_report("B")
@@ -325,6 +349,7 @@ def render_html(state: dict[str, Any] | None = None) -> str:
     cyl = play_cylinder()
     even = next(c for c in cyl["completions"] if c["id"] == "even_reflect")
     scan = scan_report("B")
+    shell = shell_report("B")
     st = state or load_focus()
     live = st.get("live") or FOCUS_LINE.get(st.get("action", "see"), FOCUS_LINE["see"])
     title = st.get("title") or TITLES.get(st.get("action", "see"), TITLES["see"])
@@ -416,6 +441,16 @@ def render_html(state: dict[str, Any] | None = None) -> str:
         Any fill? {str(scan["focus"]["any_fill"]).lower()}.
       </details>
     </figure>
+    <figure>
+      {svg_shell(shell)}
+      <figcaption>Green interior is stacked pieces. Solid ring is the real outer shape. Dashed ring is an invented shell (play). If the solid outline is already in the catalog, that is a dead giveaway.</figcaption>
+      <details><summary>Math</summary>
+        Dead giveaway? {str(shell["giveaway"]["dead_giveaway"]).lower()}.
+        Catalog: {escape(", ".join(shell["giveaway"]["catalog"]))}.
+        Smooth? {str(shell["giveaway"]["smooth"]).lower()}.
+        Play clip: {escape(str(shell["play_shell"]["clip_id"]))}.
+      </details>
+    </figure>
   </main>
   <footer>
     Domain Architect package · think tank + visual appendage.
@@ -437,4 +472,5 @@ def write_see(path: str | Path | None = None) -> Path:
     dest.with_name("see-overlay.svg").write_text(svg_overlay(), encoding="utf-8")
     dest.with_name("see-gap.svg").write_text(svg_gap(), encoding="utf-8")
     dest.with_name("see-scan.svg").write_text(svg_scan(), encoding="utf-8")
+    dest.with_name("see-shell.svg").write_text(svg_shell(), encoding="utf-8")
     return dest
