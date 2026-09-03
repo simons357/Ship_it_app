@@ -22,6 +22,54 @@ DA_WORKING_APP: Final[str] = (
     "cursor/domain-architect-app-f96b (PR #43). Not CosmoEvolution."
 )
 
+# Shape-first navigation (Jonathan R. Simons): the object is a shape.
+# Textures are coordinate charts. Same shape is not a proof.
+SHAPE_ROLES: Final[tuple[str, ...]] = ("P", "H", "ψ", "λ", "Φ", "E")
+
+SHAPE_FIRST: Final[str] = (
+    "Think of the math object as a shape. It has different textures, "
+    "but the object is there. Navigate by shape before symbols. "
+    "A texture match is not a theorem."
+)
+
+LIBRARY_OBJECTS: Final[dict[str, dict[str, str]]] = {
+    "NS-B": {
+        "book": "B",
+        "shape": "classical NS role skeleton on T^3 / R^3",
+        "texture": "velocity-pressure or vorticity PDE",
+    },
+    "J/X": {
+        "book": "B",
+        "shape": "classical NS role skeleton on T^3 / R^3",
+        "texture": "dyadic packet mass J/X, 3-shell occupation",
+    },
+    "SND-C": {
+        "book": "B",
+        "shape": "classical NS role skeleton on T^3 / R^3",
+        "texture": "conditional SND, X≤M weld still open",
+    },
+    "Q6": {
+        "book": "Q",
+        "shape": "inverse-GCD arithmetic operator",
+        "texture": "λ_min / λ_max of a matrix",
+    },
+    "LAMBDA-MIN": {
+        "book": "Q",
+        "shape": "inverse-GCD arithmetic operator",
+        "texture": "λ_min / λ_max of a matrix",
+    },
+    "VIZ": {
+        "book": "VIZ",
+        "shape": "display / proposed-model animation",
+        "texture": "CosmoEvolution 3D epochs and SM hit table",
+    },
+    "DA": {
+        "book": "DA",
+        "shape": "FRA role skeleton Φ=ℱ(P,H,ψ,λ;E)",
+        "texture": "inquiry report, evidence levels 0–6",
+    },
+}
+
 LAYERS: Final[tuple[dict[str, str], ...]] = (
     {
         "id": "DA",
@@ -92,30 +140,36 @@ ILLEGAL_SPLICES: Final[tuple[tuple[str, str, str], ...]] = (
 NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
     {
         "priority": "1",
+        "move": "Navigate by shape first. Same object, different texture (NS PDE vs J/X). Different object if only the symbols rhyme (J/X vs λ_min).",
+        "command": "python -m domain_architect --shape-compare J/X LAMBDA-MIN",
+        "do_not": "Treat a texture translation as a proof, or use Cosmo pictures as the shape of NS or RH.",
+    },
+    {
+        "priority": "2",
         "move": "Run this desk, not Cosmo, as Domain Architect.",
         "command": "python -m domain_architect --proceed",
         "do_not": "Treat https://cosmoevolution3d.base44.app as the DA website.",
     },
     {
-        "priority": "2",
+        "priority": "3",
         "move": "One Track B identity: Hardy → I_tube. Regularity does not come along.",
         "command": "keep 1/r^4; no Φ-cancel; no BKM-from-L^2",
         "do_not": "Announce Clay Statement B.",
     },
     {
-        "priority": "3",
+        "priority": "4",
         "move": "One Track Q numeric floor, documented, with the open ≥-1/4 marked numeric.",
         "command": "recompute inverse-GCD scans; log N and λ_min",
         "do_not": "Say this proves RH.",
     },
     {
-        "priority": "4",
+        "priority": "5",
         "move": "Keep ChatVault as search only. Put the 160-page HB2 file there if it surfaces.",
         "command": "inquiry = DA; search = ChatVault",
         "do_not": "Wait on screenshots before the next lemma.",
     },
     {
-        "priority": "5",
+        "priority": "6",
         "move": "Banner CosmoEvolution: VIZ ONLY. Honest vacuum-fail sentence stays; 16/16 table does not enter U.",
         "command": COSMOEVOLUTION_URL,
         "do_not": "Load a private core equation into B or Q.",
@@ -222,6 +276,106 @@ def refuse_splice(source: str, target: str) -> SpliceDecision:
     )
 
 
+def _norm_object(token: str) -> str:
+    key = token.strip().upper().replace(" ", "")
+    aliases = {
+        "NS": "NS-B",
+        "NSB": "NS-B",
+        "TRACKB": "NS-B",
+        "B": "NS-B",
+        "PDE": "NS-B",
+        "JX": "J/X",
+        "J/X": "J/X",
+        "INFJ/X": "J/X",
+        "SNDC": "SND-C",
+        "SND-C": "SND-C",
+        "Q": "Q6",
+        "TRACKQ": "Q6",
+        "LAMBDAMIN": "LAMBDA-MIN",
+        "LAMBDA_MIN": "LAMBDA-MIN",
+        "ΛMIN": "LAMBDA-MIN",
+        "COSMO": "VIZ",
+        "COSMOEVOLUTION": "VIZ",
+        "FRA": "DA",
+        "DOMAINARCHITECT": "DA",
+    }
+    return aliases.get(key, token.strip().upper() if token.strip().upper() in LIBRARY_OBJECTS else key)
+
+
+@dataclass(frozen=True)
+class ShapeCompare:
+    left: str
+    right: str
+    left_book: str
+    right_book: str
+    left_shape: str
+    right_shape: str
+    left_texture: str
+    right_texture: str
+    verdict: str
+    reason: str
+    allowed_weld: bool
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+def compare_shape(left: str, right: str) -> ShapeCompare:
+    """Compare objects by shape first, texture second. Never a proof."""
+    a = _norm_object(left)
+    b = _norm_object(right)
+    if a not in LIBRARY_OBJECTS or b not in LIBRARY_OBJECTS:
+        return ShapeCompare(
+            left=a,
+            right=b,
+            left_book="?",
+            right_book="?",
+            left_shape="unknown",
+            right_shape="unknown",
+            left_texture="unknown",
+            right_texture="unknown",
+            verdict="INSUFFICIENT_INFORMATION",
+            reason="Object not in the frozen shape catalog. Do not invent a weld.",
+            allowed_weld=False,
+        )
+    la, ra = LIBRARY_OBJECTS[a], LIBRARY_OBJECTS[b]
+    if a == b:
+        verdict = "SAME_OBJECT"
+        reason = "Same catalog entry. No splice."
+        allowed = True
+    elif la["shape"] == ra["shape"] and la["book"] == ra["book"]:
+        verdict = "SAME_SHAPE_DIFFERENT_TEXTURE"
+        reason = (
+            "Same object, different chart. Navigation is legal. "
+            "Texture translation is not a theorem."
+        )
+        allowed = False
+    elif la["book"] != ra["book"] or la["shape"] != ra["shape"]:
+        verdict = "INCOMPATIBLE_SHAPE"
+        reason = (
+            "Different objects. Symbols may rhyme (J/X vs λ_min) and still "
+            "be two books. Refuse glue."
+        )
+        allowed = False
+    else:
+        verdict = "INCOMPATIBLE_SHAPE"
+        reason = "Default refuse."
+        allowed = False
+    return ShapeCompare(
+        left=a,
+        right=b,
+        left_book=la["book"],
+        right_book=ra["book"],
+        left_shape=la["shape"],
+        right_shape=ra["shape"],
+        left_texture=la["texture"],
+        right_texture=ra["texture"],
+        verdict=verdict,
+        reason=reason,
+        allowed_weld=allowed,
+    )
+
+
 def proceed_report() -> dict[str, Any]:
     return {
         "product": "Domain Architect",
@@ -243,12 +397,15 @@ def proceed_report() -> dict[str, Any]:
         },
         "layers": list(LAYERS),
         "books": list(BOOKS),
+        "shape_first": SHAPE_FIRST,
+        "shape_roles": list(SHAPE_ROLES),
+        "library_objects": {k: dict(v) for k, v in LIBRARY_OBJECTS.items()},
         "next_moves": list(NEXT_MOVES),
         "refused_as_close": list(REFUSED_AS_CLOSE),
         "where_we_go": (
-            "Shrink the machine. Typed books, frozen tests, one lemma or one "
-            "scan at a time. CosmoEvolution is a planetarium. Domain Architect "
-            "is a compiler. ChatVault is search. Do not let the planetarium compile."
+            "Shrink the machine. Navigate by shape first, then one lemma or "
+            "one scan. CosmoEvolution is a planetarium. Domain Architect is a "
+            "compiler. ChatVault is search. Do not let the planetarium compile."
         ),
         "bench": (
             "Turing, von Neumann, Hamming, Wilkinson, Kahan, Knuth, Dijkstra, "
@@ -266,6 +423,10 @@ def format_proceed(report: dict[str, Any] | None = None) -> str:
         f"Canonical SFE status: {data['canonical_sfe_status']}.",
         "",
         data["where_we_go"],
+        "",
+        "Shape first (not a substitute for proofs)",
+        "  " + data["shape_first"],
+        "  roles: " + ", ".join(data["shape_roles"]),
         "",
         "Layers (not one website)",
     ]

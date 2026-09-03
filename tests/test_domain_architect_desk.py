@@ -11,6 +11,7 @@ from pathlib import Path
 
 from domain_architect.desk import (
     COSMOEVOLUTION_URL,
+    compare_shape,
     format_proceed,
     proceed_report,
     refuse_splice,
@@ -32,6 +33,7 @@ class TestProceedMap(unittest.TestCase):
         self.assertIn("compiler", report["where_we_go"].lower())
         text = format_proceed(report)
         self.assertIn("ChatVault", text)
+        self.assertIn("shape first", text.lower())
         self.assertNotIn("unified theory", text.lower())
 
     def test_books_stay_unglued(self):
@@ -63,6 +65,24 @@ class TestRefuseSplice(unittest.TestCase):
         d = refuse_splice("B", "B")
         self.assertTrue(d.allowed)
         self.assertEqual(d.opcode, "NOOP")
+
+
+class TestShapeFirst(unittest.TestCase):
+    def test_pde_and_jx_are_same_shape_different_texture(self):
+        c = compare_shape("NS-B", "J/X")
+        self.assertEqual(c.verdict, "SAME_SHAPE_DIFFERENT_TEXTURE")
+        self.assertFalse(c.allowed_weld)
+        self.assertIn("not a theorem", c.reason.lower())
+
+    def test_jx_and_lambda_min_are_incompatible_shapes(self):
+        c = compare_shape("J/X", "LAMBDA-MIN")
+        self.assertEqual(c.verdict, "INCOMPATIBLE_SHAPE")
+        self.assertEqual(c.left_book, "B")
+        self.assertEqual(c.right_book, "Q")
+
+    def test_cosmo_is_not_the_da_shape(self):
+        c = compare_shape("VIZ", "DA")
+        self.assertEqual(c.verdict, "INCOMPATIBLE_SHAPE")
 
 
 class TestRegistryRecords(unittest.TestCase):
@@ -102,6 +122,24 @@ class TestCli(unittest.TestCase):
         )
         self.assertEqual(proc.returncode, 0, proc.stderr)
         self.assertIn("REFUSED", proc.stdout)
+
+    def test_shape_compare_cli(self):
+        proc = subprocess.run(
+            [
+                sys.executable,
+                "-m",
+                "domain_architect",
+                "--shape-compare",
+                "J/X",
+                "LAMBDA-MIN",
+            ],
+            cwd=ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(proc.returncode, 0, proc.stderr)
+        self.assertIn("INCOMPATIBLE_SHAPE", proc.stdout)
 
 
 if __name__ == "__main__":

@@ -7,7 +7,7 @@ import json
 import sys
 
 from .audit import audit_expression
-from .desk import format_proceed, proceed_report, refuse_splice
+from .desk import compare_shape, format_proceed, proceed_report, refuse_splice
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 
@@ -34,6 +34,12 @@ def main(argv: list[str] | None = None) -> int:
         metavar=("SOURCE", "TARGET"),
         help="score a proposed weld (e.g. COSMO B, SEARCH Q, A B)",
     )
+    parser.add_argument(
+        "--shape-compare",
+        nargs=2,
+        metavar=("LEFT", "RIGHT"),
+        help="compare two library objects by shape, then texture (e.g. J/X LAMBDA-MIN)",
+    )
     args = parser.parse_args(argv)
 
     if args.proceed:
@@ -54,6 +60,20 @@ def main(argv: list[str] | None = None) -> int:
             print(f"{decision.opcode}: {decision.source} → {decision.target}")
             print(decision.reason)
         return 0 if decision.allowed or decision.opcode == "REFUSED" else 1
+
+    if args.shape_compare:
+        compared = compare_shape(args.shape_compare[0], args.shape_compare[1])
+        if args.json:
+            json.dump(compared.to_dict(), sys.stdout, indent=2)
+            sys.stdout.write("\n")
+        else:
+            print(f"{compared.verdict}: {compared.left} vs {compared.right}")
+            print(f"  {compared.left} [{compared.left_book}] shape={compared.left_shape}")
+            print(f"      texture: {compared.left_texture}")
+            print(f"  {compared.right} [{compared.right_book}] shape={compared.right_shape}")
+            print(f"      texture: {compared.right_texture}")
+            print(compared.reason)
+        return 0
 
     if args.registry:
         registry = EquationRegistry.load_default()
@@ -76,7 +96,7 @@ def main(argv: list[str] | None = None) -> int:
     if not args.expression:
         parser.error(
             "expression is required unless --registry, --proceed, "
-            "or --refuse-splice is set"
+            "--refuse-splice, or --shape-compare is set"
         )
 
     report = audit_expression(args.expression)

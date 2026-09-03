@@ -14,6 +14,18 @@ analytic number theory.
 
 A team is not a vote.
 
+## Shape first
+
+The object is a **shape**. Notation is a **texture**. Same shape, different
+chart (NS PDE vs \(J/X\)) is legal navigation and still not a proof.
+Different shape even when symbols rhyme (\(J/X\) vs \(\lambda_{\min}\)) is
+`INCOMPATIBLE_SHAPE`. Cosmo pictures are not the shape of NS or RH.
+
+```bash
+python -m domain_architect --shape-compare NS-B J/X
+python -m domain_architect --shape-compare J/X LAMBDA-MIN
+```
+
 ## Who is not the website
 
 | Name | Job | Repo / URL |
@@ -38,14 +50,15 @@ The lab is real. The public cosmos site is not the lab.
 
 ## Where we go from here
 
-1. Run this desk as Domain Architect. Do not treat the Cosmo URL as the DA site.
-2. One Track B identity: Hardy \(\to I_{\mathrm{tube}}\) at \(\delta\sim 2^{-j_*}\).
+1. Navigate by shape first. Do not start from Cosmo symbols.
+2. Run this desk as Domain Architect. Do not treat the Cosmo URL as the DA site.
+3. One Track B identity: Hardy \(\to I_{\mathrm{tube}}\) at \(\delta\sim 2^{-j_*}\).
    Keep \(1/r^4\). Regularity stays open. No Clay announcement.
-3. One Track Q numeric floor, documented. \(\lambda_{\min}(H_N)\ge -1/4\) stays
+4. One Track Q numeric floor, documented. \(\lambda_{\min}(H_N)\ge -1/4\) stays
    numeric until proved. No operator\(\to\zeta\) lemma ⇒ no RH.
-4. ChatVault stays search. The 160-page HB2 file, if it surfaces, goes there.
+5. ChatVault stays search. The 160-page HB2 file, if it surfaces, goes there.
    Do not wait on screenshots before the next lemma.
-5. Banner CosmoEvolution `VIZ ONLY`.
+6. Banner CosmoEvolution `VIZ ONLY`.
 
 Illegal splices are an opcode, not a vibe:
 
