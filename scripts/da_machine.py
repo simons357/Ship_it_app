@@ -57,6 +57,7 @@ SLOTS = {
             "tests.test_da_separate",
             "tests.test_da_cosmo",
             "tests.test_da_sm",
+            "tests.test_da_sm_break",
             "-v",
         ],
     },
@@ -556,6 +557,25 @@ def cmd_sm() -> int:
     return 0
 
 
+def cmd_smbreak() -> int:
+    from da_sm_break import run as break_run
+
+    payload = break_run()
+    print("DA broke L_SM past five blocks, then put it back.")
+    print("leaves:", payload["meta"]["n_leaves"], "counts:", payload["counts"])
+    print("unique SM:", payload["reassembly"]["unique_sm"])
+    print("put back:", payload["reassembly"]["put_back"]["equation"])
+    print("step 7 (produce couplings): fail")
+    append_run(
+        "U",
+        "Break L_SM to atoms and reassemble Einstein+T_SM",
+        "open",
+        "more than 5 blocks; uniqueness pass; produce still fail; A/B/Q untouched",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_separate() -> int:
     from da_separate import run as separate_run
 
@@ -612,6 +632,7 @@ def main() -> int:
     sub.add_parser("separate", help="run each GQ pair, published claim, and slot alone")
     sub.add_parser("trackb", help="score Track B lemmas; regularity stays open")
     sub.add_parser("sm", help="analyze the SM Lagrangian; realize Einstein+T_SM")
+    sub.add_parser("smbreak", help="break L_SM to atoms, then put it back")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -651,6 +672,8 @@ def main() -> int:
         return cmd_trackb()
     if args.cmd == "sm":
         return cmd_sm()
+    if args.cmd == "smbreak":
+        return cmd_smbreak()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":

@@ -103,6 +103,9 @@ Collapse has not happened.
 - Will not unshelve SFE / HB.
 - Will not treat the Cosmo 16 as hidden inside \(SU(3)\times SU(2)\times U(1)\).
 
+Breaking the five blocks into atoms, then putting them
+back, is [`docs/DA-SM-BREAK.md`](DA-SM-BREAK.md).
+
 Next: keep Einstein \(+T_{\mathrm{SM}}\). If you want a
 producing-map, it has to live *outside* this Lagrangian —
 the numbers already went in. Fluids stay on B.
