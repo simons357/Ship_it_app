@@ -181,6 +181,7 @@ def main() -> int:
     payload = run()
     print("Dream team. Beyond the digital divide = paper + experiment.")
     print("A vote cannot close a theorem.")
+    print("Full roll (three benches): docs/DA-THINK-TANK.md")
     print(f"{'name':<28} {'slot':<5} {'side':<7} suggestion")
     for m in payload["team"]:
         print(f"{m['name']:<28} {m['slot']:<5} {m['side']:<7} {m['suggest']}")

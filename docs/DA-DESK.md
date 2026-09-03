@@ -19,6 +19,7 @@ what is still open.
 Print it: `python3 scripts/da_machine.py desk`
 
 The paper form of this desk is [`docs/DA-PAPER.md`](DA-PAPER.md).
+The name list you keep losing is [`docs/DA-THINK-TANK.md`](DA-THINK-TANK.md).
 
 ---
 
@@ -384,7 +385,7 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/DA-HARMONIC-VOCAB.md`, `docs/DA-DREAM-TEAM.md`,
 `docs/DA-SM-LAGRANGIAN.md`, `docs/DA-SM-LINEAGE.md`,
 `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`,
-`docs/DA-PAPER.md`.
+`docs/DA-PAPER.md`, `docs/DA-THINK-TANK.md`.
 
 ---
 

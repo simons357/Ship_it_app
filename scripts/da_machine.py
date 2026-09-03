@@ -582,6 +582,7 @@ def cmd_team() -> int:
 
     payload = team_run()
     print("DA dream team. Paper + experiment. A vote cannot close.")
+    print("Full roll (three benches): docs/DA-THINK-TANK.md")
     for m in payload["team"]:
         print(f"  [{m['slot']}] {m['name']}: {m['suggest']}")
     print("next B:", payload["consensus"]["B"])

@@ -47,6 +47,7 @@ class DaDeskTests(unittest.TestCase):
         self.assertEqual(len(PAIRS), len({r["id"] for r in PAIRS}))
         self.assertTrue((ROOT / "docs" / "DA-DESK.md").is_file())
         self.assertTrue((ROOT / "docs" / "DA-PAPER.md").is_file())
+        self.assertTrue((ROOT / "docs" / "DA-THINK-TANK.md").is_file())
 
 
 if __name__ == "__main__":

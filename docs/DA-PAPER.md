@@ -265,5 +265,5 @@ That is the paper. The next page of mathematics is unchanged.
 - Track A: `docs/AUGMENTED-NS-PROOF-CHAIN.md`
 - Track B: `docs/TRACK-B-LEMMAS.md`, `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`
 - Track Q: `docs/SPECTRAL-FLOOR-EXPLORATION.md`
-- Think tank: `docs/DA-DREAM-TEAM.md`, `docs/DA-GROUND.md`, `docs/DA-PIPE.md`
+- Think tank: `docs/DA-THINK-TANK.md` (combined roll), `docs/DA-DREAM-TEAM.md`, `docs/DA-GROUND.md`, `docs/DA-PIPE.md`
 - Compute and alerts: `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`
