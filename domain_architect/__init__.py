@@ -24,6 +24,7 @@ from .audit import audit_expression
 from .clip_splice import clip_splice
 from .desk import compare_shape, proceed_report, refuse_splice
 from .ns_chain import ns_chain
+from .ns_geometry import ns_geometry
 from .report import AuditReport
 
 __all__ = [
@@ -38,6 +39,7 @@ __all__ = [
     "clip_splice",
     "compare_shape",
     "ns_chain",
+    "ns_geometry",
     "proceed_report",
     "refuse_splice",
 ]

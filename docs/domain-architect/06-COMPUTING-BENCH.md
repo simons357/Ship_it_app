@@ -45,6 +45,10 @@ delta**, and a clip ID if something was cut off. Passes add texture.
 Failures clip fake upgrades. Only a closed bound on \(X=\|\omega\|_2^2\)
 would change the domain shape. That step is still **open**.
 
+Full geometric analysis (tube, shells, strain, swirl):
+[`07-NS-GEOMETRIC-ANALYSIS.md`](07-NS-GEOMETRIC-ANALYSIS.md) and
+`python -m domain_architect --geometry B`.
+
 ## Shape first
 
 The object is a **shape**. Notation is a **texture**. Same shape, different
