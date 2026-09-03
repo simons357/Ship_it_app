@@ -47,12 +47,19 @@
       "claim": "Identify the 16 from gauge / gravity-gauge / teleological / harmonic and test each",
       "verdict": "open",
       "note": "16th is R; four singletons raise lock-R; affine F to the four couplings fails"
+    },
+    {
+      "t": "2026-09-03T00:16:57.380854+00:00",
+      "domain": "U",
+      "claim": "Five-finger DA on R = exp(-1/2 \u03c7\u00b2_ext) exp(-1/2 \u03c7\u00b2_int), then each piece, then the 16",
+      "verdict": "open",
+      "note": "product passes; implied F fails; vacuum/Planck width artifact; \u03b8 is the topological leftover"
     }
   ],
   "counts": {
-    "scored": 6,
+    "scored": 7,
     "pass": 3,
     "fail": 0,
-    "open": 3
+    "open": 4
   }
 }

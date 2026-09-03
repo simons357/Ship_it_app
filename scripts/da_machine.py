@@ -46,6 +46,7 @@ SLOTS = {
             "tests.test_unifier_exercise",
             "tests.test_unifier_combo",
             "tests.test_da_sixteen",
+            "tests.test_da_fingers",
             "-v",
         ],
     },
@@ -93,8 +94,8 @@ def classify_claim(claim: str) -> dict:
         return {"domain": "B", "verdict": "open", "reason": "looks like Track B; no pass checker"}
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
-    if re.search(r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b", text):
-        return {"domain": "U", "verdict": "open", "reason": "looks like score U / Cosmos count; run cosmos drill"}
+    if re.search(r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger", text):
+        return {"domain": "U", "verdict": "open", "reason": "looks like score U / Cosmos count; run cosmos or fingers"}
     return {"domain": None, "verdict": "open", "reason": "no slot; rephrase into A, B, Q, or U"}
 
 
@@ -267,6 +268,35 @@ def cmd_sixteen() -> int:
     return 0
 
 
+def cmd_fingers() -> int:
+    from da_fingers import run as fingers_run
+
+    payload = fingers_run()
+    print("DA five fingers on:", payload["meta"]["line"])
+    print("The 16th is still R. Cosmo export still missing.")
+    for f in payload["tree"]["fingers"]:
+        print(f"[{f['verdict']}] {f['name']}: {f['piece']}")
+        print(f"    {f['why']}")
+        for g in f.get("fingers", []):
+            print(f"    [{g['verdict']}] {g['name']}: {g['piece']}")
+    print("equal-width flattens χ²_ext:", payload["checks"]["equal_width_flattens_ext"])
+    print("16 fates:")
+    for rec in payload["candidates"]:
+        print(f"  {rec['id']:2d} {rec['category']:<16} {rec['fate']:<22} {rec['name']}")
+    print("how far:")
+    for line in payload["how_far"]:
+        print(" -", line)
+    print("next:", payload["next_da_move"])
+    append_run(
+        "U",
+        "Five-finger DA on R = exp(-1/2 χ²_ext) exp(-1/2 χ²_int), then each piece, then the 16",
+        "open",
+        "product passes; implied F fails; vacuum/Planck width artifact; θ is the topological leftover",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_check(domain: str) -> int:
     domains = list(SLOTS) if domain == "all" else [domain]
     rc = 0
@@ -287,6 +317,7 @@ def main() -> int:
     sub.add_parser("status")
     sub.add_parser("cosmos", help="drill the ~16 Cosmos knobs")
     sub.add_parser("sixteen", help="identify 4x4 list, run each, name the 16th")
+    sub.add_parser("fingers", help="five-finger DA on the R line, recurse, fate the 16")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -304,6 +335,8 @@ def main() -> int:
         return cmd_cosmos()
     if args.cmd == "sixteen":
         return cmd_sixteen()
+    if args.cmd == "fingers":
+        return cmd_fingers()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":

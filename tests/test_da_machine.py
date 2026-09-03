@@ -38,6 +38,11 @@ class DaMachineTests(unittest.TestCase):
         self.assertEqual(len(SIXTEEN), 16)
         self.assertEqual(SIXTEEN[-1], "R")
 
+    def test_fingers_claim_lands_in_u(self):
+        r = classify_claim("five finger DA on the realization line")
+        self.assertEqual(r["domain"], "U")
+        self.assertEqual(r["verdict"], "open")
+
 
 if __name__ == "__main__":
     unittest.main()

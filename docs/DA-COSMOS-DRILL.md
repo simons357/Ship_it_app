@@ -56,4 +56,5 @@ The follow-up drill (`docs/DA-SIXTEEN.md`) reconstructs a 4×4 list from gauge /
 ```
 python3 scripts/da_machine.py cosmos
 python3 scripts/da_machine.py sixteen
+python3 scripts/da_machine.py fingers
 ```

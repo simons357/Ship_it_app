@@ -119,6 +119,10 @@ still no \(F\).
 5. Affine \(F\) from oscillators / teleology fails holdout.
 6. **Blocked** on the Cosmo names or a real producing-map.
 
+Five-finger recursion on the realization line, and a
+general fate for each of the 16 as a candidate type, is
+[`docs/DA-FINGERS.md`](DA-FINGERS.md).
+
 If the Cosmo export shows up: replace this table and re-run
 the same singleton / family / \(F\) checks. Until then this
 is as far as the names go.

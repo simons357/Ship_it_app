@@ -1,0 +1,753 @@
+{
+  "meta": {
+    "line": "R = exp(-1/2 \u03c7\u00b2_ext) \u00b7 exp(-1/2 \u03c7\u00b2_int)",
+    "method": "five-finger DA, recurse twice, then category-fate on the 16",
+    "cosmos_app_list_found": false,
+    "not_a_unifier": true,
+    "n": 400,
+    "seed": 1
+  },
+  "checks": {
+    "product_identity_err": 0.0,
+    "corr_Rext_Rint": -0.0523018148778344,
+    "target_R": 1.0,
+    "target_chi_ext": 0.0,
+    "target_chi_int": 0.0,
+    "ext_contrib_default": {
+      "log_alpha_em": 0.012463724142141742,
+      "log_alpha_s": 0.01108724288532476,
+      "sin2_theta_w": 0.0004264662953510298,
+      "log_hierarchy": 1.1648010831763087,
+      "log_qcd_ratio": 0.08104205115503627,
+      "log_cc_ratio": 2.015407427197121,
+      "log_weak_ratio": 0.011155525271101183
+    },
+    "int_contrib_default": {
+      "S_coh": 0.6216563405678294,
+      "delta_spread": 0.358940482831976,
+      "grad_coh": 0.23915568455291983,
+      "kappa_att": 0.12869951281435618,
+      "A_mean": 0.033799884205000734,
+      "f_mean": 0.03653929451047058,
+      "phi_scale": 0.03559761924492679,
+      "p_cut": 0.031765679145445716
+    },
+    "ext_contrib_equal_width": {
+      "log_alpha_em": 0.0107242243895944,
+      "log_alpha_s": 0.011667140167329157,
+      "sin2_theta_w": 0.010455316307759794,
+      "log_hierarchy": 0.010602478147726684,
+      "log_qcd_ratio": 0.011253589353173115,
+      "log_cc_ratio": 0.011607484814057283,
+      "log_weak_ratio": 0.011453350950552737
+    },
+    "equal_width_flattens_ext": true,
+    "l2_top": [
+      "log_cc_ratio",
+      "log_hierarchy"
+    ],
+    "l1_top": [
+      "log_cc_ratio",
+      "log_hierarchy"
+    ],
+    "baseline_R": 0.05697448012740775,
+    "affine_F": {
+      "predictors": [
+        "A_mean",
+        "f_mean",
+        "phi_scale",
+        "delta_spread",
+        "S_coh",
+        "kappa_att",
+        "grad_coh"
+      ],
+      "targets": [
+        "log_alpha_em",
+        "log_alpha_s",
+        "sin2_theta_w",
+        "log_weak_ratio"
+      ],
+      "n": 400,
+      "holdout_chi2_F": 0.07339909717911652,
+      "holdout_chi2_predict_observed": 0.07209711067486334,
+      "beats_null": false,
+      "verdict": "fail",
+      "why": "Holdout \u03c7\u00b2 of an affine map from these knobs to the four couplings does not beat predicting the observed anchors. On this reconstructed vector the knobs do not produce the couplings."
+    }
+  },
+  "tree": {
+    "name": "line",
+    "piece": "R = exp(-1/2 \u03c7\u00b2_ext) \u00b7 exp(-1/2 \u03c7\u00b2_int)",
+    "verdict": "open",
+    "why": "Five-finger DA on the realization line. Not a unifier.",
+    "fingers": [
+      {
+        "name": "R",
+        "piece": "left-hand side / product",
+        "verdict": "open",
+        "why": "the 16th; output",
+        "fingers": [
+          {
+            "name": "range",
+            "piece": "R \u2208 (0, 1]",
+            "verdict": "pass",
+            "why": "product of two (0,1] exponentials"
+          },
+          {
+            "name": "target",
+            "piece": "R=1 at the quiet+observed state",
+            "verdict": "pass",
+            "why": "target R=1.000000 by sitting on the anchors"
+          },
+          {
+            "name": "lock_R",
+            "piece": "E[R | one coord at star]",
+            "verdict": "open",
+            "why": "well-defined conditional; not a producing-map"
+          },
+          {
+            "name": "circular",
+            "piece": "locking R to produce R",
+            "verdict": "fail",
+            "why": "the 16th is the output; circular as a knob"
+          },
+          {
+            "name": "product",
+            "piece": "R = R_ext \u00b7 R_int",
+            "verdict": "pass",
+            "why": "max |R \u2212 R_ext R_int| = 0.00e+00"
+          }
+        ]
+      },
+      {
+        "name": "kernel",
+        "piece": "exp(\u2212\u00bd \u00b7)",
+        "verdict": "pass",
+        "why": "shape checks pass; \u03b5-pass stays open",
+        "fingers": [
+          {
+            "name": "minus",
+            "piece": "minus in exp(\u2212\u00bd \u03c7\u00b2)",
+            "verdict": "pass",
+            "why": "penalty: larger residual, smaller R"
+          },
+          {
+            "name": "half",
+            "piece": "the 1/2",
+            "verdict": "pass",
+            "why": "Gaussian convention; any positive constant keeps the ranking"
+          },
+          {
+            "name": "exp",
+            "piece": "exp: [0,\u221e) \u2192 (0,1]",
+            "verdict": "pass",
+            "why": "maps \u03c7\u00b2 to a score in (0,1]"
+          },
+          {
+            "name": "independence",
+            "piece": "product of two kernels",
+            "verdict": "pass",
+            "why": "corr(R_ext, R_int)=-0.052; sampled independently on this vector"
+          },
+          {
+            "name": "epsilon",
+            "piece": "\u03c7\u00b2_ext \u2264 \u03b5\u00b2 as a pass",
+            "verdict": "open",
+            "why": "target \u03c7\u00b2_ext=0.00e+00 by construction. Sitting on anchors is not F."
+          }
+        ]
+      },
+      {
+        "name": "chi_ext",
+        "piece": "external sum of squares",
+        "verdict": "open",
+        "why": "must-hits live here; width artifacts too",
+        "fingers": [
+          {
+            "name": "em",
+            "piece": "log_alpha_em",
+            "verdict": "open",
+            "why": "contrib 0.012; must-hit as nature, decorative on default widths",
+            "fingers": [
+              {
+                "name": "x",
+                "piece": "log_alpha_em",
+                "verdict": "open",
+                "why": "the live coordinate; not derived from the other knobs on this vector"
+              },
+              {
+                "name": "x_star",
+                "piece": "log_alpha_em observed anchor",
+                "verdict": "pass",
+                "why": "anchor is a number we put in, not a prediction"
+              },
+              {
+                "name": "minus",
+                "piece": "(x \u2212 x*)",
+                "verdict": "pass",
+                "why": "residual is well-defined once x and x* exist"
+              },
+              {
+                "name": "square",
+                "piece": "(x \u2212 x*)\u00b2",
+                "verdict": "pass",
+                "why": "L2 term; L1 ranking of the same leftovers stays the same top two"
+              },
+              {
+                "name": "width",
+                "piece": "sampling width 0.15",
+                "verdict": "open",
+                "why": "Width is part of the term. Equal-width flattens the external leftovers."
+              }
+            ]
+          },
+          {
+            "name": "strong",
+            "piece": "log_alpha_s",
+            "verdict": "open",
+            "why": "contrib 0.011; must-hit as nature, decorative on default widths",
+            "fingers": [
+              {
+                "name": "x",
+                "piece": "log_alpha_s",
+                "verdict": "open",
+                "why": "the live coordinate; not derived from the other knobs on this vector"
+              },
+              {
+                "name": "x_star",
+                "piece": "log_alpha_s observed anchor",
+                "verdict": "pass",
+                "why": "anchor is a number we put in, not a prediction"
+              },
+              {
+                "name": "minus",
+                "piece": "(x \u2212 x*)",
+                "verdict": "pass",
+                "why": "residual is well-defined once x and x* exist"
+              },
+              {
+                "name": "square",
+                "piece": "(x \u2212 x*)\u00b2",
+                "verdict": "pass",
+                "why": "L2 term; L1 ranking of the same leftovers stays the same top two"
+              },
+              {
+                "name": "width",
+                "piece": "sampling width 0.15",
+                "verdict": "open",
+                "why": "Width is part of the term. Equal-width flattens the external leftovers."
+              }
+            ]
+          },
+          {
+            "name": "weak",
+            "piece": "sin2_theta_w + log_weak_ratio",
+            "verdict": "open",
+            "why": "contrib 0.012; two gauge leftovers glued as one finger"
+          },
+          {
+            "name": "planck",
+            "piece": "log_hierarchy",
+            "verdict": "open",
+            "why": "contrib 1.165; must-hit and default score-mover",
+            "fingers": [
+              {
+                "name": "x",
+                "piece": "log_hierarchy",
+                "verdict": "open",
+                "why": "the live coordinate; not derived from the other knobs on this vector"
+              },
+              {
+                "name": "x_star",
+                "piece": "log_hierarchy observed anchor",
+                "verdict": "pass",
+                "why": "anchor is a number we put in, not a prediction"
+              },
+              {
+                "name": "minus",
+                "piece": "(x \u2212 x*)",
+                "verdict": "pass",
+                "why": "residual is well-defined once x and x* exist"
+              },
+              {
+                "name": "square",
+                "piece": "(x \u2212 x*)\u00b2",
+                "verdict": "pass",
+                "why": "L2 term; L1 ranking of the same leftovers stays the same top two"
+              },
+              {
+                "name": "width",
+                "piece": "sampling width 1.5",
+                "verdict": "fail",
+                "why": "default contrib 1.165; equal-width contrib 0.011. Vacuum and Planck dominate the default score because we gave them room, not because the algebra singles them out."
+              }
+            ]
+          },
+          {
+            "name": "vacuum",
+            "piece": "log_cc_ratio",
+            "verdict": "open",
+            "why": "contrib 2.015; must-hit and default score-mover",
+            "fingers": [
+              {
+                "name": "x",
+                "piece": "log_cc_ratio",
+                "verdict": "open",
+                "why": "the live coordinate; not derived from the other knobs on this vector"
+              },
+              {
+                "name": "x_star",
+                "piece": "log_cc_ratio observed anchor",
+                "verdict": "pass",
+                "why": "anchor is a number we put in, not a prediction"
+              },
+              {
+                "name": "minus",
+                "piece": "(x \u2212 x*)",
+                "verdict": "pass",
+                "why": "residual is well-defined once x and x* exist"
+              },
+              {
+                "name": "square",
+                "piece": "(x \u2212 x*)\u00b2",
+                "verdict": "pass",
+                "why": "L2 term; L1 ranking of the same leftovers stays the same top two"
+              },
+              {
+                "name": "width",
+                "piece": "sampling width 2.0",
+                "verdict": "fail",
+                "why": "default contrib 2.015; equal-width contrib 0.012. Vacuum and Planck dominate the default score because we gave them room, not because the algebra singles them out."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "chi_int",
+        "piece": "internal sum of squares",
+        "verdict": "open",
+        "why": "S_c and \u03b4 move R; oscillators do not",
+        "fingers": [
+          {
+            "name": "S_coh",
+            "piece": "coherence",
+            "verdict": "open",
+            "why": "contrib 0.622; singleton fit"
+          },
+          {
+            "name": "delta_spread",
+            "piece": "phase",
+            "verdict": "open",
+            "why": "contrib 0.359; singleton fit"
+          },
+          {
+            "name": "grad_coh",
+            "piece": "gradient",
+            "verdict": "open",
+            "why": "contrib 0.239; near-miss singleton"
+          },
+          {
+            "name": "kappa_att",
+            "piece": "attractor",
+            "verdict": "open",
+            "why": "contrib 0.129; decorative"
+          },
+          {
+            "name": "oscillator",
+            "piece": "A, f, \u03c6 (p_cut leftover)",
+            "verdict": "fail",
+            "why": "contrib A+f+\u03c6=0.106; does not produce couplings"
+          }
+        ]
+      },
+      {
+        "name": "F",
+        "piece": "implied producing-map (not written on the line)",
+        "verdict": "fail",
+        "why": "nothing on the line produces the couplings",
+        "fingers": [
+          {
+            "name": "domain",
+            "piece": "the 15 knobs",
+            "verdict": "open",
+            "why": "reconstructed; Cosmo names missing"
+          },
+          {
+            "name": "codomain",
+            "piece": "(g_s, g_w, g_em, g_N)",
+            "verdict": "open",
+            "why": "four couplings; Planck and \u039b stay in \u03c7\u00b2_ext"
+          },
+          {
+            "name": "dimension",
+            "piece": "n > k",
+            "verdict": "open",
+            "why": "15 knobs > 6 nature targets is the possibility clue, not a pass"
+          },
+          {
+            "name": "affine",
+            "piece": "linear F from oscillators+teleology",
+            "verdict": "fail",
+            "why": "holdout \u03c7\u00b2 0.073 vs null 0.072"
+          },
+          {
+            "name": "rebuild",
+            "piece": "F from surviving pieces",
+            "verdict": "open",
+            "why": "blocked on Cosmo names or a real producing-map"
+          }
+        ]
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "id": 1,
+      "name": "log_alpha_em",
+      "category": "gauge",
+      "fate": "must_hit",
+      "note": "EM coupling; nature, not a producer",
+      "delta_lock_R": 0.0006416856719534264,
+      "default_contrib": 0.012463724142141742,
+      "equal_width_contrib": 0.0107242243895944
+    },
+    {
+      "id": 2,
+      "name": "log_alpha_s",
+      "category": "gauge",
+      "fate": "must_hit",
+      "note": "strong coupling; nature, not a producer",
+      "delta_lock_R": 0.0006616629291682913,
+      "default_contrib": 0.01108724288532476,
+      "equal_width_contrib": 0.011667140167329157
+    },
+    {
+      "id": 3,
+      "name": "sin2_theta_w",
+      "category": "gauge",
+      "fate": "must_hit",
+      "note": "weak mixing; nature, not a producer",
+      "delta_lock_R": 2.5667199896231563e-05,
+      "default_contrib": 0.0004264662953510298,
+      "equal_width_contrib": 0.010455316307759794
+    },
+    {
+      "id": 4,
+      "name": "log_weak_ratio",
+      "category": "gauge",
+      "fate": "must_hit",
+      "note": "weak scale; nature, not a producer",
+      "delta_lock_R": 0.000569339116192974,
+      "default_contrib": 0.011155525271101183,
+      "equal_width_contrib": 0.011453350950552737
+    },
+    {
+      "id": 5,
+      "name": "log_hierarchy",
+      "category": "gravity_gauge",
+      "fate": "must_hit_and_score",
+      "note": "Planck leftover; cannot drop",
+      "delta_lock_R": 0.05135078745282123,
+      "default_contrib": 1.1648010831763087,
+      "equal_width_contrib": 0.010602478147726684
+    },
+    {
+      "id": 6,
+      "name": "log_cc_ratio",
+      "category": "gravity_gauge",
+      "fate": "must_hit_and_score",
+      "note": "vacuum leftover; gravity-scale on this score, topological fork left open",
+      "delta_lock_R": 0.0877776217235284,
+      "default_contrib": 2.015407427197121,
+      "equal_width_contrib": 0.011607484814057283
+    },
+    {
+      "id": 7,
+      "name": "log_qcd_ratio",
+      "category": "gauge",
+      "fate": "must_hit",
+      "note": "QCD scale; weak on this score",
+      "delta_lock_R": 0.004030005891475667,
+      "default_contrib": 0.08104205115503627,
+      "equal_width_contrib": 0.011253589353173115
+    },
+    {
+      "id": 8,
+      "name": "theta_qcd",
+      "category": "topological",
+      "fate": "leftover",
+      "note": "strong-CP angle; global, not a local coupling"
+    },
+    {
+      "id": 9,
+      "name": "A_mean",
+      "category": "harmonic",
+      "fate": "decorative",
+      "note": "oscillator amplitude; does not move R",
+      "delta_lock_R": 0.0020703050126212943,
+      "default_contrib": 0.033799884205000734
+    },
+    {
+      "id": 10,
+      "name": "f_mean",
+      "category": "harmonic",
+      "fate": "decorative",
+      "note": "oscillator frequency; does not move R",
+      "delta_lock_R": 0.0021337159893638005,
+      "default_contrib": 0.03653929451047058
+    },
+    {
+      "id": 11,
+      "name": "phi_scale",
+      "category": "harmonic",
+      "fate": "decorative",
+      "note": "phi; does not move R",
+      "delta_lock_R": 0.0018734441636488186,
+      "default_contrib": 0.03559761924492679
+    },
+    {
+      "id": 12,
+      "name": "delta_spread",
+      "category": "harmonic",
+      "fate": "score",
+      "note": "phase disorder; internal score-mover",
+      "delta_lock_R": 0.022562646391791945,
+      "default_contrib": 0.358940482831976
+    },
+    {
+      "id": 13,
+      "name": "S_coh",
+      "category": "teleological",
+      "fate": "score",
+      "note": "coherence; internal score-mover",
+      "delta_lock_R": 0.03747777202489715,
+      "default_contrib": 0.6216563405678294
+    },
+    {
+      "id": 14,
+      "name": "kappa_att",
+      "category": "teleological",
+      "fate": "decorative",
+      "note": "attractor; weak on this score",
+      "delta_lock_R": 0.0069640491303693056,
+      "default_contrib": 0.12869951281435618
+    },
+    {
+      "id": 15,
+      "name": "grad_coh",
+      "category": "teleological",
+      "fate": "near_miss",
+      "note": "gradient; close, misses singleton cut",
+      "delta_lock_R": 0.012482209014578756,
+      "default_contrib": 0.23915568455291983
+    },
+    {
+      "id": 16,
+      "name": "R",
+      "category": "teleological",
+      "fate": "output",
+      "note": "realization; circular if used as a knob"
+    }
+  ],
+  "by_category": {
+    "gauge": [
+      "log_alpha_em",
+      "log_alpha_s",
+      "sin2_theta_w",
+      "log_weak_ratio",
+      "log_qcd_ratio"
+    ],
+    "gravity_gauge": [
+      "log_hierarchy",
+      "log_cc_ratio"
+    ],
+    "topological": [
+      "theta_qcd"
+    ],
+    "harmonic": [
+      "A_mean",
+      "f_mean",
+      "phi_scale",
+      "delta_spread"
+    ],
+    "teleological": [
+      "S_coh",
+      "kappa_att",
+      "grad_coh",
+      "R"
+    ]
+  },
+  "category_hands": {
+    "gauge": [
+      {
+        "name": "local_symmetry",
+        "piece": "couplings of a gauge group",
+        "verdict": "open",
+        "why": "must-hit observables, not inputs to F on this vector"
+      },
+      {
+        "name": "count",
+        "piece": "four gauge slots in the 16",
+        "verdict": "pass",
+        "why": "EM, strong, weak mixing, weak scale"
+      },
+      {
+        "name": "score",
+        "piece": "singleton lock-R",
+        "verdict": "fail",
+        "why": "none of the four raise lock-R by 0.02; widths are tight"
+      },
+      {
+        "name": "produce",
+        "piece": "do oscillators write these?",
+        "verdict": "fail",
+        "why": "affine F holdout does not beat the null"
+      },
+      {
+        "name": "keep",
+        "piece": "drop them from nature?",
+        "verdict": "fail",
+        "why": "a four-force unifier that drops a coupling is not one"
+      }
+    ],
+    "gravity_gauge": [
+      {
+        "name": "planck",
+        "piece": "log(M_Pl / v)",
+        "verdict": "open",
+        "why": "must-hit leftover; default score-mover"
+      },
+      {
+        "name": "vacuum",
+        "piece": "log(\u03c1_\u039b^{1/4} / v)",
+        "verdict": "open",
+        "why": "must-hit leftover; default score-mover"
+      },
+      {
+        "name": "width_artifact",
+        "piece": "equal \u03c3 = 0.15 on every external",
+        "verdict": "fail",
+        "why": "external contributions flatten; default ranking was a width choice"
+      },
+      {
+        "name": "qcd_scale",
+        "piece": "log(\u039b_QCD / v)",
+        "verdict": "open",
+        "why": "must-hit, weak on this score"
+      },
+      {
+        "name": "fork",
+        "piece": "is vacuum topological instead?",
+        "verdict": "open",
+        "why": "this score treats \u039b as a scale leftover. Instanton/\u03b8 story is a different book."
+      }
+    ],
+    "topological": [
+      {
+        "name": "theta_qcd",
+        "piece": "strong-CP angle",
+        "verdict": "open",
+        "why": "the clear topological leftover on this 16"
+      },
+      {
+        "name": "vacuum_fork",
+        "piece": "\u039b as topological",
+        "verdict": "open",
+        "why": "not assumed here; would replace log_cc_ratio's category"
+      },
+      {
+        "name": "not_gauge",
+        "piece": "global vs local",
+        "verdict": "pass",
+        "why": "\u03b8 is not a running coupling; do not glue it to \u03b1_s"
+      },
+      {
+        "name": "score",
+        "piece": "singleton lock-R",
+        "verdict": "fail",
+        "why": "\u03b8 does not raise lock-R on the current term"
+      },
+      {
+        "name": "keep",
+        "piece": "drop \u03b8 and still mean QCD?",
+        "verdict": "open",
+        "why": "nature has a strong-CP problem; this score barely sees it"
+      }
+    ],
+    "harmonic": [
+      {
+        "name": "A",
+        "piece": "amplitude",
+        "verdict": "fail",
+        "why": "decorative on R"
+      },
+      {
+        "name": "f",
+        "piece": "frequency",
+        "verdict": "fail",
+        "why": "decorative on R"
+      },
+      {
+        "name": "phi",
+        "piece": "phi scale",
+        "verdict": "fail",
+        "why": "decorative on R"
+      },
+      {
+        "name": "delta",
+        "piece": "phase disorder",
+        "verdict": "open",
+        "why": "the one harmonic that moves R"
+      },
+      {
+        "name": "produce",
+        "piece": "harmonic \u2192 couplings",
+        "verdict": "fail",
+        "why": "no producing-map on this vector"
+      }
+    ],
+    "teleological": [
+      {
+        "name": "S_coh",
+        "piece": "coherence",
+        "verdict": "open",
+        "why": "internal score-mover"
+      },
+      {
+        "name": "kappa",
+        "piece": "attractor",
+        "verdict": "fail",
+        "why": "decorative"
+      },
+      {
+        "name": "grad",
+        "piece": "gradient",
+        "verdict": "open",
+        "why": "near-miss"
+      },
+      {
+        "name": "R",
+        "piece": "realization",
+        "verdict": "fail",
+        "why": "output; circular as a candidate theory"
+      },
+      {
+        "name": "produce",
+        "piece": "teleology \u2192 couplings",
+        "verdict": "fail",
+        "why": "locking S_c does not collapse the four couplings"
+      }
+    ]
+  },
+  "how_far": [
+    "broke the R line into five fingers, then each finger into five",
+    "product and kernel checks pass; implied F fails",
+    "vacuum/Planck default dominance is a width artifact (equal-\u03c3 flattens \u03c7\u00b2_ext)",
+    "they remain must-hit as nature leftovers, which is a different claim",
+    "16 candidates each got a general category and a fate",
+    "topological vs gauge: only \u03b8_QCD is topological on this list; vacuum is a fork",
+    "next blocked on Cosmo names or a real producing-map F"
+  ],
+  "next_da_move": "Replace names from the Cosmo export, keep the same five-finger recursion and the same category-fate table. Do not call this F."
+}
