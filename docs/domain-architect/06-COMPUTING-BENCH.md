@@ -49,6 +49,9 @@ Full geometric analysis (tube, shells, strain, swirl):
 [`07-NS-GEOMETRIC-ANALYSIS.md`](07-NS-GEOMETRIC-ANALYSIS.md) and
 `python -m domain_architect --geometry B`.
 
+Stop at the wall; see the missing piece and the candidates after it:
+[`09-NS-GAP.md`](09-NS-GAP.md) and `python -m domain_architect --gap B`.
+
 Live tube estimate (Hardy inside, Young outside, \(I_{\mathrm{tube}}\) open):
 [`08-NS-TUBE-ESTIMATE.md`](08-NS-TUBE-ESTIMATE.md) and
 `python -m domain_architect --tube B`. T3a (wall as a two-sided cylinder)
@@ -94,9 +97,10 @@ The lab is real. The public cosmos site is not the lab.
 
 1. Navigate by shape first. Do not start from Cosmo symbols.
 2. Run this desk as Domain Architect. Do not treat the Cosmo URL as the DA site.
-3. One Track B identity: Hardy \(\to\) wall trace \(\to I_{\mathrm{tube}}\)
-   at \(\delta\sim 2^{-j_*}\). T3a is in; T3b and T5 stay open. Keep
-   \(1/r^4\). Regularity stays open. No Clay announcement.
+3. Stop at the first open wall (`--gap B`). Name the missing piece
+   (GAP-T3: `CLIP-T3-WELD` + `CLIP-T3-OUTER`). T5 is a candidate after
+   the gap, not a step. Keep \(1/r^4\). Regularity stays open. No Clay
+   announcement.
 4. One Track Q numeric floor, documented. \(\lambda_{\min}(H_N)\ge -1/4\) stays
    numeric until proved. No operator\(\to\zeta\) lemma ⇒ no RH.
 5. ChatVault stays search. The 160-page HB2 file, if it surfaces, goes there.

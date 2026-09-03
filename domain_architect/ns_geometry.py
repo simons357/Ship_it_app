@@ -232,9 +232,8 @@ def ns_geometry() -> dict[str, Any]:
             "closed bound on X",
         ],
         "next_geometric_write": (
-            "T3a (Young from outside) is in. Carry CLIP-T3-WELD and "
-            "CLIP-T3-OUTER into T5 (I_tube). Keep 1/r^4. Then low Bony T "
-            "on the spread chart. python -m domain_architect --tube B"
+            "STOP at T3b. Missing piece GAP-T3 sits between T3a and T5. "
+            "T5 is a candidate after, not a step. python -m domain_architect --gap B"
         ),
     }
 

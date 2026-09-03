@@ -26,6 +26,7 @@ from .desk import compare_shape, proceed_report, refuse_splice
 from .ns_chain import ns_chain
 from .ns_geometry import ns_geometry
 from .ns_tube import tube_estimate
+from .gap import gap_report
 from .report import AuditReport
 
 __all__ = [
@@ -39,6 +40,7 @@ __all__ = [
     "audit_expression",
     "clip_splice",
     "compare_shape",
+    "gap_report",
     "ns_chain",
     "ns_geometry",
     "proceed_report",

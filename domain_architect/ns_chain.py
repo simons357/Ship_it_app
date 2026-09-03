@@ -171,6 +171,9 @@ STEPS: Final[tuple[ChainStep, ...]] = (
 
 
 def ns_chain() -> dict[str, Any]:
+    from .gap import gap_chain
+
+    steps = [s.to_dict() for s in STEPS]
     return {
         "book": "B",
         "not_a_regularity_proof": True,
@@ -178,9 +181,11 @@ def ns_chain() -> dict[str, Any]:
         "skeleton": dict(NS_SHAPE),
         "rule": (
             "A pass adds texture or a named clip. It does not change the NS object "
-            "unless Φ gets a closed bound. Failures are clipped hypotheses or fake upgrades."
+            "unless Φ gets a closed bound. Failures are clipped hypotheses or fake upgrades. "
+            "The first open step is a wall: stop, name the gap, list candidates after."
         ),
-        "steps": [s.to_dict() for s in STEPS],
+        "steps": steps,
+        "gap": gap_chain(steps),
         "counts": {
             "pass": sum(1 for s in STEPS if s.verdict == "pass"),
             "fail": sum(1 for s in STEPS if s.verdict == "fail"),
@@ -189,13 +194,13 @@ def ns_chain() -> dict[str, Any]:
         },
         "how_shape_moves": [
             "B0: skeleton frozen.",
-            "B1–B3, B5: same shape, new textures (flux identity, cover, Bernstein, cylindrical Laplacian).",
-            "B1b, B3b, B6, B-Φ: attempted shape hacks. Clipped and failed.",
-            "B4: tool + wall clip CLIP-B4-WALL. PDE shape unchanged.",
-            "B4b / B5b: live welds. These are the only pending shape-tightening of Φ.",
-            "B-reg: still open. Φ not filled. Domain shape unchanged.",
+            "B1–B4: same shape, new textures (flux identity, cover, Bernstein, Hardy+wall).",
+            "B1b, B3b: attempted shape hacks before the wall. Clipped; walk continues.",
+            "WALL at B4b: STOP. Missing piece is |I_tube|. B5 after it is a parallel identity, not continuation.",
+            "B5b / B-reg: candidates after the gap. Not walked.",
+            "B6, B-Φ: refused bypasses, not candidates.",
         ],
-        "next": "T3a Young trace is in. Write T5 I_tube carrying CLIP-T3-WELD. Then energy-class low Bony T. Do not pass regularity.",
+        "next": "STOP at B4b / T3b. Fill GAP-T3 (CLIP-T3-WELD, CLIP-T3-OUTER). T5 is the first candidate after, not a step. Do not pass regularity.",
     }
 
 
@@ -218,7 +223,24 @@ def format_ns_chain(report: dict[str, Any] | None = None) -> str:
         data["rule"],
         "",
     ]
+    from .gap import format_gap
+
+    lines.append(format_gap(data.get("gap")))
+    lines.append("")
+    lines.append("Walked lemmas (detail; stop at the wall)")
+    wall_name = (data.get("gap") or {}).get("wall", {}).get("step")
+    hit_wall = False
     for step in data["steps"]:
+        if hit_wall:
+            break
+        if step["verdict"] == "fail":
+            lines.append(f"── {step['step']}  [{step['verdict']}]  clipped, keep walking")
+            lines.append(f"   {step['statement']}")
+            lines.append(f"   clip: {step['clip_id']}  {step['clip']}")
+            lines.append("")
+            continue
+        if step["step"] == wall_name:
+            hit_wall = True
         lines.append(f"── {step['step']}  [{step['verdict']}]")
         lines.append(f"   {step['statement']}")
         lines.append(f"   looks like: {step['looks_like']}")

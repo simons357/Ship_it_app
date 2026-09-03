@@ -12,6 +12,7 @@ from .desk import compare_shape, format_proceed, proceed_report, refuse_splice
 from .ns_chain import format_ns_chain, ns_chain
 from .ns_geometry import format_ns_geometry, ns_geometry
 from .ns_tube import format_tube_estimate, tube_estimate
+from .gap import format_gap, gap_report
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 
@@ -64,6 +65,11 @@ def main(argv: list[str] | None = None) -> int:
         "--tube",
         metavar="BOOK",
         help="print the live tube estimate (B or NS): Hardy, wall, I_tube",
+    )
+    parser.add_argument(
+        "--gap",
+        metavar="BOOK",
+        help="stop at the first open wall; show the missing piece and candidates after (B or CHAIN)",
     )
     args = parser.parse_args(argv)
 
@@ -157,6 +163,18 @@ def main(argv: list[str] | None = None) -> int:
             print(format_tube_estimate(payload))
         return 0
 
+    if args.gap:
+        payload = gap_report(args.gap)
+        if payload.get("error"):
+            print(payload["error"], file=sys.stderr)
+            return 2
+        if args.json:
+            json.dump(payload, sys.stdout, indent=2)
+            sys.stdout.write("\n")
+        else:
+            print(format_gap(payload))
+        return 0
+
     if args.registry:
         registry = EquationRegistry.load_default()
         payload = registry.export()
@@ -179,7 +197,7 @@ def main(argv: list[str] | None = None) -> int:
         parser.error(
             "expression is required unless --registry, --proceed, "
             "--refuse-splice, --shape-compare, --clip, --chain, "
-            "--geometry, or --tube is set"
+            "--geometry, --tube, or --gap is set"
         )
 
     report = audit_expression(args.expression)

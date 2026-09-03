@@ -349,10 +349,13 @@ def scaling_ledger() -> dict[str, Any]:
 
 
 def tube_estimate() -> dict[str, Any]:
+    from .gap import gap_tube
+
     hardy = hardy_wall_probe()
     trace = wall_trace_probe()
     mismatch = monomial_mismatch_probe()
     swirl = swirl_source_vs_angular_probe()
+    steps = [s.to_dict() for s in TUBE_STEPS]
     return {
         "book": "B",
         "title": "Tube estimate — live geometric write",
@@ -362,7 +365,8 @@ def tube_estimate() -> dict[str, Any]:
         "delta": "δ ∼ 2^{-j*} under CONC; spread uses Bony, not this tube",
         "wall_diagram": WALL_DIAGRAM,
         "monomials": [dict(m) for m in MONOMIALS],
-        "steps": [s.to_dict() for s in TUBE_STEPS],
+        "steps": steps,
+        "gap": gap_tube(steps),
         "hardy_probe": hardy,
         "wall_trace_probe": trace,
         "monomial_mismatch": mismatch,
@@ -384,8 +388,8 @@ def tube_estimate() -> dict[str, Any]:
             "with R integrable from tube Hardy and/or Ring and/or spread Poincaré"
         ),
         "next": (
-            "T3a is in. Write T5 (I_tube) with CLIP-T3-WELD and CLIP-T3-OUTER "
-            "carried, not silent-merged. Leave T7 open until R is constructed. "
+            "STOP at T3b. Fill GAP-T3 (CLIP-T3-WELD, CLIP-T3-OUTER). "
+            "T5 is the first candidate after, not a step. Leave T7 open. "
             "Do not pass regularity. Do not glue Cartesian Bony T onto this tube."
         ),
     }
@@ -407,8 +411,18 @@ def format_tube_estimate(report: dict[str, Any] | None = None) -> str:
         lines.append(f"      {mon['lives']}")
         lines.append(f"      {mon['status']}")
     lines.append("")
-    lines.append("Inequality chain")
+    from .gap import format_gap
+
+    lines.append(format_gap(data.get("gap")))
+    lines.append("")
+    lines.append("Walked inequalities (detail; stop at the wall)")
+    wall_name = (data.get("gap") or {}).get("wall", {}).get("step")
+    hit_wall = False
     for step in data["steps"]:
+        if hit_wall:
+            break
+        if step["step"] == wall_name:
+            hit_wall = True
         lines.append(f"── {step['step']}  [{step['status']}]")
         lines.append(f"   {step['inequality']}")
         lines.append(f"   geometry: {step['geometry']}")

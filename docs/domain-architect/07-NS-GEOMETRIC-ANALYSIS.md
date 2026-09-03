@@ -65,12 +65,7 @@ Canceling moves the work onto \(\|\Phi_\theta\|_\infty\)
 
 ## Next geometric write
 
-T3a is in: the wall is a two-sided cylinder. Young from the outside buys
-\(h(\delta)^2\) when swirl vanishes at an outer radius. Two clips stay
-on: `CLIP-T3-OUTER` (\(\mathbb{T}^3\) has no such \(R\)) and
-`CLIP-T3-WELD` (\(I_{\mathrm{off}}\) is not the Hardy weight). Carry
-those into a bound on \(I_{\mathrm{tube}}\) (T5). Keep \(1/r^4\). Then
-the energy-class low Bony term \(T\) on the spread chart. Do not pass
-regularity.
-
-Details: [`08-NS-TUBE-ESTIMATE.md`](08-NS-TUBE-ESTIMATE.md).
+T3a is in: the wall is a two-sided cylinder. The walk **stops** at T3b.
+The missing piece is GAP-T3 (`CLIP-T3-WELD`, `CLIP-T3-OUTER`), sitting
+between T3a and T5. T5 is a candidate after the gap, not continuation.
+See [`09-NS-GAP.md`](09-NS-GAP.md) and `python -m domain_architect --gap B`.

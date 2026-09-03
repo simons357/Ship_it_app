@@ -5,6 +5,7 @@ Do not switch the unknown to \(\Phi_\theta\).
 
 ```bash
 python -m domain_architect --tube B
+python -m domain_architect --gap B
 ```
 
 ## The split
@@ -91,10 +92,15 @@ Pick neither as a close. That disagreement **is** the open weld.
 
 ## What “continue” means next
 
-1. **T5** — bound \(|I_{\mathrm{tube}}|\) with T2 + T3a, carrying
-   `CLIP-T3-WELD` and `CLIP-T3-OUTER`. This is the estimate we refused to
-   escape by canceling to \(\Phi_\theta\).
-2. Then energy-class low Bony \(T\) on the **spread** chart (Cartesian
-   \(\mathbb{T}^3\), no \(\Gamma\)). Do not glue H onto the tube.
+The walk **stops** at T3b. T5 is the first **candidate after** the gap,
+not a step already taken. See [`09-NS-GAP.md`](09-NS-GAP.md).
+
+1. **Fill GAP-T3** — a lemma that bounds \(I_{\mathrm{off}}\) by
+   Hardy/Young traces on \(\mathbb{T}^3\), carrying `CLIP-T3-WELD` and
+   `CLIP-T3-OUTER`. Until that exists, do not walk T5.
+2. Then T5 as a candidate: bound \(|I_{\mathrm{tube}}|\). This is the
+   estimate we refused to escape by canceling to \(\Phi_\theta\).
+3. Then energy-class low Bony \(T\) on the **spread** chart (Cartesian
+   \(\mathbb{T}^3\), no \(\Gamma\)). Other chart; does not fill this gap.
 
 Regularity stays open until T7 has a constructed \(\mathcal R\).

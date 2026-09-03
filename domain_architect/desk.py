@@ -158,6 +158,12 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
     },
     {
         "priority": "3",
+        "move": "Stop at the first open wall. Name the missing piece between it and the next candidate. Do not walk past.",
+        "command": "python -m domain_architect --gap B",
+        "do_not": "Treat later identities (B5, T4) as continuation past I_tube.",
+    },
+    {
+        "priority": "3b",
         "move": "One Track B identity: Hardy → wall trace → I_tube. Regularity does not come along.",
         "command": "python -m domain_architect --tube B",
         "do_not": "Announce Clay Statement B.",
