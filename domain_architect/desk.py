@@ -68,7 +68,34 @@ LIBRARY_OBJECTS: Final[dict[str, dict[str, str]]] = {
         "shape": "FRA role skeleton Φ=ℱ(P,H,ψ,λ;E)",
         "texture": "inquiry report, evidence levels 0–6",
     },
+    "SEE": {
+        "book": "SEE",
+        "shape": "live picture of the current math action",
+        "texture": "SVG/HTML see-desk; slave of CLI math; not CosmoEvolution",
+    },
 }
+
+APPENDAGES: Final[tuple[dict[str, str], ...]] = (
+    {
+        "id": "THINK",
+        "name": "Think tank",
+        "job": "proceed map / refuse glue",
+        "allowed": "List layers, unglued books, legal next moves. Score a proposed weld.",
+        "forbidden": "Close a lemma. Write B from a map. Treat Cosmo as this tank.",
+        "command": "python -m domain_architect --proceed",
+    },
+    {
+        "id": "SEE",
+        "name": "Visual appendage",
+        "job": "picture slave of the live math",
+        "allowed": "Always redraw the visual equivalent of the last math action.",
+        "forbidden": "Write B, Q, or U. Replace Cosmo. Count as a proof.",
+        "command": (
+            "auto after --tube / --gap / --overlay / --energy-play / "
+            "--shape-play / --chain / --geometry / --clip / --shape-compare / --see"
+        ),
+    },
+)
 
 LAYERS: Final[tuple[dict[str, str], ...]] = (
     {
@@ -126,6 +153,12 @@ ILLEGAL_SPLICES: Final[tuple[tuple[str, str, str], ...]] = (
     ("VIZ", "Q", "Manifold fly-throughs are not zeros of ζ(s)."),
     ("VIZ", "U", "The 16/16 topology table is retired as evidence; vacuum cos θ_W test already failed on-site."),
     ("VIZ", "A", "Visualization cannot alter the augmented PDE."),
+    ("VIZ", "SEE", "CosmoEvolution 3D is VIZ ONLY. It is not the visual appendage."),
+    ("SEE", "VIZ", "The see-desk is not CosmoEvolution. Pictures follow the lab math."),
+    ("SEE", "B", "The visual appendage cannot write classical Navier–Stokes."),
+    ("SEE", "Q", "Pictures are not zeros of ζ(s)."),
+    ("SEE", "U", "The see-desk cannot write Standard Model numbers."),
+    ("SEE", "A", "Pictures cannot alter the augmented PDE."),
     ("SEARCH", "B", "ChatVault cannot certify a fluids lemma."),
     ("SEARCH", "Q", "ChatVault cannot certify an arithmetic lemma."),
     ("SEARCH", "RH", "Search is not a decision procedure for the Riemann Hypothesis."),
@@ -191,6 +224,15 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
         "move": "See it. Pictures first; math under the fold. Open the see-desk in a browser.",
         "command": "python -m domain_architect --see B",
         "do_not": "Treat CosmoEvolution as this picture desk, or treat the pictures as a proof.",
+    },
+    {
+        "priority": "3g",
+        "move": (
+            "The visual appendage always follows the math you just ran. "
+            "Think tank stays --proceed. Picture is a slave, not a proof."
+        ),
+        "command": "python -m domain_architect --tube B   # see-state.json action=tube",
+        "do_not": "Let Cosmo follow the math, or let the picture write B.",
     },
     {
         "priority": "4",
@@ -262,6 +304,11 @@ def _norm(token: str) -> str:
         "EXP-H001": "EXP01",
         "VIZ-H001": "VIZ",
         "SYS-H001": "SEARCH",
+        "SEE": "SEE",
+        "PICTURE": "SEE",
+        "VISUAL": "SEE",
+        "SEEDESK": "SEE",
+        "APPENDAGE": "SEE",
     }
     return aliases.get(key, key)
 
@@ -287,7 +334,7 @@ def refuse_splice(source: str, target: str) -> SpliceDecision:
                 opcode="REFUSED",
                 reason=reason,
             )
-    if src in {"VIZ", "SEARCH"} and dst in {"A", "B", "Q", "U", "RH", "DA"}:
+    if src in {"VIZ", "SEARCH", "SEE"} and dst in {"A", "B", "Q", "U", "RH", "DA"}:
         return SpliceDecision(
             source=src,
             target=dst,
@@ -334,6 +381,10 @@ def _norm_object(token: str) -> str:
         "COSMOEVOLUTION": "VIZ",
         "FRA": "DA",
         "DOMAINARCHITECT": "DA",
+        "SEE": "SEE",
+        "PICTURE": "SEE",
+        "VISUAL": "SEE",
+        "SEEDESK": "SEE",
     }
     return aliases.get(key, token.strip().upper() if token.strip().upper() in LIBRARY_OBJECTS else key)
 
@@ -432,6 +483,7 @@ def proceed_report() -> dict[str, Any]:
             "knockout": "16/16 Standard Model parameters predicted from topology.",
         },
         "layers": list(LAYERS),
+        "appendages": list(APPENDAGES),
         "books": list(BOOKS),
         "shape_first": SHAPE_FIRST,
         "shape_roles": list(SHAPE_ROLES),
@@ -440,7 +492,8 @@ def proceed_report() -> dict[str, Any]:
         "refused_as_close": list(REFUSED_AS_CLOSE),
         "where_we_go": (
             "Shrink the machine. Navigate by shape first, then one lemma or "
-            "one scan. CosmoEvolution is a planetarium. Domain Architect is a "
+            "one scan. Think tank plus visual appendage in this package. "
+            "CosmoEvolution is a planetarium. Domain Architect is a "
             "compiler. ChatVault is search. Do not let the planetarium compile."
         ),
         "bench": (
@@ -471,6 +524,14 @@ def format_proceed(report: dict[str, Any] | None = None) -> str:
             f"  {layer['id']}: {layer['name']} — {layer['job']}. "
             f"Forbidden: {layer['forbidden']}"
         )
+    lines.append("")
+    lines.append("Package appendages (think tank + picture)")
+    for arm in data.get("appendages") or []:
+        lines.append(
+            f"  {arm['id']}: {arm['name']} — {arm['job']}. "
+            f"Forbidden: {arm['forbidden']}"
+        )
+        lines.append(f"      {arm['command']}")
     lines.append("")
     lines.append("Books (unglued)")
     for book in data["books"]:

@@ -2,14 +2,17 @@
 
 Visual cognition is cheap. Inequalities are expensive. This module draws
 the cylinder, energy, overlay, and gap as SVG from the same objects the
-CLI already knows. It is not CosmoEvolution and not a proof.
+CLI already knows. The picture is a package appendage: it follows the
+math you just ran. It is not CosmoEvolution and not a proof.
 """
 
 from __future__ import annotations
 
+from datetime import datetime, timezone
 from html import escape
 from pathlib import Path
 from typing import Any, Final
+import json
 
 from .energy_play import energy_play
 from .gap import gap_report
@@ -18,13 +21,114 @@ from .shape_play import play_cylinder
 
 
 DEFAULT_HTML: Final[str] = "docs/domain-architect/see.html"
+DEFAULT_STATE: Final[str] = "docs/domain-architect/see-state.json"
 READY = "#1b7f6e"
 PLAY = "#c9a227"
 OPEN = "#c44536"
+HOLE = "#c44536"
 REFUSE = "#6b6570"
 INK = "#1c1917"
 PAPER = "#f6f1e7"
-HOLE = "#c44536"
+FOCUS_LINE: Final[dict[str, str]] = {
+    "tube": "Live math: tube estimate — Hardy, wall, I_tube",
+    "gap": "Live math: stop at the wall — missing piece in view",
+    "overlay": "Live math: overlay of done pieces",
+    "energy": "Live math: energy as a pile you can see",
+    "energy-play": "Live math: energy as a pile you can see",
+    "shape": "Live math: fill the other side of a shape",
+    "shape-play": "Live math: fill the other side of a shape",
+    "chain": "Live math: lemma chain as shapes",
+    "geometry": "Live math: four charts on one object",
+    "clip": "Live math: clip the excess, keep the remainder",
+    "compare": "Live math: shape first, then texture",
+    "shape-compare": "Live math: shape first, then texture",
+    "audit": "Live math: role audit of an expression",
+    "see": "Visual appendage — slave of the math, not Cosmo",
+}
+TITLES: Final[dict[str, str]] = {
+    "tube": "Tube estimate — Hardy, wall, I_tube",
+    "gap": "Stop at the wall — missing piece in view",
+    "overlay": "Overlay of done pieces, holes through the stack",
+    "energy": "Energy as a pile you can see",
+    "energy-play": "Energy as a pile you can see",
+    "shape": "Cylinder fill + even-reflect play",
+    "shape-play": "Cylinder fill + even-reflect play",
+    "chain": "Track B chain as shapes",
+    "geometry": "Geometric analysis of Track B",
+    "clip": "Clip the excess, keep the remainder",
+    "compare": "Shape first, then texture",
+    "shape-compare": "Shape first, then texture",
+    "audit": "Role audit of an expression",
+    "see": "See desk — pictures first, math under the fold",
+}
+
+
+def _default_focus() -> dict[str, Any]:
+    return {
+        "appendage": "SEE",
+        "slave_of": "math",
+        "action": "see",
+        "book": "B",
+        "title": TITLES["see"],
+        "live": FOCUS_LINE["see"],
+        "not_a_proof": True,
+        "not_cosmo": True,
+    }
+
+
+def load_focus() -> dict[str, Any]:
+    path = Path(DEFAULT_STATE)
+    if not path.exists():
+        return _default_focus()
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return _default_focus()
+    if not isinstance(data, dict):
+        return _default_focus()
+    merged = _default_focus()
+    merged.update(data)
+    return merged
+
+
+def write_state(action: str, book: str = "B") -> dict[str, Any]:
+    """Persist what the math just did so the picture can follow."""
+    key = action.strip().lower()
+    state = {
+        "appendage": "SEE",
+        "slave_of": "math",
+        "action": key,
+        "book": book,
+        "title": TITLES.get(key, key),
+        "live": FOCUS_LINE.get(key, FOCUS_LINE["see"]),
+        "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "not_a_proof": True,
+        "not_cosmo": True,
+    }
+    path = Path(DEFAULT_STATE)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(state, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return state
+
+
+def follow(action: str, book: str = "B") -> dict[str, Any]:
+    """Always adjust the visual to the math that just ran."""
+    state = write_state(action, book)
+    path = write_see()
+    state["picture"] = str(path)
+    return state
+
+
+def format_follow(state: dict[str, Any] | None = None) -> str:
+    data = state or load_focus()
+    picture = data.get("picture") or DEFAULT_HTML
+    return (
+        "Visual appendage followed the math.\n"
+        f"  now looking at: {data.get('title')}\n"
+        f"  {data.get('live')}\n"
+        f"  picture: {picture}\n"
+        "  CosmoEvolution 3D is not this appendage.\n"
+    )
 
 
 def _bar_row(values: list[float], x: float, y: float, w: float, h: float, fill: str) -> str:
@@ -170,12 +274,15 @@ def svg_gap(report: dict[str, Any] | None = None) -> str:
 </svg>'''
 
 
-def render_html() -> str:
+def render_html(state: dict[str, Any] | None = None) -> str:
     overlay = overlay_report()
     gap = gap_report("B")
     energy = energy_play()
     cyl = play_cylinder()
     even = next(c for c in cyl["completions"] if c["id"] == "even_reflect")
+    st = state or load_focus()
+    live = st.get("live") or FOCUS_LINE.get(st.get("action", "see"), FOCUS_LINE["see"])
+    title = st.get("title") or TITLES.get(st.get("action", "see"), TITLES["see"])
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -194,6 +301,11 @@ def render_html() -> str:
       background: {INK}; color: {PAPER}; padding: .5rem .8rem; border-radius: 8px;
       font-size: .95rem;
     }}
+    .live {{
+      margin: .8rem 0 0; padding: .6rem .8rem; border: 1px solid {PLAY};
+      border-radius: 8px; background: #fffaf0;
+    }}
+    .live strong {{ color: {INK}; font-weight: 600; }}
     .note {{ font-size: .95rem; margin: .8rem 0 1.2rem; }}
     figure {{ margin: 0 0 1.6rem; }}
     figcaption {{ font-size: .9rem; margin-top: .4rem; color: #444; }}
@@ -206,7 +318,9 @@ def render_html() -> str:
   <header>
     <p class="banner">Human see. Math is git. Not a proof. Not CosmoEvolution.</p>
     <h1>See the pieces, then the stack, then the hole</h1>
+    <p class="live"><strong>Now looking at:</strong> {escape(str(title))}<br/>{escape(str(live))}</p>
     <p class="note">
+      Visual appendage of the think tank. The picture follows the math you just ran.
       Pictures first. Inequalities are under each figure.
       Overlay stacks {overlay["composite"]["counts"]["stacked"]} done layers.
       Complete? {str(overlay["composite"]["is_complete"]).lower()}.
@@ -249,8 +363,9 @@ def render_html() -> str:
     </figure>
   </main>
   <footer>
-    Domain Architect see-desk. Store of record is git, not this page.
-    CosmoEvolution 3D is visualization only and is not this lab.
+    Domain Architect package · think tank + visual appendage.
+    Store of record is git, not this page.
+    CosmoEvolution 3D is visualization only and is not this appendage.
   </footer>
 </body>
 </html>
@@ -260,7 +375,7 @@ def render_html() -> str:
 def write_see(path: str | Path | None = None) -> Path:
     dest = Path(path) if path is not None else Path(DEFAULT_HTML)
     dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text(render_html(), encoding="utf-8")
+    dest.write_text(render_html(load_focus()), encoding="utf-8")
     # Sibling SVGs so markdown can show the pictures on GitHub.
     dest.with_name("see-cylinder.svg").write_text(svg_cylinder(), encoding="utf-8")
     dest.with_name("see-energy.svg").write_text(svg_energy(), encoding="utf-8")

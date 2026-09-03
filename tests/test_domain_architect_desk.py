@@ -34,7 +34,12 @@ class TestProceedMap(unittest.TestCase):
         text = format_proceed(report)
         self.assertIn("ChatVault", text)
         self.assertIn("shape first", text.lower())
+        self.assertIn("think tank", text.lower())
+        self.assertIn("visual appendage", text.lower())
         self.assertNotIn("unified theory", text.lower())
+        arms = {a["id"] for a in report["appendages"]}
+        self.assertEqual(arms, {"THINK", "SEE"})
+        self.assertEqual(report["cosmoevolution"]["role"], "visualization only")
 
     def test_books_stay_unglued(self):
         ids = {book["id"] for book in proceed_report()["books"]}
@@ -66,6 +71,17 @@ class TestRefuseSplice(unittest.TestCase):
         self.assertTrue(d.allowed)
         self.assertEqual(d.opcode, "NOOP")
 
+    def test_see_cannot_write_navier_stokes(self):
+        d = refuse_splice("SEE", "B")
+        self.assertFalse(d.allowed)
+        self.assertEqual(d.opcode, "REFUSED")
+        self.assertIn("cannot write", d.reason.lower())
+
+    def test_see_is_not_cosmo(self):
+        d = refuse_splice("SEE", "VIZ")
+        self.assertFalse(d.allowed)
+        self.assertEqual(d.opcode, "REFUSED")
+
 
 class TestShapeFirst(unittest.TestCase):
     def test_pde_and_jx_are_same_shape_different_texture(self):
@@ -83,6 +99,12 @@ class TestShapeFirst(unittest.TestCase):
     def test_cosmo_is_not_the_da_shape(self):
         c = compare_shape("VIZ", "DA")
         self.assertEqual(c.verdict, "INCOMPATIBLE_SHAPE")
+
+    def test_see_is_not_cosmo_shape(self):
+        c = compare_shape("SEE", "VIZ")
+        self.assertEqual(c.verdict, "INCOMPATIBLE_SHAPE")
+        self.assertEqual(c.left_book, "SEE")
+        self.assertEqual(c.right_book, "VIZ")
 
 
 class TestRegistryRecords(unittest.TestCase):

@@ -16,9 +16,18 @@ from .gap import format_gap, gap_report
 from .shape_play import format_shape_play, shape_play
 from .energy_play import energy_play, format_energy_play
 from .overlay import format_overlay, overlay_report
-from .visual import write_see
+from .visual import follow, format_follow
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
+
+
+def _follow_math(action: str, book: str = "B", *, json_mode: bool) -> dict:
+    """Picture slave of the math. Quiet when stdout is JSON."""
+    state = follow(action, book)
+    if not json_mode:
+        print()
+        print(format_follow(state))
+    return state
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -136,6 +145,7 @@ def main(argv: list[str] | None = None) -> int:
             print(f"  {compared.right} [{compared.right_book}] shape={compared.right_shape}")
             print(f"      texture: {compared.right_texture}")
             print(compared.reason)
+        _follow_math("compare", json_mode=args.json)
         return 0
 
     if args.clip:
@@ -145,6 +155,7 @@ def main(argv: list[str] | None = None) -> int:
             sys.stdout.write("\n")
         else:
             print(format_clip_splice(clipped))
+        _follow_math("clip", json_mode=args.json)
         return 0
 
     if args.chain:
@@ -161,6 +172,7 @@ def main(argv: list[str] | None = None) -> int:
             sys.stdout.write("\n")
         else:
             print(format_ns_chain(payload))
+        _follow_math("chain", book, json_mode=args.json)
         return 0
 
     if args.geometry:
@@ -177,6 +189,7 @@ def main(argv: list[str] | None = None) -> int:
             sys.stdout.write("\n")
         else:
             print(format_ns_geometry(payload))
+        _follow_math("geometry", book, json_mode=args.json)
         return 0
 
     if args.tube:
@@ -193,6 +206,7 @@ def main(argv: list[str] | None = None) -> int:
             sys.stdout.write("\n")
         else:
             print(format_tube_estimate(payload))
+        _follow_math("tube", book, json_mode=args.json)
         return 0
 
     if args.gap:
@@ -205,6 +219,7 @@ def main(argv: list[str] | None = None) -> int:
             sys.stdout.write("\n")
         else:
             print(format_gap(payload))
+        _follow_math("gap", args.gap, json_mode=args.json)
         return 0
 
     if args.shape_play is not None:
@@ -230,6 +245,7 @@ def main(argv: list[str] | None = None) -> int:
             sys.stdout.write("\n")
         else:
             print(format_shape_play(payload))
+        _follow_math("shape-play", book, json_mode=args.json)
         return 0
 
     if args.energy_play is not None:
@@ -253,6 +269,7 @@ def main(argv: list[str] | None = None) -> int:
             sys.stdout.write("\n")
         else:
             print(format_energy_play(payload))
+        _follow_math("energy-play", book, json_mode=args.json)
         return 0
 
     if args.overlay is not None:
@@ -269,6 +286,7 @@ def main(argv: list[str] | None = None) -> int:
             sys.stdout.write("\n")
         else:
             print(format_overlay(payload))
+        _follow_math("overlay", book, json_mode=args.json)
         return 0
 
     if args.see is not None:
@@ -279,9 +297,19 @@ def main(argv: list[str] | None = None) -> int:
                 file=sys.stderr,
             )
             return 2
-        dest = write_see()
+        state = _follow_math("see", book, json_mode=args.json)
+        dest = state.get("picture", "docs/domain-architect/see.html")
         if args.json:
-            json.dump({"wrote": str(dest), "not_a_regularity_proof": True}, sys.stdout, indent=2)
+            json.dump(
+                {
+                    "wrote": str(dest),
+                    "not_a_regularity_proof": True,
+                    "appendage": "SEE",
+                    "action": state["action"],
+                },
+                sys.stdout,
+                indent=2,
+            )
             sys.stdout.write("\n")
         else:
             print("Human see. Math is git. Not a proof.")
@@ -322,6 +350,7 @@ def main(argv: list[str] | None = None) -> int:
         print(report.narrative())
         print()
         print(f"Canonical SFE status: {CANONICAL_SFE_STATUS}.")
+    _follow_math("audit", json_mode=args.json)
     return 0
 
 

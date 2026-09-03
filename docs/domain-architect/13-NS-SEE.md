@@ -40,3 +40,8 @@ Hollow T5 = after, not walked.
 
 Math and code stay attached (`--tube`, `--gap`, `--overlay`, `--energy-play`).
 They are just not what you have to look at first.
+
+The see-desk is the **visual appendage** of this package. Run any math
+command and the banner on `see.html` adjusts. `--proceed` is the think
+tank and does not move the picture. CosmoEvolution is still not this
+desk. See [`14-PACKAGE.md`](14-PACKAGE.md).

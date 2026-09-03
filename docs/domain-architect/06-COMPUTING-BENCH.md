@@ -73,6 +73,10 @@ See it as pictures, not as a terminal dump:
 [`13-NS-SEE.md`](13-NS-SEE.md) and `python -m domain_architect --see B`.
 Open `see.html` in a browser. CosmoEvolution is not this desk.
 
+The picture is a **package appendage**. It follows the math automatically
+(`--tube` rewrites `see-state.json` and the HTML banner). The think tank
+stays `--proceed`. Details: [`14-PACKAGE.md`](14-PACKAGE.md).
+
 Live tube estimate (Hardy inside, Young outside, \(I_{\mathrm{tube}}\) open):
 [`08-NS-TUBE-ESTIMATE.md`](08-NS-TUBE-ESTIMATE.md) and
 `python -m domain_architect --tube B`. T3a (wall as a two-sided cylinder)

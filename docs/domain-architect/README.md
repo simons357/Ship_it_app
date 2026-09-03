@@ -26,6 +26,7 @@ Approved plain-language explanation:
 | [11 — Energy as a visual object](11-NS-ENERGY-PLAY.md) | Bernstein fills enstrophy from shell energy; outside does not fill the tube |
 | [12 — Overlay](12-NS-OVERLAY.md) | Pieces visualized; done transposable layers stacked; refine one hole |
 | [13 — See](13-NS-SEE.md) | Human picture desk: SVG first, math under the fold |
+| [14 — Package](14-PACKAGE.md) | Think tank + visual appendage; picture slaves the math |
 
 Machine-readable provenance (original expressions are immutable):
 
@@ -47,7 +48,8 @@ python -m domain_architect --shape-play B
 python -m domain_architect --energy-play B
 python -m domain_architect --overlay B
 python -m domain_architect --see B
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_desk
+python -m domain_architect --refuse-splice SEE B
+python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_desk tests.test_domain_architect_visual
 ```
 
 Related closed experiment in this repository:

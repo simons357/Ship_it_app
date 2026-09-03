@@ -30,7 +30,7 @@ from .gap import gap_report
 from .shape_play import shape_play
 from .energy_play import energy_play
 from .overlay import overlay_report
-from .visual import write_see
+from .visual import follow, write_see
 from .report import AuditReport
 
 __all__ = [
@@ -54,6 +54,7 @@ __all__ = [
     "energy_play",
     "overlay_report",
     "write_see",
+    "follow",
 ]
 
 __version__ = "0.2.0"
