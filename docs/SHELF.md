@@ -34,6 +34,8 @@ Track A does not imply Track B. Track Q does not imply either fluids track.
 
 A Domain Architect “unifier program” drill lives in `docs/UNIFIER-EXERCISE.md`. It is an exercise. It does not unshelve SFE and it is not a unifier.
 
+A typed harmonic vocabulary lives in `docs/DA-HARMONIC-VOCAB.md`. It names distinct mathematical objects that share the English word. Desk coverage can pass. It does not unshelve HB, does not write \(F\), and does not retune `nodes.json`.
+
 Domain Architect as a **process machine** (slots, generator, fail-able checker) is live: `docs/DOMAIN-ARCHITECT-MACHINE.md`. That is not a unifier and not a regularity proof.
 
 ---

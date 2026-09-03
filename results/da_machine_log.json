@@ -208,12 +208,19 @@
       "claim": "classical 3D NS globally regular (domain close)",
       "verdict": "open",
       "note": "lemma identities held or correctly failed; no closed estimate for X"
+    },
+    {
+      "t": "2026-09-03T05:21:52.493506+00:00",
+      "domain": "U",
+      "claim": "Make a complete harmonic vocabulary out of mathematics",
+      "verdict": "open",
+      "note": "typed catalog pass; desk coverage pass; one-object / finished-field / F / HB / regularity fail"
     }
   ],
   "counts": {
-    "scored": 29,
+    "scored": 30,
     "pass": 8,
     "fail": 4,
-    "open": 17
+    "open": 18
   }
 }

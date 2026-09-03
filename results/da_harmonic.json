@@ -1,0 +1,440 @@
+{
+  "meta": {
+    "question": "can DA make a complete harmonic vocabulary out of mathematics?",
+    "answer": "A typed catalog: yes. Desk coverage: yes. One object, a finished field, or a unifier: no.",
+    "not_a_unifier": true,
+    "does_not_touch_ABQ_math": true,
+    "does_not_retune_nodes": true
+  },
+  "vocab": [
+    {
+      "id": "H1",
+      "name": "harmonic_function",
+      "family": "kernel",
+      "object": "u with \u0394u = 0",
+      "equation": "\u0394u = 0",
+      "slot": "none",
+      "on_desk": false,
+      "real_math": true,
+      "why": "Laplace kernel. The oldest mathematical sense of the word."
+    },
+    {
+      "id": "H2",
+      "name": "harmonic_polynomial",
+      "family": "kernel",
+      "object": "homogeneous polynomial in ker \u0394",
+      "equation": "\u0394P = 0, P homogeneous",
+      "slot": "none",
+      "on_desk": false,
+      "real_math": true,
+      "why": "Polynomial kernel. Restricts to spherical harmonics."
+    },
+    {
+      "id": "H3",
+      "name": "spherical_harmonic",
+      "family": "spectral",
+      "object": "Y_\u2113m on S^{n-1}; Laplace\u2013Beltrami eigenfunction",
+      "equation": "\u0394_{S^{n-1}} Y = \u2212\u2113(\u2113+n-2) Y",
+      "slot": "B",
+      "on_desk": true,
+      "real_math": true,
+      "why": "Angular modes. Already the language of Ring / angular decomposition on B."
+    },
+    {
+      "id": "H4",
+      "name": "helmholtz_leray",
+      "family": "kernel",
+      "object": "u = \u2207\u03c6 + curl A, or P = I \u2212 \u2207\u0394^{-1}div",
+      "equation": "div u = 0 after Leray",
+      "slot": "A",
+      "on_desk": true,
+      "real_math": true,
+      "why": "On A and on every NS write. Projector, not a universe law."
+    },
+    {
+      "id": "H5",
+      "name": "laplacian_eigenfunction",
+      "family": "spectral",
+      "object": "\u0394\u03c6 = \u03bb\u03c6 on a manifold or domain",
+      "equation": "\u0394\u03c6 = \u03bb\u03c6",
+      "slot": "none",
+      "on_desk": false,
+      "real_math": true,
+      "why": "Spectral geometry. Spherical harmonics are the S^{n-1} case."
+    },
+    {
+      "id": "H6",
+      "name": "spherical_bessel",
+      "family": "spectral",
+      "object": "radial Helmholtz / Fourier\u2013Bessel",
+      "equation": "r\u00b2R'' + 2rR' + (k\u00b2r\u00b2 \u2212 \u2113(\u2113+1))R = 0",
+      "slot": "none",
+      "on_desk": false,
+      "real_math": true,
+      "why": "Radial partner of Y_\u2113m. Not loaded into \u03c9\u00b7S\u03c9."
+    },
+    {
+      "id": "H7",
+      "name": "fourier_character",
+      "family": "group",
+      "object": "characters of R^n or T^n",
+      "equation": "e^{i\u03be\u00b7x}",
+      "slot": "A",
+      "on_desk": true,
+      "real_math": true,
+      "why": "Galerkin / Fourier on A. The abelian case of Peter\u2013Weyl."
+    },
+    {
+      "id": "H8",
+      "name": "peter_weyl",
+      "family": "group",
+      "object": "matrix coefficients of a compact group",
+      "equation": "L\u00b2(G) = \u2295_\u03c0 (dim \u03c0) H_\u03c0",
+      "slot": "none",
+      "on_desk": false,
+      "real_math": true,
+      "why": "Nonabelian Fourier. Wigner D-matrices are the SU(2) case."
+    },
+    {
+      "id": "H9",
+      "name": "wigner_d",
+      "family": "group",
+      "object": "SU(2) / SO(3) matrix coefficients",
+      "equation": "D^j_{m'm}(\u03b1,\u03b2,\u03b3)",
+      "slot": "none",
+      "on_desk": false,
+      "real_math": true,
+      "why": "Rotation harmonics. Not a Cosmo knob and not F."
+    },
+    {
+      "id": "H10",
+      "name": "spherical_function",
+      "family": "group",
+      "object": "zonal / Gelfand spherical functions on G/K",
+      "equation": "bi-K-invariant eigenfunctions of the algebra",
+      "slot": "none",
+      "on_desk": false,
+      "real_math": true,
+      "why": "Symmetric-space harmonics. A different catalog from Y_\u2113m on S\u00b2."
+    },
+    {
+      "id": "H11",
+      "name": "dirichlet_character",
+      "family": "group",
+      "object": "characters of (Z/NZ)*",
+      "equation": "\u03c7: (Z/NZ)* \u2192 C*",
+      "slot": "Q",
+      "on_desk": true,
+      "real_math": true,
+      "why": "Arithmetic harmonics. Sit near Track Q. Not a map onto (u\u00b7\u2207)u."
+    },
+    {
+      "id": "H12",
+      "name": "automorphic_maass",
+      "family": "group",
+      "object": "Maass forms / automorphic forms",
+      "equation": "\u0394f = \u03bbf on \u0393\\H, plus growth",
+      "slot": "none",
+      "on_desk": false,
+      "real_math": true,
+      "why": "Number-theory harmonics. Proof that the field kept growing after Fourier."
+    },
+    {
+      "id": "H13",
+      "name": "littlewood_paley",
+      "family": "analysis",
+      "object": "dyadic frequency shells \u0394_j",
+      "equation": "u = \u03a3_j \u0394_j u",
+      "slot": "B",
+      "on_desk": true,
+      "real_math": true,
+      "why": "Already on Track B. A tool, not a regularity pass."
+    },
+    {
+      "id": "H14",
+      "name": "bony_paraproduct",
+      "family": "analysis",
+      "object": "low-high / high-low / high-high split of uv",
+      "equation": "uv = T_u v + T_v u + R(u,v)",
+      "slot": "B",
+      "on_desk": true,
+      "real_math": true,
+      "why": "Already on Track B (T2). Energy-class low T is the live write, not a close."
+    },
+    {
+      "id": "H15",
+      "name": "calderon_zygmund",
+      "family": "analysis",
+      "object": "singular integral operators",
+      "equation": "T f = p.v. K * f, K Calder\u00f3n\u2013Zygmund",
+      "slot": "B",
+      "on_desk": true,
+      "real_math": true,
+      "why": "The kernel class behind Riesz and much of NS harmonic analysis."
+    },
+    {
+      "id": "H16",
+      "name": "riesz_transform",
+      "family": "analysis",
+      "object": "R_j = \u2202_j (\u2212\u0394)^{-1/2}",
+      "equation": "u = \u2212R \u2297 R \u00b7 (something for Helmholtz)",
+      "slot": "A",
+      "on_desk": true,
+      "real_math": true,
+      "why": "Makes Helmholtz bounded on L^p, 1<p<\u221e. Not a \u03a6 cancel."
+    },
+    {
+      "id": "H17",
+      "name": "hardy_space",
+      "family": "analysis",
+      "object": "H^p, maximal or conjugate-function definition",
+      "equation": "sup_{t>0} |P_t * f| \u2208 L^p",
+      "slot": "none",
+      "on_desk": false,
+      "real_math": true,
+      "why": "A different Hardy from the tube inequality on B. Do not glue the names."
+    },
+    {
+      "id": "H18",
+      "name": "tube_hardy",
+      "family": "analysis",
+      "object": "Hardy inequality on a vortex tube",
+      "equation": "\u222b |\u0393|\u00b2/r\u00b2 \u2272 \u222b |\u2207\u0393|\u00b2 plus a wall",
+      "slot": "B",
+      "on_desk": true,
+      "real_math": true,
+      "why": "Live B write (B4). Not H^p. Absorbing I_tube stays open (B4b)."
+    },
+    {
+      "id": "H19",
+      "name": "bmo_maximal",
+      "family": "analysis",
+      "object": "BMO and Hardy\u2013Littlewood maximal function",
+      "equation": "M f(x) = sup_B \u2a0d_B |f|",
+      "slot": "none",
+      "on_desk": false,
+      "real_math": true,
+      "why": "Standard harmonic analysis. Not loaded into Cosmo A,f,\u03c6,\u03b4."
+    },
+    {
+      "id": "H20",
+      "name": "besov_triebel",
+      "family": "analysis",
+      "object": "Besov / Triebel\u2013Lizorkin scales",
+      "equation": "B^s_{p,q}, F^s_{p,q}",
+      "slot": "B",
+      "on_desk": true,
+      "real_math": true,
+      "why": "LP cousins. Useful language for Bony estimates. Not a close."
+    },
+    {
+      "id": "H21",
+      "name": "hodge_form",
+      "family": "kernel",
+      "object": "harmonic differential forms",
+      "equation": "\u0394\u03b1 = 0, or d\u03b1 = \u03b4\u03b1 = 0",
+      "slot": "none",
+      "on_desk": false,
+      "real_math": true,
+      "why": "Hodge theory. Same word as \u0394u=0, different bundle. Not Y_\u2113m."
+    },
+    {
+      "id": "H22",
+      "name": "quantum_oscillator",
+      "family": "spectral",
+      "object": "H = p\u00b2/2m + (1/2)m\u03c9\u00b2x\u00b2",
+      "equation": "H \u03c8_n = \u0127\u03c9(n+1/2) \u03c8_n",
+      "slot": "none",
+      "on_desk": false,
+      "real_math": true,
+      "why": "A real Hamiltonian. Not SFE and not a producing-map."
+    },
+    {
+      "id": "H23",
+      "name": "string_overtone",
+      "family": "etymology",
+      "object": "integer frequency ratios of a vibrating string",
+      "equation": "f_n = n f_1",
+      "slot": "none",
+      "on_desk": false,
+      "real_math": true,
+      "why": "Where the English word comes from. Motive, not a PDE theorem."
+    },
+    {
+      "id": "H24",
+      "name": "kolmogorov_spectrum",
+      "family": "false_friend",
+      "object": "E(k) \u223c k^{-5/3} inertial range",
+      "equation": "not \u0394u = 0",
+      "slot": "none",
+      "on_desk": false,
+      "real_math": true,
+      "why": "Turbulence spectrum. Real fluid fact. Not harmonic analysis in the H1\u2013H21 sense."
+    },
+    {
+      "id": "H25",
+      "name": "cosmo_oscillator_knobs",
+      "family": "false_friend",
+      "object": "Cosmo A, f, \u03c6, \u03b4 labeled 'harmonic'",
+      "equation": "score knobs, not \u0394u = 0",
+      "slot": "U",
+      "on_desk": true,
+      "real_math": false,
+      "why": "The reconstructed 4\u00d74 used this word for oscillator knobs. Not Y_\u2113m, not LP."
+    },
+    {
+      "id": "H26",
+      "name": "hb_nodes",
+      "family": "false_friend",
+      "object": "Harmonic Blueprint nodes.json",
+      "equation": "shelved experiment, H0 not rejected",
+      "slot": "none",
+      "on_desk": false,
+      "real_math": false,
+      "why": "Shelved. Do not retune. Poetry as motive is allowed. Unifier is not."
+    },
+    {
+      "id": "H27",
+      "name": "sfe_F",
+      "family": "false_friend",
+      "object": "Simons Field Equation / oscillator F",
+      "equation": "a different PDE",
+      "slot": "none",
+      "on_desk": false,
+      "real_math": false,
+      "why": "Shelved. Not NS, not Q_1, not Hodge, not LP."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "statement": "DA can type the distinct mathematical objects that share the word",
+      "verdict": "pass",
+      "why": "The catalog is finite, named, and fail-able. That is a vocabulary."
+    },
+    {
+      "id": "C2",
+      "statement": "The catalog covers every live desk use of the word",
+      "verdict": "pass",
+      "why": "A: Fourier, Helmholtz, Riesz. B: Y_\u2113m, LP, Bony, CZ, tube Hardy. Q: Dirichlet characters. U: Cosmo knobs typed as false friends."
+    },
+    {
+      "id": "C3",
+      "statement": "Those objects are one mathematical object",
+      "verdict": "fail",
+      "why": "\u0394u=0, Y_\u2113m, LP shells, Hodge forms, characters, and H^p are not the same."
+    },
+    {
+      "id": "C4",
+      "statement": "The list is a complete vocabulary of mathematics",
+      "verdict": "fail",
+      "why": "Harmonic analysis is an open field. Maass forms arrived late. More will."
+    },
+    {
+      "id": "C5",
+      "statement": "The vocabulary writes a producing-map F to the couplings",
+      "verdict": "fail",
+      "why": "Naming operators does not output (g_s, g, g', G, \u039b)."
+    },
+    {
+      "id": "C6",
+      "statement": "The vocabulary is the Harmonic Blueprint / SFE",
+      "verdict": "fail",
+      "why": "HB and SFE stay shelved. They are not the catalog and not a unifier."
+    },
+    {
+      "id": "C7",
+      "statement": "The vocabulary implies classical NS regularity",
+      "verdict": "fail",
+      "why": "LP and Bony are already on B. Regularity stays open."
+    },
+    {
+      "id": "C8",
+      "statement": "Cosmo A,f,\u03c6,\u03b4 are spherical harmonics",
+      "verdict": "fail",
+      "why": "Those are score knobs. Y_\u2113m is H3. Do not glue the label."
+    },
+    {
+      "id": "C9",
+      "statement": "Musical overtones are the same object as \u0394u=0",
+      "verdict": "fail",
+      "why": "Etymology is real. Identity of objects is false. A string mode can be expanded in eigenfunctions; that does not make every 'harmonic' a tone."
+    },
+    {
+      "id": "C10",
+      "statement": "Hodge forms, LP shells, and Hardy H^p are the same Hardy as the tube",
+      "verdict": "fail",
+      "why": "Four different objects. Tube Hardy is an inequality on \u0393. H^p is a function space."
+    },
+    {
+      "id": "C11",
+      "statement": "Track Q characters map onto (u\u00b7\u2207)u",
+      "verdict": "fail",
+      "why": "Arithmetic only. Inverse-GCD stays on Q."
+    }
+  ],
+  "desk": {
+    "A": [
+      "helmholtz_leray",
+      "fourier_character",
+      "riesz_transform"
+    ],
+    "B": [
+      "spherical_harmonic",
+      "littlewood_paley",
+      "bony_paraproduct",
+      "calderon_zygmund",
+      "tube_hardy",
+      "besov_triebel"
+    ],
+    "Q": [
+      "dirichlet_character"
+    ],
+    "U": [
+      "cosmo_oscillator_knobs"
+    ],
+    "none": [
+      "harmonic_function",
+      "harmonic_polynomial",
+      "laplacian_eigenfunction",
+      "spherical_bessel",
+      "peter_weyl",
+      "wigner_d",
+      "spherical_function",
+      "automorphic_maass",
+      "hardy_space",
+      "bmo_maximal",
+      "hodge_form",
+      "quantum_oscillator",
+      "string_overtone",
+      "kolmogorov_spectrum",
+      "hb_nodes",
+      "sfe_F"
+    ]
+  },
+  "families": [
+    "analysis",
+    "etymology",
+    "false_friend",
+    "group",
+    "kernel",
+    "spectral"
+  ],
+  "counts": {
+    "entries": 27,
+    "families": 6,
+    "real_math": 24,
+    "false_friends": 4,
+    "on_desk": 11,
+    "claims_pass": 2,
+    "claims_fail": 9
+  },
+  "how_far": [
+    "named the distinct objects that share the English word",
+    "typed kernel / spectral / group / analysis / etymology / false friend",
+    "mapped every live desk use (A Fourier+Helmholtz, B LP/Bony/Y_lm/tube Hardy, Q characters, U Cosmo knobs)",
+    "refused one-object, finished-field, F, HB, and regularity closes",
+    "did not retune nodes.json"
+  ],
+  "next_da_move": "Use the names on the slot they already sit on. Do not load the catalog into F or into \u03c9\u00b7S\u03c9. Next B write is still Hardy \u2192 I_tube, then low Bony T."
+}
