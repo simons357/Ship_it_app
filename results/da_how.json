@@ -1,0 +1,336 @@
+{
+  "meta": {
+    "question": "how did a typed catalog plus a count become 'possible' and 'X candidates'?",
+    "cosmos_internals_found": false,
+    "not_a_unifier": true,
+    "hand_not_capped_at_five": true
+  },
+  "possible": [
+    {
+      "id": "P1",
+      "reason": "dimension count",
+      "statement": "n knobs > k targets \u21d2 a generic continuous F hits",
+      "needs_names": false,
+      "needs_F": false,
+      "verdict": "open",
+      "why": "This is the only reason a program can say 'possible' before the names exist. 16 > 4 and 15 > 6. It is a clue, not a pass."
+    },
+    {
+      "id": "P2",
+      "reason": "topological existence (degree / transversality)",
+      "statement": "an existence proof without writing F",
+      "needs_names": true,
+      "needs_F": false,
+      "verdict": "open",
+      "why": "Possible in principle once the domain and codomain are typed. No such proof is in this repo. Cosmos saying 'possible' may have meant P1, not P2."
+    },
+    {
+      "id": "P3",
+      "reason": "explicit F with \u03c7\u00b2_ext \u2264 \u03b5\u00b2",
+      "statement": "construction",
+      "needs_names": true,
+      "needs_F": true,
+      "verdict": "fail",
+      "why": "No producing-map is in the repo. Affine holdout failed."
+    },
+    {
+      "id": "P4",
+      "reason": "slogan",
+      "statement": "the app said so",
+      "needs_names": false,
+      "needs_F": false,
+      "verdict": "fail",
+      "why": "A sentence is not a check. DA does not accept this as a pass."
+    }
+  ],
+  "how_X": [
+    {
+      "id": "X1",
+      "reason": "count typed objects in a catalog",
+      "verdict": "open",
+      "why": "Classifier: object \u2192 {gauge, harmonic, topological, \u2026}. Keep those whose type is allowed in domain(F) or as a must-hit leftover. X = |survivors|. This does not need F. It needs a catalog and a type map. Cosmos 3-D already typed harmonic / gauge / topological for dimensional objects. That is enough to emit a finite X."
+    },
+    {
+      "id": "X2",
+      "reason": "dimension of a moduli / leftover space",
+      "verdict": "open",
+      "why": "X is not a head-count of widgets but dim of the space of allowed inputs. Still a number. Still not F."
+    },
+    {
+      "id": "X3",
+      "reason": "count slots on a screen",
+      "verdict": "open",
+      "why": "X is the number of knobs the UI exposed. Names still missing here."
+    },
+    {
+      "id": "X4",
+      "reason": "invented a round number",
+      "verdict": "fail",
+      "why": "Not a reason. DA does not use this."
+    }
+  ],
+  "enumerator": {
+    "catalog_source": "reconstructed 16, not Cosmo export",
+    "open_types_not_capped_at_five": [
+      "gauge",
+      "gravity_gauge",
+      "topological",
+      "harmonic",
+      "teleological",
+      "p_form",
+      "moduli",
+      "characteristic_class",
+      "spinor",
+      "other_dimensional"
+    ],
+    "rows": [
+      {
+        "name": "log_alpha_em",
+        "type": "gauge",
+        "fate": "must_hit",
+        "eligible_as_candidate": true,
+        "must_hit_nature": true,
+        "note": "EM coupling; nature, not a producer"
+      },
+      {
+        "name": "log_alpha_s",
+        "type": "gauge",
+        "fate": "must_hit",
+        "eligible_as_candidate": true,
+        "must_hit_nature": true,
+        "note": "strong coupling; nature, not a producer"
+      },
+      {
+        "name": "sin2_theta_w",
+        "type": "gauge",
+        "fate": "must_hit",
+        "eligible_as_candidate": true,
+        "must_hit_nature": true,
+        "note": "weak mixing; nature, not a producer"
+      },
+      {
+        "name": "log_weak_ratio",
+        "type": "gauge",
+        "fate": "must_hit",
+        "eligible_as_candidate": true,
+        "must_hit_nature": true,
+        "note": "weak scale; nature, not a producer"
+      },
+      {
+        "name": "log_hierarchy",
+        "type": "gravity_gauge",
+        "fate": "must_hit_and_score",
+        "eligible_as_candidate": true,
+        "must_hit_nature": true,
+        "note": "Planck leftover; cannot drop"
+      },
+      {
+        "name": "log_cc_ratio",
+        "type": "gravity_gauge",
+        "fate": "must_hit_and_score",
+        "eligible_as_candidate": true,
+        "must_hit_nature": true,
+        "note": "vacuum leftover; gravity-scale on this score, topological fork left open"
+      },
+      {
+        "name": "log_qcd_ratio",
+        "type": "gauge",
+        "fate": "must_hit",
+        "eligible_as_candidate": true,
+        "must_hit_nature": true,
+        "note": "QCD scale; weak on this score"
+      },
+      {
+        "name": "theta_qcd",
+        "type": "topological",
+        "fate": "leftover",
+        "eligible_as_candidate": true,
+        "must_hit_nature": false,
+        "note": "strong-CP angle; global, not a local coupling"
+      },
+      {
+        "name": "A_mean",
+        "type": "harmonic",
+        "fate": "decorative",
+        "eligible_as_candidate": true,
+        "must_hit_nature": false,
+        "note": "oscillator amplitude; does not move R"
+      },
+      {
+        "name": "f_mean",
+        "type": "harmonic",
+        "fate": "decorative",
+        "eligible_as_candidate": true,
+        "must_hit_nature": false,
+        "note": "oscillator frequency; does not move R"
+      },
+      {
+        "name": "phi_scale",
+        "type": "harmonic",
+        "fate": "decorative",
+        "eligible_as_candidate": true,
+        "must_hit_nature": false,
+        "note": "phi; does not move R"
+      },
+      {
+        "name": "delta_spread",
+        "type": "harmonic",
+        "fate": "score",
+        "eligible_as_candidate": true,
+        "must_hit_nature": false,
+        "note": "phase disorder; internal score-mover"
+      },
+      {
+        "name": "S_coh",
+        "type": "teleological",
+        "fate": "score",
+        "eligible_as_candidate": true,
+        "must_hit_nature": false,
+        "note": "coherence; internal score-mover"
+      },
+      {
+        "name": "kappa_att",
+        "type": "teleological",
+        "fate": "decorative",
+        "eligible_as_candidate": true,
+        "must_hit_nature": false,
+        "note": "attractor; weak on this score"
+      },
+      {
+        "name": "grad_coh",
+        "type": "teleological",
+        "fate": "near_miss",
+        "eligible_as_candidate": true,
+        "must_hit_nature": false,
+        "note": "gradient; close, misses singleton cut"
+      },
+      {
+        "name": "R",
+        "type": "teleological",
+        "fate": "output",
+        "eligible_as_candidate": false,
+        "must_hit_nature": false,
+        "note": "realization; circular if used as a knob"
+      }
+    ],
+    "X_eligible": 15,
+    "X_must_hit_nature": 7,
+    "k_forces": 4,
+    "k_nature": 6,
+    "possible_by_count": true,
+    "able_means": "type-correct and enough of them (X > k). Not 'F hits the data'. The app can know they are candidates without knowing they succeed.",
+    "how_it_could_know": [
+      "Type every dimensional object it already knew (harmonic / gauge / topological / \u2026).",
+      "Keep those whose type is allowed as an input or as a leftover F must hit.",
+      "X = that count (or the dimension of their span).",
+      "Say 'possible' because X > k (P1), not because F was built (P3)."
+    ]
+  },
+  "drop_one_type": [
+    {
+      "drop_type": "gauge",
+      "X": 10,
+      "still_possible": true,
+      "names": [
+        "log_hierarchy",
+        "log_cc_ratio",
+        "theta_qcd",
+        "A_mean",
+        "f_mean",
+        "phi_scale",
+        "delta_spread",
+        "S_coh",
+        "kappa_att",
+        "grad_coh"
+      ]
+    },
+    {
+      "drop_type": "gravity_gauge",
+      "X": 13,
+      "still_possible": true,
+      "names": [
+        "log_alpha_em",
+        "log_alpha_s",
+        "sin2_theta_w",
+        "log_weak_ratio",
+        "log_qcd_ratio",
+        "theta_qcd",
+        "A_mean",
+        "f_mean",
+        "phi_scale",
+        "delta_spread",
+        "S_coh",
+        "kappa_att",
+        "grad_coh"
+      ]
+    },
+    {
+      "drop_type": "topological",
+      "X": 14,
+      "still_possible": true,
+      "names": [
+        "log_alpha_em",
+        "log_alpha_s",
+        "sin2_theta_w",
+        "log_weak_ratio",
+        "log_hierarchy",
+        "log_cc_ratio",
+        "log_qcd_ratio",
+        "A_mean",
+        "f_mean",
+        "phi_scale",
+        "delta_spread",
+        "S_coh",
+        "kappa_att",
+        "grad_coh"
+      ]
+    },
+    {
+      "drop_type": "harmonic",
+      "X": 11,
+      "still_possible": true,
+      "names": [
+        "log_alpha_em",
+        "log_alpha_s",
+        "sin2_theta_w",
+        "log_weak_ratio",
+        "log_hierarchy",
+        "log_cc_ratio",
+        "log_qcd_ratio",
+        "theta_qcd",
+        "S_coh",
+        "kappa_att",
+        "grad_coh"
+      ]
+    },
+    {
+      "drop_type": "teleological",
+      "X": 12,
+      "still_possible": true,
+      "names": [
+        "log_alpha_em",
+        "log_alpha_s",
+        "sin2_theta_w",
+        "log_weak_ratio",
+        "log_hierarchy",
+        "log_cc_ratio",
+        "log_qcd_ratio",
+        "theta_qcd",
+        "A_mean",
+        "f_mean",
+        "phi_scale",
+        "delta_spread"
+      ]
+    }
+  ],
+  "how_far": [
+    "Cosmos internals are not in the repo; this is the legal-reason list",
+    "P1 (n > k) is the only 'possible' that works before names exist",
+    "X comes from a type-classifier on a catalog, not from F",
+    "on this reconstructed 16: X_eligible=15, possible_by_count=True",
+    "dropping any one type still leaves X > 6, so 'possible' is robust to a missing finger",
+    "candidate \u2260 success; 'able' here means type-correct and numerous enough",
+    "next blocked on Cosmo names or a real producing-map F"
+  ],
+  "next_da_move": "If the Cosmo export includes its type tags (harmonic / gauge / topological / other), replace OPEN_TYPES and re-count X. Do not treat the count as F."
+}

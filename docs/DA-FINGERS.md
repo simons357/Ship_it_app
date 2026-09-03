@@ -118,6 +118,10 @@ producer: **fail**. Teleological \(R\) as a candidate theory:
    vacuum is a fork, not a decision.
 5. **Blocked** on Cosmo names or a real producing-map.
 
+How a program can say “possible” and emit a finite \(X\)
+without having \(F\) is [`docs/DA-HOW-IT-KNEW.md`](DA-HOW-IT-KNEW.md).
+The hand is not capped at five.
+
 If the export shows up, keep this recursion and this
 category table. Replace the names. Re-run the checks.
 Do not call this \(F\).

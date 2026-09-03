@@ -20,13 +20,14 @@ python3 scripts/da_machine.py check
 python3 scripts/da_machine.py cosmos
 python3 scripts/da_machine.py sixteen
 python3 scripts/da_machine.py fingers
+python3 scripts/da_machine.py how
 python3 scripts/da_machine.py classify --claim "the prime block of Q-tilde sits above -1/4"
 ```
 
 ## Checks
 
 ```bash
-python3 -m unittest tests/test_augmented_ns_verify.py tests/test_spectral_floor_explore.py tests/test_da_machine.py tests/test_da_sixteen.py tests/test_da_fingers.py
+python3 -m unittest tests/test_augmented_ns_verify.py tests/test_spectral_floor_explore.py tests/test_da_machine.py tests/test_da_sixteen.py tests/test_da_fingers.py tests/test_da_how.py
 python3 scripts/augmented_ns_verify.py --n 16 --t 0.4 --dt 0.01 --nu 0.02 --eps 0.0 0.05 0.2
 python3 scripts/spectral_floor_explore.py --nmax 80
 ```

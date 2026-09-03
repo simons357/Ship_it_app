@@ -47,6 +47,7 @@ SLOTS = {
             "tests.test_unifier_combo",
             "tests.test_da_sixteen",
             "tests.test_da_fingers",
+            "tests.test_da_how",
             "-v",
         ],
     },
@@ -297,6 +298,33 @@ def cmd_fingers() -> int:
     return 0
 
 
+def cmd_how() -> int:
+    from da_how import run as how_run
+
+    payload = how_run()
+    print("DA how-it-knew. Cosmos internals not in the repo.")
+    enum = payload["enumerator"]
+    print(
+        f"X_eligible={enum['X_eligible']}  X_must_hit={enum['X_must_hit_nature']}  "
+        f"possible_by_count={enum['possible_by_count']}"
+    )
+    print("able means:", enum["able_means"])
+    for step in enum["how_it_could_know"]:
+        print(" -", step)
+    print("how far:")
+    for line in payload["how_far"]:
+        print(" -", line)
+    print("next:", payload["next_da_move"])
+    append_run(
+        "U",
+        "How can a typed catalog say possible and emit X candidates without F?",
+        "open",
+        "P1 n>k is the only pre-name possible; X is a type-count; P3 explicit F fails",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_check(domain: str) -> int:
     domains = list(SLOTS) if domain == "all" else [domain]
     rc = 0
@@ -318,6 +346,7 @@ def main() -> int:
     sub.add_parser("cosmos", help="drill the ~16 Cosmos knobs")
     sub.add_parser("sixteen", help="identify 4x4 list, run each, name the 16th")
     sub.add_parser("fingers", help="five-finger DA on the R line, recurse, fate the 16")
+    sub.add_parser("how", help="how a typed catalog can say possible and emit X")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -337,6 +366,8 @@ def main() -> int:
         return cmd_sixteen()
     if args.cmd == "fingers":
         return cmd_fingers()
+    if args.cmd == "how":
+        return cmd_how()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":

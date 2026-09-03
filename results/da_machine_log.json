@@ -54,12 +54,19 @@
       "claim": "Five-finger DA on R = exp(-1/2 \u03c7\u00b2_ext) exp(-1/2 \u03c7\u00b2_int), then each piece, then the 16",
       "verdict": "open",
       "note": "product passes; implied F fails; vacuum/Planck width artifact; \u03b8 is the topological leftover"
+    },
+    {
+      "t": "2026-09-03T00:18:26.147848+00:00",
+      "domain": "U",
+      "claim": "How can a typed catalog say possible and emit X candidates without F?",
+      "verdict": "open",
+      "note": "P1 n>k is the only pre-name possible; X is a type-count; P3 explicit F fails"
     }
   ],
   "counts": {
-    "scored": 7,
+    "scored": 8,
     "pass": 3,
     "fail": 0,
-    "open": 4
+    "open": 5
   }
 }
