@@ -43,3 +43,7 @@ Glue refused.
 That is the same next write the machine already had. The
 team did not invent a new unifier. It confirmed which
 closes are already illegal.
+
+The **now-bench** — current collaborations and data forms —
+is additive and lives in [`docs/DA-PIPE.md`](DA-PIPE.md).
+It does not unseat this table.

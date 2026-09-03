@@ -62,6 +62,7 @@ SLOTS = {
             "tests.test_da_sm_lineage",
             "tests.test_da_harmonic",
             "tests.test_da_ground",
+            "tests.test_da_pipe",
             "-v",
         ],
     },
@@ -117,7 +118,7 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
     if re.search(
-        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b",
+        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank",
         text,
     ):
         return {"domain": "U", "verdict": "open", "reason": "looks like score U / SM Lagrangian / waveform; run sm or how"}
@@ -637,6 +638,26 @@ def cmd_ground() -> int:
     return 0
 
 
+def cmd_pipe() -> int:
+    from da_pipe import run as pipe_run
+
+    payload = pipe_run()
+    print("DA pipe. Now-bench + falsify every verdict. Past team stays.")
+    print("snapshot", payload["meta"]["snapshot"])
+    for c in payload["claims"]:
+        print(f"  [{c['verdict']}] {c['id']}: {c['statement']}")
+    live = payload["live"]
+    print("live arXiv:", "ok" if live.get("ok") else "miss", "n=", live.get("n"))
+    append_run(
+        "U",
+        "Pipe current hard science into the think tank; falsify every pass/fail",
+        "open",
+        "additive now-bench; GWTC/EHT/DESI/LMFDB typed; glue fail; omniscience fail; killers on every verdict",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_smbreak() -> int:
     from da_sm_break import run as break_run
 
@@ -717,6 +738,7 @@ def main() -> int:
     sub.add_parser("lineage", help="wind L_SM backwards and forwards through prior theories")
     sub.add_parser("harmonic", help="typed harmonic vocabulary from mathematics; not a unifier")
     sub.add_parser("ground", help="spectrum destination: reconstruct, ablate, personas score the program")
+    sub.add_parser("pipe", help="now-bench: live science pipes + falsify every verdict")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -766,6 +788,8 @@ def main() -> int:
         return cmd_harmonic()
     if args.cmd == "ground":
         return cmd_ground()
+    if args.cmd == "pipe":
+        return cmd_pipe()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":

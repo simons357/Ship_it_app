@@ -69,3 +69,9 @@ does not let an unfalsifiable sentence count as a pass.
 Game theory as a narrowing tool is
 [`docs/DA-GAME.md`](DA-GAME.md). It re-ranks. It does not
 collapse the wave.
+
+The live pipe ([`docs/DA-PIPE.md`](DA-PIPE.md)) uses these
+same falsification rules on incoming catalogs, strain, maps,
+graphs, satellite data, and holographic-boundary reconstructions.
+A new stream updates the now-bench. It does not collapse the
+wave and it does not glue slots.

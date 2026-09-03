@@ -1,0 +1,507 @@
+{
+  "meta": {
+    "question": "pipe current hard science into the think tank and falsify every verdict",
+    "snapshot": "2026-09-03",
+    "additive_to_team": true,
+    "does_not_replace_past": true,
+    "not_a_unifier": true,
+    "does_not_retune_nodes": true,
+    "does_not_glue_primes_to_holes": true,
+    "uses_wave_falsification": true
+  },
+  "forms": [
+    {
+      "id": "F1",
+      "name": "time_series",
+      "kind": "form",
+      "statement": "strain, pulsar TOAs, light curves",
+      "verdict": "pass",
+      "why": "A legal form. LVK and IPTA already speak this.",
+      "examples": "GWOSC strain; IPTA-DR3 times of arrival"
+    },
+    {
+      "id": "F2",
+      "name": "spectrum",
+      "kind": "form",
+      "statement": "CMB C_\u2113, QNM frequencies, L-functions",
+      "verdict": "pass",
+      "why": "Same English word, three objects. Do not glue.",
+      "examples": "Planck/ACT; Kerr QNM; LMFDB L-functions"
+    },
+    {
+      "id": "F3",
+      "name": "image_map",
+      "kind": "form",
+      "statement": "EHT reconstructions, CMB maps, JWST fields",
+      "verdict": "pass",
+      "why": "An image is a processed observable, not a theorem.",
+      "examples": "M87* 2017/2018/2021; Planck SMICA"
+    },
+    {
+      "id": "F4",
+      "name": "catalog",
+      "kind": "form",
+      "statement": "event lists and parameter tables",
+      "verdict": "pass",
+      "why": "The form the now-bench actually updates from.",
+      "examples": "GWTC-5.0; PDG; DESI galaxy catalog"
+    },
+    {
+      "id": "F5",
+      "name": "graph",
+      "kind": "form",
+      "statement": "plots, networks, cosmic-web graphs, prime-gap plots",
+      "verdict": "pass",
+      "why": "A graph is a drawing of a table. It does not close a PDE.",
+      "examples": "LVK time-frequency spectrograms; DESI clustering; gap graphs"
+    },
+    {
+      "id": "F6",
+      "name": "satellite",
+      "kind": "form",
+      "statement": "space-borne time series, spectra, and maps",
+      "verdict": "pass",
+      "why": "Planck, Gaia, Fermi, Euclid, GRACE. Earth-orbit is still nature.",
+      "examples": "Planck HFI; Gaia DR; Euclid Q1; Fermi-LAT"
+    },
+    {
+      "id": "F7",
+      "name": "holographic_boundary",
+      "kind": "form",
+      "statement": "boundary correlators / interferometric visibilities used to reconstruct a bulk or an image",
+      "verdict": "open",
+      "why": "A data form, not AdS/CFT as a ToE and not a Cosmo hologram. EHT visibilities reconstruct a ring. That is not HB.",
+      "examples": "EHT (u,v) visibilities; AdS/CFT correlators in papers"
+    }
+  ],
+  "pipes": [
+    {
+      "id": "P1",
+      "name": "LVK_GWTC5",
+      "kind": "pipe",
+      "statement": "LIGO\u2013Virgo\u2013KAGRA GWTC-5.0 (released 2026-05-26): 390 confirmed events, 161 new from O4b",
+      "verdict": "open",
+      "why": "Updates strong-field GR and remnant statistics. Does not speak 1/r^4.",
+      "slot": "U",
+      "form": "catalog+time_series+graph",
+      "can_kill": "a claim that binary black holes are not seen; a wrong remnant-mass formula",
+      "cannot": "Track B regularity; inverse-GCD; F; nodes.json",
+      "url": "https://www.ligo.caltech.edu/news/ligo20260526",
+      "asof": "2026-05-26"
+    },
+    {
+      "id": "P2",
+      "name": "EHT_M87",
+      "kind": "pipe",
+      "statement": "EHT M87* 2021-epoch papers (2026): stable ring, evolving polarization, jet-base hint",
+      "verdict": "open",
+      "why": "Image + visibility (holographic reconstruction of an image). Horizon-scale plasma. Not HB Experiment 01.",
+      "slot": "U",
+      "form": "image_map+holographic_boundary",
+      "can_kill": "a claim that M87* has no ring; a zero-spin MAD model at the margin",
+      "cannot": "retune nodes.json; write F; close NS; prove primes",
+      "url": "https://eventhorizontelescope.org/",
+      "asof": "2026-02"
+    },
+    {
+      "id": "P3",
+      "name": "DESI_DR2",
+      "kind": "pipe",
+      "statement": "DESI DR2 BAO (2025): 14M galaxies; \u039bCDM challenged at ~3\u03c3 when combined; \u03a3m_\u03bd < 0.064 eV (\u039bCDM)",
+      "verdict": "open",
+      "why": "Satellite-adjacent cosmology. Preference for w0wa is a tension, not F. Bayesian caution exists.",
+      "slot": "U",
+      "form": "catalog+spectrum+graph+satellite",
+      "can_kill": "a claim that \u039b is unchallengeable; Cosmo 0.06 eV as a derivation if it misses the bound",
+      "cannot": "produce (g_s,g,g'); Track A or B; primes",
+      "url": "https://www.desi.lbl.gov/2025/03/19/desi-dr2-results-march-19-guide/",
+      "asof": "2025-03-19"
+    },
+    {
+      "id": "P4",
+      "name": "IPTA_NANOGrav",
+      "kind": "pipe",
+      "statement": "IPTA-DR3 + NANOGrav 15 yr: nHz background, spectrum still being reconstructed (2026 PPL paper)",
+      "verdict": "open",
+      "why": "Time series from radio telescopes (not LVK band). Common-spectrum process. Source still open.",
+      "slot": "U",
+      "form": "time_series+spectrum",
+      "can_kill": "a claim that there is no nHz common-spectrum process",
+      "cannot": "identify the source as HB; close nature4",
+      "url": "https://doi.org/10.1088/1742-6596/3177/1/012065",
+      "asof": "2026-02"
+    },
+    {
+      "id": "P5",
+      "name": "PDG_LHC",
+      "kind": "pipe",
+      "statement": "PDG + LHC run updates: the numbers L_SM consumes",
+      "verdict": "pass",
+      "why": "Already on the dream team as nature. The pipe keeps the table current.",
+      "slot": "U",
+      "form": "catalog",
+      "can_kill": "a poster number that drifts outside PDG error",
+      "cannot": "why those numbers",
+      "url": "https://pdg.lbl.gov/",
+      "asof": "rolling"
+    },
+    {
+      "id": "P6",
+      "name": "LMFDB_NT",
+      "kind": "pipe",
+      "statement": "LMFDB + arXiv math.NT: L-functions, modular forms, prime-gap records (unconditional H=246 still stands)",
+      "verdict": "open",
+      "why": "The arithmetic stream. Heuristic gap papers are not theorems. Twin primes still open.",
+      "slot": "Q",
+      "form": "catalog+spectrum+graph",
+      "can_kill": "a false \u03bb_min(Q_N)>-1/2 for all N; a wrong L-function table",
+      "cannot": "black-hole QNMs; NS regularity; F",
+      "url": "https://www.lmfdb.org/",
+      "asof": "2026-09"
+    },
+    {
+      "id": "P7",
+      "name": "arXiv_math_AP",
+      "kind": "pipe",
+      "statement": "arXiv math.AP / fluids: new lemmas may sit on B if they keep 1/r^4 and name a check",
+      "verdict": "open",
+      "why": "A preprint is not a regularity pass. It is a proposal the Track B checker may score.",
+      "slot": "B",
+      "form": "catalog",
+      "can_kill": "a B lemma whose identity fails on a named field",
+      "cannot": "close domain B by press release",
+      "url": "https://arxiv.org/list/math.AP/recent",
+      "asof": "rolling"
+    },
+    {
+      "id": "P8",
+      "name": "Euclid_JWST_Planck",
+      "kind": "pipe",
+      "statement": "Euclid / JWST / Planck\u2013ACT\u2013SPT: maps and spectra of the sky",
+      "verdict": "open",
+      "why": "Satellite and space-telescope forms. Update H0/\u039b/structure tensions. Not Cosmo F.",
+      "slot": "U",
+      "form": "satellite+image_map+spectrum",
+      "can_kill": "a cosmology number outside the current tension box",
+      "cannot": "Track B; inverse-GCD; unshelve SFE",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Euclid",
+      "asof": "rolling"
+    },
+    {
+      "id": "P9",
+      "name": "IceCube_neutrino",
+      "kind": "pipe",
+      "statement": "IceCube / KM3NeT / oscillation data: \u03a3m_\u03bd and astrophysical neutrinos",
+      "verdict": "open",
+      "why": "Nature already sat as neutrino/cosmology. The pipe is the refresh.",
+      "slot": "U",
+      "form": "catalog+time_series",
+      "can_kill": "a \u03a3m_\u03bd claim that misses the DESI+CMB bound",
+      "cannot": "Cosmo 16th as F",
+      "url": "https://icecube.wisc.edu/",
+      "asof": "rolling"
+    }
+  ],
+  "now": [
+    {
+      "name": "LVK collaboration",
+      "slot": "U",
+      "side": "now",
+      "reads": "GWTC-5.0 strain and catalogs",
+      "settles": "390 compact-binary detections through O4b",
+      "cannot": "classical NS; primes; F",
+      "suggest": "keep GW data on U as GR in the strong field; do not import it into the tube"
+    },
+    {
+      "name": "EHT collaboration",
+      "slot": "U",
+      "side": "now",
+      "reads": "M87* / Sgr A* visibilities and images",
+      "settles": "a stable ring; time-varying polarization",
+      "cannot": "HB Experiment 01; nodes.json",
+      "suggest": "treat the image as a reconstructed observable; do not retune the shelved ringdown test"
+    },
+    {
+      "name": "DESI collaboration",
+      "slot": "U",
+      "side": "now",
+      "reads": "galaxy BAO + Ly\u03b1 forest",
+      "settles": "a live tension with plain \u039bCDM; a \u03a3m_\u03bd bound",
+      "cannot": "write F; finish nature4",
+      "suggest": "\u039b is an input that data may challenge; Cosmo produce still fails"
+    },
+    {
+      "name": "IPTA / NANOGrav",
+      "slot": "U",
+      "side": "now",
+      "reads": "pulsar timing arrays",
+      "settles": "a nHz common-spectrum process exists at current evidence",
+      "cannot": "name the source; glue to LVK band or to HB",
+      "suggest": "keep the nHz spectrum on U, separate from LVK and from Q"
+    },
+    {
+      "name": "PDG + LHC analyses",
+      "slot": "U",
+      "side": "now",
+      "reads": "particle catalogs",
+      "settles": "the consumed numbers this year",
+      "cannot": "why those numbers",
+      "suggest": "refresh the poster inputs; do not call a PDG update a derivation"
+    },
+    {
+      "name": "LMFDB / analytic NT",
+      "slot": "Q",
+      "side": "now",
+      "reads": "L-functions, modular forms, gap tables",
+      "settles": "arithmetic facts that can kill a false floor",
+      "cannot": "black holes; fluids",
+      "suggest": "keep Q arithmetic; a new gap paper is not \u03c9\u00b7S\u03c9"
+    },
+    {
+      "name": "math.AP authors (current)",
+      "slot": "B",
+      "side": "now",
+      "reads": "preprints and papers on NSE / Euler",
+      "settles": "nothing until a lemma hits the Track B checker",
+      "cannot": "close domain B by announcement",
+      "suggest": "if it keeps 1/r^4 and names a check, score it; regularity stays open"
+    }
+  ],
+  "verdicts": [
+    {
+      "id": "V1",
+      "name": "B1_low_flux",
+      "kind": "falsify",
+      "statement": "B1 pass: \u222b(u_\u2264j\u00b7\u2207)u_j\u00b7u_j = 0",
+      "verdict": "pass",
+      "why": "Identity. Try to falsify: exhibit a periodic div-free field where the integral is not zero.",
+      "killer": "named counterexample field on T^3",
+      "if_killed": "drop B1; T2 rewrite",
+      "if_survives": "still just an identity, not regularity",
+      "slot": "B"
+    },
+    {
+      "id": "V2",
+      "name": "B_regularity",
+      "kind": "falsify",
+      "statement": "domain B stays open",
+      "verdict": "open",
+      "why": "Not a pass. Killer of the open: a closed estimate for X. Fake pass killer: any BKM-from-L2 slogan.",
+      "killer": "closed bound on X, or a proven blowup",
+      "if_killed": "domain would move; not happened",
+      "if_survives": "open remains the honest state",
+      "slot": "B"
+    },
+    {
+      "id": "V3",
+      "name": "B4b_Itube",
+      "kind": "falsify",
+      "statement": "B4b open: Hardy absorbs I_tube",
+      "verdict": "open",
+      "why": "The live tube write. Falsify the hope: a data class where the wall term wins.",
+      "killer": "a tube family with wall \u2273 I_tube at \u03b4 ~ 2^{-j*}",
+      "if_killed": "B4b \u2192 fail; next write changes",
+      "if_survives": "still open, not a pass",
+      "slot": "B"
+    },
+    {
+      "id": "V4",
+      "name": "A_theorem",
+      "kind": "falsify",
+      "statement": "Track A pass for this PDE, \u03b5>0",
+      "verdict": "pass",
+      "why": "Try to falsify: break the energy identity or uniqueness at fixed \u03b5>0. \u03b5\u21920 is not this claim.",
+      "killer": "Galerkin energy identity fails, or two H^1 solutions at the same \u03b5",
+      "if_killed": "Theorem A withdrawn for this write",
+      "if_survives": "still not Track B",
+      "slot": "A"
+    },
+    {
+      "id": "V5",
+      "name": "Q_full_floor",
+      "kind": "falsify",
+      "statement": "full \u03bb_min(Q_N)>-1/2 is fail",
+      "verdict": "fail",
+      "why": "Already killed. Resurrection: a proof for all N, against the known counterexamples.",
+      "killer": "already exhibited; floor is false",
+      "if_killed": "stays fail",
+      "if_survives": "n/a \u2014 dead claim",
+      "slot": "Q"
+    },
+    {
+      "id": "V6",
+      "name": "F_exists",
+      "kind": "falsify",
+      "statement": "producing-map F is fail",
+      "verdict": "fail",
+      "why": "Affine holdout already lost. Resurrection: a public F with \u03c7\u00b2_ext \u2264 \u03b5\u00b2.",
+      "killer": "holdout already ran",
+      "if_killed": "stays fail until a new F is written and beaten against the null",
+      "if_survives": "n/a",
+      "slot": "U"
+    },
+    {
+      "id": "V7",
+      "name": "destination_spectrum",
+      "kind": "falsify",
+      "statement": "spectrum-not-a-bag is open",
+      "verdict": "open",
+      "why": "Falsify the destination-as-done: we already did (no named D). Falsify the destination-as-program: show no operator can have those numbers as eigenvalues \u2014 that is a different, harder kill.",
+      "killer": "named D whose eigenvalues are the couplings, or a no-go theorem",
+      "if_killed": "C3 would move",
+      "if_survives": "program stays open",
+      "slot": "U"
+    },
+    {
+      "id": "V8",
+      "name": "hb_exp01",
+      "kind": "falsify",
+      "statement": "HB Experiment 01 did not reject H0",
+      "verdict": "fail",
+      "why": "Already run. Resurrection would be a new protocol, not a retune of nodes.json.",
+      "killer": "H0 not rejected",
+      "if_killed": "stays fail; do not retune",
+      "if_survives": "n/a",
+      "slot": "U"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "name": "pipe_upgrades_tank",
+      "kind": "method",
+      "statement": "A typed live pipe belongs next to the dream team",
+      "verdict": "pass",
+      "why": "The past bench is paper. The now bench is collaborations reading current data. Both sit."
+    },
+    {
+      "id": "C2",
+      "name": "pipe_replaces_past",
+      "kind": "method",
+      "statement": "The pipe replaces Leray / Einstein / the historical team",
+      "verdict": "fail",
+      "why": "Additive. A new catalog does not unseat an old theorem."
+    },
+    {
+      "id": "C3",
+      "name": "spectrum_glue",
+      "kind": "glue",
+      "statement": "CMB spectrum, Kerr QNMs, and L-functions are one discovery",
+      "verdict": "fail",
+      "why": "Three objects. The word 'spectrum' is not entanglement."
+    },
+    {
+      "id": "C4",
+      "name": "gwtc_closes_B",
+      "kind": "glue",
+      "statement": "GWTC-5.0 closes classical NS regularity",
+      "verdict": "fail",
+      "why": "Strain on interferometers is not 1/r^4 on T^3."
+    },
+    {
+      "id": "C5",
+      "name": "desi_writes_F",
+      "kind": "glue",
+      "statement": "DESI dynamical-DE tension writes F or Cosmo 16",
+      "verdict": "fail",
+      "why": "A ~3\u03c3 tension is a U update. Produce still fails."
+    },
+    {
+      "id": "C6",
+      "name": "eht_unshelves_hb",
+      "kind": "glue",
+      "statement": "EHT images unshelve HB or allow retuning nodes.json",
+      "verdict": "fail",
+      "why": "Experiment 01 is closed. An image of M87* is not that test."
+    },
+    {
+      "id": "C7",
+      "name": "primes_are_qnms",
+      "kind": "glue",
+      "statement": "Current prime-gap and black-hole work are the same stream",
+      "verdict": "fail",
+      "why": "P6 is Q. P1/P2 are U. Learning a lot in both is not glue."
+    },
+    {
+      "id": "C8",
+      "name": "hologram_is_toe",
+      "kind": "glue",
+      "statement": "Holographic-boundary form (AdS/CFT or EHT visibilities) is nature4",
+      "verdict": "fail",
+      "why": "A form. Not a producing-map."
+    },
+    {
+      "id": "C9",
+      "name": "pass_needs_killer",
+      "kind": "method",
+      "statement": "A pass with no named killer is not a scientific pass",
+      "verdict": "pass",
+      "why": "Wave rule, applied to the desk. Survival is not truth."
+    },
+    {
+      "id": "C10",
+      "name": "all_science_ingested",
+      "kind": "method",
+      "statement": "This repo now contains a constant stream of all hard science",
+      "verdict": "fail",
+      "why": "It contains a typed pipe, a dated snapshot, and an optional arXiv sample. That is the program, not omniscience."
+    }
+  ],
+  "live": {
+    "attempted": true,
+    "ok": true,
+    "n": 5,
+    "items": [
+      {
+        "title": "A new proof that more than $2/3$ of the zeros of the Riemann zeta function are simple and on the critical line",
+        "updated": "2026-09-02"
+      },
+      {
+        "title": "On the cut locus of Hamilton--Jacobi equations I: structure and propagation via the touching approach",
+        "updated": "2026-09-02"
+      },
+      {
+        "title": "Estimating the number of real zeros of linear combinations of radicals of polynomials",
+        "updated": "2026-09-02"
+      },
+      {
+        "title": "Inelastic Dark Photon Dark Matter for the LUX-ZEPLIN High-Recoil Event and the Galactic Halo Gamma-Ray Excess",
+        "updated": "2026-09-02"
+      },
+      {
+        "title": "Magnetized accretion onto rapidly spinning binary black holes: mini-disk thermodynamics, magnetic transport, and dual jets",
+        "updated": "2026-09-02"
+      }
+    ],
+    "error": null,
+    "query": "http://export.arxiv.org/api/query?search_query=cat:gr-qc+OR+cat:astro-ph.HE+OR+cat:astro-ph.CO+OR+cat:math.NT+OR+cat:math.AP&start=0&max_results=5&sortBy=submittedDate&sortOrder=descending"
+  },
+  "inferences": [
+    "A kill stays in its slot. LVK does not move B. LMFDB does not move U couplings.",
+    "Same word 'spectrum' is not an edge. CMB, QNM, and L-functions stay unentangled.",
+    "A survived kill on a pass is still a pass, not truth (wave rule).",
+    "A fail with no resurrection on the desk stays fail (F, full Q floor, HB Exp 01).",
+    "New catalogs update the now-bench and U numbers-as-inputs. They do not write F.",
+    "DESI tension: \u039b is challengeable as a model, still not an output of L_SM.",
+    "GWTC-5.0: black holes are seen in strain. That is not 1/r^4 and not primes."
+  ],
+  "counts": {
+    "forms": 7,
+    "pipes": 9,
+    "now": 7,
+    "verdicts": 8,
+    "claims_pass": 2,
+    "claims_fail": 8,
+    "live_ok": true,
+    "live_n": 5
+  },
+  "how_far": [
+    "typed seven data forms including graph, satellite, holographic-boundary",
+    "nine pipes dated; GWTC-5.0, EHT 2026, DESI DR2, IPTA-DR3, LMFDB, PDG, AP, Euclid/JWST, IceCube",
+    "now-bench seated as collaborations, not chatbots",
+    "every listed desk verdict has a killer or a resurrection",
+    "glue of primes/QNM/NS/F/HB refused",
+    "optional arXiv sample attempted; omniscience claim failed"
+  ],
+  "next_da_move": "Refresh the snapshot; score any math.AP preprint that keeps 1/r^4. Do not let GWTC or EHT touch the tube. Next B write is still Hardy \u2192 I_tube."
+}

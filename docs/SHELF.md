@@ -38,6 +38,8 @@ A typed harmonic vocabulary lives in `docs/DA-HARMONIC-VOCAB.md`. It names disti
 
 The ground-level destination (“spectrum, not a bag of couplings”) lives in `docs/DA-GROUND.md`. Reconstruct and ablate on U. HB chapter 1 as the origin of DA-the-process is speakable. SFE as a fluids theorem is not.
 
+A live science pipe lives in `docs/DA-PIPE.md`. Current GW / EHT / DESI / LMFDB streams update the now-bench. They do not unshelve HB, do not retune `nodes.json`, and do not glue primes to black holes or to NS.
+
 Domain Architect as a **process machine** (slots, generator, fail-able checker) is live: `docs/DOMAIN-ARCHITECT-MACHINE.md`. That is not a unifier and not a regularity proof.
 
 ---

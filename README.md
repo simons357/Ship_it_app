@@ -35,13 +35,14 @@ python3 scripts/da_machine.py team
 python3 scripts/da_machine.py lineage
 python3 scripts/da_machine.py harmonic
 python3 scripts/da_machine.py ground
+python3 scripts/da_machine.py pipe
 python3 scripts/da_machine.py classify --claim "the prime block of Q-tilde sits above -1/4"
 ```
 
 ## Checks
 
 ```bash
-python3 -m unittest tests/test_augmented_ns_verify.py tests/test_spectral_floor_explore.py tests/test_track_b_lemmas.py tests/test_da_machine.py tests/test_da_sixteen.py tests/test_da_fingers.py tests/test_da_how.py tests/test_da_flush.py tests/test_da_wave.py tests/test_da_game.py tests/test_da_screen.py tests/test_da_gq.py tests/test_da_separate.py tests/test_da_sm.py tests/test_da_sm_break.py tests/test_da_team.py tests/test_da_sm_lineage.py tests/test_da_harmonic.py tests/test_da_ground.py
+python3 -m unittest tests/test_augmented_ns_verify.py tests/test_spectral_floor_explore.py tests/test_track_b_lemmas.py tests/test_da_machine.py tests/test_da_sixteen.py tests/test_da_fingers.py tests/test_da_how.py tests/test_da_flush.py tests/test_da_wave.py tests/test_da_game.py tests/test_da_screen.py tests/test_da_gq.py tests/test_da_separate.py tests/test_da_sm.py tests/test_da_sm_break.py tests/test_da_team.py tests/test_da_sm_lineage.py tests/test_da_harmonic.py tests/test_da_ground.py tests/test_da_pipe.py
 python3 scripts/augmented_ns_verify.py --n 16 --t 0.4 --dt 0.01 --nu 0.02 --eps 0.0 0.05 0.2
 python3 scripts/spectral_floor_explore.py --nmax 80
 ```
