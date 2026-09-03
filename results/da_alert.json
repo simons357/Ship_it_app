@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "source": "alert",
+    "t": "2026-09-03T06:15:12.449687+00:00",
+    "significant": false,
+    "baseline": false,
+    "no_phone_in_repo": true,
+    "delivery": "write DA-ALERT.txt; POST DA_ALERT_WEBHOOK if set"
+  },
+  "watch": {
+    "B.domain": "open",
+    "B.B4b_hardy_not_I_tube": "open",
+    "B.B5b_tube_vs_viscosity": "open",
+    "B.B_regularity": "open",
+    "A.domain": "pass",
+    "Q.full_floor": "fail",
+    "U.F_exists": "fail",
+    "U.destination": "open"
+  },
+  "events": [],
+  "plain": "DA checked. Nothing significant flipped.\nNext: same as yesterday. Hardy \u2192 tube source, then the low product term.\n",
+  "sms_lines": [],
+  "recommendation": "Nothing flipped. Next write is still Hardy \u2192 I_tube, then low Bony T.",
+  "delivery": {
+    "file": "/workspace/results/DA-ALERT.txt",
+    "webhook": {
+      "attempted": false,
+      "ok": false,
+      "why": "not significant"
+    }
+  }
+}

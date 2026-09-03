@@ -361,6 +361,7 @@ Open is allowed. Fail is allowed. A fake pass is not.
 ```bash
 python3 scripts/da_machine.py desk        # this write-up’s roster
 python3 scripts/da_machine.py compute     # what we can borrow to compute
+python3 scripts/da_machine.py alert       # plain-language text if something significant flips
 python3 scripts/da_machine.py status
 python3 scripts/da_machine.py check       # check B stays open
 python3 scripts/da_machine.py trackb
@@ -379,7 +380,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/SHELF.md`, `docs/TRACK-B-LEMMAS.md`,
 `docs/DA-GROUND.md`, `docs/DA-PIPE.md`,
 `docs/DA-HARMONIC-VOCAB.md`, `docs/DA-DREAM-TEAM.md`,
-`docs/DA-SM-LAGRANGIAN.md`, `docs/DA-SM-LINEAGE.md`.
+`docs/DA-SM-LAGRANGIAN.md`, `docs/DA-SM-LINEAGE.md`,
+`docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`.
 
 ---
 

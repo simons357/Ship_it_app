@@ -250,12 +250,19 @@
       "claim": "List computing techniques we can borrow or wire in",
       "verdict": "open",
       "note": "FFT/eigh/identities/arXiv wired; sympy/LP/LMFDB/GWOSC borrow; DNS/QNM-glue/LLM-proof refuse"
+    },
+    {
+      "t": "2026-09-03T06:15:12.450012+00:00",
+      "domain": "U",
+      "claim": "Watch significant flips and explain them in plain language",
+      "verdict": "open",
+      "note": "baseline or no flip is not a discovery; webhook optional; no phone in repo"
     }
   ],
   "counts": {
-    "scored": 35,
+    "scored": 36,
     "pass": 8,
     "fail": 4,
-    "open": 23
+    "open": 24
   }
 }

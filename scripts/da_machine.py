@@ -66,6 +66,7 @@ SLOTS = {
             "tests.test_da_pipe",
             "tests.test_da_desk",
             "tests.test_da_compute",
+            "tests.test_da_alert",
             "-v",
         ],
     },
@@ -121,7 +122,7 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
     if re.search(
-        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up|anti-?bullshit|comput(e|ing)|dedalus|sympy|gwosc",
+        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up|anti-?bullshit|comput(e|ing)|dedalus|sympy|gwosc|\balert\b|text me|notif",
         text,
     ):
         return {"domain": "U", "verdict": "open", "reason": "looks like score U / SM Lagrangian / waveform; run sm or how"}
@@ -155,6 +156,15 @@ def run_checker(domain: str) -> dict:
         "reason": "checker exit 0",
         "tail": tail[-8:],
     }
+
+
+def maybe_alert(source: str) -> None:
+    from da_alert import notify
+
+    payload = notify(source=source)
+    if payload["meta"].get("significant"):
+        print("ALERT (significant):")
+        print(payload["plain"])
 
 
 def append_run(domain: str | None, claim: str, verdict: str, note: str) -> dict:
@@ -543,6 +553,7 @@ def cmd_trackb() -> int:
         "lemma identities held or correctly failed; no closed estimate for X",
     )
     print(f"wrote {payload.get('_wrote')}")
+    maybe_alert("trackb")
     return 0
 
 
@@ -639,6 +650,7 @@ def cmd_ground() -> int:
         "HB ch1→DA process pass; destination open; couplings/F/review/SFE/nodes fail; program review scores the process",
     )
     print(f"wrote {payload.get('_wrote')}")
+    maybe_alert("ground")
     return 0
 
 
@@ -659,6 +671,7 @@ def cmd_pipe() -> int:
         "additive now-bench; GWTC/EHT/DESI/LMFDB typed; glue fail; omniscience fail; killers on every verdict",
     )
     print(f"wrote {payload.get('_wrote')}")
+    maybe_alert("pipe")
     return 0
 
 
@@ -678,6 +691,24 @@ def cmd_desk() -> int:
         "write-up in docs/DA-DESK.md; corpus method pass; pairing-writes-F fail; all benches listed",
     )
     print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
+def cmd_alert() -> int:
+    from da_alert import run as alert_run
+
+    payload = alert_run()
+    print("DA alert. Plain language on a flip. Catalogs do not text you.")
+    print("significant:", payload["meta"]["significant"], "baseline:", payload["meta"]["baseline"])
+    print(payload["plain"])
+    print("next:", payload["recommendation"])
+    append_run(
+        "U",
+        "Watch significant flips and explain them in plain language",
+        "open",
+        "baseline or no flip is not a discovery; webhook optional; no phone in repo",
+    )
+    print(f"wrote {payload.get('_wrote')} and {payload.get('_text')}")
     return 0
 
 
@@ -753,6 +784,7 @@ def cmd_check(domain: str) -> int:
         append_run(d, f"automatic check {d}", result["verdict"], result["reason"])
         if result["verdict"] == "fail":
             rc = 1
+    maybe_alert("check")
     return rc
 
 
@@ -781,6 +813,7 @@ def main() -> int:
     sub.add_parser("pipe", help="now-bench: live science pipes + falsify every verdict")
     sub.add_parser("desk", help="write-up roster + corpus method (papers, not a vote)")
     sub.add_parser("compute", help="computing techniques already wired, legal to borrow, or refuse")
+    sub.add_parser("alert", help="plain-language text when a watched claim flips")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -836,6 +869,8 @@ def main() -> int:
         return cmd_desk()
     if args.cmd == "compute":
         return cmd_compute()
+    if args.cmd == "alert":
+        return cmd_alert()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":
