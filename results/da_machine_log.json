@@ -96,12 +96,19 @@
       "claim": "Shapley on lock-R vs must-hit unifier game",
       "verdict": "open",
       "note": "Game R agrees with the flush four; Game U protects must-hits by definition; no F"
+    },
+    {
+      "t": "2026-09-03T00:31:57.553574+00:00",
+      "domain": "U",
+      "claim": "Screen published unification claims at gauge3 vs nature4",
+      "verdict": "open",
+      "note": "nothing passes nature4; MSSM-class stays open as gauge3; SU(5) minimal and SM fail"
     }
   ],
   "counts": {
-    "scored": 13,
+    "scored": 14,
     "pass": 3,
     "fail": 0,
-    "open": 10
+    "open": 11
   }
 }

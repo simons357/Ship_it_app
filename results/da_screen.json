@@ -1,0 +1,182 @@
+{
+  "meta": {
+    "question": "can we discern unification by screening published claims?",
+    "not_a_unifier": true,
+    "two_levels": [
+      "gauge3",
+      "nature4"
+    ],
+    "do_not_glue": true
+  },
+  "criteria": {
+    "one_F": "one map (or one group + RG) from a finite knob set",
+    "gauge3": "\u03b1_em, \u03b1_s, sin\u00b2\u03b8_W (or g, g', g_s) meet at one scale",
+    "gravity": "G_N / Planck is an output of the same F, not an input leftover",
+    "vacuum": "\u03c1_\u039b / \u039b is an output of the same F, not dropped",
+    "falsifiable": "a finite experiment could kill it",
+    "not_killed": "that experiment has not already killed it"
+  },
+  "claims": [
+    {
+      "name": "SM running (no extra stuff)",
+      "kind": "gauge",
+      "checks": {
+        "one_F": "RG of the SM",
+        "gauge3": "the three couplings miss",
+        "gravity": "no",
+        "vacuum": "no",
+        "falsifiable": "yes \u2014 they either meet or they do not",
+        "not_killed": "already missed"
+      },
+      "gauge3_verdict": "fail",
+      "nature4_verdict": "fail",
+      "note": "Baseline. The Standard Model does not unify the couplings."
+    },
+    {
+      "name": "Georgi\u2013Glashow SU(5)",
+      "kind": "gauge",
+      "checks": {
+        "one_F": "SU(5) \u2192 SM, one \u03b1_GUT",
+        "gauge3": "misses without extra thresholds",
+        "gravity": "no",
+        "vacuum": "no",
+        "falsifiable": "yes \u2014 proton decay, coupling meet",
+        "not_killed": "minimal form killed (proton lifetime + miss)"
+      },
+      "gauge3_verdict": "fail",
+      "nature4_verdict": "fail",
+      "note": "The original GUT. Publicly dead in its minimal form."
+    },
+    {
+      "name": "MSSM / SUSY SU(5) or SO(10)",
+      "kind": "gauge",
+      "checks": {
+        "one_F": "MSSM RG + a GUT group",
+        "gauge3": "approximate meet near 2e16 GeV (\u03b1_GUT ~ 1/24)",
+        "gravity": "no",
+        "vacuum": "no",
+        "falsifiable": "yes \u2014 proton decay, superpartners, Higgs mass",
+        "not_killed": "not fully killed; squeezed (mini-split / multi-TeV)"
+      },
+      "gauge3_verdict": "open",
+      "nature4_verdict": "fail",
+      "note": "Best-known 3-gauge program still standing. Does not output G_N or \u039b."
+    },
+    {
+      "name": "Pati\u2013Salam SU(4)\u00d7SU(2)\u00d7SU(2)",
+      "kind": "gauge",
+      "checks": {
+        "one_F": "partial unification, then a further step",
+        "gauge3": "not a single meeting of all three at one shot",
+        "gravity": "no",
+        "vacuum": "no",
+        "falsifiable": "yes \u2014 extra gauge bosons, proton decay in embeddings",
+        "not_killed": "not a complete 3-meet by itself"
+      },
+      "gauge3_verdict": "fail",
+      "nature4_verdict": "fail",
+      "note": "Lepton-as-fourth-color. A piece, not nature4."
+    },
+    {
+      "name": "Heterotic / type-II string landscape",
+      "kind": "gravity_gauge",
+      "checks": {
+        "one_F": "no unique F (10^500-class vacua)",
+        "gauge3": "some vacua can be arranged to meet",
+        "gravity": "G_N exists in the framework, not a unique output",
+        "vacuum": "\u039b is a vacuum-selection problem, not a prediction",
+        "falsifiable": "yes in principle; unique numbers are not",
+        "not_killed": "no unique prediction to kill"
+      },
+      "gauge3_verdict": "open",
+      "nature4_verdict": "fail",
+      "note": "Has gravity in the story. Does not hand you one F to the observed leftovers."
+    },
+    {
+      "name": "Asymptotic safety (gravity)",
+      "kind": "gravity_gauge",
+      "checks": {
+        "one_F": "UV fixed point for gravity",
+        "gauge3": "not a 3-gauge unifier",
+        "gravity": "gravity is the object; G_N runs, not derived as a meet",
+        "vacuum": "no",
+        "falsifiable": "yes \u2014 fixed-point existence, collider / cosmology bounds",
+        "not_killed": "open as a gravity program"
+      },
+      "gauge3_verdict": "fail",
+      "nature4_verdict": "fail",
+      "note": "A gravity UV story. Not four-force unification."
+    },
+    {
+      "name": "Lisi E8",
+      "kind": "gauge",
+      "checks": {
+        "one_F": "claimed E8 embedding of SM + gravity",
+        "gauge3": "not a demonstrated 3-meet from a working rep",
+        "gravity": "claimed, not accepted as a working output",
+        "vacuum": "no",
+        "falsifiable": "yes \u2014 representations, three generations, chirality",
+        "not_killed": "standard objections stand (chirality / generations)"
+      },
+      "gauge3_verdict": "fail",
+      "nature4_verdict": "fail",
+      "note": "A published claim. Screened. Does not pass."
+    },
+    {
+      "name": "Loop quantum gravity / causal sets",
+      "kind": "topological",
+      "checks": {
+        "one_F": "no F to the three couplings",
+        "gauge3": "no",
+        "gravity": "quantum geometry; not G_N as a derived coupling meet",
+        "vacuum": "no",
+        "falsifiable": "yes \u2014 area spectrum, cosmology, Lorentz tests",
+        "not_killed": "open as quantum-gravity programs"
+      },
+      "gauge3_verdict": "fail",
+      "nature4_verdict": "fail",
+      "note": "Quantum geometry, not a four-force unifier."
+    },
+    {
+      "name": "This repo's reconstructed R / SFE knobs",
+      "kind": "teleological",
+      "checks": {
+        "one_F": "no producing-map (affine holdout failed)",
+        "gauge3": "couplings were pasted, not produced",
+        "gravity": "hierarchy is a leftover coordinate",
+        "vacuum": "vacuum is a leftover coordinate",
+        "falsifiable": "yes \u2014 lock-R, holdout F, width control",
+        "not_killed": "F already killed on this vector"
+      },
+      "gauge3_verdict": "fail",
+      "nature4_verdict": "fail",
+      "note": "Screened the same way. Score is not F. Cosmos export still missing."
+    }
+  ],
+  "counts": {
+    "gauge3": {
+      "pass": 0,
+      "fail": 7,
+      "open": 2
+    },
+    "nature4": {
+      "pass": 0,
+      "fail": 9,
+      "open": 0
+    }
+  },
+  "still_open_as_gauge3": [
+    "MSSM / SUSY SU(5) or SO(10)",
+    "Heterotic / type-II string landscape"
+  ],
+  "passed_nature4": [],
+  "discernment": "Yes. Gauge-coupling meeting (gauge3) is a real, fail-able claim. Four-force unification with gravity and vacuum in the same F (nature4) is a stricter claim. Nothing on this list passes nature4. MSSM-class GUTs stay open as gauge3. Minimal SU(5) and the SM miss. That is discernment. It is not a unifier in this repo.",
+  "how_far": [
+    "screened 9 published-or-local claims",
+    "gauge3 open: ['MSSM / SUSY SU(5) or SO(10)', 'Heterotic / type-II string landscape']",
+    "nature4 pass: none",
+    "3-meet \u2260 4-force unifier; do not glue the levels",
+    "next: paste a specific Lagrangian / RG and re-score gauge3 \u03c7\u00b2; nature4 still needs G_N and \u039b out of the same F"
+  ],
+  "next_da_move": "If you name one program, DA will score that one at gauge3 with numbers. Nature4 stays fail until G_N and \u039b are outputs of the same F."
+}

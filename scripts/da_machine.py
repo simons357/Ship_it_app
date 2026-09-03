@@ -51,6 +51,7 @@ SLOTS = {
             "tests.test_da_flush",
             "tests.test_da_wave",
             "tests.test_da_game",
+            "tests.test_da_screen",
             "-v",
         ],
     },
@@ -418,6 +419,27 @@ def cmd_game() -> int:
     return 0
 
 
+def cmd_screen() -> int:
+    from da_screen import run as screen_run
+
+    payload = screen_run()
+    print("DA unification screen. Two levels. Do not glue them.")
+    print(f"{'claim':<42} {'kind':<16} {'gauge3':<6} {'nature4'}")
+    for c in payload["claims"]:
+        print(f"{c['name']:<42} {c['kind']:<16} {c['gauge3_verdict']:<6} {c['nature4_verdict']}")
+    print("still open as gauge3:", payload["still_open_as_gauge3"])
+    print("passed nature4:", payload["passed_nature4"])
+    print(payload["discernment"])
+    append_run(
+        "U",
+        "Screen published unification claims at gauge3 vs nature4",
+        "open",
+        "nothing passes nature4; MSSM-class stays open as gauge3; SU(5) minimal and SM fail",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_check(domain: str) -> int:
     domains = list(SLOTS) if domain == "all" else [domain]
     rc = 0
@@ -444,6 +466,7 @@ def main() -> int:
     sub.add_parser("flush", help="Hilbert flush of which candidates carry the score")
     sub.add_parser("wave", help="waveform rules: superposition, entanglement, collapse, falsification")
     sub.add_parser("game", help="Shapley on the score vs the unifier-claim game")
+    sub.add_parser("screen", help="screen published unification claims at gauge3 vs nature4")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -473,6 +496,8 @@ def main() -> int:
         return cmd_wave()
     if args.cmd == "game":
         return cmd_game()
+    if args.cmd == "screen":
+        return cmd_screen()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":
