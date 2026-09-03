@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "slot": "B",
+    "object": "classical NS, keep 1/r^4",
+    "not_a_regularity_proof": true,
+    "no_q1": true,
+    "no_phi_estimate": true,
+    "no_A_implies_B": true,
+    "domain_verdict": "open"
+  },
+  "lemmas": [
+    {
+      "name": "B1_t2_low_flux",
+      "statement": "\u222b (u_\u2264j \u00b7 \u2207) u_j \u00b7 u_j = 0 for periodic div-free u",
+      "verdict": "pass",
+      "why": "div-free + parts: (1/2) \u222b u_low \u00b7 \u2207(|u_j|\u00b2) = 0. T2 Lemma 1 only.",
+      "residual": -1.3678821833279498e-22,
+      "rel_residual": 2.9122179098588007e-20,
+      "energy_j": 0.0046970461197193576,
+      "n": 24,
+      "j": 3
+    },
+    {
+      "name": "B1b_t2_lemma2_dropped",
+      "statement": "T2 Lemma 2 (H^{2.3} absorbing ball) is an input to the a priori estimate",
+      "verdict": "fail",
+      "why": "Already-regular H^{2.3} is circular for large-data Track B. Not used."
+    },
+    {
+      "name": "B2_regime_cover",
+      "statement": "3-CONC (\u03c3\u22651/2) and SPREAD (\u03c3\u22641/2) cover (0,1]; \u03c1\u2264\u03c3",
+      "verdict": "pass",
+      "why": "A cover of mass fractions, not a dynamics theorem. One threshold, no gap.",
+      "trials": 400,
+      "gaps": 0,
+      "rho_le_sigma": 400
+    },
+    {
+      "name": "B3_three_shell_ring",
+      "statement": "3-shell support \u21d2 ||\u2207\u03c9||_\u221e \u2264 C 2^{2j*} ||\u03c9||_2 and ||\u2207\u03be||_\u221e \u2264 C 2^{j*} on E_c",
+      "verdict": "pass",
+      "why": "Bernstein on a triad packet. Not stretching depletion. Not all-data geometry.",
+      "bernstein_ratios": [
+        0.018790122044519655,
+        0.005029986207940201
+      ],
+      "direction_ratios": [
+        3.5058313269432544,
+        1.853075262484292
+      ],
+      "n": 32
+    },
+    {
+      "name": "B3b_ring_is_not_depletion",
+      "statement": "3-shell Ring forces cos \u03b1_3 \u2192 0 for all data",
+      "verdict": "fail",
+      "why": "Ring bounds |\u2207\u03be| on E_c. It does not force alignment. Biot\u2013Savart slogan stays forbidden."
+    },
+    {
+      "name": "B4_tube_hardy",
+      "statement": "g(0)=0 \u21d2 \u222b(g/r)\u00b2 dr \u2264 4\u222b(g')\u00b2; h(0)=0 \u21d2 \u222b h\u00b2/r dr \u2264 4\u222b(h')\u00b2 r dr + 2 h(\u03b4)\u00b2",
+      "verdict": "pass",
+      "why": "Localized Hardy with a wall term. Does not yet beat I_tube by viscosity.",
+      "hardy_1d": {
+        "worst_lhs_over_4grad": 0.21725179571197253,
+        "holds": true
+      },
+      "hardy_tube_wall": {
+        "worst_lhs_over_rhs": 0.2894841424418605,
+        "holds": true
+      }
+    },
+    {
+      "name": "B4b_hardy_not_I_tube",
+      "statement": "tube Hardy \u21d2 |I_tube| absorbed in \u03bd||\u2207\u03c9||_2\u00b2 for all data",
+      "verdict": "open",
+      "why": "Hardy is the tool. Domination of \u0393 \u2202_z \u0393 / r^4 by angular viscosity is the live question."
+    },
+    {
+      "name": "B5_swirl_visc_identity",
+      "statement": "axisymmetric (\u0394u)_\u03b8 = \u0394u_\u03b8 \u2212 u_\u03b8/r\u00b2; angular piece \u222b(u_\u03b8/r)\u00b2 sits in the tube",
+      "verdict": "pass",
+      "why": "Identity only. Ratio |I_source|/angular-mass is reported, not claimed < 1.",
+      "angular_mass": 0.01005309794487886,
+      "abs_source_mass": 0.012738070265760458,
+      "source_over_angular": 1.2670790969712324,
+      "vector_laplacian_finite": true
+    },
+    {
+      "name": "B5b_tube_vs_viscosity",
+      "statement": "angular 1/r\u00b2 viscosity dominates I_tube at \u03b4 ~ 2^{-j*}",
+      "verdict": "open",
+      "why": "This is the reason to keep 1/r^4. Not shown. Do not cancel to \u03a6 to escape it."
+    },
+    {
+      "name": "B6_energy_not_enough",
+      "statement": "Leray \u222b X dt < \u221e implies X \u2208 L^\u221e (closes the cubic enstrophy ODE)",
+      "verdict": "fail",
+      "why": "X=(T*-t)^{-1/2} has \u222bX\u22481.987 on a truncated interval and is unbounded. Viscosity or geometry has to do the extra work.",
+      "spike_unbounded": false,
+      "truncated_integral": 1.9869041931760105
+    },
+    {
+      "name": "B_phi_not_estimate_variable",
+      "statement": "pass to \u03a6 = \u0393/r\u00b2 as the primary unknown",
+      "verdict": "fail",
+      "why": "The identity 1/r^4 \u2202_z(\u0393\u00b2)=\u2202_z(\u03a6\u00b2) is true. It moves the work onto ||\u03a6||_\u221e. Keep \u0393."
+    },
+    {
+      "name": "B_regularity",
+      "statement": "classical 3D NS is globally regular (keep 1/r^4, no Q1)",
+      "verdict": "open",
+      "why": "No closed estimate for X. Lemma identities are not a continuation argument."
+    }
+  ],
+  "counts": {
+    "pass": 5,
+    "fail": 4,
+    "open": 3
+  },
+  "how_far": [
+    "B1 T2 low-flux identity holds (pass); T2 Lemma 2 stays dropped (fail)",
+    "B2 3-CONC / SPREAD cover (pass as a cover, not as dynamics)",
+    "B3 3-shell Bernstein / |\u2207\u03be| on E_c (pass as Bernstein; depletion fail)",
+    "B4 tube Hardy with wall term (pass); domination of I_tube still open",
+    "B5 swirl (\u0394u)_\u03b8 identity (pass); viscosity vs I_tube still open",
+    "B6 \u222bX dt < \u221e does not bound X (fail of that close)",
+    "\u03a6 is not the estimate variable (fail)",
+    "classical regularity remains open"
+  ],
+  "next_da_move": "Write the analytic Hardy\u2192I_tube estimate with \u03b4 ~ 2^{-j*}, then the energy-class low Bony term T. Do not pass regularity."
+}

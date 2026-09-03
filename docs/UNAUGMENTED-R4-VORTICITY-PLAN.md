@@ -235,15 +235,17 @@ No BKM-from-\(L^2\) implication is required. No Biot–Savart slogan that \(\cos
 
 ---
 
-## 5. Concrete lemmas to write next (in this order)
+## 5. Concrete lemmas (DA-scored; regularity still open)
 
-1. **Localized tube Hardy for \(\Gamma\)**, radius \(\delta\), no \(\Phi\).
-2. **Almost-band-limited Ring Lemma** (dominant shell + two neighbors).
-3. **One-threshold regime split** \(J/X\ge 1/4\) vs \(J/X\le 1/4\).
-4. **Energy-class T2 flux** (Lemma 1 kept; Lemma 2 rewritten without \(H^{2.3}\)).
-5. **Swirl dissipation identity** in the tube: make the \(1/r^2\) angular viscosity explicit and compare it to \(I_{\mathrm{tube}}\).
+Scored in [`docs/TRACK-B-LEMMAS.md`](TRACK-B-LEMMAS.md). `python3 scripts/da_machine.py trackb`.
 
-Item 5 is the reason to keep \(1/r^4\). If the angular viscosity does not dominate the tube source at the same weight, the cancel-to-\(\Phi\) path was not the mistake — the tube is genuinely critical. If it does dominate, you never needed the cancel.
+1. **Localized tube Hardy for \(\Gamma\)**, radius \(\delta\), no \(\Phi\). Hardy + wall term **pass**. \(I_{\mathrm{tube}}\) domination **open**.
+2. **Almost-band-limited Ring Lemma** (three shells). Bernstein **pass**. All-data depletion **fail**.
+3. **One-threshold regime split** 3-CONC \(\sigma\ge 1/2\) vs SPREAD \(\sigma\le 1/2\). Cover **pass**.
+4. **Energy-class T2 flux.** Lemma 1 **pass**. Lemma 2 dropped (**fail** as input). Low Bony \(T\) still open.
+5. **Swirl dissipation identity** in the tube. \((\Delta u)_\theta\) **pass**. Viscosity vs \(I_{\mathrm{tube}}\) **open**.
+
+Item 5 is the reason to keep \(1/r^4\). If the angular viscosity does not dominate the tube source at the same weight, the cancel-to-\(\Phi\) path was not the mistake — the tube is genuinely critical. If it does dominate, you never needed the cancel. Domain B does not pass.
 
 ---
 

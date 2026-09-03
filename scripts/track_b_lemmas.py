@@ -251,9 +251,9 @@ def hardy_1d_samples(n: int = 800, delta: float = 1.0, seed: int = 4) -> dict:
         # g(0)=0: start at r^1
         for k, a in enumerate(coeff, start=1):
             g = g + a * r**k
-        lhs = float(np.trapz((g / r) ** 2, r))
+        lhs = float(np.trapezoid((g / r) ** 2, r))
         gp = np.gradient(g, r)
-        rhs = 4.0 * float(np.trapz(gp**2, r))
+        rhs = 4.0 * float(np.trapezoid(gp**2, r))
         worst = max(worst, lhs / max(rhs, 1e-30))
     return {"worst_lhs_over_4grad": worst, "holds": worst <= 1.0 + 1e-6}
 
@@ -267,9 +267,9 @@ def hardy_tube_wall_samples(n: int = 800, delta: float = 1.0, seed: int = 5) -> 
         h = np.zeros_like(r)
         for k, a in enumerate(coeff, start=1):
             h = h + a * r**k
-        lhs = float(np.trapz(h**2 / r, r))
+        lhs = float(np.trapezoid(h**2 / r, r))
         hp = np.gradient(h, r)
-        rhs = 4.0 * float(np.trapz(hp**2 * r, r)) + 2.0 * float(h[-1] ** 2)
+        rhs = 4.0 * float(np.trapezoid(hp**2 * r, r)) + 2.0 * float(h[-1] ** 2)
         worst = max(worst, lhs / max(rhs, 1e-30))
     return {"worst_lhs_over_rhs": worst, "holds": worst <= 1.0 + 2e-2}
 
@@ -351,7 +351,7 @@ def lemma_energy_not_enough() -> dict:
     tstar = 1.0
     t = np.linspace(0.0, tstar - 1e-4, 2000)
     x = (tstar - t) ** (-0.5)
-    integ = float(np.trapz(x, t))
+    integ = float(np.trapezoid(x, t))
     bounded = bool(np.max(x) < 1e3)
     # integrable on [0, T*-ε] stays finite as ε→0 in the limit of the antiderivative
     # but X is unbounded. That kills "∫X < ∞ ⇒ X ∈ L^∞".
