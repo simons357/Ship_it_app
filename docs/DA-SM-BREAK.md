@@ -60,6 +60,9 @@ two-sided couple. Step 7 is why this is not nature4.
 
 ---
 
-Stop breaking \(\mathcal{L}_{\mathrm{SM}}\). The atoms are
-on the table. A producing-map has to live **outside** this
-list. Fluids stay on Track B.
+Winding those atoms backwards through Maxwell, QED, Fermi,
+Yang–Mills, GWS, and QCD is [`docs/DA-SM-LINEAGE.md`](DA-SM-LINEAGE.md).
+
+Stop inventing new atoms inside \(\mathcal{L}_{\mathrm{SM}}\).
+A producing-map has to live **outside** this list. Fluids
+stay on Track B.

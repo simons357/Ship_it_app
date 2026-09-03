@@ -59,6 +59,7 @@ SLOTS = {
             "tests.test_da_sm",
             "tests.test_da_sm_break",
             "tests.test_da_team",
+            "tests.test_da_sm_lineage",
             "-v",
         ],
     },
@@ -114,7 +115,7 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
     if re.search(
-        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide",
+        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills",
         text,
     ):
         return {"domain": "U", "verdict": "open", "reason": "looks like score U / SM Lagrangian / waveform; run sm or how"}
@@ -577,6 +578,24 @@ def cmd_team() -> int:
     return 0
 
 
+def cmd_lineage() -> int:
+    from da_sm_lineage import run as lineage_run
+
+    payload = lineage_run()
+    print("DA lineage. SM runs backwards by limits, forwards by assembly.")
+    print(payload["dots"])
+    for r in payload["forwards"]:
+        print(f"  [{r['back_verdict']}] {r['name']}: {r['back_from_sm']}")
+    append_run(
+        "U",
+        "Wind L_SM backwards through prior theories and forwards through the same dots",
+        "open",
+        "Maxwell/QED/Fermi/YM/GWS/QCD recover; Einstein and one-group UV do not; not F",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_smbreak() -> int:
     from da_sm_break import run as break_run
 
@@ -654,6 +673,7 @@ def main() -> int:
     sub.add_parser("sm", help="analyze the SM Lagrangian; realize Einstein+T_SM")
     sub.add_parser("smbreak", help="break L_SM to atoms, then put it back")
     sub.add_parser("team", help="seat paper+experiment; a vote cannot close")
+    sub.add_parser("lineage", help="wind L_SM backwards and forwards through prior theories")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -697,6 +717,8 @@ def main() -> int:
         return cmd_smbreak()
     if args.cmd == "team":
         return cmd_team()
+    if args.cmd == "lineage":
+        return cmd_lineage()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":
