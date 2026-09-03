@@ -61,6 +61,7 @@ SLOTS = {
             "tests.test_da_team",
             "tests.test_da_sm_lineage",
             "tests.test_da_harmonic",
+            "tests.test_da_ground",
             "-v",
         ],
     },
@@ -116,7 +117,7 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
     if re.search(
-        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form",
+        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b",
         text,
     ):
         return {"domain": "U", "verdict": "open", "reason": "looks like score U / SM Lagrangian / waveform; run sm or how"}
@@ -615,6 +616,27 @@ def cmd_harmonic() -> int:
     return 0
 
 
+def cmd_ground() -> int:
+    from da_ground import run as ground_run
+
+    payload = ground_run()
+    print("DA ground. Spectrum is the destination, not a pass.")
+    print("HB chapter 1 → process. Not a trigger. Not a theorem.")
+    for c in payload["claims"]:
+        print(f"  [{c['verdict']}] {c['id']}: {c['statement']}")
+    print("improvements:")
+    for line in payload["improvements_to_da"]:
+        print(f"  {line}")
+    append_run(
+        "U",
+        "Ground-level destination: spectrum not a bag; reconstruct; ablate; ask Einstein/Tesla/Feynman",
+        "open",
+        "HB ch1→DA process pass; destination open; couplings/F/seance/SFE/nodes fail; personas score the program",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_smbreak() -> int:
     from da_sm_break import run as break_run
 
@@ -694,6 +716,7 @@ def main() -> int:
     sub.add_parser("team", help="seat paper+experiment; a vote cannot close")
     sub.add_parser("lineage", help="wind L_SM backwards and forwards through prior theories")
     sub.add_parser("harmonic", help="typed harmonic vocabulary from mathematics; not a unifier")
+    sub.add_parser("ground", help="spectrum destination: reconstruct, ablate, personas score the program")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -741,6 +764,8 @@ def main() -> int:
         return cmd_lineage()
     if args.cmd == "harmonic":
         return cmd_harmonic()
+    if args.cmd == "ground":
+        return cmd_ground()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":

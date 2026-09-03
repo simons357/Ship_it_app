@@ -72,3 +72,6 @@ reason to touch `nodes.json`. Not a regularity pass.
 
 Next B write is still Hardy \(\to I_{\mathrm{tube}}\), then
 energy-class low Bony \(T\).
+
+To climb from these names as a destination, not a bag of
+couplings, see [`docs/DA-GROUND.md`](DA-GROUND.md).

@@ -36,12 +36,14 @@ A Domain Architect “unifier program” drill lives in `docs/UNIFIER-EXERCISE.m
 
 A typed harmonic vocabulary lives in `docs/DA-HARMONIC-VOCAB.md`. It names distinct mathematical objects that share the English word. Desk coverage can pass. It does not unshelve HB, does not write \(F\), and does not retune `nodes.json`.
 
+The ground-level destination (“spectrum, not a bag of couplings”) lives in `docs/DA-GROUND.md`. Reconstruct and ablate on U. HB chapter 1 as the origin of DA-the-process is speakable. SFE as a fluids theorem is not.
+
 Domain Architect as a **process machine** (slots, generator, fail-able checker) is live: `docs/DOMAIN-ARCHITECT-MACHINE.md`. That is not a unifier and not a regularity proof.
 
 ---
 
 ## How to treat a shelved paragraph if it comes back
 
-1. If it names SFE, HB, UHF, DHFA, or a prize statement: stop. Do not translate it into \(\Pi_j\).
+1. Naming SFE, HB, UHF, or DHFA is allowed. Halt only the *close*: do not load them into \(\Pi_j\), \(\omega\cdot S\omega\), \(1/r^4\), or \(H_N\); do not call them \(F\); do not retune `nodes.json`. DA-the-process is already the good extraction from HB chapter 1. A destination (“spectrum, not a bag”) may be typed on U as **open**.
 2. If it is classical vorticity / LP / Bony / Ring / energy: it may already live on Track B. Use the frozen names there.
 3. If it is inverse-GCD: only Bridge\(^*\), Theorem P, and \(H_N\ge-1\) are live. Full \(\lambda_{\min}(Q)>-1/2\) stays false.

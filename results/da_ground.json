@@ -1,0 +1,357 @@
+{
+  "meta": {
+    "question": "get in at the ground (spectrum, not a bag), reconstruct, ablate, and ask Einstein/Tesla/Feynman how to improve DA",
+    "hb_is_not_a_trigger": true,
+    "hb_chapter1_extraction": "DA as process (slots + checker)",
+    "not_a_unifier": true,
+    "not_a_seance": true,
+    "vote_cannot_close": true,
+    "does_not_retune_nodes": true,
+    "does_not_load_sfe_into_ns": true
+  },
+  "ground": [
+    {
+      "id": "G0",
+      "name": "space",
+      "kind": "atom",
+      "statement": "a space X (manifold, group, domain, graph)",
+      "verdict": "pass",
+      "why": "Without X there is no operator and no mode.",
+      "need": "you pick X; it is not an output"
+    },
+    {
+      "id": "G1",
+      "name": "operator",
+      "kind": "atom",
+      "statement": "a self-adjoint operator D on functions / forms / spinors on X",
+      "verdict": "pass",
+      "why": "Laplacian, Dirac, Hodge Laplacian, Casimir. Spectrum-of-what starts here.",
+      "need": "you pick D; eigenvalues do not invent D"
+    },
+    {
+      "id": "G2",
+      "name": "spectrum_and_modes",
+      "kind": "atom",
+      "statement": "\u03c3(D) = {\u03bb_n} and eigenfunctions / eigensections",
+      "verdict": "pass",
+      "why": "This is the harmonic universe as mathematics. Consequence of (X, D), not a replacement for them.",
+      "need": "computed from (X, D)"
+    },
+    {
+      "id": "G3",
+      "name": "representations",
+      "kind": "atom",
+      "statement": "how modes transform and couple (Peter\u2013Weyl, Wigner, Clebsch)",
+      "verdict": "pass",
+      "why": "Compact-group harmonics. Still not a coupling constant.",
+      "need": "you pick G and the reps"
+    },
+    {
+      "id": "G4",
+      "name": "action",
+      "kind": "atom",
+      "statement": "a principle that writes an action from those fields",
+      "verdict": "open",
+      "why": "Gauge principle, equivalence principle, dim-4. These are choices. They are how you climb.",
+      "need": "must be added; not read off {\u03bb_n}"
+    },
+    {
+      "id": "G5",
+      "name": "numbers",
+      "kind": "atom",
+      "statement": "the measured couplings (g_s, g, g', G, \u039b, Yukawas)",
+      "verdict": "fail",
+      "why": "Still a bag. A spectrum is not yet those numbers. That is the destination, not a pass.",
+      "need": "public theorem or F; neither is on the desk"
+    }
+  ],
+  "reconstruct": [
+    {
+      "id": "R1",
+      "name": "sphere_laplacian",
+      "kind": "rebuild",
+      "statement": "X = S^{n-1}, D = \u0394 \u2192 Y_\u2113m",
+      "verdict": "pass",
+      "why": "The angular dictionary Track B already uses.",
+      "reaches": "spherical harmonics",
+      "does_not": "g_s or regularity"
+    },
+    {
+      "id": "R2",
+      "name": "torus_fourier",
+      "kind": "rebuild",
+      "statement": "X = T^n or R^n, D = \u0394 \u2192 characters e^{i\u03be\u00b7x}",
+      "verdict": "pass",
+      "why": "Galerkin / Fourier on A. Abelian Peter\u2013Weyl.",
+      "reaches": "Fourier analysis",
+      "does_not": "the gauge group of nature"
+    },
+    {
+      "id": "R3",
+      "name": "compact_group",
+      "kind": "rebuild",
+      "statement": "X = G compact, D = Casimir \u2192 Peter\u2013Weyl / Wigner D",
+      "verdict": "pass",
+      "why": "Representation harmonics. You already chose G.",
+      "reaches": "matrix coefficients",
+      "does_not": "why G = SU(3)\u00d7SU(2)\u00d7U(1)"
+    },
+    {
+      "id": "R4",
+      "name": "hodge",
+      "kind": "rebuild",
+      "statement": "Hodge Laplacian on k-forms \u2192 Betti numbers = dim ker \u0394",
+      "verdict": "pass",
+      "why": "Topology as a kernel. Different bundle from \u0394u=0 on functions.",
+      "reaches": "b_k(M)",
+      "does_not": "\u03b8_W or \u039b"
+    },
+    {
+      "id": "R5",
+      "name": "to_sm_couplings",
+      "kind": "rebuild",
+      "statement": "(X, D, \u03c3, Rep) \u2192 (g_s, g, g', v, Yukawas)",
+      "verdict": "fail",
+      "why": "You must still add G, the reps, and the numbers. Harmonic math does not spit them.",
+      "reaches": "nothing numerical on the poster",
+      "does_not": "F"
+    },
+    {
+      "id": "R6",
+      "name": "to_einstein_constants",
+      "kind": "rebuild",
+      "statement": "(X, D, \u03c3, Rep) \u2192 (G, \u039b)",
+      "verdict": "fail",
+      "why": "Einstein sits as a two-sided couple you add. The constants stay inputs.",
+      "reaches": "not G, not \u039b",
+      "does_not": "nature4"
+    },
+    {
+      "id": "R7",
+      "name": "to_ns_regularity",
+      "kind": "rebuild",
+      "statement": "the same ground list \u2192 classical regularity",
+      "verdict": "fail",
+      "why": "LP / Y_\u2113m / Bony are already on B. Regularity stays open.",
+      "reaches": "language already in use",
+      "does_not": "a regularity pass"
+    }
+  ],
+  "ablate": [
+    {
+      "id": "A1",
+      "name": "drop_operator",
+      "kind": "ablate",
+      "statement": "keep the word 'mode', drop D",
+      "verdict": "fail",
+      "why": "Nothing to diagonalize. Poetry remains. Destination dies.",
+      "leftover": "standing-wave talk",
+      "changes": "you cannot compute a single \u03bb",
+      "insight": "spectrum-of-what is the first question a DA-like program must ask"
+    },
+    {
+      "id": "A2",
+      "name": "drop_compact_group",
+      "kind": "ablate",
+      "statement": "keep \u0394 on R^n or S^2, drop G",
+      "verdict": "open",
+      "why": "You still have Fourier and Y_\u2113m. You lose multiplets and gauge bosons.",
+      "leftover": "analysis on Euclidean / spherical space",
+      "changes": "SM particle content disappears; fluids language stays",
+      "insight": "harmonic math on a sphere is not the Standard Model"
+    },
+    {
+      "id": "A3",
+      "name": "drop_hodge",
+      "kind": "ablate",
+      "statement": "keep functions only, drop k-forms",
+      "verdict": "open",
+      "why": "Ordinary eigenfunctions survive. Betti numbers as dim ker go away.",
+      "leftover": "scalar / vector Fourier",
+      "changes": "topology is no longer a spectrum of a Laplacian on forms",
+      "insight": "Hodge is not a synonym for Y_\u2113m"
+    },
+    {
+      "id": "A4",
+      "name": "keep_the_bag",
+      "kind": "ablate",
+      "statement": "drop the destination; keep couplings as inputs (actual L_SM)",
+      "verdict": "pass",
+      "why": "This is the world the poster already describes. Honest, not the wish.",
+      "leftover": "L_SM + Einstein+T_SM",
+      "changes": "nothing about measured physics; the destination is postponed",
+      "insight": "a bag of couplings is the present tense; a spectrum is the program"
+    },
+    {
+      "id": "A5",
+      "name": "drop_Ylm_keep_LP",
+      "kind": "ablate",
+      "statement": "keep dyadic shells, drop spherical harmonics",
+      "verdict": "open",
+      "why": "Frequency localization stays. Angular quantum numbers go.",
+      "leftover": "Littlewood\u2013Paley / Bony",
+      "changes": "Ring language thins; T2 lemmas still make sense",
+      "insight": "B already needs both; they are not substitutes"
+    },
+    {
+      "id": "A6",
+      "name": "overtones_only",
+      "kind": "ablate",
+      "statement": "keep integer frequency ratios, drop X and D",
+      "verdict": "fail",
+      "why": "That is the etymology of the word. A string is one operator. It is not nature.",
+      "leftover": "f_n = n f_1",
+      "changes": "every PDE and every gauge group vanishes",
+      "insight": "music motivated the word; it does not reconstruct the desk"
+    }
+  ],
+  "minds": [
+    {
+      "name": "Einstein",
+      "owns": "equivalence + a two-sided field equation",
+      "looks_at_da": "DA already keeps G_\u03bc\u03bd+\u039bg = 8\u03c0G T_SM. Good. Catalogs without a principle are not a theory.",
+      "improve_program": "Every slot states the principle before the list. Covariance, an action, what is forbidden.",
+      "how_to_derive": "Write the principle, then the operator, then compute the spectrum as a consequence. Do not start from eigenvalues and hope they remember the metric.",
+      "cannot": "cannot output G or \u039b; cannot close a theorem by sitting here",
+      "side": "persona"
+    },
+    {
+      "name": "Tesla",
+      "owns": "a resonator you can tune and detune",
+      "looks_at_da": "A program that cannot be detuned is a slogan. DA's checkers are the closest thing to an apparatus on this desk.",
+      "improve_program": "Every claim names the knob you turn and the script that must move. If nothing is detunable, it does not sit.",
+      "how_to_derive": "Build the resonator first (name D). Listen second (compute \u03c3(D)). Standing waves are what a built operator does, not a universe brand.",
+      "cannot": "cannot derive SU(3) or Einstein's equation; not a ToE chair",
+      "side": "persona"
+    },
+    {
+      "name": "Feynman",
+      "owns": "a kernel you can compute with",
+      "looks_at_da": "If the vocabulary does not produce a number you can get wrong, it is a stamp collection.",
+      "improve_program": "No new name sits until it has a fail-able computation. Refuse councils. Refuse vibes.",
+      "how_to_derive": "Pick (X, D). Compute one \u03bb, one matrix element, or one \u03c7\u00b2 you can miss. That is how you derive a DA-like program: the check is the program.",
+      "cannot": "cannot vote the destination into a pass; cannot unshelve SFE",
+      "side": "persona"
+    },
+    {
+      "name": "Weyl",
+      "owns": "gauge + representations of compact groups",
+      "looks_at_da": "DA says 'harmonic math' and 'gauge' in the same breath too often. Those are different additions.",
+      "improve_program": "Do not utter gauge until G and the reps are named. Peter\u2013Weyl is not SU(3)\u00d7SU(2)\u00d7U(1).",
+      "how_to_derive": "Climb G3 only after G0\u2013G2. The group is an input. The harmonics of that group are the output.",
+      "cannot": "cannot choose nature's G from a Laplacian on S^2",
+      "side": "persona"
+    },
+    {
+      "name": "Wigner",
+      "owns": "particles as representations; spectrum with a group",
+      "looks_at_da": "A spectrum with no group is a hydrogen textbook, not a particle table.",
+      "improve_program": "Type every mode by the representation it sits in. If you cannot, you are not at the ground of matter.",
+      "how_to_derive": "The program asks: which group, which rep, which operator that commutes with the group. Then the spectrum is classified, not wished.",
+      "cannot": "cannot turn a classification into the numerical couplings",
+      "side": "persona"
+    },
+    {
+      "name": "von Neumann",
+      "owns": "spectral theorem: operator on a Hilbert space",
+      "looks_at_da": "Talk of a harmonic universe that never names the Hilbert space and the operator is not mathematics.",
+      "improve_program": "G0 and G1 are mandatory. No slot opens with 'modes' alone.",
+      "how_to_derive": "A DA-like program is: specify H, specify a self-adjoint D, diagonalize, store the residual. That is the whole machine at ground level.",
+      "cannot": "cannot pick D from poetry; cannot make {\u03bb_n} write F",
+      "side": "persona"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "name": "hb_chapter1_to_da",
+      "kind": "origin",
+      "statement": "HB chapter 1 adapted into slots + a fail-able check is a real extraction",
+      "verdict": "pass",
+      "why": "That is how DA exists. Naming the book is allowed. The extraction is the process, not the PDE."
+    },
+    {
+      "id": "C2",
+      "name": "mention_is_not_a_crime",
+      "kind": "origin",
+      "statement": "Saying SFE or HB is a trigger that must halt the desk",
+      "verdict": "fail",
+      "why": "Halt only the close: SFE as NS, HB as F, retune nodes.json. Motive and process stay speakable."
+    },
+    {
+      "id": "C3",
+      "name": "destination_as_program",
+      "kind": "destination",
+      "statement": "Treat 'spectrum, not a bag of couplings' as the program to reconstruct toward",
+      "verdict": "open",
+      "why": "Legal destination. Not a pass. The bag is still what L_SM consumes."
+    },
+    {
+      "id": "C4",
+      "name": "destination_already_done",
+      "kind": "destination",
+      "statement": "The couplings are already eigenvalues of a named D on this desk",
+      "verdict": "fail",
+      "why": "No such operator is written. Cosmo F is private. nodes.json is not that D."
+    },
+    {
+      "id": "C5",
+      "name": "personas_close",
+      "kind": "persona",
+      "statement": "Einstein / Tesla / Feynman looking at DA close the destination",
+      "verdict": "fail",
+      "why": "A persona is not a theorem. A vote cannot close. They improve the program."
+    },
+    {
+      "id": "C6",
+      "name": "seance_writes_F",
+      "kind": "persona",
+      "statement": "They come through the device and write F",
+      "verdict": "fail",
+      "why": "The device runs a checker. That is the only legal s\u00e9ance."
+    },
+    {
+      "id": "C7",
+      "name": "sfe_into_ns",
+      "kind": "forbid",
+      "statement": "SFE is the ground-level operator for fluids",
+      "verdict": "fail",
+      "why": "Different PDE. Still shelved as a theorem. Not loaded into \u03c9\u00b7S\u03c9."
+    },
+    {
+      "id": "C8",
+      "name": "retune_nodes",
+      "kind": "forbid",
+      "statement": "Retune nodes.json to fit the destination",
+      "verdict": "fail",
+      "why": "Experiment 01 is closed. H0 was not rejected. Do not retune."
+    }
+  ],
+  "counts": {
+    "ground": 6,
+    "reconstruct_pass": 4,
+    "reconstruct_fail": 3,
+    "ablations": 6,
+    "minds": 6,
+    "claims_pass": 1,
+    "claims_fail": 6,
+    "claims_open": 1
+  },
+  "improvements_to_da": [
+    "Einstein: principle before catalog; spectrum is a consequence",
+    "Tesla: every claim names a detunable knob and a script",
+    "Feynman: no new name without a number you can get wrong",
+    "Weyl: do not say gauge until G and the reps are named",
+    "Wigner: type every mode by its representation",
+    "von Neumann: no slot opens on 'modes' without (H, D)"
+  ],
+  "how_far": [
+    "named HB chapter 1 as the origin of DA-the-process, not a trigger",
+    "wrote the ground as (X, D, \u03c3(D), Rep, action, numbers)",
+    "reconstructed Y_\u2113m, Fourier, Peter\u2013Weyl, Hodge; failed couplings, G/\u039b, regularity",
+    "ablated operator, group, Hodge, destination, Y_\u2113m, overtones",
+    "seated Einstein, Tesla, Feynman, Weyl, Wigner, von Neumann as program critics",
+    "refused s\u00e9ance-to-F and nodes.json retune"
+  ],
+  "next_da_move": "Destination stays open on U. Use the six program improvements. Do not load SFE into NS. Next B write is still Hardy \u2192 I_tube, then low Bony T."
+}
