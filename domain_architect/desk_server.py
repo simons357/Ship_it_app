@@ -137,6 +137,17 @@ class DeskHandler(BaseHTTPRequestHandler):
             topic = (qs.get("topic") or ["jigsaw"])[0]
             _json(self, 200, consult(topic))
             return
+        if path in {"/api/inbox", "/api/inquiry", "/api/drain", "/api/drain/queue"}:
+            _json(
+                self,
+                404,
+                {
+                    "ok": False,
+                    "error": "no vault drain on this desk",
+                    "not_chatvault": True,
+                },
+            )
+            return
         _json(self, 404, {"ok": False, "error": "not found"})
 
     def do_POST(self) -> None:  # noqa: N802
@@ -171,6 +182,17 @@ class DeskHandler(BaseHTTPRequestHandler):
             dst = str(body.get("target") or "")
             decision = refuse_splice(src, dst)
             _json(self, 200, decision.to_dict())
+            return
+        if path in {"/api/inbox", "/api/inquiry", "/api/drain", "/api/drain/queue"}:
+            _json(
+                self,
+                404,
+                {
+                    "ok": False,
+                    "error": "no vault drain on this desk",
+                    "not_chatvault": True,
+                },
+            )
             return
         _json(self, 404, {"ok": False, "error": "not found"})
 

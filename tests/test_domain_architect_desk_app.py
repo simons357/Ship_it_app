@@ -64,7 +64,17 @@ class TestSimpleDesk(unittest.TestCase):
         self.assertNotIn("open chatvault", html)
         self.assertNotIn("route c", html)
         self.assertNotIn("clay", html)
-        self.assertNotIn("cv-dock", html)
+        self.assertNotIn("file in vault", html)
+        self.assertNotIn("inquire + file", html)
+
+    def test_no_vault_drain(self):
+        status, ctype, body = self._get("/api/inbox")
+        payload = json.loads(body.decode("utf-8"))
+        self.assertEqual(status, 404)
+        self.assertEqual(payload["error"], "no vault drain on this desk")
+        status, payload = self._post("/api/inquiry", {"inquiry": "laplacian Phi = 4 * pi * G * rho", "drain": True})
+        self.assertEqual(status, 404)
+        self.assertTrue(payload["not_chatvault"])
 
     def test_audit_and_jigsaw(self):
         status, payload = self._post(

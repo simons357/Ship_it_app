@@ -303,6 +303,16 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
         "do_not": "Treat PR #43 as this desk, or file a personal request into ChatVault from inquiry.",
     },
     {
+        "priority": "3m",
+        "move": (
+            "A personal ask is not a ChatVault post. Inquiry does not drain. "
+            "Agents do not file user prompts into the vault, a PR, or a "
+            "public preview."
+        ),
+        "command": "python -m domain_architect --site   # no file-to-vault control",
+        "do_not": "Click Inquire + file, --drain-chatvault a personal request, or commit inbox sidecars of private asks.",
+    },
+    {
         "priority": "4",
         "move": "One Track Q numeric floor, documented, with the open ≥-1/4 marked numeric.",
         "command": "recompute inverse-GCD scans; log N and λ_min",

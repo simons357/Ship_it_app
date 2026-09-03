@@ -27,3 +27,21 @@ Not ChatVault. Not CosmoEvolution. Not a Zeta-zero prover.
 | PR #43 PWA | Kitchen sink. Keep it. Do not reopen it as this product. |
 
 The store of record is still git. Pictures are not a proof. T3b stays open.
+
+## Why a personal ask became a ChatVault post
+
+That was a product path, not a mystery. On the kitchen-sink app (PR #43)
+the inquiry box and the vault share one origin. A button **Inquire + file
+in ChatVault** takes whatever you typed, runs FRA, and writes a vault
+record whose title is `DA audit: <your words>`. Origin is labeled
+`human_record` even when the session was with an AI. That record is a
+post. **Send last to repo** / `--drain-chatvault` / `--ingest-chatvault`
+can then put it in git. Agents were also taught to treat “write X for
+ChatVault” as a deliverable, so a personal request can land in a PR, a
+docs page, or the vault UI.
+
+This simple desk has **no file-to-vault button**, no drain, no inbox
+POST. Inquiry stays inquiry. Search stays ChatVault, off this screen.
+Do not paste a personal request into PR #43’s inquiry box and click
+file.
+
