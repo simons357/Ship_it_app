@@ -241,9 +241,9 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
         "move": (
             "If a slot is empty, break DA into rudimentary pieces and scan "
             "for an equation that actually fits. Many views of one object "
-            "are still one object. A match is not a weld."
+            "are still one object. Track B was the worked example, not the only object."
         ),
-        "command": "python -m domain_architect --scan B",
+        "command": "python -m domain_architect --scan    # method;  --scan B  # example",
         "do_not": "Drop Q, SFE, gravity, or Cosmo into a Track B hole because the symbols rhyme.",
     },
     {
@@ -512,7 +512,7 @@ def proceed_report() -> dict[str, Any]:
         "library_objects": {k: dict(v) for k, v in LIBRARY_OBJECTS.items()},
         "next_moves": list(NEXT_MOVES),
         "refused_as_close": list(REFUSED_AS_CLOSE),
-        "think_tank": consult("scan"),
+        "think_tank": consult("method"),
         "where_we_go": (
             "Shrink the machine. Navigate by shape first, then one lemma or "
             "one scan. Think tank plus visual appendage in this package. "

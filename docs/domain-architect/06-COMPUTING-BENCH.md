@@ -78,8 +78,8 @@ The picture is a **package appendage**. It follows the math automatically
 stays `--proceed`. Details: [`14-PACKAGE.md`](14-PACKAGE.md).
 
 If a slot is empty, break DA into pieces and scan for a fit:
-[`15-NS-SCAN.md`](15-NS-SCAN.md) and `python -m domain_architect --scan B`.
-A match is not a weld. Wrong-object pieces (Q, gravity, Cosmo) stay out.
+[`15-NS-SCAN.md`](15-NS-SCAN.md). Bare `--scan` is the method. `--scan B`
+is the worked example. A match is not a weld. Wrong-object pieces stay out.
 
 Live tube estimate (Hardy inside, Young outside, \(I_{\mathrm{tube}}\) open):
 [`08-NS-TUBE-ESTIMATE.md`](08-NS-TUBE-ESTIMATE.md) and

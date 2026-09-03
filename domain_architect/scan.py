@@ -1,13 +1,13 @@
 """Scan leftover holes against every rudimentary piece Domain Architect knows.
 
-If the object is unknown, or one slot is empty: break the catalog into
+The method is general. Track B is a worked example, not the product.
+If an object is unknown, or one slot is empty: break the catalog into
 pieces, group the views of the same object, and computer-match each hole
 to an equation that might fit. A match is a candidate. It does not weld.
-It does not write Track B.
 
 Endpoint: name the object from its views and stacked anatomy, then see
 whether any piece actually smooths an order-1 hole. Smooth is not the
-same as identified. A building with holes is still a building.
+same as identified.
 """
 
 from __future__ import annotations
@@ -106,6 +106,46 @@ HOLE_SPEC: Final[dict[str, dict[str, Any]]] = {
         "book": "B",
         "chart": "swirl",
     },
+    "CLIP-Q-ZETA": {
+        "order": 1,
+        "gap_id": "GAP-Q-ZETA",
+        "wants": "an operator→ζ lemma, stated and checked",
+        "fields": ("Q_N", "zeta"),
+        "book": "Q",
+        "chart": "arithmetic",
+    },
+    "CLIP-Q-FLOOR": {
+        "order": 2,
+        "gap_id": "GAP-Q-FLOOR",
+        "wants": "λ_min(H_N) ≥ -1/4 proved, not only numeric",
+        "fields": ("lambda_min",),
+        "book": "Q",
+        "chart": "arithmetic",
+    },
+    "CLIP-A-EPS": {
+        "order": 2,
+        "gap_id": "GAP-A-EPS",
+        "wants": "energy law on the augmented PDE while ε>0 stays",
+        "fields": ("epsilon",),
+        "book": "A",
+        "chart": "augmented",
+    },
+    "CLIP-U-PDG": {
+        "order": 2,
+        "gap_id": "GAP-U-PDG",
+        "wants": "PDG numbers as inputs; Cosmo 16/16 stays out",
+        "fields": ("PDG",),
+        "book": "U",
+        "chart": "bookkeeping",
+    },
+    "CLIP-SFE-CANON": {
+        "order": 1,
+        "gap_id": "GAP-SFE",
+        "wants": "a canonical SFE — currently unresolved",
+        "fields": ("SFE",),
+        "book": "SFE",
+        "chart": "grammar",
+    },
 }
 
 # Honest pre-scored fits for the live order-1 hole. Nothing here welds.
@@ -175,6 +215,66 @@ WELD_SCAN: Final[tuple[dict[str, str], ...]] = (
     },
 )
 
+Q_SCAN: Final[tuple[dict[str, str], ...]] = (
+    {
+        "piece": "Q6",
+        "equation": "λ_min of inverse-GCD",
+        "verdict": "SAME_OBJECT_VIEW",
+        "why": "Another chart of Track Q. Not the operator→ζ lemma.",
+        "fills": "no",
+    },
+    {
+        "piece": "LAMBDA-MIN",
+        "equation": "λ_min / λ_max matrix chart",
+        "verdict": "SAME_OBJECT_VIEW",
+        "why": "Same object, different texture.",
+        "fills": "no",
+    },
+    {
+        "piece": "NS-B",
+        "equation": "classical NS role skeleton",
+        "verdict": "WRONG_OBJECT",
+        "why": "Fluids anatomy was the worked example. It is not Track Q.",
+        "fills": "no",
+    },
+    {
+        "piece": "VIZ",
+        "equation": "CosmoEvolution display",
+        "verdict": "WRONG_OBJECT",
+        "why": "A picture is not zeros of ζ.",
+        "fills": "no",
+    },
+    {
+        "piece": "SFE-H001",
+        "equation": "historical SFE candidate",
+        "verdict": "WRONG_OBJECT",
+        "why": "Unresolved grammar. Do not drop it into Q.",
+        "fills": "no",
+    },
+)
+
+NAMED_BY_HOLE: Final[dict[str, tuple[dict[str, str], ...]]] = {
+    "CLIP-T3-WELD": WELD_SCAN,
+    "CLIP-Q-ZETA": Q_SCAN,
+}
+
+METHOD_STEPS: Final[tuple[str, ...]] = (
+    "Name the views of one object (many charts, still one shape).",
+    "Break DA into rudimentary pieces (roles, layers, inventory).",
+    "List leftover holes. Order-1 changes the walk. Order-2 is extra texture.",
+    "Computer-match each hole. LOOKS_LIKE_FIT is not a weld. WRONG_OBJECT stays out.",
+    "Endpoint: identified from anatomy, or smooth if an order-1 hole actually fills.",
+)
+
+BOOK_FOCUS: Final[dict[str, str]] = {
+    "B": "CLIP-T3-WELD",
+    "Q": "CLIP-Q-ZETA",
+    "A": "CLIP-A-EPS",
+    "U": "CLIP-U-PDG",
+    "SFE": "CLIP-SFE-CANON",
+    "DA": "CLIP-SFE-CANON",
+}
+
 
 def views_of_same_object() -> list[dict[str, Any]]:
     """Many textures, one shape — the 3-into-1 (or N-into-1) anatomy."""
@@ -240,25 +340,47 @@ def rudimentary_pieces(registry: EquationRegistry | None = None) -> list[dict[st
     return pieces
 
 
-def leftover_holes(overlay: dict[str, Any] | None = None) -> list[dict[str, Any]]:
-    data = overlay or overlay_report()
-    holes = []
-    for hole in data["holes"]:
-        cid = hole["clip_id"]
-        spec = HOLE_SPEC.get(cid, {})
-        holes.append(
-            {
-                "clip_id": cid,
-                "from": hole["from"],
-                "what": hole["what"],
-                "order": spec.get("order", 2),
-                "gap_id": spec.get("gap_id", cid),
-                "wants": spec.get("wants", hole["what"]),
-                "book": spec.get("book", "B"),
-                "chart": spec.get("chart", ""),
-            }
-        )
-    holes.sort(key=lambda h: (h["order"], h["clip_id"]))
+def leftover_holes(
+    overlay: dict[str, Any] | None = None, book: str | None = None
+) -> list[dict[str, Any]]:
+    want = (book or "").upper() or None
+    holes: list[dict[str, Any]] = []
+    if want in {None, "B"}:
+        data = overlay or overlay_report()
+        for hole in data["holes"]:
+            cid = hole["clip_id"]
+            spec = HOLE_SPEC.get(cid, {})
+            holes.append(
+                {
+                    "clip_id": cid,
+                    "from": hole["from"],
+                    "what": hole["what"],
+                    "order": spec.get("order", 2),
+                    "gap_id": spec.get("gap_id", cid),
+                    "wants": spec.get("wants", hole["what"]),
+                    "book": spec.get("book", "B"),
+                    "chart": spec.get("chart", ""),
+                }
+            )
+    if want != "B":
+        for cid, spec in HOLE_SPEC.items():
+            if spec["book"] == "B":
+                continue
+            if want and spec["book"] != want:
+                continue
+            holes.append(
+                {
+                    "clip_id": cid,
+                    "from": spec["book"],
+                    "what": spec["wants"],
+                    "order": spec["order"],
+                    "gap_id": spec["gap_id"],
+                    "wants": spec["wants"],
+                    "book": spec["book"],
+                    "chart": spec["chart"],
+                }
+            )
+    holes.sort(key=lambda h: (h["book"], h["order"], h["clip_id"]))
     return holes
 
 
@@ -312,8 +434,11 @@ def scan_hole(clip_id: str, pieces: list[dict[str, Any]] | None = None) -> dict[
     spec = HOLE_SPEC.get(clip_id)
     if spec is None:
         return {"error": f"Unknown hole {clip_id}. No invented weld."}
-    overlay = overlay_report()
-    hole = next((h for h in leftover_holes(overlay) if h["clip_id"] == clip_id), None)
+    overlay = overlay_report() if spec["book"] == "B" else None
+    hole = next(
+        (h for h in leftover_holes(overlay, spec["book"]) if h["clip_id"] == clip_id),
+        None,
+    )
     if hole is None:
         hole = {
             "clip_id": clip_id,
@@ -338,7 +463,7 @@ def scan_hole(clip_id: str, pieces: list[dict[str, Any]] | None = None) -> dict[
                 **hit,
             }
         )
-    named = [dict(row) for row in WELD_SCAN] if clip_id == "CLIP-T3-WELD" else []
+    named = [dict(row) for row in NAMED_BY_HOLE.get(clip_id, ())]
     fills = [row for row in named if row["fills"] == "yes"]
     return {
         "hole": hole,
@@ -354,74 +479,137 @@ def scan_hole(clip_id: str, pieces: list[dict[str, Any]] | None = None) -> dict[
     }
 
 
+def _book_anatomy(book: str, pieces: list[dict[str, Any]], views: list[dict[str, Any]]) -> dict[str, Any]:
+    object_views = next(
+        (g for g in views if g["book"] == book),
+        {"views": [], "view_count": 0, "shape": f"book {book}"},
+    )
+    holes = leftover_holes(book=book)
+    order1 = [h for h in holes if h["order"] == 1]
+    stacked = 0
+    if book == "B":
+        stacked = len(overlay_report()["stacked"])
+    identified = bool(object_views.get("views")) or book in {"A", "U", "SFE", "DA"}
+    return {
+        "object": object_views.get("shape") or f"book {book}",
+        "identified": identified,
+        "why_identified": (
+            "Views of one shape plus leftover holes. Holes do not make it a "
+            "different object. Track B is the worked example of this method."
+            if book == "B"
+            else "Named from the catalog. Holes do not make it a different object."
+        ),
+        "views": object_views.get("views") or [],
+        "view_count": object_views.get("view_count") or 0,
+        "stacked_count": stacked,
+        "piece_count": len(pieces),
+        "smooth": False,
+        "smooth_needs": [h["clip_id"] for h in order1],
+        "example_of_method": book == "B",
+    }
+
+
+def method_report() -> dict[str, Any]:
+    pieces = rudimentary_pieces()
+    views = views_of_same_object()
+    by_book = {
+        book: {
+            "anatomy": _book_anatomy(book, pieces, views),
+            "leftover": leftover_holes(book=book),
+            "focus_hole": BOOK_FOCUS[book],
+        }
+        for book in ("B", "Q", "A", "U", "SFE")
+    }
+    return {
+        "title": "Scan — general anatomy. Track B is a worked example.",
+        "mode": "method",
+        "not_a_proof": True,
+        "book": "DA",
+        "worked_example": "B",
+        "steps": list(METHOD_STEPS),
+        "objects": views,
+        "books": by_book,
+        "pieces": pieces,
+        "think_tank": consult("method"),
+        "counts": {
+            "pieces": len(pieces),
+            "views": len(views),
+            "books": len(by_book),
+            "fills_found": 0,
+        },
+        "endpoint": (
+            "The method is: views → pieces → leftover holes → match. "
+            "B is one object you already started. Q, A, U, SFE use the same machine."
+        ),
+        "next": (
+            "python -m domain_architect --scan B   # worked example\n"
+            "  python -m domain_architect --scan Q   # same method, other book"
+        ),
+    }
+
+
 def scan_report(target: str = "B") -> dict[str, Any]:
     key = target.strip().upper()
+    if key in {"ANY", "METHOD", "GENERAL", "ALL", "SCAN", "ANATOMY", "EXAMPLE"}:
+        return method_report()
     if key in {"GAP-T3", "T3", "WELD", "CLIP-T3-WELD"}:
         hole_id = "CLIP-T3-WELD"
         book = "B"
     elif key in HOLE_SPEC:
         hole_id = key
         book = str(HOLE_SPEC[key]["book"])
-    elif key in {"B", "NS", "TRACKB", "NAVIERSTOKES", "NAVIER-STOKES", "ANATOMY", "SCAN"}:
+    elif key in {"B", "NS", "TRACKB", "NAVIERSTOKES", "NAVIER-STOKES"}:
         hole_id = "CLIP-T3-WELD"
         book = "B"
+    elif key in BOOK_FOCUS:
+        hole_id = BOOK_FOCUS[key]
+        book = "SFE" if key == "DA" else key
     else:
         return {
             "error": (
-                "Scan is wired for Track B holes "
-                "(B, GAP-T3, CLIP-T3-WELD, …). Other books stay unglued."
+                "Scan is the general anatomy machine. "
+                "Try --scan, --scan B (worked example), --scan Q, --scan A, --scan U."
             )
         }
 
-    overlay = overlay_report()
     pieces = rudimentary_pieces()
-    holes = leftover_holes(overlay)
     views = views_of_same_object()
-    object_views = next(
-        (g for g in views if g["book"] == "B"),
-        {"views": [], "view_count": 0, "shape": ""},
-    )
+    holes = leftover_holes(book=book)
     first = scan_hole(hole_id, pieces)
-    order1 = [h for h in holes if h["order"] == 1]
-    stacked = overlay["stacked"]
+    ana = _book_anatomy(book, pieces, views)
+    tank_topic = "scan" if book == "B" else "method"
+    example_line = (
+        "Worked example of the general method. Not the only object."
+        if book == "B"
+        else "Same method as --scan. Track B was only the example."
+    )
     return {
-        "title": "Scan — break into pieces, match the hole, do not weld",
+        "title": f"Scan — {book}  ({example_line})",
+        "mode": "book",
         "not_a_proof": True,
         "book": book,
-        "anatomy": {
-            "object": object_views.get("shape") or overlay["composite"]["name"],
-            "identified": True,
-            "why_identified": (
-                "Several views of one shape (PDE, J/X, SND-C) plus the stacked "
-                "layers. Holes do not make it a different object."
-            ),
-            "views": object_views.get("views") or [],
-            "view_count": object_views.get("view_count") or 0,
-            "stacked_count": len(stacked),
-            "piece_count": len(pieces),
-            "smooth": False,
-            "smooth_needs": [h["clip_id"] for h in order1],
-        },
+        "worked_example": book == "B",
+        "anatomy": ana,
         "views_catalog": views,
         "pieces": pieces,
         "leftover": holes,
         "focus": first,
-        "think_tank": consult("scan"),
+        "think_tank": consult(tank_topic),
         "counts": {
             "pieces": len(pieces),
             "views": len(views),
             "holes": len(holes),
-            "order1": len(order1),
+            "order1": len(ana["smooth_needs"]),
             "fills_found": 0,
         },
         "endpoint": (
             "Identified from anatomy. Not smooth: no catalog equation fills "
-            "the order-1 hole. LOOKS_LIKE_FIT (T3a Young) is extra E."
+            "the order-1 hole."
+            + (" LOOKS_LIKE_FIT (T3a Young) is extra E." if book == "B" else "")
         ),
         "next": (
-            "Keep the empty slot in view. Do not drop Q, SFE, gravity, or "
-            "Cosmo into it. A future identity that actually maps traces onto "
-            "I_off would be the fill. Scan again then."
+            "Keep the empty slot in view. Do not drop another book into it "
+            "because the symbols rhyme. --scan with no book shows the method."
         ),
     }
 
@@ -430,6 +618,39 @@ def format_scan(report: dict[str, Any] | None = None) -> str:
     data = report or scan_report("B")
     if data.get("error"):
         return data["error"]
+    if data.get("mode") == "method":
+        lines = [
+            data["title"],
+            "Not a proof. Track B was the example used to show the method.",
+            "",
+            "Method",
+        ]
+        for i, step in enumerate(data["steps"], 1):
+            lines.append(f"  {i}. {step}")
+        lines.append("")
+        lines.append("Objects in the catalog (views of each shape)")
+        for group in data["objects"]:
+            flag = "same object, many views" if group["same_object"] else "one view"
+            lines.append(
+                f"  [{group['book']}] {group['shape']}  "
+                f"({group['view_count']} views, {flag})"
+            )
+            lines.append(f"      {', '.join(group['views'])}")
+        lines.append("")
+        lines.append("Leftover holes by book")
+        for book, block in data["books"].items():
+            needs = ", ".join(block["anatomy"]["smooth_needs"]) or "none"
+            lines.append(f"  {book}: order-1 open: {needs}")
+        tank = data.get("think_tank") or {}
+        if tank.get("notes"):
+            lines.append("")
+            lines.append("Think tank on the method (insight is not a weld)")
+            for note in tank["notes"]:
+                lines.append(f"  {note['name']}: {note['says']}")
+        lines.append("")
+        lines.append("Endpoint: " + data["endpoint"])
+        lines.append("Next: " + data["next"])
+        return "\n".join(lines)
     ana = data["anatomy"]
     focus = data["focus"]
     hole = focus["hole"]

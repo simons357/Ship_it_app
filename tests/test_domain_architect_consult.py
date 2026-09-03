@@ -32,7 +32,12 @@ class TestConsult(unittest.TestCase):
         self.assertNotIn("millennium", text)
         self.assertIn("insight is not a weld", text)
 
-    def test_scan_carries_the_tank(self):
+    def test_method_consult_is_general(self):
+        data = consult("method")
+        names = {row["name"] for row in data["notes"]}
+        self.assertIn("Hermann Weyl", names)
+        self.assertNotIn("Jean Leray", names)
+        self.assertEqual(data["fills_found"], 0)
         tank = scan_report("B")["think_tank"]
         self.assertEqual(tank["fills_found"], 0)
         self.assertGreaterEqual(len(tank["notes"]), 8)

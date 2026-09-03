@@ -43,6 +43,25 @@ class TestScanAnatomy(unittest.TestCase):
         gravity = next(row for row in inv if row["piece"] == "GRV-H001")
         self.assertEqual(gravity["verdict"], "WRONG_OBJECT")
 
+    def test_method_is_not_only_track_b(self):
+        data = scan_report("ANY")
+        self.assertEqual(data["mode"], "method")
+        self.assertEqual(data["worked_example"], "B")
+        self.assertIn("Q", data["books"])
+        self.assertIn("B", data["books"])
+        self.assertIn("CLIP-Q-ZETA", data["books"]["Q"]["anatomy"]["smooth_needs"])
+        text = format_scan(data).lower()
+        self.assertIn("worked example", text)
+        self.assertNotIn("clay", text)
+
+    def test_scan_q_does_not_take_fluids(self):
+        data = scan_report("Q")
+        self.assertEqual(data["book"], "Q")
+        named = {row["piece"]: row for row in data["focus"]["named_matches"]}
+        self.assertEqual(named["NS-B"]["verdict"], "WRONG_OBJECT")
+        self.assertEqual(named["Q6"]["verdict"], "SAME_OBJECT_VIEW")
+        self.assertFalse(data["focus"]["any_fill"])
+
     def test_format_has_no_forbidden_words(self):
         text = format_scan().lower()
         self.assertNotIn("clay", text)

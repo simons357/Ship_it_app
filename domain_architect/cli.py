@@ -52,8 +52,8 @@ def main(argv: list[str] | None = None) -> int:
         "--consult",
         metavar="TOPIC",
         nargs="?",
-        const="scan",
-        help="ask the inner think tank about a live move (scan / anatomy)",
+        const="method",
+        help="ask the inner think tank (method, or B for the worked example)",
     )
     parser.add_argument(
         "--refuse-splice",
@@ -118,8 +118,8 @@ def main(argv: list[str] | None = None) -> int:
         "--scan",
         metavar="TARGET",
         nargs="?",
-        const="B",
-        help="break into rudimentary pieces and match leftover holes (B / GAP-T3)",
+        const="ANY",
+        help="anatomy machine: leftover holes vs pieces (no book = method; B = worked example)",
     )
     parser.add_argument(
         "--see",

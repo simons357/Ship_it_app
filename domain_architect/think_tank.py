@@ -76,6 +76,72 @@ MEMBERS: Final[tuple[dict[str, str], ...]] = (
 
 # Frozen notes on the live scan. Not a vote. Not a proof.
 INSIGHTS: Final[dict[str, tuple[dict[str, str], ...]]] = {
+    "method": (
+        {
+            "name": "Hermann Weyl",
+            "on": "the method",
+            "says": (
+                "The object is a form. Charts are textures. Many views of one "
+                "form are still one object. Track B was an example of this, "
+                "not the only object."
+            ),
+            "fills_gap": "no",
+        },
+        {
+            "name": "Claude Shannon",
+            "on": "views",
+            "says": (
+                "Many encodings of one source are still one source. An encoding "
+                "from another book is a different source."
+            ),
+            "fills_gap": "no",
+        },
+        {
+            "name": "Jacques Hadamard",
+            "on": "LOOKS_LIKE_FIT",
+            "says": (
+                "A neighboring problem is a different problem. Extra structure "
+                "is not the original object, whatever the object was."
+            ),
+            "fills_gap": "no",
+        },
+        {
+            "name": "Hassler Whitney",
+            "on": "filling the other side",
+            "says": (
+                "Extension off a set is extra structure. That rule does not "
+                "care which book the set came from."
+            ),
+            "fills_gap": "no",
+        },
+        {
+            "name": "Richard Hamming",
+            "on": "empty scan",
+            "says": (
+                "You cannot test-in a missing identity. An empty catalog after "
+                "a full scan is the honest result on any object."
+            ),
+            "fills_gap": "no",
+        },
+        {
+            "name": "Edsger Dijkstra",
+            "on": "unglued books",
+            "says": (
+                "The method is the same. The books stay unglued. Do not leak "
+                "one object into another's hole because a letter matches."
+            ),
+            "fills_gap": "no",
+        },
+        {
+            "name": "David Parnas",
+            "on": "Cosmo",
+            "says": (
+                "Information hiding: visualization must not compile, for any "
+                "book."
+            ),
+            "fills_gap": "no",
+        },
+    ),
     "scan": (
         {
             "name": "Jean Leray",
@@ -177,17 +243,21 @@ def _norm_topic(token: str) -> str:
     key = token.strip().upper().replace(" ", "")
     aliases = {
         "SCAN": "scan",
-        "ANATOMY": "scan",
+        "ANATOMY": "method",
+        "METHOD": "method",
+        "ANY": "method",
+        "GENERAL": "method",
         "HOLE": "scan",
         "GAPT3": "scan",
         "B": "scan",
         "NS": "scan",
         "TRACKB": "scan",
-        "THINK": "scan",
-        "TANK": "scan",
-        "CONSULT": "scan",
+        "Q": "method",
+        "THINK": "method",
+        "TANK": "method",
+        "CONSULT": "method",
     }
-    return aliases.get(key, "scan")
+    return aliases.get(key, "method")
 
 
 def consult(topic: str = "scan") -> dict[str, Any]:
@@ -206,7 +276,7 @@ def consult(topic: str = "scan") -> dict[str, Any]:
             "These people know this field. Their notes constrain the scan. "
             "None of them fill the empty slot by sitting on the bench."
         ),
-        "next": "python -m domain_architect --scan B",
+        "next": "python -m domain_architect --scan",
     }
 
 
