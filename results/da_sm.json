@@ -1,0 +1,183 @@
+{
+  "meta": {
+    "object": "Standard Model Lagrangian (expanded poster form)",
+    "forget_cosmo_16": true,
+    "slot": "U",
+    "not_a_unifier": true,
+    "does_not_touch_ABQ": true,
+    "L_consumes_couplings": true
+  },
+  "blocks": [
+    {
+      "name": "L1_qcd_yang_mills",
+      "kind": "gauge",
+      "verdict": "pass",
+      "why": "SU(3)_c field strength + gluon self-interaction. This is a working Yang\u2013Mills piece. g_s is an input.",
+      "consumes": [
+        "g_s"
+      ],
+      "produces": []
+    },
+    {
+      "name": "L2_electroweak_higgs",
+      "kind": "gauge",
+      "verdict": "pass",
+      "why": "SU(2)_L \u00d7 U(1)_Y + Higgs. After SSB, W/Z masses and the Weinberg rotation. g, g', v, \u03bb are inputs.",
+      "consumes": [
+        "g",
+        "g_prime",
+        "v",
+        "lambda_h"
+      ],
+      "produces": []
+    },
+    {
+      "name": "L3_fermion_gauge",
+      "kind": "gauge",
+      "verdict": "pass",
+      "why": "Quarks and leptons couple to W, Z, A. Three generations and CKM are copied in, not derived.",
+      "consumes": [
+        "CKM",
+        "three_generations"
+      ],
+      "produces": []
+    },
+    {
+      "name": "L4_yukawa",
+      "kind": "gauge",
+      "verdict": "pass",
+      "why": "Higgs\u2013fermion couplings write masses as m = y v / \u221a2. The y's are inputs. Koide is not in this term.",
+      "consumes": [
+        "yukawas"
+      ],
+      "produces": []
+    },
+    {
+      "name": "L5_ghosts",
+      "kind": "gauge_fix",
+      "verdict": "pass",
+      "why": "Faddeev\u2013Popov ghosts. Bookkeeping for the path integral. Not a physical force.",
+      "consumes": [
+        "gauge_fix"
+      ],
+      "produces": []
+    }
+  ],
+  "isomorphisms": [
+    {
+      "name": "SU2_iso_Spin3",
+      "kind": "iso",
+      "verdict": "pass",
+      "why": "SU(2) \u2245 Spin(3) \u2245 Sp(1) as Lie groups. Does not output a coupling."
+    },
+    {
+      "name": "U1_iso_SO2",
+      "kind": "iso",
+      "verdict": "pass",
+      "why": "U(1) \u2245 SO(2) \u2245 S\u00b9. Does not output \u03b1."
+    },
+    {
+      "name": "weinberg_rotation",
+      "kind": "iso",
+      "verdict": "pass",
+      "why": "(Z, A)^T = R(\u03b8_W) (W\u00b3, B)^T. A real SO(2) on field space. \u03b8_W is an input, not an output."
+    },
+    {
+      "name": "goldstone_eaten",
+      "kind": "iso",
+      "verdict": "pass",
+      "why": "Three Goldstones \u2245 longitudinal W\u00b1, Z (equivalence theorem). Degrees of freedom, not a number."
+    },
+    {
+      "name": "U3xU2xU1_is_cosmo_16",
+      "kind": "iso",
+      "verdict": "fail",
+      "why": "Generator-count \u2260 Cosmo 16 \u2260 nature leftovers. A dimension count is P1, not F."
+    },
+    {
+      "name": "gluon_cubic_is_NS",
+      "kind": "iso",
+      "verdict": "fail",
+      "why": "f^{abc} A A \u2202A looks like convection. Different PDE, different manifold, no map onto \u03c9\u00b7S\u03c9."
+    },
+    {
+      "name": "yukawa_is_koide",
+      "kind": "iso",
+      "verdict": "fail",
+      "why": "Yukawas are independent inputs. Koide is a 1981 mass-ratio, not a term in L4."
+    },
+    {
+      "name": "harmonic_phenotype",
+      "kind": "iso",
+      "verdict": "fail",
+      "why": "Calling L a harmonic phenotype does not write F and does not move Track B."
+    }
+  ],
+  "missing": [
+    {
+      "name": "gravity_G",
+      "kind": "missing",
+      "verdict": "fail",
+      "why": "G_N is not a field in this Lagrangian."
+    },
+    {
+      "name": "cosmological_constant",
+      "kind": "missing",
+      "verdict": "fail",
+      "why": "\u039b is not a term in this Lagrangian."
+    },
+    {
+      "name": "neutrino_masses",
+      "kind": "missing",
+      "verdict": "open",
+      "why": "Minimal poster SM has none. Data need them or a bound."
+    },
+    {
+      "name": "theta_qcd",
+      "kind": "missing",
+      "verdict": "open",
+      "why": "Usually omitted on the poster. Strong-CP leftover."
+    }
+  ],
+  "consumes": [
+    "g_s",
+    "g",
+    "g_prime",
+    "v",
+    "lambda_h",
+    "CKM",
+    "three_generations",
+    "yukawas",
+    "gauge_fix"
+  ],
+  "produces": [],
+  "realized_equation": {
+    "name": "Einstein_plus_T_SM",
+    "equation": "G_\u03bc\u03bd + \u039b g_\u03bc\u03bd = 8\u03c0 G T_\u03bc\u03bd[SM]",
+    "action": "S = S_EH[g] + \u222b \u221a\u2212g L_SM(g, \u03c8, A, H)",
+    "left": "geometry (Einstein + \u039b)",
+    "right": "stress-energy built from this Lagrangian",
+    "both_sides": true,
+    "uses_the_poster": true,
+    "produces_couplings": false,
+    "gauge3": "fail",
+    "nature4": "fail",
+    "working_couple": "pass",
+    "why": "This is the equation with an equals sign that actually uses L_SM. T_\u03bc\u03bd is the Hilbert / Noether stress from blocks 1\u20134. The couple works (equivalence). It does not output g_s, \u03b8_W, G, or \u039b."
+  },
+  "gauge3": "fail",
+  "nature4": "fail",
+  "collapsed": false,
+  "how_far": [
+    "started over from L_SM, not the Cosmo 16",
+    "five blocks are a working QFT (pass as dynamics, not as F)",
+    "real isos: SU(2)\u2245Spin(3), U(1)\u2245SO(2), Weinberg rotation, Goldstones eaten",
+    "fake isos failed: generator-count=16, gluon cubic=NS, Yukawa=Koide, harmonic phenotype",
+    "L consumes g_s, g, g', v, \u03bb, Yukawas, CKM; produces none of them",
+    "G and \u039b are not in the poster (fail as nature4 leftovers)",
+    "realized two-sided equation is G_\u03bc\u03bd+\u039bg_\u03bc\u03bd=8\u03c0G T_\u03bc\u03bd[SM]",
+    "that couple already passed as working (gq); it is not a producing-map",
+    "Track A/B/Q untouched"
+  ],
+  "next_da_move": "Keep the Einstein+T_SM couple. Do not hunt F inside L_SM \u2014 the couplings already went in. Nature4 still needs G and \u039b as outputs of some other map. Fluids stay on Track B."
+}
