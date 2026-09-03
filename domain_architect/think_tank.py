@@ -325,6 +325,17 @@ INSIGHTS: Final[dict[str, tuple[dict[str, str], ...]]] = {
             "fills_gap": "no",
         },
         {
+            "name": "Hassler Whitney",
+            "on": "the floor",
+            "says": (
+                "A missing foundation is extra structure if you invent it. "
+                "Reconstruct from the interior rules you already have. "
+                "Even-reflect, Cosmo, and a numeric floor from another book "
+                "are not this object's floor."
+            ),
+            "fills_gap": "no",
+        },
+        {
             "name": "Jean Leray",
             "on": "the goal",
             "says": (
@@ -376,6 +387,11 @@ def _norm_topic(token: str) -> str:
         "HILL": "jigsaw",
         "PARTHENON": "jigsaw",
         "GOAL": "jigsaw",
+        "RELATIONS": "jigsaw",
+        "RECONSTRUCT": "jigsaw",
+        "FLOOR": "jigsaw",
+        "VISCOSITY": "jigsaw",
+        "VISC": "jigsaw",
     }
     return aliases.get(key, "method")
 

@@ -274,8 +274,10 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
             "are Parthenon: still a building, not a hill. Finest detail is "
             "not required. You are over the goal when you can name the "
             "object and say how energy moves through the snapped pieces. "
-            "That is identification, not smoothness. Assembler is "
-            "constraints, not a neural net."
+            "Reconstruct from known interior rules (energy, viscosity, "
+            "strain, domain). No outside. No invented floor. That is "
+            "identification, not smoothness. Assembler is constraints, "
+            "not a neural net."
         ),
         "command": "python -m domain_architect --jigsaw B",
         "do_not": "Let an ML joiner weld Q or Cosmo onto B, or treat over-the-goal as a filled walk.",

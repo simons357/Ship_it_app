@@ -49,6 +49,7 @@ class TestSeeDesk(unittest.TestCase):
         self.assertTrue(dest.exists())
         self.assertTrue(dest.with_name("see-overlay.svg").exists())
         self.assertTrue(dest.with_name("see-jigsaw.svg").exists())
+        self.assertTrue(dest.with_name("see-relations.svg").exists())
 
 
 class TestSeeCli(unittest.TestCase):

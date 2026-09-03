@@ -15,7 +15,7 @@ from domain_architect.jigsaw import (
     jigsaw_report,
 )
 from domain_architect.think_tank import consult
-from domain_architect.visual import DEFAULT_STATE, svg_jigsaw
+from domain_architect.visual import DEFAULT_STATE, svg_jigsaw, svg_relations
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -94,7 +94,30 @@ class TestJigsaw(unittest.TestCase):
             ids = set(fit["pieces"])
             self.assertFalse({"Q6", "L1-TORUS"} <= ids)
 
-    def test_think_tank_does_not_weld(self):
+    def test_reconstruct_from_known_rules_needs_no_floor(self):
+        data = jigsaw_report("B")
+        rec = data["reconstruct"]
+        self.assertFalse(rec["outside"])
+        self.assertFalse(rec["floor"])
+        kinds = set(rec["kinds"])
+        self.assertIn("energy", kinds)
+        self.assertIn("viscosity", kinds)
+        visc = [r for r in rec["known"] if r["kind"] == "viscosity"]
+        self.assertTrue(visc)
+        self.assertIn("damping", visc[0]["rule"])
+        self.assertIn("1/r", visc[0]["short"])
+        no_x = next(r for r in rec["does_not"] if r["clip_id"] == "CLIP-B6-SPIKE")
+        self.assertIn("does not bound", no_x["rule"].lower())
+        text = format_jigsaw(data).lower()
+        self.assertIn("floor=false", text)
+        self.assertIn("outside=false", text)
+        self.assertIn("reconstruct from known rules", text)
+        svg = svg_relations(data)
+        self.assertIn("No floor", svg)
+        self.assertIn("viscosity", svg.lower())
+        self.assertIn("1/r", svg)
+        self.assertIn("does not", svg.lower())
+        self.assertNotIn("clay", svg.lower())
         tank = consult("jigsaw")
         self.assertEqual(tank["topic"], "jigsaw")
         self.assertEqual(tank["fills_found"], 0)

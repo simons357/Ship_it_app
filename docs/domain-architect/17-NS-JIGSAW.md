@@ -38,6 +38,22 @@ The picture is `see-jigsaw.svg`. CosmoEvolution is not a piece.
 
 ![Jigsaw building from interlocking pieces](see-jigsaw.svg)
 
+## Reconstruct from known rules
+
+You do not need the outside. You do not need a missing floor. Take every
+rule you already have — energy flow, viscosity \(1/r^2\), traceless
+strain, the torus as the room — draw the relationships, and reconstruct
+from that interior wiring.
+
+![Known interior rules](see-relations.svg)
+
+Green arrows are energy. Blue is viscosity. Dashed red is a known
+**does not** (seeing \(E\) does not bound \(X_\infty\); \(1/r^2\) is not
+domination of \(I_{\mathrm{tube}}\); even-reflect is not the outside).
+
+A Track Q numeric floor is another book. Do not use it as the foundation
+of this building.
+
 ## Pieces and tabs
 
 Each overlay layer is a piece. The tab is the chart it lives on

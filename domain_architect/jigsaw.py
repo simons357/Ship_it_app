@@ -42,40 +42,88 @@ ENERGY_PATH_B: Final[tuple[str, ...]] = (
 
 RELATIONS_B: Final[tuple[dict[str, str], ...]] = (
     {
-        "from": "L12-ENERGY",
-        "to": "L3-BERNSTEIN",
-        "rule": "kinetic pile E fills shell enstrophy X_j = 2^{2j} E_j",
-        "kind": "energy",
-    },
-    {
-        "from": "L3-BERNSTEIN",
-        "to": "L5-RING",
-        "rule": "3-shell Bernstein lives on the concentrated ring E_c",
-        "kind": "energy",
-    },
-    {
-        "from": "L5-RING",
-        "to": "L6-STRAIN",
-        "rule": "traceless strain: two eigenvalues fill the third",
-        "kind": "geometry",
-    },
-    {
-        "from": "L7-HARDY",
-        "to": "L8-ANGULAR",
-        "rule": "inside the same tube, (Δu)_θ = Δu_θ − u_θ/r² is extra damping",
-        "kind": "viscosity",
-    },
-    {
         "from": "L1-TORUS",
         "to": "L12-ENERGY",
         "rule": "the room everything sits in: T^3, div-free, Leray projector",
         "kind": "domain",
+        "short": "room",
     },
     {
         "from": "L2-FLUX",
         "to": "L12-ENERGY",
         "rule": "low self-flux into one dyadic block vanishes",
         "kind": "energy",
+        "short": "no leak",
+    },
+    {
+        "from": "L12-ENERGY",
+        "to": "L3-BERNSTEIN",
+        "rule": "kinetic pile E fills shell enstrophy X_j = 2^{2j} E_j",
+        "kind": "energy",
+        "short": "E fills X_j",
+    },
+    {
+        "from": "L4-COVER",
+        "to": "L3-BERNSTEIN",
+        "rule": "CONC σ≥1/2 and SPREAD σ≤1/2 cover (0,1]; occupation time is not in this rule",
+        "kind": "frequency",
+        "short": "cover",
+    },
+    {
+        "from": "L3-BERNSTEIN",
+        "to": "L5-RING",
+        "rule": "3-shell Bernstein lives on the concentrated ring E_c",
+        "kind": "energy",
+        "short": "on E_c",
+    },
+    {
+        "from": "L5-RING",
+        "to": "L6-STRAIN",
+        "rule": "traceless strain: two eigenvalues fill the third",
+        "kind": "geometry",
+        "short": "λ+λ+λ=0",
+    },
+    {
+        "from": "L7-HARDY",
+        "to": "L12-ENERGY",
+        "rule": "localized Hardy inside the tube; wall 2h(δ)² is identified",
+        "kind": "energy",
+        "short": "Hardy",
+    },
+    {
+        "from": "L7-HARDY",
+        "to": "L8-ANGULAR",
+        "rule": "inside the same tube, (Δu)_θ = Δu_θ − u_θ/r² is extra damping",
+        "kind": "viscosity",
+        "short": "1/r² visc",
+    },
+)
+
+# Honest negatives: known rules that do *not* hold. Drawn dashed.
+DOES_NOT_B: Final[tuple[dict[str, str], ...]] = (
+    {
+        "from": "L12-ENERGY",
+        "to": "X_infty",
+        "rule": "seeing E does not bound X in L^∞",
+        "kind": "does_not",
+        "short": "E ↛ X_∞",
+        "clip_id": "CLIP-B6-SPIKE",
+    },
+    {
+        "from": "L8-ANGULAR",
+        "to": "I_tube",
+        "rule": "the 1/r² identity is not domination of I_tube",
+        "kind": "does_not",
+        "short": "visc ↛ I_t",
+        "clip_id": "CLIP-B5b-VS-VISC",
+    },
+    {
+        "from": "L9-YOUNG",
+        "to": "L1-TORUS",
+        "rule": "even-reflect is not the outside of T^3",
+        "kind": "does_not",
+        "short": "play ≠ outside",
+        "clip_id": "CLIP-T3-OUTER",
     },
 )
 
@@ -272,6 +320,7 @@ def jigsaw_report(target: str = "B") -> dict[str, Any]:
     if book == "B":
         relations = [dict(row) for row in RELATIONS_B]
         energy_path = list(ENERGY_PATH_B)
+        does_not = [dict(row) for row in DOES_NOT_B]
     else:
         relations = [
             {
@@ -279,9 +328,33 @@ def jigsaw_report(target: str = "B") -> dict[str, Any]:
                 "to": "LAMBDA-MIN",
                 "rule": "same inverse-GCD object, matrix chart",
                 "kind": "arithmetic",
+                "short": "same object",
             }
         ]
         energy_path = []
+        does_not = [
+            {
+                "from": "Q6",
+                "to": "zeta",
+                "rule": "no operator→ζ lemma",
+                "kind": "does_not",
+                "short": "Q ↛ ζ",
+                "clip_id": "CLIP-Q-ZETA",
+            }
+        ]
+    reconstruct = {
+        "from": "known interior rules among snapped pieces",
+        "outside": False,
+        "floor": False,
+        "floor_note": (
+            "A missing foundation is not required to reconstruct. "
+            "Do not invent one (even-reflect, Cosmo, Φ, or a Track Q "
+            "numeric floor). Wire the pieces you already have."
+        ),
+        "kinds": sorted({row["kind"] for row in relations}),
+        "known": relations,
+        "does_not": does_not,
+    }
     overlay = overlay_report() if book == "B" else {"composite": {"is_complete": False}}
     mixed = assemble_pieces(pieces + (_q_pieces() if book == "B" else [_piece(layer) for layer in LAYERS]))
     goal = goal_line(building, energy_path, relations)
@@ -295,6 +368,7 @@ def jigsaw_report(target: str = "B") -> dict[str, Any]:
         "holes": holes,
         "relations": relations,
         "energy_path": energy_path,
+        "reconstruct": reconstruct,
         "goal": goal,
         "building": building,
         "smooth": False,
@@ -323,9 +397,9 @@ def jigsaw_report(target: str = "B") -> dict[str, Any]:
         ),
         "think_tank": consult("jigsaw"),
         "next": (
-            "Keep the building. You are over the goal: named, and how energy "
-            "moves through the snapped pieces. Park order-2/3. Do not fill "
-            "order-1 with Q or Cosmo. Over the goal is not smoothness."
+            "Keep the building. Reconstruct from known interior rules "
+            "(energy, viscosity, strain, domain). No outside. No floor. "
+            "Do not fill order-1 with Q or Cosmo. Over the goal is not smoothness."
         ),
     }
 
@@ -376,12 +450,22 @@ def format_jigsaw(report: dict[str, Any] | None = None) -> str:
         lines.append("")
         lines.append("Energy path (how it works, not finest detail)")
         lines.append("  " + " → ".join(data["energy_path"]))
-    if data.get("relations"):
+    rec = data.get("reconstruct") or {}
+    if rec:
         lines.append("")
-        lines.append("Known relations among snapped pieces")
-        for rel in data["relations"]:
+        lines.append(
+            "Reconstruct from known rules  "
+            f"outside={str(rec.get('outside')).lower()}  "
+            f"floor={str(rec.get('floor')).lower()}"
+        )
+        lines.append("  " + rec.get("floor_note", ""))
+        for rel in rec.get("known") or data.get("relations") or []:
             lines.append(
                 f"  {rel['from']:14} → {rel['to']:14}  [{rel['kind']}]  {rel['rule']}"
+            )
+        for rel in rec.get("does_not") or []:
+            lines.append(
+                f"  DOES NOT  {rel['from']:14} ↛ {rel['to']:14}  {rel['rule']}"
             )
     lines.append("")
     lines.append("Holes (damage, not a different object)")

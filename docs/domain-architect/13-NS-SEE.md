@@ -20,6 +20,13 @@ the wrong object.
 
 ![Jigsaw building](see-jigsaw.svg)
 
+## Relations
+
+Known rules among the pieces you already have. Energy, viscosity,
+strain, domain. No outside. No floor.
+
+![Interior wiring](see-relations.svg)
+
 ## Cylinder
 
 The wall is a cut. Green disk = Hardy, done. Gold ring = the wall.

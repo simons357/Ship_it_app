@@ -32,6 +32,7 @@ HOLE = "#c44536"
 REFUSE = "#6b6570"
 INK = "#1c1917"
 PAPER = "#f6f1e7"
+VISC = "#215a78"
 FOCUS_LINE: Final[dict[str, str]] = {
     "tube": "Live math: tube estimate — Hardy, wall, I_tube",
     "gap": "Live math: stop at the wall — missing piece in view",
@@ -509,6 +510,111 @@ def svg_jigsaw(report: dict[str, Any] | None = None) -> str:
 </svg>'''
 
 
+def _rel_color(kind: str) -> str:
+    return {
+        "energy": READY,
+        "viscosity": VISC,
+        "geometry": INK,
+        "domain": PLAY,
+        "frequency": PLAY,
+        "arithmetic": INK,
+        "does_not": OPEN,
+    }.get(kind, INK)
+
+
+def _rel_node(x: float, y: float, glyph: str, label: str, fill: str = READY) -> str:
+    return (
+        f'<rect x="{x - 38:.1f}" y="{y - 18:.1f}" width="76" height="36" rx="8" '
+        f'fill="#d7efe9" stroke="{fill}" stroke-width="2"/>'
+        f'<text x="{x:.1f}" y="{y - 2:.1f}" text-anchor="middle" '
+        f'font-family="Georgia, serif" font-size="11" fill="{INK}">{escape(glyph)}</text>'
+        f'<text x="{x:.1f}" y="{y + 12:.1f}" text-anchor="middle" '
+        f'font-family="Georgia, serif" font-size="9" fill="{fill}">{escape(label)}</text>'
+    )
+
+
+def _rel_edge(
+    x1: float, y1: float, x2: float, y2: float, color: str, label: str, dashed: bool = False
+) -> str:
+    dash = ' stroke-dasharray="6 4"' if dashed else ""
+    mx, my = (x1 + x2) / 2.0, (y1 + y2) / 2.0
+    return (
+        f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" '
+        f'stroke="{color}" stroke-width="2"{dash}/>'
+        f'<text x="{mx:.1f}" y="{my - 5:.1f}" text-anchor="middle" '
+        f'font-family="Georgia, serif" font-size="9" fill="{color}">{escape(label)}</text>'
+    )
+
+
+def svg_relations(report: dict[str, Any] | None = None) -> str:
+    """Known interior rules as a wiring diagram. No outside. No floor."""
+    data = report or jigsaw_report("B")
+    rec = data.get("reconstruct") or {}
+    nodes: dict[str, tuple[float, float, str, str]] = {
+        "L1-TORUS": (250.0, 48.0, "⊞ T^3", "room"),
+        "L12-ENERGY": (70.0, 130.0, "[E]", "tank"),
+        "L3-BERNSTEIN": (250.0, 130.0, "E→X", "Bernstein"),
+        "L4-COVER": (430.0, 130.0, "σ|σ̄", "cover"),
+        "L2-FLUX": (70.0, 220.0, "∮=0", "flux"),
+        "L5-RING": (250.0, 220.0, "E_c", "ring"),
+        "L6-STRAIN": (430.0, 220.0, "λ+λ+λ=0", "strain"),
+        "L7-HARDY": (160.0, 310.0, "═δ═", "Hardy"),
+        "L8-ANGULAR": (340.0, 310.0, "1/r²", "visc"),
+        "X_infty": (70.0, 48.0, "X_∞", "not from E"),
+        "I_tube": (430.0, 310.0, "I_t", "open"),
+        "L9-YOUNG": (430.0, 48.0, ")δ(", "play"),
+    }
+    kind_fill = {
+        "L1-TORUS": PLAY,
+        "L12-ENERGY": READY,
+        "L3-BERNSTEIN": READY,
+        "L4-COVER": PLAY,
+        "L2-FLUX": READY,
+        "L5-RING": READY,
+        "L6-STRAIN": INK,
+        "L7-HARDY": VISC,
+        "L8-ANGULAR": VISC,
+        "X_infty": OPEN,
+        "I_tube": OPEN,
+        "L9-YOUNG": PLAY,
+    }
+    drawn = [
+        _rel_node(x, y, glyph, label, kind_fill.get(pid, READY))
+        for pid, (x, y, glyph, label) in nodes.items()
+    ]
+    edges: list[str] = []
+    for rel in rec.get("known") or []:
+        a, b = rel["from"], rel["to"]
+        if a not in nodes or b not in nodes:
+            continue
+        x1, y1 = nodes[a][0], nodes[a][1]
+        x2, y2 = nodes[b][0], nodes[b][1]
+        edges.append(
+            _rel_edge(x1, y1, x2, y2, _rel_color(rel["kind"]), rel.get("short") or rel["kind"])
+        )
+    for rel in rec.get("does_not") or []:
+        a, b = rel["from"], rel["to"]
+        if a not in nodes or b not in nodes:
+            continue
+        x1, y1 = nodes[a][0], nodes[a][1]
+        x2, y2 = nodes[b][0], nodes[b][1]
+        edges.append(
+            _rel_edge(
+                x1, y1, x2, y2, OPEN, rel.get("short") or "no", dashed=True
+            )
+        )
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 400" role="img" aria-label="Known interior rules, reconstructed with no floor">
+  <rect width="520" height="400" fill="{PAPER}"/>
+  <text x="16" y="22" font-family="Georgia, serif" font-size="15" fill="{INK}">Reconstruct from known rules. No outside. No floor.</text>
+  <text x="16" y="40" font-family="Georgia, serif" font-size="11" fill="{READY}">green = energy   </text>
+  <text x="150" y="40" font-family="Georgia, serif" font-size="11" fill="{VISC}">blue = viscosity</text>
+  <text x="280" y="40" font-family="Georgia, serif" font-size="11" fill="{OPEN}">dashed red = does not</text>
+  {"".join(edges)}
+  {"".join(drawn)}
+  <text x="16" y="388" font-family="Georgia, serif" font-size="11" fill="{INK}">Interior wiring of pieces you already have. A missing floor is not required. Track Q floor is another book.</text>
+</svg>'''
+
+
 def render_html(state: dict[str, Any] | None = None) -> str:
     overlay = overlay_report()
     gap = gap_report("B")
@@ -575,6 +681,16 @@ def render_html(state: dict[str, Any] | None = None) -> str:
         Verdict {escape(str(jigsaw["building"]["verdict"]))} not {escape(str(jigsaw["building"]["not"]))}.
         Smooth? {str(jigsaw["smooth"]).lower()}.
         Energy path: {escape(" → ".join(jigsaw.get("energy_path") or []))}.
+      </details>
+    </figure>
+    <figure>
+      {svg_relations(jigsaw)}
+      <figcaption>Known rules among the pieces you already have. Green energy, blue viscosity, dashed red = does not. No outside. No floor. A Track Q numeric floor is another book.</figcaption>
+      <details><summary>Math</summary>
+        Outside? {str((jigsaw.get("reconstruct") or {}).get("outside")).lower()}.
+        Floor? {str((jigsaw.get("reconstruct") or {}).get("floor")).lower()}.
+        Kinds: {escape(", ".join((jigsaw.get("reconstruct") or {}).get("kinds") or []))}.
+        {escape((jigsaw.get("reconstruct") or {}).get("floor_note") or "")}
       </details>
     </figure>
     <figure>
@@ -653,4 +769,5 @@ def write_see(path: str | Path | None = None) -> Path:
     dest.with_name("see-scan.svg").write_text(svg_scan(), encoding="utf-8")
     dest.with_name("see-shell.svg").write_text(svg_shell(), encoding="utf-8")
     dest.with_name("see-jigsaw.svg").write_text(svg_jigsaw(), encoding="utf-8")
+    dest.with_name("see-relations.svg").write_text(svg_relations(), encoding="utf-8")
     return dest
