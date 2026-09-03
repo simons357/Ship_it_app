@@ -23,6 +23,7 @@ from .schema import (
 from .audit import audit_expression
 from .clip_splice import clip_splice
 from .desk import compare_shape, proceed_report, refuse_splice
+from .ns_chain import ns_chain
 from .report import AuditReport
 
 __all__ = [
@@ -36,6 +37,7 @@ __all__ = [
     "audit_expression",
     "clip_splice",
     "compare_shape",
+    "ns_chain",
     "proceed_report",
     "refuse_splice",
 ]

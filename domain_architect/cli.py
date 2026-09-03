@@ -9,6 +9,7 @@ import sys
 from .audit import audit_expression
 from .clip_splice import clip_splice, format_clip_splice
 from .desk import compare_shape, format_proceed, proceed_report, refuse_splice
+from .ns_chain import format_ns_chain, ns_chain
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 
@@ -46,6 +47,11 @@ def main(argv: list[str] | None = None) -> int:
         nargs=2,
         metavar=("LEFT", "RIGHT"),
         help="clip excess terms, ID the remainder, and measure it",
+    )
+    parser.add_argument(
+        "--chain",
+        metavar="BOOK",
+        help="print a proof chain as shapes (B or NS)",
     )
     args = parser.parse_args(argv)
 
@@ -91,6 +97,22 @@ def main(argv: list[str] | None = None) -> int:
             print(format_clip_splice(clipped))
         return 0
 
+    if args.chain:
+        book = args.chain.strip().upper()
+        if book not in {"B", "NS", "TRACKB", "NAVIERSTOKES", "NAVIER-STOKES"}:
+            print(
+                "Only Track B / NS is wired. RH is a different book.",
+                file=sys.stderr,
+            )
+            return 2
+        payload = ns_chain()
+        if args.json:
+            json.dump(payload, sys.stdout, indent=2)
+            sys.stdout.write("\n")
+        else:
+            print(format_ns_chain(payload))
+        return 0
+
     if args.registry:
         registry = EquationRegistry.load_default()
         payload = registry.export()
@@ -112,7 +134,7 @@ def main(argv: list[str] | None = None) -> int:
     if not args.expression:
         parser.error(
             "expression is required unless --registry, --proceed, "
-            "--refuse-splice, --shape-compare, or --clip is set"
+            "--refuse-splice, --shape-compare, --clip, or --chain is set"
         )
 
     report = audit_expression(args.expression)

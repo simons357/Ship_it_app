@@ -34,6 +34,17 @@ python -m domain_architect --clip \
 The second clip is the Q1 extra term: a `DYNAMICS_TERM` with its own
 `CLIP-…` ID. Independently specifiable. Not zero. Not \(A\Rightarrow B\).
 
+## Track B chain (shape per step)
+
+```bash
+python -m domain_architect --chain B
+```
+
+Each lemma is shown as: statement, what it looks like, verdict, **shape
+delta**, and a clip ID if something was cut off. Passes add texture.
+Failures clip fake upgrades. Only a closed bound on \(X=\|\omega\|_2^2\)
+would change the domain shape. That step is still **open**.
+
 ## Shape first
 
 The object is a **shape**. Notation is a **texture**. Same shape, different

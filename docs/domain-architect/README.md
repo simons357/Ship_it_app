@@ -32,7 +32,7 @@ python -m domain_architect --registry
 python -m domain_architect --proceed
 python -m domain_architect --refuse-splice COSMO B
 python -m domain_architect --shape-compare J/X LAMBDA-MIN
-python -m domain_architect --clip "laplacian Phi = 4 * pi * G * rho" "laplacian Phi = 4 * pi * G * rho + Lambda * Phi"
+python -m domain_architect --chain B
 python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_desk
 ```
 
