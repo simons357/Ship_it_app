@@ -20,6 +20,7 @@ class TestShell(unittest.TestCase):
     def test_identity_shell_is_a_giveaway(self):
         data = shell_report("B")
         self.assertTrue(data["giveaway"]["dead_giveaway"])
+        self.assertTrue(data["intended_move"])
         self.assertFalse(data["giveaway"]["smooth"])
         self.assertIn("NS-B", data["giveaway"]["catalog"])
         self.assertIn("J/X", data["giveaway"]["catalog"])
@@ -29,6 +30,7 @@ class TestShell(unittest.TestCase):
         text = format_shell(data).lower()
         self.assertNotIn("clay", text)
         self.assertIn("dead giveaway", text)
+        self.assertIn("this is the move", text)
 
     def test_q_shell_is_not_fluids(self):
         data = shell_report("Q")

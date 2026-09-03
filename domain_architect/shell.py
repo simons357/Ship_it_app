@@ -142,6 +142,8 @@ def shell_report(target: str = "B") -> dict[str, Any]:
     return {
         "title": "Shell — inside, then outer shape, then the giveaway",
         "not_a_proof": True,
+        "intended_move": True,
+        "move": "inside → identity shell → catalog giveaway",
         "book": book,
         "worked_example": book == "B",
         "inside": {
@@ -184,6 +186,7 @@ def format_shell(report: dict[str, Any] | None = None) -> str:
     give = data["giveaway"]
     lines = [
         data["title"],
+        "This is the move.",
         data["rule"],
         "",
         "Inside",

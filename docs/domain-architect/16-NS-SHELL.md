@@ -1,6 +1,6 @@
 # Shell — inside, outer shape, dead giveaway
 
-**Not a proof.** Look at the interior. Put a shell around it so the
+**This is the move.** Look at the interior. Put a shell around it so the
 object has a readable shape. If that silhouette is already in the
 catalog, it is a **dead giveaway** for something you already know.
 
