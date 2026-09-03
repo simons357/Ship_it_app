@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from da_fingers import LINE, SIXTEEN, TOE_CATEGORIES, run  # noqa: E402
+from da_fingers import GENERAL_FATE_KEYS, LINE, SIXTEEN, TOE_CATEGORIES, run  # noqa: E402
 
 
 class DaFingersTests(unittest.TestCase):
@@ -49,6 +49,20 @@ class DaFingersTests(unittest.TestCase):
         theta = next(c for c in payload["candidates"] if c["name"] == "theta_qcd")
         self.assertEqual(theta["category"], "topological")
         self.assertEqual(SIXTEEN[-1], "R")
+
+    def test_each_candidate_has_the_same_five_general_questions(self):
+        tmp = Path(tempfile.mkdtemp()) / "da_fingers_test.json"
+        payload = run(n=40, seed=1, out=tmp)
+        self.assertEqual(len(payload["candidates"]), 16)
+        for rec in payload["candidates"]:
+            keys = [f["name"] for f in rec["hand"]]
+            self.assertEqual(keys, list(GENERAL_FATE_KEYS), rec["name"])
+            nxt = rec["hand"][4]
+            self.assertEqual(nxt["name"], "next_piece")
+            self.assertTrue(nxt.get("fingers"), rec["name"])
+        r_hand = payload["candidates"][-1]["hand"]
+        self.assertEqual(r_hand[1]["verdict"], "fail")
+        self.assertEqual(r_hand[3]["verdict"], "fail")
 
 
 if __name__ == "__main__":

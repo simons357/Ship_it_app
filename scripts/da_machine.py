@@ -299,6 +299,29 @@ def cmd_fingers() -> int:
     return 0
 
 
+def cmd_fate() -> int:
+    from da_fingers import run as fingers_run
+
+    payload = fingers_run()
+    print("DA 16 candidates. Category, general fate, then smaller pieces.")
+    print("Same five questions on each: kind / nature / score / produce / next.")
+    for rec in payload["candidates"]:
+        print(f"{rec['id']:2d} {rec['name']:<16} {rec['category']:<16} {rec['fate']}")
+        for f in rec.get("hand", []):
+            print(f"    [{f['verdict']}] {f['name']}: {f['why']}")
+    print("how far:")
+    for line in payload["how_far"]:
+        print(" -", line)
+    append_run(
+        "U",
+        "Category and general fate for each of the 16, then DA the smaller pieces",
+        "open",
+        "kind/nature/score/produce/next on all 16; produce fails; R is output; θ is topological",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_how() -> int:
     from da_how import run as how_run
 
@@ -368,6 +391,7 @@ def main() -> int:
     sub.add_parser("cosmos", help="drill the ~16 Cosmos knobs")
     sub.add_parser("sixteen", help="identify 4x4 list, run each, name the 16th")
     sub.add_parser("fingers", help="five-finger DA on the R line, recurse, fate the 16")
+    sub.add_parser("fate", help="category + general fate for each of the 16, then smaller pieces")
     sub.add_parser("how", help="how a typed catalog can say possible and emit X")
     sub.add_parser("flush", help="Hilbert flush of which candidates carry the score")
     c = sub.add_parser("check")
@@ -389,6 +413,8 @@ def main() -> int:
         return cmd_sixteen()
     if args.cmd == "fingers":
         return cmd_fingers()
+    if args.cmd == "fate":
+        return cmd_fate()
     if args.cmd == "how":
         return cmd_how()
     if args.cmd == "flush":

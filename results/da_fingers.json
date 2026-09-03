@@ -1,7 +1,7 @@
 {
   "meta": {
     "line": "R = exp(-1/2 \u03c7\u00b2_ext) \u00b7 exp(-1/2 \u03c7\u00b2_int)",
-    "method": "five-finger DA, recurse twice, then category-fate on the 16",
+    "method": "five-finger DA, then 16 candidate fates, then the same five general questions on each",
     "cosmos_app_list_found": false,
     "not_a_unifier": true,
     "n": 400,
@@ -410,7 +410,73 @@
       "note": "EM coupling; nature, not a producer",
       "delta_lock_R": 0.0006416856719534264,
       "default_contrib": 0.012463724142141742,
-      "equal_width_contrib": 0.0107242243895944
+      "equal_width_contrib": 0.0107242243895944,
+      "hand": [
+        {
+          "name": "kind",
+          "piece": "gauge",
+          "verdict": "pass",
+          "why": "gauge; EM coupling; nature, not a producer"
+        },
+        {
+          "name": "nature",
+          "piece": "must_hit",
+          "verdict": "pass",
+          "why": "cannot drop this and still mean the four forces / leftovers"
+        },
+        {
+          "name": "score",
+          "piece": "lock-R / contribution",
+          "verdict": "fail",
+          "why": "\u0394 lock-R = +0.001; must-hit, decorative on this score",
+          "delta_lock_R": 0.0006416856719534264,
+          "contrib": 0.012463724142141742
+        },
+        {
+          "name": "produce",
+          "piece": "input to F vs already a target",
+          "verdict": "fail",
+          "why": "this is already a target (or leftover) of F, not a producer"
+        },
+        {
+          "name": "next_piece",
+          "piece": "the EM coupling as a number vs the U(1) group vs the scale it is quoted at",
+          "verdict": "open",
+          "why": "keep going down: the smallest split still open",
+          "fingers": [
+            {
+              "name": "x",
+              "piece": "log_alpha_em",
+              "verdict": "open",
+              "why": "the live coordinate; not derived from the other knobs on this vector"
+            },
+            {
+              "name": "x_star",
+              "piece": "log_alpha_em observed anchor",
+              "verdict": "pass",
+              "why": "anchor is a number we put in, not a prediction"
+            },
+            {
+              "name": "minus",
+              "piece": "(x \u2212 x*)",
+              "verdict": "pass",
+              "why": "residual is well-defined once x and x* exist"
+            },
+            {
+              "name": "square",
+              "piece": "(x \u2212 x*)\u00b2",
+              "verdict": "pass",
+              "why": "L2 term; L1 ranking of the same leftovers stays the same top two"
+            },
+            {
+              "name": "width",
+              "piece": "sampling width 0.15",
+              "verdict": "open",
+              "why": "Width is part of the term. Equal-width flattens the external leftovers."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 2,
@@ -420,7 +486,73 @@
       "note": "strong coupling; nature, not a producer",
       "delta_lock_R": 0.0006616629291682913,
       "default_contrib": 0.01108724288532476,
-      "equal_width_contrib": 0.011667140167329157
+      "equal_width_contrib": 0.011667140167329157,
+      "hand": [
+        {
+          "name": "kind",
+          "piece": "gauge",
+          "verdict": "pass",
+          "why": "gauge; strong coupling; nature, not a producer"
+        },
+        {
+          "name": "nature",
+          "piece": "must_hit",
+          "verdict": "pass",
+          "why": "cannot drop this and still mean the four forces / leftovers"
+        },
+        {
+          "name": "score",
+          "piece": "lock-R / contribution",
+          "verdict": "fail",
+          "why": "\u0394 lock-R = +0.001; must-hit, decorative on this score",
+          "delta_lock_R": 0.0006616629291682913,
+          "contrib": 0.01108724288532476
+        },
+        {
+          "name": "produce",
+          "piece": "input to F vs already a target",
+          "verdict": "fail",
+          "why": "this is already a target (or leftover) of F, not a producer"
+        },
+        {
+          "name": "next_piece",
+          "piece": "the strong coupling vs SU(3) vs the scale it is quoted at",
+          "verdict": "open",
+          "why": "keep going down: the smallest split still open",
+          "fingers": [
+            {
+              "name": "x",
+              "piece": "log_alpha_s",
+              "verdict": "open",
+              "why": "the live coordinate; not derived from the other knobs on this vector"
+            },
+            {
+              "name": "x_star",
+              "piece": "log_alpha_s observed anchor",
+              "verdict": "pass",
+              "why": "anchor is a number we put in, not a prediction"
+            },
+            {
+              "name": "minus",
+              "piece": "(x \u2212 x*)",
+              "verdict": "pass",
+              "why": "residual is well-defined once x and x* exist"
+            },
+            {
+              "name": "square",
+              "piece": "(x \u2212 x*)\u00b2",
+              "verdict": "pass",
+              "why": "L2 term; L1 ranking of the same leftovers stays the same top two"
+            },
+            {
+              "name": "width",
+              "piece": "sampling width 0.15",
+              "verdict": "open",
+              "why": "Width is part of the term. Equal-width flattens the external leftovers."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 3,
@@ -430,7 +562,73 @@
       "note": "weak mixing; nature, not a producer",
       "delta_lock_R": 2.5667199896231563e-05,
       "default_contrib": 0.0004264662953510298,
-      "equal_width_contrib": 0.010455316307759794
+      "equal_width_contrib": 0.010455316307759794,
+      "hand": [
+        {
+          "name": "kind",
+          "piece": "gauge",
+          "verdict": "pass",
+          "why": "gauge; weak mixing; nature, not a producer"
+        },
+        {
+          "name": "nature",
+          "piece": "must_hit",
+          "verdict": "pass",
+          "why": "cannot drop this and still mean the four forces / leftovers"
+        },
+        {
+          "name": "score",
+          "piece": "lock-R / contribution",
+          "verdict": "fail",
+          "why": "\u0394 lock-R = +0.000; must-hit, decorative on this score",
+          "delta_lock_R": 2.5667199896231563e-05,
+          "contrib": 0.0004264662953510298
+        },
+        {
+          "name": "produce",
+          "piece": "input to F vs already a target",
+          "verdict": "fail",
+          "why": "this is already a target (or leftover) of F, not a producer"
+        },
+        {
+          "name": "next_piece",
+          "piece": "weak mixing vs the SU(2)\u00d7U(1) embedding",
+          "verdict": "open",
+          "why": "keep going down: the smallest split still open",
+          "fingers": [
+            {
+              "name": "x",
+              "piece": "sin2_theta_w",
+              "verdict": "open",
+              "why": "the live coordinate; not derived from the other knobs on this vector"
+            },
+            {
+              "name": "x_star",
+              "piece": "sin2_theta_w observed anchor",
+              "verdict": "pass",
+              "why": "anchor is a number we put in, not a prediction"
+            },
+            {
+              "name": "minus",
+              "piece": "(x \u2212 x*)",
+              "verdict": "pass",
+              "why": "residual is well-defined once x and x* exist"
+            },
+            {
+              "name": "square",
+              "piece": "(x \u2212 x*)\u00b2",
+              "verdict": "pass",
+              "why": "L2 term; L1 ranking of the same leftovers stays the same top two"
+            },
+            {
+              "name": "width",
+              "piece": "sampling width 0.03",
+              "verdict": "open",
+              "why": "Width is part of the term. Equal-width flattens the external leftovers."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 4,
@@ -440,7 +638,73 @@
       "note": "weak scale; nature, not a producer",
       "delta_lock_R": 0.000569339116192974,
       "default_contrib": 0.011155525271101183,
-      "equal_width_contrib": 0.011453350950552737
+      "equal_width_contrib": 0.011453350950552737,
+      "hand": [
+        {
+          "name": "kind",
+          "piece": "gauge",
+          "verdict": "pass",
+          "why": "gauge; weak scale; nature, not a producer"
+        },
+        {
+          "name": "nature",
+          "piece": "must_hit",
+          "verdict": "pass",
+          "why": "cannot drop this and still mean the four forces / leftovers"
+        },
+        {
+          "name": "score",
+          "piece": "lock-R / contribution",
+          "verdict": "fail",
+          "why": "\u0394 lock-R = +0.001; must-hit, decorative on this score",
+          "delta_lock_R": 0.000569339116192974,
+          "contrib": 0.011155525271101183
+        },
+        {
+          "name": "produce",
+          "piece": "input to F vs already a target",
+          "verdict": "fail",
+          "why": "this is already a target (or leftover) of F, not a producer"
+        },
+        {
+          "name": "next_piece",
+          "piece": "m_W / v vs the Higgs vev sitting underneath",
+          "verdict": "open",
+          "why": "keep going down: the smallest split still open",
+          "fingers": [
+            {
+              "name": "x",
+              "piece": "log_weak_ratio",
+              "verdict": "open",
+              "why": "the live coordinate; not derived from the other knobs on this vector"
+            },
+            {
+              "name": "x_star",
+              "piece": "log_weak_ratio observed anchor",
+              "verdict": "pass",
+              "why": "anchor is a number we put in, not a prediction"
+            },
+            {
+              "name": "minus",
+              "piece": "(x \u2212 x*)",
+              "verdict": "pass",
+              "why": "residual is well-defined once x and x* exist"
+            },
+            {
+              "name": "square",
+              "piece": "(x \u2212 x*)\u00b2",
+              "verdict": "pass",
+              "why": "L2 term; L1 ranking of the same leftovers stays the same top two"
+            },
+            {
+              "name": "width",
+              "piece": "sampling width 0.15",
+              "verdict": "open",
+              "why": "Width is part of the term. Equal-width flattens the external leftovers."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 5,
@@ -450,7 +714,73 @@
       "note": "Planck leftover; cannot drop",
       "delta_lock_R": 0.05135078745282123,
       "default_contrib": 1.1648010831763087,
-      "equal_width_contrib": 0.010602478147726684
+      "equal_width_contrib": 0.010602478147726684,
+      "hand": [
+        {
+          "name": "kind",
+          "piece": "gravity_gauge",
+          "verdict": "pass",
+          "why": "gravity_gauge; Planck leftover; cannot drop"
+        },
+        {
+          "name": "nature",
+          "piece": "must_hit_and_score",
+          "verdict": "pass",
+          "why": "cannot drop this and still mean the four forces / leftovers"
+        },
+        {
+          "name": "score",
+          "piece": "lock-R / contribution",
+          "verdict": "open",
+          "why": "\u0394 lock-R = +0.051; must-hit and default score-mover",
+          "delta_lock_R": 0.05135078745282123,
+          "contrib": 1.1648010831763087
+        },
+        {
+          "name": "produce",
+          "piece": "input to F vs already a target",
+          "verdict": "fail",
+          "why": "this is already a target (or leftover) of F, not a producer"
+        },
+        {
+          "name": "next_piece",
+          "piece": "M_Pl, v, the ratio, the log, the sampling width",
+          "verdict": "open",
+          "why": "keep going down: the smallest split still open",
+          "fingers": [
+            {
+              "name": "x",
+              "piece": "log_hierarchy",
+              "verdict": "open",
+              "why": "the live coordinate; not derived from the other knobs on this vector"
+            },
+            {
+              "name": "x_star",
+              "piece": "log_hierarchy observed anchor",
+              "verdict": "pass",
+              "why": "anchor is a number we put in, not a prediction"
+            },
+            {
+              "name": "minus",
+              "piece": "(x \u2212 x*)",
+              "verdict": "pass",
+              "why": "residual is well-defined once x and x* exist"
+            },
+            {
+              "name": "square",
+              "piece": "(x \u2212 x*)\u00b2",
+              "verdict": "pass",
+              "why": "L2 term; L1 ranking of the same leftovers stays the same top two"
+            },
+            {
+              "name": "width",
+              "piece": "sampling width 1.5",
+              "verdict": "fail",
+              "why": "default contrib 1.165; equal-width contrib 0.011. Vacuum and Planck dominate the default score because we gave them room, not because the algebra singles them out."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 6,
@@ -460,7 +790,73 @@
       "note": "vacuum leftover; gravity-scale on this score, topological fork left open",
       "delta_lock_R": 0.0877776217235284,
       "default_contrib": 2.015407427197121,
-      "equal_width_contrib": 0.011607484814057283
+      "equal_width_contrib": 0.011607484814057283,
+      "hand": [
+        {
+          "name": "kind",
+          "piece": "gravity_gauge",
+          "verdict": "open",
+          "why": "gravity_gauge; vacuum leftover; gravity-scale on this score, topological fork left open"
+        },
+        {
+          "name": "nature",
+          "piece": "must_hit_and_score",
+          "verdict": "pass",
+          "why": "cannot drop this and still mean the four forces / leftovers"
+        },
+        {
+          "name": "score",
+          "piece": "lock-R / contribution",
+          "verdict": "open",
+          "why": "\u0394 lock-R = +0.088; must-hit and default score-mover",
+          "delta_lock_R": 0.0877776217235284,
+          "contrib": 2.015407427197121
+        },
+        {
+          "name": "produce",
+          "piece": "input to F vs already a target",
+          "verdict": "fail",
+          "why": "this is already a target (or leftover) of F, not a producer"
+        },
+        {
+          "name": "next_piece",
+          "piece": "\u03c1_\u039b, the fourth root, the ratio to v, the topological fork, the width",
+          "verdict": "open",
+          "why": "keep going down: the smallest split still open",
+          "fingers": [
+            {
+              "name": "x",
+              "piece": "log_cc_ratio",
+              "verdict": "open",
+              "why": "the live coordinate; not derived from the other knobs on this vector"
+            },
+            {
+              "name": "x_star",
+              "piece": "log_cc_ratio observed anchor",
+              "verdict": "pass",
+              "why": "anchor is a number we put in, not a prediction"
+            },
+            {
+              "name": "minus",
+              "piece": "(x \u2212 x*)",
+              "verdict": "pass",
+              "why": "residual is well-defined once x and x* exist"
+            },
+            {
+              "name": "square",
+              "piece": "(x \u2212 x*)\u00b2",
+              "verdict": "pass",
+              "why": "L2 term; L1 ranking of the same leftovers stays the same top two"
+            },
+            {
+              "name": "width",
+              "piece": "sampling width 2.0",
+              "verdict": "fail",
+              "why": "default contrib 2.015; equal-width contrib 0.012. Vacuum and Planck dominate the default score because we gave them room, not because the algebra singles them out."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 7,
@@ -470,14 +866,146 @@
       "note": "QCD scale; weak on this score",
       "delta_lock_R": 0.004030005891475667,
       "default_contrib": 0.08104205115503627,
-      "equal_width_contrib": 0.011253589353173115
+      "equal_width_contrib": 0.011253589353173115,
+      "hand": [
+        {
+          "name": "kind",
+          "piece": "gauge",
+          "verdict": "pass",
+          "why": "gauge; QCD scale; weak on this score"
+        },
+        {
+          "name": "nature",
+          "piece": "must_hit",
+          "verdict": "pass",
+          "why": "cannot drop this and still mean the four forces / leftovers"
+        },
+        {
+          "name": "score",
+          "piece": "lock-R / contribution",
+          "verdict": "fail",
+          "why": "\u0394 lock-R = +0.004; must-hit, decorative on this score",
+          "delta_lock_R": 0.004030005891475667,
+          "contrib": 0.08104205115503627
+        },
+        {
+          "name": "produce",
+          "piece": "input to F vs already a target",
+          "verdict": "fail",
+          "why": "this is already a target (or leftover) of F, not a producer"
+        },
+        {
+          "name": "next_piece",
+          "piece": "\u039b_QCD / v vs confinement vs the gauge coupling \u03b1_s",
+          "verdict": "open",
+          "why": "keep going down: the smallest split still open",
+          "fingers": [
+            {
+              "name": "x",
+              "piece": "log_qcd_ratio",
+              "verdict": "open",
+              "why": "the live coordinate; not derived from the other knobs on this vector"
+            },
+            {
+              "name": "x_star",
+              "piece": "log_qcd_ratio observed anchor",
+              "verdict": "pass",
+              "why": "anchor is a number we put in, not a prediction"
+            },
+            {
+              "name": "minus",
+              "piece": "(x \u2212 x*)",
+              "verdict": "pass",
+              "why": "residual is well-defined once x and x* exist"
+            },
+            {
+              "name": "square",
+              "piece": "(x \u2212 x*)\u00b2",
+              "verdict": "pass",
+              "why": "L2 term; L1 ranking of the same leftovers stays the same top two"
+            },
+            {
+              "name": "width",
+              "piece": "sampling width 0.4",
+              "verdict": "open",
+              "why": "Width is part of the term. Equal-width flattens the external leftovers."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 8,
       "name": "theta_qcd",
       "category": "topological",
       "fate": "leftover",
-      "note": "strong-CP angle; global, not a local coupling"
+      "note": "strong-CP angle; global, not a local coupling",
+      "hand": [
+        {
+          "name": "kind",
+          "piece": "topological",
+          "verdict": "pass",
+          "why": "topological; strong-CP angle; global, not a local coupling"
+        },
+        {
+          "name": "nature",
+          "piece": "leftover",
+          "verdict": "open",
+          "why": "nature has a strong-CP problem; this score barely sees \u03b8"
+        },
+        {
+          "name": "score",
+          "piece": "lock-R / contribution",
+          "verdict": "fail",
+          "why": "\u0394 lock-R = +0.000; leftover, not a singleton fit",
+          "delta_lock_R": null,
+          "contrib": null
+        },
+        {
+          "name": "produce",
+          "piece": "input to F vs already a target",
+          "verdict": "fail",
+          "why": "a global angle does not write the running couplings"
+        },
+        {
+          "name": "next_piece",
+          "piece": "the angle, target 0, global vs local, the strong-CP leftover",
+          "verdict": "open",
+          "why": "keep going down: the smallest split still open",
+          "fingers": [
+            {
+              "name": "definition",
+              "piece": "theta_qcd",
+              "verdict": "open",
+              "why": "the angle, target 0, global vs local, the strong-CP leftover"
+            },
+            {
+              "name": "in_chi_int",
+              "piece": "internal bookkeeping term",
+              "verdict": "fail",
+              "why": "sits in \u03c7\u00b2_int, not in the four-force residual"
+            },
+            {
+              "name": "target",
+              "piece": "quiet-state anchor",
+              "verdict": "pass",
+              "why": "we put the quiet value in; it is not predicted"
+            },
+            {
+              "name": "produce",
+              "piece": "writes a coupling?",
+              "verdict": "fail",
+              "why": "independent draw on this vector"
+            },
+            {
+              "name": "next",
+              "piece": "the angle, target 0, global vs local, the strong-CP leftover",
+              "verdict": "open",
+              "why": "smallest remaining split; Cosmo name may replace this"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 9,
@@ -486,7 +1014,73 @@
       "fate": "decorative",
       "note": "oscillator amplitude; does not move R",
       "delta_lock_R": 0.0020703050126212943,
-      "default_contrib": 0.033799884205000734
+      "default_contrib": 0.033799884205000734,
+      "hand": [
+        {
+          "name": "kind",
+          "piece": "harmonic",
+          "verdict": "pass",
+          "why": "harmonic; oscillator amplitude; does not move R"
+        },
+        {
+          "name": "nature",
+          "piece": "decorative",
+          "verdict": "fail",
+          "why": "decorative; not a force"
+        },
+        {
+          "name": "score",
+          "piece": "lock-R / contribution",
+          "verdict": "fail",
+          "why": "\u0394 lock-R = +0.002; does not move R",
+          "delta_lock_R": 0.0020703050126212943,
+          "contrib": 0.033799884205000734
+        },
+        {
+          "name": "produce",
+          "piece": "input to F vs already a target",
+          "verdict": "fail",
+          "why": "does not write the couplings"
+        },
+        {
+          "name": "next_piece",
+          "piece": "amplitude as a mean over modes; not a coupling",
+          "verdict": "open",
+          "why": "keep going down: the smallest split still open",
+          "fingers": [
+            {
+              "name": "definition",
+              "piece": "A_mean",
+              "verdict": "open",
+              "why": "amplitude as a mean over modes; not a coupling"
+            },
+            {
+              "name": "in_chi_int",
+              "piece": "internal bookkeeping term",
+              "verdict": "fail",
+              "why": "sits in \u03c7\u00b2_int, not in the four-force residual"
+            },
+            {
+              "name": "target",
+              "piece": "quiet-state anchor",
+              "verdict": "pass",
+              "why": "we put the quiet value in; it is not predicted"
+            },
+            {
+              "name": "produce",
+              "piece": "writes a coupling?",
+              "verdict": "fail",
+              "why": "independent draw on this vector"
+            },
+            {
+              "name": "next",
+              "piece": "amplitude as a mean over modes; not a coupling",
+              "verdict": "open",
+              "why": "smallest remaining split; Cosmo name may replace this"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 10,
@@ -495,7 +1089,73 @@
       "fate": "decorative",
       "note": "oscillator frequency; does not move R",
       "delta_lock_R": 0.0021337159893638005,
-      "default_contrib": 0.03653929451047058
+      "default_contrib": 0.03653929451047058,
+      "hand": [
+        {
+          "name": "kind",
+          "piece": "harmonic",
+          "verdict": "pass",
+          "why": "harmonic; oscillator frequency; does not move R"
+        },
+        {
+          "name": "nature",
+          "piece": "decorative",
+          "verdict": "fail",
+          "why": "decorative; not a force"
+        },
+        {
+          "name": "score",
+          "piece": "lock-R / contribution",
+          "verdict": "fail",
+          "why": "\u0394 lock-R = +0.002; does not move R",
+          "delta_lock_R": 0.0021337159893638005,
+          "contrib": 0.03653929451047058
+        },
+        {
+          "name": "produce",
+          "piece": "input to F vs already a target",
+          "verdict": "fail",
+          "why": "does not write the couplings"
+        },
+        {
+          "name": "next_piece",
+          "piece": "frequency as a mean over modes; not a coupling",
+          "verdict": "open",
+          "why": "keep going down: the smallest split still open",
+          "fingers": [
+            {
+              "name": "definition",
+              "piece": "f_mean",
+              "verdict": "open",
+              "why": "frequency as a mean over modes; not a coupling"
+            },
+            {
+              "name": "in_chi_int",
+              "piece": "internal bookkeeping term",
+              "verdict": "fail",
+              "why": "sits in \u03c7\u00b2_int, not in the four-force residual"
+            },
+            {
+              "name": "target",
+              "piece": "quiet-state anchor",
+              "verdict": "pass",
+              "why": "we put the quiet value in; it is not predicted"
+            },
+            {
+              "name": "produce",
+              "piece": "writes a coupling?",
+              "verdict": "fail",
+              "why": "independent draw on this vector"
+            },
+            {
+              "name": "next",
+              "piece": "frequency as a mean over modes; not a coupling",
+              "verdict": "open",
+              "why": "smallest remaining split; Cosmo name may replace this"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 11,
@@ -504,7 +1164,73 @@
       "fate": "decorative",
       "note": "phi; does not move R",
       "delta_lock_R": 0.0018734441636488186,
-      "default_contrib": 0.03559761924492679
+      "default_contrib": 0.03559761924492679,
+      "hand": [
+        {
+          "name": "kind",
+          "piece": "harmonic",
+          "verdict": "pass",
+          "why": "harmonic; phi; does not move R"
+        },
+        {
+          "name": "nature",
+          "piece": "decorative",
+          "verdict": "fail",
+          "why": "decorative; not a force"
+        },
+        {
+          "name": "score",
+          "piece": "lock-R / contribution",
+          "verdict": "fail",
+          "why": "\u0394 lock-R = +0.002; does not move R",
+          "delta_lock_R": 0.0018734441636488186,
+          "contrib": 0.03559761924492679
+        },
+        {
+          "name": "produce",
+          "piece": "input to F vs already a target",
+          "verdict": "fail",
+          "why": "does not write the couplings"
+        },
+        {
+          "name": "next_piece",
+          "piece": "\u03c6 as a scale knob; not a coupling",
+          "verdict": "open",
+          "why": "keep going down: the smallest split still open",
+          "fingers": [
+            {
+              "name": "definition",
+              "piece": "phi_scale",
+              "verdict": "open",
+              "why": "\u03c6 as a scale knob; not a coupling"
+            },
+            {
+              "name": "in_chi_int",
+              "piece": "internal bookkeeping term",
+              "verdict": "fail",
+              "why": "sits in \u03c7\u00b2_int, not in the four-force residual"
+            },
+            {
+              "name": "target",
+              "piece": "quiet-state anchor",
+              "verdict": "pass",
+              "why": "we put the quiet value in; it is not predicted"
+            },
+            {
+              "name": "produce",
+              "piece": "writes a coupling?",
+              "verdict": "fail",
+              "why": "independent draw on this vector"
+            },
+            {
+              "name": "next",
+              "piece": "\u03c6 as a scale knob; not a coupling",
+              "verdict": "open",
+              "why": "smallest remaining split; Cosmo name may replace this"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 12,
@@ -513,7 +1239,73 @@
       "fate": "score",
       "note": "phase disorder; internal score-mover",
       "delta_lock_R": 0.022562646391791945,
-      "default_contrib": 0.358940482831976
+      "default_contrib": 0.358940482831976,
+      "hand": [
+        {
+          "name": "kind",
+          "piece": "harmonic",
+          "verdict": "pass",
+          "why": "harmonic; phase disorder; internal score-mover"
+        },
+        {
+          "name": "nature",
+          "piece": "score",
+          "verdict": "fail",
+          "why": "internal bookkeeping; not a force"
+        },
+        {
+          "name": "score",
+          "piece": "lock-R / contribution",
+          "verdict": "open",
+          "why": "\u0394 lock-R = +0.023; moves R, does not write couplings",
+          "delta_lock_R": 0.022562646391791945,
+          "contrib": 0.358940482831976
+        },
+        {
+          "name": "produce",
+          "piece": "input to F vs already a target",
+          "verdict": "fail",
+          "why": "locking this does not collapse the four couplings"
+        },
+        {
+          "name": "next_piece",
+          "piece": "phase disorder; the one harmonic that moves R",
+          "verdict": "open",
+          "why": "keep going down: the smallest split still open",
+          "fingers": [
+            {
+              "name": "definition",
+              "piece": "delta_spread",
+              "verdict": "open",
+              "why": "phase disorder; the one harmonic that moves R"
+            },
+            {
+              "name": "in_chi_int",
+              "piece": "internal bookkeeping term",
+              "verdict": "pass",
+              "why": "sits in \u03c7\u00b2_int, not in the four-force residual"
+            },
+            {
+              "name": "target",
+              "piece": "quiet-state anchor",
+              "verdict": "pass",
+              "why": "we put the quiet value in; it is not predicted"
+            },
+            {
+              "name": "produce",
+              "piece": "writes a coupling?",
+              "verdict": "fail",
+              "why": "independent draw on this vector"
+            },
+            {
+              "name": "next",
+              "piece": "phase disorder; the one harmonic that moves R",
+              "verdict": "open",
+              "why": "smallest remaining split; Cosmo name may replace this"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 13,
@@ -522,7 +1314,73 @@
       "fate": "score",
       "note": "coherence; internal score-mover",
       "delta_lock_R": 0.03747777202489715,
-      "default_contrib": 0.6216563405678294
+      "default_contrib": 0.6216563405678294,
+      "hand": [
+        {
+          "name": "kind",
+          "piece": "teleological",
+          "verdict": "pass",
+          "why": "teleological; coherence; internal score-mover"
+        },
+        {
+          "name": "nature",
+          "piece": "score",
+          "verdict": "fail",
+          "why": "internal bookkeeping; not a force"
+        },
+        {
+          "name": "score",
+          "piece": "lock-R / contribution",
+          "verdict": "open",
+          "why": "\u0394 lock-R = +0.037; moves R, does not write couplings",
+          "delta_lock_R": 0.03747777202489715,
+          "contrib": 0.6216563405678294
+        },
+        {
+          "name": "produce",
+          "piece": "input to F vs already a target",
+          "verdict": "fail",
+          "why": "locking this does not collapse the four couplings"
+        },
+        {
+          "name": "next_piece",
+          "piece": "coherence scalar; internal, not a force",
+          "verdict": "open",
+          "why": "keep going down: the smallest split still open",
+          "fingers": [
+            {
+              "name": "definition",
+              "piece": "S_coh",
+              "verdict": "open",
+              "why": "coherence scalar; internal, not a force"
+            },
+            {
+              "name": "in_chi_int",
+              "piece": "internal bookkeeping term",
+              "verdict": "pass",
+              "why": "sits in \u03c7\u00b2_int, not in the four-force residual"
+            },
+            {
+              "name": "target",
+              "piece": "quiet-state anchor",
+              "verdict": "pass",
+              "why": "we put the quiet value in; it is not predicted"
+            },
+            {
+              "name": "produce",
+              "piece": "writes a coupling?",
+              "verdict": "fail",
+              "why": "independent draw on this vector"
+            },
+            {
+              "name": "next",
+              "piece": "coherence scalar; internal, not a force",
+              "verdict": "open",
+              "why": "smallest remaining split; Cosmo name may replace this"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 14,
@@ -531,7 +1389,73 @@
       "fate": "decorative",
       "note": "attractor; weak on this score",
       "delta_lock_R": 0.0069640491303693056,
-      "default_contrib": 0.12869951281435618
+      "default_contrib": 0.12869951281435618,
+      "hand": [
+        {
+          "name": "kind",
+          "piece": "teleological",
+          "verdict": "pass",
+          "why": "teleological; attractor; weak on this score"
+        },
+        {
+          "name": "nature",
+          "piece": "decorative",
+          "verdict": "fail",
+          "why": "decorative; not a force"
+        },
+        {
+          "name": "score",
+          "piece": "lock-R / contribution",
+          "verdict": "fail",
+          "why": "\u0394 lock-R = +0.007; does not move R",
+          "delta_lock_R": 0.0069640491303693056,
+          "contrib": 0.12869951281435618
+        },
+        {
+          "name": "produce",
+          "piece": "input to F vs already a target",
+          "verdict": "fail",
+          "why": "does not write the couplings"
+        },
+        {
+          "name": "next_piece",
+          "piece": "attractor strength; decorative on this score",
+          "verdict": "open",
+          "why": "keep going down: the smallest split still open",
+          "fingers": [
+            {
+              "name": "definition",
+              "piece": "kappa_att",
+              "verdict": "open",
+              "why": "attractor strength; decorative on this score"
+            },
+            {
+              "name": "in_chi_int",
+              "piece": "internal bookkeeping term",
+              "verdict": "fail",
+              "why": "sits in \u03c7\u00b2_int, not in the four-force residual"
+            },
+            {
+              "name": "target",
+              "piece": "quiet-state anchor",
+              "verdict": "pass",
+              "why": "we put the quiet value in; it is not predicted"
+            },
+            {
+              "name": "produce",
+              "piece": "writes a coupling?",
+              "verdict": "fail",
+              "why": "independent draw on this vector"
+            },
+            {
+              "name": "next",
+              "piece": "attractor strength; decorative on this score",
+              "verdict": "open",
+              "why": "smallest remaining split; Cosmo name may replace this"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 15,
@@ -540,14 +1464,146 @@
       "fate": "near_miss",
       "note": "gradient; close, misses singleton cut",
       "delta_lock_R": 0.012482209014578756,
-      "default_contrib": 0.23915568455291983
+      "default_contrib": 0.23915568455291983,
+      "hand": [
+        {
+          "name": "kind",
+          "piece": "teleological",
+          "verdict": "pass",
+          "why": "teleological; gradient; close, misses singleton cut"
+        },
+        {
+          "name": "nature",
+          "piece": "near_miss",
+          "verdict": "fail",
+          "why": "internal bookkeeping; not a force"
+        },
+        {
+          "name": "score",
+          "piece": "lock-R / contribution",
+          "verdict": "open",
+          "why": "\u0394 lock-R = +0.012; close, misses the singleton cut",
+          "delta_lock_R": 0.012482209014578756,
+          "contrib": 0.23915568455291983
+        },
+        {
+          "name": "produce",
+          "piece": "input to F vs already a target",
+          "verdict": "fail",
+          "why": "locking this does not collapse the four couplings"
+        },
+        {
+          "name": "next_piece",
+          "piece": "coherence gradient; near-miss singleton",
+          "verdict": "open",
+          "why": "keep going down: the smallest split still open",
+          "fingers": [
+            {
+              "name": "definition",
+              "piece": "grad_coh",
+              "verdict": "open",
+              "why": "coherence gradient; near-miss singleton"
+            },
+            {
+              "name": "in_chi_int",
+              "piece": "internal bookkeeping term",
+              "verdict": "pass",
+              "why": "sits in \u03c7\u00b2_int, not in the four-force residual"
+            },
+            {
+              "name": "target",
+              "piece": "quiet-state anchor",
+              "verdict": "pass",
+              "why": "we put the quiet value in; it is not predicted"
+            },
+            {
+              "name": "produce",
+              "piece": "writes a coupling?",
+              "verdict": "fail",
+              "why": "independent draw on this vector"
+            },
+            {
+              "name": "next",
+              "piece": "coherence gradient; near-miss singleton",
+              "verdict": "open",
+              "why": "smallest remaining split; Cosmo name may replace this"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 16,
       "name": "R",
       "category": "teleological",
       "fate": "output",
-      "note": "realization; circular if used as a knob"
+      "note": "realization; circular if used as a knob",
+      "hand": [
+        {
+          "name": "kind",
+          "piece": "teleological",
+          "verdict": "pass",
+          "why": "teleological; realization; circular if used as a knob"
+        },
+        {
+          "name": "nature",
+          "piece": "output",
+          "verdict": "fail",
+          "why": "a score is not a force of nature"
+        },
+        {
+          "name": "score",
+          "piece": "lock-R / contribution",
+          "verdict": "fail",
+          "why": "R is the output. Locking it is circular.",
+          "delta_lock_R": null,
+          "contrib": null
+        },
+        {
+          "name": "produce",
+          "piece": "input to F vs already a target",
+          "verdict": "fail",
+          "why": "cannot be an input to F"
+        },
+        {
+          "name": "next_piece",
+          "piece": "the product; circular as a candidate theory",
+          "verdict": "open",
+          "why": "keep going down: the smallest split still open",
+          "fingers": [
+            {
+              "name": "product",
+              "piece": "R_ext \u00b7 R_int",
+              "verdict": "pass",
+              "why": "the line is a product"
+            },
+            {
+              "name": "circular",
+              "piece": "lock R to make R",
+              "verdict": "fail",
+              "why": "the 16th is the output"
+            },
+            {
+              "name": "range",
+              "piece": "(0, 1]",
+              "verdict": "pass",
+              "why": "two exponentials"
+            },
+            {
+              "name": "not_a_theory",
+              "piece": "R as a TOE candidate",
+              "verdict": "fail",
+              "why": "a score is not a theory of everything"
+            },
+            {
+              "name": "next",
+              "piece": "need F, not a bigger R",
+              "verdict": "open",
+              "why": "blocked on a producing-map"
+            }
+          ]
+        }
+      ]
     }
   ],
   "by_category": {
@@ -746,6 +1802,7 @@
     "vacuum/Planck default dominance is a width artifact (equal-\u03c3 flattens \u03c7\u00b2_ext)",
     "they remain must-hit as nature leftovers, which is a different claim",
     "16 candidates each got a general category and a fate",
+    "each of the 16 then got the same five general questions (kind / nature / score / produce / next), then smaller pieces",
     "topological vs gauge: only \u03b8_QCD is topological on this list; vacuum is a fork",
     "next blocked on Cosmo names or a real producing-map F"
   ],

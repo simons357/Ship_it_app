@@ -74,6 +74,10 @@ Domain (names missing), codomain (four couplings), dimension
 (**fail**, holdout \(0.073\) vs null \(0.072\)), rebuild
 (blocked).
 
+Per-candidate fate (same five questions on each of the 16,
+then the next smaller pieces) is
+[`docs/DA-SIXTEEN-FATE.md`](DA-SIXTEEN-FATE.md).
+
 ## The 16, as candidate types
 
 Same five fingers, now as **categories** for a unification

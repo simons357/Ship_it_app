@@ -120,6 +120,30 @@ def node(name: str, piece: str, verdict: str, why: str, fingers: list | None = N
     return rec
 
 
+GENERAL_FATE_KEYS = ("kind", "nature", "score", "produce", "next_piece")
+
+# Smaller DA pieces under each general question, per candidate.
+# Verdicts that depend on numbers are filled in candidate_hand().
+NEXT_PIECE = {
+    "log_alpha_em": "the EM coupling as a number vs the U(1) group vs the scale it is quoted at",
+    "log_alpha_s": "the strong coupling vs SU(3) vs the scale it is quoted at",
+    "sin2_theta_w": "weak mixing vs the SU(2)×U(1) embedding",
+    "log_weak_ratio": "m_W / v vs the Higgs vev sitting underneath",
+    "log_hierarchy": "M_Pl, v, the ratio, the log, the sampling width",
+    "log_cc_ratio": "ρ_Λ, the fourth root, the ratio to v, the topological fork, the width",
+    "log_qcd_ratio": "Λ_QCD / v vs confinement vs the gauge coupling α_s",
+    "theta_qcd": "the angle, target 0, global vs local, the strong-CP leftover",
+    "A_mean": "amplitude as a mean over modes; not a coupling",
+    "f_mean": "frequency as a mean over modes; not a coupling",
+    "phi_scale": "φ as a scale knob; not a coupling",
+    "delta_spread": "phase disorder; the one harmonic that moves R",
+    "S_coh": "coherence scalar; internal, not a force",
+    "kappa_att": "attractor strength; decorative on this score",
+    "grad_coh": "coherence gradient; near-miss singleton",
+    "R": "the product; circular as a candidate theory",
+}
+
+
 def residual_hand(coord: str, default_width: float, equal_width_contrib: float, default_contrib: float) -> list:
     """Five fingers of one squared residual (x − x*)²."""
     return [
@@ -139,6 +163,86 @@ def residual_hand(coord: str, default_width: float, equal_width_contrib: float, 
                 else "Width is part of the term. Equal-width flattens the external leftovers."
             ),
         ),
+    ]
+
+
+def candidate_hand(
+    name: str,
+    cat: str,
+    fate: str,
+    delta: float | None,
+    contrib: float | None,
+    equal_width: float | None = None,
+) -> list:
+    """Same five general questions on every candidate, then the next smaller piece."""
+    dlt = 0.0 if delta is None else delta
+    if fate == "output":
+        score_v, score_w = "fail", "R is the output. Locking it is circular."
+        nature_v, nature_w = "fail", "a score is not a force of nature"
+        produce_v, produce_w = "fail", "cannot be an input to F"
+        kind_v = "pass"
+    elif fate.startswith("must_hit"):
+        nature_v, nature_w = "pass", "cannot drop this and still mean the four forces / leftovers"
+        produce_v, produce_w = "fail", "this is already a target (or leftover) of F, not a producer"
+        if dlt > 0.02:
+            score_v, score_w = "open", f"Δ lock-R = {dlt:+.3f}; must-hit and default score-mover"
+        else:
+            score_v, score_w = "fail", f"Δ lock-R = {dlt:+.3f}; must-hit, decorative on this score"
+        kind_v = "open" if name == "log_cc_ratio" else "pass"
+    elif fate == "score":
+        nature_v, nature_w = "fail", "internal bookkeeping; not a force"
+        score_v, score_w = "open", f"Δ lock-R = {dlt:+.3f}; moves R, does not write couplings"
+        produce_v, produce_w = "fail", "locking this does not collapse the four couplings"
+        kind_v = "pass"
+    elif fate == "near_miss":
+        nature_v, nature_w = "fail", "internal bookkeeping; not a force"
+        score_v, score_w = "open", f"Δ lock-R = {dlt:+.3f}; close, misses the singleton cut"
+        produce_v, produce_w = "fail", "locking this does not collapse the four couplings"
+        kind_v = "pass"
+    elif fate == "leftover":
+        nature_v, nature_w = "open", "nature has a strong-CP problem; this score barely sees θ"
+        score_v, score_w = "fail", f"Δ lock-R = {dlt:+.3f}; leftover, not a singleton fit"
+        produce_v, produce_w = "fail", "a global angle does not write the running couplings"
+        kind_v = "pass"
+    else:
+        nature_v, nature_w = "fail", "decorative; not a force"
+        score_v, score_w = "fail", f"Δ lock-R = {dlt:+.3f}; does not move R"
+        produce_v, produce_w = "fail", "does not write the couplings"
+        kind_v = "pass"
+
+    kind_why = f"{cat}; {CANDIDATE_META[name][2]}"
+
+    pieces = []
+    if name in EXT:
+        pieces = residual_hand(
+            name,
+            {"log_hierarchy": 1.5, "log_cc_ratio": 2.0, "log_qcd_ratio": 0.4, "sin2_theta_w": 0.03}.get(name, 0.15),
+            equal_width if equal_width is not None else 0.0,
+            contrib or 0.0,
+        )
+    elif name == "R":
+        pieces = [
+            node("product", "R_ext · R_int", "pass", "the line is a product"),
+            node("circular", "lock R to make R", "fail", "the 16th is the output"),
+            node("range", "(0, 1]", "pass", "two exponentials"),
+            node("not_a_theory", "R as a TOE candidate", "fail", "a score is not a theory of everything"),
+            node("next", "need F, not a bigger R", "open", "blocked on a producing-map"),
+        ]
+    else:
+        pieces = [
+            node("definition", name, "open", NEXT_PIECE[name]),
+            node("in_chi_int", "internal bookkeeping term", "pass" if fate in {"score", "near_miss"} else "fail", "sits in χ²_int, not in the four-force residual"),
+            node("target", "quiet-state anchor", "pass", "we put the quiet value in; it is not predicted"),
+            node("produce", "writes a coupling?", "fail", "independent draw on this vector"),
+            node("next", NEXT_PIECE[name], "open", "smallest remaining split; Cosmo name may replace this"),
+        ]
+
+    return [
+        node("kind", cat, kind_v, kind_why),
+        node("nature", fate, nature_v, nature_w),
+        node("score", "lock-R / contribution", score_v, score_w, extra={"delta_lock_R": delta, "contrib": contrib}),
+        node("produce", "input to F vs already a target", produce_v, produce_w),
+        node("next_piece", NEXT_PIECE[name], "open", "keep going down: the smallest split still open", pieces),
     ]
 
 
@@ -302,6 +406,15 @@ def run(n: int = 400, seed: int = 1, out: Path | None = None) -> dict:
             rec["equal_width_contrib"] = ext_eq[name]
         if name in int_c:
             rec["default_contrib"] = int_c[name]
+        rec["hand"] = candidate_hand(
+            name,
+            cat,
+            fate,
+            rec.get("delta_lock_R"),
+            rec.get("default_contrib"),
+            rec.get("equal_width_contrib"),
+        )
+        assert [f["name"] for f in rec["hand"]] == list(GENERAL_FATE_KEYS)
         candidates.append(rec)
 
     by_cat: dict[str, list[str]] = {c: [] for c in TOE_CATEGORIES}
@@ -352,6 +465,7 @@ def run(n: int = 400, seed: int = 1, out: Path | None = None) -> dict:
         "vacuum/Planck default dominance is a width artifact (equal-σ flattens χ²_ext)",
         "they remain must-hit as nature leftovers, which is a different claim",
         "16 candidates each got a general category and a fate",
+        "each of the 16 then got the same five general questions (kind / nature / score / produce / next), then smaller pieces",
         "topological vs gauge: only θ_QCD is topological on this list; vacuum is a fork",
         "next blocked on Cosmo names or a real producing-map F",
     ]
@@ -359,7 +473,7 @@ def run(n: int = 400, seed: int = 1, out: Path | None = None) -> dict:
     payload = {
         "meta": {
             "line": LINE,
-            "method": "five-finger DA, recurse twice, then category-fate on the 16",
+            "method": "five-finger DA, then 16 candidate fates, then the same five general questions on each",
             "cosmos_app_list_found": False,
             "not_a_unifier": True,
             "n": n,
@@ -412,9 +526,11 @@ def main() -> int:
     print("The 16th is still R. Cosmo export still missing.")
     _print_hand(payload["tree"]["fingers"])
     print("equal-width flattens χ²_ext:", payload["checks"]["equal_width_flattens_ext"])
-    print("16 fates:")
+    print("16 fates, then each broken:")
     for rec in payload["candidates"]:
         print(f"  {rec['id']:2d} {rec['category']:<16} {rec['fate']:<22} {rec['name']}")
+        for f in rec.get("hand", []):
+            print(f"      [{f['verdict']}] {f['name']}: {f['piece']}")
     print("how far:")
     for line in payload["how_far"]:
         print(" -", line)

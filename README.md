@@ -20,6 +20,7 @@ python3 scripts/da_machine.py check
 python3 scripts/da_machine.py cosmos
 python3 scripts/da_machine.py sixteen
 python3 scripts/da_machine.py fingers
+python3 scripts/da_machine.py fate
 python3 scripts/da_machine.py how
 python3 scripts/da_machine.py flush
 python3 scripts/da_machine.py classify --claim "the prime block of Q-tilde sits above -1/4"
