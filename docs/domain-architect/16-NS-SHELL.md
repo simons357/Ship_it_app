@@ -35,3 +35,6 @@ On Track Q, wrapping a Cosmo manifold around the arithmetic is a trap:
 the silhouette is VIZ, a different book.
 
 The picture is `see-shell.svg`. CosmoEvolution is not this shell.
+
+Next: `--jigsaw B` breaks the same object into interlocking pieces and
+names the ruin even when holes remain.

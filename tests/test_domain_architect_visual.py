@@ -48,6 +48,7 @@ class TestSeeDesk(unittest.TestCase):
         dest = write_see(ROOT / "docs" / "domain-architect" / "see.html")
         self.assertTrue(dest.exists())
         self.assertTrue(dest.with_name("see-overlay.svg").exists())
+        self.assertTrue(dest.with_name("see-jigsaw.svg").exists())
 
 
 class TestSeeCli(unittest.TestCase):

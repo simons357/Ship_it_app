@@ -94,7 +94,7 @@ APPENDAGES: Final[tuple[dict[str, str], ...]] = (
         "command": (
             "auto after --tube / --gap / --overlay / --energy-play / "
             "--shape-play / --chain / --geometry / --clip / --shape-compare / "
-            "--scan / --shell / --see"
+            "--scan / --shell / --jigsaw / --see"
         ),
     },
 )
@@ -265,6 +265,19 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
         ),
         "command": "python -m domain_architect --shell B",
         "do_not": "Promote even-reflect to the object, or treat a giveaway as smoothness.",
+    },
+    {
+        "priority": "3k",
+        "move": (
+            "Break the object into literal jigsaw pieces. Snap matching "
+            "tabs. Order-2/3 holes are damage, not identity. Order-1 holes "
+            "are Parthenon: still a building, not a hill. Finest detail is "
+            "not required — the general shape and how energy moves through "
+            "the snapped pieces is enough to name it. Assembler is "
+            "constraints, not a neural net."
+        ),
+        "command": "python -m domain_architect --jigsaw B",
+        "do_not": "Let an ML joiner weld Q or Cosmo onto B, or treat naming as smoothness.",
     },
     {
         "priority": "4",

@@ -19,6 +19,7 @@ from .gap import gap_report
 from .overlay import overlay_report
 from .scan import scan_report
 from .shell import shell_report
+from .jigsaw import jigsaw_report
 from .shape_play import play_cylinder
 
 
@@ -47,6 +48,7 @@ FOCUS_LINE: Final[dict[str, str]] = {
     "audit": "Live math: role audit of an expression",
     "scan": "Live math: scan leftover holes against every rudimentary piece",
     "shell": "Live math: inside plus outer shell — silhouette may already be known",
+    "jigsaw": "Live math: jigsaw pieces — assemble the building, park the holes",
     "see": "Visual appendage — slave of the math, not Cosmo",
 }
 TITLES: Final[dict[str, str]] = {
@@ -65,6 +67,7 @@ TITLES: Final[dict[str, str]] = {
     "audit": "Role audit of an expression",
     "scan": "Scan — match the hole, do not weld",
     "shell": "Shell — inside, outer shape, dead giveaway",
+    "jigsaw": "Jigsaw — pieces, building, damage that is not a hill",
     "see": "See desk — pictures first, math under the fold",
 }
 
@@ -342,6 +345,151 @@ def svg_shell(report: dict[str, Any] | None = None) -> str:
 </svg>'''
 
 
+def _jigsaw_edge(x0: float, y0: float, x1: float, y1: float, tab: int) -> str:
+    """Clockwise edge. tab +1 = knob out, -1 = socket in, 0 = flat."""
+    if tab == 0:
+        return f"L {x1:.1f} {y1:.1f}"
+    dx, dy = x1 - x0, y1 - y0
+    length = (dx * dx + dy * dy) ** 0.5 or 1.0
+    ux, uy = dx / length, dy / length
+    px, py = uy, -ux  # outward for a clockwise path
+    mx, my = (x0 + x1) / 2.0, (y0 + y1) / 2.0
+    sign = 1.0 if tab > 0 else -1.0
+    r = min(length * 0.20, 14.0)
+    n0x, n0y = mx - ux * r, my - uy * r
+    n1x, n1y = mx + ux * r, my + uy * r
+    cx, cy = mx + sign * px * r * 1.45, my + sign * py * r * 1.45
+    q0x, q0y = n0x + sign * px * r * 0.35, n0y + sign * py * r * 0.35
+    q1x, q1y = n1x + sign * px * r * 0.35, n1y + sign * py * r * 0.35
+    return (
+        f"L {n0x:.1f} {n0y:.1f} "
+        f"Q {q0x:.1f} {q0y:.1f} {cx:.1f} {cy:.1f} "
+        f"Q {q1x:.1f} {q1y:.1f} {n1x:.1f} {n1y:.1f} "
+        f"L {x1:.1f} {y1:.1f}"
+    )
+
+
+def _jigsaw_piece_path(
+    x: float, y: float, w: float, h: float, n: int, e: int, s: int, west: int
+) -> str:
+    top = _jigsaw_edge(x, y, x + w, y, n)
+    right = _jigsaw_edge(x + w, y, x + w, y + h, e)
+    bot = _jigsaw_edge(x + w, y + h, x, y + h, s)
+    left = _jigsaw_edge(x, y + h, x, y, west)
+    return f"M {x:.1f} {y:.1f} {top} {right} {bot} {left} Z"
+
+
+def svg_jigsaw(report: dict[str, Any] | None = None) -> str:
+    """Literal interlocking pieces forming a building; holes are damage, not a hill."""
+    data = report or jigsaw_report("B")
+    pieces = {p["id"]: p for p in data.get("pieces") or []}
+    grid: list[tuple[str, int, int]] = [
+        ("L1-TORUS", 1, 0),
+        ("L12-ENERGY", 0, 1),
+        ("L3-BERNSTEIN", 1, 1),
+        ("L4-COVER", 2, 1),
+        ("L2-FLUX", 0, 2),
+        ("L5-RING", 1, 2),
+        ("L6-STRAIN", 2, 2),
+        ("L7-HARDY", 0, 3),
+        ("L8-ANGULAR", 1, 3),
+    ]
+    ox, oy, w, h = 36.0, 58.0, 78.0, 62.0
+    # Neighbor tabs so adjacent pieces interlock.
+    tabs: dict[str, tuple[int, int, int, int]] = {
+        "L1-TORUS": (0, 0, 1, 0),
+        "L12-ENERGY": (0, 1, 1, 0),
+        "L3-BERNSTEIN": (-1, 1, 1, -1),
+        "L4-COVER": (0, 0, 1, -1),
+        "L2-FLUX": (-1, 1, 1, 0),
+        "L5-RING": (-1, 1, 1, -1),
+        "L6-STRAIN": (-1, 0, 1, -1),
+        "L7-HARDY": (-1, 1, 0, 0),
+        "L8-ANGULAR": (-1, 1, 0, -1),
+    }
+    drawn: list[str] = []
+    for pid, col, row in grid:
+        piece = pieces.get(pid)
+        if not piece:
+            continue
+        x, y = ox + col * w, oy + row * h
+        n, e, s, west = tabs[pid]
+        d = _jigsaw_piece_path(x, y, w, h, n, e, s, west)
+        drawn.append(
+            f'<path d="{d}" fill="#d7efe9" stroke="{READY}" stroke-width="2.2"/>'
+            f'<text x="{x + w / 2:.1f}" y="{y + h / 2 - 4:.1f}" text-anchor="middle" '
+            f'font-family="Georgia, serif" font-size="10" fill="{INK}">{escape(piece["glyph"])}</text>'
+            f'<text x="{x + w / 2:.1f}" y="{y + h / 2 + 10:.1f}" text-anchor="middle" '
+            f'font-family="Georgia, serif" font-size="9" fill="{READY}">{escape(pid.split("-", 1)[-1])}</text>'
+        )
+    # Empty socket where a waiting piece would go (Parthenon hole in the wall).
+    wx, wy = ox + 2 * w, oy + 3 * h
+    missing = _jigsaw_piece_path(wx, wy, w, h, -1, 0, 0, -1)
+    drawn.append(
+        f'<path d="{missing}" fill="none" stroke="{OPEN}" stroke-width="2.4" stroke-dasharray="6 4"/>'
+        f'<text x="{wx + w / 2:.1f}" y="{wy + h / 2:.1f}" text-anchor="middle" '
+        f'font-family="Georgia, serif" font-size="10" fill="{OPEN}">GAP-T3</text>'
+    )
+    # Cannon holes through the assembled building (order-1).
+    holes_1 = [(ox + 1.5 * w, oy + 2.2 * h, "WELD"), (ox + 0.55 * w, oy + 3.15 * h, "TUBE")]
+    hole_marks: list[str] = []
+    for cx, cy, label in holes_1:
+        hole_marks.append(
+            f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="11" fill="{PAPER}" stroke="{OPEN}" stroke-width="3"/>'
+            f'<text x="{cx:.1f}" y="{cy + 4:.1f}" text-anchor="middle" font-family="Georgia, serif" '
+            f'font-size="8" fill="{OPEN}">{label}</text>'
+        )
+    # Order-2 pockmarks
+    pocks = [(ox + 2.35 * w, oy + 1.35 * h), (ox + 0.4 * w, oy + 1.45 * h)]
+    for cx, cy in pocks:
+        hole_marks.append(
+            f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="5" fill="none" stroke="{PLAY}" stroke-width="2"/>'
+        )
+    # Energy path arrows through the snapped pieces.
+    arrows = (
+        f'<path d="M {ox + 0.5 * w:.1f} {oy + 1.55 * h:.1f} '
+        f'L {ox + 1.5 * w:.1f} {oy + 1.55 * h:.1f} '
+        f'L {ox + 1.5 * w:.1f} {oy + 2.55 * h:.1f} '
+        f'L {ox + 0.5 * w:.1f} {oy + 3.55 * h:.1f}" '
+        f'fill="none" stroke="{INK}" stroke-width="1.6" stroke-dasharray="3 3" opacity="0.55"/>'
+    )
+    # Play piece (even-reflect) off to the side — extra E, not a wall.
+    play_d = _jigsaw_piece_path(ox + 3.4 * w, oy + 0.2 * h, w, h, 0, 0, 0, 1)
+    play = (
+        f'<path d="{play_d}" fill="none" stroke="{PLAY}" stroke-width="2" stroke-dasharray="5 4"/>'
+        f'<text x="{ox + 3.9 * w:.1f}" y="{oy + 0.2 * h + h / 2:.1f}" text-anchor="middle" '
+        f'font-family="Georgia, serif" font-size="10" fill="{PLAY}">play )δ(</text>'
+    )
+    # Rubble (order-3) on the ground.
+    rubble = (
+        f'<rect x="{ox + 3.4 * w:.1f}" y="{oy + 3.35 * h:.1f}" width="{w:.1f}" height="22" '
+        f'rx="4" fill="none" stroke="{REFUSE}" stroke-width="1.5"/>'
+        f'<text x="{ox + 3.9 * w:.1f}" y="{oy + 3.35 * h + 15:.1f}" text-anchor="middle" '
+        f'font-family="Georgia, serif" font-size="10" fill="{REFUSE}">rubble Φ!</text>'
+    )
+    # Hill silhouette — the thing this is not.
+    hill = (
+        f'<path d="M {ox + 3.35 * w:.1f} {oy + 2.55 * h:.1f} '
+        f'Q {ox + 3.85 * w:.1f} {oy + 1.35 * h:.1f} {ox + 4.45 * w:.1f} {oy + 2.55 * h:.1f} Z" '
+        f'fill="none" stroke="{REFUSE}" stroke-width="2" stroke-dasharray="7 5"/>'
+        f'<text x="{ox + 3.9 * w:.1f}" y="{oy + 2.85 * h:.1f}" text-anchor="middle" '
+        f'font-family="Georgia, serif" font-size="12" fill="{REFUSE}">not a hill</text>'
+    )
+    verdict = data.get("building", {}).get("verdict", "BUILDING")
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" role="img" aria-label="Jigsaw building assembled from pieces">
+  <rect width="520" height="360" fill="{PAPER}"/>
+  <text x="16" y="26" font-family="Georgia, serif" font-size="16" fill="{INK}">Jigsaw — put the pieces together. Holes are damage.</text>
+  <text x="16" y="46" font-family="Georgia, serif" font-size="12" fill="{READY}">{verdict}  not a hill. Finest detail not required.</text>
+  {"".join(drawn)}
+  {arrows}
+  {"".join(hole_marks)}
+  {play}
+  {hill}
+  {rubble}
+  <text x="16" y="348" font-family="Georgia, serif" font-size="11" fill="{INK}">Green interlocking = snapped. Red holes = Parthenon (walk). Gold pocks = order-2. Dashed hill is the wrong object.</text>
+</svg>'''
+
+
 def render_html(state: dict[str, Any] | None = None) -> str:
     overlay = overlay_report()
     gap = gap_report("B")
@@ -350,6 +498,7 @@ def render_html(state: dict[str, Any] | None = None) -> str:
     even = next(c for c in cyl["completions"] if c["id"] == "even_reflect")
     scan = scan_report("B")
     shell = shell_report("B")
+    jigsaw = jigsaw_report("B")
     st = state or load_focus()
     live = st.get("live") or FOCUS_LINE.get(st.get("action", "see"), FOCUS_LINE["see"])
     title = st.get("title") or TITLES.get(st.get("action", "see"), TITLES["see"])
@@ -398,6 +547,17 @@ def render_html(state: dict[str, Any] | None = None) -> str:
     </p>
   </header>
   <main>
+    <figure>
+      {svg_jigsaw(jigsaw)}
+      <figcaption>Literal jigsaw. Green interlocking pieces snapped into a building. Red holes are Parthenon damage (still a building). Gold pocks are order-2 texture. Dashed hill is the wrong object. Play piece stays off to the side.</figcaption>
+      <details><summary>Math</summary>
+        Verdict {escape(str(jigsaw["building"]["verdict"]))} not {escape(str(jigsaw["building"]["not"]))}.
+        Certain? {str(jigsaw["building"]["certain"]).lower()}.
+        Smooth? {str(jigsaw["smooth"]).lower()}.
+        Assembler: {escape(str(jigsaw["assembly"]["kind"]))}.
+        Energy path: {escape(" → ".join(jigsaw.get("energy_path") or []))}.
+      </details>
+    </figure>
     <figure>
       {svg_cylinder()}
       <figcaption>The wall is a cut. Green disk is Hardy (done). Gold ring is the wall. Dashed outside is not NS.</figcaption>
@@ -473,4 +633,5 @@ def write_see(path: str | Path | None = None) -> Path:
     dest.with_name("see-gap.svg").write_text(svg_gap(), encoding="utf-8")
     dest.with_name("see-scan.svg").write_text(svg_scan(), encoding="utf-8")
     dest.with_name("see-shell.svg").write_text(svg_shell(), encoding="utf-8")
+    dest.with_name("see-jigsaw.svg").write_text(svg_jigsaw(), encoding="utf-8")
     return dest

@@ -283,6 +283,68 @@ INSIGHTS: Final[dict[str, tuple[dict[str, str], ...]]] = {
             "fills_gap": "no",
         },
     ),
+    "jigsaw": (
+        {
+            "name": "Caffarelli–Kohn–Nirenberg",
+            "on": "holes vs object",
+            "says": (
+                "A shelled building is still a building. Order-2/3 holes are "
+                "texture and rubble. They do not unmake the object. Partial "
+                "regularity already lives with holes; identity does too."
+            ),
+            "fills_gap": "no",
+        },
+        {
+            "name": "Hermann Weyl",
+            "on": "the form",
+            "says": (
+                "The form is the building. Energy, enstrophy, vorticity, and "
+                "the T^3 shell are the shape. Occupation and alignment are "
+                "graffiti on the walls. Finest detail is not required to name it."
+            ),
+            "fills_gap": "no",
+        },
+        {
+            "name": "Edsger Dijkstra",
+            "on": "the assembler",
+            "says": (
+                "The assembler is a constraint matcher (same book, matching "
+                "tabs, transposable). It is not a neural net. A statistical "
+                "joiner would silent-merge Q or Cosmo into B."
+            ),
+            "fills_gap": "no",
+        },
+        {
+            "name": "David Parnas",
+            "on": "Parthenon damage",
+            "says": (
+                "Order-1 holes (CLIP-T3-WELD, CLIP-T3-OUTER) are Parthenon "
+                "damage — you still name the ruin. They block the walk, not "
+                "the identity. Naming does not fill them."
+            ),
+            "fills_gap": "no",
+        },
+        {
+            "name": "Jean Leray",
+            "on": "energy path",
+            "says": (
+                "The pieces that snap are already in the same book as the "
+                "identity shell. How energy moves through them is enough to "
+                "say what the object is. Play energy is rubble, not a wall."
+            ),
+            "fills_gap": "no",
+        },
+        {
+            "name": "Richard Hamming",
+            "on": "building vs hill",
+            "says": (
+                "Building-versus-hill is a cheap, high-signal test. Spend "
+                "the next cut on the order-1 weld, not on filling every "
+                "order-2 pockmark."
+            ),
+            "fills_gap": "no",
+        },
+    ),
 }
 
 
@@ -307,6 +369,12 @@ def _norm_topic(token: str) -> str:
         "OUTSIDE": "shell",
         "SILHOUETTE": "shell",
         "GIVEAWAY": "shell",
+        "JIGSAW": "jigsaw",
+        "ASSEMBLE": "jigsaw",
+        "PUZZLE": "jigsaw",
+        "BUILDING": "jigsaw",
+        "HILL": "jigsaw",
+        "PARTHENON": "jigsaw",
     }
     return aliases.get(key, "method")
 
@@ -315,6 +383,12 @@ def consult(topic: str = "scan") -> dict[str, Any]:
     """Ask the inner tank. They comment. They do not weld."""
     key = _norm_topic(topic)
     notes = [dict(row) for row in INSIGHTS.get(key, INSIGHTS["scan"])]
+    next_cmd = {
+        "jigsaw": "python -m domain_architect --jigsaw B",
+        "shell": "python -m domain_architect --shell B",
+        "scan": "python -m domain_architect --scan",
+        "method": "python -m domain_architect --scan",
+    }.get(key, "python -m domain_architect --scan")
     return {
         "appendage": "THINK",
         "topic": key,
@@ -327,7 +401,7 @@ def consult(topic: str = "scan") -> dict[str, Any]:
             "These people know this field. Their notes constrain the scan. "
             "None of them fill the empty slot by sitting on the bench."
         ),
-        "next": "python -m domain_architect --scan",
+        "next": next_cmd,
     }
 
 

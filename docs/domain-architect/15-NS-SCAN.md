@@ -49,4 +49,5 @@ Identified: yes. Smooth: not yet.
 | A / U | no order-1 weld of that kind | do not glue onto B |
 
 The picture is on the see-desk (`see-scan.svg`). CosmoEvolution is not
-this scan.
+this scan. After a scan, `--jigsaw B` puts the same pieces on a table
+and classifies leftover holes as damage versus identity.

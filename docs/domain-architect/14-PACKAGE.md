@@ -34,7 +34,7 @@ python -m domain_architect --shape-compare SEE VIZ
 Math commands that refresh the picture:
 
 `--tube`, `--gap`, `--overlay`, `--energy-play`, `--shape-play`,
-`--chain`, `--geometry`, `--clip`, `--shape-compare`, `--scan`, `--shell`, `--see`,
+`--chain`, `--geometry`, `--clip`, `--shape-compare`, `--scan`, `--shell`, `--jigsaw`, `--see`,
 and a plain expression audit.
 
 Commands that do **not** move the picture:
@@ -43,7 +43,8 @@ Commands that do **not** move the picture:
 
 Open `see.html` after any math command. The gold strip says what you
 were just doing. The four charts (cylinder, energy, overlay, gap) stay
-the Track B desk. The banner is what auto-adjusts.
+the Track B desk. The jigsaw picture is the assembled building. The
+banner is what auto-adjusts.
 
 Pictures are not a proof. T3b stays open. Regularity stays open.
 CosmoEvolution 3D stays the lobby planetarium.

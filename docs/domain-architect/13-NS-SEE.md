@@ -10,6 +10,14 @@ python -m domain_architect --see B
 
 Open `see.html` in a browser. The same pictures sit here as SVG:
 
+## Jigsaw
+
+Literal interlocking pieces. Green snapped into a building. Red holes
+are Parthenon damage (still a building, not a hill). Gold pocks are
+order-2 texture. Dashed hill is the wrong object.
+
+![Jigsaw building](see-jigsaw.svg)
+
 ## Cylinder
 
 The wall is a cut. Green disk = Hardy, done. Gold ring = the wall.

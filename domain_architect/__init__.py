@@ -33,6 +33,7 @@ from .energy_play import energy_play
 from .overlay import overlay_report
 from .scan import scan_report
 from .shell import shell_report
+from .jigsaw import jigsaw_report
 from .visual import follow, write_see
 from .report import AuditReport
 
@@ -59,6 +60,7 @@ __all__ = [
     "overlay_report",
     "scan_report",
     "shell_report",
+    "jigsaw_report",
     "write_see",
     "follow",
 ]
