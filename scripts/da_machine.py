@@ -103,7 +103,7 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"\bq_?1\b|augmented|ladyzhenskaya", text):
         return {"domain": "A", "verdict": "open", "reason": "looks like Track A; run check A"}
     if re.search(
-        r"1/r\^?4|ring|bony|3-conc|spread|tube|vorticity|hardy|\bgamma\b|triad|track b|t2 lemma",
+        r"1/r\^?4|\bring\b|bony|3-conc|spread|tube|vorticity|hardy|\bgamma\b|triad|track b|t2 lemma",
         text,
     ):
         return {

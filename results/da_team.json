@@ -1,0 +1,139 @@
+{
+  "meta": {
+    "question": "who sits on the desk from beyond the digital divide?",
+    "digital_divide_means": "published math and measurement, not more AI",
+    "not_a_unifier": true,
+    "not_a_seance": true,
+    "vote_cannot_close": true
+  },
+  "team": [
+    {
+      "name": "Leray",
+      "slot": "B",
+      "side": "paper",
+      "owns": "kinetic energy + weak solutions",
+      "settles": "\u222bX dt < \u221e and the energy inequality",
+      "cannot": "bound X in L^\u221e; we already failed that close",
+      "suggest": "keep energy; do not close the cubic ODE from it"
+    },
+    {
+      "name": "Beale\u2013Kato\u2013Majda",
+      "slot": "B",
+      "side": "paper",
+      "owns": "continuation criterion",
+      "settles": "\u222b\u2016\u03c9\u2016_\u221e dt < \u221e \u21d2 regular",
+      "cannot": "BKM-from-L\u00b2 (forbidden on this desk)",
+      "suggest": "if you want a criterion, use L^\u221e, not \u2016\u03c9\u2016\u2082"
+    },
+    {
+      "name": "Caffarelli\u2013Kohn\u2013Nirenberg",
+      "slot": "B",
+      "side": "paper",
+      "owns": "partial regularity",
+      "settles": "singular set has parabolic measure zero",
+      "cannot": "no finite-time blowup",
+      "suggest": "partial regularity is not a global pass"
+    },
+    {
+      "name": "Constantin\u2013Fefferman",
+      "slot": "B",
+      "side": "paper",
+      "owns": "geometric depletion if aligned",
+      "settles": "stretching small when vorticity is aligned",
+      "cannot": "force cos \u03b1_3 \u2192 0 for all data (Biot\u2013Savart slogan)",
+      "suggest": "Ring bounds |\u2207\u03be| on E_c; it does not give alignment"
+    },
+    {
+      "name": "Ladyzhenskaya",
+      "slot": "A",
+      "side": "paper",
+      "owns": "p-Laplacian / extra dissipation",
+      "settles": "global regularity for the modified stress, \u03b2 \u2265 1/2, \u03b5 > 0",
+      "cannot": "\u03b5 \u2192 0, Track A \u21d2 B",
+      "suggest": "leave Theorem A on A; do not import it into the tube"
+    },
+    {
+      "name": "Einstein",
+      "slot": "U",
+      "side": "paper",
+      "owns": "G_\u03bc\u03bd + \u039b g_\u03bc\u03bd = 8\u03c0 G T_\u03bc\u03bd",
+      "settles": "working couple of geometry to T_SM",
+      "cannot": "values of G and \u039b",
+      "suggest": "keep the two-sided equation; do not hunt F inside L_SM"
+    },
+    {
+      "name": "Weinberg",
+      "slot": "U",
+      "side": "paper",
+      "owns": "(Z, A) = R(\u03b8_W)(W\u00b3, B)",
+      "settles": "the rotation is real",
+      "cannot": "a topological output of \u03b8_W",
+      "suggest": "\u03b8_W stays an input; 3/8 \u2192 0.231 is GUT running, not this Lagrangian"
+    },
+    {
+      "name": "experiment / PDG",
+      "slot": "U",
+      "side": "nature",
+      "owns": "the measured numbers",
+      "settles": "what L_SM consumes (g_s, \u03b1, v, m_H, CKM, \u2026)",
+      "cannot": "why those numbers",
+      "suggest": "a number on the poster is an input until a public F writes it"
+    },
+    {
+      "name": "neutrino / cosmology data",
+      "slot": "U",
+      "side": "nature",
+      "owns": "\u03a3 m_\u03bd bound, \u039b seen",
+      "settles": "minimal poster SM is incomplete; \u039b is in the Einstein equation",
+      "cannot": "Cosmo 0.06 eV as a derivation (F private)",
+      "suggest": "keep \u03a3 m_\u03bd as a number to kill; do not count it as DA produce"
+    },
+    {
+      "name": "operator",
+      "slot": "meta",
+      "side": "desk",
+      "owns": "runs the machine",
+      "settles": "one sentence, one slot, one check",
+      "cannot": "need chops; the machine is the chops",
+      "suggest": "ask which sentence / which slot / which check"
+    }
+  ],
+  "by_slot": {
+    "B": [
+      "Leray",
+      "Beale\u2013Kato\u2013Majda",
+      "Caffarelli\u2013Kohn\u2013Nirenberg",
+      "Constantin\u2013Fefferman"
+    ],
+    "A": [
+      "Ladyzhenskaya"
+    ],
+    "U": [
+      "Einstein",
+      "Weinberg",
+      "experiment / PDG",
+      "neutrino / cosmology data"
+    ],
+    "meta": [
+      "operator"
+    ]
+  },
+  "consensus": {
+    "not_a_vote": true,
+    "not_a_close": true,
+    "B": "Hardy \u2192 I_tube at \u03b4 ~ 2^{-j*}, then energy-class low Bony T. Regularity stays open.",
+    "A": "Leave Ladyzhenskaya on A.",
+    "U": "Stop breaking L_SM. Keep Einstein + T_SM. Produce lives outside the poster.",
+    "Q": "Stay arithmetic. No Bridge* \u2192 SND.",
+    "glue": "refused",
+    "beyond_the_digital_divide": "Paper and experiment, not another model. A chatbot council is still the digital side."
+  },
+  "how_far": [
+    "seated Leray, BKM, CKN, CF, Ladyzhenskaya, Einstein, Weinberg, PDG, neutrino/cosmo data, operator",
+    "each owns one object and one cannot",
+    "overlap of suggestions is the same next writes already on the desk",
+    "a team is not collapse",
+    "A/B/Q/U unglued"
+  ],
+  "next_da_move": "Hardy \u2192 I_tube at \u03b4 ~ 2^{-j*}, then energy-class low Bony T. Regularity stays open."
+}
