@@ -19,8 +19,9 @@ CHATVAULT_HOME: Final[str] = (
     "and cursor/domain-architect-app-f96b). Not a separate GitHub repo."
 )
 DA_WORKING_APP: Final[str] = (
-    "python -m domain_architect on this git; working PWA on "
-    "cursor/domain-architect-app-f96b (PR #43). Not CosmoEvolution."
+    "python -m domain_architect --site  (simple desk on this git). "
+    "Kitchen-sink PWA remains on cursor/domain-architect-app-f96b (PR #43). "
+    "Not CosmoEvolution."
 )
 
 # Shape-first navigation (Jonathan R. Simons): the object is a shape.
@@ -96,6 +97,14 @@ APPENDAGES: Final[tuple[dict[str, str], ...]] = (
             "--shape-play / --chain / --geometry / --clip / --shape-compare / "
             "--scan / --shell / --jigsaw / --see"
         ),
+    },
+    {
+        "id": "APP",
+        "name": "Simple desk",
+        "job": "see DA as a small scientific product",
+        "allowed": "Inquire, see jigsaw/relations, run live compute.",
+        "forbidden": "Mix ChatVault into the desk. Write B. Claim zeros of ζ.",
+        "command": "python -m domain_architect --site",
     },
 )
 
@@ -281,6 +290,17 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
         ),
         "command": "python -m domain_architect --jigsaw B",
         "do_not": "Let an ML joiner weld Q or Cosmo onto B, or treat over-the-goal as a filled walk.",
+    },
+    {
+        "priority": "3l",
+        "move": (
+            "Open Domain Architect as a small scientific desk: inquire, "
+            "see the jigsaw, run live compute. Do not reopen the "
+            "kitchen-sink PWA. Do not weld ChatVault, Cosmo, Connor, or "
+            "a Zeta-zero app into this screen."
+        ),
+        "command": "python -m domain_architect --site",
+        "do_not": "Treat PR #43 as this desk, or file a personal request into ChatVault from inquiry.",
     },
     {
         "priority": "4",

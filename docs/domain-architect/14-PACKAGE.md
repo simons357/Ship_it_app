@@ -7,6 +7,7 @@ appendages. CosmoEvolution 3D is neither of them.
 |---|---|---|
 | **THINK** | proceed map / refuse glue | `python -m domain_architect --proceed` |
 | **SEE** | picture slave of the live math | auto after math CLI; or `--see B` |
+| **APP** | simple scientific desk | `python -m domain_architect --site` |
 
 The picture **always follows the math you just ran**. It does not write
 Track B. It is not CosmoEvolution.
@@ -39,7 +40,7 @@ and a plain expression audit.
 
 Commands that do **not** move the picture:
 
-`--proceed`, `--consult`, `--registry`, `--refuse-splice`.
+`--proceed`, `--consult`, `--registry`, `--refuse-splice`, `--site`.
 
 Open `see.html` after any math command. The gold strip says what you
 were just doing. The four charts (cylinder, energy, overlay, gap) stay

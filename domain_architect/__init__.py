@@ -35,6 +35,7 @@ from .scan import scan_report
 from .shell import shell_report
 from .jigsaw import jigsaw_report
 from .visual import follow, write_see
+from .desk_server import serve_site
 from .report import AuditReport
 
 __all__ = [
@@ -63,6 +64,7 @@ __all__ = [
     "jigsaw_report",
     "write_see",
     "follow",
+    "serve_site",
 ]
 
 __version__ = "0.2.0"

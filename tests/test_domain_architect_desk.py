@@ -39,7 +39,7 @@ class TestProceedMap(unittest.TestCase):
         self.assertIn("visual appendage", text.lower())
         self.assertNotIn("unified theory", text.lower())
         arms = {a["id"] for a in report["appendages"]}
-        self.assertEqual(arms, {"THINK", "SEE"})
+        self.assertEqual(arms, {"THINK", "SEE", "APP"})
         self.assertEqual(report["cosmoevolution"]["role"], "visualization only")
 
     def test_books_stay_unglued(self):

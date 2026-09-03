@@ -21,6 +21,7 @@ from .shell import format_shell, shell_report
 from .jigsaw import format_jigsaw, jigsaw_report
 from .think_tank import consult, format_consult
 from .visual import follow, format_follow
+from .desk_server import serve_site
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 
@@ -160,7 +161,16 @@ def main(argv: list[str] | None = None) -> int:
         const="B",
         help="write a human picture desk (SVG/HTML) from the same math objects (B)",
     )
+    parser.add_argument(
+        "--site",
+        action="store_true",
+        help="open the simple scientific desk in a browser (inquire / see / compute)",
+    )
     args = parser.parse_args(argv)
+
+    if args.site:
+        serve_site()
+        return 0
 
     if args.proceed:
         payload = proceed_report()
@@ -435,7 +445,7 @@ def main(argv: list[str] | None = None) -> int:
         parser.error(
             "expression is required unless --registry, --proceed, --consult, "
             "--refuse-splice, --shape-compare, --clip, --chain, "
-            "--geometry, --tube, --gap, --shape-play, --energy-play, --overlay, --scan, --shell, --jigsaw, or --see is set"
+            "--geometry, --tube, --gap, --shape-play, --energy-play, --overlay, --scan, --shell, --jigsaw, --see, or --site is set"
         )
 
     report = audit_expression(args.expression)

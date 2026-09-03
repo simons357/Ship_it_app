@@ -29,7 +29,7 @@ Approved plain-language explanation:
 | [14 — Package](14-PACKAGE.md) | Think tank + visual appendage; picture slaves the math |
 | [15 — Scan](15-NS-SCAN.md) | Break into rudimentary pieces; match leftover holes; do not weld |
 | [16 — Shell](16-NS-SHELL.md) | Inside plus outer shape; silhouette may already be identified |
-| [17 — Jigsaw](17-NS-JIGSAW.md) | Literal pieces, assemble, holes as damage; building not hill |
+| [18 — Simple desk](18-DA-DESK.md) | See Domain Architect as a small scientific product |
 
 Machine-readable provenance (original expressions are immutable):
 
@@ -54,6 +54,7 @@ python -m domain_architect --scan
 python -m domain_architect --scan B
 python -m domain_architect --shell B
 python -m domain_architect --jigsaw B
+python -m domain_architect --site
 python -m domain_architect --consult
 python -m domain_architect --see B
 python -m domain_architect --refuse-splice SEE B
