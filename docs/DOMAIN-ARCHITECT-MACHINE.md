@@ -69,7 +69,7 @@ python3 scripts/da_machine.py classify --claim "the prime block of Q-tilde sits 
 python3 scripts/da_machine.py log --domain Q --claim "Theorem P" --verdict pass --note "script certificate"
 ```
 
-`status` shows the slots. `check` runs every checker that exists. `classify` is DA assigning a slot and a pre-verdict from the claim text. `log` writes one run into `results/da_machine_log.json`.
+`status` shows the slots. `check` runs every checker that exists. `classify` is DA assigning a slot and a pre-verdict from the claim text. `cosmos` drills the ~16 Cosmo knobs (`docs/DA-COSMOS-DRILL.md`). `log` writes one run into `results/da_machine_log.json`.
 
 You point ordinary AI at one slot. It proposes. You run `classify` and `check`. The log is the record of how far this process got.
 

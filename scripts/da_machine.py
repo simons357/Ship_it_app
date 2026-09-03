@@ -85,8 +85,8 @@ def classify_claim(claim: str) -> dict:
         return {"domain": "B", "verdict": "open", "reason": "looks like Track B; no pass checker"}
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
-    if re.search(r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum", text):
-        return {"domain": "U", "verdict": "open", "reason": "looks like score U; run check U"}
+    if re.search(r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b", text):
+        return {"domain": "U", "verdict": "open", "reason": "looks like score U / Cosmos count; run cosmos drill"}
     return {"domain": None, "verdict": "open", "reason": "no slot; rephrase into A, B, Q, or U"}
 
 
@@ -134,6 +134,106 @@ def cmd_status() -> int:
     return 0
 
 
+def cosmos_drill() -> dict:
+    """DA drill-down: possibility-with-n, must-hits, score core, missing names."""
+    return {
+        "slot": "U",
+        "cosmos_list_found": False,
+        "n_claimed": 16,
+        "n_confirmed": None,
+        "possibility_claim": {
+            "statement": "unification is possible with about 16 variables",
+            "verdict": "open",
+            "why": (
+                "A finite n is a real narrowing IF the names exist and one map F "
+                "of those n hits the four couplings. The app saying 'possible' is "
+                "not the check. The check is χ²_ext(F(x)) ≤ ε²."
+            ),
+        },
+        "layers": [
+            {
+                "layer": 0,
+                "name": "count only",
+                "pieces": ["n ≈ 16 (unconfirmed)"],
+                "status": "stuck: names missing",
+            },
+            {
+                "layer": 1,
+                "name": "must-hit observables (any four-force unifier)",
+                "pieces": [
+                    "log_alpha_em",
+                    "log_alpha_s",
+                    "sin2_theta_w",
+                    "log_hierarchy",
+                    "log_cc_ratio",
+                    "log_qcd_ratio",
+                    "log_weak_ratio",
+                ],
+                "status": "cannot drop gravity or vacuum energy and still call it nature",
+            },
+            {
+                "layer": 2,
+                "name": "score core from lock-R search",
+                "pieces": ["log_cc_ratio", "log_hierarchy"],
+                "status": "in every best subset of size ≥ 2",
+            },
+            {
+                "layer": 3,
+                "name": "next lock-R pieces",
+                "pieces": ["S_coh", "delta_spread", "grad_coh"],
+                "status": "raise lock_R to 0.70 at k=5; still not F",
+            },
+            {
+                "layer": 4,
+                "name": "not in any best set",
+                "pieces": [
+                    "A_mean",
+                    "f_mean",
+                    "phi_scale",
+                    "p_cut",
+                    "log_alpha_em",
+                    "log_alpha_s",
+                    "sin2_theta_w",
+                    "log_weak_ratio",
+                ],
+                "status": "do not drill these first",
+            },
+        ],
+        "rebuild": (
+            "Rebuild only after names exist: write F from the surviving pieces "
+            "(layer 2, then 3) to the four couplings. If F needs a layer-4 knob, "
+            "that knob was misclassified and goes back in. That is the drill."
+        ),
+        "how_to_get_the_16": [
+            "Paste or screenshot the Cosmos variable screen into this repo",
+            "Export a JSON/CSV of the knobs from the app",
+            "Type the 16 names in one message",
+        ],
+        "next_da_move": "identify names, then re-run lock-R on those names only",
+    }
+
+
+def cmd_cosmos() -> int:
+    drill = cosmos_drill()
+    out = ROOT / "results" / "da_cosmos_drill.json"
+    out.write_text(json.dumps(drill, indent=2))
+    print("DA Cosmos drill. List not found. Possibility claim stays open.")
+    print("n_claimed:", drill["n_claimed"], "n_confirmed:", drill["n_confirmed"])
+    for layer in drill["layers"]:
+        print(f"L{layer['layer']} {layer['name']}: {', '.join(layer['pieces'])}")
+        print(f"    {layer['status']}")
+    print("rebuild:", drill["rebuild"])
+    print("next:", drill["next_da_move"])
+    append_run(
+        "U",
+        "Cosmos drill: is unification possible with ~16 named knobs?",
+        "open",
+        "names missing; core leftovers are vacuum energy and Planck hierarchy",
+    )
+    print(f"wrote {out}")
+    return 0
+
+
 def cmd_check(domain: str) -> int:
     domains = list(SLOTS) if domain == "all" else [domain]
     rc = 0
@@ -152,6 +252,7 @@ def main() -> int:
     p = argparse.ArgumentParser(description="Domain Architect process machine")
     sub = p.add_subparsers(dest="cmd", required=True)
     sub.add_parser("status")
+    sub.add_parser("cosmos", help="drill the ~16 Cosmos knobs")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -165,6 +266,8 @@ def main() -> int:
 
     if args.cmd == "status":
         return cmd_status()
+    if args.cmd == "cosmos":
+        return cmd_cosmos()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":

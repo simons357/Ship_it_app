@@ -1,0 +1,76 @@
+{
+  "slot": "U",
+  "cosmos_list_found": false,
+  "n_claimed": 16,
+  "n_confirmed": null,
+  "possibility_claim": {
+    "statement": "unification is possible with about 16 variables",
+    "verdict": "open",
+    "why": "A finite n is a real narrowing IF the names exist and one map F of those n hits the four couplings. The app saying 'possible' is not the check. The check is \u03c7\u00b2_ext(F(x)) \u2264 \u03b5\u00b2."
+  },
+  "layers": [
+    {
+      "layer": 0,
+      "name": "count only",
+      "pieces": [
+        "n \u2248 16 (unconfirmed)"
+      ],
+      "status": "stuck: names missing"
+    },
+    {
+      "layer": 1,
+      "name": "must-hit observables (any four-force unifier)",
+      "pieces": [
+        "log_alpha_em",
+        "log_alpha_s",
+        "sin2_theta_w",
+        "log_hierarchy",
+        "log_cc_ratio",
+        "log_qcd_ratio",
+        "log_weak_ratio"
+      ],
+      "status": "cannot drop gravity or vacuum energy and still call it nature"
+    },
+    {
+      "layer": 2,
+      "name": "score core from lock-R search",
+      "pieces": [
+        "log_cc_ratio",
+        "log_hierarchy"
+      ],
+      "status": "in every best subset of size \u2265 2"
+    },
+    {
+      "layer": 3,
+      "name": "next lock-R pieces",
+      "pieces": [
+        "S_coh",
+        "delta_spread",
+        "grad_coh"
+      ],
+      "status": "raise lock_R to 0.70 at k=5; still not F"
+    },
+    {
+      "layer": 4,
+      "name": "not in any best set",
+      "pieces": [
+        "A_mean",
+        "f_mean",
+        "phi_scale",
+        "p_cut",
+        "log_alpha_em",
+        "log_alpha_s",
+        "sin2_theta_w",
+        "log_weak_ratio"
+      ],
+      "status": "do not drill these first"
+    }
+  ],
+  "rebuild": "Rebuild only after names exist: write F from the surviving pieces (layer 2, then 3) to the four couplings. If F needs a layer-4 knob, that knob was misclassified and goes back in. That is the drill.",
+  "how_to_get_the_16": [
+    "Paste or screenshot the Cosmos variable screen into this repo",
+    "Export a JSON/CSV of the knobs from the app",
+    "Type the 16 names in one message"
+  ],
+  "next_da_move": "identify names, then re-run lock-R on those names only"
+}

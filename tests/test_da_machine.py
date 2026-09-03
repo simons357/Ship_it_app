@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from da_machine import classify_claim  # noqa: E402
+from da_machine import classify_claim, cosmos_drill  # noqa: E402
 
 
 class DaMachineTests(unittest.TestCase):
@@ -26,6 +26,12 @@ class DaMachineTests(unittest.TestCase):
         r = classify_claim("hello there")
         self.assertIsNone(r["domain"])
         self.assertEqual(r["verdict"], "open")
+
+    def test_cosmos_drill_stays_open_without_names(self):
+        d = cosmos_drill()
+        self.assertFalse(d["cosmos_list_found"])
+        self.assertEqual(d["possibility_claim"]["verdict"], "open")
+        self.assertEqual(d["layers"][2]["pieces"], ["log_cc_ratio", "log_hierarchy"])
 
 
 if __name__ == "__main__":
