@@ -7,6 +7,22 @@ tell a building from a hill after it has been shelled, or after
 Parthenon-style decay. Finest detail is not required. The general shape
 plus how energy moves through the snapped pieces is enough to name it.
 
+## The goal
+
+The bar is not finest detail. The bar is: **this is the object**, and
+**this is how energy goes through it**. Crossing that line is
+identification. It does not fill the walk and it is not smoothness.
+
+```
+Goal: OVER
+  named = the identity shell is already in the catalog
+  how   = [E] → E→X → ring → strain → Hardy → 1/r²
+  fills_walk = false
+```
+
+The gold GOAL line on `see-jigsaw.svg` is that bar. Energy crosses it.
+Red holes stay in the walls.
+
 The assembler is a **constraint matcher** (same book, matching chart
 tab, transposable). It is not a neural net. A statistical joiner would
 silent-merge Q or Cosmo onto Track B because the letters rhyme.

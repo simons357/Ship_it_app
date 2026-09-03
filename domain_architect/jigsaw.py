@@ -142,6 +142,36 @@ def assemble_pieces(pieces: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def goal_line(
+    building: dict[str, Any],
+    energy_path: list[str],
+    relations: list[dict[str, str]],
+) -> dict[str, Any]:
+    """Identification bar: name it, and say how energy goes through it.
+
+    Crossing this bar is not smoothness and does not fill the walk.
+    """
+    named = bool(building.get("certain"))
+    how = len(energy_path) >= 2 or len(relations) >= 1
+    how_line = " → ".join(energy_path) if energy_path else ""
+    if not how_line and relations:
+        how_line = relations[0]["rule"]
+    return {
+        "bar": "name the object, and say generally how energy goes through it",
+        "not": "finest detail / every hole filled / smoothness",
+        "over": bool(named and how),
+        "named": named,
+        "how_it_works": how,
+        "how": how_line,
+        "fills_walk": False,
+        "why": (
+            "Over the goal means identified: this is the object, and this is "
+            "how energy moves through the pieces you already have. It does "
+            "not fill order-1 holes and it is not smoothness."
+        ),
+    }
+
+
 def classify_holes(book: str = "B") -> list[dict[str, Any]]:
     rows = []
     for hole in leftover_holes(book=book):
@@ -254,6 +284,7 @@ def jigsaw_report(target: str = "B") -> dict[str, Any]:
         energy_path = []
     overlay = overlay_report() if book == "B" else {"composite": {"is_complete": False}}
     mixed = assemble_pieces(pieces + (_q_pieces() if book == "B" else [_piece(layer) for layer in LAYERS]))
+    goal = goal_line(building, energy_path, relations)
     return {
         "title": "Jigsaw — pieces, assembly, damage that does not unmake the building",
         "not_a_proof": True,
@@ -264,6 +295,7 @@ def jigsaw_report(target: str = "B") -> dict[str, Any]:
         "holes": holes,
         "relations": relations,
         "energy_path": energy_path,
+        "goal": goal,
         "building": building,
         "smooth": False,
         "complete": bool(overlay.get("composite", {}).get("is_complete")),
@@ -284,15 +316,16 @@ def jigsaw_report(target: str = "B") -> dict[str, Any]:
         },
         "rule": (
             "Break into literal pieces. Snap only matching tabs. "
-            "Order-2/3 holes are not identity. Order-1 holes stay in the "
-            "walls. Still a building, not a hill. Assembler is constraints, "
-            "not a neural net. Finest detail is not required."
+            "The goal is to name the object and say how energy goes through "
+            "it. Finest detail is not required. Order-2/3 holes are not "
+            "identity. Order-1 holes stay in the walls. Still a building, "
+            "not a hill. Assembler is constraints, not a neural net."
         ),
         "think_tank": consult("jigsaw"),
         "next": (
-            "Keep the building. Park order-2/3. Reconstruct from known "
-            "relations (energy path, viscosity). Do not fill order-1 with Q "
-            "or Cosmo. Identification is not smoothness."
+            "Keep the building. You are over the goal: named, and how energy "
+            "moves through the snapped pieces. Park order-2/3. Do not fill "
+            "order-1 with Q or Cosmo. Over the goal is not smoothness."
         ),
     }
 
@@ -325,6 +358,20 @@ def format_jigsaw(report: dict[str, Any] | None = None) -> str:
     )
     lines.append(f"  not: {asm['not']}")
     lines.append(f"  {asm['why_not_ml']}")
+    goal = data.get("goal") or {}
+    if goal:
+        lines.append("")
+        lines.append(
+            f"Goal: {'OVER' if goal.get('over') else 'SHORT'}  "
+            f"named={str(goal.get('named')).lower()}  "
+            f"how_it_works={str(goal.get('how_it_works')).lower()}  "
+            f"fills_walk={str(goal.get('fills_walk')).lower()}"
+        )
+        lines.append(f"  bar: {goal.get('bar')}")
+        lines.append(f"  not: {goal.get('not')}")
+        if goal.get("how"):
+            lines.append(f"  how: {goal['how']}")
+        lines.append("  " + goal.get("why", ""))
     if data.get("energy_path"):
         lines.append("")
         lines.append("Energy path (how it works, not finest detail)")

@@ -48,7 +48,7 @@ FOCUS_LINE: Final[dict[str, str]] = {
     "audit": "Live math: role audit of an expression",
     "scan": "Live math: scan leftover holes against every rudimentary piece",
     "shell": "Live math: inside plus outer shell — silhouette may already be known",
-    "jigsaw": "Live math: jigsaw pieces — assemble the building, park the holes",
+    "jigsaw": "Live math: over the goal — name it, show how energy goes through it",
     "see": "Visual appendage — slave of the math, not Cosmo",
 }
 TITLES: Final[dict[str, str]] = {
@@ -67,7 +67,7 @@ TITLES: Final[dict[str, str]] = {
     "audit": "Role audit of an expression",
     "scan": "Scan — match the hole, do not weld",
     "shell": "Shell — inside, outer shape, dead giveaway",
-    "jigsaw": "Jigsaw — pieces, building, damage that is not a hill",
+    "jigsaw": "Jigsaw — over the goal: this is the object, how energy goes through it",
     "see": "See desk — pictures first, math under the fold",
 }
 
@@ -445,13 +445,31 @@ def svg_jigsaw(report: dict[str, Any] | None = None) -> str:
         hole_marks.append(
             f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="5" fill="none" stroke="{PLAY}" stroke-width="2"/>'
         )
-    # Energy path arrows through the snapped pieces.
+    # Energy path through the snapped pieces — this is how it works.
     arrows = (
         f'<path d="M {ox + 0.5 * w:.1f} {oy + 1.55 * h:.1f} '
         f'L {ox + 1.5 * w:.1f} {oy + 1.55 * h:.1f} '
         f'L {ox + 1.5 * w:.1f} {oy + 2.55 * h:.1f} '
         f'L {ox + 0.5 * w:.1f} {oy + 3.55 * h:.1f}" '
-        f'fill="none" stroke="{INK}" stroke-width="1.6" stroke-dasharray="3 3" opacity="0.55"/>'
+        f'fill="none" stroke="{INK}" stroke-width="2.2"/>'
+        f'<text x="{ox + 1.62 * w:.1f}" y="{oy + 1.42 * h:.1f}" '
+        f'font-family="Georgia, serif" font-size="10" fill="{INK}">energy</text>'
+        f'<text x="{ox + 0.08 * w:.1f}" y="{oy + 3.72 * h:.1f}" '
+        f'font-family="Georgia, serif" font-size="10" fill="{INK}">visc 1/r²</text>'
+    )
+    # Goal line the energy path crosses. Identification, not smoothness.
+    goal_y = oy + 2.05 * h
+    goal_mark = (
+        f'<line x1="{ox - 8:.1f}" y1="{goal_y:.1f}" x2="{ox + 3.05 * w:.1f}" y2="{goal_y:.1f}" '
+        f'stroke="{PLAY}" stroke-width="3"/>'
+        f'<text x="{ox - 6:.1f}" y="{goal_y - 6:.1f}" font-family="Georgia, serif" '
+        f'font-size="11" fill="{PLAY}">GOAL</text>'
+    )
+    over = bool((data.get("goal") or {}).get("over"))
+    over_line = (
+        "OVER THE GOAL — this is the object. This is how energy goes through it."
+        if over
+        else "Short of the goal — not yet named, or no energy path."
     )
     # Play piece (even-reflect) off to the side — extra E, not a wall.
     play_d = _jigsaw_piece_path(ox + 3.4 * w, oy + 0.2 * h, w, h, 0, 0, 0, 1)
@@ -476,17 +494,18 @@ def svg_jigsaw(report: dict[str, Any] | None = None) -> str:
         f'font-family="Georgia, serif" font-size="12" fill="{REFUSE}">not a hill</text>'
     )
     verdict = data.get("building", {}).get("verdict", "BUILDING")
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" role="img" aria-label="Jigsaw building assembled from pieces">
-  <rect width="520" height="360" fill="{PAPER}"/>
-  <text x="16" y="26" font-family="Georgia, serif" font-size="16" fill="{INK}">Jigsaw — put the pieces together. Holes are damage.</text>
-  <text x="16" y="46" font-family="Georgia, serif" font-size="12" fill="{READY}">{verdict}  not a hill. Finest detail not required.</text>
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 370" role="img" aria-label="Jigsaw building assembled from pieces, energy path over the goal">
+  <rect width="520" height="370" fill="{PAPER}"/>
+  <text x="16" y="24" font-family="Georgia, serif" font-size="15" fill="{INK}">{escape(over_line)}</text>
+  <text x="16" y="44" font-family="Georgia, serif" font-size="12" fill="{READY}">{verdict}  not a hill. Finest detail not required.</text>
   {"".join(drawn)}
+  {goal_mark}
   {arrows}
   {"".join(hole_marks)}
   {play}
   {hill}
   {rubble}
-  <text x="16" y="348" font-family="Georgia, serif" font-size="11" fill="{INK}">Green interlocking = snapped. Red holes = Parthenon (walk). Gold pocks = order-2. Dashed hill is the wrong object.</text>
+  <text x="16" y="358" font-family="Georgia, serif" font-size="11" fill="{INK}">Gold GOAL is identification: named + how energy moves. Red holes still block the walk. Not smoothness.</text>
 </svg>'''
 
 
@@ -549,12 +568,12 @@ def render_html(state: dict[str, Any] | None = None) -> str:
   <main>
     <figure>
       {svg_jigsaw(jigsaw)}
-      <figcaption>Literal jigsaw. Green interlocking pieces snapped into a building. Red holes are Parthenon damage (still a building). Gold pocks are order-2 texture. Dashed hill is the wrong object. Play piece stays off to the side.</figcaption>
+      <figcaption>Literal jigsaw. Gold GOAL line is identification: named, and how energy goes through the pieces. Finest detail is not required. Red holes still block the walk. Dashed hill is the wrong object.</figcaption>
       <details><summary>Math</summary>
+        Goal over? {str((jigsaw.get("goal") or {}).get("over")).lower()}.
+        Fills walk? {str((jigsaw.get("goal") or {}).get("fills_walk")).lower()}.
         Verdict {escape(str(jigsaw["building"]["verdict"]))} not {escape(str(jigsaw["building"]["not"]))}.
-        Certain? {str(jigsaw["building"]["certain"]).lower()}.
         Smooth? {str(jigsaw["smooth"]).lower()}.
-        Assembler: {escape(str(jigsaw["assembly"]["kind"]))}.
         Energy path: {escape(" → ".join(jigsaw.get("energy_path") or []))}.
       </details>
     </figure>

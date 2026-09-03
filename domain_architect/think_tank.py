@@ -326,21 +326,21 @@ INSIGHTS: Final[dict[str, tuple[dict[str, str], ...]]] = {
         },
         {
             "name": "Jean Leray",
-            "on": "energy path",
+            "on": "the goal",
             "says": (
-                "The pieces that snap are already in the same book as the "
-                "identity shell. How energy moves through them is enough to "
-                "say what the object is. Play energy is rubble, not a wall."
+                "The bar is: name the object, and say how energy moves "
+                "through the pieces you already have. That is over the goal. "
+                "It is not a bound on vorticity and it does not fill the weld."
             ),
             "fills_gap": "no",
         },
         {
             "name": "Richard Hamming",
-            "on": "building vs hill",
+            "on": "finest detail",
             "says": (
-                "Building-versus-hill is a cheap, high-signal test. Spend "
-                "the next cut on the order-1 weld, not on filling every "
-                "order-2 pockmark."
+                "Do not spend the next cut polishing every order-2 pockmark. "
+                "You are over the goal when you can say what it is and how "
+                "energy goes through it. The walk is a different bar."
             ),
             "fills_gap": "no",
         },
@@ -375,6 +375,7 @@ def _norm_topic(token: str) -> str:
         "BUILDING": "jigsaw",
         "HILL": "jigsaw",
         "PARTHENON": "jigsaw",
+        "GOAL": "jigsaw",
     }
     return aliases.get(key, "method")
 

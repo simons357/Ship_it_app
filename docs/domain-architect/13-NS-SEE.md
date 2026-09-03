@@ -12,9 +12,11 @@ Open `see.html` in a browser. The same pictures sit here as SVG:
 
 ## Jigsaw
 
-Literal interlocking pieces. Green snapped into a building. Red holes
-are Parthenon damage (still a building, not a hill). Gold pocks are
-order-2 texture. Dashed hill is the wrong object.
+Literal interlocking pieces. Green snapped into a building. The gold
+GOAL line is identification: named, plus how energy goes through it.
+Finest detail is not required. Red holes are Parthenon damage (still a
+building, not a hill). Gold pocks are order-2 texture. Dashed hill is
+the wrong object.
 
 ![Jigsaw building](see-jigsaw.svg)
 

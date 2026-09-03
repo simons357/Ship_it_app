@@ -272,12 +272,13 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
             "Break the object into literal jigsaw pieces. Snap matching "
             "tabs. Order-2/3 holes are damage, not identity. Order-1 holes "
             "are Parthenon: still a building, not a hill. Finest detail is "
-            "not required — the general shape and how energy moves through "
-            "the snapped pieces is enough to name it. Assembler is "
+            "not required. You are over the goal when you can name the "
+            "object and say how energy moves through the snapped pieces. "
+            "That is identification, not smoothness. Assembler is "
             "constraints, not a neural net."
         ),
         "command": "python -m domain_architect --jigsaw B",
-        "do_not": "Let an ML joiner weld Q or Cosmo onto B, or treat naming as smoothness.",
+        "do_not": "Let an ML joiner weld Q or Cosmo onto B, or treat over-the-goal as a filled walk.",
     },
     {
         "priority": "4",

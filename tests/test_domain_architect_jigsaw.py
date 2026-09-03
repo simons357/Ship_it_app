@@ -55,7 +55,23 @@ class TestJigsaw(unittest.TestCase):
         self.assertEqual(phi["role"], "rubble")
         self.assertFalse(phi["identity_relevant"])
 
-    def test_assembler_is_constraints_not_a_net(self):
+    def test_over_the_goal_is_name_plus_energy_path(self):
+        data = jigsaw_report("B")
+        goal = data["goal"]
+        self.assertTrue(goal["over"])
+        self.assertTrue(goal["named"])
+        self.assertTrue(goal["how_it_works"])
+        self.assertFalse(goal["fills_walk"])
+        self.assertFalse(data["smooth"])
+        self.assertFalse(data["building"]["finest_detail"])
+        self.assertIn("L12-ENERGY", goal["how"])
+        text = format_jigsaw(data).lower()
+        self.assertIn("goal: over", text)
+        self.assertNotIn("clay", text)
+        svg = svg_jigsaw(data)
+        self.assertIn("OVER THE GOAL", svg)
+        self.assertIn("GOAL", svg)
+        self.assertIn("energy", svg)
         data = jigsaw_report("B")
         asm = data["assembly"]
         self.assertEqual(asm["kind"], "constraint")
@@ -93,6 +109,7 @@ class TestJigsaw(unittest.TestCase):
         self.assertIn("BUILDING", svg)
         self.assertIn("not a hill", svg)
         self.assertIn("GAP-T3", svg)
+        self.assertIn("OVER THE GOAL", svg)
         self.assertNotIn("clay", svg.lower())
 
     def test_cli_follows_see(self):
@@ -106,6 +123,8 @@ class TestJigsaw(unittest.TestCase):
         self.assertEqual(proc.returncode, 0, proc.stderr)
         payload = json.loads(proc.stdout)
         self.assertEqual(payload["building"]["verdict"], "BUILDING")
+        self.assertTrue(payload["goal"]["over"])
+        self.assertFalse(payload["goal"]["fills_walk"])
         self.assertEqual(payload["assembly"]["kind"], "constraint")
         state = json.loads((ROOT / DEFAULT_STATE).read_text(encoding="utf-8"))
         self.assertEqual(state["action"], "jigsaw")
