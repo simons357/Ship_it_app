@@ -7,6 +7,7 @@ import json
 import sys
 
 from .audit import audit_expression
+from .clip_splice import clip_splice, format_clip_splice
 from .desk import compare_shape, format_proceed, proceed_report, refuse_splice
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
@@ -39,6 +40,12 @@ def main(argv: list[str] | None = None) -> int:
         nargs=2,
         metavar=("LEFT", "RIGHT"),
         help="compare two library objects by shape, then texture (e.g. J/X LAMBDA-MIN)",
+    )
+    parser.add_argument(
+        "--clip",
+        nargs=2,
+        metavar=("LEFT", "RIGHT"),
+        help="clip excess terms, ID the remainder, and measure it",
     )
     args = parser.parse_args(argv)
 
@@ -75,6 +82,15 @@ def main(argv: list[str] | None = None) -> int:
             print(compared.reason)
         return 0
 
+    if args.clip:
+        clipped = clip_splice(args.clip[0], args.clip[1])
+        if args.json:
+            json.dump(clipped.to_dict(), sys.stdout, indent=2)
+            sys.stdout.write("\n")
+        else:
+            print(format_clip_splice(clipped))
+        return 0
+
     if args.registry:
         registry = EquationRegistry.load_default()
         payload = registry.export()
@@ -96,7 +112,7 @@ def main(argv: list[str] | None = None) -> int:
     if not args.expression:
         parser.error(
             "expression is required unless --registry, --proceed, "
-            "--refuse-splice, or --shape-compare is set"
+            "--refuse-splice, --shape-compare, or --clip is set"
         )
 
     report = audit_expression(args.expression)

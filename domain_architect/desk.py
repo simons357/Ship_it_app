@@ -145,6 +145,12 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
         "do_not": "Treat a texture translation as a proof, or use Cosmo pictures as the shape of NS or RH.",
     },
     {
+        "priority": "1b",
+        "move": "If two equations almost match, clip the excess, ID the clip, and measure it. Do not throw the remainder away.",
+        "command": 'python -m domain_architect --clip "laplacian Phi = 4 * pi * G * rho" "laplacian Phi = 4 * pi * G * rho + Lambda * Phi"',
+        "do_not": "Silent-merge after a clip. The clip is a component. Cores aligned ≠ original equations the same.",
+    },
+    {
         "priority": "2",
         "move": "Run this desk, not Cosmo, as Domain Architect.",
         "command": "python -m domain_architect --proceed",

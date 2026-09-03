@@ -14,6 +14,26 @@ analytic number theory.
 
 A team is not a vote.
 
+## Clip splice
+
+If two equations are almost the same, clip the excess so the **cores**
+match. The clipped remainder gets an ID and a measurement. It is never
+discarded. Aligned cores are not a proof that the original equations are
+the same.
+
+```bash
+python -m domain_architect --clip \
+  "laplacian Phi = 4 * pi * G * rho" \
+  "laplacian Phi = 4 * pi * G * rho + Lambda * Phi"
+
+python -m domain_architect --clip \
+  "partial_t u + (u * nabla) * u = - nabla p + nu * laplacian u" \
+  "partial_t u + (u * nabla) * u = - nabla p + nu * laplacian u + epsilon * div(f)"
+```
+
+The second clip is the Q1 extra term: a `DYNAMICS_TERM` with its own
+`CLIP-…` ID. Independently specifiable. Not zero. Not \(A\Rightarrow B\).
+
 ## Shape first
 
 The object is a **shape**. Notation is a **texture**. Same shape, different
