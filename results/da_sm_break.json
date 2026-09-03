@@ -1,0 +1,816 @@
+{
+  "meta": {
+    "question": "break L_SM to atoms, then reassemble",
+    "five_blocks_not_enough": true,
+    "n_poster_blocks": 5,
+    "n_leaves": 34,
+    "not_a_unifier": true,
+    "does_not_touch_ABQ": true
+  },
+  "tree": {
+    "name": "L_SM",
+    "piece": "expanded Standard Model Lagrangian (the poster)",
+    "verdict": "open",
+    "why": "A sum. Five blocks were the printing. These are the parts.",
+    "fingers": [
+      {
+        "name": "principles",
+        "piece": "what you must assume before writing a term",
+        "verdict": "open",
+        "why": "These are choices, not outputs of F.",
+        "fingers": [
+          {
+            "name": "spacetime",
+            "piece": "Minkowski \u03b7_\u03bc\u03bd, then g_\u03bc\u03bd if coupled to gravity",
+            "verdict": "pass",
+            "why": "needed to write \u2202_\u03bc and spinors"
+          },
+          {
+            "name": "gauge_principle",
+            "piece": "replace \u2202 by D = \u2202 \u2212 igA on a principal bundle",
+            "verdict": "pass",
+            "why": "one idea, three groups"
+          },
+          {
+            "name": "representations",
+            "piece": "fermions and Higgs sit in fixed G-reps",
+            "verdict": "pass",
+            "why": "the quantum numbers are inputs"
+          },
+          {
+            "name": "dim4",
+            "piece": "operators of mass dimension \u2264 4 (renormalizable)",
+            "verdict": "pass",
+            "why": "this is why the SM is a finite list, not an infinite one"
+          },
+          {
+            "name": "three_copies",
+            "piece": "repeat the fermion reps three times",
+            "verdict": "open",
+            "why": "copied in. Not derived from the group."
+          }
+        ]
+      },
+      {
+        "name": "gauge_group",
+        "piece": "G = SU(3)_c \u00d7 SU(2)_L \u00d7 U(1)_Y",
+        "verdict": "pass",
+        "why": "Three factors. Not one group. That is why gauge3 can miss.",
+        "fingers": [
+          {
+            "name": "SU3",
+            "piece": "8 gluons, f^{abc}, g_s",
+            "verdict": "pass",
+            "why": "working Yang\u2013Mills. g_s in."
+          },
+          {
+            "name": "SU2",
+            "piece": "3 W's, \u03b5^{abc}, g",
+            "verdict": "pass",
+            "why": "left-handed weak. g in."
+          },
+          {
+            "name": "U1",
+            "piece": "1 hypercharge B_\u03bc, g'",
+            "verdict": "pass",
+            "why": "g' in. Photon appears only after mixing."
+          }
+        ]
+      },
+      {
+        "name": "fields",
+        "piece": "what the Lagrangian is a function of",
+        "verdict": "pass",
+        "why": "Connections + Higgs + fermions + ghosts.",
+        "fingers": [
+          {
+            "name": "gluons",
+            "piece": "A_\u03bc^a, a=1..8",
+            "verdict": "pass",
+            "why": "block 1"
+          },
+          {
+            "name": "weak_bosons",
+            "piece": "W_\u03bc^i, i=1,2,3",
+            "verdict": "pass",
+            "why": "block 2 before rotation"
+          },
+          {
+            "name": "hypercharge",
+            "piece": "B_\u03bc",
+            "verdict": "pass",
+            "why": "mixes with W\u00b3"
+          },
+          {
+            "name": "higgs_doublet",
+            "piece": "H = (\u03c6\u207a, (v+H+i\u03c6\u2070)/\u221a2)",
+            "verdict": "pass",
+            "why": "4 real scalars; 3 eaten"
+          },
+          {
+            "name": "quarks",
+            "piece": "Q_L, u_R, d_R \u00d7 3 gen \u00d7 3 color",
+            "verdict": "pass",
+            "why": "reps, not masses"
+          },
+          {
+            "name": "leptons",
+            "piece": "L_L, e_R \u00d7 3 gen (\u03bd_R absent on the poster)",
+            "verdict": "open",
+            "why": "minimal SM; data want neutrino mass"
+          },
+          {
+            "name": "ghosts",
+            "piece": "Faddeev\u2013Popov X, Y, \u2026",
+            "verdict": "pass",
+            "why": "bookkeeping. Drop from the classical EOM."
+          }
+        ]
+      },
+      {
+        "name": "operators",
+        "piece": "the actual terms, one kind each",
+        "verdict": "pass",
+        "why": "Most general dim-4 operators with those quantum numbers.",
+        "fingers": [
+          {
+            "name": "F2",
+            "piece": "\u22121/4 F_{\u03bc\u03bd} F^{\u03bc\u03bd} for each factor",
+            "verdict": "pass",
+            "why": "kinetic + YM self-interaction"
+          },
+          {
+            "name": "DH2",
+            "piece": "|D_\u03bc H|\u00b2",
+            "verdict": "pass",
+            "why": "Higgs kinetic; after VEV, W/Z masses"
+          },
+          {
+            "name": "VH",
+            "piece": "\u03bc\u00b2|H|\u00b2 + \u03bb|H|\u2074",
+            "verdict": "pass",
+            "why": "potential. v and m_H from \u03bc, \u03bb \u2014 still inputs"
+          },
+          {
+            "name": "psiDpsi",
+            "piece": "\u03c8\u0304 i D\u0338 \u03c8",
+            "verdict": "pass",
+            "why": "fermion kinetic + gauge vertices"
+          },
+          {
+            "name": "yukawa",
+            "piece": "y \u03c8\u0304 H \u03c8 + h.c.",
+            "verdict": "pass",
+            "why": "masses after VEV. y in, m out of yv, not out of topology"
+          },
+          {
+            "name": "theta_term",
+            "piece": "\u03b8 F F\u0303",
+            "verdict": "open",
+            "why": "usually omitted; strong-CP leftover"
+          },
+          {
+            "name": "ghost_op",
+            "piece": "ghost kinetic + mixing",
+            "verdict": "pass",
+            "why": "not a force"
+          }
+        ]
+      },
+      {
+        "name": "parameters",
+        "piece": "numbers the operators consume",
+        "verdict": "fail",
+        "why": "This list is the input side of F. Nothing here is produced by L_SM.",
+        "fingers": [
+          {
+            "name": "g_s",
+            "piece": "strong coupling",
+            "verdict": "fail",
+            "why": "consumed by F2_SU3"
+          },
+          {
+            "name": "g",
+            "piece": "SU(2) coupling",
+            "verdict": "fail",
+            "why": "consumed by F2_SU2 and D"
+          },
+          {
+            "name": "g_prime",
+            "piece": "U(1)_Y coupling",
+            "verdict": "fail",
+            "why": "consumed by F2_U1; \u03b8_W = arctan(g'/g) after the fact"
+          },
+          {
+            "name": "v_or_mu",
+            "piece": "Higgs scale",
+            "verdict": "fail",
+            "why": "input; 246 GeV is sat at"
+          },
+          {
+            "name": "lambda_h",
+            "piece": "Higgs self-coupling",
+            "verdict": "fail",
+            "why": "input; m_H from \u03bbv\u00b2"
+          },
+          {
+            "name": "yukawas",
+            "piece": "3\u00d73 complex matrices",
+            "verdict": "fail",
+            "why": "independent inputs; Koide not among them"
+          },
+          {
+            "name": "CKM",
+            "piece": "quark mixing after diagonalizing y_u, y_d",
+            "verdict": "fail",
+            "why": "derived from Yukawas, still not from topology"
+          },
+          {
+            "name": "theta_qcd",
+            "piece": "strong CP angle",
+            "verdict": "open",
+            "why": "must-hit leftover if you mean nature"
+          }
+        ]
+      },
+      {
+        "name": "not_in_L_SM",
+        "piece": "atoms you need for a universe model that are not on the poster",
+        "verdict": "fail",
+        "why": "Cannot satisfy nature4 from L_SM alone.",
+        "fingers": [
+          {
+            "name": "G_N",
+            "piece": "Newton / Planck",
+            "verdict": "fail",
+            "why": "not a field in L_SM"
+          },
+          {
+            "name": "Lambda",
+            "piece": "cosmological constant",
+            "verdict": "fail",
+            "why": "not a term in L_SM"
+          },
+          {
+            "name": "metric",
+            "piece": "g_\u03bc\u03bd as a dynamical field",
+            "verdict": "fail",
+            "why": "poster is written on \u03b7_\u03bc\u03bd"
+          },
+          {
+            "name": "nu_R_or_m",
+            "piece": "neutrino masses",
+            "verdict": "open",
+            "why": "absent on the minimal poster"
+          }
+        ]
+      }
+    ]
+  },
+  "leaves": [
+    {
+      "name": "spacetime",
+      "verdict": "pass",
+      "piece": "Minkowski \u03b7_\u03bc\u03bd, then g_\u03bc\u03bd if coupled to gravity"
+    },
+    {
+      "name": "gauge_principle",
+      "verdict": "pass",
+      "piece": "replace \u2202 by D = \u2202 \u2212 igA on a principal bundle"
+    },
+    {
+      "name": "representations",
+      "verdict": "pass",
+      "piece": "fermions and Higgs sit in fixed G-reps"
+    },
+    {
+      "name": "dim4",
+      "verdict": "pass",
+      "piece": "operators of mass dimension \u2264 4 (renormalizable)"
+    },
+    {
+      "name": "three_copies",
+      "verdict": "open",
+      "piece": "repeat the fermion reps three times"
+    },
+    {
+      "name": "SU3",
+      "verdict": "pass",
+      "piece": "8 gluons, f^{abc}, g_s"
+    },
+    {
+      "name": "SU2",
+      "verdict": "pass",
+      "piece": "3 W's, \u03b5^{abc}, g"
+    },
+    {
+      "name": "U1",
+      "verdict": "pass",
+      "piece": "1 hypercharge B_\u03bc, g'"
+    },
+    {
+      "name": "gluons",
+      "verdict": "pass",
+      "piece": "A_\u03bc^a, a=1..8"
+    },
+    {
+      "name": "weak_bosons",
+      "verdict": "pass",
+      "piece": "W_\u03bc^i, i=1,2,3"
+    },
+    {
+      "name": "hypercharge",
+      "verdict": "pass",
+      "piece": "B_\u03bc"
+    },
+    {
+      "name": "higgs_doublet",
+      "verdict": "pass",
+      "piece": "H = (\u03c6\u207a, (v+H+i\u03c6\u2070)/\u221a2)"
+    },
+    {
+      "name": "quarks",
+      "verdict": "pass",
+      "piece": "Q_L, u_R, d_R \u00d7 3 gen \u00d7 3 color"
+    },
+    {
+      "name": "leptons",
+      "verdict": "open",
+      "piece": "L_L, e_R \u00d7 3 gen (\u03bd_R absent on the poster)"
+    },
+    {
+      "name": "ghosts",
+      "verdict": "pass",
+      "piece": "Faddeev\u2013Popov X, Y, \u2026"
+    },
+    {
+      "name": "F2",
+      "verdict": "pass",
+      "piece": "\u22121/4 F_{\u03bc\u03bd} F^{\u03bc\u03bd} for each factor"
+    },
+    {
+      "name": "DH2",
+      "verdict": "pass",
+      "piece": "|D_\u03bc H|\u00b2"
+    },
+    {
+      "name": "VH",
+      "verdict": "pass",
+      "piece": "\u03bc\u00b2|H|\u00b2 + \u03bb|H|\u2074"
+    },
+    {
+      "name": "psiDpsi",
+      "verdict": "pass",
+      "piece": "\u03c8\u0304 i D\u0338 \u03c8"
+    },
+    {
+      "name": "yukawa",
+      "verdict": "pass",
+      "piece": "y \u03c8\u0304 H \u03c8 + h.c."
+    },
+    {
+      "name": "theta_term",
+      "verdict": "open",
+      "piece": "\u03b8 F F\u0303"
+    },
+    {
+      "name": "ghost_op",
+      "verdict": "pass",
+      "piece": "ghost kinetic + mixing"
+    },
+    {
+      "name": "g_s",
+      "verdict": "fail",
+      "piece": "strong coupling"
+    },
+    {
+      "name": "g",
+      "verdict": "fail",
+      "piece": "SU(2) coupling"
+    },
+    {
+      "name": "g_prime",
+      "verdict": "fail",
+      "piece": "U(1)_Y coupling"
+    },
+    {
+      "name": "v_or_mu",
+      "verdict": "fail",
+      "piece": "Higgs scale"
+    },
+    {
+      "name": "lambda_h",
+      "verdict": "fail",
+      "piece": "Higgs self-coupling"
+    },
+    {
+      "name": "yukawas",
+      "verdict": "fail",
+      "piece": "3\u00d73 complex matrices"
+    },
+    {
+      "name": "CKM",
+      "verdict": "fail",
+      "piece": "quark mixing after diagonalizing y_u, y_d"
+    },
+    {
+      "name": "theta_qcd",
+      "verdict": "open",
+      "piece": "strong CP angle"
+    },
+    {
+      "name": "G_N",
+      "verdict": "fail",
+      "piece": "Newton / Planck"
+    },
+    {
+      "name": "Lambda",
+      "verdict": "fail",
+      "piece": "cosmological constant"
+    },
+    {
+      "name": "metric",
+      "verdict": "fail",
+      "piece": "g_\u03bc\u03bd as a dynamical field"
+    },
+    {
+      "name": "nu_R_or_m",
+      "verdict": "open",
+      "piece": "neutrino masses"
+    }
+  ],
+  "flat": [
+    {
+      "depth": 0,
+      "name": "L_SM",
+      "verdict": "open",
+      "piece": "expanded Standard Model Lagrangian (the poster)"
+    },
+    {
+      "depth": 1,
+      "name": "principles",
+      "verdict": "open",
+      "piece": "what you must assume before writing a term"
+    },
+    {
+      "depth": 2,
+      "name": "spacetime",
+      "verdict": "pass",
+      "piece": "Minkowski \u03b7_\u03bc\u03bd, then g_\u03bc\u03bd if coupled to gravity"
+    },
+    {
+      "depth": 2,
+      "name": "gauge_principle",
+      "verdict": "pass",
+      "piece": "replace \u2202 by D = \u2202 \u2212 igA on a principal bundle"
+    },
+    {
+      "depth": 2,
+      "name": "representations",
+      "verdict": "pass",
+      "piece": "fermions and Higgs sit in fixed G-reps"
+    },
+    {
+      "depth": 2,
+      "name": "dim4",
+      "verdict": "pass",
+      "piece": "operators of mass dimension \u2264 4 (renormalizable)"
+    },
+    {
+      "depth": 2,
+      "name": "three_copies",
+      "verdict": "open",
+      "piece": "repeat the fermion reps three times"
+    },
+    {
+      "depth": 1,
+      "name": "gauge_group",
+      "verdict": "pass",
+      "piece": "G = SU(3)_c \u00d7 SU(2)_L \u00d7 U(1)_Y"
+    },
+    {
+      "depth": 2,
+      "name": "SU3",
+      "verdict": "pass",
+      "piece": "8 gluons, f^{abc}, g_s"
+    },
+    {
+      "depth": 2,
+      "name": "SU2",
+      "verdict": "pass",
+      "piece": "3 W's, \u03b5^{abc}, g"
+    },
+    {
+      "depth": 2,
+      "name": "U1",
+      "verdict": "pass",
+      "piece": "1 hypercharge B_\u03bc, g'"
+    },
+    {
+      "depth": 1,
+      "name": "fields",
+      "verdict": "pass",
+      "piece": "what the Lagrangian is a function of"
+    },
+    {
+      "depth": 2,
+      "name": "gluons",
+      "verdict": "pass",
+      "piece": "A_\u03bc^a, a=1..8"
+    },
+    {
+      "depth": 2,
+      "name": "weak_bosons",
+      "verdict": "pass",
+      "piece": "W_\u03bc^i, i=1,2,3"
+    },
+    {
+      "depth": 2,
+      "name": "hypercharge",
+      "verdict": "pass",
+      "piece": "B_\u03bc"
+    },
+    {
+      "depth": 2,
+      "name": "higgs_doublet",
+      "verdict": "pass",
+      "piece": "H = (\u03c6\u207a, (v+H+i\u03c6\u2070)/\u221a2)"
+    },
+    {
+      "depth": 2,
+      "name": "quarks",
+      "verdict": "pass",
+      "piece": "Q_L, u_R, d_R \u00d7 3 gen \u00d7 3 color"
+    },
+    {
+      "depth": 2,
+      "name": "leptons",
+      "verdict": "open",
+      "piece": "L_L, e_R \u00d7 3 gen (\u03bd_R absent on the poster)"
+    },
+    {
+      "depth": 2,
+      "name": "ghosts",
+      "verdict": "pass",
+      "piece": "Faddeev\u2013Popov X, Y, \u2026"
+    },
+    {
+      "depth": 1,
+      "name": "operators",
+      "verdict": "pass",
+      "piece": "the actual terms, one kind each"
+    },
+    {
+      "depth": 2,
+      "name": "F2",
+      "verdict": "pass",
+      "piece": "\u22121/4 F_{\u03bc\u03bd} F^{\u03bc\u03bd} for each factor"
+    },
+    {
+      "depth": 2,
+      "name": "DH2",
+      "verdict": "pass",
+      "piece": "|D_\u03bc H|\u00b2"
+    },
+    {
+      "depth": 2,
+      "name": "VH",
+      "verdict": "pass",
+      "piece": "\u03bc\u00b2|H|\u00b2 + \u03bb|H|\u2074"
+    },
+    {
+      "depth": 2,
+      "name": "psiDpsi",
+      "verdict": "pass",
+      "piece": "\u03c8\u0304 i D\u0338 \u03c8"
+    },
+    {
+      "depth": 2,
+      "name": "yukawa",
+      "verdict": "pass",
+      "piece": "y \u03c8\u0304 H \u03c8 + h.c."
+    },
+    {
+      "depth": 2,
+      "name": "theta_term",
+      "verdict": "open",
+      "piece": "\u03b8 F F\u0303"
+    },
+    {
+      "depth": 2,
+      "name": "ghost_op",
+      "verdict": "pass",
+      "piece": "ghost kinetic + mixing"
+    },
+    {
+      "depth": 1,
+      "name": "parameters",
+      "verdict": "fail",
+      "piece": "numbers the operators consume"
+    },
+    {
+      "depth": 2,
+      "name": "g_s",
+      "verdict": "fail",
+      "piece": "strong coupling"
+    },
+    {
+      "depth": 2,
+      "name": "g",
+      "verdict": "fail",
+      "piece": "SU(2) coupling"
+    },
+    {
+      "depth": 2,
+      "name": "g_prime",
+      "verdict": "fail",
+      "piece": "U(1)_Y coupling"
+    },
+    {
+      "depth": 2,
+      "name": "v_or_mu",
+      "verdict": "fail",
+      "piece": "Higgs scale"
+    },
+    {
+      "depth": 2,
+      "name": "lambda_h",
+      "verdict": "fail",
+      "piece": "Higgs self-coupling"
+    },
+    {
+      "depth": 2,
+      "name": "yukawas",
+      "verdict": "fail",
+      "piece": "3\u00d73 complex matrices"
+    },
+    {
+      "depth": 2,
+      "name": "CKM",
+      "verdict": "fail",
+      "piece": "quark mixing after diagonalizing y_u, y_d"
+    },
+    {
+      "depth": 2,
+      "name": "theta_qcd",
+      "verdict": "open",
+      "piece": "strong CP angle"
+    },
+    {
+      "depth": 1,
+      "name": "not_in_L_SM",
+      "verdict": "fail",
+      "piece": "atoms you need for a universe model that are not on the poster"
+    },
+    {
+      "depth": 2,
+      "name": "G_N",
+      "verdict": "fail",
+      "piece": "Newton / Planck"
+    },
+    {
+      "depth": 2,
+      "name": "Lambda",
+      "verdict": "fail",
+      "piece": "cosmological constant"
+    },
+    {
+      "depth": 2,
+      "name": "metric",
+      "verdict": "fail",
+      "piece": "g_\u03bc\u03bd as a dynamical field"
+    },
+    {
+      "depth": 2,
+      "name": "nu_R_or_m",
+      "verdict": "open",
+      "piece": "neutrino masses"
+    }
+  ],
+  "reassembly": {
+    "unique_sm": "The most general renormalizable Lagrangian with G = SU(3)\u00d7SU(2)\u00d7U(1), one Higgs doublet, and the SM fermion reps is L_SM, up to parameter values.",
+    "steps": [
+      {
+        "step": 1,
+        "do": "Keep spacetime + gauge principle + G = SU(3)\u00d7SU(2)\u00d7U(1)",
+        "get": "the covariant derivative and three field strengths",
+        "verdict": "pass"
+      },
+      {
+        "step": 2,
+        "do": "Assign the observed fermion and Higgs representations",
+        "get": "the allowed dim-4 operators are a finite list",
+        "verdict": "pass"
+      },
+      {
+        "step": 3,
+        "do": "Write every dim-4 operator allowed by those quantum numbers",
+        "get": "L_SM (up to the numerical values of the couplings)",
+        "verdict": "pass",
+        "why": "This is the uniqueness. The poster is that list, expanded in components."
+      },
+      {
+        "step": 4,
+        "do": "Drop ghosts",
+        "get": "same classical equations of motion",
+        "verdict": "pass",
+        "why": "Bookkeeping. Not a fifth force."
+      },
+      {
+        "step": 5,
+        "do": "Insert the measured couplings / Yukawas / v",
+        "get": "the working Standard Model, three forces, no gravity",
+        "verdict": "pass",
+        "why": "Dynamics pass. The numbers were pasted. Produce still fail."
+      },
+      {
+        "step": 6,
+        "do": "Replace \u03b7 by g and add S_EH + \u039b",
+        "get": "G_\u03bc\u03bd + \u039b g_\u03bc\u03bd = 8\u03c0 G T_\u03bc\u03bd[SM]",
+        "verdict": "pass",
+        "why": "The two-sided couple. Working. Not nature4."
+      },
+      {
+        "step": 7,
+        "do": "Ask the rebuilt L to output g_s, \u03b8_W, G, \u039b",
+        "get": "nothing. The numbers went in at step 5 and 6",
+        "verdict": "fail"
+      }
+    ],
+    "put_back": {
+      "name": "Einstein_plus_T_SM",
+      "equation": "G_\u03bc\u03bd + \u039b g_\u03bc\u03bd = 8\u03c0 G T_\u03bc\u03bd[SM]",
+      "action": "S = S_EH[g] + \u222b \u221a\u2212g L_SM(g, \u03c8, A, H)",
+      "left": "geometry (Einstein + \u039b)",
+      "right": "stress-energy built from this Lagrangian",
+      "both_sides": true,
+      "uses_the_poster": true,
+      "produces_couplings": false,
+      "gauge3": "fail",
+      "nature4": "fail",
+      "working_couple": "pass",
+      "why": "This is the equation with an equals sign that actually uses L_SM. T_\u03bc\u03bd is the Hilbert / Noether stress from blocks 1\u20134. The couple works (equivalence). It does not output g_s, \u03b8_W, G, or \u039b."
+    },
+    "still_not_F": true,
+    "still_not_NS": true
+  },
+  "drop_one": [
+    {
+      "drop": "SU3",
+      "still_SM": false,
+      "why": "no QCD"
+    },
+    {
+      "drop": "SU2",
+      "still_SM": false,
+      "why": "no weak"
+    },
+    {
+      "drop": "U1",
+      "still_SM": false,
+      "why": "no hypercharge / no photon after mix"
+    },
+    {
+      "drop": "higgs_doublet",
+      "still_SM": false,
+      "why": "no SSB, no W/Z masses, no Yukawa masses"
+    },
+    {
+      "drop": "dim4",
+      "still_SM": false,
+      "why": "infinite operator tower; not the SM"
+    },
+    {
+      "drop": "three_copies",
+      "still_SM": false,
+      "why": "one-generation toy, not the SM"
+    },
+    {
+      "drop": "ghosts",
+      "still_SM": true,
+      "why": "classical SM EOM unchanged"
+    },
+    {
+      "drop": "G_N",
+      "still_SM": true,
+      "why": "SM never had it; universe model loses gravity"
+    }
+  ],
+  "counts": {
+    "leaves": 34,
+    "pass": 19,
+    "fail": 10,
+    "open": 5,
+    "drop_still_sm": 2
+  },
+  "how_far": [
+    "five poster blocks opened into 34 atoms",
+    "principles / group / fields / operators / parameters / missing",
+    "reassembly uniqueness: G + reps + dim-4 \u2192 L_SM (parameters still pasted)",
+    "ghosts droppable; SU(3), SU(2), U(1), Higgs, dim-4, 3 families not",
+    "put back with gravity: Einstein + T_SM (working couple)",
+    "step 7 fail: rebuilt L still does not produce the couplings",
+    "A/B/Q untouched"
+  ],
+  "next_da_move": "Stop breaking L_SM. The atoms are on the table. A producing-map has to live outside this list. Fluids stay on B."
+}
