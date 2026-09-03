@@ -1,0 +1,45 @@
+# Dream team, from beyond the digital divide
+
+`python3 scripts/da_machine.py team`
+
+The divide is not “AI vs human chat.” It is **this desk**
+versus **paper and experiment**. The dream team is the
+published results and the measurements that already constrain
+the slots. Another model is still on the digital side.
+
+A team is not a vote. A vote cannot collapse the waveform.
+
+---
+
+## Who sits
+
+| Member | Slot | Side | Settles | Cannot |
+|---|---|---|---|---|
+| Leray | B | paper | energy, \(\int X<\infty\) | \(X\in L^\infty\) from that |
+| Beale–Kato–Majda | B | paper | \(\int\|\omega\|_\infty<\infty\) | BKM-from-\(L^2\) |
+| Caffarelli–Kohn–Nirenberg | B | paper | partial regularity | no blowup |
+| Constantin–Fefferman | B | paper | depletion *if* aligned | all-data \(\cos\alpha_3\to 0\) |
+| Ladyzhenskaya | A | paper | modified NS, \(\varepsilon>0\) | \(\varepsilon\to 0\), A\(\Rightarrow\)B |
+| Einstein | U | paper | \(G_{\mu\nu}+\Lambda g=8\pi G\,T_{\mathrm{SM}}\) | values of \(G,\Lambda\) |
+| Weinberg | U | paper | the \(W^3\)–\(B\) rotation | \(\theta_W\) from topology |
+| experiment / PDG | U | nature | the numbers \(\mathcal{L}\) consumes | why those numbers |
+| neutrino / cosmology | U | nature | \(\sum m_\nu\) bound; \(\Lambda\) seen | Cosmo 0.06 eV as \(F\) |
+| operator | meta | desk | one sentence, one slot, one check | needing chops |
+
+SFE, HB, Cosmo Superagent, and “the app said so” do not get a
+chair.
+
+---
+
+## What they say in common (not a close)
+
+- **B:** Hardy \(\to I_{\mathrm{tube}}\) at \(\delta\sim 2^{-j_*}\), then the low Bony \(T\). Regularity stays open.
+- **A:** Leave Ladyzhenskaya on A.
+- **U:** Stop breaking \(\mathcal{L}_{\mathrm{SM}}\). Keep Einstein \(+T_{\mathrm{SM}}\). Produce lives outside the poster.
+- **Q:** Arithmetic only. No Bridge* \(\to\) SND.
+
+Glue refused.
+
+That is the same next write the machine already had. The
+team did not invent a new unifier. It confirmed which
+closes are already illegal.

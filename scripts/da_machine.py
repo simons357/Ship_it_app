@@ -58,6 +58,7 @@ SLOTS = {
             "tests.test_da_cosmo",
             "tests.test_da_sm",
             "tests.test_da_sm_break",
+            "tests.test_da_team",
             "-v",
         ],
     },
@@ -113,7 +114,7 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
     if re.search(
-        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg",
+        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide",
         text,
     ):
         return {"domain": "U", "verdict": "open", "reason": "looks like score U / SM Lagrangian / waveform; run sm or how"}
@@ -557,6 +558,25 @@ def cmd_sm() -> int:
     return 0
 
 
+def cmd_team() -> int:
+    from da_team import run as team_run
+
+    payload = team_run()
+    print("DA dream team. Paper + experiment. A vote cannot close.")
+    for m in payload["team"]:
+        print(f"  [{m['slot']}] {m['name']}: {m['suggest']}")
+    print("next B:", payload["consensus"]["B"])
+    print("next U:", payload["consensus"]["U"])
+    append_run(
+        "U",
+        "Seat the dream team from beyond the digital divide",
+        "open",
+        "paper+experiment seated; vote cannot close; next write still I_tube then T",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_smbreak() -> int:
     from da_sm_break import run as break_run
 
@@ -633,6 +653,7 @@ def main() -> int:
     sub.add_parser("trackb", help="score Track B lemmas; regularity stays open")
     sub.add_parser("sm", help="analyze the SM Lagrangian; realize Einstein+T_SM")
     sub.add_parser("smbreak", help="break L_SM to atoms, then put it back")
+    sub.add_parser("team", help="seat paper+experiment; a vote cannot close")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -674,6 +695,8 @@ def main() -> int:
         return cmd_sm()
     if args.cmd == "smbreak":
         return cmd_smbreak()
+    if args.cmd == "team":
+        return cmd_team()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":
