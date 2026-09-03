@@ -25,6 +25,7 @@ class DaWaveTests(unittest.TestCase):
         self.assertEqual(by_name["unfalsifiable_might_be_true"]["verdict"], "fail")
         self.assertFalse(by_name["unfalsifiable_might_be_true"]["falsifiable"])
         self.assertEqual(by_name["F_exists"]["verdict"], "fail")
+        self.assertEqual(by_name["cosmo_16_of_16"]["verdict"], "fail")
         self.assertEqual(by_name["possible_by_count"]["verdict"], "open")
         self.assertIn("possible_by_count", payload["waveform"]["still_in_superposition"])
 

@@ -173,7 +173,20 @@ CLAIMS = [
         "F already killed on this vector",
         "fail",
         "fail",
-        "Screened the same way. Score is not F. Cosmos export still missing.",
+        "Screened the same way. Score is not F. Official Cosmo 16 is a different catalog.",
+    ),
+    row(
+        "CosmoEvolution 3D / Domain Architect (public app)",
+        "topological",
+        "core equation is private / trade secret",
+        "app predicts couplings should NOT meet; a miss is not a 3-meet",
+        "claimed via Planck spectral gap (order of magnitude)",
+        "claimed via domain web tension (order of magnitude)",
+        "yes — manifold λ1/λ2, neutrino sum, Koide deviation",
+        "manifold sweep already failed for every known exact-spectrum topology",
+        "fail",
+        "fail",
+        "Official 16 is in docs/COSMO-SIXTEEN.md. UI 16/16 is not a DA pass. F is not public.",
     ),
 ]
 

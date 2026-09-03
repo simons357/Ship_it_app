@@ -26,6 +26,14 @@ class DaScreenTests(unittest.TestCase):
         self.assertEqual(by_name["MSSM / SUSY SU(5) or SO(10)"]["gauge3_verdict"], "open")
         self.assertEqual(by_name["MSSM / SUSY SU(5) or SO(10)"]["nature4_verdict"], "fail")
         self.assertEqual(by_name["This repo's reconstructed R / SFE knobs"]["nature4_verdict"], "fail")
+        self.assertEqual(
+            by_name["CosmoEvolution 3D / Domain Architect (public app)"]["gauge3_verdict"],
+            "fail",
+        )
+        self.assertEqual(
+            by_name["CosmoEvolution 3D / Domain Architect (public app)"]["nature4_verdict"],
+            "fail",
+        )
 
 
 if __name__ == "__main__":

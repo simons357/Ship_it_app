@@ -19,6 +19,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from da_cosmo import COSMO_SIXTEEN  # noqa: E402
 from da_fingers import CANDIDATE_META, SIXTEEN  # noqa: E402
 from da_gq import PAIRS  # noqa: E402
 from da_screen import CLAIMS  # noqa: E402
@@ -94,6 +95,25 @@ def run(n: int = 200, seed: int = 1, out: Path | None = None) -> dict:
                 rec["why"] = f"alone: does not move R (Δ={delta:+.3f}); not a force"
         six.append(rec)
 
+    cosmo = []
+    for r in COSMO_SIXTEEN:
+        prod = next(h for h in r["hand"] if h["name"] == "produce")
+        nat = next(h for h in r["hand"] if h["name"] == "nature")
+        cosmo.append(
+            {
+                "deck": "COSMO",
+                "alone": True,
+                "id": r["id"],
+                "name": r["name"],
+                "cluster": r["cluster"],
+                "app_match": r["app_match"],
+                "produce_alone": prod["verdict"],
+                "nature_alone": nat["verdict"],
+                "glued": False,
+                "why": prod["why"],
+            }
+        )
+
     payload = {
         "meta": {
             "method": "one object, one verdict, no bundle",
@@ -105,21 +125,25 @@ def run(n: int = 200, seed: int = 1, out: Path | None = None) -> dict:
         "GQ": gq,
         "PUB": pub,
         "SIX": six,
+        "COSMO": cosmo,
         "counts": {
             "GQ": len(gq),
             "PUB": len(pub),
             "SIX": len(six),
+            "COSMO": len(cosmo),
         },
         "how_far": [
             f"GQ {len(gq)} pairs, each alone",
             f"PUB {len(pub)} claims, gauge3 and nature4 not glued",
             f"SIX {len(six)} slots, singleton lock-R only",
+            f"COSMO {len(cosmo)} official slots, produce fails alone for each",
             "isolation did not promote anyone to a unifier",
             "Einstein/equivalence/QFT-on-curved still pass alone",
             "vacuum→gravity still fails alone",
             "MSSM-class still open as gauge3 alone and fail as nature4 alone",
+            "Cosmo 16/16 does not survive isolation",
         ],
-        "next_da_move": "Stay on the GQ leftovers. Do not re-bundle into a 16-slogan.",
+        "next_da_move": "Stay on the GQ leftovers. Do not re-bundle Cosmo into a 16-slogan.",
     }
     dest = Path(out) if out is not None else Path("results/da_separate.json")
     dest.parent.mkdir(parents=True, exist_ok=True)
@@ -142,6 +166,11 @@ def main() -> int:
     for r in payload["SIX"]:
         d = "" if r.get("delta_lock_R") is None else f" Δ={r['delta_lock_R']:+.3f}"
         print(f"  {r['id']:2d} [{r['verdict']}] {r['name']:<16} {r['fate']:<22}{d}")
+    print("\n--- COSMO (official 16), each slot alone ---")
+    for r in payload["COSMO"]:
+        print(
+            f"  {r['id']:2d} produce={r['produce_alone']:<5} nature={r['nature_alone']:<5}  {r['name']}"
+        )
     print("how far:")
     for line in payload["how_far"]:
         print(" -", line)

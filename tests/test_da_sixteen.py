@@ -30,7 +30,8 @@ class DaSixteenTests(unittest.TestCase):
     def test_run_names_sixteenth_and_finds_core(self):
         tmp = Path(tempfile.mkdtemp()) / "da_sixteen_test.json"
         payload = run(n=80, seed=1, out=tmp)
-        self.assertFalse(payload["meta"]["cosmos_app_list_found"])
+        self.assertTrue(payload["meta"]["cosmos_app_list_found"])
+        self.assertFalse(payload["meta"]["this_list_is_cosmo_export"])
         self.assertEqual(payload["meta"]["sixteenth"], "R (realization / teleology)")
         self.assertIn("log_cc_ratio", payload["fits_that_move_R"])
         self.assertIn("log_hierarchy", payload["fits_that_move_R"])

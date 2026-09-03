@@ -2,11 +2,13 @@
 
 `python3 scripts/da_machine.py sixteen`
 
-This is **not** the Cosmo app export. That list is not in
-the repo. This is the reconstruction you asked for: the same
-four-way split that produced “about sixteen” —
+This is **not** the Cosmo app export. The official table is
+[`docs/COSMO-SIXTEEN.md`](COSMO-SIXTEEN.md). This is the
+reconstruction you asked for: the same four-way split that
+produced “about sixteen” —
 **gauge / gravity-gauge / teleological / harmonic** — four
-each.
+each. Do not glue the two catalogs. The Cosmo 16th is
+\(\sum m_\nu\). The 16th here is \(R\).
 
 ## The sixteen
 
@@ -113,16 +115,15 @@ still no \(F\).
 ## How far this drill got
 
 1. Count 16 is possible by dimension — clue, not a pass.
-2. 4×4 names reconstructed. Cosmo export still missing.
-3. Four singletons raise lock-\(R\). The 16th is \(R\).
+2. 4×4 names reconstructed. Official Cosmo 16 is a different catalog.
+3. Four singletons raise lock-\(R\). The 16th here is \(R\).
 4. Those four do not collapse the four couplings.
 5. Affine \(F\) from oscillators / teleology fails holdout.
-6. **Blocked** on the Cosmo names or a real producing-map.
+6. Cosmo names are in. **Blocked** on a public producing-map.
 
 Five-finger recursion on the realization line, and a
 general fate for each of the 16 as a candidate type, is
-[`docs/DA-FINGERS.md`](DA-FINGERS.md).
-
-If the Cosmo export shows up: replace this table and re-run
-the same singleton / family / \(F\) checks. Until then this
-is as far as the names go.
+[`docs/DA-FINGERS.md`](DA-FINGERS.md). Official Cosmo
+isolation is [`docs/COSMO-SIXTEEN.md`](COSMO-SIXTEEN.md).
+Keep this table as the score catalog. Do not replace it
+with the app’s 16/16 slogan.

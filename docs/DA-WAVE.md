@@ -51,9 +51,11 @@ width artifact is a control, not a discovery.
 Still in superposition: `possible_by_count` (\(X>k\)).
 
 Already killed: \(F\) exists, collapse has happened, \(R\) is
-a unifier, “unfalsifiable might be true,” width-as-structure,
-and every “this slot produces the couplings / may be dropped
-from nature” claim that the score already failed.
+a unifier, Cosmo 16/16, “unfalsifiable might be true,”
+width-as-structure, and every “this slot produces the
+couplings / may be dropped from nature” claim that the
+score already failed. Official Cosmo names do not collapse
+the waveform.
 
 Must-hits stay entangled with the unifier claim. That is why
 they can have almost no Born mass and still not be droppable.

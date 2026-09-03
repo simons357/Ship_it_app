@@ -34,6 +34,7 @@ That is discernment, not a dodge.
 | Lisi E8 | gauge | fail | fail |
 | LQG / causal sets | topological | fail | fail |
 | This repo’s \(R\) / SFE knobs | teleological | fail | fail |
+| CosmoEvolution 3D / DA (public app) | topological | **fail** (does not claim a 3-meet) | **fail** (no public \(F\); 16/16 is not a pass) |
 
 Nothing on the list **passes nature4**.
 
@@ -48,7 +49,8 @@ of that same map.
 String theory has gravity in the story and no unique \(F\)
 to the observed leftovers. Lisi’s E8 was a claim; it does
 not pass. Our own reconstructed score fails the same
-screen. Cosmo export still missing.
+screen. Official Cosmo 16 is now on the same list and fails
+the same way.
 
 ## How to go further on one of them
 

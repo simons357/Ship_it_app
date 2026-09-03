@@ -3,9 +3,9 @@
 How a program can say: unification is possible, there are X candidates,
 and each is gauge / harmonic / topological / … — without having F.
 
-Not the Cosmos 3-D internals. Those are not in the repo. This is the
-list of legal reasons such a statement can be emitted, plus a
-reconstructed enumerator that produces a finite X from a type catalog.
+Official Cosmo 16 names are in scripts/da_cosmo.py. The core equation
+is still private. This file lists the only legal reasons a program can
+say “possible” and emit a finite X, plus a reconstructed enumerator.
 """
 
 from __future__ import annotations
@@ -112,7 +112,10 @@ def legal_reasons_x() -> list[dict]:
             "id": "X3",
             "reason": "count slots on a screen",
             "verdict": "open",
-            "why": "X is the number of knobs the UI exposed. Names still missing here.",
+            "why": (
+                "Official Topology vs Gauge table is now in the repo: X=16 named "
+                "slots. That closes the missing-names block. It does not close P3."
+            ),
         },
         {
             "id": "X4",
@@ -151,7 +154,7 @@ def enumerate_candidates() -> dict:
     must = [r for r in rows if r["must_hit_nature"]]
     x = len(eligible)
     return {
-        "catalog_source": "reconstructed 16, not Cosmo export",
+        "catalog_source": "reconstructed 16; official Cosmo 16 is a different catalog",
         "open_types_not_capped_at_five": list(OPEN_TYPES),
         "rows": rows,
         "X_eligible": x,
@@ -196,6 +199,7 @@ def run(out: Path | None = None) -> dict:
         "meta": {
             "question": LINE,
             "cosmos_internals_found": False,
+            "cosmos_app_list_found": True,
             "not_a_unifier": True,
             "hand_not_capped_at_five": True,
         },
@@ -204,18 +208,17 @@ def run(out: Path | None = None) -> dict:
         "enumerator": enum,
         "drop_one_type": type_filters(),
         "how_far": [
-            "Cosmos internals are not in the repo; this is the legal-reason list",
+            "Cosmo 16 names are in; core equation is still not in the repo",
             "P1 (n > k) is the only 'possible' that works before names exist",
             "X comes from a type-classifier on a catalog, not from F",
             f"on this reconstructed 16: X_eligible={enum['X_eligible']}, possible_by_count={enum['possible_by_count']}",
             "dropping any one type still leaves X > 6, so 'possible' is robust to a missing finger",
             "candidate ≠ success; 'able' here means type-correct and numerous enough",
-            "next blocked on Cosmo names or a real producing-map F",
+            "official Cosmo 16/16 is not P3; produce still fails on that catalog",
         ],
         "next_da_move": (
-            "If the Cosmo export includes its type tags (harmonic / gauge / "
-            "topological / other), replace OPEN_TYPES and re-count X. "
-            "Do not treat the count as F."
+            "P3 still needs a public F. Official Cosmo names do not write that map. "
+            "Do not treat the count or the UI 16/16 as F."
         ),
     }
     dest = Path(out) if out is not None else Path("results/da_how.json")
@@ -227,7 +230,7 @@ def run(out: Path | None = None) -> dict:
 
 def main() -> int:
     payload = run()
-    print("DA how-it-knew. Cosmos internals not in the repo.")
+    print("DA how-it-knew. Cosmo names in; core equation still private.")
     print("Possible: only P1 (n > k) works before names. P3 (explicit F) fails here.")
     enum = payload["enumerator"]
     print(f"X_eligible={enum['X_eligible']}  X_must_hit={enum['X_must_hit_nature']}  "

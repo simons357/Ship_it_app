@@ -118,6 +118,14 @@ def falsification_table(flush: dict, enum: dict) -> list[dict]:
             "already flattened; default ranking was a sampling choice",
             True,
         ),
+        claim(
+            "cosmo_16_of_16",
+            "the Cosmo app predicts all 16 Topology vs Gauge slots",
+            "public F and χ²_ext ≤ ε², or the manifold / sitting / double-count screen fails it",
+            "fail",
+            "names are in; core equation is private; manifold λ1/λ2 already failed in-app",
+            True,
+        ),
     ]
     for name in SIXTEEN:
         if name == "R":
@@ -257,11 +265,11 @@ def run(out: Path | None = None) -> dict:
             "F_exists is fail; possible_by_count stays open",
             "must-hits are logically entangled with the unifier claim",
             "oscillators are not entangled with the couplings",
-            "next blocked on Cosmo names or a real producing-map F",
+            "Cosmo names are in; 16/16 UI is fail; collapse still requires public F",
         ],
         "next_da_move": (
-            "Keep using the same collapse rule. Do not treat survival or "
-            "unfalsifiability as emergence."
+            "Keep using the same collapse rule. Official Cosmo names do not "
+            "collapse the waveform. Do not treat survival or unfalsifiability as emergence."
         ),
     }
     dest = Path(out) if out is not None else Path("results/da_wave.json")

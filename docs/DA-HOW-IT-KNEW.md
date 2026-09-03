@@ -2,9 +2,10 @@
 
 `python3 scripts/da_machine.py how`
 
-The Cosmos 3-D evolution app is not in this repo. DA cannot
-read its source. What DA *can* do is list the only reasons a
-program is allowed to say:
+Official Cosmo 16 names are in
+[`docs/COSMO-SIXTEEN.md`](COSMO-SIXTEEN.md). The core
+equation is still private. What DA *can* do is list the only
+reasons a program is allowed to say:
 
 - unification is possible,
 - there are \(X\) candidates,
@@ -40,7 +41,7 @@ unification.
 |---|---|---|
 | X1 | type every object in a catalog; keep allowed types; \(X=\lvert\mathrm{survivors}\rvert\) | open — this is the one that matches “it already knew harmonic / gauge / topological” |
 | X2 | \(X=\) dimension of a moduli / leftover space | open |
-| X3 | \(X=\) knobs on a screen | open — we do not have the screen |
+| X3 | \(X=\) knobs on a screen | open — official table is 16 named slots; still not \(F\) |
 | X4 | pick a round number | **fail** |
 
 X1 does **not** need \(F\). It needs a catalog and a type
@@ -52,7 +53,7 @@ not mean *succeeds*.
 ## The reconstructed enumerator
 
 On the 4×4 sixteen we already have (still not the Cosmo
-export):
+export; Cosmo 16th is \(\sum m_\nu\)):
 
 - \(X_{\mathrm{eligible}}=15\) (everything except \(R\), which is the output)
 - \(X_{\mathrm{must\ hit}}=7\) (four couplings + QCD scale + Planck + vacuum)
@@ -74,9 +75,8 @@ Able, here, means: typed correctly, and there are enough of
 them. Not: \(F\) hit \(\alpha_{\mathrm{em}}\). Affine \(F\)
 on this vector already failed. P3 is fail. P1 stays open.
 
-If the Cosmo export includes its own type tags, replace the
-open type list and re-count \(X\). Do not treat the count as
-\(F\).
+The Cosmo names are in. P3 still fails: a hidden equation
+is not a check. Do not treat the UI 16/16 as \(F\).
 
 Flushing which of the \(X\) carry the score, with Hilbert /
 Born weights on every small combination, is

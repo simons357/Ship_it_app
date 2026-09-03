@@ -184,10 +184,12 @@ def main() -> int:
         "meta": {
             "exercise": True,
             "not_a_unifier": True,
-            "cosmos_list_found": False,
+            "cosmos_list_found": True,
+            "this_score_is_not_the_cosmo_16": True,
             "note": (
-                "DA Cosmos 16-list was not in the repo. This uses a reconstructed "
-                "15-input vector. R is the 16th coordinate (success / realization)."
+                "Official Cosmo 16 is docs/COSMO-SIXTEEN.md. This score still uses "
+                "the reconstructed 15-input vector. R is the 16th coordinate here; "
+                "Cosmo's 16th is sum m_nu. Do not glue the catalogs."
             ),
             "n": args.n,
             "seed": args.seed,

@@ -28,10 +28,13 @@ class DaMachineTests(unittest.TestCase):
         self.assertIsNone(r["domain"])
         self.assertEqual(r["verdict"], "open")
 
-    def test_cosmos_drill_stays_open_without_names(self):
+    def test_cosmos_drill_names_found_f_still_private(self):
         d = cosmos_drill()
-        self.assertFalse(d["cosmos_list_found"])
+        self.assertTrue(d["cosmos_list_found"])
+        self.assertFalse(d["cosmos_core_equation_public"])
+        self.assertEqual(d["n_confirmed"], 16)
         self.assertEqual(d["possibility_claim"]["verdict"], "open")
+        self.assertEqual(len(d["layers"][0]["pieces"]), 16)
         self.assertEqual(d["layers"][2]["pieces"], ["log_cc_ratio", "log_hierarchy"])
 
     def test_sixteen_command_list_is_wired(self):

@@ -5,7 +5,7 @@ Five-finger DA: break one line, then break each piece, then each piece again.
 Line: R = exp(-1/2 χ²_ext) exp(-1/2 χ²_int)
 
 Also assigns a general TOE-category fate to each of the reconstructed 16
-and DA-breaks those categories. Not a unifier. Cosmo export still missing.
+and DA-breaks those categories. Not a unifier. Official Cosmo 16 is a different catalog.
 """
 
 from __future__ import annotations
@@ -467,14 +467,15 @@ def run(n: int = 400, seed: int = 1, out: Path | None = None) -> dict:
         "16 candidates each got a general category and a fate",
         "each of the 16 then got the same five general questions (kind / nature / score / produce / next), then smaller pieces",
         "topological vs gauge: only θ_QCD is topological on this list; vacuum is a fork",
-        "next blocked on Cosmo names or a real producing-map F",
+        "Cosmo names are in; next blocked on a public producing-map F",
     ]
 
     payload = {
         "meta": {
             "line": LINE,
             "method": "five-finger DA, then 16 candidate fates, then the same five general questions on each",
-            "cosmos_app_list_found": False,
+            "cosmos_app_list_found": True,
+            "this_list_is_cosmo_export": False,
             "not_a_unifier": True,
             "n": n,
             "seed": seed,
@@ -500,8 +501,8 @@ def run(n: int = 400, seed: int = 1, out: Path | None = None) -> dict:
         "category_hands": category_hands,
         "how_far": how_far,
         "next_da_move": (
-            "Replace names from the Cosmo export, keep the same five-finger "
-            "recursion and the same category-fate table. Do not call this F."
+            "Official Cosmo 16 is a different catalog (docs/COSMO-SIXTEEN.md). "
+            "Keep this recursion on the score. Do not call this F."
         ),
     }
     dest = Path(out) if out is not None else Path("results/da_fingers.json")
@@ -523,7 +524,7 @@ def _print_hand(fingers: list, indent: int = 0) -> None:
 def main() -> int:
     payload = run()
     print("DA five fingers on:", LINE)
-    print("The 16th is still R. Cosmo export still missing.")
+    print("The 16th is still R. Official Cosmo 16 is a different catalog.")
     _print_hand(payload["tree"]["fingers"])
     print("equal-width flattens χ²_ext:", payload["checks"]["equal_width_flattens_ext"])
     print("16 fates, then each broken:")

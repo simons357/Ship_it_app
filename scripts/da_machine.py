@@ -54,6 +54,7 @@ SLOTS = {
             "tests.test_da_screen",
             "tests.test_da_gq",
             "tests.test_da_separate",
+            "tests.test_da_cosmo",
             "-v",
         ],
     },
@@ -154,27 +155,47 @@ def cmd_status() -> int:
 
 
 def cosmos_drill() -> dict:
-    """DA drill-down: possibility-with-n, must-hits, score core, missing names."""
+    """DA drill-down: official Cosmo 16 names, must-hits, score core, missing F."""
     return {
         "slot": "U",
-        "cosmos_list_found": False,
+        "cosmos_list_found": True,
+        "cosmos_core_equation_public": False,
         "n_claimed": 16,
-        "n_confirmed": None,
+        "n_confirmed": 16,
+        "source": "https://cosmoevolution3d.base44.app",
+        "catalog": "docs/COSMO-SIXTEEN.md",
         "possibility_claim": {
             "statement": "unification is possible with about 16 variables",
             "verdict": "open",
             "why": (
-                "A finite n is a real narrowing IF the names exist and one map F "
-                "of those n hits the four couplings. The app saying 'possible' is "
-                "not the check. The check is χ²_ext(F(x)) ≤ ε²."
+                "Names exist. A finite n is a real narrowing IF one public map F "
+                "of those n hits the four couplings. The app saying 16/16 is "
+                "not the check. The check is χ²_ext(F(x)) ≤ ε². F is still private."
             ),
         },
         "layers": [
             {
                 "layer": 0,
-                "name": "count only",
-                "pieces": ["n ≈ 16 (unconfirmed)"],
-                "status": "stuck: names missing",
+                "name": "official Cosmo 16 (Topology vs Gauge table)",
+                "pieces": [
+                    "Koide",
+                    "m_tau",
+                    "generations",
+                    "charge",
+                    "alpha",
+                    "sin2_theta_W",
+                    "m_mu/m_e",
+                    "v",
+                    "m_H",
+                    "CKM_theta12",
+                    "alpha_s",
+                    "m_p/m_e",
+                    "Lambda",
+                    "G",
+                    "ell_P",
+                    "sum_m_nu",
+                ],
+                "status": "names found; 16th is sum m_nu, not R; F still private",
             },
             {
                 "layer": 1,
@@ -219,37 +240,46 @@ def cosmos_drill() -> dict:
             },
         ],
         "rebuild": (
-            "Rebuild only after names exist: write F from the surviving pieces "
-            "(layer 2, then 3) to the four couplings. If F needs a layer-4 knob, "
-            "that knob was misclassified and goes back in. That is the drill."
+            "Names exist. Rebuild is still blocked on a public F from a named "
+            "topology to the four couplings plus G_N and Λ. Sitting at measured "
+            "values is not that map. Do not glue this table to the reconstructed 4×4."
         ),
         "how_to_get_the_16": [
-            "Paste or screenshot the Cosmos variable screen into this repo",
-            "Export a JSON/CSV of the knobs from the app",
-            "Type the 16 names in one message",
+            "Done: official table is docs/COSMO-SIXTEEN.md / scripts/da_cosmo.py",
+            "Still missing: the public producing-map (core equation is trade secret)",
         ],
-        "next_da_move": "identify names, then re-run lock-R on those names only",
+        "next_da_move": (
+            "Run the isolated Cosmo screen (da_cosmo). Do not treat 16/16 as a pass."
+        ),
     }
 
 
 def cmd_cosmos() -> int:
+    from da_cosmo import run as cosmo_run
+
     drill = cosmos_drill()
     out = ROOT / "results" / "da_cosmos_drill.json"
     out.write_text(json.dumps(drill, indent=2))
-    print("DA Cosmos drill. List not found. Possibility claim stays open.")
+    payload = cosmo_run()
+    print("DA Cosmos drill. Official 16 found. Core equation still private.")
+    print("source:", drill["source"])
     print("n_claimed:", drill["n_claimed"], "n_confirmed:", drill["n_confirmed"])
     for layer in drill["layers"]:
         print(f"L{layer['layer']} {layer['name']}: {', '.join(layer['pieces'])}")
         print(f"    {layer['status']}")
+    print("16/16 UI:", "fail")
+    print("gauge3:", payload["gauge3"]["verdict"], "nature4:", payload["nature4"]["verdict"])
+    print("collapsed:", payload["collapsed"])
     print("rebuild:", drill["rebuild"])
     print("next:", drill["next_da_move"])
     append_run(
         "U",
-        "Cosmos drill: is unification possible with ~16 named knobs?",
+        "Cosmos drill: official 16 from cosmoevolution3d.base44.app",
         "open",
-        "names missing; core leftovers are vacuum energy and Planck hierarchy",
+        "names found; F private; 16/16 is not a pass; produce fails for all 16",
     )
     print(f"wrote {out}")
+    print(f"wrote {payload.get('_wrote')}")
     return 0
 
 
@@ -257,7 +287,7 @@ def cmd_sixteen() -> int:
     from da_sixteen import run as sixteen_run
 
     payload = sixteen_run()
-    print("DA 16. The 16th is R (realization). Cosmo export still missing.")
+    print("DA 16. The 16th is R (realization). Official Cosmo 16 is a different catalog.")
     print("possibility-from-count:", payload["possibility_from_count"]["why"])
     print(f"baseline R={payload['baseline_R']:.4f}")
     for f in payload["each_one"]:
@@ -283,7 +313,7 @@ def cmd_fingers() -> int:
 
     payload = fingers_run()
     print("DA five fingers on:", payload["meta"]["line"])
-    print("The 16th is still R. Cosmo export still missing.")
+    print("The 16th is still R. Official Cosmo 16 is a different catalog.")
     for f in payload["tree"]["fingers"]:
         print(f"[{f['verdict']}] {f['name']}: {f['piece']}")
         print(f"    {f['why']}")
@@ -478,9 +508,9 @@ def cmd_separate() -> int:
         print(f"  {r['id']:2d} [{r['verdict']}] {r['name']:<16}{d}")
     append_run(
         "U",
-        "Run each GQ pair, published claim, and reconstructed slot alone",
+        "Run each GQ pair, published claim, reconstructed slot, and Cosmo slot alone",
         "open",
-        "isolation did not write F; Einstein passes alone; vacuum→gravity fails alone; MSSM open only as gauge3",
+        "isolation did not write F; Cosmo produce fails alone; Einstein passes alone; MSSM open only as gauge3",
     )
     print(f"wrote {payload.get('_wrote')}")
     return 0
@@ -504,7 +534,7 @@ def main() -> int:
     p = argparse.ArgumentParser(description="Domain Architect process machine")
     sub = p.add_subparsers(dest="cmd", required=True)
     sub.add_parser("status")
-    sub.add_parser("cosmos", help="drill the ~16 Cosmos knobs")
+    sub.add_parser("cosmos", help="official Cosmo 16 plus isolated screen")
     sub.add_parser("sixteen", help="identify 4x4 list, run each, name the 16th")
     sub.add_parser("fingers", help="five-finger DA on the R line, recurse, fate the 16")
     sub.add_parser("fate", help="category + general fate for each of the 16, then smaller pieces")

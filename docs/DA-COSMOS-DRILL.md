@@ -1,6 +1,6 @@
 # DA Cosmos drill
 
-You asked DA to zoom in on the Cosmo app: it said unification is possible, and the count is about 16. That is useful **if** we can name the 16 and test a map. DA still cannot see the app’s list. This file is the drill anyway.
+You asked DA to zoom in on the Cosmo app: it said unification is possible, and the count is about 16. The official sixteen is now in [`docs/COSMO-SIXTEEN.md`](COSMO-SIXTEEN.md). This file is the older drill (must-hits + score core). Keep both. Do not glue the catalogs.
 
 ---
 
@@ -20,11 +20,7 @@ So: possible-or-not is the right first check. We do not have a pass yet. We have
 
 ## What 16? How to find them
 
-I do not have the Cosmos screen. “1616” is still read as “16, 16 or so.” Ways to get the names, in order:
-
-1. Type the 16 names here.
-2. Drop a screenshot or export from the Cosmo app into the repo.
-3. Until then, DA drills **two** lists and keeps only the overlap that the score already cares about.
+The live app is [https://cosmoevolution3d.base44.app](https://cosmoevolution3d.base44.app). “1616” was “16, 16 or so.” The official names are ingested. The reconstructed score still drills **two** lists and keeps the overlap the score already cares about. The Cosmo table is a third list.
 
 **List A — must-hit observables** (any unifier of the four forces, independent of the app):
 
@@ -49,9 +45,9 @@ DA’s loop, the one you described:
 3. **Rebuild** a candidate \(F\) from that short list to the four couplings.
 4. **Understand the rebuild:** if \(F\) cannot hit \(\alpha_{\mathrm{em}}\) without a layer-4 knob, that knob was fundamental after all and goes back in. That is the check, not a speech.
 
-Until the Cosmo names arrive, step 3 is blocked. DA will not invent sixteen labels and call them the app’s.
+Names arrived. Step 3 is still blocked: the core equation is private, so there is no public \(F\). DA will not treat the UI 16/16 as that map.
 
-The follow-up drill (`docs/DA-SIXTEEN.md`) reconstructs a 4×4 list from gauge / gravity-gauge / teleological / harmonic, runs each member, and names the 16th as \(R\). That is still not the Cosmo export.
+The follow-up drill (`docs/DA-SIXTEEN.md`) reconstructs a 4×4 list from gauge / gravity-gauge / teleological / harmonic, runs each member, and names the 16th as \(R\). That is still not the Cosmo export. The Cosmo 16th is \(\sum m_\nu\).
 
 ```
 python3 scripts/da_machine.py cosmos

@@ -4,7 +4,8 @@
 
 You asked DA to do the five-finger move on **one line**, then
 do it again on each piece, and keep going. The line is the
-realization score, not a unifier and not the Cosmo export.
+realization score, not a unifier and not the official Cosmo
+16 (that catalog is [`docs/COSMO-SIXTEEN.md`](COSMO-SIXTEEN.md)).
 
 \[
 R=\exp(-\tfrac12\chi^2_{\mathrm{ext}})\,\exp(-\tfrac12\chi^2_{\mathrm{int}})
@@ -120,12 +121,10 @@ producer: **fail**. Teleological \(R\) as a candidate theory:
 3. Default vacuum/Planck dominance is a width artifact.
 4. \(\theta_{\mathrm{QCD}}\) is the topological leftover;
    vacuum is a fork, not a decision.
-5. **Blocked** on Cosmo names or a real producing-map.
+5. Cosmo names are in. **Blocked** on a public producing-map.
 
 How a program can say “possible” and emit a finite \(X\)
 without having \(F\) is [`docs/DA-HOW-IT-KNEW.md`](DA-HOW-IT-KNEW.md).
-The hand is not capped at five.
-
-If the export shows up, keep this recursion and this
-category table. Replace the names. Re-run the checks.
-Do not call this \(F\).
+The official Cosmo isolation is
+[`docs/COSMO-SIXTEEN.md`](COSMO-SIXTEEN.md). The hand is
+not capped at five. Do not call this \(F\).

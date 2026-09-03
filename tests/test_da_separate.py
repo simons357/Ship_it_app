@@ -19,10 +19,13 @@ class DaSeparateTests(unittest.TestCase):
         payload = run(n=40, seed=1, out=tmp)
         self.assertEqual(payload["counts"]["GQ"], 8)
         self.assertEqual(payload["counts"]["SIX"], 16)
+        self.assertEqual(payload["counts"]["COSMO"], 16)
         self.assertTrue(all(r["alone"] for r in payload["GQ"]))
         self.assertTrue(all(r["alone"] for r in payload["PUB"]))
         self.assertTrue(all(r["alone"] for r in payload["SIX"]))
+        self.assertTrue(all(r["alone"] for r in payload["COSMO"]))
         self.assertFalse(any(r["glued"] for r in payload["PUB"]))
+        self.assertTrue(all(r["produce_alone"] == "fail" for r in payload["COSMO"]))
         gq = {r["name"]: r["verdict"] for r in payload["GQ"]}
         self.assertEqual(gq["Einstein"], "pass")
         self.assertEqual(gq["vacuum_to_gravity"], "fail")

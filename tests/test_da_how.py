@@ -30,6 +30,7 @@ class DaHowTests(unittest.TestCase):
         self.assertGreater(enum["X_eligible"], enum["k_nature"])
         self.assertTrue(enum["possible_by_count"])
         self.assertFalse(payload["meta"]["cosmos_internals_found"])
+        self.assertTrue(payload["meta"]["cosmos_app_list_found"])
         self.assertTrue(payload["meta"]["hand_not_capped_at_five"])
         for row in payload["drop_one_type"]:
             self.assertTrue(row["still_possible"], row["drop_type"])

@@ -4,7 +4,7 @@ DA identifies a 16 from gauge / gravity-gauge / teleological / harmonic,
 runs each one for singleton fit on R, names the 16th, then drills further.
 
 The 16th is realization. Possibility-from-count is the dimension clue.
-This is not the Cosmo app export.
+This is not the Cosmo app export (that catalog is scripts/da_cosmo.py).
 """
 
 from __future__ import annotations
@@ -268,7 +268,9 @@ def run(n: int = 400, seed: int = 1, out: Path | None = None) -> dict:
             "identified_by": (
                 "DA four-way split: gauge / gravity-gauge / teleological / harmonic"
             ),
-            "cosmos_app_list_found": False,
+            "cosmos_app_list_found": True,
+            "this_list_is_cosmo_export": False,
+            "cosmo_catalog": "docs/COSMO-SIXTEEN.md",
             "sixteenth": "R (realization / teleology)",
             "dropped_from_old_15": ["p_cut"],
             "added_as_gravity_leftover": ["theta_qcd"],
@@ -293,15 +295,15 @@ def run(n: int = 400, seed: int = 1, out: Path | None = None) -> dict:
         },
         "how_far": [
             "count 16 is possible by dimension (clue, not a pass)",
-            "4x4 names reconstructed; Cosmo export still missing",
-            f"{len(movers)} singletons raise lock-R; the 16th is R",
+            "4x4 names reconstructed; official Cosmo 16 is a different catalog",
+            f"{len(movers)} singletons raise lock-R; the 16th here is R, Cosmo 16th is sum m_nu",
             "those survivors do not collapse the four couplings",
             "affine F from oscillators / teleology to couplings fails holdout",
-            "next blocked on Cosmo names or a real producing-map F",
+            "Cosmo names are in; next blocked on a public producing-map F",
         ],
         "next_da_move": (
-            "Replace this 4x4 with the Cosmo export names and re-run "
-            "the same singleton / F checks. Do not call this F."
+            "Keep this 4x4 as the score catalog. Run da_cosmo for the official "
+            "table. Do not glue the two lists. Do not call this F."
         ),
     }
     dest = Path(out) if out is not None else Path("results/da_sixteen.json")
