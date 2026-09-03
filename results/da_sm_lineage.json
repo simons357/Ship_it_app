@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "question": "does L_SM run backwards as well as forwards?",
+    "not_a_unifier": true,
+    "does_not_touch_ABQ": true,
+    "both_directions": true
+  },
+  "forwards": [
+    {
+      "name": "Maxwell",
+      "year": "1864",
+      "theory": "classical U(1) field, F_\u03bc\u03bd, no \u0127, no charges as spinors",
+      "back_from_sm": "QED tree / \u0127 \u2192 0, keep A_\u03bc = photon after Weinberg rotation",
+      "back_verdict": "pass",
+      "fwd_to_next": "add charges and \u0127 \u2192 Dirac + Maxwell \u2192 QED",
+      "why": "The photon kinetic term in L2/L3 is Maxwell once fermions and loops are stripped."
+    },
+    {
+      "name": "Dirac",
+      "year": "1928",
+      "theory": "relativistic spin-1/2, (i\u03b3\u2202 \u2212 m)\u03c8 = 0",
+      "back_from_sm": "keep one charged fermion, turn off all non-U(1) gauge fields, replace yv by m",
+      "back_verdict": "pass",
+      "fwd_to_next": "couple to A_\u03bc \u2192 QED",
+      "why": "Block 3 kinetic + block 4 mass term, one flavor, no W/Z/g."
+    },
+    {
+      "name": "Fermi_4fermion",
+      "year": "1933",
+      "theory": "G_F (\u03c8\u0304\u03b3\u03bc\u03c8)(\u03c8\u0304\u03b3^\u03bc\u03c8), no W boson",
+      "back_from_sm": "E \u226a M_W: integrate out W, G_F = g\u00b2 / (4\u221a2 M_W\u00b2)",
+      "back_verdict": "pass",
+      "fwd_to_next": "promote contact term to SU(2) gauge boson \u2192 GWS",
+      "why": "A real low-energy limit of L2+L3. Not a UV theory."
+    },
+    {
+      "name": "QED",
+      "year": "1948",
+      "theory": "U(1)_EM, e, electron + photon, renormalizable",
+      "back_from_sm": "after SSB: e = g sin \u03b8_W, keep A_\u03bc, drop W, Z, gluons, Higgs fluctuations",
+      "back_verdict": "pass",
+      "fwd_to_next": "nonabelian copy of the same idea \u2192 Yang\u2013Mills",
+      "why": "QED sits inside SM as the unbroken U(1)_EM. e is composed, not primitive."
+    },
+    {
+      "name": "Yang_Mills",
+      "year": "1954",
+      "theory": "nonabelian F = dA + A\u2227A, cubic/quartic gluon or W self-coupling",
+      "back_from_sm": "drop fermions and Higgs; keep one simple factor (SU(3) or SU(2))",
+      "back_verdict": "pass",
+      "fwd_to_next": "add SSB + mixing \u2192 GWS; add color + quarks \u2192 QCD",
+      "why": "Block 1 is SU(3) YM. Block 2 contains SU(2) YM before the VEV."
+    },
+    {
+      "name": "GWS_electroweak",
+      "year": "1967",
+      "theory": "SU(2)_L \u00d7 U(1)_Y + Higgs, Weinberg rotation, W/Z masses",
+      "back_from_sm": "turn off g_s; drop QCD sector",
+      "back_verdict": "pass",
+      "fwd_to_next": "add SU(3)_c + quarks \u2192 SM (modulo generations / QCD)",
+      "why": "Blocks 2\u20134. \u03b8_W and v still inputs."
+    },
+    {
+      "name": "QCD",
+      "year": "1973",
+      "theory": "SU(3)_c, quarks, asymptotic freedom",
+      "back_from_sm": "turn off g, g'; keep colored quarks + gluons",
+      "back_verdict": "pass",
+      "fwd_to_next": "add GWS \u2192 SM",
+      "why": "Block 1 + the color part of block 3. UV-free, IR-confining."
+    },
+    {
+      "name": "KM_three_gen",
+      "year": "1973",
+      "theory": "third family, CKM phase, CP in the charged current",
+      "back_from_sm": "keep three copies of the fermion reps and the Yukawa matrices",
+      "back_verdict": "pass",
+      "fwd_to_next": "already inside the poster SM",
+      "why": "Three copies are an input. Running backwards to one generation is a toy, not the SM."
+    },
+    {
+      "name": "SM_poster",
+      "year": "1970s\u20132012",
+      "theory": "L_SM as assembled: QCD + GWS + 3 families + Higgs (found 2012)",
+      "back_from_sm": "identity",
+      "back_verdict": "pass",
+      "fwd_to_next": "add S_EH + \u039b \u2192 Einstein + T_SM (not a term in L_SM)",
+      "why": "The poster. Consumes the couplings. Does not produce them."
+    },
+    {
+      "name": "Einstein_plus_T",
+      "year": "1915 + SM",
+      "theory": "G_\u03bc\u03bd + \u039b g_\u03bc\u03bd = 8\u03c0 G T_\u03bc\u03bd[SM]",
+      "back_from_sm": "cannot. G and \u039b are not in L_SM",
+      "back_verdict": "fail",
+      "fwd_to_next": "this is the universe couple, not a prior layer of the poster",
+      "why": "Forwards from SM you must ADD gravity. Backwards from the couple you can drop EH and recover L_SM on \u03b7."
+    }
+  ],
+  "limits": [
+    {
+      "name": "SM_to_QED",
+      "map": "SSB then e = g s_W, keep A_\u03bc, drop W/Z/g/H fluc",
+      "forward": "QED \u2282 SM",
+      "backward": "SM \u2283 QED",
+      "verdict": "pass"
+    },
+    {
+      "name": "SM_to_Fermi",
+      "map": "E \u226a M_W, integrate out W",
+      "forward": "Fermi is the IR of GWS",
+      "backward": "GWS UV-completes Fermi",
+      "verdict": "pass"
+    },
+    {
+      "name": "SM_to_Maxwell",
+      "map": "QED then \u0127 \u2192 0 / classical field",
+      "forward": "Maxwell \u2282 QED \u2282 SM",
+      "backward": "SM \u2283 Maxwell",
+      "verdict": "pass"
+    },
+    {
+      "name": "SM_to_YM",
+      "map": "drop matter and VEV, keep one factor",
+      "forward": "YM \u2282 SM",
+      "backward": "SM \u2283 YM",
+      "verdict": "pass"
+    },
+    {
+      "name": "SM_to_one_group",
+      "map": "run couplings backward (UV) until they meet",
+      "forward": "would be a GUT",
+      "backward": "SM running misses (gauge3 fail)",
+      "verdict": "fail"
+    },
+    {
+      "name": "SM_to_Einstein",
+      "map": "derive G, \u039b from L_SM",
+      "forward": "must add S_EH by hand",
+      "backward": "L_SM has no metric dynamics",
+      "verdict": "fail"
+    },
+    {
+      "name": "SM_to_NS",
+      "map": "gluon cubic or continuum limit \u2192 Navier\u2013Stokes",
+      "forward": "glue",
+      "backward": "glue",
+      "verdict": "fail"
+    }
+  ],
+  "counts": {
+    "ancestors": 10,
+    "recoverable_from_SM": 9,
+    "not_recoverable": 1,
+    "limits_pass": 4,
+    "limits_fail": 3
+  },
+  "dots": "Maxwell \u2192 Dirac \u2192 QED \u2192 Fermi sits beside \u2192 YM \u2192 GWS + QCD + KM \u2192 SM. Einstein+T is added, not recovered. A one-group UV is not recovered.",
+  "how_far": [
+    "wound the poster back through Maxwell, Dirac, Fermi, QED, YM, GWS, QCD, KM",
+    "four limits pass both ways: QED, Fermi, Maxwell, YM",
+    "UV meet of the three couplings fails (already gauge3)",
+    "Einstein+T does not sit inside L_SM; you add it",
+    "NS is not on this line",
+    "running backwards recovers prior theories, not the values of the couplings"
+  ],
+  "next_da_move": "The SM runs backwards to its ancestors by named limits. It does not run backwards to F. Fluids stay on B."
+}
