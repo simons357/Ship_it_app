@@ -23,6 +23,7 @@ Approved plain-language explanation:
 | [08 — NS tube estimate](08-NS-TUBE-ESTIMATE.md) | Live Hardy / wall / \(I_{\mathrm{tube}}\) write; T3a in, T3b and T5 open |
 | [09 — Stop at the wall](09-NS-GAP.md) | Hit a wall: stop, name the missing piece, list candidates after |
 | [10 — Play with the shape](10-NS-SHAPE-PLAY.md) | Fill the other side if the shape forces it; cylinder play is extra \(E\) |
+| [11 — Energy as a visual object](11-NS-ENERGY-PLAY.md) | Bernstein fills enstrophy from shell energy; outside does not fill the tube |
 
 Machine-readable provenance (original expressions are immutable):
 
@@ -41,6 +42,7 @@ python -m domain_architect --geometry B
 python -m domain_architect --tube B
 python -m domain_architect --gap B
 python -m domain_architect --shape-play B
+python -m domain_architect --energy-play B
 python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_desk
 ```
 

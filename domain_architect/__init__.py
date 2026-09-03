@@ -28,6 +28,7 @@ from .ns_geometry import ns_geometry
 from .ns_tube import tube_estimate
 from .gap import gap_report
 from .shape_play import shape_play
+from .energy_play import energy_play
 from .report import AuditReport
 
 __all__ = [
@@ -48,6 +49,7 @@ __all__ = [
     "tube_estimate",
     "refuse_splice",
     "shape_play",
+    "energy_play",
 ]
 
 __version__ = "0.2.0"

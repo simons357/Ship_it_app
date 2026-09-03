@@ -57,6 +57,12 @@ Play with the shape (fill the other side, then measure):
 `python -m domain_architect --shape-play B`. Strain really completes.
 The cylinder only completes if you put a mirror in. That is extra \(E\).
 
+Energy as a visual object (see the outside, guess the shape):
+[`11-NS-ENERGY-PLAY.md`](11-NS-ENERGY-PLAY.md) and
+`python -m domain_architect --energy-play B`. Bernstein really fills
+enstrophy from shell energy. Guessing the tube from off-axis energy is
+play. Seeing Leray energy does not bound \(X\).
+
 Live tube estimate (Hardy inside, Young outside, \(I_{\mathrm{tube}}\) open):
 [`08-NS-TUBE-ESTIMATE.md`](08-NS-TUBE-ESTIMATE.md) and
 `python -m domain_architect --tube B`. T3a (wall as a two-sided cylinder)

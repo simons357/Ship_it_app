@@ -175,6 +175,12 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
         "do_not": "Promote even-reflect T3a to a torus identity, or treat Cosmo as this lab.",
     },
     {
+        "priority": "3d",
+        "move": "Put energy in a visual object. Bernstein fills enstrophy from shell energy. Do not guess the tube or X∈L^∞ from the outside of the energy.",
+        "command": "python -m domain_architect --energy-play B",
+        "do_not": "Treat Leray energy as a bound on X, or even-reflect off-axis energy into I_tube.",
+    },
+    {
         "priority": "4",
         "move": "One Track Q numeric floor, documented, with the open ≥-1/4 marked numeric.",
         "command": "recompute inverse-GCD scans; log N and λ_min",
