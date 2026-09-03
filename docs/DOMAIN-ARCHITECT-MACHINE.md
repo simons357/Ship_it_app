@@ -10,6 +10,8 @@ This is not “DA unifies the forces.” That stay is still shelved. This is: ho
 
 That is the valuable datum. It is also the shape of “use AI to work on problems,” not “AI said it is solved.”
 
+The paper: [`docs/DA-PAPER.md`](DA-PAPER.md).
+
 ---
 
 ## What DA decided (the setup)

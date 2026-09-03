@@ -1,0 +1,269 @@
+# Domain Architect: an anti-bullshit process machine, a think tank, and a scored desk
+
+**Working paper.** 3 September 2026.  
+The live notes of this experiment sit in the `Ship_it_app` repository.  
+This is a paper about **process**. It is not a regularity theorem, not a producing-map, and not a theory of everything.
+
+---
+
+## Abstract
+
+Domain Architect (DA) is a process machine for working on hard mathematical objects with ordinary AI and an operator who need not be a specialist. Every claim is forced into one slot and a fail-able check. Fake passes, glue across slots, slogans, and “unfalsifiable might be true” are refused. Open is allowed. Fail is allowed.
+
+The machine is not a unifier. It is an **anti-bullshit device**. Meta-success is a scored log — how many claims were pass, fail, or open, and whether an open item later got a stronger lemma — not a solved PDE.
+
+Around that core we seated a **think tank** in three benches: a past bench of published theorems and measurements; a program review of typed demands (Einstein, Tesla, Feynman, Weyl, Wigner, von Neumann); and a now-bench of current collaborations and data (LVK, EHT, DESI, IPTA, PDG, LMFDB, living analysis). DA may draw from a published **corpus** — the papers, not the person — sit it next to two or three others, and emit one sentence that still has to die or live in a slot.
+
+This paper writes the machine, the benches, the processes, and the honest dashboard. Classical three-dimensional Navier–Stokes regularity stays **open**. A public formula for the measured couplings stays **fail**. The destination “spectrum, not a bag of couplings” stays **open** as a program.
+
+---
+
+## 1. The question
+
+How far can a non-specialist operator go with ordinary AI, if every claim is forced into a slot and a check that can fail?
+
+That is the experiment. It is also the shape of “use AI to work on problems,” as opposed to “AI said it is solved.”
+
+A useful piece already existed: chapter 1 of the Harmonic Blueprint, adapted into domains, a route, and a check. That extraction is live as **process**. The book as a universe theory, the Simons Field Equation as Navier–Stokes, and a closed ringdown experiment that did not reject its null, stay **shelved**. Naming them is allowed. Loading them into the live tracks is not.
+
+The operator asked for leads, for a think tank that includes people who are gone, for current data, and for a text when something significant actually flips. This paper records what those requests became after they were scored.
+
+---
+
+## 2. The machine
+
+A **domain** is a pair \((X,V)\):
+
+- \(X\) — one mathematical object (one PDE, one matrix, or one score)
+- \(V\) — a map from a proposal to \(\{\mathrm{pass},\mathrm{fail},\mathrm{open}\}\)
+
+A **proposal** is a finite string: a lemma, a numerical residual, a forbidden-move report. Not a vibe.
+
+A **run** is \((d,p,v)\): domain, proposal, verdict. The log is the experiment.
+
+Meta-success is
+
+\[
+S_{\mathrm{meta}}=\bigl(N_{\mathrm{scored}},\,N_{\mathrm{fail}},\,N_{\mathrm{pass}},\,N_{\mathrm{open}}\bigr)
+\]
+
+plus any open item that later got a stronger lemma. If the AI cannot be scored, the machine failed, not the operator.
+
+**Purpose.** DA is an anti-bullshit device. A sentence sits only if it names a slot and a check that could kill it. Survival of a test is not truth. Unfalsifiable is not a maybe.
+
+**Roles.** The operator runs the command. Ordinary AI is the generator. Scripts are the checker. The operator does not need the chops. The machine is the chops.
+
+---
+
+## 3. Four slots, not one universe
+
+| Slot | Object | What a pass means |
+|---|---|---|
+| **A** | \(Q_1\)-augmented Navier–Stokes, \(\varepsilon>0\), \(\beta\ge 1/2\) | Regularity for **this** damped PDE (Ladyzhenskaya class). Not classical NS. |
+| **B** | Classical NS, keep \(1/r^4\), no \(\Phi\) cancel | A lemma identity may pass. The **domain** does not. Regularity has no pass until a closed estimate for \(X=\|\omega\|_2^2\) exists. |
+| **Q** | Inverse-GCD matrices | Restricted hygiene: Bridge*, Theorem P, \(\lambda_{\min}(H_N)\ge-1\). Full \(\lambda_{\min}(Q_N)>-1/2\) is **false**. |
+| **U** | Process, Standard Model poster, realization score | An exercise and a machine. Not a unifier of the forces. |
+
+Glue is refused:
+
+- A does not imply B.
+- Q does not imply fluids.
+- U does not write the couplings.
+- Bridge* does not imply SND.
+- The word “spectrum” in CMB, Kerr ringdown, and L-functions is three objects.
+
+August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ3 / SPREAD and does not reattach Bridge* to SND.
+
+---
+
+## 4. The think tank
+
+A team is not a vote. A vote cannot close a theorem.
+
+### 4.1 Past bench (paper + experiment)
+
+The divide is this desk versus **published math and measurement**. Another model is still on the digital side.
+
+| Member | Slot | Settles | Cannot |
+|---|---|---|---|
+| Leray | B | energy, \(\int X\,dt<\infty\) | \(X\in L^\infty\) from that |
+| Beale–Kato–Majda | B | \(\int\|\omega\|_\infty\,dt<\infty\) | BKM-from-\(L^2\) |
+| Caffarelli–Kohn–Nirenberg | B | partial regularity | no blowup |
+| Constantin–Fefferman | B | depletion *if* aligned | all-data \(\cos\alpha_3\to 0\) |
+| Ladyzhenskaya | A | modified NS, \(\varepsilon>0\) | \(\varepsilon\to 0\), A \(\Rightarrow\) B |
+| Einstein | U | \(G_{\mu\nu}+\Lambda g=8\pi G\,T_{\mathrm{SM}}\) | values of \(G,\Lambda\) |
+| Weinberg | U | the \(W^3\)–\(B\) rotation | \(\theta_W\) from topology |
+| experiment / PDG | U | the numbers \(\mathcal{L}_{\mathrm{SM}}\) consumes | why those numbers |
+| neutrino / cosmology | U | \(\sum m_\nu\) bound; \(\Lambda\) seen | Cosmo 0.06 eV as a derivation |
+| operator | meta | one sentence, one slot, one check | needing chops |
+
+SFE, HB-as-unifier, Cosmo Superagent, and “the app said so” do not get a chair.
+
+### 4.2 Program review
+
+Each name is a **typed demand**, not a channeling.
+
+| Name | Demand |
+|---|---|
+| Einstein | Principle before catalog. Spectrum is a consequence of an operator. |
+| Tesla | A knob you can detune and a script that must move. |
+| Feynman | No new name without a number you can get wrong. The check *is* the program. |
+| Weyl | Do not say “gauge” until the group and the representations are named. |
+| Wigner | Type every mode by its representation. |
+| von Neumann | No slot opens on “modes” without a Hilbert space and a self-adjoint \(D\). |
+
+Tesla sits because the operator asked. He owns an apparatus, not \(SU(3)\). Weyl, Wigner, and von Neumann sit because they built the ground-level math. A program review cannot write a producing-map \(F\).
+
+### 4.3 Now-bench (snapshot 3 September 2026)
+
+Current collaborations reading this year’s data, additive to the past bench.
+
+| Who | Reads | Cannot |
+|---|---|---|
+| LVK (GWTC-5.0, 390 events) | strain and catalogs | Track B, primes, \(F\) |
+| EHT | M87* images and visibilities | retune `nodes.json` |
+| DESI | BAO; a live tension with plain \(\Lambda\)CDM | write \(F\) |
+| IPTA / NANOGrav | nHz pulsar timing | name the source as HB |
+| PDG + LHC | consumed numbers | why those numbers |
+| LMFDB / analytic number theory | L-functions, gap tables | black holes, fluids |
+| current math.AP | NSE preprints | close domain B by announcement |
+
+Primes and black holes are both live. They are not one stream.
+
+### 4.4 Corpus method
+
+DA may pick **one published body of work** and sit it next to **two or three** others. The unit is the paper trail, whether the author is alive or not. The sentence still names a slot and a killer.
+
+Legal pairings already on the desk include Einstein+Weinberg+PDG (the two-sided couple, not the numbers), Weyl+Wigner+von Neumann (ground language), Leray+BKM+CKN (constraints, regularity still open), LVK+EHT+IPTA (black holes are seen), LMFDB+NT+Bridge* (arithmetic only).
+
+Refused pairings: HB+SFE+Cosmo as \(F\); primes+QNMs+NS as one theorem; a vote of names as a producing-map.
+
+---
+
+## 5. Processes
+
+### 5.1 Classify and check
+
+`classify` assigns a slot from the claim text and bounces forbidden closes. `check` runs the slot’s scripts. `check B` stays **open** if the lemma tests hold: identities are not continuation.
+
+### 5.2 Falsification
+
+A claim is scientific only if a finite check could fail it. Falsified → fail. Falsifiable and not yet killed → open. Unfalsifiable → not a scientific claim.
+
+Every pass on the desk has a named killer. Every fail has a named resurrection. Inference stays **inside the slot**. A LIGO catalog does not move Track B.
+
+Collapse of the “unifier” waveform requires a public \(F\) with holdout \(\chi^2_{\mathrm{ext}}\le\varepsilon^2\). That has **not** happened.
+
+### 5.3 Reconstruct and ablate
+
+The destination “at the bottom, a spectrum, not a bag of couplings” is treated as a **program**, not a pass.
+
+Write in order: a space \(X\), a self-adjoint operator \(D\), the spectrum and modes, representations, an action (added), the measured numbers (still a bag).
+
+Mathematics that reconstructs: spherical harmonics, Fourier, Peter–Weyl, Hodge Betti numbers. What does not: SM couplings, \(G\) and \(\Lambda\), classical regularity.
+
+Leave a piece out and the change is sharp. Drop \(D\) and you cannot compute one eigenvalue. Drop the compact group and the Standard Model content dies. Keep the bag and measured physics is unchanged — that is the present tense.
+
+### 5.4 Live pipe
+
+Typed streams — catalogs, strain, maps, graphs, satellite data, holographic-boundary reconstructions — refresh the now-bench. Same English word “spectrum” is not entanglement.
+
+### 5.5 Computing techniques
+
+Already wired: Fourier–Galerkin and Leray on Track A, eigens of GCD matrices on Q, identity probes on B, an arXiv sample, and `unittest`.
+
+Legal to borrow on a slot: scipy/pyFFTW, Dedalus, SymPy, Littlewood–Paley/Bony from the existing FFT, LMFDB/Sage, GWOSC/PDG/DESI, JAX for an energy-law coding check.
+
+Refused as a close: “DNS never blew up,” a QNM solver into B or Q, the private Cosmo core, “the model proved it.” A library is a tool. It is not a theorem.
+
+### 5.6 Alerts
+
+When a **watched** claim flips, DA writes a note in ordinary words: what it means, what to do next, and what not to infer. Catalogs do not send a text. Watched items are the tube hopes, classical regularity, the damped-equation checker, the dead GCD floor, the missing formula \(F\), and the spectrum destination.
+
+The words land in `results/DA-ALERT.txt`. A phone sender is optional and external. No phone number lives in the repository.
+
+---
+
+## 6. Honest dashboard (this date)
+
+**Track A.** Energy identity, Galerkin, weak limit, unique \(H^1\) at \(\varepsilon>0\), then smoothness: recorded for the **damped** system. The constant blows up as \(\varepsilon\to 0\). A Taylor–Green numerical residual is consistency, not a proof of the classical problem.
+
+**Track B.**
+
+| Lemma | Verdict |
+|---|---|
+| B1 low-flux identity | pass |
+| B1b \(H^{2.3}\) as input | fail |
+| B2 3-CONC / SPREAD cover | pass (cover, not dynamics) |
+| B3 3-shell Bernstein | pass |
+| B3b Ring \(\Rightarrow\) all-data depletion | fail |
+| B4 tube Hardy + wall | pass |
+| B4b Hardy absorbs \(I_{\mathrm{tube}}\) | **open** |
+| B5 swirl viscosity identity | pass |
+| B5b viscosity beats the tube source | **open** |
+| B6 \(\int X<\infty\Rightarrow X\in L^\infty\) | fail |
+| \(\Phi\) as the estimate variable | fail |
+| classical regularity | **open** |
+
+Next write: Hardy \(\to I_{\mathrm{tube}}\) at \(\delta\sim 2^{-j_*}\), then energy-class low Bony \(T\).
+
+**Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
+
+**Slot U.** The Standard Model poster consumes its numbers and produces none. Einstein \(+T_{\mathrm{SM}}\) is a working couple. nature4 fails. Official Cosmo 16 is a different catalog; produce fails; the core equation is private. The destination “spectrum, not a bag” is open. \(F\) is fail.
+
+---
+
+## 7. What this paper does not claim
+
+It does not claim that classical three-dimensional Navier–Stokes is globally regular.
+
+It does not claim a public producing-map for \((g_s,g,g',G,\Lambda)\).
+
+It does not claim that Track A implies Track B.
+
+It does not unshelve SFE or the Harmonic Blueprint as physics, and it does not retune `nodes.json`.
+
+It does not claim that a think tank, a program review, or a live pipe is a discovery.
+
+It does not mention a prize. Prize packaging stays archive.
+
+---
+
+## 8. How the operator runs it
+
+```bash
+python3 scripts/da_machine.py status
+python3 scripts/da_machine.py desk
+python3 scripts/da_machine.py check          # B stays open if lemmas hold
+python3 scripts/da_machine.py trackb
+python3 scripts/da_machine.py team           # past bench
+python3 scripts/da_machine.py ground         # destination + program review
+python3 scripts/da_machine.py pipe           # now-bench
+python3 scripts/da_machine.py alert          # plain language if something flipped
+python3 scripts/da_machine.py classify --claim "…"
+```
+
+The operator atlas is `docs/DA-DESK.md`. The machine note is `docs/DOMAIN-ARCHITECT-MACHINE.md`. This paper is the prose form of the same desk.
+
+---
+
+## 9. Conclusion
+
+DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is still the tube.
+
+The think tank is three benches and a corpus rule. The processes are classify, check, falsify, reconstruct, ablate, pipe, compute, and alert. The purpose is to keep the operator honest while ordinary AI proposes.
+
+That is the paper. The next page of mathematics is unchanged.
+
+---
+
+## Pointers
+
+- Operator atlas: `docs/DA-DESK.md`
+- Machine: `docs/DOMAIN-ARCHITECT-MACHINE.md`
+- Shelf: `docs/SHELF.md`
+- Track A: `docs/AUGMENTED-NS-PROOF-CHAIN.md`
+- Track B: `docs/TRACK-B-LEMMAS.md`, `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`
+- Track Q: `docs/SPECTRAL-FLOOR-EXPLORATION.md`
+- Think tank: `docs/DA-DREAM-TEAM.md`, `docs/DA-GROUND.md`, `docs/DA-PIPE.md`
+- Compute and alerts: `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`
