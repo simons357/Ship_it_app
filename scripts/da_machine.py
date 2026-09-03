@@ -2,7 +2,8 @@
 """
 Domain Architect process machine.
 
-Operator needs no chops. AI proposes. Checkers verdict. Glue is refused.
+Anti-bullshit device. Operator needs no chops. AI proposes.
+Checkers verdict. Glue and fake passes are refused.
 """
 
 from __future__ import annotations
@@ -119,7 +120,7 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
     if re.search(
-        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up",
+        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up|anti-?bullshit",
         text,
     ):
         return {"domain": "U", "verdict": "open", "reason": "looks like score U / SM Lagrangian / waveform; run sm or how"}
@@ -175,7 +176,8 @@ def append_run(domain: str | None, claim: str, verdict: str, note: str) -> dict:
 
 def cmd_status() -> int:
     data = load_log()
-    print("DA process machine. Operator needs no chops.")
+    print("DA is an anti-bullshit device.")
+    print("Operator needs no chops. AI proposes. Checkers verdict.")
     print("Slots:")
     for key, slot in SLOTS.items():
         print(f"  {key}  {slot['object']}")
@@ -664,6 +666,7 @@ def cmd_desk() -> int:
 
     payload = desk_run()
     print("DA desk. Write-up: docs/DA-DESK.md")
+    print("DA is an anti-bullshit device. Process pass. Unifier fail.")
     print("Corpus = published papers. Pair 2–3. Score the sentence.")
     for r in payload["corpus_rules"]:
         print(f"  [{r['verdict']}] {r['id']}: {r['statement']}")

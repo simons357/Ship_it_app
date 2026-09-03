@@ -236,12 +236,19 @@
       "claim": "Write the whole desk down; type the corpus method",
       "verdict": "open",
       "note": "write-up in docs/DA-DESK.md; corpus method pass; pairing-writes-F fail; all benches listed"
+    },
+    {
+      "t": "2026-09-03T06:06:03.658123+00:00",
+      "domain": "U",
+      "claim": "Write the whole desk down; type the corpus method",
+      "verdict": "open",
+      "note": "write-up in docs/DA-DESK.md; corpus method pass; pairing-writes-F fail; all benches listed"
     }
   ],
   "counts": {
-    "scored": 33,
+    "scored": 34,
     "pass": 8,
     "fail": 4,
-    "open": 21
+    "open": 22
   }
 }

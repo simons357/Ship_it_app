@@ -1,6 +1,10 @@
 # Domain Architect machine (the experiment)
 
+DA is an **anti-bullshit device**.
+
 You do not have to know the chops. Domain Architect sets the math of the **process**. Ordinary AI is the generator. Scripts are the checker. You are the operator.
+
+A sentence sits only if it names a slot and a check that could kill it. Fake passes, glue, slogans, and “unfalsifiable might be true” are the thing it is built to refuse. Open is allowed. Fail is allowed.
 
 This is not “DA unifies the forces.” That stay is still shelved. This is: how far can an operator who is not a specialist go with ordinary AI, if every claim is forced into a slot and a fail-able check.
 

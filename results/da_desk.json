@@ -7,13 +7,31 @@
     "not_a_unifier": true,
     "vote_cannot_close": true,
     "program_review": true,
-    "does_not_retune_nodes": true
+    "does_not_retune_nodes": true,
+    "anti_bullshit_device": true
   },
   "slots": {
     "A": "Q1-augmented NS, eps>0; Theorem A for this PDE; not B",
     "B": "classical NS, keep 1/r^4; regularity open",
     "Q": "inverse-GCD only; full floor false",
     "U": "process / SM / score; not a unifier"
+  },
+  "purpose": {
+    "statement": "DA is an anti-bullshit device",
+    "as_process": "pass",
+    "as_unifier": "fail",
+    "kills": [
+      "slogan with no killer",
+      "fake pass",
+      "unfalsifiable might be true",
+      "glue across slots",
+      "a vote or review that writes F"
+    ],
+    "allows": [
+      "open",
+      "fail",
+      "a lead that becomes one scored sentence"
+    ]
   },
   "corpus_rules": [
     {

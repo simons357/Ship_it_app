@@ -22,9 +22,15 @@ Print it: `python3 scripts/da_machine.py desk`
 
 ## What DA is
 
-Domain Architect is a **process machine**. You do not need
-the chops. Ordinary AI proposes. A script scores. You run
-the command.
+DA is an **anti-bullshit device**. That is the purpose.
+It is a process machine, not a unifier.
+
+You do not need the chops. Ordinary AI proposes. A script
+scores. You run the command. A sentence sits only if it
+names a slot and a check that could kill it. Fake passes,
+glue, and “unfalsifiable might be true” are refused. Open
+is allowed. Fail is allowed. A lead is welcome; a close
+that cannot be killed is not.
 
 A domain is a pair \((X,V)\): one object, one verdict map
 to \(\{\mathrm{pass},\mathrm{fail},\mathrm{open}\}\).

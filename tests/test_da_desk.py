@@ -38,6 +38,9 @@ class DaDeskTests(unittest.TestCase):
         now = {m["name"] for m in payload["now_bench"]}
         self.assertIn("LVK collaboration", now)
         self.assertTrue(payload["meta"]["program_review"])
+        self.assertTrue(payload["meta"]["anti_bullshit_device"])
+        self.assertEqual(payload["purpose"]["as_process"], "pass")
+        self.assertEqual(payload["purpose"]["as_unifier"], "fail")
         self.assertEqual(payload["meta"]["writeup"], "docs/DA-DESK.md")
         self.assertGreaterEqual(payload["vocab_n"], 20)
         self.assertEqual(len(CORPUS_RULES), len({r["id"] for r in CORPUS_RULES}))

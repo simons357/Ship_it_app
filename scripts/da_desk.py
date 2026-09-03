@@ -182,12 +182,26 @@ def run(out: Path | None = None) -> dict:
             "vote_cannot_close": True,
             "program_review": True,
             "does_not_retune_nodes": True,
+            "anti_bullshit_device": True,
         },
         "slots": {
             "A": "Q1-augmented NS, eps>0; Theorem A for this PDE; not B",
             "B": "classical NS, keep 1/r^4; regularity open",
             "Q": "inverse-GCD only; full floor false",
             "U": "process / SM / score; not a unifier",
+        },
+        "purpose": {
+            "statement": "DA is an anti-bullshit device",
+            "as_process": "pass",
+            "as_unifier": "fail",
+            "kills": [
+                "slogan with no killer",
+                "fake pass",
+                "unfalsifiable might be true",
+                "glue across slots",
+                "a vote or review that writes F",
+            ],
+            "allows": ["open", "fail", "a lead that becomes one scored sentence"],
         },
         "corpus_rules": CORPUS_RULES,
         "pairs": PAIRS,
@@ -227,6 +241,7 @@ def run(out: Path | None = None) -> dict:
 def main() -> int:
     payload = run()
     print("DA desk. Write-up: docs/DA-DESK.md")
+    print("DA is an anti-bullshit device. Process pass. Unifier fail.")
     print("Corpus = published papers. Pair 2–3. Score the sentence.")
     print("dream team:")
     for m in payload["dream_team"]:

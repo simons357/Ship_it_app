@@ -12,7 +12,7 @@ This repo’s working math is three separate tracks. Do not glue them.
 
 ## Process machine (no chops required)
 
-Domain Architect as a **router + checker**, not a unifier: [`docs/DOMAIN-ARCHITECT-MACHINE.md`](docs/DOMAIN-ARCHITECT-MACHINE.md).
+Domain Architect as a **router + checker**, not a unifier: [`docs/DOMAIN-ARCHITECT-MACHINE.md`](docs/DOMAIN-ARCHITECT-MACHINE.md). DA is an anti-bullshit device. The whole desk: [`docs/DA-DESK.md`](docs/DA-DESK.md).
 
 ```bash
 python3 scripts/da_machine.py status
