@@ -187,6 +187,12 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
         "do_not": "Call the stack a complete shape or a regularity proof. T3a is done on a cylinder, not transposable onto T^3.",
     },
     {
+        "priority": "3f",
+        "move": "See it. Pictures first; math under the fold. Open the see-desk in a browser.",
+        "command": "python -m domain_architect --see B",
+        "do_not": "Treat CosmoEvolution as this picture desk, or treat the pictures as a proof.",
+    },
+    {
         "priority": "4",
         "move": "One Track Q numeric floor, documented, with the open ≥-1/4 marked numeric.",
         "command": "recompute inverse-GCD scans; log N and λ_min",

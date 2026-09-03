@@ -1,0 +1,42 @@
+# See — pictures first, math under the fold
+
+**Not a regularity proof.** Visual cognition is cheap. Inequalities are
+expensive. This page is for a human to *see*. The store of record is
+still git. CosmoEvolution is not this lab.
+
+```bash
+python -m domain_architect --see B
+```
+
+Open `see.html` in a browser. The same pictures sit here as SVG:
+
+## Cylinder
+
+The wall is a cut. Green disk = Hardy, done. Gold ring = the wall.
+Dashed outside = not Navier–Stokes.
+
+![Cylinder wall as a cut](see-cylinder.svg)
+
+## Energy
+
+The pile you can see. Bernstein fills enstrophy and warps it. Guessing
+the tube from the outside only works when the blob is even.
+
+![Energy versus enstrophy](see-energy.svg)
+
+## Overlay
+
+Done layers stacked like transparencies. Red rings are holes. Dashed
+cards are not in the general shape.
+
+![Overlay with holes](see-overlay.svg)
+
+## Gap
+
+Walk the green steps. Stop at red. Gold dashed box = missing piece.
+Hollow T5 = after, not walked.
+
+![Stop at the wall](see-gap.svg)
+
+Math and code stay attached (`--tube`, `--gap`, `--overlay`, `--energy-play`).
+They are just not what you have to look at first.

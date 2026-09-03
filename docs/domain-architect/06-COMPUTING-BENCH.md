@@ -69,6 +69,10 @@ a hole: [`12-NS-OVERLAY.md`](12-NS-OVERLAY.md) and
 is **not** transposable onto \(\mathbb{T}^3\). Open layers stay off the
 stack.
 
+See it as pictures, not as a terminal dump:
+[`13-NS-SEE.md`](13-NS-SEE.md) and `python -m domain_architect --see B`.
+Open `see.html` in a browser. CosmoEvolution is not this desk.
+
 Live tube estimate (Hardy inside, Young outside, \(I_{\mathrm{tube}}\) open):
 [`08-NS-TUBE-ESTIMATE.md`](08-NS-TUBE-ESTIMATE.md) and
 `python -m domain_architect --tube B`. T3a (wall as a two-sided cylinder)

@@ -16,6 +16,7 @@ from .gap import format_gap, gap_report
 from .shape_play import format_shape_play, shape_play
 from .energy_play import energy_play, format_energy_play
 from .overlay import format_overlay, overlay_report
+from .visual import write_see
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 
@@ -94,6 +95,13 @@ def main(argv: list[str] | None = None) -> int:
         nargs="?",
         const="B",
         help="break into pieces, overlay the done transposable ones, refine holes (B)",
+    )
+    parser.add_argument(
+        "--see",
+        metavar="BOOK",
+        nargs="?",
+        const="B",
+        help="write a human picture desk (SVG/HTML) from the same math objects (B)",
     )
     args = parser.parse_args(argv)
 
@@ -263,6 +271,24 @@ def main(argv: list[str] | None = None) -> int:
             print(format_overlay(payload))
         return 0
 
+    if args.see is not None:
+        book = args.see.strip().upper()
+        if book not in {"B", "NS", "TRACKB", "NAVIERSTOKES", "NAVIER-STOKES"}:
+            print(
+                "Only Track B / NS see-desk is wired. RH is a different book.",
+                file=sys.stderr,
+            )
+            return 2
+        dest = write_see()
+        if args.json:
+            json.dump({"wrote": str(dest), "not_a_regularity_proof": True}, sys.stdout, indent=2)
+            sys.stdout.write("\n")
+        else:
+            print("Human see. Math is git. Not a proof.")
+            print(f"Wrote {dest}")
+            print("Open that file in a browser. CosmoEvolution is not this lab.")
+        return 0
+
     if args.registry:
         registry = EquationRegistry.load_default()
         payload = registry.export()
@@ -285,7 +311,7 @@ def main(argv: list[str] | None = None) -> int:
         parser.error(
             "expression is required unless --registry, --proceed, "
             "--refuse-splice, --shape-compare, --clip, --chain, "
-            "--geometry, --tube, --gap, --shape-play, --energy-play, or --overlay is set"
+            "--geometry, --tube, --gap, --shape-play, --energy-play, --overlay, or --see is set"
         )
 
     report = audit_expression(args.expression)
