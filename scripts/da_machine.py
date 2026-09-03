@@ -56,6 +56,7 @@ SLOTS = {
             "tests.test_da_gq",
             "tests.test_da_separate",
             "tests.test_da_cosmo",
+            "tests.test_da_sm",
             "-v",
         ],
     },
@@ -111,10 +112,10 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
     if re.search(
-        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle",
+        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg",
         text,
     ):
-        return {"domain": "U", "verdict": "open", "reason": "looks like score U / waveform rules; run wave or how"}
+        return {"domain": "U", "verdict": "open", "reason": "looks like score U / SM Lagrangian / waveform; run sm or how"}
     return {"domain": None, "verdict": "open", "reason": "no slot; rephrase into A, B, Q, or U"}
 
 
@@ -535,6 +536,26 @@ def cmd_trackb() -> int:
     return 0
 
 
+def cmd_sm() -> int:
+    from da_sm import run as sm_run
+
+    payload = sm_run()
+    print("DA SM Lagrangian. Started over from L_SM. Cosmo 16 not used.")
+    print("realized:", payload["realized_equation"]["equation"])
+    print("working couple:", payload["realized_equation"]["working_couple"])
+    print("gauge3:", payload["gauge3"], "nature4:", payload["nature4"])
+    for b in payload["blocks"]:
+        print(f"  [{b['verdict']}] {b['name']}")
+    append_run(
+        "U",
+        "Analyze the SM Lagrangian; realize the two-sided Einstein+T_SM equation",
+        "open",
+        "L consumes couplings; working couple pass; nature4 fail; A/B/Q untouched",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_separate() -> int:
     from da_separate import run as separate_run
 
@@ -590,6 +611,7 @@ def main() -> int:
     sub.add_parser("gq", help="start at gravity + quantum: what is coupled")
     sub.add_parser("separate", help="run each GQ pair, published claim, and slot alone")
     sub.add_parser("trackb", help="score Track B lemmas; regularity stays open")
+    sub.add_parser("sm", help="analyze the SM Lagrangian; realize Einstein+T_SM")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -627,6 +649,8 @@ def main() -> int:
         return cmd_separate()
     if args.cmd == "trackb":
         return cmd_trackb()
+    if args.cmd == "sm":
+        return cmd_sm()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":

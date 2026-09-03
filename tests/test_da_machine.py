@@ -51,6 +51,11 @@ class DaMachineTests(unittest.TestCase):
         self.assertEqual(r["domain"], "U")
         self.assertEqual(r["verdict"], "open")
 
+    def test_sm_lagrangian_lands_in_u(self):
+        r = classify_claim("analyze the Standard Model Lagrangian and the Weinberg rotation")
+        self.assertEqual(r["domain"], "U")
+        self.assertEqual(r["verdict"], "open")
+
     def test_tube_hardy_lands_in_b_and_solved_ns_fails(self):
         r = classify_claim("localized tube Hardy for Gamma, keep 1/r^4")
         self.assertEqual(r["domain"], "B")
