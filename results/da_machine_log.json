@@ -61,12 +61,19 @@
       "claim": "How can a typed catalog say possible and emit X candidates without F?",
       "verdict": "open",
       "note": "P1 n>k is the only pre-name possible; X is a type-count; P3 explicit F fails"
+    },
+    {
+      "t": "2026-09-03T00:19:24.634691+00:00",
+      "domain": "U",
+      "claim": "Hilbert flush of combinations on the reconstructed 16",
+      "verdict": "open",
+      "note": "Born mass on vacuum, Planck, S_c, delta; rewrite of lock-R, not F"
     }
   ],
   "counts": {
-    "scored": 8,
+    "scored": 9,
     "pass": 3,
     "fail": 0,
-    "open": 5
+    "open": 6
   }
 }

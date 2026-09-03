@@ -48,6 +48,7 @@ SLOTS = {
             "tests.test_da_sixteen",
             "tests.test_da_fingers",
             "tests.test_da_how",
+            "tests.test_da_flush",
             "-v",
         ],
     },
@@ -325,6 +326,27 @@ def cmd_how() -> int:
     return 0
 
 
+def cmd_flush() -> int:
+    from da_flush import run as flush_run
+
+    payload = flush_run()
+    print("DA Hilbert flush. Not Quantum Lens. Not a quantum computer.")
+    print("flushed:", payload["flushed"])
+    for row in payload["best_combination_by_born_mass"]:
+        print(f"k={row['k']}  mass={row['born_mass']:.3f}  {row['set']}")
+    print("how far:")
+    for line in payload["how_far"]:
+        print(" -", line)
+    append_run(
+        "U",
+        "Hilbert flush of combinations on the reconstructed 16",
+        "open",
+        "Born mass on vacuum, Planck, S_c, delta; rewrite of lock-R, not F",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_check(domain: str) -> int:
     domains = list(SLOTS) if domain == "all" else [domain]
     rc = 0
@@ -347,6 +369,7 @@ def main() -> int:
     sub.add_parser("sixteen", help="identify 4x4 list, run each, name the 16th")
     sub.add_parser("fingers", help="five-finger DA on the R line, recurse, fate the 16")
     sub.add_parser("how", help="how a typed catalog can say possible and emit X")
+    sub.add_parser("flush", help="Hilbert flush of which candidates carry the score")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -368,6 +391,8 @@ def main() -> int:
         return cmd_fingers()
     if args.cmd == "how":
         return cmd_how()
+    if args.cmd == "flush":
+        return cmd_flush()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":

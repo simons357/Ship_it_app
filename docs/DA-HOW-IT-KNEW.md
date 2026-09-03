@@ -77,3 +77,7 @@ on this vector already failed. P3 is fail. P1 stays open.
 If the Cosmo export includes its own type tags, replace the
 open type list and re-count \(X\). Do not treat the count as
 \(F\).
+
+Flushing which of the \(X\) carry the score, with Hilbert /
+Born weights on every small combination, is
+[`docs/DA-FLUSH.md`](DA-FLUSH.md).

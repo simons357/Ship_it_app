@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "method": "Hilbert flush: amplitude = sqrt(max(\u0394 lock_R, 0)), Born = |a|\u00b2",
+    "not_quantum_lens": true,
+    "not_a_unifier": true,
+    "n": 200,
+    "seed": 1
+  },
+  "state": {
+    "names": [
+      "log_alpha_em",
+      "log_alpha_s",
+      "sin2_theta_w",
+      "log_weak_ratio",
+      "log_hierarchy",
+      "log_cc_ratio",
+      "log_qcd_ratio",
+      "theta_qcd",
+      "A_mean",
+      "f_mean",
+      "phi_scale",
+      "delta_spread",
+      "S_coh",
+      "kappa_att",
+      "grad_coh"
+    ],
+    "delta_lock_R": {
+      "log_alpha_em": 0.0007356680848184804,
+      "log_alpha_s": 0.0006813839247289052,
+      "sin2_theta_w": 1.9310292452376365e-05,
+      "log_weak_ratio": 0.000815714226852858,
+      "log_hierarchy": 0.051554862861721076,
+      "log_cc_ratio": 0.06431505697722642,
+      "log_qcd_ratio": 0.003764780282598343,
+      "A_mean": 0.002040309926959104,
+      "f_mean": 0.002122116751013668,
+      "phi_scale": 0.0022691605055559505,
+      "delta_spread": 0.025469770051816026,
+      "S_coh": 0.04667691599938151,
+      "kappa_att": 0.007235984792960393,
+      "grad_coh": 0.013849152645314305,
+      "theta_qcd": 0.0
+    },
+    "born": {
+      "log_alpha_em": 0.0033205482410385745,
+      "log_alpha_s": 0.003075528542588326,
+      "sin2_theta_w": 8.715990126512013e-05,
+      "log_weak_ratio": 0.0036818485089437115,
+      "log_hierarchy": 0.2327006060548522,
+      "log_cc_ratio": 0.29029565605081153,
+      "log_qcd_ratio": 0.016992900471362947,
+      "theta_qcd": 0.0,
+      "A_mean": 0.009209244874078301,
+      "f_mean": 0.00957849224435992,
+      "phi_scale": 0.01024219628505044,
+      "delta_spread": 0.11496162724808492,
+      "S_coh": 0.21068326126597525,
+      "kappa_att": 0.032660702662363095,
+      "grad_coh": 0.06251022764922574
+    },
+    "born_by_type": {
+      "gauge": 0.02715798566519868,
+      "gravity_gauge": 0.5229962621056637,
+      "topological": 0.0,
+      "harmonic": 0.1439915606515736,
+      "teleological": 0.3058541915775641
+    }
+  },
+  "marked_score_movers": [
+    "log_hierarchy",
+    "log_cc_ratio",
+    "delta_spread",
+    "S_coh"
+  ],
+  "grover_oracle_size": {
+    "N": 15,
+    "M": 4,
+    "approx_iterations": 1.5209170034901045,
+    "note": "Illustration only. 2^15 subsets are cheaper classically."
+  },
+  "best_combination_by_born_mass": [
+    {
+      "k": 1,
+      "set": [
+        "log_cc_ratio"
+      ],
+      "born_mass": 0.29029565605081153
+    },
+    {
+      "k": 2,
+      "set": [
+        "log_hierarchy",
+        "log_cc_ratio"
+      ],
+      "born_mass": 0.5229962621056637
+    },
+    {
+      "k": 3,
+      "set": [
+        "log_hierarchy",
+        "log_cc_ratio",
+        "S_coh"
+      ],
+      "born_mass": 0.733679523371639
+    },
+    {
+      "k": 4,
+      "set": [
+        "log_hierarchy",
+        "log_cc_ratio",
+        "delta_spread",
+        "S_coh"
+      ],
+      "born_mass": 0.8486411506197239
+    }
+  ],
+  "flushed": [
+    "log_hierarchy",
+    "log_cc_ratio",
+    "delta_spread",
+    "S_coh"
+  ],
+  "how_far": [
+    "every singleton and every k\u22644 subset was scored (classical)",
+    "Born mass sits on ['log_hierarchy', 'log_cc_ratio', 'delta_spread', 'S_coh']",
+    "same four the lock-R singleton test already found",
+    "category mass is gravity-gauge then teleological then harmonic",
+    "this is a rewrite of the score, not a new producing-map"
+  ],
+  "next_da_move": "Replace deltas with Cosmo type-tags or a real F-residual. Do not stand up a quantum device for 15 knobs."
+}
