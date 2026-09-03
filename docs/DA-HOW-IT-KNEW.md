@@ -81,3 +81,6 @@ open type list and re-count \(X\). Do not treat the count as
 Flushing which of the \(X\) carry the score, with Hilbert /
 Born weights on every small combination, is
 [`docs/DA-FLUSH.md`](DA-FLUSH.md).
+
+Screening published unification claims at two levels
+(gauge3 vs nature4) is [`docs/DA-SCREEN.md`](DA-SCREEN.md).
