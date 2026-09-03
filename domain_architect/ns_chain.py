@@ -195,7 +195,7 @@ def ns_chain() -> dict[str, Any]:
             "B4b / B5b: live welds. These are the only pending shape-tightening of Φ.",
             "B-reg: still open. Φ not filled. Domain shape unchanged.",
         ],
-        "next": "Hardy → I_tube at δ∼2^{-j_*}, then energy-class low Bony T. Do not pass regularity.",
+        "next": "T3a Young trace is in. Write T5 I_tube carrying CLIP-T3-WELD. Then energy-class low Bony T. Do not pass regularity.",
     }
 
 

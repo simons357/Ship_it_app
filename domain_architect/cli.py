@@ -11,6 +11,7 @@ from .clip_splice import clip_splice, format_clip_splice
 from .desk import compare_shape, format_proceed, proceed_report, refuse_splice
 from .ns_chain import format_ns_chain, ns_chain
 from .ns_geometry import format_ns_geometry, ns_geometry
+from .ns_tube import format_tube_estimate, tube_estimate
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 
@@ -58,6 +59,11 @@ def main(argv: list[str] | None = None) -> int:
         "--geometry",
         metavar="BOOK",
         help="print geometric analysis (B or NS): tube, shells, strain, swirl",
+    )
+    parser.add_argument(
+        "--tube",
+        metavar="BOOK",
+        help="print the live tube estimate (B or NS): Hardy, wall, I_tube",
     )
     args = parser.parse_args(argv)
 
@@ -135,6 +141,22 @@ def main(argv: list[str] | None = None) -> int:
             print(format_ns_geometry(payload))
         return 0
 
+    if args.tube:
+        book = args.tube.strip().upper()
+        if book not in {"B", "NS", "TRACKB", "NAVIERSTOKES", "NAVIER-STOKES"}:
+            print(
+                "Only Track B / NS tube estimate is wired. RH is a different book.",
+                file=sys.stderr,
+            )
+            return 2
+        payload = tube_estimate()
+        if args.json:
+            json.dump(payload, sys.stdout, indent=2)
+            sys.stdout.write("\n")
+        else:
+            print(format_tube_estimate(payload))
+        return 0
+
     if args.registry:
         registry = EquationRegistry.load_default()
         payload = registry.export()
@@ -156,7 +178,8 @@ def main(argv: list[str] | None = None) -> int:
     if not args.expression:
         parser.error(
             "expression is required unless --registry, --proceed, "
-            "--refuse-splice, --shape-compare, --clip, --chain, or --geometry is set"
+            "--refuse-splice, --shape-compare, --clip, --chain, "
+            "--geometry, or --tube is set"
         )
 
     report = audit_expression(args.expression)

@@ -20,6 +20,7 @@ Approved plain-language explanation:
 | [05 — Rectification](05-RECTIFICATION.md) | Software implementation of the August 2026 corrective specification |
 | [06 — Computing bench](06-COMPUTING-BENCH.md) | Where we go from here: DA compiler, ChatVault search, Cosmo viz only |
 | [07 — NS geometric analysis](07-NS-GEOMETRIC-ANALYSIS.md) | Tube, shells, strain, swirl — architecture, not a regularity proof |
+| [08 — NS tube estimate](08-NS-TUBE-ESTIMATE.md) | Live Hardy / wall / \(I_{\mathrm{tube}}\) write; T3a in, T3b and T5 open |
 
 Machine-readable provenance (original expressions are immutable):
 
@@ -35,6 +36,7 @@ python -m domain_architect --refuse-splice COSMO B
 python -m domain_architect --shape-compare J/X LAMBDA-MIN
 python -m domain_architect --chain B
 python -m domain_architect --geometry B
+python -m domain_architect --tube B
 python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_desk
 ```
 

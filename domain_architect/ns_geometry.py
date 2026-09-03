@@ -232,8 +232,9 @@ def ns_geometry() -> dict[str, Any]:
             "closed bound on X",
         ],
         "next_geometric_write": (
-            "Estimate I_tube on the tube r<δ with Hardy+wall, match the "
-            "wall to I_off, set δ from j*, keep 1/r^4. Then low Bony T."
+            "T3a (Young from outside) is in. Carry CLIP-T3-WELD and "
+            "CLIP-T3-OUTER into T5 (I_tube). Keep 1/r^4. Then low Bony T "
+            "on the spread chart. python -m domain_architect --tube B"
         ),
     }
 

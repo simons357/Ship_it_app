@@ -105,7 +105,7 @@ BOOKS: Final[tuple[dict[str, str], ...]] = (
         "id": "B",
         "name": "Track B — classical Navier–Stokes",
         "status": "open",
-        "next": "Hardy → I_tube at δ∼2^{-j_*}, then energy-class low Bony T. Keep 1/r^4. Regularity stays open.",
+        "next": "T3a Young trace is in; T3b weld to I_off and T5 I_tube stay open. Then energy-class low Bony T. Keep 1/r^4. Regularity stays open.",
     },
     {
         "id": "Q",
@@ -158,8 +158,8 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
     },
     {
         "priority": "3",
-        "move": "One Track B identity: Hardy → I_tube. Regularity does not come along.",
-        "command": "keep 1/r^4; no Φ-cancel; no BKM-from-L^2",
+        "move": "One Track B identity: Hardy → wall trace → I_tube. Regularity does not come along.",
+        "command": "python -m domain_architect --tube B",
         "do_not": "Announce Clay Statement B.",
     },
     {
