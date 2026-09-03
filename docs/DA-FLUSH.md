@@ -30,3 +30,7 @@ for fifteen knobs.
 This is a rewrite of lock-\(R\). It does not produce \(F\).
 If the Cosmo tags arrive, replace the amplitudes with those
 tags or with a real residual from \(F\).
+
+Waveform rules (superposition, entanglement, collapse,
+falsification) are additive and live in
+[`docs/DA-WAVE.md`](DA-WAVE.md). Unfalsifiable is not a pass.

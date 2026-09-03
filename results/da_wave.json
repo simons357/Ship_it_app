@@ -1,0 +1,323 @@
+{
+  "meta": {
+    "layer": "waveform rules on slot U",
+    "does_not_change_slots": [
+      "A",
+      "B",
+      "Q"
+    ],
+    "not_quantum_lens": true,
+    "not_a_unifier": true,
+    "unfalsifiable_is_not_true": true
+  },
+  "rules": {
+    "superposition": "A claim that is still open has amplitude. The waveform is the normalized sum over claims that have not been killed. It is not an electron. It is a bookkeeping state on the desk.",
+    "entanglement": "Two claims are entangled when killing one kills the other. Must-hit leftovers are entangled with 'this is a four-force unifier'. Oscillators are not entangled with the couplings on this vector.",
+    "collapse": "The waveform collapses to a unifier only when a producing-map F exists and \u03c7\u00b2_ext(F(x)) \u2264 \u03b5\u00b2. Sitting on anchors is not collapse. A slogan is not collapse.",
+    "falsification": "A claim is scientific only if a finite check could fail it. Falsified \u2192 fail. Falsifiable and not yet killed \u2192 open. Unfalsifiable \u2192 not a scientific claim (fail as a pass). Unfalsifiable is not 'might be true'.",
+    "statistics": "Lock-R, Born weights, and width controls are evidence about the score, not about F. A width artifact is a control, not a discovery. Survival of a test is not confirmation.",
+    "do_not_mess_up_da": "These rules sit on slot U as an additive layer. They do not glue A to B, do not unshelve Quantum Lens, and do not turn R into F."
+  },
+  "waveform": {
+    "collapsed": false,
+    "collapse_rule": "exists F and \u03c7\u00b2_ext(F(x)) \u2264 \u03b5\u00b2",
+    "emerged": false,
+    "n_open": 1,
+    "n_killed": 20,
+    "still_in_superposition": [
+      "possible_by_count"
+    ],
+    "killed": [
+      "F_exists",
+      "collapse_has_happened",
+      "unfalsifiable_might_be_true",
+      "R_is_a_unifier",
+      "width_means_structurally_special",
+      "drop_log_alpha_em",
+      "drop_log_alpha_s",
+      "drop_sin2_theta_w",
+      "drop_log_weak_ratio",
+      "drop_log_hierarchy",
+      "drop_log_cc_ratio",
+      "drop_log_qcd_ratio",
+      "needed_theta_qcd",
+      "needed_A_mean",
+      "needed_f_mean",
+      "needed_phi_scale",
+      "produces_delta_spread",
+      "produces_S_coh",
+      "needed_kappa_att",
+      "produces_grad_coh"
+    ],
+    "score_waveform_born": {
+      "log_alpha_em": 0.0001223104778956957,
+      "log_alpha_s": 5.503042138211545e-05,
+      "sin2_theta_w": 1.4659106443574346e-07,
+      "log_weak_ratio": 0.00014107496436808163,
+      "log_hierarchy": 0.15887004921298942,
+      "log_cc_ratio": 0.5944005509073123,
+      "log_qcd_ratio": 0.0016011948709734522,
+      "theta_qcd": 0.0,
+      "A_mean": 0.0005841861422583927,
+      "f_mean": 0.00028980881427266456,
+      "phi_scale": 0.0009558769446412226,
+      "delta_spread": 0.023045441138504926,
+      "S_coh": 0.19456879891409382,
+      "kappa_att": 0.005908257715089749,
+      "grad_coh": 0.01945727288515343
+    },
+    "note": "Two waveforms. Claim-waveform: only possible_by_count is still open. Score-waveform: Born mass on vacuum, Planck, S_c, \u03b4. Neither is collapse."
+  },
+  "falsification": [
+    {
+      "name": "possible_by_count",
+      "statement": "unification is possible because X > k",
+      "killer": "show X \u2264 k after a typed catalog is fixed, or show no generic F exists",
+      "falsifiable": true,
+      "verdict": "open",
+      "why": "X_eligible=15 > k_nature=6"
+    },
+    {
+      "name": "F_exists",
+      "statement": "a producing-map F hits the four couplings",
+      "killer": "holdout \u03c7\u00b2 of a candidate F fails to beat the null, or no F is written",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "affine F already lost holdout; no other F is in the repo"
+    },
+    {
+      "name": "collapse_has_happened",
+      "statement": "the waveform has emerged as a unifier",
+      "killer": "collapse requires F and \u03c7\u00b2_ext \u2264 \u03b5\u00b2",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "criteria not met; still a waveform"
+    },
+    {
+      "name": "unfalsifiable_might_be_true",
+      "statement": "the ones that cannot be falsified might be true",
+      "killer": "name a finite check that could fail the claim; if none exists it is not science",
+      "falsifiable": false,
+      "verdict": "fail",
+      "why": "unfalsifiable is not a pass and not a maybe. It is not a scientific claim."
+    },
+    {
+      "name": "R_is_a_unifier",
+      "statement": "realization R is a theory of everything",
+      "killer": "R is a score; locking R is circular",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "the 16th is the output"
+    },
+    {
+      "name": "width_means_structurally_special",
+      "statement": "vacuum/Planck dominate because the algebra singles them out",
+      "killer": "equal-\u03c3 flattens \u03c7\u00b2_ext",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "already flattened; default ranking was a sampling choice"
+    },
+    {
+      "name": "drop_log_alpha_em",
+      "statement": "drop log_alpha_em and still mean a four-force unifier",
+      "killer": "dropping a must-hit leftover or coupling empties the claim",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "gauge / must_hit; Born=0.005. Nature-entangled with the unifier claim."
+    },
+    {
+      "name": "drop_log_alpha_s",
+      "statement": "drop log_alpha_s and still mean a four-force unifier",
+      "killer": "dropping a must-hit leftover or coupling empties the claim",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "gauge / must_hit; Born=0.003. Nature-entangled with the unifier claim."
+    },
+    {
+      "name": "drop_sin2_theta_w",
+      "statement": "drop sin2_theta_w and still mean a four-force unifier",
+      "killer": "dropping a must-hit leftover or coupling empties the claim",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "gauge / must_hit; Born=0.000. Nature-entangled with the unifier claim."
+    },
+    {
+      "name": "drop_log_weak_ratio",
+      "statement": "drop log_weak_ratio and still mean a four-force unifier",
+      "killer": "dropping a must-hit leftover or coupling empties the claim",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "gauge / must_hit; Born=0.006. Nature-entangled with the unifier claim."
+    },
+    {
+      "name": "drop_log_hierarchy",
+      "statement": "drop log_hierarchy and still mean a four-force unifier",
+      "killer": "dropping a must-hit leftover or coupling empties the claim",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "gravity_gauge / must_hit_and_score; Born=0.188. Nature-entangled with the unifier claim."
+    },
+    {
+      "name": "drop_log_cc_ratio",
+      "statement": "drop log_cc_ratio and still mean a four-force unifier",
+      "killer": "dropping a must-hit leftover or coupling empties the claim",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "gravity_gauge / must_hit_and_score; Born=0.363. Nature-entangled with the unifier claim."
+    },
+    {
+      "name": "drop_log_qcd_ratio",
+      "statement": "drop log_qcd_ratio and still mean a four-force unifier",
+      "killer": "dropping a must-hit leftover or coupling empties the claim",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "gauge / must_hit; Born=0.019. Nature-entangled with the unifier claim."
+    },
+    {
+      "name": "needed_theta_qcd",
+      "statement": "theta_qcd is required for unification on this score",
+      "killer": "singleton lock-R and Born mass stay near zero",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "topological / leftover; Born=0.000; decorative or leftover on this score"
+    },
+    {
+      "name": "needed_A_mean",
+      "statement": "A_mean is required for unification on this score",
+      "killer": "singleton lock-R and Born mass stay near zero",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "harmonic / decorative; Born=0.011; decorative or leftover on this score"
+    },
+    {
+      "name": "needed_f_mean",
+      "statement": "f_mean is required for unification on this score",
+      "killer": "singleton lock-R and Born mass stay near zero",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "harmonic / decorative; Born=0.008; decorative or leftover on this score"
+    },
+    {
+      "name": "needed_phi_scale",
+      "statement": "phi_scale is required for unification on this score",
+      "killer": "singleton lock-R and Born mass stay near zero",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "harmonic / decorative; Born=0.015; decorative or leftover on this score"
+    },
+    {
+      "name": "produces_delta_spread",
+      "statement": "delta_spread writes the four couplings",
+      "killer": "affine F / coupling RMS after lock does not collapse",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "harmonic; moves R (Born=0.072) but does not produce couplings"
+    },
+    {
+      "name": "produces_S_coh",
+      "statement": "S_coh writes the four couplings",
+      "killer": "affine F / coupling RMS after lock does not collapse",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "teleological; moves R (Born=0.208) but does not produce couplings"
+    },
+    {
+      "name": "needed_kappa_att",
+      "statement": "kappa_att is required for unification on this score",
+      "killer": "singleton lock-R and Born mass stay near zero",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "teleological / decorative; Born=0.036; decorative or leftover on this score"
+    },
+    {
+      "name": "produces_grad_coh",
+      "statement": "grad_coh writes the four couplings",
+      "killer": "affine F / coupling RMS after lock does not collapse",
+      "falsifiable": true,
+      "verdict": "fail",
+      "why": "teleological; moves R (Born=0.066) but does not produce couplings"
+    }
+  ],
+  "entanglement": [
+    {
+      "a": "unifier_claim",
+      "b": "log_alpha_em",
+      "kind": "logical",
+      "entangled": true,
+      "why": "killing the leftover/coupling kills 'this is a four-force unifier'"
+    },
+    {
+      "a": "unifier_claim",
+      "b": "log_alpha_s",
+      "kind": "logical",
+      "entangled": true,
+      "why": "killing the leftover/coupling kills 'this is a four-force unifier'"
+    },
+    {
+      "a": "unifier_claim",
+      "b": "sin2_theta_w",
+      "kind": "logical",
+      "entangled": true,
+      "why": "killing the leftover/coupling kills 'this is a four-force unifier'"
+    },
+    {
+      "a": "unifier_claim",
+      "b": "log_weak_ratio",
+      "kind": "logical",
+      "entangled": true,
+      "why": "killing the leftover/coupling kills 'this is a four-force unifier'"
+    },
+    {
+      "a": "unifier_claim",
+      "b": "log_hierarchy",
+      "kind": "logical",
+      "entangled": true,
+      "why": "killing the leftover/coupling kills 'this is a four-force unifier'"
+    },
+    {
+      "a": "unifier_claim",
+      "b": "log_cc_ratio",
+      "kind": "logical",
+      "entangled": true,
+      "why": "killing the leftover/coupling kills 'this is a four-force unifier'"
+    },
+    {
+      "a": "unifier_claim",
+      "b": "log_qcd_ratio",
+      "kind": "logical",
+      "entangled": true,
+      "why": "killing the leftover/coupling kills 'this is a four-force unifier'"
+    },
+    {
+      "a": "R_ext",
+      "b": "R_int",
+      "kind": "sampled",
+      "entangled": false,
+      "why": "product score; draws are independent (corr \u2248 0). Definitional product, not physical entanglement."
+    },
+    {
+      "a": "oscillators_teleology",
+      "b": "four_couplings",
+      "kind": "sampled",
+      "entangled": false,
+      "why": "affine F holdout does not beat the null; locking S_c does not collapse couplings"
+    },
+    {
+      "a": "log_cc_ratio",
+      "b": "topological_reading",
+      "kind": "fork",
+      "entangled": false,
+      "why": "open fork, not a joint kill. Gravity-scale here; \u03b8-story is another book."
+    }
+  ],
+  "how_far": [
+    "rules are additive; A/B/Q untouched",
+    "waveform has not collapsed; unification criteria not met",
+    "unfalsifiable_might_be_true is fail (not science)",
+    "F_exists is fail; possible_by_count stays open",
+    "must-hits are logically entangled with the unifier claim",
+    "oscillators are not entangled with the couplings",
+    "next blocked on Cosmo names or a real producing-map F"
+  ],
+  "next_da_move": "Keep using the same collapse rule. Do not treat survival or unfalsifiability as emergence."
+}

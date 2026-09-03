@@ -82,12 +82,19 @@
       "claim": "Category and general fate for each of the 16, then DA the smaller pieces",
       "verdict": "open",
       "note": "kind/nature/score/produce/next on all 16; produce fails; R is output; \u03b8 is topological"
+    },
+    {
+      "t": "2026-09-03T00:24:11.158422+00:00",
+      "domain": "U",
+      "claim": "Waveform rules: superposition, entanglement, collapse, falsification",
+      "verdict": "open",
+      "note": "not collapsed; unfalsifiable_might_be_true fails; F_exists fails; possible_by_count open"
     }
   ],
   "counts": {
-    "scored": 11,
+    "scored": 12,
     "pass": 3,
     "fail": 0,
-    "open": 8
+    "open": 9
   }
 }

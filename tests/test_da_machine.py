@@ -43,6 +43,11 @@ class DaMachineTests(unittest.TestCase):
         self.assertEqual(r["domain"], "U")
         self.assertEqual(r["verdict"], "open")
 
+    def test_wave_claim_lands_in_u(self):
+        r = classify_claim("can we use superposition and falsification on the waveform")
+        self.assertEqual(r["domain"], "U")
+        self.assertEqual(r["verdict"], "open")
+
 
 if __name__ == "__main__":
     unittest.main()
