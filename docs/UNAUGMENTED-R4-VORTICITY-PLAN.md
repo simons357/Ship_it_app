@@ -262,10 +262,10 @@ Item 5 is the reason to keep \(1/r^4\). If the angular viscosity does not domina
 | Piece | Status |
 |---|---|
 | Keep \(1/r^4\), split tube / off-axis | Setup, not proved |
-| Localized tube Hardy | To write |
-| Ring Lemma, exact one shell | Sketch in 22045474; needs almost-band-limited upgrade |
+| Localized tube Hardy | **pass** as Hardy + wall term (`docs/TRACK-B-LEMMAS.md`); \(I_{\mathrm{tube}}\) domination **open** |
+| Ring Lemma, exact one shell | Upgraded to 3-shell Bernstein check; depletion **fail** as a slogan |
 | Concentration \(\Rightarrow\) geometric control | Conditional outline |
-| Spread \(\Rightarrow\) extra dissipation | T2 Thm 1 idea; rebuild without \(H^{2.3}\) |
+| Spread \(\Rightarrow\) extra dissipation | T2 Lemma 1 **pass**; Lemma 2 dropped; low Bony \(T\) still open |
 | Unaugmented global \(H^1\) bound | Open |
 
 The live question is no longer “does \(\Phi\) cancel the axis?” It is: **in the tube \(r\sim 2^{-j_*}\), does viscosity plus (almost) band-limited direction control beat \(\Gamma\partial_z\Gamma/r^4\)?**

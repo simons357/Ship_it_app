@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from da_machine import classify_claim, cosmos_drill  # noqa: E402
+from da_machine import classify_claim, cosmos_drill, run_checker  # noqa: E402
 from da_sixteen import SIXTEEN  # noqa: E402
 
 
@@ -50,6 +50,18 @@ class DaMachineTests(unittest.TestCase):
         r = classify_claim("can we use superposition and falsification on the waveform")
         self.assertEqual(r["domain"], "U")
         self.assertEqual(r["verdict"], "open")
+
+    def test_tube_hardy_lands_in_b_and_solved_ns_fails(self):
+        r = classify_claim("localized tube Hardy for Gamma, keep 1/r^4")
+        self.assertEqual(r["domain"], "B")
+        self.assertEqual(r["verdict"], "open")
+        bad = classify_claim("I solved NS last May")
+        self.assertEqual(bad["verdict"], "fail")
+
+    def test_check_b_stays_open_when_lemmas_hold(self):
+        result = run_checker("B")
+        self.assertEqual(result["verdict"], "open")
+        self.assertIn("Regularity stays open", result["reason"])
 
 
 if __name__ == "__main__":

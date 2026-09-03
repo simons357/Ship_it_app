@@ -7,7 +7,7 @@ This repo’s working math is three separate tracks. Do not glue them.
 | Track | Note | PDE / object |
 |---|---|---|
 | **A** | [`docs/AUGMENTED-NS-PROOF-CHAIN.md`](docs/AUGMENTED-NS-PROOF-CHAIN.md) | \(Q_1\)-augmented NS, \(\varepsilon>0\) |
-| **B** | [`docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`](docs/UNAUGMENTED-R4-VORTICITY-PLAN.md) | Classical NS, keep \(1/r^4\) |
+| **B** | [`docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`](docs/UNAUGMENTED-R4-VORTICITY-PLAN.md), [`docs/TRACK-B-LEMMAS.md`](docs/TRACK-B-LEMMAS.md) | Classical NS, keep \(1/r^4\) |
 | **Q** | [`docs/SPECTRAL-FLOOR-EXPLORATION.md`](docs/SPECTRAL-FLOOR-EXPLORATION.md) | Inverse-GCD floors only |
 
 ## Process machine (no chops required)
@@ -28,13 +28,14 @@ python3 scripts/da_machine.py game
 python3 scripts/da_machine.py screen
 python3 scripts/da_machine.py gq
 python3 scripts/da_machine.py separate
+python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py classify --claim "the prime block of Q-tilde sits above -1/4"
 ```
 
 ## Checks
 
 ```bash
-python3 -m unittest tests/test_augmented_ns_verify.py tests/test_spectral_floor_explore.py tests/test_da_machine.py tests/test_da_sixteen.py tests/test_da_fingers.py tests/test_da_how.py tests/test_da_flush.py tests/test_da_wave.py tests/test_da_game.py tests/test_da_screen.py tests/test_da_gq.py tests/test_da_separate.py
+python3 -m unittest tests/test_augmented_ns_verify.py tests/test_spectral_floor_explore.py tests/test_track_b_lemmas.py tests/test_da_machine.py tests/test_da_sixteen.py tests/test_da_fingers.py tests/test_da_how.py tests/test_da_flush.py tests/test_da_wave.py tests/test_da_game.py tests/test_da_screen.py tests/test_da_gq.py tests/test_da_separate.py
 python3 scripts/augmented_ns_verify.py --n 16 --t 0.4 --dt 0.01 --nu 0.02 --eps 0.0 0.05 0.2
 python3 scripts/spectral_floor_explore.py --nmax 80
 ```

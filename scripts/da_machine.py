@@ -27,9 +27,10 @@ SLOTS = {
     },
     "B": {
         "object": "classical NS, keep 1/r^4",
-        "note": "docs/UNAUGMENTED-R4-VORTICITY-PLAN.md",
-        "checker": None,
-        "why_no_pass": "No regularity checker. Only fail forbidden closes or mark open.",
+        "note": "docs/TRACK-B-LEMMAS.md",
+        "checker": ["python3", "-m", "unittest", "tests.test_track_b_lemmas", "-v"],
+        "domain_pass_means": "open",
+        "why_no_pass": "Lemma identities may hold. Regularity stays open.",
     },
     "Q": {
         "object": "inverse-GCD floors",
@@ -96,10 +97,17 @@ def classify_claim(claim: str) -> dict:
     for pat, why in FORBIDDEN:
         if re.search(pat, text, flags=re.I):
             return {"domain": None, "verdict": "fail", "reason": f"forbidden: {why}"}
-    if re.search(r"\bq_?1\b|augmented|ladyzhenskaya|energy identity", text):
+    if re.search(r"\bq_?1\b|augmented|ladyzhenskaya", text):
         return {"domain": "A", "verdict": "open", "reason": "looks like Track A; run check A"}
-    if re.search(r"1/r\^?4|ring|bony|3-conc|spread|tube|vorticity", text):
-        return {"domain": "B", "verdict": "open", "reason": "looks like Track B; no pass checker"}
+    if re.search(
+        r"1/r\^?4|ring|bony|3-conc|spread|tube|vorticity|hardy|\bgamma\b|triad|track b|t2 lemma",
+        text,
+    ):
+        return {
+            "domain": "B",
+            "verdict": "open",
+            "reason": "looks like Track B; run trackb. Regularity stays open.",
+        }
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
     if re.search(
@@ -115,12 +123,26 @@ def run_checker(domain: str) -> dict:
     if slot["checker"] is None:
         return {"domain": domain, "verdict": "open", "reason": slot["why_no_pass"]}
     proc = subprocess.run(slot["checker"], cwd=ROOT, capture_output=True, text=True)
-    verdict = "pass" if proc.returncode == 0 else "fail"
     tail = (proc.stdout + proc.stderr).strip().splitlines()
+    if proc.returncode != 0:
+        return {
+            "domain": domain,
+            "verdict": "fail",
+            "reason": "checker exit %s" % proc.returncode,
+            "tail": tail[-8:],
+        }
+    # Slot B: lemma tests holding is not a regularity pass.
+    if slot.get("domain_pass_means") == "open":
+        return {
+            "domain": domain,
+            "verdict": "open",
+            "reason": slot["why_no_pass"],
+            "tail": tail[-8:],
+        }
     return {
         "domain": domain,
-        "verdict": verdict,
-        "reason": "checker exit %s" % proc.returncode,
+        "verdict": "pass",
+        "reason": "checker exit 0",
         "tail": tail[-8:],
     }
 
@@ -491,6 +513,28 @@ def cmd_gq() -> int:
     return 0
 
 
+def cmd_trackb() -> int:
+    from track_b_lemmas import run as trackb_run
+
+    payload = trackb_run()
+    print("DA Track B. Lemma identities scored. Regularity stays open.")
+    for row in payload["lemmas"]:
+        print(f"  [{row['verdict']}] {row['name']}: {row['why']}")
+    print("counts", payload["counts"])
+    print("domain:", payload["meta"]["domain_verdict"])
+    print("next:", payload["next_da_move"])
+    for row in payload["lemmas"]:
+        append_run("B", row["statement"], row["verdict"], row["name"] + ": " + row["why"])
+    append_run(
+        "B",
+        "classical 3D NS globally regular (domain close)",
+        "open",
+        "lemma identities held or correctly failed; no closed estimate for X",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_separate() -> int:
     from da_separate import run as separate_run
 
@@ -545,6 +589,7 @@ def main() -> int:
     sub.add_parser("screen", help="screen published unification claims at gauge3 vs nature4")
     sub.add_parser("gq", help="start at gravity + quantum: what is coupled")
     sub.add_parser("separate", help="run each GQ pair, published claim, and slot alone")
+    sub.add_parser("trackb", help="score Track B lemmas; regularity stays open")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -580,6 +625,8 @@ def main() -> int:
         return cmd_gq()
     if args.cmd == "separate":
         return cmd_separate()
+    if args.cmd == "trackb":
+        return cmd_trackb()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":
