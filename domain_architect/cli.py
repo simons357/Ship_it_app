@@ -16,6 +16,7 @@ from .gap import format_gap, gap_report
 from .shape_play import format_shape_play, shape_play
 from .energy_play import energy_play, format_energy_play
 from .overlay import format_overlay, overlay_report
+from .scan import format_scan, scan_report
 from .visual import follow, format_follow
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
@@ -104,6 +105,13 @@ def main(argv: list[str] | None = None) -> int:
         nargs="?",
         const="B",
         help="break into pieces, overlay the done transposable ones, refine holes (B)",
+    )
+    parser.add_argument(
+        "--scan",
+        metavar="TARGET",
+        nargs="?",
+        const="B",
+        help="break into rudimentary pieces and match leftover holes (B / GAP-T3)",
     )
     parser.add_argument(
         "--see",
@@ -289,6 +297,19 @@ def main(argv: list[str] | None = None) -> int:
         _follow_math("overlay", book, json_mode=args.json)
         return 0
 
+    if args.scan is not None:
+        payload = scan_report(args.scan)
+        if payload.get("error"):
+            print(payload["error"], file=sys.stderr)
+            return 2
+        if args.json:
+            json.dump(payload, sys.stdout, indent=2)
+            sys.stdout.write("\n")
+        else:
+            print(format_scan(payload))
+        _follow_math("scan", payload.get("book", "B"), json_mode=args.json)
+        return 0
+
     if args.see is not None:
         book = args.see.strip().upper()
         if book not in {"B", "NS", "TRACKB", "NAVIERSTOKES", "NAVIER-STOKES"}:
@@ -339,7 +360,7 @@ def main(argv: list[str] | None = None) -> int:
         parser.error(
             "expression is required unless --registry, --proceed, "
             "--refuse-splice, --shape-compare, --clip, --chain, "
-            "--geometry, --tube, --gap, --shape-play, --energy-play, --overlay, or --see is set"
+            "--geometry, --tube, --gap, --shape-play, --energy-play, --overlay, --scan, or --see is set"
         )
 
     report = audit_expression(args.expression)

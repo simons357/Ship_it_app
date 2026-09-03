@@ -92,7 +92,8 @@ APPENDAGES: Final[tuple[dict[str, str], ...]] = (
         "forbidden": "Write B, Q, or U. Replace Cosmo. Count as a proof.",
         "command": (
             "auto after --tube / --gap / --overlay / --energy-play / "
-            "--shape-play / --chain / --geometry / --clip / --shape-compare / --see"
+            "--shape-play / --chain / --geometry / --clip / --shape-compare / "
+            "--scan / --see"
         ),
     },
 )
@@ -199,7 +200,7 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
         "priority": "3b",
         "move": "One Track B identity: Hardy → wall trace → I_tube. Regularity does not come along.",
         "command": "python -m domain_architect --tube B",
-        "do_not": "Announce Clay Statement B.",
+        "do_not": "Announce a regularity close from the tube identity.",
     },
     {
         "priority": "3c",
@@ -233,6 +234,16 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
         ),
         "command": "python -m domain_architect --tube B   # see-state.json action=tube",
         "do_not": "Let Cosmo follow the math, or let the picture write B.",
+    },
+    {
+        "priority": "3h",
+        "move": (
+            "If a slot is empty, break DA into rudimentary pieces and scan "
+            "for an equation that actually fits. Many views of one object "
+            "are still one object. A match is not a weld."
+        ),
+        "command": "python -m domain_architect --scan B",
+        "do_not": "Drop Q, SFE, gravity, or Cosmo into a Track B hole because the symbols rhyme.",
     },
     {
         "priority": "4",

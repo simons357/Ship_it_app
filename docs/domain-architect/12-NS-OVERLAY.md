@@ -48,4 +48,7 @@ Refinement is not a second, thicker overlay. It is filling **one hole**
 First hole: **GAP-T3** between T3a and T5. Command:
 `python -m domain_architect --gap B`.
 
+Scan every rudimentary piece for a fit:
+[`15-NS-SCAN.md`](15-NS-SCAN.md) and `python -m domain_architect --scan B`.
+
 Related: [`09-NS-GAP.md`](09-NS-GAP.md), [`11-NS-ENERGY-PLAY.md`](11-NS-ENERGY-PLAY.md).

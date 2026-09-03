@@ -17,6 +17,7 @@ import json
 from .energy_play import energy_play
 from .gap import gap_report
 from .overlay import overlay_report
+from .scan import scan_report
 from .shape_play import play_cylinder
 
 
@@ -43,6 +44,7 @@ FOCUS_LINE: Final[dict[str, str]] = {
     "compare": "Live math: shape first, then texture",
     "shape-compare": "Live math: shape first, then texture",
     "audit": "Live math: role audit of an expression",
+    "scan": "Live math: scan leftover holes against every rudimentary piece",
     "see": "Visual appendage — slave of the math, not Cosmo",
 }
 TITLES: Final[dict[str, str]] = {
@@ -59,6 +61,7 @@ TITLES: Final[dict[str, str]] = {
     "compare": "Shape first, then texture",
     "shape-compare": "Shape first, then texture",
     "audit": "Role audit of an expression",
+    "scan": "Scan — match the hole, do not weld",
     "see": "See desk — pictures first, math under the fold",
 }
 
@@ -274,12 +277,54 @@ def svg_gap(report: dict[str, Any] | None = None) -> str:
 </svg>'''
 
 
+def svg_scan(report: dict[str, Any] | None = None) -> str:
+    """Jigsaw of stacked pieces, empty slot, rejected matches."""
+    data = report or scan_report("B")
+    ana = data.get("anatomy") or {}
+    named = (data.get("focus") or {}).get("named_matches") or []
+    tiles: list[str] = []
+    stacked_n = min(int(ana.get("stacked_count") or 0), 9)
+    for i in range(stacked_n):
+        col, row = i % 3, i // 3
+        x, y = 24 + col * 70, 56 + row * 48
+        tiles.append(
+            f'<rect x="{x}" y="{y}" width="62" height="40" rx="6" fill="#d7efe9" stroke="{READY}" stroke-width="2"/>'
+        )
+    # Missing slot
+    tiles.append(
+        f'<rect x="234" y="104" width="90" height="48" rx="8" fill="none" '
+        f'stroke="{OPEN}" stroke-width="3" stroke-dasharray="6 4"/>'
+        f'<text x="279" y="124" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="{OPEN}">GAP-T3</text>'
+        f'<text x="279" y="140" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="{OPEN}">empty</text>'
+    )
+    rejects: list[str] = []
+    for i, row in enumerate(named[:6]):
+        color = PLAY if row["verdict"] == "LOOKS_LIKE_FIT" else REFUSE
+        y = 56 + i * 28
+        rejects.append(
+            f'<rect x="360" y="{y}" width="250" height="24" rx="5" fill="none" '
+            f'stroke="{color}" stroke-width="1.5"/>'
+            f'<text x="372" y="{y + 16}" font-family="Georgia, serif" font-size="11" fill="{color}">'
+            f'{escape(row["verdict"])}  {escape(row["piece"])}</text>'
+        )
+    views = ", ".join(ana.get("views") or [])
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 250" role="img" aria-label="Scan leftover hole against pieces">
+  <rect width="640" height="250" fill="{PAPER}"/>
+  <text x="16" y="28" font-family="Georgia, serif" font-size="16" fill="{INK}">Scan — same object, empty slot, no weld</text>
+  <text x="16" y="48" font-family="Georgia, serif" font-size="11" fill="{INK}">views: {escape(views)}</text>
+  {"".join(tiles)}
+  {"".join(rejects)}
+  <text x="16" y="230" font-family="Georgia, serif" font-size="11" fill="{INK}">Identified from anatomy. Not smooth. LOOKS_LIKE_FIT is extra E. Wrong-object pieces stay out.</text>
+</svg>'''
+
+
 def render_html(state: dict[str, Any] | None = None) -> str:
     overlay = overlay_report()
     gap = gap_report("B")
     energy = energy_play()
     cyl = play_cylinder()
     even = next(c for c in cyl["completions"] if c["id"] == "even_reflect")
+    scan = scan_report("B")
     st = state or load_focus()
     live = st.get("live") or FOCUS_LINE.get(st.get("action", "see"), FOCUS_LINE["see"])
     title = st.get("title") or TITLES.get(st.get("action", "see"), TITLES["see"])
@@ -361,6 +406,16 @@ def render_html(state: dict[str, Any] | None = None) -> str:
         Missing {escape(str((gap.get("missing") or {}).get("gap_id")))} between {escape(str((gap.get("missing") or {}).get("between")))}.
       </details>
     </figure>
+    <figure>
+      {svg_scan(scan)}
+      <figcaption>Same object, many views. Empty slot is the leftover. Gold LOOKS_LIKE_FIT is not a fill. Wrong-object pieces stay out.</figcaption>
+      <details><summary>Math</summary>
+        Identified? {str(scan["anatomy"]["identified"]).lower()}.
+        Smooth? {str(scan["anatomy"]["smooth"]).lower()}.
+        Views: {escape(", ".join(scan["anatomy"]["views"]))}.
+        Any fill? {str(scan["focus"]["any_fill"]).lower()}.
+      </details>
+    </figure>
   </main>
   <footer>
     Domain Architect package · think tank + visual appendage.
@@ -381,4 +436,5 @@ def write_see(path: str | Path | None = None) -> Path:
     dest.with_name("see-energy.svg").write_text(svg_energy(), encoding="utf-8")
     dest.with_name("see-overlay.svg").write_text(svg_overlay(), encoding="utf-8")
     dest.with_name("see-gap.svg").write_text(svg_gap(), encoding="utf-8")
+    dest.with_name("see-scan.svg").write_text(svg_scan(), encoding="utf-8")
     return dest

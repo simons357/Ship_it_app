@@ -77,6 +77,10 @@ The picture is a **package appendage**. It follows the math automatically
 (`--tube` rewrites `see-state.json` and the HTML banner). The think tank
 stays `--proceed`. Details: [`14-PACKAGE.md`](14-PACKAGE.md).
 
+If a slot is empty, break DA into pieces and scan for a fit:
+[`15-NS-SCAN.md`](15-NS-SCAN.md) and `python -m domain_architect --scan B`.
+A match is not a weld. Wrong-object pieces (Q, gravity, Cosmo) stay out.
+
 Live tube estimate (Hardy inside, Young outside, \(I_{\mathrm{tube}}\) open):
 [`08-NS-TUBE-ESTIMATE.md`](08-NS-TUBE-ESTIMATE.md) and
 `python -m domain_architect --tube B`. T3a (wall as a two-sided cylinder)
@@ -124,7 +128,7 @@ The lab is real. The public cosmos site is not the lab.
 2. Run this desk as Domain Architect. Do not treat the Cosmo URL as the DA site.
 3. Stop at the first open wall (`--gap B`). Name the missing piece
    (GAP-T3: `CLIP-T3-WELD` + `CLIP-T3-OUTER`). T5 is a candidate after
-   the gap, not a step. Keep \(1/r^4\). Regularity stays open. No Clay
+   the gap, not a step. Keep \(1/r^4\). Regularity stays open. No close
    announcement.
 4. One Track Q numeric floor, documented. \(\lambda_{\min}(H_N)\ge -1/4\) stays
    numeric until proved. No operator\(\to\zeta\) lemma ⇒ no RH.
