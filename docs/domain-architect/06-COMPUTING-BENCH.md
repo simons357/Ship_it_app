@@ -52,6 +52,11 @@ Full geometric analysis (tube, shells, strain, swirl):
 Stop at the wall; see the missing piece and the candidates after it:
 [`09-NS-GAP.md`](09-NS-GAP.md) and `python -m domain_architect --gap B`.
 
+Play with the shape (fill the other side, then measure):
+[`10-NS-SHAPE-PLAY.md`](10-NS-SHAPE-PLAY.md) and
+`python -m domain_architect --shape-play B`. Strain really completes.
+The cylinder only completes if you put a mirror in. That is extra \(E\).
+
 Live tube estimate (Hardy inside, Young outside, \(I_{\mathrm{tube}}\) open):
 [`08-NS-TUBE-ESTIMATE.md`](08-NS-TUBE-ESTIMATE.md) and
 `python -m domain_architect --tube B`. T3a (wall as a two-sided cylinder)

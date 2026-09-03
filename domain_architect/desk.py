@@ -169,6 +169,12 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
         "do_not": "Announce Clay Statement B.",
     },
     {
+        "priority": "3c",
+        "move": "If the shape forces the other side, fill it and measure. If you put the symmetry in, it is play, extra E, not a lemma.",
+        "command": "python -m domain_architect --shape-play B",
+        "do_not": "Promote even-reflect T3a to a torus identity, or treat Cosmo as this lab.",
+    },
+    {
         "priority": "4",
         "move": "One Track Q numeric floor, documented, with the open ≥-1/4 marked numeric.",
         "command": "recompute inverse-GCD scans; log N and λ_min",

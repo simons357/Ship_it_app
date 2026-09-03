@@ -22,6 +22,7 @@ Approved plain-language explanation:
 | [07 — NS geometric analysis](07-NS-GEOMETRIC-ANALYSIS.md) | Tube, shells, strain, swirl — architecture, not a regularity proof |
 | [08 — NS tube estimate](08-NS-TUBE-ESTIMATE.md) | Live Hardy / wall / \(I_{\mathrm{tube}}\) write; T3a in, T3b and T5 open |
 | [09 — Stop at the wall](09-NS-GAP.md) | Hit a wall: stop, name the missing piece, list candidates after |
+| [10 — Play with the shape](10-NS-SHAPE-PLAY.md) | Fill the other side if the shape forces it; cylinder play is extra \(E\) |
 
 Machine-readable provenance (original expressions are immutable):
 
@@ -39,6 +40,7 @@ python -m domain_architect --chain B
 python -m domain_architect --geometry B
 python -m domain_architect --tube B
 python -m domain_architect --gap B
+python -m domain_architect --shape-play B
 python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_desk
 ```
 

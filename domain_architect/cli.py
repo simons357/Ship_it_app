@@ -13,6 +13,7 @@ from .ns_chain import format_ns_chain, ns_chain
 from .ns_geometry import format_ns_geometry, ns_geometry
 from .ns_tube import format_tube_estimate, tube_estimate
 from .gap import format_gap, gap_report
+from .shape_play import format_shape_play, shape_play
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 
@@ -70,6 +71,13 @@ def main(argv: list[str] | None = None) -> int:
         "--gap",
         metavar="BOOK",
         help="stop at the first open wall; show the missing piece and candidates after (B or CHAIN)",
+    )
+    parser.add_argument(
+        "--shape-play",
+        metavar="BOOK",
+        nargs="?",
+        const="B",
+        help="fill the other side of a shape and measure (B / cylinder / strain)",
     )
     args = parser.parse_args(argv)
 
@@ -175,6 +183,31 @@ def main(argv: list[str] | None = None) -> int:
             print(format_gap(payload))
         return 0
 
+    if args.shape_play is not None:
+        book = args.shape_play.strip().upper()
+        if book not in {
+            "B",
+            "NS",
+            "TRACKB",
+            "TUBE",
+            "CYLINDER",
+            "STRAIN",
+            "NAVIERSTOKES",
+            "NAVIER-STOKES",
+        }:
+            print(
+                "Only Track B / cylinder / strain shape-play is wired.",
+                file=sys.stderr,
+            )
+            return 2
+        payload = shape_play()
+        if args.json:
+            json.dump(payload, sys.stdout, indent=2)
+            sys.stdout.write("\n")
+        else:
+            print(format_shape_play(payload))
+        return 0
+
     if args.registry:
         registry = EquationRegistry.load_default()
         payload = registry.export()
@@ -197,7 +230,7 @@ def main(argv: list[str] | None = None) -> int:
         parser.error(
             "expression is required unless --registry, --proceed, "
             "--refuse-splice, --shape-compare, --clip, --chain, "
-            "--geometry, --tube, or --gap is set"
+            "--geometry, --tube, --gap, or --shape-play is set"
         )
 
     report = audit_expression(args.expression)

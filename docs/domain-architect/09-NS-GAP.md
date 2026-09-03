@@ -47,6 +47,11 @@ where \(\Gamma\) vanishes.
 
 Until that lemma exists, T5 is a candidate, not a step.
 
+Even reflection across \(r=\delta\) can *look* like a fill of
+`CLIP-T3-OUTER`. That is play: extra environment, not \(\mathbb{T}^3\).
+It still does not fill `CLIP-T3-WELD`. See
+[`10-NS-SHAPE-PLAY.md`](10-NS-SHAPE-PLAY.md).
+
 ## Refused bypasses (not candidates)
 
 \(\Phi\)-cancel, BKM from \(L^2\), gluing Theorem H onto the tube, picking
