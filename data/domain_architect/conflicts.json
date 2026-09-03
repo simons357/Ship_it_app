@@ -102,5 +102,29 @@
     "evidence": "No justified canonical formula exists to compare against SFE-H001.",
     "status": "unresolved",
     "notes": "Canonical SFE status remains unresolved."
+  },
+  {
+    "left_id": "VIZ-H001",
+    "right_id": "FRA-H002",
+    "relation": "INCOMPATIBLE",
+    "evidence": "CosmoEvolution 3D brands itself Domain Architect and claims topological prediction of SM parameters. FRA-H002 is an organizational grammar with canonical SFE unresolved. A visualization cannot implement the audited product.",
+    "status": "recorded",
+    "notes": "Banner VIZ-H001 as visualization only. Domain Architect remains the compiler on this git."
+  },
+  {
+    "left_id": "VIZ-H001",
+    "right_id": "EXP-H001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Experiment 01 is a closed ringdown null under a frozen protocol. CosmoEvolution is not that test and must not reopen nodes.json.",
+    "status": "recorded",
+    "notes": "Do not load cosmology visualization into EXP01."
+  },
+  {
+    "left_id": "SYS-H001",
+    "right_id": "FRA-H002",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "ChatVault search and FRA inquiry can share a PWA shell. They are different jobs. Search hits are not role audits.",
+    "status": "recorded",
+    "notes": "Inquiry = Domain Architect. Search = ChatVault."
   }
 ]

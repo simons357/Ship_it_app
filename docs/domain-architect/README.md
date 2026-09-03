@@ -18,6 +18,7 @@ Approved plain-language explanation:
 | [03 — Reconciliation](03-RECONCILIATION.md) | Six-point response to the August 2026 handoff |
 | [04 — Notation collisions](04-NOTATION-COLLISIONS.md) | `P` / `p` / `ℙ`, `Φ` / `φ` / `ϕ`, and other overloaded symbols |
 | [05 — Rectification](05-RECTIFICATION.md) | Software implementation of the August 2026 corrective specification |
+| [06 — Computing bench](06-COMPUTING-BENCH.md) | Where we go from here: DA compiler, ChatVault search, Cosmo viz only |
 
 Machine-readable provenance (original expressions are immutable):
 
@@ -28,7 +29,9 @@ Machine-readable provenance (original expressions are immutable):
 ```bash
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
-python -m unittest tests.test_domain_architect_acceptance
+python -m domain_architect --proceed
+python -m domain_architect --refuse-splice COSMO B
+python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_desk
 ```
 
 Related closed experiment in this repository:

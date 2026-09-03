@@ -21,6 +21,7 @@ from .schema import (
     ScaleResponseSubtype,
 )
 from .audit import audit_expression
+from .desk import refuse_splice, proceed_report
 from .report import AuditReport
 
 __all__ = [
@@ -32,6 +33,8 @@ __all__ = [
     "RecoveryKind",
     "ScaleResponseSubtype",
     "audit_expression",
+    "proceed_report",
+    "refuse_splice",
 ]
 
 __version__ = "0.2.0"
