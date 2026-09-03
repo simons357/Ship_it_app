@@ -21,6 +21,21 @@ from .schema import (
     ScaleResponseSubtype,
 )
 from .audit import audit_expression
+from .clip_splice import clip_splice
+from .desk import compare_shape, proceed_report, refuse_splice
+from .think_tank import consult
+from .ns_chain import ns_chain
+from .ns_geometry import ns_geometry
+from .ns_tube import tube_estimate
+from .gap import gap_report
+from .shape_play import shape_play
+from .energy_play import energy_play
+from .overlay import overlay_report
+from .scan import scan_report
+from .shell import shell_report
+from .jigsaw import jigsaw_report
+from .visual import follow, write_see
+from .desk_server import serve_site
 from .report import AuditReport
 
 __all__ = [
@@ -32,6 +47,24 @@ __all__ = [
     "RecoveryKind",
     "ScaleResponseSubtype",
     "audit_expression",
+    "clip_splice",
+    "compare_shape",
+    "gap_report",
+    "ns_chain",
+    "ns_geometry",
+    "proceed_report",
+    "consult",
+    "tube_estimate",
+    "refuse_splice",
+    "shape_play",
+    "energy_play",
+    "overlay_report",
+    "scan_report",
+    "shell_report",
+    "jigsaw_report",
+    "write_see",
+    "follow",
+    "serve_site",
 ]
 
 __version__ = "0.2.0"

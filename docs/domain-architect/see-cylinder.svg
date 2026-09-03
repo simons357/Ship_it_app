@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 220" role="img" aria-label="Cylinder wall as a cut">
+  <rect width="460" height="220" fill="#f6f1e7"/>
+  <text x="16" y="28" font-family="Georgia, serif" font-size="16" fill="#1c1917">Cylinder — you see the cut</text>
+  <circle cx="150" cy="125" r="78" fill="none" stroke="#c9a227" stroke-width="2" stroke-dasharray="7 6"/>
+  <circle cx="150" cy="125" r="40" fill="#d7efe9" stroke="#1b7f6e" stroke-width="3"/>
+  <circle cx="150" cy="125" r="42" fill="none" stroke="#c9a227" stroke-width="6"/>
+  <text x="150" y="120" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#1c1917">tube</text>
+  <text x="150" y="138" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#1b7f6e">Hardy done</text>
+  <text x="252" y="80" font-family="Georgia, serif" font-size="12" fill="#c9a227">wall r=δ</text>
+  <text x="248" y="168" font-family="Georgia, serif" font-size="12" fill="#c44536">outside unknown</text>
+  <text x="300" y="70" font-family="Georgia, serif" font-size="14" fill="#1c1917">Even reflect = play</text>
+  <text x="300" y="92" font-family="Georgia, serif" font-size="12" fill="#1c1917">fills a fake outside</text>
+  <text x="300" y="114" font-family="Georgia, serif" font-size="12" fill="#c44536">does not fill I_off</text>
+  <text x="16" y="208" font-family="Georgia, serif" font-size="11" fill="#1c1917">Math stays under the picture. CLIP-T3-OUTER / CLIP-T3-WELD.</text>
+</svg>

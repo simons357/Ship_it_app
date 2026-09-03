@@ -51,6 +51,7 @@ known theory.
 | Equal-budget selector laboratory | `selectors.py` |
 | Train / validation / held-out protocol hash | `protocol.py` |
 | Null and counterexample registry | `null_results.json`, `EquationRegistry.record_null` |
+| Computing-bench desk (layers, books, next moves) | `desk.py`, `--proceed`, `--refuse-splice` |
 | Confidence taxonomy | `report.ConfidenceTaxonomy` |
 
 ## Canonical SFE
@@ -71,4 +72,5 @@ python -m unittest tests.test_domain_architect_acceptance tests.test_domain_arch
 ```bash
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
+python -m domain_architect --proceed
 ```

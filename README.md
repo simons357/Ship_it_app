@@ -3,6 +3,10 @@
 This repository now contains two related research objects. Neither is a
 unified physical theory.
 
+**Domain Architect is the compiler.** ChatVault (inside this repo, not a
+separate GitHub project) is search. CosmoEvolution 3D is visualization
+only and is not the DA website.
+
 ## Domain Architect
 
 Functional Role Analysis and model-auditing software. It classifies
@@ -17,7 +21,8 @@ to treat representation of a known equation as derivation.
 ```bash
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units
+python -m domain_architect --proceed
+python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_domain_architect_desk
 ```
 
 ## Harmonic Blueprint Experiment 01
