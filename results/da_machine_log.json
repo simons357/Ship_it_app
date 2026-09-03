@@ -40,12 +40,19 @@
       "claim": "Cosmos drill: is unification possible with ~16 named knobs?",
       "verdict": "open",
       "note": "names missing; core leftovers are vacuum energy and Planck hierarchy"
+    },
+    {
+      "t": "2026-09-03T00:12:53.693657+00:00",
+      "domain": "U",
+      "claim": "Identify the 16 from gauge / gravity-gauge / teleological / harmonic and test each",
+      "verdict": "open",
+      "note": "16th is R; four singletons raise lock-R; affine F to the four couplings fails"
     }
   ],
   "counts": {
-    "scored": 5,
+    "scored": 6,
     "pass": 3,
     "fail": 0,
-    "open": 2
+    "open": 3
   }
 }

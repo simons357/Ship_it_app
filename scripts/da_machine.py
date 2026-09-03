@@ -39,7 +39,15 @@ SLOTS = {
     "U": {
         "object": "realization score R (exercise, not a unifier)",
         "note": "docs/UNIFIER-EXERCISE.md",
-        "checker": ["python3", "-m", "unittest", "tests.test_unifier_exercise", "tests.test_unifier_combo", "-v"],
+        "checker": [
+            "python3",
+            "-m",
+            "unittest",
+            "tests.test_unifier_exercise",
+            "tests.test_unifier_combo",
+            "tests.test_da_sixteen",
+            "-v",
+        ],
     },
 }
 
@@ -234,6 +242,31 @@ def cmd_cosmos() -> int:
     return 0
 
 
+def cmd_sixteen() -> int:
+    from da_sixteen import run as sixteen_run
+
+    payload = sixteen_run()
+    print("DA 16. The 16th is R (realization). Cosmo export still missing.")
+    print("possibility-from-count:", payload["possibility_from_count"]["why"])
+    print(f"baseline R={payload['baseline_R']:.4f}")
+    for f in payload["each_one"]:
+        d = "" if f["delta"] is None else f"{f['delta']:+.3f}"
+        print(f"{f['id']:3d} {f['family']:<16} {f['name']:<18} {f['lock_R']:7.4f} {f['fits']} {d}")
+    print("fits that move R:", payload["fits_that_move_R"])
+    print("how far:")
+    for line in payload["how_far"]:
+        print(" -", line)
+    print("next:", payload["next_da_move"])
+    append_run(
+        "U",
+        "Identify the 16 from gauge / gravity-gauge / teleological / harmonic and test each",
+        "open",
+        "16th is R; four singletons raise lock-R; affine F to the four couplings fails",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_check(domain: str) -> int:
     domains = list(SLOTS) if domain == "all" else [domain]
     rc = 0
@@ -253,6 +286,7 @@ def main() -> int:
     sub = p.add_subparsers(dest="cmd", required=True)
     sub.add_parser("status")
     sub.add_parser("cosmos", help="drill the ~16 Cosmos knobs")
+    sub.add_parser("sixteen", help="identify 4x4 list, run each, name the 16th")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -268,6 +302,8 @@ def main() -> int:
         return cmd_status()
     if args.cmd == "cosmos":
         return cmd_cosmos()
+    if args.cmd == "sixteen":
+        return cmd_sixteen()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":

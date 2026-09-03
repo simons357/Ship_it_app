@@ -1,0 +1,385 @@
+{
+  "meta": {
+    "identified_by": "DA four-way split: gauge / gravity-gauge / teleological / harmonic",
+    "cosmos_app_list_found": false,
+    "sixteenth": "R (realization / teleology)",
+    "dropped_from_old_15": [
+      "p_cut"
+    ],
+    "added_as_gravity_leftover": [
+      "theta_qcd"
+    ],
+    "n": 400,
+    "seed": 1,
+    "fit_delta": 0.02,
+    "not_a_unifier": true
+  },
+  "sixteen": [
+    "log_alpha_em",
+    "log_alpha_s",
+    "sin2_theta_w",
+    "log_weak_ratio",
+    "log_hierarchy",
+    "log_cc_ratio",
+    "log_qcd_ratio",
+    "theta_qcd",
+    "A_mean",
+    "f_mean",
+    "phi_scale",
+    "delta_spread",
+    "S_coh",
+    "kappa_att",
+    "grad_coh",
+    "R"
+  ],
+  "families": {
+    "gauge": [
+      "log_alpha_em",
+      "log_alpha_s",
+      "sin2_theta_w",
+      "log_weak_ratio"
+    ],
+    "gravity_gauge": [
+      "log_hierarchy",
+      "log_cc_ratio",
+      "log_qcd_ratio",
+      "theta_qcd"
+    ],
+    "harmonic": [
+      "A_mean",
+      "f_mean",
+      "phi_scale",
+      "delta_spread"
+    ],
+    "teleological": [
+      "S_coh",
+      "kappa_att",
+      "grad_coh",
+      "R"
+    ]
+  },
+  "possibility_from_count": {
+    "n_claimed": 16,
+    "n_knobs": 15,
+    "k_four_forces": 4,
+    "k_with_leftovers": 6,
+    "generic_existence": true,
+    "why": "A generic continuous map F: R^n \u2192 R^k hits a neighborhood of a typical target when n > k. So 'possible with about 16' can be a dimension count (16 > 4, and 15 knobs > 6 nature targets), not a construction of F. That is the clue. It is not a pass on unification.",
+    "verdict": "open",
+    "narrows_search": true
+  },
+  "baseline_R": 0.05118635812635469,
+  "baseline_coupling_rms": 0.13253859549942182,
+  "each_one": [
+    {
+      "id": 1,
+      "name": "log_alpha_em",
+      "family": "gauge",
+      "role": "EM coupling",
+      "lock_R": 0.051766450330304664,
+      "delta": 0.0005800922039499723,
+      "coupling_rms": 0.10646415934899635,
+      "fits": false
+    },
+    {
+      "id": 2,
+      "name": "log_alpha_s",
+      "family": "gauge",
+      "role": "strong coupling",
+      "lock_R": 0.051760081401949584,
+      "delta": 0.0005737232755948923,
+      "coupling_rms": 0.10964879321860764,
+      "fits": false
+    },
+    {
+      "id": 3,
+      "name": "sin2_theta_w",
+      "family": "gauge",
+      "role": "weak mixing",
+      "lock_R": 0.05120936161520475,
+      "delta": 2.3003488850058262e-05,
+      "coupling_rms": 0.13173172036105746,
+      "fits": false
+    },
+    {
+      "id": 4,
+      "name": "log_weak_ratio",
+      "family": "gauge",
+      "role": "weak / EM scale",
+      "lock_R": 0.05169233399492747,
+      "delta": 0.000505975868572775,
+      "coupling_rms": 0.10949299823006385,
+      "fits": false
+    },
+    {
+      "id": 5,
+      "name": "log_hierarchy",
+      "family": "gravity_gauge",
+      "role": "Planck leftover",
+      "lock_R": 0.09581527633763218,
+      "delta": 0.044628918211277485,
+      "coupling_rms": 0.13253859549942182,
+      "fits": true
+    },
+    {
+      "id": 6,
+      "name": "log_cc_ratio",
+      "family": "gravity_gauge",
+      "role": "vacuum leftover",
+      "lock_R": 0.1310775891663305,
+      "delta": 0.07989123103997581,
+      "coupling_rms": 0.13253859549942182,
+      "fits": true
+    },
+    {
+      "id": 7,
+      "name": "log_qcd_ratio",
+      "family": "gravity_gauge",
+      "role": "QCD leftover",
+      "lock_R": 0.054881518263468265,
+      "delta": 0.0036951601371135734,
+      "coupling_rms": 0.13253859549942182,
+      "fits": false
+    },
+    {
+      "id": 8,
+      "name": "theta_qcd",
+      "family": "gravity_gauge",
+      "role": "strong-CP leftover, target 0",
+      "lock_R": 0.05697448012740775,
+      "delta": 0.00578812200105306,
+      "coupling_rms": 0.13253859549942182,
+      "fits": false
+    },
+    {
+      "id": 9,
+      "name": "A_mean",
+      "family": "harmonic",
+      "role": "amplitude",
+      "lock_R": 0.053023700084304126,
+      "delta": 0.0018373419579494343,
+      "coupling_rms": 0.13253859549942182,
+      "fits": false
+    },
+    {
+      "id": 10,
+      "name": "f_mean",
+      "family": "harmonic",
+      "role": "frequency",
+      "lock_R": 0.0530961187407879,
+      "delta": 0.001909760614433209,
+      "coupling_rms": 0.13253859549942182,
+      "fits": false
+    },
+    {
+      "id": 11,
+      "name": "phi_scale",
+      "family": "harmonic",
+      "role": "phi scale",
+      "lock_R": 0.05286666953450268,
+      "delta": 0.0016803114081479914,
+      "coupling_rms": 0.13253859549942182,
+      "fits": false
+    },
+    {
+      "id": 12,
+      "name": "delta_spread",
+      "family": "harmonic",
+      "role": "phase disorder",
+      "lock_R": 0.07134187050956417,
+      "delta": 0.02015551238320948,
+      "coupling_rms": 0.13253859549942182,
+      "fits": true
+    },
+    {
+      "id": 13,
+      "name": "S_coh",
+      "family": "teleological",
+      "role": "coherence",
+      "lock_R": 0.08551111231427497,
+      "delta": 0.034324754187920276,
+      "coupling_rms": 0.13253859549942182,
+      "fits": true
+    },
+    {
+      "id": 14,
+      "name": "kappa_att",
+      "family": "teleological",
+      "role": "attractor",
+      "lock_R": 0.05736882508264692,
+      "delta": 0.0061824669562922305,
+      "coupling_rms": 0.13253859549942182,
+      "fits": false
+    },
+    {
+      "id": 15,
+      "name": "grad_coh",
+      "family": "teleological",
+      "role": "coherence gradient",
+      "lock_R": 0.0623946906752811,
+      "delta": 0.011208332548926406,
+      "coupling_rms": 0.13253859549942182,
+      "fits": false
+    },
+    {
+      "id": 16,
+      "name": "R",
+      "family": "teleological",
+      "role": "realization / success (output, not a knob)",
+      "lock_R": 1.0,
+      "delta": null,
+      "coupling_rms": null,
+      "fits": "target"
+    }
+  ],
+  "family_lock": {
+    "gauge": {
+      "members": [
+        "log_alpha_em",
+        "log_alpha_s",
+        "sin2_theta_w",
+        "log_weak_ratio"
+      ],
+      "lock_R": 0.05288710991522049,
+      "coupling_rms": 0.0
+    },
+    "gravity_gauge": {
+      "members": [
+        "log_hierarchy",
+        "log_cc_ratio",
+        "log_qcd_ratio",
+        "theta_qcd"
+      ],
+      "lock_R": 0.2773773349474358,
+      "coupling_rms": 0.13253859549942182
+    },
+    "harmonic": {
+      "members": [
+        "A_mean",
+        "f_mean",
+        "phi_scale",
+        "delta_spread"
+      ],
+      "lock_R": 0.07901841382743326,
+      "coupling_rms": 0.13253859549942182
+    },
+    "teleological": {
+      "members": [
+        "S_coh",
+        "kappa_att",
+        "grad_coh"
+      ],
+      "lock_R": 0.11788914693446614,
+      "coupling_rms": 0.13253859549942182
+    }
+  },
+  "fits_that_move_R": [
+    "log_hierarchy",
+    "log_cc_ratio",
+    "delta_spread",
+    "S_coh"
+  ],
+  "survivors_locked": {
+    "names": [
+      "log_hierarchy",
+      "log_cc_ratio",
+      "delta_spread",
+      "S_coh"
+    ],
+    "lock_R": 0.5072624166511366,
+    "coupling_rms": 0.13253859549942182,
+    "coupling_rms_baseline": 0.13253859549942182,
+    "couplings_collapse": false,
+    "note": "Locking the singletons that raise R does not collapse the four couplings. Fits-R is not F."
+  },
+  "leave_one_out_survivors": [
+    {
+      "dropped": "log_hierarchy",
+      "kept": [
+        "log_cc_ratio",
+        "delta_spread",
+        "S_coh"
+      ],
+      "lock_R": 0.2849062986668892
+    },
+    {
+      "dropped": "log_cc_ratio",
+      "kept": [
+        "log_hierarchy",
+        "delta_spread",
+        "S_coh"
+      ],
+      "lock_R": 0.2189694890862625
+    },
+    {
+      "dropped": "delta_spread",
+      "kept": [
+        "log_hierarchy",
+        "log_cc_ratio",
+        "S_coh"
+      ],
+      "lock_R": 0.36989890815025844
+    },
+    {
+      "dropped": "S_coh",
+      "kept": [
+        "log_hierarchy",
+        "log_cc_ratio",
+        "delta_spread"
+      ],
+      "lock_R": 0.3173908991061049
+    }
+  ],
+  "candidate_F": {
+    "from_oscillator_and_teleology": {
+      "predictors": [
+        "A_mean",
+        "f_mean",
+        "phi_scale",
+        "delta_spread",
+        "S_coh",
+        "kappa_att",
+        "grad_coh"
+      ],
+      "targets": [
+        "log_alpha_em",
+        "log_alpha_s",
+        "sin2_theta_w",
+        "log_weak_ratio"
+      ],
+      "n": 400,
+      "holdout_chi2_F": 0.07339909717911652,
+      "holdout_chi2_predict_observed": 0.07209711067486334,
+      "beats_null": false,
+      "verdict": "fail",
+      "why": "Holdout \u03c7\u00b2 of an affine map from these knobs to the four couplings does not beat predicting the observed anchors. On this reconstructed vector the knobs do not produce the couplings."
+    },
+    "from_non_leftover_survivors": {
+      "predictors": [
+        "delta_spread",
+        "S_coh"
+      ],
+      "targets": [
+        "log_alpha_em",
+        "log_alpha_s",
+        "sin2_theta_w",
+        "log_weak_ratio"
+      ],
+      "n": 400,
+      "holdout_chi2_F": 0.07109655825213791,
+      "holdout_chi2_predict_observed": 0.07078395932842865,
+      "beats_null": false,
+      "verdict": "fail",
+      "why": "Holdout \u03c7\u00b2 of an affine map from these knobs to the four couplings does not beat predicting the observed anchors. On this reconstructed vector the knobs do not produce the couplings."
+    }
+  },
+  "how_far": [
+    "count 16 is possible by dimension (clue, not a pass)",
+    "4x4 names reconstructed; Cosmo export still missing",
+    "4 singletons raise lock-R; the 16th is R",
+    "those survivors do not collapse the four couplings",
+    "affine F from oscillators / teleology to couplings fails holdout",
+    "next blocked on Cosmo names or a real producing-map F"
+  ],
+  "next_da_move": "Replace this 4x4 with the Cosmo export names and re-run the same singleton / F checks. Do not call this F."
+}

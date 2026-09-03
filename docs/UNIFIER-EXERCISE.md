@@ -20,6 +20,8 @@ Until that list is in the repo, the 16 coordinates are **reconstructed**:
 
 If you drop the actual Cosmos names, I will replace this table and re-run.
 
+The follow-up 4×4 drill (gauge / gravity-gauge / teleological / harmonic) is in [`docs/DA-SIXTEEN.md`](DA-SIXTEEN.md). The 16th is \(R\).
+
 ---
 
 ## Mathematical definition of success

@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from da_machine import classify_claim, cosmos_drill  # noqa: E402
+from da_sixteen import SIXTEEN  # noqa: E402
 
 
 class DaMachineTests(unittest.TestCase):
@@ -32,6 +33,10 @@ class DaMachineTests(unittest.TestCase):
         self.assertFalse(d["cosmos_list_found"])
         self.assertEqual(d["possibility_claim"]["verdict"], "open")
         self.assertEqual(d["layers"][2]["pieces"], ["log_cc_ratio", "log_hierarchy"])
+
+    def test_sixteen_command_list_is_wired(self):
+        self.assertEqual(len(SIXTEEN), 16)
+        self.assertEqual(SIXTEEN[-1], "R")
 
 
 if __name__ == "__main__":

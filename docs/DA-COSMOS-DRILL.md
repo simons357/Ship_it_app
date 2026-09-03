@@ -51,6 +51,9 @@ DA’s loop, the one you described:
 
 Until the Cosmo names arrive, step 3 is blocked. DA will not invent sixteen labels and call them the app’s.
 
+The follow-up drill (`docs/DA-SIXTEEN.md`) reconstructs a 4×4 list from gauge / gravity-gauge / teleological / harmonic, runs each member, and names the 16th as \(R\). That is still not the Cosmo export.
+
 ```
 python3 scripts/da_machine.py cosmos
+python3 scripts/da_machine.py sixteen
 ```
