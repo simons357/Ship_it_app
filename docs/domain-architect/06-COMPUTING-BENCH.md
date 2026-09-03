@@ -63,6 +63,12 @@ Energy as a visual object (see the outside, guess the shape):
 enstrophy from shell energy. Guessing the tube from off-axis energy is
 play. Seeing Leray energy does not bound \(X\).
 
+Overlay the done pieces into one general architecture shape, then refine
+a hole: [`12-NS-OVERLAY.md`](12-NS-OVERLAY.md) and
+`python -m domain_architect --overlay B`. T3a is done on a cylinder and
+is **not** transposable onto \(\mathbb{T}^3\). Open layers stay off the
+stack.
+
 Live tube estimate (Hardy inside, Young outside, \(I_{\mathrm{tube}}\) open):
 [`08-NS-TUBE-ESTIMATE.md`](08-NS-TUBE-ESTIMATE.md) and
 `python -m domain_architect --tube B`. T3a (wall as a two-sided cylinder)

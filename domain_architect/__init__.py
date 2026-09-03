@@ -29,6 +29,7 @@ from .ns_tube import tube_estimate
 from .gap import gap_report
 from .shape_play import shape_play
 from .energy_play import energy_play
+from .overlay import overlay_report
 from .report import AuditReport
 
 __all__ = [
@@ -50,6 +51,7 @@ __all__ = [
     "refuse_splice",
     "shape_play",
     "energy_play",
+    "overlay_report",
 ]
 
 __version__ = "0.2.0"

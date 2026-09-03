@@ -232,8 +232,8 @@ def ns_geometry() -> dict[str, Any]:
             "closed bound on X",
         ],
         "next_geometric_write": (
-            "STOP at T3b. Missing piece GAP-T3 sits between T3a and T5. "
-            "T5 is a candidate after, not a step. python -m domain_architect --gap B"
+            "Overlay the done pieces (--overlay B). Refine GAP-T3; T5 is a "
+            "candidate after, not a step. python -m domain_architect --gap B"
         ),
     }
 

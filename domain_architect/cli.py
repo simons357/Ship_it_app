@@ -15,6 +15,7 @@ from .ns_tube import format_tube_estimate, tube_estimate
 from .gap import format_gap, gap_report
 from .shape_play import format_shape_play, shape_play
 from .energy_play import energy_play, format_energy_play
+from .overlay import format_overlay, overlay_report
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 
@@ -86,6 +87,13 @@ def main(argv: list[str] | None = None) -> int:
         nargs="?",
         const="B",
         help="treat energy as a visual object: see the outside, guess the shape (B)",
+    )
+    parser.add_argument(
+        "--overlay",
+        metavar="BOOK",
+        nargs="?",
+        const="B",
+        help="break into pieces, overlay the done transposable ones, refine holes (B)",
     )
     args = parser.parse_args(argv)
 
@@ -239,6 +247,22 @@ def main(argv: list[str] | None = None) -> int:
             print(format_energy_play(payload))
         return 0
 
+    if args.overlay is not None:
+        book = args.overlay.strip().upper()
+        if book not in {"B", "NS", "TRACKB", "NAVIERSTOKES", "NAVIER-STOKES"}:
+            print(
+                "Only Track B / NS overlay is wired. RH is a different book.",
+                file=sys.stderr,
+            )
+            return 2
+        payload = overlay_report()
+        if args.json:
+            json.dump(payload, sys.stdout, indent=2)
+            sys.stdout.write("\n")
+        else:
+            print(format_overlay(payload))
+        return 0
+
     if args.registry:
         registry = EquationRegistry.load_default()
         payload = registry.export()
@@ -261,7 +285,7 @@ def main(argv: list[str] | None = None) -> int:
         parser.error(
             "expression is required unless --registry, --proceed, "
             "--refuse-splice, --shape-compare, --clip, --chain, "
-            "--geometry, --tube, --gap, --shape-play, or --energy-play is set"
+            "--geometry, --tube, --gap, --shape-play, --energy-play, or --overlay is set"
         )
 
     report = audit_expression(args.expression)

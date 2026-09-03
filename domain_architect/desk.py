@@ -181,6 +181,12 @@ NEXT_MOVES: Final[tuple[dict[str, str], ...]] = (
         "do_not": "Treat Leray energy as a bound on X, or even-reflect off-axis energy into I_tube.",
     },
     {
+        "priority": "3e",
+        "move": "Break into visual pieces. Overlay only done, transposable layers. Refine one hole. Do not silent-merge open layers into the composite.",
+        "command": "python -m domain_architect --overlay B",
+        "do_not": "Call the stack a complete shape or a regularity proof. T3a is done on a cylinder, not transposable onto T^3.",
+    },
+    {
         "priority": "4",
         "move": "One Track Q numeric floor, documented, with the open ≥-1/4 marked numeric.",
         "command": "recompute inverse-GCD scans; log N and λ_min",

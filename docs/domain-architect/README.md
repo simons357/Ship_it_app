@@ -24,6 +24,7 @@ Approved plain-language explanation:
 | [09 — Stop at the wall](09-NS-GAP.md) | Hit a wall: stop, name the missing piece, list candidates after |
 | [10 — Play with the shape](10-NS-SHAPE-PLAY.md) | Fill the other side if the shape forces it; cylinder play is extra \(E\) |
 | [11 — Energy as a visual object](11-NS-ENERGY-PLAY.md) | Bernstein fills enstrophy from shell energy; outside does not fill the tube |
+| [12 — Overlay](12-NS-OVERLAY.md) | Pieces visualized; done transposable layers stacked; refine one hole |
 
 Machine-readable provenance (original expressions are immutable):
 
@@ -43,6 +44,7 @@ python -m domain_architect --tube B
 python -m domain_architect --gap B
 python -m domain_architect --shape-play B
 python -m domain_architect --energy-play B
+python -m domain_architect --overlay B
 python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_desk
 ```
 
