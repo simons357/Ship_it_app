@@ -110,12 +110,19 @@
       "claim": "Start at gravity + quantum: what is coupled?",
       "verdict": "open",
       "note": "universal couple is (g,T) via G; vacuum leftover fails as a prediction; gauge3 not coupled to G"
+    },
+    {
+      "t": "2026-09-03T00:34:49.049801+00:00",
+      "domain": "U",
+      "claim": "Run each GQ pair, published claim, and reconstructed slot alone",
+      "verdict": "open",
+      "note": "isolation did not write F; Einstein passes alone; vacuum\u2192gravity fails alone; MSSM open only as gauge3"
     }
   ],
   "counts": {
-    "scored": 15,
+    "scored": 16,
     "pass": 3,
     "fail": 0,
-    "open": 12
+    "open": 13
   }
 }

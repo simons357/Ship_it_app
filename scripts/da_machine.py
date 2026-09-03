@@ -53,6 +53,7 @@ SLOTS = {
             "tests.test_da_game",
             "tests.test_da_screen",
             "tests.test_da_gq",
+            "tests.test_da_separate",
             "-v",
         ],
     },
@@ -460,6 +461,31 @@ def cmd_gq() -> int:
     return 0
 
 
+def cmd_separate() -> int:
+    from da_separate import run as separate_run
+
+    payload = separate_run()
+    print("DA separate. One object, one verdict. No bundles.")
+    print("GQ:")
+    for r in payload["GQ"]:
+        print(f"  [{r['verdict']}] {r['name']}: {r['coupling']}")
+    print("PUB:")
+    for r in payload["PUB"]:
+        print(f"  gauge3={r['gauge3_alone']:<5} nature4={r['nature4_alone']:<5}  {r['name']}")
+    print("SIX:")
+    for r in payload["SIX"]:
+        d = "" if r.get("delta_lock_R") is None else f" Δ={r['delta_lock_R']:+.3f}"
+        print(f"  {r['id']:2d} [{r['verdict']}] {r['name']:<16}{d}")
+    append_run(
+        "U",
+        "Run each GQ pair, published claim, and reconstructed slot alone",
+        "open",
+        "isolation did not write F; Einstein passes alone; vacuum→gravity fails alone; MSSM open only as gauge3",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_check(domain: str) -> int:
     domains = list(SLOTS) if domain == "all" else [domain]
     rc = 0
@@ -488,6 +514,7 @@ def main() -> int:
     sub.add_parser("game", help="Shapley on the score vs the unifier-claim game")
     sub.add_parser("screen", help="screen published unification claims at gauge3 vs nature4")
     sub.add_parser("gq", help="start at gravity + quantum: what is coupled")
+    sub.add_parser("separate", help="run each GQ pair, published claim, and slot alone")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -521,6 +548,8 @@ def main() -> int:
         return cmd_screen()
     if args.cmd == "gq":
         return cmd_gq()
+    if args.cmd == "separate":
+        return cmd_separate()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":

@@ -1,0 +1,368 @@
+{
+  "meta": {
+    "method": "one object, one verdict, no bundle",
+    "not_a_unifier": true,
+    "n": 200,
+    "seed": 1,
+    "baseline_R": 0.06034964821485472
+  },
+  "GQ": [
+    {
+      "deck": "GQ",
+      "alone": true,
+      "name": "Einstein",
+      "object": "G_\u03bc\u03bd (curvature)  \u2194  T_\u03bc\u03bd (stress-energy)",
+      "coupling": "8\u03c0 G",
+      "verdict": "pass",
+      "why": "Universal. Everything with energy sources curvature the same way. One constant, G."
+    },
+    {
+      "deck": "GQ",
+      "alone": true,
+      "name": "equivalence",
+      "object": "g_\u03bc\u03bd (metric)  \u2194  every matter worldline / kinetic term",
+      "coupling": "minimal coupling (\u221a\u2212g, g^\u03bc\u03bd)",
+      "verdict": "pass",
+      "why": "The same metric enters every species. That is why gravity is not a fourth SM gauge click."
+    },
+    {
+      "deck": "GQ",
+      "alone": true,
+      "name": "Lambda",
+      "object": "\u039b g_\u03bc\u03bd  \u2194  g_\u03bc\u03bd",
+      "coupling": "\u039b (or \u03c1_\u039b = \u039b/8\u03c0G)",
+      "verdict": "open",
+      "why": "Observed. Sits on the left of Einstein. Not derived from the SM vacuum."
+    },
+    {
+      "deck": "GQ",
+      "alone": true,
+      "name": "QFT_on_curved",
+      "object": "quantum fields \u03c8, A  \u2194  classical g_\u03bc\u03bd",
+      "coupling": "D_\u03bc[g], \u221a\u2212g",
+      "verdict": "pass",
+      "why": "Hawking, inflation perturbations, etc. Fields are quantum. Geometry is not."
+    },
+    {
+      "deck": "GQ",
+      "alone": true,
+      "name": "vacuum_to_gravity",
+      "object": "\u27e80|T_\u03bc\u03bd|0\u27e9 ~ k_UV\u2074  \u2194  G_\u03bc\u03bd via 8\u03c0G",
+      "coupling": "same G",
+      "verdict": "fail",
+      "why": "This coupling is why \u03c1_\u039b is a problem. Naive QFT vacuum overshoots the observed \u039b by a huge factor. Not a pass."
+    },
+    {
+      "deck": "GQ",
+      "alone": true,
+      "name": "hierarchy",
+      "object": "M_Pl = 1/\u221aG  \u2194  v (electroweak)",
+      "coupling": "G v\u00b2 ~ 10\u207b\u00b3\u00b2",
+      "verdict": "open",
+      "why": "Gravity is weak at v because M_Pl is huge. A fact. Not a derivation."
+    },
+    {
+      "deck": "GQ",
+      "alone": true,
+      "name": "graviton_to_SM",
+      "object": "quantized h_\u03bc\u03bd  \u2194  SM fields",
+      "coupling": "\u03ba = \u221a(8\u03c0G)",
+      "verdict": "open",
+      "why": "Effective EFT exists (soft gravitons). A finite UV theory that outputs G and \u039b is not on the desk."
+    },
+    {
+      "deck": "GQ",
+      "alone": true,
+      "name": "gauge3_to_G",
+      "object": "\u03b1_em, \u03b1_s, \u03b1_w  \u2194  G_N",
+      "coupling": "no working F",
+      "verdict": "fail",
+      "why": "The screen: MSSM-class can meet the three gauges. None of them output G from that same map."
+    }
+  ],
+  "PUB": [
+    {
+      "deck": "PUB",
+      "alone": true,
+      "name": "SM running (no extra stuff)",
+      "kind": "gauge",
+      "gauge3_alone": "fail",
+      "nature4_alone": "fail",
+      "glued": false,
+      "why": "Baseline. The Standard Model does not unify the couplings."
+    },
+    {
+      "deck": "PUB",
+      "alone": true,
+      "name": "Georgi\u2013Glashow SU(5)",
+      "kind": "gauge",
+      "gauge3_alone": "fail",
+      "nature4_alone": "fail",
+      "glued": false,
+      "why": "The original GUT. Publicly dead in its minimal form."
+    },
+    {
+      "deck": "PUB",
+      "alone": true,
+      "name": "MSSM / SUSY SU(5) or SO(10)",
+      "kind": "gauge",
+      "gauge3_alone": "open",
+      "nature4_alone": "fail",
+      "glued": false,
+      "why": "Best-known 3-gauge program still standing. Does not output G_N or \u039b."
+    },
+    {
+      "deck": "PUB",
+      "alone": true,
+      "name": "Pati\u2013Salam SU(4)\u00d7SU(2)\u00d7SU(2)",
+      "kind": "gauge",
+      "gauge3_alone": "fail",
+      "nature4_alone": "fail",
+      "glued": false,
+      "why": "Lepton-as-fourth-color. A piece, not nature4."
+    },
+    {
+      "deck": "PUB",
+      "alone": true,
+      "name": "Heterotic / type-II string landscape",
+      "kind": "gravity_gauge",
+      "gauge3_alone": "open",
+      "nature4_alone": "fail",
+      "glued": false,
+      "why": "Has gravity in the story. Does not hand you one F to the observed leftovers."
+    },
+    {
+      "deck": "PUB",
+      "alone": true,
+      "name": "Asymptotic safety (gravity)",
+      "kind": "gravity_gauge",
+      "gauge3_alone": "fail",
+      "nature4_alone": "fail",
+      "glued": false,
+      "why": "A gravity UV story. Not four-force unification."
+    },
+    {
+      "deck": "PUB",
+      "alone": true,
+      "name": "Lisi E8",
+      "kind": "gauge",
+      "gauge3_alone": "fail",
+      "nature4_alone": "fail",
+      "glued": false,
+      "why": "A published claim. Screened. Does not pass."
+    },
+    {
+      "deck": "PUB",
+      "alone": true,
+      "name": "Loop quantum gravity / causal sets",
+      "kind": "topological",
+      "gauge3_alone": "fail",
+      "nature4_alone": "fail",
+      "glued": false,
+      "why": "Quantum geometry, not a four-force unifier."
+    },
+    {
+      "deck": "PUB",
+      "alone": true,
+      "name": "This repo's reconstructed R / SFE knobs",
+      "kind": "teleological",
+      "gauge3_alone": "fail",
+      "nature4_alone": "fail",
+      "glued": false,
+      "why": "Screened the same way. Score is not F. Cosmos export still missing."
+    }
+  ],
+  "SIX": [
+    {
+      "deck": "SIX",
+      "alone": true,
+      "id": 1,
+      "name": "log_alpha_em",
+      "kind": "gauge",
+      "fate": "must_hit",
+      "why": "alone: must-hit as nature, decorative on the score (\u0394=+0.001)",
+      "delta_lock_R": 0.0007356680848184804,
+      "verdict": "open"
+    },
+    {
+      "deck": "SIX",
+      "alone": true,
+      "id": 2,
+      "name": "log_alpha_s",
+      "kind": "gauge",
+      "fate": "must_hit",
+      "why": "alone: must-hit as nature, decorative on the score (\u0394=+0.001)",
+      "delta_lock_R": 0.0006813839247289052,
+      "verdict": "open"
+    },
+    {
+      "deck": "SIX",
+      "alone": true,
+      "id": 3,
+      "name": "sin2_theta_w",
+      "kind": "gauge",
+      "fate": "must_hit",
+      "why": "alone: must-hit as nature, decorative on the score (\u0394=+0.000)",
+      "delta_lock_R": 1.9310292452376365e-05,
+      "verdict": "open"
+    },
+    {
+      "deck": "SIX",
+      "alone": true,
+      "id": 4,
+      "name": "log_weak_ratio",
+      "kind": "gauge",
+      "fate": "must_hit",
+      "why": "alone: must-hit as nature, decorative on the score (\u0394=+0.001)",
+      "delta_lock_R": 0.000815714226852858,
+      "verdict": "open"
+    },
+    {
+      "deck": "SIX",
+      "alone": true,
+      "id": 5,
+      "name": "log_hierarchy",
+      "kind": "gravity_gauge",
+      "fate": "must_hit_and_score",
+      "why": "alone: moves R (\u0394=+0.052); does not write F",
+      "delta_lock_R": 0.051554862861721076,
+      "verdict": "open"
+    },
+    {
+      "deck": "SIX",
+      "alone": true,
+      "id": 6,
+      "name": "log_cc_ratio",
+      "kind": "gravity_gauge",
+      "fate": "must_hit_and_score",
+      "why": "alone: moves R (\u0394=+0.064); does not write F",
+      "delta_lock_R": 0.06431505697722642,
+      "verdict": "open"
+    },
+    {
+      "deck": "SIX",
+      "alone": true,
+      "id": 7,
+      "name": "log_qcd_ratio",
+      "kind": "gauge",
+      "fate": "must_hit",
+      "why": "alone: must-hit as nature, decorative on the score (\u0394=+0.004)",
+      "delta_lock_R": 0.003764780282598343,
+      "verdict": "open"
+    },
+    {
+      "deck": "SIX",
+      "alone": true,
+      "id": 8,
+      "name": "theta_qcd",
+      "kind": "topological",
+      "fate": "leftover",
+      "why": "strong-CP angle; global, not a local coupling",
+      "verdict": "open",
+      "delta_lock_R": 0.0
+    },
+    {
+      "deck": "SIX",
+      "alone": true,
+      "id": 9,
+      "name": "A_mean",
+      "kind": "harmonic",
+      "fate": "decorative",
+      "why": "alone: does not move R (\u0394=+0.002); not a force",
+      "delta_lock_R": 0.002040309926959104,
+      "verdict": "fail"
+    },
+    {
+      "deck": "SIX",
+      "alone": true,
+      "id": 10,
+      "name": "f_mean",
+      "kind": "harmonic",
+      "fate": "decorative",
+      "why": "alone: does not move R (\u0394=+0.002); not a force",
+      "delta_lock_R": 0.002122116751013668,
+      "verdict": "fail"
+    },
+    {
+      "deck": "SIX",
+      "alone": true,
+      "id": 11,
+      "name": "phi_scale",
+      "kind": "harmonic",
+      "fate": "decorative",
+      "why": "alone: does not move R (\u0394=+0.002); not a force",
+      "delta_lock_R": 0.0022691605055559505,
+      "verdict": "fail"
+    },
+    {
+      "deck": "SIX",
+      "alone": true,
+      "id": 12,
+      "name": "delta_spread",
+      "kind": "harmonic",
+      "fate": "score",
+      "why": "alone: moves R (\u0394=+0.025); does not write F",
+      "delta_lock_R": 0.025469770051816026,
+      "verdict": "open"
+    },
+    {
+      "deck": "SIX",
+      "alone": true,
+      "id": 13,
+      "name": "S_coh",
+      "kind": "teleological",
+      "fate": "score",
+      "why": "alone: moves R (\u0394=+0.047); does not write F",
+      "delta_lock_R": 0.04667691599938151,
+      "verdict": "open"
+    },
+    {
+      "deck": "SIX",
+      "alone": true,
+      "id": 14,
+      "name": "kappa_att",
+      "kind": "teleological",
+      "fate": "decorative",
+      "why": "alone: does not move R (\u0394=+0.007); not a force",
+      "delta_lock_R": 0.007235984792960393,
+      "verdict": "fail"
+    },
+    {
+      "deck": "SIX",
+      "alone": true,
+      "id": 15,
+      "name": "grad_coh",
+      "kind": "teleological",
+      "fate": "near_miss",
+      "why": "alone: does not move R (\u0394=+0.014); not a force",
+      "delta_lock_R": 0.013849152645314305,
+      "verdict": "fail"
+    },
+    {
+      "deck": "SIX",
+      "alone": true,
+      "id": 16,
+      "name": "R",
+      "kind": "teleological",
+      "fate": "output",
+      "why": "output; circular as a candidate. Run alone: still not a theory.",
+      "verdict": "fail",
+      "delta_lock_R": null
+    }
+  ],
+  "counts": {
+    "GQ": 8,
+    "PUB": 9,
+    "SIX": 16
+  },
+  "how_far": [
+    "GQ 8 pairs, each alone",
+    "PUB 9 claims, gauge3 and nature4 not glued",
+    "SIX 16 slots, singleton lock-R only",
+    "isolation did not promote anyone to a unifier",
+    "Einstein/equivalence/QFT-on-curved still pass alone",
+    "vacuum\u2192gravity still fails alone",
+    "MSSM-class still open as gauge3 alone and fail as nature4 alone"
+  ],
+  "next_da_move": "Stay on the GQ leftovers. Do not re-bundle into a 16-slogan."
+}

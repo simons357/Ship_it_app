@@ -68,3 +68,6 @@ Those are nature4. They fail on every screened claim.
 Start here. Do not glue a 3-gauge meet onto this pair.
 A nature4 pass needs \(G\) and \(\Lambda\) as outputs of
 one \(F\). That \(F\) is not on the desk.
+
+Running each pair, published claim, and reconstructed slot
+**alone** is [`docs/DA-SEPARATE.md`](DA-SEPARATE.md).
