@@ -259,13 +259,13 @@ def mind(
         "improve_program": improve_program,
         "how_to_derive": how_to_derive,
         "cannot": cannot,
-        "side": "persona",
+        "side": "review",
     }
 
 
 # Requested: Einstein, Tesla, Feynman.
 # Seated because they built the destination math: Weyl, Wigner, von Neumann.
-# Not a seance. Not a vote. Tesla is an inventor, not a gauge theorist.
+# This is a program review, not a vote. Tesla is an inventor, not a gauge theorist.
 MINDS = [
     mind(
         "Einstein",
@@ -354,19 +354,19 @@ def claims() -> list[dict]:
         ),
         rec(
             "C5",
-            "personas_close",
-            "persona",
+            "review_closes",
+            "review",
             "Einstein / Tesla / Feynman looking at DA close the destination",
             "fail",
-            "A persona is not a theorem. A vote cannot close. They improve the program.",
+            "A program review is not a theorem. A vote cannot close. They improve the program.",
         ),
         rec(
             "C6",
-            "seance_writes_F",
-            "persona",
-            "They come through the device and write F",
+            "review_writes_F",
+            "review",
+            "A program review writes F",
             "fail",
-            "The device runs a checker. That is the only legal séance.",
+            "The device runs a checker. That is the review. It does not write a producing-map.",
         ),
         rec(
             "C7",
@@ -398,7 +398,7 @@ def run(out: Path | None = None) -> dict:
             "hb_is_not_a_trigger": True,
             "hb_chapter1_extraction": "DA as process (slots + checker)",
             "not_a_unifier": True,
-            "not_a_seance": True,
+            "program_review": True,
             "vote_cannot_close": True,
             "does_not_retune_nodes": True,
             "does_not_load_sfe_into_ns": True,
@@ -431,8 +431,8 @@ def run(out: Path | None = None) -> dict:
             "wrote the ground as (X, D, σ(D), Rep, action, numbers)",
             "reconstructed Y_ℓm, Fourier, Peter–Weyl, Hodge; failed couplings, G/Λ, regularity",
             "ablated operator, group, Hodge, destination, Y_ℓm, overtones",
-            "seated Einstein, Tesla, Feynman, Weyl, Wigner, von Neumann as program critics",
-            "refused séance-to-F and nodes.json retune",
+            "seated Einstein, Tesla, Feynman, Weyl, Wigner, von Neumann as a program review",
+            "refused review-writes-F and nodes.json retune",
         ],
         "next_da_move": (
             "Destination stays open on U. Use the six program improvements. "

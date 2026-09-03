@@ -1,4 +1,4 @@
-"""Ground-level destination: reconstruct, ablate, personas score the program."""
+"""Ground-level destination: reconstruct, ablate, program review."""
 
 from __future__ import annotations
 
@@ -27,7 +27,7 @@ class DaGroundTests(unittest.TestCase):
         self.assertEqual(by["C7"]["verdict"], "fail")
         self.assertEqual(by["C8"]["verdict"], "fail")
         self.assertTrue(payload["meta"]["hb_is_not_a_trigger"])
-        self.assertTrue(payload["meta"]["not_a_seance"])
+        self.assertTrue(payload["meta"]["program_review"])
         self.assertTrue(payload["meta"]["vote_cannot_close"])
         self.assertTrue(payload["meta"]["does_not_retune_nodes"])
         self.assertTrue(payload["meta"]["does_not_load_sfe_into_ns"])

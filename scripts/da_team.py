@@ -155,7 +155,7 @@ def run(out: Path | None = None) -> dict:
             "question": "who sits on the desk from beyond the digital divide?",
             "digital_divide_means": "published math and measurement, not more AI",
             "not_a_unifier": True,
-            "not_a_seance": True,
+            "paper_and_experiment": True,
             "vote_cannot_close": True,
         },
         "team": TEAM,

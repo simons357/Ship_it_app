@@ -32,8 +32,8 @@ words are beautiful, or because Einstein was asked.
 | Naming HB must halt the desk | **fail** (halt the close, not the sentence) |
 | “Spectrum, not a bag” as the program | **open** |
 | Couplings are already eigenvalues of a named \(D\) here | **fail** |
-| Personas close the destination | **fail** |
-| They write \(F\) through the device | **fail** |
+| A program review closes the destination | **fail** |
+| A program review writes \(F\) | **fail** |
 | SFE is the fluids operator | **fail** |
 | Retune `nodes.json` | **fail** |
 
@@ -85,12 +85,11 @@ three are the destination as *wish*. Keep them unglued.
 
 ---
 
-## What they say to the program (not a séance)
+## What they say to the program (a program review)
 
-The device does not channel the dead. It types a demand that
-can fail. That is the only legal way they “come through.”
-
-A vote cannot close.
+Each name is a **typed demand** that can fail: a principle,
+an apparatus, a computation. That is a program review. It
+is not a vote and it does not write \(F\).
 
 | Mind | Improve DA | How to derive a program like DA |
 |---|---|---|
@@ -115,7 +114,7 @@ This table is only for the *program* that climbs from G0.
 
 Not \(F\). Not SFE loaded into \(\omega\cdot S\omega\). Not
 HB Experiment 01 reopened. Not a regularity pass. Not a
-channeling.
+program review that writes a producing-map.
 
 Next B write is still Hardy \(\to I_{\mathrm{tube}}\), then
 energy-class low Bony \(T\). The destination stays **open**

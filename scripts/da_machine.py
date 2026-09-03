@@ -632,7 +632,7 @@ def cmd_ground() -> int:
         "U",
         "Ground-level destination: spectrum not a bag; reconstruct; ablate; ask Einstein/Tesla/Feynman",
         "open",
-        "HB ch1→DA process pass; destination open; couplings/F/seance/SFE/nodes fail; personas score the program",
+        "HB ch1→DA process pass; destination open; couplings/F/review/SFE/nodes fail; program review scores the process",
     )
     print(f"wrote {payload.get('_wrote')}")
     return 0
@@ -737,7 +737,7 @@ def main() -> int:
     sub.add_parser("team", help="seat paper+experiment; a vote cannot close")
     sub.add_parser("lineage", help="wind L_SM backwards and forwards through prior theories")
     sub.add_parser("harmonic", help="typed harmonic vocabulary from mathematics; not a unifier")
-    sub.add_parser("ground", help="spectrum destination: reconstruct, ablate, personas score the program")
+    sub.add_parser("ground", help="spectrum destination: reconstruct, ablate, program review")
     sub.add_parser("pipe", help="now-bench: live science pipes + falsify every verdict")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])

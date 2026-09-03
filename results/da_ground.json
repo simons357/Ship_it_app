@@ -4,7 +4,7 @@
     "hb_is_not_a_trigger": true,
     "hb_chapter1_extraction": "DA as process (slots + checker)",
     "not_a_unifier": true,
-    "not_a_seance": true,
+    "program_review": true,
     "vote_cannot_close": true,
     "does_not_retune_nodes": true,
     "does_not_load_sfe_into_ns": true
@@ -213,7 +213,7 @@
       "improve_program": "Every slot states the principle before the list. Covariance, an action, what is forbidden.",
       "how_to_derive": "Write the principle, then the operator, then compute the spectrum as a consequence. Do not start from eigenvalues and hope they remember the metric.",
       "cannot": "cannot output G or \u039b; cannot close a theorem by sitting here",
-      "side": "persona"
+      "side": "review"
     },
     {
       "name": "Tesla",
@@ -222,7 +222,7 @@
       "improve_program": "Every claim names the knob you turn and the script that must move. If nothing is detunable, it does not sit.",
       "how_to_derive": "Build the resonator first (name D). Listen second (compute \u03c3(D)). Standing waves are what a built operator does, not a universe brand.",
       "cannot": "cannot derive SU(3) or Einstein's equation; not a ToE chair",
-      "side": "persona"
+      "side": "review"
     },
     {
       "name": "Feynman",
@@ -231,7 +231,7 @@
       "improve_program": "No new name sits until it has a fail-able computation. Refuse councils. Refuse vibes.",
       "how_to_derive": "Pick (X, D). Compute one \u03bb, one matrix element, or one \u03c7\u00b2 you can miss. That is how you derive a DA-like program: the check is the program.",
       "cannot": "cannot vote the destination into a pass; cannot unshelve SFE",
-      "side": "persona"
+      "side": "review"
     },
     {
       "name": "Weyl",
@@ -240,7 +240,7 @@
       "improve_program": "Do not utter gauge until G and the reps are named. Peter\u2013Weyl is not SU(3)\u00d7SU(2)\u00d7U(1).",
       "how_to_derive": "Climb G3 only after G0\u2013G2. The group is an input. The harmonics of that group are the output.",
       "cannot": "cannot choose nature's G from a Laplacian on S^2",
-      "side": "persona"
+      "side": "review"
     },
     {
       "name": "Wigner",
@@ -249,7 +249,7 @@
       "improve_program": "Type every mode by the representation it sits in. If you cannot, you are not at the ground of matter.",
       "how_to_derive": "The program asks: which group, which rep, which operator that commutes with the group. Then the spectrum is classified, not wished.",
       "cannot": "cannot turn a classification into the numerical couplings",
-      "side": "persona"
+      "side": "review"
     },
     {
       "name": "von Neumann",
@@ -258,7 +258,7 @@
       "improve_program": "G0 and G1 are mandatory. No slot opens with 'modes' alone.",
       "how_to_derive": "A DA-like program is: specify H, specify a self-adjoint D, diagonalize, store the residual. That is the whole machine at ground level.",
       "cannot": "cannot pick D from poetry; cannot make {\u03bb_n} write F",
-      "side": "persona"
+      "side": "review"
     }
   ],
   "claims": [
@@ -296,19 +296,19 @@
     },
     {
       "id": "C5",
-      "name": "personas_close",
-      "kind": "persona",
+      "name": "review_closes",
+      "kind": "review",
       "statement": "Einstein / Tesla / Feynman looking at DA close the destination",
       "verdict": "fail",
-      "why": "A persona is not a theorem. A vote cannot close. They improve the program."
+      "why": "A program review is not a theorem. A vote cannot close. They improve the program."
     },
     {
       "id": "C6",
-      "name": "seance_writes_F",
-      "kind": "persona",
-      "statement": "They come through the device and write F",
+      "name": "review_writes_F",
+      "kind": "review",
+      "statement": "A program review writes F",
       "verdict": "fail",
-      "why": "The device runs a checker. That is the only legal s\u00e9ance."
+      "why": "The device runs a checker. That is the review. It does not write a producing-map."
     },
     {
       "id": "C7",
@@ -350,8 +350,8 @@
     "wrote the ground as (X, D, \u03c3(D), Rep, action, numbers)",
     "reconstructed Y_\u2113m, Fourier, Peter\u2013Weyl, Hodge; failed couplings, G/\u039b, regularity",
     "ablated operator, group, Hodge, destination, Y_\u2113m, overtones",
-    "seated Einstein, Tesla, Feynman, Weyl, Wigner, von Neumann as program critics",
-    "refused s\u00e9ance-to-F and nodes.json retune"
+    "seated Einstein, Tesla, Feynman, Weyl, Wigner, von Neumann as a program review",
+    "refused review-writes-F and nodes.json retune"
   ],
   "next_da_move": "Destination stays open on U. Use the six program improvements. Do not load SFE into NS. Next B write is still Hardy \u2192 I_tube, then low Bony T."
 }
