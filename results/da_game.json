@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "games": [
+      "R (score)",
+      "U (unifier claim)"
+    ],
+    "not_a_unifier": true,
+    "n": 80,
+    "n_perm": 240,
+    "seed": 1
+  },
+  "game_R": {
+    "v": "lock_R(S) \u2212 baseline",
+    "baseline": 0.07313103213897795,
+    "v_grand_coalition": 0.8975255311352613,
+    "shapley": {
+      "log_cc_ratio": 0.23350842322531493,
+      "log_hierarchy": 0.19544804373597777,
+      "S_coh": 0.18117453625566682,
+      "delta_spread": 0.0922505628953806,
+      "grad_coh": 0.07706352889269197,
+      "kappa_att": 0.04171583163798631,
+      "log_qcd_ratio": 0.027277829420754785,
+      "phi_scale": 0.013541232157742443,
+      "A_mean": 0.011821329925300607,
+      "f_mean": 0.009333290447479789,
+      "log_alpha_em": 0.005567743174893848,
+      "log_weak_ratio": 0.004950261106229859,
+      "log_alpha_s": 0.0037010865228570603,
+      "sin2_theta_w": 0.0001718317369846564
+    },
+    "shapley_sum": 0.8975255311352615,
+    "efficiency_err": 1.1102230246251565e-16,
+    "top4": [
+      "log_cc_ratio",
+      "log_hierarchy",
+      "S_coh",
+      "delta_spread"
+    ],
+    "flush_top4": [
+      "log_cc_ratio",
+      "log_hierarchy",
+      "S_coh",
+      "delta_spread"
+    ],
+    "same_four_as_flush": true,
+    "narrows_past_flush": false
+  },
+  "game_U": {
+    "u": "1 iff every must-hit is in S, else 0",
+    "must_hit": [
+      "log_alpha_em",
+      "log_alpha_s",
+      "sin2_theta_w",
+      "log_weak_ratio",
+      "log_hierarchy",
+      "log_cc_ratio",
+      "log_qcd_ratio"
+    ],
+    "shapley": {
+      "log_alpha_em": 0.14285714285714285,
+      "log_alpha_s": 0.14285714285714285,
+      "sin2_theta_w": 0.14285714285714285,
+      "log_weak_ratio": 0.14285714285714285,
+      "log_hierarchy": 0.14285714285714285,
+      "log_cc_ratio": 0.14285714285714285,
+      "log_qcd_ratio": 0.14285714285714285,
+      "theta_qcd": 0.0,
+      "A_mean": 0.0,
+      "f_mean": 0.0,
+      "phi_scale": 0.0,
+      "delta_spread": 0.0,
+      "S_coh": 0.0,
+      "kappa_att": 0.0,
+      "grad_coh": 0.0
+    },
+    "note": "This ranking is by definition, not by data. It protects nature leftovers."
+  },
+  "what_it_cannot_do": [
+    "write F",
+    "collapse the waveform",
+    "decide the vacuum topological fork",
+    "replace Cosmo names"
+  ],
+  "how_far": [
+    "Game R Shapley recovers the same four as the Hilbert flush",
+    "Game U puts equal weight on must-hits and zero on the rest (definition, not data)",
+    "two games, two answers; do not glue them",
+    "game theory did not write F and did not collapse the wave"
+  ],
+  "next_da_move": "Keep Game R and Game U separate. Do not treat Shapley as emergence."
+}

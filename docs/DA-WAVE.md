@@ -63,3 +63,7 @@ they can have almost no Born mass and still not be droppable.
 It does not glue Track A to Track B. It does not unshelve
 Quantum Lens or SFE. It does not turn \(R\) into \(F\). It
 does not let an unfalsifiable sentence count as a pass.
+
+Game theory as a narrowing tool is
+[`docs/DA-GAME.md`](DA-GAME.md). It re-ranks. It does not
+collapse the wave.

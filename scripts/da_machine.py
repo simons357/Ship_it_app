@@ -50,6 +50,7 @@ SLOTS = {
             "tests.test_da_how",
             "tests.test_da_flush",
             "tests.test_da_wave",
+            "tests.test_da_game",
             "-v",
         ],
     },
@@ -397,6 +398,26 @@ def cmd_wave() -> int:
     return 0
 
 
+def cmd_game() -> int:
+    from da_game import run as game_run
+
+    payload = game_run()
+    print("DA game theory. Two games. Neither is F.")
+    print("Game R top4:", payload["game_R"]["top4"], "same as flush:", payload["game_R"]["same_four_as_flush"])
+    print("narrows past flush:", payload["game_R"]["narrows_past_flush"])
+    print("how far:")
+    for line in payload["how_far"]:
+        print(" -", line)
+    append_run(
+        "U",
+        "Shapley on lock-R vs must-hit unifier game",
+        "open",
+        "Game R agrees with the flush four; Game U protects must-hits by definition; no F",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_check(domain: str) -> int:
     domains = list(SLOTS) if domain == "all" else [domain]
     rc = 0
@@ -422,6 +443,7 @@ def main() -> int:
     sub.add_parser("how", help="how a typed catalog can say possible and emit X")
     sub.add_parser("flush", help="Hilbert flush of which candidates carry the score")
     sub.add_parser("wave", help="waveform rules: superposition, entanglement, collapse, falsification")
+    sub.add_parser("game", help="Shapley on the score vs the unifier-claim game")
     c = sub.add_parser("check")
     c.add_argument("--domain", default="all", choices=["all", "A", "B", "Q", "U"])
     cl = sub.add_parser("classify")
@@ -449,6 +471,8 @@ def main() -> int:
         return cmd_flush()
     if args.cmd == "wave":
         return cmd_wave()
+    if args.cmd == "game":
+        return cmd_game()
     if args.cmd == "check":
         return cmd_check(args.domain)
     if args.cmd == "classify":
