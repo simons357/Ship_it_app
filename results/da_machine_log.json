@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "experiment": "DA-process-machine",
+    "operator_needs_chops": false,
+    "ai_is_generator": true,
+    "not_a_unifier": true
+  },
+  "runs": [
+    {
+      "t": "2026-09-03T00:04:23.583400+00:00",
+      "domain": "A",
+      "claim": "automatic check A",
+      "verdict": "pass",
+      "note": "checker exit 0"
+    },
+    {
+      "t": "2026-09-03T00:04:23.583643+00:00",
+      "domain": "B",
+      "claim": "automatic check B",
+      "verdict": "open",
+      "note": "No regularity checker. Only fail forbidden closes or mark open."
+    },
+    {
+      "t": "2026-09-03T00:04:23.972882+00:00",
+      "domain": "Q",
+      "claim": "automatic check Q",
+      "verdict": "pass",
+      "note": "checker exit 0"
+    },
+    {
+      "t": "2026-09-03T00:04:24.371454+00:00",
+      "domain": "U",
+      "claim": "automatic check U",
+      "verdict": "pass",
+      "note": "checker exit 0"
+    }
+  ],
+  "counts": {
+    "scored": 4,
+    "pass": 3,
+    "fail": 0,
+    "open": 1
+  }
+}
