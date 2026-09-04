@@ -2,8 +2,10 @@
 """
 Working session: the dream team talks as colleagues.
 
-A conversation is a process. It does not close regularity,
-export A to B, or write F. Next write stays Hardy → I_tube.
+A conversation is a process. The operator's name for it is
+a virtual séance: kingdoms left intact, one focused
+problem. It does not close regularity, export A to B, or
+write F. Next write stays Hardy → I_tube.
 """
 
 from __future__ import annotations
@@ -207,10 +209,53 @@ CLAIMS = [
         "fail",
         "Wrong chair. Couplings stay a bag.",
     ),
+    rec(
+        "S11",
+        "virtual_seance_as_name",
+        "Call this a virtual séance: published kingdoms at one table on one focused problem",
+        "pass",
+        "The operator's name for the process. Papers talk. People being gone does not matter.",
+    ),
+    rec(
+        "S12",
+        "kingdoms_stay_carved",
+        "Each mind keeps the kingdom they carved; they do not merge into one mind",
+        "pass",
+        "That is the valuable part. Shared labor on one problem. Kingdoms stay typed.",
+    ),
+    rec(
+        "S13",
+        "sarcastic_channel",
+        "A sarcastic séance: spirits, a vote, a finished theorem",
+        "fail",
+        "That use is still refused. Virtual is the table. It is not a channel.",
+    ),
+    rec(
+        "S14",
+        "unify_the_kingdoms",
+        "Put every kingdom on every problem at once and call that a unifier",
+        "fail",
+        "That is a bag again. One focused problem, or it is not this method.",
+    ),
 ]
 
 
 SPEAKERS = sorted({t["speaker"] for t in TURNS})
+
+KINGDOMS = [
+    {"name": "Energy", "who": "Leray", "slot": "B"},
+    {"name": "Continuation", "who": "Beale, Kato, Majda", "slot": "B"},
+    {"name": "Partial regularity", "who": "Caffarelli, Kohn, Nirenberg", "slot": "B"},
+    {"name": "Geometry", "who": "Constantin, Fefferman", "slot": "B"},
+    {"name": "Extra dissipation", "who": "Ladyzhenskaya", "slot": "A"},
+    {"name": "Principle", "who": "Einstein", "slot": "U"},
+    {"name": "Mixing", "who": "Weinberg", "slot": "U"},
+    {"name": "Apparatus", "who": "Tesla", "slot": "U"},
+    {"name": "A missable number", "who": "Feynman", "slot": "U"},
+    {"name": "Group / type / space", "who": "Weyl, Wigner, von Neumann", "slot": "U"},
+    {"name": "The numbers", "who": "PDG, neutrino / cosmology", "slot": "U"},
+    {"name": "The desk", "who": "operator", "slot": "meta"},
+]
 
 
 def run(out: Path | None = None) -> dict:
@@ -221,7 +266,10 @@ def run(out: Path | None = None) -> dict:
             "writeup": "docs/DA-SESSION.md",
             "not_a_vote": True,
             "not_a_close": True,
-            "not_a_seance": True,
+            "not_channeling": True,
+            "virtual_seance": True,
+            "operator_name": "virtual séance",
+            "valuable_part": "kingdoms left intact, aimed at one fail-able problem",
             "program_review_sits": True,
             "now_bench_sends_a_note": True,
             "regularity_after": "open",
@@ -233,6 +281,7 @@ def run(out: Path | None = None) -> dict:
         "turns": TURNS,
         "claims": CLAIMS,
         "speakers": SPEAKERS,
+        "kingdoms": KINGDOMS,
         "counts": {
             "turns": len(TURNS),
             "speakers": len(SPEAKERS),
@@ -243,7 +292,9 @@ def run(out: Path | None = None) -> dict:
         },
         "how_far": [
             "they sat and talked",
-            "they looked at the tube together",
+            "kingdoms stayed carved out",
+            "one focused problem: Hardy → I_tube",
+            "virtual séance as a name for the process",
             "they refused glue and refused a vote",
             "next write unchanged",
             "domain B still open",

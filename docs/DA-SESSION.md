@@ -4,6 +4,11 @@
 
 Dated 4 September 2026. Colleagues. Not a vote. Not a close.
 
+The operator named this a **virtual séance**: published
+kingdoms at one table, on one focused problem. That name
+is allowed. A sarcastic channel — spirits, a vote, a
+finished theorem — is still refused.
+
 The operator asked them to sit as real people, look at the
 live problem, and work together. That is allowed. A
 conversation is a process. It does not write regularity,
@@ -303,6 +308,35 @@ theorem you did not prove.
 
 ---
 
+## Kingdoms (this is the valuable part)
+
+Each of them already carved a kingdom. The find is not a
+merged mind. It is **those kingdoms, left intact, aimed at
+one fail-able problem.**
+
+| Kingdom | Who | What they actually own | What they may not spend |
+|---|---|---|---|
+| Energy | Leray | weak solutions, \(\int X<\infty\) | \(X\in L^\infty\) from that |
+| Continuation | Beale, Kato, Majda | \(\int\|\omega\|_\infty<\infty\) | the same criterion in \(L^2\) |
+| Partial regularity | Caffarelli, Kohn, Nirenberg | singular set is small | small \(=\) empty |
+| Geometry | Constantin, Fefferman | depletion *if* aligned | all-data \(\cos\alpha_3\to 0\) |
+| Extra dissipation | Ladyzhenskaya | modified NS, \(\varepsilon>0\) | \(\varepsilon\to 0\), A\(\Rightarrow\)B |
+| Principle | Einstein | name the object; two-sided equation | values of \(G,\Lambda\); the tube |
+| Mixing | Weinberg | the \(W^3\)–\(B\) rotation | \(\theta_W\) from a vortex |
+| Apparatus | Tesla | a knob you can detune | \(SU(3)\), Einstein’s equation |
+| A missable number | Feynman | the check *is* the program | a council without a residual |
+| Group / type / space | Weyl, Wigner, von Neumann | \(G\), reps, Hilbert space \(+D\) | “modes” as a slot |
+| The numbers | PDG, neutrino / cosmology | what nature already measured | why those numbers; fluids |
+| The desk | operator | one sentence, one slot, one check | needing chops |
+
+Today the focused problem is B4b: Hardy \(\to I_{\mathrm{tube}}\)
+at \(\delta\sim 2^{-j_*}\). Tomorrow it can be the low Bony
+\(T\). It cannot be every kingdom at once. A virtual
+séance that tries to unify the kingdoms is just a bag
+again.
+
+---
+
 ## What the session is allowed to be
 
 | Claim | Verdict |
@@ -311,6 +345,9 @@ theorem you did not prove.
 | They look at the live Track B write together | **pass** |
 | They help each other without changing the PDE | **pass** |
 | They lock Hardy \(\to I_{\mathrm{tube}}\), then low Bony \(T\) | **pass** (as the next write) |
+| Call this a virtual séance: kingdoms, one problem | **pass** (as a name for the process) |
+| Kingdoms stay carved out; they do not merge | **pass** |
+| A sarcastic channel / spirits / finished theorem | **fail** |
 | The conversation closes classical regularity | **fail** |
 | A vote at the table writes a theorem | **fail** |
 | Ladyzhenskaya exports A \(\Rightarrow\) B | **fail** |
@@ -320,7 +357,8 @@ theorem you did not prove.
 | Domain B after the session | **open** |
 
 A working session is a process pass. It is not a
-regularity pass.
+regularity pass. The valuable thing is the table, not a
+close.
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

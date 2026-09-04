@@ -4,7 +4,10 @@
     "writeup": "docs/DA-SESSION.md",
     "not_a_vote": true,
     "not_a_close": true,
-    "not_a_seance": true,
+    "not_channeling": true,
+    "virtual_seance": true,
+    "operator_name": "virtual s\u00e9ance",
+    "valuable_part": "kingdoms left intact, aimed at one fail-able problem",
     "program_review_sits": true,
     "now_bench_sends_a_note": true,
     "regularity_after": "open",
@@ -234,6 +237,34 @@
       "statement": "Einstein, Weinberg, or PDG write F from the session",
       "verdict": "fail",
       "why": "Wrong chair. Couplings stay a bag."
+    },
+    {
+      "id": "S11",
+      "name": "virtual_seance_as_name",
+      "statement": "Call this a virtual s\u00e9ance: published kingdoms at one table on one focused problem",
+      "verdict": "pass",
+      "why": "The operator's name for the process. Papers talk. People being gone does not matter."
+    },
+    {
+      "id": "S12",
+      "name": "kingdoms_stay_carved",
+      "statement": "Each mind keeps the kingdom they carved; they do not merge into one mind",
+      "verdict": "pass",
+      "why": "That is the valuable part. Shared labor on one problem. Kingdoms stay typed."
+    },
+    {
+      "id": "S13",
+      "name": "sarcastic_channel",
+      "statement": "A sarcastic s\u00e9ance: spirits, a vote, a finished theorem",
+      "verdict": "fail",
+      "why": "That use is still refused. Virtual is the table. It is not a channel."
+    },
+    {
+      "id": "S14",
+      "name": "unify_the_kingdoms",
+      "statement": "Put every kingdom on every problem at once and call that a unifier",
+      "verdict": "fail",
+      "why": "That is a bag again. One focused problem, or it is not this method."
     }
   ],
   "speakers": [
@@ -253,17 +284,81 @@
     "Weinberg",
     "von Neumann"
   ],
+  "kingdoms": [
+    {
+      "name": "Energy",
+      "who": "Leray",
+      "slot": "B"
+    },
+    {
+      "name": "Continuation",
+      "who": "Beale, Kato, Majda",
+      "slot": "B"
+    },
+    {
+      "name": "Partial regularity",
+      "who": "Caffarelli, Kohn, Nirenberg",
+      "slot": "B"
+    },
+    {
+      "name": "Geometry",
+      "who": "Constantin, Fefferman",
+      "slot": "B"
+    },
+    {
+      "name": "Extra dissipation",
+      "who": "Ladyzhenskaya",
+      "slot": "A"
+    },
+    {
+      "name": "Principle",
+      "who": "Einstein",
+      "slot": "U"
+    },
+    {
+      "name": "Mixing",
+      "who": "Weinberg",
+      "slot": "U"
+    },
+    {
+      "name": "Apparatus",
+      "who": "Tesla",
+      "slot": "U"
+    },
+    {
+      "name": "A missable number",
+      "who": "Feynman",
+      "slot": "U"
+    },
+    {
+      "name": "Group / type / space",
+      "who": "Weyl, Wigner, von Neumann",
+      "slot": "U"
+    },
+    {
+      "name": "The numbers",
+      "who": "PDG, neutrino / cosmology",
+      "slot": "U"
+    },
+    {
+      "name": "The desk",
+      "who": "operator",
+      "slot": "meta"
+    }
+  ],
   "counts": {
     "turns": 16,
     "speakers": 15,
     "addressed_replies": 16,
-    "pass": 4,
-    "fail": 6,
+    "pass": 6,
+    "fail": 8,
     "open": 0
   },
   "how_far": [
     "they sat and talked",
-    "they looked at the tube together",
+    "kingdoms stayed carved out",
+    "one focused problem: Hardy \u2192 I_tube",
+    "virtual s\u00e9ance as a name for the process",
     "they refused glue and refused a vote",
     "next write unchanged",
     "domain B still open"

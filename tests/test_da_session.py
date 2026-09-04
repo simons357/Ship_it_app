@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from da_session import CLAIMS, SPEAKERS, TURNS, run  # noqa: E402
+from da_session import CLAIMS, KINGDOMS, SPEAKERS, TURNS, run  # noqa: E402
 
 
 class DaSessionTests(unittest.TestCase):
@@ -28,11 +28,22 @@ class DaSessionTests(unittest.TestCase):
         self.assertEqual(by["S8"]["verdict"], "fail")
         self.assertEqual(by["S9"]["verdict"], "fail")
         self.assertEqual(by["S10"]["verdict"], "fail")
+        self.assertEqual(by["S11"]["verdict"], "pass")
+        self.assertEqual(by["S12"]["verdict"], "pass")
+        self.assertEqual(by["S13"]["verdict"], "fail")
+        self.assertEqual(by["S14"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["regularity_after"], "open")
         self.assertTrue(payload["meta"]["not_a_vote"])
         self.assertTrue(payload["meta"]["not_a_close"])
+        self.assertTrue(payload["meta"]["virtual_seance"])
+        self.assertTrue(payload["meta"]["not_channeling"])
+        self.assertIn("kingdoms", payload["meta"]["valuable_part"])
         self.assertIn("I_tube", payload["meta"]["next_write"])
         self.assertTrue((ROOT / "docs" / "DA-SESSION.md").is_file())
+        who = {k["who"] for k in KINGDOMS}
+        self.assertTrue(any("Leray" in w for w in who))
+        self.assertTrue(any("Ladyzhenskaya" in w for w in who))
+        self.assertGreaterEqual(len(KINGDOMS), 10)
 
     def test_they_talk_to_each_other(self):
         names = set(SPEAKERS)
