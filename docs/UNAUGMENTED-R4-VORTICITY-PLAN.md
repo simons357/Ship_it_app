@@ -254,7 +254,7 @@ No BKM-from-\(L^2\) implication is required. No Biot–Savart slogan that \(\cos
 Scored in [`docs/TRACK-B-LEMMAS.md`](TRACK-B-LEMMAS.md). `python3 scripts/da_machine.py trackb`.
 
 1. **Localized tube Hardy for \(\Gamma\)**, radius \(\delta\), no \(\Phi\). Hardy + wall term **pass**. All-data \(I_{\mathrm{tube}}\) domination **fail**. Packet class at \(\delta\sim 2^{-j_*}\) **pass**. Write: [`TRACK-B-HARDY-TUBE.md`](TRACK-B-HARDY-TUBE.md).
-2. **Almost-band-limited Ring Lemma** (three shells). Bernstein **pass**. All-data depletion **fail**. Strain identity on \(E_c\) **pass**. CONC \(\Rightarrow\) depleted \(\cos\alpha_3\) **fail**. CF as a conditional **pass**. Stretching budget: CF weights it **pass**; majority from aligned cap **pass**; short run does not empty it **fail** of depletion. Enstrophy balance: identity **pass**; visc owns this ensemble **pass**; \(P_+\) as a net cubic **fail**. Writes: [`TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md), [`TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md), [`TRACK-B-BALANCE.md`](TRACK-B-BALANCE.md).
+2. **Almost-band-limited Ring Lemma** (three shells). Bernstein **pass**. All-data depletion **fail**. Strain identity on \(E_c\) **pass**. CONC \(\Rightarrow\) depleted \(\cos\alpha_3\) **fail**. CF as a conditional **pass**. Stretching budget: CF weights it **pass**; majority from aligned cap **pass**; short run does not empty it **fail** of depletion. Enstrophy balance: identity **pass**; visc owns this ensemble **pass**; \(P_+\) as a net cubic **fail**. Coherent CONC: signed-strain blob nets **pass**; working-box cubic live **fail**; \(z\)-independent tube also nets **fail**. Writes: [`TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md), [`TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md), [`TRACK-B-BALANCE.md`](TRACK-B-BALANCE.md), [`TRACK-B-COHERENT.md`](TRACK-B-COHERENT.md).
 3. **One-threshold regime split** 3-CONC \(\sigma\ge 1/2\) vs SPREAD \(\sigma\le 1/2\). Cover **pass**.
 4. **Energy-class T2 flux.** Lemma 1 **pass**. Lemma 2 dropped (**fail** as input). Low Bony \(T\): split **pass**, energy-class **pass**, uniform \(\rho^{1/2}\) **fail**. Write: [`TRACK-B-BONY-T.md`](TRACK-B-BONY-T.md).
 5. **Swirl dissipation identity** in the tube. \((\Delta u)_\theta\) **pass**. Angular \(1/r^2\) vs \(I_{\mathrm{tube}}\) **fail** (\(R_{\mathrm{ang}}\) climbs with \(j_*\)). Full \(D_{\mathrm{tube}}\) still budgets the packet (B4c). Do not cancel to \(\Phi\). Write: [`TRACK-B-ANGULAR.md`](TRACK-B-ANGULAR.md).
@@ -281,11 +281,11 @@ Item 5 was the reason to keep \(1/r^4\). The extra angular piece, alone, does **
 | Localized tube Hardy | **pass** as Hardy + wall; all-data domination **fail**; packet class **pass** (`docs/TRACK-B-HARDY-TUBE.md`) |
 | Angular \(1/r^2\) vs \(I_{\mathrm{tube}}\) | **fail** of domination on packets; \(R_{\mathrm{ang}}\) climbs; B4c still budgets (`docs/TRACK-B-ANGULAR.md`) |
 | Ring Lemma, exact one shell | Upgraded to 3-shell Bernstein check; depletion **fail** as a slogan |
-| Concentration \(\Rightarrow\) geometric control | Identity **pass**; CONC not depleted; CF conditional **pass**; stretching budget aligned, net cubic cancels (`docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`, `docs/TRACK-B-BALANCE.md`) |
+| Concentration \(\Rightarrow\) geometric control | Identity **pass**; CONC not depleted; CF conditional **pass**; stretching budget aligned, net cubic cancels; coherent blob nets, working-box cubic not live (`docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`, `docs/TRACK-B-BALANCE.md`, `docs/TRACK-B-COHERENT.md`) |
 | Spread \(\Rightarrow\) extra dissipation | T2 Lemma 1 **pass**; Lemma 2 dropped; energy-class \(T\) **pass**; uniform \(\rho^{1/2}\) **fail** |
 | Unaugmented global \(H^1\) bound | Open |
 
-The live question is no longer “does \(\Phi\) cancel the axis?” and no longer “does the extra \(1/r^2\) piece, alone, beat \(I_{\mathrm{tube}}\)?” B4c still budgets packets. Next: a coherent CONC field with net stretching (B16d).
+The live question is no longer “does \(\Phi\) cancel the axis?” and no longer “does the extra \(1/r^2\) piece, alone, beat \(I_{\mathrm{tube}}\)?” B4c still budgets packets. Coherent CONC is scored: a signed-strain blob nets; the working-box cubic is not live; a \(z\)-independent tube still cancels. Next: occupation \(\to X\) (B8c).
 
 ---
 

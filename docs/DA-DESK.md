@@ -147,12 +147,16 @@ Domain B **never** passes regularity. `check B` stays
 | B16b / B16c / B16d | \(P_+\) is a net cubic; \(L^2\) is BKM; random-phase \(\Rightarrow\) all CONC | **fail** |
 | B16e | balance closes \(X\) | **open** |
 | B16f | this retunes the PDE | **fail** |
+| B17 / B17a | signed-strain blob readable; net \(\approx P_+\) | **pass** |
+| B17b / B17c / B17d | cubic owns \(\dot X\); tube also nets; \(L^2\) blob is BKM | **fail** |
+| B17e | blob closes \(X\) | **open** |
+| B17f | this retunes the PDE | **fail** |
 | \(\Phi\) as estimate variable | keep \(\Gamma\) | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** Coherent CONC (B16d). B4c stands.
-Angular \(1/r^2\) does not. We are not tuning the
-equation.
+**Next B write:** Occupation \(\to X\) (B8c). Coherent CONC
+is scored. B4c stands. Angular \(1/r^2\) does not. We are
+not tuning the equation.
 
 ---
 
@@ -437,7 +441,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/TRACK-B-EVOLVE.md`,
 `docs/TRACK-B-GEOMETRY.md`,
 `docs/TRACK-B-STRETCH.md`,
-`docs/TRACK-B-BALANCE.md`.
+`docs/TRACK-B-BALANCE.md`,
+`docs/TRACK-B-COHERENT.md`.
 
 ---
 
@@ -459,7 +464,9 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
   does **not** empty it. Fluids: net cubic **cancels**;
   viscosity owns this ensemble; \(L^2\) is not BKM. Angular
   \(1/r^2\) vs \(I_{\mathrm{tube}}\): **fail** of domination;
-  \(R_{\mathrm{ang}}\) climbs. Next: coherent CONC (B16d).
+  \(R_{\mathrm{ang}}\) climbs. Coherent CONC: signed-strain
+  blob nets; working-box cubic is not live; \(z\)-independent
+  tube still cancels. Next: occupation \(\to X\) (B8c).
   The PDE is not being tuned.
 - Cosmo does not enter NS.
 - HB stays shelved as a theorem. DA-as-process stays live.

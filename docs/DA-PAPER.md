@@ -244,10 +244,14 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B16b / B16c / B16d \(P_+\) is a net cubic; \(L^2\) is BKM; random-phase \(\Rightarrow\) all CONC | **fail** |
 | B16e balance closes \(X\) | **open** |
 | B16f this retunes the PDE | **fail** |
+| B17 / B17a signed-strain blob readable; net \(\approx P_+\) | pass |
+| B17b / B17c / B17d cubic owns \(\dot X\); tube also nets; \(L^2\) blob is BKM | **fail** |
+| B17e blob closes \(X\) | **open** |
+| B17f this retunes the PDE | **fail** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Next write: coherent CONC (B16d). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned.
+Next write: occupation \(\to X\) (B8c). Coherent CONC is scored. B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned.
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 
@@ -291,11 +295,11 @@ The operator atlas is `docs/DA-DESK.md`. The machine note is `docs/DOMAIN-ARCHIT
 
 ## 9. Conclusion
 
-DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is a coherent CONC packet. B4c stands. Angular \(1/r^2\) does not.
+DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is occupation \(\to X\). Coherent CONC is scored. B4c stands. Angular \(1/r^2\) does not.
 
 The think tank is three benches and a corpus rule. The processes are classify, check, falsify, reconstruct, ablate, pipe, compute, and alert. The purpose is to keep the operator honest while ordinary AI proposes.
 
-That is the paper. The next page of mathematics is a coherent CONC packet. B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
+That is the paper. The next page of mathematics is occupation \(\to X\) (B8c). B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
 
 ---
 
@@ -305,7 +309,7 @@ That is the paper. The next page of mathematics is a coherent CONC packet. B4c s
 - Machine: `docs/DOMAIN-ARCHITECT-MACHINE.md`
 - Shelf: `docs/SHELF.md`
 - Track A: `docs/AUGMENTED-NS-PROOF-CHAIN.md`
-- Track B: `docs/TRACK-B-LEMMAS.md`, `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`, `docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`, `docs/TRACK-B-BALANCE.md`, `docs/TRACK-B-ANGULAR.md`
+- Track B: `docs/TRACK-B-LEMMAS.md`, `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`, `docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`, `docs/TRACK-B-BALANCE.md`, `docs/TRACK-B-ANGULAR.md`, `docs/TRACK-B-COHERENT.md`
 - Track Q: `docs/SPECTRAL-FLOOR-EXPLORATION.md`
 - Think tank: `docs/DA-THINK-TANK.md` (combined roll), `docs/DA-DREAM-TEAM.md`, `docs/DA-GROUND.md`, `docs/DA-PIPE.md`, `docs/DA-SESSION.md` (they talk)
 - Compute and alerts: `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`

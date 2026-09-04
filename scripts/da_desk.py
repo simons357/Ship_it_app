@@ -228,7 +228,8 @@ def run(out: Path | None = None) -> dict:
         },
         "next_da_move": (
             "Use the write-up. Angular 1/r² lost on packets; B4c still budgets I_tube. "
-            "Next B write is coherent CONC (B16d). Do not cancel to Φ. "
+            "Coherent CONC is scored: signed-strain blob nets; working-box cubic is not live. "
+            "Next B write is occupation → X (B8c). Do not cancel to Φ. "
             "Corpus pairings emit scored sentences, not F."
         ),
     }

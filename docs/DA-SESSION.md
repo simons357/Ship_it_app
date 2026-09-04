@@ -363,9 +363,11 @@ geometry, the stretching budget, and the enstrophy
 balance. Fluids looked: the aligned cap pays a leftover;
 the net cubic cancels; viscosity owns this ensemble;
 \(L^2\) is not BKM. Angular \(1/r^2\) does not dominate
-\(I_{\mathrm{tube}}\) on packets. Next: coherent CONC
-(B16d). B4c stands. Do not cancel to \(\Phi\).
-See [`TRACK-B-ANGULAR.md`](TRACK-B-ANGULAR.md).
+\(I_{\mathrm{tube}}\) on packets. Coherent CONC: a
+signed-strain blob nets; the working-box cubic is not
+live; a \(z\)-independent tube still cancels. Next:
+occupation \(\to X\) (B8c). B4c stands. Do not cancel
+to \(\Phi\). See [`TRACK-B-COHERENT.md`](TRACK-B-COHERENT.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

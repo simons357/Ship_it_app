@@ -743,6 +743,48 @@ def lemma_balance_not_a_retune() -> dict:
     return bal_rt()
 
 
+def lemma_coherent_field() -> dict:
+    from track_b_coherent import lemma_coherent_field as coh
+
+    return coh()
+
+
+def lemma_net_is_plus() -> dict:
+    from track_b_coherent import lemma_net_is_plus as netp
+
+    return netp()
+
+
+def lemma_cubic_not_live() -> dict:
+    from track_b_coherent import lemma_cubic_not_live as not_live
+
+    return not_live()
+
+
+def lemma_tube_still_cancels() -> dict:
+    from track_b_coherent import lemma_tube_still_cancels as tube_c
+
+    return tube_c()
+
+
+def lemma_blob_not_bkm() -> dict:
+    from track_b_coherent import lemma_blob_not_bkm as not_bkm
+
+    return not_bkm()
+
+
+def lemma_coherent_not_close() -> dict:
+    from track_b_coherent import lemma_coherent_not_close as coh_ap
+
+    return coh_ap()
+
+
+def lemma_coherent_not_a_retune() -> dict:
+    from track_b_coherent import lemma_coherent_not_a_retune as coh_rt
+
+    return coh_rt()
+
+
 def lemma_regularity() -> dict:
     return rec(
         "B_regularity",
@@ -838,6 +880,13 @@ def run(out: Path | None = None) -> dict:
         lemma_not_all_conc(),
         lemma_balance_not_close(),
         lemma_balance_not_a_retune(),
+        lemma_coherent_field(),
+        lemma_net_is_plus(),
+        lemma_cubic_not_live(),
+        lemma_tube_still_cancels(),
+        lemma_blob_not_bkm(),
+        lemma_coherent_not_close(),
+        lemma_coherent_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -884,11 +933,14 @@ def run(out: Path | None = None) -> dict:
             "B15c short run does not deplete |cos α_3| (fail); aligned share stays (fail); budget not an a priori (open)",
             "B16 enstrophy identity (pass); visc owns the net on this ensemble (pass); P_+ is not a net cubic (fail)",
             "B16c L² is not BKM (fail); random-phase is not all CONC (fail); balance not an a priori (open)",
+            "B17 signed-strain blob readable (pass); net ≈ P+ (pass); working-box cubic not live (fail)",
+            "B17c z-independent tube still cancels (fail); L² blob is not BKM (fail); not an a priori (open)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Coherent CONC (B16d): a packet with net P ≈ (ω·Sω)_+. "
-            "B4c stands. Angular 1/r² does not. Do not cancel to Φ. Tesla: the ratio climbed."
+            "Occupation → X (B8c). Coherent CONC is scored: net ≈ P+ on a "
+            "signed-strain blob; the working-box cubic is not live; a z-independent "
+            "tube still cancels. B4c stands. Do not cancel to Φ."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

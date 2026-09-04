@@ -103,6 +103,13 @@ not done).
 | B16d | random-phase \(\Rightarrow\) all CONC | **fail** | Ensemble, not a class. |
 | B16e | balance closes \(X\) | **open** | A decaying packet is not continuation. |
 | B16f | reading the balance retunes the PDE | **fail** | Knob on the estimate. |
+| B17 | blob + signed strain is readable CONC | **pass** | Two-scale. Not a Stokes eigenfunction. |
+| B17a | net \(P\approx(\omega\cdot S\omega)_+\) | **pass** | Cancel \(\approx 0.83\) on a still-CONC blob. |
+| B17b | cubic owns \(\dot X\) at the working box | **fail** | \(P/D\approx 0.008\). Visc still owns the net. |
+| B17c | \(z\)-independent tube also nets | **fail** | \(\int\cos z\,dz=0\). Swirl \(\neq\) cubic. |
+| B17d | \(L^2\) blob is BKM | **fail** | \(\|\omega\|_\infty/\|\omega\|_2\sim 2.4\). Still not \(\int\|\omega\|_\infty\). |
+| B17e | signed-strain blob closes \(X\) | **open** | One-sided leftover \(\neq\) continuation. |
+| B17f | reading the blob retunes the PDE | **fail** | Knob on the check. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -251,12 +258,21 @@ is BKM **fail**. Random-phase \(\Rightarrow\) all CONC
 **fail**. Balance closes \(X\) **open**. Not a PDE retune
 **fail**.
 
+**B17 / B17a / B17b / B17c / B17d / B17e / B17f.** Coherent
+CONC lives in [`TRACK-B-COHERENT.md`](TRACK-B-COHERENT.md).
+Signed-strain blob readable **pass**. Net \(\approx P_+\)
+**pass**. Working-box cubic live **fail**. \(z\)-independent
+tube also nets **fail**. \(L^2\) blob is BKM **fail**.
+Blob closes \(X\) **open**. Not a PDE retune **fail**.
+
 ---
 
 ## What is still the next write
 
-1. Coherent CONC (B16d): a packet with net \(P\approx(\omega\cdot S\omega)_+\).
-   B4c stands. Angular \(1/r^2\) does not. A finer packet box (B13e)
+1. Occupation \(\to X\) (B8c). Coherent CONC is scored.
+   A signed-strain blob nets; the working-box cubic is not
+   live; a \(z\)-independent tube still cancels. B4c stands.
+   Angular \(1/r^2\) does not. A finer packet box (B13e)
    stays open.
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
    Leray-as-occupation, the glue sketch as an NS a priori,
@@ -278,8 +294,9 @@ python3 scripts/track_b_evolve.py
 python3 scripts/track_b_geometry.py
 python3 scripts/track_b_stretch.py
 python3 scripts/track_b_balance.py
+python3 scripts/track_b_coherent.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

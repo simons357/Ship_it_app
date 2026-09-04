@@ -64,7 +64,7 @@ WATCH = {
         "plain": "Whether ordinary viscosity beats that 1/r^4 source at the thin tube.",
         "on_fail": (
             "The extra 1/r² angular piece does not beat I_tube on packets: R_ang sits above 1 and climbs with j*.",
-            "Keep B4c (full tube dissipation still budgets the packet). Do not cancel to Φ. Next: a coherent CONC packet (B16d).",
+            "Keep B4c (full tube dissipation still budgets the packet). Do not cancel to Φ. Next: occupation → X (B8c).",
         ),
         "on_pass": (
             "Viscosity now dominates the tube source in the written estimate.",
@@ -241,7 +241,7 @@ def render_text(events: list[dict], baseline: bool) -> str:
     if not events:
         return (
             "DA checked. Nothing significant flipped.\n"
-            "Next: coherent CONC (B16d). B4c stands. Angular 1/r² lost. Do not cancel to Φ.\n"
+            "Next: occupation → X (B8c). Coherent CONC scored. B4c stands. Do not cancel to Φ.\n"
         )
     parts = []
     for e in events:
@@ -307,7 +307,7 @@ def notify(
         "recommendation": (
             events[-1]["next"]
             if events
-            else "Nothing flipped. Next write is coherent CONC (B16d)."
+            else "Nothing flipped. Next write is occupation → X (B8c)."
         ),
     }
     delivery = {"file": str(out_txt)}
