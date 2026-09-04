@@ -398,6 +398,30 @@ def lemma_bony_not_rho() -> dict:
     return lemma_low_T_not_rho()
 
 
+def lemma_occupation_clock() -> dict:
+    from track_b_occupation import lemma_clock
+
+    return lemma_clock()
+
+
+def lemma_occupation_high_j() -> dict:
+    from track_b_occupation import lemma_high_jstar
+
+    return lemma_high_jstar()
+
+
+def lemma_occupation_leray() -> dict:
+    from track_b_occupation import lemma_leray_not_short
+
+    return lemma_leray_not_short()
+
+
+def lemma_occupation_glue() -> dict:
+    from track_b_occupation import lemma_occupation_not_close
+
+    return lemma_occupation_not_close()
+
+
 def lemma_regularity() -> dict:
     return rec(
         "B_regularity",
@@ -435,6 +459,10 @@ def run(out: Path | None = None) -> dict:
         lemma_bony_t2(),
         lemma_bony_energy(),
         lemma_bony_not_rho(),
+        lemma_occupation_clock(),
+        lemma_occupation_high_j(),
+        lemma_occupation_leray(),
+        lemma_occupation_glue(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -463,10 +491,11 @@ def run(out: Path | None = None) -> dict:
             "B6 ∫X dt < ∞ does not bound X (fail of that close)",
             "Φ is not the estimate variable (fail)",
             "B7 Bony split + T2 self (pass); energy-class low T (pass); uniform ρ^{1/2} fail",
+            "B8 occupation clock (pass); high j* short (pass); Leray⇒short CONC fail; glue to X open",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Occupation time of 3-CONC vs SPREAD. B4c on packets, energy-class T on spread."
+            "Glue B4c while CONC to energy-class T while SPREAD, against the B8 clock."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

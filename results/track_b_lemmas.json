@@ -442,6 +442,146 @@
       }
     },
     {
+      "name": "B8_occupation_clock",
+      "statement": "\u03c4_CONC + \u03c4_SPREAD = T at threshold \u03c3 = 1/2. Switching allowed.",
+      "verdict": "pass",
+      "why": "One threshold, no gap. A clock, not a bound on X.",
+      "paths": {
+        "rows": [
+          {
+            "tau_conc": 1.0,
+            "tau_spread": 0.0,
+            "T": 1.0,
+            "switches": 0
+          },
+          {
+            "tau_conc": 0.0,
+            "tau_spread": 1.0,
+            "T": 1.0,
+            "switches": 0
+          },
+          {
+            "tau_conc": 0.5,
+            "tau_spread": 0.5,
+            "T": 1.0,
+            "switches": 39
+          },
+          {
+            "tau_conc": 0.5,
+            "tau_spread": 0.5,
+            "T": 1.0,
+            "switches": 7
+          },
+          {
+            "tau_conc": 0.19875,
+            "tau_spread": 0.80125,
+            "T": 1.0,
+            "switches": 256
+          },
+          {
+            "tau_conc": 0.21875,
+            "tau_spread": 0.78125,
+            "T": 1.0,
+            "switches": 248
+          },
+          {
+            "tau_conc": 0.20125,
+            "tau_spread": 0.7987500000000001,
+            "T": 1.0,
+            "switches": 251
+          },
+          {
+            "tau_conc": 0.19625,
+            "tau_spread": 0.80375,
+            "T": 1.0,
+            "switches": 266
+          },
+          {
+            "tau_conc": 0.19375,
+            "tau_spread": 0.80625,
+            "T": 1.0,
+            "switches": 262
+          },
+          {
+            "tau_conc": 0.21,
+            "tau_spread": 0.79,
+            "T": 1.0,
+            "switches": 259
+          }
+        ],
+        "gaps": 0,
+        "ok": true
+      }
+    },
+    {
+      "name": "B8a_high_jstar_short",
+      "statement": "packet budget \u1e8a = X\u00b3 \u2212 \u03bd 2^{2j*} X: hot occupation falls as j* rises",
+      "verdict": "pass",
+      "why": "B4c\u2019s scale. High packets cannot sit hot for long on that ODE.",
+      "decay": {
+        "rows": [
+          {
+            "jstar": 2,
+            "gamma": 1.6,
+            "tau_hot": 0.5270999999999583,
+            "scale": 0.625
+          },
+          {
+            "jstar": 3,
+            "gamma": 6.4,
+            "tau_hot": 0.03519999999999998,
+            "scale": 0.15625
+          },
+          {
+            "jstar": 4,
+            "gamma": 25.6,
+            "tau_hot": 0.007500000000000007,
+            "scale": 0.0390625
+          },
+          {
+            "jstar": 5,
+            "gamma": 102.4,
+            "tau_hot": 0.0018000000000000006,
+            "scale": 0.009765625
+          },
+          {
+            "jstar": 6,
+            "gamma": 409.6,
+            "tau_hot": 0.0005,
+            "scale": 0.00244140625
+          }
+        ],
+        "hot": [
+          0.5270999999999583,
+          0.03519999999999998,
+          0.007500000000000007,
+          0.0018000000000000006,
+          0.0005
+        ],
+        "ok": true
+      }
+    },
+    {
+      "name": "B8b_leray_not_occupation",
+      "statement": "Leray \u222bX dt < \u221e \u21d2 occupation of 3-CONC is short",
+      "verdict": "fail",
+      "why": "Sit in CONC with X = (T*\u2212t)^{-1/2}. The integral is finite. The clock runs the whole interval.",
+      "spike": {
+        "tau_conc": 1.0001500375093773,
+        "T": 1.0001500375093773,
+        "integral_X": 1.9821523144244644,
+        "X_max": 100.0000000000055,
+        "occupies_almost_all": true,
+        "X_unbounded": true
+      }
+    },
+    {
+      "name": "B8c_occupation_not_X_bound",
+      "statement": "occupation-time bookkeeping closes a bound for X",
+      "verdict": "open",
+      "why": "The clock is armed: B4c on CONC, energy-class T on SPREAD. The glue that bounds X is the next estimate, not this one."
+    },
+    {
       "name": "B_regularity",
       "statement": "classical 3D NS is globally regular (keep 1/r^4, no Q1)",
       "verdict": "open",
@@ -449,9 +589,9 @@
     }
   ],
   "counts": {
-    "pass": 10,
-    "fail": 6,
-    "open": 2
+    "pass": 12,
+    "fail": 7,
+    "open": 3
   },
   "how_far": [
     "B1 T2 low-flux identity holds (pass); T2 Lemma 2 stays dropped (fail)",
@@ -464,7 +604,8 @@
     "B6 \u222bX dt < \u221e does not bound X (fail of that close)",
     "\u03a6 is not the estimate variable (fail)",
     "B7 Bony split + T2 self (pass); energy-class low T (pass); uniform \u03c1^{1/2} fail",
+    "B8 occupation clock (pass); high j* short (pass); Leray\u21d2short CONC fail; glue to X open",
     "classical regularity remains open"
   ],
-  "next_da_move": "Occupation time of 3-CONC vs SPREAD. B4c on packets, energy-class T on spread."
+  "next_da_move": "Glue B4c while CONC to energy-class T while SPREAD, against the B8 clock."
 }

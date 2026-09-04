@@ -39,6 +39,10 @@ class TrackBLemmaTests(unittest.TestCase):
         self.assertEqual(by["B7a_self_is_t2"]["verdict"], "pass")
         self.assertEqual(by["B7b_low_T_energy_class"]["verdict"], "pass")
         self.assertEqual(by["B7c_low_T_not_rho_uniform"]["verdict"], "fail")
+        self.assertEqual(by["B8_occupation_clock"]["verdict"], "pass")
+        self.assertEqual(by["B8a_high_jstar_short"]["verdict"], "pass")
+        self.assertEqual(by["B8b_leray_not_occupation"]["verdict"], "fail")
+        self.assertEqual(by["B8c_occupation_not_X_bound"]["verdict"], "open")
         self.assertEqual(by["B_regularity"]["verdict"], "open")
         self.assertLess(by["B1_t2_low_flux"]["rel_residual"], 1e-10)
 

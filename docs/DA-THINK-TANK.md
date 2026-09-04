@@ -134,7 +134,9 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 
 17. **Tube write.** Hardy \(\to I_{\mathrm{tube}}\): packet class **pass**, all-data absorption **fail** (slow fat swirl, \(R\sim 1/\varepsilon\)). [`docs/TRACK-B-HARDY-TUBE.md`](TRACK-B-HARDY-TUBE.md).
 
-18. **Bony \(T\).** Energy-class low sum **pass**. Uniform \(\rho^{1/2}\) as \(\rho\to 0\) **fail**. G is dead. Next: occupation time. [`docs/TRACK-B-BONY-T.md`](TRACK-B-BONY-T.md).
+18. **Bony \(T\).** Energy-class low sum **pass**. Uniform \(\rho^{1/2}\) as \(\rho\to 0\) **fail**. G is dead. [`docs/TRACK-B-BONY-T.md`](TRACK-B-BONY-T.md).
+
+19. **Occupation.** Clock **pass**. High \(j_*\) short **pass**. Leray \(\Rightarrow\) short CONC **fail**. Glue to \(X\) **open**. [`docs/TRACK-B-OCCUPATION.md`](TRACK-B-OCCUPATION.md).
 
 ---
 

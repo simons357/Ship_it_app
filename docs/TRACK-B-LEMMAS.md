@@ -45,6 +45,10 @@ not done).
 | B7a | self-flux is T2 Lemma 1 | **pass** | The leftover \(T\) is not self-advection. |
 | B7b | \(\|u_{\le j-N}\|_\infty\lesssim 2^{(j-N)/2}X^{1/2}\) | **pass** | Energy class. No \(\rho\) upgrade. |
 | B7c | spread \(\Rightarrow\) uniform \(\rho^{1/2}\) as \(\rho\to 0\) | **fail** | Low sum in \(L^\infty\) grows. G is dead. |
+| B8 | \(\tau_{\mathrm{C}}+\tau_{\mathrm{S}}=T\) | **pass** | Two-regime clock. |
+| B8a | high \(j_*\) hot occupation falls | **pass** | Packet ODE at B4c’s scale. |
+| B8b | Leray \(\Rightarrow\) short CONC | **fail** | B6 spike, wearing a regime hat. |
+| B8c | occupation closes a bound for \(X\) | **open** | The glue to \(X\). |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -132,19 +136,26 @@ with integrable enstrophy and is unbounded. DA fails that close.
 \(\rho^{1/2}\) as \(\rho\to 0\) **fails**. Theorem G is dead.
 H at frozen \(\rho\le 1/4\) may still use B7b.
 
+**B8 / B8a / B8b / B8c.** Occupation time lives in
+[`TRACK-B-OCCUPATION.md`](TRACK-B-OCCUPATION.md). Clock
+**pass**. High \(j_*\) short **pass**. Leray \(\Rightarrow\)
+short CONC **fail**. Glue to \(X\) **open**.
+
 ---
 
 ## What is still the next write
 
-1. Occupation time of 3-CONC vs SPREAD. B4c on packets,
-   energy-class \(T\) on spread.
-2. Do not revive all-data Hardy absorption or G’s \(\rho\to 0\).
+1. Glue B4c while CONC to energy-class \(T\) while SPREAD,
+   against the B8 clock. That is the estimate that talks to \(X\).
+2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
+   or Leray-as-occupation.
 
 None of those is a pass on regularity. Checker:
 
 ```
 python3 scripts/track_b_hardy_tube.py
 python3 scripts/track_b_bony_t.py
+python3 scripts/track_b_occupation.py
 python3 scripts/track_b_lemmas.py
 python3 -m unittest tests.test_track_b_lemmas
 python3 scripts/da_machine.py trackb

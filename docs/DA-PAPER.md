@@ -206,10 +206,13 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B6 \(\int X<\infty\Rightarrow X\in L^\infty\) | fail |
 | B7 Bony split / T2 self / energy-class \(T\) | pass |
 | B7c uniform \(\rho^{1/2}\) as \(\rho\to 0\) | **fail** |
+| B8 / B8a occupation clock; high \(j_*\) short | pass |
+| B8b Leray \(\Rightarrow\) short CONC | **fail** |
+| B8c occupation closes \(X\) | **open** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Next write: occupation time of 3-CONC vs SPREAD. B4c on packets, energy-class \(T\) on spread.
+Next write: glue B4c (CONC) to energy-class \(T\) (SPREAD) against the occupation clock.
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 

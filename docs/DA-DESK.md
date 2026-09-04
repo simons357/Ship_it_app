@@ -109,11 +109,14 @@ Domain B **never** passes regularity. `check B` stays
 | B6 | \(\int X<\infty\Rightarrow X\in L^\infty\) | **fail** |
 | B7 / B7a / B7b | Bony split, T2 self, energy-class \(T\) | **pass** |
 | B7c | uniform \(\rho^{1/2}\) as \(\rho\to 0\) | **fail** |
+| B8 / B8a | occupation clock; high \(j_*\) short | **pass** |
+| B8b | Leray \(\Rightarrow\) short CONC | **fail** |
+| B8c | occupation closes \(X\) | **open** |
 | \(\Phi\) as estimate variable | keep \(\Gamma\) | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** occupation time of 3-CONC vs SPREAD.
-B4c on packets, energy-class \(T\) on spread.
+**Next B write:** glue B4c (CONC) to energy-class \(T\)
+(SPREAD) against the B8 clock.
 
 ---
 
@@ -391,7 +394,7 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`,
 `docs/DA-PAPER.md`, `docs/DA-THINK-TANK.md`,
 `docs/DA-SESSION.md`, `docs/TRACK-B-HARDY-TUBE.md`,
-`docs/TRACK-B-BONY-T.md`.
+`docs/TRACK-B-BONY-T.md`, `docs/TRACK-B-OCCUPATION.md`.
 
 ---
 
@@ -402,7 +405,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 - Classical regularity is **open**.
 - Hardy \(\to I_{\mathrm{tube}}\): packet class **pass**,
   all-data **fail**. Low Bony \(T\): energy class **pass**,
-  uniform \(\rho^{1/2}\) **fail**. Next: occupation time.
+  uniform \(\rho^{1/2}\) **fail**. Occupation clock **pass**;
+  Leray \(\Rightarrow\) short CONC **fail**. Next: glue to \(X\).
 - Cosmo does not enter NS.
 - HB stays shelved as a theorem. DA-as-process stays live.
 

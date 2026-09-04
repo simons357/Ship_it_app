@@ -209,7 +209,7 @@ On each time interval the solution is either concentrated or spread (or switchin
 - Concentrated: Ring + tube \(1/r^4\) + viscosity at scale \(2^{-j_*}\).
 - Spread: T2 Lemma 1 + enhanced dissipation.
 
-You need a bound on occupation time of the “almost critical” annulus \(c_*\le J/X\le\rho_0\) if those thresholds do not meet. Pick numbers so the two regimes cover \((0,1]\). Example: concentrated if \(J/X\ge 1/4\), spread if \(J/X\le 1/4\). One threshold, no gap.
+Occupation time is broken out in [`TRACK-B-OCCUPATION.md`](TRACK-B-OCCUPATION.md). One threshold \(\sigma=1/2\), no gap. The clock **passes**. High \(j_*\) hot time **passes** on the packet ODE. Leray \(\Rightarrow\) short CONC **fails**. The glue to \(X\) is **open**.
 
 Leray’s \(\int X\,dt<\infty\) limits how long a high-\(j_*\) concentrated spike can last, but it does **not** by itself stop \(\dot X\sim X^3\). A spike \(X\sim(T_*-t)^{-1/2}\) is compatible with integrable \(X\). Viscosity or geometric depletion has to supply the extra decay. Do not close with energy integrability alone.
 

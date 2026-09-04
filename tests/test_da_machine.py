@@ -103,6 +103,9 @@ class DaMachineTests(unittest.TestCase):
         r = classify_claim("localized tube Hardy for Gamma, keep 1/r^4")
         self.assertEqual(r["domain"], "B")
         self.assertEqual(r["verdict"], "open")
+        occ = classify_claim("occupation time of 3-CONC vs SPREAD")
+        self.assertEqual(occ["domain"], "B")
+        self.assertEqual(occ["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
