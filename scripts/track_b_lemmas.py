@@ -995,6 +995,48 @@ def lemma_dns_not_a_retune() -> dict:
     return dnr()
 
 
+def lemma_tube_readable() -> dict:
+    from track_b_tube import lemma_tube_readable as tr
+
+    return tr()
+
+
+def lemma_angular_not_a_priori() -> dict:
+    from track_b_tube import lemma_angular_not_a_priori as ana
+
+    return ana()
+
+
+def lemma_b4c_not_a_priori() -> dict:
+    from track_b_tube import lemma_b4c_not_a_priori as b4c_ap
+
+    return b4c_ap()
+
+
+def lemma_rd_not_bounded() -> dict:
+    from track_b_tube import lemma_rd_not_bounded as rdnb
+
+    return rdnb()
+
+
+def lemma_not_revive_hardy_or_phi() -> dict:
+    from track_b_tube import lemma_not_revive_hardy_or_phi as nrhp
+
+    return nrhp()
+
+
+def lemma_geometry_leftover() -> dict:
+    from track_b_tube import lemma_geometry_leftover as geo_l
+
+    return geo_l()
+
+
+def lemma_tube_not_a_retune() -> dict:
+    from track_b_tube import lemma_tube_not_a_retune as tnr
+
+    return tnr()
+
+
 def lemma_coherent_field() -> dict:
     from track_b_coherent import lemma_coherent_field as coh
 
@@ -1181,6 +1223,13 @@ def run(out: Path | None = None) -> dict:
         lemma_no_blow_not_bounded(),
         lemma_finer_still_open(),
         lemma_dns_not_a_retune(),
+        lemma_tube_readable(),
+        lemma_angular_not_a_priori(),
+        lemma_b4c_not_a_priori(),
+        lemma_rd_not_bounded(),
+        lemma_not_revive_hardy_or_phi(),
+        lemma_geometry_leftover(),
+        lemma_tube_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -1206,7 +1255,7 @@ def run(out: Path | None = None) -> dict:
             "B4b all-data Hardy→I_tube fail: slow fat swirl ratio ∼ 1/ε",
             "B4c packet class at δ ∼ 2^{-j*} pass; B4d wall match pass",
             "B5 swirl (Δu)_θ identity (pass); angular 1/r² vs I_tube fail; R_ang climbs (pass)",
-            "B5d B4b killer is not the angular killer (fail); not a Φ cancel (fail); not an a priori (open)",
+            "B5d B4b killer is not the angular killer (fail); not a Φ cancel (fail); angular not an a priori (B5f fail)",
             "B6 ∫X dt < ∞ does not bound X (fail of that close)",
             "Φ is not the estimate variable (fail)",
             "B7 Bony split + T2 self (pass); energy-class low T (pass); uniform ρ^{1/2} fail",
@@ -1241,12 +1290,14 @@ def run(out: Path | None = None) -> dict:
             "B22c no high fill (fail); clock did not save (fail); finer box open (B22e); DNS not an a priori (B13f fail)",
             "B23 short+longer DNS readable (pass); decaying packet not an a priori (fail); room time not continuation (fail)",
             "B23c packet not all data (fail); no-blow not L∞ (fail); finer still open (B23e); not a PDE retune (fail)",
+            "B24 B4c and B5b readable together (pass); angular not an a priori (fail); B4c not an a priori (fail)",
+            "B24c R_D ≪ 1 is not L∞ (fail); not Hardy/Φ revive (fail); geometry leftover open (B14d); not a PDE retune (fail)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Climb and DNS knobs at n=32 are scored. DNS is not an a priori (B13f). "
+            "Tube budget is not an a priori (B5f). Packet geometry leftover is B14d. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
-            "B4c stands. Do not write c=8 into the PDE."
+            "B4c stands. Do not cancel to Φ."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

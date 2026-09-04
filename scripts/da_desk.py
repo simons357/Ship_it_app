@@ -228,7 +228,7 @@ def run(out: Path | None = None) -> dict:
         },
         "next_da_move": (
             "Use the write-up. Angular 1/r² lost on packets; B4c still budgets I_tube. "
-            "Climb and DNS knobs at n=32 are scored. DNS is not an a priori (B13f). "
+            "Tube budget is not an a priori (B5f). Packet geometry leftover is B14d. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "Corpus pairings emit scored sentences, not F."
         ),

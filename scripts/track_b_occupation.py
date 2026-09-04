@@ -167,9 +167,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Climb and DNS knobs at n=32 are scored. DNS is not an a priori (B13f). "
+            "Tube budget is not an a priori (B5f). Packet geometry leftover is B14d. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
-            "B4c stands. Do not write c=8 into the PDE."
+            "B4c stands. Do not cancel to Φ."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_occupation.json")

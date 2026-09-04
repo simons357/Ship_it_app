@@ -41,7 +41,7 @@ class TrackBNsClimbTests(unittest.TestCase):
         )
         self.assertGreaterEqual(by["B20d_offset_not_climb"]["offset"], OFFSET_MIN)
         self.assertLess(by["B20d_offset_not_climb"]["c_mean_visc"], 0.0)
-        self.assertIn("B13f", payload["next_da_move"])
+        self.assertIn("B14d", payload["next_da_move"])
 
     def test_writeup_exists(self):
         self.assertTrue((ROOT / "docs" / "TRACK-B-NS-CLIMB.md").is_file())

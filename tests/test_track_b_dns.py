@@ -30,7 +30,7 @@ class TrackBDnsTests(unittest.TestCase):
         self.assertTrue(payload["meta"]["climb_dns_dead_end"])
         self.assertGreater(T_LONG, T_ROOM)
         self.assertIn("B22e", payload["next_da_move"])
-        self.assertIn("B13f", payload["next_da_move"])
+        self.assertIn("B14d", payload["next_da_move"])
 
     def test_writeup_exists(self):
         self.assertTrue((ROOT / "docs" / "TRACK-B-DNS.md").is_file())

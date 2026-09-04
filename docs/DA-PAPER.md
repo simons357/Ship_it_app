@@ -205,7 +205,7 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B5b angular \(1/r^2\) dominates \(I_{\mathrm{tube}}\) | **fail** |
 | B5c \(R_{\mathrm{ang}}\) climbs; \(R_D\) falls | pass |
 | B5d / B5e / B5g B4b killer kills angular; \(\Phi\) cancel; retune | **fail** |
-| B5f angular piece closes \(X\) | **open** |
+| B5f angular piece closes \(X\) | **fail** |
 | B6 \(\int X<\infty\Rightarrow X\in L^\infty\) | fail |
 | B7 Bony split / T2 self / energy-class \(T\) | pass |
 | B7c uniform \(\rho^{1/2}\) as \(\rho\to 0\) | **fail** |
@@ -271,10 +271,14 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B23a / B23b / B23c / B23d DNS a priori; room-time continuation; packet is all data; no-blow \(\Rightarrow L^\infty\) | **fail** |
 | B23e finer makes DNS an a priori | **open** |
 | B23f this retunes the PDE | **fail** |
+| B24 B4c and B5b readable together | pass |
+| B24a / B24b / B24c / B24d angular closes \(X\); B4c is an a priori; \(R_D\ll 1\Rightarrow L^\infty\); revive Hardy/\(\Phi\) | **fail** |
+| B24e packet geometry closes \(X\) | **open** |
+| B24f this retunes the PDE | **fail** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Climb and DNS knobs at \(n=32\) are scored. DNS is not an a priori (B13f). Finer (\(n>32\)) stays a box knob (B22e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\).
+Tube budget is not an a priori (B5f). Packet geometry leftover is B14d. Finer (\(n>32\)) stays a box knob (B22e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\).
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 
@@ -318,11 +322,11 @@ The operator atlas is `docs/DA-DESK.md`. The machine note is `docs/DOMAIN-ARCHIT
 
 ## 9. Conclusion
 
-DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. Climb and DNS knobs at \(n=32\) are scored. DNS is not an a priori (B13f). Finer is B22e. B4c stands. Angular \(1/r^2\) does not.
+DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. Tube budget is not an a priori (B5f). Geometry leftover is B14d. Finer is B22e. B4c stands. Angular \(1/r^2\) does not.
 
 The think tank is three benches and a corpus rule. The processes are classify, check, falsify, reconstruct, ablate, pipe, compute, and alert. The purpose is to keep the operator honest while ordinary AI proposes.
 
-That is the paper. Climb and DNS knobs at \(n=32\) are scored. Finer is B22e. B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
+That is the paper. Tube budget is not an a priori (B5f). Geometry leftover is B14d. Finer is B22e. B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
 
 ---
 

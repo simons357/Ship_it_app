@@ -43,7 +43,7 @@ not done).
 | B5c | \(R_{\mathrm{ang}}\) climbs with \(j_*\) while \(R_D\) falls | **pass** | Two ratios disagree. |
 | B5d | B4b killer kills angular domination | **fail** | Turn \(\varepsilon\) down: \(R_{\mathrm{ang}}\) falls. |
 | B5e | therefore cancel to \(\Phi\) | **fail** | B4c already budgets the packet. Keep \(\Gamma\). |
-| B5f | angular piece closes \(X\) | **open** | A failed Poincaré is not continuation. |
+| B5f | angular piece closes \(X\) | **fail** | Failed Poincaré. Packet budget is not continuation (B24). |
 | B5g | reading the ratio retunes the PDE | **fail** | Knob on the estimate. |
 | B6 | \(\int X\,dt<\infty\Rightarrow X\in L^\infty\) | **fail** | \(X=(T_*-t)^{-1/2}\) is integrable and unbounded. |
 | B7 | \(\Pi_j=T+T^*+R+\mathrm{self}\) | **pass** | Bony bookkeeping. |
@@ -152,6 +152,13 @@ not done).
 | B23d | no blow on \(n=32\) \(\Rightarrow X\in L^\infty\) | **fail** | DNS-never-blew-up is refused. |
 | B23e | finer makes DNS an a priori | **open** | Same leftover as B22e. Do not spawn \(n=64\). |
 | B23f | scoring this retunes the PDE | **fail** | Knob on the check. |
+| B24 | B4c and B5b readable together | **pass** | \(R_D\) falls. \(R_{\mathrm{ang}}\) climbs. |
+| B24a | angular \(1/r^2\) closes \(X\) | **fail** | Same slogan as B5f. |
+| B24b | B4c packet budget is an a priori | **fail** | A class budget is not all data. |
+| B24c | \(R_D\ll 1\Rightarrow X\in L^\infty\) | **fail** | A ratio is not Beale. |
+| B24d | revive Hardy or cancel to \(\Phi\) | **fail** | B4b / B5e already missed. |
+| B24e | packet geometry closes \(X\) | **open** | Leftover B14d. |
+| B24f | scoring this retunes the PDE | **fail** | Knob on the estimate. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -347,16 +354,22 @@ Readable **pass**. Decaying packet DNS is an a priori
 Packet class is all data **fail**. No-blow \(\Rightarrow L^\infty\)
 **fail**. Finer box **open**. Not a PDE retune **fail**.
 
+**B24 / B24a / B24b / B24c / B24d / B24e / B24f.** Tube
+budget as an a priori lives in
+[`TRACK-B-TUBE.md`](TRACK-B-TUBE.md). Readable **pass**.
+Angular closes \(X\) **fail**. B4c is an a priori **fail**.
+\(R_D\ll 1\Rightarrow L^\infty\) **fail**. Revive Hardy / \(\Phi\)
+**fail**. Geometry leftover **open**. Not a PDE retune **fail**.
+
 ---
 
 ## What is still the next write
 
-1. Climb and DNS knobs at \(n=32\) are scored. DNS is
-   not an a priori (B13f). Finer (\(n>32\)) stays a box
-   knob (B22e). Do not spawn \(n=64\). Remaining opens
-   are leftover closes, not a new apparatus. B4c stands.
-   Angular \(1/r^2\) does not. Do not write \(c=8\) into
-   the PDE.
+1. Tube budget is not an a priori (B5f). Packet geometry
+   leftover is B14d. Finer (\(n>32\)) stays a box knob
+   (B22e). Do not spawn \(n=64\). B4c stands. Angular
+   \(1/r^2\) does not. Do not cancel to \(\Phi\). Do not
+   write \(c=8\) into the PDE.
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
    Leray-as-occupation, the glue sketch as an NS a priori,
    a typed \(c=8\), all-data Biot–Savart depletion, BKM-from-\(L^2\),
@@ -385,8 +398,9 @@ python3 scripts/track_b_ns_climb.py
 python3 scripts/track_b_climb_sketch.py
 python3 scripts/track_b_longer.py
 python3 scripts/track_b_dns.py
+python3 scripts/track_b_tube.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

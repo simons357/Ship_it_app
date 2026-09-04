@@ -40,7 +40,7 @@ class TrackBLongerTests(unittest.TestCase):
             self.assertEqual(by["B22d_longer_clock_did_not_save"]["switches"][name], 0)
             self.assertTrue(by["B22d_longer_clock_did_not_save"]["X_fell"][name])
         self.assertLess(by["B22a_longer_not_saving"]["c_mean"]["euler"], C_SAVE)
-        self.assertIn("B13f", payload["next_da_move"])
+        self.assertIn("B14d", payload["next_da_move"])
 
     def test_writeup_exists(self):
         self.assertTrue((ROOT / "docs" / "TRACK-B-LONGER.md").is_file())

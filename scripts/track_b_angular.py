@@ -155,8 +155,8 @@ def lemma_angular_not_close() -> dict:
     return rec(
         "B5f_angular_not_X_a_priori",
         "the angular 1/r² piece closes a bound for classical X",
-        "open",
-        "A failed Poincaré is not continuation. Packet dissipation (B4c) is still a tube budget, not an a priori for X.",
+        "fail",
+        "R_ang > 1 and climbs (B5b). A failed Poincaré is not continuation. The packet tube budget is not an a priori either (B24).",
     )
 
 
@@ -192,8 +192,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Coherent CONC (B16d): a packet with net P ≈ (ω·Sω)_+. "
-            "B4c stands. Angular 1/r² does not. Do not cancel to Φ."
+            "Tube budget is not an a priori (B5f). Packet geometry leftover is B14d. "
+            "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
+            "B4c stands. Do not cancel to Φ."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_angular.json")

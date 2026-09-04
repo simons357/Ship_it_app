@@ -37,7 +37,7 @@ class TrackBClimbSketchTests(unittest.TestCase):
         self.assertLess(by["B21c_delta_j_not_prescribed"]["dj_ns"], 0.0)
         self.assertLess(by["B21c_delta_j_not_prescribed"]["c_mean_ns"], C_SAVE)
         self.assertGreater(by["B21d_sketch_did_not_save"]["Xdot0"], 0.0)
-        self.assertIn("B13f", payload["next_da_move"])
+        self.assertIn("B14d", payload["next_da_move"])
 
     def test_writeup_exists(self):
         self.assertTrue((ROOT / "docs" / "TRACK-B-CLIMB-SKETCH.md").is_file())

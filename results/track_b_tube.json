@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "tube budget as an a priori",
+    "tuning_the_pde": false,
+    "tesla": "exacting, not a jerk. You asked the tube. Full D budgets the packet. Angular loses. Neither reading is a bound. Do not cancel to \u03a6.",
+    "domain_verdict": "open"
+  },
+  "lemmas": [
+    {
+      "name": "B24_tube_readable",
+      "statement": "B4c packet budget and B5b angular ratio are readable together",
+      "verdict": "pass",
+      "why": "R_D sits below 1 and falls with j*. R_ang sits above 1 and climbs. Full D_tube budgets the packet. Angular does not. Typed c is not written into the PDE.",
+      "R_ang": [
+        5.06556618002082,
+        9.979565572394488,
+        18.78525011736838,
+        28.70703560284757
+      ],
+      "R_D": [
+        0.020747625017811817,
+        0.010257218506469929,
+        0.004896058518906943,
+        0.0019720250620467376
+      ]
+    },
+    {
+      "name": "B24a_angular_not_a_priori",
+      "statement": "the extra 1/r\u00b2 piece closes a bound for classical X",
+      "verdict": "fail",
+      "why": "R_ang > 1 and climbs. A failed Poincar\u00e9 is not continuation. B5b already missed domination."
+    },
+    {
+      "name": "B24b_b4c_not_a_priori",
+      "statement": "the B4c packet tube budget is a closed a priori bound for classical X",
+      "verdict": "fail",
+      "why": "B4c budgets |I_tube| on a packet class. B4b killed all-data Hardy. B23c: one triad is not Leray. A budget is not continuation."
+    },
+    {
+      "name": "B24c_rd_not_bounded",
+      "statement": "R_D \u226a 1 on packets implies X \u2208 L\u221e",
+      "verdict": "fail",
+      "why": "Dissipation beats the tube source on this class. That is a ratio, not Beale. DNS-never-blew-up is refused. So is tube-ratio-never-blew-up.",
+      "R_D": [
+        0.020747625017811817,
+        0.010257218506469929,
+        0.004896058518906943,
+        0.0019720250620467376
+      ]
+    },
+    {
+      "name": "B24d_not_revive_hardy_or_phi",
+      "statement": "therefore revive all-data Hardy, or cancel to \u03a6 = \u0393/r\u00b2",
+      "verdict": "fail",
+      "why": "B4b and B5e already failed those slogans. Keep \u0393. Keep 1/r^4. B4c still budgets the packet. Do not cancel to \u03a6."
+    },
+    {
+      "name": "B24e_geometry_leftover",
+      "statement": "packet geometry closes X",
+      "verdict": "open",
+      "why": "Tube is scored. The leftover close on the strain eigenframe is B14d. Not a bigger FFT. Do not spawn n=64."
+    },
+    {
+      "name": "B24f_not_a_pde_retune",
+      "statement": "scoring the tube budget as not an a priori is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. The ratio is a knob on the estimate. No Q1. No \u03b5. No \u03a6 cancel."
+    }
+  ],
+  "counts": {
+    "pass": 1,
+    "fail": 5,
+    "open": 1
+  },
+  "next_da_move": "Tube budget is not an a priori (B5f). Packet geometry leftover is B14d. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+}

@@ -96,7 +96,7 @@ Forbidden auto-fails: solved NS, full Q floor, Biot–Savart depletion, BKM-from
 
 August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ3 / SPREAD.
 
-**Next B write:** Climb and DNS knobs at \(n=32\) are scored. DNS is not an a priori (B13f). Finer (\(n>32\)) stays a box knob (B22e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\). Regularity stays open.
+**Next B write:** Tube budget is not an a priori (B5f). Packet geometry leftover is B14d. Finer (\(n>32\)) stays a box knob (B22e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\). Regularity stays open.
 
 ### How the conversation moved
 
@@ -154,7 +154,7 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 
 27. **Enstrophy balance.** Fluids look at the net. Identity **pass**. Viscosity owns this ensemble **pass**. \(P_+\) as a net cubic **fail**. \(L^2\) is BKM **fail**. Random-phase \(\Rightarrow\) all CONC **fail**. [`docs/TRACK-B-BALANCE.md`](TRACK-B-BALANCE.md).
 
-28. **Angular \(1/r^2\).** Domination **fail**. \(R_{\mathrm{ang}}\) climbs **pass**. B4b killer is not the angular killer **fail**. Not a \(\Phi\) cancel **fail**. [`docs/TRACK-B-ANGULAR.md`](TRACK-B-ANGULAR.md).
+28. **Angular \(1/r^2\).** Domination **fail**. \(R_{\mathrm{ang}}\) climbs **pass**. B4b killer is not the angular killer **fail**. Not a \(\Phi\) cancel **fail**. Angular closes \(X\) **fail**. [`docs/TRACK-B-ANGULAR.md`](TRACK-B-ANGULAR.md).
 
 29. **Coherent CONC.** Signed-strain blob readable **pass**. Net \(\approx P_+\) **pass**. Working-box cubic live **fail**. \(z\)-independent tube also nets **fail**. \(L^2\) blob is BKM **fail**. [`docs/TRACK-B-COHERENT.md`](TRACK-B-COHERENT.md).
 
@@ -169,6 +169,8 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 34. **Longer path.** Readable past room time **pass**. Longer \(c\ge 8\) **fail**. Ladder **fail**. High fill **fail**. Clock saved \(X\) **fail**. B13e finer/longer **fail**. [`docs/TRACK-B-LONGER.md`](TRACK-B-LONGER.md).
 
 35. **DNS as an a priori.** Readable **pass**. Decaying packet DNS is an a priori **fail**. Room-time length is continuation **fail**. Packet class is all data **fail**. No-blow \(\Rightarrow L^\infty\) **fail**. B13f packet DNS as a priori **fail**. [`docs/TRACK-B-DNS.md`](TRACK-B-DNS.md).
+
+36. **Tube budget.** B4c and B5b readable **pass**. Angular closes \(X\) **fail**. B4c is an a priori **fail**. \(R_D\ll 1\Rightarrow L^\infty\) **fail**. Revive Hardy / \(\Phi\) **fail**. B5f angular as a priori **fail**. [`docs/TRACK-B-TUBE.md`](TRACK-B-TUBE.md).
 
 ---
 

@@ -108,7 +108,7 @@ Domain B **never** passes regularity. `check B` stays
 | B5b | angular \(1/r^2\) dominates \(I_{\mathrm{tube}}\) | **fail** |
 | B5c | \(R_{\mathrm{ang}}\) climbs; \(R_D\) falls | **pass** |
 | B5d / B5e / B5g | B4b killer kills angular; \(\Phi\) cancel; retune | **fail** |
-| B5f | angular piece closes \(X\) | **open** |
+| B5f | angular piece closes \(X\) | **fail** |
 | B6 | \(\int X<\infty\Rightarrow X\in L^\infty\) | **fail** |
 | B7 / B7a / B7b | Bony split, T2 self, energy-class \(T\) | **pass** |
 | B7c | uniform \(\rho^{1/2}\) as \(\rho\to 0\) | **fail** |
@@ -174,10 +174,14 @@ Domain B **never** passes regularity. `check B` stays
 | B23a / B23b / B23c / B23d | DNS a priori; room-time continuation; packet is all data; no-blow \(\Rightarrow L^\infty\) | **fail** |
 | B23e | finer makes DNS an a priori | **open** |
 | B23f | this retunes the PDE | **fail** |
+| B24 | B4c and B5b readable together | **pass** |
+| B24a / B24b / B24c / B24d | angular closes \(X\); B4c is an a priori; \(R_D\ll 1\Rightarrow L^\infty\); revive Hardy/\(\Phi\) | **fail** |
+| B24e | packet geometry closes \(X\) | **open** |
+| B24f | this retunes the PDE | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** Climb and DNS knobs at \(n=32\) are
-scored. DNS is not an a priori (B13f). Finer
+**Next B write:** Tube budget is not an a priori (B5f).
+Packet geometry leftover is B14d. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.
 Angular \(1/r^2\) does not. We are not tuning the
 equation. Do not spawn \(n=64\).

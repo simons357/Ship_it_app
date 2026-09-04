@@ -68,9 +68,10 @@ B4c already budgets the packet with \(\nabla\omega\). Keep
 \(\Gamma\). Keep \(1/r^4\). The extra angular term was not
 the absorption.
 
-**B5f, open.** A failed Poincaré is not continuation.
-Packet dissipation is still a tube budget, not an a priori
-for \(X\).
+**B5f, fail** of “the angular piece closes \(X\).”
+A failed Poincaré is not continuation. The packet tube
+budget is not an a priori either. See
+[`TRACK-B-TUBE.md`](TRACK-B-TUBE.md).
 
 **B5g, fail** of “this retunes the PDE.” The equation is
 untouched.
@@ -108,8 +109,8 @@ an angular Poincaré that the packets just killed.
 **Einstein.** The object stayed named. Classical stress.
 Axis weight kept.
 
-**Operator.** B5b is scored. Next: a coherent CONC packet
-(B16d). Random phase cancelled. Angular \(1/r^2\) lost.
+**Operator.** B5b is scored. B5f is scored. Tube budget
+is not an a priori. Next: packet geometry (B14d).
 Do not cancel to \(\Phi\).
 
 ---
@@ -123,9 +124,9 @@ Do not cancel to \(\Phi\).
 | B5c | **pass** | \(R_{\mathrm{ang}}\) climbs with \(j_*\); \(R_D\) falls |
 | B5d | **fail** | B4b killer kills angular domination |
 | B5e | **fail** | therefore cancel to \(\Phi\) |
-| B5f | **open** | angular piece closes \(X\) |
+| B5f | **fail** | angular piece closes \(X\) |
 | B5g | **fail** | this retunes the PDE |
-| domain B | **open** | B4c stands; coherent CONC is next |
+| domain B | **open** | packet geometry leftover is B14d |
 
 Tesla’s line: turn \(j_*\) up. Angular loses. Full
 dissipation does not.

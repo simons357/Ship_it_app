@@ -112,7 +112,7 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"\bq_?1\b|augmented|ladyzhenskaya", text):
         return {"domain": "A", "verdict": "open", "reason": "looks like Track A; run check A"}
     if re.search(
-        r"1/r\^?4|\bring\b|bony|3-conc|spread|tube|vorticity|hardy|\bgamma\b|triad|track b|t2 lemma|occupation|\bglue\b|two-regime|enstrophy|energy.?ceiling|low-?j|climbing|climb.?law|dj\*/dt|barycenter|strain|eigenframe|\balignment\b|packet.?geometry|stretching.?budget|weighted.?alignment|enstrophy.?balance|angular.?viscos|coherent.?conc|signed.?strain|blob.?strain|field.?occupation|field.?glue|ns.?climb|field.?climb|saving.?c|climb.?sketch|longer.?path|longer.?run|dns.?a.?priori|packet.?dns",
+        r"1/r\^?4|\bring\b|bony|3-conc|spread|tube|vorticity|hardy|\bgamma\b|triad|track b|t2 lemma|occupation|\bglue\b|two-regime|enstrophy|energy.?ceiling|low-?j|climbing|climb.?law|dj\*/dt|barycenter|strain|eigenframe|\balignment\b|packet.?geometry|stretching.?budget|weighted.?alignment|enstrophy.?balance|angular.?viscos|coherent.?conc|signed.?strain|blob.?strain|field.?occupation|field.?glue|ns.?climb|field.?climb|saving.?c|climb.?sketch|longer.?path|longer.?run|dns.?a.?priori|packet.?dns|tube.?budget",
         text,
     ):
         return {

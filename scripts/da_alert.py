@@ -64,7 +64,7 @@ WATCH = {
         "plain": "Whether ordinary viscosity beats that 1/r^4 source at the thin tube.",
         "on_fail": (
             "The extra 1/r² angular piece does not beat I_tube on packets: R_ang sits above 1 and climbs with j*.",
-            "Keep B4c (full tube dissipation still budgets the packet). Do not cancel to Φ. Climb and DNS knobs at n=32 are scored. Finer is B22e.",
+            "Keep B4c (full tube dissipation still budgets the packet). Do not cancel to Φ. Tube budget is not an a priori (B5f). Geometry leftover is B14d.",
         ),
         "on_pass": (
             "Viscosity now dominates the tube source in the written estimate.",
@@ -241,7 +241,7 @@ def render_text(events: list[dict], baseline: bool) -> str:
     if not events:
         return (
             "DA checked. Nothing significant flipped.\n"
-            "Climb and DNS knobs at n=32 are scored. DNS is not an a priori (B13f). Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not write c=8 into the PDE.\n"
+            "Tube budget is not an a priori (B5f). Packet geometry leftover is B14d. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to Φ.\n"
         )
     parts = []
     for e in events:
@@ -307,7 +307,7 @@ def notify(
         "recommendation": (
             events[-1]["next"]
             if events
-            else "Nothing flipped. Climb and DNS knobs at n=32 are scored. Finer is B22e."
+            else "Nothing flipped. Tube budget is not an a priori (B5f). Geometry leftover is B14d."
         ),
     }
     delivery = {"file": str(out_txt)}

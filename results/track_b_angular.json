@@ -112,8 +112,8 @@
     {
       "name": "B5f_angular_not_X_a_priori",
       "statement": "the angular 1/r\u00b2 piece closes a bound for classical X",
-      "verdict": "open",
-      "why": "A failed Poincar\u00e9 is not continuation. Packet dissipation (B4c) is still a tube budget, not an a priori for X."
+      "verdict": "fail",
+      "why": "R_ang > 1 and climbs (B5b). A failed Poincar\u00e9 is not continuation. The packet tube budget is not an a priori either (B24)."
     },
     {
       "name": "B5g_not_a_pde_retune",
@@ -124,8 +124,8 @@
   ],
   "counts": {
     "pass": 1,
-    "fail": 4,
-    "open": 1
+    "fail": 5,
+    "open": 0
   },
-  "next_da_move": "Coherent CONC (B16d): a packet with net P \u2248 (\u03c9\u00b7S\u03c9)_+. B4c stands. Angular 1/r\u00b2 does not. Do not cancel to \u03a6."
+  "next_da_move": "Tube budget is not an a priori (B5f). Packet geometry leftover is B14d. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }

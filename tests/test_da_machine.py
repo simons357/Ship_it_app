@@ -151,6 +151,9 @@ class DaMachineTests(unittest.TestCase):
         dns = classify_claim("packet DNS as an a priori bound for vorticity")
         self.assertEqual(dns["domain"], "B")
         self.assertEqual(dns["verdict"], "open")
+        tb = classify_claim("tube budget of vorticity as an a priori")
+        self.assertEqual(tb["domain"], "B")
+        self.assertEqual(tb["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
