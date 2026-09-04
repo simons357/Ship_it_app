@@ -1205,6 +1205,48 @@ def lemma_blob_priori_not_a_retune() -> dict:
     return bpnr()
 
 
+def lemma_clock_priori_readable() -> dict:
+    from track_b_clock import lemma_clock_priori_readable as cpr
+
+    return cpr()
+
+
+def lemma_stay_not_a_priori() -> dict:
+    from track_b_clock import lemma_stay_not_a_priori as sna
+
+    return sna()
+
+
+def lemma_full_occ_not_short() -> dict:
+    from track_b_clock import lemma_full_occ_not_short as fons
+
+    return fons()
+
+
+def lemma_occ_not_live_cubic() -> dict:
+    from track_b_clock import lemma_occ_not_live_cubic as onlc
+
+    return onlc()
+
+
+def lemma_clock_not_integral_max() -> dict:
+    from track_b_clock import lemma_clock_not_integral_max as cnim
+
+    return cnim()
+
+
+def lemma_glue_leftover() -> dict:
+    from track_b_clock import lemma_glue_leftover as gl
+
+    return gl()
+
+
+def lemma_clock_priori_not_a_retune() -> dict:
+    from track_b_clock import lemma_clock_priori_not_a_retune as cpnr
+
+    return cpnr()
+
+
 def lemma_coherent_field() -> dict:
     from track_b_coherent import lemma_coherent_field as coh
 
@@ -1426,6 +1468,13 @@ def run(out: Path | None = None) -> dict:
         lemma_nu_not_continuation(),
         lemma_occupation_leftover(),
         lemma_blob_priori_not_a_retune(),
+        lemma_clock_priori_readable(),
+        lemma_stay_not_a_priori(),
+        lemma_full_occ_not_short(),
+        lemma_occ_not_live_cubic(),
+        lemma_clock_not_integral_max(),
+        lemma_glue_leftover(),
+        lemma_clock_priori_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -1475,7 +1524,7 @@ def run(out: Path | None = None) -> dict:
             "B17 signed-strain blob readable (pass); net ≈ P+ (pass); working-box cubic not live (fail)",
             "B17c z-independent tube still cancels (fail); L² blob is not BKM (fail); blob not an a priori (B17e fail)",
             "B18 field clock on a path (pass); paths stay CONC (pass); clock did not save X (fail)",
-            "B18c CONC occupation not short (fail); cubic not live in time (fail); field occupation not an a priori (open)",
+            "B18c CONC occupation not short (fail); cubic not live in time (fail); field occupation not an a priori (B18e fail)",
             "B19 both Ẋ readable (pass); j*=2 sign mismatch (fail); NS packet is not B9b (fail)",
             "B19c α_c is not the field cubic (fail); γ is not NS visc (fail); field glue not an a priori (open)",
             "B20 c readable on blob and B18 paths (pass); blob t=0 not c≥8 (fail); path mean not c≥8 (fail)",
@@ -1495,11 +1544,13 @@ def run(out: Path | None = None) -> dict:
             "B27 identity+visc-owned net readable (pass); visc ensemble not an a priori (fail); cancel not all-data (fail)",
             "B27c decay not continuation (fail); identity is not ∫‖ω‖_∞ (fail); coherent leftover scored (B17e fail); not a PDE retune (fail)",
             "B28 blob+one-sided net readable (pass); one-sided leftover not an a priori (fail); sign not a class (fail)",
-            "B28c peaked L² is not ∫‖ω‖_∞ (fail); ν knob not continuation (fail); occupation leftover open (B18e); not a PDE retune (fail)",
+            "B28c peaked L² is not ∫‖ω‖_∞ (fail); ν knob not continuation (fail); occupation leftover scored (B18e fail); not a PDE retune (fail)",
+            "B29 clock+full CONC+visc-owned X readable (pass); stay not an a priori (fail); τ_C=T is not a short visit (fail)",
+            "B29c CONC occupation is not a live cubic (fail); clock is not ∫‖ω‖_∞ (fail); glue leftover open (B19e); not a PDE retune (fail)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. "
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field-glue leftover is B19e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),

@@ -112,8 +112,8 @@
     {
       "name": "B18e_field_occ_not_X_a_priori",
       "statement": "field occupation closes a bound for classical X",
-      "verdict": "open",
-      "why": "The clock can be read. It did not leave CONC. Field glue scored the sketch. Climb law is scored (B11d fail). Not continuation."
+      "verdict": "fail",
+      "why": "Scored as B29. Occupation of CONC is not continuation. The clock did not leave. Field-glue leftover is B19e."
     },
     {
       "name": "B18f_not_a_pde_retune",
@@ -124,8 +124,8 @@
   ],
   "counts": {
     "pass": 2,
-    "fail": 4,
-    "open": 1
+    "fail": 5,
+    "open": 0
   },
-  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field-glue leftover is B19e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }

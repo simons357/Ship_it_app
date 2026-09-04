@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "field occupation as an a priori",
+    "tuning_the_pde": false,
+    "tesla": "exacting, not a jerk. Occupation is a number on a path. If the path never leaves CONC, the clock did not do the bound.",
+    "domain_verdict": "open"
+  },
+  "lemmas": [
+    {
+      "name": "B29_clock_readable",
+      "statement": "path clock, full CONC occupation, and visc-owned X are readable together",
+      "verdict": "pass",
+      "why": "\u03c4_C = T. Zero switches. X falls by viscosity. Typed c is not written into the PDE.",
+      "clock_gap": {
+        "packet": 0.0,
+        "blob": 0.0
+      },
+      "tau_frac": {
+        "packet": 1.0,
+        "blob": 1.0
+      },
+      "switches": {
+        "packet": 0,
+        "blob": 0
+      },
+      "X_fell": {
+        "packet": true,
+        "blob": true
+      }
+    },
+    {
+      "name": "B29a_stay_not_a_priori",
+      "statement": "occupying 3-CONC for the whole interval closes a bound for classical X",
+      "verdict": "fail",
+      "why": "Both paths stay CONC and X falls. Leray\u2019s dissipation did the work. The clock did not leave. That is not continuation.",
+      "switches": {
+        "packet": 0,
+        "blob": 0
+      },
+      "X_fell": {
+        "packet": true,
+        "blob": true
+      }
+    },
+    {
+      "name": "B29b_full_occ_not_short",
+      "statement": "\u03c4_C = T on these paths is a short CONC visit that bounds X",
+      "verdict": "fail",
+      "why": "B18c already missed. B8a\u2019s collapsing hot time is a packet ODE at high j*. These fields occupied the whole interval.",
+      "tau_frac": {
+        "packet": 1.0,
+        "blob": 1.0
+      }
+    },
+    {
+      "name": "B29c_occ_not_live_cubic",
+      "statement": "occupation of CONC is occupation of a live cubic",
+      "verdict": "fail",
+      "why": "Zero live samples. |P|/D stays below 0.05. Occupation of a hat is not occupation of the cubic.",
+      "live_samples": {
+        "packet": 0,
+        "blob": 0
+      }
+    },
+    {
+      "name": "B29d_clock_not_integral_max",
+      "statement": "\u03c4_C = T is an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "A clock column is not \u222b\u2016\u03c9\u2016_\u221e. Full occupation of a decaying packet is not the max criterion."
+    },
+    {
+      "name": "B29e_glue_leftover",
+      "statement": "matching the two-regime sketch closes X",
+      "verdict": "open",
+      "why": "The clock is scored. The leftover close on field glue is B19e. Not a bigger FFT. Do not spawn n=64."
+    },
+    {
+      "name": "B29f_not_a_pde_retune",
+      "statement": "scoring field occupation as not an a priori is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. The clock is a knob on the estimate: a number you can miss. No Q1. No \u03b5."
+    }
+  ],
+  "counts": {
+    "pass": 1,
+    "fail": 5,
+    "open": 1
+  },
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field-glue leftover is B19e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+}

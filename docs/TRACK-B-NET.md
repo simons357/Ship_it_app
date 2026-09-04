@@ -90,8 +90,9 @@ first two held. The a-priori slogan missed.
 A balance is not a closed estimate.
 
 **Operator.** The net is scored. B16e is scored.
-The blob is scored (B17e). Next: field occupation
-(B18e). Finer stays B22e. Do not spawn \(n=64\).
+The blob is scored (B17e). Field occupation is not
+an a priori (B18e). Next: field glue (B19e).
+Finer stays B22e. Do not spawn \(n=64\).
 B4c stands. Do not cancel to \(\Phi\).
 
 ---
@@ -109,7 +110,7 @@ B4c stands. Do not cancel to \(\Phi\).
 | B27d | **fail** | identity is \(\int\|\omega\|_\infty\) |
 | B27e | **fail** | coherent leftover closes \(X\) |
 | B27f | **fail** | this retunes the PDE |
-| domain B | **open** | field-occupation leftover is B18e |
+| domain B | **open** | field-glue leftover is B19e |
 
 Tesla’s line: net production is a number. Viscosity
 owned this ensemble. That is not continuation.

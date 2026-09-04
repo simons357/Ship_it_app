@@ -114,7 +114,8 @@ missed.
 scales, one sign of strain, same PDE.
 
 **Operator.** The blob is scored. B17e is scored.
-Next: field occupation (B18e). Finer stays B22e.
+Field occupation is not an a priori (B18e).
+Next: field glue (B19e). Finer stays B22e.
 Do not spawn \(n=64\). B4c stands. Do not cancel
 to \(\Phi\).
 
@@ -131,7 +132,7 @@ to \(\Phi\).
 | B17d | **fail** | \(L^2\) blob is BKM |
 | B17e | **fail** | signed-strain blob closes \(X\) |
 | B17f | **fail** | this retunes the PDE |
-| domain B | **open** | field-occupation leftover is B18e |
+| domain B | **open** | field-glue leftover is B19e |
 
 Tesla’s line: a Stokes eigenfunction is not a cubic.
 Sit the blob where \(S_{zz}\) keeps a sign. One-sided is

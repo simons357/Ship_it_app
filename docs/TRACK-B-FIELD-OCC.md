@@ -59,8 +59,9 @@ of samples.” Zero samples with \(\lvert P\rvert/D\ge 0.05\).
 Occupation of CONC is not occupation of a live cubic.
 The blob’s one-sided \(P\) is still \(\sim 0.8\%\) of \(D\).
 
-**B18e, open.** A readable clock is not continuation.
-Glue (B9d) is still a sketch.
+**B18e, fail** of “field occupation closes \(X\).”
+Scored as B29. Occupation of CONC is not
+continuation. The clock did not leave.
 
 **B18f, fail** of “this retunes the PDE.” Sampling
 \(\sigma(t)\) is a knob on the check.
@@ -107,7 +108,7 @@ occupation of a decaying packet is not a singular set.
 Same PDE, now with a clock along the path.
 
 **Operator.** Field occupation is scored. B8c is scored.
-Climb and DNS knobs at \(n=32\) are scored. Finer is B22e.
+B18e is scored. Next: field glue (B19e). Finer is B22e.
 B4c stands. Do not cancel to \(\Phi\).
 
 ---
@@ -122,9 +123,9 @@ B4c stands. Do not cancel to \(\Phi\).
 | B18b | **fail** | the clock left CONC and saved \(X\) |
 | B18c | **fail** | CONC occupation is short on these runs |
 | B18d | **fail** | cubic-live time is nonempty |
-| B18e | **open** | field occupation closes \(X\) |
+| B18e | **fail** | field occupation closes \(X\) |
 | B18f | **fail** | this retunes the PDE |
-| domain B | **open** | finer (\(n>32\)) is a box knob (B22e) |
+| domain B | **open** | field-glue leftover is B19e |
 
 Tesla’s line: occupation is a number on a path. If the
 path never leaves CONC, the clock did not do the bound.

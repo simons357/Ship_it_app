@@ -48,8 +48,9 @@ criterion still asks for \(\int\|\omega\|_\infty\).
 \(\dot X>0\) is continuation.” That is a knob on
 the check. The working box stayed \(\nu=0.1\).
 
-**B28e, open.** Field-occupation leftover is B18e.
-The clock along a path. Not a bigger FFT.
+**B28e, fail** of “field occupation closes \(X\).”
+Scored as B18e / B29. A clock that stays CONC
+is not continuation.
 
 **B28f, fail** of “this retunes the PDE.” One-sided
 is a knob on the estimate.
@@ -91,7 +92,8 @@ held. The a-priori slogan missed.
 A leftover is not a closed estimate.
 
 **Operator.** The blob is scored. B17e is scored.
-Next: field occupation (B18e). Finer stays B22e.
+Field occupation is not an a priori (B18e).
+Next: field glue (B19e). Finer stays B22e.
 Do not spawn \(n=64\). B4c stands. Do not cancel
 to \(\Phi\).
 
@@ -108,9 +110,9 @@ to \(\Phi\).
 | B28b | **fail** | sitting in one sign is a class |
 | B28c | **fail** | peaked \(L^2\) is \(\int\|\omega\|_\infty\) |
 | B28d | **fail** | turning \(\nu\) down is continuation |
-| B28e | **open** | field occupation closes \(X\) |
+| B28e | **fail** | field occupation closes \(X\) |
 | B28f | **fail** | this retunes the PDE |
-| domain B | **open** | field-occupation leftover is B18e |
+| domain B | **open** | field-glue leftover is B19e |
 
 Tesla’s line: one-sided is a number. Large versus
 \(D\) is a different number. A leftover that no

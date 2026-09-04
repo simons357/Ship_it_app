@@ -115,7 +115,7 @@ not done).
 | B18b | the clock left CONC and saved \(X\) | **fail** | Viscosity. No flip. |
 | B18c | CONC occupation is short on these runs | **fail** | \(\tau_{\mathrm{C}}=T\). |
 | B18d | cubic-live time is nonempty | **fail** | Zero samples with \(\lvert P\rvert/D\ge 0.05\). |
-| B18e | field occupation closes \(X\) | **open** | A readable clock is not continuation. |
+| B18e | field occupation closes \(X\) | **fail** | Occupation of CONC \(\neq\) continuation (B29). |
 | B18f | reading the path retunes the PDE | **fail** | Knob on the check. |
 | B19 | both \(\dot X\) readable | **pass** | Sketch versus NS, same box. |
 | B19a | \(j_*=2\) model sign matches NS | **fail** | Model \(+2.25\); NS \(\approx-22.5\). |
@@ -185,8 +185,15 @@ not done).
 | B28b | sitting in one sign is a class | **fail** | Localization is a knob. |
 | B28c | peaked \(L^2\) is \(\int\|\omega\|_\infty\) | **fail** | Ratio \(\sim 2.4\) is not the max. |
 | B28d | turning \(\nu\) down is continuation | **fail** | Knob on the check. |
-| B28e | field occupation closes \(X\) | **open** | Leftover B18e. |
+| B28e | field occupation closes \(X\) | **fail** | Scored as B18e / B29. |
 | B28f | scoring this retunes the PDE | **fail** | Knob on the estimate. |
+| B29 | clock, full CONC, visc-owned \(X\) readable | **pass** | Same caches as B18. No new FFT. |
+| B29a | occupying CONC the whole interval closes \(X\) | **fail** | Viscosity. The clock did not leave. |
+| B29b | \(\tau_{\mathrm{C}}=T\) is a short visit | **fail** | B18c already missed. |
+| B29c | CONC occupation is a live cubic | **fail** | Zero live samples. |
+| B29d | \(\tau_{\mathrm{C}}=T\) is \(\int\|\omega\|_\infty\) | **fail** | A clock column is not the max. |
+| B29e | matching the sketch closes \(X\) | **open** | Leftover B19e. |
+| B29f | scoring this retunes the PDE | **fail** | Knob on the estimate. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -346,7 +353,7 @@ occupation lives in [`TRACK-B-FIELD-OCC.md`](TRACK-B-FIELD-OCC.md).
 Clock on a path **pass**. Paths stay CONC **pass**. Clock
 saved \(X\) **fail**. CONC occupation short **fail**.
 Cubic-live time **fail**. Field occupation closes \(X\)
-**open**. Not a PDE retune **fail**.
+**fail**. Not a PDE retune **fail**.
 
 **B19 / B19a / B19b / B19c / B19d / B19e / B19f.** Field
 glue lives in [`TRACK-B-FIELD-GLUE.md`](TRACK-B-FIELD-GLUE.md).
@@ -418,15 +425,23 @@ blob as an a priori lives in
 One-sided leftover closes \(X\) **fail**. Sitting in one
 sign is a class **fail**. Peaked \(L^2\) is
 \(\int\|\omega\|_\infty\) **fail**. Turning \(\nu\) down is
-continuation **fail**. Occupation leftover **open**.
+continuation **fail**. Occupation leftover **fail**.
 Not a PDE retune **fail**.
+
+**B29 / B29a / B29b / B29c / B29d / B29e / B29f.** Field
+occupation as an a priori lives in
+[`TRACK-B-CLOCK.md`](TRACK-B-CLOCK.md). Readable **pass**.
+Staying CONC closes \(X\) **fail**. \(\tau_{\mathrm{C}}=T\)
+is a short visit **fail**. CONC occupation is a live
+cubic **fail**. Clock is \(\int\|\omega\|_\infty\) **fail**.
+Glue leftover **open**. Not a PDE retune **fail**.
 
 ---
 
 ## What is still the next write
 
 1. Stretching budget is not an a priori (B15e).
-   Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Finer (\(n>32\))
+   Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field-glue leftover is B19e. Finer (\(n>32\))
    stays a box knob (B22e). Do not spawn \(n=64\). B4c
    stands. Angular \(1/r^2\) does not. Do not cancel to
    \(\Phi\). Do not write \(c=8\) into the PDE.
@@ -463,8 +478,9 @@ python3 scripts/track_b_align.py
 python3 scripts/track_b_payers.py
 python3 scripts/track_b_net.py
 python3 scripts/track_b_blob.py
+python3 scripts/track_b_clock.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net tests.test_track_b_blob
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net tests.test_track_b_blob tests.test_track_b_clock
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

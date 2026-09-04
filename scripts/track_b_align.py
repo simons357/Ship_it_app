@@ -90,7 +90,7 @@ def lemma_budget_leftover() -> dict:
         "B25e_budget_leftover",
         "the aligned stretching budget closes X",
         "fail",
-        "Scored as B15e / B26. A share of (ω·Sω)_+ is not continuation. Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Do not spawn n=64.",
+        "Scored as B15e / B26. A share of (ω·Sω)_+ is not continuation. Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field-glue leftover is B19e. Do not spawn n=64.",
     )
 
 
@@ -132,7 +132,7 @@ def run(out: Path | None = None) -> dict:
         "counts": counts,
         "next_da_move": (
             "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). "
-            "Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Finer (n>32) stays a box knob (B22e). "
+            "Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field-glue leftover is B19e. Finer (n>32) stays a box knob (B22e). "
             "Do not spawn n=64. B4c stands. Do not cancel to Φ."
         ),
     }

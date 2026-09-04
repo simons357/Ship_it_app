@@ -92,8 +92,8 @@ def lemma_occupation_leftover() -> dict:
     return rec(
         "B28e_occupation_leftover",
         "field occupation of CONC closes X",
-        "open",
-        "The blob is scored. The leftover close on the clock along a path is B18e. Not a bigger FFT. Do not spawn n=64.",
+        "fail",
+        "Scored as B18e / B29. A clock that stays CONC is not continuation. Field-glue leftover is B19e. Do not spawn n=64.",
     )
 
 
@@ -136,7 +136,7 @@ def run(out: Path | None = None) -> dict:
         "next_da_move": (
             "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). "
             "Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). "
-            "Field-occupation leftover is B18e. Finer (n>32) stays a box knob (B22e). "
+            "Field occupation is not an a priori (B18e). Field-glue leftover is B19e. Finer (n>32) stays a box knob (B22e). "
             "Do not spawn n=64. B4c stands. Do not cancel to Φ."
         ),
     }

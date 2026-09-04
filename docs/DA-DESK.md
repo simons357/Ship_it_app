@@ -152,7 +152,7 @@ Domain B **never** passes regularity. `check B` stays
 | B17f | this retunes the PDE | **fail** |
 | B18 / B18a | field clock on a path; paths stay CONC | **pass** |
 | B18b / B18c / B18d | clock saved \(X\); CONC short; cubic-live time | **fail** |
-| B18e | field occupation closes \(X\) | **open** |
+| B18e | field occupation closes \(X\) | **fail** |
 | B18f | this retunes the PDE | **fail** |
 | B19 | both \(\dot X\) readable | **pass** |
 | B19a / B19b / B19c / B19d | sign match; NS is B9b; \(\alpha_c\) is cubic; \(\gamma\) is visc | **fail** |
@@ -192,12 +192,16 @@ Domain B **never** passes regularity. `check B` stays
 | B27f | this retunes the PDE | **fail** |
 | B28 | blob, one-sided net, visc-owned cubic readable | **pass** |
 | B28a / B28b / B28c / B28d | one-sided leftover closes \(X\); sign is a class; peaked \(L^2\) is \(\int\|\omega\|_\infty\); \(\nu\) knob is continuation | **fail** |
-| B28e | field occupation closes \(X\) | **open** |
+| B28e | field occupation closes \(X\) | **fail** |
 | B28f | this retunes the PDE | **fail** |
+| B29 | clock, full CONC, visc-owned \(X\) readable | **pass** |
+| B29a / B29b / B29c / B29d | stay closes \(X\); \(\tau_{\mathrm{C}}=T\) is a short visit; CONC is a live cubic; clock is \(\int\|\omega\|_\infty\) | **fail** |
+| B29e | matching the sketch closes \(X\) | **open** |
+| B29f | this retunes the PDE | **fail** |
 | classical regularity | — | **open** |
 
 **Next B write:** Stretching budget is not an a priori
-(B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Finer
+(B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field-glue leftover is B19e. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.
 Angular \(1/r^2\) does not. We are not tuning the
 equation. Do not spawn \(n=64\).
