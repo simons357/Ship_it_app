@@ -2795,6 +2795,54 @@
       "why": "The PDE is untouched. Leftover knobs are knobs on the check. No Q1. No \u03b5. Do not type c=8 into the equation. Do not spawn n=64."
     },
     {
+      "name": "B37_residual_readable",
+      "statement": "three holes of R are readable on the n=32 caches: aligned P+, unaligned P+, off-E_c leftover",
+      "verdict": "pass",
+      "why": "Same caches as B15 / B16. No new FFT. No n=64. Named holes are not an integrable R.",
+      "n": 32,
+      "hole1_mean": 0.6521699381992082,
+      "hole2_mean": 0.34783006180079185,
+      "hole3_mean": 0.019848853748758426,
+      "pd_max": 3.9974823859864546e-05,
+      "xdot_max": -22.383052674332028
+    },
+    {
+      "name": "B37a_residual_not_a_priori",
+      "statement": "naming the holes of R is a closed estimate for classical X",
+      "verdict": "fail",
+      "why": "A synthetic split is an apparatus. R is still the unknown. Sit down on leftover knobs."
+    },
+    {
+      "name": "B37b_residual_not_continuation",
+      "statement": "readable holes make R integrable and therefore continue X",
+      "verdict": "fail",
+      "why": "Readability is not integrability. Hole 2 is the live cubic. Hole 1 is still an if. Hole 3 is not all-data Hardy."
+    },
+    {
+      "name": "B37c_residual_not_ns",
+      "statement": "the synthetic R is an NS a priori",
+      "verdict": "fail",
+      "why": "A skeleton with blanks is not sitting the packet. Do not promote a reconstruction to a type."
+    },
+    {
+      "name": "B37d_residual_not_integral_max",
+      "statement": "the residual tool is an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "Named holes are not \u222b\u2016\u03c9\u2016_\u221e. Beale still asks for the max."
+    },
+    {
+      "name": "B37e_residual_not_regularity",
+      "statement": "the residual tool decides classical regularity",
+      "verdict": "fail",
+      "why": "No. Domain B stays open. The leftover is still a closed estimate for X. Do not spawn n=64."
+    },
+    {
+      "name": "B37f_not_a_pde_retune",
+      "statement": "naming the holes of R is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. The tool is a knob on the check. No Q1. No \u03b5. Do not type c=8. Do not spawn n=64."
+    },
+    {
       "name": "B_regularity",
       "statement": "classical 3D NS is globally regular (keep 1/r^4, no Q1)",
       "verdict": "open",
@@ -2802,8 +2850,8 @@
     }
   ],
   "counts": {
-    "pass": 53,
-    "fail": 162,
+    "pass": 54,
+    "fail": 168,
     "open": 1
   },
   "how_far": [
@@ -2875,7 +2923,9 @@
     "B35c stack of fails is not NS (fail); leftover close is not \u222b\u2016\u03c9\u2016_\u221e (fail); regularity leftover scored (B35e fail); not a PDE retune (fail)",
     "B36 leftover catalog miss+leftover-close miss readable (pass); leftover knobs do not decide regularity (fail); catalog not continuation (fail)",
     "B36c naming the object is not NS (fail); leftover catalog is not \u222b\u2016\u03c9\u2016_\u221e (fail); this write does not decide regularity (fail); not a PDE retune (fail)",
+    "B37 three holes of R readable on n=32 (pass); naming holes is not a closed estimate (fail); readable is not integrable (fail)",
+    "B37c synthetic R is not NS (fail); residual tool is not \u222b\u2016\u03c9\u2016_\u221e (fail); this write does not decide regularity (fail); not a PDE retune (fail)",
     "classical regularity remains open"
   ],
-  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). The residual tool names the holes in R. It is not an a priori. Regularity stays open. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }
