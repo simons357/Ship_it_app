@@ -1637,7 +1637,7 @@
       "name": "B18e_field_occ_not_X_a_priori",
       "statement": "field occupation closes a bound for classical X",
       "verdict": "fail",
-      "why": "Scored as B29. Occupation of CONC is not continuation. The clock did not leave. Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Regularity leftover is open."
+      "why": "Scored as B29. Occupation of CONC is not continuation. The clock did not leave. Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open."
     },
     {
       "name": "B18f_not_a_pde_retune",
@@ -1718,7 +1718,7 @@
       "name": "B19e_field_glue_not_X_a_priori",
       "statement": "matching the sketch to NS \u1e8a closes a bound for classical X",
       "verdict": "fail",
-      "why": "Scored as B30. A wrong-sign sketch is not continuation. The leftover cubic was not the field. NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Regularity leftover is open."
+      "why": "Scored as B30. A wrong-sign sketch is not continuation. The leftover cubic was not the field. NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open."
     },
     {
       "name": "B19f_not_a_pde_retune",
@@ -1806,7 +1806,7 @@
       "name": "B20e_ns_climb_not_X_a_priori",
       "statement": "a field climb at this box closes a bound for classical X",
       "verdict": "fail",
-      "why": "Scored as B31. The field did not hand us c=8. A missing saving rate is not continuation. Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Regularity leftover is open."
+      "why": "Scored as B31. The field did not hand us c=8. A missing saving rate is not continuation. Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open."
     },
     {
       "name": "B20f_not_a_pde_retune",
@@ -1872,7 +1872,7 @@
       "name": "B21e_sketch_not_X_a_priori",
       "statement": "matching the c=8 sketch to a longer / finer NS run closes a bound for classical X",
       "verdict": "fail",
-      "why": "Scored as B32. A short window is not the sitting of B11c. The sketch grew. The field fell. Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Regularity leftover is open."
+      "why": "Scored as B32. A short window is not the sitting of B11c. The sketch grew. The field fell. Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open."
     },
     {
       "name": "B21f_not_a_pde_retune",
@@ -1962,7 +1962,7 @@
       "name": "B22e_finer_open",
       "statement": "a finer box (n>32) produces a saving climb",
       "verdict": "fail",
-      "why": "Scored as B33. A bigger FFT is not continuation. n is a knob on the box. Finer DNS is not an a priori (B23e). Regularity leftover is open. Do not spawn n=64."
+      "why": "Scored as B33. A bigger FFT is not continuation. n is a knob on the box. Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64."
     },
     {
       "name": "B22f_not_a_pde_retune",
@@ -2009,7 +2009,7 @@
       "name": "B23e_finer_still_open",
       "statement": "a finer box (n>32) makes the DNS run an a priori",
       "verdict": "fail",
-      "why": "Scored as B34. Same knob as B22e. A finer DNS run is not continuation. Regularity leftover is open. Do not spawn n=64."
+      "why": "Scored as B34. Same knob as B22e. A finer DNS run is not continuation. Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64."
     },
     {
       "name": "B23f_not_a_pde_retune",
@@ -2116,7 +2116,7 @@
       "name": "B25e_budget_leftover",
       "statement": "the aligned stretching budget closes X",
       "verdict": "fail",
-      "why": "Scored as B15e / B26. A share of (\u03c9\u00b7S\u03c9)_+ is not continuation. Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Regularity leftover is open. Do not spawn n=64."
+      "why": "Scored as B15e / B26. A share of (\u03c9\u00b7S\u03c9)_+ is not continuation. Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64."
     },
     {
       "name": "B25f_not_a_pde_retune",
@@ -2206,7 +2206,7 @@
       "name": "B26e_enstrophy_leftover",
       "statement": "the enstrophy balance closes X",
       "verdict": "fail",
-      "why": "Scored as B16e / B27. A cancelled net is not continuation. Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Regularity leftover is open. Do not spawn n=64."
+      "why": "Scored as B16e / B27. A cancelled net is not continuation. Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64."
     },
     {
       "name": "B26f_not_a_pde_retune",
@@ -2294,7 +2294,7 @@
       "name": "B27e_coherent_leftover",
       "statement": "the signed-strain blob closes X",
       "verdict": "fail",
-      "why": "Scored as B17e / B28. A one-sided leftover is not continuation. Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Regularity leftover is open. Do not spawn n=64."
+      "why": "Scored as B17e / B28. A one-sided leftover is not continuation. Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64."
     },
     {
       "name": "B27f_not_a_pde_retune",
@@ -2342,7 +2342,7 @@
       "name": "B28e_occupation_leftover",
       "statement": "field occupation of CONC closes X",
       "verdict": "fail",
-      "why": "Scored as B18e / B29. A clock that stays CONC is not continuation. Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Regularity leftover is open. Do not spawn n=64."
+      "why": "Scored as B18e / B29. A clock that stays CONC is not continuation. Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64."
     },
     {
       "name": "B28f_not_a_pde_retune",
@@ -2416,7 +2416,7 @@
       "name": "B29e_glue_leftover",
       "statement": "matching the two-regime sketch closes X",
       "verdict": "fail",
-      "why": "Scored as B19e / B30. A wrong-sign sketch is not continuation. NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Regularity leftover is open. Do not spawn n=64."
+      "why": "Scored as B19e / B30. A wrong-sign sketch is not continuation. NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64."
     },
     {
       "name": "B29f_not_a_pde_retune",
@@ -2471,7 +2471,7 @@
       "name": "B30e_climb_leftover",
       "statement": "a field climb law closes X",
       "verdict": "fail",
-      "why": "Scored as B20e / B31. A missing saving rate is not continuation. Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Regularity leftover is open. Do not spawn n=64."
+      "why": "Scored as B20e / B31. A missing saving rate is not continuation. Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64."
     },
     {
       "name": "B30f_not_a_pde_retune",
@@ -2532,7 +2532,7 @@
       "name": "B31e_sketch_leftover",
       "statement": "matching the prescribed-c sketch closes X",
       "verdict": "fail",
-      "why": "Scored as B21e / B32. A short window is not the sitting. Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Regularity leftover is open. Do not spawn n=64."
+      "why": "Scored as B21e / B32. A short window is not the sitting. Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64."
     },
     {
       "name": "B31f_not_a_pde_retune",
@@ -2588,7 +2588,7 @@
       "name": "B32e_finer_leftover",
       "statement": "a finer box (n>32) closes X",
       "verdict": "fail",
-      "why": "Scored as B22e / B33. A bigger FFT is not continuation. Finer DNS is not an a priori (B23e). Regularity leftover is open. Do not spawn n=64."
+      "why": "Scored as B22e / B33. A bigger FFT is not continuation. Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64."
     },
     {
       "name": "B32f_not_a_pde_retune",
@@ -2646,7 +2646,7 @@
       "name": "B33e_dns_finer_leftover",
       "statement": "a finer box makes the DNS run an a priori",
       "verdict": "fail",
-      "why": "Scored as B23e / B34. A finer DNS run is not continuation. Regularity leftover is open. Do not spawn n=64."
+      "why": "Scored as B23e / B34. A finer DNS run is not continuation. Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64."
     },
     {
       "name": "B33f_not_a_pde_retune",
@@ -2693,14 +2693,60 @@
     {
       "name": "B34e_regularity_leftover",
       "statement": "a leftover close writes a bound for classical X",
-      "verdict": "open",
-      "why": "Finer DNS is scored. The leftover is classical regularity. No closed estimate for X. Do not spawn n=64."
+      "verdict": "fail",
+      "why": "Scored as B35. A leftover close is a knob on the check. It does not write X. Regularity stays open. Do not spawn n=64."
     },
     {
       "name": "B34f_not_a_pde_retune",
       "statement": "scoring finer DNS as not an a priori is a retune of classical Navier\u2013Stokes",
       "verdict": "fail",
       "why": "The PDE is untouched. n is a knob on the box. No Q1. No \u03b5. Do not type c=8 into the equation. Do not spawn n=64."
+    },
+    {
+      "name": "B35_close_readable",
+      "statement": "finer-box miss, finer-DNS miss, and the leftover catalog are readable together",
+      "verdict": "pass",
+      "why": "B22e and B23e are scored. The leftover knobs missed. Typed c is not written into the PDE.",
+      "T_long": 0.384,
+      "t_room": 0.375,
+      "c_inc_max": 0.001963109678038144,
+      "c_save": 8.0
+    },
+    {
+      "name": "B35a_close_not_a_priori",
+      "statement": "a leftover close writes a bound for classical X",
+      "verdict": "fail",
+      "why": "A catalog of fails is not continuation. Leftover knobs are knobs on the check. They do not write X."
+    },
+    {
+      "name": "B35b_catalog_not_continuation",
+      "statement": "scoring B14d through B23e is a continuation argument for classical X",
+      "verdict": "fail",
+      "why": "Continuation is an estimate, not a list of missed slogans. The field still has no bound."
+    },
+    {
+      "name": "B35c_fails_not_ns",
+      "statement": "a stack of leftover fails is still an NS a priori",
+      "verdict": "fail",
+      "why": "Failing a knob is not sitting the packet. Do not promote a catalog to a type."
+    },
+    {
+      "name": "B35d_close_not_integral_max",
+      "statement": "leftover closes are an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "A leftover close is a knob on the check. It is not \u222b\u2016\u03c9\u2016_\u221e. Beale still asks for the max."
+    },
+    {
+      "name": "B35e_domain_leftover",
+      "statement": "classical regularity is decided by leftover closes",
+      "verdict": "open",
+      "why": "The leftover knobs are scored. The leftover is the object: a closed estimate for X. Domain B stays open."
+    },
+    {
+      "name": "B35f_not_a_pde_retune",
+      "statement": "scoring leftover closes as not an a priori is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. Leftover closes are knobs on the check. No Q1. No \u03b5. Do not type c=8 into the equation. Do not spawn n=64."
     },
     {
       "name": "B_regularity",
@@ -2710,8 +2756,8 @@
     }
   ],
   "counts": {
-    "pass": 51,
-    "fail": 149,
+    "pass": 52,
+    "fail": 155,
     "open": 2
   },
   "how_far": [
@@ -2778,8 +2824,10 @@
     "B33 longer miss+empty high shells+short window readable (pass); finer not an a priori (fail); FFT not continuation (fail)",
     "B33c unrun n=64 is not NS (fail); finer is not \u222b\u2016\u03c9\u2016_\u221e (fail); DNS leftover scored (B23e fail); not a PDE retune (fail)",
     "B34 DNS miss+refused no-blow+finer-box miss readable (pass); finer DNS not an a priori (fail); mesh not continuation (fail)",
-    "B34c unrun finer DNS is not NS (fail); mesh is not \u222b\u2016\u03c9\u2016_\u221e (fail); regularity leftover open; not a PDE retune (fail)",
+    "B34c unrun finer DNS is not NS (fail); mesh is not \u222b\u2016\u03c9\u2016_\u221e (fail); leftover close scored (B34e fail); not a PDE retune (fail)",
+    "B35 leftover catalog+finer miss+DNS miss readable (pass); leftover close not an a priori (fail); catalog not continuation (fail)",
+    "B35c stack of fails is not NS (fail); leftover close is not \u222b\u2016\u03c9\u2016_\u221e (fail); regularity leftover open; not a PDE retune (fail)",
     "classical regularity remains open"
   ],
-  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Regularity leftover is open. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }
