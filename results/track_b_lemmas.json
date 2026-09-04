@@ -822,7 +822,7 @@
       "name": "B10c_climbing_conc_open",
       "statement": "CONC with climbing j* is a closed estimate for X",
       "verdict": "open",
-      "why": "High j* sits on the glue ODE. Climbing is broken out as B11. NS did not force a saving c (B11d). The leftover is whether the sketch is an a priori (B11e)."
+      "why": "High j* sits on the glue ODE. Climbing is broken out as B11. NS did not force a saving c (B11d). The sketch is not an a priori (B11e). Finer/longer is B13e."
     },
     {
       "name": "B10d_not_a_pde_retune",
@@ -911,8 +911,8 @@
     {
       "name": "B11e_climb_not_X_a_priori",
       "statement": "the climbing model is a closed a priori bound for classical X",
-      "verdict": "open",
-      "why": "A prescribed c is a sketch. Slow dies, fast sits. NS did not pick c."
+      "verdict": "fail",
+      "why": "Prescribed c=8 sits on the ODE (B11c). NS did not pick that c (B11d). On the readable window the climb has not reached the viscous room (B21). A sketch that grows while the field falls is not an a priori."
     },
     {
       "name": "B12_barycenter",
@@ -1815,6 +1815,72 @@
       "why": "The PDE is untouched. c is a knob on the estimate. No Q1. No \u03b5. Do not type B11c into the equation."
     },
     {
+      "name": "B21_window_rates",
+      "statement": "the c=8 climb ODE and the NS packet are both readable on the B18 window; B11c still sits on the long ODE",
+      "verdict": "pass",
+      "why": "Same T=0.064 as B18 / B19 / B20. Long ODE is B11c. Typed c is not written into the PDE.",
+      "T": 0.064,
+      "ode_jT": 2.5120000000000005,
+      "ode_XT": 2.6716498591357105,
+      "ns_jbarT": 2.9556103131951192,
+      "ns_XT": 1.4263585606002107,
+      "long_j_final": 8.500400000000395,
+      "long_T": 0.81255
+    },
+    {
+      "name": "B21a_not_the_room",
+      "statement": "on the working-box window, prescribed c=8 has already reached the viscous room j* \u2265 5",
+      "verdict": "fail",
+      "why": "j: 2 \u2192 2.51. Time to j=5 at c=8 is 0.375. The window is 0.064. The sitting of B11c has not arrived.",
+      "jT": 2.5120000000000005,
+      "j_room": 5.0,
+      "t_room": 0.375,
+      "T": 0.064,
+      "window_over_room": 0.17066666666666666
+    },
+    {
+      "name": "B21b_not_the_sitting",
+      "statement": "the B11c sitting path is the NS packet on this window",
+      "verdict": "fail",
+      "why": "Climb ODE X grows 2.5 \u2192 2.67. NS X falls 2.5 \u2192 1.43. B11c sits on T \u2248 0.81. This box is T=0.064.",
+      "dX_ode": 0.17164985913571051,
+      "dX_ns": -1.0736414393997893,
+      "sign_match": false,
+      "long_T": 0.81255,
+      "long_X_max": 2.672042970530018
+    },
+    {
+      "name": "B21c_delta_j_not_prescribed",
+      "statement": "NS \u0394j_bar on the packet equals the prescribed climb c T",
+      "verdict": "fail",
+      "why": "Prescribed \u0394j = 0.512. NS \u0394j_bar \u2248 \u22120.015. The field went the other way.",
+      "dj_ode": 0.5120000000000005,
+      "dj_ns": -0.015047840287317094,
+      "c_mean_ns": -0.2351225044893296,
+      "c_save": 8.0
+    },
+    {
+      "name": "B21d_sketch_did_not_save",
+      "statement": "on the working-box window the c=8 sketch already sits (X falling, j* in the viscous room)",
+      "verdict": "fail",
+      "why": "Model X still grows. t=0 \u1e8a = +2.25, same fat cubic as frozen j*=2. Climbing has not owned the cubic yet.",
+      "dX_ode": 0.17164985913571051,
+      "Xdot0": 2.25,
+      "jT": 2.5120000000000005
+    },
+    {
+      "name": "B21e_sketch_not_X_a_priori",
+      "statement": "matching the c=8 sketch to a longer / finer NS run closes a bound for classical X",
+      "verdict": "open",
+      "why": "The sketch is not this field. Finer/longer is B13e. Typing c=8 into the PDE is a retune. Not continuation."
+    },
+    {
+      "name": "B21f_not_a_pde_retune",
+      "statement": "reading the c=8 ODE against the NS window, or writing c=8 into classical Navier\u2013Stokes, is a retune of the PDE",
+      "verdict": "fail",
+      "why": "The PDE is untouched. c is a knob on the estimate. No Q1. No \u03b5. Do not type B11c into the equation."
+    },
+    {
       "name": "B_regularity",
       "statement": "classical 3D NS is globally regular (keep 1/r^4, no Q1)",
       "verdict": "open",
@@ -1822,8 +1888,8 @@
     }
   ],
   "counts": {
-    "pass": 37,
-    "fail": 52,
+    "pass": 38,
+    "fail": 58,
     "open": 15
   },
   "how_far": [
@@ -1844,7 +1910,7 @@
     "B10 energy ceiling (pass); B9b unbounded path is not NS (fail); not a PDE retune (fail)",
     "B10b ceiling does not follow a climbing j* (fail); climbing CONC open (B10c)",
     "B11 climb bookkeeping (pass); bounded j* bounds X (pass); slow climb blows (fail)",
-    "B11c fast climb sits (pass); NS did not force a saving c (B11d fail); sketch is not an a priori (B11e)",
+    "B11c fast climb sits (pass); NS did not force a saving c (B11d fail); sketch is not an a priori (B11e fail)",
     "B12 barycenter + c from RHS (pass); t=0 packets do not produce c\u22658 (fail)",
     "B12c viscosity pulls j_bar down (fail); evolved cascade open (B12d)",
     "B13 short run finite (pass); no saving climb (fail); no high fill (fail); stays CONC (pass)",
@@ -1863,7 +1929,9 @@
     "B19c \u03b1_c is not the field cubic (fail); \u03b3 is not NS visc (fail); field glue not an a priori (open)",
     "B20 c readable on blob and B18 paths (pass); blob t=0 not c\u22658 (fail); path mean not c\u22658 (fail)",
     "B20c visc is not a ladder on the blob (fail); j_bar offset is not a climb (fail); not an a priori (open)",
+    "B21 ODE and NS readable on the window (pass); c=8 not yet in the viscous room (fail); not the sitting path (fail)",
+    "B21c NS \u0394j is not cT (fail); sketch did not sit on this window (fail); not an a priori (open)",
     "classical regularity remains open"
   ],
-  "next_da_move": "Climb sketch as an NS a priori (B11e). NS did not force a saving c at this box (B11d). Finer/longer (B13e) stays open. B4c stands. Do not write c=8 into the PDE."
+  "next_da_move": "Finer/longer climb (B13e). The climb sketch is not an NS a priori (B11e). NS did not force a saving c (B11d). B4c stands. Do not write c=8 into the PDE."
 }
