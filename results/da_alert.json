@@ -1,8 +1,8 @@
 {
   "meta": {
-    "source": "trackb",
-    "t": "2026-09-04T06:56:45.523731+00:00",
-    "significant": true,
+    "source": "alert",
+    "t": "2026-09-04T07:08:41.603461+00:00",
+    "significant": false,
     "baseline": false,
     "no_phone_in_repo": true,
     "delivery": "write DA-ALERT.txt; POST DA_ALERT_WEBHOOK if set"
@@ -17,28 +17,16 @@
     "U.F_exists": "fail",
     "U.destination": "open"
   },
-  "events": [
-    {
-      "key": "B.B4b_hardy_not_I_tube",
-      "slot": "B",
-      "was": "open",
-      "now": "fail",
-      "what": "The hope that Hardy's inequality eats the nasty 1/r^4 source in the vortex tube.",
-      "head": "That hope is dead for all data: the leftover 'wall' term can win.",
-      "next": "Stop treating Hardy as the close. Try a smaller class of data, or move to occupation time / the low Bony term."
-    }
-  ],
-  "plain": "TEXT\nB: That hope is dead for all data: the leftover 'wall' term can win.\n\nWHAT IT MEANS\nThe hope that Hardy's inequality eats the nasty 1/r^4 source in the vortex tube.\nIt went open \u2192 fail.\n\nWHAT TO DO\nStop treating Hardy as the close. Try a smaller class of data, or move to occupation time / the low Bony term.\n\nDO NOT\nTreat this as a theory of everything, or as the other tracks.\n",
-  "sms_lines": [
-    "B: That hope is dead for all data: the leftover 'wall' term can win."
-  ],
-  "recommendation": "Stop treating Hardy as the close. Try a smaller class of data, or move to occupation time / the low Bony term.",
+  "events": [],
+  "plain": "DA checked. Nothing significant flipped.\nNext: same as yesterday. Hardy \u2192 tube source, then the low product term.\n",
+  "sms_lines": [],
+  "recommendation": "Nothing flipped. Next write is occupation time of 3-CONC vs SPREAD.",
   "delivery": {
     "file": "/workspace/results/DA-ALERT.txt",
     "webhook": {
       "attempted": false,
       "ok": false,
-      "why": "no DA_ALERT_WEBHOOK"
+      "why": "not significant"
     }
   }
 }
