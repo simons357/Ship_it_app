@@ -106,7 +106,7 @@ class.
 
 **Operator.** The budget is scored. B15e is scored.
 The net is scored (B16e). The blob is scored (B17e). Field occupation is not an a priori
-(B18e). Next: field glue (B19e). Finer stays B22e.
+(B18e). Field glue is not an a priori (B19e). Next: NS climb (B20e). Finer stays B22e.
 Do not spawn \(n=64\). B4c stands. Do not cancel
 to \(\Phi\).
 
@@ -123,7 +123,7 @@ to \(\Phi\).
 | B15d | **fail** | short run empties the aligned budget |
 | B15e | **fail** | budget closes \(X\) |
 | B15f | **fail** | this retunes the PDE |
-| domain B | **open** | field-glue leftover is B19e |
+| domain B | **open** | NS-climb leftover is B20e |
 
 Tesla’s line: the cubic’s payers are a number. Time
 did not empty them.

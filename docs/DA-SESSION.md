@@ -381,7 +381,7 @@ this window; the sketch grows, NS falls. B11e is scored
 **fail**. Stretching budget is not an a priori. B15e is scored
 **fail**. Enstrophy balance is not an a priori. B16e is scored
 **fail**. Coherent blob is not an a priori. B17e is scored
-**fail**. Field occupation is not an a priori (B18e). Field-glue leftover is B19e. Finer is B22e. B4c
+**fail**. Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. Finer is B22e. B4c
 stands. Do not cancel to \(\Phi\). Do not spawn \(n=64\).
 See [`TRACK-B-BLOB.md`](TRACK-B-BLOB.md).
 

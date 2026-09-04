@@ -169,6 +169,9 @@ class DaMachineTests(unittest.TestCase):
         clock = classify_claim("field clock as an a priori bound for vorticity")
         self.assertEqual(clock["domain"], "B")
         self.assertEqual(clock["verdict"], "open")
+        match = classify_claim("matching the sketch as an a priori bound for vorticity")
+        self.assertEqual(match["domain"], "B")
+        self.assertEqual(match["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

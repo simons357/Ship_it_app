@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "field glue as an a priori",
+    "tuning_the_pde": false,
+    "tesla": "exacting, not a jerk. Sign of \u1e8a is a number. The j*=2 sketch grows. The NS packet falls.",
+    "domain_verdict": "open"
+  },
+  "lemmas": [
+    {
+      "name": "B30_match_readable",
+      "statement": "model versus NS rates, sign mismatch, and model-grows / field-falls are readable together",
+      "verdict": "pass",
+      "why": "Model \u1e8a = +2.25. NS \u1e8a \u2248 \u221222.5. Eight steps: model X grows. NS X falls. Typed c is not written into the PDE.",
+      "Xdot_ns": -22.52231116785621,
+      "Xdot_model": 2.2500000000000053,
+      "dX_ns": -1.0736414393997893,
+      "dX_model": 0.1716498591357114,
+      "sign_match": false
+    },
+    {
+      "name": "B30a_match_not_a_priori",
+      "statement": "matching the two-regime sketch to NS \u1e8a closes a bound for classical X",
+      "verdict": "fail",
+      "why": "The sketch pointed up. The field pointed down. A wrong-sign ODE is not continuation.",
+      "Xdot_ns": -22.52231116785621,
+      "Xdot_model": 2.2500000000000053
+    },
+    {
+      "name": "B30b_shrink_alpha_not_continuation",
+      "statement": "shrinking \u03b1_c until the signs match is a continuation argument for classical X",
+      "verdict": "fail",
+      "why": "Implied \u03b1 sits near 0 on the packet and ~0.006 on the blob. The sketch used 0.4 and 0.2. Detuning \u03b1_c is a knob.",
+      "alpha_ratio": {
+        "packet": 0.000144046309270497,
+        "blob": 0.03243849080653021
+      }
+    },
+    {
+      "name": "B30c_wrong_sign_not_ns",
+      "statement": "a typed ODE that grows while the packet falls is still an NS a priori",
+      "verdict": "fail",
+      "why": "B9b is a typed fat cubic. This field cancelled. Do not sit the sketch as the packet.",
+      "dX_ns": -1.0736414393997893,
+      "dX_model": 0.1716498591357114
+    },
+    {
+      "name": "B30d_match_not_integral_max",
+      "statement": "matching model \u1e8a to NS \u1e8a is an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "A sign of \u1e8a is not \u222b\u2016\u03c9\u2016_\u221e. A sketch that points the wrong way is not the max criterion."
+    },
+    {
+      "name": "B30e_climb_leftover",
+      "statement": "a field climb law closes X",
+      "verdict": "open",
+      "why": "The sketch is scored. The leftover close on NS climb is B20e. Not a bigger FFT. Do not spawn n=64."
+    },
+    {
+      "name": "B30f_not_a_pde_retune",
+      "statement": "scoring field glue as not an a priori is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. \u03b1_c is a knob on the estimate: a number you can miss. No Q1. No \u03b5."
+    }
+  ],
+  "counts": {
+    "pass": 1,
+    "fail": 5,
+    "open": 1
+  },
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+}

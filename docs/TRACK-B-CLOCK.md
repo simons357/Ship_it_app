@@ -44,8 +44,9 @@ of a live cubic.” Zero live samples.
 integral bound on the max vorticity.” A clock column
 is not \(\int\|\omega\|_\infty\).
 
-**B29e, open.** Field-glue leftover is B19e. The
-sketch versus the field. Not a bigger FFT.
+**B29e, fail** of “matching the sketch closes \(X\).”
+Scored as B19e / B30. A wrong-sign sketch is not
+continuation.
 
 **B29f, fail** of “this retunes the PDE.” The clock
 is a knob on the estimate.
@@ -84,7 +85,8 @@ save-by-leaving slogan missed.
 A clock is not a closed estimate.
 
 **Operator.** The clock is scored. B18e is scored.
-Next: field glue (B19e). Finer stays B22e. Do not
+Field glue is not an a priori (B19e). Next: NS climb
+(B20e). Finer stays B22e. Do not
 spawn \(n=64\). B4c stands. Do not cancel to \(\Phi\).
 
 ---
@@ -100,9 +102,9 @@ spawn \(n=64\). B4c stands. Do not cancel to \(\Phi\).
 | B29b | **fail** | \(\tau_{\mathrm{C}}=T\) is a short visit |
 | B29c | **fail** | CONC occupation is a live cubic |
 | B29d | **fail** | \(\tau_{\mathrm{C}}=T\) is \(\int\|\omega\|_\infty\) |
-| B29e | **open** | matching the sketch closes \(X\) |
+| B29e | **fail** | matching the sketch closes \(X\) |
 | B29f | **fail** | this retunes the PDE |
-| domain B | **open** | field-glue leftover is B19e |
+| domain B | **open** | NS-climb leftover is B20e |
 
 Tesla’s line: occupation is a number on a path. If
 the path never leaves CONC, the clock did not do

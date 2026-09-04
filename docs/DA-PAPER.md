@@ -253,7 +253,7 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B18f this retunes the PDE | **fail** |
 | B19 both \(\dot X\) readable | pass |
 | B19a / B19b / B19c / B19d sign match; NS is B9b; \(\alpha_c\) is cubic; \(\gamma\) is visc | **fail** |
-| B19e matching the sketch closes \(X\) | **open** |
+| B19e matching the sketch closes \(X\) | **fail** |
 | B19f this retunes the PDE | **fail** |
 | B20 \(c\) readable on blob and paths | pass |
 | B20a / B20b / B20c / B20d blob \(t=0\) \(c\ge 8\); path mean; visc ladder; offset is a climb | **fail** |
@@ -293,12 +293,16 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B28f this retunes the PDE | **fail** |
 | B29 clock, full CONC, visc-owned \(X\) readable | pass |
 | B29a / B29b / B29c / B29d stay closes \(X\); \(\tau_{\mathrm{C}}=T\) is a short visit; CONC is a live cubic; clock is \(\int\|\omega\|_\infty\) | **fail** |
-| B29e matching the sketch closes \(X\) | **open** |
+| B29e matching the sketch closes \(X\) | **fail** |
 | B29f this retunes the PDE | **fail** |
+| B30 rates, sign mismatch, model-grows / field-falls readable | pass |
+| B30a / B30b / B30c / B30d match closes \(X\); shrinking \(\alpha_c\) is continuation; wrong-sign ODE is NS; match is \(\int\|\omega\|_\infty\) | **fail** |
+| B30e a field climb law closes \(X\) | **open** |
+| B30f this retunes the PDE | **fail** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field-glue leftover is B19e. Finer (\(n>32\)) stays a box knob (B22e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\).
+Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. Finer (\(n>32\)) stays a box knob (B22e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\).
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 
@@ -342,11 +346,11 @@ The operator atlas is `docs/DA-DESK.md`. The machine note is `docs/DOMAIN-ARCHIT
 
 ## 9. Conclusion
 
-DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field-glue leftover is B19e. Finer is B22e. B4c stands. Angular \(1/r^2\) does not.
+DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. Finer is B22e. B4c stands. Angular \(1/r^2\) does not.
 
 The think tank is three benches and a corpus rule. The processes are classify, check, falsify, reconstruct, ablate, pipe, compute, and alert. The purpose is to keep the operator honest while ordinary AI proposes.
 
-That is the paper. Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field-glue leftover is B19e. Finer is B22e. B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
+That is the paper. Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. Finer is B22e. B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
 
 ---
 

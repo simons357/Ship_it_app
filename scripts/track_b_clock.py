@@ -96,8 +96,8 @@ def lemma_glue_leftover() -> dict:
     return rec(
         "B29e_glue_leftover",
         "matching the two-regime sketch closes X",
-        "open",
-        "The clock is scored. The leftover close on field glue is B19e. Not a bigger FFT. Do not spawn n=64.",
+        "fail",
+        "Scored as B19e / B30. A wrong-sign sketch is not continuation. NS-climb leftover is B20e. Do not spawn n=64.",
     )
 
 
@@ -139,7 +139,7 @@ def run(out: Path | None = None) -> dict:
         "next_da_move": (
             "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). "
             "Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). "
-            "Field occupation is not an a priori (B18e). Field-glue leftover is B19e. "
+            "Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),

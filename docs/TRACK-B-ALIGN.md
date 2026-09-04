@@ -97,7 +97,7 @@ A frame identity is not a closed estimate.
 
 **Operator.** Geometry is scored. B14d is scored.
 The budget is scored (B15e). The net is scored
-(B16e). The blob is scored (B17e). Field occupation is not an a priori (B18e). Next: field glue (B19e). Finer stays B22e. Do not spawn
+(B16e). The blob is scored (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). Next: NS climb (B20e). Finer stays B22e. Do not spawn
 \(n=64\). B4c stands. Do not cancel to \(\Phi\).
 
 ---
@@ -114,7 +114,7 @@ The budget is scored (B15e). The net is scored
 | B25d | **fail** | CF conditional is BKM |
 | B25e | **fail** | aligned budget closes \(X\) |
 | B25f | **fail** | this retunes the PDE |
-| domain B | **open** | field-glue leftover is B19e |
+| domain B | **open** | NS-climb leftover is B20e |
 
 Tesla’s line: alignment is a number. You can miss
 \(0.25\). The packets miss it.

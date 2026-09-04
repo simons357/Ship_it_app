@@ -167,8 +167,8 @@ def lemma_field_glue_not_close() -> dict:
     return rec(
         "B19e_field_glue_not_X_a_priori",
         "matching the sketch to NS Ẋ closes a bound for classical X",
-        "open",
-        "The sketch pointed the wrong way. Retuning α_c to the leftover is a knob, not continuation. Climb law is scored (B11d fail). Not continuation.",
+        "fail",
+        "Scored as B30. A wrong-sign sketch is not continuation. The leftover cubic was not the field. NS-climb leftover is B20e.",
     )
 
 
@@ -208,7 +208,7 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field-glue leftover is B19e. "
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),

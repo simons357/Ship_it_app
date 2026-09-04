@@ -91,7 +91,7 @@ A balance is not a closed estimate.
 
 **Operator.** The net is scored. B16e is scored.
 The blob is scored (B17e). Field occupation is not
-an a priori (B18e). Next: field glue (B19e).
+an a priori (B18e). Field glue is not an a priori (B19e). Next: NS climb (B20e).
 Finer stays B22e. Do not spawn \(n=64\).
 B4c stands. Do not cancel to \(\Phi\).
 
@@ -110,7 +110,7 @@ B4c stands. Do not cancel to \(\Phi\).
 | B27d | **fail** | identity is \(\int\|\omega\|_\infty\) |
 | B27e | **fail** | coherent leftover closes \(X\) |
 | B27f | **fail** | this retunes the PDE |
-| domain B | **open** | field-glue leftover is B19e |
+| domain B | **open** | NS-climb leftover is B20e |
 
 Tesla’s line: net production is a number. Viscosity
 owned this ensemble. That is not continuation.
