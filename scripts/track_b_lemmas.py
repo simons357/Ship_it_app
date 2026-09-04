@@ -1415,6 +1415,48 @@ def lemma_finer_priori_not_a_retune() -> dict:
     return fpnr()
 
 
+def lemma_mesh_priori_readable() -> dict:
+    from track_b_mesh import lemma_mesh_priori_readable as mpr
+
+    return mpr()
+
+
+def lemma_mesh_not_a_priori() -> dict:
+    from track_b_mesh import lemma_mesh_not_a_priori as mna
+
+    return mna()
+
+
+def lemma_mesh_not_continuation() -> dict:
+    from track_b_mesh import lemma_mesh_not_continuation as mnc
+
+    return mnc()
+
+
+def lemma_finer_dns_not_ns() -> dict:
+    from track_b_mesh import lemma_finer_dns_not_ns as fdns
+
+    return fdns()
+
+
+def lemma_mesh_not_integral_max() -> dict:
+    from track_b_mesh import lemma_mesh_not_integral_max as mnim
+
+    return mnim()
+
+
+def lemma_regularity_leftover() -> dict:
+    from track_b_mesh import lemma_regularity_leftover as rl
+
+    return rl()
+
+
+def lemma_mesh_priori_not_a_retune() -> dict:
+    from track_b_mesh import lemma_mesh_priori_not_a_retune as mpnr
+
+    return mpnr()
+
+
 def lemma_coherent_field() -> dict:
     from track_b_coherent import lemma_coherent_field as coh
 
@@ -1671,6 +1713,13 @@ def run(out: Path | None = None) -> dict:
         lemma_finer_not_integral_max(),
         lemma_dns_finer_leftover(),
         lemma_finer_priori_not_a_retune(),
+        lemma_mesh_priori_readable(),
+        lemma_mesh_not_a_priori(),
+        lemma_mesh_not_continuation(),
+        lemma_finer_dns_not_ns(),
+        lemma_mesh_not_integral_max(),
+        lemma_regularity_leftover(),
+        lemma_mesh_priori_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -1730,7 +1779,7 @@ def run(out: Path | None = None) -> dict:
             "B22 longer n=32 readable past room time (pass); not c≥8 (fail); not a ladder (fail)",
             "B22c no high fill (fail); clock did not save (fail); finer box not an a priori (B22e fail); DNS not an a priori (B13f fail)",
             "B23 short+longer DNS readable (pass); decaying packet not an a priori (fail); room time not continuation (fail)",
-            "B23c packet not all data (fail); no-blow not L∞ (fail); finer still open (B23e); not a PDE retune (fail)",
+            "B23c packet not all data (fail); no-blow not L∞ (fail); finer DNS not an a priori (B23e fail); not a PDE retune (fail)",
             "B24 B4c and B5b readable together (pass); angular not an a priori (fail); B4c not an a priori (fail)",
             "B24c R_D ≪ 1 is not L∞ (fail); not Hardy/Φ revive (fail); geometry leftover scored (B14d fail); not a PDE retune (fail)",
             "B25 identity+CF readable (pass); depletion not an a priori (fail); Lipschitz+CF not an a priori (fail)",
@@ -1750,12 +1799,14 @@ def run(out: Path | None = None) -> dict:
             "B32 window rates+missed room+sketch-grows/field-falls readable (pass); window not an a priori (fail); short not continuation (fail)",
             "B32c growing sketch is not NS (fail); window is not ∫‖ω‖_∞ (fail); finer leftover scored (B22e fail); not a PDE retune (fail)",
             "B33 longer miss+empty high shells+short window readable (pass); finer not an a priori (fail); FFT not continuation (fail)",
-            "B33c unrun n=64 is not NS (fail); finer is not ∫‖ω‖_∞ (fail); DNS leftover open (B23e); not a PDE retune (fail)",
+            "B33c unrun n=64 is not NS (fail); finer is not ∫‖ω‖_∞ (fail); DNS leftover scored (B23e fail); not a PDE retune (fail)",
+            "B34 DNS miss+refused no-blow+finer-box miss readable (pass); finer DNS not an a priori (fail); mesh not continuation (fail)",
+            "B34c unrun finer DNS is not NS (fail); mesh is not ∫‖ω‖_∞ (fail); regularity leftover open; not a PDE retune (fail)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). DNS leftover is B23e. "
-            "Do not spawn n=64. "
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). "
+            "Regularity leftover is open. Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),
     }

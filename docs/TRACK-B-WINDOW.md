@@ -46,7 +46,7 @@ not the max criterion.
 
 **B32e, fail** of “a finer box closes \(X\).”
 Scored as B22e / B33. A bigger FFT is not
-continuation. DNS leftover is B23e. Do not spawn
+continuation. Finer DNS is not an a priori (B23e). Regularity leftover is open. Do not spawn
 \(n=64\).
 
 **B32f, fail** of “this retunes the PDE.” The window
@@ -87,7 +87,7 @@ first two held. The a-priori slogan missed.
 A long ODE is not a short path.
 
 **Operator.** The window is scored. B21e is scored.
-Next: DNS leftover (B23e). Do not spawn \(n=64\). B4c
+Next: regularity leftover. Do not spawn \(n=64\). B4c
 stands. Do not cancel to \(\Phi\). Do not write
 \(c=8\) into the PDE.
 
@@ -106,7 +106,7 @@ stands. Do not cancel to \(\Phi\). Do not write
 | B32d | **fail** | matching the window is \(\int\|\omega\|_\infty\) |
 | B32e | **fail** | a finer box closes \(X\) |
 | B32f | **fail** | this retunes the PDE |
-| domain B | **open** | DNS leftover is B23e |
+| domain B | **open** | regularity leftover |
 
 Tesla’s line: the sitting of \(c=8\) is a long ODE.
 This window is short. The field did not follow.

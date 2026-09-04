@@ -23,7 +23,7 @@ class TrackBDnsTests(unittest.TestCase):
         self.assertEqual(by["B23b_room_time_not_continuation"]["verdict"], "fail")
         self.assertEqual(by["B23c_packet_not_all_data"]["verdict"], "fail")
         self.assertEqual(by["B23d_no_blow_not_bounded"]["verdict"], "fail")
-        self.assertEqual(by["B23e_finer_still_open"]["verdict"], "open")
+        self.assertEqual(by["B23e_finer_still_open"]["verdict"], "fail")
         self.assertEqual(by["B23f_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
@@ -31,6 +31,7 @@ class TrackBDnsTests(unittest.TestCase):
         self.assertGreater(T_LONG, T_ROOM)
         self.assertIn("B22e", payload["next_da_move"])
         self.assertIn("B23e", payload["next_da_move"])
+        self.assertIn("Regularity leftover", payload["next_da_move"])
         self.assertIn("B14d", payload["next_da_move"])
 
     def test_writeup_exists(self):

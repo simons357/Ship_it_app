@@ -52,8 +52,10 @@ data.” B9b fat slow CONC is not this run. Energy-class
 \(X\in L^\infty\).” Resolved decay is a reading.
 DNS-never-blew-up is refused as a close.
 
-**B23e, open.** Finer (\(n>32\)) is the only remaining
-box knob. Same leftover as B22e. Do not spawn \(n=64\).
+**B23e, fail** of “a finer box makes DNS an a
+priori.” Scored as B34. Same knob as B22e. A finer
+DNS run is not continuation. Regularity leftover is
+open. Do not spawn \(n=64\).
 
 **B23f, fail** of “this retunes the PDE.” \(T\) and
 \(n\) are knobs on the check.
@@ -120,7 +122,7 @@ B4c stands. Do not write \(c=8\) into the PDE.
 | B23b | **fail** | room-time length is continuation |
 | B23c | **fail** | the packet class is all data |
 | B23d | **fail** | no blow on \(n=32\) \(\Rightarrow X\in L^\infty\) |
-| B23e | **open** | finer makes DNS an a priori |
+| B23e | **fail** | finer makes DNS an a priori |
 | B23f | **fail** | this retunes the PDE |
 | domain B | **open** | finer (\(n>32\)) is a box knob (B22e) |
 

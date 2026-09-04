@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "finer DNS as an a priori",
+    "tuning_the_pde": false,
+    "n": 32,
+    "spawned_n64": false,
+    "tesla": "exacting, not a jerk. A finer DNS run is not continuation. Same knob as B22e. Do not spawn n=64.",
+    "domain_verdict": "open",
+    "c_save": 8.0,
+    "t_room": 0.375
+  },
+  "lemmas": [
+    {
+      "name": "B34_mesh_readable",
+      "statement": "n=32 DNS miss, refused no-blow, and the finer-box miss are readable together",
+      "verdict": "pass",
+      "why": "B23 already refused DNS-never-blew-up. B33 already refused a finer climb. Same box. Typed c is not written into the PDE.",
+      "T_long": 0.384,
+      "t_room": 0.375,
+      "c_inc_max": 0.001963109678038144,
+      "c_save": 8.0
+    },
+    {
+      "name": "B34a_mesh_not_a_priori",
+      "statement": "a finer box (n>32) makes the DNS run a closed a priori bound for classical X",
+      "verdict": "fail",
+      "why": "Same knob as B22e. A finer DNS run is not continuation. n is a knob on the box. Do not spawn n=64."
+    },
+    {
+      "name": "B34b_mesh_not_continuation",
+      "statement": "cashing n=64 DNS after a decaying n=32 path is continuation for classical X",
+      "verdict": "fail",
+      "why": "Continuation is an estimate, not a finer mesh. B23b already refused a longer interval. A finer grid is the same slogan.",
+      "T_long": 0.384,
+      "t_room": 0.375
+    },
+    {
+      "name": "B34c_finer_dns_not_ns",
+      "statement": "an unrun finer DNS box is still an NS a priori",
+      "verdict": "fail",
+      "why": "The field on this box decayed. A box you did not run is not the packet. Do not sit n=64 as the estimate."
+    },
+    {
+      "name": "B34d_mesh_not_integral_max",
+      "statement": "a finer DNS run is an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "A mesh is not \u222b\u2016\u03c9\u2016_\u221e. DNS-never-blew-up at a finer n is the same refused slogan as B23d."
+    },
+    {
+      "name": "B34e_regularity_leftover",
+      "statement": "a leftover close writes a bound for classical X",
+      "verdict": "open",
+      "why": "Finer DNS is scored. The leftover is classical regularity. No closed estimate for X. Do not spawn n=64."
+    },
+    {
+      "name": "B34f_not_a_pde_retune",
+      "statement": "scoring finer DNS as not an a priori is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. n is a knob on the box. No Q1. No \u03b5. Do not type c=8 into the equation. Do not spawn n=64."
+    }
+  ],
+  "counts": {
+    "pass": 1,
+    "fail": 5,
+    "open": 1
+  },
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Regularity leftover is open. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+}

@@ -150,7 +150,7 @@ not done).
 | B23b | room-time length is continuation | **fail** | An estimate, not a longer interval. |
 | B23c | the packet class is all data | **fail** | B9b and SPREAD are not this run. |
 | B23d | no blow on \(n=32\) \(\Rightarrow X\in L^\infty\) | **fail** | DNS-never-blew-up is refused. |
-| B23e | finer makes DNS an a priori | **open** | Same knob. Leftover close. Do not spawn \(n=64\). |
+| B23e | finer makes DNS an a priori | **fail** | Same knob as B22e. Scored as B34. |
 | B23f | scoring this retunes the PDE | **fail** | Knob on the check. |
 | B24 | B4c and B5b readable together | **pass** | \(R_D\) falls. \(R_{\mathrm{ang}}\) climbs. |
 | B24a | angular \(1/r^2\) closes \(X\) | **fail** | Same slogan as B5f. |
@@ -220,8 +220,15 @@ not done).
 | B33b | cashing \(n=64\) is continuation | **fail** | Continuation is an estimate, not a finer mesh. |
 | B33c | an unrun \(n=64\) is an NS a priori | **fail** | A box you did not run is not the packet. |
 | B33d | a finer box is \(\int\|\omega\|_\infty\) | **fail** | A mesh is not the max. |
-| B33e | finer makes DNS an a priori | **open** | Leftover B23e. |
+| B33e | finer makes DNS an a priori | **fail** | Scored as B23e / B34. |
 | B33f | scoring this retunes the PDE | **fail** | Knob on the box. |
+| B34 | DNS miss, refused no-blow, finer-box miss readable | **pass** | Same caches as B23 / B33. No \(n=64\). |
+| B34a | finer DNS closes \(X\) | **fail** | Same slogan as B23a at a finer \(n\). |
+| B34b | cashing \(n=64\) DNS is continuation | **fail** | A finer grid is not an estimate. |
+| B34c | an unrun finer DNS is an NS a priori | **fail** | A box you did not run is not the packet. |
+| B34d | finer DNS is \(\int\|\omega\|_\infty\) | **fail** | A mesh is not the max. |
+| B34e | a leftover close writes regularity | **open** | No closed estimate for \(X\). |
+| B34f | scoring this retunes the PDE | **fail** | Knob on the box. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -415,7 +422,7 @@ an a priori lives in [`TRACK-B-DNS.md`](TRACK-B-DNS.md).
 Readable **pass**. Decaying packet DNS is an a priori
 **fail**. Room-time length is continuation **fail**.
 Packet class is all data **fail**. No-blow \(\Rightarrow L^\infty\)
-**fail**. Finer box **open**. Not a PDE retune **fail**.
+**fail**. Finer box **fail**. Not a PDE retune **fail**.
 
 **B24 / B24a / B24b / B24c / B24d / B24e / B24f.** Tube
 budget as an a priori lives in
@@ -494,14 +501,22 @@ box as an a priori lives in
 A finer box closes \(X\) **fail**. Cashing \(n=64\) is
 continuation **fail**. Unrun \(n=64\) is NS **fail**.
 Finer is \(\int\|\omega\|_\infty\) **fail**. DNS leftover
-**open**. Not a PDE retune **fail**.
+**fail**. Not a PDE retune **fail**.
+
+**B34 / B34a / B34b / B34c / B34d / B34e / B34f.** Finer
+DNS as an a priori lives in
+[`TRACK-B-MESH.md`](TRACK-B-MESH.md). Readable **pass**.
+Finer DNS closes \(X\) **fail**. Cashing \(n=64\) DNS is
+continuation **fail**. Unrun finer DNS is NS **fail**.
+Finer DNS is \(\int\|\omega\|_\infty\) **fail**. Regularity
+leftover **open**. Not a PDE retune **fail**.
 
 ---
 
 ## What is still the next write
 
 1. Stretching budget is not an a priori (B15e).
-   Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). DNS leftover is B23e. Finer (\(n>32\))
+   Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Regularity leftover is open. Finer (\(n>32\))
    stays a box knob (B22e). Do not spawn \(n=64\). B4c
    stands. Angular \(1/r^2\) does not. Do not cancel to
    \(\Phi\). Do not write \(c=8\) into the PDE.
@@ -543,8 +558,9 @@ python3 scripts/track_b_match.py
 python3 scripts/track_b_saving.py
 python3 scripts/track_b_window.py
 python3 scripts/track_b_finer.py
+python3 scripts/track_b_mesh.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net tests.test_track_b_blob tests.test_track_b_clock tests.test_track_b_match tests.test_track_b_saving tests.test_track_b_window tests.test_track_b_finer
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net tests.test_track_b_blob tests.test_track_b_clock tests.test_track_b_match tests.test_track_b_saving tests.test_track_b_window tests.test_track_b_finer tests.test_track_b_mesh
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

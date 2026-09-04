@@ -115,7 +115,7 @@ scales, one sign of strain, same PDE.
 
 **Operator.** The blob is scored. B17e is scored.
 Field occupation is not an a priori (B18e).
-Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Next: DNS leftover (B23e). Finer stays B22e.
+Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Next: regularity leftover. Finer stays B22e.
 Do not spawn \(n=64\). B4c stands. Do not cancel
 to \(\Phi\).
 
@@ -132,7 +132,7 @@ to \(\Phi\).
 | B17d | **fail** | \(L^2\) blob is BKM |
 | B17e | **fail** | signed-strain blob closes \(X\) |
 | B17f | **fail** | this retunes the PDE |
-| domain B | **open** | DNS leftover is B23e |
+| domain B | **open** | regularity leftover |
 
 Tesla’s line: a Stokes eigenfunction is not a cubic.
 Sit the blob where \(S_{zz}\) keeps a sign. One-sided is

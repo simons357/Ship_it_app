@@ -25,7 +25,7 @@ class TrackBFinerTests(unittest.TestCase):
         self.assertEqual(by["B33b_fft_not_continuation"]["verdict"], "fail")
         self.assertEqual(by["B33c_n64_not_ns"]["verdict"], "fail")
         self.assertEqual(by["B33d_finer_not_integral_max"]["verdict"], "fail")
-        self.assertEqual(by["B33e_dns_finer_leftover"]["verdict"], "open")
+        self.assertEqual(by["B33e_dns_finer_leftover"]["verdict"], "fail")
         self.assertEqual(by["B33f_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
@@ -35,6 +35,7 @@ class TrackBFinerTests(unittest.TestCase):
         self.assertLess(by["B33_finer_readable"]["window_T"], by["B33_finer_readable"]["t_room"])
         for name in ("packet", "blob"):
             self.assertLess(by["B33_finer_readable"]["aboveT"][name], ABOVE_MAX)
+        self.assertIn("Regularity leftover", payload["next_da_move"])
         self.assertIn("B23e", payload["next_da_move"])
         self.assertIn("B22e", payload["next_da_move"])
         self.assertIn("B21e", payload["next_da_move"])

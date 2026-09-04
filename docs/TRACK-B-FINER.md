@@ -45,9 +45,9 @@ box you did not run is not the packet.
 \(\int\|\omega\|_\infty\).” A mesh is not the max
 criterion.
 
-**B33e, open.** DNS leftover is B23e. Finer-as-DNS
-is the same knob, a later close. Do not spawn
-\(n=64\).
+**B33e, fail** of “finer-as-DNS leftover closes
+\(X\).” Scored as B23e / B34. Regularity leftover is
+open. Do not spawn \(n=64\).
 
 **B33f, fail** of “this retunes the PDE.” \(n\) is a
 knob on the box.
@@ -89,7 +89,7 @@ The first two held. The a-priori slogan missed.
 A finer lattice is not a finer estimate.
 
 **Operator.** The finer box is scored. B22e is
-scored. Next: DNS leftover (B23e). Do not spawn
+scored. Next: regularity leftover. Do not spawn
 \(n=64\). B4c stands. Do not cancel to \(\Phi\).
 Do not write \(c=8\) into the PDE.
 
@@ -106,9 +106,9 @@ Do not write \(c=8\) into the PDE.
 | B33b | **fail** | cashing \(n=64\) is continuation |
 | B33c | **fail** | an unrun \(n=64\) is an NS a priori |
 | B33d | **fail** | a finer box is \(\int\|\omega\|_\infty\) |
-| B33e | **open** | finer makes DNS an a priori |
+| B33e | **fail** | finer makes DNS an a priori |
 | B33f | **fail** | this retunes the PDE |
-| domain B | **open** | DNS leftover is B23e |
+| domain B | **open** | regularity leftover |
 
 Tesla’s line: a bigger FFT is not continuation.
 \(n\) is a knob on the box. Do not spawn \(n=64\).

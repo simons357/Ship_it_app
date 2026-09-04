@@ -90,7 +90,7 @@ A budget is not a closed estimate.
 
 **Operator.** The budget is scored. B15e is scored.
 The net is scored (B16e). The blob is scored (B17e). Field occupation is not an a priori
-(B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Next: DNS leftover (B23e). Finer stays B22e. Do not spawn \(n=64\).
+(B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Next: regularity leftover. Finer stays B22e. Do not spawn \(n=64\).
 B4c stands. Do not cancel to \(\Phi\).
 
 ---
@@ -108,7 +108,7 @@ B4c stands. Do not cancel to \(\Phi\).
 | B26d | **fail** | aligned budget is \(\int\|\omega\|_\infty\) |
 | B26e | **fail** | enstrophy leftover closes \(X\) |
 | B26f | **fail** | this retunes the PDE |
-| domain B | **open** | DNS leftover is B23e |
+| domain B | **open** | regularity leftover |
 
 Tesla’s line: the cubic’s payers are a number. Time
 did not empty them. A share is not a bound.
