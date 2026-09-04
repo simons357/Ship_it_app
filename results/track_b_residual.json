@@ -1,7 +1,7 @@
 {
   "meta": {
     "slot": "B",
-    "write": "residual tool: holes of R, Miller cut, empty det+ rename",
+    "write": "residual tool: holes, Miller cut, empty rename, A1/A2 blanks",
     "tuning_the_pde": false,
     "spawned_n64": false,
     "tesla": "exacting, not a jerk. Name the holes. A script that must move. Reading is not a bound.",
@@ -151,12 +151,61 @@
       "statement": "reading det S is a retune of classical Navier\u2013Stokes",
       "verdict": "fail",
       "why": "The PDE is untouched. No Q1. No \u03b5. Do not type c=8. Do not spawn n=64."
+    },
+    {
+      "name": "B40_blanks_readable",
+      "statement": "A1 is off on this box (median |cos \u03b13| ~ 1/2, hole 1 majority); A2 is live (\u2016\u03bb2+\u2016_\u221e on E_c > 0)",
+      "verdict": "pass",
+      "why": "Same eigh as B15. No new FFT. No n=64. A1 off and A2 live are packet readings, not integrals.",
+      "n": 32,
+      "median_mean": 0.49820050587329784,
+      "hole1_mean": 0.6521699381992082,
+      "l2p_inf_mean": 0.02324585035777123,
+      "l2p_L3_mean": 0.0051486190694284666,
+      "a1_off": true,
+      "a2_live": true
+    },
+    {
+      "name": "B40a_blanks_not_a_priori",
+      "statement": "A1 off and A2 live on this ensemble are a closed estimate for classical X",
+      "verdict": "fail",
+      "why": "The CF if is off here. \u03bb2+ is live here. All-data A1 and \u222b\u2016\u03bb2+\u2016_q stay blank."
+    },
+    {
+      "name": "B40b_blanks_not_continuation",
+      "statement": "A1 off plus a positive \u2016\u03bb2+\u2016_\u221e makes R integrable and therefore continues X",
+      "verdict": "fail",
+      "why": "A packet reading is not \u222bR < \u221e. Alignment in time and Miller history stay open."
+    },
+    {
+      "name": "B40c_blanks_not_ns",
+      "statement": "naming A1 off and A2 live is an NS a priori",
+      "verdict": "fail",
+      "why": "Two numbers on E_c are a knob on the check. Sit down."
+    },
+    {
+      "name": "B40d_blanks_not_integral_max",
+      "statement": "the A1/A2 blanks are an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "A median and a middle eigenvalue are not \u222b\u2016\u03c9\u2016_\u221e. Beale still asks for the max."
+    },
+    {
+      "name": "B40e_blanks_not_regularity",
+      "statement": "naming the A1/A2 blanks decides classical regularity",
+      "verdict": "fail",
+      "why": "No. Domain B stays open. Do not spawn n=64."
+    },
+    {
+      "name": "B40f_not_a_pde_retune",
+      "statement": "naming A1 and A2 is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. No Q1. No \u03b5. Do not type c=8. Do not spawn n=64."
     }
   ],
   "counts": {
-    "pass": 3,
-    "fail": 18,
+    "pass": 4,
+    "fail": 24,
     "open": 0
   },
-  "next_da_move": "The residual tool names the holes in R. Miller \u03bb2+ is a different cut from hole 2. det+ is the same cut as \u03bb2+. The next rename is empty. Sit down. Neither is an a priori. Hole 1 is the CF if. Hole 2 is the live cubic. Regularity leftover is not an a priori (B35e). Regularity stays open. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "A1 is off on this box. A2 is live. Neither integral is known for all data. The residual tool names the holes in R. Miller \u03bb2+ is a different cut from hole 2. det+ is the same cut. Sit down on another rename. Regularity leftover is not an a priori (B35e). Regularity stays open. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }
