@@ -1466,13 +1466,74 @@
       "name": "B16e_balance_not_X_a_priori",
       "statement": "the enstrophy balance on these packets closes a bound for classical X",
       "verdict": "open",
-      "why": "Viscosity owned this ensemble. That is not continuation. The tube (B5b) is still a different weight."
+      "why": "Viscosity owned this ensemble. That is not continuation. Angular 1/r\u00b2 lost on packets. B4c still budgets the tube."
     },
     {
       "name": "B16f_not_a_pde_retune",
       "statement": "reading \u222b\u03c9\u00b7S\u03c9 versus viscosity is a retune of classical Navier\u2013Stokes",
       "verdict": "fail",
       "why": "The PDE is untouched. The balance is a knob on the estimate: a cancellation you can miss."
+    },
+    {
+      "name": "B17_coherent_field",
+      "statement": "a named two-scale blob + signed strain is a readable classical CONC field",
+      "verdict": "pass",
+      "why": "Gaussian blob at (\u03c0,\u03c0,0) in u=(sin x cos z, 0, \u2212cos x sin z). S_zz=+1 on the blob. Not a Stokes eigenfunction.",
+      "rel": 0.00017947019915923022,
+      "sigma": 0.8535696713285232,
+      "jbar": 2.5664433170637415,
+      "jstar": 3,
+      "X": 2.5
+    },
+    {
+      "name": "B17a_net_is_plus",
+      "statement": "this coherent CONC field has |\u222b\u03c9\u00b7S\u03c9| / ((\u03c9\u00b7S\u03c9)_+ + (\u03c9\u00b7S\u03c9)_\u2212) \u2265 1/2",
+      "verdict": "pass",
+      "why": "Net sits on the plus pile. Random-phase packets cancelled at ~10^{-3}. This field does not.",
+      "cancel": 0.833206677995409,
+      "P": 0.050685141885203455,
+      "Pplus": 0.055758278847839335,
+      "Pminus": 0.0050731369626358805
+    },
+    {
+      "name": "B17b_cubic_not_live",
+      "statement": "the one-sided cubic owns \u1e8a at the B13 working box (\u03bd=0.1, X=2.5)",
+      "verdict": "fail",
+      "why": "Coherence killed cancellation. It did not make P large versus D. Viscosity still owns the net.",
+      "P_over_D": 0.008181300794787849,
+      "Pplus_over_D": 0.009000177055576162,
+      "Xdot": -12.289114593034023,
+      "D": 6.195242438402215
+    },
+    {
+      "name": "B17c_tube_still_cancels",
+      "statement": "a z-independent swirl in the same strain also has net P \u2248 (\u03c9\u00b7S\u03c9)_+",
+      "verdict": "fail",
+      "why": "\u222b cos z dz = 0 along the tube. Coherence of swirl is not the cubic. The blob had to sit where S_zz keeps a sign.",
+      "cancel": 1.462818583363769e-17,
+      "P": 3.145988281330958e-19,
+      "Pplus": 0.010753173076652883
+    },
+    {
+      "name": "B17d_blob_is_not_bkm",
+      "statement": "an L\u00b2 bound on this blob is the Beale\u2013Kato\u2013Majda criterion",
+      "verdict": "fail",
+      "why": "The blob is more peaked than a fat packet. The criterion still asks for \u222b\u2016\u03c9\u2016_\u221e. Do not improve it into L\u00b2.",
+      "bkm_gap": 2.3878572079592795,
+      "winf": 3.775533752200835,
+      "wl2": 1.5811388300841898
+    },
+    {
+      "name": "B17e_coherent_not_X_a_priori",
+      "statement": "a signed-strain blob closes a bound for classical X",
+      "verdict": "open",
+      "why": "One-sided cubic at this box is still a leftover versus D. Occupation (B8c) is still the open close. Not continuation."
+    },
+    {
+      "name": "B17f_not_a_pde_retune",
+      "statement": "reading a signed-strain blob, or turning \u03bd down until \u1e8a>0, is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. Localization in z is a knob on the check. Turning \u03bd down is the same knob. No Q1. No \u03b5."
     },
     {
       "name": "B_regularity",
@@ -1482,9 +1543,9 @@
     }
   ],
   "counts": {
-    "pass": 31,
-    "fail": 31,
-    "open": 14
+    "pass": 33,
+    "fail": 35,
+    "open": 15
   },
   "how_far": [
     "B1 T2 low-flux identity holds (pass); T2 Lemma 2 stays dropped (fail)",
@@ -1515,7 +1576,9 @@
     "B15c short run does not deplete |cos \u03b1_3| (fail); aligned share stays (fail); budget not an a priori (open)",
     "B16 enstrophy identity (pass); visc owns the net on this ensemble (pass); P_+ is not a net cubic (fail)",
     "B16c L\u00b2 is not BKM (fail); random-phase is not all CONC (fail); balance not an a priori (open)",
+    "B17 signed-strain blob readable (pass); net \u2248 P+ (pass); working-box cubic not live (fail)",
+    "B17c z-independent tube still cancels (fail); L\u00b2 blob is not BKM (fail); not an a priori (open)",
     "classical regularity remains open"
   ],
-  "next_da_move": "Coherent CONC (B16d): a packet with net P \u2248 (\u03c9\u00b7S\u03c9)_+. B4c stands. Angular 1/r\u00b2 does not. Do not cancel to \u03a6. Tesla: the ratio climbed."
+  "next_da_move": "Occupation \u2192 X (B8c). Coherent CONC is scored: net \u2248 P+ on a signed-strain blob; the working-box cubic is not live; a z-independent tube still cancels. B4c stands. Do not cancel to \u03a6."
 }
