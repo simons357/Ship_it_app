@@ -35,7 +35,8 @@ class TrackBFinerTests(unittest.TestCase):
         self.assertLess(by["B33_finer_readable"]["window_T"], by["B33_finer_readable"]["t_room"])
         for name in ("packet", "blob"):
             self.assertLess(by["B33_finer_readable"]["aboveT"][name], ABOVE_MAX)
-        self.assertIn("Regularity leftover", payload["next_da_move"])
+        self.assertIn("Regularity stays open", payload["next_da_move"])
+        self.assertIn("B34e", payload["next_da_move"])
         self.assertIn("B23e", payload["next_da_move"])
         self.assertIn("B22e", payload["next_da_move"])
         self.assertIn("B21e", payload["next_da_move"])

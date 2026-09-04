@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "leftover close as an a priori",
+    "tuning_the_pde": false,
+    "spawned_n64": false,
+    "tesla": "exacting, not a jerk. A leftover close is a knob on the check. It does not write X.",
+    "domain_verdict": "open"
+  },
+  "lemmas": [
+    {
+      "name": "B35_close_readable",
+      "statement": "finer-box miss, finer-DNS miss, and the leftover catalog are readable together",
+      "verdict": "pass",
+      "why": "B22e and B23e are scored. The leftover knobs missed. Typed c is not written into the PDE.",
+      "T_long": 0.384,
+      "t_room": 0.375,
+      "c_inc_max": 0.001963109678038144,
+      "c_save": 8.0
+    },
+    {
+      "name": "B35a_close_not_a_priori",
+      "statement": "a leftover close writes a bound for classical X",
+      "verdict": "fail",
+      "why": "A catalog of fails is not continuation. Leftover knobs are knobs on the check. They do not write X."
+    },
+    {
+      "name": "B35b_catalog_not_continuation",
+      "statement": "scoring B14d through B23e is a continuation argument for classical X",
+      "verdict": "fail",
+      "why": "Continuation is an estimate, not a list of missed slogans. The field still has no bound."
+    },
+    {
+      "name": "B35c_fails_not_ns",
+      "statement": "a stack of leftover fails is still an NS a priori",
+      "verdict": "fail",
+      "why": "Failing a knob is not sitting the packet. Do not promote a catalog to a type."
+    },
+    {
+      "name": "B35d_close_not_integral_max",
+      "statement": "leftover closes are an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "A leftover close is a knob on the check. It is not \u222b\u2016\u03c9\u2016_\u221e. Beale still asks for the max."
+    },
+    {
+      "name": "B35e_domain_leftover",
+      "statement": "classical regularity is decided by leftover closes",
+      "verdict": "open",
+      "why": "The leftover knobs are scored. The leftover is the object: a closed estimate for X. Domain B stays open."
+    },
+    {
+      "name": "B35f_not_a_pde_retune",
+      "statement": "scoring leftover closes as not an a priori is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. Leftover closes are knobs on the check. No Q1. No \u03b5. Do not type c=8 into the equation. Do not spawn n=64."
+    }
+  ],
+  "counts": {
+    "pass": 1,
+    "fail": 5,
+    "open": 1
+  },
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+}

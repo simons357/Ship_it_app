@@ -103,7 +103,7 @@ def lemma_dns_finer_leftover() -> dict:
         "B33e_dns_finer_leftover",
         "a finer box makes the DNS run an a priori",
         "fail",
-        "Scored as B23e / B34. A finer DNS run is not continuation. Regularity leftover is open. Do not spawn n=64.",
+        "Scored as B23e / B34. A finer DNS run is not continuation. Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64.",
     )
 
 
@@ -151,7 +151,7 @@ def run(out: Path | None = None) -> dict:
             "Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). "
             "Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). "
             "NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). "
-            "Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Regularity leftover is open. "
+            "Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. "
             "Do not spawn n=64. B4c stands. Do not cancel to Φ."
         ),
     }

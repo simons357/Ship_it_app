@@ -104,7 +104,7 @@ The saving-rate slogan missed.
 A rate you typed is not a rate the metric produced.
 
 **Operator.** NS climb law is scored. B11d is scored.
-B20e is scored. Climb sketch is not an a priori (B21e). Next: regularity leftover. Finer is B22e.
+B20e is scored. Climb sketch is not an a priori (B21e). Next: regularity stays open. Finer is B22e.
 Do not write \(c=8\) into the PDE. Do not spawn \(n=64\).
 B4c stands. Do not cancel to \(\Phi\).
 
@@ -122,7 +122,7 @@ B4c stands. Do not cancel to \(\Phi\).
 | B20d | **fail** | \(j_{\mathrm{bar}}>\text{typed }j_*\) is a climb |
 | B20e | **fail** | field climb closes \(X\) |
 | B20f | **fail** | this retunes the PDE |
-| domain B | **open** | regularity leftover |
+| domain B | **open** | regularity stays open |
 
 Tesla’s line: \(c\) the field makes. It did not give
 you \(c=8\).

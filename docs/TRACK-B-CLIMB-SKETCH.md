@@ -96,7 +96,7 @@ a-priori slogan missed.
 A long ODE is not a short path.
 
 **Operator.** Climb sketch is scored. B11e is scored.
-B21e is scored. Next: regularity leftover. Do not spawn
+B21e is scored. Next: regularity stays open. Do not spawn
 \(n=64\). B4c stands. Do not cancel to \(\Phi\). Do not
 write \(c=8\) into the PDE.
 
@@ -114,7 +114,7 @@ write \(c=8\) into the PDE.
 | B21d | **fail** | the sketch already sits on this window |
 | B21e | **fail** | matching the sketch closes \(X\) |
 | B21f | **fail** | this retunes the PDE |
-| domain B | **open** | regularity leftover |
+| domain B | **open** | regularity stays open |
 
 Tesla’s line: the sitting of \(c=8\) is a long ODE.
 This window is short. The field did not follow.

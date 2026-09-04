@@ -184,6 +184,9 @@ class DaMachineTests(unittest.TestCase):
         mesh = classify_claim("finer DNS as an a priori bound for vorticity")
         self.assertEqual(mesh["domain"], "B")
         self.assertEqual(mesh["verdict"], "open")
+        close = classify_claim("leftover close as an a priori bound for vorticity")
+        self.assertEqual(close["domain"], "B")
+        self.assertEqual(close["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

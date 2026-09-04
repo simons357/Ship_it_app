@@ -88,8 +88,8 @@ def lemma_regularity_leftover() -> dict:
     return rec(
         "B34e_regularity_leftover",
         "a leftover close writes a bound for classical X",
-        "open",
-        "Finer DNS is scored. The leftover is classical regularity. No closed estimate for X. Do not spawn n=64.",
+        "fail",
+        "Scored as B35. A leftover close is a knob on the check. It does not write X. Regularity stays open. Do not spawn n=64.",
     )
 
 
@@ -138,7 +138,7 @@ def run(out: Path | None = None) -> dict:
             "Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). "
             "NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). "
             "Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). "
-            "Regularity leftover is open. Do not spawn n=64. B4c stands. Do not cancel to Φ."
+            "Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64. B4c stands. Do not cancel to Φ."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_mesh.json")

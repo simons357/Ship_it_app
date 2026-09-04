@@ -25,7 +25,7 @@ class TrackBMeshTests(unittest.TestCase):
         self.assertEqual(by["B34b_mesh_not_continuation"]["verdict"], "fail")
         self.assertEqual(by["B34c_finer_dns_not_ns"]["verdict"], "fail")
         self.assertEqual(by["B34d_mesh_not_integral_max"]["verdict"], "fail")
-        self.assertEqual(by["B34e_regularity_leftover"]["verdict"], "open")
+        self.assertEqual(by["B34e_regularity_leftover"]["verdict"], "fail")
         self.assertEqual(by["B34f_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
@@ -35,7 +35,8 @@ class TrackBMeshTests(unittest.TestCase):
         self.assertIn("B23e", payload["next_da_move"])
         self.assertIn("B22e", payload["next_da_move"])
         self.assertIn("B14d", payload["next_da_move"])
-        self.assertIn("Regularity leftover", payload["next_da_move"])
+        self.assertIn("B34e", payload["next_da_move"])
+        self.assertIn("Regularity stays open", payload["next_da_move"])
 
     def test_writeup_exists(self):
         self.assertTrue((ROOT / "docs" / "TRACK-B-MESH.md").is_file())

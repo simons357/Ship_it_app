@@ -52,7 +52,7 @@ by viscosity.
 
 **B22e, fail** of “a finer box produces a saving
 climb.” Scored as B33. A bigger FFT is not
-continuation. Finer DNS is not an a priori (B23e). Regularity leftover is open. Do not spawn
+continuation. Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn
 \(n=64\).
 
 **B22f, fail** of “this retunes the PDE.” \(T\) is a
@@ -112,7 +112,7 @@ write \(c=8\) into the PDE. Do not spawn \(n=64\).
 | B22d | **fail** | the clock left CONC and saved \(X\) |
 | B22e | **fail** | finer (\(n>32\)) produces a saving climb |
 | B22f | **fail** | this retunes the PDE |
-| domain B | **open** | regularity leftover |
+| domain B | **open** | regularity stays open |
 
 Tesla’s line: you said longer. \(T\) passed the
 sketch’s room time. The field still did not climb.

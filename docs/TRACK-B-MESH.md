@@ -45,8 +45,10 @@ A box you did not run is not the packet.
 \(\int\|\omega\|_\infty\).” DNS-never-blew-up at a
 finer \(n\) is the same refused slogan as B23d.
 
-**B34e, open.** Regularity leftover. No closed
-estimate for \(X\). Do not spawn \(n=64\).
+**B34e, fail** of “a leftover close writes
+regularity.” Scored as B35. A leftover close is a
+knob on the check. It does not write \(X\).
+Regularity stays open. Do not spawn \(n=64\).
 
 **B34f, fail** of “this retunes the PDE.” \(n\) is a
 knob on the box.
@@ -86,7 +88,7 @@ held. The a-priori slogan missed.
 A finer lattice is not a closed estimate.
 
 **Operator.** Finer DNS is scored. B23e is scored.
-Regularity leftover is open. Do not spawn \(n=64\).
+Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn \(n=64\).
 B4c stands. Do not cancel to \(\Phi\). Do not write
 \(c=8\) into the PDE.
 
@@ -103,9 +105,9 @@ B4c stands. Do not cancel to \(\Phi\). Do not write
 | B34b | **fail** | cashing \(n=64\) DNS is continuation |
 | B34c | **fail** | an unrun finer DNS is an NS a priori |
 | B34d | **fail** | finer DNS is \(\int\|\omega\|_\infty\) |
-| B34e | **open** | a leftover close writes regularity |
+| B34e | **fail** | a leftover close writes regularity |
 | B34f | **fail** | this retunes the PDE |
-| domain B | **open** | regularity leftover |
+| domain B | **open** | regularity stays open |
 
 Tesla’s line: a finer DNS run is not continuation.
 Same knob as B22e. Do not spawn \(n=64\).

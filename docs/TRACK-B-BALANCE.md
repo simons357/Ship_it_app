@@ -118,7 +118,7 @@ cubic slogan missed.
 **Einstein.** The object stayed the classical field.
 
 **Operator.** The net is scored. B16e is scored.
-The blob is scored (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Next: regularity leftover. Finer stays B22e.
+The blob is scored (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Next: regularity stays open. Finer stays B22e.
 Do not spawn \(n=64\). B4c stands. Do not cancel
 to \(\Phi\).
 
@@ -135,7 +135,7 @@ to \(\Phi\).
 | B16d | **fail** | random-phase \(\Rightarrow\) all CONC |
 | B16e | **fail** | balance closes \(X\) |
 | B16f | **fail** | this retunes the PDE |
-| domain B | **open** | regularity leftover |
+| domain B | **open** | regularity stays open |
 
 Tesla’s line: net production is a number. The share of
 a leftover is not the cubic.

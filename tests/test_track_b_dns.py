@@ -31,7 +31,8 @@ class TrackBDnsTests(unittest.TestCase):
         self.assertGreater(T_LONG, T_ROOM)
         self.assertIn("B22e", payload["next_da_move"])
         self.assertIn("B23e", payload["next_da_move"])
-        self.assertIn("Regularity leftover", payload["next_da_move"])
+        self.assertIn("Regularity stays open", payload["next_da_move"])
+        self.assertIn("B34e", payload["next_da_move"])
         self.assertIn("B14d", payload["next_da_move"])
 
     def test_writeup_exists(self):

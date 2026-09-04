@@ -89,7 +89,7 @@ The first two held. The a-priori slogan missed.
 A finer lattice is not a finer estimate.
 
 **Operator.** The finer box is scored. B22e is
-scored. Next: regularity leftover. Do not spawn
+scored. Next: regularity stays open. Do not spawn
 \(n=64\). B4c stands. Do not cancel to \(\Phi\).
 Do not write \(c=8\) into the PDE.
 
@@ -108,7 +108,7 @@ Do not write \(c=8\) into the PDE.
 | B33d | **fail** | a finer box is \(\int\|\omega\|_\infty\) |
 | B33e | **fail** | finer makes DNS an a priori |
 | B33f | **fail** | this retunes the PDE |
-| domain B | **open** | regularity leftover |
+| domain B | **open** | regularity stays open |
 
 Tesla’s line: a bigger FFT is not continuation.
 \(n\) is a knob on the box. Do not spawn \(n=64\).

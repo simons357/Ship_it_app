@@ -104,7 +104,7 @@ spawn \(n=64\). B4c stands. Do not cancel to \(\Phi\).
 | B29d | **fail** | \(\tau_{\mathrm{C}}=T\) is \(\int\|\omega\|_\infty\) |
 | B29e | **fail** | matching the sketch closes \(X\) |
 | B29f | **fail** | this retunes the PDE |
-| domain B | **open** | regularity leftover |
+| domain B | **open** | regularity stays open |
 
 Tesla’s line: occupation is a number on a path. If
 the path never leaves CONC, the clock did not do

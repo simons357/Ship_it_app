@@ -50,8 +50,8 @@
     {
       "name": "B34e_regularity_leftover",
       "statement": "a leftover close writes a bound for classical X",
-      "verdict": "open",
-      "why": "Finer DNS is scored. The leftover is classical regularity. No closed estimate for X. Do not spawn n=64."
+      "verdict": "fail",
+      "why": "Scored as B35. A leftover close is a knob on the check. It does not write X. Regularity stays open. Do not spawn n=64."
     },
     {
       "name": "B34f_not_a_pde_retune",
@@ -62,8 +62,8 @@
   ],
   "counts": {
     "pass": 1,
-    "fail": 5,
-    "open": 1
+    "fail": 6,
+    "open": 0
   },
-  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Regularity leftover is open. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }
