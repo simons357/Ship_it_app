@@ -42,8 +42,9 @@ the packet.
 \(\int\|\omega\|_\infty\).” A leftover close is not
 the max criterion.
 
-**B35e, open.** Regularity. No closed estimate for
-\(X\). Domain B stays open.
+**B35e, fail** of “classical regularity is decided
+by leftover closes.” Scored as B36. Leftover knobs
+do not decide \(X\). Regularity stays open.
 
 **B35f, fail** of “this retunes the PDE.” Leftover
 closes are knobs on the check.
@@ -94,7 +95,7 @@ Do not write \(c=8\) into the PDE.
 | B35b | **fail** | scoring leftovers is continuation |
 | B35c | **fail** | a stack of fails is an NS a priori |
 | B35d | **fail** | leftover closes are \(\int\|\omega\|_\infty\) |
-| B35e | **open** | classical regularity is decided by leftover closes |
+| B35e | **fail** | classical regularity is decided by leftover closes |
 | B35f | **fail** | this retunes the PDE |
 | domain B | **open** | regularity stays open |
 

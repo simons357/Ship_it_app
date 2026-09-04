@@ -88,7 +88,7 @@ held. The a-priori slogan missed.
 A finer lattice is not a closed estimate.
 
 **Operator.** Finer DNS is scored. B23e is scored.
-Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn \(n=64\).
+Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Do not spawn \(n=64\).
 B4c stands. Do not cancel to \(\Phi\). Do not write
 \(c=8\) into the PDE.
 

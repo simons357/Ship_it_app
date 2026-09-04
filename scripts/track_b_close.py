@@ -83,8 +83,8 @@ def lemma_domain_leftover() -> dict:
     return rec(
         "B35e_domain_leftover",
         "classical regularity is decided by leftover closes",
-        "open",
-        "The leftover knobs are scored. The leftover is the object: a closed estimate for X. Domain B stays open.",
+        "fail",
+        "Scored as B36. Leftover knobs are knobs on the check. They do not decide X. Regularity stays open. Do not spawn n=64.",
     )
 
 
@@ -130,7 +130,7 @@ def run(out: Path | None = None) -> dict:
             "Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). "
             "NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). "
             "Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). "
-            "Leftover close is not an a priori (B34e). Regularity stays open. "
+            "Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. "
             "Do not spawn n=64. B4c stands. Do not cancel to Φ."
         ),
     }

@@ -46,7 +46,7 @@ not the max criterion.
 
 **B32e, fail** of “a finer box closes \(X\).”
 Scored as B22e / B33. A bigger FFT is not
-continuation. Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn
+continuation. Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Do not spawn
 \(n=64\).
 
 **B32f, fail** of “this retunes the PDE.” The window

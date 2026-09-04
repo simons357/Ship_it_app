@@ -138,7 +138,7 @@ def run(out: Path | None = None) -> dict:
             "Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). "
             "NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). "
             "Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). "
-            "Leftover close is not an a priori (B34e). Regularity stays open. Do not spawn n=64. B4c stands. Do not cancel to Φ."
+            "Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Do not spawn n=64. B4c stands. Do not cancel to Φ."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_mesh.json")

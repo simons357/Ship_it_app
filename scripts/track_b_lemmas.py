@@ -1499,6 +1499,48 @@ def lemma_close_priori_not_a_retune() -> dict:
     return cpnr()
 
 
+def lemma_object_priori_readable() -> dict:
+    from track_b_object import lemma_object_priori_readable as opr
+
+    return opr()
+
+
+def lemma_object_not_a_priori() -> dict:
+    from track_b_object import lemma_object_not_a_priori as ona
+
+    return ona()
+
+
+def lemma_object_not_continuation() -> dict:
+    from track_b_object import lemma_object_not_continuation as onc
+
+    return onc()
+
+
+def lemma_object_not_ns() -> dict:
+    from track_b_object import lemma_object_not_ns as ons
+
+    return ons()
+
+
+def lemma_object_not_integral_max() -> dict:
+    from track_b_object import lemma_object_not_integral_max as onim
+
+    return onim()
+
+
+def lemma_object_not_regularity() -> dict:
+    from track_b_object import lemma_object_not_regularity as onr
+
+    return onr()
+
+
+def lemma_object_priori_not_a_retune() -> dict:
+    from track_b_object import lemma_object_priori_not_a_retune as opnr
+
+    return opnr()
+
+
 def lemma_coherent_field() -> dict:
     from track_b_coherent import lemma_coherent_field as coh
 
@@ -1769,6 +1811,13 @@ def run(out: Path | None = None) -> dict:
         lemma_close_not_integral_max(),
         lemma_domain_leftover(),
         lemma_close_priori_not_a_retune(),
+        lemma_object_priori_readable(),
+        lemma_object_not_a_priori(),
+        lemma_object_not_continuation(),
+        lemma_object_not_ns(),
+        lemma_object_not_integral_max(),
+        lemma_object_not_regularity(),
+        lemma_object_priori_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -1852,11 +1901,13 @@ def run(out: Path | None = None) -> dict:
             "B34 DNS miss+refused no-blow+finer-box miss readable (pass); finer DNS not an a priori (fail); mesh not continuation (fail)",
             "B34c unrun finer DNS is not NS (fail); mesh is not ∫‖ω‖_∞ (fail); leftover close scored (B34e fail); not a PDE retune (fail)",
             "B35 leftover catalog+finer miss+DNS miss readable (pass); leftover close not an a priori (fail); catalog not continuation (fail)",
-            "B35c stack of fails is not NS (fail); leftover close is not ∫‖ω‖_∞ (fail); regularity leftover open; not a PDE retune (fail)",
+            "B35c stack of fails is not NS (fail); leftover close is not ∫‖ω‖_∞ (fail); regularity leftover scored (B35e fail); not a PDE retune (fail)",
+            "B36 leftover catalog miss+leftover-close miss readable (pass); leftover knobs do not decide regularity (fail); catalog not continuation (fail)",
+            "B36c naming the object is not NS (fail); leftover catalog is not ∫‖ω‖_∞ (fail); this write does not decide regularity (fail); not a PDE retune (fail)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). "
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). "
             "Regularity stays open. Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),

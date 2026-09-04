@@ -234,8 +234,15 @@ not done).
 | B35b | scoring leftovers is continuation | **fail** | An estimate, not a list. |
 | B35c | a stack of fails is an NS a priori | **fail** | Failing a knob is not the packet. |
 | B35d | leftover closes are \(\int\|\omega\|_\infty\) | **fail** | A leftover close is not the max. |
-| B35e | classical regularity is decided by leftover closes | **open** | The leftover is the object. |
+| B35e | classical regularity is decided by leftover closes | **fail** | Scored as B36. Leftover knobs do not decide \(X\). |
 | B35f | scoring this retunes the PDE | **fail** | Knob on the check. |
+| B36 | leftover catalog miss, leftover-close miss readable | **pass** | Same caches as B35. No \(n=64\). |
+| B36a | leftover knobs decide regularity | **fail** | The leftover is a closed estimate for \(X\). |
+| B36b | scoring the leftover catalog is continuation | **fail** | An estimate, not a finished list. |
+| B36c | naming the object is an NS a priori | **fail** | A desk sentence is not a type. |
+| B36d | leftover catalog is \(\int\|\omega\|_\infty\) | **fail** | A leftover list is not the max. |
+| B36e | this leftover close decides regularity | **fail** | Domain B stays open. |
+| B36f | scoring this retunes the PDE | **fail** | Knob on the check. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -524,14 +531,23 @@ close as an a priori lives in
 A leftover close writes \(X\) **fail**. Scoring leftovers
 is continuation **fail**. Stack of fails is NS **fail**.
 Leftover closes are \(\int\|\omega\|_\infty\) **fail**.
-Regularity leftover **open**. Not a PDE retune **fail**.
+Regularity leftover **fail**. Not a PDE retune **fail**.
+
+**B36 / B36a / B36b / B36c / B36d / B36e / B36f.** Regularity
+leftover as an a priori lives in
+[`TRACK-B-OBJECT.md`](TRACK-B-OBJECT.md). Readable **pass**.
+Leftover knobs decide regularity **fail**. Scoring the
+catalog is continuation **fail**. Naming the object is
+NS **fail**. Leftover catalog is \(\int\|\omega\|_\infty\)
+**fail**. This write decides regularity **fail**. Not a
+PDE retune **fail**.
 
 ---
 
 ## What is still the next write
 
 1. Stretching budget is not an a priori (B15e).
-   Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. Finer (\(n>32\))
+   Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Finer (\(n>32\))
    stays a box knob (B22e). Do not spawn \(n=64\). B4c
    stands. Angular \(1/r^2\) does not. Do not cancel to
    \(\Phi\). Do not write \(c=8\) into the PDE.
@@ -575,8 +591,9 @@ python3 scripts/track_b_window.py
 python3 scripts/track_b_finer.py
 python3 scripts/track_b_mesh.py
 python3 scripts/track_b_close.py
+python3 scripts/track_b_object.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net tests.test_track_b_blob tests.test_track_b_clock tests.test_track_b_match tests.test_track_b_saving tests.test_track_b_window tests.test_track_b_finer tests.test_track_b_mesh tests.test_track_b_close
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net tests.test_track_b_blob tests.test_track_b_clock tests.test_track_b_match tests.test_track_b_saving tests.test_track_b_window tests.test_track_b_finer tests.test_track_b_mesh tests.test_track_b_close tests.test_track_b_object
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

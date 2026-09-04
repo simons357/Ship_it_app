@@ -220,12 +220,15 @@ Domain B **never** passes regularity. `check B` stays
 | B34f | this retunes the PDE | **fail** |
 | B35 | finer-box miss, finer-DNS miss, leftover catalog readable | **pass** |
 | B35a / B35b / B35c / B35d | leftover close writes \(X\); scoring leftovers is continuation; stack of fails is NS; leftover closes are \(\int\|\omega\|_\infty\) | **fail** |
-| B35e | classical regularity is decided by leftover closes | **open** |
+| B35e | classical regularity is decided by leftover closes | **fail** |
 | B35f | this retunes the PDE | **fail** |
+| B36 | leftover catalog miss, leftover-close miss readable | **pass** |
+| B36a / B36b / B36c / B36d / B36e | leftover knobs decide regularity; catalog is continuation; naming the object is NS; leftover catalog is \(\int\|\omega\|_\infty\); this write decides regularity | **fail** |
+| B36f | this retunes the PDE | **fail** |
 | classical regularity | — | **open** |
 
 **Next B write:** Stretching budget is not an a priori
-(B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity stays open. Finer
+(B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.
 Angular \(1/r^2\) does not. We are not tuning the
 equation. Do not spawn \(n=64\).
