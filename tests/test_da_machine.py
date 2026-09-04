@@ -115,6 +115,9 @@ class DaMachineTests(unittest.TestCase):
         climb = classify_claim("climbing CONC with a climb law for dj*/dt")
         self.assertEqual(climb["domain"], "B")
         self.assertEqual(climb["verdict"], "open")
+        field = classify_claim("barycenter climb law from the vorticity field")
+        self.assertEqual(field["domain"], "B")
+        self.assertEqual(field["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

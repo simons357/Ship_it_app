@@ -80,8 +80,10 @@ our criterion.
 **Einstein.** The object stayed the classical field.
 A rate you typed is not a rate the metric produced.
 
-**Operator.** Climbing is broken out. The live room
-is a climb law from the field.
+**Operator.** Climbing is broken out. The field at
+\(t=0\) did not hand us \(c=8\). See
+[`TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md).
+The live room is a short evolution.
 
 ---
 
@@ -95,6 +97,6 @@ is a climb law from the field.
 | B11c | **pass** | fast climb sits on this ODE |
 | B11d | **open** | NS forces a saving \(c\) |
 | B11e | **open** | sketch \(\neq\) NS a priori |
-| domain B | **open** | the climb law is the room |
+| domain B | **open** | evolve the packet |
 
 Tesla’s line: turn \(c\). If nothing moves, sit down.

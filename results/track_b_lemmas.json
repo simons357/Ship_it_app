@@ -798,13 +798,156 @@
       "name": "B11d_ns_climb_law_open",
       "statement": "classical NS forces a climb rate c that saves X while CONC",
       "verdict": "open",
-      "why": "c is prescribed here. The field has to produce dj*/dt. That law is not written."
+      "why": "c is prescribed here. B12 reads the field at t=0: it does not produce c=8. A time-evolved law is still open (B12d)."
     },
     {
       "name": "B11e_climb_not_X_a_priori",
       "statement": "the climbing model is a closed a priori bound for classical X",
       "verdict": "open",
       "why": "A prescribed c is a sketch. Slow dies, fast sits. NS did not pick c."
+    },
+    {
+      "name": "B12_barycenter",
+      "statement": "on a 3-shell packet, j_bar is within 1.5 of j* and \u03c3 \u2265 1/2",
+      "verdict": "pass",
+      "why": "A readable peak scale. Tesla\u2019s first knob on the field: you can say where the mass sits.",
+      "samples": [
+        {
+          "jstar": 3,
+          "jbar": 3.591097688373726,
+          "c": -2.1146504102473145,
+          "sigma": 1.0,
+          "X": 2.499999999999999,
+          "nu": 0.1,
+          "seed": 1
+        },
+        {
+          "jstar": 3,
+          "jbar": 3.5837642203473323,
+          "c": -2.0752763419620734,
+          "sigma": 1.0,
+          "X": 2.500000000000001,
+          "nu": 0.1,
+          "seed": 2
+        },
+        {
+          "jstar": 3,
+          "jbar": 3.5952136833904995,
+          "c": -2.07474591136814,
+          "sigma": 1.0,
+          "X": 2.5,
+          "nu": 0.1,
+          "seed": 3
+        },
+        {
+          "jstar": 3,
+          "jbar": 3.59604145020317,
+          "c": -2.1128535612154806,
+          "sigma": 1.0,
+          "X": 2.500000000000001,
+          "nu": 0.1,
+          "seed": 4
+        },
+        {
+          "jstar": 3,
+          "jbar": 3.6006210867912594,
+          "c": -2.106395596128671,
+          "sigma": 1.0,
+          "X": 2.5000000000000004,
+          "nu": 0.1,
+          "seed": 5
+        },
+        {
+          "jstar": 3,
+          "jbar": 3.598590643725462,
+          "c": -2.0855515279338306,
+          "sigma": 1.0,
+          "X": 2.5000000000000004,
+          "nu": 0.1,
+          "seed": 6
+        },
+        {
+          "jstar": 3,
+          "jbar": 3.5830462792252282,
+          "c": -2.1329324039331823,
+          "sigma": 1.0,
+          "X": 2.5000000000000004,
+          "nu": 0.1,
+          "seed": 7
+        },
+        {
+          "jstar": 3,
+          "jbar": 3.5974835877062064,
+          "c": -2.1015169797376743,
+          "sigma": 1.0,
+          "X": 2.5000000000000004,
+          "nu": 0.1,
+          "seed": 8
+        }
+      ]
+    },
+    {
+      "name": "B12a_c_from_rhs",
+      "statement": "instantaneous c = d j_bar / dt is computable from the vorticity RHS",
+      "verdict": "pass",
+      "why": "The apparatus reads the field. It does not type c=8.",
+      "viscous": [
+        -2.1146504102473145,
+        -2.0752763419620734,
+        -2.07474591136814,
+        -2.1128535612154806,
+        -2.106395596128671,
+        -2.0855515279338306,
+        -2.1329324039331823,
+        -2.1015169797376743
+      ],
+      "euler": [
+        -0.0003088954008034379,
+        0.00020830357839340388,
+        0.00019956581940917112,
+        0.00018356068657266258,
+        0.00018627389370127632,
+        -0.00010057239854352582,
+        -0.0003693627179677931,
+        4.820477759184172e-05
+      ]
+    },
+    {
+      "name": "B12b_t0_not_saving",
+      "statement": "random CONC packets at t=0 produce c \u2265 8 (the B11c saving rate)",
+      "verdict": "fail",
+      "why": "None of the packets reach the saving climb. The field did not hand us c=8.",
+      "c_save": 8.0,
+      "viscous_max": -2.07474591136814,
+      "euler_max": 0.00020830357839340388
+    },
+    {
+      "name": "B12c_visc_pulls_down",
+      "statement": "viscosity on a CONC packet forces an upward climb",
+      "verdict": "fail",
+      "why": "High shells damp faster. j_bar falls. Viscosity is not a ladder.",
+      "viscous": [
+        -2.1146504102473145,
+        -2.0752763419620734,
+        -2.07474591136814,
+        -2.1128535612154806,
+        -2.106395596128671,
+        -2.0855515279338306,
+        -2.1329324039331823,
+        -2.1015169797376743
+      ]
+    },
+    {
+      "name": "B12d_evolved_cascade_open",
+      "statement": "a short NS evolution of a CONC packet produces a saving climb",
+      "verdict": "open",
+      "why": "t=0 is instantaneous. Nonlinearity can fill higher shells later. That run is not this write."
+    },
+    {
+      "name": "B12e_law_not_X_a_priori",
+      "statement": "the instantaneous field drift is a closed climb law for classical X",
+      "verdict": "open",
+      "why": "A t=0 reading is not a law along a trajectory. Do not sit it as dj*/dt on NS."
     },
     {
       "name": "B_regularity",
@@ -814,9 +957,9 @@
     }
   ],
   "counts": {
-    "pass": 19,
-    "fail": 12,
-    "open": 7
+    "pass": 21,
+    "fail": 14,
+    "open": 9
   },
   "how_far": [
     "B1 T2 low-flux identity holds (pass); T2 Lemma 2 stays dropped (fail)",
@@ -836,7 +979,9 @@
     "B10b ceiling does not follow a climbing j* (fail); climbing CONC open (B10c)",
     "B11 climb bookkeeping (pass); bounded j* bounds X (pass); slow climb blows (fail)",
     "B11c fast climb sits (pass); NS climb law open (B11d); sketch is not an a priori (B11e)",
+    "B12 barycenter + c from RHS (pass); t=0 packets do not produce c\u22658 (fail)",
+    "B12c viscosity pulls j_bar down (fail); evolved cascade open (B12d)",
     "classical regularity remains open"
   ],
-  "next_da_move": "The climb law from the field (B11d). Prescribed c is a knob. NS has to produce dj*/dt. Tesla: that is the paragraph."
+  "next_da_move": "Evolve a CONC packet a short time (B12d). t=0 is not a cascade. Tesla: let the field run."
 }

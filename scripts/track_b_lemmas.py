@@ -518,6 +518,42 @@ def lemma_climb_not_a_priori() -> dict:
     return not_ap()
 
 
+def lemma_barycenter() -> dict:
+    from track_b_climb_law import lemma_barycenter as bary
+
+    return bary()
+
+
+def lemma_c_from_rhs() -> dict:
+    from track_b_climb_law import lemma_c_from_rhs as from_rhs
+
+    return from_rhs()
+
+
+def lemma_t0_not_saving() -> dict:
+    from track_b_climb_law import lemma_t0_not_saving as t0
+
+    return t0()
+
+
+def lemma_visc_pulls_down() -> dict:
+    from track_b_climb_law import lemma_visc_pulls_down as pulls
+
+    return pulls()
+
+
+def lemma_evolved_cascade() -> dict:
+    from track_b_climb_law import lemma_evolved_cascade_open as ev
+
+    return ev()
+
+
+def lemma_law_not_a_priori() -> dict:
+    from track_b_climb_law import lemma_law_not_a_priori as law_ap
+
+    return law_ap()
+
+
 def lemma_regularity() -> dict:
     return rec(
         "B_regularity",
@@ -575,6 +611,12 @@ def run(out: Path | None = None) -> dict:
         lemma_fast_climb_sits(),
         lemma_ns_climb_law(),
         lemma_climb_not_a_priori(),
+        lemma_barycenter(),
+        lemma_c_from_rhs(),
+        lemma_t0_not_saving(),
+        lemma_visc_pulls_down(),
+        lemma_evolved_cascade(),
+        lemma_law_not_a_priori(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -610,11 +652,13 @@ def run(out: Path | None = None) -> dict:
             "B10b ceiling does not follow a climbing j* (fail); climbing CONC open (B10c)",
             "B11 climb bookkeeping (pass); bounded j* bounds X (pass); slow climb blows (fail)",
             "B11c fast climb sits (pass); NS climb law open (B11d); sketch is not an a priori (B11e)",
+            "B12 barycenter + c from RHS (pass); t=0 packets do not produce c≥8 (fail)",
+            "B12c viscosity pulls j_bar down (fail); evolved cascade open (B12d)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "The climb law from the field (B11d). Prescribed c is a knob. "
-            "NS has to produce dj*/dt. Tesla: that is the paragraph."
+            "Evolve a CONC packet a short time (B12d). "
+            "t=0 is not a cascade. Tesla: let the field run."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

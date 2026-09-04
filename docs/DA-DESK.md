@@ -124,11 +124,16 @@ Domain B **never** passes regularity. `check B` stays
 | B11b | any climb saves | **fail** |
 | B11d | NS climb law | **open** |
 | B11e | climb sketch is an NS a priori | **open** |
+| B12 / B12a | barycenter; \(c\) from RHS | **pass** |
+| B12b | \(t=0\) packets produce \(c\ge 8\) | **fail** |
+| B12c | viscosity is a ladder | **fail** |
+| B12d | evolved cascade | **open** |
 | \(\Phi\) as estimate variable | keep \(\Gamma\) | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** the climb law from the field (B11d).
-Prescribed \(c\) is a knob. We are not tuning the equation.
+**Next B write:** evolve a CONC packet a short time
+(B12d). The field at \(t=0\) did not hand us \(c=8\).
+We are not tuning the equation.
 
 ---
 
@@ -408,7 +413,7 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/DA-SESSION.md`, `docs/TRACK-B-HARDY-TUBE.md`,
 `docs/TRACK-B-BONY-T.md`, `docs/TRACK-B-OCCUPATION.md`,
 `docs/TRACK-B-GLUE.md`, `docs/TRACK-B-LOW-J.md`,
-`docs/TRACK-B-CLIMB.md`.
+`docs/TRACK-B-CLIMB.md`, `docs/TRACK-B-CLIMB-LAW.md`.
 
 ---
 
@@ -422,9 +427,9 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
   uniform \(\rho^{1/2}\) **fail**. Occupation clock **pass**;
   Leray \(\Rightarrow\) short CONC **fail**. Glue sketch
   written: high \(j_*\) sits, low \(j_*\) model blows.
-  Energy ceiling: frozen support is hygiene. Climbing:
-  slow dies, fast sits. Next: the climb law from the
-  field. The PDE is not being tuned.
+  Energy ceiling: frozen support is hygiene.   Climbing: slow dies, fast sits. Field at \(t=0\): no
+  saving climb; viscosity pulls down. Next: evolve the
+  packet. The PDE is not being tuned.
 - Cosmo does not enter NS.
 - HB stays shelved as a theorem. DA-as-process stays live.
 

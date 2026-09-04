@@ -125,7 +125,7 @@ def lemma_ns_climb_law() -> dict:
         "B11d_ns_climb_law_open",
         "classical NS forces a climb rate c that saves X while CONC",
         "open",
-        "c is prescribed here. The field has to produce dj*/dt. That law is not written.",
+        "c is prescribed here. B12 reads the field at t=0: it does not produce c=8. A time-evolved law is still open (B12d).",
     )
 
 
@@ -162,8 +162,8 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "The climb law from the field (B11d). "
-            "Prescribed c is a knob. NS has to produce dj*/dt."
+            "The field at t=0 did not hand us c=8 (B12). "
+            "Evolve a CONC packet (B12d)."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_climb.json")

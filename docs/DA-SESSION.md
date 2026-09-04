@@ -357,12 +357,11 @@ again.
 | Domain B after the session | **open** |
 
 They did the tube, the low Bony \(T\), the occupation
-clock, the two-regime glue, the energy ceiling, and
-climbing CONC. Packet class **pass**. Energy-class \(T\)
-**pass**. Clock **pass**. High \(j_*\) glue sits. Frozen
-low-\(j_*\) is hygiene. Slow climb dies, fast climb sits.
-Next: a climb law from the field.
-See [`TRACK-B-CLIMB.md`](TRACK-B-CLIMB.md).
+clock, the two-regime glue, the energy ceiling, climbing
+CONC, and the field climb. Slow climb dies, fast climb
+sits. The field at \(t=0\) does not hand us \(c=8\).
+Viscosity pulls the barycenter down. Next: evolve a
+packet. See [`TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

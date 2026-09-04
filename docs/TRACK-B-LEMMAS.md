@@ -63,8 +63,14 @@ not done).
 | B11a | bounded \(j_*\) ⇒ bounded \(X\) | **pass** | Necessary condition. |
 | B11b | any climb saves the model | **fail** | \(c=1\): \(X\) crosses 40. |
 | B11c | fast climb sits | **pass** | \(c=8\): reaches the viscous room. |
-| B11d | NS forces a saving \(c\) | **open** | The field has to produce \(\mathrm{d}j_*/\mathrm{d}t\). |
+| B11d | NS forces a saving \(c\) | **open** | \(t=0\) failed (B12). Evolved law still open. |
 | B11e | climb sketch is an NS a priori | **open** | A rate you typed is not the equation. |
+| B12 | \(j_{\mathrm{bar}}\) readable on a packet | **pass** | Peak scale from the field. |
+| B12a | \(c\) from the vorticity RHS | **pass** | The apparatus reads. |
+| B12b | \(t=0\) packets produce \(c\ge 8\) | **fail** | None do. |
+| B12c | viscosity forces an upward climb | **fail** | \(j_{\mathrm{bar}}\) falls. |
+| B12d | a short evolution produces a saving climb | **open** | Instantaneous is not a cascade. |
+| B12e | \(t=0\) drift is an NS a priori | **open** | A reading is not a law. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -175,15 +181,21 @@ add **pass**. Bounded \(j_*\) bounds \(X\) **pass**. Slow
 climb **fails** to save. Fast climb sits **pass**. NS climb
 law **open**. Sketch \(\neq\) NS a priori **open**.
 
+**B12 / B12a / B12b / B12c / B12d / B12e.** The field climb
+lives in [`TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md).
+Barycenter **pass**. \(c\) from the RHS **pass**. \(t=0\)
+saving climb **fail**. Viscosity as a ladder **fail**.
+Evolved cascade **open**. \(t=0\) as a priori **open**.
+
 ---
 
 ## What is still the next write
 
-1. The climb law from the field (B11d). Prescribed \(c\) is
-   a knob. NS has to produce \(\mathrm{d}j_*/\mathrm{d}t\).
+1. Evolve a CONC packet a short time (B12d). Instantaneous
+   \(t=0\) is not a cascade.
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
    Leray-as-occupation, the glue sketch as an NS a priori,
-   or a retune of the PDE.
+   a typed \(c=8\), or a retune of the PDE.
 
 None of those is a pass on regularity. Checker:
 
@@ -194,8 +206,9 @@ python3 scripts/track_b_occupation.py
 python3 scripts/track_b_glue.py
 python3 scripts/track_b_low_j.py
 python3 scripts/track_b_climb.py
+python3 scripts/track_b_climb_law.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

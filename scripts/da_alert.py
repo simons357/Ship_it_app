@@ -241,7 +241,7 @@ def render_text(events: list[dict], baseline: bool) -> str:
     if not events:
         return (
             "DA checked. Nothing significant flipped.\n"
-            "Next: the climb law from the field (B11d). Prescribed c is a knob. NS has to produce dj*/dt.\n"
+            "Next: evolve a CONC packet a short time (B12d). t=0 did not produce the saving climb.\n"
         )
     parts = []
     for e in events:
@@ -307,7 +307,7 @@ def notify(
         "recommendation": (
             events[-1]["next"]
             if events
-            else "Nothing flipped. Next write is the climb law from the field (B11d)."
+            else "Nothing flipped. Next write is a short evolution of a CONC packet (B12d)."
         ),
     }
     delivery = {"file": str(out_txt)}
