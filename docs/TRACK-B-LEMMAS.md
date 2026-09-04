@@ -264,6 +264,13 @@ not done).
 | B39d | empty rename is \(\int\|\omega\|_\infty\) | **fail** | \(\det S\) is not the max. |
 | B39e | sitting down decides regularity | **fail** | Domain B stays open. |
 | B39f | scoring this retunes the PDE | **fail** | Knob on the check. |
+| B40 | A1 off and A2 live on the box | **pass** | Same eigh as B15. Packet readings, not integrals. |
+| B40a | blanks are a closed estimate | **fail** | All-data A1 and \(\int\|\lambda_2^+\|_{L^q}\) stay blank. |
+| B40b | blanks make \(\mathcal{R}\) integrable | **fail** | A packet reading is not \(\int\mathcal{R}<\infty\). |
+| B40c | naming blanks is an NS a priori | **fail** | Two numbers on \(E_c\) are a knob. |
+| B40d | blanks are \(\int\|\omega\|_\infty\) | **fail** | A median is not the max. |
+| B40e | naming blanks decides regularity | **fail** | Domain B stays open. |
+| B40f | scoring this retunes the PDE | **fail** | Knob on the check. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -588,13 +595,23 @@ rename is a closed estimate **fail**. Empty is integrable
 Empty rename is \(\int\|\omega\|_\infty\) **fail**. Sitting
 down decides regularity **fail**. Not a PDE retune **fail**.
 
+**B40 / B40a / B40b / B40c / B40d / B40e / B40f.** A1/A2
+blanks live in [`TRACK-B-RESIDUAL.md`](TRACK-B-RESIDUAL.md).
+A1 off, A2 live **pass**. Blanks are a closed estimate
+**fail**. Blanks are integrable \(\mathcal{R}\) **fail**.
+Naming blanks is NS **fail**. Blanks are
+\(\int\|\omega\|_\infty\) **fail**. Naming blanks decides
+regularity **fail**. Not a PDE retune **fail**.
+
 ---
 
 ## What is still the next write
 
-1. The residual tool names the holes in \(\mathcal{R}\).
+1. A1 is off on this box. A2 is live. Neither integral
+   is known for all data. The residual tool names the
+   holes in \(\mathcal{R}\).
    Miller \(\lambda_2^+\) is a different cut from hole 2.
-   \(\det_+\) is the same cut. Sit down.
+   \(\det_+\) is the same cut. Sit down on another rename.
    Neither is an a priori. Stretching budget is not an a priori (B15e).
    Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Finer (\(n>32\))
    stays a box knob (B22e). Do not spawn \(n=64\). B4c

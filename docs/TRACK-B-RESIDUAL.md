@@ -119,6 +119,28 @@ No. Domain B stays open.
 **B39f, fail** of “this retunes the PDE.” Knob on the
 check.
 
+**B40, pass.** A1 is off on this box: median
+\(|\cos\alpha_3|\sim 1/2\) and hole 1 is still the majority.
+A2 is live: \(\|\lambda_2^+\|_\infty\) on \(E_c\) is
+positive. Same eigh. No new FFT.
+
+**B40a, fail** of “A1 off and A2 live are a closed
+estimate.” All-data alignment and
+\(\int\|\lambda_2^+\|_{L^q}\) stay blank.
+
+**B40b, fail** of “the blanks make \(\mathcal{R}\)
+integrable.”
+
+**B40c, fail** of “naming the blanks is an NS a priori.”
+
+**B40d, fail** of “the blanks are \(\int\|\omega\|_\infty\).”
+
+**B40e, fail** of “naming the blanks decides regularity.”
+No. Domain B stays open.
+
+**B40f, fail** of “this retunes the PDE.” Knob on the
+check.
+
 ---
 
 ## They work it
@@ -140,10 +162,9 @@ you all data.
 **Miller.** \(\lambda_2^+\) is not hole 2. \(\det_+\) is
 \(\lambda_2^+\). Do not cash the rewrite.
 
-**Operator.** The holes are named. The Miller cut is a
-different cut. The next rename is empty. Sit down.
-Regularity stays open. Do not spawn \(n=64\). B4c
-stands. Do not cancel to \(\Phi\).
+**Operator.** A1 is off here. A2 is live here. The
+integrals stay blank. Regularity stays open. Do not
+spawn \(n=64\). B4c stands. Do not cancel to \(\Phi\).
 
 ---
 
@@ -172,7 +193,14 @@ stands. Do not cancel to \(\Phi\).
 | B39d | **fail** | empty rename is \(\int\|\omega\|_\infty\) |
 | B39e | **fail** | sitting down decides regularity |
 | B39f | **fail** | this retunes the PDE |
+| B40 | **pass** | A1 off, A2 live on the box |
+| B40a | **fail** | blanks are a closed estimate |
+| B40b | **fail** | blanks make \(\mathcal{R}\) integrable |
+| B40c | **fail** | naming blanks is an NS a priori |
+| B40d | **fail** | blanks are \(\int\|\omega\|_\infty\) |
+| B40e | **fail** | naming blanks decides regularity |
+| B40f | **fail** | this retunes the PDE |
 | domain B | **open** | regularity stays open |
 
-Tesla’s line: name the holes. The Miller cut moved.
-The next rename is empty. Sit down.
+Tesla’s line: A1 is off. A2 is live. The integrals
+stay blank.

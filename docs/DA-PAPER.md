@@ -331,6 +331,9 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B39 identity holds; \(\det_+\) is the same cut as \(\lambda_2^+\) | pass |
 | B39a / B39b / B39c / B39d / B39e empty rename is a closed estimate; empty is integrable \(\mathcal{R}\); reading \(\det S\) is NS; empty rename is \(\int\|\omega\|_\infty\); sitting down decides regularity | **fail** |
 | B39f this retunes the PDE | **fail** |
+| B40 A1 off, A2 live on the box | pass |
+| B40a / B40b / B40c / B40d / B40e blanks are a closed estimate; blanks are integrable \(\mathcal{R}\); naming blanks is NS; blanks are \(\int\|\omega\|_\infty\); this write decides regularity | **fail** |
+| B40f this retunes the PDE | **fail** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 

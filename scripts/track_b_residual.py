@@ -333,6 +333,99 @@ def lemma_empty_not_a_retune() -> dict:
     )
 
 
+def blanks() -> dict:
+    rows = t0_samples()
+    med = [r["median_cos3"] for r in rows]
+    hole1 = [r["frac_pos_hi"] for r in rows]
+    infs = [r["l2p_inf"] for r in rows]
+    l3 = [r["l2p_L3_ec"] for r in rows]
+    return {
+        "n": 32,
+        "median_cos3": med,
+        "hole1": hole1,
+        "l2p_inf": infs,
+        "l2p_L3_ec": l3,
+        "median_mean": sum(med) / len(med),
+        "hole1_mean": sum(hole1) / len(hole1),
+        "l2p_inf_mean": sum(infs) / len(infs),
+        "l2p_L3_mean": sum(l3) / len(l3),
+        "a1_off": all(0.4 < m < 0.6 for m in med) and all(h > 0.5 for h in hole1),
+        "a2_live": all(i > 0.0 for i in infs),
+    }
+
+
+def lemma_blanks_readable() -> dict:
+    b = blanks()
+    ok = b["n"] == 32 and b["a1_off"] and b["a2_live"]
+    return rec(
+        "B40_blanks_readable",
+        "A1 is off on this box (median |cos α3| ~ 1/2, hole 1 majority); A2 is live (‖λ2+‖_∞ on E_c > 0)",
+        "pass" if ok else "fail",
+        "Same eigh as B15. No new FFT. No n=64. A1 off and A2 live are packet readings, not integrals.",
+        n=b["n"],
+        median_mean=b["median_mean"],
+        hole1_mean=b["hole1_mean"],
+        l2p_inf_mean=b["l2p_inf_mean"],
+        l2p_L3_mean=b["l2p_L3_mean"],
+        a1_off=b["a1_off"],
+        a2_live=b["a2_live"],
+    )
+
+
+def lemma_blanks_not_a_priori() -> dict:
+    return rec(
+        "B40a_blanks_not_a_priori",
+        "A1 off and A2 live on this ensemble are a closed estimate for classical X",
+        "fail",
+        "The CF if is off here. λ2+ is live here. All-data A1 and ∫‖λ2+‖_q stay blank.",
+    )
+
+
+def lemma_blanks_not_continuation() -> dict:
+    return rec(
+        "B40b_blanks_not_continuation",
+        "A1 off plus a positive ‖λ2+‖_∞ makes R integrable and therefore continues X",
+        "fail",
+        "A packet reading is not ∫R < ∞. Alignment in time and Miller history stay open.",
+    )
+
+
+def lemma_blanks_not_ns() -> dict:
+    return rec(
+        "B40c_blanks_not_ns",
+        "naming A1 off and A2 live is an NS a priori",
+        "fail",
+        "Two numbers on E_c are a knob on the check. Sit down.",
+    )
+
+
+def lemma_blanks_not_integral_max() -> dict:
+    return rec(
+        "B40d_blanks_not_integral_max",
+        "the A1/A2 blanks are an integral bound on the max vorticity",
+        "fail",
+        "A median and a middle eigenvalue are not ∫‖ω‖_∞. Beale still asks for the max.",
+    )
+
+
+def lemma_blanks_not_regularity() -> dict:
+    return rec(
+        "B40e_blanks_not_regularity",
+        "naming the A1/A2 blanks decides classical regularity",
+        "fail",
+        "No. Domain B stays open. Do not spawn n=64.",
+    )
+
+
+def lemma_blanks_not_a_retune() -> dict:
+    return rec(
+        "B40f_not_a_pde_retune",
+        "naming A1 and A2 is a retune of classical Navier–Stokes",
+        "fail",
+        "The PDE is untouched. No Q1. No ε. Do not type c=8. Do not spawn n=64.",
+    )
+
+
 def run(out: Path | None = None) -> dict:
     lemmas = [
         lemma_residual_readable(),
@@ -356,6 +449,13 @@ def run(out: Path | None = None) -> dict:
         lemma_empty_not_integral_max(),
         lemma_empty_not_regularity(),
         lemma_empty_not_a_retune(),
+        lemma_blanks_readable(),
+        lemma_blanks_not_a_priori(),
+        lemma_blanks_not_continuation(),
+        lemma_blanks_not_ns(),
+        lemma_blanks_not_integral_max(),
+        lemma_blanks_not_regularity(),
+        lemma_blanks_not_a_retune(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
     for row in lemmas:
@@ -363,7 +463,7 @@ def run(out: Path | None = None) -> dict:
     payload = {
         "meta": {
             "slot": "B",
-            "write": "residual tool: holes of R, Miller cut, empty det+ rename",
+            "write": "residual tool: holes, Miller cut, empty rename, A1/A2 blanks",
             "tuning_the_pde": False,
             "spawned_n64": False,
             "tesla": (
@@ -375,9 +475,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
+            "A1 is off on this box. A2 is live. Neither integral is known for all data. "
             "The residual tool names the holes in R. Miller λ2+ is a different cut from hole 2. "
-            "det+ is the same cut as λ2+. The next rename is empty. Sit down. "
-            "Neither is an a priori. Hole 1 is the CF if. Hole 2 is the live cubic. "
+            "det+ is the same cut. Sit down on another rename. "
             "Regularity leftover is not an a priori (B35e). Regularity stays open. "
             "Do not spawn n=64. B4c stands. Do not cancel to Φ."
         ),
@@ -391,7 +491,7 @@ def run(out: Path | None = None) -> dict:
 
 def main() -> int:
     payload = run()
-    print("Track B residual. Holes named. Miller cut is different. det+ is empty. Sit down.")
+    print("Track B residual. A1 off. A2 live. Not a bound.")
     for row in payload["lemmas"]:
         print(f"  [{row['verdict']}] {row['name']}: {row['why']}")
     print("counts", payload["counts"])

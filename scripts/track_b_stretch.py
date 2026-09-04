@@ -86,6 +86,8 @@ def budget(uh, vh, wh, kx, ky, kz, c: float = EC_C) -> dict:
         "share_e2_hi": float(np.sum(pos[cos2 > HIGH]) / pos_sum),
         "share_h2_and_l2p": float(np.sum(pos[unaligned & (lam2 > 0.0)]) / pos_sum),
         "mean_l2p": float(np.mean(np.maximum(lam2, 0.0))),
+        "l2p_inf": float(np.max(np.maximum(lam2, 0.0))),
+        "l2p_L3_ec": float(np.mean(np.maximum(lam2, 0.0) ** 3) ** (1.0 / 3.0)),
         "share_detp": float(np.sum(pos[det[ec] > 0.0]) / pos_sum),
         "ident_rel": ident_rel,
         "X": float(np.mean(mag2)) * (2.0 * math.pi) ** 3,
