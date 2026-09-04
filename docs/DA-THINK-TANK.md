@@ -96,7 +96,7 @@ Forbidden auto-fails: solved NS, full Q floor, Biot–Savart depletion, BKM-from
 
 August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ3 / SPREAD.
 
-**Next B write:** B5b (tube geometry: viscosity vs \(I_{\mathrm{tube}}\)). Cartesian packets cancel; the tube is a different weight. The PDE is not being tuned. Regularity stays open.
+**Next B write:** Coherent CONC (B16d). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Regularity stays open.
 
 ### How the conversation moved
 
@@ -153,6 +153,8 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 26. **Stretching budget.** Budget readable **pass**. CF weights the budget **pass**. Majority from aligned cap **pass**. Short run depletes median **fail**. Short run empties aligned share **fail**. Budget closes \(X\) **open**. [`docs/TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md).
 
 27. **Enstrophy balance.** Fluids look at the net. Identity **pass**. Viscosity owns this ensemble **pass**. \(P_+\) as a net cubic **fail**. \(L^2\) is BKM **fail**. Random-phase \(\Rightarrow\) all CONC **fail**. [`docs/TRACK-B-BALANCE.md`](TRACK-B-BALANCE.md).
+
+28. **Angular \(1/r^2\).** Domination **fail**. \(R_{\mathrm{ang}}\) climbs **pass**. B4b killer is not the angular killer **fail**. Not a \(\Phi\) cancel **fail**. [`docs/TRACK-B-ANGULAR.md`](TRACK-B-ANGULAR.md).
 
 ---
 

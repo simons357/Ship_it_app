@@ -227,8 +227,8 @@ def run(out: Path | None = None) -> dict:
             "pairs_open": sum(1 for r in PAIRS if r["verdict"] == "open"),
         },
         "next_da_move": (
-            "Use the write-up. Fluids looked at the stretching budget: net cubic cancels, viscosity owns this ensemble. "
-            "Next B write is B5b (tube geometry: viscosity vs I_tube). "
+            "Use the write-up. Angular 1/r² lost on packets; B4c still budgets I_tube. "
+            "Next B write is coherent CONC (B16d). Do not cancel to Φ. "
             "Corpus pairings emit scored sentences, not F."
         ),
     }

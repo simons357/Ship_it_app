@@ -127,6 +127,9 @@ class DaMachineTests(unittest.TestCase):
         bal = classify_claim("enstrophy balance production versus dissipation on a vorticity packet")
         self.assertEqual(bal["domain"], "B")
         self.assertEqual(bal["verdict"], "open")
+        ang = classify_claim("angular viscosity versus I_tube on a swirl packet")
+        self.assertEqual(ang["domain"], "B")
+        self.assertEqual(ang["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

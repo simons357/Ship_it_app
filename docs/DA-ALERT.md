@@ -16,7 +16,7 @@ is.
 |---|---|
 | Track B as a whole | the hard fluid equations, no extra damping |
 | B4b | does Hardy eat the nasty tube term? |
-| B5b | does viscosity beat that term? |
+| B5b | does the extra \(1/r^2\) piece beat the tube source? |
 | classical regularity | are those equations always smooth? |
 | Track A checker | the easier, damped equations |
 | full GCD floor | the dead prime-matrix slogan |

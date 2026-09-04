@@ -362,8 +362,10 @@ CONC, the field climb, a short evolution, the strain
 geometry, the stretching budget, and the enstrophy
 balance. Fluids looked: the aligned cap pays a leftover;
 the net cubic cancels; viscosity owns this ensemble;
-\(L^2\) is not BKM. Next: B5b (tube geometry).
-See [`TRACK-B-BALANCE.md`](TRACK-B-BALANCE.md).
+\(L^2\) is not BKM. Angular \(1/r^2\) does not dominate
+\(I_{\mathrm{tube}}\) on packets. Next: coherent CONC
+(B16d). B4c stands. Do not cancel to \(\Phi\).
+See [`TRACK-B-ANGULAR.md`](TRACK-B-ANGULAR.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

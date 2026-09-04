@@ -78,7 +78,7 @@ TEAM = [
         "p-Laplacian / extra dissipation",
         "global regularity for the modified stress, β ≥ 1/2, ε > 0",
         "ε → 0, Track A ⇒ B",
-        "leave Theorem A on A; do not import it into the tube",
+        "leave Theorem A on A; do not import it into the tube. Angular 1/r² lost on packets; B4c still budgets",
         "paper",
     ),
     member(
@@ -134,7 +134,7 @@ def consensus() -> dict:
     return {
         "not_a_vote": True,
         "not_a_close": True,
-        "B": "B4c budgets I_tube on CONC; energy-class T on SPREAD; B8 clock. Glue sketch is written. Frozen low-j has an energy ceiling. Climbing: slow dies, fast sits. t=0 and short n=32 do not produce c=8. Geometry: identity pass; CONC not depleted; CF conditional. Stretching budget: aligned cap pays a leftover; net cubic cancels. Fluids: visc owns this ensemble; L² is not BKM. Live: B5b (tube geometry). Regularity stays open.",
+        "B": "B4c budgets I_tube on CONC; energy-class T on SPREAD; B8 clock. Glue sketch is written. Frozen low-j has an energy ceiling. Climbing: slow dies, fast sits. t=0 and short n=32 do not produce c=8. Geometry: identity pass; CONC not depleted; CF conditional. Stretching budget: aligned cap pays a leftover; net cubic cancels. Fluids: visc owns this ensemble; L² is not BKM. Angular 1/r² does not dominate I_tube. Live: coherent CONC (B16d). Regularity stays open.",
         "A": "Leave Ladyzhenskaya on A.",
         "U": "Stop breaking L_SM. Keep Einstein + T_SM. Produce lives outside the poster.",
         "Q": "Stay arithmetic. No Bridge* → SND.",

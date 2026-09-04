@@ -63,8 +63,8 @@ WATCH = {
         "slot": "B",
         "plain": "Whether ordinary viscosity beats that 1/r^4 source at the thin tube.",
         "on_fail": (
-            "Viscosity does not beat the source in the estimate we have.",
-            "Do not cancel to Φ to hide it. Stay with Γ. Look at geometry or a smaller class.",
+            "The extra 1/r² angular piece does not beat I_tube on packets: R_ang sits above 1 and climbs with j*.",
+            "Keep B4c (full tube dissipation still budgets the packet). Do not cancel to Φ. Next: a coherent CONC packet (B16d).",
         ),
         "on_pass": (
             "Viscosity now dominates the tube source in the written estimate.",
@@ -241,7 +241,7 @@ def render_text(events: list[dict], baseline: bool) -> str:
     if not events:
         return (
             "DA checked. Nothing significant flipped.\n"
-            "Next: B5b (tube geometry: viscosity vs I_tube). Cartesian packets cancel; the tube is a different weight.\n"
+            "Next: coherent CONC (B16d). B4c stands. Angular 1/r² lost. Do not cancel to Φ.\n"
         )
     parts = []
     for e in events:
@@ -307,7 +307,7 @@ def notify(
         "recommendation": (
             events[-1]["next"]
             if events
-            else "Nothing flipped. Next write is B5b (tube geometry vs I_tube)."
+            else "Nothing flipped. Next write is coherent CONC (B16d)."
         ),
     }
     delivery = {"file": str(out_txt)}

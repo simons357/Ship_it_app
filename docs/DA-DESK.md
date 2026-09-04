@@ -105,7 +105,10 @@ Domain B **never** passes regularity. `check B` stays
 | B4c | packet class budgets \(I_{\mathrm{tube}}\) | **pass** |
 | B4d | wall is an off-axis charge | **pass** |
 | B5 | \((\Delta u)_\theta=\Delta u_\theta-u_\theta/r^2\) | **pass** |
-| B5b | viscosity beats the tube source | **open** |
+| B5b | angular \(1/r^2\) dominates \(I_{\mathrm{tube}}\) | **fail** |
+| B5c | \(R_{\mathrm{ang}}\) climbs; \(R_D\) falls | **pass** |
+| B5d / B5e / B5g | B4b killer kills angular; \(\Phi\) cancel; retune | **fail** |
+| B5f | angular piece closes \(X\) | **open** |
 | B6 | \(\int X<\infty\Rightarrow X\in L^\infty\) | **fail** |
 | B7 / B7a / B7b | Bony split, T2 self, energy-class \(T\) | **pass** |
 | B7c | uniform \(\rho^{1/2}\) as \(\rho\to 0\) | **fail** |
@@ -147,9 +150,8 @@ Domain B **never** passes regularity. `check B` stays
 | \(\Phi\) as estimate variable | keep \(\Gamma\) | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** B5b (tube geometry: viscosity vs
-\(I_{\mathrm{tube}}\)). Cartesian packets cancel; the
-tube is a different weight. We are not tuning the
+**Next B write:** Coherent CONC (B16d). B4c stands.
+Angular \(1/r^2\) does not. We are not tuning the
 equation.
 
 ---
@@ -428,6 +430,7 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`,
 `docs/DA-PAPER.md`, `docs/DA-THINK-TANK.md`,
 `docs/DA-SESSION.md`, `docs/TRACK-B-HARDY-TUBE.md`,
+`docs/TRACK-B-ANGULAR.md`,
 `docs/TRACK-B-BONY-T.md`, `docs/TRACK-B-OCCUPATION.md`,
 `docs/TRACK-B-GLUE.md`, `docs/TRACK-B-LOW-J.md`,
 `docs/TRACK-B-CLIMB.md`, `docs/TRACK-B-CLIMB-LAW.md`,
@@ -454,8 +457,10 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
   **pass**; CONC not depleted; CF conditional **pass**.
   Stretching budget: aligned cap **pays** a leftover; time
   does **not** empty it. Fluids: net cubic **cancels**;
-  viscosity owns this ensemble; \(L^2\) is not BKM. Next:
-  B5b (tube geometry). The PDE is not being tuned.
+  viscosity owns this ensemble; \(L^2\) is not BKM. Angular
+  \(1/r^2\) vs \(I_{\mathrm{tube}}\): **fail** of domination;
+  \(R_{\mathrm{ang}}\) climbs. Next: coherent CONC (B16d).
+  The PDE is not being tuned.
 - Cosmo does not enter NS.
 - HB stays shelved as a theorem. DA-as-process stays live.
 

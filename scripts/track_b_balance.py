@@ -191,7 +191,7 @@ def lemma_balance_not_close() -> dict:
         "B16e_balance_not_X_a_priori",
         "the enstrophy balance on these packets closes a bound for classical X",
         "open",
-        "Viscosity owned this ensemble. That is not continuation. The tube (B5b) is still a different weight.",
+        "Viscosity owned this ensemble. That is not continuation. Angular 1/r² lost on packets. B4c still budgets the tube.",
     )
 
 

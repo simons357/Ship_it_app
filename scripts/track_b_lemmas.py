@@ -345,12 +345,39 @@ def lemma_swirl_visc(nr: int = 96, nz: int = 64) -> dict:
 
 
 def lemma_swirl_domination() -> dict:
-    return rec(
-        "B5b_tube_vs_viscosity",
-        "angular 1/r² viscosity dominates I_tube at δ ~ 2^{-j*}",
-        "open",
-        "This is the reason to keep 1/r^4. Not shown. Do not cancel to Φ to escape it.",
-    )
+    from track_b_angular import lemma_angular_not_dominate as ang
+
+    return ang()
+
+
+def lemma_angular_climbs() -> dict:
+    from track_b_angular import lemma_angular_climbs as climbs
+
+    return climbs()
+
+
+def lemma_killer_not_angular() -> dict:
+    from track_b_angular import lemma_killer_not_angular as kill_ang
+
+    return kill_ang()
+
+
+def lemma_not_phi_cancel() -> dict:
+    from track_b_angular import lemma_not_phi_cancel as no_phi
+
+    return no_phi()
+
+
+def lemma_angular_not_close() -> dict:
+    from track_b_angular import lemma_angular_not_close as ang_ap
+
+    return ang_ap()
+
+
+def lemma_angular_not_a_retune() -> dict:
+    from track_b_angular import lemma_angular_not_a_retune as ang_rt
+
+    return ang_rt()
 
 
 # --- B6: energy integrability is not a close -------------------------------
@@ -747,6 +774,11 @@ def run(out: Path | None = None) -> dict:
         lemma_wall_match(),
         lemma_swirl_visc(),
         lemma_swirl_domination(),
+        lemma_angular_climbs(),
+        lemma_killer_not_angular(),
+        lemma_not_phi_cancel(),
+        lemma_angular_not_close(),
+        lemma_angular_not_a_retune(),
         lemma_energy_not_enough(),
         lemma_phi_not_variable(),
         lemma_bony_split(),
@@ -830,7 +862,8 @@ def run(out: Path | None = None) -> dict:
             "B4 tube Hardy with wall term (pass)",
             "B4b all-data Hardy→I_tube fail: slow fat swirl ratio ∼ 1/ε",
             "B4c packet class at δ ∼ 2^{-j*} pass; B4d wall match pass",
-            "B5 swirl (Δu)_θ identity (pass); viscosity vs I_tube still open",
+            "B5 swirl (Δu)_θ identity (pass); angular 1/r² vs I_tube fail; R_ang climbs (pass)",
+            "B5d B4b killer is not the angular killer (fail); not a Φ cancel (fail); not an a priori (open)",
             "B6 ∫X dt < ∞ does not bound X (fail of that close)",
             "Φ is not the estimate variable (fail)",
             "B7 Bony split + T2 self (pass); energy-class low T (pass); uniform ρ^{1/2} fail",
@@ -854,8 +887,8 @@ def run(out: Path | None = None) -> dict:
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "B5b: tube geometry (angular viscosity vs I_tube at δ ~ 2^{-j*}). "
-            "Cartesian packets cancel; the tube is a different weight. Tesla: the tube is still a knob."
+            "Coherent CONC (B16d): a packet with net P ≈ (ω·Sω)_+. "
+            "B4c stands. Angular 1/r² does not. Do not cancel to Φ. Tesla: the ratio climbed."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

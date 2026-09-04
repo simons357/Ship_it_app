@@ -226,9 +226,117 @@
     },
     {
       "name": "B5b_tube_vs_viscosity",
-      "statement": "angular 1/r\u00b2 viscosity dominates I_tube at \u03b4 ~ 2^{-j*}",
+      "statement": "angular 1/r\u00b2 viscosity dominates I_tube at \u03b4 \u223c 2^{-j*} on the packet class",
+      "verdict": "fail",
+      "why": "R_ang sits above 1 and climbs with j*. The extra 1/r\u00b2 piece, alone, does not beat the source. Full D_tube still does (B4c).",
+      "R_ang": [
+        5.06556618002082,
+        9.979565572394488,
+        18.78525011736838,
+        28.70703560284757
+      ],
+      "R_D": [
+        0.020747625017811817,
+        0.010257218506469929,
+        0.004896058518906943,
+        0.0019720250620467376
+      ],
+      "rows": [
+        {
+          "jstar": 2,
+          "ell": 0.25,
+          "delta": 0.5,
+          "tube_i": 0.24854966874739703,
+          "ang": 0.04906651298480824,
+          "diss": 11.979668445618106,
+          "R_ang": 5.06556618002082,
+          "R_D": 0.020747625017811817,
+          "n_r_tube": 160
+        },
+        {
+          "jstar": 3,
+          "ell": 0.125,
+          "delta": 0.25,
+          "tube_i": 0.12238071385330257,
+          "ang": 0.012263130390348109,
+          "diss": 11.931179371494201,
+          "R_ang": 9.979565572394488,
+          "R_D": 0.010257218506469929,
+          "n_r_tube": 80
+        },
+        {
+          "jstar": 4,
+          "ell": 0.0625,
+          "delta": 0.125,
+          "tube_i": 0.057528847774536304,
+          "ang": 0.0030624477936200883,
+          "diss": 11.750032715577053,
+          "R_ang": 18.78525011736838,
+          "R_D": 0.004896058518906943,
+          "n_r_tube": 40
+        },
+        {
+          "jstar": 5,
+          "ell": 0.03125,
+          "delta": 0.0625,
+          "tube_i": 0.0218909935570885,
+          "ang": 0.0007625654511996022,
+          "diss": 11.10076843261218,
+          "R_ang": 28.70703560284757,
+          "R_D": 0.0019720250620467376,
+          "n_r_tube": 20
+        }
+      ]
+    },
+    {
+      "name": "B5c_angular_climbs",
+      "statement": "on resolved packets, R_ang = |I_tube|/\u222b(u_\u03b8/r)\u00b2 climbs with j* while R_D falls",
+      "verdict": "pass",
+      "why": "Tesla\u2019s knob on this write: turn j* up. Angular loses. Full dissipation wins. The two ratios disagree.",
+      "R_ang": [
+        5.06556618002082,
+        9.979565572394488,
+        18.78525011736838,
+        28.70703560284757
+      ],
+      "R_D": [
+        0.020747625017811817,
+        0.010257218506469929,
+        0.004896058518906943,
+        0.0019720250620467376
+      ]
+    },
+    {
+      "name": "B5d_killer_not_angular_kill",
+      "statement": "the slow fat swirl that killed B4b also kills angular domination",
+      "verdict": "fail",
+      "why": "Turn \u03b5 down: R_ang falls. The B4b killer is not the B5b killer. Source slowed; (u_\u03b8/r)\u00b2 did not care.",
+      "R_ang": [
+        1.2722241669538739,
+        0.6361120834769369,
+        0.31805604173846846,
+        0.15902802086923423,
+        0.07951401043461712
+      ],
+      "falls": true
+    },
+    {
+      "name": "B5e_not_a_phi_cancel",
+      "statement": "angular 1/r\u00b2 failing means cancel to \u03a6 = \u0393/r\u00b2",
+      "verdict": "fail",
+      "why": "B4c already budgets the packet with full \u2207\u03c9. Keep \u0393. Keep 1/r^4. The extra angular term was not the absorption."
+    },
+    {
+      "name": "B5f_angular_not_X_a_priori",
+      "statement": "the angular 1/r\u00b2 piece closes a bound for classical X",
       "verdict": "open",
-      "why": "This is the reason to keep 1/r^4. Not shown. Do not cancel to \u03a6 to escape it."
+      "why": "A failed Poincar\u00e9 is not continuation. Packet dissipation (B4c) is still a tube budget, not an a priori for X."
+    },
+    {
+      "name": "B5g_not_a_pde_retune",
+      "statement": "reading angular viscosity vs I_tube is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. No \u03b5. No \u03a6. The ratio is a knob on the estimate."
     },
     {
       "name": "B6_energy_not_enough",
@@ -1374,8 +1482,8 @@
     }
   ],
   "counts": {
-    "pass": 30,
-    "fail": 27,
+    "pass": 31,
+    "fail": 31,
     "open": 14
   },
   "how_far": [
@@ -1385,7 +1493,8 @@
     "B4 tube Hardy with wall term (pass)",
     "B4b all-data Hardy\u2192I_tube fail: slow fat swirl ratio \u223c 1/\u03b5",
     "B4c packet class at \u03b4 \u223c 2^{-j*} pass; B4d wall match pass",
-    "B5 swirl (\u0394u)_\u03b8 identity (pass); viscosity vs I_tube still open",
+    "B5 swirl (\u0394u)_\u03b8 identity (pass); angular 1/r\u00b2 vs I_tube fail; R_ang climbs (pass)",
+    "B5d B4b killer is not the angular killer (fail); not a \u03a6 cancel (fail); not an a priori (open)",
     "B6 \u222bX dt < \u221e does not bound X (fail of that close)",
     "\u03a6 is not the estimate variable (fail)",
     "B7 Bony split + T2 self (pass); energy-class low T (pass); uniform \u03c1^{1/2} fail",
@@ -1408,5 +1517,5 @@
     "B16c L\u00b2 is not BKM (fail); random-phase is not all CONC (fail); balance not an a priori (open)",
     "classical regularity remains open"
   ],
-  "next_da_move": "B5b: tube geometry (angular viscosity vs I_tube at \u03b4 ~ 2^{-j*}). Cartesian packets cancel; the tube is a different weight. Tesla: the tube is still a knob."
+  "next_da_move": "Coherent CONC (B16d): a packet with net P \u2248 (\u03c9\u00b7S\u03c9)_+. B4c stands. Angular 1/r\u00b2 does not. Do not cancel to \u03a6. Tesla: the ratio climbed."
 }

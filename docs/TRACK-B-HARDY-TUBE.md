@@ -143,7 +143,7 @@ spread side.
 | B4c | **pass** | packet class, \(\delta\sim 2^{-j_*}\) |
 | B4d | **pass** | wall is an off-axis charge |
 | B4b | **fail** | all-data absorption |
-| B5b | **open** | viscosity vs source, still |
+| B5b | **fail** | angular \(1/r^2\) vs source on packets |
 | domain B | **open** | \(X\) is not bounded |
 
 Next write: energy-class low Bony \(T\), then occupation time.

@@ -39,7 +39,12 @@ not done).
 | B4c | Packet class at \(\delta\sim 2^{-j_*}\) budgets \(I_{\mathrm{tube}}\) | **pass** | Same weight, both sides. \(R\) falls with \(j_*\). |
 | B4d | Hardy wall is an off-axis charge | **pass** | Spend \(2h(\delta)^2\) on \(I_{\mathrm{off}}\). |
 | B5 | Axisymmetric \((\Delta u)_\theta=\Delta u_\theta-u_\theta/r^2\) | **pass** | Identity. Angular piece lives in the tube. |
-| B5b | Angular viscosity dominates \(I_{\mathrm{tube}}\) at \(\delta\sim 2^{-j_*}\) | **open** | Why we kept \(1/r^4\). Not shown. |
+| B5b | Angular viscosity dominates \(I_{\mathrm{tube}}\) at \(\delta\sim 2^{-j_*}\) | **fail** | \(R_{\mathrm{ang}}\) sits above 1 and climbs with \(j_*\). |
+| B5c | \(R_{\mathrm{ang}}\) climbs with \(j_*\) while \(R_D\) falls | **pass** | Two ratios disagree. |
+| B5d | B4b killer kills angular domination | **fail** | Turn \(\varepsilon\) down: \(R_{\mathrm{ang}}\) falls. |
+| B5e | therefore cancel to \(\Phi\) | **fail** | B4c already budgets the packet. Keep \(\Gamma\). |
+| B5f | angular piece closes \(X\) | **open** | A failed Poincaré is not continuation. |
+| B5g | reading the ratio retunes the PDE | **fail** | Knob on the estimate. |
 | B6 | \(\int X\,dt<\infty\Rightarrow X\in L^\infty\) | **fail** | \(X=(T_*-t)^{-1/2}\) is integrable and unbounded. |
 | B7 | \(\Pi_j=T+T^*+R+\mathrm{self}\) | **pass** | Bony bookkeeping. |
 | B7a | self-flux is T2 Lemma 1 | **pass** | The leftover \(T\) is not self-advection. |
@@ -171,9 +176,11 @@ finite off-axis charge.
 \]
 
 The extra \(1/r^2\) sits in the same tube as \(1/r^4\partial_z(\Gamma^2)\).
-The script records the identity and the raw ratio
-\(\lvert I_{\mathrm{source}}\rvert/\)angular mass on one manufactured
-field. It does not claim the viscosity wins.
+The identity **passes**. Domination by that piece alone **fails**.
+Write: [`TRACK-B-ANGULAR.md`](TRACK-B-ANGULAR.md).
+\(R_{\mathrm{ang}}\) sits above 1 and climbs with \(j_*\).
+Full \(D_{\mathrm{tube}}\) still budgets the packet (B4c).
+Do not cancel to \(\Phi\).
 
 **B6.** Leray’s \(\int X\,dt<\infty\) does not stop
 \(\dot X\sim X^3\). A spike \(X\sim(T_*-t)^{-1/2}\) is compatible
@@ -248,19 +255,19 @@ is BKM **fail**. Random-phase \(\Rightarrow\) all CONC
 
 ## What is still the next write
 
-1. B5b: angular viscosity versus \(I_{\mathrm{tube}}\) at
-   \(\delta\sim 2^{-j_*}\). Cartesian packets cancel; the
-   tube is a different weight. A finer packet box (B13e)
+1. Coherent CONC (B16d): a packet with net \(P\approx(\omega\cdot S\omega)_+\).
+   B4c stands. Angular \(1/r^2\) does not. A finer packet box (B13e)
    stays open.
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
    Leray-as-occupation, the glue sketch as an NS a priori,
    a typed \(c=8\), all-data Biot–Savart depletion, BKM-from-\(L^2\),
-   or a retune of the PDE.
+   a \(\Phi\) cancel, or a retune of the PDE.
 
 None of those is a pass on regularity. Checker:
 
 ```
 python3 scripts/track_b_hardy_tube.py
+python3 scripts/track_b_angular.py
 python3 scripts/track_b_bony_t.py
 python3 scripts/track_b_occupation.py
 python3 scripts/track_b_glue.py
@@ -272,7 +279,7 @@ python3 scripts/track_b_geometry.py
 python3 scripts/track_b_stretch.py
 python3 scripts/track_b_balance.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

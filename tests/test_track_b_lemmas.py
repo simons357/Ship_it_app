@@ -32,7 +32,12 @@ class TrackBLemmaTests(unittest.TestCase):
         self.assertEqual(by["B4c_packet_hardy_tube"]["verdict"], "pass")
         self.assertEqual(by["B4d_wall_matches_off_axis"]["verdict"], "pass")
         self.assertEqual(by["B5_swirl_visc_identity"]["verdict"], "pass")
-        self.assertEqual(by["B5b_tube_vs_viscosity"]["verdict"], "open")
+        self.assertEqual(by["B5b_tube_vs_viscosity"]["verdict"], "fail")
+        self.assertEqual(by["B5c_angular_climbs"]["verdict"], "pass")
+        self.assertEqual(by["B5d_killer_not_angular_kill"]["verdict"], "fail")
+        self.assertEqual(by["B5e_not_a_phi_cancel"]["verdict"], "fail")
+        self.assertEqual(by["B5f_angular_not_X_a_priori"]["verdict"], "open")
+        self.assertEqual(by["B5g_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(by["B6_energy_not_enough"]["verdict"], "fail")
         self.assertEqual(by["B_phi_not_estimate_variable"]["verdict"], "fail")
         self.assertEqual(by["B7_bony_split"]["verdict"], "pass")
@@ -93,7 +98,7 @@ class TrackBLemmaTests(unittest.TestCase):
         self.assertEqual(by["B16e_balance_not_X_a_priori"]["verdict"], "open")
         self.assertEqual(by["B16f_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(by["B_regularity"]["verdict"], "open")
-        self.assertIn("B5b", payload["next_da_move"])
+        self.assertIn("B16d", payload["next_da_move"])
         self.assertLess(by["B1_t2_low_flux"]["rel_residual"], 1e-10)
 
     def test_no_regularity_pass_in_the_list(self):

@@ -257,9 +257,9 @@ Scored in [`docs/TRACK-B-LEMMAS.md`](TRACK-B-LEMMAS.md). `python3 scripts/da_mac
 2. **Almost-band-limited Ring Lemma** (three shells). Bernstein **pass**. All-data depletion **fail**. Strain identity on \(E_c\) **pass**. CONC \(\Rightarrow\) depleted \(\cos\alpha_3\) **fail**. CF as a conditional **pass**. Stretching budget: CF weights it **pass**; majority from aligned cap **pass**; short run does not empty it **fail** of depletion. Enstrophy balance: identity **pass**; visc owns this ensemble **pass**; \(P_+\) as a net cubic **fail**. Writes: [`TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md), [`TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md), [`TRACK-B-BALANCE.md`](TRACK-B-BALANCE.md).
 3. **One-threshold regime split** 3-CONC \(\sigma\ge 1/2\) vs SPREAD \(\sigma\le 1/2\). Cover **pass**.
 4. **Energy-class T2 flux.** Lemma 1 **pass**. Lemma 2 dropped (**fail** as input). Low Bony \(T\): split **pass**, energy-class **pass**, uniform \(\rho^{1/2}\) **fail**. Write: [`TRACK-B-BONY-T.md`](TRACK-B-BONY-T.md).
-5. **Swirl dissipation identity** in the tube. \((\Delta u)_\theta\) **pass**. Viscosity vs \(I_{\mathrm{tube}}\) **open**.
+5. **Swirl dissipation identity** in the tube. \((\Delta u)_\theta\) **pass**. Angular \(1/r^2\) vs \(I_{\mathrm{tube}}\) **fail** (\(R_{\mathrm{ang}}\) climbs with \(j_*\)). Full \(D_{\mathrm{tube}}\) still budgets the packet (B4c). Do not cancel to \(\Phi\). Write: [`TRACK-B-ANGULAR.md`](TRACK-B-ANGULAR.md).
 
-Item 5 is the reason to keep \(1/r^4\). If the angular viscosity does not dominate the tube source at the same weight, the cancel-to-\(\Phi\) path was not the mistake — the tube is genuinely critical. If it does dominate, you never needed the cancel. Domain B does not pass.
+Item 5 was the reason to keep \(1/r^4\). The extra angular piece, alone, does **not** dominate the tube source at packet scale. The cancel-to-\(\Phi\) path was not the missing absorption — full \(\nabla\omega\) dissipation (B4c) is. Domain B does not pass.
 
 ---
 
@@ -279,12 +279,13 @@ Item 5 is the reason to keep \(1/r^4\). If the angular viscosity does not domina
 |---|---|
 | Keep \(1/r^4\), split tube / off-axis | Setup, not proved |
 | Localized tube Hardy | **pass** as Hardy + wall; all-data domination **fail**; packet class **pass** (`docs/TRACK-B-HARDY-TUBE.md`) |
+| Angular \(1/r^2\) vs \(I_{\mathrm{tube}}\) | **fail** of domination on packets; \(R_{\mathrm{ang}}\) climbs; B4c still budgets (`docs/TRACK-B-ANGULAR.md`) |
 | Ring Lemma, exact one shell | Upgraded to 3-shell Bernstein check; depletion **fail** as a slogan |
 | Concentration \(\Rightarrow\) geometric control | Identity **pass**; CONC not depleted; CF conditional **pass**; stretching budget aligned, net cubic cancels (`docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`, `docs/TRACK-B-BALANCE.md`) |
 | Spread \(\Rightarrow\) extra dissipation | T2 Lemma 1 **pass**; Lemma 2 dropped; energy-class \(T\) **pass**; uniform \(\rho^{1/2}\) **fail** |
 | Unaugmented global \(H^1\) bound | Open |
 
-The live question is no longer “does \(\Phi\) cancel the axis?” It is: **in the tube \(r\sim 2^{-j_*}\), does viscosity plus (almost) band-limited direction control beat \(\Gamma\partial_z\Gamma/r^4\)?**
+The live question is no longer “does \(\Phi\) cancel the axis?” and no longer “does the extra \(1/r^2\) piece, alone, beat \(I_{\mathrm{tube}}\)?” B4c still budgets packets. Next: a coherent CONC field with net stretching (B16d).
 
 ---
 

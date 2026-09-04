@@ -202,7 +202,10 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B4c packet class at \(\delta\sim 2^{-j_*}\) | pass |
 | B4d wall is an off-axis charge | pass |
 | B5 swirl viscosity identity | pass |
-| B5b viscosity beats the tube source | **open** |
+| B5b angular \(1/r^2\) dominates \(I_{\mathrm{tube}}\) | **fail** |
+| B5c \(R_{\mathrm{ang}}\) climbs; \(R_D\) falls | pass |
+| B5d / B5e / B5g B4b killer kills angular; \(\Phi\) cancel; retune | **fail** |
+| B5f angular piece closes \(X\) | **open** |
 | B6 \(\int X<\infty\Rightarrow X\in L^\infty\) | fail |
 | B7 Bony split / T2 self / energy-class \(T\) | pass |
 | B7c uniform \(\rho^{1/2}\) as \(\rho\to 0\) | **fail** |
@@ -244,7 +247,7 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Next write: B5b (tube geometry: viscosity vs \(I_{\mathrm{tube}}\)). Cartesian packets cancel; the tube is a different weight. The PDE is not being tuned.
+Next write: coherent CONC (B16d). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned.
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 
@@ -288,11 +291,11 @@ The operator atlas is `docs/DA-DESK.md`. The machine note is `docs/DOMAIN-ARCHIT
 
 ## 9. Conclusion
 
-DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is B5b (tube geometry). Cartesian packets cancel; the tube is a different weight.
+DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is a coherent CONC packet. B4c stands. Angular \(1/r^2\) does not.
 
 The think tank is three benches and a corpus rule. The processes are classify, check, falsify, reconstruct, ablate, pipe, compute, and alert. The purpose is to keep the operator honest while ordinary AI proposes.
 
-That is the paper. The next page of mathematics is the tube viscosity. The PDE stays classical.
+That is the paper. The next page of mathematics is a coherent CONC packet. B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
 
 ---
 
@@ -302,7 +305,7 @@ That is the paper. The next page of mathematics is the tube viscosity. The PDE s
 - Machine: `docs/DOMAIN-ARCHITECT-MACHINE.md`
 - Shelf: `docs/SHELF.md`
 - Track A: `docs/AUGMENTED-NS-PROOF-CHAIN.md`
-- Track B: `docs/TRACK-B-LEMMAS.md`, `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`, `docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`, `docs/TRACK-B-BALANCE.md`
+- Track B: `docs/TRACK-B-LEMMAS.md`, `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`, `docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`, `docs/TRACK-B-BALANCE.md`, `docs/TRACK-B-ANGULAR.md`
 - Track Q: `docs/SPECTRAL-FLOOR-EXPLORATION.md`
 - Think tank: `docs/DA-THINK-TANK.md` (combined roll), `docs/DA-DREAM-TEAM.md`, `docs/DA-GROUND.md`, `docs/DA-PIPE.md`, `docs/DA-SESSION.md` (they talk)
 - Compute and alerts: `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`
