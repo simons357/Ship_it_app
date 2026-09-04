@@ -38,6 +38,7 @@ class TrackBSavingTests(unittest.TestCase):
         self.assertLess(by["B31b_offset_not_continuation"]["c_mean_visc"], 0.0)
         self.assertLess(by["B31c_ladder_not_a_class"]["jbarT"], by["B31c_ladder_not_a_class"]["jbar0"])
         self.assertIn("B22e", payload["next_da_move"])
+        self.assertIn("B23e", payload["next_da_move"])
         self.assertIn("B21e", payload["next_da_move"])
         self.assertIn("B20e", payload["next_da_move"])
         self.assertIn("B19e", payload["next_da_move"])

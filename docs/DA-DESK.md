@@ -168,7 +168,7 @@ Domain B **never** passes regularity. `check B` stays
 | B21f | this retunes the PDE | **fail** |
 | B22 | longer paths readable past room time | **pass** |
 | B22a / B22b / B22c / B22d | longer \(c\ge 8\); ladder; high fill; clock saved \(X\) | **fail** |
-| B22e | finer (\(n>32\)) produces a saving climb | **open** |
+| B22e | finer (\(n>32\)) produces a saving climb | **fail** |
 | B22f | this retunes the PDE | **fail** |
 | B23 | short and longer DNS readable | **pass** |
 | B23a / B23b / B23c / B23d | DNS a priori; room-time continuation; packet is all data; no-blow \(\Rightarrow L^\infty\) | **fail** |
@@ -208,12 +208,16 @@ Domain B **never** passes regularity. `check B` stays
 | B31f | this retunes the PDE | **fail** |
 | B32 | window rates, missed room, sketch-grows / field-falls readable | **pass** |
 | B32a / B32b / B32c / B32d | match closes \(X\); cashing B11c is continuation; growing sketch is NS; window is \(\int\|\omega\|_\infty\) | **fail** |
-| B32e | a finer box closes \(X\) | **open** |
+| B32e | a finer box closes \(X\) | **fail** |
 | B32f | this retunes the PDE | **fail** |
+| B33 | longer miss, empty high shells, short window readable | **pass** |
+| B33a / B33b / B33c / B33d | finer closes \(X\); cashing \(n=64\) is continuation; unrun \(n=64\) is NS; finer is \(\int\|\omega\|_\infty\) | **fail** |
+| B33e | finer makes DNS an a priori | **open** |
+| B33f | this retunes the PDE | **fail** |
 | classical regularity | — | **open** |
 
 **Next B write:** Stretching budget is not an a priori
-(B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer leftover is B22e. Finer
+(B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). DNS leftover is B23e. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.
 Angular \(1/r^2\) does not. We are not tuning the
 equation. Do not spawn \(n=64\).

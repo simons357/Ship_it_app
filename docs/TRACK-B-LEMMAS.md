@@ -143,14 +143,14 @@ not done).
 | B22b | longer visc is a ladder | **fail** | \(j_{\mathrm{bar}}\) still falls. |
 | B22c | longer fills high shells | **fail** | Mass above \(j_*+1\) stays \(\sim 0\). |
 | B22d | the clock left CONC and saved \(X\) | **fail** | Viscosity. No flip. |
-| B22e | finer (\(n>32\)) produces a saving climb | **open** | A box knob. Do not spawn \(n=64\). |
+| B22e | finer (\(n>32\)) produces a saving climb | **fail** | A bigger FFT is not continuation (B33). |
 | B22f | lengthening \(T\) retunes the PDE | **fail** | Knob on the check. |
 | B23 | short and longer DNS readable | **pass** | \(T=0.384>0.375\). Still \(n=32\). |
 | B23a | decaying packet DNS is an a priori | **fail** | One IC, finite \(T\), finite \(n\). |
 | B23b | room-time length is continuation | **fail** | An estimate, not a longer interval. |
 | B23c | the packet class is all data | **fail** | B9b and SPREAD are not this run. |
 | B23d | no blow on \(n=32\) \(\Rightarrow X\in L^\infty\) | **fail** | DNS-never-blew-up is refused. |
-| B23e | finer makes DNS an a priori | **open** | Same leftover as B22e. Do not spawn \(n=64\). |
+| B23e | finer makes DNS an a priori | **open** | Same knob. Leftover close. Do not spawn \(n=64\). |
 | B23f | scoring this retunes the PDE | **fail** | Knob on the check. |
 | B24 | B4c and B5b readable together | **pass** | \(R_D\) falls. \(R_{\mathrm{ang}}\) climbs. |
 | B24a | angular \(1/r^2\) closes \(X\) | **fail** | Same slogan as B5f. |
@@ -213,8 +213,15 @@ not done).
 | B32b | cashing B11c on \(T=0.064\) is continuation | **fail** | Sitting is a long ODE. |
 | B32c | growing sketch is an NS a priori | **fail** | Prescribed \(\Delta j\neq\) field. |
 | B32d | matching the window is \(\int\|\omega\|_\infty\) | **fail** | A sign is not the max. |
-| B32e | a finer box closes \(X\) | **open** | Leftover B22e. |
+| B32e | a finer box closes \(X\) | **fail** | Scored as B22e / B33. |
 | B32f | scoring this retunes the PDE | **fail** | Knob on the estimate. |
+| B33 | longer miss, empty high shells, short window readable | **pass** | Same caches as B22 / B32. No \(n=64\). |
+| B33a | a finer box closes \(X\) | **fail** | A mesh is not an estimate. |
+| B33b | cashing \(n=64\) is continuation | **fail** | Continuation is an estimate, not a finer mesh. |
+| B33c | an unrun \(n=64\) is an NS a priori | **fail** | A box you did not run is not the packet. |
+| B33d | a finer box is \(\int\|\omega\|_\infty\) | **fail** | A mesh is not the max. |
+| B33e | finer makes DNS an a priori | **open** | Leftover B23e. |
+| B33f | scoring this retunes the PDE | **fail** | Knob on the box. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -401,7 +408,7 @@ sits on this window **fail**. Matching the sketch closes
 path lives in [`TRACK-B-LONGER.md`](TRACK-B-LONGER.md).
 Readable past room time **pass**. Longer \(c\ge 8\) **fail**.
 Ladder **fail**. High fill **fail**. Clock saved \(X\)
-**fail**. Finer box **open**. Not a PDE retune **fail**.
+**fail**. Finer box **fail**. Not a PDE retune **fail**.
 
 **B23 / B23a / B23b / B23c / B23d / B23e / B23f.** DNS as
 an a priori lives in [`TRACK-B-DNS.md`](TRACK-B-DNS.md).
@@ -479,14 +486,22 @@ sketch as an a priori lives in
 Matching the sketch closes \(X\) **fail**. Cashing B11c
 on \(T=0.064\) is continuation **fail**. Growing sketch
 is NS **fail**. Window is \(\int\|\omega\|_\infty\) **fail**.
-Finer leftover **open**. Not a PDE retune **fail**.
+Finer leftover **fail**. Not a PDE retune **fail**.
+
+**B33 / B33a / B33b / B33c / B33d / B33e / B33f.** Finer
+box as an a priori lives in
+[`TRACK-B-FINER.md`](TRACK-B-FINER.md). Readable **pass**.
+A finer box closes \(X\) **fail**. Cashing \(n=64\) is
+continuation **fail**. Unrun \(n=64\) is NS **fail**.
+Finer is \(\int\|\omega\|_\infty\) **fail**. DNS leftover
+**open**. Not a PDE retune **fail**.
 
 ---
 
 ## What is still the next write
 
 1. Stretching budget is not an a priori (B15e).
-   Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer leftover is B22e. Finer (\(n>32\))
+   Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). DNS leftover is B23e. Finer (\(n>32\))
    stays a box knob (B22e). Do not spawn \(n=64\). B4c
    stands. Angular \(1/r^2\) does not. Do not cancel to
    \(\Phi\). Do not write \(c=8\) into the PDE.
@@ -527,8 +542,9 @@ python3 scripts/track_b_clock.py
 python3 scripts/track_b_match.py
 python3 scripts/track_b_saving.py
 python3 scripts/track_b_window.py
+python3 scripts/track_b_finer.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net tests.test_track_b_blob tests.test_track_b_clock tests.test_track_b_match tests.test_track_b_saving tests.test_track_b_window
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net tests.test_track_b_blob tests.test_track_b_clock tests.test_track_b_match tests.test_track_b_saving tests.test_track_b_window tests.test_track_b_finer
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

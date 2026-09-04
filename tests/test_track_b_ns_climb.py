@@ -45,6 +45,7 @@ class TrackBNsClimbTests(unittest.TestCase):
         self.assertIn("B20e", payload["next_da_move"])
         self.assertIn("B21e", payload["next_da_move"])
         self.assertIn("B22e", payload["next_da_move"])
+        self.assertIn("B23e", payload["next_da_move"])
 
     def test_writeup_exists(self):
         self.assertTrue((ROOT / "docs" / "TRACK-B-NS-CLIMB.md").is_file())

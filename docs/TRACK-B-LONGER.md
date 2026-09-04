@@ -50,8 +50,10 @@ Mass above \(j_*+1\) stays \(\sim 0\).
 \(X\) sat.” Zero switches. Packet \(X\colon 2.5\to 0.15\)
 by viscosity.
 
-**B22e, open.** Finer (\(n>32\)) is a box knob. Do not
-spawn \(n=64\).
+**B22e, fail** of “a finer box produces a saving
+climb.” Scored as B33. A bigger FFT is not
+continuation. DNS leftover is B23e. Do not spawn
+\(n=64\).
 
 **B22f, fail** of “this retunes the PDE.” \(T\) is a
 knob on the check.
@@ -108,9 +110,9 @@ write \(c=8\) into the PDE. Do not spawn \(n=64\).
 | B22b | **fail** | longer visc is a ladder |
 | B22c | **fail** | longer fills high shells |
 | B22d | **fail** | the clock left CONC and saved \(X\) |
-| B22e | **open** | finer (\(n>32\)) produces a saving climb |
+| B22e | **fail** | finer (\(n>32\)) produces a saving climb |
 | B22f | **fail** | this retunes the PDE |
-| domain B | **open** | finer (\(n>32\)) is a box knob (B22e) |
+| domain B | **open** | DNS leftover is B23e |
 
 Tesla’s line: you said longer. \(T\) passed the
 sketch’s room time. The field still did not climb.

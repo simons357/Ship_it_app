@@ -98,7 +98,7 @@ def lemma_climb_leftover() -> dict:
         "B30e_climb_leftover",
         "a field climb law closes X",
         "fail",
-        "Scored as B20e / B31. A missing saving rate is not continuation. Climb sketch is not an a priori (B21e). Finer leftover is B22e. Do not spawn n=64.",
+        "Scored as B20e / B31. A missing saving rate is not continuation. Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). DNS leftover is B23e. Do not spawn n=64.",
     )
 
 
@@ -141,7 +141,7 @@ def run(out: Path | None = None) -> dict:
             "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). "
             "Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). "
             "Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). "
-            "NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer leftover is B22e. Finer (n>32) stays a box knob (B22e). "
+            "NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). DNS leftover is B23e. Finer (n>32) stays a box knob (B22e). "
             "Do not spawn n=64. B4c stands. Do not cancel to Φ."
         ),
     }

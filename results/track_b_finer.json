@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "finer box as an a priori",
+    "tuning_the_pde": false,
+    "n": 32,
+    "spawned_n64": false,
+    "tesla": "exacting, not a jerk. A bigger FFT is not continuation. n is a knob on the box. Do not spawn n=64.",
+    "domain_verdict": "open",
+    "c_save": 8.0,
+    "t_room": 0.375
+  },
+  "lemmas": [
+    {
+      "name": "B33_finer_readable",
+      "statement": "longer n=32 miss, empty high shells, and the short window are readable together",
+      "verdict": "pass",
+      "why": "T=0.384 > 0.375. Mass above j*+1 stays ~0. n=32 dealias cannot host a fat j=4. Typed c is not written into the PDE.",
+      "T": 0.384,
+      "t_room": 0.375,
+      "c_inc_max": 0.001963109678038144,
+      "aboveT": {
+        "packet": 9.332606023369579e-06,
+        "blob": 1.8369396924176152e-13
+      },
+      "window_T": 0.064,
+      "c_save": 8.0
+    },
+    {
+      "name": "B33a_finer_not_a_priori",
+      "statement": "a finer box (n>32) closes a bound for classical X",
+      "verdict": "fail",
+      "why": "A bigger FFT is not continuation. n is a knob on the box. The working box already cannot host the cascade the slogan wants.",
+      "aboveT": {
+        "packet": 9.332606023369579e-06,
+        "blob": 1.8369396924176152e-13
+      }
+    },
+    {
+      "name": "B33b_fft_not_continuation",
+      "statement": "cashing n=64 after a decaying n=32 path is a continuation argument for classical X",
+      "verdict": "fail",
+      "why": "Continuation is an estimate, not a finer mesh. Past the sitting of c=8 the path still decayed. Do not spawn n=64.",
+      "T": 0.384,
+      "t_room": 0.375,
+      "c_inc_max": 0.001963109678038144
+    },
+    {
+      "name": "B33c_n64_not_ns",
+      "statement": "an unrun n=64 box is still an NS a priori",
+      "verdict": "fail",
+      "why": "The field on this box went down. A box you did not run is not the packet. Do not sit a finer FFT as the estimate."
+    },
+    {
+      "name": "B33d_finer_not_integral_max",
+      "statement": "a finer box is an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "n is a knob on the check. A mesh is not \u222b\u2016\u03c9\u2016_\u221e. DNS-never-blew-up at a finer n is the same refused slogan."
+    },
+    {
+      "name": "B33e_dns_finer_leftover",
+      "statement": "a finer box makes the DNS run an a priori",
+      "verdict": "open",
+      "why": "The climb leftover is scored (B22e). Leftover close on finer-as-DNS is B23e. Not this FFT. Do not spawn n=64."
+    },
+    {
+      "name": "B33f_not_a_pde_retune",
+      "statement": "scoring a finer box as not an a priori is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. n is a knob on the box. No Q1. No \u03b5. Do not type c=8 into the equation. Do not spawn n=64."
+    }
+  ],
+  "counts": {
+    "pass": 1,
+    "fail": 5,
+    "open": 1
+  },
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). DNS leftover is B23e. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+}

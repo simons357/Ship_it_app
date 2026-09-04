@@ -44,8 +44,10 @@ packet falls is still an NS a priori.” Prescribed
 is \(\int\|\omega\|_\infty\).” A short-window sign is
 not the max criterion.
 
-**B32e, open.** Finer leftover is B22e. A bigger FFT
-is a box knob. Do not spawn \(n=64\).
+**B32e, fail** of “a finer box closes \(X\).”
+Scored as B22e / B33. A bigger FFT is not
+continuation. DNS leftover is B23e. Do not spawn
+\(n=64\).
 
 **B32f, fail** of “this retunes the PDE.” The window
 is a knob on the check.
@@ -85,7 +87,7 @@ first two held. The a-priori slogan missed.
 A long ODE is not a short path.
 
 **Operator.** The window is scored. B21e is scored.
-Next: finer box (B22e). Do not spawn \(n=64\). B4c
+Next: DNS leftover (B23e). Do not spawn \(n=64\). B4c
 stands. Do not cancel to \(\Phi\). Do not write
 \(c=8\) into the PDE.
 
@@ -102,9 +104,9 @@ stands. Do not cancel to \(\Phi\). Do not write
 | B32b | **fail** | cashing B11c on \(T=0.064\) is continuation |
 | B32c | **fail** | growing sketch is an NS a priori |
 | B32d | **fail** | matching the window is \(\int\|\omega\|_\infty\) |
-| B32e | **open** | a finer box closes \(X\) |
+| B32e | **fail** | a finer box closes \(X\) |
 | B32f | **fail** | this retunes the PDE |
-| domain B | **open** | finer leftover is B22e |
+| domain B | **open** | DNS leftover is B23e |
 
 Tesla’s line: the sitting of \(c=8\) is a long ODE.
 This window is short. The field did not follow.

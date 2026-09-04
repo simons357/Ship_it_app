@@ -90,7 +90,7 @@ def lemma_finer_still_open() -> dict:
         "B23e_finer_still_open",
         "a finer box (n>32) makes the DNS run an a priori",
         "open",
-        "The only remaining box knob. Same leftover as B22e. Do not spawn n=64. A bigger FFT is not continuation.",
+        "The climb leftover is scored (B22e). Leftover close on finer-as-DNS is B23e. Do not spawn n=64. A bigger FFT is not continuation.",
     )
 
 
@@ -135,7 +135,7 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer leftover is B22e. "
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). DNS leftover is B23e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),

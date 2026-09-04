@@ -34,6 +34,7 @@ class TrackBClockTests(unittest.TestCase):
             self.assertTrue(by["B29_clock_readable"]["X_fell"][name])
             self.assertEqual(by["B29c_occ_not_live_cubic"]["live_samples"][name], 0)
         self.assertIn("B22e", payload["next_da_move"])
+        self.assertIn("B23e", payload["next_da_move"])
         self.assertIn("B21e", payload["next_da_move"])
         self.assertIn("B20e", payload["next_da_move"])
         self.assertIn("B19e", payload["next_da_move"])

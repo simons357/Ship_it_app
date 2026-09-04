@@ -88,7 +88,7 @@ slogan missed.
 A rate you typed is not a rate the metric produced.
 
 **Operator.** The saving climb is scored. B20e is
-scored. Climb sketch is not an a priori (B21e). Next: finer box (B22e). Finer stays B22e.
+scored. Climb sketch is not an a priori (B21e). Next: DNS leftover (B23e). Finer stays B22e.
 Do not spawn \(n=64\). B4c stands. Do not cancel to
 \(\Phi\). Do not write \(c=8\) into the PDE.
 
@@ -107,7 +107,7 @@ Do not spawn \(n=64\). B4c stands. Do not cancel to
 | B31d | **fail** | reading \(c\) is \(\int\|\omega\|_\infty\) |
 | B31e | **fail** | matching the prescribed-\(c\) sketch closes \(X\) |
 | B31f | **fail** | this retunes the PDE |
-| domain B | **open** | finer leftover is B22e |
+| domain B | **open** | DNS leftover is B23e |
 
 Tesla’s line: \(c\) the field makes. It did not give
 you \(c=8\).

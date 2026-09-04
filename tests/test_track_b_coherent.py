@@ -41,6 +41,7 @@ class TrackBCoherentTests(unittest.TestCase):
         self.assertLess(by["B17b_cubic_not_live"]["Xdot"], 0.0)
         self.assertLess(by["B17c_tube_still_cancels"]["cancel"], TUBE_CANCEL_MAX)
         self.assertIn("B22e", payload["next_da_move"])
+        self.assertIn("B23e", payload["next_da_move"])
         self.assertIn("B21e", payload["next_da_move"])
         self.assertIn("B20e", payload["next_da_move"])
         self.assertIn("B19e", payload["next_da_move"])

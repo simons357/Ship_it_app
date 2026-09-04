@@ -24,7 +24,7 @@ class TrackBLongerTests(unittest.TestCase):
         self.assertEqual(by["B22b_longer_not_ladder"]["verdict"], "fail")
         self.assertEqual(by["B22c_longer_no_high_fill"]["verdict"], "fail")
         self.assertEqual(by["B22d_longer_clock_did_not_save"]["verdict"], "fail")
-        self.assertEqual(by["B22e_finer_open"]["verdict"], "open")
+        self.assertEqual(by["B22e_finer_open"]["verdict"], "fail")
         self.assertEqual(by["B22f_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
@@ -41,6 +41,8 @@ class TrackBLongerTests(unittest.TestCase):
             self.assertTrue(by["B22d_longer_clock_did_not_save"]["X_fell"][name])
         self.assertLess(by["B22a_longer_not_saving"]["c_mean"]["euler"], C_SAVE)
         self.assertIn("B14d", payload["next_da_move"])
+        self.assertIn("B22e", payload["next_da_move"])
+        self.assertIn("B23e", payload["next_da_move"])
 
     def test_writeup_exists(self):
         self.assertTrue((ROOT / "docs" / "TRACK-B-LONGER.md").is_file())

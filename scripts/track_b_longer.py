@@ -137,8 +137,8 @@ def lemma_finer_open() -> dict:
     return rec(
         "B22e_finer_open",
         "a finer box (n>32) produces a saving climb",
-        "open",
-        "Longer at n=32 is scored. Finer is a knob on the box. n=64 is not this write. Do not spawn it.",
+        "fail",
+        "Scored as B33. A bigger FFT is not continuation. n is a knob on the box. DNS leftover is B23e. Do not spawn n=64.",
     )
 
 
@@ -183,7 +183,7 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer leftover is B22e. "
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). DNS leftover is B23e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),

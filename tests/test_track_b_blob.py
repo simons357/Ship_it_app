@@ -33,6 +33,7 @@ class TrackBBlobTests(unittest.TestCase):
         self.assertLess(abs(by["B28_blob_readable"]["P_over_D"]), PD_MAX)
         self.assertLess(by["B28_blob_readable"]["Xdot"], 0.0)
         self.assertIn("B22e", payload["next_da_move"])
+        self.assertIn("B23e", payload["next_da_move"])
         self.assertIn("B21e", payload["next_da_move"])
         self.assertIn("B20e", payload["next_da_move"])
         self.assertIn("B19e", payload["next_da_move"])

@@ -202,7 +202,7 @@ def lemma_ns_climb_not_close() -> dict:
         "B20e_ns_climb_not_X_a_priori",
         "a field climb at this box closes a bound for classical X",
         "fail",
-        "Scored as B31. The field did not hand us c=8. A missing saving rate is not continuation. Climb sketch is not an a priori (B21e). Finer leftover is B22e.",
+        "Scored as B31. The field did not hand us c=8. A missing saving rate is not continuation. Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). DNS leftover is B23e.",
     )
 
 
@@ -243,7 +243,7 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer leftover is B22e. "
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). DNS leftover is B23e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),

@@ -178,6 +178,9 @@ class DaMachineTests(unittest.TestCase):
         win = classify_claim("climb window as an a priori bound for vorticity")
         self.assertEqual(win["domain"], "B")
         self.assertEqual(win["verdict"], "open")
+        finer = classify_claim("finer box as an a priori bound for vorticity")
+        self.assertEqual(finer["domain"], "B")
+        self.assertEqual(finer["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

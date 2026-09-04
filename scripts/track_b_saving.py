@@ -99,7 +99,7 @@ def lemma_sketch_leftover() -> dict:
         "B31e_sketch_leftover",
         "matching the prescribed-c sketch closes X",
         "fail",
-        "Scored as B21e / B32. A short window is not the sitting. Finer leftover is B22e. Do not spawn n=64.",
+        "Scored as B21e / B32. A short window is not the sitting. Finer box is not an a priori (B22e). DNS leftover is B23e. Do not spawn n=64.",
     )
 
 
@@ -143,7 +143,7 @@ def run(out: Path | None = None) -> dict:
             "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). "
             "Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). "
             "Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). "
-            "NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer leftover is B22e. "
+            "NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). DNS leftover is B23e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),
