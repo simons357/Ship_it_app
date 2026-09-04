@@ -79,6 +79,9 @@ LEADS = [
     lead("Fefferman", "geometric depletion", "B", "past",
          "Do not glue Ring to Biot-Savart. Pretty-damn-close is that glue.",
          "the slogan"),
+    lead("Beirao-Berselli", "geometric if / weaker than CF", "B", "living",
+         "We weakened the Lipschitz if. The if remains an if. It is not all-data A1.",
+         "weaker if = all-data alignment"),
     lead("Ladyzhenskaya", "extra dissipation", "A", "past",
          "Same weight, both sides, as a colleague. Epsilon stays on A.",
          "A ⇒ B"),
@@ -179,6 +182,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Koch", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "current math.AP",
+    "Beirao-Berselli",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -246,7 +250,7 @@ CLAIMS = [
         "next_is_residual",
         "The fluids overlap is still a residual on B",
         "pass",
-        "Closed estimate, killing field, or one preprint identity. Not leftover B38.",
+        "Closed estimate, killing field, or one preprint identity. Not leftover B42.",
     ),
     rec(
         "R10",
@@ -268,6 +272,13 @@ CLAIMS = [
         "Forced Leray-Hopf non-uniqueness writes unforced X",
         "fail",
         "Different equation once f is on.",
+    ),
+    rec(
+        "R13",
+        "beirao_if_is_all_data_a1",
+        "Beirao-Berselli geometric if is all-data A1",
+        "fail",
+        "Weaker than CF is still an if. All-data A1 stays blank.",
     ),
 ]
 
@@ -291,7 +302,7 @@ def run(out: Path | None = None) -> dict:
             "next_write": (
                 "A residual on B. Closed estimate, killing field, "
                 "or one preprint identity. Regularity stays open. "
-                "Do not spawn n=64. Do not write leftover B38."
+                "Do not spawn n=64. Do not write leftover B42."
             ),
         },
         "leads": LEADS,

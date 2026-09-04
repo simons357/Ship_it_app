@@ -224,6 +224,9 @@ class DaMachineTests(unittest.TestCase):
         walls = classify_claim("seat Miller and Albritton as walls on the living bench")
         self.assertEqual(walls["domain"], "U")
         self.assertEqual(walls["verdict"], "open")
+        beirao = classify_claim("seat Beirao-Berselli as a wall on the living bench")
+        self.assertEqual(beirao["domain"], "U")
+        self.assertEqual(beirao["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

@@ -88,6 +88,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Beirao-Berselli",
+        ["Constantin", "Fefferman"],
+        "We weakened the Lipschitz if. Direction in a weaker space still regularizes. The if remains an if. It is not all-data A1.",
+        "B",
+    ),
+    turn(
         "Beale",
         ["Fefferman", "Koch"],
         "Continuation is the max. L2 is not our theorem. A leftover list is not the max.",
@@ -319,7 +325,14 @@ CLAIMS = [
         "leftover_knob_line",
         "The next write is another leftover-knob close",
         "fail",
-        "That line is finished. Do not write leftover B38.",
+        "That line is finished. Do not write leftover B42.",
+    ),
+    rec(
+        "L21",
+        "beirao_if_is_all_data_a1",
+        "Beirao-Berselli geometric if is all-data A1",
+        "fail",
+        "Weaker than CF is still an if. This box is not aligned. All-data A1 stays blank.",
     ),
 ]
 
@@ -331,6 +344,7 @@ KINGDOMS = [
     {"name": "Liouville / ancient / self-similar", "who": "Sverak, Seregin", "slot": "B"},
     {"name": "Partial regularity", "who": "Caffarelli, Kohn", "slot": "B"},
     {"name": "Geometry", "who": "Constantin, Fefferman", "slot": "B"},
+    {"name": "Geometric if (weaker than CF)", "who": "Beirao-Berselli", "slot": "B"},
     {"name": "Continuation", "who": "Beale", "slot": "B"},
     {"name": "Critical small data", "who": "Koch, Tataru", "slot": "B"},
     {"name": "Scaling gap", "who": "Grujic", "slot": "B"},
@@ -362,7 +376,7 @@ def run(out: Path | None = None) -> dict:
             "next_write": (
                 "A residual: closed estimate for X, a killing field, "
                 "or one preprint identity. Regularity stays open. "
-                "Do not spawn n=64. Do not write leftover B38."
+                "Do not spawn n=64. Do not write leftover B42."
             ),
         },
         "turns": TURNS,
@@ -384,7 +398,7 @@ def run(out: Path | None = None) -> dict:
             "possible_to_close_X stays open",
             "impossible_to_close_X failed as a theorem",
             "conversation did not close X",
-            "next write is a residual, not leftover B38",
+            "next write is a residual, not leftover B42",
             "domain B still open",
         ],
         "next_da_move": (

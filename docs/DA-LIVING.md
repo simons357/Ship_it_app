@@ -30,6 +30,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Liouville / ancient / self-similar | Šverák, Seregin | honest remaining doors; ESS endpoint | those doors from a leftover list |
 | Partial regularity | Caffarelli, Kohn | singular set small | small \(=\) empty |
 | Geometry | Constantin, Fefferman | depletion *if* aligned | CONC \(\Rightarrow\) alignment |
+| Geometric if (weaker than CF) | Beirão da Veiga–Berselli | weaker direction space still regularizes | the if is all-data A1 |
 | Continuation | Beale | \(\int\|\omega\|_\infty\) | the max from \(L^2\) or a leftover list |
 | Critical small data | Koch, Tataru | small critical sits | large-data regularity |
 | Scaling gap | Grujić | sparseness can shrink the gap | gap vanishes at finite order |
@@ -94,6 +95,12 @@ on \(E_c\) is a tool. It is not the “if.” Pretty-damn-close
 is that glue. We will not say the slogan so the table
 feels finished. John?
 
+**Beirão da Veiga–Berselli.** We weakened the Lipschitz
+if. Direction in a weaker space still regularizes. The if
+remains an if. It is not all-data A1. This box is not
+aligned. Hugo, Charles — do not cash a weaker if as the
+blank.
+
 **Beale.** Continuation is the max. \(L^2\) is not our
 theorem. A leftover list is not the max. Herbert, Daniel
 — small critical is not this job.
@@ -148,7 +155,7 @@ Shahmurov does not sit.
 
 **Tao.** Where now: a residual. A closed estimate, a
 killing field, or one preprint identity. Not another
-leftover close. Not leftover B38.
+leftover close. Not leftover B42.
 
 **Šverák.** Can \(X\) close? Unknown. That is the
 problem. Do not vote yes. Do not vote impossible.
@@ -187,6 +194,7 @@ scores the process, not a theorem you did not prove.
 | Export A | **fail** |
 | Pretend-they-sit is an endorsement | **fail** |
 | Next write is another leftover close | **fail** |
+| Beirão–Berselli if is all-data A1 | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |
