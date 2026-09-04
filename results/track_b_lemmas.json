@@ -1370,8 +1370,8 @@
     {
       "name": "B15e_budget_not_X_a_priori",
       "statement": "an aligned stretching budget closes a bound for classical X",
-      "verdict": "open",
-      "why": "A weighted |cos \u03b1_3| is not an a priori. The field still has to empty the cap, or viscosity has to own the cubic another way."
+      "verdict": "fail",
+      "why": "Scored as B26. A weighted |cos \u03b1_3| is not an a priori. Time did not empty the cap. A share is not continuation."
     },
     {
       "name": "B15f_not_a_pde_retune",
@@ -2069,7 +2069,7 @@
       "name": "B24e_geometry_leftover",
       "statement": "packet geometry closes X",
       "verdict": "fail",
-      "why": "Scored as B14d / B25. Lipschitz plus a conditional is not continuation. Stretching budget leftover is B15e."
+      "why": "Scored as B14d / B25. Lipschitz plus a conditional is not continuation. Stretching budget is scored (B15e). Enstrophy leftover is B16e."
     },
     {
       "name": "B24f_not_a_pde_retune",
@@ -2115,14 +2115,104 @@
     {
       "name": "B25e_budget_leftover",
       "statement": "the aligned stretching budget closes X",
-      "verdict": "open",
-      "why": "Geometry is scored. The leftover close on who pays (\u03c9\u00b7S\u03c9)_+ is B15e. Not a bigger FFT. Do not spawn n=64."
+      "verdict": "fail",
+      "why": "Scored as B15e / B26. A share of (\u03c9\u00b7S\u03c9)_+ is not continuation. Enstrophy-balance leftover is B16e. Do not spawn n=64."
     },
     {
       "name": "B25f_not_a_pde_retune",
       "statement": "scoring alignment as not an a priori is a retune of classical Navier\u2013Stokes",
       "verdict": "fail",
       "why": "The PDE is untouched. Alignment is a knob on the estimate: a number you can miss. No Q1. No \u03b5."
+    },
+    {
+      "name": "B26_payers_readable",
+      "statement": "stretching budget, CF weight, and aligned majority are readable together",
+      "verdict": "pass",
+      "why": "Weighted |cos \u03b1_3| sits above the unweighted mean. A majority of (\u03c9\u00b7S\u03c9)_+ on E_c comes from the aligned cap. Typed c is not written into the PDE.",
+      "gaps": [
+        0.3087406139507371,
+        0.31054375900030823,
+        0.30755716888987467,
+        0.3105141273941837,
+        0.3083349367167417,
+        0.30731416223462626
+      ],
+      "frac_pos_hi": [
+        0.6563761486185519,
+        0.6478548839740608,
+        0.6550082085422766,
+        0.652181084029274,
+        0.6523202893043765,
+        0.6492790147267091
+      ],
+      "high": 0.8
+    },
+    {
+      "name": "B26a_share_not_a_priori",
+      "statement": "an aligned (\u03c9\u00b7S\u03c9)_+ share closes a bound for classical X",
+      "verdict": "fail",
+      "why": "A 65% share is a number. X is still the L\u00b2 enstrophy. A payer count is not continuation.",
+      "frac_pos_hi": [
+        0.6563761486185519,
+        0.6478548839740608,
+        0.6550082085422766,
+        0.652181084029274,
+        0.6523202893043765,
+        0.6492790147267091
+      ]
+    },
+    {
+      "name": "B26b_emptying_not_continuation",
+      "statement": "time emptying the aligned cap is a continuation argument for classical X",
+      "verdict": "fail",
+      "why": "B15c and B15d already missed. Median stays near 1/2. frac_hi stays ~0.65. Tesla: time was a knob. It did not empty the cap.",
+      "visc_frac_hi_end": [
+        0.6427476181640162,
+        0.6555081583697635,
+        0.6515241090538759
+      ],
+      "euler_frac_hi_end": [
+        0.6412767754107243,
+        0.6533147866954035,
+        0.6498482094639934
+      ],
+      "median_end": [
+        0.49702870180126923,
+        0.5041660075265417,
+        0.5047277394381827
+      ]
+    },
+    {
+      "name": "B26c_share_not_a_class",
+      "statement": "a ~65% aligned share of (\u03c9\u00b7S\u03c9)_+ is a geometric class that bounds X",
+      "verdict": "fail",
+      "why": "A share on 3-shell CONC packets is not all data. Majda: do not promote a payer count to a type.",
+      "frac_pos_hi": [
+        0.6563761486185519,
+        0.6478548839740608,
+        0.6550082085422766,
+        0.652181084029274,
+        0.6523202893043765,
+        0.6492790147267091
+      ]
+    },
+    {
+      "name": "B26d_aligned_budget_not_integral_max",
+      "statement": "an aligned stretching budget is an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "A 65% share of (\u03c9\u00b7S\u03c9)_+ on E_c is not \u222b\u2016\u03c9\u2016_\u221e. Do not glue a payer count to Biot\u2013Savart."
+    },
+    {
+      "name": "B26e_enstrophy_leftover",
+      "statement": "the enstrophy balance closes X",
+      "verdict": "open",
+      "why": "The budget is scored. The leftover close on the net \u1e8a=2P\u22122D is B16e. Not a bigger FFT. Do not spawn n=64."
+    },
+    {
+      "name": "B26f_not_a_pde_retune",
+      "statement": "scoring the stretching budget as not an a priori is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. The share is a knob on the estimate: a number you can miss. No Q1. No \u03b5."
     },
     {
       "name": "B_regularity",
@@ -2132,9 +2222,9 @@
     }
   ],
   "counts": {
-    "pass": 42,
-    "fail": 86,
-    "open": 11
+    "pass": 43,
+    "fail": 93,
+    "open": 10
   },
   "how_far": [
     "B1 T2 low-flux identity holds (pass); T2 Lemma 2 stays dropped (fail)",
@@ -2162,7 +2252,7 @@
     "B14 strain identity (pass); CONC not depleted (fail); Ring is not alignment (fail)",
     "B14c CF conditional (pass); geometry does not close X (B14d fail); not a PDE retune (fail)",
     "B15 stretching budget readable (pass); CF weights the budget (pass); majority from aligned cap (pass)",
-    "B15c short run does not deplete |cos \u03b1_3| (fail); aligned share stays (fail); budget not an a priori (open)",
+    "B15c short run does not deplete |cos \u03b1_3| (fail); aligned share stays (fail); budget not an a priori (B15e fail)",
     "B16 enstrophy identity (pass); visc owns the net on this ensemble (pass); P_+ is not a net cubic (fail)",
     "B16c L\u00b2 is not BKM (fail); random-phase is not all CONC (fail); balance not an a priori (open)",
     "B17 signed-strain blob readable (pass); net \u2248 P+ (pass); working-box cubic not live (fail)",
@@ -2182,8 +2272,10 @@
     "B24 B4c and B5b readable together (pass); angular not an a priori (fail); B4c not an a priori (fail)",
     "B24c R_D \u226a 1 is not L\u221e (fail); not Hardy/\u03a6 revive (fail); geometry leftover scored (B14d fail); not a PDE retune (fail)",
     "B25 identity+CF readable (pass); depletion not an a priori (fail); Lipschitz+CF not an a priori (fail)",
-    "B25c median not a class (fail); CF is not BKM (fail); budget leftover open (B15e); not a PDE retune (fail)",
+    "B25c median not a class (fail); CF is not BKM (fail); budget leftover scored (B15e fail); not a PDE retune (fail)",
+    "B26 budget+weight+majority readable (pass); aligned share not an a priori (fail); time emptying not continuation (fail)",
+    "B26c share not a class (fail); aligned budget is not \u222b\u2016\u03c9\u2016_\u221e (fail); enstrophy leftover open (B16e); not a PDE retune (fail)",
     "classical regularity remains open"
   ],
-  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget leftover is B15e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy-balance leftover is B16e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }
