@@ -87,7 +87,8 @@ A rate you typed is not a rate the metric produced.
 **Operator.** Climbing is broken out. The field did
 not hand us \(c=8\). The sketch is not an a priori.
 See [`TRACK-B-CLIMB-SKETCH.md`](TRACK-B-CLIMB-SKETCH.md).
-Next: finer/longer (B13e).
+Next: DNS as an a priori (B13f). Longer n=32 past
+the ODE room time did not produce \(c=8\) (B13e).
 
 ---
 
@@ -101,6 +102,6 @@ Next: finer/longer (B13e).
 | B11c | **pass** | fast climb sits on this ODE |
 | B11d | **fail** | NS forces a saving \(c\) |
 | B11e | **fail** | sketch \(\neq\) NS a priori |
-| domain B | **open** | finer/longer (B13e) is next |
+| domain B | **open** | DNS as an a priori (B13f) is next |
 
 Tesla’s line: turn \(c\). If nothing moves, sit down.

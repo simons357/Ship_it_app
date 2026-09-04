@@ -35,7 +35,7 @@ class TrackBFieldGlueTests(unittest.TestCase):
         for name in ("packet", "blob"):
             self.assertLess(by["B19c_alpha_not_the_cubic"]["alpha_ratio"][name], ALPHA_RATIO_MAX)
         self.assertGreater(by["B19d_gamma_not_visc"]["visc_ratio"], 2.0)
-        self.assertIn("B13e", payload["next_da_move"])
+        self.assertIn("B13f", payload["next_da_move"])
 
     def test_writeup_exists(self):
         self.assertTrue((ROOT / "docs" / "TRACK-B-FIELD-GLUE.md").is_file())

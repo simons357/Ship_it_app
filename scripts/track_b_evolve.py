@@ -213,10 +213,10 @@ def lemma_visc_still_down() -> dict:
 
 def lemma_finer_open() -> dict:
     return rec(
-        "B13e_finer_longer_open",
+        "B13e_longer_not_saving",
         "a finer / longer run produces a saving climb",
-        "open",
-        "n=32, T~0.06 is a short resolved reading. Unresolved shells and longer time are another check, not a stop forever.",
+        "fail",
+        "Longer n=32 past the B11c room time does not produce c=8 (B22). Finer (n>32) is a box knob (B22e), not a close. Do not spawn n=64.",
     )
 
 
@@ -254,8 +254,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "B5b: angular viscosity vs I_tube at δ ~ 2^{-j*}. "
-            "Or a finer packet box (B13e). Short n=32 is not a forever stop."
+            "DNS as an a priori (B13f). Longer n=32 past the ODE room time "
+            "did not produce c=8 (B13e). Finer (n>32) stays a box knob (B22e). "
+            "Do not spawn n=64. B4c stands. Do not write c=8 into the PDE."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_evolve.json")

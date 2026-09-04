@@ -95,8 +95,10 @@ a-priori slogan missed.
 A long ODE is not a short path.
 
 **Operator.** Climb sketch is scored. B11e is scored.
-Next: finer/longer (B13e). B4c stands. Do not write
-\(c=8\) into the PDE. Do not spawn \(n=64\).
+Next: DNS as an a priori (B13f). Longer n=32 past
+the ODE room time did not produce \(c=8\) (B13e).
+Finer stays a box knob (B22e). B4c stands. Do not
+write \(c=8\) into the PDE. Do not spawn \(n=64\).
 
 ---
 
@@ -112,7 +114,7 @@ Next: finer/longer (B13e). B4c stands. Do not write
 | B21d | **fail** | the sketch already sits on this window |
 | B21e | **open** | matching the sketch closes \(X\) |
 | B21f | **fail** | this retunes the PDE |
-| domain B | **open** | finer/longer (B13e) is next |
+| domain B | **open** | DNS as an a priori (B13f) is next |
 
 Tesla’s line: the sitting of \(c=8\) is a long ODE.
 This window is short. The field did not follow.

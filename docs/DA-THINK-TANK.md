@@ -96,7 +96,7 @@ Forbidden auto-fails: solved NS, full Q floor, Biot–Savart depletion, BKM-from
 
 August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ3 / SPREAD.
 
-**Next B write:** finer/longer climb (B13e). The climb sketch is not an NS a priori (B11e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Regularity stays open.
+**Next B write:** DNS as an a priori (B13f). Longer \(n=32\) did not produce \(c=8\) (B13e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\). Regularity stays open.
 
 ### How the conversation moved
 
@@ -146,7 +146,7 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 
 23. **Field climb.** Barycenter **pass**. \(c\) from RHS **pass**. \(t=0\) saving climb **fail**. Viscosity as a ladder **fail**. Evolved cascade **open**. [`docs/TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md).
 
-24. **Short evolution.** Run finite **pass**. Saving climb **fail**. High fill **fail**. Stays CONC **pass**. Evolution as a ladder **fail**. Finer/longer **open**. [`docs/TRACK-B-EVOLVE.md`](TRACK-B-EVOLVE.md).
+24. **Short evolution.** Run finite **pass**. Saving climb **fail**. High fill **fail**. Stays CONC **pass**. Evolution as a ladder **fail**. Finer/longer **fail**. [`docs/TRACK-B-EVOLVE.md`](TRACK-B-EVOLVE.md). Longer path is [`docs/TRACK-B-LONGER.md`](TRACK-B-LONGER.md).
 
 25. **Geometry.** Strain identity **pass**. CONC \(\Rightarrow\) depleted \(\cos\alpha_3\) **fail**. Ring \(\Rightarrow\) alignment **fail**. CF conditional **pass**. Geometry closes \(X\) **open**. Not a PDE retune **fail**. [`docs/TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md).
 
@@ -165,6 +165,8 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 32. **NS climb law.** \(c\) readable **pass**. Blob \(t=0\) saving climb **fail**. B18-path mean **fail**. Visc as a ladder **fail**. \(j_{\mathrm{bar}}\) offset as a climb **fail**. B11d NS forces a saving \(c\) **fail**. [`docs/TRACK-B-NS-CLIMB.md`](TRACK-B-NS-CLIMB.md).
 
 33. **Climb sketch.** Window rates **pass**. Viscous room on this window **fail**. Sitting path is NS **fail**. \(\Delta j=cT\) **fail**. Sketch sits on this window **fail**. B11e sketch as a priori **fail**. [`docs/TRACK-B-CLIMB-SKETCH.md`](TRACK-B-CLIMB-SKETCH.md).
+
+34. **Longer path.** Readable past room time **pass**. Longer \(c\ge 8\) **fail**. Ladder **fail**. High fill **fail**. Clock saved \(X\) **fail**. B13e finer/longer **fail**. [`docs/TRACK-B-LONGER.md`](TRACK-B-LONGER.md).
 
 ---
 

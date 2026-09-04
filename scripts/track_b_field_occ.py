@@ -63,6 +63,7 @@ def record_path(uh, vh, wh, kx, ky, kz, k2, k2_safe, dealias, nu, jstar0, dt=DT,
     sigmas: list[float] = []
     xs: list[float] = []
     jbars: list[float] = []
+    aboves: list[float] = []
     p_over_d: list[float] = []
     for i in range(steps + 1):
         ox, oy, oz, oxh, oyh, ozh = curl(uh, vh, wh, kx, ky, kz)
@@ -71,6 +72,7 @@ def record_path(uh, vh, wh, kx, ky, kz, k2, k2_safe, dealias, nu, jstar0, dt=DT,
         sigmas.append(st["sigma"])
         xs.append(st["X"])
         jbars.append(st["jbar"])
+        aboves.append(st["above"])
         p_over_d.append(pd["P_over_D"] if nu > 0.0 else 0.0)
         if i < steps:
             uh, vh, wh = ifrk2_step(
@@ -90,6 +92,12 @@ def record_path(uh, vh, wh, kx, ky, kz, k2, k2_safe, dealias, nu, jstar0, dt=DT,
         "jbar0": float(jbars[0]),
         "jbarT": float(jbars[-1]),
         "c_mean": float((jbars[-1] - jbars[0]) / max(steps * dt, 1e-30)),
+        "c_inc": [
+            float((jbars[i + 1] - jbars[i]) / max(dt, 1e-30))
+            for i in range(len(jbars) - 1)
+        ],
+        "above0": float(aboves[0]),
+        "aboveT": float(aboves[-1]),
         "P_over_D": [float(p) for p in p_over_d],
         "occ": occ,
         "tau_frac_conc": occ["tau_conc"] / max(occ["T"], 1e-30),
@@ -245,9 +253,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Finer/longer climb (B13e). The climb sketch is not an NS a priori "
-            "(B11e). NS did not force a saving c (B11d). B4c stands. "
-            "Do not write c=8 into the PDE."
+            "DNS as an a priori (B13f). Longer n=32 past the ODE room time "
+            "did not produce c=8 (B13e). Finer (n>32) stays a box knob (B22e). "
+            "Do not spawn n=64. B4c stands. Do not write c=8 into the PDE."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_field_occ.json")

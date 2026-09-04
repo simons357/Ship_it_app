@@ -38,8 +38,10 @@ sneak into SPREAD to survive.
 **B13d, fail** of “evolution is a ladder.” \(j_{\mathrm{bar}}\)
 falls along the trajectory. Same direction as \(t=0\).
 
-**B13e, open.** Finer / longer. Unresolved shells are
-another check, not a stop forever.
+**B13e, fail** of “a finer / longer run produces a
+saving climb.” Longer \(n=32\) past the B11c room time
+is scored in [`TRACK-B-LONGER.md`](TRACK-B-LONGER.md).
+No \(c=8\). Finer is a box knob, not a close.
 
 **B13f, open.** A few steps are not an a priori for \(X\).
 Do not sit “DNS did not climb” as regularity.
@@ -81,8 +83,8 @@ already open (B5b).
 | B13b | **fail** | resolved high shells fill |
 | B13c | **pass** | stays CONC |
 | B13d | **fail** | evolution is a ladder |
-| B13e | **open** | finer / longer saving climb |
+| B13e | **fail** | finer / longer produces a saving climb |
 | B13f | **open** | short DNS is an a priori |
-| domain B | **open** | B5b or a bigger box |
+| domain B | **open** | DNS as an a priori (B13f) is next |
 
 Tesla’s line: let it run. Then read. Do not type the cascade.

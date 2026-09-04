@@ -132,7 +132,7 @@ Domain B **never** passes regularity. `check B` stays
 | B12d | evolved cascade | **open** (B13) |
 | B13 / B13c | short run; stays CONC | **pass** |
 | B13a / B13b / B13d | no saving climb; no high fill; not a ladder | **fail** |
-| B13e | finer / longer | **open** |
+| B13e | finer / longer | **fail** |
 | B14 | strain identity on \(E_c\) | **pass** |
 | B14a / B14b | CONC depleted; Ring \(\Rightarrow\) alignment | **fail** |
 | B14c | CF conditional | **pass** |
@@ -166,13 +166,16 @@ Domain B **never** passes regularity. `check B` stays
 | B21a / B21b / B21c / B21d | room on this window; sitting path is NS; \(\Delta j=cT\); sketch sits here | **fail** |
 | B21e | matching the sketch closes \(X\) | **open** |
 | B21f | this retunes the PDE | **fail** |
-| \(\Phi\) as estimate variable | keep \(\Gamma\) | **fail** |
+| B22 | longer paths readable past room time | **pass** |
+| B22a / B22b / B22c / B22d | longer \(c\ge 8\); ladder; high fill; clock saved \(X\) | **fail** |
+| B22e | finer (\(n>32\)) produces a saving climb | **open** |
+| B22f | this retunes the PDE | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** finer/longer climb (B13e). The climb
-sketch is not an NS a priori (B11e). B4c stands.
+**Next B write:** DNS as an a priori (B13f). Longer
+\(n=32\) did not produce \(c=8\) (B13e). B4c stands.
 Angular \(1/r^2\) does not. We are not tuning the
-equation.
+equation. Do not spawn \(n=64\).
 
 ---
 
@@ -489,7 +492,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
   typed \(j_*=2\) grows; the NS packet falls. NS climb law:
   blob and B18 paths do not produce \(c=8\); \(j_{\mathrm{bar}}\)
   offset is not a climb. Climb sketch is not an a priori.
-  Next: finer/longer (B13e).
+  Longer \(n=32\) past room time did not produce \(c=8\).
+  Next: DNS as an a priori (B13f).
   The PDE is not being tuned.
 - Cosmo does not enter NS.
 - HB stays shelved as a theorem. DA-as-process stays live.

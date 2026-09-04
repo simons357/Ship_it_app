@@ -167,9 +167,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Finer/longer climb (B13e). The climb sketch is not an NS a priori "
-            "(B11e). NS did not force a saving c (B11d). B4c stands. "
-            "Do not write c=8 into the PDE."
+            "DNS as an a priori (B13f). Longer n=32 past the ODE room time "
+            "did not produce c=8 (B13e). Finer (n>32) stays a box knob (B22e). "
+            "Do not spawn n=64. B4c stands. Do not write c=8 into the PDE."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_occupation.json")

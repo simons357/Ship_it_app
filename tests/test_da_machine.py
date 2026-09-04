@@ -145,6 +145,9 @@ class DaMachineTests(unittest.TestCase):
         csk = classify_claim("climb sketch of prescribed c against a vorticity window")
         self.assertEqual(csk["domain"], "B")
         self.assertEqual(csk["verdict"], "open")
+        lng = classify_claim("longer path of a vorticity packet past the climb room time")
+        self.assertEqual(lng["domain"], "B")
+        self.assertEqual(lng["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

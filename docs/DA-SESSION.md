@@ -374,9 +374,11 @@ paths do not produce \(c=8\); \(j_{\mathrm{bar}}\) offset
 is not a climb. B11d is scored **fail**. Climb sketch:
 prescribed \(c=8\) has not reached the viscous room on
 this window; the sketch grows, NS falls. B11e is scored
-**fail**. Next: finer/longer climb (B13e). B4c
-stands. Do not cancel to \(\Phi\). See
-[`TRACK-B-CLIMB-SKETCH.md`](TRACK-B-CLIMB-SKETCH.md).
+**fail**. Longer \(n=32\) past the room time: no
+\(c=8\); \(j_{\mathrm{bar}}\) still falls. B13e is scored
+**fail**. Next: DNS as an a priori (B13f). B4c
+stands. Do not cancel to \(\Phi\). Do not spawn \(n=64\).
+See [`TRACK-B-LONGER.md`](TRACK-B-LONGER.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

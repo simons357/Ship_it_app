@@ -229,7 +229,7 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B12d evolved cascade | **open** (B13) |
 | B13 / B13c short run; stays CONC | pass |
 | B13a / B13b / B13d no saving climb; no high fill; not a ladder | **fail** |
-| B13e finer / longer | **open** |
+| B13e finer / longer | **fail** |
 | B14 strain identity on \(E_c\) | pass |
 | B14a / B14b CONC depleted; Ring \(\Rightarrow\) alignment | **fail** |
 | B14c CF conditional | pass |
@@ -263,10 +263,14 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B21a / B21b / B21c / B21d room on this window; sitting path is NS; \(\Delta j=cT\); sketch sits here | **fail** |
 | B21e matching the sketch closes \(X\) | **open** |
 | B21f this retunes the PDE | **fail** |
+| B22 longer paths readable past room time | pass |
+| B22a / B22b / B22c / B22d longer \(c\ge 8\); ladder; high fill; clock saved \(X\) | **fail** |
+| B22e finer (\(n>32\)) produces a saving climb | **open** |
+| B22f this retunes the PDE | **fail** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Next write: finer/longer climb (B13e). The climb sketch is not an NS a priori (B11e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned.
+Next write: DNS as an a priori (B13f). Longer \(n=32\) did not produce \(c=8\) (B13e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\).
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 
@@ -310,11 +314,11 @@ The operator atlas is `docs/DA-DESK.md`. The machine note is `docs/DOMAIN-ARCHIT
 
 ## 9. Conclusion
 
-DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is finer/longer climb (B13e). The climb sketch is not an NS a priori. B4c stands. Angular \(1/r^2\) does not.
+DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is DNS as an a priori (B13f). Longer \(n=32\) did not produce \(c=8\). B4c stands. Angular \(1/r^2\) does not.
 
 The think tank is three benches and a corpus rule. The processes are classify, check, falsify, reconstruct, ablate, pipe, compute, and alert. The purpose is to keep the operator honest while ordinary AI proposes.
 
-That is the paper. The next page of mathematics is finer/longer climb (B13e). B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
+That is the paper. The next page of mathematics is DNS as an a priori (B13f). B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
 
 ---
 

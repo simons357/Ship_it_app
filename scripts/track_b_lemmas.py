@@ -911,6 +911,48 @@ def lemma_sketch_not_a_retune() -> dict:
     return sk_rt()
 
 
+def lemma_longer_readable() -> dict:
+    from track_b_longer import lemma_longer_readable as lr
+
+    return lr()
+
+
+def lemma_longer_not_saving() -> dict:
+    from track_b_longer import lemma_longer_not_saving as lns
+
+    return lns()
+
+
+def lemma_longer_not_ladder() -> dict:
+    from track_b_longer import lemma_longer_not_ladder as lnl
+
+    return lnl()
+
+
+def lemma_longer_no_high_fill() -> dict:
+    from track_b_longer import lemma_longer_no_high_fill as lnh
+
+    return lnh()
+
+
+def lemma_longer_clock_did_not_save() -> dict:
+    from track_b_longer import lemma_longer_clock_did_not_save as lcd
+
+    return lcd()
+
+
+def lemma_finer_box_open() -> dict:
+    from track_b_longer import lemma_finer_open as finer_box
+
+    return finer_box()
+
+
+def lemma_longer_not_a_retune() -> dict:
+    from track_b_longer import lemma_longer_not_a_retune as lrt
+
+    return lrt()
+
+
 def lemma_coherent_field() -> dict:
     from track_b_coherent import lemma_coherent_field as coh
 
@@ -1083,6 +1125,13 @@ def run(out: Path | None = None) -> dict:
         lemma_sketch_did_not_save(),
         lemma_sketch_not_close(),
         lemma_sketch_not_a_retune(),
+        lemma_longer_readable(),
+        lemma_longer_not_saving(),
+        lemma_longer_not_ladder(),
+        lemma_longer_no_high_fill(),
+        lemma_longer_clock_did_not_save(),
+        lemma_finer_box_open(),
+        lemma_longer_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -1122,7 +1171,7 @@ def run(out: Path | None = None) -> dict:
             "B12 barycenter + c from RHS (pass); t=0 packets do not produce c≥8 (fail)",
             "B12c viscosity pulls j_bar down (fail); evolved cascade open (B12d)",
             "B13 short run finite (pass); no saving climb (fail); no high fill (fail); stays CONC (pass)",
-            "B13d visc still pulls down (fail); finer/longer open (B13e); not an a priori (B13f)",
+            "B13d visc still pulls down (fail); longer n=32 not a saving climb (B13e fail); not an a priori (B13f)",
             "B14 strain identity (pass); CONC not depleted (fail); Ring is not alignment (fail)",
             "B14c CF conditional (pass); geometry does not close X (open); not a PDE retune (fail)",
             "B15 stretching budget readable (pass); CF weights the budget (pass); majority from aligned cap (pass)",
@@ -1139,12 +1188,14 @@ def run(out: Path | None = None) -> dict:
             "B20c visc is not a ladder on the blob (fail); j_bar offset is not a climb (fail); not an a priori (open)",
             "B21 ODE and NS readable on the window (pass); c=8 not yet in the viscous room (fail); not the sitting path (fail)",
             "B21c NS Δj is not cT (fail); sketch did not sit on this window (fail); not an a priori (open)",
+            "B22 longer n=32 readable past room time (pass); not c≥8 (fail); not a ladder (fail)",
+            "B22c no high fill (fail); clock did not save (fail); finer box open (B22e); not an a priori leftover (B13f)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Finer/longer climb (B13e). The climb sketch is not an NS a priori "
-            "(B11e). NS did not force a saving c (B11d). B4c stands. "
-            "Do not write c=8 into the PDE."
+            "DNS as an a priori (B13f). Longer n=32 past the ODE room time "
+            "did not produce c=8 (B13e). Finer (n>32) stays a box knob (B22e). "
+            "Do not spawn n=64. B4c stands. Do not write c=8 into the PDE."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

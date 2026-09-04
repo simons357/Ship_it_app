@@ -107,7 +107,7 @@ occupation of a decaying packet is not a singular set.
 Same PDE, now with a clock along the path.
 
 **Operator.** Field occupation is scored. B8c is scored.
-Next: finer/longer climb (B13e). Climb sketch is scored.
+Next: DNS as an a priori (B13f). Longer is scored.
 B4c stands. Do not cancel to \(\Phi\).
 
 ---
@@ -124,7 +124,7 @@ B4c stands. Do not cancel to \(\Phi\).
 | B18d | **fail** | cubic-live time is nonempty |
 | B18e | **open** | field occupation closes \(X\) |
 | B18f | **fail** | this retunes the PDE |
-| domain B | **open** | finer/longer (B13e) is next |
+| domain B | **open** | DNS as an a priori (B13f) is next |
 
 Tesla’s line: occupation is a number on a path. If the
 path never leaves CONC, the clock did not do the bound.

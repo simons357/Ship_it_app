@@ -81,7 +81,7 @@ not done).
 | B13b | resolved high shells fill | **fail** | Mass above \(j_*+1\) stays \(\sim 0\). |
 | B13c | short run stays CONC | **pass** | Clock did not sneak into SPREAD. |
 | B13d | evolution is a ladder | **fail** | \(j_{\mathrm{bar}}\) falls. |
-| B13e | finer / longer saving climb | **open** | \(n=32\) is a short reading. |
+| B13e | finer / longer saving climb | **fail** | Longer \(n=32\) past room time. No \(c=8\). |
 | B13f | short DNS is an a priori | **open** | A few steps are not continuation. |
 | B14 | \(\xi\cdot S\xi=\sum\lambda_i\cos^2\alpha_i\) on \(E_c\) | **pass** | Strain eigenframe. Not depletion. |
 | B14a | 3-CONC \(\Rightarrow\) median \(\lvert\cos\alpha_3\rvert\le 0.25\) | **fail** | Median sits near \(1/2\). |
@@ -136,8 +136,15 @@ not done).
 | B21b | B11c sitting path is the NS packet | **fail** | Model grows; NS falls. |
 | B21c | NS \(\Delta j_{\mathrm{bar}}=cT\) | **fail** | Prescribed \(+0.512\); field \(\approx-0.015\). |
 | B21d | the sketch already sits on this window | **fail** | Model \(X\) still grows. |
-| B21e | matching the sketch closes \(X\) | **open** | Finer/longer is B13e. |
+| B21e | matching the sketch closes \(X\) | **open** | Longer is B13e fail. Finer is B22e. |
 | B21f | reading the sketch retunes the PDE | **fail** | Knob on the check. |
+| B22 | longer paths readable past room time | **pass** | \(T=0.384>0.375\). Still \(n=32\). |
+| B22a | longer run produces \(c\ge 8\) | **fail** | Visc means negative. Euler \(\sim 0\). |
+| B22b | longer visc is a ladder | **fail** | \(j_{\mathrm{bar}}\) still falls. |
+| B22c | longer fills high shells | **fail** | Mass above \(j_*+1\) stays \(\sim 0\). |
+| B22d | the clock left CONC and saved \(X\) | **fail** | Viscosity. No flip. |
+| B22e | finer (\(n>32\)) produces a saving climb | **open** | A box knob. Do not spawn \(n=64\). |
+| B22f | lengthening \(T\) retunes the PDE | **fail** | Knob on the check. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -261,7 +268,7 @@ Short evolution is broken out as B13. \(t=0\) as a priori
 evolution lives in [`TRACK-B-EVOLVE.md`](TRACK-B-EVOLVE.md).
 Run finite **pass**. Saving climb **fail**. High fill
 **fail**. Stays CONC **pass**. Evolution as a ladder
-**fail**. Finer/longer **open**. Not an a priori **open**.
+**fail**. Longer saving climb **fail**. Not an a priori **open**.
 
 **B14 / B14a / B14b / B14c / B14d / B14e.** Packet geometry
 lives in [`TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md).
@@ -321,14 +328,21 @@ Sitting path is NS **fail**. \(\Delta j=cT\) **fail**. Sketch
 sits on this window **fail**. Matching the sketch closes
 \(X\) **open**. Not a PDE retune **fail**.
 
+**B22 / B22a / B22b / B22c / B22d / B22e / B22f.** Longer
+path lives in [`TRACK-B-LONGER.md`](TRACK-B-LONGER.md).
+Readable past room time **pass**. Longer \(c\ge 8\) **fail**.
+Ladder **fail**. High fill **fail**. Clock saved \(X\)
+**fail**. Finer box **open**. Not a PDE retune **fail**.
+
 ---
 
 ## What is still the next write
 
-1. Finer/longer climb (B13e). The climb sketch is not
-   an NS a priori (B11e). NS did not force a saving \(c\)
-   (B11d). B4c stands. Angular \(1/r^2\) does not. Do not
-   write \(c=8\) into the PDE. Do not spawn \(n=64\).
+1. DNS as an a priori (B13f). Longer \(n=32\) past the
+   ODE room time did not produce \(c=8\) (B13e). Finer
+   (\(n>32\)) stays a box knob (B22e). B4c stands. Angular
+   \(1/r^2\) does not. Do not write \(c=8\) into the PDE.
+   Do not spawn \(n=64\).
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
    Leray-as-occupation, the glue sketch as an NS a priori,
    a typed \(c=8\), all-data Biot–Savart depletion, BKM-from-\(L^2\),
@@ -355,8 +369,9 @@ python3 scripts/track_b_field_occ.py
 python3 scripts/track_b_field_glue.py
 python3 scripts/track_b_ns_climb.py
 python3 scripts/track_b_climb_sketch.py
+python3 scripts/track_b_longer.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

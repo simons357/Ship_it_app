@@ -23,7 +23,7 @@ class TrackBEvolveTests(unittest.TestCase):
         self.assertEqual(by["B13b_no_high_fill"]["verdict"], "fail")
         self.assertEqual(by["B13c_stays_conc"]["verdict"], "pass")
         self.assertEqual(by["B13d_visc_still_down"]["verdict"], "fail")
-        self.assertEqual(by["B13e_finer_longer_open"]["verdict"], "open")
+        self.assertEqual(by["B13e_longer_not_saving"]["verdict"], "fail")
         self.assertEqual(by["B13f_evolve_not_X_a_priori"]["verdict"], "open")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])

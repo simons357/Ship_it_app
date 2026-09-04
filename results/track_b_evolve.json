@@ -95,10 +95,10 @@
       "jbarT": 2.9556103131951192
     },
     {
-      "name": "B13e_finer_longer_open",
+      "name": "B13e_longer_not_saving",
       "statement": "a finer / longer run produces a saving climb",
-      "verdict": "open",
-      "why": "n=32, T~0.06 is a short resolved reading. Unresolved shells and longer time are another check, not a stop forever."
+      "verdict": "fail",
+      "why": "Longer n=32 past the B11c room time does not produce c=8 (B22). Finer (n>32) is a box knob (B22e), not a close. Do not spawn n=64."
     },
     {
       "name": "B13f_evolve_not_X_a_priori",
@@ -109,8 +109,8 @@
   ],
   "counts": {
     "pass": 2,
-    "fail": 3,
-    "open": 2
+    "fail": 4,
+    "open": 1
   },
-  "next_da_move": "B5b: angular viscosity vs I_tube at \u03b4 ~ 2^{-j*}. Or a finer packet box (B13e). Short n=32 is not a forever stop."
+  "next_da_move": "DNS as an a priori (B13f). Longer n=32 past the ODE room time did not produce c=8 (B13e). Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not write c=8 into the PDE."
 }

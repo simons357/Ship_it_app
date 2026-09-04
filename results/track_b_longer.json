@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "longer n=32 path past the B11c room time",
+    "tuning_the_pde": false,
+    "n": 32,
+    "steps": 48,
+    "dt": 0.008,
+    "T": 0.384,
+    "t_room": 0.375,
+    "tesla": "exacting, not a jerk. You said longer. T passed the sketch\u2019s room time. The field still did not climb. Do not spawn n=64.",
+    "domain_verdict": "open"
+  },
+  "lemmas": [
+    {
+      "name": "B22_longer_readable",
+      "statement": "packet and blob stay readable on an n=32 run with T past the B11c room time",
+      "verdict": "pass",
+      "why": "T=0.384 > 0.375. Same box as B13 / B18. Not a bigger FFT. Typed c is not written into the PDE.",
+      "T": 0.384,
+      "t_room": 0.375,
+      "XT": {
+        "packet": 0.14577624981924897,
+        "blob": 0.6997879270742913,
+        "euler": 2.5001381804512466
+      },
+      "sigma_min": {
+        "packet": 0.9999999658501435,
+        "blob": 0.6307578825598348
+      }
+    },
+    {
+      "name": "B22a_longer_not_saving",
+      "statement": "a longer n=32 run produces mean or step c \u2265 8",
+      "verdict": "fail",
+      "why": "Past the sketch\u2019s room time. Viscous means stay negative. Euler ~0. Step increments never reach 8.",
+      "c_save": 8.0,
+      "c_mean": {
+        "packet": -0.47683874852890695,
+        "blob": -1.8713152972916913,
+        "euler": 0.0009773124991577231
+      },
+      "c_inc_max": 0.001963109678038144,
+      "T": 0.384,
+      "t_room": 0.375
+    },
+    {
+      "name": "B22b_longer_not_ladder",
+      "statement": "a longer viscous run is a ladder for j_bar",
+      "verdict": "fail",
+      "why": "Packet 2.97 \u2192 2.79. Blob 2.57 \u2192 1.85. More time pulled the barycenter down, not up.",
+      "jbar0": {
+        "packet": 2.9706581534824363,
+        "blob": 2.5664433170637415
+      },
+      "jbarT": {
+        "packet": 2.787552074047336,
+        "blob": 1.847858242903732
+      }
+    },
+    {
+      "name": "B22c_longer_no_high_fill",
+      "statement": "a longer n=32 run fills resolved shells above the original triad",
+      "verdict": "fail",
+      "why": "Mass above j*+1 stays ~0. n=32 dealias still cannot host a fat j=4. Length did not buy a cascade.",
+      "aboveT": {
+        "packet": 9.332606023369579e-06,
+        "blob": 1.8369396924176152e-13
+      }
+    },
+    {
+      "name": "B22d_longer_clock_did_not_save",
+      "statement": "the longer run left CONC, and that is why X sat",
+      "verdict": "fail",
+      "why": "Still CONC the whole interval. Packet X falls 2.5 \u2192 0.15 by viscosity. The clock did not flip.",
+      "switches": {
+        "packet": 0,
+        "blob": 0
+      },
+      "sigma_min": {
+        "packet": 0.9999999658501435,
+        "blob": 0.6307578825598348
+      },
+      "X_fell": {
+        "packet": true,
+        "blob": true
+      },
+      "XT": {
+        "packet": 0.14577624981924897,
+        "blob": 0.6997879270742913
+      }
+    },
+    {
+      "name": "B22e_finer_open",
+      "statement": "a finer box (n>32) produces a saving climb",
+      "verdict": "open",
+      "why": "Longer at n=32 is scored. Finer is a knob on the box. n=64 is not this write. Do not spawn it."
+    },
+    {
+      "name": "B22f_not_a_pde_retune",
+      "statement": "lengthening T at n=32, or moving to n=64, is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. T is a knob on the check. n is a knob on the box. No Q1. No \u03b5. Do not type c=8 into the equation."
+    }
+  ],
+  "counts": {
+    "pass": 1,
+    "fail": 5,
+    "open": 1
+  },
+  "next_da_move": "DNS as an a priori (B13f). Longer n=32 past the ODE room time did not produce c=8 (B13e). Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not write c=8 into the PDE."
+}

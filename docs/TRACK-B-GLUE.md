@@ -112,7 +112,8 @@ A model is a model.
 **Operator.** Glue is scored as a sketch. B9d is a fail
 of the close. Field glue is
 [`TRACK-B-FIELD-GLUE.md`](TRACK-B-FIELD-GLUE.md). Next:
-finer/longer climb (B13e).
+DNS as an a priori (B13f). Longer n=32 past the ODE
+room time did not produce \(c=8\) (B13e).
 
 ---
 
@@ -125,7 +126,7 @@ finer/longer climb (B13e).
 | B9b | **fail** | low \(j_*\) model blows |
 | B9c | **pass** | switching high \(j_*\) sits |
 | B9d | **fail** | sketch \(\neq\) NS a priori |
-| domain B | **open** | finer/longer (B13e) is next |
+| domain B | **open** | DNS as an a priori (B13f) is next |
 
 Tesla’s line: detune \(j_*\). If the script does not
 move, you do not have an apparatus.

@@ -108,8 +108,9 @@ is on.
 **Operator.** Clock is scored. B8c is a fail of the close.
 The glue that talks to \(X\) is written in
 [`TRACK-B-GLUE.md`](TRACK-B-GLUE.md). Field occupation is
-[`TRACK-B-FIELD-OCC.md`](TRACK-B-FIELD-OCC.md). Next: finer/longer
-climb (B13e).
+[`TRACK-B-FIELD-OCC.md`](TRACK-B-FIELD-OCC.md). Next: DNS as
+an a priori (B13f). Longer n=32 past the ODE room time
+did not produce \(c=8\) (B13e).
 
 ---
 
@@ -121,6 +122,6 @@ climb (B13e).
 | B8a | **pass** | high \(j_*\) hot time falls |
 | B8b | **fail** | Leray \(\Rightarrow\) short CONC |
 | B8c | **fail** | occupation closes a bound for \(X\) |
-| domain B | **open** | finer/longer (B13e) is next |
+| domain B | **open** | DNS as an a priori (B13f) is next |
 
 The unicorn, broken out: a clock you can read, not a close.
