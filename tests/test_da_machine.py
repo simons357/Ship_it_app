@@ -69,6 +69,14 @@ class DaMachineTests(unittest.TestCase):
         self.assertEqual(r2["domain"], "U")
         self.assertEqual(r2["verdict"], "open")
 
+    def test_living_dream_team_lands_in_u(self):
+        r = classify_claim("seat the living dream team that is not dead")
+        self.assertEqual(r["domain"], "U")
+        self.assertEqual(r["verdict"], "open")
+        r2 = classify_claim("bring in the living bench and pretend they sit")
+        self.assertEqual(r2["domain"], "U")
+        self.assertEqual(r2["verdict"], "open")
+
     def test_harmonic_vocab_lands_in_u(self):
         r = classify_claim("can DA make a complete harmonic vocabulary out of mathematics")
         self.assertEqual(r["domain"], "U")

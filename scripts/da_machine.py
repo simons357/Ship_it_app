@@ -68,6 +68,7 @@ SLOTS = {
             "tests.test_da_compute",
             "tests.test_da_alert",
             "tests.test_da_session",
+            "tests.test_da_living",
             "-v",
         ],
     },
@@ -123,7 +124,7 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
     if re.search(
-        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up|anti-?bullshit|comput(e|ing)|dedalus|sympy|gwosc|\balert\b|text me|notif|converse|working session|talk to each other|virtual s[eé]ance|kingdoms",
+        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up|anti-?bullshit|comput(e|ing)|dedalus|sympy|gwosc|\balert\b|text me|notif|converse|working session|talk to each other|virtual s[eé]ance|kingdoms|living dream team|living bench|not dead",
         text,
     ):
         return {"domain": "U", "verdict": "open", "reason": "looks like score U / SM Lagrangian / waveform; run sm or how"}
@@ -585,6 +586,7 @@ def cmd_team() -> int:
     print("DA dream team. Paper + experiment. A vote cannot close.")
     print("Full roll (three benches): docs/DA-THINK-TANK.md")
     print("Working session: python3 scripts/da_machine.py session")
+    print("Living session: python3 scripts/da_machine.py living")
     for m in payload["team"]:
         print(f"  [{m['slot']}] {m['name']}: {m['suggest']}")
     print("next B:", payload["consensus"]["B"])
@@ -616,6 +618,29 @@ def cmd_session() -> int:
         "Have the dream team converse as colleagues on the live problem",
         "open",
         "process pass; regularity still open; next write still I_tube then T",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
+def cmd_living() -> int:
+    from da_living import run as living_run
+
+    payload = living_run()
+    print("DA living. Papers talk. Not a vote. Not a close.")
+    print("Full scene: docs/DA-LIVING.md")
+    for t in payload["turns"]:
+        print(f"  {t['speaker']} → {', '.join(t['to'])}")
+    for c in payload["claims"]:
+        print(f"  [{c['verdict']}] {c['id']}: {c['statement']}")
+    print("regularity:", payload["meta"]["regularity_after"])
+    print("possible_to_close_X:", payload["meta"]["possible_to_close_X"])
+    print("next:", payload["next_da_move"])
+    append_run(
+        "U",
+        "Seat the living dream team; where now; can X close",
+        "open",
+        "process pass; possible_to_close_X open; regularity still open; next is a residual",
     )
     print(f"wrote {payload.get('_wrote')}")
     return 0
@@ -833,6 +858,7 @@ def main() -> int:
     sub.add_parser("smbreak", help="break L_SM to atoms, then put it back")
     sub.add_parser("team", help="seat paper+experiment; a vote cannot close")
     sub.add_parser("session", help="working session: colleagues talk; not a close")
+    sub.add_parser("living", help="living dream team: now-bench papers talk; not a close")
     sub.add_parser("lineage", help="wind L_SM backwards and forwards through prior theories")
     sub.add_parser("harmonic", help="typed harmonic vocabulary from mathematics; not a unifier")
     sub.add_parser("ground", help="spectrum destination: reconstruct, ablate, program review")
@@ -885,6 +911,8 @@ def main() -> int:
         return cmd_team()
     if args.cmd == "session":
         return cmd_session()
+    if args.cmd == "living":
+        return cmd_living()
     if args.cmd == "lineage":
         return cmd_lineage()
     if args.cmd == "harmonic":

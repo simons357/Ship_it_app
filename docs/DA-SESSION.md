@@ -386,5 +386,6 @@ stands. Do not cancel to \(\Phi\). Do not spawn \(n=64\).
 See [`TRACK-B-BLOB.md`](TRACK-B-BLOB.md).
 
 Print: `python3 scripts/da_machine.py session`  
+Living: [`DA-LIVING.md`](DA-LIVING.md)  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  
 Lemmas: [`TRACK-B-LEMMAS.md`](TRACK-B-LEMMAS.md)

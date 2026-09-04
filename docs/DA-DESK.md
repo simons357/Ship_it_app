@@ -491,6 +491,7 @@ python3 scripts/da_machine.py check       # check B stays open
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py team        # past bench
 python3 scripts/da_machine.py session     # they talk; not a close
+python3 scripts/da_machine.py living      # living papers; where now / can X close
 python3 scripts/da_machine.py ground      # destination + program review
 python3 scripts/da_machine.py pipe        # now-bench
 python3 scripts/da_machine.py harmonic    # vocabulary
@@ -508,7 +509,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/DA-SM-LAGRANGIAN.md`, `docs/DA-SM-LINEAGE.md`,
 `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`,
 `docs/DA-PAPER.md`, `docs/DA-THINK-TANK.md`,
-`docs/DA-SESSION.md`, `docs/TRACK-B-HARDY-TUBE.md`,
+`docs/DA-SESSION.md`,
+`docs/DA-LIVING.md`, `docs/TRACK-B-HARDY-TUBE.md`,
 `docs/TRACK-B-ANGULAR.md`,
 `docs/TRACK-B-BONY-T.md`, `docs/TRACK-B-OCCUPATION.md`,
 `docs/TRACK-B-GLUE.md`, `docs/TRACK-B-LOW-J.md`,

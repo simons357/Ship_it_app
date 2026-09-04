@@ -5,7 +5,9 @@ One file. This is the list you keep losing.
 Print the past bench: `python3 scripts/da_machine.py team`  
 Print all three benches: `python3 scripts/da_machine.py desk`  
 Working session (they talk): `python3 scripts/da_machine.py session`  
+Living session (now-bench papers): `python3 scripts/da_machine.py living`  
 Scene: `docs/DA-SESSION.md`  
+Living scene: `docs/DA-LIVING.md`  
 Atlas: `docs/DA-DESK.md`  
 Paper: `docs/DA-PAPER.md`
 
@@ -23,6 +25,11 @@ Einstein · Tesla · Feynman · Weyl · Wigner · von Neumann
 
 **Now-bench**  
 LVK · EHT · DESI · IPTA / NANOGrav · PDG + LHC · LMFDB / analytic NT · current math.AP authors
+
+**Living fluids (now-bench session)**  
+Tao · Šverák · Seregin · Caffarelli · Kohn · Constantin · Fefferman · Beale · Koch · Tataru · Grujić · Vicol · Buckmaster · Elgindi · Hou · current math.AP
+
+They talk in [`docs/DA-LIVING.md`](DA-LIVING.md). Papers, not a channel. A vote cannot close \(X\).
 
 Einstein and PDG sit on more than one bench. That is fine. They are not counted twice as a vote.
 
@@ -131,6 +138,8 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 15. **Working paper.** `docs/DA-PAPER.md`. Process paper, not a regularity / \(F\) / ToE claim.
 
 16. **Working session.** You asked them to converse as real people and work together. That is [`docs/DA-SESSION.md`](DA-SESSION.md). You named it a **virtual séance**: kingdoms left intact, one focused problem. Process pass. Channel / vote / close: fail.
+
+16b. **Living dream team.** You asked to bring in the people who are not dead and pretend they sit. That is [`docs/DA-LIVING.md`](DA-LIVING.md). Process pass. Possible to close \(X\): **open**. Impossible: **fail** as a theorem. Conversation / vote / leftover catalog / announcement: fail. Next is a residual.
 
 17. **Tube write.** Hardy \(\to I_{\mathrm{tube}}\): packet class **pass**, all-data absorption **fail** (slow fat swirl, \(R\sim 1/\varepsilon\)). [`docs/TRACK-B-HARDY-TUBE.md`](TRACK-B-HARDY-TUBE.md).
 

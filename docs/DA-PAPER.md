@@ -26,7 +26,7 @@ That is the experiment. It is also the shape of “use AI to work on problems,�
 
 A useful piece already existed: chapter 1 of the Harmonic Blueprint, adapted into domains, a route, and a check. That extraction is live as **process**. The book as a universe theory, the Simons Field Equation as Navier–Stokes, and a closed ringdown experiment that did not reject its null, stay **shelved**. Naming them is allowed. Loading them into the live tracks is not.
 
-The operator asked for leads, for a think tank that includes people who are gone, for current data, and for a text when something significant actually flips. This paper records what those requests became after they were scored.
+The operator asked for leads, for a think tank that includes people who are gone, for the living to sit as well, for current data, and for a text when something significant actually flips. This paper records what those requests became after they were scored. The living session is `docs/DA-LIVING.md`. Possible to close \(X\) stays open.
 
 ---
 
@@ -385,5 +385,5 @@ That is the paper. Enstrophy balance is not an a priori (B16e). Coherent blob is
 - Track A: `docs/AUGMENTED-NS-PROOF-CHAIN.md`
 - Track B: `docs/TRACK-B-LEMMAS.md`, `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`, `docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`, `docs/TRACK-B-BALANCE.md`, `docs/TRACK-B-ANGULAR.md`, `docs/TRACK-B-COHERENT.md`, `docs/TRACK-B-FIELD-OCC.md`, `docs/TRACK-B-FIELD-GLUE.md`
 - Track Q: `docs/SPECTRAL-FLOOR-EXPLORATION.md`
-- Think tank: `docs/DA-THINK-TANK.md` (combined roll), `docs/DA-DREAM-TEAM.md`, `docs/DA-GROUND.md`, `docs/DA-PIPE.md`, `docs/DA-SESSION.md` (they talk)
+- Think tank: `docs/DA-THINK-TANK.md` (combined roll), `docs/DA-DREAM-TEAM.md`, `docs/DA-GROUND.md`, `docs/DA-PIPE.md`, `docs/DA-SESSION.md` (they talk), `docs/DA-LIVING.md` (living papers; where now / can \(X\) close)
 - Compute and alerts: `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`

@@ -49,6 +49,11 @@ They sit as colleagues and talk in
 `python3 scripts/da_machine.py session`
 A conversation is not a close.
 
+The living now-bench talks in
+[`docs/DA-LIVING.md`](DA-LIVING.md).
+`python3 scripts/da_machine.py living`
+Possible to close \(X\) stays open.
+
 The **now-bench** — current collaborations and data forms —
 is additive and lives in [`docs/DA-PIPE.md`](DA-PIPE.md).
 It does not unseat this table.

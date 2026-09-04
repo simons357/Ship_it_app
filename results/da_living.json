@@ -1,0 +1,441 @@
+{
+  "meta": {
+    "question": "seat the living dream team; where now; can X close",
+    "writeup": "docs/DA-LIVING.md",
+    "not_a_vote": true,
+    "not_a_close": true,
+    "not_channeling": true,
+    "papers_not_persons": true,
+    "operator_name": "living dream team",
+    "valuable_part": "living kingdoms left intact, aimed at one fail-able question",
+    "past_bench_stays": true,
+    "regularity_after": "open",
+    "possible_to_close_X": "open",
+    "next_write": "A residual: closed estimate for X, a killing field, or one preprint identity. Regularity stays open. Do not spawn n=64. Do not write B37."
+  },
+  "turns": [
+    {
+      "speaker": "Operator",
+      "to": [
+        "Tao",
+        "Sverak",
+        "Fefferman"
+      ],
+      "line": "Living papers only. Pretend you sit. Classical NS. Keep 1/r^4. Leftover knobs are scored. Where now? Can X close?",
+      "slot": "meta"
+    },
+    {
+      "speaker": "Tao",
+      "to": [
+        "Sverak",
+        "Koch",
+        "Vicol"
+      ],
+      "line": "The problem is supercritical. A cover of shells is not a bound. An averaged cousin can blow. That does not prove NS blows, and it does not let this catalog close X.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Sverak",
+      "to": [
+        "Seregin",
+        "Tao",
+        "Caffarelli"
+      ],
+      "line": "Honest remaining doors: Liouville, ancient, self-similar. Energy plus a regime split is not those doors. Possible is not a theorem. Impossible is not a theorem.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Seregin",
+      "to": [
+        "Sverak",
+        "Caffarelli",
+        "Kohn"
+      ],
+      "line": "Local regularity and the ESS endpoint sit. They are criteria. They are not an a priori on X. Do not promote small singular set to empty.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Caffarelli",
+      "to": [
+        "Kohn",
+        "Seregin"
+      ],
+      "line": "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Kohn",
+      "to": [
+        "Caffarelli",
+        "Hou"
+      ],
+      "line": "Parabolic measure zero is not no blowup. A decaying box is not no blowup either.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Constantin",
+      "to": [
+        "Fefferman",
+        "Tao"
+      ],
+      "line": "CONC is a spectrum statement. Our theorem is if aligned. The if is still an if. Concentration is not alignment.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Fefferman",
+      "to": [
+        "Constantin",
+        "Beale"
+      ],
+      "line": "Do not glue Ring to Biot-Savart. Pretty-damn-close is that glue. We will not say the slogan so the table feels finished.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Beale",
+      "to": [
+        "Fefferman",
+        "Koch"
+      ],
+      "line": "Continuation is the max. L2 is not our theorem. A leftover list is not the max.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Koch",
+      "to": [
+        "Tataru",
+        "Tao"
+      ],
+      "line": "Small critical data sits. Large data is a different job. Do not export Koch-Tataru onto this packet class.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Tataru",
+      "to": [
+        "Koch",
+        "Grujic"
+      ],
+      "line": "The critical space is the scaling wall. Energy class is a derivative short. That is why leftover knobs died.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Grujic",
+      "to": [
+        "Tataru",
+        "Tao"
+      ],
+      "line": "Sparseness can shrink the scaling gap. Finite order does not make the gap vanish. Asymptotic criticality is not a closed estimate.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Vicol",
+      "to": [
+        "Buckmaster",
+        "Sverak"
+      ],
+      "line": "Wild weak solutions can be non-unique. That is a different class. Convex integration does not blow a smooth X, and it does not bound one.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Buckmaster",
+      "to": [
+        "Vicol",
+        "Elgindi"
+      ],
+      "line": "Non-uniqueness below the energy class is not a smooth blowup. Do not cash us as a killing field for classical X.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Elgindi",
+      "to": [
+        "Buckmaster",
+        "Hou"
+      ],
+      "line": "A singularity for Euler is a different equation. Viscosity is not a limit I will lend you. Euler does not write NS.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Hou",
+      "to": [
+        "Elgindi",
+        "Kohn"
+      ],
+      "line": "A computed almost-singular scenario is a probe. It is not an a priori. Do not spawn n=64 to finish the sentence.",
+      "slot": "B"
+    },
+    {
+      "speaker": "current math.AP",
+      "to": [
+        "Tao",
+        "Sverak",
+        "Operator"
+      ],
+      "line": "An announcement is a proposal. Score one identity here or the title stays a paragraph. Shahmurov does not sit.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Operator",
+      "to": [
+        "Tao",
+        "Sverak",
+        "Fefferman"
+      ],
+      "line": "One sentence. Where now. Can X close.",
+      "slot": "meta"
+    },
+    {
+      "speaker": "Tao",
+      "to": [
+        "Operator",
+        "Sverak"
+      ],
+      "line": "Where now: a residual. A closed estimate, a killing field, or one preprint identity. Not another leftover close.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Sverak",
+      "to": [
+        "Operator",
+        "Tao"
+      ],
+      "line": "Can X close? Unknown. That is the problem. Do not vote yes. Do not vote impossible.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Fefferman",
+      "to": [
+        "Operator",
+        "Beale"
+      ],
+      "line": "Geometry waits. The object stayed X. Sit down on the knobs.",
+      "slot": "B"
+    }
+  ],
+  "claims": [
+    {
+      "id": "L1",
+      "name": "living_may_talk",
+      "statement": "Seat living papers as colleagues and let them talk",
+      "verdict": "pass",
+      "why": "A living session is a process. The unit is the paper, not a channel."
+    },
+    {
+      "id": "L2",
+      "name": "look_at_classical_X",
+      "statement": "They look together at classical X, keep 1/r^4, leftover knobs already scored",
+      "verdict": "pass",
+      "why": "That is the live object. The living session does not invent a new problem."
+    },
+    {
+      "id": "L3",
+      "name": "they_argue",
+      "statement": "They disagree out loud on where now and whether X can close",
+      "verdict": "pass",
+      "why": "Argument is allowed. A vote is not."
+    },
+    {
+      "id": "L4",
+      "name": "conversation_closes_X",
+      "statement": "The living conversation closes a bound for classical X",
+      "verdict": "fail",
+      "why": "Talk is not an estimate. Domain B stays open."
+    },
+    {
+      "id": "L5",
+      "name": "vote_writes_estimate",
+      "statement": "A vote of living names writes the estimate",
+      "verdict": "fail",
+      "why": "A team is not a vote. Living does not change that."
+    },
+    {
+      "id": "L6",
+      "name": "leftover_catalog_closes",
+      "statement": "The leftover catalog is pretty damn close and therefore closes X",
+      "verdict": "fail",
+      "why": "Pretty-damn-close is the leftover-close slogan. Already scored fail."
+    },
+    {
+      "id": "L7",
+      "name": "announcement_sits",
+      "statement": "A 2026 arXiv announcement sits as a pass on domain B",
+      "verdict": "fail",
+      "why": "An announcement is a paragraph until a residual is scored here."
+    },
+    {
+      "id": "L8",
+      "name": "convex_integration_is_smooth_blowup",
+      "statement": "Convex-integration non-uniqueness is a blowup of smooth X",
+      "verdict": "fail",
+      "why": "Wild weak solutions are a different class."
+    },
+    {
+      "id": "L9",
+      "name": "euler_singularity_is_ns",
+      "statement": "An Euler singularity writes Navier-Stokes",
+      "verdict": "fail",
+      "why": "Different equation. Viscosity is not a free limit."
+    },
+    {
+      "id": "L10",
+      "name": "small_critical_is_large_data",
+      "statement": "Koch-Tataru small critical data is large-data regularity",
+      "verdict": "fail",
+      "why": "Small critical sits. Large data is the object."
+    },
+    {
+      "id": "L11",
+      "name": "spawn_n64",
+      "statement": "Spawn n=64 to finish the living question",
+      "verdict": "fail",
+      "why": "A finer box is not an a priori. B22e already missed."
+    },
+    {
+      "id": "L12",
+      "name": "export_A",
+      "statement": "A living table exports Ladyzhenskaya onto classical NS",
+      "verdict": "fail",
+      "why": "Olga is not in this room. Epsilon stays on A."
+    },
+    {
+      "id": "L13",
+      "name": "possible_to_close_X",
+      "statement": "It is possible to close X",
+      "verdict": "open",
+      "why": "Unknown. That is regularity. Not a yes."
+    },
+    {
+      "id": "L14",
+      "name": "impossible_to_close_X",
+      "statement": "It is impossible to close X",
+      "verdict": "fail",
+      "why": "Impossibility would be a blowup theorem or a no-go. Neither sits."
+    },
+    {
+      "id": "L15",
+      "name": "next_is_residual",
+      "statement": "Where now: a closed estimate, a killing field, or one preprint identity",
+      "verdict": "pass",
+      "why": "Overlap of living demands that do not glue. Not a theorem."
+    },
+    {
+      "id": "L16",
+      "name": "channeling_endorsement",
+      "statement": "Pretend-they-sit means they endorse this desk",
+      "verdict": "fail",
+      "why": "Papers talk. Endorsement is a channel. Refused."
+    },
+    {
+      "id": "L17",
+      "name": "kingdoms_stay",
+      "statement": "Each living kingdom stays carved; they do not merge",
+      "verdict": "pass",
+      "why": "Shared labor on one question. Kingdoms stay typed."
+    },
+    {
+      "id": "L18",
+      "name": "leftover_knob_line",
+      "statement": "The next write is another leftover-knob close",
+      "verdict": "fail",
+      "why": "That line is finished. Do not write B37."
+    }
+  ],
+  "speakers": [
+    "Beale",
+    "Buckmaster",
+    "Caffarelli",
+    "Constantin",
+    "Elgindi",
+    "Fefferman",
+    "Grujic",
+    "Hou",
+    "Koch",
+    "Kohn",
+    "Operator",
+    "Seregin",
+    "Sverak",
+    "Tao",
+    "Tataru",
+    "Vicol",
+    "current math.AP"
+  ],
+  "kingdoms": [
+    {
+      "name": "Supercriticality",
+      "who": "Tao",
+      "slot": "B"
+    },
+    {
+      "name": "Liouville / ancient / self-similar",
+      "who": "Sverak, Seregin",
+      "slot": "B"
+    },
+    {
+      "name": "Partial regularity",
+      "who": "Caffarelli, Kohn",
+      "slot": "B"
+    },
+    {
+      "name": "Geometry",
+      "who": "Constantin, Fefferman",
+      "slot": "B"
+    },
+    {
+      "name": "Continuation",
+      "who": "Beale",
+      "slot": "B"
+    },
+    {
+      "name": "Critical small data",
+      "who": "Koch, Tataru",
+      "slot": "B"
+    },
+    {
+      "name": "Scaling gap",
+      "who": "Grujic",
+      "slot": "B"
+    },
+    {
+      "name": "Wild weak solutions",
+      "who": "Vicol, Buckmaster",
+      "slot": "B"
+    },
+    {
+      "name": "Euler singularity",
+      "who": "Elgindi",
+      "slot": "B"
+    },
+    {
+      "name": "Computation as probe",
+      "who": "Hou",
+      "slot": "B"
+    },
+    {
+      "name": "Announcements",
+      "who": "current math.AP",
+      "slot": "B"
+    },
+    {
+      "name": "The desk",
+      "who": "operator",
+      "slot": "meta"
+    }
+  ],
+  "counts": {
+    "turns": 21,
+    "speakers": 17,
+    "addressed_replies": 21,
+    "pass": 5,
+    "fail": 12,
+    "open": 1
+  },
+  "how_far": [
+    "living papers sat and talked",
+    "kingdoms stayed carved out",
+    "one focused question: where now, can X close",
+    "possible_to_close_X stays open",
+    "impossible_to_close_X failed as a theorem",
+    "conversation did not close X",
+    "next write is a residual, not B37",
+    "domain B still open"
+  ],
+  "next_da_move": "Leftover knobs are scored. Where now: a residual. Possible to close X stays open. Regularity stays open. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+}

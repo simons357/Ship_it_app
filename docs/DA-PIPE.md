@@ -85,6 +85,7 @@ L-functions is **not** one discovery.
 | PDG + LHC | catalogs | this year’s consumed numbers | why |
 | LMFDB / NT | L-functions, gaps | arithmetic facts | black holes |
 | current math.AP | NSE preprints | nothing until the B checker scores it | close B |
+| living fluids | published living kingdoms | a residual named here | close \(X\) by sitting |
 
 Leray and Einstein stay. A 2026 catalog does not unseat 1934.
 

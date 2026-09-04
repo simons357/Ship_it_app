@@ -1,0 +1,186 @@
+# Living dream team — now-bench papers at one table
+
+`python3 scripts/da_machine.py living`
+
+Dated 4 September 2026. The operator asked to bring in the
+people who are not dead and pretend they sit. That name is
+allowed as a process. The unit is still the **paper**, not a
+channel. Pretend-they-sit does not mean they endorse this
+desk.
+
+A conversation cannot close \(X\). A vote cannot close
+\(X\). “Possible” stays **open**. “Impossible” is not a
+theorem.
+
+The past bench stays. Leray, Kato, Majda, Ladyzhenskaya,
+Nirenberg talk in [`docs/DA-SESSION.md`](DA-SESSION.md).
+They are not in this room. Olga’s \(\varepsilon\) stays on
+A.
+
+The live question: leftover knobs are scored. **Where now?
+Is it possible to close \(X=\|\omega\|_2^2\)?**
+
+---
+
+## Who sits (living papers only)
+
+| Kingdom | Who | Settles | Cannot |
+|---|---|---|---|
+| Supercriticality | Tao | energy class is a derivative short; averaged cousins can blow | NS blows; this catalog closes \(X\) |
+| Liouville / ancient / self-similar | Šverák, Seregin | honest remaining doors; ESS endpoint | those doors from a leftover list |
+| Partial regularity | Caffarelli, Kohn | singular set small | small \(=\) empty |
+| Geometry | Constantin, Fefferman | depletion *if* aligned | CONC \(\Rightarrow\) alignment |
+| Continuation | Beale | \(\int\|\omega\|_\infty\) | the max from \(L^2\) or a leftover list |
+| Critical small data | Koch, Tataru | small critical sits | large-data regularity |
+| Scaling gap | Grujić | sparseness can shrink the gap | gap vanishes at finite order |
+| Wild weak solutions | Vicol, Buckmaster | non-uniqueness below the energy class | that is a smooth blowup or a bound |
+| Euler singularity | Elgindi | Euler can singularize | Euler \(\Rightarrow\) NS |
+| Computation as probe | Hou | a scenario can be computed | DNS / \(n=64\) is an a priori |
+| Announcements | current math.AP | a preprint is a proposal | close B by title |
+| The desk | operator | one sentence, one slot, one check | needing chops |
+
+Shahmurov does not get a chair. SFE / HB-as-unifier do not.
+
+---
+
+## 1. The operator opens
+
+**Operator.** You are living. I am going to pretend you
+sit. Look at classical Navier–Stokes. Keep \(1/r^4\). Do
+not cancel to \(\Phi\). Leftover knobs are scored. The
+leftover is \(X\). Where do we go now? Is it possible to
+close \(X\)? If you disagree, disagree out loud. Papers
+talk. You do not endorse this desk by sitting.
+
+**Tao.** Then start from supercriticality, not from a
+wish. The energy class is a full derivative short of the
+scaling-critical class. A CONC/SPREAD cover of mass
+fractions is not a bound. I built a logarithmically
+averaged cousin that blows up. That does **not** prove
+Navier–Stokes blows, and it does **not** let this catalog
+close \(X\). Vladimír, Herbert, Vlad — do not let anyone
+cash “pretty damn close.”
+
+**Šverák.** Terence is right about the gap, and the
+honest remaining doors are still Liouville-type theorems,
+ancient solutions, self-similar profiles. Energy plus a
+regime split is not those doors. Gregory?
+
+**Seregin.** Local regularity and the Escauriaza–Seregin–Šverák
+endpoint sit. They are criteria. They are not an a priori
+on \(X\). Luis, Robert — say the next sentence before
+someone hears “small” as “empty.”
+
+**Caffarelli.** Small is not empty. I am living. Olga is
+not in this room. Do not slide her \(\varepsilon\) onto
+this equation and call it a living close.
+
+**Kohn.** Parabolic measure zero is not “no blowup.” A
+decaying \(n=32\) box is not “no blowup” either. Thomas,
+a computed almost-singular run is the same mistake in the
+other direction.
+
+**Constantin.** Then geometry has to stay an “if.” CONC
+is a spectrum statement: a dominant shell. Peter and I
+showed stretching dies **if** the vorticity is aligned.
+The “if” is load-bearing. Concentration is not alignment.
+Charles?
+
+**Fefferman.** We did not show \(\cos\alpha_3\to 0\) for
+all data from Biot–Savart. Three-shell Lipschitz direction
+on \(E_c\) is a tool. It is not the “if.” Pretty-damn-close
+is that glue. We will not say the slogan so the table
+feels finished. John?
+
+**Beale.** Continuation is the max. \(L^2\) is not our
+theorem. A leftover list is not the max. Herbert, Daniel
+— small critical is not this job.
+
+**Koch.** Small data in the critical space sits. That is
+our theorem. Large data is a different job. Do not export
+Koch–Tataru onto a packet class.
+
+**Tataru.** The critical space is the scaling wall. Energy
+class is a derivative short. That is why leftover knobs
+died. Zoran, shrinking the gap is not closing it.
+
+**Grujić.** Sparseness of super-level sets can shrink the
+scaling gap. At finite derivative order the gap does not
+vanish. Asymptotic criticality is not a closed estimate
+for \(X\).
+
+**Vicol.** Wild weak solutions can be non-unique. That is
+a different class. Convex integration does not blow a
+smooth \(X\), and it does not bound one. Tristan?
+
+**Buckmaster.** Non-uniqueness below the energy class is
+not a smooth blowup. Do not cash us as a killing field
+for classical \(X\). Tarek, Euler is the other chair.
+
+**Elgindi.** A singularity for Euler is a different
+equation. Viscosity is not a limit I will lend you. Euler
+does not write Navier–Stokes.
+
+**Hou.** A computed almost-singular scenario is a probe.
+It is not an a priori. Do not spawn \(n=64\) to finish
+the sentence. The desk already failed finer DNS.
+
+**current math.AP.** An announcement is a proposal. Score
+one identity here or the title stays a paragraph.
+Shahmurov does not sit.
+
+---
+
+## 2. They lock the question
+
+**Operator.** One sentence. Where now. Can \(X\) close.
+
+**Tao.** Where now: a residual. A closed estimate, a
+killing field, or one preprint identity. Not another
+leftover close. Not B37.
+
+**Šverák.** Can \(X\) close? Unknown. That is the
+problem. Do not vote yes. Do not vote impossible.
+
+**Fefferman.** Geometry waits. The object stayed \(X\).
+Sit down on the knobs.
+
+**Beale.** Nobody here votes this into
+\(\int\|\omega\|_\infty\). If a residual is scored, domain
+B is still open until the estimate sits.
+
+**Caffarelli.** And nobody exports Olga.
+
+**Operator.** That is the living session. The machine
+scores the process, not a theorem you did not prove.
+
+---
+
+## What the living session is allowed to be
+
+| Claim | Verdict |
+|---|---|
+| Seat living papers and let them talk | **pass** |
+| They look at classical \(X\); leftover knobs already scored | **pass** |
+| They argue out loud | **pass** |
+| Kingdoms stay carved | **pass** |
+| Where now is a residual | **pass** |
+| The conversation closes \(X\) | **fail** |
+| A vote writes the estimate | **fail** |
+| Pretty-damn-close / leftover catalog closes | **fail** |
+| An announcement sits | **fail** |
+| Convex integration is a smooth blowup | **fail** |
+| Euler singularity writes NS | **fail** |
+| Small critical is large data | **fail** |
+| Spawn \(n=64\) | **fail** |
+| Export A | **fail** |
+| Pretend-they-sit is an endorsement | **fail** |
+| Next write is another leftover close | **fail** |
+| It is possible to close \(X\) | **open** |
+| It is impossible to close \(X\) | **fail** (as a theorem) |
+| Domain B after the session | **open** |
+
+Print: `python3 scripts/da_machine.py living`  
+Past session: [`DA-SESSION.md`](DA-SESSION.md)  
+Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  
+Lemmas: [`TRACK-B-LEMMAS.md`](TRACK-B-LEMMAS.md)
