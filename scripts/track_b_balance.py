@@ -190,8 +190,8 @@ def lemma_balance_not_close() -> dict:
     return rec(
         "B16e_balance_not_X_a_priori",
         "the enstrophy balance on these packets closes a bound for classical X",
-        "open",
-        "Viscosity owned this ensemble. That is not continuation. Angular 1/r² lost on packets. B4c still budgets the tube.",
+        "fail",
+        "Scored as B27. Viscosity owned this ensemble. That is not continuation. A cancelled net is not a bound.",
     )
 
 
@@ -228,8 +228,10 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "B5b: tube geometry (angular viscosity vs I_tube). "
-            "Cartesian packets cancel; the tube is a different weight."
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). "
+            "Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. "
+            "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
+            "B4c stands. Do not cancel to Φ."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_balance.json")

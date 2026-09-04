@@ -105,7 +105,8 @@ class.
 **Einstein.** The object stayed the classical field.
 
 **Operator.** The budget is scored. B15e is scored.
-Next: enstrophy balance (B16e). Finer stays B22e.
+The net is scored (B16e). Next: coherent CONC
+(B17e). Finer stays B22e.
 Do not spawn \(n=64\). B4c stands. Do not cancel
 to \(\Phi\).
 
@@ -122,7 +123,7 @@ to \(\Phi\).
 | B15d | **fail** | short run empties the aligned budget |
 | B15e | **fail** | budget closes \(X\) |
 | B15f | **fail** | this retunes the PDE |
-| domain B | **open** | enstrophy-balance leftover is B16e |
+| domain B | **open** | coherent leftover is B17e |
 
 Tesla’s line: the cubic’s payers are a number. Time
 did not empty them.

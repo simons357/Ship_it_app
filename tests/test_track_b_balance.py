@@ -23,7 +23,7 @@ class TrackBBalanceTests(unittest.TestCase):
         self.assertEqual(by["B16b_plus_not_net_cubic"]["verdict"], "fail")
         self.assertEqual(by["B16c_l2_is_not_bkm"]["verdict"], "fail")
         self.assertEqual(by["B16d_not_all_conc"]["verdict"], "fail")
-        self.assertEqual(by["B16e_balance_not_X_a_priori"]["verdict"], "open")
+        self.assertEqual(by["B16e_balance_not_X_a_priori"]["verdict"], "fail")
         self.assertEqual(by["B16f_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
@@ -34,7 +34,8 @@ class TrackBBalanceTests(unittest.TestCase):
             self.assertLess(c, CANCEL_MAX)
         for p in by["B16b_plus_not_net_cubic"]["Pplus_over_D"]:
             self.assertLess(p, PPD_MAX)
-        self.assertIn("B5b", payload["next_da_move"])
+        self.assertIn("B17e", payload["next_da_move"])
+        self.assertIn("B16e", payload["next_da_move"])
 
     def test_writeup_exists(self):
         self.assertTrue((ROOT / "docs" / "TRACK-B-BALANCE.md").is_file())

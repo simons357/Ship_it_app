@@ -160,6 +160,9 @@ class DaMachineTests(unittest.TestCase):
         pay = classify_claim("aligned stretching payers on a vorticity packet")
         self.assertEqual(pay["domain"], "B")
         self.assertEqual(pay["verdict"], "open")
+        net = classify_claim("enstrophy net as an a priori bound for vorticity")
+        self.assertEqual(net["domain"], "B")
+        self.assertEqual(net["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

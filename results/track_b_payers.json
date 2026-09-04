@@ -88,8 +88,8 @@
     {
       "name": "B26e_enstrophy_leftover",
       "statement": "the enstrophy balance closes X",
-      "verdict": "open",
-      "why": "The budget is scored. The leftover close on the net \u1e8a=2P\u22122D is B16e. Not a bigger FFT. Do not spawn n=64."
+      "verdict": "fail",
+      "why": "Scored as B16e / B27. A cancelled net is not continuation. Coherent leftover is B17e. Do not spawn n=64."
     },
     {
       "name": "B26f_not_a_pde_retune",
@@ -100,8 +100,8 @@
   ],
   "counts": {
     "pass": 1,
-    "fail": 5,
-    "open": 1
+    "fail": 6,
+    "open": 0
   },
-  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy-balance leftover is B16e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }

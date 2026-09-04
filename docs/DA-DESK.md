@@ -144,7 +144,7 @@ Domain B **never** passes regularity. `check B` stays
 | B15f | this retunes the PDE | **fail** |
 | B16 / B16a | enstrophy identity; visc owns the net | **pass** |
 | B16b / B16c / B16d | \(P_+\) is a net cubic; \(L^2\) is BKM; random-phase \(\Rightarrow\) all CONC | **fail** |
-| B16e | balance closes \(X\) | **open** |
+| B16e | balance closes \(X\) | **fail** |
 | B16f | this retunes the PDE | **fail** |
 | B17 / B17a | signed-strain blob readable; net \(\approx P_+\) | **pass** |
 | B17b / B17c / B17d | cubic owns \(\dot X\); tube also nets; \(L^2\) blob is BKM | **fail** |
@@ -184,12 +184,16 @@ Domain B **never** passes regularity. `check B` stays
 | B25f | this retunes the PDE | **fail** |
 | B26 | budget, CF weight, majority readable | **pass** |
 | B26a / B26b / B26c / B26d | share closes \(X\); time emptying is continuation; share is a class; aligned budget is \(\int\|\omega\|_\infty\) | **fail** |
-| B26e | enstrophy balance closes \(X\) | **open** |
+| B26e | enstrophy balance closes \(X\) | **fail** |
 | B26f | this retunes the PDE | **fail** |
+| B27 | identity, visc-owned net, cancelled \(P_+\) readable | **pass** |
+| B27a / B27b / B27c / B27d | visc ensemble closes \(X\); cancel is all-data; decay is continuation; identity is \(\int\|\omega\|_\infty\) | **fail** |
+| B27e | signed-strain blob closes \(X\) | **open** |
+| B27f | this retunes the PDE | **fail** |
 | classical regularity | — | **open** |
 
 **Next B write:** Stretching budget is not an a priori
-(B15e). Enstrophy-balance leftover is B16e. Finer
+(B15e). Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.
 Angular \(1/r^2\) does not. We are not tuning the
 equation. Do not spawn \(n=64\).

@@ -96,8 +96,8 @@ slogan missed.
 A frame identity is not a closed estimate.
 
 **Operator.** Geometry is scored. B14d is scored.
-The budget is scored (B15e). Next: enstrophy
-balance (B16e). Finer stays B22e. Do not spawn
+The budget is scored (B15e). The net is scored
+(B16e). Next: coherent CONC (B17e). Finer stays B22e. Do not spawn
 \(n=64\). B4c stands. Do not cancel to \(\Phi\).
 
 ---
@@ -114,7 +114,7 @@ balance (B16e). Finer stays B22e. Do not spawn
 | B25d | **fail** | CF conditional is BKM |
 | B25e | **fail** | aligned budget closes \(X\) |
 | B25f | **fail** | this retunes the PDE |
-| domain B | **open** | enstrophy-balance leftover is B16e |
+| domain B | **open** | coherent leftover is B17e |
 
 Tesla’s line: alignment is a number. You can miss
 \(0.25\). The packets miss it.

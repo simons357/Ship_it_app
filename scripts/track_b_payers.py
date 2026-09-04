@@ -102,8 +102,8 @@ def lemma_enstrophy_leftover() -> dict:
     return rec(
         "B26e_enstrophy_leftover",
         "the enstrophy balance closes X",
-        "open",
-        "The budget is scored. The leftover close on the net Ẋ=2P−2D is B16e. Not a bigger FFT. Do not spawn n=64.",
+        "fail",
+        "Scored as B16e / B27. A cancelled net is not continuation. Coherent leftover is B17e. Do not spawn n=64.",
     )
 
 
@@ -144,8 +144,9 @@ def run(out: Path | None = None) -> dict:
         "counts": counts,
         "next_da_move": (
             "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). "
-            "Enstrophy-balance leftover is B16e. Finer (n>32) stays a box knob (B22e). "
-            "Do not spawn n=64. B4c stands. Do not cancel to Φ."
+            "Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. "
+            "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
+            "B4c stands. Do not cancel to Φ."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_payers.json")

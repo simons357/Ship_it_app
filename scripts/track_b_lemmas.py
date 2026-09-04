@@ -1121,6 +1121,48 @@ def lemma_payers_not_a_retune() -> dict:
     return pnr()
 
 
+def lemma_net_readable() -> dict:
+    from track_b_net import lemma_net_readable as nr
+
+    return nr()
+
+
+def lemma_visc_ensemble_not_a_priori() -> dict:
+    from track_b_net import lemma_visc_ensemble_not_a_priori as vena
+
+    return vena()
+
+
+def lemma_cancel_not_all_data() -> dict:
+    from track_b_net import lemma_cancel_not_all_data as cnad
+
+    return cnad()
+
+
+def lemma_decay_not_continuation() -> dict:
+    from track_b_net import lemma_decay_not_continuation as dnc
+
+    return dnc()
+
+
+def lemma_net_not_integral_max() -> dict:
+    from track_b_net import lemma_net_not_integral_max as nnim
+
+    return nnim()
+
+
+def lemma_coherent_leftover() -> dict:
+    from track_b_net import lemma_coherent_leftover as cl
+
+    return cl()
+
+
+def lemma_net_not_a_retune() -> dict:
+    from track_b_net import lemma_net_not_a_retune as nnr
+
+    return nnr()
+
+
 def lemma_coherent_field() -> dict:
     from track_b_coherent import lemma_coherent_field as coh
 
@@ -1328,6 +1370,13 @@ def run(out: Path | None = None) -> dict:
         lemma_aligned_budget_not_bkm(),
         lemma_enstrophy_leftover(),
         lemma_payers_not_a_retune(),
+        lemma_net_readable(),
+        lemma_visc_ensemble_not_a_priori(),
+        lemma_cancel_not_all_data(),
+        lemma_decay_not_continuation(),
+        lemma_net_not_integral_max(),
+        lemma_coherent_leftover(),
+        lemma_net_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -1373,7 +1422,7 @@ def run(out: Path | None = None) -> dict:
             "B15 stretching budget readable (pass); CF weights the budget (pass); majority from aligned cap (pass)",
             "B15c short run does not deplete |cos α_3| (fail); aligned share stays (fail); budget not an a priori (B15e fail)",
             "B16 enstrophy identity (pass); visc owns the net on this ensemble (pass); P_+ is not a net cubic (fail)",
-            "B16c L² is not BKM (fail); random-phase is not all CONC (fail); balance not an a priori (open)",
+            "B16c L² is not BKM (fail); random-phase is not all CONC (fail); balance not an a priori (B16e fail)",
             "B17 signed-strain blob readable (pass); net ≈ P+ (pass); working-box cubic not live (fail)",
             "B17c z-independent tube still cancels (fail); L² blob is not BKM (fail); not an a priori (open)",
             "B18 field clock on a path (pass); paths stay CONC (pass); clock did not save X (fail)",
@@ -1393,11 +1442,13 @@ def run(out: Path | None = None) -> dict:
             "B25 identity+CF readable (pass); depletion not an a priori (fail); Lipschitz+CF not an a priori (fail)",
             "B25c median not a class (fail); CF is not BKM (fail); budget leftover scored (B15e fail); not a PDE retune (fail)",
             "B26 budget+weight+majority readable (pass); aligned share not an a priori (fail); time emptying not continuation (fail)",
-            "B26c share not a class (fail); aligned budget is not ∫‖ω‖_∞ (fail); enstrophy leftover open (B16e); not a PDE retune (fail)",
+            "B26c share not a class (fail); aligned budget is not ∫‖ω‖_∞ (fail); enstrophy leftover scored (B16e fail); not a PDE retune (fail)",
+            "B27 identity+visc-owned net readable (pass); visc ensemble not an a priori (fail); cancel not all-data (fail)",
+            "B27c decay not continuation (fail); identity is not ∫‖ω‖_∞ (fail); coherent leftover open (B17e); not a PDE retune (fail)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy-balance leftover is B16e. "
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),

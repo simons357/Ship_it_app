@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "enstrophy balance as an a priori",
+    "tuning_the_pde": false,
+    "tesla": "exacting, not a jerk. Net production is a number. Viscosity owned this ensemble. That is not continuation.",
+    "domain_verdict": "open"
+  },
+  "lemmas": [
+    {
+      "name": "B27_net_readable",
+      "statement": "enstrophy identity, visc-owned net, and cancelled P_+ are readable together",
+      "verdict": "pass",
+      "why": "The identity holds. |P|/D sits below 0.05. Plus and minus cancel. Typed c is not written into the PDE.",
+      "rel": 0.0002453076030945621,
+      "P_over_D": [
+        -3.9974823859864546e-05,
+        -7.569901323780591e-06,
+        2.049020702936921e-05
+      ],
+      "cancel": [
+        0.008632466598073447,
+        0.0016403322100147796,
+        0.004492927656634652
+      ],
+      "Xdot": [
+        -22.52231116785621,
+        -22.383052674332028,
+        -22.661207169030888
+      ]
+    },
+    {
+      "name": "B27a_visc_ensemble_not_a_priori",
+      "statement": "viscosity owning the net on these packets closes a bound for classical X",
+      "verdict": "fail",
+      "why": "\u1e8a < 0 on a random-phase ensemble is a reading. Leray\u2019s dissipation did the work here. That is not continuation.",
+      "P_over_D": [
+        -3.9974823859864546e-05,
+        -7.569901323780591e-06,
+        2.049020702936921e-05
+      ],
+      "Xdot": [
+        -22.52231116785621,
+        -22.383052674332028,
+        -22.661207169030888
+      ]
+    },
+    {
+      "name": "B27b_cancel_not_all_data",
+      "statement": "random-phase cancellation of \u222b\u03c9\u00b7S\u03c9 is an a priori for every 3-CONC field",
+      "verdict": "fail",
+      "why": "B16d already missed. A coherent field can have P \u2248 (\u03c9\u00b7S\u03c9)_+. Fluids did not promote a packet to a class.",
+      "cancel": [
+        0.008632466598073447,
+        0.0016403322100147796,
+        0.004492927656634652
+      ]
+    },
+    {
+      "name": "B27c_decay_not_continuation",
+      "statement": "a decaying L\u00b2 packet is a continuation argument for classical X",
+      "verdict": "fail",
+      "why": "X falling here does not bound X on a live cubic. B23 already refused DNS-never-blew-up. So does a cancelled net.",
+      "Xdot": [
+        -22.52231116785621,
+        -22.383052674332028,
+        -22.661207169030888
+      ],
+      "X": [
+        2.500000000000001,
+        2.5,
+        2.5000000000000004
+      ]
+    },
+    {
+      "name": "B27d_net_not_integral_max",
+      "statement": "the enstrophy identity is an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "\u1e8a = 2P \u2212 2D is L\u00b2. A fat-packet ratio \u2016\u03c9\u2016_\u221e/\u2016\u03c9\u2016\u2082 ~ 0.2 is not \u222b\u2016\u03c9\u2016_\u221e. Do not improve the identity into the max.",
+      "bkm_gap": [
+        0.19930420834688933,
+        0.1735640086197018,
+        0.1751831658326116
+      ]
+    },
+    {
+      "name": "B27e_coherent_leftover",
+      "statement": "the signed-strain blob closes X",
+      "verdict": "open",
+      "why": "The net is scored. The leftover close on a coherent CONC field is B17e. Not a bigger FFT. Do not spawn n=64."
+    },
+    {
+      "name": "B27f_not_a_pde_retune",
+      "statement": "scoring the enstrophy balance as not an a priori is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. The net is a knob on the estimate: a cancellation you can miss. No Q1. No \u03b5."
+    }
+  ],
+  "counts": {
+    "pass": 1,
+    "fail": 5,
+    "open": 1
+  },
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+}

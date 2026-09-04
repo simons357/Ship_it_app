@@ -57,9 +57,10 @@ phase. A coherent vortex can have
 \(P\approx(\omega\cdot S\omega)_+\). Fluids did not
 promote a packet to a class.
 
-**B16e, open.** Viscosity owned this ensemble. That is
-not continuation. The tube (B5b) is still a different
-weight.
+**B16e, fail** of “the enstrophy balance closes
+\(X\).” Scored as B27. Viscosity owned this
+ensemble. That is not continuation. A cancelled
+net is not a bound.
 
 **B16f, fail** of “this retunes the PDE.” The equation
 is untouched. Cancellation is a knob on the estimate.
@@ -116,8 +117,10 @@ cubic slogan missed.
 
 **Einstein.** The object stayed the classical field.
 
-**Operator.** Fluids looked. The budget is not the
-balance. Next is the tube that was already open (B5b).
+**Operator.** The net is scored. B16e is scored.
+Next: coherent CONC (B17e). Finer stays B22e.
+Do not spawn \(n=64\). B4c stands. Do not cancel
+to \(\Phi\).
 
 ---
 
@@ -130,9 +133,9 @@ balance. Next is the tube that was already open (B5b).
 | B16b | **fail** | aligned \(P_+\) is a large net cubic |
 | B16c | **fail** | \(L^2\) packet is BKM |
 | B16d | **fail** | random-phase \(\Rightarrow\) all CONC |
-| B16e | **open** | balance closes \(X\) |
+| B16e | **fail** | balance closes \(X\) |
 | B16f | **fail** | this retunes the PDE |
-| domain B | **open** | B5b (tube geometry) |
+| domain B | **open** | coherent leftover is B17e |
 
 Tesla’s line: net production is a number. The share of
 a leftover is not the cubic.

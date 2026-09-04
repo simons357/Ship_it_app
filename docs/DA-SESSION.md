@@ -379,9 +379,10 @@ this window; the sketch grows, NS falls. B11e is scored
 **fail**. DNS is not an a priori. B13f is scored
 **fail**. Packet geometry is not an a priori. B14d is scored
 **fail**. Stretching budget is not an a priori. B15e is scored
-**fail**. Enstrophy-balance leftover is B16e. Finer is B22e. B4c
+**fail**. Enstrophy balance is not an a priori. B16e is scored
+**fail**. Coherent leftover is B17e. Finer is B22e. B4c
 stands. Do not cancel to \(\Phi\). Do not spawn \(n=64\).
-See [`TRACK-B-PAYERS.md`](TRACK-B-PAYERS.md).
+See [`TRACK-B-NET.md`](TRACK-B-NET.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

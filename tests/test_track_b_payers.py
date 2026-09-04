@@ -23,7 +23,7 @@ class TrackBPayersTests(unittest.TestCase):
         self.assertEqual(by["B26b_emptying_not_continuation"]["verdict"], "fail")
         self.assertEqual(by["B26c_share_not_a_class"]["verdict"], "fail")
         self.assertEqual(by["B26d_aligned_budget_not_integral_max"]["verdict"], "fail")
-        self.assertEqual(by["B26e_enstrophy_leftover"]["verdict"], "open")
+        self.assertEqual(by["B26e_enstrophy_leftover"]["verdict"], "fail")
         self.assertEqual(by["B26f_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
@@ -36,6 +36,7 @@ class TrackBPayersTests(unittest.TestCase):
         for m in by["B26b_emptying_not_continuation"]["median_end"]:
             self.assertGreater(m, 0.25)
         self.assertEqual(HIGH, 0.8)
+        self.assertIn("B17e", payload["next_da_move"])
         self.assertIn("B16e", payload["next_da_move"])
         self.assertIn("B15e", payload["next_da_move"])
         self.assertIn("B14d", payload["next_da_move"])

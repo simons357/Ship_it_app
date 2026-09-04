@@ -101,7 +101,7 @@ not done).
 | B16b | aligned \(P_+\) is a large net cubic | **fail** | Plus/minus cancel \(\sim 10^{-3}\). |
 | B16c | \(L^2\) packet is BKM | **fail** | \(\|\omega\|_\infty/\|\omega\|_2\sim 0.2\). |
 | B16d | random-phase \(\Rightarrow\) all CONC | **fail** | Ensemble, not a class. |
-| B16e | balance closes \(X\) | **open** | A decaying packet is not continuation. |
+| B16e | balance closes \(X\) | **fail** | A decaying packet is not continuation (B27). |
 | B16f | reading the balance retunes the PDE | **fail** | Knob on the estimate. |
 | B17 | blob + signed strain is readable CONC | **pass** | Two-scale. Not a Stokes eigenfunction. |
 | B17a | net \(P\approx(\omega\cdot S\omega)_+\) | **pass** | Cancel \(\approx 0.83\) on a still-CONC blob. |
@@ -171,8 +171,15 @@ not done).
 | B26b | time emptying the cap is continuation | **fail** | B15c / B15d already missed. |
 | B26c | \(65\%\) share is a geometric class | **fail** | Packets, not all data. |
 | B26d | aligned budget is \(\int\|\omega\|_\infty\) | **fail** | A subset share is not the max. |
-| B26e | enstrophy balance closes \(X\) | **open** | Leftover B16e. |
+| B26e | enstrophy balance closes \(X\) | **fail** | Scored as B16e / B27. |
 | B26f | scoring this retunes the PDE | **fail** | Knob on the estimate. |
+| B27 | identity, visc-owned net, cancelled \(P_+\) readable | **pass** | Same caches as B16. No new FFT. |
+| B27a | visc owning this ensemble closes \(X\) | **fail** | A reading is not continuation. |
+| B27b | cancellation is all-data | **fail** | B16d already missed. |
+| B27c | decaying \(L^2\) packet is continuation | **fail** | Same slogan as B23. |
+| B27d | identity is \(\int\|\omega\|_\infty\) | **fail** | \(L^2\) is not the max. |
+| B27e | signed-strain blob closes \(X\) | **open** | Leftover B17e. |
+| B27f | scoring this retunes the PDE | **fail** | Knob on the estimate. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -317,7 +324,7 @@ balance lives in [`TRACK-B-BALANCE.md`](TRACK-B-BALANCE.md).
 Identity **pass**. Viscosity owns the net on this ensemble
 **pass**. Aligned \(P_+\) as a net cubic **fail**. \(L^2\)
 is BKM **fail**. Random-phase \(\Rightarrow\) all CONC
-**fail**. Balance closes \(X\) **open**. Not a PDE retune
+**fail**. Balance closes \(X\) **fail**. Not a PDE retune
 **fail**.
 
 **B17 / B17a / B17b / B17c / B17d / B17e / B17f.** Coherent
@@ -388,14 +395,22 @@ budget as an a priori lives in
 Aligned share closes \(X\) **fail**. Time emptying is
 continuation **fail**. Share is a class **fail**. Aligned
 budget is \(\int\|\omega\|_\infty\) **fail**. Enstrophy
-leftover **open**. Not a PDE retune **fail**.
+leftover **fail**. Not a PDE retune **fail**.
+
+**B27 / B27a / B27b / B27c / B27d / B27e / B27f.** Enstrophy
+balance as an a priori lives in
+[`TRACK-B-NET.md`](TRACK-B-NET.md). Readable **pass**.
+Visc ensemble closes \(X\) **fail**. Cancellation is
+all-data **fail**. Decaying packet is continuation
+**fail**. Identity is \(\int\|\omega\|_\infty\) **fail**.
+Coherent leftover **open**. Not a PDE retune **fail**.
 
 ---
 
 ## What is still the next write
 
 1. Stretching budget is not an a priori (B15e).
-   Enstrophy-balance leftover is B16e. Finer (\(n>32\))
+   Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. Finer (\(n>32\))
    stays a box knob (B22e). Do not spawn \(n=64\). B4c
    stands. Angular \(1/r^2\) does not. Do not cancel to
    \(\Phi\). Do not write \(c=8\) into the PDE.
@@ -430,8 +445,9 @@ python3 scripts/track_b_dns.py
 python3 scripts/track_b_tube.py
 python3 scripts/track_b_align.py
 python3 scripts/track_b_payers.py
+python3 scripts/track_b_net.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

@@ -85,7 +85,7 @@ def lemma_geometry_leftover() -> dict:
         "B24e_geometry_leftover",
         "packet geometry closes X",
         "fail",
-        "Scored as B14d / B25. Lipschitz plus a conditional is not continuation. Stretching budget is scored (B15e). Enstrophy leftover is B16e.",
+        "Scored as B14d / B25. Lipschitz plus a conditional is not continuation. Stretching budget is scored (B15e). Enstrophy balance is scored (B16e). Coherent leftover is B17e.",
     )
 
 
@@ -126,7 +126,7 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy-balance leftover is B16e. "
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),
