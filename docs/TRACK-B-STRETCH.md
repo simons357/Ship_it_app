@@ -104,10 +104,10 @@ class.
 
 **Einstein.** The object stayed the classical field.
 
-**Operator.** The budget is on the desk. Next is the
-tube viscosity that was already open (B5b).
-Cartesian geometry went one more click. It did not
-close.
+**Operator.** The budget is on the desk. Fluids still
+have to look at the net \(\dot X=2P-2D\), not only the
+share of \(P_+\). Cartesian geometry went one more click.
+It did not close.
 
 ---
 

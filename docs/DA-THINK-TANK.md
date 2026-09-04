@@ -96,7 +96,7 @@ Forbidden auto-fails: solved NS, full Q floor, Biot–Savart depletion, BKM-from
 
 August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ3 / SPREAD.
 
-**Next B write:** B5b (tube geometry: viscosity vs \(I_{\mathrm{tube}}\)). Cartesian budget is aligned; the field is not depleted. The PDE is not being tuned. Regularity stays open.
+**Next B write:** B5b (tube geometry: viscosity vs \(I_{\mathrm{tube}}\)). Cartesian packets cancel; the tube is a different weight. The PDE is not being tuned. Regularity stays open.
 
 ### How the conversation moved
 
@@ -151,6 +151,8 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 25. **Geometry.** Strain identity **pass**. CONC \(\Rightarrow\) depleted \(\cos\alpha_3\) **fail**. Ring \(\Rightarrow\) alignment **fail**. CF conditional **pass**. Geometry closes \(X\) **open**. Not a PDE retune **fail**. [`docs/TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md).
 
 26. **Stretching budget.** Budget readable **pass**. CF weights the budget **pass**. Majority from aligned cap **pass**. Short run depletes median **fail**. Short run empties aligned share **fail**. Budget closes \(X\) **open**. [`docs/TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md).
+
+27. **Enstrophy balance.** Fluids look at the net. Identity **pass**. Viscosity owns this ensemble **pass**. \(P_+\) as a net cubic **fail**. \(L^2\) is BKM **fail**. Random-phase \(\Rightarrow\) all CONC **fail**. [`docs/TRACK-B-BALANCE.md`](TRACK-B-BALANCE.md).
 
 ---
 

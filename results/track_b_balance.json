@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "enstrophy balance; fluids look at the stretching budget",
+    "tuning_the_pde": false,
+    "tesla": "exacting, not a jerk. Net production is a number. The share of a leftover is not the cubic.",
+    "domain_verdict": "open"
+  },
+  "lemmas": [
+    {
+      "name": "B16_enstrophy_identity",
+      "statement": "\u1e8a = 2\u222b \u03c9\u00b7S\u03c9 \u2212 2\u03bd\u2016\u2207\u03c9\u2016\u2082\u00b2 on a classical CONC packet",
+      "verdict": "pass",
+      "why": "Fluids identity. Geometry weighted a leftover. This is the net.",
+      "rel": 0.0002453076030945621,
+      "pred": -22.52231116785621,
+      "got": -22.516786273687472
+    },
+    {
+      "name": "B16a_visc_owns_net",
+      "statement": "on B13-scale random 3-CONC packets, |\u222b\u03c9\u00b7S\u03c9| \u226a \u03bd\u2016\u2207\u03c9\u2016\u2082\u00b2 and \u1e8a < 0",
+      "verdict": "pass",
+      "why": "Leray\u2019s dissipation owns the net on this ensemble. Same packets as the stretching budget.",
+      "P_over_D": [
+        -3.9974823859864546e-05,
+        -7.569901323780591e-06,
+        2.049020702936921e-05
+      ],
+      "Xdot": [
+        -22.52231116785621,
+        -22.383052674332028,
+        -22.661207169030888
+      ],
+      "D": [
+        11.260705439211634,
+        11.191441619057287,
+        11.330835755685893
+      ]
+    },
+    {
+      "name": "B16b_plus_not_net_cubic",
+      "statement": "the aligned (\u03c9\u00b7S\u03c9)_+ budget is a large net cubic on these packets",
+      "verdict": "fail",
+      "why": "Plus and minus stretch cancel at ~10^{-3}. The 65% share is 65% of a leftover that nets near zero.",
+      "cancel": [
+        0.008632466598073447,
+        0.0016403322100147796,
+        0.004492927656634652
+      ],
+      "Pplus_over_D": [
+        0.0022953892770911375,
+        0.0023036443851652665,
+        0.0022905185237990697
+      ],
+      "P": [
+        -0.0004501447164703037,
+        -8.471810872711496e-05,
+        0.00023217117044978307
+      ],
+      "Pplus": [
+        0.02584770251764823,
+        0.025781101647646198,
+        0.025953489188523367
+      ]
+    },
+    {
+      "name": "B16c_l2_is_not_bkm",
+      "statement": "an L\u00b2 packet bound is the Beale\u2013Kato\u2013Majda criterion",
+      "verdict": "fail",
+      "why": "\u2016\u03c9\u2016_\u221e/\u2016\u03c9\u2016\u2082 sits near 0.2 on a fat packet. BKM asks for \u222b\u2016\u03c9\u2016_\u221e. Do not improve them into L\u00b2.",
+      "bkm_gap": [
+        0.19930420834688933,
+        0.1735640086197018,
+        0.1751831658326116
+      ],
+      "winf": [
+        0.31512762281645623,
+        0.27442879353367755,
+        0.2769889058750201
+      ],
+      "wl2": [
+        1.58113883008419,
+        1.5811388300841898,
+        1.5811388300841898
+      ]
+    },
+    {
+      "name": "B16d_not_all_conc",
+      "statement": "random-phase cancellation is an a priori for every 3-CONC field",
+      "verdict": "fail",
+      "why": "This ensemble is random phase. A coherent vortex can have P \u2248 (\u03c9\u00b7S\u03c9)_+. Fluids did not promote a packet to a class."
+    },
+    {
+      "name": "B16e_balance_not_X_a_priori",
+      "statement": "the enstrophy balance on these packets closes a bound for classical X",
+      "verdict": "open",
+      "why": "Viscosity owned this ensemble. That is not continuation. The tube (B5b) is still a different weight."
+    },
+    {
+      "name": "B16f_not_a_pde_retune",
+      "statement": "reading \u222b\u03c9\u00b7S\u03c9 versus viscosity is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. The balance is a knob on the estimate: a cancellation you can miss."
+    }
+  ],
+  "counts": {
+    "pass": 2,
+    "fail": 4,
+    "open": 1
+  },
+  "next_da_move": "B5b: tube geometry (angular viscosity vs I_tube). Cartesian packets cancel; the tube is a different weight."
+}

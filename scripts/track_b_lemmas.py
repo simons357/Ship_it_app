@@ -674,6 +674,48 @@ def lemma_stretch_not_a_retune() -> dict:
     return st_rt()
 
 
+def lemma_enstrophy_identity() -> dict:
+    from track_b_balance import lemma_enstrophy_identity as ident
+
+    return ident()
+
+
+def lemma_visc_owns_net() -> dict:
+    from track_b_balance import lemma_visc_owns_net as owns
+
+    return owns()
+
+
+def lemma_plus_not_a_cubic() -> dict:
+    from track_b_balance import lemma_plus_not_a_cubic as plus
+
+    return plus()
+
+
+def lemma_l2_not_bkm() -> dict:
+    from track_b_balance import lemma_not_bkm as not_bkm
+
+    return not_bkm()
+
+
+def lemma_not_all_conc() -> dict:
+    from track_b_balance import lemma_not_all_conc as not_all
+
+    return not_all()
+
+
+def lemma_balance_not_close() -> dict:
+    from track_b_balance import lemma_balance_not_close as bal_ap
+
+    return bal_ap()
+
+
+def lemma_balance_not_a_retune() -> dict:
+    from track_b_balance import lemma_balance_not_a_retune as bal_rt
+
+    return bal_rt()
+
+
 def lemma_regularity() -> dict:
     return rec(
         "B_regularity",
@@ -757,6 +799,13 @@ def run(out: Path | None = None) -> dict:
         lemma_run_keeps_budget(),
         lemma_budget_not_close(),
         lemma_stretch_not_a_retune(),
+        lemma_enstrophy_identity(),
+        lemma_visc_owns_net(),
+        lemma_plus_not_a_cubic(),
+        lemma_l2_not_bkm(),
+        lemma_not_all_conc(),
+        lemma_balance_not_close(),
+        lemma_balance_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -800,11 +849,13 @@ def run(out: Path | None = None) -> dict:
             "B14c CF conditional (pass); geometry does not close X (open); not a PDE retune (fail)",
             "B15 stretching budget readable (pass); CF weights the budget (pass); majority from aligned cap (pass)",
             "B15c short run does not deplete |cos α_3| (fail); aligned share stays (fail); budget not an a priori (open)",
+            "B16 enstrophy identity (pass); visc owns the net on this ensemble (pass); P_+ is not a net cubic (fail)",
+            "B16c L² is not BKM (fail); random-phase is not all CONC (fail); balance not an a priori (open)",
             "classical regularity remains open",
         ],
         "next_da_move": (
             "B5b: tube geometry (angular viscosity vs I_tube at δ ~ 2^{-j*}). "
-            "Cartesian budget is aligned; the field is not depleted. Tesla: the tube is still a knob."
+            "Cartesian packets cancel; the tube is a different weight. Tesla: the tube is still a knob."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

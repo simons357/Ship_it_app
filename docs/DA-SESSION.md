@@ -359,11 +359,11 @@ again.
 They did the tube, the low Bony \(T\), the occupation
 clock, the two-regime glue, the energy ceiling, climbing
 CONC, the field climb, a short evolution, the strain
-geometry, and the stretching budget. CONC is not
-depleted. CF weights the cubic: the aligned cap pays
-\(\sim 65\%\) of \((\omega\cdot S\omega)_+\). A short run
-does not empty that share. Next: B5b (tube geometry).
-See [`TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md).
+geometry, the stretching budget, and the enstrophy
+balance. Fluids looked: the aligned cap pays a leftover;
+the net cubic cancels; viscosity owns this ensemble;
+\(L^2\) is not BKM. Next: B5b (tube geometry).
+See [`TRACK-B-BALANCE.md`](TRACK-B-BALANCE.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

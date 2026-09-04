@@ -124,6 +124,9 @@ class DaMachineTests(unittest.TestCase):
         stretch = classify_claim("stretching budget and weighted alignment on a vorticity packet")
         self.assertEqual(stretch["domain"], "B")
         self.assertEqual(stretch["verdict"], "open")
+        bal = classify_claim("enstrophy balance production versus dissipation on a vorticity packet")
+        self.assertEqual(bal["domain"], "B")
+        self.assertEqual(bal["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

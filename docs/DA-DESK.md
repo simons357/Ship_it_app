@@ -140,12 +140,16 @@ Domain B **never** passes regularity. `check B` stays
 | B15c / B15d | run depletes median; run empties aligned share | **fail** |
 | B15e | budget closes \(X\) | **open** |
 | B15f | this retunes the PDE | **fail** |
+| B16 / B16a | enstrophy identity; visc owns the net | **pass** |
+| B16b / B16c / B16d | \(P_+\) is a net cubic; \(L^2\) is BKM; random-phase \(\Rightarrow\) all CONC | **fail** |
+| B16e | balance closes \(X\) | **open** |
+| B16f | this retunes the PDE | **fail** |
 | \(\Phi\) as estimate variable | keep \(\Gamma\) | **fail** |
 | classical regularity | — | **open** |
 
 **Next B write:** B5b (tube geometry: viscosity vs
-\(I_{\mathrm{tube}}\)). Cartesian budget is aligned;
-the field is not depleted. We are not tuning the
+\(I_{\mathrm{tube}}\)). Cartesian packets cancel; the
+tube is a different weight. We are not tuning the
 equation.
 
 ---
@@ -429,7 +433,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/TRACK-B-CLIMB.md`, `docs/TRACK-B-CLIMB-LAW.md`,
 `docs/TRACK-B-EVOLVE.md`,
 `docs/TRACK-B-GEOMETRY.md`,
-`docs/TRACK-B-STRETCH.md`.
+`docs/TRACK-B-STRETCH.md`,
+`docs/TRACK-B-BALANCE.md`.
 
 ---
 
@@ -447,9 +452,10 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
   \(t=0\): no saving climb. Short \(n=32\) run: still no
   climb; \(j_{\mathrm{bar}}\) falls. Geometry: identity
   **pass**; CONC not depleted; CF conditional **pass**.
-  Stretching budget: aligned cap **pays**; time does
-  **not** empty it. Next: B5b (tube geometry). The PDE
-  is not being tuned.
+  Stretching budget: aligned cap **pays** a leftover; time
+  does **not** empty it. Fluids: net cubic **cancels**;
+  viscosity owns this ensemble; \(L^2\) is not BKM. Next:
+  B5b (tube geometry). The PDE is not being tuned.
 - Cosmo does not enter NS.
 - HB stays shelved as a theorem. DA-as-process stays live.
 

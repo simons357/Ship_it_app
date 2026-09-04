@@ -112,7 +112,7 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"\bq_?1\b|augmented|ladyzhenskaya", text):
         return {"domain": "A", "verdict": "open", "reason": "looks like Track A; run check A"}
     if re.search(
-        r"1/r\^?4|\bring\b|bony|3-conc|spread|tube|vorticity|hardy|\bgamma\b|triad|track b|t2 lemma|occupation|\bglue\b|two-regime|enstrophy|energy.?ceiling|low-?j|climbing|climb.?law|dj\*/dt|barycenter|strain|eigenframe|\balignment\b|packet.?geometry|stretching.?budget|weighted.?alignment",
+        r"1/r\^?4|\bring\b|bony|3-conc|spread|tube|vorticity|hardy|\bgamma\b|triad|track b|t2 lemma|occupation|\bglue\b|two-regime|enstrophy|energy.?ceiling|low-?j|climbing|climb.?law|dj\*/dt|barycenter|strain|eigenframe|\balignment\b|packet.?geometry|stretching.?budget|weighted.?alignment|enstrophy.?balance",
         text,
     ):
         return {

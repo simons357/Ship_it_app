@@ -42,7 +42,7 @@ TEAM = [
         "kinetic energy + weak solutions",
         "∫X dt < ∞ and the energy inequality",
         "bound X in L^∞; we already failed that close",
-        "keep energy; do not close the cubic ODE from it",
+        "keep energy; do not close the cubic ODE from it. Fluids looked: random-phase packets cancel; that is not all CONC",
         "paper",
     ),
     member(
@@ -51,7 +51,7 @@ TEAM = [
         "continuation criterion",
         "∫‖ω‖_∞ dt < ∞ ⇒ regular",
         "BKM-from-L² (forbidden on this desk)",
-        "if you want a criterion, use L^∞, not ‖ω‖₂",
+        "if you want a criterion, use L^∞, not ‖ω‖₂. An L² packet is not BKM",
         "paper",
     ),
     member(
@@ -134,7 +134,7 @@ def consensus() -> dict:
     return {
         "not_a_vote": True,
         "not_a_close": True,
-        "B": "B4c budgets I_tube on CONC; energy-class T on SPREAD; B8 clock. Glue sketch is written. Frozen low-j has an energy ceiling. Climbing: slow dies, fast sits. t=0 and short n=32 do not produce c=8. Geometry: identity pass; CONC not depleted; CF conditional. Stretching budget: aligned cap pays; time does not empty it. Live: B5b (tube geometry). Regularity stays open.",
+        "B": "B4c budgets I_tube on CONC; energy-class T on SPREAD; B8 clock. Glue sketch is written. Frozen low-j has an energy ceiling. Climbing: slow dies, fast sits. t=0 and short n=32 do not produce c=8. Geometry: identity pass; CONC not depleted; CF conditional. Stretching budget: aligned cap pays a leftover; net cubic cancels. Fluids: visc owns this ensemble; L² is not BKM. Live: B5b (tube geometry). Regularity stays open.",
         "A": "Leave Ladyzhenskaya on A.",
         "U": "Stop breaking L_SM. Keep Einstein + T_SM. Produce lives outside the poster.",
         "Q": "Stay arithmetic. No Bridge* → SND.",

@@ -254,8 +254,8 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "B5b: tube geometry (angular viscosity vs I_tube). "
-            "Cartesian budget is aligned; the field is not depleted."
+            "B16: fluids look at the net (enstrophy balance). "
+            "Then B5b: tube geometry. Cartesian budget is aligned; the field is not depleted."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_stretch.json")

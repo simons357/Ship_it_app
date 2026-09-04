@@ -91,6 +91,13 @@ not done).
 | B15d | short run drops aligned share below \(1/2\) | **fail** | \(\mathrm{frac}_{hi}\) stays \(\sim 0.65\). |
 | B15e | aligned budget closes \(X\) | **open** | A share is not continuation. |
 | B15f | weighting stretching retunes the PDE | **fail** | Knob on the estimate. |
+| B16 | \(\dot X=2\int\omega\cdot S\omega-2\nu\|\nabla\omega\|_2^2\) | **pass** | Fluids identity. |
+| B16a | viscosity owns the net on B13-scale packets | **pass** | \(\lvert P\rvert\ll D\), \(\dot X<0\). |
+| B16b | aligned \(P_+\) is a large net cubic | **fail** | Plus/minus cancel \(\sim 10^{-3}\). |
+| B16c | \(L^2\) packet is BKM | **fail** | \(\|\omega\|_\infty/\|\omega\|_2\sim 0.2\). |
+| B16d | random-phase \(\Rightarrow\) all CONC | **fail** | Ensemble, not a class. |
+| B16e | balance closes \(X\) | **open** | A decaying packet is not continuation. |
+| B16f | reading the balance retunes the PDE | **fail** | Knob on the estimate. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -229,18 +236,26 @@ median \(\lvert\cos\alpha_3\rvert\) **fail**. Short run
 empties the aligned share **fail**. Budget closes \(X\)
 **open**. Not a PDE retune **fail**.
 
+**B16 / B16a / B16b / B16c / B16d / B16e / B16f.** Enstrophy
+balance lives in [`TRACK-B-BALANCE.md`](TRACK-B-BALANCE.md).
+Identity **pass**. Viscosity owns the net on this ensemble
+**pass**. Aligned \(P_+\) as a net cubic **fail**. \(L^2\)
+is BKM **fail**. Random-phase \(\Rightarrow\) all CONC
+**fail**. Balance closes \(X\) **open**. Not a PDE retune
+**fail**.
+
 ---
 
 ## What is still the next write
 
 1. B5b: angular viscosity versus \(I_{\mathrm{tube}}\) at
-   \(\delta\sim 2^{-j_*}\). Cartesian budget is aligned;
-   the field is not depleted. A finer packet box (B13e)
+   \(\delta\sim 2^{-j_*}\). Cartesian packets cancel; the
+   tube is a different weight. A finer packet box (B13e)
    stays open.
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
    Leray-as-occupation, the glue sketch as an NS a priori,
-   a typed \(c=8\), all-data Biot–Savart depletion, or a
-   retune of the PDE.
+   a typed \(c=8\), all-data Biot–Savart depletion, BKM-from-\(L^2\),
+   or a retune of the PDE.
 
 None of those is a pass on regularity. Checker:
 
@@ -255,8 +270,9 @@ python3 scripts/track_b_climb_law.py
 python3 scripts/track_b_evolve.py
 python3 scripts/track_b_geometry.py
 python3 scripts/track_b_stretch.py
+python3 scripts/track_b_balance.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```
