@@ -1526,8 +1526,8 @@
     {
       "name": "B17e_coherent_not_X_a_priori",
       "statement": "a signed-strain blob closes a bound for classical X",
-      "verdict": "open",
-      "why": "One-sided cubic at this box is still a leftover versus D. Field occupation (B18) reads the clock on a path. Field glue (B19) asks the sketch. Not continuation."
+      "verdict": "fail",
+      "why": "Scored as B28. One-sided cubic at this box is still a leftover versus D. A leftover that no longer cancels is not continuation."
     },
     {
       "name": "B17f_not_a_pde_retune",
@@ -2116,7 +2116,7 @@
       "name": "B25e_budget_leftover",
       "statement": "the aligned stretching budget closes X",
       "verdict": "fail",
-      "why": "Scored as B15e / B26. A share of (\u03c9\u00b7S\u03c9)_+ is not continuation. Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. Do not spawn n=64."
+      "why": "Scored as B15e / B26. A share of (\u03c9\u00b7S\u03c9)_+ is not continuation. Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Do not spawn n=64."
     },
     {
       "name": "B25f_not_a_pde_retune",
@@ -2206,7 +2206,7 @@
       "name": "B26e_enstrophy_leftover",
       "statement": "the enstrophy balance closes X",
       "verdict": "fail",
-      "why": "Scored as B16e / B27. A cancelled net is not continuation. Coherent leftover is B17e. Do not spawn n=64."
+      "why": "Scored as B16e / B27. A cancelled net is not continuation. Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Do not spawn n=64."
     },
     {
       "name": "B26f_not_a_pde_retune",
@@ -2293,14 +2293,62 @@
     {
       "name": "B27e_coherent_leftover",
       "statement": "the signed-strain blob closes X",
-      "verdict": "open",
-      "why": "The net is scored. The leftover close on a coherent CONC field is B17e. Not a bigger FFT. Do not spawn n=64."
+      "verdict": "fail",
+      "why": "Scored as B17e / B28. A one-sided leftover is not continuation. Field-occupation leftover is B18e. Do not spawn n=64."
     },
     {
       "name": "B27f_not_a_pde_retune",
       "statement": "scoring the enstrophy balance as not an a priori is a retune of classical Navier\u2013Stokes",
       "verdict": "fail",
       "why": "The PDE is untouched. The net is a knob on the estimate: a cancellation you can miss. No Q1. No \u03b5."
+    },
+    {
+      "name": "B28_blob_readable",
+      "statement": "signed-strain blob, one-sided net, and visc-owned cubic are readable together",
+      "verdict": "pass",
+      "why": "Cancel sits near 0.83. P/D sits near 0.008. \u1e8a < 0. Typed c is not written into the PDE.",
+      "sigma": 0.8535696713285232,
+      "cancel": 0.833206677995409,
+      "P_over_D": 0.008181300794787849,
+      "Xdot": -12.289114593034023
+    },
+    {
+      "name": "B28a_onesided_not_a_priori",
+      "statement": "a one-sided (\u03c9\u00b7S\u03c9)_+ leftover closes a bound for classical X",
+      "verdict": "fail",
+      "why": "Coherence killed cancellation. It did not make P large versus D. A leftover is not continuation.",
+      "P_over_D": 0.008181300794787849,
+      "Xdot": -12.289114593034023
+    },
+    {
+      "name": "B28b_sign_not_a_class",
+      "statement": "sitting a blob where S_zz keeps a sign is a geometric class that bounds X",
+      "verdict": "fail",
+      "why": "Localization in z is a knob. A z-independent tube in the same strain still cancels (B17c). Do not promote a sign to a type."
+    },
+    {
+      "name": "B28c_peaked_not_integral_max",
+      "statement": "an L\u00b2 bound on this peaked blob is an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "\u2016\u03c9\u2016_\u221e/\u2016\u03c9\u2016\u2082 climbed from 0.2 to ~2.4. The criterion still asks for \u222b\u2016\u03c9\u2016_\u221e. Do not improve a peaked packet into the max."
+    },
+    {
+      "name": "B28d_nu_not_continuation",
+      "statement": "turning \u03bd down until \u1e8a>0 is a continuation argument for classical X",
+      "verdict": "fail",
+      "why": "That is a knob on the check. B17f already missed the retune. The working box stayed \u03bd=0.1. Do not spawn a thinner visc."
+    },
+    {
+      "name": "B28e_occupation_leftover",
+      "statement": "field occupation of CONC closes X",
+      "verdict": "open",
+      "why": "The blob is scored. The leftover close on the clock along a path is B18e. Not a bigger FFT. Do not spawn n=64."
+    },
+    {
+      "name": "B28f_not_a_pde_retune",
+      "statement": "scoring the signed-strain blob as not an a priori is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. One-sided is a knob on the estimate: a leftover you can miss. No Q1. No \u03b5."
     },
     {
       "name": "B_regularity",
@@ -2310,9 +2358,9 @@
     }
   ],
   "counts": {
-    "pass": 44,
-    "fail": 100,
-    "open": 9
+    "pass": 45,
+    "fail": 107,
+    "open": 8
   },
   "how_far": [
     "B1 T2 low-flux identity holds (pass); T2 Lemma 2 stays dropped (fail)",
@@ -2344,7 +2392,7 @@
     "B16 enstrophy identity (pass); visc owns the net on this ensemble (pass); P_+ is not a net cubic (fail)",
     "B16c L\u00b2 is not BKM (fail); random-phase is not all CONC (fail); balance not an a priori (B16e fail)",
     "B17 signed-strain blob readable (pass); net \u2248 P+ (pass); working-box cubic not live (fail)",
-    "B17c z-independent tube still cancels (fail); L\u00b2 blob is not BKM (fail); not an a priori (open)",
+    "B17c z-independent tube still cancels (fail); L\u00b2 blob is not BKM (fail); blob not an a priori (B17e fail)",
     "B18 field clock on a path (pass); paths stay CONC (pass); clock did not save X (fail)",
     "B18c CONC occupation not short (fail); cubic not live in time (fail); field occupation not an a priori (open)",
     "B19 both \u1e8a readable (pass); j*=2 sign mismatch (fail); NS packet is not B9b (fail)",
@@ -2364,8 +2412,10 @@
     "B26 budget+weight+majority readable (pass); aligned share not an a priori (fail); time emptying not continuation (fail)",
     "B26c share not a class (fail); aligned budget is not \u222b\u2016\u03c9\u2016_\u221e (fail); enstrophy leftover scored (B16e fail); not a PDE retune (fail)",
     "B27 identity+visc-owned net readable (pass); visc ensemble not an a priori (fail); cancel not all-data (fail)",
-    "B27c decay not continuation (fail); identity is not \u222b\u2016\u03c9\u2016_\u221e (fail); coherent leftover open (B17e); not a PDE retune (fail)",
+    "B27c decay not continuation (fail); identity is not \u222b\u2016\u03c9\u2016_\u221e (fail); coherent leftover scored (B17e fail); not a PDE retune (fail)",
+    "B28 blob+one-sided net readable (pass); one-sided leftover not an a priori (fail); sign not a class (fail)",
+    "B28c peaked L\u00b2 is not \u222b\u2016\u03c9\u2016_\u221e (fail); \u03bd knob not continuation (fail); occupation leftover open (B18e); not a PDE retune (fail)",
     "classical regularity remains open"
   ],
-  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }
