@@ -1,0 +1,29 @@
+{
+  "id": 20405593,
+  "doi": "10.5281/zenodo.20405593",
+  "conceptrecid": "20405592",
+  "title": "The Montgomery\u2013Dyson Coincidence as a Q6 Prime Lattice Eigenvalue Identity",
+  "date": "2026-05-27",
+  "creators": [
+    "Simons, Jonathan R."
+  ],
+  "files": [
+    {
+      "key": "Simons_Montgomery_Dyson_Q6.tex",
+      "url": "https://zenodo.org/api/records/20405593/files/Simons_Montgomery_Dyson_Q6.tex/content",
+      "size": 9769
+    }
+  ],
+  "keywords": [
+    "Montgomery-Dyson",
+    "Riemann zeros",
+    "GUE statistics",
+    "prime lattice",
+    "Q6 operator",
+    "GCD matrix",
+    "random matrix theory",
+    "nuclear energy levels",
+    "zeta function"
+  ],
+  "desc": "In 1972, Montgomery and Dyson independently observed that the pair correlation of Riemann zeta zeros matches the GUE eigenvalue statistics of heavy atomic nuclei \u2014 a coincidence unexplained for 54 years. We propose both distributions arise as special cases of the Q6 prime lattice operator L_{Q6} on l^2(N), defined by coupling kernel M(i,j) = 1/gcd(i,j). Riemann zeros are identified with the full infinite-dimensional spectrum of L_{Q6}; nuclear energy levels correspond to finite shell truncations"
+}

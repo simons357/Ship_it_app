@@ -1,0 +1,30 @@
+{
+  "id": 20405404,
+  "doi": "10.5281/zenodo.20405405",
+  "conceptrecid": "20405404",
+  "title": "Phi-Renormalization and Global Regularity for Axisymmetric-with-Swirl Navier\u2013Stokes: Algebraic Cancellation of the Axis Singularity, Gronwall-Free Convergence, and the Prime Index Connection",
+  "date": "2026-05-27",
+  "creators": [
+    "Simons, Jonathan R."
+  ],
+  "files": [
+    {
+      "key": "PhiRenorm_TrackB.pdf",
+      "url": "https://zenodo.org/api/records/20405405/files/PhiRenorm_TrackB.pdf/content",
+      "size": 13524
+    }
+  ],
+  "keywords": [
+    "Navier-Stokes equations",
+    "axisymmetric-with-swirl",
+    "axis singularity",
+    "phi-renormalization",
+    "Gronwall-free convergence",
+    "prime lattice",
+    "GCD operator",
+    "spectral non-dispersal",
+    "fluid regularity",
+    "Hardy inequality"
+  ],
+  "desc": "We study the 3D incompressible Navier\u2013Stokes equations for axisymmetric-with-swirl data. The central difficulty is the 1/r^4 centrifugal forcing singularity on the axis r=0, which resists standard energy methods and classically requires Hardy-type inequalities. We introduce the Phi-Renormalization: the substitution \u0393=ru_\u03b8, \u03a6=\u0393/r^2=u_\u03b8/r transforms the singular term via the algebraic identity (1/r^4)\u2202_z(\u0393^2)=\u2202_z(\u03a6^2), canceling the 1/r^4 singularity exactly and algebraically, with no Hardy inequa"
+}

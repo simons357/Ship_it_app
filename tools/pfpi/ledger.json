@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "version": "0.1.0",
+    "source": "docs/math/DA-REPORT-2026-08-28.md",
+    "updated": "2026-08-28",
+    "description": "Structured DA ledger for PFPI search and GET /v1/ledger"
+  },
+  "summary": {
+    "CLOSED": 8,
+    "KILLED": 7,
+    "LEAD": 4,
+    "HARD": 4
+  },
+  "entries": [
+    {
+      "id": "closed-bridge-star-pair",
+      "status": "CLOSED",
+      "claim": "Bridge* single pair R(e_p-e_q)>-1/2 on Q̃",
+      "where": "docs/papers/submit/04_q6_inverse_gcd.tex",
+      "keep_cut": "KEEP",
+      "tags": ["operator:Q_tilde", "floor:half"]
+    },
+    {
+      "id": "closed-bridge-star-multi",
+      "status": "CLOSED",
+      "claim": "Bridge* multi-rep Goldbach vectors",
+      "where": "docs/BRIDGE-STAR-PROOF.md",
+      "keep_cut": "KEEP",
+      "tags": ["lattice:gcd", "operator:Q_tilde"]
+    },
+    {
+      "id": "closed-cone-nonneg",
+      "status": "CLOSED",
+      "claim": "Nonnegative cone on Q̃",
+      "where": "docs/papers/submit/04_q6_inverse_gcd.tex",
+      "keep_cut": "KEEP",
+      "tags": ["operator:Q_tilde"]
+    },
+    {
+      "id": "closed-positive-gcd-pair",
+      "status": "CLOSED",
+      "claim": "Positive-GCD pair R>0, zero-diag pair ≥-1",
+      "where": "docs/papers/submit/07_positive_gcd_paper1_abc.tex",
+      "keep_cut": "KEEP",
+      "tags": ["lattice:gcd"]
+    },
+    {
+      "id": "closed-positive-gcd-pd",
+      "status": "CLOSED",
+      "claim": "Positive-GCD Q_N ≻ 0 (GCD congruence)",
+      "where": "docs/papers/submit/07_positive_gcd_paper1_abc.tex",
+      "keep_cut": "KEEP",
+      "tags": ["lattice:gcd"]
+    },
+    {
+      "id": "closed-full-spectrum-false",
+      "status": "CLOSED",
+      "claim": "Full-spectrum λ_min(Q̃)>-1/2 is false",
+      "where": "docs/papers/submit/04_q6_inverse_gcd.tex",
+      "keep_cut": "KEEP",
+      "tags": ["floor:half", "operator:Q_tilde"]
+    },
+    {
+      "id": "closed-hn-universal-false",
+      "status": "CLOSED",
+      "claim": "Universal H_N≥-3/14 is false",
+      "where": "tests/test_bridge_star_h_n.py",
+      "keep_cut": "KEEP",
+      "tags": ["operator:H_N"]
+    },
+    {
+      "id": "closed-phi-cancel",
+      "status": "CLOSED",
+      "claim": "Phi 1/r^4 cancel + Q1-augmented regularity",
+      "where": "docs/papers/submit/01_phi_renormalization.tex",
+      "keep_cut": "KEEP",
+      "tags": ["domain:NS"]
+    },
+    {
+      "id": "killed-mu-phi-identity",
+      "status": "KILLED",
+      "claim": "June 5 μφ/d² identity",
+      "where": "docs/math/DA-REPORT-2026-08-28.md",
+      "notes": "Fails at n=2",
+      "keep_cut": "CUT"
+    },
+    {
+      "id": "killed-route-c-lemma-a",
+      "status": "KILLED",
+      "claim": "Route C Lemma A matrix expansion",
+      "where": "docs/math/DA-REPORT-2026-08-28.md",
+      "notes": "14.8% off-diagonal error",
+      "keep_cut": "CUT"
+    },
+    {
+      "id": "killed-v-alt-limit",
+      "status": "KILLED",
+      "claim": "R(v_alt) → -1/(2π)",
+      "where": "docs/math/DA-REPORT-2026-08-28.md",
+      "notes": "Ratio 4–6× target, growing with N",
+      "keep_cut": "CUT"
+    },
+    {
+      "id": "killed-dark-state-goldbach",
+      "status": "KILLED",
+      "claim": "Dark-state ⇔ Goldbach",
+      "where": "docs/math/DA-REPORT-2026-08-28.md",
+      "notes": "Wrong sign on raw Q",
+      "keep_cut": "CUT"
+    },
+    {
+      "id": "killed-june5-indicator",
+      "status": "KILLED",
+      "claim": "June 5 indicator v_k as Goldbach detector",
+      "where": "docs/math/DA-REPORT-2026-08-28.md",
+      "notes": "Zeros on genuine pairs",
+      "keep_cut": "CUT"
+    },
+    {
+      "id": "killed-zero-diag-floor",
+      "status": "KILLED",
+      "claim": "Zero-diag positive-GCD λ_min>-1/2",
+      "where": "docs/math/DA-REPORT-2026-08-28.md",
+      "notes": "≈ -0.79 at N=5",
+      "keep_cut": "CUT"
+    },
+    {
+      "id": "killed-clay-from-q6",
+      "status": "KILLED",
+      "claim": "Clay / NS / RH from Q6 alone",
+      "where": "docs/math/DA-REPORT-2026-08-28.md",
+      "notes": "No map",
+      "keep_cut": "CUT"
+    },
+    {
+      "id": "lead-spectral-constant",
+      "status": "LEAD",
+      "claim": "Spectral constant -1/(2π) in λ_min/log N",
+      "where": "scripts/route_c_gap_a_verify.py",
+      "notes": "N=500 ratio 0.992; N=1000 ratio 0.986. Strongest open door.",
+      "keep_cut": "KEEP",
+      "tags": ["floor:two_pi", "lattice:gcd"]
+    },
+    {
+      "id": "lead-critical-line-bh",
+      "status": "LEAD",
+      "claim": "Critical line s=1/2 ↔ exterior 1/√r (BH inv_r_sqrt)",
+      "where": "docs/math/SFE-BH-OVERLAY-SPELLBOOK.md",
+      "notes": "Shared power law with SFE free term and Route C",
+      "keep_cut": "KEEP",
+      "tags": ["weight:critical_line"]
+    },
+    {
+      "id": "lead-two-horizons",
+      "status": "LEAD",
+      "claim": "Two horizons: -1/2 phase folklore vs -1/(2π) spectral limit",
+      "where": "docs/math/DA-REPORT-2026-08-28.md",
+      "notes": "Do not merge without proof",
+      "keep_cut": "KEEP",
+      "tags": ["floor:half", "floor:two_pi"]
+    },
+    {
+      "id": "lead-sfe-bh-overlay",
+      "status": "LEAD",
+      "claim": "SFE ↔ BH overlay structural rhyme (not collapse)",
+      "where": "scripts/sfe_bh_overlay_spells.py",
+      "notes": "Herfindahl ~0.002–0.004; row-degree r≈0.91–0.96",
+      "keep_cut": "KEEP",
+      "tags": ["concentration:herfindahl", "weight:critical_line"]
+    },
+    {
+      "id": "hard-snd-unconditional",
+      "status": "HARD",
+      "claim": "SND unconditional / noncircular M",
+      "where": "docs/math/SND-H-STATUS.md",
+      "notes": "New PDE bound needed",
+      "keep_cut": "KEEP",
+      "tags": ["concentration:snd", "domain:NS"]
+    },
+    {
+      "id": "hard-route-c-gap-b",
+      "status": "HARD",
+      "claim": "Route C Gap B uniform spectral gap",
+      "where": "scripts/route_c_gap_a_verify.py",
+      "notes": "Gap ≈ 0.09–0.14 tracked",
+      "keep_cut": "KEEP",
+      "tags": ["floor:two_pi"]
+    },
+    {
+      "id": "hard-route-c-gap-a-prime",
+      "status": "HARD",
+      "claim": "Route C Gap A′ rigorous λ_min/log N → -1/(2π)",
+      "where": "scripts/route_c_gap_a_verify.py",
+      "notes": "Rank-1 attack target",
+      "keep_cut": "KEEP",
+      "tags": ["floor:two_pi"]
+    },
+    {
+      "id": "hard-classical-phi",
+      "status": "HARD",
+      "claim": "Classical Phi without Q1 augmentation",
+      "where": "docs/papers/submit/01_phi_renormalization.tex",
+      "notes": "Cancel 1/r^4 in unaugmented variables",
+      "keep_cut": "KEEP",
+      "tags": ["domain:NS"]
+    }
+  ]
+}

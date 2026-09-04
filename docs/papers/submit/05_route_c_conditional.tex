@@ -1,0 +1,211 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{hyperref,enumitem,booktabs,xcolor,colortbl,array}
+
+\definecolor{proved}{HTML}{1a7a1a}
+\definecolor{killed}{HTML}{b30000}
+\definecolor{open}{HTML}{996600}
+\definecolor{lightgreen}{HTML}{e6f4e6}
+\definecolor{lightred}{HTML}{fde8e8}
+\definecolor{lightyellow}{HTML}{fff8e1}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{gap}{Analytic gaps (open)}
+
+\title{\textbf{Route C: A Spectral Approach to Zero-Density Estimates,\\
+Conditional on Two Analytic Gaps}\\[4pt]
+\large\textit{Corrected: false Lemma~A killed; Gap~A reframed}}
+\author{Jonathan Robert Simons\\
+Savannah, Georgia, USA\\
+\texttt{simonsmedicalinnovations@gmail.com}}
+\date{Corrected preprint \quad|\quad August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.92\linewidth}{\centering\small
+\textbf{Disclaimer.} Conditional only; two analytic gaps remain open.
+We do \emph{not} claim RH. Archived drafts that evaluated
+$R(v_{\mathrm{alt}})\to -1/(2\pi)$ are \textbf{refuted} by numerics.}}
+\end{center}
+\vspace{0.75em}
+
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{9cm}>{\centering\arraybackslash}p{3cm}}
+\toprule
+\textbf{Item} & \textbf{Status}\\
+\midrule
+\rowcolor{lightred}
+Lemma~A ($\mu(d)\varphi(d)/d^2$ decomposition of $Q_N$) & \textcolor{killed}{\textbf{False}}\\
+\rowcolor{lightred}
+$R(v_{\mathrm{alt}})\to -1/(2\pi)$ & \textcolor{killed}{\textbf{False}}\\
+\rowcolor{lightgreen}
+Parity split of $v_{\mathrm{alt}}^\top Q_N v_{\mathrm{alt}}$ & \textcolor{proved}{\textbf{Proved}}\\
+\rowcolor{lightyellow}
+$\lambda_{\min}(Q_N)/\log N\to -1/(2\pi)$ & \textcolor{open}{\textbf{Open}}\\
+\rowcolor{lightyellow}
+Gap~B: uniform $\lambda_2-\lambda_{\min}\ge c_0$ & \textcolor{open}{\textbf{Open}}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{abstract}
+Let $Q_N[i,j]=1/(\gcd(i,j)\sqrt{ij})$ and
+$v_{\mathrm{alt}}[k]=(-1)^{k+1}/\sqrt{k}$.
+Earlier Route~C drafts claimed $R(v_{\mathrm{alt}})\to -1/(2\pi)$ via a
+M\"obius identity that fails off-diagonal.
+We kill that path and reframe the architecture: numerics support
+$\lambda_{\min}(Q_N)/\log N\to -1/(2\pi)$ while $R(v_{\mathrm{alt}})$
+diverges from the target.
+We prove a parity split of the alternating quadratic form and record two
+honest analytic gaps. No RH claim.
+\end{abstract}
+
+\section{Operator and trial vectors}
+
+\[
+Q_N[i,j]=\frac{1}{\gcd(i,j)\sqrt{ij}},\qquad
+v_{\mathrm{alt}}[k]=\frac{(-1)^{k+1}}{\sqrt{k}}.
+\]
+Then
+\[
+v_{\mathrm{alt}}^\top Q_N v_{\mathrm{alt}}
+=\sum_{i,j=1}^N\frac{(-1)^{i+j}}{\gcd(i,j)\,ij}.
+\]
+Write $\hat v_{\mathrm{alt}}=v_{\mathrm{alt}}/\|v_{\mathrm{alt}}\|$ and
+$R(w)=w^\top Q_N w/\|w\|_2^2$.
+
+\section{What fails (killed)}
+
+\begin{proposition}[Archived Lemma~A is false]\label{prop:lemmaAfalse}
+The decomposition
+$1/\gcd(i,j)=\sum_{d\mid\gcd(i,j)}\mu(d)\varphi(d)/d^2$
+fails already at $\gcd=2$ ($1/2$ vs.\ $3/4$).
+The induced matrix expansion is not $Q_N$.
+\end{proposition}
+
+\begin{proposition}[Gap~A for $v_{\mathrm{alt}}$ is false as stated]\label{prop:valtfalse}
+For $N=500,1000$, numerics give $R(v_{\mathrm{alt}})\approx -0.64,-0.73$
+while $-1/(2\pi)\approx -0.159$; the ratio grows with $N$.
+Similarly $v_{\mathrm{alt}}^\top Q_N v_{\mathrm{alt}}$ is $\sim 5\times$
+more negative than $-\log N/(2\pi)$ and diverges in ratio.
+Certificate: \texttt{scripts/route\_c\_gap\_a\_verify.py}.
+\end{proposition}
+
+\begin{remark}
+High overlap $|\langle v_N^*,\hat v_{\mathrm{alt}}\rangle|\approx 0.95$
+does \emph{not} force $R(v_{\mathrm{alt}})\approx\lambda_{\min}$:
+$\lambda_{\min}<R(v_{\mathrm{alt}})$ always in checks.
+\end{remark}
+
+\section{Proved: parity split}
+
+\begin{lemma}[Parity split]\label{lem:parity}
+\[
+\sum_{i,j=1}^N\frac{(-1)^{i+j}}{\gcd(i,j)\,ij}
+=\sum_{\substack{d\le N\\ d\text{ odd}}}\frac{T_-(N/d)}{d^3}
++\sum_{\substack{d\le N\\ d\text{ even}}}\frac{T_+(N/d)}{d^3},
+\]
+where
+\[
+T_-(M)=\sum_{\gcd(m,n)=1}\frac{(-1)^{m+n}}{mn},\qquad
+T_+(M)=\sum_{\gcd(m,n)=1}\frac1{mn}.
+\]
+\end{lemma}
+
+\begin{proof}
+Write $i=dm$, $j=dn$ with $\gcd(m,n)=1$. The contribution is
+$(-1)^{d(m+n)}/(d^3 mn)$, which equals $(-1)^{m+n}/(d^3 mn)$ when $d$ is odd
+and $1/(d^3 mn)$ when $d$ is even.
+\end{proof}
+
+\begin{lemma}[Coprime M\"obius forms]\label{lem:mobiusT}
+\[
+T_-(M)=\sum_{d=1}^M\frac{\mu(d)}{d^2}
+\Bigl(\sum_{m\le M/d}\frac{(-1)^{dm}}{m}\Bigr)^{\!2},\quad
+T_+(M)=\sum_{d=1}^M\frac{\mu(d)}{d^2}
+\Bigl(\sum_{m\le M/d}\frac1m\Bigr)^{\!2}.
+\]
+\end{lemma}
+
+\begin{proof}
+Expand $\sum_{\gcd(m,n)=1} f(m)f(n)/(mn)$ via M\"obius inversion
+$\mathbf 1_{\gcd=1}=\sum_{d\mid(m,n)}\mu(d)$ and change variables.
+\end{proof}
+
+\begin{remark}
+Even-$d$ blocks contribute \emph{positively} and cancel a large fraction of
+odd-$d$ negativity (e.g.\ at $N=1000$, even $\approx +4.7$, odd $\approx -10.1$).
+This refutes archived heuristics that even blocks alone drive $-1/(2\pi)$.
+\end{remark}
+
+\section{Architecture (conditional, reframed)}
+
+\begin{theorem}[Route~C template, conditional]
+Assume Gap~A$'$ (spectral limit
+$\lambda_{\min}(Q_N)/\log N\to -1/(2\pi)$ with a rigorous trial-vector lower bound)
+and Gap~B (uniform $\lambda_2(Q_N)-\lambda_{\min}(Q_N)\ge c_0>0$).
+Then Davis--Kahan perturbation yields
+$\|v_N^*-\hat v_{\mathrm{alt}}\|\ll N^{-\eta}$ for some $\eta>0$.
+\end{theorem}
+
+\begin{remark}
+The old Gap~A target $R(v_{\mathrm{alt}})\to -1/(2\pi)$ must not be used:
+Proposition~\ref{prop:valtfalse}. A bridge to zero-density / RH criteria remains
+separate even if Gaps~A$'$--B close.
+\end{remark}
+
+\begin{gap}
+\begin{enumerate}[leftmargin=1.2em]
+\item \textbf{Gap~A$'$ (spectral).}
+Prove $\displaystyle\lim_{N\to\infty}\frac{\lambda_{\min}(Q_N)}{\log N}=-\frac{1}{2\pi}$
+via a trial vector with provable Rayleigh $\sim -(\log N)/(2\pi)$,
+\emph{not} $v_{\mathrm{alt}}$ as stated in archived drafts.
+\item \textbf{Gap~B (uniform gap).}
+Prove $\lambda_2(Q_N)-\lambda_{\min}(Q_N)\ge c_0>0$ uniformly in $N$
+(numeric: $\approx 0.09$--$0.14$ and slowly increasing through $N=5000$).
+\end{enumerate}
+\end{gap}
+
+\section{Partial progress on growth (optional)}
+
+Using Lemmas~\ref{lem:parity}--\ref{lem:mobiusT}, one can aim for
+\[
+v_{\mathrm{alt}}^\top Q_N v_{\mathrm{alt}}=-c_1(\log N)^2+O(\log N)
+\]
+with explicit $c_1>0$ from even/odd M\"obius blocks.
+This closes the \emph{growth order} but not the $-1/(2\pi)$ constant for
+$v_{\mathrm{alt}}$.
+
+\section{What is not claimed}
+
+\begin{itemize}[leftmargin=1.2em]
+\item RH or unconditional zero-density theorems.
+\item $R(v_{\mathrm{alt}})\to -1/(2\pi)$ or archived Lemma~A.
+\item Full-spectrum Bridge floors $\lambda_{\min}(Q_N)>-1/2$ (false).
+\end{itemize}
+
+\section*{Reproducibility}
+\begin{verbatim}
+python3 scripts/route_c_gap_a_verify.py 500 1000
+python3 scripts/bridge_floor_verify.py 200
+\end{verbatim}
+
+\begin{thebibliography}{99}
+\bibitem{Bombieri}
+E.~Bombieri,
+\textit{On the large sieve},
+Mathematika \textbf{12} (1965), 201--225.
+
+\bibitem{ZenodoRouteC}
+J.R.~Simons,
+\textit{Route C} (archived draft),
+Zenodo \href{https://doi.org/10.5281/zenodo.20518388}{10.5281/zenodo.20518388}.
+\end{thebibliography}
+
+\end{document}

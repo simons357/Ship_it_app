@@ -1,0 +1,41 @@
+{
+  "id": 20552171,
+  "doi": "10.5281/zenodo.20552171",
+  "conceptrecid": "20552170",
+  "title": "A Quantum Field Theory on the Prime Manifold: Navier\u2013Stokes, Riemann, and Goldbach Under a Single Hamiltonian",
+  "date": "2026-06-05",
+  "creators": [
+    "Simons, Jonathan Robert"
+  ],
+  "files": [
+    {
+      "key": "THREE_IN_ONE_QUANTUM_MILLENNIUM.pdf",
+      "url": "https://zenodo.org/api/records/20552171/files/THREE_IN_ONE_QUANTUM_MILLENNIUM.pdf/content",
+      "size": 16535
+    },
+    {
+      "key": "QUANTUM_MILLENNIUM_NEW.tex",
+      "url": "https://zenodo.org/api/records/20552171/files/QUANTUM_MILLENNIUM_NEW.tex/content",
+      "size": 61060
+    }
+  ],
+  "keywords": [
+    "Navier-Stokes",
+    "Riemann Hypothesis",
+    "Goldbach conjecture",
+    "GCD operator",
+    "prime lattice Hamiltonian",
+    "spectral non-dispersal",
+    "SND",
+    "GNC",
+    "quantum field theory",
+    "Millennium Prize",
+    "Ring Lemma",
+    "Phi-Renormalization",
+    "T2 Gronwall",
+    "unified framework",
+    "coprime density",
+    "squarefree integers"
+  ],
+  "desc": "This paper presents three Millennium Prize problems \u2014 Navier\u2013Stokes global regularity, the Riemann Hypothesis, and the Strong Goldbach Conjecture \u2014 as a single quantum stability condition on the prime lattice Hamiltonian Q_N(i,j) = 1/gcd(i,j).\n\nThe governing condition is: \u03bb_min(Q_N) &gt; \u22121/2 for all N \u2265 1. This single inequality simultaneously prevents fluid blowup (NS), forces Riemann zeros to the critical line (RH), and excludes prime dark states (Goldbach).\n\nContents:\nPart I \u2014 Navier\u2013Stokes "
+}

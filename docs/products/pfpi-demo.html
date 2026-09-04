@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>PFPI Demo — Prime Field Pattern Index</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; background: #0f1117; color: #e8eaed; }
+    body { max-width: 860px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { font-size: 1.4rem; }
+    input[type="search"] { width: 100%; padding: 0.6rem; font-size: 1rem; border-radius: 6px; border: 1px solid #444; background: #1a1d26; color: inherit; }
+    .meta { color: #9aa0a6; font-size: 0.85rem; margin: 0.5rem 0 1rem; }
+    .hit { border: 1px solid #333; border-radius: 8px; padding: 0.75rem 1rem; margin-bottom: 0.75rem; background: #161922; }
+    .hit h3 { margin: 0 0 0.35rem; font-size: 1rem; }
+    .warn { color: #f28b82; font-weight: 600; }
+    .chip { display: inline-block; font-size: 0.75rem; padding: 0.1rem 0.45rem; border-radius: 4px; background: #2d3142; margin-right: 0.35rem; }
+    .chip.lead { background: #3d2f00; color: #fdd663; }
+    .chip.cut { background: #5c1a1a; color: #f28b82; }
+    code { font-size: 0.8rem; color: #8ab4f8; }
+  </style>
+</head>
+<body>
+  <h1>PFPI Demo</h1>
+  <p class="meta">Static demo — run <code>python3 -m tools.pfpi.serve</code> then open this page from the same host, or use CLI: <code>python3 -m tools.pfpi.search Bridge</code></p>
+  <input id="q" type="search" placeholder="Search corpus (Bridge*, SFE, Route C…)" autofocus />
+  <p id="status" class="meta"></p>
+  <div id="results"></div>
+  <script>
+    const API = "http://127.0.0.1:8765/v1/search";
+    const q = document.getElementById("q");
+    const results = document.getElementById("results");
+    const status = document.getElementById("status");
+    let timer;
+
+    function chip(text, cls) {
+      return `<span class="chip ${cls || ""}">${text}</span>`;
+    }
+
+    function render(data) {
+      status.textContent = `${data.count} hit(s) for "${data.query}"`;
+      results.innerHTML = data.hits.map(h => {
+        let chips = chip(h.source_type);
+        if (h.da_status) chips += chip(h.da_status, h.da_status === "LEAD" ? "lead" : "");
+        if (h.keep_cut === "CUT") chips += chip("CUT", "cut");
+        const warn = h.warning ? `<div class="warn">${h.warning}</div>` : "";
+        return `<article class="hit"><h3>${h.title}</h3>${warn}<div>${chips}</div><p>${h.snippet}</p><code>${h.file_path || h.doc_id}</code></article>`;
+      }).join("");
+    }
+
+    async function run() {
+      const query = q.value.trim();
+      if (!query) { results.innerHTML = ""; status.textContent = ""; return; }
+      status.textContent = "Searching…";
+      try {
+        const res = await fetch(`${API}?q=${encodeURIComponent(query)}&limit=12`);
+        if (!res.ok) throw new Error(res.statusText);
+        render(await res.json());
+      } catch (e) {
+        status.textContent = "API offline — start: python3 -m tools.pfpi.serve";
+        results.innerHTML = "";
+      }
+    }
+
+    q.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(run, 250); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "id": 20552400,
+  "doi": "10.5281/zenodo.20552400",
+  "conceptrecid": "20552399",
+  "title": "A Universal Non-Concentration Principle: SND \u2261 GNC \u2261 Bridge",
+  "date": "2026-06-05",
+  "creators": [
+    "Simons, Jonathan Robert"
+  ],
+  "files": [
+    {
+      "key": "SND_GNC_BRIDGE_UNIFIED.pdf",
+      "url": "https://zenodo.org/api/records/20552400/files/SND_GNC_BRIDGE_UNIFIED.pdf/content",
+      "size": 16957
+    }
+  ],
+  "keywords": [
+    "Navier-Stokes",
+    "Riemann Hypothesis",
+    "Goldbach conjecture",
+    "GCD operator",
+    "prime lattice",
+    "spectral non-dispersal",
+    "SND",
+    "GNC",
+    "Bridge condition",
+    "dark state",
+    "shell energy",
+    "universal non-concentration",
+    "squarefree density",
+    "Mobius function",
+    "Millennium Prize",
+    "unified framework"
+  ],
+  "desc": "<p>We prove that three a priori distinct non-concentration conditions on the prime lattice Hamiltonian Q_N(i,j) = 1/gcd(i,j) are equivalent:</p><p>(i) <strong>SND</strong> (Spectral Non-Dispersal): no single dyadic shell of the Navier\u2013Stokes solution captures more than fraction \u03c1\u2080 of total energy.</p><p>(ii) <strong>GNC</strong> (Goldbach Non-Concentration): the prime indicator difference vector v_k satisfies \u27e8v_k, \u0124_N v_k\u27e9 \u2265 \u03ba*\u2016v_k\u2016\u00b2 (no dark state).</p><p>(iii) <strong>Bridge</strong>: \u03bb_min(Q"
+}

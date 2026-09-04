@@ -1,0 +1,99 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{\textbf{A Rayleigh Lower Bound for Normalized Inverse-GCD\\
+Matrices on Prime-Pair and Multi-Representation Vectors}}
+\author{Jonathan Robert Simons\\
+Savannah, Georgia, USA\\
+\texttt{simonsmedicalinnovations@gmail.com}}
+\date{Corrected preprint \quad|\quad August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.92\linewidth}{\centering\small
+\textbf{Disclaimer.} Restricted Rayleigh bound on Goldbach test vectors;
+not a full-spectrum floor. No Navier--Stokes claim.}}
+\end{center}
+\vspace{0.75em}
+
+\begin{abstract}
+Let $\widetilde Q_N(i,j)=1/(\gcd(i,j)\sqrt{ij})$ for $1\le i,j\le N$.
+For distinct primes $p,q$ set $v=e_p-e_q$. We prove
+\[
+R(v)=\frac{v^\top\widetilde Q_N v}{\|v\|_2^2}
+=\frac12\Big(\frac1{p^2}+\frac1{q^2}\Big)-\frac1{\sqrt{pq}}
+\;>\;-\frac12.
+\]
+The same floor holds for multi-representation vectors
+$v_k=\sum_{p\in\mathcal{R}(k)}(e_p-e_{k-p})$ by a nonnegative cross-term
+identity. We do not claim a full-spectrum floor
+$\lambda_{\min}(\widetilde Q_N)>-1/2$ (false for moderate $N$).
+\end{abstract}
+
+\section{Operator}
+
+\[
+\widetilde Q_N(p,p)=\frac1{p^2},\qquad
+\widetilde Q_N(p,q)=\frac1{\sqrt{pq}}\quad(p\neq q\text{ primes}).
+\]
+
+\section{Single pair}
+
+\begin{theorem}
+For distinct primes $p,q$,
+\[
+R(e_p-e_q)=\frac12\Big(\frac1{p^2}+\frac1{q^2}\Big)-\frac1{\sqrt{pq}}\;>\;-\frac12.
+\]
+\end{theorem}
+
+\begin{proof}
+\[
+R+\frac12
+=\frac12+\frac1{2p^2}+\frac1{2q^2}-\frac1{\sqrt{pq}}
+>\frac12-\frac1{\sqrt{pq}}.
+\]
+Since $pq\ge 2\cdot 3=6$, one has $1/\sqrt{pq}\le 1/\sqrt6<1/2$, hence $R+1/2>0$.
+\end{proof}
+
+\begin{remark}
+The Rayleigh quotient may be negative (e.g.\ $(p,q)=(2,3)$ gives $R\approx -0.228$)
+but remains strictly above $-1/2$. Full-spectrum $\lambda_{\min}(\widetilde Q_N)$
+falls below $-1/2$ already for small $N$; the present bound is restricted to
+Goldbach test vectors.
+\end{remark}
+
+\section{Multi-representation}
+
+\begin{lemma}[Cross-term factorization]
+For distinct primes $p\neq q$ and $r\neq s$,
+\[
+\widetilde Q(p,r)-\widetilde Q(p,s)-\widetilde Q(q,r)+\widetilde Q(q,s)
+=\bigl(p^{-1/2}-q^{-1/2}\bigr)\bigl(r^{-1/2}-s^{-1/2}\bigr).
+\]
+If $p<q$ and $r<s$, the cross term is strictly positive.
+\end{lemma}
+
+\begin{theorem}[Multi-representation Bridge$^*$]
+Let $k$ be even and
+$\mathcal{R}(k)=\{p\text{ prime}:2\le p<k/2,\ k-p\text{ prime}\}$.
+Set $v_k=\sum_{p\in\mathcal{R}(k)}(e_p-e_{k-p})\neq 0$. Then $R(v_k)>-1/2$.
+\end{theorem}
+
+\begin{proof}
+Unordered Goldbach pairs for fixed $k$ are pairwise disjoint.
+Write $v_k=\sum_a v_a$ with $v_a=e_{p_a}-e_{q_a}$, $p_a<q_a$.
+Diagonal blocks give $R(v_a)>-1/2$ by the single-pair theorem; cross blocks
+are positive by the lemma. Hence $R(v_k)\ge\min_a R(v_a)>-1/2$.
+\end{proof}
+
+Full operator note: \texttt{04\_q6\_inverse\_gcd.tex}.
+
+\end{document}

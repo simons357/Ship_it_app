@@ -1,0 +1,33 @@
+{
+  "id": 20405585,
+  "doi": "10.5281/zenodo.20405585",
+  "conceptrecid": "20405584",
+  "title": "Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal: A Conditional Regularity Framework for 3D Navier-Stokes",
+  "date": "2026-05-27",
+  "creators": [
+    "Simons, Jonathan R."
+  ],
+  "files": [
+    {
+      "key": "RingLemma_Borromean_Simons.tex",
+      "url": "https://zenodo.org/api/records/20405585/files/RingLemma_Borromean_Simons.tex/content",
+      "size": 44361
+    },
+    {
+      "key": "RingLemma_Borromean_Simons.html",
+      "url": "https://zenodo.org/api/records/20405585/files/RingLemma_Borromean_Simons.html/content",
+      "size": 17013
+    }
+  ],
+  "keywords": [
+    "Navier-Stokes",
+    "Ring Lemma",
+    "Borromean triads",
+    "spectral non-dispersal",
+    "vorticity direction",
+    "Constantin-Fefferman",
+    "Littlewood-Paley",
+    "conditional regularity"
+  ],
+  "desc": "We present the Ring Lemma (Lemma 5.1): for a divergence-free velocity field with Fourier support in a single Littlewood-Paley shell S_{j*}, the vorticity direction field xi = omega/|omega| satisfies ||grad xi||_{L-inf} &lt;= C * 2^{j*}, directly answering Constantin-Fefferman Question 2.2 in the band-limited regime. The proof uses the finiteness of the triad ring on S_{j*} (Borromean structure) and the Bernstein inequality. Under the four-part Spectral Non-Dispersal condition [SND], a Global Sum"
+}

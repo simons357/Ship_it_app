@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "version": "0.1.0",
+    "updated": "2026-08-28",
+    "runner": "scripts/",
+    "artifact_dir": "/opt/cursor/artifacts"
+  },
+  "spells": {
+    "sfe_bh_overlay": {
+      "name": "SFE ↔ Black Hole Overlay",
+      "script": "scripts/sfe_bh_overlay_spells.py",
+      "doc": "docs/math/SFE-BH-OVERLAY-SPELLBOOK.md",
+      "tags": ["lattice:gcd", "weight:critical_line", "floor:half", "concentration:herfindahl"],
+      "args_schema": {"Nmax": "int"},
+      "output": "sfe_bh_overlay_spells.json"
+    },
+    "sfe_phase_flow": {
+      "name": "SFE Phase Flow",
+      "script": "scripts/sfe_phase_flow_spell.py",
+      "doc": "docs/math/SFE-BH-OVERLAY-SPELLBOOK.md",
+      "tags": ["floor:half", "concentration:snd"],
+      "args_schema": {},
+      "output": null
+    },
+    "bridge_star_h_n": {
+      "name": "Bridge* H_N Check",
+      "script": "scripts/h_n_bridge_star_check.py",
+      "doc": "docs/H_N-LOCK.md",
+      "tags": ["operator:H_N", "operator:Q_tilde"],
+      "args_schema": {},
+      "output": null
+    },
+    "bridge_floor_verify": {
+      "name": "Bridge Floor Verify",
+      "script": "scripts/bridge_floor_verify.py",
+      "doc": "docs/BRIDGE-FLOOR-AUDIT.md",
+      "tags": ["floor:half", "operator:Q_tilde"],
+      "args_schema": {},
+      "output": null
+    },
+    "route_c_gap_a": {
+      "name": "Route C Gap A Verify",
+      "script": "scripts/route_c_gap_a_verify.py",
+      "doc": "docs/math/DA-REPORT-2026-08-28.md",
+      "tags": ["floor:two_pi", "lattice:gcd"],
+      "args_schema": {},
+      "output": null
+    },
+    "positive_gcd_floor": {
+      "name": "Positive GCD Floor Verify",
+      "script": "scripts/positive_gcd_floor_verify.py",
+      "doc": "docs/papers/submit/07_positive_gcd_paper1_abc.tex",
+      "tags": ["lattice:gcd", "operator:Q_tilde"],
+      "args_schema": {},
+      "output": null
+    },
+    "hb_ringdown": {
+      "name": "Harmonic Blueprint Ringdown Test",
+      "script": "hb_ringdown_test.py",
+      "doc": "docs/HB-RINGDOWN-EXPERIMENT-01-REPORT.md",
+      "tags": ["weight:critical_line", "concentration:snd"],
+      "args_schema": {"split": "train|test", "mc": "int"},
+      "output": "results/"
+    }
+  }
+}

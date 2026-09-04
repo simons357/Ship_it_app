@@ -1,0 +1,19 @@
+{
+  "id": 20518057,
+  "doi": "10.5281/zenodo.20518057",
+  "conceptrecid": "20518056",
+  "title": "Spectral Non-Dispersal, the Ring Lemma, and a Conditional Regularity Framework for the Navier\u2013Stokes Equations on T\u00b3",
+  "date": "2026-06-03",
+  "creators": [
+    "simons, jonathan"
+  ],
+  "files": [
+    {
+      "key": "98d1b1cc9_NS_UPLOAD_ZENODO.tex",
+      "url": "https://zenodo.org/api/records/20518057/files/98d1b1cc9_NS_UPLOAD_ZENODO.tex/content",
+      "size": 64915
+    }
+  ],
+  "keywords": null,
+  "desc": "<p class=\"my-2 leading-relaxed\">We develop a conditional regularity framework for the three-dimensional incompressible Navier&ndash;Stokes equations on the periodic torus T&sup3; with H&sup1; initial data. The framework is organized around two new results: the Spectral Non-Dispersal condition [SND] and the Ring Lemma.</p>\n<p class=\"my-2 leading-relaxed\">The [SND] condition asserts that the ratio J(t)/X(t) &mdash; where X(t) is the H&sup1; energy and J(t) is the maximum Littlewood&ndash;Paley she"
+}
