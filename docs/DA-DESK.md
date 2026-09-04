@@ -225,6 +225,9 @@ Domain B **never** passes regularity. `check B` stays
 | B36 | leftover catalog miss, leftover-close miss readable | **pass** |
 | B36a / B36b / B36c / B36d / B36e | leftover knobs decide regularity; catalog is continuation; naming the object is NS; leftover catalog is \(\int\|\omega\|_\infty\); this write decides regularity | **fail** |
 | B36f | this retunes the PDE | **fail** |
+| B37 | three holes of \(\mathcal{R}\) readable on \(n=32\) | **pass** |
+| B37a / B37b / B37c / B37d / B37e | naming holes is a closed estimate; readable is integrable; synthetic \(\mathcal{R}\) is NS; residual is \(\int\|\omega\|_\infty\); residual decides regularity | **fail** |
+| B37f | this retunes the PDE | **fail** |
 | classical regularity | — | **open** |
 
 **Next B write:** Stretching budget is not an a priori
@@ -523,7 +526,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/TRACK-B-BALANCE.md`,
 `docs/TRACK-B-COHERENT.md`,
 `docs/TRACK-B-FIELD-OCC.md`,
-`docs/TRACK-B-FIELD-GLUE.md`.
+`docs/TRACK-B-FIELD-GLUE.md`,
+`docs/TRACK-B-RESIDUAL.md`.
 
 ---
 

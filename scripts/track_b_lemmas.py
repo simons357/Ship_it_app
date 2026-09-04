@@ -1541,6 +1541,48 @@ def lemma_object_priori_not_a_retune() -> dict:
     return opnr()
 
 
+def lemma_residual_readable() -> dict:
+    from track_b_residual import lemma_residual_readable as rr
+
+    return rr()
+
+
+def lemma_residual_not_a_priori() -> dict:
+    from track_b_residual import lemma_residual_not_a_priori as rna
+
+    return rna()
+
+
+def lemma_residual_not_continuation() -> dict:
+    from track_b_residual import lemma_residual_not_continuation as rnc
+
+    return rnc()
+
+
+def lemma_residual_not_ns() -> dict:
+    from track_b_residual import lemma_residual_not_ns as rns
+
+    return rns()
+
+
+def lemma_residual_not_integral_max() -> dict:
+    from track_b_residual import lemma_residual_not_integral_max as rnim
+
+    return rnim()
+
+
+def lemma_residual_not_regularity() -> dict:
+    from track_b_residual import lemma_residual_not_regularity as rnr
+
+    return rnr()
+
+
+def lemma_residual_not_a_retune() -> dict:
+    from track_b_residual import lemma_residual_not_a_retune as rnr2
+
+    return rnr2()
+
+
 def lemma_coherent_field() -> dict:
     from track_b_coherent import lemma_coherent_field as coh
 
@@ -1818,6 +1860,13 @@ def run(out: Path | None = None) -> dict:
         lemma_object_not_integral_max(),
         lemma_object_not_regularity(),
         lemma_object_priori_not_a_retune(),
+        lemma_residual_readable(),
+        lemma_residual_not_a_priori(),
+        lemma_residual_not_continuation(),
+        lemma_residual_not_ns(),
+        lemma_residual_not_integral_max(),
+        lemma_residual_not_regularity(),
+        lemma_residual_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -1904,10 +1953,13 @@ def run(out: Path | None = None) -> dict:
             "B35c stack of fails is not NS (fail); leftover close is not ∫‖ω‖_∞ (fail); regularity leftover scored (B35e fail); not a PDE retune (fail)",
             "B36 leftover catalog miss+leftover-close miss readable (pass); leftover knobs do not decide regularity (fail); catalog not continuation (fail)",
             "B36c naming the object is not NS (fail); leftover catalog is not ∫‖ω‖_∞ (fail); this write does not decide regularity (fail); not a PDE retune (fail)",
+            "B37 three holes of R readable on n=32 (pass); naming holes is not a closed estimate (fail); readable is not integrable (fail)",
+            "B37c synthetic R is not NS (fail); residual tool is not ∫‖ω‖_∞ (fail); this write does not decide regularity (fail); not a PDE retune (fail)",
             "classical regularity remains open",
         ],
         "next_da_move": (
             "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). "
+            "The residual tool names the holes in R. It is not an a priori. "
             "Regularity stays open. Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),

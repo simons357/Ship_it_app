@@ -322,6 +322,9 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B36 leftover catalog miss, leftover-close miss readable | pass |
 | B36a / B36b / B36c / B36d / B36e leftover knobs decide regularity; catalog is continuation; naming the object is NS; leftover catalog is \(\int\|\omega\|_\infty\); this write decides regularity | **fail** |
 | B36f this retunes the PDE | **fail** |
+| B37 three holes of \(\mathcal{R}\) readable on \(n=32\) | pass |
+| B37a / B37b / B37c / B37d / B37e naming holes is a closed estimate; readable is integrable; synthetic \(\mathcal{R}\) is NS; residual is \(\int\|\omega\|_\infty\); residual decides regularity | **fail** |
+| B37f this retunes the PDE | **fail** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
@@ -383,7 +386,7 @@ That is the paper. Enstrophy balance is not an a priori (B16e). Coherent blob is
 - Machine: `docs/DOMAIN-ARCHITECT-MACHINE.md`
 - Shelf: `docs/SHELF.md`
 - Track A: `docs/AUGMENTED-NS-PROOF-CHAIN.md`
-- Track B: `docs/TRACK-B-LEMMAS.md`, `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`, `docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`, `docs/TRACK-B-BALANCE.md`, `docs/TRACK-B-ANGULAR.md`, `docs/TRACK-B-COHERENT.md`, `docs/TRACK-B-FIELD-OCC.md`, `docs/TRACK-B-FIELD-GLUE.md`
+- Track B: `docs/TRACK-B-LEMMAS.md`, `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`, `docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`, `docs/TRACK-B-BALANCE.md`, `docs/TRACK-B-ANGULAR.md`, `docs/TRACK-B-COHERENT.md`, `docs/TRACK-B-FIELD-OCC.md`, `docs/TRACK-B-FIELD-GLUE.md`, `docs/TRACK-B-RESIDUAL.md`
 - Track Q: `docs/SPECTRAL-FLOOR-EXPLORATION.md`
 - Think tank: `docs/DA-THINK-TANK.md` (combined roll), `docs/DA-DREAM-TEAM.md`, `docs/DA-GROUND.md`, `docs/DA-PIPE.md`, `docs/DA-SESSION.md` (they talk), `docs/DA-LIVING.md` (living papers; where now / can \(X\) close), `docs/DA-LEADS.md` (every chair, one lead)
 - Compute and alerts: `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`

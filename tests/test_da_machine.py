@@ -206,6 +206,9 @@ class DaMachineTests(unittest.TestCase):
         obj = classify_claim("regularity leftover as an a priori bound for vorticity")
         self.assertEqual(obj["domain"], "B")
         self.assertEqual(obj["verdict"], "open")
+        resid = classify_claim("residual holes of synthetic R on a vorticity packet")
+        self.assertEqual(resid["domain"], "B")
+        self.assertEqual(resid["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

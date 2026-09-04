@@ -243,6 +243,13 @@ not done).
 | B36d | leftover catalog is \(\int\|\omega\|_\infty\) | **fail** | A leftover list is not the max. |
 | B36e | this leftover close decides regularity | **fail** | Domain B stays open. |
 | B36f | scoring this retunes the PDE | **fail** | Knob on the check. |
+| B37 | three holes of \(\mathcal{R}\) readable on \(n=32\) | **pass** | Same caches as B15 / B16. No \(n=64\). |
+| B37a | naming the holes is a closed estimate | **fail** | A synthetic split is an apparatus. |
+| B37b | readable holes make \(\mathcal{R}\) integrable | **fail** | Readability is not integrability. |
+| B37c | synthetic \(\mathcal{R}\) is an NS a priori | **fail** | A skeleton with blanks is not a type. |
+| B37d | residual tool is \(\int\|\omega\|_\infty\) | **fail** | Named holes are not the max. |
+| B37e | residual tool decides regularity | **fail** | Domain B stays open. |
+| B37f | scoring this retunes the PDE | **fail** | Knob on the check. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -542,11 +549,21 @@ NS **fail**. Leftover catalog is \(\int\|\omega\|_\infty\)
 **fail**. This write decides regularity **fail**. Not a
 PDE retune **fail**.
 
+**B37 / B37a / B37b / B37c / B37d / B37e / B37f.** Residual
+tool lives in [`TRACK-B-RESIDUAL.md`](TRACK-B-RESIDUAL.md).
+Three holes of \(\mathcal{R}\) readable **pass**. Naming
+the holes is a closed estimate **fail**. Readable holes
+make \(\mathcal{R}\) integrable **fail**. Synthetic
+\(\mathcal{R}\) is NS **fail**. Residual tool is
+\(\int\|\omega\|_\infty\) **fail**. Residual tool decides
+regularity **fail**. Not a PDE retune **fail**.
+
 ---
 
 ## What is still the next write
 
-1. Stretching budget is not an a priori (B15e).
+1. The residual tool names the holes in \(\mathcal{R}\).
+   It is not an a priori. Stretching budget is not an a priori (B15e).
    Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Finer (\(n>32\))
    stays a box knob (B22e). Do not spawn \(n=64\). B4c
    stands. Angular \(1/r^2\) does not. Do not cancel to
@@ -592,8 +609,9 @@ python3 scripts/track_b_finer.py
 python3 scripts/track_b_mesh.py
 python3 scripts/track_b_close.py
 python3 scripts/track_b_object.py
+python3 scripts/track_b_residual.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net tests.test_track_b_blob tests.test_track_b_clock tests.test_track_b_match tests.test_track_b_saving tests.test_track_b_window tests.test_track_b_finer tests.test_track_b_mesh tests.test_track_b_close tests.test_track_b_object
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net tests.test_track_b_blob tests.test_track_b_clock tests.test_track_b_match tests.test_track_b_saving tests.test_track_b_window tests.test_track_b_finer tests.test_track_b_mesh tests.test_track_b_close tests.test_track_b_object tests.test_track_b_residual
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```
