@@ -133,6 +133,9 @@ class DaMachineTests(unittest.TestCase):
         coh = classify_claim("signed strain blob on a coherent CONC vorticity packet")
         self.assertEqual(coh["domain"], "B")
         self.assertEqual(coh["verdict"], "open")
+        focc = classify_claim("field occupation of 3-CONC along a vorticity path")
+        self.assertEqual(focc["domain"], "B")
+        self.assertEqual(focc["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

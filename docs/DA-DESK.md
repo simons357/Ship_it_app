@@ -113,8 +113,7 @@ Domain B **never** passes regularity. `check B` stays
 | B7 / B7a / B7b | Bony split, T2 self, energy-class \(T\) | **pass** |
 | B7c | uniform \(\rho^{1/2}\) as \(\rho\to 0\) | **fail** |
 | B8 / B8a | occupation clock; high \(j_*\) short | **pass** |
-| B8b | Leray \(\Rightarrow\) short CONC | **fail** |
-| B8c | occupation closes \(X\) | **open** |
+| B8b / B8c | Leray \(\Rightarrow\) short CONC; occupation closes \(X\) | **fail** |
 | B9 / B9a / B9c | glue bookkeeping; high \(j_*\) sits | **pass** |
 | B9b | low \(j_*\) CONC cubic bounded | **fail** (model) |
 | B9d | glue sketch is an NS a priori | **open** |
@@ -151,12 +150,16 @@ Domain B **never** passes regularity. `check B` stays
 | B17b / B17c / B17d | cubic owns \(\dot X\); tube also nets; \(L^2\) blob is BKM | **fail** |
 | B17e | blob closes \(X\) | **open** |
 | B17f | this retunes the PDE | **fail** |
+| B18 / B18a | field clock on a path; paths stay CONC | **pass** |
+| B18b / B18c / B18d | clock saved \(X\); CONC short; cubic-live time | **fail** |
+| B18e | field occupation closes \(X\) | **open** |
+| B18f | this retunes the PDE | **fail** |
 | \(\Phi\) as estimate variable | keep \(\Gamma\) | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** Occupation \(\to X\) (B8c). Coherent CONC
-is scored. B4c stands. Angular \(1/r^2\) does not. We are
-not tuning the equation.
+**Next B write:** Glue sketch as an NS a priori (B9d).
+Field occupation is scored. B4c stands. Angular
+\(1/r^2\) does not. We are not tuning the equation.
 
 ---
 
@@ -442,7 +445,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/TRACK-B-GEOMETRY.md`,
 `docs/TRACK-B-STRETCH.md`,
 `docs/TRACK-B-BALANCE.md`,
-`docs/TRACK-B-COHERENT.md`.
+`docs/TRACK-B-COHERENT.md`,
+`docs/TRACK-B-FIELD-OCC.md`.
 
 ---
 
@@ -466,7 +470,9 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
   \(1/r^2\) vs \(I_{\mathrm{tube}}\): **fail** of domination;
   \(R_{\mathrm{ang}}\) climbs. Coherent CONC: signed-strain
   blob nets; working-box cubic is not live; \(z\)-independent
-  tube still cancels. Next: occupation \(\to X\) (B8c).
+  tube still cancels. Field occupation: clock stays CONC;
+  it did not save \(X\); cubic not live in time. Next: glue
+  sketch as an NS a priori (B9d).
   The PDE is not being tuned.
 - Cosmo does not enter NS.
 - HB stays shelved as a theorem. DA-as-process stays live.

@@ -21,7 +21,7 @@ class TrackBOccupationTests(unittest.TestCase):
         self.assertEqual(by["B8_occupation_clock"]["verdict"], "pass")
         self.assertEqual(by["B8a_high_jstar_short"]["verdict"], "pass")
         self.assertEqual(by["B8b_leray_not_occupation"]["verdict"], "fail")
-        self.assertEqual(by["B8c_occupation_not_X_bound"]["verdict"], "open")
+        self.assertEqual(by["B8c_occupation_not_X_bound"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         hot = by["B8a_high_jstar_short"]["decay"]["hot"]
         self.assertLess(hot[-1], 0.5 * hot[0])

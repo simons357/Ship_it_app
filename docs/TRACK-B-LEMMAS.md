@@ -53,7 +53,7 @@ not done).
 | B8 | \(\tau_{\mathrm{C}}+\tau_{\mathrm{S}}=T\) | **pass** | Two-regime clock. |
 | B8a | high \(j_*\) hot occupation falls | **pass** | Packet ODE at B4c’s scale. |
 | B8b | Leray \(\Rightarrow\) short CONC | **fail** | B6 spike, wearing a regime hat. |
-| B8c | occupation closes a bound for \(X\) | **open** | Clock is not the estimate. |
+| B8c | occupation closes a bound for \(X\) | **fail** | Clock is not the estimate. B8b + field paths. |
 | B9 | \(\Delta X=\Delta_{\mathrm{C}}+\Delta_{\mathrm{S}}\) | **pass** | Two-regime bookkeeping. |
 | B9a | high \(j_*\) CONC model sits | **pass** | Packet viscosity owns the cubic. |
 | B9b | low \(j_*\) CONC stays bounded | **fail** | \(j_*=2\), \(X_0=2.5\): \(X\) crosses 40. |
@@ -110,6 +110,13 @@ not done).
 | B17d | \(L^2\) blob is BKM | **fail** | \(\|\omega\|_\infty/\|\omega\|_2\sim 2.4\). Still not \(\int\|\omega\|_\infty\). |
 | B17e | signed-strain blob closes \(X\) | **open** | One-sided leftover \(\neq\) continuation. |
 | B17f | reading the blob retunes the PDE | **fail** | Knob on the check. |
+| B18 | clock identity on a path | **pass** | B8, read on IF-RK2. |
+| B18a | packet and blob occupy CONC fully | **pass** | \(\tau_{\mathrm{C}}=T\). Zero switches. |
+| B18b | the clock left CONC and saved \(X\) | **fail** | Viscosity. No flip. |
+| B18c | CONC occupation is short on these runs | **fail** | \(\tau_{\mathrm{C}}=T\). |
+| B18d | cubic-live time is nonempty | **fail** | Zero samples with \(\lvert P\rvert/D\ge 0.05\). |
+| B18e | field occupation closes \(X\) | **open** | A readable clock is not continuation. |
+| B18f | reading the path retunes the PDE | **fail** | Knob on the check. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -202,7 +209,7 @@ H at frozen \(\rho\le 1/4\) may still use B7b.
 **B8 / B8a / B8b / B8c.** Occupation time lives in
 [`TRACK-B-OCCUPATION.md`](TRACK-B-OCCUPATION.md). Clock
 **pass**. High \(j_*\) short **pass**. Leray \(\Rightarrow\)
-short CONC **fail**. Occupation itself does not close \(X\).
+short CONC **fail**. Occupation closes \(X\) **fail**.
 
 **B9 / B9a / B9b / B9c / B9d.** The two-regime glue lives in
 [`TRACK-B-GLUE.md`](TRACK-B-GLUE.md). Increments add
@@ -265,15 +272,21 @@ Signed-strain blob readable **pass**. Net \(\approx P_+\)
 tube also nets **fail**. \(L^2\) blob is BKM **fail**.
 Blob closes \(X\) **open**. Not a PDE retune **fail**.
 
+**B18 / B18a / B18b / B18c / B18d / B18e / B18f.** Field
+occupation lives in [`TRACK-B-FIELD-OCC.md`](TRACK-B-FIELD-OCC.md).
+Clock on a path **pass**. Paths stay CONC **pass**. Clock
+saved \(X\) **fail**. CONC occupation short **fail**.
+Cubic-live time **fail**. Field occupation closes \(X\)
+**open**. Not a PDE retune **fail**.
+
 ---
 
 ## What is still the next write
 
-1. Occupation \(\to X\) (B8c). Coherent CONC is scored.
-   A signed-strain blob nets; the working-box cubic is not
-   live; a \(z\)-independent tube still cancels. B4c stands.
-   Angular \(1/r^2\) does not. A finer packet box (B13e)
-   stays open.
+1. Glue sketch as an NS a priori (B9d). Field occupation
+   is scored: the clock stays CONC; it did not save \(X\);
+   the cubic is not live in time. B4c stands. Angular
+   \(1/r^2\) does not. A finer packet box (B13e) stays open.
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
    Leray-as-occupation, the glue sketch as an NS a priori,
    a typed \(c=8\), all-data Biot–Savart depletion, BKM-from-\(L^2\),
@@ -295,8 +308,9 @@ python3 scripts/track_b_geometry.py
 python3 scripts/track_b_stretch.py
 python3 scripts/track_b_balance.py
 python3 scripts/track_b_coherent.py
+python3 scripts/track_b_field_occ.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

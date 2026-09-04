@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "field occupation; B8 clock on a path",
+    "tuning_the_pde": false,
+    "tesla": "exacting, not a jerk. Occupation is a number on a path. If the path never leaves CONC, the clock did not do the bound.",
+    "domain_verdict": "open",
+    "n": 32,
+    "dt": 0.008,
+    "steps": 8,
+    "nu": 0.1
+  },
+  "lemmas": [
+    {
+      "name": "B18_field_clock",
+      "statement": "\u03c4_CONC + \u03c4_SPREAD = T along short IF-RK2 paths of a packet and a signed-strain blob",
+      "verdict": "pass",
+      "why": "The B8 clock, read on a field. Same threshold \u03c3=1/2. Switching still free.",
+      "clock_gap": {
+        "packet": 0.0,
+        "blob": 0.0
+      },
+      "T": {
+        "packet": 0.064,
+        "blob": 0.064
+      }
+    },
+    {
+      "name": "B18a_paths_stay_conc",
+      "statement": "short viscous packet and blob paths occupy 3-CONC for the whole interval",
+      "verdict": "pass",
+      "why": "\u03c3 never drops through 1/2. The clock has one column on.",
+      "tau_frac": {
+        "packet": 1.0,
+        "blob": 1.0
+      },
+      "sigma_min": {
+        "packet": 0.9999999995440866,
+        "blob": 0.8090013567164921
+      },
+      "switches": {
+        "packet": 0,
+        "blob": 0
+      }
+    },
+    {
+      "name": "B18b_clock_did_not_save",
+      "statement": "the clock left CONC, and that is why X sat on these paths",
+      "verdict": "fail",
+      "why": "Zero switches. Packet X falls by viscosity. The blob too. The clock did not flip them into SPREAD.",
+      "switches": {
+        "packet": 0,
+        "blob": 0
+      },
+      "X0": {
+        "packet": 2.5,
+        "blob": 2.499649381408986
+      },
+      "XT": {
+        "packet": 1.4263585606002107,
+        "blob": 1.865076611146439
+      },
+      "X_fell": {
+        "packet": true,
+        "blob": true
+      }
+    },
+    {
+      "name": "B18c_conc_not_short",
+      "statement": "CONC occupation is short on these Navier\u2013Stokes runs",
+      "verdict": "fail",
+      "why": "\u03c4_CONC = T. High-j* short (B8a) is a packet ODE. These fields did not occupy a short visit.",
+      "tau_frac": {
+        "packet": 1.0,
+        "blob": 1.0
+      }
+    },
+    {
+      "name": "B18d_cubic_not_live_time",
+      "statement": "the cubic is live (|P|/D \u2265 0.05) on a nonempty set of samples at the working box",
+      "verdict": "fail",
+      "why": "Zero live samples. One-sided P on the blob is still a leftover versus D. Occupation of CONC is not occupation of a live cubic.",
+      "live_samples": {
+        "packet": 0,
+        "blob": 0
+      },
+      "P_over_D": {
+        "packet": [
+          -3.9974823859864546e-05,
+          -3.656302233205714e-05,
+          -3.345856043186159e-05,
+          -3.06289712584531e-05,
+          -2.8045450355832894e-05,
+          -2.5682442777812325e-05,
+          -2.3517277392576396e-05,
+          -2.1529842883175806e-05,
+          -1.970230056315122e-05
+        ],
+        "blob": [
+          0.008181300794787849,
+          0.008285330220008021,
+          0.008382883876231467,
+          0.008474677269787137,
+          0.008561335564288808,
+          0.008643405222310647,
+          0.008721364099702353,
+          0.008795630199626469,
+          0.008866569266823297
+        ]
+      }
+    },
+    {
+      "name": "B18e_field_occ_not_X_a_priori",
+      "statement": "field occupation closes a bound for classical X",
+      "verdict": "open",
+      "why": "The clock can be read. It did not leave CONC. Glue (B9d) is still a sketch. Not continuation."
+    },
+    {
+      "name": "B18f_not_a_pde_retune",
+      "statement": "reading \u03c3 along an IF-RK2 path is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. Sampling the clock is a knob on the check. No Q1. No \u03b5."
+    }
+  ],
+  "counts": {
+    "pass": 2,
+    "fail": 4,
+    "open": 1
+  },
+  "next_da_move": "Glue sketch as an NS a priori (B9d). Field occupation is scored: the clock stays CONC; it did not save X; the cubic is not live in time. B4c stands. Do not cancel to \u03a6."
+}

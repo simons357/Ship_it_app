@@ -40,7 +40,7 @@ class TrackBCoherentTests(unittest.TestCase):
         self.assertLess(abs(by["B17b_cubic_not_live"]["P_over_D"]), PD_MAX)
         self.assertLess(by["B17b_cubic_not_live"]["Xdot"], 0.0)
         self.assertLess(by["B17c_tube_still_cancels"]["cancel"], TUBE_CANCEL_MAX)
-        self.assertIn("B8c", payload["next_da_move"])
+        self.assertIn("B9d", payload["next_da_move"])
 
     def test_writeup_exists(self):
         self.assertTrue((ROOT / "docs" / "TRACK-B-COHERENT.md").is_file())

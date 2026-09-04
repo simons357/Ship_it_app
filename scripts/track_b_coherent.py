@@ -250,7 +250,7 @@ def lemma_coherent_not_close() -> dict:
         "B17e_coherent_not_X_a_priori",
         "a signed-strain blob closes a bound for classical X",
         "open",
-        "One-sided cubic at this box is still a leftover versus D. Occupation (B8c) is still the open close. Not continuation.",
+        "One-sided cubic at this box is still a leftover versus D. Field occupation (B18) reads the clock on a path. Glue (B9d) is still a sketch. Not continuation.",
     )
 
 
@@ -295,9 +295,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Occupation → X (B8c). Coherent CONC is scored: net ≈ P+ on a "
-            "signed-strain blob; the working-box cubic is not live; a z-independent "
-            "tube still cancels. B4c stands. Do not cancel to Φ."
+            "Glue sketch as an NS a priori (B9d). Field occupation is scored: "
+            "the clock stays CONC; it did not save X; the cubic is not live in time. "
+            "B4c stands. Do not cancel to Φ."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_coherent.json")

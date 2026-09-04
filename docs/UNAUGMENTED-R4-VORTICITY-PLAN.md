@@ -281,11 +281,11 @@ Item 5 was the reason to keep \(1/r^4\). The extra angular piece, alone, does **
 | Localized tube Hardy | **pass** as Hardy + wall; all-data domination **fail**; packet class **pass** (`docs/TRACK-B-HARDY-TUBE.md`) |
 | Angular \(1/r^2\) vs \(I_{\mathrm{tube}}\) | **fail** of domination on packets; \(R_{\mathrm{ang}}\) climbs; B4c still budgets (`docs/TRACK-B-ANGULAR.md`) |
 | Ring Lemma, exact one shell | Upgraded to 3-shell Bernstein check; depletion **fail** as a slogan |
-| Concentration \(\Rightarrow\) geometric control | Identity **pass**; CONC not depleted; CF conditional **pass**; stretching budget aligned, net cubic cancels; coherent blob nets, working-box cubic not live (`docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`, `docs/TRACK-B-BALANCE.md`, `docs/TRACK-B-COHERENT.md`) |
+| Concentration \(\Rightarrow\) geometric control | Identity **pass**; CONC not depleted; CF conditional **pass**; stretching budget aligned, net cubic cancels; coherent blob nets, working-box cubic not live; field occupation stays CONC (`docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`, `docs/TRACK-B-BALANCE.md`, `docs/TRACK-B-COHERENT.md`, `docs/TRACK-B-FIELD-OCC.md`) |
 | Spread \(\Rightarrow\) extra dissipation | T2 Lemma 1 **pass**; Lemma 2 dropped; energy-class \(T\) **pass**; uniform \(\rho^{1/2}\) **fail** |
 | Unaugmented global \(H^1\) bound | Open |
 
-The live question is no longer “does \(\Phi\) cancel the axis?” and no longer “does the extra \(1/r^2\) piece, alone, beat \(I_{\mathrm{tube}}\)?” B4c still budgets packets. Coherent CONC is scored: a signed-strain blob nets; the working-box cubic is not live; a \(z\)-independent tube still cancels. Next: occupation \(\to X\) (B8c).
+The live question is no longer “does \(\Phi\) cancel the axis?” and no longer “does the extra \(1/r^2\) piece, alone, beat \(I_{\mathrm{tube}}\)?” B4c still budgets packets. Coherent CONC is scored. Field occupation is scored: the clock stays CONC; it did not save \(X\); the cubic is not live in time. Next: glue sketch as an NS a priori (B9d).
 
 ---
 

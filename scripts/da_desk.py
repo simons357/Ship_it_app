@@ -228,8 +228,8 @@ def run(out: Path | None = None) -> dict:
         },
         "next_da_move": (
             "Use the write-up. Angular 1/r² lost on packets; B4c still budgets I_tube. "
-            "Coherent CONC is scored: signed-strain blob nets; working-box cubic is not live. "
-            "Next B write is occupation → X (B8c). Do not cancel to Φ. "
+            "Field occupation is scored: the clock stays CONC; it did not save X. "
+            "Next B write is the glue sketch as an NS a priori (B9d). Do not cancel to Φ. "
             "Corpus pairings emit scored sentences, not F."
         ),
     }

@@ -64,6 +64,14 @@ Same spike as B6, now wearing a regime label. **Fail.**
 
 ---
 
+**B8c, fail** of “occupation-time bookkeeping closes a
+bound for \(X\).” B8b sits in CONC the whole interval
+with unbounded \(X\). Short NS paths occupy CONC fully;
+the bound, when it sits, is viscosity. Field occupation
+is [`TRACK-B-FIELD-OCC.md`](TRACK-B-FIELD-OCC.md).
+
+---
+
 ## They work it
 
 **Leray.** My integral is a budget on \(\int X\), not on
@@ -97,10 +105,11 @@ alignment.
 **Einstein.** Two columns, one time axis. Name which object
 is on.
 
-**Operator.** Clock is out. The glue that talks to \(X\)
-is written in [`TRACK-B-GLUE.md`](TRACK-B-GLUE.md). Frozen
-low-\(j_*\) is hygiene in [`TRACK-B-LOW-J.md`](TRACK-B-LOW-J.md).
-Climbing CONC is the remaining room.
+**Operator.** Clock is scored. B8c is a fail of the close.
+The glue that talks to \(X\) is written in
+[`TRACK-B-GLUE.md`](TRACK-B-GLUE.md). Field occupation is
+[`TRACK-B-FIELD-OCC.md`](TRACK-B-FIELD-OCC.md). Next: glue
+sketch as an NS a priori (B9d).
 
 ---
 
@@ -111,7 +120,7 @@ Climbing CONC is the remaining room.
 | B8 | **pass** | \(\tau_{\mathrm{C}}+\tau_{\mathrm{S}}=T\) |
 | B8a | **pass** | high \(j_*\) hot time falls |
 | B8b | **fail** | Leray \(\Rightarrow\) short CONC |
-| B8c | **open** | occupation closes a bound for \(X\) |
-| domain B | **open** | glue is written; low-\(j_*\) CONC is the room |
+| B8c | **fail** | occupation closes a bound for \(X\) |
+| domain B | **open** | field occupation scored; glue sketch (B9d) is next |
 
 The unicorn, broken out: a clock you can read, not a close.

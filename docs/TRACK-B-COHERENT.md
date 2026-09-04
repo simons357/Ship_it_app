@@ -112,8 +112,9 @@ missed.
 **Einstein.** The object stayed the classical field. Two
 scales, one sign of strain, same PDE.
 
-**Operator.** Coherent CONC is scored. Next: occupation
-\(\to X\) (B8c). B4c stands. Do not cancel to \(\Phi\).
+**Operator.** Coherent CONC is scored. Field occupation
+reads the clock on a path. Next: glue sketch as an NS
+a priori (B9d). B4c stands. Do not cancel to \(\Phi\).
 
 ---
 
@@ -128,7 +129,7 @@ scales, one sign of strain, same PDE.
 | B17d | **fail** | \(L^2\) blob is BKM |
 | B17e | **open** | signed-strain blob closes \(X\) |
 | B17f | **fail** | this retunes the PDE |
-| domain B | **open** | occupation \(\to X\) (B8c) is next |
+| domain B | **open** | glue sketch (B9d) is next |
 
 Tesla’s line: a Stokes eigenfunction is not a cubic.
 Sit the blob where \(S_{zz}\) keeps a sign. One-sided is
