@@ -77,8 +77,8 @@
     {
       "name": "B14d_geometry_not_X_a_priori",
       "statement": "packet geometry closes a bound for classical X",
-      "verdict": "open",
-      "why": "Lipschitz direction plus a conditional on alignment is not a continuation argument."
+      "verdict": "fail",
+      "why": "Lipschitz direction plus a conditional on alignment is not continuation. Median |cos \u03b1_3| ~ 1/2. An if is not a bound (B25)."
     },
     {
       "name": "B14e_not_a_pde_retune",
@@ -89,8 +89,8 @@
   ],
   "counts": {
     "pass": 2,
-    "fail": 3,
-    "open": 1
+    "fail": 4,
+    "open": 0
   },
-  "next_da_move": "B15: stretching budget (who pays (\u03c9\u00b7S\u03c9)_+). Then B5b: tube geometry. Cartesian alignment is a conditional, not a close."
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget leftover is B15e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }

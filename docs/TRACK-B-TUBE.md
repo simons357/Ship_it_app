@@ -53,8 +53,9 @@ refused the same way DNS-never-blew-up is.
 or cancel to \(\Phi\).” B4b and B5e already missed.
 Keep \(\Gamma\). Keep \(1/r^4\).
 
-**B24e, open.** Packet geometry leftover is B14d.
-Not a bigger FFT.
+**B24e, fail** of “packet geometry closes \(X\).”
+Scored as B14d / B25. Stretching budget leftover
+is B15e.
 
 **B24f, fail** of “this retunes the PDE.” The ratio
 is a knob on the estimate.
@@ -96,9 +97,10 @@ The a-priori slogan missed.
 **Einstein.** The object stayed the classical field.
 A tube budget is not a closed estimate.
 
-**Operator.** Tube is scored. B5f is scored. Next:
-packet geometry (B14d). Finer stays B22e. Do not
-spawn \(n=64\). B4c stands. Do not cancel to \(\Phi\).
+**Operator.** Tube is scored. B5f is scored. Geometry
+is scored (B14d). Next: stretching budget (B15e).
+Finer stays B22e. Do not spawn \(n=64\). B4c stands.
+Do not cancel to \(\Phi\).
 
 ---
 
@@ -112,9 +114,9 @@ spawn \(n=64\). B4c stands. Do not cancel to \(\Phi\).
 | B24b | **fail** | B4c packet budget is an a priori |
 | B24c | **fail** | \(R_D\ll 1\Rightarrow X\in L^\infty\) |
 | B24d | **fail** | revive Hardy or cancel to \(\Phi\) |
-| B24e | **open** | packet geometry closes \(X\) |
+| B24e | **fail** | packet geometry closes \(X\) |
 | B24f | **fail** | this retunes the PDE |
-| domain B | **open** | packet geometry leftover is B14d |
+| domain B | **open** | stretching budget leftover is B15e |
 
 Tesla’s line: you asked the tube. Full \(D\) budgets
 the packet. Angular loses. Neither reading is a bound.

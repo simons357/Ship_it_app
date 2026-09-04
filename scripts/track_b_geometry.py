@@ -143,8 +143,8 @@ def lemma_geometry_not_close() -> dict:
     return rec(
         "B14d_geometry_not_X_a_priori",
         "packet geometry closes a bound for classical X",
-        "open",
-        "Lipschitz direction plus a conditional on alignment is not a continuation argument.",
+        "fail",
+        "Lipschitz direction plus a conditional on alignment is not continuation. Median |cos α_3| ~ 1/2. An if is not a bound (B25).",
     )
 
 
@@ -180,8 +180,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "B15: stretching budget (who pays (ω·Sω)_+). "
-            "Then B5b: tube geometry. Cartesian alignment is a conditional, not a close."
+            "Packet geometry is not an a priori (B14d). Stretching budget leftover is B15e. "
+            "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
+            "B4c stands. Do not cancel to Φ."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_geometry.json")

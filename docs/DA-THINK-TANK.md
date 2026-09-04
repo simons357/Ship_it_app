@@ -96,7 +96,7 @@ Forbidden auto-fails: solved NS, full Q floor, Biot–Savart depletion, BKM-from
 
 August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ3 / SPREAD.
 
-**Next B write:** Tube budget is not an a priori (B5f). Packet geometry leftover is B14d. Finer (\(n>32\)) stays a box knob (B22e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\). Regularity stays open.
+**Next B write:** Packet geometry is not an a priori (B14d). Stretching budget leftover is B15e. Finer (\(n>32\)) stays a box knob (B22e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\). Regularity stays open.
 
 ### How the conversation moved
 
@@ -148,7 +148,7 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 
 24. **Short evolution.** Run finite **pass**. Saving climb **fail**. High fill **fail**. Stays CONC **pass**. Evolution as a ladder **fail**. Finer/longer **fail**. [`docs/TRACK-B-EVOLVE.md`](TRACK-B-EVOLVE.md). Longer path is [`docs/TRACK-B-LONGER.md`](TRACK-B-LONGER.md).
 
-25. **Geometry.** Strain identity **pass**. CONC \(\Rightarrow\) depleted \(\cos\alpha_3\) **fail**. Ring \(\Rightarrow\) alignment **fail**. CF conditional **pass**. Geometry closes \(X\) **open**. Not a PDE retune **fail**. [`docs/TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md).
+25. **Geometry.** Strain identity **pass**. CONC \(\Rightarrow\) depleted \(\cos\alpha_3\) **fail**. Ring \(\Rightarrow\) alignment **fail**. CF conditional **pass**. Geometry closes \(X\) **fail**. Not a PDE retune **fail**. [`docs/TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md). Alignment write: [`docs/TRACK-B-ALIGN.md`](TRACK-B-ALIGN.md).
 
 26. **Stretching budget.** Budget readable **pass**. CF weights the budget **pass**. Majority from aligned cap **pass**. Short run depletes median **fail**. Short run empties aligned share **fail**. Budget closes \(X\) **open**. [`docs/TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md).
 
@@ -171,6 +171,8 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 35. **DNS as an a priori.** Readable **pass**. Decaying packet DNS is an a priori **fail**. Room-time length is continuation **fail**. Packet class is all data **fail**. No-blow \(\Rightarrow L^\infty\) **fail**. B13f packet DNS as a priori **fail**. [`docs/TRACK-B-DNS.md`](TRACK-B-DNS.md).
 
 36. **Tube budget.** B4c and B5b readable **pass**. Angular closes \(X\) **fail**. B4c is an a priori **fail**. \(R_D\ll 1\Rightarrow L^\infty\) **fail**. Revive Hardy / \(\Phi\) **fail**. B5f angular as a priori **fail**. [`docs/TRACK-B-TUBE.md`](TRACK-B-TUBE.md).
+
+37. **Alignment as an a priori.** Readable **pass**. Depletion closes \(X\) **fail**. Lipschitz + CF is an a priori **fail**. Median is a class **fail**. CF is BKM **fail**. B14d geometry as a priori **fail**. [`docs/TRACK-B-ALIGN.md`](TRACK-B-ALIGN.md).
 
 ---
 

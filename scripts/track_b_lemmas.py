@@ -1037,6 +1037,48 @@ def lemma_tube_not_a_retune() -> dict:
     return tnr()
 
 
+def lemma_align_readable() -> dict:
+    from track_b_align import lemma_align_readable as ar
+
+    return ar()
+
+
+def lemma_depletion_not_a_priori() -> dict:
+    from track_b_align import lemma_depletion_not_a_priori as dna
+
+    return dna()
+
+
+def lemma_frame_not_a_priori() -> dict:
+    from track_b_align import lemma_frame_not_a_priori as fna
+
+    return fna()
+
+
+def lemma_median_not_a_class() -> dict:
+    from track_b_align import lemma_median_not_a_class as mnc
+
+    return mnc()
+
+
+def lemma_cf_not_bkm() -> dict:
+    from track_b_align import lemma_cf_not_bkm as cnb
+
+    return cnb()
+
+
+def lemma_budget_leftover() -> dict:
+    from track_b_align import lemma_budget_leftover as bl
+
+    return bl()
+
+
+def lemma_align_not_a_retune() -> dict:
+    from track_b_align import lemma_align_not_a_retune as anr
+
+    return anr()
+
+
 def lemma_coherent_field() -> dict:
     from track_b_coherent import lemma_coherent_field as coh
 
@@ -1230,6 +1272,13 @@ def run(out: Path | None = None) -> dict:
         lemma_not_revive_hardy_or_phi(),
         lemma_geometry_leftover(),
         lemma_tube_not_a_retune(),
+        lemma_align_readable(),
+        lemma_depletion_not_a_priori(),
+        lemma_frame_not_a_priori(),
+        lemma_median_not_a_class(),
+        lemma_cf_not_bkm(),
+        lemma_budget_leftover(),
+        lemma_align_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -1271,7 +1320,7 @@ def run(out: Path | None = None) -> dict:
             "B13 short run finite (pass); no saving climb (fail); no high fill (fail); stays CONC (pass)",
             "B13d visc still pulls down (fail); longer n=32 not a saving climb (B13e fail); DNS not an a priori (B13f fail)",
             "B14 strain identity (pass); CONC not depleted (fail); Ring is not alignment (fail)",
-            "B14c CF conditional (pass); geometry does not close X (open); not a PDE retune (fail)",
+            "B14c CF conditional (pass); geometry does not close X (B14d fail); not a PDE retune (fail)",
             "B15 stretching budget readable (pass); CF weights the budget (pass); majority from aligned cap (pass)",
             "B15c short run does not deplete |cos α_3| (fail); aligned share stays (fail); budget not an a priori (open)",
             "B16 enstrophy identity (pass); visc owns the net on this ensemble (pass); P_+ is not a net cubic (fail)",
@@ -1291,11 +1340,13 @@ def run(out: Path | None = None) -> dict:
             "B23 short+longer DNS readable (pass); decaying packet not an a priori (fail); room time not continuation (fail)",
             "B23c packet not all data (fail); no-blow not L∞ (fail); finer still open (B23e); not a PDE retune (fail)",
             "B24 B4c and B5b readable together (pass); angular not an a priori (fail); B4c not an a priori (fail)",
-            "B24c R_D ≪ 1 is not L∞ (fail); not Hardy/Φ revive (fail); geometry leftover open (B14d); not a PDE retune (fail)",
+            "B24c R_D ≪ 1 is not L∞ (fail); not Hardy/Φ revive (fail); geometry leftover scored (B14d fail); not a PDE retune (fail)",
+            "B25 identity+CF readable (pass); depletion not an a priori (fail); Lipschitz+CF not an a priori (fail)",
+            "B25c median not a class (fail); CF is not BKM (fail); budget leftover open (B15e); not a PDE retune (fail)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Tube budget is not an a priori (B5f). Packet geometry leftover is B14d. "
+            "Packet geometry is not an a priori (B14d). Stretching budget leftover is B15e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),

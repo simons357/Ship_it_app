@@ -136,7 +136,7 @@ Domain B **never** passes regularity. `check B` stays
 | B14 | strain identity on \(E_c\) | **pass** |
 | B14a / B14b | CONC depleted; Ring \(\Rightarrow\) alignment | **fail** |
 | B14c | CF conditional | **pass** |
-| B14d | geometry closes \(X\) | **open** |
+| B14d | geometry closes \(X\) | **fail** |
 | B14e | this retunes the PDE | **fail** |
 | B15 / B15a / B15b | stretching budget; CF weights it; majority from aligned cap | **pass** |
 | B15c / B15d | run depletes median; run empties aligned share | **fail** |
@@ -176,12 +176,16 @@ Domain B **never** passes regularity. `check B` stays
 | B23f | this retunes the PDE | **fail** |
 | B24 | B4c and B5b readable together | **pass** |
 | B24a / B24b / B24c / B24d | angular closes \(X\); B4c is an a priori; \(R_D\ll 1\Rightarrow L^\infty\); revive Hardy/\(\Phi\) | **fail** |
-| B24e | packet geometry closes \(X\) | **open** |
+| B24e | packet geometry closes \(X\) | **fail** |
 | B24f | this retunes the PDE | **fail** |
+| B25 | identity, undepleted CONC, CF readable | **pass** |
+| B25a / B25b / B25c / B25d | depletion closes \(X\); Lipschitz+CF is an a priori; median is a class; CF is BKM | **fail** |
+| B25e | aligned budget closes \(X\) | **open** |
+| B25f | this retunes the PDE | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** Tube budget is not an a priori (B5f).
-Packet geometry leftover is B14d. Finer
+**Next B write:** Packet geometry is not an a priori
+(B14d). Stretching budget leftover is B15e. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.
 Angular \(1/r^2\) does not. We are not tuning the
 equation. Do not spawn \(n=64\).

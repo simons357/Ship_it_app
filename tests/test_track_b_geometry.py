@@ -22,7 +22,7 @@ class TrackBGeometryTests(unittest.TestCase):
         self.assertEqual(by["B14a_conc_not_depleted"]["verdict"], "fail")
         self.assertEqual(by["B14b_ring_not_alignment"]["verdict"], "fail")
         self.assertEqual(by["B14c_cf_conditional"]["verdict"], "pass")
-        self.assertEqual(by["B14d_geometry_not_X_a_priori"]["verdict"], "open")
+        self.assertEqual(by["B14d_geometry_not_X_a_priori"]["verdict"], "fail")
         self.assertEqual(by["B14e_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
@@ -33,7 +33,7 @@ class TrackBGeometryTests(unittest.TestCase):
             by["B14c_cf_conditional"]["mean_ratio_low"],
             by["B14c_cf_conditional"]["mean_ratio_high"],
         )
-        self.assertIn("B5b", payload["next_da_move"])
+        self.assertIn("B15e", payload["next_da_move"])
 
     def test_writeup_exists(self):
         self.assertTrue((ROOT / "docs" / "TRACK-B-GEOMETRY.md").is_file())

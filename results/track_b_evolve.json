@@ -112,5 +112,5 @@
     "fail": 5,
     "open": 0
   },
-  "next_da_move": "Tube budget is not an a priori (B5f). Packet geometry leftover is B14d. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget leftover is B15e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }

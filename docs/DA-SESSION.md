@@ -377,10 +377,10 @@ this window; the sketch grows, NS falls. B11e is scored
 **fail**. Longer \(n=32\) past the room time: no
 \(c=8\); \(j_{\mathrm{bar}}\) still falls. B13e is scored
 **fail**. DNS is not an a priori. B13f is scored
-**fail**. Tube budget is not an a priori. B5f is scored
-**fail**. Packet geometry leftover is B14d. Finer is B22e. B4c
+**fail**. Packet geometry is not an a priori. B14d is scored
+**fail**. Stretching budget leftover is B15e. Finer is B22e. B4c
 stands. Do not cancel to \(\Phi\). Do not spawn \(n=64\).
-See [`TRACK-B-TUBE.md`](TRACK-B-TUBE.md).
+See [`TRACK-B-ALIGN.md`](TRACK-B-ALIGN.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

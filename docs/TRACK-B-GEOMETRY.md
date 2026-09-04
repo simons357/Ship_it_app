@@ -49,8 +49,9 @@ less, relative to \(|\lambda|_{\max}\), than samples with
 IF less aligned with extension, stretching is smaller.
 Not all-data.
 
-**B14d, open.** Lipschitz direction plus a conditional
-on alignment is not a continuation argument for \(X\).
+**B14d, fail** of “packet geometry closes \(X\).”
+Lipschitz plus a conditional is not continuation.
+See [`TRACK-B-ALIGN.md`](TRACK-B-ALIGN.md).
 
 **B14e, fail** of “this retunes the PDE.” The equation
 is untouched. Geometry is a knob on the estimate.
@@ -87,9 +88,9 @@ of \(E_c\) is not \(\|\omega\|_\infty\in L^1\).
 
 **Einstein.** The object stayed the classical field.
 
-**Operator.** Geometry is on the desk. The stretching
-budget is the next click: who pays \((\omega\cdot S\omega)_+\).
-Cartesian alignment is a conditional, not a close.
+**Operator.** Geometry is scored. B14d is scored.
+Next: stretching budget (B15e). Alignment is a
+conditional, not a close.
 
 ---
 
@@ -101,9 +102,9 @@ Cartesian alignment is a conditional, not a close.
 | B14a | **fail** | 3-CONC \(\Rightarrow\) depleted \(\cos\alpha_3\) |
 | B14b | **fail** | Ring Lipschitz \(\Rightarrow\) alignment |
 | B14c | **pass** | CF conditional: small \(\lvert\cos\alpha_3\rvert\) stretches less |
-| B14d | **open** | geometry closes \(X\) |
+| B14d | **fail** | geometry closes \(X\) |
 | B14e | **fail** | this retunes the PDE |
-| domain B | **open** | B5b (tube geometry) |
+| domain B | **open** | stretching budget leftover is B15e |
 
 Tesla’s line: alignment is a number. If you cannot miss
 it, it is a paragraph.

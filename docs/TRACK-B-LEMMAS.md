@@ -87,7 +87,7 @@ not done).
 | B14a | 3-CONC \(\Rightarrow\) median \(\lvert\cos\alpha_3\rvert\le 0.25\) | **fail** | Median sits near \(1/2\). |
 | B14b | Ring Lipschitz \(\Rightarrow\cos\alpha_3\to 0\) | **fail** | Same slogan as B3b. |
 | B14c | small \(\lvert\cos\alpha_3\rvert\) stretches less on \(E_c\) | **pass** | CF as a conditional. Not all-data. |
-| B14d | packet geometry closes \(X\) | **open** | Lipschitz + conditional \(\neq\) continuation. |
+| B14d | packet geometry closes \(X\) | **fail** | Lipschitz + conditional \(\neq\) continuation (B25). |
 | B14e | reading alignment retunes the PDE | **fail** | Knob on the estimate. |
 | B15 | \((\omega\cdot S\omega)_+\) on \(E_c\) is a stretching budget | **pass** | Who pays the cubic. |
 | B15a | stretch-weighted \(\lvert\cos\alpha_3\rvert\) exceeds the unweighted mean | **pass** | CF as a budget. Field not depleted. |
@@ -157,8 +157,15 @@ not done).
 | B24b | B4c packet budget is an a priori | **fail** | A class budget is not all data. |
 | B24c | \(R_D\ll 1\Rightarrow X\in L^\infty\) | **fail** | A ratio is not Beale. |
 | B24d | revive Hardy or cancel to \(\Phi\) | **fail** | B4b / B5e already missed. |
-| B24e | packet geometry closes \(X\) | **open** | Leftover B14d. |
+| B24e | packet geometry closes \(X\) | **fail** | Scored as B14d / B25. |
 | B24f | scoring this retunes the PDE | **fail** | Knob on the estimate. |
+| B25 | identity, undepleted CONC, CF readable | **pass** | Median \(\sim 1/2\). Conditional holds. |
+| B25a | 3-CONC depletion closes \(X\) | **fail** | Spectrum, not alignment. |
+| B25b | Lipschitz + CF is an a priori | **fail** | An if is not continuation. |
+| B25c | median \(\sim 1/2\) is a geometric class | **fail** | Random on the sphere. |
+| B25d | CF conditional is BKM | **fail** | A subset ratio is not \(\int\|\omega\|_\infty\). |
+| B25e | aligned budget closes \(X\) | **open** | Leftover B15e. |
+| B25f | scoring this retunes the PDE | **fail** | Knob on the estimate. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -359,15 +366,22 @@ budget as an a priori lives in
 [`TRACK-B-TUBE.md`](TRACK-B-TUBE.md). Readable **pass**.
 Angular closes \(X\) **fail**. B4c is an a priori **fail**.
 \(R_D\ll 1\Rightarrow L^\infty\) **fail**. Revive Hardy / \(\Phi\)
-**fail**. Geometry leftover **open**. Not a PDE retune **fail**.
+**fail**. Geometry leftover **fail**. Not a PDE retune **fail**.
+
+**B25 / B25a / B25b / B25c / B25d / B25e / B25f.** Alignment
+as an a priori lives in [`TRACK-B-ALIGN.md`](TRACK-B-ALIGN.md).
+Readable **pass**. Depletion closes \(X\) **fail**.
+Lipschitz + CF is an a priori **fail**. Median is a class
+**fail**. CF is BKM **fail**. Budget leftover **open**.
+Not a PDE retune **fail**.
 
 ---
 
 ## What is still the next write
 
-1. Tube budget is not an a priori (B5f). Packet geometry
-   leftover is B14d. Finer (\(n>32\)) stays a box knob
-   (B22e). Do not spawn \(n=64\). B4c stands. Angular
+1. Packet geometry is not an a priori (B14d). Stretching
+   budget leftover is B15e. Finer (\(n>32\)) stays a box
+   knob (B22e). Do not spawn \(n=64\). B4c stands. Angular
    \(1/r^2\) does not. Do not cancel to \(\Phi\). Do not
    write \(c=8\) into the PDE.
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
@@ -399,8 +413,9 @@ python3 scripts/track_b_climb_sketch.py
 python3 scripts/track_b_longer.py
 python3 scripts/track_b_dns.py
 python3 scripts/track_b_tube.py
+python3 scripts/track_b_align.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

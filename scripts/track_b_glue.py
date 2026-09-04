@@ -178,7 +178,7 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Tube budget is not an a priori (B5f). Packet geometry leftover is B14d. "
+            "Packet geometry is not an a priori (B14d). Stretching budget leftover is B15e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),

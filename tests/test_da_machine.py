@@ -154,6 +154,9 @@ class DaMachineTests(unittest.TestCase):
         tb = classify_claim("tube budget of vorticity as an a priori")
         self.assertEqual(tb["domain"], "B")
         self.assertEqual(tb["verdict"], "open")
+        aln = classify_claim("alignment as an a priori bound for vorticity")
+        self.assertEqual(aln["domain"], "B")
+        self.assertEqual(aln["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
