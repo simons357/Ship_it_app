@@ -822,7 +822,7 @@
       "name": "B10c_climbing_conc_open",
       "statement": "CONC with climbing j* is a closed estimate for X",
       "verdict": "open",
-      "why": "High j* sits on the glue ODE. Climbing is broken out as B11. The missing piece is a climb law from the field (B11d)."
+      "why": "High j* sits on the glue ODE. Climbing is broken out as B11. NS did not force a saving c (B11d). The leftover is whether the sketch is an a priori (B11e)."
     },
     {
       "name": "B10d_not_a_pde_retune",
@@ -903,10 +903,10 @@
       }
     },
     {
-      "name": "B11d_ns_climb_law_open",
+      "name": "B11d_ns_climb_law",
       "statement": "classical NS forces a climb rate c that saves X while CONC",
-      "verdict": "open",
-      "why": "c is prescribed here. B12 reads the field at t=0: it does not produce c=8. A time-evolved law is still open (B12d)."
+      "verdict": "fail",
+      "why": "c is prescribed here. t=0 packets do not produce c=8 (B12b). Short visc run does not (B13a). Blob and B18 paths do not (B20). The field did not hand us a saving c."
     },
     {
       "name": "B11e_climb_not_X_a_priori",
@@ -1637,7 +1637,7 @@
       "name": "B18e_field_occ_not_X_a_priori",
       "statement": "field occupation closes a bound for classical X",
       "verdict": "open",
-      "why": "The clock can be read. It did not leave CONC. Field glue (B19) asks the sketch. Climb law (B11d) is still open. Not continuation."
+      "why": "The clock can be read. It did not leave CONC. Field glue scored the sketch. Climb law is scored (B11d fail). Not continuation."
     },
     {
       "name": "B18f_not_a_pde_retune",
@@ -1718,13 +1718,101 @@
       "name": "B19e_field_glue_not_X_a_priori",
       "statement": "matching the sketch to NS \u1e8a closes a bound for classical X",
       "verdict": "open",
-      "why": "The sketch pointed the wrong way. Retuning \u03b1_c to the leftover is a knob, not continuation. Climb law (B11d) is still open."
+      "why": "The sketch pointed the wrong way. Retuning \u03b1_c to the leftover is a knob, not continuation. Climb law is scored (B11d fail). Not continuation."
     },
     {
       "name": "B19f_not_a_pde_retune",
       "statement": "reading model \u1e8a against NS \u1e8a, or shrinking \u03b1_c until they match, is a retune of classical Navier\u2013Stokes",
       "verdict": "fail",
       "why": "The PDE is untouched. \u03b1_c is a knob on the estimate. No Q1. No \u03b5."
+    },
+    {
+      "name": "B20_field_c",
+      "statement": "c = d j_bar / dt is readable on the signed-strain blob and on B18 packet/blob paths",
+      "verdict": "pass",
+      "why": "t=0 from the vorticity RHS. Mean from \u0394j_bar / T on IF-RK2. Same box as B13 / B18. Typed j* is not substituted.",
+      "t0_visc": {
+        "packet": -0.19663262759452493,
+        "blob": -2.015490776083494
+      },
+      "t0_euler": {
+        "packet": -3.0077006916818562e-05,
+        "blob": 0.02429223051349373
+      },
+      "c_mean_visc": {
+        "packet": -0.2351225044893296,
+        "blob": -2.0083405540732846
+      },
+      "c_mean_euler": {
+        "packet": 0.00013786872866961009,
+        "blob": 0.025964718137351517
+      },
+      "jbar0": {
+        "packet": 2.9706581534824363,
+        "blob": 2.5664433170637415
+      },
+      "sigma": {
+        "packet": 1.0,
+        "blob": 0.8535696713285232
+      },
+      "c_save": 8.0
+    },
+    {
+      "name": "B20a_blob_t0_not_saving",
+      "statement": "the signed-strain blob at t=0 produces c \u2265 8",
+      "verdict": "fail",
+      "why": "Viscous t=0 c \u2248 \u22122. Euler \u2248 0. Coherence of swirl is not a saving climb.",
+      "t0_visc_c": -2.015490776083494,
+      "t0_euler_c": 0.02429223051349373,
+      "c_save": 8.0,
+      "sigma": 0.8535696713285232
+    },
+    {
+      "name": "B20b_paths_not_saving",
+      "statement": "mean c on B18 packet and blob paths (visc and Euler) reaches c \u2265 8",
+      "verdict": "fail",
+      "why": "Viscous means are negative. Euler means sit near 0. Letting the clock run did not hand us B11c.",
+      "c_mean_visc": {
+        "packet": -0.2351225044893296,
+        "blob": -2.0083405540732846
+      },
+      "c_mean_euler": {
+        "packet": 0.00013786872866961009,
+        "blob": 0.025964718137351517
+      },
+      "c_save": 8.0
+    },
+    {
+      "name": "B20c_blob_visc_not_ladder",
+      "statement": "viscosity on the signed-strain blob is a ladder for j_bar",
+      "verdict": "fail",
+      "why": "Along the B18 blob path, j_bar falls. Same direction as the t=0 RHS. Viscosity is not a climb.",
+      "jbar0": 2.5664433170637415,
+      "jbarT": 2.4379095216030513,
+      "c_mean_visc": -2.0083405540732846
+    },
+    {
+      "name": "B20d_offset_not_climb",
+      "statement": "j_bar > typed j* at t=0 is a climb",
+      "verdict": "fail",
+      "why": "Packet j_bar \u2248 2.97 versus typed 2 is a static offset. Then j_bar falls. Do not substitute j_bar for typed j* and call it B11c.",
+      "jstar": 2,
+      "jbar0": 2.9706581534824363,
+      "offset": 0.9706581534824363,
+      "c_mean_visc": -0.2351225044893296,
+      "blob_offset": -0.4335566829362585
+    },
+    {
+      "name": "B20e_ns_climb_not_X_a_priori",
+      "statement": "a field climb at this box closes a bound for classical X",
+      "verdict": "open",
+      "why": "NS did not force c=8 here. Finer/longer is B13e. Typing c=8 into the PDE is a retune. Not continuation."
+    },
+    {
+      "name": "B20f_not_a_pde_retune",
+      "statement": "reading c from the vorticity RHS, or writing c=8 into classical Navier\u2013Stokes, is a retune of the PDE",
+      "verdict": "fail",
+      "why": "The PDE is untouched. c is a knob on the estimate. No Q1. No \u03b5. Do not type B11c into the equation."
     },
     {
       "name": "B_regularity",
@@ -1734,8 +1822,8 @@
     }
   ],
   "counts": {
-    "pass": 36,
-    "fail": 46,
+    "pass": 37,
+    "fail": 52,
     "open": 15
   },
   "how_far": [
@@ -1756,7 +1844,7 @@
     "B10 energy ceiling (pass); B9b unbounded path is not NS (fail); not a PDE retune (fail)",
     "B10b ceiling does not follow a climbing j* (fail); climbing CONC open (B10c)",
     "B11 climb bookkeeping (pass); bounded j* bounds X (pass); slow climb blows (fail)",
-    "B11c fast climb sits (pass); NS climb law open (B11d); sketch is not an a priori (B11e)",
+    "B11c fast climb sits (pass); NS did not force a saving c (B11d fail); sketch is not an a priori (B11e)",
     "B12 barycenter + c from RHS (pass); t=0 packets do not produce c\u22658 (fail)",
     "B12c viscosity pulls j_bar down (fail); evolved cascade open (B12d)",
     "B13 short run finite (pass); no saving climb (fail); no high fill (fail); stays CONC (pass)",
@@ -1773,7 +1861,9 @@
     "B18c CONC occupation not short (fail); cubic not live in time (fail); field occupation not an a priori (open)",
     "B19 both \u1e8a readable (pass); j*=2 sign mismatch (fail); NS packet is not B9b (fail)",
     "B19c \u03b1_c is not the field cubic (fail); \u03b3 is not NS visc (fail); field glue not an a priori (open)",
+    "B20 c readable on blob and B18 paths (pass); blob t=0 not c\u22658 (fail); path mean not c\u22658 (fail)",
+    "B20c visc is not a ladder on the blob (fail); j_bar offset is not a climb (fail); not an a priori (open)",
     "classical regularity remains open"
   ],
-  "next_da_move": "NS climb law (B11d). Field glue is scored: typed j*=2 grows; the NS packet falls. \u03b1_c is not the field cubic. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "Climb sketch as an NS a priori (B11e). NS did not force a saving c at this box (B11d). Finer/longer (B13e) stays open. B4c stands. Do not write c=8 into the PDE."
 }
