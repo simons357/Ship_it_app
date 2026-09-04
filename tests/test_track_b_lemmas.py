@@ -72,8 +72,14 @@ class TrackBLemmaTests(unittest.TestCase):
         self.assertEqual(by["B13d_visc_still_down"]["verdict"], "fail")
         self.assertEqual(by["B13e_finer_longer_open"]["verdict"], "open")
         self.assertEqual(by["B13f_evolve_not_X_a_priori"]["verdict"], "open")
+        self.assertEqual(by["B14_strain_identity"]["verdict"], "pass")
+        self.assertEqual(by["B14a_conc_not_depleted"]["verdict"], "fail")
+        self.assertEqual(by["B14b_ring_not_alignment"]["verdict"], "fail")
+        self.assertEqual(by["B14c_cf_conditional"]["verdict"], "pass")
+        self.assertEqual(by["B14d_geometry_not_X_a_priori"]["verdict"], "open")
+        self.assertEqual(by["B14e_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(by["B_regularity"]["verdict"], "open")
-        self.assertTrue("B5b" in payload["next_da_move"] or "B13e" in payload["next_da_move"])
+        self.assertIn("B5b", payload["next_da_move"])
         self.assertLess(by["B1_t2_low_flux"]["rel_residual"], 1e-10)
 
     def test_no_regularity_pass_in_the_list(self):

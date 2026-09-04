@@ -241,7 +241,7 @@ def render_text(events: list[dict], baseline: bool) -> str:
     if not events:
         return (
             "DA checked. Nothing significant flipped.\n"
-            "Next: B5b (viscosity vs I_tube) or a finer packet box (B13e). Short n=32 did not climb.\n"
+            "Next: B5b (tube geometry: viscosity vs I_tube). Cartesian alignment is a conditional, not a close.\n"
         )
     parts = []
     for e in events:
@@ -307,7 +307,7 @@ def notify(
         "recommendation": (
             events[-1]["next"]
             if events
-            else "Nothing flipped. Next write is B5b or a finer packet box (B13e)."
+            else "Nothing flipped. Next write is B5b (tube geometry vs I_tube)."
         ),
     }
     delivery = {"file": str(out_txt)}

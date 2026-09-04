@@ -78,6 +78,12 @@ not done).
 | B13d | evolution is a ladder | **fail** | \(j_{\mathrm{bar}}\) falls. |
 | B13e | finer / longer saving climb | **open** | \(n=32\) is a short reading. |
 | B13f | short DNS is an a priori | **open** | A few steps are not continuation. |
+| B14 | \(\xi\cdot S\xi=\sum\lambda_i\cos^2\alpha_i\) on \(E_c\) | **pass** | Strain eigenframe. Not depletion. |
+| B14a | 3-CONC \(\Rightarrow\) median \(\lvert\cos\alpha_3\rvert\le 0.25\) | **fail** | Median sits near \(1/2\). |
+| B14b | Ring Lipschitz \(\Rightarrow\cos\alpha_3\to 0\) | **fail** | Same slogan as B3b. |
+| B14c | small \(\lvert\cos\alpha_3\rvert\) stretches less on \(E_c\) | **pass** | CF as a conditional. Not all-data. |
+| B14d | packet geometry closes \(X\) | **open** | Lipschitz + conditional \(\neq\) continuation. |
+| B14e | reading alignment retunes the PDE | **fail** | Knob on the estimate. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -201,15 +207,25 @@ Run finite **pass**. Saving climb **fail**. High fill
 **fail**. Stays CONC **pass**. Evolution as a ladder
 **fail**. Finer/longer **open**. Not an a priori **open**.
 
+**B14 / B14a / B14b / B14c / B14d / B14e.** Packet geometry
+lives in [`TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md).
+Strain identity **pass**. CONC \(\Rightarrow\) depleted
+\(\cos\alpha_3\) **fail**. Ring \(\Rightarrow\) alignment
+**fail**. CF conditional **pass**. Geometry closes \(X\)
+**open**. Not a PDE retune **fail**.
+
 ---
 
 ## What is still the next write
 
 1. B5b: angular viscosity versus \(I_{\mathrm{tube}}\) at
-   \(\delta\sim 2^{-j_*}\). Or a finer packet box (B13e).
+   \(\delta\sim 2^{-j_*}\). Cartesian alignment is a
+   conditional, not a close. A finer packet box (B13e)
+   stays open.
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
    Leray-as-occupation, the glue sketch as an NS a priori,
-   a typed \(c=8\), or a retune of the PDE.
+   a typed \(c=8\), all-data Biot–Savart depletion, or a
+   retune of the PDE.
 
 None of those is a pass on regularity. Checker:
 
@@ -222,8 +238,9 @@ python3 scripts/track_b_low_j.py
 python3 scripts/track_b_climb.py
 python3 scripts/track_b_climb_law.py
 python3 scripts/track_b_evolve.py
+python3 scripts/track_b_geometry.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

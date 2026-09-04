@@ -131,11 +131,17 @@ Domain B **never** passes regularity. `check B` stays
 | B13 / B13c | short run; stays CONC | **pass** |
 | B13a / B13b / B13d | no saving climb; no high fill; not a ladder | **fail** |
 | B13e | finer / longer | **open** |
+| B14 | strain identity on \(E_c\) | **pass** |
+| B14a / B14b | CONC depleted; Ring \(\Rightarrow\) alignment | **fail** |
+| B14c | CF conditional | **pass** |
+| B14d | geometry closes \(X\) | **open** |
+| B14e | this retunes the PDE | **fail** |
 | \(\Phi\) as estimate variable | keep \(\Gamma\) | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** B5b (viscosity vs \(I_{\mathrm{tube}}\)),
-or a finer packet box (B13e). We are not tuning the
+**Next B write:** B5b (tube geometry: viscosity vs
+\(I_{\mathrm{tube}}\)). Cartesian alignment is a
+conditional, not a close. We are not tuning the
 equation.
 
 ---
@@ -417,7 +423,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/TRACK-B-BONY-T.md`, `docs/TRACK-B-OCCUPATION.md`,
 `docs/TRACK-B-GLUE.md`, `docs/TRACK-B-LOW-J.md`,
 `docs/TRACK-B-CLIMB.md`, `docs/TRACK-B-CLIMB-LAW.md`,
-`docs/TRACK-B-EVOLVE.md`.
+`docs/TRACK-B-EVOLVE.md`,
+`docs/TRACK-B-GEOMETRY.md`.
 
 ---
 
@@ -431,9 +438,11 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
   uniform \(\rho^{1/2}\) **fail**. Occupation clock **pass**;
   Leray \(\Rightarrow\) short CONC **fail**. Glue sketch
   written: high \(j_*\) sits, low \(j_*\) model blows.
-  Energy ceiling: frozen support is hygiene.   Field at \(t=0\): no saving climb. Short \(n=32\) run:
-  still no climb; \(j_{\mathrm{bar}}\) falls. Next: B5b
-  or a finer box. The PDE is not being tuned.
+  Energy ceiling: frozen support is hygiene. Field at
+  \(t=0\): no saving climb. Short \(n=32\) run: still no
+  climb; \(j_{\mathrm{bar}}\) falls. Geometry: identity
+  **pass**; CONC not depleted; CF conditional **pass**.
+  Next: B5b (tube geometry). The PDE is not being tuned.
 - Cosmo does not enter NS.
 - HB stays shelved as a theorem. DA-as-process stays live.
 

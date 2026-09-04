@@ -96,7 +96,7 @@ Forbidden auto-fails: solved NS, full Q floor, Biot–Savart depletion, BKM-from
 
 August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ3 / SPREAD.
 
-**Next B write:** B5b (viscosity vs \(I_{\mathrm{tube}}\)), or a finer packet box (B13e). The PDE is not being tuned. Regularity stays open.
+**Next B write:** B5b (tube geometry: viscosity vs \(I_{\mathrm{tube}}\)). Cartesian alignment is a conditional, not a close. The PDE is not being tuned. Regularity stays open.
 
 ### How the conversation moved
 
@@ -147,6 +147,8 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 23. **Field climb.** Barycenter **pass**. \(c\) from RHS **pass**. \(t=0\) saving climb **fail**. Viscosity as a ladder **fail**. Evolved cascade **open**. [`docs/TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md).
 
 24. **Short evolution.** Run finite **pass**. Saving climb **fail**. High fill **fail**. Stays CONC **pass**. Evolution as a ladder **fail**. Finer/longer **open**. [`docs/TRACK-B-EVOLVE.md`](TRACK-B-EVOLVE.md).
+
+25. **Geometry.** Strain identity **pass**. CONC \(\Rightarrow\) depleted \(\cos\alpha_3\) **fail**. Ring \(\Rightarrow\) alignment **fail**. CF conditional **pass**. Geometry closes \(X\) **open**. Not a PDE retune **fail**. [`docs/TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md).
 
 ---
 

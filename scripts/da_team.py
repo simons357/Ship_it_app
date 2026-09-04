@@ -69,7 +69,7 @@ TEAM = [
         "geometric depletion if aligned",
         "stretching small when vorticity is aligned",
         "force cos α_3 → 0 for all data (Biot–Savart slogan)",
-        "Ring bounds |∇ξ| on E_c; it does not give alignment",
+        "B14c: IF |cos α_3| is small, stretching is smaller. CONC does not force that. Ring is Lipschitz, not alignment",
         "paper",
     ),
     member(
@@ -134,7 +134,7 @@ def consensus() -> dict:
     return {
         "not_a_vote": True,
         "not_a_close": True,
-        "B": "B4c budgets I_tube on CONC; energy-class T on SPREAD; B8 clock. Glue sketch is written. Frozen low-j has an energy ceiling. Climbing: slow dies, fast sits. t=0 and short n=32 do not produce c=8. Live: B5b or a finer box. Regularity stays open.",
+        "B": "B4c budgets I_tube on CONC; energy-class T on SPREAD; B8 clock. Glue sketch is written. Frozen low-j has an energy ceiling. Climbing: slow dies, fast sits. t=0 and short n=32 do not produce c=8. Geometry: identity pass; CONC not depleted; CF conditional. Live: B5b (tube geometry). Regularity stays open.",
         "A": "Leave Ladyzhenskaya on A.",
         "U": "Stop breaking L_SM. Keep Einstein + T_SM. Produce lives outside the poster.",
         "Q": "Stay arithmetic. No Bridge* → SND.",

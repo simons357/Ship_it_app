@@ -596,6 +596,42 @@ def lemma_evolve_not_a_priori() -> dict:
     return ev_ap()
 
 
+def lemma_strain_identity() -> dict:
+    from track_b_geometry import lemma_strain_identity as ident
+
+    return ident()
+
+
+def lemma_conc_not_depleted() -> dict:
+    from track_b_geometry import lemma_conc_not_depleted as conc
+
+    return conc()
+
+
+def lemma_ring_not_alignment() -> dict:
+    from track_b_geometry import lemma_ring_not_alignment as ring_al
+
+    return ring_al()
+
+
+def lemma_cf_conditional() -> dict:
+    from track_b_geometry import lemma_cf_conditional as cf
+
+    return cf()
+
+
+def lemma_geometry_not_close() -> dict:
+    from track_b_geometry import lemma_geometry_not_close as geo_ap
+
+    return geo_ap()
+
+
+def lemma_geo_not_a_retune() -> dict:
+    from track_b_geometry import lemma_geo_not_a_retune as geo_rt
+
+    return geo_rt()
+
+
 def lemma_regularity() -> dict:
     return rec(
         "B_regularity",
@@ -666,6 +702,12 @@ def run(out: Path | None = None) -> dict:
         lemma_evolve_visc_down(),
         lemma_finer_open(),
         lemma_evolve_not_a_priori(),
+        lemma_strain_identity(),
+        lemma_conc_not_depleted(),
+        lemma_ring_not_alignment(),
+        lemma_cf_conditional(),
+        lemma_geometry_not_close(),
+        lemma_geo_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -705,11 +747,13 @@ def run(out: Path | None = None) -> dict:
             "B12c viscosity pulls j_bar down (fail); evolved cascade open (B12d)",
             "B13 short run finite (pass); no saving climb (fail); no high fill (fail); stays CONC (pass)",
             "B13d visc still pulls down (fail); finer/longer open (B13e); not an a priori (B13f)",
+            "B14 strain identity (pass); CONC not depleted (fail); Ring is not alignment (fail)",
+            "B14c CF conditional (pass); geometry does not close X (open); not a PDE retune (fail)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "B5b: angular viscosity vs I_tube at δ ~ 2^{-j*}. "
-            "Or a finer packet box (B13e). Tesla: the tube is still a knob."
+            "B5b: tube geometry (angular viscosity vs I_tube at δ ~ 2^{-j*}). "
+            "Cartesian alignment is a conditional, not a close. Tesla: the tube is still a knob."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

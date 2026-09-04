@@ -358,10 +358,12 @@ again.
 
 They did the tube, the low Bony \(T\), the occupation
 clock, the two-regime glue, the energy ceiling, climbing
-CONC, the field climb, and a short evolution. The field
-at \(t=0\) and after a short \(n=32\) run does not hand
-us \(c=8\). Next: B5b or a finer box.
-See [`TRACK-B-EVOLVE.md`](TRACK-B-EVOLVE.md).
+CONC, the field climb, a short evolution, and the
+strain geometry. CONC is not depleted. CF is a
+conditional: small \(\lvert\cos\alpha_3\rvert\) stretches
+less. Next: B5b (tube geometry). Cartesian alignment is
+not a close.
+See [`TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

@@ -118,6 +118,9 @@ class DaMachineTests(unittest.TestCase):
         field = classify_claim("barycenter climb law from the vorticity field")
         self.assertEqual(field["domain"], "B")
         self.assertEqual(field["verdict"], "open")
+        geo = classify_claim("strain eigenframe alignment on a vorticity packet")
+        self.assertEqual(geo["domain"], "B")
+        self.assertEqual(geo["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

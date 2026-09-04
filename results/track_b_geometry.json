@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "geometry on CONC packets",
+    "tuning_the_pde": false,
+    "tesla": "exacting, not a jerk. Alignment is a number. If you cannot miss it, it is a paragraph.",
+    "domain_verdict": "open"
+  },
+  "lemmas": [
+    {
+      "name": "B14_strain_identity",
+      "statement": "\u03c9\u00b7S\u03c9 = |\u03c9|\u00b2 \u2211 \u03bb_i cos\u00b2 \u03b1_i on E_c",
+      "verdict": "pass",
+      "why": "Algebra in the strain eigenframe. Geometry starts here. Not depletion.",
+      "ident_rels": [
+        7.686541864700682e-14,
+        7.779466874868679e-14,
+        4.146829829984644e-14,
+        3.6828277600044416e-14,
+        1.1348383144153181e-13,
+        1.408781708476994e-13
+      ]
+    },
+    {
+      "name": "B14a_conc_not_depleted",
+      "statement": "3-CONC packets have median |cos \u03b1_3| \u2264 0.25 on E_c",
+      "verdict": "fail",
+      "why": "Median |cos \u03b1_3| sits near 1/2: random on the sphere, not depleted. CONC is a spectrum, not an alignment.",
+      "median_cos3": 0.536928559152793,
+      "means": [
+        0.5156347104046403,
+        0.5229540911599396,
+        0.4914198916900127,
+        0.49238555240433757,
+        0.5216688480184595,
+        0.5238646949818879
+      ],
+      "frac_lt_025": [
+        0.22916666666666666,
+        0.19166666666666668,
+        0.2708333333333333,
+        0.29583333333333334,
+        0.20416666666666666,
+        0.2125
+      ]
+    },
+    {
+      "name": "B14b_ring_not_alignment",
+      "statement": "Ring Lipschitz of \u03be on E_c forces cos \u03b1_3 \u2192 0",
+      "verdict": "fail",
+      "why": "B3 bounds |\u2207\u03be|. Direction slowly varying is not direction aligned. Biot\u2013Savart slogan stays forbidden."
+    },
+    {
+      "name": "B14c_cf_conditional",
+      "statement": "on E_c, samples with |cos \u03b1_3|<0.25 stretch less than |cos \u03b1_3|>0.8, relative to |\u03bb|_max",
+      "verdict": "pass",
+      "why": "Constantin\u2013Fefferman as a conditional. IF less aligned with extension, stretching is smaller. Not all-data.",
+      "ratio_low": [
+        0.5154866678945872,
+        0.4862800458043398,
+        0.42418736461761486,
+        0.4370763542708194,
+        0.48118614533062354,
+        0.4034028564583098
+      ],
+      "ratio_high": [
+        0.681314348511639,
+        0.6540128993026036,
+        0.6493235003733904,
+        0.6580429080851704,
+        0.600239277683396,
+        0.6810480953827295
+      ],
+      "mean_ratio_low": 0.4579365723960491,
+      "mean_ratio_high": 0.6539968382231548
+    },
+    {
+      "name": "B14d_geometry_not_X_a_priori",
+      "statement": "packet geometry closes a bound for classical X",
+      "verdict": "open",
+      "why": "Lipschitz direction plus a conditional on alignment is not a continuation argument."
+    },
+    {
+      "name": "B14e_not_a_pde_retune",
+      "statement": "reading strain alignment is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. Geometry is a knob on the estimate: a number you can miss."
+    }
+  ],
+  "counts": {
+    "pass": 2,
+    "fail": 3,
+    "open": 1
+  },
+  "next_da_move": "B5b: tube geometry (angular viscosity vs I_tube). Cartesian alignment is a conditional, not a close."
+}

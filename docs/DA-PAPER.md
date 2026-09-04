@@ -228,10 +228,15 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B13 / B13c short run; stays CONC | pass |
 | B13a / B13b / B13d no saving climb; no high fill; not a ladder | **fail** |
 | B13e finer / longer | **open** |
+| B14 strain identity on \(E_c\) | pass |
+| B14a / B14b CONC depleted; Ring \(\Rightarrow\) alignment | **fail** |
+| B14c CF conditional | pass |
+| B14d geometry closes \(X\) | **open** |
+| B14e this retunes the PDE | **fail** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Next write: B5b (viscosity vs \(I_{\mathrm{tube}}\)), or a finer packet box. The PDE is not being tuned.
+Next write: B5b (tube geometry: viscosity vs \(I_{\mathrm{tube}}\)). Cartesian alignment is a conditional, not a close. The PDE is not being tuned.
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 
@@ -275,11 +280,11 @@ The operator atlas is `docs/DA-DESK.md`. The machine note is `docs/DOMAIN-ARCHIT
 
 ## 9. Conclusion
 
-DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is B5b or a finer packet box.
+DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is B5b (tube geometry). Cartesian alignment is a conditional.
 
 The think tank is three benches and a corpus rule. The processes are classify, check, falsify, reconstruct, ablate, pipe, compute, and alert. The purpose is to keep the operator honest while ordinary AI proposes.
 
-That is the paper. The next page of mathematics is either the tube viscosity or a bigger box. The PDE stays classical.
+That is the paper. The next page of mathematics is the tube viscosity. The PDE stays classical.
 
 ---
 
@@ -289,7 +294,7 @@ That is the paper. The next page of mathematics is either the tube viscosity or 
 - Machine: `docs/DOMAIN-ARCHITECT-MACHINE.md`
 - Shelf: `docs/SHELF.md`
 - Track A: `docs/AUGMENTED-NS-PROOF-CHAIN.md`
-- Track B: `docs/TRACK-B-LEMMAS.md`, `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`
+- Track B: `docs/TRACK-B-LEMMAS.md`, `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`, `docs/TRACK-B-GEOMETRY.md`
 - Track Q: `docs/SPECTRAL-FLOOR-EXPLORATION.md`
 - Think tank: `docs/DA-THINK-TANK.md` (combined roll), `docs/DA-DREAM-TEAM.md`, `docs/DA-GROUND.md`, `docs/DA-PIPE.md`, `docs/DA-SESSION.md` (they talk)
 - Compute and alerts: `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`
