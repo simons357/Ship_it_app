@@ -369,9 +369,12 @@ live; a \(z\)-independent tube still cancels. Field
 occupation: the clock stays CONC; it did not save \(X\);
 the cubic is not live in time. B8c is scored **fail**.
 Field glue: typed \(j_*=2\) grows; the NS packet falls.
-B9d is scored **fail**. Next: NS climb law (B11d). B4c
+B9d is scored **fail**. NS climb law: blob and B18
+paths do not produce \(c=8\); \(j_{\mathrm{bar}}\) offset
+is not a climb. B11d is scored **fail**. Next: climb
+sketch as an NS a priori (B11e). B4c
 stands. Do not cancel to \(\Phi\). See
-[`TRACK-B-FIELD-GLUE.md`](TRACK-B-FIELD-GLUE.md).
+[`TRACK-B-NS-CLIMB.md`](TRACK-B-NS-CLIMB.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

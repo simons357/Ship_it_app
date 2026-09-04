@@ -65,7 +65,7 @@
       "name": "B17e_coherent_not_X_a_priori",
       "statement": "a signed-strain blob closes a bound for classical X",
       "verdict": "open",
-      "why": "One-sided cubic at this box is still a leftover versus D. Occupation (B8c) is still the open close. Not continuation."
+      "why": "One-sided cubic at this box is still a leftover versus D. Field occupation (B18) reads the clock on a path. Field glue (B19) asks the sketch. Not continuation."
     },
     {
       "name": "B17f_not_a_pde_retune",
@@ -79,5 +79,5 @@
     "fail": 4,
     "open": 1
   },
-  "next_da_move": "Occupation \u2192 X (B8c). Coherent CONC is scored: net \u2248 P+ on a signed-strain blob; the working-box cubic is not live; a z-independent tube still cancels. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "Climb sketch as an NS a priori (B11e). NS did not force a saving c at this box (B11d). Finer/longer (B13e) stays open. B4c stands. Do not write c=8 into the PDE."
 }

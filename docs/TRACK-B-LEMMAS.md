@@ -68,7 +68,7 @@ not done).
 | B11a | bounded \(j_*\) ⇒ bounded \(X\) | **pass** | Necessary condition. |
 | B11b | any climb saves the model | **fail** | \(c=1\): \(X\) crosses 40. |
 | B11c | fast climb sits | **pass** | \(c=8\): reaches the viscous room. |
-| B11d | NS forces a saving \(c\) | **open** | \(t=0\) failed (B12). Evolved law still open. |
+| B11d | NS forces a saving \(c\) | **fail** | \(t=0\), short run, blob, B18 paths. None give \(c=8\). |
 | B11e | climb sketch is an NS a priori | **open** | A rate you typed is not the equation. |
 | B12 | \(j_{\mathrm{bar}}\) readable on a packet | **pass** | Peak scale from the field. |
 | B12a | \(c\) from the vorticity RHS | **pass** | The apparatus reads. |
@@ -124,6 +124,13 @@ not done).
 | B19d | \(\nu 2^{2j_*}X\) is NS visc | **fail** | \(2D/(\gamma X)\approx 5.6\). |
 | B19e | matching the sketch closes \(X\) | **open** | A knob on \(\alpha_c\) is not continuation. |
 | B19f | reading the rates retunes the PDE | **fail** | Knob on the check. |
+| B20 | \(c\) readable on blob and paths | **pass** | RHS and \(\Delta j_{\mathrm{bar}}/T\). |
+| B20a | blob \(t=0\) produces \(c\ge 8\) | **fail** | Visc \(c\approx-2\). Euler \(\approx 0\). |
+| B20b | B18-path mean \(c\ge 8\) | **fail** | Visc means negative. Euler \(\sim 0\). |
+| B20c | visc on the blob is a ladder | **fail** | \(j_{\mathrm{bar}}\) falls. |
+| B20d | \(j_{\mathrm{bar}}>\text{typed }j_*\) is a climb | **fail** | Static offset, then a fall. |
+| B20e | field climb closes \(X\) | **open** | A reading is not continuation. |
+| B20f | reading \(c\) retunes the PDE | **fail** | Knob on the check. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -234,7 +241,7 @@ is broken out as B11. Not a PDE retune **fail**.
 lives in [`TRACK-B-CLIMB.md`](TRACK-B-CLIMB.md). Increments
 add **pass**. Bounded \(j_*\) bounds \(X\) **pass**. Slow
 climb **fails** to save. Fast climb sits **pass**. NS climb
-law **open**. Sketch \(\neq\) NS a priori **open**.
+law **fail**. Sketch \(\neq\) NS a priori **open**.
 
 **B12 / B12a / B12b / B12c / B12d / B12e.** The field climb
 lives in [`TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md).
@@ -293,18 +300,26 @@ NS packet is B9b **fail**. \(\alpha_c\) is the cubic **fail**.
 \(\gamma\) is NS visc **fail**. Matching the sketch closes
 \(X\) **open**. Not a PDE retune **fail**.
 
+**B20 / B20a / B20b / B20c / B20d / B20e / B20f.** NS climb
+law lives in [`TRACK-B-NS-CLIMB.md`](TRACK-B-NS-CLIMB.md).
+\(c\) readable **pass**. Blob \(t=0\) saving climb **fail**.
+B18-path mean **fail**. Visc as a ladder **fail**.
+\(j_{\mathrm{bar}}\) offset as a climb **fail**. Field climb
+closes \(X\) **open**. Not a PDE retune **fail**.
+
 ---
 
 ## What is still the next write
 
-1. NS climb law (B11d). Field glue is scored: typed
-   \(j_*=2\) grows; the NS packet falls. \(\alpha_c\) is
-   not the field cubic. B4c stands. Angular \(1/r^2\)
-   does not. A finer packet box (B13e) stays open.
+1. Climb sketch as an NS a priori (B11e). NS did not
+   force a saving \(c\) at this box (B11d). Finer/longer
+   (B13e) stays open. B4c stands. Angular \(1/r^2\)
+   does not. Do not write \(c=8\) into the PDE.
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
    Leray-as-occupation, the glue sketch as an NS a priori,
    a typed \(c=8\), all-data Biot–Savart depletion, BKM-from-\(L^2\),
-   a \(\Phi\) cancel, or a retune of the PDE.
+   a \(\Phi\) cancel, substituting \(j_{\mathrm{bar}}\) for typed
+   \(j_*\), or a retune of the PDE.
 
 None of those is a pass on regularity. Checker:
 
@@ -324,8 +339,9 @@ python3 scripts/track_b_balance.py
 python3 scripts/track_b_coherent.py
 python3 scripts/track_b_field_occ.py
 python3 scripts/track_b_field_glue.py
+python3 scripts/track_b_ns_climb.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

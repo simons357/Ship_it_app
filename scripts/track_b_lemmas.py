@@ -827,6 +827,48 @@ def lemma_field_glue_not_a_retune() -> dict:
     return fg_rt()
 
 
+def lemma_field_c() -> dict:
+    from track_b_ns_climb import lemma_field_c as fc
+
+    return fc()
+
+
+def lemma_blob_t0_not_saving() -> dict:
+    from track_b_ns_climb import lemma_blob_t0_not_saving as bt0
+
+    return bt0()
+
+
+def lemma_paths_not_saving() -> dict:
+    from track_b_ns_climb import lemma_paths_not_saving as pns
+
+    return pns()
+
+
+def lemma_blob_visc_not_ladder() -> dict:
+    from track_b_ns_climb import lemma_blob_visc_not_ladder as bvl
+
+    return bvl()
+
+
+def lemma_offset_not_climb() -> dict:
+    from track_b_ns_climb import lemma_offset_not_climb as onc
+
+    return onc()
+
+
+def lemma_ns_climb_not_close() -> dict:
+    from track_b_ns_climb import lemma_ns_climb_not_close as nc_ap
+
+    return nc_ap()
+
+
+def lemma_ns_climb_not_a_retune() -> dict:
+    from track_b_ns_climb import lemma_ns_climb_not_a_retune as nc_rt
+
+    return nc_rt()
+
+
 def lemma_coherent_field() -> dict:
     from track_b_coherent import lemma_coherent_field as coh
 
@@ -985,6 +1027,13 @@ def run(out: Path | None = None) -> dict:
         lemma_gamma_not_visc(),
         lemma_field_glue_not_close(),
         lemma_field_glue_not_a_retune(),
+        lemma_field_c(),
+        lemma_blob_t0_not_saving(),
+        lemma_paths_not_saving(),
+        lemma_blob_visc_not_ladder(),
+        lemma_offset_not_climb(),
+        lemma_ns_climb_not_close(),
+        lemma_ns_climb_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -1020,7 +1069,7 @@ def run(out: Path | None = None) -> dict:
             "B10 energy ceiling (pass); B9b unbounded path is not NS (fail); not a PDE retune (fail)",
             "B10b ceiling does not follow a climbing j* (fail); climbing CONC open (B10c)",
             "B11 climb bookkeeping (pass); bounded j* bounds X (pass); slow climb blows (fail)",
-            "B11c fast climb sits (pass); NS climb law open (B11d); sketch is not an a priori (B11e)",
+            "B11c fast climb sits (pass); NS did not force a saving c (B11d fail); sketch is not an a priori (B11e)",
             "B12 barycenter + c from RHS (pass); t=0 packets do not produce c≥8 (fail)",
             "B12c viscosity pulls j_bar down (fail); evolved cascade open (B12d)",
             "B13 short run finite (pass); no saving climb (fail); no high fill (fail); stays CONC (pass)",
@@ -1037,12 +1086,14 @@ def run(out: Path | None = None) -> dict:
             "B18c CONC occupation not short (fail); cubic not live in time (fail); field occupation not an a priori (open)",
             "B19 both Ẋ readable (pass); j*=2 sign mismatch (fail); NS packet is not B9b (fail)",
             "B19c α_c is not the field cubic (fail); γ is not NS visc (fail); field glue not an a priori (open)",
+            "B20 c readable on blob and B18 paths (pass); blob t=0 not c≥8 (fail); path mean not c≥8 (fail)",
+            "B20c visc is not a ladder on the blob (fail); j_bar offset is not a climb (fail); not an a priori (open)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "NS climb law (B11d). Field glue is scored: typed j*=2 grows; "
-            "the NS packet falls. α_c is not the field cubic. B4c stands. "
-            "Do not cancel to Φ."
+            "Climb sketch as an NS a priori (B11e). NS did not force a saving "
+            "c at this box (B11d). Finer/longer (B13e) stays open. B4c stands. "
+            "Do not write c=8 into the PDE."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

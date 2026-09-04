@@ -178,8 +178,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "NS climb law (B11d). Field glue is scored: the j*=2 model grows; "
-            "the NS packet falls. B4c stands. Do not cancel to Φ."
+            "Climb sketch as an NS a priori (B11e). NS did not force a saving "
+            "c at this box (B11d). Finer/longer (B13e) stays open. B4c stands. "
+            "Do not write c=8 into the PDE."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_glue.json")

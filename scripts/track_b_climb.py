@@ -122,10 +122,10 @@ def lemma_fast_climb_sits() -> dict:
 
 def lemma_ns_climb_law() -> dict:
     return rec(
-        "B11d_ns_climb_law_open",
+        "B11d_ns_climb_law",
         "classical NS forces a climb rate c that saves X while CONC",
-        "open",
-        "c is prescribed here. B12 reads the field at t=0: it does not produce c=8. A time-evolved law is still open (B12d).",
+        "fail",
+        "c is prescribed here. t=0 packets do not produce c=8 (B12b). Short visc run does not (B13a). Blob and B18 paths do not (B20). The field did not hand us a saving c.",
     )
 
 
@@ -162,8 +162,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "The field at t=0 did not hand us c=8 (B12). "
-            "Evolve a CONC packet (B12d)."
+            "Climb sketch as an NS a priori (B11e). NS did not force a saving "
+            "c at this box (B11d). Finer/longer (B13e) stays open. B4c stands. "
+            "Do not write c=8 into the PDE."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_climb.json")

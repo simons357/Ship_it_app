@@ -81,10 +81,10 @@
       }
     },
     {
-      "name": "B11d_ns_climb_law_open",
+      "name": "B11d_ns_climb_law",
       "statement": "classical NS forces a climb rate c that saves X while CONC",
-      "verdict": "open",
-      "why": "c is prescribed here. The field has to produce dj*/dt. That law is not written."
+      "verdict": "fail",
+      "why": "c is prescribed here. t=0 packets do not produce c=8 (B12b). Short visc run does not (B13a). Blob and B18 paths do not (B20). The field did not hand us a saving c."
     },
     {
       "name": "B11e_climb_not_X_a_priori",
@@ -95,8 +95,8 @@
   ],
   "counts": {
     "pass": 3,
-    "fail": 1,
-    "open": 2
+    "fail": 2,
+    "open": 1
   },
-  "next_da_move": "The climb law from the field (B11d). Prescribed c is a knob. NS has to produce dj*/dt."
+  "next_da_move": "Climb sketch as an NS a priori (B11e). NS did not force a saving c at this box (B11d). Finer/longer (B13e) stays open. B4c stands. Do not write c=8 into the PDE."
 }

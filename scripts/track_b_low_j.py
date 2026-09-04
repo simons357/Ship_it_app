@@ -104,7 +104,7 @@ def lemma_climbing_open() -> dict:
         "B10c_climbing_conc_open",
         "CONC with climbing j* is a closed estimate for X",
         "open",
-        "High j* sits on the glue ODE. Climbing is broken out as B11. The missing piece is a climb law from the field (B11d).",
+        "High j* sits on the glue ODE. Climbing is broken out as B11. NS did not force a saving c (B11d). The leftover is whether the sketch is an a priori (B11e).",
     )
 
 
@@ -139,7 +139,8 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Climbing is written (B11). The live room is the climb law from the field (B11d)."
+            "Climbing is written (B11). NS did not force a saving c (B11d). "
+            "Next: the sketch as an NS a priori (B11e)."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_low_j.json")

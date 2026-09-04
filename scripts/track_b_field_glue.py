@@ -168,7 +168,7 @@ def lemma_field_glue_not_close() -> dict:
         "B19e_field_glue_not_X_a_priori",
         "matching the sketch to NS Ẋ closes a bound for classical X",
         "open",
-        "The sketch pointed the wrong way. Retuning α_c to the leftover is a knob, not continuation. Climb law (B11d) is still open.",
+        "The sketch pointed the wrong way. Retuning α_c to the leftover is a knob, not continuation. Climb law is scored (B11d fail). Not continuation.",
     )
 
 
@@ -208,9 +208,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "NS climb law (B11d). Field glue is scored: typed j*=2 grows; "
-            "the NS packet falls. α_c is not the field cubic. B4c stands. "
-            "Do not cancel to Φ."
+            "Climb sketch as an NS a priori (B11e). NS did not force a saving "
+            "c at this box (B11d). Finer/longer (B13e) stays open. B4c stands. "
+            "Do not write c=8 into the PDE."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_field_glue.json")

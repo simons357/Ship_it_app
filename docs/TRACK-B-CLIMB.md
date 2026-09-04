@@ -43,8 +43,10 @@ barely moves, \(X\) crosses 40. Same fat room as B9b.
 thin packet, viscosity owns the cubic. That is B9a,
 entered from below.
 
-**B11d, open.** Classical NS does not hand us \(c\).
-The field has to produce \(\mathrm{d}j_*/\mathrm{d}t\).
+**B11d, fail** of “classical NS forces a saving \(c\).”
+\(t=0\) packets do not (B12b). Short visc run does not
+(B13a). Blob and B18 paths do not (B20). The field
+did not hand us \(c=8\).
 
 **B11e, open.** A prescribed rate is a sketch, not an
 a priori bound for classical \(X\).
@@ -80,10 +82,11 @@ our criterion.
 **Einstein.** The object stayed the classical field.
 A rate you typed is not a rate the metric produced.
 
-**Operator.** Climbing is broken out. The field at
-\(t=0\) did not hand us \(c=8\). See
-[`TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md).
-The live room is a short evolution.
+**Operator.** Climbing is broken out. The field did
+not hand us \(c=8\). See
+[`TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md) and
+[`TRACK-B-NS-CLIMB.md`](TRACK-B-NS-CLIMB.md).
+Next: the sketch as an NS a priori (B11e).
 
 ---
 
@@ -95,8 +98,8 @@ The live room is a short evolution.
 | B11a | **pass** | bounded \(j_*\) ⇒ bounded \(X\) |
 | B11b | **fail** | any climb saves the model |
 | B11c | **pass** | fast climb sits on this ODE |
-| B11d | **open** | NS forces a saving \(c\) |
+| B11d | **fail** | NS forces a saving \(c\) |
 | B11e | **open** | sketch \(\neq\) NS a priori |
-| domain B | **open** | evolve the packet |
+| domain B | **open** | climb sketch (B11e) is next |
 
 Tesla’s line: turn \(c\). If nothing moves, sit down.

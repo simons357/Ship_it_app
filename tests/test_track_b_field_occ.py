@@ -34,7 +34,7 @@ class TrackBFieldOccTests(unittest.TestCase):
             self.assertTrue(by["B18b_clock_did_not_save"]["X_fell"][name])
             for p in by["B18d_cubic_not_live_time"]["P_over_D"][name]:
                 self.assertLess(abs(p), PD_MAX)
-        self.assertIn("B11d", payload["next_da_move"])
+        self.assertIn("B11e", payload["next_da_move"])
 
     def test_writeup_exists(self):
         self.assertTrue((ROOT / "docs" / "TRACK-B-FIELD-OCC.md").is_file())

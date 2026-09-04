@@ -228,8 +228,8 @@ def run(out: Path | None = None) -> dict:
         },
         "next_da_move": (
             "Use the write-up. Angular 1/r² lost on packets; B4c still budgets I_tube. "
-            "Field glue is scored: typed j*=2 grows; the NS packet falls. "
-            "Next B write is the NS climb law (B11d). Do not cancel to Φ. "
+            "NS did not force a saving c at this box (B11d). "
+            "Next B write is the climb sketch as an NS a priori (B11e). Do not write c=8 into the PDE. "
             "Corpus pairings emit scored sentences, not F."
         ),
     }

@@ -62,6 +62,7 @@ def record_path(uh, vh, wh, kx, ky, kz, k2, k2_safe, dealias, nu, jstar0, dt=DT,
     uh, vh, wh = uh.copy(), vh.copy(), wh.copy()
     sigmas: list[float] = []
     xs: list[float] = []
+    jbars: list[float] = []
     p_over_d: list[float] = []
     for i in range(steps + 1):
         ox, oy, oz, oxh, oyh, ozh = curl(uh, vh, wh, kx, ky, kz)
@@ -69,6 +70,7 @@ def record_path(uh, vh, wh, kx, ky, kz, k2, k2_safe, dealias, nu, jstar0, dt=DT,
         pd = production_dissipation(uh, vh, wh, kx, ky, kz, nu)
         sigmas.append(st["sigma"])
         xs.append(st["X"])
+        jbars.append(st["jbar"])
         p_over_d.append(pd["P_over_D"] if nu > 0.0 else 0.0)
         if i < steps:
             uh, vh, wh = ifrk2_step(
@@ -84,6 +86,10 @@ def record_path(uh, vh, wh, kx, ky, kz, k2, k2_safe, dealias, nu, jstar0, dt=DT,
         "steps": steps,
         "sigma": [float(s) for s in sigma],
         "X": [float(x) for x in xs],
+        "jbar": [float(j) for j in jbars],
+        "jbar0": float(jbars[0]),
+        "jbarT": float(jbars[-1]),
+        "c_mean": float((jbars[-1] - jbars[0]) / max(steps * dt, 1e-30)),
         "P_over_D": [float(p) for p in p_over_d],
         "occ": occ,
         "tau_frac_conc": occ["tau_conc"] / max(occ["T"], 1e-30),
@@ -195,7 +201,7 @@ def lemma_field_occ_not_close() -> dict:
         "B18e_field_occ_not_X_a_priori",
         "field occupation closes a bound for classical X",
         "open",
-        "The clock can be read. It did not leave CONC. Field glue (B19) asks the sketch. Climb law (B11d) is still open. Not continuation.",
+        "The clock can be read. It did not leave CONC. Field glue scored the sketch. Climb law is scored (B11d fail). Not continuation.",
     )
 
 
@@ -239,9 +245,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "NS climb law (B11d). Field glue is scored: typed j*=2 grows; "
-            "the NS packet falls. α_c is not the field cubic. B4c stands. "
-            "Do not cancel to Φ."
+            "Climb sketch as an NS a priori (B11e). NS did not force a saving "
+            "c at this box (B11d). Finer/longer (B13e) stays open. B4c stands. "
+            "Do not write c=8 into the PDE."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_field_occ.json")

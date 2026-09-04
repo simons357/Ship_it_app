@@ -114,7 +114,7 @@ scales, one sign of strain, same PDE.
 
 **Operator.** Coherent CONC is scored. Field occupation
 reads the clock on a path. Field glue scored the sketch.
-Next: NS climb law (B11d). B4c stands. Do not cancel
+Next: climb sketch as an NS a priori (B11e). B4c stands. Do not cancel
 to \(\Phi\).
 
 ---
@@ -130,7 +130,7 @@ to \(\Phi\).
 | B17d | **fail** | \(L^2\) blob is BKM |
 | B17e | **open** | signed-strain blob closes \(X\) |
 | B17f | **fail** | this retunes the PDE |
-| domain B | **open** | NS climb law (B11d) is next |
+| domain B | **open** | climb sketch (B11e) is next |
 
 Tesla’s line: a Stokes eigenfunction is not a cubic.
 Sit the blob where \(S_{zz}\) keeps a sign. One-sided is

@@ -221,7 +221,7 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B10d this retunes the PDE | **fail** |
 | B11 / B11a / B11c climb bookkeeping; bounded \(j_*\); fast sits | pass |
 | B11b any climb saves | **fail** |
-| B11d NS climb law | **open** |
+| B11d NS climb law | **fail** |
 | B11e climb sketch is an NS a priori | **open** |
 | B12 / B12a barycenter; \(c\) from RHS | pass |
 | B12b \(t=0\) packets produce \(c\ge 8\) | **fail** |
@@ -255,10 +255,14 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B19a / B19b / B19c / B19d sign match; NS is B9b; \(\alpha_c\) is cubic; \(\gamma\) is visc | **fail** |
 | B19e matching the sketch closes \(X\) | **open** |
 | B19f this retunes the PDE | **fail** |
+| B20 \(c\) readable on blob and paths | pass |
+| B20a / B20b / B20c / B20d blob \(t=0\) \(c\ge 8\); path mean; visc ladder; offset is a climb | **fail** |
+| B20e field climb closes \(X\) | **open** |
+| B20f this retunes the PDE | **fail** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Next write: NS climb law (B11d). Field glue is scored. B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned.
+Next write: climb sketch as an NS a priori (B11e). NS did not force a saving \(c\) (B11d). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned.
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 
@@ -302,11 +306,11 @@ The operator atlas is `docs/DA-DESK.md`. The machine note is `docs/DOMAIN-ARCHIT
 
 ## 9. Conclusion
 
-DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is the NS climb law. Field glue is scored. B4c stands. Angular \(1/r^2\) does not.
+DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is the climb sketch as an NS a priori (B11e). NS did not force a saving \(c\). B4c stands. Angular \(1/r^2\) does not.
 
 The think tank is three benches and a corpus rule. The processes are classify, check, falsify, reconstruct, ablate, pipe, compute, and alert. The purpose is to keep the operator honest while ordinary AI proposes.
 
-That is the paper. The next page of mathematics is the NS climb law (B11d). B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
+That is the paper. The next page of mathematics is the climb sketch as an NS a priori (B11e). B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
 
 ---
 

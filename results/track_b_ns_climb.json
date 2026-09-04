@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "NS climb law; c the field makes on blob and B18 paths",
+    "tuning_the_pde": false,
+    "tesla": "exacting, not a jerk. c the field makes, not a c we type. j_bar versus typed j* at t=0 is an offset, not a climb.",
+    "domain_verdict": "open",
+    "c_save": 8.0
+  },
+  "lemmas": [
+    {
+      "name": "B20_field_c",
+      "statement": "c = d j_bar / dt is readable on the signed-strain blob and on B18 packet/blob paths",
+      "verdict": "pass",
+      "why": "t=0 from the vorticity RHS. Mean from \u0394j_bar / T on IF-RK2. Same box as B13 / B18. Typed j* is not substituted.",
+      "t0_visc": {
+        "packet": -0.19663262759452493,
+        "blob": -2.015490776083494
+      },
+      "t0_euler": {
+        "packet": -3.0077006916818562e-05,
+        "blob": 0.02429223051349373
+      },
+      "c_mean_visc": {
+        "packet": -0.2351225044893296,
+        "blob": -2.0083405540732846
+      },
+      "c_mean_euler": {
+        "packet": 0.00013786872866961009,
+        "blob": 0.025964718137351517
+      },
+      "jbar0": {
+        "packet": 2.9706581534824363,
+        "blob": 2.5664433170637415
+      },
+      "sigma": {
+        "packet": 1.0,
+        "blob": 0.8535696713285232
+      },
+      "c_save": 8.0
+    },
+    {
+      "name": "B20a_blob_t0_not_saving",
+      "statement": "the signed-strain blob at t=0 produces c \u2265 8",
+      "verdict": "fail",
+      "why": "Viscous t=0 c \u2248 \u22122. Euler \u2248 0. Coherence of swirl is not a saving climb.",
+      "t0_visc_c": -2.015490776083494,
+      "t0_euler_c": 0.02429223051349373,
+      "c_save": 8.0,
+      "sigma": 0.8535696713285232
+    },
+    {
+      "name": "B20b_paths_not_saving",
+      "statement": "mean c on B18 packet and blob paths (visc and Euler) reaches c \u2265 8",
+      "verdict": "fail",
+      "why": "Viscous means are negative. Euler means sit near 0. Letting the clock run did not hand us B11c.",
+      "c_mean_visc": {
+        "packet": -0.2351225044893296,
+        "blob": -2.0083405540732846
+      },
+      "c_mean_euler": {
+        "packet": 0.00013786872866961009,
+        "blob": 0.025964718137351517
+      },
+      "c_save": 8.0
+    },
+    {
+      "name": "B20c_blob_visc_not_ladder",
+      "statement": "viscosity on the signed-strain blob is a ladder for j_bar",
+      "verdict": "fail",
+      "why": "Along the B18 blob path, j_bar falls. Same direction as the t=0 RHS. Viscosity is not a climb.",
+      "jbar0": 2.5664433170637415,
+      "jbarT": 2.4379095216030513,
+      "c_mean_visc": -2.0083405540732846
+    },
+    {
+      "name": "B20d_offset_not_climb",
+      "statement": "j_bar > typed j* at t=0 is a climb",
+      "verdict": "fail",
+      "why": "Packet j_bar \u2248 2.97 versus typed 2 is a static offset. Then j_bar falls. Do not substitute j_bar for typed j* and call it B11c.",
+      "jstar": 2,
+      "jbar0": 2.9706581534824363,
+      "offset": 0.9706581534824363,
+      "c_mean_visc": -0.2351225044893296,
+      "blob_offset": -0.4335566829362585
+    },
+    {
+      "name": "B20e_ns_climb_not_X_a_priori",
+      "statement": "a field climb at this box closes a bound for classical X",
+      "verdict": "open",
+      "why": "NS did not force c=8 here. Finer/longer is B13e. Typing c=8 into the PDE is a retune. Not continuation."
+    },
+    {
+      "name": "B20f_not_a_pde_retune",
+      "statement": "reading c from the vorticity RHS, or writing c=8 into classical Navier\u2013Stokes, is a retune of the PDE",
+      "verdict": "fail",
+      "why": "The PDE is untouched. c is a knob on the estimate. No Q1. No \u03b5. Do not type B11c into the equation."
+    }
+  ],
+  "counts": {
+    "pass": 1,
+    "fail": 5,
+    "open": 1
+  },
+  "next_da_move": "Climb sketch as an NS a priori (B11e). NS did not force a saving c at this box (B11d). Finer/longer (B13e) stays open. B4c stands. Do not write c=8 into the PDE."
+}

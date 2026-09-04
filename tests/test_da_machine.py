@@ -139,6 +139,9 @@ class DaMachineTests(unittest.TestCase):
         fgl = classify_claim("field glue of the two-regime sketch against vorticity Ẋ")
         self.assertEqual(fgl["domain"], "B")
         self.assertEqual(fgl["verdict"], "open")
+        nsc = classify_claim("NS climb of j_bar on a vorticity blob")
+        self.assertEqual(nsc["domain"], "B")
+        self.assertEqual(nsc["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

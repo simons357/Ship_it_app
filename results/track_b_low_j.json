@@ -77,7 +77,7 @@
       "name": "B10c_climbing_conc_open",
       "statement": "CONC with climbing j* is a closed estimate for X",
       "verdict": "open",
-      "why": "High j* sits on the glue ODE. Climbing from coarse to thin is the remaining cubic room. Not shown."
+      "why": "High j* sits on the glue ODE. Climbing is broken out as B11. NS did not force a saving c (B11d). The leftover is whether the sketch is an a priori (B11e)."
     },
     {
       "name": "B10d_not_a_pde_retune",
@@ -91,5 +91,5 @@
     "fail": 3,
     "open": 1
   },
-  "next_da_move": "Climbing CONC: j* rises while \u03c3\u22651/2. The energy ceiling does not follow. That is the live room."
+  "next_da_move": "Climbing is written (B11). NS did not force a saving c (B11d). Next: the sketch as an NS a priori (B11e)."
 }

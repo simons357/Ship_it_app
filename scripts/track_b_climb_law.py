@@ -30,23 +30,11 @@ from track_b_lemmas import (
 C_SAVE = 8.0
 
 
-def packet_climb(
-    n: int,
-    jstar: int,
-    seed: int,
-    nu: float,
-    x_target: float | None = 2.5,
-) -> dict:
-    rng = np.random.default_rng(seed)
-    uh, vh, wh, kx, ky, kz, k2 = three_shell_field(n, jstar, rng)
+def hats_climb(uh, vh, wh, kx, ky, kz, k2, nu: float, jstar: int) -> dict:
+    """Instantaneous c = d j_bar / dt from the vorticity RHS on given hats."""
     ox, oy, oz, oxh, oyh, ozh = curl(uh, vh, wh, kx, ky, kz)
     vol = (2.0 * math.pi) ** 3
     xtot = float(np.mean(ox * ox + oy * oy + oz * oz)) * vol
-    if x_target is not None:
-        scale = math.sqrt(x_target / max(xtot, 1e-30))
-        uh, vh, wh = uh * scale, vh * scale, wh * scale
-        ox, oy, oz, oxh, oyh, ozh = curl(uh, vh, wh, kx, ky, kz)
-        xtot = float(np.mean(ox * ox + oy * oy + oz * oz)) * vol
     u, v, w = ifft(uh), ifft(vh), ifft(wh)
     cu, cv, cw = convect(u, v, w, oxh, oyh, ozh, kx, ky, kz)
     su, sv, sw = convect(ox, oy, oz, uh, vh, wh, kx, ky, kz)
@@ -78,8 +66,27 @@ def packet_climb(
         "sigma": float(triad / max(tot, 1e-30)),
         "X": float(xtot),
         "nu": nu,
-        "seed": seed,
     }
+
+
+def packet_climb(
+    n: int,
+    jstar: int,
+    seed: int,
+    nu: float,
+    x_target: float | None = 2.5,
+) -> dict:
+    rng = np.random.default_rng(seed)
+    uh, vh, wh, kx, ky, kz, k2 = three_shell_field(n, jstar, rng)
+    if x_target is not None:
+        ox, oy, oz, *_ = curl(uh, vh, wh, kx, ky, kz)
+        vol = (2.0 * math.pi) ** 3
+        xtot = float(np.mean(ox * ox + oy * oy + oz * oz)) * vol
+        scale = math.sqrt(x_target / max(xtot, 1e-30))
+        uh, vh, wh = uh * scale, vh * scale, wh * scale
+    out = hats_climb(uh, vh, wh, kx, ky, kz, k2, nu, jstar)
+    out["seed"] = seed
+    return out
 
 
 def sample(n: int = 24, trials: int = 8, jstar: int = 3, nu: float = 0.1, seed0: int = 1):
