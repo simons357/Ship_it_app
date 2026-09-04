@@ -358,12 +358,12 @@ again.
 
 They did the tube, the low Bony \(T\), the occupation
 clock, the two-regime glue, the energy ceiling, climbing
-CONC, the field climb, a short evolution, and the
-strain geometry. CONC is not depleted. CF is a
-conditional: small \(\lvert\cos\alpha_3\rvert\) stretches
-less. Next: B5b (tube geometry). Cartesian alignment is
-not a close.
-See [`TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md).
+CONC, the field climb, a short evolution, the strain
+geometry, and the stretching budget. CONC is not
+depleted. CF weights the cubic: the aligned cap pays
+\(\sim 65\%\) of \((\omega\cdot S\omega)_+\). A short run
+does not empty that share. Next: B5b (tube geometry).
+See [`TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

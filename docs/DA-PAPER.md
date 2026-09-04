@@ -233,10 +233,14 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B14c CF conditional | pass |
 | B14d geometry closes \(X\) | **open** |
 | B14e this retunes the PDE | **fail** |
+| B15 / B15a / B15b stretching budget; CF weights it; majority from aligned cap | pass |
+| B15c / B15d run depletes median; run empties aligned share | **fail** |
+| B15e budget closes \(X\) | **open** |
+| B15f this retunes the PDE | **fail** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Next write: B5b (tube geometry: viscosity vs \(I_{\mathrm{tube}}\)). Cartesian alignment is a conditional, not a close. The PDE is not being tuned.
+Next write: B5b (tube geometry: viscosity vs \(I_{\mathrm{tube}}\)). Cartesian budget is aligned; the field is not depleted. The PDE is not being tuned.
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 
@@ -280,7 +284,7 @@ The operator atlas is `docs/DA-DESK.md`. The machine note is `docs/DOMAIN-ARCHIT
 
 ## 9. Conclusion
 
-DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is B5b (tube geometry). Cartesian alignment is a conditional.
+DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is B5b (tube geometry). Cartesian budget is aligned; the field is not depleted.
 
 The think tank is three benches and a corpus rule. The processes are classify, check, falsify, reconstruct, ablate, pipe, compute, and alert. The purpose is to keep the operator honest while ordinary AI proposes.
 
@@ -294,7 +298,7 @@ That is the paper. The next page of mathematics is the tube viscosity. The PDE s
 - Machine: `docs/DOMAIN-ARCHITECT-MACHINE.md`
 - Shelf: `docs/SHELF.md`
 - Track A: `docs/AUGMENTED-NS-PROOF-CHAIN.md`
-- Track B: `docs/TRACK-B-LEMMAS.md`, `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`, `docs/TRACK-B-GEOMETRY.md`
+- Track B: `docs/TRACK-B-LEMMAS.md`, `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`, `docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`
 - Track Q: `docs/SPECTRAL-FLOOR-EXPLORATION.md`
 - Think tank: `docs/DA-THINK-TANK.md` (combined roll), `docs/DA-DREAM-TEAM.md`, `docs/DA-GROUND.md`, `docs/DA-PIPE.md`, `docs/DA-SESSION.md` (they talk)
 - Compute and alerts: `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`

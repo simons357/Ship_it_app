@@ -87,9 +87,9 @@ of \(E_c\) is not \(\|\omega\|_\infty\in L^1\).
 
 **Einstein.** The object stayed the classical field.
 
-**Operator.** Geometry is on the desk. Next is the
-tube viscosity that was already open (B5b). Cartesian
-alignment is a conditional, not a close.
+**Operator.** Geometry is on the desk. The stretching
+budget is the next click: who pays \((\omega\cdot S\omega)_+\).
+Cartesian alignment is a conditional, not a close.
 
 ---
 

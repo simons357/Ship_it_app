@@ -221,7 +221,9 @@ The field climb is broken out in [`TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md).
 
 Packet geometry is written in [`TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md). The strain identity on \(E_c\) **passes**. 3-CONC does **not** force depleted \(\cos\alpha_3\). Ring Lipschitz is **not** alignment. Constantin–Fefferman holds as a **conditional** (small \(\lvert\cos\alpha_3\rvert\) stretches less). That does not close \(X\).
 
-Leray’s \(\int X\,dt<\infty\) limits how long a high-\(j_*\) concentrated spike can last, but it does **not** by itself stop \(\dot X\sim X^3\). A spike \(X\sim(T_*-t)^{-1/2}\) is compatible with integrable \(X\). Viscosity or geometric depletion has to supply the extra decay. Do not close with energy integrability alone. All-data geometric depletion is **not** what the packets gave.
+The stretching budget is written in [`TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md). Stretch-weighted \(\lvert\cos\alpha_3\rvert\) sits near \(0.81\) against an unweighted mean near \(0.50\). A majority of \((\omega\cdot S\omega)_+\) on \(E_c\) comes from the aligned cap. A short run does **not** deplete the median and does **not** empty that share.
+
+Leray’s \(\int X\,dt<\infty\) limits how long a high-\(j_*\) concentrated spike can last, but it does **not** by itself stop \(\dot X\sim X^3\). A spike \(X\sim(T_*-t)^{-1/2}\) is compatible with integrable \(X\). Viscosity or geometric depletion has to supply the extra decay. Do not close with energy integrability alone. All-data geometric depletion is **not** what the packets gave. An aligned *budget* is also not a depleted *field*.
 
 ### Step G — What would finish the unaugmented statement
 
@@ -250,7 +252,7 @@ No BKM-from-\(L^2\) implication is required. No Biot–Savart slogan that \(\cos
 Scored in [`docs/TRACK-B-LEMMAS.md`](TRACK-B-LEMMAS.md). `python3 scripts/da_machine.py trackb`.
 
 1. **Localized tube Hardy for \(\Gamma\)**, radius \(\delta\), no \(\Phi\). Hardy + wall term **pass**. All-data \(I_{\mathrm{tube}}\) domination **fail**. Packet class at \(\delta\sim 2^{-j_*}\) **pass**. Write: [`TRACK-B-HARDY-TUBE.md`](TRACK-B-HARDY-TUBE.md).
-2. **Almost-band-limited Ring Lemma** (three shells). Bernstein **pass**. All-data depletion **fail**. Strain identity on \(E_c\) **pass**. CONC \(\Rightarrow\) depleted \(\cos\alpha_3\) **fail**. CF as a conditional **pass**. Write: [`TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md).
+2. **Almost-band-limited Ring Lemma** (three shells). Bernstein **pass**. All-data depletion **fail**. Strain identity on \(E_c\) **pass**. CONC \(\Rightarrow\) depleted \(\cos\alpha_3\) **fail**. CF as a conditional **pass**. Stretching budget: CF weights it **pass**; majority from aligned cap **pass**; short run does not empty it **fail** of depletion. Writes: [`TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md), [`TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md).
 3. **One-threshold regime split** 3-CONC \(\sigma\ge 1/2\) vs SPREAD \(\sigma\le 1/2\). Cover **pass**.
 4. **Energy-class T2 flux.** Lemma 1 **pass**. Lemma 2 dropped (**fail** as input). Low Bony \(T\): split **pass**, energy-class **pass**, uniform \(\rho^{1/2}\) **fail**. Write: [`TRACK-B-BONY-T.md`](TRACK-B-BONY-T.md).
 5. **Swirl dissipation identity** in the tube. \((\Delta u)_\theta\) **pass**. Viscosity vs \(I_{\mathrm{tube}}\) **open**.
@@ -276,7 +278,7 @@ Item 5 is the reason to keep \(1/r^4\). If the angular viscosity does not domina
 | Keep \(1/r^4\), split tube / off-axis | Setup, not proved |
 | Localized tube Hardy | **pass** as Hardy + wall; all-data domination **fail**; packet class **pass** (`docs/TRACK-B-HARDY-TUBE.md`) |
 | Ring Lemma, exact one shell | Upgraded to 3-shell Bernstein check; depletion **fail** as a slogan |
-| Concentration \(\Rightarrow\) geometric control | Identity **pass**; CONC not depleted; CF conditional **pass**; not a close (`docs/TRACK-B-GEOMETRY.md`) |
+| Concentration \(\Rightarrow\) geometric control | Identity **pass**; CONC not depleted; CF conditional **pass**; stretching budget aligned, field not emptied (`docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`) |
 | Spread \(\Rightarrow\) extra dissipation | T2 Lemma 1 **pass**; Lemma 2 dropped; energy-class \(T\) **pass**; uniform \(\rho^{1/2}\) **fail** |
 | Unaugmented global \(H^1\) bound | Open |
 

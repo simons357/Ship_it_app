@@ -227,7 +227,7 @@ def run(out: Path | None = None) -> dict:
             "pairs_open": sum(1 for r in PAIRS if r["verdict"] == "open"),
         },
         "next_da_move": (
-            "Use the write-up. Geometry is scored: identity pass, CONC not depleted, CF conditional. "
+            "Use the write-up. Stretching budget is scored: aligned cap pays, time does not empty it. "
             "Next B write is B5b (tube geometry: viscosity vs I_tube). "
             "Corpus pairings emit scored sentences, not F."
         ),

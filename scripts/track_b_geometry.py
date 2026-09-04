@@ -180,8 +180,8 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "B5b: tube geometry (angular viscosity vs I_tube). "
-            "Cartesian alignment is a conditional, not a close."
+            "B15: stretching budget (who pays (ω·Sω)_+). "
+            "Then B5b: tube geometry. Cartesian alignment is a conditional, not a close."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_geometry.json")

@@ -92,5 +92,5 @@
     "fail": 3,
     "open": 1
   },
-  "next_da_move": "B5b: tube geometry (angular viscosity vs I_tube). Cartesian alignment is a conditional, not a close."
+  "next_da_move": "B15: stretching budget (who pays (\u03c9\u00b7S\u03c9)_+). Then B5b: tube geometry. Cartesian alignment is a conditional, not a close."
 }

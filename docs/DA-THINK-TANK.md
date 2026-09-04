@@ -96,7 +96,7 @@ Forbidden auto-fails: solved NS, full Q floor, Biot–Savart depletion, BKM-from
 
 August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ3 / SPREAD.
 
-**Next B write:** B5b (tube geometry: viscosity vs \(I_{\mathrm{tube}}\)). Cartesian alignment is a conditional, not a close. The PDE is not being tuned. Regularity stays open.
+**Next B write:** B5b (tube geometry: viscosity vs \(I_{\mathrm{tube}}\)). Cartesian budget is aligned; the field is not depleted. The PDE is not being tuned. Regularity stays open.
 
 ### How the conversation moved
 
@@ -149,6 +149,8 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 24. **Short evolution.** Run finite **pass**. Saving climb **fail**. High fill **fail**. Stays CONC **pass**. Evolution as a ladder **fail**. Finer/longer **open**. [`docs/TRACK-B-EVOLVE.md`](TRACK-B-EVOLVE.md).
 
 25. **Geometry.** Strain identity **pass**. CONC \(\Rightarrow\) depleted \(\cos\alpha_3\) **fail**. Ring \(\Rightarrow\) alignment **fail**. CF conditional **pass**. Geometry closes \(X\) **open**. Not a PDE retune **fail**. [`docs/TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md).
+
+26. **Stretching budget.** Budget readable **pass**. CF weights the budget **pass**. Majority from aligned cap **pass**. Short run depletes median **fail**. Short run empties aligned share **fail**. Budget closes \(X\) **open**. [`docs/TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md).
 
 ---
 

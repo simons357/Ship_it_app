@@ -241,7 +241,7 @@ def render_text(events: list[dict], baseline: bool) -> str:
     if not events:
         return (
             "DA checked. Nothing significant flipped.\n"
-            "Next: B5b (tube geometry: viscosity vs I_tube). Cartesian alignment is a conditional, not a close.\n"
+            "Next: B5b (tube geometry: viscosity vs I_tube). Cartesian budget is aligned; the field is not depleted.\n"
         )
     parts = []
     for e in events:

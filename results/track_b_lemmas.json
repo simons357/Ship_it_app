@@ -1127,6 +1127,151 @@
       "why": "The PDE is untouched. Geometry is a knob on the estimate: a number you can miss."
     },
     {
+      "name": "B15_stretch_budget",
+      "statement": "(\u03c9\u00b7S\u03c9)_+ on E_c is a readable stretching budget, with stretch-weighted |cos \u03b1_3|",
+      "verdict": "pass",
+      "why": "B14 subsampled efficiency. This write integrates the cubic's payers.",
+      "n_ec": [
+        28237,
+        28253,
+        28223,
+        28319,
+        28225,
+        28278
+      ],
+      "share_of_all_pos": [
+        0.9804098541801446,
+        0.9800041575923132,
+        0.9802437113530507,
+        0.9803550404327338,
+        0.9796730739273684,
+        0.9802210400218389
+      ]
+    },
+    {
+      "name": "B15a_cf_weights_budget",
+      "statement": "stretch-weighted |cos \u03b1_3| on E_c exceeds the unweighted mean by more than 0.15",
+      "verdict": "pass",
+      "why": "Constantin\u2013Fefferman as a budget. The cubic pays more where vorticity meets extension. Not depletion of the field.",
+      "wmean": [
+        0.8078870834859643,
+        0.8065448065787924,
+        0.8071179028908922,
+        0.8080864747154857,
+        0.808367658469639,
+        0.8077521951320863
+      ],
+      "mean": [
+        0.4991464695352272,
+        0.4960010475784841,
+        0.4995607340010176,
+        0.49757234732130196,
+        0.5000327217528973,
+        0.50043803289746
+      ],
+      "gaps": [
+        0.3087406139507371,
+        0.31054375900030823,
+        0.30755716888987467,
+        0.3105141273941837,
+        0.3083349367167417,
+        0.30731416223462626
+      ]
+    },
+    {
+      "name": "B15b_majority_from_aligned",
+      "statement": "a majority of (\u03c9\u00b7S\u03c9)_+ on E_c comes from |cos \u03b1_3| > 0.8",
+      "verdict": "pass",
+      "why": "The aligned cap is a directional minority and a production majority. Median |cos \u03b1_3| is still ~1/2.",
+      "frac_pos_hi": [
+        0.6563761486185519,
+        0.6478548839740608,
+        0.6550082085422766,
+        0.652181084029274,
+        0.6523202893043765,
+        0.6492790147267091
+      ],
+      "frac_pos_lo": [
+        0.026569951994636794,
+        0.02646481247580849,
+        0.026544904654516775,
+        0.027308586814727732,
+        0.0280566104578059,
+        0.02548693532201377
+      ],
+      "median_cos3": [
+        0.49837327949473786,
+        0.49117598762288944,
+        0.497343217798994,
+        0.4963279382390002,
+        0.5019663951831222,
+        0.5040162169010433
+      ]
+    },
+    {
+      "name": "B15c_run_not_depleted",
+      "statement": "a short viscous run depletes median |cos \u03b1_3| on E_c to \u2264 0.25",
+      "verdict": "fail",
+      "why": "Median stays near 1/2. Viscosity ate X. It did not rotate the sphere.",
+      "median_end": [
+        0.49702870180126923,
+        0.5041660075265417,
+        0.5047277394381827
+      ],
+      "median_start": [
+        0.4977372084858054,
+        0.5044508122399725,
+        0.5055730377214616
+      ]
+    },
+    {
+      "name": "B15d_run_keeps_aligned_budget",
+      "statement": "a short run drops the aligned share of (\u03c9\u00b7S\u03c9)_+ below 1/2",
+      "verdict": "fail",
+      "why": "frac_hi stays ~0.65. The cubic's payers did not leave. Tesla: time was a knob. It did not empty the cap.",
+      "visc_frac_hi_end": [
+        0.6427476181640162,
+        0.6555081583697635,
+        0.6515241090538759
+      ],
+      "euler_frac_hi_end": [
+        0.6412767754107243,
+        0.6533147866954035,
+        0.6498482094639934
+      ],
+      "visc_wmean_end": [
+        0.8044071536853534,
+        0.8094328004545126,
+        0.8086203428713435
+      ],
+      "visc_X": [
+        [
+          2.500000000000001,
+          1.4263585606129365
+        ],
+        [
+          2.5,
+          1.4318344404217334
+        ],
+        [
+          2.5000000000000004,
+          1.4201933853519262
+        ]
+      ]
+    },
+    {
+      "name": "B15e_budget_not_X_a_priori",
+      "statement": "an aligned stretching budget closes a bound for classical X",
+      "verdict": "open",
+      "why": "A weighted |cos \u03b1_3| is not an a priori. The field still has to empty the cap, or viscosity has to own the cubic another way."
+    },
+    {
+      "name": "B15f_not_a_pde_retune",
+      "statement": "weighting stretching by (\u03c9\u00b7S\u03c9)_+ is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. The budget is a knob on the estimate: a share you can miss."
+    },
+    {
       "name": "B_regularity",
       "statement": "classical 3D NS is globally regular (keep 1/r^4, no Q1)",
       "verdict": "open",
@@ -1134,9 +1279,9 @@
     }
   ],
   "counts": {
-    "pass": 25,
-    "fail": 20,
-    "open": 12
+    "pass": 28,
+    "fail": 23,
+    "open": 13
   },
   "how_far": [
     "B1 T2 low-flux identity holds (pass); T2 Lemma 2 stays dropped (fail)",
@@ -1162,7 +1307,9 @@
     "B13d visc still pulls down (fail); finer/longer open (B13e); not an a priori (B13f)",
     "B14 strain identity (pass); CONC not depleted (fail); Ring is not alignment (fail)",
     "B14c CF conditional (pass); geometry does not close X (open); not a PDE retune (fail)",
+    "B15 stretching budget readable (pass); CF weights the budget (pass); majority from aligned cap (pass)",
+    "B15c short run does not deplete |cos \u03b1_3| (fail); aligned share stays (fail); budget not an a priori (open)",
     "classical regularity remains open"
   ],
-  "next_da_move": "B5b: tube geometry (angular viscosity vs I_tube at \u03b4 ~ 2^{-j*}). Cartesian alignment is a conditional, not a close. Tesla: the tube is still a knob."
+  "next_da_move": "B5b: tube geometry (angular viscosity vs I_tube at \u03b4 ~ 2^{-j*}). Cartesian budget is aligned; the field is not depleted. Tesla: the tube is still a knob."
 }

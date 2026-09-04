@@ -84,6 +84,13 @@ not done).
 | B14c | small \(\lvert\cos\alpha_3\rvert\) stretches less on \(E_c\) | **pass** | CF as a conditional. Not all-data. |
 | B14d | packet geometry closes \(X\) | **open** | Lipschitz + conditional \(\neq\) continuation. |
 | B14e | reading alignment retunes the PDE | **fail** | Knob on the estimate. |
+| B15 | \((\omega\cdot S\omega)_+\) on \(E_c\) is a stretching budget | **pass** | Who pays the cubic. |
+| B15a | stretch-weighted \(\lvert\cos\alpha_3\rvert\) exceeds the unweighted mean | **pass** | CF as a budget. Field not depleted. |
+| B15b | majority of \(+\)stretch from \(\lvert\cos\alpha_3\rvert>0.8\) | **pass** | Directional minority, production majority. |
+| B15c | short run depletes median \(\lvert\cos\alpha_3\rvert\le 0.25\) | **fail** | Median stays \(\sim 1/2\). |
+| B15d | short run drops aligned share below \(1/2\) | **fail** | \(\mathrm{frac}_{hi}\) stays \(\sim 0.65\). |
+| B15e | aligned budget closes \(X\) | **open** | A share is not continuation. |
+| B15f | weighting stretching retunes the PDE | **fail** | Knob on the estimate. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -214,13 +221,21 @@ Strain identity **pass**. CONC \(\Rightarrow\) depleted
 **fail**. CF conditional **pass**. Geometry closes \(X\)
 **open**. Not a PDE retune **fail**.
 
+**B15 / B15a / B15b / B15c / B15d / B15e / B15f.** Stretching
+budget lives in [`TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md).
+Budget readable **pass**. CF weights the budget **pass**.
+Majority from aligned cap **pass**. Short run depletes
+median \(\lvert\cos\alpha_3\rvert\) **fail**. Short run
+empties the aligned share **fail**. Budget closes \(X\)
+**open**. Not a PDE retune **fail**.
+
 ---
 
 ## What is still the next write
 
 1. B5b: angular viscosity versus \(I_{\mathrm{tube}}\) at
-   \(\delta\sim 2^{-j_*}\). Cartesian alignment is a
-   conditional, not a close. A finer packet box (B13e)
+   \(\delta\sim 2^{-j_*}\). Cartesian budget is aligned;
+   the field is not depleted. A finer packet box (B13e)
    stays open.
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
    Leray-as-occupation, the glue sketch as an NS a priori,
@@ -239,8 +254,9 @@ python3 scripts/track_b_climb.py
 python3 scripts/track_b_climb_law.py
 python3 scripts/track_b_evolve.py
 python3 scripts/track_b_geometry.py
+python3 scripts/track_b_stretch.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

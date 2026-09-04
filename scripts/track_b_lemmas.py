@@ -632,6 +632,48 @@ def lemma_geo_not_a_retune() -> dict:
     return geo_rt()
 
 
+def lemma_stretch_budget() -> dict:
+    from track_b_stretch import lemma_budget_readable as bud
+
+    return bud()
+
+
+def lemma_cf_weights_budget() -> dict:
+    from track_b_stretch import lemma_cf_weights_budget as wgt
+
+    return wgt()
+
+
+def lemma_majority_aligned() -> dict:
+    from track_b_stretch import lemma_majority_aligned as maj
+
+    return maj()
+
+
+def lemma_run_not_depleted() -> dict:
+    from track_b_stretch import lemma_run_not_depleted as rnd
+
+    return rnd()
+
+
+def lemma_run_keeps_budget() -> dict:
+    from track_b_stretch import lemma_run_keeps_budget as keep
+
+    return keep()
+
+
+def lemma_budget_not_close() -> dict:
+    from track_b_stretch import lemma_budget_not_close as bud_ap
+
+    return bud_ap()
+
+
+def lemma_stretch_not_a_retune() -> dict:
+    from track_b_stretch import lemma_stretch_not_a_retune as st_rt
+
+    return st_rt()
+
+
 def lemma_regularity() -> dict:
     return rec(
         "B_regularity",
@@ -708,6 +750,13 @@ def run(out: Path | None = None) -> dict:
         lemma_cf_conditional(),
         lemma_geometry_not_close(),
         lemma_geo_not_a_retune(),
+        lemma_stretch_budget(),
+        lemma_cf_weights_budget(),
+        lemma_majority_aligned(),
+        lemma_run_not_depleted(),
+        lemma_run_keeps_budget(),
+        lemma_budget_not_close(),
+        lemma_stretch_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -749,11 +798,13 @@ def run(out: Path | None = None) -> dict:
             "B13d visc still pulls down (fail); finer/longer open (B13e); not an a priori (B13f)",
             "B14 strain identity (pass); CONC not depleted (fail); Ring is not alignment (fail)",
             "B14c CF conditional (pass); geometry does not close X (open); not a PDE retune (fail)",
+            "B15 stretching budget readable (pass); CF weights the budget (pass); majority from aligned cap (pass)",
+            "B15c short run does not deplete |cos α_3| (fail); aligned share stays (fail); budget not an a priori (open)",
             "classical regularity remains open",
         ],
         "next_da_move": (
             "B5b: tube geometry (angular viscosity vs I_tube at δ ~ 2^{-j*}). "
-            "Cartesian alignment is a conditional, not a close. Tesla: the tube is still a knob."
+            "Cartesian budget is aligned; the field is not depleted. Tesla: the tube is still a knob."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")
