@@ -1637,7 +1637,7 @@
       "name": "B18e_field_occ_not_X_a_priori",
       "statement": "field occupation closes a bound for classical X",
       "verdict": "fail",
-      "why": "Scored as B29. Occupation of CONC is not continuation. The clock did not leave. Field glue is not an a priori (B19e). NS-climb leftover is B20e."
+      "why": "Scored as B29. Occupation of CONC is not continuation. The clock did not leave. Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e."
     },
     {
       "name": "B18f_not_a_pde_retune",
@@ -1718,7 +1718,7 @@
       "name": "B19e_field_glue_not_X_a_priori",
       "statement": "matching the sketch to NS \u1e8a closes a bound for classical X",
       "verdict": "fail",
-      "why": "Scored as B30. A wrong-sign sketch is not continuation. The leftover cubic was not the field. NS-climb leftover is B20e."
+      "why": "Scored as B30. A wrong-sign sketch is not continuation. The leftover cubic was not the field. NS climb is not an a priori (B20e). Climb-sketch leftover is B21e."
     },
     {
       "name": "B19f_not_a_pde_retune",
@@ -1805,8 +1805,8 @@
     {
       "name": "B20e_ns_climb_not_X_a_priori",
       "statement": "a field climb at this box closes a bound for classical X",
-      "verdict": "open",
-      "why": "NS did not force c=8 here. Finer/longer is B13e. Typing c=8 into the PDE is a retune. Not continuation."
+      "verdict": "fail",
+      "why": "Scored as B31. The field did not hand us c=8. A missing saving rate is not continuation. Climb-sketch leftover is B21e."
     },
     {
       "name": "B20f_not_a_pde_retune",
@@ -2116,7 +2116,7 @@
       "name": "B25e_budget_leftover",
       "statement": "the aligned stretching budget closes X",
       "verdict": "fail",
-      "why": "Scored as B15e / B26. A share of (\u03c9\u00b7S\u03c9)_+ is not continuation. Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. Do not spawn n=64."
+      "why": "Scored as B15e / B26. A share of (\u03c9\u00b7S\u03c9)_+ is not continuation. Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. Do not spawn n=64."
     },
     {
       "name": "B25f_not_a_pde_retune",
@@ -2206,7 +2206,7 @@
       "name": "B26e_enstrophy_leftover",
       "statement": "the enstrophy balance closes X",
       "verdict": "fail",
-      "why": "Scored as B16e / B27. A cancelled net is not continuation. Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. Do not spawn n=64."
+      "why": "Scored as B16e / B27. A cancelled net is not continuation. Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. Do not spawn n=64."
     },
     {
       "name": "B26f_not_a_pde_retune",
@@ -2294,7 +2294,7 @@
       "name": "B27e_coherent_leftover",
       "statement": "the signed-strain blob closes X",
       "verdict": "fail",
-      "why": "Scored as B17e / B28. A one-sided leftover is not continuation. Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. Do not spawn n=64."
+      "why": "Scored as B17e / B28. A one-sided leftover is not continuation. Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. Do not spawn n=64."
     },
     {
       "name": "B27f_not_a_pde_retune",
@@ -2342,7 +2342,7 @@
       "name": "B28e_occupation_leftover",
       "statement": "field occupation of CONC closes X",
       "verdict": "fail",
-      "why": "Scored as B18e / B29. A clock that stays CONC is not continuation. Field glue is not an a priori (B19e). NS-climb leftover is B20e. Do not spawn n=64."
+      "why": "Scored as B18e / B29. A clock that stays CONC is not continuation. Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. Do not spawn n=64."
     },
     {
       "name": "B28f_not_a_pde_retune",
@@ -2416,7 +2416,7 @@
       "name": "B29e_glue_leftover",
       "statement": "matching the two-regime sketch closes X",
       "verdict": "fail",
-      "why": "Scored as B19e / B30. A wrong-sign sketch is not continuation. NS-climb leftover is B20e. Do not spawn n=64."
+      "why": "Scored as B19e / B30. A wrong-sign sketch is not continuation. NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. Do not spawn n=64."
     },
     {
       "name": "B29f_not_a_pde_retune",
@@ -2470,14 +2470,75 @@
     {
       "name": "B30e_climb_leftover",
       "statement": "a field climb law closes X",
-      "verdict": "open",
-      "why": "The sketch is scored. The leftover close on NS climb is B20e. Not a bigger FFT. Do not spawn n=64."
+      "verdict": "fail",
+      "why": "Scored as B20e / B31. A missing saving rate is not continuation. Climb-sketch leftover is B21e. Do not spawn n=64."
     },
     {
       "name": "B30f_not_a_pde_retune",
       "statement": "scoring field glue as not an a priori is a retune of classical Navier\u2013Stokes",
       "verdict": "fail",
       "why": "The PDE is untouched. \u03b1_c is a knob on the estimate: a number you can miss. No Q1. No \u03b5."
+    },
+    {
+      "name": "B31_saving_readable",
+      "statement": "field c, blob t=0 miss, and path-mean miss are readable together",
+      "verdict": "pass",
+      "why": "Viscous t=0 c \u2248 \u22122. Path means stay negative. Typed c is not written into the PDE.",
+      "t0_visc_c": -2.015490776083494,
+      "t0_euler_c": 0.02429223051349373,
+      "c_mean_visc": {
+        "packet": -0.2351225044893296,
+        "blob": -2.0083405540732846
+      },
+      "c_mean_euler": {
+        "packet": 0.00013786872866961009,
+        "blob": 0.025964718137351517
+      },
+      "c_save": 8.0
+    },
+    {
+      "name": "B31a_field_c_not_a_priori",
+      "statement": "a field climb at this box closes a bound for classical X",
+      "verdict": "fail",
+      "why": "The field did not hand us c=8. A missing saving rate is not continuation.",
+      "c_mean_visc": {
+        "packet": -0.2351225044893296,
+        "blob": -2.0083405540732846
+      }
+    },
+    {
+      "name": "B31b_offset_not_continuation",
+      "statement": "j_bar > typed j* at t=0 is a continuation argument for classical X",
+      "verdict": "fail",
+      "why": "Packet j_bar \u2248 2.97 versus typed 2 is a static offset. Then j_bar falls. Do not substitute a reading for B11c.",
+      "offset": 0.9706581534824363,
+      "c_mean_visc": -0.2351225044893296
+    },
+    {
+      "name": "B31c_ladder_not_a_class",
+      "statement": "viscosity pulling j_bar down is a geometric class that bounds X",
+      "verdict": "fail",
+      "why": "Dissipation owned the barycenter here. That is a reading, not a type. Do not promote a fall to a class.",
+      "jbar0": 2.5664433170637415,
+      "jbarT": 2.4379095216030513
+    },
+    {
+      "name": "B31d_c_not_integral_max",
+      "statement": "reading c from the vorticity field is an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "A barycenter rate is not \u222b\u2016\u03c9\u2016_\u221e. A missing climb is not the max criterion."
+    },
+    {
+      "name": "B31e_sketch_leftover",
+      "statement": "matching the prescribed-c sketch closes X",
+      "verdict": "open",
+      "why": "The field climb is scored. The leftover close on the climb sketch is B21e. Not a bigger FFT. Do not spawn n=64."
+    },
+    {
+      "name": "B31f_not_a_pde_retune",
+      "statement": "scoring NS climb as not an a priori is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. c is a knob on the estimate: a number you can miss. No Q1. No \u03b5."
     },
     {
       "name": "B_regularity",
@@ -2487,9 +2548,9 @@
     }
   ],
   "counts": {
-    "pass": 47,
-    "fail": 121,
-    "open": 6
+    "pass": 48,
+    "fail": 128,
+    "open": 5
   },
   "how_far": [
     "B1 T2 low-flux identity holds (pass); T2 Lemma 2 stays dropped (fail)",
@@ -2527,7 +2588,7 @@
     "B19 both \u1e8a readable (pass); j*=2 sign mismatch (fail); NS packet is not B9b (fail)",
     "B19c \u03b1_c is not the field cubic (fail); \u03b3 is not NS visc (fail); field glue not an a priori (B19e fail)",
     "B20 c readable on blob and B18 paths (pass); blob t=0 not c\u22658 (fail); path mean not c\u22658 (fail)",
-    "B20c visc is not a ladder on the blob (fail); j_bar offset is not a climb (fail); not an a priori (open)",
+    "B20c visc is not a ladder on the blob (fail); j_bar offset is not a climb (fail); NS climb not an a priori (B20e fail)",
     "B21 ODE and NS readable on the window (pass); c=8 not yet in the viscous room (fail); not the sitting path (fail)",
     "B21c NS \u0394j is not cT (fail); sketch did not sit on this window (fail); not an a priori (open)",
     "B22 longer n=32 readable past room time (pass); not c\u22658 (fail); not a ladder (fail)",
@@ -2547,8 +2608,10 @@
     "B29 clock+full CONC+visc-owned X readable (pass); stay not an a priori (fail); \u03c4_C=T is not a short visit (fail)",
     "B29c CONC occupation is not a live cubic (fail); clock is not \u222b\u2016\u03c9\u2016_\u221e (fail); glue leftover scored (B19e fail); not a PDE retune (fail)",
     "B30 rates+sign mismatch+model-grows/field-falls readable (pass); match not an a priori (fail); shrink \u03b1_c not continuation (fail)",
-    "B30c wrong-sign ODE is not NS (fail); match is not \u222b\u2016\u03c9\u2016_\u221e (fail); climb leftover open (B20e); not a PDE retune (fail)",
+    "B30c wrong-sign ODE is not NS (fail); match is not \u222b\u2016\u03c9\u2016_\u221e (fail); climb leftover scored (B20e fail); not a PDE retune (fail)",
+    "B31 field c+blob miss+path-mean miss readable (pass); field c not an a priori (fail); offset not continuation (fail)",
+    "B31c visc fall is not a class (fail); c is not \u222b\u2016\u03c9\u2016_\u221e (fail); sketch leftover open (B21e); not a PDE retune (fail)",
     "classical regularity remains open"
   ],
-  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }
