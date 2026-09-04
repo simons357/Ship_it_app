@@ -1637,7 +1637,7 @@
       "name": "B18e_field_occ_not_X_a_priori",
       "statement": "field occupation closes a bound for classical X",
       "verdict": "fail",
-      "why": "Scored as B29. Occupation of CONC is not continuation. The clock did not leave. Field-glue leftover is B19e."
+      "why": "Scored as B29. Occupation of CONC is not continuation. The clock did not leave. Field glue is not an a priori (B19e). NS-climb leftover is B20e."
     },
     {
       "name": "B18f_not_a_pde_retune",
@@ -1717,8 +1717,8 @@
     {
       "name": "B19e_field_glue_not_X_a_priori",
       "statement": "matching the sketch to NS \u1e8a closes a bound for classical X",
-      "verdict": "open",
-      "why": "The sketch pointed the wrong way. Retuning \u03b1_c to the leftover is a knob, not continuation. Climb law is scored (B11d fail). Not continuation."
+      "verdict": "fail",
+      "why": "Scored as B30. A wrong-sign sketch is not continuation. The leftover cubic was not the field. NS-climb leftover is B20e."
     },
     {
       "name": "B19f_not_a_pde_retune",
@@ -2116,7 +2116,7 @@
       "name": "B25e_budget_leftover",
       "statement": "the aligned stretching budget closes X",
       "verdict": "fail",
-      "why": "Scored as B15e / B26. A share of (\u03c9\u00b7S\u03c9)_+ is not continuation. Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field-glue leftover is B19e. Do not spawn n=64."
+      "why": "Scored as B15e / B26. A share of (\u03c9\u00b7S\u03c9)_+ is not continuation. Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. Do not spawn n=64."
     },
     {
       "name": "B25f_not_a_pde_retune",
@@ -2206,7 +2206,7 @@
       "name": "B26e_enstrophy_leftover",
       "statement": "the enstrophy balance closes X",
       "verdict": "fail",
-      "why": "Scored as B16e / B27. A cancelled net is not continuation. Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field-glue leftover is B19e. Do not spawn n=64."
+      "why": "Scored as B16e / B27. A cancelled net is not continuation. Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. Do not spawn n=64."
     },
     {
       "name": "B26f_not_a_pde_retune",
@@ -2294,7 +2294,7 @@
       "name": "B27e_coherent_leftover",
       "statement": "the signed-strain blob closes X",
       "verdict": "fail",
-      "why": "Scored as B17e / B28. A one-sided leftover is not continuation. Field occupation is not an a priori (B18e). Field-glue leftover is B19e. Do not spawn n=64."
+      "why": "Scored as B17e / B28. A one-sided leftover is not continuation. Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. Do not spawn n=64."
     },
     {
       "name": "B27f_not_a_pde_retune",
@@ -2342,7 +2342,7 @@
       "name": "B28e_occupation_leftover",
       "statement": "field occupation of CONC closes X",
       "verdict": "fail",
-      "why": "Scored as B18e / B29. A clock that stays CONC is not continuation. Field-glue leftover is B19e. Do not spawn n=64."
+      "why": "Scored as B18e / B29. A clock that stays CONC is not continuation. Field glue is not an a priori (B19e). NS-climb leftover is B20e. Do not spawn n=64."
     },
     {
       "name": "B28f_not_a_pde_retune",
@@ -2415,14 +2415,69 @@
     {
       "name": "B29e_glue_leftover",
       "statement": "matching the two-regime sketch closes X",
-      "verdict": "open",
-      "why": "The clock is scored. The leftover close on field glue is B19e. Not a bigger FFT. Do not spawn n=64."
+      "verdict": "fail",
+      "why": "Scored as B19e / B30. A wrong-sign sketch is not continuation. NS-climb leftover is B20e. Do not spawn n=64."
     },
     {
       "name": "B29f_not_a_pde_retune",
       "statement": "scoring field occupation as not an a priori is a retune of classical Navier\u2013Stokes",
       "verdict": "fail",
       "why": "The PDE is untouched. The clock is a knob on the estimate: a number you can miss. No Q1. No \u03b5."
+    },
+    {
+      "name": "B30_match_readable",
+      "statement": "model versus NS rates, sign mismatch, and model-grows / field-falls are readable together",
+      "verdict": "pass",
+      "why": "Model \u1e8a = +2.25. NS \u1e8a \u2248 \u221222.5. Eight steps: model X grows. NS X falls. Typed c is not written into the PDE.",
+      "Xdot_ns": -22.52231116785621,
+      "Xdot_model": 2.2500000000000053,
+      "dX_ns": -1.0736414393997893,
+      "dX_model": 0.1716498591357114,
+      "sign_match": false
+    },
+    {
+      "name": "B30a_match_not_a_priori",
+      "statement": "matching the two-regime sketch to NS \u1e8a closes a bound for classical X",
+      "verdict": "fail",
+      "why": "The sketch pointed up. The field pointed down. A wrong-sign ODE is not continuation.",
+      "Xdot_ns": -22.52231116785621,
+      "Xdot_model": 2.2500000000000053
+    },
+    {
+      "name": "B30b_shrink_alpha_not_continuation",
+      "statement": "shrinking \u03b1_c until the signs match is a continuation argument for classical X",
+      "verdict": "fail",
+      "why": "Implied \u03b1 sits near 0 on the packet and ~0.006 on the blob. The sketch used 0.4 and 0.2. Detuning \u03b1_c is a knob.",
+      "alpha_ratio": {
+        "packet": 0.000144046309270497,
+        "blob": 0.03243849080653021
+      }
+    },
+    {
+      "name": "B30c_wrong_sign_not_ns",
+      "statement": "a typed ODE that grows while the packet falls is still an NS a priori",
+      "verdict": "fail",
+      "why": "B9b is a typed fat cubic. This field cancelled. Do not sit the sketch as the packet.",
+      "dX_ns": -1.0736414393997893,
+      "dX_model": 0.1716498591357114
+    },
+    {
+      "name": "B30d_match_not_integral_max",
+      "statement": "matching model \u1e8a to NS \u1e8a is an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "A sign of \u1e8a is not \u222b\u2016\u03c9\u2016_\u221e. A sketch that points the wrong way is not the max criterion."
+    },
+    {
+      "name": "B30e_climb_leftover",
+      "statement": "a field climb law closes X",
+      "verdict": "open",
+      "why": "The sketch is scored. The leftover close on NS climb is B20e. Not a bigger FFT. Do not spawn n=64."
+    },
+    {
+      "name": "B30f_not_a_pde_retune",
+      "statement": "scoring field glue as not an a priori is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. \u03b1_c is a knob on the estimate: a number you can miss. No Q1. No \u03b5."
     },
     {
       "name": "B_regularity",
@@ -2432,9 +2487,9 @@
     }
   ],
   "counts": {
-    "pass": 46,
-    "fail": 114,
-    "open": 7
+    "pass": 47,
+    "fail": 121,
+    "open": 6
   },
   "how_far": [
     "B1 T2 low-flux identity holds (pass); T2 Lemma 2 stays dropped (fail)",
@@ -2470,7 +2525,7 @@
     "B18 field clock on a path (pass); paths stay CONC (pass); clock did not save X (fail)",
     "B18c CONC occupation not short (fail); cubic not live in time (fail); field occupation not an a priori (B18e fail)",
     "B19 both \u1e8a readable (pass); j*=2 sign mismatch (fail); NS packet is not B9b (fail)",
-    "B19c \u03b1_c is not the field cubic (fail); \u03b3 is not NS visc (fail); field glue not an a priori (open)",
+    "B19c \u03b1_c is not the field cubic (fail); \u03b3 is not NS visc (fail); field glue not an a priori (B19e fail)",
     "B20 c readable on blob and B18 paths (pass); blob t=0 not c\u22658 (fail); path mean not c\u22658 (fail)",
     "B20c visc is not a ladder on the blob (fail); j_bar offset is not a climb (fail); not an a priori (open)",
     "B21 ODE and NS readable on the window (pass); c=8 not yet in the viscous room (fail); not the sitting path (fail)",
@@ -2490,8 +2545,10 @@
     "B28 blob+one-sided net readable (pass); one-sided leftover not an a priori (fail); sign not a class (fail)",
     "B28c peaked L\u00b2 is not \u222b\u2016\u03c9\u2016_\u221e (fail); \u03bd knob not continuation (fail); occupation leftover scored (B18e fail); not a PDE retune (fail)",
     "B29 clock+full CONC+visc-owned X readable (pass); stay not an a priori (fail); \u03c4_C=T is not a short visit (fail)",
-    "B29c CONC occupation is not a live cubic (fail); clock is not \u222b\u2016\u03c9\u2016_\u221e (fail); glue leftover open (B19e); not a PDE retune (fail)",
+    "B29c CONC occupation is not a live cubic (fail); clock is not \u222b\u2016\u03c9\u2016_\u221e (fail); glue leftover scored (B19e fail); not a PDE retune (fail)",
+    "B30 rates+sign mismatch+model-grows/field-falls readable (pass); match not an a priori (fail); shrink \u03b1_c not continuation (fail)",
+    "B30c wrong-sign ODE is not NS (fail); match is not \u222b\u2016\u03c9\u2016_\u221e (fail); climb leftover open (B20e); not a PDE retune (fail)",
     "classical regularity remains open"
   ],
-  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field-glue leftover is B19e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }
