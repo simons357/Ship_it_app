@@ -2892,6 +2892,53 @@
       "why": "The PDE is untouched. No Q1. No \u03b5. Do not type c=8. Do not spawn n=64."
     },
     {
+      "name": "B39_empty_rename",
+      "statement": "Miller identity \u222b\u03c9\u00b7S\u03c9 = \u22124\u222bdet S holds; det+ is the same cut as \u03bb2+",
+      "verdict": "pass",
+      "why": "Same strain as B15. No new FFT. No n=64. An empty rename is not a new hole. Sit down.",
+      "n": 32,
+      "l2p_mean": 0.49845185324535596,
+      "detp_mean": 0.501548146754644,
+      "gap_mean": 0.009966461784599609,
+      "ident_max": 3.6207404881220405e-15
+    },
+    {
+      "name": "B39a_empty_not_a_priori",
+      "statement": "the Miller identity plus an empty rename is a closed estimate for classical X",
+      "verdict": "fail",
+      "why": "Algebra on the box is not an a priori. The next cut did not move. Sit down."
+    },
+    {
+      "name": "B39b_empty_not_continuation",
+      "statement": "an empty rename makes R integrable and therefore continues X",
+      "verdict": "fail",
+      "why": "A dead cut is not \u222bR < \u221e. A1 and A2 are still the blanks."
+    },
+    {
+      "name": "B39c_empty_not_ns",
+      "statement": "reading det S on the working box is an NS a priori",
+      "verdict": "fail",
+      "why": "A 3\u00d73 determinant of an already-computed strain is a knob on the check."
+    },
+    {
+      "name": "B39d_empty_not_integral_max",
+      "statement": "the empty rename is an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "det S is not \u222b\u2016\u03c9\u2016_\u221e. Beale still asks for the max."
+    },
+    {
+      "name": "B39e_empty_not_regularity",
+      "statement": "sitting down after an empty rename decides classical regularity",
+      "verdict": "fail",
+      "why": "No. Domain B stays open. Do not spawn n=64."
+    },
+    {
+      "name": "B39f_not_a_pde_retune",
+      "statement": "reading det S is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. No Q1. No \u03b5. Do not type c=8. Do not spawn n=64."
+    },
+    {
       "name": "B_regularity",
       "statement": "classical 3D NS is globally regular (keep 1/r^4, no Q1)",
       "verdict": "open",
@@ -2899,8 +2946,8 @@
     }
   ],
   "counts": {
-    "pass": 55,
-    "fail": 174,
+    "pass": 56,
+    "fail": 180,
     "open": 1
   },
   "how_far": [
@@ -2976,7 +3023,9 @@
     "B37c synthetic R is not NS (fail); residual tool is not \u222b\u2016\u03c9\u2016_\u221e (fail); this write does not decide regularity (fail); not a PDE retune (fail)",
     "B38 Miller \u03bb2+ is a different cut from hole 2 (pass); the cut is not a closed estimate (fail); a gap is not integrable R (fail)",
     "B38c reading \u03bb2+ is not NS (fail); Miller cut is not \u222b\u2016\u03c9\u2016_\u221e (fail); this write does not decide regularity (fail); not a PDE retune (fail)",
+    "B39 Miller identity holds; det+ is the same cut as \u03bb2+ (pass); empty rename is not a closed estimate (fail); empty is not integrable R (fail)",
+    "B39c reading det S is not NS (fail); empty rename is not \u222b\u2016\u03c9\u2016_\u221e (fail); sitting down does not decide regularity (fail); not a PDE retune (fail)",
     "classical regularity remains open"
   ],
-  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). The residual tool names the holes in R. Miller \u03bb2+ is a different cut from hole 2. Neither is an a priori. Regularity stays open. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). The residual tool names the holes in R. Miller \u03bb2+ is a different cut from hole 2. det+ is the same cut. Sit down. Neither is an a priori. Regularity stays open. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }
