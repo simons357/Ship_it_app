@@ -218,6 +218,20 @@
         "repo": null
       },
       "notes": "Not found in git — needs URL/repo from Jonathan. Target: dashboard skin on spine."
+    },
+    "arbiter": {
+      "name": "Arbiter",
+      "tier": 2,
+      "status": "live",
+      "keep_cut": null,
+      "host": "base44",
+      "modules": ["auth", "link_resolver"],
+      "urls": {
+        "canonical": "https://arbiter.base44.app/",
+        "hub": "https://primefield.tech/arbiter",
+        "repo": null
+      },
+      "notes": "Chess tournament organizer (players + arbiters). Live Base44 SPA; hub route hollow. Not in git. See docs/products/ARBITER-APP.md. Verify Base44 public permissions before cold-send."
     }
   }
 }

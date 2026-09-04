@@ -23,6 +23,13 @@ class TestSharedCore(unittest.TestCase):
         url = resolve_url("field-lock")
         self.assertEqual(url, "https://field-lock.replit.app/")
 
+    def test_arbiter_prefers_base44_not_hollow_hub(self) -> None:
+        url = resolve_url("arbiter")
+        self.assertEqual(url, "https://arbiter.base44.app/")
+        status = link_status("arbiter")
+        self.assertEqual(status["status"], "live")
+        self.assertTrue(status["safe_for_outreach"])
+
     def test_chatvault_is_not_outreach_safe(self) -> None:
         status = link_status("chatvault")
         self.assertFalse(status["safe_for_outreach"])
