@@ -129,7 +129,7 @@ not done).
 | B20b | B18-path mean \(c\ge 8\) | **fail** | Visc means negative. Euler \(\sim 0\). |
 | B20c | visc on the blob is a ladder | **fail** | \(j_{\mathrm{bar}}\) falls. |
 | B20d | \(j_{\mathrm{bar}}>\text{typed }j_*\) is a climb | **fail** | Static offset, then a fall. |
-| B20e | field climb closes \(X\) | **open** | A reading is not continuation. |
+| B20e | field climb closes \(X\) | **fail** | Missing \(c=8\) \(\neq\) continuation (B31). |
 | B20f | reading \(c\) retunes the PDE | **fail** | Knob on the check. |
 | B21 | ODE and NS readable on the window | **pass** | Same \(T=0.064\). Long ODE still sits. |
 | B21a | \(c=8\) reached the viscous room here | **fail** | \(j\colon 2\to 2.51\). Room is \(j=5\). |
@@ -199,8 +199,15 @@ not done).
 | B30b | shrinking \(\alpha_c\) is continuation | **fail** | Knob on the estimate. |
 | B30c | wrong-sign ODE is an NS a priori | **fail** | B9b is typed, not this field. |
 | B30d | matching \(\dot X\) is \(\int\|\omega\|_\infty\) | **fail** | A sign is not the max. |
-| B30e | a field climb law closes \(X\) | **open** | Leftover B20e. |
+| B30e | a field climb law closes \(X\) | **fail** | Scored as B20e / B31. |
 | B30f | scoring this retunes the PDE | **fail** | Knob on the estimate. |
+| B31 | field \(c\), blob miss, path-mean miss readable | **pass** | Same caches as B20. No new FFT. |
+| B31a | a field climb closes \(X\) | **fail** | The field did not hand us \(c=8\). |
+| B31b | \(j_{\mathrm{bar}}\) offset is continuation | **fail** | Static offset, then a fall. |
+| B31c | visc fall is a class | **fail** | A reading is not a type. |
+| B31d | reading \(c\) is \(\int\|\omega\|_\infty\) | **fail** | A rate is not the max. |
+| B31e | matching the prescribed-\(c\) sketch closes \(X\) | **open** | Leftover B21e. |
+| B31f | scoring this retunes the PDE | **fail** | Knob on the estimate. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -374,7 +381,7 @@ law lives in [`TRACK-B-NS-CLIMB.md`](TRACK-B-NS-CLIMB.md).
 \(c\) readable **pass**. Blob \(t=0\) saving climb **fail**.
 B18-path mean **fail**. Visc as a ladder **fail**.
 \(j_{\mathrm{bar}}\) offset as a climb **fail**. Field climb
-closes \(X\) **open**. Not a PDE retune **fail**.
+closes \(X\) **fail**. Not a PDE retune **fail**.
 
 **B21 / B21a / B21b / B21c / B21d / B21e / B21f.** Climb
 sketch lives in [`TRACK-B-CLIMB-SKETCH.md`](TRACK-B-CLIMB-SKETCH.md).
@@ -449,14 +456,22 @@ glue as an a priori lives in
 Matching the sketch closes \(X\) **fail**. Shrinking
 \(\alpha_c\) is continuation **fail**. Wrong-sign ODE is
 NS **fail**. Match is \(\int\|\omega\|_\infty\) **fail**.
-Climb leftover **open**. Not a PDE retune **fail**.
+Climb leftover **fail**. Not a PDE retune **fail**.
+
+**B31 / B31a / B31b / B31c / B31d / B31e / B31f.** NS
+climb as an a priori lives in
+[`TRACK-B-SAVING.md`](TRACK-B-SAVING.md). Readable **pass**.
+Field climb closes \(X\) **fail**. Offset is continuation
+**fail**. Visc fall is a class **fail**. Reading \(c\) is
+\(\int\|\omega\|_\infty\) **fail**. Sketch leftover **open**.
+Not a PDE retune **fail**.
 
 ---
 
 ## What is still the next write
 
 1. Stretching budget is not an a priori (B15e).
-   Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. Finer (\(n>32\))
+   Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. Finer (\(n>32\))
    stays a box knob (B22e). Do not spawn \(n=64\). B4c
    stands. Angular \(1/r^2\) does not. Do not cancel to
    \(\Phi\). Do not write \(c=8\) into the PDE.
@@ -495,8 +510,9 @@ python3 scripts/track_b_net.py
 python3 scripts/track_b_blob.py
 python3 scripts/track_b_clock.py
 python3 scripts/track_b_match.py
+python3 scripts/track_b_saving.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net tests.test_track_b_blob tests.test_track_b_clock tests.test_track_b_match
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net tests.test_track_b_blob tests.test_track_b_clock tests.test_track_b_match tests.test_track_b_saving
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

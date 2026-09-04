@@ -57,8 +57,9 @@ at \(t=0\) is a climb.” Packet \(j_{\mathrm{bar}}\approx 2.97\)
 versus typed \(2\) is a static offset. Then \(j_{\mathrm{bar}}\)
 falls. Do not call B19’s scale-reading a free B11c.
 
-**B20e, open.** A field climb at this box is not
-continuation. Finer/longer is B13e.
+**B20e, fail** of “a field climb closes \(X\).”
+Scored as B31. The field did not hand us \(c=8\).
+A missing saving rate is not continuation.
 
 **B20f, fail** of “this retunes the PDE.” \(c\) is a
 knob on the estimate.
@@ -103,11 +104,9 @@ The saving-rate slogan missed.
 A rate you typed is not a rate the metric produced.
 
 **Operator.** NS climb law is scored. B11d is scored.
-Climb and DNS knobs at \(n=32\) are scored. Finer is B22e.
-DNS is not an a priori (B13f). Longer n=32 past
-the ODE room time did not produce \(c=8\) (B13e).
-Finer stays a box knob (B22e). B4c stands.
+B20e is scored. Next: climb sketch (B21e). Finer is B22e.
 Do not write \(c=8\) into the PDE. Do not spawn \(n=64\).
+B4c stands. Do not cancel to \(\Phi\).
 
 ---
 
@@ -121,9 +120,9 @@ Do not write \(c=8\) into the PDE. Do not spawn \(n=64\).
 | B20b | **fail** | B18-path mean \(c\ge 8\) |
 | B20c | **fail** | visc on the blob is a ladder |
 | B20d | **fail** | \(j_{\mathrm{bar}}>\text{typed }j_*\) is a climb |
-| B20e | **open** | field climb closes \(X\) |
+| B20e | **fail** | field climb closes \(X\) |
 | B20f | **fail** | this retunes the PDE |
-| domain B | **open** | finer (\(n>32\)) is a box knob (B22e) |
+| domain B | **open** | climb-sketch leftover is B21e |
 
 Tesla’s line: \(c\) the field makes. It did not give
 you \(c=8\).

@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "NS climb as an a priori",
+    "tuning_the_pde": false,
+    "tesla": "exacting, not a jerk. c the field makes, not a c we type. It did not give you c=8.",
+    "domain_verdict": "open",
+    "c_save": 8.0
+  },
+  "lemmas": [
+    {
+      "name": "B31_saving_readable",
+      "statement": "field c, blob t=0 miss, and path-mean miss are readable together",
+      "verdict": "pass",
+      "why": "Viscous t=0 c \u2248 \u22122. Path means stay negative. Typed c is not written into the PDE.",
+      "t0_visc_c": -2.015490776083494,
+      "t0_euler_c": 0.02429223051349373,
+      "c_mean_visc": {
+        "packet": -0.2351225044893296,
+        "blob": -2.0083405540732846
+      },
+      "c_mean_euler": {
+        "packet": 0.00013786872866961009,
+        "blob": 0.025964718137351517
+      },
+      "c_save": 8.0
+    },
+    {
+      "name": "B31a_field_c_not_a_priori",
+      "statement": "a field climb at this box closes a bound for classical X",
+      "verdict": "fail",
+      "why": "The field did not hand us c=8. A missing saving rate is not continuation.",
+      "c_mean_visc": {
+        "packet": -0.2351225044893296,
+        "blob": -2.0083405540732846
+      }
+    },
+    {
+      "name": "B31b_offset_not_continuation",
+      "statement": "j_bar > typed j* at t=0 is a continuation argument for classical X",
+      "verdict": "fail",
+      "why": "Packet j_bar \u2248 2.97 versus typed 2 is a static offset. Then j_bar falls. Do not substitute a reading for B11c.",
+      "offset": 0.9706581534824363,
+      "c_mean_visc": -0.2351225044893296
+    },
+    {
+      "name": "B31c_ladder_not_a_class",
+      "statement": "viscosity pulling j_bar down is a geometric class that bounds X",
+      "verdict": "fail",
+      "why": "Dissipation owned the barycenter here. That is a reading, not a type. Do not promote a fall to a class.",
+      "jbar0": 2.5664433170637415,
+      "jbarT": 2.4379095216030513
+    },
+    {
+      "name": "B31d_c_not_integral_max",
+      "statement": "reading c from the vorticity field is an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "A barycenter rate is not \u222b\u2016\u03c9\u2016_\u221e. A missing climb is not the max criterion."
+    },
+    {
+      "name": "B31e_sketch_leftover",
+      "statement": "matching the prescribed-c sketch closes X",
+      "verdict": "open",
+      "why": "The field climb is scored. The leftover close on the climb sketch is B21e. Not a bigger FFT. Do not spawn n=64."
+    },
+    {
+      "name": "B31f_not_a_pde_retune",
+      "statement": "scoring NS climb as not an a priori is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. c is a knob on the estimate: a number you can miss. No Q1. No \u03b5."
+    }
+  ],
+  "counts": {
+    "pass": 1,
+    "fail": 5,
+    "open": 1
+  },
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+}

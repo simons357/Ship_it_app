@@ -93,7 +93,7 @@ A leftover is not a closed estimate.
 
 **Operator.** The blob is scored. B17e is scored.
 Field occupation is not an a priori (B18e).
-Field glue is not an a priori (B19e). Next: NS climb (B20e). Finer stays B22e.
+Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Next: climb sketch (B21e). Finer stays B22e.
 Do not spawn \(n=64\). B4c stands. Do not cancel
 to \(\Phi\).
 
@@ -112,7 +112,7 @@ to \(\Phi\).
 | B28d | **fail** | turning \(\nu\) down is continuation |
 | B28e | **fail** | field occupation closes \(X\) |
 | B28f | **fail** | this retunes the PDE |
-| domain B | **open** | NS-climb leftover is B20e |
+| domain B | **open** | climb-sketch leftover is B21e |
 
 Tesla’s line: one-sided is a number. Large versus
 \(D\) is a different number. A leftover that no

@@ -160,7 +160,7 @@ Domain B **never** passes regularity. `check B` stays
 | B19f | this retunes the PDE | **fail** |
 | B20 | \(c\) readable on blob and paths | **pass** |
 | B20a / B20b / B20c / B20d | blob \(t=0\) \(c\ge 8\); path mean \(c\ge 8\); visc ladder; offset is a climb | **fail** |
-| B20e | field climb closes \(X\) | **open** |
+| B20e | field climb closes \(X\) | **fail** |
 | B20f | this retunes the PDE | **fail** |
 | B21 | ODE and NS readable on the window | **pass** |
 | B21a / B21b / B21c / B21d | room on this window; sitting path is NS; \(\Delta j=cT\); sketch sits here | **fail** |
@@ -200,12 +200,16 @@ Domain B **never** passes regularity. `check B` stays
 | B29f | this retunes the PDE | **fail** |
 | B30 | rates, sign mismatch, model-grows / field-falls readable | **pass** |
 | B30a / B30b / B30c / B30d | match closes \(X\); shrinking \(\alpha_c\) is continuation; wrong-sign ODE is NS; match is \(\int\|\omega\|_\infty\) | **fail** |
-| B30e | a field climb law closes \(X\) | **open** |
+| B30e | a field climb law closes \(X\) | **fail** |
 | B30f | this retunes the PDE | **fail** |
+| B31 | field \(c\), blob miss, path-mean miss readable | **pass** |
+| B31a / B31b / B31c / B31d | field climb closes \(X\); offset is continuation; visc fall is a class; reading \(c\) is \(\int\|\omega\|_\infty\) | **fail** |
+| B31e | matching the prescribed-\(c\) sketch closes \(X\) | **open** |
+| B31f | this retunes the PDE | **fail** |
 | classical regularity | — | **open** |
 
 **Next B write:** Stretching budget is not an a priori
-(B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. Finer
+(B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.
 Angular \(1/r^2\) does not. We are not tuning the
 equation. Do not spawn \(n=64\).

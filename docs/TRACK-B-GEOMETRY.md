@@ -90,7 +90,7 @@ of \(E_c\) is not \(\|\omega\|_\infty\in L^1\).
 
 **Operator.** Geometry is scored. B14d is scored.
 The budget is scored (B15e). The net is scored
-(B16e). The blob is scored (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). Next: NS climb (B20e). Alignment is a conditional, not
+(B16e). The blob is scored (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Next: climb sketch (B21e). Alignment is a conditional, not
 a close.
 
 ---
@@ -105,7 +105,7 @@ a close.
 | B14c | **pass** | CF conditional: small \(\lvert\cos\alpha_3\rvert\) stretches less |
 | B14d | **fail** | geometry closes \(X\) |
 | B14e | **fail** | this retunes the PDE |
-| domain B | **open** | NS-climb leftover is B20e |
+| domain B | **open** | climb-sketch leftover is B21e |
 
 Tesla’s line: alignment is a number. If you cannot miss
 it, it is a paragraph.

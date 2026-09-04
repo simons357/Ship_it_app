@@ -100,7 +100,7 @@ A tube budget is not a closed estimate.
 
 **Operator.** Tube is scored. B5f is scored. Geometry
 is scored (B14d). The budget is scored (B15e). The
-net is scored (B16e). The blob is scored (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). Next: NS climb (B20e).
+net is scored (B16e). The blob is scored (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Next: climb sketch (B21e).
 Finer stays B22e. Do not spawn \(n=64\). B4c stands.
 Do not cancel to \(\Phi\).
 
@@ -118,7 +118,7 @@ Do not cancel to \(\Phi\).
 | B24d | **fail** | revive Hardy or cancel to \(\Phi\) |
 | B24e | **fail** | packet geometry closes \(X\) |
 | B24f | **fail** | this retunes the PDE |
-| domain B | **open** | NS-climb leftover is B20e |
+| domain B | **open** | climb-sketch leftover is B21e |
 
 Tesla’s line: you asked the tube. Full \(D\) budgets
 the packet. Angular loses. Neither reading is a bound.

@@ -24,7 +24,7 @@ class TrackBNsClimbTests(unittest.TestCase):
         self.assertEqual(by["B20b_paths_not_saving"]["verdict"], "fail")
         self.assertEqual(by["B20c_blob_visc_not_ladder"]["verdict"], "fail")
         self.assertEqual(by["B20d_offset_not_climb"]["verdict"], "fail")
-        self.assertEqual(by["B20e_ns_climb_not_X_a_priori"]["verdict"], "open")
+        self.assertEqual(by["B20e_ns_climb_not_X_a_priori"]["verdict"], "fail")
         self.assertEqual(by["B20f_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
@@ -42,6 +42,8 @@ class TrackBNsClimbTests(unittest.TestCase):
         self.assertGreaterEqual(by["B20d_offset_not_climb"]["offset"], OFFSET_MIN)
         self.assertLess(by["B20d_offset_not_climb"]["c_mean_visc"], 0.0)
         self.assertIn("B14d", payload["next_da_move"])
+        self.assertIn("B20e", payload["next_da_move"])
+        self.assertIn("B21e", payload["next_da_move"])
 
     def test_writeup_exists(self):
         self.assertTrue((ROOT / "docs" / "TRACK-B-NS-CLIMB.md").is_file())

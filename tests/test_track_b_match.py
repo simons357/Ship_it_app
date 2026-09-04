@@ -24,7 +24,7 @@ class TrackBMatchTests(unittest.TestCase):
         self.assertEqual(by["B30b_shrink_alpha_not_continuation"]["verdict"], "fail")
         self.assertEqual(by["B30c_wrong_sign_not_ns"]["verdict"], "fail")
         self.assertEqual(by["B30d_match_not_integral_max"]["verdict"], "fail")
-        self.assertEqual(by["B30e_climb_leftover"]["verdict"], "open")
+        self.assertEqual(by["B30e_climb_leftover"]["verdict"], "fail")
         self.assertEqual(by["B30f_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
@@ -35,6 +35,7 @@ class TrackBMatchTests(unittest.TestCase):
         self.assertLess(by["B30_match_readable"]["dX_ns"], 0.0)
         for name in ("packet", "blob"):
             self.assertLess(by["B30b_shrink_alpha_not_continuation"]["alpha_ratio"][name], ALPHA_RATIO_MAX)
+        self.assertIn("B21e", payload["next_da_move"])
         self.assertIn("B20e", payload["next_da_move"])
         self.assertIn("B19e", payload["next_da_move"])
         self.assertIn("B18e", payload["next_da_move"])

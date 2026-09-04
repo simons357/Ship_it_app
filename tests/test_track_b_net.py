@@ -34,6 +34,7 @@ class TrackBNetTests(unittest.TestCase):
             self.assertLess(c, CANCEL_MAX)
         for xd in by["B27_net_readable"]["Xdot"]:
             self.assertLess(xd, 0.0)
+        self.assertIn("B21e", payload["next_da_move"])
         self.assertIn("B20e", payload["next_da_move"])
         self.assertIn("B19e", payload["next_da_move"])
         self.assertIn("B18e", payload["next_da_move"])

@@ -209,7 +209,7 @@ def lemma_field_occ_not_close() -> dict:
         "B18e_field_occ_not_X_a_priori",
         "field occupation closes a bound for classical X",
         "fail",
-        "Scored as B29. Occupation of CONC is not continuation. The clock did not leave. Field glue is not an a priori (B19e). NS-climb leftover is B20e.",
+        "Scored as B29. Occupation of CONC is not continuation. The clock did not leave. Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e.",
     )
 
 
@@ -253,7 +253,7 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. "
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),

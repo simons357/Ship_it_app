@@ -172,6 +172,9 @@ class DaMachineTests(unittest.TestCase):
         match = classify_claim("matching the sketch as an a priori bound for vorticity")
         self.assertEqual(match["domain"], "B")
         self.assertEqual(match["verdict"], "open")
+        sav = classify_claim("saving climb as an a priori bound for vorticity")
+        self.assertEqual(sav["domain"], "B")
+        self.assertEqual(sav["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

@@ -45,8 +45,9 @@ fat cubic. This field cancelled.
 bound on the max vorticity.” A sign of \(\dot X\) is
 not \(\int\|\omega\|_\infty\).
 
-**B30e, open.** NS-climb leftover is B20e. The field
-did not hand us \(c=8\). Not a bigger FFT.
+**B30e, fail** of “a field climb law closes \(X\).”
+Scored as B20e / B31. A missing saving rate is not
+continuation.
 
 **B30f, fail** of “this retunes the PDE.” \(\alpha_c\)
 is a knob on the estimate.
@@ -89,7 +90,7 @@ slogan missed.
 The ODE stayed a model.
 
 **Operator.** The match is scored. B19e is scored.
-Next: NS climb (B20e). Finer stays B22e. Do not
+NS climb is not an a priori (B20e). Next: climb sketch (B21e). Finer stays B22e. Do not
 spawn \(n=64\). B4c stands. Do not cancel to \(\Phi\).
 
 ---
@@ -105,9 +106,9 @@ spawn \(n=64\). B4c stands. Do not cancel to \(\Phi\).
 | B30b | **fail** | shrinking \(\alpha_c\) is continuation |
 | B30c | **fail** | wrong-sign ODE is an NS a priori |
 | B30d | **fail** | matching \(\dot X\) is \(\int\|\omega\|_\infty\) |
-| B30e | **open** | a field climb law closes \(X\) |
+| B30e | **fail** | a field climb law closes \(X\) |
 | B30f | **fail** | this retunes the PDE |
-| domain B | **open** | NS-climb leftover is B20e |
+| domain B | **open** | climb-sketch leftover is B21e |
 
 Tesla’s line: the \(j_*=2\) sketch grows. The NS
 packet falls. Sign of \(\dot X\) is the knob.

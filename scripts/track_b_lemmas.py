@@ -1289,6 +1289,48 @@ def lemma_match_priori_not_a_retune() -> dict:
     return mpnr()
 
 
+def lemma_saving_priori_readable() -> dict:
+    from track_b_saving import lemma_saving_priori_readable as spr
+
+    return spr()
+
+
+def lemma_field_c_not_a_priori() -> dict:
+    from track_b_saving import lemma_field_c_not_a_priori as fcna
+
+    return fcna()
+
+
+def lemma_offset_not_continuation() -> dict:
+    from track_b_saving import lemma_offset_not_continuation as onc
+
+    return onc()
+
+
+def lemma_ladder_not_a_class() -> dict:
+    from track_b_saving import lemma_ladder_not_a_class as lnc
+
+    return lnc()
+
+
+def lemma_c_not_integral_max() -> dict:
+    from track_b_saving import lemma_c_not_integral_max as cnim
+
+    return cnim()
+
+
+def lemma_sketch_leftover() -> dict:
+    from track_b_saving import lemma_sketch_leftover as sl
+
+    return sl()
+
+
+def lemma_saving_priori_not_a_retune() -> dict:
+    from track_b_saving import lemma_saving_priori_not_a_retune as spnr
+
+    return spnr()
+
+
 def lemma_coherent_field() -> dict:
     from track_b_coherent import lemma_coherent_field as coh
 
@@ -1524,6 +1566,13 @@ def run(out: Path | None = None) -> dict:
         lemma_match_not_integral_max(),
         lemma_climb_leftover(),
         lemma_match_priori_not_a_retune(),
+        lemma_saving_priori_readable(),
+        lemma_field_c_not_a_priori(),
+        lemma_offset_not_continuation(),
+        lemma_ladder_not_a_class(),
+        lemma_c_not_integral_max(),
+        lemma_sketch_leftover(),
+        lemma_saving_priori_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -1577,7 +1626,7 @@ def run(out: Path | None = None) -> dict:
             "B19 both Ẋ readable (pass); j*=2 sign mismatch (fail); NS packet is not B9b (fail)",
             "B19c α_c is not the field cubic (fail); γ is not NS visc (fail); field glue not an a priori (B19e fail)",
             "B20 c readable on blob and B18 paths (pass); blob t=0 not c≥8 (fail); path mean not c≥8 (fail)",
-            "B20c visc is not a ladder on the blob (fail); j_bar offset is not a climb (fail); not an a priori (open)",
+            "B20c visc is not a ladder on the blob (fail); j_bar offset is not a climb (fail); NS climb not an a priori (B20e fail)",
             "B21 ODE and NS readable on the window (pass); c=8 not yet in the viscous room (fail); not the sitting path (fail)",
             "B21c NS Δj is not cT (fail); sketch did not sit on this window (fail); not an a priori (open)",
             "B22 longer n=32 readable past room time (pass); not c≥8 (fail); not a ladder (fail)",
@@ -1597,11 +1646,13 @@ def run(out: Path | None = None) -> dict:
             "B29 clock+full CONC+visc-owned X readable (pass); stay not an a priori (fail); τ_C=T is not a short visit (fail)",
             "B29c CONC occupation is not a live cubic (fail); clock is not ∫‖ω‖_∞ (fail); glue leftover scored (B19e fail); not a PDE retune (fail)",
             "B30 rates+sign mismatch+model-grows/field-falls readable (pass); match not an a priori (fail); shrink α_c not continuation (fail)",
-            "B30c wrong-sign ODE is not NS (fail); match is not ∫‖ω‖_∞ (fail); climb leftover open (B20e); not a PDE retune (fail)",
+            "B30c wrong-sign ODE is not NS (fail); match is not ∫‖ω‖_∞ (fail); climb leftover scored (B20e fail); not a PDE retune (fail)",
+            "B31 field c+blob miss+path-mean miss readable (pass); field c not an a priori (fail); offset not continuation (fail)",
+            "B31c visc fall is not a class (fail); c is not ∫‖ω‖_∞ (fail); sketch leftover open (B21e); not a PDE retune (fail)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS-climb leftover is B20e. "
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),
