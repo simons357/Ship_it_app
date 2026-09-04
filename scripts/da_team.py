@@ -134,7 +134,7 @@ def consensus() -> dict:
     return {
         "not_a_vote": True,
         "not_a_close": True,
-        "B": "B4c budgets I_tube on CONC; energy-class T on SPREAD; B8 clock. Glue sketch is written. Frozen low-j has an energy ceiling. Climbing: slow dies, fast sits. t=0 field does not produce c=8. Evolved cascade is the live cubic. Regularity stays open.",
+        "B": "B4c budgets I_tube on CONC; energy-class T on SPREAD; B8 clock. Glue sketch is written. Frozen low-j has an energy ceiling. Climbing: slow dies, fast sits. t=0 and short n=32 do not produce c=8. Live: B5b or a finer box. Regularity stays open.",
         "A": "Leave Ladyzhenskaya on A.",
         "U": "Stop breaking L_SM. Keep Einstein + T_SM. Produce lives outside the poster.",
         "Q": "Stay arithmetic. No Bridge* → SND.",

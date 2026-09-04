@@ -33,7 +33,7 @@ chair.
 
 ## What they say in common (not a close)
 
-- **B:** B4c on CONC, energy-class \(T\) on SPREAD, B8 clock. Glue sketch written. Frozen low-\(j_*\) has an energy ceiling. Climbing: slow dies, fast sits. The field at \(t=0\) does not produce \(c=8\). The live cubic is a short evolution. The PDE is not being tuned. Regularity stays open.
+- **B:** B4c on CONC, energy-class \(T\) on SPREAD, B8 clock. Glue sketch written. Frozen low-\(j_*\) has an energy ceiling. Climbing: slow dies, fast sits. \(t=0\) and short \(n=32\) do not produce \(c=8\). Live: B5b or a finer box. The PDE is not being tuned. Regularity stays open.
 - **A:** Leave Ladyzhenskaya on A.
 - **U:** Stop breaking \(\mathcal{L}_{\mathrm{SM}}\). Keep Einstein \(+T_{\mathrm{SM}}\). Produce lives outside the poster.
 - **Q:** Arithmetic only. No Bridge* \(\to\) SND.

@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "short CONC evolution",
+    "tuning_the_pde": false,
+    "stopped_at_t0": false,
+    "tesla": "exacting, not a jerk. Let the field run. It still did not give you c=8.",
+    "domain_verdict": "open"
+  },
+  "lemmas": [
+    {
+      "name": "B13_short_run",
+      "statement": "a short classical IF-RK2 step of a CONC packet stays finite; viscous X does not grow",
+      "verdict": "pass",
+      "why": "We did not stop at t=0. The field ran. Tesla: that is the next knob.",
+      "visc": {
+        "n": 32,
+        "jstar0": 2,
+        "nu": 0.1,
+        "T": 0.064,
+        "steps": 8,
+        "start": {
+          "jbar": 2.9706581534824363,
+          "jstar": 3,
+          "sigma": 1.0,
+          "above": 0.0,
+          "X": 2.5
+        },
+        "end": {
+          "jbar": 2.9556103131951192,
+          "jstar": 3,
+          "sigma": 0.9999999995440866,
+          "above": 5.086516024774471e-06,
+          "X": 1.4263585606002107
+        },
+        "c_mean": -0.2351225044893296,
+        "X_grew": false,
+        "finite": true
+      },
+      "euler": {
+        "n": 32,
+        "jstar0": 2,
+        "nu": 0.0,
+        "T": 0.064,
+        "steps": 8,
+        "start": {
+          "jbar": 2.9706581534824363,
+          "jstar": 3,
+          "sigma": 1.0,
+          "above": 0.0,
+          "X": 2.5
+        },
+        "end": {
+          "jbar": 2.970666977081071,
+          "jstar": 3,
+          "sigma": 0.9999999995961472,
+          "above": 1.0593526707972168e-05,
+          "X": 2.4999558235754344
+        },
+        "c_mean": 0.00013786872866961009,
+        "X_grew": false,
+        "finite": true
+      }
+    },
+    {
+      "name": "B13a_no_saving_climb",
+      "statement": "a short evolution produces mean c \u2265 8 on a CONC packet",
+      "verdict": "fail",
+      "why": "Viscous c_mean is negative. Euler is ~0. Letting it run did not hand us B11c.",
+      "c_save": 8.0,
+      "visc_c": -0.2351225044893296,
+      "euler_c": 0.00013786872866961009
+    },
+    {
+      "name": "B13b_no_high_fill",
+      "statement": "a short run fills resolved shells above the original triad",
+      "verdict": "fail",
+      "why": "Resolved mass above j*+1 stays ~0. n=32 dealias cannot host a fat j=4. Still a reading.",
+      "visc_above": 5.086516024774471e-06,
+      "euler_above": 1.0593526707972168e-05
+    },
+    {
+      "name": "B13c_stays_conc",
+      "statement": "the short viscous run stays 3-CONC",
+      "verdict": "pass",
+      "why": "The clock did not sneak into SPREAD. They stayed concentrated and still did not climb.",
+      "sigma_end": 0.9999999995440866
+    },
+    {
+      "name": "B13d_visc_still_down",
+      "statement": "a short viscous evolution is a ladder for j_bar",
+      "verdict": "fail",
+      "why": "Along the trajectory, j_bar falls. Same direction as the t=0 RHS.",
+      "jbar0": 2.9706581534824363,
+      "jbarT": 2.9556103131951192
+    },
+    {
+      "name": "B13e_finer_longer_open",
+      "statement": "a finer / longer run produces a saving climb",
+      "verdict": "open",
+      "why": "n=32, T~0.06 is a short resolved reading. Unresolved shells and longer time are another check, not a stop forever."
+    },
+    {
+      "name": "B13f_evolve_not_X_a_priori",
+      "statement": "a short packet run is a closed a priori bound for classical X",
+      "verdict": "open",
+      "why": "A few IF-RK2 steps are not continuation. Do not sit DNS-did-not-climb as regularity."
+    }
+  ],
+  "counts": {
+    "pass": 2,
+    "fail": 3,
+    "open": 2
+  },
+  "next_da_move": "B5b: angular viscosity vs I_tube at \u03b4 ~ 2^{-j*}. Or a finer packet box (B13e). Short n=32 is not a forever stop."
+}

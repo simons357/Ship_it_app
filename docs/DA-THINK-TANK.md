@@ -96,7 +96,7 @@ Forbidden auto-fails: solved NS, full Q floor, Biot–Savart depletion, BKM-from
 
 August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ3 / SPREAD.
 
-**Next B write:** evolve a CONC packet a short time (B12d). The field at \(t=0\) did not hand us \(c=8\). The PDE is not being tuned. Regularity stays open.
+**Next B write:** B5b (viscosity vs \(I_{\mathrm{tube}}\)), or a finer packet box (B13e). The PDE is not being tuned. Regularity stays open.
 
 ### How the conversation moved
 
@@ -145,6 +145,8 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 22. **Climbing CONC.** Increments add **pass**. Bounded \(j_*\) bounds \(X\) **pass**. Slow climb **fail**. Fast climb sits **pass**. NS climb law **open**. Sketch \(\neq\) a priori **open**. Knob: \(c=\mathrm{d}j_*/\mathrm{d}t\). [`docs/TRACK-B-CLIMB.md`](TRACK-B-CLIMB.md).
 
 23. **Field climb.** Barycenter **pass**. \(c\) from RHS **pass**. \(t=0\) saving climb **fail**. Viscosity as a ladder **fail**. Evolved cascade **open**. [`docs/TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md).
+
+24. **Short evolution.** Run finite **pass**. Saving climb **fail**. High fill **fail**. Stays CONC **pass**. Evolution as a ladder **fail**. Finer/longer **open**. [`docs/TRACK-B-EVOLVE.md`](TRACK-B-EVOLVE.md).
 
 ---
 

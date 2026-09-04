@@ -80,7 +80,9 @@ in \(L^\infty\).
 You read it. You did not retune it.
 
 **Operator.** The field did not hand us the saving
-climb at \(t=0\). Next: let it run a short time.
+climb at \(t=0\). A short run is written in
+[`TRACK-B-EVOLVE.md`](TRACK-B-EVOLVE.md). Still no
+saving climb on \(n=32\).
 
 ---
 
@@ -94,6 +96,6 @@ climb at \(t=0\). Next: let it run a short time.
 | B12c | **fail** | viscosity forces an upward climb |
 | B12d | **open** | a short evolution produces a saving climb |
 | B12e | **open** | \(t=0\) drift is an NS a priori |
-| domain B | **open** | evolve the packet |
+| domain B | **open** | B5b or a finer box |
 
 Tesla’s line: ask the field. Do not type the answer.

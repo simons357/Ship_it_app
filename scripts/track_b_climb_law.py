@@ -146,7 +146,7 @@ def lemma_evolved_cascade_open() -> dict:
         "B12d_evolved_cascade_open",
         "a short NS evolution of a CONC packet produces a saving climb",
         "open",
-        "t=0 is instantaneous. Nonlinearity can fill higher shells later. That run is not this write.",
+        "t=0 is instantaneous. Short evolution is written as B13: still no saving climb on n=32. Finer/longer is B13e.",
     )
 
 
@@ -183,8 +183,7 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Evolve a CONC packet a short time (B12d). "
-            "Instantaneous t=0 is not a cascade. Tesla: let the field run."
+            "Short evolution is written (B13). Next: B5b or a finer box (B13e)."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_climb_law.json")

@@ -65,8 +65,15 @@ class TrackBLemmaTests(unittest.TestCase):
         self.assertEqual(by["B12c_visc_pulls_down"]["verdict"], "fail")
         self.assertEqual(by["B12d_evolved_cascade_open"]["verdict"], "open")
         self.assertEqual(by["B12e_law_not_X_a_priori"]["verdict"], "open")
+        self.assertEqual(by["B13_short_run"]["verdict"], "pass")
+        self.assertEqual(by["B13a_no_saving_climb"]["verdict"], "fail")
+        self.assertEqual(by["B13b_no_high_fill"]["verdict"], "fail")
+        self.assertEqual(by["B13c_stays_conc"]["verdict"], "pass")
+        self.assertEqual(by["B13d_visc_still_down"]["verdict"], "fail")
+        self.assertEqual(by["B13e_finer_longer_open"]["verdict"], "open")
+        self.assertEqual(by["B13f_evolve_not_X_a_priori"]["verdict"], "open")
         self.assertEqual(by["B_regularity"]["verdict"], "open")
-        self.assertIn("B12d", payload["next_da_move"])
+        self.assertTrue("B5b" in payload["next_da_move"] or "B13e" in payload["next_da_move"])
         self.assertLess(by["B1_t2_low_flux"]["rel_residual"], 1e-10)
 
     def test_no_regularity_pass_in_the_list(self):

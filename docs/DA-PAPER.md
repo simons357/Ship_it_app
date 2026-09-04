@@ -224,11 +224,14 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B12 / B12a barycenter; \(c\) from RHS | pass |
 | B12b \(t=0\) packets produce \(c\ge 8\) | **fail** |
 | B12c viscosity is a ladder | **fail** |
-| B12d evolved cascade | **open** |
+| B12d evolved cascade | **open** (B13) |
+| B13 / B13c short run; stays CONC | pass |
+| B13a / B13b / B13d no saving climb; no high fill; not a ladder | **fail** |
+| B13e finer / longer | **open** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Next write: evolve a CONC packet a short time (B12d). The field at \(t=0\) did not hand us \(c=8\). The PDE is not being tuned.
+Next write: B5b (viscosity vs \(I_{\mathrm{tube}}\)), or a finer packet box. The PDE is not being tuned.
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 
@@ -272,11 +275,11 @@ The operator atlas is `docs/DA-DESK.md`. The machine note is `docs/DOMAIN-ARCHIT
 
 ## 9. Conclusion
 
-DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is a short evolution of a CONC packet.
+DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is B5b or a finer packet box.
 
 The think tank is three benches and a corpus rule. The processes are classify, check, falsify, reconstruct, ablate, pipe, compute, and alert. The purpose is to keep the operator honest while ordinary AI proposes.
 
-That is the paper. The next page of mathematics is whether a cascade appears after \(t=0\). The PDE stays classical.
+That is the paper. The next page of mathematics is either the tube viscosity or a bigger box. The PDE stays classical.
 
 ---
 

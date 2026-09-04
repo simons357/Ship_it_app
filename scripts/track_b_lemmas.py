@@ -554,6 +554,48 @@ def lemma_law_not_a_priori() -> dict:
     return law_ap()
 
 
+def lemma_short_run() -> dict:
+    from track_b_evolve import lemma_run_completes
+
+    return lemma_run_completes()
+
+
+def lemma_evolve_no_saving() -> dict:
+    from track_b_evolve import lemma_no_saving_climb
+
+    return lemma_no_saving_climb()
+
+
+def lemma_evolve_no_high() -> dict:
+    from track_b_evolve import lemma_no_high_fill
+
+    return lemma_no_high_fill()
+
+
+def lemma_evolve_stays_conc() -> dict:
+    from track_b_evolve import lemma_stays_conc
+
+    return lemma_stays_conc()
+
+
+def lemma_evolve_visc_down() -> dict:
+    from track_b_evolve import lemma_visc_still_down
+
+    return lemma_visc_still_down()
+
+
+def lemma_finer_open() -> dict:
+    from track_b_evolve import lemma_finer_open as finer
+
+    return finer()
+
+
+def lemma_evolve_not_a_priori() -> dict:
+    from track_b_evolve import lemma_evolve_not_a_priori as ev_ap
+
+    return ev_ap()
+
+
 def lemma_regularity() -> dict:
     return rec(
         "B_regularity",
@@ -617,6 +659,13 @@ def run(out: Path | None = None) -> dict:
         lemma_visc_pulls_down(),
         lemma_evolved_cascade(),
         lemma_law_not_a_priori(),
+        lemma_short_run(),
+        lemma_evolve_no_saving(),
+        lemma_evolve_no_high(),
+        lemma_evolve_stays_conc(),
+        lemma_evolve_visc_down(),
+        lemma_finer_open(),
+        lemma_evolve_not_a_priori(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -654,11 +703,13 @@ def run(out: Path | None = None) -> dict:
             "B11c fast climb sits (pass); NS climb law open (B11d); sketch is not an a priori (B11e)",
             "B12 barycenter + c from RHS (pass); t=0 packets do not produce c≥8 (fail)",
             "B12c viscosity pulls j_bar down (fail); evolved cascade open (B12d)",
+            "B13 short run finite (pass); no saving climb (fail); no high fill (fail); stays CONC (pass)",
+            "B13d visc still pulls down (fail); finer/longer open (B13e); not an a priori (B13f)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Evolve a CONC packet a short time (B12d). "
-            "t=0 is not a cascade. Tesla: let the field run."
+            "B5b: angular viscosity vs I_tube at δ ~ 2^{-j*}. "
+            "Or a finer packet box (B13e). Tesla: the tube is still a knob."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

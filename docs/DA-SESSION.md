@@ -358,10 +358,10 @@ again.
 
 They did the tube, the low Bony \(T\), the occupation
 clock, the two-regime glue, the energy ceiling, climbing
-CONC, and the field climb. Slow climb dies, fast climb
-sits. The field at \(t=0\) does not hand us \(c=8\).
-Viscosity pulls the barycenter down. Next: evolve a
-packet. See [`TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md).
+CONC, the field climb, and a short evolution. The field
+at \(t=0\) and after a short \(n=32\) run does not hand
+us \(c=8\). Next: B5b or a finer box.
+See [`TRACK-B-EVOLVE.md`](TRACK-B-EVOLVE.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

@@ -1,2 +1,2 @@
 DA checked. Nothing significant flipped.
-Next: evolve a CONC packet a short time (B12d). t=0 did not produce the saving climb.
+Next: B5b (viscosity vs I_tube) or a finer packet box (B13e). Short n=32 did not climb.

@@ -941,13 +941,111 @@
       "name": "B12d_evolved_cascade_open",
       "statement": "a short NS evolution of a CONC packet produces a saving climb",
       "verdict": "open",
-      "why": "t=0 is instantaneous. Nonlinearity can fill higher shells later. That run is not this write."
+      "why": "t=0 is instantaneous. Short evolution is written as B13: still no saving climb on n=32. Finer/longer is B13e."
     },
     {
       "name": "B12e_law_not_X_a_priori",
       "statement": "the instantaneous field drift is a closed climb law for classical X",
       "verdict": "open",
       "why": "A t=0 reading is not a law along a trajectory. Do not sit it as dj*/dt on NS."
+    },
+    {
+      "name": "B13_short_run",
+      "statement": "a short classical IF-RK2 step of a CONC packet stays finite; viscous X does not grow",
+      "verdict": "pass",
+      "why": "We did not stop at t=0. The field ran. Tesla: that is the next knob.",
+      "visc": {
+        "n": 32,
+        "jstar0": 2,
+        "nu": 0.1,
+        "T": 0.064,
+        "steps": 8,
+        "start": {
+          "jbar": 2.9706581534824363,
+          "jstar": 3,
+          "sigma": 1.0,
+          "above": 0.0,
+          "X": 2.5
+        },
+        "end": {
+          "jbar": 2.9556103131951192,
+          "jstar": 3,
+          "sigma": 0.9999999995440866,
+          "above": 5.086516024774471e-06,
+          "X": 1.4263585606002107
+        },
+        "c_mean": -0.2351225044893296,
+        "X_grew": false,
+        "finite": true
+      },
+      "euler": {
+        "n": 32,
+        "jstar0": 2,
+        "nu": 0.0,
+        "T": 0.064,
+        "steps": 8,
+        "start": {
+          "jbar": 2.9706581534824363,
+          "jstar": 3,
+          "sigma": 1.0,
+          "above": 0.0,
+          "X": 2.5
+        },
+        "end": {
+          "jbar": 2.970666977081071,
+          "jstar": 3,
+          "sigma": 0.9999999995961472,
+          "above": 1.0593526707972168e-05,
+          "X": 2.4999558235754344
+        },
+        "c_mean": 0.00013786872866961009,
+        "X_grew": false,
+        "finite": true
+      }
+    },
+    {
+      "name": "B13a_no_saving_climb",
+      "statement": "a short evolution produces mean c \u2265 8 on a CONC packet",
+      "verdict": "fail",
+      "why": "Viscous c_mean is negative. Euler is ~0. Letting it run did not hand us B11c.",
+      "c_save": 8.0,
+      "visc_c": -0.2351225044893296,
+      "euler_c": 0.00013786872866961009
+    },
+    {
+      "name": "B13b_no_high_fill",
+      "statement": "a short run fills resolved shells above the original triad",
+      "verdict": "fail",
+      "why": "Resolved mass above j*+1 stays ~0. n=32 dealias cannot host a fat j=4. Still a reading.",
+      "visc_above": 5.086516024774471e-06,
+      "euler_above": 1.0593526707972168e-05
+    },
+    {
+      "name": "B13c_stays_conc",
+      "statement": "the short viscous run stays 3-CONC",
+      "verdict": "pass",
+      "why": "The clock did not sneak into SPREAD. They stayed concentrated and still did not climb.",
+      "sigma_end": 0.9999999995440866
+    },
+    {
+      "name": "B13d_visc_still_down",
+      "statement": "a short viscous evolution is a ladder for j_bar",
+      "verdict": "fail",
+      "why": "Along the trajectory, j_bar falls. Same direction as the t=0 RHS.",
+      "jbar0": 2.9706581534824363,
+      "jbarT": 2.9556103131951192
+    },
+    {
+      "name": "B13e_finer_longer_open",
+      "statement": "a finer / longer run produces a saving climb",
+      "verdict": "open",
+      "why": "n=32, T~0.06 is a short resolved reading. Unresolved shells and longer time are another check, not a stop forever."
+    },
+    {
+      "name": "B13f_evolve_not_X_a_priori",
+      "statement": "a short packet run is a closed a priori bound for classical X",
+      "verdict": "open",
+      "why": "A few IF-RK2 steps are not continuation. Do not sit DNS-did-not-climb as regularity."
     },
     {
       "name": "B_regularity",
@@ -957,9 +1055,9 @@
     }
   ],
   "counts": {
-    "pass": 21,
-    "fail": 14,
-    "open": 9
+    "pass": 23,
+    "fail": 17,
+    "open": 11
   },
   "how_far": [
     "B1 T2 low-flux identity holds (pass); T2 Lemma 2 stays dropped (fail)",
@@ -981,7 +1079,9 @@
     "B11c fast climb sits (pass); NS climb law open (B11d); sketch is not an a priori (B11e)",
     "B12 barycenter + c from RHS (pass); t=0 packets do not produce c\u22658 (fail)",
     "B12c viscosity pulls j_bar down (fail); evolved cascade open (B12d)",
+    "B13 short run finite (pass); no saving climb (fail); no high fill (fail); stays CONC (pass)",
+    "B13d visc still pulls down (fail); finer/longer open (B13e); not an a priori (B13f)",
     "classical regularity remains open"
   ],
-  "next_da_move": "Evolve a CONC packet a short time (B12d). t=0 is not a cascade. Tesla: let the field run."
+  "next_da_move": "B5b: angular viscosity vs I_tube at \u03b4 ~ 2^{-j*}. Or a finer packet box (B13e). Tesla: the tube is still a knob."
 }

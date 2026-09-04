@@ -1,7 +1,7 @@
 {
   "meta": {
-    "source": "check",
-    "t": "2026-09-04T07:40:33.484715+00:00",
+    "source": "trackb",
+    "t": "2026-09-04T08:03:28.264257+00:00",
     "significant": false,
     "baseline": false,
     "no_phone_in_repo": true,
@@ -18,9 +18,9 @@
     "U.destination": "open"
   },
   "events": [],
-  "plain": "DA checked. Nothing significant flipped.\nNext: evolve a CONC packet a short time (B12d). t=0 did not produce the saving climb.\n",
+  "plain": "DA checked. Nothing significant flipped.\nNext: B5b (viscosity vs I_tube) or a finer packet box (B13e). Short n=32 did not climb.\n",
   "sms_lines": [],
-  "recommendation": "Nothing flipped. Next write is a short evolution of a CONC packet (B12d).",
+  "recommendation": "Nothing flipped. Next write is B5b or a finer packet box (B13e).",
   "delivery": {
     "file": "/workspace/results/DA-ALERT.txt",
     "webhook": {
