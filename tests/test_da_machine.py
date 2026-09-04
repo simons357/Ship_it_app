@@ -236,6 +236,9 @@ class DaMachineTests(unittest.TestCase):
         giga_if = classify_claim("Giga-Miura type I continuous direction if on a vorticity packet")
         self.assertEqual(giga_if["domain"], "B")
         self.assertEqual(giga_if["verdict"], "open")
+        cfm = classify_claim("CFM Euler geometric if on a vorticity packet")
+        self.assertEqual(cfm["domain"], "B")
+        self.assertEqual(cfm["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

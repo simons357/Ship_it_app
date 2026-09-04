@@ -154,6 +154,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Constantin",
+        ["Elgindi", "Fefferman"],
+        "The 1996 Euler geometric if is a different equation. It does not write NS A1.",
+        "B",
+    ),
+    turn(
         "Hou",
         ["Elgindi", "Kohn"],
         "A computed almost-singular scenario is a probe. It is not an a priori. Do not spawn n=64 to finish the sentence.",
@@ -353,6 +359,13 @@ CLAIMS = [
         "Giga-Miura Type I plus continuous direction is all-data A1",
         "fail",
         "Two ifs: Type I rate, and uniform continuity of the direction. All-data A1 stays blank.",
+    ),
+    rec(
+        "L24",
+        "cfm_euler_is_ns_a1",
+        "Constantin-Fefferman-Majda Euler geometric if is classical NS A1",
+        "fail",
+        "Different equation. The 1996 if does not write NS alignment for all data.",
     ),
 ]
 

@@ -74,8 +74,8 @@ LEADS = [
          "Keep us on the wall. Do not promote 1934–1982 to a global pass.",
          "energy + CKN = close"),
     lead("Constantin", "geometric depletion", "B", "past",
-         "Stretching dies if aligned. CONC is not that if.",
-         "all-data alignment"),
+         "Stretching dies if aligned. CONC is not that if. The 1996 Euler if is a different equation.",
+         "all-data alignment; Euler if = NS A1"),
     lead("Fefferman", "geometric depletion", "B", "past",
          "Do not glue Ring to Biot-Savart. Pretty-damn-close is that glue.",
          "the slogan"),
@@ -296,6 +296,13 @@ CLAIMS = [
         "Giga-Miura Type I plus continuous direction is all-data A1",
         "fail",
         "Two ifs. All-data A1 stays blank.",
+    ),
+    rec(
+        "R16",
+        "cfm_euler_is_ns_a1",
+        "Constantin-Fefferman-Majda Euler geometric if is classical NS A1",
+        "fail",
+        "Different equation. The 1996 if does not write NS A1.",
     ),
 ]
 

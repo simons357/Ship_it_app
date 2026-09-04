@@ -137,6 +137,11 @@ for classical \(X\). Tarek, Euler is the other chair.
 equation. Viscosity is not a limit I will lend you. Euler
 does not write Navier–Stokes.
 
+**Constantin.** The 1996 Euler geometric if
+(Constantin–Fefferman–Majda) is a different equation.
+It does not write NS A1. Tarek, Charles — do not cash
+Euler Lipschitz direction as classical alignment.
+
 **Miller.** Enstrophy is \(-4\int\det S\). Blow-up iff
 the \(L^q\) history of \(\lambda_2^+\) diverges. That is a
 different cut from the \(e_3\) cap. The identity is not
@@ -204,6 +209,7 @@ scores the process, not a theorem you did not prove.
 | Beirão–Berselli if is all-data A1 | **fail** |
 | Grujić log-bmo if is all-data A1 | **fail** |
 | Giga–Miura Type I plus continuity is all-data A1 | **fail** |
+| CFM Euler if is classical NS A1 | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

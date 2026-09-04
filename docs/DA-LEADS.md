@@ -32,7 +32,7 @@ in your slot.
 | Caffarelli | partial regularity | Small is not empty. | no blowup |
 | Kohn | partial regularity | Measure zero is not no blowup. A decaying box is not either. | DNS-never-blew-up |
 | Nirenberg | partial regularity | Keep us on the wall. | 1934–1982 as a close |
-| Constantin | geometry | Stretching dies **if** aligned. CONC is not that if. | all-data alignment |
+| Constantin | geometry | Stretching dies **if** aligned. CONC is not that if. The 1996 Euler if is a different equation. | all-data alignment; Euler if \(=\) NS A1 |
 | Fefferman | geometry | Do not glue Ring to Biot–Savart. Pretty-damn-close is that glue. | the slogan |
 | Beirão da Veiga–Berselli | geometric if | We weakened the Lipschitz if. The if remains an if. It is not all-data A1. | weaker if \(=\) all-data alignment |
 | Giga–Miura | Type I / continuous direction | Type I plus uniformly continuous direction prevents blow-up. Two ifs. It is not all-data A1. | Type I + continuity \(=\) all-data alignment |
@@ -97,6 +97,7 @@ in your slot.
 | Beirão–Berselli if is all-data A1 | **fail** |
 | Grujić log-bmo if is all-data A1 | **fail** |
 | Giga–Miura Type I plus continuity is all-data A1 | **fail** |
+| CFM Euler if is classical NS A1 | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
