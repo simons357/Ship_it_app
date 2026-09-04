@@ -119,8 +119,8 @@ LEADS = [
          "Energy class is a derivative short. Where now: a residual. Not another leftover close.",
          "catalog closes X; averaged blowup ⇒ NS"),
     lead("Sverak", "Liouville / ancient / self-similar", "B", "living",
-         "Honest doors: Liouville, ancient, self-similar. Possible is not a theorem. Impossible is not a theorem.",
-         "those doors from a leftover list"),
+         "Honest doors: Liouville, ancient, self-similar. Ruled-out self-similar is not an a priori. Possible is not a theorem.",
+         "those doors from a leftover list; exclusion = bound"),
     lead("Seregin", "local regularity / ESS", "B", "living",
          "ESS endpoint sits as a criterion. It is not an a priori on X.",
          "criterion ⇒ bound"),
@@ -303,6 +303,20 @@ CLAIMS = [
         "Constantin-Fefferman-Majda Euler geometric if is classical NS A1",
         "fail",
         "Different equation. The 1996 if does not write NS A1.",
+    ),
+    rec(
+        "R17",
+        "self_similar_exclusion_closes_X",
+        "Ruling out self-similar L3 and local-energy profiles closes X",
+        "fail",
+        "Exclusion of a profile class is not an a priori.",
+    ),
+    rec(
+        "R18",
+        "liouville_ancient_are_a_priori",
+        "Liouville or ancient remaining doors are an a priori on X",
+        "fail",
+        "A remaining door is not a bound.",
     ),
 ]
 

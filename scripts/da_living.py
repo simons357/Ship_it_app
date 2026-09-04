@@ -58,6 +58,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Sverak",
+        ["Seregin", "Tao"],
+        "Self-similar L3 and local-energy profiles are out. That is not an a priori on X. Liouville and ancient remain doors, not a bound.",
+        "B",
+    ),
+    turn(
         "Seregin",
         ["Sverak", "Caffarelli", "Kohn"],
         "Local regularity and the ESS endpoint sit. They are criteria. They are not an a priori on X. Do not promote small singular set to empty.",
@@ -366,6 +372,20 @@ CLAIMS = [
         "Constantin-Fefferman-Majda Euler geometric if is classical NS A1",
         "fail",
         "Different equation. The 1996 if does not write NS alignment for all data.",
+    ),
+    rec(
+        "L25",
+        "self_similar_exclusion_closes_X",
+        "Ruling out self-similar L3 and local-energy profiles closes X",
+        "fail",
+        "Necas-Ruzicka-Sverak and Tsai exclude a class of profiles. Exclusion is not an a priori.",
+    ),
+    rec(
+        "L26",
+        "liouville_ancient_are_a_priori",
+        "Liouville or ancient remaining doors are an a priori on X",
+        "fail",
+        "A remaining door is not a bound. Possible is not a theorem.",
     ),
 ]
 

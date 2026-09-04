@@ -68,7 +68,10 @@ cash “pretty damn close.”
 **Šverák.** Terence is right about the gap, and the
 honest remaining doors are still Liouville-type theorems,
 ancient solutions, self-similar profiles. Energy plus a
-regime split is not those doors. Gregory?
+regime split is not those doors. Self-similar \(L^3\) and
+local-energy profiles are out (Nečas–Růžička–Šverák,
+Tsai). That exclusion is not an a priori on \(X\).
+Liouville and ancient remain doors, not a bound. Gregory?
 
 **Seregin.** Local regularity and the Escauriaza–Seregin–Šverák
 endpoint sit. They are criteria. They are not an a priori
@@ -210,6 +213,8 @@ scores the process, not a theorem you did not prove.
 | Grujić log-bmo if is all-data A1 | **fail** |
 | Giga–Miura Type I plus continuity is all-data A1 | **fail** |
 | CFM Euler if is classical NS A1 | **fail** |
+| Self-similar exclusion closes \(X\) | **fail** |
+| Liouville or ancient doors are an a priori | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

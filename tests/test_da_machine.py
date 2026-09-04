@@ -239,6 +239,12 @@ class DaMachineTests(unittest.TestCase):
         cfm = classify_claim("CFM Euler geometric if on a vorticity packet")
         self.assertEqual(cfm["domain"], "B")
         self.assertEqual(cfm["verdict"], "open")
+        ss = classify_claim("self-similar profile exclusion on a vorticity packet")
+        self.assertEqual(ss["domain"], "B")
+        self.assertEqual(ss["verdict"], "open")
+        anc = classify_claim("Liouville ancient remaining doors on a vorticity packet")
+        self.assertEqual(anc["domain"], "B")
+        self.assertEqual(anc["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
