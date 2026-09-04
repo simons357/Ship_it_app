@@ -873,12 +873,250 @@
       "claim": "automatic check B",
       "verdict": "open",
       "note": "Lemma identities may hold. Regularity stays open."
+    },
+    {
+      "t": "2026-09-04T07:28:55.831657+00:00",
+      "domain": "B",
+      "claim": "\u222b (u_\u2264j \u00b7 \u2207) u_j \u00b7 u_j = 0 for periodic div-free u",
+      "verdict": "pass",
+      "note": "B1_t2_low_flux: div-free + parts: (1/2) \u222b u_low \u00b7 \u2207(|u_j|\u00b2) = 0. T2 Lemma 1 only."
+    },
+    {
+      "t": "2026-09-04T07:28:55.832657+00:00",
+      "domain": "B",
+      "claim": "T2 Lemma 2 (H^{2.3} absorbing ball) is an input to the a priori estimate",
+      "verdict": "fail",
+      "note": "B1b_t2_lemma2_dropped: Already-regular H^{2.3} is circular for large-data Track B. Not used."
+    },
+    {
+      "t": "2026-09-04T07:28:55.833446+00:00",
+      "domain": "B",
+      "claim": "3-CONC (\u03c3\u22651/2) and SPREAD (\u03c3\u22641/2) cover (0,1]; \u03c1\u2264\u03c3",
+      "verdict": "pass",
+      "note": "B2_regime_cover: A cover of mass fractions, not a dynamics theorem. One threshold, no gap."
+    },
+    {
+      "t": "2026-09-04T07:28:55.834428+00:00",
+      "domain": "B",
+      "claim": "3-shell support \u21d2 ||\u2207\u03c9||_\u221e \u2264 C 2^{2j*} ||\u03c9||_2 and ||\u2207\u03be||_\u221e \u2264 C 2^{j*} on E_c",
+      "verdict": "pass",
+      "note": "B3_three_shell_ring: Bernstein on a triad packet. Not stretching depletion. Not all-data geometry."
+    },
+    {
+      "t": "2026-09-04T07:28:55.835483+00:00",
+      "domain": "B",
+      "claim": "3-shell Ring forces cos \u03b1_3 \u2192 0 for all data",
+      "verdict": "fail",
+      "note": "B3b_ring_is_not_depletion: Ring bounds |\u2207\u03be| on E_c. It does not force alignment. Biot\u2013Savart slogan stays forbidden."
+    },
+    {
+      "t": "2026-09-04T07:28:55.836529+00:00",
+      "domain": "B",
+      "claim": "g(0)=0 \u21d2 \u222b(g/r)\u00b2 dr \u2264 4\u222b(g')\u00b2; h(0)=0 \u21d2 \u222b h\u00b2/r dr \u2264 4\u222b(h')\u00b2 r dr + 2 h(\u03b4)\u00b2",
+      "verdict": "pass",
+      "note": "B4_tube_hardy: Localized Hardy with a wall term. Does not yet beat I_tube by viscosity."
+    },
+    {
+      "t": "2026-09-04T07:28:55.837332+00:00",
+      "domain": "B",
+      "claim": "tube Hardy \u21d2 |I_tube| absorbed in \u03bd||\u2207\u03c9||_2\u00b2 for all data",
+      "verdict": "fail",
+      "note": "B4b_hardy_not_I_tube: Slow fat swirl: h = r sin(\u03b5z). Ratio |I_tube|/diss \u223c 1/\u03b5 blows as \u03b5 \u2192 0. All-data domination is dead. Packet class still lives as B4c."
+    },
+    {
+      "t": "2026-09-04T07:28:55.838400+00:00",
+      "domain": "B",
+      "claim": "3-shell / packet class at \u03b4 \u223c 2^{-j*}: |I_tube| is budgeted by tube vorticity dissipation",
+      "verdict": "pass",
+      "note": "B4c_packet_hardy_tube: Same weight, both sides, at the packet scale. Ratio stays bounded and does not grow with j*."
+    },
+    {
+      "t": "2026-09-04T07:28:55.839474+00:00",
+      "domain": "B",
+      "claim": "Hardy wall 2h(\u03b4)\u00b2 is a finite off-axis charge, not the whole tube integral",
+      "verdict": "pass",
+      "note": "B4d_wall_matches_off_axis: Spend the wall on r \u223c \u03b4. That is the match I_off asked for."
+    },
+    {
+      "t": "2026-09-04T07:28:55.840282+00:00",
+      "domain": "B",
+      "claim": "axisymmetric (\u0394u)_\u03b8 = \u0394u_\u03b8 \u2212 u_\u03b8/r\u00b2; angular piece \u222b(u_\u03b8/r)\u00b2 sits in the tube",
+      "verdict": "pass",
+      "note": "B5_swirl_visc_identity: Identity only. Ratio |I_source|/angular-mass is reported, not claimed < 1."
+    },
+    {
+      "t": "2026-09-04T07:28:55.841110+00:00",
+      "domain": "B",
+      "claim": "angular 1/r\u00b2 viscosity dominates I_tube at \u03b4 ~ 2^{-j*}",
+      "verdict": "open",
+      "note": "B5b_tube_vs_viscosity: This is the reason to keep 1/r^4. Not shown. Do not cancel to \u03a6 to escape it."
+    },
+    {
+      "t": "2026-09-04T07:28:55.841876+00:00",
+      "domain": "B",
+      "claim": "Leray \u222b X dt < \u221e implies X \u2208 L^\u221e (closes the cubic enstrophy ODE)",
+      "verdict": "fail",
+      "note": "B6_energy_not_enough: X=(T*-t)^{-1/2} has \u222bX\u22481.987 on a truncated interval and is unbounded. Viscosity or geometry has to do the extra work."
+    },
+    {
+      "t": "2026-09-04T07:28:55.842923+00:00",
+      "domain": "B",
+      "claim": "pass to \u03a6 = \u0393/r\u00b2 as the primary unknown",
+      "verdict": "fail",
+      "note": "B_phi_not_estimate_variable: The identity 1/r^4 \u2202_z(\u0393\u00b2)=\u2202_z(\u03a6\u00b2) is true. It moves the work onto ||\u03a6||_\u221e. Keep \u0393."
+    },
+    {
+      "t": "2026-09-04T07:28:55.843812+00:00",
+      "domain": "B",
+      "claim": "\u03a0_j = T + T* + R_near + self for a Bony cut at j\u2212N",
+      "verdict": "pass",
+      "note": "B7_bony_split: Bookkeeping identity on T^3. T2 Lemma 1 is the self piece."
+    },
+    {
+      "t": "2026-09-04T07:28:55.844581+00:00",
+      "domain": "B",
+      "claim": "\u222b (u_\u2264j \u00b7 \u2207) u_j \u00b7 u_j = 0 (T2 Lemma 1). That is not the surviving low T.",
+      "verdict": "pass",
+      "note": "B7a_self_is_t2: Self-flux of the peak dies. Low T is u_low feeding neighbors into \u03a0_j."
+    },
+    {
+      "t": "2026-09-04T07:28:55.845359+00:00",
+      "domain": "B",
+      "claim": "||u_{\u2264j\u2212N}||_\u221e \u2272 2^{(j\u2212N)/2} X^{1/2} in energy class",
+      "verdict": "pass",
+      "note": "B7b_low_T_energy_class: Bernstein + Cauchy\u2013Schwarz on the low sum. No \u03c1 improvement claimed."
+    },
+    {
+      "t": "2026-09-04T07:28:55.846158+00:00",
+      "domain": "B",
+      "claim": "spread \u21d2 ||u_{\u2264j\u2212N}||_\u221e \u2272 \u03c1^{1/2} X^{1/2} uniformly as \u03c1 \u2192 0",
+      "verdict": "fail",
+      "note": "B7c_low_T_not_rho_uniform: Each low shell is \u2264 \u03c1 X. The sum in L^\u221e is not. CCFS does not give G its \u03c1^{1/2}."
+    },
+    {
+      "t": "2026-09-04T07:28:55.846941+00:00",
+      "domain": "B",
+      "claim": "\u03c4_CONC + \u03c4_SPREAD = T at threshold \u03c3 = 1/2. Switching allowed.",
+      "verdict": "pass",
+      "note": "B8_occupation_clock: One threshold, no gap. A clock, not a bound on X."
+    },
+    {
+      "t": "2026-09-04T07:28:55.847750+00:00",
+      "domain": "B",
+      "claim": "packet budget \u1e8a = X\u00b3 \u2212 \u03bd 2^{2j*} X: hot occupation falls as j* rises",
+      "verdict": "pass",
+      "note": "B8a_high_jstar_short: B4c\u2019s scale. High packets cannot sit hot for long on that ODE."
+    },
+    {
+      "t": "2026-09-04T07:28:55.848511+00:00",
+      "domain": "B",
+      "claim": "Leray \u222bX dt < \u221e \u21d2 occupation of 3-CONC is short",
+      "verdict": "fail",
+      "note": "B8b_leray_not_occupation: Sit in CONC with X = (T*\u2212t)^{-1/2}. The integral is finite. The clock runs the whole interval."
+    },
+    {
+      "t": "2026-09-04T07:28:55.849316+00:00",
+      "domain": "B",
+      "claim": "occupation-time bookkeeping closes a bound for X",
+      "verdict": "open",
+      "note": "B8c_occupation_not_X_bound: The clock is armed. Glue is written (B9). Occupation itself still does not close X. Low-j CONC is the remaining cubic."
+    },
+    {
+      "t": "2026-09-04T07:28:55.850135+00:00",
+      "domain": "B",
+      "claim": "\u0394X = increment_CONC + increment_SPREAD against the B8 clock",
+      "verdict": "pass",
+      "note": "B9_glue_bookkeeping: Tesla\u2019s first knob: the two columns add. That is the apparatus, not a bound."
+    },
+    {
+      "t": "2026-09-04T07:28:55.850926+00:00",
+      "domain": "B",
+      "claim": "B4c-scale CONC (high j*) plus the clock keeps the model X bounded",
+      "verdict": "pass",
+      "note": "B9a_glue_high_jstar: Same weight, both sides, at the thin packet. Olga\u2019s instinct, Tesla\u2019s knob."
+    },
+    {
+      "t": "2026-09-04T07:28:55.851712+00:00",
+      "domain": "B",
+      "claim": "the glued ODE bounds X for low-j* CONC as well",
+      "verdict": "fail",
+      "note": "B9b_glue_low_jstar_blows: Fat slow CONC. The leftover cubic still wins. The glue is not all-data."
+    },
+    {
+      "t": "2026-09-04T07:28:55.852489+00:00",
+      "domain": "B",
+      "claim": "switching high-j* CONC with SPREAD keeps the model X bounded",
+      "verdict": "pass",
+      "note": "B9c_glue_switching: The clock can flip. High packets plus energy-class T do not blow this ODE."
+    },
+    {
+      "t": "2026-09-04T07:28:55.853273+00:00",
+      "domain": "B",
+      "claim": "the glued model is a closed a priori bound for classical X",
+      "verdict": "open",
+      "note": "B9d_glue_not_X_a_priori: A two-regime ODE is a sketch of the estimate. It is not the estimate on NS."
+    },
+    {
+      "t": "2026-09-04T07:28:55.854064+00:00",
+      "domain": "B",
+      "claim": "packet support |k|\u2264K \u21d2 X \u2264 K\u00b2 E (frozen j* has an energy ceiling)",
+      "verdict": "pass",
+      "note": "B10_energy_ceiling: Leray\u2019s energy, Bernstein\u2019s support. Not a retune of the PDE. Tesla: the model forgot a knob."
+    },
+    {
+      "t": "2026-09-04T07:28:55.854869+00:00",
+      "domain": "B",
+      "claim": "the B9b X\u2192\u221e trajectory at frozen j* is an NS-legal path",
+      "verdict": "fail",
+      "note": "B10a_frozen_blow_not_ns: Frozen support caps X by K\u00b2 E. A near-saturated packet has no room to run to 40. The model forgot E."
+    },
+    {
+      "t": "2026-09-04T07:28:55.855629+00:00",
+      "domain": "B",
+      "claim": "the energy ceiling bounds X even if j* climbs",
+      "verdict": "fail",
+      "note": "B10b_ceiling_not_climbing: K grows with j*. The cap rises. Frozen-j* hygiene is not a climbing-packet bound."
+    },
+    {
+      "t": "2026-09-04T07:28:55.856401+00:00",
+      "domain": "B",
+      "claim": "CONC with climbing j* is a closed estimate for X",
+      "verdict": "open",
+      "note": "B10c_climbing_conc_open: High j* sits on the glue ODE. Climbing from coarse to thin is the remaining cubic room. Not shown."
+    },
+    {
+      "t": "2026-09-04T07:28:55.857242+00:00",
+      "domain": "B",
+      "claim": "the energy ceiling is a retune of classical Navier\u2013Stokes (Q1, \u03b5, \u03a6-cancel)",
+      "verdict": "fail",
+      "note": "B10d_not_a_pde_retune: The PDE is untouched. No Q1. No \u03b5. Keep 1/r^4. The knob is on the estimate, not the equation."
+    },
+    {
+      "t": "2026-09-04T07:28:55.858029+00:00",
+      "domain": "B",
+      "claim": "classical 3D NS is globally regular (keep 1/r^4, no Q1)",
+      "verdict": "open",
+      "note": "B_regularity: No closed estimate for X. Lemma identities are not a continuation argument."
+    },
+    {
+      "t": "2026-09-04T07:28:55.858815+00:00",
+      "domain": "B",
+      "claim": "classical 3D NS globally regular (domain close)",
+      "verdict": "open",
+      "note": "lemma identities held or correctly failed; no closed estimate for X"
+    },
+    {
+      "t": "2026-09-04T07:28:59.468292+00:00",
+      "domain": "B",
+      "claim": "automatic check B",
+      "verdict": "open",
+      "note": "Lemma identities may hold. Regularity stays open."
     }
   ],
   "counts": {
-    "scored": 124,
-    "pass": 52,
-    "fail": 30,
-    "open": 42
+    "scored": 158,
+    "pass": 68,
+    "fail": 41,
+    "open": 49
   }
 }

@@ -98,9 +98,9 @@ alignment.
 is on.
 
 **Operator.** Clock is out. The glue that talks to \(X\)
-is written in [`TRACK-B-GLUE.md`](TRACK-B-GLUE.md): B4c
-while CONC, energy-class \(T\) while SPREAD, against this
-clock. High \(j_*\) sits. Low \(j_*\) is the remaining room.
+is written in [`TRACK-B-GLUE.md`](TRACK-B-GLUE.md). Frozen
+low-\(j_*\) is hygiene in [`TRACK-B-LOW-J.md`](TRACK-B-LOW-J.md).
+Climbing CONC is the remaining room.
 
 ---
 

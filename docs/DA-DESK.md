@@ -113,13 +113,18 @@ Domain B **never** passes regularity. `check B` stays
 | B8b | Leray \(\Rightarrow\) short CONC | **fail** |
 | B8c | occupation closes \(X\) | **open** |
 | B9 / B9a / B9c | glue bookkeeping; high \(j_*\) sits | **pass** |
-| B9b | low \(j_*\) CONC cubic bounded | **fail** |
+| B9b | low \(j_*\) CONC cubic bounded | **fail** (model) |
 | B9d | glue sketch is an NS a priori | **open** |
+| B10 | packet energy ceiling | **pass** |
+| B10a | B9b unbounded path is NS-legal | **fail** |
+| B10b | ceiling follows a climbing \(j_*\) | **fail** |
+| B10c | climbing CONC closes \(X\) | **open** |
+| B10d | this retunes the PDE | **fail** |
 | \(\Phi\) as estimate variable | keep \(\Gamma\) | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** low-\(j_*\) CONC (B9b). Coarse packets
-still carry a live cubic.
+**Next B write:** climbing CONC (B10c). Frozen low-\(j_*\)
+is hygiene. We are not tuning the equation.
 
 ---
 
@@ -398,7 +403,7 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/DA-PAPER.md`, `docs/DA-THINK-TANK.md`,
 `docs/DA-SESSION.md`, `docs/TRACK-B-HARDY-TUBE.md`,
 `docs/TRACK-B-BONY-T.md`, `docs/TRACK-B-OCCUPATION.md`,
-`docs/TRACK-B-GLUE.md`.
+`docs/TRACK-B-GLUE.md`, `docs/TRACK-B-LOW-J.md`.
 
 ---
 
@@ -411,8 +416,9 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
   all-data **fail**. Low Bony \(T\): energy class **pass**,
   uniform \(\rho^{1/2}\) **fail**. Occupation clock **pass**;
   Leray \(\Rightarrow\) short CONC **fail**. Glue sketch
-  written: high \(j_*\) sits, low \(j_*\) blows. Next:
-  low-\(j_*\) CONC.
+  written: high \(j_*\) sits, low \(j_*\) model blows.
+  Energy ceiling: frozen support is hygiene. Next:
+  climbing CONC. The PDE is not being tuned.
 - Cosmo does not enter NS.
 - HB stays shelved as a theorem. DA-as-process stays live.
 

@@ -645,6 +645,84 @@
       "why": "A two-regime ODE is a sketch of the estimate. It is not the estimate on NS."
     },
     {
+      "name": "B10_energy_ceiling",
+      "statement": "packet support |k|\u2264K \u21d2 X \u2264 K\u00b2 E (frozen j* has an energy ceiling)",
+      "verdict": "pass",
+      "why": "Leray\u2019s energy, Bernstein\u2019s support. Not a retune of the PDE. Tesla: the model forgot a knob.",
+      "samples": [
+        {
+          "E": 0.0009707409093481197,
+          "X": 0.03784277447456771,
+          "k_max": 8.0,
+          "ceiling": 0.06212741819827966,
+          "X_over_ceiling": 0.6091155173033665,
+          "jstar": 2
+        },
+        {
+          "E": 0.0041458145251864415,
+          "X": 0.4628400697005203,
+          "k_max": 15.7797338380595,
+          "ceiling": 1.032307816771424,
+          "X_over_ceiling": 0.44835470794754567,
+          "jstar": 3
+        },
+        {
+          "E": 0.0032437067452594863,
+          "X": 0.4252314344879824,
+          "k_max": 17.320508075688775,
+          "ceiling": 0.9731120235778461,
+          "X_over_ceiling": 0.4369809684649993,
+          "jstar": 4
+        }
+      ],
+      "worst_X_over_ceiling": 0.6091155173033665,
+      "n": 32
+    },
+    {
+      "name": "B10a_frozen_blow_not_ns",
+      "statement": "the B9b X\u2192\u221e trajectory at frozen j* is an NS-legal path",
+      "verdict": "fail",
+      "why": "Frozen support caps X by K\u00b2 E. A near-saturated packet has no room to run to 40. The model forgot E.",
+      "blow": {
+        "X_final": 40.84911299138827,
+        "X_max": 40.84911299138827,
+        "blew": true,
+        "steps": 6375,
+        "T": 0.31875000000000003,
+        "tau_conc": 0.31875000000000003,
+        "ok_as_kill": true
+      },
+      "E_sat": 0.0390625,
+      "K": 8.0,
+      "ceiling_sat": 2.5
+    },
+    {
+      "name": "B10b_ceiling_not_climbing",
+      "statement": "the energy ceiling bounds X even if j* climbs",
+      "verdict": "fail",
+      "why": "K grows with j*. The cap rises. Frozen-j* hygiene is not a climbing-packet bound.",
+      "ceilings": {
+        "2": 64.0,
+        "3": 256.0,
+        "4": 1024.0,
+        "5": 4096.0,
+        "6": 16384.0
+      },
+      "E0": 1.0
+    },
+    {
+      "name": "B10c_climbing_conc_open",
+      "statement": "CONC with climbing j* is a closed estimate for X",
+      "verdict": "open",
+      "why": "High j* sits on the glue ODE. Climbing from coarse to thin is the remaining cubic room. Not shown."
+    },
+    {
+      "name": "B10d_not_a_pde_retune",
+      "statement": "the energy ceiling is a retune of classical Navier\u2013Stokes (Q1, \u03b5, \u03a6-cancel)",
+      "verdict": "fail",
+      "why": "The PDE is untouched. No Q1. No \u03b5. Keep 1/r^4. The knob is on the estimate, not the equation."
+    },
+    {
       "name": "B_regularity",
       "statement": "classical 3D NS is globally regular (keep 1/r^4, no Q1)",
       "verdict": "open",
@@ -652,9 +730,9 @@
     }
   ],
   "counts": {
-    "pass": 15,
-    "fail": 8,
-    "open": 4
+    "pass": 16,
+    "fail": 11,
+    "open": 5
   },
   "how_far": [
     "B1 T2 low-flux identity holds (pass); T2 Lemma 2 stays dropped (fail)",
@@ -670,7 +748,9 @@
     "B8 occupation clock (pass); high j* short (pass); Leray\u21d2short CONC fail; glue to X open",
     "B9 glue bookkeeping (pass); high-j CONC sits (pass); switching high-j sits (pass)",
     "B9b low-j CONC cubic is live (fail); B9d sketch is not an NS a priori (open)",
+    "B10 energy ceiling (pass); B9b unbounded path is not NS (fail); not a PDE retune (fail)",
+    "B10b ceiling does not follow a climbing j* (fail); climbing CONC open (B10c)",
     "classical regularity remains open"
   ],
-  "next_da_move": "Low-j_* CONC is the remaining cubic (B9b). Either coarse packets cannot stay CONC, or the cubic is bounded when j_* is small. Tesla: that is the paragraph."
+  "next_da_move": "Climbing CONC (B10c): j_* rises while \u03c3\u22651/2. The energy ceiling does not follow. Tesla: that is the paragraph."
 }

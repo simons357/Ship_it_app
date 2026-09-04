@@ -144,7 +144,7 @@
       "name": "B8c_occupation_not_X_bound",
       "statement": "occupation-time bookkeeping closes a bound for X",
       "verdict": "open",
-      "why": "The clock is armed. Glue is written (B9). Occupation itself still does not close X. Low-j CONC is the remaining cubic."
+      "why": "The clock is armed. Glue is written (B9). Frozen low-j is hygiene (B10). Occupation itself still does not close X."
     }
   ],
   "counts": {
@@ -152,5 +152,5 @@
     "fail": 1,
     "open": 1
   },
-  "next_da_move": "Glue is written (B9). Low-j_* CONC is the remaining cubic (B9b). Occupation itself still does not close X."
+  "next_da_move": "Glue is written (B9). Frozen low-j is hygiene (B10). Climbing CONC is the remaining cubic (B10c)."
 }

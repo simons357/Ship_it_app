@@ -452,6 +452,36 @@ def lemma_glue_not_ns() -> dict:
     return lemma_glue_not_regularity()
 
 
+def lemma_energy_ceiling() -> dict:
+    from track_b_low_j import lemma_energy_ceiling as ceiling
+
+    return ceiling()
+
+
+def lemma_frozen_blow_not_ns() -> dict:
+    from track_b_low_j import lemma_frozen_blow_not_ns as frozen
+
+    return frozen()
+
+
+def lemma_ceiling_not_climbing() -> dict:
+    from track_b_low_j import lemma_ceiling_not_climbing as climb
+
+    return climb()
+
+
+def lemma_climbing_open() -> dict:
+    from track_b_low_j import lemma_climbing_open as climbing
+
+    return climbing()
+
+
+def lemma_not_a_retune() -> dict:
+    from track_b_low_j import lemma_not_a_retune as no_retune
+
+    return no_retune()
+
+
 def lemma_regularity() -> dict:
     return rec(
         "B_regularity",
@@ -498,6 +528,11 @@ def run(out: Path | None = None) -> dict:
         lemma_glue_low_j(),
         lemma_glue_switching(),
         lemma_glue_not_ns(),
+        lemma_energy_ceiling(),
+        lemma_frozen_blow_not_ns(),
+        lemma_ceiling_not_climbing(),
+        lemma_climbing_open(),
+        lemma_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -529,12 +564,13 @@ def run(out: Path | None = None) -> dict:
             "B8 occupation clock (pass); high j* short (pass); Leray⇒short CONC fail; glue to X open",
             "B9 glue bookkeeping (pass); high-j CONC sits (pass); switching high-j sits (pass)",
             "B9b low-j CONC cubic is live (fail); B9d sketch is not an NS a priori (open)",
+            "B10 energy ceiling (pass); B9b unbounded path is not NS (fail); not a PDE retune (fail)",
+            "B10b ceiling does not follow a climbing j* (fail); climbing CONC open (B10c)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Low-j_* CONC is the remaining cubic (B9b). Either coarse packets "
-            "cannot stay CONC, or the cubic is bounded when j_* is small. "
-            "Tesla: that is the paragraph."
+            "Climbing CONC (B10c): j_* rises while σ≥1/2. "
+            "The energy ceiling does not follow. Tesla: that is the paragraph."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

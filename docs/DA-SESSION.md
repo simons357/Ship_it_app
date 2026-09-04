@@ -357,10 +357,11 @@ again.
 | Domain B after the session | **open** |
 
 They did the tube, the low Bony \(T\), the occupation
-clock, and the two-regime glue. Packet class **pass**.
-Energy-class \(T\) **pass**. Clock **pass**. High \(j_*\)
-glue sits. Low \(j_*\) CONC still blows. Next: that coarse
-packet. See [`TRACK-B-GLUE.md`](TRACK-B-GLUE.md).
+clock, the two-regime glue, and the energy ceiling.
+Packet class **pass**. Energy-class \(T\) **pass**. Clock
+**pass**. High \(j_*\) glue sits. Frozen low-\(j_*\) is
+hygiene, not a retune of the PDE. Next: climbing CONC.
+See [`TRACK-B-LOW-J.md`](TRACK-B-LOW-J.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

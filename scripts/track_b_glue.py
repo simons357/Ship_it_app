@@ -170,8 +170,8 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Stay with high-j* CONC + energy-class T. "
-            "Low-j* CONC is the remaining cubic. That is the live room."
+            "Low-j CONC is hygiene: energy ceiling (B10). "
+            "Climbing CONC is the remaining cubic (B10c)."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_glue.json")

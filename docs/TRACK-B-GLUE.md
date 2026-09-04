@@ -107,8 +107,9 @@ ODE told you the low room is still cubic.
 **Einstein.** The object is still the classical field.
 A model is a model.
 
-**Operator.** Glue is out as a sketch. The live room is
-low-\(j_*\) CONC.
+**Operator.** Glue is out as a sketch. Frozen low-\(j_*\)
+is hygiene (energy ceiling). The live room is climbing
+CONC. See [`TRACK-B-LOW-J.md`](TRACK-B-LOW-J.md).
 
 ---
 
@@ -121,7 +122,7 @@ low-\(j_*\) CONC.
 | B9b | **fail** | low \(j_*\) model blows |
 | B9c | **pass** | switching high \(j_*\) sits |
 | B9d | **open** | sketch \(\neq\) NS a priori |
-| domain B | **open** | low-\(j_*\) CONC is the room |
+| domain B | **open** | climbing CONC is the room |
 
 Tesla’s line: detune \(j_*\). If the script does not
 move, you do not have an apparatus.

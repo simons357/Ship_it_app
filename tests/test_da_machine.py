@@ -109,6 +109,9 @@ class DaMachineTests(unittest.TestCase):
         glue = classify_claim("two-regime glue of B4c CONC to energy-class T")
         self.assertEqual(glue["domain"], "B")
         self.assertEqual(glue["verdict"], "open")
+        ceil = classify_claim("energy ceiling on a frozen low-j packet")
+        self.assertEqual(ceil["domain"], "B")
+        self.assertEqual(ceil["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

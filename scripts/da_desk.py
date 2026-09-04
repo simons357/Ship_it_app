@@ -227,7 +227,7 @@ def run(out: Path | None = None) -> dict:
             "pairs_open": sum(1 for r in PAIRS if r["verdict"] == "open"),
         },
         "next_da_move": (
-            "Use the write-up. Next B write is low-j_* CONC (B9b). "
+            "Use the write-up. Next B write is climbing CONC (B10c). "
             "Corpus pairings emit scored sentences, not F."
         ),
     }

@@ -211,7 +211,9 @@ On each time interval the solution is either concentrated or spread (or switchin
 
 Occupation time is broken out in [`TRACK-B-OCCUPATION.md`](TRACK-B-OCCUPATION.md). One threshold \(\sigma=1/2\), no gap. The clock **passes**. High \(j_*\) hot time **passes** on the packet ODE. Leray \(\Rightarrow\) short CONC **fails**.
 
-The two-regime glue is broken out in [`TRACK-B-GLUE.md`](TRACK-B-GLUE.md). Increments add. High \(j_*\) CONC sits. Switching high \(j_*\) sits. Low \(j_*\) CONC **fails**: the leftover cubic is live. The sketch is **not** an a priori bound for classical \(X\). That coarse-packet room is the next write.
+The two-regime glue is broken out in [`TRACK-B-GLUE.md`](TRACK-B-GLUE.md). Increments add. High \(j_*\) CONC sits. Switching high \(j_*\) sits. Low \(j_*\) CONC **fails** on the model ODE. The sketch is **not** an a priori bound for classical \(X\).
+
+Frozen low-\(j_*\) is hygiene, not a retune of the PDE. Packet support \(|k|\le K\) gives \(X\le K^2 E\). That write lives in [`TRACK-B-LOW-J.md`](TRACK-B-LOW-J.md). The B9b unbounded path is **not** NS-legal. The ceiling does **not** follow a climbing \(j_*\). Climbing CONC is the next write.
 
 Leray’s \(\int X\,dt<\infty\) limits how long a high-\(j_*\) concentrated spike can last, but it does **not** by itself stop \(\dot X\sim X^3\). A spike \(X\sim(T_*-t)^{-1/2}\) is compatible with integrable \(X\). Viscosity or geometric depletion has to supply the extra decay. Do not close with energy integrability alone.
 

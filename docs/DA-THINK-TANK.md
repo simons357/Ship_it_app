@@ -96,7 +96,7 @@ Forbidden auto-fails: solved NS, full Q floor, Biot–Savart depletion, BKM-from
 
 August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ3 / SPREAD.
 
-**Next B write:** low-\(j_*\) CONC (B9b). The leftover cubic is live when the packet is coarse. Regularity stays open.
+**Next B write:** climbing CONC (B10c). Frozen low-\(j_*\) is hygiene. The PDE is not being tuned. Regularity stays open.
 
 ### How the conversation moved
 
@@ -139,6 +139,8 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 19. **Occupation.** Clock **pass**. High \(j_*\) short **pass**. Leray \(\Rightarrow\) short CONC **fail**. Glue to \(X\) **open**. [`docs/TRACK-B-OCCUPATION.md`](TRACK-B-OCCUPATION.md).
 
 20. **Glue to \(X\).** Bookkeeping **pass**. High \(j_*\) CONC sits **pass**. Switching high \(j_*\) sits **pass**. Low \(j_*\) CONC cubic **fail**. Sketch \(\neq\) NS a priori **open**. Tesla: exacting, not a jerk. [`docs/TRACK-B-GLUE.md`](TRACK-B-GLUE.md).
+
+21. **Low-\(j_*\) ceiling.** Packet \(X\le K^2E\) **pass**. B9b unbounded path is not NS **fail**. Ceiling does not follow climbing \(j_*\) **fail**. Climbing CONC **open**. Not a PDE retune **fail**. [`docs/TRACK-B-LOW-J.md`](TRACK-B-LOW-J.md).
 
 ---
 

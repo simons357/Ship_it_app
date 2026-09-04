@@ -1,2 +1,2 @@
 DA checked. Nothing significant flipped.
-Next: low-j_* CONC (B9b). The leftover cubic is live when the packet is coarse.
+Next: climbing CONC (B10c). Frozen low-j is hygiene. The ceiling does not follow a rising j*.

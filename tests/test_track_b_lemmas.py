@@ -48,8 +48,13 @@ class TrackBLemmaTests(unittest.TestCase):
         self.assertEqual(by["B9b_glue_low_jstar_blows"]["verdict"], "fail")
         self.assertEqual(by["B9c_glue_switching"]["verdict"], "pass")
         self.assertEqual(by["B9d_glue_not_X_a_priori"]["verdict"], "open")
+        self.assertEqual(by["B10_energy_ceiling"]["verdict"], "pass")
+        self.assertEqual(by["B10a_frozen_blow_not_ns"]["verdict"], "fail")
+        self.assertEqual(by["B10b_ceiling_not_climbing"]["verdict"], "fail")
+        self.assertEqual(by["B10c_climbing_conc_open"]["verdict"], "open")
+        self.assertEqual(by["B10d_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(by["B_regularity"]["verdict"], "open")
-        self.assertIn("B9b", payload["next_da_move"])
+        self.assertIn("B10c", payload["next_da_move"])
         self.assertLess(by["B1_t2_low_flux"]["rel_residual"], 1e-10)
 
     def test_no_regularity_pass_in_the_list(self):

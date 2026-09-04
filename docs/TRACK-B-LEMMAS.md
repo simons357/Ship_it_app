@@ -54,6 +54,11 @@ not done).
 | B9b | low \(j_*\) CONC stays bounded | **fail** | \(j_*=2\), \(X_0=2.5\): \(X\) crosses 40. |
 | B9c | switching high \(j_*\) sits | **pass** | Clock can flip. |
 | B9d | glue sketch is an NS a priori | **open** | A model, not the equation. |
+| B10 | packet \(X\le K^2 E\) | **pass** | Frozen support has an energy ceiling. |
+| B10a | B9b unbounded path is NS-legal | **fail** | The model forgot \(E\). |
+| B10b | ceiling bounds a climbing \(j_*\) | **fail** | \(K\) rises with \(j_*\). |
+| B10c | climbing CONC closes \(X\) | **open** | Coarse to thin, still concentrated. |
+| B10d | energy ceiling retunes the PDE | **fail** | No \(Q_1\), no \(\varepsilon\). Knob on the estimate. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -149,18 +154,24 @@ short CONC **fail**. Occupation itself does not close \(X\).
 **B9 / B9a / B9b / B9c / B9d.** The two-regime glue lives in
 [`TRACK-B-GLUE.md`](TRACK-B-GLUE.md). Increments add
 **pass**. High \(j_*\) CONC sits **pass**. Switching high
-\(j_*\) sits **pass**. Low \(j_*\) CONC **fails**: the leftover
-cubic is live when the packet is coarse. Sketch \(\neq\) NS
-a priori **open**.
+\(j_*\) sits **pass**. Low \(j_*\) CONC **fails** on the model
+ODE. Sketch \(\neq\) NS a priori **open**.
+
+**B10 / B10a / B10b / B10c / B10d.** Energy ceiling lives in
+[`TRACK-B-LOW-J.md`](TRACK-B-LOW-J.md). Packet \(X\le K^2E\)
+**pass**. B9b unbounded path is not NS **fail**. Ceiling
+does not follow a climbing \(j_*\) **fail**. Climbing CONC
+**open**. Not a PDE retune **fail**.
 
 ---
 
 ## What is still the next write
 
-1. Low-\(j_*\) CONC (B9b). Either a coarse packet cannot stay
-   concentrated, or the cubic is bounded when \(j_*\) is small.
+1. Climbing CONC (B10c). \(j_*\) rises while \(\sigma\ge 1/2\).
+   The energy ceiling does not follow.
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
-   Leray-as-occupation, or the glue sketch as an NS a priori.
+   Leray-as-occupation, the glue sketch as an NS a priori,
+   or a retune of the PDE.
 
 None of those is a pass on regularity. Checker:
 
@@ -169,8 +180,9 @@ python3 scripts/track_b_hardy_tube.py
 python3 scripts/track_b_bony_t.py
 python3 scripts/track_b_occupation.py
 python3 scripts/track_b_glue.py
+python3 scripts/track_b_low_j.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```
