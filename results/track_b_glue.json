@@ -66,14 +66,14 @@
     {
       "name": "B9d_glue_not_X_a_priori",
       "statement": "the glued model is a closed a priori bound for classical X",
-      "verdict": "open",
-      "why": "A two-regime ODE is a sketch of the estimate. It is not the estimate on NS."
+      "verdict": "fail",
+      "why": "Typed j*=2 CONC grows; the NS packet falls. Sign of \u1e8a disagrees. A sketch that points the wrong way is not an a priori."
     }
   ],
   "counts": {
     "pass": 3,
-    "fail": 1,
-    "open": 1
+    "fail": 2,
+    "open": 0
   },
-  "next_da_move": "Stay with high-j* CONC + energy-class T. Low-j* CONC is the remaining cubic. That is the live room."
+  "next_da_move": "NS climb law (B11d). Field glue is scored: the j*=2 model grows; the NS packet falls. B4c stands. Do not cancel to \u03a6."
 }

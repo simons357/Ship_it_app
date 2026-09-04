@@ -749,8 +749,8 @@
     {
       "name": "B9d_glue_not_X_a_priori",
       "statement": "the glued model is a closed a priori bound for classical X",
-      "verdict": "open",
-      "why": "A two-regime ODE is a sketch of the estimate. It is not the estimate on NS."
+      "verdict": "fail",
+      "why": "Typed j*=2 CONC grows; the NS packet falls. Sign of \u1e8a disagrees. A sketch that points the wrong way is not an a priori."
     },
     {
       "name": "B10_energy_ceiling",
@@ -1527,7 +1527,7 @@
       "name": "B17e_coherent_not_X_a_priori",
       "statement": "a signed-strain blob closes a bound for classical X",
       "verdict": "open",
-      "why": "One-sided cubic at this box is still a leftover versus D. Field occupation (B18) reads the clock on a path. Glue (B9d) is still a sketch. Not continuation."
+      "why": "One-sided cubic at this box is still a leftover versus D. Field occupation (B18) reads the clock on a path. Field glue (B19) asks the sketch. Not continuation."
     },
     {
       "name": "B17f_not_a_pde_retune",
@@ -1637,13 +1637,94 @@
       "name": "B18e_field_occ_not_X_a_priori",
       "statement": "field occupation closes a bound for classical X",
       "verdict": "open",
-      "why": "The clock can be read. It did not leave CONC. Glue (B9d) is still a sketch. Not continuation."
+      "why": "The clock can be read. It did not leave CONC. Field glue (B19) asks the sketch. Climb law (B11d) is still open. Not continuation."
     },
     {
       "name": "B18f_not_a_pde_retune",
       "statement": "reading \u03c3 along an IF-RK2 path is a retune of classical Navier\u2013Stokes",
       "verdict": "fail",
       "why": "The PDE is untouched. Sampling the clock is a knob on the check. No Q1. No \u03b5."
+    },
+    {
+      "name": "B19_field_rates",
+      "statement": "model \u1e8a and NS \u1e8a are both readable on the working-box packet and the signed-strain blob",
+      "verdict": "pass",
+      "why": "Same box as B13 / B17 / B18. Typed j* as in the sketch. j_bar is reported, not substituted.",
+      "Xdot_ns": {
+        "packet": -22.52231116785621,
+        "blob": -12.289114593034023
+      },
+      "Xdot_model": {
+        "packet": 2.2500000000000053,
+        "blob": -12.875
+      },
+      "jbar": {
+        "packet": 2.9706581534824363,
+        "blob": 2.5664433170637415
+      },
+      "sigma": {
+        "packet": 1.0,
+        "blob": 0.8535696713285232
+      }
+    },
+    {
+      "name": "B19a_sign_mismatch",
+      "statement": "the j*=2 CONC model has the same sign of \u1e8a as the NS packet",
+      "verdict": "fail",
+      "why": "Model \u1e8a = +2.25. NS \u1e8a \u2248 \u221222.5. The sketch points up. The field points down.",
+      "Xdot_ns": -22.52231116785621,
+      "Xdot_model": 2.2500000000000053,
+      "sign_match": false,
+      "jstar": 2,
+      "jbar": 2.9706581534824363
+    },
+    {
+      "name": "B19b_not_the_blowup",
+      "statement": "the working-box NS packet is the B9b blowup path",
+      "verdict": "fail",
+      "why": "Eight steps: model X grows. NS X falls. B9b is a typed ODE, not this field.",
+      "dX_ns": -1.0736414393997893,
+      "dX_model": 0.1716498591357114
+    },
+    {
+      "name": "B19c_alpha_not_the_cubic",
+      "statement": "\u03b1_c(j*) is the field cubic 2\u222b\u03c9\u00b7S\u03c9 / X\u00b3",
+      "verdict": "fail",
+      "why": "Implied \u03b1 sits near 0 on the packet (cancellation) and ~0.006 on the blob. The sketch used 0.4 and 0.2.",
+      "alpha": {
+        "packet": 0.4,
+        "blob": 0.2
+      },
+      "alpha_imp": {
+        "packet": -5.761852370819881e-05,
+        "blob": 0.006487698161306042
+      },
+      "alpha_ratio": {
+        "packet": 0.000144046309270497,
+        "blob": 0.03243849080653021
+      }
+    },
+    {
+      "name": "B19d_gamma_not_visc",
+      "statement": "\u03bd 2^{2j*} X is the NS visc term 2\u03bd\u2016\u2207\u03c9\u2016\u2082\u00b2 on the j*=2 packet",
+      "verdict": "fail",
+      "why": "2D / (\u03b3 X) \u2248 5.6. Bernstein-scale \u03b3 under-counts dissipation on a fat packet. j_bar sits near 3.",
+      "visc_ratio": 5.630352719605814,
+      "gamma": 1.6,
+      "gamma_imp": 9.008564351369303,
+      "jbar": 2.9706581534824363
+    },
+    {
+      "name": "B19e_field_glue_not_X_a_priori",
+      "statement": "matching the sketch to NS \u1e8a closes a bound for classical X",
+      "verdict": "open",
+      "why": "The sketch pointed the wrong way. Retuning \u03b1_c to the leftover is a knob, not continuation. Climb law (B11d) is still open."
+    },
+    {
+      "name": "B19f_not_a_pde_retune",
+      "statement": "reading model \u1e8a against NS \u1e8a, or shrinking \u03b1_c until they match, is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. \u03b1_c is a knob on the estimate. No Q1. No \u03b5."
     },
     {
       "name": "B_regularity",
@@ -1653,8 +1734,8 @@
     }
   ],
   "counts": {
-    "pass": 35,
-    "fail": 40,
+    "pass": 36,
+    "fail": 46,
     "open": 15
   },
   "how_far": [
@@ -1671,7 +1752,7 @@
     "B7 Bony split + T2 self (pass); energy-class low T (pass); uniform \u03c1^{1/2} fail",
     "B8 occupation clock (pass); high j* short (pass); Leray\u21d2short CONC fail; occupation closes X fail",
     "B9 glue bookkeeping (pass); high-j CONC sits (pass); switching high-j sits (pass)",
-    "B9b low-j CONC cubic is live (fail); B9d sketch is not an NS a priori (open)",
+    "B9b low-j CONC cubic is live (fail); B9d sketch is not an NS a priori (fail)",
     "B10 energy ceiling (pass); B9b unbounded path is not NS (fail); not a PDE retune (fail)",
     "B10b ceiling does not follow a climbing j* (fail); climbing CONC open (B10c)",
     "B11 climb bookkeeping (pass); bounded j* bounds X (pass); slow climb blows (fail)",
@@ -1690,7 +1771,9 @@
     "B17c z-independent tube still cancels (fail); L\u00b2 blob is not BKM (fail); not an a priori (open)",
     "B18 field clock on a path (pass); paths stay CONC (pass); clock did not save X (fail)",
     "B18c CONC occupation not short (fail); cubic not live in time (fail); field occupation not an a priori (open)",
+    "B19 both \u1e8a readable (pass); j*=2 sign mismatch (fail); NS packet is not B9b (fail)",
+    "B19c \u03b1_c is not the field cubic (fail); \u03b3 is not NS visc (fail); field glue not an a priori (open)",
     "classical regularity remains open"
   ],
-  "next_da_move": "Glue sketch as an NS a priori (B9d). Field occupation is scored: the clock stays CONC; it did not save X; the cubic is not live in time. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "NS climb law (B11d). Field glue is scored: typed j*=2 grows; the NS packet falls. \u03b1_c is not the field cubic. B4c stands. Do not cancel to \u03a6."
 }
