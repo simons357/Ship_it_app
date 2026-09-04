@@ -1,0 +1,408 @@
+{
+  "meta": {
+    "question": "ask every seated kingdom for one lead",
+    "writeup": "docs/DA-LEADS.md",
+    "not_a_vote": true,
+    "not_a_close": true,
+    "not_channeling": true,
+    "papers_not_persons": true,
+    "glue_refused": true,
+    "regularity_after": "open",
+    "possible_to_close_X": "open",
+    "missing_chairs": [],
+    "next_write": "A residual on B. Closed estimate, killing field, or one preprint identity. Regularity stays open. Do not spawn n=64. Do not write B37."
+  },
+  "leads": [
+    {
+      "who": "Leray",
+      "specialty": "weak solutions / energy",
+      "slot": "B",
+      "bench": "past",
+      "lead": "Keep \u222bX dt < \u221e. Do not close the cubic ODE from my integral.",
+      "cannot": "X in L^\u221e from energy"
+    },
+    {
+      "who": "Beale",
+      "specialty": "continuation",
+      "slot": "B",
+      "bench": "past",
+      "lead": "If you want a criterion, use \u222b\u2016\u03c9\u2016_\u221e. A leftover list is not the max.",
+      "cannot": "BKM from L\u00b2"
+    },
+    {
+      "who": "Kato",
+      "specialty": "mild / continuation",
+      "slot": "B",
+      "bench": "past",
+      "lead": "L\u00b2 is not our theorem. We will sit for an a priori. We will not rename it.",
+      "cannot": "rename BKM into enstrophy"
+    },
+    {
+      "who": "Majda",
+      "specialty": "continuation / class",
+      "slot": "B",
+      "bench": "past",
+      "lead": "A leftover list is not a class. CONC stayed a spectrum.",
+      "cannot": "spectrum \u21d2 geometric class"
+    },
+    {
+      "who": "Caffarelli",
+      "specialty": "partial regularity",
+      "slot": "B",
+      "bench": "past",
+      "lead": "The singular set is small. Small is not empty.",
+      "cannot": "no blowup"
+    },
+    {
+      "who": "Kohn",
+      "specialty": "partial regularity",
+      "slot": "B",
+      "bench": "past",
+      "lead": "Parabolic measure zero is not no blowup. A decaying box is not either.",
+      "cannot": "DNS-never-blew-up"
+    },
+    {
+      "who": "Nirenberg",
+      "specialty": "partial regularity",
+      "slot": "B",
+      "bench": "past",
+      "lead": "Keep us on the wall. Do not promote 1934\u20131982 to a global pass.",
+      "cannot": "energy + CKN = close"
+    },
+    {
+      "who": "Constantin",
+      "specialty": "geometric depletion",
+      "slot": "B",
+      "bench": "past",
+      "lead": "Stretching dies if aligned. CONC is not that if.",
+      "cannot": "all-data alignment"
+    },
+    {
+      "who": "Fefferman",
+      "specialty": "geometric depletion",
+      "slot": "B",
+      "bench": "past",
+      "lead": "Do not glue Ring to Biot-Savart. Pretty-damn-close is that glue.",
+      "cannot": "the slogan"
+    },
+    {
+      "who": "Ladyzhenskaya",
+      "specialty": "extra dissipation",
+      "slot": "A",
+      "bench": "past",
+      "lead": "Same weight, both sides, as a colleague. Epsilon stays on A.",
+      "cannot": "A \u21d2 B"
+    },
+    {
+      "who": "Einstein",
+      "specialty": "two-sided field equation",
+      "slot": "U",
+      "bench": "program",
+      "lead": "Name the object. Keep the classical field. Do not change the PDE to look finished.",
+      "cannot": "values of G, \u039b; the tube"
+    },
+    {
+      "who": "Tesla",
+      "specialty": "apparatus",
+      "slot": "U",
+      "bench": "program",
+      "lead": "Sit down on leftover knobs. A lead names a knob you can detune and a script that must move.",
+      "cannot": "SU(3); Einstein's equation; derive NS"
+    },
+    {
+      "who": "Feynman",
+      "specialty": "missable number",
+      "slot": "U",
+      "bench": "program",
+      "lead": "No new lead without a residual you can miss. Survival is not truth.",
+      "cannot": "a council without a number"
+    },
+    {
+      "who": "Weyl",
+      "specialty": "gauge / compact groups",
+      "slot": "U",
+      "bench": "program",
+      "lead": "Do not call the tube a gauge argument. Name G before you say gauge.",
+      "cannot": "SU(3) from a vortex"
+    },
+    {
+      "who": "Wigner",
+      "specialty": "representations",
+      "slot": "U",
+      "bench": "program",
+      "lead": "Type the object. Y_\u2113m is not a vorticity direction. One object.",
+      "cannot": "a QNM as enstrophy"
+    },
+    {
+      "who": "von Neumann",
+      "specialty": "Hilbert space + D",
+      "slot": "U",
+      "bench": "program",
+      "lead": "The unknown is X on a divergence-free field. Write an estimate or store a residual. Do not open a slot on modes.",
+      "cannot": "modes as a slot"
+    },
+    {
+      "who": "Weinberg",
+      "specialty": "electroweak mixing",
+      "slot": "U",
+      "bench": "past",
+      "lead": "The W\u00b3\u2013B rotation is real. It does not absorb I_tube. I sit this one out.",
+      "cannot": "\u03b8_W from a vortex"
+    },
+    {
+      "who": "experiment / PDG",
+      "specialty": "measured couplings",
+      "slot": "U",
+      "bench": "nature",
+      "lead": "We brought numbers L consumes. They are not inputs to Jean's energy.",
+      "cannot": "why those numbers; fluids"
+    },
+    {
+      "who": "neutrino / cosmology",
+      "specialty": "\u03a3m_\u03bd and \u039b",
+      "slot": "U",
+      "bench": "nature",
+      "lead": "\u03a3m_\u03bd is a bound. \u039b is seen. Neither writes X.",
+      "cannot": "Cosmo 0.06 eV as F; the tube"
+    },
+    {
+      "who": "Tao",
+      "specialty": "supercriticality",
+      "slot": "B",
+      "bench": "living",
+      "lead": "Energy class is a derivative short. Where now: a residual. Not another leftover close.",
+      "cannot": "catalog closes X; averaged blowup \u21d2 NS"
+    },
+    {
+      "who": "Sverak",
+      "specialty": "Liouville / ancient / self-similar",
+      "slot": "B",
+      "bench": "living",
+      "lead": "Honest doors: Liouville, ancient, self-similar. Possible is not a theorem. Impossible is not a theorem.",
+      "cannot": "those doors from a leftover list"
+    },
+    {
+      "who": "Seregin",
+      "specialty": "local regularity / ESS",
+      "slot": "B",
+      "bench": "living",
+      "lead": "ESS endpoint sits as a criterion. It is not an a priori on X.",
+      "cannot": "criterion \u21d2 bound"
+    },
+    {
+      "who": "Koch",
+      "specialty": "critical small data",
+      "slot": "B",
+      "bench": "living",
+      "lead": "Small critical sits. Large data is the object.",
+      "cannot": "Koch-Tataru \u21d2 large data"
+    },
+    {
+      "who": "Tataru",
+      "specialty": "critical small data",
+      "slot": "B",
+      "bench": "living",
+      "lead": "The critical space is the wall. That is why leftover knobs died.",
+      "cannot": "scaling wall = estimate"
+    },
+    {
+      "who": "Grujic",
+      "specialty": "sparseness / scaling gap",
+      "slot": "B",
+      "bench": "living",
+      "lead": "Sparseness can shrink the gap. Finite order does not make it vanish.",
+      "cannot": "asymptotic criticality = closed X"
+    },
+    {
+      "who": "Vicol",
+      "specialty": "wild weak solutions",
+      "slot": "B",
+      "bench": "living",
+      "lead": "Non-uniqueness below the energy class is a different class.",
+      "cannot": "convex integration = smooth blowup"
+    },
+    {
+      "who": "Buckmaster",
+      "specialty": "wild weak solutions",
+      "slot": "B",
+      "bench": "living",
+      "lead": "Do not cash us as a killing field for classical X.",
+      "cannot": "wild \u21d2 smooth X blows"
+    },
+    {
+      "who": "Elgindi",
+      "specialty": "Euler singularity",
+      "slot": "B",
+      "bench": "living",
+      "lead": "Euler is a different equation. Viscosity is not a free limit.",
+      "cannot": "Euler \u21d2 NS"
+    },
+    {
+      "who": "Hou",
+      "specialty": "computation as probe",
+      "slot": "B",
+      "bench": "living",
+      "lead": "A computed scenario is a probe. Do not spawn n=64.",
+      "cannot": "DNS is an a priori"
+    },
+    {
+      "who": "current math.AP",
+      "specialty": "preprints",
+      "slot": "B",
+      "bench": "now",
+      "lead": "An announcement is a proposal. Score one identity here or it stays a paragraph.",
+      "cannot": "close B by title"
+    },
+    {
+      "who": "LVK",
+      "specialty": "GW strain / catalogs",
+      "slot": "U",
+      "bench": "now",
+      "lead": "Four hundred compact binaries do not bound X. We will not update nodes.json.",
+      "cannot": "strain is enstrophy"
+    },
+    {
+      "who": "EHT",
+      "specialty": "horizon-scale images",
+      "slot": "U",
+      "bench": "now",
+      "lead": "A reconstructed ring is a form. It is not \u03c9.",
+      "cannot": "nodes.json; HB"
+    },
+    {
+      "who": "DESI",
+      "specialty": "BAO / \u03a3m_\u03bd",
+      "slot": "U",
+      "bench": "now",
+      "lead": "\u039b tension is live on U. It does not write F and it does not write X.",
+      "cannot": "F; the tube"
+    },
+    {
+      "who": "IPTA / NANOGrav",
+      "specialty": "nHz pulsar timing",
+      "slot": "U",
+      "bench": "now",
+      "lead": "A common-spectrum process is not a source name and not a fluids lemma.",
+      "cannot": "source = HB; NS"
+    },
+    {
+      "who": "PDG + LHC",
+      "specialty": "poster refresh",
+      "slot": "U",
+      "bench": "now",
+      "lead": "Refresh the consumed numbers. A PDG update is not a derivation.",
+      "cannot": "why; fluids"
+    },
+    {
+      "who": "LMFDB / analytic NT",
+      "specialty": "L-functions / gaps",
+      "slot": "Q",
+      "bench": "now",
+      "lead": "Keep Q arithmetic. A new gap paper is not \u03c9\u00b7S\u03c9.",
+      "cannot": "black holes; fluids"
+    },
+    {
+      "who": "operator",
+      "specialty": "desk",
+      "slot": "meta",
+      "bench": "desk",
+      "lead": "One sentence, one slot, one check. You never know \u2014 so you ask, then you refuse glue.",
+      "cannot": "needing chops; a vote"
+    }
+  ],
+  "claims": [
+    {
+      "id": "R1",
+      "name": "ask_every_chair",
+      "statement": "Ask every seated kingdom for one lead",
+      "verdict": "pass",
+      "why": "A sweep is a process. You never know \u2014 so you ask."
+    },
+    {
+      "id": "R2",
+      "name": "kingdoms_stay",
+      "statement": "Each lead stays in its slot",
+      "verdict": "pass",
+      "why": "Fluids on B. Olga on A. Arithmetic on Q. Program and nature on U."
+    },
+    {
+      "id": "R3",
+      "name": "u_lead_writes_X",
+      "statement": "A U or Q lead writes a bound for classical X",
+      "verdict": "fail",
+      "why": "Wrong chair. Strain is not enstrophy. A gap table is not \u03c9\u00b7S\u03c9."
+    },
+    {
+      "id": "R4",
+      "name": "conversation_closes_X",
+      "statement": "The full-roll conversation closes X",
+      "verdict": "fail",
+      "why": "Talk is not an estimate. Domain B stays open."
+    },
+    {
+      "id": "R5",
+      "name": "vote_of_specialties",
+      "statement": "A vote across specialties writes the estimate",
+      "verdict": "fail",
+      "why": "A team is not a vote. More chairs do not collapse the waveform."
+    },
+    {
+      "id": "R6",
+      "name": "glue_across_slots",
+      "statement": "Glue a U/Q/A lead onto B because you never know",
+      "verdict": "fail",
+      "why": "Asking is allowed. Glue is refused."
+    },
+    {
+      "id": "R7",
+      "name": "possible_to_close_X",
+      "statement": "It is possible to close X",
+      "verdict": "open",
+      "why": "Unknown. That is regularity. Not a yes from a sweep."
+    },
+    {
+      "id": "R8",
+      "name": "impossible_to_close_X",
+      "statement": "It is impossible to close X",
+      "verdict": "fail",
+      "why": "Impossibility is not a theorem. A sweep cannot write a no-go."
+    },
+    {
+      "id": "R9",
+      "name": "next_is_residual",
+      "statement": "The fluids overlap is still a residual on B",
+      "verdict": "pass",
+      "why": "Closed estimate, killing field, or one preprint identity. Not B37."
+    },
+    {
+      "id": "R10",
+      "name": "channeling",
+      "statement": "Asking every chair means they endorse this desk",
+      "verdict": "fail",
+      "why": "Papers talk. Endorsement is a channel."
+    }
+  ],
+  "counts": {
+    "asked": 37,
+    "unique": 37,
+    "pass": 3,
+    "fail": 6,
+    "open": 1,
+    "slots": [
+      "A",
+      "B",
+      "Q",
+      "U",
+      "meta"
+    ]
+  },
+  "how_far": [
+    "every seated kingdom was asked",
+    "kingdoms stayed carved",
+    "U/Q/A leads refused as a write of X",
+    "fluids overlap is still a residual",
+    "possible_to_close_X stays open",
+    "domain B still open"
+  ],
+  "next_da_move": "You asked every chair. The fluids lead is a residual. The other specialties said not here. Possible to close X stays open. Regularity stays open. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+}

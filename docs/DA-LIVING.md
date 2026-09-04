@@ -181,6 +181,7 @@ scores the process, not a theorem you did not prove.
 | Domain B after the session | **open** |
 
 Print: `python3 scripts/da_machine.py living`  
+Leads: [`DA-LEADS.md`](DA-LEADS.md)  
 Past session: [`DA-SESSION.md`](DA-SESSION.md)  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  
 Lemmas: [`TRACK-B-LEMMAS.md`](TRACK-B-LEMMAS.md)

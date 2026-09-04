@@ -1,0 +1,61 @@
+"""Full-roll lead sweep: every chair asked; glue refused."""
+
+from __future__ import annotations
+
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from da_leads import CLAIMS, LEADS, MUST_SIT, run  # noqa: E402
+
+
+class DaLeadsTests(unittest.TestCase):
+    def test_every_chair_asked(self):
+        tmp = Path(tempfile.mkdtemp()) / "da_leads_test.json"
+        payload = run(out=tmp)
+        names = {row["who"] for row in LEADS}
+        self.assertEqual(MUST_SIT, names)
+        self.assertEqual(payload["meta"]["missing_chairs"], [])
+        self.assertEqual(payload["counts"]["asked"], len(MUST_SIT))
+        self.assertEqual(payload["counts"]["unique"], len(MUST_SIT))
+        self.assertTrue({"A", "B", "Q", "U", "meta"} <= set(payload["counts"]["slots"]))
+        self.assertTrue((ROOT / "docs" / "DA-LEADS.md").is_file())
+
+    def test_sweep_is_process_not_a_close(self):
+        tmp = Path(tempfile.mkdtemp()) / "da_leads_test.json"
+        payload = run(out=tmp)
+        by = {c["id"]: c for c in payload["claims"]}
+        self.assertEqual(by["R1"]["verdict"], "pass")
+        self.assertEqual(by["R2"]["verdict"], "pass")
+        self.assertEqual(by["R3"]["verdict"], "fail")
+        self.assertEqual(by["R4"]["verdict"], "fail")
+        self.assertEqual(by["R5"]["verdict"], "fail")
+        self.assertEqual(by["R6"]["verdict"], "fail")
+        self.assertEqual(by["R7"]["verdict"], "open")
+        self.assertEqual(by["R8"]["verdict"], "fail")
+        self.assertEqual(by["R9"]["verdict"], "pass")
+        self.assertEqual(by["R10"]["verdict"], "fail")
+        self.assertEqual(payload["meta"]["regularity_after"], "open")
+        self.assertEqual(payload["meta"]["possible_to_close_X"], "open")
+        self.assertTrue(payload["meta"]["glue_refused"])
+        self.assertTrue(payload["meta"]["not_a_vote"])
+        self.assertIn("residual", payload["meta"]["next_write"])
+
+    def test_slots_do_not_glue(self):
+        by_slot = {}
+        for row in LEADS:
+            by_slot.setdefault(row["slot"], []).append(row["who"])
+        self.assertIn("Ladyzhenskaya", by_slot["A"])
+        self.assertIn("LMFDB / analytic NT", by_slot["Q"])
+        self.assertIn("Leray", by_slot["B"])
+        self.assertIn("Einstein", by_slot["U"])
+        self.assertIn("LVK", by_slot["U"])
+        self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))
+
+
+if __name__ == "__main__":
+    unittest.main()

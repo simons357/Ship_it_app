@@ -246,6 +246,7 @@ def main() -> int:
     print("Name list: docs/DA-THINK-TANK.md")
     print("Working session: docs/DA-SESSION.md")
     print("Living session: docs/DA-LIVING.md")
+    print("Lead sweep: docs/DA-LEADS.md")
     print("DA is an anti-bullshit device. Process pass. Unifier fail.")
     print("Corpus = published papers. Pair 2–3. Score the sentence.")
     print("dream team:")

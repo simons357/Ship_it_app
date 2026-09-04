@@ -77,6 +77,14 @@ class DaMachineTests(unittest.TestCase):
         self.assertEqual(r2["domain"], "U")
         self.assertEqual(r2["verdict"], "open")
 
+    def test_full_roll_leads_land_in_u(self):
+        r = classify_claim("ask every chair and all specialties for a next lead")
+        self.assertEqual(r["domain"], "U")
+        self.assertEqual(r["verdict"], "open")
+        r2 = classify_claim("full roll of the think tank for one lead each")
+        self.assertEqual(r2["domain"], "U")
+        self.assertEqual(r2["verdict"], "open")
+
     def test_harmonic_vocab_lands_in_u(self):
         r = classify_claim("can DA make a complete harmonic vocabulary out of mathematics")
         self.assertEqual(r["domain"], "U")

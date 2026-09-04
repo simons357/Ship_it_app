@@ -6,8 +6,10 @@ Print the past bench: `python3 scripts/da_machine.py team`
 Print all three benches: `python3 scripts/da_machine.py desk`  
 Working session (they talk): `python3 scripts/da_machine.py session`  
 Living session (now-bench papers): `python3 scripts/da_machine.py living`  
+Lead sweep (every chair): `python3 scripts/da_machine.py leads`  
 Scene: `docs/DA-SESSION.md`  
 Living scene: `docs/DA-LIVING.md`  
+Leads: `docs/DA-LEADS.md`  
 Atlas: `docs/DA-DESK.md`  
 Paper: `docs/DA-PAPER.md`
 
@@ -140,6 +142,8 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 16. **Working session.** You asked them to converse as real people and work together. That is [`docs/DA-SESSION.md`](DA-SESSION.md). You named it a **virtual séance**: kingdoms left intact, one focused problem. Process pass. Channel / vote / close: fail.
 
 16b. **Living dream team.** You asked to bring in the people who are not dead and pretend they sit. That is [`docs/DA-LIVING.md`](DA-LIVING.md). Process pass. Possible to close \(X\): **open**. Impossible: **fail** as a theorem. Conversation / vote / leftover catalog / announcement: fail. Next is a residual.
+
+16c. **Full-roll leads.** You asked every specialty. That is [`docs/DA-LEADS.md`](DA-LEADS.md). Asking: **pass**. Glue across slots: **fail**. Fluids overlap is still a residual. U/Q/A do not write \(X\).
 
 17. **Tube write.** Hardy \(\to I_{\mathrm{tube}}\): packet class **pass**, all-data absorption **fail** (slow fat swirl, \(R\sim 1/\varepsilon\)). [`docs/TRACK-B-HARDY-TUBE.md`](TRACK-B-HARDY-TUBE.md).
 

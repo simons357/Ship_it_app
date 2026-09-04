@@ -69,6 +69,7 @@ SLOTS = {
             "tests.test_da_alert",
             "tests.test_da_session",
             "tests.test_da_living",
+            "tests.test_da_leads",
             "-v",
         ],
     },
@@ -124,7 +125,7 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
     if re.search(
-        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up|anti-?bullshit|comput(e|ing)|dedalus|sympy|gwosc|\balert\b|text me|notif|converse|working session|talk to each other|virtual s[eé]ance|kingdoms|living dream team|living bench|not dead",
+        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up|anti-?bullshit|comput(e|ing)|dedalus|sympy|gwosc|\balert\b|text me|notif|converse|working session|talk to each other|virtual s[eé]ance|kingdoms|living dream team|living bench|not dead|full.?roll|all specialties|next lead|every chair",
         text,
     ):
         return {"domain": "U", "verdict": "open", "reason": "looks like score U / SM Lagrangian / waveform; run sm or how"}
@@ -623,6 +624,29 @@ def cmd_session() -> int:
     return 0
 
 
+def cmd_leads() -> int:
+    from da_leads import run as leads_run
+
+    payload = leads_run()
+    print("DA leads. Every chair asked. Not a vote. Not a close.")
+    print("Full roll: docs/DA-LEADS.md")
+    for row in payload["leads"]:
+        print(f"  [{row['slot']}] {row['who']}: {row['lead']}")
+    for c in payload["claims"]:
+        print(f"  [{c['verdict']}] {c['id']}: {c['statement']}")
+    print("regularity:", payload["meta"]["regularity_after"])
+    print("possible_to_close_X:", payload["meta"]["possible_to_close_X"])
+    print("next:", payload["next_da_move"])
+    append_run(
+        "U",
+        "Ask every seated kingdom for one lead",
+        "open",
+        "sweep pass; glue refused; possible_to_close_X open; next is a residual",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_living() -> int:
     from da_living import run as living_run
 
@@ -859,6 +883,7 @@ def main() -> int:
     sub.add_parser("team", help="seat paper+experiment; a vote cannot close")
     sub.add_parser("session", help="working session: colleagues talk; not a close")
     sub.add_parser("living", help="living dream team: now-bench papers talk; not a close")
+    sub.add_parser("leads", help="ask every seated kingdom for one lead; glue refused")
     sub.add_parser("lineage", help="wind L_SM backwards and forwards through prior theories")
     sub.add_parser("harmonic", help="typed harmonic vocabulary from mathematics; not a unifier")
     sub.add_parser("ground", help="spectrum destination: reconstruct, ablate, program review")
@@ -913,6 +938,8 @@ def main() -> int:
         return cmd_session()
     if args.cmd == "living":
         return cmd_living()
+    if args.cmd == "leads":
+        return cmd_leads()
     if args.cmd == "lineage":
         return cmd_lineage()
     if args.cmd == "harmonic":

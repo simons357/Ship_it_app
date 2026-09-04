@@ -385,5 +385,5 @@ That is the paper. Enstrophy balance is not an a priori (B16e). Coherent blob is
 - Track A: `docs/AUGMENTED-NS-PROOF-CHAIN.md`
 - Track B: `docs/TRACK-B-LEMMAS.md`, `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`, `docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`, `docs/TRACK-B-BALANCE.md`, `docs/TRACK-B-ANGULAR.md`, `docs/TRACK-B-COHERENT.md`, `docs/TRACK-B-FIELD-OCC.md`, `docs/TRACK-B-FIELD-GLUE.md`
 - Track Q: `docs/SPECTRAL-FLOOR-EXPLORATION.md`
-- Think tank: `docs/DA-THINK-TANK.md` (combined roll), `docs/DA-DREAM-TEAM.md`, `docs/DA-GROUND.md`, `docs/DA-PIPE.md`, `docs/DA-SESSION.md` (they talk), `docs/DA-LIVING.md` (living papers; where now / can \(X\) close)
+- Think tank: `docs/DA-THINK-TANK.md` (combined roll), `docs/DA-DREAM-TEAM.md`, `docs/DA-GROUND.md`, `docs/DA-PIPE.md`, `docs/DA-SESSION.md` (they talk), `docs/DA-LIVING.md` (living papers; where now / can \(X\) close), `docs/DA-LEADS.md` (every chair, one lead)
 - Compute and alerts: `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`
