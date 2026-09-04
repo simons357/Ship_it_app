@@ -686,8 +686,8 @@
     {
       "name": "B8c_occupation_not_X_bound",
       "statement": "occupation-time bookkeeping closes a bound for X",
-      "verdict": "open",
-      "why": "The clock is armed. Glue is written (B9). Frozen low-j is hygiene (B10). Occupation itself still does not close X."
+      "verdict": "fail",
+      "why": "B8b sits in CONC the whole interval with unbounded X. Short NS paths occupy CONC fully; the bound, when it sits, is viscosity. The clock did not write X\u2208L\u221e."
     },
     {
       "name": "B9_glue_bookkeeping",
@@ -1527,13 +1527,123 @@
       "name": "B17e_coherent_not_X_a_priori",
       "statement": "a signed-strain blob closes a bound for classical X",
       "verdict": "open",
-      "why": "One-sided cubic at this box is still a leftover versus D. Occupation (B8c) is still the open close. Not continuation."
+      "why": "One-sided cubic at this box is still a leftover versus D. Field occupation (B18) reads the clock on a path. Glue (B9d) is still a sketch. Not continuation."
     },
     {
       "name": "B17f_not_a_pde_retune",
       "statement": "reading a signed-strain blob, or turning \u03bd down until \u1e8a>0, is a retune of classical Navier\u2013Stokes",
       "verdict": "fail",
       "why": "The PDE is untouched. Localization in z is a knob on the check. Turning \u03bd down is the same knob. No Q1. No \u03b5."
+    },
+    {
+      "name": "B18_field_clock",
+      "statement": "\u03c4_CONC + \u03c4_SPREAD = T along short IF-RK2 paths of a packet and a signed-strain blob",
+      "verdict": "pass",
+      "why": "The B8 clock, read on a field. Same threshold \u03c3=1/2. Switching still free.",
+      "clock_gap": {
+        "packet": 0.0,
+        "blob": 0.0
+      },
+      "T": {
+        "packet": 0.064,
+        "blob": 0.064
+      }
+    },
+    {
+      "name": "B18a_paths_stay_conc",
+      "statement": "short viscous packet and blob paths occupy 3-CONC for the whole interval",
+      "verdict": "pass",
+      "why": "\u03c3 never drops through 1/2. The clock has one column on.",
+      "tau_frac": {
+        "packet": 1.0,
+        "blob": 1.0
+      },
+      "sigma_min": {
+        "packet": 0.9999999995440866,
+        "blob": 0.8090013567164921
+      },
+      "switches": {
+        "packet": 0,
+        "blob": 0
+      }
+    },
+    {
+      "name": "B18b_clock_did_not_save",
+      "statement": "the clock left CONC, and that is why X sat on these paths",
+      "verdict": "fail",
+      "why": "Zero switches. Packet X falls by viscosity. The blob too. The clock did not flip them into SPREAD.",
+      "switches": {
+        "packet": 0,
+        "blob": 0
+      },
+      "X0": {
+        "packet": 2.5,
+        "blob": 2.499649381408986
+      },
+      "XT": {
+        "packet": 1.4263585606002107,
+        "blob": 1.865076611146439
+      },
+      "X_fell": {
+        "packet": true,
+        "blob": true
+      }
+    },
+    {
+      "name": "B18c_conc_not_short",
+      "statement": "CONC occupation is short on these Navier\u2013Stokes runs",
+      "verdict": "fail",
+      "why": "\u03c4_CONC = T. High-j* short (B8a) is a packet ODE. These fields did not occupy a short visit.",
+      "tau_frac": {
+        "packet": 1.0,
+        "blob": 1.0
+      }
+    },
+    {
+      "name": "B18d_cubic_not_live_time",
+      "statement": "the cubic is live (|P|/D \u2265 0.05) on a nonempty set of samples at the working box",
+      "verdict": "fail",
+      "why": "Zero live samples. One-sided P on the blob is still a leftover versus D. Occupation of CONC is not occupation of a live cubic.",
+      "live_samples": {
+        "packet": 0,
+        "blob": 0
+      },
+      "P_over_D": {
+        "packet": [
+          -3.9974823859864546e-05,
+          -3.656302233205714e-05,
+          -3.345856043186159e-05,
+          -3.06289712584531e-05,
+          -2.8045450355832894e-05,
+          -2.5682442777812325e-05,
+          -2.3517277392576396e-05,
+          -2.1529842883175806e-05,
+          -1.970230056315122e-05
+        ],
+        "blob": [
+          0.008181300794787849,
+          0.008285330220008021,
+          0.008382883876231467,
+          0.008474677269787137,
+          0.008561335564288808,
+          0.008643405222310647,
+          0.008721364099702353,
+          0.008795630199626469,
+          0.008866569266823297
+        ]
+      }
+    },
+    {
+      "name": "B18e_field_occ_not_X_a_priori",
+      "statement": "field occupation closes a bound for classical X",
+      "verdict": "open",
+      "why": "The clock can be read. It did not leave CONC. Glue (B9d) is still a sketch. Not continuation."
+    },
+    {
+      "name": "B18f_not_a_pde_retune",
+      "statement": "reading \u03c3 along an IF-RK2 path is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. Sampling the clock is a knob on the check. No Q1. No \u03b5."
     },
     {
       "name": "B_regularity",
@@ -1543,8 +1653,8 @@
     }
   ],
   "counts": {
-    "pass": 33,
-    "fail": 35,
+    "pass": 35,
+    "fail": 40,
     "open": 15
   },
   "how_far": [
@@ -1559,7 +1669,7 @@
     "B6 \u222bX dt < \u221e does not bound X (fail of that close)",
     "\u03a6 is not the estimate variable (fail)",
     "B7 Bony split + T2 self (pass); energy-class low T (pass); uniform \u03c1^{1/2} fail",
-    "B8 occupation clock (pass); high j* short (pass); Leray\u21d2short CONC fail; glue to X open",
+    "B8 occupation clock (pass); high j* short (pass); Leray\u21d2short CONC fail; occupation closes X fail",
     "B9 glue bookkeeping (pass); high-j CONC sits (pass); switching high-j sits (pass)",
     "B9b low-j CONC cubic is live (fail); B9d sketch is not an NS a priori (open)",
     "B10 energy ceiling (pass); B9b unbounded path is not NS (fail); not a PDE retune (fail)",
@@ -1578,7 +1688,9 @@
     "B16c L\u00b2 is not BKM (fail); random-phase is not all CONC (fail); balance not an a priori (open)",
     "B17 signed-strain blob readable (pass); net \u2248 P+ (pass); working-box cubic not live (fail)",
     "B17c z-independent tube still cancels (fail); L\u00b2 blob is not BKM (fail); not an a priori (open)",
+    "B18 field clock on a path (pass); paths stay CONC (pass); clock did not save X (fail)",
+    "B18c CONC occupation not short (fail); cubic not live in time (fail); field occupation not an a priori (open)",
     "classical regularity remains open"
   ],
-  "next_da_move": "Occupation \u2192 X (B8c). Coherent CONC is scored: net \u2248 P+ on a signed-strain blob; the working-box cubic is not live; a z-independent tube still cancels. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "Glue sketch as an NS a priori (B9d). Field occupation is scored: the clock stays CONC; it did not save X; the cubic is not live in time. B4c stands. Do not cancel to \u03a6."
 }

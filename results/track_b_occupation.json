@@ -143,14 +143,14 @@
     {
       "name": "B8c_occupation_not_X_bound",
       "statement": "occupation-time bookkeeping closes a bound for X",
-      "verdict": "open",
-      "why": "The clock is armed. Glue is written (B9). Frozen low-j is hygiene (B10). Occupation itself still does not close X."
+      "verdict": "fail",
+      "why": "B8b sits in CONC the whole interval with unbounded X. Short NS paths occupy CONC fully; the bound, when it sits, is viscosity. The clock did not write X\u2208L\u221e."
     }
   ],
   "counts": {
     "pass": 2,
-    "fail": 1,
-    "open": 1
+    "fail": 2,
+    "open": 0
   },
-  "next_da_move": "Glue is written (B9). Frozen low-j is hygiene (B10). Climbing CONC is the remaining cubic (B10c)."
+  "next_da_move": "Field occupation is scored (B18). Glue sketch as an NS a priori (B9d). B4c stands. Do not cancel to \u03a6."
 }
