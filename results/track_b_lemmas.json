@@ -819,10 +819,10 @@
       "E0": 1.0
     },
     {
-      "name": "B10c_climbing_conc_open",
+      "name": "B10c_climbing_not_close",
       "statement": "CONC with climbing j* is a closed estimate for X",
-      "verdict": "open",
-      "why": "High j* sits on the glue ODE. Climbing is broken out as B11. NS did not force a saving c (B11d). The sketch is not an a priori (B11e). Longer n=32 did not produce c=8 (B13e). Finer is B22e."
+      "verdict": "fail",
+      "why": "Broken out as B11. NS did not force a saving c (B11d). The sketch is not an a priori (B11e). DNS is not an a priori (B13f)."
     },
     {
       "name": "B10d_not_a_pde_retune",
@@ -1046,16 +1046,16 @@
       ]
     },
     {
-      "name": "B12d_evolved_cascade_open",
+      "name": "B12d_evolved_not_saving",
       "statement": "a short NS evolution of a CONC packet produces a saving climb",
-      "verdict": "open",
-      "why": "t=0 is instantaneous. Short evolution is written as B13: still no saving climb on n=32. Finer/longer is B13e."
+      "verdict": "fail",
+      "why": "Broken out as B13. Short missed (B13a). Longer past room time missed (B22). DNS is not an a priori (B13f)."
     },
     {
       "name": "B12e_law_not_X_a_priori",
       "statement": "the instantaneous field drift is a closed climb law for classical X",
-      "verdict": "open",
-      "why": "A t=0 reading is not a law along a trajectory. Do not sit it as dj*/dt on NS."
+      "verdict": "fail",
+      "why": "A t=0 reading is not a law. The path did not write one either (B13, B20, B22). Do not sit it as dj*/dt on NS."
     },
     {
       "name": "B13_short_run",
@@ -1151,9 +1151,9 @@
     },
     {
       "name": "B13f_evolve_not_X_a_priori",
-      "statement": "a short packet run is a closed a priori bound for classical X",
-      "verdict": "open",
-      "why": "A few IF-RK2 steps are not continuation. Do not sit DNS-did-not-climb as regularity."
+      "statement": "a packet DNS run is a closed a priori bound for classical X",
+      "verdict": "fail",
+      "why": "Short missed (B13a). Longer past room time missed (B22). A decaying n=32 packet is a check, not continuation (B23)."
     },
     {
       "name": "B14_strain_identity",
@@ -1971,6 +1971,53 @@
       "why": "The PDE is untouched. T is a knob on the check. n is a knob on the box. No Q1. No \u03b5. Do not type c=8 into the equation."
     },
     {
+      "name": "B23_dns_readable",
+      "statement": "short and longer n=32 packet DNS are a readable check past the B11c room time",
+      "verdict": "pass",
+      "why": "B13 and B22 already ran. T=0.384 > 0.375. Same box. Typed c is not written into the PDE.",
+      "T_long": 0.384,
+      "t_room": 0.375
+    },
+    {
+      "name": "B23a_dns_not_a_priori",
+      "statement": "a decaying packet DNS run is a closed a priori bound for classical X",
+      "verdict": "fail",
+      "why": "One IC class, finite T, finite n. X falling here does not bound X on B9b or energy-class data. Beale: a decaying packet is not \u222b\u2016\u03c9\u2016_\u221e."
+    },
+    {
+      "name": "B23b_room_time_not_continuation",
+      "statement": "running past the ODE room time is continuation for classical X",
+      "verdict": "fail",
+      "why": "Continuation is an estimate, not a longer interval. Past the sitting of c=8 the path still decayed.",
+      "T_long": 0.384,
+      "t_room": 0.375,
+      "c_save": 8.0
+    },
+    {
+      "name": "B23c_packet_not_all_data",
+      "statement": "the working-box CONC packet class is all classical data",
+      "verdict": "fail",
+      "why": "B9b fat slow CONC is not this run. Energy-class T sits on SPREAD. One triad is not Leray."
+    },
+    {
+      "name": "B23d_no_blow_not_bounded",
+      "statement": "didn't blow on n=32 implies X \u2208 L\u221e",
+      "verdict": "fail",
+      "why": "Resolved decay is a reading. n=32 dealias cannot host the cascade the slogan wants. DNS-never-blew-up is refused as a close."
+    },
+    {
+      "name": "B23e_finer_still_open",
+      "statement": "a finer box (n>32) makes the DNS run an a priori",
+      "verdict": "open",
+      "why": "The only remaining box knob. Same leftover as B22e. Do not spawn n=64. A bigger FFT is not continuation."
+    },
+    {
+      "name": "B23f_not_a_pde_retune",
+      "statement": "scoring DNS as not an a priori is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. T and n are knobs on the check. No Q1. No \u03b5. Do not type c=8 into the equation."
+    },
+    {
       "name": "B_regularity",
       "statement": "classical 3D NS is globally regular (keep 1/r^4, no Q1)",
       "verdict": "open",
@@ -1978,9 +2025,9 @@
     }
   ],
   "counts": {
-    "pass": 39,
-    "fail": 64,
-    "open": 15
+    "pass": 40,
+    "fail": 73,
+    "open": 12
   },
   "how_far": [
     "B1 T2 low-flux identity holds (pass); T2 Lemma 2 stays dropped (fail)",
@@ -1998,13 +2045,13 @@
     "B9 glue bookkeeping (pass); high-j CONC sits (pass); switching high-j sits (pass)",
     "B9b low-j CONC cubic is live (fail); B9d sketch is not an NS a priori (fail)",
     "B10 energy ceiling (pass); B9b unbounded path is not NS (fail); not a PDE retune (fail)",
-    "B10b ceiling does not follow a climbing j* (fail); climbing CONC open (B10c)",
+    "B10b ceiling does not follow a climbing j* (fail); climbing CONC not a close (B10c fail)",
     "B11 climb bookkeeping (pass); bounded j* bounds X (pass); slow climb blows (fail)",
     "B11c fast climb sits (pass); NS did not force a saving c (B11d fail); sketch is not an a priori (B11e fail)",
     "B12 barycenter + c from RHS (pass); t=0 packets do not produce c\u22658 (fail)",
-    "B12c viscosity pulls j_bar down (fail); evolved cascade open (B12d)",
+    "B12c viscosity pulls j_bar down (fail); evolved cascade not a saving climb (B12d fail); t=0 not a law (B12e fail)",
     "B13 short run finite (pass); no saving climb (fail); no high fill (fail); stays CONC (pass)",
-    "B13d visc still pulls down (fail); longer n=32 not a saving climb (B13e fail); not an a priori (B13f)",
+    "B13d visc still pulls down (fail); longer n=32 not a saving climb (B13e fail); DNS not an a priori (B13f fail)",
     "B14 strain identity (pass); CONC not depleted (fail); Ring is not alignment (fail)",
     "B14c CF conditional (pass); geometry does not close X (open); not a PDE retune (fail)",
     "B15 stretching budget readable (pass); CF weights the budget (pass); majority from aligned cap (pass)",
@@ -2022,8 +2069,10 @@
     "B21 ODE and NS readable on the window (pass); c=8 not yet in the viscous room (fail); not the sitting path (fail)",
     "B21c NS \u0394j is not cT (fail); sketch did not sit on this window (fail); not an a priori (open)",
     "B22 longer n=32 readable past room time (pass); not c\u22658 (fail); not a ladder (fail)",
-    "B22c no high fill (fail); clock did not save (fail); finer box open (B22e); not an a priori leftover (B13f)",
+    "B22c no high fill (fail); clock did not save (fail); finer box open (B22e); DNS not an a priori (B13f fail)",
+    "B23 short+longer DNS readable (pass); decaying packet not an a priori (fail); room time not continuation (fail)",
+    "B23c packet not all data (fail); no-blow not L\u221e (fail); finer still open (B23e); not a PDE retune (fail)",
     "classical regularity remains open"
   ],
-  "next_da_move": "DNS as an a priori (B13f). Longer n=32 past the ODE room time did not produce c=8 (B13e). Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not write c=8 into the PDE."
+  "next_da_move": "Climb and DNS knobs at n=32 are scored. DNS is not an a priori (B13f). Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not write c=8 into the PDE."
 }
