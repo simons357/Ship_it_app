@@ -93,7 +93,7 @@ def lemma_occupation_leftover() -> dict:
         "B28e_occupation_leftover",
         "field occupation of CONC closes X",
         "fail",
-        "Scored as B18e / B29. A clock that stays CONC is not continuation. Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. Do not spawn n=64.",
+        "Scored as B18e / B29. A clock that stays CONC is not continuation. Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer leftover is B22e. Do not spawn n=64.",
     )
 
 
@@ -136,7 +136,7 @@ def run(out: Path | None = None) -> dict:
         "next_da_move": (
             "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). "
             "Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). "
-            "Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. Finer (n>32) stays a box knob (B22e). "
+            "Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer leftover is B22e. Finer (n>32) stays a box knob (B22e). "
             "Do not spawn n=64. B4c stands. Do not cancel to Φ."
         ),
     }

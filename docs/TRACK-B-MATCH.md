@@ -90,7 +90,7 @@ slogan missed.
 The ODE stayed a model.
 
 **Operator.** The match is scored. B19e is scored.
-NS climb is not an a priori (B20e). Next: climb sketch (B21e). Finer stays B22e. Do not
+NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Next: finer box (B22e). Finer stays B22e. Do not
 spawn \(n=64\). B4c stands. Do not cancel to \(\Phi\).
 
 ---
@@ -108,7 +108,7 @@ spawn \(n=64\). B4c stands. Do not cancel to \(\Phi\).
 | B30d | **fail** | matching \(\dot X\) is \(\int\|\omega\|_\infty\) |
 | B30e | **fail** | a field climb law closes \(X\) |
 | B30f | **fail** | this retunes the PDE |
-| domain B | **open** | climb-sketch leftover is B21e |
+| domain B | **open** | finer leftover is B22e |
 
 Tesla’s line: the \(j_*=2\) sketch grows. The NS
 packet falls. Sign of \(\dot X\) is the knob.

@@ -136,7 +136,7 @@ not done).
 | B21b | B11c sitting path is the NS packet | **fail** | Model grows; NS falls. |
 | B21c | NS \(\Delta j_{\mathrm{bar}}=cT\) | **fail** | Prescribed \(+0.512\); field \(\approx-0.015\). |
 | B21d | the sketch already sits on this window | **fail** | Model \(X\) still grows. |
-| B21e | matching the sketch closes \(X\) | **open** | Longer is B13e fail. Finer is B22e. |
+| B21e | matching the sketch closes \(X\) | **fail** | Short window \(\neq\) sitting (B32). |
 | B21f | reading the sketch retunes the PDE | **fail** | Knob on the check. |
 | B22 | longer paths readable past room time | **pass** | \(T=0.384>0.375\). Still \(n=32\). |
 | B22a | longer run produces \(c\ge 8\) | **fail** | Visc means negative. Euler \(\sim 0\). |
@@ -206,8 +206,15 @@ not done).
 | B31b | \(j_{\mathrm{bar}}\) offset is continuation | **fail** | Static offset, then a fall. |
 | B31c | visc fall is a class | **fail** | A reading is not a type. |
 | B31d | reading \(c\) is \(\int\|\omega\|_\infty\) | **fail** | A rate is not the max. |
-| B31e | matching the prescribed-\(c\) sketch closes \(X\) | **open** | Leftover B21e. |
+| B31e | matching the prescribed-\(c\) sketch closes \(X\) | **fail** | Scored as B21e / B32. |
 | B31f | scoring this retunes the PDE | **fail** | Knob on the estimate. |
+| B32 | window rates, missed room, sketch-grows / field-falls readable | **pass** | Same caches as B21. No new FFT. |
+| B32a | matching the sketch closes \(X\) | **fail** | Sketch grew; field fell. |
+| B32b | cashing B11c on \(T=0.064\) is continuation | **fail** | Sitting is a long ODE. |
+| B32c | growing sketch is an NS a priori | **fail** | Prescribed \(\Delta j\neq\) field. |
+| B32d | matching the window is \(\int\|\omega\|_\infty\) | **fail** | A sign is not the max. |
+| B32e | a finer box closes \(X\) | **open** | Leftover B22e. |
+| B32f | scoring this retunes the PDE | **fail** | Knob on the estimate. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -388,7 +395,7 @@ sketch lives in [`TRACK-B-CLIMB-SKETCH.md`](TRACK-B-CLIMB-SKETCH.md).
 Window rates **pass**. Viscous room on this window **fail**.
 Sitting path is NS **fail**. \(\Delta j=cT\) **fail**. Sketch
 sits on this window **fail**. Matching the sketch closes
-\(X\) **open**. Not a PDE retune **fail**.
+\(X\) **fail**. Not a PDE retune **fail**.
 
 **B22 / B22a / B22b / B22c / B22d / B22e / B22f.** Longer
 path lives in [`TRACK-B-LONGER.md`](TRACK-B-LONGER.md).
@@ -463,15 +470,23 @@ climb as an a priori lives in
 [`TRACK-B-SAVING.md`](TRACK-B-SAVING.md). Readable **pass**.
 Field climb closes \(X\) **fail**. Offset is continuation
 **fail**. Visc fall is a class **fail**. Reading \(c\) is
-\(\int\|\omega\|_\infty\) **fail**. Sketch leftover **open**.
+\(\int\|\omega\|_\infty\) **fail**. Sketch leftover **fail**.
 Not a PDE retune **fail**.
+
+**B32 / B32a / B32b / B32c / B32d / B32e / B32f.** Climb
+sketch as an a priori lives in
+[`TRACK-B-WINDOW.md`](TRACK-B-WINDOW.md). Readable **pass**.
+Matching the sketch closes \(X\) **fail**. Cashing B11c
+on \(T=0.064\) is continuation **fail**. Growing sketch
+is NS **fail**. Window is \(\int\|\omega\|_\infty\) **fail**.
+Finer leftover **open**. Not a PDE retune **fail**.
 
 ---
 
 ## What is still the next write
 
 1. Stretching budget is not an a priori (B15e).
-   Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. Finer (\(n>32\))
+   Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer leftover is B22e. Finer (\(n>32\))
    stays a box knob (B22e). Do not spawn \(n=64\). B4c
    stands. Angular \(1/r^2\) does not. Do not cancel to
    \(\Phi\). Do not write \(c=8\) into the PDE.
@@ -511,8 +526,9 @@ python3 scripts/track_b_blob.py
 python3 scripts/track_b_clock.py
 python3 scripts/track_b_match.py
 python3 scripts/track_b_saving.py
+python3 scripts/track_b_window.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net tests.test_track_b_blob tests.test_track_b_clock tests.test_track_b_match tests.test_track_b_saving
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net tests.test_track_b_blob tests.test_track_b_clock tests.test_track_b_match tests.test_track_b_saving tests.test_track_b_window
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

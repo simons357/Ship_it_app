@@ -164,7 +164,7 @@ Domain B **never** passes regularity. `check B` stays
 | B20f | this retunes the PDE | **fail** |
 | B21 | ODE and NS readable on the window | **pass** |
 | B21a / B21b / B21c / B21d | room on this window; sitting path is NS; \(\Delta j=cT\); sketch sits here | **fail** |
-| B21e | matching the sketch closes \(X\) | **open** |
+| B21e | matching the sketch closes \(X\) | **fail** |
 | B21f | this retunes the PDE | **fail** |
 | B22 | longer paths readable past room time | **pass** |
 | B22a / B22b / B22c / B22d | longer \(c\ge 8\); ladder; high fill; clock saved \(X\) | **fail** |
@@ -204,12 +204,16 @@ Domain B **never** passes regularity. `check B` stays
 | B30f | this retunes the PDE | **fail** |
 | B31 | field \(c\), blob miss, path-mean miss readable | **pass** |
 | B31a / B31b / B31c / B31d | field climb closes \(X\); offset is continuation; visc fall is a class; reading \(c\) is \(\int\|\omega\|_\infty\) | **fail** |
-| B31e | matching the prescribed-\(c\) sketch closes \(X\) | **open** |
+| B31e | matching the prescribed-\(c\) sketch closes \(X\) | **fail** |
 | B31f | this retunes the PDE | **fail** |
+| B32 | window rates, missed room, sketch-grows / field-falls readable | **pass** |
+| B32a / B32b / B32c / B32d | match closes \(X\); cashing B11c is continuation; growing sketch is NS; window is \(\int\|\omega\|_\infty\) | **fail** |
+| B32e | a finer box closes \(X\) | **open** |
+| B32f | this retunes the PDE | **fail** |
 | classical regularity | — | **open** |
 
 **Next B write:** Stretching budget is not an a priori
-(B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. Finer
+(B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer leftover is B22e. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.
 Angular \(1/r^2\) does not. We are not tuning the
 equation. Do not spawn \(n=64\).

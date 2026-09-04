@@ -35,6 +35,7 @@ class TrackBMatchTests(unittest.TestCase):
         self.assertLess(by["B30_match_readable"]["dX_ns"], 0.0)
         for name in ("packet", "blob"):
             self.assertLess(by["B30b_shrink_alpha_not_continuation"]["alpha_ratio"][name], ALPHA_RATIO_MAX)
+        self.assertIn("B22e", payload["next_da_move"])
         self.assertIn("B21e", payload["next_da_move"])
         self.assertIn("B20e", payload["next_da_move"])
         self.assertIn("B19e", payload["next_da_move"])

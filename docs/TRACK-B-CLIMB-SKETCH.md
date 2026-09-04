@@ -51,8 +51,9 @@ Prescribed \(+0.512\). Field \(\approx-0.015\).
 window.” Model \(X\) still grows. \(t=0\) \(\dot X=+2.25\),
 same fat cubic as frozen \(j_*=2\).
 
-**B21e, open.** Matching the sketch to a longer / finer
-NS run is not continuation. Finer/longer is B13e.
+**B21e, fail** of “matching the sketch closes \(X\).”
+Scored as B32. A short window is not the sitting of
+B11c. The sketch grew. The field fell.
 
 **B21f, fail** of “this retunes the PDE.” \(c\) is a
 knob on the estimate.
@@ -95,11 +96,9 @@ a-priori slogan missed.
 A long ODE is not a short path.
 
 **Operator.** Climb sketch is scored. B11e is scored.
-Climb and DNS knobs at \(n=32\) are scored. Finer is B22e.
-DNS is not an a priori (B13f). Longer n=32 past
-the ODE room time did not produce \(c=8\) (B13e).
-Finer stays a box knob (B22e). B4c stands. Do not
-write \(c=8\) into the PDE. Do not spawn \(n=64\).
+B21e is scored. Next: finer box (B22e). Do not spawn
+\(n=64\). B4c stands. Do not cancel to \(\Phi\). Do not
+write \(c=8\) into the PDE.
 
 ---
 
@@ -113,9 +112,9 @@ write \(c=8\) into the PDE. Do not spawn \(n=64\).
 | B21b | **fail** | B11c sitting path is the NS packet |
 | B21c | **fail** | NS \(\Delta j_{\mathrm{bar}}=cT\) |
 | B21d | **fail** | the sketch already sits on this window |
-| B21e | **open** | matching the sketch closes \(X\) |
+| B21e | **fail** | matching the sketch closes \(X\) |
 | B21f | **fail** | this retunes the PDE |
-| domain B | **open** | finer (\(n>32\)) is a box knob (B22e) |
+| domain B | **open** | finer leftover is B22e |
 
 Tesla’s line: the sitting of \(c=8\) is a long ODE.
 This window is short. The field did not follow.

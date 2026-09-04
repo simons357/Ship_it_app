@@ -1331,6 +1331,48 @@ def lemma_saving_priori_not_a_retune() -> dict:
     return spnr()
 
 
+def lemma_window_priori_readable() -> dict:
+    from track_b_window import lemma_window_priori_readable as wpr
+
+    return wpr()
+
+
+def lemma_window_not_a_priori() -> dict:
+    from track_b_window import lemma_window_not_a_priori as wna
+
+    return wna()
+
+
+def lemma_short_not_continuation() -> dict:
+    from track_b_window import lemma_short_not_continuation as snc
+
+    return snc()
+
+
+def lemma_growing_not_ns() -> dict:
+    from track_b_window import lemma_growing_not_ns as gns
+
+    return gns()
+
+
+def lemma_window_not_integral_max() -> dict:
+    from track_b_window import lemma_window_not_integral_max as wnim
+
+    return wnim()
+
+
+def lemma_finer_box_leftover() -> dict:
+    from track_b_window import lemma_finer_box_leftover as fbl
+
+    return fbl()
+
+
+def lemma_window_priori_not_a_retune() -> dict:
+    from track_b_window import lemma_window_priori_not_a_retune as wpnr
+
+    return wpnr()
+
+
 def lemma_coherent_field() -> dict:
     from track_b_coherent import lemma_coherent_field as coh
 
@@ -1573,6 +1615,13 @@ def run(out: Path | None = None) -> dict:
         lemma_c_not_integral_max(),
         lemma_sketch_leftover(),
         lemma_saving_priori_not_a_retune(),
+        lemma_window_priori_readable(),
+        lemma_window_not_a_priori(),
+        lemma_short_not_continuation(),
+        lemma_growing_not_ns(),
+        lemma_window_not_integral_max(),
+        lemma_finer_box_leftover(),
+        lemma_window_priori_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -1628,7 +1677,7 @@ def run(out: Path | None = None) -> dict:
             "B20 c readable on blob and B18 paths (pass); blob t=0 not c≥8 (fail); path mean not c≥8 (fail)",
             "B20c visc is not a ladder on the blob (fail); j_bar offset is not a climb (fail); NS climb not an a priori (B20e fail)",
             "B21 ODE and NS readable on the window (pass); c=8 not yet in the viscous room (fail); not the sitting path (fail)",
-            "B21c NS Δj is not cT (fail); sketch did not sit on this window (fail); not an a priori (open)",
+            "B21c NS Δj is not cT (fail); sketch did not sit on this window (fail); climb sketch not an a priori (B21e fail)",
             "B22 longer n=32 readable past room time (pass); not c≥8 (fail); not a ladder (fail)",
             "B22c no high fill (fail); clock did not save (fail); finer box open (B22e); DNS not an a priori (B13f fail)",
             "B23 short+longer DNS readable (pass); decaying packet not an a priori (fail); room time not continuation (fail)",
@@ -1648,11 +1697,13 @@ def run(out: Path | None = None) -> dict:
             "B30 rates+sign mismatch+model-grows/field-falls readable (pass); match not an a priori (fail); shrink α_c not continuation (fail)",
             "B30c wrong-sign ODE is not NS (fail); match is not ∫‖ω‖_∞ (fail); climb leftover scored (B20e fail); not a PDE retune (fail)",
             "B31 field c+blob miss+path-mean miss readable (pass); field c not an a priori (fail); offset not continuation (fail)",
-            "B31c visc fall is not a class (fail); c is not ∫‖ω‖_∞ (fail); sketch leftover open (B21e); not a PDE retune (fail)",
+            "B31c visc fall is not a class (fail); c is not ∫‖ω‖_∞ (fail); sketch leftover scored (B21e fail); not a PDE retune (fail)",
+            "B32 window rates+missed room+sketch-grows/field-falls readable (pass); window not an a priori (fail); short not continuation (fail)",
+            "B32c growing sketch is not NS (fail); window is not ∫‖ω‖_∞ (fail); finer leftover open (B22e); not a PDE retune (fail)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. "
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer leftover is B22e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),

@@ -105,7 +105,7 @@ All readable. The a-priori slogan missed.
 The ODE stayed a model.
 
 **Operator.** Field glue is scored. B9d is scored.
-B19e is scored. NS climb is not an a priori (B20e). Next: climb sketch (B21e). Finer is B22e.
+B19e is scored. NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Next: finer box (B22e). Finer is B22e.
 B4c stands. Do not cancel to \(\Phi\).
 
 ---
@@ -122,7 +122,7 @@ B4c stands. Do not cancel to \(\Phi\).
 | B19d | **fail** | \(\nu 2^{2j_*}X\) is NS visc |
 | B19e | **fail** | matching the sketch closes \(X\) |
 | B19f | **fail** | this retunes the PDE |
-| domain B | **open** | climb-sketch leftover is B21e |
+| domain B | **open** | finer leftover is B22e |
 
 Tesla’s line: the \(j_*=2\) sketch grows. The NS packet
 falls. Sign of \(\dot X\) is the knob.

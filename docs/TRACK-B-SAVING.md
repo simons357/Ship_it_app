@@ -44,9 +44,9 @@ the barycenter here. That is a reading, not a type.
 on the max vorticity.” A barycenter rate is not
 \(\int\|\omega\|_\infty\).
 
-**B31e, open.** Climb-sketch leftover is B21e.
-Prescribed \(c=8\) versus the field window. Not a
-bigger FFT.
+**B31e, fail** of “matching the prescribed-\(c\) sketch
+closes \(X\).” Scored as B21e / B32. A short window
+is not the sitting.
 
 **B31f, fail** of “this retunes the PDE.” \(c\) is a
 knob on the estimate.
@@ -88,7 +88,7 @@ slogan missed.
 A rate you typed is not a rate the metric produced.
 
 **Operator.** The saving climb is scored. B20e is
-scored. Next: climb sketch (B21e). Finer stays B22e.
+scored. Climb sketch is not an a priori (B21e). Next: finer box (B22e). Finer stays B22e.
 Do not spawn \(n=64\). B4c stands. Do not cancel to
 \(\Phi\). Do not write \(c=8\) into the PDE.
 
@@ -105,9 +105,9 @@ Do not spawn \(n=64\). B4c stands. Do not cancel to
 | B31b | **fail** | \(j_{\mathrm{bar}}\) offset is continuation |
 | B31c | **fail** | visc fall is a class |
 | B31d | **fail** | reading \(c\) is \(\int\|\omega\|_\infty\) |
-| B31e | **open** | matching the prescribed-\(c\) sketch closes \(X\) |
+| B31e | **fail** | matching the prescribed-\(c\) sketch closes \(X\) |
 | B31f | **fail** | this retunes the PDE |
-| domain B | **open** | climb-sketch leftover is B21e |
+| domain B | **open** | finer leftover is B22e |
 
 Tesla’s line: \(c\) the field makes. It did not give
 you \(c=8\).

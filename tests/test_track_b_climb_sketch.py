@@ -24,7 +24,7 @@ class TrackBClimbSketchTests(unittest.TestCase):
         self.assertEqual(by["B21b_not_the_sitting"]["verdict"], "fail")
         self.assertEqual(by["B21c_delta_j_not_prescribed"]["verdict"], "fail")
         self.assertEqual(by["B21d_sketch_did_not_save"]["verdict"], "fail")
-        self.assertEqual(by["B21e_sketch_not_X_a_priori"]["verdict"], "open")
+        self.assertEqual(by["B21e_sketch_not_X_a_priori"]["verdict"], "fail")
         self.assertEqual(by["B21f_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
@@ -38,6 +38,8 @@ class TrackBClimbSketchTests(unittest.TestCase):
         self.assertLess(by["B21c_delta_j_not_prescribed"]["c_mean_ns"], C_SAVE)
         self.assertGreater(by["B21d_sketch_did_not_save"]["Xdot0"], 0.0)
         self.assertIn("B14d", payload["next_da_move"])
+        self.assertIn("B21e", payload["next_da_move"])
+        self.assertIn("B22e", payload["next_da_move"])
 
     def test_writeup_exists(self):
         self.assertTrue((ROOT / "docs" / "TRACK-B-CLIMB-SKETCH.md").is_file())

@@ -176,8 +176,8 @@ def lemma_sketch_not_close() -> dict:
     return rec(
         "B21e_sketch_not_X_a_priori",
         "matching the c=8 sketch to a longer / finer NS run closes a bound for classical X",
-        "open",
-        "The sketch is not this field. Finer/longer is B13e. Typing c=8 into the PDE is a retune. Not continuation.",
+        "fail",
+        "Scored as B32. A short window is not the sitting of B11c. The sketch grew. The field fell. Finer leftover is B22e.",
     )
 
 
@@ -219,7 +219,7 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb-sketch leftover is B21e. "
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer leftover is B22e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),

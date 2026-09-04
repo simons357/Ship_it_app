@@ -39,6 +39,7 @@ class TrackBFieldOccTests(unittest.TestCase):
         self.assertIn("B19e", payload["next_da_move"])
         self.assertIn("B20e", payload["next_da_move"])
         self.assertIn("B21e", payload["next_da_move"])
+        self.assertIn("B22e", payload["next_da_move"])
 
     def test_writeup_exists(self):
         self.assertTrue((ROOT / "docs" / "TRACK-B-FIELD-OCC.md").is_file())
