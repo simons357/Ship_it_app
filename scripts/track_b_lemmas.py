@@ -422,6 +422,36 @@ def lemma_occupation_glue() -> dict:
     return lemma_occupation_not_close()
 
 
+def lemma_glue_bookkeeping() -> dict:
+    from track_b_glue import lemma_bookkeeping
+
+    return lemma_bookkeeping()
+
+
+def lemma_glue_high_j() -> dict:
+    from track_b_glue import lemma_high_j_glue
+
+    return lemma_high_j_glue()
+
+
+def lemma_glue_low_j() -> dict:
+    from track_b_glue import lemma_low_j_blows
+
+    return lemma_low_j_blows()
+
+
+def lemma_glue_switching() -> dict:
+    from track_b_glue import lemma_switching
+
+    return lemma_switching()
+
+
+def lemma_glue_not_ns() -> dict:
+    from track_b_glue import lemma_glue_not_regularity
+
+    return lemma_glue_not_regularity()
+
+
 def lemma_regularity() -> dict:
     return rec(
         "B_regularity",
@@ -463,6 +493,11 @@ def run(out: Path | None = None) -> dict:
         lemma_occupation_high_j(),
         lemma_occupation_leray(),
         lemma_occupation_glue(),
+        lemma_glue_bookkeeping(),
+        lemma_glue_high_j(),
+        lemma_glue_low_j(),
+        lemma_glue_switching(),
+        lemma_glue_not_ns(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -492,10 +527,14 @@ def run(out: Path | None = None) -> dict:
             "Φ is not the estimate variable (fail)",
             "B7 Bony split + T2 self (pass); energy-class low T (pass); uniform ρ^{1/2} fail",
             "B8 occupation clock (pass); high j* short (pass); Leray⇒short CONC fail; glue to X open",
+            "B9 glue bookkeeping (pass); high-j CONC sits (pass); switching high-j sits (pass)",
+            "B9b low-j CONC cubic is live (fail); B9d sketch is not an NS a priori (open)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Glue B4c while CONC to energy-class T while SPREAD, against the B8 clock."
+            "Low-j_* CONC is the remaining cubic (B9b). Either coarse packets "
+            "cannot stay CONC, or the cubic is bounded when j_* is small. "
+            "Tesla: that is the paragraph."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

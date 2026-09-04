@@ -144,7 +144,7 @@
       "name": "B8c_occupation_not_X_bound",
       "statement": "occupation-time bookkeeping closes a bound for X",
       "verdict": "open",
-      "why": "The clock is armed: B4c on CONC, energy-class T on SPREAD. The glue that bounds X is the next estimate, not this one."
+      "why": "The clock is armed. Glue is written (B9). Occupation itself still does not close X. Low-j CONC is the remaining cubic."
     }
   ],
   "counts": {
@@ -152,5 +152,5 @@
     "fail": 1,
     "open": 1
   },
-  "next_da_move": "Glue B4c (CONC) to energy-class T (SPREAD) through the clock. That estimate, if it closes, is the one that talks to X."
+  "next_da_move": "Glue is written (B9). Low-j_* CONC is the remaining cubic (B9b). Occupation itself still does not close X."
 }

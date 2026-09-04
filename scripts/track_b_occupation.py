@@ -143,7 +143,7 @@ def lemma_occupation_not_close() -> dict:
         "B8c_occupation_not_X_bound",
         "occupation-time bookkeeping closes a bound for X",
         "open",
-        "The clock is armed: B4c on CONC, energy-class T on SPREAD. The glue that bounds X is the next estimate, not this one.",
+        "The clock is armed. Glue is written (B9). Occupation itself still does not close X. Low-j CONC is the remaining cubic.",
     )
 
 
@@ -167,8 +167,8 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Glue B4c (CONC) to energy-class T (SPREAD) through the clock. "
-            "That estimate, if it closes, is the one that talks to X."
+            "Glue is written (B9). Low-j_* CONC is the remaining cubic (B9b). "
+            "Occupation itself still does not close X."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_occupation.json")

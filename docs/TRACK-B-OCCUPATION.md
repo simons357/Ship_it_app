@@ -97,9 +97,10 @@ alignment.
 **Einstein.** Two columns, one time axis. Name which object
 is on.
 
-**Operator.** Clock is out. Next is the glue that talks to
-\(X\): B4c while CONC, energy-class \(T\) while SPREAD,
-integrated against this clock.
+**Operator.** Clock is out. The glue that talks to \(X\)
+is written in [`TRACK-B-GLUE.md`](TRACK-B-GLUE.md): B4c
+while CONC, energy-class \(T\) while SPREAD, against this
+clock. High \(j_*\) sits. Low \(j_*\) is the remaining room.
 
 ---
 
@@ -111,6 +112,6 @@ integrated against this clock.
 | B8a | **pass** | high \(j_*\) hot time falls |
 | B8b | **fail** | Leray \(\Rightarrow\) short CONC |
 | B8c | **open** | occupation closes a bound for \(X\) |
-| domain B | **open** | that glue is the next estimate |
+| domain B | **open** | glue is written; low-\(j_*\) CONC is the room |
 
 The unicorn, broken out: a clock you can read, not a close.

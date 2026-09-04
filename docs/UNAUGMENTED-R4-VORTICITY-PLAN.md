@@ -209,7 +209,9 @@ On each time interval the solution is either concentrated or spread (or switchin
 - Concentrated: Ring + tube \(1/r^4\) + viscosity at scale \(2^{-j_*}\).
 - Spread: T2 Lemma 1 + enhanced dissipation.
 
-Occupation time is broken out in [`TRACK-B-OCCUPATION.md`](TRACK-B-OCCUPATION.md). One threshold \(\sigma=1/2\), no gap. The clock **passes**. High \(j_*\) hot time **passes** on the packet ODE. Leray \(\Rightarrow\) short CONC **fails**. The glue to \(X\) is **open**.
+Occupation time is broken out in [`TRACK-B-OCCUPATION.md`](TRACK-B-OCCUPATION.md). One threshold \(\sigma=1/2\), no gap. The clock **passes**. High \(j_*\) hot time **passes** on the packet ODE. Leray \(\Rightarrow\) short CONC **fails**.
+
+The two-regime glue is broken out in [`TRACK-B-GLUE.md`](TRACK-B-GLUE.md). Increments add. High \(j_*\) CONC sits. Switching high \(j_*\) sits. Low \(j_*\) CONC **fails**: the leftover cubic is live. The sketch is **not** an a priori bound for classical \(X\). That coarse-packet room is the next write.
 
 Leray’s \(\int X\,dt<\infty\) limits how long a high-\(j_*\) concentrated spike can last, but it does **not** by itself stop \(\dot X\sim X^3\). A spike \(X\sim(T_*-t)^{-1/2}\) is compatible with integrable \(X\). Viscosity or geometric depletion has to supply the extra decay. Do not close with energy integrability alone.
 

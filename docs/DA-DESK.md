@@ -112,11 +112,14 @@ Domain B **never** passes regularity. `check B` stays
 | B8 / B8a | occupation clock; high \(j_*\) short | **pass** |
 | B8b | Leray \(\Rightarrow\) short CONC | **fail** |
 | B8c | occupation closes \(X\) | **open** |
+| B9 / B9a / B9c | glue bookkeeping; high \(j_*\) sits | **pass** |
+| B9b | low \(j_*\) CONC cubic bounded | **fail** |
+| B9d | glue sketch is an NS a priori | **open** |
 | \(\Phi\) as estimate variable | keep \(\Gamma\) | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** glue B4c (CONC) to energy-class \(T\)
-(SPREAD) against the B8 clock.
+**Next B write:** low-\(j_*\) CONC (B9b). Coarse packets
+still carry a live cubic.
 
 ---
 
@@ -394,7 +397,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`,
 `docs/DA-PAPER.md`, `docs/DA-THINK-TANK.md`,
 `docs/DA-SESSION.md`, `docs/TRACK-B-HARDY-TUBE.md`,
-`docs/TRACK-B-BONY-T.md`, `docs/TRACK-B-OCCUPATION.md`.
+`docs/TRACK-B-BONY-T.md`, `docs/TRACK-B-OCCUPATION.md`,
+`docs/TRACK-B-GLUE.md`.
 
 ---
 
@@ -406,7 +410,9 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 - Hardy \(\to I_{\mathrm{tube}}\): packet class **pass**,
   all-data **fail**. Low Bony \(T\): energy class **pass**,
   uniform \(\rho^{1/2}\) **fail**. Occupation clock **pass**;
-  Leray \(\Rightarrow\) short CONC **fail**. Next: glue to \(X\).
+  Leray \(\Rightarrow\) short CONC **fail**. Glue sketch
+  written: high \(j_*\) sits, low \(j_*\) blows. Next:
+  low-\(j_*\) CONC.
 - Cosmo does not enter NS.
 - HB stays shelved as a theorem. DA-as-process stays live.
 

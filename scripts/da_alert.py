@@ -241,7 +241,7 @@ def render_text(events: list[dict], baseline: bool) -> str:
     if not events:
         return (
             "DA checked. Nothing significant flipped.\n"
-            "Next: glue B4c (CONC) to energy-class T (SPREAD) against the clock.\n"
+            "Next: low-j_* CONC (B9b). The leftover cubic is live when the packet is coarse.\n"
         )
     parts = []
     for e in events:
@@ -307,7 +307,7 @@ def notify(
         "recommendation": (
             events[-1]["next"]
             if events
-            else "Nothing flipped. Next write is the glue to X against the occupation clock."
+            else "Nothing flipped. Next write is low-j_* CONC (B9b)."
         ),
     }
     delivery = {"file": str(out_txt)}

@@ -106,6 +106,9 @@ class DaMachineTests(unittest.TestCase):
         occ = classify_claim("occupation time of 3-CONC vs SPREAD")
         self.assertEqual(occ["domain"], "B")
         self.assertEqual(occ["verdict"], "open")
+        glue = classify_claim("two-regime glue of B4c CONC to energy-class T")
+        self.assertEqual(glue["domain"], "B")
+        self.assertEqual(glue["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

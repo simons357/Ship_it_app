@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "glue to X",
+    "tesla": "exacting, not a jerk. He will not sit a paragraph.",
+    "domain_verdict": "open"
+  },
+  "lemmas": [
+    {
+      "name": "B9_glue_bookkeeping",
+      "statement": "\u0394X = increment_CONC + increment_SPREAD against the B8 clock",
+      "verdict": "pass",
+      "why": "Tesla\u2019s first knob: the two columns add. That is the apparatus, not a bound.",
+      "bookkeeping": {
+        "residual": 4.440892098500626e-16,
+        "ok": true,
+        "X0": 1.15,
+        "XT": 0.3756490463376752
+      }
+    },
+    {
+      "name": "B9a_glue_high_jstar",
+      "statement": "B4c-scale CONC (high j*) plus the clock keeps the model X bounded",
+      "verdict": "pass",
+      "why": "Same weight, both sides, at the thin packet. Olga\u2019s instinct, Tesla\u2019s knob.",
+      "run": {
+        "X_final": 1.4699611645681224e-72,
+        "X_max": 1.15,
+        "blew": false,
+        "steps": 8000,
+        "T": 1.6,
+        "tau_conc": 1.6,
+        "ok": true
+      }
+    },
+    {
+      "name": "B9b_glue_low_jstar_blows",
+      "statement": "the glued ODE bounds X for low-j* CONC as well",
+      "verdict": "fail",
+      "why": "Fat slow CONC. The leftover cubic still wins. The glue is not all-data.",
+      "run": {
+        "X_final": 40.84911299138827,
+        "X_max": 40.84911299138827,
+        "blew": true,
+        "steps": 6375,
+        "T": 0.31875000000000003,
+        "tau_conc": 0.31875000000000003,
+        "ok_as_kill": true
+      }
+    },
+    {
+      "name": "B9c_glue_switching",
+      "statement": "switching high-j* CONC with SPREAD keeps the model X bounded",
+      "verdict": "pass",
+      "why": "The clock can flip. High packets plus energy-class T do not blow this ODE.",
+      "run": {
+        "X_final": 1.1588460891111576e-54,
+        "X_max": 1.15,
+        "blew": false,
+        "steps": 12000,
+        "T": 2.4,
+        "tau_conc": 1.2,
+        "ok": true
+      }
+    },
+    {
+      "name": "B9d_glue_not_X_a_priori",
+      "statement": "the glued model is a closed a priori bound for classical X",
+      "verdict": "open",
+      "why": "A two-regime ODE is a sketch of the estimate. It is not the estimate on NS."
+    }
+  ],
+  "counts": {
+    "pass": 3,
+    "fail": 1,
+    "open": 1
+  },
+  "next_da_move": "Stay with high-j* CONC + energy-class T. Low-j* CONC is the remaining cubic. That is the live room."
+}

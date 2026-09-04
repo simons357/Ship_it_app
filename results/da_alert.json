@@ -1,7 +1,7 @@
 {
   "meta": {
-    "source": "alert",
-    "t": "2026-09-04T07:08:41.603461+00:00",
+    "source": "check",
+    "t": "2026-09-04T07:20:43.626180+00:00",
     "significant": false,
     "baseline": false,
     "no_phone_in_repo": true,
@@ -18,9 +18,9 @@
     "U.destination": "open"
   },
   "events": [],
-  "plain": "DA checked. Nothing significant flipped.\nNext: same as yesterday. Hardy \u2192 tube source, then the low product term.\n",
+  "plain": "DA checked. Nothing significant flipped.\nNext: low-j_* CONC (B9b). The leftover cubic is live when the packet is coarse.\n",
   "sms_lines": [],
-  "recommendation": "Nothing flipped. Next write is occupation time of 3-CONC vs SPREAD.",
+  "recommendation": "Nothing flipped. Next write is low-j_* CONC (B9b).",
   "delivery": {
     "file": "/workspace/results/DA-ALERT.txt",
     "webhook": {

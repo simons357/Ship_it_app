@@ -33,7 +33,7 @@ chair.
 
 ## What they say in common (not a close)
 
-- **B:** B4c on CONC, energy-class \(T\) on SPREAD, B8 clock. Glue to \(X\) is open. Regularity stays open.
+- **B:** B4c on CONC, energy-class \(T\) on SPREAD, B8 clock. Glue sketch written. Low-\(j_*\) CONC is the live cubic. Regularity stays open.
 - **A:** Leave Ladyzhenskaya on A.
 - **U:** Stop breaking \(\mathcal{L}_{\mathrm{SM}}\). Keep Einstein \(+T_{\mathrm{SM}}\). Produce lives outside the poster.
 - **Q:** Arithmetic only. No Bridge* \(\to\) SND.

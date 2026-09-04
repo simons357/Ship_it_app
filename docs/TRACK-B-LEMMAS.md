@@ -48,7 +48,12 @@ not done).
 | B8 | \(\tau_{\mathrm{C}}+\tau_{\mathrm{S}}=T\) | **pass** | Two-regime clock. |
 | B8a | high \(j_*\) hot occupation falls | **pass** | Packet ODE at B4c’s scale. |
 | B8b | Leray \(\Rightarrow\) short CONC | **fail** | B6 spike, wearing a regime hat. |
-| B8c | occupation closes a bound for \(X\) | **open** | The glue to \(X\). |
+| B8c | occupation closes a bound for \(X\) | **open** | Clock is not the estimate. |
+| B9 | \(\Delta X=\Delta_{\mathrm{C}}+\Delta_{\mathrm{S}}\) | **pass** | Two-regime bookkeeping. |
+| B9a | high \(j_*\) CONC model sits | **pass** | Packet viscosity owns the cubic. |
+| B9b | low \(j_*\) CONC stays bounded | **fail** | \(j_*=2\), \(X_0=2.5\): \(X\) crosses 40. |
+| B9c | switching high \(j_*\) sits | **pass** | Clock can flip. |
+| B9d | glue sketch is an NS a priori | **open** | A model, not the equation. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -139,16 +144,23 @@ H at frozen \(\rho\le 1/4\) may still use B7b.
 **B8 / B8a / B8b / B8c.** Occupation time lives in
 [`TRACK-B-OCCUPATION.md`](TRACK-B-OCCUPATION.md). Clock
 **pass**. High \(j_*\) short **pass**. Leray \(\Rightarrow\)
-short CONC **fail**. Glue to \(X\) **open**.
+short CONC **fail**. Occupation itself does not close \(X\).
+
+**B9 / B9a / B9b / B9c / B9d.** The two-regime glue lives in
+[`TRACK-B-GLUE.md`](TRACK-B-GLUE.md). Increments add
+**pass**. High \(j_*\) CONC sits **pass**. Switching high
+\(j_*\) sits **pass**. Low \(j_*\) CONC **fails**: the leftover
+cubic is live when the packet is coarse. Sketch \(\neq\) NS
+a priori **open**.
 
 ---
 
 ## What is still the next write
 
-1. Glue B4c while CONC to energy-class \(T\) while SPREAD,
-   against the B8 clock. That is the estimate that talks to \(X\).
+1. Low-\(j_*\) CONC (B9b). Either a coarse packet cannot stay
+   concentrated, or the cubic is bounded when \(j_*\) is small.
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
-   or Leray-as-occupation.
+   Leray-as-occupation, or the glue sketch as an NS a priori.
 
 None of those is a pass on regularity. Checker:
 
@@ -156,8 +168,9 @@ None of those is a pass on regularity. Checker:
 python3 scripts/track_b_hardy_tube.py
 python3 scripts/track_b_bony_t.py
 python3 scripts/track_b_occupation.py
+python3 scripts/track_b_glue.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

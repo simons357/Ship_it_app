@@ -356,10 +356,11 @@ again.
 | Einstein / Weinberg / PDG write \(F\) | **fail** |
 | Domain B after the session | **open** |
 
-They did the tube, the low Bony \(T\), and the occupation
-clock. Packet class **pass**. Energy-class \(T\) **pass**.
-Clock **pass**. Leray does not shorten CONC. Next: glue to
-\(X\). See [`TRACK-B-OCCUPATION.md`](TRACK-B-OCCUPATION.md).
+They did the tube, the low Bony \(T\), the occupation
+clock, and the two-regime glue. Packet class **pass**.
+Energy-class \(T\) **pass**. Clock **pass**. High \(j_*\)
+glue sits. Low \(j_*\) CONC still blows. Next: that coarse
+packet. See [`TRACK-B-GLUE.md`](TRACK-B-GLUE.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  
