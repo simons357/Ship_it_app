@@ -46,6 +46,13 @@ class TrackBResidualTests(unittest.TestCase):
         self.assertEqual(by["B40d_blanks_not_integral_max"]["verdict"], "fail")
         self.assertEqual(by["B40e_blanks_not_regularity"]["verdict"], "fail")
         self.assertEqual(by["B40f_not_a_pde_retune"]["verdict"], "fail")
+        self.assertEqual(by["B41_a2_path_readable"]["verdict"], "pass")
+        self.assertEqual(by["B41a_a2_path_not_a_priori"]["verdict"], "fail")
+        self.assertEqual(by["B41b_a2_path_not_continuation"]["verdict"], "fail")
+        self.assertEqual(by["B41c_a2_path_not_ns"]["verdict"], "fail")
+        self.assertEqual(by["B41d_a2_path_not_integral_max"]["verdict"], "fail")
+        self.assertEqual(by["B41e_a2_path_not_regularity"]["verdict"], "fail")
+        self.assertEqual(by["B41f_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
         self.assertFalse(payload["meta"]["spawned_n64"])
@@ -63,7 +70,9 @@ class TrackBResidualTests(unittest.TestCase):
         self.assertTrue(by["B40_blanks_readable"]["a1_off"])
         self.assertTrue(by["B40_blanks_readable"]["a2_live"])
         self.assertGreater(by["B40_blanks_readable"]["l2p_inf_mean"], 0.0)
+        self.assertLess(by["B41_a2_path_readable"]["growth_max"], 1.10)
         self.assertIn("A1", payload["next_da_move"])
+        self.assertIn("B15 path", payload["next_da_move"])
         self.assertIn("Regularity stays open", payload["next_da_move"])
 
     def test_writeup_exists(self):

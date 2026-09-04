@@ -141,6 +141,34 @@ No. Domain B stays open.
 **B40f, fail** of “this retunes the PDE.” Knob on the
 check.
 
+**B41, pass.** Same B15 evolve. Same \(n=32\). No new
+box. On the viscous path, \(X\) drops. The ratio
+\(\|\lambda_2^+\|_\infty/\sqrt{X}\) stays flat
+(growth \(< 1.10\)). Euler stays flat. The slogan
+“A2 blows while visc eats \(X\)” died on this box.
+
+**B41a, fail** of “a flat A2 ratio is a closed
+estimate.” Three seeds, \(T=0.064\). All-data Miller
+history stays blank.
+
+**B41b, fail** of “A2 not blowing makes \(\mathcal{R}\)
+integrable.” A short decaying packet is not
+\(\int\mathcal{R}<\infty\).
+
+**B41c, fail** of “reading \(\lambda_2^+\) along the
+path is an NS a priori.” A ratio is a knob on the
+check.
+
+**B41d, fail** of “a flat A2 ratio is
+\(\int\|\omega\|_\infty\).” Beale still asks for the
+max.
+
+**B41e, fail** of “A2 not blowing decides regularity.”
+No. Domain B stays open.
+
+**B41f, fail** of “this retunes the PDE.” Knob on the
+check.
+
 ---
 
 ## They work it
@@ -162,9 +190,11 @@ you all data.
 **Miller.** \(\lambda_2^+\) is not hole 2. \(\det_+\) is
 \(\lambda_2^+\). Do not cash the rewrite.
 
-**Operator.** A1 is off here. A2 is live here. The
-integrals stay blank. Regularity stays open. Do not
-spawn \(n=64\). B4c stands. Do not cancel to \(\Phi\).
+**Operator.** A1 is off here. A2 is live here. A2 does
+not blow on the B15 path. A flat ratio is not
+all-data \(\int\|\lambda_2^+\|_{L^q}\). The integrals
+stay blank. Regularity stays open. Do not spawn
+\(n=64\). B4c stands. Do not cancel to \(\Phi\).
 
 ---
 
@@ -200,7 +230,14 @@ spawn \(n=64\). B4c stands. Do not cancel to \(\Phi\).
 | B40d | **fail** | blanks are \(\int\|\omega\|_\infty\) |
 | B40e | **fail** | naming blanks decides regularity |
 | B40f | **fail** | this retunes the PDE |
+| B41 | **pass** | A2 ratio stays on the B15 path |
+| B41a | **fail** | a flat path is a closed estimate |
+| B41b | **fail** | a flat path makes \(\mathcal{R}\) integrable |
+| B41c | **fail** | reading A2 along the path is an NS a priori |
+| B41d | **fail** | a flat ratio is \(\int\|\omega\|_\infty\) |
+| B41e | **fail** | a flat path decides regularity |
+| B41f | **fail** | this retunes the PDE |
 | domain B | **open** | regularity stays open |
 
-Tesla’s line: A1 is off. A2 is live. The integrals
-stay blank.
+Tesla’s line: A1 is off. A2 is live. A2 does not blow
+on this path. The integrals stay blank.

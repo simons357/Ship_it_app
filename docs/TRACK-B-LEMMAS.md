@@ -271,6 +271,13 @@ not done).
 | B40d | blanks are \(\int\|\omega\|_\infty\) | **fail** | A median is not the max. |
 | B40e | naming blanks decides regularity | **fail** | Domain B stays open. |
 | B40f | scoring this retunes the PDE | **fail** | Knob on the check. |
+| B41 | A2 ratio stays on the B15 path | **pass** | Same evolve, same \(n=32\). Growth \(< 1.10\). |
+| B41a | a flat path is a closed estimate | **fail** | Three seeds, \(T=0.064\). All-data history stays blank. |
+| B41b | a flat path makes \(\mathcal{R}\) integrable | **fail** | A decaying packet is not \(\int\mathcal{R}<\infty\). |
+| B41c | reading A2 along the path is an NS a priori | **fail** | A ratio is a knob. |
+| B41d | a flat ratio is \(\int\|\omega\|_\infty\) | **fail** | \(\|\lambda_2^+\|_\infty/\sqrt{X}\) is not the max. |
+| B41e | a flat path decides regularity | **fail** | Domain B stays open. |
+| B41f | scoring this retunes the PDE | **fail** | Knob on the check. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -603,13 +610,23 @@ Naming blanks is NS **fail**. Blanks are
 \(\int\|\omega\|_\infty\) **fail**. Naming blanks decides
 regularity **fail**. Not a PDE retune **fail**.
 
+**B41 / B41a / B41b / B41c / B41d / B41e / B41f.** A2
+path lives in [`TRACK-B-RESIDUAL.md`](TRACK-B-RESIDUAL.md).
+Ratio stays on the B15 path **pass**. Flat path is a
+closed estimate **fail**. Flat path is integrable
+\(\mathcal{R}\) **fail**. Reading A2 along the path is
+NS **fail**. Flat ratio is \(\int\|\omega\|_\infty\)
+**fail**. Flat path decides regularity **fail**. Not a
+PDE retune **fail**.
+
 ---
 
 ## What is still the next write
 
-1. A1 is off on this box. A2 is live. Neither integral
-   is known for all data. The residual tool names the
-   holes in \(\mathcal{R}\).
+1. A1 is off on this box. A2 is live. A2 does not blow
+   on the B15 path. Neither integral is known for all
+   data. The residual tool names the holes in
+   \(\mathcal{R}\).
    Miller \(\lambda_2^+\) is a different cut from hole 2.
    \(\det_+\) is the same cut. Sit down on another rename.
    Neither is an a priori. Stretching budget is not an a priori (B15e).

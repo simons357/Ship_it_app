@@ -18,7 +18,7 @@ from pathlib import Path
 
 from track_b_balance import packets
 from track_b_lemmas import rec
-from track_b_stretch import t0_samples
+from track_b_stretch import evolved, t0_samples
 
 ROOT = Path(__file__).resolve().parents[1]
 STRETCH_CACHE = ROOT / "results" / "track_b_stretch.json"
@@ -426,6 +426,107 @@ def lemma_blanks_not_a_retune() -> dict:
     )
 
 
+def a2_path() -> dict:
+    visc = evolved()["visc"]
+
+    def ratio(row: dict) -> float:
+        return row["l2p_inf"] / (row["X"] ** 0.5)
+
+    r0 = [ratio(r["start"]) for r in visc]
+    rT = [ratio(r["end"]) for r in visc]
+    growth = [b / a for a, b in zip(r0, rT)]
+    x0 = [r["start"]["X"] for r in visc]
+    xT = [r["end"]["X"] for r in visc]
+    return {
+        "n": 32,
+        "T": visc[0]["T"],
+        "r0": r0,
+        "rT": rT,
+        "growth": growth,
+        "x0": x0,
+        "xT": xT,
+        "growth_max": max(growth),
+        "r0_mean": sum(r0) / len(r0),
+        "rT_mean": sum(rT) / len(rT),
+        "x_dropped": all(b < a for a, b in zip(x0, xT)),
+    }
+
+
+def lemma_a2_path_readable() -> dict:
+    p = a2_path()
+    ok = (
+        p["n"] == 32
+        and p["x_dropped"]
+        and p["growth_max"] < 1.10
+        and p["r0_mean"] > 0.0
+    )
+    return rec(
+        "B41_a2_path_readable",
+        "‖λ2+‖_∞ / √X stays on the B15 viscous path while X falls; A2 does not blow on this box",
+        "pass" if ok else "fail",
+        "Same evolve as B15. n=32. No n=64. A flat ratio is not ∫‖λ2+‖_q < ∞ for all data.",
+        n=p["n"],
+        T=p["T"],
+        growth_max=p["growth_max"],
+        r0_mean=p["r0_mean"],
+        rT_mean=p["rT_mean"],
+    )
+
+
+def lemma_a2_path_not_a_priori() -> dict:
+    return rec(
+        "B41a_a2_path_not_a_priori",
+        "a flat A2 ratio on the B15 path is a closed estimate for classical X",
+        "fail",
+        "Three seeds, T=0.064. All-data Miller history stays blank.",
+    )
+
+
+def lemma_a2_path_not_continuation() -> dict:
+    return rec(
+        "B41b_a2_path_not_continuation",
+        "A2 not blowing on this path makes R integrable and therefore continues X",
+        "fail",
+        "A short decaying packet is not ∫R < ∞. B15d already kept the aligned share.",
+    )
+
+
+def lemma_a2_path_not_ns() -> dict:
+    return rec(
+        "B41c_a2_path_not_ns",
+        "reading λ2+ along the B15 path is an NS a priori",
+        "fail",
+        "The same eight steps as B15. A ratio is a knob on the check.",
+    )
+
+
+def lemma_a2_path_not_integral_max() -> dict:
+    return rec(
+        "B41d_a2_path_not_integral_max",
+        "a flat A2 ratio is an integral bound on the max vorticity",
+        "fail",
+        "‖λ2+‖_∞ / √X is not ∫‖ω‖_∞. Beale still asks for the max.",
+    )
+
+
+def lemma_a2_path_not_regularity() -> dict:
+    return rec(
+        "B41e_a2_path_not_regularity",
+        "A2 not blowing on this path decides classical regularity",
+        "fail",
+        "No. Domain B stays open. Do not spawn n=64.",
+    )
+
+
+def lemma_a2_path_not_a_retune() -> dict:
+    return rec(
+        "B41f_not_a_pde_retune",
+        "reading A2 along the path is a retune of classical Navier–Stokes",
+        "fail",
+        "The PDE is untouched. No Q1. No ε. Do not type c=8. Do not spawn n=64.",
+    )
+
+
 def run(out: Path | None = None) -> dict:
     lemmas = [
         lemma_residual_readable(),
@@ -456,6 +557,13 @@ def run(out: Path | None = None) -> dict:
         lemma_blanks_not_integral_max(),
         lemma_blanks_not_regularity(),
         lemma_blanks_not_a_retune(),
+        lemma_a2_path_readable(),
+        lemma_a2_path_not_a_priori(),
+        lemma_a2_path_not_continuation(),
+        lemma_a2_path_not_ns(),
+        lemma_a2_path_not_integral_max(),
+        lemma_a2_path_not_regularity(),
+        lemma_a2_path_not_a_retune(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
     for row in lemmas:
@@ -463,7 +571,7 @@ def run(out: Path | None = None) -> dict:
     payload = {
         "meta": {
             "slot": "B",
-            "write": "residual tool: holes, Miller cut, empty rename, A1/A2 blanks",
+            "write": "residual tool: holes, Miller cut, A1/A2 blanks, A2 path",
             "tuning_the_pde": False,
             "spawned_n64": False,
             "tesla": (
@@ -475,9 +583,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "A1 is off on this box. A2 is live. Neither integral is known for all data. "
-            "The residual tool names the holes in R. Miller λ2+ is a different cut from hole 2. "
-            "det+ is the same cut. Sit down on another rename. "
+            "A1 is off on this box. A2 is live. A2 does not blow on the B15 path. "
+            "Neither integral is known for all data. The residual tool names the holes in R. "
+            "Miller λ2+ is a different cut from hole 2. Sit down on another rename. "
             "Regularity leftover is not an a priori (B35e). Regularity stays open. "
             "Do not spawn n=64. B4c stands. Do not cancel to Φ."
         ),
@@ -491,7 +599,7 @@ def run(out: Path | None = None) -> dict:
 
 def main() -> int:
     payload = run()
-    print("Track B residual. A1 off. A2 live. Not a bound.")
+    print("Track B residual. A1 off. A2 live. A2 path flat. Not a bound.")
     for row in payload["lemmas"]:
         print(f"  [{row['verdict']}] {row['name']}: {row['why']}")
     print("counts", payload["counts"])

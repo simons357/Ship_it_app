@@ -237,9 +237,14 @@ Domain B **never** passes regularity. `check B` stays
 | B40 | A1 off, A2 live on the box | **pass** |
 | B40a / B40b / B40c / B40d / B40e | blanks are a closed estimate; blanks are integrable \(\mathcal{R}\); naming blanks is NS; blanks are \(\int\|\omega\|_\infty\); this write decides regularity | **fail** |
 | B40f | this retunes the PDE | **fail** |
+| B41 | A2 ratio stays on the B15 path | **pass** |
+| B41a / B41b / B41c / B41d / B41e | a flat path is a closed estimate; a flat path is integrable \(\mathcal{R}\); reading A2 along the path is NS; a flat ratio is \(\int\|\omega\|_\infty\); this write decides regularity | **fail** |
+| B41f | this retunes the PDE | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** Stretching budget is not an a priori
+**Next B write:** A1 is off. A2 is live. A2 does not
+blow on the B15 path. Sit down on another rename of
+the residual. Stretching budget is not an a priori
 (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.
 Angular \(1/r^2\) does not. We are not tuning the
