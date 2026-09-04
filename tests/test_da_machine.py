@@ -157,6 +157,9 @@ class DaMachineTests(unittest.TestCase):
         aln = classify_claim("alignment as an a priori bound for vorticity")
         self.assertEqual(aln["domain"], "B")
         self.assertEqual(aln["verdict"], "open")
+        pay = classify_claim("aligned stretching payers on a vorticity packet")
+        self.assertEqual(pay["domain"], "B")
+        self.assertEqual(pay["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

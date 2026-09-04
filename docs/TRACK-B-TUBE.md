@@ -54,8 +54,8 @@ or cancel to \(\Phi\).” B4b and B5e already missed.
 Keep \(\Gamma\). Keep \(1/r^4\).
 
 **B24e, fail** of “packet geometry closes \(X\).”
-Scored as B14d / B25. Stretching budget leftover
-is B15e.
+Scored as B14d / B25. Stretching budget is scored
+(B15e). Enstrophy leftover is B16e.
 
 **B24f, fail** of “this retunes the PDE.” The ratio
 is a knob on the estimate.
@@ -98,9 +98,9 @@ The a-priori slogan missed.
 A tube budget is not a closed estimate.
 
 **Operator.** Tube is scored. B5f is scored. Geometry
-is scored (B14d). Next: stretching budget (B15e).
-Finer stays B22e. Do not spawn \(n=64\). B4c stands.
-Do not cancel to \(\Phi\).
+is scored (B14d). The budget is scored (B15e). Next:
+enstrophy balance (B16e). Finer stays B22e. Do not
+spawn \(n=64\). B4c stands. Do not cancel to \(\Phi\).
 
 ---
 
@@ -116,7 +116,7 @@ Do not cancel to \(\Phi\).
 | B24d | **fail** | revive Hardy or cancel to \(\Phi\) |
 | B24e | **fail** | packet geometry closes \(X\) |
 | B24f | **fail** | this retunes the PDE |
-| domain B | **open** | stretching budget leftover is B15e |
+| domain B | **open** | enstrophy-balance leftover is B16e |
 
 Tesla’s line: you asked the tube. Full \(D\) budgets
 the packet. Angular loses. Neither reading is a bound.

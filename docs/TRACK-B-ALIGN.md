@@ -56,8 +56,9 @@ a type.
 smaller stretching efficiency on a subset of \(E_c\)
 is not \(\int\|\omega\|_\infty\).
 
-**B25e, open.** Stretching budget leftover is B15e.
-Who pays \((\omega\cdot S\omega)_+\). Not a bigger FFT.
+**B25e, fail** of “the aligned stretching budget
+closes \(X\).” Scored as B15e / B26. A share of
+\((\omega\cdot S\omega)_+\) is not continuation.
 
 **B25f, fail** of “this retunes the PDE.” Alignment
 is a knob on the estimate.
@@ -95,9 +96,9 @@ slogan missed.
 A frame identity is not a closed estimate.
 
 **Operator.** Geometry is scored. B14d is scored.
-Next: stretching budget (B15e). Finer stays B22e.
-Do not spawn \(n=64\). B4c stands. Do not cancel
-to \(\Phi\).
+The budget is scored (B15e). Next: enstrophy
+balance (B16e). Finer stays B22e. Do not spawn
+\(n=64\). B4c stands. Do not cancel to \(\Phi\).
 
 ---
 
@@ -111,9 +112,9 @@ to \(\Phi\).
 | B25b | **fail** | Lipschitz + CF is an a priori |
 | B25c | **fail** | median \(\sim 1/2\) is a geometric class |
 | B25d | **fail** | CF conditional is BKM |
-| B25e | **open** | aligned budget closes \(X\) |
+| B25e | **fail** | aligned budget closes \(X\) |
 | B25f | **fail** | this retunes the PDE |
-| domain B | **open** | stretching budget leftover is B15e |
+| domain B | **open** | enstrophy-balance leftover is B16e |
 
 Tesla’s line: alignment is a number. You can miss
 \(0.25\). The packets miss it.

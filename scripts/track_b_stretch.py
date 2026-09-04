@@ -216,8 +216,8 @@ def lemma_budget_not_close() -> dict:
     return rec(
         "B15e_budget_not_X_a_priori",
         "an aligned stretching budget closes a bound for classical X",
-        "open",
-        "A weighted |cos α_3| is not an a priori. The field still has to empty the cap, or viscosity has to own the cubic another way.",
+        "fail",
+        "Scored as B26. A weighted |cos α_3| is not an a priori. Time did not empty the cap. A share is not continuation.",
     )
 
 
@@ -254,8 +254,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "B16: fluids look at the net (enstrophy balance). "
-            "Then B5b: tube geometry. Cartesian budget is aligned; the field is not depleted."
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). "
+            "Enstrophy-balance leftover is B16e. Finer (n>32) stays a box knob (B22e). "
+            "Do not spawn n=64. B4c stands. Do not cancel to Φ."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_stretch.json")

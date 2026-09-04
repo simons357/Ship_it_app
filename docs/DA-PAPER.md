@@ -237,7 +237,7 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B14e this retunes the PDE | **fail** |
 | B15 / B15a / B15b stretching budget; CF weights it; majority from aligned cap | pass |
 | B15c / B15d run depletes median; run empties aligned share | **fail** |
-| B15e budget closes \(X\) | **open** |
+| B15e budget closes \(X\) | **fail** |
 | B15f this retunes the PDE | **fail** |
 | B16 / B16a enstrophy identity; visc owns the net | pass |
 | B16b / B16c / B16d \(P_+\) is a net cubic; \(L^2\) is BKM; random-phase \(\Rightarrow\) all CONC | **fail** |
@@ -277,12 +277,16 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B24f this retunes the PDE | **fail** |
 | B25 identity, undepleted CONC, CF readable | pass |
 | B25a / B25b / B25c / B25d depletion closes \(X\); Lipschitz+CF is an a priori; median is a class; CF is BKM | **fail** |
-| B25e aligned budget closes \(X\) | **open** |
+| B25e aligned budget closes \(X\) | **fail** |
 | B25f this retunes the PDE | **fail** |
+| B26 budget, CF weight, majority readable | pass |
+| B26a / B26b / B26c / B26d share closes \(X\); time emptying is continuation; share is a class; aligned budget is \(\int\|\omega\|_\infty\) | **fail** |
+| B26e enstrophy balance closes \(X\) | **open** |
+| B26f this retunes the PDE | **fail** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Packet geometry is not an a priori (B14d). Stretching budget leftover is B15e. Finer (\(n>32\)) stays a box knob (B22e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\).
+Stretching budget is not an a priori (B15e). Enstrophy-balance leftover is B16e. Finer (\(n>32\)) stays a box knob (B22e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\).
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 
@@ -326,11 +330,11 @@ The operator atlas is `docs/DA-DESK.md`. The machine note is `docs/DOMAIN-ARCHIT
 
 ## 9. Conclusion
 
-DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. Packet geometry is not an a priori (B14d). Stretch leftover is B15e. Finer is B22e. B4c stands. Angular \(1/r^2\) does not.
+DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. Stretching budget is not an a priori (B15e). Enstrophy leftover is B16e. Finer is B22e. B4c stands. Angular \(1/r^2\) does not.
 
 The think tank is three benches and a corpus rule. The processes are classify, check, falsify, reconstruct, ablate, pipe, compute, and alert. The purpose is to keep the operator honest while ordinary AI proposes.
 
-That is the paper. Packet geometry is not an a priori (B14d). Stretch leftover is B15e. Finer is B22e. B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
+That is the paper. Stretching budget is not an a priori (B15e). Enstrophy leftover is B16e. Finer is B22e. B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
 
 ---
 

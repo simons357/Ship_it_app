@@ -23,7 +23,7 @@ class TrackBStretchTests(unittest.TestCase):
         self.assertEqual(by["B15b_majority_from_aligned"]["verdict"], "pass")
         self.assertEqual(by["B15c_run_not_depleted"]["verdict"], "fail")
         self.assertEqual(by["B15d_run_keeps_aligned_budget"]["verdict"], "fail")
-        self.assertEqual(by["B15e_budget_not_X_a_priori"]["verdict"], "open")
+        self.assertEqual(by["B15e_budget_not_X_a_priori"]["verdict"], "fail")
         self.assertEqual(by["B15f_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
@@ -36,7 +36,8 @@ class TrackBStretchTests(unittest.TestCase):
         for f in by["B15d_run_keeps_aligned_budget"]["visc_frac_hi_end"]:
             self.assertGreater(f, 0.5)
         self.assertEqual(HIGH, 0.8)
-        self.assertIn("B5b", payload["next_da_move"])
+        self.assertIn("B16e", payload["next_da_move"])
+        self.assertIn("B15e", payload["next_da_move"])
 
     def test_writeup_exists(self):
         self.assertTrue((ROOT / "docs" / "TRACK-B-STRETCH.md").is_file())

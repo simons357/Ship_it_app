@@ -221,7 +221,7 @@ The field climb is broken out in [`TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md).
 
 Packet geometry is written in [`TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md). The strain identity on \(E_c\) **passes**. 3-CONC does **not** force depleted \(\cos\alpha_3\). Ring Lipschitz is **not** alignment. Constantin–Fefferman holds as a **conditional** (small \(\lvert\cos\alpha_3\rvert\) stretches less). That does not close \(X\).
 
-The stretching budget is written in [`TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md). Stretch-weighted \(\lvert\cos\alpha_3\rvert\) sits near \(0.81\) against an unweighted mean near \(0.50\). A majority of \((\omega\cdot S\omega)_+\) on \(E_c\) comes from the aligned cap. A short run does **not** deplete the median and does **not** empty that share.
+The stretching budget is written in [`TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md). Stretch-weighted \(\lvert\cos\alpha_3\rvert\) sits near \(0.81\) against an unweighted mean near \(0.50\). A majority of \((\omega\cdot S\omega)_+\) on \(E_c\) comes from the aligned cap. A short run does **not** deplete the median and does **not** empty that share. The share is **not** an a priori ([`TRACK-B-PAYERS.md`](TRACK-B-PAYERS.md)).
 
 Fluids look at the net in [`TRACK-B-BALANCE.md`](TRACK-B-BALANCE.md). The identity \(\dot X=2\int\omega\cdot S\omega-2\nu\|\nabla\omega\|_2^2\) **passes**. On the same random-phase packets, plus and minus stretch **cancel** and viscosity owns the net. That is **not** BKM, and **not** every 3-CONC field.
 

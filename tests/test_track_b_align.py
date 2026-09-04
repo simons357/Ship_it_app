@@ -23,7 +23,7 @@ class TrackBAlignTests(unittest.TestCase):
         self.assertEqual(by["B25b_frame_not_a_priori"]["verdict"], "fail")
         self.assertEqual(by["B25c_median_not_a_class"]["verdict"], "fail")
         self.assertEqual(by["B25d_cf_not_bkm"]["verdict"], "fail")
-        self.assertEqual(by["B25e_budget_leftover"]["verdict"], "open")
+        self.assertEqual(by["B25e_budget_leftover"]["verdict"], "fail")
         self.assertEqual(by["B25f_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
@@ -32,6 +32,7 @@ class TrackBAlignTests(unittest.TestCase):
             by["B25_align_readable"]["mean_ratio_low"],
             by["B25_align_readable"]["mean_ratio_high"],
         )
+        self.assertIn("B16e", payload["next_da_move"])
         self.assertIn("B15e", payload["next_da_move"])
         self.assertIn("B14d", payload["next_da_move"])
 

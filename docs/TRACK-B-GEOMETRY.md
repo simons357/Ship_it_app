@@ -89,8 +89,9 @@ of \(E_c\) is not \(\|\omega\|_\infty\in L^1\).
 **Einstein.** The object stayed the classical field.
 
 **Operator.** Geometry is scored. B14d is scored.
-Next: stretching budget (B15e). Alignment is a
-conditional, not a close.
+The budget is scored (B15e). Next: enstrophy
+balance (B16e). Alignment is a conditional, not
+a close.
 
 ---
 
@@ -104,7 +105,7 @@ conditional, not a close.
 | B14c | **pass** | CF conditional: small \(\lvert\cos\alpha_3\rvert\) stretches less |
 | B14d | **fail** | geometry closes \(X\) |
 | B14e | **fail** | this retunes the PDE |
-| domain B | **open** | stretching budget leftover is B15e |
+| domain B | **open** | enstrophy-balance leftover is B16e |
 
 Tesla’s line: alignment is a number. If you cannot miss
 it, it is a paragraph.

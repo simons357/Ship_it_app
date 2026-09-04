@@ -1079,6 +1079,48 @@ def lemma_align_not_a_retune() -> dict:
     return anr()
 
 
+def lemma_payers_readable() -> dict:
+    from track_b_payers import lemma_payers_readable as pr
+
+    return pr()
+
+
+def lemma_share_not_a_priori() -> dict:
+    from track_b_payers import lemma_share_not_a_priori as sna
+
+    return sna()
+
+
+def lemma_emptying_not_continuation() -> dict:
+    from track_b_payers import lemma_emptying_not_continuation as enc
+
+    return enc()
+
+
+def lemma_share_not_a_class() -> dict:
+    from track_b_payers import lemma_share_not_a_class as snc
+
+    return snc()
+
+
+def lemma_aligned_budget_not_bkm() -> dict:
+    from track_b_payers import lemma_aligned_budget_not_bkm as abn
+
+    return abn()
+
+
+def lemma_enstrophy_leftover() -> dict:
+    from track_b_payers import lemma_enstrophy_leftover as el
+
+    return el()
+
+
+def lemma_payers_not_a_retune() -> dict:
+    from track_b_payers import lemma_payers_not_a_retune as pnr
+
+    return pnr()
+
+
 def lemma_coherent_field() -> dict:
     from track_b_coherent import lemma_coherent_field as coh
 
@@ -1279,6 +1321,13 @@ def run(out: Path | None = None) -> dict:
         lemma_cf_not_bkm(),
         lemma_budget_leftover(),
         lemma_align_not_a_retune(),
+        lemma_payers_readable(),
+        lemma_share_not_a_priori(),
+        lemma_emptying_not_continuation(),
+        lemma_share_not_a_class(),
+        lemma_aligned_budget_not_bkm(),
+        lemma_enstrophy_leftover(),
+        lemma_payers_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -1322,7 +1371,7 @@ def run(out: Path | None = None) -> dict:
             "B14 strain identity (pass); CONC not depleted (fail); Ring is not alignment (fail)",
             "B14c CF conditional (pass); geometry does not close X (B14d fail); not a PDE retune (fail)",
             "B15 stretching budget readable (pass); CF weights the budget (pass); majority from aligned cap (pass)",
-            "B15c short run does not deplete |cos α_3| (fail); aligned share stays (fail); budget not an a priori (open)",
+            "B15c short run does not deplete |cos α_3| (fail); aligned share stays (fail); budget not an a priori (B15e fail)",
             "B16 enstrophy identity (pass); visc owns the net on this ensemble (pass); P_+ is not a net cubic (fail)",
             "B16c L² is not BKM (fail); random-phase is not all CONC (fail); balance not an a priori (open)",
             "B17 signed-strain blob readable (pass); net ≈ P+ (pass); working-box cubic not live (fail)",
@@ -1342,11 +1391,13 @@ def run(out: Path | None = None) -> dict:
             "B24 B4c and B5b readable together (pass); angular not an a priori (fail); B4c not an a priori (fail)",
             "B24c R_D ≪ 1 is not L∞ (fail); not Hardy/Φ revive (fail); geometry leftover scored (B14d fail); not a PDE retune (fail)",
             "B25 identity+CF readable (pass); depletion not an a priori (fail); Lipschitz+CF not an a priori (fail)",
-            "B25c median not a class (fail); CF is not BKM (fail); budget leftover open (B15e); not a PDE retune (fail)",
+            "B25c median not a class (fail); CF is not BKM (fail); budget leftover scored (B15e fail); not a PDE retune (fail)",
+            "B26 budget+weight+majority readable (pass); aligned share not an a priori (fail); time emptying not continuation (fail)",
+            "B26c share not a class (fail); aligned budget is not ∫‖ω‖_∞ (fail); enstrophy leftover open (B16e); not a PDE retune (fail)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Packet geometry is not an a priori (B14d). Stretching budget leftover is B15e. "
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy-balance leftover is B16e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),

@@ -94,7 +94,7 @@ not done).
 | B15b | majority of \(+\)stretch from \(\lvert\cos\alpha_3\rvert>0.8\) | **pass** | Directional minority, production majority. |
 | B15c | short run depletes median \(\lvert\cos\alpha_3\rvert\le 0.25\) | **fail** | Median stays \(\sim 1/2\). |
 | B15d | short run drops aligned share below \(1/2\) | **fail** | \(\mathrm{frac}_{hi}\) stays \(\sim 0.65\). |
-| B15e | aligned budget closes \(X\) | **open** | A share is not continuation. |
+| B15e | aligned budget closes \(X\) | **fail** | A share is not continuation (B26). |
 | B15f | weighting stretching retunes the PDE | **fail** | Knob on the estimate. |
 | B16 | \(\dot X=2\int\omega\cdot S\omega-2\nu\|\nabla\omega\|_2^2\) | **pass** | Fluids identity. |
 | B16a | viscosity owns the net on B13-scale packets | **pass** | \(\lvert P\rvert\ll D\), \(\dot X<0\). |
@@ -164,8 +164,15 @@ not done).
 | B25b | Lipschitz + CF is an a priori | **fail** | An if is not continuation. |
 | B25c | median \(\sim 1/2\) is a geometric class | **fail** | Random on the sphere. |
 | B25d | CF conditional is BKM | **fail** | A subset ratio is not \(\int\|\omega\|_\infty\). |
-| B25e | aligned budget closes \(X\) | **open** | Leftover B15e. |
+| B25e | aligned budget closes \(X\) | **fail** | Scored as B15e / B26. |
 | B25f | scoring this retunes the PDE | **fail** | Knob on the estimate. |
+| B26 | budget, CF weight, majority readable | **pass** | Same caches as B15. No new FFT. |
+| B26a | aligned \(P_+\) share closes \(X\) | **fail** | A payer count is not continuation. |
+| B26b | time emptying the cap is continuation | **fail** | B15c / B15d already missed. |
+| B26c | \(65\%\) share is a geometric class | **fail** | Packets, not all data. |
+| B26d | aligned budget is \(\int\|\omega\|_\infty\) | **fail** | A subset share is not the max. |
+| B26e | enstrophy balance closes \(X\) | **open** | Leftover B16e. |
+| B26f | scoring this retunes the PDE | **fail** | Knob on the estimate. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -295,7 +302,7 @@ lives in [`TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md).
 Strain identity **pass**. CONC \(\Rightarrow\) depleted
 \(\cos\alpha_3\) **fail**. Ring \(\Rightarrow\) alignment
 **fail**. CF conditional **pass**. Geometry closes \(X\)
-**open**. Not a PDE retune **fail**.
+**fail**. Not a PDE retune **fail**.
 
 **B15 / B15a / B15b / B15c / B15d / B15e / B15f.** Stretching
 budget lives in [`TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md).
@@ -303,7 +310,7 @@ Budget readable **pass**. CF weights the budget **pass**.
 Majority from aligned cap **pass**. Short run depletes
 median \(\lvert\cos\alpha_3\rvert\) **fail**. Short run
 empties the aligned share **fail**. Budget closes \(X\)
-**open**. Not a PDE retune **fail**.
+**fail**. Not a PDE retune **fail**.
 
 **B16 / B16a / B16b / B16c / B16d / B16e / B16f.** Enstrophy
 balance lives in [`TRACK-B-BALANCE.md`](TRACK-B-BALANCE.md).
@@ -372,18 +379,26 @@ Angular closes \(X\) **fail**. B4c is an a priori **fail**.
 as an a priori lives in [`TRACK-B-ALIGN.md`](TRACK-B-ALIGN.md).
 Readable **pass**. Depletion closes \(X\) **fail**.
 Lipschitz + CF is an a priori **fail**. Median is a class
-**fail**. CF is BKM **fail**. Budget leftover **open**.
+**fail**. CF is BKM **fail**. Budget leftover **fail**.
 Not a PDE retune **fail**.
+
+**B26 / B26a / B26b / B26c / B26d / B26e / B26f.** Stretching
+budget as an a priori lives in
+[`TRACK-B-PAYERS.md`](TRACK-B-PAYERS.md). Readable **pass**.
+Aligned share closes \(X\) **fail**. Time emptying is
+continuation **fail**. Share is a class **fail**. Aligned
+budget is \(\int\|\omega\|_\infty\) **fail**. Enstrophy
+leftover **open**. Not a PDE retune **fail**.
 
 ---
 
 ## What is still the next write
 
-1. Packet geometry is not an a priori (B14d). Stretching
-   budget leftover is B15e. Finer (\(n>32\)) stays a box
-   knob (B22e). Do not spawn \(n=64\). B4c stands. Angular
-   \(1/r^2\) does not. Do not cancel to \(\Phi\). Do not
-   write \(c=8\) into the PDE.
+1. Stretching budget is not an a priori (B15e).
+   Enstrophy-balance leftover is B16e. Finer (\(n>32\))
+   stays a box knob (B22e). Do not spawn \(n=64\). B4c
+   stands. Angular \(1/r^2\) does not. Do not cancel to
+   \(\Phi\). Do not write \(c=8\) into the PDE.
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
    Leray-as-occupation, the glue sketch as an NS a priori,
    a typed \(c=8\), all-data Biot–Savart depletion, BKM-from-\(L^2\),
@@ -414,8 +429,9 @@ python3 scripts/track_b_longer.py
 python3 scripts/track_b_dns.py
 python3 scripts/track_b_tube.py
 python3 scripts/track_b_align.py
+python3 scripts/track_b_payers.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

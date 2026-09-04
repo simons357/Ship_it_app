@@ -59,10 +59,10 @@ share of \((\omega\cdot S\omega)_+\) below \(1/2\).”
 \(\mathrm{frac}_{hi}\) stays \(\sim 0.65\). Euler is
 frozen. The payers did not leave.
 
-**B15e, open.** An aligned budget is not a
-continuation argument for \(X\). The field still
-has to empty the cap, or viscosity has to own the
-cubic another way.
+**B15e, fail** of “an aligned stretching budget
+closes \(X\).” Scored as B26. A weighted
+\(|\cos\alpha_3|\) is not an a priori. Time did
+not empty the cap. A share is not continuation.
 
 **B15f, fail** of “this retunes the PDE.” The
 equation is untouched. The share is a knob on the
@@ -104,10 +104,10 @@ class.
 
 **Einstein.** The object stayed the classical field.
 
-**Operator.** The budget is on the desk. Fluids still
-have to look at the net \(\dot X=2P-2D\), not only the
-share of \(P_+\). Cartesian geometry went one more click.
-It did not close.
+**Operator.** The budget is scored. B15e is scored.
+Next: enstrophy balance (B16e). Finer stays B22e.
+Do not spawn \(n=64\). B4c stands. Do not cancel
+to \(\Phi\).
 
 ---
 
@@ -120,9 +120,9 @@ It did not close.
 | B15b | **pass** | majority of \(+\)stretch from \(\lvert\cos\alpha_3\rvert>0.8\) |
 | B15c | **fail** | short run depletes median \(\lvert\cos\alpha_3\rvert\) |
 | B15d | **fail** | short run empties the aligned budget |
-| B15e | **open** | budget closes \(X\) |
+| B15e | **fail** | budget closes \(X\) |
 | B15f | **fail** | this retunes the PDE |
-| domain B | **open** | B5b (tube geometry) |
+| domain B | **open** | enstrophy-balance leftover is B16e |
 
 Tesla’s line: the cubic’s payers are a number. Time
 did not empty them.

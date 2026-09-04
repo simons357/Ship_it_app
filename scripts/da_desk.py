@@ -228,7 +228,7 @@ def run(out: Path | None = None) -> dict:
         },
         "next_da_move": (
             "Use the write-up. Angular 1/r² lost on packets; B4c still budgets I_tube. "
-            "Packet geometry is not an a priori (B14d). Stretching budget leftover is B15e. "
+            "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy-balance leftover is B16e. "
             "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
             "Corpus pairings emit scored sentences, not F."
         ),

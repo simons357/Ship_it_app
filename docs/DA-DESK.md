@@ -140,7 +140,7 @@ Domain B **never** passes regularity. `check B` stays
 | B14e | this retunes the PDE | **fail** |
 | B15 / B15a / B15b | stretching budget; CF weights it; majority from aligned cap | **pass** |
 | B15c / B15d | run depletes median; run empties aligned share | **fail** |
-| B15e | budget closes \(X\) | **open** |
+| B15e | budget closes \(X\) | **fail** |
 | B15f | this retunes the PDE | **fail** |
 | B16 / B16a | enstrophy identity; visc owns the net | **pass** |
 | B16b / B16c / B16d | \(P_+\) is a net cubic; \(L^2\) is BKM; random-phase \(\Rightarrow\) all CONC | **fail** |
@@ -180,12 +180,16 @@ Domain B **never** passes regularity. `check B` stays
 | B24f | this retunes the PDE | **fail** |
 | B25 | identity, undepleted CONC, CF readable | **pass** |
 | B25a / B25b / B25c / B25d | depletion closes \(X\); Lipschitz+CF is an a priori; median is a class; CF is BKM | **fail** |
-| B25e | aligned budget closes \(X\) | **open** |
+| B25e | aligned budget closes \(X\) | **fail** |
 | B25f | this retunes the PDE | **fail** |
+| B26 | budget, CF weight, majority readable | **pass** |
+| B26a / B26b / B26c / B26d | share closes \(X\); time emptying is continuation; share is a class; aligned budget is \(\int\|\omega\|_\infty\) | **fail** |
+| B26e | enstrophy balance closes \(X\) | **open** |
+| B26f | this retunes the PDE | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** Packet geometry is not an a priori
-(B14d). Stretching budget leftover is B15e. Finer
+**Next B write:** Stretching budget is not an a priori
+(B15e). Enstrophy-balance leftover is B16e. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.
 Angular \(1/r^2\) does not. We are not tuning the
 equation. Do not spawn \(n=64\).
