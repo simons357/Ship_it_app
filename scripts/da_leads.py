@@ -127,9 +127,15 @@ LEADS = [
     lead("Grujic", "sparseness / scaling gap", "B", "living",
          "Sparseness can shrink the gap. Finite order does not make it vanish.",
          "asymptotic criticality = closed X"),
+    lead("Miller", "strain / λ2+", "B", "living",
+         "Enstrophy is −4∫det S. λ2+ is a different cut from the e3 cap. The identity is not an a priori. A strain model blows.",
+         "rewrite in S closes X"),
     lead("Vicol", "wild weak solutions", "B", "living",
          "Non-uniqueness below the energy class is a different class.",
          "convex integration = smooth blowup"),
+    lead("Albritton", "forced Leray non-uniqueness", "B", "living",
+         "Non-uniqueness of forced Leray–Hopf is a different equation once f is on.",
+         "forced ⇒ unforced X bound"),
     lead("Buckmaster", "wild weak solutions", "B", "living",
          "Do not cash us as a killing field for classical X.",
          "wild ⇒ smooth X blows"),
@@ -172,7 +178,7 @@ MUST_SIT = {
     "Einstein", "Tesla", "Feynman", "Weyl", "Wigner", "von Neumann", "Weinberg",
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Koch", "Tataru", "Grujic",
-    "Vicol", "Buckmaster", "Elgindi", "Hou", "current math.AP",
+    "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "current math.AP",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -240,7 +246,7 @@ CLAIMS = [
         "next_is_residual",
         "The fluids overlap is still a residual on B",
         "pass",
-        "Closed estimate, killing field, or one preprint identity. Not B37.",
+        "Closed estimate, killing field, or one preprint identity. Not leftover B38.",
     ),
     rec(
         "R10",
@@ -248,6 +254,20 @@ CLAIMS = [
         "Asking every chair means they endorse this desk",
         "fail",
         "Papers talk. Endorsement is a channel.",
+    ),
+    rec(
+        "R11",
+        "miller_identity_closes",
+        "Miller's strain identity closes a bound for classical X",
+        "fail",
+        "A different cut is not an a priori. A strain model blows.",
+    ),
+    rec(
+        "R12",
+        "forced_leray_is_unforced",
+        "Forced Leray-Hopf non-uniqueness writes unforced X",
+        "fail",
+        "Different equation once f is on.",
     ),
 ]
 
@@ -271,7 +291,7 @@ def run(out: Path | None = None) -> dict:
             "next_write": (
                 "A residual on B. Closed estimate, killing field, "
                 "or one preprint identity. Regularity stays open. "
-                "Do not spawn n=64. Do not write B37."
+                "Do not spawn n=64. Do not write leftover B38."
             ),
         },
         "leads": LEADS,

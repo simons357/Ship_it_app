@@ -72,6 +72,32 @@ No. Domain B stays open.
 **B37f, fail** of “this retunes the PDE.” Knob on the
 check.
 
+**B38, pass.** Miller \(\lambda_2^+\) is a different cut
+from hole 2 on the same eigh. Hole 2 is \(\sim 35\%\) of
+\(P_+\) on \(E_c\). The \(\lambda_2^+\) share is \(\sim 50\%\).
+The \(e_2\)-aligned share is \(\sim 9\%\). Hole 1\((t)\) on
+the B15 cache stays a majority while visc eats \(X\).
+No new FFT. No \(n=64\).
+
+**B38a, fail** of “the Miller cut is a closed estimate.”
+The identity is not an a priori. A strain model with the
+same identity blows.
+
+**B38b, fail** of “a different cut makes \(\mathcal{R}\)
+integrable.” A gap of \(0.15\) on this ensemble is not
+\(\int\|\lambda_2^+\|_{L^q}<\infty\).
+
+**B38c, fail** of “reading \(\lambda_2^+\) is an NS a priori.”
+Keeping an eigenvalue is a knob on the check.
+
+**B38d, fail** of “the Miller cut is \(\int\|\omega\|_\infty\).”
+
+**B38e, fail** of “the Miller cut decides regularity.”
+No. Domain B stays open.
+
+**B38f, fail** of “this retunes the PDE.” Knob on the
+check.
+
 ---
 
 ## They work it
@@ -90,9 +116,12 @@ Biot–Savart.
 **Leray.** I own the net on these packets. I did not hand
 you all data.
 
-**Operator.** The holes are named. Regularity stays open.
-Do not spawn \(n=64\). B4c stands. Do not cancel to
-\(\Phi\).
+**Miller.** \(\lambda_2^+\) is not hole 2. Do not cash the
+rewrite.
+
+**Operator.** The holes are named. The Miller cut is a
+different cut. Regularity stays open. Do not spawn
+\(n=64\). B4c stands. Do not cancel to \(\Phi\).
 
 ---
 
@@ -107,7 +136,14 @@ Do not spawn \(n=64\). B4c stands. Do not cancel to
 | B37d | **fail** | residual tool is \(\int\|\omega\|_\infty\) |
 | B37e | **fail** | residual tool decides regularity |
 | B37f | **fail** | this retunes the PDE |
+| B38 | **pass** | \(\lambda_2^+\) is a different cut from hole 2 |
+| B38a | **fail** | the Miller cut is a closed estimate |
+| B38b | **fail** | a different cut makes \(\mathcal{R}\) integrable |
+| B38c | **fail** | reading \(\lambda_2^+\) is an NS a priori |
+| B38d | **fail** | Miller cut is \(\int\|\omega\|_\infty\) |
+| B38e | **fail** | Miller cut decides regularity |
+| B38f | **fail** | this retunes the PDE |
 | domain B | **open** | regularity stays open |
 
-Tesla’s line: name the holes. A script that must move.
+Tesla’s line: name the holes. The Miller cut moved.
 Reading is not a bound.

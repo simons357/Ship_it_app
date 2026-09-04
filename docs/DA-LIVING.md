@@ -33,7 +33,9 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Continuation | Beale | \(\int\|\omega\|_\infty\) | the max from \(L^2\) or a leftover list |
 | Critical small data | Koch, Tataru | small critical sits | large-data regularity |
 | Scaling gap | Grujić | sparseness can shrink the gap | gap vanishes at finite order |
+| Strain / middle eigenvalue | Miller | \(\lambda_2^+\) is a different cut; identity is not an a priori | rewrite in \(S\) closes \(X\) |
 | Wild weak solutions | Vicol, Buckmaster | non-uniqueness below the energy class | that is a smooth blowup or a bound |
+| Forced Leray | Albritton–Brué–Colombo | forced Leray–Hopf can be non-unique | that bounds unforced \(X\) |
 | Euler singularity | Elgindi | Euler can singularize | Euler \(\Rightarrow\) NS |
 | Computation as probe | Hou | a scenario can be computed | DNS / \(n=64\) is an a priori |
 | Announcements | current math.AP | a preprint is a proposal | close B by title |
@@ -121,9 +123,18 @@ for classical \(X\). Tarek, Euler is the other chair.
 equation. Viscosity is not a limit I will lend you. Euler
 does not write Navier–Stokes.
 
+**Miller.** Enstrophy is \(-4\int\det S\). Blow-up iff
+the \(L^q\) history of \(\lambda_2^+\) diverges. That is a
+different cut from the \(e_3\) cap. The identity is not
+an a priori. A strain model with the same identity blows.
+
 **Hou.** A computed almost-singular scenario is a probe.
 It is not an a priori. Do not spawn \(n=64\) to finish
 the sentence. The desk already failed finer DNS.
+
+**Albritton.** Forced Leray–Hopf can be non-unique. That
+is a different equation once \(f\) is on. Not a bound on
+unforced \(X\).
 
 **current math.AP.** An announcement is a proposal. Score
 one identity here or the title stays a paragraph.
@@ -137,7 +148,7 @@ Shahmurov does not sit.
 
 **Tao.** Where now: a residual. A closed estimate, a
 killing field, or one preprint identity. Not another
-leftover close. Not B37.
+leftover close. Not leftover B38.
 
 **Šverák.** Can \(X\) close? Unknown. That is the
 problem. Do not vote yes. Do not vote impossible.

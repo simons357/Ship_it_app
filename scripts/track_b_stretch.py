@@ -51,15 +51,18 @@ def budget(uh, vh, wh, kx, ky, kz, c: float = EC_C) -> dict:
         ],
         axis=-2,
     )
-    _, vecs = np.linalg.eigh(mats)
+    evals, vecs = np.linalg.eigh(mats)
     xi = np.stack([ox[ec], oy[ec], oz[ec]], axis=-1)
     nrm = np.linalg.norm(xi, axis=-1, keepdims=True)
     xi = xi / np.maximum(nrm, 1e-30)
     cos3 = np.abs(np.sum(xi * vecs[..., 2], axis=-1))
+    cos2 = np.abs(np.sum(xi * vecs[..., 1], axis=-1))
+    lam2 = evals[..., 1]
     st = stretch[ec]
     pos = np.maximum(st, 0.0)
     pos_sum = float(np.sum(pos)) + 1e-30
     all_pos = float(np.sum(np.maximum(stretch, 0.0))) + 1e-30
+    unaligned = cos3 <= HIGH
     return {
         "n_ec": int(np.sum(ec)),
         "frac_vol": float(np.mean(ec)),
@@ -69,6 +72,10 @@ def budget(uh, vh, wh, kx, ky, kz, c: float = EC_C) -> dict:
         "frac_pos_hi": float(np.sum(pos[cos3 > HIGH]) / pos_sum),
         "frac_pos_lo": float(np.sum(pos[cos3 < LOW]) / pos_sum),
         "share_of_all_pos": float(np.sum(pos) / all_pos),
+        "share_l2p": float(np.sum(pos[lam2 > 0.0]) / pos_sum),
+        "share_e2_hi": float(np.sum(pos[cos2 > HIGH]) / pos_sum),
+        "share_h2_and_l2p": float(np.sum(pos[unaligned & (lam2 > 0.0)]) / pos_sum),
+        "mean_l2p": float(np.mean(np.maximum(lam2, 0.0))),
         "X": float(np.mean(mag2)) * (2.0 * math.pi) ** 3,
     }
 

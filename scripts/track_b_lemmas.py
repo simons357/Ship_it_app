@@ -1583,6 +1583,48 @@ def lemma_residual_not_a_retune() -> dict:
     return rnr2()
 
 
+def lemma_miller_readable() -> dict:
+    from track_b_residual import lemma_miller_readable as mr
+
+    return mr()
+
+
+def lemma_miller_not_a_priori() -> dict:
+    from track_b_residual import lemma_miller_not_a_priori as mna
+
+    return mna()
+
+
+def lemma_miller_not_continuation() -> dict:
+    from track_b_residual import lemma_miller_not_continuation as mnc
+
+    return mnc()
+
+
+def lemma_miller_not_ns() -> dict:
+    from track_b_residual import lemma_miller_not_ns as mns
+
+    return mns()
+
+
+def lemma_miller_not_integral_max() -> dict:
+    from track_b_residual import lemma_miller_not_integral_max as mnim
+
+    return mnim()
+
+
+def lemma_miller_not_regularity() -> dict:
+    from track_b_residual import lemma_miller_not_regularity as mnr
+
+    return mnr()
+
+
+def lemma_miller_not_a_retune() -> dict:
+    from track_b_residual import lemma_miller_not_a_retune as mnr2
+
+    return mnr2()
+
+
 def lemma_coherent_field() -> dict:
     from track_b_coherent import lemma_coherent_field as coh
 
@@ -1867,6 +1909,13 @@ def run(out: Path | None = None) -> dict:
         lemma_residual_not_integral_max(),
         lemma_residual_not_regularity(),
         lemma_residual_not_a_retune(),
+        lemma_miller_readable(),
+        lemma_miller_not_a_priori(),
+        lemma_miller_not_continuation(),
+        lemma_miller_not_ns(),
+        lemma_miller_not_integral_max(),
+        lemma_miller_not_regularity(),
+        lemma_miller_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -1955,11 +2004,13 @@ def run(out: Path | None = None) -> dict:
             "B36c naming the object is not NS (fail); leftover catalog is not ∫‖ω‖_∞ (fail); this write does not decide regularity (fail); not a PDE retune (fail)",
             "B37 three holes of R readable on n=32 (pass); naming holes is not a closed estimate (fail); readable is not integrable (fail)",
             "B37c synthetic R is not NS (fail); residual tool is not ∫‖ω‖_∞ (fail); this write does not decide regularity (fail); not a PDE retune (fail)",
+            "B38 Miller λ2+ is a different cut from hole 2 (pass); the cut is not a closed estimate (fail); a gap is not integrable R (fail)",
+            "B38c reading λ2+ is not NS (fail); Miller cut is not ∫‖ω‖_∞ (fail); this write does not decide regularity (fail); not a PDE retune (fail)",
             "classical regularity remains open",
         ],
         "next_da_move": (
             "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). "
-            "The residual tool names the holes in R. It is not an a priori. "
+            "The residual tool names the holes in R. Miller λ2+ is a different cut from hole 2. Neither is an a priori. "
             "Regularity stays open. Do not spawn n=64. "
             "B4c stands. Do not cancel to Φ."
         ),

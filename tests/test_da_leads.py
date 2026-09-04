@@ -39,6 +39,8 @@ class DaLeadsTests(unittest.TestCase):
         self.assertEqual(by["R8"]["verdict"], "fail")
         self.assertEqual(by["R9"]["verdict"], "pass")
         self.assertEqual(by["R10"]["verdict"], "fail")
+        self.assertEqual(by["R11"]["verdict"], "fail")
+        self.assertEqual(by["R12"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["regularity_after"], "open")
         self.assertEqual(payload["meta"]["possible_to_close_X"], "open")
         self.assertTrue(payload["meta"]["glue_refused"])

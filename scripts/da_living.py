@@ -112,9 +112,21 @@ TURNS = [
         "B",
     ),
     turn(
+        "Miller",
+        ["Constantin", "Vicol"],
+        "Enstrophy is minus four integral det S. Blowup iff the L^q history of λ2+ diverges. That is a different cut from the e3 cap. The identity is not an a priori. A strain model with the same identity blows.",
+        "B",
+    ),
+    turn(
         "Vicol",
         ["Buckmaster", "Sverak"],
         "Wild weak solutions can be non-unique. That is a different class. Convex integration does not blow a smooth X, and it does not bound one.",
+        "B",
+    ),
+    turn(
+        "Albritton",
+        ["Vicol", "Sverak"],
+        "Forced Leray-Hopf can be non-unique. That is a different equation once f is on. Not a bound on unforced X.",
         "B",
     ),
     turn(
@@ -275,6 +287,20 @@ CLAIMS = [
         "Overlap of living demands that do not glue. Not a theorem.",
     ),
     rec(
+        "L19",
+        "miller_identity_closes",
+        "Miller's strain identity closes a bound for classical X",
+        "fail",
+        "λ2+ is a different cut. The identity is not an a priori. A strain model blows.",
+    ),
+    rec(
+        "L20",
+        "forced_leray_is_unforced",
+        "Forced Leray-Hopf non-uniqueness is a bound on unforced X",
+        "fail",
+        "Different equation once f is on. Sit it next to Vicol as a wall.",
+    ),
+    rec(
         "L16",
         "channeling_endorsement",
         "Pretend-they-sit means they endorse this desk",
@@ -293,7 +319,7 @@ CLAIMS = [
         "leftover_knob_line",
         "The next write is another leftover-knob close",
         "fail",
-        "That line is finished. Do not write B37.",
+        "That line is finished. Do not write leftover B38.",
     ),
 ]
 
@@ -308,7 +334,9 @@ KINGDOMS = [
     {"name": "Continuation", "who": "Beale", "slot": "B"},
     {"name": "Critical small data", "who": "Koch, Tataru", "slot": "B"},
     {"name": "Scaling gap", "who": "Grujic", "slot": "B"},
+    {"name": "Strain / middle eigenvalue", "who": "Miller", "slot": "B"},
     {"name": "Wild weak solutions", "who": "Vicol, Buckmaster", "slot": "B"},
+    {"name": "Forced Leray", "who": "Albritton", "slot": "B"},
     {"name": "Euler singularity", "who": "Elgindi", "slot": "B"},
     {"name": "Computation as probe", "who": "Hou", "slot": "B"},
     {"name": "Announcements", "who": "current math.AP", "slot": "B"},
@@ -334,7 +362,7 @@ def run(out: Path | None = None) -> dict:
             "next_write": (
                 "A residual: closed estimate for X, a killing field, "
                 "or one preprint identity. Regularity stays open. "
-                "Do not spawn n=64. Do not write B37."
+                "Do not spawn n=64. Do not write leftover B38."
             ),
         },
         "turns": TURNS,
@@ -356,7 +384,7 @@ def run(out: Path | None = None) -> dict:
             "possible_to_close_X stays open",
             "impossible_to_close_X failed as a theorem",
             "conversation did not close X",
-            "next write is a residual, not B37",
+            "next write is a residual, not leftover B38",
             "domain B still open",
         ],
         "next_da_move": (

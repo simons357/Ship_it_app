@@ -209,6 +209,12 @@ class DaMachineTests(unittest.TestCase):
         resid = classify_claim("residual holes of synthetic R on a vorticity packet")
         self.assertEqual(resid["domain"], "B")
         self.assertEqual(resid["verdict"], "open")
+        miller = classify_claim("miller cut of lambda_2 on a vorticity packet")
+        self.assertEqual(miller["domain"], "B")
+        self.assertEqual(miller["verdict"], "open")
+        walls = classify_claim("seat Miller and Albritton as walls on the living bench")
+        self.assertEqual(walls["domain"], "U")
+        self.assertEqual(walls["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

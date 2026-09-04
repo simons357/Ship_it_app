@@ -41,7 +41,9 @@ in your slot.
 | Koch | critical small data | Small critical sits. Large data is the object. | Koch–Tataru \(\Rightarrow\) large data |
 | Tataru | critical small data | The critical space is the wall. That is why leftover knobs died. | wall \(=\) estimate |
 | Grujić | sparseness | The gap can shrink. Finite order does not make it vanish. | asymptotic criticality \(=\) closed \(X\) |
+| Miller | strain / \(\lambda_2^+\) | \(\lambda_2^+\) is a different cut. The identity is not an a priori. A strain model blows. | rewrite in \(S\) closes \(X\) |
 | Vicol | wild weak solutions | A different class. | convex integration \(=\) smooth blowup |
+| Albritton | forced Leray | Forced Leray–Hopf non-uniqueness is a different equation once \(f\) is on. | forced \(\Rightarrow\) unforced \(X\) |
 | Buckmaster | wild weak solutions | Do not cash us as a killing field for classical \(X\). | wild \(\Rightarrow\) smooth blowup |
 | Elgindi | Euler | Different equation. Viscosity is not a free limit. | Euler \(\Rightarrow\) NS |
 | Hou | computation | A scenario is a probe. Do not spawn \(n=64\). | DNS is an a priori |

@@ -325,6 +325,9 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B37 three holes of \(\mathcal{R}\) readable on \(n=32\) | pass |
 | B37a / B37b / B37c / B37d / B37e naming holes is a closed estimate; readable is integrable; synthetic \(\mathcal{R}\) is NS; residual is \(\int\|\omega\|_\infty\); residual decides regularity | **fail** |
 | B37f this retunes the PDE | **fail** |
+| B38 Miller \(\lambda_2^+\) is a different cut from hole 2 | pass |
+| B38a / B38b / B38c / B38d / B38e the cut is a closed estimate; a gap is integrable \(\mathcal{R}\); reading \(\lambda_2^+\) is NS; Miller cut is \(\int\|\omega\|_\infty\); this write decides regularity | **fail** |
+| B38f this retunes the PDE | **fail** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
