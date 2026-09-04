@@ -58,7 +58,7 @@ not done).
 | B9a | high \(j_*\) CONC model sits | **pass** | Packet viscosity owns the cubic. |
 | B9b | low \(j_*\) CONC stays bounded | **fail** | \(j_*=2\), \(X_0=2.5\): \(X\) crosses 40. |
 | B9c | switching high \(j_*\) sits | **pass** | Clock can flip. |
-| B9d | glue sketch is an NS a priori | **open** | A model, not the equation. |
+| B9d | glue sketch is an NS a priori | **fail** | Typed \(j_*=2\) grows; NS packet falls. |
 | B10 | packet \(X\le K^2 E\) | **pass** | Frozen support has an energy ceiling. |
 | B10a | B9b unbounded path is NS-legal | **fail** | The model forgot \(E\). |
 | B10b | ceiling bounds a climbing \(j_*\) | **fail** | \(K\) rises with \(j_*\). |
@@ -117,6 +117,13 @@ not done).
 | B18d | cubic-live time is nonempty | **fail** | Zero samples with \(\lvert P\rvert/D\ge 0.05\). |
 | B18e | field occupation closes \(X\) | **open** | A readable clock is not continuation. |
 | B18f | reading the path retunes the PDE | **fail** | Knob on the check. |
+| B19 | both \(\dot X\) readable | **pass** | Sketch versus NS, same box. |
+| B19a | \(j_*=2\) model sign matches NS | **fail** | Model \(+2.25\); NS \(\approx-22.5\). |
+| B19b | NS packet is the B9b blowup | **fail** | Model grows; NS falls. |
+| B19c | \(\alpha_c\) is the field cubic | **fail** | Implied \(\alpha\sim 0\) vs \(0.4\). |
+| B19d | \(\nu 2^{2j_*}X\) is NS visc | **fail** | \(2D/(\gamma X)\approx 5.6\). |
+| B19e | matching the sketch closes \(X\) | **open** | A knob on \(\alpha_c\) is not continuation. |
+| B19f | reading the rates retunes the PDE | **fail** | Knob on the check. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -215,7 +222,7 @@ short CONC **fail**. Occupation closes \(X\) **fail**.
 [`TRACK-B-GLUE.md`](TRACK-B-GLUE.md). Increments add
 **pass**. High \(j_*\) CONC sits **pass**. Switching high
 \(j_*\) sits **pass**. Low \(j_*\) CONC **fails** on the model
-ODE. Sketch \(\neq\) NS a priori **open**.
+ODE. Sketch \(\neq\) NS a priori **fail**.
 
 **B10 / B10a / B10b / B10c / B10d.** Energy ceiling lives in
 [`TRACK-B-LOW-J.md`](TRACK-B-LOW-J.md). Packet \(X\le K^2E\)
@@ -279,14 +286,21 @@ saved \(X\) **fail**. CONC occupation short **fail**.
 Cubic-live time **fail**. Field occupation closes \(X\)
 **open**. Not a PDE retune **fail**.
 
+**B19 / B19a / B19b / B19c / B19d / B19e / B19f.** Field
+glue lives in [`TRACK-B-FIELD-GLUE.md`](TRACK-B-FIELD-GLUE.md).
+Both \(\dot X\) readable **pass**. Sign match **fail**.
+NS packet is B9b **fail**. \(\alpha_c\) is the cubic **fail**.
+\(\gamma\) is NS visc **fail**. Matching the sketch closes
+\(X\) **open**. Not a PDE retune **fail**.
+
 ---
 
 ## What is still the next write
 
-1. Glue sketch as an NS a priori (B9d). Field occupation
-   is scored: the clock stays CONC; it did not save \(X\);
-   the cubic is not live in time. B4c stands. Angular
-   \(1/r^2\) does not. A finer packet box (B13e) stays open.
+1. NS climb law (B11d). Field glue is scored: typed
+   \(j_*=2\) grows; the NS packet falls. \(\alpha_c\) is
+   not the field cubic. B4c stands. Angular \(1/r^2\)
+   does not. A finer packet box (B13e) stays open.
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
    Leray-as-occupation, the glue sketch as an NS a priori,
    a typed \(c=8\), all-data Biot–Savart depletion, BKM-from-\(L^2\),
@@ -309,8 +323,9 @@ python3 scripts/track_b_stretch.py
 python3 scripts/track_b_balance.py
 python3 scripts/track_b_coherent.py
 python3 scripts/track_b_field_occ.py
+python3 scripts/track_b_field_glue.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

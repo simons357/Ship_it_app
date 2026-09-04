@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "field glue; B9 ODE against NS \u1e8a",
+    "tuning_the_pde": false,
+    "tesla": "exacting, not a jerk. Sign of \u1e8a is a number. The j*=2 sketch grows. The NS packet falls.",
+    "domain_verdict": "open"
+  },
+  "lemmas": [
+    {
+      "name": "B19_field_rates",
+      "statement": "model \u1e8a and NS \u1e8a are both readable on the working-box packet and the signed-strain blob",
+      "verdict": "pass",
+      "why": "Same box as B13 / B17 / B18. Typed j* as in the sketch. j_bar is reported, not substituted.",
+      "Xdot_ns": {
+        "packet": -22.52231116785621,
+        "blob": -12.289114593034023
+      },
+      "Xdot_model": {
+        "packet": 2.2500000000000053,
+        "blob": -12.875
+      },
+      "jbar": {
+        "packet": 2.9706581534824363,
+        "blob": 2.5664433170637415
+      },
+      "sigma": {
+        "packet": 1.0,
+        "blob": 0.8535696713285232
+      }
+    },
+    {
+      "name": "B19a_sign_mismatch",
+      "statement": "the j*=2 CONC model has the same sign of \u1e8a as the NS packet",
+      "verdict": "fail",
+      "why": "Model \u1e8a = +2.25. NS \u1e8a \u2248 \u221222.5. The sketch points up. The field points down.",
+      "Xdot_ns": -22.52231116785621,
+      "Xdot_model": 2.2500000000000053,
+      "sign_match": false,
+      "jstar": 2,
+      "jbar": 2.9706581534824363
+    },
+    {
+      "name": "B19b_not_the_blowup",
+      "statement": "the working-box NS packet is the B9b blowup path",
+      "verdict": "fail",
+      "why": "Eight steps: model X grows. NS X falls. B9b is a typed ODE, not this field.",
+      "dX_ns": -1.0736414393997893,
+      "dX_model": 0.1716498591357114
+    },
+    {
+      "name": "B19c_alpha_not_the_cubic",
+      "statement": "\u03b1_c(j*) is the field cubic 2\u222b\u03c9\u00b7S\u03c9 / X\u00b3",
+      "verdict": "fail",
+      "why": "Implied \u03b1 sits near 0 on the packet (cancellation) and ~0.006 on the blob. The sketch used 0.4 and 0.2.",
+      "alpha": {
+        "packet": 0.4,
+        "blob": 0.2
+      },
+      "alpha_imp": {
+        "packet": -5.761852370819881e-05,
+        "blob": 0.006487698161306042
+      },
+      "alpha_ratio": {
+        "packet": 0.000144046309270497,
+        "blob": 0.03243849080653021
+      }
+    },
+    {
+      "name": "B19d_gamma_not_visc",
+      "statement": "\u03bd 2^{2j*} X is the NS visc term 2\u03bd\u2016\u2207\u03c9\u2016\u2082\u00b2 on the j*=2 packet",
+      "verdict": "fail",
+      "why": "2D / (\u03b3 X) \u2248 5.6. Bernstein-scale \u03b3 under-counts dissipation on a fat packet. j_bar sits near 3.",
+      "visc_ratio": 5.630352719605814,
+      "gamma": 1.6,
+      "gamma_imp": 9.008564351369303,
+      "jbar": 2.9706581534824363
+    },
+    {
+      "name": "B19e_field_glue_not_X_a_priori",
+      "statement": "matching the sketch to NS \u1e8a closes a bound for classical X",
+      "verdict": "open",
+      "why": "The sketch pointed the wrong way. Retuning \u03b1_c to the leftover is a knob, not continuation. Climb law (B11d) is still open."
+    },
+    {
+      "name": "B19f_not_a_pde_retune",
+      "statement": "reading model \u1e8a against NS \u1e8a, or shrinking \u03b1_c until they match, is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. \u03b1_c is a knob on the estimate. No Q1. No \u03b5."
+    }
+  ],
+  "counts": {
+    "pass": 1,
+    "fail": 5,
+    "open": 1
+  },
+  "next_da_move": "NS climb law (B11d). Field glue is scored: typed j*=2 grows; the NS packet falls. \u03b1_c is not the field cubic. B4c stands. Do not cancel to \u03a6."
+}

@@ -107,8 +107,8 @@ occupation of a decaying packet is not a singular set.
 Same PDE, now with a clock along the path.
 
 **Operator.** Field occupation is scored. B8c is scored.
-Next: glue sketch as an NS a priori (B9d). B4c stands.
-Do not cancel to \(\Phi\).
+Next: NS climb law (B11d). Field glue scored the sketch.
+B4c stands. Do not cancel to \(\Phi\).
 
 ---
 
@@ -124,7 +124,7 @@ Do not cancel to \(\Phi\).
 | B18d | **fail** | cubic-live time is nonempty |
 | B18e | **open** | field occupation closes \(X\) |
 | B18f | **fail** | this retunes the PDE |
-| domain B | **open** | glue sketch (B9d) is next |
+| domain B | **open** | NS climb law (B11d) is next |
 
 Tesla’s line: occupation is a number on a path. If the
 path never leaves CONC, the clock did not do the bound.

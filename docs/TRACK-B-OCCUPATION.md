@@ -108,8 +108,8 @@ is on.
 **Operator.** Clock is scored. B8c is a fail of the close.
 The glue that talks to \(X\) is written in
 [`TRACK-B-GLUE.md`](TRACK-B-GLUE.md). Field occupation is
-[`TRACK-B-FIELD-OCC.md`](TRACK-B-FIELD-OCC.md). Next: glue
-sketch as an NS a priori (B9d).
+[`TRACK-B-FIELD-OCC.md`](TRACK-B-FIELD-OCC.md). Next: NS
+climb law (B11d).
 
 ---
 
@@ -121,6 +121,6 @@ sketch as an NS a priori (B9d).
 | B8a | **pass** | high \(j_*\) hot time falls |
 | B8b | **fail** | Leray \(\Rightarrow\) short CONC |
 | B8c | **fail** | occupation closes a bound for \(X\) |
-| domain B | **open** | field occupation scored; glue sketch (B9d) is next |
+| domain B | **open** | field glue scored; climb law (B11d) is next |
 
 The unicorn, broken out: a clock you can read, not a close.

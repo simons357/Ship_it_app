@@ -116,7 +116,7 @@ Domain B **never** passes regularity. `check B` stays
 | B8b / B8c | Leray \(\Rightarrow\) short CONC; occupation closes \(X\) | **fail** |
 | B9 / B9a / B9c | glue bookkeeping; high \(j_*\) sits | **pass** |
 | B9b | low \(j_*\) CONC cubic bounded | **fail** (model) |
-| B9d | glue sketch is an NS a priori | **open** |
+| B9d | glue sketch is an NS a priori | **fail** |
 | B10 | packet energy ceiling | **pass** |
 | B10a | B9b unbounded path is NS-legal | **fail** |
 | B10b | ceiling follows a climbing \(j_*\) | **fail** |
@@ -154,12 +154,16 @@ Domain B **never** passes regularity. `check B` stays
 | B18b / B18c / B18d | clock saved \(X\); CONC short; cubic-live time | **fail** |
 | B18e | field occupation closes \(X\) | **open** |
 | B18f | this retunes the PDE | **fail** |
+| B19 | both \(\dot X\) readable | **pass** |
+| B19a / B19b / B19c / B19d | sign match; NS is B9b; \(\alpha_c\) is cubic; \(\gamma\) is visc | **fail** |
+| B19e | matching the sketch closes \(X\) | **open** |
+| B19f | this retunes the PDE | **fail** |
 | \(\Phi\) as estimate variable | keep \(\Gamma\) | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** Glue sketch as an NS a priori (B9d).
-Field occupation is scored. B4c stands. Angular
-\(1/r^2\) does not. We are not tuning the equation.
+**Next B write:** NS climb law (B11d). Field glue is
+scored. B4c stands. Angular \(1/r^2\) does not. We are
+not tuning the equation.
 
 ---
 
@@ -446,7 +450,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/TRACK-B-STRETCH.md`,
 `docs/TRACK-B-BALANCE.md`,
 `docs/TRACK-B-COHERENT.md`,
-`docs/TRACK-B-FIELD-OCC.md`.
+`docs/TRACK-B-FIELD-OCC.md`,
+`docs/TRACK-B-FIELD-GLUE.md`.
 
 ---
 
@@ -471,8 +476,9 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
   \(R_{\mathrm{ang}}\) climbs. Coherent CONC: signed-strain
   blob nets; working-box cubic is not live; \(z\)-independent
   tube still cancels. Field occupation: clock stays CONC;
-  it did not save \(X\); cubic not live in time. Next: glue
-  sketch as an NS a priori (B9d).
+  it did not save \(X\); cubic not live in time. Field glue:
+  typed \(j_*=2\) grows; the NS packet falls. Next: NS climb
+  law (B11d).
   The PDE is not being tuned.
 - Cosmo does not enter NS.
 - HB stays shelved as a theorem. DA-as-process stays live.

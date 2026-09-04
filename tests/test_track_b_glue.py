@@ -22,7 +22,7 @@ class TrackBGlueTests(unittest.TestCase):
         self.assertEqual(by["B9a_glue_high_jstar"]["verdict"], "pass")
         self.assertEqual(by["B9b_glue_low_jstar_blows"]["verdict"], "fail")
         self.assertEqual(by["B9c_glue_switching"]["verdict"], "pass")
-        self.assertEqual(by["B9d_glue_not_X_a_priori"]["verdict"], "open")
+        self.assertEqual(by["B9d_glue_not_X_a_priori"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertIn("not a jerk", payload["meta"]["tesla"])
         self.assertFalse(by["B9a_glue_high_jstar"]["run"]["blew"])

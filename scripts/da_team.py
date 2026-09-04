@@ -134,7 +134,7 @@ def consensus() -> dict:
     return {
         "not_a_vote": True,
         "not_a_close": True,
-        "B": "B4c budgets I_tube on CONC; energy-class T on SPREAD; B8 clock. Glue sketch is written. Frozen low-j has an energy ceiling. Climbing: slow dies, fast sits. t=0 and short n=32 do not produce c=8. Geometry: identity pass; CONC not depleted; CF conditional. Stretching budget: aligned cap pays a leftover; net cubic cancels. Fluids: visc owns this ensemble; L² is not BKM. Angular 1/r² does not dominate I_tube. Coherent CONC: signed-strain blob nets; working-box cubic not live. Field occupation: clock stays CONC; did not save X; cubic not live in time. Live: glue sketch as NS a priori (B9d). Regularity stays open.",
+        "B": "B4c budgets I_tube on CONC; energy-class T on SPREAD; B8 clock. Glue sketch is written. Frozen low-j has an energy ceiling. Climbing: slow dies, fast sits. t=0 and short n=32 do not produce c=8. Geometry: identity pass; CONC not depleted; CF conditional. Stretching budget: aligned cap pays a leftover; net cubic cancels. Fluids: visc owns this ensemble; L² is not BKM. Angular 1/r² does not dominate I_tube. Coherent CONC: signed-strain blob nets; working-box cubic not live. Field occupation: clock stays CONC. Field glue: j*=2 model grows, NS packet falls. Live: NS climb law (B11d). Regularity stays open.",
         "A": "Leave Ladyzhenskaya on A.",
         "U": "Stop breaking L_SM. Keep Einstein + T_SM. Produce lives outside the poster.",
         "Q": "Stay arithmetic. No Bridge* → SND.",

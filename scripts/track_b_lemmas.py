@@ -785,6 +785,48 @@ def lemma_field_occ_not_a_retune() -> dict:
     return focc_rt()
 
 
+def lemma_field_rates() -> dict:
+    from track_b_field_glue import lemma_field_rates as frates
+
+    return frates()
+
+
+def lemma_sign_mismatch() -> dict:
+    from track_b_field_glue import lemma_sign_mismatch as smis
+
+    return smis()
+
+
+def lemma_not_the_blowup() -> dict:
+    from track_b_field_glue import lemma_not_the_blowup as nblow
+
+    return nblow()
+
+
+def lemma_alpha_not_cubic() -> dict:
+    from track_b_field_glue import lemma_alpha_not_cubic as na
+
+    return na()
+
+
+def lemma_gamma_not_visc() -> dict:
+    from track_b_field_glue import lemma_gamma_not_visc as gv
+
+    return gv()
+
+
+def lemma_field_glue_not_close() -> dict:
+    from track_b_field_glue import lemma_field_glue_not_close as fg_ap
+
+    return fg_ap()
+
+
+def lemma_field_glue_not_a_retune() -> dict:
+    from track_b_field_glue import lemma_field_glue_not_a_retune as fg_rt
+
+    return fg_rt()
+
+
 def lemma_coherent_field() -> dict:
     from track_b_coherent import lemma_coherent_field as coh
 
@@ -936,6 +978,13 @@ def run(out: Path | None = None) -> dict:
         lemma_cubic_not_live_time(),
         lemma_field_occ_not_close(),
         lemma_field_occ_not_a_retune(),
+        lemma_field_rates(),
+        lemma_sign_mismatch(),
+        lemma_not_the_blowup(),
+        lemma_alpha_not_cubic(),
+        lemma_gamma_not_visc(),
+        lemma_field_glue_not_close(),
+        lemma_field_glue_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -967,7 +1016,7 @@ def run(out: Path | None = None) -> dict:
             "B7 Bony split + T2 self (pass); energy-class low T (pass); uniform ρ^{1/2} fail",
             "B8 occupation clock (pass); high j* short (pass); Leray⇒short CONC fail; occupation closes X fail",
             "B9 glue bookkeeping (pass); high-j CONC sits (pass); switching high-j sits (pass)",
-            "B9b low-j CONC cubic is live (fail); B9d sketch is not an NS a priori (open)",
+            "B9b low-j CONC cubic is live (fail); B9d sketch is not an NS a priori (fail)",
             "B10 energy ceiling (pass); B9b unbounded path is not NS (fail); not a PDE retune (fail)",
             "B10b ceiling does not follow a climbing j* (fail); climbing CONC open (B10c)",
             "B11 climb bookkeeping (pass); bounded j* bounds X (pass); slow climb blows (fail)",
@@ -986,12 +1035,14 @@ def run(out: Path | None = None) -> dict:
             "B17c z-independent tube still cancels (fail); L² blob is not BKM (fail); not an a priori (open)",
             "B18 field clock on a path (pass); paths stay CONC (pass); clock did not save X (fail)",
             "B18c CONC occupation not short (fail); cubic not live in time (fail); field occupation not an a priori (open)",
+            "B19 both Ẋ readable (pass); j*=2 sign mismatch (fail); NS packet is not B9b (fail)",
+            "B19c α_c is not the field cubic (fail); γ is not NS visc (fail); field glue not an a priori (open)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Glue sketch as an NS a priori (B9d). Field occupation is scored: "
-            "the clock stays CONC; it did not save X; the cubic is not live in time. "
-            "B4c stands. Do not cancel to Φ."
+            "NS climb law (B11d). Field glue is scored: typed j*=2 grows; "
+            "the NS packet falls. α_c is not the field cubic. B4c stands. "
+            "Do not cancel to Φ."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

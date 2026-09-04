@@ -16,19 +16,27 @@ import numpy as np
 from track_b_lemmas import rec
 
 
+def alpha_c(jstar: int) -> float:
+    return 0.4 * (0.5 ** max(jstar - 2, 0))
+
+
+def gamma_c(jstar: int, nu: float) -> float:
+    return nu * (2.0 ** (2 * jstar))
+
+
+def model_xdot(x: float, jstar: int, nu: float, conc: bool = True) -> float:
+    if conc:
+        return alpha_c(jstar) * x**3 - gamma_c(jstar, nu) * x
+    return 0.8 * x**2 - nu * 1.5 * x
+
+
 def step_x(x: float, conc: bool, jstar: int, nu: float, dt: float) -> float:
     """
     CONC (B4c):  Ẋ = α_c(j*) X³ − ν 2^{2j*} X
     SPREAD (T):  Ẋ = α_s X² − ν λ X
     α_c shrinks with j* (packet leftover). α_s is energy-class, no extra scale.
     """
-    if conc:
-        alpha = 0.4 * (0.5 ** max(jstar - 2, 0))
-        gamma = nu * (2.0 ** (2 * jstar))
-        return x + dt * (alpha * x**3 - gamma * x)
-    alpha_s = 0.8
-    lam = 1.5
-    return x + dt * (alpha_s * x**2 - nu * lam * x)
+    return x + dt * model_xdot(x, jstar, nu, conc)
 
 
 def integrate(conc: np.ndarray, jstar: int, nu: float = 0.1, x0: float = 1.15, dt: float = 2e-4):
@@ -144,8 +152,8 @@ def lemma_glue_not_regularity() -> dict:
     return rec(
         "B9d_glue_not_X_a_priori",
         "the glued model is a closed a priori bound for classical X",
-        "open",
-        "A two-regime ODE is a sketch of the estimate. It is not the estimate on NS.",
+        "fail",
+        "Typed j*=2 CONC grows; the NS packet falls. Sign of Ẋ disagrees. A sketch that points the wrong way is not an a priori.",
     )
 
 
@@ -170,8 +178,8 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Low-j CONC is hygiene (B10). Climbing is written (B11). "
-            "The climb law from the field is the remaining cubic (B11d)."
+            "NS climb law (B11d). Field glue is scored: the j*=2 model grows; "
+            "the NS packet falls. B4c stands. Do not cancel to Φ."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_glue.json")

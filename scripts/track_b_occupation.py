@@ -167,8 +167,8 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Field occupation is scored (B18). Glue sketch as an NS a priori (B9d). "
-            "B4c stands. Do not cancel to Φ."
+            "NS climb law (B11d). Field glue is scored: typed j*=2 grows; "
+            "the NS packet falls. B4c stands. Do not cancel to Φ."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_occupation.json")

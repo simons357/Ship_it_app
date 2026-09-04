@@ -96,7 +96,7 @@ Forbidden auto-fails: solved NS, full Q floor, Biot–Savart depletion, BKM-from
 
 August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ3 / SPREAD.
 
-**Next B write:** Glue sketch as an NS a priori (B9d). Field occupation is scored. B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Regularity stays open.
+**Next B write:** NS climb law (B11d). Field glue is scored. B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Regularity stays open.
 
 ### How the conversation moved
 
@@ -159,6 +159,8 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 29. **Coherent CONC.** Signed-strain blob readable **pass**. Net \(\approx P_+\) **pass**. Working-box cubic live **fail**. \(z\)-independent tube also nets **fail**. \(L^2\) blob is BKM **fail**. [`docs/TRACK-B-COHERENT.md`](TRACK-B-COHERENT.md).
 
 30. **Field occupation.** Clock on a path **pass**. Paths stay CONC **pass**. Clock saved \(X\) **fail**. CONC occupation short **fail**. Cubic-live time **fail**. B8c occupation closes \(X\) **fail**. [`docs/TRACK-B-FIELD-OCC.md`](TRACK-B-FIELD-OCC.md).
+
+31. **Field glue.** Both \(\dot X\) readable **pass**. Sign match **fail**. NS packet is B9b **fail**. \(\alpha_c\) is the cubic **fail**. \(\gamma\) is NS visc **fail**. B9d sketch as a priori **fail**. [`docs/TRACK-B-FIELD-GLUE.md`](TRACK-B-FIELD-GLUE.md).
 
 ---
 

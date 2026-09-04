@@ -74,7 +74,9 @@ Hardy killer.
 every 80 steps. \(X\) does not blow. **Pass** on this ODE.
 
 **On NS (B9d).** A two-regime ODE is a sketch.
-**Open** as an a priori bound for classical \(X\).
+Typed \(j_*=2\) grows. The NS packet falls.
+**Fail** as an a priori bound for classical \(X\).
+Field glue: [`TRACK-B-FIELD-GLUE.md`](TRACK-B-FIELD-GLUE.md).
 
 ---
 
@@ -107,9 +109,10 @@ ODE told you the low room is still cubic.
 **Einstein.** The object is still the classical field.
 A model is a model.
 
-**Operator.** Glue is out as a sketch. Frozen low-\(j_*\)
-is hygiene. Climbing is written. The live room is a
-climb law from the field. See [`TRACK-B-CLIMB.md`](TRACK-B-CLIMB.md).
+**Operator.** Glue is scored as a sketch. B9d is a fail
+of the close. Field glue is
+[`TRACK-B-FIELD-GLUE.md`](TRACK-B-FIELD-GLUE.md). Next:
+NS climb law (B11d).
 
 ---
 
@@ -121,8 +124,8 @@ climb law from the field. See [`TRACK-B-CLIMB.md`](TRACK-B-CLIMB.md).
 | B9a | **pass** | high \(j_*\) model sits |
 | B9b | **fail** | low \(j_*\) model blows |
 | B9c | **pass** | switching high \(j_*\) sits |
-| B9d | **open** | sketch \(\neq\) NS a priori |
-| domain B | **open** | climbing CONC is the room |
+| B9d | **fail** | sketch \(\neq\) NS a priori |
+| domain B | **open** | field glue scored; climb law (B11d) is next |
 
 Tesla’s line: detune \(j_*\). If the script does not
 move, you do not have an apparatus.

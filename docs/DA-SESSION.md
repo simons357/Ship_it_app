@@ -368,8 +368,10 @@ signed-strain blob nets; the working-box cubic is not
 live; a \(z\)-independent tube still cancels. Field
 occupation: the clock stays CONC; it did not save \(X\);
 the cubic is not live in time. B8c is scored **fail**.
-Next: glue sketch as an NS a priori (B9d). B4c stands.
-Do not cancel to \(\Phi\). See [`TRACK-B-FIELD-OCC.md`](TRACK-B-FIELD-OCC.md).
+Field glue: typed \(j_*=2\) grows; the NS packet falls.
+B9d is scored **fail**. Next: NS climb law (B11d). B4c
+stands. Do not cancel to \(\Phi\). See
+[`TRACK-B-FIELD-GLUE.md`](TRACK-B-FIELD-GLUE.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

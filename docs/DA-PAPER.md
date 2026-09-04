@@ -213,7 +213,7 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B8b / B8c Leray \(\Rightarrow\) short CONC; occupation closes \(X\) | **fail** |
 | B9 / B9a / B9c glue bookkeeping; high \(j_*\) sits | pass |
 | B9b low \(j_*\) CONC cubic bounded | **fail** (model) |
-| B9d glue sketch is an NS a priori | **open** |
+| B9d glue sketch is an NS a priori | **fail** |
 | B10 packet energy ceiling | pass |
 | B10a B9b unbounded path is NS-legal | **fail** |
 | B10b ceiling follows a climbing \(j_*\) | **fail** |
@@ -251,10 +251,14 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B18b / B18c / B18d clock saved \(X\); CONC short; cubic-live time | **fail** |
 | B18e field occupation closes \(X\) | **open** |
 | B18f this retunes the PDE | **fail** |
+| B19 both \(\dot X\) readable | pass |
+| B19a / B19b / B19c / B19d sign match; NS is B9b; \(\alpha_c\) is cubic; \(\gamma\) is visc | **fail** |
+| B19e matching the sketch closes \(X\) | **open** |
+| B19f this retunes the PDE | **fail** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Next write: glue sketch as an NS a priori (B9d). Field occupation is scored. B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned.
+Next write: NS climb law (B11d). Field glue is scored. B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned.
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 
@@ -298,11 +302,11 @@ The operator atlas is `docs/DA-DESK.md`. The machine note is `docs/DOMAIN-ARCHIT
 
 ## 9. Conclusion
 
-DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is the glue sketch as an NS a priori. Field occupation is scored. B4c stands. Angular \(1/r^2\) does not.
+DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is the NS climb law. Field glue is scored. B4c stands. Angular \(1/r^2\) does not.
 
 The think tank is three benches and a corpus rule. The processes are classify, check, falsify, reconstruct, ablate, pipe, compute, and alert. The purpose is to keep the operator honest while ordinary AI proposes.
 
-That is the paper. The next page of mathematics is the glue sketch as an NS a priori (B9d). B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
+That is the paper. The next page of mathematics is the NS climb law (B11d). B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
 
 ---
 
@@ -312,7 +316,7 @@ That is the paper. The next page of mathematics is the glue sketch as an NS a pr
 - Machine: `docs/DOMAIN-ARCHITECT-MACHINE.md`
 - Shelf: `docs/SHELF.md`
 - Track A: `docs/AUGMENTED-NS-PROOF-CHAIN.md`
-- Track B: `docs/TRACK-B-LEMMAS.md`, `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`, `docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`, `docs/TRACK-B-BALANCE.md`, `docs/TRACK-B-ANGULAR.md`, `docs/TRACK-B-COHERENT.md`, `docs/TRACK-B-FIELD-OCC.md`
+- Track B: `docs/TRACK-B-LEMMAS.md`, `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md`, `docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`, `docs/TRACK-B-BALANCE.md`, `docs/TRACK-B-ANGULAR.md`, `docs/TRACK-B-COHERENT.md`, `docs/TRACK-B-FIELD-OCC.md`, `docs/TRACK-B-FIELD-GLUE.md`
 - Track Q: `docs/SPECTRAL-FLOOR-EXPLORATION.md`
 - Think tank: `docs/DA-THINK-TANK.md` (combined roll), `docs/DA-DREAM-TEAM.md`, `docs/DA-GROUND.md`, `docs/DA-PIPE.md`, `docs/DA-SESSION.md` (they talk)
 - Compute and alerts: `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`

@@ -195,7 +195,7 @@ def lemma_field_occ_not_close() -> dict:
         "B18e_field_occ_not_X_a_priori",
         "field occupation closes a bound for classical X",
         "open",
-        "The clock can be read. It did not leave CONC. Glue (B9d) is still a sketch. Not continuation.",
+        "The clock can be read. It did not leave CONC. Field glue (B19) asks the sketch. Climb law (B11d) is still open. Not continuation.",
     )
 
 
@@ -239,9 +239,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Glue sketch as an NS a priori (B9d). Field occupation is scored: "
-            "the clock stays CONC; it did not save X; the cubic is not live in time. "
-            "B4c stands. Do not cancel to Φ."
+            "NS climb law (B11d). Field glue is scored: typed j*=2 grows; "
+            "the NS packet falls. α_c is not the field cubic. B4c stands. "
+            "Do not cancel to Φ."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_field_occ.json")

@@ -136,6 +136,9 @@ class DaMachineTests(unittest.TestCase):
         focc = classify_claim("field occupation of 3-CONC along a vorticity path")
         self.assertEqual(focc["domain"], "B")
         self.assertEqual(focc["verdict"], "open")
+        fgl = classify_claim("field glue of the two-regime sketch against vorticity Ẋ")
+        self.assertEqual(fgl["domain"], "B")
+        self.assertEqual(fgl["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
