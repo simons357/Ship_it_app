@@ -167,8 +167,8 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Climb sketch as an NS a priori (B11e). NS did not force a saving "
-            "c at this box (B11d). Finer/longer (B13e) stays open. B4c stands. "
+            "Finer/longer climb (B13e). The climb sketch is not an NS a priori "
+            "(B11e). NS did not force a saving c (B11d). B4c stands. "
             "Do not write c=8 into the PDE."
         ),
     }

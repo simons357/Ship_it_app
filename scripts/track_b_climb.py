@@ -133,8 +133,8 @@ def lemma_climb_not_a_priori() -> dict:
     return rec(
         "B11e_climb_not_X_a_priori",
         "the climbing model is a closed a priori bound for classical X",
-        "open",
-        "A prescribed c is a sketch. Slow dies, fast sits. NS did not pick c.",
+        "fail",
+        "Prescribed c=8 sits on the ODE (B11c). NS did not pick that c (B11d). On the readable window the climb has not reached the viscous room (B21). A sketch that grows while the field falls is not an a priori.",
     )
 
 
@@ -162,8 +162,8 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Climb sketch as an NS a priori (B11e). NS did not force a saving "
-            "c at this box (B11d). Finer/longer (B13e) stays open. B4c stands. "
+            "Finer/longer climb (B13e). The climb sketch is not an NS a priori "
+            "(B11e). NS did not force a saving c (B11d). B4c stands. "
             "Do not write c=8 into the PDE."
         ),
     }

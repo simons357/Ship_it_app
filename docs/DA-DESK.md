@@ -125,7 +125,7 @@ Domain B **never** passes regularity. `check B` stays
 | B11 / B11a / B11c | climb bookkeeping; bounded \(j_*\); fast sits | **pass** |
 | B11b | any climb saves | **fail** |
 | B11d | NS climb law | **fail** |
-| B11e | climb sketch is an NS a priori | **open** |
+| B11e | climb sketch is an NS a priori | **fail** |
 | B12 / B12a | barycenter; \(c\) from RHS | **pass** |
 | B12b | \(t=0\) packets produce \(c\ge 8\) | **fail** |
 | B12c | viscosity is a ladder | **fail** |
@@ -162,11 +162,15 @@ Domain B **never** passes regularity. `check B` stays
 | B20a / B20b / B20c / B20d | blob \(t=0\) \(c\ge 8\); path mean \(c\ge 8\); visc ladder; offset is a climb | **fail** |
 | B20e | field climb closes \(X\) | **open** |
 | B20f | this retunes the PDE | **fail** |
+| B21 | ODE and NS readable on the window | **pass** |
+| B21a / B21b / B21c / B21d | room on this window; sitting path is NS; \(\Delta j=cT\); sketch sits here | **fail** |
+| B21e | matching the sketch closes \(X\) | **open** |
+| B21f | this retunes the PDE | **fail** |
 | \(\Phi\) as estimate variable | keep \(\Gamma\) | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** climb sketch as an NS a priori (B11e).
-NS did not force a saving \(c\) (B11d). B4c stands.
+**Next B write:** finer/longer climb (B13e). The climb
+sketch is not an NS a priori (B11e). B4c stands.
 Angular \(1/r^2\) does not. We are not tuning the
 equation.
 
@@ -484,8 +488,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
   it did not save \(X\); cubic not live in time. Field glue:
   typed \(j_*=2\) grows; the NS packet falls. NS climb law:
   blob and B18 paths do not produce \(c=8\); \(j_{\mathrm{bar}}\)
-  offset is not a climb. Next: climb sketch as an a priori
-  (B11e).
+  offset is not a climb. Climb sketch is not an a priori.
+  Next: finer/longer (B13e).
   The PDE is not being tuned.
 - Cosmo does not enter NS.
 - HB stays shelved as a theorem. DA-as-process stays live.

@@ -103,7 +103,7 @@ The saving-rate slogan missed.
 A rate you typed is not a rate the metric produced.
 
 **Operator.** NS climb law is scored. B11d is scored.
-Next: climb sketch as an NS a priori (B11e). B4c stands.
+Next: finer/longer (B13e). B4c stands.
 Do not write \(c=8\) into the PDE.
 
 ---
@@ -120,7 +120,7 @@ Do not write \(c=8\) into the PDE.
 | B20d | **fail** | \(j_{\mathrm{bar}}>\text{typed }j_*\) is a climb |
 | B20e | **open** | field climb closes \(X\) |
 | B20f | **fail** | this retunes the PDE |
-| domain B | **open** | climb sketch (B11e) is next |
+| domain B | **open** | finer/longer (B13e) is next |
 
 Tesla’s line: \(c\) the field makes. It did not give
 you \(c=8\).

@@ -142,6 +142,9 @@ class DaMachineTests(unittest.TestCase):
         nsc = classify_claim("NS climb of j_bar on a vorticity blob")
         self.assertEqual(nsc["domain"], "B")
         self.assertEqual(nsc["verdict"], "open")
+        csk = classify_claim("climb sketch of prescribed c against a vorticity window")
+        self.assertEqual(csk["domain"], "B")
+        self.assertEqual(csk["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

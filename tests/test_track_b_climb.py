@@ -23,7 +23,7 @@ class TrackBClimbTests(unittest.TestCase):
         self.assertEqual(by["B11b_slow_climb_blows"]["verdict"], "fail")
         self.assertEqual(by["B11c_fast_climb_sits"]["verdict"], "pass")
         self.assertEqual(by["B11d_ns_climb_law"]["verdict"], "fail")
-        self.assertEqual(by["B11e_climb_not_X_a_priori"]["verdict"], "open")
+        self.assertEqual(by["B11e_climb_not_X_a_priori"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
         self.assertTrue(by["B11b_slow_climb_blows"]["run"]["blew"])

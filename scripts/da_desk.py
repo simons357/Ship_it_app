@@ -228,8 +228,8 @@ def run(out: Path | None = None) -> dict:
         },
         "next_da_move": (
             "Use the write-up. Angular 1/r² lost on packets; B4c still budgets I_tube. "
-            "NS did not force a saving c at this box (B11d). "
-            "Next B write is the climb sketch as an NS a priori (B11e). Do not write c=8 into the PDE. "
+            "The climb sketch is not an NS a priori (B11e). "
+            "Next B write is finer/longer climb (B13e). Do not write c=8 into the PDE. "
             "Corpus pairings emit scored sentences, not F."
         ),
     }

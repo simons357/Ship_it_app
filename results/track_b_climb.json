@@ -89,14 +89,14 @@
     {
       "name": "B11e_climb_not_X_a_priori",
       "statement": "the climbing model is a closed a priori bound for classical X",
-      "verdict": "open",
-      "why": "A prescribed c is a sketch. Slow dies, fast sits. NS did not pick c."
+      "verdict": "fail",
+      "why": "Prescribed c=8 sits on the ODE (B11c). NS did not pick that c (B11d). On the readable window the climb has not reached the viscous room (B21). A sketch that grows while the field falls is not an a priori."
     }
   ],
   "counts": {
     "pass": 3,
-    "fail": 2,
-    "open": 1
+    "fail": 3,
+    "open": 0
   },
-  "next_da_move": "Climb sketch as an NS a priori (B11e). NS did not force a saving c at this box (B11d). Finer/longer (B13e) stays open. B4c stands. Do not write c=8 into the PDE."
+  "next_da_move": "Finer/longer climb (B13e). The climb sketch is not an NS a priori (B11e). NS did not force a saving c (B11d). B4c stands. Do not write c=8 into the PDE."
 }

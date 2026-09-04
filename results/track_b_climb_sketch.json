@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "climb sketch; B11c ODE against the NS window",
+    "tuning_the_pde": false,
+    "tesla": "exacting, not a jerk. The sitting of c=8 is a long ODE. This window is short. The field did not follow the rate.",
+    "domain_verdict": "open",
+    "c_save": 8.0,
+    "j_room": 5.0
+  },
+  "lemmas": [
+    {
+      "name": "B21_window_rates",
+      "statement": "the c=8 climb ODE and the NS packet are both readable on the B18 window; B11c still sits on the long ODE",
+      "verdict": "pass",
+      "why": "Same T=0.064 as B18 / B19 / B20. Long ODE is B11c. Typed c is not written into the PDE.",
+      "T": 0.064,
+      "ode_jT": 2.5120000000000005,
+      "ode_XT": 2.6716498591357105,
+      "ns_jbarT": 2.9556103131951192,
+      "ns_XT": 1.4263585606002107,
+      "long_j_final": 8.500400000000395,
+      "long_T": 0.81255
+    },
+    {
+      "name": "B21a_not_the_room",
+      "statement": "on the working-box window, prescribed c=8 has already reached the viscous room j* \u2265 5",
+      "verdict": "fail",
+      "why": "j: 2 \u2192 2.51. Time to j=5 at c=8 is 0.375. The window is 0.064. The sitting of B11c has not arrived.",
+      "jT": 2.5120000000000005,
+      "j_room": 5.0,
+      "t_room": 0.375,
+      "T": 0.064,
+      "window_over_room": 0.17066666666666666
+    },
+    {
+      "name": "B21b_not_the_sitting",
+      "statement": "the B11c sitting path is the NS packet on this window",
+      "verdict": "fail",
+      "why": "Climb ODE X grows 2.5 \u2192 2.67. NS X falls 2.5 \u2192 1.43. B11c sits on T \u2248 0.81. This box is T=0.064.",
+      "dX_ode": 0.17164985913571051,
+      "dX_ns": -1.0736414393997893,
+      "sign_match": false,
+      "long_T": 0.81255,
+      "long_X_max": 2.672042970530018
+    },
+    {
+      "name": "B21c_delta_j_not_prescribed",
+      "statement": "NS \u0394j_bar on the packet equals the prescribed climb c T",
+      "verdict": "fail",
+      "why": "Prescribed \u0394j = 0.512. NS \u0394j_bar \u2248 \u22120.015. The field went the other way.",
+      "dj_ode": 0.5120000000000005,
+      "dj_ns": -0.015047840287317094,
+      "c_mean_ns": -0.2351225044893296,
+      "c_save": 8.0
+    },
+    {
+      "name": "B21d_sketch_did_not_save",
+      "statement": "on the working-box window the c=8 sketch already sits (X falling, j* in the viscous room)",
+      "verdict": "fail",
+      "why": "Model X still grows. t=0 \u1e8a = +2.25, same fat cubic as frozen j*=2. Climbing has not owned the cubic yet.",
+      "dX_ode": 0.17164985913571051,
+      "Xdot0": 2.25,
+      "jT": 2.5120000000000005
+    },
+    {
+      "name": "B21e_sketch_not_X_a_priori",
+      "statement": "matching the c=8 sketch to a longer / finer NS run closes a bound for classical X",
+      "verdict": "open",
+      "why": "The sketch is not this field. Finer/longer is B13e. Typing c=8 into the PDE is a retune. Not continuation."
+    },
+    {
+      "name": "B21f_not_a_pde_retune",
+      "statement": "reading the c=8 ODE against the NS window, or writing c=8 into classical Navier\u2013Stokes, is a retune of the PDE",
+      "verdict": "fail",
+      "why": "The PDE is untouched. c is a knob on the estimate. No Q1. No \u03b5. Do not type B11c into the equation."
+    }
+  ],
+  "counts": {
+    "pass": 1,
+    "fail": 5,
+    "open": 1
+  },
+  "next_da_move": "Finer/longer climb (B13e). The climb sketch is not an NS a priori (B11e). NS did not force a saving c (B11d). B4c stands. Do not write c=8 into the PDE."
+}

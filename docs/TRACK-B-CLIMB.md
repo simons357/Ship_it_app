@@ -48,8 +48,10 @@ entered from below.
 (B13a). Blob and B18 paths do not (B20). The field
 did not hand us \(c=8\).
 
-**B11e, open.** A prescribed rate is a sketch, not an
-a priori bound for classical \(X\).
+**B11e, fail** of “the climbing model is a closed a
+priori for classical \(X\).” Prescribed \(c=8\) sits on
+the ODE. NS did not pick that \(c\). On the readable
+window the climb has not reached the viscous room.
 
 ---
 
@@ -83,10 +85,9 @@ our criterion.
 A rate you typed is not a rate the metric produced.
 
 **Operator.** Climbing is broken out. The field did
-not hand us \(c=8\). See
-[`TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md) and
-[`TRACK-B-NS-CLIMB.md`](TRACK-B-NS-CLIMB.md).
-Next: the sketch as an NS a priori (B11e).
+not hand us \(c=8\). The sketch is not an a priori.
+See [`TRACK-B-CLIMB-SKETCH.md`](TRACK-B-CLIMB-SKETCH.md).
+Next: finer/longer (B13e).
 
 ---
 
@@ -99,7 +100,7 @@ Next: the sketch as an NS a priori (B11e).
 | B11b | **fail** | any climb saves the model |
 | B11c | **pass** | fast climb sits on this ODE |
 | B11d | **fail** | NS forces a saving \(c\) |
-| B11e | **open** | sketch \(\neq\) NS a priori |
-| domain B | **open** | climb sketch (B11e) is next |
+| B11e | **fail** | sketch \(\neq\) NS a priori |
+| domain B | **open** | finer/longer (B13e) is next |
 
 Tesla’s line: turn \(c\). If nothing moves, sit down.
