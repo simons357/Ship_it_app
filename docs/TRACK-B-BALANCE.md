@@ -118,7 +118,7 @@ cubic slogan missed.
 **Einstein.** The object stayed the classical field.
 
 **Operator.** The net is scored. B16e is scored.
-Next: coherent CONC (B17e). Finer stays B22e.
+The blob is scored (B17e). Next: field occupation (B18e). Finer stays B22e.
 Do not spawn \(n=64\). B4c stands. Do not cancel
 to \(\Phi\).
 
@@ -135,7 +135,7 @@ to \(\Phi\).
 | B16d | **fail** | random-phase \(\Rightarrow\) all CONC |
 | B16e | **fail** | balance closes \(X\) |
 | B16f | **fail** | this retunes the PDE |
-| domain B | **open** | coherent leftover is B17e |
+| domain B | **open** | field-occupation leftover is B18e |
 
 Tesla’s line: net production is a number. The share of
 a leftover is not the cubic.

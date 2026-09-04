@@ -24,7 +24,7 @@ class TrackBNetTests(unittest.TestCase):
         self.assertEqual(by["B27b_cancel_not_all_data"]["verdict"], "fail")
         self.assertEqual(by["B27c_decay_not_continuation"]["verdict"], "fail")
         self.assertEqual(by["B27d_net_not_integral_max"]["verdict"], "fail")
-        self.assertEqual(by["B27e_coherent_leftover"]["verdict"], "open")
+        self.assertEqual(by["B27e_coherent_leftover"]["verdict"], "fail")
         self.assertEqual(by["B27f_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
@@ -34,6 +34,7 @@ class TrackBNetTests(unittest.TestCase):
             self.assertLess(c, CANCEL_MAX)
         for xd in by["B27_net_readable"]["Xdot"]:
             self.assertLess(xd, 0.0)
+        self.assertIn("B18e", payload["next_da_move"])
         self.assertIn("B17e", payload["next_da_move"])
         self.assertIn("B16e", payload["next_da_move"])
         self.assertIn("B15e", payload["next_da_move"])

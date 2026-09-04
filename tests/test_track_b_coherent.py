@@ -30,7 +30,7 @@ class TrackBCoherentTests(unittest.TestCase):
         self.assertEqual(by["B17b_cubic_not_live"]["verdict"], "fail")
         self.assertEqual(by["B17c_tube_still_cancels"]["verdict"], "fail")
         self.assertEqual(by["B17d_blob_is_not_bkm"]["verdict"], "fail")
-        self.assertEqual(by["B17e_coherent_not_X_a_priori"]["verdict"], "open")
+        self.assertEqual(by["B17e_coherent_not_X_a_priori"]["verdict"], "fail")
         self.assertEqual(by["B17f_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
@@ -40,6 +40,8 @@ class TrackBCoherentTests(unittest.TestCase):
         self.assertLess(abs(by["B17b_cubic_not_live"]["P_over_D"]), PD_MAX)
         self.assertLess(by["B17b_cubic_not_live"]["Xdot"], 0.0)
         self.assertLess(by["B17c_tube_still_cancels"]["cancel"], TUBE_CANCEL_MAX)
+        self.assertIn("B18e", payload["next_da_move"])
+        self.assertIn("B17e", payload["next_da_move"])
         self.assertIn("B14d", payload["next_da_move"])
 
     def test_writeup_exists(self):

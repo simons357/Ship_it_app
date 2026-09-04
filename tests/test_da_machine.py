@@ -163,6 +163,9 @@ class DaMachineTests(unittest.TestCase):
         net = classify_claim("enstrophy net as an a priori bound for vorticity")
         self.assertEqual(net["domain"], "B")
         self.assertEqual(net["verdict"], "open")
+        blob = classify_claim("signed blob as an a priori bound for vorticity")
+        self.assertEqual(blob["domain"], "B")
+        self.assertEqual(blob["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

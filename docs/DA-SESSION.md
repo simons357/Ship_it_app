@@ -380,9 +380,10 @@ this window; the sketch grows, NS falls. B11e is scored
 **fail**. Packet geometry is not an a priori. B14d is scored
 **fail**. Stretching budget is not an a priori. B15e is scored
 **fail**. Enstrophy balance is not an a priori. B16e is scored
-**fail**. Coherent leftover is B17e. Finer is B22e. B4c
+**fail**. Coherent blob is not an a priori. B17e is scored
+**fail**. Field-occupation leftover is B18e. Finer is B22e. B4c
 stands. Do not cancel to \(\Phi\). Do not spawn \(n=64\).
-See [`TRACK-B-NET.md`](TRACK-B-NET.md).
+See [`TRACK-B-BLOB.md`](TRACK-B-BLOB.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

@@ -71,9 +71,10 @@ to a class.
 than a fat packet’s \(0.2\)). The criterion still asks
 for \(\int\|\omega\|_\infty\).
 
-**B17e, open.** A leftover that no longer cancels is not
-continuation. Occupation \(\to X\) (B8c) is still the
-open close.
+**B17e, fail** of “a signed-strain blob closes
+\(X\).” Scored as B28. One-sided cubic at this
+box is still a leftover versus \(D\). A leftover
+that no longer cancels is not continuation.
 
 **B17f, fail** of “this retunes the PDE.” Localization in
 \(z\) is a knob. Turning \(\nu\) down until \(\dot X>0\)
@@ -112,9 +113,9 @@ missed.
 **Einstein.** The object stayed the classical field. Two
 scales, one sign of strain, same PDE.
 
-**Operator.** Coherent CONC is scored. Field occupation
-reads the clock on a path. Field glue scored the sketch.
-Climb and DNS knobs at \(n=32\) are scored. Finer is B22e. B4c stands. Do not cancel
+**Operator.** The blob is scored. B17e is scored.
+Next: field occupation (B18e). Finer stays B22e.
+Do not spawn \(n=64\). B4c stands. Do not cancel
 to \(\Phi\).
 
 ---
@@ -128,9 +129,9 @@ to \(\Phi\).
 | B17b | **fail** | cubic owns \(\dot X\) at the working box |
 | B17c | **fail** | \(z\)-independent tube also nets |
 | B17d | **fail** | \(L^2\) blob is BKM |
-| B17e | **open** | signed-strain blob closes \(X\) |
+| B17e | **fail** | signed-strain blob closes \(X\) |
 | B17f | **fail** | this retunes the PDE |
-| domain B | **open** | finer (\(n>32\)) is a box knob (B22e) |
+| domain B | **open** | field-occupation leftover is B18e |
 
 Tesla’s line: a Stokes eigenfunction is not a cubic.
 Sit the blob where \(S_{zz}\) keeps a sign. One-sided is

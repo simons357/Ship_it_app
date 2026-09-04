@@ -148,7 +148,7 @@ Domain B **never** passes regularity. `check B` stays
 | B16f | this retunes the PDE | **fail** |
 | B17 / B17a | signed-strain blob readable; net \(\approx P_+\) | **pass** |
 | B17b / B17c / B17d | cubic owns \(\dot X\); tube also nets; \(L^2\) blob is BKM | **fail** |
-| B17e | blob closes \(X\) | **open** |
+| B17e | blob closes \(X\) | **fail** |
 | B17f | this retunes the PDE | **fail** |
 | B18 / B18a | field clock on a path; paths stay CONC | **pass** |
 | B18b / B18c / B18d | clock saved \(X\); CONC short; cubic-live time | **fail** |
@@ -188,12 +188,16 @@ Domain B **never** passes regularity. `check B` stays
 | B26f | this retunes the PDE | **fail** |
 | B27 | identity, visc-owned net, cancelled \(P_+\) readable | **pass** |
 | B27a / B27b / B27c / B27d | visc ensemble closes \(X\); cancel is all-data; decay is continuation; identity is \(\int\|\omega\|_\infty\) | **fail** |
-| B27e | signed-strain blob closes \(X\) | **open** |
+| B27e | signed-strain blob closes \(X\) | **fail** |
 | B27f | this retunes the PDE | **fail** |
+| B28 | blob, one-sided net, visc-owned cubic readable | **pass** |
+| B28a / B28b / B28c / B28d | one-sided leftover closes \(X\); sign is a class; peaked \(L^2\) is \(\int\|\omega\|_\infty\); \(\nu\) knob is continuation | **fail** |
+| B28e | field occupation closes \(X\) | **open** |
+| B28f | this retunes the PDE | **fail** |
 | classical regularity | — | **open** |
 
 **Next B write:** Stretching budget is not an a priori
-(B15e). Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. Finer
+(B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.
 Angular \(1/r^2\) does not. We are not tuning the
 equation. Do not spawn \(n=64\).

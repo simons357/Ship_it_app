@@ -64,8 +64,8 @@
     {
       "name": "B17e_coherent_not_X_a_priori",
       "statement": "a signed-strain blob closes a bound for classical X",
-      "verdict": "open",
-      "why": "One-sided cubic at this box is still a leftover versus D. Field occupation (B18) reads the clock on a path. Field glue (B19) asks the sketch. Not continuation."
+      "verdict": "fail",
+      "why": "Scored as B28. One-sided cubic at this box is still a leftover versus D. A leftover that no longer cancels is not continuation."
     },
     {
       "name": "B17f_not_a_pde_retune",
@@ -76,8 +76,8 @@
   ],
   "counts": {
     "pass": 2,
-    "fail": 4,
-    "open": 1
+    "fail": 5,
+    "open": 0
   },
-  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }

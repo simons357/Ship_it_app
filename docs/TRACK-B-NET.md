@@ -46,9 +46,9 @@ on the max vorticity.” \(\dot X=2P-2D\) is \(L^2\).
 A fat-packet ratio \(\|\omega\|_\infty/\|\omega\|_2\sim 0.2\)
 is not \(\int\|\omega\|_\infty\).
 
-**B27e, open.** Coherent leftover is B17e. A
-signed-strain blob that no longer cancels. Not a
-bigger FFT.
+**B27e, fail** of “the coherent leftover closes
+\(X\).” Scored as B17e / B28. A one-sided leftover
+is not continuation.
 
 **B27f, fail** of “this retunes the PDE.” The net is
 a knob on the estimate.
@@ -90,9 +90,9 @@ first two held. The a-priori slogan missed.
 A balance is not a closed estimate.
 
 **Operator.** The net is scored. B16e is scored.
-Next: coherent CONC (B17e). Finer stays B22e.
-Do not spawn \(n=64\). B4c stands. Do not cancel
-to \(\Phi\).
+The blob is scored (B17e). Next: field occupation
+(B18e). Finer stays B22e. Do not spawn \(n=64\).
+B4c stands. Do not cancel to \(\Phi\).
 
 ---
 
@@ -107,9 +107,9 @@ to \(\Phi\).
 | B27b | **fail** | cancellation is all-data |
 | B27c | **fail** | decaying \(L^2\) packet is continuation |
 | B27d | **fail** | identity is \(\int\|\omega\|_\infty\) |
-| B27e | **open** | signed-strain blob closes \(X\) |
+| B27e | **fail** | coherent leftover closes \(X\) |
 | B27f | **fail** | this retunes the PDE |
-| domain B | **open** | coherent leftover is B17e |
+| domain B | **open** | field-occupation leftover is B18e |
 
 Tesla’s line: net production is a number. Viscosity
 owned this ensemble. That is not continuation.

@@ -245,7 +245,7 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B16f this retunes the PDE | **fail** |
 | B17 / B17a signed-strain blob readable; net \(\approx P_+\) | pass |
 | B17b / B17c / B17d cubic owns \(\dot X\); tube also nets; \(L^2\) blob is BKM | **fail** |
-| B17e blob closes \(X\) | **open** |
+| B17e blob closes \(X\) | **fail** |
 | B17f this retunes the PDE | **fail** |
 | B18 / B18a field clock on a path; paths stay CONC | pass |
 | B18b / B18c / B18d clock saved \(X\); CONC short; cubic-live time | **fail** |
@@ -285,12 +285,16 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B26f this retunes the PDE | **fail** |
 | B27 identity, visc-owned net, cancelled \(P_+\) readable | pass |
 | B27a / B27b / B27c / B27d visc ensemble closes \(X\); cancel is all-data; decay is continuation; identity is \(\int\|\omega\|_\infty\) | **fail** |
-| B27e signed-strain blob closes \(X\) | **open** |
+| B27e signed-strain blob closes \(X\) | **fail** |
 | B27f this retunes the PDE | **fail** |
+| B28 blob, one-sided net, visc-owned cubic readable | pass |
+| B28a / B28b / B28c / B28d one-sided leftover closes \(X\); sign is a class; peaked \(L^2\) is \(\int\|\omega\|_\infty\); \(\nu\) knob is continuation | **fail** |
+| B28e field occupation closes \(X\) | **open** |
+| B28f this retunes the PDE | **fail** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. Finer (\(n>32\)) stays a box knob (B22e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\).
+Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Finer (\(n>32\)) stays a box knob (B22e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\).
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 
@@ -334,11 +338,11 @@ The operator atlas is `docs/DA-DESK.md`. The machine note is `docs/DOMAIN-ARCHIT
 
 ## 9. Conclusion
 
-DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. Finer is B22e. B4c stands. Angular \(1/r^2\) does not.
+DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Finer is B22e. B4c stands. Angular \(1/r^2\) does not.
 
 The think tank is three benches and a corpus rule. The processes are classify, check, falsify, reconstruct, ablate, pipe, compute, and alert. The purpose is to keep the operator honest while ordinary AI proposes.
 
-That is the paper. Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. Finer is B22e. B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
+That is the paper. Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Finer is B22e. B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
 
 ---
 

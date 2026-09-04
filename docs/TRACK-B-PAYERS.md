@@ -89,8 +89,8 @@ cap. The first two held. The a-priori slogan missed.
 A budget is not a closed estimate.
 
 **Operator.** The budget is scored. B15e is scored.
-The net is scored (B16e). Next: coherent CONC
-(B17e). Finer stays B22e. Do not spawn \(n=64\).
+The net is scored (B16e). The blob is scored (B17e). Next: field occupation
+(B18e). Finer stays B22e. Do not spawn \(n=64\).
 B4c stands. Do not cancel to \(\Phi\).
 
 ---
@@ -108,7 +108,7 @@ B4c stands. Do not cancel to \(\Phi\).
 | B26d | **fail** | aligned budget is \(\int\|\omega\|_\infty\) |
 | B26e | **fail** | enstrophy leftover closes \(X\) |
 | B26f | **fail** | this retunes the PDE |
-| domain B | **open** | coherent leftover is B17e |
+| domain B | **open** | field-occupation leftover is B18e |
 
 Tesla’s line: the cubic’s payers are a number. Time
 did not empty them. A share is not a bound.

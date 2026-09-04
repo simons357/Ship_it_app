@@ -100,7 +100,7 @@ A tube budget is not a closed estimate.
 
 **Operator.** Tube is scored. B5f is scored. Geometry
 is scored (B14d). The budget is scored (B15e). The
-net is scored (B16e). Next: coherent CONC (B17e).
+net is scored (B16e). The blob is scored (B17e). Next: field occupation (B18e).
 Finer stays B22e. Do not spawn \(n=64\). B4c stands.
 Do not cancel to \(\Phi\).
 
@@ -118,7 +118,7 @@ Do not cancel to \(\Phi\).
 | B24d | **fail** | revive Hardy or cancel to \(\Phi\) |
 | B24e | **fail** | packet geometry closes \(X\) |
 | B24f | **fail** | this retunes the PDE |
-| domain B | **open** | coherent leftover is B17e |
+| domain B | **open** | field-occupation leftover is B18e |
 
 Tesla’s line: you asked the tube. Full \(D\) budgets
 the packet. Angular loses. Neither reading is a bound.

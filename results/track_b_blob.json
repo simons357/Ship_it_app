@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "signed-strain blob as an a priori",
+    "tuning_the_pde": false,
+    "tesla": "exacting, not a jerk. One-sided is a number. Large versus D is a different number. A leftover that no longer cancels is not a bound.",
+    "domain_verdict": "open"
+  },
+  "lemmas": [
+    {
+      "name": "B28_blob_readable",
+      "statement": "signed-strain blob, one-sided net, and visc-owned cubic are readable together",
+      "verdict": "pass",
+      "why": "Cancel sits near 0.83. P/D sits near 0.008. \u1e8a < 0. Typed c is not written into the PDE.",
+      "sigma": 0.8535696713285232,
+      "cancel": 0.833206677995409,
+      "P_over_D": 0.008181300794787849,
+      "Xdot": -12.289114593034023
+    },
+    {
+      "name": "B28a_onesided_not_a_priori",
+      "statement": "a one-sided (\u03c9\u00b7S\u03c9)_+ leftover closes a bound for classical X",
+      "verdict": "fail",
+      "why": "Coherence killed cancellation. It did not make P large versus D. A leftover is not continuation.",
+      "P_over_D": 0.008181300794787849,
+      "Xdot": -12.289114593034023
+    },
+    {
+      "name": "B28b_sign_not_a_class",
+      "statement": "sitting a blob where S_zz keeps a sign is a geometric class that bounds X",
+      "verdict": "fail",
+      "why": "Localization in z is a knob. A z-independent tube in the same strain still cancels (B17c). Do not promote a sign to a type."
+    },
+    {
+      "name": "B28c_peaked_not_integral_max",
+      "statement": "an L\u00b2 bound on this peaked blob is an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "\u2016\u03c9\u2016_\u221e/\u2016\u03c9\u2016\u2082 climbed from 0.2 to ~2.4. The criterion still asks for \u222b\u2016\u03c9\u2016_\u221e. Do not improve a peaked packet into the max."
+    },
+    {
+      "name": "B28d_nu_not_continuation",
+      "statement": "turning \u03bd down until \u1e8a>0 is a continuation argument for classical X",
+      "verdict": "fail",
+      "why": "That is a knob on the check. B17f already missed the retune. The working box stayed \u03bd=0.1. Do not spawn a thinner visc."
+    },
+    {
+      "name": "B28e_occupation_leftover",
+      "statement": "field occupation of CONC closes X",
+      "verdict": "open",
+      "why": "The blob is scored. The leftover close on the clock along a path is B18e. Not a bigger FFT. Do not spawn n=64."
+    },
+    {
+      "name": "B28f_not_a_pde_retune",
+      "statement": "scoring the signed-strain blob as not an a priori is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. One-sided is a knob on the estimate: a leftover you can miss. No Q1. No \u03b5."
+    }
+  ],
+  "counts": {
+    "pass": 1,
+    "fail": 5,
+    "open": 1
+  },
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+}

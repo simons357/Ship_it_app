@@ -108,7 +108,7 @@ not done).
 | B17b | cubic owns \(\dot X\) at the working box | **fail** | \(P/D\approx 0.008\). Visc still owns the net. |
 | B17c | \(z\)-independent tube also nets | **fail** | \(\int\cos z\,dz=0\). Swirl \(\neq\) cubic. |
 | B17d | \(L^2\) blob is BKM | **fail** | \(\|\omega\|_\infty/\|\omega\|_2\sim 2.4\). Still not \(\int\|\omega\|_\infty\). |
-| B17e | signed-strain blob closes \(X\) | **open** | One-sided leftover \(\neq\) continuation. |
+| B17e | signed-strain blob closes \(X\) | **fail** | One-sided leftover \(\neq\) continuation (B28). |
 | B17f | reading the blob retunes the PDE | **fail** | Knob on the check. |
 | B18 | clock identity on a path | **pass** | B8, read on IF-RK2. |
 | B18a | packet and blob occupy CONC fully | **pass** | \(\tau_{\mathrm{C}}=T\). Zero switches. |
@@ -178,8 +178,15 @@ not done).
 | B27b | cancellation is all-data | **fail** | B16d already missed. |
 | B27c | decaying \(L^2\) packet is continuation | **fail** | Same slogan as B23. |
 | B27d | identity is \(\int\|\omega\|_\infty\) | **fail** | \(L^2\) is not the max. |
-| B27e | signed-strain blob closes \(X\) | **open** | Leftover B17e. |
+| B27e | signed-strain blob closes \(X\) | **fail** | Scored as B17e / B28. |
 | B27f | scoring this retunes the PDE | **fail** | Knob on the estimate. |
+| B28 | blob, one-sided net, visc-owned cubic readable | **pass** | Same caches as B17. No new FFT. |
+| B28a | one-sided leftover closes \(X\) | **fail** | \(P/D\approx 0.008\). |
+| B28b | sitting in one sign is a class | **fail** | Localization is a knob. |
+| B28c | peaked \(L^2\) is \(\int\|\omega\|_\infty\) | **fail** | Ratio \(\sim 2.4\) is not the max. |
+| B28d | turning \(\nu\) down is continuation | **fail** | Knob on the check. |
+| B28e | field occupation closes \(X\) | **open** | Leftover B18e. |
+| B28f | scoring this retunes the PDE | **fail** | Knob on the estimate. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -332,7 +339,7 @@ CONC lives in [`TRACK-B-COHERENT.md`](TRACK-B-COHERENT.md).
 Signed-strain blob readable **pass**. Net \(\approx P_+\)
 **pass**. Working-box cubic live **fail**. \(z\)-independent
 tube also nets **fail**. \(L^2\) blob is BKM **fail**.
-Blob closes \(X\) **open**. Not a PDE retune **fail**.
+Blob closes \(X\) **fail**. Not a PDE retune **fail**.
 
 **B18 / B18a / B18b / B18c / B18d / B18e / B18f.** Field
 occupation lives in [`TRACK-B-FIELD-OCC.md`](TRACK-B-FIELD-OCC.md).
@@ -403,14 +410,23 @@ balance as an a priori lives in
 Visc ensemble closes \(X\) **fail**. Cancellation is
 all-data **fail**. Decaying packet is continuation
 **fail**. Identity is \(\int\|\omega\|_\infty\) **fail**.
-Coherent leftover **open**. Not a PDE retune **fail**.
+Coherent leftover **fail**. Not a PDE retune **fail**.
+
+**B28 / B28a / B28b / B28c / B28d / B28e / B28f.** Signed-strain
+blob as an a priori lives in
+[`TRACK-B-BLOB.md`](TRACK-B-BLOB.md). Readable **pass**.
+One-sided leftover closes \(X\) **fail**. Sitting in one
+sign is a class **fail**. Peaked \(L^2\) is
+\(\int\|\omega\|_\infty\) **fail**. Turning \(\nu\) down is
+continuation **fail**. Occupation leftover **open**.
+Not a PDE retune **fail**.
 
 ---
 
 ## What is still the next write
 
 1. Stretching budget is not an a priori (B15e).
-   Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. Finer (\(n>32\))
+   Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Finer (\(n>32\))
    stays a box knob (B22e). Do not spawn \(n=64\). B4c
    stands. Angular \(1/r^2\) does not. Do not cancel to
    \(\Phi\). Do not write \(c=8\) into the PDE.
@@ -446,8 +462,9 @@ python3 scripts/track_b_tube.py
 python3 scripts/track_b_align.py
 python3 scripts/track_b_payers.py
 python3 scripts/track_b_net.py
+python3 scripts/track_b_blob.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns tests.test_track_b_tube tests.test_track_b_align tests.test_track_b_payers tests.test_track_b_net tests.test_track_b_blob
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

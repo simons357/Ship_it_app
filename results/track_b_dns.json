@@ -64,5 +64,5 @@
     "fail": 5,
     "open": 1
   },
-  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "Packet geometry is not an a priori (B14d). Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }

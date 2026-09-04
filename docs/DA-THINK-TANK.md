@@ -96,7 +96,7 @@ Forbidden auto-fails: solved NS, full Q floor, Biot–Savart depletion, BKM-from
 
 August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ3 / SPREAD.
 
-**Next B write:** Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent leftover is B17e. Finer (\(n>32\)) stays a box knob (B22e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\). Regularity stays open.
+**Next B write:** Stretching budget is not an a priori (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field-occupation leftover is B18e. Finer (\(n>32\)) stays a box knob (B22e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\). Regularity stays open.
 
 ### How the conversation moved
 
@@ -177,6 +177,8 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 38. **Stretching budget as an a priori.** Readable **pass**. Aligned share closes \(X\) **fail**. Time emptying is continuation **fail**. Share is a class **fail**. Aligned budget is \(\int\|\omega\|_\infty\) **fail**. B15e budget as a priori **fail**. [`docs/TRACK-B-PAYERS.md`](TRACK-B-PAYERS.md).
 
 39. **Enstrophy balance as an a priori.** Readable **pass**. Visc ensemble closes \(X\) **fail**. Cancellation is all-data **fail**. Decaying packet is continuation **fail**. Identity is \(\int\|\omega\|_\infty\) **fail**. B16e balance as a priori **fail**. [`docs/TRACK-B-NET.md`](TRACK-B-NET.md).
+
+40. **Signed-strain blob as an a priori.** Readable **pass**. One-sided leftover closes \(X\) **fail**. Sitting in one sign is a class **fail**. Peaked \(L^2\) is \(\int\|\omega\|_\infty\) **fail**. Turning \(\nu\) down is continuation **fail**. B17e blob as a priori **fail**. [`docs/TRACK-B-BLOB.md`](TRACK-B-BLOB.md).
 
 ---
 
