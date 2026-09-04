@@ -242,7 +242,7 @@ Scored in [`docs/TRACK-B-LEMMAS.md`](TRACK-B-LEMMAS.md). `python3 scripts/da_mac
 1. **Localized tube Hardy for \(\Gamma\)**, radius \(\delta\), no \(\Phi\). Hardy + wall term **pass**. All-data \(I_{\mathrm{tube}}\) domination **fail**. Packet class at \(\delta\sim 2^{-j_*}\) **pass**. Write: [`TRACK-B-HARDY-TUBE.md`](TRACK-B-HARDY-TUBE.md).
 2. **Almost-band-limited Ring Lemma** (three shells). Bernstein **pass**. All-data depletion **fail**.
 3. **One-threshold regime split** 3-CONC \(\sigma\ge 1/2\) vs SPREAD \(\sigma\le 1/2\). Cover **pass**.
-4. **Energy-class T2 flux.** Lemma 1 **pass**. Lemma 2 dropped (**fail** as input). Low Bony \(T\) still open.
+4. **Energy-class T2 flux.** Lemma 1 **pass**. Lemma 2 dropped (**fail** as input). Low Bony \(T\): split **pass**, energy-class **pass**, uniform \(\rho^{1/2}\) **fail**. Write: [`TRACK-B-BONY-T.md`](TRACK-B-BONY-T.md).
 5. **Swirl dissipation identity** in the tube. \((\Delta u)_\theta\) **pass**. Viscosity vs \(I_{\mathrm{tube}}\) **open**.
 
 Item 5 is the reason to keep \(1/r^4\). If the angular viscosity does not dominate the tube source at the same weight, the cancel-to-\(\Phi\) path was not the mistake — the tube is genuinely critical. If it does dominate, you never needed the cancel. Domain B does not pass.
@@ -267,7 +267,7 @@ Item 5 is the reason to keep \(1/r^4\). If the angular viscosity does not domina
 | Localized tube Hardy | **pass** as Hardy + wall; all-data domination **fail**; packet class **pass** (`docs/TRACK-B-HARDY-TUBE.md`) |
 | Ring Lemma, exact one shell | Upgraded to 3-shell Bernstein check; depletion **fail** as a slogan |
 | Concentration \(\Rightarrow\) geometric control | Conditional outline |
-| Spread \(\Rightarrow\) extra dissipation | T2 Lemma 1 **pass**; Lemma 2 dropped; low Bony \(T\) still open |
+| Spread \(\Rightarrow\) extra dissipation | T2 Lemma 1 **pass**; Lemma 2 dropped; energy-class \(T\) **pass**; uniform \(\rho^{1/2}\) **fail** |
 | Unaugmented global \(H^1\) bound | Open |
 
 The live question is no longer “does \(\Phi\) cancel the axis?” It is: **in the tube \(r\sim 2^{-j_*}\), does viscosity plus (almost) band-limited direction control beat \(\Gamma\partial_z\Gamma/r^4\)?**

@@ -300,7 +300,7 @@ def run(out: Path | None = None) -> dict:
             "domain B still open",
         ],
         "next_da_move": (
-            "Tube write is in. Use B4c inside 3-CONC. Then low Bony T on SPREAD."
+            "Occupation time of 3-CONC vs SPREAD. B4c on packets, energy-class T on spread."
         ),
     }
     dest = Path(out) if out is not None else Path("results/da_session.json")

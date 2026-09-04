@@ -245,6 +245,203 @@
       "why": "The identity 1/r^4 \u2202_z(\u0393\u00b2)=\u2202_z(\u03a6\u00b2) is true. It moves the work onto ||\u03a6||_\u221e. Keep \u0393."
     },
     {
+      "name": "B7_bony_split",
+      "statement": "\u03a0_j = T + T* + R_near + self for a Bony cut at j\u2212N",
+      "verdict": "pass",
+      "why": "Bookkeeping identity on T^3. T2 Lemma 1 is the self piece.",
+      "split": {
+        "parts": {
+          "full": -2.0755399429085336e-06,
+          "T": 3.97278529672084e-06,
+          "R_near": -6.3030991868380765e-06,
+          "self": 2.547739472087022e-07,
+          "Tstar": 0.0,
+          "t2_self": -5.6425140062277935e-22
+        },
+        "residual": 8.470329472543003e-22,
+        "rel_residual": 2.168404344971009e-19,
+        "t2_over_energy": 1.4444835855943151e-19,
+        "n": 32,
+        "j": 4,
+        "nsep": 3
+      }
+    },
+    {
+      "name": "B7a_self_is_t2",
+      "statement": "\u222b (u_\u2264j \u00b7 \u2207) u_j \u00b7 u_j = 0 (T2 Lemma 1). That is not the surviving low T.",
+      "verdict": "pass",
+      "why": "Self-flux of the peak dies. Low T is u_low feeding neighbors into \u03a0_j.",
+      "t2_over_energy": 1.4444835855943151e-19
+    },
+    {
+      "name": "B7b_low_T_energy_class",
+      "statement": "||u_{\u2264j\u2212N}||_\u221e \u2272 2^{(j\u2212N)/2} X^{1/2} in energy class",
+      "verdict": "pass",
+      "why": "Bernstein + Cauchy\u2013Schwarz on the low sum. No \u03c1 improvement claimed.",
+      "scan": {
+        "rows": [
+          {
+            "n_low": 1,
+            "n_shells": 2,
+            "rho": 0.28518095729080906,
+            "T": -3.799174268708225e-06,
+            "T_self": 4.407620368501172e-22,
+            "X": 2.3072637290878015,
+            "Xj": 0.6579876789836212,
+            "S_low_inf": 0.10902893128634755,
+            "energy_bound": 4.296290240742868,
+            "rho_hope": 0.8111643970143297,
+            "inf_over_energy": 0.025377459430556405,
+            "inf_over_rho_hope": 0.13441040026861717,
+            "T_over_energy": 1.0901511607173688e-06
+          },
+          {
+            "n_low": 2,
+            "n_shells": 3,
+            "rho": 0.10500298303140569,
+            "T": 6.02278030210764e-06,
+            "T_self": -5.243548369423808e-21,
+            "X": 6.325924248564912,
+            "Xj": 0.6642409165300193,
+            "S_low_inf": 0.1936400420702042,
+            "energy_bound": 7.113887403418704,
+            "rho_hope": 0.8150097646838469,
+            "inf_over_energy": 0.027220003788244816,
+            "inf_over_rho_hope": 0.23759229700188897,
+            "T_over_energy": 1.038788713260596e-06
+          },
+          {
+            "n_low": 4,
+            "n_shells": 5,
+            "rho": 0.021133799557126732,
+            "T": 3.794919480371197e-06,
+            "T_self": 2.6673702574895022e-21,
+            "X": 31.31415836044309,
+            "Xj": 0.6617871460897286,
+            "S_low_inf": 0.37829115651228684,
+            "energy_bound": 15.827610902582386,
+            "rho_hope": 0.8135030092690061,
+            "inf_over_energy": 0.023900711158534104,
+            "inf_over_rho_hope": 0.46501506718728675,
+            "T_over_energy": 2.94732505837471e-07
+          },
+          {
+            "n_low": 6,
+            "n_shells": 7,
+            "rho": 0.007180431703691544,
+            "T": -2.8614463736693632e-05,
+            "T_self": 7.082589971453607e-21,
+            "X": 92.30183223581727,
+            "Xj": 0.6627670024948805,
+            "S_low_inf": 0.5502814957482358,
+            "energy_bound": 27.173786226555517,
+            "rho_hope": 0.8141050316113275,
+            "inf_over_energy": 0.02025045354962256,
+            "inf_over_rho_hope": 0.6759342767592093,
+            "T_over_energy": 1.2934660012023106e-06
+          }
+        ],
+        "inf_over_rho_hope": [
+          0.13441040026861717,
+          0.23759229700188897,
+          0.46501506718728675,
+          0.6759342767592093
+        ],
+        "inf_over_energy": [
+          0.025377459430556405,
+          0.027220003788244816,
+          0.023900711158534104,
+          0.02025045354962256
+        ],
+        "rho_hope_grows": true,
+        "energy_stays": true
+      }
+    },
+    {
+      "name": "B7c_low_T_not_rho_uniform",
+      "statement": "spread \u21d2 ||u_{\u2264j\u2212N}||_\u221e \u2272 \u03c1^{1/2} X^{1/2} uniformly as \u03c1 \u2192 0",
+      "verdict": "fail",
+      "why": "Each low shell is \u2264 \u03c1 X. The sum in L^\u221e is not. CCFS does not give G its \u03c1^{1/2}.",
+      "scan": {
+        "rows": [
+          {
+            "n_low": 1,
+            "n_shells": 2,
+            "rho": 0.28518095729080906,
+            "T": -3.799174268708225e-06,
+            "T_self": 4.407620368501172e-22,
+            "X": 2.3072637290878015,
+            "Xj": 0.6579876789836212,
+            "S_low_inf": 0.10902893128634755,
+            "energy_bound": 4.296290240742868,
+            "rho_hope": 0.8111643970143297,
+            "inf_over_energy": 0.025377459430556405,
+            "inf_over_rho_hope": 0.13441040026861717,
+            "T_over_energy": 1.0901511607173688e-06
+          },
+          {
+            "n_low": 2,
+            "n_shells": 3,
+            "rho": 0.10500298303140569,
+            "T": 6.02278030210764e-06,
+            "T_self": -5.243548369423808e-21,
+            "X": 6.325924248564912,
+            "Xj": 0.6642409165300193,
+            "S_low_inf": 0.1936400420702042,
+            "energy_bound": 7.113887403418704,
+            "rho_hope": 0.8150097646838469,
+            "inf_over_energy": 0.027220003788244816,
+            "inf_over_rho_hope": 0.23759229700188897,
+            "T_over_energy": 1.038788713260596e-06
+          },
+          {
+            "n_low": 4,
+            "n_shells": 5,
+            "rho": 0.021133799557126732,
+            "T": 3.794919480371197e-06,
+            "T_self": 2.6673702574895022e-21,
+            "X": 31.31415836044309,
+            "Xj": 0.6617871460897286,
+            "S_low_inf": 0.37829115651228684,
+            "energy_bound": 15.827610902582386,
+            "rho_hope": 0.8135030092690061,
+            "inf_over_energy": 0.023900711158534104,
+            "inf_over_rho_hope": 0.46501506718728675,
+            "T_over_energy": 2.94732505837471e-07
+          },
+          {
+            "n_low": 6,
+            "n_shells": 7,
+            "rho": 0.007180431703691544,
+            "T": -2.8614463736693632e-05,
+            "T_self": 7.082589971453607e-21,
+            "X": 92.30183223581727,
+            "Xj": 0.6627670024948805,
+            "S_low_inf": 0.5502814957482358,
+            "energy_bound": 27.173786226555517,
+            "rho_hope": 0.8141050316113275,
+            "inf_over_energy": 0.02025045354962256,
+            "inf_over_rho_hope": 0.6759342767592093,
+            "T_over_energy": 1.2934660012023106e-06
+          }
+        ],
+        "inf_over_rho_hope": [
+          0.13441040026861717,
+          0.23759229700188897,
+          0.46501506718728675,
+          0.6759342767592093
+        ],
+        "inf_over_energy": [
+          0.025377459430556405,
+          0.027220003788244816,
+          0.023900711158534104,
+          0.02025045354962256
+        ],
+        "rho_hope_grows": true,
+        "energy_stays": true
+      }
+    },
+    {
       "name": "B_regularity",
       "statement": "classical 3D NS is globally regular (keep 1/r^4, no Q1)",
       "verdict": "open",
@@ -252,8 +449,8 @@
     }
   ],
   "counts": {
-    "pass": 7,
-    "fail": 5,
+    "pass": 10,
+    "fail": 6,
     "open": 2
   },
   "how_far": [
@@ -266,7 +463,8 @@
     "B5 swirl (\u0394u)_\u03b8 identity (pass); viscosity vs I_tube still open",
     "B6 \u222bX dt < \u221e does not bound X (fail of that close)",
     "\u03a6 is not the estimate variable (fail)",
+    "B7 Bony split + T2 self (pass); energy-class low T (pass); uniform \u03c1^{1/2} fail",
     "classical regularity remains open"
   ],
-  "next_da_move": "Use B4c inside 3-CONC. Then energy-class low Bony T on SPREAD."
+  "next_da_move": "Occupation time of 3-CONC vs SPREAD. B4c on packets, energy-class T on spread."
 }

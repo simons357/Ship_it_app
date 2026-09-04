@@ -356,9 +356,11 @@ again.
 | Einstein / Weinberg / PDG write \(F\) | **fail** |
 | Domain B after the session | **open** |
 
-They did the tube write. Packet class **pass**. All-data
-Hardy absorption **fail**. Next: low Bony \(T\).
-See [`TRACK-B-HARDY-TUBE.md`](TRACK-B-HARDY-TUBE.md).
+They did the tube write and the low Bony \(T\). Packet class
+**pass**. All-data Hardy **fail**. Energy-class \(T\) **pass**.
+Uniform \(\rho^{1/2}\) **fail**. Next: occupation time.
+See [`TRACK-B-HARDY-TUBE.md`](TRACK-B-HARDY-TUBE.md),
+[`TRACK-B-BONY-T.md`](TRACK-B-BONY-T.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

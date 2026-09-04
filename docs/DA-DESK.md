@@ -107,12 +107,13 @@ Domain B **never** passes regularity. `check B` stays
 | B5 | \((\Delta u)_\theta=\Delta u_\theta-u_\theta/r^2\) | **pass** |
 | B5b | viscosity beats the tube source | **open** |
 | B6 | \(\int X<\infty\Rightarrow X\in L^\infty\) | **fail** |
+| B7 / B7a / B7b | Bony split, T2 self, energy-class \(T\) | **pass** |
+| B7c | uniform \(\rho^{1/2}\) as \(\rho\to 0\) | **fail** |
 | \(\Phi\) as estimate variable | keep \(\Gamma\) | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** energy-class low Bony \(T\), then occupation
-time. Use B4c inside 3-CONC. No BKM-from-\(L^2\). No all-data
-\(\cos\alpha_3\to 0\).
+**Next B write:** occupation time of 3-CONC vs SPREAD.
+B4c on packets, energy-class \(T\) on spread.
 
 ---
 
@@ -389,7 +390,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/DA-SM-LAGRANGIAN.md`, `docs/DA-SM-LINEAGE.md`,
 `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`,
 `docs/DA-PAPER.md`, `docs/DA-THINK-TANK.md`,
-`docs/DA-SESSION.md`, `docs/TRACK-B-HARDY-TUBE.md`.
+`docs/DA-SESSION.md`, `docs/TRACK-B-HARDY-TUBE.md`,
+`docs/TRACK-B-BONY-T.md`.
 
 ---
 
@@ -399,7 +401,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 - \(F\) is **fail** (not written).
 - Classical regularity is **open**.
 - Hardy \(\to I_{\mathrm{tube}}\): packet class **pass**,
-  all-data **fail**. Next B write is low Bony \(T\).
+  all-data **fail**. Low Bony \(T\): energy class **pass**,
+  uniform \(\rho^{1/2}\) **fail**. Next: occupation time.
 - Cosmo does not enter NS.
 - HB stays shelved as a theorem. DA-as-process stays live.
 

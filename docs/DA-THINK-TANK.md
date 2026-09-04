@@ -132,7 +132,9 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 
 16. **Working session.** You asked them to converse as real people and work together. That is [`docs/DA-SESSION.md`](DA-SESSION.md). You named it a **virtual séance**: kingdoms left intact, one focused problem. Process pass. Channel / vote / close: fail.
 
-17. **Tube write.** Hardy \(\to I_{\mathrm{tube}}\): packet class **pass**, all-data absorption **fail** (slow fat swirl, \(R\sim 1/\varepsilon\)). Next: low Bony \(T\). [`docs/TRACK-B-HARDY-TUBE.md`](TRACK-B-HARDY-TUBE.md).
+17. **Tube write.** Hardy \(\to I_{\mathrm{tube}}\): packet class **pass**, all-data absorption **fail** (slow fat swirl, \(R\sim 1/\varepsilon\)). [`docs/TRACK-B-HARDY-TUBE.md`](TRACK-B-HARDY-TUBE.md).
+
+18. **Bony \(T\).** Energy-class low sum **pass**. Uniform \(\rho^{1/2}\) as \(\rho\to 0\) **fail**. G is dead. Next: occupation time. [`docs/TRACK-B-BONY-T.md`](TRACK-B-BONY-T.md).
 
 ---
 

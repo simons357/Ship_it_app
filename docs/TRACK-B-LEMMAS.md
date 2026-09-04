@@ -41,6 +41,10 @@ not done).
 | B5 | Axisymmetric \((\Delta u)_\theta=\Delta u_\theta-u_\theta/r^2\) | **pass** | Identity. Angular piece lives in the tube. |
 | B5b | Angular viscosity dominates \(I_{\mathrm{tube}}\) at \(\delta\sim 2^{-j_*}\) | **open** | Why we kept \(1/r^4\). Not shown. |
 | B6 | \(\int X\,dt<\infty\Rightarrow X\in L^\infty\) | **fail** | \(X=(T_*-t)^{-1/2}\) is integrable and unbounded. |
+| B7 | \(\Pi_j=T+T^*+R+\mathrm{self}\) | **pass** | Bony bookkeeping. |
+| B7a | self-flux is T2 Lemma 1 | **pass** | The leftover \(T\) is not self-advection. |
+| B7b | \(\|u_{\le j-N}\|_\infty\lesssim 2^{(j-N)/2}X^{1/2}\) | **pass** | Energy class. No \(\rho\) upgrade. |
+| B7c | spread \(\Rightarrow\) uniform \(\rho^{1/2}\) as \(\rho\to 0\) | **fail** | Low sum in \(L^\infty\) grows. G is dead. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -122,18 +126,25 @@ field. It does not claim the viscosity wins.
 \(\dot X\sim X^3\). A spike \(X\sim(T_*-t)^{-1/2}\) is compatible
 with integrable enstrophy and is unbounded. DA fails that close.
 
+**B7 / B7a / B7b / B7c.** The low Bony \(T\) write lives in
+[`TRACK-B-BONY-T.md`](TRACK-B-BONY-T.md). Split and T2 self
+**pass**. Energy-class \(L^\infty\) **pass**. Uniform
+\(\rho^{1/2}\) as \(\rho\to 0\) **fails**. Theorem G is dead.
+H at frozen \(\rho\le 1/4\) may still use B7b.
+
 ---
 
 ## What is still the next write
 
-1. Energy-class low Bony term \(T\) (the open piece of H). Use B4c
-   inside 3-CONC; do not revive all-data Hardy absorption.
-2. Then occupation time of the two regimes.
+1. Occupation time of 3-CONC vs SPREAD. B4c on packets,
+   energy-class \(T\) on spread.
+2. Do not revive all-data Hardy absorption or G’s \(\rho\to 0\).
 
 None of those is a pass on regularity. Checker:
 
 ```
 python3 scripts/track_b_hardy_tube.py
+python3 scripts/track_b_bony_t.py
 python3 scripts/track_b_lemmas.py
 python3 -m unittest tests.test_track_b_lemmas
 python3 scripts/da_machine.py trackb

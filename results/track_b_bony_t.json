@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "energy-class low Bony T",
+    "regime": "SPREAD",
+    "domain_verdict": "open"
+  },
+  "lemmas": [
+    {
+      "name": "B7_bony_split",
+      "statement": "\u03a0_j = T + T* + R_near + self for a Bony cut at j\u2212N",
+      "verdict": "pass",
+      "why": "Bookkeeping identity on T^3. T2 Lemma 1 is the self piece.",
+      "split": {
+        "parts": {
+          "full": -2.0755399429085336e-06,
+          "T": 3.97278529672084e-06,
+          "R_near": -6.3030991868380765e-06,
+          "self": 2.547739472087022e-07,
+          "Tstar": 0.0,
+          "t2_self": -5.6425140062277935e-22
+        },
+        "residual": 8.470329472543003e-22,
+        "rel_residual": 2.168404344971009e-19,
+        "t2_over_energy": 1.4444835855943151e-19,
+        "n": 32,
+        "j": 4,
+        "nsep": 3
+      }
+    },
+    {
+      "name": "B7a_self_is_t2",
+      "statement": "\u222b (u_\u2264j \u00b7 \u2207) u_j \u00b7 u_j = 0 (T2 Lemma 1). That is not the surviving low T.",
+      "verdict": "pass",
+      "why": "Self-flux of the peak dies. Low T is u_low feeding neighbors into \u03a0_j.",
+      "t2_over_energy": 1.4444835855943151e-19
+    },
+    {
+      "name": "B7b_low_T_energy_class",
+      "statement": "||u_{\u2264j\u2212N}||_\u221e \u2272 2^{(j\u2212N)/2} X^{1/2} in energy class",
+      "verdict": "pass",
+      "why": "Bernstein + Cauchy\u2013Schwarz on the low sum. No \u03c1 improvement claimed.",
+      "scan": {
+        "rows": [
+          {
+            "n_low": 1,
+            "n_shells": 2,
+            "rho": 0.39685920910279654,
+            "T": -3.5906907312358685e-22,
+            "T_self": -3.5906907312358685e-22,
+            "X": 1.6579876789836212,
+            "Xj": 0.6579876789836212,
+            "S_low_inf": 0.0897935610625833,
+            "energy_bound": 3.6419639525768197,
+            "rho_hope": 0.8111643970143297,
+            "inf_over_energy": 0.024655258050824785,
+            "inf_over_rho_hope": 0.11069711810958222,
+            "T_over_energy": 1.2154398662013219e-22
+          },
+          {
+            "n_low": 2,
+            "n_shells": 3,
+            "rho": 0.1167683481082168,
+            "T": 6.218876863682122e-21,
+            "T_self": 6.218876863682122e-21,
+            "X": 5.661029005573518,
+            "Xj": 0.661029005573521,
+            "S_low_inf": 0.17958712212516653,
+            "energy_bound": 6.729653189027511,
+            "rho_hope": 0.8130369029592205,
+            "inf_over_energy": 0.026685940134029154,
+            "inf_over_rho_hope": 0.220884342975726,
+            "T_over_energy": 1.1366035702467061e-21
+          },
+          {
+            "n_low": 4,
+            "n_shells": 5,
+            "rho": 0.021661743342616075,
+            "T": -5.361813183190703e-21,
+            "T_self": -5.361813183190703e-21,
+            "X": 30.664240916530005,
+            "Xj": 0.6642409165300193,
+            "S_low_inf": 0.35917424425033306,
+            "energy_bound": 15.662500673016428,
+            "rho_hope": 0.8150097646838468,
+            "inf_over_energy": 0.022932113571693145,
+            "inf_over_rho_hope": 0.4406993140624046,
+            "T_over_energy": 4.200372083742572e-22
+          },
+          {
+            "n_low": 6,
+            "n_shells": 7,
+            "rho": 0.00722628664720635,
+            "T": 4.101034274980966e-21,
+            "T_self": 4.101034274980966e-21,
+            "X": 91.66237862269229,
+            "Xj": 0.662378622692334,
+            "S_low_inf": 0.5387613663754995,
+            "energy_bound": 27.079494621974362,
+            "rho_hope": 0.8138664649021571,
+            "inf_over_energy": 0.01989554730974586,
+            "inf_over_rho_hope": 0.6619775965830824,
+            "T_over_energy": 1.8607999689379662e-22
+          }
+        ],
+        "inf_over_rho_hope": [
+          0.11069711810958222,
+          0.220884342975726,
+          0.4406993140624046,
+          0.6619775965830824
+        ],
+        "inf_over_energy": [
+          0.024655258050824785,
+          0.026685940134029154,
+          0.022932113571693145,
+          0.01989554730974586
+        ],
+        "rho_hope_grows": true,
+        "energy_stays": true
+      }
+    },
+    {
+      "name": "B7c_low_T_not_rho_uniform",
+      "statement": "spread \u21d2 ||u_{\u2264j\u2212N}||_\u221e \u2272 \u03c1^{1/2} X^{1/2} uniformly as \u03c1 \u2192 0",
+      "verdict": "fail",
+      "why": "Each low shell is \u2264 \u03c1 X. The sum in L^\u221e is not. CCFS does not give G its \u03c1^{1/2}.",
+      "scan": {
+        "rows": [
+          {
+            "n_low": 1,
+            "n_shells": 2,
+            "rho": 0.39685920910279654,
+            "T": -3.5906907312358685e-22,
+            "T_self": -3.5906907312358685e-22,
+            "X": 1.6579876789836212,
+            "Xj": 0.6579876789836212,
+            "S_low_inf": 0.0897935610625833,
+            "energy_bound": 3.6419639525768197,
+            "rho_hope": 0.8111643970143297,
+            "inf_over_energy": 0.024655258050824785,
+            "inf_over_rho_hope": 0.11069711810958222,
+            "T_over_energy": 1.2154398662013219e-22
+          },
+          {
+            "n_low": 2,
+            "n_shells": 3,
+            "rho": 0.1167683481082168,
+            "T": 6.218876863682122e-21,
+            "T_self": 6.218876863682122e-21,
+            "X": 5.661029005573518,
+            "Xj": 0.661029005573521,
+            "S_low_inf": 0.17958712212516653,
+            "energy_bound": 6.729653189027511,
+            "rho_hope": 0.8130369029592205,
+            "inf_over_energy": 0.026685940134029154,
+            "inf_over_rho_hope": 0.220884342975726,
+            "T_over_energy": 1.1366035702467061e-21
+          },
+          {
+            "n_low": 4,
+            "n_shells": 5,
+            "rho": 0.021661743342616075,
+            "T": -5.361813183190703e-21,
+            "T_self": -5.361813183190703e-21,
+            "X": 30.664240916530005,
+            "Xj": 0.6642409165300193,
+            "S_low_inf": 0.35917424425033306,
+            "energy_bound": 15.662500673016428,
+            "rho_hope": 0.8150097646838468,
+            "inf_over_energy": 0.022932113571693145,
+            "inf_over_rho_hope": 0.4406993140624046,
+            "T_over_energy": 4.200372083742572e-22
+          },
+          {
+            "n_low": 6,
+            "n_shells": 7,
+            "rho": 0.00722628664720635,
+            "T": 4.101034274980966e-21,
+            "T_self": 4.101034274980966e-21,
+            "X": 91.66237862269229,
+            "Xj": 0.662378622692334,
+            "S_low_inf": 0.5387613663754995,
+            "energy_bound": 27.079494621974362,
+            "rho_hope": 0.8138664649021571,
+            "inf_over_energy": 0.01989554730974586,
+            "inf_over_rho_hope": 0.6619775965830824,
+            "T_over_energy": 1.8607999689379662e-22
+          }
+        ],
+        "inf_over_rho_hope": [
+          0.11069711810958222,
+          0.220884342975726,
+          0.4406993140624046,
+          0.6619775965830824
+        ],
+        "inf_over_energy": [
+          0.024655258050824785,
+          0.026685940134029154,
+          0.022932113571693145,
+          0.01989554730974586
+        ],
+        "rho_hope_grows": true,
+        "energy_stays": true
+      }
+    }
+  ],
+  "counts": {
+    "pass": 3,
+    "fail": 1,
+    "open": 0
+  },
+  "next_da_move": "H at frozen \u03c1 \u2264 1/4 may still be written with the energy-class T. G (push out of deep SPREAD) is dead. Occupation time is next."
+}

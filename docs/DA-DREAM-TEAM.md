@@ -33,7 +33,7 @@ chair.
 
 ## What they say in common (not a close)
 
-- **B:** B4c budgets \(I_{\mathrm{tube}}\) on packets at \(\delta\sim 2^{-j_*}\); all-data fail; then the low Bony \(T\). Regularity stays open.
+- **B:** B4c on packets; energy-class \(T\) on spread; G’s \(\rho^{1/2}\) fail. Occupation time next. Regularity stays open.
 - **A:** Leave Ladyzhenskaya on A.
 - **U:** Stop breaking \(\mathcal{L}_{\mathrm{SM}}\). Keep Einstein \(+T_{\mathrm{SM}}\). Produce lives outside the poster.
 - **Q:** Arithmetic only. No Bridge* \(\to\) SND.

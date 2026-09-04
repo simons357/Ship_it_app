@@ -204,10 +204,12 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B5 swirl viscosity identity | pass |
 | B5b viscosity beats the tube source | **open** |
 | B6 \(\int X<\infty\Rightarrow X\in L^\infty\) | fail |
+| B7 Bony split / T2 self / energy-class \(T\) | pass |
+| B7c uniform \(\rho^{1/2}\) as \(\rho\to 0\) | **fail** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Next write: energy-class low Bony \(T\), then occupation time. Use B4c inside 3-CONC.
+Next write: occupation time of 3-CONC vs SPREAD. B4c on packets, energy-class \(T\) on spread.
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 

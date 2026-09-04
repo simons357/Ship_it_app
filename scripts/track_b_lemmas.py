@@ -374,6 +374,30 @@ def lemma_energy_not_enough() -> dict:
     )
 
 
+def lemma_bony_split() -> dict:
+    from track_b_bony_t import lemma_bony_split as bony
+
+    return bony()
+
+
+def lemma_bony_t2() -> dict:
+    from track_b_bony_t import lemma_self_is_b1
+
+    return lemma_self_is_b1()
+
+
+def lemma_bony_energy() -> dict:
+    from track_b_bony_t import lemma_low_T_energy
+
+    return lemma_low_T_energy()
+
+
+def lemma_bony_not_rho() -> dict:
+    from track_b_bony_t import lemma_low_T_not_rho
+
+    return lemma_low_T_not_rho()
+
+
 def lemma_regularity() -> dict:
     return rec(
         "B_regularity",
@@ -407,6 +431,10 @@ def run(out: Path | None = None) -> dict:
         lemma_swirl_domination(),
         lemma_energy_not_enough(),
         lemma_phi_not_variable(),
+        lemma_bony_split(),
+        lemma_bony_t2(),
+        lemma_bony_energy(),
+        lemma_bony_not_rho(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -434,10 +462,11 @@ def run(out: Path | None = None) -> dict:
             "B5 swirl (Δu)_θ identity (pass); viscosity vs I_tube still open",
             "B6 ∫X dt < ∞ does not bound X (fail of that close)",
             "Φ is not the estimate variable (fail)",
+            "B7 Bony split + T2 self (pass); energy-class low T (pass); uniform ρ^{1/2} fail",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Use B4c inside 3-CONC. Then energy-class low Bony T on SPREAD."
+            "Occupation time of 3-CONC vs SPREAD. B4c on packets, energy-class T on spread."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

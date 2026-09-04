@@ -35,6 +35,10 @@ class TrackBLemmaTests(unittest.TestCase):
         self.assertEqual(by["B5b_tube_vs_viscosity"]["verdict"], "open")
         self.assertEqual(by["B6_energy_not_enough"]["verdict"], "fail")
         self.assertEqual(by["B_phi_not_estimate_variable"]["verdict"], "fail")
+        self.assertEqual(by["B7_bony_split"]["verdict"], "pass")
+        self.assertEqual(by["B7a_self_is_t2"]["verdict"], "pass")
+        self.assertEqual(by["B7b_low_T_energy_class"]["verdict"], "pass")
+        self.assertEqual(by["B7c_low_T_not_rho_uniform"]["verdict"], "fail")
         self.assertEqual(by["B_regularity"]["verdict"], "open")
         self.assertLess(by["B1_t2_low_flux"]["rel_residual"], 1e-10)
 
