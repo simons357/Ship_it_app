@@ -35,6 +35,7 @@ in your slot.
 | Constantin | geometry | Stretching dies **if** aligned. CONC is not that if. | all-data alignment |
 | Fefferman | geometry | Do not glue Ring to Biot–Savart. Pretty-damn-close is that glue. | the slogan |
 | Beirão da Veiga–Berselli | geometric if | We weakened the Lipschitz if. The if remains an if. It is not all-data A1. | weaker if \(=\) all-data alignment |
+| Giga–Miura | Type I / continuous direction | Type I plus uniformly continuous direction prevents blow-up. Two ifs. It is not all-data A1. | Type I + continuity \(=\) all-data alignment |
 | Ladyzhenskaya | extra dissipation | Same weight, both sides. \(\varepsilon\) stays on A. | A\(\Rightarrow\)B |
 | Tao | supercriticality | Energy class is a derivative short. Where now: a residual. | catalog closes \(X\) |
 | Šverák | Liouville / ancient / self-similar | Honest doors. Possible is not a theorem. Impossible is not a theorem. | those doors from a leftover list |
@@ -95,6 +96,7 @@ in your slot.
 | Glue across slots because you never know | **fail** |
 | Beirão–Berselli if is all-data A1 | **fail** |
 | Grujić log-bmo if is all-data A1 | **fail** |
+| Giga–Miura Type I plus continuity is all-data A1 | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

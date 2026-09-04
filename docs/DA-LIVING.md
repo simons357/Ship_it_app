@@ -31,6 +31,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Partial regularity | Caffarelli, Kohn | singular set small | small \(=\) empty |
 | Geometry | Constantin, Fefferman | depletion *if* aligned | CONC \(\Rightarrow\) alignment |
 | Geometric if (weaker than CF) | Beirão da Veiga–Berselli | weaker direction space still regularizes | the if is all-data A1 |
+| Type I plus continuous direction | Giga–Miura | Type I and uniform continuity prevent blow-up | two ifs are all-data A1 |
 | Continuation | Beale | \(\int\|\omega\|_\infty\) | the max from \(L^2\) or a leftover list |
 | Critical small data | Koch, Tataru | small critical sits | large-data regularity |
 | Scaling gap / log-bmo if | Grujić | sparseness can shrink the gap; 2026 log-bmo if | the if is all-data A1 |
@@ -100,6 +101,10 @@ if. Direction in a weaker space still regularizes. The if
 remains an if. It is not all-data A1. This box is not
 aligned. Hugo, Charles — do not cash a weaker if as the
 blank.
+
+**Giga–Miura.** Type I plus uniformly continuous
+direction prevents blow-up. That is two ifs. It is not
+all-data A1. Peter, Hugo — continuity is still an if.
 
 **Beale.** Continuation is the max. \(L^2\) is not our
 theorem. A leftover list is not the max. Herbert, Daniel
@@ -198,6 +203,7 @@ scores the process, not a theorem you did not prove.
 | Next write is another leftover close | **fail** |
 | Beirão–Berselli if is all-data A1 | **fail** |
 | Grujić log-bmo if is all-data A1 | **fail** |
+| Giga–Miura Type I plus continuity is all-data A1 | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

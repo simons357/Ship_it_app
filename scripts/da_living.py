@@ -94,6 +94,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Giga-Miura",
+        ["Constantin", "Beirao-Berselli"],
+        "Type I plus uniformly continuous direction prevents blow-up. That is two ifs. It is not all-data A1.",
+        "B",
+    ),
+    turn(
         "Beale",
         ["Fefferman", "Koch"],
         "Continuation is the max. L2 is not our theorem. A leftover list is not the max.",
@@ -341,6 +347,13 @@ CLAIMS = [
         "fail",
         "arXiv 2607.08866 is an if on the vorticity direction. Weaker than CF is still an if. All-data A1 stays blank.",
     ),
+    rec(
+        "L23",
+        "giga_miura_is_all_data_a1",
+        "Giga-Miura Type I plus continuous direction is all-data A1",
+        "fail",
+        "Two ifs: Type I rate, and uniform continuity of the direction. All-data A1 stays blank.",
+    ),
 ]
 
 
@@ -352,6 +365,7 @@ KINGDOMS = [
     {"name": "Partial regularity", "who": "Caffarelli, Kohn", "slot": "B"},
     {"name": "Geometry", "who": "Constantin, Fefferman", "slot": "B"},
     {"name": "Geometric if (weaker than CF)", "who": "Beirao-Berselli", "slot": "B"},
+    {"name": "Type I plus continuous direction", "who": "Giga-Miura", "slot": "B"},
     {"name": "Continuation", "who": "Beale", "slot": "B"},
     {"name": "Critical small data", "who": "Koch, Tataru", "slot": "B"},
     {"name": "Scaling gap / log-bmo if", "who": "Grujic", "slot": "B"},

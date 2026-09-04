@@ -230,6 +230,12 @@ class DaMachineTests(unittest.TestCase):
         grujic_if = classify_claim("Grujic logarithmic bmo if on a vorticity packet")
         self.assertEqual(grujic_if["domain"], "B")
         self.assertEqual(grujic_if["verdict"], "open")
+        giga = classify_claim("seat Giga-Miura as a wall on the living bench")
+        self.assertEqual(giga["domain"], "U")
+        self.assertEqual(giga["verdict"], "open")
+        giga_if = classify_claim("Giga-Miura type I continuous direction if on a vorticity packet")
+        self.assertEqual(giga_if["domain"], "B")
+        self.assertEqual(giga_if["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

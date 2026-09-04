@@ -82,6 +82,9 @@ LEADS = [
     lead("Beirao-Berselli", "geometric if / weaker than CF", "B", "living",
          "We weakened the Lipschitz if. The if remains an if. It is not all-data A1.",
          "weaker if = all-data alignment"),
+    lead("Giga-Miura", "Type I / continuous direction", "B", "living",
+         "Type I plus uniformly continuous direction prevents blow-up. Two ifs. It is not all-data A1.",
+         "Type I + continuity = all-data alignment"),
     lead("Ladyzhenskaya", "extra dissipation", "A", "past",
          "Same weight, both sides, as a colleague. Epsilon stays on A.",
          "A ⇒ B"),
@@ -182,7 +185,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Koch", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "current math.AP",
-    "Beirao-Berselli",
+    "Beirao-Berselli", "Giga-Miura",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -286,6 +289,13 @@ CLAIMS = [
         "Grujic logarithmic bmo if is all-data A1",
         "fail",
         "arXiv 2607.08866 is an if on the vorticity direction. All-data A1 stays blank.",
+    ),
+    rec(
+        "R15",
+        "giga_miura_is_all_data_a1",
+        "Giga-Miura Type I plus continuous direction is all-data A1",
+        "fail",
+        "Two ifs. All-data A1 stays blank.",
     ),
 ]
 
