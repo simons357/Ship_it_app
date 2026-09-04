@@ -579,7 +579,7 @@
       "name": "B8c_occupation_not_X_bound",
       "statement": "occupation-time bookkeeping closes a bound for X",
       "verdict": "open",
-      "why": "The clock is armed. Glue is written (B9). Occupation itself still does not close X. Low-j CONC is the remaining cubic."
+      "why": "The clock is armed. Glue is written (B9). Frozen low-j is hygiene (B10). Occupation itself still does not close X."
     },
     {
       "name": "B9_glue_bookkeeping",
@@ -714,13 +714,97 @@
       "name": "B10c_climbing_conc_open",
       "statement": "CONC with climbing j* is a closed estimate for X",
       "verdict": "open",
-      "why": "High j* sits on the glue ODE. Climbing from coarse to thin is the remaining cubic room. Not shown."
+      "why": "High j* sits on the glue ODE. Climbing is broken out as B11. The missing piece is a climb law from the field (B11d)."
     },
     {
       "name": "B10d_not_a_pde_retune",
       "statement": "the energy ceiling is a retune of classical Navier\u2013Stokes (Q1, \u03b5, \u03a6-cancel)",
       "verdict": "fail",
       "why": "The PDE is untouched. No Q1. No \u03b5. Keep 1/r^4. The knob is on the estimate, not the equation."
+    },
+    {
+      "name": "B11_climb_bookkeeping",
+      "statement": "along a prescribed climb, \u0394X equals the sum of CONC increments at the current j*",
+      "verdict": "pass",
+      "why": "Tesla\u2019s knob on this write: c = dj*/dt. The increments still add.",
+      "bookkeeping": {
+        "residual": 0.0,
+        "ok": true,
+        "X0": 2.0,
+        "XT": 2.0,
+        "j": 2.079999999999991
+      }
+    },
+    {
+      "name": "B11a_bounded_j_bounds_X",
+      "statement": "packet class + bounded j* \u21d2 X bounded (unbounded X needs unbounded j*)",
+      "verdict": "pass",
+      "why": "Necessary condition only. Finite peak scale, finite ceiling. Not a climb law.",
+      "ceilings": [
+        {
+          "jmax": 3,
+          "ceiling": 256.0,
+          "finite": true
+        },
+        {
+          "jmax": 4,
+          "ceiling": 1024.0,
+          "finite": true
+        },
+        {
+          "jmax": 5,
+          "ceiling": 4096.0,
+          "finite": true
+        },
+        {
+          "jmax": 6,
+          "ceiling": 16384.0,
+          "finite": true
+        }
+      ],
+      "E0": 1.0
+    },
+    {
+      "name": "B11b_slow_climb_blows",
+      "statement": "any positive climb rate saves the model X",
+      "verdict": "fail",
+      "why": "c=1: j* barely moves, X crosses 40. Climbing is not a charm. Tesla: turn c down.",
+      "run": {
+        "c": 1.0,
+        "X_final": 40.84911299138827,
+        "X_max": 40.84911299138827,
+        "j_final": 2.318749999999257,
+        "blew": true,
+        "steps": 6375,
+        "T": 0.31875000000000003
+      }
+    },
+    {
+      "name": "B11c_fast_climb_sits",
+      "statement": "a fast prescribed climb reaches the viscous room and the model X sits",
+      "verdict": "pass",
+      "why": "c=8: j* reaches the thin packet, viscosity owns the cubic. Same ODE as B9a, entered from below.",
+      "run": {
+        "c": 8.0,
+        "X_final": 0.0,
+        "X_max": 2.672042970530018,
+        "j_final": 8.500400000000395,
+        "blew": false,
+        "steps": 16251,
+        "T": 0.81255
+      }
+    },
+    {
+      "name": "B11d_ns_climb_law_open",
+      "statement": "classical NS forces a climb rate c that saves X while CONC",
+      "verdict": "open",
+      "why": "c is prescribed here. The field has to produce dj*/dt. That law is not written."
+    },
+    {
+      "name": "B11e_climb_not_X_a_priori",
+      "statement": "the climbing model is a closed a priori bound for classical X",
+      "verdict": "open",
+      "why": "A prescribed c is a sketch. Slow dies, fast sits. NS did not pick c."
     },
     {
       "name": "B_regularity",
@@ -730,9 +814,9 @@
     }
   ],
   "counts": {
-    "pass": 16,
-    "fail": 11,
-    "open": 5
+    "pass": 19,
+    "fail": 12,
+    "open": 7
   },
   "how_far": [
     "B1 T2 low-flux identity holds (pass); T2 Lemma 2 stays dropped (fail)",
@@ -750,7 +834,9 @@
     "B9b low-j CONC cubic is live (fail); B9d sketch is not an NS a priori (open)",
     "B10 energy ceiling (pass); B9b unbounded path is not NS (fail); not a PDE retune (fail)",
     "B10b ceiling does not follow a climbing j* (fail); climbing CONC open (B10c)",
+    "B11 climb bookkeeping (pass); bounded j* bounds X (pass); slow climb blows (fail)",
+    "B11c fast climb sits (pass); NS climb law open (B11d); sketch is not an a priori (B11e)",
     "classical regularity remains open"
   ],
-  "next_da_move": "Climbing CONC (B10c): j_* rises while \u03c3\u22651/2. The energy ceiling does not follow. Tesla: that is the paragraph."
+  "next_da_move": "The climb law from the field (B11d). Prescribed c is a knob. NS has to produce dj*/dt. Tesla: that is the paragraph."
 }

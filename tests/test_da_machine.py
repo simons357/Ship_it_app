@@ -112,6 +112,9 @@ class DaMachineTests(unittest.TestCase):
         ceil = classify_claim("energy ceiling on a frozen low-j packet")
         self.assertEqual(ceil["domain"], "B")
         self.assertEqual(ceil["verdict"], "open")
+        climb = classify_claim("climbing CONC with a climb law for dj*/dt")
+        self.assertEqual(climb["domain"], "B")
+        self.assertEqual(climb["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

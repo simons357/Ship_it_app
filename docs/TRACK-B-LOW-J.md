@@ -81,8 +81,9 @@ on a climbing packet.
 
 **Einstein.** The object stayed the classical field.
 
-**Operator.** Frozen low-\(j_*\) is hygiene. The live
-room is climbing CONC.
+**Operator.** Frozen low-\(j_*\) is hygiene. Climbing
+is written in [`TRACK-B-CLIMB.md`](TRACK-B-CLIMB.md).
+The live room is a climb law from the field.
 
 ---
 
@@ -95,7 +96,7 @@ room is climbing CONC.
 | B10b | **fail** | ceiling bounds a climbing \(j_*\) |
 | B10c | **open** | climbing CONC closes \(X\) |
 | B10d | **fail** | this retunes the PDE |
-| domain B | **open** | climbing CONC is the room |
+| domain B | **open** | the climb law is the room |
 
 Tesla’s line: detune the apparatus. Do not retune
 Navier–Stokes.

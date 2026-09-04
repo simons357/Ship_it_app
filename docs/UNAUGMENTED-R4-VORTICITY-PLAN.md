@@ -213,7 +213,9 @@ Occupation time is broken out in [`TRACK-B-OCCUPATION.md`](TRACK-B-OCCUPATION.md
 
 The two-regime glue is broken out in [`TRACK-B-GLUE.md`](TRACK-B-GLUE.md). Increments add. High \(j_*\) CONC sits. Switching high \(j_*\) sits. Low \(j_*\) CONC **fails** on the model ODE. The sketch is **not** an a priori bound for classical \(X\).
 
-Frozen low-\(j_*\) is hygiene, not a retune of the PDE. Packet support \(|k|\le K\) gives \(X\le K^2 E\). That write lives in [`TRACK-B-LOW-J.md`](TRACK-B-LOW-J.md). The B9b unbounded path is **not** NS-legal. The ceiling does **not** follow a climbing \(j_*\). Climbing CONC is the next write.
+Frozen low-\(j_*\) is hygiene, not a retune of the PDE. Packet support \(|k|\le K\) gives \(X\le K^2 E\). That write lives in [`TRACK-B-LOW-J.md`](TRACK-B-LOW-J.md). The B9b unbounded path is **not** NS-legal. The ceiling does **not** follow a climbing \(j_*\).
+
+Climbing CONC is broken out in [`TRACK-B-CLIMB.md`](TRACK-B-CLIMB.md). The knob is \(c=\mathrm{d}j_*/\mathrm{d}t\) on the estimate. Slow climb still blows. Fast climb sits. NS does not hand us \(c\). That climb law is the next write.
 
 Leray’s \(\int X\,dt<\infty\) limits how long a high-\(j_*\) concentrated spike can last, but it does **not** by itself stop \(\dot X\sim X^3\). A spike \(X\sim(T_*-t)^{-1/2}\) is compatible with integrable \(X\). Viscosity or geometric depletion has to supply the extra decay. Do not close with energy integrability alone.
 

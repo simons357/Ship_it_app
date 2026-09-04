@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "climbing CONC",
+    "knob": "c = dj*/dt on the estimate, not on the PDE",
+    "tuning_the_pde": false,
+    "tesla": "exacting, not a jerk. Turn c. If the script does not move, it is a paragraph.",
+    "domain_verdict": "open"
+  },
+  "lemmas": [
+    {
+      "name": "B11_climb_bookkeeping",
+      "statement": "along a prescribed climb, \u0394X equals the sum of CONC increments at the current j*",
+      "verdict": "pass",
+      "why": "Tesla\u2019s knob on this write: c = dj*/dt. The increments still add.",
+      "bookkeeping": {
+        "residual": 0.0,
+        "ok": true,
+        "X0": 2.0,
+        "XT": 2.0,
+        "j": 2.079999999999991
+      }
+    },
+    {
+      "name": "B11a_bounded_j_bounds_X",
+      "statement": "packet class + bounded j* \u21d2 X bounded (unbounded X needs unbounded j*)",
+      "verdict": "pass",
+      "why": "Necessary condition only. Finite peak scale, finite ceiling. Not a climb law.",
+      "ceilings": [
+        {
+          "jmax": 3,
+          "ceiling": 256.0,
+          "finite": true
+        },
+        {
+          "jmax": 4,
+          "ceiling": 1024.0,
+          "finite": true
+        },
+        {
+          "jmax": 5,
+          "ceiling": 4096.0,
+          "finite": true
+        },
+        {
+          "jmax": 6,
+          "ceiling": 16384.0,
+          "finite": true
+        }
+      ],
+      "E0": 1.0
+    },
+    {
+      "name": "B11b_slow_climb_blows",
+      "statement": "any positive climb rate saves the model X",
+      "verdict": "fail",
+      "why": "c=1: j* barely moves, X crosses 40. Climbing is not a charm. Tesla: turn c down.",
+      "run": {
+        "c": 1.0,
+        "X_final": 40.84911299138827,
+        "X_max": 40.84911299138827,
+        "j_final": 2.318749999999257,
+        "blew": true,
+        "steps": 6375,
+        "T": 0.31875000000000003
+      }
+    },
+    {
+      "name": "B11c_fast_climb_sits",
+      "statement": "a fast prescribed climb reaches the viscous room and the model X sits",
+      "verdict": "pass",
+      "why": "c=8: j* reaches the thin packet, viscosity owns the cubic. Same ODE as B9a, entered from below.",
+      "run": {
+        "c": 8.0,
+        "X_final": 0.0,
+        "X_max": 2.672042970530018,
+        "j_final": 8.500400000000395,
+        "blew": false,
+        "steps": 16251,
+        "T": 0.81255
+      }
+    },
+    {
+      "name": "B11d_ns_climb_law_open",
+      "statement": "classical NS forces a climb rate c that saves X while CONC",
+      "verdict": "open",
+      "why": "c is prescribed here. The field has to produce dj*/dt. That law is not written."
+    },
+    {
+      "name": "B11e_climb_not_X_a_priori",
+      "statement": "the climbing model is a closed a priori bound for classical X",
+      "verdict": "open",
+      "why": "A prescribed c is a sketch. Slow dies, fast sits. NS did not pick c."
+    }
+  ],
+  "counts": {
+    "pass": 3,
+    "fail": 1,
+    "open": 2
+  },
+  "next_da_move": "The climb law from the field (B11d). Prescribed c is a knob. NS has to produce dj*/dt."
+}

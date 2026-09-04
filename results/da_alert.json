@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "check",
-    "t": "2026-09-04T07:28:59.546116+00:00",
+    "t": "2026-09-04T07:34:11.839112+00:00",
     "significant": false,
     "baseline": false,
     "no_phone_in_repo": true,
@@ -18,9 +18,9 @@
     "U.destination": "open"
   },
   "events": [],
-  "plain": "DA checked. Nothing significant flipped.\nNext: climbing CONC (B10c). Frozen low-j is hygiene. The ceiling does not follow a rising j*.\n",
+  "plain": "DA checked. Nothing significant flipped.\nNext: the climb law from the field (B11d). Prescribed c is a knob. NS has to produce dj*/dt.\n",
   "sms_lines": [],
-  "recommendation": "Nothing flipped. Next write is climbing CONC (B10c).",
+  "recommendation": "Nothing flipped. Next write is the climb law from the field (B11d).",
   "delivery": {
     "file": "/workspace/results/DA-ALERT.txt",
     "webhook": {

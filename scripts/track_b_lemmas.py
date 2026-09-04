@@ -482,6 +482,42 @@ def lemma_not_a_retune() -> dict:
     return no_retune()
 
 
+def lemma_climb_bookkeeping() -> dict:
+    from track_b_climb import lemma_climb_bookkeeping as climb_bk
+
+    return climb_bk()
+
+
+def lemma_bounded_j_bounds_x() -> dict:
+    from track_b_climb import lemma_bounded_j_bounds_x as bounded
+
+    return bounded()
+
+
+def lemma_slow_climb_blows() -> dict:
+    from track_b_climb import lemma_slow_climb_blows as slow
+
+    return slow()
+
+
+def lemma_fast_climb_sits() -> dict:
+    from track_b_climb import lemma_fast_climb_sits as fast
+
+    return fast()
+
+
+def lemma_ns_climb_law() -> dict:
+    from track_b_climb import lemma_ns_climb_law as law
+
+    return law()
+
+
+def lemma_climb_not_a_priori() -> dict:
+    from track_b_climb import lemma_climb_not_a_priori as not_ap
+
+    return not_ap()
+
+
 def lemma_regularity() -> dict:
     return rec(
         "B_regularity",
@@ -533,6 +569,12 @@ def run(out: Path | None = None) -> dict:
         lemma_ceiling_not_climbing(),
         lemma_climbing_open(),
         lemma_not_a_retune(),
+        lemma_climb_bookkeeping(),
+        lemma_bounded_j_bounds_x(),
+        lemma_slow_climb_blows(),
+        lemma_fast_climb_sits(),
+        lemma_ns_climb_law(),
+        lemma_climb_not_a_priori(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -566,11 +608,13 @@ def run(out: Path | None = None) -> dict:
             "B9b low-j CONC cubic is live (fail); B9d sketch is not an NS a priori (open)",
             "B10 energy ceiling (pass); B9b unbounded path is not NS (fail); not a PDE retune (fail)",
             "B10b ceiling does not follow a climbing j* (fail); climbing CONC open (B10c)",
+            "B11 climb bookkeeping (pass); bounded j* bounds X (pass); slow climb blows (fail)",
+            "B11c fast climb sits (pass); NS climb law open (B11d); sketch is not an a priori (B11e)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Climbing CONC (B10c): j_* rises while σ≥1/2. "
-            "The energy ceiling does not follow. Tesla: that is the paragraph."
+            "The climb law from the field (B11d). Prescribed c is a knob. "
+            "NS has to produce dj*/dt. Tesla: that is the paragraph."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

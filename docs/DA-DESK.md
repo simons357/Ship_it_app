@@ -118,13 +118,17 @@ Domain B **never** passes regularity. `check B` stays
 | B10 | packet energy ceiling | **pass** |
 | B10a | B9b unbounded path is NS-legal | **fail** |
 | B10b | ceiling follows a climbing \(j_*\) | **fail** |
-| B10c | climbing CONC closes \(X\) | **open** |
+| B10c | climbing CONC closes \(X\) | **open** (B11) |
 | B10d | this retunes the PDE | **fail** |
+| B11 / B11a / B11c | climb bookkeeping; bounded \(j_*\); fast sits | **pass** |
+| B11b | any climb saves | **fail** |
+| B11d | NS climb law | **open** |
+| B11e | climb sketch is an NS a priori | **open** |
 | \(\Phi\) as estimate variable | keep \(\Gamma\) | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** climbing CONC (B10c). Frozen low-\(j_*\)
-is hygiene. We are not tuning the equation.
+**Next B write:** the climb law from the field (B11d).
+Prescribed \(c\) is a knob. We are not tuning the equation.
 
 ---
 
@@ -403,7 +407,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/DA-PAPER.md`, `docs/DA-THINK-TANK.md`,
 `docs/DA-SESSION.md`, `docs/TRACK-B-HARDY-TUBE.md`,
 `docs/TRACK-B-BONY-T.md`, `docs/TRACK-B-OCCUPATION.md`,
-`docs/TRACK-B-GLUE.md`, `docs/TRACK-B-LOW-J.md`.
+`docs/TRACK-B-GLUE.md`, `docs/TRACK-B-LOW-J.md`,
+`docs/TRACK-B-CLIMB.md`.
 
 ---
 
@@ -417,8 +422,9 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
   uniform \(\rho^{1/2}\) **fail**. Occupation clock **pass**;
   Leray \(\Rightarrow\) short CONC **fail**. Glue sketch
   written: high \(j_*\) sits, low \(j_*\) model blows.
-  Energy ceiling: frozen support is hygiene. Next:
-  climbing CONC. The PDE is not being tuned.
+  Energy ceiling: frozen support is hygiene. Climbing:
+  slow dies, fast sits. Next: the climb law from the
+  field. The PDE is not being tuned.
 - Cosmo does not enter NS.
 - HB stays shelved as a theorem. DA-as-process stays live.
 

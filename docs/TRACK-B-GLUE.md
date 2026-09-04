@@ -108,8 +108,8 @@ ODE told you the low room is still cubic.
 A model is a model.
 
 **Operator.** Glue is out as a sketch. Frozen low-\(j_*\)
-is hygiene (energy ceiling). The live room is climbing
-CONC. See [`TRACK-B-LOW-J.md`](TRACK-B-LOW-J.md).
+is hygiene. Climbing is written. The live room is a
+climb law from the field. See [`TRACK-B-CLIMB.md`](TRACK-B-CLIMB.md).
 
 ---
 

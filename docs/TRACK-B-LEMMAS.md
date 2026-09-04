@@ -57,8 +57,14 @@ not done).
 | B10 | packet \(X\le K^2 E\) | **pass** | Frozen support has an energy ceiling. |
 | B10a | B9b unbounded path is NS-legal | **fail** | The model forgot \(E\). |
 | B10b | ceiling bounds a climbing \(j_*\) | **fail** | \(K\) rises with \(j_*\). |
-| B10c | climbing CONC closes \(X\) | **open** | Coarse to thin, still concentrated. |
+| B10c | climbing CONC closes \(X\) | **open** | Broken out as B11. |
 | B10d | energy ceiling retunes the PDE | **fail** | No \(Q_1\), no \(\varepsilon\). Knob on the estimate. |
+| B11 | climb increments add | **pass** | Prescribed \(c=\mathrm{d}j_*/\mathrm{d}t\). |
+| B11a | bounded \(j_*\) ⇒ bounded \(X\) | **pass** | Necessary condition. |
+| B11b | any climb saves the model | **fail** | \(c=1\): \(X\) crosses 40. |
+| B11c | fast climb sits | **pass** | \(c=8\): reaches the viscous room. |
+| B11d | NS forces a saving \(c\) | **open** | The field has to produce \(\mathrm{d}j_*/\mathrm{d}t\). |
+| B11e | climb sketch is an NS a priori | **open** | A rate you typed is not the equation. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -161,14 +167,20 @@ ODE. Sketch \(\neq\) NS a priori **open**.
 [`TRACK-B-LOW-J.md`](TRACK-B-LOW-J.md). Packet \(X\le K^2E\)
 **pass**. B9b unbounded path is not NS **fail**. Ceiling
 does not follow a climbing \(j_*\) **fail**. Climbing CONC
-**open**. Not a PDE retune **fail**.
+is broken out as B11. Not a PDE retune **fail**.
+
+**B11 / B11a / B11b / B11c / B11d / B11e.** Climbing CONC
+lives in [`TRACK-B-CLIMB.md`](TRACK-B-CLIMB.md). Increments
+add **pass**. Bounded \(j_*\) bounds \(X\) **pass**. Slow
+climb **fails** to save. Fast climb sits **pass**. NS climb
+law **open**. Sketch \(\neq\) NS a priori **open**.
 
 ---
 
 ## What is still the next write
 
-1. Climbing CONC (B10c). \(j_*\) rises while \(\sigma\ge 1/2\).
-   The energy ceiling does not follow.
+1. The climb law from the field (B11d). Prescribed \(c\) is
+   a knob. NS has to produce \(\mathrm{d}j_*/\mathrm{d}t\).
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
    Leray-as-occupation, the glue sketch as an NS a priori,
    or a retune of the PDE.
@@ -181,8 +193,9 @@ python3 scripts/track_b_bony_t.py
 python3 scripts/track_b_occupation.py
 python3 scripts/track_b_glue.py
 python3 scripts/track_b_low_j.py
+python3 scripts/track_b_climb.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

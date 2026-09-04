@@ -168,7 +168,7 @@ def run(out: Path | None = None) -> dict:
         "counts": counts,
         "next_da_move": (
             "Glue is written (B9). Frozen low-j is hygiene (B10). "
-            "Climbing CONC is the remaining cubic (B10c)."
+            "Climbing is written (B11). The climb law is the remaining cubic (B11d)."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_occupation.json")

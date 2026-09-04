@@ -215,12 +215,16 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B10 packet energy ceiling | pass |
 | B10a B9b unbounded path is NS-legal | **fail** |
 | B10b ceiling follows a climbing \(j_*\) | **fail** |
-| B10c climbing CONC closes \(X\) | **open** |
+| B10c climbing CONC closes \(X\) | **open** (broken out as B11) |
 | B10d this retunes the PDE | **fail** |
+| B11 / B11a / B11c climb bookkeeping; bounded \(j_*\); fast sits | pass |
+| B11b any climb saves | **fail** |
+| B11d NS climb law | **open** |
+| B11e climb sketch is an NS a priori | **open** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Next write: climbing CONC (B10c). Frozen low-\(j_*\) is hygiene. The PDE is not being tuned.
+Next write: the climb law from the field (B11d). Prescribed \(c\) is a knob. The PDE is not being tuned.
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 
@@ -264,11 +268,11 @@ The operator atlas is `docs/DA-DESK.md`. The machine note is `docs/DOMAIN-ARCHIT
 
 ## 9. Conclusion
 
-DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is climbing CONC.
+DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is a climb law from the field.
 
 The think tank is three benches and a corpus rule. The processes are classify, check, falsify, reconstruct, ablate, pipe, compute, and alert. The purpose is to keep the operator honest while ordinary AI proposes.
 
-That is the paper. The next page of mathematics is a packet that climbs while staying concentrated. The PDE stays classical.
+That is the paper. The next page of mathematics is \(\mathrm{d}j_*/\mathrm{d}t\) produced by the classical field. The PDE stays classical.
 
 ---
 
