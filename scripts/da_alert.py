@@ -47,8 +47,8 @@ WATCH = {
         "slot": "B",
         "plain": "The hope that Hardy's inequality eats the nasty 1/r^4 source in the vortex tube.",
         "on_fail": (
-            "That hope is dead for all data: the leftover 'wall' term can win.",
-            "Stop treating Hardy as the close. Try a smaller class of data, or move to occupation time / the low Bony term.",
+            "That hope is dead for all data: a slow fat swirl makes the leftover ratio blow like 1/ε.",
+            "Keep the packet class (B4c). Next write is the low Bony term on the spread side.",
         ),
         "on_pass": (
             "Hardy now absorbs the tube source in the estimate that was written.",

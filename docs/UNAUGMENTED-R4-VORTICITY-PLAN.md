@@ -239,7 +239,7 @@ No BKM-from-\(L^2\) implication is required. No Biot–Savart slogan that \(\cos
 
 Scored in [`docs/TRACK-B-LEMMAS.md`](TRACK-B-LEMMAS.md). `python3 scripts/da_machine.py trackb`.
 
-1. **Localized tube Hardy for \(\Gamma\)**, radius \(\delta\), no \(\Phi\). Hardy + wall term **pass**. \(I_{\mathrm{tube}}\) domination **open**.
+1. **Localized tube Hardy for \(\Gamma\)**, radius \(\delta\), no \(\Phi\). Hardy + wall term **pass**. All-data \(I_{\mathrm{tube}}\) domination **fail**. Packet class at \(\delta\sim 2^{-j_*}\) **pass**. Write: [`TRACK-B-HARDY-TUBE.md`](TRACK-B-HARDY-TUBE.md).
 2. **Almost-band-limited Ring Lemma** (three shells). Bernstein **pass**. All-data depletion **fail**.
 3. **One-threshold regime split** 3-CONC \(\sigma\ge 1/2\) vs SPREAD \(\sigma\le 1/2\). Cover **pass**.
 4. **Energy-class T2 flux.** Lemma 1 **pass**. Lemma 2 dropped (**fail** as input). Low Bony \(T\) still open.
@@ -264,7 +264,7 @@ Item 5 is the reason to keep \(1/r^4\). If the angular viscosity does not domina
 | Piece | Status |
 |---|---|
 | Keep \(1/r^4\), split tube / off-axis | Setup, not proved |
-| Localized tube Hardy | **pass** as Hardy + wall term (`docs/TRACK-B-LEMMAS.md`); \(I_{\mathrm{tube}}\) domination **open** |
+| Localized tube Hardy | **pass** as Hardy + wall; all-data domination **fail**; packet class **pass** (`docs/TRACK-B-HARDY-TUBE.md`) |
 | Ring Lemma, exact one shell | Upgraded to 3-shell Bernstein check; depletion **fail** as a slogan |
 | Concentration \(\Rightarrow\) geometric control | Conditional outline |
 | Spread \(\Rightarrow\) extra dissipation | T2 Lemma 1 **pass**; Lemma 2 dropped; low Bony \(T\) still open |

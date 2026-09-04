@@ -130,9 +130,9 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 
 15. **Working paper.** `docs/DA-PAPER.md`. Process paper, not a regularity / \(F\) / ToE claim.
 
-16. **Working session.** You asked them to converse as real people and work together. That is [`docs/DA-SESSION.md`](DA-SESSION.md). You named it a **virtual séance**: kingdoms left intact, one focused problem. Process pass. Channel / vote / close: fail. Regularity still open.
+16. **Working session.** You asked them to converse as real people and work together. That is [`docs/DA-SESSION.md`](DA-SESSION.md). You named it a **virtual séance**: kingdoms left intact, one focused problem. Process pass. Channel / vote / close: fail.
 
-**Still true at the end of the chat:** Track B regularity is open. \(F\) is fail. Destination “spectrum, not a bag” is open. Next write is Hardy \(\to I_{\mathrm{tube}}\), then low Bony \(T\). A \(\not\Rightarrow\) B.
+17. **Tube write.** Hardy \(\to I_{\mathrm{tube}}\): packet class **pass**, all-data absorption **fail** (slow fat swirl, \(R\sim 1/\varepsilon\)). Next: low Bony \(T\). [`docs/TRACK-B-HARDY-TUBE.md`](TRACK-B-HARDY-TUBE.md).
 
 ---
 

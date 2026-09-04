@@ -235,7 +235,7 @@ VOCAB = [
         "B",
         True,
         True,
-        "Live B write (B4). Not H^p. Absorbing I_tube stays open (B4b).",
+        "B4 pass. All-data I_tube fail (B4b). Packet class pass (B4c). Not H^p.",
     ),
     rec(
         "H19",

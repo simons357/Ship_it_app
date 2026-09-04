@@ -271,12 +271,117 @@
       "claim": "Have the dream team converse as colleagues on the live problem",
       "verdict": "open",
       "note": "process pass; regularity still open; next write still I_tube then T"
+    },
+    {
+      "t": "2026-09-04T06:56:45.453807+00:00",
+      "domain": "B",
+      "claim": "\u222b (u_\u2264j \u00b7 \u2207) u_j \u00b7 u_j = 0 for periodic div-free u",
+      "verdict": "pass",
+      "note": "B1_t2_low_flux: div-free + parts: (1/2) \u222b u_low \u00b7 \u2207(|u_j|\u00b2) = 0. T2 Lemma 1 only."
+    },
+    {
+      "t": "2026-09-04T06:56:45.454245+00:00",
+      "domain": "B",
+      "claim": "T2 Lemma 2 (H^{2.3} absorbing ball) is an input to the a priori estimate",
+      "verdict": "fail",
+      "note": "B1b_t2_lemma2_dropped: Already-regular H^{2.3} is circular for large-data Track B. Not used."
+    },
+    {
+      "t": "2026-09-04T06:56:45.455045+00:00",
+      "domain": "B",
+      "claim": "3-CONC (\u03c3\u22651/2) and SPREAD (\u03c3\u22641/2) cover (0,1]; \u03c1\u2264\u03c3",
+      "verdict": "pass",
+      "note": "B2_regime_cover: A cover of mass fractions, not a dynamics theorem. One threshold, no gap."
+    },
+    {
+      "t": "2026-09-04T06:56:45.455735+00:00",
+      "domain": "B",
+      "claim": "3-shell support \u21d2 ||\u2207\u03c9||_\u221e \u2264 C 2^{2j*} ||\u03c9||_2 and ||\u2207\u03be||_\u221e \u2264 C 2^{j*} on E_c",
+      "verdict": "pass",
+      "note": "B3_three_shell_ring: Bernstein on a triad packet. Not stretching depletion. Not all-data geometry."
+    },
+    {
+      "t": "2026-09-04T06:56:45.456452+00:00",
+      "domain": "B",
+      "claim": "3-shell Ring forces cos \u03b1_3 \u2192 0 for all data",
+      "verdict": "fail",
+      "note": "B3b_ring_is_not_depletion: Ring bounds |\u2207\u03be| on E_c. It does not force alignment. Biot\u2013Savart slogan stays forbidden."
+    },
+    {
+      "t": "2026-09-04T06:56:45.456920+00:00",
+      "domain": "B",
+      "claim": "g(0)=0 \u21d2 \u222b(g/r)\u00b2 dr \u2264 4\u222b(g')\u00b2; h(0)=0 \u21d2 \u222b h\u00b2/r dr \u2264 4\u222b(h')\u00b2 r dr + 2 h(\u03b4)\u00b2",
+      "verdict": "pass",
+      "note": "B4_tube_hardy: Localized Hardy with a wall term. Does not yet beat I_tube by viscosity."
+    },
+    {
+      "t": "2026-09-04T06:56:45.457250+00:00",
+      "domain": "B",
+      "claim": "tube Hardy \u21d2 |I_tube| absorbed in \u03bd||\u2207\u03c9||_2\u00b2 for all data",
+      "verdict": "fail",
+      "note": "B4b_hardy_not_I_tube: Slow fat swirl: h = r sin(\u03b5z). Ratio |I_tube|/diss \u223c 1/\u03b5 blows as \u03b5 \u2192 0. All-data domination is dead. Packet class still lives as B4c."
+    },
+    {
+      "t": "2026-09-04T06:56:45.457622+00:00",
+      "domain": "B",
+      "claim": "3-shell / packet class at \u03b4 \u223c 2^{-j*}: |I_tube| is budgeted by tube vorticity dissipation",
+      "verdict": "pass",
+      "note": "B4c_packet_hardy_tube: Same weight, both sides, at the packet scale. Ratio stays bounded and does not grow with j*."
+    },
+    {
+      "t": "2026-09-04T06:56:45.458385+00:00",
+      "domain": "B",
+      "claim": "Hardy wall 2h(\u03b4)\u00b2 is a finite off-axis charge, not the whole tube integral",
+      "verdict": "pass",
+      "note": "B4d_wall_matches_off_axis: Spend the wall on r \u223c \u03b4. That is the match I_off asked for."
+    },
+    {
+      "t": "2026-09-04T06:56:45.459099+00:00",
+      "domain": "B",
+      "claim": "axisymmetric (\u0394u)_\u03b8 = \u0394u_\u03b8 \u2212 u_\u03b8/r\u00b2; angular piece \u222b(u_\u03b8/r)\u00b2 sits in the tube",
+      "verdict": "pass",
+      "note": "B5_swirl_visc_identity: Identity only. Ratio |I_source|/angular-mass is reported, not claimed < 1."
+    },
+    {
+      "t": "2026-09-04T06:56:45.459576+00:00",
+      "domain": "B",
+      "claim": "angular 1/r\u00b2 viscosity dominates I_tube at \u03b4 ~ 2^{-j*}",
+      "verdict": "open",
+      "note": "B5b_tube_vs_viscosity: This is the reason to keep 1/r^4. Not shown. Do not cancel to \u03a6 to escape it."
+    },
+    {
+      "t": "2026-09-04T06:56:45.460096+00:00",
+      "domain": "B",
+      "claim": "Leray \u222b X dt < \u221e implies X \u2208 L^\u221e (closes the cubic enstrophy ODE)",
+      "verdict": "fail",
+      "note": "B6_energy_not_enough: X=(T*-t)^{-1/2} has \u222bX\u22481.987 on a truncated interval and is unbounded. Viscosity or geometry has to do the extra work."
+    },
+    {
+      "t": "2026-09-04T06:56:45.460464+00:00",
+      "domain": "B",
+      "claim": "pass to \u03a6 = \u0393/r\u00b2 as the primary unknown",
+      "verdict": "fail",
+      "note": "B_phi_not_estimate_variable: The identity 1/r^4 \u2202_z(\u0393\u00b2)=\u2202_z(\u03a6\u00b2) is true. It moves the work onto ||\u03a6||_\u221e. Keep \u0393."
+    },
+    {
+      "t": "2026-09-04T06:56:45.460847+00:00",
+      "domain": "B",
+      "claim": "classical 3D NS is globally regular (keep 1/r^4, no Q1)",
+      "verdict": "open",
+      "note": "B_regularity: No closed estimate for X. Lemma identities are not a continuation argument."
+    },
+    {
+      "t": "2026-09-04T06:56:45.461173+00:00",
+      "domain": "B",
+      "claim": "classical 3D NS globally regular (domain close)",
+      "verdict": "open",
+      "note": "lemma identities held or correctly failed; no closed estimate for X"
     }
   ],
   "counts": {
-    "scored": 38,
-    "pass": 8,
-    "fail": 4,
-    "open": 26
+    "scored": 53,
+    "pass": 15,
+    "fail": 9,
+    "open": 29
   }
 }

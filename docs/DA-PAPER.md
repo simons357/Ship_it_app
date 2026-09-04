@@ -198,14 +198,16 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B3 3-shell Bernstein | pass |
 | B3b Ring \(\Rightarrow\) all-data depletion | fail |
 | B4 tube Hardy + wall | pass |
-| B4b Hardy absorbs \(I_{\mathrm{tube}}\) | **open** |
+| B4b Hardy absorbs \(I_{\mathrm{tube}}\) for all data | **fail** |
+| B4c packet class at \(\delta\sim 2^{-j_*}\) | pass |
+| B4d wall is an off-axis charge | pass |
 | B5 swirl viscosity identity | pass |
 | B5b viscosity beats the tube source | **open** |
 | B6 \(\int X<\infty\Rightarrow X\in L^\infty\) | fail |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Next write: Hardy \(\to I_{\mathrm{tube}}\) at \(\delta\sim 2^{-j_*}\), then energy-class low Bony \(T\).
+Next write: energy-class low Bony \(T\), then occupation time. Use B4c inside 3-CONC.
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 

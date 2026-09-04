@@ -134,7 +134,7 @@ def consensus() -> dict:
     return {
         "not_a_vote": True,
         "not_a_close": True,
-        "B": "Hardy → I_tube at δ ~ 2^{-j*}, then energy-class low Bony T. Regularity stays open.",
+        "B": "B4c budgets I_tube on packets at δ ~ 2^{-j*}; all-data fail; then low Bony T. Regularity stays open.",
         "A": "Leave Ladyzhenskaya on A.",
         "U": "Stop breaking L_SM. Keep Einstein + T_SM. Produce lives outside the poster.",
         "Q": "Stay arithmetic. No Bridge* → SND.",

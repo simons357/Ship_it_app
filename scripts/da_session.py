@@ -300,8 +300,7 @@ def run(out: Path | None = None) -> dict:
             "domain B still open",
         ],
         "next_da_move": (
-            "Write Hardy → I_tube at δ ~ 2^{-j*}. "
-            "Session is not the write. Regularity stays open."
+            "Tube write is in. Use B4c inside 3-CONC. Then low Bony T on SPREAD."
         ),
     }
     dest = Path(out) if out is not None else Path("results/da_session.json")

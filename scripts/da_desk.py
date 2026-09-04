@@ -227,7 +227,7 @@ def run(out: Path | None = None) -> dict:
             "pairs_open": sum(1 for r in PAIRS if r["verdict"] == "open"),
         },
         "next_da_move": (
-            "Use the write-up. Next B write is still Hardy → I_tube, then low Bony T. "
+            "Use the write-up. Next B write is low Bony T. Use B4c inside 3-CONC. "
             "Corpus pairings emit scored sentences, not F."
         ),
     }

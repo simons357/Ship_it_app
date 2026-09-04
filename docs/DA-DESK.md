@@ -101,16 +101,17 @@ Domain B **never** passes regularity. `check B` stays
 | B3 | 3-shell Bernstein + \(\|\nabla\xi\|_\infty\) on \(E_c\) | **pass** |
 | B3b | Ring \(\Rightarrow\) depletion for all data | **fail** |
 | B4 | tube Hardy + wall term | **pass** |
-| B4b | Hardy absorbs \(I_{\mathrm{tube}}\) | **open** |
+| B4b | Hardy absorbs \(I_{\mathrm{tube}}\) for all data | **fail** |
+| B4c | packet class budgets \(I_{\mathrm{tube}}\) | **pass** |
+| B4d | wall is an off-axis charge | **pass** |
 | B5 | \((\Delta u)_\theta=\Delta u_\theta-u_\theta/r^2\) | **pass** |
 | B5b | viscosity beats the tube source | **open** |
 | B6 | \(\int X<\infty\Rightarrow X\in L^\infty\) | **fail** |
 | \(\Phi\) as estimate variable | keep \(\Gamma\) | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** Hardy \(\to I_{\mathrm{tube}}\) at
-\(\delta\sim 2^{-j_*}\), then energy-class low Bony \(T\).
-Then occupation time. No BKM-from-\(L^2\). No all-data
+**Next B write:** energy-class low Bony \(T\), then occupation
+time. Use B4c inside 3-CONC. No BKM-from-\(L^2\). No all-data
 \(\cos\alpha_3\to 0\).
 
 ---
@@ -242,9 +243,9 @@ Another model is still on the digital side.
 SFE, HB-as-unifier, Cosmo Superagent, and “the app said so”
 do not get a chair.
 
-Overlap (not a close): B = Hardy \(\to I_{\mathrm{tube}}\)
-then low Bony \(T\); A stays on A; U keeps Einstein \(+T\);
-Q stays arithmetic.
+Overlap (not a close): B = B4c on packets, then low Bony
+\(T\); A stays on A; U keeps Einstein \(+T\); Q stays
+arithmetic.
 
 ---
 
@@ -388,7 +389,7 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/DA-SM-LAGRANGIAN.md`, `docs/DA-SM-LINEAGE.md`,
 `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`,
 `docs/DA-PAPER.md`, `docs/DA-THINK-TANK.md`,
-`docs/DA-SESSION.md`.
+`docs/DA-SESSION.md`, `docs/TRACK-B-HARDY-TUBE.md`.
 
 ---
 
@@ -397,8 +398,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 - Destination “spectrum, not a bag” is **open**.
 - \(F\) is **fail** (not written).
 - Classical regularity is **open**.
-- Next B write is still Hardy \(\to I_{\mathrm{tube}}\), then
-  low Bony \(T\).
+- Hardy \(\to I_{\mathrm{tube}}\): packet class **pass**,
+  all-data **fail**. Next B write is low Bony \(T\).
 - Cosmo does not enter NS.
 - HB stays shelved as a theorem. DA-as-process stays live.
 

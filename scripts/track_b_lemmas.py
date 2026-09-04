@@ -289,12 +289,21 @@ def lemma_tube_hardy() -> dict:
 
 
 def lemma_hardy_not_closed() -> dict:
-    return rec(
-        "B4b_hardy_not_I_tube",
-        "tube Hardy ⇒ |I_tube| absorbed in ν||∇ω||_2² for all data",
-        "open",
-        "Hardy is the tool. Domination of Γ ∂_z Γ / r^4 by angular viscosity is the live question.",
-    )
+    from track_b_hardy_tube import lemma_all_data_killed
+
+    return lemma_all_data_killed()
+
+
+def lemma_packet_tube() -> dict:
+    from track_b_hardy_tube import lemma_packet_absorbed
+
+    return lemma_packet_absorbed()
+
+
+def lemma_wall_match() -> dict:
+    from track_b_hardy_tube import lemma_wall_match as wall
+
+    return wall()
 
 
 # --- B5: swirl dissipation -------------------------------------------------
@@ -392,6 +401,8 @@ def run(out: Path | None = None) -> dict:
         lemma_ring_not_depletion(),
         lemma_tube_hardy(),
         lemma_hardy_not_closed(),
+        lemma_packet_tube(),
+        lemma_wall_match(),
         lemma_swirl_visc(),
         lemma_swirl_domination(),
         lemma_energy_not_enough(),
@@ -417,15 +428,16 @@ def run(out: Path | None = None) -> dict:
             "B1 T2 low-flux identity holds (pass); T2 Lemma 2 stays dropped (fail)",
             "B2 3-CONC / SPREAD cover (pass as a cover, not as dynamics)",
             "B3 3-shell Bernstein / |∇ξ| on E_c (pass as Bernstein; depletion fail)",
-            "B4 tube Hardy with wall term (pass); domination of I_tube still open",
+            "B4 tube Hardy with wall term (pass)",
+            "B4b all-data Hardy→I_tube fail: slow fat swirl ratio ∼ 1/ε",
+            "B4c packet class at δ ∼ 2^{-j*} pass; B4d wall match pass",
             "B5 swirl (Δu)_θ identity (pass); viscosity vs I_tube still open",
             "B6 ∫X dt < ∞ does not bound X (fail of that close)",
             "Φ is not the estimate variable (fail)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "Write the analytic Hardy→I_tube estimate with δ ~ 2^{-j*}, "
-            "then the energy-class low Bony term T. Do not pass regularity."
+            "Use B4c inside 3-CONC. Then energy-class low Bony T on SPREAD."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

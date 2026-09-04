@@ -35,7 +35,9 @@ not done).
 | B3 | 3-shell \(\Rightarrow\) Bernstein and \(\|\nabla\xi\|_\infty\le C\,2^{j_*}\) on \(E_c\) | **pass** | Ring upgrade. One extra octave is a constant. |
 | B3b | Ring \(\Rightarrow\cos\alpha_3\to 0\) for all data | **fail** | Forbidden Biot–Savart slogan. |
 | B4 | Localized Hardy, \(g(0)=0\), plus wall term | **pass** | \(\int h^2/r\,dr\le 4\int(h')^2 r\,dr+2h(\delta)^2\). |
-| B4b | Hardy absorbs \(I_{\mathrm{tube}}\) for all data | **open** | The live tube question. |
+| B4b | Hardy absorbs \(I_{\mathrm{tube}}\) for all data | **fail** | Slow fat swirl, \(R\sim 1/\varepsilon\). |
+| B4c | Packet class at \(\delta\sim 2^{-j_*}\) budgets \(I_{\mathrm{tube}}\) | **pass** | Same weight, both sides. \(R\) falls with \(j_*\). |
+| B4d | Hardy wall is an off-axis charge | **pass** | Spend \(2h(\delta)^2\) on \(I_{\mathrm{off}}\). |
 | B5 | Axisymmetric \((\Delta u)_\theta=\Delta u_\theta-u_\theta/r^2\) | **pass** | Identity. Angular piece lives in the tube. |
 | B5b | Angular viscosity dominates \(I_{\mathrm{tube}}\) at \(\delta\sim 2^{-j_*}\) | **open** | Why we kept \(1/r^4\). Not shown. |
 | B6 | \(\int X\,dt<\infty\Rightarrow X\in L^\infty\) | **fail** | \(X=(T_*-t)^{-1/2}\) is integrable and unbounded. |
@@ -97,8 +99,13 @@ gives
 \]
 
 If \(h=\Gamma/r\), the wall term is the off-axis match. This is the
-localized Hardy the plan asked for. It does **not** finish
-\(I_{\mathrm{tube}}\).
+localized Hardy the plan asked for.
+
+**B4b / B4c / B4d.** The Hardy \(\to I_{\mathrm{tube}}\) write
+lives in [`TRACK-B-HARDY-TUBE.md`](TRACK-B-HARDY-TUBE.md).
+All-data absorption **fails** (slow fat swirl, \(R\sim 1/\varepsilon\)).
+Packet class at \(\delta\sim 2^{-j_*}\) **passes**. The wall is a
+finite off-axis charge.
 
 **B5.** In cylindrical components, axisymmetric,
 
@@ -119,14 +126,14 @@ with integrable enstrophy and is unbounded. DA fails that close.
 
 ## What is still the next write
 
-1. Analytic Hardy \(\to I_{\mathrm{tube}}\) with \(\delta\sim 2^{-j_*}\)
-   and the wall term matched to the off-axis piece.
-2. Energy-class low Bony term \(T\) (the open piece of H).
-3. Then occupation time of the two regimes.
+1. Energy-class low Bony term \(T\) (the open piece of H). Use B4c
+   inside 3-CONC; do not revive all-data Hardy absorption.
+2. Then occupation time of the two regimes.
 
 None of those is a pass on regularity. Checker:
 
 ```
+python3 scripts/track_b_hardy_tube.py
 python3 scripts/track_b_lemmas.py
 python3 -m unittest tests.test_track_b_lemmas
 python3 scripts/da_machine.py trackb

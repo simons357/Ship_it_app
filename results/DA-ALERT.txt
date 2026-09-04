@@ -1,2 +1,12 @@
-DA checked. Nothing significant flipped.
-Next: same as yesterday. Hardy → tube source, then the low product term.
+TEXT
+B: That hope is dead for all data: the leftover 'wall' term can win.
+
+WHAT IT MEANS
+The hope that Hardy's inequality eats the nasty 1/r^4 source in the vortex tube.
+It went open → fail.
+
+WHAT TO DO
+Stop treating Hardy as the close. Try a smaller class of data, or move to occupation time / the low Bony term.
+
+DO NOT
+Treat this as a theory of everything, or as the other tracks.

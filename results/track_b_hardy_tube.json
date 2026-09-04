@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "Hardy \u2192 I_tube",
+    "focused_problem": "B4b all-data vs B4c packet",
+    "domain_verdict": "open"
+  },
+  "lemmas": [
+    {
+      "name": "B4c_packet_hardy_tube",
+      "statement": "3-shell / packet class at \u03b4 \u223c 2^{-j*}: |I_tube| is budgeted by tube vorticity dissipation",
+      "verdict": "pass",
+      "why": "Same weight, both sides, at the packet scale. Ratio stays bounded and does not grow with j*.",
+      "scan": {
+        "rows": [
+          {
+            "jstar": 2,
+            "ell": 0.25,
+            "kappa": 4.0,
+            "delta": 0.5,
+            "tube_i": 0.2443828124426049,
+            "tube_diss": 11.883186905989575,
+            "off_i": 8.661174885369574e-05,
+            "wall_delta": 0.00048128256407795153,
+            "ratio_tube": 0.02056542696634913,
+            "full_ratio": 0.02028952167197843
+          },
+          {
+            "jstar": 3,
+            "ell": 0.125,
+            "kappa": 8.0,
+            "delta": 0.25,
+            "tube_i": 0.1146171796752382,
+            "tube_diss": 11.611744926620538,
+            "off_i": 4.702624226505764e-05,
+            "wall_delta": 0.00011987977077203205,
+            "ratio_tube": 0.009870797231557529,
+            "full_ratio": 0.009723833488875818
+          },
+          {
+            "jstar": 4,
+            "ell": 0.0625,
+            "kappa": 16.0,
+            "delta": 0.125,
+            "tube_i": 0.04331381229147753,
+            "tube_diss": 10.703086132185245,
+            "off_i": 1.2264427362211146e-05,
+            "wall_delta": 5.171505072453463e-05,
+            "ratio_tube": 0.004046852632646633,
+            "full_ratio": 0.003991964036162878
+          },
+          {
+            "jstar": 5,
+            "ell": 0.03125,
+            "kappa": 32.0,
+            "delta": 0.0625,
+            "tube_i": 0.00023548638355250709,
+            "tube_diss": 8.046970243205163,
+            "off_i": 2.8060363410465967e-08,
+            "wall_delta": 1.2740675169394055e-05,
+            "ratio_tube": 2.9263980906522065e-05,
+            "full_ratio": 2.8872684810210574e-05
+          }
+        ],
+        "ratios": [
+          0.02056542696634913,
+          0.009870797231557529,
+          0.004046852632646633,
+          2.9263980906522065e-05
+        ],
+        "decreasing": true,
+        "bounded": true,
+        "ok": true
+      }
+    },
+    {
+      "name": "B4d_wall_matches_off_axis",
+      "statement": "Hardy wall 2h(\u03b4)\u00b2 is a finite off-axis charge, not the whole tube integral",
+      "verdict": "pass",
+      "why": "Spend the wall on r \u223c \u03b4. That is the match I_off asked for.",
+      "wall": {
+        "jstar": 3,
+        "wall": 0.00011987977077203205,
+        "tube_i": 0.1146171796752382,
+        "wall_over_tube_plus_wall": 0.0010448217110570254,
+        "ok": true
+      }
+    },
+    {
+      "name": "B4b_hardy_not_I_tube",
+      "statement": "tube Hardy \u21d2 |I_tube| absorbed in \u03bd||\u2207\u03c9||_2\u00b2 for all data",
+      "verdict": "fail",
+      "why": "Slow fat swirl: h = r sin(\u03b5z). Ratio |I_tube|/diss \u223c 1/\u03b5 blows as \u03b5 \u2192 0. All-data domination is dead. Packet class still lives as B4c.",
+      "killer": {
+        "rows": [
+          {
+            "eps": 1.0,
+            "tube_i": 2.003523626056291,
+            "tube_diss": 8.57819919963771,
+            "off_i": 3.112364752711469,
+            "wall_delta": 6.2362921630617,
+            "ratio_tube": 0.23355993250202298,
+            "full_ratio": 0.20436339039175333
+          },
+          {
+            "eps": 0.5,
+            "tube_i": 2.003523626056291,
+            "tube_diss": 3.993276917676194,
+            "off_i": 3.112364752711469,
+            "wall_delta": 12.4725843261234,
+            "ratio_tube": 0.5017241897719933,
+            "full_ratio": 0.4831879710204234
+          },
+          {
+            "eps": 0.25,
+            "tube_i": 2.003523626056291,
+            "tube_diss": 1.9596606235702643,
+            "off_i": 3.112364752711469,
+            "wall_delta": 24.9451686522468,
+            "ratio_tube": 1.0223829585380524,
+            "full_ratio": 1.012489364712972
+          },
+          {
+            "eps": 0.125,
+            "tube_i": 2.003523626056291,
+            "tube_diss": 0.9752080823766529,
+            "off_i": 3.112364752711469,
+            "wall_delta": 49.8903373044936,
+            "ratio_tube": 2.0544575688642355,
+            "full_ratio": 2.0494273171861117
+          },
+          {
+            "eps": 0.0625,
+            "tube_i": 2.003523626056291,
+            "tube_diss": 0.4870262625122666,
+            "off_i": 3.112364752711469,
+            "wall_delta": 99.7806746089872,
+            "ratio_tube": 4.113789707604996,
+            "full_ratio": 4.111263974359568
+          }
+        ],
+        "ratios": [
+          0.23355993250202298,
+          0.5017241897719933,
+          1.0223829585380524,
+          2.0544575688642355,
+          4.113789707604996
+        ],
+        "blows": true,
+        "ok_as_kill": true
+      }
+    }
+  ],
+  "counts": {
+    "pass": 2,
+    "fail": 1,
+    "open": 0
+  },
+  "next_da_move": "Use B4c inside 3-CONC. Then energy-class low Bony T on SPREAD. Do not revive all-data Hardy absorption."
+}

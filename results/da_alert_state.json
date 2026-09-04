@@ -1,8 +1,8 @@
 {
-  "t": "2026-09-03T06:15:12.449885+00:00",
+  "t": "2026-09-04T06:56:45.523965+00:00",
   "watch": {
     "B.domain": "open",
-    "B.B4b_hardy_not_I_tube": "open",
+    "B.B4b_hardy_not_I_tube": "fail",
     "B.B5b_tube_vs_viscosity": "open",
     "B.B_regularity": "open",
     "A.domain": "pass",

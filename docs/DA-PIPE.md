@@ -26,7 +26,7 @@ arXiv sample, and refuse glue.
 |---|---|---|---|
 | B1 low-flux identity | pass | a periodic div-free counterexample | still an identity, not regularity |
 | domain B | open | closed bound on \(X\), or a blowup | open stays honest |
-| B4b Hardy absorbs \(I_{\mathrm{tube}}\) | open | a tube where the wall wins | still open |
+| B4b Hardy absorbs \(I_{\mathrm{tube}}\) | fail | slow fat swirl, \(R\sim 1/\varepsilon\) | packet class still lives as B4c |
 | Track A, \(\varepsilon>0\) | pass | energy identity or uniqueness breaks | still not B |
 | full \(\lambda_{\min}(Q_N)>-1/2\) | fail | a proof for all \(N\) (counterexamples exist) | stays fail |
 | producing-map \(F\) | fail | public \(F\) with \(\chi^2_{\mathrm{ext}}\le\varepsilon^2\) | stays fail |
@@ -96,5 +96,5 @@ Not omniscience. Not Quantum Lens. Not primes = black holes.
 Not GWTC \(\Rightarrow\) regularity. Not EHT \(\Rightarrow\)
 unshelve HB. Not DESI \(\Rightarrow F\).
 
-Next B write is still Hardy \(\to I_{\mathrm{tube}}\), then
+Next B write is low Bony \(T\), then
 energy-class low Bony \(T\).
