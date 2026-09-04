@@ -1,7 +1,7 @@
 {
   "meta": {
     "slot": "B",
-    "write": "residual tool: holes, Miller cut, empty rename, A1/A2 blanks",
+    "write": "residual tool: holes, Miller cut, A1/A2 blanks, A2 path",
     "tuning_the_pde": false,
     "spawned_n64": false,
     "tesla": "exacting, not a jerk. Name the holes. A script that must move. Reading is not a bound.",
@@ -200,12 +200,59 @@
       "statement": "naming A1 and A2 is a retune of classical Navier\u2013Stokes",
       "verdict": "fail",
       "why": "The PDE is untouched. No Q1. No \u03b5. Do not type c=8. Do not spawn n=64."
+    },
+    {
+      "name": "B41_a2_path_readable",
+      "statement": "\u2016\u03bb2+\u2016_\u221e / \u221aX stays on the B15 viscous path while X falls; A2 does not blow on this box",
+      "verdict": "pass",
+      "why": "Same evolve as B15. n=32. No n=64. A flat ratio is not \u222b\u2016\u03bb2+\u2016_q < \u221e for all data.",
+      "n": 32,
+      "T": 0.064,
+      "growth_max": 1.0270099223599953,
+      "r0_mean": 0.0341111846630039,
+      "rT_mean": 0.03410522736101524
+    },
+    {
+      "name": "B41a_a2_path_not_a_priori",
+      "statement": "a flat A2 ratio on the B15 path is a closed estimate for classical X",
+      "verdict": "fail",
+      "why": "Three seeds, T=0.064. All-data Miller history stays blank."
+    },
+    {
+      "name": "B41b_a2_path_not_continuation",
+      "statement": "A2 not blowing on this path makes R integrable and therefore continues X",
+      "verdict": "fail",
+      "why": "A short decaying packet is not \u222bR < \u221e. B15d already kept the aligned share."
+    },
+    {
+      "name": "B41c_a2_path_not_ns",
+      "statement": "reading \u03bb2+ along the B15 path is an NS a priori",
+      "verdict": "fail",
+      "why": "The same eight steps as B15. A ratio is a knob on the check."
+    },
+    {
+      "name": "B41d_a2_path_not_integral_max",
+      "statement": "a flat A2 ratio is an integral bound on the max vorticity",
+      "verdict": "fail",
+      "why": "\u2016\u03bb2+\u2016_\u221e / \u221aX is not \u222b\u2016\u03c9\u2016_\u221e. Beale still asks for the max."
+    },
+    {
+      "name": "B41e_a2_path_not_regularity",
+      "statement": "A2 not blowing on this path decides classical regularity",
+      "verdict": "fail",
+      "why": "No. Domain B stays open. Do not spawn n=64."
+    },
+    {
+      "name": "B41f_not_a_pde_retune",
+      "statement": "reading A2 along the path is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. No Q1. No \u03b5. Do not type c=8. Do not spawn n=64."
     }
   ],
   "counts": {
-    "pass": 4,
-    "fail": 24,
+    "pass": 5,
+    "fail": 30,
     "open": 0
   },
-  "next_da_move": "A1 is off on this box. A2 is live. Neither integral is known for all data. The residual tool names the holes in R. Miller \u03bb2+ is a different cut from hole 2. det+ is the same cut. Sit down on another rename. Regularity leftover is not an a priori (B35e). Regularity stays open. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
+  "next_da_move": "A1 is off on this box. A2 is live. A2 does not blow on the B15 path. Neither integral is known for all data. The residual tool names the holes in R. Miller \u03bb2+ is a different cut from hole 2. Sit down on another rename. Regularity leftover is not an a priori (B35e). Regularity stays open. Do not spawn n=64. B4c stands. Do not cancel to \u03a6."
 }
