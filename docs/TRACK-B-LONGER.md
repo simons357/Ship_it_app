@@ -93,7 +93,7 @@ All readable. The “just let it run” slogan missed.
 A longer path is not a finer metric.
 
 **Operator.** Longer is scored. B13e is scored.
-Next: DNS as an a priori (B13f). B4c stands. Do not
+Climb and DNS knobs at \(n=32\) are scored. Finer is B22e. B4c stands. Do not
 write \(c=8\) into the PDE. Do not spawn \(n=64\).
 
 ---
@@ -110,7 +110,7 @@ write \(c=8\) into the PDE. Do not spawn \(n=64\).
 | B22d | **fail** | the clock left CONC and saved \(X\) |
 | B22e | **open** | finer (\(n>32\)) produces a saving climb |
 | B22f | **fail** | this retunes the PDE |
-| domain B | **open** | DNS as an a priori (B13f) is next |
+| domain B | **open** | finer (\(n>32\)) is a box knob (B22e) |
 
 Tesla’s line: you said longer. \(T\) passed the
 sketch’s room time. The field still did not climb.

@@ -96,7 +96,7 @@ Forbidden auto-fails: solved NS, full Q floor, Biot–Savart depletion, BKM-from
 
 August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ3 / SPREAD.
 
-**Next B write:** DNS as an a priori (B13f). Longer \(n=32\) did not produce \(c=8\) (B13e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\). Regularity stays open.
+**Next B write:** Climb and DNS knobs at \(n=32\) are scored. DNS is not an a priori (B13f). Finer (\(n>32\)) stays a box knob (B22e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\). Regularity stays open.
 
 ### How the conversation moved
 
@@ -140,11 +140,11 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 
 20. **Glue to \(X\).** Bookkeeping **pass**. High \(j_*\) CONC sits **pass**. Switching high \(j_*\) sits **pass**. Low \(j_*\) CONC cubic **fail**. Sketch \(\neq\) NS a priori **open**. Tesla: exacting, not a jerk. [`docs/TRACK-B-GLUE.md`](TRACK-B-GLUE.md).
 
-21. **Low-\(j_*\) ceiling.** Packet \(X\le K^2E\) **pass**. B9b unbounded path is not NS **fail**. Ceiling does not follow climbing \(j_*\) **fail**. Climbing CONC **open**. Not a PDE retune **fail**. [`docs/TRACK-B-LOW-J.md`](TRACK-B-LOW-J.md).
+21. **Low-\(j_*\) ceiling.** Packet \(X\le K^2E\) **pass**. B9b unbounded path is not NS **fail**. Ceiling does not follow climbing \(j_*\) **fail**. Climbing CONC **fail**. Not a PDE retune **fail**. [`docs/TRACK-B-LOW-J.md`](TRACK-B-LOW-J.md).
 
 22. **Climbing CONC.** Increments add **pass**. Bounded \(j_*\) bounds \(X\) **pass**. Slow climb **fail**. Fast climb sits **pass**. NS climb law **fail**. Sketch \(\neq\) a priori **fail**. Knob: \(c=\mathrm{d}j_*/\mathrm{d}t\). [`docs/TRACK-B-CLIMB.md`](TRACK-B-CLIMB.md).
 
-23. **Field climb.** Barycenter **pass**. \(c\) from RHS **pass**. \(t=0\) saving climb **fail**. Viscosity as a ladder **fail**. Evolved cascade **open**. [`docs/TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md).
+23. **Field climb.** Barycenter **pass**. \(c\) from RHS **pass**. \(t=0\) saving climb **fail**. Viscosity as a ladder **fail**. Evolved cascade **fail**. \(t=0\) as a law **fail**. [`docs/TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md).
 
 24. **Short evolution.** Run finite **pass**. Saving climb **fail**. High fill **fail**. Stays CONC **pass**. Evolution as a ladder **fail**. Finer/longer **fail**. [`docs/TRACK-B-EVOLVE.md`](TRACK-B-EVOLVE.md). Longer path is [`docs/TRACK-B-LONGER.md`](TRACK-B-LONGER.md).
 
@@ -167,6 +167,8 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 33. **Climb sketch.** Window rates **pass**. Viscous room on this window **fail**. Sitting path is NS **fail**. \(\Delta j=cT\) **fail**. Sketch sits on this window **fail**. B11e sketch as a priori **fail**. [`docs/TRACK-B-CLIMB-SKETCH.md`](TRACK-B-CLIMB-SKETCH.md).
 
 34. **Longer path.** Readable past room time **pass**. Longer \(c\ge 8\) **fail**. Ladder **fail**. High fill **fail**. Clock saved \(X\) **fail**. B13e finer/longer **fail**. [`docs/TRACK-B-LONGER.md`](TRACK-B-LONGER.md).
+
+35. **DNS as an a priori.** Readable **pass**. Decaying packet DNS is an a priori **fail**. Room-time length is continuation **fail**. Packet class is all data **fail**. No-blow \(\Rightarrow L^\infty\) **fail**. B13f packet DNS as a priori **fail**. [`docs/TRACK-B-DNS.md`](TRACK-B-DNS.md).
 
 ---
 

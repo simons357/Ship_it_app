@@ -105,7 +105,7 @@ All readable. The a-priori slogan missed.
 The ODE stayed a model.
 
 **Operator.** Field glue is scored. B9d is scored.
-Next: DNS as an a priori (B13f). Longer scored. B4c stands. Do not cancel
+Climb and DNS knobs at \(n=32\) are scored. Finer is B22e. B4c stands. Do not cancel
 to \(\Phi\).
 
 ---
@@ -122,7 +122,7 @@ to \(\Phi\).
 | B19d | **fail** | \(\nu 2^{2j_*}X\) is NS visc |
 | B19e | **open** | matching the sketch closes \(X\) |
 | B19f | **fail** | this retunes the PDE |
-| domain B | **open** | DNS as an a priori (B13f) is next |
+| domain B | **open** | finer (\(n>32\)) is a box knob (B22e) |
 
 Tesla’s line: the \(j_*=2\) sketch grows. The NS packet
 falls. Sign of \(\dot X\) is the knob.

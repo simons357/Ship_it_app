@@ -103,7 +103,8 @@ The saving-rate slogan missed.
 A rate you typed is not a rate the metric produced.
 
 **Operator.** NS climb law is scored. B11d is scored.
-Next: DNS as an a priori (B13f). Longer n=32 past
+Climb and DNS knobs at \(n=32\) are scored. Finer is B22e.
+DNS is not an a priori (B13f). Longer n=32 past
 the ODE room time did not produce \(c=8\) (B13e).
 Finer stays a box knob (B22e). B4c stands.
 Do not write \(c=8\) into the PDE. Do not spawn \(n=64\).
@@ -122,7 +123,7 @@ Do not write \(c=8\) into the PDE. Do not spawn \(n=64\).
 | B20d | **fail** | \(j_{\mathrm{bar}}>\text{typed }j_*\) is a climb |
 | B20e | **open** | field climb closes \(X\) |
 | B20f | **fail** | this retunes the PDE |
-| domain B | **open** | DNS as an a priori (B13f) is next |
+| domain B | **open** | finer (\(n>32\)) is a box knob (B22e) |
 
 Tesla’s line: \(c\) the field makes. It did not give
 you \(c=8\).

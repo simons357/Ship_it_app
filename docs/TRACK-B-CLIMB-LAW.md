@@ -46,11 +46,13 @@ even at \(X=40\). Viscous drift is about \(-1.4\).
 **B12c, fail** of “viscosity is a ladder.” High shells
 damp faster. \(j_{\mathrm{bar}}\) falls.
 
-**B12d, open.** A short evolution can fill higher
-shells. Instantaneous \(t=0\) is not a cascade.
+**B12d, fail** of “a short evolution produces a
+saving climb.” Broken out as B13. Short missed.
+Longer missed. DNS is not an a priori (B13f).
 
-**B12e, open.** A \(t=0\) reading is not a law along
-a trajectory, and not an a priori for \(X\).
+**B12e, fail** of “the \(t=0\) drift is a climb law
+for classical \(X\).” A reading is not a law. The
+path did not write one either.
 
 ---
 
@@ -80,9 +82,8 @@ in \(L^\infty\).
 You read it. You did not retune it.
 
 **Operator.** The field did not hand us the saving
-climb at \(t=0\). A short run is written in
-[`TRACK-B-EVOLVE.md`](TRACK-B-EVOLVE.md). Still no
-saving climb on \(n=32\).
+climb at \(t=0\). Short and longer runs are scored.
+DNS is not an a priori. Finer is B22e.
 
 ---
 
@@ -94,8 +95,8 @@ saving climb on \(n=32\).
 | B12a | **pass** | \(c\) from the RHS |
 | B12b | **fail** | \(t=0\) packets produce \(c\ge 8\) |
 | B12c | **fail** | viscosity forces an upward climb |
-| B12d | **open** | a short evolution produces a saving climb |
-| B12e | **open** | \(t=0\) drift is an NS a priori |
-| domain B | **open** | B5b or a finer box |
+| B12d | **fail** | a short evolution produces a saving climb |
+| B12e | **fail** | \(t=0\) drift is an NS a priori |
+| domain B | **open** | finer (\(n>32\)) is a box knob (B22e) |
 
 Tesla’s line: ask the field. Do not type the answer.

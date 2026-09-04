@@ -953,6 +953,48 @@ def lemma_longer_not_a_retune() -> dict:
     return lrt()
 
 
+def lemma_dns_readable() -> dict:
+    from track_b_dns import lemma_dns_readable as dr
+
+    return dr()
+
+
+def lemma_dns_not_a_priori() -> dict:
+    from track_b_dns import lemma_dns_not_a_priori as dna
+
+    return dna()
+
+
+def lemma_room_time_not_continuation() -> dict:
+    from track_b_dns import lemma_room_time_not_continuation as rtc
+
+    return rtc()
+
+
+def lemma_packet_not_all_data() -> dict:
+    from track_b_dns import lemma_packet_not_all_data as pnad
+
+    return pnad()
+
+
+def lemma_no_blow_not_bounded() -> dict:
+    from track_b_dns import lemma_no_blow_not_bounded as nbb
+
+    return nbb()
+
+
+def lemma_finer_still_open() -> dict:
+    from track_b_dns import lemma_finer_still_open as fso
+
+    return fso()
+
+
+def lemma_dns_not_a_retune() -> dict:
+    from track_b_dns import lemma_dns_not_a_retune as dnr
+
+    return dnr()
+
+
 def lemma_coherent_field() -> dict:
     from track_b_coherent import lemma_coherent_field as coh
 
@@ -1132,6 +1174,13 @@ def run(out: Path | None = None) -> dict:
         lemma_longer_clock_did_not_save(),
         lemma_finer_box_open(),
         lemma_longer_not_a_retune(),
+        lemma_dns_readable(),
+        lemma_dns_not_a_priori(),
+        lemma_room_time_not_continuation(),
+        lemma_packet_not_all_data(),
+        lemma_no_blow_not_bounded(),
+        lemma_finer_still_open(),
+        lemma_dns_not_a_retune(),
         lemma_regularity(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
@@ -1165,13 +1214,13 @@ def run(out: Path | None = None) -> dict:
             "B9 glue bookkeeping (pass); high-j CONC sits (pass); switching high-j sits (pass)",
             "B9b low-j CONC cubic is live (fail); B9d sketch is not an NS a priori (fail)",
             "B10 energy ceiling (pass); B9b unbounded path is not NS (fail); not a PDE retune (fail)",
-            "B10b ceiling does not follow a climbing j* (fail); climbing CONC open (B10c)",
+            "B10b ceiling does not follow a climbing j* (fail); climbing CONC not a close (B10c fail)",
             "B11 climb bookkeeping (pass); bounded j* bounds X (pass); slow climb blows (fail)",
             "B11c fast climb sits (pass); NS did not force a saving c (B11d fail); sketch is not an a priori (B11e fail)",
             "B12 barycenter + c from RHS (pass); t=0 packets do not produce c≥8 (fail)",
-            "B12c viscosity pulls j_bar down (fail); evolved cascade open (B12d)",
+            "B12c viscosity pulls j_bar down (fail); evolved cascade not a saving climb (B12d fail); t=0 not a law (B12e fail)",
             "B13 short run finite (pass); no saving climb (fail); no high fill (fail); stays CONC (pass)",
-            "B13d visc still pulls down (fail); longer n=32 not a saving climb (B13e fail); not an a priori (B13f)",
+            "B13d visc still pulls down (fail); longer n=32 not a saving climb (B13e fail); DNS not an a priori (B13f fail)",
             "B14 strain identity (pass); CONC not depleted (fail); Ring is not alignment (fail)",
             "B14c CF conditional (pass); geometry does not close X (open); not a PDE retune (fail)",
             "B15 stretching budget readable (pass); CF weights the budget (pass); majority from aligned cap (pass)",
@@ -1189,13 +1238,15 @@ def run(out: Path | None = None) -> dict:
             "B21 ODE and NS readable on the window (pass); c=8 not yet in the viscous room (fail); not the sitting path (fail)",
             "B21c NS Δj is not cT (fail); sketch did not sit on this window (fail); not an a priori (open)",
             "B22 longer n=32 readable past room time (pass); not c≥8 (fail); not a ladder (fail)",
-            "B22c no high fill (fail); clock did not save (fail); finer box open (B22e); not an a priori leftover (B13f)",
+            "B22c no high fill (fail); clock did not save (fail); finer box open (B22e); DNS not an a priori (B13f fail)",
+            "B23 short+longer DNS readable (pass); decaying packet not an a priori (fail); room time not continuation (fail)",
+            "B23c packet not all data (fail); no-blow not L∞ (fail); finer still open (B23e); not a PDE retune (fail)",
             "classical regularity remains open",
         ],
         "next_da_move": (
-            "DNS as an a priori (B13f). Longer n=32 past the ODE room time "
-            "did not produce c=8 (B13e). Finer (n>32) stays a box knob (B22e). "
-            "Do not spawn n=64. B4c stands. Do not write c=8 into the PDE."
+            "Climb and DNS knobs at n=32 are scored. DNS is not an a priori (B13f). "
+            "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
+            "B4c stands. Do not write c=8 into the PDE."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_lemmas.json")

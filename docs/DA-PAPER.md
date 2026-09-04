@@ -217,7 +217,7 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B10 packet energy ceiling | pass |
 | B10a B9b unbounded path is NS-legal | **fail** |
 | B10b ceiling follows a climbing \(j_*\) | **fail** |
-| B10c climbing CONC closes \(X\) | **open** (broken out as B11) |
+| B10c climbing CONC closes \(X\) | **fail** |
 | B10d this retunes the PDE | **fail** |
 | B11 / B11a / B11c climb bookkeeping; bounded \(j_*\); fast sits | pass |
 | B11b any climb saves | **fail** |
@@ -226,10 +226,10 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B12 / B12a barycenter; \(c\) from RHS | pass |
 | B12b \(t=0\) packets produce \(c\ge 8\) | **fail** |
 | B12c viscosity is a ladder | **fail** |
-| B12d evolved cascade | **open** (B13) |
+| B12d / B12e evolved cascade; \(t=0\) is a climb law | **fail** |
 | B13 / B13c short run; stays CONC | pass |
 | B13a / B13b / B13d no saving climb; no high fill; not a ladder | **fail** |
-| B13e finer / longer | **fail** |
+| B13e / B13f finer / longer; packet DNS is an a priori | **fail** |
 | B14 strain identity on \(E_c\) | pass |
 | B14a / B14b CONC depleted; Ring \(\Rightarrow\) alignment | **fail** |
 | B14c CF conditional | pass |
@@ -267,10 +267,14 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B22a / B22b / B22c / B22d longer \(c\ge 8\); ladder; high fill; clock saved \(X\) | **fail** |
 | B22e finer (\(n>32\)) produces a saving climb | **open** |
 | B22f this retunes the PDE | **fail** |
+| B23 short and longer DNS readable | pass |
+| B23a / B23b / B23c / B23d DNS a priori; room-time continuation; packet is all data; no-blow \(\Rightarrow L^\infty\) | **fail** |
+| B23e finer makes DNS an a priori | **open** |
+| B23f this retunes the PDE | **fail** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 
-Next write: DNS as an a priori (B13f). Longer \(n=32\) did not produce \(c=8\) (B13e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\).
+Climb and DNS knobs at \(n=32\) are scored. DNS is not an a priori (B13f). Finer (\(n>32\)) stays a box knob (B22e). B4c stands. Angular \(1/r^2\) does not. The PDE is not being tuned. Do not spawn \(n=64\).
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 
@@ -314,11 +318,11 @@ The operator atlas is `docs/DA-DESK.md`. The machine note is `docs/DOMAIN-ARCHIT
 
 ## 9. Conclusion
 
-DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. The live write is DNS as an a priori (B13f). Longer \(n=32\) did not produce \(c=8\). B4c stands. Angular \(1/r^2\) does not.
+DA is better as a **process** than an untyped conversation: it refuses fake closes and keeps the tracks unglued. It is not further along as a **theorem**. Climb and DNS knobs at \(n=32\) are scored. DNS is not an a priori (B13f). Finer is B22e. B4c stands. Angular \(1/r^2\) does not.
 
 The think tank is three benches and a corpus rule. The processes are classify, check, falsify, reconstruct, ablate, pipe, compute, and alert. The purpose is to keep the operator honest while ordinary AI proposes.
 
-That is the paper. The next page of mathematics is DNS as an a priori (B13f). B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
+That is the paper. Climb and DNS knobs at \(n=32\) are scored. Finer is B22e. B4c stands. Angular \(1/r^2\) does not. The PDE stays classical.
 
 ---
 

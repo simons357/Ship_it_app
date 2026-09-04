@@ -21,7 +21,7 @@ class TrackBLowJTests(unittest.TestCase):
         self.assertEqual(by["B10_energy_ceiling"]["verdict"], "pass")
         self.assertEqual(by["B10a_frozen_blow_not_ns"]["verdict"], "fail")
         self.assertEqual(by["B10b_ceiling_not_climbing"]["verdict"], "fail")
-        self.assertEqual(by["B10c_climbing_conc_open"]["verdict"], "open")
+        self.assertEqual(by["B10c_climbing_not_close"]["verdict"], "fail")
         self.assertEqual(by["B10d_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])

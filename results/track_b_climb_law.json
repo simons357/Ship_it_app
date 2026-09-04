@@ -140,22 +140,22 @@
       ]
     },
     {
-      "name": "B12d_evolved_cascade_open",
+      "name": "B12d_evolved_not_saving",
       "statement": "a short NS evolution of a CONC packet produces a saving climb",
-      "verdict": "open",
-      "why": "t=0 is instantaneous. Nonlinearity can fill higher shells later. That run is not this write."
+      "verdict": "fail",
+      "why": "Broken out as B13. Short missed (B13a). Longer past room time missed (B22). DNS is not an a priori (B13f)."
     },
     {
       "name": "B12e_law_not_X_a_priori",
       "statement": "the instantaneous field drift is a closed climb law for classical X",
-      "verdict": "open",
-      "why": "A t=0 reading is not a law along a trajectory. Do not sit it as dj*/dt on NS."
+      "verdict": "fail",
+      "why": "A t=0 reading is not a law. The path did not write one either (B13, B20, B22). Do not sit it as dj*/dt on NS."
     }
   ],
   "counts": {
     "pass": 2,
-    "fail": 2,
-    "open": 2
+    "fail": 4,
+    "open": 0
   },
-  "next_da_move": "Evolve a CONC packet a short time (B12d). Instantaneous t=0 is not a cascade. Tesla: let the field run."
+  "next_da_move": "Climb and DNS knobs at n=32 are scored. DNS is not an a priori (B13f). Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not write c=8 into the PDE."
 }

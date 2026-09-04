@@ -376,9 +376,11 @@ prescribed \(c=8\) has not reached the viscous room on
 this window; the sketch grows, NS falls. B11e is scored
 **fail**. Longer \(n=32\) past the room time: no
 \(c=8\); \(j_{\mathrm{bar}}\) still falls. B13e is scored
-**fail**. Next: DNS as an a priori (B13f). B4c
+**fail**. DNS is not an a priori. B13f is scored
+**fail**. Climb and DNS knobs at \(n=32\) are scored.
+Finer is B22e. B4c
 stands. Do not cancel to \(\Phi\). Do not spawn \(n=64\).
-See [`TRACK-B-LONGER.md`](TRACK-B-LONGER.md).
+See [`TRACK-B-DNS.md`](TRACK-B-DNS.md).
 
 Print: `python3 scripts/da_machine.py session`  
 Roster: [`DA-THINK-TANK.md`](DA-THINK-TANK.md)  

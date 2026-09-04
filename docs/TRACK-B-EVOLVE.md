@@ -43,8 +43,10 @@ saving climb.” Longer \(n=32\) past the B11c room time
 is scored in [`TRACK-B-LONGER.md`](TRACK-B-LONGER.md).
 No \(c=8\). Finer is a box knob, not a close.
 
-**B13f, open.** A few steps are not an a priori for \(X\).
-Do not sit “DNS did not climb” as regularity.
+**B13f, fail** of “a packet DNS run is a closed a
+priori for classical \(X\).” Short missed. Longer
+missed. A check is not continuation. See
+[`TRACK-B-DNS.md`](TRACK-B-DNS.md).
 
 ---
 
@@ -68,9 +70,9 @@ versus 8, and whether \(\sigma\) stayed \(\ge 1/2\).
 
 **Einstein.** The object stayed the classical field.
 
-**Operator.** The short run is on the desk. Next is
-either a bigger box or the tube viscosity that was
-already open (B5b).
+**Operator.** The short run is on the desk. DNS is
+not an a priori (B13f). Finer stays B22e. Do not
+spawn \(n=64\).
 
 ---
 
@@ -84,7 +86,7 @@ already open (B5b).
 | B13c | **pass** | stays CONC |
 | B13d | **fail** | evolution is a ladder |
 | B13e | **fail** | finer / longer produces a saving climb |
-| B13f | **open** | short DNS is an a priori |
-| domain B | **open** | DNS as an a priori (B13f) is next |
+| B13f | **fail** | packet DNS is an a priori |
+| domain B | **open** | finer (\(n>32\)) is a box knob (B22e) |
 
 Tesla’s line: let it run. Then read. Do not type the cascade.

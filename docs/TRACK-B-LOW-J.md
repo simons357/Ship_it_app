@@ -47,10 +47,10 @@ If \(j_*\) climbs, \(K\) climbs, the cap rises.
 
 **B10b, fail** of “the ceiling saves a climbing packet.”
 
-**B10c, open.** CONC with rising \(j_*\) is the remaining
-cubic room. High \(j_*\) already sits on the glue ODE.
-Getting from coarse to thin, while staying concentrated,
-is not shown.
+**B10c, fail** of “CONC with climbing \(j_*\) is a
+closed estimate for \(X\).” Broken out as B11. The
+sketch is not an a priori (B11e). DNS is not an
+a priori (B13f).
 
 **B10d, fail** of “this is a retune of the PDE.”
 
@@ -83,7 +83,8 @@ on a climbing packet.
 
 **Operator.** Frozen low-\(j_*\) is hygiene. Climbing
 is written in [`TRACK-B-CLIMB.md`](TRACK-B-CLIMB.md).
-The live room is a climb law from the field.
+Climb and DNS knobs at \(n=32\) are scored. Finer
+is B22e.
 
 ---
 
@@ -94,9 +95,9 @@ The live room is a climb law from the field.
 | B10 | **pass** | packet \(X\le K^2 E\) |
 | B10a | **fail** | B9b unbounded path is NS-legal |
 | B10b | **fail** | ceiling bounds a climbing \(j_*\) |
-| B10c | **open** | climbing CONC closes \(X\) |
+| B10c | **fail** | climbing CONC closes \(X\) |
 | B10d | **fail** | this retunes the PDE |
-| domain B | **open** | the climb law is the room |
+| domain B | **open** | finer (\(n>32\)) is a box knob (B22e) |
 
 Tesla’s line: detune the apparatus. Do not retune
 Navier–Stokes.

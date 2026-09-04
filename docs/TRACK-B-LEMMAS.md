@@ -62,7 +62,7 @@ not done).
 | B10 | packet \(X\le K^2 E\) | **pass** | Frozen support has an energy ceiling. |
 | B10a | B9b unbounded path is NS-legal | **fail** | The model forgot \(E\). |
 | B10b | ceiling bounds a climbing \(j_*\) | **fail** | \(K\) rises with \(j_*\). |
-| B10c | climbing CONC closes \(X\) | **open** | Broken out as B11. |
+| B10c | climbing CONC closes \(X\) | **fail** | Broken out as B11. B11e / B13f scored. |
 | B10d | energy ceiling retunes the PDE | **fail** | No \(Q_1\), no \(\varepsilon\). Knob on the estimate. |
 | B11 | climb increments add | **pass** | Prescribed \(c=\mathrm{d}j_*/\mathrm{d}t\). |
 | B11a | bounded \(j_*\) ⇒ bounded \(X\) | **pass** | Necessary condition. |
@@ -74,15 +74,15 @@ not done).
 | B12a | \(c\) from the vorticity RHS | **pass** | The apparatus reads. |
 | B12b | \(t=0\) packets produce \(c\ge 8\) | **fail** | None do. |
 | B12c | viscosity forces an upward climb | **fail** | \(j_{\mathrm{bar}}\) falls. |
-| B12d | a short evolution produces a saving climb | **open** | Broken out as B13. |
-| B12e | \(t=0\) drift is an NS a priori | **open** | A reading is not a law. |
+| B12d | a short evolution produces a saving climb | **fail** | B13a / B22. No \(c=8\). |
+| B12e | \(t=0\) drift is an NS a priori | **fail** | A reading is not a law. The path did not write one. |
 | B13 | short IF-RK2 run stays finite | **pass** | Viscous \(X\) falls. |
 | B13a | short run produces \(c\ge 8\) | **fail** | Viscous \(c<0\). Euler \(\sim 0\). |
 | B13b | resolved high shells fill | **fail** | Mass above \(j_*+1\) stays \(\sim 0\). |
 | B13c | short run stays CONC | **pass** | Clock did not sneak into SPREAD. |
 | B13d | evolution is a ladder | **fail** | \(j_{\mathrm{bar}}\) falls. |
 | B13e | finer / longer saving climb | **fail** | Longer \(n=32\) past room time. No \(c=8\). |
-| B13f | short DNS is an a priori | **open** | A few steps are not continuation. |
+| B13f | packet DNS is an a priori | **fail** | Short missed. Longer missed. A check is not continuation. |
 | B14 | \(\xi\cdot S\xi=\sum\lambda_i\cos^2\alpha_i\) on \(E_c\) | **pass** | Strain eigenframe. Not depletion. |
 | B14a | 3-CONC \(\Rightarrow\) median \(\lvert\cos\alpha_3\rvert\le 0.25\) | **fail** | Median sits near \(1/2\). |
 | B14b | Ring Lipschitz \(\Rightarrow\cos\alpha_3\to 0\) | **fail** | Same slogan as B3b. |
@@ -145,6 +145,13 @@ not done).
 | B22d | the clock left CONC and saved \(X\) | **fail** | Viscosity. No flip. |
 | B22e | finer (\(n>32\)) produces a saving climb | **open** | A box knob. Do not spawn \(n=64\). |
 | B22f | lengthening \(T\) retunes the PDE | **fail** | Knob on the check. |
+| B23 | short and longer DNS readable | **pass** | \(T=0.384>0.375\). Still \(n=32\). |
+| B23a | decaying packet DNS is an a priori | **fail** | One IC, finite \(T\), finite \(n\). |
+| B23b | room-time length is continuation | **fail** | An estimate, not a longer interval. |
+| B23c | the packet class is all data | **fail** | B9b and SPREAD are not this run. |
+| B23d | no blow on \(n=32\) \(\Rightarrow X\in L^\infty\) | **fail** | DNS-never-blew-up is refused. |
+| B23e | finer makes DNS an a priori | **open** | Same leftover as B22e. Do not spawn \(n=64\). |
+| B23f | scoring this retunes the PDE | **fail** | Knob on the check. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -249,7 +256,7 @@ ODE. Sketch \(\neq\) NS a priori **fail**.
 [`TRACK-B-LOW-J.md`](TRACK-B-LOW-J.md). Packet \(X\le K^2E\)
 **pass**. B9b unbounded path is not NS **fail**. Ceiling
 does not follow a climbing \(j_*\) **fail**. Climbing CONC
-is broken out as B11. Not a PDE retune **fail**.
+as a close **fail**. Not a PDE retune **fail**.
 
 **B11 / B11a / B11b / B11c / B11d / B11e.** Climbing CONC
 lives in [`TRACK-B-CLIMB.md`](TRACK-B-CLIMB.md). Increments
@@ -261,14 +268,13 @@ law **fail**. Sketch \(\neq\) NS a priori **fail**.
 lives in [`TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md).
 Barycenter **pass**. \(c\) from the RHS **pass**. \(t=0\)
 saving climb **fail**. Viscosity as a ladder **fail**.
-Short evolution is broken out as B13. \(t=0\) as a priori
-**open**.
+Evolved cascade **fail**. \(t=0\) as a priori **fail**.
 
 **B13 / B13a / B13b / B13c / B13d / B13e / B13f.** Short
 evolution lives in [`TRACK-B-EVOLVE.md`](TRACK-B-EVOLVE.md).
 Run finite **pass**. Saving climb **fail**. High fill
 **fail**. Stays CONC **pass**. Evolution as a ladder
-**fail**. Longer saving climb **fail**. Not an a priori **open**.
+**fail**. Longer saving climb **fail**. DNS as an a priori **fail**.
 
 **B14 / B14a / B14b / B14c / B14d / B14e.** Packet geometry
 lives in [`TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md).
@@ -334,15 +340,23 @@ Readable past room time **pass**. Longer \(c\ge 8\) **fail**.
 Ladder **fail**. High fill **fail**. Clock saved \(X\)
 **fail**. Finer box **open**. Not a PDE retune **fail**.
 
+**B23 / B23a / B23b / B23c / B23d / B23e / B23f.** DNS as
+an a priori lives in [`TRACK-B-DNS.md`](TRACK-B-DNS.md).
+Readable **pass**. Decaying packet DNS is an a priori
+**fail**. Room-time length is continuation **fail**.
+Packet class is all data **fail**. No-blow \(\Rightarrow L^\infty\)
+**fail**. Finer box **open**. Not a PDE retune **fail**.
+
 ---
 
 ## What is still the next write
 
-1. DNS as an a priori (B13f). Longer \(n=32\) past the
-   ODE room time did not produce \(c=8\) (B13e). Finer
-   (\(n>32\)) stays a box knob (B22e). B4c stands. Angular
-   \(1/r^2\) does not. Do not write \(c=8\) into the PDE.
-   Do not spawn \(n=64\).
+1. Climb and DNS knobs at \(n=32\) are scored. DNS is
+   not an a priori (B13f). Finer (\(n>32\)) stays a box
+   knob (B22e). Do not spawn \(n=64\). Remaining opens
+   are leftover closes, not a new apparatus. B4c stands.
+   Angular \(1/r^2\) does not. Do not write \(c=8\) into
+   the PDE.
 2. Do not revive all-data Hardy absorption, G’s \(\rho\to 0\),
    Leray-as-occupation, the glue sketch as an NS a priori,
    a typed \(c=8\), all-data Biot–Savart depletion, BKM-from-\(L^2\),
@@ -370,8 +384,9 @@ python3 scripts/track_b_field_glue.py
 python3 scripts/track_b_ns_climb.py
 python3 scripts/track_b_climb_sketch.py
 python3 scripts/track_b_longer.py
+python3 scripts/track_b_dns.py
 python3 scripts/track_b_lemmas.py
-python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer
+python3 -m unittest tests.test_track_b_lemmas tests.test_track_b_glue tests.test_track_b_low_j tests.test_track_b_climb tests.test_track_b_climb_law tests.test_track_b_evolve tests.test_track_b_geometry tests.test_track_b_stretch tests.test_track_b_balance tests.test_track_b_angular tests.test_track_b_coherent tests.test_track_b_occupation tests.test_track_b_field_occ tests.test_track_b_field_glue tests.test_track_b_ns_climb tests.test_track_b_climb_sketch tests.test_track_b_longer tests.test_track_b_dns
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py check --domain B
 ```

@@ -120,7 +120,7 @@ Domain B **never** passes regularity. `check B` stays
 | B10 | packet energy ceiling | **pass** |
 | B10a | B9b unbounded path is NS-legal | **fail** |
 | B10b | ceiling follows a climbing \(j_*\) | **fail** |
-| B10c | climbing CONC closes \(X\) | **open** (B11) |
+| B10c | climbing CONC closes \(X\) | **fail** |
 | B10d | this retunes the PDE | **fail** |
 | B11 / B11a / B11c | climb bookkeeping; bounded \(j_*\); fast sits | **pass** |
 | B11b | any climb saves | **fail** |
@@ -129,10 +129,10 @@ Domain B **never** passes regularity. `check B` stays
 | B12 / B12a | barycenter; \(c\) from RHS | **pass** |
 | B12b | \(t=0\) packets produce \(c\ge 8\) | **fail** |
 | B12c | viscosity is a ladder | **fail** |
-| B12d | evolved cascade | **open** (B13) |
+| B12d / B12e | evolved cascade; \(t=0\) is a climb law | **fail** |
 | B13 / B13c | short run; stays CONC | **pass** |
 | B13a / B13b / B13d | no saving climb; no high fill; not a ladder | **fail** |
-| B13e | finer / longer | **fail** |
+| B13e / B13f | finer / longer; packet DNS is an a priori | **fail** |
 | B14 | strain identity on \(E_c\) | **pass** |
 | B14a / B14b | CONC depleted; Ring \(\Rightarrow\) alignment | **fail** |
 | B14c | CF conditional | **pass** |
@@ -170,10 +170,15 @@ Domain B **never** passes regularity. `check B` stays
 | B22a / B22b / B22c / B22d | longer \(c\ge 8\); ladder; high fill; clock saved \(X\) | **fail** |
 | B22e | finer (\(n>32\)) produces a saving climb | **open** |
 | B22f | this retunes the PDE | **fail** |
+| B23 | short and longer DNS readable | **pass** |
+| B23a / B23b / B23c / B23d | DNS a priori; room-time continuation; packet is all data; no-blow \(\Rightarrow L^\infty\) | **fail** |
+| B23e | finer makes DNS an a priori | **open** |
+| B23f | this retunes the PDE | **fail** |
 | classical regularity | — | **open** |
 
-**Next B write:** DNS as an a priori (B13f). Longer
-\(n=32\) did not produce \(c=8\) (B13e). B4c stands.
+**Next B write:** Climb and DNS knobs at \(n=32\) are
+scored. DNS is not an a priori (B13f). Finer
+(\(n>32\)) stays a box knob (B22e). B4c stands.
 Angular \(1/r^2\) does not. We are not tuning the
 equation. Do not spawn \(n=64\).
 
@@ -493,7 +498,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
   blob and B18 paths do not produce \(c=8\); \(j_{\mathrm{bar}}\)
   offset is not a climb. Climb sketch is not an a priori.
   Longer \(n=32\) past room time did not produce \(c=8\).
-  Next: DNS as an a priori (B13f).
+  DNS is not an a priori (B13f). Climb and DNS knobs
+  at \(n=32\) are scored. Finer is B22e.
   The PDE is not being tuned.
 - Cosmo does not enter NS.
 - HB stays shelved as a theorem. DA-as-process stays live.

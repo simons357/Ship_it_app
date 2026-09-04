@@ -223,9 +223,9 @@ def lemma_finer_open() -> dict:
 def lemma_evolve_not_a_priori() -> dict:
     return rec(
         "B13f_evolve_not_X_a_priori",
-        "a short packet run is a closed a priori bound for classical X",
-        "open",
-        "A few IF-RK2 steps are not continuation. Do not sit DNS-did-not-climb as regularity.",
+        "a packet DNS run is a closed a priori bound for classical X",
+        "fail",
+        "Short missed (B13a). Longer past room time missed (B22). A decaying n=32 packet is a check, not continuation (B23).",
     )
 
 
@@ -254,9 +254,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "DNS as an a priori (B13f). Longer n=32 past the ODE room time "
-            "did not produce c=8 (B13e). Finer (n>32) stays a box knob (B22e). "
-            "Do not spawn n=64. B4c stands. Do not write c=8 into the PDE."
+            "Climb and DNS knobs at n=32 are scored. DNS is not an a priori (B13f). "
+            "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
+            "B4c stands. Do not write c=8 into the PDE."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_evolve.json")

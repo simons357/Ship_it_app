@@ -285,7 +285,7 @@ Item 5 was the reason to keep \(1/r^4\). The extra angular piece, alone, does **
 | Spread \(\Rightarrow\) extra dissipation | T2 Lemma 1 **pass**; Lemma 2 dropped; energy-class \(T\) **pass**; uniform \(\rho^{1/2}\) **fail** |
 | Unaugmented global \(H^1\) bound | Open |
 
-The live question is no longer “does \(\Phi\) cancel the axis?” and no longer “does the extra \(1/r^2\) piece, alone, beat \(I_{\mathrm{tube}}\)?” B4c still budgets packets. Coherent CONC is scored. Field occupation is scored. Field glue is scored: typed \(j_*=2\) grows; the NS packet falls. NS climb law is scored: the field did not force \(c=8\). Climb sketch is scored: prescribed \(c=8\) is not this window. Longer \(n=32\) past the room time did not produce \(c=8\). Next: DNS as an a priori (B13f). Do not spawn \(n=64\).
+The live question is no longer “does \(\Phi\) cancel the axis?” and no longer “does the extra \(1/r^2\) piece, alone, beat \(I_{\mathrm{tube}}\)?” B4c still budgets packets. Coherent CONC is scored. Field occupation is scored. Field glue is scored: typed \(j_*=2\) grows; the NS packet falls. NS climb law is scored: the field did not force \(c=8\). Climb sketch is scored: prescribed \(c=8\) is not this window. Longer \(n=32\) past the room time did not produce \(c=8\). DNS is not an a priori (B13f). Finer stays B22e. Do not spawn \(n=64\).
 
 ---
 

@@ -74,10 +74,10 @@
       "E0": 1.0
     },
     {
-      "name": "B10c_climbing_conc_open",
+      "name": "B10c_climbing_not_close",
       "statement": "CONC with climbing j* is a closed estimate for X",
-      "verdict": "open",
-      "why": "High j* sits on the glue ODE. Climbing is broken out as B11. NS did not force a saving c (B11d). The sketch is not an a priori (B11e). Longer n=32 did not produce c=8 (B13e). Finer is B22e."
+      "verdict": "fail",
+      "why": "Broken out as B11. NS did not force a saving c (B11d). The sketch is not an a priori (B11e). DNS is not an a priori (B13f)."
     },
     {
       "name": "B10d_not_a_pde_retune",
@@ -88,8 +88,8 @@
   ],
   "counts": {
     "pass": 1,
-    "fail": 3,
-    "open": 1
+    "fail": 4,
+    "open": 0
   },
-  "next_da_move": "Climbing is written (B11). Longer n=32 did not produce c=8 (B13e). Next: DNS as an a priori (B13f)."
+  "next_da_move": "Climb and DNS knobs at n=32 are scored. DNS is not an a priori (B13f). Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not write c=8 into the PDE."
 }

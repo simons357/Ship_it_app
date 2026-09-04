@@ -150,10 +150,10 @@ def lemma_visc_pulls_down() -> dict:
 
 def lemma_evolved_cascade_open() -> dict:
     return rec(
-        "B12d_evolved_cascade_open",
+        "B12d_evolved_not_saving",
         "a short NS evolution of a CONC packet produces a saving climb",
-        "open",
-        "t=0 is instantaneous. Short evolution is written as B13: still no saving climb on n=32. Finer/longer is B13e.",
+        "fail",
+        "Broken out as B13. Short missed (B13a). Longer past room time missed (B22). DNS is not an a priori (B13f).",
     )
 
 
@@ -161,8 +161,8 @@ def lemma_law_not_a_priori() -> dict:
     return rec(
         "B12e_law_not_X_a_priori",
         "the instantaneous field drift is a closed climb law for classical X",
-        "open",
-        "A t=0 reading is not a law along a trajectory. Do not sit it as dj*/dt on NS.",
+        "fail",
+        "A t=0 reading is not a law. The path did not write one either (B13, B20, B22). Do not sit it as dj*/dt on NS.",
     )
 
 
@@ -190,7 +190,9 @@ def run(out: Path | None = None) -> dict:
         "lemmas": lemmas,
         "counts": counts,
         "next_da_move": (
-            "Short evolution is written (B13). Next: B5b or a finer box (B13e)."
+            "Climb and DNS knobs at n=32 are scored. DNS is not an a priori (B13f). "
+            "Finer (n>32) stays a box knob (B22e). Do not spawn n=64. "
+            "B4c stands. Do not write c=8 into the PDE."
         ),
     }
     dest = Path(out) if out is not None else Path("results/track_b_climb_law.json")

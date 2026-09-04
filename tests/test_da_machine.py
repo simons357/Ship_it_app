@@ -148,6 +148,9 @@ class DaMachineTests(unittest.TestCase):
         lng = classify_claim("longer path of a vorticity packet past the climb room time")
         self.assertEqual(lng["domain"], "B")
         self.assertEqual(lng["verdict"], "open")
+        dns = classify_claim("packet DNS as an a priori bound for vorticity")
+        self.assertEqual(dns["domain"], "B")
+        self.assertEqual(dns["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

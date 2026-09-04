@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "slot": "B",
+    "write": "DNS as an a priori",
+    "tuning_the_pde": false,
+    "n": 32,
+    "T_long": 0.384,
+    "t_room": 0.375,
+    "tesla": "exacting, not a jerk. You asked if we had to stop. We ran it. We lengthened it. It is not a bound. Sit down. Do not spawn n=64.",
+    "domain_verdict": "open",
+    "climb_dns_dead_end": true
+  },
+  "lemmas": [
+    {
+      "name": "B23_dns_readable",
+      "statement": "short and longer n=32 packet DNS are a readable check past the B11c room time",
+      "verdict": "pass",
+      "why": "B13 and B22 already ran. T=0.384 > 0.375. Same box. Typed c is not written into the PDE.",
+      "T_long": 0.384,
+      "t_room": 0.375
+    },
+    {
+      "name": "B23a_dns_not_a_priori",
+      "statement": "a decaying packet DNS run is a closed a priori bound for classical X",
+      "verdict": "fail",
+      "why": "One IC class, finite T, finite n. X falling here does not bound X on B9b or energy-class data. Beale: a decaying packet is not \u222b\u2016\u03c9\u2016_\u221e."
+    },
+    {
+      "name": "B23b_room_time_not_continuation",
+      "statement": "running past the ODE room time is continuation for classical X",
+      "verdict": "fail",
+      "why": "Continuation is an estimate, not a longer interval. Past the sitting of c=8 the path still decayed.",
+      "T_long": 0.384,
+      "t_room": 0.375,
+      "c_save": 8.0
+    },
+    {
+      "name": "B23c_packet_not_all_data",
+      "statement": "the working-box CONC packet class is all classical data",
+      "verdict": "fail",
+      "why": "B9b fat slow CONC is not this run. Energy-class T sits on SPREAD. One triad is not Leray."
+    },
+    {
+      "name": "B23d_no_blow_not_bounded",
+      "statement": "didn't blow on n=32 implies X \u2208 L\u221e",
+      "verdict": "fail",
+      "why": "Resolved decay is a reading. n=32 dealias cannot host the cascade the slogan wants. DNS-never-blew-up is refused as a close."
+    },
+    {
+      "name": "B23e_finer_still_open",
+      "statement": "a finer box (n>32) makes the DNS run an a priori",
+      "verdict": "open",
+      "why": "The only remaining box knob. Same leftover as B22e. Do not spawn n=64. A bigger FFT is not continuation."
+    },
+    {
+      "name": "B23f_not_a_pde_retune",
+      "statement": "scoring DNS as not an a priori is a retune of classical Navier\u2013Stokes",
+      "verdict": "fail",
+      "why": "The PDE is untouched. T and n are knobs on the check. No Q1. No \u03b5. Do not type c=8 into the equation."
+    }
+  ],
+  "counts": {
+    "pass": 1,
+    "fail": 5,
+    "open": 1
+  },
+  "next_da_move": "Climb and DNS knobs at n=32 are scored. DNS is not an a priori (B13f). Finer (n>32) stays a box knob (B22e). Do not spawn n=64. B4c stands. Do not write c=8 into the PDE."
+}
