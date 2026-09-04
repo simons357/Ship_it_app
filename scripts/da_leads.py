@@ -127,9 +127,9 @@ LEADS = [
     lead("Tataru", "critical small data", "B", "living",
          "The critical space is the wall. That is why leftover knobs died.",
          "scaling wall = estimate"),
-    lead("Grujic", "sparseness / scaling gap", "B", "living",
-         "Sparseness can shrink the gap. Finite order does not make it vanish.",
-         "asymptotic criticality = closed X"),
+    lead("Grujic", "sparseness / log-bmo if", "B", "living",
+         "Sparseness can shrink the gap. The 2026 log-bmo if is still an if. Finite order does not make it vanish.",
+         "log-bmo if = all-data A1"),
     lead("Miller", "strain / λ2+", "B", "living",
          "Enstrophy is −4∫det S. λ2+ is a different cut from the e3 cap. The identity is not an a priori. A strain model blows.",
          "rewrite in S closes X"),
@@ -279,6 +279,13 @@ CLAIMS = [
         "Beirao-Berselli geometric if is all-data A1",
         "fail",
         "Weaker than CF is still an if. All-data A1 stays blank.",
+    ),
+    rec(
+        "R14",
+        "grujic_log_bmo_is_all_data_a1",
+        "Grujic logarithmic bmo if is all-data A1",
+        "fail",
+        "arXiv 2607.08866 is an if on the vorticity direction. All-data A1 stays blank.",
     ),
 ]
 

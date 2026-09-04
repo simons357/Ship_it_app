@@ -41,7 +41,7 @@ in your slot.
 | Seregin | local regularity / ESS | A criterion is not an a priori on \(X\). | criterion \(\Rightarrow\) bound |
 | Koch | critical small data | Small critical sits. Large data is the object. | Koch–Tataru \(\Rightarrow\) large data |
 | Tataru | critical small data | The critical space is the wall. That is why leftover knobs died. | wall \(=\) estimate |
-| Grujić | sparseness | The gap can shrink. Finite order does not make it vanish. | asymptotic criticality \(=\) closed \(X\) |
+| Grujić | sparseness / log-bmo if | The gap can shrink. The 2026 log-bmo if is still an if. Finite order does not make it vanish. | log-bmo if \(=\) all-data A1 |
 | Miller | strain / \(\lambda_2^+\) | \(\lambda_2^+\) is a different cut. The identity is not an a priori. A strain model blows. | rewrite in \(S\) closes \(X\) |
 | Vicol | wild weak solutions | A different class. | convex integration \(=\) smooth blowup |
 | Albritton | forced Leray | Forced Leray–Hopf non-uniqueness is a different equation once \(f\) is on. | forced \(\Rightarrow\) unforced \(X\) |
@@ -94,6 +94,7 @@ in your slot.
 | A vote of specialties writes the estimate | **fail** |
 | Glue across slots because you never know | **fail** |
 | Beirão–Berselli if is all-data A1 | **fail** |
+| Grujić log-bmo if is all-data A1 | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

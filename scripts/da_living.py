@@ -114,7 +114,7 @@ TURNS = [
     turn(
         "Grujic",
         ["Tataru", "Tao"],
-        "Sparseness can shrink the scaling gap. Finite order does not make the gap vanish. Asymptotic criticality is not a closed estimate.",
+        "Sparseness can shrink the scaling gap. The 2026 log-bmo if on the vorticity direction is still an if. Finite order does not make the gap vanish. It is not all-data A1.",
         "B",
     ),
     turn(
@@ -334,6 +334,13 @@ CLAIMS = [
         "fail",
         "Weaker than CF is still an if. This box is not aligned. All-data A1 stays blank.",
     ),
+    rec(
+        "L22",
+        "grujic_log_bmo_is_all_data_a1",
+        "Grujic logarithmic bmo if is all-data A1",
+        "fail",
+        "arXiv 2607.08866 is an if on the vorticity direction. Weaker than CF is still an if. All-data A1 stays blank.",
+    ),
 ]
 
 
@@ -347,7 +354,7 @@ KINGDOMS = [
     {"name": "Geometric if (weaker than CF)", "who": "Beirao-Berselli", "slot": "B"},
     {"name": "Continuation", "who": "Beale", "slot": "B"},
     {"name": "Critical small data", "who": "Koch, Tataru", "slot": "B"},
-    {"name": "Scaling gap", "who": "Grujic", "slot": "B"},
+    {"name": "Scaling gap / log-bmo if", "who": "Grujic", "slot": "B"},
     {"name": "Strain / middle eigenvalue", "who": "Miller", "slot": "B"},
     {"name": "Wild weak solutions", "who": "Vicol, Buckmaster", "slot": "B"},
     {"name": "Forced Leray", "who": "Albritton", "slot": "B"},

@@ -227,6 +227,9 @@ class DaMachineTests(unittest.TestCase):
         beirao = classify_claim("seat Beirao-Berselli as a wall on the living bench")
         self.assertEqual(beirao["domain"], "U")
         self.assertEqual(beirao["verdict"], "open")
+        grujic_if = classify_claim("Grujic logarithmic bmo if on a vorticity packet")
+        self.assertEqual(grujic_if["domain"], "B")
+        self.assertEqual(grujic_if["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

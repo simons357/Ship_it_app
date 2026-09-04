@@ -33,7 +33,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Geometric if (weaker than CF) | Beirão da Veiga–Berselli | weaker direction space still regularizes | the if is all-data A1 |
 | Continuation | Beale | \(\int\|\omega\|_\infty\) | the max from \(L^2\) or a leftover list |
 | Critical small data | Koch, Tataru | small critical sits | large-data regularity |
-| Scaling gap | Grujić | sparseness can shrink the gap | gap vanishes at finite order |
+| Scaling gap / log-bmo if | Grujić | sparseness can shrink the gap; 2026 log-bmo if | the if is all-data A1 |
 | Strain / middle eigenvalue | Miller | \(\lambda_2^+\) is a different cut; identity is not an a priori | rewrite in \(S\) closes \(X\) |
 | Wild weak solutions | Vicol, Buckmaster | non-uniqueness below the energy class | that is a smooth blowup or a bound |
 | Forced Leray | Albritton–Brué–Colombo | forced Leray–Hopf can be non-unique | that bounds unforced \(X\) |
@@ -115,8 +115,10 @@ died. Zoran, shrinking the gap is not closing it.
 
 **Grujić.** Sparseness of super-level sets can shrink the
 scaling gap. At finite derivative order the gap does not
-vanish. Asymptotic criticality is not a closed estimate
-for \(X\).
+vanish. The 2026 log-bmo if (arXiv 2607.08866) is still
+an if: direction in \(\mathrm{bmo}_{1/|\log r|}\) depletes
+stretching. It is not all-data A1. Asymptotic criticality
+is not a closed estimate for \(X\).
 
 **Vicol.** Wild weak solutions can be non-unique. That is
 a different class. Convex integration does not blow a
@@ -195,6 +197,7 @@ scores the process, not a theorem you did not prove.
 | Pretend-they-sit is an endorsement | **fail** |
 | Next write is another leftover close | **fail** |
 | Beirão–Berselli if is all-data A1 | **fail** |
+| Grujić log-bmo if is all-data A1 | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |
