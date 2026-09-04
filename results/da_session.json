@@ -1,0 +1,272 @@
+{
+  "meta": {
+    "question": "have the dream team converse as colleagues on the live problem",
+    "writeup": "docs/DA-SESSION.md",
+    "not_a_vote": true,
+    "not_a_close": true,
+    "not_a_seance": true,
+    "program_review_sits": true,
+    "now_bench_sends_a_note": true,
+    "regularity_after": "open",
+    "next_write": "Hardy \u2192 I_tube at \u03b4 ~ 2^{-j*}, then energy-class low Bony T. Regularity stays open."
+  },
+  "turns": [
+    {
+      "speaker": "Operator",
+      "to": [
+        "Leray",
+        "Kato",
+        "Ladyzhenskaya"
+      ],
+      "line": "Sit as colleagues. Look at classical NS. Keep 1/r^4. Work together. One honest write.",
+      "slot": "meta"
+    },
+    {
+      "speaker": "Leray",
+      "to": [
+        "Kato",
+        "Beale",
+        "Majda"
+      ],
+      "line": "Energy and integrable X are mine. They do not put X in L^\u221e. Do not close the cubic ODE from my integral.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Kato",
+      "to": [
+        "Leray",
+        "Beale",
+        "Majda"
+      ],
+      "line": "Continuation needs \u222b\u2016\u03c9\u2016_\u221e. L\u00b2 is not our theorem. We will sit for the a priori job; we will not rename it.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Caffarelli",
+      "to": [
+        "Kohn",
+        "Nirenberg",
+        "Leray"
+      ],
+      "line": "Partial regularity: small is not empty. Keep us as a wall, not a global pass.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Constantin",
+      "to": [
+        "Fefferman",
+        "Leray"
+      ],
+      "line": "Stretching dies if aligned. The if is load-bearing. Geometry after the tube, not instead of it.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Fefferman",
+      "to": [
+        "Constantin",
+        "Kato"
+      ],
+      "line": "Ring on E_c is not all-data cos \u03b1_3 \u2192 0. We will not say the slogan to make the table feel finished.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Ladyzhenskaya",
+      "to": [
+        "Leray",
+        "Kato",
+        "Caffarelli"
+      ],
+      "line": "I finish a modified stress. I will show you the weights in the tube. I will not slide \u03b5 into your equation.",
+      "slot": "A"
+    },
+    {
+      "speaker": "Kohn",
+      "to": [
+        "Caffarelli",
+        "Feynman",
+        "Tesla"
+      ],
+      "line": "B4b means leftover I_tube versus viscous budget at \u03b4 ~ 2^{-j*}. A bad tube kills it. That is a clean check.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Feynman",
+      "to": [
+        "Kohn",
+        "Tesla"
+      ],
+      "line": "Good. A number you can miss. No close without that residual.",
+      "slot": "U"
+    },
+    {
+      "speaker": "Tesla",
+      "to": [
+        "Ladyzhenskaya",
+        "Feynman"
+      ],
+      "line": "\u03b4 and j* are knobs. If you detune \u03b4 and the script does not move, you have a paragraph, not an apparatus.",
+      "slot": "U"
+    },
+    {
+      "speaker": "Einstein",
+      "to": [
+        "Operator",
+        "Weinberg"
+      ],
+      "line": "Keep the classical object named. Do not change the PDE to look finished. Couplings are the other chair.",
+      "slot": "U"
+    },
+    {
+      "speaker": "Weinberg",
+      "to": [
+        "Einstein",
+        "PDG"
+      ],
+      "line": "The W\u00b3\u2013B rotation is real. It does not absorb I_tube. If you hunt \u03b8_W in a vortex, I leave.",
+      "slot": "U"
+    },
+    {
+      "speaker": "von Neumann",
+      "to": [
+        "Weyl",
+        "Wigner"
+      ],
+      "line": "The unknown is X = \u2016\u03c9\u2016_2\u00b2. Write an estimate or store a residual. Do not open a slot on the word modes.",
+      "slot": "U"
+    },
+    {
+      "speaker": "Majda",
+      "to": [
+        "Leray",
+        "Ladyzhenskaya",
+        "Fefferman"
+      ],
+      "line": "Joint plan: energy, unused L^\u221e criterion, partial regularity as a wall, geometry later, Olga on weights not on the PDE. Then Hardy \u2192 I_tube.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Kato",
+      "to": [
+        "Operator",
+        "Leray",
+        "Beale"
+      ],
+      "line": "Slot B. Sentence: Hardy plus wall absorbs I_tube at \u03b4 ~ 2^{-j*}, or it does not. Check: a killing tube field, or a closed estimate.",
+      "slot": "B"
+    },
+    {
+      "speaker": "Beale",
+      "to": [
+        "Kato",
+        "Operator"
+      ],
+      "line": "Nobody votes this into global regularity. A lemma pass leaves domain B open. A lemma fail is still science.",
+      "slot": "B"
+    }
+  ],
+  "claims": [
+    {
+      "id": "S1",
+      "name": "colleagues_may_talk",
+      "statement": "Seat the benches as colleagues and let them talk to each other",
+      "verdict": "pass",
+      "why": "A working session is a process. People being gone does not matter. The papers still talk."
+    },
+    {
+      "id": "S2",
+      "name": "look_at_live_B",
+      "statement": "They look together at classical NS, keep 1/r^4, next write Hardy \u2192 I_tube",
+      "verdict": "pass",
+      "why": "That is the live object. The session does not invent a new problem."
+    },
+    {
+      "id": "S3",
+      "name": "help_without_glue",
+      "statement": "They help each other without changing the PDE or exporting A",
+      "verdict": "pass",
+      "why": "Ladyzhenskaya on weights; BKM unused as L^\u221e; CKN as a wall; CF later. Shared labor, same equation."
+    },
+    {
+      "id": "S4",
+      "name": "lock_next_write",
+      "statement": "They lock Hardy \u2192 I_tube at \u03b4 ~ 2^{-j*}, then energy-class low Bony T",
+      "verdict": "pass",
+      "why": "Overlap of suggestions that do not glue. Not a theorem. The next write already on the desk."
+    },
+    {
+      "id": "S5",
+      "name": "conversation_closes_regularity",
+      "statement": "The conversation closes classical regularity",
+      "verdict": "fail",
+      "why": "Talk is not an estimate for X. Domain B stays open."
+    },
+    {
+      "id": "S6",
+      "name": "vote_writes_theorem",
+      "statement": "A vote at the table writes a theorem",
+      "verdict": "fail",
+      "why": "A team is not a vote. A vote cannot close."
+    },
+    {
+      "id": "S7",
+      "name": "ladyzhenskaya_exports_A",
+      "statement": "Ladyzhenskaya exports A \u21d2 B by sitting here",
+      "verdict": "fail",
+      "why": "She said so. \u03b5 stays on A."
+    },
+    {
+      "id": "S8",
+      "name": "bkm_from_l2",
+      "statement": "Beale\u2013Kato\u2013Majda accept an L\u00b2 continuation criterion",
+      "verdict": "fail",
+      "why": "They refused the rename. L^\u221e is the point."
+    },
+    {
+      "id": "S9",
+      "name": "all_data_depletion",
+      "statement": "Constantin\u2013Fefferman grant all-data cos \u03b1_3 \u2192 0",
+      "verdict": "fail",
+      "why": "The if is load-bearing. Ring is not alignment."
+    },
+    {
+      "id": "S10",
+      "name": "session_writes_F",
+      "statement": "Einstein, Weinberg, or PDG write F from the session",
+      "verdict": "fail",
+      "why": "Wrong chair. Couplings stay a bag."
+    }
+  ],
+  "speakers": [
+    "Beale",
+    "Caffarelli",
+    "Constantin",
+    "Einstein",
+    "Fefferman",
+    "Feynman",
+    "Kato",
+    "Kohn",
+    "Ladyzhenskaya",
+    "Leray",
+    "Majda",
+    "Operator",
+    "Tesla",
+    "Weinberg",
+    "von Neumann"
+  ],
+  "counts": {
+    "turns": 16,
+    "speakers": 15,
+    "addressed_replies": 16,
+    "pass": 4,
+    "fail": 6,
+    "open": 0
+  },
+  "how_far": [
+    "they sat and talked",
+    "they looked at the tube together",
+    "they refused glue and refused a vote",
+    "next write unchanged",
+    "domain B still open"
+  ],
+  "next_da_move": "Write Hardy \u2192 I_tube at \u03b4 ~ 2^{-j*}. Session is not the write. Regularity stays open."
+}

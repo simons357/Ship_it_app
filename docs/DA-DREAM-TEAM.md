@@ -44,6 +44,11 @@ That is the same next write the machine already had. The
 team did not invent a new unifier. It confirmed which
 closes are already illegal.
 
+They sit as colleagues and talk in
+[`docs/DA-SESSION.md`](DA-SESSION.md).
+`python3 scripts/da_machine.py session`
+A conversation is not a close.
+
 The **now-bench** — current collaborations and data forms —
 is additive and lives in [`docs/DA-PIPE.md`](DA-PIPE.md).
 It does not unseat this table.

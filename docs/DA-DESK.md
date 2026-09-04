@@ -20,6 +20,7 @@ Print it: `python3 scripts/da_machine.py desk`
 
 The paper form of this desk is [`docs/DA-PAPER.md`](DA-PAPER.md).
 The name list you keep losing is [`docs/DA-THINK-TANK.md`](DA-THINK-TANK.md).
+They sat down and talked in [`docs/DA-SESSION.md`](DA-SESSION.md).
 
 ---
 
@@ -369,6 +370,7 @@ python3 scripts/da_machine.py status
 python3 scripts/da_machine.py check       # check B stays open
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py team        # past bench
+python3 scripts/da_machine.py session     # they talk; not a close
 python3 scripts/da_machine.py ground      # destination + program review
 python3 scripts/da_machine.py pipe        # now-bench
 python3 scripts/da_machine.py harmonic    # vocabulary
@@ -385,7 +387,8 @@ Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/DA-HARMONIC-VOCAB.md`, `docs/DA-DREAM-TEAM.md`,
 `docs/DA-SM-LAGRANGIAN.md`, `docs/DA-SM-LINEAGE.md`,
 `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`,
-`docs/DA-PAPER.md`, `docs/DA-THINK-TANK.md`.
+`docs/DA-PAPER.md`, `docs/DA-THINK-TANK.md`,
+`docs/DA-SESSION.md`.
 
 ---
 

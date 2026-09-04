@@ -4,6 +4,8 @@ One file. This is the list you keep losing.
 
 Print the past bench: `python3 scripts/da_machine.py team`  
 Print all three benches: `python3 scripts/da_machine.py desk`  
+Working session (they talk): `python3 scripts/da_machine.py session`  
+Scene: `docs/DA-SESSION.md`  
 Atlas: `docs/DA-DESK.md`  
 Paper: `docs/DA-PAPER.md`
 
@@ -128,6 +130,8 @@ August SND (CONC) and June SND (SPREAD) are opposites. The desk uses 3-CONC / EQ
 
 15. **Working paper.** `docs/DA-PAPER.md`. Process paper, not a regularity / \(F\) / ToE claim.
 
+16. **Working session.** You asked them to converse as real people and work together. That is [`docs/DA-SESSION.md`](DA-SESSION.md). Process pass. Regularity still open.
+
 **Still true at the end of the chat:** Track B regularity is open. \(F\) is fail. Destination “spectrum, not a bag” is open. Next write is Hardy \(\to I_{\mathrm{tube}}\), then low Bony \(T\). A \(\not\Rightarrow\) B.
 
 ---
@@ -140,6 +144,7 @@ Do this instead:
 
 1. **Drop the markdown into the vault.** Copy these files into your ChatVault / Obsidian / notes folder (from this repo, or from the pull request):
    - `docs/DA-THINK-TANK.md` — this file (names + recap)
+   - `docs/DA-SESSION.md` — they sat down and talked
    - `docs/DA-DESK.md` — full atlas
    - `docs/DA-PAPER.md` — the paper
    - `docs/DA-DREAM-TEAM.md`, `docs/DA-GROUND.md`, `docs/DA-PIPE.md` if you want the split benches

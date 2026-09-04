@@ -264,12 +264,19 @@
       "claim": "List computing techniques we can borrow or wire in",
       "verdict": "open",
       "note": "FFT/eigh/identities/arXiv wired; sympy/LP/LMFDB/GWOSC borrow; DNS/QNM-glue/LLM-proof refuse"
+    },
+    {
+      "t": "2026-09-04T05:17:16.534457+00:00",
+      "domain": "U",
+      "claim": "Have the dream team converse as colleagues on the live problem",
+      "verdict": "open",
+      "note": "process pass; regularity still open; next write still I_tube then T"
     }
   ],
   "counts": {
-    "scored": 37,
+    "scored": 38,
     "pass": 8,
     "fail": 4,
-    "open": 25
+    "open": 26
   }
 }
