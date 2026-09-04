@@ -32,6 +32,13 @@ class TrackBResidualTests(unittest.TestCase):
         self.assertEqual(by["B38d_miller_not_integral_max"]["verdict"], "fail")
         self.assertEqual(by["B38e_miller_not_regularity"]["verdict"], "fail")
         self.assertEqual(by["B38f_not_a_pde_retune"]["verdict"], "fail")
+        self.assertEqual(by["B39_empty_rename"]["verdict"], "pass")
+        self.assertEqual(by["B39a_empty_not_a_priori"]["verdict"], "fail")
+        self.assertEqual(by["B39b_empty_not_continuation"]["verdict"], "fail")
+        self.assertEqual(by["B39c_empty_not_ns"]["verdict"], "fail")
+        self.assertEqual(by["B39d_empty_not_integral_max"]["verdict"], "fail")
+        self.assertEqual(by["B39e_empty_not_regularity"]["verdict"], "fail")
+        self.assertEqual(by["B39f_not_a_pde_retune"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["domain_verdict"], "open")
         self.assertFalse(payload["meta"]["tuning_the_pde"])
         self.assertFalse(payload["meta"]["spawned_n64"])
@@ -43,6 +50,9 @@ class TrackBResidualTests(unittest.TestCase):
         self.assertLess(by["B38_miller_readable"]["e2_mean"], by["B38_miller_readable"]["hole2_mean"])
         self.assertIn("holes", payload["next_da_move"])
         self.assertIn("Miller", payload["next_da_move"])
+        self.assertIn("Sit down", payload["next_da_move"])
+        self.assertLess(by["B39_empty_rename"]["ident_max"], 1e-10)
+        self.assertLess(by["B39_empty_rename"]["gap_mean"], 0.05)
         self.assertIn("Regularity stays open", payload["next_da_move"])
 
     def test_writeup_exists(self):

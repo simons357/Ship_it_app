@@ -98,6 +98,27 @@ No. Domain B stays open.
 **B38f, fail** of “this retunes the PDE.” Knob on the
 check.
 
+**B39, pass.** Miller identity \(\int\omega\cdot S\omega=-4\int\det S\)
+holds to machine precision. \(\det_+\) is the same cut as
+\(\lambda_2^+\) (gap \(\lt 0.05\)). The next rename is empty.
+Sit down.
+
+**B39a, fail** of “identity plus empty rename is a closed
+estimate.”
+
+**B39b, fail** of “an empty rename makes \(\mathcal{R}\)
+integrable.” A1 and A2 are still the blanks.
+
+**B39c, fail** of “reading \(\det S\) is an NS a priori.”
+
+**B39d, fail** of “the empty rename is \(\int\|\omega\|_\infty\).”
+
+**B39e, fail** of “sitting down decides regularity.”
+No. Domain B stays open.
+
+**B39f, fail** of “this retunes the PDE.” Knob on the
+check.
+
 ---
 
 ## They work it
@@ -116,12 +137,13 @@ Biot–Savart.
 **Leray.** I own the net on these packets. I did not hand
 you all data.
 
-**Miller.** \(\lambda_2^+\) is not hole 2. Do not cash the
-rewrite.
+**Miller.** \(\lambda_2^+\) is not hole 2. \(\det_+\) is
+\(\lambda_2^+\). Do not cash the rewrite.
 
 **Operator.** The holes are named. The Miller cut is a
-different cut. Regularity stays open. Do not spawn
-\(n=64\). B4c stands. Do not cancel to \(\Phi\).
+different cut. The next rename is empty. Sit down.
+Regularity stays open. Do not spawn \(n=64\). B4c
+stands. Do not cancel to \(\Phi\).
 
 ---
 
@@ -143,7 +165,14 @@ different cut. Regularity stays open. Do not spawn
 | B38d | **fail** | Miller cut is \(\int\|\omega\|_\infty\) |
 | B38e | **fail** | Miller cut decides regularity |
 | B38f | **fail** | this retunes the PDE |
+| B39 | **pass** | identity holds; \(\det_+\) is \(\lambda_2^+\) |
+| B39a | **fail** | empty rename is a closed estimate |
+| B39b | **fail** | empty rename makes \(\mathcal{R}\) integrable |
+| B39c | **fail** | reading \(\det S\) is an NS a priori |
+| B39d | **fail** | empty rename is \(\int\|\omega\|_\infty\) |
+| B39e | **fail** | sitting down decides regularity |
+| B39f | **fail** | this retunes the PDE |
 | domain B | **open** | regularity stays open |
 
 Tesla’s line: name the holes. The Miller cut moved.
-Reading is not a bound.
+The next rename is empty. Sit down.

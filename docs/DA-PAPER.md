@@ -328,6 +328,9 @@ The words land in `results/DA-ALERT.txt`. A phone sender is optional and externa
 | B38 Miller \(\lambda_2^+\) is a different cut from hole 2 | pass |
 | B38a / B38b / B38c / B38d / B38e the cut is a closed estimate; a gap is integrable \(\mathcal{R}\); reading \(\lambda_2^+\) is NS; Miller cut is \(\int\|\omega\|_\infty\); this write decides regularity | **fail** |
 | B38f this retunes the PDE | **fail** |
+| B39 identity holds; \(\det_+\) is the same cut as \(\lambda_2^+\) | pass |
+| B39a / B39b / B39c / B39d / B39e empty rename is a closed estimate; empty is integrable \(\mathcal{R}\); reading \(\det S\) is NS; empty rename is \(\int\|\omega\|_\infty\); sitting down decides regularity | **fail** |
+| B39f this retunes the PDE | **fail** |
 | \(\Phi\) as the estimate variable | fail |
 | classical regularity | **open** |
 

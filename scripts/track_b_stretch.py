@@ -63,6 +63,16 @@ def budget(uh, vh, wh, kx, ky, kz, c: float = EC_C) -> dict:
     pos_sum = float(np.sum(pos)) + 1e-30
     all_pos = float(np.sum(np.maximum(stretch, 0.0))) + 1e-30
     unaligned = cos3 <= HIGH
+    det = (
+        s00 * (s11 * s22 - s12 * s12)
+        - s01 * (s01 * s22 - s02 * s12)
+        + s02 * (s01 * s12 - s11 * s02)
+    )
+    mean_st = float(np.mean(stretch))
+    mean_det = float(np.mean(det))
+    ident_rel = abs(mean_st + 4.0 * mean_det) / max(
+        abs(mean_st) + 4.0 * abs(mean_det), 1e-30
+    )
     return {
         "n_ec": int(np.sum(ec)),
         "frac_vol": float(np.mean(ec)),
@@ -76,6 +86,8 @@ def budget(uh, vh, wh, kx, ky, kz, c: float = EC_C) -> dict:
         "share_e2_hi": float(np.sum(pos[cos2 > HIGH]) / pos_sum),
         "share_h2_and_l2p": float(np.sum(pos[unaligned & (lam2 > 0.0)]) / pos_sum),
         "mean_l2p": float(np.mean(np.maximum(lam2, 0.0))),
+        "share_detp": float(np.sum(pos[det[ec] > 0.0]) / pos_sum),
+        "ident_rel": ident_rel,
         "X": float(np.mean(mag2)) * (2.0 * math.pi) ** 3,
     }
 

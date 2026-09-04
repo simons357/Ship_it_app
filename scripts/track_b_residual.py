@@ -23,6 +23,8 @@ from track_b_stretch import t0_samples
 ROOT = Path(__file__).resolve().parents[1]
 STRETCH_CACHE = ROOT / "results" / "track_b_stretch.json"
 MILLER_GAP = 0.10
+EMPTY_GAP = 0.05
+IDENT_MAX = 1e-10
 
 
 def holes() -> dict:
@@ -246,6 +248,91 @@ def lemma_miller_not_a_retune() -> dict:
     )
 
 
+def empty_cut() -> dict:
+    rows = t0_samples()
+    l2p = [r["share_l2p"] for r in rows]
+    detp = [r["share_detp"] for r in rows]
+    gaps = [abs(a - b) for a, b in zip(l2p, detp)]
+    idents = [r["ident_rel"] for r in rows]
+    return {
+        "n": 32,
+        "l2p_mean": sum(l2p) / len(l2p),
+        "detp_mean": sum(detp) / len(detp),
+        "gap_mean": sum(gaps) / len(gaps),
+        "ident_max": max(idents),
+    }
+
+
+def lemma_empty_readable() -> dict:
+    e = empty_cut()
+    ok = e["n"] == 32 and e["ident_max"] < IDENT_MAX and e["gap_mean"] < EMPTY_GAP
+    return rec(
+        "B39_empty_rename",
+        "Miller identity ∫ω·Sω = −4∫det S holds; det+ is the same cut as λ2+",
+        "pass" if ok else "fail",
+        "Same strain as B15. No new FFT. No n=64. An empty rename is not a new hole. Sit down.",
+        n=e["n"],
+        l2p_mean=e["l2p_mean"],
+        detp_mean=e["detp_mean"],
+        gap_mean=e["gap_mean"],
+        ident_max=e["ident_max"],
+    )
+
+
+def lemma_empty_not_a_priori() -> dict:
+    return rec(
+        "B39a_empty_not_a_priori",
+        "the Miller identity plus an empty rename is a closed estimate for classical X",
+        "fail",
+        "Algebra on the box is not an a priori. The next cut did not move. Sit down.",
+    )
+
+
+def lemma_empty_not_continuation() -> dict:
+    return rec(
+        "B39b_empty_not_continuation",
+        "an empty rename makes R integrable and therefore continues X",
+        "fail",
+        "A dead cut is not ∫R < ∞. A1 and A2 are still the blanks.",
+    )
+
+
+def lemma_empty_not_ns() -> dict:
+    return rec(
+        "B39c_empty_not_ns",
+        "reading det S on the working box is an NS a priori",
+        "fail",
+        "A 3×3 determinant of an already-computed strain is a knob on the check.",
+    )
+
+
+def lemma_empty_not_integral_max() -> dict:
+    return rec(
+        "B39d_empty_not_integral_max",
+        "the empty rename is an integral bound on the max vorticity",
+        "fail",
+        "det S is not ∫‖ω‖_∞. Beale still asks for the max.",
+    )
+
+
+def lemma_empty_not_regularity() -> dict:
+    return rec(
+        "B39e_empty_not_regularity",
+        "sitting down after an empty rename decides classical regularity",
+        "fail",
+        "No. Domain B stays open. Do not spawn n=64.",
+    )
+
+
+def lemma_empty_not_a_retune() -> dict:
+    return rec(
+        "B39f_not_a_pde_retune",
+        "reading det S is a retune of classical Navier–Stokes",
+        "fail",
+        "The PDE is untouched. No Q1. No ε. Do not type c=8. Do not spawn n=64.",
+    )
+
+
 def run(out: Path | None = None) -> dict:
     lemmas = [
         lemma_residual_readable(),
@@ -262,6 +349,13 @@ def run(out: Path | None = None) -> dict:
         lemma_miller_not_integral_max(),
         lemma_miller_not_regularity(),
         lemma_miller_not_a_retune(),
+        lemma_empty_readable(),
+        lemma_empty_not_a_priori(),
+        lemma_empty_not_continuation(),
+        lemma_empty_not_ns(),
+        lemma_empty_not_integral_max(),
+        lemma_empty_not_regularity(),
+        lemma_empty_not_a_retune(),
     ]
     counts = {"pass": 0, "fail": 0, "open": 0}
     for row in lemmas:
@@ -269,7 +363,7 @@ def run(out: Path | None = None) -> dict:
     payload = {
         "meta": {
             "slot": "B",
-            "write": "residual tool: holes of R, then the Miller cut",
+            "write": "residual tool: holes of R, Miller cut, empty det+ rename",
             "tuning_the_pde": False,
             "spawned_n64": False,
             "tesla": (
@@ -282,6 +376,7 @@ def run(out: Path | None = None) -> dict:
         "counts": counts,
         "next_da_move": (
             "The residual tool names the holes in R. Miller λ2+ is a different cut from hole 2. "
+            "det+ is the same cut as λ2+. The next rename is empty. Sit down. "
             "Neither is an a priori. Hole 1 is the CF if. Hole 2 is the live cubic. "
             "Regularity leftover is not an a priori (B35e). Regularity stays open. "
             "Do not spawn n=64. B4c stands. Do not cancel to Φ."
@@ -296,7 +391,7 @@ def run(out: Path | None = None) -> dict:
 
 def main() -> int:
     payload = run()
-    print("Track B residual. Holes named. Miller cut is different. Not a bound.")
+    print("Track B residual. Holes named. Miller cut is different. det+ is empty. Sit down.")
     for row in payload["lemmas"]:
         print(f"  [{row['verdict']}] {row['name']}: {row['why']}")
     print("counts", payload["counts"])

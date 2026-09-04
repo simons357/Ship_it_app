@@ -257,6 +257,13 @@ not done).
 | B38d | Miller cut is \(\int\|\omega\|_\infty\) | **fail** | \(\lambda_2^+\) is not the max. |
 | B38e | Miller cut decides regularity | **fail** | Domain B stays open. |
 | B38f | scoring this retunes the PDE | **fail** | Knob on the check. |
+| B39 | identity holds; \(\det_+\) is the same cut as \(\lambda_2^+\) | **pass** | Same strain as B15. Empty rename. Sit down. |
+| B39a | empty rename is a closed estimate | **fail** | Algebra on the box is not an a priori. |
+| B39b | empty rename makes \(\mathcal{R}\) integrable | **fail** | A dead cut is not \(\int\mathcal{R}<\infty\). |
+| B39c | reading \(\det S\) is an NS a priori | **fail** | A determinant is a knob. |
+| B39d | empty rename is \(\int\|\omega\|_\infty\) | **fail** | \(\det S\) is not the max. |
+| B39e | sitting down decides regularity | **fail** | Domain B stays open. |
+| B39f | scoring this retunes the PDE | **fail** | Knob on the check. |
 | Φ | Switch the estimate to \(\Phi=\Gamma/r^2\) | **fail** | Moves the work onto \(\|\Phi\|_\infty\). Keep \(\Gamma\). |
 | regularity | Classical 3D NS is globally regular | **open** | No closed estimate for \(X\). |
 
@@ -573,12 +580,21 @@ estimate **fail**. A gap is integrable \(\mathcal{R}\)
 cut is \(\int\|\omega\|_\infty\) **fail**. Miller cut
 decides regularity **fail**. Not a PDE retune **fail**.
 
+**B39 / B39a / B39b / B39c / B39d / B39e / B39f.** Empty
+rename lives in [`TRACK-B-RESIDUAL.md`](TRACK-B-RESIDUAL.md).
+Identity holds; \(\det_+\) is \(\lambda_2^+\) **pass**. Empty
+rename is a closed estimate **fail**. Empty is integrable
+\(\mathcal{R}\) **fail**. Reading \(\det S\) is NS **fail**.
+Empty rename is \(\int\|\omega\|_\infty\) **fail**. Sitting
+down decides regularity **fail**. Not a PDE retune **fail**.
+
 ---
 
 ## What is still the next write
 
 1. The residual tool names the holes in \(\mathcal{R}\).
    Miller \(\lambda_2^+\) is a different cut from hole 2.
+   \(\det_+\) is the same cut. Sit down.
    Neither is an a priori. Stretching budget is not an a priori (B15e).
    Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Finer (\(n>32\))
    stays a box knob (B22e). Do not spawn \(n=64\). B4c
