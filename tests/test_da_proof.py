@@ -73,6 +73,14 @@ class DaProofTests(unittest.TestCase):
         self.assertFalse(is_proof_ask(""))
         self.assertFalse(is_proof_ask("now what"))
         self.assertEqual(parse_problem(ask="RH proof chain please"), "RH")
+        ym_b = "Yang mills and bad can you finish those for me please"
+        self.assertTrue(is_proof_ask(ym_b))
+        self.assertEqual(parse_problems(ask=ym_b), ["NS", "YM"])
+        self.assertEqual(parse_problem(problem="YM"), "YM")
+        self.assertTrue((ROOT / "docs" / "YM-PROOF-CHAIN.md").is_file())
+        ym = run(out=Path(tempfile.mkdtemp()) / "da_proof_ym.json", problem="YM")
+        self.assertEqual(ym["problem"], "YM")
+        self.assertEqual(ym["counts"]["write"], 1)
         self.assertEqual(parse_problem(ask="Xavier Stokes"), "NS")
         rh = run(out=Path(tempfile.mkdtemp()) / "da_proof_rh.json", problem="RH")
         self.assertEqual(rh["problem"], "RH")
@@ -100,12 +108,13 @@ class DaProofTests(unittest.TestCase):
         both = run(out=Path(tempfile.mkdtemp()) / "da_proof_both.json", problem="", ask=both_ask)
         self.assertEqual(both["picked"], ["NS", "A"])
         self.assertEqual(len(both["chains"]), 2)
-        self.assertEqual(set(PROBLEMS), {"NS", "A", "RH"})
+        self.assertEqual(set(PROBLEMS), {"NS", "A", "RH", "YM"})
         self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))
         self.assertTrue((ROOT / "docs" / "DA-PROOF.md").is_file())
         self.assertTrue((ROOT / "docs" / "NS-PROOF-CHAIN.md").is_file())
         self.assertTrue((ROOT / "docs" / "A-PROOF-CHAIN.md").is_file())
         self.assertTrue((ROOT / "docs" / "RH-PROOF-CHAIN.md").is_file())
+        self.assertTrue((ROOT / "docs" / "YM-PROOF-CHAIN.md").is_file())
 
 
 if __name__ == "__main__":

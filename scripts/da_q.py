@@ -234,8 +234,9 @@ PAIR = {
         "The other far leftover is H_N >= -1/4."
     ),
     "withdrawn": (
-        "GNC. Goldbach detector / prime-indicator difference. "
-        "v_k vanishes on an actual Goldbach pair. Shelved. Not RH."
+        "Dark = GNC (dark-state / prime-indicator difference). "
+        "v_k vanishes on an actual Goldbach pair. Shelved. Not RH. "
+        "Another = Goldbach-shaped multi-rep, the corollary that sits."
     ),
     "not_these": (
         "Not the integer conjecture. Not T2 (fluids). "
@@ -462,7 +463,8 @@ def is_q_ask(ask: str) -> bool:
             r"\bbest gcd\b|\bgcd paper\b|\btheorem p\b|"
             r"\bwhere does q7\b|\bwhat about q6\b|"
             r"\bgoldbach\b|\bgold box\b|\bgnc\b|"
-            r"\bmulti.?rep\b|\bgoldbach.?shaped\b",
+            r"\bmulti.?rep\b|\bgoldbach.?shaped\b|"
+            r"\bdark.?state\b|\bdark and another\b|\bgoldbach has dark\b",
             text,
         )
     )

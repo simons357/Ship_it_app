@@ -98,10 +98,10 @@ proves \(-1\) does not prove \(-1/4\).
 Rank-one split \(A=uu^\top+D\). Bridge\(^*\) is the
 two-sparse case of the same matrix.
 
-**GNC stays withdrawn.** The Goldbach detector /
-prime-indicator difference vanishes on an actual
-Goldbach pair. Do not unshelve it. Do not glue
-Goldbach to RH or SND.
+**Dark and another.** Dark = GNC (dark-state /
+prime-indicator difference). Withdrawn. Another =
+Goldbach-shaped multi-rep, the corollary that sits.
+Do not unshelve GNC. Do not glue Goldbach to RH or SND.
 
 Other T-names on this desk are not this pair:
 T2 is fluids (Lemma 1 pass / Lemma 2 fail).

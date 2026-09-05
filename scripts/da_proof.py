@@ -272,6 +272,50 @@ RH_LINES = [
 ]
 
 
+YM_LINES = [
+    {
+        "n": 1,
+        "status": "have",
+        "text": (
+            "Gauge field. A connection on an SU(N) bundle, curvature F, "
+            "Yang-Mills action (1/4) int Tr F wedge *F."
+        ),
+    },
+    {
+        "n": 2,
+        "status": "have",
+        "text": (
+            "SM block. This desk's Lagrangian contains working YM: "
+            "SU(3)_c (QCD) and SU(2)_L before the VEV. Lineage both ways."
+        ),
+    },
+    {
+        "n": 3,
+        "status": "have",
+        "text": (
+            "A Lagrangian piece is not a gap. Local existence and "
+            "energy for classical YM are a different literature."
+        ),
+    },
+    {
+        "n": 4,
+        "status": "write",
+        "text": (
+            "WRITE. Mass gap: the Hamiltonian spectrum on the "
+            "vacuum-orthogonal subspace is bounded below by a positive constant."
+        ),
+    },
+    {
+        "n": 5,
+        "status": "follows",
+        "text": (
+            "If (4) sits, that gap is a theorem for this YM theory. "
+            "Still not NS. Still not Q. Still not Goldbach."
+        ),
+    },
+]
+
+
 PROBLEMS = {
     "NS": {
         "id": "NS",
@@ -398,6 +442,47 @@ PROBLEMS = {
             ),
         },
     },
+    "YM": {
+        "id": "YM",
+        "aliases": ("yang-mills", "yang mills", "ym"),
+        "slot": "U",
+        "name": "Yang-Mills mass gap",
+        "object": {
+            "name": "Yang-Mills Hamiltonian gap",
+            "slot": "U",
+            "english": "spectrum of the YM Hamiltonian bounded below by a positive constant",
+            "window": [
+                "SU(N) connection, curvature F, YM action",
+                "SM contains working YM blocks (SU(3)_c, SU(2)_L)",
+                "need: mass gap, a positive lower bound on the spectrum",
+                "a Lagrangian piece is not the gap",
+                "not NS, not Q, not Goldbach",
+            ],
+        },
+        "theorem": (
+            "For 4-dimensional quantum Yang-Mills with compact simple "
+            "gauge group, the Hamiltonian has a mass gap: the spectrum "
+            "on the vacuum-orthogonal subspace is bounded below by "
+            "a positive constant."
+        ),
+        "lines": YM_LINES,
+        "chain_doc": "docs/YM-PROOF-CHAIN.md",
+        "proceed": [
+            "a positive lower bound on the Hamiltonian spectrum",
+            "a named obstruction that the gap cannot sit on this desk",
+            "not the SM Lagrangian piece (that already sits)",
+            "not a slide onto Track B or Q",
+        ],
+        "if_write_sits": (
+            "If (4) sits, the gap is a theorem. Still not NS. Still not Q."
+        ),
+        "do_not": (
+            "Do not emit the SM YM block as the gap. "
+            "Do not glue YM onto NS, Q, or Goldbach."
+        ),
+        "mine": [],
+        "needed": [],
+    },
 }
 
 # Back-compat names for existing NS tests.
@@ -411,7 +496,7 @@ CLAIMS = [
         "ask_for_the_chain",
         "You can tell DA to write a proof chain by naming the problem",
         "pass",
-        "NS / Track B / Track A / Q1 / RH / Riemann. The operator does not need the chops.",
+        "NS / Track B / Track A / Q1 / RH / Riemann / Yang-Mills. The operator does not need the chops.",
     ),
     rec(
         "C2",
@@ -479,20 +564,23 @@ def _flag_problem(problem: str) -> str | None:
     key = raw.upper().replace("TRACK ", "").replace("TRACK", "")
     if key in ("B", "NS"):
         return "NS"
+    if key in ("YM", "YANG-MILLS", "YANG MILLS", "YANGMILLS"):
+        return "YM"
     if key in PROBLEMS:
         return key
     return None
 
 
 def parse_problems(ask: str = "", problem: str = "") -> list[str]:
-    """Problems named in the ask, in desk order NS / A / RH."""
+    """Problems named in the ask, in desk order NS / A / RH / YM."""
     text = f"{problem} {ask}".lower()
     found: list[str] = []
     flagged = _flag_problem(problem)
     if flagged:
         found.append(flagged)
     if re.search(
-        r"\btrack b\b|xavier|\bnavi\b|\bstokes\b|\bnavier\b|\bunaugmented\b|\bns\b",
+        r"\btrack b\b|xavier|\bnavi\b|\bstokes\b|\bnavier\b|\bunaugmented\b|\bns\b|"
+        r"yang.?mills.{0,24}\b(and )?(b|bad)\b|\b(b|bad)\b.{0,24}yang.?mills",
         text,
     ):
         if "NS" not in found:
@@ -503,6 +591,9 @@ def parse_problems(ask: str = "", problem: str = "") -> list[str]:
     if re.search(r"\brh\b|riemann", text):
         if "RH" not in found:
             found.append("RH")
+    if re.search(r"yang.?mills|\bym\b", text):
+        if "YM" not in found:
+            found.append("YM")
     return found or ["NS"]
 
 
@@ -527,7 +618,8 @@ def is_proof_ask(ask: str) -> bool:
             r"\bda proof\b|\bthe proof for (ns|navier|rh|riemann|track [ab]|q1)\b|"
             r"\btrack [ab]\b.*\bwrite\b|\bwrite\b.*\btrack [ab]\b|"
             r"\bwrite rh\b|\bmy best paper\b.*\b(rh|riemann|write)\b|"
-            r"\brh\b|\briemann\b",
+            r"\brh\b|\briemann\b|"
+            r"yang.?mills|\bym\b",
             text,
         )
     )

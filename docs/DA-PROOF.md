@@ -9,12 +9,14 @@ python3 scripts/da_machine.py proof
 python3 scripts/da_machine.py proof --problem NS
 python3 scripts/da_machine.py proof --problem A
 python3 scripts/da_machine.py proof --problem RH
+python3 scripts/da_machine.py proof --problem YM
 python3 scripts/da_machine.py next --ask "write me the proof chain for Navier-Stokes"
 python3 scripts/da_machine.py next --ask "RH proof chain please"
 python3 scripts/da_machine.py next --ask "Track B please write"
 python3 scripts/da_machine.py next --ask "track A write"
 python3 scripts/da_machine.py next --ask "Track B please write. track A write as well"
 python3 scripts/da_machine.py next --ask "use my best paper and write RH"
+python3 scripts/da_machine.py next --ask "Yang mills and bad can you finish those"
 ```
 
 Nothing is wrong with asking. That is the product.
@@ -24,6 +26,7 @@ Nothing is wrong with asking. That is the product.
 | Navier–Stokes / Track B | `--problem NS` or `Track B please write` | [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md) |
 | \(Q_1\) / Track A | `--problem A` or `track A write` | [`A-PROOF-CHAIN.md`](A-PROOF-CHAIN.md) |
 | Riemann hypothesis | `--problem RH` | [`RH-PROOF-CHAIN.md`](RH-PROOF-CHAIN.md) |
+| Yang–Mills mass gap | `--problem YM` or `Yang mills and bad` | [`YM-PROOF-CHAIN.md`](YM-PROOF-CHAIN.md) |
 
 Track A is the \(Q_1\) PDE. Theorem A already sits for
 that equation. Track B is classical NS. Do not glue.

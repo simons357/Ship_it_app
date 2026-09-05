@@ -78,6 +78,7 @@ class DaQTests(unittest.TestCase):
             ["have"] * 4 + ["follows", "open"],
         )
         self.assertTrue(is_q_ask("Yes Goldbach. Sorry. Please write"))
+        self.assertTrue(is_q_ask("So Goldbach has dark and another right?"))
         self.assertTrue((ROOT / "docs" / "GOLDBACH-CHAIN.md").is_file())
         self.assertEqual(
             [L["status"] for L in FLOOR_LINES],
