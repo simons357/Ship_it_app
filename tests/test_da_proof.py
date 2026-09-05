@@ -42,6 +42,9 @@ class DaProofTests(unittest.TestCase):
         self.assertEqual(by["C9"]["verdict"], "fail")
         self.assertEqual(by["C10"]["verdict"], "fail")
         self.assertEqual(by["C11"]["verdict"], "fail")
+        self.assertEqual(by["C12"]["verdict"], "fail")
+        self.assertEqual(by["C13"]["verdict"], "fail")
+        self.assertEqual(by["C14"]["verdict"], "fail")
         self.assertTrue(payload["meta"]["nothing_wrong_with_asking"])
         self.assertTrue(payload["meta"]["q_is_not_rh"])
         self.assertTrue(payload["meta"]["a_is_not_b"])
@@ -110,7 +113,10 @@ class DaProofTests(unittest.TestCase):
         both = run(out=Path(tempfile.mkdtemp()) / "da_proof_both.json", problem="", ask=both_ask)
         self.assertEqual(both["picked"], ["NS", "A"])
         self.assertEqual(len(both["chains"]), 2)
-        self.assertEqual(set(PROBLEMS), {"NS", "A", "RH", "YM", "BSD", "HODGE"})
+        self.assertEqual(
+            set(PROBLEMS),
+            {"NS", "A", "RH", "YM", "BSD", "HODGE", "POINCARE", "PNP"},
+        )
         self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))
         self.assertTrue((ROOT / "docs" / "DA-PROOF.md").is_file())
         self.assertTrue((ROOT / "docs" / "NS-PROOF-CHAIN.md").is_file())
@@ -119,6 +125,8 @@ class DaProofTests(unittest.TestCase):
         self.assertTrue((ROOT / "docs" / "YM-PROOF-CHAIN.md").is_file())
         self.assertTrue((ROOT / "docs" / "BSD-PROOF-CHAIN.md").is_file())
         self.assertTrue((ROOT / "docs" / "HODGE-PROOF-CHAIN.md").is_file())
+        self.assertTrue((ROOT / "docs" / "POINCARE-PROOF-CHAIN.md").is_file())
+        self.assertTrue((ROOT / "docs" / "PNP-PROOF-CHAIN.md").is_file())
         self.assertTrue(is_proof_ask("Please write BSD"))
         self.assertEqual(parse_problem(ask="Please write BSD"), "BSD")
         self.assertEqual(parse_problem(problem="BSD"), "BSD")
@@ -201,6 +209,32 @@ class DaProofTests(unittest.TestCase):
         self.assertEqual(both["chains"][0]["lines"][5]["status"], "write")
         self.assertIsNone(both["chains"][0].get("best_paper"))
         self.assertIn("H^{p,p}", both["theorem"]["aimed"])
+        self.assertTrue(is_proof_ask("Smoothness and existence"))
+        self.assertEqual(parse_problem(ask="Smoothness and existence"), "NS")
+        self.assertTrue(is_proof_ask("point care conjecture"))
+        self.assertEqual(parse_problem(ask="point care conjecture"), "POINCARE")
+        self.assertTrue(is_proof_ask("P versus NP"))
+        self.assertEqual(parse_problem(ask="P versus NP"), "PNP")
+        self.assertFalse(is_attempt_ask("P versus NP"))
+        poincare = run(
+            out=Path(tempfile.mkdtemp()) / "da_proof_poincare.json",
+            problem="POINCARE",
+        )
+        self.assertTrue(poincare["chains"][0]["literature_complete"])
+        self.assertTrue(poincare["chains"][0]["completion"]["leftover_sits"])
+        self.assertEqual(poincare["chains"][0]["completion"]["not_done"], [])
+        self.assertIsNone(poincare["write_n"])
+        pnp = run(out=Path(tempfile.mkdtemp()) / "da_proof_pnp.json", problem="PNP")
+        self.assertEqual(pnp["write_n"], 5)
+        self.assertFalse(pnp["chains"][0]["completion"]["leftover_sits"])
+        letter = (
+            "Smoothness and existence. point care conjecture. "
+            "one on Zeta. P versus NP. SFE interpretation."
+        )
+        self.assertEqual(
+            parse_problems(ask=letter),
+            ["NS", "RH", "POINCARE", "PNP"],
+        )
 
 
 if __name__ == "__main__":

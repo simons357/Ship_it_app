@@ -12,7 +12,9 @@ python3 scripts/da_machine.py next --ask "use my best paper and write RH"
 
 Your best paper on this desk is the August inverse-GCD
 package (Zenodo 22045478) plus the spectral-floor
-retraction. That paper is **Q**. It is not line (6).
+retraction. Route C (Zenodo 22050963) is conditional
+on two analytic gaps. Q6 (22050962) is inverse-GCD.
+Those papers are **Q**. They are not line (6).
 Theorem P is not RH. Do not glue.
 
 ---

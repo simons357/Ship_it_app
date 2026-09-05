@@ -20,6 +20,9 @@ an open WRITE by printing it is not the job.
 | write RH from the GCD paper | yes | no — (6) open; paper is Q |
 | Please write BSD / spectral framework | yes | no — (6) open; paper is Q prototype |
 | Hodge conjecture? + BSD final.pdf | yes (both) | no — Hodge (6) open; file is BSD |
+| smoothness and existence / Zenodo NS | yes (B chain) | no — (6) open; Phi/SND are not B |
+| point care / Poincaré | yes | yes — Perelman literature; not a DA theorem |
+| P versus NP / SFE letter | yes | no — SFE shelved; TM write open |
 | is Navi done? | yes (split) | classical no |
 | GCD paper / electoral floor | yes | sitting floors yes; retracted floor no |
 | Q6. Spectral floor | yes | \(H_N\ge-1\) yes; sharp \(-1/4\) no |

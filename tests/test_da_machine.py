@@ -38,6 +38,14 @@ class DaMachineTests(unittest.TestCase):
         self.assertEqual(hodge["domain"], "U")
         self.assertEqual(hodge["verdict"], "open")
         self.assertIn("Hodge", hodge["reason"])
+        poincare = classify_claim("point care conjecture")
+        self.assertEqual(poincare["domain"], "U")
+        self.assertIn("Poincaré", poincare["reason"])
+        pnp = classify_claim("P versus NP")
+        self.assertEqual(pnp["domain"], "U")
+        self.assertIn("P vs NP", pnp["reason"])
+        sfe = classify_claim("SFE harmonic H(x) proves P != NP")
+        self.assertEqual(sfe["verdict"], "fail")
 
     def test_unassigned_stays_open(self):
         r = classify_claim("hello there")

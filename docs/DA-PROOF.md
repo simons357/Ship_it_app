@@ -24,6 +24,10 @@ python3 scripts/da_machine.py next --ask "spectral framework"
 python3 scripts/da_machine.py next --ask "BSD final"
 python3 scripts/da_machine.py proof --problem HODGE
 python3 scripts/da_machine.py next --ask "Hodge conjecture?"
+python3 scripts/da_machine.py proof --problem POINCARE
+python3 scripts/da_machine.py next --ask "point care conjecture"
+python3 scripts/da_machine.py proof --problem PNP
+python3 scripts/da_machine.py next --ask "P versus NP"
 ```
 
 Nothing is wrong with asking. That is the product.
@@ -36,6 +40,8 @@ Nothing is wrong with asking. That is the product.
 | Yang–Mills mass gap | `--problem YM` or `Yang mills and bad` | [`YM-PROOF-CHAIN.md`](YM-PROOF-CHAIN.md) |
 | Birch–Swinnerton-Dyer | `--problem BSD` or `Please write BSD` / `spectral framework` / `BSD final` | [`BSD-PROOF-CHAIN.md`](BSD-PROOF-CHAIN.md) |
 | Hodge conjecture | `--problem HODGE` or `Hodge conjecture?` | [`HODGE-PROOF-CHAIN.md`](HODGE-PROOF-CHAIN.md) |
+| Poincaré conjecture | `--problem POINCARE` or `point care` | [`POINCARE-PROOF-CHAIN.md`](POINCARE-PROOF-CHAIN.md) |
+| P versus NP | `--problem PNP` or `P versus NP` | [`PNP-PROOF-CHAIN.md`](PNP-PROOF-CHAIN.md) |
 
 Track A is the \(Q_1\) PDE. Theorem A already sits for
 that equation. Track B is classical NS. Do not glue.
@@ -69,5 +75,7 @@ Best A (Q1 + renormalization) and furthest RH, dream team looking, legal write: 
 | Theorem A is classical Navier–Stokes | **fail** |
 | Please finish bad closes leftover (6) | **fail** |
 | `BSD final.pdf` is the Hodge conjecture | **fail** |
+| SFE harmonic \(H(x)\) proves \(\mathrm{P}\neq\mathrm{NP}\) | **fail** |
+| Poincaré is still an open WRITE | **fail** |
 | The WRITE line may sit later | **open** |
 | More named problems may get a ground-floor chain | **open** |

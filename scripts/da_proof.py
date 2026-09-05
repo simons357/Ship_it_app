@@ -440,6 +440,112 @@ HODGE_LINES = [
 ]
 
 
+POINCARE_LINES = [
+    {
+        "n": 1,
+        "status": "have",
+        "text": (
+            "Object. A closed 3-manifold M. Simply connected means π_1(M)=0."
+        ),
+    },
+    {
+        "n": 2,
+        "status": "have",
+        "text": (
+            "Statement. M is homeomorphic to S^3."
+        ),
+    },
+    {
+        "n": 3,
+        "status": "have",
+        "text": (
+            "Ricci flow. Hamilton: ∂_t g = -2 Ric(g). Singularities remain."
+        ),
+    },
+    {
+        "n": 4,
+        "status": "have",
+        "text": (
+            "Surgery. Perelman: entropy, no local collapsing, surgery at necks."
+        ),
+    },
+    {
+        "n": 5,
+        "status": "have",
+        "text": (
+            "Extinction. On a simply connected closed 3-manifold the flow "
+            "becomes extinct after finitely many surgeries. Pieces are spherical."
+        ),
+    },
+    {
+        "n": 6,
+        "status": "have",
+        "text": (
+            "The statement sits. Every simply connected closed 3-manifold "
+            "is homeomorphic to S^3 (Perelman; literature). No WRITE line."
+        ),
+    },
+    {
+        "n": 7,
+        "status": "have",
+        "text": (
+            "Geometrization. The same method gives Thurston geometrization. "
+            "Literature. Still not NS. Still not P vs NP."
+        ),
+    },
+]
+
+
+PNP_LINES = [
+    {
+        "n": 1,
+        "status": "have",
+        "text": (
+            "P. Languages decided by a deterministic Turing machine in time n^{O(1)}."
+        ),
+    },
+    {
+        "n": 2,
+        "status": "have",
+        "text": (
+            "NP. Languages with a polynomial-time verifier, equivalently a "
+            "nondeterministic TM in polynomial time."
+        ),
+    },
+    {
+        "n": 3,
+        "status": "have",
+        "text": (
+            "NP-complete. Cook-Levin: SAT is NP-complete. Polynomial-time reductions."
+        ),
+    },
+    {
+        "n": 4,
+        "status": "have",
+        "text": (
+            "SFE is not the model. The letter's H(x) is a field path, not a TM. "
+            "Shelved. It does not decide a language in P or NP."
+        ),
+    },
+    {
+        "n": 5,
+        "status": "write",
+        "text": (
+            "WRITE. A proof that P=NP or that P≠NP in the Turing-machine model. "
+            "Relativization, natural proofs, and algebrization are barriers, not the write."
+        ),
+    },
+    {
+        "n": 6,
+        "status": "follows",
+        "text": (
+            "If (5) sits, every NP language is in P, or some NP language is not. "
+            "Still not NS. Still not Hodge. Still not SFE."
+        ),
+    },
+]
+
+
 PROBLEMS = {
     "NS": {
         "id": "NS",
@@ -721,7 +827,86 @@ PROBLEMS = {
             "Do not glue Hodge onto BSD, Q, or NS. "
             "Do not emit Lefschetz (1,1) as the full write. "
             "Do not emit the Hodge Laplacian as the conjecture. "
-            "Do not emit BSD final.pdf as Hodge."
+            "Do not emit BSD final.pdf as Hodge. Do not emit SFE as Hodge."
+        ),
+        "mine": [],
+        "needed": [],
+    },
+    "POINCARE": {
+        "id": "POINCARE",
+        "aliases": ("poincare", "poincaré", "point care"),
+        "slot": "U",
+        "name": "Poincaré conjecture",
+        "object": {
+            "name": "simply connected closed 3-manifolds",
+            "slot": "U",
+            "english": "every simply connected closed 3-manifold is S^3",
+            "window": [
+                "closed 3-manifold M, π_1(M)=0",
+                "need: M homeomorphic to S^3",
+                "Perelman sits (literature, 2002-2003)",
+                "this desk reprints; it did not prove it just now",
+                "not NS smoothness, not P vs NP, not SFE",
+            ],
+        },
+        "theorem": (
+            "Every closed simply connected 3-manifold is homeomorphic "
+            "to the 3-sphere."
+        ),
+        "lines": POINCARE_LINES,
+        "chain_doc": "docs/POINCARE-PROOF-CHAIN.md",
+        "proceed": [
+            "nothing to write; Perelman sits",
+            "a reprint is not a new theorem of this desk",
+        ],
+        "if_write_sits": (
+            "There is no WRITE. Perelman sits (literature). "
+            "Still not NS smoothness."
+        ),
+        "do_not": (
+            "Do not emit this reprint as a theorem of DA. "
+            "Do not glue Poincaré onto Track B or SFE."
+        ),
+        "mine": [],
+        "needed": [],
+        "literature_complete": True,
+    },
+    "PNP": {
+        "id": "PNP",
+        "aliases": ("p vs np", "p versus np", "p=np"),
+        "slot": "U",
+        "name": "P versus NP",
+        "object": {
+            "name": "P vs NP in the Turing model",
+            "slot": "U",
+            "english": "a TM proof that P=NP or that P≠NP",
+            "window": [
+                "P = deterministic poly-time TM",
+                "NP = poly-time verifier / nondeterministic TM",
+                "need: P=NP or P≠NP in that model",
+                "SFE H(x) is not a TM",
+                "the enclosed letter is not leftover (5)",
+            ],
+        },
+        "theorem": (
+            "Either P=NP or P≠NP, proved for languages decided by "
+            "Turing machines with a polynomial-time clock."
+        ),
+        "lines": PNP_LINES,
+        "chain_doc": "docs/PNP-PROOF-CHAIN.md",
+        "proceed": [
+            "a TM proof that some NP language is not in P",
+            "a TM proof that every NP language is in P",
+            "not an SFE / resonance / harmonic-field rewrite",
+            "not a barrier paper reprinted as the close",
+        ],
+        "if_write_sits": (
+            "If (5) sits, every NP language is in P, or some NP language is not. "
+            "Still not SFE."
+        ),
+        "do_not": (
+            "Do not emit the SFE letter as P≠NP. SFE is shelved. "
+            "Do not glue a field path onto a Turing machine."
         ),
         "mine": [],
         "needed": [],
@@ -739,7 +924,7 @@ CLAIMS = [
         "ask_for_the_chain",
         "You can tell DA to write a proof chain by naming the problem",
         "pass",
-        "NS / Track B / Track A / Q1 / RH / Riemann / Yang-Mills / BSD / Hodge. The operator does not need the chops.",
+        "NS / Track B / Track A / Q1 / RH / Riemann / Yang-Mills / BSD / Hodge / Poincaré / P vs NP. The operator does not need the chops.",
     ),
     rec(
         "C2",
@@ -811,6 +996,27 @@ CLAIMS = [
         "fail",
         "That file is the BSD zeta prototype. A Hodge class is not L(E,s).",
     ),
+    rec(
+        "C12",
+        "sfe_proves_pnp",
+        "The SFE harmonic convergence H(x) proves P≠NP",
+        "fail",
+        "SFE is shelved. H(x) is not a Turing machine. The letter assumes the close.",
+    ),
+    rec(
+        "C13",
+        "poincare_open",
+        "The Poincaré conjecture is still an open WRITE on this desk",
+        "fail",
+        "Perelman sits in the literature. DA reprints. No WRITE line.",
+    ),
+    rec(
+        "C14",
+        "zenodo_ns_is_smoothness",
+        "The Zenodo NS / Phi / SND papers are classical smoothness and existence",
+        "fail",
+        "Phi is Track A. SND/Ring are conditional. Status note: unconditional 3D NS is not claimed.",
+    ),
 ]
 
 
@@ -827,13 +1033,17 @@ def _flag_problem(problem: str) -> str | None:
         return "BSD"
     if key in ("HODGE", "HODGE CONJECTURE"):
         return "HODGE"
+    if key in ("POINCARE", "POINCARÉ", "POINT CARE", "POINTCARE"):
+        return "POINCARE"
+    if key in ("PNP", "P VS NP", "P VERSUS NP", "P=NP"):
+        return "PNP"
     if key in PROBLEMS:
         return key
     return None
 
 
 def parse_problems(ask: str = "", problem: str = "") -> list[str]:
-    """Problems named in the ask, in desk order NS / A / RH / YM / BSD / HODGE."""
+    """Problems named in the ask, in desk order NS / A / RH / YM / BSD / HODGE / POINCARE / PNP."""
     text = f"{problem} {ask}".lower()
     found: list[str] = []
     flagged = _flag_problem(problem)
@@ -842,6 +1052,7 @@ def parse_problems(ask: str = "", problem: str = "") -> list[str]:
     if re.search(
         r"\btrack b\b|xavier|\bnavi\b|\bstokes\b|\bnavier\b|\bunaugmented\b|\bns\b|"
         r"\bfinish bad\b|\bbad for me\b|"
+        r"smoothness and existence|existence and smoothness|"
         r"yang.?mills.{0,24}\b(and )?(b|bad)\b|\b(b|bad)\b.{0,24}yang.?mills",
         text,
     ):
@@ -850,7 +1061,7 @@ def parse_problems(ask: str = "", problem: str = "") -> list[str]:
     if re.search(r"\btrack a\b|\bq_?1\b", text):
         if "A" not in found:
             found.append("A")
-    if re.search(r"\brh\b|riemann", text):
+    if re.search(r"\brh\b|riemann|\bzeta\b", text):
         if "RH" not in found:
             found.append("RH")
     if re.search(r"yang.?mills|\bym\b", text):
@@ -866,6 +1077,12 @@ def parse_problems(ask: str = "", problem: str = "") -> list[str]:
     ):
         if "BSD" not in found:
             found.append("BSD")
+    if re.search(r"poincar|point care|pointcare", text):
+        if "POINCARE" not in found:
+            found.append("POINCARE")
+    if re.search(r"\bp\s*(versus|vs\.?)\s*np\b|\bp\s*=\s*np\b|\bp\s*≠\s*np\b", text):
+        if "PNP" not in found:
+            found.append("PNP")
     return found or ["NS"]
 
 
@@ -890,12 +1107,15 @@ def is_proof_ask(ask: str) -> bool:
             r"\bda proof\b|\bthe proof for (ns|navier|rh|riemann|track [ab]|q1)\b|"
             r"\btrack [ab]\b.*\bwrite\b|\bwrite\b.*\btrack [ab]\b|"
             r"\bwrite rh\b|\bmy best paper\b.*\b(rh|riemann|write)\b|"
-            r"\brh\b|\briemann\b|"
+            r"\brh\b|\briemann\b|\bzeta\b|"
             r"yang.?mills|\bym\b|"
             r"\bbsd\b|birch|swinnerton|"
             r"spectral.?framework|bsd_spectral_framework|"
             r"bsd%20final|bsd.?final|"
             r"\bhodge\b|"
+            r"poincar|point care|pointcare|"
+            r"\bp\s*(versus|vs\.?)\s*np\b|"
+            r"smoothness and existence|existence and smoothness|"
             r"\bfinish bad\b",
             text,
         )
@@ -914,18 +1134,20 @@ def _completion(spec: dict) -> dict:
     have = [L["n"] for L in spec["lines"] if L["status"] == "have"]
     write = [L["n"] for L in spec["lines"] if L["status"] == "write"]
     follows = [L["n"] for L in spec["lines"] if L["status"] == "follows"]
+    leftover_sits = not write
     return {
         "done": have,
         "not_done": write,
         "waiting": follows,
-        "emit_is_not_finish": True,
-        "leftover_sits": False,
+        "emit_is_not_finish": not leftover_sits,
+        "leftover_sits": leftover_sits,
     }
 
 
 def _chain(pid: str) -> dict:
     spec = PROBLEMS[pid]
-    write_n = next(L["n"] for L in spec["lines"] if L["status"] == "write")
+    writes = [L["n"] for L in spec["lines"] if L["status"] == "write"]
+    write_n = writes[0] if writes else None
     return {
         "problem": pid,
         "theorem": {"aimed": spec["theorem"], "name": spec["name"]},
@@ -939,6 +1161,7 @@ def _chain(pid: str) -> dict:
         "write_n": write_n,
         "chain_doc": spec["chain_doc"],
         "this_pde_complete": spec.get("this_pde_complete", False),
+        "literature_complete": spec.get("literature_complete", False),
         "best_paper": spec.get("best_paper"),
         "completion": _completion(spec),
         "counts": {
@@ -954,7 +1177,7 @@ def run(out: Path | None = None, problem: str = "NS", ask: str = "") -> dict:
     pids = parse_problems(ask=ask, problem=problem)
     chains = [_chain(pid) for pid in pids]
     first = chains[0]
-    write_ns = [c["write_n"] for c in chains]
+    write_ns = [c["write_n"] for c in chains if c["write_n"] is not None]
     payload = {
         "meta": {
             "question": "write the proof chain for " + ", ".join(pids),
@@ -994,11 +1217,18 @@ def run(out: Path | None = None, problem: str = "NS", ask: str = "") -> dict:
             "open": sum(1 for c in CLAIMS if c["verdict"] == "open"),
         },
         "next_da_move": (
-            "Line "
-            + "/".join(f"({n})" for n in write_ns)
-            + " is the write. Classify one candidate. "
-            "If it sits, the THEN lines follow. That is the close. "
-            "A is not B."
+            (
+                "Line "
+                + "/".join(f"({n})" for n in write_ns)
+                + " is the write. Classify one candidate. "
+                "If it sits, the THEN lines follow. That is the close. "
+                "A is not B."
+            )
+            if write_ns
+            else (
+                "No WRITE line on this pick. Literature sits. "
+                "A reprint is not a new theorem of this desk."
+            )
         ),
     }
     dest = Path(out) if out is not None else Path("results/da_proof.json")
@@ -1025,8 +1255,11 @@ def _print_one_chain(chain: dict) -> None:
     print("COMPLETION")
     print("  done:", " ".join(f"({n})" for n in done["done"]) or "(none)")
     print("  not done:", " ".join(f"({n})" for n in done["not_done"]))
-    print("  waiting on the write:", " ".join(f"({n})" for n in done["waiting"]))
-    print("  Emit is not a finish. Leftover does not sit.")
+    print("  waiting on the write:", " ".join(f"({n})" for n in done["waiting"]) or "(none)")
+    if done["leftover_sits"]:
+        print("  Leftover sits in the literature. A reprint is not a new theorem.")
+    else:
+        print("  Emit is not a finish. Leftover does not sit.")
     print()
     print(chain["if_write_sits"])
     print(chain["do_not"])

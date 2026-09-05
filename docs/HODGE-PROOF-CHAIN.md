@@ -110,7 +110,7 @@ Classify one:
 | Inverse-GCD / Theorem P | Q |
 | Hodge Laplacian \(\to\) Betti | vocabulary on U, not algebraic cycles |
 | Track A / Track B | Navier–Stokes |
-| SFE / Harmonic Blueprint | shelved |
+| SFE / Harmonic Blueprint | shelved; SFE coherence is not an algebraic cycle |
 
 Machine: [`DA-PROOF.md`](DA-PROOF.md)  
 BSD chain: [`BSD-PROOF-CHAIN.md`](BSD-PROOF-CHAIN.md)

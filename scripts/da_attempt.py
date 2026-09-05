@@ -781,6 +781,7 @@ def is_attempt_ask(ask: str) -> bool:
         r"\bmy best paper\b.*\bwrite\b|\bwrite\b.*\brh\b|"
         r"spectral.?framework|bsd_spectral_framework|"
         r"bsd%20final|bsd.?final|\bhodge\b|"
+        r"poincar|point care|\bp\s*(versus|vs\.?)\s*np\b|"
         r"\bwrite bsd\b|\bplease write bsd\b|\bfinish bad\b",
         text,
     ):

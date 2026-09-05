@@ -24,6 +24,8 @@ Full exam of the asks: [`DA-STUDY.md`](DA-STUDY.md).
 | Track A, uniform \(H^1\) as \(\varepsilon\to 0\) | **no** — `A_uniform_H1` open |
 | Track B, classical NS (Navi / unaugmented) | **no** — line (6) does not sit |
 | Hodge conjecture | **no** — line (6) does not sit |
+| Poincaré conjecture | **yes** — Perelman (literature) |
+| P versus NP | **no** — TM write open; SFE letter is not that write |
 | DA wrote the chains | **yes** — that is the study |
 | Theorem A is classical NS | **no** — different equation |
 

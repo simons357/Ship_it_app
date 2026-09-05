@@ -7,6 +7,7 @@ Say to DA: `python3 scripts/da_machine.py proof --problem NS`
 or: `next --ask "write me the proof chain for Navier-Stokes"`  
 or: `next --ask "Track B please write"`  
 or: `next --ask "Please finish bad for me please. So I can complete proof chain"`  
+or: `next --ask "Smoothness and existence"`  
 Track A is a different equation: [`A-PROOF-CHAIN.md`](A-PROOF-CHAIN.md).
 
 Finishing bad is printing this chain and naming

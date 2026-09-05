@@ -66,7 +66,7 @@ freestyle. Not a vote. Not a séance.
 | Study | `study` | can DA do the asks | emit as a solver pass |
 | Q | `q` | inverse-GCD paper, floors, Q6 / Q7, Goldbach-shaped \(R\ge-2/9\) | glue to RH or B; mint Q7; unshelve GNC; claim the integer conjecture |
 | Done | `done` | is NS done? A this PDE yes; B no | emit as QED |
-| Proof | `proof` | write the NS / A / RH / YM / BSD / Hodge proof chain | QED without the WRITE line; A is not B; Q is not BSD; BSD final.pdf is not Hodge |
+| Proof | `proof` | write the NS / A / RH / YM / BSD / Hodge / Poincaré / P vs NP chain | QED without the WRITE line; SFE is not P≠NP; Poincaré sits in the literature |
 | Repair | `repair` | take A, SND, or H; name the fault and the write | export A onto B |
 | Attempt | `attempt` | best A and RH; dream team looks; legal write | vote a missing line |
 | Brute | `brute` | finite list vs all-data write | quantum / try-every as a close |
