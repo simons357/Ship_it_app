@@ -124,6 +124,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Chae",
+        ["Constantin", "Beirao-Berselli", "Grujic"],
+        "Triebel-Lizorkin regularity of xi trades against integrability of |omega|. That is still an if. It is not all-data A1.",
+        "B",
+    ),
+    turn(
         "Giga-Miura",
         ["Constantin", "Beirao-Berselli"],
         "Type I plus uniformly continuous direction prevents blow-up. That is two ifs. It is not all-data A1.",
@@ -504,6 +510,13 @@ CLAIMS = [
         "fail",
         "Acta 2009: 2D and axisymmetric no-swirl. 3D remains a door. A Liouville theorem is not an a priori. Gabriel Koch, not Herbert.",
     ),
+    rec(
+        "L36",
+        "chae_if_is_all_data_a1",
+        "Chae Triebel-Lizorkin geometric if is all-data A1",
+        "fail",
+        "RMI 2007: direction in a Triebel-Lizorkin norm trades against |omega|. Still an if. All-data A1 stays blank.",
+    ),
 ]
 
 
@@ -519,6 +532,7 @@ KINGDOMS = [
     {"name": "Partial regularity", "who": "Caffarelli, Kohn", "slot": "B"},
     {"name": "Geometry", "who": "Constantin, Fefferman", "slot": "B"},
     {"name": "Geometric if (weaker than CF)", "who": "Beirao-Berselli", "slot": "B"},
+    {"name": "Triebel-Lizorkin geometric if", "who": "Chae", "slot": "B"},
     {"name": "Type I plus continuous direction", "who": "Giga-Miura", "slot": "B"},
     {"name": "Double-cone geometric if", "who": "Lei-Ren-Tian", "slot": "B"},
     {"name": "Axisymmetric Type I", "who": "CSTY", "slot": "B"},

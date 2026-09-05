@@ -37,6 +37,7 @@ in your slot.
 | Constantin | geometry | Stretching dies **if** aligned. CONC is not that if. The 1996 Euler if is a different equation. | all-data alignment; Euler if \(=\) NS A1 |
 | Fefferman | geometry | Do not glue Ring to Biot–Savart. Pretty-damn-close is that glue. | the slogan |
 | Beirão da Veiga–Berselli | geometric if | We weakened the Lipschitz if. The if remains an if. It is not all-data A1. | weaker if \(=\) all-data alignment |
+| Chae | Triebel–Lizorkin geometric if | Triebel–Lizorkin regularity of \(\xi\) trades against integrability of \(\lvert\omega\rvert\). Still an if. It is not all-data A1. | TL if \(=\) all-data alignment |
 | Giga–Miura | Type I / continuous direction | Type I plus uniformly continuous direction prevents blow-up. Two ifs. It is not all-data A1. | Type I + continuity \(=\) all-data alignment |
 | Lei–Ren–Tian | double-cone geometric if | If vorticity stays in a double cone on high-magnitude sets, the solution is regular. Still an if. It is not all-data A1. | double cone \(=\) all-data alignment |
 | CSTY | axisymmetric Type I | Axisymmetric Type I is out. Symmetry plus a scale-invariant rate. Not an a priori on \(X\). | axisymmetric Type I \(=\) bound on \(X\) |
@@ -118,6 +119,7 @@ in your slot.
 | Neustupa–Penel one-component if is all-data regularity | **fail** |
 | Escauriaza–Seregin–Šverák \(L^3\) endpoint closes \(X\) | **fail** |
 | KNSS Liouville for bounded ancient solutions closes \(X\) | **fail** |
+| Chae Triebel–Lizorkin geometric if is all-data A1 | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

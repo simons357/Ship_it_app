@@ -88,6 +88,9 @@ LEADS = [
     lead("Beirao-Berselli", "geometric if / weaker than CF", "B", "living",
          "We weakened the Lipschitz if. The if remains an if. It is not all-data A1.",
          "weaker if = all-data alignment"),
+    lead("Chae", "Triebel-Lizorkin geometric if", "B", "living",
+         "Triebel-Lizorkin regularity of xi trades against integrability of |omega|. Still an if. It is not all-data A1.",
+         "TL if = all-data alignment"),
     lead("Giga-Miura", "Type I / continuous direction", "B", "living",
          "Type I plus uniformly continuous direction prevents blow-up. Two ifs. It is not all-data A1.",
          "Type I + continuity = all-data alignment"),
@@ -212,7 +215,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -407,6 +410,13 @@ CLAIMS = [
         "KNSS Liouville for bounded ancient solutions closes X",
         "fail",
         "3D remains a door. A Liouville theorem is not an a priori. Gabriel Koch, not Herbert.",
+    ),
+    rec(
+        "R28",
+        "chae_if_is_all_data_a1",
+        "Chae Triebel-Lizorkin geometric if is all-data A1",
+        "fail",
+        "Direction plus magnitude is still an if. All-data A1 stays blank.",
     ),
 ]
 

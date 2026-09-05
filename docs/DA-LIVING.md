@@ -35,6 +35,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Partial regularity | Caffarelli, Kohn | singular set small | small \(=\) empty |
 | Geometry | Constantin, Fefferman | depletion *if* aligned | CONC \(\Rightarrow\) alignment |
 | Geometric if (weaker than CF) | Beirão da Veiga–Berselli | weaker direction space still regularizes | the if is all-data A1 |
+| Triebel–Lizorkin geometric if | Chae | direction in a Triebel–Lizorkin norm trades against \(\lvert\omega\rvert\) | the if is all-data A1 |
 | Type I plus continuous direction | Giga–Miura | Type I and uniform continuity prevent blow-up | two ifs are all-data A1 |
 | Double-cone geometric if | Lei–Ren–Tian | vorticity in a double cone on high-magnitude sets regularizes | the if is all-data A1 |
 | Axisymmetric Type I | Chen–Strain–Tsai–Yau | axisymmetric Type I blow-up is out | those two restrictions close \(X\) |
@@ -136,6 +137,12 @@ if. Direction in a weaker space still regularizes. The if
 remains an if. It is not all-data A1. This box is not
 aligned. Hugo, Charles — do not cash a weaker if as the
 blank.
+
+**Chae.** Triebel–Lizorkin regularity of \(\xi\) trades
+against integrability of \(\lvert\omega\rvert\) (RMI 2007).
+That is still an if. It is not all-data A1. Peter, Hugo,
+Zoran — a mixed norm is not the blank. Scheffer is not
+in this room.
 
 **Giga–Miura.** Type I plus uniformly continuous
 direction prevents blow-up. That is two ifs. It is not
@@ -287,6 +294,7 @@ scores the process, not a theorem you did not prove.
 | Neustupa–Penel one-component if is all-data regularity | **fail** |
 | Escauriaza–Seregin–Šverák \(L^3\) endpoint closes \(X\) | **fail** |
 | KNSS Liouville for bounded ancient solutions closes \(X\) | **fail** |
+| Chae Triebel–Lizorkin geometric if is all-data A1 | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

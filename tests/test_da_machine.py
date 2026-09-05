@@ -299,6 +299,12 @@ class DaMachineTests(unittest.TestCase):
         knss = classify_claim("KNSS ancient Liouville on a vorticity packet")
         self.assertEqual(knss["domain"], "B")
         self.assertEqual(knss["verdict"], "open")
+        chae = classify_claim("seat Chae as a wall on the living bench")
+        self.assertEqual(chae["domain"], "U")
+        self.assertEqual(chae["verdict"], "open")
+        tl = classify_claim("Chae Triebel-Lizorkin geometric if on a vorticity packet")
+        self.assertEqual(tl["domain"], "B")
+        self.assertEqual(tl["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
