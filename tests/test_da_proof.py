@@ -130,6 +130,11 @@ class DaProofTests(unittest.TestCase):
         self.assertTrue((ROOT / "docs" / "A-PROOF-CHAIN.md").is_file())
         self.assertTrue((ROOT / "docs" / "THEOREM-A-DEPOSIT.md").is_file())
         self.assertIn("Not classical", (ROOT / "docs" / "THEOREM-A-DEPOSIT.md").read_text())
+        bpdf = ROOT / "docs" / "TRACK-B-CHAIN.pdf"
+        self.assertTrue(bpdf.is_file())
+        self.assertTrue(bpdf.read_bytes().startswith(b"%PDF"))
+        self.assertGreater(bpdf.stat().st_size, 1000)
+        self.assertTrue((ROOT / "docs" / "NS-PROOF-CHAIN.md").read_text().count("WRITE (6) open"))
         self.assertTrue((ROOT / "docs" / "THEOREM-A-Q1.pdf").is_file())
         self.assertTrue((ROOT / "docs" / "THEOREM-A-Q1.pdf").read_bytes().startswith(b"%PDF"))
         self.assertTrue((ROOT / "tex" / "theorem-a-q1.tex").is_file())

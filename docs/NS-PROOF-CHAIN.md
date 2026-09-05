@@ -14,6 +14,9 @@ Finishing bad is printing this chain and naming
 leftover (6). It is not closing (6). Emit is not
 QED. `(7)–(9)` wait on (6).
 
+Paper PDF of this chain (WRITE (6) open, not QED):
+[`TRACK-B-CHAIN.pdf`](TRACK-B-CHAIN.pdf).
+
 RH is a different problem: [`RH-PROOF-CHAIN.md`](RH-PROOF-CHAIN.md).
 
 ---
