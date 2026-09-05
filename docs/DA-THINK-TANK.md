@@ -9,6 +9,7 @@ Living session (now-bench papers): `python3 scripts/da_machine.py living`
 Lead sweep (every chair): `python3 scripts/da_machine.py leads`  
 Living roster: `python3 scripts/da_machine.py now`  
 Live feed (LIGO / LHC / PDG): `python3 scripts/da_machine.py feed`  
+DA tick (agent-shaped): `python3 scripts/da_machine.py agent`  
 Scene: `docs/DA-SESSION.md`  
 Living scene: `docs/DA-LIVING.md`  
 Leads: `docs/DA-LEADS.md`  
@@ -31,7 +32,7 @@ Einstein · Tesla · Feynman · Weyl · Wigner · von Neumann
 LVK · EHT · DESI · IPTA / NANOGrav · PDG + LHC · LMFDB / analytic NT · current math.AP authors
 
 **Living fluids (now-bench session)**  
-Tao · Šverák · Seregin · Escauriaza · Kukavica · Nadirashvili · Barker · Jia · Tsai · Lemarié-Rieusset · Danchin · Guillod · Caffarelli · Kohn · Lin · Vasseur · Wolf · Constantin · Fefferman · Beirão da Veiga–Berselli · Chae · Giga–Miura · Lei–Ren–Tian · Chen–Strain–Tsai–Yau · Beale · Kozono–Taniuchi · Farwig · Galdi · Temam · Cheskidov · Neustupa–Penel · Koch · Chemin–Gallagher · Cannone–Planchon · Masmoudi · Tataru · Grujić · Miller · Vicol · Buckmaster · Albritton · Elgindi · Isett · Hou · Hou–Wang–Yang · current math.AP
+Tao · Šverák · Seregin · Escauriaza · Kukavica · Nadirashvili · Barker · Robinson · Jia · Tsai · Lemarié-Rieusset · Danchin · Guillod · Caffarelli · Kohn · Lin · Vasseur · Wolf · Constantin · Fefferman · Beirão da Veiga–Berselli · Chae · Giga–Miura · Lei–Ren–Tian · Chen–Strain–Tsai–Yau · Beale · Kozono–Taniuchi · Farwig · Galdi · Temam · Cheskidov · Neustupa–Penel · Koch · Chemin–Gallagher · Cannone–Planchon · Masmoudi · Tataru · Grujić · Miller · Vicol · Buckmaster · Albritton · Elgindi · Isett · Hou · Hou–Wang–Yang · current math.AP
 
 They talk in [`docs/DA-LIVING.md`](DA-LIVING.md). Papers, not a channel. A vote cannot close \(X\).
 
@@ -40,6 +41,9 @@ Seated list and next papers: [`docs/DA-NOW.md`](DA-NOW.md). Genius is not a slot
 
 **Live feed**  
 Latest public catalogs: [`docs/DA-FEED.md`](DA-FEED.md). LIGO, LHC, PDG, arXiv. Re-run is the collection.
+
+**DA tick**  
+Roster plus feed inside the machine: [`docs/DA-AGENT.md`](DA-AGENT.md). Agent-shaped. Not a closer.
 
 Einstein and PDG sit on more than one bench. That is fine. They are not counted twice as a vote.
 

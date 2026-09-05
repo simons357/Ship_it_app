@@ -9,7 +9,8 @@ geniuses in the world is omniscience. That claim **fails**.
 A vote of names does not write \(X\).
 
 Dated 5 September 2026. The seated list is derived from the
-living session. The watch list is next papers, not a seat.
+living session, including Robinson a posteriori regularity.
+The watch list is next papers, not a seat.
 
 ---
 
@@ -36,7 +37,6 @@ These are living chairs whose papers can sit. They are
 
 | Who | Slot | Kingdom | Do not |
 |---|---|---|---|
-| Robinson | B | a posteriori regularity | cash a computed bound as leftover B42 |
 | Prange | B | anomalous dissipation / ancient | second Type I chair next to Barker |
 | Titi | B | a posteriori / data assimilation | twin of Robinson |
 | Shvydkoy | B | Onsager lectures | twin of Isett or Cheskidov |

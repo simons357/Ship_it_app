@@ -51,7 +51,7 @@ plus any open item that later got a stronger lemma. If the AI cannot be scored, 
 
 **Purpose.** DA is an anti-bullshit device. A sentence sits only if it names a slot and a check that could kill it. Survival of a test is not truth. Unfalsifiable is not a maybe.
 
-**Roles.** The operator runs the command. Ordinary AI is the generator. Scripts are the checker. The operator does not need the chops. The machine is the chops.
+**Roles.** The operator runs the command. Ordinary AI is the generator. Scripts are the checker. The living roster and the live feed sit inside that loop. The shape is an agent. It is not a closer. The operator does not need the chops. The machine is the chops.
 
 ---
 

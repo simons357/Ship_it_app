@@ -38,13 +38,6 @@ NOT_A_PERSON = {"Operator", "current math.AP", "operator"}
 # Do not auto-seat. Do not treat as a close.
 WATCH = [
     {
-        "name": "Robinson",
-        "slot": "B",
-        "kingdom": "a posteriori regularity",
-        "involved": "numerical certificate as a regularity if",
-        "do_not": "cash a computed bound as leftover B42; Hou already sits for computation as probe",
-    },
-    {
         "name": "Prange",
         "slot": "B",
         "kingdom": "anomalous dissipation / ancient",

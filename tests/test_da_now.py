@@ -42,7 +42,7 @@ class DaNowTests(unittest.TestCase):
         self.assertNotIn("Shahmurov", names)
         watch = {row["name"] for row in WATCH}
         self.assertTrue(watch.isdisjoint(names))
-        self.assertIn("Robinson", watch)
+        self.assertIn("Prange", watch)
         self.assertIn("Kenig", watch)
         self.assertIn("Maynard", watch)
         self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))

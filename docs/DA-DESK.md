@@ -30,7 +30,9 @@ DA is an **anti-bullshit device**. That is the purpose.
 It is a process machine, not a unifier.
 
 You do not need the chops. Ordinary AI proposes. A script
-scores. You run the command. A sentence sits only if it
+scores. You run the command. The living roster and the live
+feed sit inside that loop. The shape is an agent. It is
+not a closer. A sentence sits only if it
 names a slot and a check that could kill it. Fake passes,
 glue, and “unfalsifiable might be true” are refused. Open
 is allowed. Fail is allowed. A lead is welcome; a close
@@ -297,6 +299,8 @@ Kukavica unique continuation is vanishing order, not a
 bound on \(X\). Not the one-component chair.
 Barker Type I iff ancient is an equivalence, not a
 bound on \(X\). Forced Leray stays Albritton.
+Robinson a posteriori regularity is a numerical
+certificate, still an if, not a bound on \(X\).
 Sit down on leftover-close B42. Stretching budget is not an a priori
 (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.
@@ -567,6 +571,7 @@ python3 scripts/da_machine.py ground      # destination + program review
 python3 scripts/da_machine.py pipe        # now-bench
 python3 scripts/da_machine.py now         # living roster; not a genius census
 python3 scripts/da_machine.py feed        # latest LIGO / LHC / PDG / arXiv
+python3 scripts/da_machine.py agent       # tick: roster + feed; not a closer
 python3 scripts/da_machine.py harmonic    # vocabulary
 python3 scripts/da_machine.py sm
 python3 scripts/da_machine.py smbreak
@@ -578,7 +583,7 @@ python3 scripts/da_machine.py classify --claim "…"
 Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/SHELF.md`, `docs/TRACK-B-LEMMAS.md`,
 `docs/DA-GROUND.md`, `docs/DA-PIPE.md`,
-`docs/DA-NOW.md`, `docs/DA-FEED.md`,
+`docs/DA-NOW.md`, `docs/DA-FEED.md`, `docs/DA-AGENT.md`,
 `docs/DA-HARMONIC-VOCAB.md`, `docs/DA-DREAM-TEAM.md`,
 `docs/DA-SM-LAGRANGIAN.md`, `docs/DA-SM-LINEAGE.md`,
 `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`,
