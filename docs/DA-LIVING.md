@@ -32,6 +32,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Ancient Liouville / KNSS | Nadirashvili | bounded ancient mild solutions classified in 2D and axisymmetric no-swirl | those Liouville theorems close \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
+| Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
 | Numerical non-uniqueness | Guillod | pitchfork for large scale-invariant data | numerics \(=\) bound; numerics \(=\) blowup |
 | Partial regularity | Caffarelli, Kohn | singular set small | small \(=\) empty |
 | CKN new proof | Lin | simplified \(\varepsilon\)-regularity; velocity \(L^3\), pressure \(L^{3/2}\) | new proof \(=\) no blowup |
@@ -104,6 +105,11 @@ Terence — do not cash a constructed solution as a bound.
 (ARMA 1998). That is exclusion, not an a priori on \(X\).
 Vladimír, Hao, Jörg — forward large-data existence is
 Jia's chair. Leray is not in this room.
+
+**Lemarié-Rieusset.** Local Leray solutions have
+locally finite energy and no decay at infinity (2002).
+That class is not a bound on global \(X\). Hao, Tai-Peng,
+Reinhard — Leray is not in this room.
 
 **Guillod.** Numerics show a pitchfork for large
 scale-invariant data. The profiles are smooth. That is
@@ -385,6 +391,7 @@ scores the process, not a theorem you did not prove.
 | Temam attractor closes \(X\) | **fail** |
 | Isett Onsager closes \(X\) | **fail** |
 | Tsai local-energy self-similar exclusion closes \(X\) | **fail** |
+| Lemarié-Rieusset local Leray solutions close \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

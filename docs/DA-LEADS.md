@@ -53,6 +53,7 @@ in your slot.
 | Šverák | Liouville / ancient / self-similar | Honest doors. Ruled-out self-similar is not an a priori. Possible is not a theorem. | those doors from a leftover list; exclusion \(=\) bound |
 | Jia | forward self-similar large data | Forward self-similar solutions exist for large \(-1\)-homogeneous data. Existence is not an a priori on \(X\). | profile existence \(=\) bound |
 | Tsai | local-energy self-similar exclusion | Local-energy self-similar profiles are out. Exclusion is not an a priori on \(X\). Not Jia existence. | exclusion \(=\) bound |
+| Lemarié-Rieusset | local Leray solutions | Locally finite energy, no decay at infinity. That class is not a bound on global \(X\). | local Leray \(=\) bound on \(X\) |
 | Guillod | numerical non-uniqueness | Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity. | numerics \(=\) bound; numerics \(=\) blowup |
 | Seregin | local regularity / ESS | A criterion is not an a priori on \(X\). | criterion \(\Rightarrow\) bound |
 | Escauriaza | ESS \(L^3\) endpoint | \(L^\infty_t L^3_x\) is the endpoint. A criterion is not an a priori. Bounded in \(L^3\) is not a bound on enstrophy. | \(L^3\) endpoint \(=\) bound on \(X\) |
@@ -144,6 +145,7 @@ in your slot.
 | Temam attractor bounds \(X\) | **fail** |
 | Isett Onsager bounds \(X\) | **fail** |
 | Tsai local-energy self-similar exclusion bounds \(X\) | **fail** |
+| Lemarié-Rieusset local Leray solutions bound \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

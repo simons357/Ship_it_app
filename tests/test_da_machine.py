@@ -377,6 +377,12 @@ class DaMachineTests(unittest.TestCase):
         localss = classify_claim("Tsai local-energy self-similar on a vorticity packet")
         self.assertEqual(localss["domain"], "B")
         self.assertEqual(localss["verdict"], "open")
+        lemarie = classify_claim("seat Lemarie-Rieusset as a wall on the living bench")
+        self.assertEqual(lemarie["domain"], "U")
+        self.assertEqual(lemarie["verdict"], "open")
+        luloc = classify_claim("Lemarie-Rieusset local Leray on a vorticity packet")
+        self.assertEqual(luloc["domain"], "B")
+        self.assertEqual(luloc["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

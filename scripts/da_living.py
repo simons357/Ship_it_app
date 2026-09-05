@@ -76,6 +76,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Lemarie-Rieusset",
+        ["Jia", "Tsai", "Farwig"],
+        "Local Leray solutions have locally finite energy and no decay at infinity. That class is not a bound on global X. Leray is not in this room.",
+        "B",
+    ),
+    turn(
         "Guillod",
         ["Jia", "Sverak"],
         "Numerics show a pitchfork for large scale-invariant data. The profiles are smooth. That is not an a priori on X, and it is not a singularity.",
@@ -673,6 +679,13 @@ CLAIMS = [
         "fail",
         "ARMA 1998: local-energy self-similar profiles are trivial. Exclusion is not an a priori. Not Jia existence.",
     ),
+    rec(
+        "L49",
+        "lemarie_local_leray_closes_X",
+        "Lemarie-Rieusset local Leray solutions close X",
+        "fail",
+        "2002: uniformly locally square integrable, local energy inequality. A different class is not a bound on global X.",
+    ),
 ]
 
 
@@ -685,6 +698,7 @@ KINGDOMS = [
     {"name": "Ancient Liouville / KNSS", "who": "Nadirashvili", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
+    {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},
     {"name": "Numerical non-uniqueness", "who": "Guillod", "slot": "B"},
     {"name": "Partial regularity", "who": "Caffarelli, Kohn", "slot": "B"},
     {"name": "CKN new proof", "who": "Lin", "slot": "B"},

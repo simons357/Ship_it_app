@@ -169,6 +169,9 @@ LEADS = [
     lead("Tsai", "local-energy self-similar exclusion", "B", "living",
          "Local-energy self-similar profiles are out. Exclusion is not an a priori on X. Not Jia existence.",
          "exclusion = bound"),
+    lead("Lemarie-Rieusset", "local Leray solutions", "B", "living",
+         "Local Leray solutions have locally finite energy and no decay at infinity. That class is not a bound on global X.",
+         "local Leray = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -251,7 +254,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -537,6 +540,13 @@ CLAIMS = [
         "Tsai local-energy self-similar exclusion bounds X",
         "fail",
         "Exclusion of a profile class is not an a priori on X.",
+    ),
+    rec(
+        "R41",
+        "lemarie_local_leray_bounds_X",
+        "Lemarie-Rieusset local Leray solutions bound X",
+        "fail",
+        "Locally finite energy is not a bound on global enstrophy.",
     ),
 ]
 
