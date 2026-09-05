@@ -57,6 +57,7 @@ class DaDeskTests(unittest.TestCase):
         self.assertIn("Kelliher", payload["living_roster"])
         self.assertIn("Silvestre", payload["living_roster"])
         self.assertIn("Schonbek", payload["living_roster"])
+        self.assertIn("Ponce", payload["living_roster"])
         self.assertIn("GWOSC_GWTC", payload["feed_sources"])
         self.assertIn("stale", payload["feed_freshness"])
         self.assertFalse(payload["feed_freshness"]["network"])

@@ -67,6 +67,7 @@ in your slot.
 | Kelliher | vanishing viscosity / inviscid limit | Vanishing viscosity iff a vortex sheet on the boundary. An equivalence for the inviscid limit is not a bound on \(X\). Kato stays out. Euler singularity stays Elgindi. | inviscid limit \(=\) bound on \(X\) |
 | Silvestre | kinetic Fokker-Planck / Hölder | Hölder estimates for kinetic Fokker-Planck are a different equation. Export is not a bound on \(X\). De Giorgi CKN stays Vasseur. The extension stays off. | Fokker-Planck \(=\) bound on \(X\) |
 | Schonbek | energy decay / Fourier splitting | Fourier splitting gives algebraic \(L^2\) decay of weak solutions. Large-time decay is not a bound on \(X\). Energy equality stays Cheskidov. Attractors stay Temam. | decay \(=\) bound on \(X\) |
+| Ponce | Kato–Ponce / commutator estimates | Kato–Ponce is a commutator. A tool is not a bound on \(X\). Continuation stays Beale. Kato stays out. | commutator \(=\) bound on \(X\) |
 | Guillod | numerical non-uniqueness | Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity. | numerics \(=\) bound; numerics \(=\) blowup |
 | Seregin | local regularity / ESS | A criterion is not an a priori on \(X\). | criterion \(\Rightarrow\) bound |
 | Escauriaza | ESS \(L^3\) endpoint | \(L^\infty_t L^3_x\) is the endpoint. A criterion is not an a priori. Bounded in \(L^3\) is not a bound on enstrophy. | \(L^3\) endpoint \(=\) bound on \(X\) |
@@ -173,6 +174,7 @@ in your slot.
 | Kelliher vanishing viscosity bounds \(X\) | **fail** |
 | Silvestre kinetic Fokker-Planck bounds \(X\) | **fail** |
 | Schonbek Fourier splitting bounds \(X\) | **fail** |
+| Ponce Kato–Ponce bounds \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

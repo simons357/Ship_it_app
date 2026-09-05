@@ -211,6 +211,9 @@ LEADS = [
     lead("Schonbek", "energy decay / Fourier splitting", "B", "living",
          "Fourier splitting gives algebraic L2 decay of weak solutions. Large-time decay is not a bound on X. Energy equality stays Cheskidov. Attractors stay Temam.",
          "decay = bound on X"),
+    lead("Ponce", "Kato-Ponce / commutator estimates", "B", "living",
+         "Kato-Ponce is a commutator. A tool is not a bound on X. Continuation stays Beale. Kato stays out.",
+         "commutator = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -293,7 +296,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -684,6 +687,13 @@ CLAIMS = [
         "Schonbek Fourier splitting bounds X",
         "fail",
         "Large-time decay is not enstrophy. Energy equality stays Cheskidov. Attractors stay Temam.",
+    ),
+    rec(
+        "R56",
+        "ponce_commutator_bounds_X",
+        "Ponce Kato-Ponce bounds X",
+        "fail",
+        "A commutator is not enstrophy. Continuation stays Beale. Kato stays out.",
     ),
 ]
 

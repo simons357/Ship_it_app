@@ -9,7 +9,7 @@ geniuses in the world is omniscience. That claim **fails**.
 A vote of names does not write \(X\).
 
 Dated 5 September 2026. The seated list is derived from the
-living session, including Schonbek Fourier splitting.
+living session, including Ponce Kato–Ponce.
 The watch list is next papers, not a seat.
 
 ---
@@ -46,6 +46,7 @@ These are living chairs whose papers can sit. They are
 | Staffilani | B | \(BMO^{-1}\) regularity of small Koch–Tataru solutions | twin of Koch–Tataru or Pavlović |
 | Imbert | B | kinetic / Boltzmann / Fokker-Planck | second kinetic chair next to Silvestre |
 | Wiegner | B | energy decay / Fourier splitting | second decay chair next to Schonbek |
+| Vega | B | Kato–Ponce / commutator estimates | second commutator chair next to Ponce |
 | Kenig | B | unique continuation | twin of Kukavica |
 | Maynard | Q | bounded gaps | map a gap theorem onto \(\omega\cdot S\omega\) |
 

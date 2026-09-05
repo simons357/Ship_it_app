@@ -96,6 +96,13 @@ WATCH = [
         "do_not": "seat as a second decay chair next to Schonbek",
     },
     {
+        "name": "Vega",
+        "slot": "B",
+        "kingdom": "Kato-Ponce / commutator estimates",
+        "involved": "Kenig-Ponce-Vega; harmonic analysis tools for NS",
+        "do_not": "seat as a second commutator chair next to Ponce",
+    },
+    {
         "name": "Kenig",
         "slot": "B",
         "kingdom": "unique continuation",

@@ -190,6 +190,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Ponce",
+        ["Beale", "Koch"],
+        "Kato-Ponce is a commutator. A tool is not a bound on X. Continuation stays Beale. Critical small stays Koch-Tataru. Kato is not in this room.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -868,6 +874,13 @@ CLAIMS = [
         "fail",
         "ARMA 1985: algebraic L2 decay of weak solutions by Fourier splitting. Large-time decay is not a bound on X. Energy equality stays Cheskidov. Attractors stay Temam.",
     ),
+    rec(
+        "L64",
+        "ponce_commutator_closes_X",
+        "Ponce Kato-Ponce closes X",
+        "fail",
+        "CPAM 1988: commutator estimates for Euler and NS. A tool is not a bound on X. Continuation stays Beale. Kato stays out.",
+    ),
 ]
 
 
@@ -891,6 +904,7 @@ KINGDOMS = [
     {"name": "Vanishing viscosity / inviscid limit", "who": "Kelliher", "slot": "B"},
     {"name": "Kinetic Fokker-Planck / Holder", "who": "Silvestre", "slot": "B"},
     {"name": "Energy decay / Fourier splitting", "who": "Schonbek", "slot": "B"},
+    {"name": "Kato-Ponce / commutator estimates", "who": "Ponce", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},
