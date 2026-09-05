@@ -118,6 +118,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Lei-Ren-Tian",
+        ["Constantin", "Beirao-Berselli", "Giga-Miura"],
+        "If vorticity stays in a double cone on high-magnitude sets, the solution is regular. That is still an if. It is not all-data A1.",
+        "B",
+    ),
+    turn(
         "Beale",
         ["Fefferman", "Koch"],
         "Continuation is the max. L2 is not our theorem. A leftover list is not the max.",
@@ -426,6 +432,13 @@ CLAIMS = [
         "fail",
         "arXiv 2509.25116 is an announced CAP. Different class. Not a bound on classical X. Do not cash a CAP as regularity.",
     ),
+    rec(
+        "L30",
+        "lei_ren_tian_is_all_data_a1",
+        "Lei-Ren-Tian double-cone if is all-data A1",
+        "fail",
+        "arXiv 2501.08976 is an if on the range of ξ. A double cone is still an if. All-data A1 stays blank.",
+    ),
 ]
 
 
@@ -440,6 +453,7 @@ KINGDOMS = [
     {"name": "Geometry", "who": "Constantin, Fefferman", "slot": "B"},
     {"name": "Geometric if (weaker than CF)", "who": "Beirao-Berselli", "slot": "B"},
     {"name": "Type I plus continuous direction", "who": "Giga-Miura", "slot": "B"},
+    {"name": "Double-cone geometric if", "who": "Lei-Ren-Tian", "slot": "B"},
     {"name": "Continuation", "who": "Beale", "slot": "B"},
     {"name": "Critical small data", "who": "Koch, Tataru", "slot": "B"},
     {"name": "Scaling gap / log-bmo if", "who": "Grujic", "slot": "B"},

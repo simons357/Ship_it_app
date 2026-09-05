@@ -256,7 +256,8 @@ self-similar large-data existence is not an a priori.
 Guillod–Šverák numerical pitchfork is not an a priori
 and not a singularity. Hou–Wang–Yang arXiv 2509.25116
 announced unforced Leray–Hopf non-uniqueness is not an
-a priori and not regularity.
+a priori and not regularity. Lei–Ren–Tian arXiv 2501.08976
+double-cone if is still an if, not all-data A1.
 Sit down on leftover-close B42. Stretching budget is not an a priori
 (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.

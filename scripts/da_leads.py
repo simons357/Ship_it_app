@@ -85,6 +85,9 @@ LEADS = [
     lead("Giga-Miura", "Type I / continuous direction", "B", "living",
          "Type I plus uniformly continuous direction prevents blow-up. Two ifs. It is not all-data A1.",
          "Type I + continuity = all-data alignment"),
+    lead("Lei-Ren-Tian", "double-cone geometric if", "B", "living",
+         "If vorticity stays in a double cone on high-magnitude sets, the solution is regular. Still an if. It is not all-data A1.",
+         "double cone = all-data alignment"),
     lead("Ladyzhenskaya", "extra dissipation", "A", "past",
          "Same weight, both sides, as a colleague. Epsilon stays on A.",
          "A ⇒ B"),
@@ -194,7 +197,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Jia", "Guillod", "Koch", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Giga-Miura",
+    "Beirao-Berselli", "Giga-Miura", "Lei-Ren-Tian",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -347,6 +350,13 @@ CLAIMS = [
         "Hou-Wang-Yang unforced Leray-Hopf non-uniqueness closes X",
         "fail",
         "Announced CAP. Different class. Not a bound on classical X.",
+    ),
+    rec(
+        "R22",
+        "lei_ren_tian_is_all_data_a1",
+        "Lei-Ren-Tian double-cone if is all-data A1",
+        "fail",
+        "A double cone is still an if. All-data A1 stays blank.",
     ),
 ]
 

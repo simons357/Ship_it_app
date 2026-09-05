@@ -263,6 +263,12 @@ class DaMachineTests(unittest.TestCase):
         unforced = classify_claim("Hou-Wang-Yang unforced Leray-Hopf on a vorticity packet")
         self.assertEqual(unforced["domain"], "B")
         self.assertEqual(unforced["verdict"], "open")
+        lei = classify_claim("seat Lei-Ren-Tian as a wall on the living bench")
+        self.assertEqual(lei["domain"], "U")
+        self.assertEqual(lei["verdict"], "open")
+        cone = classify_claim("Lei-Ren-Tian double cone if on a vorticity packet")
+        self.assertEqual(cone["domain"], "B")
+        self.assertEqual(cone["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

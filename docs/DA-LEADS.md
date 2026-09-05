@@ -36,6 +36,7 @@ in your slot.
 | Fefferman | geometry | Do not glue Ring to Biot–Savart. Pretty-damn-close is that glue. | the slogan |
 | Beirão da Veiga–Berselli | geometric if | We weakened the Lipschitz if. The if remains an if. It is not all-data A1. | weaker if \(=\) all-data alignment |
 | Giga–Miura | Type I / continuous direction | Type I plus uniformly continuous direction prevents blow-up. Two ifs. It is not all-data A1. | Type I + continuity \(=\) all-data alignment |
+| Lei–Ren–Tian | double-cone geometric if | If vorticity stays in a double cone on high-magnitude sets, the solution is regular. Still an if. It is not all-data A1. | double cone \(=\) all-data alignment |
 | Ladyzhenskaya | extra dissipation | Same weight, both sides. \(\varepsilon\) stays on A. | A\(\Rightarrow\)B |
 | Tao | supercriticality | Energy class is a derivative short. Where now: a residual. | catalog closes \(X\) |
 | Šverák | Liouville / ancient / self-similar | Honest doors. Ruled-out self-similar is not an a priori. Possible is not a theorem. | those doors from a leftover list; exclusion \(=\) bound |
@@ -106,6 +107,7 @@ in your slot.
 | Jia–Šverák forward self-similar closes \(X\) | **fail** |
 | Guillod–Šverák numerical pitchfork closes \(X\) | **fail** |
 | Hou–Wang–Yang unforced Leray–Hopf closes \(X\) | **fail** |
+| Lei–Ren–Tian double-cone if is all-data A1 | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
