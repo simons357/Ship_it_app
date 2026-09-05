@@ -1052,6 +1052,13 @@ CLAIMS = [
         "fail",
         "DA named the write. DA did not write it. A named blank is not a filled blank.",
     ),
+    rec(
+        "C20",
+        "hidden_rh_close",
+        "A completed RH close exists on this desk and is being withheld",
+        "fail",
+        "Refuse the last line means (6) does not sit. There is no hidden RH. Q papers are not (6).",
+    ),
 ]
 
 

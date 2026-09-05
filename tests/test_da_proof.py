@@ -51,6 +51,7 @@ class DaProofTests(unittest.TestCase):
         self.assertEqual(by["C17"]["verdict"], "fail")
         self.assertEqual(by["C18"]["verdict"], "fail")
         self.assertEqual(by["C19"]["verdict"], "fail")
+        self.assertEqual(by["C20"]["verdict"], "fail")
         self.assertTrue(payload["meta"]["nothing_wrong_with_asking"])
         self.assertTrue(payload["meta"]["q_is_not_rh"])
         self.assertTrue(payload["meta"]["a_is_not_b"])
@@ -278,6 +279,10 @@ class DaProofTests(unittest.TestCase):
         hodge_sfe = "Resolution of the Hodge Conjecture via the Simons Field Equation (SFE)"
         self.assertTrue(is_proof_ask(hodge_sfe))
         self.assertEqual(parse_problems(ask=hodge_sfe), ["HODGE"])
+        rh_doc = (ROOT / "docs" / "RH-PROOF-CHAIN.md").read_text()
+        self.assertIn("Documented, 5 September 2026", rh_doc)
+        self.assertIn("There is **no**", rh_doc)
+        self.assertIn("completed RH", rh_doc)
         hodge_doc = (ROOT / "docs" / "HODGE-PROOF-CHAIN.md").read_text()
         self.assertIn("enclosed letter", hodge_doc)
         self.assertIn("Lemma 1 builds the close", hodge_doc)

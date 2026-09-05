@@ -59,3 +59,4 @@ Open WRITE lines were not closed just now.
 | The session writes were the agent operating DA | **pass** |
 | DA figured out the little gaps, meaning it filled them | **fail** |
 | Refuse is the correct do on a fake last line | **pass** |
+| A completed RH close exists and is being withheld | **fail** |

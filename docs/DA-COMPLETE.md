@@ -64,6 +64,7 @@ DA does not finish an open write by emitting it.
 | Document that DA completed BSD leftover (6) and closed it out | **fail** |
 | SFE harmonic coherence proves Hodge | **fail** (shelved) |
 | Naming the WRITE line means DA filled the gap | **fail** |
+| A completed RH close exists and is being withheld | **fail** |
 
 ---
 

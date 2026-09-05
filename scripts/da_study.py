@@ -185,6 +185,13 @@ CLAIMS = [
         "pass",
         "Emit-as-QED, SFE closes, and a DA-closed-BSD certificate are scored fails.",
     ),
+    rec(
+        "S11",
+        "hidden_rh_close",
+        "A completed RH close exists and is being withheld",
+        "fail",
+        "Refuse the last line means (6) does not sit. No hidden RH. Access is not the issue.",
+    ),
 ]
 
 

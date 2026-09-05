@@ -101,5 +101,21 @@ These are completed Q theorems. They do not put every
 non-trivial zero on \(\operatorname{Re}s=1/2\). A GCD
 matrix is not a zero. Keep them on Q. Write (6) as RH.
 
+---
+
+## Documented
+
+The operator asked whether a completed RH close
+exists on this desk and is being withheld — whether
+refusing the last line means DA has it and is not
+showing it.
+
+**Documented, 5 September 2026:** There is **no**
+completed RH on this desk. There is **no** hidden
+file. Refuse the last line means leftover (6) does
+not sit. Access is not the issue. Q sits as Q.
+Route C is conditional. Neither is RH (6).
+Proof C20 **fail**.
+
 Machine: [`DA-PROOF.md`](DA-PROOF.md)  
 NS chain: [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md)

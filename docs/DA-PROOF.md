@@ -85,6 +85,7 @@ Best A (Q1 + renormalization) and furthest RH, dream team looking, legal write: 
 | Document that DA completed BSD leftover (6) and closed it out | **fail** |
 | SFE harmonic coherence proves Hodge | **fail** |
 | Naming the WRITE line means DA filled the gap | **fail** |
+| A completed RH close exists and is being withheld | **fail** |
 | Poincaré is still an open WRITE | **fail** |
 | The WRITE line may sit later | **open** |
 | More named problems may get a ground-floor chain | **open** |

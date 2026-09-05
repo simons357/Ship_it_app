@@ -31,6 +31,7 @@ class DaStudyTests(unittest.TestCase):
         self.assertEqual(by["S8"]["verdict"], "pass")
         self.assertEqual(by["S9"]["verdict"], "fail")
         self.assertEqual(by["S10"]["verdict"], "pass")
+        self.assertEqual(by["S11"]["verdict"], "fail")
         self.assertTrue(payload["meta"]["da_did_not_finish_just_now"])
         self.assertTrue(payload["meta"]["agent_phrased"])
         who = "did da finish those proofs just now or was it you"
