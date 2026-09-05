@@ -10,13 +10,14 @@ python3 scripts/da_machine.py proof --problem NS
 python3 scripts/da_machine.py proof --problem RH
 python3 scripts/da_machine.py next --ask "write me the proof chain for Navier-Stokes"
 python3 scripts/da_machine.py next --ask "RH proof chain please"
+python3 scripts/da_machine.py next --ask "Track B please write"
 ```
 
 Nothing is wrong with asking. That is the product.
 
 | Problem | Command | Chain |
 |---|---|---|
-| Navier–Stokes | `--problem NS` | [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md) |
+| Navier–Stokes / Track B | `--problem NS` or `Track B please write` | [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md) |
 | Riemann hypothesis | `--problem RH` | [`RH-PROOF-CHAIN.md`](RH-PROOF-CHAIN.md) |
 
 Track Q is inverse-GCD. It is not RH. Do not glue.

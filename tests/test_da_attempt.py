@@ -83,6 +83,8 @@ class DaAttemptTests(unittest.TestCase):
         self.assertFalse(is_attempt_ask("now what"))
         self.assertFalse(is_attempt_ask("RH proof chain please"))
         self.assertTrue(is_proof_ask("RH proof chain please"))
+        self.assertFalse(is_attempt_ask("Track B please write"))
+        self.assertTrue(is_proof_ask("Track B please write"))
         self.assertTrue(is_repair_ask("what's wrong with the augmented one"))
         self.assertFalse(is_attempt_ask("what's wrong with the augmented one"))
         self.assertEqual(parse_job(ask="analyze my augmented"), "A")

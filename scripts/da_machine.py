@@ -117,7 +117,9 @@ def classify_claim(claim: str) -> dict:
         r"\brenormali[sz]|\bda attempt\b|\bmy rh\b|"
         r"\btry every\b|\bquantum comput|\bsupercomput|\bbrute\b|"
         r"\bneed to close\b|\beinstein\b|\btesla\b|"
-        r"\bbig picture\b|\bcomprehensive\b|\bwhat would they do next\b",
+        r"\bbig picture\b|\bcomprehensive\b|\bwhat would they do next\b|"
+        r"\bproof chain\b|\bwrite (me )?(the )?proof\b|\bda proof\b|"
+        r"\btrack b\b.{0,40}\bwrite\b|\bwrite\b.{0,40}\btrack b\b",
         text,
     ):
         return {

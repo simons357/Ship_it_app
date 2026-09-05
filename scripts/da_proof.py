@@ -321,7 +321,7 @@ def parse_problem(ask: str = "", problem: str = "") -> str:
     text = f"{problem} {ask}".lower()
     if re.search(r"\brh\b|riemann", text):
         return "RH"
-    if re.search(r"xavier|navi|\bstokes\b|\bns\b|navier", text):
+    if re.search(r"xavier|navi|\bstokes\b|\bns\b|navier|\btrack b\b", text):
         return "NS"
     if problem.upper() in PROBLEMS:
         return problem.upper()
@@ -337,7 +337,8 @@ def is_proof_ask(ask: str) -> bool:
         re.search(
             r"\bwrite (me )?(the )?proof\b|\bproof chain\b|"
             r"\bxavier stokes\b|\bnavi(er)?.?stokes\b|"
-            r"\bda proof\b|\bthe proof for (ns|navier|rh|riemann)\b|"
+            r"\bda proof\b|\bthe proof for (ns|navier|rh|riemann|track b)\b|"
+            r"\btrack b\b.*\bwrite\b|\bwrite\b.*\btrack b\b|"
             r"\brh\b|\briemann\b",
             text,
         )

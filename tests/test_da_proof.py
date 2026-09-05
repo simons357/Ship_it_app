@@ -10,6 +10,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from da_attempt import is_attempt_ask  # noqa: E402
+from da_brute import is_brute_ask  # noqa: E402
+from da_hunt import is_look_ask  # noqa: E402
+from da_picture import is_picture_ask  # noqa: E402
 from da_proof import CLAIMS, LINES, PROBLEMS, is_proof_ask, parse_problem, run  # noqa: E402
 
 
@@ -34,6 +38,12 @@ class DaProofTests(unittest.TestCase):
         self.assertTrue(is_proof_ask("write me the proof chain for Navier-Stokes"))
         self.assertTrue(is_proof_ask("Xavier Stokes"))
         self.assertTrue(is_proof_ask("proof chain"))
+        self.assertTrue(is_proof_ask("Track B please write"))
+        self.assertEqual(parse_problem(ask="Track B please write"), "NS")
+        self.assertFalse(is_look_ask("Track B please write"))
+        self.assertFalse(is_brute_ask("Track B please write"))
+        self.assertFalse(is_picture_ask("Track B please write"))
+        self.assertFalse(is_attempt_ask("Track B please write"))
         self.assertTrue(is_proof_ask("RH proof chain please"))
         self.assertTrue(is_proof_ask("RH"))
         self.assertFalse(is_proof_ask(""))
