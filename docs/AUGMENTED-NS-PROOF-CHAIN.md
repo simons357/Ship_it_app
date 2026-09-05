@@ -20,6 +20,9 @@ The extra dissipation is the Ladyzhenskaya / \(p\)-Laplacian term already known 
 | Uniform \(H^1\) as \(\varepsilon\to 0\) | Open (old C/I; do not reuse) |
 | Classical unaugmented regularity | Not claimed |
 
+Lemma catalog: [`TRACK-A-LEMMAS.md`](TRACK-A-LEMMAS.md).  
+Print: `python3 scripts/da_machine.py tracka`
+
 ---
 
 ## 0. The system

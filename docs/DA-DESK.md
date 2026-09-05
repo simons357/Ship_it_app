@@ -83,10 +83,11 @@ August SND (CONC) and June SND (SPREAD) are opposites. Use
 ## Track A (in brief)
 
 Energy identity → Galerkin → weak limit → unique \(H^1\) at
-\(\varepsilon>0\) → \(C^\infty\). The constant blows up as
-\(\varepsilon\to 0\). A numerical checker on Taylor–Green is
-consistency, not a proof of Theorem A, and says nothing
-about B.
+\(\varepsilon>0\) → \(C^\infty\). Theorem A **pass** for this
+PDE. The constant blows up as \(\varepsilon\to 0\); that row
+stays **open**. A\(\Rightarrow\)B **fail**. Catalog:
+[`TRACK-A-LEMMAS.md`](TRACK-A-LEMMAS.md).
+`python3 scripts/da_machine.py tracka`
 
 ---
 
@@ -562,6 +563,7 @@ python3 scripts/da_machine.py compute     # what we can borrow to compute
 python3 scripts/da_machine.py alert       # plain-language text if something significant flips
 python3 scripts/da_machine.py status
 python3 scripts/da_machine.py check       # check B stays open
+python3 scripts/da_machine.py tracka      # Q1-augmented NS; this PDE only
 python3 scripts/da_machine.py trackb
 python3 scripts/da_machine.py team        # past bench
 python3 scripts/da_machine.py session     # they talk; not a close
@@ -581,7 +583,8 @@ python3 scripts/da_machine.py classify --claim "…"
 ```
 
 Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
-`docs/SHELF.md`, `docs/TRACK-B-LEMMAS.md`,
+`docs/SHELF.md`, `docs/TRACK-A-LEMMAS.md`,
+`docs/TRACK-B-LEMMAS.md`,
 `docs/DA-GROUND.md`, `docs/DA-PIPE.md`,
 `docs/DA-NOW.md`, `docs/DA-FEED.md`, `docs/DA-AGENT.md`,
 `docs/DA-HARMONIC-VOCAB.md`, `docs/DA-DREAM-TEAM.md`,

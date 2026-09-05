@@ -23,7 +23,7 @@ LOG = ROOT / "results" / "da_machine_log.json"
 SLOTS = {
     "A": {
         "object": "Q1-augmented NS, eps>0",
-        "note": "docs/AUGMENTED-NS-PROOF-CHAIN.md",
+        "note": "docs/TRACK-A-LEMMAS.md",
         "checker": ["python3", "-m", "unittest", "tests.test_augmented_ns_verify", "-v"],
     },
     "B": {
@@ -539,6 +539,29 @@ def cmd_gq() -> int:
     return 0
 
 
+def cmd_tracka() -> int:
+    from track_a_lemmas import run as tracka_run
+
+    payload = tracka_run()
+    print("DA Track A. Q1-augmented NS. This PDE only.")
+    for row in payload["lemmas"]:
+        print(f"  [{row['verdict']}] {row['name']}: {row['why']}")
+    print("counts", payload["counts"])
+    print("theorem A:", payload["meta"]["theorem_A"])
+    print("eps->0:", payload["meta"]["eps_to_0"])
+    print("implies B:", payload["meta"]["implies_B"])
+    print("next:", payload["next_da_move"])
+    append_run(
+        "A",
+        "Theorem A for Q1-augmented NS at eps>0",
+        "pass",
+        "this PDE only; uniform H1 as eps->0 stays open; A=>B fail",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    maybe_alert("tracka")
+    return 0
+
+
 def cmd_trackb() -> int:
     from track_b_lemmas import run as trackb_run
 
@@ -936,6 +959,7 @@ def main() -> int:
     sub.add_parser("screen", help="screen published unification claims at gauge3 vs nature4")
     sub.add_parser("gq", help="start at gravity + quantum: what is coupled")
     sub.add_parser("separate", help="run each GQ pair, published claim, and slot alone")
+    sub.add_parser("tracka", help="score Track A lemmas; Theorem A for this PDE only")
     sub.add_parser("trackb", help="score Track B lemmas; regularity stays open")
     sub.add_parser("sm", help="analyze the SM Lagrangian; realize Einstein+T_SM")
     sub.add_parser("smbreak", help="break L_SM to atoms, then put it back")
@@ -988,6 +1012,8 @@ def main() -> int:
         return cmd_gq()
     if args.cmd == "separate":
         return cmd_separate()
+    if args.cmd == "tracka":
+        return cmd_tracka()
     if args.cmd == "trackb":
         return cmd_trackb()
     if args.cmd == "sm":
