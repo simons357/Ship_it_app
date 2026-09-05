@@ -70,6 +70,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Guillod",
+        ["Jia", "Sverak"],
+        "Numerics show a pitchfork for large scale-invariant data. The profiles are smooth. That is not an a priori on X, and it is not a singularity.",
+        "B",
+    ),
+    turn(
         "Seregin",
         ["Sverak", "Caffarelli", "Kohn"],
         "Local regularity and the ESS endpoint sit. They are criteria. They are not an a priori on X. Do not promote small singular set to empty.",
@@ -400,6 +406,13 @@ CLAIMS = [
         "fail",
         "Inventiones 2014 constructs scale-invariant solutions. Existence is not an a priori.",
     ),
+    rec(
+        "L28",
+        "guillod_numerics_close_X",
+        "Guillod-Sverak numerical pitchfork closes X",
+        "fail",
+        "Numerics on smooth profiles. If proved, Leray-Hopf non-uniqueness for non-smooth data. Not an a priori. Not a singularity.",
+    ),
 ]
 
 
@@ -409,6 +422,7 @@ KINGDOMS = [
     {"name": "Supercriticality", "who": "Tao", "slot": "B"},
     {"name": "Liouville / ancient / self-similar", "who": "Sverak, Seregin", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
+    {"name": "Numerical non-uniqueness", "who": "Guillod", "slot": "B"},
     {"name": "Partial regularity", "who": "Caffarelli, Kohn", "slot": "B"},
     {"name": "Geometry", "who": "Constantin, Fefferman", "slot": "B"},
     {"name": "Geometric if (weaker than CF)", "who": "Beirao-Berselli", "slot": "B"},

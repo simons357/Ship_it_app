@@ -124,6 +124,9 @@ LEADS = [
     lead("Jia", "forward self-similar large data", "B", "living",
          "Forward self-similar solutions exist for large minus-one-homogeneous data. Existence is not an a priori on X.",
          "profile existence = bound"),
+    lead("Guillod", "numerical non-uniqueness", "B", "living",
+         "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
+         "numerics = bound; numerics = blowup"),
     lead("Seregin", "local regularity / ESS", "B", "living",
          "ESS endpoint sits as a criterion. It is not an a priori on X.",
          "criterion ⇒ bound"),
@@ -186,7 +189,7 @@ MUST_SIT = {
     "Constantin", "Fefferman", "Ladyzhenskaya",
     "Einstein", "Tesla", "Feynman", "Weyl", "Wigner", "von Neumann", "Weinberg",
     "experiment / PDG", "neutrino / cosmology",
-    "Tao", "Sverak", "Seregin", "Jia", "Koch", "Tataru", "Grujic",
+    "Tao", "Sverak", "Seregin", "Jia", "Guillod", "Koch", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "current math.AP",
     "Beirao-Berselli", "Giga-Miura",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
@@ -327,6 +330,13 @@ CLAIMS = [
         "Jia-Sverak forward self-similar large-data solutions close X",
         "fail",
         "Existence of a scale-invariant profile is not an a priori.",
+    ),
+    rec(
+        "R20",
+        "guillod_numerics_close_X",
+        "Guillod-Sverak numerical pitchfork closes X",
+        "fail",
+        "Numerics on smooth profiles. Not an a priori. Not a singularity.",
     ),
 ]
 

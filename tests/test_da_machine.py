@@ -251,6 +251,12 @@ class DaMachineTests(unittest.TestCase):
         jia_if = classify_claim("Jia forward self-similar large data on a vorticity packet")
         self.assertEqual(jia_if["domain"], "B")
         self.assertEqual(jia_if["verdict"], "open")
+        guillod = classify_claim("seat Guillod as a wall on the living bench")
+        self.assertEqual(guillod["domain"], "U")
+        self.assertEqual(guillod["verdict"], "open")
+        pitch = classify_claim("Guillod numerical pitchfork on a vorticity packet")
+        self.assertEqual(pitch["domain"], "B")
+        self.assertEqual(pitch["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

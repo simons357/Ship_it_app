@@ -29,6 +29,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Supercriticality | Tao | energy class is a derivative short; averaged cousins can blow | NS blows; this catalog closes \(X\) |
 | Liouville / ancient / self-similar | Šverák, Seregin | honest remaining doors; ESS endpoint | those doors from a leftover list |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
+| Numerical non-uniqueness | Guillod | pitchfork for large scale-invariant data | numerics \(=\) bound; numerics \(=\) blowup |
 | Partial regularity | Caffarelli, Kohn | singular set small | small \(=\) empty |
 | Geometry | Constantin, Fefferman | depletion *if* aligned | CONC \(\Rightarrow\) alignment |
 | Geometric if (weaker than CF) | Beirão da Veiga–Berselli | weaker direction space still regularizes | the if is all-data A1 |
@@ -78,6 +79,13 @@ Liouville and ancient remain doors, not a bound. Hao?
 large \(-1\)-homogeneous data (Inventiones 2014). Existence
 of a profile is not an a priori on \(X\). Vladimír,
 Terence — do not cash a constructed solution as a bound.
+
+**Guillod.** Numerics show a pitchfork for large
+scale-invariant data. The profiles are smooth. That is
+not an a priori on \(X\), and it is not a singularity.
+Hao, Vladimír — if the pitchfork is proved, that is
+Leray–Hopf non-uniqueness for non-smooth data. It does
+not write the blank.
 
 **Seregin.** Local regularity and the Escauriaza–Seregin–Šverák
 endpoint sit. They are criteria. They are not an a priori
@@ -222,6 +230,7 @@ scores the process, not a theorem you did not prove.
 | Self-similar exclusion closes \(X\) | **fail** |
 | Liouville or ancient doors are an a priori | **fail** |
 | Jia–Šverák forward self-similar closes \(X\) | **fail** |
+| Guillod–Šverák numerical pitchfork closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |
