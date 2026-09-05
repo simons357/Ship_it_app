@@ -3,7 +3,8 @@
 `python3 scripts/da_machine.py nowwhat`  
 `python3 scripts/da_machine.py next`  
 `python3 scripts/da_machine.py next --ask "now what"`  
-`python3 scripts/da_machine.py look`
+`python3 scripts/da_machine.py look`  
+`python3 scripts/da_machine.py from`
 
 The operator is a normal person. They say **now what.**
 DA does not send that sentence to a chatbot for a
@@ -134,6 +135,7 @@ Empty `next`, or `next --ask "now what"`, routes here.
 A specific sentence still goes through `next --ask`.
 
 Translate: [`DA-NEXT.md`](DA-NEXT.md)  
+From your work: [`DA-FROM.md`](DA-FROM.md)  
 Hunt: [`DA-HUNT.md`](DA-HUNT.md)  
 Living: [`DA-LIVING.md`](DA-LIVING.md)  
 Residual: [`TRACK-B-RESIDUAL.md`](TRACK-B-RESIDUAL.md)

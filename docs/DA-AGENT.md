@@ -25,6 +25,7 @@ not replace the checker.
 | Council | `nowwhat` | U / B | leftover papers + history: would try / cannot | a vote; a séance; ChatGPT freestyle |
 | Hunt | `hunt` | U / B | scored edges, blocked edges, object window | write \(\mathcal{R}\); LLM fill |
 | Look | `look` | B | object window anytime | a bound |
+| From | `from` | U / B | your steps to the break | smoothness; write \(\mathcal{R}\) |
 
 Latest public data belongs here. A stale machine is a
 weaker anti-bullshit device. Up to date is a U duty.

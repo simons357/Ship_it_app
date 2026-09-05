@@ -17,6 +17,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from da_from import print_break_brief  # noqa: E402
 from da_hunt import OBJECT, print_object_window  # noqa: E402
 from da_next import WALL  # noqa: E402
 
@@ -423,6 +424,8 @@ def run(out: Path | None = None) -> dict:
 def print_nowwhat(out: Path | None = None) -> dict:
     payload = run(out=out)
     print_object_window(payload["object"])
+    print()
+    print_break_brief()
     print()
     print("NOW WHAT")
     print(payload["here"])
