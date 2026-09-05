@@ -120,8 +120,12 @@ CLAIMS = [
 
 def is_done_ask(ask: str) -> bool:
     """Is NS done / is that right / can DA finish."""
+    from da_study import is_study_ask
+
     text = (ask or "").lower().strip()
     if not text:
+        return False
+    if is_study_ask(text):
         return False
     return bool(
         re.search(

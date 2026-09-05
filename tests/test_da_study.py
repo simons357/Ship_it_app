@@ -27,6 +27,14 @@ class DaStudyTests(unittest.TestCase):
         self.assertEqual(by["S4"]["verdict"], "fail")
         self.assertEqual(by["S5"]["verdict"], "fail")
         self.assertEqual(by["S6"]["verdict"], "open")
+        self.assertEqual(by["S7"]["verdict"], "fail")
+        self.assertEqual(by["S8"]["verdict"], "pass")
+        self.assertTrue(payload["meta"]["da_did_not_finish_just_now"])
+        self.assertTrue(payload["meta"]["agent_phrased"])
+        who = "did da finish those proofs just now or was it you"
+        self.assertTrue(is_study_ask(who))
+        self.assertFalse(is_proof_ask(who))
+        self.assertFalse(is_done_ask(who))
         asks = {a["id"]: a for a in ASKS}
         self.assertTrue(asks["B_write"]["can_write"])
         self.assertFalse(asks["B_write"]["can_finish"])

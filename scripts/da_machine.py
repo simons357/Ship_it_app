@@ -125,7 +125,8 @@ def classify_claim(claim: str) -> dict:
         r"\bcan da\b|\bda done\b|\blooks like.{0,24}done\b|"
         r"\bgcd paper\b|\bbest gcd\b|\bq6\b|\bq7\b|"
         r"\belectoral floor\b|\bspectral floor\b|"
-        r"\bdirected at da\b|\bthese questions\b|\bcan da do\b|\bda study\b",
+        r"\bdirected at da\b|\bthese questions\b|\bcan da do\b|\bda study\b|"
+        r"\bwas it you\b|\bdid da finish\b",
         text,
     ):
         return {

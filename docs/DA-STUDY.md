@@ -26,6 +26,10 @@ DA can do the support job. DA cannot finish every
 leftover. That is a pass on the study design, not a
 pass on classical NS.
 
+DA is scripts plus scored docs. The agent phrases.
+DA reprints. Sitting theorems sat before the session.
+Open WRITE lines were not closed just now.
+
 ---
 
 ## Scored
@@ -38,3 +42,5 @@ pass on classical NS.
 | DA finishes every leftover by printing the chain | **fail** |
 | If DA can do the study job then classical NS is done | **fail** |
 | An open WRITE line may sit later | **open** |
+| DA finished those proofs just now | **fail** |
+| The session writes were the agent operating DA | **pass** |

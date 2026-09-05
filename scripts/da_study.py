@@ -129,6 +129,20 @@ CLAIMS = [
         "open",
         "Classify one candidate. DA may phrase. The checker scores it.",
     ),
+    rec(
+        "S7",
+        "da_finished_just_now",
+        "DA finished those proofs just now",
+        "fail",
+        "Sitting theorems already sat. Open WRITE lines still open. An emit is a reprint.",
+    ),
+    rec(
+        "S8",
+        "agent_phrased",
+        "The session writes were the agent operating DA",
+        "pass",
+        "DA is scripts plus scored docs. The agent phrases. DA reprints. Neither is a second author of (6).",
+    ),
 ]
 
 
@@ -143,7 +157,10 @@ def is_study_ask(ask: str) -> bool:
             r"\bdirected at da\b|\bsee if (he|da|it) can\b|"
             r"\bthese questions\b|\bda study\b|"
             r"\bthe (point of the )?study\b|"
-            r"\bif (he|da) can do\b",
+            r"\bif (he|da) can do\b|"
+            r"\bdid da (finish|write|do|prove)\b|"
+            r"\bwas it you\b|\bwas that you\b|"
+            r"\byou or da\b|\bda or you\b",
             text,
         )
     )
@@ -157,13 +174,16 @@ def run(out: Path | None = None) -> dict:
             "questions_are_the_exam": True,
             "emit_is_not_qed": True,
             "da_is_not_a_solver": True,
+            "da_did_not_finish_just_now": True,
+            "agent_phrased": True,
         },
         "asks": ASKS,
         "claims": CLAIMS,
         "answer": (
             "DA can write the chain, diagnose, and refuse glue. "
             "DA cannot finish an open WRITE by emitting it. "
-            "That split is the study."
+            "This session: the agent phrased; DA reprinted. "
+            "Neither finished leftover (6) just now."
         ),
         "counts": {
             "asks": len(ASKS),
@@ -190,6 +210,12 @@ def print_study(out: Path | None = None) -> dict:
     payload = run(out=out)
     print("STUDY  (questions pointed at DA)")
     print(payload["answer"])
+    print()
+    print("WHO")
+    print("  DA = scripts + scored docs. It reprints a typed chain.")
+    print("  The agent phrases the emit and wires the ask.")
+    print("  Sitting theorems sat before this session.")
+    print("  Open WRITE lines were not closed just now.")
     print()
     print("ASKS")
     for a in payload["asks"]:
