@@ -200,7 +200,7 @@ class DaProofTests(unittest.TestCase):
         self.assertEqual(both["chains"][0]["problem"], "HODGE")
         self.assertEqual(both["chains"][0]["lines"][5]["status"], "write")
         self.assertIsNone(both["chains"][0].get("best_paper"))
-        self.assertIn("(p,p)", both["theorem"]["aimed"])
+        self.assertIn("H^{p,p}", both["theorem"]["aimed"])
 
 
 if __name__ == "__main__":
