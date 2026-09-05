@@ -125,7 +125,7 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
     if re.search(
-        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up|anti-?bullshit|comput(e|ing)|dedalus|sympy|gwosc|\balert\b|text me|notif|converse|working session|talk to each other|virtual s[eé]ance|kingdoms|living dream team|living bench|not dead|full.?roll|all specialties|next lead|every chair|seat miller|albritton|beirao|berselli|giga.?miura|\bmiura\b|\bseat jia\b|\bseat guillod\b|\bseat hou.?wang.?yang\b|\bseat lei.?ren.?tian\b|\bseat csty\b|\bseat kozono|\bseat neustupa|\bseat escauriaza|\bseat nadirashvili|\bseat chae\b|\bseat chemin|\bseat cannone|\bseat lin\b|\bseat vasseur\b|\bseat farwig\b|\bseat cheskidov\b|\bseat masmoudi\b|\bseat wolf\b|\bseat galdi\b|\bseat temam\b|\bseat isett\b|\bseat tsai\b|\bseat lemarie\b|\bseat danchin\b|\bseat kukavica\b|\bseat barker\b|living genius|genius roster|\bda now\b|\bda feed\b|live feed|latest (ligo|lhc|pdg)|particle accelerator|\bnow roster\b|\bseat robinson\b|\bseat pavlovic\b|\bseat rusin\b|\bseat germain\b|\bseat cao\b|\bseat hieber\b|\bseat bedrossian\b|\bseat kelliher\b|\bseat silvestre\b|\bseat schonbek\b|\bseat ponce\b|\bseat iftimie\b|\bseat fursikov\b|\bseat maremonti\b|\bseat korobkov\b|\bseat hishida\b|\bseat mucha\b|\bseat paicu\b|\bseat gibbon\b|\bseat ambrosio\b|\bseat enciso\b|\bseat feireisl\b|\bseat kiselev\b|\bda next\b|\bnow what\b|\bnowwhat\b|\bwhat would you\b|\blost operator\b|\bmissing piece\b|\bsmartest\b|\bin history\b|\bwhat would you do now\b|\bda hunt\b|\bhunter mode\b|\bproof chain\b|\bobject window\b|\bda look\b|\blook at the object\b|\bshow the object\b|\bcontext and meaning\b|\bunderstands context\b|\bfrom my work\b|\bwhere it breaks\b|\bda from\b|\bglobal regularity\b|\bmy steps\b|\bda proof\b|\bwrite (me )?(the )?proof\b|\bxavier stokes\b|\bnavier.?stokes\b|around.?the.?wall|where.?is.?the.?wall|translate.?to.?math|proof.?chain.?next|radial.?spoke|\bda agent\b|agent.?shaped|domain architect agent|feed freshness|stale.?da|stale.?feed|must stay current|last.?scan",
+        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up|anti-?bullshit|comput(e|ing)|dedalus|sympy|gwosc|\balert\b|text me|notif|converse|working session|talk to each other|virtual s[eé]ance|kingdoms|living dream team|living bench|not dead|full.?roll|all specialties|next lead|every chair|seat miller|albritton|beirao|berselli|giga.?miura|\bmiura\b|\bseat jia\b|\bseat guillod\b|\bseat hou.?wang.?yang\b|\bseat lei.?ren.?tian\b|\bseat csty\b|\bseat kozono|\bseat neustupa|\bseat escauriaza|\bseat nadirashvili|\bseat chae\b|\bseat chemin|\bseat cannone|\bseat lin\b|\bseat vasseur\b|\bseat farwig\b|\bseat cheskidov\b|\bseat masmoudi\b|\bseat wolf\b|\bseat galdi\b|\bseat temam\b|\bseat isett\b|\bseat tsai\b|\bseat lemarie\b|\bseat danchin\b|\bseat kukavica\b|\bseat barker\b|living genius|genius roster|\bda now\b|\bda feed\b|live feed|latest (ligo|lhc|pdg)|particle accelerator|\bnow roster\b|\bseat robinson\b|\bseat pavlovic\b|\bseat rusin\b|\bseat germain\b|\bseat cao\b|\bseat hieber\b|\bseat bedrossian\b|\bseat kelliher\b|\bseat silvestre\b|\bseat schonbek\b|\bseat ponce\b|\bseat iftimie\b|\bseat fursikov\b|\bseat maremonti\b|\bseat korobkov\b|\bseat hishida\b|\bseat mucha\b|\bseat paicu\b|\bseat gibbon\b|\bseat ambrosio\b|\bseat enciso\b|\bseat feireisl\b|\bseat kiselev\b|\bda next\b|\bnow what\b|\bnowwhat\b|\bwhat would you\b|\blost operator\b|\bmissing piece\b|\bsmartest\b|\bin history\b|\bwhat would you do now\b|\bda hunt\b|\bhunter mode\b|\bproof chain\b|\bobject window\b|\bda look\b|\blook at the object\b|\bshow the object\b|\bcontext and meaning\b|\bunderstands context\b|\bfrom my work\b|\bwhere it breaks\b|\bda from\b|\bglobal regularity\b|\bmy steps\b|\bda proof\b|\bwrite (me )?(the )?proof\b|\bxavier stokes\b|\bnavier.?stokes\b|\brh proof\b|\briemann\b|\bproof chain please\b|around.?the.?wall|where.?is.?the.?wall|translate.?to.?math|proof.?chain.?next|radial.?spoke|\bda agent\b|agent.?shaped|domain architect agent|feed freshness|stale.?da|stale.?feed|must stay current|last.?scan",
         text,
     ):
         return {"domain": "U", "verdict": "open", "reason": "looks like score U / SM Lagrangian / waveform; run sm or how"}
@@ -777,15 +777,16 @@ def cmd_now() -> int:
     return 0
 
 
-def cmd_proof() -> int:
-    from da_proof import print_proof
+def cmd_proof(problem: str = "", ask: str = "") -> int:
+    from da_proof import parse_problem, print_proof
 
-    print_proof()
+    pid = parse_problem(ask=ask, problem=problem)
+    print_proof(problem=pid, ask=ask)
     append_run(
         "U",
-        "Write the Navier-Stokes proof chain from this desk",
+        f"Write the {pid} proof chain from the ground floor",
         "open",
-        "ask pass; emit is not QED; line 6 is the write",
+        "ask pass; emit is not QED; WRITE is the attempt; Q is not RH",
     )
     return 0
 
@@ -852,7 +853,7 @@ def cmd_next(ask: str = "") -> int:
     if is_look_ask(ask):
         return cmd_look()
     if is_proof_ask(ask):
-        return cmd_proof()
+        return cmd_proof(ask=ask)
     if is_from_ask(ask):
         return cmd_from()
     if is_lost_ask(ask):
@@ -1094,7 +1095,8 @@ def main() -> int:
     sub.add_parser("window", help="same as look")
     sub.add_parser("from", help="walk your scored steps to the break; proceed toward regularity")
     sub.add_parser("mine", help="same as from")
-    sub.add_parser("proof", help="write the Navier-Stokes proof chain")
+    prf = sub.add_parser("proof", help="write a proof chain: NS or RH")
+    prf.add_argument("--problem", default="", help="NS or RH")
     sub.add_parser("desk", help="write-up roster + corpus method (papers, not a vote)")
     sub.add_parser("compute", help="computing techniques already wired, legal to borrow, or refuse")
     sub.add_parser("alert", help="plain-language text when a watched claim flips")
@@ -1174,7 +1176,7 @@ def main() -> int:
     if args.cmd in ("from", "mine"):
         return cmd_from()
     if args.cmd == "proof":
-        return cmd_proof()
+        return cmd_proof(problem=getattr(args, "problem", ""))
     if args.cmd == "desk":
         return cmd_desk()
     if args.cmd == "compute":

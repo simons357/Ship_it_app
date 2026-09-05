@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-DA proof: write the Navier-Stokes proof chain.
+DA proof: write a proof chain from the ground floor.
 
-The operator says: write me the proof chain for
-Navier-Stokes. Nothing is wrong with that. DA writes
-the aimed theorem and the chain from this desk.
+The operator is not a math person. They name a problem
+(NS, RH). DA writes the aimed theorem and the chain.
+Asking is the product. Emitting the chain is not QED.
+Line WRITE is the attempt.
 
-Line (k) is the next write. Emitting the chain is
-not QED. Filling (k) is the attempt.
+Track Q is inverse-GCD. It is not RH. Do not glue.
 """
 
 from __future__ import annotations
@@ -20,7 +20,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from da_from import MINE, NEEDED  # noqa: E402
-from da_hunt import LEGAL, OBJECT, print_object_window  # noqa: E402
+from da_hunt import LEGAL, OBJECT  # noqa: E402
 from da_next import WALL  # noqa: E402
 
 
@@ -43,20 +43,7 @@ def rec(
     return row
 
 
-THEOREM = {
-    "aimed": (
-        "Let u be a smooth solution of 3D incompressible Navier-Stokes "
-        "(periodic or whole space), viscosity nu > 0, no Q1, keep 1/r^4. "
-        "Let X = ||omega||_2^2. Then X stays finite on [0, T] for arbitrary T, "
-        "and u remains smooth."
-    ),
-    "object": WALL["target_B"],
-    "form": WALL["looks_like"],
-}
-
-
-# The chain as a proof, not as a wall catalog.
-LINES = [
+NS_LINES = [
     {
         "n": 1,
         "status": "have",
@@ -112,9 +99,7 @@ LINES = [
     {
         "n": 7,
         "status": "follows",
-        "text": (
-            "Gronwall. From (3) and (6), X(t) stays finite on [0, T]."
-        ),
+        "text": "Gronwall. From (3) and (6), X(t) stays finite on [0, T].",
     },
     {
         "n": 8,
@@ -137,54 +122,214 @@ LINES = [
 ]
 
 
+RH_LINES = [
+    {
+        "n": 1,
+        "status": "have",
+        "text": (
+            "Zeta. Riemann zeta is meromorphic, simple pole at s=1, "
+            "Euler product for Re s > 1."
+        ),
+    },
+    {
+        "n": 2,
+        "status": "have",
+        "text": (
+            "xi. The completed xi-function is entire of order 1 "
+            "and satisfies a functional equation xi(s) = xi(1-s)."
+        ),
+    },
+    {
+        "n": 3,
+        "status": "have",
+        "text": (
+            "Strip. Every non-trivial zero lies in 0 < Re s < 1."
+        ),
+    },
+    {
+        "n": 4,
+        "status": "have",
+        "text": (
+            "Prime number theorem. No zeros on Re s = 1 "
+            "(Hadamard / de la Vallee Poussin)."
+        ),
+    },
+    {
+        "n": 5,
+        "status": "have",
+        "text": (
+            "The line. Infinitely many zeros on Re s = 1/2 (Hardy). "
+            "A positive proportion sit on the line (Conrey and later). "
+            "Literature, not a theorem of this desk."
+        ),
+    },
+    {
+        "n": 6,
+        "status": "write",
+        "text": (
+            "WRITE. Every non-trivial zero has Re s = 1/2."
+        ),
+    },
+    {
+        "n": 7,
+        "status": "follows",
+        "text": (
+            "Explicit formula. If (6) sits, the von Mangoldt explicit formula "
+            "has all oscillatory terms on the critical line."
+        ),
+    },
+    {
+        "n": 8,
+        "status": "follows",
+        "text": (
+            "Error term. The prime-counting error is then of the classical "
+            "Riemann order (up to logs)."
+        ),
+    },
+]
+
+
+PROBLEMS = {
+    "NS": {
+        "id": "NS",
+        "aliases": ("ns", "navier", "stokes", "xavier", "navi"),
+        "slot": "B",
+        "name": "3D Navier-Stokes global regularity",
+        "object": {
+            "name": "X",
+            "slot": "B",
+            "english": OBJECT["english"],
+            "window": OBJECT["window"],
+        },
+        "theorem": (
+            "Let u be a smooth solution of 3D incompressible Navier-Stokes "
+            "(periodic or whole space), viscosity nu > 0, no Q1, keep 1/r^4. "
+            "Let X = ||omega||_2^2. Then X stays finite on [0, T] for arbitrary T, "
+            "and u remains smooth."
+        ),
+        "lines": NS_LINES,
+        "chain_doc": "docs/NS-PROOF-CHAIN.md",
+        "proceed": [row["claim"] for row in LEGAL],
+        "if_write_sits": "If (6) sits, (7)-(9) give global regularity.",
+        "do_not": "Do not graft Q1 onto B. Track A is a different equation.",
+        "mine": MINE,
+        "needed": NEEDED,
+    },
+    "RH": {
+        "id": "RH",
+        "aliases": ("rh", "riemann"),
+        "slot": "RH",
+        "name": "Riemann hypothesis",
+        "object": {
+            "name": "non-trivial zeros of zeta",
+            "slot": "RH",
+            "english": "every non-trivial zero of zeta has real part 1/2",
+            "window": [
+                "xi(s) = xi(1-s), entire of order 1",
+                "need: Re rho = 1/2 for every non-trivial zero rho",
+                "Track Q on this desk is inverse-GCD, not RH",
+                "Theorem P is not the Riemann hypothesis",
+            ],
+        },
+        "theorem": (
+            "Every non-trivial zero of the Riemann zeta function "
+            "has real part equal to 1/2."
+        ),
+        "lines": RH_LINES,
+        "chain_doc": "docs/RH-PROOF-CHAIN.md",
+        "proceed": [
+            "a zero-free region that reaches Re s = 1/2",
+            "a positivity certificate in the explicit formula that forces the line",
+            "one new estimate that puts every zero on Re s = 1/2",
+        ],
+        "if_write_sits": "If (6) sits, (7)-(8) are the classical consequences.",
+        "do_not": (
+            "Do not glue inverse-GCD / Theorem P / Bridge* onto RH. "
+            "Track Q is a different object."
+        ),
+        "mine": [],
+        "needed": [],
+    },
+}
+
+# Back-compat names for existing NS tests.
+THEOREM = {"aimed": PROBLEMS["NS"]["theorem"], "object": WALL["target_B"], "form": WALL["looks_like"]}
+LINES = NS_LINES
+
+
 CLAIMS = [
     rec(
         "C1",
         "ask_for_the_chain",
-        "You can tell DA to write the proof chain for Navier-Stokes",
+        "You can tell DA to write a proof chain by naming the problem",
         "pass",
-        "proof / write the proof / Xavier Stokes / Navi Stokes. That is the point.",
+        "NS / Xavier Stokes / RH / Riemann. The operator does not need the chops.",
     ),
     rec(
         "C2",
         "chain_is_the_argument",
         "The written chain is the aimed theorem plus have / write / follows",
         "pass",
-        "Lines 1-5 are this desk. Line 6 is the write. 7-9 follow if 6 sits.",
+        "Ground floor up. Line WRITE is the attempt.",
     ),
     rec(
         "C3",
         "emit_is_qed",
         "Emitting the proof chain is QED",
         "fail",
-        "The chain is the argument. Line 6 is still a write.",
+        "The chain is the argument. WRITE is still a write.",
     ),
     rec(
         "C4",
         "llm_writes_line_6",
-        "An LLM writes line 6 into a theorem",
+        "An LLM writes the WRITE line into a theorem",
         "fail",
-        "It may phrase a candidate for (6). The checker scores it.",
+        "It may phrase a candidate. The checker scores it.",
     ),
     rec(
         "C5",
         "nothing_wrong_with_asking",
-        "Asking DA to write the NS proof chain is a category error",
+        "Asking DA to write a proof chain is a category error",
         "fail",
         "Asking is the product. A fake last line is the refuse.",
     ),
     rec(
         "C6",
-        "line_6_may_sit",
-        "Line 6 may sit later",
+        "line_write_may_sit",
+        "The WRITE line may sit later",
         "open",
-        "That is the attempt. Regularity follows if it sits.",
+        "That is the attempt. The aimed theorem follows if it sits.",
+    ),
+    rec(
+        "C7",
+        "q_is_rh",
+        "Track Q / Theorem P is the Riemann hypothesis",
+        "fail",
+        "Inverse-GCD floors are not zeta zeros. No glue.",
+    ),
+    rec(
+        "C8",
+        "more_problems",
+        "More named problems may get a ground-floor chain",
+        "open",
+        "A problem sits when the aimed theorem and the have/write/follows lines are typed.",
     ),
 ]
 
 
+def parse_problem(ask: str = "", problem: str = "") -> str:
+    text = f"{problem} {ask}".lower()
+    if re.search(r"\brh\b|riemann", text):
+        return "RH"
+    if re.search(r"xavier|navi|\bstokes\b|\bns\b|navier", text):
+        return "NS"
+    if problem.upper() in PROBLEMS:
+        return problem.upper()
+    return "NS"
+
+
 def is_proof_ask(ask: str) -> bool:
-    """Write me the proof chain for Navier-Stokes / Xavier Stokes."""
+    """Write me the proof chain / NS / RH."""
     text = (ask or "").lower().strip()
     if not text:
         return False
@@ -192,40 +337,61 @@ def is_proof_ask(ask: str) -> bool:
         re.search(
             r"\bwrite (me )?(the )?proof\b|\bproof chain\b|"
             r"\bxavier stokes\b|\bnavi(er)?.?stokes\b|"
-            r"\bda proof\b|\bthe proof for (ns|navier)\b",
+            r"\bda proof\b|\bthe proof for (ns|navier|rh|riemann)\b|"
+            r"\brh\b|\briemann\b",
             text,
         )
     )
 
 
-def run(out: Path | None = None) -> dict:
+def print_problem_window(obj: dict) -> None:
+    print("OBJECT WINDOW")
+    print(f"  {obj['name']}  slot {obj['slot']}")
+    print(f"  {obj['english']}")
+    for line in obj["window"]:
+        print(f"  {line}")
+
+
+def run(out: Path | None = None, problem: str = "NS", ask: str = "") -> dict:
+    pid = parse_problem(ask=ask, problem=problem)
+    spec = PROBLEMS[pid]
+    write_n = next(L["n"] for L in spec["lines"] if L["status"] == "write")
     payload = {
         "meta": {
-            "question": "write the proof chain for Navier-Stokes",
+            "question": f"write the proof chain for {pid}",
             "writeup": "docs/DA-PROOF.md",
-            "chain": "docs/NS-PROOF-CHAIN.md",
+            "chain": spec["chain_doc"],
+            "problem": pid,
             "nothing_wrong_with_asking": True,
             "emit_is_not_qed": True,
+            "q_is_not_rh": True,
+            "operator_needs_no_chops": True,
         },
-        "theorem": THEOREM,
-        "object": OBJECT,
-        "lines": LINES,
-        "mine": MINE,
-        "needed": NEEDED,
-        "proceed": LEGAL,
+        "problem": pid,
+        "problems": list(PROBLEMS),
+        "theorem": {"aimed": spec["theorem"], "name": spec["name"]},
+        "object": spec["object"],
+        "lines": spec["lines"],
+        "mine": spec["mine"],
+        "needed": spec["needed"],
+        "proceed": spec["proceed"],
+        "if_write_sits": spec["if_write_sits"],
+        "do_not": spec["do_not"],
+        "write_n": write_n,
         "claims": CLAIMS,
         "counts": {
-            "lines": len(LINES),
-            "have": sum(1 for L in LINES if L["status"] == "have"),
-            "write": sum(1 for L in LINES if L["status"] == "write"),
-            "follows": sum(1 for L in LINES if L["status"] == "follows"),
+            "problems": len(PROBLEMS),
+            "lines": len(spec["lines"]),
+            "have": sum(1 for L in spec["lines"] if L["status"] == "have"),
+            "write": sum(1 for L in spec["lines"] if L["status"] == "write"),
+            "follows": sum(1 for L in spec["lines"] if L["status"] == "follows"),
             "pass": sum(1 for c in CLAIMS if c["verdict"] == "pass"),
             "fail": sum(1 for c in CLAIMS if c["verdict"] == "fail"),
             "open": sum(1 for c in CLAIMS if c["verdict"] == "open"),
         },
         "next_da_move": (
-            "Line 6 is the write. Classify one candidate. "
-            "If it sits, 7-9 follow. That is the close."
+            f"Line ({write_n}) is the write. Classify one candidate. "
+            "If it sits, the THEN lines follow. That is the close."
         ),
     }
     dest = Path(out) if out is not None else Path("results/da_proof.json")
@@ -235,33 +401,41 @@ def run(out: Path | None = None) -> dict:
     return payload
 
 
-def print_proof(out: Path | None = None) -> dict:
-    payload = run(out=out)
-    print_object_window(payload["object"])
+def print_proof(out: Path | None = None, problem: str = "NS", ask: str = "") -> dict:
+    payload = run(out=out, problem=problem, ask=ask)
+    print_problem_window(payload["object"])
+    print()
+    print(f"PROBLEM {payload['problem']}")
+    print("Problems on this desk:", ", ".join(payload["problems"]))
     print()
     print("THEOREM (aimed)")
     print(" ", payload["theorem"]["aimed"])
     print()
-    print("PROOF CHAIN")
+    print("PROOF CHAIN  (ground floor up)")
     for L in payload["lines"]:
         tag = {"have": "HAVE", "write": "WRITE", "follows": "THEN"}[L["status"]]
         print(f"  ({L['n']}) [{tag}] {L['text']}")
     print()
-    print("If (6) sits, (7)-(9) give global regularity. That is the close.")
-    print("A candidate for (6):")
+    print(payload["if_write_sits"])
+    print(payload["do_not"])
+    print("A candidate for the WRITE line:")
     for row in payload["proceed"]:
-        print(f"  {row['id']}: {row['claim']}")
+        print(f"  - {row}")
     print()
     for c in payload["claims"]:
         print(f"  [{c['verdict']}] {c['id']}: {c['statement']}")
     print("next:", payload["next_da_move"])
     print(f"wrote {payload['_wrote']}")
-    print("chain: docs/NS-PROOF-CHAIN.md")
+    print("chain:", payload["meta"]["chain"])
     return payload
 
 
 def main() -> int:
-    print_proof()
+    problem = "NS"
+    args = [a for a in sys.argv[1:] if not a.startswith("-")]
+    if args:
+        problem = parse_problem(ask=" ".join(args))
+    print_proof(problem=problem, ask=" ".join(args))
     return 0
 
 

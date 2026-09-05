@@ -3,8 +3,10 @@
 Aimed at global regularity. Classical equation.
 Keep \(1/r^4\). No \(Q_1\).
 
-Say to DA: `python3 scripts/da_machine.py proof`  
+Say to DA: `python3 scripts/da_machine.py proof --problem NS`  
 or: `next --ask "write me the proof chain for Navier-Stokes"`
+
+RH is a different problem: [`RH-PROOF-CHAIN.md`](RH-PROOF-CHAIN.md).
 
 ---
 

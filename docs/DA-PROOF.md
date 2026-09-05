@@ -1,17 +1,30 @@
-# DA proof — write the NS chain
+# DA proof — name a problem, get the chain
 
-`python3 scripts/da_machine.py proof`  
-`python3 scripts/da_machine.py next --ask "write me the proof chain for Navier-Stokes"`  
-`python3 scripts/da_machine.py next --ask "Xavier Stokes"`
+The operator is not a math person. They name a problem.
+DA writes the aimed theorem and the proof chain from
+the ground floor.
+
+```
+python3 scripts/da_machine.py proof
+python3 scripts/da_machine.py proof --problem NS
+python3 scripts/da_machine.py proof --problem RH
+python3 scripts/da_machine.py next --ask "write me the proof chain for Navier-Stokes"
+python3 scripts/da_machine.py next --ask "RH proof chain please"
+```
 
 Nothing is wrong with asking. That is the product.
 
-DA writes the aimed theorem and the proof chain from
-this desk. The chain lives in
-[`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md).
+| Problem | Command | Chain |
+|---|---|---|
+| Navier–Stokes | `--problem NS` | [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md) |
+| Riemann hypothesis | `--problem RH` | [`RH-PROOF-CHAIN.md`](RH-PROOF-CHAIN.md) |
 
-Line (6) is the next write. Emitting the chain is not
-QED. If (6) sits, (7)–(9) are the close.
+Track Q is inverse-GCD. It is not RH. Do not glue.
+
+The WRITE line is the attempt. Emitting the chain is
+not QED. If WRITE sits, the THEN lines are the close.
+
+More problems may join when a ground-floor chain is typed.
 
 ---
 
@@ -19,13 +32,11 @@ QED. If (6) sits, (7)–(9) are the close.
 
 | Claim | Verdict |
 |---|---|
-| You can tell DA to write the proof chain for Navier–Stokes | **pass** |
+| You can tell DA to write a proof chain by naming the problem | **pass** |
 | The written chain is the aimed theorem plus have / write / follows | **pass** |
 | Emitting the proof chain is QED | **fail** |
-| An LLM writes line (6) into a theorem | **fail** |
-| Asking DA to write the NS proof chain is a category error | **fail** |
-| Line (6) may sit later | **open** |
-
-Object window: `look`  
-Walk your steps: `from`  
-Chain file: [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md)
+| An LLM writes the WRITE line into a theorem | **fail** |
+| Asking DA to write a proof chain is a category error | **fail** |
+| Track Q / Theorem P is the Riemann hypothesis | **fail** |
+| The WRITE line may sit later | **open** |
+| More named problems may get a ground-floor chain | **open** |

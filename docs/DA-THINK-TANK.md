@@ -14,7 +14,7 @@ Lost-operator council: `python3 scripts/da_machine.py nowwhat`
 Proof-chain hunter: `python3 scripts/da_machine.py hunt`  
 Object window: `python3 scripts/da_machine.py look`  
 From your work: `python3 scripts/da_machine.py from`  
-Write the NS proof chain: `python3 scripts/da_machine.py proof`  
+Write a proof chain: `python3 scripts/da_machine.py proof --problem NS` or `--problem RH`  
 Scene: `docs/DA-SESSION.md`  
 Living scene: `docs/DA-LIVING.md`  
 Leads: `docs/DA-LEADS.md`  

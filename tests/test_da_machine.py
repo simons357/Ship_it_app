@@ -578,6 +578,9 @@ class DaMachineTests(unittest.TestCase):
         proof = classify_claim("write me the proof chain for Xavier Stokes")
         self.assertEqual(proof["domain"], "U")
         self.assertEqual(proof["verdict"], "open")
+        rh = classify_claim("RH proof chain please")
+        self.assertEqual(rh["domain"], "U")
+        self.assertEqual(rh["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
