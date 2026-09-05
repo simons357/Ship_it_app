@@ -40,6 +40,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Primitive equations | Cao | 3D viscous primitive equations are globally well-posed for large \(H^1\) data | hydrostatic regularity bounds NS \(X\) |
 | Stokes / maximal \(L^p\) regularity | Hieber | maximal \(L^p\) regularity for the Stokes operator | a linear estimate bounds \(X\) |
 | Kolmogorov 4/5 / weak anomalous dissipation | Bedrossian | 4/5 for forced stationary martingale solutions under weak anomalous dissipation | a cascade identity bounds \(X\) |
+| Vanishing viscosity / inviscid limit | Kelliher | vanishing viscosity iff a vortex sheet forms on the boundary | the inviscid limit bounds \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -224,6 +225,13 @@ identity is not a bound on \(X\). Alexey, Dallas —
 energy equality stays Cheskidov. Forced Leray stays
 Albritton. Couette stays off this chair. Coti Zelati
 stays off this chair.
+
+**Kelliher.** Vanishing viscosity holds if and only if
+a vortex sheet forms on the boundary (Comm. Math. Sci.
+6, 2008). An equivalence for the inviscid limit is not
+a bound on \(X\). Tarek, Roger — Euler singularity stays
+Elgindi. Attractors stay Temam. Kato is not in this
+room. Temam–Wang Kato-type criteria stay off this chair.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -494,6 +502,7 @@ scores the process, not a theorem you did not prove.
 | Cao primitive equations close \(X\) | **fail** |
 | Hieber Stokes maximal regularity closes \(X\) | **fail** |
 | Bedrossian Kolmogorov 4/5 closes \(X\) | **fail** |
+| Kelliher vanishing viscosity closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

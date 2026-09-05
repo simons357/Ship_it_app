@@ -172,6 +172,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Kelliher",
+        ["Elgindi", "Temam"],
+        "Vanishing viscosity holds if and only if a vortex sheet forms on the boundary. An equivalence for the inviscid limit is not a bound on X. Euler singularity stays Elgindi. Attractors stay Temam. Kato is not in this room.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -829,6 +835,13 @@ CLAIMS = [
         "fail",
         "CMP 2019: 4/5 for forced stationary martingale solutions under weak anomalous dissipation. A cascade identity is not a bound on X. Energy equality stays Cheskidov. Forced Leray stays Albritton.",
     ),
+    rec(
+        "L61",
+        "kelliher_inviscid_closes_X",
+        "Kelliher vanishing viscosity closes X",
+        "fail",
+        "CMS 2008: vanishing viscosity iff a vortex sheet on the boundary. An equivalence for the inviscid limit is not a bound on X. Kato stays out. Euler singularity stays Elgindi.",
+    ),
 ]
 
 
@@ -849,6 +862,7 @@ KINGDOMS = [
     {"name": "Primitive equations", "who": "Cao", "slot": "B"},
     {"name": "Stokes / maximal L^p regularity", "who": "Hieber", "slot": "B"},
     {"name": "Kolmogorov 4/5 / weak anomalous dissipation", "who": "Bedrossian", "slot": "B"},
+    {"name": "Vanishing viscosity / inviscid limit", "who": "Kelliher", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

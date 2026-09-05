@@ -9,7 +9,7 @@ geniuses in the world is omniscience. That claim **fails**.
 A vote of names does not write \(X\).
 
 Dated 5 September 2026. The seated list is derived from the
-living session, including Bedrossian Kolmogorov 4/5.
+living session, including Kelliher vanishing viscosity.
 The watch list is next papers, not a seat.
 
 ---

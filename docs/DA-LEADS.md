@@ -64,6 +64,7 @@ in your slot.
 | Cao | primitive equations | 3D viscous primitive equations are globally well-posed for large \(H^1\) data. Hydrostatic. A different equation is not a bound on NS \(X\). Titi stays off. | primitive equations \(=\) bound on \(X\) |
 | Hieber | Stokes / maximal \(L^p\) regularity | Maximal \(L^p\) regularity for Stokes is a linear estimate. Not a bound on \(X\). Attractors stay Temam. Very weak stays Farwig. Prüss stays out. | maximal regularity \(=\) bound on \(X\) |
 | Bedrossian | Kolmogorov 4/5 / weak anomalous dissipation | 4/5 for forced stationary martingale solutions is a cascade identity. Not a bound on \(X\). Energy equality stays Cheskidov. Forced Leray stays Albritton. | 4/5 law \(=\) bound on \(X\) |
+| Kelliher | vanishing viscosity / inviscid limit | Vanishing viscosity iff a vortex sheet on the boundary. An equivalence for the inviscid limit is not a bound on \(X\). Kato stays out. Euler singularity stays Elgindi. | inviscid limit \(=\) bound on \(X\) |
 | Guillod | numerical non-uniqueness | Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity. | numerics \(=\) bound; numerics \(=\) blowup |
 | Seregin | local regularity / ESS | A criterion is not an a priori on \(X\). | criterion \(\Rightarrow\) bound |
 | Escauriaza | ESS \(L^3\) endpoint | \(L^\infty_t L^3_x\) is the endpoint. A criterion is not an a priori. Bounded in \(L^3\) is not a bound on enstrophy. | \(L^3\) endpoint \(=\) bound on \(X\) |
@@ -167,6 +168,7 @@ in your slot.
 | Cao primitive equations bound \(X\) | **fail** |
 | Hieber Stokes maximal regularity bounds \(X\) | **fail** |
 | Bedrossian Kolmogorov 4/5 bounds \(X\) | **fail** |
+| Kelliher vanishing viscosity bounds \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
