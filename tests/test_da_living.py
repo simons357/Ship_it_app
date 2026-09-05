@@ -67,6 +67,7 @@ class DaLivingTests(unittest.TestCase):
         self.assertEqual(by["L47"]["verdict"], "fail")
         self.assertEqual(by["L48"]["verdict"], "fail")
         self.assertEqual(by["L49"]["verdict"], "fail")
+        self.assertEqual(by["L50"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["regularity_after"], "open")
         self.assertEqual(payload["meta"]["possible_to_close_X"], "open")
         self.assertTrue(payload["meta"]["not_a_vote"])
@@ -124,6 +125,7 @@ class DaLivingTests(unittest.TestCase):
             "Isett",
             "Tsai",
             "Lemarie-Rieusset",
+            "Danchin",
             "Operator",
         ):
             self.assertIn(must, names)
@@ -175,6 +177,7 @@ class DaLivingTests(unittest.TestCase):
             "Isett",
             "Tsai",
             "Lemarie-Rieusset",
+            "Danchin",
         }
         cross = [
             t
@@ -188,7 +191,7 @@ class DaLivingTests(unittest.TestCase):
         self.assertEqual(payload_open_count(), 1)
 
     def test_no_dead_fluids_in_living_room(self):
-        dead = {"Leray", "Kato", "Majda", "Ladyzhenskaya", "Nirenberg", "Scheffer", "Sohr", "Foias"}
+        dead = {"Leray", "Kato", "Majda", "Ladyzhenskaya", "Nirenberg", "Scheffer", "Sohr", "Foias", "Heywood"}
         self.assertTrue(dead.isdisjoint(set(SPEAKERS)))
 
 

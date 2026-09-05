@@ -33,6 +33,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
+| Inhomogeneous / density-dependent NS | Danchin | critical well-posedness for variable density | that equation bounds homogeneous \(X\) |
 | Numerical non-uniqueness | Guillod | pitchfork for large scale-invariant data | numerics \(=\) bound; numerics \(=\) blowup |
 | Partial regularity | Caffarelli, Kohn | singular set small | small \(=\) empty |
 | CKN new proof | Lin | simplified \(\varepsilon\)-regularity; velocity \(L^3\), pressure \(L^{3/2}\) | new proof \(=\) no blowup |
@@ -66,7 +67,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Announcements | current math.AP | a preprint is a proposal | close B by title |
 | The desk | operator | one sentence, one slot, one check | needing chops |
 
-Shahmurov does not get a chair. Sohr stays out. Foias stays out. SFE / HB-as-unifier do not.
+Shahmurov does not get a chair. Sohr stays out. Foias stays out. Heywood stays out. SFE / HB-as-unifier do not.
 
 ---
 
@@ -110,6 +111,11 @@ Jia's chair. Leray is not in this room.
 locally finite energy and no decay at infinity (2002).
 That class is not a bound on global \(X\). Hao, Tai-Peng,
 Reinhard — Leray is not in this room.
+
+**Danchin.** Density-dependent Navier–Stokes is a
+different equation. Critical well-posedness there is
+not a bound on homogeneous \(X\). Herbert, Nader —
+Heywood is not in this room.
 
 **Guillod.** Numerics show a pitchfork for large
 scale-invariant data. The profiles are smooth. That is
@@ -392,6 +398,7 @@ scores the process, not a theorem you did not prove.
 | Isett Onsager closes \(X\) | **fail** |
 | Tsai local-energy self-similar exclusion closes \(X\) | **fail** |
 | Lemarié-Rieusset local Leray solutions close \(X\) | **fail** |
+| Danchin density-dependent NS closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

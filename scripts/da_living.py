@@ -82,6 +82,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Danchin",
+        ["Koch", "Masmoudi"],
+        "Density-dependent Navier-Stokes is a different equation. Critical well-posedness there is not a bound on homogeneous X. Heywood is not in this room.",
+        "B",
+    ),
+    turn(
         "Guillod",
         ["Jia", "Sverak"],
         "Numerics show a pitchfork for large scale-invariant data. The profiles are smooth. That is not an a priori on X, and it is not a singularity.",
@@ -686,6 +692,13 @@ CLAIMS = [
         "fail",
         "2002: uniformly locally square integrable, local energy inequality. A different class is not a bound on global X.",
     ),
+    rec(
+        "L50",
+        "danchin_inhomogeneous_closes_X",
+        "Danchin density-dependent NS closes X",
+        "fail",
+        "Critical well-posedness for inhomogeneous NS is a different equation. Not a bound on homogeneous X. Heywood stays out.",
+    ),
 ]
 
 
@@ -699,6 +712,7 @@ KINGDOMS = [
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},
+    {"name": "Inhomogeneous / density-dependent NS", "who": "Danchin", "slot": "B"},
     {"name": "Numerical non-uniqueness", "who": "Guillod", "slot": "B"},
     {"name": "Partial regularity", "who": "Caffarelli, Kohn", "slot": "B"},
     {"name": "CKN new proof", "who": "Lin", "slot": "B"},
