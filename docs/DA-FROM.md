@@ -4,13 +4,12 @@
 `python3 scripts/da_machine.py mine`  
 `python3 scripts/da_machine.py next --ask "from my work"`
 
-The operator asked: provide a proof chain for
-classical NS, or take this desk’s work, walk every
-scored step to where it breaks, and suggest how to
-proceed toward global regularity / smoothness.
+The point is to close \(X\) if an all-data estimate
+sits. DA walks this desk’s work to the first
+unwritten step and aims the next attempt there.
 
-DA can do the diagnosis. It cannot write the
-missing estimate.
+Refusing a declaration without the integral is not
+refusing the attempt.
 
 ---
 
@@ -100,6 +99,7 @@ to write \(\mathcal{R}\).
 | The leftover catalog or a box path is the proceed | **fail** |
 | An LLM proceeds from the break to global regularity | **fail** |
 | A new scored all-data estimate may move the break | **open** |
+| The point is to close \(X\); refusing a fake close is refusing the attempt | **fail** |
 
 Hunt: [`DA-HUNT.md`](DA-HUNT.md)  
 Council: [`DA-NOWWHAT.md`](DA-NOWWHAT.md)  

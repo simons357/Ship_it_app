@@ -176,7 +176,7 @@ def run(out: Path | None = None, fetch: bool = False) -> dict:
 
 def main() -> int:
     payload = run(fetch=True)
-    print("DA agent. Propose, scan, score, alert. Not a closer.")
+    print("DA agent. Propose, scan, score, alert.")
     print("Full note: docs/DA-AGENT.md")
     tick = payload["tick"]
     print("seated", len(tick["seated_living"]), "watch", len(tick["watch"]))

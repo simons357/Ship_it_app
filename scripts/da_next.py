@@ -312,7 +312,7 @@ def run(out: Path | None = None, ask: str = "", fetch: bool = False) -> dict:
 def main() -> int:
     ask = " ".join(sys.argv[1:]) if len(sys.argv) > 1 else ""
     payload = run(ask=ask, fetch=False)
-    print("DA next. Hub, rim, wall. Not a closer.")
+    print("DA next. Hub, rim, wall.")
     print("Full note: docs/DA-NEXT.md")
     print("WHERE", payload["wall"]["where"])
     print("ENGLISH", payload["wall"]["english"])

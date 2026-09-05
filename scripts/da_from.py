@@ -2,10 +2,11 @@
 """
 DA from: take the operator's scored steps to the break.
 
-A regularity proof is a chain. DA can print the skeleton
-and walk this desk's work until it stops being a proof.
-It does not write the missing estimate. Proceed is a
-claim to classify, not smoothness.
+A regularity proof is a chain. The point is to close X
+if an all-data estimate sits. DA walks this desk's work
+to the first unwritten step and aims the next attempt
+there. Refusing a declaration without the integral is
+not refusing the attempt.
 """
 
 from __future__ import annotations
@@ -245,6 +246,13 @@ CLAIMS = [
         "open",
         "An edge sits when a checker scores it. Regularity stays open until then.",
     ),
+    rec(
+        "P10",
+        "point_is_to_close",
+        "The point is to close X; refusing a fake close is refusing the attempt",
+        "fail",
+        "The point is to close X. The refuse is declaring it without the integral. Attempt S10.",
+    ),
 ]
 
 
@@ -318,7 +326,11 @@ def print_from(out: Path | None = None) -> dict:
     payload = run(out=out)
     print_object_window(payload["object"])
     print()
-    print("YOUR STEPS  (this desk; scored; not a proof yet)")
+    print("THE POINT")
+    print("  Close X if an all-data estimate sits at S10. That is the attempt.")
+    print("  A declaration without the integral is refused. That is not the same thing.")
+    print()
+    print("YOUR STEPS  (this desk; scored)")
     for s in payload["mine"]:
         mark = " BREAK" if s.get("break_here") else ""
         reached = "" if s.get("reached", True) else "  [not reached]"

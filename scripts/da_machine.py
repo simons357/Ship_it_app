@@ -197,7 +197,7 @@ def cmd_status() -> int:
         print(f"  {key}  {slot['object']}")
         print(f"      {slot['note']}")
     print("counts", json.dumps(data["counts"]))
-    print("Agent-shaped: propose, scan, score, alert. Not a closer.")
+    print("Agent-shaped: propose, scan, score, alert.")
     from da_feed import format_freshness, freshness
 
     fr = freshness()
@@ -843,7 +843,7 @@ def cmd_next(ask: str = "") -> int:
         return cmd_nowwhat()
 
     payload = next_run(ask=ask, fetch=True)
-    print("DA next. Hub, rim, wall. Not a closer.")
+    print("DA next. Hub, rim, wall.")
     print("WHERE", payload["wall"]["where"])
     print("TARGET B", payload["wall"]["target_B"])
     print("AROUND", payload["wall"]["around"])
@@ -867,7 +867,7 @@ def cmd_agent() -> int:
     from da_agent import run as agent_run
 
     payload = agent_run(fetch=True)
-    print("DA agent. Propose, scan, score, alert. Not a closer.")
+    print("DA agent. Propose, scan, score, alert.")
     print("seated", payload["counts"]["seated_living"], "feed items", payload["tick"]["feed_items"])
     for c in payload["claims"]:
         print(f"  [{c['verdict']}] {c['id']}: {c['statement']}")

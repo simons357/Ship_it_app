@@ -27,6 +27,7 @@ class DaFromTests(unittest.TestCase):
         self.assertEqual(by["P7"]["verdict"], "fail")
         self.assertEqual(by["P8"]["verdict"], "pass")
         self.assertEqual(by["P9"]["verdict"], "open")
+        self.assertEqual(by["P10"]["verdict"], "fail")
         self.assertTrue(payload["meta"]["takes_mine"])
         self.assertTrue(payload["meta"]["not_a_closer"])
         brk = next(s for s in MINE if s.get("break_here"))
