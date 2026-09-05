@@ -43,6 +43,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | BMO continuation | Kozono–Taniuchi | integrable \(\|\omega\|_{\mathrm{BMO}}\) continues a strong solution | the if is an a priori on \(X\) |
 | One-component if | Neustupa–Penel | one velocity component in a Serrin-type class regularizes | the if is all-data regularity |
 | Critical small data | Koch, Tataru | small critical sits | large-data regularity |
+| Large Besov / nonlinear smallness | Chemin–Gallagher | large critical data under a nonlinear smallness condition | the condition is all-data regularity |
 | Scaling gap / log-bmo if | Grujić | sparseness can shrink the gap; 2026 log-bmo if | the if is all-data A1 |
 | Strain / middle eigenvalue | Miller | \(\lambda_2^+\) is a different cut; identity is not an a priori | rewrite in \(S\) closes \(X\) |
 | Wild weak solutions | Vicol, Buckmaster | non-uniqueness below the energy class | that is a smooth blowup or a bound |
@@ -181,6 +182,12 @@ not the axisymmetric chair.
 our theorem. Large data is a different job. Do not export
 Koch–Tataru onto a packet class.
 
+**Chemin–Gallagher.** Data may be arbitrarily large in
+the critical Besov space under a nonlinear smallness
+condition (ASENS 2006). That is still a condition. It
+is not all-data regularity. Herbert, Daniel, Terence —
+a 2D-like structure is not the blank.
+
 **Tataru.** The critical space is the scaling wall. Energy
 class is a derivative short. That is why leftover knobs
 died. Zoran, shrinking the gap is not closing it.
@@ -295,6 +302,7 @@ scores the process, not a theorem you did not prove.
 | Escauriaza–Seregin–Šverák \(L^3\) endpoint closes \(X\) | **fail** |
 | KNSS Liouville for bounded ancient solutions closes \(X\) | **fail** |
 | Chae Triebel–Lizorkin geometric if is all-data A1 | **fail** |
+| Chemin–Gallagher large Besov data is all-data regularity | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

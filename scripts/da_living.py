@@ -172,6 +172,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Chemin-Gallagher",
+        ["Koch", "Tataru", "Tao"],
+        "Data may be large in the critical Besov space under a nonlinear smallness condition. That is still a condition. It is not all-data regularity.",
+        "B",
+    ),
+    turn(
         "Tataru",
         ["Koch", "Grujic"],
         "The critical space is the scaling wall. Energy class is a derivative short. That is why leftover knobs died.",
@@ -517,6 +523,13 @@ CLAIMS = [
         "fail",
         "RMI 2007: direction in a Triebel-Lizorkin norm trades against |omega|. Still an if. All-data A1 stays blank.",
     ),
+    rec(
+        "L37",
+        "chemin_gallagher_is_all_data",
+        "Chemin-Gallagher large Besov data is all-data regularity",
+        "fail",
+        "ASENS 2006: arbitrarily large in B^{-1}_{∞,∞} under a nonlinear smallness condition. Still a condition. Not all-data.",
+    ),
 ]
 
 
@@ -540,6 +553,7 @@ KINGDOMS = [
     {"name": "BMO continuation", "who": "Kozono-Taniuchi", "slot": "B"},
     {"name": "One-component if", "who": "Neustupa-Penel", "slot": "B"},
     {"name": "Critical small data", "who": "Koch, Tataru", "slot": "B"},
+    {"name": "Large Besov / nonlinear smallness", "who": "Chemin-Gallagher", "slot": "B"},
     {"name": "Scaling gap / log-bmo if", "who": "Grujic", "slot": "B"},
     {"name": "Strain / middle eigenvalue", "who": "Miller", "slot": "B"},
     {"name": "Wild weak solutions", "who": "Vicol, Buckmaster", "slot": "B"},

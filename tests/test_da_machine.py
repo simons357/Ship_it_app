@@ -305,6 +305,12 @@ class DaMachineTests(unittest.TestCase):
         tl = classify_claim("Chae Triebel-Lizorkin geometric if on a vorticity packet")
         self.assertEqual(tl["domain"], "B")
         self.assertEqual(tl["verdict"], "open")
+        chemin = classify_claim("seat Chemin-Gallagher as a wall on the living bench")
+        self.assertEqual(chemin["domain"], "U")
+        self.assertEqual(chemin["verdict"], "open")
+        besov = classify_claim("Chemin-Gallagher large Besov data on a vorticity packet")
+        self.assertEqual(besov["domain"], "B")
+        self.assertEqual(besov["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

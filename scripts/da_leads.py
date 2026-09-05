@@ -154,6 +154,9 @@ LEADS = [
     lead("Koch", "critical small data", "B", "living",
          "Small critical sits. Large data is the object.",
          "Koch-Tataru ⇒ large data"),
+    lead("Chemin-Gallagher", "large Besov / nonlinear smallness", "B", "living",
+         "Data may be large in the critical Besov space under a nonlinear smallness condition. Still a condition. Not all-data regularity.",
+         "nonlinear smallness = all-data"),
     lead("Tataru", "critical small data", "B", "living",
          "The critical space is the wall. That is why leftover knobs died.",
          "scaling wall = estimate"),
@@ -213,7 +216,7 @@ MUST_SIT = {
     "Constantin", "Fefferman", "Ladyzhenskaya",
     "Einstein", "Tesla", "Feynman", "Weyl", "Wigner", "von Neumann", "Weinberg",
     "experiment / PDG", "neutrino / cosmology",
-    "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Tataru", "Grujic",
+    "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
     "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
@@ -417,6 +420,13 @@ CLAIMS = [
         "Chae Triebel-Lizorkin geometric if is all-data A1",
         "fail",
         "Direction plus magnitude is still an if. All-data A1 stays blank.",
+    ),
+    rec(
+        "R29",
+        "chemin_gallagher_is_all_data",
+        "Chemin-Gallagher large Besov data is all-data regularity",
+        "fail",
+        "A nonlinear smallness condition is still a condition. Not all-data.",
     ),
 ]
 

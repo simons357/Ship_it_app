@@ -50,6 +50,7 @@ in your slot.
 | Escauriaza | ESS \(L^3\) endpoint | \(L^\infty_t L^3_x\) is the endpoint. A criterion is not an a priori. Bounded in \(L^3\) is not a bound on enstrophy. | \(L^3\) endpoint \(=\) bound on \(X\) |
 | Nadirashvili | ancient Liouville / KNSS | Bounded ancient mild solutions: 2D and axisymmetric no-swirl. 3D remains a door. A Liouville theorem is not an a priori. Gabriel Koch, not Herbert. | KNSS Liouville \(=\) bound on \(X\) |
 | Koch | critical small data | Small critical sits. Large data is the object. | Koch–Tataru \(\Rightarrow\) large data |
+| Chemin–Gallagher | large Besov / nonlinear smallness | Data may be large in the critical Besov space under a nonlinear smallness condition. Still a condition. Not all-data regularity. | nonlinear smallness \(=\) all-data |
 | Tataru | critical small data | The critical space is the wall. That is why leftover knobs died. | wall \(=\) estimate |
 | Grujić | sparseness / log-bmo if | The gap can shrink. The 2026 log-bmo if is still an if. Finite order does not make it vanish. | log-bmo if \(=\) all-data A1 |
 | Miller | strain / \(\lambda_2^+\) | \(\lambda_2^+\) is a different cut. The identity is not an a priori. A strain model blows. | rewrite in \(S\) closes \(X\) |
@@ -120,6 +121,7 @@ in your slot.
 | Escauriaza–Seregin–Šverák \(L^3\) endpoint closes \(X\) | **fail** |
 | KNSS Liouville for bounded ancient solutions closes \(X\) | **fail** |
 | Chae Triebel–Lizorkin geometric if is all-data A1 | **fail** |
+| Chemin–Gallagher large Besov data is all-data regularity | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

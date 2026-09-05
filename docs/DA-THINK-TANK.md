@@ -29,7 +29,7 @@ Einstein · Tesla · Feynman · Weyl · Wigner · von Neumann
 LVK · EHT · DESI · IPTA / NANOGrav · PDG + LHC · LMFDB / analytic NT · current math.AP authors
 
 **Living fluids (now-bench session)**  
-Tao · Šverák · Seregin · Escauriaza · Nadirashvili · Jia · Guillod · Caffarelli · Kohn · Constantin · Fefferman · Beirão da Veiga–Berselli · Chae · Giga–Miura · Lei–Ren–Tian · Chen–Strain–Tsai–Yau · Beale · Kozono–Taniuchi · Neustupa–Penel · Koch · Tataru · Grujić · Miller · Vicol · Buckmaster · Albritton · Elgindi · Hou · Hou–Wang–Yang · current math.AP
+Tao · Šverák · Seregin · Escauriaza · Nadirashvili · Jia · Guillod · Caffarelli · Kohn · Constantin · Fefferman · Beirão da Veiga–Berselli · Chae · Giga–Miura · Lei–Ren–Tian · Chen–Strain–Tsai–Yau · Beale · Kozono–Taniuchi · Neustupa–Penel · Koch · Chemin–Gallagher · Tataru · Grujić · Miller · Vicol · Buckmaster · Albritton · Elgindi · Hou · Hou–Wang–Yang · current math.AP
 
 They talk in [`docs/DA-LIVING.md`](DA-LIVING.md). Papers, not a channel. A vote cannot close \(X\).
 
