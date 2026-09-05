@@ -89,6 +89,13 @@ WATCH = [
         "do_not": "seat as a second kinetic chair next to Silvestre",
     },
     {
+        "name": "Wiegner",
+        "slot": "B",
+        "kingdom": "energy decay / Fourier splitting",
+        "involved": "algebraic decay rates; compared with Schonbek",
+        "do_not": "seat as a second decay chair next to Schonbek",
+    },
+    {
         "name": "Kenig",
         "slot": "B",
         "kingdom": "unique continuation",

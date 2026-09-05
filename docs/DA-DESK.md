@@ -330,6 +330,9 @@ Silvestre kinetic Fokker-Planck Hölder (*Ars Inven.
 Anal.* 2022) is a different equation, not a bound on
 NS \(X\). De Giorgi CKN stays Vasseur. The extension
 stays off.
+Schonbek Fourier splitting (ARMA 1985) is algebraic
+\(L^2\) decay of weak solutions, not a bound on \(X\).
+Energy equality stays Cheskidov. Attractors stay Temam.
 Sit down on leftover-close B42. Stretching budget is not an a priori
 (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.

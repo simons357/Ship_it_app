@@ -208,6 +208,9 @@ LEADS = [
     lead("Silvestre", "kinetic Fokker-Planck / Holder", "B", "living",
          "Holder estimates for kinetic Fokker-Planck are a different equation. Exporting them onto NS is not a bound on X. De Giorgi CKN stays Vasseur. The extension stays off this chair.",
          "Fokker-Planck = bound on X"),
+    lead("Schonbek", "energy decay / Fourier splitting", "B", "living",
+         "Fourier splitting gives algebraic L2 decay of weak solutions. Large-time decay is not a bound on X. Energy equality stays Cheskidov. Attractors stay Temam.",
+         "decay = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -290,7 +293,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -674,6 +677,13 @@ CLAIMS = [
         "Silvestre kinetic Fokker-Planck bounds X",
         "fail",
         "A different equation is not enstrophy. De Giorgi CKN stays Vasseur. The extension stays off this chair.",
+    ),
+    rec(
+        "R55",
+        "schonbek_decay_bounds_X",
+        "Schonbek Fourier splitting bounds X",
+        "fail",
+        "Large-time decay is not enstrophy. Energy equality stays Cheskidov. Attractors stay Temam.",
     ),
 ]
 

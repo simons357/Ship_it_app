@@ -184,6 +184,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Schonbek",
+        ["Cheskidov", "Temam"],
+        "Fourier splitting gives algebraic L2 decay of weak solutions. Large-time decay is not a bound on X. Energy equality stays Cheskidov. Attractors stay Temam.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -855,6 +861,13 @@ CLAIMS = [
         "fail",
         "Ars Inven. Anal. 2022: Holder estimates for kinetic Fokker-Planck up to the boundary. A different equation is not a bound on NS X. De Giorgi CKN stays Vasseur. Caffarelli-Silvestre extension stays off.",
     ),
+    rec(
+        "L63",
+        "schonbek_decay_closes_X",
+        "Schonbek Fourier splitting closes X",
+        "fail",
+        "ARMA 1985: algebraic L2 decay of weak solutions by Fourier splitting. Large-time decay is not a bound on X. Energy equality stays Cheskidov. Attractors stay Temam.",
+    ),
 ]
 
 
@@ -877,6 +890,7 @@ KINGDOMS = [
     {"name": "Kolmogorov 4/5 / weak anomalous dissipation", "who": "Bedrossian", "slot": "B"},
     {"name": "Vanishing viscosity / inviscid limit", "who": "Kelliher", "slot": "B"},
     {"name": "Kinetic Fokker-Planck / Holder", "who": "Silvestre", "slot": "B"},
+    {"name": "Energy decay / Fourier splitting", "who": "Schonbek", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

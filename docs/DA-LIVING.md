@@ -42,6 +42,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Kolmogorov 4/5 / weak anomalous dissipation | Bedrossian | 4/5 for forced stationary martingale solutions under weak anomalous dissipation | a cascade identity bounds \(X\) |
 | Vanishing viscosity / inviscid limit | Kelliher | vanishing viscosity iff a vortex sheet forms on the boundary | the inviscid limit bounds \(X\) |
 | Kinetic Fokker-Planck / Hölder | Silvestre | Hölder estimates for kinetic Fokker-Planck up to the boundary | that equation bounds NS \(X\) |
+| Energy decay / Fourier splitting | Schonbek | algebraic \(L^2\) decay of weak solutions by Fourier splitting | large-time decay bounds \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -240,6 +241,12 @@ A different equation is not a bound on NS \(X\). Alexis,
 Luis — De Giorgi CKN stays Vasseur. Partial regularity
 stays Caffarelli. The Caffarelli–Silvestre extension
 stays off this chair.
+
+**Schonbek.** Fourier splitting gives algebraic \(L^2\)
+decay of weak solutions (Arch. Rational Mech. Anal. 88,
+1985). Large-time decay is not a bound on \(X\). Alexey,
+Roger — energy equality stays Cheskidov. Attractors stay
+Temam. Wiegner stays off this chair.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -512,6 +519,7 @@ scores the process, not a theorem you did not prove.
 | Bedrossian Kolmogorov 4/5 closes \(X\) | **fail** |
 | Kelliher vanishing viscosity closes \(X\) | **fail** |
 | Silvestre kinetic Fokker-Planck closes \(X\) | **fail** |
+| Schonbek Fourier splitting closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |
