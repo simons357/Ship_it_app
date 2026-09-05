@@ -311,6 +311,12 @@ class DaMachineTests(unittest.TestCase):
         besov = classify_claim("Chemin-Gallagher large Besov data on a vorticity packet")
         self.assertEqual(besov["domain"], "B")
         self.assertEqual(besov["verdict"], "open")
+        cannone = classify_claim("seat Cannone-Planchon as a wall on the living bench")
+        self.assertEqual(cannone["domain"], "U")
+        self.assertEqual(cannone["verdict"], "open")
+        mild = classify_claim("Cannone-Planchon critical Besov mild on a vorticity packet")
+        self.assertEqual(mild["domain"], "B")
+        self.assertEqual(mild["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

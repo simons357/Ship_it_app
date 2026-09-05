@@ -157,6 +157,9 @@ LEADS = [
     lead("Chemin-Gallagher", "large Besov / nonlinear smallness", "B", "living",
          "Data may be large in the critical Besov space under a nonlinear smallness condition. Still a condition. Not all-data regularity.",
          "nonlinear smallness = all-data"),
+    lead("Cannone-Planchon", "critical Besov mild / small self-similar", "B", "living",
+         "Small critical Besov data gives self-similar mild solutions. Small is not all-data. Not Jia large-data existence.",
+         "Besov mild = bound on X"),
     lead("Tataru", "critical small data", "B", "living",
          "The critical space is the wall. That is why leftover knobs died.",
          "scaling wall = estimate"),
@@ -216,7 +219,7 @@ MUST_SIT = {
     "Constantin", "Fefferman", "Ladyzhenskaya",
     "Einstein", "Tesla", "Feynman", "Weyl", "Wigner", "von Neumann", "Weinberg",
     "experiment / PDG", "neutrino / cosmology",
-    "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Tataru", "Grujic",
+    "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
     "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
@@ -427,6 +430,13 @@ CLAIMS = [
         "Chemin-Gallagher large Besov data is all-data regularity",
         "fail",
         "A nonlinear smallness condition is still a condition. Not all-data.",
+    ),
+    rec(
+        "R30",
+        "cannone_planchon_is_all_data",
+        "Cannone-Planchon critical Besov mild solutions are all-data regularity",
+        "fail",
+        "Small data in a critical Besov space. Small is not all-data. Not Jia.",
     ),
 ]
 

@@ -44,6 +44,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | One-component if | Neustupa–Penel | one velocity component in a Serrin-type class regularizes | the if is all-data regularity |
 | Critical small data | Koch, Tataru | small critical sits | large-data regularity |
 | Large Besov / nonlinear smallness | Chemin–Gallagher | large critical data under a nonlinear smallness condition | the condition is all-data regularity |
+| Critical Besov mild / small self-similar | Cannone–Planchon | small critical Besov data gives self-similar mild solutions | small Besov mild is all-data regularity |
 | Scaling gap / log-bmo if | Grujić | sparseness can shrink the gap; 2026 log-bmo if | the if is all-data A1 |
 | Strain / middle eigenvalue | Miller | \(\lambda_2^+\) is a different cut; identity is not an a priori | rewrite in \(S\) closes \(X\) |
 | Wild weak solutions | Vicol, Buckmaster | non-uniqueness below the energy class | that is a smooth blowup or a bound |
@@ -188,6 +189,11 @@ condition (ASENS 2006). That is still a condition. It
 is not all-data regularity. Herbert, Daniel, Terence —
 a 2D-like structure is not the blank.
 
+**Cannone–Planchon.** Small critical Besov data gives
+self-similar mild solutions (SEDP 1993–94, with Meyer).
+Small is not all-data. Hao — that is not large-data
+profile existence. It is not a bound on \(X\).
+
 **Tataru.** The critical space is the scaling wall. Energy
 class is a derivative short. That is why leftover knobs
 died. Zoran, shrinking the gap is not closing it.
@@ -303,6 +309,7 @@ scores the process, not a theorem you did not prove.
 | KNSS Liouville for bounded ancient solutions closes \(X\) | **fail** |
 | Chae Triebel–Lizorkin geometric if is all-data A1 | **fail** |
 | Chemin–Gallagher large Besov data is all-data regularity | **fail** |
+| Cannone–Planchon critical Besov mild is all-data regularity | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

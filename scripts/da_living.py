@@ -178,6 +178,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Cannone-Planchon",
+        ["Chemin-Gallagher", "Koch", "Jia"],
+        "Small critical Besov data gives self-similar mild solutions. Small is not all-data. That is not Jia large-data existence, and it is not a bound on X.",
+        "B",
+    ),
+    turn(
         "Tataru",
         ["Koch", "Grujic"],
         "The critical space is the scaling wall. Energy class is a derivative short. That is why leftover knobs died.",
@@ -530,6 +536,13 @@ CLAIMS = [
         "fail",
         "ASENS 2006: arbitrarily large in B^{-1}_{∞,∞} under a nonlinear smallness condition. Still a condition. Not all-data.",
     ),
+    rec(
+        "L38",
+        "cannone_planchon_is_all_data",
+        "Cannone-Planchon critical Besov mild solutions are all-data regularity",
+        "fail",
+        "SEDP 1993-94: small data, self-similar mild in homogeneous Besov. Small is not all-data. Not Jia large-data existence.",
+    ),
 ]
 
 
@@ -554,6 +567,7 @@ KINGDOMS = [
     {"name": "One-component if", "who": "Neustupa-Penel", "slot": "B"},
     {"name": "Critical small data", "who": "Koch, Tataru", "slot": "B"},
     {"name": "Large Besov / nonlinear smallness", "who": "Chemin-Gallagher", "slot": "B"},
+    {"name": "Critical Besov mild / small self-similar", "who": "Cannone-Planchon", "slot": "B"},
     {"name": "Scaling gap / log-bmo if", "who": "Grujic", "slot": "B"},
     {"name": "Strain / middle eigenvalue", "who": "Miller", "slot": "B"},
     {"name": "Wild weak solutions", "who": "Vicol, Buckmaster", "slot": "B"},
