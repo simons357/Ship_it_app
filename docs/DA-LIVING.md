@@ -37,6 +37,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Critical ill-posedness | Pavlović | Cauchy problem ill-posed in \(\dot B^{-1}_{\infty,\infty}\) by norm inflation | ill-posedness bounds \(X\) |
 | Minimal singularity data | Rusin | if some \(\dot H^{1/2}\) data blow up, a minimal-norm datum does | compactness of a hypothetical set bounds \(X\) |
 | Weak-strong uniqueness | Germain | multipliers and paramultipliers give weak-strong uniqueness | uniqueness bounds \(X\) |
+| Primitive equations | Cao | 3D viscous primitive equations are globally well-posed for large \(H^1\) data | hydrostatic regularity bounds NS \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -195,6 +196,14 @@ mild uniqueness stays Masmoudi. The endpoint stays
 Escauriaza. Water waves stay off this chair.
 Staffilani–Pavlović \(BMO^{-1}\) regularity stays
 Koch–Tataru.
+
+**Cao.** The 3D viscous primitive equations are globally
+well-posed for large \(H^1\) data (*Ann. of Math.* 166,
+2007, with Titi). Hydrostatic. No vertical acceleration.
+That equation is not a bound on NS \(X\). Roger, Reinhard
+— a posteriori stays Robinson. Edriss stays off this
+chair. Kukavica–Ziane primitive equations stay off;
+unique continuation is Kukavica's chair.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -462,6 +471,7 @@ scores the process, not a theorem you did not prove.
 | Pavlović critical ill-posedness closes \(X\) | **fail** |
 | Rusin minimal singularity data closes \(X\) | **fail** |
 | Germain weak-strong uniqueness closes \(X\) | **fail** |
+| Cao primitive equations close \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

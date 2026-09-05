@@ -193,6 +193,9 @@ LEADS = [
     lead("Germain", "weak-strong uniqueness", "B", "living",
          "Multipliers and paramultipliers give weak-strong uniqueness. Uniqueness is not a bound on X. Mild uniqueness stays Masmoudi. Water waves stay off this chair.",
          "weak-strong uniqueness = bound on X"),
+    lead("Cao", "primitive equations", "B", "living",
+         "The 3D viscous primitive equations are globally well-posed for large H1 data. Hydrostatic. A different equation is not a bound on NS X. Titi stays off. Robinson stays a posteriori.",
+         "primitive equations = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -275,7 +278,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -624,6 +627,13 @@ CLAIMS = [
         "Germain weak-strong uniqueness bounds X",
         "fail",
         "Uniqueness is not enstrophy. Mild uniqueness stays Masmoudi. Water waves stay off this chair.",
+    ),
+    rec(
+        "R50",
+        "cao_primitive_bounds_X",
+        "Cao primitive equations bound X",
+        "fail",
+        "Hydrostatic ocean-atmosphere is a different equation. Not a bound on NS X. Titi stays off.",
     ),
 ]
 

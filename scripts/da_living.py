@@ -154,6 +154,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Cao",
+        ["Temam", "Danchin"],
+        "The 3D viscous primitive equations are globally well-posed for large H1 data. Hydrostatic. No vertical acceleration. That equation is not a bound on NS X. A posteriori stays Robinson. Titi stays off this chair.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -790,6 +796,13 @@ CLAIMS = [
         "fail",
         "JDE 2006: multipliers and paramultipliers give weak-strong uniqueness. Uniqueness is not a bound on X. Mild uniqueness stays Masmoudi. Water waves stay off this chair.",
     ),
+    rec(
+        "L58",
+        "cao_primitive_closes_X",
+        "Cao primitive equations close X",
+        "fail",
+        "Ann. of Math. 2007: global strong solutions of the 3D viscous primitive equations. Hydrostatic. A different equation is not a bound on NS X. Titi stays off. Robinson stays a posteriori.",
+    ),
 ]
 
 
@@ -807,6 +820,7 @@ KINGDOMS = [
     {"name": "Critical ill-posedness", "who": "Pavlovic", "slot": "B"},
     {"name": "Minimal singularity data", "who": "Rusin", "slot": "B"},
     {"name": "Weak-strong uniqueness", "who": "Germain", "slot": "B"},
+    {"name": "Primitive equations", "who": "Cao", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},
