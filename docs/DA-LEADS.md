@@ -28,6 +28,7 @@ in your slot.
 | Leray | energy | Keep \(\int X\,dt<\infty\). Do not close the cubic from it. | \(X\in L^\infty\) from energy |
 | Beale | continuation | Use \(\int\|\omega\|_\infty\). A leftover list is not the max. | BKM-from-\(L^2\) |
 | Kozono–Taniuchi | BMO continuation | Integrable BMO of vorticity continues a strong solution. Still an if. Not an a priori on \(X\). | BMO continuation \(=\) bound on \(X\) |
+| Neustupa–Penel | one-component if | Regularity of one velocity component regularizes a suitable weak solution. Still an if. One component is not the field. | one component \(=\) bound on \(X\) |
 | Kato | mild / continuation | \(L^2\) is not our theorem. Sit for an a priori. Do not rename. | rename BKM into enstrophy |
 | Majda | class | A leftover list is not a class. CONC stayed a spectrum. | spectrum \(\Rightarrow\) geometry |
 | Caffarelli | partial regularity | Small is not empty. | no blowup |
@@ -112,6 +113,7 @@ in your slot.
 | Lei–Ren–Tian double-cone if is all-data A1 | **fail** |
 | Chen–Strain–Tsai–Yau axisymmetric Type I closes \(X\) | **fail** |
 | Kozono–Taniuchi BMO continuation closes \(X\) | **fail** |
+| Neustupa–Penel one-component if is all-data regularity | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

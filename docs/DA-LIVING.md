@@ -38,6 +38,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Axisymmetric Type I | Chen–Strain–Tsai–Yau | axisymmetric Type I blow-up is out | those two restrictions close \(X\) |
 | Continuation | Beale | \(\int\|\omega\|_\infty\) | the max from \(L^2\) or a leftover list |
 | BMO continuation | Kozono–Taniuchi | integrable \(\|\omega\|_{\mathrm{BMO}}\) continues a strong solution | the if is an a priori on \(X\) |
+| One-component if | Neustupa–Penel | one velocity component in a Serrin-type class regularizes | the if is all-data regularity |
 | Critical small data | Koch, Tataru | small critical sits | large-data regularity |
 | Scaling gap / log-bmo if | Grujić | sparseness can shrink the gap; 2026 log-bmo if | the if is all-data A1 |
 | Strain / middle eigenvalue | Miller | \(\lambda_2^+\) is a different cut; identity is not an a priori | rewrite in \(S\) closes \(X\) |
@@ -149,6 +150,12 @@ continues a strong solution (Math. Z. 2000). That is
 still a continuation if. It is not an a priori on \(X\).
 John, Zoran — BMO of \(\omega\) is not \(\mathrm{bmo}\)
 of \(\xi\).
+
+**Neustupa–Penel.** Regularity of one velocity
+component regularizes a suitable weak solution (1999).
+That is still an if. It is not an a priori on \(X\).
+John, Luis — one component is not the field. This is
+not the axisymmetric chair.
 
 **Koch.** Small data in the critical space sits. That is
 our theorem. Large data is a different job. Do not export
@@ -264,6 +271,7 @@ scores the process, not a theorem you did not prove.
 | Lei–Ren–Tian double-cone if is all-data A1 | **fail** |
 | Chen–Strain–Tsai–Yau axisymmetric Type I closes \(X\) | **fail** |
 | Kozono–Taniuchi BMO continuation closes \(X\) | **fail** |
+| Neustupa–Penel one-component if is all-data regularity | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

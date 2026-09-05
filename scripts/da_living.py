@@ -142,6 +142,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Neustupa-Penel",
+        ["Beale", "Caffarelli"],
+        "Regularity of one velocity component regularizes a suitable weak solution. That is still an if. It is not an a priori on X. One component is not the field.",
+        "B",
+    ),
+    turn(
         "Koch",
         ["Tataru", "Tao"],
         "Small critical data sits. Large data is a different job. Do not export Koch-Tataru onto this packet class.",
@@ -465,6 +471,13 @@ CLAIMS = [
         "fail",
         "Math Z 2000: integrable BMO of vorticity continues a strong solution. A continuation if is not an a priori. BMO of omega is not bmo of xi.",
     ),
+    rec(
+        "L33",
+        "neustupa_penel_is_all_data",
+        "Neustupa-Penel one-component if is all-data regularity",
+        "fail",
+        "1999: one velocity component in a Serrin-type class regularizes a suitable weak solution. Still an if. One component is not the field.",
+    ),
 ]
 
 
@@ -483,6 +496,7 @@ KINGDOMS = [
     {"name": "Axisymmetric Type I", "who": "CSTY", "slot": "B"},
     {"name": "Continuation", "who": "Beale", "slot": "B"},
     {"name": "BMO continuation", "who": "Kozono-Taniuchi", "slot": "B"},
+    {"name": "One-component if", "who": "Neustupa-Penel", "slot": "B"},
     {"name": "Critical small data", "who": "Koch, Tataru", "slot": "B"},
     {"name": "Scaling gap / log-bmo if", "who": "Grujic", "slot": "B"},
     {"name": "Strain / middle eigenvalue", "who": "Miller", "slot": "B"},

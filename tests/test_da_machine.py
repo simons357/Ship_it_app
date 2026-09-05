@@ -281,6 +281,12 @@ class DaMachineTests(unittest.TestCase):
         bmo = classify_claim("Kozono-Taniuchi BMO continuation on a vorticity packet")
         self.assertEqual(bmo["domain"], "B")
         self.assertEqual(bmo["verdict"], "open")
+        neustupa = classify_claim("seat Neustupa-Penel as a wall on the living bench")
+        self.assertEqual(neustupa["domain"], "U")
+        self.assertEqual(neustupa["verdict"], "open")
+        one = classify_claim("Neustupa-Penel one-component if on a vorticity packet")
+        self.assertEqual(one["domain"], "B")
+        self.assertEqual(one["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

@@ -61,6 +61,9 @@ LEADS = [
     lead("Kozono-Taniuchi", "BMO continuation", "B", "living",
          "Integrable BMO of vorticity continues a strong solution. Still an if. Not an a priori on X. BMO of omega is not bmo of xi.",
          "BMO continuation = bound on X"),
+    lead("Neustupa-Penel", "one-component if", "B", "living",
+         "Regularity of one velocity component regularizes a suitable weak solution. Still an if. One component is not the field.",
+         "one component = bound on X"),
     lead("Kato", "mild / continuation", "B", "past",
          "L² is not our theorem. We will sit for an a priori. We will not rename it.",
          "rename BKM into enstrophy"),
@@ -203,7 +206,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Jia", "Guillod", "Koch", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi",
+    "Beirao-Berselli", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -377,6 +380,13 @@ CLAIMS = [
         "Kozono-Taniuchi BMO continuation closes X",
         "fail",
         "A continuation if is not an a priori. BMO of omega is not bmo of xi.",
+    ),
+    rec(
+        "R25",
+        "neustupa_penel_is_all_data",
+        "Neustupa-Penel one-component if is all-data regularity",
+        "fail",
+        "One velocity component is still an if. One component is not the field.",
     ),
 ]
 
