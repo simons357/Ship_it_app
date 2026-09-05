@@ -178,6 +178,9 @@ LEADS = [
     lead("Kukavica", "unique continuation", "B", "living",
          "Strong unique continuation for differences of solutions is not a bound on X. Vanishing order is not enstrophy. Not the one-component chair.",
          "unique continuation = bound on X"),
+    lead("Barker", "Type I / ancient correspondence", "B", "living",
+         "Type I blowup is equivalent to a nontrivial mild bounded ancient with Type I decay. An iff is not a bound on X. Forced Leray stays Albritton.",
+         "Type I iff ancient = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -260,7 +263,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -567,6 +570,13 @@ CLAIMS = [
         "Kukavica unique continuation bounds X",
         "fail",
         "Vanishing order is not enstrophy. Not the one-component chair.",
+    ),
+    rec(
+        "R44",
+        "barker_type_i_ancient_bounds_X",
+        "Barker Type I ancient bounds X",
+        "fail",
+        "An iff is not enstrophy. Forced Leray stays Albritton.",
     ),
 ]
 

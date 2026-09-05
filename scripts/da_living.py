@@ -118,6 +118,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Barker",
+        ["Nadirashvili", "Sverak", "Albritton"],
+        "Type I blowup is equivalent to a nontrivial mild bounded ancient with Type I decay. An iff is not a bound on X. Forced Leray is Albritton's chair.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -712,6 +718,13 @@ CLAIMS = [
         "fail",
         "JDDE 2013: strong unique continuation for differences. Vanishing order is not a bound on X. Not the one-component chair.",
     ),
+    rec(
+        "L52",
+        "barker_type_i_ancient_closes_X",
+        "Barker Type I ancient closes X",
+        "fail",
+        "JMFM 2019: Type I singularity iff a nontrivial mild bounded ancient with Type I decay. An iff is not a bound on X. Forced Leray stays Albritton.",
+    ),
 ]
 
 
@@ -723,6 +736,7 @@ KINGDOMS = [
     {"name": "ESS L3 endpoint", "who": "Escauriaza", "slot": "B"},
     {"name": "Unique continuation", "who": "Kukavica", "slot": "B"},
     {"name": "Ancient Liouville / KNSS", "who": "Nadirashvili", "slot": "B"},
+    {"name": "Type I / ancient correspondence", "who": "Barker", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

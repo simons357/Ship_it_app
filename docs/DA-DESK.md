@@ -295,6 +295,8 @@ Danchin density-dependent NS is a different equation,
 not a bound on homogeneous \(X\). Heywood stays out.
 Kukavica unique continuation is vanishing order, not a
 bound on \(X\). Not the one-component chair.
+Barker Type I iff ancient is an equivalence, not a
+bound on \(X\). Forced Leray stays Albritton.
 Sit down on leftover-close B42. Stretching budget is not an a priori
 (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.

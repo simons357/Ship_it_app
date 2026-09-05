@@ -395,6 +395,12 @@ class DaMachineTests(unittest.TestCase):
         uc = classify_claim("Kukavica unique continuation on a vorticity packet")
         self.assertEqual(uc["domain"], "B")
         self.assertEqual(uc["verdict"], "open")
+        barker = classify_claim("seat Barker as a wall on the living bench")
+        self.assertEqual(barker["domain"], "U")
+        self.assertEqual(barker["verdict"], "open")
+        typei = classify_claim("Barker Type I ancient on a vorticity packet")
+        self.assertEqual(typei["domain"], "B")
+        self.assertEqual(typei["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

@@ -31,6 +31,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | ESS \(L^3\) endpoint | Escauriaza | \(L^\infty_t L^3_x\) is a regularity criterion | the endpoint is an a priori on \(X\) |
 | Unique continuation | Kukavica | strong unique continuation for differences of solutions | vanishing order bounds \(X\) |
 | Ancient Liouville / KNSS | Nadirashvili | bounded ancient mild solutions classified in 2D and axisymmetric no-swirl | those Liouville theorems close \(X\) |
+| Type I / ancient correspondence | Barker | Type I singularity iff a nontrivial mild bounded ancient with Type I decay | the iff bounds \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -145,6 +146,12 @@ axisymmetric no-swirl are classified (Acta Math. 2009,
 Koch–Nadirashvili–Seregin–Šverák). 3D remains a door.
 A Liouville theorem is not an a priori on \(X\).
 Gregory, Vladimír, Luis — Gabriel Koch, not Herbert.
+
+**Barker.** Type I blowup is equivalent to a nontrivial
+mild bounded ancient with Type I decay (J. Math. Fluid
+Mech. 2019, with Albritton). An iff is not a bound on
+\(X\). Nikolai, Vladimír, Dallas — forced Leray is
+Albritton's chair.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -406,6 +413,7 @@ scores the process, not a theorem you did not prove.
 | Lemarié-Rieusset local Leray solutions close \(X\) | **fail** |
 | Danchin density-dependent NS closes \(X\) | **fail** |
 | Kukavica unique continuation closes \(X\) | **fail** |
+| Barker Type I ancient closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |
