@@ -70,6 +70,7 @@ in your slot.
 | Ponce | Kato–Ponce / commutator estimates | Kato–Ponce is a commutator. A tool is not a bound on \(X\). Continuation stays Beale. Kato stays out. | commutator \(=\) bound on \(X\) |
 | Iftimie | thin domain / 2D–3D perturbation | Thin-domain regularity is an if. A small gap is not a bound on 3D \(X\). Critical small stays Koch–Tataru. Attractors stay Temam. Raugel stays out. | thin domain \(=\) bound on \(X\) |
 | Fursikov | controllability / NS control | Local exact controllability of NS is a control theorem. A control is not a bound on free \(X\). Attractors stay Temam. A posteriori stays Robinson. | control \(=\) bound on \(X\) |
+| Maremonti | time-periodic NS | Time-periodic solutions of 3D NS are a class. A periodic class is not a bound on \(X\). Attractors stay Temam. Forced Leray stays Albritton. | periodic \(=\) bound on \(X\) |
 | Guillod | numerical non-uniqueness | Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity. | numerics \(=\) bound; numerics \(=\) blowup |
 | Seregin | local regularity / ESS | A criterion is not an a priori on \(X\). | criterion \(\Rightarrow\) bound |
 | Escauriaza | ESS \(L^3\) endpoint | \(L^\infty_t L^3_x\) is the endpoint. A criterion is not an a priori. Bounded in \(L^3\) is not a bound on enstrophy. | \(L^3\) endpoint \(=\) bound on \(X\) |
@@ -179,6 +180,7 @@ in your slot.
 | Ponce Kato–Ponce bounds \(X\) | **fail** |
 | Iftimie thin domain bounds \(X\) | **fail** |
 | Fursikov controllability bounds \(X\) | **fail** |
+| Maremonti time-periodic NS bounds \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

@@ -46,6 +46,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Kato–Ponce / commutator estimates | Ponce | commutator estimates for Euler and NS | a tool bounds \(X\) |
 | Thin domain / 2D–3D perturbation | Iftimie | global strong solutions in a sufficiently thin 3D domain | thinness bounds 3D \(X\) |
 | Controllability / NS control | Fursikov | local exact controllability of Navier–Stokes | a control bounds free \(X\) |
+| Time-periodic NS | Maremonti | time-periodic solutions of 3D NS in unbounded domains | a periodic class bounds \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -269,6 +270,12 @@ Imanuvilov). A control is not a bound on free \(X\).
 Roger, James — attractors stay Temam. A posteriori stays
 Robinson. Forced Leray stays Albritton. Coron stays off
 this chair.
+
+**Maremonti.** Time-periodic solutions of 3D NS are a
+class. A periodic class is not a bound on \(X\). Roger,
+Dallas — attractors stay Temam. Forced Leray stays
+Albritton. Decay stays Schonbek. Yamazaki stays off this
+chair.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -545,6 +552,7 @@ scores the process, not a theorem you did not prove.
 | Ponce Kato–Ponce closes \(X\) | **fail** |
 | Iftimie thin domain closes \(X\) | **fail** |
 | Fursikov controllability closes \(X\) | **fail** |
+| Maremonti time-periodic NS closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

@@ -118,6 +118,13 @@ WATCH = [
         "do_not": "seat as a second control chair next to Fursikov",
     },
     {
+        "name": "Yamazaki",
+        "slot": "B",
+        "kingdom": "time-periodic NS / Morrey",
+        "involved": "time-periodic mild solutions; also Kozono-Yamazaki Morrey",
+        "do_not": "seat as a second time-periodic chair next to Maremonti",
+    },
+    {
         "name": "Kenig",
         "slot": "B",
         "kingdom": "unique continuation",

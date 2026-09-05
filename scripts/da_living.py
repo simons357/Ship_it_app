@@ -208,6 +208,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Maremonti",
+        ["Temam", "Albritton"],
+        "Time-periodic solutions of 3D NS are a class. A periodic class is not a bound on X. Attractors stay Temam. Forced Leray stays Albritton. Decay stays Schonbek.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -907,6 +913,13 @@ CLAIMS = [
         "fail",
         "CRAS 1996: local exact controllability of NS. A control is not a bound on free X. Attractors stay Temam. A posteriori stays Robinson.",
     ),
+    rec(
+        "L67",
+        "maremonti_periodic_closes_X",
+        "Maremonti time-periodic NS closes X",
+        "fail",
+        "Time-periodic solutions of 3D NS in unbounded domains. A periodic class is not a bound on X. Attractors stay Temam. Forced Leray stays Albritton.",
+    ),
 ]
 
 
@@ -933,6 +946,7 @@ KINGDOMS = [
     {"name": "Kato-Ponce / commutator estimates", "who": "Ponce", "slot": "B"},
     {"name": "Thin domain / 2D-3D perturbation", "who": "Iftimie", "slot": "B"},
     {"name": "Controllability / NS control", "who": "Fursikov", "slot": "B"},
+    {"name": "Time-periodic NS", "who": "Maremonti", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

@@ -220,6 +220,9 @@ LEADS = [
     lead("Fursikov", "controllability / NS control", "B", "living",
          "Local exact controllability of NS is a control theorem. A control is not a bound on free X. Attractors stay Temam. A posteriori stays Robinson.",
          "control = bound on X"),
+    lead("Maremonti", "time-periodic NS", "B", "living",
+         "Time-periodic solutions of 3D NS are a class. A periodic class is not a bound on X. Attractors stay Temam. Forced Leray stays Albritton.",
+         "periodic = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -302,7 +305,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -714,6 +717,13 @@ CLAIMS = [
         "Fursikov controllability bounds X",
         "fail",
         "A control is not enstrophy. Attractors stay Temam. A posteriori stays Robinson.",
+    ),
+    rec(
+        "R59",
+        "maremonti_periodic_bounds_X",
+        "Maremonti time-periodic NS bounds X",
+        "fail",
+        "A periodic class is not enstrophy. Attractors stay Temam. Forced Leray stays Albritton.",
     ),
 ]
 
