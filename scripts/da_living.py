@@ -256,6 +256,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Feireisl",
+        ["Danchin", "Cao"],
+        "Compressible NS is a different equation. Weak solutions there are not a bound on incompressible X. Density-dependent stays Danchin. Primitive stays Cao.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -1011,6 +1017,13 @@ CLAIMS = [
         "fail",
         "Ann. of Math. 2012: knots and links in steady Euler. Existence of knotted Beltrami fields is not a bound on evolutionary X. Euler singularity stays Elgindi. Onsager stays Isett. Arnold stays out.",
     ),
+    rec(
+        "L75",
+        "feireisl_compressible_closes_X",
+        "Feireisl compressible NS closes X",
+        "fail",
+        "J. Math. Fluid Mech. 2001: weak solutions of viscous compressible NS. A different equation is not a bound on incompressible X. Density-dependent stays Danchin. Primitive stays Cao.",
+    ),
 ]
 
 
@@ -1045,6 +1058,7 @@ KINGDOMS = [
     {"name": "Vortex stretching / strain-vorticity alignment", "who": "Gibbon", "slot": "B"},
     {"name": "Regular Lagrangian Flow / DiPerna-Lions transport", "who": "Ambrosio", "slot": "B"},
     {"name": "Knotted Beltrami fields / steady Euler topology", "who": "Enciso", "slot": "B"},
+    {"name": "Compressible NS / viscous compressible weak solutions", "who": "Feireisl", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

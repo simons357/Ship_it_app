@@ -366,6 +366,9 @@ Enciso knotted Beltrami fields are existence for steady
 Euler, not a bound on evolutionary \(X\). Euler
 singularity stays Elgindi. Onsager stays Isett. Arnold
 stays out.
+Feireisl compressible NS is a different equation, not a
+bound on incompressible \(X\). Density-dependent stays
+Danchin. Primitive stays Cao.
 Sit down on leftover-close B42. Stretching budget is not an a priori
 (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.

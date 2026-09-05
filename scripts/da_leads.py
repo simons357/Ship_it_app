@@ -244,6 +244,9 @@ LEADS = [
     lead("Enciso", "knotted Beltrami fields / steady Euler topology", "B", "living",
          "Existence of knotted Beltrami fields is not a bound on evolutionary X. Euler singularity stays Elgindi. Onsager stays Isett. Arnold stays out.",
          "knotted Beltrami = bound on X"),
+    lead("Feireisl", "compressible NS / viscous compressible weak solutions", "B", "living",
+         "Compressible NS is a different equation. Weak solutions there are not a bound on incompressible X. Density-dependent stays Danchin. Primitive stays Cao.",
+         "compressible = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -326,7 +329,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti", "Korobkov", "Hishida", "Mucha", "Paicu", "Gibbon", "Ambrosio", "Enciso",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti", "Korobkov", "Hishida", "Mucha", "Paicu", "Gibbon", "Ambrosio", "Enciso", "Feireisl",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -794,6 +797,13 @@ CLAIMS = [
         "Enciso knotted Beltrami fields bound X",
         "fail",
         "Steady knotted Euler fields are not evolutionary enstrophy. Euler singularity stays Elgindi. Onsager stays Isett. Arnold stays out.",
+    ),
+    rec(
+        "R67",
+        "feireisl_compressible_bounds_X",
+        "Feireisl compressible NS bounds X",
+        "fail",
+        "A different equation is not incompressible enstrophy. Density-dependent stays Danchin. Primitive stays Cao.",
     ),
 ]
 

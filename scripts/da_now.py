@@ -169,6 +169,13 @@ WATCH = [
         "do_not": "seat as a second knotted-Beltrami chair next to Enciso",
     },
     {
+        "name": "Novotny",
+        "slot": "B",
+        "kingdom": "compressible NS / viscous compressible weak solutions",
+        "involved": "Feireisl-Novotny-Petzeltova existence theory",
+        "do_not": "seat as a second compressible chair next to Feireisl",
+    },
+    {
         "name": "Kenig",
         "slot": "B",
         "kingdom": "unique continuation",

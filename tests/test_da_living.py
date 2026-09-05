@@ -170,6 +170,7 @@ class DaLivingTests(unittest.TestCase):
             "Gibbon",
             "Ambrosio",
             "Enciso",
+            "Feireisl",
             "Operator",
         ):
             self.assertIn(must, names)
@@ -245,6 +246,7 @@ class DaLivingTests(unittest.TestCase):
             "Gibbon",
             "Ambrosio",
             "Enciso",
+            "Feireisl",
         }
         cross = [
             t

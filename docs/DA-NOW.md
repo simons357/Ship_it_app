@@ -9,7 +9,7 @@ geniuses in the world is omniscience. That claim **fails**.
 A vote of names does not write \(X\).
 
 Dated 5 September 2026. The seated list is derived from the
-living session, including Enciso knotted Beltrami fields.
+living session, including Feireisl compressible NS.
 The watch list is next papers, not a seat.
 
 ---
@@ -57,6 +57,7 @@ These are living chairs whose papers can sit. They are
 | Ohkitani | B | vortex stretching / strain alignment | second stretching chair next to Gibbon |
 | Crippa | B | Regular Lagrangian Flow / quantitative transport | second RLF chair next to Ambrosio |
 | Peralta-Salas | B | knotted Beltrami fields / steady Euler topology | second knotted-Beltrami chair next to Enciso |
+| Novotný | B | compressible NS / viscous compressible weak solutions | second compressible chair next to Feireisl |
 | Kenig | B | unique continuation | twin of Kukavica |
 | Maynard | Q | bounded gaps | map a gap theorem onto \(\omega\cdot S\omega\) |
 
