@@ -78,6 +78,10 @@ Compatible with a finite limit. Old Route C shape.
 Not a floor at \(-1/2\). Gap 1 complete is stale.
 *[open; not (6)]*
 
+Goldbach multi-rep is a different leftover, not this
+chain. Numeric through \(N=200\) is not (4) and not (6).
+GNC stays withdrawn.
+
 If (6) sits, the sharp floor follows. Emitting the
 chain is not that close. Q6 is this paper, not
 Montgomery–Dyson and not SND.

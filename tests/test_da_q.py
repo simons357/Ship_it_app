@@ -13,7 +13,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from da_done import is_done_ask  # noqa: E402
 from da_hunt import is_look_ask  # noqa: E402
 from da_proof import is_proof_ask  # noqa: E402
-from da_q import CLAIMS, FLOOR_LINES, NAMES, PAPER, is_q_ask, run  # noqa: E402
+from da_q import CLAIMS, FLOOR_LINES, NAMES, PAIR, PAPER, is_q_ask, run  # noqa: E402
 
 
 class DaQTests(unittest.TestCase):
@@ -48,6 +48,16 @@ class DaQTests(unittest.TestCase):
         self.assertTrue(is_q_ask("where does Q7 fit"))
         self.assertTrue(is_q_ask("can it find the electoral floor"))
         self.assertTrue(is_q_ask("Q6. Spectral floor"))
+        self.assertTrue(is_q_ask("gold box"))
+        self.assertTrue(is_q_ask("the other one was goldbach"))
+        self.assertTrue(is_q_ask("theorem p"))
+        self.assertEqual(PAIR["gold_box"], "Goldbach")
+        self.assertEqual(PAIR["t_name"], "Theorem P")
+        self.assertEqual(by["Q10"]["verdict"], "pass")
+        self.assertEqual(by["Q11"]["verdict"], "fail")
+        self.assertEqual(by["Q12"]["verdict"], "fail")
+        self.assertTrue(any(r["id"] == "Goldbach" for r in PAPER["open"]))
+        self.assertTrue(any(r["id"] == "GNC" for r in PAPER["false"]))
         self.assertEqual(
             [L["status"] for L in FLOOR_LINES],
             ["have"] * 5 + ["write", "follows", "open"],
@@ -58,6 +68,7 @@ class DaQTests(unittest.TestCase):
         self.assertFalse(is_q_ask("use my best paper and write RH please"))
         self.assertTrue(is_proof_ask("use my best paper and write RH please"))
         self.assertFalse(is_q_ask("is that right for Navi Stokes"))
+        self.assertFalse(is_q_ask("write RH from the Goldbach paper"))
         self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))
         self.assertTrue((ROOT / "docs" / "DA-Q.md").is_file())
 

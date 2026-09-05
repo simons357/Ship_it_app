@@ -7,6 +7,10 @@ The best GCD paper on this desk is August inverse-GCD
 are Bridge*, Theorem P, H_N >= -1. Full Q > -1/2 is
 false. Q is not RH, not SND, not Track B.
 Q7 is not seated.
+
+Gold box = Goldbach. The T-name that sits is Theorem P.
+Goldbach multi-rep is far numerically, not a theorem.
+GNC stays withdrawn.
 """
 
 from __future__ import annotations
@@ -165,6 +169,12 @@ PAPER = {
             "verdict": "fail",
             "why": "May T3 glue. Withdrawn.",
         },
+        {
+            "id": "GNC",
+            "what": "GNC is a live Goldbach detector",
+            "verdict": "fail",
+            "why": "vanishes on an actual pair. Shelved. Not Theorem P.",
+        },
     ],
     "open": [
         {
@@ -180,12 +190,40 @@ PAPER = {
             "why": "values sit near -0.16. Not a floor at -1/2. Old Route C shape.",
         },
         {
-            "id": "multirep",
+            "id": "Goldbach",
             "what": "multi-rep Bridge* stays above -1/2",
             "verdict": "open",
-            "why": "numeric through N=200 is not a proof",
+            "why": (
+                "v_k = sum_{p+q=k}(e_p-e_q). "
+                "Numeric through N=200 stays ~ -0.183. "
+                "Worst pair (3,5). Not a proof. Not needed for Theorem P."
+            ),
         },
     ],
+}
+
+
+# Voice: gold box = Goldbach. T-name = Theorem P. Not T2 / Titchmarsh / T3.
+PAIR = {
+    "gold_box": "Goldbach",
+    "t_name": "Theorem P",
+    "sits": (
+        "Theorem P. Prime-supported Q-tilde |_P >= -1/4. "
+        "Rank-one split A = uu^T + D. This is the T-name that sits."
+    ),
+    "far": (
+        "Goldbach. Multi-rep v_k = sum_{p+q=k}(e_p-e_q). "
+        "Numeric through N=200 stays ~ -0.183 > -1/2. "
+        "Worst pair (3,5). Far. Not a theorem."
+    ),
+    "withdrawn": (
+        "GNC. Goldbach detector / prime-indicator difference. "
+        "v_k vanishes on an actual Goldbach pair. Shelved. Not RH."
+    ),
+    "not_these": (
+        "Not T2 (fluids). Not Titchmarsh. Not T3 / triple lock. "
+        "Not Tao. Those are other T-names."
+    ),
 }
 
 
@@ -207,6 +245,24 @@ NAMES = [
         "name": "Q7",
         "is": "not seated on this desk. No file, no theorem id.",
         "is_not": "a hidden close of RH, SND, or Track B. Do not invent the paper.",
+    },
+    {
+        "id": "Theorem_P",
+        "name": "Theorem P",
+        "is": "the T-name that sits. Prime-supported Q-tilde >= -1/4. Rank-one split.",
+        "is_not": "RH, SND, Goldbach, T2, or GNC.",
+    },
+    {
+        "id": "Goldbach",
+        "name": "Goldbach (gold box)",
+        "is": "multi-rep Bridge* on Goldbach-shaped vectors. Far numerically through N=200.",
+        "is_not": "a theorem. Not needed for Theorem P. Not RH.",
+    },
+    {
+        "id": "GNC",
+        "name": "GNC",
+        "is": "withdrawn. Detector vanishes on an actual Goldbach pair.",
+        "is_not": "the live Goldbach leftover. That leftover is multi-rep, still open.",
     },
 ]
 
@@ -275,11 +331,32 @@ CLAIMS = [
         "open",
         "Those are the named Q writes. They are not Q7 until a paper is typed.",
     ),
+    rec(
+        "Q10",
+        "t_name_is_theorem_p",
+        "The T-name we got to a close is Theorem P",
+        "pass",
+        "Prime block Q-tilde >= -1/4. Rank-one split. Already scored.",
+    ),
+    rec(
+        "Q11",
+        "goldbach_is_a_theorem",
+        "Goldbach multi-rep is a theorem",
+        "fail",
+        "Numeric through N=200 is a reading. Worst pair (3,5). Not a write.",
+    ),
+    rec(
+        "Q12",
+        "gnc_is_live",
+        "GNC is the live Goldbach object",
+        "fail",
+        "Withdrawn. The live Goldbach leftover is multi-rep Bridge*, still open.",
+    ),
 ]
 
 
 def is_q_ask(ask: str) -> bool:
-    """Look at the GCD paper / Q6 / Q7 / spectral floor."""
+    """Look at the GCD paper / Q6 / Q7 / Goldbach / Theorem P."""
     text = (ask or "").lower().strip()
     if not text:
         return False
@@ -295,7 +372,9 @@ def is_q_ask(ask: str) -> bool:
             r"\bgcd\b|\binverse.?gcd\b|\bq6\b|\bq7\b|"
             r"\belectoral floor\b|\bspectral floor\b|\bactual floor\b|"
             r"\bbest gcd\b|\bgcd paper\b|\btheorem p\b|"
-            r"\bwhere does q7\b|\bwhat about q6\b",
+            r"\bwhere does q7\b|\bwhat about q6\b|"
+            r"\bgoldbach\b|\bgold box\b|\bgnc\b|"
+            r"\bmulti.?rep\b|\bgoldbach.?shaped\b",
             text,
         )
     )
@@ -316,9 +395,13 @@ def run(out: Path | None = None) -> dict:
         "lines": FLOOR_LINES,
         "names": NAMES,
         "claims": CLAIMS,
+        "pair": PAIR,
         "answer": (
             "Best GCD paper is Q6 hygiene (22045478). "
             "Sitting floors: Bridge*, Theorem P, H_N>=-1. "
+            "Gold box = Goldbach. The T-name that sits is Theorem P. "
+            "Goldbach multi-rep is far, not a theorem. "
+            "GNC stays withdrawn. "
             "Retracted floor cannot be found (false). "
             "Sharp H_N>=-1/4 open. "
             "Q6 is that paper, not SND. "
@@ -333,8 +416,9 @@ def run(out: Path | None = None) -> dict:
             "claim_open": sum(1 for c in CLAIMS if c["verdict"] == "open"),
         },
         "next_da_move": (
-            "Keep the sitting Q floors. Write H_N>=-1/4 or the spectral-limit "
-            "if you want the next Q sentence. Do not mint Q7. Do not glue to RH or B."
+            "Keep Theorem P. Goldbach multi-rep stays a numeric leftover. "
+            "Write H_N>=-1/4 if you want the next floor sentence. "
+            "Do not unshelve GNC. Do not mint Q7. Do not glue to RH or B."
         ),
     }
     dest = Path(out) if out is not None else Path("results/da_q.json")
@@ -351,6 +435,13 @@ def print_q(out: Path | None = None) -> dict:
     print()
     print("THEOREM (sits)")
     print("  lambda_min(H_N) >= -1 for every N. Prime block Q-tilde >= -1/4.")
+    print()
+    print("GOLDBACH / THEOREM P")
+    print(f"  Gold box = {PAIR['gold_box']}. The T-name that sits is {PAIR['t_name']}.")
+    print(f"  [HAVE] {PAIR['sits']}")
+    print(f"  [OPEN] {PAIR['far']}")
+    print(f"  [FAIL] {PAIR['withdrawn']}")
+    print(f"  {PAIR['not_these']}")
     print()
     print("PROOF CHAIN  (ground floor up)")
     for L in FLOOR_LINES:

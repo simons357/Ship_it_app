@@ -22,6 +22,8 @@ class DaMachineTests(unittest.TestCase):
         r = classify_claim("Theorem P: the prime block of Q-tilde sits above -1/4")
         self.assertEqual(r["domain"], "Q")
         self.assertEqual(r["verdict"], "open")
+        g = classify_claim("gold box multi-rep Goldbach stays above -1/2")
+        self.assertEqual(g["domain"], "Q")
 
     def test_unassigned_stays_open(self):
         r = classify_claim("hello there")
