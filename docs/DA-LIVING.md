@@ -51,6 +51,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Exterior evolutionary NS / spatial decay | Hishida | evolutionary NS in an exterior domain; Stokes semigroup and spatial decay | that setting bounds periodic \(X\) |
 | Slip / inflow-outflow NS | Mucha | Navier–Stokes with slip or inflow-outflow boundary conditions | that variant bounds periodic no-slip \(X\) |
 | Anisotropic NS / partial dissipation | Paicu | global regularity for Navier–Stokes with dissipation in only some directions | that equation bounds isotropic \(X\) |
+| Vortex stretching / strain–vorticity alignment | Gibbon | stretching identities and Euler standing diagnostics | those identities bound \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -304,6 +305,11 @@ different equation. Global regularity there is not a
 bound on isotropic \(X\). Chongsheng, Raphaël — primitive
 stays Cao. Density-dependent stays Danchin. Ping Zhang
 stays off this chair.
+
+**Gibbon.** Stretching identities and strain–vorticity
+diagnostics are not a bound on \(X\). John, Evan —
+continuation stays Beale. Strain cut stays Miller. Euler
+singularity stays Elgindi. Ohkitani stays off this chair.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -585,6 +591,7 @@ scores the process, not a theorem you did not prove.
 | Hishida exterior evolutionary NS closes \(X\) | **fail** |
 | Mucha slip inflow NS closes \(X\) | **fail** |
 | Paicu anisotropic NS closes \(X\) | **fail** |
+| Gibbon vortex stretching closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

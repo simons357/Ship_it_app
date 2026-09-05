@@ -238,6 +238,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Gibbon",
+        ["Beale", "Miller"],
+        "Stretching identities and strain-vorticity diagnostics are not a bound on X. Continuation stays Beale. Strain cut stays Miller. Euler singularity stays Elgindi.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -972,6 +978,13 @@ CLAIMS = [
         "fail",
         "Anisotropic NS with partial dissipation is a different equation. Global regularity there is not a bound on isotropic X. Primitive stays Cao. Density-dependent stays Danchin.",
     ),
+    rec(
+        "L72",
+        "gibbon_stretch_closes_X",
+        "Gibbon vortex stretching closes X",
+        "fail",
+        "Physica D 2008: stretching identities and Euler standing. Identities and diagnostics are not a bound on X. Continuation stays Beale. Strain cut stays Miller. Euler singularity stays Elgindi.",
+    ),
 ]
 
 
@@ -1003,6 +1016,7 @@ KINGDOMS = [
     {"name": "Exterior evolutionary NS / spatial decay", "who": "Hishida", "slot": "B"},
     {"name": "Slip / inflow-outflow NS", "who": "Mucha", "slot": "B"},
     {"name": "Anisotropic NS / partial dissipation", "who": "Paicu", "slot": "B"},
+    {"name": "Vortex stretching / strain-vorticity alignment", "who": "Gibbon", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

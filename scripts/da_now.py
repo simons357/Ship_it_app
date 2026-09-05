@@ -146,6 +146,13 @@ WATCH = [
         "do_not": "seat as a second anisotropic chair next to Paicu",
     },
     {
+        "name": "Ohkitani",
+        "slot": "B",
+        "kingdom": "vortex stretching / strain alignment",
+        "involved": "stretching numerics; compared with Gibbon; Hou-adjacent",
+        "do_not": "seat as a second stretching chair next to Gibbon",
+    },
+    {
         "name": "Kenig",
         "slot": "B",
         "kingdom": "unique continuation",

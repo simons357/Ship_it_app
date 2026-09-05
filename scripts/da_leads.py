@@ -235,6 +235,9 @@ LEADS = [
     lead("Paicu", "anisotropic NS / partial dissipation", "B", "living",
          "Anisotropic NS with partial dissipation is a different equation. Global regularity there is not a bound on isotropic X. Primitive stays Cao. Density-dependent stays Danchin.",
          "anisotropic = bound on X"),
+    lead("Gibbon", "vortex stretching / strain-vorticity alignment", "B", "living",
+         "Stretching identities and strain-vorticity diagnostics are not a bound on X. Continuation stays Beale. Strain cut stays Miller. Euler singularity stays Elgindi.",
+         "stretching identity = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -317,7 +320,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti", "Korobkov", "Hishida", "Mucha", "Paicu",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti", "Korobkov", "Hishida", "Mucha", "Paicu", "Gibbon",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -764,6 +767,13 @@ CLAIMS = [
         "Paicu anisotropic NS bounds X",
         "fail",
         "Partial dissipation is a different equation. Primitive stays Cao. Density-dependent stays Danchin.",
+    ),
+    rec(
+        "R64",
+        "gibbon_stretch_bounds_X",
+        "Gibbon vortex stretching bounds X",
+        "fail",
+        "Stretching identities are not enstrophy. Continuation stays Beale. Strain cut stays Miller. Euler singularity stays Elgindi.",
     ),
 ]
 
