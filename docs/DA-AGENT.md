@@ -21,6 +21,7 @@ not replace the checker.
 | Live feed | `feed` | U / B | refreshes GWTC, LHC, PDG, arXiv | write \(X\) or \(F\) |
 | Tick | `agent` | U | pulls both and scores the shape | autopilot a pass |
 | Alert | `alert` | U | texts a watched flip | a new catalog page |
+| Now-what | `next` | U / B | wall, target, words→math | write the leftover |
 
 Latest public data belongs here. A stale machine is a
 weaker anti-bullshit device. Up to date is a U duty.
@@ -49,4 +50,5 @@ Track A stays the damped PDE. Theorem A does not imply B.
 
 Roster: [`DA-NOW.md`](DA-NOW.md)  
 Feed: [`DA-FEED.md`](DA-FEED.md)  
+Now-what: [`DA-NEXT.md`](DA-NEXT.md)  
 Machine: [`DOMAIN-ARCHITECT-MACHINE.md`](DOMAIN-ARCHITECT-MACHINE.md)

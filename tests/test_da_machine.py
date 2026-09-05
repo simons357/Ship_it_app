@@ -548,6 +548,9 @@ class DaMachineTests(unittest.TestCase):
         fresh = classify_claim("report DA feed freshness; stale feed is weaker")
         self.assertEqual(fresh["domain"], "U")
         self.assertEqual(fresh["verdict"], "open")
+        nxt = classify_claim("DA next: now what on the living bench")
+        self.assertEqual(nxt["domain"], "U")
+        self.assertEqual(nxt["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

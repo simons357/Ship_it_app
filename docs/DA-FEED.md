@@ -56,6 +56,7 @@ The pipe named the streams
 
 Print: `python3 scripts/da_machine.py feed`  
 Age: `python3 scripts/da_machine.py status`  
+Now-what: `python3 scripts/da_machine.py next`  
 Roster: [`DA-NOW.md`](DA-NOW.md)  
 Pipes: [`DA-PIPE.md`](DA-PIPE.md)
 

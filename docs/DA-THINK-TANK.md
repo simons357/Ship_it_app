@@ -45,6 +45,9 @@ Latest public catalogs: [`docs/DA-FEED.md`](DA-FEED.md). LIGO, LHC, PDG, arXiv. 
 **DA tick**  
 Roster plus feed inside the machine: [`docs/DA-AGENT.md`](DA-AGENT.md). Agent-shaped. Not a closer.
 
+**Now-what spoke**  
+Wall, target, words→math: [`docs/DA-NEXT.md`](DA-NEXT.md). Hub and rim. Target on B is \(X\), not \(F\).
+
 Einstein and PDG sit on more than one bench. That is fine. They are not counted twice as a vote.
 
 **Do not sit**  

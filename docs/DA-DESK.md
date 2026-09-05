@@ -32,7 +32,9 @@ It is a process machine, not a unifier.
 You do not need the chops. Ordinary AI proposes. A script
 scores. You run the command. The living roster and the live
 feed sit inside that loop. The shape is an agent. It is
-not a closer. A sentence sits only if it
+not a closer. `next` is the now-what spoke: where the
+wall is, what the target is (\(X\), not \(F\)), and a
+math sentence from an English ask. A sentence sits only if it
 names a slot and a check that could kill it. Fake passes,
 glue, and “unfalsifiable might be true” are refused. Open
 is allowed. Fail is allowed. A lead is welcome; a close
