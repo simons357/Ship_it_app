@@ -60,6 +60,7 @@ freestyle. Not a vote. Not a séance.
 | Residual | `trackb` | lemma catalog | leftover B42 |
 | Translate | `next --ask` | words → slot + math | invent \(\mathcal{R}\) |
 | Council | `nowwhat` | leftover papers: would try / cannot | a vote or a close |
+| Hunt | `hunt` | scored edges, blocked edges, object window | write \(\mathcal{R}\) |
 | Checker | `check --domain B` | run the leftover tests | a close |
 
 Re-run `feed` so the rim is not stale. `status` reports
@@ -84,7 +85,9 @@ age. A missing or \>24h scan is weaker.
 
 Print: `python3 scripts/da_machine.py next`  
 Lost: `python3 scripts/da_machine.py nowwhat`  
+Hunt: `python3 scripts/da_machine.py hunt`  
 Council: [`DA-NOWWHAT.md`](DA-NOWWHAT.md)  
+Chain: [`DA-HUNT.md`](DA-HUNT.md)  
 Feed: [`DA-FEED.md`](DA-FEED.md)  
 Agent: [`DA-AGENT.md`](DA-AGENT.md)  
 Residual: [`TRACK-B-RESIDUAL.md`](TRACK-B-RESIDUAL.md)

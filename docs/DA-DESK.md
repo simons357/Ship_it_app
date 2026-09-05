@@ -35,7 +35,8 @@ feed sit inside that loop. The shape is an agent. It is
 not a closer. `next` is the now-what spoke: where the
 wall is, what the target is (\(X\), not \(F\)), and a
 math sentence from an English ask. `nowwhat` asks the
-leftover papers what they would try. A sentence sits only if it
+leftover papers what they would try. `hunt` walks the
+scored chain and keeps the object in a window. A sentence sits only if it
 names a slot and a check that could kill it. Fake passes,
 glue, and “unfalsifiable might be true” are refused. Open
 is allowed. Fail is allowed. A lead is welcome; a close

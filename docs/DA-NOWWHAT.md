@@ -133,5 +133,6 @@ Empty `next`, or `next --ask "now what"`, routes here.
 A specific sentence still goes through `next --ask`.
 
 Translate: [`DA-NEXT.md`](DA-NEXT.md)  
+Hunt: [`DA-HUNT.md`](DA-HUNT.md)  
 Living: [`DA-LIVING.md`](DA-LIVING.md)  
 Residual: [`TRACK-B-RESIDUAL.md`](TRACK-B-RESIDUAL.md)

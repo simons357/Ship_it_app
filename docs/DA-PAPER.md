@@ -344,7 +344,7 @@ A1 is off on this box. A2 is live. A2 does not blow on the B15 path. Neither int
 
 **Track Q.** Full spectrum floor false. Live hygiene only. No map onto \((u\cdot\nabla)u\).
 
-**Now-what spoke.** `next` names the B41 wall in English, keeps the target as \(X\) / integrable \(\mathcal{R}\) (not \(F\)), and translates an operator ask into a math sentence. Feed, living roster, and the residual catalog sit on the rim. A suggestion is not a close. LIGO and arXiv refresh; they do not write \(X\). A lost operator who says **now what** gets `nowwhat`: the leftover papers' next try and veto, then history on what it would do now. Not a chatbot freestyle. Not a vote. Not a séance.
+**Now-what spoke.** `next` names the B41 wall in English, keeps the target as \(X\) / integrable \(\mathcal{R}\) (not \(F\)), and translates an operator ask into a math sentence. Feed, living roster, and the residual catalog sit on the rim. A suggestion is not a close. LIGO and arXiv refresh; they do not write \(X\). A lost operator who says **now what** gets `nowwhat`: the leftover papers' next try and veto, then history on what it would do now. Not a chatbot freestyle. Not a vote. Not a séance. `hunt` walks the scored residual chain and keeps \(X\) in an object window. An LLM may phrase. It does not fill \(\mathcal{R}\).
 
 **Slot U.** The Standard Model poster consumes its numbers and produces none. Einstein \(+T_{\mathrm{SM}}\) is a working couple. nature4 fails. Official Cosmo 16 is a different catalog; produce fails; the core equation is private. The destination “spectrum, not a bag” is open. \(F\) is fail.
 

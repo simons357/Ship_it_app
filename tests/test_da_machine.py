@@ -560,6 +560,12 @@ class DaMachineTests(unittest.TestCase):
         hist = classify_claim("the smartest people in history comment on what would you do now")
         self.assertEqual(hist["domain"], "U")
         self.assertEqual(hist["verdict"], "open")
+        hunt = classify_claim("DA hunt: proof chain hunter mode")
+        self.assertEqual(hunt["domain"], "U")
+        self.assertEqual(hunt["verdict"], "open")
+        window = classify_claim("open the object window on the leftover")
+        self.assertEqual(window["domain"], "U")
+        self.assertEqual(window["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

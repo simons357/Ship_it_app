@@ -11,6 +11,7 @@ Living roster: `python3 scripts/da_machine.py now`
 Live feed (LIGO / LHC / PDG): `python3 scripts/da_machine.py feed`  
 DA tick (agent-shaped): `python3 scripts/da_machine.py agent`  
 Lost-operator council: `python3 scripts/da_machine.py nowwhat`  
+Proof-chain hunter: `python3 scripts/da_machine.py hunt`  
 Scene: `docs/DA-SESSION.md`  
 Living scene: `docs/DA-LIVING.md`  
 Leads: `docs/DA-LEADS.md`  
@@ -51,6 +52,9 @@ Wall, target, words→math: [`docs/DA-NEXT.md`](DA-NEXT.md). Hub and rim. Target
 
 **Lost-operator council**  
 What the leftover papers would try, then what history would do now: [`docs/DA-NOWWHAT.md`](DA-NOWWHAT.md). Papers, not minds. Not a vote. Not a séance. Not ChatGPT freestyle.
+
+**Proof-chain hunter**  
+How the scored pieces connect: [`docs/DA-HUNT.md`](DA-HUNT.md). Graph, not a fill. Object window stays on.
 
 Einstein and PDG sit on more than one bench. That is fine. They are not counted twice as a vote.
 

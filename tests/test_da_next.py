@@ -40,6 +40,7 @@ class DaNextTests(unittest.TestCase):
         self.assertTrue((ROOT / "docs" / "DA-NEXT.md").is_file())
         self.assertIn("nowwhat", payload["nowwhat"])
         self.assertTrue(any(s["name"] == "nowwhat" for s in payload["spokes"]))
+        self.assertTrue(any(s["name"] == "hunt" for s in payload["spokes"]))
         self.assertFalse(is_lost_ask("what do we do from here"))
 
     def test_translate_splits_F_from_X(self):

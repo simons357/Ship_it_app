@@ -405,6 +405,7 @@ def run(out: Path | None = None) -> dict:
         "target": WALL["target_B"],
         "next_da_move": (
             "Pick one leftover would_try. Classify it. "
+            "Or run hunt to walk the scored chain. "
             "History comments on method. Do not vote. "
             "Do not graft Q1 onto B. Re-run feed if the rim is stale."
         ),
