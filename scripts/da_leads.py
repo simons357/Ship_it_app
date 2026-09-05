@@ -121,6 +121,9 @@ LEADS = [
     lead("Sverak", "Liouville / ancient / self-similar", "B", "living",
          "Honest doors: Liouville, ancient, self-similar. Ruled-out self-similar is not an a priori. Possible is not a theorem.",
          "those doors from a leftover list; exclusion = bound"),
+    lead("Jia", "forward self-similar large data", "B", "living",
+         "Forward self-similar solutions exist for large minus-one-homogeneous data. Existence is not an a priori on X.",
+         "profile existence = bound"),
     lead("Seregin", "local regularity / ESS", "B", "living",
          "ESS endpoint sits as a criterion. It is not an a priori on X.",
          "criterion ⇒ bound"),
@@ -183,7 +186,7 @@ MUST_SIT = {
     "Constantin", "Fefferman", "Ladyzhenskaya",
     "Einstein", "Tesla", "Feynman", "Weyl", "Wigner", "von Neumann", "Weinberg",
     "experiment / PDG", "neutrino / cosmology",
-    "Tao", "Sverak", "Seregin", "Koch", "Tataru", "Grujic",
+    "Tao", "Sverak", "Seregin", "Jia", "Koch", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "current math.AP",
     "Beirao-Berselli", "Giga-Miura",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
@@ -317,6 +320,13 @@ CLAIMS = [
         "Liouville or ancient remaining doors are an a priori on X",
         "fail",
         "A remaining door is not a bound.",
+    ),
+    rec(
+        "R19",
+        "jia_forward_ss_closes_X",
+        "Jia-Sverak forward self-similar large-data solutions close X",
+        "fail",
+        "Existence of a scale-invariant profile is not an a priori.",
     ),
 ]
 

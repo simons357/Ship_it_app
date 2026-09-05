@@ -245,6 +245,12 @@ class DaMachineTests(unittest.TestCase):
         anc = classify_claim("Liouville ancient remaining doors on a vorticity packet")
         self.assertEqual(anc["domain"], "B")
         self.assertEqual(anc["verdict"], "open")
+        jia = classify_claim("seat Jia as a wall on the living bench")
+        self.assertEqual(jia["domain"], "U")
+        self.assertEqual(jia["verdict"], "open")
+        jia_if = classify_claim("Jia forward self-similar large data on a vorticity packet")
+        self.assertEqual(jia_if["domain"], "B")
+        self.assertEqual(jia_if["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

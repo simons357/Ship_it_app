@@ -64,6 +64,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Jia",
+        ["Sverak", "Tao"],
+        "We built forward self-similar solutions for large minus-one-homogeneous data. Existence of a profile is not an a priori on X.",
+        "B",
+    ),
+    turn(
         "Seregin",
         ["Sverak", "Caffarelli", "Kohn"],
         "Local regularity and the ESS endpoint sit. They are criteria. They are not an a priori on X. Do not promote small singular set to empty.",
@@ -387,6 +393,13 @@ CLAIMS = [
         "fail",
         "A remaining door is not a bound. Possible is not a theorem.",
     ),
+    rec(
+        "L27",
+        "jia_forward_ss_closes_X",
+        "Jia-Sverak forward self-similar large-data solutions close X",
+        "fail",
+        "Inventiones 2014 constructs scale-invariant solutions. Existence is not an a priori.",
+    ),
 ]
 
 
@@ -395,6 +408,7 @@ SPEAKERS = sorted({t["speaker"] for t in TURNS})
 KINGDOMS = [
     {"name": "Supercriticality", "who": "Tao", "slot": "B"},
     {"name": "Liouville / ancient / self-similar", "who": "Sverak, Seregin", "slot": "B"},
+    {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Partial regularity", "who": "Caffarelli, Kohn", "slot": "B"},
     {"name": "Geometry", "who": "Constantin, Fefferman", "slot": "B"},
     {"name": "Geometric if (weaker than CF)", "who": "Beirao-Berselli", "slot": "B"},

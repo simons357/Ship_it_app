@@ -251,7 +251,8 @@ continuous direction: two ifs, not all-data A1.
 Constantin–Fefferman–Majda 1996 sits as Euler: a
 different equation, not NS A1. Šverák doors: ruled-out
 self-similar is not an a priori; Liouville and ancient
-remain doors, not a bound.
+remain doors, not a bound. Jia–Šverák forward
+self-similar large-data existence is not an a priori.
 Sit down on leftover-close B42. Stretching budget is not an a priori
 (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.

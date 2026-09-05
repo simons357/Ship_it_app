@@ -39,6 +39,7 @@ in your slot.
 | Ladyzhenskaya | extra dissipation | Same weight, both sides. \(\varepsilon\) stays on A. | A\(\Rightarrow\)B |
 | Tao | supercriticality | Energy class is a derivative short. Where now: a residual. | catalog closes \(X\) |
 | Šverák | Liouville / ancient / self-similar | Honest doors. Ruled-out self-similar is not an a priori. Possible is not a theorem. | those doors from a leftover list; exclusion \(=\) bound |
+| Jia | forward self-similar large data | Forward self-similar solutions exist for large \(-1\)-homogeneous data. Existence is not an a priori on \(X\). | profile existence \(=\) bound |
 | Seregin | local regularity / ESS | A criterion is not an a priori on \(X\). | criterion \(\Rightarrow\) bound |
 | Koch | critical small data | Small critical sits. Large data is the object. | Koch–Tataru \(\Rightarrow\) large data |
 | Tataru | critical small data | The critical space is the wall. That is why leftover knobs died. | wall \(=\) estimate |
@@ -100,6 +101,7 @@ in your slot.
 | CFM Euler if is classical NS A1 | **fail** |
 | Self-similar exclusion closes \(X\) | **fail** |
 | Liouville or ancient doors are an a priori | **fail** |
+| Jia–Šverák forward self-similar closes \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
