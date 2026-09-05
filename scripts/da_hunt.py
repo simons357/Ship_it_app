@@ -273,8 +273,12 @@ CLAIMS = [
 
 def is_look_ask(ask: str) -> bool:
     """A request to open the object window. Empty is not a look."""
+    from da_q import is_q_ask
+
     text = (ask or "").lower().strip()
     if not text:
+        return False
+    if is_q_ask(text):
         return False
     return bool(
         re.search(

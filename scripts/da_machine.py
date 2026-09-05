@@ -122,7 +122,9 @@ def classify_claim(claim: str) -> dict:
         r"\btrack [ab]\b.{0,40}\bwrite\b|\bwrite\b.{0,40}\btrack [ab]\b|"
         r"\bwrite rh\b|\bmy best paper\b|"
         r"\bis that right\b|\bis (ns |navier |navi )?done\b|"
-        r"\bcan da\b|\bda done\b|\blooks like.{0,24}done\b",
+        r"\bcan da\b|\bda done\b|\blooks like.{0,24}done\b|"
+        r"\bgcd paper\b|\bbest gcd\b|\bq6\b|\bq7\b|"
+        r"\belectoral floor\b|\bspectral floor\b",
         text,
     ):
         return {
@@ -848,6 +850,19 @@ def cmd_repair(job: str = "", ask: str = "") -> int:
     return 0
 
 
+def cmd_q() -> int:
+    from da_q import print_q
+
+    print_q()
+    append_run(
+        "Q",
+        "Look at the inverse-GCD paper: sitting floors, Q6 hygiene, Q7 not seated",
+        "open",
+        "Q6 is 22045478; retracted floor false; Q7 not seated; Q is not RH or B",
+    )
+    return 0
+
+
 def cmd_done() -> int:
     from da_done import print_done
 
@@ -937,10 +952,13 @@ def cmd_next(ask: str = "") -> int:
     from da_picture import is_picture_ask
     from da_done import is_done_ask
     from da_proof import is_proof_ask
+    from da_q import is_q_ask
     from da_repair import is_repair_ask
 
     if is_done_ask(ask):
         return cmd_done()
+    if is_q_ask(ask):
+        return cmd_q()
     if is_look_ask(ask):
         return cmd_look()
     if is_brute_ask(ask):
@@ -1194,6 +1212,7 @@ def main() -> int:
     sub.add_parser("window", help="same as look")
     sub.add_parser("from", help="walk your scored steps to the break; proceed toward regularity")
     sub.add_parser("mine", help="same as from")
+    sub.add_parser("q", help="inverse-GCD paper, floors, Q6, Q7")
     sub.add_parser("done", help="is NS done? emit is not QED; A this PDE yes; B no")
     prf = sub.add_parser("proof", help="write a proof chain: NS, A, or RH")
     prf.add_argument("--problem", default="", help="NS | A | RH. Empty defaults to NS.")
@@ -1301,6 +1320,8 @@ def main() -> int:
         return cmd_look()
     if args.cmd in ("from", "mine"):
         return cmd_from()
+    if args.cmd == "q":
+        return cmd_q()
     if args.cmd == "done":
         return cmd_done()
     if args.cmd == "proof":
