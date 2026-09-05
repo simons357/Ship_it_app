@@ -60,6 +60,10 @@ class DaProofTests(unittest.TestCase):
         self.assertTrue(is_proof_ask(both_ask))
         self.assertFalse(is_attempt_ask(both_ask))
         self.assertEqual(parse_problems(ask=both_ask), ["NS", "A"])
+        as_well = "Track B please write   Track a as well"
+        self.assertTrue(is_proof_ask(as_well))
+        self.assertFalse(is_attempt_ask(as_well))
+        self.assertEqual(parse_problems(ask=as_well), ["NS", "A"])
         self.assertTrue(is_proof_ask("track A write"))
         self.assertFalse(is_attempt_ask("track A write"))
         self.assertEqual(parse_problem(ask="track A write"), "A")
