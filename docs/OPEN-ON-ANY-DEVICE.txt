@@ -46,6 +46,9 @@ Chain paper (open, not QED):
 docs/TRACK-B-CHAIN.pdf
 Do NOT upload that PDF to Zenodo as a close.
 
+Chain plus what closes it:
+docs/UNAUGMENTED-NS-CHAIN.md
+
 RH WRITE (6) is still open.
 Q is not RH.
 YM, BSD, Hodge, P vs NP are leftover gravy.

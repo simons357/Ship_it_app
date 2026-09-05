@@ -30,6 +30,10 @@ Chain paper (open, not QED):
 
 docs/TRACK-B-CHAIN.pdf
 
+Same chain plus what closes it:
+
+docs/UNAUGMENTED-NS-CHAIN.md
+
 DA will write the chain, name (6), refuse glue,
 and score one candidate. DA will not print (6)
 as a theorem.

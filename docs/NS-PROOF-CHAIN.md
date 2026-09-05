@@ -14,6 +14,9 @@ Finishing bad is printing this chain and naming
 leftover (6). It is not closing (6). Emit is not
 QED. `(7)–(9)` wait on (6).
 
+Same chain plus the close list, one file:
+[`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md).
+
 Paper PDF of this chain (WRITE (6) open, not QED):
 [`TRACK-B-CHAIN.pdf`](TRACK-B-CHAIN.pdf).
 
