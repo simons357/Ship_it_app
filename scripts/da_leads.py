@@ -82,6 +82,9 @@ LEADS = [
     lead("Vasseur", "De Giorgi CKN", "B", "living",
          "De Giorgi iteration proves the same CKN partial regularity. H1 singular set small. Small is not empty. The 3/2 gap stays.",
          "De Giorgi = no blowup"),
+    lead("Farwig", "very weak solutions", "B", "living",
+         "Very weak solutions sit in Serrin's class without differentiability. They are not Leray-Hopf. Uniqueness in that class is not a bound on X. Sohr stays out.",
+         "very weak = bound on X"),
     lead("Nirenberg", "partial regularity", "B", "past",
          "Keep us on the wall. Do not promote 1934–1982 to a global pass.",
          "energy + CKN = close"),
@@ -227,7 +230,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -457,6 +460,13 @@ CLAIMS = [
         "Vasseur's CKN proof is no blowup",
         "fail",
         "De Giorgi on the same theorem. Small is not empty. The 3/2 gap is not a close.",
+    ),
+    rec(
+        "R33",
+        "farwig_very_weak_bounds_X",
+        "Farwig very weak solutions bound X",
+        "fail",
+        "A different class is not Leray-Hopf and not a bound on classical X. Sohr stays out.",
     ),
 ]
 

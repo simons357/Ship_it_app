@@ -172,6 +172,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Farwig",
+        ["Kozono-Taniuchi", "Koch"],
+        "Very weak solutions sit in Serrin's class without differentiability. They are not Leray-Hopf. Uniqueness in that class is not a bound on X. Sohr is not in this room.",
+        "B",
+    ),
+    turn(
         "Neustupa-Penel",
         ["Beale", "Caffarelli"],
         "Regularity of one velocity component regularizes a suitable weak solution. That is still an if. It is not an a priori on X. One component is not the field.",
@@ -569,6 +575,13 @@ CLAIMS = [
         "fail",
         "NoDEA 2007: De Giorgi iteration, same CKN theorem. H^1 singular set small. Small is not empty. The 3/2 gap stays. Not no blowup.",
     ),
+    rec(
+        "L41",
+        "farwig_very_weak_closes_X",
+        "Farwig very weak solutions close X",
+        "fail",
+        "JMSJ 2007: Serrin class, no differentiability, generally not Leray-Hopf. A different class is not a bound on classical X. Sohr stays out.",
+    ),
 ]
 
 
@@ -592,6 +605,7 @@ KINGDOMS = [
     {"name": "Axisymmetric Type I", "who": "CSTY", "slot": "B"},
     {"name": "Continuation", "who": "Beale", "slot": "B"},
     {"name": "BMO continuation", "who": "Kozono-Taniuchi", "slot": "B"},
+    {"name": "Very weak solutions", "who": "Farwig", "slot": "B"},
     {"name": "One-component if", "who": "Neustupa-Penel", "slot": "B"},
     {"name": "Critical small data", "who": "Koch, Tataru", "slot": "B"},
     {"name": "Large Besov / nonlinear smallness", "who": "Chemin-Gallagher", "slot": "B"},

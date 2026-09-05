@@ -43,6 +43,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Axisymmetric Type I | Chen–Strain–Tsai–Yau | axisymmetric Type I blow-up is out | those two restrictions close \(X\) |
 | Continuation | Beale | \(\int\|\omega\|_\infty\) | the max from \(L^2\) or a leftover list |
 | BMO continuation | Kozono–Taniuchi | integrable \(\|\omega\|_{\mathrm{BMO}}\) continues a strong solution | the if is an a priori on \(X\) |
+| Very weak solutions | Farwig | Serrin class without differentiability; not Leray–Hopf | that class bounds classical \(X\) |
 | One-component if | Neustupa–Penel | one velocity component in a Serrin-type class regularizes | the if is all-data regularity |
 | Critical small data | Koch, Tataru | small critical sits | large-data regularity |
 | Large Besov / nonlinear smallness | Chemin–Gallagher | large critical data under a nonlinear smallness condition | the condition is all-data regularity |
@@ -57,7 +58,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Announcements | current math.AP | a preprint is a proposal | close B by title |
 | The desk | operator | one sentence, one slot, one check | needing chops |
 
-Shahmurov does not get a chair. SFE / HB-as-unifier do not.
+Shahmurov does not get a chair. Sohr stays out. SFE / HB-as-unifier do not.
 
 ---
 
@@ -186,6 +187,12 @@ continues a strong solution (Math. Z. 2000). That is
 still a continuation if. It is not an a priori on \(X\).
 John, Zoran — BMO of \(\omega\) is not \(\mathrm{bmo}\)
 of \(\xi\).
+
+**Farwig.** Very weak solutions sit in Serrin's class
+without differentiability (JMSJ 2007, with Kozono and
+Sohr). They are not Leray–Hopf. Uniqueness in that class
+is not a bound on \(X\). Hideo, Herbert — Sohr is not
+in this room.
 
 **Neustupa–Penel.** Regularity of one velocity
 component regularizes a suitable weak solution (1999).
@@ -326,6 +333,7 @@ scores the process, not a theorem you did not prove.
 | Cannone–Planchon critical Besov mild is all-data regularity | **fail** |
 | Lin new proof of CKN closes \(X\) | **fail** |
 | Vasseur De Giorgi proof of CKN closes \(X\) | **fail** |
+| Farwig very weak solutions close \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

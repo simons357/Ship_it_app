@@ -329,6 +329,12 @@ class DaMachineTests(unittest.TestCase):
         degiorgi = classify_claim("Vasseur De Giorgi proof of CKN on a vorticity packet")
         self.assertEqual(degiorgi["domain"], "B")
         self.assertEqual(degiorgi["verdict"], "open")
+        farwig = classify_claim("seat Farwig as a wall on the living bench")
+        self.assertEqual(farwig["domain"], "U")
+        self.assertEqual(farwig["verdict"], "open")
+        weak = classify_claim("Farwig very weak solutions on a vorticity packet")
+        self.assertEqual(weak["domain"], "B")
+        self.assertEqual(weak["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
