@@ -269,6 +269,12 @@ class DaMachineTests(unittest.TestCase):
         cone = classify_claim("Lei-Ren-Tian double cone if on a vorticity packet")
         self.assertEqual(cone["domain"], "B")
         self.assertEqual(cone["verdict"], "open")
+        csty = classify_claim("seat CSTY as a wall on the living bench")
+        self.assertEqual(csty["domain"], "U")
+        self.assertEqual(csty["verdict"], "open")
+        axisym = classify_claim("Chen-Strain-Tsai-Yau axisymmetric Type I on a vorticity packet")
+        self.assertEqual(axisym["domain"], "B")
+        self.assertEqual(axisym["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

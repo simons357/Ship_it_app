@@ -124,6 +124,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "CSTY",
+        ["Giga-Miura", "Sverak", "Lei-Ren-Tian"],
+        "Axisymmetric Type I is out. That is two restrictions: symmetry and a scale-invariant rate. It is not an a priori on X.",
+        "B",
+    ),
+    turn(
         "Beale",
         ["Fefferman", "Koch"],
         "Continuation is the max. L2 is not our theorem. A leftover list is not the max.",
@@ -439,6 +445,13 @@ CLAIMS = [
         "fail",
         "arXiv 2501.08976 is an if on the range of ξ. A double cone is still an if. All-data A1 stays blank.",
     ),
+    rec(
+        "L31",
+        "csty_axisym_type_i_closes_X",
+        "Chen-Strain-Tsai-Yau axisymmetric Type I exclusion closes X",
+        "fail",
+        "IMRN 2008 / CPDE 2009: axisymmetry plus a Type I bound. Two restrictions. Not an a priori on classical X.",
+    ),
 ]
 
 
@@ -454,6 +467,7 @@ KINGDOMS = [
     {"name": "Geometric if (weaker than CF)", "who": "Beirao-Berselli", "slot": "B"},
     {"name": "Type I plus continuous direction", "who": "Giga-Miura", "slot": "B"},
     {"name": "Double-cone geometric if", "who": "Lei-Ren-Tian", "slot": "B"},
+    {"name": "Axisymmetric Type I", "who": "CSTY", "slot": "B"},
     {"name": "Continuation", "who": "Beale", "slot": "B"},
     {"name": "Critical small data", "who": "Koch, Tataru", "slot": "B"},
     {"name": "Scaling gap / log-bmo if", "who": "Grujic", "slot": "B"},

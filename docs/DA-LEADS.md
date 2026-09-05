@@ -37,6 +37,7 @@ in your slot.
 | Beirão da Veiga–Berselli | geometric if | We weakened the Lipschitz if. The if remains an if. It is not all-data A1. | weaker if \(=\) all-data alignment |
 | Giga–Miura | Type I / continuous direction | Type I plus uniformly continuous direction prevents blow-up. Two ifs. It is not all-data A1. | Type I + continuity \(=\) all-data alignment |
 | Lei–Ren–Tian | double-cone geometric if | If vorticity stays in a double cone on high-magnitude sets, the solution is regular. Still an if. It is not all-data A1. | double cone \(=\) all-data alignment |
+| CSTY | axisymmetric Type I | Axisymmetric Type I is out. Symmetry plus a scale-invariant rate. Not an a priori on \(X\). | axisymmetric Type I \(=\) bound on \(X\) |
 | Ladyzhenskaya | extra dissipation | Same weight, both sides. \(\varepsilon\) stays on A. | A\(\Rightarrow\)B |
 | Tao | supercriticality | Energy class is a derivative short. Where now: a residual. | catalog closes \(X\) |
 | Šverák | Liouville / ancient / self-similar | Honest doors. Ruled-out self-similar is not an a priori. Possible is not a theorem. | those doors from a leftover list; exclusion \(=\) bound |
@@ -108,6 +109,7 @@ in your slot.
 | Guillod–Šverák numerical pitchfork closes \(X\) | **fail** |
 | Hou–Wang–Yang unforced Leray–Hopf closes \(X\) | **fail** |
 | Lei–Ren–Tian double-cone if is all-data A1 | **fail** |
+| Chen–Strain–Tsai–Yau axisymmetric Type I closes \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

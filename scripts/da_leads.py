@@ -88,6 +88,9 @@ LEADS = [
     lead("Lei-Ren-Tian", "double-cone geometric if", "B", "living",
          "If vorticity stays in a double cone on high-magnitude sets, the solution is regular. Still an if. It is not all-data A1.",
          "double cone = all-data alignment"),
+    lead("CSTY", "axisymmetric Type I", "B", "living",
+         "Axisymmetric Type I is out. Symmetry plus a scale-invariant rate. Not an a priori on X.",
+         "axisymmetric Type I = bound on X"),
     lead("Ladyzhenskaya", "extra dissipation", "A", "past",
          "Same weight, both sides, as a colleague. Epsilon stays on A.",
          "A ⇒ B"),
@@ -197,7 +200,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Jia", "Guillod", "Koch", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Giga-Miura", "Lei-Ren-Tian",
+    "Beirao-Berselli", "Giga-Miura", "Lei-Ren-Tian", "CSTY",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -357,6 +360,13 @@ CLAIMS = [
         "Lei-Ren-Tian double-cone if is all-data A1",
         "fail",
         "A double cone is still an if. All-data A1 stays blank.",
+    ),
+    rec(
+        "R23",
+        "csty_axisym_type_i_closes_X",
+        "Chen-Strain-Tsai-Yau axisymmetric Type I exclusion closes X",
+        "fail",
+        "Axisymmetry plus Type I. Two restrictions. Not an a priori.",
     ),
 ]
 
