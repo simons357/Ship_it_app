@@ -36,7 +36,7 @@ class DaNowTests(unittest.TestCase):
     def test_seated_excludes_dead_and_includes_fluids(self):
         names = set(seated_living())
         self.assertTrue(DEAD.isdisjoint(names))
-        for must in ("Tao", "Sverak", "Barker", "Kukavica", "Hou", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti", "Korobkov", "Hishida", "Mucha", "Paicu", "Gibbon", "Ambrosio", "Enciso", "Feireisl"):
+        for must in ("Tao", "Sverak", "Barker", "Kukavica", "Hou", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti", "Korobkov", "Hishida", "Mucha", "Paicu", "Gibbon", "Ambrosio", "Enciso", "Feireisl", "Kiselev"):
             self.assertIn(must, names)
         self.assertNotIn("Operator", names)
         self.assertNotIn("Shahmurov", names)
@@ -65,6 +65,7 @@ class DaNowTests(unittest.TestCase):
         self.assertIn("Crippa", watch)
         self.assertIn("Peralta-Salas", watch)
         self.assertIn("Novotny", watch)
+        self.assertIn("Zlatos", watch)
         self.assertIn("Maynard", watch)
         self.assertNotIn("Silvestre", watch)
         self.assertNotIn("Schonbek", watch)
@@ -80,6 +81,7 @@ class DaNowTests(unittest.TestCase):
         self.assertNotIn("Ambrosio", watch)
         self.assertNotIn("Enciso", watch)
         self.assertNotIn("Feireisl", watch)
+        self.assertNotIn("Kiselev", watch)
         self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))
         collab = {row["name"] for row in run(out=Path(tempfile.mkdtemp()) / "n.json")["collaborations"]}
         self.assertIn("LVK collaboration", collab)

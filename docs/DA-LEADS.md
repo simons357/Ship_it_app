@@ -79,6 +79,7 @@ in your slot.
 | Ambrosio | Regular Lagrangian Flow / DiPerna–Lions transport | A Regular Lagrangian Flow is uniqueness for the ODE. That is not a bound on \(X\). Weak-strong stays Germain. Mild uniqueness stays Masmoudi. DiPerna stays out. | ODE uniqueness \(=\) bound on \(X\) |
 | Enciso | knotted Beltrami fields / steady Euler topology | Existence of knotted Beltrami fields is not a bound on evolutionary \(X\). Euler singularity stays Elgindi. Onsager stays Isett. Arnold stays out. | knotted Beltrami \(=\) bound on \(X\) |
 | Feireisl | compressible NS / viscous compressible weak solutions | Compressible NS is a different equation. Weak solutions there are not a bound on incompressible \(X\). Density-dependent stays Danchin. Primitive stays Cao. | compressible \(=\) bound on \(X\) |
+| Kiselev | 2D Euler growth / double exponential | Double exponential growth in 2D Euler is growth, not a bound on 3D NS \(X\). Liouville doors stay Šverák. Euler singularity stays Elgindi. 2D steady stays Korobkov. | 2D Euler growth \(=\) bound on \(X\) |
 | Guillod | numerical non-uniqueness | Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity. | numerics \(=\) bound; numerics \(=\) blowup |
 | Seregin | local regularity / ESS | A criterion is not an a priori on \(X\). | criterion \(\Rightarrow\) bound |
 | Escauriaza | ESS \(L^3\) endpoint | \(L^\infty_t L^3_x\) is the endpoint. A criterion is not an a priori. Bounded in \(L^3\) is not a bound on enstrophy. | \(L^3\) endpoint \(=\) bound on \(X\) |
@@ -197,6 +198,7 @@ in your slot.
 | Ambrosio Regular Lagrangian Flow bounds \(X\) | **fail** |
 | Enciso knotted Beltrami fields bound \(X\) | **fail** |
 | Feireisl compressible NS bounds \(X\) | **fail** |
+| Kiselev 2D Euler growth bounds \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

@@ -247,6 +247,9 @@ LEADS = [
     lead("Feireisl", "compressible NS / viscous compressible weak solutions", "B", "living",
          "Compressible NS is a different equation. Weak solutions there are not a bound on incompressible X. Density-dependent stays Danchin. Primitive stays Cao.",
          "compressible = bound on X"),
+    lead("Kiselev", "2D Euler growth / double exponential", "B", "living",
+         "Double exponential growth in 2D Euler is growth, not a bound on 3D NS X. Liouville doors stay Sverak. Euler singularity stays Elgindi. 2D steady stays Korobkov.",
+         "2D Euler growth = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -329,7 +332,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti", "Korobkov", "Hishida", "Mucha", "Paicu", "Gibbon", "Ambrosio", "Enciso", "Feireisl",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti", "Korobkov", "Hishida", "Mucha", "Paicu", "Gibbon", "Ambrosio", "Enciso", "Feireisl", "Kiselev",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -804,6 +807,13 @@ CLAIMS = [
         "Feireisl compressible NS bounds X",
         "fail",
         "A different equation is not incompressible enstrophy. Density-dependent stays Danchin. Primitive stays Cao.",
+    ),
+    rec(
+        "R68",
+        "kiselev_2d_euler_bounds_X",
+        "Kiselev 2D Euler growth bounds X",
+        "fail",
+        "2D Euler growth is not 3D NS enstrophy. Liouville doors stay Sverak. Euler singularity stays Elgindi. 2D steady stays Korobkov.",
     ),
 ]
 

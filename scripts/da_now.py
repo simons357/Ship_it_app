@@ -176,6 +176,13 @@ WATCH = [
         "do_not": "seat as a second compressible chair next to Feireisl",
     },
     {
+        "name": "Zlatos",
+        "slot": "B",
+        "kingdom": "2D Euler growth / patch",
+        "involved": "2D Euler and patch growth; compared with Kiselev",
+        "do_not": "seat as a second 2D-Euler-growth chair next to Kiselev",
+    },
+    {
         "name": "Kenig",
         "slot": "B",
         "kingdom": "unique continuation",

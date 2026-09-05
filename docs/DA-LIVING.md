@@ -55,6 +55,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Regular Lagrangian Flow / DiPerna–Lions transport | Ambrosio | uniqueness of the ODE flow for BV fields | a well-defined flow bounds \(X\) |
 | Knotted Beltrami fields / steady Euler topology | Enciso | existence of knotted Beltrami fields for steady Euler | those fields bound evolutionary \(X\) |
 | Compressible NS / viscous compressible weak solutions | Feireisl | existence of weak solutions for viscous compressible NS | that equation bounds incompressible \(X\) |
+| 2D Euler growth / double exponential | Kiselev | double exponential growth of the vorticity gradient in 2D Euler | that growth bounds 3D NS \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -330,6 +331,12 @@ Weak solutions there are not a bound on incompressible
 \(X\). Raphaël, Chongsheng — density-dependent stays
 Danchin. Primitive stays Cao. Novotný stays off this
 chair. Dissipative solutions stay off this chair.
+
+**Kiselev.** Double exponential growth in 2D Euler is
+growth, not a bound on 3D NS \(X\). Vladimir, Tarek —
+Liouville doors stay Šverák. Euler singularity stays
+Elgindi. 2D steady stays Korobkov. Zlatoš stays off this
+chair. SQG stays off this chair.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -615,6 +622,7 @@ scores the process, not a theorem you did not prove.
 | Ambrosio Regular Lagrangian Flow closes \(X\) | **fail** |
 | Enciso knotted Beltrami fields close \(X\) | **fail** |
 | Feireisl compressible NS closes \(X\) | **fail** |
+| Kiselev 2D Euler growth closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

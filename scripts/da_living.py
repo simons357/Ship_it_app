@@ -262,6 +262,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Kiselev",
+        ["Sverak", "Elgindi"],
+        "Double exponential growth in 2D Euler is growth, not a bound on 3D NS X. Liouville doors stay Sverak. Euler singularity stays Elgindi. 2D steady stays Korobkov.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -1024,6 +1030,13 @@ CLAIMS = [
         "fail",
         "J. Math. Fluid Mech. 2001: weak solutions of viscous compressible NS. A different equation is not a bound on incompressible X. Density-dependent stays Danchin. Primitive stays Cao.",
     ),
+    rec(
+        "L76",
+        "kiselev_2d_euler_closes_X",
+        "Kiselev 2D Euler growth closes X",
+        "fail",
+        "Ann. of Math. 2014: double exponential growth of the vorticity gradient in 2D Euler. Growth in 2D is not a bound on 3D NS X. Liouville doors stay Sverak. Euler singularity stays Elgindi. 2D steady stays Korobkov.",
+    ),
 ]
 
 
@@ -1059,6 +1072,7 @@ KINGDOMS = [
     {"name": "Regular Lagrangian Flow / DiPerna-Lions transport", "who": "Ambrosio", "slot": "B"},
     {"name": "Knotted Beltrami fields / steady Euler topology", "who": "Enciso", "slot": "B"},
     {"name": "Compressible NS / viscous compressible weak solutions", "who": "Feireisl", "slot": "B"},
+    {"name": "2D Euler growth / double exponential", "who": "Kiselev", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},
