@@ -379,6 +379,67 @@ BSD_LINES = [
 ]
 
 
+HODGE_LINES = [
+    {
+        "n": 1,
+        "status": "have",
+        "text": (
+            "Hodge decomposition. For compact Kähler X, "
+            "H^k(X,C) = ⊕_{p+q=k} H^{p,q}(X)."
+        ),
+    },
+    {
+        "n": 2,
+        "status": "have",
+        "text": (
+            "Hodge classes. Hdg^p(X) = H^{2p}(X,Q) ∩ H^{p,p}(X). "
+            "These are the rational (p,p) classes."
+        ),
+    },
+    {
+        "n": 3,
+        "status": "have",
+        "text": (
+            "Cycle class. An algebraic cycle of codimension p maps to a "
+            "Hodge class. Algebraic implies Hodge. The converse is the write."
+        ),
+    },
+    {
+        "n": 4,
+        "status": "have",
+        "text": (
+            "Lefschetz (1,1). Every Hodge class of type (1,1) is algebraic "
+            "(divisors). p=1 sits. Literature, not a theorem of this desk."
+        ),
+    },
+    {
+        "n": 5,
+        "status": "have",
+        "text": (
+            "Special cases. Known for some abelian varieties and some "
+            "complete intersections. Literature. The integer form is false "
+            "(Atiyah-Hirzebruch). The aimed statement is over Q."
+        ),
+    },
+    {
+        "n": 6,
+        "status": "write",
+        "text": (
+            "WRITE. For every smooth complex projective X and every p, "
+            "every rational Hodge class is algebraic."
+        ),
+    },
+    {
+        "n": 7,
+        "status": "follows",
+        "text": (
+            "If (6) sits, Hodge classes are algebraic cycles. "
+            "Still not BSD. Still not RH. Still not NS. Still not YM."
+        ),
+    },
+]
+
+
 PROBLEMS = {
     "NS": {
         "id": "NS",
@@ -618,6 +679,53 @@ PROBLEMS = {
             ),
         },
     },
+    "HODGE": {
+        "id": "HODGE",
+        "aliases": ("hodge", "hodge conjecture"),
+        "slot": "U",
+        "name": "Hodge conjecture",
+        "object": {
+            "name": "rational Hodge classes",
+            "slot": "U",
+            "english": "every rational (p,p) class is an algebraic cycle",
+            "window": [
+                "smooth complex projective X",
+                "Hdg^p(X) = H^{2p}(X,Q) ∩ H^{p,p}(X)",
+                "need: every Hodge class algebraic, all X, all p",
+                "p=1 sits (Lefschetz 1,1)",
+                "no Simons Hodge paper on this desk",
+                "BSD final.pdf is BSD, not this leftover",
+                "Hodge Laplacian → Betti is not this leftover",
+            ],
+        },
+        "theorem": (
+            "Let X be a smooth complex projective variety. For every "
+            "integer p >= 0, every class in H^{2p}(X,Q) ∩ H^{p,p}(X) "
+            "is a Q-linear combination of classes of algebraic cycles "
+            "of codimension p."
+        ),
+        "lines": HODGE_LINES,
+        "chain_doc": "docs/HODGE-PROOF-CHAIN.md",
+        "proceed": [
+            "every rational Hodge class algebraic, all smooth complex projective X, all p",
+            "a named obstruction that some Hodge class cannot be algebraic",
+            "not Lefschetz (1,1) reprinted as the full write",
+            "not the Hodge Laplacian to Betti",
+            "not BSD final.pdf / 20552682",
+        ],
+        "if_write_sits": (
+            "If (6) sits, Hodge classes are algebraic cycles. "
+            "Still not BSD. Still not RH."
+        ),
+        "do_not": (
+            "Do not glue Hodge onto BSD, Q, or NS. "
+            "Do not emit Lefschetz (1,1) as the full write. "
+            "Do not emit the Hodge Laplacian as the conjecture. "
+            "Do not emit BSD final.pdf as Hodge."
+        ),
+        "mine": [],
+        "needed": [],
+    },
 }
 
 # Back-compat names for existing NS tests.
@@ -631,7 +739,7 @@ CLAIMS = [
         "ask_for_the_chain",
         "You can tell DA to write a proof chain by naming the problem",
         "pass",
-        "NS / Track B / Track A / Q1 / RH / Riemann / Yang-Mills / BSD. The operator does not need the chops.",
+        "NS / Track B / Track A / Q1 / RH / Riemann / Yang-Mills / BSD / Hodge. The operator does not need the chops.",
     ),
     rec(
         "C2",
@@ -696,6 +804,13 @@ CLAIMS = [
         "fail",
         "The chain can be printed complete-as-written. Line (6) still does not sit.",
     ),
+    rec(
+        "C11",
+        "bsd_final_is_hodge",
+        "BSD final.pdf is the Hodge conjecture",
+        "fail",
+        "That file is the BSD zeta prototype. A Hodge class is not L(E,s).",
+    ),
 ]
 
 
@@ -710,13 +825,15 @@ def _flag_problem(problem: str) -> str | None:
         return "YM"
     if key in ("BSD", "BIRCH", "SWINNERTON", "SWINNERTON-DYER"):
         return "BSD"
+    if key in ("HODGE", "HODGE CONJECTURE"):
+        return "HODGE"
     if key in PROBLEMS:
         return key
     return None
 
 
 def parse_problems(ask: str = "", problem: str = "") -> list[str]:
-    """Problems named in the ask, in desk order NS / A / RH / YM / BSD."""
+    """Problems named in the ask, in desk order NS / A / RH / YM / BSD / HODGE."""
     text = f"{problem} {ask}".lower()
     found: list[str] = []
     flagged = _flag_problem(problem)
@@ -739,6 +856,9 @@ def parse_problems(ask: str = "", problem: str = "") -> list[str]:
     if re.search(r"yang.?mills|\bym\b", text):
         if "YM" not in found:
             found.append("YM")
+    if re.search(r"\bhodge\b", text):
+        if "HODGE" not in found:
+            found.append("HODGE")
     if re.search(
         r"\bbsd\b|birch|swinnerton|spectral.?framework|"
         r"bsd_spectral_framework|bsd%20final|bsd.?final",
@@ -775,6 +895,7 @@ def is_proof_ask(ask: str) -> bool:
             r"\bbsd\b|birch|swinnerton|"
             r"spectral.?framework|bsd_spectral_framework|"
             r"bsd%20final|bsd.?final|"
+            r"\bhodge\b|"
             r"\bfinish bad\b",
             text,
         )

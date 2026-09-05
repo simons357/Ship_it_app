@@ -19,6 +19,7 @@ an open WRITE by printing it is not the job.
 | Track A write | yes | this PDE yes; uniform \(H^1\) no |
 | write RH from the GCD paper | yes | no — (6) open; paper is Q |
 | Please write BSD / spectral framework | yes | no — (6) open; paper is Q prototype |
+| Hodge conjecture? + BSD final.pdf | yes (both) | no — Hodge (6) open; file is BSD |
 | is Navi done? | yes (split) | classical no |
 | GCD paper / electoral floor | yes | sitting floors yes; retracted floor no |
 | Q6. Spectral floor | yes | \(H_N\ge-1\) yes; sharp \(-1/4\) no |

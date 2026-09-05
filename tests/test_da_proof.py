@@ -41,6 +41,7 @@ class DaProofTests(unittest.TestCase):
         self.assertEqual(by["C8"]["verdict"], "open")
         self.assertEqual(by["C9"]["verdict"], "fail")
         self.assertEqual(by["C10"]["verdict"], "fail")
+        self.assertEqual(by["C11"]["verdict"], "fail")
         self.assertTrue(payload["meta"]["nothing_wrong_with_asking"])
         self.assertTrue(payload["meta"]["q_is_not_rh"])
         self.assertTrue(payload["meta"]["a_is_not_b"])
@@ -109,7 +110,7 @@ class DaProofTests(unittest.TestCase):
         both = run(out=Path(tempfile.mkdtemp()) / "da_proof_both.json", problem="", ask=both_ask)
         self.assertEqual(both["picked"], ["NS", "A"])
         self.assertEqual(len(both["chains"]), 2)
-        self.assertEqual(set(PROBLEMS), {"NS", "A", "RH", "YM", "BSD"})
+        self.assertEqual(set(PROBLEMS), {"NS", "A", "RH", "YM", "BSD", "HODGE"})
         self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))
         self.assertTrue((ROOT / "docs" / "DA-PROOF.md").is_file())
         self.assertTrue((ROOT / "docs" / "NS-PROOF-CHAIN.md").is_file())
@@ -117,6 +118,7 @@ class DaProofTests(unittest.TestCase):
         self.assertTrue((ROOT / "docs" / "RH-PROOF-CHAIN.md").is_file())
         self.assertTrue((ROOT / "docs" / "YM-PROOF-CHAIN.md").is_file())
         self.assertTrue((ROOT / "docs" / "BSD-PROOF-CHAIN.md").is_file())
+        self.assertTrue((ROOT / "docs" / "HODGE-PROOF-CHAIN.md").is_file())
         self.assertTrue(is_proof_ask("Please write BSD"))
         self.assertEqual(parse_problem(ask="Please write BSD"), "BSD")
         self.assertEqual(parse_problem(problem="BSD"), "BSD")
@@ -180,6 +182,25 @@ class DaProofTests(unittest.TestCase):
             any("BSD final.pdf" in row for row in final["chains"][0]["best_paper"]["false"])
         )
         self.assertIn("not Hodge", final["chains"][0]["best_paper"]["not"])
+        hodge_ask = (
+            "Hodge conjecture? file:///var/mobile/Library/SMS/Attachments/"
+            "30/00/8D36CC33-3B6B-4C40-9C63-2F60AA8DCCB6/BSD%20final.pdf"
+        )
+        self.assertTrue(is_proof_ask(hodge_ask))
+        self.assertTrue(is_proof_ask("Hodge conjecture?"))
+        self.assertFalse(is_attempt_ask(hodge_ask))
+        self.assertEqual(parse_problems(ask=hodge_ask), ["HODGE", "BSD"])
+        self.assertEqual(parse_problem(problem="HODGE"), "HODGE")
+        both = run(
+            out=Path(tempfile.mkdtemp()) / "da_proof_hodge.json",
+            problem="",
+            ask=hodge_ask,
+        )
+        self.assertEqual(both["picked"], ["HODGE", "BSD"])
+        self.assertEqual(both["chains"][0]["problem"], "HODGE")
+        self.assertEqual(both["chains"][0]["lines"][5]["status"], "write")
+        self.assertIsNone(both["chains"][0].get("best_paper"))
+        self.assertIn("(p,p)", both["theorem"]["aimed"])
 
 
 if __name__ == "__main__":

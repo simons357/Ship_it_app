@@ -94,6 +94,8 @@ class DaQTests(unittest.TestCase):
         self.assertTrue(is_proof_ask("spectral framework"))
         self.assertFalse(is_q_ask("BSD final.pdf"))
         self.assertTrue(is_proof_ask("BSD%20final.pdf"))
+        self.assertFalse(is_q_ask("Hodge conjecture?"))
+        self.assertTrue(is_proof_ask("Hodge conjecture?"))
         self.assertFalse(is_q_ask("is that right for Navi Stokes"))
         self.assertFalse(is_q_ask("write RH from the Goldbach paper"))
         self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))

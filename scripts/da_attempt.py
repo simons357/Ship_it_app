@@ -780,7 +780,7 @@ def is_attempt_ask(ask: str) -> bool:
         r"\bwrite rh\b|\bwrite (the )?(rh |riemann )?proof\b|"
         r"\bmy best paper\b.*\bwrite\b|\bwrite\b.*\brh\b|"
         r"spectral.?framework|bsd_spectral_framework|"
-        r"bsd%20final|bsd.?final|"
+        r"bsd%20final|bsd.?final|\bhodge\b|"
         r"\bwrite bsd\b|\bplease write bsd\b|\bfinish bad\b",
         text,
     ):

@@ -34,6 +34,10 @@ class DaMachineTests(unittest.TestCase):
         final = classify_claim("BSD final.pdf")
         self.assertEqual(final["domain"], "U")
         self.assertEqual(final["verdict"], "open")
+        hodge = classify_claim("Hodge conjecture?")
+        self.assertEqual(hodge["domain"], "U")
+        self.assertEqual(hodge["verdict"], "open")
+        self.assertIn("Hodge", hodge["reason"])
 
     def test_unassigned_stays_open(self):
         r = classify_claim("hello there")

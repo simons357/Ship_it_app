@@ -93,6 +93,7 @@ class DaAttemptTests(unittest.TestCase):
         self.assertFalse(is_attempt_ask("spectral framework"))
         self.assertFalse(is_attempt_ask("Please finish bad for me please"))
         self.assertFalse(is_attempt_ask("BSD final.pdf"))
+        self.assertFalse(is_attempt_ask("Hodge conjecture?"))
         self.assertTrue(is_repair_ask("what's wrong with the augmented one"))
         self.assertFalse(is_attempt_ask("what's wrong with the augmented one"))
         self.assertEqual(parse_job(ask="analyze my augmented"), "A")

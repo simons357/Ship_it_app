@@ -22,6 +22,8 @@ python3 scripts/da_machine.py proof --problem BSD
 python3 scripts/da_machine.py next --ask "Please write BSD"
 python3 scripts/da_machine.py next --ask "spectral framework"
 python3 scripts/da_machine.py next --ask "BSD final"
+python3 scripts/da_machine.py proof --problem HODGE
+python3 scripts/da_machine.py next --ask "Hodge conjecture?"
 ```
 
 Nothing is wrong with asking. That is the product.
@@ -33,11 +35,12 @@ Nothing is wrong with asking. That is the product.
 | Riemann hypothesis | `--problem RH` | [`RH-PROOF-CHAIN.md`](RH-PROOF-CHAIN.md) |
 | Yang–Mills mass gap | `--problem YM` or `Yang mills and bad` | [`YM-PROOF-CHAIN.md`](YM-PROOF-CHAIN.md) |
 | Birch–Swinnerton-Dyer | `--problem BSD` or `Please write BSD` / `spectral framework` / `BSD final` | [`BSD-PROOF-CHAIN.md`](BSD-PROOF-CHAIN.md) |
+| Hodge conjecture | `--problem HODGE` or `Hodge conjecture?` | [`HODGE-PROOF-CHAIN.md`](HODGE-PROOF-CHAIN.md) |
 
 Track A is the \(Q_1\) PDE. Theorem A already sits for
 that equation. Track B is classical NS. Do not glue.
-Track Q is inverse-GCD. It is not RH. It is not BSD. Do not glue.
-\(L(E,s)\) is not zeta.
+Track Q is inverse-GCD. It is not RH. It is not BSD. It is not Hodge. Do not glue.
+\(L(E,s)\) is not zeta. `BSD final.pdf` is not the Hodge conjecture.
 
 The WRITE line is the attempt. Emitting the chain is
 not QED. If WRITE sits, the THEN lines are the close.
@@ -65,5 +68,6 @@ Best A (Q1 + renormalization) and furthest RH, dream team looking, legal write: 
 | Track Q / Theorem P is the Riemann hypothesis | **fail** |
 | Theorem A is classical Navier–Stokes | **fail** |
 | Please finish bad closes leftover (6) | **fail** |
+| `BSD final.pdf` is the Hodge conjecture | **fail** |
 | The WRITE line may sit later | **open** |
 | More named problems may get a ground-floor chain | **open** |
