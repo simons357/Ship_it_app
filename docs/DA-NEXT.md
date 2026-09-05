@@ -64,7 +64,7 @@ freestyle. Not a vote. Not a séance.
 | Look | `look` | object window anytime | a bound |
 | From | `from` | your steps to the break; proceed | a fake last line |
 | Study | `study` | can DA do the asks | emit as a solver pass |
-| Q | `q` | inverse-GCD paper, floors, Q6 / Q7, Goldbach vs Theorem P | glue to RH or B; mint Q7; unshelve GNC |
+| Q | `q` | inverse-GCD paper, floors, Q6 / Q7, Goldbach-shaped \(R\ge-2/9\) | glue to RH or B; mint Q7; unshelve GNC; claim the integer conjecture |
 | Done | `done` | is NS done? A this PDE yes; B no | emit as QED |
 | Proof | `proof` | write the NS / A / RH proof chain | QED without the WRITE line; A is not B |
 | Repair | `repair` | take A, SND, or H; name the fault and the write | export A onto B |

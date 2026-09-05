@@ -62,7 +62,7 @@ into `nodes.json` is not.
 |---|---|---|
 | **A** | \(Q_1\)-augmented Navier–Stokes, \(\varepsilon>0\), \(\beta\ge 1/2\) | Lemmas 1–5 → Theorem A for **this PDE only**. Ladyzhenskaya class. Does **not** imply B. |
 | **B** | Classical NS, keep \(1/r^4\), no \(\Phi\) cancel | **Open.** Identities may pass. Regularity has no pass. |
-| **Q** | Inverse-GCD only | Full \(\lambda_{\min}(Q_N)>-1/2\) is **false**. Live: Bridge*, Theorem P, \(\lambda_{\min}(H_N)\ge-1\). |
+| **Q** | Inverse-GCD only | Full \(\lambda_{\min}(Q_N)>-1/2\) is **false**. Live: Bridge*, Theorem P, \(\lambda_{\min}(H_N)\ge-1\), Goldbach-shaped \(R\ge-2/9\). |
 | **U** | Realization score / SM / process | Exercise and machine. **Not a unifier.** |
 
 Glue is refused: A \(\not\Rightarrow\) B, Q \(\not\Rightarrow\) fluids, U \(\not\Rightarrow\) the forces.

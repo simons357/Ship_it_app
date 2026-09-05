@@ -7,7 +7,7 @@ The mixup was the **matrix and the constant**, not the idea of a floor.
 - \(H_N\) **does** have a full-spectrum floor: \(\lambda_{\min}(H_N)\ge-1\), by a two-line pairing. That is the only unrestricted eigenvalue bound in the trio that is actually a theorem.
 - On prime-supported vectors, \(\widetilde Q\) itself sits above \(-1/4\). That is the useful restricted floor (Theorem P).
 
-No Goldbach, no RH, no Navier–Stokes map. Do not reattach this to SND or GNC. SFE, Harmonic Blueprint, and Millennium-packaged notes are shelved (`docs/SHELF.md`).
+Goldbach-shaped multi-rep on \(\widetilde Q\) is a corollary of Theorem P, not Goldbach’s conjecture. No RH, no Navier–Stokes map. Do not reattach this to SND or GNC. SFE, Harmonic Blueprint, and Millennium-packaged notes are shelved (`docs/SHELF.md`).
 
 Sources I could actually read: August inverse-GCD (22045478), August errata (22045484), August Ring+SND (22045474), June T2 PDF, May T³ TeX (archive only). Zenodo HTML/API is 403 from this machine. There is no phone corpus, no extra GitHub math repo, and no local store of older drafts beyond `/tmp/simons-papers`.
 
@@ -25,7 +25,8 @@ Sources I could actually read: August inverse-GCD (22045478), August errata (220
 | Bridge\(^*\): \(R(e_p-e_q)>-1/2\) on \(\widetilde Q\) | **Proved** (August note, Thm 3.1) |
 | \(v\ge 0\Rightarrow v^\top\widetilde Q v\ge 0\) | **Proved** |
 | Prime-supported \(\lambda_{\min}(\widetilde Q\big|_P)\ge-1/4\) | **Proved below** |
-| Multi-rep Bridge\(^*\) \(\ge-c_0\) with \(c_0<1/2\) | Open. Through \(N=200\) the worst vector is just the pair \((3,5)\) on \(k=8\), \(R\approx-0.183\) |
+| Goldbach-shaped nonzero \(v_k\): \(R\ge-2/9\) | **Proved** (odd-prime corollary of Theorem P). Not the integer conjecture |
+| Multi-rep never undercuts \((3,5)\approx-0.183\) | Open. Through \(N=200\) the worst vector is that pair on \(k=8\) |
 | Squarefree principal of \(\widetilde Q\) | Still above \(-1/2\) at \(N=120\) (\(\approx-0.433\)); drifting down |
 | \(\lambda_{\min}(\widetilde Q_N)/\log N\) has a finite limit | Possible; values sit near \(-0.16\). Not a floor at \(-1/2\) |
 
@@ -101,9 +102,15 @@ This is still a restricted floor. Composites are excluded. The full-matrix count
 
 Every entry of \(\widetilde Q\) is positive, so \(v\ge 0\) implies \(v^\top\widetilde Q v\ge 0\). Floor \(0\), on a cone, not on a subspace.
 
-### 3.4 Multi-representation Bridge\(^*\) (open)
+### 3.4 Multi-representation Bridge\(^*\) (floor sits; sharpness open)
 
-For even \(k\) and \(v_k=\sum_{p+q=k}(e_p-e_q)\), the scan through \(N=80\) stays at \(\approx-0.183>-1/2\). That matches the August remark (numeric through \(N=200\) is not a proof). Still the right open problem if the goal is Goldbach-shaped vectors. It is not needed for Theorem P.
+For even \(k\) and \(v_k=\sum_{p+q=k}(e_p-e_q)\), a nonzero \(v_k\) never uses the index \(2\): the only even-prime pair is \((2,2)\) at \(k=4\), and that cancels. Theorem P on odd primes then gives
+
+\[
+R(v_k)\ge-\frac29>-\frac12.
+\]
+
+That is the matrix leftover. It is not Goldbach’s conjecture: if there is no pair, \(v_k=0\) and there is no Rayleigh. The sharper reading — never undercuts \((3,5)\approx-0.183\), numeric through \(N=200\) — stays open. Chain: `docs/GOLDBACH-CHAIN.md`.
 
 ---
 
@@ -154,7 +161,8 @@ The live arithmetic claim is now:
 1. **Full index, weak:** \(\lambda_{\min}(H_N)\ge-1\) (proved).
 2. **Prime block, useful:** Theorem P, \(\lambda_{\min}(\widetilde Q\big|_P)\ge-1/4\) (proved). Bridge\(^*\) is the two-sparse case of the same matrix.
 3. **Full index, sharp (open):** \(\lambda_{\min}(H_N)\ge-1/4\). Numeric through \(N=200\). This is the right remaining hypothesis if you want a floor on every coordinate, not only primes.
-4. **Goldbach-shaped (open, easy numerically):** multi-rep vectors through \(N=200\) never undercut the single pair \((3,5)\).
+4. **Goldbach-shaped floor (proved):** nonzero multi-rep \(v_k\) has \(R\ge-2/9\). Corollary of Theorem P on odd primes. Not the integer conjecture.
+5. **Goldbach-shaped sharpness (open):** never undercuts \((3,5)\). Numeric through \(N=200\).
 
 The May T³ file still says “Geometric Bridge” and “\(Q_6\) with \(\gamma>3/2\) enforces SND.” That is the withdrawn glue. Non-concentration in this stack is the Ring Lemma / 3-CONC / SPREAD package. It is a fluids hypothesis about Littlewood–Paley mass. It does not imply (1)–(3), and (1)–(3) do not imply it.
 

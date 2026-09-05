@@ -117,18 +117,52 @@ def bridge_star_values(n: int) -> list[float]:
     return out
 
 
-def multi_rep_min(qt: np.ndarray, n: int) -> tuple[float, int | None]:
+ODD_PRIME_D_MIN = 1.0 / 9.0 - 1.0 / 3.0  # -2/9; min of 1/p^2-1/p on p>=3
+
+
+def goldbach_vector(n: int, k: int) -> np.ndarray:
+    """v_k = sum_{p+q=k}(e_p-e_q) on 1..n. Zero if k is odd or has no pair."""
+    v = np.zeros(n)
+    if k < 4 or k % 2 or k > n:
+        return v
     prime_set = set(primes_upto(n))
+    for p in prime_set:
+        if p <= k / 2 and (k - p) in prime_set:
+            v[p - 1] += 1.0
+            v[k - p - 1] -= 1.0
+    return v
+
+
+def goldbach_avoids_two(n: int) -> bool:
+    """Nonzero Goldbach-shaped v_k never uses index 2."""
+    if n < 2:
+        return True
+    for k in range(4, n + 1, 2):
+        v = goldbach_vector(n, k)
+        if float(np.dot(v, v)) <= 0.0:
+            continue
+        if abs(v[1]) > 1e-15:
+            return False
+    return True
+
+
+def goldbach_odd_floor_holds(n: int) -> bool:
+    """R(v_k) >= -2/9 for every nonzero Goldbach-shaped vector up to n."""
+    qt = qtilde(n)
+    for k in range(4, n + 1, 2):
+        v = goldbach_vector(n, k)
+        if float(np.dot(v, v)) <= 0.0:
+            continue
+        if rayleigh(qt, v) < ODD_PRIME_D_MIN - 1e-12:
+            return False
+    return True
+
+
+def multi_rep_min(qt: np.ndarray, n: int) -> tuple[float, int | None]:
     best = float("inf")
     best_k = None
     for k in range(4, n + 1, 2):
-        reps = [p for p in prime_set if p <= k / 2 and (k - p) in prime_set]
-        if len(reps) < 1:
-            continue
-        v = np.zeros(n)
-        for p in reps:
-            v[p - 1] += 1.0
-            v[k - p - 1] -= 1.0
+        v = goldbach_vector(n, k)
         if np.dot(v, v) <= 0.0:
             continue
         r = rayleigh(qt, v)
@@ -248,6 +282,9 @@ def certificates() -> dict:
         "prime_subspace_ge_minus_quarter": prime_subspace_min(80) >= -0.25 - 1e-12,
         "h4_min": lambda_min(h_matrix(qtilde(4)))[0],
         "h_floor_minus_one": lambda_min(h_matrix(qtilde(4)))[0] >= -1.0,
+        "goldbach_odd_d_min": ODD_PRIME_D_MIN,
+        "goldbach_vk_avoids_two_80": goldbach_avoids_two(80),
+        "goldbach_odd_floor_80": goldbach_odd_floor_holds(80),
     }
 
 

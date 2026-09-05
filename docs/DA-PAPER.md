@@ -61,7 +61,7 @@ plus any open item that later got a stronger lemma. If the AI cannot be scored, 
 |---|---|---|
 | **A** | \(Q_1\)-augmented Navier–Stokes, \(\varepsilon>0\), \(\beta\ge 1/2\) | Regularity for **this** damped PDE (Ladyzhenskaya class). Not classical NS. |
 | **B** | Classical NS, keep \(1/r^4\), no \(\Phi\) cancel | A lemma identity may pass. The **domain** does not. Regularity has no pass until a closed estimate for \(X=\|\omega\|_2^2\) exists. |
-| **Q** | Inverse-GCD matrices | Restricted hygiene: Bridge*, Theorem P, \(\lambda_{\min}(H_N)\ge-1\). Full \(\lambda_{\min}(Q_N)>-1/2\) is **false**. |
+| **Q** | Inverse-GCD matrices | Restricted hygiene: Bridge*, Theorem P, \(\lambda_{\min}(H_N)\ge-1\), Goldbach-shaped \(R\ge-2/9\). Full \(\lambda_{\min}(Q_N)>-1/2\) is **false**. |
 | **U** | Process, Standard Model poster, realization score | An exercise and a machine. Not a unifier of the forces. |
 
 Glue is refused:

@@ -28,7 +28,7 @@ Files that remain for history: `docs/HB-RINGDOWN-EXPERIMENT-01.md`, `docs/HB-RIN
 |---|---|
 | **A** | \(Q_1\)-augmented NS. `docs/AUGMENTED-NS-PROOF-CHAIN.md` |
 | **B** | Classical NS, keep \(1/r^4\). `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md` |
-| **Q** | Inverse-GCD hygiene: Bridge\(^*\), Theorem P, \(\lambda_{\min}(H_N)\ge-1\). `docs/SPECTRAL-FLOOR-EXPLORATION.md` |
+| **Q** | Inverse-GCD hygiene: Bridge\(^*\), Theorem P, \(\lambda_{\min}(H_N)\ge-1\), Goldbach-shaped \(R\ge-2/9\). `docs/SPECTRAL-FLOOR-EXPLORATION.md` |
 
 Track A does not imply Track B. Track Q does not imply either fluids track.
 
@@ -50,4 +50,4 @@ Domain Architect as a **process machine** (slots, generator, fail-able checker) 
 
 1. Naming SFE, HB, UHF, or DHFA is allowed. Halt only the *close*: do not load them into \(\Pi_j\), \(\omega\cdot S\omega\), \(1/r^4\), or \(H_N\); do not call them \(F\); do not retune `nodes.json`. DA-the-process is already the good extraction from HB chapter 1. A destination (“spectrum, not a bag”) may be typed on U as **open**.
 2. If it is classical vorticity / LP / Bony / Ring / energy: it may already live on Track B. Use the frozen names there.
-3. If it is inverse-GCD: only Bridge\(^*\), Theorem P, and \(H_N\ge-1\) are live. Full \(\lambda_{\min}(Q)>-1/2\) stays false.
+3. If it is inverse-GCD: only Bridge\(^*\), Theorem P, \(H_N\ge-1\), and the Goldbach-shaped corollary \(R\ge-2/9\) are live. Full \(\lambda_{\min}(Q)>-1/2\) stays false. That corollary is not Goldbach’s conjecture.

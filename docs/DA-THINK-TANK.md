@@ -128,7 +128,7 @@ Four slots, not one universe:
 |---|---|---|
 | **A** | \(Q_1\)-augmented NS, \(\varepsilon>0\), \(\beta\ge 1/2\) | Theorem A for this PDE only. Ladyzhenskaya class. Does not imply B. |
 | **B** | Classical NS, keep \(1/r^4\), no \(\Phi\) cancel | **Open.** Lemma identities may pass. Domain B never passes regularity. |
-| **Q** | Inverse-GCD only | Full \(\lambda_{\min}(Q_N)>-1/2\) is **false**. Live: Bridge*, Theorem P, \(\lambda_{\min}(H_N)\ge-1\). |
+| **Q** | Inverse-GCD only | Full \(\lambda_{\min}(Q_N)>-1/2\) is **false**. Live: Bridge*, Theorem P, \(\lambda_{\min}(H_N)\ge-1\), Goldbach-shaped \(R\ge-2/9\). |
 | **U** | Realization score / SM / process | DA machine. **Not a unifier.** |
 
 Shelved and not unshelved: SFE, UHF, DHFA, Harmonic Blueprint as a unifier, HB Experiment 01 (closed null — do not retune `nodes.json`), GCD-attractor+SFE, triple lock, GNC, Quantum Lens, Route C “Gap 1 complete,” prize packaging.

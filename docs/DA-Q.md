@@ -7,9 +7,11 @@
 `python3 scripts/da_machine.py next --ask "where does Q7 fit"`  
 `python3 scripts/da_machine.py next --ask "Q6. Spectral floor"`  
 `python3 scripts/da_machine.py next --ask "gold box"`  
-`python3 scripts/da_machine.py next --ask "theorem p"`
+`python3 scripts/da_machine.py next --ask "theorem p"`  
+`python3 scripts/da_machine.py next --ask "Yes Goldbach. Please write"`
 
-Floor chain: [`Q6-FLOOR-CHAIN.md`](Q6-FLOOR-CHAIN.md).
+Floor chain: [`Q6-FLOOR-CHAIN.md`](Q6-FLOOR-CHAIN.md).  
+Goldbach chain: [`GOLDBACH-CHAIN.md`](GOLDBACH-CHAIN.md).
 
 The best GCD paper on this desk is August inverse-GCD
 (Zenodo 22045478), also called **Q6 hygiene**, plus the
@@ -27,6 +29,7 @@ Q is inverse-GCD. It is not RH. It is not Track B.
 | Theorem P: prime-supported \(\widetilde Q\big|_P\ge-1/4\) | **pass** |
 | \(\lambda_{\min}(H_N)\ge-1\) (pairing) | **pass** |
 | \(v\ge 0\Rightarrow v^\top\widetilde Q v\ge 0\) | **pass** |
+| Goldbach-shaped nonzero \(v_k\): \(R\ge-2/9\) | **pass** (corollary of Theorem P) |
 
 ## Withdrawn
 
@@ -37,6 +40,7 @@ Q is inverse-GCD. It is not RH. It is not Track B.
 | Theorem P / \(H_N\) is RH | **fail** |
 | \(Q_6\) with \(\gamma>3/2\) enforces SND | **fail** (May T³ glue) |
 | GNC is a live Goldbach detector | **fail** (vanishes on an actual pair) |
+| This write is Goldbach’s conjecture | **fail** |
 | Route C Gap 1 complete | **fail** (stale) |
 
 ## Remaining Q writes
@@ -45,7 +49,7 @@ Q is inverse-GCD. It is not RH. It is not Track B.
 |---|---|
 | \(\lambda_{\min}(H_N)\ge-1/4\) | **open** |
 | \(\lambda_{\min}(\widetilde Q_N)/\log N\) has a finite limit | **open** |
-| Goldbach multi-rep Bridge\(^*\) | **open** (numeric, not a proof) |
+| Multi-rep never undercuts \((3,5)\) | **open** (numeric, not a proof) |
 
 ---
 
@@ -64,7 +68,8 @@ The remaining floor write is \(\lambda_{\min}(H_N)\ge-1/4\).
 
 ## Gold box / the T-name
 
-**Gold box = Goldbach.** The leftover you got far on.
+**Gold box = Goldbach.** The matrix leftover can be
+written. The integer conjecture cannot.
 
 For even \(k\),
 
@@ -72,14 +77,26 @@ For even \(k\),
 v_k=\sum_{p+q=k}(e_p-e_q).
 \]
 
-The scan through \(N=200\) stays near \(-0.183>-1/2\).
-Worst pair is \((3,5)\). That is a reading. It is not
-a theorem. It is not needed for Theorem P.
+A nonzero \(v_k\) never uses \(2\): the only even-prime
+pair is \((2,2)\) at \(k=4\), and that cancels. Theorem P
+on odd primes then gives \(R(v_k)\ge-2/9>-1/2\).
+Chain: [`GOLDBACH-CHAIN.md`](GOLDBACH-CHAIN.md).
+
+That is not every even integer as \(p+q\). If there is
+no pair, \(v_k=0\) and there is no Rayleigh.
+
+**Still open on this object:** never undercuts
+\((3,5)\approx-0.183\). Numeric through \(N=200\).
+\(-2/9\) is not the pair.
+
+**The other far leftover** is \(\lambda_{\min}(H_N)\ge-1/4\).
+Same numeric shape. Different matrix. The pairing that
+proves \(-1\) does not prove \(-1/4\).
 
 **The T-name that sits is Theorem P.**
 \(\lambda_{\min}(\widetilde Q\big|_P)\ge-1/4\).
 Rank-one split \(A=uu^\top+D\). Bridge\(^*\) is the
-two-sparse case of the same matrix. This one closed.
+two-sparse case of the same matrix.
 
 **GNC stays withdrawn.** The Goldbach detector /
 prime-indicator difference vanishes on an actual
@@ -135,5 +152,7 @@ It is not RH and not Navi Stokes.
 | The GCD paper closes RH or classical NS | **fail** |
 | Sharp \(H_N\ge-1/4\) or the spectral-limit may sit later | **open** |
 | The T-name we got to a close is Theorem P | **pass** |
-| Goldbach multi-rep is a theorem | **fail** |
+| Goldbach-shaped nonzero \(v_k\) has \(R\ge-2/9\) | **pass** |
 | GNC is the live Goldbach object | **fail** |
+| Multi-rep never undercuts \((3,5)\) | **open** |
+| This write is Goldbach’s conjecture | **fail** |

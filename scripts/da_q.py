@@ -9,7 +9,9 @@ false. Q is not RH, not SND, not Track B.
 Q7 is not seated.
 
 Gold box = Goldbach. The T-name that sits is Theorem P.
-Goldbach multi-rep is far numerically, not a theorem.
+Goldbach-shaped nonzero v_k has R >= -2/9 (odd-prime corollary).
+That is not Goldbach's conjecture. (3,5) sharpness stays open.
+The other far leftover is H_N >= -1/4.
 GNC stays withdrawn.
 """
 
@@ -143,6 +145,11 @@ PAPER = {
             "what": "v >= 0 => v^T Q-tilde v >= 0",
             "verdict": "pass",
         },
+        {
+            "id": "Goldbach-shaped",
+            "what": "nonzero v_k has R >= -2/9 on Q-tilde",
+            "verdict": "pass",
+        },
     ],
     "false": [
         {
@@ -175,6 +182,12 @@ PAPER = {
             "verdict": "fail",
             "why": "vanishes on an actual pair. Shelved. Not Theorem P.",
         },
+        {
+            "id": "Goldbach_conjecture",
+            "what": "this matrix write is Goldbach's conjecture",
+            "verdict": "fail",
+            "why": "v_k=0 if there is no pair. No Rayleigh. Different object.",
+        },
     ],
     "open": [
         {
@@ -190,13 +203,12 @@ PAPER = {
             "why": "values sit near -0.16. Not a floor at -1/2. Old Route C shape.",
         },
         {
-            "id": "Goldbach",
-            "what": "multi-rep Bridge* stays above -1/2",
+            "id": "Goldbach_sharp",
+            "what": "multi-rep never undercuts (3,5)",
             "verdict": "open",
             "why": (
-                "v_k = sum_{p+q=k}(e_p-e_q). "
                 "Numeric through N=200 stays ~ -0.183. "
-                "Worst pair (3,5). Not a proof. Not needed for Theorem P."
+                "Odd-prime D gives -2/9, not the pair."
             ),
         },
     ],
@@ -211,20 +223,77 @@ PAIR = {
         "Theorem P. Prime-supported Q-tilde |_P >= -1/4. "
         "Rank-one split A = uu^T + D. This is the T-name that sits."
     ),
-    "far": (
-        "Goldbach. Multi-rep v_k = sum_{p+q=k}(e_p-e_q). "
-        "Numeric through N=200 stays ~ -0.183 > -1/2. "
-        "Worst pair (3,5). Far. Not a theorem."
+    "follows": (
+        "Goldbach-shaped. Nonzero v_k lives on odd primes "
+        "(2+(k-2) is even; only k=4 is (2,2), and that cancels). "
+        "Hence R >= -2/9 > -1/2. Corollary of Theorem P. "
+        "Not Goldbach's conjecture."
+    ),
+    "leftover": (
+        "Never undercuts (3,5) ~ -0.183. Numeric through N=200. "
+        "The other far leftover is H_N >= -1/4."
     ),
     "withdrawn": (
         "GNC. Goldbach detector / prime-indicator difference. "
         "v_k vanishes on an actual Goldbach pair. Shelved. Not RH."
     ),
     "not_these": (
-        "Not T2 (fluids). Not Titchmarsh. Not T3 / triple lock. "
-        "Not Tao. Those are other T-names."
+        "Not the integer conjecture. Not T2 (fluids). "
+        "Not Titchmarsh. Not T3 / triple lock. Not Tao."
     ),
 }
+
+
+GOLDBACH_LINES = [
+    {
+        "n": 1,
+        "status": "have",
+        "text": (
+            "Theorem P. Any prime-supported v has R >= -1/4 "
+            "because A = uu^T + D and min D = -1/4 at p=2."
+        ),
+    },
+    {
+        "n": 2,
+        "status": "have",
+        "text": (
+            "v_k = sum_{p+q=k}(e_p-e_q) is prime-supported. "
+            "Already R >= -1/4 when v_k != 0."
+        ),
+    },
+    {
+        "n": 3,
+        "status": "have",
+        "text": (
+            "No 2. 2+(k-2)=k forces k-2 even. Only even prime "
+            "is 2, so k=4 and (2,2) cancels. Nonzero v_k has v_k(2)=0."
+        ),
+    },
+    {
+        "n": 4,
+        "status": "have",
+        "text": (
+            "Odd-prime D. min_{p>=3}(1/p^2-1/p) = 1/9-1/3 = -2/9. "
+            "Hence R(v_k) >= -2/9 > -1/2."
+        ),
+    },
+    {
+        "n": 5,
+        "status": "follows",
+        "text": (
+            "The matrix leftover 'multi-rep stays above -1/2' sits. "
+            "This is not every even integer as p+q."
+        ),
+    },
+    {
+        "n": 6,
+        "status": "open",
+        "text": (
+            "Never undercuts (3,5) ~ -0.183. Numeric through N=200. "
+            "Odd-prime D does not prove the pair."
+        ),
+    },
+]
 
 
 NAMES = [
@@ -250,19 +319,24 @@ NAMES = [
         "id": "Theorem_P",
         "name": "Theorem P",
         "is": "the T-name that sits. Prime-supported Q-tilde >= -1/4. Rank-one split.",
-        "is_not": "RH, SND, Goldbach, T2, or GNC.",
+        "is_not": "RH, SND, Goldbach's conjecture, T2, or GNC.",
     },
     {
         "id": "Goldbach",
         "name": "Goldbach (gold box)",
-        "is": "multi-rep Bridge* on Goldbach-shaped vectors. Far numerically through N=200.",
-        "is_not": "a theorem. Not needed for Theorem P. Not RH.",
+        "is": (
+            "Goldbach-shaped multi-rep. Nonzero v_k has R >= -2/9 "
+            "by Theorem P on odd primes."
+        ),
+        "is_not": (
+            "Goldbach's conjecture. Not (3,5) sharpness. Not RH."
+        ),
     },
     {
         "id": "GNC",
         "name": "GNC",
         "is": "withdrawn. Detector vanishes on an actual Goldbach pair.",
-        "is_not": "the live Goldbach leftover. That leftover is multi-rep, still open.",
+        "is_not": "the live Goldbach floor. That floor is the odd-prime corollary.",
     },
 ]
 
@@ -340,17 +414,31 @@ CLAIMS = [
     ),
     rec(
         "Q11",
-        "goldbach_is_a_theorem",
-        "Goldbach multi-rep is a theorem",
-        "fail",
-        "Numeric through N=200 is a reading. Worst pair (3,5). Not a write.",
+        "goldbach_shaped_floor",
+        "Goldbach-shaped nonzero v_k has R >= -2/9 on Q-tilde",
+        "pass",
+        "2 is absent. Odd-prime D min is -2/9. Corollary of Theorem P.",
     ),
     rec(
         "Q12",
         "gnc_is_live",
         "GNC is the live Goldbach object",
         "fail",
-        "Withdrawn. The live Goldbach leftover is multi-rep Bridge*, still open.",
+        "Withdrawn. The sitting Goldbach object is the odd-prime corollary.",
+    ),
+    rec(
+        "Q13",
+        "goldbach_sharp_35",
+        "Multi-rep never undercuts the pair (3,5)",
+        "open",
+        "Numeric through N=200. -2/9 is not -0.183.",
+    ),
+    rec(
+        "Q14",
+        "goldbach_conjecture",
+        "This write is Goldbach's conjecture",
+        "fail",
+        "A Rayleigh on Q-tilde is not every even integer as p+q.",
     ),
 ]
 
@@ -386,24 +474,30 @@ def run(out: Path | None = None) -> dict:
             "question": "look at the GCD paper; electoral floor; Q6; Q7",
             "writeup": "docs/DA-Q.md",
             "paper": "docs/SPECTRAL-FLOOR-EXPLORATION.md",
+            "goldbach": "docs/GOLDBACH-CHAIN.md",
             "q_is_not_rh": True,
             "q_is_not_b": True,
             "q7_not_seated": True,
             "full_floor_false": True,
+            "goldbach_shaped_sits": True,
+            "goldbach_conjecture_false": True,
         },
         "paper": PAPER,
         "lines": FLOOR_LINES,
+        "goldbach_lines": GOLDBACH_LINES,
         "names": NAMES,
         "claims": CLAIMS,
         "pair": PAIR,
         "answer": (
             "Best GCD paper is Q6 hygiene (22045478). "
-            "Sitting floors: Bridge*, Theorem P, H_N>=-1. "
+            "Sitting floors: Bridge*, Theorem P, H_N>=-1, "
+            "Goldbach-shaped R>=-2/9. "
             "Gold box = Goldbach. The T-name that sits is Theorem P. "
-            "Goldbach multi-rep is far, not a theorem. "
+            "The matrix leftover is a corollary: nonzero v_k has no 2, "
+            "so R>=-2/9. Not Goldbach's conjecture. "
+            "(3,5) sharpness open. "
+            "The other far leftover is H_N>=-1/4. "
             "GNC stays withdrawn. "
-            "Retracted floor cannot be found (false). "
-            "Sharp H_N>=-1/4 open. "
             "Q6 is that paper, not SND. "
             "Q7 is not seated."
         ),
@@ -416,9 +510,10 @@ def run(out: Path | None = None) -> dict:
             "claim_open": sum(1 for c in CLAIMS if c["verdict"] == "open"),
         },
         "next_da_move": (
-            "Keep Theorem P. Goldbach multi-rep stays a numeric leftover. "
+            "Keep Theorem P and the Goldbach-shaped corollary. "
             "Write H_N>=-1/4 if you want the next floor sentence. "
-            "Do not unshelve GNC. Do not mint Q7. Do not glue to RH or B."
+            "Do not claim the integer conjecture. Do not unshelve GNC. "
+            "Do not mint Q7. Do not glue to RH or B."
         ),
     }
     dest = Path(out) if out is not None else Path("results/da_q.json")
@@ -439,9 +534,20 @@ def print_q(out: Path | None = None) -> dict:
     print("GOLDBACH / THEOREM P")
     print(f"  Gold box = {PAIR['gold_box']}. The T-name that sits is {PAIR['t_name']}.")
     print(f"  [HAVE] {PAIR['sits']}")
-    print(f"  [OPEN] {PAIR['far']}")
+    print(f"  [HAVE] {PAIR['follows']}")
+    print(f"  [OPEN] {PAIR['leftover']}")
     print(f"  [FAIL] {PAIR['withdrawn']}")
     print(f"  {PAIR['not_these']}")
+    print()
+    print("GOLDBACH CHAIN")
+    for L in GOLDBACH_LINES:
+        tag = {
+            "have": "HAVE",
+            "write": "WRITE",
+            "follows": "THEN",
+            "open": "OPEN",
+        }[L["status"]]
+        print(f"  ({L['n']}) [{tag}] {L['text']}")
     print()
     print("PROOF CHAIN  (ground floor up)")
     for L in FLOOR_LINES:

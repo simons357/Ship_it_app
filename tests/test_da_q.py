@@ -13,7 +13,16 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from da_done import is_done_ask  # noqa: E402
 from da_hunt import is_look_ask  # noqa: E402
 from da_proof import is_proof_ask  # noqa: E402
-from da_q import CLAIMS, FLOOR_LINES, NAMES, PAIR, PAPER, is_q_ask, run  # noqa: E402
+from da_q import (  # noqa: E402
+    CLAIMS,
+    FLOOR_LINES,
+    GOLDBACH_LINES,
+    NAMES,
+    PAIR,
+    PAPER,
+    is_q_ask,
+    run,
+)
 
 
 class DaQTests(unittest.TestCase):
@@ -53,11 +62,23 @@ class DaQTests(unittest.TestCase):
         self.assertTrue(is_q_ask("theorem p"))
         self.assertEqual(PAIR["gold_box"], "Goldbach")
         self.assertEqual(PAIR["t_name"], "Theorem P")
+        self.assertIn("follows", PAIR)
         self.assertEqual(by["Q10"]["verdict"], "pass")
-        self.assertEqual(by["Q11"]["verdict"], "fail")
+        self.assertEqual(by["Q11"]["verdict"], "pass")
         self.assertEqual(by["Q12"]["verdict"], "fail")
-        self.assertTrue(any(r["id"] == "Goldbach" for r in PAPER["open"]))
+        self.assertEqual(by["Q13"]["verdict"], "open")
+        self.assertEqual(by["Q14"]["verdict"], "fail")
+        self.assertTrue(any(r["id"] == "Goldbach-shaped" for r in PAPER["sits"]))
+        self.assertTrue(any(r["id"] == "Goldbach_sharp" for r in PAPER["open"]))
         self.assertTrue(any(r["id"] == "GNC" for r in PAPER["false"]))
+        self.assertTrue(payload["meta"]["goldbach_shaped_sits"])
+        self.assertTrue(payload["meta"]["goldbach_conjecture_false"])
+        self.assertEqual(
+            [L["status"] for L in GOLDBACH_LINES],
+            ["have"] * 4 + ["follows", "open"],
+        )
+        self.assertTrue(is_q_ask("Yes Goldbach. Sorry. Please write"))
+        self.assertTrue((ROOT / "docs" / "GOLDBACH-CHAIN.md").is_file())
         self.assertEqual(
             [L["status"] for L in FLOOR_LINES],
             ["have"] * 5 + ["write", "follows", "open"],
