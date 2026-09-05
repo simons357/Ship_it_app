@@ -46,6 +46,7 @@ in your slot.
 | Jia | forward self-similar large data | Forward self-similar solutions exist for large \(-1\)-homogeneous data. Existence is not an a priori on \(X\). | profile existence \(=\) bound |
 | Guillod | numerical non-uniqueness | Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity. | numerics \(=\) bound; numerics \(=\) blowup |
 | Seregin | local regularity / ESS | A criterion is not an a priori on \(X\). | criterion \(\Rightarrow\) bound |
+| Escauriaza | ESS \(L^3\) endpoint | \(L^\infty_t L^3_x\) is the endpoint. A criterion is not an a priori. Bounded in \(L^3\) is not a bound on enstrophy. | \(L^3\) endpoint \(=\) bound on \(X\) |
 | Koch | critical small data | Small critical sits. Large data is the object. | Koch–Tataru \(\Rightarrow\) large data |
 | Tataru | critical small data | The critical space is the wall. That is why leftover knobs died. | wall \(=\) estimate |
 | Grujić | sparseness / log-bmo if | The gap can shrink. The 2026 log-bmo if is still an if. Finite order does not make it vanish. | log-bmo if \(=\) all-data A1 |
@@ -114,6 +115,7 @@ in your slot.
 | Chen–Strain–Tsai–Yau axisymmetric Type I closes \(X\) | **fail** |
 | Kozono–Taniuchi BMO continuation closes \(X\) | **fail** |
 | Neustupa–Penel one-component if is all-data regularity | **fail** |
+| Escauriaza–Seregin–Šverák \(L^3\) endpoint closes \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

@@ -142,6 +142,9 @@ LEADS = [
     lead("Seregin", "local regularity / ESS", "B", "living",
          "ESS endpoint sits as a criterion. It is not an a priori on X.",
          "criterion ⇒ bound"),
+    lead("Escauriaza", "ESS L3 endpoint", "B", "living",
+         "L^infty_t L^3_x is the endpoint. A criterion is not an a priori. Bounded in L3 is not a bound on enstrophy.",
+         "L3 endpoint = bound on X"),
     lead("Koch", "critical small data", "B", "living",
          "Small critical sits. Large data is the object.",
          "Koch-Tataru ⇒ large data"),
@@ -204,7 +207,7 @@ MUST_SIT = {
     "Constantin", "Fefferman", "Ladyzhenskaya",
     "Einstein", "Tesla", "Feynman", "Weyl", "Wigner", "von Neumann", "Weinberg",
     "experiment / PDG", "neutrino / cosmology",
-    "Tao", "Sverak", "Seregin", "Jia", "Guillod", "Koch", "Tataru", "Grujic",
+    "Tao", "Sverak", "Seregin", "Escauriaza", "Jia", "Guillod", "Koch", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
     "Beirao-Berselli", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
@@ -387,6 +390,13 @@ CLAIMS = [
         "Neustupa-Penel one-component if is all-data regularity",
         "fail",
         "One velocity component is still an if. One component is not the field.",
+    ),
+    rec(
+        "R26",
+        "ess_l3_closes_X",
+        "Escauriaza-Seregin-Sverak L3 endpoint closes X",
+        "fail",
+        "A criterion is not an a priori. Bounded in L3 is not a bound on enstrophy.",
     ),
 ]
 

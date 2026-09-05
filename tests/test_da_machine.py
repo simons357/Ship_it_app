@@ -287,6 +287,12 @@ class DaMachineTests(unittest.TestCase):
         one = classify_claim("Neustupa-Penel one-component if on a vorticity packet")
         self.assertEqual(one["domain"], "B")
         self.assertEqual(one["verdict"], "open")
+        ess = classify_claim("seat Escauriaza as a wall on the living bench")
+        self.assertEqual(ess["domain"], "U")
+        self.assertEqual(ess["verdict"], "open")
+        l3 = classify_claim("Escauriaza L3 endpoint on a vorticity packet")
+        self.assertEqual(l3["domain"], "B")
+        self.assertEqual(l3["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
