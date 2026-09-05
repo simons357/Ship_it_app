@@ -160,6 +160,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Hieber",
+        ["Temam", "Farwig"],
+        "Maximal L^p regularity for Stokes is a linear estimate. It is not a bound on X. Attractors stay Temam. Very weak stays Farwig. Pruss is not in this room.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -803,6 +809,13 @@ CLAIMS = [
         "fail",
         "Ann. of Math. 2007: global strong solutions of the 3D viscous primitive equations. Hydrostatic. A different equation is not a bound on NS X. Titi stays off. Robinson stays a posteriori.",
     ),
+    rec(
+        "L59",
+        "hieber_stokes_closes_X",
+        "Hieber Stokes maximal regularity closes X",
+        "fail",
+        "CPDE 1997 / J. Evol. Eq. 2001: maximal L^p-L^q for parabolic semigroups and Stokes in a half space. A linear estimate is not a bound on X. Pruss stays out.",
+    ),
 ]
 
 
@@ -821,6 +834,7 @@ KINGDOMS = [
     {"name": "Minimal singularity data", "who": "Rusin", "slot": "B"},
     {"name": "Weak-strong uniqueness", "who": "Germain", "slot": "B"},
     {"name": "Primitive equations", "who": "Cao", "slot": "B"},
+    {"name": "Stokes / maximal L^p regularity", "who": "Hieber", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

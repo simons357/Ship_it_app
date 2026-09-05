@@ -62,6 +62,7 @@ in your slot.
 | Rusin | minimal singularity data | If some \(\dot H^{1/2}\) data blow up, a minimal-norm datum does. Compactness of a hypothetical set is not a bound on \(X\). Does not prove a singularity. | minimal data \(=\) bound on \(X\) |
 | Germain | weak-strong uniqueness | Multipliers and paramultipliers give weak-strong uniqueness. Uniqueness is not a bound on \(X\). Mild uniqueness stays Masmoudi. Water waves stay off this chair. | weak-strong uniqueness \(=\) bound on \(X\) |
 | Cao | primitive equations | 3D viscous primitive equations are globally well-posed for large \(H^1\) data. Hydrostatic. A different equation is not a bound on NS \(X\). Titi stays off. | primitive equations \(=\) bound on \(X\) |
+| Hieber | Stokes / maximal \(L^p\) regularity | Maximal \(L^p\) regularity for Stokes is a linear estimate. Not a bound on \(X\). Attractors stay Temam. Very weak stays Farwig. Prüss stays out. | maximal regularity \(=\) bound on \(X\) |
 | Guillod | numerical non-uniqueness | Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity. | numerics \(=\) bound; numerics \(=\) blowup |
 | Seregin | local regularity / ESS | A criterion is not an a priori on \(X\). | criterion \(\Rightarrow\) bound |
 | Escauriaza | ESS \(L^3\) endpoint | \(L^\infty_t L^3_x\) is the endpoint. A criterion is not an a priori. Bounded in \(L^3\) is not a bound on enstrophy. | \(L^3\) endpoint \(=\) bound on \(X\) |
@@ -163,6 +164,7 @@ in your slot.
 | Rusin minimal singularity data bounds \(X\) | **fail** |
 | Germain weak-strong uniqueness bounds \(X\) | **fail** |
 | Cao primitive equations bound \(X\) | **fail** |
+| Hieber Stokes maximal regularity bounds \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

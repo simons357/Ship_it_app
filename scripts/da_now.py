@@ -31,6 +31,7 @@ DEAD = {
     "Foias",
         "Heywood",
         "Bourgain",
+        "Pruss",
     }
 
 NOT_A_PERSON = {"Operator", "current math.AP", "operator"}
@@ -220,7 +221,7 @@ CLAIMS = [
         "dead_fluids_on_roster",
         "A dead fluid sits on this living roster",
         "fail",
-        "Leray, Kato, Majda, Olga, Nirenberg, Scheffer, Sohr, Foias, Heywood stay out.",
+        "Leray, Kato, Majda, Olga, Nirenberg, Scheffer, Sohr, Foias, Heywood, Bourgain, Pruss stay out.",
     ),
     rec(
         "N10",

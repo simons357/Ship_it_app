@@ -9,7 +9,7 @@ geniuses in the world is omniscience. That claim **fails**.
 A vote of names does not write \(X\).
 
 Dated 5 September 2026. The seated list is derived from the
-living session, including Cao primitive equations.
+living session, including Hieber Stokes maximal regularity.
 The watch list is next papers, not a seat.
 
 ---
@@ -27,7 +27,7 @@ Last-scan age: `python3 scripts/da_machine.py status`
 
 Shahmurov does not sit. Dead fluids stay out: Leray, Kato,
 Majda, Ladyzhenskaya, Nirenberg, Scheffer, Sohr, Foias,
-Heywood. Bourgain stays out.
+Heywood. Bourgain stays out. Prüss stays out.
 
 ---
 

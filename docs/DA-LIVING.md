@@ -38,6 +38,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Minimal singularity data | Rusin | if some \(\dot H^{1/2}\) data blow up, a minimal-norm datum does | compactness of a hypothetical set bounds \(X\) |
 | Weak-strong uniqueness | Germain | multipliers and paramultipliers give weak-strong uniqueness | uniqueness bounds \(X\) |
 | Primitive equations | Cao | 3D viscous primitive equations are globally well-posed for large \(H^1\) data | hydrostatic regularity bounds NS \(X\) |
+| Stokes / maximal \(L^p\) regularity | Hieber | maximal \(L^p\) regularity for the Stokes operator | a linear estimate bounds \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -75,7 +76,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Announcements | current math.AP | a preprint is a proposal | close B by title |
 | The desk | operator | one sentence, one slot, one check | needing chops |
 
-Shahmurov does not get a chair. Sohr stays out. Foias stays out. Heywood stays out. Bourgain stays out. Kukavica–Ziane one-component is already seated as Neustupa–Penel. SFE / HB-as-unifier do not.
+Shahmurov does not get a chair. Sohr stays out. Foias stays out. Heywood stays out. Bourgain stays out. Prüss stays out. Kukavica–Ziane one-component is already seated as Neustupa–Penel. SFE / HB-as-unifier do not.
 
 ---
 
@@ -204,6 +205,14 @@ That equation is not a bound on NS \(X\). Roger, Reinhard
 — a posteriori stays Robinson. Edriss stays off this
 chair. Kukavica–Ziane primitive equations stay off;
 unique continuation is Kukavica's chair.
+
+**Hieber.** Maximal \(L^p\) regularity for parabolic
+semigroups under Gaussian estimates (Comm. Partial
+Differential Equations 22, 1997, with Prüss), and
+\(L^p\) theory of Stokes in a half space (J. Evol. Eq. 1,
+2001, with Desch and Prüss). A linear estimate is not
+a bound on \(X\). Roger, Reinhard — attractors stay
+Temam. Very weak stays Farwig. Jan is not in this room.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -472,6 +481,7 @@ scores the process, not a theorem you did not prove.
 | Rusin minimal singularity data closes \(X\) | **fail** |
 | Germain weak-strong uniqueness closes \(X\) | **fail** |
 | Cao primitive equations close \(X\) | **fail** |
+| Hieber Stokes maximal regularity closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |
