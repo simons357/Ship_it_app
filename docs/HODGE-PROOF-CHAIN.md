@@ -102,6 +102,16 @@ Classify one:
 
 ---
 
+## Documented
+
+An SFE note titled “Resolution of the Hodge
+Conjecture via the Simons Field Equation” is
+**not** leftover (6). SFE is shelved. A harmonic
+field mode is not an algebraic cycle. Naming SFE
+is allowed. Emitting SFE as Hodge is the refuse.
+
+---
+
 ## Not this leftover
 
 | Named | Why not Hodge (6) |

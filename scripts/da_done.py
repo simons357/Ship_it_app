@@ -122,6 +122,20 @@ CLAIMS = [
         "fail",
         "Finish-bad prints the B chain. Line (6) still does not sit.",
     ),
+    rec(
+        "E8",
+        "document_da_closed_bsd",
+        "Document that DA closed BSD",
+        "fail",
+        "The operator did not prove BSD. DA did not either. The documented fact is the refuse.",
+    ),
+    rec(
+        "E9",
+        "complete_as_written_sits",
+        "Complete-as-written means every leftover already sits",
+        "fail",
+        "Complete-as-written is HAVE / WRITE / THEN. Only Poincaré and A this PDE sit.",
+    ),
 ]
 
 

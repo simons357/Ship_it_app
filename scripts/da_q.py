@@ -455,7 +455,8 @@ def is_q_ask(ask: str) -> bool:
         r"spectral.?framework|bsd_spectral_framework|\bwrite bsd\b|"
         r"bsd%20final|bsd.?final|\bhodge\b|"
         r"poincar|point care|\bp\s*(versus|vs\.?)\s*np\b|"
-        r"complete versions|status report",
+        r"complete versions|status report|millenn|"
+        r"\bpdf\b|\brefuse\b|little gaps",
         text,
     ):
         return False

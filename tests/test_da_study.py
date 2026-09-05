@@ -29,6 +29,8 @@ class DaStudyTests(unittest.TestCase):
         self.assertEqual(by["S6"]["verdict"], "open")
         self.assertEqual(by["S7"]["verdict"], "fail")
         self.assertEqual(by["S8"]["verdict"], "pass")
+        self.assertEqual(by["S9"]["verdict"], "fail")
+        self.assertEqual(by["S10"]["verdict"], "pass")
         self.assertTrue(payload["meta"]["da_did_not_finish_just_now"])
         self.assertTrue(payload["meta"]["agent_phrased"])
         who = "did da finish those proofs just now or was it you"
@@ -52,6 +54,18 @@ class DaStudyTests(unittest.TestCase):
         self.assertTrue(is_study_ask("can DA do it"))
         self.assertFalse(is_study_ask(""))
         self.assertFalse(is_study_ask("Track B please write"))
+        self.assertTrue(is_study_ask("Refuse?"))
+        self.assertFalse(is_proof_ask("Refuse?"))
+        self.assertTrue(is_study_ask("I thought they were completed already?"))
+        self.assertTrue(
+            is_study_ask(
+                "are you telling me that da was able to figure out the little gaps"
+            )
+        )
+        self.assertFalse(asks["document_bsd_close"]["can_finish"])
+        self.assertFalse(asks["sfe_hodge"]["can_finish"])
+        self.assertFalse(asks["named_gaps"]["can_finish"])
+        self.assertFalse(asks["complete_already"]["can_finish"])
         self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))
         self.assertTrue((ROOT / "docs" / "DA-STUDY.md").is_file())
 

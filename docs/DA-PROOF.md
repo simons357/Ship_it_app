@@ -30,6 +30,8 @@ python3 scripts/da_machine.py proof --problem PNP
 python3 scripts/da_machine.py next --ask "P versus NP"
 python3 scripts/da_machine.py proof --problem ALL
 python3 scripts/da_machine.py next --ask "Please write the final, corrected and complete versions"
+python3 scripts/da_machine.py pack
+python3 scripts/da_machine.py next --ask "give them to me in like a PDF"
 ```
 
 Nothing is wrong with asking. That is the product.
@@ -80,6 +82,9 @@ Best A (Q1 + renormalization) and furthest RH, dream team looking, legal write: 
 | `BSD final.pdf` is the Hodge conjecture | **fail** |
 | SFE harmonic \(H(x)\) proves \(\mathrm{P}\neq\mathrm{NP}\) | **fail** |
 | Writing the complete versions closes the leftovers | **fail** |
+| Document that DA completed BSD leftover (6) and closed it out | **fail** |
+| SFE harmonic coherence proves Hodge | **fail** |
+| Naming the WRITE line means DA filled the gap | **fail** |
 | Poincaré is still an open WRITE | **fail** |
 | The WRITE line may sit later | **open** |
 | More named problems may get a ground-floor chain | **open** |

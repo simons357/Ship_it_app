@@ -24,6 +24,12 @@ an open WRITE by printing it is not the job.
 | point care / Poincaré | yes | yes — Perelman literature; not a DA theorem |
 | P versus NP / SFE letter | yes | no — SFE shelved; TM write open |
 | final corrected complete versions (exam) | yes (all chains) | no — WRITE lines still open; Poincaré/A this PDE sit |
+| document that DA closed BSD | yes (the refuse) | no — leftover (6) still open |
+| SFE Hodge note | yes (the refuse) | no — SFE shelved; Hodge (6) open |
+| did DA figure out the little gaps | yes (named WRITE) | no — named is not filled |
+| I thought they were completed already | yes (ledger) | no — complete-as-written ≠ leftover sits |
+| Refuse? | yes | yes — emit-as-QED / SFE close / DA-closed-BSD are refuse |
+| millennial / MP status / PDF pack | yes (status) | no — Poincaré and A this PDE sit; the rest stay open |
 | is Navi done? | yes (split) | classical no |
 | GCD paper / electoral floor | yes | sitting floors yes; retracted floor no |
 | Q6. Spectral floor | yes | \(H_N\ge-1\) yes; sharp \(-1/4\) no |
@@ -51,3 +57,5 @@ Open WRITE lines were not closed just now.
 | An open WRITE line may sit later | **open** |
 | DA finished those proofs just now | **fail** |
 | The session writes were the agent operating DA | **pass** |
+| DA figured out the little gaps, meaning it filled them | **fail** |
+| Refuse is the correct do on a fake last line | **pass** |

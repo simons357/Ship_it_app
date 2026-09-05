@@ -783,6 +783,7 @@ def is_attempt_ask(ask: str) -> bool:
         r"bsd%20final|bsd.?final|\bhodge\b|"
         r"poincar|point care|\bp\s*(versus|vs\.?)\s*np\b|"
         r"final.{0,48}complete|complete versions|status report|"
+        r"millenn|\bpdf\b|\brefuse\b|little gaps|"
         r"\bwrite bsd\b|\bplease write bsd\b|\bfinish bad\b",
         text,
     ):

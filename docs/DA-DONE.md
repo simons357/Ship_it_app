@@ -46,5 +46,7 @@ Exporting it onto B is the refuse.
 | The written NS chain means classical NS is done | **fail** |
 | DA finishes leftover by emitting the chain | **fail** |
 | Please finish bad closes leftover (6) | **fail** |
+| Document that DA closed BSD | **fail** |
+| Complete-as-written means every leftover already sits | **fail** |
 | Hearing Theorem A closed means Navi Stokes is done | **fail** |
 | Classical line (6) may sit later | **open** |

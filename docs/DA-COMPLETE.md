@@ -61,6 +61,9 @@ DA does not finish an open write by emitting it.
 | Phi / SND / Ring are smoothness (6) | **fail** |
 | Writing the complete versions closes the leftovers | **fail** |
 | DA finished those proofs just now | **fail** |
+| Document that DA completed BSD leftover (6) and closed it out | **fail** |
+| SFE harmonic coherence proves Hodge | **fail** (shelved) |
+| Naming the WRITE line means DA filled the gap | **fail** |
 
 ---
 

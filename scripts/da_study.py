@@ -83,6 +83,34 @@ ASKS = [
         "can_finish": False,
         "why": "Not seated. DA did not invent a paper. That refuse is the correct do.",
     },
+    {
+        "id": "document_bsd_close",
+        "ask": "document that DA closed BSD",
+        "can_write": True,
+        "can_finish": False,
+        "why": "The refuse is written. Leftover (6) still does not sit.",
+    },
+    {
+        "id": "sfe_hodge",
+        "ask": "Resolution of the Hodge Conjecture via SFE",
+        "can_write": True,
+        "can_finish": False,
+        "why": "SFE is shelved. A field mode is not an algebraic cycle. Hodge (6) stays open.",
+    },
+    {
+        "id": "named_gaps",
+        "ask": "did DA figure out the little gaps",
+        "can_write": True,
+        "can_finish": False,
+        "why": "DA named each WRITE. Naming a blank is not filling it.",
+    },
+    {
+        "id": "complete_already",
+        "ask": "I thought they were completed already",
+        "can_write": True,
+        "can_finish": False,
+        "why": "Complete-as-written is the ledger. Leftover sits only for Poincaré and A this PDE.",
+    },
 ]
 
 
@@ -143,6 +171,20 @@ CLAIMS = [
         "pass",
         "DA is scripts plus scored docs. The agent phrases. DA reprints. Neither is a second author of (6).",
     ),
+    rec(
+        "S9",
+        "named_gaps_are_filled",
+        "DA figured out the little gaps, meaning it filled them",
+        "fail",
+        "The WRITE lines are named blanks. DA did not write those lines.",
+    ),
+    rec(
+        "S10",
+        "refuse_is_the_job",
+        "Refuse is the correct do on a fake last line",
+        "pass",
+        "Emit-as-QED, SFE closes, and a DA-closed-BSD certificate are scored fails.",
+    ),
 ]
 
 
@@ -158,9 +200,14 @@ def is_study_ask(ask: str) -> bool:
             r"\bthese questions\b|\bda study\b|"
             r"\bthe (point of the )?study\b|"
             r"\bif (he|da) can do\b|"
-            r"\bdid da (finish|write|do|prove)\b|"
+            r"\bdid da (finish|write|do|prove|figure)\b|"
             r"\bwas it you\b|\bwas that you\b|"
-            r"\byou or da\b|\bda or you\b",
+            r"\byou or da\b|\bda or you\b|"
+            r"^\s*refuse\??\s*$|\brefuse\?\s*$|"
+            r"thought they were completed|"
+            r"were (they|those) completed|"
+            r"little gaps|"
+            r"figure out the",
             text,
         )
     )

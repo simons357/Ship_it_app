@@ -176,6 +176,20 @@ second proof. Filename is not the write.
 
 ---
 
+## Documented
+
+The operator said they did not prove BSD, and that
+if DA could finish leftover (6) they wanted it
+written down that DA closed it.
+
+**Documented, 5 September 2026:** DA did **not**
+complete leftover (6). DA did **not** close BSD.
+The help that sits is the chain above: HAVE (1)–(5),
+WRITE (6) still open. A certificate that DA closed
+BSD would be a fake last line. That is the refuse.
+
+---
+
 ## Not this leftover
 
 | Named | Why not BSD (6) |

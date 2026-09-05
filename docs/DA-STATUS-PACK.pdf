@@ -1,0 +1,304 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R] /Count 6 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 9 0 R /Resources << /Font << /F1 15 0 R >> >> >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 10 0 R /Resources << /Font << /F1 15 0 R >> >> >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 11 0 R /Resources << /Font << /F1 15 0 R >> >> >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 12 0 R /Resources << /Font << /F1 15 0 R >> >> >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 13 0 R /Resources << /Font << /F1 15 0 R >> >> >>
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 14 0 R /Resources << /Font << /F1 15 0 R >> >> >>
+endobj
+9 0 obj
+<< /Length 1486 >>
+stream
+BT
+/F1 10 Tf
+50 742 Td
+(DA leftover status pack) Tj
+0 -13 Td (5 September 2026) Tj
+0 -13 Td () Tj
+0 -13 Td (This is status. It is not QED.) Tj
+0 -13 Td (DA reprints what sits. DA does not emit an open WRITE as a close.) Tj
+0 -13 Td (Not prize packaging. Not a committee letter.) Tj
+0 -13 Td () Tj
+0 -13 Td (SITS) Tj
+0 -13 Td (  Poincaré ? Perelman 2002?2003. Literature. This desk reprints.) Tj
+0 -13 Td (  A this PDE ? Theorem A at eps>0, beta>=1/2. Different equation from classical NS.) Tj
+0 -13 Td () Tj
+0 -13 Td (OPEN) Tj
+0 -13 Td (  B / smoothness and existence ? WRITE \(6\) all-data R / A1 / A2 / killing field) Tj
+0 -13 Td (  A uniform H1 ? WRITE \(7\) as eps->0. This PDE sitting is not that write.) Tj
+0 -13 Td (  RH ? WRITE \(6\) every zero on Re s = 1/2. Q is not that write.) Tj
+0 -13 Td (  YM ? WRITE \(4\) mass gap. SM block is not the gap.) Tj
+0 -13 Td (  BSD ? WRITE \(6\) rank / Sha / leading term. DA did not close this.) Tj
+0 -13 Td (  Hodge ? WRITE \(6\) every rational Hodge class algebraic. SFE is not that write.) Tj
+0 -13 Td (  P vs NP ? WRITE \(5\) TM proof. SFE H\(x\) is not a Turing machine.) Tj
+0 -13 Td () Tj
+0 -13 Td (Documented: the operator did not prove BSD. DA did not either.) Tj
+0 -13 Td (A certificate that DA closed BSD is the refuse.) Tj
+0 -13 Td (SFE does not close Hodge. SFE does not close P vs NP.) Tj
+0 -13 Td (Complete-as-written is HAVE / WRITE / THEN. It is not leftover sits.) Tj
+0 -13 Td (Naming a WRITE line is not filling it.) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Length 4266 >>
+stream
+BT
+/F1 10 Tf
+50 742 Td
+(Seated chains \(complete-as-written, not QED\)) Tj
+0 -13 Td () Tj
+0 -13 Td (NS: WRITE \(6\) open) Tj
+0 -13 Td (  Let u be a smooth solution of 3D incompressible Navier-Stokes \(periodic or whole) Tj
+0 -13 Td (  space\), viscosity nu > 0, no Q1, keep 1/r^4. Let X = ||omega||_2^2. Then X stays) Tj
+0 -13 Td (  finite on [0, T] for arbitrary T, and u remains smooth.) Tj
+0 -13 Td (  \(1\) [HAVE] Energy. Leray: int_0^T X\(t\) dt < infinity on these packets, and the energy) Tj
+0 -13 Td (         inequality holds.) Tj
+0 -13 Td (  \(2\) [HAVE] Enstrophy identity. Differentiating X along the NSE gives dX/dt + nu) Tj
+0 -13 Td (         ||grad omega||_2^2 = -int omega · S omega \(up to lower-order terms already) Tj
+0 -13 Td (         controlled\).) Tj
+0 -13 Td (  \(3\) [HAVE] Leftover form. Absorb a slice of dissipation to obtain dX/dt + nu ||grad) Tj
+0 -13 Td (         omega||_2^2 <= eps nu ||grad omega||_2^2 + C_eps X R\(t\), with R unknown.) Tj
+0 -13 Td (         The only term that can beat viscosity is the stretching leftover.) Tj
+0 -13 Td (  \(4\) [HAVE] Split. int omega · S omega = hole 1 \(aligned P+ on E_c\) + hole 2) Tj
+0 -13 Td (         \(unaligned P+ on E_c\) + hole 3 \(off E_c\). Scored on the n=32 box as B37.) Tj
+0 -13 Td (  \(5\) [HAVE] Named blanks. A1 = alignment in time for all data \(hole 1\). A2 = int) Tj
+0 -13 Td (         ||lambda_2^+|| for all data \(live cubic; Miller cut B38\). On this box A1) Tj
+0 -13 Td (         is off and A2 is live and did not blow on the B15 path \(B40, B41\).) Tj
+0 -13 Td (  \(6\) [WRITE] WRITE. One all-data integrable residual: int_0^T R\(t\) dt < infinity, or) Tj
+0 -13 Td (         all-data A1, or all-data A2, or a field that kills the stretching) Tj
+0 -13 Td (         leftover.) Tj
+0 -13 Td (  \(7\) [THEN] Gronwall. From \(3\) and \(6\), X\(t\) stays finite on [0, T].) Tj
+0 -13 Td (  \(8\) [THEN] Continuation. Beale-Kato-Majda: if int_0^T ||omega||_infty dt < infinity) Tj
+0 -13 Td (         then the solution continues. A bound that yields that integral, or an) Tj
+0 -13 Td (         equivalent criterion, gives no blowup. L2 is not the max.) Tj
+0 -13 Td (  \(9\) [THEN] Bootstrap. Standard parabolic regularity: a bound on X and no blowup of) Tj
+0 -13 Td (         ||omega||_infty upgrades to smoothness on [0, T]. If T is arbitrary, the) Tj
+0 -13 Td (         solution is globally regular.) Tj
+0 -13 Td () Tj
+0 -13 Td (A: this PDE sits; WRITE \(7\) open) Tj
+0 -13 Td (  Let nu>0, eps>0, alpha>0, beta>=1/2, and u0 in H^1\(T^3\) divergence-free. The Q1) Tj
+0 -13 Td (  system has a unique solution u in C^infty\(T^3 x \(0,infty\)\) cap L^infty\(0,infty;) Tj
+0 -13 Td (  H^1\). No finite-time singularity for this PDE.) Tj
+0 -13 Td (  \(1\) [HAVE] The PDE. On T^3, nu>0, eps>0, alpha>0, beta>=1/2: partial_t u + \(u·grad\)u) Tj
+0 -13 Td (         = -grad p + nu Delta u + eps^alpha P div\(|grad u|^beta grad u\), div u = 0.) Tj
+0 -13 Td (         Ladyzhenskaya / p-Laplacian stress. Not classical NS. No Phi.) Tj
+0 -13 Td (  \(2\) [HAVE] Energy. Test against u: 1/2 d/dt ||u||_2^2 + nu ||grad u||_2^2 + eps^alpha) Tj
+0 -13 Td (         ||grad u||_{L^{beta+2}}^{beta+2} = 0.) Tj
+0 -13 Td (  \(3\) [HAVE] Galerkin. Finite Stokes modes, same energy, no blowup of ||u_n||_2. Weak) Tj
+0 -13 Td (         limit is a weak solution \(Minty-Browder on the extra stress\).) Tj
+0 -13 Td (  \(4\) [HAVE] beta>=1/2 in 3D. Extra integrability of grad u meets Ladyzhenskaya p>=5/2.) Tj
+0 -13 Td (         Unique strong solution in L^infty_t H^1 cap L^2_t H^2. The constant) Tj
+0 -13 Td (         depends on eps and blows up as eps->0.) Tj
+0 -13 Td (  \(5\) [HAVE] Bootstrap. Frozen eps>0, uniformly elliptic Stokes. Difference quotients) Tj
+0 -13 Td (         to H^k, then C^infty.) Tj
+0 -13 Td (  \(6\) [HAVE] Theorem A. Unique u in C^infty\(T^3 x \(0,infty\)\) cap L^infty_t H^1 for this) Tj
+0 -13 Td (         PDE at eps>0, beta>=1/2. This PDE is closed. No Phi. Data need not be) Tj
+0 -13 Td (         axisymmetric.) Tj
+0 -13 Td (  \(7\) [WRITE] WRITE. ||u||_H1 <= C with C independent of eps, for all smooth) Tj
+0 -13 Td (         divergence-free H^1 data, or a named obstruction that C must blow up. A) Tj
+0 -13 Td (         decaying Q1 integral is not that bound \(A9\).) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Length 3930 >>
+stream
+BT
+/F1 10 Tf
+50 742 Td
+(  \(8\) [THEN] Uniform Lemma 4. From \(4\) and \(7\), the H^1 bound stays finite as eps->0.) Tj
+0 -13 Td (  \(9\) [THEN] Still not B. If \(7\) sits you have a uniform bound on this family.) Tj
+0 -13 Td (         Classical NS is a separate Track B write \(integrable R\). A=>B stays fail.) Tj
+0 -13 Td () Tj
+0 -13 Td (RH: WRITE \(6\) open) Tj
+0 -13 Td (  Every non-trivial zero of the Riemann zeta function has real part equal to 1/2.) Tj
+0 -13 Td (  \(1\) [HAVE] Zeta. Riemann zeta is meromorphic, simple pole at s=1, Euler product for) Tj
+0 -13 Td (         Re s > 1.) Tj
+0 -13 Td (  \(2\) [HAVE] xi. The completed xi-function is entire of order 1 and satisfies a) Tj
+0 -13 Td (         functional equation xi\(s\) = xi\(1-s\).) Tj
+0 -13 Td (  \(3\) [HAVE] Strip. Every non-trivial zero lies in 0 < Re s < 1.) Tj
+0 -13 Td (  \(4\) [HAVE] Prime number theorem. No zeros on Re s = 1 \(Hadamard / de la Vallee) Tj
+0 -13 Td (         Poussin\).) Tj
+0 -13 Td (  \(5\) [HAVE] The line. Infinitely many zeros on Re s = 1/2 \(Hardy\). A positive) Tj
+0 -13 Td (         proportion sit on the line \(Conrey and later\). Literature, not a theorem) Tj
+0 -13 Td (         of this desk.) Tj
+0 -13 Td (  \(6\) [WRITE] WRITE. Every non-trivial zero has Re s = 1/2.) Tj
+0 -13 Td (  \(7\) [THEN] Explicit formula. If \(6\) sits, the von Mangoldt explicit formula has all) Tj
+0 -13 Td (         oscillatory terms on the critical line.) Tj
+0 -13 Td (  \(8\) [THEN] Error term. The prime-counting error is then of the classical Riemann) Tj
+0 -13 Td (         order \(up to logs\).) Tj
+0 -13 Td () Tj
+0 -13 Td (YM: WRITE \(4\) open) Tj
+0 -13 Td (  For 4-dimensional quantum Yang-Mills with compact simple gauge group, the) Tj
+0 -13 Td (  Hamiltonian has a mass gap: the spectrum on the vacuum-orthogonal subspace is) Tj
+0 -13 Td (  bounded below by a positive constant.) Tj
+0 -13 Td (  \(1\) [HAVE] Gauge field. A connection on an SU\(N\) bundle, curvature F, Yang-Mills) Tj
+0 -13 Td (         action \(1/4\) int Tr F wedge *F.) Tj
+0 -13 Td (  \(2\) [HAVE] SM block. This desk's Lagrangian contains working YM: SU\(3\)_c \(QCD\) and) Tj
+0 -13 Td (         SU\(2\)_L before the VEV. Lineage both ways.) Tj
+0 -13 Td (  \(3\) [HAVE] A Lagrangian piece is not a gap. Local existence and energy for classical) Tj
+0 -13 Td (         YM are a different literature.) Tj
+0 -13 Td (  \(4\) [WRITE] WRITE. Mass gap: the Hamiltonian spectrum on the vacuum-orthogonal) Tj
+0 -13 Td (         subspace is bounded below by a positive constant.) Tj
+0 -13 Td (  \(5\) [THEN] If \(4\) sits, that gap is a theorem for this YM theory. Still not NS. Still) Tj
+0 -13 Td (         not Q. Still not Goldbach.) Tj
+0 -13 Td () Tj
+0 -13 Td (BSD: WRITE \(6\) open) Tj
+0 -13 Td (  Let E/Q be an elliptic curve. Let r = rank E\(Q\) and r_an = ord_{s=1} L\(E,s\). Then) Tj
+0 -13 Td (  r = r_an, Sha\(E/Q\) is finite, and the leading coefficient of L\(E,s\) at s=1 equals) Tj
+0 -13 Td (  Omega * Reg * #Sha * prod_p c_p / #E\(Q\)_tors^2.) Tj
+0 -13 Td (  \(1\) [HAVE] Elliptic curve. E/Q, Weierstrass model, conductor N, finite torsion) Tj
+0 -13 Td (         E\(Q\)_tors.) Tj
+0 -13 Td (  \(2\) [HAVE] Mordell-Weil. E\(Q\) is finitely generated: E\(Q\) = Z^r ? E\(Q\)_tors. r is the) Tj
+0 -13 Td (         algebraic rank.) Tj
+0 -13 Td (  \(3\) [HAVE] Modularity. Every E/Q is modular \(Wiles / BCDT\). L\(E,s\) = L\(f,s\) for a) Tj
+0 -13 Td (         weight-2 newform, entire, functional equation s <-> 2-s.) Tj
+0 -13 Td (  \(4\) [HAVE] Analytic rank. r_an = ord_{s=1} L\(E,s\). The aimed equality is r = r_an.) Tj
+0 -13 Td (  \(5\) [HAVE] Low rank. If r_an is 0 or 1, then r = r_an and Sha is finite \(Gross-Zagier) Tj
+0 -13 Td (         / Kolyvagin; Coates-Wiles for many CM rank-0 cases\). Literature, not a) Tj
+0 -13 Td (         theorem of this desk.) Tj
+0 -13 Td (  \(6\) [WRITE] WRITE. For every E/Q: r = r_an, Sha\(E/Q\) is finite, and the leading) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Length 3944 >>
+stream
+BT
+/F1 10 Tf
+50 742 Td
+(         coefficient of L\(E,s\) at s=1 equals Omega * Reg * #Sha * prod Tamagawa /) Tj
+0 -13 Td (         #E\(Q\)_tors^2.) Tj
+0 -13 Td (  \(7\) [THEN] If \(6\) sits, the arithmetic of E\(Q\) is read from L\(E,s\). Still not RH.) Tj
+0 -13 Td (         Still not Q. Still not Goldbach. Still not NS.) Tj
+0 -13 Td () Tj
+0 -13 Td (HODGE: WRITE \(6\) open) Tj
+0 -13 Td (  Let X be a smooth complex projective variety. For every integer p >= 0, every) Tj
+0 -13 Td (  class in H^{2p}\(X,Q\) ? H^{p,p}\(X\) is a Q-linear combination of classes of) Tj
+0 -13 Td (  algebraic cycles of codimension p.) Tj
+0 -13 Td (  \(1\) [HAVE] Hodge decomposition. For compact Kähler X, H^k\(X,C\) = ?_{p+q=k}) Tj
+0 -13 Td (         H^{p,q}\(X\).) Tj
+0 -13 Td (  \(2\) [HAVE] Hodge classes. Hdg^p\(X\) = H^{2p}\(X,Q\) ? H^{p,p}\(X\). These are the rational) Tj
+0 -13 Td (         \(p,p\) classes.) Tj
+0 -13 Td (  \(3\) [HAVE] Cycle class. An algebraic cycle of codimension p maps to a Hodge class.) Tj
+0 -13 Td (         Algebraic implies Hodge. The converse is the write.) Tj
+0 -13 Td (  \(4\) [HAVE] Lefschetz \(1,1\). Every Hodge class of type \(1,1\) is algebraic \(divisors\).) Tj
+0 -13 Td (         p=1 sits. Literature, not a theorem of this desk.) Tj
+0 -13 Td (  \(5\) [HAVE] Special cases. Known for some abelian varieties and some complete) Tj
+0 -13 Td (         intersections. Literature. The integer form is false \(Atiyah-Hirzebruch\).) Tj
+0 -13 Td (         The aimed statement is over Q.) Tj
+0 -13 Td (  \(6\) [WRITE] WRITE. For every smooth complex projective X and every p, every rational) Tj
+0 -13 Td (         Hodge class is algebraic.) Tj
+0 -13 Td (  \(7\) [THEN] If \(6\) sits, Hodge classes are algebraic cycles. Still not BSD. Still not) Tj
+0 -13 Td (         RH. Still not NS. Still not YM.) Tj
+0 -13 Td () Tj
+0 -13 Td (POINCARE: sits \(literature\)) Tj
+0 -13 Td (  Every closed simply connected 3-manifold is homeomorphic to the 3-sphere.) Tj
+0 -13 Td (  \(1\) [HAVE] Object. A closed 3-manifold M. Simply connected means ?_1\(M\)=0.) Tj
+0 -13 Td (  \(2\) [HAVE] Statement. M is homeomorphic to S^3.) Tj
+0 -13 Td (  \(3\) [HAVE] Ricci flow. Hamilton: ?_t g = -2 Ric\(g\). Singularities remain.) Tj
+0 -13 Td (  \(4\) [HAVE] Surgery. Perelman: entropy, no local collapsing, surgery at necks.) Tj
+0 -13 Td (  \(5\) [HAVE] Extinction. On a simply connected closed 3-manifold the flow becomes) Tj
+0 -13 Td (         extinct after finitely many surgeries. Pieces are spherical.) Tj
+0 -13 Td (  \(6\) [HAVE] The statement sits. Every simply connected closed 3-manifold is) Tj
+0 -13 Td (         homeomorphic to S^3 \(Perelman; literature\). No WRITE line.) Tj
+0 -13 Td (  \(7\) [HAVE] Geometrization. The same method gives Thurston geometrization. Literature.) Tj
+0 -13 Td (         Still not NS. Still not P vs NP.) Tj
+0 -13 Td () Tj
+0 -13 Td (PNP: WRITE \(5\) open) Tj
+0 -13 Td (  Either P=NP or P?NP, proved for languages decided by Turing machines with a) Tj
+0 -13 Td (  polynomial-time clock.) Tj
+0 -13 Td (  \(1\) [HAVE] P. Languages decided by a deterministic Turing machine in time n^{O\(1\)}.) Tj
+0 -13 Td (  \(2\) [HAVE] NP. Languages with a polynomial-time verifier, equivalently a) Tj
+0 -13 Td (         nondeterministic TM in polynomial time.) Tj
+0 -13 Td (  \(3\) [HAVE] NP-complete. Cook-Levin: SAT is NP-complete. Polynomial-time reductions.) Tj
+0 -13 Td (  \(4\) [HAVE] SFE is not the model. The letter's H\(x\) is a field path, not a TM.) Tj
+0 -13 Td (         Shelved. It does not decide a language in P or NP.) Tj
+0 -13 Td (  \(5\) [WRITE] WRITE. A proof that P=NP or that P?NP in the Turing-machine model.) Tj
+0 -13 Td (         Relativization, natural proofs, and algebrization are barriers, not the) Tj
+0 -13 Td (         write.) Tj
+0 -13 Td (  \(6\) [THEN] If \(5\) sits, every NP language is in P, or some NP language is not. Still) Tj
+0 -13 Td (         not NS. Still not Hodge. Still not SFE.) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Length 31 >>
+stream
+BT
+/F1 10 Tf
+50 742 Td
+() Tj
+ET
+endstream
+endobj
+14 0 obj
+<< /Length 1042 >>
+stream
+BT
+/F1 10 Tf
+50 742 Td
+(Scored) Tj
+0 -13 Td () Tj
+0 -13 Td (  [pass] P1: The PDF pack is the status of each seated chain) Tj
+0 -13 Td (  [fail] P2: The PDF pack closes the open WRITE lines) Tj
+0 -13 Td (  [fail] P3: The SFE Hodge note is leftover \(6\)) Tj
+0 -13 Td (  [fail] P4: This pack is prize packaging of the named leftovers) Tj
+0 -13 Td () Tj
+0 -13 Td (Proof claims that stay fail) Tj
+0 -13 Td (  [fail] C12: The SFE harmonic convergence H\(x\) proves P?NP) Tj
+0 -13 Td (  [fail] C15: Writing the final corrected complete versions closes the leftovers) Tj
+0 -13 Td (  [fail] C17: Document that DA completed BSD leftover \(6\) and closed it out) Tj
+0 -13 Td (  [fail] C18: SFE harmonic coherence proves the Hodge conjecture) Tj
+0 -13 Td (  [fail] C19: Naming the WRITE line means DA filled the gap) Tj
+0 -13 Td () Tj
+0 -13 Td (Write-up: docs/DA-PACK.md) Tj
+0 -13 Td (Status: docs/DA-COMPLETE.md) Tj
+0 -13 Td (BSD refuse: docs/BSD-PROOF-CHAIN.md \(Documented\)) Tj
+0 -13 Td (Hodge refuse: docs/HODGE-PROOF-CHAIN.md \(Documented\)) Tj
+ET
+endstream
+endobj
+15 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 16
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000145 00000 n 
+0000000272 00000 n 
+0000000400 00000 n 
+0000000528 00000 n 
+0000000656 00000 n 
+0000000784 00000 n 
+0000000912 00000 n 
+0000002450 00000 n 
+0000006769 00000 n 
+0000010752 00000 n 
+0000014749 00000 n 
+0000014831 00000 n 
+0000015926 00000 n 
+trailer << /Size 16 /Root 1 0 R >>
+startxref
+15997
+%%EOF

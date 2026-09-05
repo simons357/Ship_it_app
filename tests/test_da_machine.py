@@ -46,6 +46,15 @@ class DaMachineTests(unittest.TestCase):
         self.assertIn("P vs NP", pnp["reason"])
         sfe = classify_claim("SFE harmonic H(x) proves P != NP")
         self.assertEqual(sfe["verdict"], "fail")
+        sfe_hodge = classify_claim(
+            "Resolution of the Hodge Conjecture via the Simons Field Equation (SFE)"
+        )
+        self.assertEqual(sfe_hodge["verdict"], "fail")
+        millennial = classify_claim(
+            "Give me a master status report on all of the millennium proof chains"
+        )
+        self.assertEqual(millennial["domain"], "U")
+        self.assertEqual(millennial["verdict"], "open")
         complete = classify_claim("Please write the final, corrected and complete versions")
         self.assertEqual(complete["domain"], "U")
         self.assertEqual(complete["verdict"], "open")

@@ -1031,6 +1031,27 @@ CLAIMS = [
         "pass",
         "DA can write every seated chain and refuse a fake last line. That is the job.",
     ),
+    rec(
+        "C17",
+        "document_da_closed_bsd",
+        "Document that DA completed BSD leftover (6) and closed it out",
+        "fail",
+        "The operator did not prove BSD. DA did not either. Help is the chain and the named write. A close certificate is the refuse.",
+    ),
+    rec(
+        "C18",
+        "sfe_proves_hodge",
+        "SFE harmonic coherence proves the Hodge conjecture",
+        "fail",
+        "SFE is shelved. A field mode is not an algebraic cycle. Leftover (6) stays open.",
+    ),
+    rec(
+        "C19",
+        "named_write_is_filled",
+        "Naming the WRITE line means DA filled the gap",
+        "fail",
+        "DA named the write. DA did not write it. A named blank is not a filled blank.",
+    ),
 ]
 
 
@@ -1043,7 +1064,10 @@ def is_all_ask(ask: str = "", problem: str = "") -> bool:
             r"final.{0,48}complete|complete versions|"
             r"all (the )?(named )?proof chains|"
             r"\bproof --all\b|\ball problems\b|"
-            r"master status|\bstatus report\b",
+            r"master status|\bstatus report\b|"
+            r"millenn|"
+            r"\ball of the mp|"
+            r"\bmp'?s\b|\bmps\b",
             text,
         )
     )
@@ -1152,6 +1176,9 @@ def is_proof_ask(ask: str) -> bool:
             r"final.{0,48}complete|complete versions|"
             r"all (the )?(named )?proof chains|"
             r"master status|\bstatus report\b|"
+            r"millenn|"
+            r"\ball of the mp|"
+            r"\bmp'?s\b|\bmps\b|"
             r"\bfinish bad\b",
             text,
         )

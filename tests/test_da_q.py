@@ -99,6 +99,8 @@ class DaQTests(unittest.TestCase):
         self.assertFalse(is_q_ask("point care conjecture"))
         self.assertFalse(is_q_ask("P versus NP"))
         self.assertFalse(is_q_ask("Please write the final, corrected and complete versions"))
+        self.assertFalse(is_q_ask("Give me a master status report on all of the millennium proof chains"))
+        self.assertFalse(is_q_ask("give them to me in like a PDF form"))
         self.assertFalse(is_q_ask("is that right for Navi Stokes"))
         self.assertFalse(is_q_ask("write RH from the Goldbach paper"))
         self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))

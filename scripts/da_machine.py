@@ -180,7 +180,8 @@ def classify_claim(claim: str) -> dict:
             "reason": "looks like P vs NP; run proof --problem PNP. Leftover stays open.",
         }
     if re.search(
-        r"final.{0,48}complete|complete versions|master status|\bstatus report\b",
+        r"final.{0,48}complete|complete versions|master status|\bstatus report\b|"
+        r"millenn|\ball of the mp|\bmp'?s\b|\bmps\b",
         text,
     ):
         return {
@@ -932,6 +933,19 @@ def cmd_done() -> int:
     return 0
 
 
+def cmd_pack() -> int:
+    from da_pack import print_pack
+
+    print_pack()
+    append_run(
+        "U",
+        "Pack: reprint what sits; open WRITE stays open; not prize packaging",
+        "open",
+        "Poincaré and A this PDE sit; BSD/Hodge/NS leftovers stay open; SFE shelved",
+    )
+    return 0
+
+
 def cmd_proof(problem: str = "", ask: str = "") -> int:
     from da_proof import parse_problems, print_proof
 
@@ -1007,6 +1021,7 @@ def cmd_next(ask: str = "") -> int:
     from da_brute import is_brute_ask
     from da_picture import is_picture_ask
     from da_done import is_done_ask
+    from da_pack import is_pack_ask
     from da_proof import is_proof_ask
     from da_q import is_q_ask
     from da_repair import is_repair_ask
@@ -1016,6 +1031,8 @@ def cmd_next(ask: str = "") -> int:
         return cmd_study()
     if is_done_ask(ask):
         return cmd_done()
+    if is_pack_ask(ask):
+        return cmd_pack()
     if is_q_ask(ask):
         return cmd_q()
     if is_look_ask(ask):
@@ -1274,6 +1291,10 @@ def main() -> int:
     sub.add_parser("study", help="exam: can DA do the asks; emit is not a solver pass")
     sub.add_parser("q", help="inverse-GCD paper, floors, Q6, Q7")
     sub.add_parser("done", help="is NS done? emit is not QED; A this PDE yes; B no")
+    sub.add_parser(
+        "pack",
+        help="PDF status pack: what sits, what is open; not QED",
+    )
     prf = sub.add_parser("proof", help="write a proof chain: NS, A, or RH")
     prf.add_argument(
         "--problem",
@@ -1390,6 +1411,8 @@ def main() -> int:
         return cmd_q()
     if args.cmd == "done":
         return cmd_done()
+    if args.cmd == "pack":
+        return cmd_pack()
     if args.cmd == "proof":
         return cmd_proof(problem=getattr(args, "problem", ""))
     if args.cmd == "picture":

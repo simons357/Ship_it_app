@@ -48,6 +48,9 @@ class DaProofTests(unittest.TestCase):
         self.assertEqual(by["C14"]["verdict"], "fail")
         self.assertEqual(by["C15"]["verdict"], "fail")
         self.assertEqual(by["C16"]["verdict"], "pass")
+        self.assertEqual(by["C17"]["verdict"], "fail")
+        self.assertEqual(by["C18"]["verdict"], "fail")
+        self.assertEqual(by["C19"]["verdict"], "fail")
         self.assertTrue(payload["meta"]["nothing_wrong_with_asking"])
         self.assertTrue(payload["meta"]["q_is_not_rh"])
         self.assertTrue(payload["meta"]["a_is_not_b"])
@@ -261,6 +264,20 @@ class DaProofTests(unittest.TestCase):
         self.assertTrue(by_p["POINCARE"]["completion"]["leftover_sits"])
         self.assertTrue(by_p["A"]["this_pde_complete"])
         self.assertFalse(by_p["BSD"]["completion"]["leftover_sits"])
+        bsd_doc = (ROOT / "docs" / "BSD-PROOF-CHAIN.md").read_text()
+        self.assertIn("Documented, 5 September 2026", bsd_doc)
+        self.assertIn("DA did **not**", bsd_doc)
+        self.assertIn("complete leftover (6)", bsd_doc)
+        millennial = "Give me a master status report on all of the millennium proof chains"
+        self.assertTrue(is_all_ask(ask=millennial))
+        self.assertEqual(parse_problems(ask=millennial), list(PROBLEMS))
+        mps = "present to me all of the MP's on status report"
+        self.assertTrue(is_all_ask(ask=mps))
+        self.assertEqual(parse_problems(ask=mps), list(PROBLEMS))
+        self.assertTrue(is_proof_ask(millennial))
+        hodge_sfe = "Resolution of the Hodge Conjecture via the Simons Field Equation (SFE)"
+        self.assertTrue(is_proof_ask(hodge_sfe))
+        self.assertEqual(parse_problems(ask=hodge_sfe), ["HODGE"])
 
 
 if __name__ == "__main__":

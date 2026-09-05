@@ -67,6 +67,7 @@ freestyle. Not a vote. Not a séance.
 | Q | `q` | inverse-GCD paper, floors, Q6 / Q7, Goldbach-shaped \(R\ge-2/9\) | glue to RH or B; mint Q7; unshelve GNC; claim the integer conjecture |
 | Done | `done` | is NS done? A this PDE yes; B no | emit as QED |
 | Proof | `proof` | write the NS / A / RH / YM / BSD / Hodge / Poincaré / P vs NP chain; `--problem ALL` for the exam dump | QED without the WRITE line; complete versions are not closes |
+| Pack | `pack` | PDF of what sits plus open WRITE status | leftover QED; prize packaging |
 | Repair | `repair` | take A, SND, or H; name the fault and the write | export A onto B |
 | Attempt | `attempt` | best A and RH; dream team looks; legal write | vote a missing line |
 | Brute | `brute` | finite list vs all-data write | quantum / try-every as a close |
