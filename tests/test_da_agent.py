@@ -54,6 +54,7 @@ class DaAgentTests(unittest.TestCase):
         self.assertIn("Paicu", payload["tick"]["seated_living"])
         self.assertIn("Gibbon", payload["tick"]["seated_living"])
         self.assertIn("Ambrosio", payload["tick"]["seated_living"])
+        self.assertIn("Enciso", payload["tick"]["seated_living"])
         self.assertIn("GWOSC_GWTC", payload["tick"]["feed_sources"])
         self.assertFalse(payload["tick"]["fetched"])
         self.assertIn("stale", payload["tick"]["freshness"])

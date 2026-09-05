@@ -34,6 +34,7 @@ DEAD = {
         "Pruss",
         "Raugel",
         "DiPerna",
+        "Arnold",
     }
 
 NOT_A_PERSON = {"Operator", "current math.AP", "operator"}
@@ -159,6 +160,13 @@ WATCH = [
         "kingdom": "Regular Lagrangian Flow / quantitative transport",
         "involved": "quantitative RLF with De Lellis; compared with Ambrosio",
         "do_not": "seat as a second RLF chair next to Ambrosio",
+    },
+    {
+        "name": "Peralta-Salas",
+        "slot": "B",
+        "kingdom": "knotted Beltrami fields / steady Euler topology",
+        "involved": "Enciso-Peralta-Salas knotted vortex tubes and Beltrami fields",
+        "do_not": "seat as a second knotted-Beltrami chair next to Enciso",
     },
     {
         "name": "Kenig",

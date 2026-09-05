@@ -250,6 +250,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Enciso",
+        ["Elgindi", "Isett"],
+        "Existence of knotted Beltrami fields is not a bound on evolutionary X. Euler singularity stays Elgindi. Onsager stays Isett. Arnold is not in this room.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -998,6 +1004,13 @@ CLAIMS = [
         "fail",
         "Invent. Math. 2004: Regular Lagrangian Flow for BV fields. A well-defined ODE flow is not a bound on X. Weak-strong stays Germain. Mild uniqueness stays Masmoudi. DiPerna stays out.",
     ),
+    rec(
+        "L74",
+        "enciso_knots_closes_X",
+        "Enciso knotted Beltrami fields close X",
+        "fail",
+        "Ann. of Math. 2012: knots and links in steady Euler. Existence of knotted Beltrami fields is not a bound on evolutionary X. Euler singularity stays Elgindi. Onsager stays Isett. Arnold stays out.",
+    ),
 ]
 
 
@@ -1031,6 +1044,7 @@ KINGDOMS = [
     {"name": "Anisotropic NS / partial dissipation", "who": "Paicu", "slot": "B"},
     {"name": "Vortex stretching / strain-vorticity alignment", "who": "Gibbon", "slot": "B"},
     {"name": "Regular Lagrangian Flow / DiPerna-Lions transport", "who": "Ambrosio", "slot": "B"},
+    {"name": "Knotted Beltrami fields / steady Euler topology", "who": "Enciso", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

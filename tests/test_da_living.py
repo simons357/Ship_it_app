@@ -169,6 +169,7 @@ class DaLivingTests(unittest.TestCase):
             "Paicu",
             "Gibbon",
             "Ambrosio",
+            "Enciso",
             "Operator",
         ):
             self.assertIn(must, names)
@@ -243,6 +244,7 @@ class DaLivingTests(unittest.TestCase):
             "Paicu",
             "Gibbon",
             "Ambrosio",
+            "Enciso",
         }
         cross = [
             t
@@ -256,7 +258,7 @@ class DaLivingTests(unittest.TestCase):
         self.assertEqual(payload_open_count(), 1)
 
     def test_no_dead_fluids_in_living_room(self):
-        dead = {"Leray", "Kato", "Majda", "Ladyzhenskaya", "Nirenberg", "Scheffer", "Sohr", "Foias", "Heywood", "Bourgain", "Pruss", "Raugel", "DiPerna"}
+        dead = {"Leray", "Kato", "Majda", "Ladyzhenskaya", "Nirenberg", "Scheffer", "Sohr", "Foias", "Heywood", "Bourgain", "Pruss", "Raugel", "DiPerna", "Arnold"}
         self.assertTrue(dead.isdisjoint(set(SPEAKERS)))
 
 

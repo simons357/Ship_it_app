@@ -53,6 +53,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Anisotropic NS / partial dissipation | Paicu | global regularity for Navier–Stokes with dissipation in only some directions | that equation bounds isotropic \(X\) |
 | Vortex stretching / strain–vorticity alignment | Gibbon | stretching identities and Euler standing diagnostics | those identities bound \(X\) |
 | Regular Lagrangian Flow / DiPerna–Lions transport | Ambrosio | uniqueness of the ODE flow for BV fields | a well-defined flow bounds \(X\) |
+| Knotted Beltrami fields / steady Euler topology | Enciso | existence of knotted Beltrami fields for steady Euler | those fields bound evolutionary \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -317,6 +318,11 @@ the ODE. That is not a bound on \(X\). Pierre, Nader —
 weak-strong stays Germain. Mild uniqueness stays
 Masmoudi. DiPerna is not in this room. Crippa stays off
 this chair. Dissipative solutions stay off this chair.
+
+**Enciso.** Existence of knotted Beltrami fields is not a
+bound on evolutionary \(X\). Tarek, Philip — Euler
+singularity stays Elgindi. Onsager stays Isett. Arnold
+is not in this room. Peralta-Salas stays off this chair.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -600,6 +606,7 @@ scores the process, not a theorem you did not prove.
 | Paicu anisotropic NS closes \(X\) | **fail** |
 | Gibbon vortex stretching closes \(X\) | **fail** |
 | Ambrosio Regular Lagrangian Flow closes \(X\) | **fail** |
+| Enciso knotted Beltrami fields close \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |
