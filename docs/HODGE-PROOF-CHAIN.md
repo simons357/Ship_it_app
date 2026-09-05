@@ -99,16 +99,27 @@ Classify one:
 - not Lefschetz (1,1) reprinted as the full write
 - not the Hodge Laplacian \(\to\) Betti on this desk
 - not `BSD final.pdf` / 20552682
+- not the enclosed SFE letter
 
 ---
 
 ## Documented
 
-An SFE note titled “Resolution of the Hodge
-Conjecture via the Simons Field Equation” is
-**not** leftover (6). SFE is shelved. A harmonic
-field mode is not an algebraic cycle. Naming SFE
-is allowed. Emitting SFE as Hodge is the refuse.
+The enclosed letter, *Resolution of the Hodge
+Conjecture via the Simons Field Equation (SFE)*,
+is **not** leftover (6).
+
+Lemma 1 builds the close into the word
+“coherence.” Lemma 2 is the known direction:
+algebraic implies Hodge. \(\Delta\Phi=0\) is the
+Hodge Laplacian on this desk. That is Betti as
+\(\dim\ker\Delta\). It is not an algebraic cycle.
+
+SFE is shelved. Naming SFE is allowed. Emitting
+SFE as Hodge is the refuse. Proof C18 **fail**.
+
+**Documented, 5 September 2026:** Hodge leftover
+(6) stays open.
 
 ---
 
@@ -120,6 +131,7 @@ is allowed. Emitting SFE as Hodge is the refuse.
 | Inverse-GCD / Theorem P | Q |
 | Hodge Laplacian \(\to\) Betti | vocabulary on U, not algebraic cycles |
 | Track A / Track B | Navier–Stokes |
+| SFE letter (this paste) | shelved; coherence assumes the close; \(\Delta\Phi=0\) is not (6) |
 | SFE / Harmonic Blueprint | shelved; SFE coherence is not an algebraic cycle |
 
 Machine: [`DA-PROOF.md`](DA-PROOF.md)  

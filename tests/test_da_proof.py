@@ -278,6 +278,10 @@ class DaProofTests(unittest.TestCase):
         hodge_sfe = "Resolution of the Hodge Conjecture via the Simons Field Equation (SFE)"
         self.assertTrue(is_proof_ask(hodge_sfe))
         self.assertEqual(parse_problems(ask=hodge_sfe), ["HODGE"])
+        hodge_doc = (ROOT / "docs" / "HODGE-PROOF-CHAIN.md").read_text()
+        self.assertIn("enclosed letter", hodge_doc)
+        self.assertIn("Lemma 1 builds the close", hodge_doc)
+        self.assertIn("C18", hodge_doc)
 
 
 if __name__ == "__main__":
