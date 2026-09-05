@@ -1,0 +1,95 @@
+OPEN THIS ON ANY PHONE OR DESKTOP
+5 September 2026
+No AirDrop needed. Log into the same accounts.
+
+This chat in a browser (same Cursor login):
+https://cursor.com/agents/bc-01a026a4-cf05-7637-8c16-cd4b7032f80e
+
+This file on GitHub (same GitHub login):
+https://github.com/simons357/Ship_it_app/pull/24
+
+Plain text of this page:
+https://github.com/simons357/Ship_it_app/blob/cursor/unaugmented-r4-vorticity-f80e/docs/OPEN-ON-ANY-DEVICE.txt
+
+Raw text (easier to read):
+https://raw.githubusercontent.com/simons357/Ship_it_app/cursor/unaugmented-r4-vorticity-f80e/docs/OPEN-ON-ANY-DEVICE.txt
+
+
+WHAT SITS
+
+Theorem A sits.
+That is the Q1-augmented Navier-Stokes equation
+at epsilon greater than zero.
+It is Ladyzhenskaya / p-Laplacian class
+in Q1 notation.
+It is NOT unaugmented Navier-Stokes.
+
+Paper:
+docs/THEOREM-A-Q1.pdf
+https://github.com/simons357/Ship_it_app/blob/cursor/unaugmented-r4-vorticity-f80e/docs/THEOREM-A-Q1.pdf
+
+LaTeX:
+tex/theorem-a-q1.tex
+
+
+WHAT DOES NOT SIT
+
+B / unaugmented / plain-Jane NS does not sit.
+WRITE (6) is still open:
+one all-data integrable R,
+or all-data A1,
+or all-data A2,
+or a killing field.
+Keep 1/r^4. No Q1.
+
+Chain paper (open, not QED):
+docs/TRACK-B-CHAIN.pdf
+Do NOT upload that PDF to Zenodo as a close.
+
+RH WRITE (6) is still open.
+Q is not RH.
+YM, BSD, Hodge, P vs NP are leftover gravy.
+Poincare already sits in the literature (Perelman).
+
+
+ZENODO — WHAT YOU SAY
+
+Title:
+Global regularity for the Q1-augmented
+Navier-Stokes system (this PDE only)
+
+What you may say:
+I overclaimed. Crime tape stays on the old
+records. They do not close classical NS,
+they do not close RH, they do not close BSD.
+What I finally have is Theorem A for this
+augmented PDE.
+
+What you may not say:
+I finally got unaugmented Navier-Stokes.
+I finally got leftover (6).
+Overlook the extra term.
+
+Upload only:
+docs/THEOREM-A-Q1.pdf
+tex/theorem-a-q1.tex
+
+Paste-ready fields:
+docs/DA-ZENODO-SAY.md
+
+
+PHONE FILES ON THIS BRANCH
+
+docs/DA-PHONE.md
+docs/DA-ZENODO-SAY.md
+docs/THEOREM-A-DEPOSIT.md
+docs/OPEN-ON-ANY-DEVICE.txt
+
+Repo: simons357 / Ship_it_app
+Branch: cursor/unaugmented-r4-vorticity-f80e
+PR: 24
+
+A different Cursor app is not a copy of
+these files. Mirror the screen if you want
+it bigger. Log into cursor.com and GitHub
+on the other device. That is the transfer.

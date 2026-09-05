@@ -68,15 +68,23 @@ Do not say you finally got B.
 
 ---
 
-These files live on GitHub, not automatically on
-your desktop.
+Do not AirDrop this chat. Open it on the
+other device in a browser, same login:
+
+https://cursor.com/agents/bc-01a026a4-cf05-7637-8c16-cd4b7032f80e
+
+Same dump as plain text on GitHub:
+
+https://github.com/simons357/Ship_it_app/blob/cursor/unaugmented-r4-vorticity-f80e/docs/OPEN-ON-ANY-DEVICE.txt
 
 Repo: Ship_it_app
 Branch: cursor/unaugmented-r4-vorticity-f80e
 PR: 24
 
-Open the PR on the phone. The PDFs are under docs/.
-If a computer is available later, pull that branch.
+A different Cursor app is not a copy of
+these files. Log into cursor.com and GitHub
+on the other phone or desktop. That is the
+transfer. This environment cannot send mail.
 
 A paper (sits): docs/THEOREM-A-Q1.pdf
 B chain (open): docs/TRACK-B-CHAIN.pdf
