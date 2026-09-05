@@ -82,6 +82,9 @@ LEADS = [
     lead("Vasseur", "De Giorgi CKN", "B", "living",
          "De Giorgi iteration proves the same CKN partial regularity. H1 singular set small. Small is not empty. The 3/2 gap stays.",
          "De Giorgi = no blowup"),
+    lead("Wolf", "local pressure / local energy", "B", "living",
+         "A local pressure projection lets the same epsilon-regularity run without a global pressure. Still partial regularity. Small is not empty.",
+         "local pressure = no blowup"),
     lead("Farwig", "very weak solutions", "B", "living",
          "Very weak solutions sit in Serrin's class without differentiability. They are not Leray-Hopf. Uniqueness in that class is not a bound on X. Sohr stays out.",
          "very weak = bound on X"),
@@ -236,7 +239,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -487,6 +490,13 @@ CLAIMS = [
         "Masmoudi uniqueness of mild solutions bounds X",
         "fail",
         "Uniqueness in L^N is uniqueness, not an a priori on X.",
+    ),
+    rec(
+        "R36",
+        "wolf_local_pressure_is_no_blowup",
+        "Wolf local pressure is no blowup",
+        "fail",
+        "Local pressure is a tool for the same epsilon-regularity. Small is not empty.",
     ),
 ]
 

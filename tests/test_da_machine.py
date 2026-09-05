@@ -347,6 +347,12 @@ class DaMachineTests(unittest.TestCase):
         uniq = classify_claim("Masmoudi uniqueness of mild solutions on a vorticity packet")
         self.assertEqual(uniq["domain"], "B")
         self.assertEqual(uniq["verdict"], "open")
+        wolf = classify_claim("seat Wolf as a wall on the living bench")
+        self.assertEqual(wolf["domain"], "U")
+        self.assertEqual(wolf["verdict"], "open")
+        press = classify_claim("Wolf local pressure on a vorticity packet")
+        self.assertEqual(press["domain"], "B")
+        self.assertEqual(press["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

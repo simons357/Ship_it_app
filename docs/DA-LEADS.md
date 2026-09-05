@@ -37,6 +37,7 @@ in your slot.
 | Kohn | partial regularity | Measure zero is not no blowup. A decaying box is not either. | DNS-never-blew-up |
 | Lin | CKN new proof | A new proof of CKN still uses \(\varepsilon\)-regularity. Velocity \(L^3\), pressure \(L^{3/2}\). Small is not empty. | new proof \(=\) no blowup |
 | Vasseur | De Giorgi CKN | De Giorgi iteration proves the same CKN partial regularity. \(H^1\) singular set small. The \(3/2\) gap stays. | De Giorgi \(=\) no blowup |
+| Wolf | local pressure / local energy | Local pressure projection lets the same \(\varepsilon\)-regularity run without a global pressure. Still partial regularity. Small is not empty. | local pressure \(=\) no blowup |
 | Nirenberg | partial regularity | Keep us on the wall. | 1934–1982 as a close |
 | Constantin | geometry | Stretching dies **if** aligned. CONC is not that if. The 1996 Euler if is a different equation. | all-data alignment; Euler if \(=\) NS A1 |
 | Fefferman | geometry | Do not glue Ring to Biot–Savart. Pretty-damn-close is that glue. | the slogan |
@@ -134,6 +135,7 @@ in your slot.
 | Farwig very weak solutions bound \(X\) | **fail** |
 | Cheskidov energy equality bounds \(X\) | **fail** |
 | Masmoudi uniqueness of mild solutions bounds \(X\) | **fail** |
+| Wolf local pressure is no blowup | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

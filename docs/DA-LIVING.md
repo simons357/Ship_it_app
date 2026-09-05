@@ -35,6 +35,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Partial regularity | Caffarelli, Kohn | singular set small | small \(=\) empty |
 | CKN new proof | Lin | simplified \(\varepsilon\)-regularity; velocity \(L^3\), pressure \(L^{3/2}\) | new proof \(=\) no blowup |
 | De Giorgi CKN | Vasseur | De Giorgi iteration proves the same CKN theorem | De Giorgi \(=\) no blowup |
+| Local pressure / local energy | Wolf | local pressure projection; CKN without a global pressure | local pressure \(=\) no blowup |
 | Geometry | Constantin, Fefferman | depletion *if* aligned | CONC \(\Rightarrow\) alignment |
 | Geometric if (weaker than CF) | Beirão da Veiga–Berselli | weaker direction space still regularizes | the if is all-data A1 |
 | Triebel–Lizorkin geometric if | Chae | direction in a Triebel–Lizorkin norm trades against \(\lvert\omega\rvert\) | the if is all-data A1 |
@@ -138,6 +139,11 @@ partial regularity (NoDEA 2007). Hausdorff one-measure
 zero is not empty. If the iteration cleared \(3/2\) it
 would be full regularity. It does not. Luis, Bob, Fanghua
 — Scheffer is not in this room.
+
+**Wolf.** A local pressure projection lets the same
+\(\varepsilon\)-regularity run without a global pressure.
+Still partial regularity. Small is not empty. Luis, Bob,
+Alexis — Scheffer is not in this room.
 
 **Constantin.** Then geometry has to stay an “if.” CONC
 is a spectrum statement: a dominant shell. Peter and I
@@ -350,6 +356,7 @@ scores the process, not a theorem you did not prove.
 | Farwig very weak solutions close \(X\) | **fail** |
 | Cheskidov energy equality closes \(X\) | **fail** |
 | Masmoudi uniqueness of mild solutions closes \(X\) | **fail** |
+| Wolf local pressure closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

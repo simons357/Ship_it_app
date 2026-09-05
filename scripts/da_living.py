@@ -118,6 +118,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Wolf",
+        ["Caffarelli", "Kohn", "Vasseur"],
+        "A local pressure projection lets the same epsilon-regularity run without a global pressure. Still partial regularity. Small is not empty. Scheffer is not in this room.",
+        "B",
+    ),
+    turn(
         "Constantin",
         ["Fefferman", "Tao"],
         "CONC is a spectrum statement. Our theorem is if aligned. The if is still an if. Concentration is not alignment.",
@@ -608,6 +614,13 @@ CLAIMS = [
         "fail",
         "CPDE 2001: uniqueness in C([0,T); L^N). Uniqueness is not regularity. Not a bound on X.",
     ),
+    rec(
+        "L44",
+        "wolf_local_pressure_closes_X",
+        "Wolf local pressure closes X",
+        "fail",
+        "Local pressure projection: CKN in arbitrary domains. Still epsilon-regularity. Small is not empty. Not no blowup.",
+    ),
 ]
 
 
@@ -623,6 +636,7 @@ KINGDOMS = [
     {"name": "Partial regularity", "who": "Caffarelli, Kohn", "slot": "B"},
     {"name": "CKN new proof", "who": "Lin", "slot": "B"},
     {"name": "De Giorgi CKN", "who": "Vasseur", "slot": "B"},
+    {"name": "Local pressure / local energy", "who": "Wolf", "slot": "B"},
     {"name": "Geometry", "who": "Constantin, Fefferman", "slot": "B"},
     {"name": "Geometric if (weaker than CF)", "who": "Beirao-Berselli", "slot": "B"},
     {"name": "Triebel-Lizorkin geometric if", "who": "Chae", "slot": "B"},
