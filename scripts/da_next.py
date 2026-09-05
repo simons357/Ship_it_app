@@ -101,6 +101,7 @@ SPOKES = [
     {"name": "look", "command": "look", "slot": "B", "does": "object window anytime"},
     {"name": "from", "command": "from", "slot": "U / B", "does": "your steps to the break; proceed toward regularity"},
     {"name": "proof", "command": "proof", "slot": "B", "does": "write the Navier-Stokes proof chain"},
+    {"name": "repair", "command": "repair", "slot": "U / A / B / Q", "does": "take A, SND, or H; name the fault and the write"},
 ]
 
 

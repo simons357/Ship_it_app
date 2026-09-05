@@ -64,6 +64,7 @@ freestyle. Not a vote. Not a séance.
 | Look | `look` | object window anytime | a bound |
 | From | `from` | your steps to the break; proceed | a fake last line |
 | Proof | `proof` | write the NS proof chain | QED without line (6) |
+| Repair | `repair` | take A, SND, or H; name the fault and the write | export A onto B |
 | Checker | `check --domain B` | run the leftover tests | a close |
 
 Re-run `feed` so the rim is not stale. `status` reports
@@ -89,8 +90,10 @@ age. A missing or \>24h scan is weaker.
 Print: `python3 scripts/da_machine.py next`  
 Lost: `python3 scripts/da_machine.py nowwhat`  
 Hunt: `python3 scripts/da_machine.py hunt`  
+Repair: `python3 scripts/da_machine.py next --ask "what's wrong with the augmented one"`  
 Council: [`DA-NOWWHAT.md`](DA-NOWWHAT.md)  
 Chain: [`DA-HUNT.md`](DA-HUNT.md)  
+Repair note: [`DA-REPAIR.md`](DA-REPAIR.md)  
 Feed: [`DA-FEED.md`](DA-FEED.md)  
 Agent: [`DA-AGENT.md`](DA-AGENT.md)  
 Residual: [`TRACK-B-RESIDUAL.md`](TRACK-B-RESIDUAL.md)

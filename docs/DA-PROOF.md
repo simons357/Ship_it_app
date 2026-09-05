@@ -26,6 +26,8 @@ not QED. If WRITE sits, the THEN lines are the close.
 
 More problems may join when a ground-floor chain is typed.
 
+Already have A / SND / H work and want the fault plus the repair write: [`DA-REPAIR.md`](DA-REPAIR.md). `python3 scripts/da_machine.py repair --job A`.
+
 ---
 
 ## Scored

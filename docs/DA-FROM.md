@@ -102,6 +102,7 @@ to write \(\mathcal{R}\).
 | The point is to close \(X\); refusing a fake close is refusing the attempt | **fail** |
 
 Proof chain: [`DA-PROOF.md`](DA-PROOF.md) · [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md)  
+Repair A / SND / H: [`DA-REPAIR.md`](DA-REPAIR.md). `python3 scripts/da_machine.py repair --job A`  
 Hunt: [`DA-HUNT.md`](DA-HUNT.md)  
 Council: [`DA-NOWWHAT.md`](DA-NOWWHAT.md)  
 Residual: [`TRACK-B-RESIDUAL.md`](TRACK-B-RESIDUAL.md)

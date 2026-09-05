@@ -111,6 +111,15 @@ def classify_claim(claim: str) -> dict:
     for pat, why in FORBIDDEN:
         if re.search(pat, text, flags=re.I):
             return {"domain": None, "verdict": "fail", "reason": f"forbidden: {why}"}
+    if re.search(
+        r"\brepair\b|\bwhat.?s wrong\b|\bhow to fix\b|\baugmented one\b",
+        text,
+    ):
+        return {
+            "domain": "U",
+            "verdict": "open",
+            "reason": "looks like score U / SM Lagrangian / waveform; run sm or how",
+        }
     if re.search(r"\bq_?1\b|augmented|ladyzhenskaya", text):
         return {"domain": "A", "verdict": "open", "reason": "looks like Track A; run check A"}
     if re.search(
@@ -777,6 +786,19 @@ def cmd_now() -> int:
     return 0
 
 
+def cmd_repair(job: str = "", ask: str = "") -> int:
+    from da_repair import print_repair
+
+    print_repair(job=job, ask=ask)
+    append_run(
+        "U",
+        "Take the operator's A / SND / H work; name the fault and the repair write",
+        "open",
+        "takes mine; Theorem A is this PDE; A=>B is not a repair",
+    )
+    return 0
+
+
 def cmd_proof(problem: str = "", ask: str = "") -> int:
     from da_proof import parse_problem, print_proof
 
@@ -849,11 +871,14 @@ def cmd_next(ask: str = "") -> int:
     from da_hunt import is_look_ask
     from da_next import is_lost_ask, run as next_run
     from da_proof import is_proof_ask
+    from da_repair import is_repair_ask
 
     if is_look_ask(ask):
         return cmd_look()
     if is_proof_ask(ask):
         return cmd_proof(ask=ask)
+    if is_repair_ask(ask):
+        return cmd_repair(ask=ask)
     if is_from_ask(ask):
         return cmd_from()
     if is_lost_ask(ask):
@@ -1097,6 +1122,15 @@ def main() -> int:
     sub.add_parser("mine", help="same as from")
     prf = sub.add_parser("proof", help="write a proof chain: NS or RH")
     prf.add_argument("--problem", default="", help="NS or RH")
+    rp = sub.add_parser(
+        "repair",
+        help="take A, SND, or H; name the fault and the repair write",
+    )
+    rp.add_argument(
+        "--job",
+        default="",
+        help="A | SND | H (aliases: augmented, CONC, SPREAD, theorem H, H_N). Empty prints all three.",
+    )
     sub.add_parser("desk", help="write-up roster + corpus method (papers, not a vote)")
     sub.add_parser("compute", help="computing techniques already wired, legal to borrow, or refuse")
     sub.add_parser("alert", help="plain-language text when a watched claim flips")
@@ -1177,6 +1211,8 @@ def main() -> int:
         return cmd_from()
     if args.cmd == "proof":
         return cmd_proof(problem=getattr(args, "problem", ""))
+    if args.cmd == "repair":
+        return cmd_repair(job=getattr(args, "job", ""))
     if args.cmd == "desk":
         return cmd_desk()
     if args.cmd == "compute":
