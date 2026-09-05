@@ -33,6 +33,7 @@ DEAD = {
         "Bourgain",
         "Pruss",
         "Raugel",
+        "DiPerna",
     }
 
 NOT_A_PERSON = {"Operator", "current math.AP", "operator"}
@@ -151,6 +152,13 @@ WATCH = [
         "kingdom": "vortex stretching / strain alignment",
         "involved": "stretching numerics; compared with Gibbon; Hou-adjacent",
         "do_not": "seat as a second stretching chair next to Gibbon",
+    },
+    {
+        "name": "Crippa",
+        "slot": "B",
+        "kingdom": "Regular Lagrangian Flow / quantitative transport",
+        "involved": "quantitative RLF with De Lellis; compared with Ambrosio",
+        "do_not": "seat as a second RLF chair next to Ambrosio",
     },
     {
         "name": "Kenig",

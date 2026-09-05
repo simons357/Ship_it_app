@@ -244,6 +244,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Ambrosio",
+        ["Germain", "Masmoudi"],
+        "A Regular Lagrangian Flow is uniqueness for the ODE. That is not a bound on X. Weak-strong stays Germain. Mild uniqueness stays Masmoudi. DiPerna is not in this room.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -985,6 +991,13 @@ CLAIMS = [
         "fail",
         "Physica D 2008: stretching identities and Euler standing. Identities and diagnostics are not a bound on X. Continuation stays Beale. Strain cut stays Miller. Euler singularity stays Elgindi.",
     ),
+    rec(
+        "L73",
+        "ambrosio_rlf_closes_X",
+        "Ambrosio Regular Lagrangian Flow closes X",
+        "fail",
+        "Invent. Math. 2004: Regular Lagrangian Flow for BV fields. A well-defined ODE flow is not a bound on X. Weak-strong stays Germain. Mild uniqueness stays Masmoudi. DiPerna stays out.",
+    ),
 ]
 
 
@@ -1017,6 +1030,7 @@ KINGDOMS = [
     {"name": "Slip / inflow-outflow NS", "who": "Mucha", "slot": "B"},
     {"name": "Anisotropic NS / partial dissipation", "who": "Paicu", "slot": "B"},
     {"name": "Vortex stretching / strain-vorticity alignment", "who": "Gibbon", "slot": "B"},
+    {"name": "Regular Lagrangian Flow / DiPerna-Lions transport", "who": "Ambrosio", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

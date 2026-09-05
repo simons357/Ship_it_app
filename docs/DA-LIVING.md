@@ -52,6 +52,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Slip / inflow-outflow NS | Mucha | Navier–Stokes with slip or inflow-outflow boundary conditions | that variant bounds periodic no-slip \(X\) |
 | Anisotropic NS / partial dissipation | Paicu | global regularity for Navier–Stokes with dissipation in only some directions | that equation bounds isotropic \(X\) |
 | Vortex stretching / strain–vorticity alignment | Gibbon | stretching identities and Euler standing diagnostics | those identities bound \(X\) |
+| Regular Lagrangian Flow / DiPerna–Lions transport | Ambrosio | uniqueness of the ODE flow for BV fields | a well-defined flow bounds \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -310,6 +311,12 @@ stays off this chair.
 diagnostics are not a bound on \(X\). John, Evan —
 continuation stays Beale. Strain cut stays Miller. Euler
 singularity stays Elgindi. Ohkitani stays off this chair.
+
+**Ambrosio.** A Regular Lagrangian Flow is uniqueness for
+the ODE. That is not a bound on \(X\). Pierre, Nader —
+weak-strong stays Germain. Mild uniqueness stays
+Masmoudi. DiPerna is not in this room. Crippa stays off
+this chair. Dissipative solutions stay off this chair.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -592,6 +599,7 @@ scores the process, not a theorem you did not prove.
 | Mucha slip inflow NS closes \(X\) | **fail** |
 | Paicu anisotropic NS closes \(X\) | **fail** |
 | Gibbon vortex stretching closes \(X\) | **fail** |
+| Ambrosio Regular Lagrangian Flow closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

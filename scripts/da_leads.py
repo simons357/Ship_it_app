@@ -238,6 +238,9 @@ LEADS = [
     lead("Gibbon", "vortex stretching / strain-vorticity alignment", "B", "living",
          "Stretching identities and strain-vorticity diagnostics are not a bound on X. Continuation stays Beale. Strain cut stays Miller. Euler singularity stays Elgindi.",
          "stretching identity = bound on X"),
+    lead("Ambrosio", "Regular Lagrangian Flow / DiPerna-Lions transport", "B", "living",
+         "A Regular Lagrangian Flow is uniqueness for the ODE. That is not a bound on X. Weak-strong stays Germain. Mild uniqueness stays Masmoudi. DiPerna stays out.",
+         "ODE uniqueness = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -320,7 +323,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti", "Korobkov", "Hishida", "Mucha", "Paicu", "Gibbon",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti", "Korobkov", "Hishida", "Mucha", "Paicu", "Gibbon", "Ambrosio",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -774,6 +777,13 @@ CLAIMS = [
         "Gibbon vortex stretching bounds X",
         "fail",
         "Stretching identities are not enstrophy. Continuation stays Beale. Strain cut stays Miller. Euler singularity stays Elgindi.",
+    ),
+    rec(
+        "R65",
+        "ambrosio_rlf_bounds_X",
+        "Ambrosio Regular Lagrangian Flow bounds X",
+        "fail",
+        "A well-defined ODE flow is not enstrophy. Weak-strong stays Germain. Mild uniqueness stays Masmoudi. DiPerna stays out.",
     ),
 ]
 

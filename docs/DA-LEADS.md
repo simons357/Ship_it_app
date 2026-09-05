@@ -76,6 +76,7 @@ in your slot.
 | Mucha | slip / inflow-outflow NS | Slip or inflow-outflow NS is a boundary-condition variant. Not a bound on periodic no-slip \(X\). Exterior stays Hishida. Vanishing viscosity stays Kelliher. | slip \(=\) bound on \(X\) |
 | Paicu | anisotropic NS / partial dissipation | Anisotropic NS with partial dissipation is a different equation. Global regularity there is not a bound on isotropic \(X\). Primitive stays Cao. Density-dependent stays Danchin. | anisotropic \(=\) bound on \(X\) |
 | Gibbon | vortex stretching / strain–vorticity alignment | Stretching identities and strain–vorticity diagnostics are not a bound on \(X\). Continuation stays Beale. Strain cut stays Miller. Euler singularity stays Elgindi. | stretching identity \(=\) bound on \(X\) |
+| Ambrosio | Regular Lagrangian Flow / DiPerna–Lions transport | A Regular Lagrangian Flow is uniqueness for the ODE. That is not a bound on \(X\). Weak-strong stays Germain. Mild uniqueness stays Masmoudi. DiPerna stays out. | ODE uniqueness \(=\) bound on \(X\) |
 | Guillod | numerical non-uniqueness | Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity. | numerics \(=\) bound; numerics \(=\) blowup |
 | Seregin | local regularity / ESS | A criterion is not an a priori on \(X\). | criterion \(\Rightarrow\) bound |
 | Escauriaza | ESS \(L^3\) endpoint | \(L^\infty_t L^3_x\) is the endpoint. A criterion is not an a priori. Bounded in \(L^3\) is not a bound on enstrophy. | \(L^3\) endpoint \(=\) bound on \(X\) |
@@ -191,6 +192,7 @@ in your slot.
 | Mucha slip inflow NS bounds \(X\) | **fail** |
 | Paicu anisotropic NS bounds \(X\) | **fail** |
 | Gibbon vortex stretching bounds \(X\) | **fail** |
+| Ambrosio Regular Lagrangian Flow bounds \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
