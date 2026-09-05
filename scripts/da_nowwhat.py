@@ -17,6 +17,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from da_hunt import OBJECT, print_object_window  # noqa: E402
 from da_next import WALL  # noqa: E402
 
 
@@ -389,6 +390,7 @@ def run(out: Path | None = None) -> dict:
         "here": HERE,
         "missing": MISSING,
         "wall": WALL,
+        "object": OBJECT,
         "council": COUNCIL,
         "history": HISTORY,
         "claims": CLAIMS,
@@ -405,6 +407,7 @@ def run(out: Path | None = None) -> dict:
         "target": WALL["target_B"],
         "next_da_move": (
             "Pick one leftover would_try. Classify it. "
+            "Look anytime: python3 scripts/da_machine.py look. "
             "Or run hunt to walk the scored chain. "
             "History comments on method. Do not vote. "
             "Do not graft Q1 onto B. Re-run feed if the rim is stale."
@@ -419,6 +422,8 @@ def run(out: Path | None = None) -> dict:
 
 def print_nowwhat(out: Path | None = None) -> dict:
     payload = run(out=out)
+    print_object_window(payload["object"])
+    print()
     print("NOW WHAT")
     print(payload["here"])
     print()

@@ -12,6 +12,7 @@ Live feed (LIGO / LHC / PDG): `python3 scripts/da_machine.py feed`
 DA tick (agent-shaped): `python3 scripts/da_machine.py agent`  
 Lost-operator council: `python3 scripts/da_machine.py nowwhat`  
 Proof-chain hunter: `python3 scripts/da_machine.py hunt`  
+Object window: `python3 scripts/da_machine.py look`  
 Scene: `docs/DA-SESSION.md`  
 Living scene: `docs/DA-LIVING.md`  
 Leads: `docs/DA-LEADS.md`  

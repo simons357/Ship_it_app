@@ -61,6 +61,7 @@ freestyle. Not a vote. Not a séance.
 | Translate | `next --ask` | words → slot + math | invent \(\mathcal{R}\) |
 | Council | `nowwhat` | leftover papers: would try / cannot | a vote or a close |
 | Hunt | `hunt` | scored edges, blocked edges, object window | write \(\mathcal{R}\) |
+| Look | `look` | object window anytime | a bound |
 | Checker | `check --domain B` | run the leftover tests | a close |
 
 Re-run `feed` so the rim is not stale. `status` reports

@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from da_hunt import BLOCKED, CLAIMS, EDGES, LEGAL, MEANING, NODES, OBJECT, run  # noqa: E402
+from da_hunt import BLOCKED, CLAIMS, EDGES, LEGAL, MEANING, NODES, OBJECT, is_look_ask, run  # noqa: E402
 
 
 class DaHuntTests(unittest.TestCase):
@@ -31,6 +31,8 @@ class DaHuntTests(unittest.TestCase):
         self.assertEqual(by["H11"]["verdict"], "pass")
         self.assertEqual(by["H12"]["verdict"], "pass")
         self.assertEqual(by["H13"]["verdict"], "fail")
+        self.assertEqual(by["H14"]["verdict"], "pass")
+        self.assertTrue(payload["meta"]["look_anytime"])
         self.assertTrue(payload["meta"]["is_graph"])
         self.assertTrue(payload["meta"]["llm_does_not_fill"])
         self.assertTrue(payload["meta"]["uses_llm_to_phrase"])
@@ -55,6 +57,10 @@ class DaHuntTests(unittest.TestCase):
         self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))
         self.assertTrue((ROOT / "docs" / "DA-HUNT.md").is_file())
         self.assertIn("X = ||omega||_2^2", OBJECT["window"])
+        self.assertTrue(is_look_ask("look at the object"))
+        self.assertTrue(is_look_ask("open the window"))
+        self.assertFalse(is_look_ask(""))
+        self.assertFalse(is_look_ask("now what"))
 
 
 if __name__ == "__main__":

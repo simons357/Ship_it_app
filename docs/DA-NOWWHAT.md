@@ -2,7 +2,8 @@
 
 `python3 scripts/da_machine.py nowwhat`  
 `python3 scripts/da_machine.py next`  
-`python3 scripts/da_machine.py next --ask "now what"`
+`python3 scripts/da_machine.py next --ask "now what"`  
+`python3 scripts/da_machine.py look`
 
 The operator is a normal person. They say **now what.**
 DA does not send that sentence to a chatbot for a

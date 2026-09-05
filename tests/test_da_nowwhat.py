@@ -55,6 +55,7 @@ class DaNowwhatTests(unittest.TestCase):
             self.assertTrue(row["cannot"])
             self.assertEqual(row["bench"], "history")
         self.assertIn("X", payload["target"])
+        self.assertIn("X", payload["object"]["math"])
         self.assertNotIn("F is the NS", payload["missing"])
         self.assertTrue((ROOT / "docs" / "DA-NOWWHAT.md").is_file())
         self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))

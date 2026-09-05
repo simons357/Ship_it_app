@@ -14,6 +14,7 @@ The object stays in a window you can look at.
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -260,7 +261,28 @@ CLAIMS = [
         "fail",
         "Understanding is not the integral. H4 already killed the fill.",
     ),
+    rec(
+        "H14",
+        "look_anytime",
+        "You can look at the object anytime, not only inside hunt",
+        "pass",
+        "look and window are first-class. hunt --look is the same pane.",
+    ),
 ]
+
+
+def is_look_ask(ask: str) -> bool:
+    """A request to open the object window. Empty is not a look."""
+    text = (ask or "").lower().strip()
+    if not text:
+        return False
+    return bool(
+        re.search(
+            r"\blook\b|\bwindow\b|what is the object|"
+            r"show (me )?(the )?object|open the object",
+            text,
+        )
+    )
 
 
 def run(out: Path | None = None) -> dict:
@@ -275,6 +297,7 @@ def run(out: Path | None = None) -> dict:
             "uses_llm_to_phrase": True,
             "meaning_is_classify": True,
             "object_window": True,
+            "look_anytime": True,
             "does_not_write_X": True,
             "does_not_rerun_trackb": True,
         },
@@ -325,7 +348,8 @@ def print_hunt(out: Path | None = None, look: bool = False) -> dict:
     print_object_window(payload["object"])
     if look:
         print()
-        print("look only. Run hunt without --look for the chain.")
+        print("look only. Same pane as: python3 scripts/da_machine.py look")
+        print("Run hunt without --look for the chain.")
         print(f"wrote {payload['_wrote']}")
         return payload
     print()

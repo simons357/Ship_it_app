@@ -1,5 +1,7 @@
 # DA hunt — proof-chain hunter
 
+`python3 scripts/da_machine.py look`  
+`python3 scripts/da_machine.py window`  
 `python3 scripts/da_machine.py hunt`  
 `python3 scripts/da_machine.py chain`  
 `python3 scripts/da_machine.py hunt --look`
@@ -31,7 +33,10 @@ are already named. Understanding is not the integral.
 
 ## Object window
 
-Always on. Look whenever you want.
+Always on. Look whenever you want. `look` and
+`window` are first-class. You do not have to be
+inside `hunt`. `nowwhat` opens the same pane.
+`next --ask "look at the object"` opens it.
 
 \[
 X=\|\omega\|_2^2,\qquad
@@ -125,6 +130,7 @@ in the first place.
 | We use an LLM as the generator that phrases a claim | **pass** |
 | Context that sits is the graph; meaning that sits is classify | **pass** |
 | An LLM that understands context and meaning writes the leftover | **fail** |
+| You can look at the object anytime, not only inside hunt | **pass** |
 
 Object: [`TRACK-B-OBJECT.md`](TRACK-B-OBJECT.md)  
 Residual: [`TRACK-B-RESIDUAL.md`](TRACK-B-RESIDUAL.md)  

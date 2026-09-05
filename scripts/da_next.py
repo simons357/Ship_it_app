@@ -98,6 +98,7 @@ SPOKES = [
     {"name": "check B", "command": "check --domain B", "slot": "B", "does": "run the residual checker"},
     {"name": "nowwhat", "command": "nowwhat", "slot": "U / B", "does": "lost-operator council: 22 leftover papers"},
     {"name": "hunt", "command": "hunt", "slot": "U / B", "does": "proof-chain hunter: edges, blocks, object window"},
+    {"name": "look", "command": "look", "slot": "B", "does": "object window anytime"},
 ]
 
 
