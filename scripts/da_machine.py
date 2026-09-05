@@ -115,7 +115,8 @@ def classify_claim(claim: str) -> dict:
         r"\brepair\b|\bwhat.?s wrong\b|\bhow to fix\b|\baugmented one\b|"
         r"\bdream team\b|\banalyze my\b|\bcomplete the chain\b|"
         r"\brenormali[sz]|\bda attempt\b|\bmy rh\b|"
-        r"\btry every\b|\bquantum comput|\bsupercomput|\bbrute\b",
+        r"\btry every\b|\bquantum comput|\bsupercomput|\bbrute\b|"
+        r"\bneed to close\b|\beinstein\b|\btesla\b",
         text,
     ):
         return {
@@ -1168,7 +1169,7 @@ def main() -> int:
     at.add_argument(
         "--job",
         default="",
-        help="A | RH. Empty prints both.",
+        help="A | RH | SND | H. Empty prints all four.",
     )
     rp = sub.add_parser(
         "repair",

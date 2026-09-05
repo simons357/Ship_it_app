@@ -103,6 +103,11 @@ JOBS = {
             "obstruction that it cannot. That write stays on A. Classical "
             "NS then still needs a separate Track B argument."
         ),
+        "need_to_close": [
+            "This PDE: already closed (Theorem A).",
+            "Renormalization close: ||u||_H1 finite as eps->0, or a named no-go.",
+            "Classical NS: that uniform bound, then a separate Track B argument.",
+        ],
         "completed": (
             "This PDE: the chain is already complete (Theorem A). "
             "The renormalization to eps=0 is not complete. "
@@ -219,6 +224,11 @@ JOBS = {
             "certificate in the explicit formula, or one new estimate "
             "that forces the line. Do not use Theorem P, Bridge*, or H_N."
         ),
+        "need_to_close": [
+            "RH close: every non-trivial zero has Re s = 1/2.",
+            "Q floors H_N>=-1 and Theorem P: already closed as Q, not as RH.",
+            "Do not close RH with a GCD matrix.",
+        ],
         "completed": (
             "RH through (5): complete (literature + classical). "
             "RH WRITE (6): not complete. "
@@ -292,6 +302,193 @@ JOBS = {
             "Do not revive -3/14 or the full Q floor."
         ),
     },
+    "SND": {
+        "id": "SND",
+        "aliases": ("snd", "conc", "spread", "3-conc"),
+        "name": "SND — two regimes, one leftover write",
+        "slot": "B",
+        "furthest": (
+            "August CONC (inf J/X >= c_*) and June SPREAD (rho <= rho0 < 1) "
+            "were both called SND. The desk froze 3-CONC / EQ3 / SPREAD. "
+            "Bridge* glue is withdrawn. The remaining write is SND-C in SPREAD."
+        ),
+        "progress": [
+            {"id": "SND1", "what": "two names: CONC (sigma>=1/2) and SPREAD (sigma<1/2)", "verdict": "pass"},
+            {"id": "SND2", "what": "Bridge* implies SND", "verdict": "fail"},
+            {"id": "SND3", "what": "one word SND for both statements", "verdict": "fail"},
+            {"id": "SND4", "what": "SIMPLEX / GCD arithmetic on this track", "verdict": "fail"},
+            {"id": "SND5", "what": "Phi in front of H on this track", "verdict": "fail"},
+            {"id": "SND6", "what": "uniform SND-C in SPREAD (low paraproduct as rho->0)", "verdict": "open"},
+            {"id": "SND7", "what": "all-data CONC Ring / geometry bound", "verdict": "open"},
+            {"id": "SND8", "what": "two-regime a priori is an all-data bound on X", "verdict": "fail"},
+        ],
+        "errors_corrected": [
+            "One word for opposites.",
+            "Bridge* glued to SND.",
+            "Phi put in front of H.",
+            "SIMPLEX used GCD arithmetic.",
+            "Closing SND is not closing X.",
+        ],
+        "needs": (
+            "CONC: an all-data Ring / geometry bound when sigma>=1/2. "
+            "SPREAD: uniform energy-class SND-C as rho->0. "
+            "X still needs integrable R after that. SND is not X."
+        ),
+        "need_to_close": [
+            "CONC close: all-data stretching bound on sigma>=1/2 (Ring / geometry if).",
+            "SPREAD close: uniform low paraproduct |T| as rho->0. That is SND-C.",
+            "X close: still int_0^T R < infinity. SND sitting is not that integral.",
+        ],
+        "completed": (
+            "Hygiene complete: two names, Bridge* cut, Phi cut. "
+            "SND-C not complete. CONC a priori not complete. X not complete."
+        ),
+        "docs": ("docs/DA-REPAIR.md", "docs/UNAUGMENTED-R4-VORTICITY-PLAN.md"),
+        "team": [
+            chair(
+                "Einstein",
+                "program review: principle before the catalog",
+                "Name the object before the list. CONC and SPREAD are two principles, not one brand.",
+                "Write the occupation rho=J/X. State the regime. Then the estimate. Do not start from a slogan SND.",
+                "Sit here and emit the paraproduct bound. A two-sided couple is not SND-C.",
+                "Split the name. Refuse one-symbol SND. The principle is the regime.",
+                True,
+            ),
+            chair(
+                "Tesla",
+                "program review: a resonator you can detune",
+                "Name the knob and the script that must move. If nothing is detunable, it does not sit.",
+                "Knob: rho. Script: a bound on the low Bony T as rho->0. Detune rho down. The script must still hold.",
+                "Permute knobs or vote the bound. A resonator is not a sweep.",
+                "Write the detunable claim: uniform |T| as rho->0, energy class, T^3, no eps. Classify it.",
+                True,
+            ),
+            chair(
+                "Constantin",
+                "geometric depletion if aligned",
+                "On CONC, geometry is an if. Alignment is not automatic from occupation.",
+                "CF-if on omega. CONC is a shell hypothesis, not already aligned.",
+                "Cash a cover of shells as the CONC close.",
+                "Keep CONC geometry as an if. That if is A1 on B, not SND-C.",
+                True,
+            ),
+            chair(
+                "Fefferman",
+                "alignment if on the classical field",
+                "If CONC is to close stretching, write alignment in time for all data.",
+                "A1: the if behind hole 1. Not a box reading.",
+                "SND as Fefferman A1. Different objects.",
+                "Send CONC-close to the A1 write. Do not mix with SPREAD SND-C.",
+                True,
+            ),
+            chair(
+                "Tao",
+                "regularized cousins / residual honesty",
+                "Keep the leftover honest. A two-regime sketch is not an a priori on X.",
+                "Name the residual. Do not glue Q or an averaged cousin onto SND.",
+                "Bridge* or Q1 as the SND close.",
+                "Score SND8 fail. The next write is SND-C or A1, then still R.",
+                True,
+            ),
+        ],
+        "da_does": (
+            "Keep two names. Cut Phi and Q. "
+            "Name the two close-writes (CONC a priori, SPREAD SND-C). "
+            "Refuse SND=>X. Einstein splits the principle. Tesla names rho and the script."
+        ),
+    },
+    "H": {
+        "id": "H",
+        "aliases": ("theorem h", "h-floor", "h_n", "snd-c", "h problem"),
+        "name": "H — two objects (fluids SND-C and arithmetic H_N)",
+        "slot": "B / Q",
+        "furthest": (
+            "Fluids: Theorem H = SND-C in SPREAD via Bony T+T*+R. "
+            "Arithmetic: lambda_min(H_N)>=-1, proved by pairing. "
+            "Both sit as statements. They are not the same H. "
+            "Theorem F (super-exponential) is too strong. -3/14 is false."
+        ),
+        "progress": [
+            {"id": "H1", "what": "fluids H named as SND-C in SPREAD (Bony T+T*+R)", "verdict": "pass"},
+            {"id": "H2", "what": "arithmetic H_N >= -1 by pairing", "verdict": "pass"},
+            {"id": "H3", "what": "two H objects kept unglued", "verdict": "pass"},
+            {"id": "H4", "what": "Theorem F: super-exponential dissipation as rho->0", "verdict": "fail"},
+            {"id": "H5", "what": "Phi in front of fluids H", "verdict": "fail"},
+            {"id": "H6", "what": "H_N >= -3/14", "verdict": "fail"},
+            {"id": "H7", "what": "Q > -1/2 for all N", "verdict": "fail"},
+            {"id": "H8", "what": "fluids H is the matrix H_N", "verdict": "fail"},
+            {"id": "H9", "what": "uniform energy-class low paraproduct as rho->0", "verdict": "open"},
+            {"id": "H10", "what": "H_N >= -1/4 (sharp floor)", "verdict": "open"},
+        ],
+        "errors_corrected": [
+            "Theorem F too strong.",
+            "Phi-glue on fluids H.",
+            "-3/14 revived.",
+            "Full Q floor revived.",
+            "Fluids H glued to H_N.",
+        ],
+        "needs": (
+            "Fluids: uniform SND-C on T^3, SPREAD, no eps, no Phi. "
+            "Arithmetic: H_N>=-1 already sits; H_N>=-1/4 is the remaining floor."
+        ),
+        "need_to_close": [
+            "Fluids H close: uniform |Pi_j*| / low Bony T in SPREAD. Same write as SND-C.",
+            "Arithmetic H close: H_N>=-1 already sits. Sharp close is H_N>=-1/4.",
+            "Do not close by identifying the two H's.",
+        ],
+        "completed": (
+            "H_N>=-1 complete (Q). Fluids H statement complete; the uniform bound is not. "
+            "H_N>=-1/4 not complete. Glue refused."
+        ),
+        "docs": (
+            "docs/DA-REPAIR.md",
+            "docs/UNAUGMENTED-R4-VORTICITY-PLAN.md",
+            "docs/SPECTRAL-FLOOR-EXPLORATION.md",
+        ),
+        "team": [
+            chair(
+                "Einstein",
+                "program review: two objects, two principles",
+                "Do not call two equations by one letter. Fluids H and H_N are different additions.",
+                "Name the field (velocity on T^3) or the matrix (degree-normalized Q-tilde). Then the estimate.",
+                "Add the two H's into one close. A couple is two-sided, not a glue.",
+                "Keep two slots. Fluids H stays B. H_N stays Q.",
+                True,
+            ),
+            chair(
+                "Tesla",
+                "program review: name the knob, name the script",
+                "Fluids knob: rho. Script: bound on low T as rho->0. Arithmetic knob: N. Script: lambda_min(H_N).",
+                "Detune rho; the fluids script must hold. Detune N; the arithmetic script already holds at -1.",
+                "Revive -3/14 or run a quantum sweep of N. A false floor is not a resonator.",
+                "Write fluids H as the SND-C claim. Keep H_N>=-1. Classify H_N>=-1/4 if you want sharp.",
+                True,
+            ),
+            chair(
+                "Bony",
+                "paraproduct T + T* + R",
+                "State H only as a bound on the low paraproduct in SPREAD.",
+                "Energy-class T+T*+R on T^3. No extra dissipation. Many shells need not be small.",
+                "Super-exponential F as the theorem. Uniformity is the write.",
+                "Delete F as a close. The remaining fluids write is uniform T as rho->0.",
+                True,
+            ),
+            chair(
+                "Tao",
+                "residual honesty",
+                "A named commutator is a claim. It is not X.",
+                "Classify SND-C. Do not export it onto classical leftover as done.",
+                "H_N as a vorticity bound.",
+                "Keep H9 open. Keep H8 fail.",
+                True,
+            ),
+        ],
+        "da_does": (
+            "Split the two H's. Keep H_N>=-1. Fail -3/14 and Q>-1/2. "
+            "Name fluids close as uniform SND-C. Einstein forbids the glue. "
+            "Tesla names rho / N and the two scripts."
+        ),
+    },
 }
 
 
@@ -299,17 +496,17 @@ CLAIMS = [
     rec(
         "D1",
         "take_best",
-        "DA can take the best A (Q1 + renormalization) and the furthest RH attempt",
+        "DA can take the best A, furthest RH, SND, and H and name what closes",
         "pass",
-        "A catalog and the Q floors plus the RH chain are already scored.",
+        "A catalog, RH chain, SND hygiene, and both H objects are already scored.",
     ),
     rec(
         "D2",
         "dream_team_looks",
-        "Field papers say what they would do, how, and what they cannot",
+        "Field papers and program review say what they would do, how, and what they cannot",
         "pass",
-        "Ladyzhenskaya / Malek / Temam / Tao / Fefferman / Constantin on A. "
-        "Riemann / Hadamard / de la Vallee Poussin / Hardy / Conrey / Weil on RH.",
+        "Einstein / Tesla name principle and knob on SND and H. "
+        "Field papers own the estimates. A review is not a vote.",
     ),
     rec(
         "D3",
@@ -367,6 +564,48 @@ CLAIMS = [
         "open",
         "A zero-free region to 1/2, a positivity certificate, or one new estimate. Not Q.",
     ),
+    rec(
+        "D11",
+        "need_to_close_snd_h",
+        "DA can print what has to sit to close SND and H",
+        "pass",
+        "CONC a priori; SPREAD SND-C; fluids uniform T; H_N>=-1 already sits; H_N>=-1/4 open.",
+    ),
+    rec(
+        "D12",
+        "einstein_tesla_write",
+        "Einstein and Tesla write SND-C or H_N>=-1/4 by sitting",
+        "fail",
+        "Program review names the principle and the knob. They cannot output the estimate.",
+    ),
+    rec(
+        "D13",
+        "snd_is_x",
+        "Closing SND closes X",
+        "fail",
+        "SND is two-regime hygiene plus SND-C. X still needs integrable R.",
+    ),
+    rec(
+        "D14",
+        "glue_two_h",
+        "Fluids H and H_N are one close",
+        "fail",
+        "Different objects. Einstein splits them. Tesla gives each a script.",
+    ),
+    rec(
+        "D15",
+        "snd_c_later",
+        "Uniform SND-C in SPREAD may sit later",
+        "open",
+        "Low paraproduct, energy class, rho->0. Tesla's fluids script.",
+    ),
+    rec(
+        "D16",
+        "h_quarter_later",
+        "H_N >= -1/4 may sit later",
+        "open",
+        "Numeric through N=200. Pairing does not prove it.",
+    ),
 ]
 
 
@@ -386,6 +625,13 @@ def parse_jobs(ask: str = "", job: str = "") -> list[str]:
         text,
     ):
         found.insert(0, "A")
+    if not found and re.search(r"\beinstein\b|\btesla\b", text):
+        found = ["SND", "H"]
+    if "H" not in found and re.search(
+        r"\b(?:job|repair|fix|close|attempt|theorem)\s+h\b|\bh problem\b",
+        text,
+    ):
+        found.append("H")
     return found
 
 
@@ -404,7 +650,9 @@ def is_attempt_ask(ask: str) -> bool:
             r"\brenormali[sz]|\bfurthest\b|\bmy rh\b|"
             r"\bmy (best )?(rh|augmented)\b|"
             r"\bexperts (look|do|say)\b|\bda attempt\b|"
-            r"\blook at (my )?(a|rh|augmented)\b",
+            r"\blook at (my )?(a|rh|augmented|snd|h)\b|"
+            r"\bneed to close\b|\bwhat.{0,12}close\b|"
+            r"\beinstein\b|\btesla\b|\bclose (snd|h)\b",
             text,
         )
     )
@@ -415,15 +663,17 @@ def run(out: Path | None = None, job: str | None = None, ask: str = "") -> dict:
     jobs = [JOBS[j] for j in picked] if picked else list(JOBS.values())
     payload = {
         "meta": {
-            "question": "analyze best A (Q1 + renormalization) and furthest RH; dream team looks; do the legal write",
+            "question": "what has to sit to close A, RH, SND, H; Einstein/Tesla review; legal write",
             "writeup": "docs/DA-ATTEMPT.md",
             "takes_mine": True,
             "uses_dream_team": True,
+            "uses_einstein_tesla": True,
             "vote_is_not_a_close": True,
             "a_this_pde_complete": True,
             "a_uniform_not_complete": True,
             "rh_write_not_complete": True,
             "q_is_not_rh": True,
+            "snd_is_not_x": True,
         },
         "jobs": jobs,
         "all_jobs": list(JOBS),
@@ -437,9 +687,9 @@ def run(out: Path | None = None, job: str | None = None, ask: str = "") -> dict:
             "open": sum(1 for c in CLAIMS if c["verdict"] == "open"),
         },
         "next_da_move": (
-            "This PDE is already closed. RH WRITE and A_uniform_H1 do not sit. "
-            "Pick one remaining write. Classify it. Do not glue Q to RH. "
-            "Do not export Olga."
+            "Pick one remaining write: uniform H1, RH (6), CONC a priori, "
+            "SND-C, or H_N>=-1/4. Classify it. Einstein names the object. "
+            "Tesla names the knob. Neither writes the estimate."
         ),
     }
     dest = Path(out) if out is not None else Path("results/da_attempt.json")
@@ -451,13 +701,16 @@ def run(out: Path | None = None, job: str | None = None, ask: str = "") -> dict:
 
 def print_attempt(out: Path | None = None, job: str | None = None, ask: str = "") -> dict:
     payload = run(out=out, job=job, ask=ask)
-    print("ATTEMPT  (your best work; dream team looks; legal write)")
+    print("ATTEMPT  (what has to sit to close; review looks; legal write)")
     print("Jobs:", ", ".join(payload["all_jobs"]))
-    print("A vote does not complete a missing line.")
+    print("Einstein names the object. Tesla names the knob. A vote does not write it.")
     print()
     for spec in payload["jobs"]:
         print(f"JOB {spec['id']}  {spec['name']}")
         print(f"  SLOT    {spec['slot']}")
+        print("  NEED TO CLOSE")
+        for line in spec.get("need_to_close") or [spec["needs"]]:
+            print(f"    {line}")
         print(f"  FURTHEST {spec['furthest']}")
         print("  PROGRESS")
         for row in spec["progress"]:

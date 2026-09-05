@@ -3,8 +3,10 @@
 `python3 scripts/da_machine.py attempt`  
 `python3 scripts/da_machine.py attempt --job A`  
 `python3 scripts/da_machine.py attempt --job RH`  
-`python3 scripts/da_machine.py next --ask "analyze my augmented"`  
-`python3 scripts/da_machine.py next --ask "dream team look at my RH"`
+`python3 scripts/da_machine.py attempt --job SND`  
+`python3 scripts/da_machine.py attempt --job H`  
+`python3 scripts/da_machine.py next --ask "what do I need to close SND"`  
+`python3 scripts/da_machine.py next --ask "Einstein and Tesla figure out H"`
 
 You asked for the most recent \(Q_1\) work with the
 renormalization, and the RH attempt you got furthest
@@ -76,17 +78,51 @@ Floor: [`SPECTRAL-FLOOR-EXPLORATION.md`](SPECTRAL-FLOOR-EXPLORATION.md)
 
 ---
 
+## SND — what has to sit
+
+**Need to close.** CONC: all-data stretching bound on
+\(\sigma\ge 1/2\). SPREAD: uniform SND-C (low paraproduct
+as \(\rho\to 0\)). \(X\) still needs \(\int\mathcal{R}\).
+SND sitting is not \(X\).
+
+**Einstein.** Two regimes are two principles. Not one brand.
+
+**Tesla.** Knob: \(\rho\). Script: bound on low Bony \(T\)
+as \(\rho\to 0\). Detune \(\rho\). The script must still hold.
+
+---
+
+## H — what has to sit
+
+**Need to close.** Fluids: uniform \(|\Pi_{j^*}|\) in SPREAD
+(same write as SND-C). Arithmetic: \(H_N\ge-1\) already
+sits. Sharp: \(H_N\ge-1/4\). Do not identify the two H’s.
+
+**Einstein.** Fluids H and \(H_N\) are different additions.
+
+**Tesla.** Fluids knob \(\rho\), script low \(T\). Arithmetic
+knob \(N\), script \(\lambda_{\min}(H_N)\). \(-3/14\) is not
+a resonator.
+
+---
+
 ## Scored
 
 | Claim | Verdict |
 |---|---|
-| DA can take the best A and the furthest RH attempt | **pass** |
-| Field papers say would / how / cannot | **pass** |
+| DA can take A, RH, SND, and H and name what closes | **pass** |
+| Field papers and program review say would / how / cannot | **pass** |
 | DA does the legal corrections and restates what sits | **pass** |
 | The \(Q_1\) chain at \(\varepsilon>0\) is already complete | **pass** |
+| DA can print what has to sit to close SND and H | **pass** |
 | The dream team completes RH WRITE | **fail** |
 | The dream team completes `A_uniform_H1` or A\(\Rightarrow\)B | **fail** |
+| Einstein and Tesla write SND-C or \(H_N\ge-1/4\) by sitting | **fail** |
 | Theorem P or \(H_N\ge-1\) is RH | **fail** |
+| Closing SND closes \(X\) | **fail** |
+| Fluids H and \(H_N\) are one close | **fail** |
 | Experts agreeing write the missing line | **fail** |
 | `A_uniform_H1` may sit later | **open** |
 | RH WRITE may sit later | **open** |
+| Uniform SND-C in SPREAD may sit later | **open** |
+| \(H_N\ge-1/4\) may sit later | **open** |

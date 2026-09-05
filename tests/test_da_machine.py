@@ -599,6 +599,12 @@ class DaMachineTests(unittest.TestCase):
         brute = classify_claim("try every combination on a quantum computer")
         self.assertEqual(brute["domain"], "U")
         self.assertEqual(brute["verdict"], "open")
+        close = classify_claim("what do I need to close SND")
+        self.assertEqual(close["domain"], "U")
+        self.assertEqual(close["verdict"], "open")
+        boys = classify_claim("let Einstein and Tesla figure out H")
+        self.assertEqual(boys["domain"], "U")
+        self.assertEqual(boys["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
