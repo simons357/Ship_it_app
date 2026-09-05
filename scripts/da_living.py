@@ -226,6 +226,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Mucha",
+        ["Hishida", "Kelliher"],
+        "Slip or inflow-outflow NS is a boundary-condition variant. That is not a bound on periodic no-slip X. Exterior stays Hishida. Vanishing viscosity stays Kelliher.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -946,6 +952,13 @@ CLAIMS = [
         "fail",
         "Exterior evolutionary NS / Stokes semigroup and spatial decay. A setting is not a bound on periodic X. Steady exterior stays Galdi. Linear Stokes stays Hieber. Heywood stays out.",
     ),
+    rec(
+        "L70",
+        "mucha_slip_closes_X",
+        "Mucha slip inflow NS closes X",
+        "fail",
+        "Slip or inflow-outflow NS is a boundary-condition variant. Not a bound on periodic no-slip X. Exterior stays Hishida. Vanishing viscosity stays Kelliher.",
+    ),
 ]
 
 
@@ -975,6 +988,7 @@ KINGDOMS = [
     {"name": "Time-periodic NS", "who": "Maremonti", "slot": "B"},
     {"name": "Steady 2D Liouville / Leray problem", "who": "Korobkov", "slot": "B"},
     {"name": "Exterior evolutionary NS / spatial decay", "who": "Hishida", "slot": "B"},
+    {"name": "Slip / inflow-outflow NS", "who": "Mucha", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

@@ -9,7 +9,7 @@ geniuses in the world is omniscience. That claim **fails**.
 A vote of names does not write \(X\).
 
 Dated 5 September 2026. The seated list is derived from the
-living session, including Hishida exterior evolutionary NS.
+living session, including Mucha slip / inflow-outflow NS.
 The watch list is next papers, not a seat.
 
 ---

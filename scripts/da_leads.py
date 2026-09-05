@@ -229,6 +229,9 @@ LEADS = [
     lead("Hishida", "exterior evolutionary NS / spatial decay", "B", "living",
          "Evolutionary NS in an exterior domain is a setting. Spatial decay and a Stokes semigroup are not a bound on periodic X. Steady exterior stays Galdi. Linear Stokes stays Hieber. Heywood stays out.",
          "exterior evolutionary = bound on X"),
+    lead("Mucha", "slip / inflow-outflow NS", "B", "living",
+         "Slip or inflow-outflow NS is a boundary-condition variant. That is not a bound on periodic no-slip X. Exterior stays Hishida. Vanishing viscosity stays Kelliher.",
+         "slip = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -311,7 +314,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti", "Korobkov", "Hishida",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti", "Korobkov", "Hishida", "Mucha",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -744,6 +747,13 @@ CLAIMS = [
         "Hishida exterior evolutionary NS bounds X",
         "fail",
         "A setting is not enstrophy. Steady exterior stays Galdi. Linear Stokes stays Hieber. Heywood stays out.",
+    ),
+    rec(
+        "R62",
+        "mucha_slip_bounds_X",
+        "Mucha slip inflow NS bounds X",
+        "fail",
+        "A boundary-condition variant is not enstrophy. Exterior stays Hishida. Vanishing viscosity stays Kelliher.",
     ),
 ]
 
