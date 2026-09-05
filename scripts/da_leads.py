@@ -190,6 +190,9 @@ LEADS = [
     lead("Rusin", "minimal singularity data", "B", "living",
          "If some H-dot-1/2 data produce a singularity, there exist data with minimal H-dot-1/2 norm that do. Compactness of a hypothetical set is not a bound on X. Does not prove a singularity. Sverak stays doors. Jia stays existence.",
          "minimal data = bound on X"),
+    lead("Germain", "weak-strong uniqueness", "B", "living",
+         "Multipliers and paramultipliers give weak-strong uniqueness. Uniqueness is not a bound on X. Mild uniqueness stays Masmoudi. Water waves stay off this chair.",
+         "weak-strong uniqueness = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -272,7 +275,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -614,6 +617,13 @@ CLAIMS = [
         "Rusin minimal singularity data bounds X",
         "fail",
         "A minimal-norm hypothetical is not enstrophy. Does not prove a singularity. Sverak stays doors. Jia stays existence.",
+    ),
+    rec(
+        "R49",
+        "germain_weak_strong_bounds_X",
+        "Germain weak-strong uniqueness bounds X",
+        "fail",
+        "Uniqueness is not enstrophy. Mild uniqueness stays Masmoudi. Water waves stay off this chair.",
     ),
 ]
 

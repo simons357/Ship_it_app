@@ -148,6 +148,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Germain",
+        ["Masmoudi", "Escauriaza"],
+        "Weak-strong uniqueness via multipliers and paramultipliers is uniqueness, not a bound on X. Mild uniqueness stays Masmoudi. The endpoint stays Escauriaza. Water waves stay off this chair.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -777,6 +783,13 @@ CLAIMS = [
         "fail",
         "JFA 2011: if some H-dot-1/2 data blow up, a minimal-norm datum does. Compactness of a hypothetical set is not a bound on X. Does not prove a singularity. Sverak stays doors. Jia stays existence.",
     ),
+    rec(
+        "L57",
+        "germain_weak_strong_closes_X",
+        "Germain weak-strong uniqueness closes X",
+        "fail",
+        "JDE 2006: multipliers and paramultipliers give weak-strong uniqueness. Uniqueness is not a bound on X. Mild uniqueness stays Masmoudi. Water waves stay off this chair.",
+    ),
 ]
 
 
@@ -793,6 +806,7 @@ KINGDOMS = [
     {"name": "A posteriori regularity", "who": "Robinson", "slot": "B"},
     {"name": "Critical ill-posedness", "who": "Pavlovic", "slot": "B"},
     {"name": "Minimal singularity data", "who": "Rusin", "slot": "B"},
+    {"name": "Weak-strong uniqueness", "who": "Germain", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

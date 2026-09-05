@@ -9,7 +9,7 @@ geniuses in the world is omniscience. That claim **fails**.
 A vote of names does not write \(X\).
 
 Dated 5 September 2026. The seated list is derived from the
-living session, including Rusin minimal singularity data.
+living session, including Germain weak-strong uniqueness.
 The watch list is next papers, not a seat.
 
 ---
@@ -43,7 +43,7 @@ These are living chairs whose papers can sit. They are
 | Shvydkoy | B | Onsager lectures | twin of Isett or Cheskidov |
 | Friedlander | B | hydrodynamic instability | twin of Elgindi or Isett |
 | Bedrossian | B | mixing / enhanced dissipation | seat without a homogeneous NS theorem |
-| Germain | B | dispersive / water waves | a different equation as a bound on \(X\) |
+| Staffilani | B | \(BMO^{-1}\) regularity of small Koch–Tataru solutions | twin of Koch–Tataru or Pavlović |
 | Silvestre | B | Hölder / drift-diffusion | export a different equation onto NS |
 | Kenig | B | unique continuation | twin of Kukavica |
 | Maynard | Q | bounded gaps | map a gap theorem onto \(\omega\cdot S\omega\) |

@@ -311,6 +311,9 @@ Rusin minimal \(\dot H^{1/2}\) singularity data is
 compactness of a hypothetical set, not a bound on
 \(X\). It does not prove a singularity. Šverák stays
 doors. Jia stays existence.
+Germain weak-strong uniqueness (JDE 2006) is
+uniqueness, not a bound on \(X\). Mild uniqueness
+stays Masmoudi. Water waves stay off this chair.
 Sit down on leftover-close B42. Stretching budget is not an a priori
 (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.

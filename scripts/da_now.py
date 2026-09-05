@@ -74,11 +74,11 @@ WATCH = [
         "do_not": "seat without a homogeneous 3D NS theorem",
     },
     {
-        "name": "Germain",
+        "name": "Staffilani",
         "slot": "B",
-        "kingdom": "dispersive / water waves",
-        "involved": "need a named homogeneous NS theorem",
-        "do_not": "seat a different equation as a bound on X",
+        "kingdom": "BMO-1 regularity of small Koch-Tataru solutions",
+        "involved": "Germain-Pavlovic-Staffilani; already covered as Koch-Tataru plus Pavlovic",
+        "do_not": "seat as a twin of Koch-Tataru or Pavlovic",
     },
     {
         "name": "Silvestre",

@@ -60,6 +60,7 @@ in your slot.
 | Robinson | a posteriori regularity | A numerical certificate implies regularity. Still an if. A computed bound is not a bound on \(X\). Hou stays computation as probe. | a posteriori certificate \(=\) bound on \(X\) |
 | Pavlović | critical ill-posedness | Ill-posed in \(\dot B^{-1}_{\infty,\infty}\) by norm inflation. Not a bound on \(X\). Small critical stays Koch–Tataru. Bourgain stays out. | ill-posedness \(=\) bound on \(X\) |
 | Rusin | minimal singularity data | If some \(\dot H^{1/2}\) data blow up, a minimal-norm datum does. Compactness of a hypothetical set is not a bound on \(X\). Does not prove a singularity. | minimal data \(=\) bound on \(X\) |
+| Germain | weak-strong uniqueness | Multipliers and paramultipliers give weak-strong uniqueness. Uniqueness is not a bound on \(X\). Mild uniqueness stays Masmoudi. Water waves stay off this chair. | weak-strong uniqueness \(=\) bound on \(X\) |
 | Guillod | numerical non-uniqueness | Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity. | numerics \(=\) bound; numerics \(=\) blowup |
 | Seregin | local regularity / ESS | A criterion is not an a priori on \(X\). | criterion \(\Rightarrow\) bound |
 | Escauriaza | ESS \(L^3\) endpoint | \(L^\infty_t L^3_x\) is the endpoint. A criterion is not an a priori. Bounded in \(L^3\) is not a bound on enstrophy. | \(L^3\) endpoint \(=\) bound on \(X\) |
@@ -159,6 +160,7 @@ in your slot.
 | Robinson a posteriori regularity bounds \(X\) | **fail** |
 | Pavlović critical ill-posedness bounds \(X\) | **fail** |
 | Rusin minimal singularity data bounds \(X\) | **fail** |
+| Germain weak-strong uniqueness bounds \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

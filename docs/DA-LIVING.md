@@ -36,6 +36,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | A posteriori regularity | Robinson | a numerical certificate implies regularity | the certificate bounds \(X\) |
 | Critical ill-posedness | Pavlović | Cauchy problem ill-posed in \(\dot B^{-1}_{\infty,\infty}\) by norm inflation | ill-posedness bounds \(X\) |
 | Minimal singularity data | Rusin | if some \(\dot H^{1/2}\) data blow up, a minimal-norm datum does | compactness of a hypothetical set bounds \(X\) |
+| Weak-strong uniqueness | Germain | multipliers and paramultipliers give weak-strong uniqueness | uniqueness bounds \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -186,6 +187,14 @@ singularity exists. Vladimír, Hao — Liouville and
 ancient stay Šverák. Large-data profiles stay Jia.
 The Gallagher–Koch–Planchon \(L^3\) profile argument
 stays off this chair. Gabriel Koch, not Herbert.
+
+**Germain.** Weak-strong uniqueness via multipliers and
+paramultipliers (J. Differential Equations 226, 2006).
+That is uniqueness, not a bound on \(X\). Nader, Luis —
+mild uniqueness stays Masmoudi. The endpoint stays
+Escauriaza. Water waves stay off this chair.
+Staffilani–Pavlović \(BMO^{-1}\) regularity stays
+Koch–Tataru.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -452,6 +461,7 @@ scores the process, not a theorem you did not prove.
 | Robinson a posteriori regularity closes \(X\) | **fail** |
 | Pavlović critical ill-posedness closes \(X\) | **fail** |
 | Rusin minimal singularity data closes \(X\) | **fail** |
+| Germain weak-strong uniqueness closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |
