@@ -32,6 +32,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Unique continuation | Kukavica | strong unique continuation for differences of solutions | vanishing order bounds \(X\) |
 | Ancient Liouville / KNSS | Nadirashvili | bounded ancient mild solutions classified in 2D and axisymmetric no-swirl | those Liouville theorems close \(X\) |
 | Type I / ancient correspondence | Barker | Type I singularity iff a nontrivial mild bounded ancient with Type I decay | the iff bounds \(X\) |
+| Sequential \(L^3\) Liouville | Barker | ancient solutions bounded in \(L^3\) along a backward sequence are trivial | sequential Liouville bounds \(X\) |
 | A posteriori regularity | Robinson | a numerical certificate implies regularity | the certificate bounds \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
@@ -152,7 +153,11 @@ Gregory, Vladimír, Luis — Gabriel Koch, not Herbert.
 mild bounded ancient with Type I decay (J. Math. Fluid
 Mech. 2019, with Albritton). An iff is not a bound on
 \(X\). Nikolai, Vladimír, Dallas — forced Leray is
-Albritton's chair.
+Albritton's chair. Ancient solutions bounded in \(L^3\)
+along a backward sequence of times are trivial. That
+sequential Liouville is not a bound on \(X\). Luis,
+Nikolai — the endpoint stays Escauriaza. KNSS stays
+Nadirashvili.
 
 **Robinson.** A numerical certificate that a residual
 stays below a threshold implies regularity (J. Math. Phys.
@@ -421,6 +426,7 @@ scores the process, not a theorem you did not prove.
 | Danchin density-dependent NS closes \(X\) | **fail** |
 | Kukavica unique continuation closes \(X\) | **fail** |
 | Barker Type I ancient closes \(X\) | **fail** |
+| Barker sequential \(L^3\) Liouville closes \(X\) | **fail** |
 | Robinson a posteriori regularity closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

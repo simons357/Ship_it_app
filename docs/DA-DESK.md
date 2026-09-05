@@ -301,6 +301,7 @@ Kukavica unique continuation is vanishing order, not a
 bound on \(X\). Not the one-component chair.
 Barker Type I iff ancient is an equivalence, not a
 bound on \(X\). Forced Leray stays Albritton.
+Barker sequential \(L^3\) Liouville is not ESS.
 Robinson a posteriori regularity is a numerical
 certificate, still an if, not a bound on \(X\).
 Sit down on leftover-close B42. Stretching budget is not an a priori

@@ -56,7 +56,7 @@ in your slot.
 | Lemarié-Rieusset | local Leray solutions | Locally finite energy, no decay at infinity. That class is not a bound on global \(X\). | local Leray \(=\) bound on \(X\) |
 | Danchin | inhomogeneous / density-dependent NS | Density-dependent Navier–Stokes is a different equation. Not a bound on homogeneous \(X\). Heywood stays out. | inhomogeneous \(=\) bound on \(X\) |
 | Kukavica | unique continuation | Strong unique continuation for differences of solutions is not a bound on \(X\). Vanishing order is not enstrophy. Not the one-component chair. | unique continuation \(=\) bound on \(X\) |
-| Barker | Type I / ancient correspondence | Type I blowup iff a nontrivial mild bounded ancient with Type I decay. An iff is not a bound on \(X\). Forced Leray stays Albritton. | Type I iff ancient \(=\) bound on \(X\) |
+| Barker | Type I / ancient correspondence | Type I blowup iff a nontrivial mild bounded ancient with Type I decay. An iff is not a bound on \(X\). Sequential \(L^3\) Liouville is not ESS. | Type I iff ancient \(=\) bound; sequential \(L^3=\) bound |
 | Robinson | a posteriori regularity | A numerical certificate implies regularity. Still an if. A computed bound is not a bound on \(X\). Hou stays computation as probe. | a posteriori certificate \(=\) bound on \(X\) |
 | Guillod | numerical non-uniqueness | Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity. | numerics \(=\) bound; numerics \(=\) blowup |
 | Seregin | local regularity / ESS | A criterion is not an a priori on \(X\). | criterion \(\Rightarrow\) bound |
@@ -153,6 +153,7 @@ in your slot.
 | Danchin density-dependent NS bounds \(X\) | **fail** |
 | Kukavica unique continuation bounds \(X\) | **fail** |
 | Barker Type I ancient bounds \(X\) | **fail** |
+| Barker sequential \(L^3\) Liouville bounds \(X\) | **fail** |
 | Robinson a posteriori regularity bounds \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |

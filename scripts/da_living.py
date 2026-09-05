@@ -124,6 +124,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Barker",
+        ["Escauriaza", "Nadirashvili"],
+        "Ancient solutions bounded in L3 along a backward sequence of times are trivial. A sequential Liouville is not a bound on X. The endpoint stays Escauriaza. KNSS stays Nadirashvili.",
+        "B",
+    ),
+    turn(
         "Robinson",
         ["Hou", "Constantin"],
         "A numerical certificate that a residual stays below a threshold implies regularity. That is still an if. A computed bound is not a bound on X. Computation as probe is Hou's chair.",
@@ -732,6 +738,13 @@ CLAIMS = [
         "JMFM 2019: Type I singularity iff a nontrivial mild bounded ancient with Type I decay. An iff is not a bound on X. Forced Leray stays Albritton.",
     ),
     rec(
+        "L54",
+        "barker_sequential_l3_closes_X",
+        "Barker sequential L3 Liouville closes X",
+        "fail",
+        "JMFM 2019: ancient solutions bounded in L3 along a backward sequence are trivial. A sequential Liouville is not a bound on X. ESS stays Escauriaza.",
+    ),
+    rec(
         "L53",
         "robinson_a_posteriori_closes_X",
         "Robinson a posteriori regularity closes X",
@@ -750,6 +763,7 @@ KINGDOMS = [
     {"name": "Unique continuation", "who": "Kukavica", "slot": "B"},
     {"name": "Ancient Liouville / KNSS", "who": "Nadirashvili", "slot": "B"},
     {"name": "Type I / ancient correspondence", "who": "Barker", "slot": "B"},
+    {"name": "Sequential L3 Liouville", "who": "Barker", "slot": "B"},
     {"name": "A posteriori regularity", "who": "Robinson", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
