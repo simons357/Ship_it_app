@@ -232,6 +232,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Paicu",
+        ["Cao", "Danchin"],
+        "Anisotropic NS with partial dissipation is a different equation. Global regularity there is not a bound on isotropic X. Primitive stays Cao. Density-dependent stays Danchin.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -959,6 +965,13 @@ CLAIMS = [
         "fail",
         "Slip or inflow-outflow NS is a boundary-condition variant. Not a bound on periodic no-slip X. Exterior stays Hishida. Vanishing viscosity stays Kelliher.",
     ),
+    rec(
+        "L71",
+        "paicu_anisotropic_closes_X",
+        "Paicu anisotropic NS closes X",
+        "fail",
+        "Anisotropic NS with partial dissipation is a different equation. Global regularity there is not a bound on isotropic X. Primitive stays Cao. Density-dependent stays Danchin.",
+    ),
 ]
 
 
@@ -989,6 +1002,7 @@ KINGDOMS = [
     {"name": "Steady 2D Liouville / Leray problem", "who": "Korobkov", "slot": "B"},
     {"name": "Exterior evolutionary NS / spatial decay", "who": "Hishida", "slot": "B"},
     {"name": "Slip / inflow-outflow NS", "who": "Mucha", "slot": "B"},
+    {"name": "Anisotropic NS / partial dissipation", "who": "Paicu", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

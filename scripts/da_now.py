@@ -139,6 +139,13 @@ WATCH = [
         "do_not": "seat as a second exterior-evolutionary chair next to Hishida",
     },
     {
+        "name": "Ping Zhang",
+        "slot": "B",
+        "kingdom": "anisotropic NS / partial dissipation",
+        "involved": "often with Paicu on anisotropic NS; also density-dependent",
+        "do_not": "seat as a second anisotropic chair next to Paicu",
+    },
+    {
         "name": "Kenig",
         "slot": "B",
         "kingdom": "unique continuation",

@@ -50,6 +50,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Steady 2D Liouville / Leray problem | Korobkov | 2D steady Leray problem and Liouville theorems | 2D steady bounds 3D evolutionary \(X\) |
 | Exterior evolutionary NS / spatial decay | Hishida | evolutionary NS in an exterior domain; Stokes semigroup and spatial decay | that setting bounds periodic \(X\) |
 | Slip / inflow-outflow NS | Mucha | Navier–Stokes with slip or inflow-outflow boundary conditions | that variant bounds periodic no-slip \(X\) |
+| Anisotropic NS / partial dissipation | Paicu | global regularity for Navier–Stokes with dissipation in only some directions | that equation bounds isotropic \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -297,6 +298,12 @@ is not in this room. Abe stays off this chair.
 boundary-condition variant. That is not a bound on
 periodic no-slip \(X\). Toshiaki, James — exterior stays
 Hishida. Vanishing viscosity stays Kelliher.
+
+**Paicu.** Anisotropic NS with partial dissipation is a
+different equation. Global regularity there is not a
+bound on isotropic \(X\). Chongsheng, Raphaël — primitive
+stays Cao. Density-dependent stays Danchin. Ping Zhang
+stays off this chair.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -577,6 +584,7 @@ scores the process, not a theorem you did not prove.
 | Korobkov 2D steady Leray closes \(X\) | **fail** |
 | Hishida exterior evolutionary NS closes \(X\) | **fail** |
 | Mucha slip inflow NS closes \(X\) | **fail** |
+| Paicu anisotropic NS closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |
