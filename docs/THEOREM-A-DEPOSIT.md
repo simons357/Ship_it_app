@@ -45,6 +45,11 @@ You cannot patent the estimate. You can timestamp
    says the only content is the standard class plus
    notation, that is a reason to **stop at Zenodo**.
 
+   No endorser is not a block on the timestamp.
+   Zenodo does not ask for one. Do not wait on
+   callbacks to deposit the honest note. An
+   unanswered mail is not a verdict on Track B.
+
 5. **Do not send Track B or RH as if they sat.**  
    Those WRITE lines are still open. Depositing them
    as closes is the refuse.
