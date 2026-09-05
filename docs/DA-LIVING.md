@@ -29,6 +29,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Supercriticality | Tao | energy class is a derivative short; averaged cousins can blow | NS blows; this catalog closes \(X\) |
 | Liouville / ancient / self-similar | Šverák, Seregin | honest remaining doors; ESS endpoint | those doors from a leftover list |
 | ESS \(L^3\) endpoint | Escauriaza | \(L^\infty_t L^3_x\) is a regularity criterion | the endpoint is an a priori on \(X\) |
+| Unique continuation | Kukavica | strong unique continuation for differences of solutions | vanishing order bounds \(X\) |
 | Ancient Liouville / KNSS | Nadirashvili | bounded ancient mild solutions classified in 2D and axisymmetric no-swirl | those Liouville theorems close \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
@@ -67,7 +68,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Announcements | current math.AP | a preprint is a proposal | close B by title |
 | The desk | operator | one sentence, one slot, one check | needing chops |
 
-Shahmurov does not get a chair. Sohr stays out. Foias stays out. Heywood stays out. SFE / HB-as-unifier do not.
+Shahmurov does not get a chair. Sohr stays out. Foias stays out. Heywood stays out. Kukavica–Ziane one-component is already seated as Neustupa–Penel. SFE / HB-as-unifier do not.
 
 ---
 
@@ -133,6 +134,11 @@ someone hears “small” as “empty.”
 (Uspekhi 2003). It is a criterion. It is not an a priori
 on \(X\). Gregory, Vladimír — bounded in \(L^3\) is not a
 bound on enstrophy.
+
+**Kukavica.** Strong unique continuation for differences
+of solutions is not a bound on \(X\) (JDDE 2013, with
+Ignatova). Vanishing order is not enstrophy. Luis, Roger
+— this is not the one-component chair.
 
 **Nadirashvili.** Bounded ancient mild solutions: 2D and
 axisymmetric no-swirl are classified (Acta Math. 2009,
@@ -399,6 +405,7 @@ scores the process, not a theorem you did not prove.
 | Tsai local-energy self-similar exclusion closes \(X\) | **fail** |
 | Lemarié-Rieusset local Leray solutions close \(X\) | **fail** |
 | Danchin density-dependent NS closes \(X\) | **fail** |
+| Kukavica unique continuation closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

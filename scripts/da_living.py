@@ -106,6 +106,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Kukavica",
+        ["Escauriaza", "Temam"],
+        "Strong unique continuation for differences of solutions is not a bound on X. Vanishing order is not enstrophy. This is not the one-component chair.",
+        "B",
+    ),
+    turn(
         "Nadirashvili",
         ["Seregin", "Sverak", "Escauriaza"],
         "Bounded ancient mild solutions: 2D and axisymmetric no-swirl are classified. 3D remains a door. A Liouville theorem is not an a priori on X. Gabriel Koch, not Herbert.",
@@ -699,6 +705,13 @@ CLAIMS = [
         "fail",
         "Critical well-posedness for inhomogeneous NS is a different equation. Not a bound on homogeneous X. Heywood stays out.",
     ),
+    rec(
+        "L51",
+        "kukavica_unique_continuation_closes_X",
+        "Kukavica unique continuation closes X",
+        "fail",
+        "JDDE 2013: strong unique continuation for differences. Vanishing order is not a bound on X. Not the one-component chair.",
+    ),
 ]
 
 
@@ -708,6 +721,7 @@ KINGDOMS = [
     {"name": "Supercriticality", "who": "Tao", "slot": "B"},
     {"name": "Liouville / ancient / self-similar", "who": "Sverak, Seregin", "slot": "B"},
     {"name": "ESS L3 endpoint", "who": "Escauriaza", "slot": "B"},
+    {"name": "Unique continuation", "who": "Kukavica", "slot": "B"},
     {"name": "Ancient Liouville / KNSS", "who": "Nadirashvili", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},

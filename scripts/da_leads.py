@@ -175,6 +175,9 @@ LEADS = [
     lead("Danchin", "inhomogeneous / density-dependent NS", "B", "living",
          "Density-dependent Navier-Stokes is a different equation. Critical well-posedness there is not a bound on homogeneous X. Heywood stays out.",
          "inhomogeneous = bound on X"),
+    lead("Kukavica", "unique continuation", "B", "living",
+         "Strong unique continuation for differences of solutions is not a bound on X. Vanishing order is not enstrophy. Not the one-component chair.",
+         "unique continuation = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -257,7 +260,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -557,6 +560,13 @@ CLAIMS = [
         "Danchin density-dependent NS bounds X",
         "fail",
         "A different equation is not a bound on homogeneous X. Heywood stays out.",
+    ),
+    rec(
+        "R43",
+        "kukavica_unique_continuation_bounds_X",
+        "Kukavica unique continuation bounds X",
+        "fail",
+        "Vanishing order is not enstrophy. Not the one-component chair.",
     ),
 ]
 

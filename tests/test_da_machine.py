@@ -389,6 +389,12 @@ class DaMachineTests(unittest.TestCase):
         dens = classify_claim("Danchin density-dependent NS on a vorticity packet")
         self.assertEqual(dens["domain"], "B")
         self.assertEqual(dens["verdict"], "open")
+        kukavica = classify_claim("seat Kukavica as a wall on the living bench")
+        self.assertEqual(kukavica["domain"], "U")
+        self.assertEqual(kukavica["verdict"], "open")
+        uc = classify_claim("Kukavica unique continuation on a vorticity packet")
+        self.assertEqual(uc["domain"], "B")
+        self.assertEqual(uc["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
