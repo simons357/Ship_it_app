@@ -19,6 +19,19 @@ from pathlib import Path
 
 UA = "Ship_it_app-DA-feed/0.1 (research notebook)"
 
+ARXIV_QUERY = (
+    "http://export.arxiv.org/api/query?"
+    "search_query=cat:hep-ex+OR+cat:gr-qc+OR+cat:astro-ph.CO+OR+cat:math.AP"
+    "&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending"
+)
+
+ARXIV_CAT = {
+    "arXiv_hep_ex": "hep-ex",
+    "arXiv_gr_qc": "gr-qc",
+    "arXiv_astro_ph_CO": "astro-ph.CO",
+    "arXiv_math_AP": "math.AP",
+}
+
 
 def rec(
     hid: str,
@@ -71,11 +84,7 @@ SOURCES = [
         "slot": "U",
         "kind": "preprint",
         "what": "accelerator / collider experimental preprints",
-        "url": (
-            "http://export.arxiv.org/api/query?"
-            "search_query=cat:hep-ex&start=0&max_results=5"
-            "&sortBy=submittedDate&sortOrder=descending"
-        ),
+        "url": ARXIV_QUERY,
         "can_kill": "a stale experimental abstract",
         "cannot": "write F; close X",
     },
@@ -85,11 +94,7 @@ SOURCES = [
         "slot": "U",
         "kind": "preprint",
         "what": "gravitational-wave and strong-field GR preprints",
-        "url": (
-            "http://export.arxiv.org/api/query?"
-            "search_query=cat:gr-qc&start=0&max_results=5"
-            "&sortBy=submittedDate&sortOrder=descending"
-        ),
+        "url": ARXIV_QUERY,
         "can_kill": "a stale GW abstract",
         "cannot": "import strain into the tube",
     },
@@ -99,11 +104,7 @@ SOURCES = [
         "slot": "U",
         "kind": "preprint",
         "what": "cosmology / large-scale structure preprints",
-        "url": (
-            "http://export.arxiv.org/api/query?"
-            "search_query=cat:astro-ph.CO&start=0&max_results=5"
-            "&sortBy=submittedDate&sortOrder=descending"
-        ),
+        "url": ARXIV_QUERY,
         "can_kill": "a cosmology number outside the current tension box",
         "cannot": "write F; Cosmo 16 as a derivation",
     },
@@ -113,11 +114,7 @@ SOURCES = [
         "slot": "B",
         "kind": "preprint",
         "what": "analysis of PDEs / fluids preprints",
-        "url": (
-            "http://export.arxiv.org/api/query?"
-            "search_query=cat:math.AP&start=0&max_results=5"
-            "&sortBy=submittedDate&sortOrder=descending"
-        ),
+        "url": ARXIV_QUERY,
         "can_kill": "a B lemma whose identity fails on a named field",
         "cannot": "close domain B by announcement",
     },
@@ -201,7 +198,7 @@ def _http(url: str, timeout: float) -> tuple[bytes, str]:
         return resp.read(), ctype
 
 
-def _arxiv_items(raw: bytes, limit: int = 5) -> list[dict]:
+def _arxiv_items(raw: bytes, limit: int = 20) -> list[dict]:
     import xml.etree.ElementTree as ET
 
     ns = {"a": "http://www.w3.org/2005/Atom"}
@@ -216,13 +213,26 @@ def _arxiv_items(raw: bytes, limit: int = 5) -> list[dict]:
             if el.get("type") == "text/html" or el.get("rel") == "alternate":
                 link = el.get("href") or ""
                 break
-        items.append({"title": title, "date": updated, "url": link})
+        cats = [el.get("term") or "" for el in entry.findall("a:category", ns)]
+        items.append({"title": title, "date": updated, "url": link, "cats": cats})
         if len(items) >= limit:
             break
     return items
 
 
-def fetch_source(src: dict, timeout: float = 8.0) -> dict:
+def _load_arxiv(timeout: float) -> tuple[list[dict] | None, str | None]:
+    try:
+        raw, _ = _http(ARXIV_QUERY, timeout=timeout)
+        return _arxiv_items(raw), None
+    except (urllib.error.URLError, TimeoutError, OSError, ValueError, Exception) as exc:
+        return None, str(exc)
+
+
+def fetch_source(
+    src: dict,
+    timeout: float = 8.0,
+    arxiv: tuple[list[dict] | None, str | None] | None = None,
+) -> dict:
     out = {
         "id": src["id"],
         "name": src["name"],
@@ -238,8 +248,11 @@ def fetch_source(src: dict, timeout: float = 8.0) -> dict:
         "error": None,
     }
     try:
-        raw, ctype = _http(src["url"], timeout=timeout)
         name = src["name"]
+        if name.startswith("arXiv_"):
+            raw, ctype = b"", ""
+        else:
+            raw, ctype = _http(src["url"], timeout=timeout)
         if name == "GWOSC_GWTC":
             data = json.loads(raw.decode("utf-8", errors="replace"))
             events = data.get("events") or {}
@@ -276,9 +289,16 @@ def fetch_source(src: dict, timeout: float = 8.0) -> dict:
             out["ok"] = True
             out["n"] = len(items)
         elif name.startswith("arXiv_"):
-            out["items"] = _arxiv_items(raw)
-            out["ok"] = True
-            out["n"] = len(out["items"])
+            bundle, err = arxiv if arxiv is not None else _load_arxiv(timeout)
+            if err:
+                out["error"] = err
+            else:
+                want = ARXIV_CAT.get(name, "")
+                picked = [item for item in (bundle or []) if want in (item.get("cats") or [])]
+                out["items"] = picked[:5]
+                out["ok"] = True
+                out["n"] = len(out["items"])
+            return out
         elif name == "PDG":
             out["ok"] = True
             out["n"] = 1
@@ -298,7 +318,8 @@ def fetch_source(src: dict, timeout: float = 8.0) -> dict:
 
 
 def scan(timeout: float = 8.0) -> list[dict]:
-    return [fetch_source(src, timeout=timeout) for src in SOURCES]
+    bundle = _load_arxiv(timeout)
+    return [fetch_source(src, timeout=timeout, arxiv=bundle) for src in SOURCES]
 
 
 def run(out: Path | None = None, fetch: bool = True, timeout: float = 8.0) -> dict:
