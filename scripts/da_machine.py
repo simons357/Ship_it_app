@@ -1190,7 +1190,7 @@ def main() -> int:
     at.add_argument(
         "--job",
         default="",
-        help="A | RH | SND | H. Empty prints all four.",
+        help="A | B | RH | SND | H. Empty prints all. B is unaugmented NS.",
     )
     rp = sub.add_parser(
         "repair",

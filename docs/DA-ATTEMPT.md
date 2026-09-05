@@ -2,6 +2,8 @@
 
 `python3 scripts/da_machine.py attempt`  
 `python3 scripts/da_machine.py attempt --job A`  
+`python3 scripts/da_machine.py attempt --job B`  
+`python3 scripts/da_machine.py next --ask "UN augmented"`  
 `python3 scripts/da_machine.py attempt --job RH`  
 `python3 scripts/da_machine.py attempt --job SND`  
 `python3 scripts/da_machine.py attempt --job H`  
@@ -57,6 +59,24 @@ sends classical leftover to B.
 Catalog: [`TRACK-A-LEMMAS.md`](TRACK-A-LEMMAS.md)  
 Gap: [`TRACK-A-GAP.md`](TRACK-A-GAP.md)  
 Repair: [`DA-REPAIR.md`](DA-REPAIR.md)
+
+---
+
+## B — unaugmented / classical NS
+
+**Need to close.** One all-data integrable
+\(\mathcal{R}\), or all-data A1, or all-data A2, or a
+killing field. Keep \(1/r^4\). No \(Q_1\).
+
+**Do.** Write that sentence. Classify Track B. Run
+`from`. The \(n=32\) box is a reading, not the a priori.
+Then Gronwall, Beale, bootstrap. Do not \(\Phi\). Do not
+\(n=64\). Do not leftover-close B42. Theorem A is a
+different equation.
+
+Object: [`TRACK-B-OBJECT.md`](TRACK-B-OBJECT.md)  
+Chain: [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md)  
+From: [`DA-FROM.md`](DA-FROM.md)
 
 ---
 

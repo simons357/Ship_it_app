@@ -190,6 +190,120 @@ JOBS = {
             "does not sit. Do not invent leftover B42. Do not retune nodes.json."
         ),
     },
+    "B": {
+        "id": "B",
+        "aliases": (
+            "unaugmented",
+            "un-augmented",
+            "classical ns",
+            "track b",
+            "1/r^4",
+        ),
+        "name": "classical NS — unaugmented, keep 1/r^4",
+        "slot": "B",
+        "furthest": (
+            "Energy, enstrophy identity, leftover form, and the n=32 "
+            "readings through B41 sit. A1 is off. A2 is live and did not "
+            "blow on the B15 path. Break at S10: no all-data integrable R."
+        ),
+        "progress": [
+            {"id": "S1", "what": "Leray energy", "verdict": "pass"},
+            {"id": "S2", "what": "enstrophy identity", "verdict": "pass"},
+            {"id": "S3", "what": "leftover form", "verdict": "pass"},
+            {"id": "S4", "what": "B15 stretching on n=32", "verdict": "pass"},
+            {"id": "S9", "what": "B41 A2 on the B15 path", "verdict": "pass"},
+            {"id": "S10", "what": "all-data integrable R / A1 / A2", "verdict": "open"},
+            {"id": "B_regularity", "what": "classical global regularity", "verdict": "open"},
+            {"id": "A_implies_B", "what": "Theorem A is classical NS", "verdict": "fail"},
+        ],
+        "errors_corrected": [
+            "Grafting Q1 onto B.",
+            "Phi as the estimate.",
+            "A box reading as an a priori.",
+            "BKM from L2.",
+            "Leftover-close B42 or n=64 as the write.",
+        ],
+        "needs": (
+            "int_0^T R(t) dt < infinity for all data, or all-data A1, "
+            "or all-data A2, or a field that kills the stretching leftover. "
+            "Keep 1/r^4. No Q1."
+        ),
+        "need_to_close": [
+            "Write one all-data integrable residual: int_0^T R < infinity.",
+            "Or all-data A1 (alignment in time).",
+            "Or all-data A2 (int ||lambda_2^+||).",
+            "Or a killing field. Then Gronwall, Beale, bootstrap.",
+        ],
+        "do": [
+            "Keep 1/r^4. Do not put Q1 or eps on this equation.",
+            "Write one sentence that is an all-data bound: integrable R, or A1, or A2, or a killing field.",
+            "Classify it as Track B. Run: python3 scripts/da_machine.py from",
+            "The n=32 box (B15-B41) is a reading. It is not the a priori. Do not cash it.",
+            "Do not cancel to Phi. Do not spawn n=64. Do not invent leftover B42.",
+            "If that sentence sits, Gronwall gives X finite, Beale gives no blowup of ||omega||_infty, bootstrap gives smoothness.",
+        ],
+        "completed": (
+            "Skeleton through S9 complete (not a priori). S10 not complete. "
+            "Domain B open. One open catalog row: B_regularity."
+        ),
+        "docs": (
+            "docs/NS-PROOF-CHAIN.md",
+            "docs/DA-FROM.md",
+            "docs/TRACK-B-OBJECT.md",
+            "docs/TRACK-B-RESIDUAL.md",
+        ),
+        "team": [
+            chair(
+                "Tao",
+                "residual honesty",
+                "Write a closed estimate for X, a killing field, or one preprint identity.",
+                "Name R. Do not average the equation into a cousin.",
+                "An averaged cousin that blows. Leftover-close B42.",
+                "Aim the next sentence at S10. Classify it.",
+                True,
+            ),
+            chair(
+                "Fefferman",
+                "alignment if",
+                "Depletion if vorticity stays aligned in time. That if is A1.",
+                "Alignment in time for all data would make R integrable.",
+                "Alignment for all data from a box. Geometry waits on the if.",
+                "If you write A1, classify it. CF-if is not all-data A1.",
+                True,
+            ),
+            chair(
+                "Miller",
+                "middle-strain cut",
+                "The live cubic on this box is lambda_2^+. That integral is A2.",
+                "int ||lambda_2^+|| for all data.",
+                "A reading on n=32 as the a priori.",
+                "A2 is live and did not blow on B15. Live is not all-data.",
+                True,
+            ),
+            chair(
+                "Lemarie-Rieusset",
+                "The Navier-Stokes Problem in the 21st Century",
+                "The map already lists the doors. Write the leftover, not another door.",
+                "One all-data integral. Criteria stay criteria.",
+                "The monograph as X in L^infty.",
+                "Keep the picture. Take S10.",
+                True,
+            ),
+            chair(
+                "Ladyzhenskaya",
+                "modified stress (Track A)",
+                "I closed a different equation. Do not import me onto B.",
+                "Leave Theorem A on A.",
+                "eps->0 as the unaugmented close.",
+                "A_implies_B stays fail.",
+                True,
+            ),
+        ],
+        "da_does": (
+            "Print the unaugmented close-writes and the DO list. "
+            "Walk stays at S10. Keep 1/r^4. Refuse Q1, Phi, B42, n=64."
+        ),
+    },
     "RH": {
         "id": "RH",
         "aliases": ("rh", "riemann", "zeta", "theorem p", "furthest"),
@@ -620,11 +734,16 @@ CLAIMS = [
 def parse_jobs(ask: str = "", job: str = "") -> list[str]:
     text = f"{job} {ask}".lower()
     found: list[str] = []
+    unaug = bool(re.search(r"\bun[-\s]?augmented\b", text))
     for jid, spec in JOBS.items():
         for alias in spec["aliases"]:
+            if jid == "A" and alias == "augmented" and unaug:
+                continue
             if re.search(rf"\b{re.escape(alias)}\b", text):
                 found.append(jid)
                 break
+    if unaug and "B" not in found:
+        found.insert(0, "B")
     token = (job or "").strip().upper()
     if token in JOBS and token not in found:
         found.insert(0, token)
@@ -662,7 +781,9 @@ def is_attempt_ask(ask: str) -> bool:
             r"\bneed to close\b|\bwhat.{0,12}close\b|"
             r"\beinstein\b|\btesla\b|\bclose (snd|h)\b|"
             r"\bns in augmented\b|\bclose .{0,24}augmented\b|"
-            r"\bclose (the )?augmented\b|\baugmented please\b",
+            r"\bclose (the )?augmented\b|\baugmented please\b|"
+            r"\bun[-\s]?augmented\b|\bclose classical\b|"
+            r"\bclose (track )?b\b|\bclassical ns\b",
             text,
         )
     )

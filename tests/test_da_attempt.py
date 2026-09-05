@@ -45,7 +45,12 @@ class DaAttemptTests(unittest.TestCase):
         self.assertTrue(payload["meta"]["q_is_not_rh"])
         self.assertTrue(payload["meta"]["snd_is_not_x"])
         self.assertEqual(payload["picked"], [])
-        self.assertEqual([j["id"] for j in payload["jobs"]], ["A", "RH", "SND", "H"])
+        self.assertEqual([j["id"] for j in payload["jobs"]], ["A", "B", "RH", "SND", "H"])
+        self.assertTrue(JOBS["B"].get("do"))
+        self.assertEqual(parse_job(ask="UN augmented"), "B")
+        self.assertEqual(parse_job(ask="unaugmented"), "B")
+        self.assertTrue(is_attempt_ask("UN augmented"))
+        self.assertEqual(parse_job(ask="close NS in augmented"), "A")
         a = JOBS["A"]
         rh = JOBS["RH"]
         snd = JOBS["SND"]
