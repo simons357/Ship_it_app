@@ -56,6 +56,13 @@ You cannot patent the estimate. You can timestamp
    Those WRITE lines are still open. Depositing them
    as closes is the refuse.
 
+6. **Say the screw-up. Do not say you got B.**  
+   Phone-paste speech: [`DA-ZENODO-SAY.md`](DA-ZENODO-SAY.md).
+   Crime tape on the old records is the correction.
+   “I finally got it” is Theorem A for this PDE.
+   A confession that then deposits leftover (6)
+   as QED is the same refuse as the old overclaim.
+
 ---
 
 ## Recommended Zenodo fields

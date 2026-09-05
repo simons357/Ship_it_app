@@ -56,6 +56,16 @@ Do not deposit the B PDF as a close.
 Do not wait on an arXiv endorser to timestamp A.
 Zenodo timestamps A if the title is honest.
 
+A different Cursor app is not a mirror of
+these files. Open PR 24 and download the
+PDFs. Paste-ready Zenodo speech:
+
+docs/DA-ZENODO-SAY.md
+
+Say: I overclaimed. Tape stays on the old
+records. Here is Theorem A for this PDE.
+Do not say you finally got B.
+
 ---
 
 These files live on GitHub, not automatically on
