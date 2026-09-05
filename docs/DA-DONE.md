@@ -7,6 +7,7 @@
 
 The study is whether DA can write the chain, diagnose,
 and name the leftover. Emitting the chain is not QED.
+Full exam of the asks: [`DA-STUDY.md`](DA-STUDY.md).
 
 ---
 

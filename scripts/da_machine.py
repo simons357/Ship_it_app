@@ -124,7 +124,8 @@ def classify_claim(claim: str) -> dict:
         r"\bis that right\b|\bis (ns |navier |navi )?done\b|"
         r"\bcan da\b|\bda done\b|\blooks like.{0,24}done\b|"
         r"\bgcd paper\b|\bbest gcd\b|\bq6\b|\bq7\b|"
-        r"\belectoral floor\b|\bspectral floor\b",
+        r"\belectoral floor\b|\bspectral floor\b|"
+        r"\bdirected at da\b|\bthese questions\b|\bcan da do\b|\bda study\b",
         text,
     ):
         return {
@@ -850,6 +851,19 @@ def cmd_repair(job: str = "", ask: str = "") -> int:
     return 0
 
 
+def cmd_study() -> int:
+    from da_study import print_study
+
+    print_study()
+    append_run(
+        "U",
+        "Study: questions pointed at DA; write yes; finish leftover no",
+        "open",
+        "support pass; solver fail; emit is not QED",
+    )
+    return 0
+
+
 def cmd_q() -> int:
     from da_q import print_q
 
@@ -954,7 +968,10 @@ def cmd_next(ask: str = "") -> int:
     from da_proof import is_proof_ask
     from da_q import is_q_ask
     from da_repair import is_repair_ask
+    from da_study import is_study_ask
 
+    if is_study_ask(ask):
+        return cmd_study()
     if is_done_ask(ask):
         return cmd_done()
     if is_q_ask(ask):
@@ -1212,6 +1229,7 @@ def main() -> int:
     sub.add_parser("window", help="same as look")
     sub.add_parser("from", help="walk your scored steps to the break; proceed toward regularity")
     sub.add_parser("mine", help="same as from")
+    sub.add_parser("study", help="exam: can DA do the asks; emit is not a solver pass")
     sub.add_parser("q", help="inverse-GCD paper, floors, Q6, Q7")
     sub.add_parser("done", help="is NS done? emit is not QED; A this PDE yes; B no")
     prf = sub.add_parser("proof", help="write a proof chain: NS, A, or RH")
@@ -1320,6 +1338,8 @@ def main() -> int:
         return cmd_look()
     if args.cmd in ("from", "mine"):
         return cmd_from()
+    if args.cmd == "study":
+        return cmd_study()
     if args.cmd == "q":
         return cmd_q()
     if args.cmd == "done":

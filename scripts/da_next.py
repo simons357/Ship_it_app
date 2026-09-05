@@ -100,6 +100,7 @@ SPOKES = [
     {"name": "hunt", "command": "hunt", "slot": "U / B", "does": "proof-chain hunter: edges, blocks, object window"},
     {"name": "look", "command": "look", "slot": "B", "does": "object window anytime"},
     {"name": "from", "command": "from", "slot": "U / B", "does": "your steps to the break; proceed toward regularity"},
+    {"name": "study", "command": "study", "slot": "U", "does": "can DA do the asks; emit is not a solver pass"},
     {"name": "q", "command": "q", "slot": "Q", "does": "inverse-GCD paper, floors, Q6, Q7"},
     {"name": "done", "command": "done", "slot": "U / A / B", "does": "is NS done? emit is not QED"},
     {"name": "proof", "command": "proof", "slot": "B / A / RH", "does": "write the NS / A / RH proof chain"},
