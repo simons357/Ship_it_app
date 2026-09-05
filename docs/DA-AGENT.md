@@ -22,7 +22,7 @@ not replace the checker.
 | Tick | `agent` | U | pulls both and scores the shape | autopilot a pass |
 | Alert | `alert` | U | texts a watched flip | a new catalog page |
 | Now-what | `next` | U / B | wall, target, words→math | write the leftover |
-| Council | `nowwhat` | U / B | leftover papers: would try / cannot | a vote; ChatGPT freestyle |
+| Council | `nowwhat` | U / B | leftover papers + history: would try / cannot | a vote; a séance; ChatGPT freestyle |
 
 Latest public data belongs here. A stale machine is a
 weaker anti-bullshit device. Up to date is a U duty.
