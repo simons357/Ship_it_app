@@ -74,18 +74,18 @@ CLAIMS = [
 
 
 SITS = (
-    "Poincaré — Perelman 2002–2003. Literature. This desk reprints.",
-    "A this PDE — Theorem A at eps>0, beta>=1/2. Different equation from classical NS.",
+    "Poincare - Perelman 2002-2003. Literature. This desk reprints.",
+    "A this PDE - Theorem A at eps>0, beta>=1/2. Different equation from classical NS.",
 )
 
 OPEN = (
-    "B / smoothness and existence — WRITE (6) all-data R / A1 / A2 / killing field",
-    "A uniform H1 — WRITE (7) as eps->0. This PDE sitting is not that write.",
-    "RH — WRITE (6) every zero on Re s = 1/2. Q is not that write.",
-    "YM — WRITE (4) mass gap. SM block is not the gap.",
-    "BSD — WRITE (6) rank / Sha / leading term. DA did not close this.",
-    "Hodge — WRITE (6) every rational Hodge class algebraic. SFE is not that write.",
-    "P vs NP — WRITE (5) TM proof. SFE H(x) is not a Turing machine.",
+    "B / smoothness and existence - WRITE (6) all-data R / A1 / A2 / killing field",
+    "A uniform H1 - WRITE (7) as eps->0. This PDE sitting is not that write.",
+    "RH - WRITE (6) every zero on Re s = 1/2. Q is not that write.",
+    "YM - WRITE (4) mass gap. SM block is not the gap.",
+    "BSD - WRITE (6) rank / Sha / leading term. DA did not close this.",
+    "Hodge - WRITE (6) every rational Hodge class algebraic. SFE is not that write.",
+    "P vs NP - WRITE (5) TM proof. SFE H(x) is not a Turing machine.",
 )
 
 
@@ -105,8 +105,43 @@ def is_pack_ask(ask: str) -> bool:
     )
 
 
+def _ascii(text: str) -> str:
+    repl = {
+        "—": " - ",
+        "–": "-",
+        "−": "-",
+        "≥": ">=",
+        "≤": "<=",
+        "≠": "!=",
+        "·": ".",
+        "ω": "omega",
+        "ν": "nu",
+        "ε": "eps",
+        "α": "alpha",
+        "β": "beta",
+        "Φ": "Phi",
+        "φ": "phi",
+        "∞": "inf",
+        "∩": " n ",
+        "→": "->",
+        "⇒": "=>",
+        "é": "e",
+        "É": "E",
+        "ö": "o",
+        "á": "a",
+        "“": "'",
+        "”": "'",
+        "‘": "'",
+        "’": "'",
+    }
+    out = text
+    for a, b in repl.items():
+        out = out.replace(a, b)
+    return out.encode("ascii", "replace").decode("ascii")
+
+
 def _wrap(text: str, width: int = 86) -> list[str]:
-    words = text.split()
+    words = _ascii(text).split()
     if not words:
         return [""]
     lines = [words[0]]
@@ -130,6 +165,9 @@ def _pages() -> list[list[str]]:
         "5 September 2026",
         "",
         "This is status. It is not QED.",
+        "SIT = leftover already proved (literature or this desk).",
+        "WRITE = the next line that still has to be proved.",
+        "HAVE = already on the chain. THEN = follows if WRITE sits.",
         "DA reprints what sits. DA does not emit an open WRITE as a close.",
         "Not prize packaging. Not a committee letter.",
         "",

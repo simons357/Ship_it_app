@@ -24,7 +24,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 14 0 R /Resources << /Font << /F1 15 0 R >> >> >>
 endobj
 9 0 obj
-<< /Length 1486 >>
+<< /Length 1697 >>
 stream
 BT
 /F1 10 Tf
@@ -33,21 +33,24 @@ BT
 0 -13 Td (5 September 2026) Tj
 0 -13 Td () Tj
 0 -13 Td (This is status. It is not QED.) Tj
+0 -13 Td (SIT = leftover already proved \(literature or this desk\).) Tj
+0 -13 Td (WRITE = the next line that still has to be proved.) Tj
+0 -13 Td (HAVE = already on the chain. THEN = follows if WRITE sits.) Tj
 0 -13 Td (DA reprints what sits. DA does not emit an open WRITE as a close.) Tj
 0 -13 Td (Not prize packaging. Not a committee letter.) Tj
 0 -13 Td () Tj
 0 -13 Td (SITS) Tj
-0 -13 Td (  Poincaré ? Perelman 2002?2003. Literature. This desk reprints.) Tj
-0 -13 Td (  A this PDE ? Theorem A at eps>0, beta>=1/2. Different equation from classical NS.) Tj
+0 -13 Td (  Poincare - Perelman 2002-2003. Literature. This desk reprints.) Tj
+0 -13 Td (  A this PDE - Theorem A at eps>0, beta>=1/2. Different equation from classical NS.) Tj
 0 -13 Td () Tj
 0 -13 Td (OPEN) Tj
-0 -13 Td (  B / smoothness and existence ? WRITE \(6\) all-data R / A1 / A2 / killing field) Tj
-0 -13 Td (  A uniform H1 ? WRITE \(7\) as eps->0. This PDE sitting is not that write.) Tj
-0 -13 Td (  RH ? WRITE \(6\) every zero on Re s = 1/2. Q is not that write.) Tj
-0 -13 Td (  YM ? WRITE \(4\) mass gap. SM block is not the gap.) Tj
-0 -13 Td (  BSD ? WRITE \(6\) rank / Sha / leading term. DA did not close this.) Tj
-0 -13 Td (  Hodge ? WRITE \(6\) every rational Hodge class algebraic. SFE is not that write.) Tj
-0 -13 Td (  P vs NP ? WRITE \(5\) TM proof. SFE H\(x\) is not a Turing machine.) Tj
+0 -13 Td (  B / smoothness and existence - WRITE \(6\) all-data R / A1 / A2 / killing field) Tj
+0 -13 Td (  A uniform H1 - WRITE \(7\) as eps->0. This PDE sitting is not that write.) Tj
+0 -13 Td (  RH - WRITE \(6\) every zero on Re s = 1/2. Q is not that write.) Tj
+0 -13 Td (  YM - WRITE \(4\) mass gap. SM block is not the gap.) Tj
+0 -13 Td (  BSD - WRITE \(6\) rank / Sha / leading term. DA did not close this.) Tj
+0 -13 Td (  Hodge - WRITE \(6\) every rational Hodge class algebraic. SFE is not that write.) Tj
+0 -13 Td (  P vs NP - WRITE \(5\) TM proof. SFE H\(x\) is not a Turing machine.) Tj
 0 -13 Td () Tj
 0 -13 Td (Documented: the operator did not prove BSD. DA did not either.) Tj
 0 -13 Td (A certificate that DA closed BSD is the refuse.) Tj
@@ -72,12 +75,12 @@ BT
 0 -13 Td (  \(1\) [HAVE] Energy. Leray: int_0^T X\(t\) dt < infinity on these packets, and the energy) Tj
 0 -13 Td (         inequality holds.) Tj
 0 -13 Td (  \(2\) [HAVE] Enstrophy identity. Differentiating X along the NSE gives dX/dt + nu) Tj
-0 -13 Td (         ||grad omega||_2^2 = -int omega · S omega \(up to lower-order terms already) Tj
+0 -13 Td (         ||grad omega||_2^2 = -int omega . S omega \(up to lower-order terms already) Tj
 0 -13 Td (         controlled\).) Tj
 0 -13 Td (  \(3\) [HAVE] Leftover form. Absorb a slice of dissipation to obtain dX/dt + nu ||grad) Tj
 0 -13 Td (         omega||_2^2 <= eps nu ||grad omega||_2^2 + C_eps X R\(t\), with R unknown.) Tj
 0 -13 Td (         The only term that can beat viscosity is the stretching leftover.) Tj
-0 -13 Td (  \(4\) [HAVE] Split. int omega · S omega = hole 1 \(aligned P+ on E_c\) + hole 2) Tj
+0 -13 Td (  \(4\) [HAVE] Split. int omega . S omega = hole 1 \(aligned P+ on E_c\) + hole 2) Tj
 0 -13 Td (         \(unaligned P+ on E_c\) + hole 3 \(off E_c\). Scored on the n=32 box as B37.) Tj
 0 -13 Td (  \(5\) [HAVE] Named blanks. A1 = alignment in time for all data \(hole 1\). A2 = int) Tj
 0 -13 Td (         ||lambda_2^+|| for all data \(live cubic; Miller cut B38\). On this box A1) Tj
@@ -97,7 +100,7 @@ BT
 0 -13 Td (  Let nu>0, eps>0, alpha>0, beta>=1/2, and u0 in H^1\(T^3\) divergence-free. The Q1) Tj
 0 -13 Td (  system has a unique solution u in C^infty\(T^3 x \(0,infty\)\) cap L^infty\(0,infty;) Tj
 0 -13 Td (  H^1\). No finite-time singularity for this PDE.) Tj
-0 -13 Td (  \(1\) [HAVE] The PDE. On T^3, nu>0, eps>0, alpha>0, beta>=1/2: partial_t u + \(u·grad\)u) Tj
+0 -13 Td (  \(1\) [HAVE] The PDE. On T^3, nu>0, eps>0, alpha>0, beta>=1/2: partial_t u + \(u.grad\)u) Tj
 0 -13 Td (         = -grad p + nu Delta u + eps^alpha P div\(|grad u|^beta grad u\), div u = 0.) Tj
 0 -13 Td (         Ladyzhenskaya / p-Laplacian stress. Not classical NS. No Phi.) Tj
 0 -13 Td (  \(2\) [HAVE] Energy. Test against u: 1/2 d/dt ||u||_2^2 + nu ||grad u||_2^2 + eps^alpha) Tj
@@ -180,7 +183,7 @@ ET
 endstream
 endobj
 12 0 obj
-<< /Length 3944 >>
+<< /Length 3946 >>
 stream
 BT
 /F1 10 Tf
@@ -192,11 +195,11 @@ BT
 0 -13 Td () Tj
 0 -13 Td (HODGE: WRITE \(6\) open) Tj
 0 -13 Td (  Let X be a smooth complex projective variety. For every integer p >= 0, every) Tj
-0 -13 Td (  class in H^{2p}\(X,Q\) ? H^{p,p}\(X\) is a Q-linear combination of classes of) Tj
+0 -13 Td (  class in H^{2p}\(X,Q\) n H^{p,p}\(X\) is a Q-linear combination of classes of) Tj
 0 -13 Td (  algebraic cycles of codimension p.) Tj
-0 -13 Td (  \(1\) [HAVE] Hodge decomposition. For compact Kähler X, H^k\(X,C\) = ?_{p+q=k}) Tj
+0 -13 Td (  \(1\) [HAVE] Hodge decomposition. For compact K?hler X, H^k\(X,C\) = ?_{p+q=k}) Tj
 0 -13 Td (         H^{p,q}\(X\).) Tj
-0 -13 Td (  \(2\) [HAVE] Hodge classes. Hdg^p\(X\) = H^{2p}\(X,Q\) ? H^{p,p}\(X\). These are the rational) Tj
+0 -13 Td (  \(2\) [HAVE] Hodge classes. Hdg^p\(X\) = H^{2p}\(X,Q\) n H^{p,p}\(X\). These are the rational) Tj
 0 -13 Td (         \(p,p\) classes.) Tj
 0 -13 Td (  \(3\) [HAVE] Cycle class. An algebraic cycle of codimension p maps to a Hodge class.) Tj
 0 -13 Td (         Algebraic implies Hodge. The converse is the write.) Tj
@@ -224,7 +227,7 @@ BT
 0 -13 Td (         Still not NS. Still not P vs NP.) Tj
 0 -13 Td () Tj
 0 -13 Td (PNP: WRITE \(5\) open) Tj
-0 -13 Td (  Either P=NP or P?NP, proved for languages decided by Turing machines with a) Tj
+0 -13 Td (  Either P=NP or P!=NP, proved for languages decided by Turing machines with a) Tj
 0 -13 Td (  polynomial-time clock.) Tj
 0 -13 Td (  \(1\) [HAVE] P. Languages decided by a deterministic Turing machine in time n^{O\(1\)}.) Tj
 0 -13 Td (  \(2\) [HAVE] NP. Languages with a polynomial-time verifier, equivalently a) Tj
@@ -232,7 +235,7 @@ BT
 0 -13 Td (  \(3\) [HAVE] NP-complete. Cook-Levin: SAT is NP-complete. Polynomial-time reductions.) Tj
 0 -13 Td (  \(4\) [HAVE] SFE is not the model. The letter's H\(x\) is a field path, not a TM.) Tj
 0 -13 Td (         Shelved. It does not decide a language in P or NP.) Tj
-0 -13 Td (  \(5\) [WRITE] WRITE. A proof that P=NP or that P?NP in the Turing-machine model.) Tj
+0 -13 Td (  \(5\) [WRITE] WRITE. A proof that P=NP or that P!=NP in the Turing-machine model.) Tj
 0 -13 Td (         Relativization, natural proofs, and algebrization are barriers, not the) Tj
 0 -13 Td (         write.) Tj
 0 -13 Td (  \(6\) [THEN] If \(5\) sits, every NP language is in P, or some NP language is not. Still) Tj
@@ -292,13 +295,13 @@ xref
 0000000656 00000 n 
 0000000784 00000 n 
 0000000912 00000 n 
-0000002450 00000 n 
-0000006769 00000 n 
-0000010752 00000 n 
-0000014749 00000 n 
-0000014831 00000 n 
-0000015926 00000 n 
+0000002661 00000 n 
+0000006980 00000 n 
+0000010963 00000 n 
+0000014962 00000 n 
+0000015044 00000 n 
+0000016139 00000 n 
 trailer << /Size 16 /Root 1 0 R >>
 startxref
-15997
+16210
 %%EOF

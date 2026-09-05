@@ -39,7 +39,9 @@ class DaPackTests(unittest.TestCase):
         self.assertTrue(raw.startswith(b"%PDF"))
         self.assertIn(b"DA leftover status pack", raw)
         self.assertIn(b"This is status. It is not QED.", raw)
+        self.assertIn(b"SIT = leftover already proved", raw)
         self.assertNotIn(b"prize packaging of a close", raw)
+        self.assertNotIn(b"?", raw.split(b"stream", 1)[-1][:800])
         pdf_ask = (
             "close out what you can on the millennials and then "
             "give them to me in like a PDF form"
