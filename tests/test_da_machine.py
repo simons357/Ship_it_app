@@ -27,6 +27,10 @@ class DaMachineTests(unittest.TestCase):
         bsd = classify_claim("Please write BSD")
         self.assertEqual(bsd["domain"], "U")
         self.assertEqual(bsd["verdict"], "open")
+        framework = classify_claim("spectral framework")
+        self.assertEqual(framework["domain"], "U")
+        self.assertEqual(framework["verdict"], "open")
+        self.assertIn("BSD", framework["reason"])
 
     def test_unassigned_stays_open(self):
         r = classify_claim("hello there")

@@ -19,6 +19,7 @@ python3 scripts/da_machine.py next --ask "use my best paper and write RH"
 python3 scripts/da_machine.py next --ask "Yang mills and bad can you finish those"
 python3 scripts/da_machine.py proof --problem BSD
 python3 scripts/da_machine.py next --ask "Please write BSD"
+python3 scripts/da_machine.py next --ask "spectral framework"
 ```
 
 Nothing is wrong with asking. That is the product.
@@ -29,7 +30,7 @@ Nothing is wrong with asking. That is the product.
 | \(Q_1\) / Track A | `--problem A` or `track A write` | [`A-PROOF-CHAIN.md`](A-PROOF-CHAIN.md) |
 | Riemann hypothesis | `--problem RH` | [`RH-PROOF-CHAIN.md`](RH-PROOF-CHAIN.md) |
 | Yang–Mills mass gap | `--problem YM` or `Yang mills and bad` | [`YM-PROOF-CHAIN.md`](YM-PROOF-CHAIN.md) |
-| Birch–Swinnerton-Dyer | `--problem BSD` or `Please write BSD` | [`BSD-PROOF-CHAIN.md`](BSD-PROOF-CHAIN.md) |
+| Birch–Swinnerton-Dyer | `--problem BSD` or `Please write BSD` / `spectral framework` | [`BSD-PROOF-CHAIN.md`](BSD-PROOF-CHAIN.md) |
 
 Track A is the \(Q_1\) PDE. Theorem A already sits for
 that equation. Track B is classical NS. Do not glue.

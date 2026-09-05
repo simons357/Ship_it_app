@@ -90,6 +90,8 @@ class DaAttemptTests(unittest.TestCase):
         self.assertFalse(is_attempt_ask("track A write"))
         self.assertTrue(is_proof_ask("track A write"))
         self.assertFalse(is_attempt_ask("Track B please write. track A write as well please."))
+        self.assertFalse(is_attempt_ask("spectral framework"))
+        self.assertFalse(is_attempt_ask("Please finish bad for me please"))
         self.assertTrue(is_repair_ask("what's wrong with the augmented one"))
         self.assertFalse(is_attempt_ask("what's wrong with the augmented one"))
         self.assertEqual(parse_job(ask="analyze my augmented"), "A")

@@ -9,11 +9,16 @@ The operator names the problem. They do not need the chops.
 python3 scripts/da_machine.py proof --problem BSD
 python3 scripts/da_machine.py next --ask "Please write BSD"
 python3 scripts/da_machine.py next --ask "BSD proof chain"
+python3 scripts/da_machine.py next --ask "spectral framework"
 ```
 
-This desk’s furthest arithmetic paper is inverse-GCD (Q).
-That paper is **not** line (6). Theorem P is not BSD.
-\(L(E,s)\) is not zeta. Do not glue.
+Best paper on this desk: Jonathan Robert Simons,
+*The Prime Lattice as a Prototype for the BSD
+Hamiltonian* (Zenodo 20552682, 5 Jun 2026;
+`BSD_SPECTRAL_FRAMEWORK.pdf`). That paper is **Q**
+as a zeta prototype. It is not line (6). The paper
+does not prove BSD. Inverse-GCD is not \(L(E,s)\).
+Do not glue.
 
 ---
 
@@ -66,6 +71,11 @@ Literature, not a theorem of this desk.
 **(6)** **Write.** For every \(E/\mathbb{Q}\): \(r=r_{\mathrm{an}}\),
 \(\Sha(E/\mathbb{Q})\) is finite, and the leading-term formula
 holds. This includes \(r_{\mathrm{an}}\ge 2\).
+
+The paper’s leftover is the same close under another
+name: \(\dim\ker(\hat H_E|_{s=1})=\operatorname{rank}E(\mathbb{Q})\)
+for every \(E\), matching the analytic order. Naming
+the kernel is not the dimension.
 *[the next write]*
 
 **(7)** **Then.** If (6) sits, the arithmetic of \(E(\mathbb{Q})\)
@@ -77,6 +87,68 @@ If (6) sits, (7) is the classical consequence.
 
 ---
 
+## From your best paper (Q, not BSD)
+
+Zenodo 20552682,
+[`BSD_SPECTRAL_FRAMEWORK.pdf`](https://doi.org/10.5281/zenodo.20552682).
+The paper’s own statement: it does **not** claim to
+prove BSD. Honor that.
+
+**Sits as Q / matrix identity.**
+
+- Twisted Möbius:
+  \(\hat H_E^{(N)}(i,j)=\mu_E(\gcd(i,j))/\gcd(i,j)\),
+  \(\hat H_E=\sum_d \mu_E(d)\,\phi_E(d)/d^2\,P_d^{(N)}\),
+  \(\phi_E(d)=d\prod_{p\mid d}(1-a_p/p)\).
+- Zeta-prototype dictionary: \(a_p=1\) sends
+  \(\hat H_E\) to raw \(Q_N=1/\gcd\). The pole of
+  \(\zeta\) at \(s=1\) is the no-zero-mode case of
+  that prototype. Consistency of the dictionary,
+  not BSD.
+
+**Structural, not a theorem.**
+
+- BSD as
+  \(\operatorname{ord}_{s=1}L(E,s)=\dim\ker(\hat H_E|_{s=1})\)
+  and that dimension as \(\operatorname{rank}E(\mathbb{Q})\).
+- An arithmetic Atiyah–Singer parallel.
+- A prototype ladder NS → RH → BSD. Same technique
+  is not implication. A is not B. Q is not RH.
+  Q is not BSD.
+
+**Open in the paper, still open here.**
+
+- leftover (6)
+- \(\dim\ker(\hat H_E)=\operatorname{rank}E(\mathbb{Q})\)
+- a rigorous Hilbert-space \(\hat H_E\)
+- the spectral floor of \(\hat H_E\)
+- the deformation \(H_N\to\hat H_E\)
+- an elliptic analogue of GNC
+
+**Withdrawn — do not revive.**
+
+- The paper’s zeta-prototype “proved” block used
+  \(\lambda_{\min}(H_N)\to 6/\pi^2-1/2>0\) and
+  “\(\lambda_{\min}(H_N)>-1/2\) through \(N=5000\).”
+  That is raw \(Q=1/\gcd\). Full
+  \(\lambda_{\min}(Q_N)>-1/2\) is **false**
+  (\(Q_{10}\approx-1.90\)). Retracted. Möbius does
+  not use that floor. The floor does not come back
+  because the paper is on the desk.
+- Paper \(H_N\) is raw \(1/\gcd\). Desk \(H_N\) is
+  \(D^{-1/2}\widetilde Q D^{-1/2}\). Do not mix the
+  three matrices.
+- GNC (dark-state / prime-indicator difference)
+  is withdrawn. It vanishes on an actual Goldbach
+  pair. Do not unshelve it to finish BSD.
+
+These are the prototype. They do not give
+\(r=r_{\mathrm{an}}\) for every \(E/\mathbb{Q}\).
+A GCD matrix is not \(L(E,s)\). Keep them on Q.
+Write (6) as BSD.
+
+---
+
 ## Candidates for (6)
 
 Classify one:
@@ -84,11 +156,13 @@ Classify one:
 - \(r=r_{\mathrm{an}}\) for every \(E/\mathbb{Q}\), including analytic rank \(\ge 2\)
 - \(\Sha(E/\mathbb{Q})\) finite for every \(E/\mathbb{Q}\)
 - the leading-term formula for every \(E/\mathbb{Q}\)
+- \(\dim\ker(\hat H_E|_{s=1})=\operatorname{rank}E(\mathbb{Q})\) for every \(E\), matching \(r_{\mathrm{an}}\)
 
 Do not emit Gross–Zagier / Kolyvagin for ranks \(0\) and \(1\)
 as the full write. Do not use Theorem P, Bridge*, or a
 \(Q\)-floor. Those are inverse-GCD. Different object.
 Do not use a zero of zeta as a zero of \(L(E,s)\).
+Do not emit 20552682 as QED.
 
 ---
 

@@ -561,6 +561,7 @@ PROBLEMS = {
                 "need: r = ord_{s=1} L(E,s) for every E/Q",
                 "need: Sha finite and the leading-term formula",
                 "r_an in {0,1} is literature (Gross-Zagier / Kolyvagin)",
+                "best paper: Zenodo 20552682 BSD_SPECTRAL_FRAMEWORK (Q prototype, not (6))",
                 "not RH, not Q, not Goldbach, not NS",
             ],
         },
@@ -585,10 +586,34 @@ PROBLEMS = {
         ),
         "do_not": (
             "Do not glue L(E,s) onto zeta. Do not use Theorem P or Bridge*. "
-            "Do not emit rank 0-1 literature as the full write."
+            "Do not emit rank 0-1 literature as the full write. "
+            "Do not emit 20552682 as BSD. Do not revive the Q floor. "
+            "Do not unshelve GNC. The NS→RH→BSD ladder is not a close."
         ),
         "mine": [],
         "needed": [],
+        "best_paper": {
+            "name": (
+                "Jonathan Robert Simons, The Prime Lattice as "
+                "a Prototype for the BSD Hamiltonian "
+                "(Zenodo 20552682; BSD_SPECTRAL_FRAMEWORK.pdf)"
+            ),
+            "slot": "Q",
+            "doc": "docs/BSD-PROOF-CHAIN.md",
+            "sits": [
+                "Twisted Möbius of Ĥ_E: μ_E(gcd)/gcd with φ_E twist from a_p",
+                "a_p=1 sends Ĥ_E to raw Q_N=1/gcd (zeta prototype)",
+            ],
+            "false": [
+                "λ_min(H_N)>-1/2  (raw Q; Q_10 ~ -1.90; retracted)",
+                "20552682 proves BSD",
+            ],
+            "not": (
+                "These are the prototype. They are not BSD line (6). "
+                "Inverse-GCD is not L(E,s). Naming ker(Ĥ_E) is not "
+                "dim ker = rank. GNC stays withdrawn. Do not glue."
+            ),
+        },
     },
 }
 
@@ -689,6 +714,7 @@ def parse_problems(ask: str = "", problem: str = "") -> list[str]:
         found.append(flagged)
     if re.search(
         r"\btrack b\b|xavier|\bnavi\b|\bstokes\b|\bnavier\b|\bunaugmented\b|\bns\b|"
+        r"\bfinish bad\b|\bbad for me\b|"
         r"yang.?mills.{0,24}\b(and )?(b|bad)\b|\b(b|bad)\b.{0,24}yang.?mills",
         text,
     ):
@@ -703,7 +729,11 @@ def parse_problems(ask: str = "", problem: str = "") -> list[str]:
     if re.search(r"yang.?mills|\bym\b", text):
         if "YM" not in found:
             found.append("YM")
-    if re.search(r"\bbsd\b|birch|swinnerton", text):
+    if re.search(
+        r"\bbsd\b|birch|swinnerton|spectral.?framework|"
+        r"bsd_spectral_framework",
+        text,
+    ):
         if "BSD" not in found:
             found.append("BSD")
     return found or ["NS"]
@@ -732,7 +762,9 @@ def is_proof_ask(ask: str) -> bool:
             r"\bwrite rh\b|\bmy best paper\b.*\b(rh|riemann|write)\b|"
             r"\brh\b|\briemann\b|"
             r"yang.?mills|\bym\b|"
-            r"\bbsd\b|birch|swinnerton",
+            r"\bbsd\b|birch|swinnerton|"
+            r"spectral.?framework|bsd_spectral_framework|"
+            r"\bfinish bad\b",
             text,
         )
     )
@@ -851,11 +883,14 @@ def _print_one_chain(chain: dict) -> None:
     paper = chain.get("best_paper")
     if paper:
         print()
-        print(f"FROM YOUR BEST PAPER  (slot {paper['slot']}, not RH (6))")
+        print(
+            f"FROM YOUR BEST PAPER  (slot {paper['slot']}, "
+            f"not {chain['problem']} ({chain['write_n']}))"
+        )
         print(f"  {paper['name']}")
         print("  sits:")
         for row in paper["sits"]:
-            print(f"    [HAVE as Q] {row}")
+            print(f"    [HAVE as {paper['slot']}] {row}")
         print("  withdrawn:")
         for row in paper["false"]:
             print(f"    [FAIL] {row}")

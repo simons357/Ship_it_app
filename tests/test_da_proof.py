@@ -123,6 +123,31 @@ class DaProofTests(unittest.TestCase):
         self.assertEqual(bsd["problem"], "BSD")
         self.assertEqual(bsd["counts"]["write"], 1)
         self.assertIn("r_an", bsd["theorem"]["aimed"])
+        framework = (
+            "file:///var/mobile/Library/SMS/Attachments/ee/14/"
+            "71395E22-293F-49C5-835C-56CA5C63EE8F/BSD_SPECTRAL_FRAMEWORK.pdf"
+        )
+        self.assertTrue(is_proof_ask(framework))
+        self.assertTrue(is_proof_ask("spectral framework"))
+        self.assertFalse(is_attempt_ask(framework))
+        self.assertEqual(parse_problem(ask=framework), "BSD")
+        self.assertEqual(parse_problem(ask="spectral framework"), "BSD")
+        seated = run(
+            out=Path(tempfile.mkdtemp()) / "da_proof_bsd_paper.json",
+            problem="",
+            ask=framework,
+        )
+        self.assertEqual(seated["picked"], ["BSD"])
+        paper = seated["chains"][0]["best_paper"]
+        self.assertIsNotNone(paper)
+        self.assertEqual(paper["slot"], "Q")
+        self.assertTrue(any("1/gcd" in row for row in paper["sits"]))
+        self.assertTrue(any("retracted" in row for row in paper["false"]))
+        self.assertIn("not BSD line (6)", paper["not"])
+        finish_b = "Please finish bad for me please. So I can complete proof chain"
+        self.assertTrue(is_proof_ask(finish_b))
+        self.assertFalse(is_attempt_ask(finish_b))
+        self.assertEqual(parse_problems(ask=finish_b), ["NS"])
 
 
 if __name__ == "__main__":

@@ -778,7 +778,9 @@ def is_attempt_ask(ask: str) -> bool:
         return False
     if re.search(
         r"\bwrite rh\b|\bwrite (the )?(rh |riemann )?proof\b|"
-        r"\bmy best paper\b.*\bwrite\b|\bwrite\b.*\brh\b",
+        r"\bmy best paper\b.*\bwrite\b|\bwrite\b.*\brh\b|"
+        r"spectral.?framework|bsd_spectral_framework|"
+        r"\bwrite bsd\b|\bplease write bsd\b|\bfinish bad\b",
         text,
     ):
         return False

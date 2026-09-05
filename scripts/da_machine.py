@@ -151,7 +151,11 @@ def classify_claim(claim: str) -> dict:
         text,
     ):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
-    if re.search(r"\bbsd\b|birch|swinnerton", text):
+    if re.search(
+        r"\bbsd\b|birch|swinnerton|spectral.?framework|"
+        r"bsd_spectral_framework",
+        text,
+    ):
         return {
             "domain": "U",
             "verdict": "open",

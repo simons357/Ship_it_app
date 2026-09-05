@@ -452,6 +452,11 @@ def is_q_ask(ask: str) -> bool:
     if re.search(r"\bwrite rh\b|\brh proof\b|\briemann\b", text):
         return False
     if re.search(
+        r"spectral.?framework|bsd_spectral_framework|\bwrite bsd\b",
+        text,
+    ):
+        return False
+    if re.search(
         r"\bis that right\b|\bis (ns |navier |navi )?done\b|\bcan da finish\b",
         text,
     ):
