@@ -82,11 +82,11 @@ WATCH = [
         "do_not": "seat as a twin of Koch-Tataru or Pavlovic",
     },
     {
-        "name": "Silvestre",
+        "name": "Imbert",
         "slot": "B",
-        "kingdom": "Holder / drift-diffusion",
-        "involved": "often a different equation",
-        "do_not": "export fractional or drift-diffusion onto classical NS",
+        "kingdom": "kinetic / Boltzmann / Fokker-Planck",
+        "involved": "often with Silvestre on kinetic equations",
+        "do_not": "seat as a second kinetic chair next to Silvestre",
     },
     {
         "name": "Kenig",

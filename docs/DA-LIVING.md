@@ -41,6 +41,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Stokes / maximal \(L^p\) regularity | Hieber | maximal \(L^p\) regularity for the Stokes operator | a linear estimate bounds \(X\) |
 | Kolmogorov 4/5 / weak anomalous dissipation | Bedrossian | 4/5 for forced stationary martingale solutions under weak anomalous dissipation | a cascade identity bounds \(X\) |
 | Vanishing viscosity / inviscid limit | Kelliher | vanishing viscosity iff a vortex sheet forms on the boundary | the inviscid limit bounds \(X\) |
+| Kinetic Fokker-Planck / Hölder | Silvestre | Hölder estimates for kinetic Fokker-Planck up to the boundary | that equation bounds NS \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -232,6 +233,13 @@ a vortex sheet forms on the boundary (Comm. Math. Sci.
 a bound on \(X\). Tarek, Roger — Euler singularity stays
 Elgindi. Attractors stay Temam. Kato is not in this
 room. Temam–Wang Kato-type criteria stay off this chair.
+
+**Silvestre.** Hölder estimates for kinetic Fokker-Planck
+up to the boundary (*Ars Inveniendi Analytica* 2022).
+A different equation is not a bound on NS \(X\). Alexis,
+Luis — De Giorgi CKN stays Vasseur. Partial regularity
+stays Caffarelli. The Caffarelli–Silvestre extension
+stays off this chair.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -503,6 +511,7 @@ scores the process, not a theorem you did not prove.
 | Hieber Stokes maximal regularity closes \(X\) | **fail** |
 | Bedrossian Kolmogorov 4/5 closes \(X\) | **fail** |
 | Kelliher vanishing viscosity closes \(X\) | **fail** |
+| Silvestre kinetic Fokker-Planck closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

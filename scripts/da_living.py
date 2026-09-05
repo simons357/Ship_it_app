@@ -178,6 +178,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Silvestre",
+        ["Vasseur", "Caffarelli"],
+        "Holder estimates for kinetic Fokker-Planck are a different equation. Exporting them onto NS is not a bound on X. De Giorgi CKN stays Vasseur. Partial regularity stays Caffarelli. The extension stays off this chair.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -842,6 +848,13 @@ CLAIMS = [
         "fail",
         "CMS 2008: vanishing viscosity iff a vortex sheet on the boundary. An equivalence for the inviscid limit is not a bound on X. Kato stays out. Euler singularity stays Elgindi.",
     ),
+    rec(
+        "L62",
+        "silvestre_fokker_closes_X",
+        "Silvestre kinetic Fokker-Planck closes X",
+        "fail",
+        "Ars Inven. Anal. 2022: Holder estimates for kinetic Fokker-Planck up to the boundary. A different equation is not a bound on NS X. De Giorgi CKN stays Vasseur. Caffarelli-Silvestre extension stays off.",
+    ),
 ]
 
 
@@ -863,6 +876,7 @@ KINGDOMS = [
     {"name": "Stokes / maximal L^p regularity", "who": "Hieber", "slot": "B"},
     {"name": "Kolmogorov 4/5 / weak anomalous dissipation", "who": "Bedrossian", "slot": "B"},
     {"name": "Vanishing viscosity / inviscid limit", "who": "Kelliher", "slot": "B"},
+    {"name": "Kinetic Fokker-Planck / Holder", "who": "Silvestre", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

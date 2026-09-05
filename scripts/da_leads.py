@@ -205,6 +205,9 @@ LEADS = [
     lead("Kelliher", "vanishing viscosity / inviscid limit", "B", "living",
          "Vanishing viscosity holds iff a vortex sheet forms on the boundary. An equivalence for the inviscid limit is not a bound on X. Kato stays out. Euler singularity stays Elgindi.",
          "inviscid limit = bound on X"),
+    lead("Silvestre", "kinetic Fokker-Planck / Holder", "B", "living",
+         "Holder estimates for kinetic Fokker-Planck are a different equation. Exporting them onto NS is not a bound on X. De Giorgi CKN stays Vasseur. The extension stays off this chair.",
+         "Fokker-Planck = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -287,7 +290,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -664,6 +667,13 @@ CLAIMS = [
         "Kelliher vanishing viscosity bounds X",
         "fail",
         "An equivalence for the inviscid limit is not enstrophy. Kato stays out. Euler singularity stays Elgindi.",
+    ),
+    rec(
+        "R54",
+        "silvestre_fokker_bounds_X",
+        "Silvestre kinetic Fokker-Planck bounds X",
+        "fail",
+        "A different equation is not enstrophy. De Giorgi CKN stays Vasseur. The extension stays off this chair.",
     ),
 ]
 
