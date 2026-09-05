@@ -136,6 +136,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Pavlovic",
+        ["Koch", "Tataru"],
+        "The Cauchy problem is ill-posed in Besov minus-one infinity-infinity. Norm inflation is not a bound on X. Small critical well-posedness stays Koch-Tataru. Bourgain is not in this room.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -751,6 +757,13 @@ CLAIMS = [
         "fail",
         "JMP 2007: a numerical certificate implies regularity. Still an if. A computed bound is not a bound on X. Hou stays computation as probe.",
     ),
+    rec(
+        "L55",
+        "pavlovic_illposed_closes_X",
+        "Pavlovic critical ill-posedness closes X",
+        "fail",
+        "JFA 2008: norm inflation in Besov minus-one infinity-infinity. Discontinuity of the solution map is not a bound on X. Small critical stays Koch-Tataru. Bourgain stays out.",
+    ),
 ]
 
 
@@ -765,6 +778,7 @@ KINGDOMS = [
     {"name": "Type I / ancient correspondence", "who": "Barker", "slot": "B"},
     {"name": "Sequential L3 Liouville", "who": "Barker", "slot": "B"},
     {"name": "A posteriori regularity", "who": "Robinson", "slot": "B"},
+    {"name": "Critical ill-posedness", "who": "Pavlovic", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

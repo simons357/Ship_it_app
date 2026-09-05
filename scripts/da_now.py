@@ -29,8 +29,9 @@ DEAD = {
     "Scheffer",
     "Sohr",
     "Foias",
-    "Heywood",
-}
+        "Heywood",
+        "Bourgain",
+    }
 
 NOT_A_PERSON = {"Operator", "current math.AP", "operator"}
 

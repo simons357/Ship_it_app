@@ -58,6 +58,7 @@ in your slot.
 | Kukavica | unique continuation | Strong unique continuation for differences of solutions is not a bound on \(X\). Vanishing order is not enstrophy. Not the one-component chair. | unique continuation \(=\) bound on \(X\) |
 | Barker | Type I / ancient correspondence | Type I blowup iff a nontrivial mild bounded ancient with Type I decay. An iff is not a bound on \(X\). Sequential \(L^3\) Liouville is not ESS. | Type I iff ancient \(=\) bound; sequential \(L^3=\) bound |
 | Robinson | a posteriori regularity | A numerical certificate implies regularity. Still an if. A computed bound is not a bound on \(X\). Hou stays computation as probe. | a posteriori certificate \(=\) bound on \(X\) |
+| Pavlović | critical ill-posedness | Ill-posed in \(\dot B^{-1}_{\infty,\infty}\) by norm inflation. Not a bound on \(X\). Small critical stays Koch–Tataru. Bourgain stays out. | ill-posedness \(=\) bound on \(X\) |
 | Guillod | numerical non-uniqueness | Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity. | numerics \(=\) bound; numerics \(=\) blowup |
 | Seregin | local regularity / ESS | A criterion is not an a priori on \(X\). | criterion \(\Rightarrow\) bound |
 | Escauriaza | ESS \(L^3\) endpoint | \(L^\infty_t L^3_x\) is the endpoint. A criterion is not an a priori. Bounded in \(L^3\) is not a bound on enstrophy. | \(L^3\) endpoint \(=\) bound on \(X\) |
@@ -155,6 +156,7 @@ in your slot.
 | Barker Type I ancient bounds \(X\) | **fail** |
 | Barker sequential \(L^3\) Liouville bounds \(X\) | **fail** |
 | Robinson a posteriori regularity bounds \(X\) | **fail** |
+| Pavlović critical ill-posedness bounds \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

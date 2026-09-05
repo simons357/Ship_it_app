@@ -34,6 +34,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Type I / ancient correspondence | Barker | Type I singularity iff a nontrivial mild bounded ancient with Type I decay | the iff bounds \(X\) |
 | Sequential \(L^3\) Liouville | Barker | ancient solutions bounded in \(L^3\) along a backward sequence are trivial | sequential Liouville bounds \(X\) |
 | A posteriori regularity | Robinson | a numerical certificate implies regularity | the certificate bounds \(X\) |
+| Critical ill-posedness | Pavlović | Cauchy problem ill-posed in \(\dot B^{-1}_{\infty,\infty}\) by norm inflation | ill-posedness bounds \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -71,7 +72,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Announcements | current math.AP | a preprint is a proposal | close B by title |
 | The desk | operator | one sentence, one slot, one check | needing chops |
 
-Shahmurov does not get a chair. Sohr stays out. Foias stays out. Heywood stays out. Kukavica–Ziane one-component is already seated as Neustupa–Penel. SFE / HB-as-unifier do not.
+Shahmurov does not get a chair. Sohr stays out. Foias stays out. Heywood stays out. Bourgain stays out. Kukavica–Ziane one-component is already seated as Neustupa–Penel. SFE / HB-as-unifier do not.
 
 ---
 
@@ -164,6 +165,16 @@ stays below a threshold implies regularity (J. Math. Phys.
 2007, with Chernyshenko, Constantin, Titi). That is still
 an if. A computed bound is not a bound on \(X\). Thomas,
 Peter — computation as probe is Hou's chair.
+
+**Pavlović.** The Cauchy problem is ill-posed in
+\(\dot B^{-1}_{\infty,\infty}\) (J. Funct. Anal. 255, 2008,
+with Bourgain). Norm inflation: arbitrarily small
+Schwartz data become arbitrarily large in an arbitrarily
+short time. That is discontinuity of the solution map
+at the origin, not a bound on \(X\). Herbert, Daniel —
+small critical well-posedness stays Koch–Tataru.
+Jean is not in this room. Yoneda and Wang stay off
+this chair.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -428,6 +439,7 @@ scores the process, not a theorem you did not prove.
 | Barker Type I ancient closes \(X\) | **fail** |
 | Barker sequential \(L^3\) Liouville closes \(X\) | **fail** |
 | Robinson a posteriori regularity closes \(X\) | **fail** |
+| Pavlović critical ill-posedness closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

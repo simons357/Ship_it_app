@@ -184,6 +184,9 @@ LEADS = [
     lead("Robinson", "a posteriori regularity", "B", "living",
          "A numerical certificate that a residual stays below a threshold implies regularity. Still an if. A computed bound is not a bound on X. Hou stays computation as probe.",
          "a posteriori certificate = bound on X"),
+    lead("Pavlovic", "critical ill-posedness", "B", "living",
+         "The Cauchy problem is ill-posed in Besov minus-one infinity-infinity by norm inflation. That is not a bound on X. Small critical stays Koch-Tataru. Bourgain stays out.",
+         "ill-posedness = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -266,7 +269,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -594,6 +597,13 @@ CLAIMS = [
         "Robinson a posteriori regularity bounds X",
         "fail",
         "A numerical certificate is still an if. Not leftover B42. Hou stays computation as probe.",
+    ),
+    rec(
+        "R47",
+        "pavlovic_illposed_bounds_X",
+        "Pavlovic critical ill-posedness bounds X",
+        "fail",
+        "Norm inflation is discontinuity of the solution map, not enstrophy. Small critical stays Koch-Tataru. Bourgain stays out.",
     ),
 ]
 
