@@ -11,9 +11,21 @@ Nodes are lemmas and blanks. Edges are pass, fail,
 open, or blocked. The hunter walks that graph. It
 does not write \(\mathcal{R}\).
 
-An ordinary generator may phrase a sentence. It
-does not fill an open edge. Both ends of the leftover
-are already named. The wall is writing the integral.
+## Meaning
+
+Yes, we use an LLM. It phrases. The operator is a
+normal person. Ordinary AI proposes one sentence.
+
+Context that sits is the graph: which node, which
+edge, which veto, which object.
+
+Meaning that sits is `classify`: a slot, a
+pre-verdict, and a checker that can kill the
+sentence.
+
+An LLM that “understands context and meaning” does
+not write \(\mathcal{R}\). Both ends of the leftover
+are already named. Understanding is not the integral.
 
 ---
 
@@ -110,6 +122,9 @@ in the first place.
 | A vote, leftover B42, or \(n=64\) is a legal hunt | **fail** |
 | Looking at the object window writes \(X\) | **fail** |
 | A new scored lemma may add an edge | **open** |
+| We use an LLM as the generator that phrases a claim | **pass** |
+| Context that sits is the graph; meaning that sits is classify | **pass** |
+| An LLM that understands context and meaning writes the leftover | **fail** |
 
 Object: [`TRACK-B-OBJECT.md`](TRACK-B-OBJECT.md)  
 Residual: [`TRACK-B-RESIDUAL.md`](TRACK-B-RESIDUAL.md)  

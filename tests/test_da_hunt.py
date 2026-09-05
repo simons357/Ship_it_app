@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from da_hunt import BLOCKED, CLAIMS, EDGES, LEGAL, NODES, OBJECT, run  # noqa: E402
+from da_hunt import BLOCKED, CLAIMS, EDGES, LEGAL, MEANING, NODES, OBJECT, run  # noqa: E402
 
 
 class DaHuntTests(unittest.TestCase):
@@ -28,8 +28,15 @@ class DaHuntTests(unittest.TestCase):
         self.assertEqual(by["H8"]["verdict"], "fail")
         self.assertEqual(by["H9"]["verdict"], "fail")
         self.assertEqual(by["H10"]["verdict"], "open")
+        self.assertEqual(by["H11"]["verdict"], "pass")
+        self.assertEqual(by["H12"]["verdict"], "pass")
+        self.assertEqual(by["H13"]["verdict"], "fail")
         self.assertTrue(payload["meta"]["is_graph"])
         self.assertTrue(payload["meta"]["llm_does_not_fill"])
+        self.assertTrue(payload["meta"]["uses_llm_to_phrase"])
+        self.assertTrue(payload["meta"]["meaning_is_classify"])
+        self.assertTrue(MEANING["uses_llm"])
+        self.assertIn("classify", MEANING["meaning_that_sits"])
         self.assertTrue(payload["meta"]["object_window"])
         self.assertTrue(payload["meta"]["does_not_rerun_trackb"])
         self.assertIn("X", payload["object"]["math"])

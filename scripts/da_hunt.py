@@ -143,6 +143,21 @@ LEGAL = [
 ]
 
 
+MEANING = {
+    "uses_llm": True,
+    "llm_does": "Phrase English into one killable claim. That is the generator.",
+    "llm_does_not": "Fill an open edge. Write R. Vote. Unshelve SFE. Retune the PDE.",
+    "context_that_sits": "The graph: which node, which edge, which veto, which object.",
+    "meaning_that_sits": "classify → slot + pre-verdict + a checker that can kill it.",
+    "english": (
+        "Yes, we use an LLM. It phrases. "
+        "Context that sits is the chain. "
+        "Meaning that sits is classify. "
+        "Understanding does not write R."
+    ),
+}
+
+
 ILLEGAL = [
     {"claim": "leftover-close B42", "blocks": "B42 → B_regularity"},
     {"claim": "spawn n=64 as the proof", "blocks": "n64 → B_regularity"},
@@ -224,6 +239,27 @@ CLAIMS = [
         "open",
         "An edge sits when a checker scores it. Do not invent leftover B42.",
     ),
+    rec(
+        "H11",
+        "llm_phrases",
+        "We use an LLM as the generator that phrases a claim",
+        "pass",
+        "Ordinary AI proposes. The operator does not need the chops. Phrasing is allowed.",
+    ),
+    rec(
+        "H12",
+        "meaning_is_classify",
+        "Context that sits is the graph; meaning that sits is classify",
+        "pass",
+        "Which edge, which veto, which slot. Not a vibe. Not a séance.",
+    ),
+    rec(
+        "H13",
+        "understanding_writes_R",
+        "An LLM that understands context and meaning writes the leftover",
+        "fail",
+        "Understanding is not the integral. H4 already killed the fill.",
+    ),
 ]
 
 
@@ -236,6 +272,8 @@ def run(out: Path | None = None) -> dict:
             "is_graph": True,
             "not_a_closer": True,
             "llm_does_not_fill": True,
+            "uses_llm_to_phrase": True,
+            "meaning_is_classify": True,
             "object_window": True,
             "does_not_write_X": True,
             "does_not_rerun_trackb": True,
@@ -244,6 +282,7 @@ def run(out: Path | None = None) -> dict:
         "nodes": NODES,
         "edges": EDGES,
         "blocked": BLOCKED,
+        "meaning": MEANING,
         "legal": LEGAL,
         "illegal": ILLEGAL,
         "claims": CLAIMS,
@@ -298,6 +337,13 @@ def print_hunt(out: Path | None = None, look: bool = False) -> dict:
     print("BLOCKED  (do not connect these again)")
     for b in payload["blocked"]:
         print(f"  {b['src']} -x-> {b['dst']}: {b['why']}")
+    print()
+    print("MEANING")
+    print(" ", payload["meaning"]["english"])
+    print("  llm does:    ", payload["meaning"]["llm_does"])
+    print("  llm does not:", payload["meaning"]["llm_does_not"])
+    print("  context:     ", payload["meaning"]["context_that_sits"])
+    print("  meaning:     ", payload["meaning"]["meaning_that_sits"])
     print()
     print("HUNT  legal next")
     for row in payload["legal"]:

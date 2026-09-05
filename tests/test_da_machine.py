@@ -566,6 +566,9 @@ class DaMachineTests(unittest.TestCase):
         window = classify_claim("open the object window on the leftover")
         self.assertEqual(window["domain"], "U")
         self.assertEqual(window["verdict"], "open")
+        meaning = classify_claim("do we use an LLM that understands context and meaning")
+        self.assertEqual(meaning["domain"], "U")
+        self.assertEqual(meaning["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
