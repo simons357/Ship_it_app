@@ -59,6 +59,7 @@ class DaLivingTests(unittest.TestCase):
         self.assertEqual(by["L39"]["verdict"], "fail")
         self.assertEqual(by["L40"]["verdict"], "fail")
         self.assertEqual(by["L41"]["verdict"], "fail")
+        self.assertEqual(by["L42"]["verdict"], "fail")
         self.assertEqual(payload["meta"]["regularity_after"], "open")
         self.assertEqual(payload["meta"]["possible_to_close_X"], "open")
         self.assertTrue(payload["meta"]["not_a_vote"])
@@ -108,6 +109,7 @@ class DaLivingTests(unittest.TestCase):
             "Lin",
             "Vasseur",
             "Farwig",
+            "Cheskidov",
             "Operator",
         ):
             self.assertIn(must, names)
@@ -151,6 +153,7 @@ class DaLivingTests(unittest.TestCase):
             "Lin",
             "Vasseur",
             "Farwig",
+            "Cheskidov",
         }
         cross = [
             t

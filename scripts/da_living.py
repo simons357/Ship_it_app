@@ -178,6 +178,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Cheskidov",
+        ["Farwig", "Vicol"],
+        "Energy equality in a weak-in-time Onsager class is still a condition. Leray already has the inequality. Equality is not a bound on X. Do not cash Onsager for NS as regularity.",
+        "B",
+    ),
+    turn(
         "Neustupa-Penel",
         ["Beale", "Caffarelli"],
         "Regularity of one velocity component regularizes a suitable weak solution. That is still an if. It is not an a priori on X. One component is not the field.",
@@ -582,6 +588,13 @@ CLAIMS = [
         "fail",
         "JMSJ 2007: Serrin class, no differentiability, generally not Leray-Hopf. A different class is not a bound on classical X. Sohr stays out.",
     ),
+    rec(
+        "L42",
+        "cheskidov_energy_equality_closes_X",
+        "Cheskidov energy equality closes X",
+        "fail",
+        "Nonlinearity 2020: energy equality in a weak-in-time Onsager class. A condition. Equality is not regularity and not a bound on X.",
+    ),
 ]
 
 
@@ -606,6 +619,7 @@ KINGDOMS = [
     {"name": "Continuation", "who": "Beale", "slot": "B"},
     {"name": "BMO continuation", "who": "Kozono-Taniuchi", "slot": "B"},
     {"name": "Very weak solutions", "who": "Farwig", "slot": "B"},
+    {"name": "Energy equality / Onsager", "who": "Cheskidov", "slot": "B"},
     {"name": "One-component if", "who": "Neustupa-Penel", "slot": "B"},
     {"name": "Critical small data", "who": "Koch, Tataru", "slot": "B"},
     {"name": "Large Besov / nonlinear smallness", "who": "Chemin-Gallagher", "slot": "B"},

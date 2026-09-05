@@ -276,7 +276,8 @@ not a bound on \(X\). Lin's new proof of CKN is still
 De Giorgi proof of CKN is the same theorem, not no
 blowup. Farwig very weak solutions are a different
 class, not Leray–Hopf and not a bound on classical
-\(X\). Sohr stays out.
+\(X\). Sohr stays out. Cheskidov energy equality in an
+Onsager class is a condition, not a bound on \(X\).
 Sit down on leftover-close B42. Stretching budget is not an a priori
 (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.

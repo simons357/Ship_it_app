@@ -335,6 +335,12 @@ class DaMachineTests(unittest.TestCase):
         weak = classify_claim("Farwig very weak solutions on a vorticity packet")
         self.assertEqual(weak["domain"], "B")
         self.assertEqual(weak["verdict"], "open")
+        cheskidov = classify_claim("seat Cheskidov as a wall on the living bench")
+        self.assertEqual(cheskidov["domain"], "U")
+        self.assertEqual(cheskidov["verdict"], "open")
+        energy = classify_claim("Cheskidov energy equality on a vorticity packet")
+        self.assertEqual(energy["domain"], "B")
+        self.assertEqual(energy["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

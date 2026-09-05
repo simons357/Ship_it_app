@@ -85,6 +85,9 @@ LEADS = [
     lead("Farwig", "very weak solutions", "B", "living",
          "Very weak solutions sit in Serrin's class without differentiability. They are not Leray-Hopf. Uniqueness in that class is not a bound on X. Sohr stays out.",
          "very weak = bound on X"),
+    lead("Cheskidov", "energy equality / Onsager", "B", "living",
+         "Energy equality in a weak-in-time Onsager class is still a condition. Leray already has the inequality. Equality is not a bound on X.",
+         "energy equality = bound on X"),
     lead("Nirenberg", "partial regularity", "B", "past",
          "Keep us on the wall. Do not promote 1934–1982 to a global pass.",
          "energy + CKN = close"),
@@ -230,7 +233,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -467,6 +470,13 @@ CLAIMS = [
         "Farwig very weak solutions bound X",
         "fail",
         "A different class is not Leray-Hopf and not a bound on classical X. Sohr stays out.",
+    ),
+    rec(
+        "R34",
+        "cheskidov_energy_equality_bounds_X",
+        "Cheskidov energy equality bounds X",
+        "fail",
+        "Onsager-class energy equality is a condition. Equality is not regularity.",
     ),
 ]
 
