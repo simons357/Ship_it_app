@@ -28,6 +28,8 @@ python3 scripts/da_machine.py proof --problem POINCARE
 python3 scripts/da_machine.py next --ask "point care conjecture"
 python3 scripts/da_machine.py proof --problem PNP
 python3 scripts/da_machine.py next --ask "P versus NP"
+python3 scripts/da_machine.py proof --problem ALL
+python3 scripts/da_machine.py next --ask "Please write the final, corrected and complete versions"
 ```
 
 Nothing is wrong with asking. That is the product.
@@ -42,6 +44,7 @@ Nothing is wrong with asking. That is the product.
 | Hodge conjecture | `--problem HODGE` or `Hodge conjecture?` | [`HODGE-PROOF-CHAIN.md`](HODGE-PROOF-CHAIN.md) |
 | Poincaré conjecture | `--problem POINCARE` or `point care` | [`POINCARE-PROOF-CHAIN.md`](POINCARE-PROOF-CHAIN.md) |
 | P versus NP | `--problem PNP` or `P versus NP` | [`PNP-PROOF-CHAIN.md`](PNP-PROOF-CHAIN.md) |
+| All seated chains (exam) | `--problem ALL` or `final, corrected and complete versions` | [`DA-COMPLETE.md`](DA-COMPLETE.md) |
 
 Track A is the \(Q_1\) PDE. Theorem A already sits for
 that equation. Track B is classical NS. Do not glue.
@@ -76,6 +79,7 @@ Best A (Q1 + renormalization) and furthest RH, dream team looking, legal write: 
 | Please finish bad closes leftover (6) | **fail** |
 | `BSD final.pdf` is the Hodge conjecture | **fail** |
 | SFE harmonic \(H(x)\) proves \(\mathrm{P}\neq\mathrm{NP}\) | **fail** |
+| Writing the complete versions closes the leftovers | **fail** |
 | Poincaré is still an open WRITE | **fail** |
 | The WRITE line may sit later | **open** |
 | More named problems may get a ground-floor chain | **open** |

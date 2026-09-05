@@ -19,6 +19,7 @@ from da_proof import (  # noqa: E402
     CLAIMS,
     LINES,
     PROBLEMS,
+    is_all_ask,
     is_proof_ask,
     parse_problem,
     parse_problems,
@@ -45,6 +46,8 @@ class DaProofTests(unittest.TestCase):
         self.assertEqual(by["C12"]["verdict"], "fail")
         self.assertEqual(by["C13"]["verdict"], "fail")
         self.assertEqual(by["C14"]["verdict"], "fail")
+        self.assertEqual(by["C15"]["verdict"], "fail")
+        self.assertEqual(by["C16"]["verdict"], "pass")
         self.assertTrue(payload["meta"]["nothing_wrong_with_asking"])
         self.assertTrue(payload["meta"]["q_is_not_rh"])
         self.assertTrue(payload["meta"]["a_is_not_b"])
@@ -127,6 +130,7 @@ class DaProofTests(unittest.TestCase):
         self.assertTrue((ROOT / "docs" / "HODGE-PROOF-CHAIN.md").is_file())
         self.assertTrue((ROOT / "docs" / "POINCARE-PROOF-CHAIN.md").is_file())
         self.assertTrue((ROOT / "docs" / "PNP-PROOF-CHAIN.md").is_file())
+        self.assertTrue((ROOT / "docs" / "DA-COMPLETE.md").is_file())
         self.assertTrue(is_proof_ask("Please write BSD"))
         self.assertEqual(parse_problem(ask="Please write BSD"), "BSD")
         self.assertEqual(parse_problem(problem="BSD"), "BSD")
@@ -235,6 +239,28 @@ class DaProofTests(unittest.TestCase):
             parse_problems(ask=letter),
             ["NS", "RH", "POINCARE", "PNP"],
         )
+        exam = (
+            "Please write the final, corrected and complete versions "
+            "using DA and cursor please. This is to test the DA's ability "
+            "to understand and finish or assist in closing proof chains"
+        )
+        self.assertTrue(is_all_ask(ask=exam))
+        self.assertTrue(is_proof_ask(exam))
+        self.assertFalse(is_attempt_ask(exam))
+        self.assertEqual(parse_problems(ask=exam), list(PROBLEMS))
+        dumped = run(
+            out=Path(tempfile.mkdtemp()) / "da_proof_all.json",
+            problem="ALL",
+            ask=exam,
+        )
+        self.assertEqual(dumped["picked"], list(PROBLEMS))
+        self.assertTrue(dumped["meta"]["complete_is_not_qed"])
+        self.assertEqual(dumped["meta"]["writeup"], "docs/DA-COMPLETE.md")
+        by_p = {c["problem"]: c for c in dumped["chains"]}
+        self.assertEqual(by_p["NS"]["lines"][5]["status"], "write")
+        self.assertTrue(by_p["POINCARE"]["completion"]["leftover_sits"])
+        self.assertTrue(by_p["A"]["this_pde_complete"])
+        self.assertFalse(by_p["BSD"]["completion"]["leftover_sits"])
 
 
 if __name__ == "__main__":

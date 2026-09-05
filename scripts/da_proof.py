@@ -1017,7 +1017,36 @@ CLAIMS = [
         "fail",
         "Phi is Track A. SND/Ring are conditional. Status note: unconditional 3D NS is not claimed.",
     ),
+    rec(
+        "C15",
+        "complete_versions_close",
+        "Writing the final corrected complete versions closes the leftovers",
+        "fail",
+        "Complete means HAVE / WRITE / THEN with a ledger. WRITE still does not sit.",
+    ),
+    rec(
+        "C16",
+        "complete_is_the_exam",
+        "Asking for complete versions is the study exam: understand, write, assist; not emit-as-QED",
+        "pass",
+        "DA can write every seated chain and refuse a fake last line. That is the job.",
+    ),
 ]
+
+
+def is_all_ask(ask: str = "", problem: str = "") -> bool:
+    text = f"{problem} {ask}".lower()
+    if re.search(r"^\s*all\s*$", (problem or "").strip().lower()):
+        return True
+    return bool(
+        re.search(
+            r"final.{0,48}complete|complete versions|"
+            r"all (the )?(named )?proof chains|"
+            r"\bproof --all\b|\ball problems\b|"
+            r"master status|\bstatus report\b",
+            text,
+        )
+    )
 
 
 def _flag_problem(problem: str) -> str | None:
@@ -1037,6 +1066,8 @@ def _flag_problem(problem: str) -> str | None:
         return "POINCARE"
     if key in ("PNP", "P VS NP", "P VERSUS NP", "P=NP"):
         return "PNP"
+    if key in ("ALL", "COMPLETE"):
+        return None
     if key in PROBLEMS:
         return key
     return None
@@ -1045,6 +1076,8 @@ def _flag_problem(problem: str) -> str | None:
 def parse_problems(ask: str = "", problem: str = "") -> list[str]:
     """Problems named in the ask, in desk order NS / A / RH / YM / BSD / HODGE / POINCARE / PNP."""
     text = f"{problem} {ask}".lower()
+    if is_all_ask(ask=ask, problem=problem):
+        return list(PROBLEMS)
     found: list[str] = []
     flagged = _flag_problem(problem)
     if flagged:
@@ -1116,6 +1149,9 @@ def is_proof_ask(ask: str) -> bool:
             r"poincar|point care|pointcare|"
             r"\bp\s*(versus|vs\.?)\s*np\b|"
             r"smoothness and existence|existence and smoothness|"
+            r"final.{0,48}complete|complete versions|"
+            r"all (the )?(named )?proof chains|"
+            r"master status|\bstatus report\b|"
             r"\bfinish bad\b",
             text,
         )
@@ -1173,15 +1209,25 @@ def _chain(pid: str) -> dict:
     }
 
 
+def _status_line(chain: dict) -> str:
+    if chain.get("literature_complete") or chain["completion"]["leftover_sits"]:
+        return "sits (literature)"
+    if chain.get("this_pde_complete"):
+        return f"this PDE sits; WRITE ({chain['write_n']}) open"
+    return f"WRITE ({chain['write_n']}) open"
+
+
 def run(out: Path | None = None, problem: str = "NS", ask: str = "") -> dict:
     pids = parse_problems(ask=ask, problem=problem)
     chains = [_chain(pid) for pid in pids]
     first = chains[0]
     write_ns = [c["write_n"] for c in chains if c["write_n"] is not None]
+    dumping_all = is_all_ask(ask=ask, problem=problem)
     payload = {
         "meta": {
             "question": "write the proof chain for " + ", ".join(pids),
-            "writeup": "docs/DA-PROOF.md",
+            "writeup": "docs/DA-COMPLETE.md" if dumping_all else "docs/DA-PROOF.md",
+            "complete_is_not_qed": True,
             "chain": first["chain_doc"],
             "chains": [c["chain_doc"] for c in chains],
             "problem": first["problem"],
@@ -1204,6 +1250,10 @@ def run(out: Path | None = None, problem: str = "NS", ask: str = "") -> dict:
         "if_write_sits": first["if_write_sits"],
         "do_not": first["do_not"],
         "write_n": first["write_n"],
+        "status": [
+            {"problem": c["problem"], "line": _status_line(c), "write_n": c["write_n"]}
+            for c in chains
+        ],
         "claims": CLAIMS,
         "counts": {
             "problems": len(PROBLEMS),
@@ -1229,6 +1279,11 @@ def run(out: Path | None = None, problem: str = "NS", ask: str = "") -> dict:
                 "No WRITE line on this pick. Literature sits. "
                 "A reprint is not a new theorem of this desk."
             )
+        )
+        if not dumping_all
+        else (
+            "These are the complete-as-written chains. "
+            "Open WRITE lines still do not sit. Emit is not QED."
         ),
     }
     dest = Path(out) if out is not None else Path("results/da_proof.json")
@@ -1289,6 +1344,11 @@ def print_proof(out: Path | None = None, problem: str = "NS", ask: str = "") -> 
     payload = run(out=out, problem=problem, ask=ask)
     print("Problems on this desk:", ", ".join(payload["problems"]))
     print("Writing:", ", ".join(payload["picked"]))
+    if len(payload["status"]) > 1:
+        print()
+        print("STATUS  (complete-as-written, not QED)")
+        for row in payload["status"]:
+            print(f"  {row['problem']}: {row['line']}")
     print()
     for chain in payload["chains"]:
         _print_one_chain(chain)

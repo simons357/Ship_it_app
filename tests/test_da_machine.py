@@ -46,6 +46,10 @@ class DaMachineTests(unittest.TestCase):
         self.assertIn("P vs NP", pnp["reason"])
         sfe = classify_claim("SFE harmonic H(x) proves P != NP")
         self.assertEqual(sfe["verdict"], "fail")
+        complete = classify_claim("Please write the final, corrected and complete versions")
+        self.assertEqual(complete["domain"], "U")
+        self.assertEqual(complete["verdict"], "open")
+        self.assertIn("complete versions", complete["reason"])
 
     def test_unassigned_stays_open(self):
         r = classify_claim("hello there")

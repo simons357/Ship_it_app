@@ -454,7 +454,8 @@ def is_q_ask(ask: str) -> bool:
     if re.search(
         r"spectral.?framework|bsd_spectral_framework|\bwrite bsd\b|"
         r"bsd%20final|bsd.?final|\bhodge\b|"
-        r"poincar|point care|\bp\s*(versus|vs\.?)\s*np\b",
+        r"poincar|point care|\bp\s*(versus|vs\.?)\s*np\b|"
+        r"complete versions|status report",
         text,
     ):
         return False
