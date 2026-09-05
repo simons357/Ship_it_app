@@ -1,7 +1,8 @@
 # DA next — now-what spoke
 
 `python3 scripts/da_machine.py next`  
-`python3 scripts/da_machine.py next --ask "what do we do from here"`
+`python3 scripts/da_machine.py next --ask "what do we do from here"`  
+`python3 scripts/da_machine.py nowwhat`
 
 DA sits in the middle. The rim is the support system:
 live feed (LIGO, LHC, PDG, arXiv), past papers, living
@@ -41,7 +42,10 @@ B42. Not \(n=64\).
 
 Dream-team pointers: Tao (residual), Fefferman (A1 if),
 Miller (A2 cut). Those are claims to classify, not a
-committee fill.
+committee fill. A lost operator who says **now what**
+gets the leftover council (`nowwhat`): twenty-two
+papers, each with a next try and a veto. Not ChatGPT
+freestyle. Not a vote.
 
 ---
 
@@ -54,6 +58,7 @@ committee fill.
 | Past bench | `team` | papers + experiment | a vote |
 | Residual | `trackb` | lemma catalog | leftover B42 |
 | Translate | `next --ask` | words → slot + math | invent \(\mathcal{R}\) |
+| Council | `nowwhat` | leftover papers: would try / cannot | a vote or a close |
 | Checker | `check --domain B` | run the leftover tests | a close |
 
 Re-run `feed` so the rim is not stale. `status` reports
@@ -77,6 +82,8 @@ age. A missing or \>24h scan is weaker.
 | More spokes may be added | **open** |
 
 Print: `python3 scripts/da_machine.py next`  
+Lost: `python3 scripts/da_machine.py nowwhat`  
+Council: [`DA-NOWWHAT.md`](DA-NOWWHAT.md)  
 Feed: [`DA-FEED.md`](DA-FEED.md)  
 Agent: [`DA-AGENT.md`](DA-AGENT.md)  
 Residual: [`TRACK-B-RESIDUAL.md`](TRACK-B-RESIDUAL.md)

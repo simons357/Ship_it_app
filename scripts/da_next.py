@@ -96,7 +96,23 @@ SPOKES = [
     {"name": "trackb", "command": "trackb", "slot": "B", "does": "lemma catalog; residual through B41"},
     {"name": "classify", "command": "classify", "slot": "meta", "does": "words to slot + pre-verdict"},
     {"name": "check B", "command": "check --domain B", "slot": "B", "does": "run the residual checker"},
+    {"name": "nowwhat", "command": "nowwhat", "slot": "U / B", "does": "lost-operator council: 22 leftover papers"},
 ]
+
+
+def is_lost_ask(ask: str) -> bool:
+    """Empty, 'now what', or 'what would you try' goes to the council."""
+    text = (ask or "").lower().strip()
+    if not text:
+        return True
+    return bool(
+        re.search(
+            r"\bnow\s*what\b|\bnowwhat\b|\bwhat would you\b|"
+            r"\bmissing piece\b|\blost\b|\bdream team answer\b|"
+            r"\bwhat would (they|the papers)\b",
+            text,
+        )
+    )
 
 
 def translate(ask: str) -> dict:
@@ -275,10 +291,12 @@ def run(out: Path | None = None, ask: str = "", fetch: bool = False) -> dict:
             "open": sum(1 for c in CLAIMS if c["verdict"] == "open"),
         },
         "next_da_move": (
-            "Re-run feed. Classify one suggestion. "
+            "Lost? Run nowwhat. Re-run feed. Classify one suggestion. "
             "Do not write leftover B42. Do not spawn n=64. "
             "F is not the NS target."
         ),
+        "nowwhat": "python3 scripts/da_machine.py nowwhat",
+        "lost_ask": is_lost_ask(ask),
     }
     dest = Path(out) if out is not None else Path("results/da_next.json")
     dest.parent.mkdir(parents=True, exist_ok=True)

@@ -22,6 +22,7 @@ not replace the checker.
 | Tick | `agent` | U | pulls both and scores the shape | autopilot a pass |
 | Alert | `alert` | U | texts a watched flip | a new catalog page |
 | Now-what | `next` | U / B | wall, target, words→math | write the leftover |
+| Council | `nowwhat` | U / B | leftover papers: would try / cannot | a vote; ChatGPT freestyle |
 
 Latest public data belongs here. A stale machine is a
 weaker anti-bullshit device. Up to date is a U duty.
@@ -51,4 +52,5 @@ Track A stays the damped PDE. Theorem A does not imply B.
 Roster: [`DA-NOW.md`](DA-NOW.md)  
 Feed: [`DA-FEED.md`](DA-FEED.md)  
 Now-what: [`DA-NEXT.md`](DA-NEXT.md)  
+Council: [`DA-NOWWHAT.md`](DA-NOWWHAT.md)  
 Machine: [`DOMAIN-ARCHITECT-MACHINE.md`](DOMAIN-ARCHITECT-MACHINE.md)

@@ -551,6 +551,12 @@ class DaMachineTests(unittest.TestCase):
         nxt = classify_claim("DA next: now what on the living bench")
         self.assertEqual(nxt["domain"], "U")
         self.assertEqual(nxt["verdict"], "open")
+        council = classify_claim("nowwhat: what would you try for the missing piece")
+        self.assertEqual(council["domain"], "U")
+        self.assertEqual(council["verdict"], "open")
+        lost = classify_claim("lost operator council on the leftover")
+        self.assertEqual(lost["domain"], "U")
+        self.assertEqual(lost["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

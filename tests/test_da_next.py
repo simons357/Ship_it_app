@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from da_next import CLAIMS, translate, run  # noqa: E402
+from da_next import CLAIMS, is_lost_ask, translate, run  # noqa: E402
 
 
 class DaNextTests(unittest.TestCase):
@@ -38,6 +38,9 @@ class DaNextTests(unittest.TestCase):
         self.assertFalse(payload["rim"]["fetched"])
         self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))
         self.assertTrue((ROOT / "docs" / "DA-NEXT.md").is_file())
+        self.assertIn("nowwhat", payload["nowwhat"])
+        self.assertTrue(any(s["name"] == "nowwhat" for s in payload["spokes"]))
+        self.assertFalse(is_lost_ask("what do we do from here"))
 
     def test_translate_splits_F_from_X(self):
         hit = translate("is the target F or the realization variable")
