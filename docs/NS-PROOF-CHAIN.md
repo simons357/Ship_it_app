@@ -5,7 +5,8 @@ Keep \(1/r^4\). No \(Q_1\).
 
 Say to DA: `python3 scripts/da_machine.py proof --problem NS`  
 or: `next --ask "write me the proof chain for Navier-Stokes"`  
-or: `next --ask "Track B please write"`
+or: `next --ask "Track B please write"`  
+Track A is a different equation: [`A-PROOF-CHAIN.md`](A-PROOF-CHAIN.md).
 
 RH is a different problem: [`RH-PROOF-CHAIN.md`](RH-PROOF-CHAIN.md).
 

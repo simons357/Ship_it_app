@@ -3,10 +3,12 @@
 DA proof: write a proof chain from the ground floor.
 
 The operator is not a math person. They name a problem
-(NS, RH). DA writes the aimed theorem and the chain.
-Asking is the product. Emitting the chain is not QED.
-Line WRITE is the attempt.
+(NS / Track B, A / Track A, RH). DA writes the aimed
+theorem and the chain. Asking is the product. Emitting
+the chain is not QED. Line WRITE is the attempt.
 
+Track A is the Q1 PDE. Theorem A already sits for that
+equation. Track B is classical NS. Do not glue.
 Track Q is inverse-GCD. It is not RH. Do not glue.
 """
 
@@ -122,6 +124,87 @@ NS_LINES = [
 ]
 
 
+A_LINES = [
+    {
+        "n": 1,
+        "status": "have",
+        "text": (
+            "The PDE. On T^3, nu>0, eps>0, alpha>0, beta>=1/2: "
+            "partial_t u + (u·grad)u = -grad p + nu Delta u "
+            "+ eps^alpha P div(|grad u|^beta grad u), div u = 0. "
+            "Ladyzhenskaya / p-Laplacian stress. Not classical NS. No Phi."
+        ),
+    },
+    {
+        "n": 2,
+        "status": "have",
+        "text": (
+            "Energy. Test against u: "
+            "1/2 d/dt ||u||_2^2 + nu ||grad u||_2^2 "
+            "+ eps^alpha ||grad u||_{L^{beta+2}}^{beta+2} = 0."
+        ),
+    },
+    {
+        "n": 3,
+        "status": "have",
+        "text": (
+            "Galerkin. Finite Stokes modes, same energy, no blowup of ||u_n||_2. "
+            "Weak limit is a weak solution (Minty-Browder on the extra stress)."
+        ),
+    },
+    {
+        "n": 4,
+        "status": "have",
+        "text": (
+            "beta>=1/2 in 3D. Extra integrability of grad u meets Ladyzhenskaya "
+            "p>=5/2. Unique strong solution in L^infty_t H^1 cap L^2_t H^2. "
+            "The constant depends on eps and blows up as eps->0."
+        ),
+    },
+    {
+        "n": 5,
+        "status": "have",
+        "text": (
+            "Bootstrap. Frozen eps>0, uniformly elliptic Stokes. "
+            "Difference quotients to H^k, then C^infty."
+        ),
+    },
+    {
+        "n": 6,
+        "status": "have",
+        "text": (
+            "Theorem A. Unique u in C^infty(T^3 x (0,infty)) cap L^infty_t H^1 "
+            "for this PDE at eps>0, beta>=1/2. This PDE is closed. "
+            "No Phi. Data need not be axisymmetric."
+        ),
+    },
+    {
+        "n": 7,
+        "status": "write",
+        "text": (
+            "WRITE. ||u||_H1 <= C with C independent of eps, for all smooth "
+            "divergence-free H^1 data, or a named obstruction that C must blow up. "
+            "A decaying Q1 integral is not that bound (A9)."
+        ),
+    },
+    {
+        "n": 8,
+        "status": "follows",
+        "text": (
+            "Uniform Lemma 4. From (4) and (7), the H^1 bound stays finite as eps->0."
+        ),
+    },
+    {
+        "n": 9,
+        "status": "follows",
+        "text": (
+            "Still not B. If (7) sits you have a uniform bound on this family. "
+            "Classical NS is a separate Track B write (integrable R). A=>B stays fail."
+        ),
+    },
+]
+
+
 RH_LINES = [
     {
         "n": 1,
@@ -215,6 +298,49 @@ PROBLEMS = {
         "mine": MINE,
         "needed": NEEDED,
     },
+    "A": {
+        "id": "A",
+        "aliases": ("track a", "q1", "augmented"),
+        "slot": "A",
+        "name": "Q1-augmented Navier-Stokes (this PDE)",
+        "object": {
+            "name": "Q1-augmented NS",
+            "slot": "A",
+            "english": "Ladyzhenskaya / p-Laplacian NS at eps>0, beta>=1/2",
+            "window": [
+                "this PDE, not classical NS",
+                "Theorem A sits: unique C^infty at eps>0, beta>=1/2",
+                "need: ||u||_H1 <= C independent of eps, or a named no-go",
+                "A6: Q1 integral falls as eps falls (the renormalization)",
+                "A7 fail: box enstrophy is not uniform in eps",
+                "A=>B fail. F is not this object. No Phi.",
+            ],
+        },
+        "theorem": (
+            "Let nu>0, eps>0, alpha>0, beta>=1/2, and u0 in H^1(T^3) "
+            "divergence-free. The Q1 system has a unique solution "
+            "u in C^infty(T^3 x (0,infty)) cap L^infty(0,infty; H^1). "
+            "No finite-time singularity for this PDE."
+        ),
+        "lines": A_LINES,
+        "chain_doc": "docs/A-PROOF-CHAIN.md",
+        "proceed": [
+            "||u||_H1 <= C independent of eps, all smooth divergence-free H^1 data",
+            "a named obstruction that C must blow up as eps->0",
+            "not a decaying Q1 integral (A9 already fail)",
+            "not Phi, not a slide onto Track B",
+        ],
+        "if_write_sits": (
+            "If (7) sits, Lemma 4 is uniform in eps. Classical NS is still Track B."
+        ),
+        "do_not": (
+            "Do not export Theorem A onto B. Do not Phi. "
+            "Do not retune nodes.json. A=>B stays fail."
+        ),
+        "mine": [],
+        "needed": [],
+        "this_pde_complete": True,
+    },
     "RH": {
         "id": "RH",
         "aliases": ("rh", "riemann"),
@@ -263,7 +389,7 @@ CLAIMS = [
         "ask_for_the_chain",
         "You can tell DA to write a proof chain by naming the problem",
         "pass",
-        "NS / Xavier Stokes / RH / Riemann. The operator does not need the chops.",
+        "NS / Track B / Track A / Q1 / RH / Riemann. The operator does not need the chops.",
     ),
     rec(
         "C2",
@@ -314,18 +440,52 @@ CLAIMS = [
         "open",
         "A problem sits when the aimed theorem and the have/write/follows lines are typed.",
     ),
+    rec(
+        "C9",
+        "a_is_b",
+        "Theorem A is classical Navier-Stokes",
+        "fail",
+        "Different equation. A=>B stays fail. Track B is the other chain.",
+    ),
 ]
 
 
-def parse_problem(ask: str = "", problem: str = "") -> str:
-    text = f"{problem} {ask}".lower()
-    if re.search(r"\brh\b|riemann", text):
-        return "RH"
-    if re.search(r"xavier|navi|\bstokes\b|\bns\b|navier|\btrack b\b", text):
+def _flag_problem(problem: str) -> str | None:
+    raw = (problem or "").strip()
+    if not raw:
+        return None
+    key = raw.upper().replace("TRACK ", "").replace("TRACK", "")
+    if key in ("B", "NS"):
         return "NS"
-    if problem.upper() in PROBLEMS:
-        return problem.upper()
-    return "NS"
+    if key in PROBLEMS:
+        return key
+    return None
+
+
+def parse_problems(ask: str = "", problem: str = "") -> list[str]:
+    """Problems named in the ask, in desk order NS / A / RH."""
+    text = f"{problem} {ask}".lower()
+    found: list[str] = []
+    flagged = _flag_problem(problem)
+    if flagged:
+        found.append(flagged)
+    if re.search(
+        r"\btrack b\b|xavier|\bnavi\b|\bstokes\b|\bnavier\b|\bunaugmented\b|\bns\b",
+        text,
+    ):
+        if "NS" not in found:
+            found.append("NS")
+    if re.search(r"\btrack a\b|\bq_?1\b", text):
+        if "A" not in found:
+            found.append("A")
+    if re.search(r"\brh\b|riemann", text):
+        if "RH" not in found:
+            found.append("RH")
+    return found or ["NS"]
+
+
+def parse_problem(ask: str = "", problem: str = "") -> str:
+    return parse_problems(ask=ask, problem=problem)[0]
 
 
 def is_proof_ask(ask: str) -> bool:
@@ -337,8 +497,8 @@ def is_proof_ask(ask: str) -> bool:
         re.search(
             r"\bwrite (me )?(the )?proof\b|\bproof chain\b|"
             r"\bxavier stokes\b|\bnavi(er)?.?stokes\b|"
-            r"\bda proof\b|\bthe proof for (ns|navier|rh|riemann|track b)\b|"
-            r"\btrack b\b.*\bwrite\b|\bwrite\b.*\btrack b\b|"
+            r"\bda proof\b|\bthe proof for (ns|navier|rh|riemann|track [ab]|q1)\b|"
+            r"\btrack [ab]\b.*\bwrite\b|\bwrite\b.*\btrack [ab]\b|"
             r"\brh\b|\briemann\b",
             text,
         )
@@ -353,23 +513,11 @@ def print_problem_window(obj: dict) -> None:
         print(f"  {line}")
 
 
-def run(out: Path | None = None, problem: str = "NS", ask: str = "") -> dict:
-    pid = parse_problem(ask=ask, problem=problem)
+def _chain(pid: str) -> dict:
     spec = PROBLEMS[pid]
     write_n = next(L["n"] for L in spec["lines"] if L["status"] == "write")
-    payload = {
-        "meta": {
-            "question": f"write the proof chain for {pid}",
-            "writeup": "docs/DA-PROOF.md",
-            "chain": spec["chain_doc"],
-            "problem": pid,
-            "nothing_wrong_with_asking": True,
-            "emit_is_not_qed": True,
-            "q_is_not_rh": True,
-            "operator_needs_no_chops": True,
-        },
+    return {
         "problem": pid,
-        "problems": list(PROBLEMS),
         "theorem": {"aimed": spec["theorem"], "name": spec["name"]},
         "object": spec["object"],
         "lines": spec["lines"],
@@ -379,20 +527,66 @@ def run(out: Path | None = None, problem: str = "NS", ask: str = "") -> dict:
         "if_write_sits": spec["if_write_sits"],
         "do_not": spec["do_not"],
         "write_n": write_n,
-        "claims": CLAIMS,
+        "chain_doc": spec["chain_doc"],
+        "this_pde_complete": spec.get("this_pde_complete", False),
         "counts": {
-            "problems": len(PROBLEMS),
             "lines": len(spec["lines"]),
             "have": sum(1 for L in spec["lines"] if L["status"] == "have"),
             "write": sum(1 for L in spec["lines"] if L["status"] == "write"),
             "follows": sum(1 for L in spec["lines"] if L["status"] == "follows"),
+        },
+    }
+
+
+def run(out: Path | None = None, problem: str = "NS", ask: str = "") -> dict:
+    pids = parse_problems(ask=ask, problem=problem)
+    chains = [_chain(pid) for pid in pids]
+    first = chains[0]
+    write_ns = [c["write_n"] for c in chains]
+    payload = {
+        "meta": {
+            "question": "write the proof chain for " + ", ".join(pids),
+            "writeup": "docs/DA-PROOF.md",
+            "chain": first["chain_doc"],
+            "chains": [c["chain_doc"] for c in chains],
+            "problem": first["problem"],
+            "nothing_wrong_with_asking": True,
+            "emit_is_not_qed": True,
+            "q_is_not_rh": True,
+            "a_is_not_b": True,
+            "operator_needs_no_chops": True,
+        },
+        "problem": first["problem"],
+        "picked": pids,
+        "problems": list(PROBLEMS),
+        "chains": chains,
+        "theorem": first["theorem"],
+        "object": first["object"],
+        "lines": first["lines"],
+        "mine": first["mine"],
+        "needed": first["needed"],
+        "proceed": first["proceed"],
+        "if_write_sits": first["if_write_sits"],
+        "do_not": first["do_not"],
+        "write_n": first["write_n"],
+        "claims": CLAIMS,
+        "counts": {
+            "problems": len(PROBLEMS),
+            "picked": len(pids),
+            "lines": first["counts"]["lines"],
+            "have": first["counts"]["have"],
+            "write": first["counts"]["write"],
+            "follows": first["counts"]["follows"],
             "pass": sum(1 for c in CLAIMS if c["verdict"] == "pass"),
             "fail": sum(1 for c in CLAIMS if c["verdict"] == "fail"),
             "open": sum(1 for c in CLAIMS if c["verdict"] == "open"),
         },
         "next_da_move": (
-            f"Line ({write_n}) is the write. Classify one candidate. "
-            "If it sits, the THEN lines follow. That is the close."
+            "Line "
+            + "/".join(f"({n})" for n in write_ns)
+            + " is the write. Classify one candidate. "
+            "If it sits, the THEN lines follow. That is the close. "
+            "A is not B."
         ),
     }
     dest = Path(out) if out is not None else Path("results/da_proof.json")
@@ -402,41 +596,46 @@ def run(out: Path | None = None, problem: str = "NS", ask: str = "") -> dict:
     return payload
 
 
-def print_proof(out: Path | None = None, problem: str = "NS", ask: str = "") -> dict:
-    payload = run(out=out, problem=problem, ask=ask)
-    print_problem_window(payload["object"])
+def _print_one_chain(chain: dict) -> None:
+    print_problem_window(chain["object"])
     print()
-    print(f"PROBLEM {payload['problem']}")
-    print("Problems on this desk:", ", ".join(payload["problems"]))
+    print(f"PROBLEM {chain['problem']}")
     print()
     print("THEOREM (aimed)")
-    print(" ", payload["theorem"]["aimed"])
+    print(" ", chain["theorem"]["aimed"])
     print()
     print("PROOF CHAIN  (ground floor up)")
-    for L in payload["lines"]:
+    for L in chain["lines"]:
         tag = {"have": "HAVE", "write": "WRITE", "follows": "THEN"}[L["status"]]
         print(f"  ({L['n']}) [{tag}] {L['text']}")
     print()
-    print(payload["if_write_sits"])
-    print(payload["do_not"])
+    print(chain["if_write_sits"])
+    print(chain["do_not"])
     print("A candidate for the WRITE line:")
-    for row in payload["proceed"]:
+    for row in chain["proceed"]:
         print(f"  - {row}")
     print()
+
+
+def print_proof(out: Path | None = None, problem: str = "NS", ask: str = "") -> dict:
+    payload = run(out=out, problem=problem, ask=ask)
+    print("Problems on this desk:", ", ".join(payload["problems"]))
+    print("Writing:", ", ".join(payload["picked"]))
+    print()
+    for chain in payload["chains"]:
+        _print_one_chain(chain)
     for c in payload["claims"]:
         print(f"  [{c['verdict']}] {c['id']}: {c['statement']}")
     print("next:", payload["next_da_move"])
     print(f"wrote {payload['_wrote']}")
-    print("chain:", payload["meta"]["chain"])
+    print("chain:", ", ".join(payload["meta"]["chains"]))
     return payload
 
 
 def main() -> int:
-    problem = "NS"
     args = [a for a in sys.argv[1:] if not a.startswith("-")]
-    if args:
-        problem = parse_problem(ask=" ".join(args))
-    print_proof(problem=problem, ask=" ".join(args))
+    ask = " ".join(args)
+    print_proof(problem=args[0] if args else "NS", ask=ask)
     return 0
 
 

@@ -22,7 +22,11 @@ The extra dissipation is the Ladyzhenskaya / \(p\)-Laplacian term already known 
 
 Lemma catalog: [`TRACK-A-LEMMAS.md`](TRACK-A-LEMMAS.md).  
 Gap: [`TRACK-A-GAP.md`](TRACK-A-GAP.md).  
-Print: `python3 scripts/da_machine.py tracka`
+Print: `python3 scripts/da_machine.py tracka`  
+Write the chain: `python3 scripts/da_machine.py proof --problem A`  
+or `next --ask "track A write"`
+
+DA emit: [`A-PROOF-CHAIN.md`](A-PROOF-CHAIN.md).
 
 ---
 

@@ -63,7 +63,7 @@ freestyle. Not a vote. Not a séance.
 | Hunt | `hunt` | scored edges, blocked edges, object window | write \(\mathcal{R}\) |
 | Look | `look` | object window anytime | a bound |
 | From | `from` | your steps to the break; proceed | a fake last line |
-| Proof | `proof` | write the NS proof chain | QED without line (6) |
+| Proof | `proof` | write the NS / A / RH proof chain | QED without the WRITE line; A is not B |
 | Repair | `repair` | take A, SND, or H; name the fault and the write | export A onto B |
 | Attempt | `attempt` | best A and RH; dream team looks; legal write | vote a missing line |
 | Brute | `brute` | finite list vs all-data write | quantum / try-every as a close |

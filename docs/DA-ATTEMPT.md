@@ -58,6 +58,7 @@ sends classical leftover to B.
 
 Catalog: [`TRACK-A-LEMMAS.md`](TRACK-A-LEMMAS.md)  
 Gap: [`TRACK-A-GAP.md`](TRACK-A-GAP.md)  
+Chain: [`A-PROOF-CHAIN.md`](A-PROOF-CHAIN.md)  
 Repair: [`DA-REPAIR.md`](DA-REPAIR.md)
 
 ---

@@ -125,6 +125,7 @@ JOBS = {
             "docs/TRACK-A-LEMMAS.md",
             "docs/TRACK-A-GAP.md",
             "docs/AUGMENTED-NS-PROOF-CHAIN.md",
+            "docs/A-PROOF-CHAIN.md",
             "docs/DA-REPAIR.md",
         ),
         "team": [

@@ -100,7 +100,7 @@ SPOKES = [
     {"name": "hunt", "command": "hunt", "slot": "U / B", "does": "proof-chain hunter: edges, blocks, object window"},
     {"name": "look", "command": "look", "slot": "B", "does": "object window anytime"},
     {"name": "from", "command": "from", "slot": "U / B", "does": "your steps to the break; proceed toward regularity"},
-    {"name": "proof", "command": "proof", "slot": "B", "does": "write the Navier-Stokes proof chain"},
+    {"name": "proof", "command": "proof", "slot": "B / A / RH", "does": "write the NS / A / RH proof chain"},
     {"name": "repair", "command": "repair", "slot": "U / A / B / Q", "does": "take A, SND, or H; name the fault and the write"},
     {"name": "attempt", "command": "attempt", "slot": "U / A / RH / Q", "does": "best A and RH; dream team looks; legal write"},
     {"name": "brute", "command": "brute", "slot": "U", "does": "finite list vs all-data write; quantum is not the estimate"},

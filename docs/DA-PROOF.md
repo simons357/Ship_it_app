@@ -7,10 +7,13 @@ the ground floor.
 ```
 python3 scripts/da_machine.py proof
 python3 scripts/da_machine.py proof --problem NS
+python3 scripts/da_machine.py proof --problem A
 python3 scripts/da_machine.py proof --problem RH
 python3 scripts/da_machine.py next --ask "write me the proof chain for Navier-Stokes"
 python3 scripts/da_machine.py next --ask "RH proof chain please"
 python3 scripts/da_machine.py next --ask "Track B please write"
+python3 scripts/da_machine.py next --ask "track A write"
+python3 scripts/da_machine.py next --ask "Track B please write. track A write as well"
 ```
 
 Nothing is wrong with asking. That is the product.
@@ -18,8 +21,11 @@ Nothing is wrong with asking. That is the product.
 | Problem | Command | Chain |
 |---|---|---|
 | Navier–Stokes / Track B | `--problem NS` or `Track B please write` | [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md) |
+| \(Q_1\) / Track A | `--problem A` or `track A write` | [`A-PROOF-CHAIN.md`](A-PROOF-CHAIN.md) |
 | Riemann hypothesis | `--problem RH` | [`RH-PROOF-CHAIN.md`](RH-PROOF-CHAIN.md) |
 
+Track A is the \(Q_1\) PDE. Theorem A already sits for
+that equation. Track B is classical NS. Do not glue.
 Track Q is inverse-GCD. It is not RH. Do not glue.
 
 The WRITE line is the attempt. Emitting the chain is
@@ -43,5 +49,6 @@ Best A (Q1 + renormalization) and furthest RH, dream team looking, legal write: 
 | An LLM writes the WRITE line into a theorem | **fail** |
 | Asking DA to write a proof chain is a category error | **fail** |
 | Track Q / Theorem P is the Riemann hypothesis | **fail** |
+| Theorem A is classical Navier–Stokes | **fail** |
 | The WRITE line may sit later | **open** |
 | More named problems may get a ground-floor chain | **open** |

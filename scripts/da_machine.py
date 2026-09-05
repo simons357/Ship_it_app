@@ -119,7 +119,7 @@ def classify_claim(claim: str) -> dict:
         r"\bneed to close\b|\beinstein\b|\btesla\b|"
         r"\bbig picture\b|\bcomprehensive\b|\bwhat would they do next\b|"
         r"\bproof chain\b|\bwrite (me )?(the )?proof\b|\bda proof\b|"
-        r"\btrack b\b.{0,40}\bwrite\b|\bwrite\b.{0,40}\btrack b\b",
+        r"\btrack [ab]\b.{0,40}\bwrite\b|\bwrite\b.{0,40}\btrack [ab]\b",
         text,
     ):
         return {
@@ -846,15 +846,15 @@ def cmd_repair(job: str = "", ask: str = "") -> int:
 
 
 def cmd_proof(problem: str = "", ask: str = "") -> int:
-    from da_proof import parse_problem, print_proof
+    from da_proof import parse_problems, print_proof
 
-    pid = parse_problem(ask=ask, problem=problem)
-    print_proof(problem=pid, ask=ask)
+    pids = parse_problems(ask=ask, problem=problem)
+    print_proof(problem=problem, ask=ask)
     append_run(
         "U",
-        f"Write the {pid} proof chain from the ground floor",
+        "Write the " + ", ".join(pids) + " proof chain from the ground floor",
         "open",
-        "ask pass; emit is not QED; WRITE is the attempt; Q is not RH",
+        "ask pass; emit is not QED; WRITE is the attempt; A is not B; Q is not RH",
     )
     return 0
 
@@ -1175,8 +1175,8 @@ def main() -> int:
     sub.add_parser("window", help="same as look")
     sub.add_parser("from", help="walk your scored steps to the break; proceed toward regularity")
     sub.add_parser("mine", help="same as from")
-    prf = sub.add_parser("proof", help="write a proof chain: NS or RH")
-    prf.add_argument("--problem", default="", help="NS or RH")
+    prf = sub.add_parser("proof", help="write a proof chain: NS, A, or RH")
+    prf.add_argument("--problem", default="", help="NS | A | RH. Empty defaults to NS.")
     sub.add_parser(
         "picture",
         help="survey of each field; next write; not omniscience",
