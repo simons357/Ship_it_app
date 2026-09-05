@@ -9,6 +9,8 @@ known attempt is a library. Combining them is glue.
 
 A quantum device does not change the object.
 
+![Finite list does not cross to the write](assets/da-brute-visual.png)
+
 ```
   A MACHINE CAN EXHAUST                    THE WRITE IS
   ---------------------                    ------------

@@ -182,6 +182,7 @@ def run(out: Path | None = None) -> dict:
 def print_brute(out: Path | None = None) -> dict:
     payload = run(out=out)
     print("BRUTE  (finite list vs the write)")
+    print("visual: docs/assets/da-brute-visual.png")
     print(payload["visual"])
     print("CAN TRY")
     for line in payload["finite"]:

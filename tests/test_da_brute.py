@@ -39,6 +39,7 @@ class DaBruteTests(unittest.TestCase):
         self.assertFalse(is_brute_ask("now what"))
         self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))
         self.assertTrue((ROOT / "docs" / "DA-BRUTE.md").is_file())
+        self.assertTrue((ROOT / "docs" / "assets" / "da-brute-visual.png").is_file())
 
 
 if __name__ == "__main__":
