@@ -37,6 +37,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Double-cone geometric if | Lei–Ren–Tian | vorticity in a double cone on high-magnitude sets regularizes | the if is all-data A1 |
 | Axisymmetric Type I | Chen–Strain–Tsai–Yau | axisymmetric Type I blow-up is out | those two restrictions close \(X\) |
 | Continuation | Beale | \(\int\|\omega\|_\infty\) | the max from \(L^2\) or a leftover list |
+| BMO continuation | Kozono–Taniuchi | integrable \(\|\omega\|_{\mathrm{BMO}}\) continues a strong solution | the if is an a priori on \(X\) |
 | Critical small data | Koch, Tataru | small critical sits | large-data regularity |
 | Scaling gap / log-bmo if | Grujić | sparseness can shrink the gap; 2026 log-bmo if | the if is all-data A1 |
 | Strain / middle eigenvalue | Miller | \(\lambda_2^+\) is a different cut; identity is not an a priori | rewrite in \(S\) closes \(X\) |
@@ -142,6 +143,12 @@ as a close of classical \(X\).
 **Beale.** Continuation is the max. \(L^2\) is not our
 theorem. A leftover list is not the max. Herbert, Daniel
 — small critical is not this job.
+
+**Kozono–Taniuchi.** Integrable BMO of vorticity
+continues a strong solution (Math. Z. 2000). That is
+still a continuation if. It is not an a priori on \(X\).
+John, Zoran — BMO of \(\omega\) is not \(\mathrm{bmo}\)
+of \(\xi\).
 
 **Koch.** Small data in the critical space sits. That is
 our theorem. Large data is a different job. Do not export
@@ -256,6 +263,7 @@ scores the process, not a theorem you did not prove.
 | Hou–Wang–Yang unforced Leray–Hopf closes \(X\) | **fail** |
 | Lei–Ren–Tian double-cone if is all-data A1 | **fail** |
 | Chen–Strain–Tsai–Yau axisymmetric Type I closes \(X\) | **fail** |
+| Kozono–Taniuchi BMO continuation closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

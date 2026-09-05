@@ -136,6 +136,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Kozono-Taniuchi",
+        ["Beale", "Grujic"],
+        "BMO of vorticity continues a strong solution. That is still a continuation if. It is not an a priori on X. BMO of omega is not bmo of xi.",
+        "B",
+    ),
+    turn(
         "Koch",
         ["Tataru", "Tao"],
         "Small critical data sits. Large data is a different job. Do not export Koch-Tataru onto this packet class.",
@@ -452,6 +458,13 @@ CLAIMS = [
         "fail",
         "IMRN 2008 / CPDE 2009: axisymmetry plus a Type I bound. Two restrictions. Not an a priori on classical X.",
     ),
+    rec(
+        "L32",
+        "kozono_taniuchi_closes_X",
+        "Kozono-Taniuchi BMO continuation closes X",
+        "fail",
+        "Math Z 2000: integrable BMO of vorticity continues a strong solution. A continuation if is not an a priori. BMO of omega is not bmo of xi.",
+    ),
 ]
 
 
@@ -469,6 +482,7 @@ KINGDOMS = [
     {"name": "Double-cone geometric if", "who": "Lei-Ren-Tian", "slot": "B"},
     {"name": "Axisymmetric Type I", "who": "CSTY", "slot": "B"},
     {"name": "Continuation", "who": "Beale", "slot": "B"},
+    {"name": "BMO continuation", "who": "Kozono-Taniuchi", "slot": "B"},
     {"name": "Critical small data", "who": "Koch, Tataru", "slot": "B"},
     {"name": "Scaling gap / log-bmo if", "who": "Grujic", "slot": "B"},
     {"name": "Strain / middle eigenvalue", "who": "Miller", "slot": "B"},

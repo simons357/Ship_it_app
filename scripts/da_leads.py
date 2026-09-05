@@ -58,6 +58,9 @@ LEADS = [
     lead("Beale", "continuation", "B", "past",
          "If you want a criterion, use ∫‖ω‖_∞. A leftover list is not the max.",
          "BKM from L²"),
+    lead("Kozono-Taniuchi", "BMO continuation", "B", "living",
+         "Integrable BMO of vorticity continues a strong solution. Still an if. Not an a priori on X. BMO of omega is not bmo of xi.",
+         "BMO continuation = bound on X"),
     lead("Kato", "mild / continuation", "B", "past",
          "L² is not our theorem. We will sit for an a priori. We will not rename it.",
          "rename BKM into enstrophy"),
@@ -200,7 +203,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Jia", "Guillod", "Koch", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Giga-Miura", "Lei-Ren-Tian", "CSTY",
+    "Beirao-Berselli", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -367,6 +370,13 @@ CLAIMS = [
         "Chen-Strain-Tsai-Yau axisymmetric Type I exclusion closes X",
         "fail",
         "Axisymmetry plus Type I. Two restrictions. Not an a priori.",
+    ),
+    rec(
+        "R24",
+        "kozono_taniuchi_closes_X",
+        "Kozono-Taniuchi BMO continuation closes X",
+        "fail",
+        "A continuation if is not an a priori. BMO of omega is not bmo of xi.",
     ),
 ]
 

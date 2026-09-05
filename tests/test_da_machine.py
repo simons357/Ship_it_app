@@ -275,6 +275,12 @@ class DaMachineTests(unittest.TestCase):
         axisym = classify_claim("Chen-Strain-Tsai-Yau axisymmetric Type I on a vorticity packet")
         self.assertEqual(axisym["domain"], "B")
         self.assertEqual(axisym["verdict"], "open")
+        kozono = classify_claim("seat Kozono-Taniuchi as a wall on the living bench")
+        self.assertEqual(kozono["domain"], "U")
+        self.assertEqual(kozono["verdict"], "open")
+        bmo = classify_claim("Kozono-Taniuchi BMO continuation on a vorticity packet")
+        self.assertEqual(bmo["domain"], "B")
+        self.assertEqual(bmo["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
