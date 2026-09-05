@@ -70,6 +70,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Tsai",
+        ["Sverak", "Jia", "Wolf"],
+        "Local-energy self-similar profiles are out. That is exclusion, not an a priori on X. Forward large-data existence is Jia's chair. Leray is not in this room.",
+        "B",
+    ),
+    turn(
         "Guillod",
         ["Jia", "Sverak"],
         "Numerics show a pitchfork for large scale-invariant data. The profiles are smooth. That is not an a priori on X, and it is not a singularity.",
@@ -660,6 +666,13 @@ CLAIMS = [
         "fail",
         "Ann. of Math. 2018: Onsager for Euler, Holder 1/3. Different equation. Not a bound on NS X.",
     ),
+    rec(
+        "L48",
+        "tsai_local_energy_ss_closes_X",
+        "Tsai local-energy self-similar exclusion closes X",
+        "fail",
+        "ARMA 1998: local-energy self-similar profiles are trivial. Exclusion is not an a priori. Not Jia existence.",
+    ),
 ]
 
 
@@ -671,6 +684,7 @@ KINGDOMS = [
     {"name": "ESS L3 endpoint", "who": "Escauriaza", "slot": "B"},
     {"name": "Ancient Liouville / KNSS", "who": "Nadirashvili", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
+    {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Numerical non-uniqueness", "who": "Guillod", "slot": "B"},
     {"name": "Partial regularity", "who": "Caffarelli, Kohn", "slot": "B"},
     {"name": "CKN new proof", "who": "Lin", "slot": "B"},

@@ -166,6 +166,9 @@ LEADS = [
     lead("Jia", "forward self-similar large data", "B", "living",
          "Forward self-similar solutions exist for large minus-one-homogeneous data. Existence is not an a priori on X.",
          "profile existence = bound"),
+    lead("Tsai", "local-energy self-similar exclusion", "B", "living",
+         "Local-energy self-similar profiles are out. Exclusion is not an a priori on X. Not Jia existence.",
+         "exclusion = bound"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -248,7 +251,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -527,6 +530,13 @@ CLAIMS = [
         "Isett Onsager bounds X",
         "fail",
         "Euler Holder 1/3 is a different equation. Not a bound on NS X.",
+    ),
+    rec(
+        "R40",
+        "tsai_local_energy_ss_bounds_X",
+        "Tsai local-energy self-similar exclusion bounds X",
+        "fail",
+        "Exclusion of a profile class is not an a priori on X.",
     ),
 ]
 

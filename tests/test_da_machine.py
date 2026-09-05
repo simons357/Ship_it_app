@@ -371,6 +371,12 @@ class DaMachineTests(unittest.TestCase):
         onsager = classify_claim("Isett Onsager on a vorticity packet")
         self.assertEqual(onsager["domain"], "B")
         self.assertEqual(onsager["verdict"], "open")
+        tsai = classify_claim("seat Tsai as a wall on the living bench")
+        self.assertEqual(tsai["domain"], "U")
+        self.assertEqual(tsai["verdict"], "open")
+        localss = classify_claim("Tsai local-energy self-similar on a vorticity packet")
+        self.assertEqual(localss["domain"], "B")
+        self.assertEqual(localss["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
