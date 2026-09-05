@@ -1,0 +1,195 @@
+% Theorem A --- Q1-augmented Navier--Stokes (this PDE only).
+% Not classical NS. Not Track B. Compile with pdflatex.
+% Desk chain: docs/A-PROOF-CHAIN.md, docs/AUGMENTED-NS-PROOF-CHAIN.md
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+
+\title{Global regularity for the \(Q_1\)-augmented
+Navier--Stokes system\\
+\large Track A --- this PDE only}
+\author{Jonathan Robert Simons\\
+Prime Field Technologies}
+\date{5 September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+On the three-torus, the Navier--Stokes equations with an extra
+Ladyzhenskaya / \(p\)-Laplacian stress
+(\(Q_1\)-augmentation, \(\varepsilon>0\), \(\beta\ge 1/2\))
+admit a unique global smooth solution. This is Theorem~A on
+the Domain Architect desk. It is a theorem about
+\textbf{this equation}. It is not classical three-dimensional
+Navier--Stokes. The extra dissipation may be sent to zero
+only after a separate uniform \(H^1\) bound, which remains
+open; even then classical regularity is a further argument
+(Track~B). The chain records a standard class
+(Ladyzhenskaya 1968; M\'alek--Ne\v{c}as--R\r{u}\v{z}i\v{c}ka)
+in \(Q_1\) notation.
+\end{abstract}
+
+\section{The system}
+
+Let \(\nu>0\), \(\varepsilon>0\), \(\alpha>0\), and
+\(\beta\ge 1/2\). On \(\mathbb{T}^3\times[0,\infty)\) consider
+\begin{equation}
+\label{eq:q1}
+\partial_t u+(u\cdot\nabla)u
+=-\nabla p+\nu\Delta u
++\varepsilon^\alpha\,\mathbb{P}\,
+\operatorname{div}\bigl(|\nabla u|^\beta\nabla u\bigr),
+\qquad
+\nabla\cdot u=0,
+\end{equation}
+with \(u_0\in H^1(\mathbb{T}^3)\) divergence-free.
+Here \(\mathbb{P}\) is the Leray projector.
+Write \(p=\beta+2\), so \(\beta\ge 1/2\) is \(p\ge 5/2\).
+The extra term is the variational derivative of
+\(\frac1p\int|\nabla u|^p\). It is not the scalar
+\(-\varepsilon^\alpha|\nabla u|^\beta\Delta u\).
+
+\begin{theorem}[Theorem A]
+\label{thm:A}
+Let \(\nu>0\), \(\varepsilon>0\), \(\alpha>0\),
+\(\beta\ge 1/2\), and let \(u_0\in H^1(\mathbb{T}^3)\) be
+divergence-free. The system~\eqref{eq:q1} has a unique
+solution
+\[
+u\in C^\infty(\mathbb{T}^3\times(0,\infty))
+\cap L^\infty(0,\infty;H^1).
+\]
+No finite-time singularity occurs for this PDE.
+The data need not be axisymmetric.
+\end{theorem}
+
+\section{Proof}
+
+\begin{lemma}[Energy]
+For a smooth solution of~\eqref{eq:q1},
+\[
+\frac12\frac{d}{dt}\|u\|_2^2
++\nu\|\nabla u\|_2^2
++\varepsilon^\alpha\|\nabla u\|_{L^{\beta+2}}^{\beta+2}
+=0.
+\]
+Hence for every \(T>0\),
+\[
+\frac12\|u(T)\|_2^2
++\nu\int_0^T\|\nabla u\|_2^2\,dt
++\varepsilon^\alpha\int_0^T\|\nabla u\|_{L^{\beta+2}}^{\beta+2}\,dt
+=\frac12\|u_0\|_2^2.
+\]
+\end{lemma}
+
+\begin{proof}
+Test~\eqref{eq:q1} against \(u\). The convective term and
+the pressure vanish:
+\(\int(u\cdot\nabla)u\cdot u=\frac12\int u\cdot\nabla(|u|^2)=0\).
+The extra stress gives
+\(\int\mathbb{P}\operatorname{div}(|\nabla u|^\beta\nabla u)\cdot u
+=-\int|\nabla u|^{\beta+2}\).
+The Stokes term is \(-\nu\|\nabla u\|_2^2\).
+\end{proof}
+
+\begin{lemma}[Galerkin]
+The Galerkin projections onto the first \(n\) Stokes
+eigenfunctions exist globally. The energy bounds are
+uniform in \(n\). A subsequence converges weakly to a
+weak solution
+\[
+u\in L^\infty(0,\infty;L^2)\cap L^2(0,\infty;H^1),
+\qquad
+\nabla u\in L^{\beta+2}(0,\infty;L^{\beta+2}).
+\]
+\end{lemma}
+
+\begin{proof}
+Finite-dimensional ODE; the same energy identity holds.
+No finite-time blowup of \(\|u_n\|_2\). Banach--Alaoglu
+and Aubin--Lions pass to the limit. Monotonicity of
+\(v\mapsto\operatorname{div}(|\nabla v|^\beta\nabla v)\)
+is Minty--Browder. Details:
+M\'alek--Ne\v{c}as--R\r{u}\v{z}i\v{c}ka,
+\textit{Weak and Measure-valued Solutions to Evolutionary PDEs},
+Chapter~5.
+\end{proof}
+
+\begin{lemma}[Strong solutions, \(\beta\ge 1/2\)]
+The weak solution is unique and lies in
+\(L^\infty(0,\infty;H^1)\cap L^2(0,\infty;H^2)\).
+The constant depends on
+\(\varepsilon,\alpha,\beta,\nu,\|u_0\|_{H^1}\)
+and blows up as \(\varepsilon\to 0\).
+\end{lemma}
+
+\begin{proof}
+For \(\beta\ge 1/2\) one has \(\beta+2\ge 5/2\). Extra
+integrability of \(\nabla u\) meets the Ladyzhenskaya
+\(p\ge 5/2\) criterion (equivalently a
+Ladyzhenskaya--Prodi--Serrin pair built from that
+integrability). The extra term produces a monotone
+remainder that absorbs the convective difference of two
+solutions. See Ladyzhenskaya (1968) and
+M\'alek--Ne\v{c}as--R\r{u}\v{z}i\v{c}ka.
+This is extra integrability of \(\nabla u\), not a
+geometric cancel, and not a \(\Phi\) identity.
+\end{proof}
+
+\begin{lemma}[Bootstrap]
+The unique strong solution is
+\(C^\infty(\mathbb{T}^3\times(0,\infty))\).
+\end{lemma}
+
+\begin{proof}
+Frozen \(\varepsilon>0\), the linearized operator is a
+uniformly elliptic Stokes operator. Difference quotients
+give \(H^k\) for all \(k\). Sobolev embedding yields
+spatial smoothness; time regularity follows from the
+equation.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:A}]
+Galerkin existence, weak limit, strong uniqueness at
+\(\beta\ge 1/2\), then the bootstrap.
+\end{proof}
+
+\section{What this does not prove}
+
+\begin{remark}
+Uniform \(H^1\) as \(\varepsilon\to 0\) is not claimed.
+A decaying \(Q_1\) integral is not that bound.
+\end{remark}
+
+\begin{remark}
+Classical unaugmented Navier--Stokes (Track~B: keep
+\(1/r^4\), no \(Q_1\)) is not claimed.
+\(A\Rightarrow B\) remains false on this desk.
+\end{remark}
+
+\begin{remark}
+Riemann zeros, Birch--Swinnerton-Dyer, Hodge, Yang--Mills,
+and \(\mathrm{P}\) vs \(\mathrm{NP}\) are different objects.
+\end{remark}
+
+\begin{thebibliography}{9}
+\bibitem{L68}
+O.~A. Ladyzhenskaya,
+\textit{The Mathematical Theory of Viscous Incompressible Flow},
+Gordon and Breach, 1969
+(modified NS: extra \(p\)-Laplacian stress).
+\bibitem{MNR}
+J.~M\'alek, J.~Ne\v{c}as, M.~R\r{u}\v{z}i\v{c}ka,
+\textit{Weak and Measure-valued Solutions to Evolutionary PDEs},
+Chapman \& Hall, 1996.
+\end{thebibliography}
+
+\end{document}

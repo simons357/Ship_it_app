@@ -10,6 +10,8 @@ or both: `next --ask "Track B please write. track A write as well"`
 
 Long form: [`AUGMENTED-NS-PROOF-CHAIN.md`](AUGMENTED-NS-PROOF-CHAIN.md).  
 Gap: [`TRACK-A-GAP.md`](TRACK-A-GAP.md).  
+Pretty LaTeX: [`tex/theorem-a-q1.tex`](../tex/theorem-a-q1.tex).  
+After Continue: [`DA-AFTER-CONTINUE.md`](DA-AFTER-CONTINUE.md).  
 Classical leftover is the other note: [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md).
 
 ---
