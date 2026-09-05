@@ -15,6 +15,7 @@ an open WRITE by printing it is not the job.
 | Ask | Wrote | Finished |
 |---|---|---|
 | Track B please write | yes | no — (6) open |
+| Please finish bad / complete proof chain | yes | no — (6) still open |
 | Track A write | yes | this PDE yes; uniform \(H^1\) no |
 | write RH from the GCD paper | yes | no — (6) open; paper is Q |
 | Please write BSD / spectral framework | yes | no — (6) open; paper is Q prototype |
