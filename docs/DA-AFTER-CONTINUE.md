@@ -7,7 +7,8 @@ is the start of this note.
 The operator wants DA help on **unaugmented NS** and
 **RH**. The rest is gravy. The one sitting fluids
 theorem of this desk is **Theorem A** (this \(Q_1\) PDE).
-Pretty form: [`tex/theorem-a-q1.tex`](../tex/theorem-a-q1.tex).
+Pretty form: [`tex/theorem-a-q1.tex`](../tex/theorem-a-q1.tex).  
+What to do with it: [`THEOREM-A-DEPOSIT.md`](THEOREM-A-DEPOSIT.md).
 
 ---
 
