@@ -40,6 +40,7 @@ class DaNowTests(unittest.TestCase):
             self.assertIn(must, names)
         self.assertNotIn("Operator", names)
         self.assertNotIn("Shahmurov", names)
+        self.assertNotIn("Bourgain", names)
         watch = {row["name"] for row in WATCH}
         self.assertTrue(watch.isdisjoint(names))
         self.assertIn("Prange", watch)

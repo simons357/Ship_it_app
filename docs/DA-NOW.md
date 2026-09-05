@@ -27,7 +27,7 @@ Last-scan age: `python3 scripts/da_machine.py status`
 
 Shahmurov does not sit. Dead fluids stay out: Leray, Kato,
 Majda, Ladyzhenskaya, Nirenberg, Scheffer, Sohr, Foias,
-Heywood.
+Heywood. Bourgain stays out.
 
 ---
 
