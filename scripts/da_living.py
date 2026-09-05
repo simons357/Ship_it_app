@@ -88,6 +88,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Nadirashvili",
+        ["Seregin", "Sverak", "Escauriaza"],
+        "Bounded ancient mild solutions: 2D and axisymmetric no-swirl are classified. 3D remains a door. A Liouville theorem is not an a priori on X. Gabriel Koch, not Herbert.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -491,6 +497,13 @@ CLAIMS = [
         "fail",
         "Uspekhi 2003: L^infty_t L^3_x is a regularity criterion. A criterion is not an a priori. Bounded in L3 is not a bound on enstrophy.",
     ),
+    rec(
+        "L35",
+        "knss_liouville_closes_X",
+        "KNSS Liouville for bounded ancient solutions closes X",
+        "fail",
+        "Acta 2009: 2D and axisymmetric no-swirl. 3D remains a door. A Liouville theorem is not an a priori. Gabriel Koch, not Herbert.",
+    ),
 ]
 
 
@@ -500,6 +513,7 @@ KINGDOMS = [
     {"name": "Supercriticality", "who": "Tao", "slot": "B"},
     {"name": "Liouville / ancient / self-similar", "who": "Sverak, Seregin", "slot": "B"},
     {"name": "ESS L3 endpoint", "who": "Escauriaza", "slot": "B"},
+    {"name": "Ancient Liouville / KNSS", "who": "Nadirashvili", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Numerical non-uniqueness", "who": "Guillod", "slot": "B"},
     {"name": "Partial regularity", "who": "Caffarelli, Kohn", "slot": "B"},

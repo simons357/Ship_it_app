@@ -145,6 +145,9 @@ LEADS = [
     lead("Escauriaza", "ESS L3 endpoint", "B", "living",
          "L^infty_t L^3_x is the endpoint. A criterion is not an a priori. Bounded in L3 is not a bound on enstrophy.",
          "L3 endpoint = bound on X"),
+    lead("Nadirashvili", "ancient Liouville / KNSS", "B", "living",
+         "Bounded ancient mild solutions: 2D and axisymmetric no-swirl. 3D remains a door. A Liouville theorem is not an a priori. Gabriel Koch, not Herbert.",
+         "KNSS Liouville = bound on X"),
     lead("Koch", "critical small data", "B", "living",
          "Small critical sits. Large data is the object.",
          "Koch-Tataru ⇒ large data"),
@@ -207,7 +210,7 @@ MUST_SIT = {
     "Constantin", "Fefferman", "Ladyzhenskaya",
     "Einstein", "Tesla", "Feynman", "Weyl", "Wigner", "von Neumann", "Weinberg",
     "experiment / PDG", "neutrino / cosmology",
-    "Tao", "Sverak", "Seregin", "Escauriaza", "Jia", "Guillod", "Koch", "Tataru", "Grujic",
+    "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
     "Beirao-Berselli", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
@@ -397,6 +400,13 @@ CLAIMS = [
         "Escauriaza-Seregin-Sverak L3 endpoint closes X",
         "fail",
         "A criterion is not an a priori. Bounded in L3 is not a bound on enstrophy.",
+    ),
+    rec(
+        "R27",
+        "knss_liouville_closes_X",
+        "KNSS Liouville for bounded ancient solutions closes X",
+        "fail",
+        "3D remains a door. A Liouville theorem is not an a priori. Gabriel Koch, not Herbert.",
     ),
 ]
 

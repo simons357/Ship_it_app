@@ -29,6 +29,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Supercriticality | Tao | energy class is a derivative short; averaged cousins can blow | NS blows; this catalog closes \(X\) |
 | Liouville / ancient / self-similar | Šverák, Seregin | honest remaining doors; ESS endpoint | those doors from a leftover list |
 | ESS \(L^3\) endpoint | Escauriaza | \(L^\infty_t L^3_x\) is a regularity criterion | the endpoint is an a priori on \(X\) |
+| Ancient Liouville / KNSS | Nadirashvili | bounded ancient mild solutions classified in 2D and axisymmetric no-swirl | those Liouville theorems close \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Numerical non-uniqueness | Guillod | pitchfork for large scale-invariant data | numerics \(=\) bound; numerics \(=\) blowup |
 | Partial regularity | Caffarelli, Kohn | singular set small | small \(=\) empty |
@@ -102,6 +103,12 @@ someone hears “small” as “empty.”
 (Uspekhi 2003). It is a criterion. It is not an a priori
 on \(X\). Gregory, Vladimír — bounded in \(L^3\) is not a
 bound on enstrophy.
+
+**Nadirashvili.** Bounded ancient mild solutions: 2D and
+axisymmetric no-swirl are classified (Acta Math. 2009,
+Koch–Nadirashvili–Seregin–Šverák). 3D remains a door.
+A Liouville theorem is not an a priori on \(X\).
+Gregory, Vladimír, Luis — Gabriel Koch, not Herbert.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -279,6 +286,7 @@ scores the process, not a theorem you did not prove.
 | Kozono–Taniuchi BMO continuation closes \(X\) | **fail** |
 | Neustupa–Penel one-component if is all-data regularity | **fail** |
 | Escauriaza–Seregin–Šverák \(L^3\) endpoint closes \(X\) | **fail** |
+| KNSS Liouville for bounded ancient solutions closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |
