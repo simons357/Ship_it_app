@@ -220,6 +220,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Hishida",
+        ["Galdi", "Hieber"],
+        "Evolutionary NS in an exterior domain is a setting. Spatial decay and a Stokes semigroup are not a bound on periodic X. Steady exterior stays Galdi. Linear Stokes stays Hieber. Heywood is not in this room.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -933,6 +939,13 @@ CLAIMS = [
         "fail",
         "Korobkov-Pileckas-Russo: 2D steady Leray problem / Liouville. 2D and steady is not a bound on 3D evolutionary X. Leray stays out.",
     ),
+    rec(
+        "L69",
+        "hishida_exterior_closes_X",
+        "Hishida exterior evolutionary NS closes X",
+        "fail",
+        "Exterior evolutionary NS / Stokes semigroup and spatial decay. A setting is not a bound on periodic X. Steady exterior stays Galdi. Linear Stokes stays Hieber. Heywood stays out.",
+    ),
 ]
 
 
@@ -961,6 +974,7 @@ KINGDOMS = [
     {"name": "Controllability / NS control", "who": "Fursikov", "slot": "B"},
     {"name": "Time-periodic NS", "who": "Maremonti", "slot": "B"},
     {"name": "Steady 2D Liouville / Leray problem", "who": "Korobkov", "slot": "B"},
+    {"name": "Exterior evolutionary NS / spatial decay", "who": "Hishida", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

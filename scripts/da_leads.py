@@ -226,6 +226,9 @@ LEADS = [
     lead("Korobkov", "steady 2D Liouville / Leray problem", "B", "living",
          "2D steady Liouville and the plane Leray problem are 2D and steady. That is not a bound on 3D evolutionary X. Steady exterior stays Galdi. Liouville doors stay Sverak. Leray stays out.",
          "2D steady = bound on X"),
+    lead("Hishida", "exterior evolutionary NS / spatial decay", "B", "living",
+         "Evolutionary NS in an exterior domain is a setting. Spatial decay and a Stokes semigroup are not a bound on periodic X. Steady exterior stays Galdi. Linear Stokes stays Hieber. Heywood stays out.",
+         "exterior evolutionary = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -308,7 +311,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti", "Korobkov",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti", "Korobkov", "Hishida",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -734,6 +737,13 @@ CLAIMS = [
         "Korobkov 2D steady Leray bounds X",
         "fail",
         "2D and steady is not enstrophy. Steady exterior stays Galdi. Leray stays out.",
+    ),
+    rec(
+        "R61",
+        "hishida_exterior_bounds_X",
+        "Hishida exterior evolutionary NS bounds X",
+        "fail",
+        "A setting is not enstrophy. Steady exterior stays Galdi. Linear Stokes stays Hieber. Heywood stays out.",
     ),
 ]
 

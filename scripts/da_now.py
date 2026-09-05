@@ -132,6 +132,13 @@ WATCH = [
         "do_not": "seat as a second 2D-steady chair next to Korobkov",
     },
     {
+        "name": "Abe",
+        "slot": "B",
+        "kingdom": "exterior evolutionary NS / Stokes semigroup",
+        "involved": "Giga-Abe Stokes in unbounded domains; compared with Hishida",
+        "do_not": "seat as a second exterior-evolutionary chair next to Hishida",
+    },
+    {
         "name": "Kenig",
         "slot": "B",
         "kingdom": "unique continuation",

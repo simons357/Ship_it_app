@@ -48,6 +48,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Controllability / NS control | Fursikov | local exact controllability of Navier–Stokes | a control bounds free \(X\) |
 | Time-periodic NS | Maremonti | time-periodic solutions of 3D NS in unbounded domains | a periodic class bounds \(X\) |
 | Steady 2D Liouville / Leray problem | Korobkov | 2D steady Leray problem and Liouville theorems | 2D steady bounds 3D evolutionary \(X\) |
+| Exterior evolutionary NS / spatial decay | Hishida | evolutionary NS in an exterior domain; Stokes semigroup and spatial decay | that setting bounds periodic \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -284,6 +285,12 @@ That is not a bound on 3D evolutionary \(X\). Giovanni,
 Vladimír — steady exterior stays Galdi. Liouville doors
 stay Šverák. Leray is not in this room. Pileckas stays
 off this chair.
+
+**Hishida.** Evolutionary NS in an exterior domain is a
+setting. Spatial decay and a Stokes semigroup are not a
+bound on periodic \(X\). Giovanni, Matthias — steady
+exterior stays Galdi. Linear Stokes stays Hieber. Heywood
+is not in this room. Abe stays off this chair.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -562,6 +569,7 @@ scores the process, not a theorem you did not prove.
 | Fursikov controllability closes \(X\) | **fail** |
 | Maremonti time-periodic NS closes \(X\) | **fail** |
 | Korobkov 2D steady Leray closes \(X\) | **fail** |
+| Hishida exterior evolutionary NS closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

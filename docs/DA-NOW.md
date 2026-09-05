@@ -9,7 +9,7 @@ geniuses in the world is omniscience. That claim **fails**.
 A vote of names does not write \(X\).
 
 Dated 5 September 2026. The seated list is derived from the
-living session, including Korobkov 2D steady Leray.
+living session, including Hishida exterior evolutionary NS.
 The watch list is next papers, not a seat.
 
 ---
@@ -52,6 +52,7 @@ These are living chairs whose papers can sit. They are
 | Coron | B | controllability / NS control | second control chair next to Fursikov |
 | Yamazaki | B | time-periodic NS / Morrey | second time-periodic chair next to Maremonti |
 | Pileckas | B | steady 2D Liouville / Leray problem | second 2D-steady chair next to Korobkov |
+| Abe | B | exterior evolutionary NS / Stokes semigroup | second exterior-evolutionary chair next to Hishida |
 | Kenig | B | unique continuation | twin of Kukavica |
 | Maynard | Q | bounded gaps | map a gap theorem onto \(\omega\cdot S\omega\) |
 

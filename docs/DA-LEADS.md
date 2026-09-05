@@ -72,6 +72,7 @@ in your slot.
 | Fursikov | controllability / NS control | Local exact controllability of NS is a control theorem. A control is not a bound on free \(X\). Attractors stay Temam. A posteriori stays Robinson. | control \(=\) bound on \(X\) |
 | Maremonti | time-periodic NS | Time-periodic solutions of 3D NS are a class. A periodic class is not a bound on \(X\). Attractors stay Temam. Forced Leray stays Albritton. | periodic \(=\) bound on \(X\) |
 | Korobkov | steady 2D Liouville / Leray problem | 2D steady Liouville and the plane Leray problem are 2D and steady. Not a bound on 3D evolutionary \(X\). Steady exterior stays Galdi. Leray stays out. | 2D steady \(=\) bound on \(X\) |
+| Hishida | exterior evolutionary NS / spatial decay | Evolutionary NS in an exterior domain is a setting. Spatial decay and a Stokes semigroup are not a bound on periodic \(X\). Steady exterior stays Galdi. Linear Stokes stays Hieber. | exterior evolutionary \(=\) bound on \(X\) |
 | Guillod | numerical non-uniqueness | Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity. | numerics \(=\) bound; numerics \(=\) blowup |
 | Seregin | local regularity / ESS | A criterion is not an a priori on \(X\). | criterion \(\Rightarrow\) bound |
 | Escauriaza | ESS \(L^3\) endpoint | \(L^\infty_t L^3_x\) is the endpoint. A criterion is not an a priori. Bounded in \(L^3\) is not a bound on enstrophy. | \(L^3\) endpoint \(=\) bound on \(X\) |
@@ -183,6 +184,7 @@ in your slot.
 | Fursikov controllability bounds \(X\) | **fail** |
 | Maremonti time-periodic NS bounds \(X\) | **fail** |
 | Korobkov 2D steady Leray bounds \(X\) | **fail** |
+| Hishida exterior evolutionary NS bounds \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
