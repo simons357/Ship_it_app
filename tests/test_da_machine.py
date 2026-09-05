@@ -365,6 +365,12 @@ class DaMachineTests(unittest.TestCase):
         attr = classify_claim("Temam attractor on a vorticity packet")
         self.assertEqual(attr["domain"], "B")
         self.assertEqual(attr["verdict"], "open")
+        isett = classify_claim("seat Isett as a wall on the living bench")
+        self.assertEqual(isett["domain"], "U")
+        self.assertEqual(isett["verdict"], "open")
+        onsager = classify_claim("Isett Onsager on a vorticity packet")
+        self.assertEqual(onsager["domain"], "B")
+        self.assertEqual(onsager["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

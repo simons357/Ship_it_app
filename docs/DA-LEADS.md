@@ -67,6 +67,7 @@ in your slot.
 | Albritton | forced Leray | Forced Leray–Hopf non-uniqueness is a different equation once \(f\) is on. | forced \(\Rightarrow\) unforced \(X\) |
 | Buckmaster | wild weak solutions | Do not cash us as a killing field for classical \(X\). | wild \(\Rightarrow\) smooth blowup |
 | Elgindi | Euler | Different equation. Viscosity is not a free limit. | Euler \(\Rightarrow\) NS |
+| Isett | Onsager / Hölder \(1/3\) | Onsager for Euler is a different equation. Hölder \(1/3\) is not a bound on NS \(X\). | Onsager \(=\) bound on \(X\) |
 | Hou | computation | A scenario is a probe. Do not spawn \(n=64\). | DNS is an a priori |
 | Hou–Wang–Yang | unforced Leray–Hopf / CAP | Announced CAP of unforced Leray–Hopf non-uniqueness. Different class. Not a bound on classical \(X\). | unforced LH \(\Rightarrow\) bound on smooth \(X\) |
 | current math.AP | preprints | Score one identity or the title stays a paragraph. | close B by announcement |
@@ -140,6 +141,7 @@ in your slot.
 | Wolf local pressure is no blowup | **fail** |
 | Galdi physically reasonable solutions bound \(X\) | **fail** |
 | Temam attractor bounds \(X\) | **fail** |
+| Isett Onsager bounds \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

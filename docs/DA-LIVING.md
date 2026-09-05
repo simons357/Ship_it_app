@@ -59,6 +59,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Forced Leray | Albritton–Brué–Colombo | forced Leray–Hopf can be non-unique | that bounds unforced \(X\) |
 | Unforced Leray–Hopf | Hou–Wang–Yang | announced CAP of unforced Leray–Hopf non-uniqueness | that writes smooth \(X\); CAP \(=\) regularity |
 | Euler singularity | Elgindi | Euler can singularize | Euler \(\Rightarrow\) NS |
+| Onsager / Hölder \(1/3\) | Isett | Onsager for Euler | Hölder \(1/3\) bounds NS \(X\) |
 | Computation as probe | Hou | a scenario can be computed | DNS / \(n=64\) is an a priori |
 | Announcements | current math.AP | a preprint is a proposal | close B by title |
 | The desk | operator | one sentence, one slot, one check | needing chops |
@@ -270,6 +271,11 @@ for classical \(X\). Tarek, Euler is the other chair.
 equation. Viscosity is not a limit I will lend you. Euler
 does not write Navier–Stokes.
 
+**Isett.** Onsager for Euler is a different equation
+(*Ann. of Math.* 2018). Hölder \(1/3\) is not a bound on
+NS \(X\). Tarek, Alexey, Vlad — do not cash convex
+integration as classical regularity.
+
 **Constantin.** The 1996 Euler geometric if
 (Constantin–Fefferman–Majda) is a different equation.
 It does not write NS A1. Tarek, Charles — do not cash
@@ -371,6 +377,7 @@ scores the process, not a theorem you did not prove.
 | Wolf local pressure closes \(X\) | **fail** |
 | Galdi physically reasonable solutions close \(X\) | **fail** |
 | Temam attractor closes \(X\) | **fail** |
+| Isett Onsager closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

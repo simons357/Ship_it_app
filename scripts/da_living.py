@@ -274,6 +274,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Isett",
+        ["Elgindi", "Cheskidov", "Vicol"],
+        "Onsager for Euler is a different equation. Holder 1/3 is not a bound on NS X. Do not cash convex integration as classical regularity.",
+        "B",
+    ),
+    turn(
         "Constantin",
         ["Elgindi", "Fefferman"],
         "The 1996 Euler geometric if is a different equation. It does not write NS A1.",
@@ -647,6 +653,13 @@ CLAIMS = [
         "fail",
         "JFA 1989 / attractor theory: 3D finite-dimensionality assumes the solution stays smooth. Gevrey assumes that if. Not an a priori on X. Foias stays out.",
     ),
+    rec(
+        "L47",
+        "isett_onsager_closes_X",
+        "Isett Onsager closes X",
+        "fail",
+        "Ann. of Math. 2018: Onsager for Euler, Holder 1/3. Different equation. Not a bound on NS X.",
+    ),
 ]
 
 
@@ -686,6 +699,7 @@ KINGDOMS = [
     {"name": "Forced Leray", "who": "Albritton", "slot": "B"},
     {"name": "Unforced Leray-Hopf", "who": "Hou-Wang-Yang", "slot": "B"},
     {"name": "Euler singularity", "who": "Elgindi", "slot": "B"},
+    {"name": "Onsager / Holder 1/3", "who": "Isett", "slot": "B"},
     {"name": "Computation as probe", "who": "Hou", "slot": "B"},
     {"name": "Announcements", "who": "current math.AP", "slot": "B"},
     {"name": "The desk", "who": "operator", "slot": "meta"},

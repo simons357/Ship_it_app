@@ -94,6 +94,9 @@ LEADS = [
     lead("Temam", "attractors / functional NS", "B", "living",
          "The 3D attractor is finite-dimensional if the solution stays smooth. Gevrey assumes that if. It is not an a priori on X. Foias stays out.",
          "attractor = bound on X"),
+    lead("Isett", "Onsager / Holder 1/3", "B", "living",
+         "Onsager for Euler is a different equation. Holder 1/3 is not a bound on NS X.",
+         "Onsager = bound on X"),
     lead("Cheskidov", "energy equality / Onsager", "B", "living",
          "Energy equality in a weak-in-time Onsager class is still a condition. Leray already has the inequality. Equality is not a bound on X.",
          "energy equality = bound on X"),
@@ -245,7 +248,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -517,6 +520,13 @@ CLAIMS = [
         "Temam attractor bounds X",
         "fail",
         "3D finite-dimensionality assumes the solution stays smooth. That if is not a bound on X. Foias stays out.",
+    ),
+    rec(
+        "R39",
+        "isett_onsager_bounds_X",
+        "Isett Onsager bounds X",
+        "fail",
+        "Euler Holder 1/3 is a different equation. Not a bound on NS X.",
     ),
 ]
 
