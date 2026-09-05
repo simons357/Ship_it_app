@@ -44,6 +44,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Kinetic Fokker-Planck / Hölder | Silvestre | Hölder estimates for kinetic Fokker-Planck up to the boundary | that equation bounds NS \(X\) |
 | Energy decay / Fourier splitting | Schonbek | algebraic \(L^2\) decay of weak solutions by Fourier splitting | large-time decay bounds \(X\) |
 | Kato–Ponce / commutator estimates | Ponce | commutator estimates for Euler and NS | a tool bounds \(X\) |
+| Thin domain / 2D–3D perturbation | Iftimie | global strong solutions in a sufficiently thin 3D domain | thinness bounds 3D \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -81,7 +82,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Announcements | current math.AP | a preprint is a proposal | close B by title |
 | The desk | operator | one sentence, one slot, one check | needing chops |
 
-Shahmurov does not get a chair. Sohr stays out. Foias stays out. Heywood stays out. Bourgain stays out. Prüss stays out. Kukavica–Ziane one-component is already seated as Neustupa–Penel. SFE / HB-as-unifier do not.
+Shahmurov does not get a chair. Sohr stays out. Foias stays out. Heywood stays out. Bourgain stays out. Prüss stays out. Raugel stays out. Kukavica–Ziane one-component is already seated as Neustupa–Penel. SFE / HB-as-unifier do not.
 
 ---
 
@@ -254,6 +255,12 @@ Math. 41, 1988). A tool is not a bound on \(X\). Tom,
 Herbert — continuation stays Beale. Critical small stays
 Koch–Tataru. Kato is not in this room. Vega stays off
 this chair.
+
+**Iftimie.** Thin-domain regularity is an if (J. Differential
+Equations 169, 2001). A small gap is not a bound on 3D
+\(X\). Herbert, Roger — critical small stays Koch–Tataru.
+Attractors stay Temam. Raugel is not in this room.
+Mahalov stays off this chair.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -528,6 +535,7 @@ scores the process, not a theorem you did not prove.
 | Silvestre kinetic Fokker-Planck closes \(X\) | **fail** |
 | Schonbek Fourier splitting closes \(X\) | **fail** |
 | Ponce Kato–Ponce closes \(X\) | **fail** |
+| Iftimie thin domain closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

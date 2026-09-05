@@ -9,7 +9,7 @@ geniuses in the world is omniscience. That claim **fails**.
 A vote of names does not write \(X\).
 
 Dated 5 September 2026. The seated list is derived from the
-living session, including Ponce Kato–Ponce.
+living session, including Iftimie thin-domain regularity.
 The watch list is next papers, not a seat.
 
 ---
@@ -27,7 +27,8 @@ Last-scan age: `python3 scripts/da_machine.py status`
 
 Shahmurov does not sit. Dead fluids stay out: Leray, Kato,
 Majda, Ladyzhenskaya, Nirenberg, Scheffer, Sohr, Foias,
-Heywood. Bourgain stays out. Prüss stays out.
+Heywood. Bourgain stays out. Prüss stays out. Raugel
+stays out.
 
 ---
 
@@ -47,6 +48,7 @@ These are living chairs whose papers can sit. They are
 | Imbert | B | kinetic / Boltzmann / Fokker-Planck | second kinetic chair next to Silvestre |
 | Wiegner | B | energy decay / Fourier splitting | second decay chair next to Schonbek |
 | Vega | B | Kato–Ponce / commutator estimates | second commutator chair next to Ponce |
+| Mahalov | B | thin domain / rotating NS | second thin-domain chair next to Iftimie |
 | Kenig | B | unique continuation | twin of Kukavica |
 | Maynard | Q | bounded gaps | map a gap theorem onto \(\omega\cdot S\omega\) |
 

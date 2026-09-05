@@ -214,6 +214,9 @@ LEADS = [
     lead("Ponce", "Kato-Ponce / commutator estimates", "B", "living",
          "Kato-Ponce is a commutator. A tool is not a bound on X. Continuation stays Beale. Kato stays out.",
          "commutator = bound on X"),
+    lead("Iftimie", "thin domain / 2D-3D perturbation", "B", "living",
+         "Thin-domain regularity is an if. A small gap is not a bound on 3D X. Critical small stays Koch-Tataru. Attractors stay Temam. Raugel stays out.",
+         "thin domain = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -296,7 +299,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -694,6 +697,13 @@ CLAIMS = [
         "Ponce Kato-Ponce bounds X",
         "fail",
         "A commutator is not enstrophy. Continuation stays Beale. Kato stays out.",
+    ),
+    rec(
+        "R57",
+        "iftimie_thin_bounds_X",
+        "Iftimie thin domain bounds X",
+        "fail",
+        "Thinness is an if, not enstrophy. Raugel stays out. Attractors stay Temam.",
     ),
 ]
 

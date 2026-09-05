@@ -196,6 +196,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Iftimie",
+        ["Koch", "Temam"],
+        "Thin-domain regularity is an if. A small gap is not a bound on 3D X. Critical small stays Koch-Tataru. Attractors stay Temam. Raugel is not in this room.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -881,6 +887,13 @@ CLAIMS = [
         "fail",
         "CPAM 1988: commutator estimates for Euler and NS. A tool is not a bound on X. Continuation stays Beale. Kato stays out.",
     ),
+    rec(
+        "L65",
+        "iftimie_thin_closes_X",
+        "Iftimie thin domain closes X",
+        "fail",
+        "JDE 2001: global strong solutions in a sufficiently thin 3D domain. Thinness is an if, not a bound on 3D X. Raugel stays out.",
+    ),
 ]
 
 
@@ -905,6 +918,7 @@ KINGDOMS = [
     {"name": "Kinetic Fokker-Planck / Holder", "who": "Silvestre", "slot": "B"},
     {"name": "Energy decay / Fourier splitting", "who": "Schonbek", "slot": "B"},
     {"name": "Kato-Ponce / commutator estimates", "who": "Ponce", "slot": "B"},
+    {"name": "Thin domain / 2D-3D perturbation", "who": "Iftimie", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

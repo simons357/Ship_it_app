@@ -32,6 +32,7 @@ DEAD = {
         "Heywood",
         "Bourgain",
         "Pruss",
+        "Raugel",
     }
 
 NOT_A_PERSON = {"Operator", "current math.AP", "operator"}
@@ -101,6 +102,13 @@ WATCH = [
         "kingdom": "Kato-Ponce / commutator estimates",
         "involved": "Kenig-Ponce-Vega; harmonic analysis tools for NS",
         "do_not": "seat as a second commutator chair next to Ponce",
+    },
+    {
+        "name": "Mahalov",
+        "slot": "B",
+        "kingdom": "thin domain / rotating NS",
+        "involved": "thin domains and rotating fluids; compared with Iftimie",
+        "do_not": "seat as a second thin-domain chair next to Iftimie",
     },
     {
         "name": "Kenig",
@@ -235,7 +243,7 @@ CLAIMS = [
         "dead_fluids_on_roster",
         "A dead fluid sits on this living roster",
         "fail",
-        "Leray, Kato, Majda, Olga, Nirenberg, Scheffer, Sohr, Foias, Heywood, Bourgain, Pruss stay out.",
+        "Leray, Kato, Majda, Olga, Nirenberg, Scheffer, Sohr, Foias, Heywood, Bourgain, Pruss, Raugel stay out.",
     ),
     rec(
         "N10",

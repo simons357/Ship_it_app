@@ -36,12 +36,13 @@ class DaNowTests(unittest.TestCase):
     def test_seated_excludes_dead_and_includes_fluids(self):
         names = set(seated_living())
         self.assertTrue(DEAD.isdisjoint(names))
-        for must in ("Tao", "Sverak", "Barker", "Kukavica", "Hou", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce"):
+        for must in ("Tao", "Sverak", "Barker", "Kukavica", "Hou", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie"):
             self.assertIn(must, names)
         self.assertNotIn("Operator", names)
         self.assertNotIn("Shahmurov", names)
         self.assertNotIn("Bourgain", names)
         self.assertNotIn("Pruss", names)
+        self.assertNotIn("Raugel", names)
         watch = {row["name"] for row in WATCH}
         self.assertTrue(watch.isdisjoint(names))
         self.assertIn("Prange", watch)
@@ -52,10 +53,12 @@ class DaNowTests(unittest.TestCase):
         self.assertIn("Imbert", watch)
         self.assertIn("Wiegner", watch)
         self.assertIn("Vega", watch)
+        self.assertIn("Mahalov", watch)
         self.assertIn("Maynard", watch)
         self.assertNotIn("Silvestre", watch)
         self.assertNotIn("Schonbek", watch)
         self.assertNotIn("Ponce", watch)
+        self.assertNotIn("Iftimie", watch)
         self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))
         collab = {row["name"] for row in run(out=Path(tempfile.mkdtemp()) / "n.json")["collaborations"]}
         self.assertIn("LVK collaboration", collab)
