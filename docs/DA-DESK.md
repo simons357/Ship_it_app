@@ -565,6 +565,8 @@ python3 scripts/da_machine.py living      # living papers; where now / can X clo
 python3 scripts/da_machine.py leads       # every chair, one lead; glue refused
 python3 scripts/da_machine.py ground      # destination + program review
 python3 scripts/da_machine.py pipe        # now-bench
+python3 scripts/da_machine.py now         # living roster; not a genius census
+python3 scripts/da_machine.py feed        # latest LIGO / LHC / PDG / arXiv
 python3 scripts/da_machine.py harmonic    # vocabulary
 python3 scripts/da_machine.py sm
 python3 scripts/da_machine.py smbreak
@@ -576,6 +578,7 @@ python3 scripts/da_machine.py classify --claim "…"
 Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/SHELF.md`, `docs/TRACK-B-LEMMAS.md`,
 `docs/DA-GROUND.md`, `docs/DA-PIPE.md`,
+`docs/DA-NOW.md`, `docs/DA-FEED.md`,
 `docs/DA-HARMONIC-VOCAB.md`, `docs/DA-DREAM-TEAM.md`,
 `docs/DA-SM-LAGRANGIAN.md`, `docs/DA-SM-LINEAGE.md`,
 `docs/DA-COMPUTE.md`, `docs/DA-ALERT.md`,

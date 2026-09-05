@@ -125,7 +125,7 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
     if re.search(
-        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up|anti-?bullshit|comput(e|ing)|dedalus|sympy|gwosc|\balert\b|text me|notif|converse|working session|talk to each other|virtual s[eé]ance|kingdoms|living dream team|living bench|not dead|full.?roll|all specialties|next lead|every chair|seat miller|albritton|beirao|berselli|giga.?miura|\bmiura\b|\bseat jia\b|\bseat guillod\b|\bseat hou.?wang.?yang\b|\bseat lei.?ren.?tian\b|\bseat csty\b|\bseat kozono|\bseat neustupa|\bseat escauriaza|\bseat nadirashvili|\bseat chae\b|\bseat chemin|\bseat cannone|\bseat lin\b|\bseat vasseur\b|\bseat farwig\b|\bseat cheskidov\b|\bseat masmoudi\b|\bseat wolf\b|\bseat galdi\b|\bseat temam\b|\bseat isett\b|\bseat tsai\b|\bseat lemarie\b|\bseat danchin\b|\bseat kukavica\b|\bseat barker\b",
+        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up|anti-?bullshit|comput(e|ing)|dedalus|sympy|gwosc|\balert\b|text me|notif|converse|working session|talk to each other|virtual s[eé]ance|kingdoms|living dream team|living bench|not dead|full.?roll|all specialties|next lead|every chair|seat miller|albritton|beirao|berselli|giga.?miura|\bmiura\b|\bseat jia\b|\bseat guillod\b|\bseat hou.?wang.?yang\b|\bseat lei.?ren.?tian\b|\bseat csty\b|\bseat kozono|\bseat neustupa|\bseat escauriaza|\bseat nadirashvili|\bseat chae\b|\bseat chemin|\bseat cannone|\bseat lin\b|\bseat vasseur\b|\bseat farwig\b|\bseat cheskidov\b|\bseat masmoudi\b|\bseat wolf\b|\bseat galdi\b|\bseat temam\b|\bseat isett\b|\bseat tsai\b|\bseat lemarie\b|\bseat danchin\b|\bseat kukavica\b|\bseat barker\b|living genius|genius roster|\bda now\b|\bda feed\b|live feed|latest (ligo|lhc|pdg)|particle accelerator|\bnow roster\b",
         text,
     ):
         return {"domain": "U", "verdict": "open", "reason": "looks like score U / SM Lagrangian / waveform; run sm or how"}
@@ -728,6 +728,45 @@ def cmd_ground() -> int:
     return 0
 
 
+def cmd_now() -> int:
+    from da_now import run as now_run
+
+    payload = now_run()
+    print("DA now. Living roster. Genius is not a slot.")
+    print("seated", payload["counts"]["seated_living"], "watch", payload["counts"]["watch"])
+    for c in payload["claims"]:
+        print(f"  [{c['verdict']}] {c['id']}: {c['statement']}")
+    append_run(
+        "U",
+        "Living roster of seated papers and collaborations; not a world genius census",
+        "open",
+        "genius is not a slot; vote fail; omniscience fail; especially involved = seated fluids + pipes",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
+def cmd_feed() -> int:
+    from da_feed import run as feed_run
+
+    payload = feed_run()
+    print("DA feed. Public test results. Not omniscience. Not a close.")
+    print("fetched", payload["meta"]["fetched_at"])
+    for src in payload["scan"]:
+        flag = "ok" if src.get("ok") else "miss"
+        print(f"  [{flag}] {src['name']:<16} {src['slot']} n={src.get('n')}")
+    for c in payload["claims"]:
+        print(f"  [{c['verdict']}] {c['id']}: {c['statement']}")
+    append_run(
+        "U",
+        "Scan latest LIGO / LHC / PDG / arXiv results; keep each item in its slot",
+        "open",
+        "ongoing collection; glue to X fail; F fail; fetch miss is open",
+    )
+    print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
 def cmd_pipe() -> int:
     from da_pipe import run as pipe_run
 
@@ -888,6 +927,8 @@ def main() -> int:
     sub.add_parser("harmonic", help="typed harmonic vocabulary from mathematics; not a unifier")
     sub.add_parser("ground", help="spectrum destination: reconstruct, ablate, program review")
     sub.add_parser("pipe", help="now-bench: live science pipes + falsify every verdict")
+    sub.add_parser("now", help="living roster: seated papers + watch list; not a genius census")
+    sub.add_parser("feed", help="scan latest LIGO / LHC / PDG / arXiv results")
     sub.add_parser("desk", help="write-up roster + corpus method (papers, not a vote)")
     sub.add_parser("compute", help="computing techniques already wired, legal to borrow, or refuse")
     sub.add_parser("alert", help="plain-language text when a watched claim flips")
@@ -948,6 +989,10 @@ def main() -> int:
         return cmd_ground()
     if args.cmd == "pipe":
         return cmd_pipe()
+    if args.cmd == "now":
+        return cmd_now()
+    if args.cmd == "feed":
+        return cmd_feed()
     if args.cmd == "desk":
         return cmd_desk()
     if args.cmd == "compute":

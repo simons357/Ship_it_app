@@ -93,6 +93,9 @@ Leray and Einstein stay. A 2026 catalog does not unseat 1934.
 
 ## What this is not
 
+Refresh the catalogs: `python3 scripts/da_machine.py feed`.
+Living roster: `python3 scripts/da_machine.py now`.
+
 Not omniscience. Not Quantum Lens. Not primes = black holes.
 Not GWTC \(\Rightarrow\) regularity. Not EHT \(\Rightarrow\)
 unshelve HB. Not DESI \(\Rightarrow F\).
