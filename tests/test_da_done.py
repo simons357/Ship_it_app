@@ -26,6 +26,7 @@ class DaDoneTests(unittest.TestCase):
         self.assertEqual(by["E4"]["verdict"], "fail")
         self.assertEqual(by["E5"]["verdict"], "fail")
         self.assertEqual(by["E6"]["verdict"], "open")
+        self.assertEqual(by["E7"]["verdict"], "fail")
         rows = {r["id"]: r for r in ROWS}
         self.assertTrue(rows["A_this_pde"]["done"])
         self.assertFalse(rows["A_uniform"]["done"])

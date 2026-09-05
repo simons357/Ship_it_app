@@ -3,7 +3,12 @@
 `python3 scripts/da_machine.py done`  
 `python3 scripts/da_machine.py next --ask "is Navier-Stokes done"`  
 `python3 scripts/da_machine.py next --ask "is that right for Navi Stokes"`  
-`python3 scripts/da_machine.py next --ask "can DA finish it"`
+`python3 scripts/da_machine.py next --ask "can DA finish it"`  
+`python3 scripts/da_machine.py next --ask "Please finish bad for me please"`
+
+Finish-bad prints the Track B chain. It does not
+make line (6) sit. `proof` answers the write;
+`done` answers whether that write is a finish.
 
 The study is whether DA can write the chain, diagnose,
 and name the leftover. Emitting the chain is not QED.
@@ -37,5 +42,6 @@ Exporting it onto B is the refuse.
 | The \(Q_1\) chain at \(\varepsilon>0\) is done | **pass** |
 | The written NS chain means classical NS is done | **fail** |
 | DA finishes leftover by emitting the chain | **fail** |
+| Please finish bad closes leftover (6) | **fail** |
 | Hearing Theorem A closed means Navi Stokes is done | **fail** |
 | Classical line (6) may sit later | **open** |

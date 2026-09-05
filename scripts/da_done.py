@@ -115,6 +115,13 @@ CLAIMS = [
         "open",
         "All-data integrable R, A1, A2, or a killing field. Then Gronwall / Beale / bootstrap.",
     ),
+    rec(
+        "E7",
+        "finish_bad_closes",
+        "Please finish bad closes leftover (6)",
+        "fail",
+        "Finish-bad prints the B chain. Line (6) still does not sit.",
+    ),
 ]
 
 

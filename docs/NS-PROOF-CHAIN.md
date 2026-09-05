@@ -6,7 +6,12 @@ Keep \(1/r^4\). No \(Q_1\).
 Say to DA: `python3 scripts/da_machine.py proof --problem NS`  
 or: `next --ask "write me the proof chain for Navier-Stokes"`  
 or: `next --ask "Track B please write"`  
+or: `next --ask "Please finish bad for me please. So I can complete proof chain"`  
 Track A is a different equation: [`A-PROOF-CHAIN.md`](A-PROOF-CHAIN.md).
+
+Finishing bad is printing this chain and naming
+leftover (6). It is not closing (6). Emit is not
+QED. `(7)–(9)` wait on (6).
 
 RH is a different problem: [`RH-PROOF-CHAIN.md`](RH-PROOF-CHAIN.md).
 
@@ -93,6 +98,18 @@ arbitrary, the solution is globally regular.
 *[follows from (6)–(8)]*
 
 If (6) sits, (7)–(9) close the theorem.
+
+---
+
+## Completion
+
+| Lines | Status |
+|---|---|
+| (1)–(5) | **done** |
+| (6) all-data \(\mathcal{R}\) / A1 / A2 / killing field | **not done** |
+| (7)–(9) Gronwall / continuation / bootstrap | waiting on (6) |
+
+Please-finish-bad does not change this table.
 
 ---
 

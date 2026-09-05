@@ -40,6 +40,7 @@ class DaProofTests(unittest.TestCase):
         self.assertEqual(by["C7"]["verdict"], "fail")
         self.assertEqual(by["C8"]["verdict"], "open")
         self.assertEqual(by["C9"]["verdict"], "fail")
+        self.assertEqual(by["C10"]["verdict"], "fail")
         self.assertTrue(payload["meta"]["nothing_wrong_with_asking"])
         self.assertTrue(payload["meta"]["q_is_not_rh"])
         self.assertTrue(payload["meta"]["a_is_not_b"])
@@ -148,6 +149,19 @@ class DaProofTests(unittest.TestCase):
         self.assertTrue(is_proof_ask(finish_b))
         self.assertFalse(is_attempt_ask(finish_b))
         self.assertEqual(parse_problems(ask=finish_b), ["NS"])
+        finished = run(
+            out=Path(tempfile.mkdtemp()) / "da_proof_finish_b.json",
+            problem="",
+            ask=finish_b,
+        )
+        self.assertEqual(finished["picked"], ["NS"])
+        comp = finished["chains"][0]["completion"]
+        self.assertEqual(comp["done"], [1, 2, 3, 4, 5])
+        self.assertEqual(comp["not_done"], [6])
+        self.assertEqual(comp["waiting"], [7, 8, 9])
+        self.assertFalse(comp["leftover_sits"])
+        self.assertTrue(comp["emit_is_not_finish"])
+        self.assertEqual(finished["lines"][5]["status"], "write")
         phone_final = (
             "file:///var/mobile/Library/SMS/Attachments/30/00/"
             "8D36CC33-3B6B-4C40-9C63-2F60AA8DCCB6/BSD%20final.pdf"

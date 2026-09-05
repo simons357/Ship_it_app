@@ -689,6 +689,13 @@ CLAIMS = [
         "fail",
         "Different equation. A=>B stays fail. Track B is the other chain.",
     ),
+    rec(
+        "C10",
+        "finish_bad_closes",
+        "Please finish bad closes leftover (6)",
+        "fail",
+        "The chain can be printed complete-as-written. Line (6) still does not sit.",
+    ),
 ]
 
 
@@ -782,6 +789,19 @@ def print_problem_window(obj: dict) -> None:
         print(f"  {line}")
 
 
+def _completion(spec: dict) -> dict:
+    have = [L["n"] for L in spec["lines"] if L["status"] == "have"]
+    write = [L["n"] for L in spec["lines"] if L["status"] == "write"]
+    follows = [L["n"] for L in spec["lines"] if L["status"] == "follows"]
+    return {
+        "done": have,
+        "not_done": write,
+        "waiting": follows,
+        "emit_is_not_finish": True,
+        "leftover_sits": False,
+    }
+
+
 def _chain(pid: str) -> dict:
     spec = PROBLEMS[pid]
     write_n = next(L["n"] for L in spec["lines"] if L["status"] == "write")
@@ -799,6 +819,7 @@ def _chain(pid: str) -> dict:
         "chain_doc": spec["chain_doc"],
         "this_pde_complete": spec.get("this_pde_complete", False),
         "best_paper": spec.get("best_paper"),
+        "completion": _completion(spec),
         "counts": {
             "lines": len(spec["lines"]),
             "have": sum(1 for L in spec["lines"] if L["status"] == "have"),
@@ -878,6 +899,13 @@ def _print_one_chain(chain: dict) -> None:
     for L in chain["lines"]:
         tag = {"have": "HAVE", "write": "WRITE", "follows": "THEN"}[L["status"]]
         print(f"  ({L['n']}) [{tag}] {L['text']}")
+    print()
+    done = chain["completion"]
+    print("COMPLETION")
+    print("  done:", " ".join(f"({n})" for n in done["done"]) or "(none)")
+    print("  not done:", " ".join(f"({n})" for n in done["not_done"]))
+    print("  waiting on the write:", " ".join(f"({n})" for n in done["waiting"]))
+    print("  Emit is not a finish. Leftover does not sit.")
     print()
     print(chain["if_write_sits"])
     print(chain["do_not"])
