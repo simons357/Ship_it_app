@@ -1,6 +1,8 @@
 # Theorem A — what to do with it
 
 The sitting write-up is `tex/theorem-a-q1.tex`.
+Paper PDF: [`THEOREM-A-Q1.pdf`](THEOREM-A-Q1.pdf)
+(`python3 scripts/da_theorem_a_pdf.py`).
 This is **not** legal advice and not a patent strategy.
 
 ---
