@@ -28,6 +28,7 @@ class DaAgentTests(unittest.TestCase):
         self.assertEqual(by["G8"]["verdict"], "fail")
         self.assertEqual(by["G9"]["verdict"], "fail")
         self.assertEqual(by["G10"]["verdict"], "open")
+        self.assertEqual(by["G11"]["verdict"], "pass")
         self.assertTrue(payload["meta"]["agent_shaped"])
         self.assertTrue(payload["meta"]["not_a_closer"])
         self.assertTrue(payload["meta"]["does_not_replace_checker"])
@@ -36,6 +37,8 @@ class DaAgentTests(unittest.TestCase):
         self.assertIn("Robinson", payload["tick"]["seated_living"])
         self.assertIn("GWOSC_GWTC", payload["tick"]["feed_sources"])
         self.assertFalse(payload["tick"]["fetched"])
+        self.assertIn("stale", payload["tick"]["freshness"])
+        self.assertFalse(payload["tick"]["freshness"]["network"])
         self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))
         self.assertTrue((ROOT / "docs" / "DA-AGENT.md").is_file())
 

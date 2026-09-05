@@ -24,6 +24,7 @@ not replace the checker.
 
 Latest public data belongs here. A stale machine is a
 weaker anti-bullshit device. Up to date is a U duty.
+`status` reports last-scan age. It does not fetch.
 Strain and collisions stay on U.
 
 Track A stays the damped PDE. Theorem A does not imply B.
@@ -37,6 +38,7 @@ Track A stays the damped PDE. Theorem A does not imply B.
 | Fitting roster and feed into DA makes the process stronger | **pass** |
 | That shape is an agent: propose, scan, score, alert | **pass** |
 | DA must be able to refresh the latest public data | **pass** |
+| `status` reports last-scan age without a fetch | **pass** |
 | The agent closes \(X\) | **fail** |
 | The agent writes \(F\) | **fail** |
 | The agent replaces the checker | **fail** |

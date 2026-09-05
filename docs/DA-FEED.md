@@ -3,7 +3,9 @@
 `python3 scripts/da_machine.py feed`
 
 An ongoing scan. Re-run the command. That is the
-collection. Not omniscience. Not a close.
+collection. DA must stay current. A missing or
+\>24h `results/da_feed.json` is **stale**. `status`
+prints last-scan age. It does not fetch.
 
 LIGO events, LHC literature, PDG, and the arXiv streams
 that already touch this desk. Each item stays in its slot.
@@ -42,6 +44,9 @@ The pipe named the streams
 |---|---|
 | An ongoing scan belongs on the desk | **pass** |
 | Each item stays in its slot | **pass** |
+| DA must stay current with the latest public data | **pass** |
+| A missing or \>24h feed is stale; stale DA is weaker | **pass** |
+| `status` fetches the live catalogs | **fail** |
 | The feed is omniscience | **fail** |
 | A new LIGO event closes \(X\) | **fail** |
 | A new LHC paper writes \(F\) | **fail** |
@@ -50,6 +55,7 @@ The pipe named the streams
 | A headline retunes `nodes.json` | **fail** |
 
 Print: `python3 scripts/da_machine.py feed`  
+Age: `python3 scripts/da_machine.py status`  
 Roster: [`DA-NOW.md`](DA-NOW.md)  
 Pipes: [`DA-PIPE.md`](DA-PIPE.md)
 

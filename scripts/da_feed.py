@@ -131,6 +131,66 @@ SOURCES = [
 ]
 
 
+STALE_AFTER_HOURS = 24
+DEFAULT_FEED = Path(__file__).resolve().parents[1] / "results" / "da_feed.json"
+
+
+def freshness(path: Path | None = None, now: datetime | None = None) -> dict:
+    """Last scan age. No network. Missing or older than a day is stale."""
+    dest = Path(path) if path is not None else DEFAULT_FEED
+    clock = now or datetime.now(timezone.utc)
+    out = {
+        "path": str(dest),
+        "exists": dest.is_file(),
+        "fetched_at": None,
+        "age_hours": None,
+        "stale": True,
+        "reason": "missing",
+        "stale_after_hours": STALE_AFTER_HOURS,
+        "network": False,
+    }
+    if not dest.is_file():
+        return out
+    try:
+        data = json.loads(dest.read_text())
+    except (OSError, json.JSONDecodeError, UnicodeDecodeError):
+        out["reason"] = "unreadable"
+        return out
+    meta = data.get("meta") if isinstance(data, dict) else None
+    fetched = meta.get("fetched_at") if isinstance(meta, dict) else None
+    if not fetched:
+        out["reason"] = "no_timestamp"
+        return out
+    out["fetched_at"] = fetched
+    try:
+        ts = datetime.strptime(str(fetched), "%Y-%m-%dT%H:%M:%SZ").replace(
+            tzinfo=timezone.utc
+        )
+    except (TypeError, ValueError):
+        out["reason"] = "bad_timestamp"
+        return out
+    age = (clock - ts).total_seconds() / 3600.0
+    out["age_hours"] = round(age, 3)
+    if age < -1:
+        out["reason"] = "future_timestamp"
+        return out
+    if age > STALE_AFTER_HOURS:
+        out["reason"] = "older_than_24h"
+        return out
+    out["stale"] = False
+    out["reason"] = "fresh"
+    return out
+
+
+def format_freshness(row: dict | None = None) -> str:
+    fr = row if row is not None else freshness()
+    stamp = fr.get("fetched_at") or "none"
+    age = fr.get("age_hours")
+    age_s = "none" if age is None else f"{age:.1f}h"
+    flag = "STALE" if fr.get("stale") else "fresh"
+    return f"feed {flag} ({fr.get('reason')}). last {stamp} age {age_s}"
+
+
 CLAIMS = [
     rec(
         "F1",
@@ -187,6 +247,27 @@ CLAIMS = [
         "Each scanned item stays in its slot",
         "pass",
         "GW and LHC on U. math.AP on B. LMFDB stays Q. Glue refused.",
+    ),
+    rec(
+        "F9",
+        "must_stay_current",
+        "DA must stay current with the latest public data",
+        "pass",
+        "What the architect does is score against catalogs that move. A stale desk is a weaker device.",
+    ),
+    rec(
+        "F10",
+        "stale_is_weaker",
+        "A missing or >24h feed is stale; stale DA is weaker",
+        "pass",
+        "status reports last-scan age. Re-run feed. Age is local.",
+    ),
+    rec(
+        "F11",
+        "status_hits_network",
+        "status fetches the live catalogs",
+        "fail",
+        "status reads results/da_feed.json. No network on the check. feed is the fetch.",
     ),
 ]
 
@@ -324,13 +405,17 @@ def scan(timeout: float = 8.0) -> list[dict]:
 
 def run(out: Path | None = None, fetch: bool = True, timeout: float = 8.0) -> dict:
     scanned = scan(timeout=timeout) if fetch else []
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     payload = {
         "meta": {
             "question": "scan latest public test results; keep each item in its slot",
             "writeup": "docs/DA-FEED.md",
-            "fetched_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "wrote_at": now,
+            "fetched_at": now if fetch else None,
+            "fetched": fetch,
             "ongoing": True,
             "not_omniscience": True,
+            "must_stay_current": True,
             "does_not_write_X": True,
             "does_not_write_F": True,
             "does_not_retune_nodes": True,
@@ -359,10 +444,11 @@ def run(out: Path | None = None, fetch: bool = True, timeout: float = 8.0) -> di
             "Do not write leftover B42. Do not spawn n=64."
         ),
     }
-    dest = Path(out) if out is not None else Path("results/da_feed.json")
+    dest = Path(out) if out is not None else DEFAULT_FEED
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(json.dumps(payload, indent=2))
     payload["_wrote"] = str(dest)
+    payload["freshness"] = freshness(path=dest)
     return payload
 
 
@@ -370,7 +456,8 @@ def main() -> int:
     payload = run()
     print("DA feed. Public test results. Not omniscience. Not a close.")
     print("Full note: docs/DA-FEED.md")
-    print("fetched", payload["meta"]["fetched_at"])
+    print(format_freshness(payload.get("freshness")))
+    print("fetched", payload["meta"].get("fetched_at") or "none")
     for src in payload["scan"]:
         flag = "ok" if src.get("ok") else "miss"
         print(f"  [{flag}] {src['name']:<16} {src['slot']} n={src.get('n')}")

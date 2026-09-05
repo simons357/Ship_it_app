@@ -20,7 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from da_ground import ABLATE, GROUND, MINDS, RECONSTRUCT  # noqa: E402
 from da_harmonic import VOCAB  # noqa: E402
 from da_agent import CLAIMS as AGENT_CLAIMS  # noqa: E402
-from da_feed import SOURCES as FEED_SOURCES  # noqa: E402
+from da_feed import SOURCES as FEED_SOURCES, freshness as feed_freshness  # noqa: E402
 from da_now import WATCH as NOW_WATCH, collaborations, seated_living  # noqa: E402
 from da_pipe import FORMS, NOW, PIPES  # noqa: E402
 from da_team import TEAM  # noqa: E402
@@ -215,6 +215,7 @@ def run(out: Path | None = None) -> dict:
         "watch": [row["name"] for row in NOW_WATCH],
         "collaborations": collaborations(),
         "feed_sources": [s["name"] for s in FEED_SOURCES],
+        "feed_freshness": feed_freshness(),
         "agent_shaped": True,
         "agent_claims": AGENT_CLAIMS,
         "pipes": [{"name": p["name"], "slot": p["slot"], "asof": p.get("asof")} for p in PIPES],
@@ -270,6 +271,8 @@ def main() -> int:
     for m in payload["now_bench"]:
         print(f"  [{m['slot']}] {m['name']}")
     print("living roster", payload["counts"]["living_roster"], "feed sources", payload["counts"]["feed_sources"])
+    fr = payload.get("feed_freshness") or {}
+    print("feed", "STALE" if fr.get("stale") else "fresh", fr.get("reason"), fr.get("fetched_at") or "none")
     print("agent-shaped", payload.get("agent_shaped"))
     print("corpus rules:")
     for r in payload["corpus_rules"]:

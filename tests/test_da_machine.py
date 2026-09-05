@@ -413,6 +413,9 @@ class DaMachineTests(unittest.TestCase):
         agent = classify_claim("DA is an agent-shaped process machine")
         self.assertEqual(agent["domain"], "U")
         self.assertEqual(agent["verdict"], "open")
+        fresh = classify_claim("report DA feed freshness; stale feed is weaker")
+        self.assertEqual(fresh["domain"], "U")
+        self.assertEqual(fresh["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

@@ -17,7 +17,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from da_feed import SOURCES, run as feed_run  # noqa: E402
+from da_feed import SOURCES, format_freshness, freshness, run as feed_run  # noqa: E402
 from da_now import WATCH, collaborations, seated_living  # noqa: E402
 
 
@@ -111,6 +111,13 @@ CLAIMS = [
         "open",
         "The collection is ongoing. A name is not a seat until a wall is scored.",
     ),
+    rec(
+        "G11",
+        "status_reports_freshness",
+        "status reports last-scan age without a fetch",
+        "pass",
+        "A process machine that cannot say how old its catalogs are is already stale. Age is local.",
+    ),
 ]
 
 
@@ -136,6 +143,7 @@ def run(out: Path | None = None, fetch: bool = False) -> dict:
             "feed_ok": feed["counts"].get("ok", 0),
             "feed_items": feed["counts"].get("items", 0),
             "fetched": fetch,
+            "freshness": freshness(),
         },
         "claims": CLAIMS,
         "counts": {
@@ -151,7 +159,7 @@ def run(out: Path | None = None, fetch: bool = False) -> dict:
             "now and feed sit inside the DA tick",
             "agent-shaped process passed",
             "agent-as-closer failed",
-            "latest data belongs and does not write X",
+            "latest data belongs; stale feed is weaker; status reports age",
         ],
         "next_da_move": (
             "Re-run feed. Score one watch paper before seating it. "
@@ -173,6 +181,7 @@ def main() -> int:
     tick = payload["tick"]
     print("seated", len(tick["seated_living"]), "watch", len(tick["watch"]))
     print("feed", "ok" if tick["fetched"] else "offline", "items", tick["feed_items"])
+    print(format_freshness(tick.get("freshness")))
     for c in payload["claims"]:
         print(f"  [{c['verdict']}] {c['id']}: {c['statement']}")
     print("counts", payload["counts"])

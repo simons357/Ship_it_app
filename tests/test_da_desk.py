@@ -49,6 +49,8 @@ class DaDeskTests(unittest.TestCase):
         self.assertIn("Tao", payload["living_roster"])
         self.assertIn("Robinson", payload["living_roster"])
         self.assertIn("GWOSC_GWTC", payload["feed_sources"])
+        self.assertIn("stale", payload["feed_freshness"])
+        self.assertFalse(payload["feed_freshness"]["network"])
         self.assertTrue((ROOT / "docs" / "DA-DESK.md").is_file())
         self.assertTrue((ROOT / "docs" / "DA-PAPER.md").is_file())
         self.assertTrue((ROOT / "docs" / "DA-THINK-TANK.md").is_file())

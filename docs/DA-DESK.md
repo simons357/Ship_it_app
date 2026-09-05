@@ -563,7 +563,7 @@ Open is allowed. Fail is allowed. A fake pass is not.
 python3 scripts/da_machine.py desk        # this write-up’s roster
 python3 scripts/da_machine.py compute     # what we can borrow to compute
 python3 scripts/da_machine.py alert       # plain-language text if something significant flips
-python3 scripts/da_machine.py status
+python3 scripts/da_machine.py status      # slots + last feed age; no network
 python3 scripts/da_machine.py check       # check B stays open
 python3 scripts/da_machine.py tracka      # Q1-augmented NS; this PDE only
 python3 scripts/da_machine.py trackb

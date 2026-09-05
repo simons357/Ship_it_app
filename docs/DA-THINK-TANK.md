@@ -40,7 +40,7 @@ They talk in [`docs/DA-LIVING.md`](DA-LIVING.md). Papers, not a channel. A vote 
 Seated list and next papers: [`docs/DA-NOW.md`](DA-NOW.md). Genius is not a slot. Not a world census.
 
 **Live feed**  
-Latest public catalogs: [`docs/DA-FEED.md`](DA-FEED.md). LIGO, LHC, PDG, arXiv. Re-run is the collection.
+Latest public catalogs: [`docs/DA-FEED.md`](DA-FEED.md). LIGO, LHC, PDG, arXiv. Re-run is the collection. `status` reports last-scan age. Missing or \>24h is stale.
 
 **DA tick**  
 Roster plus feed inside the machine: [`docs/DA-AGENT.md`](DA-AGENT.md). Agent-shaped. Not a closer.

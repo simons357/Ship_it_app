@@ -125,7 +125,7 @@ def classify_claim(claim: str) -> dict:
     if re.search(r"bridge|prime.?block|h_n|inverse.?gcd|qtilde|theorem p", text):
         return {"domain": "Q", "verdict": "open", "reason": "looks like Track Q; run check Q"}
     if re.search(
-        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up|anti-?bullshit|comput(e|ing)|dedalus|sympy|gwosc|\balert\b|text me|notif|converse|working session|talk to each other|virtual s[eé]ance|kingdoms|living dream team|living bench|not dead|full.?roll|all specialties|next lead|every chair|seat miller|albritton|beirao|berselli|giga.?miura|\bmiura\b|\bseat jia\b|\bseat guillod\b|\bseat hou.?wang.?yang\b|\bseat lei.?ren.?tian\b|\bseat csty\b|\bseat kozono|\bseat neustupa|\bseat escauriaza|\bseat nadirashvili|\bseat chae\b|\bseat chemin|\bseat cannone|\bseat lin\b|\bseat vasseur\b|\bseat farwig\b|\bseat cheskidov\b|\bseat masmoudi\b|\bseat wolf\b|\bseat galdi\b|\bseat temam\b|\bseat isett\b|\bseat tsai\b|\bseat lemarie\b|\bseat danchin\b|\bseat kukavica\b|\bseat barker\b|living genius|genius roster|\bda now\b|\bda feed\b|live feed|latest (ligo|lhc|pdg)|particle accelerator|\bnow roster\b|\bseat robinson\b|\bda agent\b|agent.?shaped|domain architect agent",
+        r"\bunifier\b|realization|\block_r\b|cosmos|hierarchy|vacuum|\b16\b|finger|wave|falsif|superposition|entangle|standard model|lagrangian|yukawa|weinberg|dream team|digital divide|lineage|maxwell|yang-mills|harmonic vocab|vocabulary of harmonic|spherical harmonic|peter.?weyl|hodge form|harmonic universe|bag of couplings|ground level|\beinstein\b|\btesla\b|\bfeynman\b|\bpipe\b|satellite|hologram|gwtc|desi|think tank|\bcorpus\b|\bdesk\b|write-?up|anti-?bullshit|comput(e|ing)|dedalus|sympy|gwosc|\balert\b|text me|notif|converse|working session|talk to each other|virtual s[eé]ance|kingdoms|living dream team|living bench|not dead|full.?roll|all specialties|next lead|every chair|seat miller|albritton|beirao|berselli|giga.?miura|\bmiura\b|\bseat jia\b|\bseat guillod\b|\bseat hou.?wang.?yang\b|\bseat lei.?ren.?tian\b|\bseat csty\b|\bseat kozono|\bseat neustupa|\bseat escauriaza|\bseat nadirashvili|\bseat chae\b|\bseat chemin|\bseat cannone|\bseat lin\b|\bseat vasseur\b|\bseat farwig\b|\bseat cheskidov\b|\bseat masmoudi\b|\bseat wolf\b|\bseat galdi\b|\bseat temam\b|\bseat isett\b|\bseat tsai\b|\bseat lemarie\b|\bseat danchin\b|\bseat kukavica\b|\bseat barker\b|living genius|genius roster|\bda now\b|\bda feed\b|live feed|latest (ligo|lhc|pdg)|particle accelerator|\bnow roster\b|\bseat robinson\b|\bda agent\b|agent.?shaped|domain architect agent|feed freshness|stale.?da|stale.?feed|must stay current|last.?scan",
         text,
     ):
         return {"domain": "U", "verdict": "open", "reason": "looks like score U / SM Lagrangian / waveform; run sm or how"}
@@ -198,7 +198,13 @@ def cmd_status() -> int:
         print(f"      {slot['note']}")
     print("counts", json.dumps(data["counts"]))
     print("Agent-shaped: propose, scan, score, alert. Not a closer.")
+    from da_feed import format_freshness, freshness
+
+    fr = freshness()
+    print(format_freshness(fr))
     print("now / feed / agent: python3 scripts/da_machine.py now|feed|agent")
+    if fr.get("stale"):
+        print("re-run: python3 scripts/da_machine.py feed")
     return 0
 
 
@@ -790,11 +796,12 @@ def cmd_agent() -> int:
 
 
 def cmd_feed() -> int:
-    from da_feed import run as feed_run
+    from da_feed import format_freshness, run as feed_run
 
     payload = feed_run()
     print("DA feed. Public test results. Not omniscience. Not a close.")
-    print("fetched", payload["meta"]["fetched_at"])
+    print(format_freshness(payload.get("freshness")))
+    print("fetched", payload["meta"].get("fetched_at") or "none")
     for src in payload["scan"]:
         flag = "ok" if src.get("ok") else "miss"
         print(f"  [{flag}] {src['name']:<16} {src['slot']} n={src.get('n')}")
