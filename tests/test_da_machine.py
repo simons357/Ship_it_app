@@ -359,6 +359,12 @@ class DaMachineTests(unittest.TestCase):
         steady = classify_claim("Galdi physically reasonable solutions on a vorticity packet")
         self.assertEqual(steady["domain"], "B")
         self.assertEqual(steady["verdict"], "open")
+        temam = classify_claim("seat Temam as a wall on the living bench")
+        self.assertEqual(temam["domain"], "U")
+        self.assertEqual(temam["verdict"], "open")
+        attr = classify_claim("Temam attractor on a vorticity packet")
+        self.assertEqual(attr["domain"], "B")
+        self.assertEqual(attr["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

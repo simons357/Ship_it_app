@@ -91,6 +91,9 @@ LEADS = [
     lead("Galdi", "steady / physically reasonable", "B", "living",
          "Steady exterior flow in the physically reasonable class is a different problem. A wake is not evolutionary X.",
          "steady = bound on X"),
+    lead("Temam", "attractors / functional NS", "B", "living",
+         "The 3D attractor is finite-dimensional if the solution stays smooth. Gevrey assumes that if. It is not an a priori on X. Foias stays out.",
+         "attractor = bound on X"),
     lead("Cheskidov", "energy equality / Onsager", "B", "living",
          "Energy equality in a weak-in-time Onsager class is still a condition. Leray already has the inequality. Equality is not a bound on X.",
          "energy equality = bound on X"),
@@ -242,7 +245,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -507,6 +510,13 @@ CLAIMS = [
         "Galdi physically reasonable solutions bound X",
         "fail",
         "Steady exterior is a different problem. A wake is not evolutionary enstrophy.",
+    ),
+    rec(
+        "R38",
+        "temam_attractor_bounds_X",
+        "Temam attractor bounds X",
+        "fail",
+        "3D finite-dimensionality assumes the solution stays smooth. That if is not a bound on X. Foias stays out.",
     ),
 ]
 

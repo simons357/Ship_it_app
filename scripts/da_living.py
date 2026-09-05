@@ -190,6 +190,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Temam",
+        ["Tao", "Caffarelli"],
+        "The 3D attractor is finite-dimensional if the solution stays smooth. Gevrey on the attractor assumes that if. It is not an a priori on X. Foias is not in this room.",
+        "B",
+    ),
+    turn(
         "Cheskidov",
         ["Farwig", "Vicol"],
         "Energy equality in a weak-in-time Onsager class is still a condition. Leray already has the inequality. Equality is not a bound on X. Do not cash Onsager for NS as regularity.",
@@ -634,6 +640,13 @@ CLAIMS = [
         "fail",
         "ARMA 2011: steady exterior Leray solutions in Finn's class. A different problem. Not evolutionary X.",
     ),
+    rec(
+        "L46",
+        "temam_attractor_closes_X",
+        "Temam attractor closes X",
+        "fail",
+        "JFA 1989 / attractor theory: 3D finite-dimensionality assumes the solution stays smooth. Gevrey assumes that if. Not an a priori on X. Foias stays out.",
+    ),
 ]
 
 
@@ -660,6 +673,7 @@ KINGDOMS = [
     {"name": "BMO continuation", "who": "Kozono-Taniuchi", "slot": "B"},
     {"name": "Very weak solutions", "who": "Farwig", "slot": "B"},
     {"name": "Steady / physically reasonable", "who": "Galdi", "slot": "B"},
+    {"name": "Attractors / functional NS", "who": "Temam", "slot": "B"},
     {"name": "Energy equality / Onsager", "who": "Cheskidov", "slot": "B"},
     {"name": "One-component if", "who": "Neustupa-Penel", "slot": "B"},
     {"name": "Critical small data", "who": "Koch, Tataru", "slot": "B"},

@@ -46,6 +46,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | BMO continuation | Kozono–Taniuchi | integrable \(\|\omega\|_{\mathrm{BMO}}\) continues a strong solution | the if is an a priori on \(X\) |
 | Very weak solutions | Farwig | Serrin class without differentiability; not Leray–Hopf | that class bounds classical \(X\) |
 | Steady / physically reasonable | Galdi | steady exterior Leray solutions in Finn's class | a wake bounds evolutionary \(X\) |
+| Attractors / functional NS | Temam | 3D attractor finite-dimensional if the solution stays smooth | the attractor bounds \(X\) |
 | Energy equality / Onsager | Cheskidov | energy equality in a weak-in-time Onsager class | equality \(=\) regularity; equality bounds \(X\) |
 | One-component if | Neustupa–Penel | one velocity component in a Serrin-type class regularizes | the if is all-data regularity |
 | Critical small data | Koch, Tataru | small critical sits | large-data regularity |
@@ -62,7 +63,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Announcements | current math.AP | a preprint is a proposal | close B by title |
 | The desk | operator | one sentence, one slot, one check | needing chops |
 
-Shahmurov does not get a chair. Sohr stays out. SFE / HB-as-unifier do not.
+Shahmurov does not get a chair. Sohr stays out. Foias stays out. SFE / HB-as-unifier do not.
 
 ---
 
@@ -207,6 +208,11 @@ in this room.
 reasonable class (ARMA 2011, with Kyed) is a different
 problem. A wake is not evolutionary \(X\). Reinhard,
 Terence — it is not a bound on enstrophy.
+
+**Temam.** The 3D attractor is finite-dimensional if
+the solution stays smooth (JFA 1989, with Foias). Gevrey
+on the attractor assumes that if. It is not an a priori
+on \(X\). Terence, Luis — Foias is not in this room.
 
 **Cheskidov.** Energy equality in a weak-in-time
 Onsager class (Nonlinearity 2020, with Luo) is still a
@@ -364,6 +370,7 @@ scores the process, not a theorem you did not prove.
 | Masmoudi uniqueness of mild solutions closes \(X\) | **fail** |
 | Wolf local pressure closes \(X\) | **fail** |
 | Galdi physically reasonable solutions close \(X\) | **fail** |
+| Temam attractor closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |
