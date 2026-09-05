@@ -67,6 +67,7 @@ freestyle. Not a vote. Not a séance.
 | Repair | `repair` | take A, SND, or H; name the fault and the write | export A onto B |
 | Attempt | `attempt` | best A and RH; dream team looks; legal write | vote a missing line |
 | Brute | `brute` | finite list vs all-data write | quantum / try-every as a close |
+| Picture | `picture` | survey names the next write | omniscience; a qualified vote |
 | Checker | `check --domain B` | run the leftover tests | a close |
 
 Re-run `feed` so the rim is not stale. `status` reports

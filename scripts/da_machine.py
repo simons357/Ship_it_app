@@ -116,7 +116,8 @@ def classify_claim(claim: str) -> dict:
         r"\bdream team\b|\banalyze my\b|\bcomplete the chain\b|"
         r"\brenormali[sz]|\bda attempt\b|\bmy rh\b|"
         r"\btry every\b|\bquantum comput|\bsupercomput|\bbrute\b|"
-        r"\bneed to close\b|\beinstein\b|\btesla\b",
+        r"\bneed to close\b|\beinstein\b|\btesla\b|"
+        r"\bbig picture\b|\bcomprehensive\b|\bwhat would they do next\b",
         text,
     ):
         return {
@@ -790,6 +791,19 @@ def cmd_now() -> int:
     return 0
 
 
+def cmd_picture() -> int:
+    from da_picture import print_picture
+
+    print_picture()
+    append_run(
+        "U",
+        "Picture: published survey names the next write; seeing the field is not the estimate",
+        "open",
+        "treatise pass; omniscience fail; qualified vote fail",
+    )
+    return 0
+
+
 def cmd_brute() -> int:
     from da_brute import print_brute
 
@@ -902,6 +916,7 @@ def cmd_next(ask: str = "") -> int:
     from da_next import is_lost_ask, run as next_run
     from da_attempt import is_attempt_ask
     from da_brute import is_brute_ask
+    from da_picture import is_picture_ask
     from da_proof import is_proof_ask
     from da_repair import is_repair_ask
 
@@ -909,6 +924,8 @@ def cmd_next(ask: str = "") -> int:
         return cmd_look()
     if is_brute_ask(ask):
         return cmd_brute()
+    if is_picture_ask(ask):
+        return cmd_picture()
     if is_attempt_ask(ask):
         return cmd_attempt(ask=ask)
     if is_proof_ask(ask):
@@ -1159,6 +1176,10 @@ def main() -> int:
     prf = sub.add_parser("proof", help="write a proof chain: NS or RH")
     prf.add_argument("--problem", default="", help="NS or RH")
     sub.add_parser(
+        "picture",
+        help="survey of each field; next write; not omniscience",
+    )
+    sub.add_parser(
         "brute",
         help="why try-every / quantum / supercomputer does not write the leftover",
     )
@@ -1260,6 +1281,8 @@ def main() -> int:
         return cmd_from()
     if args.cmd == "proof":
         return cmd_proof(problem=getattr(args, "problem", ""))
+    if args.cmd == "picture":
+        return cmd_picture()
     if args.cmd == "brute":
         return cmd_brute()
     if args.cmd == "attempt":

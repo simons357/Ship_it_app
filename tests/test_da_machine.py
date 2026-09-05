@@ -605,6 +605,9 @@ class DaMachineTests(unittest.TestCase):
         boys = classify_claim("let Einstein and Tesla figure out H")
         self.assertEqual(boys["domain"], "U")
         self.assertEqual(boys["verdict"], "open")
+        pic = classify_claim("big picture advice from the most comprehensive knowledge")
+        self.assertEqual(pic["domain"], "U")
+        self.assertEqual(pic["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

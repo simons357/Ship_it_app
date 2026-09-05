@@ -17,6 +17,7 @@ From your work: `python3 scripts/da_machine.py from`
 Write a proof chain: `python3 scripts/da_machine.py proof --problem NS` or `--problem RH`  
 Repair A / SND / H: `python3 scripts/da_machine.py repair --job A`  
 Attempt (dream team on best A and RH): `python3 scripts/da_machine.py attempt`  
+Picture (survey, then next write): `python3 scripts/da_machine.py picture`  
 Scene: `docs/DA-SESSION.md`  
 Living scene: `docs/DA-LIVING.md`  
 Leads: `docs/DA-LEADS.md`  

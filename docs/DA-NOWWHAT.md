@@ -6,6 +6,8 @@
 `python3 scripts/da_machine.py look`  
 `python3 scripts/da_machine.py from`
 
+Big-picture treatise per area, then the next write: [`DA-PICTURE.md`](DA-PICTURE.md). `python3 scripts/da_machine.py picture`.
+
 The operator is a normal person. They say **now what.**
 DA does not send that sentence to a chatbot for a
 freestyle guess. It asks the leftover papers — twenty-two
