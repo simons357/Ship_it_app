@@ -772,6 +772,12 @@ def is_attempt_ask(ask: str) -> bool:
     text = (ask or "").lower().strip()
     if not text:
         return False
+    if re.search(
+        r"\bwrite rh\b|\bwrite (the )?(rh |riemann )?proof\b|"
+        r"\bmy best paper\b.*\bwrite\b|\bwrite\b.*\brh\b",
+        text,
+    ):
+        return False
     return bool(
         re.search(
             r"\bdream team\b|\banalyze my\b|\bcomplete the chain\b|"

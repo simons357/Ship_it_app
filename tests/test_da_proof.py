@@ -78,6 +78,19 @@ class DaProofTests(unittest.TestCase):
         self.assertEqual(rh["problem"], "RH")
         self.assertIn("1/2", rh["theorem"]["aimed"])
         self.assertTrue(any("inverse-GCD" in line for line in rh["object"]["window"]))
+        paper_ask = "use my best paper and write RH please"
+        self.assertTrue(is_proof_ask(paper_ask))
+        self.assertFalse(is_attempt_ask(paper_ask))
+        self.assertEqual(parse_problem(ask=paper_ask), "RH")
+        paper = run(
+            out=Path(tempfile.mkdtemp()) / "da_proof_rh_paper.json",
+            problem="",
+            ask=paper_ask,
+        )
+        self.assertEqual(paper["picked"], ["RH"])
+        self.assertIsNotNone(paper["chains"][0]["best_paper"])
+        self.assertEqual(paper["chains"][0]["best_paper"]["slot"], "Q")
+        self.assertTrue(any("Theorem P" in row for row in paper["chains"][0]["best_paper"]["sits"]))
         a = run(out=Path(tempfile.mkdtemp()) / "da_proof_a.json", problem="A")
         self.assertEqual(a["problem"], "A")
         self.assertTrue(a["chains"][0]["this_pde_complete"])

@@ -14,6 +14,7 @@ python3 scripts/da_machine.py next --ask "RH proof chain please"
 python3 scripts/da_machine.py next --ask "Track B please write"
 python3 scripts/da_machine.py next --ask "track A write"
 python3 scripts/da_machine.py next --ask "Track B please write. track A write as well"
+python3 scripts/da_machine.py next --ask "use my best paper and write RH"
 ```
 
 Nothing is wrong with asking. That is the product.

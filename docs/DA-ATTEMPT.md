@@ -105,7 +105,8 @@ line is not all. A proportion is not RH. A GCD matrix
 is not a zero.
 
 Chain: [`RH-PROOF-CHAIN.md`](RH-PROOF-CHAIN.md)  
-Floor: [`SPECTRAL-FLOOR-EXPLORATION.md`](SPECTRAL-FLOOR-EXPLORATION.md)
+Floor: [`SPECTRAL-FLOOR-EXPLORATION.md`](SPECTRAL-FLOOR-EXPLORATION.md)  
+Write from the paper: `next --ask "use my best paper and write RH"`
 
 ---
 

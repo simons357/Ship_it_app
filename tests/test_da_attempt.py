@@ -83,6 +83,8 @@ class DaAttemptTests(unittest.TestCase):
         self.assertFalse(is_attempt_ask("now what"))
         self.assertFalse(is_attempt_ask("RH proof chain please"))
         self.assertTrue(is_proof_ask("RH proof chain please"))
+        self.assertFalse(is_attempt_ask("use my best paper and write RH please"))
+        self.assertTrue(is_proof_ask("use my best paper and write RH please"))
         self.assertFalse(is_attempt_ask("Track B please write"))
         self.assertTrue(is_proof_ask("Track B please write"))
         self.assertFalse(is_attempt_ask("track A write"))

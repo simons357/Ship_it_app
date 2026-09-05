@@ -119,7 +119,8 @@ def classify_claim(claim: str) -> dict:
         r"\bneed to close\b|\beinstein\b|\btesla\b|"
         r"\bbig picture\b|\bcomprehensive\b|\bwhat would they do next\b|"
         r"\bproof chain\b|\bwrite (me )?(the )?proof\b|\bda proof\b|"
-        r"\btrack [ab]\b.{0,40}\bwrite\b|\bwrite\b.{0,40}\btrack [ab]\b",
+        r"\btrack [ab]\b.{0,40}\bwrite\b|\bwrite\b.{0,40}\btrack [ab]\b|"
+        r"\bwrite rh\b|\bmy best paper\b",
         text,
     ):
         return {

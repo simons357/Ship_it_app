@@ -375,6 +375,28 @@ PROBLEMS = {
         ),
         "mine": [],
         "needed": [],
+        "best_paper": {
+            "name": (
+                "August inverse-GCD (Zenodo 22045478) plus the "
+                "spectral-floor retraction"
+            ),
+            "slot": "Q",
+            "doc": "docs/SPECTRAL-FLOOR-EXPLORATION.md",
+            "sits": [
+                "Bridge*: R(e_p - e_q) > -1/2 on Q-tilde (pair identity)",
+                "Theorem P: prime-supported Q-tilde >= -1/4",
+                "H_N = D^{-1/2} Q-tilde D^{-1/2}, lambda_min(H_N) >= -1 (pairing)",
+                "v >= 0 => v^T Q-tilde v >= 0",
+            ],
+            "false": [
+                "lambda_min(Q_N) > -1/2  (Q_10 ~ -1.90)",
+                "lambda_min(H_N) >= -3/14  (H_4 ~ -0.225)",
+            ],
+            "not": (
+                "These are completed Q theorems. They are not RH line (6). "
+                "A GCD matrix is not a zero. Do not glue."
+            ),
+        },
     },
 }
 
@@ -499,6 +521,7 @@ def is_proof_ask(ask: str) -> bool:
             r"\bxavier stokes\b|\bnavi(er)?.?stokes\b|"
             r"\bda proof\b|\bthe proof for (ns|navier|rh|riemann|track [ab]|q1)\b|"
             r"\btrack [ab]\b.*\bwrite\b|\bwrite\b.*\btrack [ab]\b|"
+            r"\bwrite rh\b|\bmy best paper\b.*\b(rh|riemann|write)\b|"
             r"\brh\b|\briemann\b",
             text,
         )
@@ -529,6 +552,7 @@ def _chain(pid: str) -> dict:
         "write_n": write_n,
         "chain_doc": spec["chain_doc"],
         "this_pde_complete": spec.get("this_pde_complete", False),
+        "best_paper": spec.get("best_paper"),
         "counts": {
             "lines": len(spec["lines"]),
             "have": sum(1 for L in spec["lines"] if L["status"] == "have"),
@@ -614,6 +638,19 @@ def _print_one_chain(chain: dict) -> None:
     print("A candidate for the WRITE line:")
     for row in chain["proceed"]:
         print(f"  - {row}")
+    paper = chain.get("best_paper")
+    if paper:
+        print()
+        print(f"FROM YOUR BEST PAPER  (slot {paper['slot']}, not RH (6))")
+        print(f"  {paper['name']}")
+        print("  sits:")
+        for row in paper["sits"]:
+            print(f"    [HAVE as Q] {row}")
+        print("  withdrawn:")
+        for row in paper["false"]:
+            print(f"    [FAIL] {row}")
+        print(f"  {paper['not']}")
+        print(f"  {paper['doc']}")
     print()
 
 
