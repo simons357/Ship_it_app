@@ -40,6 +40,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Strain / middle eigenvalue | Miller | \(\lambda_2^+\) is a different cut; identity is not an a priori | rewrite in \(S\) closes \(X\) |
 | Wild weak solutions | Vicol, Buckmaster | non-uniqueness below the energy class | that is a smooth blowup or a bound |
 | Forced Leray | Albritton–Brué–Colombo | forced Leray–Hopf can be non-unique | that bounds unforced \(X\) |
+| Unforced Leray–Hopf | Hou–Wang–Yang | announced CAP of unforced Leray–Hopf non-uniqueness | that writes smooth \(X\); CAP \(=\) regularity |
 | Euler singularity | Elgindi | Euler can singularize | Euler \(\Rightarrow\) NS |
 | Computation as probe | Hou | a scenario can be computed | DNS / \(n=64\) is an a priori |
 | Announcements | current math.AP | a preprint is a proposal | close B by title |
@@ -172,6 +173,12 @@ the sentence. The desk already failed finer DNS.
 is a different equation once \(f\) is on. Not a bound on
 unforced \(X\).
 
+**Hou–Wang–Yang.** arXiv 2509.25116 announces a
+computer-assisted proof of unforced Leray–Hopf
+non-uniqueness. That is a different class. Not a bound
+on classical \(X\). Dallas — forced stays your wall.
+Do not cash a CAP as regularity.
+
 **current math.AP.** An announcement is a proposal. Score
 one identity here or the title stays a paragraph.
 Shahmurov does not sit.
@@ -231,6 +238,7 @@ scores the process, not a theorem you did not prove.
 | Liouville or ancient doors are an a priori | **fail** |
 | Jia–Šverák forward self-similar closes \(X\) | **fail** |
 | Guillod–Šverák numerical pitchfork closes \(X\) | **fail** |
+| Hou–Wang–Yang unforced Leray–Hopf closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

@@ -157,6 +157,9 @@ LEADS = [
     lead("Hou", "computation as probe", "B", "living",
          "A computed scenario is a probe. Do not spawn n=64.",
          "DNS is an a priori"),
+    lead("Hou-Wang-Yang", "unforced Leray-Hopf / CAP", "B", "living",
+         "Announced CAP of unforced Leray-Hopf non-uniqueness. Different class. Not a bound on classical X. Do not cash a CAP as regularity.",
+         "unforced LH ⇒ bound on smooth X"),
     lead("current math.AP", "preprints", "B", "now",
          "An announcement is a proposal. Score one identity here or it stays a paragraph.",
          "close B by title"),
@@ -190,7 +193,7 @@ MUST_SIT = {
     "Einstein", "Tesla", "Feynman", "Weyl", "Wigner", "von Neumann", "Weinberg",
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Jia", "Guillod", "Koch", "Tataru", "Grujic",
-    "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "current math.AP",
+    "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
     "Beirao-Berselli", "Giga-Miura",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
@@ -337,6 +340,13 @@ CLAIMS = [
         "Guillod-Sverak numerical pitchfork closes X",
         "fail",
         "Numerics on smooth profiles. Not an a priori. Not a singularity.",
+    ),
+    rec(
+        "R21",
+        "unforced_lh_closes_X",
+        "Hou-Wang-Yang unforced Leray-Hopf non-uniqueness closes X",
+        "fail",
+        "Announced CAP. Different class. Not a bound on classical X.",
     ),
 ]
 

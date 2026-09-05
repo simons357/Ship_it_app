@@ -257,6 +257,12 @@ class DaMachineTests(unittest.TestCase):
         pitch = classify_claim("Guillod numerical pitchfork on a vorticity packet")
         self.assertEqual(pitch["domain"], "B")
         self.assertEqual(pitch["verdict"], "open")
+        hwy = classify_claim("seat Hou-Wang-Yang as a wall on the living bench")
+        self.assertEqual(hwy["domain"], "U")
+        self.assertEqual(hwy["verdict"], "open")
+        unforced = classify_claim("Hou-Wang-Yang unforced Leray-Hopf on a vorticity packet")
+        self.assertEqual(unforced["domain"], "B")
+        self.assertEqual(unforced["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

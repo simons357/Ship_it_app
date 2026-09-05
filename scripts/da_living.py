@@ -184,6 +184,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Hou-Wang-Yang",
+        ["Albritton", "Jia", "Hou"],
+        "arXiv 2509.25116 announces a computer-assisted proof of unforced Leray-Hopf non-uniqueness. That is a different class. Not a bound on classical X. Do not cash a CAP as regularity.",
+        "B",
+    ),
+    turn(
         "current math.AP",
         ["Tao", "Sverak", "Operator"],
         "An announcement is a proposal. Score one identity here or the title stays a paragraph. Shahmurov does not sit.",
@@ -413,6 +419,13 @@ CLAIMS = [
         "fail",
         "Numerics on smooth profiles. If proved, Leray-Hopf non-uniqueness for non-smooth data. Not an a priori. Not a singularity.",
     ),
+    rec(
+        "L29",
+        "unforced_lh_closes_X",
+        "Hou-Wang-Yang unforced Leray-Hopf non-uniqueness closes X",
+        "fail",
+        "arXiv 2509.25116 is an announced CAP. Different class. Not a bound on classical X. Do not cash a CAP as regularity.",
+    ),
 ]
 
 
@@ -433,6 +446,7 @@ KINGDOMS = [
     {"name": "Strain / middle eigenvalue", "who": "Miller", "slot": "B"},
     {"name": "Wild weak solutions", "who": "Vicol, Buckmaster", "slot": "B"},
     {"name": "Forced Leray", "who": "Albritton", "slot": "B"},
+    {"name": "Unforced Leray-Hopf", "who": "Hou-Wang-Yang", "slot": "B"},
     {"name": "Euler singularity", "who": "Elgindi", "slot": "B"},
     {"name": "Computation as probe", "who": "Hou", "slot": "B"},
     {"name": "Announcements", "who": "current math.AP", "slot": "B"},

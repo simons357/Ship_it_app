@@ -51,6 +51,7 @@ in your slot.
 | Buckmaster | wild weak solutions | Do not cash us as a killing field for classical \(X\). | wild \(\Rightarrow\) smooth blowup |
 | Elgindi | Euler | Different equation. Viscosity is not a free limit. | Euler \(\Rightarrow\) NS |
 | Hou | computation | A scenario is a probe. Do not spawn \(n=64\). | DNS is an a priori |
+| Hou–Wang–Yang | unforced Leray–Hopf / CAP | Announced CAP of unforced Leray–Hopf non-uniqueness. Different class. Not a bound on classical \(X\). | unforced LH \(\Rightarrow\) bound on smooth \(X\) |
 | current math.AP | preprints | Score one identity or the title stays a paragraph. | close B by announcement |
 
 ---
@@ -104,6 +105,7 @@ in your slot.
 | Liouville or ancient doors are an a priori | **fail** |
 | Jia–Šverák forward self-similar closes \(X\) | **fail** |
 | Guillod–Šverák numerical pitchfork closes \(X\) | **fail** |
+| Hou–Wang–Yang unforced Leray–Hopf closes \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
