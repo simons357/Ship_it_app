@@ -108,6 +108,14 @@ JOBS = {
             "Renormalization close: ||u||_H1 finite as eps->0, or a named no-go.",
             "Classical NS: that uniform bound, then a separate Track B argument.",
         ],
+        "do": [
+            "Stop re-proving Theorem A. Energy, Galerkin, unique H1, C^infty already sit at eps>0, beta>=1/2.",
+            "Write one sentence: ||u(t)||_H1 <= C with C independent of eps, for all smooth data, or a named obstruction that C must blow up.",
+            "Classify that sentence as Track A. Run: python3 scripts/da_machine.py tracka",
+            "Kill it on the Taylor-Green box if it claims the box is already uniform (A7 fail). A decaying Q1 integral is not the bound (A9 fail).",
+            "Do not cancel to Phi. Do not retune nodes.json. Do not slide eps onto B.",
+            "If the uniform bound sits, classical NS is still a separate Track B write (integrable R). A=>B stays fail.",
+        ],
         "completed": (
             "This PDE: the chain is already complete (Theorem A). "
             "The renormalization to eps=0 is not complete. "
@@ -652,7 +660,9 @@ def is_attempt_ask(ask: str) -> bool:
             r"\bexperts (look|do|say)\b|\bda attempt\b|"
             r"\blook at (my )?(a|rh|augmented|snd|h)\b|"
             r"\bneed to close\b|\bwhat.{0,12}close\b|"
-            r"\beinstein\b|\btesla\b|\bclose (snd|h)\b",
+            r"\beinstein\b|\btesla\b|\bclose (snd|h)\b|"
+            r"\bns in augmented\b|\bclose .{0,24}augmented\b|"
+            r"\bclose (the )?augmented\b|\baugmented please\b",
             text,
         )
     )
@@ -711,6 +721,10 @@ def print_attempt(out: Path | None = None, job: str | None = None, ask: str = ""
         print("  NEED TO CLOSE")
         for line in spec.get("need_to_close") or [spec["needs"]]:
             print(f"    {line}")
+        if spec.get("do"):
+            print("  DO")
+            for i, line in enumerate(spec["do"], 1):
+                print(f"    {i}. {line}")
         print(f"  FURTHEST {spec['furthest']}")
         print("  PROGRESS")
         for row in spec["progress"]:

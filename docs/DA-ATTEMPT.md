@@ -42,6 +42,12 @@ not (A7 fail, A9 fail). `A_uniform_H1` is **open**.
 **Classical NS.** Not complete. That is a separate
 Track B argument, not a slide.
 
+**Do (augmented).** Stop re-proving Theorem A. Write
+\(\|u\|_{H^1}\le C\) with \(C\) independent of
+\(\varepsilon\), or a named no-go. Classify it. Run
+`tracka`. Do not \(\Phi\). Do not slide onto B. If that
+bound sits, classical NS is still a separate leftover.
+
 **Dream team (papers).** Ladyzhenskaya, Málek–Nečas–Růžička,
 Temam, Tao, Fefferman, Constantin. Olga already closed
 this PDE. She cannot pass \(\varepsilon\to 0\). Tao treats
