@@ -166,6 +166,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Bedrossian",
+        ["Cheskidov", "Albritton"],
+        "The Kolmogorov 4/5 law for stationary martingale solutions under weak anomalous dissipation is a cascade identity. It is not a bound on X. Energy equality stays Cheskidov. Forced Leray stays Albritton. Couette stays off this chair.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -816,6 +822,13 @@ CLAIMS = [
         "fail",
         "CPDE 1997 / J. Evol. Eq. 2001: maximal L^p-L^q for parabolic semigroups and Stokes in a half space. A linear estimate is not a bound on X. Pruss stays out.",
     ),
+    rec(
+        "L60",
+        "bedrossian_45_closes_X",
+        "Bedrossian Kolmogorov 4/5 closes X",
+        "fail",
+        "CMP 2019: 4/5 for forced stationary martingale solutions under weak anomalous dissipation. A cascade identity is not a bound on X. Energy equality stays Cheskidov. Forced Leray stays Albritton.",
+    ),
 ]
 
 
@@ -835,6 +848,7 @@ KINGDOMS = [
     {"name": "Weak-strong uniqueness", "who": "Germain", "slot": "B"},
     {"name": "Primitive equations", "who": "Cao", "slot": "B"},
     {"name": "Stokes / maximal L^p regularity", "who": "Hieber", "slot": "B"},
+    {"name": "Kolmogorov 4/5 / weak anomalous dissipation", "who": "Bedrossian", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

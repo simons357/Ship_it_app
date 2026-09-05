@@ -9,7 +9,7 @@ geniuses in the world is omniscience. That claim **fails**.
 A vote of names does not write \(X\).
 
 Dated 5 September 2026. The seated list is derived from the
-living session, including Hieber Stokes maximal regularity.
+living session, including Bedrossian Kolmogorov 4/5.
 The watch list is next papers, not a seat.
 
 ---
@@ -42,7 +42,7 @@ These are living chairs whose papers can sit. They are
 | Titi | B | a posteriori / data assimilation | twin of Robinson |
 | Shvydkoy | B | Onsager lectures | twin of Isett or Cheskidov |
 | Friedlander | B | hydrodynamic instability | twin of Elgindi or Isett |
-| Bedrossian | B | mixing / enhanced dissipation | seat without a homogeneous NS theorem |
+| Coti Zelati | B | Kolmogorov 4/5 / mixing | second 4/5 chair next to Bedrossian |
 | Staffilani | B | \(BMO^{-1}\) regularity of small Koch–Tataru solutions | twin of Koch–Tataru or Pavlović |
 | Silvestre | B | Hölder / drift-diffusion | export a different equation onto NS |
 | Kenig | B | unique continuation | twin of Kukavica |

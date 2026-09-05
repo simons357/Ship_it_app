@@ -68,11 +68,11 @@ WATCH = [
         "do_not": "seat as a twin of Elgindi or Isett",
     },
     {
-        "name": "Bedrossian",
+        "name": "Coti Zelati",
         "slot": "B",
-        "kingdom": "mixing / enhanced dissipation",
-        "involved": "Landau damping, mixing; NS only if a homogeneous theorem is named",
-        "do_not": "seat without a homogeneous 3D NS theorem",
+        "kingdom": "Kolmogorov 4/5 / mixing",
+        "involved": "Bedrossian-Coti Zelati-Punshon-Smith-Weber 4/5; also mixing",
+        "do_not": "seat as a second 4/5 chair next to Bedrossian",
     },
     {
         "name": "Staffilani",
