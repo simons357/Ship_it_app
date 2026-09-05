@@ -103,6 +103,7 @@ SPOKES = [
     {"name": "proof", "command": "proof", "slot": "B", "does": "write the Navier-Stokes proof chain"},
     {"name": "repair", "command": "repair", "slot": "U / A / B / Q", "does": "take A, SND, or H; name the fault and the write"},
     {"name": "attempt", "command": "attempt", "slot": "U / A / RH / Q", "does": "best A and RH; dream team looks; legal write"},
+    {"name": "brute", "command": "brute", "slot": "U", "does": "finite list vs all-data write; quantum is not the estimate"},
 ]
 
 

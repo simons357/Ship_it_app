@@ -15,6 +15,9 @@ sits, refuse the glue.
 
 A council does not complete a missing line by agreeing.
 
+Trying every combination on a supercomputer or quantum
+device is the same refuse: [`DA-BRUTE.md`](DA-BRUTE.md).
+
 ---
 
 ## A — \(Q_1\) plus the \(\varepsilon\to 0\) renormalization

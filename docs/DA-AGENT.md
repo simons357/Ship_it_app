@@ -29,6 +29,7 @@ not replace the checker.
 | Proof | `proof` | B | write the NS proof chain | QED without line (6) |
 | Repair | `repair` | U / A / B / Q | take A, SND, or H; name the fault and the write | export A onto B |
 | Attempt | `attempt` | U / A / RH / Q | best A and RH; dream team looks; legal write | vote a missing line |
+| Brute | `brute` | U | finite list vs all-data write | quantum / try-every as a close |
 
 Latest public data belongs here. A stale machine is a
 weaker anti-bullshit device. Up to date is a U duty.
@@ -62,4 +63,5 @@ Council: [`DA-NOWWHAT.md`](DA-NOWWHAT.md)
 Hunt: [`DA-HUNT.md`](DA-HUNT.md)  
 Repair: [`DA-REPAIR.md`](DA-REPAIR.md)  
 Attempt: [`DA-ATTEMPT.md`](DA-ATTEMPT.md)  
+Brute: [`DA-BRUTE.md`](DA-BRUTE.md)  
 Machine: [`DOMAIN-ARCHITECT-MACHINE.md`](DOMAIN-ARCHITECT-MACHINE.md)

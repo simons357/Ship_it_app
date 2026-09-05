@@ -2,6 +2,10 @@
 
 `python3 scripts/da_machine.py compute`
 
+Why a supercomputer or quantum device cannot try every
+combination and write the leftover: [`DA-BRUTE.md`](DA-BRUTE.md).
+`python3 scripts/da_machine.py brute`.
+
 Yes. Some are already running. Some can sit on a slot.
 A library is a tool. It does not write \(F\) and it does
 not close Track B.

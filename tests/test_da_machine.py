@@ -596,6 +596,9 @@ class DaMachineTests(unittest.TestCase):
         dream = classify_claim("dream team look at my RH")
         self.assertEqual(dream["domain"], "U")
         self.assertEqual(dream["verdict"], "open")
+        brute = classify_claim("try every combination on a quantum computer")
+        self.assertEqual(brute["domain"], "U")
+        self.assertEqual(brute["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

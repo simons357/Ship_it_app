@@ -66,6 +66,7 @@ freestyle. Not a vote. Not a séance.
 | Proof | `proof` | write the NS proof chain | QED without line (6) |
 | Repair | `repair` | take A, SND, or H; name the fault and the write | export A onto B |
 | Attempt | `attempt` | best A and RH; dream team looks; legal write | vote a missing line |
+| Brute | `brute` | finite list vs all-data write | quantum / try-every as a close |
 | Checker | `check --domain B` | run the leftover tests | a close |
 
 Re-run `feed` so the rim is not stale. `status` reports
