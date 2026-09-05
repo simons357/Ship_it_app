@@ -112,6 +112,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Vasseur",
+        ["Caffarelli", "Kohn", "Lin"],
+        "De Giorgi iteration proves the same CKN partial regularity. Hausdorff 1-measure zero is not empty. If the iteration cleared 3/2 it would be full regularity. It does not. Scheffer is not in this room.",
+        "B",
+    ),
+    turn(
         "Constantin",
         ["Fefferman", "Tao"],
         "CONC is a spectrum statement. Our theorem is if aligned. The if is still an if. Concentration is not alignment.",
@@ -556,6 +562,13 @@ CLAIMS = [
         "fail",
         "CPAM 1998: simplified epsilon-regularity, velocity L3 and pressure L3/2. Still partial regularity. Small is not empty. Not no blowup.",
     ),
+    rec(
+        "L40",
+        "vasseur_ckn_closes_X",
+        "Vasseur De Giorgi proof of CKN closes X",
+        "fail",
+        "NoDEA 2007: De Giorgi iteration, same CKN theorem. H^1 singular set small. Small is not empty. The 3/2 gap stays. Not no blowup.",
+    ),
 ]
 
 
@@ -570,6 +583,7 @@ KINGDOMS = [
     {"name": "Numerical non-uniqueness", "who": "Guillod", "slot": "B"},
     {"name": "Partial regularity", "who": "Caffarelli, Kohn", "slot": "B"},
     {"name": "CKN new proof", "who": "Lin", "slot": "B"},
+    {"name": "De Giorgi CKN", "who": "Vasseur", "slot": "B"},
     {"name": "Geometry", "who": "Constantin, Fefferman", "slot": "B"},
     {"name": "Geometric if (weaker than CF)", "who": "Beirao-Berselli", "slot": "B"},
     {"name": "Triebel-Lizorkin geometric if", "who": "Chae", "slot": "B"},

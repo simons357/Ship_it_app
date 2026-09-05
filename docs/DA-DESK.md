@@ -272,7 +272,9 @@ Besov data is still a nonlinear smallness condition,
 not all-data regularity. Cannone–Planchon critical
 Besov mild is small-data self-similar, not Jia and
 not a bound on \(X\). Lin's new proof of CKN is still
-\(\varepsilon\)-regularity, not no blowup.
+\(\varepsilon\)-regularity, not no blowup. Vasseur's
+De Giorgi proof of CKN is the same theorem, not no
+blowup.
 Sit down on leftover-close B42. Stretching budget is not an a priori
 (B15e). Enstrophy balance is not an a priori (B16e). Coherent blob is not an a priori (B17e). Field occupation is not an a priori (B18e). Field glue is not an a priori (B19e). NS climb is not an a priori (B20e). Climb sketch is not an a priori (B21e). Finer box is not an a priori (B22e). Finer DNS is not an a priori (B23e). Leftover close is not an a priori (B34e). Regularity leftover is not an a priori (B35e). Regularity stays open. Finer
 (\(n>32\)) stays a box knob (B22e). B4c stands.

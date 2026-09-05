@@ -323,6 +323,12 @@ class DaMachineTests(unittest.TestCase):
         ckn = classify_claim("Lin new proof of CKN on a vorticity packet")
         self.assertEqual(ckn["domain"], "B")
         self.assertEqual(ckn["verdict"], "open")
+        vasseur = classify_claim("seat Vasseur as a wall on the living bench")
+        self.assertEqual(vasseur["domain"], "U")
+        self.assertEqual(vasseur["verdict"], "open")
+        degiorgi = classify_claim("Vasseur De Giorgi proof of CKN on a vorticity packet")
+        self.assertEqual(degiorgi["domain"], "B")
+        self.assertEqual(degiorgi["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

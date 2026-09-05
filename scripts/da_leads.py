@@ -79,6 +79,9 @@ LEADS = [
     lead("Lin", "CKN new proof", "B", "living",
          "A new proof of CKN still uses epsilon-regularity. Velocity L3, pressure L3/2. Small is not empty. Not no blowup.",
          "new proof = no blowup"),
+    lead("Vasseur", "De Giorgi CKN", "B", "living",
+         "De Giorgi iteration proves the same CKN partial regularity. H1 singular set small. Small is not empty. The 3/2 gap stays.",
+         "De Giorgi = no blowup"),
     lead("Nirenberg", "partial regularity", "B", "past",
          "Keep us on the wall. Do not promote 1934–1982 to a global pass.",
          "energy + CKN = close"),
@@ -224,7 +227,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -447,6 +450,13 @@ CLAIMS = [
         "Lin's CKN proof is no blowup",
         "fail",
         "A new proof of a partial-regularity theorem is still partial regularity. Small is not empty.",
+    ),
+    rec(
+        "R32",
+        "vasseur_ckn_is_no_blowup",
+        "Vasseur's CKN proof is no blowup",
+        "fail",
+        "De Giorgi on the same theorem. Small is not empty. The 3/2 gap is not a close.",
     ),
 ]
 
