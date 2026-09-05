@@ -41,6 +41,14 @@ class DaProductTests(unittest.TestCase):
         text = (ROOT / "docs" / "DA-PRODUCT.md").read_text()
         self.assertIn("not a leftover solver", text)
         self.assertIn("not a contract", text)
+        conf = ROOT / "docs" / "DA-CONFIDENTIAL.md"
+        self.assertTrue(conf.is_file())
+        body = conf.read_text()
+        self.assertIn("Operator-confidential", body)
+        self.assertIn("Radial structure", body)
+        self.assertIn("One-WRITE intake", body)
+        self.assertTrue((ROOT / "docs" / "figures" / "da-radial-hub.png").is_file())
+        self.assertTrue((ROOT / "docs" / "figures" / "da-four-slots.png").is_file())
 
 
 if __name__ == "__main__":

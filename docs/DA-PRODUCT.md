@@ -120,6 +120,7 @@ slot and a fail-able check. That is “use AI to work
 on problems,” not “AI said it is solved.”
 
 Paper form of the desk: [`DA-PAPER.md`](DA-PAPER.md).  
+Confidential high-level report (5 September 2026): [`DA-CONFIDENTIAL.md`](DA-CONFIDENTIAL.md).  
 Machine: [`DOMAIN-ARCHITECT-MACHINE.md`](DOMAIN-ARCHITECT-MACHINE.md).  
 Exam: [`DA-STUDY.md`](DA-STUDY.md).
 

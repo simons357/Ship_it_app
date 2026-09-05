@@ -4,6 +4,8 @@
 The live notes of this experiment sit in the `Ship_it_app` repository.  
 This is a paper about **process**. It is not a regularity theorem, not a producing-map, and not a theory of everything.
 
+Operator-confidential high-level report, with radial diagrams, 5 September 2026: [`DA-CONFIDENTIAL.md`](DA-CONFIDENTIAL.md).
+
 ---
 
 ## Abstract
