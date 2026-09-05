@@ -24,6 +24,9 @@ class DaMachineTests(unittest.TestCase):
         self.assertEqual(r["verdict"], "open")
         g = classify_claim("gold box multi-rep Goldbach stays above -1/2")
         self.assertEqual(g["domain"], "Q")
+        bsd = classify_claim("Please write BSD")
+        self.assertEqual(bsd["domain"], "U")
+        self.assertEqual(bsd["verdict"], "open")
 
     def test_unassigned_stays_open(self):
         r = classify_claim("hello there")

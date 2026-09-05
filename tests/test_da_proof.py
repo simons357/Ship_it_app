@@ -108,13 +108,21 @@ class DaProofTests(unittest.TestCase):
         both = run(out=Path(tempfile.mkdtemp()) / "da_proof_both.json", problem="", ask=both_ask)
         self.assertEqual(both["picked"], ["NS", "A"])
         self.assertEqual(len(both["chains"]), 2)
-        self.assertEqual(set(PROBLEMS), {"NS", "A", "RH", "YM"})
+        self.assertEqual(set(PROBLEMS), {"NS", "A", "RH", "YM", "BSD"})
         self.assertEqual(len(CLAIMS), len({c["id"] for c in CLAIMS}))
         self.assertTrue((ROOT / "docs" / "DA-PROOF.md").is_file())
         self.assertTrue((ROOT / "docs" / "NS-PROOF-CHAIN.md").is_file())
         self.assertTrue((ROOT / "docs" / "A-PROOF-CHAIN.md").is_file())
         self.assertTrue((ROOT / "docs" / "RH-PROOF-CHAIN.md").is_file())
         self.assertTrue((ROOT / "docs" / "YM-PROOF-CHAIN.md").is_file())
+        self.assertTrue((ROOT / "docs" / "BSD-PROOF-CHAIN.md").is_file())
+        self.assertTrue(is_proof_ask("Please write BSD"))
+        self.assertEqual(parse_problem(ask="Please write BSD"), "BSD")
+        self.assertEqual(parse_problem(problem="BSD"), "BSD")
+        bsd = run(out=Path(tempfile.mkdtemp()) / "da_proof_bsd.json", problem="BSD")
+        self.assertEqual(bsd["problem"], "BSD")
+        self.assertEqual(bsd["counts"]["write"], 1)
+        self.assertIn("r_an", bsd["theorem"]["aimed"])
 
 
 if __name__ == "__main__":

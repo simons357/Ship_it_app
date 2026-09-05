@@ -316,6 +316,69 @@ YM_LINES = [
 ]
 
 
+BSD_LINES = [
+    {
+        "n": 1,
+        "status": "have",
+        "text": (
+            "Elliptic curve. E/Q, Weierstrass model, conductor N, "
+            "finite torsion E(Q)_tors."
+        ),
+    },
+    {
+        "n": 2,
+        "status": "have",
+        "text": (
+            "Mordell-Weil. E(Q) is finitely generated: "
+            "E(Q) = Z^r ⊕ E(Q)_tors. r is the algebraic rank."
+        ),
+    },
+    {
+        "n": 3,
+        "status": "have",
+        "text": (
+            "Modularity. Every E/Q is modular (Wiles / BCDT). "
+            "L(E,s) = L(f,s) for a weight-2 newform, entire, "
+            "functional equation s <-> 2-s."
+        ),
+    },
+    {
+        "n": 4,
+        "status": "have",
+        "text": (
+            "Analytic rank. r_an = ord_{s=1} L(E,s). "
+            "The aimed equality is r = r_an."
+        ),
+    },
+    {
+        "n": 5,
+        "status": "have",
+        "text": (
+            "Low rank. If r_an is 0 or 1, then r = r_an and Sha is finite "
+            "(Gross-Zagier / Kolyvagin; Coates-Wiles for many CM rank-0 cases). "
+            "Literature, not a theorem of this desk."
+        ),
+    },
+    {
+        "n": 6,
+        "status": "write",
+        "text": (
+            "WRITE. For every E/Q: r = r_an, Sha(E/Q) is finite, and "
+            "the leading coefficient of L(E,s) at s=1 equals "
+            "Omega * Reg * #Sha * prod Tamagawa / #E(Q)_tors^2."
+        ),
+    },
+    {
+        "n": 7,
+        "status": "follows",
+        "text": (
+            "If (6) sits, the arithmetic of E(Q) is read from L(E,s). "
+            "Still not RH. Still not Q. Still not Goldbach. Still not NS."
+        ),
+    },
+]
+
+
 PROBLEMS = {
     "NS": {
         "id": "NS",
@@ -483,6 +546,50 @@ PROBLEMS = {
         "mine": [],
         "needed": [],
     },
+    "BSD": {
+        "id": "BSD",
+        "aliases": ("bsd", "birch", "swinnerton", "swinnerton-dyer"),
+        "slot": "U",
+        "name": "Birch-Swinnerton-Dyer",
+        "object": {
+            "name": "rank of E(Q) versus L(E,s)",
+            "slot": "U",
+            "english": "algebraic rank equals analytic rank; Sha finite; leading term",
+            "window": [
+                "E/Q, Mordell-Weil rank r",
+                "L(E,s) entire by modularity",
+                "need: r = ord_{s=1} L(E,s) for every E/Q",
+                "need: Sha finite and the leading-term formula",
+                "r_an in {0,1} is literature (Gross-Zagier / Kolyvagin)",
+                "not RH, not Q, not Goldbach, not NS",
+            ],
+        },
+        "theorem": (
+            "Let E/Q be an elliptic curve. Let r = rank E(Q) and "
+            "r_an = ord_{s=1} L(E,s). Then r = r_an, Sha(E/Q) is finite, "
+            "and the leading coefficient of L(E,s) at s=1 equals "
+            "Omega * Reg * #Sha * prod_p c_p / #E(Q)_tors^2."
+        ),
+        "lines": BSD_LINES,
+        "chain_doc": "docs/BSD-PROOF-CHAIN.md",
+        "proceed": [
+            "r = r_an for every E/Q, including r_an >= 2",
+            "Sha(E/Q) finite for every E/Q",
+            "the leading-term formula for every E/Q",
+            "not a Gross-Zagier / Kolyvagin reprint for rank 0 or 1",
+            "not inverse-GCD, not zeta, not NS",
+        ],
+        "if_write_sits": (
+            "If (6) sits, the arithmetic of E(Q) is read from L(E,s). "
+            "Still not RH. Still not Q."
+        ),
+        "do_not": (
+            "Do not glue L(E,s) onto zeta. Do not use Theorem P or Bridge*. "
+            "Do not emit rank 0-1 literature as the full write."
+        ),
+        "mine": [],
+        "needed": [],
+    },
 }
 
 # Back-compat names for existing NS tests.
@@ -496,7 +603,7 @@ CLAIMS = [
         "ask_for_the_chain",
         "You can tell DA to write a proof chain by naming the problem",
         "pass",
-        "NS / Track B / Track A / Q1 / RH / Riemann / Yang-Mills. The operator does not need the chops.",
+        "NS / Track B / Track A / Q1 / RH / Riemann / Yang-Mills / BSD. The operator does not need the chops.",
     ),
     rec(
         "C2",
@@ -566,13 +673,15 @@ def _flag_problem(problem: str) -> str | None:
         return "NS"
     if key in ("YM", "YANG-MILLS", "YANG MILLS", "YANGMILLS"):
         return "YM"
+    if key in ("BSD", "BIRCH", "SWINNERTON", "SWINNERTON-DYER"):
+        return "BSD"
     if key in PROBLEMS:
         return key
     return None
 
 
 def parse_problems(ask: str = "", problem: str = "") -> list[str]:
-    """Problems named in the ask, in desk order NS / A / RH / YM."""
+    """Problems named in the ask, in desk order NS / A / RH / YM / BSD."""
     text = f"{problem} {ask}".lower()
     found: list[str] = []
     flagged = _flag_problem(problem)
@@ -594,6 +703,9 @@ def parse_problems(ask: str = "", problem: str = "") -> list[str]:
     if re.search(r"yang.?mills|\bym\b", text):
         if "YM" not in found:
             found.append("YM")
+    if re.search(r"\bbsd\b|birch|swinnerton", text):
+        if "BSD" not in found:
+            found.append("BSD")
     return found or ["NS"]
 
 
@@ -619,7 +731,8 @@ def is_proof_ask(ask: str) -> bool:
             r"\btrack [ab]\b.*\bwrite\b|\bwrite\b.*\btrack [ab]\b|"
             r"\bwrite rh\b|\bmy best paper\b.*\b(rh|riemann|write)\b|"
             r"\brh\b|\briemann\b|"
-            r"yang.?mills|\bym\b",
+            r"yang.?mills|\bym\b|"
+            r"\bbsd\b|birch|swinnerton",
             text,
         )
     )
