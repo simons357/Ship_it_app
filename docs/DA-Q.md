@@ -4,7 +4,10 @@
 `python3 scripts/da_machine.py next --ask "look at my best gcd paper"`  
 `python3 scripts/da_machine.py next --ask "can it find the electoral floor"`  
 `python3 scripts/da_machine.py next --ask "what about Q6"`  
-`python3 scripts/da_machine.py next --ask "where does Q7 fit"`
+`python3 scripts/da_machine.py next --ask "where does Q7 fit"`  
+`python3 scripts/da_machine.py next --ask "Q6. Spectral floor"`
+
+Floor chain: [`Q6-FLOOR-CHAIN.md`](Q6-FLOOR-CHAIN.md).
 
 The best GCD paper on this desk is August inverse-GCD
 (Zenodo 22045478), also called **Q6 hygiene**, plus the

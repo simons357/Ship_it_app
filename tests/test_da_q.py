@@ -13,7 +13,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from da_done import is_done_ask  # noqa: E402
 from da_hunt import is_look_ask  # noqa: E402
 from da_proof import is_proof_ask  # noqa: E402
-from da_q import CLAIMS, NAMES, PAPER, is_q_ask, run  # noqa: E402
+from da_q import CLAIMS, FLOOR_LINES, NAMES, PAPER, is_q_ask, run  # noqa: E402
 
 
 class DaQTests(unittest.TestCase):
@@ -47,6 +47,14 @@ class DaQTests(unittest.TestCase):
         self.assertTrue(is_q_ask("what about Q6"))
         self.assertTrue(is_q_ask("where does Q7 fit"))
         self.assertTrue(is_q_ask("can it find the electoral floor"))
+        self.assertTrue(is_q_ask("Q6. Spectral floor"))
+        self.assertEqual(
+            [L["status"] for L in FLOOR_LINES],
+            ["have"] * 5 + ["write", "follows", "open"],
+        )
+        self.assertEqual(payload["lines"][4]["status"], "have")
+        self.assertEqual(payload["lines"][5]["status"], "write")
+        self.assertTrue((ROOT / "docs" / "Q6-FLOOR-CHAIN.md").is_file())
         self.assertFalse(is_q_ask("use my best paper and write RH please"))
         self.assertTrue(is_proof_ask("use my best paper and write RH please"))
         self.assertFalse(is_q_ask("is that right for Navi Stokes"))

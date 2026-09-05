@@ -35,6 +35,85 @@ def rec(
     }
 
 
+FLOOR_LINES = [
+    {
+        "n": 1,
+        "status": "have",
+        "text": (
+            "Three matrices. Q_N = 1/gcd(i,j). "
+            "Q-tilde_N(i,j) = 1/(gcd(i,j) sqrt(i j)). "
+            "H_N = D^{-1/2} Q-tilde D^{-1/2}, D = diag(Q-tilde 1). "
+            "Do not mix them."
+        ),
+    },
+    {
+        "n": 2,
+        "status": "have",
+        "text": (
+            "Full Q floor is false. lambda_min(Q_10) ~ -1.90. "
+            "lambda_min(Q-tilde_20) ~ -0.505. Composites kill Q-tilde."
+        ),
+    },
+    {
+        "n": 3,
+        "status": "have",
+        "text": (
+            "Bridge*. On Q-tilde, v = e_p - e_q: "
+            "R(v) = (1/2)(1/p^2 + 1/q^2) - 1/sqrt(p q) > -1/2 "
+            "because p q >= 6. Two-line identity. Not lambda_min."
+        ),
+    },
+    {
+        "n": 4,
+        "status": "have",
+        "text": (
+            "Theorem P. Prime block A = u u^T + D with "
+            "u_p = p^{-1/2}, D_pp = 1/p^2 - 1/p. "
+            "uu^T >= 0 and min D = -1/4 at p=2. "
+            "Hence lambda_min(Q-tilde |_P) >= -1/4."
+        ),
+    },
+    {
+        "n": 5,
+        "status": "have",
+        "text": (
+            "Theorem H-floor. w^T Q-tilde w + w^T D w "
+            "= (1/2) sum Q-tilde_ij (w_i + w_j)^2 >= 0. "
+            "So w^T Q-tilde w >= - w^T D w, i.e. lambda_min(H_N) >= -1 "
+            "for every N. This is the unrestricted spectral floor that sits."
+        ),
+    },
+    {
+        "n": 6,
+        "status": "write",
+        "text": (
+            "WRITE. lambda_min(H_N) >= -1/4 for all N. "
+            "Numeric through N=200 (worst H_4 ~ -0.225). "
+            "The pairing that proves -1 does not prove -1/4. "
+            "Do not revive -3/14."
+        ),
+    },
+    {
+        "n": 7,
+        "status": "follows",
+        "text": (
+            "If (6) sits, the full-index floor is sharp at -1/4. "
+            "Still not RH. Still not SND. Still not Track B."
+        ),
+    },
+    {
+        "n": 8,
+        "status": "open",
+        "text": (
+            "Spectral-limit leftover. lambda_min(Q-tilde_N)/log N "
+            "sits near -0.16. Compatible with a finite limit. "
+            "That is the old Route C shape. It is not a floor at -1/2. "
+            "Gap 1 complete is stale."
+        ),
+    },
+]
+
+
 PAPER = {
     "name": "August inverse-GCD (Zenodo 22045478) — Q6 hygiene",
     "also": "spectral-floor retraction, docs/SPECTRAL-FLOOR-EXPLORATION.md",
@@ -234,6 +313,7 @@ def run(out: Path | None = None) -> dict:
             "full_floor_false": True,
         },
         "paper": PAPER,
+        "lines": FLOOR_LINES,
         "names": NAMES,
         "claims": CLAIMS,
         "answer": (
@@ -266,7 +346,25 @@ def run(out: Path | None = None) -> dict:
 
 def print_q(out: Path | None = None) -> dict:
     payload = run(out=out)
-    print("Q  (inverse-GCD paper; floors; Q6; Q7)")
+    print("Q6  SPECTRAL FLOOR")
+    print("  August inverse-GCD (Zenodo 22045478). Slot Q. Not RH. Not B.")
+    print()
+    print("THEOREM (sits)")
+    print("  lambda_min(H_N) >= -1 for every N. Prime block Q-tilde >= -1/4.")
+    print()
+    print("PROOF CHAIN  (ground floor up)")
+    for L in FLOOR_LINES:
+        tag = {
+            "have": "HAVE",
+            "write": "WRITE",
+            "follows": "THEN",
+            "open": "OPEN",
+        }[L["status"]]
+        print(f"  ({L['n']}) [{tag}] {L['text']}")
+    print()
+    print("If (6) sits, the full-index floor is sharp. Emit is not that close.")
+    print("Do not glue Q6 onto SND, RH, or Navi Stokes.")
+    print()
     print(payload["answer"])
     print()
     print(f"PAPER  slot {PAPER['slot']}")
