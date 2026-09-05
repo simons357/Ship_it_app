@@ -29,6 +29,7 @@ in your slot.
 | Beale | continuation | Use \(\int\|\omega\|_\infty\). A leftover list is not the max. | BKM-from-\(L^2\) |
 | Kozono–Taniuchi | BMO continuation | Integrable BMO of vorticity continues a strong solution. Still an if. Not an a priori on \(X\). | BMO continuation \(=\) bound on \(X\) |
 | Farwig | very weak solutions | Serrin class without differentiability. Not Leray–Hopf. Uniqueness in that class is not a bound on \(X\). Sohr stays out. | very weak \(=\) bound on \(X\) |
+| Galdi | steady / physically reasonable | Steady exterior flow in Finn's class is a different problem. A wake is not evolutionary \(X\). | steady \(=\) bound on \(X\) |
 | Cheskidov | energy equality / Onsager | Energy equality in a weak-in-time Onsager class is still a condition. Leray already has the inequality. Equality is not a bound on \(X\). | energy equality \(=\) bound on \(X\) |
 | Neustupa–Penel | one-component if | Regularity of one velocity component regularizes a suitable weak solution. Still an if. One component is not the field. | one component \(=\) bound on \(X\) |
 | Kato | mild / continuation | \(L^2\) is not our theorem. Sit for an a priori. Do not rename. | rename BKM into enstrophy |
@@ -136,6 +137,7 @@ in your slot.
 | Cheskidov energy equality bounds \(X\) | **fail** |
 | Masmoudi uniqueness of mild solutions bounds \(X\) | **fail** |
 | Wolf local pressure is no blowup | **fail** |
+| Galdi physically reasonable solutions bound \(X\) | **fail** |
 | Asking is an endorsement | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |

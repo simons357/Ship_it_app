@@ -184,6 +184,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Galdi",
+        ["Farwig", "Tao"],
+        "Steady exterior flow in the physically reasonable class is a different problem. A wake is not evolutionary X. It is not a bound on enstrophy.",
+        "B",
+    ),
+    turn(
         "Cheskidov",
         ["Farwig", "Vicol"],
         "Energy equality in a weak-in-time Onsager class is still a condition. Leray already has the inequality. Equality is not a bound on X. Do not cash Onsager for NS as regularity.",
@@ -621,6 +627,13 @@ CLAIMS = [
         "fail",
         "Local pressure projection: CKN in arbitrary domains. Still epsilon-regularity. Small is not empty. Not no blowup.",
     ),
+    rec(
+        "L45",
+        "galdi_steady_closes_X",
+        "Galdi physically reasonable solutions close X",
+        "fail",
+        "ARMA 2011: steady exterior Leray solutions in Finn's class. A different problem. Not evolutionary X.",
+    ),
 ]
 
 
@@ -646,6 +659,7 @@ KINGDOMS = [
     {"name": "Continuation", "who": "Beale", "slot": "B"},
     {"name": "BMO continuation", "who": "Kozono-Taniuchi", "slot": "B"},
     {"name": "Very weak solutions", "who": "Farwig", "slot": "B"},
+    {"name": "Steady / physically reasonable", "who": "Galdi", "slot": "B"},
     {"name": "Energy equality / Onsager", "who": "Cheskidov", "slot": "B"},
     {"name": "One-component if", "who": "Neustupa-Penel", "slot": "B"},
     {"name": "Critical small data", "who": "Koch, Tataru", "slot": "B"},

@@ -88,6 +88,9 @@ LEADS = [
     lead("Farwig", "very weak solutions", "B", "living",
          "Very weak solutions sit in Serrin's class without differentiability. They are not Leray-Hopf. Uniqueness in that class is not a bound on X. Sohr stays out.",
          "very weak = bound on X"),
+    lead("Galdi", "steady / physically reasonable", "B", "living",
+         "Steady exterior flow in the physically reasonable class is a different problem. A wake is not evolutionary X.",
+         "steady = bound on X"),
     lead("Cheskidov", "energy equality / Onsager", "B", "living",
          "Energy equality in a weak-in-time Onsager class is still a condition. Leray already has the inequality. Equality is not a bound on X.",
          "energy equality = bound on X"),
@@ -239,7 +242,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -497,6 +500,13 @@ CLAIMS = [
         "Wolf local pressure is no blowup",
         "fail",
         "Local pressure is a tool for the same epsilon-regularity. Small is not empty.",
+    ),
+    rec(
+        "R37",
+        "galdi_steady_bounds_X",
+        "Galdi physically reasonable solutions bound X",
+        "fail",
+        "Steady exterior is a different problem. A wake is not evolutionary enstrophy.",
     ),
 ]
 

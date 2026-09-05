@@ -45,6 +45,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Continuation | Beale | \(\int\|\omega\|_\infty\) | the max from \(L^2\) or a leftover list |
 | BMO continuation | Kozono–Taniuchi | integrable \(\|\omega\|_{\mathrm{BMO}}\) continues a strong solution | the if is an a priori on \(X\) |
 | Very weak solutions | Farwig | Serrin class without differentiability; not Leray–Hopf | that class bounds classical \(X\) |
+| Steady / physically reasonable | Galdi | steady exterior Leray solutions in Finn's class | a wake bounds evolutionary \(X\) |
 | Energy equality / Onsager | Cheskidov | energy equality in a weak-in-time Onsager class | equality \(=\) regularity; equality bounds \(X\) |
 | One-component if | Neustupa–Penel | one velocity component in a Serrin-type class regularizes | the if is all-data regularity |
 | Critical small data | Koch, Tataru | small critical sits | large-data regularity |
@@ -202,6 +203,11 @@ Sohr). They are not Leray–Hopf. Uniqueness in that class
 is not a bound on \(X\). Hideo, Herbert — Sohr is not
 in this room.
 
+**Galdi.** Steady exterior flow in the physically
+reasonable class (ARMA 2011, with Kyed) is a different
+problem. A wake is not evolutionary \(X\). Reinhard,
+Terence — it is not a bound on enstrophy.
+
 **Cheskidov.** Energy equality in a weak-in-time
 Onsager class (Nonlinearity 2020, with Luo) is still a
 condition. Leray already has the inequality. Equality is
@@ -357,6 +363,7 @@ scores the process, not a theorem you did not prove.
 | Cheskidov energy equality closes \(X\) | **fail** |
 | Masmoudi uniqueness of mild solutions closes \(X\) | **fail** |
 | Wolf local pressure closes \(X\) | **fail** |
+| Galdi physically reasonable solutions close \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

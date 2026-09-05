@@ -353,6 +353,12 @@ class DaMachineTests(unittest.TestCase):
         press = classify_claim("Wolf local pressure on a vorticity packet")
         self.assertEqual(press["domain"], "B")
         self.assertEqual(press["verdict"], "open")
+        galdi = classify_claim("seat Galdi as a wall on the living bench")
+        self.assertEqual(galdi["domain"], "U")
+        self.assertEqual(galdi["verdict"], "open")
+        steady = classify_claim("Galdi physically reasonable solutions on a vorticity packet")
+        self.assertEqual(steady["domain"], "B")
+        self.assertEqual(steady["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
