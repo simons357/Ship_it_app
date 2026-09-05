@@ -33,6 +33,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Numerical non-uniqueness | Guillod | pitchfork for large scale-invariant data | numerics \(=\) bound; numerics \(=\) blowup |
 | Partial regularity | Caffarelli, Kohn | singular set small | small \(=\) empty |
+| CKN new proof | Lin | simplified \(\varepsilon\)-regularity; velocity \(L^3\), pressure \(L^{3/2}\) | new proof \(=\) no blowup |
 | Geometry | Constantin, Fefferman | depletion *if* aligned | CONC \(\Rightarrow\) alignment |
 | Geometric if (weaker than CF) | Beirão da Veiga–Berselli | weaker direction space still regularizes | the if is all-data A1 |
 | Triebel–Lizorkin geometric if | Chae | direction in a Triebel–Lizorkin norm trades against \(\lvert\omega\rvert\) | the if is all-data A1 |
@@ -121,6 +122,12 @@ this equation and call it a living close.
 decaying \(n=32\) box is not “no blowup” either. Thomas,
 a computed almost-singular run is the same mistake in the
 other direction.
+
+**Lin.** A new proof of CKN still uses \(\varepsilon\)-regularity
+(CPAM 1998). Velocity in \(L^3\) and pressure in \(L^{3/2}\).
+Small is not empty. I simplified the argument. I did not
+empty the singular set. Luis, Bob — Nirenberg is not in
+this room.
 
 **Constantin.** Then geometry has to stay an “if.” CONC
 is a spectrum statement: a dominant shell. Peter and I
@@ -310,6 +317,7 @@ scores the process, not a theorem you did not prove.
 | Chae Triebel–Lizorkin geometric if is all-data A1 | **fail** |
 | Chemin–Gallagher large Besov data is all-data regularity | **fail** |
 | Cannone–Planchon critical Besov mild is all-data regularity | **fail** |
+| Lin new proof of CKN closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

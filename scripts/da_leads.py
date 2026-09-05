@@ -76,6 +76,9 @@ LEADS = [
     lead("Kohn", "partial regularity", "B", "past",
          "Parabolic measure zero is not no blowup. A decaying box is not either.",
          "DNS-never-blew-up"),
+    lead("Lin", "CKN new proof", "B", "living",
+         "A new proof of CKN still uses epsilon-regularity. Velocity L3, pressure L3/2. Small is not empty. Not no blowup.",
+         "new proof = no blowup"),
     lead("Nirenberg", "partial regularity", "B", "past",
          "Keep us on the wall. Do not promote 1934–1982 to a global pass.",
          "energy + CKN = close"),
@@ -221,7 +224,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -437,6 +440,13 @@ CLAIMS = [
         "Cannone-Planchon critical Besov mild solutions are all-data regularity",
         "fail",
         "Small data in a critical Besov space. Small is not all-data. Not Jia.",
+    ),
+    rec(
+        "R31",
+        "lin_ckn_is_no_blowup",
+        "Lin's CKN proof is no blowup",
+        "fail",
+        "A new proof of a partial-regularity theorem is still partial regularity. Small is not empty.",
     ),
 ]
 

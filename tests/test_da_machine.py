@@ -317,6 +317,12 @@ class DaMachineTests(unittest.TestCase):
         mild = classify_claim("Cannone-Planchon critical Besov mild on a vorticity packet")
         self.assertEqual(mild["domain"], "B")
         self.assertEqual(mild["verdict"], "open")
+        lin = classify_claim("seat Lin as a wall on the living bench")
+        self.assertEqual(lin["domain"], "U")
+        self.assertEqual(lin["verdict"], "open")
+        ckn = classify_claim("Lin new proof of CKN on a vorticity packet")
+        self.assertEqual(ckn["domain"], "B")
+        self.assertEqual(ckn["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

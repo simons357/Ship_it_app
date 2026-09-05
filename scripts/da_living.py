@@ -106,6 +106,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Lin",
+        ["Caffarelli", "Kohn"],
+        "A new proof of CKN still uses epsilon-regularity. Velocity in L3 and pressure in L3/2. Small is not empty. I simplified the argument. I did not empty the singular set. Nirenberg is not in this room.",
+        "B",
+    ),
+    turn(
         "Constantin",
         ["Fefferman", "Tao"],
         "CONC is a spectrum statement. Our theorem is if aligned. The if is still an if. Concentration is not alignment.",
@@ -543,6 +549,13 @@ CLAIMS = [
         "fail",
         "SEDP 1993-94: small data, self-similar mild in homogeneous Besov. Small is not all-data. Not Jia large-data existence.",
     ),
+    rec(
+        "L39",
+        "lin_ckn_closes_X",
+        "Lin new proof of CKN closes X",
+        "fail",
+        "CPAM 1998: simplified epsilon-regularity, velocity L3 and pressure L3/2. Still partial regularity. Small is not empty. Not no blowup.",
+    ),
 ]
 
 
@@ -556,6 +569,7 @@ KINGDOMS = [
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Numerical non-uniqueness", "who": "Guillod", "slot": "B"},
     {"name": "Partial regularity", "who": "Caffarelli, Kohn", "slot": "B"},
+    {"name": "CKN new proof", "who": "Lin", "slot": "B"},
     {"name": "Geometry", "who": "Constantin, Fefferman", "slot": "B"},
     {"name": "Geometric if (weaker than CF)", "who": "Beirao-Berselli", "slot": "B"},
     {"name": "Triebel-Lizorkin geometric if", "who": "Chae", "slot": "B"},
