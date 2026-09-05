@@ -22,6 +22,10 @@ Checker: `python3 scripts/da_machine.py check --domain A`
 | A5 | \(C^\infty\) bootstrap | **pass** |
 | A_theorem | Theorem A for this PDE | **pass** |
 | A_E1–E5 | Taylor–Green consistency | **pass** on the short window |
+| A6 | \(Q_1\) integral falls as \(\varepsilon\) falls | **pass** |
+| A7 | enstrophy on this window is independent of \(\varepsilon\) | **fail** |
+| A8 | box non-uniformity is a no-go for all data | **fail** |
+| A9 | \(Q_1\) vanishing writes a uniform \(H^1\) bound | **fail** |
 | A_uniform_H1 | Lemma 4 stays uniform as \(\varepsilon\to 0\) | **open** |
 | A_implies_B | Theorem A is classical regularity | **fail** |
 | A_phi_estimate | \(\Phi\) is the estimate variable | **fail** |

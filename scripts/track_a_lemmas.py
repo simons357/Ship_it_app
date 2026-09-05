@@ -36,12 +36,20 @@ def _checks() -> dict:
         for earlier, later in zip(by_eps, by_eps[1:])
     )
     e5 = max(r.max_div for r in rows)
+    pos = [r for r in by_eps if r.eps > 0.0]
+    q1_falls = all(pos[i].diss_q1 + 1e-12 >= pos[i + 1].diss_q1 for i in range(len(pos) - 1))
+    xts = [r.enstrophy_t for r in rows]
+    xt_span = max(xts) - min(xts)
+    q1_zero = all(r.diss_q1 == 0.0 for r in rows if r.eps == 0.0)
     return {
         "E1_rel_residual": e1,
         "E2_q1_positive": e2,
         "E3_enstrophy_finite": e3,
         "E4_xt_grows_as_eps_falls": e4,
         "E5_max_div": e5,
+        "q1_falls_as_eps_falls": q1_falls,
+        "xt_span": xt_span,
+        "q1_zero_at_eps0": q1_zero,
         "rows": [
             {
                 "eps": r.eps,
@@ -126,10 +134,34 @@ def lemmas(checks: dict) -> list[dict]:
             f"E5. max|div|={checks['E5_max_div']:.2e}.",
         ),
         rec(
+            "A6_q1_leaves",
+            "On this Taylor-Green window the Q1 integral falls as eps falls",
+            "pass" if checks["q1_falls_as_eps_falls"] and checks["q1_zero_at_eps0"] else "fail",
+            "The extra dissipation leaves. That is why Theorem A does not travel.",
+        ),
+        rec(
+            "A7_box_uniform",
+            "Enstrophy on this window is independent of eps",
+            "fail",
+            f"XT span {checks['xt_span']:.3f} on n=12, T=0.1. The box is not uniform. Not a no-go for all data.",
+        ),
+        rec(
+            "A8_box_is_nogo",
+            "Box non-uniformity is a no-go for uniform H1 on all data",
+            "fail",
+            "A decaying Taylor-Green run is a packet. It does not kill Lemma 4's constant for all data.",
+        ),
+        rec(
+            "A9_q1_vanishes_writes_H1",
+            "Q1 vanishing writes a uniform H1 bound",
+            "fail",
+            "The term that leaves is the term that closed A. Vanishing is the gap, not the bound.",
+        ),
+        rec(
             "A_uniform_H1",
             "The H1 bound of Lemma 4 stays uniform as eps->0",
             "open",
-            "The live leftover on A. Old C/I is not reused. This is the A-to-B gap, not a B write.",
+            "Still the live leftover on A. Box non-uniformity is not the theorem.",
         ),
         rec(
             "A_implies_B",
@@ -179,11 +211,14 @@ def run(out: Path | None = None) -> dict:
             "energy, Galerkin, weak limit, unique H1, smoothness scored pass",
             "Theorem A pass for this PDE",
             "E1-E5 consistency on a short Taylor-Green window",
+            "Q1 leaves as eps falls; XT rises on this box",
+            "box uniformity fail; box-as-nogo fail",
             "uniform H1 as eps->0 stays open",
             "A=>B fail",
         ],
         "next_da_move": (
-            "The live A write is a uniform-in-eps H1 bound, or a named no-go. "
+            "The live A write is still a uniform-in-eps H1 bound, or a named no-go. "
+            "The box showed the extra term leave. That is not the theorem. "
             "Do not export Olga onto B. Do not cancel to Phi."
         ),
     }

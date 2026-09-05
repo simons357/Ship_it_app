@@ -87,6 +87,7 @@ Energy identity → Galerkin → weak limit → unique \(H^1\) at
 PDE. The constant blows up as \(\varepsilon\to 0\); that row
 stays **open**. A\(\Rightarrow\)B **fail**. Catalog:
 [`TRACK-A-LEMMAS.md`](TRACK-A-LEMMAS.md).
+Gap: [`TRACK-A-GAP.md`](TRACK-A-GAP.md).
 `python3 scripts/da_machine.py tracka`
 
 ---
@@ -584,6 +585,7 @@ python3 scripts/da_machine.py classify --claim "…"
 
 Longer notes: `docs/DOMAIN-ARCHITECT-MACHINE.md`,
 `docs/SHELF.md`, `docs/TRACK-A-LEMMAS.md`,
+`docs/TRACK-A-GAP.md`,
 `docs/TRACK-B-LEMMAS.md`,
 `docs/DA-GROUND.md`, `docs/DA-PIPE.md`,
 `docs/DA-NOW.md`, `docs/DA-FEED.md`, `docs/DA-AGENT.md`,
