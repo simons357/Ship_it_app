@@ -10,7 +10,15 @@ python3 scripts/da_machine.py proof --problem BSD
 python3 scripts/da_machine.py next --ask "Please write BSD"
 python3 scripts/da_machine.py next --ask "BSD proof chain"
 python3 scripts/da_machine.py next --ask "spectral framework"
+python3 scripts/da_machine.py next --ask "BSD final"
 ```
+
+Phone file `BSD final.pdf` is not a second public
+deposit. The only Simons BSD record on Zenodo is
+20552682 (`BSD_SPECTRAL_FRAMEWORK.pdf`). A local
+export named “final” is that paper, or a private
+draft this VM cannot read. It is not leftover (6).
+It is not the Hodge conjecture.
 
 Best paper on this desk: Jonathan Robert Simons,
 *The Prime Lattice as a Prototype for the BSD
@@ -163,6 +171,20 @@ as the full write. Do not use Theorem P, Bridge*, or a
 \(Q\)-floor. Those are inverse-GCD. Different object.
 Do not use a zero of zeta as a zero of \(L(E,s)\).
 Do not emit 20552682 as QED.
+Do not emit a phone file named `BSD final.pdf` as a
+second proof. Filename is not the write.
+
+---
+
+## Not this leftover
+
+| Named | Why not BSD (6) |
+|---|---|
+| `BSD final.pdf` (phone) | no second public file; same paper or unread private draft |
+| Hodge conjecture | different leftover; this PDF is elliptic rank, not Hodge classes |
+| Inverse-GCD / \(Q_N\) / \(H_N\) | zeta prototype of \(\hat H_E\), not \(L(E,s)\) |
+| GNC | withdrawn |
+| NS → RH → BSD ladder | same technique is not implication |
 
 ---
 

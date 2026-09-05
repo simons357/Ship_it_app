@@ -607,11 +607,14 @@ PROBLEMS = {
             "false": [
                 "λ_min(H_N)>-1/2  (raw Q; Q_10 ~ -1.90; retracted)",
                 "20552682 proves BSD",
+                "BSD final.pdf is a second public BSD proof",
             ],
             "not": (
                 "These are the prototype. They are not BSD line (6). "
                 "Inverse-GCD is not L(E,s). Naming ker(Ĥ_E) is not "
-                "dim ker = rank. GNC stays withdrawn. Do not glue."
+                "dim ker = rank. A phone file named BSD final.pdf "
+                "is not a second close. This PDF is not Hodge. "
+                "GNC stays withdrawn. Do not glue."
             ),
         },
     },
@@ -731,7 +734,7 @@ def parse_problems(ask: str = "", problem: str = "") -> list[str]:
             found.append("YM")
     if re.search(
         r"\bbsd\b|birch|swinnerton|spectral.?framework|"
-        r"bsd_spectral_framework",
+        r"bsd_spectral_framework|bsd%20final|bsd.?final",
         text,
     ):
         if "BSD" not in found:
@@ -764,6 +767,7 @@ def is_proof_ask(ask: str) -> bool:
             r"yang.?mills|\bym\b|"
             r"\bbsd\b|birch|swinnerton|"
             r"spectral.?framework|bsd_spectral_framework|"
+            r"bsd%20final|bsd.?final|"
             r"\bfinish bad\b",
             text,
         )

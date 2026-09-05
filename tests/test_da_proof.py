@@ -148,6 +148,24 @@ class DaProofTests(unittest.TestCase):
         self.assertTrue(is_proof_ask(finish_b))
         self.assertFalse(is_attempt_ask(finish_b))
         self.assertEqual(parse_problems(ask=finish_b), ["NS"])
+        phone_final = (
+            "file:///var/mobile/Library/SMS/Attachments/30/00/"
+            "8D36CC33-3B6B-4C40-9C63-2F60AA8DCCB6/BSD%20final.pdf"
+        )
+        self.assertTrue(is_proof_ask(phone_final))
+        self.assertTrue(is_proof_ask("BSD final"))
+        self.assertFalse(is_attempt_ask(phone_final))
+        self.assertEqual(parse_problem(ask=phone_final), "BSD")
+        final = run(
+            out=Path(tempfile.mkdtemp()) / "da_proof_bsd_final.json",
+            problem="",
+            ask=phone_final,
+        )
+        self.assertEqual(final["picked"], ["BSD"])
+        self.assertTrue(
+            any("BSD final.pdf" in row for row in final["chains"][0]["best_paper"]["false"])
+        )
+        self.assertIn("not Hodge", final["chains"][0]["best_paper"]["not"])
 
 
 if __name__ == "__main__":

@@ -20,6 +20,7 @@ python3 scripts/da_machine.py next --ask "Yang mills and bad can you finish thos
 python3 scripts/da_machine.py proof --problem BSD
 python3 scripts/da_machine.py next --ask "Please write BSD"
 python3 scripts/da_machine.py next --ask "spectral framework"
+python3 scripts/da_machine.py next --ask "BSD final"
 ```
 
 Nothing is wrong with asking. That is the product.
