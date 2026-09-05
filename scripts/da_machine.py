@@ -120,7 +120,9 @@ def classify_claim(claim: str) -> dict:
         r"\bbig picture\b|\bcomprehensive\b|\bwhat would they do next\b|"
         r"\bproof chain\b|\bwrite (me )?(the )?proof\b|\bda proof\b|"
         r"\btrack [ab]\b.{0,40}\bwrite\b|\bwrite\b.{0,40}\btrack [ab]\b|"
-        r"\bwrite rh\b|\bmy best paper\b",
+        r"\bwrite rh\b|\bmy best paper\b|"
+        r"\bis that right\b|\bis (ns |navier |navi )?done\b|"
+        r"\bcan da\b|\bda done\b|\blooks like.{0,24}done\b",
         text,
     ):
         return {
@@ -846,6 +848,19 @@ def cmd_repair(job: str = "", ask: str = "") -> int:
     return 0
 
 
+def cmd_done() -> int:
+    from da_done import print_done
+
+    print_done()
+    append_run(
+        "U",
+        "Is NS done? A this PDE yes. Classical leftover no. Emit is not QED.",
+        "open",
+        "study is the write; Theorem A sits; B line (6) does not; A is not B",
+    )
+    return 0
+
+
 def cmd_proof(problem: str = "", ask: str = "") -> int:
     from da_proof import parse_problems, print_proof
 
@@ -920,9 +935,12 @@ def cmd_next(ask: str = "") -> int:
     from da_attempt import is_attempt_ask
     from da_brute import is_brute_ask
     from da_picture import is_picture_ask
+    from da_done import is_done_ask
     from da_proof import is_proof_ask
     from da_repair import is_repair_ask
 
+    if is_done_ask(ask):
+        return cmd_done()
     if is_look_ask(ask):
         return cmd_look()
     if is_brute_ask(ask):
@@ -1176,6 +1194,7 @@ def main() -> int:
     sub.add_parser("window", help="same as look")
     sub.add_parser("from", help="walk your scored steps to the break; proceed toward regularity")
     sub.add_parser("mine", help="same as from")
+    sub.add_parser("done", help="is NS done? emit is not QED; A this PDE yes; B no")
     prf = sub.add_parser("proof", help="write a proof chain: NS, A, or RH")
     prf.add_argument("--problem", default="", help="NS | A | RH. Empty defaults to NS.")
     sub.add_parser(
@@ -1282,6 +1301,8 @@ def main() -> int:
         return cmd_look()
     if args.cmd in ("from", "mine"):
         return cmd_from()
+    if args.cmd == "done":
+        return cmd_done()
     if args.cmd == "proof":
         return cmd_proof(problem=getattr(args, "problem", ""))
     if args.cmd == "picture":

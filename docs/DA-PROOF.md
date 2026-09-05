@@ -31,6 +31,9 @@ Track Q is inverse-GCD. It is not RH. Do not glue.
 
 The WRITE line is the attempt. Emitting the chain is
 not QED. If WRITE sits, the THEN lines are the close.
+`done` answers whether that emit is a finish:
+[`DA-DONE.md`](DA-DONE.md). Track A this PDE is done.
+Classical NS is not.
 
 More problems may join when a ground-floor chain is typed.
 

@@ -44,6 +44,7 @@ class DaNextTests(unittest.TestCase):
         self.assertTrue(any(s["name"] == "look" for s in payload["spokes"]))
         self.assertTrue(any(s["name"] == "from" for s in payload["spokes"]))
         self.assertTrue(any(s["name"] == "proof" for s in payload["spokes"]))
+        self.assertTrue(any(s["name"] == "done" for s in payload["spokes"]))
         self.assertTrue(any(s["name"] == "repair" for s in payload["spokes"]))
         self.assertTrue(any(s["name"] == "attempt" for s in payload["spokes"]))
         self.assertTrue(any(s["name"] == "brute" for s in payload["spokes"]))

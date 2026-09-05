@@ -769,8 +769,12 @@ def parse_job(ask: str = "", job: str = "") -> str | None:
 
 
 def is_attempt_ask(ask: str) -> bool:
+    from da_done import is_done_ask
+
     text = (ask or "").lower().strip()
     if not text:
+        return False
+    if is_done_ask(text):
         return False
     if re.search(
         r"\bwrite rh\b|\bwrite (the )?(rh |riemann )?proof\b|"
