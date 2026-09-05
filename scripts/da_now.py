@@ -125,6 +125,13 @@ WATCH = [
         "do_not": "seat as a second time-periodic chair next to Maremonti",
     },
     {
+        "name": "Pileckas",
+        "slot": "B",
+        "kingdom": "steady 2D Liouville / Leray problem",
+        "involved": "Korobkov-Pileckas-Russo 2D steady Leray / Liouville",
+        "do_not": "seat as a second 2D-steady chair next to Korobkov",
+    },
+    {
         "name": "Kenig",
         "slot": "B",
         "kingdom": "unique continuation",

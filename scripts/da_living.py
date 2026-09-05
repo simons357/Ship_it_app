@@ -214,6 +214,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Korobkov",
+        ["Galdi", "Sverak"],
+        "2D steady Liouville and the plane Leray problem are 2D and steady. That is not a bound on 3D evolutionary X. Steady exterior stays Galdi. Liouville doors stay Sverak. Leray is not in this room.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -920,6 +926,13 @@ CLAIMS = [
         "fail",
         "Time-periodic solutions of 3D NS in unbounded domains. A periodic class is not a bound on X. Attractors stay Temam. Forced Leray stays Albritton.",
     ),
+    rec(
+        "L68",
+        "korobkov_2d_steady_closes_X",
+        "Korobkov 2D steady Leray closes X",
+        "fail",
+        "Korobkov-Pileckas-Russo: 2D steady Leray problem / Liouville. 2D and steady is not a bound on 3D evolutionary X. Leray stays out.",
+    ),
 ]
 
 
@@ -947,6 +960,7 @@ KINGDOMS = [
     {"name": "Thin domain / 2D-3D perturbation", "who": "Iftimie", "slot": "B"},
     {"name": "Controllability / NS control", "who": "Fursikov", "slot": "B"},
     {"name": "Time-periodic NS", "who": "Maremonti", "slot": "B"},
+    {"name": "Steady 2D Liouville / Leray problem", "who": "Korobkov", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

@@ -223,6 +223,9 @@ LEADS = [
     lead("Maremonti", "time-periodic NS", "B", "living",
          "Time-periodic solutions of 3D NS are a class. A periodic class is not a bound on X. Attractors stay Temam. Forced Leray stays Albritton.",
          "periodic = bound on X"),
+    lead("Korobkov", "steady 2D Liouville / Leray problem", "B", "living",
+         "2D steady Liouville and the plane Leray problem are 2D and steady. That is not a bound on 3D evolutionary X. Steady exterior stays Galdi. Liouville doors stay Sverak. Leray stays out.",
+         "2D steady = bound on X"),
     lead("Guillod", "numerical non-uniqueness", "B", "living",
          "Numerics show a pitchfork for large scale-invariant data. Smooth profiles. Not an a priori. Not a singularity.",
          "numerics = bound; numerics = blowup"),
@@ -305,7 +308,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi", "Wolf", "Galdi", "Temam", "Isett", "Tsai", "Lemarie-Rieusset", "Danchin", "Kukavica", "Barker", "Robinson", "Pavlovic", "Rusin", "Germain", "Cao", "Hieber", "Bedrossian", "Kelliher", "Silvestre", "Schonbek", "Ponce", "Iftimie", "Fursikov", "Maremonti", "Korobkov",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -724,6 +727,13 @@ CLAIMS = [
         "Maremonti time-periodic NS bounds X",
         "fail",
         "A periodic class is not enstrophy. Attractors stay Temam. Forced Leray stays Albritton.",
+    ),
+    rec(
+        "R60",
+        "korobkov_2d_steady_bounds_X",
+        "Korobkov 2D steady Leray bounds X",
+        "fail",
+        "2D and steady is not enstrophy. Steady exterior stays Galdi. Leray stays out.",
     ),
 ]
 
