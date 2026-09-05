@@ -101,6 +101,7 @@ to write \(\mathcal{R}\).
 | A new scored all-data estimate may move the break | **open** |
 | The point is to close \(X\); refusing a fake close is refusing the attempt | **fail** |
 
+Proof chain: [`DA-PROOF.md`](DA-PROOF.md) · [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md)  
 Hunt: [`DA-HUNT.md`](DA-HUNT.md)  
 Council: [`DA-NOWWHAT.md`](DA-NOWWHAT.md)  
 Residual: [`TRACK-B-RESIDUAL.md`](TRACK-B-RESIDUAL.md)

@@ -100,6 +100,7 @@ SPOKES = [
     {"name": "hunt", "command": "hunt", "slot": "U / B", "does": "proof-chain hunter: edges, blocks, object window"},
     {"name": "look", "command": "look", "slot": "B", "does": "object window anytime"},
     {"name": "from", "command": "from", "slot": "U / B", "does": "your steps to the break; proceed toward regularity"},
+    {"name": "proof", "command": "proof", "slot": "B", "does": "write the Navier-Stokes proof chain"},
 ]
 
 

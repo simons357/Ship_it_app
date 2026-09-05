@@ -265,7 +265,7 @@ def is_from_ask(ask: str) -> bool:
         re.search(
             r"\bfrom my work\b|\bwhere it breaks\b|\bmy steps\b|"
             r"\bproceed\b|\bglobal regularity\b|\bsmoothness\b|"
-            r"\bproof chain for ns\b|\banalyze (all )?(of )?my\b|"
+            r"\banalyze (all )?(of )?my\b|"
             r"\bda from\b|\bbreaks here\b",
             text,
         )

@@ -43,6 +43,7 @@ class DaNextTests(unittest.TestCase):
         self.assertTrue(any(s["name"] == "hunt" for s in payload["spokes"]))
         self.assertTrue(any(s["name"] == "look" for s in payload["spokes"]))
         self.assertTrue(any(s["name"] == "from" for s in payload["spokes"]))
+        self.assertTrue(any(s["name"] == "proof" for s in payload["spokes"]))
         self.assertFalse(is_lost_ask("what do we do from here"))
 
     def test_translate_splits_F_from_X(self):

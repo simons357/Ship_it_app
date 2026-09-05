@@ -62,7 +62,8 @@ freestyle. Not a vote. Not a séance.
 | Council | `nowwhat` | leftover papers: would try / cannot | a vote or a close |
 | Hunt | `hunt` | scored edges, blocked edges, object window | write \(\mathcal{R}\) |
 | Look | `look` | object window anytime | a bound |
-| From | `from` | your steps to the break; proceed | smoothness |
+| From | `from` | your steps to the break; proceed | a fake last line |
+| Proof | `proof` | write the NS proof chain | QED without line (6) |
 | Checker | `check --domain B` | run the leftover tests | a close |
 
 Re-run `feed` so the rim is not stale. `status` reports

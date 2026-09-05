@@ -575,6 +575,9 @@ class DaMachineTests(unittest.TestCase):
         frm = classify_claim("from my work: where it breaks on the way to global regularity")
         self.assertEqual(frm["domain"], "U")
         self.assertEqual(frm["verdict"], "open")
+        proof = classify_claim("write me the proof chain for Xavier Stokes")
+        self.assertEqual(proof["domain"], "U")
+        self.assertEqual(proof["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
