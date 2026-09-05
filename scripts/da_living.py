@@ -208,6 +208,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Masmoudi",
+        ["Koch", "Cannone-Planchon", "Jia"],
+        "Uniqueness of mild solutions in C([0,T); L^N) is uniqueness, not regularity. It is not a bound on X. Small critical already sits. Large data is a different job.",
+        "B",
+    ),
+    turn(
         "Tataru",
         ["Koch", "Grujic"],
         "The critical space is the scaling wall. Energy class is a derivative short. That is why leftover knobs died.",
@@ -595,6 +601,13 @@ CLAIMS = [
         "fail",
         "Nonlinearity 2020: energy equality in a weak-in-time Onsager class. A condition. Equality is not regularity and not a bound on X.",
     ),
+    rec(
+        "L43",
+        "masmoudi_uniqueness_closes_X",
+        "Masmoudi uniqueness of mild solutions closes X",
+        "fail",
+        "CPDE 2001: uniqueness in C([0,T); L^N). Uniqueness is not regularity. Not a bound on X.",
+    ),
 ]
 
 
@@ -624,6 +637,7 @@ KINGDOMS = [
     {"name": "Critical small data", "who": "Koch, Tataru", "slot": "B"},
     {"name": "Large Besov / nonlinear smallness", "who": "Chemin-Gallagher", "slot": "B"},
     {"name": "Critical Besov mild / small self-similar", "who": "Cannone-Planchon", "slot": "B"},
+    {"name": "Critical uniqueness", "who": "Masmoudi", "slot": "B"},
     {"name": "Scaling gap / log-bmo if", "who": "Grujic", "slot": "B"},
     {"name": "Strain / middle eigenvalue", "who": "Miller", "slot": "B"},
     {"name": "Wild weak solutions", "who": "Vicol, Buckmaster", "slot": "B"},

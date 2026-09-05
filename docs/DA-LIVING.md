@@ -49,6 +49,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Critical small data | Koch, Tataru | small critical sits | large-data regularity |
 | Large Besov / nonlinear smallness | Chemin–Gallagher | large critical data under a nonlinear smallness condition | the condition is all-data regularity |
 | Critical Besov mild / small self-similar | Cannone–Planchon | small critical Besov data gives self-similar mild solutions | small Besov mild is all-data regularity |
+| Critical uniqueness | Masmoudi | uniqueness of mild solutions in \(C([0,T);L^N)\) | uniqueness \(=\) regularity; uniqueness bounds \(X\) |
 | Scaling gap / log-bmo if | Grujić | sparseness can shrink the gap; 2026 log-bmo if | the if is all-data A1 |
 | Strain / middle eigenvalue | Miller | \(\lambda_2^+\) is a different cut; identity is not an a priori | rewrite in \(S\) closes \(X\) |
 | Wild weak solutions | Vicol, Buckmaster | non-uniqueness below the energy class | that is a smooth blowup or a bound |
@@ -222,6 +223,12 @@ self-similar mild solutions (SEDP 1993–94, with Meyer).
 Small is not all-data. Hao — that is not large-data
 profile existence. It is not a bound on \(X\).
 
+**Masmoudi.** Uniqueness of mild solutions in
+\(C([0,T);L^N)\) (CPDE 2001, with Lions) is uniqueness,
+not regularity. It is not a bound on \(X\). Herbert, Marco,
+Hao — small critical already sits. Large data is a
+different job.
+
 **Tataru.** The critical space is the scaling wall. Energy
 class is a derivative short. That is why leftover knobs
 died. Zoran, shrinking the gap is not closing it.
@@ -342,6 +349,7 @@ scores the process, not a theorem you did not prove.
 | Vasseur De Giorgi proof of CKN closes \(X\) | **fail** |
 | Farwig very weak solutions close \(X\) | **fail** |
 | Cheskidov energy equality closes \(X\) | **fail** |
+| Masmoudi uniqueness of mild solutions closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |

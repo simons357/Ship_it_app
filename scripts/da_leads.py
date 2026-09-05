@@ -88,6 +88,9 @@ LEADS = [
     lead("Cheskidov", "energy equality / Onsager", "B", "living",
          "Energy equality in a weak-in-time Onsager class is still a condition. Leray already has the inequality. Equality is not a bound on X.",
          "energy equality = bound on X"),
+    lead("Masmoudi", "critical uniqueness", "B", "living",
+         "Uniqueness of mild solutions in C([0,T); L^N) is uniqueness, not regularity. It is not a bound on X.",
+         "uniqueness = bound on X"),
     lead("Nirenberg", "partial regularity", "B", "past",
          "Keep us on the wall. Do not promote 1934–1982 to a global pass.",
          "energy + CKN = close"),
@@ -233,7 +236,7 @@ MUST_SIT = {
     "experiment / PDG", "neutrino / cosmology",
     "Tao", "Sverak", "Seregin", "Escauriaza", "Nadirashvili", "Jia", "Guillod", "Koch", "Chemin-Gallagher", "Cannone-Planchon", "Tataru", "Grujic",
     "Miller", "Vicol", "Buckmaster", "Albritton", "Elgindi", "Hou", "Hou-Wang-Yang", "current math.AP",
-    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov",
+    "Beirao-Berselli", "Chae", "Giga-Miura", "Lei-Ren-Tian", "CSTY", "Kozono-Taniuchi", "Neustupa-Penel", "Lin", "Vasseur", "Farwig", "Cheskidov", "Masmoudi",
     "LVK", "EHT", "DESI", "IPTA / NANOGrav", "PDG + LHC",
     "LMFDB / analytic NT", "operator",
 }
@@ -477,6 +480,13 @@ CLAIMS = [
         "Cheskidov energy equality bounds X",
         "fail",
         "Onsager-class energy equality is a condition. Equality is not regularity.",
+    ),
+    rec(
+        "R35",
+        "masmoudi_uniqueness_bounds_X",
+        "Masmoudi uniqueness of mild solutions bounds X",
+        "fail",
+        "Uniqueness in L^N is uniqueness, not an a priori on X.",
     ),
 ]
 

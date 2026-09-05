@@ -341,6 +341,12 @@ class DaMachineTests(unittest.TestCase):
         energy = classify_claim("Cheskidov energy equality on a vorticity packet")
         self.assertEqual(energy["domain"], "B")
         self.assertEqual(energy["verdict"], "open")
+        masmoudi = classify_claim("seat Masmoudi as a wall on the living bench")
+        self.assertEqual(masmoudi["domain"], "U")
+        self.assertEqual(masmoudi["verdict"], "open")
+        uniq = classify_claim("Masmoudi uniqueness of mild solutions on a vorticity packet")
+        self.assertEqual(uniq["domain"], "B")
+        self.assertEqual(uniq["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
