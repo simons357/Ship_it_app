@@ -36,7 +36,7 @@ class DaNowTests(unittest.TestCase):
     def test_seated_excludes_dead_and_includes_fluids(self):
         names = set(seated_living())
         self.assertTrue(DEAD.isdisjoint(names))
-        for must in ("Tao", "Sverak", "Barker", "Kukavica", "Hou", "Pavlovic"):
+        for must in ("Tao", "Sverak", "Barker", "Kukavica", "Hou", "Pavlovic", "Rusin"):
             self.assertIn(must, names)
         self.assertNotIn("Operator", names)
         self.assertNotIn("Shahmurov", names)

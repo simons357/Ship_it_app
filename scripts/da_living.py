@@ -142,6 +142,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Rusin",
+        ["Sverak", "Jia"],
+        "If some H-dot-1/2 data produce a singularity, there exist data with minimal H-dot-1/2 norm that do. Compactness of a hypothetical set is not a bound on X. It does not prove a singularity exists. Liouville and ancient stay Sverak. Large-data profiles stay Jia.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -764,6 +770,13 @@ CLAIMS = [
         "fail",
         "JFA 2008: norm inflation in Besov minus-one infinity-infinity. Discontinuity of the solution map is not a bound on X. Small critical stays Koch-Tataru. Bourgain stays out.",
     ),
+    rec(
+        "L56",
+        "rusin_minimal_data_closes_X",
+        "Rusin minimal singularity data closes X",
+        "fail",
+        "JFA 2011: if some H-dot-1/2 data blow up, a minimal-norm datum does. Compactness of a hypothetical set is not a bound on X. Does not prove a singularity. Sverak stays doors. Jia stays existence.",
+    ),
 ]
 
 
@@ -779,6 +792,7 @@ KINGDOMS = [
     {"name": "Sequential L3 Liouville", "who": "Barker", "slot": "B"},
     {"name": "A posteriori regularity", "who": "Robinson", "slot": "B"},
     {"name": "Critical ill-posedness", "who": "Pavlovic", "slot": "B"},
+    {"name": "Minimal singularity data", "who": "Rusin", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

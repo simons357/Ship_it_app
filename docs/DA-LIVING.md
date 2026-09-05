@@ -35,6 +35,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Sequential \(L^3\) Liouville | Barker | ancient solutions bounded in \(L^3\) along a backward sequence are trivial | sequential Liouville bounds \(X\) |
 | A posteriori regularity | Robinson | a numerical certificate implies regularity | the certificate bounds \(X\) |
 | Critical ill-posedness | Pavlović | Cauchy problem ill-posed in \(\dot B^{-1}_{\infty,\infty}\) by norm inflation | ill-posedness bounds \(X\) |
+| Minimal singularity data | Rusin | if some \(\dot H^{1/2}\) data blow up, a minimal-norm datum does | compactness of a hypothetical set bounds \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -175,6 +176,16 @@ at the origin, not a bound on \(X\). Herbert, Daniel —
 small critical well-posedness stays Koch–Tataru.
 Jean is not in this room. Yoneda and Wang stay off
 this chair.
+
+**Rusin.** If some \(\dot H^{1/2}\) data produce a
+singularity, there exist data with minimal
+\(\dot H^{1/2}\) norm that do (J. Funct. Anal. 260,
+2011, with Šverák). Compactness of a hypothetical
+set is not a bound on \(X\). It does not prove a
+singularity exists. Vladimír, Hao — Liouville and
+ancient stay Šverák. Large-data profiles stay Jia.
+The Gallagher–Koch–Planchon \(L^3\) profile argument
+stays off this chair. Gabriel Koch, not Herbert.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -440,6 +451,7 @@ scores the process, not a theorem you did not prove.
 | Barker sequential \(L^3\) Liouville closes \(X\) | **fail** |
 | Robinson a posteriori regularity closes \(X\) | **fail** |
 | Pavlović critical ill-posedness closes \(X\) | **fail** |
+| Rusin minimal singularity data closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |
