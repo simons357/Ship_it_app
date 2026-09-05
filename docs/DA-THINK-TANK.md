@@ -50,7 +50,7 @@ Roster plus feed inside the machine: [`docs/DA-AGENT.md`](DA-AGENT.md). Agent-sh
 Wall, target, words→math: [`docs/DA-NEXT.md`](DA-NEXT.md). Hub and rim. Target on B is \(X\), not \(F\).
 
 **Lost-operator council**  
-What the leftover papers would try: [`docs/DA-NOWWHAT.md`](DA-NOWWHAT.md). Papers, not minds. Not a vote. Not ChatGPT freestyle.
+What the leftover papers would try, then what history would do now: [`docs/DA-NOWWHAT.md`](DA-NOWWHAT.md). Papers, not minds. Not a vote. Not a séance. Not ChatGPT freestyle.
 
 Einstein and PDG sit on more than one bench. That is fine. They are not counted twice as a vote.
 

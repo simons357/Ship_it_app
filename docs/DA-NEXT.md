@@ -44,8 +44,9 @@ Dream-team pointers: Tao (residual), Fefferman (A1 if),
 Miller (A2 cut). Those are claims to classify, not a
 committee fill. A lost operator who says **now what**
 gets the leftover council (`nowwhat`): twenty-two
-papers, each with a next try and a veto. Not ChatGPT
-freestyle. Not a vote.
+papers, each with a next try and a veto, then fifteen
+history chairs on what they would do now. Not ChatGPT
+freestyle. Not a vote. Not a séance.
 
 ---
 

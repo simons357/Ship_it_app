@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from da_next import is_lost_ask  # noqa: E402
-from da_nowwhat import CLAIMS, COUNCIL, run  # noqa: E402
+from da_nowwhat import CLAIMS, COUNCIL, HISTORY, run  # noqa: E402
 
 
 class DaNowwhatTests(unittest.TestCase):
@@ -25,18 +25,35 @@ class DaNowwhatTests(unittest.TestCase):
         self.assertEqual(by["N4"]["verdict"], "fail")
         self.assertEqual(by["N5"]["verdict"], "fail")
         self.assertEqual(by["N6"]["verdict"], "open")
+        self.assertEqual(by["N7"]["verdict"], "pass")
+        self.assertEqual(by["N8"]["verdict"], "fail")
+        self.assertEqual(by["N9"]["verdict"], "fail")
+        self.assertEqual(by["N10"]["verdict"], "fail")
+        self.assertEqual(by["N11"]["verdict"], "fail")
+        self.assertEqual(by["N12"]["verdict"], "open")
         self.assertTrue(payload["meta"]["papers_not_minds"])
         self.assertTrue(payload["meta"]["not_a_vote"])
+        self.assertTrue(payload["meta"]["not_a_seance"])
         self.assertTrue(payload["meta"]["does_not_write_X"])
         self.assertGreaterEqual(payload["counts"]["asked"], 12)
         self.assertLessEqual(payload["counts"]["asked"], 25)
         self.assertEqual(len(COUNCIL), payload["counts"]["asked"])
+        self.assertGreaterEqual(payload["counts"]["history"], 12)
+        self.assertLessEqual(payload["counts"]["history"], 15)
+        self.assertEqual(len(HISTORY), payload["counts"]["history"])
         names = [row["who"] for row in COUNCIL]
         self.assertEqual(len(names), len(set(names)))
+        hist = [row["who"] for row in HISTORY]
+        self.assertEqual(len(hist), len(set(hist)))
+        self.assertTrue(set(names).isdisjoint(hist))
         for row in COUNCIL:
             self.assertTrue(row["would_try"])
             self.assertTrue(row["cannot"])
             self.assertIn(row["bench"], ("living", "past"))
+        for row in HISTORY:
+            self.assertTrue(row["would_try"])
+            self.assertTrue(row["cannot"])
+            self.assertEqual(row["bench"], "history")
         self.assertIn("X", payload["target"])
         self.assertNotIn("F is the NS", payload["missing"])
         self.assertTrue((ROOT / "docs" / "DA-NOWWHAT.md").is_file())
@@ -47,6 +64,8 @@ class DaNowwhatTests(unittest.TestCase):
         self.assertTrue(is_lost_ask("now what"))
         self.assertTrue(is_lost_ask("what would you try"))
         self.assertTrue(is_lost_ask("I am lost"))
+        self.assertTrue(is_lost_ask("the smartest people in history"))
+        self.assertTrue(is_lost_ask("what would you do now"))
         self.assertFalse(is_lost_ask("is the target F"))
         self.assertFalse(is_lost_ask("what do we do from here"))
 

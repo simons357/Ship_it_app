@@ -557,6 +557,9 @@ class DaMachineTests(unittest.TestCase):
         lost = classify_claim("lost operator council on the leftover")
         self.assertEqual(lost["domain"], "U")
         self.assertEqual(lost["verdict"], "open")
+        hist = classify_claim("the smartest people in history comment on what would you do now")
+        self.assertEqual(hist["domain"], "U")
+        self.assertEqual(hist["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 

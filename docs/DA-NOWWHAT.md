@@ -8,10 +8,12 @@ The operator is a normal person. They say **now what.**
 DA does not send that sentence to a chatbot for a
 freestyle guess. It asks the leftover papers — twenty-two
 of them, living and past — what they would try for the
-missing piece, and what they cannot give.
+missing piece, and what they cannot give. Then it asks
+history — fifteen published methods already seated on
+this desk — what they would do now.
 
-Papers, not minds. They do not endorse this desk.
-A council is not a vote. A vote cannot write
+Papers, not minds. Not a séance. They do not endorse
+this desk. A council is not a vote. A vote cannot write
 \(\mathcal{R}\).
 
 ---
@@ -21,7 +23,8 @@ A council is not a vote. A vote cannot write
 You are at the leftover on \(X=\|\omega\|_2^2\). The
 proof steps before this are scored. The box can read
 the holes. It cannot write the integrals. You do not
-need the chops. Ask the papers.
+need the chops. Ask the papers. Then ask history
+what it would do now.
 
 ## The missing piece
 
@@ -69,6 +72,32 @@ genius census. More leftover-relevant chairs may join.
 
 ---
 
+## What history would do now
+
+Published method, already typed on this desk. Not a
+genius census. Not a séance. They comment on the next
+move. They do not write \(\mathcal{R}\).
+
+| Chair | Would do now | Cannot |
+|---|---|---|
+| Einstein | write the two-sided statement first; one estimate, not a catalog of names | a principle as \(\mathcal{R}\) |
+| Tesla | name the knob on the check; build the script | retune the PDE |
+| Feynman | the next try needs a number you can get wrong | a council as a close |
+| Weyl | do not say a new symmetry until the group is named | Peter–Weyl as the estimate |
+| Wigner | type the object; \(X\) is enstrophy; \(F\) is a different slot | a classification as the leftover |
+| von Neumann | name \((X,V)\), then the check; store the residual | poetry as the leftover |
+| Weinberg | keep the known couple; do not invent the angle | invent \(\mathcal{R}\) from a conversation |
+| Maxwell | recover the known couple; do not graft a new field | a recovered theory as a bound on \(X\) |
+| Hilbert | state the missing estimate as one sentence that can fail | a famous list as a proof |
+| Poincaré | ask whether the leftover is a door or a bound | a picture of the flow as an a priori |
+| Noether | energy is already Leray | energy as \(X\) in \(L^\infty\) |
+| Fourier | expand if you need a tool; the leftover is still stretching | a mode expansion as the estimate |
+| Hadamard | separate well-posed from bounded | Leray existence as the bound |
+| Kolmogorov | a cascade identity sits next to Bedrossian | a cascade as a bound on \(X\) |
+| Newton | one law, one check; the law is NS; the check is integrable \(\mathcal{R}\) | a new law in place of the leftover |
+
+---
+
 ## In math
 
 \[
@@ -93,6 +122,12 @@ Do not graft \(Q_1\) onto B.
 | Asking the experts writes the leftover | **fail** |
 | Ordinary AI freestyle replaces the council | **fail** |
 | More leftover-relevant chairs may join | **open** |
+| A lost operator can ask history what it would do now | **pass** |
+| The smartest people in history vote the leftover into existence | **fail** |
+| Einstein or Tesla or Feynman writes the residual | **fail** |
+| The historical bench writes \(F\) | **fail** |
+| The smartest people sit as minds in the room | **fail** |
+| More history chairs may join when their method already sits | **open** |
 
 Empty `next`, or `next --ask "now what"`, routes here.
 A specific sentence still goes through `next --ask`.

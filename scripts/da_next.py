@@ -109,7 +109,8 @@ def is_lost_ask(ask: str) -> bool:
         re.search(
             r"\bnow\s*what\b|\bnowwhat\b|\bwhat would you\b|"
             r"\bmissing piece\b|\blost\b|\bdream team answer\b|"
-            r"\bwhat would (they|the papers)\b",
+            r"\bwhat would (they|the papers)\b|"
+            r"\bsmartest\b|\bin history\b|\bwhat would you do now\b",
             text,
         )
     )

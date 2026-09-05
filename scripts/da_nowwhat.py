@@ -177,6 +177,102 @@ COUNCIL = [
 ]
 
 
+# Published method, already seated on this desk. Not a genius séance.
+# They comment on what to do now. They do not write R.
+HISTORY = [
+    {
+        "who": "Einstein",
+        "bench": "history",
+        "would_try": "Write the two-sided statement first. The leftover is one estimate, not a catalog of names.",
+        "cannot": "A principle does not write R. Sitting here does not close a theorem.",
+    },
+    {
+        "who": "Tesla",
+        "bench": "history",
+        "would_try": "Name the knob on the check. Build the script. If nothing is detunable, it does not sit.",
+        "cannot": "Retune the PDE. Derive SU(3) or Einstein's equation from a slogan.",
+    },
+    {
+        "who": "Feynman",
+        "bench": "history",
+        "would_try": "The next try needs a number you can get wrong. Pick one would_try and run the checker.",
+        "cannot": "A council as a close. A vibe as an estimate.",
+    },
+    {
+        "who": "Weyl",
+        "bench": "history",
+        "would_try": "Do not say a new symmetry until the group and the reps are named. On B the equation is already NS.",
+        "cannot": "Choose nature's G from a leftover. Peter-Weyl is not the estimate.",
+    },
+    {
+        "who": "Wigner",
+        "bench": "history",
+        "would_try": "Type the object. X is enstrophy. F is a different slot.",
+        "cannot": "A classification as the numerical leftover.",
+    },
+    {
+        "who": "von Neumann",
+        "bench": "history",
+        "would_try": "No slot opens on a word. Name (X, V), then the check. Store the residual.",
+        "cannot": "Pick the leftover from poetry. Make a spectrum write F.",
+    },
+    {
+        "who": "Weinberg",
+        "bench": "history",
+        "would_try": "A rotation is a measured fact. Keep the known couple. Do not invent the angle.",
+        "cannot": "Invent R from a conversation. Write theta_W from topology.",
+    },
+    {
+        "who": "Maxwell",
+        "bench": "history",
+        "would_try": "Recover the known couple. Do not graft a new field onto the leftover.",
+        "cannot": "A recovered theory as a bound on X.",
+    },
+    {
+        "who": "Hilbert",
+        "bench": "history",
+        "would_try": "State the missing estimate as one sentence that can fail.",
+        "cannot": "A famous list as a proof. A problem statement as the integral.",
+    },
+    {
+        "who": "Poincare",
+        "bench": "history",
+        "would_try": "Ask the qualitative question: is the leftover a door or a bound?",
+        "cannot": "A picture of the flow as an a priori.",
+    },
+    {
+        "who": "Noether",
+        "bench": "history",
+        "would_try": "Name the symmetry you already used. Energy is Leray. That conservation is seated.",
+        "cannot": "Energy as X in L^infty. A new symmetry as the leftover.",
+    },
+    {
+        "who": "Fourier",
+        "bench": "history",
+        "would_try": "Expand if you need a tool. Modes are a tool. The leftover is still the stretching term.",
+        "cannot": "A mode expansion as the estimate.",
+    },
+    {
+        "who": "Hadamard",
+        "bench": "history",
+        "would_try": "Separate well-posed from bounded. Existence, uniqueness, continuous dependence are a class.",
+        "cannot": "Leray existence as the bound on X.",
+    },
+    {
+        "who": "Kolmogorov",
+        "bench": "history",
+        "would_try": "If you want a cascade identity, say so and sit it next to Bedrossian.",
+        "cannot": "A cascade identity as a bound on X.",
+    },
+    {
+        "who": "Newton",
+        "bench": "history",
+        "would_try": "One law, one check. The law is already NS. The check is integrable R.",
+        "cannot": "A new law in place of the leftover. A name as the integral.",
+    },
+]
+
+
 CLAIMS = [
     rec(
         "N1",
@@ -220,13 +316,56 @@ CLAIMS = [
         "open",
         "A chair sits when a paper touches this wall. Not a genius census.",
     ),
+    rec(
+        "N7",
+        "history_method_bench",
+        "A lost operator can ask history what it would do now",
+        "pass",
+        "Published method already seated on this desk. Not a seance.",
+    ),
+    rec(
+        "N8",
+        "history_votes_leftover",
+        "The smartest people in history vote the leftover into existence",
+        "fail",
+        "Method comments. They do not write R.",
+    ),
+    rec(
+        "N9",
+        "einstein_writes_R",
+        "Einstein or Tesla or Feynman writes the residual",
+        "fail",
+        "A program review improves the next try. It is not the estimate.",
+    ),
+    rec(
+        "N10",
+        "history_writes_F",
+        "The historical bench writes F",
+        "fail",
+        "F stays on U and fails. History does not produce the map.",
+    ),
+    rec(
+        "N11",
+        "seance_sits",
+        "The smartest people sit as minds in the room",
+        "fail",
+        "Papers and published method. Pretend-they-sit is a process name.",
+    ),
+    rec(
+        "N12",
+        "more_history_later",
+        "More history chairs may join when their method already sits on this desk",
+        "open",
+        "Not a genius census. A chair sits when the method is already typed.",
+    ),
 ]
 
 
 HERE = (
     "You are at the leftover on X. The proof steps before this "
     "are scored. The box can read the holes. It cannot write "
-    "the integrals. You do not need the chops. Ask the papers."
+    "the integrals. You do not need the chops. Ask the papers. "
+    "Then ask history what it would do now."
 )
 
 MISSING = (
@@ -239,22 +378,25 @@ MISSING = (
 def run(out: Path | None = None) -> dict:
     payload = {
         "meta": {
-            "question": "now what; what would the papers try",
+            "question": "now what; what would the papers try; what would history do now",
             "writeup": "docs/DA-NOWWHAT.md",
             "for_lost_operator": True,
             "papers_not_minds": True,
             "not_a_vote": True,
+            "not_a_seance": True,
             "does_not_write_X": True,
         },
         "here": HERE,
         "missing": MISSING,
         "wall": WALL,
         "council": COUNCIL,
+        "history": HISTORY,
         "claims": CLAIMS,
         "counts": {
             "asked": len(COUNCIL),
             "living": sum(1 for c in COUNCIL if c["bench"] == "living"),
             "past": sum(1 for c in COUNCIL if c["bench"] == "past"),
+            "history": len(HISTORY),
             "pass": sum(1 for c in CLAIMS if c["verdict"] == "pass"),
             "fail": sum(1 for c in CLAIMS if c["verdict"] == "fail"),
             "open": sum(1 for c in CLAIMS if c["verdict"] == "open"),
@@ -262,7 +404,8 @@ def run(out: Path | None = None) -> dict:
         "in_math": WALL["looks_like"],
         "target": WALL["target_B"],
         "next_da_move": (
-            "Pick one would_try. Classify it. Do not vote. "
+            "Pick one leftover would_try. Classify it. "
+            "History comments on method. Do not vote. "
             "Do not graft Q1 onto B. Re-run feed if the rim is stale."
         ),
     }
@@ -287,6 +430,13 @@ def print_nowwhat(out: Path | None = None) -> dict:
         print(f"  {row['who']} ({row['bench']})")
         print(f"    would try: {row['would_try']}")
         print(f"    cannot:    {row['cannot']}")
+    print()
+    print("WHAT HISTORY WOULD DO NOW")
+    print("(published method, not a seance; they do not write R)")
+    for row in payload["history"]:
+        print(f"  {row['who']} ({row['bench']})")
+        print(f"    would do: {row['would_try']}")
+        print(f"    cannot:   {row['cannot']}")
     print()
     print("IN MATH")
     print(" ", payload["in_math"])
