@@ -202,6 +202,12 @@ TURNS = [
         "B",
     ),
     turn(
+        "Fursikov",
+        ["Temam", "Robinson"],
+        "Local exact controllability of NS is a control theorem. A control is not a bound on free X. Attractors stay Temam. A posteriori stays Robinson. Forced Leray stays Albritton.",
+        "B",
+    ),
+    turn(
         "Caffarelli",
         ["Kohn", "Seregin"],
         "Small is not empty. I am living. Olga is not in this room. Do not slide her epsilon onto this equation.",
@@ -894,6 +900,13 @@ CLAIMS = [
         "fail",
         "JDE 2001: global strong solutions in a sufficiently thin 3D domain. Thinness is an if, not a bound on 3D X. Raugel stays out.",
     ),
+    rec(
+        "L66",
+        "fursikov_control_closes_X",
+        "Fursikov controllability closes X",
+        "fail",
+        "CRAS 1996: local exact controllability of NS. A control is not a bound on free X. Attractors stay Temam. A posteriori stays Robinson.",
+    ),
 ]
 
 
@@ -919,6 +932,7 @@ KINGDOMS = [
     {"name": "Energy decay / Fourier splitting", "who": "Schonbek", "slot": "B"},
     {"name": "Kato-Ponce / commutator estimates", "who": "Ponce", "slot": "B"},
     {"name": "Thin domain / 2D-3D perturbation", "who": "Iftimie", "slot": "B"},
+    {"name": "Controllability / NS control", "who": "Fursikov", "slot": "B"},
     {"name": "Forward self-similar large data", "who": "Jia", "slot": "B"},
     {"name": "Local-energy self-similar exclusion", "who": "Tsai", "slot": "B"},
     {"name": "Local Leray solutions", "who": "Lemarie-Rieusset", "slot": "B"},

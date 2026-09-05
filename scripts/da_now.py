@@ -111,6 +111,13 @@ WATCH = [
         "do_not": "seat as a second thin-domain chair next to Iftimie",
     },
     {
+        "name": "Coron",
+        "slot": "B",
+        "kingdom": "controllability / NS control",
+        "involved": "2D and some 3D NS controllability; compared with Fursikov",
+        "do_not": "seat as a second control chair next to Fursikov",
+    },
+    {
         "name": "Kenig",
         "slot": "B",
         "kingdom": "unique continuation",

@@ -45,6 +45,7 @@ Is it possible to close \(X=\|\omega\|_2^2\)?**
 | Energy decay / Fourier splitting | Schonbek | algebraic \(L^2\) decay of weak solutions by Fourier splitting | large-time decay bounds \(X\) |
 | Kato–Ponce / commutator estimates | Ponce | commutator estimates for Euler and NS | a tool bounds \(X\) |
 | Thin domain / 2D–3D perturbation | Iftimie | global strong solutions in a sufficiently thin 3D domain | thinness bounds 3D \(X\) |
+| Controllability / NS control | Fursikov | local exact controllability of Navier–Stokes | a control bounds free \(X\) |
 | Forward self-similar large data | Jia | existence for large \(-1\)-homogeneous data | profile existence \(=\) bound |
 | Local-energy self-similar exclusion | Tsai | local-energy self-similar profiles are trivial | exclusion \(=\) bound |
 | Local Leray solutions | Lemarié-Rieusset | uniformly locally square integrable; local energy inequality | that class bounds global \(X\) |
@@ -261,6 +262,13 @@ Equations 169, 2001). A small gap is not a bound on 3D
 \(X\). Herbert, Roger — critical small stays Koch–Tataru.
 Attractors stay Temam. Raugel is not in this room.
 Mahalov stays off this chair.
+
+**Fursikov.** Local exact controllability of NS is a
+control theorem (C. R. Acad. Sci. Paris 323, 1996, with
+Imanuvilov). A control is not a bound on free \(X\).
+Roger, James — attractors stay Temam. A posteriori stays
+Robinson. Forced Leray stays Albritton. Coron stays off
+this chair.
 
 **Caffarelli.** Small is not empty. I am living. Olga is
 not in this room. Do not slide her \(\varepsilon\) onto
@@ -536,6 +544,7 @@ scores the process, not a theorem you did not prove.
 | Schonbek Fourier splitting closes \(X\) | **fail** |
 | Ponce Kato–Ponce closes \(X\) | **fail** |
 | Iftimie thin domain closes \(X\) | **fail** |
+| Fursikov controllability closes \(X\) | **fail** |
 | It is possible to close \(X\) | **open** |
 | It is impossible to close \(X\) | **fail** (as a theorem) |
 | Domain B after the session | **open** |
