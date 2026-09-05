@@ -112,7 +112,9 @@ def classify_claim(claim: str) -> dict:
         if re.search(pat, text, flags=re.I):
             return {"domain": None, "verdict": "fail", "reason": f"forbidden: {why}"}
     if re.search(
-        r"\brepair\b|\bwhat.?s wrong\b|\bhow to fix\b|\baugmented one\b",
+        r"\brepair\b|\bwhat.?s wrong\b|\bhow to fix\b|\baugmented one\b|"
+        r"\bdream team\b|\banalyze my\b|\bcomplete the chain\b|"
+        r"\brenormali[sz]|\bda attempt\b|\bmy rh\b",
         text,
     ):
         return {
@@ -786,6 +788,19 @@ def cmd_now() -> int:
     return 0
 
 
+def cmd_attempt(job: str = "", ask: str = "") -> int:
+    from da_attempt import print_attempt
+
+    print_attempt(job=job, ask=ask)
+    append_run(
+        "U",
+        "Attempt: best A (Q1 + renormalization) and furthest RH; dream team looks; legal write",
+        "open",
+        "this PDE complete; uniform H1 open; RH WRITE open; Q is not RH; vote is not a close",
+    )
+    return 0
+
+
 def cmd_repair(job: str = "", ask: str = "") -> int:
     from da_repair import print_repair
 
@@ -870,11 +885,14 @@ def cmd_next(ask: str = "") -> int:
     from da_from import is_from_ask
     from da_hunt import is_look_ask
     from da_next import is_lost_ask, run as next_run
+    from da_attempt import is_attempt_ask
     from da_proof import is_proof_ask
     from da_repair import is_repair_ask
 
     if is_look_ask(ask):
         return cmd_look()
+    if is_attempt_ask(ask):
+        return cmd_attempt(ask=ask)
     if is_proof_ask(ask):
         return cmd_proof(ask=ask)
     if is_repair_ask(ask):
@@ -1122,6 +1140,15 @@ def main() -> int:
     sub.add_parser("mine", help="same as from")
     prf = sub.add_parser("proof", help="write a proof chain: NS or RH")
     prf.add_argument("--problem", default="", help="NS or RH")
+    at = sub.add_parser(
+        "attempt",
+        help="best A and RH: dream team looks; legal write; vote is not a close",
+    )
+    at.add_argument(
+        "--job",
+        default="",
+        help="A | RH. Empty prints both.",
+    )
     rp = sub.add_parser(
         "repair",
         help="take A, SND, or H; name the fault and the repair write",
@@ -1211,6 +1238,8 @@ def main() -> int:
         return cmd_from()
     if args.cmd == "proof":
         return cmd_proof(problem=getattr(args, "problem", ""))
+    if args.cmd == "attempt":
+        return cmd_attempt(job=getattr(args, "job", ""))
     if args.cmd == "repair":
         return cmd_repair(job=getattr(args, "job", ""))
     if args.cmd == "desk":

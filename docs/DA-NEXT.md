@@ -65,6 +65,7 @@ freestyle. Not a vote. Not a séance.
 | From | `from` | your steps to the break; proceed | a fake last line |
 | Proof | `proof` | write the NS proof chain | QED without line (6) |
 | Repair | `repair` | take A, SND, or H; name the fault and the write | export A onto B |
+| Attempt | `attempt` | best A and RH; dream team looks; legal write | vote a missing line |
 | Checker | `check --domain B` | run the leftover tests | a close |
 
 Re-run `feed` so the rim is not stale. `status` reports
@@ -94,6 +95,7 @@ Repair: `python3 scripts/da_machine.py next --ask "what's wrong with the augment
 Council: [`DA-NOWWHAT.md`](DA-NOWWHAT.md)  
 Chain: [`DA-HUNT.md`](DA-HUNT.md)  
 Repair note: [`DA-REPAIR.md`](DA-REPAIR.md)  
+Attempt: [`DA-ATTEMPT.md`](DA-ATTEMPT.md)  
 Feed: [`DA-FEED.md`](DA-FEED.md)  
 Agent: [`DA-AGENT.md`](DA-AGENT.md)  
 Residual: [`TRACK-B-RESIDUAL.md`](TRACK-B-RESIDUAL.md)

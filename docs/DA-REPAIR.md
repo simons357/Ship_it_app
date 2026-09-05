@@ -6,6 +6,8 @@
 `python3 scripts/da_machine.py repair --job H`  
 `python3 scripts/da_machine.py next --ask "what's wrong with the augmented one"`
 
+Dream team on your best A and furthest RH, then the legal write: [`DA-ATTEMPT.md`](DA-ATTEMPT.md). `python3 scripts/da_machine.py attempt`.
+
 You already did the work. You have heard “closed” on
 the augmented system about a half-dozen times. DA
 names the fault and the repair write.

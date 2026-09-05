@@ -590,6 +590,12 @@ class DaMachineTests(unittest.TestCase):
         da_r = classify_claim("DA repair the operator's A SND H work")
         self.assertEqual(da_r["domain"], "U")
         self.assertEqual(da_r["verdict"], "open")
+        att = classify_claim("analyze my augmented and complete the chain")
+        self.assertEqual(att["domain"], "U")
+        self.assertEqual(att["verdict"], "open")
+        dream = classify_claim("dream team look at my RH")
+        self.assertEqual(dream["domain"], "U")
+        self.assertEqual(dream["verdict"], "open")
         bad = classify_claim("I solved NS last May")
         self.assertEqual(bad["verdict"], "fail")
 
