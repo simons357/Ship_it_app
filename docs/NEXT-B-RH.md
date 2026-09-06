@@ -70,5 +70,9 @@ for B or for RH, classify it, and say pass /
 fail / still open. A sitting sentence is the
 only close. Attention is not a theorem.
 
+How to talk to DA, both chains, and the path:
+
+[`PATH-AND-DA.md`](PATH-AND-DA.md).
+
 Say **B** or **RH** and the sentence when you
 want the next score.

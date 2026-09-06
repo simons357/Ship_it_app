@@ -47,6 +47,10 @@ A stays done and off this desk (A is not B).
 
 docs/NEXT-B-RH.md
 
+Chains, whole path, how to talk to DA:
+
+docs/PATH-AND-DA.md
+
 Next candidate on B, not a close: all-data A2.
 That is the time integral of the positive
 second-strain piece in L^q, for every data.
