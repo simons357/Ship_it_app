@@ -27,3 +27,6 @@ docs/DREAM-TEAM-PLAIN.md
 
 SND and H are not the key to ordinary NS:
 docs/SND-H-PLAIN.md
+
+What sits and what you can take home:
+docs/TAKE-HOME.md
