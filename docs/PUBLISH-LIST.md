@@ -115,3 +115,46 @@ ordinary NS.
 
 Full proud pile: docs/ALL-I-DID.md
 Deposit help for A: docs/THEOREM-A-DEPOSIT.md
+
+---
+
+## To whom / where
+
+You do not need a famous name. You need a
+public date and an honest title.
+
+**1. You, first. Zenodo.**
+You already deposit there. No endorser.
+DOI and a date. That is “published” in the
+sense of a public timestamp. Send Theorem A
+and keep Q6 (22045478) as the GCD paper.
+This is the box.
+
+**2. Not required: a journal.**
+Theorem A is a known class in your notation.
+A top PDE journal will likely say: already
+in Ladyzhenskaya / Malek–Necas–Ruzicka.
+Stop at Zenodo if that is the reading.
+Do not shop it as new existence theory.
+
+**3. arXiv only if framed as that class.**
+math.AP for Theorem A. math.NT or math.SP
+for the GCD note. You will likely need an
+endorser. No endorser does not block Zenodo.
+Silence from an endorser is not a verdict
+on the leftover.
+
+**4. A person who knows the class (optional).**
+A fluids / PDE teacher or colleague, to
+check the title before you post. Not to
+close ordinary NS. Not a cold letter to
+Tao as the plan.
+
+**5. Do not send to**
+prize committees, RH/NS “solver” lists,
+or anyone as ordinary NS, RH, Cosmo 16/16,
+or DA-as-a-proof.
+
+GitHub PR 24 is a backup copy, not a
+journal. CosmoEvolution 3D is not a
+publisher for these notes.
