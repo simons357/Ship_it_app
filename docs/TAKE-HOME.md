@@ -26,7 +26,8 @@ known class (Ladyzhenskaya / p-Laplacian) in
 your notation. Credit the 1968/1969 and
 Málek–Nečas–Růžička papers in the note. Your
 credit is the write-up and the honest label,
-not a new existence theory.
+not a new existence theory. The note is
+yours. The class was already known.
 
 Files:
 docs/THEOREM-A-Q1.pdf
