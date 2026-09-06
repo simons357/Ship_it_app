@@ -23,6 +23,15 @@ regularity in \(Q_1\) notation (Ladyzhenskaya
 1968/1969; Málek–Nečas–Růžička 1996). It is not
 a new existence theory.
 
+The **note is yours**. You wrote it. The
+**class was already known**: extra stress of
+this kind already gives global regularity.
+You put that fact in Q1 notation. You did
+not invent the class. You do not lose the
+write-up. You do not gain a new existence
+theory. Cite those papers. Keep your name
+on your note.
+
 HB (Harmonic Blueprint) was thrown out as a
 unifier. That throw-out stands. The write that
 actually sits after that is Theorem A for this
