@@ -55,6 +55,9 @@ docs/UNAUGMENTED-NS-CHAIN.md
 Live desk (B and RH only):
 docs/NEXT-B-RH.md
 
+Chains, whole path, how to talk to DA:
+docs/PATH-AND-DA.md
+
 RH WRITE (6) is still open.
 Q is not RH.
 
