@@ -23,6 +23,12 @@ regularity in \(Q_1\) notation (Ladyzhenskaya
 1968/1969; Málek–Nečas–Růžička 1996). It is not
 a new existence theory.
 
+HB (Harmonic Blueprint) was thrown out as a
+unifier. That throw-out stands. The write that
+actually sits after that is Theorem A for this
+equation. That is a real finish for this PDE.
+It is not ordinary NS. Both sentences are true.
+
 ---
 
 ## Theorem A (sits)
