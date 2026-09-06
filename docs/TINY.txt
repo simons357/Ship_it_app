@@ -49,3 +49,6 @@ docs/SQUEEZE.md
 
 Plain page for my wife:
 docs/FOR-MY-WIFE.md
+
+Plain page for the family:
+docs/FOR-MY-FAMILY.md

@@ -145,6 +145,7 @@ Working-paper lines only: docs/CV-LINES.md
 Keep / send / tape / reuse: docs/SQUEEZE.md
 
 Plain page for my wife: docs/FOR-MY-WIFE.md
+Plain page for the family: docs/FOR-MY-FAMILY.md
 
 ## If you publish one thing
 
