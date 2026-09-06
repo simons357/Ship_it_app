@@ -50,8 +50,7 @@ These sit:
   R >= -2/9. Not Goldbach’s conjecture.
 
 Already public: Zenodo 22045478 (August
-inverse-GCD / Q6 hygiene), plus the floor
-retraction note.
+GCD paper), plus the floor retraction note.
 
 Files:
 docs/DA-Q.md

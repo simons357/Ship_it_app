@@ -23,8 +23,9 @@ Theorem A to stay finished.
 Two names.
 
 **Send:** Q6 the paper — Zenodo 22045478,
-inverse-GCD hygiene. Bridge*, the floors
-that sit, the withdrawal of the false full
+the August GCD paper after the false floor
+was taken out. Bridge*, the floors that
+sit, the withdrawal of the false full
 floor. Title it as a GCD / matrix note.
 
 **Do not send as:** RH, SND, Gap 1 complete,
@@ -92,7 +93,7 @@ disclaimer: research / educational only.
    tex/theorem-a-q1.tex
    Zenodo first.
 
-2. Inverse-GCD / Q6 hygiene
+2. Inverse-GCD / August GCD paper (Q6)
    22045478, plus errata 22045484 if a
    reader needs the retraction next to it.
    Title: GCD matrix / spectral floor.

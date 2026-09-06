@@ -148,7 +148,7 @@ docs/DA-STATUS-PACK.pdf
 
 ## Papers / deposits that stay true if titled right
 
-Zenodo 22045478  inverse-GCD / Q6 hygiene
+Zenodo 22045478  August GCD paper (Q6)
 Zenodo 22045484  errata / retraction
 Keep taped, do not retitle as RH or Goldbach.
 
