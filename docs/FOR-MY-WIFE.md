@@ -76,6 +76,9 @@ story I made up tonight.
 The backup of the notes:
 https://github.com/simons357/Ship_it_app/pull/24
 
+Same story for the whole family:
+docs/FOR-MY-FAMILY.md
+
 ---
 
 ## What is not mine as a solution
