@@ -1,18 +1,25 @@
 Stay here. This chat is DA.
 
-You want two things. Both still open.
+"Scored" means checked. You give a sentence.
+DA says one of three things:
+
+  already proved
+  wrong or not allowed
+  not proved yet
+
+That check is not the proof. Talking is not
+the last step.
+
+You want two things. Both are not proved yet.
 
 1. Un-aug NS
-   Need: one all-data bound
-   (integrable R, or A1, or A2, or a killing field)
-   Keep 1/r^4. No Q1.
+   Need: one bound that works for every
+   starting fluid (not just a computer box).
+   Keep 1/r^4. Do not add Q1.
 
 2. RH
-   Need: every zeta zero on the 1/2 line
-   Q is not that.
+   Need: every zeta zero on the 1/2 line.
+   Your GCD paper is not that.
 
-Type: B then a sentence.
-Or: RH then a sentence.
-
-DA scores it. DA does not finish it by talking.
-Do not hunt other files from the phone.
+Type B and a sentence, or RH and a sentence.
+DA will check that sentence.

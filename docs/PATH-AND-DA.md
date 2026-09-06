@@ -27,7 +27,8 @@ Say one of:
 - classify this: …
 
 DA will write the chain, name leftover (6),
-refuse glue, and score that sentence. DA will
+refuse glue, and check that sentence
+(that check is what “scored” meant). DA will
 not print (6) as a theorem.
 
 On a computer with the repo, the same desk is:
