@@ -104,6 +104,14 @@ disclaimer: research / educational only.
 3. A short DA process note (what it is,
    what it cannot do). No leftover close.
 
+## Maps may go online as maps
+
+Ordinary NS map, RH map: yes, if the
+title says map / named hole, not a
+proof. Goldbach-shaped corollary: yes,
+as a matrix fact, not the conjecture.
+Paste titles: docs/SHARE-MAPS.md
+
 ## Do not send as finished science
 
 Ordinary NS. RH. BSD. Hodge. YM mass gap.

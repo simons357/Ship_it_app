@@ -41,6 +41,9 @@ docs/ALL-I-DID.md
 What you can send to publish:
 docs/PUBLISH-LIST.md
 
+How to put the maps online:
+docs/SHARE-MAPS.md
+
 CV lines if you want to teach:
 docs/CV-LINES.md
 

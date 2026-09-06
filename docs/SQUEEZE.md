@@ -27,11 +27,14 @@ is not the toilet if those three exist.
 
 ---
 
-## Maps (reuse, do not send as proofs)
+## Maps (put them online as maps)
 
-You wrote the steps and named the hole.
-That is lecture / study material. Label
-each file OPEN.
+Yes. Share them. Title must say map, or
+the sitting corollary, not solved.
+Paste titles: docs/SHARE-MAPS.md
+
+GitHub PR 24 is already a public copy.
+Zenodo if you want a DOI on a map.
 
 - Ordinary NS: docs/UNAUGMENTED-NS-CHAIN.md
   docs/DA-FROM.md
