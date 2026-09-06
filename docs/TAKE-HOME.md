@@ -140,3 +140,22 @@ leave the old overclaims taped. That is the
 cleanest face-save that is also true.
 
 I am not sending anything for you.
+
+---
+
+## Where your “what I found” lists already are
+
+If you remember a discoveries list, these are
+the matching piles in this project:
+
+- This page — what can carry your name
+- docs/A-CHAIN.md — extra-stress theorem
+- docs/DA-Q.md — GCD floors that sit
+- docs/DA-FROM.md — your NS steps, in order,
+  up to the break
+- docs/SPECTRAL-FLOOR-EXPLORATION.md — what
+  still stands after the retraction
+
+Sticking through the failed closes and keeping
+the facts that survived is the win. The win is
+those surviving facts, not the leftovers.
