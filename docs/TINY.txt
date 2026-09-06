@@ -13,3 +13,6 @@ Theorem A (different equation), the named holes,
 and this limit. You may not send a close.
 
 Plain page: docs/WHAT-DA-CAN.md
+
+Dream-team look (already ran, did not finish):
+docs/DREAM-TEAM-PLAIN.md
