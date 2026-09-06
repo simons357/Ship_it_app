@@ -51,6 +51,9 @@ docs/UNAUGMENTED-NS-CHAIN.md
 
 RH WRITE (6) is still open.
 Q is not RH.
+
+Chain plus what closes it:
+docs/RH-CHAIN.md
 YM, BSD, Hodge, P vs NP are leftover gravy.
 Poincare already sits in the literature (Perelman).
 

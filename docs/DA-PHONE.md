@@ -49,6 +49,10 @@ Theorem A. If it fails, the leftover is still (6).
 RH WRITE (6) is still open: every zeta zero on
 the critical line. Q is not that. No hidden close.
 
+Chain plus what closes it:
+
+docs/RH-CHAIN.md
+
 YM, BSD, Hodge, P vs NP are leftover gravy.
 Poincare already sits in the literature (Perelman).
 

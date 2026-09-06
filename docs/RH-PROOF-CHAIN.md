@@ -17,6 +17,9 @@ on two analytic gaps. Q6 (22050962) is inverse-GCD.
 Those papers are **Q**. They are not line (6).
 Theorem P is not RH. Do not glue.
 
+Same chain plus the close list, one file:
+[`RH-CHAIN.md`](RH-CHAIN.md).
+
 ---
 
 ## Theorem (aimed)
