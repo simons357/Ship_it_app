@@ -31,6 +31,9 @@ https://github.com/simons357/Ship_it_app/blob/cursor/unaugmented-r4-vorticity-f8
 LaTeX:
 tex/theorem-a-q1.tex
 
+Completed A chain:
+docs/A-CHAIN.md
+
 
 WHAT DOES NOT SIT
 

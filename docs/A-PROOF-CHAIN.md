@@ -16,6 +16,9 @@ Deposit: [`THEOREM-A-DEPOSIT.md`](THEOREM-A-DEPOSIT.md).
 After Continue: [`DA-AFTER-CONTINUE.md`](DA-AFTER-CONTINUE.md).  
 Classical leftover is the other note: [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md).
 
+Same completed chain, one file:
+[`A-CHAIN.md`](A-CHAIN.md).
+
 ---
 
 ## Theorem A (this PDE — sits)

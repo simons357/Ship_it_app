@@ -12,6 +12,10 @@ docs/THEOREM-A-Q1.pdf
 That is not unaugmented Navier–Stokes. Do not
 submit it as B.
 
+Completed A chain:
+
+docs/A-CHAIN.md
+
 ---
 
 B is the one you want. It does not sit.
