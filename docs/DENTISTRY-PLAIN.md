@@ -83,3 +83,47 @@ They do not touch these two ends.
 
 Translating a picture into math is the start
 of a check, not the end of a proof.
+
+---
+
+## Grafting
+
+Grafting is a better word than yanking.
+You are not ripping the front out. You are
+trying to grow something that attaches to
+the front you already have and reaches the
+wanted end.
+
+Allowed as a picture.
+
+Not allowed: grafting a different equation
+onto ordinary NS (extra stress, Q1). That
+is the old mistake. New tissue has to be
+on the same mouth.
+
+---
+
+## Geometry — does it help?
+
+It names the hole. It does not fill it.
+
+The stretch term in ordinary NS is about
+how the swirl lines up with the strain.
+Two geometric shapes are already on the
+list of possible teeth:
+
+1. Alignment for every starting fluid
+   (swirl stays lined up in time). Still
+   an if, not proved for every fluid.
+2. The middle-strain piece, integrated,
+   for every starting fluid. Calm on one
+   computer box. A box is not every fluid.
+
+So geometry helps the way a chart of the
+socket helps. You know what a fitting
+tooth would look like. The field has been
+looking at that socket for a long time.
+A chart is not a tooth.
+
+RH geometry (the 1/2 line) is the target,
+not a method that grows the missing step.
