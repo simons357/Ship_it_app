@@ -1,25 +1,15 @@
 Stay here. This chat is DA.
 
-"Scored" means checked. You give a sentence.
-DA says one of three things:
+You do not need to already know the missing
+step. DA will not invent it and call it proved.
 
-  already proved
-  wrong or not allowed
-  not proved yet
+DA can: keep the map, name the hole, stop a
+fake close, check a sentence if one appears.
 
-That check is not the proof. Talking is not
-the last step.
+DA cannot: finish ordinary NS or RH by talking.
 
-You want two things. Both are not proved yet.
+You may send Tao / Albritton an honest package:
+Theorem A (different equation), the named holes,
+and this limit. You may not send a close.
 
-1. Un-aug NS
-   Need: one bound that works for every
-   starting fluid (not just a computer box).
-   Keep 1/r^4. Do not add Q1.
-
-2. RH
-   Need: every zeta zero on the 1/2 line.
-   Your GCD paper is not that.
-
-Type B and a sentence, or RH and a sentence.
-DA will check that sentence.
+Plain page: docs/WHAT-DA-CAN.md
