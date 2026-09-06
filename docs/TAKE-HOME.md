@@ -136,8 +136,15 @@ https://github.com/simons357/Ship_it_app/pull/24
 
 ---
 
-## Teaching CV lines (working papers only):
-docs/CV-LINES.md
+## Teaching CV
+
+Working-paper lines only: docs/CV-LINES.md
+
+## Squeeze the rest
+
+Keep / send / tape / reuse: docs/SQUEEZE.md
+
+Plain page for my wife: docs/FOR-MY-WIFE.md
 
 ## If you publish one thing
 

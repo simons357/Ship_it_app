@@ -43,3 +43,9 @@ docs/PUBLISH-LIST.md
 
 CV lines if you want to teach:
 docs/CV-LINES.md
+
+What to do with the rest of the pile:
+docs/SQUEEZE.md
+
+Plain page for my wife:
+docs/FOR-MY-WIFE.md

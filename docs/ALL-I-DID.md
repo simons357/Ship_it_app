@@ -142,6 +142,8 @@ docs/POINCARE-PROOF-CHAIN.md
 
 Packing list:
 docs/TAKE-HOME.md
+docs/SQUEEZE.md
+docs/FOR-MY-WIFE.md
 docs/DA-STATUS-PACK.pdf
 
 ---
