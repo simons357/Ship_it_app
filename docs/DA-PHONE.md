@@ -1,5 +1,7 @@
 # Phone brief — 5 September 2026
 
+Smallest page: docs/TINY.txt
+
 You do not need the desktop tables. Read this.
 
 ---
