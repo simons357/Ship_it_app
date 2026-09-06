@@ -31,6 +31,13 @@ The back end is not already proved. It waits
 on the tooth. You are not joining two finished
 proofs. You are naming a missing bound.
 
+If “realized state” means the finished
+situation you want — fluid stays smooth,
+or every zero on the line — that is the
+target. It is aimed, not already in hand.
+Knowing the wanted end does not grow the
+tooth. A wanted smile is not a tooth.
+
 The shapes that could fit: one bound that
 works for every starting fluid — integrable
 leftover, or alignment for every fluid, or
