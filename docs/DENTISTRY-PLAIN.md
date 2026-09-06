@@ -103,9 +103,36 @@ on the same mouth.
 
 ---
 
-## Geometry — does it help?
+## Geometry — what it shows
 
-It names the hole. It does not fill it.
+You are right that this is the next step,
+not a side hobby. The missing key, if it
+exists, is a geometric sentence about
+stretch for every starting fluid. The
+front you already have points at that
+socket. That is the graft direction.
+
+What the geometry **showed on one computer
+box** (not every fluid):
+
+- Stretch splits into an aligned pile
+  (majority), an unaligned pile (live
+  leftover, about a third of the plus
+  stretch), and a pile off that set.
+- Alignment was not locked on. Typical
+  lineup about one half, not one.
+- The middle-strain piece was alive and
+  did not explode on that run. Viscosity
+  still won the net on that ensemble.
+- An identity holds: the stretch equals
+  a determinant of the strain, to machine
+  precision. An identity is not a bound.
+
+What it did **not** show: that this holds
+for every starting fluid. That is still
+the missing key. A next step is not the
+last connecting step until that sentence
+is proved for every fluid.
 
 The stretch term in ordinary NS is about
 how the swirl lines up with the strain.
