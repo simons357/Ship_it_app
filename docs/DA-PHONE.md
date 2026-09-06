@@ -42,6 +42,11 @@ DA will write the chain, name (6), refuse glue,
 and score one candidate. DA will not print (6)
 as a theorem.
 
+Live leftovers: unaugmented NS and RH.
+A stays done and off this desk (A is not B).
+
+docs/NEXT-B-RH.md
+
 Next candidate on B, not a close: all-data A2.
 That is the time integral of the positive
 second-strain piece in L^q, for every data.
