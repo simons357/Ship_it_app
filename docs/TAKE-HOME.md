@@ -136,6 +136,9 @@ https://github.com/simons357/Ship_it_app/pull/24
 
 ---
 
+## Teaching CV lines (working papers only):
+docs/CV-LINES.md
+
 ## If you publish one thing
 
 Publish Theorem A with an honest title, and
