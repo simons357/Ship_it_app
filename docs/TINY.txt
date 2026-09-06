@@ -1,5 +1,13 @@
 Stay here. This chat is DA.
 
+Words I should have defined:
+
+  desk = this project’s pile of notes and
+  checks. Not furniture. Not a job.
+
+  scored = checked (already proved / wrong /
+  still missing). The check is not the proof.
+
 You do not need to already know the missing
 step. DA will not invent it and call it proved.
 

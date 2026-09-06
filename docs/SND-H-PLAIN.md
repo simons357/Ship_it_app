@@ -29,7 +29,7 @@ not figure out the other.
 
 ## Two different SND stories
 
-On this desk SND split into two opposite
+In these notes SND split into two opposite
 regimes (concentrated vs spread). Those
 are two jobs, not one brand. Even if both
 jobs were done, you would still need the

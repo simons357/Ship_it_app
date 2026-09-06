@@ -10,7 +10,7 @@ If the shape is right, write it as math and
 check it.
 
 That is a fair picture of the leftover. It is
-how this desk already talks. DA will use it.
+how these notes already talk. DA will use it.
 DA will not fill the hole by drawing a tooth
 and calling the drawing a proof.
 
