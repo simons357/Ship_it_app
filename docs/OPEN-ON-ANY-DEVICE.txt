@@ -52,6 +52,9 @@ Do NOT upload that PDF to Zenodo as a close.
 Chain plus what closes it:
 docs/UNAUGMENTED-NS-CHAIN.md
 
+Live desk (B and RH only):
+docs/NEXT-B-RH.md
+
 RH WRITE (6) is still open.
 Q is not RH.
 
