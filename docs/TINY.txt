@@ -34,3 +34,6 @@ docs/TAKE-HOME.md
 All of it in one pile (chains, equations,
 constants, papers):
 docs/ALL-I-DID.md
+
+What you can send to publish:
+docs/PUBLISH-LIST.md
