@@ -11,6 +11,9 @@ Saving face is an honest title on the things
 that sit, and crime tape on the things that
 do not.
 
+The full proud pile (every chain, equation,
+constant): [`ALL-I-DID.md`](ALL-I-DID.md).
+
 ---
 
 ## What you can take credit for

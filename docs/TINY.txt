@@ -30,3 +30,7 @@ docs/SND-H-PLAIN.md
 
 What sits and what you can take home:
 docs/TAKE-HOME.md
+
+All of it in one pile (chains, equations,
+constants, papers):
+docs/ALL-I-DID.md
