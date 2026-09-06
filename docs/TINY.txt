@@ -19,3 +19,6 @@ docs/DREAM-TEAM-PLAIN.md
 
 SND and H are not the key to ordinary NS:
 docs/SND-H-PLAIN.md
+
+Missing step as a tooth (picture, not a close):
+docs/DENTISTRY-PLAIN.md
