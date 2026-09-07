@@ -24,6 +24,7 @@ import {
 import { clockLabel, fetchFieldWeather, skyPeriod, weatherLine } from "./weather.js";
 import { indexOwnerSearch, ownerEndpoints, queryOwnerSearch } from "./plugins.js";
 import { STORIES, storyById, tonightStory } from "./stories.js";
+import { LESSONS, lessonById, todayLesson } from "./lessons.js";
 
 const $ = (id) => document.getElementById(id);
 let state = rememberDevice(loadState());
@@ -237,7 +238,7 @@ function refreshRecordHome() {
     if (recording) status.textContent = "RECORDING. Original stays on this phone.";
     else if (denied) status.textContent = FAILURE.micDenied;
     else if (pendingKeep) status.textContent = "What was that?";
-    else status.textContent = "Tonight’s bedtime story. One a day. Then the field.";
+    else status.textContent = "Tonight’s story, or a lesson in listening. Then the field.";
   }
   if (btn) {
     btn.disabled = false;
@@ -305,7 +306,9 @@ function recordHomeHTML() {
   return "LISTEN TO THE FIELD What was that? LOCAL FIELD STORIES";
 }
 
+let bookKind = "story";
 let storyId = tonightStory().id;
+let lessonId = todayLesson().id;
 let storyUtter = null;
 let storyPage = 0;
 let storyNavOpen = false;
@@ -321,28 +324,47 @@ function stopStoryVoice() {
   if (btn) btn.textContent = "LISTEN";
 }
 
+function currentBook() {
+  return bookKind === "lesson" ? lessonById(lessonId) : storyById(storyId);
+}
+
 function paintStory() {
-  const story = storyById(storyId);
+  const story = currentBook();
   const nav = $("storyNav");
   const title = $("storyTitle");
   const source = $("storySource");
   const page = $("storyPage");
   if (!nav || !title || !page) return;
   if (storyNavOpen) {
-    nav.innerHTML = STORIES.map(
-      (s) => `<button type="button" data-story="${s.id}" class="${s.id === story.id ? "on" : ""}">${s.title}</button>`
-    ).join("");
+    const list = bookKind === "lesson" ? LESSONS : STORIES;
+    const attr = bookKind === "lesson" ? "data-lesson" : "data-story";
+    nav.innerHTML = list
+      .map((s) => `<button type="button" ${attr}="${s.id}" class="${s.id === story.id ? "on" : ""}">${s.title}</button>`)
+      .join("");
   } else {
-    nav.innerHTML = `<span class="tonight-mark">TONIGHT · ONE A DAY</span><button type="button" data-more="1">MORE STORIES</button>`;
+    nav.innerHTML = `
+      <button type="button" data-kind="story" class="${bookKind === "story" ? "on" : ""}">STORY</button>
+      <button type="button" data-kind="lesson" class="${bookKind === "lesson" ? "on" : ""}">LESSON</button>
+      <button type="button" data-more="1">${bookKind === "lesson" ? "MORE LESSONS" : "MORE STORIES"}</button>`;
   }
   title.textContent = story.title;
   if (source) source.textContent = story.source;
   const i = Math.max(0, Math.min(storyPage, story.pages.length - 1));
   page.textContent = story.pages[i];
+  const green = $("greenLink");
+  if (green) {
+    if (bookKind === "lesson") {
+      green.href = "./bedtime.html?kind=lesson";
+      green.textContent = "GREEN SCREEN · TEACH LISTENING";
+    } else {
+      green.href = "./bedtime.html";
+      green.textContent = "GREEN SCREEN · READ TO THE CHILDREN";
+    }
+  }
 }
 
 function speakStory() {
-  const story = storyById(storyId);
+  const story = currentBook();
   if (!window.speechSynthesis) {
     toast("This phone will not read aloud. You can still read the page.");
     return;
@@ -374,8 +396,25 @@ function bindStorybook() {
   if (storyBound) return;
   storyBound = true;
   $("storyNav")?.addEventListener("click", (ev) => {
+    const kindBtn = ev.target.closest("[data-kind]");
+    if (kindBtn) {
+      stopStoryVoice();
+      bookKind = kindBtn.dataset.kind === "lesson" ? "lesson" : "story";
+      storyNavOpen = false;
+      storyPage = 0;
+      paintStory();
+      return;
+    }
     if (ev.target.closest("[data-more]")) {
       storyNavOpen = true;
+      paintStory();
+      return;
+    }
+    const lessonBtn = ev.target.closest("[data-lesson]");
+    if (lessonBtn) {
+      stopStoryVoice();
+      lessonId = lessonBtn.dataset.lesson;
+      storyPage = 0;
       paintStory();
       return;
     }

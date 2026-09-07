@@ -161,7 +161,11 @@ Later: Multipeer Connectivity, hydrophones, ultrasonic microphones, external vis
 
 Classic public-domain children's stories and one original house story. They are something to listen to. They are not wildlife encounters and do not go in the Signal Library.
 
-One little bedtime story a day. Same calendar day, same story. The green-screen reader is `app/bedtime.html` (chroma `#00FF00`) so a parent can stand in front of their screen and read to the children. Do not paste copyrighted picture-book text.
+One little bedtime story a day. Same calendar day, same story. Prefer older and rarer public-domain tales for that daily pick.
+
+Someone can teach listening. The teacher is whoever is there — not an invented expert. Lessons live in `app/js/lessons.js`. The older and rarer the listening, the better.
+
+The green-screen reader is `app/bedtime.html` (chroma `#00FF00`) so a parent or guest can stand in front of their screen and read or teach. Do not paste copyrighted picture-book text.
 
 ## Consumer onboarding
 

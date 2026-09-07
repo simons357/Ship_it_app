@@ -29,6 +29,7 @@ import { makeLocalOriginalBlob } from "../app/js/audio.js";
 import { skyPeriod, weatherLine } from "../app/js/weather.js";
 import { ownerEndpoints } from "../app/js/plugins.js";
 import { STORIES, tonightStory, dayNumber } from "../app/js/stories.js";
+import { LESSONS, todayLesson } from "../app/js/lessons.js";
 
 test("coarse location rounds to ~11 km and never stays exact", () => {
   const c = coarseLocation(32.01234, -81.09876);
@@ -218,6 +219,8 @@ test("ON AIR stays hidden until recording — display:flex must not leak past [h
   assert.match(html, /A STORY IS SOMETHING YOU LISTEN TO/);
   assert.match(html, /bedtime\.html/);
   assert.match(html, /GREEN SCREEN · READ TO THE CHILDREN/);
+  assert.match(html, /id="greenLink"/);
+  assert.match(html, /lesson in listening/);
   assert.equal(/id="recordBtn"[^>]*\bstart\b/.test(html), false);
   assert.match(html, /icon-192\.png/);
   assert.equal(html.includes("LISTEN TO THIS RAIN"), false);
@@ -234,6 +237,7 @@ test("one little bedtime story a day — same calendar day, same story", () => {
   assert.equal(morning.id, night.id);
   assert.notEqual(morning.id, tomorrow.id);
   assert.equal(morning.bedtime, true);
+  assert.equal(morning.rare, true);
   assert.ok(morning.pages.length >= 5);
   assert.equal(dayNumber(new Date(2026, 8, 7, 1)), dayNumber(new Date(2026, 8, 7, 23)));
 });
@@ -253,11 +257,34 @@ test("green-screen bedtime page is chroma green and tonight-only", async () => {
   const html = await readFile(new URL("../app/bedtime.html", import.meta.url), "utf8");
   assert.match(html, /#00FF00/);
   assert.match(html, /tonightStory/);
+  assert.match(html, /todayLesson/);
   assert.match(html, /I’LL READ|I'LL READ/);
+  assert.match(html, /I’LL TEACH|I'LL TEACH/);
   assert.match(html, /NIGHT LAMP/);
   assert.match(html, /HIDE BUTTONS/);
   assert.match(html, /stopPropagation/);
   assert.equal(html.includes("Where the Wild Things"), false);
+  assert.equal(/Dr\.|Professor |TED Talk/.test(html), false);
+});
+
+test("someone can teach listening — older and rarer, no invented expert", () => {
+  const morning = todayLesson(new Date(2026, 8, 7, 8, 0, 0));
+  const night = todayLesson(new Date(2026, 8, 7, 22, 30, 0));
+  const tomorrow = todayLesson(new Date(2026, 8, 8, 8, 0, 0));
+  assert.equal(morning.id, night.id);
+  assert.notEqual(morning.id, tomorrow.id);
+  assert.ok(LESSONS.length >= 5);
+  const banned = /Dr\.|Professor |PhD|TED Talk|active listening workshop|Where the Wild Things|Seuss/;
+  for (const lesson of LESSONS) {
+    assert.equal(lesson.source, "For whoever is teaching");
+    assert.match(lesson.rights, /original/);
+    assert.equal(lesson.rare, true);
+    assert.ok(lesson.pages.length >= 5);
+    assert.equal(banned.test([lesson.title, lesson.source, ...lesson.pages].join(" ")), false);
+  }
+  const corpus = LESSONS.flatMap((l) => [l.title, ...l.pages]).join(" ");
+  assert.match(corpus, /older|Older/);
+  assert.match(corpus, /rarer|Rarer/);
 });
 
 test("relative plot stays finite", () => {

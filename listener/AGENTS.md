@@ -9,7 +9,8 @@ You are working on **LISTENER**, a new product. This folder is the whole project
 - Treat `inbox/` as the incoming design drop.
 - Keep it a premium distributed field instrument. Do not turn it into a generic wildlife checklist.
 - Stories from classic public-domain children's books are for listening. They are not wildlife encounters and do not go in the Signal Library. Do not paste copyrighted picture-book text.
-- One little bedtime story a day (`tonightStory`). The green-screen reader is `app/bedtime.html` — chroma `#00FF00` so they can film in front of their screen and read to the children. Night lamp is for actual bedtime. Famous means public-domain retellings plus the original house story.
+- One little bedtime story a day (`tonightStory`). Prefer older and rarer public-domain tales for the daily pick; famous ones stay under MORE STORIES. The green-screen reader is `app/bedtime.html` — chroma `#00FF00` so they can film in front of their screen and read to the children. Night lamp is for actual bedtime. Famous means public-domain retellings plus the original house story.
+- Someone can teach listening (`todayLesson` in `app/js/lessons.js`). The teacher is a real person at the green screen — a parent, a guest, whoever is there. Do not invent a named expert, professor, or host. The older and rarer the listening, the better.
 - Non-negotiables: wildlife-only encounters/library, privacy by default, no invented animal positions, no fake COH, no forced species IDs, originals preserved, sharing ≠ contributing, offline must not lose the Session, UI stays simple.
 
 ## Mark

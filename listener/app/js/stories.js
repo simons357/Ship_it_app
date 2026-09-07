@@ -162,6 +162,7 @@ export const STORIES = Object.freeze([
     source: "After the Brothers Grimm",
     rights: "public-domain",
     bedtime: true,
+    rare: true,
     pages: [
       "A donkey, a dog, a cat, and a rooster were old, and no one wanted them.",
       "They walked toward Bremen to be musicians.",
@@ -195,6 +196,7 @@ export const STORIES = Object.freeze([
     source: "After the Brothers Grimm",
     rights: "public-domain",
     bedtime: true,
+    rare: true,
     pages: [
       "A child had nothing but the clothes she wore and a piece of bread.",
       "She gave the bread to a hungry person.",
@@ -317,6 +319,108 @@ export const STORIES = Object.freeze([
       "Good night. Stay on the plate until morning.",
     ],
   },
+  {
+    id: "nightingale",
+    title: "The Nightingale",
+    source: "After Hans Christian Andersen",
+    rights: "public-domain",
+    bedtime: true,
+    rare: true,
+    pages: [
+      "In the emperor’s garden a real nightingale sang.",
+      "The whole land stopped to listen.",
+      "Then a jeweled bird was brought, that sang the same notes every time.",
+      "The real bird flew away. The jeweled bird broke.",
+      "The emperor grew quiet, and almost died of the quiet.",
+      "The nightingale came back, and sang what was true that night, not what was wound up.",
+      "Good night. Listen for the living bird.",
+    ],
+  },
+  {
+    id: "dancing-princesses",
+    title: "The Twelve Dancing Princesses",
+    source: "After the Brothers Grimm",
+    rights: "public-domain",
+    bedtime: true,
+    rare: true,
+    pages: [
+      "Twelve princesses slept behind a locked door.",
+      "Every morning their shoes were worn through.",
+      "No one knew where they went.",
+      "A soldier stayed awake, and followed them down under the earth, to a lake and a night of dancing.",
+      "He kept a cup, and told the king the true place.",
+      "The shoes could rest.",
+      "Good night. Some dancing is a secret. Then it is morning.",
+    ],
+  },
+  {
+    id: "east-of-the-sun",
+    title: "East of the Sun and West of the Moon",
+    source: "After Asbjørnsen and Moe",
+    rights: "public-domain",
+    bedtime: true,
+    rare: true,
+    pages: [
+      "A white bear came for a girl, and took her to a house east of the sun.",
+      "At night a man was there, but she was not to see him.",
+      "She looked, and he was gone, to a castle west of the moon.",
+      "She walked, and asked the winds, and did not stop.",
+      "The four winds helped her find the place.",
+      "She won him back by staying, not by shouting.",
+      "Good night. Some roads are long. Sleep now.",
+    ],
+  },
+  {
+    id: "fisherman-wife",
+    title: "The Fisherman and His Wife",
+    source: "After the Brothers Grimm",
+    rights: "public-domain",
+    bedtime: true,
+    rare: true,
+    pages: [
+      "A fisherman caught a flounder that could talk, and let it go.",
+      "His wife said, Ask it for a cottage.",
+      "Then a castle. Then to be king. Then to be emperor. Then to be as God.",
+      "The sea grew dark.",
+      "In the morning they were back in the old hut.",
+      "The flounder had given what was asked, and then no more.",
+      "Good night. The hut is enough.",
+    ],
+  },
+  {
+    id: "selfish-giant",
+    title: "The Selfish Giant",
+    source: "After Oscar Wilde, 1888",
+    rights: "public-domain",
+    bedtime: true,
+    rare: true,
+    pages: [
+      "A giant built a wall so children could not play in his garden.",
+      "Then spring would not come. The trees stayed winter.",
+      "One day the children slipped in, and the trees blossomed.",
+      "The giant saw, and took the wall down.",
+      "The smallest child had flowers where he walked.",
+      "The garden stayed open.",
+      "Good night. Leave the gate undone.",
+    ],
+  },
+  {
+    id: "tin-soldier",
+    title: "The Steadfast Tin Soldier",
+    source: "After Hans Christian Andersen",
+    rights: "public-domain",
+    bedtime: true,
+    rare: true,
+    pages: [
+      "A tin soldier had only one leg, and he loved a paper dancer.",
+      "He fell from the window. He rode a boat of newspaper. He was swallowed by a fish.",
+      "The fish was caught, and he was home again, looking at the dancer.",
+      "A child threw him in the stove.",
+      "A draft took the dancer too.",
+      "In the ashes they found a little tin heart.",
+      "Good night. Stand where you are. That is enough courage.",
+    ],
+  },
 ]);
 
 export function storyById(id) {
@@ -328,10 +432,17 @@ export function dayNumber(date = new Date()) {
   return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000);
 }
 
+/** Older and rarer tales first. Famous ones stay in MORE STORIES. */
+export function tonightPool() {
+  const rare = STORIES.filter((s) => s.bedtime && s.rare);
+  if (rare.length >= 4) return rare;
+  const list = STORIES.filter((s) => s.bedtime);
+  return list.length ? list : STORIES;
+}
+
 /** One little bedtime story a day. Same calendar day, same story. */
 export function tonightStory(date = new Date()) {
-  const list = STORIES.filter((s) => s.bedtime);
-  const pool = list.length ? list : STORIES;
+  const pool = tonightPool();
   return pool[Math.abs(dayNumber(date)) % pool.length];
 }
 
