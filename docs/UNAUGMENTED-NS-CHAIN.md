@@ -104,6 +104,13 @@ The estimate must be an a priori bound, not a
 reading on \(n=32\), not an identity, not a named
 hole, not Theorem A.
 
+Overnight alias (7 September 2026): DA-NS-2
+is this same leftover — a cutoff-uniform
+integral of \([\mathfrak T_c-\theta\nu\mathcal D_s]_+/Y\).
+Score: [`DA-NS-2.md`](DA-NS-2.md). Identities
+are not the integral. The Joint Gap–Charge
+budget is a target, not a theorem.
+
 ---
 
 ## What does not close it

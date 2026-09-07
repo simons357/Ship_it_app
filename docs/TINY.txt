@@ -44,6 +44,9 @@ docs/PUBLISH-LIST.md
 How to put the maps online:
 docs/SHARE-MAPS.md
 
+Overnight NS score (DA-NS-2 is leftover 6):
+docs/DA-NS-2.md
+
 CV lines if you want to teach:
 docs/CV-LINES.md
 
