@@ -19,17 +19,19 @@ Do not explain the product. Paste `BASE44_PROMPT.txt` into a new Base44 app. Ste
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-**This build (tonight’s bedtime story + green screen):** https://seamless-dome-ky22y4j.shipstatic.com/
+**This build (story, listening lesson, green screen):** https://silent-avatar-c6a29r8.shipstatic.com/
 
-Green screen: https://seamless-dome-ky22y4j.shipstatic.com/bedtime.html
+Green screen story: https://silent-avatar-c6a29r8.shipstatic.com/bedtime.html
 
-Claim: https://my.shipstatic.com/claim/5d10bed7e23947600972a5373c99449c
+Green screen lesson: https://silent-avatar-c6a29r8.shipstatic.com/bedtime.html?kind=lesson
+
+Claim: https://my.shipstatic.com/claim/1c4b441a1affc434d73043aafefe1fe8
 
 **TITAN-X story for an investor (read aloud / LISTEN):** https://precise-prism-3ad673t.shipstatic.com/
 
 Claim that story page: https://my.shipstatic.com/claim/debe8aa2cc7e6c2f1812e61843bcdf9c
 
-If the first screen says **A STORY IS SOMETHING YOU LISTEN TO** and **GREEN SCREEN · READ TO THE CHILDREN**, you have this build. If it says Savannah marsh, Air mode, Water mode, Party mode, or lists clapper rails / painted buntings, that is Claude’s demo, not this app.
+If the first screen says **A STORY IS SOMETHING YOU LISTEN TO** and has **STORY** / **LESSON**, you have this build. If it says Savannah marsh, Air mode, Water mode, Party mode, or lists clapper rails / painted buntings, that is Claude’s demo, not this app.
 
 The hostname is still random Shipstatic junk, not the product name. A name like Listener needs your Shipstatic or GitHub Pages account. Old hosts such as `dreamy-dust-…` and `spectral-rune-…` are leftovers.
 
@@ -37,7 +39,7 @@ This is LISTENER. Tonight’s bedtime story first — one a day, from famous pub
 
 1. Open the link in **Safari**.
 2. Share → **Add to Home Screen**.
-3. Tap **LISTEN** to hear tonight’s story, or **GREEN SCREEN · READ TO THE CHILDREN** to stand in front of the green screen and read it. **I’LL READ** turns the pages. **HIDE BUTTONS** leaves only the words on chroma green.
+3. Tap **LISTEN** to hear tonight’s story, or **LESSON** for a short teaching on listening. **GREEN SCREEN · TEACH LISTENING** is for a real person at the green screen. **I’LL TEACH** turns the pages. The older and rarer the listening, the better.
 4. **LISTEN TO THE FIELD** is the wildlife instrument. Allow the microphone. Put the phone down. Tap **STOP THE FIELD**. If it does not know the sound, type what it was (rain) and tap **KEEP**.
 
 Later: your weather and ChatVault can plug in through `app/js/plugins.js`. Not now.
