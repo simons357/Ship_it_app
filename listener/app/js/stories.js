@@ -593,7 +593,7 @@ export function listeningRank(item) {
 export function ageLine(item) {
   const y = inferYear(item);
   const rare = inferRarity(item) >= 4;
-  const yearBit = y < 0 ? "ancient" : y >= 2020 ? "" : String(y);
+  const yearBit = y < 0 ? "ancient" : y > 0 && y < 2020 ? String(y) : "";
   return [item.source, yearBit, rare ? "older · rarer" : ""]
     .filter(Boolean)
     .join(" · ");

@@ -286,6 +286,8 @@ test("daily stories prefer older and rarer — famous common tales stay in MORE 
   assert.ok(listeningRank(perrault) > listeningRank(tin));
   assert.match(ageLine(perrault), /older · rarer/);
   assert.match(ageLine(perrault), /1697/);
+  assert.equal(/· 0 ·/.test(ageLine({ source: "For whoever is teaching", rare: true })), false);
+  assert.match(ageLine({ source: "For whoever is teaching", rare: true }), /older · rarer/);
 });
 
 test("someone can teach listening — older and rarer, no invented expert", () => {
