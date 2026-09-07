@@ -49,6 +49,15 @@ up to lower-order terms already controlled.
 The only term that can beat viscosity is the
 stretching leftover.
 
+**(3a) Centered barycenter.** On a strong
+interval, \(X=|A^{1/2}u|_2^2\), \(Y=|Au|_2^2\),
+\(Z=|A^{3/2}u|_2^2\), \(\Lambda=Y/X\),
+\(\mathcal D_s=Z-\Lambda Y\ge 0\),
+\(\mathfrak T_c=\mathcal M-\Lambda\mathcal N\),
+and \((\log\Lambda)'=2/Y(\mathfrak T_c-\nu\mathcal D_s)\).
+Identity. Not the leftover. Overnight keep:
+[`DA-NS-2.md`](DA-NS-2.md).
+
 **(4) Split.**
 
 \[
@@ -80,7 +89,13 @@ on the **classical** equation:
 3. **all-data A2** — \(\displaystyle\int_0^T\|\lambda_2^+\|_{L^q}\,dt<\infty\)
    for a \(q\) that feeds (3), or
 4. a field that **kills** the stretching leftover,
-   so the cubic does not beat viscosity.
+   so the cubic does not beat viscosity, or
+5. **DA-NS-2** — cutoff-uniform
+   \(\displaystyle\sup_n\int_0^T
+   [\mathfrak T_c^{(n)}-\theta\nu\mathcal D_s^{(n)}]_+/Y^{(n)}\,dt<\infty\)
+   for a fixed \(\theta\in[0,1)\). Same leftover
+   as (1). The Joint Gap–Charge budget is a
+   target for writing this, not a substitute.
 
 Then **(7) Gronwall** (\(X\) stays finite),
 **(8) Beale–Kato–Majda** (continuation; \(L^2\) is

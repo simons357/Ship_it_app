@@ -226,8 +226,8 @@ JOBS = {
         ],
         "needs": (
             "int_0^T R(t) dt < infinity for all data, or all-data A1, "
-            "or all-data A2, or a field that kills the stretching leftover. "
-            "Keep 1/r^4. No Q1."
+            "or all-data A2, or a field that kills the stretching leftover, "
+            "or DA-NS-2. Keep 1/r^4. No Q1."
         ),
         "need_to_close": [
             "Write one all-data integrable residual: int_0^T R < infinity.",

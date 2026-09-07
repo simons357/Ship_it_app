@@ -63,6 +63,13 @@ The only term that can beat viscosity is the stretching
 leftover.
 *[have]*
 
+**(3a)** **Centered barycenter.**
+\(\Lambda=Y/X\), \(\mathcal D_s=Z-\Lambda Y\ge 0\),
+\((\log\Lambda)'=2/Y(\mathfrak T_c-\nu\mathcal D_s)\).
+Identity. Not leftover (6).
+[`DA-NS-2.md`](DA-NS-2.md).
+*[have]*
+
 **(4)** **Split.**
 
 \[
@@ -84,7 +91,8 @@ A2 is live and did not blow on the B15 path (B40, B41).
 **(6)** **Write.** One all-data integrable residual:
 \(\int_0^T\mathcal{R}(t)\,dt<\infty\), or all-data A1,
 or all-data A2, or a field that kills the stretching
-leftover.
+leftover, or DA-NS-2 (cutoff-uniform
+\(\int[\mathfrak T_c-\theta\nu\mathcal D_s]_+/Y\)).
 *[the next write]*
 
 **(7)** **Gronwall.** From (3) and (6), \(X(t)\) stays
@@ -113,7 +121,7 @@ If (6) sits, (7)–(9) close the theorem.
 | Lines | Status |
 |---|---|
 | (1)–(5) | **done** |
-| (6) all-data \(\mathcal{R}\) / A1 / A2 / killing field | **not done** |
+| (6) all-data \(\mathcal{R}\) / A1 / A2 / killing field / DA-NS-2 | **not done** |
 | (7)–(9) Gronwall / continuation / bootstrap | waiting on (6) |
 
 Please-finish-bad does not change this table.
@@ -128,6 +136,7 @@ Classify one:
 - all-data \(\int\|\lambda_2^+\|\) (A2)
 - a different integrable residual
 - a killing field for the stretching leftover
+- DA-NS-2 (same leftover; identities already have)
 
 Machine: [`DA-PROOF.md`](DA-PROOF.md)  
 From your work: [`DA-FROM.md`](DA-FROM.md)

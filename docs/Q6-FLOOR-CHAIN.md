@@ -25,7 +25,11 @@ On primes, \(\lambda_{\min}(\widetilde Q\big|_P)\ge-1/4\).
 \(\widetilde Q_N(i,j)=1/(\gcd(i,j)\sqrt{ij})\).
 \(H_N=D^{-1/2}\widetilde Q D^{-1/2}\),
 \(D=\mathrm{diag}(\widetilde Q\mathbf 1)\).
-Do not mix them.
+Do not mix them. Overnight: also do not
+mix \(\gcd/\sqrt{ij}\) or a Möbius decoration
+into this trio. The sum
+\(\sum_{d\mid g}\mu(d)\varphi(d)/d^2=1/g\)
+fails at \(g=2\).
 *[have]*
 
 **(2)** **Full \(Q\) floor is false.**

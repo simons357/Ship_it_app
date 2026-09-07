@@ -69,7 +69,9 @@ NS_LINES = [
         "text": (
             "Leftover form. Absorb a slice of dissipation to obtain "
             + WALL["looks_like"]
-            + " The only term that can beat viscosity is the stretching leftover."
+            + " The only term that can beat viscosity is the stretching leftover. "
+            "Centered barycenter (3a): Lambda = Y/X, D_s = Z - Lambda Y >= 0, "
+            "(log Lambda)' = 2/Y (T_c - nu D_s). Identity. Not leftover (6)."
         ),
     },
     {
@@ -95,7 +97,8 @@ NS_LINES = [
         "status": "write",
         "text": (
             "WRITE. One all-data integrable residual: int_0^T R(t) dt < infinity, "
-            "or all-data A1, or all-data A2, or a field that kills the stretching leftover."
+            "or all-data A1, or all-data A2, or a field that kills the stretching leftover, "
+            "or DA-NS-2 (cutoff-uniform int [T_c - theta nu D_s]_+/Y)."
         ),
     },
     {
