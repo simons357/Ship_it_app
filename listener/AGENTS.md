@@ -8,6 +8,7 @@ You are working on **LISTENER**, a new product. This folder is the whole project
 - Build from `MASTER_SPEC.md` and keep the visual/product behavior in `inbox/index.html`.
 - Treat `inbox/` as the incoming design drop.
 - Keep it a premium distributed field instrument. Do not turn it into a generic wildlife checklist.
+- Stories from classic public-domain children's books are for listening. They are not wildlife encounters and do not go in the Signal Library. Do not paste copyrighted picture-book text.
 - Non-negotiables: wildlife-only encounters/library, privacy by default, no invented animal positions, no fake COH, no forced species IDs, originals preserved, sharing ≠ contributing, offline must not lose the Session, UI stays simple.
 
 ## Mark

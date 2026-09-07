@@ -19,9 +19,13 @@ Do not explain the product. Paste `BASE44_PROMPT.txt` into a new Base44 app. Ste
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-**This build (Cursor Grok, START / STOP / ON AIR):** https://kinetic-bolt-28pxsch.shipstatic.com/
+**This build (stories you listen to, then the field):** https://melded-bit-fc3594a.shipstatic.com/
 
-Claim so it stays live past 3 days: https://my.shipstatic.com/claim/d2d168e64949bc657c072185d82ea903
+Claim: https://my.shipstatic.com/claim/b4fd737a55f0284f28ea1807d28dc54e
+
+**TITAN-X story for an investor (read aloud / LISTEN):** https://precise-prism-3ad673t.shipstatic.com/
+
+Claim that story page: https://my.shipstatic.com/claim/debe8aa2cc7e6c2f1812e61843bcdf9c
 
 If the first screen says **START / STOP / ON AIR** under the title, you have this build. If it says Savannah marsh, Air mode, Water mode, Party mode, or lists clapper rails / painted buntings, that is Claude’s demo, not this app.
 
