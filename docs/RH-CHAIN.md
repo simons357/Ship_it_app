@@ -1,6 +1,6 @@
 # RH — chain and what closes it
 
-6 September 2026. Aimed at: every non-trivial
+7 September 2026. Latest RH. Aimed at: every non-trivial
 zero of zeta has real part \(1/2\).
 
 This is the chain that was asked for, plus

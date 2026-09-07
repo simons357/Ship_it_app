@@ -1,6 +1,6 @@
 # Unaugmented NS — chain and what closes it
 
-5 September 2026. Classical NSE. Keep \(1/r^4\).
+7 September 2026. Latest unaug NS. Classical NSE. Keep \(1/r^4\).
 No \(Q_1\). Object \(X=\|\omega\|_2^2\).
 
 This is the chain that was asked for, plus
@@ -110,7 +110,7 @@ B stays open.
 
 ## Exactly what to provide
 
-A proof that one of (1)–(4) under WRITE (6) holds
+A proof that one of (1)–(5) under WRITE (6) holds
 for every finite-energy / \(H^1\) divergence-free
 initial datum, viscosity \(\nu>0\), no extra stress,
 Biot–Savart kept at \(1/r^4\).

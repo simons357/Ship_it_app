@@ -1,6 +1,6 @@
 # Augmented NS — completed chain (this PDE)
 
-6 September 2026. \(Q_1\) system. Extra dissipation.
+7 September 2026. Latest Aug NS. \(Q_1\) system. Extra dissipation.
 \(\varepsilon>0\), \(\beta\ge 1/2\). Not classical NS.
 No \(\Phi\).
 
