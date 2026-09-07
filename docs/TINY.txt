@@ -47,7 +47,8 @@ docs/SHARE-MAPS.md
 Overnight NS score (DA-NS-2 is leftover 6):
 docs/DA-NS-2.md
 
-Latest three chains (7 September 2026):
+Latest three chains plus the others:
+docs/LATEST.md
 docs/A-CHAIN.md
 docs/UNAUGMENTED-NS-CHAIN.md
 docs/RH-CHAIN.md
