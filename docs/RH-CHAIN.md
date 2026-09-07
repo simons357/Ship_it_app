@@ -96,6 +96,13 @@ Not Theorem P. Not Route C with gaps left open.
 - SND, SFE, Track A, Track B
 - DA or this chat emitting a last line
 - a withheld file (there is none)
+- mixing four different kernels
+  (\(g/\sqrt{ij}\), \(1/g\), \(1/(g\sqrt{ij})\),
+  Möbius-decorated) and transferring a floor
+- the claimed sum \(\sum_{d\mid g}\mu(d)\varphi(d)/d^2=1/g\)
+  (false at \(g=2\): left side \(3/4\))
+- a quadratic-form floor as an automatic
+  Mertens / zero-line bound
 
 ---
 

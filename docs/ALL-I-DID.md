@@ -115,6 +115,7 @@ docs/A-CHAIN.md
 Ordinary NS map (steps 1–5 there, missing
 step still open):
 docs/UNAUGMENTED-NS-CHAIN.md
+docs/DA-NS-2.md
 docs/NS-PROOF-CHAIN.md
 docs/TRACK-B-CHAIN.pdf
 docs/DA-FROM.md

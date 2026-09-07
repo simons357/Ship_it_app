@@ -1,85 +1,95 @@
-# DA-NS-2 — score of the overnight dossier
+# DA-NS-2 — what was kept from the overnight note
 
 7 September 2026. Classical unaugmented NS.
-No Q1. Not RH. Not a close.
+No Q1. Keep 1/r^4. Not RH. Not a close.
 
-The September 6–7 showdown dossier is a
-map plus identities plus killed routes.
-It does not prove ordinary Navier–Stokes.
-It does not prove RH.
+Taken from the September 6–7 showdown
+dossier. Useful parts only. The Joint
+Gap–Charge budget is a target, not a
+theorem.
 
----
-
-## The leftover (same hole)
-
-DA-NS-2:
-
-sup over Galerkin n of the integral of
-[T_c − θ ν D_s]_+ / Y  stays finite,
-θ fixed in [0, 1), uniform in cutoff.
-
-If that integral sits, Λ stays bounded,
-X ≤ |u0|_2^2 Λ, continuation follows.
-That implication is the usual skeleton.
-The integral is WRITE (6) in new clothes.
-
-check B stays open until that bound sits
-for all data, no extra stress, no SND if,
-no Serrin/BKM if used as the last line.
+Reproduce the finite checks:
+python3 -m unittest tests.test_centered_barycenter
 
 ---
 
-## What can sit as algebra (not the close)
+## Leftover (same hole as WRITE (6))
 
-On a strong interval / finite Galerkin:
+On Galerkin n, fixed θ in [0, 1):
 
-Λ = Y/X, D_s = Z − Λ Y ≥ 0,
+K = [T_c − θ ν D_s]_+ / Y
+
+DA-NS-2: sup_n ∫_0^T K dt ≤ F(ν, T, u0) < ∞.
+
+If that sits, Λ stays bounded, then
+X ≤ |u0|_2^2 Λ, then continuation.
+The implication is the usual skeleton.
+The integral is the hole.
+
+---
+
+## Identities that sit (algebra)
+
+X = |A^{1/2} u|_2^2,  Y = |A u|_2^2,
+Z = |A^{3/2} u|_2^2,  Λ = Y/X.
+
+N = −⟨B(u,u), A u⟩,
+M = −⟨A B(u,u), A u⟩,
+T_c = M − Λ N.
+
+D_s = Z − Λ Y = |A^{1/2}(A − Λ)u|_2^2 ≥ 0.
+
 (log Λ)' = 2/Y (T_c − ν D_s).
 
-Those are identities if the energy and
-enstrophy balances are the usual ones.
-An identity is not DA-NS-2.
+If p_m = a_m |u_m|^2 / X, then
+Λ = Σ p_m a_m and D_s/X = Σ p_m (a_m − Λ)^2.
 
-Helical reconstruction matching a finite
-sum is a finite check. Phase-twin (same
-X,Y,Z,Λ,D_s, opposite T_c) kills “quadratic
-data decide the sign.” Charge-only close
-is killed by the two-triad example in the
-dossier. Variance absorption is killed by
-scaling. Automatic dephasing is killed by
-the 2D3C lock (that sector is separately
-regular). Frozen log-charge at θ = 1 does
-not close the needed θ < 1 remainder.
-
-Those kills are refuse. They are useful.
-They are not leftover (6).
+T_c is centroid velocity, not “variance
+growth.” An identity is not DA-NS-2.
 
 ---
 
-## What does not sit
+## Kills that stay killed
 
-Joint Gap–Charge Epoch Budget: a target,
-not a theorem.
-BTO occupation integral: named, not proved.
-SND as a close: still fail.
-Q1 / de-augmentation: still fail (A is not B).
-RH from Q6 / mixed matrices / failed Möbius
-sum at g = 2: still not RH.
-HB / SFE / UHF / DHFA as a unifier: still
-thrown out. Archive is not a premise.
+- Variance absorption T_c ≤ c ν D_s: false
+  (cubic vs quadratic under amplitude).
+- Charge-only close: two-triad state has
+  Q_a,Γ = 0 and T_c,Γ^het > 0. Exact split
+  T_c^het = 2 κ^3 Q_a + ρ, and ρ is needed.
+- Quadratic data decide the sign: phase
+  twins share X,Y,Z,Λ,D_s and flip T_c.
+- Automatic dephasing: 2D3C half-turn
+  lock keeps 0/π rays. That sector is
+  separately regular.
+- Frozen log-charge at θ = 1: the needed
+  endpoint is θ < 1; (1−θ) ν D_s/Y is
+  leftover.
+- SND as a close: still fail.
+- Q1 / de-augmentation: still fail.
+  Theorem A is a different PDE.
+- Serrin / BKM as the last line: still
+  an if.
 
-Sitting Q facts are unchanged: Theorem P,
-H_N ≥ −1, Bridge*, nonnegative form,
-Goldbach-shaped corollary. Those are not
-the RH bridge.
+---
+
+## Next write (not sitting)
+
+Joint Gap–Charge Epoch Budget: charge,
+radial covariance, moving-barycenter
+error, homochiral drift, cross-band
+flux, phase/far terms, one-use
+dissipation, summable resets. All
+together, cutoff-uniform. If the last
+line is ∫ D_s/Y, sup Λ, ∫ Y, or a
+continuation norm, stop.
 
 ---
 
 ## Share
 
-If this goes online, title it as a map:
-centered barycenter identities and named
-hole DA-NS-2, not a proof.
+Title: Map of ordinary NS — centered
+barycenter identities and named hole
+DA-NS-2, not a proof.
 
-Same rule: docs/SHARE-MAPS.md
-Chain: docs/UNAUGMENTED-NS-CHAIN.md
+docs/UNAUGMENTED-NS-CHAIN.md
+docs/SHARE-MAPS.md

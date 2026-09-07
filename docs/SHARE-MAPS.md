@@ -28,6 +28,7 @@ Goldbach’s conjecture.
 
 Upload:
 docs/UNAUGMENTED-NS-CHAIN.md
+docs/DA-NS-2.md
 docs/TRACK-B-CHAIN.pdf (if you have it)
 docs/DA-FROM.md
 

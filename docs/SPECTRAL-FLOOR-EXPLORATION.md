@@ -9,6 +9,13 @@ The mixup was the **matrix and the constant**, not the idea of a floor.
 
 Goldbach-shaped multi-rep on \(\widetilde Q\) is a corollary of Theorem P, not Goldbach’s conjecture. No RH, no Navier–Stokes map. Do not reattach this to SND or GNC. SFE, Harmonic Blueprint, and Millennium-packaged notes are shelved (`docs/SHELF.md`).
 
+Overnight RH audit (7 September 2026): do not treat
+\(Q_{ij}=\gcd/\sqrt{ij}\), \(1/\gcd\), \(1/(\gcd\sqrt{ij})\),
+and the Möbius-decorated kernel as one operator.
+The sum \(\sum_{d\mid g}\mu(d)\varphi(d)/d^2=1/g\) fails
+at \(g=2\). Sitting Q facts stay sitting. They are
+not the RH bridge.
+
 Sources I could actually read: August inverse-GCD (22045478), August errata (22045484), August Ring+SND (22045474), June T2 PDF, May T³ TeX (archive only). Zenodo HTML/API is 403 from this machine. There is no phone corpus, no extra GitHub math repo, and no local store of older drafts beyond `/tmp/simons-papers`.
 
 ---

@@ -124,6 +124,10 @@ budget is a target, not a theorem.
 - “A2 did not blow on B15”
 - Route C, Q, SND, SFE
 - DA or this chat emitting a last line
+- variance absorption, charge-only close,
+  automatic dephasing, frozen log-charge
+  at \(\theta=1\) (overnight kills;
+  [`DA-NS-2.md`](DA-NS-2.md))
 
 ---
 
