@@ -1,6 +1,6 @@
 # Shelved
 
-SFE, Harmonic Blueprint, and any Millennium-packaged notes are **off the live desk**. They stay in the tree as archive. They are not inputs to Track A, Track B, or the inverse-GCD floor.
+SFE, Harmonic Blueprint, and any Millennium-packaged notes are **off the live desk**. They stay in the tree as archive. They are not inputs to Track A, Track B, or the inverse-GCD floor. An overnight “legacy vault” does not unshelve them.
 
 Do not load them into \(\Pi_{j_*}\), \(\omega\cdot S\omega\), \(1/r^4\), or \(H_N\).
 
