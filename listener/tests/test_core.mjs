@@ -28,7 +28,7 @@ import { gpsQuality, distanceM, projectRelative } from "../app/js/geo.js";
 import { makeLocalOriginalBlob } from "../app/js/audio.js";
 import { skyPeriod, weatherLine } from "../app/js/weather.js";
 import { ownerEndpoints } from "../app/js/plugins.js";
-import { STORIES, tonightStory, dayNumber } from "../app/js/stories.js";
+import { STORIES, tonightStory, tonightPool, dayNumber, listeningRank, ageLine, inferYear, inferRarity } from "../app/js/stories.js";
 import { LESSONS, todayLesson } from "../app/js/lessons.js";
 
 test("coarse location rounds to ~11 km and never stays exact", () => {
@@ -220,7 +220,7 @@ test("ON AIR stays hidden until recording — display:flex must not leak past [h
   assert.match(html, /bedtime\.html/);
   assert.match(html, /GREEN SCREEN · READ TO THE CHILDREN/);
   assert.match(html, /id="greenLink"/);
-  assert.match(html, /lesson in listening/);
+  assert.match(html, /older and rarer/);
   assert.equal(/id="recordBtn"[^>]*\bstart\b/.test(html), false);
   assert.match(html, /icon-192\.png/);
   assert.equal(html.includes("LISTEN TO THIS RAIN"), false);
@@ -265,6 +265,27 @@ test("green-screen bedtime page is chroma green and tonight-only", async () => {
   assert.match(html, /stopPropagation/);
   assert.equal(html.includes("Where the Wild Things"), false);
   assert.equal(/Dr\.|Professor |TED Talk/.test(html), false);
+});
+
+test("daily stories prefer older and rarer — famous common tales stay in MORE STORIES", () => {
+  const pool = tonightPool();
+  const ids = pool.map((s) => s.id);
+  assert.equal(ids.includes("goldilocks"), false);
+  assert.equal(ids.includes("cinderella"), false);
+  assert.equal(ids.includes("peter-rabbit"), false);
+  assert.equal(ids.includes("three-pigs"), false);
+  assert.ok(ids.includes("diamonds-toads") || ids.includes("donkeyskin"));
+  assert.ok(ids.includes("star-money"));
+  assert.ok(ids.includes("buried-moon"));
+  for (const s of pool) {
+    assert.ok(inferRarity(s) >= 4, s.id);
+  }
+  const perrault = STORIES.find((s) => s.id === "diamonds-toads");
+  const tin = STORIES.find((s) => s.id === "tin-soldier");
+  assert.ok(inferYear(perrault) < inferYear(tin));
+  assert.ok(listeningRank(perrault) > listeningRank(tin));
+  assert.match(ageLine(perrault), /older · rarer/);
+  assert.match(ageLine(perrault), /1697/);
 });
 
 test("someone can teach listening — older and rarer, no invented expert", () => {

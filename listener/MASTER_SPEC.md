@@ -161,7 +161,7 @@ Later: Multipeer Connectivity, hydrophones, ultrasonic microphones, external vis
 
 Classic public-domain children's stories and one original house story. They are something to listen to. They are not wildlife encounters and do not go in the Signal Library.
 
-One little bedtime story a day. Same calendar day, same story. Prefer older and rarer public-domain tales for that daily pick.
+One little bedtime story a day. Same calendar day, same story. The older and rarer, the better: daily pick ranks rare public-domain tales first, then older years (Perrault before Potter). Famous common tales stay under MORE STORIES.
 
 Someone can teach listening. The teacher is whoever is there — not an invented expert. Lessons live in `app/js/lessons.js`. The older and rarer the listening, the better.
 

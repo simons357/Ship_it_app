@@ -86,7 +86,7 @@
     </div>
   </div>
   <script type="module">
-    import { tonightStory } from "./js/stories.js";
+    import { ageLine, tonightStory } from "./js/stories.js";
     import { todayLesson } from "./js/lessons.js";
 
     const params = new URLSearchParams(location.search);
@@ -108,12 +108,12 @@
     let timer = 0;
     const stamp = () => {
       when.textContent = kind === "lesson"
-        ? `A lesson · ${today} · for whoever is teaching · ${i + 1} / ${book.pages.length}`
-        : `Tonight · ${today} · one little story · ${i + 1} / ${book.pages.length}`;
+        ? `A lesson · older · rarer · ${today} · for whoever is teaching · ${i + 1} / ${book.pages.length}`
+        : `Tonight · older · rarer · ${today} · ${i + 1} / ${book.pages.length}`;
     };
     const paint = () => {
       title.textContent = book.title;
-      source.textContent = book.source;
+      source.textContent = ageLine(book);
       line.textContent = book.pages[i] || "";
       readBtn.textContent = kind === "lesson" ? "I’LL TEACH" : "I’LL READ";
       stamp();

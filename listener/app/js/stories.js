@@ -393,7 +393,6 @@ export const STORIES = Object.freeze([
     source: "After Oscar Wilde, 1888",
     rights: "public-domain",
     bedtime: true,
-    rare: true,
     pages: [
       "A giant built a wall so children could not play in his garden.",
       "Then spring would not come. The trees stayed winter.",
@@ -421,6 +420,132 @@ export const STORIES = Object.freeze([
       "Good night. Stand where you are. That is enough courage.",
     ],
   },
+  {
+    id: "diamonds-toads",
+    title: "Diamonds and Toads",
+    source: "After Charles Perrault",
+    rights: "public-domain",
+    bedtime: true,
+    rare: true,
+    year: 1697,
+    pages: [
+      "A widow had two daughters. One was proud. One was kind.",
+      "The kind girl went to the well, and gave a drink to an old woman.",
+      "The woman was a fairy. Flowers and diamonds fell from the girl’s mouth when she spoke.",
+      "The proud sister went for the same gift, and was rude.",
+      "Toads and snakes fell from her mouth.",
+      "Kindness had been the only magic.",
+      "Good night. Speak gently, then sleep.",
+    ],
+  },
+  {
+    id: "donkeyskin",
+    title: "Donkeyskin",
+    source: "After Charles Perrault",
+    rights: "public-domain",
+    bedtime: true,
+    rare: true,
+    year: 1697,
+    pages: [
+      "A princess fled a house that asked too much of her.",
+      "She wore a donkey’s skin and worked in a kitchen, far away.",
+      "On Sundays she put on a dress the color of the sun, and a prince saw her.",
+      "He fell ill for the girl in the gold dress.",
+      "She baked a ring into a cake. The ring fit only her.",
+      "The skin came off. She was herself again.",
+      "Good night. The true dress can wait until morning.",
+    ],
+  },
+  {
+    id: "queen-bee",
+    title: "The Queen Bee",
+    source: "After the Brothers Grimm",
+    rights: "public-domain",
+    bedtime: true,
+    rare: true,
+    year: 1812,
+    pages: [
+      "Three brothers walked the world. The youngest was called Simpleton, and he would not let the others hurt ants, or ducks, or bees.",
+      "They came to a castle of stone brothers and a king’s three tasks.",
+      "The ants gathered the pearls.",
+      "The ducks found the key in the lake.",
+      "The queen bee chose the youngest princess from among the sleeping girls.",
+      "The kindness had been remembered.",
+      "Good night. Leave the small lives alone.",
+    ],
+  },
+  {
+    id: "water-of-life",
+    title: "The Water of Life",
+    source: "After the Brothers Grimm",
+    rights: "public-domain",
+    bedtime: true,
+    rare: true,
+    year: 1812,
+    pages: [
+      "A king was dying. His sons went to find the water of life.",
+      "The two proud sons would not help a small man on the road, and were shut in ravines.",
+      "The youngest son shared his bread, and was shown the way.",
+      "He took the water, and a sword, and bread that never finished.",
+      "The brothers stole the water and lied. The truth came out.",
+      "The king drank, and lived, and the youngest had been enough.",
+      "Good night. The small help on the road was the whole journey.",
+    ],
+  },
+  {
+    id: "cap-o-rushes",
+    title: "Cap o’ Rushes",
+    source: "After the English folk tale, Joseph Jacobs",
+    rights: "public-domain",
+    bedtime: true,
+    rare: true,
+    year: 1890,
+    pages: [
+      "A father asked his daughters how much they loved him.",
+      "The youngest said, As much as meat loves salt.",
+      "He sent her away.",
+      "She made a cap of rushes, and worked in a kitchen, and went to a dance in her own dress.",
+      "At a feast she had the meat served without salt. The father understood.",
+      "She was his daughter, and the cap came off.",
+      "Good night. Some love is quiet, like salt.",
+    ],
+  },
+  {
+    id: "buried-moon",
+    title: "The Buried Moon",
+    source: "After the Lincolnshire folk tale",
+    rights: "public-domain",
+    bedtime: true,
+    rare: true,
+    year: 1800,
+    pages: [
+      "The moon came down to see the bog at night, and the bog-things caught her, and buried her under a stone.",
+      "The nights were black. People lost the path.",
+      "A man heard a crying under the earth, and called the others.",
+      "They lifted the stone. The moon rose.",
+      "The path was visible again.",
+      "They had listened for what was buried, not for what was already named.",
+      "Good night. If the light is under a stone, look.",
+    ],
+  },
+  {
+    id: "well-worlds-end",
+    title: "The Well of the World’s End",
+    source: "After the English folk tale, Joseph Jacobs",
+    rights: "public-domain",
+    bedtime: true,
+    rare: true,
+    year: 1890,
+    pages: [
+      "A girl was sent to the well of the world’s end with a sieve, and told to fill it.",
+      "A frog told her to stop the holes with moss and clay.",
+      "The sieve held. The frog asked to sleep on her bed.",
+      "She promised, and then she kept the promise.",
+      "In the morning the frog was a man, and the well was only a well again.",
+      "The kept word had been the magic.",
+      "Good night. Do the small hard thing, then rest.",
+    ],
+  },
 ]);
 
 export function storyById(id) {
@@ -432,12 +557,54 @@ export function dayNumber(date = new Date()) {
   return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000);
 }
 
-/** Older and rarer tales first. Famous ones stay in MORE STORIES. */
+const COMMON_TITLE =
+  /Goldilocks|Cinderella|Three Little Pigs|Red Riding Hood|Peter Rabbit|Gingerbread|Jack and the Beanstalk|Tortoise and the Hare|Ugly Duckling|Wind and the Sun|Little Red Hen|Princess and the Pea/;
+
+export function inferYear(item) {
+  if (Number.isFinite(item.year)) return item.year;
+  const src = item.source || "";
+  if (/Aesop/i.test(src)) return -560;
+  if (/Perrault/i.test(src)) return 1697;
+  if (/Grimm/i.test(src)) return 1812;
+  if (/Andersen/i.test(src)) return 1843;
+  if (/Asbjørnsen|Moe/i.test(src)) return 1841;
+  if (/Jacobs/i.test(src)) return 1890;
+  if (/Lincolnshire|Buried Moon/i.test(src)) return 1800;
+  if (/Potter/i.test(src)) return 1902;
+  if (/Wilde/i.test(src)) return 1888;
+  if (/Listener story/i.test(src)) return 2026;
+  if (/whoever is teaching/i.test(src)) return 0;
+  if (/folk/i.test(src)) return 1800;
+  return 1900;
+}
+
+export function inferRarity(item) {
+  if (Number.isFinite(item.rarity)) return item.rarity;
+  if (COMMON_TITLE.test(item.title)) return 1;
+  if (item.rare) return 5;
+  return 2;
+}
+
+/** Higher is better: rarer first, then older. */
+export function listeningRank(item) {
+  return inferRarity(item) * 10000 - inferYear(item);
+}
+
+export function ageLine(item) {
+  const y = inferYear(item);
+  const rare = inferRarity(item) >= 4;
+  const yearBit = y < 0 ? "ancient" : y >= 2020 ? "" : String(y);
+  return [item.source, yearBit, rare ? "older · rarer" : ""]
+    .filter(Boolean)
+    .join(" · ");
+}
+
+/** Daily pool: rare enough, older first. Famous common tales stay in MORE STORIES. */
 export function tonightPool() {
-  const rare = STORIES.filter((s) => s.bedtime && s.rare);
-  if (rare.length >= 4) return rare;
-  const list = STORIES.filter((s) => s.bedtime);
-  return list.length ? list : STORIES;
+  const bedtime = STORIES.filter((s) => s.bedtime);
+  const rare = bedtime.filter((s) => inferRarity(s) >= 4);
+  const pool = rare.length >= 4 ? rare : bedtime;
+  return [...pool].sort((a, b) => listeningRank(b) - listeningRank(a));
 }
 
 /** One little bedtime story a day. Same calendar day, same story. */

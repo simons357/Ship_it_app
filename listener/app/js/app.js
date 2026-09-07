@@ -23,7 +23,7 @@ import {
 } from "./audio.js";
 import { clockLabel, fetchFieldWeather, skyPeriod, weatherLine } from "./weather.js";
 import { indexOwnerSearch, ownerEndpoints, queryOwnerSearch } from "./plugins.js";
-import { STORIES, storyById, tonightStory } from "./stories.js";
+import { STORIES, ageLine, listeningRank, storyById, tonightStory } from "./stories.js";
 import { LESSONS, lessonById, todayLesson } from "./lessons.js";
 
 const $ = (id) => document.getElementById(id);
@@ -238,7 +238,7 @@ function refreshRecordHome() {
     if (recording) status.textContent = "RECORDING. Original stays on this phone.";
     else if (denied) status.textContent = FAILURE.micDenied;
     else if (pendingKeep) status.textContent = "What was that?";
-    else status.textContent = "Tonight’s story, or a lesson in listening. Then the field.";
+    else status.textContent = "The older and rarer, the better.";
   }
   if (btn) {
     btn.disabled = false;
@@ -336,7 +336,10 @@ function paintStory() {
   const page = $("storyPage");
   if (!nav || !title || !page) return;
   if (storyNavOpen) {
-    const list = bookKind === "lesson" ? LESSONS : STORIES;
+    const list =
+      bookKind === "lesson"
+        ? [...LESSONS].sort((a, b) => listeningRank(b) - listeningRank(a))
+        : [...STORIES].sort((a, b) => listeningRank(b) - listeningRank(a));
     const attr = bookKind === "lesson" ? "data-lesson" : "data-story";
     nav.innerHTML = list
       .map((s) => `<button type="button" ${attr}="${s.id}" class="${s.id === story.id ? "on" : ""}">${s.title}</button>`)
@@ -348,7 +351,7 @@ function paintStory() {
       <button type="button" data-more="1">${bookKind === "lesson" ? "MORE LESSONS" : "MORE STORIES"}</button>`;
   }
   title.textContent = story.title;
-  if (source) source.textContent = story.source;
+  if (source) source.textContent = ageLine(story);
   const i = Math.max(0, Math.min(storyPage, story.pages.length - 1));
   page.textContent = story.pages[i];
   const green = $("greenLink");
