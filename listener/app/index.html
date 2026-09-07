@@ -10,28 +10,38 @@
   <meta name="apple-mobile-web-app-title" content="LISTENER">
   <title>LISTENER</title>
   <meta name="description" content="What the wild is saying. A wildlife-only field instrument.">
-  <meta name="listener-build" content="cursor-grok-start-stop">
-  <!-- LISTENER build: cursor-grok START/STOP/ON AIR. Not the Claude Savannah-marsh demo. -->
+  <meta name="listener-build" content="cursor-grok-listen-stories">
+  <!-- LISTENER: stories you listen to, then the field. No grocery START ball. -->
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=13">
-  <link rel="stylesheet" href="./css/app.css?v=13">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=15">
+  <link rel="stylesheet" href="./css/app.css?v=15">
 </head>
 <body class="listening">
   <div id="onboard" class="onboard show sky-night">
     <div id="sky" class="sky" aria-hidden="true"></div>
     <div id="onboardInner">
-      <img class="rune" src="./icons/icon-192.png?v=13" alt="" width="88" height="88">
+      <img class="rune" src="./icons/icon-192.png?v=15" alt="" width="88" height="88">
       <div class="word">LISTENER</div>
       <div class="tag">WHAT THE WILD IS SAYING</div>
-      <div class="build-mark">START / STOP / ON AIR</div>
+      <div class="build-mark">A STORY IS SOMETHING YOU LISTEN TO</div>
       <div class="field-clock" id="fieldClock"></div>
       <div class="field-wx" id="fieldWeather" hidden></div>
       <div class="field-role" id="fieldRole" hidden></div>
-      <p class="record-status" id="recordStatus">Tap START. Put the phone down. Tap STOP when you are done.</p>
+      <p class="record-status" id="recordStatus">Classic stories first. Then the wild. Both are for listening.</p>
+      <div class="storybook" id="storybook">
+        <div class="story-nav" id="storyNav"></div>
+        <h2 class="story-title" id="storyTitle"></h2>
+        <p class="story-source" id="storySource"></p>
+        <div class="story-page" id="storyPage"></div>
+        <div class="story-actions">
+          <button class="wide" id="storyListen" type="button">LISTEN</button>
+          <button class="ghost" id="storyStop" type="button">STOP</button>
+        </div>
+      </div>
       <div class="on-air" id="onAir" hidden><i></i><span>ON AIR</span></div>
       <div class="rec-timer" id="recTimer" hidden>00:00</div>
       <div class="live-meter" id="liveMeter" hidden aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      <button class="record-btn" id="recordBtn" type="button">START</button>
+      <button class="listen-pill" id="recordBtn" type="button">LISTEN TO THE FIELD</button>
       <form id="whatWasThat" class="what-was hidden">
         <label for="whatText">What was that?</label>
         <input id="whatText" type="text" placeholder="rain, a bird, or leave UNKNOWN" autocomplete="off" enterkeyhint="done">
@@ -108,6 +118,6 @@
   <div class="toast" id="toast" hidden></div>
   <div class="overlay" id="overlay"><div class="sheet" id="sheet"></div></div>
 
-  <script type="module" src="./js/app.js?v=13"></script>
+  <script type="module" src="./js/app.js?v=15"></script>
 </body>
 </html>

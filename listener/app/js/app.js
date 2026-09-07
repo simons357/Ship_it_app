@@ -23,6 +23,7 @@ import {
 } from "./audio.js";
 import { clockLabel, fetchFieldWeather, skyPeriod, weatherLine } from "./weather.js";
 import { indexOwnerSearch, ownerEndpoints, queryOwnerSearch } from "./plugins.js";
+import { STORIES, storyById } from "./stories.js";
 
 const $ = (id) => document.getElementById(id);
 let state = rememberDevice(loadState());
@@ -47,6 +48,7 @@ let recTick = null;
 let stopMeter = null;
 let airpodsOn = false;
 let recordBound = false;
+let storyBound = false;
 
 function persist() {
   saveState(state);
@@ -239,8 +241,8 @@ function refreshRecordHome() {
   }
   if (btn) {
     btn.disabled = false;
-    btn.textContent = recording ? "STOP" : "START";
-    btn.className = recording ? "record-btn stop" : "record-btn";
+    btn.textContent = recording ? "STOP THE FIELD" : "LISTEN TO THE FIELD";
+    btn.className = recording ? "listen-pill stop" : "listen-pill";
   }
   if (air) air.hidden = !recording;
   const meter = $("liveMeter");
@@ -294,12 +296,88 @@ function showOnboard() {
   el.classList.add("show");
   document.body.classList.add("listening");
   bindRecordHome();
+  bindStorybook();
   refreshRecordHome();
   detectAirpods();
 }
 
 function recordHomeHTML() {
-  return "START STOP What was that? LOCAL FIELD";
+  return "LISTEN TO THE FIELD What was that? LOCAL FIELD STORIES";
+}
+
+let storyId = STORIES[0].id;
+let storyUtter = null;
+let storyPage = 0;
+
+function stopStoryVoice() {
+  try {
+    window.speechSynthesis?.cancel();
+  } catch {
+    /* no speech */
+  }
+  storyUtter = null;
+  const btn = $("storyListen");
+  if (btn) btn.textContent = "LISTEN";
+}
+
+function paintStory() {
+  const story = storyById(storyId);
+  const nav = $("storyNav");
+  const title = $("storyTitle");
+  const source = $("storySource");
+  const page = $("storyPage");
+  if (!nav || !title || !page) return;
+  nav.innerHTML = STORIES.map(
+    (s) => `<button type="button" data-story="${s.id}" class="${s.id === story.id ? "on" : ""}">${s.title}</button>`
+  ).join("");
+  title.textContent = story.title;
+  if (source) source.textContent = story.source;
+  const i = Math.max(0, Math.min(storyPage, story.pages.length - 1));
+  page.textContent = story.pages[i];
+}
+
+function speakStory() {
+  const story = storyById(storyId);
+  if (!window.speechSynthesis) {
+    toast("This phone will not read aloud. You can still read the page.");
+    return;
+  }
+  stopStoryVoice();
+  storyPage = 0;
+  paintStory();
+  const btn = $("storyListen");
+  if (btn) btn.textContent = "LISTENING";
+  const say = (i) => {
+    if (i >= story.pages.length) {
+      stopStoryVoice();
+      return;
+    }
+    storyPage = i;
+    paintStory();
+    const u = new SpeechSynthesisUtterance(story.pages[i]);
+    u.rate = 0.92;
+    u.onend = () => say(i + 1);
+    u.onerror = () => stopStoryVoice();
+    storyUtter = u;
+    window.speechSynthesis.speak(u);
+  };
+  say(0);
+}
+
+function bindStorybook() {
+  paintStory();
+  if (storyBound) return;
+  storyBound = true;
+  $("storyNav")?.addEventListener("click", (ev) => {
+    const b = ev.target.closest("[data-story]");
+    if (!b) return;
+    stopStoryVoice();
+    storyId = b.dataset.story;
+    storyPage = 0;
+    paintStory();
+  });
+  $("storyListen")?.addEventListener("click", () => speakStory());
+  $("storyStop")?.addEventListener("click", () => stopStoryVoice());
 }
 
 async function ensureGeo() {

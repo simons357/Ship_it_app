@@ -27,7 +27,7 @@ If the first screen says **START / STOP / ON AIR** under the title, you have thi
 
 The hostname is still random Shipstatic junk, not the product name. A name like Listener needs your Shipstatic or GitHub Pages account. Old hosts such as `dreamy-dust-…` and `spectral-rune-…` are leftovers.
 
-This is LISTENER. One **START** button. It becomes **STOP**. No mode quiz.
+This is LISTENER. Classic stories first — because a story is something you listen to. Then the field. No grocery-store START ball.
 
 1. Open the link in **Safari**.
 2. Share → **Add to Home Screen**.
