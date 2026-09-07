@@ -19,13 +19,13 @@ Do not explain the product. Paste `BASE44_PROMPT.txt` into a new Base44 app. Ste
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-**This build (story, listening lesson, green screen):** https://silent-avatar-c6a29r8.shipstatic.com/
+**This build (older and rarer first):** https://electric-dome-ys99qg7.shipstatic.com/
 
-Green screen story: https://silent-avatar-c6a29r8.shipstatic.com/bedtime.html
+Green screen story: https://electric-dome-ys99qg7.shipstatic.com/bedtime.html
 
-Green screen lesson: https://silent-avatar-c6a29r8.shipstatic.com/bedtime.html?kind=lesson
+Green screen lesson: https://electric-dome-ys99qg7.shipstatic.com/bedtime.html?kind=lesson
 
-Claim: https://my.shipstatic.com/claim/1c4b441a1affc434d73043aafefe1fe8
+Claim: https://my.shipstatic.com/claim/01a9bbe47bbdf548f5a0c3274c7bb92d
 
 **TITAN-X story for an investor (read aloud / LISTEN):** https://precise-prism-3ad673t.shipstatic.com/
 
