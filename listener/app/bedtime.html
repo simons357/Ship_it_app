@@ -158,11 +158,17 @@
 
     document.getElementById("next").onclick = () => next();
     document.getElementById("stop").onclick = stop;
-    document.getElementById("hide").onclick = () => document.body.classList.add("clean");
-    line.onclick = () => next();
+    document.getElementById("hide").onclick = (e) => {
+      e.stopPropagation();
+      document.body.classList.add("clean");
+    };
+    line.onclick = (e) => {
+      e.stopPropagation();
+      next();
+    };
     document.body.addEventListener("click", (e) => {
       if (!document.body.classList.contains("clean")) return;
-      if (e.target.id === "line" || e.target.closest(".line")) return;
+      if (e.target.closest(".bar")) return;
       document.body.classList.remove("clean");
     });
     modeBtn.onclick = () => {

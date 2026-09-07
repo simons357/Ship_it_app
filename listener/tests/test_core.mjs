@@ -254,6 +254,7 @@ test("green-screen bedtime page is chroma green and tonight-only", async () => {
   assert.match(html, /I’LL READ|I'LL READ/);
   assert.match(html, /NIGHT LAMP/);
   assert.match(html, /HIDE BUTTONS/);
+  assert.match(html, /stopPropagation/);
   assert.equal(html.includes("Where the Wild Things"), false);
 });
 
