@@ -28,6 +28,7 @@ import { gpsQuality, distanceM, projectRelative } from "../app/js/geo.js";
 import { makeLocalOriginalBlob } from "../app/js/audio.js";
 import { skyPeriod, weatherLine } from "../app/js/weather.js";
 import { ownerEndpoints } from "../app/js/plugins.js";
+import { STORIES, tonightStory, dayNumber } from "../app/js/stories.js";
 
 test("coarse location rounds to ~11 km and never stays exact", () => {
   const c = coarseLocation(32.01234, -81.09876);
@@ -214,11 +215,46 @@ test("ON AIR stays hidden until recording — display:flex must not leak past [h
   assert.match(html, /id="onAir"[^>]*hidden/);
   assert.match(html, /id="recordBtn"[^>]*>LISTEN TO THE FIELD</);
   assert.match(html, /storyListen/);
+  assert.match(html, /A STORY IS SOMETHING YOU LISTEN TO/);
+  assert.match(html, /bedtime\.html/);
+  assert.match(html, /GREEN SCREEN · READ TO THE CHILDREN/);
   assert.equal(/id="recordBtn"[^>]*\bstart\b/.test(html), false);
   assert.match(html, /icon-192\.png/);
   assert.equal(html.includes("LISTEN TO THIS RAIN"), false);
   assert.match(css, /\.on-air\[hidden\][\s\S]*display:\s*none\s*!important/);
   assert.match(css, /\.live-meter\[hidden\]/);
+});
+
+test("one little bedtime story a day — same calendar day, same story", () => {
+  const morning = tonightStory(new Date(2026, 8, 7, 8, 0, 0));
+  const night = tonightStory(new Date(2026, 8, 7, 22, 30, 0));
+  const tomorrow = tonightStory(new Date(2026, 8, 8, 8, 0, 0));
+  assert.equal(morning.id, night.id);
+  assert.notEqual(morning.id, tomorrow.id);
+  assert.equal(morning.bedtime, true);
+  assert.ok(morning.pages.length >= 5);
+  assert.equal(dayNumber(new Date(2026, 8, 7, 1)), dayNumber(new Date(2026, 8, 7, 23)));
+});
+
+test("stories are public-domain or original — no copyrighted picture books", () => {
+  const banned = /Where the Wild Things|Cat in the Hat|Green Eggs|Goodnight Moon|Sendak|Seuss|Harry Potter/;
+  assert.ok(STORIES.length >= 10);
+  for (const s of STORIES) {
+    assert.match(s.rights, /public-domain|original/);
+    assert.equal(s.bedtime, true);
+    assert.ok(s.pages.every((p) => typeof p === "string" && p.length > 0));
+    assert.equal(banned.test([s.title, s.source, ...s.pages].join(" ")), false);
+  }
+});
+
+test("green-screen bedtime page is chroma green and tonight-only", async () => {
+  const html = await readFile(new URL("../app/bedtime.html", import.meta.url), "utf8");
+  assert.match(html, /#00FF00/);
+  assert.match(html, /tonightStory/);
+  assert.match(html, /I’LL READ|I'LL READ/);
+  assert.match(html, /NIGHT LAMP/);
+  assert.match(html, /HIDE BUTTONS/);
+  assert.equal(html.includes("Where the Wild Things"), false);
 });
 
 test("relative plot stays finite", () => {

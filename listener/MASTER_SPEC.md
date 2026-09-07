@@ -157,6 +157,12 @@ Later: Multipeer Connectivity, hydrophones, ultrasonic microphones, external vis
 15. Sound/X-Ray Lab
 16. additional sensors
 
+## Listening stories
+
+Classic public-domain children's stories and one original house story. They are something to listen to. They are not wildlife encounters and do not go in the Signal Library.
+
+One little bedtime story a day. Same calendar day, same story. The green-screen reader is `app/bedtime.html` (chroma `#00FF00`) so a parent can stand in front of their screen and read to the children. Do not paste copyrighted picture-book text.
+
 ## Consumer onboarding
 
 Screen 1: LISTENER — What the wild is saying.

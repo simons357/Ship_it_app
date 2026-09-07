@@ -10,6 +10,7 @@ export const STORIES = Object.freeze([
     title: "The House That Listened",
     source: "A Listener story",
     rights: "original",
+    bedtime: true,
     pages: [
       "Once there was a house.",
       "It was not a loud house.",
@@ -31,6 +32,7 @@ export const STORIES = Object.freeze([
     title: "The Wind and the Sun",
     source: "After Aesop",
     rights: "public-domain",
+    bedtime: true,
     pages: [
       "The Wind and the Sun once had a quarrel.",
       "Each said, I am stronger.",
@@ -51,6 +53,7 @@ export const STORIES = Object.freeze([
     title: "The Ugly Duckling",
     source: "After Hans Christian Andersen",
     rights: "public-domain",
+    bedtime: true,
     pages: [
       "In the reeds, a duckling came last of all.",
       "He was not like the others, and they said so.",
@@ -70,6 +73,7 @@ export const STORIES = Object.freeze([
     title: "The Elves and the Shoemaker",
     source: "After the Brothers Grimm",
     rights: "public-domain",
+    bedtime: true,
     pages: [
       "There was a shoemaker who had leather for one last pair.",
       "He cut the leather, and went to bed, and left the work on the bench.",
@@ -85,10 +89,250 @@ export const STORIES = Object.freeze([
       "Do not invent helpers who were never there.",
     ],
   },
+  {
+    id: "princess-pea",
+    title: "The Princess and the Pea",
+    source: "After Hans Christian Andersen",
+    rights: "public-domain",
+    bedtime: true,
+    pages: [
+      "A prince wanted a real princess.",
+      "One night, in the rain, a girl knocked at the door.",
+      "The old queen put a pea under twenty mattresses.",
+      "In the morning the girl said, I hardly slept. Something hard was there.",
+      "Then they knew she was a real princess.",
+      "Even a small true thing can be felt.",
+      "Good night. The pea can stay in the story.",
+    ],
+  },
+  {
+    id: "goldilocks",
+    title: "Goldilocks and the Three Bears",
+    source: "After the English folk tale",
+    rights: "public-domain",
+    bedtime: true,
+    pages: [
+      "Three bears lived in a house in the woods. Father. Mother. Little Bear.",
+      "They went for a walk while the porridge cooled.",
+      "Goldilocks came in. She tasted the porridge. One was too hot. One was too cold. One was just right.",
+      "She sat in the chairs. She lay in the beds. Little Bear’s was just right, and she fell asleep.",
+      "The bears came home. Someone has been eating. Someone has been sitting. Someone is still here.",
+      "Goldilocks woke, and ran, and did not come back that night.",
+      "The bears ate their supper, and the house was theirs again.",
+      "Good night. Stay in your own bed.",
+    ],
+  },
+  {
+    id: "three-pigs",
+    title: "The Three Little Pigs",
+    source: "After the English folk tale",
+    rights: "public-domain",
+    bedtime: true,
+    pages: [
+      "Three little pigs went out to make their houses.",
+      "The first made a house of straw. The wolf blew it down.",
+      "The second made a house of sticks. The wolf blew it down.",
+      "The third made a house of bricks. The wolf blew and blew, and the house stayed.",
+      "The wolf went down the chimney, and found a pot, and that was the end of his huffing.",
+      "The brick house kept them.",
+      "Good night. Strong walls. Quiet breath.",
+    ],
+  },
+  {
+    id: "little-red-hen",
+    title: "The Little Red Hen",
+    source: "After the folk tale",
+    rights: "public-domain",
+    bedtime: true,
+    pages: [
+      "The little red hen found a grain of wheat.",
+      "Who will help me plant it? Not I, said the others.",
+      "Who will help me cut it? Not I.",
+      "Who will help me bake the bread? Not I.",
+      "Then I will, said the hen. And she did.",
+      "Who will help me eat it? I will, said they.",
+      "No, said the hen. I will eat it myself.",
+      "And she did, and then she slept.",
+      "Good night. The work and the rest belong together.",
+    ],
+  },
+  {
+    id: "bremen",
+    title: "The Bremen Town Musicians",
+    source: "After the Brothers Grimm",
+    rights: "public-domain",
+    bedtime: true,
+    pages: [
+      "A donkey, a dog, a cat, and a rooster were old, and no one wanted them.",
+      "They walked toward Bremen to be musicians.",
+      "At night they saw a house with robbers and a table of food.",
+      "They stood on each other’s backs and made one great noise.",
+      "The robbers ran. The four friends ate, and slept, and stayed.",
+      "They never needed Bremen after all.",
+      "Good night. A small band is enough.",
+    ],
+  },
+  {
+    id: "peter-rabbit",
+    title: "The Tale of Peter Rabbit",
+    source: "After Beatrix Potter, 1902",
+    rights: "public-domain",
+    bedtime: true,
+    pages: [
+      "Mrs. Rabbit said, Don’t go into Mr. McGregor’s garden.",
+      "Flopsy, Mopsy, and Cotton-tail were good.",
+      "Peter went anyway, and ate lettuces and beans and radishes.",
+      "Mr. McGregor saw him. Peter lost his shoes and his new jacket.",
+      "He hid in a watering can, and sneezed, and at last he found the gate.",
+      "He ran home. His mother put him to bed with chamomile tea.",
+      "The good rabbits had bread and milk and blackberries.",
+      "Good night. Tomorrow is another garden.",
+    ],
+  },
+  {
+    id: "star-money",
+    title: "The Star Money",
+    source: "After the Brothers Grimm",
+    rights: "public-domain",
+    bedtime: true,
+    pages: [
+      "A child had nothing but the clothes she wore and a piece of bread.",
+      "She gave the bread to a hungry person.",
+      "She gave her cap, and her jacket, and her dress, to those who were cold.",
+      "She stood in the dark in her little shirt.",
+      "Stars fell down as shining coins, and her shirt became the finest linen.",
+      "She was rich enough, and she was not alone.",
+      "Good night. Give what you can. Sleep warm.",
+    ],
+  },
+  {
+    id: "red-riding-hood",
+    title: "Little Red Riding Hood",
+    source: "After Charles Perrault and the Brothers Grimm",
+    rights: "public-domain",
+    bedtime: true,
+    pages: [
+      "A child in a red hood took a cake to grandmother.",
+      "Stay on the path, said her mother.",
+      "A wolf asked where she was going, and ran ahead.",
+      "He put on grandmother’s clothes and waited in the bed.",
+      "What big ears, what big eyes, what big teeth, said the child.",
+      "The woodcutter came. The wolf was gone. Grandmother was safe.",
+      "Good night. Stay on the path. Come home.",
+    ],
+  },
+  {
+    id: "billy-goats",
+    title: "The Three Billy Goats Gruff",
+    source: "After Asbjørnsen and Moe",
+    rights: "public-domain",
+    bedtime: true,
+    pages: [
+      "Three goats wanted the grass on the other side of the bridge.",
+      "Under the bridge lived a troll.",
+      "The little goat said, Wait for my brother. He is bigger.",
+      "The middle goat said the same.",
+      "The biggest goat stamped and sent the troll into the water.",
+      "Then they ate the green grass, and the bridge was quiet.",
+      "Good night. Cross when it is your turn.",
+    ],
+  },
+  {
+    id: "tortoise-hare",
+    title: "The Tortoise and the Hare",
+    source: "After Aesop",
+    rights: "public-domain",
+    bedtime: true,
+    pages: [
+      "The hare laughed at the tortoise for being slow.",
+      "They raced.",
+      "The hare ran far ahead, and slept in the sun.",
+      "The tortoise did not stop.",
+      "When the hare woke, the tortoise was already there.",
+      "Slow and steady had finished the day.",
+      "Good night. No hurry now.",
+    ],
+  },
+  {
+    id: "jack-beanstalk",
+    title: "Jack and the Beanstalk",
+    source: "After the English folk tale",
+    rights: "public-domain",
+    bedtime: true,
+    pages: [
+      "Jack sold the cow for five beans.",
+      "His mother threw them out the window.",
+      "In the night a beanstalk grew into the clouds.",
+      "Jack climbed, and found a giant’s house, and a hen that laid gold.",
+      "Fee-fi-fo-fum, said the giant.",
+      "Jack climbed down, and the stalk fell, and the house was small again.",
+      "Good night. The beans can wait until morning.",
+    ],
+  },
+  {
+    id: "emperors-clothes",
+    title: "The Emperor’s New Clothes",
+    source: "After Hans Christian Andersen",
+    rights: "public-domain",
+    bedtime: true,
+    pages: [
+      "Two weavers said they could make cloth that fools could not see.",
+      "The emperor paid them. They wove nothing.",
+      "No one wanted to be the fool, so everyone praised the clothes.",
+      "The emperor walked in the street in what was not there.",
+      "A child said, He has nothing on.",
+      "Then the town could say it too.",
+      "Good night. The true thing is enough.",
+    ],
+  },
+  {
+    id: "cinderella",
+    title: "Cinderella",
+    source: "After Charles Perrault",
+    rights: "public-domain",
+    bedtime: true,
+    pages: [
+      "A girl sat in the ashes while others went to the ball.",
+      "A godmother came. Mice became horses. Rags became a dress.",
+      "Be home by midnight, she said.",
+      "Cinderella danced. The clock struck. She ran. One glass shoe stayed.",
+      "The prince looked for the foot that fit.",
+      "It was hers. The ashes were over.",
+      "Good night. Morning will find the right shoe.",
+    ],
+  },
+  {
+    id: "gingerbread-man",
+    title: "The Gingerbread Man",
+    source: "After the American folk tale",
+    rights: "public-domain",
+    bedtime: true,
+    pages: [
+      "An old woman baked a gingerbread man, and he jumped from the pan.",
+      "Run, run, as fast as you can, he said.",
+      "He ran from the woman, and the man, and the cow, and the horse.",
+      "A fox offered to carry him over the water.",
+      "That was the end of the running.",
+      "The kitchen was quiet again.",
+      "Good night. Stay on the plate until morning.",
+    ],
+  },
 ]);
 
 export function storyById(id) {
   return STORIES.find((s) => s.id === id) || STORIES[0];
+}
+
+export function dayNumber(date = new Date()) {
+  const d = new Date(date);
+  return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000);
+}
+
+/** One little bedtime story a day. Same calendar day, same story. */
+export function tonightStory(date = new Date()) {
+  const list = STORIES.filter((s) => s.bedtime);
+  const pool = list.length ? list : STORIES;
+  return pool[Math.abs(dayNumber(date)) % pool.length];
 }
 
 export function storyScript(story) {

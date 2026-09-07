@@ -23,7 +23,7 @@ import {
 } from "./audio.js";
 import { clockLabel, fetchFieldWeather, skyPeriod, weatherLine } from "./weather.js";
 import { indexOwnerSearch, ownerEndpoints, queryOwnerSearch } from "./plugins.js";
-import { STORIES, storyById } from "./stories.js";
+import { STORIES, storyById, tonightStory } from "./stories.js";
 
 const $ = (id) => document.getElementById(id);
 let state = rememberDevice(loadState());
@@ -305,9 +305,10 @@ function recordHomeHTML() {
   return "LISTEN TO THE FIELD What was that? LOCAL FIELD STORIES";
 }
 
-let storyId = STORIES[0].id;
+let storyId = tonightStory().id;
 let storyUtter = null;
 let storyPage = 0;
+let storyNavOpen = false;
 
 function stopStoryVoice() {
   try {
@@ -327,9 +328,13 @@ function paintStory() {
   const source = $("storySource");
   const page = $("storyPage");
   if (!nav || !title || !page) return;
-  nav.innerHTML = STORIES.map(
-    (s) => `<button type="button" data-story="${s.id}" class="${s.id === story.id ? "on" : ""}">${s.title}</button>`
-  ).join("");
+  if (storyNavOpen) {
+    nav.innerHTML = STORIES.map(
+      (s) => `<button type="button" data-story="${s.id}" class="${s.id === story.id ? "on" : ""}">${s.title}</button>`
+    ).join("");
+  } else {
+    nav.innerHTML = `<span class="tonight-mark">TONIGHT · ONE A DAY</span><button type="button" data-more="1">MORE STORIES</button>`;
+  }
   title.textContent = story.title;
   if (source) source.textContent = story.source;
   const i = Math.max(0, Math.min(storyPage, story.pages.length - 1));
@@ -369,6 +374,11 @@ function bindStorybook() {
   if (storyBound) return;
   storyBound = true;
   $("storyNav")?.addEventListener("click", (ev) => {
+    if (ev.target.closest("[data-more]")) {
+      storyNavOpen = true;
+      paintStory();
+      return;
+    }
     const b = ev.target.closest("[data-story]");
     if (!b) return;
     stopStoryVoice();

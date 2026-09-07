@@ -27,16 +27,16 @@ Claim: https://my.shipstatic.com/claim/b4fd737a55f0284f28ea1807d28dc54e
 
 Claim that story page: https://my.shipstatic.com/claim/debe8aa2cc7e6c2f1812e61843bcdf9c
 
-If the first screen says **START / STOP / ON AIR** under the title, you have this build. If it says Savannah marsh, Air mode, Water mode, Party mode, or lists clapper rails / painted buntings, that is Claude’s demo, not this app.
+If the first screen says **A STORY IS SOMETHING YOU LISTEN TO** and **GREEN SCREEN · READ TO THE CHILDREN**, you have this build. If it says Savannah marsh, Air mode, Water mode, Party mode, or lists clapper rails / painted buntings, that is Claude’s demo, not this app.
 
 The hostname is still random Shipstatic junk, not the product name. A name like Listener needs your Shipstatic or GitHub Pages account. Old hosts such as `dreamy-dust-…` and `spectral-rune-…` are leftovers.
 
-This is LISTENER. Classic stories first — because a story is something you listen to. Then the field. No grocery-store START ball.
+This is LISTENER. Tonight’s bedtime story first — one a day, from famous public-domain books. Then the field. No grocery-store START ball.
 
 1. Open the link in **Safari**.
 2. Share → **Add to Home Screen**.
-3. Tap **START**. Allow the microphone. Put the phone down.
-4. Tap **STOP**. If it does not know the sound, type what it was (rain) and tap **KEEP**.
+3. Tap **LISTEN** to hear tonight’s story, or **GREEN SCREEN · READ TO THE CHILDREN** to stand in front of the green screen and read it. **I’LL READ** turns the pages. **HIDE BUTTONS** leaves only the words on chroma green.
+4. **LISTEN TO THE FIELD** is the wildlife instrument. Allow the microphone. Put the phone down. Tap **STOP THE FIELD**. If it does not know the sound, type what it was (rain) and tap **KEEP**.
 
 Later: your weather and ChatVault can plug in through `app/js/plugins.js`. Not now.
 

@@ -13,21 +13,21 @@
   <meta name="listener-build" content="cursor-grok-listen-stories">
   <!-- LISTENER: stories you listen to, then the field. No grocery START ball. -->
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=15">
-  <link rel="stylesheet" href="./css/app.css?v=15">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=17">
+  <link rel="stylesheet" href="./css/app.css?v=17">
 </head>
 <body class="listening">
   <div id="onboard" class="onboard show sky-night">
     <div id="sky" class="sky" aria-hidden="true"></div>
     <div id="onboardInner">
-      <img class="rune" src="./icons/icon-192.png?v=15" alt="" width="88" height="88">
+      <img class="rune" src="./icons/icon-192.png?v=17" alt="" width="88" height="88">
       <div class="word">LISTENER</div>
       <div class="tag">WHAT THE WILD IS SAYING</div>
       <div class="build-mark">A STORY IS SOMETHING YOU LISTEN TO</div>
       <div class="field-clock" id="fieldClock"></div>
       <div class="field-wx" id="fieldWeather" hidden></div>
       <div class="field-role" id="fieldRole" hidden></div>
-      <p class="record-status" id="recordStatus">Classic stories first. Then the wild. Both are for listening.</p>
+      <p class="record-status" id="recordStatus">Tonight’s bedtime story. One a day. Then the field.</p>
       <div class="storybook" id="storybook">
         <div class="story-nav" id="storyNav"></div>
         <h2 class="story-title" id="storyTitle"></h2>
@@ -36,6 +36,7 @@
         <div class="story-actions">
           <button class="wide" id="storyListen" type="button">LISTEN</button>
           <button class="ghost" id="storyStop" type="button">STOP</button>
+          <a class="ghost green-link" href="./bedtime.html">GREEN SCREEN · READ TO THE CHILDREN</a>
         </div>
       </div>
       <div class="on-air" id="onAir" hidden><i></i><span>ON AIR</span></div>
@@ -118,6 +119,6 @@
   <div class="toast" id="toast" hidden></div>
   <div class="overlay" id="overlay"><div class="sheet" id="sheet"></div></div>
 
-  <script type="module" src="./js/app.js?v=15"></script>
+  <script type="module" src="./js/app.js?v=17"></script>
 </body>
 </html>
