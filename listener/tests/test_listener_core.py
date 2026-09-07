@@ -51,6 +51,7 @@ class WildlifeOnly(unittest.TestCase):
         self.assertIn("attachLevelMeter", (ROOT / "app/js/audio.js").read_text())
         self.assertIn("LOCAL FIELD", APP)
         self.assertNotIn("LISTEN TO THIS RAIN", HTML)
+        self.assertNotIn("Tap START", APP)
         self.assertNotIn("THIS IS THE FIRST SOUND", HTML)
         self.assertIn("cursor-grok-listen-stories", HTML)
         self.assertIn("A STORY IS SOMETHING YOU LISTEN TO", HTML)

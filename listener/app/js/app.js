@@ -237,7 +237,7 @@ function refreshRecordHome() {
     if (recording) status.textContent = "RECORDING. Original stays on this phone.";
     else if (denied) status.textContent = FAILURE.micDenied;
     else if (pendingKeep) status.textContent = "What was that?";
-    else status.textContent = "Tap START. Put the phone down. Tap STOP when you are done.";
+    else status.textContent = "Tonight’s bedtime story. One a day. Then the field.";
   }
   if (btn) {
     btn.disabled = false;
@@ -719,7 +719,7 @@ function renderField() {
     $("liveMeta").innerHTML = brg != null ? `BEARING<br>${Math.round((brg + 360) % 360)}°` : "START";
   } else {
     live.querySelectorAll("small")[0].textContent = "LOCAL FIELD";
-    live.querySelector("b").textContent = "Tap START on the field screen";
+    live.querySelector("b").textContent = "Listen to the field when you are ready";
     live.querySelectorAll("small")[1].textContent =
       s.startGpsQuality === "fading" || fix?.quality === "fading"
         ? "GPS fading — original will still stay on this phone."

@@ -221,6 +221,8 @@ test("ON AIR stays hidden until recording — display:flex must not leak past [h
   assert.equal(/id="recordBtn"[^>]*\bstart\b/.test(html), false);
   assert.match(html, /icon-192\.png/);
   assert.equal(html.includes("LISTEN TO THIS RAIN"), false);
+  const app = await readFile(new URL("../app/js/app.js", import.meta.url), "utf8");
+  assert.equal(app.includes("Tap START"), false);
   assert.match(css, /\.on-air\[hidden\][\s\S]*display:\s*none\s*!important/);
   assert.match(css, /\.live-meter\[hidden\]/);
 });
