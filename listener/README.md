@@ -19,11 +19,11 @@ Do not explain the product. Paste `BASE44_PROMPT.txt` into a new Base44 app. Ste
 
 ## Open on iPhone (Session app — not the parked Listener search)
 
-**This build (tonight’s bedtime story + green screen):** https://glossy-portal-jg7w3aq.shipstatic.com/
+**This build (tonight’s bedtime story + green screen):** https://glitchy-shard-s6uch5g.shipstatic.com/
 
-Green screen: https://glossy-portal-jg7w3aq.shipstatic.com/bedtime.html
+Green screen: https://glitchy-shard-s6uch5g.shipstatic.com/bedtime.html
 
-Claim: https://my.shipstatic.com/claim/3d2de48e73e153f38378ddeb073e054d
+Claim: https://my.shipstatic.com/claim/2dfa0fc2a4f708422d2ca84a04a12e9f
 
 **TITAN-X story for an investor (read aloud / LISTEN):** https://precise-prism-3ad673t.shipstatic.com/
 
