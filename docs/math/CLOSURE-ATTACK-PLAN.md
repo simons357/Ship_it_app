@@ -59,6 +59,22 @@ DA ranking (impact × closability): multi-rep Bridge\* ≫ Paper1 A–C packagin
 | Route C Gap A′ (spectral limit) | \(\lambda_{\min}/\log N\to -1/(2\pi)\) numeric only | Trial vector + rigorous limit |
 | Classical Phi without \(Q_1\) | \(1/r^4\) remainder | Different cancellation or accept augmentation |
 | Full \(\widetilde Q\) spectrum \(>-1/2\) | **Already false** | Kill theorem only |
+| **Route N PDE bridge** (GCD form → vortex-stretch / shell-transfer) | No map from arithmetic \(B_{M,j}\) to NS nonlinearity | New PDE theorem — not packaging |
+
+---
+
+## LEAD — Route N (shellwise convex bypass)  **[2026-09-08]**
+
+| | |
+|--|--|
+| **Where** | `docs/math/NS-EXTRACTION-LEDGER.md`; probe `scripts/route_n_shell_floor_probe.py` |
+| **Idea** | \(H_M[a]=\sum_j a_j B_{M,j}\); convexity \(\Rightarrow\lambda_{\min}(H_M[a])\ge\min_j\lambda_{\min}(B_{M,j})\) |
+| **Convexity** | **TRUE** for Hermitian convex combinations (Rayleigh / min-max) |
+| **Buys** | If uniform shellwise \(B_{M,j}\succeq(-1/2+\delta)I\), eliminates dynamic simplex / dominant-shell ratio / no-crossing **for the auxiliary operator only** |
+| **Shellwise \(\widetilde Q\) principal blocks** | Probe through \(M=256\): \(\min_j\lambda_{\min}\approx-0.234>-1/2\) even when full \(\lambda_{\min}(\widetilde Q)<-1/2\) — **LEAD** |
+| **Shellwise \(H_M\) principal blocks** | Probe: clears \(-1/2\) in checked range — **LEAD / not a theorem** |
+| **Does not buy** | NS regularity; still need PDE bridge |
+| **Status** | **LEAD** (convexity lemma + \(H\)-shell empirics); PDE gap remains **HARD**; do **not** claim Clay |
 
 ---
 
@@ -94,3 +110,5 @@ DA ranking (impact × closability): multi-rep Bridge\* ≫ Paper1 A–C packagin
 | Bridge\* digest | `docs/BRIDGE-STAR-PROOF.md` |
 | This plan | `docs/math/CLOSURE-ATTACK-PLAN.md` |
 | Cool Check kills | `docs/math/COOL-CHECK.md` |
+| Route N ledger | `docs/math/NS-EXTRACTION-LEDGER.md` |
+| Route N probe | `scripts/route_n_shell_floor_probe.py` |
