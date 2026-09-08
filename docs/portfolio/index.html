@@ -4,6 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Prime Field — App Portfolio · August 2026</title>
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="theme-color" content="#070b12" />
+  <meta property="og:title" content="Prime Field — App Portfolio · August 2026" />
+  <meta property="og:image" content="logo.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="logo.jpg" />
   <style>
     :root {
       --void: #070b12;
@@ -104,13 +112,41 @@
       font-family: system-ui, sans-serif;
       font-size: 0.85rem;
     }
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin: 0 0 1.1rem;
+    }
+    .brand-lockup img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: block;
+      background: #000;
+      object-fit: cover;
+      flex: 0 0 auto;
+    }
+    .brand-lockup .kicker { margin: 0; }
+    footer .foot-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: block;
+      background: #000;
+      object-fit: cover;
+      margin: 0 0 0.65rem;
+    }
     a { color: var(--solar); }
     .verdict { font-size: 1.12rem; max-width: 44rem; }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <p class="kicker">Prime Field Technologies LLC · Confidential working copy</p>
+    <div class="brand-lockup">
+      <img src="logo.jpg" width="72" height="72" alt="Prime Field Technologies" />
+      <p class="kicker">Prime Field Technologies LLC · Confidential working copy</p>
+    </div>
     <h1>App portfolio</h1>
     <p class="lede">Total inventory, ranked by likelihood to take money first. Prepared 17 August 2026 for Jonathan Simons. Ranking key: probability of first cash in 12 months — not headline TAM.</p>
     <p class="meta">Full write-up: <a href="APP-PORTFOLIO-2026-08.md">APP-PORTFOLIO-2026-08.md</a> · Contact: js@primefieldtechnologies.com</p>
@@ -206,6 +242,7 @@
     <p>If you need one figure for “what is the app inventory worth this week”: <strong>about $50,000</strong>, plus a call option that is only in the money if three holdings run and the rest starve. The book gets more valuable every time a logo is cut, not added.</p>
 
     <footer>
+      <img class="foot-mark" src="logo.jpg" width="36" height="36" alt="" />
       Opinion, not an appraisal. No documented revenue or LOI in the public record. Live URLs checked 17 Aug 2026. Sources listed in the markdown report.
     </footer>
   </main>
