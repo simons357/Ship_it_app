@@ -1,7 +1,7 @@
 # Prime Field — App Portfolio Review
 
 **Prepared for:** Jonathan Simons, Prime Field Technologies LLC / Simons Medical Innovations LLC  
-**Date:** 17 August 2026  
+**Date:** 17 August 2026 · **Correction:** 9 September 2026 (TarotSync is the tarot app; Harmonic Tarot is not)  
 **Question:** What is the total inventory, what is it worth, and which pieces are most likely to make money?  
 **Ranking key:** probability of **first cash in 12 months**, not headline TAM.
 
@@ -13,7 +13,7 @@ This is an independent read of what is actually on the shelf: live URLs, GitHub,
 
 You do not have a weak catalog. You have a **too-wide** catalog.
 
-There are **26 named software products**, plus about **12 explorer/dashboard modules** inside one visualizer family, plus **9 hardware / clinical / physical concepts**. Counted as named items, that is **about 47**. Counted as companies a buyer would underwrite, it is closer to **three**.
+There are **27 named software products**, plus about **12 explorer/dashboard modules** inside one visualizer family, plus **9 hardware / clinical / physical concepts**. Counted as named items, that is **about 48**. Counted as companies a buyer would underwrite, it is still a handful — and **one tarot company, not two**.
 
 **What the software inventory is worth today (as-is sale):** **$25,000–$120,000**. That is demo code, brand names, and a few live kiosks. No customers.
 
@@ -27,9 +27,12 @@ The money path is the same one already written in your keep/cut list and the ane
 
 | Slot | Holding | Job |
 | ---: | --- | --- |
-| **1** | **AquaQuarts** | First dollar. Luxury object. No FDA, no Clay. |
-| **2** | **Operator Assist** (Quantum Menu) | Founder-fit software. Cognitive load in the OR. |
-| **3** | **Field Lock** *or* **Maritime Coherence** | One B2B demo that can take a paid peek. Pick one. |
+| **1** | **TarotSync** | Live consumer app. This is the tarot product. Not Harmonic Tarot. |
+| **2** | **AquaQuarts** | Physical first dollar. Luxury object. No FDA, no Clay. |
+| **3** | **Operator Assist** (Quantum Menu) | Founder-fit software. Cognitive load in the OR. |
+| **4** | **Field Lock** *or* **Maritime Coherence** | One B2B demo that can take a paid peek. Pick one. |
+
+**Tarot decision (locked 9 Sep 2026):** do not build a second tarot app. **TarotSync** (`https://tarotsync.com/`) is the app. Harmonic Tarot (Replit / biometric-prime reading engine) is not the product — park it.
 
 Everything else is optionality, art, or drag.
 
@@ -52,34 +55,36 @@ Comparables used as a sanity check, not as a model: indie SaaS with a demo and n
 
 ### 3.1 Software you can open (or that has a public URL)
 
-| # | Name | Status checked 17 Aug 2026 | Where it lives |
+| # | Name | Status | Where it lives |
 | ---: | --- | --- | --- |
-| 1 | Field Lock | **Live** kiosk | https://field-lock.replit.app/ |
-| 2 | NAV-42 Adaptive Lattice | **Live** demo | https://nav-42.replit.app/ |
-| 3 | Maritime Coherence Dashboard | **Live** SPA | https://maritime-coherence-dashboard-100b68c0.base44.app/ |
-| 4 | Primefield Explorer | **Live** SPA | https://sfe-rh-explorer-v1-07f8121c.base44.app/ |
-| 5 | Solenne (Base44) | **Live** landing (`SolenneLP`) | https://solenne.base44.app/ |
-| 6 | Solenne.ai | **Coming soon** page | https://solenne.ai/ |
-| 7 | Prime Field hub | **Live** company site | https://primefield.tech/ |
-| 8 | The Harmonic Blueprint | **Live** Squarespace | https://www.theharmonicblueprint.com/ |
-| 9 | Kyrana | Text-only demo + GitHub | https://github.com/simons357/kyrana-oracle |
-| 10 | ExoRatio | URL up; prior audit: **no sellable signal** | https://exo-ratio-014dea2d.base44.app/ |
-| 11 | ChatVault | Hollow public shell | primefield.tech/chatvault |
-| 12 | Pac-Man | Hosted clone | primefield.tech/pacman |
-| 13 | Risk-style strategy | Hosted clone | primefield.tech/risk |
-| 14 | Q-Stack | Hosted experiment | primefield.tech/qstack |
-| 15 | Games hub | Index | primefield.tech/games |
-| 16 | Ship It | **Abandoned** (do not revive) | github.com/simons357/ship-it-code · Ship_it_app |
-| 17 | FieldEncrypt | Named platform, no standalone product | LinkedIn / company story |
-| 18 | SpectraLock | Naming lane next to Field Lock | Partner packet |
-| 19 | FieldPredict:Stocks | Named, not a shippable product | LinkedIn raise story |
-| 20 | FieldPredict:Sports | Named, not a shippable product | LinkedIn raise story |
-| 21 | Operator Assist / Quantum Menu | Concept (A-grade anesthesia board) | `docs/anesthesia/A-GRADE-PRODUCTS.md` |
-| 22 | HarborShield | Named port-protection system | LinkedIn (Apr 2026) |
-| 23 | DNASonifiers | Physics–art, URL on request | Inventory |
-| 24 | Planet Hunter | **Abandoned** | PR #13 |
-| 25 | Scallion | **Abandoned** | PR #13 |
-| 26 | CTW-PUF kiosk | **Not live** | ctw-puf.replit.app |
+| 1 | **TarotSync** | **Live** consumer app + paid unlock (checked 9 Sep 2026) | https://tarotsync.com/ |
+| 2 | Field Lock | **Live** kiosk | https://field-lock.replit.app/ |
+| 3 | NAV-42 Adaptive Lattice | **Live** demo | https://nav-42.replit.app/ |
+| 4 | Maritime Coherence Dashboard | **Live** SPA | https://maritime-coherence-dashboard-100b68c0.base44.app/ |
+| 5 | Primefield Explorer | **Live** SPA | https://sfe-rh-explorer-v1-07f8121c.base44.app/ |
+| 6 | Solenne (Base44) | **Live** landing (`SolenneLP`) | https://solenne.base44.app/ |
+| 7 | Solenne.ai | **Coming soon** page | https://solenne.ai/ |
+| 8 | Prime Field hub | **Live** company site | https://primefield.tech/ |
+| 9 | The Harmonic Blueprint | **Live** Squarespace | https://www.theharmonicblueprint.com/ |
+| 10 | Kyrana | Text-only demo + GitHub | https://github.com/simons357/kyrana-oracle |
+| 11 | ExoRatio | URL up; prior audit: **no sellable signal** | https://exo-ratio-014dea2d.base44.app/ |
+| 12 | ChatVault | Hollow public shell | primefield.tech/chatvault |
+| 13 | Pac-Man | Hosted clone | primefield.tech/pacman |
+| 14 | Risk-style strategy | Hosted clone | primefield.tech/risk |
+| 15 | Q-Stack | Hosted experiment | primefield.tech/qstack |
+| 16 | Games hub | Index | primefield.tech/games |
+| 17 | Ship It | **Abandoned** (do not revive) | github.com/simons357/ship-it-code · Ship_it_app |
+| 18 | FieldEncrypt | Named platform, no standalone product | LinkedIn / company story |
+| 19 | SpectraLock | Naming lane next to Field Lock | Partner packet |
+| 20 | FieldPredict:Stocks | Named, not a shippable product | LinkedIn raise story |
+| 21 | FieldPredict:Sports | Named, not a shippable product | LinkedIn raise story |
+| 22 | Operator Assist / Quantum Menu | Concept (A-grade anesthesia board) | `docs/anesthesia/A-GRADE-PRODUCTS.md` |
+| 23 | HarborShield | Named port-protection system | LinkedIn (Apr 2026) |
+| 24 | DNASonifiers | Physics–art, URL on request | Inventory |
+| 25 | Planet Hunter | **Abandoned** | PR #13 |
+| 26 | Scallion | **Abandoned** | PR #13 |
+| 27 | CTW-PUF kiosk | **Not live** | ctw-puf.replit.app |
+| — | Harmonic Tarot | **Not the product.** Parked. Do not build a second tarot app. | harmonic-tarot.replit.app |
 
 ### 3.2 Explorer / dashboard modules (one product family, not 12 companies)
 
@@ -101,7 +106,7 @@ Treat these as **skins of Explorer + Maritime**, not as a portfolio of startups.
 | EEG earphones | Research kit, not a medical device |
 | Music OS | Software layer for the earphones |
 
-**Census:** 26 software names + 12 modules + 9 physical/clinical concepts ≈ **47 named items**. **3 fundable slots.**
+**Census:** 27 software names + 12 modules + 9 physical/clinical concepts ≈ **48 named items**. **TarotSync is the tarot slot.** Harmonic Tarot is not a second company. **3–4 fundable slots** if TarotSync is taking cash.
 
 ---
 
@@ -109,18 +114,29 @@ Treat these as **skins of Explorer + Maritime**, not as a portfolio of startups.
 
 Rank is **cash probability**, then **why it belongs in the book**. Dollar ranges are opinion, not offers.
 
-### Rank 1 — AquaQuarts
+### Rank 1 — TarotSync
+
+| | |
+| --- | --- |
+| **As-is** | Live app at [tarotsync.com](https://tarotsync.com/). Free reading; paid unlock listed on-site (single reading and pack). No public ARR in this repo. |
+| **If focused 12 months** | This is already a checkout. Push traffic and keep the one product, not a new deck. |
+| **12-month cash odds** | **Highest among shipped software** — it is the only consumer app in this book with a live price. |
+| **Why it belongs** | It is the tarot product. Intention, 3-digit seed, focus, shuffle/split, location, 7-card cross. Entertainment positioning is already on the about page. |
+| **Why it can fail** | A second tarot brand (Harmonic Tarot / biometric-prime engine) splits the same buyer. Overclaiming “physics of the cards” next to NS work taxes cred. Payments/ops, not another prototype. |
+| **Portfolio job** | **Core. The tarot app. Do not start another.** |
+
+### Rank 2 — AquaQuarts
 
 | | |
 | --- | --- |
 | **As-is** | $0–$25k (story + brochure; no patent, no SKU, no channel) |
 | **If focused 12 months** | $10k–$150k revenue possible (restaurants, occasions, keep-the-decanter) |
-| **12-month cash odds** | **Highest in the catalog** |
+| **12-month cash odds** | **Highest physical SKU** — TarotSync is the live software checkout |
 | **Why it belongs** | It does not need your math to be true. It needs a vessel, a pour, a place (Lithia Springs), and a price. Luxury ritual converts without FDA, DIU, or a user funnel. Keep-the-decanter is a real retail mechanic. |
 | **Why it can fail** | “Structured water” health claims will get you killed in court and in the press. File IP before process talk. Do not announce a Cherokee partnership you do not have. |
 | **Portfolio job** | **Core. First dollar. Consumer book.** |
 
-### Rank 2 — Operator Assist (Quantum Menu)
+### Rank 3 — Operator Assist (Quantum Menu)
 
 | | |
 | --- | --- |
@@ -131,7 +147,7 @@ Rank is **cash probability**, then **why it belongs in the book**. Dollar ranges
 | **Why it can fail** | If you call it quantum physics, or replace the CRNA, or ship ten medical apps around it. Regulatory if you over-claim. |
 | **Portfolio job** | **Core. Clinical software book. Build this, not Vigilant-first.** |
 
-### Rank 3 — Field Lock
+### Rank 4 — Field Lock
 
 | | |
 | --- | --- |
@@ -140,9 +156,9 @@ Rank is **cash probability**, then **why it belongs in the book**. Dollar ranges
 | **12-month cash odds** | Medium-low — security is crowded (FIDO, YubiKey, Duo) |
 | **Why it belongs** | It is one of two products a stranger can actually click. Presence-bound, short-lived keys is a coherent story. Bundle SpectraLock / FieldEncrypt **into this name**. Do not run three encryption brands. |
 | **Why it can fail** | “World’s most secure / immune to quantum and AI” is not a sales asset. It is a credibility tax on every other holding. Sell a kiosk + a paid eval, or park it. |
-| **Portfolio job** | **Core B2B slot *or* Maritime — not both this quarter.** |
+| **Portfolio job** | **Core B2B slot *or* Maritime — not both this quarter.** Same attention budget as Rank 5. |
 
-### Rank 4 — Maritime Coherence Dashboard (+ HarborShield as the enterprise name)
+### Rank 5 — Maritime Coherence Dashboard (+ HarborShield as the enterprise name)
 
 | | |
 | --- | --- |
@@ -153,7 +169,7 @@ Rank is **cash probability**, then **why it belongs in the book**. Dollar ranges
 | **Why it can fail** | Base44 permission drama. No integration. Competing with exactEarth, Windward, MarineTraffic on “pretty map.” |
 | **Portfolio job** | **Alternate B2B core.** Same attention budget as Field Lock. |
 
-### Rank 5 — Vigilant Patch
+### Rank 6 — Vigilant Patch
 
 | | |
 | --- | --- |
@@ -164,7 +180,7 @@ Rank is **cash probability**, then **why it belongs in the book**. Dollar ranges
 | **Why it can fail** | FDA, liability, “we replace BIS,” EEG-earphones-as-OR-device. Hardware eats founders. |
 | **Portfolio job** | **Option. File IP. Do not build hardware yet.** |
 
-### Rank 6 — NAV-42
+### Rank 7 — NAV-42
 
 | | |
 | --- | --- |
@@ -175,7 +191,7 @@ Rank is **cash probability**, then **why it belongs in the book**. Dollar ranges
 | **Why it can fail** | Prior internal note: freeze **% drag** claims; naïve honeycomb often **increases** drag. Overselling here poisons defense conversations. |
 | **Portfolio job** | **Hold / NDA vault. No public % claims. Not the 90-day beam.** |
 
-### Rank 7 — Solenne
+### Rank 8 — Solenne
 
 | | |
 | --- | --- |
@@ -186,7 +202,7 @@ Rank is **cash probability**, then **why it belongs in the book**. Dollar ranges
 | **Why it can fail** | ModiFace / Perfect Corp / every AR try-on already live. A Base44 LP is not a beauty OS. Split attention with Prime Field defense branding confuses buyers. |
 | **Portfolio job** | **Option under Simons Medical. Do not fund until Operator Assist or AquaQuarts throws off cash.** |
 
-### Rank 8 — The Harmonic Blueprint (book / site)
+### Rank 9 — The Harmonic Blueprint (book / site)
 
 | | |
 | --- | --- |
@@ -197,7 +213,7 @@ Rank is **cash probability**, then **why it belongs in the book**. Dollar ranges
 | **Why it can fail** | Selling it as validated physics or as a Clay wrapper. |
 | **Portfolio job** | **Brand / art. Keep. Do not lead investor meetings with it.** |
 
-### Rank 9 — Kyrana
+### Rank 10 — Kyrana
 
 | | |
 | --- | --- |
@@ -207,7 +223,7 @@ Rank is **cash probability**, then **why it belongs in the book**. Dollar ranges
 | **Why it can fail** | It is a toy. Treating it as a product company is spray. |
 | **Portfolio job** | **Keep as a portfolio object. $0 budget.** |
 
-### Rank 10 — Primefield Explorer (and its modules)
+### Rank 11 — Primefield Explorer (and its modules)
 
 | | |
 | --- | --- |
@@ -217,7 +233,7 @@ Rank is **cash probability**, then **why it belongs in the book**. Dollar ranges
 | **Why it can fail** | Counting ten modules as ten apps. Using it as evidence of RH/NS. |
 | **Portfolio job** | **Gallery. One link. Not a startup.** |
 
-### Rank 11 — ChatVault
+### Rank 12 — ChatVault
 
 | | |
 | --- | --- |
@@ -226,7 +242,7 @@ Rank is **cash probability**, then **why it belongs in the book**. Dollar ranges
 | **Why it does not belong now** | Hollow URL. Crowded (ChatGPT history, Notion, Rewind). |
 | **Portfolio job** | **Ship an MVP or delete from the catalog.** |
 
-### Rank 12 — Ship It
+### Rank 13 — Ship It
 
 | | |
 | --- | --- |
@@ -240,6 +256,7 @@ Rank is **cash probability**, then **why it belongs in the book**. Dollar ranges
 
 | Holding | Verdict | Why |
 | --- | --- | --- |
+| **Harmonic Tarot** | **Park. Not the product.** | Replit biometric / prime-frequency deck. **TarotSync is the app.** Do not run two tarot brands. |
 | **ExoRatio** | **Cut** | Internal keep/cut: negative null-model audit; no sellable signal. |
 | **FieldPredict Stocks / Sports** | **Park hard** | Securities and gaming regulation. Trust landmine. One bad screenshot next to “physics predicts markets” discounts Field Lock and NAV-42. |
 | **FieldEncrypt as a separate company** | **Fold into Field Lock** | Same lane, three brands, zero shipped crypto product. Superlative claims are a liability. |
@@ -257,12 +274,12 @@ Rank is **cash probability**, then **why it belongs in the book**. Dollar ranges
 Think in **books**, not in 47 logos.
 
 ```text
-BOOK A  — CASH (fund)          AquaQuarts
+BOOK A  — CASH (fund)          TarotSync (live) · AquaQuarts (physical)
 BOOK B  — SOFTWARE (fund)      Operator Assist
 BOOK C  — ONE B2B PEEK (fund)  Field Lock  XOR  Maritime/HarborShield
 BOOK D  — OPTIONS (no budget)  Vigilant IP · NAV-42 vault · Solenne later
 BOOK E  — BRAND / ART          Harmonic Blueprint · Explorer · Kyrana
-BOOK F  — DO NOT FUND          Predict · ExoRatio · clones · Clay · Ship It
+BOOK F  — DO NOT FUND          Harmonic Tarot · Predict · ExoRatio · clones · Clay · Ship It
 BOOK G  — SEPARATE VEHICLE     TITAN-X (only if a real aerospace partner appears)
 ```
 
@@ -270,7 +287,7 @@ BOOK G  — SEPARATE VEHICLE     TITAN-X (only if a real aerospace partner appea
 
 **One-ask rule:** a partner meeting gets **three links max**. Recommended set:
 
-1. AquaQuarts one-pager (or Field Lock kiosk, if the room is security)
+1. TarotSync (or AquaQuarts one-pager if the room is physical product)
 2. Operator Assist one-pager (clinical) **or** Maritime dashboard (ops)
 3. primefield.tech as company card — not as a tour of games
 
@@ -292,11 +309,11 @@ If you need a single number for “what is our inventory of apps worth this week
 
 ## 8. 90-day scorecard (so this is not a poster)
 
-| Week | AquaQuarts | Operator Assist | B2B peek (pick one) |
-| ---: | --- | --- | --- |
-| 1–2 | File or schedule patent counsel; lock public copy with **no health claims** | One-pager a CRNA gets in 60 seconds | Choose Field Lock **or** Maritime. Unpublish the other from decks. |
-| 3–6 | One vessel prototype + price (keep-the-decanter) | Tabletop sim: 2 scripted crises → menu of ≤5 options | Paid peek offer ($5–15k eval), not a free tour |
-| 7–12 | One restaurant or occasion test | Show it to 5 CRNAs; record “would I use this under fire?” | One named prospect, one metric, one expiry date |
+| Week | TarotSync | AquaQuarts | Operator Assist | B2B peek (pick one) |
+| ---: | --- | --- | --- | --- |
+| 1–2 | Keep one brand. Do not ship Harmonic Tarot. Traffic + checkout working | File or schedule patent counsel; lock public copy with **no health claims** | One-pager a CRNA gets in 60 seconds | Choose Field Lock **or** Maritime. Unpublish the other from decks. |
+| 3–6 | One distribution channel (X column, magazine, share loop) | One vessel prototype + price (keep-the-decanter) | Tabletop sim: 2 scripted crises → menu of ≤5 options | Paid peek offer ($5–15k eval), not a free tour |
+| 7–12 | Named revenue or a clear “not converting” diagnosis | One restaurant or occasion test | Show it to 5 CRNAs; record “would I use this under fire?” | One named prospect, one metric, one expiry date |
 
 If nothing in that table has a **dollar or a named buyer** by day 90, the portfolio is still a museum.
 
@@ -304,6 +321,8 @@ If nothing in that table has a **dollar or a named buyer** by day 90, the portfo
 
 ## 9. Sources (what this ranking is based on)
 
+- Live URL check, 9 Sep 2026: **TarotSync** https://tarotsync.com/ (this is the tarot product)
+- Harmonic Tarot (harmonic-tarot.replit.app): parked; not a second app
 - Live URL check, 17 Aug 2026: Field Lock, NAV-42, Maritime, Explorer, Solenne Base44, solenne.ai, primefield.tech, Harmonic Blueprint  
 - Hosted app index: `gh-pages` / `titan-x-web/apps/`  
 - Master inventory: `partner-packet/INVENTORY.md` (intro-portfolio branch, sweep 2026-07-14)  
@@ -318,4 +337,4 @@ If nothing in that table has a **dollar or a named buyer** by day 90, the portfo
 
 ## 10. One paragraph for the holder
 
-You are not sitting on a worthless pile, and you are not sitting on a $90 million software company. You are sitting on **too many names**, a few **real demos**, and **one actual profession** (anesthesia / complexity under load) that most of the catalog ignores. AquaQuarts can take money without proving a field equation. Operator Assist is the software that belongs to your biography. Field Lock or Maritime can be a paid peek if you pick one and drop the superlatives. TITAN-X, FieldPredict, and Clay packaging are not how this book pays rent. The portfolio gets more valuable every time you **cut a logo**, not every time you add one.
+You are not sitting on a worthless pile, and you are not sitting on a $90 million software company. You are sitting on **too many names**, a few **real demos**, **one live consumer checkout (TarotSync)**, and **one actual profession** (anesthesia / complexity under load) that most of the catalog ignores. TarotSync is the tarot app — not Harmonic Tarot. AquaQuarts can take money without proving a field equation. Operator Assist is the software that belongs to your biography. Field Lock or Maritime can be a paid peek if you pick one and drop the superlatives. TITAN-X, FieldPredict, and Clay packaging are not how this book pays rent. The portfolio gets more valuable every time you **cut a logo**, not every time you add one.
