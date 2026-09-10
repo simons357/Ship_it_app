@@ -59,13 +59,13 @@ Unrestricted \(k+p+r=0\) on *other* \(n\) can be nonempty for \(d=2\). The user 
 
 ---
 
-## What \(\mathcal R_\star\) did (user-reported; formula not in this repo)
+## What \(\mathcal R_\star\) did (user-reported; not recomputed here)
 
-Quoted from the 10 Sep 2026 note, **not recomputed here**:
+Quoted from the 10 Sep 2026 note, **not recomputed on this branch**:
 
 > Largest at the smallest shell: \(n=9\), \(\mathcal R_\star\simeq 0.11\). At \(n=89\), 144+120 keys, 288 closures, \(\mathcal R_\star\simeq 0.031\). The ratio falls, it does not track \(m^{1/2}\).
 
-Classification: **numerical evidence from an unrecovered script / session.** Key counts and closure counts above are independently reproduced. The ratio \(\mathcal R_\star\) is **not**, because no definition of \(\mathfrak T_c\) on this packet is filed in git.
+Classification: **numerical evidence from an unrecovered script / session.** Key counts and closure counts above are independently reproduced. The ratio’s **definition** is now locked in `five-lane-pack/docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`; the two numbers \(0.11\) and \(0.031\) have **not** been re-run against that formula here.
 
 ---
 

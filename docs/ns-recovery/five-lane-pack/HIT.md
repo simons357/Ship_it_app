@@ -3,6 +3,8 @@
 **Dropped into:** `docs/ns-recovery/five-lane-pack/`  
 **Date recovered:** 10 September 2026 (this agent)
 
+**Grok Heavy:** start at [`../GROK_HEAVY.md`](../GROK_HEAVY.md). Run JSON is under `results/`.
+
 This is **not** a proof. NS is **not** solved. Lemma★ is **OPEN**.
 
 ---

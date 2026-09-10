@@ -33,7 +33,11 @@ Isolated triangles, wide APs, narrow APs, and full adjacent spheres: **no kill**
 - Do not treat full lattice spheres as an additive basis of density \(\Theta(m^2)\).
 - Do not restore an AP-width \(D_s\) for this construction.
 - Do not claim a uniform triadic bound or Clay regularity from this ensemble.
-- Do not invent a \(\mathfrak T_c\) formula that is not filed. \(\mathcal R_\star\) values above are locked as reported; the ratio’s definition is still not in git.
+- Do not invent a second \(T_c\) formula. Canonical lock: `five-lane-pack/docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`,
+  \[
+  \mathcal R_\star(v)=\frac{(T_c(v)_+)^2}{\mathcal D_s(v)\,\|v\|_2^2\,Y(v)}.
+  \]
+  The values \(0.11\to 0.031\) are locked as **user-reported** on the natural ensemble; they have **not** been recomputed here with that formula.
 
 ---
 
@@ -50,5 +54,6 @@ H1 on the cylinder is the other live track if the packet line is shelved. It is 
 | `scripts/same_shell_packet_probe.py` | Combinatorial probe (keys, mixed closures, two-mass \(D_s\)) |
 | `tests/test_same_shell_packet.py` | Locks 48 / 288 / \(d=2\) zeros / \(O(m)\) not \(O(m^2)\) |
 | `docs/ns-recovery/SAME-SHELL-PACKET-NOTE.md` | Expanded packet note |
-| `docs/ns-recovery/CENTERED-SPECTRAL-DRIFT-MASTER-REPORT.md` | Prior-source recovery; exact Stokes-moment paste still missing |
-| `docs/ns-recovery/five-lane-pack/` | **PR #48 five-lane / Lemma★ pack** recovered 10 Sep 2026. Index: `five-lane-pack/HIT.md`. Live: https://github.com/simons357/Ship_it_app/pull/48 |
+| `docs/ns-recovery/CENTERED-SPECTRAL-DRIFT-MASTER-REPORT.md` | 7 Sep search; Stokes-moment paste was missing until PR #48 |
+| `docs/ns-recovery/GROK_HEAVY.md` | **Grok Heavy entry** — formulas, five-lane JSON, live work |
+| `docs/ns-recovery/five-lane-pack/` | PR #48 five-lane / Lemma★ pack. Index: `five-lane-pack/HIT.md`. Live: https://github.com/simons357/Ship_it_app/pull/48 |
