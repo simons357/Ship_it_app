@@ -10,8 +10,8 @@
 | Item | Value |
 |------|-------|
 | Branch | `cursor/ns-five-lane-lemma-star-1390` |
-| Tip commit | `c8cb29073d8c4cb377cde9d23bd9495a4f29c851` (9B canonical SoT rewrite); prior β-split `154f6b4` / locator `4ac5a2f` |
-| Tip subject | SoT: rewrite Attack 9B canonical exact-shell closing |
+| Tip commit | _(updated on full Lemma★ SoT lock — see `git log -1`)_ |
+| Tip subject | SoT: lock full exact Lemma★ shape form (\(D_s\), \(K_{\alpha,\beta}\) restricted) |
 | Remote | `origin/cursor/ns-five-lane-lemma-star-1390` |
 | GitHub PR | **https://github.com/simons357/Ship_it_app/pull/48** |
 | PR title | Five-lane Lemma★ drill: K=0 dead, ★ survives numeric |
@@ -41,68 +41,80 @@ All key SoT files under `/workspace/docs/math/ns_attacks/` are present on the fi
 
 ## Absolute defs extract (from `LEMMA_STAR_SHAPE_FORM.md` + `stokes_moments.py`)
 
-Linear moments:
+**Full Lemma★** (absolute SoT — not viscosity-primary; \(K_{\alpha,\beta}\) is **not** this):
 
 \[
-\|v\|_2^2=\sum|v_k|^2,\quad
-X=\|A^{1/2}v\|_2^2=\sum\lambda_k|v_k|^2,\quad
-Y=\|Av\|_2^2=\sum\lambda_k^2|v_k|^2,\quad
-Z=\|A^{3/2}v\|_2^2=\sum\lambda_k^3|v_k|^2,\quad
-\Lambda=Y/X.
+A=-P\Delta,\quad B(v,v)=P[(v\cdot\nabla)v],
 \]
-
-Centered spectral dissipation:
-
 \[
-\mathcal{D}_s=Z-\Lambda Y=Z-Y^2/X
+E=\|v\|_2^2,\quad
+X=\|A^{1/2}v\|_2^2,\quad
+Y=\|Av\|_2^2,\quad
+Z=\|A^{3/2}v\|_2^2,\quad
+\Lambda=Y/X,
+\]
+\[
+D_s=Z-Y^2/X=\|(A-\Lambda)A^{1/2}v\|_2^2,\qquad
+T_c=-\langle B(v,v),A(A-\Lambda)v\rangle.
+\]
+\[
+\boxed{
+\exists\,C_{\mathrm{geom}}<\infty\quad
+\forall\,v\in C^\infty_{\mathrm{div},0}(\mathbb{T}^3)\setminus\{0\}:\quad
+\bigl(T_c(v)_+\bigr)^2
+\le
+C_{\mathrm{geom}}\,D_s(v)\,\|v\|_2^2\,Y(v).
+}
+\]
+Equiv. (\(D_s>0\)): \(\sup (T_c)_+^2/(D_s\|v\|_2^2 Y)<\infty\). For \(D_s=0\): one shell and \(T_c=0\).
+
+**Alias:** \(\mathcal{D}_s\equiv D_s=Z-\Lambda Y\) (same object). Code `Tc = M - Λ N` matches the inner-product \(T_c\).
+
+Centered spectral dissipation (expanded):
+\[
+D_s=Z-\Lambda Y=Z-Y^2/X
 =\sum_k\lambda_k(\lambda_k-\Lambda)^2|v_k|^2.
 \]
 
-Nonlinear centered transfer:
-
+Nonlinear centered transfer (expanded):
 \[
-T_c=M-\Lambda N=\sum_k\lambda_k(\lambda_k-\Lambda)T_k
-=\sum_{p+q=k}\lambda_k(\lambda_k-\Lambda)\,
-\mathrm{Im}\bigl[(q\cdot v_p)(v_q\cdot\overline{v_k})\bigr].
+T_c=M-\Lambda N=\sum_k\lambda_k(\lambda_k-\Lambda)T_k.
 \]
 
 Sign check / viscosity packaging (\(\theta\), \(\nu\), \(C_0\)):
-
 \[
-\Lambda'=\frac{2}{X}\bigl(T_c-\nu\mathcal{D}_s\bigr),
+\Lambda'=\frac{2}{X}\bigl(T_c-\nu D_s\bigr),
 \]
 \[
-T_c\le\theta\nu\mathcal{D}_s+C_0\nu^{-1}\|v\|_2^2\,Y
-=\theta\nu\mathcal{D}_s+C_0\nu^{-1}\|v\|_2^2\,X\Lambda,
-\qquad
-C_0(\theta)=C_{\mathrm{geom}}/(4\theta).
+T_c\le\theta\nu D_s+C_0(\theta)\nu^{-1}\|u\|_2^2\,Y,\qquad
+C_{\mathrm{geom}}=4\theta\,C_0(\theta).
 \]
 
 Canonical shape★ quotient:
-
 \[
 \mathcal{R}_\star(v)
-=\frac{(T_c(v)_+)^2}{\mathcal{D}_s(v)\,\|v\|_2^2\,Y(v)}.
+=\frac{(T_c(v)_+)^2}{D_s(v)\,\|v\|_2^2\,Y(v)}.
 \]
 
 Code aliases in `stokes_moments.py`:
-- `E` \(=\|v\|_2^2\), `Tc` \(=T_c\), `Ds` \(=\mathcal{D}_s\)
+- `E` \(=\|v\|_2^2\), `Tc` \(=T_c\), `Ds` \(=D_s\) (alias \(\mathcal{D}_s\))
 - **`ratio_R_star_shape`** \(=\mathcal{R}_\star\) (**canonical**)
 - `ratio_R_star` — alias → same as `ratio_R_star_shape`
 - **`ratio_star`** — **legacy / different**: \(T_c/(E X\Lambda)\) post-Young (scales as \(1/a\)); **not** \(\mathcal R_\star\)
 
----
+**Near-shell lock:** \(K_{\alpha,\beta}\) is a restricted limiting-family probe only — **not** the full lemma.
 
 ## Precision corrections (user-confirmed SoT lock)
 
-1. **Attack 3 is NOT strictly HH→L.** It filters high-frequency **inputs** (Bony HH/HL/LL) without restricting **output** to low frequencies. Historical “HH→L” naming = HH-channel product gap, not a proved high→low output map. See `ATTACK_3_BONY_HH_L.md`.
-2. **Canonical quotient** is `ratio_R_star_shape`. Legacy `ratio_star` means something different (post-Young).
-3. **Attack 9C** is **SoT-only until implemented** — snapshot \(0.11\to0.031\) **lacks** supporting fixed-gap sweep script/data in PR #48.
-4. **Boxed \(K\):**
+1. **Full Lemma★** is the boxed shape inequality / \(\sup\mathcal{R}_\star<\infty\) in `LEMMA_STAR_SHAPE_FORM.md` — **not** \(K_{\alpha,\beta}\).
+2. **Attack 3 is NOT strictly HH→L.** It filters high-frequency **inputs** (Bony HH/HL/LL) without restricting **output** to low frequencies. Historical “HH→L” naming = HH-channel product gap, not a proved high→low output map. See `ATTACK_3_BONY_HH_L.md`.
+3. **Canonical quotient** is `ratio_R_star_shape`. Legacy `ratio_star` means something different (post-Young).
+4. **Attack 9C** is **SoT-only until implemented** — snapshot \(0.11\to0.031\) **lacks** supporting fixed-gap sweep script/data in PR #48.
+5. **Boxed \(K\)** (restricted near-shell probe only):
    \[
    K_{\alpha,\beta}=\sup_{Aw=\alpha w}\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\|w\|_2^4}.
    \]
-5. **Attack 9B CRITICAL:** reported \(\max K\approx0.641\) at \((\alpha,\beta)=(4,8)\) has \(\beta>\alpha\) → transfer to a **higher** shell — **NOT** HH→L. Genuine HH→L subfamily requires \(\beta<\alpha\) (sample max \(\approx0.0123\) at \((5,2)\)). Always report \(\beta>\alpha\) and \(\beta<\alpha\) maxima separately.
+6. **Attack 9B CRITICAL:** reported \(\max K\approx0.641\) at \((\alpha,\beta)=(4,8)\) has \(\beta>\alpha\) → transfer to a **higher** shell — **NOT** HH→L. Genuine HH→L subfamily requires \(\beta<\alpha\) (sample max \(\approx0.0123\) at \((5,2)\)). Always report \(\beta>\alpha\) and \(\beta<\alpha\) maxima separately. \(K_{\alpha,\beta}\) ≠ full ★.
 
 ### Confirmed originals (PR #48)
 

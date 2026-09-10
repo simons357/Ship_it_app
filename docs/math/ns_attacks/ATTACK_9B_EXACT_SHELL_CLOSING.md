@@ -2,11 +2,19 @@
 
 **Date:** 2026-09-10  
 **Branch:** `cursor/ns-five-lane-lemma-star-1390`  
-**Status:** **LIVE kill attempt** (numerics). Lemma★ **OPEN**. **NS not solved.**  
+**Status:** **LIVE kill attempt** (numerics). Lemma★ **OPEN**. **NS not solved.** Kill lane **LIVE**.  
 **Prior:** Attack 9A (AP packet) did **not** kill ★ — see [`ATTACK_9A_AP_PACKET_FAILURE.md`](./ATTACK_9A_AP_PACKET_FAILURE.md).  
-**Pack locator:** [`FIVE_LANE_PACK_LOCATOR.md`](./FIVE_LANE_PACK_LOCATOR.md) — PR https://github.com/simons357/Ship_it_app/pull/48
+**Pack locator:** [`FIVE_LANE_PACK_LOCATOR.md`](./FIVE_LANE_PACK_LOCATOR.md) — PR https://github.com/simons357/Ship_it_app/pull/48  
+**Full Lemma★ SoT:** [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md)
 
-**Canonical quotient:** code name `ratio_R_star_shape` \(=\mathcal{R}_\star\). Alias `ratio_R_star` → same. Legacy `ratio_star` \(=T_c/(E X\Lambda)\) is a **different** post-Young object — do **not** confuse with \(\mathcal{R}_\star\).
+**Canonical quotient:** code name `ratio_R_star_shape` \(=\mathcal{R}_\star=(T_c)_+^2/(D_s\|v\|_2^2 Y)\). Alias `ratio_R_star` → same. Legacy `ratio_star` \(=T_c/(E X\Lambda)\) is a **different** post-Young object — do **not** confuse with \(\mathcal{R}_\star\).  
+(Alias: older docs write \(\mathcal{D}_s\) for the same \(D_s=Z-Y^2/X\).)
+
+> **CRITICAL — scope of \(K_{\alpha,\beta}\):**  
+> Near-shell \(K_{\alpha,\beta}\) tests **only a restricted limiting family** (exact eigen-shell \(+\,\varepsilon\) closing).  
+> It is **not** the full Lemma★. The full lemma is the boxed shape inequality
+> \((T_c)_+^2\le C_{\mathrm{geom}}\,D_s\|v\|_2^2 Y\) over all smooth divergence-free mean-zero fields
+> (equivalently \(\sup\mathcal{R}_\star<\infty\)). See [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md).
 
 ---
 
@@ -26,7 +34,7 @@ The base packet \(w_\alpha\) may contain **many same-shell modes** (coherent fan
 
 ---
 
-## Boxed quantity
+## Boxed quantity (restricted near-shell probe — NOT the full lemma)
 
 \[
 \boxed{
@@ -37,8 +45,10 @@ K_{\alpha,\beta}
 }
 \]
 
+This \(K_{\alpha,\beta}\) is a **restricted near-shell / limiting-family test**. Bounding sample \(K\) does **not** prove the full Lemma★; unbounded \(K\) on this family would kill ★ along that family, but finite \(K\) on this family does **not** close the full lemma.
+
 If \(\sup_{\alpha,\beta}K_{\alpha,\beta}=\infty\), then \(\sup\mathcal{R}_\star=\infty\) along the corresponding \(\varepsilon\to0\) family → **★ dead**.  
-Finite sample maxima are **not** a proof that \(K\) is bounded; kill lane stays **LIVE**.
+Finite sample maxima are **not** a proof that \(K\) is bounded and are **not** a proof of ★; kill lane stays **LIVE**.
 
 ---
 

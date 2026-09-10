@@ -1,13 +1,14 @@
 """Stokes-moment / centered-drift calculus on T^3 Fourier Galerkin fields.
 
 Truth-only numerics for Lemma★ / Route N spectral drift attacks.
-Does NOT claim a proof. NS is not solved.
+Does NOT claim a proof. NS is not solved. Kill lane LIVE.
 
 Exact lock (see docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md):
 
   T^3 = (R/2πZ)^3
   v(x) = sum_{k≠0} v_k e^{ik·x},  k·v_k=0,  v_{-k}=conj(v_k)
   λ_k = |k|^2,  A = -PΔ,  (Av)_k = λ_k v_k
+  B(v,v) = P[(v·∇)v]
 
   ||v||_2^2 = sum |v_k|^2           (code alias: E)
   X = ||A^{1/2}v||_2^2 = sum λ_k |v_k|^2
@@ -15,20 +16,21 @@ Exact lock (see docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md):
   Z = ||A^{3/2}v||_2^2 = sum λ_k^3 |v_k|^2
   Λ = Y/X
 
-  Ds = Z − Λ Y = Z − Y^2/X
+  Ds = Z − Y^2/X = Z − Λ Y = ||(A−Λ) A^{1/2} v||_2^2
      = sum λ_k (λ_k−Λ)^2 |v_k|^2
      = (1/(2X)) sum_{k,ℓ} λ_k λ_ℓ (λ_k−λ_ℓ)^2 |v_k|^2 |v_ℓ|^2
+  (SoT writes D_s; older docs may write script D_s = mathcal{D}_s — same object.)
   Two shells α,β with energies e_α,e_β:
      Ds = α β (α−β)^2 e_α e_β / (α e_α + β e_β)
 
-  B(v,v) = P[(v·∇)v]
   B̂_k = i P_k sum_{p+q=k} (q·v_p) v_q ,  P_k = I − k⊗k/|k|^2
   T_k = −Re(B̂_k · conj(v_k)) = sum_{p+q=k} Im[(q·v_p)(v_q·conj(v_k))]
         (SIGNED Im — never abs)
   N = −⟨B,Av⟩ = sum λ_k T_k
   M = −⟨AB,Av⟩ = sum λ_k^2 T_k
-  Tc = M − Λ N = sum λ_k (λ_k−Λ) T_k
+  Tc = −⟨B(v,v), A(A−Λ)v⟩ = M − Λ N = sum λ_k (λ_k−Λ) T_k
      = sum_{p+q=k} λ_k (λ_k−Λ) Im[(q·v_p)(v_q·conj(v_k))]
+  (code: Tc = M - Lam * N — matches the inner-product SoT form)
 
   Sign check: Λ' = 2/X (Tc − ν Ds)
 
@@ -41,14 +43,20 @@ Exact lock (see docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md):
   LEGACY (different object):   ratio_star           = Tc / (E X Λ)  post-Young
                                (scales as 1/a on fixed shape; NOT R_★)
 
-Lemma★ — CANONICAL SHAPE FORM (OPEN; NS not solved):
-  (Tc(v)_+)^2 ≤ C_geom · Ds(v) · ||v||_2^2 · Y(v)
+Lemma★ — FULL exact shape form (OPEN; NS not solved):
+  ∃ C_geom < ∞  ∀ v ∈ C^∞_{div,0}(T^3)\\{0}:
+    (Tc(v)_+)^2 ≤ C_geom · Ds(v) · ||v||_2^2 · Y(v)
+  Equiv. (Ds>0): sup (Tc_+)^2 / (Ds ||v||_2^2 Y) < ∞
+  For Ds=0: one shell and Tc=0.
+  Viscosity packaging (0<θ<1):
+    Tc ≤ θ ν Ds + C_0(θ) ν^{-1} ||u||_2^2 Y,   C_geom = 4 θ C_0(θ)
+  Near-shell K_{α,β} is ONLY a restricted limiting-family probe — NOT the full lemma.
 
 Kill criteria (shape): R_★ → ∞ on a family; or Ds=0 with Tc>0.
 Failure to find a numerical counterexample does NOT close the kill lane —
 falsification and proof both remain LIVE.
 Pure single shell (Tc=0=Ds) is vacuous. Live attempt: almost-single-shell /
-coherent packet growth (Attack 9).
+coherent packet growth (Attack 9); 9B K_{α,β} restricted family only.
 HH→L can identify mechanism; only complete signed Tc kills ★.
 Amplitude and uniform Fourier dilation leave R_★ exactly invariant
 (do NOT claim they make the ratio smaller — that was an older non-optimized budget).
@@ -200,7 +208,10 @@ def nonlinear_B_fft_dealiased(field: Field, n_grid: int | None = None) -> Field:
 
 
 def Tc_from_B_field(field: Field, Buu: Field, Lambda: float | None = None) -> float:
-    """Complete signed Tc from a precomputed B̂ (triad or FFT)."""
+    """Complete signed Tc = −⟨B, A(A−Λ)v⟩ from a precomputed B̂ (triad or FFT).
+
+    Equivalent to M − Λ N with N=−⟨B,Av⟩, M=−⟨AB,Av⟩ (see module docstring / SoT).
+    """
     if Lambda is None:
         Lambda = moments(field)["Lambda"]
     Tc = 0.0
@@ -215,7 +226,11 @@ def Tc_from_B_field(field: Field, Buu: Field, Lambda: float | None = None) -> fl
 
 
 def moments(field: Field) -> Dict[str, float]:
-    """Linear Stokes moments. E := ||v||_2^2 = sum |v_k|^2."""
+    """Linear Stokes moments. E := ||v||_2^2 = sum |v_k|^2.
+
+    Ds := D_s = Z − Y^2/X = Z − Λ Y = ||(A−Λ) A^{1/2} v||_2^2
+    (SoT D_s; older docs may write mathcal{D}_s — same object).
+    """
     E = X = Y = Z = 0.0
     for k, v in field.items():
         amp2 = float(np.vdot(v, v).real)

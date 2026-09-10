@@ -12,65 +12,63 @@
 | “The kill lane is closed” | **FALSE.** Failure to find a numerical counterexample does **not** close falsification. |
 | “Amplitude or frequency makes the ratio smaller” | **FALSE for \(\mathcal R_\star\).** Concerns an older non-optimized budget. Correct \(\mathcal R_\star\) is **exactly invariant** under amplitude and uniform Fourier dilation. |
 
-## Canonical form: shape statement (exact lock)
+## Canonical form: FULL exact shape statement (absolute SoT)
 
-**Lemma★ is no longer a viscosity statement. It is a shape statement.**
-
-Exact torus / linear / \(\mathcal D_s\) / nonlinear / \(T_c\) / \(\mathcal R_\star\) formulas:
+**Lemma★ is a shape statement** (viscosity packaging is derived). Absolute lock:
 [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md).
 
-On divergence-free fields on \(\mathbb{T}^3=(\mathbb{R}/2\pi\mathbb{Z})^3\), with \(\lambda_k=|k|^2\), \(A=-P\Delta\),
+For nonzero mean-zero divergence-free \(v\) on \(\mathbb{T}^3=(\mathbb{R}/2\pi\mathbb{Z})^3\),
 \[
-\|v\|_2^2=\sum|v_k|^2,\quad
-X=\sum\lambda_k|v_k|^2,\quad
-Y=\sum\lambda_k^2|v_k|^2,\quad
-Z=\sum\lambda_k^3|v_k|^2,\quad
+A=-P\Delta,\quad B(v,v)=P[(v\cdot\nabla)v],
+\]
+\[
+E=\|v\|_2^2,\quad
+X=\|A^{1/2}v\|_2^2,\quad
+Y=\|Av\|_2^2,\quad
+Z=\|A^{3/2}v\|_2^2,\quad
 \Lambda=Y/X,
 \]
 \[
-\mathcal{D}_s=Z-\Lambda Y=Z-Y^2/X=\sum\lambda_k(\lambda_k-\Lambda)^2|v_k|^2\ge0,
+D_s=Z-Y^2/X=\|(A-\Lambda)A^{1/2}v\|_2^2,\qquad
+T_c=-\langle B(v,v),A(A-\Lambda)v\rangle.
 \]
+(Alias: older docs \(\mathcal{D}_s=Z-\Lambda Y\) — same as \(D_s\). Code: `Tc = M - Λ N` matches the inner-product form.)
+
+**Full Lemma★:**
 \[
-T_k=-\mathrm{Re}(\widehat B_k\cdot\overline{v_k})
-=\sum_{p+q=k}\mathrm{Im}\bigl[(q\cdot v_p)(v_q\cdot\overline{v_k})\bigr]
-\quad\text{(signed; no abs)},
-\]
-\[
-N=\sum\lambda_k T_k,\quad
-M=\sum\lambda_k^2 T_k,\quad
-T_c=M-\Lambda N=\sum\lambda_k(\lambda_k-\Lambda)T_k,
-\]
-the **canonical ★** asserts one geometric constant \(C_{\mathrm{geom}}\) such that
-\[
+\boxed{
+\exists\,C_{\mathrm{geom}}<\infty\quad
+\forall\,v\in C^\infty_{\mathrm{div},0}(\mathbb{T}^3)\setminus\{0\}:\quad
 \bigl(T_c(v)_+\bigr)^2
 \le
-C_{\mathrm{geom}}\,
-\mathcal{D}_s(v)\,
-\|v\|_2^2\,
-Y(v).
+C_{\mathrm{geom}}\,D_s(v)\,\|v\|_2^2\,Y(v).
+}
 \]
+Equivalently (\(D_s>0\)): \(\sup_v (T_c)_+^2/(D_s\|v\|_2^2 Y)<\infty\).  
+For \(D_s=0\): one shell and \(T_c=0\).  
+\(C_{\mathrm{geom}}\) depends only on fixed geometry/normalization — not amplitude, Fourier support, shell count, or viscosity.
 
 Complete quotient (**canonical** code: `ratio_R_star_shape`; alias `ratio_R_star`):
 \[
 \mathcal{R}_\star(v)
 =
-\frac{(T_c(v)_+)^2}{\mathcal{D}_s(v)\,\|v\|_2^2\,Y(v)}
-\quad(\mathcal{D}_s>0).
+\frac{(T_c(v)_+)^2}{D_s(v)\,\|v\|_2^2\,Y(v)}
+\quad(D_s>0).
 \]
+
+**Near-shell \(K_{\alpha,\beta}\):** restricted limiting-family probe only — **not** the full lemma ([`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md)).
 
 **Legacy `ratio_star`:** \(T_c/(E X\Lambda)\) — **different** post-Young object; do not confuse with \(\mathcal R_\star\).
 **\((T_c)_+\) vs prior \(T_c^2\):** when \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Kill cares about stretching \(T_c>0\).
 
-**Numerics hygiene:** do not compare \(0.065\), \(0.073\), \(1.93\times10^{-3}\) unless each used this exact formula.
-
 Sign check identity (code-locked):
 \[
-\Lambda'=\frac{2}{X}(T_c-\nu\mathcal{D}_s).
+\Lambda'=\frac{2}{X}(T_c-\nu D_s).
 \]
 
-Two-shell closed form (search harness + unit tests):
+Two-shell closed form:
 \[
-\mathcal{D}_s=\frac{\alpha\beta(\alpha-\beta)^2 e_\alpha e_\beta}{\alpha e_\alpha+\beta e_\beta}.
+D_s=\frac{\alpha\beta(\alpha-\beta)^2 e_\alpha e_\beta}{\alpha e_\alpha+\beta e_\beta}.
 \]
 
 If \(\sup_v\mathcal R_\star<\infty\), that supremum **is** ★ (up to \(4\theta\)). A finite list of small-\(\mathcal R_\star\) fields is **not** that number.
@@ -79,11 +77,11 @@ If \(\sup_v\mathcal R_\star<\infty\), that supremum **is** ★ (up to \(4\theta\
 
 ### Equivalent viscosity packaging (derived, not primary)
 
+For fixed \(0<\theta<1\):
 \[
-T_c\le\theta\nu\mathcal D_s+C_0\nu^{-1}\|v\|_2^2\,Y
-=\theta\nu\mathcal D_s+C_0\nu^{-1}\|v\|_2^2 X\Lambda,
+T_c(u)\le\theta\nu D_s(u)+C_0(\theta)\nu^{-1}\|u\|_2^2 Y(u),\qquad
+C_{\mathrm{geom}}=4\theta\,C_0(\theta).
 \]
-with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 
 **Invariants:** \(\mathcal R_\star(av)=\mathcal R_\star(v)\); \(\mathcal R_\star(v(n\cdot))=\mathcal R_\star(v)\).
 
@@ -94,7 +92,7 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | \(\mathcal R_\star(v_n)\to\infty\) on some smooth family | no finite \(C_{\mathrm{geom}}\) → **★ dead** |
 | \(\mathcal D_s=0\) and \(T_c>0\) | **★ dead** on that field |
 | Pure single shell (\(T_c=0=\mathcal D_s\)) | both sides vanish — **not** a kill |
-| Almost-single-shell / near two-shell / exact-shell+closing (9B) with \(\mathcal R_\star\to\infty\) or \(K_{\alpha,\beta}\to\infty\) | **LIVE kill attempt** (sample finite) |
+| Almost-single-shell / near two-shell / exact-shell+closing (9B) with \(\mathcal R_\star\to\infty\) or \(K_{\alpha,\beta}\to\infty\) | **LIVE kill attempt** on that **restricted** family (sample finite); \(K_{\alpha,\beta}\) ≠ full ★ |
 | AP / coherent packet fan (Attack 9A) | **Did not kill ★** — \(\mathcal D_s\) grew faster than \(T_c\) |
 | Fixed-gap spheres \(n,n+d\) (Attack 9C) | **Did not kill ★** — \(\mathcal R_\star\) falls \(0.11\to 0.031\); natural same-shell **NOT** a kill |
 | Designed \(\Theta(m^2)\) locked-phase closures (Attack 9D) | **LIVE falsifier** (spec; not run) |
@@ -109,10 +107,10 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | Young reduction of \(T_c\) toward a norm of \(B(v,v)\) | **Partial / formal** | Polarization exists; does not close 3D product gap |
 | \(\lvert T_c\rvert\le C\|v\|_2 X^{3/2}\) (or equiv) by Agmon/product | **GAP — does not close** | Attack 3 HH **input** bottleneck (not strict HH→L — no low-output restriction) |
 | Uniform geometric \(C_{\mathrm{geom}}\) / \(C_0\) for Lemma★ (shape form) | **OPEN — kill lane LIVE** | Sample maxes (shape★ formula only) are **not** a proof and **do not** close falsification |
-| Formula lock (linear / \(\mathcal D_s\) / \(T_c\) / \(\mathcal R_\star\) / \(\Lambda'\)) | **LOCKED in docs + unit tests** | `LEMMA_STAR_SHAPE_FORM.md`; `tests/test_ns_attacks_lemma_star.py` |
+| Formula lock (linear / \(D_s\) / \(T_c\) / \(\mathcal R_\star\) / \(\Lambda'\); full shape ★) | **LOCKED in docs + unit tests** | `LEMMA_STAR_SHAPE_FORM.md`; `tests/test_ns_attacks_lemma_star.py` |
 | Attack 8 correct record | **CORRECT RECORD** | Kill lane LIVE; \(\mathcal R_\star\) invariants; \((T_c)_+\) |
 | Attack 9A packet fan \(\gamma\) | **Did not kill ★** — \(\gamma\approx-1.39\) (decaying) | \(\mathcal D_s\|v\|_2^2 Y=O(1)\) false for AP family; see `ATTACK_9A_AP_PACKET_FAILURE.md` |
-| Attack 9B exact-shell \(K_{\alpha,\beta}\) | **LIVE** — \(\max_{\beta>\alpha}K\approx0.641\) at \((4,8)\); \(\max_{\beta<\alpha}K\approx0.0123\) at \((5,2)\) | Canonical SoT: `ATTACK_9B_EXACT_SHELL_CLOSING.md`; \((4,8)\) is **not** HH→L (\(\beta>\alpha\)); \(\mathcal R_\star\to K\); controls PASS; not a kill |
+| Attack 9B exact-shell \(K_{\alpha,\beta}\) | **LIVE** — \(\max_{\beta>\alpha}K\approx0.641\) at \((4,8)\); \(\max_{\beta<\alpha}K\approx0.0123\) at \((5,2)\) | **Restricted near-shell probe, not full ★**; SoT: `ATTACK_9B_EXACT_SHELL_CLOSING.md`; \((4,8)\) is **not** HH→L; controls PASS; not a kill |
 | Attack 9C fixed-gap spheres | **Did not kill ★** — \(\mathcal R_\star\) \(0.11\to 0.031\) | **SoT-only** — no sweep script/data in PR #48; natural same-shell **NOT** a kill |
 | Attack 9D \(\Theta(m^2)\) locked phase | **LIVE falsifier** (stub) | Designed \(\Theta(m^2)\)-closure subset with locked phases |
 
@@ -123,8 +121,8 @@ Reason from how **signed** triads add that stretching cannot get large unless sp
 ## Live door
 
 1. **Prove** the boxed shape inequality (uniform \(C_{\mathrm{geom}}\) / \(\sup\mathcal R_\star<\infty\)); **or**
-2. **Kill** by exhibiting a smooth shape family with \(\mathcal R_\star\to\infty\) (Attack 9D: designed \(\Theta(m^2)\) locked-phase closures; 9B: \(K_{\alpha,\beta}\to\infty\); almost-single-shell; **not** natural fixed-gap same-shell, **not** another widening AP packet) using **complete** \(T_c\); **or**
-3. Upgrade centering cancellation beyond \(T_c=M-\Lambda N\) to remove the dangerous HH→L piece.
+2. **Kill** by exhibiting a smooth shape family with \(\mathcal R_\star\to\infty\) (Attack 9D: designed \(\Theta(m^2)\) locked-phase closures; 9B: \(K_{\alpha,\beta}\to\infty\) on its **restricted** family; almost-single-shell; **not** natural fixed-gap same-shell, **not** another widening AP packet) using **complete** \(T_c\); **or**
+3. Upgrade centering cancellation beyond \(T_c=-\langle B,A(A-\Lambda)v\rangle\) to remove the dangerous HH→L piece.
 
 ## Archive (NOT Lemma★)
 

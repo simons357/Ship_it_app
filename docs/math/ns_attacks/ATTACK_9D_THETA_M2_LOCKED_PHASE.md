@@ -21,9 +21,9 @@ So the remaining packet falsifier is **not** another natural same-shell random/e
 3. **Spectral control:** Keep \(\mathcal{D}_s\) under explicit control (fixed gap, exact-shell + \(\varepsilon\) closing, or other documented spectral support). Do **not** accidentally reintroduce 9A-style \(\mathcal{D}_s\) blowup from uncontrolled packet widening.
 4. **Quotient:** Report complete
    \[
-   \mathcal{R}_\star(v)=\frac{(T_c(v)_+)^2}{\mathcal{D}_s(v)\,\|v\|_2^2\,Y(v)}
+   \mathcal{R}_\star(v)=\frac{(T_c(v)_+)^2}{D_s(v)\,\|v\|_2^2\,Y(v)}
    \]
-   with **total** signed \(T_c\) (not HH→L-only).
+   (alias \(\mathcal{D}_s\equiv D_s\); canonical code `ratio_R_star_shape`). Full ★ SoT: [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md). Near-shell \(K_{\alpha,\beta}\) is a **restricted** probe, not the full lemma.
 
 ## Kill criterion
 
@@ -59,7 +59,7 @@ Until then this note is **spec-only** in the Source of Truth.
 ## Related
 
 - [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md) — natural ensemble non-kill
-- [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md) — \(K_{\alpha,\beta}\)
+- [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md) — \(K_{\alpha,\beta}\) (**restricted** near-shell family, not full ★)
 - [`ATTACK_9A_AP_PACKET_FAILURE.md`](./ATTACK_9A_AP_PACKET_FAILURE.md) — AP fan non-kill
 - [`ATTACK_SYNTHESIS_SIMULTANEOUS.md`](./ATTACK_SYNTHESIS_SIMULTANEOUS.md)
 - [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md)

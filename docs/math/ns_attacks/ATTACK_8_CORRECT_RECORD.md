@@ -15,12 +15,13 @@ Attack 8 is the **canonical status record** for Lemma★ after the shape-form lo
 1. **Kill lane is LIVE.** Failure to find a numerical counterexample does **not** close the falsification lane. Both **falsification** and **proof** remain LIVE.
 2. **Shape quotient invariance.** The correct complete quotient
    \[
-   \mathcal{R}_\star(v)=\frac{(T_c(v)_+)^2}{\mathcal{D}_s(v)\,\|v\|_2^2\,Y(v)}
+   \mathcal{R}_\star(v)=\frac{(T_c(v)_+)^2}{D_s(v)\,\|v\|_2^2\,Y(v)}
    \]
-   is **exactly invariant** under amplitude \(v\mapsto a v\) and under uniform Fourier dilation \(v(n\cdot)\). Claims that “amplitude or frequency makes the ratio smaller” refer to an **older non-optimized budget** (e.g. post-Young \(T_c/(E Y)\)), not to \(\mathcal R_\star\).
-3. **Positive part.** User form uses \((T_c)_+\). Prior Galerkin code used \(T_c^2\). Alignment: when \(T_c\ge 0\), \((T_c)_+^2=T_c^2\); for kill we care about stretching \(T_c>0\). Code now uses \((T_c)_+\).
-4. **Numerics hygiene.** Do **not** compare reported values \(0.065\), \(0.073\), \(1.93\times10^{-3}\) unless each used exactly the \(\mathcal R_\star\) formula above.
-5. **Archive separation.** LP-shell direction estimates, Route N, Q6 damping, and numerical shell floors through \(M=256\) do **not** establish Lemma★. See [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_Q6_SHELL/) and [`../ARCHIVE_NOT_LEMMA_STAR.md`](../ARCHIVE_NOT_LEMMA_STAR.md).
+   (alias \(\mathcal{D}_s\equiv D_s\)) is **exactly invariant** under amplitude \(v\mapsto a v\) and under uniform Fourier dilation \(v(n\cdot)\). Claims that “amplitude or frequency makes the ratio smaller” refer to an **older non-optimized budget** (e.g. post-Young \(T_c/(E Y)\)), not to \(\mathcal R_\star\).
+3. **Full Lemma★** is the boxed shape inequality / \(\sup\mathcal{R}_\star<\infty\) in [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md). Near-shell \(K_{\alpha,\beta}\) is a **restricted limiting family** only — not the full lemma.
+4. **Positive part.** User form uses \((T_c)_+\). Prior Galerkin code used \(T_c^2\). Alignment: when \(T_c\ge 0\), \((T_c)_+^2=T_c^2\); for kill we care about stretching \(T_c>0\). Code now uses \((T_c)_+\).
+5. **Numerics hygiene.** Do **not** compare reported values \(0.065\), \(0.073\), \(1.93\times10^{-3}\) unless each used exactly the \(\mathcal R_\star\) formula above.
+6. **Archive separation.** LP-shell direction estimates, Route N, Q6 damping, and numerical shell floors through \(M=256\) do **not** establish Lemma★. See [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_Q6_SHELL/) and [`../ARCHIVE_NOT_LEMMA_STAR.md`](../ARCHIVE_NOT_LEMMA_STAR.md).
 
 ## What Attack 8 is not
 
@@ -32,7 +33,7 @@ Attack 8 is the **canonical status record** for Lemma★ after the shape-form lo
 ## Next live kill attempt
 
 [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md) — designed \(\Theta(m^2)\)-closure subset with locked phases.  
-(9A AP fan and 9C fixed-gap natural ensemble did **not** kill ★; 9B sample \(K\) finite — kill lane still **LIVE**.)
+(9A AP fan and 9C fixed-gap natural ensemble did **not** kill ★; 9B sample \(K_{\alpha,\beta}\) finite on a **restricted** family — not a proof of full ★; kill lane still **LIVE**.)
 
 ## Related
 
