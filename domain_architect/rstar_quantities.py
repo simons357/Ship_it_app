@@ -29,9 +29,33 @@ HARD_RULES: tuple[str, ...] = (
     "HH→L restricted ≠ complete T_c for kill decision",
     "Finite small R_★ samples ≠ uniform bound",
     "Only complete T_c decides failure; NS NOT SOLVED; no SFE",
+    "Kill lane LIVE — falsification AND proof both open; refuse 'kill lane closed'",
+    "R_★(av)=R_★(v) and R_★(v(n·))=R_★(v) exactly — amplitude/dilation do NOT shrink R_★",
+    "Do not compare R values unless each attested with exact R_★ formula",
 )
 
 DOC_PATH = "docs/ns-review/LEMMA-STAR-EXACT-FORMULAS.md"
+EXACT_R_STAR_FORMULA = "R_star(v) = (T_c(v)_+)^2 / (D_s(v)*||v||_2^2*Y(v))"
+LEGACY_UNATTESTED_R_VALUES: tuple[str, ...] = (
+    "0.065",
+    "0.073",
+    "1.93e-3",
+    "1.93×10^{-3}",
+)
+
+# Kill lane: both falsification and proof remain LIVE (USER CORRECTIONS 2026-09-10)
+KILL_LANE_STATUS: dict[str, Any] = {
+    "status": "LIVE",
+    "falsification": "LIVE",
+    "proof": "LIVE",
+    "closed": False,
+    "refuse": "kill lane closed",
+    "reason": (
+        "Failure to find a numerical counterexample does NOT close the kill lane. "
+        "Both falsification (R_★→∞ or D_s=0 & T_c>0) and proof (uniform R_★) remain live."
+    ),
+    "doc": "docs/ns-review/GROK-RETIRED-CONCLUSIONS.md",
+}
 
 
 def _as_lambda(key: Any) -> float:
@@ -373,6 +397,7 @@ def R_star(
     Y: float,
     *,
     complete_T_c: bool = True,
+    exact_formula_attested: bool = True,
 ) -> dict[str, Any]:
     """R_★(v) = (T_c_+)^2 / (D_s ‖v‖₂² Y) with complete [T_c]_+ only.
 
@@ -380,6 +405,7 @@ def R_star(
       - D_s=0 and T_c>0 → dead
       - pure single shell both vanish → not a kill
       - finite sample value ≠ uniform bound
+      - kill lane remains LIVE (falsification AND proof)
     """
     if not complete_T_c:
         return {
@@ -391,6 +417,8 @@ def R_star(
                 "R_★ kill — only complete T_c"
             ),
             "hard_rules": list(HARD_RULES),
+            "kill_lane": dict(KILL_LANE_STATUS),
+            "exact_formula": EXACT_R_STAR_FORMULA,
             "doc": DOC_PATH,
         }
 
@@ -425,15 +453,204 @@ def R_star(
         "denominator": denom if denom > 0 else 0.0,
         "ok": r_val is not None,
         "kill": kill,
+        "kill_lane": dict(KILL_LANE_STATUS),
         "uniform_bound": False,  # finite sample ≠ uniform
+        "exact_formula": EXACT_R_STAR_FORMULA,
+        "exact_formula_attested": bool(exact_formula_attested),
         "note": (
             "Finite sample R_★ is evidence only — not a uniform bound; "
-            "sup R_★=∞ would kill ★"
+            "sup R_★=∞ would kill ★; kill lane LIVE (both directions)"
         ),
         "shape_form": "(T_c_+)^2 <= 4*theta*C_0*D_s*||v||_2^2*Y",
         "hard_rules": list(HARD_RULES),
         "doc": DOC_PATH,
         "ns_solved": False,
+    }
+
+
+def refuse_kill_lane_closed(text: str | None = None) -> dict[str, Any]:
+    """Refuse claiming the R_★ kill lane is closed."""
+    raw = (text or "").strip().lower()
+    triggers = (
+        "kill lane closed",
+        "kill-lane closed",
+        "kill lane is closed",
+        "closed the kill lane",
+        "kill lane is done",
+        "falsification closed",
+        "numeric kill closed",
+        "ap packet closed kill lane",
+        "ap-packet closed kill lane",
+        "attack 9a closed kill lane",
+    )
+    hit = any(t in raw for t in triggers) if raw else True
+    return {
+        "refused": bool(hit),
+        "ok": not hit,
+        "kill_lane": dict(KILL_LANE_STATUS),
+        "attack_9a_negative_for_kill": True,
+        "message": (
+            "REFUSE: kill lane is LIVE — failure to find a numerical "
+            "counterexample (including Attack 9A AP packet, where D_s grew "
+            "faster) does NOT close falsification or proof. "
+            "Refuse 'AP packet closed kill lane'. NS NOT SOLVED."
+            if hit
+            else "No 'kill lane closed' claim detected; status remains LIVE."
+        ),
+        "doc": "docs/ns-review/GROK-RETIRED-CONCLUSIONS.md",
+    }
+
+
+def warn_rstar_comparison_without_attestation(
+    values: Sequence[float | str] | None = None,
+    *,
+    each_exact_rstar_attested: bool = False,
+) -> dict[str, Any]:
+    """Warn/refuse comparing R numbers unless each used exact R_★."""
+    vals = list(values) if values is not None else list(LEGACY_UNATTESTED_R_VALUES)
+    if each_exact_rstar_attested:
+        return {
+            "ok": True,
+            "warned": False,
+            "refused": False,
+            "values": vals,
+            "message": (
+                "Comparison allowed only because each value attested with exact "
+                f"{EXACT_R_STAR_FORMULA}"
+            ),
+            "exact_formula": EXACT_R_STAR_FORMULA,
+        }
+    return {
+        "ok": False,
+        "warned": True,
+        "refused": True,
+        "values": vals,
+        "legacy_unattested": list(LEGACY_UNATTESTED_R_VALUES),
+        "message": (
+            "WARN/REFUSE: do not compare R values "
+            f"{vals} unless EACH was computed with exact "
+            f"{EXACT_R_STAR_FORMULA}. Legacy 0.065 / 0.073 / 1.93e-3 "
+            "are not comparable without attestation."
+        ),
+        "exact_formula": EXACT_R_STAR_FORMULA,
+        "doc": "docs/ns-review/GROK-RETIRED-CONCLUSIONS.md",
+    }
+
+
+def check_rstar_amplitude_invariance(
+    T_c: float,
+    D_s: float,
+    energy_l2: float,
+    Y: float,
+    amplitudes: Sequence[float] = (0.5, 1.0, 2.0, 7.0),
+    *,
+    rtol: float = 1e-12,
+    atol: float = 1e-15,
+) -> dict[str, Any]:
+    """Verify R_★(av)=R_★(v): T_c~a³, D_s~a², E~a², Y~a²."""
+    base = R_star(T_c, D_s, energy_l2, Y)
+    if base["R_star"] is None:
+        return {
+            "ok": False,
+            "invariant": False,
+            "reason": "base R_★ undefined",
+            "base": base,
+        }
+    ratios: list[dict[str, Any]] = []
+    ok = True
+    for a in amplitudes:
+        aa = float(a)
+        scaled = R_star(
+            T_c=(aa**3) * float(T_c),
+            D_s=(aa**2) * float(D_s),
+            energy_l2=(aa**2) * float(energy_l2),
+            Y=(aa**2) * float(Y),
+        )
+        r = scaled["R_star"]
+        agree = r is not None and abs(r - base["R_star"]) <= atol + rtol * max(
+            abs(base["R_star"]), 1.0
+        )
+        ok = ok and agree
+        ratios.append({"a": aa, "R_star": r, "agrees_with_base": agree})
+    return {
+        "ok": ok,
+        "invariant": ok,
+        "identity": "R_star(a*v) = R_star(v)",
+        "base_R_star": base["R_star"],
+        "samples": ratios,
+        "kill_lane": dict(KILL_LANE_STATUS),
+    }
+
+
+def check_rstar_dilation_invariance(
+    T_c: float,
+    D_s: float,
+    energy_l2: float,
+    Y: float,
+    dilations: Sequence[float] = (1.0, 2.0, 3.0, 5.0),
+    *,
+    rtol: float = 1e-12,
+    atol: float = 1e-15,
+) -> dict[str, Any]:
+    """Verify R_★(v(n·))=R_★(v) under uniform Fourier dilation.
+
+    Scaling (λ → n²λ, amplitudes fixed): E fixed, Y → n⁴ Y, D_s → n⁶ D_s,
+    T_c → n⁵ T_c  ⇒  (n⁵ T_c)² / (n⁶ D_s · E · n⁴ Y) = T_c²/(D_s E Y).
+    """
+    base = R_star(T_c, D_s, energy_l2, Y)
+    if base["R_star"] is None:
+        return {
+            "ok": False,
+            "invariant": False,
+            "reason": "base R_★ undefined",
+            "base": base,
+        }
+    ratios: list[dict[str, Any]] = []
+    ok = True
+    for n in dilations:
+        nn = float(n)
+        scaled = R_star(
+            T_c=(nn**5) * float(T_c),
+            D_s=(nn**6) * float(D_s),
+            energy_l2=float(energy_l2),
+            Y=(nn**4) * float(Y),
+        )
+        r = scaled["R_star"]
+        agree = r is not None and abs(r - base["R_star"]) <= atol + rtol * max(
+            abs(base["R_star"]), 1.0
+        )
+        ok = ok and agree
+        ratios.append({"n": nn, "R_star": r, "agrees_with_base": agree})
+    return {
+        "ok": ok,
+        "invariant": ok,
+        "identity": "R_star(v(n·)) = R_star(v)",
+        "base_R_star": base["R_star"],
+        "samples": ratios,
+        "kill_lane": dict(KILL_LANE_STATUS),
+    }
+
+
+def check_rstar_invariances(
+    T_c: float = 3.0,
+    D_s: float = 1.0,
+    energy_l2: float = 2.0,
+    Y: float = 3.0,
+) -> dict[str, Any]:
+    """Bundle amplitude + dilation invariance checks for exact R_★."""
+    amp = check_rstar_amplitude_invariance(T_c, D_s, energy_l2, Y)
+    dil = check_rstar_dilation_invariance(T_c, D_s, energy_l2, Y)
+    return {
+        "ok": bool(amp["ok"] and dil["ok"]),
+        "amplitude": amp,
+        "dilation": dil,
+        "exact_formula": EXACT_R_STAR_FORMULA,
+        "kill_lane": dict(KILL_LANE_STATUS),
+        "retired_claim": (
+            "FALSE/RETIRED: 'amplitude or frequency makes the ratio smaller' "
+            "(that was an older non-optimized budget ratio, not exact R_★)"
+        ),
+        "doc": "docs/ns-review/GROK-RETIRED-CONCLUSIONS.md",
     }
 
 
@@ -475,7 +692,14 @@ def exact_formula_inventory() -> dict[str, Any]:
         "ns_solved": False,
         "sfe": False,
         "boxed_shape_form": "(T_c(v)_+)^2 <= 4*theta*C_0*D_s(v)*||v||_2^2*Y(v)",
-        "R_star": "R_star(v) = (T_c_+)^2 / (D_s * ||v||_2^2 * Y)",
+        "R_star": EXACT_R_STAR_FORMULA,
+        "R_star_invariances": {
+            "amplitude": "R_star(a*v) = R_star(v)",
+            "dilation": "R_star(v(n·)) = R_star(v)",
+            "retired_false_claim": (
+                "amplitude or frequency makes the ratio smaller — FALSE for exact R_★"
+            ),
+        },
         "linear_moments": ["||v||_2^2", "X", "Y", "Z", "Lambda=Y/X"],
         "D_s_forms": [
             "Z - Lambda*Y = Z - Y^2/X",
@@ -493,13 +717,38 @@ def exact_formula_inventory() -> dict[str, Any]:
             "ordered_triad_pqr_0": "sum_{p+q+r=0} lambda_r(lambda_r-Lambda) Im[(q·v_p)(v_q·conj(v_r))]",
         },
         "sign_check": "Lambda' = (2/X)(T_c - nu*D_s)",
+        "kill_lane": dict(KILL_LANE_STATUS),
         "kill_rules": [
             "sup R_star = infinity → dead",
             "D_s=0 and T_c>0 → dead",
             "pure single shell both vanish → not a kill",
             "almost-single-shell that stretches → live kill",
             "finite small R_star samples ≠ uniform bound",
+            "kill lane LIVE — falsification AND proof; refuse 'kill lane closed'",
         ],
         "hard_rules": list(HARD_RULES),
+        "legacy_unattested_R_values": list(LEGACY_UNATTESTED_R_VALUES),
+        "comparison_rule": (
+            "Do not compare R values unless each attested with exact R_★ formula"
+        ),
+        "attack_9": "docs/ns-review/ATTACK-9-COHERENT-PACKET-FAN.md",
+        "attack_9a": {
+            "verdict": "NEGATIVE_FOR_KILL",
+            "note": (
+                "AP packet increased T_c but D_s grew faster; "
+                "D_s||v||_2^2 Y = O(1) in packet size was FALSE for that family"
+            ),
+            "doc": "docs/ns-review/ATTACK-9-COHERENT-PACKET-FAN.md",
+        },
+        "attack_9b": {
+            "family": "exact-shell + closing packet",
+            "quantity": (
+                "K_{alpha,beta} = "
+                "sup_{A w = alpha w} "
+                "beta * ||Pi_beta B(w,w)||_2^2 / (alpha^2 * ||w||_2^4)"
+            ),
+            "doc": "docs/ns-review/ATTACK-9B-EXACT-SHELL-CLOSING.md",
+            "caveat": "narrow packet ≠ automatic D_s=O(1) on lattice",
+        },
         "proof_needed": "triadic reason; HH→L dangerous channel; only complete T_c decides failure",
     }

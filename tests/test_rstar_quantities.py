@@ -14,12 +14,17 @@ from domain_architect.rstar_quantities import (
     D_s_moment,
     D_s_pairwise,
     D_s_variance,
+    check_rstar_amplitude_invariance,
+    check_rstar_dilation_invariance,
+    check_rstar_invariances,
     exact_formula_inventory,
     lambda_prime,
+    refuse_kill_lane_closed,
     shape_form_holds,
     spectral_moments,
     two_shell_D_s,
     verify_two_shell_vs_sum,
+    warn_rstar_comparison_without_attestation,
 )
 
 
@@ -177,6 +182,59 @@ class TestSignCheckAndInventory(unittest.TestCase):
             self.assertIn(rule, inv["hard_rules"])
 
 
+class TestRStarInvarianceAndHonesty(unittest.TestCase):
+    def test_amplitude_invariance(self):
+        out = check_rstar_amplitude_invariance(T_c=3.0, D_s=1.0, energy_l2=2.0, Y=3.0)
+        self.assertTrue(out["ok"])
+        self.assertTrue(out["invariant"])
+        for sample in out["samples"]:
+            self.assertTrue(sample["agrees_with_base"])
+            self.assertAlmostEqual(sample["R_star"], out["base_R_star"])
+
+    def test_dilation_invariance(self):
+        out = check_rstar_dilation_invariance(T_c=3.0, D_s=1.0, energy_l2=2.0, Y=3.0)
+        self.assertTrue(out["ok"])
+        self.assertTrue(out["invariant"])
+        for sample in out["samples"]:
+            self.assertTrue(sample["agrees_with_base"])
+
+    def test_invariances_bundle(self):
+        out = check_rstar_invariances()
+        self.assertTrue(out["ok"])
+        self.assertIn("amplitude", out)
+        self.assertIn("dilation", out)
+        self.assertEqual(out["kill_lane"]["status"], "LIVE")
+
+    def test_refuse_kill_lane_closed(self):
+        bad = refuse_kill_lane_closed("The kill lane is closed")
+        self.assertTrue(bad["refused"])
+        self.assertEqual(bad["kill_lane"]["status"], "LIVE")
+        self.assertTrue(bad["kill_lane"]["falsification"] == "LIVE")
+        self.assertTrue(bad["kill_lane"]["proof"] == "LIVE")
+        ok = refuse_kill_lane_closed("kill lane remains live")
+        self.assertFalse(ok["refused"])
+
+    def test_warn_legacy_comparison(self):
+        warn = warn_rstar_comparison_without_attestation(
+            ["0.065", "0.073", "1.93e-3"]
+        )
+        self.assertTrue(warn["warned"])
+        self.assertTrue(warn["refused"])
+        self.assertFalse(warn["ok"])
+        attested = warn_rstar_comparison_without_attestation(
+            [0.01, 0.02], each_exact_rstar_attested=True
+        )
+        self.assertTrue(attested["ok"])
+        self.assertFalse(attested["refused"])
+
+    def test_inventory_kill_lane_live(self):
+        inv = exact_formula_inventory()
+        self.assertEqual(inv["kill_lane"]["status"], "LIVE")
+        self.assertFalse(inv["kill_lane"]["closed"])
+        self.assertIn("amplitude", inv["R_star_invariances"])
+        self.assertIn("dilation", inv["R_star_invariances"])
+
+
 class TestLemmaStarCliMentionsExact(unittest.TestCase):
     def test_analyze_includes_exact_formulas(self):
         from domain_architect.lemma_star import analyze_lemma_star
@@ -186,6 +244,8 @@ class TestLemmaStarCliMentionsExact(unittest.TestCase):
         self.assertIn(DOC_PATH, report.narrative())
         self.assertFalse(report.ns_solved)
         self.assertTrue(report.shape_statement)
+        self.assertEqual(report.kill_lane["status"], "LIVE")
+        self.assertIn("LIVE", report.narrative())
 
 
 if __name__ == "__main__":

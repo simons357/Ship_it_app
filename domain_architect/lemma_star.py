@@ -21,6 +21,12 @@ bound on R_★. Analytic bottleneck: Bony HH→L (triadic reason not written).
 Five-lane (PR #48): K=0 dead ↔ D_s=0 kill lane; ★ survives numeric kill
 only (≠ proved; numeric bound ≠ uniform bound); NS NOT SOLVED.
 
+USER CORRECTIONS (2026-09-10): kill lane = LIVE (falsification AND proof).
+Refuse “kill lane closed”. Exact R_★ is amplitude- and dilation-invariant.
+Legacy R numbers not comparable without exact-formula attestation.
+Attack 9A (AP packet) = negative for kill (D_s grew faster) — refuse
+“AP packet closed kill lane”. Next: Attack 9B exact-shell + closing → K_{α,β}.
+
 DA will not green Lemma★ as PROVED. Refuses “almost proved”,
 “numerics prove ★”, greening from finite samples. No SFE glue.
 """
@@ -33,10 +39,22 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
 
+from .kab_quantity import (
+    ATTACK_9A_STATUS,
+    ATTACK_9B_STATUS,
+    KAB_FORMULA,
+    kab_inventory,
+    refuse_ap_packet_closed_kill_lane,
+)
 from .rstar_quantities import (
     DOC_PATH as RSTAR_EXACT_DOC,
+    EXACT_R_STAR_FORMULA,
     HARD_RULES as RSTAR_HARD_RULES,
+    KILL_LANE_STATUS,
+    check_rstar_invariances,
     exact_formula_inventory,
+    refuse_kill_lane_closed,
+    warn_rstar_comparison_without_attestation,
 )
 from .shape_texture import extract_shape, extract_texture, shape_match
 from .theory_splicer import (
@@ -167,6 +185,21 @@ PROVED_REFUSAL_PATTERNS: tuple[tuple[str, str], ...] = (
         r"(ns|navier.?stokes|clay).{0,30}(solved|proved|resolved)",
         "REFUSE: NS NOT SOLVED — Lemma★ remains HYPOTHESIS (shape statement open)",
     ),
+    (
+        r"(kill\s*[- ]?lane).{0,40}(closed|done|finished|settled)|"
+        r"(closed|done).{0,40}(kill\s*[- ]?lane)|"
+        r"falsification\s+(closed|done)|numeric\s+kill\s+closed",
+        "REFUSE: kill lane is LIVE — failure to find a numerical counterexample "
+        "does NOT close falsification or proof; NS NOT SOLVED",
+    ),
+    (
+        r"(ap\s*[- ]?packet|attack\s*9a|packet\s*fan).{0,40}"
+        r"(closed|closes|closing).{0,20}(kill\s*[- ]?lane)|"
+        r"(kill\s*[- ]?lane).{0,40}(closed|closes).{0,40}"
+        r"(ap\s*[- ]?packet|attack\s*9a)",
+        "REFUSE: Attack 9A (AP packet) did not kill ★ and does NOT close the "
+        "kill lane (D_s grew faster); kill lane LIVE; NS NOT SOLVED",
+    ),
 )
 
 # Kill / status rules for R_★ (printed by analyze/report)
@@ -177,6 +210,10 @@ R_STAR_KILL_RULES: tuple[str, ...] = (
     "(not a kill). Live kill = almost-single-shell that still stretches.",
     "If every shape has R_★ below one number → that number is ★ (up to 4θ). "
     "A list of fields with small R_★ is NOT that number — numerics = evidence only.",
+    "Kill lane LIVE (falsification AND proof). Refuse 'kill lane closed' — "
+    "numeric non-find ≠ closed lane.",
+    "Exact R_★ is invariant: R_★(av)=R_★(v) and R_★(v(n·))=R_★(v). "
+    "Do not claim amplitude/frequency makes R_★ smaller.",
 )
 
 # Five-lane drill status (PR #48) — inventory sync, not a proof upgrade
@@ -190,19 +227,39 @@ FIVE_LANE_STATUS: dict[str, Any] = {
     "lanes": {
         "K0_absorption": "DEAD",
         "D_s_zero_kill": "ALIGNED_WITH_K0_DEAD",
+        "kill_lane": "LIVE",  # falsification AND proof — USER CORRECTIONS
+        "kill_lane_falsification": "LIVE",
+        "kill_lane_proof": "LIVE",
         "lemma_star_numeric_kill": "SURVIVES_NUMERIC_ONLY_NOT_PROVED",
         "numeric_bound_vs_uniform": "NUMERIC_BOUND_NE_UNIFORM_BOUND",
         "bony_hh_to_l": "GAP_LIVE",
         "product_block_agmon": "OPEN_INSUFFICIENT_MISSING_UNIFORM_R_STAR",
+        "attack_9": "COHERENT_PACKET_FAN",
+        "attack_9a": "NEGATIVE_FOR_KILL",
+        "attack_9b": "EXACT_SHELL_CLOSING_KAB_PROTOCOL",
     },
+    "kill_lane": dict(KILL_LANE_STATUS),
+    "attack_9a": dict(ATTACK_9A_STATUS),
+    "attack_9b": dict(ATTACK_9B_STATUS),
+    "K_alpha_beta": KAB_FORMULA,
     "cross_link": (
-        "K=0 dead ↔ D_s=0 kill lane in R_★ shape form; "
+        "K=0 dead ↔ D_s=0 kill criterion in R_★ shape form; "
+        "kill lane LIVE (falsification AND proof); "
+        "9A AP packet negative for kill (D_s faster); "
+        "next 9B exact-shell + closing → K_{α,β}; "
         "numeric bound ≠ uniform bound on R_★"
     ),
     "headline": (
-        "K=0 dead ↔ D_s=0 kill; Lemma★ survives numeric kill only ≠ proved "
+        "K=0 dead ↔ D_s=0 kill criterion; kill lane LIVE (both directions); "
+        "Attack 9A negative for kill; next K_{α,β}; "
+        "Lemma★ survives numeric kill only ≠ proved "
         "(numeric ≠ uniform R_★); HH→L still the gap; NS NOT SOLVED"
     ),
+    "retired_grok": "docs/ns-review/GROK-RETIRED-CONCLUSIONS.md",
+    "attack_8_record": "docs/ns-review/ATTACK-8-RECORD.md",
+    "attack_9": "docs/ns-review/ATTACK-9-COHERENT-PACKET-FAN.md",
+    "attack_9b": "docs/ns-review/ATTACK-9B-EXACT-SHELL-CLOSING.md",
+    "side_archive": "docs/ns-review/LEMMA-STAR-SIDE-ARCHIVE.md",
 }
 
 SHAPE_FORM_STATUS: dict[str, Any] = {
@@ -212,6 +269,11 @@ SHAPE_FORM_STATUS: dict[str, Any] = {
     "expression_shape": EXPR_SHAPE_FORM,
     "expression_r_star": EXPR_R_STAR,
     "expression_viscosity": EXPR_LEMMA_STAR,
+    "exact_formula": EXACT_R_STAR_FORMULA,
+    "invariances": {
+        "amplitude": "R_star(a*v) = R_star(v)",
+        "dilation": "R_star(v(n·)) = R_star(v)",
+    },
     "equivalent_claims": ["LEMMA-STAR", "R-STAR", "SHAPE-FORM"],
     "blocker": "PRODUCT-BLOCK / HH→L = missing uniform bound on R_★",
     "proof_needed": (
@@ -219,7 +281,12 @@ SHAPE_FORM_STATUS: dict[str, Any] = {
         "also spreads or phases cancel; HH→L is the channel — NOT WRITTEN"
     ),
     "ns_solved": False,
+    "kill_lane": dict(KILL_LANE_STATUS),
     "kill_rules": list(R_STAR_KILL_RULES),
+    "attack_9": "docs/ns-review/ATTACK-9-COHERENT-PACKET-FAN.md",
+    "attack_9a": dict(ATTACK_9A_STATUS),
+    "attack_9b": "docs/ns-review/ATTACK-9B-EXACT-SHELL-CLOSING.md",
+    "K_alpha_beta": KAB_FORMULA,
 }
 
 ATTACK_ROUTES: tuple[dict[str, Any], ...] = (
@@ -266,10 +333,45 @@ ATTACK_ROUTES: tuple[dict[str, Any], ...] = (
             "(almost-single-shell that still stretches) — kills packaging"
         ),
         "honesty": (
-            "Five-lane (PR #48) did not produce a kill on tested samples; "
-            "finite samples ≠ uniform bound; numeric survive ≠ proof. "
-            "Would falsify the route, not prove regularity."
+            "Kill lane LIVE. Five-lane (PR #48) did not produce a kill on "
+            "tested samples; finite samples ≠ uniform bound; numeric survive ≠ proof. "
+            "Would falsify the route, not prove regularity. "
+            "Attack 9A AP packet did not kill (D_s faster). "
+            "Next: Attack 9B exact-shell + closing → K_{α,β}."
         ),
+    },
+    {
+        "rank": 5,
+        "id": "ATTACK-9A-AP-PACKET",
+        "title": "Attack 9A — AP Coherent Packet/Fan (recorded)",
+        "move": (
+            "Maximize complete R_★ over conjugate-closed AP packets; "
+            "increase cardinality; fit R_★(v_m) ~ m^γ"
+        ),
+        "honesty": (
+            "RESULT: NEGATIVE FOR KILL — T_c rose but D_s grew faster; "
+            "D_s||v||_2^2 Y = O(1) in packet size was FALSE for that family. "
+            "Not a proof of ★. Refuse 'AP packet closed kill lane'."
+        ),
+        "doc": "docs/ns-review/ATTACK-9-COHERENT-PACKET-FAN.md",
+        "verdict": "NEGATIVE_FOR_KILL",
+    },
+    {
+        "rank": 6,
+        "id": "ATTACK-9B-EXACT-SHELL-CLOSING",
+        "title": "Attack 9B — Exact-shell + closing → K_{α,β}",
+        "move": (
+            "v_ε = w_α + ε z_β with z_β ∥ Π_β B(w_α,w_α); "
+            "base = many same-shell modes; D_s from closing only; "
+            "read limiting quotient via K_{α,β}"
+        ),
+        "honesty": (
+            "Protocol/quantity lock only. Caveat: narrow ≠ O(1) D_s on lattice. "
+            "Next clean test: exact-shell fan → controlled thickness — "
+            "NOT another widening AP packet. Does not prove ★."
+        ),
+        "doc": "docs/ns-review/ATTACK-9B-EXACT-SHELL-CLOSING.md",
+        "quantity": KAB_FORMULA,
     },
 )
 
@@ -295,8 +397,10 @@ class LemmaStarReport:
     five_lane: dict[str, Any] = field(default_factory=dict)
     shape_form: dict[str, Any] = field(default_factory=dict)
     kill_rules: list[str] = field(default_factory=list)
+    kill_lane: dict[str, Any] = field(default_factory=dict)
     exact_formulas: dict[str, Any] = field(default_factory=dict)
     hard_rules: list[str] = field(default_factory=list)
+    rstar_invariances: dict[str, Any] = field(default_factory=dict)
     shape: dict[str, Any] = field(default_factory=dict)
     texture: dict[str, Any] = field(default_factory=dict)
     attack_routes: list[dict[str, Any]] = field(default_factory=list)
@@ -324,6 +428,7 @@ class LemmaStarReport:
             f"Shape form:     {self.expression_shape_form}",
             f"R_★:            {self.expression_r_star}",
             f"Exact formulas: {RSTAR_EXACT_DOC}",
+            f"Kill lane:      LIVE (falsification AND proof) — refuse 'kill lane closed'",
             "",
             "R_★ kill / status rules:",
         ]
@@ -339,11 +444,15 @@ class LemmaStarReport:
                 "Headline: Broken at PRODUCT-BLOCK → HH→L still the gap → "
                 "missing uniform R_★ → close by triad structure on T_c or "
                 "SND/shell conditional (C₀ alone does not close; "
-                "numeric survive ≠ proof; R_★→∞ or D_s=0&T_c>0 would kill).",
+                "numeric survive ≠ proof; R_★→∞ or D_s=0&T_c>0 would kill; "
+                "kill lane LIVE both directions).",
                 "",
                 "Proving Lemma★ ≡ Clay B in this book. DA will not green it "
                 "without PRODUCT-BLOCK / uniform R_★. Refuse ‘almost proved’ / "
-                "‘numerics prove ★’. Proof reason (HH→L / triads) NOT WRITTEN.",
+                "‘numerics prove ★’ / ‘kill lane closed’ / "
+                "‘AP packet closed kill lane’. Proof reason "
+                "(HH→L / triads) NOT WRITTEN. "
+                "9A negative for kill; next: 9B → K_{α,β}.",
                 "",
                 f"Five-lane (PR #48): {self.five_lane.get('headline', '')}",
                 f"Cross-link: {self.five_lane.get('cross_link', '')}",
@@ -496,10 +605,13 @@ def analyze_lemma_star(text: str | None = None) -> LemmaStarReport:
     shape, texture = _lemma_star_shape_texture()
 
     inventory = exact_formula_inventory()
+    invariances = check_rstar_invariances()
     notes = [
         "USER LOCK-IN: Lemma★ is a SHAPE STATEMENT via R_★ — not a viscosity statement.",
         "Under u=av, size optimization cancels ν; decisive form is uniform R_★.",
         f"Boxed shape form: {inventory['boxed_shape_form']}.",
+        f"Exact R_★: {EXACT_R_STAR_FORMULA}; "
+        "invariances R_★(av)=R_★(v), R_★(v(n·))=R_★(v) locked.",
         f"Exact Fourier identities encoded in {RSTAR_EXACT_DOC} "
         "and domain_architect/rstar_quantities.py "
         "(moments X,Y,Z,Λ; three D_s forms; two-shell; signed T_c; Λ' sign check).",
@@ -511,9 +623,17 @@ def analyze_lemma_star(text: str | None = None) -> LemmaStarReport:
         "Analytic bottleneck: Bony HH→L (five-lane Attack 3) — still the gap; "
         "triadic reason NOT WRITTEN. HH→L restricted ≠ complete T_c for kill.",
         "NEVER abs the triad sum. Only complete T_c decides failure.",
+        "Kill lane LIVE (falsification AND proof). Refuse 'kill lane closed' — "
+        "numeric non-find does not close the lane. See GROK-RETIRED-CONCLUSIONS.md.",
+        "Do not compare legacy R numbers (0.065, 0.073, 1.93e-3) without "
+        "exact-formula attestation on each value.",
         "C₀ geometric-only is already required and does not close the product / R_★ gap.",
-        "Five-lane PR #48: K=0 dead ↔ D_s=0 kill; ★ survives numeric kill only ≠ proved "
-        "(numeric bound ≠ uniform bound); NS NOT SOLVED.",
+        "Five-lane PR #48: K=0 dead ↔ D_s=0 kill criterion; kill lane LIVE; "
+        "★ survives numeric kill only ≠ proved; NS NOT SOLVED.",
+        "Attack 9A = NEGATIVE FOR KILL; refuse 'AP packet closed kill lane'; "
+        "next Attack 9B exact-shell + closing → K_{α,β} "
+        "(docs/ns-review/ATTACK-9B-EXACT-SHELL-CLOSING.md).",
+        "Side archive (not ★ evidence): LP-shell / Route N / Q6 / M=256 floor.",
         "Proving Lemma★ ≡ Clay B in this book; DA will not green without "
         "PRODUCT-BLOCK / uniform R_★. Refuse ‘almost proved’ / ‘numerics prove ★’ / greening.",
         "No SFE glue.",
@@ -541,8 +661,10 @@ def analyze_lemma_star(text: str | None = None) -> LemmaStarReport:
         five_lane=dict(FIVE_LANE_STATUS),
         shape_form=dict(SHAPE_FORM_STATUS),
         kill_rules=list(R_STAR_KILL_RULES),
+        kill_lane=dict(KILL_LANE_STATUS),
         exact_formulas=inventory,
         hard_rules=list(RSTAR_HARD_RULES),
+        rstar_invariances=invariances,
         shape=shape,
         texture=texture,
         attack_routes=list(ATTACK_ROUTES),
@@ -574,13 +696,19 @@ def refuse_proved_lemma_star(text: str) -> dict[str, Any]:
         or "samples prove" in norm
         or "samples green" in norm
         or "numeric bound = uniform" in norm
+        or "kill lane closed" in norm
+        or "kill-lane closed" in norm
+        or "kill lane is closed" in norm
     )
+    kill_closed = refuse_kill_lane_closed(text)
+    if kill_closed["refused"] and "kill lane" in norm.replace("-", " "):
+        reasons.append(kill_closed["message"])
     if not reasons and soft_green:
         reasons.append(
             "REFUSE: Lemma★ / R-STAR is HYPOTHESIS — not proved; "
             "broken at PRODUCT-BLOCK / missing uniform R_★ / HH→L; NS NOT SOLVED"
         )
-    refused = bool(reasons) or report.refused_proved_claim
+    refused = bool(reasons) or report.refused_proved_claim or kill_closed["refused"]
     if recognize_lemma_star(text) and soft_green:
         refused = True
         if not reasons:
@@ -588,6 +716,7 @@ def refuse_proved_lemma_star(text: str) -> dict[str, Any]:
                 "REFUSE: Lemma★ / R-STAR is HYPOTHESIS — not proved; "
                 "broken at PRODUCT-BLOCK / missing uniform R_★ / HH→L; NS NOT SOLVED"
             )
+    reasons = list(dict.fromkeys(reasons))
     return {
         "ok": not refused,
         "refused": refused,
@@ -599,15 +728,18 @@ def refuse_proved_lemma_star(text: str) -> dict[str, Any]:
         "clay_implication": "CONDITIONAL",
         "clay_weld": "WITHHELD",
         "ns_solved": False,
+        "kill_lane": dict(KILL_LANE_STATUS),
         "kill_rules": list(R_STAR_KILL_RULES),
         "five_lane": dict(FIVE_LANE_STATUS),
         "shape_form": dict(SHAPE_FORM_STATUS),
+        "rstar_comparison_warning": warn_rstar_comparison_without_attestation(),
         "refusal_reasons": reasons,
         "message": (
             "Refused: Lemma★ is not proved (and not ‘almost proved’; "
-            "numerics do not prove ★). Broken at PRODUCT-BLOCK / HH→L = "
-            "missing uniform R_★ → close by triad structure on T_c or "
-            "SND/shell conditional. Numeric bound ≠ uniform bound. NS NOT SOLVED."
+            "numerics do not prove ★; kill lane not closed). Broken at "
+            "PRODUCT-BLOCK / HH→L = missing uniform R_★ → close by triad "
+            "structure on T_c or SND/shell conditional. Numeric bound ≠ "
+            "uniform bound. Kill lane LIVE. NS NOT SOLVED."
             if refused
             else "No proved-claim language; Lemma★ remains HYPOTHESIS (shape statement)."
         ),
@@ -783,6 +915,10 @@ def load_lemma_star_inventory() -> dict[str, Any]:
         "FIVE-LANE-LEMMA-STAR",
         "R-STAR",
         "SHAPE-FORM",
+        "ATTACK-8",
+        "ATTACK-9A",
+        "ATTACK-9B",
+        "KILL-LANE",
     }
     return {
         "claims": [c for c in inv.get("claims", []) if c.get("claim_id") in ids],
@@ -797,8 +933,14 @@ def load_lemma_star_inventory() -> dict[str, Any]:
             or "r_star" in r.lower()
             or "shape form" in r.lower()
             or "finite samples" in r.lower()
+            or "kill lane" in r.lower()
+            or "ap packet" in r.lower()
+            or "narrow packet" in r.lower()
         ],
         "five_lane": dict(FIVE_LANE_STATUS),
         "shape_form": dict(SHAPE_FORM_STATUS),
         "kill_rules": list(R_STAR_KILL_RULES),
+        "kill_lane": dict(KILL_LANE_STATUS),
+        "rstar_invariances": check_rstar_invariances(),
+        "comparison_warning": warn_rstar_comparison_without_attestation(),
     }

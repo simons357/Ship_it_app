@@ -100,10 +100,18 @@ class TestAnalyzeHypothesis(unittest.TestCase):
 
     def test_attack_routes_ranked(self):
         report = analyze_lemma_star()
-        self.assertGreaterEqual(len(report.attack_routes), 4)
+        self.assertGreaterEqual(len(report.attack_routes), 6)
         self.assertEqual(report.attack_routes[0]["id"], "TC-STRUCTURE-HH-L")
         self.assertEqual(report.attack_routes[1]["id"], "SND-SHELL-CONDITIONAL")
         self.assertEqual(report.attack_routes[3]["id"], "NEGATIVE-KILL-R-STAR")
+        self.assertEqual(report.attack_routes[4]["id"], "ATTACK-9A-AP-PACKET")
+        self.assertEqual(
+            report.attack_routes[4]["verdict"], "NEGATIVE_FOR_KILL"
+        )
+        self.assertEqual(
+            report.attack_routes[5]["id"], "ATTACK-9B-EXACT-SHELL-CLOSING"
+        )
+        self.assertIn("K_{alpha,beta}", report.attack_routes[5]["quantity"])
 
     def test_five_lane_status_synced(self):
         report = analyze_lemma_star()
@@ -114,6 +122,9 @@ class TestAnalyzeHypothesis(unittest.TestCase):
         self.assertEqual(
             report.five_lane["lanes"]["D_s_zero_kill"], "ALIGNED_WITH_K0_DEAD"
         )
+        self.assertEqual(report.five_lane["lanes"]["kill_lane"], "LIVE")
+        self.assertEqual(report.kill_lane["status"], "LIVE")
+        self.assertFalse(report.kill_lane["closed"])
         self.assertIn(
             "NOT_PROVED", report.five_lane["lanes"]["lemma_star_numeric_kill"]
         )
@@ -122,7 +133,8 @@ class TestAnalyzeHypothesis(unittest.TestCase):
         )
         self.assertEqual(report.five_lane["lanes"]["bony_hh_to_l"], "GAP_LIVE")
         self.assertFalse(report.five_lane["lemma_star_proved"])
-        self.assertIn("D_s=0", report.five_lane["cross_link"])
+        self.assertIn("LIVE", report.five_lane["cross_link"])
+        self.assertTrue(report.rstar_invariances["ok"])
 
 
 class TestProductBlock(unittest.TestCase):
@@ -193,6 +205,18 @@ class TestRefuseProved(unittest.TestCase):
     def test_refuse_ns_solved(self):
         result = refuse_proved_lemma_star("Navier-Stokes solved via Lemma★")
         self.assertTrue(result["refused"])
+
+    def test_refuse_kill_lane_closed(self):
+        result = refuse_proved_lemma_star(
+            "Lemma★: the kill lane is closed after numeric search"
+        )
+        self.assertTrue(result["refused"])
+        joined = " ".join(result["refusal_reasons"]).lower()
+        self.assertTrue(
+            "kill lane" in joined or "live" in joined or "closed" in joined
+        )
+        self.assertEqual(result["kill_lane"]["status"], "LIVE")
+        self.assertFalse(result["ns_solved"])
 
     def test_express_da_ns_1_refuses_green(self):
         result = express("DA-NS-1")
@@ -267,7 +291,13 @@ class TestRegistryBooks(unittest.TestCase):
         self.assertIn("R-STAR", ids)
         self.assertIn("SHAPE-FORM", ids)
         self.assertIn("LEMMA-STAR", ids)
+        self.assertIn("KILL-LANE", ids)
+        self.assertIn("ATTACK-8", ids)
+        self.assertIn("ATTACK-9A", ids)
+        self.assertIn("ATTACK-9B", ids)
         self.assertTrue(any("numerics" in r for r in inv["refused_routings"]))
+        self.assertTrue(any("kill lane" in r for r in inv["refused_routings"]))
+        self.assertEqual(inv["kill_lane"]["status"], "LIVE")
 
 
 class TestShapeCompare(unittest.TestCase):
