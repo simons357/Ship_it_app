@@ -170,6 +170,8 @@ H1 was not run on ABC_λ. Do not start it here.
 
 Explore-boundedness score (SuperGrok 19:08):
 [`LEMMA-STAR-EXPLORE.md`](LEMMA-STAR-EXPLORE.md).
+Family check vs lock (no new family; not a kill):
+[`LEMMA-STAR-FAMILY-CHECK.md`](LEMMA-STAR-FAMILY-CHECK.md).
 Two-shell \(D_s\) already sits. \(T_c\) is not
 shell energies alone. Spatial \(v(\mu x)\) is
 not Fourier dilation. Do not stop patching.

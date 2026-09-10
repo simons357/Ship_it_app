@@ -98,6 +98,8 @@ Statement from the lock (not a reconstruction):
 docs/LEMMA-STAR-STATEMENT.md
 Explore-boundedness score (not a close):
 docs/LEMMA-STAR-EXPLORE.md
+Family check vs lock (not a kill):
+docs/LEMMA-STAR-FAMILY-CHECK.md
 Working claim + identities:
 docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md
 docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md
