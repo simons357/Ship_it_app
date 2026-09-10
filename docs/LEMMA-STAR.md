@@ -45,24 +45,29 @@ Naming the hole is not closing it.
 
 ## Blocked exactly here
 
-You still need something like
+Uniform pre-Young
 \[
-|\mathfrak T_c|\le C\|u\|_2 X^{3/2}
+|\mathfrak T_c|\le C\|u\|_2 X\Lambda
 \]
-or an equivalent product bound from the energy class.
-Ordinary 3D product / Agmon estimates do **not**
-give that from energy alone.
+with \(C\) independent of \(u\) is **dead**. Attack 6: on the
+scaled triad \(k\mapsto sk\),
+\(\lvert T_c\rvert/(\|u\|_2 X\Lambda)\simeq 0.158\,s\to\infty\).
+Ordinary 3D product / Agmon estimates do not close the other door
+either.
 
-Equivalent doors (either would lift):
+**Live door (door 2):**
+\[
+|\mathfrak T_c|\le C_* X^{3/2}\Lambda
+\]
+with \(C_*\) absolute. On that same family the ratio is
+\(\simeq 0.0404\), independent of \(s\) and of amplitude.
+One family is not a proof. HH→L is still the gap.
 
-1. Pre-Young: \(|\mathfrak T_c|\le C\|u\|_2 X\Lambda\)
-   with geometric \(C\), then Young in \(\nu\) → Lemma★.
-2. Weaker survivor: \(|\mathfrak T_c|\le C_* X^{3/2}\Lambda\)
-   (remainder \(K\sim\sqrt{X}\), Leray-integrable if
-   \(\int X<\infty\)).
+If \(C_*\) sits, then \(K\le C_*\sqrt{X}\) and Leray plus
+Cauchy–Schwarz give \(\int_0^T\sqrt{X}<\infty\), hence DA-NS-2
+on every finite interval **in this packaging**. Not proved.
 
-Both need control of the **HH→L** Bony channel.
-Neither sits.
+File: [`LEMMA-STAR-NEXT.md`](LEMMA-STAR-NEXT.md).
 
 ---
 
@@ -76,8 +81,10 @@ Neither sits.
 | Stokes identities | Sit. \(\mathcal D_s\ge 0\). \(\theta\nu\mathcal D_s\) alone is not enough. |
 | \(C_* X^{3/2}\Lambda\) remainder | Numeric support on tested families. Not a theorem. |
 
-**Headline.** K=0 dead. Lemma★ survives numeric kill only
-(not proved). HH→L still the gap. NS not solved.
+**Headline.** K=0 dead. Uniform pre-Young \(C\) dead (Attack 6:
+\(\lvert R_{\mathrm{pre}}\rvert\simeq 0.158\,s\)). \(C_*\)
+survives the scaled triad (\(\simeq 0.0404\)). HH→L still the
+gap. NS not solved.
 
 Do not cash a bounded ratio on a Galerkin sample as \(C_0\).
 A family that did not blow is not a uniform geometric constant.
@@ -86,11 +93,9 @@ A family that did not blow is not a uniform geometric constant.
 
 ## Live door
 
-Prove (1) or (2) above with HH→L controlled, **or**
-kill ★ by a smooth family with
-\(\mathfrak T_c/(\|u\|_2 X\Lambda)\to\infty\).
-
-Until then: keep the analytic gap explicit.
+Prove or kill \(|T_c|\le C_* X^{3/2}\Lambda\) with HH→L
+controlled. Uniform pre-Young \(C\) is off (Attack 6).
+Do not revive K=0. Do not cash a triad ratio as \(C_*\).
 
 ---
 

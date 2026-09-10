@@ -56,6 +56,9 @@ Hypothesis, not a theorem. K=0 dead.
 HH→L still the gap. Numeric survival
 is not a proof. File:
 [`LEMMA-STAR.md`](LEMMA-STAR.md).
+Attack 6: uniform pre-Young \(C\) is dead
+(\(|R_{\mathrm{pre}}|\sim s\)). \(C_*\) still open.
+[`LEMMA-STAR-NEXT.md`](LEMMA-STAR-NEXT.md).
 Drill: PR 48.
 
 ---
