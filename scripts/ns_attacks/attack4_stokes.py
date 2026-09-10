@@ -90,7 +90,8 @@ def run(seed: int = 7) -> dict:
         "absorption_rows": abs_rows,
         "scaling_ok": all(
             abs(scaling[i]["E_over_B2"] - scaling[0]["E_over_B2"]) < 1e-8
-            and abs(scaling[i]["ratio_star"] - scaling[0]["ratio_star"]) < 1e-8
+            and abs(scaling[i]["Tc_over_B3"] - scaling[0]["Tc_over_B3"]) < 1e-8
+            and abs(scaling[i]["ratio_cstar"] - scaling[0]["ratio_cstar"]) < 1e-8
             for i in range(len(scaling))
         ),
         "verdict": "STOKES_IDENTITIES_OK_absorption_needs_remainder",

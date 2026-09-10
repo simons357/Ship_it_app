@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Attack 5 — Route 2 / alternate remainder forms + Lemma★ kill drill.
 
-Goal: try to KILL Lemma★ uniform C0 by maximizing |Tc|/(E X Λ) over a large
-family (random fields, triads, scale separations, near-mono-chromatic, etc.).
-If the empirical max stays O(1), document strongest numeric bound and the
-exact analytic gap that remains.
+Goal: try to KILL Lemma★ uniform C0 by maximizing |Tc|/(√E X Λ) (pre-Young)
+over a large family. If the empirical max stays O(1), document strongest
+numeric bounds and the exact analytic gap that remains.
 """
 
 from __future__ import annotations
@@ -18,20 +17,31 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from ns_attacks.stokes_moments import (  # noqa: E402
+    enforce_reality,
     format_probe,
     high_triad_field,
     make_divfree_amp,
-    moments,
     probe,
     random_field,
-    scale_field,
     two_shell_field,
-    enforce_reality,
 )
 
 
+def _py(x):
+    """Convert numpy scalars to plain Python for JSON."""
+    if isinstance(x, (np.floating, np.integer)):
+        return x.item()
+    if isinstance(x, np.bool_):
+        return bool(x)
+    if isinstance(x, dict):
+        return {k: _py(v) for k, v in x.items()}
+    if isinstance(x, (list, tuple)):
+        return [_py(v) for v in x]
+    return x
+
+
 def mono_plus_perturbation(rng, k_main=(3, 1, 0), k_pert=(1, -2, 1), eps=1e-2):
-    """Nearly single-mode field (Ds small) + tiny perturbation — stress Rk0 / R★."""
+    """Nearly single-mode field (Ds small) + tiny perturbation — stress Rk0 / Rpre."""
     f = {}
     v = make_divfree_amp(k_main, (1.0, 0.0, 0.0))
     f[k_main] = v / np.linalg.norm(v)
@@ -54,29 +64,29 @@ def run(seed: int = 11, n_random: int = 500) -> dict:
         samples.append(
             {
                 "tag": tag,
-                "ratio_star": r.ratio_star,
-                "ratio_preyoung": r.ratio_preyoung,
-                "ratio_cstar": r.ratio_cstar,
-                "ratio_k0": r.ratio_k0,
-                "E": r.E,
-                "X": r.X,
-                "Lambda": r.Lambda,
-                "Ds": r.Ds,
-                "Tc": r.Tc,
+                "ratio_star": float(r.ratio_star),
+                "ratio_preyoung": float(r.ratio_preyoung),
+                "ratio_cstar": float(r.ratio_cstar),
+                "ratio_k0": float(r.ratio_k0) if np.isfinite(r.ratio_k0) else None,
+                "E": float(r.E),
+                "X": float(r.X),
+                "Lambda": float(r.Lambda),
+                "Ds": float(r.Ds),
+                "Tc": float(r.Tc),
             }
         )
         if abs(r.ratio_preyoung) > best["abs_ratio_preyoung"]:
             best = {
-                "abs_ratio_preyoung": abs(r.ratio_preyoung),
-                "ratio_preyoung": r.ratio_preyoung,
-                "ratio_star": r.ratio_star,
+                "abs_ratio_preyoung": float(abs(r.ratio_preyoung)),
+                "ratio_preyoung": float(r.ratio_preyoung),
+                "ratio_star": float(r.ratio_star),
                 "tag": tag,
-                "ratio_cstar": r.ratio_cstar,
-                "E": r.E,
-                "X": r.X,
-                "Lambda": r.Lambda,
-                "Ds": r.Ds,
-                "Tc": r.Tc,
+                "ratio_cstar": float(r.ratio_cstar),
+                "E": float(r.E),
+                "X": float(r.X),
+                "Lambda": float(r.Lambda),
+                "Ds": float(r.Ds),
+                "Tc": float(r.Tc),
             }
 
     # Random barrage
@@ -97,9 +107,13 @@ def run(seed: int = 11, n_random: int = 500) -> dict:
             consider(probe(f), f"triad_B={B:g}_p{j}")
 
     # Scale-separated triads
-    for s in [1, 2, 4, 8, 16]:
+    for s in [1, 2, 4, 8, 16, 32]:
         f = high_triad_field(amp=1.0, k1=(4 * s, 2 * s, s), k2=(-3 * s, s, s))
         consider(probe(f), f"sep_{s}")
+        for j in range(12):
+            ph = tuple(rng.uniform(0, 2 * np.pi, size=3))
+            f = high_triad_field(amp=1.0, k1=(4 * s, 2 * s, s), k2=(-3 * s, s, s), phases=ph)
+            consider(probe(f), f"sep_{s}_p{j}")
 
     # Two-shell families
     for al in [0.1, 1.0, 10.0]:
@@ -108,22 +122,25 @@ def run(seed: int = 11, n_random: int = 500) -> dict:
             consider(probe(f), f"shell_{al}_{ah}")
 
     # Near-monochromatic (small Ds)
-    for eps in [1e-4, 1e-3, 1e-2, 1e-1]:
-        for j in range(20):
+    for eps in [1e-6, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1]:
+        for j in range(30):
             f = mono_plus_perturbation(rng, eps=eps)
-            r = probe(f, label=f"mono_eps={eps}")
-            consider(r, f"mono_eps={eps}_{j}")
+            consider(probe(f), f"mono_eps={eps}_{j}")
 
-    # Route-2 alternate remainders on best / triad sample
+    # Adversarial: many random high modes (HH→L stress)
+    for i in range(80):
+        f = random_field(rng, kmax=8, n_modes=24, amp=1.0)
+        consider(probe(f), f"dense_{i}")
+
     base = high_triad_field(amp=1.0)
     r = probe(base)
     alt = {
-        "Tc_over_E_X_Lambda_postYoung": r.ratio_star,
-        "Tc_over_sqrtE_X_Lambda_preYoung": r.ratio_preyoung,
-        "Tc_over_X32_Lambda": r.ratio_cstar,
-        "Tc_over_Ds": r.ratio_k0,
-        "Tc_over_E_Y": r.Tc / (r.E * r.Y) if r.E * r.Y else None,
-        "Tc_over_B_L2_Y": r.Tc / (r.B_L2 * r.Y) if r.B_L2 * r.Y else None,
+        "Tc_over_E_X_Lambda_postYoung": float(r.ratio_star),
+        "Tc_over_sqrtE_X_Lambda_preYoung": float(r.ratio_preyoung),
+        "Tc_over_X32_Lambda": float(r.ratio_cstar),
+        "Tc_over_Ds": float(r.ratio_k0),
+        "Tc_over_E_Y": float(r.Tc / (r.E * r.Y)) if r.E * r.Y else None,
+        "Tc_over_B_L2_Y": float(r.Tc / (r.B_L2 * r.Y)) if r.B_L2 * r.Y else None,
         "Young_gap_note": (
             "Lemma★ remainder is the Young lift of a degree-3 bound |Tc|≤C||u||_2 X Λ; "
             "C* form uses |Tc|≤C* X^{3/2} Λ. HH→L blocks standard 3D product close."
@@ -133,9 +150,12 @@ def run(seed: int = 11, n_random: int = 500) -> dict:
     print(f"best so far: {best}", flush=True)
 
     abs_pre = [abs(s["ratio_preyoung"]) for s in samples]
-    abs_cstar = [abs(s["ratio_cstar"]) for s in samples if np.isfinite(s["ratio_cstar"])]
-    # Kill if geometric pre-Young constant blows on smooth Galerkin family
-    killed = bool(abs_pre) and max(abs_pre) > 1e3
+    abs_cstar = [
+        abs(s["ratio_cstar"])
+        for s in samples
+        if s["ratio_cstar"] is not None and np.isfinite(s["ratio_cstar"])
+    ]
+    killed = bool(len(abs_pre) > 0 and float(max(abs_pre)) > 1e3)
 
     summary = {
         "attack": 5,
@@ -158,9 +178,10 @@ def run(seed: int = 11, n_random: int = 500) -> dict:
         ),
         "ns_solved": False,
     }
+    summary = _py(summary)
     print("\n=== ATTACK 5 SUMMARY ===", flush=True)
     print(json.dumps({k: v for k, v in summary.items() if k != "best"}, indent=2), flush=True)
-    print("best=", json.dumps(best, indent=2), flush=True)
+    print("best=", json.dumps(summary["best"], indent=2), flush=True)
     return summary
 
 

@@ -20,21 +20,23 @@ X=\|A^{1/2}u\|_2^2,\quad Y=\|Au\|_2^2,\quad Z=\|A^{3/2}u\|_2^2,\quad\Lambda=\fra
 \mathfrak T_c\le\theta\nu\mathcal D_s+C_0\nu^{-1}\|u\|_2^2 X\Lambda.
 \]
 
+**Pre-Young equivalent (amp-homogeneous):** \(|\mathfrak T_c|\le C\|u\|_2 X\Lambda\) with geometric \(C\), then Young in \(\nu\).
+
 ## What is proved / killed / open
 
 | Claim | Status | Evidence |
 |-------|--------|----------|
-| Lemma★ \(\Rightarrow\) no finite-time blowup of \(\Lambda\) in this packaging \(\Rightarrow\) GR on \(\mathbb{T}^3\) **in this packaging** | **Conditional implication** (sketch / packaging only) | Energy/enstrophy differential inequalities + absorption; not a Clay submission |
-| K=0 form \(\mathfrak T_c\le\theta\nu\mathcal D_s\) | **KILLED** (numeric; scaling) | Attack 2: \(\mathfrak T_c/\mathcal D_s\) grows with amplitude (\(\sim B\)) |
-| Young reduction of \(\mathfrak T_c\) toward a norm of \(B(u,u)\) | **Partial** | Formal polarization; does not close 3D product gap |
-| \(|\mathfrak T_c|\le C\|u\|_2 X^{3/2}\) (or equiv) by Agmon/product | **GAP — does not close** | Standard 3D estimates insufficient for HH→L |
-| Uniform geometric \(C_0\) for Lemma★ | **OPEN** | Attack 1+5 numeric survival ≠ proof; live door: prove **or** kill with blowing family |
-| Amplitude-invariant \(C_*\) for \(X^{3/2}\Lambda\) remainder | **OPEN (numeric support)** | Attack 2 |
+| Lemma★ \(\Rightarrow\) no finite-time blowup of \(\Lambda\) in this packaging \(\Rightarrow\) GR on \(\mathbb{T}^3\) **in this packaging** | **Conditional implication only** | Packaging / differential inequality; **not** a Clay submission |
+| K=0 form \(\mathfrak T_c\le\theta\nu\mathcal D_s\) | **KILLED** | Attack 2: \(\lvert T_c\rvert/\mathcal D_s\sim B\) on fixed-shape high triad (\(0.0035\to349\)) |
+| Young reduction of \(\mathfrak T_c\) toward a norm of \(B(u,u)\) | **Partial / formal** | Polarization exists; does not close 3D product gap |
+| \(|\mathfrak T_c|\le C\|u\|_2 X^{3/2}\) (or equiv) by Agmon/product | **GAP — does not close** | HH→L bottleneck (Attack 3) |
+| Uniform geometric \(C\) / \(C_0\) for Lemma★ | **OPEN — survives numeric kill drill** | Attack 1+5: max \(\lvert R_{\mathrm{pre}}\rvert\approx5.09\) on 978 samples; **not** \(\to\infty\); **still not a proof** |
+| Amplitude-invariant \(C_*\) for \(X^{3/2}\Lambda\) remainder | **OPEN (numeric support)** | Attack 2: \(C_*\approx0.004058\) fixed triad; Attack 5 max \(\approx0.0406\) |
 
-## Live door
+## Live door (unchanged)
 
-1. **Prove** Lemma★ with uniform geometric \(C_0\), or the weaker \(C_* X^{3/2}\Lambda\) bound; **or**
-2. **Kill** by exhibiting a smooth family with \(R_\star=\mathfrak T_c/(\|u\|_2^2 X\Lambda)\to\infty\); **or**
+1. **Prove** Lemma★ / pre-Young \(C\), or the weaker \(C_* X^{3/2}\Lambda\) bound; **or**
+2. **Kill** by exhibiting a smooth family with \(R_{\mathrm{pre}}=\mathfrak T_c/(\|u\|_2 X\Lambda)\to\infty\); **or**
 3. Upgrade centering cancellation beyond \(\mathfrak T_c=\mathcal M-\Lambda\mathcal N\) to remove the dangerous HH→L piece.
 
 Until one of these lands as mathematics (not numerics), **do not claim global regularity**.
@@ -44,3 +46,4 @@ Until one of these lands as mathematics (not numerics), **do not claim global re
 - `docs/math/ns_attacks/ATTACK_SYNTHESIS_SIMULTANEOUS.md`
 - `docs/ns-recovery/CENTERED-SPECTRAL-DRIFT-MASTER-REPORT.md`
 - `scripts/ns_attacks/`
+- `/opt/cursor/artifacts/ns_five_lane_2026-09-10/`

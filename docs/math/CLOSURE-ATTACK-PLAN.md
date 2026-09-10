@@ -63,6 +63,20 @@ DA ranking (impact × closability): multi-rep Bridge\* ≫ Paper1 A–C packagin
 
 ---
 
+## LEAD — Lemma★ / centered Stokes drift (five-lane numeric)  **[2026-09-10]**
+
+| | |
+|--|--|
+| **Where** | `docs/math/ns_attacks/`; probes `scripts/ns_attacks/` |
+| **Lemma★** | \(\mathfrak T_c\le\theta\nu\mathcal D_s+C_0\nu^{-1}\|u\|_2^2 X\Lambda\) — **OPEN** |
+| **K=0** | **KILLED** (ratio grows with amplitude) |
+| **C\* survivor** | Numeric amp-invariance on triads; **not proved** |
+| **Kill drill** | Max pre-Young \(\lvert R_{\mathrm{pre}}\rvert\approx5.09\) on 978 samples — **survives**, not a proof |
+| **Does not buy** | Clay / unconditional GR |
+| **Status** | **LEAD / OPEN**; **NS NOT SOLVED** |
+
+---
+
 ## LEAD — Route N (shellwise convex bypass)  **[2026-09-08]**
 
 | | |
