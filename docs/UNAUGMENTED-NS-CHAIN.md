@@ -222,7 +222,7 @@ On Bad, \(|\sin\varphi|\) is large, so the kernel is not improved.
 | CKN measure of singular set | Proved |
 | Lemma C (good pairs) | Proved (conditional theorem) |
 | H2 as smallness criterion | Proved (CKN 1982) |
-| H1 / \(A_{\mathrm{bad}}\) a priori | **Open** |
+| H1 / \(A_{\mathrm{bad}}\) a priori | **Open** (attempted §12; Morrey wall) |
 | H2 a priori from energy | **Open** |
 | H3 / \(A_{\mathrm{ext}}\) a priori | **Open** (bound named) |
 | \(R_\phi\) cutoff error | Lemma to write or cite; not free |
@@ -232,9 +232,11 @@ On Bad, \(|\sin\varphi|\) is large, so the kernel is not improved.
 
 ## 8. What to do next
 
-Work **H1** on a single cylinder \(Q_r\). Do not reprove Lemma C. Do not add \(K(t)\). Keep **H1, H2, H3, \(R_\phi\)** separate so a failure is labeled.
+WRITE (6) was attempted on one cylinder (§12). It did not close. The named wall is Morrey: \(W^{1,2}(H)\not\subset C^{0,1/2}\) in 3D. Mid-Bad is an H3-class remainder. Near-Bad is still H1.
 
-Optional sibling (not shorter): \(L^\infty_t L^3\) mass on the bad set; Type-II profile. Only after H1 has a new estimate or a new wall.
+Do not reprove Lemma C. Do not add \(K(t)\). Do not rerun the §6 / §12 fail rows as proofs. Keep **H1, H2, H3, \(R_\phi\)** separate.
+
+Optional sibling (not shorter): \(L^\infty_t L^3\) mass on the bad set; Type-II profile. Only after H1 has a new estimate that beats the Morrey wall.
 
 DA will not emit H1 and call it proved.
 
@@ -254,7 +256,7 @@ The packet is a **good map**. It is not a proof of ordinary NS.
 
 **Lemma C.** CF 1993 / BdVB 2002 sit as **if**. Hölder \(1/2\) is the right cut for this path. Lemma C does not prove alignment. That sentence is the whole point.
 
-**H1.** The right leftover on this path. \(A_{\mathrm{bad}}\) is stretching from misaligned high-vorticity pairs. On Bad the kernel stays \(|z|^{-3}\). An a priori bound of that integral by local dissipation plus \(r^{-2}\iint|\omega|^2\) is WRITE (6) here. Open.
+**H1.** The right leftover on this path. \(A_{\mathrm{bad}}\) is stretching from misaligned high-vorticity pairs. On Bad the kernel stays \(|z|^{-3}\). WRITE (6) was written on one cylinder in §12. Mid-Bad is named (H3-class). Near-Bad hits the Morrey wall. The aimed estimate is **not** proved.
 
 **H2.** Smallness criterion is true. A priori from \(\int E<\infty\) is not. After Young the remainder is local \(\int E^2\). So even if H1 sits, H2-from-energy is a second wall. Keep them separate.
 
@@ -262,9 +264,9 @@ The packet is a **good map**. It is not a proof of ordinary NS.
 
 **Refuse list (§6).** Sound. Do not rerun HLS, Lemma J, signed \(D\), thin-Bad-as-Lemma-C, imposed waiting time, or \(K(t)\)/Q-stack as a close.
 
-**Not equivalent to DA-NS-2.** Spectral-barycenter integral is another writing of leftover (6). This packet’s next write is H1 on one cylinder.
+**Not equivalent to DA-NS-2.** Spectral-barycenter integral is another writing of leftover (6). This packet’s WRITE (6) attempt is §12. It did not close.
 
-**Verdict.** Use this as the unaugmented chain. Work H1. Do not emit H1. Theorem A stays a different equation.
+**Verdict.** Use this as the unaugmented chain. H1 was attempted. Do not emit H1. Theorem A stays a different equation.
 
 ---
 
@@ -384,5 +386,95 @@ C r^{-2}\iint_{Q_r}|\omega|^2.
 **What is not claimed.** H1 is not proved. H2-from-energy is not proved. H3-from-energy is not proved. The three *writing* gaps are gone. The last estimate is still WRITE (6).
 
 **Desk score of this repair.** Gap (iii) is the right implication (local Serrin, not CKN). Gap (ii) is a valid crude bound; H3 is a real extra term. Gap (i) stops a free move; \(R_\phi\) is still a lemma. Writing sloppiness is gone. H1, H2-from-energy, and H3-from-energy are not proved.
+
+Phone copy of this section: [`GAPS_DESTROYED.md`](GAPS_DESTROYED.md).
+
+---
+
+## 12. WRITE (6) — H1 on one cylinder (attempted; still open)
+
+Asked: write leftover (6). Object: one cylinder \(Q_r\). Keep H2, H3, \(R_\phi\) off this line. Do not add \(K(t)\). Do not emit H1.
+
+**Aimed estimate.**
+\[
+A_{\mathrm{bad}}(Q_r)
+\le
+\frac\nu8\iint_{Q_r}|\nabla\omega|^2
++C r^{-2}\iint_{Q_r}|\omega|^2.
+\]
+
+**Object.**
+\[
+A_{\mathrm{bad}}(Q_r)
+:=
+\iint_{Q_r}|\alpha_{\mathrm{bad}}^{\mathrm{loc}}|\,|\omega|^2\phi,
+\]
+\[
+\alpha_{\mathrm{bad}}^{\mathrm{loc}}(x)
+=
+\mathrm{P.V.}\int_{\substack{y\in B_r\\(x,y)\ \mathrm{Bad}}}
+D(\hat z,\xi(x),\xi(y))\frac{|\omega(y)|}{|x-y|^3}\,dy.
+\]
+On Bad, \(|\sin\varphi|>C_*|x-y|^{1/2}\), so \(|D|\) does not drop the kernel to \(|z|^{-5/2}\). The kernel stays order \(|z|^{-3}\).
+
+### Split (valid)
+
+Fix \(\rho\in(0,r)\). Bad \(=\) Bad\(^{\ge\rho}\cup\) Bad\(^{<\rho}\).
+
+**Mid.** Same Cauchy–Schwarz as H3, now at scale \(\rho\): for \(|x-y|\ge\rho\),
+\[
+|\alpha_{\mathrm{bad}}^{\ge\rho}(x)|
+\le
+C\rho^{-3/2}\|\omega\|_{L^2(B_r)}.
+\]
+\[
+A_{\mathrm{bad}}^{\ge\rho}(Q_r)
+\le
+C\rho^{-3/2}\int_{t_0-r^2}^{t_0} E_{\mathrm{loc}}(t)^{3/2}\,dt.
+\]
+Named remainder. Not absorbed into \(r^{-2}\iint|\omega|^2\) as \(r\to 0\) from \(\int E<\infty\). Same class as H3. **Not H1.**
+
+**Near.** Pairs with \(|x-y|<\rho\). This is the core of WRITE (6).
+
+### Possibilities scored
+
+| Try | What it is | Verdict |
+|---|---|---|
+| HLS / CZ on Bad, kernel \(\lvert z\rvert^{-3}\) | Recovers the cubic \(E^3\) bound, or the original stretching | **fail** as H1. Already §6 |
+| Dyadic CS on near shells \(2^{-k}\) | Factor \(2^{3k/2}\) blows up as \(k\to\infty\) | **fail** at small scales. Mid (\(\lvert z\rvert\ge\rho\)) is the row above |
+| Direction energy | On \(\{\omega\neq 0\}\): \(\lvert\nabla\omega\rvert^2=\lvert\nabla\lvert\omega\rvert\rvert^2+\lvert\omega\rvert^2\lvert\nabla\xi\rvert^2\). Hence \(\int_H\lvert\nabla\xi\rvert^2\le\Lambda^{-2}\int\lvert\nabla\omega\rvert^2\) | **pass** as identity. **fail** as Hölder \(1/2\) |
+| Morrey / Sobolev | In 3D, \(W^{1,p}\subset C^{0,1-3/p}\) needs \(p>3\). Hölder \(1/2\) needs \(p=6\). Energy gives \(\nabla\xi\in L^2(H)\). Even if \(H\) were a ball, \(W^{1,2}\not\subset C^{0,1/2}\) | **wall**. This is why energy does not empty near-Bad |
+| Path-cost of \(\nabla\xi\) | Segment lower bound \(\lvert\xi(x)-\xi(y)\rvert\lesssim\int_\gamma\lvert\nabla\xi\rvert\) | **fail** as H1. Reconnection / two-blobs leave \(H\). Already §6 |
+| Lemma J (pair paid by \(\fint\lvert\nabla\omega\rvert^2\)) | Pointwise | **fail**. Biot–Savart averages \(\omega\), not \(\nabla\omega\). Already §6 |
+| Signed \(D\) | Cancelation in the kernel | **fail** for an isolated pair. Already §6 |
+| Thin Bad | Measure of Bad small | **fail** as proof. Assuming it is Lemma C. Already §6 |
+| Empty near-Bad if \(\xi\in C^{0,\gamma}\), \(\gamma\ge 1/2\) | Then Bad\(^{<\rho}=\emptyset\) for \(\rho\) small (or \(C\le C_*\)) | **pass** as Lemma C on the ball. **fail** as a priori. The if is the leftover |
+| Fold picture only | Spread dissipation in a ball | **fail** as H1. A direction sheet with \(\nabla\xi\in L^2\) still makes Bad pairs. Two other pictures remain |
+| CKN-small cylinder | Scaled \(\iint\lvert\nabla u\rvert^2\) small \(\Rightarrow\) \(A_{\mathrm{bad}}\) small | **pass** as smallness. **fail** as a priori from \(\int E<\infty\). That is H2’s class, not H1 |
+| Local interpolation \(E_{\mathrm{loc}}^2\le C\mathcal{E}_{\mathrm{loc}}\lVert\nabla\omega\rVert_2^2\) | Would give \(\int E_{\mathrm{loc}}^2\) from a closed enstrophy budget | **circular**. The budget is what H1 is for |
+| Waiting time \(r^2/\nu\) | Filter which cylinders | **fail**. Imposed, not derived. Already §6 |
+| Bony LP split | LLH / LHH / HHH | **fail**. Needs \(\lVert\omega_{\mathrm{low}}\rVert_\infty\) or pieces of \(\int E^2\). Already §6 |
+| \(K(t)\) / Q-stack / \(\Phi\) | Different PDE | **refuse**. Not unaugmented NSE |
+
+**Successful as write, not as close.** The mid split \(A_{\mathrm{bad}}^{\ge\rho}\) is a named remainder. The direction-energy identity sits. The Morrey gap is the named wall for the near piece.
+
+**Not successful.** No row proves the aimed estimate from \(\int E<\infty\).
+
+### Remainder after the attempt
+
+\[
+A_{\mathrm{bad}}(Q_r)
+=
+A_{\mathrm{bad}}^{\ge\rho}(Q_r)
++
+A_{\mathrm{bad}}^{<\rho}(Q_r).
+\]
+
+First term: bound above, H3-class, a priori open.
+Second term: stretching from misaligned pairs at scales \(<\rho\). Empty if \(\xi\) is Hölder \(1/2\) on \(H\cap B_r\) with constant \(\le C_*\). That is Lemma C localized. Energy does not give it, because \(W^{1,2}(H)\not\subset C^{0,1/2}\).
+
+**Verdict.** WRITE (6) **open**. H1 is not proved. Do not cash this section as a close.
+
+**Next line** (if there is a next line on this path): an estimate that beats the Morrey wall — \(\nabla\xi\in L^p(H)\) for some \(p>3\), or an equivalent Campanato bound on \(\xi\) at scale \(\rho\) — *from the energy class*, or a different integrable control of \(A_{\mathrm{bad}}^{<\rho}\). That line is not in the energy floor. DA will not emit it.
 
 

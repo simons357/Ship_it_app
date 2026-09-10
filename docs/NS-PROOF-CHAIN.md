@@ -89,13 +89,16 @@ A2 is live and did not blow on the B15 path (B40, B41).
 *[have]*
 
 **(6)** **Write.** Live leftover on this path: **H1**
-(\(A_{\mathrm{bad}}\) a priori on \(Q_r\)). H2 a priori
+(\(A_{\mathrm{bad}}\) a priori on \(Q_r\)). Attempted
+10 Sep on one cylinder (`UNAUGMENTED-NS-CHAIN.md` §12).
+Mid-Bad named (H3-class). Near-Bad hits Morrey:
+\(W^{1,2}\not\subset C^{0,1/2}\). Still open. H2 a priori
 from energy is also open. H3 (\(A_{\mathrm{ext}}\))
 named, a priori open. \(R_\phi\) is not free. Closed
 budget implies local Serrin, not CKN. Other writings
 of the same leftover: \(\int_0^T\mathcal{R}\), all-data
 A1/A2, a killing field, DA-NS-2. No \(K(t)\). No \(Q_1\).
-*[the next write]*
+*[attempted; WRITE (6) open]*
 
 **(7)** **Gronwall.** From (3) and (6), \(X(t)\) stays
 finite on \([0,T]\).
@@ -139,7 +142,7 @@ Classify one:
 - a different integrable residual
 - a killing field for the stretching leftover
 - DA-NS-2 (same leftover; identities already have)
-- H1: \(A_{\mathrm{bad}}\) a priori on \(Q_r\) (live path, 10 Sep 2026)
+- H1: \(A_{\mathrm{bad}}\) a priori on \(Q_r\) (live path, 10 Sep 2026; attempted §12, still open; Morrey wall)
 - H3: a priori control of \(A_{\mathrm{ext}}\) from \(\int E<\infty\) (named remainder; not the next write)
 - \(R_\phi\): cutoff lemma for localizing Lemma C (not free; not H1)
 
