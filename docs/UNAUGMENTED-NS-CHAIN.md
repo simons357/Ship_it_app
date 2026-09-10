@@ -578,7 +578,7 @@ Checked against the papers, not against slogans. H1 is not sitting in the litera
 | Hölder \(1/2\) \(\Rightarrow\) regular | Beirão da Veiga–Berselli, *Diff. Int. Eq.* 15 (2002) | Yes. Whole space |
 | \(\beta<1/2\) in that argument | Beirão da Veiga, arXiv:1604.08083 (2016) | Open in that framework. Cut at \(1/2\) is the literature cut |
 | Bounded domain / slip / Green | BdVB, *JDE* 246 (2009); BdV, *J. Math. Fluid Mech.* 15 (2013) | Yes. Still an alignment hypothesis |
-| Localized to a cylinder | Grujić, *Comm. Math. Phys.* 290 (2009) | Yes. Localizes the *condition*. Does **not** remove it |
+| Localized to a cylinder | Grujić, *Comm. Math. Phys.* 290 (2009), “Localization and Geometric Depletion of Vortex-Stretching” | Yes. Localizes the *condition*. Does **not** remove it |
 
 **Verdict.** Lemma C is real. Localization of Lemma C is real if you already have local alignment. Neither estimates \(A_{\mathrm{bad}}\).
 
@@ -587,12 +587,15 @@ Checked against the papers, not against slogans. H1 is not sitting in the litera
 - **Grujić–Guberović, *CMP* 298 (2010).** Coherence of \(\xi\) as a weight on \(\int|\omega|^q\). Assume some coherence, conclude regularity. If coherence fails on a thick set, the class does not fire.
 - **Bradshaw–Grujić (arXiv:1309.2519).** Mild geometry on \(\xi\) \(\Rightarrow\) \(L\log L\) on \(\omega\). Still a hypothesis on direction.
 - **Grujić, *Nonlinearity* 26 (2013).** 1-D sparseness of intense regions \(\Rightarrow\) no blowup. Assumes sparseness; does not prove Bad is sparse. Cousin of shape 1, not a proof of shape 1.
+- **Beirão da Veiga, *DCDS-S* 2019 / follow-ups.** Perturb \(\beta\) below \(1/2\); integrability of \(\omega\) degrades. Below the cut, CF does not give \(L^\infty_t L^2\) on \(\omega\).
 
 **No hit.** No paper found that bounds
 \[
-\iint_{\{| \sin\varphi|>C|x-y|^{1/2}\}}\frac{|\omega(x)|^2|\omega(y)|}{|x-y|^3}
+\iint_{\{|\sin\varphi|>C|x-y|^{1/2}\}}\frac{|\omega(x)|^2|\omega(y)|}{|x-y|^3}
 \]
-by local dissipation plus \(r^{-2}\iint|\omega|^2\) from the energy class alone. That integral is H1 / WRITE (6). It is not in the record as a theorem.
+by local dissipation plus \(r^{-2}\iint|\omega|^2\) from the energy class alone. That integral is H1 / WRITE (6) / Lemma I on the ball. It is not in the record as a theorem.
+
+Paste copy: [`LITERATURE-H.md`](LITERATURE-H.md).
 
 ### H2 and H3 versus the record
 

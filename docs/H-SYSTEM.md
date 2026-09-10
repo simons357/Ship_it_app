@@ -50,3 +50,5 @@ A cylinder closes only if \(\mathrm{C}+R_\phi\), H1, H2-a priori (or CKN-small),
 If you get H1 and miss H2-from-energy, you still do not have the cylinder.
 
 Work H1. Keep H2 and H3 labeled. Lemma C stays an if.
+
+Literature: H1 is not under another name. Paste: [`LITERATURE-H.md`](LITERATURE-H.md).

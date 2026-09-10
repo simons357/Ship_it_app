@@ -52,6 +52,7 @@ docs/H-SYSTEM.md
 docs/H1-OBJECT.md
 docs/UNAUGMENTED-NS-CHAIN.md
 Writing gaps: docs/GAPS_DESTROYED.md
+Literature vs H-system: docs/LITERATURE-H.md
 
 Latest three chains plus the others:
 docs/LATEST.md
