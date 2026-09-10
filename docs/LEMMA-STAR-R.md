@@ -172,9 +172,10 @@ The missing mathematical content is the uniform triadic
 bound — not more viscosity bookkeeping, and not more
 bounded numerical samples.
 
-The first non-trivial family is the closing three-shell
-\(k_0\), \(k_0+e\), \(2k_0+e\). Two-shell is not that test.
-Attack 8: [`LEMMA-STAR-E.md`](LEMMA-STAR-E.md).
+The first non-trivial family is the closing three-key
+\(k_0\), \(k_0+e\), \(2k_0+e\). Two *Fourier keys* is not
+that test. Two *shells* can be live. Attack 8:
+[`LEMMA-STAR-E.md`](LEMMA-STAR-E.md). Packets: [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
 
 ---
 

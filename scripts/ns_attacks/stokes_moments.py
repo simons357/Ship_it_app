@@ -236,7 +236,7 @@ def three_shell_field(
         (0.2, 0.5, 1.0),
     ),
 ) -> Field:
-    """On-shell k0 plus off-shell k0+e and 2k0+e. The two-shell test is not this."""
+    """On-shell k0 plus off-shell k0+e and 2k0+e. Two Fourier keys is not this."""
     k0, k1, k2 = three_shell_keys(k0, e)
     if k0 == (0, 0, 0) or k1 == (0, 0, 0) or k2 == (0, 0, 0):
         raise ValueError("three-shell keys must be nonzero")
@@ -266,7 +266,9 @@ def two_shell_shift_field(
         (1.0, 0.0, 0.3),
     ),
 ) -> Field:
-    """k0 and k0+e only. No closing third mode. Control, not the candidate."""
+    """k0 and k0+e only: two Fourier keys, no closing third mode.
+    Two *shells* can still support a live triad; this control is two keys.
+    """
     k1 = add_modes(k0, e)
     field: Field = {}
     for k, amp, phase, seed in zip((k0, k1), (amp0, amp1), phases, pol_seeds):
@@ -336,6 +338,144 @@ def random_field(
         phase = rng.uniform(0, 2 * np.pi)
         field[k] = (amp * np.exp(1j * phase) / nrm) * v * rng.uniform(0.3, 1.0)
     return enforce_reality(field)
+
+
+def mul_mode(k: ModeKey, n: int) -> ModeKey:
+    return (k[0] * n, k[1] * n, k[2] * n)
+
+
+def ap_line(origin: ModeKey, step: ModeKey, count: int) -> List[ModeKey]:
+    return [add_modes(origin, mul_mode(step, i)) for i in range(count)]
+
+
+def l2_normalize(field: Field) -> Field:
+    e = 0.0
+    for v in field.values():
+        e += float(np.vdot(v, v).real)
+    if e <= 1e-30:
+        return field
+    s = 1.0 / float(np.sqrt(e))
+    return {k: s * v for k, v in field.items()}
+
+
+def two_eigenvalue_closed_triad(
+    phases: Tuple[float, float, float] = (0.0, 0.3, -0.2),
+    pol_seeds: Tuple[Sequence[float], Sequence[float], Sequence[float]] = (
+        (0.0, 1.0, 0.2),
+        (1.0, 0.0, 0.3),
+        (0.2, 0.5, 1.0),
+    ),
+) -> Field:
+    """Live two-*shell* triad on three keys: p=(1,1,0), q=(1,-1,0), p+q=(2,0,0).
+
+    |p|^2 = |q|^2 = 2, |p+q|^2 = 4. Two shells can support a closed triad.
+    Two Fourier keys cannot.
+    """
+    return three_shell_field(
+        (1, 1, 0),
+        (0, -2, 0),
+        amp0=1.0,
+        amp1=1.0,
+        amp2=1.0,
+        phases=phases,
+        pol_seeds=pol_seeds,
+    )
+
+
+def coherent_packet_field(
+    m: int,
+    p0: ModeKey = (5, 2, 1),
+    q0: ModeKey = (-3, 1, 1),
+    step: ModeKey = (0, 1, 0),
+    phase_p: float = 0.0,
+    phase_q: float = 0.0,
+    phase_r_shift: float = 0.5 * np.pi,
+    pol_seed: Sequence[float] = (0.2, 1.0, -0.3),
+    random_phases: bool = False,
+    random_pol: bool = False,
+    rng: np.random.Generator | None = None,
+) -> Field:
+    """Arithmetic-progression packets P, Q, R=P+Q.
+
+    |P|=m, |Q|=m, |R|=2m-1. Every (p,q) in P×Q closes onto R: O(m^2) triads.
+    Energy-normalized. Coherent phases unless random_phases=True.
+    """
+    if m < 1:
+        raise ValueError("m >= 1")
+    P = ap_line(p0, step, m)
+    Q = ap_line(q0, step, m)
+    R = ap_line(add_modes(p0, q0), step, 2 * m - 1)
+    field: Field = {}
+
+    def put(k: ModeKey, phase: float) -> None:
+        if k == (0, 0, 0):
+            return
+        if random_pol and rng is not None:
+            seed: Sequence[float] = tuple(float(x) for x in rng.normal(size=3))
+        else:
+            seed = pol_seed
+        v = make_divfree_amp(k, seed)
+        nrm = np.linalg.norm(v)
+        if nrm < 1e-15:
+            v = make_divfree_amp(k, (seed[1], seed[2], seed[0]))
+            nrm = np.linalg.norm(v)
+        if nrm < 1e-15:
+            return
+        if random_phases and rng is not None:
+            phase = float(rng.uniform(0, 2 * np.pi))
+        field[k] = (np.exp(1j * phase) / nrm) * v
+
+    for k in P:
+        put(k, phase_p)
+    for k in Q:
+        put(k, phase_q)
+    for k in R:
+        put(k, phase_p + phase_q + phase_r_shift)
+    return l2_normalize(enforce_reality(field))
+
+
+def hh_l_fan_field(
+    n_pairs: int,
+    k_low: ModeKey = (2, 0, 0),
+    rng: np.random.Generator | None = None,
+    randomize: bool = True,
+) -> Field:
+    """n_pairs high pairs with p+q = k_low, plus mass on k_low. Not frozen."""
+    field: Field = {}
+    used = 0
+    n = 3
+    while used < n_pairs and n < 120:
+        p = (n, n, 1)
+        q = (k_low[0] - p[0], k_low[1] - p[1], k_low[2] - p[2])
+        n += 1
+        if p == (0, 0, 0) or q == (0, 0, 0) or p == q:
+            continue
+        if p == tuple(-x for x in q):
+            continue
+        if rng is not None and randomize:
+            sp = tuple(float(x) for x in rng.normal(size=3))
+            sq = tuple(float(x) for x in rng.normal(size=3))
+            php = float(rng.uniform(0, 2 * np.pi))
+            phq = float(rng.uniform(0, 2 * np.pi))
+        else:
+            sp, sq = (1.0, 0.3, -0.4), (0.2, 1.0, 0.1)
+            php = phq = 0.0
+        vp = make_divfree_amp(p, sp)
+        vq = make_divfree_amp(q, sq)
+        np_ = np.linalg.norm(vp)
+        nq_ = np.linalg.norm(vq)
+        if np_ < 1e-14 or nq_ < 1e-14:
+            continue
+        field[p] = (np.exp(1j * php) / np_) * vp
+        field[q] = (np.exp(1j * phq) / nq_) * vq
+        used += 1
+    sl = (0.0, 1.0, 0.2) if rng is None else tuple(float(x) for x in rng.normal(size=3))
+    vl = make_divfree_amp(k_low, sl)
+    nl = np.linalg.norm(vl)
+    if nl > 1e-14:
+        phl = 0.0 if rng is None else float(rng.uniform(0, 2 * np.pi))
+        field[k_low] = (np.exp(1j * phl) / nl) * vl
+    return l2_normalize(enforce_reality(field))
 
 
 def two_shell_field(

@@ -55,4 +55,4 @@ The estimate (stated, not proved): [`WRITE_6.md`](WRITE_6.md).
 Supporting data: [`WRITE_6_SUPPORTED.md`](WRITE_6_SUPPORTED.md).
 Dream-team read (map yes, (6) no): [`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
 
-**Lemma★ is not an H.** Energy-budget writing of leftover (6) on \(\mathbb{T}^3\). Hypothesis. Exact form: scale-invariant trilinear bound on \(\mathcal R_\star\). First family: closing three-shell; two-shell is the wrong test. K=0 dead. Uniform pre-Young \(C\) dead. HH→L still the gap. Samples are evidence only. Do not merge with H1. File: [`LEMMA-STAR.md`](LEMMA-STAR.md), [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md), [`LEMMA-STAR-E.md`](LEMMA-STAR-E.md).
+**Lemma★ is not an H.** Energy-budget writing of leftover (6) on \(\mathbb{T}^3\). Hypothesis. Exact form: scale-invariant trilinear bound on \(\mathcal R_\star\). Isolated triad: no kill. Live target: coherent packets; not killed on the AP sample. K=0 dead. Uniform pre-Young \(C\) dead. HH→L still the gap. Samples are evidence only. Do not merge with H1. File: [`LEMMA-STAR.md`](LEMMA-STAR.md), [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md), [`LEMMA-STAR-E.md`](LEMMA-STAR-E.md), [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).

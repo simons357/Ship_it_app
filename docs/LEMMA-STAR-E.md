@@ -1,55 +1,72 @@
-# Lemma★ — three-shell family (Attack 8)
+# Lemma★ — isolated closing triad (Attack 8)
 
-10 September 2026. The first non-trivial test of \(\mathcal R_\star\).
-**Not a proof. NS not solved.**
+10 September 2026. Isolated triangle. **Not a proof. NS not solved.**
 
 Locked form: [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md).
 Probe: `python3 scripts/ns_attacks/attack8_three_shell.py`
 
----
-
-## The candidate
-
-Take three shells: \(k_0\) (carrier), \(k_0+e\), and
-\(2k_0+e\), chosen so the triad
-\(k_0+(k_0+e)=2k_0+e\) actually closes. Then
-\(B(v_0,v_1)\) has a component on the third mode, so
-\(T_c\) can be nonzero at order of the product of the two
-off-shell amplitudes, while \(\mathcal D_s\) picks up both
-displaced shells.
-
-Two-shell (\(k_0\) and \(k_0+e\) only) is **not** this test.
-On that control, \(T_c=0\).
+Three precision corrections, then the score.
 
 ---
 
-## Scale invariance, flagged
+## It is two Fourier keys that fail, not two shells
 
-Uniform frequency shift of a *fixed shape* is exact:
-every mode \(k\mapsto nk\), so \(e\mapsto ne\) and
-\(\Lambda\mapsto n^2\Lambda\). Then \(\mathcal R_\star\) is
-flat. Checked: frozen three-shell with \(k_0=(N,0,0)\),
-\(e=(0,N,0)\) gave \(\mathcal R_\star=1.935\times 10^{-3}\)
-at every \(N=2,\ldots,12\).
+The dead control was \(k_0\) and \(k_0+e\) only: two
+**keys**, no place for \(B(v_0,v_1)\) to land, \(T_c=0\).
 
-That invariance is **not** exact if \(\Lambda\) is held as
-an additive shift while \(A\) scales as \(n^2\), and it is
-**not** exact for additive \(e\) sent to large \(|k_0|\).
-Counterexample hunting should keep \(|k_0|^2\) comparable
-to \(\Lambda\). The sub-leading \(\Lambda\) corrections are
-the regime where a kill is most likely to hide.
+Two **shells** can support a live closed triad. Example:
+\[
+p=(1,1,0),\qquad q=(1,-1,0),\qquad p+q=(2,0,0),
+\]
+with \(|p|^2=|q|^2=2\) and \(|p+q|^2=4\). Three keys, two
+eigenvalues, \(T_c\) live (\(\mathcal R_\star\approx 0.031\)
+on a phase search). Checked: Attack 9.
 
-Checked: frozen shape, \(e=(0,1,0)\) fixed, \(k_0=(N,0,0)\).
-\(\mathcal R_\star\) *falls* like about \(|k_0|^{-2}\)
-(exponents \(-1.1\) to \(-2.0\) as \(N=2\to 16\)). High
-frequency with additive \(e\) is the wrong hunt.
+The Attack 8 candidate is three keys
+\(k_0\), \(k_0+e\), \(2k_0+e\) with
+\(k_0+(k_0+e)=2k_0+e\). That can sit on two shells or three.
+The dummy is two keys, not two shells.
 
 ---
 
-## Exponents in \(e\) (frozen shape)
+## \(e\to 0\) is not a literal limit on \(\mathbb Z^3\)
 
-Carrier \(k_0=(6,0,0)\), relative amplitudes
-\((1,0.2,0.05)\), one polarization. Perp \(e=(0,j,0)\):
+The rigorous near-shell limit is
+\[
+\frac{|e|}{|k_0|}\to 0
+\]
+by **fixing** \(e\) and sending \(|k_0|\to\infty\).
+Varying \(|e|\) at fixed \(k_0=(6,0,0)\) is a different cut.
+
+---
+
+## A frozen ray is not a supremum
+
+Decay of \(\mathcal R_\star\) along one fixed polarization
+and relative-amplitude ray does **not** eliminate
+\(|e|/|k_0|\to 0\) unless the polarization and
+relative-amplitude supremum is recomputed at every
+\(|k_0|\).
+
+On the isolated triangle, that supremum was recomputed
+(\(k_0=(N,0,0)\), \(e=(0,1,0)\)). It still fell
+(\(\approx 0.053\) at \(N=2\) to \(\approx 8.6\times 10^{-4}\)
+at \(N=16\)). Frozen-ray decay is weaker evidence; the
+re-optimized isolated triangle still did not kill.
+
+Dilation of a *fixed shape* (\(e\mapsto ne\),
+\(\Lambda\mapsto n^2\Lambda\)) remains exactly flat
+(\(\mathcal R_\star=1.935\times 10^{-3}\)).
+
+Parallel \(e=(j,0,0)\) at one polarization gave \(T_c=0\).
+Accident, not a bound.
+
+---
+
+## Frozen perp-\(e\) table (one ray, not the limit)
+
+Carrier \(k_0=(6,0,0)\), amplitudes \((1,0.2,0.05)\).
+\(e=(0,j,0)\). This is **not** \(|e|/|k_0|\to 0\).
 
 | \(|e|\) | \(\mathcal R_\star\) | consecutive exponent |
 |---|---|---|
@@ -60,25 +77,26 @@ Carrier \(k_0=(6,0,0)\), relative amplitudes
 | 6 | \(1.93\times 10^{-3}\) | \(+0.16\) |
 | 8 | \(1.56\times 10^{-3}\) | \(-0.74\) |
 
-No blow as \(e\to 0\). The lattice minimum \(|e|=1\) is the
-*smallest* \(\mathcal R_\star\) on this ray, not the
-largest. The ratio saturates then rolls over.
-
-Parallel \(e=(j,0,0)\) gave \(T_c=0\) at this polarization.
-That is an accident, not a bound. Same lesson as the frozen
-fan.
-
-A search over amplitudes and phases on the same keys stayed
-at \(\mathcal R_\star\le 0.073\). Evidence only. Not \(C_0\).
+Saturates, then rolls over. Phase/amplitude search on the
+same keys stayed at \(\mathcal R_\star\le 0.073\). Evidence
+only.
 
 ---
 
-## Verdict
+## Verdict (Attack 8)
 
-Three-shell is the right family. Two-shell is dead as a
-test. Additive high-frequency is the wrong hunt. This
-sample did **not** kill Lemma★. The uniform triadic bound
-is still the hole.
+Isolated closed triad: no kill.
+Dilation: exactly neutral.
+Fixed additive offset: safer on the tested isolated
+triangle, including the recomputed supremum; a frozen ray
+alone would not have been enough to say that.
+Polarization zero: accidental.
+
+The live falsification target is a **growing coherent
+triad packet** or HH→L fan, not more isolated triangles.
+Attack 9: [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
+
+The uniform global triadic bound remains completely open.
 
 Do not merge with H1. Do not add \(K(t)\) to the PDE.
 Do not write “almost proved.”

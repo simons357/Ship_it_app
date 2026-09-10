@@ -2,7 +2,8 @@
 """Attack 8 — three-shell closing triad. Exponents in e. Not a proof.
 
 Family: k0 (carrier), k0+e, 2k0+e with k0+(k0+e)=2k0+e.
-Two-shell (k0 and k0+e only) is not this test.
+Two Fourier keys (k0 and k0+e only) is not this test.
+Two shells can support a live closed triad.
 
 Hunt with |k0|^2 comparable to Λ. Additive e at large |k0| is not
 the Attack-6 dilation (that one scales e too, and Λ scales as n^2).
@@ -416,7 +417,7 @@ def run(seed: int = 8, n_phase: int = 12) -> dict:
         "verdict": "KILL_LemmaStar" if killed else "FAMILY_BOUNDED_bound_open",
         "note": (
             "Three-shell closing triad is the first non-trivial family. "
-            "Two-shell is not this test. Additive e at large |k0| is not "
+            "Two Fourier keys is not this test. Additive e at large |k0| is not "
             "Attack-6 dilation. Samples are evidence only. NS not solved."
         ),
     }
