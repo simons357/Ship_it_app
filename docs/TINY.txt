@@ -71,12 +71,11 @@ Lemma★ locked as hypothesis (not proved):
 docs/LEMMA-STAR.md
 Boxed ratio R★ is the exact form of ★:
 docs/LEMMA-STAR-R.md
-Meaning: it is a shape statement, not a
-viscosity statement. Live fork: sup R★
-finite proves it; a near-shell or HH→L
-blow of R★ kills it. Same file. Samples
-are evidence only. Uniform pre-Young C
-is dead.
+Three-shell family (Attack 8):
+docs/LEMMA-STAR-E.md
+Two-shell is the wrong test. Hunt with
+|k0|^2 near Λ. Samples are evidence only.
+Uniform pre-Young C is dead.
 K=0 dead. HH→L still the gap. NS not solved.
 Five-lane drill: GitHub PR 48.
 

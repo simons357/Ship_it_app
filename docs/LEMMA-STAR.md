@@ -137,6 +137,10 @@ bound on \(\mathcal R_\star\) (or \(C_{\star}\)) from triadic
 geometry or cancellation.
 \(\sup\mathcal R_\star<\infty\) proves it. A near-shell or
 HH→L sequence with \(\mathcal R_\star\to\infty\) kills it.
+The first family is the closing three-shell
+\(k_0,k_0+e,2k_0+e\). Two-shell is not that test. Hunt with
+\(|k_0|^2\sim\Lambda\); additive \(e\) at large \(|k_0|\) is
+not the dilation symmetry. Attack 8 did not kill it.
 Uniform pre-Young \(C\) is off. Attack-2 \(C_*\) is a
 different door. Do not revive K=0. Do not cash a triad
 \(\mathcal R_\star\) as \(C_0\). Numerically bounded samples

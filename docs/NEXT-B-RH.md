@@ -58,10 +58,14 @@ shape estimate on \(\mathcal R_\star\).
 \(\sup\mathcal R_\star<\infty\) proves it.
 A near-shell or HH→L sequence with
 \(\mathcal R_\star\to\infty\) kills it.
+First family: closing three-shell. Two-shell
+is not that test. Hunt at \(|k_0|^2\sim\Lambda\).
+Attack 8 did not kill it.
 Samples are evidence only. K=0 dead.
 Uniform pre-Young \(C\) dead. File:
 [`LEMMA-STAR.md`](LEMMA-STAR.md),
-[`LEMMA-STAR-R.md`](LEMMA-STAR-R.md).
+[`LEMMA-STAR-R.md`](LEMMA-STAR-R.md),
+[`LEMMA-STAR-E.md`](LEMMA-STAR-E.md).
 Drill: PR 48.
 
 ---

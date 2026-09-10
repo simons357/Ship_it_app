@@ -151,14 +151,16 @@ This formulation makes three things transparent:
 - A pure shell vanishes because \((A-\Lambda)v=0\).
 - Multiplying \(v\) by an amplitude changes neither
   \(\mathcal R_\star\) nor the question.
-- Moving the same configuration to uniformly higher Fourier
-  frequency also does not change \(\mathcal R_\star\)
-  (lattice dilation \(k\mapsto sk\), integer \(s\); algebra
-  of homogeneity, checked on one triad in Attack 6). A
-  counterexample therefore needs increasingly pathological
-  *relative* shell geometry, phase alignment, or coherent
-  triad accumulation — not merely large amplitude or high
-  frequency.
+- Uniform frequency dilation of a *fixed shape*
+  (\(k\mapsto nk\) for every mode, so \(e\mapsto ne\) and
+  \(\Lambda\mapsto n^2\Lambda\)) leaves \(\mathcal R_\star\)
+  invariant. That is exact. It is **not** exact if \(\Lambda\)
+  is held fixed as an additive shift while \(A\) scales as
+  \(n^2\), and it is **not** exact for an additive lattice
+  displacement \(e\) sent to large \(|k_0|\). Those
+  sub-leading \(\Lambda\) corrections are the regime where a
+  kill is most likely to hide. Hunt with \(|k_0|^2\)
+  comparable to \(\Lambda\).
 
 So the live fork is exact:
 
@@ -169,6 +171,10 @@ So the live fork is exact:
 The missing mathematical content is the uniform triadic
 bound — not more viscosity bookkeeping, and not more
 bounded numerical samples.
+
+The first non-trivial family is the closing three-shell
+\(k_0\), \(k_0+e\), \(2k_0+e\). Two-shell is not that test.
+Attack 8: [`LEMMA-STAR-E.md`](LEMMA-STAR-E.md).
 
 ---
 

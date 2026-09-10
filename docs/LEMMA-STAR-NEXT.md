@@ -30,6 +30,11 @@ Probe: `python3 scripts/ns_attacks/attack6_scale_law.py`
    \(\mathcal R_\star\to\infty\). A fan with frozen polarization
    is not a test; \(T_c=0\) there is an accident, not a bound.
 
+4. **Closing three-shell, not two-shell.**
+   \(k_0+(k_0+e)=2k_0+e\). Hunt at \(|k_0|^2\sim\Lambda\).
+   Additive \(e\) at large \(|k_0|\) is not the dilation
+   symmetry. File: [`LEMMA-STAR-E.md`](LEMMA-STAR-E.md).
+
 Do not revive K=0. Do not glue H1. Do not add \(K(t)\) to the PDE.
 Do not cash a bounded ratio as \(C_0\).
 
@@ -91,6 +96,10 @@ it with a near-shell / HH→L family where
 \(\mathcal R_\star\to\infty\). Equivalent form: the
 trilinear estimate with \(C_{\star}^2=4\theta C_0\).
 File: [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md).
+
+The first family is the closing three-shell. Two-shell is
+not that test. Hunt at \(|k_0|^2\sim\Lambda\). Attack 8
+did not kill it: [`LEMMA-STAR-E.md`](LEMMA-STAR-E.md).
 
 Door 1 (uniform pre-Young \(C\)) is off. K=0 stays dead.
 The Attack-2 remainder \(|T_c|\le C_* X^{3/2}\Lambda\) is a

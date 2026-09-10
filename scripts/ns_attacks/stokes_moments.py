@@ -212,6 +212,75 @@ def make_divfree_amp(k: ModeKey, seed_vec: Sequence[float]) -> np.ndarray:
     return leray_project(k, v)
 
 
+def add_modes(a: ModeKey, b: ModeKey) -> ModeKey:
+    return (a[0] + b[0], a[1] + b[1], a[2] + b[2])
+
+
+def three_shell_keys(k0: ModeKey, e: ModeKey) -> Tuple[ModeKey, ModeKey, ModeKey]:
+    """Closing triad: k0 + (k0+e) = 2k0+e."""
+    k1 = add_modes(k0, e)
+    k2 = add_modes(add_modes(k0, k0), e)
+    return k0, k1, k2
+
+
+def three_shell_field(
+    k0: ModeKey,
+    e: ModeKey,
+    amp0: float = 1.0,
+    amp1: float = 0.2,
+    amp2: float = 0.2,
+    phases: Tuple[float, float, float] = (0.0, 0.3, -0.2),
+    pol_seeds: Tuple[Sequence[float], Sequence[float], Sequence[float]] = (
+        (0.0, 1.0, 0.2),
+        (1.0, 0.0, 0.3),
+        (0.2, 0.5, 1.0),
+    ),
+) -> Field:
+    """On-shell k0 plus off-shell k0+e and 2k0+e. The two-shell test is not this."""
+    k0, k1, k2 = three_shell_keys(k0, e)
+    if k0 == (0, 0, 0) or k1 == (0, 0, 0) or k2 == (0, 0, 0):
+        raise ValueError("three-shell keys must be nonzero")
+    if len({k0, k1, k2}) < 3:
+        raise ValueError("three-shell keys must be distinct (need e ≠ 0 and e ≠ -k0)")
+    field: Field = {}
+    for k, amp, phase, seed in zip((k0, k1, k2), (amp0, amp1, amp2), phases, pol_seeds):
+        v = make_divfree_amp(k, seed)
+        nrm = np.linalg.norm(v)
+        if nrm < 1e-15:
+            v = make_divfree_amp(k, (seed[1], seed[2], seed[0]))
+            nrm = np.linalg.norm(v)
+        if nrm < 1e-15:
+            continue
+        field[k] = (amp * np.exp(1j * phase) / nrm) * v
+    return enforce_reality(field)
+
+
+def two_shell_shift_field(
+    k0: ModeKey,
+    e: ModeKey,
+    amp0: float = 1.0,
+    amp1: float = 0.2,
+    phases: Tuple[float, float] = (0.0, 0.3),
+    pol_seeds: Tuple[Sequence[float], Sequence[float]] = (
+        (0.0, 1.0, 0.2),
+        (1.0, 0.0, 0.3),
+    ),
+) -> Field:
+    """k0 and k0+e only. No closing third mode. Control, not the candidate."""
+    k1 = add_modes(k0, e)
+    field: Field = {}
+    for k, amp, phase, seed in zip((k0, k1), (amp0, amp1), phases, pol_seeds):
+        v = make_divfree_amp(k, seed)
+        nrm = np.linalg.norm(v)
+        if nrm < 1e-15:
+            v = make_divfree_amp(k, (seed[1], seed[2], seed[0]))
+            nrm = np.linalg.norm(v)
+        if nrm < 1e-15:
+            continue
+        field[k] = (amp * np.exp(1j * phase) / nrm) * v
+    return enforce_reality(field)
+
+
 def high_triad_field(
     amp: float = 1.0,
     k1: ModeKey = (4, 2, 1),

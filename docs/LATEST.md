@@ -55,6 +55,11 @@ finite proves ★; a near-shell or HH→L
 sequence with R★ → ∞ kills it. Samples
 are evidence only.
 File: docs/LEMMA-STAR-R.md
+Three-shell (Attack 8): two-shell Tc=0;
+closing triad is the family. Additive e
+at large |k0| is not the dilation
+symmetry. Did not kill ★.
+docs/LEMMA-STAR-E.md
 Attack 6: uniform pre-Young C dead
 (|R_pre| ~ s). That is not ★ dying.
 docs/LEMMA-STAR-NEXT.md
