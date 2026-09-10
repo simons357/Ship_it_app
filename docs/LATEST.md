@@ -69,6 +69,10 @@ docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md
 docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md
 Four corrections:
 docs/LEMMA-STAR-CORRECTIONS.md
+Independent core (direct triad sum;
+live stokes_moments.py not overwritten):
+docs/LEMMA-STAR-CORE.md
+scripts/ns_attacks/ns_lemma_star_core.py
 The \(a^4\) missing inequality is dead.
 ★ implies GR in this packaging; not equivalent.
 Test both signs of \(T_c\). Section 4 is not proved.

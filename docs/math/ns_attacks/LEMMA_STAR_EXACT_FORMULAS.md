@@ -15,6 +15,7 @@
 | Historical formula lock | [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md) — not a second claim |
 | Older attempt (archive) | [`LEMMA_STAR_OLDER_ATTEMPT_ARCHIVE.md`](./LEMMA_STAR_OLDER_ATTEMPT_ARCHIVE.md) |
 | Code lock | `scripts/ns_attacks/stokes_moments.py` (`Tc = M - Lam * N`, **`ratio_R_star_shape`**) |
+| Independent core (does **not** replace the live Stokes file) | `scripts/ns_attacks/ns_lemma_star_core.py` — direct triad sum, two \(D_s\) formulas raise on mismatch |
 
 ---
 
@@ -243,6 +244,6 @@ z_\beta=\pm\Pi_\beta B(w,w)/\|\Pi_\beta B(w,w)\|_2
 - Status: [`../../five-lane-export/PROOF_LemmaStar_STATUS.md`](../../five-lane-export/PROOF_LemmaStar_STATUS.md)
 - Attack 9B: [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md)
 - Drill: https://github.com/simons357/Ship_it_app/pull/48
-- Code: `scripts/ns_attacks/stokes_moments.py`, `tests/test_lemma_star_corrections.py`
+- Code: `scripts/ns_attacks/stokes_moments.py`, `scripts/ns_attacks/ns_lemma_star_core.py`, `tests/test_lemma_star_corrections.py`, `tests/test_ns_lemma_star_core.py`
 
 **NS not solved.** \(\sup\mathcal{R}_\star\) **OPEN**. No invented proof.

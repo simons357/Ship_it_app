@@ -105,6 +105,10 @@ Uniform pre-Young C is dead.
 K=0 dead. Lattice fan did not kill.
 NS not solved.
 Five-lane drill: GitHub PR 48.
+Independent Lemma★ core (direct triad sum;
+live stokes_moments.py not overwritten):
+docs/LEMMA-STAR-CORE.md
+scripts/ns_attacks/ns_lemma_star_core.py
 Five-lane pack (ffe858c, full folder plus tests):
 docs/FIVE-LANE-PACK.md
 jonathan-handoff/GROK-HEAVY/01-swirl-publishing/five-lane-pack/

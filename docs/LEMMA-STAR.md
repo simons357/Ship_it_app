@@ -218,3 +218,6 @@ Four corrections (missing \(a^4\) inequality dead;
 ★ \(\Rightarrow\) GR not \(\Leftrightarrow\); test both signs;
 Section 4 not proved):
 [`LEMMA-STAR-CORRECTIONS.md`](LEMMA-STAR-CORRECTIONS.md).
+Independent core (direct triad sum; live Stokes
+file not overwritten):
+[`LEMMA-STAR-CORE.md`](LEMMA-STAR-CORE.md).
