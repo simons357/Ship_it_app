@@ -42,6 +42,9 @@ SPECIAL_OPERATORS = {
     "partial": "Partial",
 }
 
+# Capital Δ is the fluids Laplacian; lowercase δ stays a free identifier.
+_LAPLACIAN_TOKENS = frozenset({"Delta", "laplacian", "nabla2"})
+
 LATEX_MACROS = {
     "nabla": "nabla",
     "partial": "partial",
@@ -174,9 +177,22 @@ class ParseResult:
 def _normalize(text: str) -> str:
     out = text.strip()
     for src, dst in UNICODE_MAP.items():
-        out = out.replace(src, dst)
+        # Space alphabetic replacements so νΔω → nu Delta omega, not nuDeltaomega.
+        if dst and dst[0].isalpha():
+            out = out.replace(src, f" {dst} ")
+        else:
+            out = out.replace(src, dst)
+    # Prefer explicit Laplacian tokens before / after spaced unicode maps.
+    out = out.replace("∇²", "laplacian ")
     out = out.replace(r"\nabla^2", "laplacian ")
     out = out.replace("nabla^2", "laplacian ")
+    out = re.sub(r"\bnabla\s*\^\s*2\b", "laplacian ", out)
+    # Common glued ASCII forms from CLI smoke inputs.
+    out = re.sub(r"\bpartialt\b", "partial_t", out, flags=re.IGNORECASE)
+    out = re.sub(r"\bnablap\b", "nabla p", out, flags=re.IGNORECASE)
+    out = re.sub(r"\bDelta([A-Za-z])\b", r"Delta \1", out)
+    out = re.sub(r"\blaplacian([A-Za-z])\b", r"laplacian \1", out, flags=re.IGNORECASE)
+    out = re.sub(r"\bdiv\b", "div ", out, flags=re.IGNORECASE)
     out = re.sub(r"\\([A-Za-z]+)", lambda m: LATEX_MACROS.get(m.group(1), m.group(1)) + " ", out)
     out = out.replace("{", " ").replace("}", " ")
     out = re.sub(r"\s+", " ", out)
@@ -214,6 +230,10 @@ _ATOMIC_IDENTIFIERS = frozenset(LATEX_MACROS) | frozenset(SPECIAL_OPERATORS) | {
     "munu",
     "barh",
     "hbar",
+    "Delta",
+    "omega",
+    "Omega",
+    "nu",
 }
 
 
@@ -366,6 +386,18 @@ class _Parser:
             return ASTNode(kind=NodeKind.NUMBER, value=value, name=tok)
         if re.fullmatch(r"[A-Za-z][A-Za-z0-9]*", tok):
             self.take()
+            if tok == "nabla":
+                return self._parse_nabla_operator()
+            if tok in _LAPLACIAN_TOKENS or tok.lower() in {"laplacian", "nabla2"}:
+                operand = None
+                if self._starts_implicit_mul(self.peek()) or self.peek() == "(":
+                    operand = self.parse_pow()
+                children = [operand] if operand is not None else []
+                return ASTNode(
+                    kind=NodeKind.APPLY,
+                    name="Laplacian",
+                    children=children,
+                )
             if tok.lower() in SPECIAL_OPERATORS:
                 op_name = SPECIAL_OPERATORS[tok.lower()]
                 operand = None
@@ -386,6 +418,39 @@ class _Parser:
             return ASTNode(kind=NodeKind.SYMBOL, name=tok)
         self.take()
         return ASTNode(kind=NodeKind.UNKNOWN, name=tok)
+
+    def _parse_nabla_operator(self) -> ASTNode:
+        """Parse ∇·u as Divergence and ∇p as Gradient; bare ∇ stays a symbol."""
+        nxt = self.peek()
+        if nxt == "*":
+            self.take()
+            operand = self.parse_pow()
+            return ASTNode(
+                kind=NodeKind.APPLY,
+                name="Divergence",
+                children=[operand],
+            )
+        if nxt is not None and self._starts_implicit_mul(nxt) and nxt not in {
+            "*",
+            "/",
+            "+",
+            "-",
+            "=",
+            "==",
+            ")",
+            "]",
+            ",",
+            "^",
+            "_",
+        }:
+            # Avoid treating (u·∇) as Gradient: after nabla the next token is ')'.
+            operand = self.parse_pow()
+            return ASTNode(
+                kind=NodeKind.APPLY,
+                name="Gradient",
+                children=[operand],
+            )
+        return ASTNode(kind=NodeKind.SYMBOL, name="nabla")
 
 
 def _flatten_index_names(node: ASTNode) -> list[str]:
