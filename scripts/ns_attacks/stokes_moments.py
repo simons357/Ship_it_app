@@ -734,6 +734,156 @@ def hh_l_fan_field(
     return l2_normalize(enforce_reality(field))
 
 
+def hh_l_sphere_pairs(
+    k_low: ModeKey, alpha: int
+) -> List[Tuple[ModeKey, ModeKey]]:
+    """Unordered high pairs p, q on sphere α with p+q = k_low.
+
+    Incompressibility: k_low · p = |k_low|^2 / 2, else |q|^2 ≠ α.
+    Pair counts on Z^3 are small (2–12), not Θ(m^2).
+    """
+    beta = int(k_norm2(k_low))
+    if beta <= 0 or alpha <= 0:
+        return []
+    if beta % 2:
+        return []
+    target = beta // 2
+    pairs: List[Tuple[ModeKey, ModeKey]] = []
+    seen = set()
+    for p in integer_shell(alpha):
+        if k_low[0] * p[0] + k_low[1] * p[1] + k_low[2] * p[2] != target:
+            continue
+        q = (k_low[0] - p[0], k_low[1] - p[1], k_low[2] - p[2])
+        if int(k_norm2(q)) != alpha or q == (0, 0, 0) or p == q:
+            continue
+        key = tuple(sorted((p, q)))
+        if key in seen:
+            continue
+        seen.add(key)
+        pairs.append((p, q))
+    return pairs
+
+
+def _hh_put(
+    field: Field,
+    k: ModeKey,
+    amp: float,
+    phase: float,
+    pol_seed: Sequence[float],
+    aligned_pol: bool,
+    random_phases: bool,
+    rng: np.random.Generator | None,
+) -> None:
+    if k == (0, 0, 0):
+        return
+    mk = (-k[0], -k[1], -k[2])
+    if k in field or mk in field:
+        return
+    if aligned_pol and not random_phases:
+        seed: Sequence[float] = _aligned_pol_seed(k)
+    elif rng is not None and random_phases:
+        seed = tuple(float(x) for x in rng.normal(size=3))
+    else:
+        seed = pol_seed
+    v = make_divfree_amp(k, seed)
+    nrm = np.linalg.norm(v)
+    if nrm < 1e-15:
+        v = make_divfree_amp(k, (seed[1], seed[2], seed[0]))
+        nrm = np.linalg.norm(v)
+    if nrm < 1e-15:
+        return
+    if random_phases and rng is not None:
+        phase = float(rng.uniform(0, 2 * np.pi))
+    field[k] = (amp * np.exp(1j * phase) / nrm) * v
+
+
+def hh_l_one_key_field(
+    k_low: ModeKey = (2, 0, 0),
+    alpha: int = 5,
+    phase_low: float = 0.0,
+    phase_high: float = 0.5 * np.pi,
+    pol_seed: Sequence[float] = (0.2, 1.0, -0.3),
+    aligned_pol: bool = True,
+    random_phases: bool = False,
+    rng: np.random.Generator | None = None,
+) -> Tuple[Field, dict]:
+    """One low key on shell β, partners on high sphere α. Energy split.
+
+    The vertex carries √β, not √α. More pairs at larger α do not cancel that.
+    """
+    pairs = hh_l_sphere_pairs(k_low, alpha)
+    highs: List[ModeKey] = []
+    seen = set()
+    for p, q in pairs:
+        for k in (p, q):
+            if k not in seen:
+                seen.add(k)
+                highs.append(k)
+    beta = int(k_norm2(k_low))
+    meta = {
+        "beta": beta,
+        "alpha": alpha,
+        "k_low": k_low,
+        "n_pairs": len(pairs),
+        "n_high": len(highs),
+        "kind": "one_key",
+    }
+    if not pairs:
+        return {}, meta
+    field: Field = {}
+    amp_low = 1.0 / np.sqrt(2.0)
+    amp_high = 1.0 / np.sqrt(2.0 * max(len(highs), 1))
+    _hh_put(field, k_low, amp_low, phase_low, pol_seed, aligned_pol, random_phases, rng)
+    for k in highs:
+        _hh_put(field, k, amp_high, phase_high, pol_seed, aligned_pol, random_phases, rng)
+    field = l2_normalize(enforce_reality(field))
+    meta["n_modes"] = len(field)
+    meta["shells"] = sorted({int(k_norm2(k)) for k in field})
+    return field, meta
+
+
+def hh_l_whole_shell_field(
+    beta: int = 2,
+    alpha: int = 9,
+    phase_low: float = 0.0,
+    phase_high: float = 0.5 * np.pi,
+    pol_seed: Sequence[float] = (0.2, 1.0, -0.3),
+    aligned_pol: bool = True,
+    random_phases: bool = False,
+    rng: np.random.Generator | None = None,
+) -> Tuple[Field, dict]:
+    """Every key on low shell β, partners on high sphere α. Energy split."""
+    lows = integer_shell(beta)
+    pairs: List[Tuple[ModeKey, ModeKey, ModeKey]] = []
+    highs_set = set()
+    for k in lows:
+        for p, q in hh_l_sphere_pairs(k, alpha):
+            pairs.append((p, q, k))
+            highs_set.add(p)
+            highs_set.add(q)
+    meta = {
+        "beta": beta,
+        "alpha": alpha,
+        "n_pairs": len(pairs),
+        "n_high": len(highs_set),
+        "n_low": len(lows),
+        "kind": "whole_shell",
+    }
+    if not pairs or not lows:
+        return {}, meta
+    field: Field = {}
+    amp_low = 1.0 / np.sqrt(2.0 * max(len(lows), 1))
+    amp_high = 1.0 / np.sqrt(2.0 * max(len(highs_set), 1))
+    for k in lows:
+        _hh_put(field, k, amp_low, phase_low, pol_seed, aligned_pol, random_phases, rng)
+    for k in highs_set:
+        _hh_put(field, k, amp_high, phase_high, pol_seed, aligned_pol, random_phases, rng)
+    field = l2_normalize(enforce_reality(field))
+    meta["n_modes"] = len(field)
+    meta["shells"] = sorted({int(k_norm2(k)) for k in field})
+    return field, meta
+
+
 def two_shell_field(
     amp_low: float,
     amp_high: float,
