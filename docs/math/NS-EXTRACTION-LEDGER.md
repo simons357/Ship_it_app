@@ -1,5 +1,7 @@
 # Navier–Stokes Brute-Force Extraction Ledger
 
+**Label:** **NOT Lemma★** — Route N / LP-shell / Q6. See `docs/math/ARCHIVE_NOT_LEMMA_STAR.md`.
+
 **Date:** 2026-09-08  
 **Branch:** `cursor/tao-snd-h-panel-a0eb`  
 **Purpose:** Deduplicate recovered fragments; isolate material that can advance a rigorous classical NS bridge.  
