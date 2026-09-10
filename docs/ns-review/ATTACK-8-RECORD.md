@@ -52,9 +52,11 @@ Precursor five-lane materials (not Attack 8 itself):
 ## Next experiment
 
 - **Attack 9A (AP packet):** recorded **negative for kill** — see [`ATTACK-9-COHERENT-PACKET-FAN.md`](./ATTACK-9-COHERENT-PACKET-FAN.md).
-- **Attack 9B (exact-shell + closing → \(K_{\alpha,\beta}\)):** next family — [`ATTACK-9B-EXACT-SHELL-CLOSING.md`](./ATTACK-9B-EXACT-SHELL-CLOSING.md).
+- **Fixed-gap spheres:** natural same-shell ensemble = **not a kill** (\(\mathcal R_\star\) falls \(0.11\to 0.031\), exact quotient) — [`ATTACK-9-FIXED-GAP-SPHERES.md`](./ATTACK-9-FIXED-GAP-SPHERES.md).
+- **Attack 9B (exact-shell + closing → \(K_{\alpha,\beta}\)):** structured next family — [`ATTACK-9B-EXACT-SHELL-CLOSING.md`](./ATTACK-9B-EXACT-SHELL-CLOSING.md).
+- **Attack 9C:** remaining packet falsifier — designed \(\Theta(m^2)\)-closure subset with locked phases.
 
-Kill lane still **LIVE**. Refuse “AP packet closed kill lane.”
+Kill lane still **LIVE**. Refuse “AP packet closed kill lane.” Refuse “same-shell ensemble kills ★.”
 
 ---
 

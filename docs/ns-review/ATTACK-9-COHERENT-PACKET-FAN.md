@@ -3,7 +3,7 @@
 **Date:** 2026-09-10  
 **Name (locked):** **Attack 9 — Coherent Packet/Fan Test**  
 **Depends on:** exact \(\mathcal R_\star\) ([`LEMMA-STAR-EXACT-FORMULAS.md`](./LEMMA-STAR-EXACT-FORMULAS.md)), Attack 8 record ([`ATTACK-8-RECORD.md`](./ATTACK-8-RECORD.md))  
-**Status:** **Attack 9A (AP packet) recorded — negative for kill.** Kill lane still **LIVE**. **NS NOT SOLVED.** No SFE. No “almost proved.”
+**Status:** **Attack 9A (AP packet) recorded — negative for kill.** Fixed-gap spheres / natural same-shell = **not a kill** ([`ATTACK-9-FIXED-GAP-SPHERES.md`](./ATTACK-9-FIXED-GAP-SPHERES.md)). Kill lane still **LIVE**. **NS NOT SOLVED.** No SFE. No “almost proved.”
 
 ---
 
@@ -82,9 +82,19 @@ Fit
 
 ---
 
-## Next family — Attack 9B (exact-shell + closing packet)
+## Fixed-gap spheres — natural same-shell = not a kill
 
-**Do not** run another widening AP packet.
+**USER LOCK-IN:** Fixed-gap spheres \(n\) and \(n+d\): \(D_s\) from the **gap** (not width); closures only \(O(m)\); \(\mathcal R_\star\) **falls** with \(n\) (**\(0.11\to 0.031\)**, exact quotient attested for this family) and does **not** track \(m^{1/2}\).
+
+**Verdict:** **Natural same-shell ensemble is not a kill.**
+
+Full lock: [`ATTACK-9-FIXED-GAP-SPHERES.md`](./ATTACK-9-FIXED-GAP-SPHERES.md).
+
+---
+
+## Next structured family — Attack 9B (exact-shell + closing packet)
+
+**Do not** run another widening AP packet. **Do not** claim natural same-shell kills ★.
 
 Name: **Attack 9B — Exact-shell + closing packet.** Full lock:  
 [`ATTACK-9B-EXACT-SHELL-CLOSING.md`](./ATTACK-9B-EXACT-SHELL-CLOSING.md).
@@ -121,16 +131,28 @@ D_s=\sum_k\lambda_k(\lambda_k-\Lambda)^2|v_k|^2.
 
 **Next clean test order:**
 
-1. **Exact-shell coherent fan**
+1. **Exact-shell coherent fan** / \(K_{\alpha,\beta}\) (9B)
 2. Then **controlled finite shell thickness**
-3. **NOT** another widening AP packet
+3. **Attack 9C** — designed \(\Theta(m^2)\)-closure subset with locked phases ([`ATTACK-9-FIXED-GAP-SPHERES.md`](./ATTACK-9-FIXED-GAP-SPHERES.md))
+4. **NOT** another widening AP packet
+
+---
+
+## Remaining packet falsifier — Attack 9C
+
+Natural same-shell / fixed-gap did **not** kill ★. Remaining falsifier:
+
+**Attack 9C — Designed \(\Theta(m^2)\)-closure subset with locked phases.**
+
+Kill lane stays **LIVE** via that designed-closure route (and via proof). See fixed-gap doc.
 
 ---
 
 ## Hard refusals
 
-- Refuse “kill lane closed” from finite Attack 9 / 9A / 9B samples.
+- Refuse “kill lane closed” from finite Attack 9 / 9A / fixed-gap / 9B / 9C samples.
 - Refuse “AP packet closed kill lane” (9A negative ≠ lane closed).
+- Refuse “same-shell ensemble kills ★” (fixed-gap / natural same-shell = not a kill).
 - Refuse greening Lemma★ / “almost proved” / “numerics prove ★” from any finite \(m\) sweep.
 - Refuse comparing Attack 9 \(\mathcal R_\star\) values to unattested legacy numbers (\(0.065\), \(0.073\), \(1.93\times10^{-3}\)).
 - Refuse claiming ★ from LP-shell / Route N / Q6 / \(M=256\) side material ([`LEMMA-STAR-SIDE-ARCHIVE.md`](./LEMMA-STAR-SIDE-ARCHIVE.md)).
@@ -139,4 +161,4 @@ D_s=\sum_k\lambda_k(\lambda_k-\Lambda)^2|v_k|^2.
 
 ## Jonathan action
 
-**None.** Encoding lock only. Run Attack 9B (exact-shell + closing → \(K_{\alpha,\beta}\)) when ready — not another AP widen.
+**None.** Encoding lock only. Fixed-gap / natural same-shell = not a kill. Remaining falsifier = **Attack 9C** (designed \(\Theta(m^2)\)-closure, locked phases). 9B \(K_{\alpha,\beta}\) remains structured next family — not another AP widen.

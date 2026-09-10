@@ -108,7 +108,7 @@
       "clay_relevance": "Does not close Clay. Numeric survival is not a proof. Numeric bound \u2260 uniform bound on R_star. Kill lane not closed. NS NOT SOLVED.",
       "evidence_pr": 48,
       "evidence_url": "https://github.com/simons357/Ship_it_app/pull/48",
-      "notes": "K=0 absorption DEAD \u2194 D_s=0 kill criterion; kill lane LIVE both directions; Lemma\u2605 survives numeric kill only (max |R_pre|\u22485.09) \u2260 proved; Bony HH\u2192L live bottleneck; PRODUCT-BLOCK = missing uniform R_star. Attack 9A negative for kill; next Attack 9B \u2192 K_{\u03b1,\u03b2}."
+      "notes": "K=0 absorption DEAD \u2194 D_s=0 kill criterion; kill lane LIVE both directions; Lemma\u2605 survives numeric kill only (max |R_pre|\u22485.09) \u2260 proved; Bony HH\u2192L live bottleneck; PRODUCT-BLOCK = missing uniform R_star. Attack 9A / fixed-gap negative for kill; 9B K_{\u03b1,\u03b2}; remaining falsifier 9C \u0398(m^2)-closure."
     },
     {
       "claim_id": "KILL-LANE",
@@ -117,7 +117,7 @@
       "status_detail": "live_falsification_and_proof",
       "definition": "Kill lane for Lemma\u2605 / R_star: falsification via R_star\u2192\u221e or D_s=0 with T_c>0; proof via uniform geometric bound on exact R_star. Both directions LIVE.",
       "clay_relevance": "Does not resolve Clay. Closing either direction changes \u2605 status only under exact R_star.",
-      "notes": "USER CORRECTIONS 2026-09-10: 'kill lane closed' is FALSE/RETIRED. Failure to find a numerical counterexample (including Attack 9A) does NOT close the lane. Refuse 'AP packet closed kill lane'. See docs/ns-review/GROK-RETIRED-CONCLUSIONS.md."
+      "notes": "USER CORRECTIONS 2026-09-10: 'kill lane closed' is FALSE/RETIRED. Failure to find a numerical counterexample (including Attack 9A and fixed-gap same-shell) does NOT close the lane. Refuse 'AP packet closed kill lane' and 'same-shell ensemble kills \u2605'. Remaining falsifier: Attack 9C. See docs/ns-review/GROK-RETIRED-CONCLUSIONS.md."
     },
     {
       "claim_id": "ATTACK-8",
@@ -125,7 +125,7 @@
       "status": "record",
       "status_detail": "user_revised_authoritative",
       "definition": "USER-revised Attack 8 is the correct attack record: kill lane LIVE both directions; exact R_star only; complete T_c; numeric non-find \u2260 closed lane.",
-      "clay_relevance": "Does not prove \u2605. Points to Attack 9B after 9A negative.",
+      "clay_relevance": "Does not prove \u2605. Points to Attack 9B / 9C after 9A and fixed-gap negatives.",
       "notes": "Authoritative doc: docs/ns-review/ATTACK-8-RECORD.md. Not found as ATTACK_8*.md in PR #48 (Attacks 1\u20135 only); USER CORRECTIONS 2026-09-10 are the record."
     },
     {
@@ -138,13 +138,31 @@
       "notes": "Doc: docs/ns-review/ATTACK-9-COHERENT-PACKET-FAN.md. Refuse 'AP packet closed kill lane'."
     },
     {
+      "claim_id": "ATTACK-9-FIXED-GAP",
+      "label": "Attack 9 \u2014 Fixed-gap spheres (natural same-shell)",
+      "status": "negative_for_kill",
+      "status_detail": "natural_same_shell_not_a_kill",
+      "definition": "Fixed-gap spheres n and n+d: D_s from the gap (not width); closures only O(m); R_star falls with n (0.11\u21920.031) under exact quotient for this family; does not track m^{1/2}.",
+      "clay_relevance": "Natural same-shell ensemble is NOT a kill. Not a proof of \u2605. Kill lane remains LIVE.",
+      "notes": "Doc: docs/ns-review/ATTACK-9-FIXED-GAP-SPHERES.md. Attest exact R_star = (T_c_+)^2/(D_s||v||_2^2 Y). Refuse 'same-shell ensemble kills \u2605'."
+    },
+    {
       "claim_id": "ATTACK-9B",
       "label": "Attack 9B \u2014 Exact-shell + closing \u2192 K_{\u03b1,\u03b2}",
       "status": "protocol",
       "status_detail": "exact_shell_closing_kab_quantity",
       "definition": "v_\u03b5 = w_\u03b1 + \u03b5 z_\u03b2 with z_\u03b2 \u2225 \u03a0_\u03b2 B(w_\u03b1,w_\u03b1). Boxed K_{\u03b1,\u03b2} = sup_{Aw=\u03b1w} \u03b2||\u03a0_\u03b2 B(w,w)||_2^2 / (\u03b1^2 ||w||_2^4). Base = same-shell; D_s from closing only; \u03b5 cancels in limiting quotient.",
-      "clay_relevance": "Next falsification family after 9A. Does not prove \u2605. Caveat: narrow \u2260 O(1) D_s on lattice.",
-      "notes": "Doc: docs/ns-review/ATTACK-9B-EXACT-SHELL-CLOSING.md. Code: domain_architect/kab_quantity.py. Next clean test: exact-shell fan \u2192 controlled thickness \u2014 NOT another widening AP packet."
+      "clay_relevance": "Structured next family after 9A / fixed-gap. Does not prove \u2605. Caveat: narrow \u2260 O(1) D_s on lattice.",
+      "notes": "Doc: docs/ns-review/ATTACK-9B-EXACT-SHELL-CLOSING.md. Code: domain_architect/kab_quantity.py."
+    },
+    {
+      "claim_id": "ATTACK-9C",
+      "label": "Attack 9C \u2014 Designed \u0398(m^2)-closure subset, locked phases",
+      "status": "remaining_falsifier",
+      "status_detail": "theta_m2_closure_locked_phases",
+      "definition": "Remaining packet falsifier after natural same-shell / fixed-gap failed to kill: designed \u0398(m^2)-closure subset with locked phases (not merely O(m) natural closures).",
+      "clay_relevance": "Kill lane remains LIVE via this designed-closure route. Finite samples \u2260 kill lane closed; \u2260 \u2605 proved.",
+      "notes": "Doc: docs/ns-review/ATTACK-9-FIXED-GAP-SPHERES.md. Code: domain_architect/kab_quantity.py ATTACK_9C_STATUS."
     }
   ],
   "refused_routings": [
@@ -181,6 +199,10 @@
     "m=256 shell floor establishes lemma star",
     "ap packet closed kill lane",
     "attack 9a closed kill lane",
-    "narrow packet implies D_s = O(1)"
+    "narrow packet implies D_s = O(1)",
+    "same-shell ensemble kills star",
+    "same-shell ensemble kills \u2605",
+    "natural same-shell kills star",
+    "fixed-gap spheres kill star"
   ]
 }

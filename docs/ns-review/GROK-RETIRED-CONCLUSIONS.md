@@ -21,9 +21,10 @@ These older Grok conclusions are **FALSE** and **RETIRED**. Do not cite them as 
 | Falsification (\( \mathcal R_\star\to\infty \) or live \(D_s=0\) & \(T_c>0\)) | **LIVE** |
 | Proof (uniform bound on \(\mathcal R_\star\)) | **LIVE** |
 
-Both directions remain open. **Attack 9A (AP packet) did not kill ★** (\(D_s\) grew faster) and does **not** close the kill lane — refuse “AP packet closed kill lane.” Next falsification family: **Attack 9B** exact-shell + closing → \(K_{\alpha,\beta}\) ([`ATTACK-9B-EXACT-SHELL-CLOSING.md`](./ATTACK-9B-EXACT-SHELL-CLOSING.md)). Proof still requires a triadic / HH→L reason that is **not written**.
+Both directions remain open. **Attack 9A (AP packet) did not kill ★** (\(D_s\) grew faster) and does **not** close the kill lane — refuse “AP packet closed kill lane.” **Fixed-gap spheres / natural same-shell ensemble is not a kill** (\(\mathcal R_\star\) falls \(0.11\to 0.031\) under exact quotient; closures \(O(m)\); does not track \(m^{1/2}\)) — refuse “same-shell ensemble kills ★.” Structured next family: **Attack 9B** exact-shell + closing → \(K_{\alpha,\beta}\) ([`ATTACK-9B-EXACT-SHELL-CLOSING.md`](./ATTACK-9B-EXACT-SHELL-CLOSING.md)). Remaining packet falsifier: **Attack 9C** designed \(\Theta(m^2)\)-closure subset with locked phases ([`ATTACK-9-FIXED-GAP-SPHERES.md`](./ATTACK-9-FIXED-GAP-SPHERES.md)). Proof still requires a triadic / HH→L reason that is **not written**.
 
-**DA encoding:** `domain_architect/lemma_star.py` → kill lane status = `LIVE`; refuses “kill lane closed” and “AP packet closed kill lane.”
+**DA encoding:** `domain_architect/lemma_star.py` → kill lane status = `LIVE`; refuses “kill lane closed”, “AP packet closed kill lane”, and “same-shell ensemble kills ★.”
+
 ---
 
 ## 2. “Amplitude or frequency makes the ratio smaller” — **FALSE / RETIRED** (for exact \(\mathcal R_\star\))

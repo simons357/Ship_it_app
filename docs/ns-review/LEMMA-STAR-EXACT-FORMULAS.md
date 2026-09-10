@@ -192,12 +192,16 @@ Used as a consistency / sign check on the packaging. Under \(u=av\) size optimiz
 | Attack | Status | Doc |
 |--------|--------|-----|
 | **9A** AP coherent packet/fan | **Negative for kill** — \(T_c\) rose but \(D_s\) grew faster; \(D_s\|v\|_2^2 Y=O(1)\) in packet size was **FALSE** for that family | [`ATTACK-9-COHERENT-PACKET-FAN.md`](./ATTACK-9-COHERENT-PACKET-FAN.md) |
-| **9B** Exact-shell + closing | Next family — \(v_\varepsilon=w_\alpha+\varepsilon z_\beta\), \(z_\beta\parallel\Pi_\beta B(w_\alpha,w_\alpha)\); boxed \(K_{\alpha,\beta}\) | [`ATTACK-9B-EXACT-SHELL-CLOSING.md`](./ATTACK-9B-EXACT-SHELL-CLOSING.md) |
+| **Fixed-gap spheres** | **Negative for kill** — \(D_s\) from **gap** (not width); closures \(O(m)\); \(\mathcal R_\star\) falls \(0.11\to 0.031\) (exact quotient, this family); does **not** track \(m^{1/2}\); **natural same-shell ensemble is not a kill** | [`ATTACK-9-FIXED-GAP-SPHERES.md`](./ATTACK-9-FIXED-GAP-SPHERES.md) |
+| **9B** Exact-shell + closing | Structured next family — \(v_\varepsilon=w_\alpha+\varepsilon z_\beta\), \(z_\beta\parallel\Pi_\beta B(w_\alpha,w_\alpha)\); boxed \(K_{\alpha,\beta}\) | [`ATTACK-9B-EXACT-SHELL-CLOSING.md`](./ATTACK-9B-EXACT-SHELL-CLOSING.md) |
+| **9C** Designed \(\Theta(m^2)\)-closure | **Remaining packet falsifier** — designed \(\Theta(m^2)\)-closure subset with **locked phases** | [`ATTACK-9-FIXED-GAP-SPHERES.md`](./ATTACK-9-FIXED-GAP-SPHERES.md) |
 
 Caveat: a merely “narrow” packet does **not** automatically keep \(D_s=O(1)\) on the lattice
-(\(D_s=\sum_k\lambda_k(\lambda_k-\Lambda)^2|v_k|^2\)). Next clean test = exact-shell fan → controlled thickness — **not** another widening AP packet.
+(\(D_s=\sum_k\lambda_k(\lambda_k-\Lambda)^2|v_k|^2\)). Next clean tests = 9B \(K_{\alpha,\beta}\) / 9C designed closure — **not** another widening AP packet.
 
-Kill lane remains **LIVE**. Refuse “AP packet closed kill lane.” Code: `domain_architect/kab_quantity.py`.
+Kill lane remains **LIVE**. Refuse “AP packet closed kill lane.” Refuse “same-shell ensemble kills ★.” Code: `domain_architect/kab_quantity.py`.
+
+**Attestation:** \(0.11\to 0.031\) uses exact \(\mathcal R_\star=(T_c_+)^2/(D_s\|v\|_2^2 Y)\) for this fixed-gap family only.
 
 ---
 

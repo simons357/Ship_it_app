@@ -3,20 +3,25 @@
 **Date:** 2026-09-10  
 **Name (locked):** **Attack 9B — Exact-shell + closing packet**  
 **Prior:** Attack 9A (AP packet) = **negative for kill** — [`ATTACK-9-COHERENT-PACKET-FAN.md`](./ATTACK-9-COHERENT-PACKET-FAN.md)  
+**Also prior:** Fixed-gap spheres / natural same-shell = **not a kill** — [`ATTACK-9-FIXED-GAP-SPHERES.md`](./ATTACK-9-FIXED-GAP-SPHERES.md)  
 **Depends on:** exact \(\mathcal R_\star\) ([`LEMMA-STAR-EXACT-FORMULAS.md`](./LEMMA-STAR-EXACT-FORMULAS.md))  
 **Status:** Protocol / quantity lock — **not a proof**. **NS NOT SOLVED.** No SFE. Kill lane **LIVE**.
 
 ---
 
-## Why 9B (after 9A)
+## Why 9B (after 9A + fixed-gap)
 
 Attack 9A widened an AP packet: \(T_c\) rose, but spectral variance drove \(D_s\) up **faster**. The assumption \(D_s\|v\|_2^2 Y=O(1)\) in packet size was **FALSE** for that family.
 
-9B changes geometry:
+Fixed-gap spheres \(n\), \(n+d\): \(D_s\) from the **gap**; closures only \(O(m)\); \(\mathcal R_\star\) **falls** with \(n\) (\(0.11\to 0.031\), exact quotient) and does **not** track \(m^{1/2}\). **Natural same-shell ensemble is not a kill.**
+
+9B remains the **structured** next family:
 
 - Put the **base packet on one exact eigenvalue shell** (many same-shell modes).
 - Generate \(D_s\) only through a **small closing component** on a second shell.
 - Read the kill/survive decision through a scale-free shell-to-shell quantity \(K_{\alpha,\beta}\).
+
+**Remaining packet falsifier (after natural same-shell):** **Attack 9C** — designed \(\Theta(m^2)\)-closure subset with locked phases ([`ATTACK-9-FIXED-GAP-SPHERES.md`](./ATTACK-9-FIXED-GAP-SPHERES.md)).
 
 ---
 
@@ -87,7 +92,8 @@ Nearby shells with tiny \(\lambda_k-\Lambda\) still contribute after the \(\lamb
 
 1. **Exact-shell coherent fan** (pure same-shell base; \(D_s=0\) until closing is added)
 2. Then **controlled finite shell thickness** (measure how \(D_s\) opens)
-3. **NOT** another widening AP packet
+3. **Attack 9C** — designed \(\Theta(m^2)\)-closure subset with locked phases (kill lane still live via this route)
+4. **NOT** another widening AP packet
 
 ---
 
@@ -98,6 +104,7 @@ Nearby shells with tiny \(\lambda_k-\Lambda\) still contribute after the \(\lamb
 | \(K_{\alpha,\beta}\) unbounded over shells / fans | Falsification route advancing (still need \(\mathcal R_\star\to\infty\) with exact formula) |
 | \(K_{\alpha,\beta}\) uniformly bounded on tested exact shells | Evidence only — **≠** proof of ★ |
 | Finite 9B samples of any kind | **≠** kill lane closed; **≠** Lemma★ proved |
+| Natural same-shell / fixed-gap (recorded) | **Not a kill** — see fixed-gap doc |
 
 **NS NOT SOLVED.** No SFE glue.
 
@@ -106,7 +113,8 @@ Nearby shells with tiny \(\lambda_k-\Lambda\) still contribute after the \(\lamb
 ## Hard refusals
 
 - Refuse “AP packet closed kill lane.”
-- Refuse “kill lane closed” from 9A or 9B.
+- Refuse “same-shell ensemble kills ★.”
+- Refuse “kill lane closed” from 9A, fixed-gap, 9B, or 9C.
 - Refuse greening ★ / “almost proved” / “numerics prove ★.”
 - Refuse treating “narrow packet” as automatic \(D_s=O(1)\).
 - Refuse another widening AP packet as the next clean test.
@@ -115,4 +123,4 @@ Nearby shells with tiny \(\lambda_k-\Lambda\) still contribute after the \(\lamb
 
 ## Jonathan action
 
-**None.** Quantity + protocol lock only.
+**None.** Quantity + protocol lock only. Remaining falsifier = Attack 9C (designed \(\Theta(m^2)\)-closure, locked phases).

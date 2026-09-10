@@ -489,11 +489,16 @@ def refuse_kill_lane_closed(text: str | None = None) -> dict[str, Any]:
         "ok": not hit,
         "kill_lane": dict(KILL_LANE_STATUS),
         "attack_9a_negative_for_kill": True,
+        "fixed_gap_negative_for_kill": True,
+        "remaining_falsifier": "ATTACK-9C-THETA-M2-CLOSURE",
         "message": (
             "REFUSE: kill lane is LIVE — failure to find a numerical "
             "counterexample (including Attack 9A AP packet, where D_s grew "
-            "faster) does NOT close falsification or proof. "
-            "Refuse 'AP packet closed kill lane'. NS NOT SOLVED."
+            "faster, and fixed-gap / natural same-shell, where R_★ falls "
+            "0.11→0.031) does NOT close falsification or proof. "
+            "Refuse 'AP packet closed kill lane' and "
+            "'same-shell ensemble kills ★'. Remaining falsifier = Attack 9C. "
+            "NS NOT SOLVED."
             if hit
             else "No 'kill lane closed' claim detected; status remains LIVE."
         ),

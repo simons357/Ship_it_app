@@ -10,8 +10,9 @@
 | [`LEMMA-STAR-EXACT-FORMULAS.md`](./LEMMA-STAR-EXACT-FORMULAS.md) | Exact Fourier / \(\mathcal R_\star\) formulas (shape lock-in) |
 | [`GROK-RETIRED-CONCLUSIONS.md`](./GROK-RETIRED-CONCLUSIONS.md) | **RETIRED:** “kill lane closed”; “amplitude/frequency shrinks the ratio” |
 | [`ATTACK-8-RECORD.md`](./ATTACK-8-RECORD.md) | Revised Attack 8 = correct record; kill lane LIVE |
-| [`ATTACK-9-COHERENT-PACKET-FAN.md`](./ATTACK-9-COHERENT-PACKET-FAN.md) | **Attack 9A** negative for kill; |
-| [`ATTACK-9B-EXACT-SHELL-CLOSING.md`](./ATTACK-9B-EXACT-SHELL-CLOSING.md) | **Attack 9B** exact-shell + closing → \(K_{\alpha,\beta}\) | **Attack 9** protocol + controls + \(\gamma\) decision rule |
+| [`ATTACK-9-COHERENT-PACKET-FAN.md`](./ATTACK-9-COHERENT-PACKET-FAN.md) | **Attack 9A** negative for kill; protocol + controls |
+| [`ATTACK-9-FIXED-GAP-SPHERES.md`](./ATTACK-9-FIXED-GAP-SPHERES.md) | Fixed-gap spheres: natural same-shell **not a kill**; remaining **9C** \(\Theta(m^2)\)-closure |
+| [`ATTACK-9B-EXACT-SHELL-CLOSING.md`](./ATTACK-9B-EXACT-SHELL-CLOSING.md) | **Attack 9B** exact-shell + closing → \(K_{\alpha,\beta}\) |
 | [`LEMMA-STAR-SIDE-ARCHIVE.md`](./LEMMA-STAR-SIDE-ARCHIVE.md) | LP-shell / Route N / Q6 / \(M=256\) floor — **not** ★ evidence |
 | [`THEOREM-H-ATTACK-PLAN.md`](./THEOREM-H-ATTACK-PLAN.md) | Analytic attack routes on the \(X\le M\) gap (bootstrap first) |
 | [`COMPETITIVE-POSITION-2026.md`](./COMPETITIVE-POSITION-2026.md) | One-page honest race card |
