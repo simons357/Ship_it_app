@@ -232,11 +232,9 @@ On Bad, \(|\sin\varphi|\) is large, so the kernel is not improved.
 
 ## 8. What to do next
 
-WRITE (6) was attempted on one cylinder (§12). It did not close. The named wall is Morrey: \(W^{1,2}(H)\not\subset C^{0,1/2}\) in 3D. Mid-Bad is an H3-class remainder. Near-Bad is still H1.
+WRITE (6) was attempted on one cylinder (§12). It did not close. H1 as a holdable object, and the only three shapes that still look like it, are §13. Literature check: §14. H1 is not in the record under another name.
 
-Do not reprove Lemma C. Do not add \(K(t)\). Do not rerun the §6 / §12 fail rows as proofs. Keep **H1, H2, H3, \(R_\phi\)** separate.
-
-Optional sibling (not shorter): \(L^\infty_t L^3\) mass on the bad set; Type-II profile. Only after H1 has a new estimate that beats the Morrey wall.
+Next work is **1, 2, or 3 on one cylinder** — not a new name. Do not reprove Lemma C. Do not add \(K(t)\). Keep **H1, H2, H3, \(R_\phi\)** separate.
 
 DA will not emit H1 and call it proved.
 
@@ -256,7 +254,7 @@ The packet is a **good map**. It is not a proof of ordinary NS.
 
 **Lemma C.** CF 1993 / BdVB 2002 sit as **if**. Hölder \(1/2\) is the right cut for this path. Lemma C does not prove alignment. That sentence is the whole point.
 
-**H1.** The right leftover on this path. \(A_{\mathrm{bad}}\) is stretching from misaligned high-vorticity pairs. On Bad the kernel stays \(|z|^{-3}\). WRITE (6) was written on one cylinder in §12. Mid-Bad is named (H3-class). Near-Bad hits the Morrey wall. The aimed estimate is **not** proved.
+**H1.** The right leftover on this path. Holdable object: the Bad-pair integral versus local dissipation plus \(r^{-2}\iint|\omega|^2\) (§13). WRITE (6) was written on one cylinder in §12. Mid-Bad is named. Near-Bad is still open. The only remaining shapes are thinness, J on folds, and dynamics. None written. Literature: not under another name (§14). The aimed estimate is **not** proved.
 
 **H2.** Smallness criterion is true. A priori from \(\int E<\infty\) is not. After Young the remainder is local \(\int E^2\). So even if H1 sits, H2-from-energy is a second wall. Keep them separate.
 
@@ -517,6 +515,111 @@ Second term: stretching from misaligned pairs at scales \(<\rho\). Empty if \(\x
 
 **Verdict.** WRITE (6) **open**. H1 is not proved. Do not cash this section as a close.
 
-**Next line** (if there is a next line on this path): an estimate that beats the Morrey wall — \(\nabla\xi\in L^p(H)\) for some \(p>3\), or an equivalent Campanato bound on \(\xi\) at scale \(\rho\) — *from the energy class*, or a different integrable control of \(A_{\mathrm{bad}}^{<\rho}\). That line is not in the energy floor. DA will not emit it.
+**Next line.** Not a new name. One of the three shapes in §13, on one cylinder. DA will not emit it.
+
+---
+
+## 13. H1 as an object; three remaining shapes
+
+You need H1. Here it is as an object you can hold. It is not in hand as a theorem. Phone copy: [`H1-OBJECT.md`](H1-OBJECT.md).
+
+On \(Q_r\), only pairs with \(|\omega|\ge\Lambda\) and \(|\sin\varphi|>C_*|x-y|^{1/2}\):
+
+\[
+\iint\!\!\int_{\mathrm{Bad}}
+\frac{|\omega(x)|^2|\omega(y)|}{|x-y|^3}\,\phi
+\le
+\frac\nu8\iint_{Q_r}|\nabla\omega|^2\phi
++C r^{-2}\iint_{Q_r}|\omega|^2.
+\]
+
+That is the whole request. Good pairs are already gone. Flux is H2. Exterior is H3.
+
+**Why the last passes did not give it.** The kernel on Bad is still \(|z|^{-3}\). HLS turns that into local \(E^3\). The Hölder cut does not change the exponent; it only changes the set. A thin set would save it. A path jump in \(\xi\) does not prove the set is thin. Morrey (\(W^{1,2}\not\subset C^{0,1/2}\)) is why energy does not empty the set.
+
+**The only shapes that still look like H1.** Prove one of these, and you have H1. None of them is written.
+
+1. **Thinness.** Bad-pair measure in each \(B_r\) is small enough that HLS picks up a factor that turns \(E^3\) into \(E^2\) or into dissipation.
+2. **J on folds only.** Every persistent-bad pair in \(Q_r\) sits in a fold (geometry A), not a sheet or a gap, so \(\displaystyle\int_{B_{2\rho}}|\nabla\omega|^2\gtrsim\Lambda^2\rho^2\) and a Vitali sum closes.
+3. **Dynamics.** NSE forbids 2’s alternatives on the time scale \(r^2/\nu\).
+
+1 is thinness. 2 is J on folds only. 3 is dynamics.
+
+**Not a new leftover name.** These are writings of H1. §6 still stands as refuse of *fake closes*: assuming thinness is Lemma C; Lemma J on generic fields is false; an imposed waiting time is not derived. The shapes still have to be *proved*.
+
+**Status.** None of 1, 2, 3 sits. Next work is 1, 2, or 3 on one cylinder.
+
+---
+
+## 14. Literature versus the H-system
+
+Checked against the papers, not against slogans. H1 is not sitting in the literature under another name.
+
+### Floor — matches the record
+
+| Claim in the packet | Paper | Match? |
+|---|---|---|
+| Energy / Leray–Hopf | Leray, *Acta Math.* 63 (1934) | Yes |
+| Serrin / LPS \(2/p+3/q=1\), \(q>3\) | Serrin, *ARMA* 9 (1962); Prodi 1959; Ladyzhenskaya | Yes. Local form exists |
+| ESS \(L^\infty_t L^3\) | Escauriaza–Seregin–Šverák, *Uspekhi* 2003 | Yes |
+| Cubic wall \(\dot E\le C E^3\) | Leray; standard | Yes |
+| NRS: no Leray self-similar blowup | Nečas–Růžička–Šverák, *Acta Math.* 176 (1996) | Yes. Leray profiles only |
+| CKN: \(\mathcal{P}^1(\mathrm{sing})=0\); \(\varepsilon\)-regularity at energy level | Caffarelli–Kohn–Nirenberg, *CPAM* 35 (1982) | Yes. Not enstrophy-level |
+
+### Lemma C — the if
+
+| Packet | Paper | Match? |
+|---|---|---|
+| Lipschitz direction \(\Rightarrow\) regular | Constantin–Fefferman, *IUMJ* 42 (1993) | Yes. Whole space. High-vorticity set |
+| Hölder \(1/2\) \(\Rightarrow\) regular | Beirão da Veiga–Berselli, *Diff. Int. Eq.* 15 (2002) | Yes. Whole space |
+| \(\beta<1/2\) in that argument | Beirão da Veiga, arXiv:1604.08083 (2016) | Open in that framework. Cut at \(1/2\) is the literature cut |
+| Bounded domain / slip / Green | BdVB, *JDE* 246 (2009); BdV, *J. Math. Fluid Mech.* 15 (2013) | Yes. Still an alignment hypothesis |
+| Localized to a cylinder | Grujić, *Comm. Math. Phys.* 290 (2009) | Yes. Localizes the *condition*. Does **not** remove it |
+
+**Verdict.** Lemma C is real. Localization of Lemma C is real if you already have local alignment. Neither estimates \(A_{\mathrm{bad}}\).
+
+### Closest to H1 — still criteria
+
+- **Grujić–Guberović, *CMP* 298 (2010).** Coherence of \(\xi\) as a weight on \(\int|\omega|^q\). Assume some coherence, conclude regularity. If coherence fails on a thick set, the class does not fire.
+- **Bradshaw–Grujić (arXiv:1309.2519).** Mild geometry on \(\xi\) \(\Rightarrow\) \(L\log L\) on \(\omega\). Still a hypothesis on direction.
+- **Grujić, *Nonlinearity* 26 (2013).** 1-D sparseness of intense regions \(\Rightarrow\) no blowup. Assumes sparseness; does not prove Bad is sparse. Cousin of shape 1, not a proof of shape 1.
+
+**No hit.** No paper found that bounds
+\[
+\iint_{\{| \sin\varphi|>C|x-y|^{1/2}\}}\frac{|\omega(x)|^2|\omega(y)|}{|x-y|^3}
+\]
+by local dissipation plus \(r^{-2}\iint|\omega|^2\) from the energy class alone. That integral is H1 / WRITE (6). It is not in the record as a theorem.
+
+### H2 and H3 versus the record
+
+H2-smallness = CKN. H2-a priori from \(\int E<\infty\) is not in the record (that would be local \(\int E^2\), i.e. local Serrin, i.e. the problem).
+
+H3: exterior stretching is why Grujić 2009 exists. That paper controls the exterior piece *under local coherence*. Without it, \(r^{-3/2}E^{1/2}E_{\mathrm{loc}}\) is the crude bound, and it is not absorbed in the literature either.
+
+### What the literature does not give
+
+An a priori H1. An a priori H2. Alignment of \(\xi\) on the high-vorticity set. Thinness of Bad. A Liouville theorem that kills all Type-II ancient solutions.
+
+What it does give, and what the packet already uses: energy, Serrin/ESS as criteria, CKN measure, NRS on Leray profiles, CF/BdVB as *if*, Grujić as *local if*.
+
+The H-split matches the map of the field. The leftover they left is the leftover we named.
+
+---
+
+## 15. Citation list
+
+1. J. Leray, *Acta Math.* 63 (1934).
+2. J. Serrin, *Arch. Rational Mech. Anal.* 9 (1962).
+3. L. Caffarelli, R. Kohn, L. Nirenberg, *Comm. Pure Appl. Math.* 35 (1982), 771–831.
+4. P. Constantin, C. Fefferman, *Indiana Univ. Math. J.* 42 (1993), 775–789.
+5. H. Beirão da Veiga, L. C. Berselli, *Diff. Int. Eq.* 15 (2002), 345–356.
+6. J. Nečas, M. Růžička, V. Šverák, *Acta Math.* 176 (1996).
+7. L. Escauriaza, G. Seregin, V. Šverák, *Uspekhi Mat. Nauk* 58 (2003).
+8. Z. Grujić, *Comm. Math. Phys.* 290 (2009), 861–870.
+9. Z. Grujić, R. Guberović, *Comm. Math. Phys.* 298 (2010), 407–418.
+10. H. Beirão da Veiga, arXiv:1604.08083 (2016).
+
+H1 is not on this list as a theorem. Closest cousins are 8 and 9, both still *if*.
+
 
 
