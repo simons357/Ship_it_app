@@ -56,6 +56,60 @@ reduction.
 
 ---
 
+## What the statement means
+
+Lemma★ is no longer a viscosity statement. It is a **shape**
+statement.
+
+**What ★ was claiming.** Stretching \(T_c\) is cubic in the
+field. Spectral spread \(\mathcal D_s\) is quadratic.
+Viscosity multiplies the spread and sits in the remainder as
+\(1/\nu\). So the original line mixed three different scalings.
+That makes it hard to see what would actually kill it.
+
+**What \(u=av\) does.** Change only the size of a fixed shape
+\(v\). Optimize over size. The worst size cancels \(\nu\).
+What remains is
+\[
+(\text{stretching of the shape})^2
+\le
+(\text{one geometric constant})
+\times
+(\text{how spread the spectrum is})
+\times
+(\text{energy})
+\times
+Y.
+\]
+That is the boxed line. If it holds for every divergence-free
+\(v\) on the torus, with one \(C_0(\theta)\), then the original
+★ holds for every amplitude and every \(\nu\). If it fails for
+even one shape, ★ is false.
+
+**What \(\mathcal R_\star(v)\) is.** How much stretching that
+shape gets per unit of spread, energy, and \(Y\). Pure geometry.
+Same number for \(av\) as for \(v\). Independent of viscosity.
+
+- If some shapes make \(\mathcal R_\star\) arbitrarily large,
+  no finite \(C_0\) exists. ★ is dead.
+- If \(\mathcal D_s=0\) (one Fourier shell) and \(T_c>0\)
+  (it still stretches), ★ is dead on that field. A pure single
+  shell does **not** do that: both sides vanish. The live kill
+  would be an almost-single-shell field that still stretches.
+- If every shape has \(\mathcal R_\star\) below one number,
+  that number *is* ★ (up to \(4\theta\)).
+- A list of fields with small \(\mathcal R_\star\) is not that
+  number. It is only that those particular shapes did not kill
+  it.
+
+**What a proof would have to be.** A reason, from how triads
+add, that stretching cannot get large unless the spectrum also
+spreads or the phases cancel. High-high \(\to\) low is the
+channel that could refuse that. That reason is not written.
+NS is not solved.
+
+---
+
 ## Immediate kill does not fire on a single shell
 
 If the field lives on one eigenvalue of \(A\), then

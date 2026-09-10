@@ -70,6 +70,7 @@ Decisive ratio:
   triadic geometry or cancellation.
 - Numerically bounded samples remain evidence only.
 
+Meaning: a shape statement, not a viscosity statement.
 File: [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md).
 
 ---
