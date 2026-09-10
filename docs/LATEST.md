@@ -31,7 +31,9 @@ H1 = WRITE (6) = Lemma I on the ball.
 H2, H3 labeled. Cylinder needs C+R_φ,
 H1, H2-a priori (or CKN-small), and H3.
 Local Serrin then, not CKN. Object:
-docs/H1-OBJECT.md. Gaps: §11. Literature:
+docs/H1-OBJECT.md. Tube SoT (opened):
+docs/H1-SOT.md. First tube numbers:
+docs/H1-TUBE.md. Gaps: §11. Literature:
 docs/LITERATURE-H.md (H1 not under another
 name). Lookups: all miss. docs/LOOKUP-H1.md.
 Shapes as estimates, not proved:
@@ -71,7 +73,7 @@ R★ ~ β/α, no blow. Designed Θ(m^2)
 subset is Freiman-AP, already dead.
 The m^{1/2} heuristic has no lattice
 home. H1 on one cylinder is the other
-live writing. Bound open.
+live writing (docs/H1-SOT.md). Bound open.
 docs/LEMMA-STAR-PACKET.md
 Attack 6: uniform pre-Young C dead
 (|R_pre| ~ s). That is not ★ dying.

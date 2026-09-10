@@ -3,7 +3,7 @@
 Different letters, different integrals. Do not merge them.
 This H is stretching on unaugmented NSE. It is not matrix \(H_N\). It is not SND. It is not Theorem A’s Sobolev \(H^1\).
 
-Phone packet: [`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md). H1 object: [`H1-OBJECT.md`](H1-OBJECT.md).
+Phone packet: [`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md). H1 object: [`H1-OBJECT.md`](H1-OBJECT.md). Tube SoT: [`H1-SOT.md`](H1-SOT.md).
 
 ---
 
@@ -29,6 +29,8 @@ A_{\mathrm{bad}}(Q_r)
 \]
 
 Open. This is the request. HLS gives local \(E^3\). Path-cost of \(\nabla\xi\) dies on a sheet or a gap.
+
+Physical-space rewrite on one vortex tube (same leftover class, different integral): [`H1-SOT.md`](H1-SOT.md). Packet attacks on \(\mathcal R_\star\) are exhausted as lattice objects. H1 opened there. First computation: \(J\) and thinness ([`H1-TUBE.md`](H1-TUBE.md)). Do not merge the integrals. Do not quote the Ring Lemma as proved. Do not glue H1 to \(H_N\).
 
 **H2 — flux through the skin,** \(r^{-1}\iint|u||\omega|^2\).
 Smallness: proved (CKN 1982). From energy alone: open. Remainder is local \(\int E^2\).
@@ -57,4 +59,4 @@ Shapes as estimates, not proved: [`H1-SHAPES.md`](H1-SHAPES.md).
 Lookups: all miss ([`LOOKUP-H1.md`](LOOKUP-H1.md)).
 Dream-team read (map yes, (6) no): [`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
 
-**Lemma★ is not an H.** Energy-budget writing of leftover (6) on \(\mathbb{T}^3\). Hypothesis. Exact form: scale-invariant trilinear bound on \(\mathcal R_\star\). Lattice packets scored (isolated triad, AP, adjacent spheres, Freiman-AP subset, HH→L fan \(\mathcal R_\star\sim\beta/\alpha\)): no kill. The \(m^{1/2}\) heuristic has not found a lattice home. Other live writing: H1 on one cylinder. Uniform global triadic bound completely open. K=0 dead. Uniform pre-Young \(C\) dead. Samples are evidence only. Do not merge with H1. File: [`LEMMA-STAR.md`](LEMMA-STAR.md), [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md), [`LEMMA-STAR-E.md`](LEMMA-STAR-E.md), [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
+**Lemma★ is not an H.** Energy-budget writing of leftover (6) on \(\mathbb{T}^3\). Hypothesis. Exact form: scale-invariant trilinear bound on \(\mathcal R_\star\). Lattice packets scored (isolated triad, AP, adjacent spheres, Freiman-AP subset, HH→L fan \(\mathcal R_\star\sim\beta/\alpha\)): no kill. The \(m^{1/2}\) heuristic has not found a lattice home. Other live writing: H1 on one cylinder ([`H1-SOT.md`](H1-SOT.md)). Uniform global triadic bound completely open. K=0 dead. Uniform pre-Young \(C\) dead. Samples are evidence only. Do not merge with H1. File: [`LEMMA-STAR.md`](LEMMA-STAR.md), [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md), [`LEMMA-STAR-E.md`](LEMMA-STAR-E.md), [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).

@@ -34,7 +34,12 @@ not a new name. Shapes as estimates:
 volume thinness is still \(E^{3/2}\), not H1.
 Lookups: all miss ([`LOOKUP-H1.md`](LOOKUP-H1.md)).
 None of 1, 2, 3 is proved. H1 object:
-[`H1-OBJECT.md`](H1-OBJECT.md). Literature:
+[`H1-OBJECT.md`](H1-OBJECT.md). Tube SoT
+(physical space, one cylinder; opened):
+[`H1-SOT.md`](H1-SOT.md). First numbers:
+[`H1-TUBE.md`](H1-TUBE.md). Ring Lemma
+direction bound is REPAIR. Do not glue
+H1 to \(H_N\). Literature:
 H1 is not under another name
 ([`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md) §14).
 A miss is another if.
@@ -65,7 +70,8 @@ spheres (closures \(O(m)\)), Freiman-AP
 subset, HH→L fan (\(\mathcal R_\star\sim\beta/\alpha\)):
 no kill. The \(m^{1/2}\) heuristic has not
 found a lattice home. H1 on one cylinder
-is the other live writing.
+is the other live writing
+([`H1-SOT.md`](H1-SOT.md)).
 The uniform global triadic bound remains
 completely open.
 Samples are evidence only. K=0 dead.

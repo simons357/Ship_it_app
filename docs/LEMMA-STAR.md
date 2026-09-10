@@ -146,7 +146,8 @@ scored: isolated triad, AP (\(D_s\) wins), adjacent
 spheres (closures \(O(m)\)), Freiman-AP subset, HH→L
 fan (\(\mathcal R_\star\sim\beta/\alpha\)). No kill.
 The \(m^{1/2}\) heuristic has not found a lattice home.
-H1 on one cylinder is the other live writing.
+H1 on one cylinder is the other live writing
+([`H1-SOT.md`](H1-SOT.md)).
 The uniform global triadic bound remains completely open.
 Uniform pre-Young \(C\) is off. Attack-2 \(C_*\) is a
 different door. Do not revive K=0. Do not cash a triad
@@ -159,6 +160,8 @@ remain evidence only. Do not write “almost proved.”
 
 - **H1 = WRITE (6) = Lemma I on the ball.** Bad pairs,
   kernel \(|z|^{-3}\). Geometric path. Open.
+  Tube writing (same leftover class, different integral):
+  [`H1-SOT.md`](H1-SOT.md).
   [`WRITE_6.md`](WRITE_6.md)
 - **DA-NS-2.** \(\int K\,dt<\infty\) with
   \(K=[T_c-\theta\nu\mathcal D_s]_+/Y\). If Lemma★ sits,

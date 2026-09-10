@@ -258,7 +258,7 @@ The packet is a **good map**. It is not a proof of ordinary NS.
 
 **Lemma C.** CF 1993 / BdVB 2002 sit as **if**. Hölder \(1/2\) is the right cut for this path. Lemma C does not prove alignment. That sentence is the whole point.
 
-**H1.** The right leftover on this path. Holdable object: the Bad-pair integral versus local dissipation plus \(r^{-2}\iint|\omega|^2\) (§13). WRITE (6) was written on one cylinder in §12. Mid-Bad is named. Near-Bad is still open. The only remaining shapes are thinness, J on folds, and dynamics. Arithmetic: [`H1-SHAPES.md`](H1-SHAPES.md). CS-thinness is still \(E^{3/2}\), not H1. Lookups: all miss. Literature: not under another name (§14). The aimed estimate is **not** proved.
+**H1.** The right leftover on this path. Holdable object: the Bad-pair integral versus local dissipation plus \(r^{-2}\iint|\omega|^2\) (§13). WRITE (6) was written on one cylinder in §12. Mid-Bad is named. Near-Bad is still open. The only remaining shapes are thinness, J on folds, and dynamics. Arithmetic: [`H1-SHAPES.md`](H1-SHAPES.md). CS-thinness is still \(E^{3/2}\), not H1. Lookups: all miss. Literature: not under another name (§14). The aimed estimate is **not** proved. Physical-space rewrite on one vortex tube (same leftover class, different integral): [`H1-SOT.md`](H1-SOT.md). First numbers: [`H1-TUBE.md`](H1-TUBE.md). Packet attacks on \(\mathcal R_\star\) are exhausted as lattice objects. Do not quote the Ring Lemma as proved. Do not glue H1 to \(H_N\).
 
 **H2.** Smallness criterion is true. A priori from \(\int E<\infty\) is not. After Young the remainder is local \(\int E^2\). So even if H1 sits, H2-from-energy is a second wall. Keep them separate.
 

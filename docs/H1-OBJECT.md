@@ -4,6 +4,15 @@ Alias: WRITE (6) = Lemma I on the ball. Same leftover. Not a new name.
 It is not in hand as a theorem. Good pairs are already gone (Lemma C). Flux is H2. Exterior is H3.
 Do not merge with global H. Glossary: [`H-SYSTEM.md`](H-SYSTEM.md).
 
+Two writings of leftover (6). Different integrals. Do not merge.
+
+1. **Bad-pair integral on \(Q_r\)** (this page). Aimed leftover yes. Theorem no.
+2. **Tube stretching on one cylinder.** SoT: [`H1-SOT.md`](H1-SOT.md). First numbers: [`H1-TUBE.md`](H1-TUBE.md). Same leftover class. Localized Lemma★ packaging. Still not a theorem.
+
+Do not glue H1 to the GCD matrix \(H_N\) / \(H_M[a]\).
+Do not quote the Ring Lemma direction bound as proved (REPAIR).
+Do not treat one computed Beltrami tube as a uniform constant.
+
 ## H1
 
 On \(Q_r\), only pairs with \(|\omega|\ge\Lambda\) and \(|\sin\varphi|>C_*|x-y|^{1/2}\):

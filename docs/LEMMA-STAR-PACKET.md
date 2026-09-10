@@ -227,7 +227,10 @@ another full sphere, another fan, K=0, or gluing this to H1.
 
 The other live writing is H1 on one cylinder
 (thinness / J on folds / waiting time). Same leftover
-class, different integral.
+class, different integral. SoT:
+[`H1-SOT.md`](H1-SOT.md). First tube numbers:
+[`H1-TUBE.md`](H1-TUBE.md). Do not quote the
+Ring Lemma as proved. Do not glue H1 to \(H_N\).
 
 NS is not solved.
 

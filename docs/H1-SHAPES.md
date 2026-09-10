@@ -5,6 +5,8 @@ H1 is not proved. NS is not solved.**
 
 Object: [`H1-OBJECT.md`](H1-OBJECT.md).
 Lookups: [`LOOKUP-H1.md`](LOOKUP-H1.md).
+Tube writing of the same leftover class (different
+integral): [`H1-SOT.md`](H1-SOT.md).
 Do not merge with H, Lemma C, H2, H3, or Lemma★.
 
 These are writings of H1. None of them sits.
