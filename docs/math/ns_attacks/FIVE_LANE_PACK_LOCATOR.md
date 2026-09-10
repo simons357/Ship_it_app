@@ -1,7 +1,7 @@
 # Five-lane Lemma★ pack locator
 
 **FOUND: yes.**  
-**NS is NOT solved.** Lemma★ remains **OPEN**. Kill lane **LIVE**.
+**NS is NOT solved.** Lemma★ remains **OPEN**. Bound on \(C_{\mathrm{geom}}\) / \(\sup\mathcal{R}_\star\) **OPEN**. Kill lane **LIVE**.
 
 ---
 
@@ -10,13 +10,13 @@
 | Item | Value |
 |------|-------|
 | Branch | `cursor/ns-five-lane-lemma-star-1390` |
-| Tip commit | `b20d9aadf788c758676c86fa6820fa358c6d2840` (full Lemma★ SoT lock); prior 9B SoT `c8cb290` / locator `c8a67de` |
-| Tip subject | SoT: lock full exact Lemma★ shape form (\(D_s\), \(K_{\alpha,\beta}\) restricted) |
+| Tip commit | `45372d27679d9aea576f5ab6d3792f558ac2766f` (refined full Lemma★ SoT); prior full lock `b20d9aa` / locator `b1f2a78` |
+| Tip subject | SoT: refined full canonical Lemma★ (bound OPEN; triad formulas) |
 | Remote | `origin/cursor/ns-five-lane-lemma-star-1390` |
 | GitHub PR | **https://github.com/simons357/Ship_it_app/pull/48** |
 | PR title | Five-lane Lemma★ drill: K=0 dead, ★ survives numeric |
 | PR state | OPEN (`head` = five-lane branch, `base` = `main`) |
-| Cursor agent (this locator run) | https://cursor.com/agents/bc-713b8b8e-ba28-5c35-aa38-58af4992963a |
+| Cursor agent (this locator run) | https://cursor.com/agents/bc-5228010a-ce68-5643-9d8a-512aaef18c73 |
 | Related Cursor agent (PR footer) | https://cursor.com/agents/bc-01a00412-6516-7002-95f2-051faf8ba0eb |
 
 ---
@@ -26,6 +26,7 @@
 | Role | Absolute path |
 |------|----------------|
 | **Canonical defs (Lemma★ shape form)** | `/workspace/docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md` |
+| **Exact triad / spectral formulas** | `/workspace/docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md` |
 | **Status board** | `/workspace/docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md` |
 | **Code lock (moments / \(T_c\) / \(\mathcal R_\star\))** | `/workspace/scripts/ns_attacks/stokes_moments.py` |
 | **Attack 3 doc (HH input; not strict HH→L)** | `/workspace/docs/math/ns_attacks/ATTACK_3_BONY_HH_L.md` |
@@ -41,7 +42,7 @@ All key SoT files under `/workspace/docs/math/ns_attacks/` are present on the fi
 
 ## Absolute defs extract (from `LEMMA_STAR_SHAPE_FORM.md` + `stokes_moments.py`)
 
-**Full Lemma★** (absolute SoT — not viscosity-primary; \(K_{\alpha,\beta}\) is **not** this):
+**Full Lemma★** (absolute SoT — definitions + claim; closing bound **OPEN**; not viscosity-primary; \(K_{\alpha,\beta}\) is **not** this):
 
 \[
 A=-P\Delta,\quad B(v,v)=P[(v\cdot\nabla)v],
@@ -57,6 +58,7 @@ Z=\|A^{3/2}v\|_2^2,\quad
 D_s=Z-Y^2/X=\|(A-\Lambda)A^{1/2}v\|_2^2,\qquad
 T_c=-\langle B(v,v),A(A-\Lambda)v\rangle.
 \]
+Equivalent triad form: \(T_c=M-\Lambda N=\sum_k\lambda_k(\lambda_k-\Lambda)T_k\) — [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md).
 \[
 \boxed{
 \exists\,C_{\mathrm{geom}}<\infty\quad
@@ -66,7 +68,7 @@ T_c=-\langle B(v,v),A(A-\Lambda)v\rangle.
 C_{\mathrm{geom}}\,D_s(v)\,\|v\|_2^2\,Y(v).
 }
 \]
-Equiv. (\(D_s>0\)): \(\sup (T_c)_+^2/(D_s\|v\|_2^2 Y)<\infty\). For \(D_s=0\): one shell and \(T_c=0\).
+Equiv. (\(D_s>0\)): \(\sup (T_c)_+^2/(D_s\|v\|_2^2 Y)<\infty\). For \(D_s=0\): one shell and \(T_c=0\) — **vacuous, not a kill**.
 
 **Alias:** \(\mathcal{D}_s\equiv D_s=Z-\Lambda Y\) (same object). Code `Tc = M - Λ N` matches the inner-product \(T_c\).
 
@@ -106,7 +108,7 @@ Code aliases in `stokes_moments.py`:
 
 ## Precision corrections (user-confirmed SoT lock)
 
-1. **Full Lemma★** is the boxed shape inequality / \(\sup\mathcal{R}_\star<\infty\) in `LEMMA_STAR_SHAPE_FORM.md` — **not** \(K_{\alpha,\beta}\).
+1. **Full Lemma★** is the boxed shape inequality / \(\sup\mathcal{R}_\star<\infty\) in `LEMMA_STAR_SHAPE_FORM.md` — **not** \(K_{\alpha,\beta}\). Bound on \(C_{\mathrm{geom}}\) / \(\sup\mathcal{R}_\star\) is **OPEN** (exact reduction + open closing estimate; not a GR proof).
 2. **Attack 3 is NOT strictly HH→L.** It filters high-frequency **inputs** (Bony HH/HL/LL) without restricting **output** to low frequencies. Historical “HH→L” naming = HH-channel product gap, not a proved high→low output map. See `ATTACK_3_BONY_HH_L.md`.
 3. **Canonical quotient** is `ratio_R_star_shape`. Legacy `ratio_star` means something different (post-Young).
 4. **Attack 9C** is **SoT-only until implemented** — snapshot \(0.11\to0.031\) **lacks** supporting fixed-gap sweep script/data in PR #48.
@@ -114,7 +116,8 @@ Code aliases in `stokes_moments.py`:
    \[
    K_{\alpha,\beta}=\sup_{Aw=\alpha w}\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\|w\|_2^4}.
    \]
-6. **Attack 9B CRITICAL:** reported \(\max K\approx0.641\) at \((\alpha,\beta)=(4,8)\) has \(\beta>\alpha\) → transfer to a **higher** shell — **NOT** HH→L. Genuine HH→L subfamily requires \(\beta<\alpha\) (sample max \(\approx0.0123\) at \((5,2)\)). Always report \(\beta>\alpha\) and \(\beta<\alpha\) maxima separately. \(K_{\alpha,\beta}\) ≠ full ★.
+6. **Attack 9B CRITICAL:** reported \(\max K\approx0.641\) at \((\alpha,\beta)=(4,8)\) has \(\beta>\alpha\) → transfer to a **higher** shell — **NOT** HH→L. Genuine HH→L subfamily requires \(\beta<\alpha\) (sample max \(\approx0.0123\) at \((5,2)\)). Always report \(\beta>\alpha\) and \(\beta<\alpha\) maxima separately. Sample \(K\) bound does **not** prove ★.
+7. **Triad formulas:** `LEMMA_STAR_EXACT_FORMULAS.md` (\(T_c=M-\Lambda N=\sum\lambda_k(\lambda_k-\Lambda)T_k\)).
 
 ### Confirmed originals (PR #48)
 
@@ -183,6 +186,7 @@ Pointers:
 
 ### Docs — SoT pack (`/workspace/docs/math/ns_attacks/`)
 - `/workspace/docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`
+- `/workspace/docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`
 - `/workspace/docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md`
 - `/workspace/docs/math/ns_attacks/ATTACK_SYNTHESIS_SIMULTANEOUS.md`
 - `/workspace/docs/math/ns_attacks/ATTACK_1_COVARIANCE.md`
