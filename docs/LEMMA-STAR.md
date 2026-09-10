@@ -1,7 +1,10 @@
 # Lemma★ — locked packaging
 
 10 September 2026. Energy-budget writing of leftover (6).
-**Hypothesis. Not proved. NS is not solved. Not “almost.”**
+**FALSE as a uniform bound.** Counterexample field:
+`docs/CS-REMAINDER.md`. **NS is not solved.**
+★ does not close unaugmented NSE. H1 is a different
+integral. Still open.
 
 Drill: [PR 48](https://github.com/simons357/Ship_it_app/pull/48)
 (`cursor/ns-five-lane-lemma-star-1390`).

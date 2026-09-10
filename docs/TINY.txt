@@ -72,7 +72,12 @@ Lookups: all miss. docs/LOOKUP-H1.md
 WRITE (6) alone: docs/WRITE_6.md
 WRITE (6) plus data: docs/WRITE_6_SUPPORTED.md
 
-Lemma★ locked as hypothesis (not proved):
+Lemma★ is false as a uniform bound.
+Counterexample (localized ABC, R★ ~ λ³):
+docs/CS-REMAINDER.md
+N-shell samples still saturate:
+docs/RSTAR-SHELL-CLIMB.md
+Locked packaging (now killed):
 docs/LEMMA-STAR.md
 Working claim + identities:
 docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md

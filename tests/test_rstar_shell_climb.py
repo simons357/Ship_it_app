@@ -17,7 +17,7 @@ class RstarShellClimbTests(unittest.TestCase):
         self.assertTrue(PHONE.is_file())
         text = PHONE.read_text()
         self.assertIn("Does not climb", text)
-        self.assertIn("Not a proof", text)
+        self.assertIn("CS-REMAINDER.md", text)
         self.assertIn("NS not solved", text)
         self.assertTrue(SCRIPT.is_file())
 

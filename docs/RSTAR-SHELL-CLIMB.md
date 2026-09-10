@@ -40,15 +40,14 @@ not beat two.
 
 ## Verdict
 
-Does not climb. Target A is not killed.
-No counterexample field.
+Does not climb **on this family**. Extra shells do
+not beat two. Fourier dilation \(v(n\cdot)\) stays
+flat.
 
-The crude envelope \(|\widehat B_k|\le|k|\,E\) gives
-\(K\le 16s\), which does climb with \(s\). The
-realized \(\mathcal R_\star\) and
-\(\|A^{1/2}B\|_2^2/(EY)\) stayed \(O(1)\) on this
-sample. That is not a proof that
-\(\|A^{1/2}B\|_2\le C\sqrt{EY}\).
+The kill is a different family: spatial concentration
+\(u(x)=\lambda^{3/2}\varphi(\lambda x)\). See
+`docs/CS-REMAINDER.md`. Target A is false there.
+This table is not that field.
 
 JSON: `results/rstar_shell_climb/maximizer.json`
 Script: `scripts/ns_attacks/maximize_rstar_shells.py`

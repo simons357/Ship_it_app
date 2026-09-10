@@ -1,8 +1,10 @@
 # Lemma★ — canonical claim (working foundation)
 
 **Date:** 2026-09-10  
-**Status:** hypothesis. Bound on \(C_{\mathrm{geom}}\) / \(\sup\mathcal R_\star\) **OPEN**. **NS not solved.**  
-**Kill lane:** **LIVE.**
+**Status:** **FALSE** on \(\mathbb{T}^3\). \(\sup\mathcal R_\star=\infty\).
+Counterexample: reversed localized ABC, `docs/CS-REMAINDER.md`.
+**NS not solved.** ★ does not close unaugmented NSE.
+H1 / WRITE (6) is a different integral. Still open.
 
 Identities: [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md).  
 Phone lock of the four corrections: [`../../LEMMA-STAR-CORRECTIONS.md`](../../LEMMA-STAR-CORRECTIONS.md).  
@@ -117,14 +119,16 @@ That is \(K_{\alpha,\beta}(w)\) times the squared cosine of the angle in the \(\
 
 ## Remaining target
 
-Establish a uniform bound on
-\[
-\mathcal R_\star
-=
-\frac{(T_c)_+^2}{\mathcal D_s\,E\,Y},
-\]
-or construct a family for which it diverges. One large finite value only raises the required constant. It does not disprove the existence of a finite constant.
+The uniform bound is **false**. The diverging family is the
+reversed localized ABC
+\(v_\lambda=-P(\gamma_\lambda\mathrm{ABC}_\lambda)/\|\cdots\|_2\),
+\(\widehat{\gamma}_\lambda(k)=\exp(-|k|^2/(2\lambda^2))\).
+\(\mathcal R_\star\sim c\lambda^3\). Phone: [`../../CS-REMAINDER.md`](../../CS-REMAINDER.md).
 
-K=0 is dead. The \(a^4\) “missing inequality” is dead. Uniform pre-Young \(C\) is dead. Attack-2 \(C_*\) is a different door. Fixed-output \(\Theta(m^2)\) is a counting error. Freiman-AP is already dead. Samples are evidence only. Do not write “almost proved.”
+N-shell Fourier samples still saturate. They are not this field.
+Fourier dilation \(v(n\cdot)\) stays invariant. Spatial
+concentration \(\lambda^{3/2}\varphi(\lambda x)\) does not.
 
-**NS not solved.** ★ open.
+K=0 is dead. The \(a^4\) “missing inequality” is dead. Uniform pre-Young \(C\) is dead. Attack-2 \(C_*\) is a different door. Fixed-output \(\Theta(m^2)\) is a counting error. Freiman-AP is already dead. ★ is dead as a close of unaugmented NSE. H1 / WRITE (6) is a different integral.
+
+**NS not solved.** ★ killed. Leftover (6) still open.
