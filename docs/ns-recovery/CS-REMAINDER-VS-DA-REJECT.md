@@ -141,3 +141,27 @@ Further hygiene:
 Lemma★ remains **OPEN**. Kill lane remains **LIVE**. NS is **not** solved.
 
 If the kill lane wants this family next, the honest next measurements are: exact-core (same field definition) at λ = 8 and λ = 16; a resolution study at fixed λ; and a statement of what would count as divergence rather than a larger finite \(C_{\mathrm{geom}}\).
+
+---
+
+## SuperGrok filing (10 Sep 17:56) — scored
+
+SuperGrok’s unaugmented ABC_λ audit. Shared line we **keep**: table is an evaluator, not a proof; exact core ≠ proof; ★ still open; unaugmented NSE not solved.
+
+| SuperGrok line | This book |
+|---|---|
+| Family is λ-scaled ABC × Gaussian cutoff | **Sit.** Standard ABC at frequency \(k_0=\lambda\), spatial Gaussian, Leray, unit energy. |
+| CS \(\sim 0.88\lambda^{3/2}\), \(\mathcal R_\star\sim 6.47\times 10^{-4}\lambda^3\), does not saturate | **Sit as a fit** on FFT rows λ = 2, 3, 4, 5, 6, 8. SuperGrok dropped λ = 6. N-shell max saturates; this field does not **on those grids**. |
+| Kills Target A / CS remainder / ★ as a closer | **Refuse as a stamp.** Finite climb. ★ as a closer dies only if \(\sup\mathcal R_\star=\infty\). Not shown. |
+| H1 is a different integral; named; not run on ABC_λ | **Sit.** Untested. This book has not started H1. |
+| Falsifier-of-record: yes, pending exact-script confirmation | **Refuse.** Exact script **already ran** (λ = 2, 3, 4 cutoff + same-field lock). That confirms a finite climb, not a falsifier of ★. |
+| Next: reprint `cs_remainder_exact_check.py` on λ = 2, 4, 8, 16; if climb continues, stop patching ★ | **Half.** λ = 8 and 16 were **never** in that script. More finite rows still only raise \(C_{\mathrm{geom}}\) unless divergence is stated. Do not “stop patching ★” from a longer table. |
+| Augmented / Q-stack / coherence | **Out of this book.** Not addressed; do not glue. |
+
+### Claude’s two items (locked)
+
+1. **Same \(\mathcal R_\star\)?** Yes, after reverse. JSON `R_star` is \((T_c)_+\) and is **0** on this family (\(T_c<0\)). Published column is `R_star_signed` \(=T_c^2/(D_s E Y)\), which is canonical \(\mathcal R_\star(-v)\). Exact-core uses the same \(T_c^2\) quotient. Not an ABC-only variant. That is why the exact script exists, and it already answered this for the cutoff field.
+2. **H1 on ABC_λ?** **Untested.** Named only. Not shown immune.
+
+`cs_remainder_exact_check.py` does four jobs: (i) 3-mode triad vs `probe` (there \(T_c=0\)); (ii) export 99% energy modes and sum the triad; (iii) put that **same** truncated field on a grid and match FFT \(T_c\) to \(10^{-13}\); (iv) check \(v(n\cdot)\) leaves \(\mathcal R_\star\) flat. It does **not** prove ★ false and does **not** run λ = 8 or 16.
+
