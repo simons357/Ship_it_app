@@ -107,6 +107,7 @@ keys is not that test. Two shells can be live. Hunt by
 \(|e|/|k_0|\to 0\) with the supremum recomputed. Attack 8
 did not kill it: [`LEMMA-STAR-E.md`](LEMMA-STAR-E.md).
 Live target: a growing coherent triad packet or HH→L fan.
+Next object: same-shell packet, not another AP.
 The uniform global triadic bound remains completely open.
 One AP construction: [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
 

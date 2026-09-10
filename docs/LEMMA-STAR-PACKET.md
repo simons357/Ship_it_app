@@ -110,5 +110,46 @@ spread stops it from diverging. Not a kill.
 
 The AP construction above is one packet, not that target
 closed. Do not cash a peak of \(0.25\) as \(C_0\) or as a
-kill. Do not merge with H1. Do not add \(K(t)\) to the PDE.
+kill.
+
+---
+
+## Next object
+
+A **same-shell coherent packet**, not another arithmetic
+progression.
+
+The wide AP failed the heuristic because \(\mathcal D_s\)
+is the packet width, and width grew with \(m\). The narrow
+AP only delayed that. As soon as \(m\) is no longer
+\(\ll|k_0|\), the denominator blows again. That family
+cannot test
+\[
+\mathcal D_s\|v\|_2^2 Y\sim O(1).
+\]
+
+What would test it: packets \(P,Q,R=P+Q\) whose eigenvalues
+do not spread with \(m\). Concretely, many keys on two (or
+three) **fixed shells**, with \(O(m^2)\) closures, energy
+normalized. Then \(\mathcal D_s\) is the shell gap, not the
+AP width. If \(T_c\) still grows like \(m^{1/2}\) there,
+Lemma★ is in trouble. If incompressibility, phases, or
+triadic counting kill that growth, that is the estimate a
+proof has to write.
+
+Do not: more isolated triangles, more frozen rays, more
+uniform dilations, more \(k_{\max}=8\) samples, K=0, or
+gluing this to H1.
+
+The other live writing is still H1 on one cylinder
+(thinness / J on folds / waiting time). Same leftover
+class, different integral. Work one.
+
+The uniform triadic bound is still completely open.
+NS is not solved.
+
+Say **packet** for the same-shell construction, or **H1**
+for the cylinder.
+
+Do not merge with H1. Do not add \(K(t)\) to the PDE.
 Do not write “almost proved.”
