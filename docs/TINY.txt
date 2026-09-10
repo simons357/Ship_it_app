@@ -72,12 +72,13 @@ Lookups: all miss. docs/LOOKUP-H1.md
 WRITE (6) alone: docs/WRITE_6.md
 WRITE (6) plus data: docs/WRITE_6_SUPPORTED.md
 
-Lemma★ is false as a uniform bound.
-Counterexample (localized ABC, R★ ~ λ³):
+Lemma★ is still open.
+Localized ABC is a rejected recon,
+not a kill. Table only:
 docs/CS-REMAINDER.md
 N-shell samples still saturate:
 docs/RSTAR-SHELL-CLIMB.md
-Locked packaging (now killed):
+Locked packaging (OPEN):
 docs/LEMMA-STAR.md
 Working claim + identities:
 docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md

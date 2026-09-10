@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Check the localized-ABC table against the exact Lemma★ core.
 
-FFT Galerkin is not the core. Target A is not stamped until
-T_c, D_s, E, Y, and R★ match the direct triad sum.
+FFT Galerkin is not the core. DA rejected the ABC_λ recon
+as a kill. This checker does not stamp Target A.
 
-NS not solved. Not a plate.
+NS not solved. Lemma★ still open. Not a plate.
 """
 
 from __future__ import annotations

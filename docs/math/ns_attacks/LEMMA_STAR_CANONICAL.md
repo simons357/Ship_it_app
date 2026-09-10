@@ -1,9 +1,9 @@
 # Lemma★ — canonical claim (working foundation)
 
 **Date:** 2026-09-10  
-**Status:** **FALSE** on \(\mathbb{T}^3\). \(\sup\mathcal R_\star=\infty\).
-Counterexample: reversed localized ABC, `docs/CS-REMAINDER.md`.
-**NS not solved.** ★ does not close unaugmented NSE.
+**Status:** **OPEN.** Uniform \(\sup\mathcal R_\star<\infty\) is not proved.
+Localized ABC is a rejected reconstruction, not a kill:
+`docs/CS-REMAINDER.md`. **NS not solved.**
 H1 / WRITE (6) is a different integral. Still open.
 
 Identities: [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md).  
@@ -119,16 +119,13 @@ That is \(K_{\alpha,\beta}(w)\) times the squared cosine of the angle in the \(\
 
 ## Remaining target
 
-The uniform bound is **false**. The diverging family is the
-reversed localized ABC
-\(v_\lambda=-P(\gamma_\lambda\mathrm{ABC}_\lambda)/\|\cdots\|_2\),
-\(\widehat{\gamma}_\lambda(k)=\exp(-|k|^2/(2\lambda^2))\).
-\(\mathcal R_\star\sim c\lambda^3\). Phone: [`../../CS-REMAINDER.md`](../../CS-REMAINDER.md).
+The uniform bound is **OPEN**. The localized-ABC FFT table
+is a cutoff-plus-Leray reconstruction, not ABC. DA rejects
+that recon as a kill. Phone: [`../../CS-REMAINDER.md`](../../CS-REMAINDER.md).
 
 N-shell Fourier samples still saturate. They are not this field.
-Fourier dilation \(v(n\cdot)\) stays invariant. Spatial
-concentration \(\lambda^{3/2}\varphi(\lambda x)\) does not.
+Fourier dilation \(v(n\cdot)\) stays invariant.
 
-K=0 is dead. The \(a^4\) “missing inequality” is dead. Uniform pre-Young \(C\) is dead. Attack-2 \(C_*\) is a different door. Fixed-output \(\Theta(m^2)\) is a counting error. Freiman-AP is already dead. ★ is dead as a close of unaugmented NSE. H1 / WRITE (6) is a different integral.
+K=0 is dead. The \(a^4\) “missing inequality” is dead. Uniform pre-Young \(C\) is dead. Attack-2 \(C_*\) is a different door. Fixed-output \(\Theta(m^2)\) is a counting error. Freiman-AP is already dead. ★ is not a close of unaugmented NSE. H1 / WRITE (6) is a different integral.
 
-**NS not solved.** ★ killed. Leftover (6) still open.
+**NS not solved.** ★ OPEN. Leftover (6) still open.

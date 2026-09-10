@@ -1,4 +1,4 @@
-"""Localized ABC climbs R★. CS remainder is false. Not a plate."""
+"""Localized ABC numbers exist. DA REJECT as a kill. Not a plate."""
 
 from __future__ import annotations
 
@@ -21,9 +21,12 @@ class CsRemainderTests(unittest.TestCase):
     def test_phone_and_json(self):
         self.assertTrue(PHONE.is_file())
         text = PHONE.read_text()
-        self.assertIn("Target A is false", text)
+        self.assertIn("DISPUTED", text)
+        self.assertIn("DA REJECT", text)
+        self.assertIn("still OPEN", text)
         self.assertIn("NS not solved", text)
         self.assertIn("ABC", text)
+        self.assertNotIn("Target A is false", text)
         data = json.loads(JSON.read_text())
         self.assertIs(data["ns_solved"], False)
         self.assertTrue(data["climbs_cs"])
@@ -47,6 +50,7 @@ class CsRemainderTests(unittest.TestCase):
         text = PHONE.read_text()
         self.assertIn("exact triad core", text)
         self.assertIn("99% energy cutoff", text)
+        self.assertIn("2,4,8,16", text.replace(" ", ""))
 
     def test_live_lambda_2_to_3(self):
         a = probe_hat(*localized_abc(32, width=2.0, k0=2))

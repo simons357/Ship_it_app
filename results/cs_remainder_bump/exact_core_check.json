@@ -90,5 +90,5 @@
     0.005180838074551112,
     0.013669077905198213
   ],
-  "verdict": "Exact core confirms the climb. Same truncated field: FFT=triad. v(n\u00b7) leaves R\u2605 invariant. Spatial ABC family still climbs."
+  "verdict": "DISPUTED. Same truncated field: FFT=triad. v(n\u00b7) leaves R\u2605 invariant. 99% cutoff \u2260 full FFT. DA REJECT of ABC_\u03bb recon as a kill. Lemma\u2605 remains OPEN."
 }

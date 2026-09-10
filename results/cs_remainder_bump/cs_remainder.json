@@ -492,5 +492,5 @@
     "R_star_signed": 1.2319849494943186e-31
   },
   "counterexample_field": "v_\u03bb = \u2212P(\u03b3_\u03bb ABC_\u03bb) / ||P(\u03b3_\u03bb ABC_\u03bb)||_2, ABC_\u03bb the ABC flow at frequency \u03bb, \u03b3_\u03bb the periodic Gaussian with \u03b3\u0302_\u03bb(k)=exp(\u2212|k|\u00b2/(2\u03bb\u00b2)). Sign so T_c>0 (the computed field has T_c<0).",
-  "verdict": "Target A false: R\u2605 ~ c \u03bb\u00b3 on reversed localized ABC. CS remainder also false: ||A^{1/2}B||/\u221a(EY) ~ c' \u03bb^{3/2}."
+  "verdict": "DISPUTED. DA REJECT of ABC_\u03bb recon as a kill. FFT table climbs on P(\u03b3_\u03bb ABC_\u03bb), which is not ABC. Lemma\u2605 remains OPEN. Numerics are not a proof."
 }

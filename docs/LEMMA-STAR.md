@@ -1,10 +1,9 @@
 # Lemma★ — locked packaging
 
 10 September 2026. Energy-budget writing of leftover (6).
-**FALSE as a uniform bound.** Counterexample field:
-`docs/CS-REMAINDER.md`. **NS is not solved.**
-★ does not close unaugmented NSE. H1 is a different
-integral. Still open.
+**OPEN.** Uniform bound not proved. **NS is not solved.**
+Localized ABC is a rejected reconstruction, not a kill:
+`docs/CS-REMAINDER.md`. H1 is a different integral.
 
 Drill: [PR 48](https://github.com/simons357/Ship_it_app/pull/48)
 (`cursor/ns-five-lane-lemma-star-1390`).
@@ -226,3 +225,7 @@ file not overwritten):
 [`LEMMA-STAR-CORE.md`](LEMMA-STAR-CORE.md).
 Object app (pictures; bound still open):
 [`THE-OBJECT-APP.md`](THE-OBJECT-APP.md).
+Localized ABC (rejected recon, not a kill):
+[`CS-REMAINDER.md`](CS-REMAINDER.md).
+N-shell maximizer (saturates; not a bound):
+[`RSTAR-SHELL-CLIMB.md`](RSTAR-SHELL-CLIMB.md).

@@ -44,10 +44,9 @@ Does not climb **on this family**. Extra shells do
 not beat two. Fourier dilation \(v(n\cdot)\) stays
 flat.
 
-The kill is a different family: spatial concentration
-\(u(x)=\lambda^{3/2}\varphi(\lambda x)\). See
-`docs/CS-REMAINDER.md`. Target A is false there.
-This table is not that field.
+Localized ABC is a rejected reconstruction, not a kill.
+See `docs/CS-REMAINDER.md`. This table is not that field.
+Target A is not settled by either family.
 
 JSON: `results/rstar_shell_climb/maximizer.json`
 Script: `scripts/ns_attacks/maximize_rstar_shells.py`

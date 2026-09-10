@@ -366,12 +366,13 @@ def run() -> dict:
             "Sign so T_c>0 (the computed field has T_c<0)."
         ),
         "verdict": (
-            "Target A false: R★ ~ c λ³ on reversed localized ABC. "
-            "CS remainder also false: ||A^{1/2}B||/√(EY) ~ c' λ^{3/2}."
+            "DISPUTED. DA REJECT of ABC_λ recon as a kill. "
+            "FFT table climbs on P(γ_λ ABC_λ), which is not ABC. "
+            "Lemma★ remains OPEN. Numerics are not a proof."
             if climbs_R
             else (
-                "CS remainder false: ||A^{1/2}B||/√(EY) climbs on a 3D bump. "
-                "R★ not killed on these bumps."
+                "CS ratio climbs on a 3D bump. R★ not killed on these bumps. "
+                "Lemma★ remains OPEN."
                 if climbs_cs
                 else "CS remainder not killed on these bumps. Not a proof."
             )
