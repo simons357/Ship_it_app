@@ -161,6 +161,8 @@ def run_table(pairs: Sequence[Tuple[int, int]] = DEFAULT_PAIRS) -> Dict[str, obj
             "D_s from the two-shell gap, not an AP width; closures are "
             "k+p+r=0 of type (n,n,n+d)."
         ),
+        "sot": "docs/ns-recovery/SOT.md",
+        "locked": "2026-09-10",
         "status": {
             "heuristic_O_m2_aligned_closures": "false_on_natural_same_shell_ensemble",
             "uniform_triadic_bound": "open",

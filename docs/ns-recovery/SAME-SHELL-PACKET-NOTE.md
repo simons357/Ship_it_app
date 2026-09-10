@@ -1,5 +1,7 @@
 # Same-shell packet: \(D_s\) is the gap, not an AP width
 
+**SoT:** [`SOT.md`](SOT.md) — **locked** 10 September 2026. This note does not override it.
+
 **Date:** 10 September 2026  
 **Source of the claim:** user note on cloud agent https://cursor.com/agents/bc-01a07930-4f88-7811-8d60-3383fff0b5c1  
 **Probe:** `scripts/same_shell_packet_probe.py`  

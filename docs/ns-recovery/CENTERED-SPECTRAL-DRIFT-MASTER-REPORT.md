@@ -545,7 +545,7 @@ It adds an **honest map of the work that *was* saved**, and a **precise negative
 
 ## 8b. Addendum — 10 September 2026 same-shell packet (not an AP)
 
-**User note on this agent.** Full write-up: [`SAME-SHELL-PACKET-NOTE.md`](SAME-SHELL-PACKET-NOTE.md). Probe: `scripts/same_shell_packet_probe.py`.
+**Locked in SoT:** [`SOT.md`](SOT.md). Full write-up: [`SAME-SHELL-PACKET-NOTE.md`](SAME-SHELL-PACKET-NOTE.md). Probe: `scripts/same_shell_packet_probe.py`.
 
 **Construction (packet, not AP):** full lattice spheres \(S_n\cup S_{n+d}\), \(m=r_3(n)+r_3(n+d)\) growing with \(n\), fixed gap \(d\). Mixed closures are \(k+p+r=0\) of type \((n,n,n+d)\). Two-mass \(\mathcal D_s=(XZ-Y^2)/X\) uses that gap; for \(d=1\) it is \(\Theta(n)\).
 
