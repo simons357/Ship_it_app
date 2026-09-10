@@ -24,6 +24,7 @@ Sibling SoT docs (if present): `../lemma-star-sot/`
 
 Required:
 - `stokes_moments.py` — Stokes moments / `ratio_R_star_shape` (= \(\mathcal{R}_\star\))
+- `ns_lemma_star_core.py` — self-contained exact finite-support SoT identities (direct triad sum, no FFT; independent of Stokes/eigenbasis code)
 - `attack9b_exact_shell_K.py` — exact-shell \(K_{\alpha,\beta}\) probe (report β>α and β<α separately)
 - `__init__.py`
 
@@ -32,7 +33,9 @@ Also included (full tip folder):
 - `attack1_covariance.py` … `attack5_route2_kill.py`
 - `attack3_bony_hh_l.py`, `attack9_packet_fan.py`
 
-Repo locator copies (same tip): `/workspace/scripts/ns_attacks/`, `/workspace/tests/test_ns_attacks_lemma_star.py`
+Repo locator copies (same tip): `/workspace/scripts/ns_attacks/`, `/workspace/tests/test_ns_attacks_lemma_star.py`, `/workspace/tests/test_ns_lemma_star_core.py`
+
+See also: `docs/math/ns_attacks/NS_LEMMA_STAR_CORE.md` (★ OPEN; module ≠ proof).
 
 ## Quick smoke
 
