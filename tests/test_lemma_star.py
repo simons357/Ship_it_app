@@ -58,8 +58,18 @@ class TestAnalyzeHypothesis(unittest.TestCase):
     def test_attack_routes_ranked(self):
         report = analyze_lemma_star()
         self.assertGreaterEqual(len(report.attack_routes), 4)
-        self.assertEqual(report.attack_routes[0]["id"], "TC-STRUCTURE")
+        self.assertEqual(report.attack_routes[0]["id"], "TC-STRUCTURE-HH-L")
         self.assertEqual(report.attack_routes[1]["id"], "SND-SHELL-CONDITIONAL")
+
+    def test_five_lane_status_synced(self):
+        report = analyze_lemma_star()
+        self.assertFalse(report.ns_solved)
+        self.assertEqual(report.analytic_gap, "HH→L")
+        self.assertEqual(report.five_lane["pr"], 48)
+        self.assertEqual(report.five_lane["lanes"]["K0_absorption"], "DEAD")
+        self.assertIn("NOT_PROVED", report.five_lane["lanes"]["lemma_star_numeric_kill"])
+        self.assertEqual(report.five_lane["lanes"]["bony_hh_to_l"], "GAP_LIVE")
+        self.assertFalse(report.five_lane["lemma_star_proved"])
 
 
 class TestProductBlock(unittest.TestCase):
@@ -69,6 +79,8 @@ class TestProductBlock(unittest.TestCase):
         self.assertEqual(block["status"], "OPEN")
         self.assertIn("INSUFFICIENT", block["ordinary_3d"])
         self.assertIn("PRODUCT-BLOCK", block["headline"])
+        self.assertEqual(block["analytic_gap"], "HH→L")
+        self.assertFalse(block["ns_solved"])
 
     def test_gap_closure_finds_product_block(self):
         gap = diagnose_gap(EXPR_LEMMA_STAR)
@@ -90,6 +102,21 @@ class TestRefuseProved(unittest.TestCase):
         self.assertTrue(result["refused"])
         self.assertFalse(result["ok"])
         self.assertIn("PRODUCT-BLOCK", " ".join(result["refusal_reasons"]))
+
+    def test_refuse_almost_proved(self):
+        result = refuse_proved_lemma_star(
+            "Lemma★ is almost proved; numeric survival greening"
+        )
+        self.assertTrue(result["refused"])
+        joined = " ".join(result["refusal_reasons"]).lower()
+        self.assertTrue(
+            "almost" in joined or "numeric" in joined or "hh" in joined
+        )
+        self.assertFalse(result["ns_solved"])
+
+    def test_refuse_ns_solved(self):
+        result = refuse_proved_lemma_star("Navier-Stokes solved via Lemma★")
+        self.assertTrue(result["refused"])
 
     def test_express_da_ns_1_refuses_green(self):
         result = express("DA-NS-1")
@@ -162,6 +189,8 @@ class TestCLI(unittest.TestCase):
         out = buf.getvalue()
         self.assertIn("HYPOTHESIS", out)
         self.assertIn("PRODUCT-BLOCK", out)
+        self.assertTrue("HH" in out or "hh" in out.lower())
+        self.assertIn("NOT SOLVED", out)
 
     def test_cli_navigate_da_ns_1(self):
         buf = StringIO()
@@ -183,6 +212,12 @@ class TestCLI(unittest.TestCase):
             code = cli_main(
                 ["--lemma-star", "Lemma★ proved closes Clay Statement B"]
             )
+        self.assertEqual(code, 2)
+
+    def test_cli_almost_proved_exits_2(self):
+        buf = StringIO()
+        with mock.patch("sys.stdout", buf):
+            code = cli_main(["--lemma-star", "Lemma★ almost proved"])
         self.assertEqual(code, 2)
 
 

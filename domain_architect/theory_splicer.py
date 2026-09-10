@@ -682,24 +682,30 @@ def express(book_id: str, *, registry: dict[str, Any] | None = None) -> SpliceRe
                 book_id=book.book_id,
                 bullshit_destroyed=True,
                 bullshit_flags=[
-                    "Lemma★ / DA-NS-1 is HYPOTHESIS — refuse claiming PROVED",
-                    "Broken at PRODUCT-BLOCK: |T_c|<=C||u||_2 X^{3/2} missing",
+                    "Lemma★ / DA-NS-1 is HYPOTHESIS — refuse claiming PROVED / almost proved",
+                    "Broken at PRODUCT-BLOCK: |T_c|<=C||u||_2 X^{3/2} missing; HH→L still the gap",
                     "Clay weld WITHHELD until PRODUCT-BLOCK closes",
+                    "Numeric survive ≠ proof; NS NOT SOLVED (five-lane PR #48)",
                 ],
                 suggested_fix=(
-                    "Broken at PRODUCT-BLOCK → close by structure on T_c=M−ΛN "
-                    "or conditional under SND/dominant shell. Do not claim PROVED."
+                    "Broken at PRODUCT-BLOCK → HH→L still the gap → close by structure "
+                    "on T_c=M−ΛN or conditional under SND/dominant shell. "
+                    "Do not claim PROVED or almost proved."
                 ),
                 message=(
                     f"EXPRESS refuses to green {book.book_id}: status HYPOTHESIS; "
-                    "proving Lemma★ ≡ Clay B in this packaging — PRODUCT-BLOCK open."
+                    "proving Lemma★ ≡ Clay B in this packaging — PRODUCT-BLOCK / HH→L open; "
+                    "NS NOT SOLVED."
                 ),
                 details={
                     "status": "HYPOTHESIS",
                     "blocker": "PRODUCT-BLOCK",
+                    "analytic_gap": "HH→L",
                     "clay_implication": "CONDITIONAL",
                     "clay_weld": "WITHHELD",
                     "honesty_rule": "lemma_star_not_proved",
+                    "ns_solved": False,
+                    "five_lane_pr": 48,
                 },
             )
 

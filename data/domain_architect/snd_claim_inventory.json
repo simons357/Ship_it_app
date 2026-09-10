@@ -58,10 +58,10 @@
       "claim_id": "LEMMA-STAR",
       "label": "Lemma★ / DA-NS-1 energy-budget closing estimate",
       "status": "hypothesis",
-      "status_detail": "hypothesis_not_proved",
-      "definition": "T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda with C_0 geometric only; T_c=M-Lambda*N.",
+      "status_detail": "hypothesis_not_proved_millennium_packaging",
+      "definition": "T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda with C_0 geometric only; T_c=M-Lambda*N. Locked Millennium packaging (not a side lemma).",
       "clay_relevance": "If proved, packages Clay Statement B: Lambda blowup prevention → finite enstrophy → global regularity on T^3. Proving Lemma★ ≡ Clay B in this book.",
-      "notes": "WITHHELD from Clay green until PRODUCT-BLOCK closed. Not fraud — honest Millennium packaging."
+      "notes": "WITHHELD from Clay green until PRODUCT-BLOCK / HH→L closed. Five-lane PR #48: K=0 dead; survives numeric kill only ≠ proved; NS NOT SOLVED. Refuse ‘almost proved’."
     },
     {
       "claim_id": "DA-NS-1",
@@ -69,17 +69,28 @@
       "status": "hypothesis",
       "status_detail": "alias_of_lemma_star",
       "definition": "Control centered spectral drift T_c by viscous variance plus remainder built only from Leray energy E=||u||_2^2.",
-      "clay_relevance": "Same as LEMMA-STAR — Clay implication CONDITIONAL on PRODUCT-BLOCK.",
-      "notes": "Book/claim alias of Lemma★."
+      "clay_relevance": "Same as LEMMA-STAR — Clay implication CONDITIONAL on PRODUCT-BLOCK / HH→L.",
+      "notes": "Book/claim alias of Lemma★. NS NOT SOLVED."
     },
     {
       "claim_id": "PRODUCT-BLOCK",
-      "label": "Product estimate blocker for Lemma★",
+      "label": "Product / Agmon estimate blocker for Lemma★",
       "status": "open",
-      "status_detail": "blocker_open",
-      "definition": "Need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D Sobolev/product estimates INSUFFICIENT from energy alone.",
+      "status_detail": "blocker_open_hh_to_l_gap",
+      "definition": "Need |T_c| <= C*||u||_2*X^{3/2} (or |T_c|<=C||u||_2 X Lambda then Young); ordinary 3D Sobolev/product/Agmon estimates INSUFFICIENT from energy alone. Analytic bottleneck: Bony HH→L.",
       "clay_relevance": "Missing weld inside Lemma★ packaging; closes or kills the energy-budget Clay route.",
-      "notes": "INSERT candidate. Ranked attacks: T_c structure; SND/shell conditional; C_0 alone insufficient; negative energy-alone counterexample."
+      "notes": "INSERT candidate. Five-lane PR #48 Attack 3: HH→L still the gap. Ranked attacks: T_c structure controlling HH→L; SND/shell conditional; C_0 alone insufficient; negative kill via blowing R_pre."
+    },
+    {
+      "claim_id": "FIVE-LANE-LEMMA-STAR",
+      "label": "Five-lane Lemma★ drill (PR #48)",
+      "status": "diagnostic",
+      "status_detail": "k0_dead_star_survives_numeric_hh_l_gap",
+      "definition": "Simultaneous Attacks 1–5 on centered spectral drift T_c / Lemma★ packaging (2026-09-10).",
+      "clay_relevance": "Does not close Clay. Numeric survival is not a proof. NS NOT SOLVED.",
+      "evidence_pr": 48,
+      "evidence_url": "https://github.com/simons357/Ship_it_app/pull/48",
+      "notes": "K=0 absorption DEAD; Lemma★ survives numeric kill only (max |R_pre|≈5.09) ≠ proved; Bony HH→L live bottleneck; PRODUCT-BLOCK unchanged."
     }
   ],
   "refused_routings": [
@@ -94,6 +105,11 @@
     "lemma star proved",
     "lemma★ proved",
     "da-ns-1 proved",
-    "lemma star closes clay"
+    "lemma star closes clay",
+    "lemma star almost proved",
+    "almost proved",
+    "ns solved",
+    "navier-stokes solved",
+    "numeric survival is proof"
   ]
 }
