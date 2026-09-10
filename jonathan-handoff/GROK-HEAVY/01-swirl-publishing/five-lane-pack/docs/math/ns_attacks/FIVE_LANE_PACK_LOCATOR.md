@@ -30,7 +30,8 @@
 | **Canonical filename alias** | `/workspace/docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md` → shape form |
 | **Exact triad / spectral formulas** | `/workspace/docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md` |
 | **Status board** | `/workspace/docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md` |
-| **Code lock (moments / \(T_c\) / \(\mathcal R_\star\))** | `/workspace/scripts/ns_attacks/stokes_moments.py` |
+| **Preferred self-contained core (\(T_c\), dual \(D_s\), `Field`, closing)** | `/workspace/scripts/ns_attacks/ns_lemma_star_core.py` (no external Stokes eigenbasis; canonical for new \(R_\\star\) / polarization) |
+| **Code lock (moments / \(T_c\) / \(\mathcal R_\star\))** | `/workspace/scripts/ns_attacks/stokes_moments.py` (Attack 9B still imports this; thin-wrap note points to `ns_lemma_star_core`) |
 | **Attack 3 doc (HH input; not strict HH→L)** | `/workspace/docs/math/ns_attacks/ATTACK_3_BONY_HH_L.md` |
 | **Attack 3 script** | `/workspace/scripts/ns_attacks/attack3_bony_hh_l.py` |
 | **Near-shell + HH search** | `/workspace/scripts/ns_attacks/lemma_star_near_shell_search.py` |

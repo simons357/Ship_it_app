@@ -1,5 +1,11 @@
 """Stokes-moment / centered-drift calculus on T^3 Fourier Galerkin fields.
 
+Preferred self-contained alternative (Field class, dual D_s, build_closing_direction,
+no external Stokes eigenbasis): ``ns_attacks.ns_lemma_star_core`` —
+``scripts/ns_attacks/ns_lemma_star_core.py``. Attack 9b and existing imports of this
+module remain valid; do not break them. Core is canonical for new R_★ / polarization
+handoff work.
+
 Truth-only numerics for Lemma★ / Route N spectral drift attacks.
 Does NOT claim a proof. NS is not solved. Kill lane LIVE.
 
