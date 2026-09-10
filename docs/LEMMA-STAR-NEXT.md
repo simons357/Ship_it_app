@@ -111,6 +111,11 @@ heuristic has not found a lattice home. Remaining: H1 on
 one cylinder, or the uniform triadic bound.
 Packets: [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
 
+Route A incidence (conditional continuum
+\(I\ll m^{4/3}\Rightarrow C(S)=O(m^{4/3})\); lattice
+transfer MISSING):
+[`LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md`](LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md).
+
 Door 1 (uniform pre-Young \(C\)) is off. K=0 stays dead.
 The Attack-2 remainder \(|T_c|\le C_* X^{3/2}\Lambda\) is a
 different sufficient attack on DA-NS-2, not this

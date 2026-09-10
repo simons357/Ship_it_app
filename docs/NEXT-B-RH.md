@@ -76,7 +76,12 @@ wide / narrow AP (\(D_s\) wins), fixed-gap
 spheres (closures \(O(m)\)), Freiman-AP
 subset, HH→L fan (\(\mathcal R_\star\sim\beta/\alpha\)):
 no kill. The \(m^{1/2}\) heuristic has not
-found a lattice home. H1 on one cylinder
+found a lattice home. Route A incidence
+is a conditional continuum win
+([`LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md`](LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md)):
+\(I\ll m^{4/3}\Rightarrow C(S)=O(m^{4/3})\).
+Lattice transfer X1–X4/X6 MISSING. Next:
+Hyp-Lat★. Not a theorem. H1 on one cylinder
 is the other live writing
 ([`H1-SOT.md`](H1-SOT.md)).
 The uniform global triadic bound remains

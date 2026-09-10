@@ -234,6 +234,13 @@ class, different integral. SoT:
 [`DOOR-B-H1-ESTIMATE-PLAN.md`](DOOR-B-H1-ESTIMATE-PLAN.md).
 Do not quote the Ring Lemma as proved. Do not glue H1 to \(H_N\).
 Lattice enumerator still running on this lane.
+
+Route A incidence (conditional continuum win, not a
+theorem): [`LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md`](LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md).
+\(I\ll m^{4/3}\Rightarrow C(S)=O(m^{4/3})\) kills
+\(\Theta(m^2)\) in the continuum model. Lattice transfer
+X1–X4/X6 MISSING. Next: Hyp-Lat★. Do not cash ST as ★.
+
 Do not merge with H1.
 
 NS is not solved.

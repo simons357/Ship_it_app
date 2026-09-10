@@ -176,3 +176,5 @@ Packet: [`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md).
 H-system: [`H-SYSTEM.md`](H-SYSTEM.md).
 Three-key: [`LEMMA-STAR-E.md`](LEMMA-STAR-E.md).
 Packets: [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
+Incidence Route A (conditional, not a theorem):
+[`LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md`](LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md).

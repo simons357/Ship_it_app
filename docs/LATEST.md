@@ -82,7 +82,12 @@ O(m^2); R★ falls. HH→L fan (Attack 12):
 R★ ~ β/α, no blow. Designed Θ(m^2)
 subset is Freiman-AP, already dead.
 The m^{1/2} heuristic has no lattice
-home. H1 on one cylinder is the other
+home. Route A incidence (conditional):
+docs/LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md
+kills Θ(m^2) in the continuum model if
+I ≪ m^{4/3}. Lattice transfer X1–X4/X6
+MISSING. Next: Hyp-Lat★. Not a theorem.
+H1 on one cylinder is the other
 live writing (docs/H1-SOT.md). Bound open.
 docs/LEMMA-STAR-PACKET.md
 Attack 6: uniform pre-Young C dead
