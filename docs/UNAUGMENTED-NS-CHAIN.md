@@ -541,7 +541,7 @@ That is the whole request. Good pairs are already gone. Flux is H2. Exterior is 
 
 **Why the last passes did not give it.** The kernel on Bad is still \(|z|^{-3}\). HLS turns that into local \(E^3\). The Hölder cut does not change the exponent; it only changes the set. A thin set would save it. A path jump in \(\xi\) does not prove the set is thin. Morrey (\(W^{1,2}\not\subset C^{0,1/2}\)) is why energy does not empty the set.
 
-**The only shapes that still look like H1.** Prove one of these, and you have H1. Arithmetic written: [`H1-SHAPES.md`](H1-SHAPES.md). None of them is a theorem. P1-lowpass (frequency localization of \(\omega\)) sits on a stated class and is not shape 1: [`H1-P1.md`](H1-P1.md).
+**The only shapes that still look like H1.** Prove one of these, and you have H1. Arithmetic written: [`H1-SHAPES.md`](H1-SHAPES.md). None of them is a theorem. P1-lowpass (frequency localization of \(\omega\)) sits on a stated class and is not shape 1: [`H1-P1.md`](H1-P1.md). P1-loc cutoff sits with \(\nabla u\) kept and is not shape 1: [`H1-P1-LOC.md`](H1-P1-LOC.md).
 
 1. **Thinness.** Bad-pair measure in each \(B_r\) is small enough that HLS picks up a factor that turns \(E^3\) into \(E^2\) or into dissipation. CS-summable volume thinness only recovers the \(E^{3/2}\) (mid-Bad) class.
 2. **J on folds only.** Every persistent-bad pair in \(Q_r\) sits in a fold (geometry A), not a sheet or a gap, so \(\displaystyle\int_{B_{2\rho}}|\nabla\omega|^2\gtrsim\Lambda^2\rho^2\) and a Vitali sum closes.

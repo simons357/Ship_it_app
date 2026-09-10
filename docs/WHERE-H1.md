@@ -46,6 +46,7 @@ Fill one of the three shapes as an estimate, or NSE membership for P1. Arithmeti
 3. Dynamics on the scale \(r^2/\nu\) (not an imposed wait).
 
 None sits. P1-lowpass sits on a Fourier class. That is not H1. [`H1-P1.md`](H1-P1.md).
+P1-loc cutoff sits, with \(\nabla u\) kept. Dropping \(\nabla u\) does not. That is not H1. [`H1-P1-LOC.md`](H1-P1-LOC.md).
 Path-cost of one Bad pair sits as a 1-D bound. That is not H1. [`H1-PC.md`](H1-PC.md).
 
 Literature lookup: all miss. H1 is not under another name. [`LOOKUP-H1.md`](LOOKUP-H1.md). Closest cousins (CF, BdVB, Grujić 2009 / 2010 / 2013) are still ifs. [`LITERATURE-H.md`](LITERATURE-H.md).
@@ -63,6 +64,7 @@ Literature lookup: all miss. H1 is not under another name. [`LOOKUP-H1.md`](LOOK
 | ABC_λ table | Untested. Named only. Do not start H1 from that screenshot. |
 | Ring Lemma | REPAIR. Do not quote as proved. |
 | P1-lowpass | Sitting cousin on a class. Not WRITE (6). |
+| P1-loc cutoff | Sitting cutoff, \(\nabla u\) kept. Not WRITE (6). |
 | PC path-cost | Sitting 1-D cousin. Not WRITE (6). |
 
 Do not look up a new leftover name. Do not start H1 from ABC_λ. Do not add \(K(t)\) to the PDE.

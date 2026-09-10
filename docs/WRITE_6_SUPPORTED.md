@@ -100,6 +100,7 @@ Dream-team read: they would sign the map, not (6). [`DREAM-TEAM-H.md`](DREAM-TEA
 
 Shapes written as estimates, not proved: [`H1-SHAPES.md`](H1-SHAPES.md).
 P1 low-pass Biot–Savart sits on a stated class, not as (6): [`H1-P1.md`](H1-P1.md).
+P1-loc cutoff sits, with \(\nabla u\) kept, not as (6): [`H1-P1-LOC.md`](H1-P1-LOC.md).
 Path-cost of one pair sits as a 1-D bound, not as (6): [`H1-PC.md`](H1-PC.md).
 Lookups: all miss. [`LOOKUP-H1.md`](LOOKUP-H1.md).
 

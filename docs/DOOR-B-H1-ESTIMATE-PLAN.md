@@ -66,7 +66,9 @@ picture:
 File: [`H1-P1.md`](H1-P1.md). A Gaussian
 pair was a sample, not the estimate.
 NSE membership is open. Localized tube
-energy (cutoff) is not written.
+energy (cutoff) now sits, with \(\nabla u\)
+kept: [`H1-P1-LOC.md`](H1-P1-LOC.md).
+Dropping \(\nabla u\) does not sit.
 CS-summable volume thinness is still
 \(E^{3/2}\), not H1.
 
@@ -129,6 +131,8 @@ Estimate-complete \(\neq\) GR close
 | Box | Estimate? | Now |
 |---|---|---|
 | P1 thinness on the low-pass class, from Biot–Savart | **yes** | [`H1-P1.md`](H1-P1.md) |
+| P1-loc cutoff, \(\nabla u\) kept | **yes** | [`H1-P1-LOC.md`](H1-P1-LOC.md) |
+| P1-loc with \(\nabla u\) dropped | no | high-pass at the same \(\rho\) |
 | PC path-cost of one Bad pair, on a path in \(\{|\omega|\ge\Lambda\}\) | **yes** | [`H1-PC.md`](H1-PC.md) |
 | PC \(\Rightarrow\) fold / Vitali / \(A_{\mathrm{bad}}\) absorbed | no | gap; thin tube; still 1-D |
 | P1 membership: NSE puts Bad on that class | no | high-pass is a counterexample |
@@ -139,10 +143,10 @@ Estimate-complete \(\neq\) GR close
 | Outside-\(\mathcal{E}\) identity | blocked | no candidate |
 | Uniform triadic bound on \(\mathcal R_\star\) | open | enumerator still on ★ |
 
-Two boxes sit (P1 on a stated class, PC on a
-path). Neither is H1. NSE-class boxes do not.
-The package is not estimate-complete. That is
-not a close.
+Three boxes sit (P1 on a stated class,
+P1-loc cutoff, PC on a path). None is H1.
+NSE-class boxes do not. The package is not
+estimate-complete. That is not a close.
 
 ---
 
@@ -157,10 +161,11 @@ A kill of packaging is not a kill of NS.
 
 ## Next
 
-P1-lowpass sits. PC sits as a 1-D bound.
-Next is still one hole as an estimate: P1
-membership, or P2, or P3, or one MISSING
-in the B5 sketch. Do not cash PC as (6).
+P1-lowpass sits. P1-loc cutoff sits.
+PC sits as a 1-D bound. Next is still one
+hole as an estimate: P1 membership, or
+P2, or P3, or one MISSING in the B5
+sketch. Do not cash PC or P1-loc as (6).
 Do not write a new leftover name.
 Do not cash Lemma P1 as WRITE (6).
 Do not wait for the ★ enumerator to finish

@@ -57,6 +57,7 @@ The estimate (stated, not proved): [`WRITE_6.md`](WRITE_6.md).
 Supporting data: [`WRITE_6_SUPPORTED.md`](WRITE_6_SUPPORTED.md).
 Shapes as estimates, not proved: [`H1-SHAPES.md`](H1-SHAPES.md).
 P1 low-pass Biot–Savart (sits; not H1): [`H1-P1.md`](H1-P1.md).
+P1-loc cutoff (sits, \(\nabla u\) kept; not H1): [`H1-P1-LOC.md`](H1-P1-LOC.md).
 Lookups: all miss ([`LOOKUP-H1.md`](LOOKUP-H1.md)).
 Dream-team read (map yes, (6) no): [`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
 

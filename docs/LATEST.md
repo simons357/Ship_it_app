@@ -41,6 +41,8 @@ Estimate package OPEN, not a GR close:
 docs/DOOR-B-H1-ESTIMATE-PLAN.md
 P1 low-pass Biot–Savart sits (not H1):
 docs/H1-P1.md
+P1-loc cutoff sits, ∇u kept (not H1):
+docs/H1-P1-LOC.md
 Path-cost of one Bad pair sits (not H1):
 docs/H1-PC.md
 L∞ sketch (MISSING marks):

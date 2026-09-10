@@ -59,6 +59,8 @@ from energy.
 of a low-pass field is Lemma P1. It sits.
 [`H1-P1.md`](H1-P1.md). It does not thin the
 Bad set, and it does not drop the kernel.
+The cutoff commutator is Lemma P1-loc.
+It sits with \(\nabla u\) kept. [`H1-P1-LOC.md`](H1-P1-LOC.md).
 Path-cost of one pair is Lemma PC. It sits
 as a curve bound. It does not thin the set.
 [`H1-PC.md`](H1-PC.md).

@@ -7,6 +7,7 @@ Same leftover class. Not a new name.
 Locator: [`WHERE-H1.md`](WHERE-H1.md).
 Object: [`H1-OBJECT.md`](H1-OBJECT.md).
 P1 (frequency, different integral): [`H1-P1.md`](H1-P1.md).
+P1-loc (cutoff, \(\nabla u\) kept): [`H1-P1-LOC.md`](H1-P1-LOC.md).
 Shapes: [`H1-SHAPES.md`](H1-SHAPES.md).
 Do not merge with Lemma★, \(H_N\), or Lemma C.
 

@@ -93,9 +93,11 @@ stretching is along one direction. Need
 from Biot–Savart, not from a picture.
 **Lemma P1 sits** on the low-pass class:
 [`H1-P1.md`](H1-P1.md). NSE membership is
-open. Do not cash “assume thin” as this
-(that is Lemma C). CS-summable volume
-thinness is still \(E^{3/2}\), not H1
+open. Cutoff with \(\nabla u\) kept:
+[`H1-P1-LOC.md`](H1-P1-LOC.md). Do not cash
+“assume thin” as this (that is Lemma C).
+CS-summable volume thinness is still
+\(E^{3/2}\), not H1
 ([`H1-SHAPES.md`](H1-SHAPES.md)).
 
 **2. J on folds.** Folds of \(\xi\) produce new stretching.
@@ -160,6 +162,8 @@ Scores: [`H1-TUBE.md`](H1-TUBE.md).
 
 P1 low-pass estimate (sits; not H1):
 [`H1-P1.md`](H1-P1.md).
+P1-loc cutoff (sits, \(\nabla u\) kept; not H1):
+[`H1-P1-LOC.md`](H1-P1-LOC.md).
 Estimate package (OPEN, not a GR close):
 [`DOOR-B-H1-ESTIMATE-PLAN.md`](DOOR-B-H1-ESTIMATE-PLAN.md).
 \(L^\infty\) sketch with MISSING marks:
@@ -175,6 +179,8 @@ candidate. Lattice enumerator still on the
 Packet attacks on \(\mathcal R_\star\): negatives, written.
 H1: opened. Lemma P1 sits on the low-pass
 class ([`H1-P1.md`](H1-P1.md)); it is not H1.
+P1-loc cutoff sits ([`H1-P1-LOC.md`](H1-P1-LOC.md));
+dropping \(\nabla u\) does not.
 Estimate package on disk: **OPEN**,
 not a GR close. Outside-\(\mathcal{E}\) identity
 blocked (no candidate). Lattice closure

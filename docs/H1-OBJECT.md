@@ -44,6 +44,7 @@ Next work is 1, 2, or 3 on one cylinder, or NSE membership in the P1 class — n
 The three shapes as estimates (not proved): [`H1-SHAPES.md`](H1-SHAPES.md).
 CS-summable volume thinness stays the \(E^{3/2}\) class, not H1.
 P1 low-pass Biot–Savart sits on a stated class, not on NSE leftover fields: [`H1-P1.md`](H1-P1.md).
+P1-loc cutoff sits, with \(\nabla u\) kept; dropping \(\nabla u\) does not: [`H1-P1-LOC.md`](H1-P1-LOC.md).
 Path-cost of one Bad pair sits as a 1-D bound, not as H1: [`H1-PC.md`](H1-PC.md).
 Lookups: all miss. [`LOOKUP-H1.md`](LOOKUP-H1.md).
 
