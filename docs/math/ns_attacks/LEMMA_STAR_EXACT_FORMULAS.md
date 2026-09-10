@@ -111,6 +111,7 @@ K_{\alpha,\beta}(w)=\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\|w\|_2^4}
 \]
 fails under \(u=av\) (\(a^3\) vs \(a^4\)). Algebra, not numerics.
 
-Code: `scripts/ns_attacks/stokes_moments.py`.
+Code: `scripts/ns_attacks/stokes_moments.py`.  
+Standalone exact core (no Stokes library): `scripts/ns_lemma_star_core.py`.
 
 **NS not solved.**

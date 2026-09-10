@@ -60,7 +60,7 @@ H1 on the cylinder is the other live track if the packet line is shelved. It is 
 
 | File | Role |
 |---|---|
-| `scripts/same_shell_packet_probe.py` | Combinatorial probe (keys, mixed closures, two-mass \(D_s\)) |
+| `scripts/ns_lemma_star_core.py` | Standalone exact \(T_c\) / \(D_s\) / \(\mathcal R_\star\) (direct triad sum; \(D_s\) cross-check) |
 | `tests/test_same_shell_packet.py` | Locks 48 / 288 / \(d=2\) zeros / \(O(m)\) not \(O(m^2)\) |
 | `docs/ns-recovery/SAME-SHELL-PACKET-NOTE.md` | Expanded packet note |
 | `docs/ns-recovery/CENTERED-SPECTRAL-DRIFT-MASTER-REPORT.md` | 7 Sep search; Stokes-moment paste was missing until PR #48 |
