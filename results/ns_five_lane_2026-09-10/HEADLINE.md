@@ -20,9 +20,10 @@
 - Attack1 phase diam |Rpre| ≈ 0.155 (matches prior ∼0.16)
 - Attack2 K=0 DEAD: |Tc|/Ds grows ∼B (0.0035 → 349 on triad)
 - Attack2 C* ≈ 0.004058 amp-invariant on fixed triad; Attack5 max |Rc*| ≈ 0.04065
-- Attack5 max |Rpre| ≈ 5.0881 on scale-separated triad phases (best tag `sep_32_p0`)
-- Attack5 shape★ / almost-shell: see `max_R_star_shape` after re-run (amp-invariant; sample ≠ proof)
+- Attack5 max |Rpre| ≈ 5.0881 on scale-separated triad phases
+- Attack5 shape★: max \(\mathcal R_\star\approx0.0227\) (tag `sep_1_p8`); almost-shell max \(\sim3.6\cdot10^{-6}\); pure-shell kills 0
 - Lemma★ \(C_{\mathrm{geom}}\) / C0 **NOT KILLED** by this search (threshold 1e3)
+- Artifacts: `/opt/cursor/artifacts/ns_five_lane_shape_star/`
 
 ## Live kill criteria
 

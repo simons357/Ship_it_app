@@ -69,7 +69,7 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\). Pre-Young / amplitude form: \(
 | K=0 form \(\mathfrak T_c\le\theta\nu\mathcal D_s\) | **KILLED** | Attack 2: \(\lvert T_c\rvert/\mathcal D_s\sim B\) on fixed-shape high triad (\(0.0035\to349\)) |
 | Young reduction of \(\mathfrak T_c\) toward a norm of \(B(u,u)\) | **Partial / formal** | Polarization exists; does not close 3D product gap |
 | \(|\mathfrak T_c|\le C\|u\|_2 X^{3/2}\) (or equiv) by Agmon/product | **GAP — does not close** | HH→L bottleneck (Attack 3) |
-| Uniform geometric \(C_{\mathrm{geom}}\) / \(C_0\) for Lemma★ (shape form) | **OPEN — survives numeric kill drill** | Attack 1+5: max \(\lvert R_{\mathrm{pre}}\rvert\approx5.09\) on 978 samples; almost-shell \(\mathcal R_\star\) probe — see Attack 5; **not** \(\to\infty\); **still not a proof** |
+| Uniform geometric \(C_{\mathrm{geom}}\) / \(C_0\) for Lemma★ (shape form) | **OPEN — survives numeric kill drill** | Attack 5 re-run: \(n=1242\); \(\max\mathcal R_\star\approx0.0227\) (tag `sep_1_p8`); almost-shell \(\max\mathcal R_\star\sim3.6\cdot10^{-6}\) (740 samples); pure-shell kill count \(0\) (7 vacuous); max \(\lvert R_{\mathrm{pre}}\rvert\approx5.09\); **not** \(\to\infty\); **still not a proof** |
 | Amplitude-invariant \(C_*\) for \(X^{3/2}\Lambda\) remainder | **OPEN (numeric support)** | Attack 2: \(C_*\approx0.004058\) fixed triad; Attack 5 max \(\approx0.0406\) |
 
 ## What a proof would have to be

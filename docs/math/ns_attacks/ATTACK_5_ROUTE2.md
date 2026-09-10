@@ -32,4 +32,4 @@ Families: random fields, triads, scale separations, two-shell data, and **almost
 
 ## Live result (2026-09-10)
 
-**SURVIVE numeric.** \(n=978\); max \(\lvert R_{\mathrm{pre}}\rvert\approx5.09\); max \(\lvert C_*\rvert\approx0.0406\); Lemma★ \(C_{\mathrm{geom}}\) / \(C_0\) **not killed**. Re-run after shape-form probe extension updates `max_R_star_shape` / almost-shell block in `attack5.json`. See synthesis.
+**SURVIVE numeric.** Shape-form re-run: \(n=1242\); \(\max\mathcal R_\star\approx0.0227\); almost-shell (\(n=740\)) \(\max\mathcal R_\star\sim3.6\cdot10^{-6}\); pure-shell kills \(0\); max \(\lvert R_{\mathrm{pre}}\rvert\approx5.09\); max \(\lvert C_*\rvert\approx0.0406\); Lemma★ \(C_{\mathrm{geom}}\) / \(C_0\) **not killed**. Artifacts: `/opt/cursor/artifacts/ns_five_lane_shape_star/attack5.json`. Sample list ≠ uniform constant. **NS not solved.**

@@ -60,9 +60,11 @@ Artifacts: `/opt/cursor/artifacts/ns_five_lane_2026-09-10/`
 **SURVIVE (numeric only).** Thorough Galerkin search (random, triad phase, scale separation to \(s=32\), two-shell, near-mono / almost-single-shell, dense modes) did **not** produce \(\mathcal R_\star\to\infty\) nor \(\lvert T_c\rvert/(\sqrt{E}\,X\Lambda)\to\infty\). Live kill criteria: \(\mathcal R_\star\to\infty\), or \(\mathcal D_s=0\) with \(\mathfrak T_c>0\); pure single shell (both sides vanish) is vacuous. Strongest bounds this run:
 
 - \(\sup\lvert R_{\mathrm{pre}}\rvert \gtrsim 5.09\) (achieved)
-- \(\sup\lvert R_{\mathrm{pre}}\rvert\) still \(O(1)\) on tested family — **no proof of a uniform geometric \(C_{\mathrm{geom}}\)**
+- \(\sup\mathcal R_\star\approx0.0227\) on \(n=1242\) (best tag `sep_1_p8`); almost-shell max \(\sim3.6\cdot10^{-6}\) — **no blowup**
+- Pure single-shell controls: 7 vacuous (\(T_c=0=\mathcal D_s\)), 0 live kills
+- \(\sup\lvert R_{\mathrm{pre}}\rvert\) / \(\sup\mathcal R_\star\) still \(O(1)\) on tested family — **no proof of a uniform geometric \(C_{\mathrm{geom}}\)**
 - \(\sup\lvert C_*\rvert\approx0.0406\) on the same family (matches prior triad \(\sim0.0357\) order)
-- Almost-single-shell \(\mathcal R_\star\) max: see Attack 5 / `attack5.json` (`max_R_star_shape`, `almost_shell` block) — sample list ≠ proof
+- Artifacts: `/opt/cursor/artifacts/ns_five_lane_shape_star/` (`attack5.json` with `max_R_star_shape`, `almost_shell`)
 
 ## Exact inequality still to attack
 
