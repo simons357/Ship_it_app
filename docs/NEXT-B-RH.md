@@ -63,10 +63,17 @@ OpenAI C/D is not WRITE (6):
 
 **Lemma★ locked (energy-budget writing).**
 Same leftover class as (6). Not H1.
-Hypothesis, not a theorem. The entire
+Hypothesis, not a theorem. Working claim:
+[`math/ns_attacks/LEMMA_STAR_CANONICAL.md`](math/ns_attacks/LEMMA_STAR_CANONICAL.md),
+[`math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md).
+Four corrections:
+[`LEMMA-STAR-CORRECTIONS.md`](LEMMA-STAR-CORRECTIONS.md).
+The entire
 problem is a scale-invariant trilinear
 shape estimate on \(\mathcal R_\star\).
-\(\sup\mathcal R_\star<\infty\) proves it.
+\(\sup\mathcal R_\star<\infty\) proves the inequality.
+★ \(\Rightarrow\) GR in this packaging is one direction.
+No converse is written.
 A near-shell or HH→L sequence with
 \(\mathcal R_\star\to\infty\) kills it.
 First family: closing three-key. Two Fourier

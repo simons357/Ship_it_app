@@ -3,6 +3,8 @@
 10 September 2026. Exact reduction. **Not a proof. NS not solved.**
 
 Locked statement: [`LEMMA-STAR.md`](LEMMA-STAR.md).
+Working claim: [`math/ns_attacks/LEMMA_STAR_CANONICAL.md`](math/ns_attacks/LEMMA_STAR_CANONICAL.md).
+Corrections: [`LEMMA-STAR-CORRECTIONS.md`](LEMMA-STAR-CORRECTIONS.md).
 Probe: `python3 scripts/ns_attacks/attack7_rstar.py`
 
 ---
@@ -36,6 +38,10 @@ Thus the decisive dimensionless ratio is
 - A proof requires a uniform bound on this ratio from triadic
   geometry or cancellation.
 - Numerically bounded samples remain evidence only.
+- \(T_c(-v)=-T_c(v)\) while \(\mathcal D_s,E,Y\) are even.
+  A universal bound on \((T_c)_+^2\) is a universal bound on
+  \(T_c^2\). A large negative \(T_c\) is the same shape reversed.
+  Do not drop it because the coded \(\mathcal R_\star\) is zero.
 
 Derivation (one line). After \(u=av\), ★ says
 \(A+Ba^2-Ca\ge 0\) for every \(a>0\), with
@@ -165,6 +171,8 @@ This formulation makes three things transparent:
 So the live fork is exact:
 
 - \(\sup_v\mathcal R_\star(v)<\infty\) proves Lemma★.
+- That implication to global regularity in this packaging
+  is one direction. No converse is written.
 - A near-shell or HH\(\to\)L sequence with
   \(\mathcal R_\star(v_n)\to\infty\) kills it.
 

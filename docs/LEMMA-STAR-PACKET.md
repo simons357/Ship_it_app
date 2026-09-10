@@ -4,6 +4,8 @@
 NS not solved. These samples did not kill Lemma★.**
 
 Locked form: [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md).
+Working claim: [`math/ns_attacks/LEMMA_STAR_CANONICAL.md`](math/ns_attacks/LEMMA_STAR_CANONICAL.md).
+Corrections: [`LEMMA-STAR-CORRECTIONS.md`](LEMMA-STAR-CORRECTIONS.md).
 AP probe: `python3 scripts/ns_attacks/attack9_packet.py`
 Same-shell: `python3 scripts/ns_attacks/attack10_same_shell.py`
 Adjacent spheres: `python3 scripts/ns_attacks/attack11_adjacent_spheres.py`

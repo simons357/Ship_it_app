@@ -93,7 +93,10 @@ for some \(C\) independent of \(w,\alpha,\beta\).
 That bound holds if and only if
 \(\sup K_{\alpha,\beta}<\infty\).
 It is the \(\varepsilon\to 0\) form of ★
-on exact shells, not a new leftover.
+on exact shells **for aligned, sign-selected** \(z_\beta\).
+For arbitrary \(z_\beta\), the limit is the projection
+against \(B(w,w)\), not necessarily \(K\).
+Not a new leftover.
 
 A bound \(\|\Pi_\beta B\|_2\le C\alpha\|w\|_2^2\)
 is the wrong packaging: it leaves a factor

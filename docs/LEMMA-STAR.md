@@ -35,12 +35,21 @@ geometry-only \(C_0\) (independent of \(u,\nu\)) such that
 If this sits, \(\Lambda\) cannot blow in finite time
 **in this packaging**, hence \(X\le\|u_0\|_2^2\Lambda\)
 stays finite, hence global regularity on \(\mathbb{T}^3\)
-**in this packaging**. The implication is the skeleton.
+**in this packaging**. The implication is one direction.
+These files have **no converse** that global regularity
+would force the uniform inequality on every smooth field.
+Do not write “★ equivalent to global regularity.”
 The inequality is the hole.
 
-That is why, in this packaging, Lemma★ *is* the
+That is why, in this packaging, Lemma★ names the
 unforced leftover (Fefferman (B) on the torus).
 Naming the hole is not closing it.
+Working claim:
+[`math/ns_attacks/LEMMA_STAR_CANONICAL.md`](math/ns_attacks/LEMMA_STAR_CANONICAL.md).
+Identities:
+[`math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md).
+Corrections:
+[`LEMMA-STAR-CORRECTIONS.md`](LEMMA-STAR-CORRECTIONS.md).
 
 ---
 
@@ -90,9 +99,13 @@ File: [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md).
 
 ## Blocked exactly here
 
-The exact equivalent of ★ is a uniform bound on
+The exact form of ★ is a uniform bound on
 \(\mathcal R_\star\). Ordinary 3D product / Agmon estimates
-do **not** give that from energy alone.
+do **not** give that from energy alone. The older
+“missing inequality” \(|T_c|\le C\|u\|_2 X^{3/2}\) is
+**false as a universal estimate** (left \(a^3\), right
+\(a^4\) under \(u=av\)). Discarded by algebra. Not an
+open gap toward ★. HH→L remains diagnostic of channels.
 
 Five-lane rule: kill ★ with \(\mathcal R_\star\to\infty\),
 or sustain numeric bounds and keep the analytic gap
@@ -132,10 +145,12 @@ A family that did not blow is not a uniform geometric constant.
 
 ## Live door
 
-The exact equivalent of ★ is the scale-invariant trilinear
+The exact form of ★ is the scale-invariant trilinear
 bound on \(\mathcal R_\star\) (or \(C_{\star}\)) from triadic
 geometry or cancellation.
-\(\sup\mathcal R_\star<\infty\) proves it. A near-shell or
+\(\sup\mathcal R_\star<\infty\) proves the inequality.
+That implication to global regularity in this packaging
+is one direction only. A near-shell or
 HH→L sequence with \(\mathcal R_\star\to\infty\) kills it.
 The first family is the closing three-key
 \(k_0,k_0+e,2k_0+e\). Two Fourier keys is not that test.
@@ -184,3 +199,7 @@ Attack 9B exact-shell \(K_{\alpha,\beta}\) (finite sample,
 not a kill): [`five-lane-export/ATTACK_9B.md`](five-lane-export/ATTACK_9B.md).
 Fixed-output \(\Theta(m^2)\) is a counting error
 (\(K\le 16s\)): [`LEMMA-STAR-9B-COUNTING.md`](LEMMA-STAR-9B-COUNTING.md).
+Four corrections (missing \(a^4\) inequality dead;
+★ \(\Rightarrow\) GR not \(\Leftrightarrow\); test both signs;
+Section 4 not proved):
+[`LEMMA-STAR-CORRECTIONS.md`](LEMMA-STAR-CORRECTIONS.md).

@@ -40,8 +40,13 @@ bodies. GitHub PR 48 is the pack.
 
 ## 1. Absolute defs (five-lane pack)
 
-Canonical lock, copied here:
+Working foundation:
+[`LEMMA_STAR_CANONICAL.md`](LEMMA_STAR_CANONICAL.md)
+→ [`../math/ns_attacks/LEMMA_STAR_CANONICAL.md`](../math/ns_attacks/LEMMA_STAR_CANONICAL.md),
+[`../math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](../math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md).
+Historical formula lock, copied here:
 [`LEMMA_STAR_SHAPE_FORM.md`](LEMMA_STAR_SHAPE_FORM.md).
+Corrections: [`../LEMMA-STAR-CORRECTIONS.md`](../LEMMA-STAR-CORRECTIONS.md).
 
 On \(\mathbb{T}^3=(\mathbb{R}/2\pi\mathbb{Z})^3\),
 \(A=-P\Delta\), \(\lambda_k=|k|^2\), \(k\cdot v_k=0\):
@@ -105,11 +110,12 @@ Parents \(p,q\) of a triad \(p+q=k\). Cut \(k_{\mathrm{cut}}\):
 - LL: both low
 
 \(T_c\) recomputed with \(B\) restricted to each
-channel. Target bound that HH→L blocks:
+channel. Older target
 \[
-|T_c|\le C\|u\|_2 X^{3/2}.
+|T_c|\le C\|u\|_2 X^{3/2}
 \]
-Diagnostic only. No closure.
+is **DEAD BY SCALING** (\(a^3\) vs \(a^4\)). Not an open
+gap toward ★. HH→L stays a channel diagnostic.
 [`ATTACK_3_BONY_HH_L.md`](ATTACK_3_BONY_HH_L.md),
 `attack3_bony_hh_l.py`.
 
@@ -128,8 +134,9 @@ Pair counts 2–12, not \(\Theta(m^2)\).
 `scripts/ns_attacks/stokes_moments.py`.
 Score: [`../LEMMA-STAR-PACKET.md`](../LEMMA-STAR-PACKET.md).
 
-Do not merge A and B as one theorem. A is a
-product-estimate gap. B is a lattice packet.
+Do not merge A and B as one theorem. A was a
+false \(a^4\) universal target (now discarded).
+B is a lattice packet.
 
 ---
 
@@ -163,7 +170,8 @@ Fixed-output \(\Theta(m^2)\): excluded.
 ## Five-lane headline (already scored here)
 
 K=0 dead. Uniform pre-Young \(C\) dead.
+The \(a^4\) “missing inequality” is dead by scaling.
 ★ survives numeric kill only (not a proof).
-HH→L analytic bound still missing.
-Lattice fan: no kill. Enumerator still live.
+HH→L is a channel diagnostic, not a path to that
+false bound. Lattice fan: no kill. Enumerator still live.
 H1 is a different integral.

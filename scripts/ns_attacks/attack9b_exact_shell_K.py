@@ -8,7 +8,9 @@ Family:
 Boxed quantity:
   K_{α,β} = sup_{A w = α w}  β ‖Π_β B(w,w)‖₂² / (α² ‖w‖₂⁴)
 
-ε→0: R_★(v_ε) → K_{α,β}(w) for optimally aligned unit closing packet.
+ε→0: R_★(v_ε) → K_{α,β}(w) only for an aligned, sign-selected
+unit closing packet z_β ∥ Π_β B(w,w). Arbitrary z_β sees the
+projection against B(w,w), not necessarily K.
 ε cancels in the limiting quotient; Ds is generated only by the closing component.
 
 Attack 9A (AP packet) did NOT kill ★: Ds grew faster than Tc.

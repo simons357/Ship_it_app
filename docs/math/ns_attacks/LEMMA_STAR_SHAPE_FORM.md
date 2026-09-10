@@ -153,9 +153,11 @@ Expanded (same when \(T_c\ge0\)):
 }.
 \]
 
-**Alignment with prior \(T_c^2\) form:** older Galerkin probes used \(T_c^2\) in the numerator. When \(T_c\ge0\), \((T_c)_+^2=T_c^2\). For kill we care about stretching \(T_c>0\); compression \(T_c<0\) gives \(\mathcal R_\star=0\) under the \((T_c)_+\) form and is not a stretching counterexample.
+**\((T_c)_+^2\) vs \(T_c^2\):** when \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Keep \((T_c)_+\) in the boxed form. \(T_c(-v)=-T_c(v)\) while \(\mathcal D_s,E,Y\) stay even, so a **universal** bound on \((T_c)_+^2\) is equivalent to a universal bound on \(T_c^2\). A large negative value is the same shape reversed: do not drop it because the coded \(\mathcal R_\star\) is zero.
 
-**Numerics hygiene:** do **not** compare legacy reported values \(0.065\), \(0.073\), \(1.93\times10^{-3}\) unless each used exactly this \(\mathcal R_\star\) formula.
+Do **not** compare legacy reported values \(0.065\), \(0.073\), \(1.93\times10^{-3}\) unless each used exactly this \(\mathcal R_\star\) formula.
+
+Working claim: [`LEMMA_STAR_CANONICAL.md`](./LEMMA_STAR_CANONICAL.md). Identities: [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md).
 
 **Boxed shape inequality (canonical ★):** there exists one geometric constant \(C_{\mathrm{geom}}\) (independent of amplitude and of \(\nu\)) such that for every divergence-free \(v\) on \(\mathbb{T}^3\),
 \[
@@ -220,14 +222,15 @@ Reason from how **signed** triads add that stretching cannot get large unless sp
 
 ## Related
 
-- Status board: [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md)
+- Status board: [`../../five-lane-export/PROOF_LemmaStar_STATUS.md`](../../five-lane-export/PROOF_LemmaStar_STATUS.md)
 - Correct record: [`ATTACK_8_CORRECT_RECORD.md`](./ATTACK_8_CORRECT_RECORD.md)
 - Packet fan (9A, did not kill ★): [`ATTACK_9_PACKET_FAN.md`](./ATTACK_9_PACKET_FAN.md), [`ATTACK_9A_AP_PACKET_FAILURE.md`](./ATTACK_9A_AP_PACKET_FAILURE.md)
+- Canonical claim: [`LEMMA_STAR_CANONICAL.md`](./LEMMA_STAR_CANONICAL.md)
 - Exact-shell closing (9B): [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md)
   \[
-  K_{\alpha,\beta}=\sup_{Aw=\alpha w}\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\|w\|_2^4},\quad
-  \lim_{\varepsilon\to0}\mathcal R_\star(w_\alpha+\varepsilon z_\beta)=K_{\alpha,\beta}(w).
+  K_{\alpha,\beta}=\sup_{Aw=\alpha w}\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\|w\|_2^4}.
   \]
+  The limit \(\mathcal R_\star(w+\varepsilon z_\beta)\to K_{\alpha,\beta}(w)\) holds only for aligned, sign-selected \(z_\beta\parallel\Pi_\beta B(w,w)\). Arbitrary \(z_\beta\) sees the projection against \(B(w,w)\).
 - Fixed-gap spheres (9C, **not** a kill): [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md) — \(\mathcal R_\star\) \(0.11\to 0.031\); SoT-only until probe
 - Next falsifier (9D stub): [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md) — designed \(\Theta(m^2)\) locked-phase closures
 - Synthesis: [`ATTACK_SYNTHESIS_SIMULTANEOUS.md`](./ATTACK_SYNTHESIS_SIMULTANEOUS.md)

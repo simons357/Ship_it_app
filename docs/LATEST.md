@@ -64,6 +64,14 @@ docs/OPENAI-NS-CLAIM.md
 Lemma★ (energy-budget leftover, locked
 as hypothesis, not proved):
 docs/LEMMA-STAR.md
+Working claim:
+docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md
+docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md
+Four corrections:
+docs/LEMMA-STAR-CORRECTIONS.md
+The \(a^4\) missing inequality is dead.
+★ implies GR in this packaging; not equivalent.
+Test both signs of \(T_c\). Section 4 is not proved.
 Exact form: scale-invariant trilinear
 shape estimate on R★. Live fork: sup R★
 finite proves ★; a near-shell or HH→L

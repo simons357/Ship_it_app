@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Attack 3 — Bony HH→L channel bottleneck.
+"""Attack 3 — Bony HH→L channel split (diagnostic).
 
 Decompose the nonlinear transfer into HH / HL / LL parent-wavevector channels
 and measure which channel dominates the centered remainder Tc.
 
-Prior note: HH→L is the live analytic bottleneck for closing product estimates
-toward |Tc| ≤ C ||u||_2 X^{3/2} (or equiv). Numerics here only diagnose channel
-size — they do not prove a Bony estimate.
+The older universal target |Tc| ≤ C ||u||_2 X^{3/2} is false by scaling
+(u = a v: left a^3, right a^4). Discarded. Numerics here only diagnose
+channel size — they do not prove ★ and they do not revive that bound.
+Do not apply that scaling death to Attack-2 |Tc| ≤ C_* X^{3/2} Λ.
 """
 
 from __future__ import annotations

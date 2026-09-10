@@ -68,10 +68,14 @@ Hence
 \]
 for unit \(w\). The \((\alpha-\beta)\) factors cancel between numerator and \(\mathcal{D}_s\). \(\varepsilon\) cancels in the limiting quotient.
 
-**Relation:** for each fixed exact-shell \(w\),
+**Relation:** for each fixed exact-shell \(w\) and aligned sign-selected \(z_\beta(w)\parallel\Pi_\beta B(w,w)\),
 \[
 \lim_{\varepsilon\to0}\mathcal{R}_\star(w+\varepsilon z_\beta(w))=K_{\alpha,\beta}(w)
 \le K_{\alpha,\beta}.
+\]
+For arbitrary unit \(z_\beta\) on shell \(\beta\), the same limit is
+\[
+\frac{\beta\,\bigl|\langle\Pi_\beta B(w,w),z_\beta\rangle\bigr|^2}{\alpha^2\|w\|_2^4\|z_\beta\|_2^2}.
 \]
 
 ## Caveat
@@ -95,7 +99,7 @@ Doc: [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md) (SoT-o
 |---------|-------------|
 | Amplitude: \(K(aw)=K(w)\); \(\mathcal{R}_\star(av)=\mathcal{R}_\star(v)\) | Exact |
 | Exact-shell \(\varepsilon=0\): \(\mathcal{D}_s\approx0\) | Pass (machine eps) |
-| \(\varepsilon\to0\) probe: \(\mathcal{R}_\star(v_\varepsilon)\to K_{\alpha,\beta}(w)\) | Relative error \(\to0\) |
+| \(\varepsilon\to0\) probe: \(\mathcal{R}_\star(v_\varepsilon)\to K_{\alpha,\beta}(w)\) | Relative error \(\to0\) **for aligned, sign-selected** \(z_\beta\) |
 | Report **total** signed \(T_c\) | Not HH→L-only |
 
 ## Script

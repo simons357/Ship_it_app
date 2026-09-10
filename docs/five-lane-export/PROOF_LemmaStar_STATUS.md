@@ -17,7 +17,8 @@
 **Lemma★ is no longer a viscosity statement. It is a shape statement.**
 
 Exact torus / linear / \(\mathcal D_s\) / nonlinear / \(T_c\) / \(\mathcal R_\star\) formulas:
-[`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md).
+[`../math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](../math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md).
+Claim: [`../math/ns_attacks/LEMMA_STAR_CANONICAL.md`](../math/ns_attacks/LEMMA_STAR_CANONICAL.md).
 
 On divergence-free fields on \(\mathbb{T}^3=(\mathbb{R}/2\pi\mathbb{Z})^3\), with \(\lambda_k=|k|^2\), \(A=-P\Delta\),
 \[
@@ -58,9 +59,9 @@ Complete quotient (scripts: `ratio_R_star` / `ratio_R_star_shape`):
 \quad(\mathcal{D}_s>0).
 \]
 
-**\((T_c)_+\) vs prior \(T_c^2\):** when \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Kill cares about stretching \(T_c>0\).
+**\((T_c)_+\) vs \(T_c^2\):** when \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Keep \((T_c)_+\) in the boxed form. \(T_c\) is odd and \(\mathcal D_s,E,Y\) are even, so a universal bound on \((T_c)_+^2\) is a universal bound on \(T_c^2\). Reverse a large negative field.
 
-**Numerics hygiene:** do not compare \(0.065\), \(0.073\), \(1.93\times10^{-3}\) unless each used this exact formula.
+Do **not** compare \(0.065\), \(0.073\), \(1.93\times10^{-3}\) unless each used this exact formula.
 
 Sign check identity (code-locked):
 \[
@@ -74,7 +75,7 @@ Two-shell closed form (search harness + unit tests):
 
 If \(\sup_v\mathcal R_\star<\infty\), that supremum **is** ★ (up to \(4\theta\)). A finite list of small-\(\mathcal R_\star\) fields is **not** that number.
 
-**Caution:** HH→L can identify a mechanism; only **complete signed** \(T_c\) (total, not favorable HH→L-only) enters the ★ kill criterion.
+**Caution:** HH→L can identify a mechanism; only **complete signed** \(T_c\) (total, not favorable HH→L-only) enters the ★ kill criterion. The older \(|T_c|\le C\|u\|_2 X^{3/2}\) target is **DEAD BY SCALING**.
 
 ### Equivalent viscosity packaging (derived, not primary)
 
@@ -103,12 +104,12 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 
 | Claim | Status | Evidence |
 |-------|--------|----------|
-| Lemma★ \(\Rightarrow\) no finite-time blowup of \(\Lambda\) in this packaging \(\Rightarrow\) GR on \(\mathbb{T}^3\) **in this packaging** | **Conditional implication only** | Packaging / differential inequality; **not** a Clay submission |
+| Lemma★ \(\Rightarrow\) no finite-time blowup of \(\Lambda\) in this packaging \(\Rightarrow\) GR on \(\mathbb{T}^3\) **in this packaging** | **One direction only** | Quotient / differential inequality. **No converse** that GR forces the uniform bound on every smooth field. Not “equivalent to GR.” |
 | K=0 form \(T_c\le\theta\nu\mathcal D_s\) | **KILLED** | Attack 2: \(\lvert T_c\rvert/\mathcal D_s\sim B\) on fixed-shape high triad |
 | Young reduction of \(T_c\) toward a norm of \(B(v,v)\) | **Partial / formal** | Polarization exists; does not close 3D product gap |
-| \(\lvert T_c\rvert\le C\|v\|_2 X^{3/2}\) (or equiv) by Agmon/product | **GAP — does not close** | HH→L bottleneck (Attack 3); HH is diagnostic only |
+| \(\lvert T_c\rvert\le C\|v\|_2 X^{3/2}\) (or equiv) as a universal estimate | **DEAD BY SCALING** | Under \(u=av\): left \(a^3\), right \(a^4\). Discarded by algebra. Not an open gap toward ★. HH→L remains diagnostic only. Do not apply this death to Attack-2 \(C_*\) |
 | Uniform geometric \(C_{\mathrm{geom}}\) / \(C_0\) for Lemma★ (shape form) | **OPEN — kill lane LIVE** | Sample maxes (shape★ formula only) are **not** a proof and **do not** close falsification |
-| Formula lock (linear / \(\mathcal D_s\) / \(T_c\) / \(\mathcal R_\star\) / \(\Lambda'\)) | **LOCKED in docs + unit tests** | `LEMMA_STAR_SHAPE_FORM.md`; `tests/test_ns_attacks_lemma_star.py` |
+| Formula lock (linear / \(\mathcal D_s\) / \(T_c\) / \(\mathcal R_\star\) / \(\Lambda'\)) | **LOCKED in docs + unit tests** | `LEMMA_STAR_CANONICAL.md`; `LEMMA_STAR_EXACT_FORMULAS.md`; `tests/test_lemma_star_corrections.py` |
 | Attack 8 correct record | **CORRECT RECORD** | Kill lane LIVE; \(\mathcal R_\star\) invariants; \((T_c)_+\) |
 | Attack 9A packet fan \(\gamma\) | **Did not kill ★** — \(\gamma\approx-1.39\) (decaying) | \(\mathcal D_s\|v\|_2^2 Y=O(1)\) false for AP family; see `ATTACK_9A_AP_PACKET_FAILURE.md` |
 | Attack 9B exact-shell \(K_{\alpha,\beta}\) | **LIVE** — sample \(\max K\approx0.641\) at \((4,8)\) | \(\mathcal R_\star\to K\); controls PASS; not a kill; kill lane still LIVE |
@@ -131,7 +132,10 @@ Route N / Q6 / LP-shell floors: [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_
 
 ## Related files
 
-- `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md` — **canonical exact formulas**
+- `docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md` — **working claim**
+- `docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md` — identities
+- `docs/LEMMA-STAR-CORRECTIONS.md` — four corrections
+- `docs/math/ns_attacks/LEMMA_STAR_OLDER_ATTEMPT_ARCHIVE.md` — Section 4 / \(a^4\) archive
 - `docs/math/ns_attacks/ATTACK_8_CORRECT_RECORD.md`
 - `docs/math/ns_attacks/ATTACK_9_PACKET_FAN.md`
 - `docs/math/ns_attacks/ATTACK_9A_AP_PACKET_FAILURE.md`
@@ -142,6 +146,6 @@ Route N / Q6 / LP-shell floors: [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_
 - `scripts/ns_attacks/stokes_moments.py`
 - `scripts/ns_attacks/attack9_packet_fan.py`
 - `scripts/ns_attacks/attack9b_exact_shell_K.py`
-- `tests/test_ns_attacks_lemma_star.py`
+- `tests/test_lemma_star_corrections.py`
 - `/opt/cursor/artifacts/attack9_packet_fan/`
 - `/opt/cursor/artifacts/attack9b_exact_shell/`

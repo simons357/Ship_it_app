@@ -74,6 +74,13 @@ WRITE (6) plus data: docs/WRITE_6_SUPPORTED.md
 
 Lemma★ locked as hypothesis (not proved):
 docs/LEMMA-STAR.md
+Working claim + identities:
+docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md
+docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md
+Four corrections (a^4 missing inequality dead;
+star implies GR, not equivalent; test both signs;
+Section 4 not proved):
+docs/LEMMA-STAR-CORRECTIONS.md
 Boxed ratio R★ is the exact form of ★:
 docs/LEMMA-STAR-R.md
 Three-key family (Attack 8):

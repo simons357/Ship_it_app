@@ -34,7 +34,12 @@ K_{\alpha,\beta}
 If \(\sup K=\infty\), then \(\sup\mathcal R_\star=\infty\)
 along \(\varepsilon\to 0\) → ★ dead. A finite max is not
 that. \(\varepsilon\) and \((\alpha-\beta)\) cancel in the
-limit: \(\mathcal R_\star(v_\varepsilon)\to K_{\alpha,\beta}(w)\).
+limit **when** \(z_\beta\) is aligned with
+\(\Pi_\beta B(w,w)\) and the sign is chosen so
+\((T_c)_+>0\):
+\(\mathcal R_\star(v_\varepsilon)\to K_{\alpha,\beta}(w)\).
+For arbitrary \(z_\beta\), the limit is the squared
+projection against \(B(w,w)\), not necessarily \(K\).
 
 ---
 
