@@ -91,7 +91,7 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | K=0 form \(T_c\le\theta\nu\mathcal D_s\) | **KILLED** | Attack 2: \(\lvert T_c\rvert/\mathcal D_s\sim B\) on fixed-shape high triad |
 | Young reduction of \(T_c\) toward a norm of \(B(v,v)\) | **Partial / formal** | Polarization exists; does not close 3D product gap |
 | \(\lvert T_c\rvert\le C\|v\|_2 X^{3/2}\) (or equiv) by Agmon/product | **GAP — does not close** | HH→L bottleneck (Attack 3); HH is diagnostic only |
-| Uniform geometric \(C_{\mathrm{geom}}\) / \(C_0\) for Lemma★ (shape form) | **OPEN — survives numeric kill drill** | Attack 5 + near-shell/HH→L harness with **complete signed \(T_c\)** and two-shell \(\mathcal D_s\); finite \(\max\mathcal R_\star\) on samples is **not** a proof |
+| Uniform geometric \(C_{\mathrm{geom}}\) / \(C_0\) for Lemma★ (shape form) | **OPEN — survives numeric kill drill** | Attack 5 prior: \(\max\mathcal R_\star\approx0.0227\). Near-shell+HH→L harness (complete signed \(T_c\), two-shell \(\mathcal D_s\)): \(n=261\), \(\max\mathcal R_\star\approx2.3\cdot10^{-4}\), `kill_Ds0_nonzero_Tc=0`, verdict `SURVIVE_numeric_gap_remains`. Finite sample max is **not** a proof |
 | Formula lock (linear / \(\mathcal D_s\) / \(T_c\) / \(\mathcal R_\star\) / \(\Lambda'\)) | **LOCKED in docs + unit tests** | `LEMMA_STAR_SHAPE_FORM.md`; `tests/test_ns_attacks_lemma_star.py` |
 | Amplitude-invariant \(C_*\) for \(X^{3/2}\Lambda\) remainder | **OPEN (numeric support)** | Attack 2 / Attack 5 survivors |
 
