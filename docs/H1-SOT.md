@@ -142,6 +142,13 @@ Object: \(J\) and thinness on one explicit tube
 bounded as amplitude grows. Snapshot integrals. Waiting
 is not scored on a snapshot.
 
+ABC: \(J\sim A\), stretch rate \(\sim A\). BKM on
+that field fails. \(J/X\sim 1/A\): folds do not blow
+like enstrophy. Burgers: \(J=0\), stretch \(=\gamma\)
+imposed, waiting locked. Gaussian pair: thinness
+\(\rho^2\int|\omega|^2\lesssim E_{\mathrm{core}}\) from
+Biot–Savart; self-stretch \(=0\).
+
 One computed tube is not \(C_0\). Burgers strain is
 imposed, not Biot–Savart of the tube. ABC is not a
 thin cylinder.
