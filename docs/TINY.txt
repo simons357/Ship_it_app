@@ -75,6 +75,8 @@ H1 shapes (not proved): docs/H1-SHAPES.md
 P1 low-pass Biot–Savart (sits; not H1):
 docs/H1-P1.md
 Lookups: all miss. docs/LOOKUP-H1.md
+Where H1 is (named leftover, not a paper):
+docs/WHERE-H1.md
 WRITE (6) alone: docs/WRITE_6.md
 WRITE (6) plus data: docs/WRITE_6_SUPPORTED.md
 

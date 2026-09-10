@@ -3,7 +3,7 @@
 Different letters, different integrals. Do not merge them.
 This H is stretching on unaugmented NSE. It is not matrix \(H_N\). It is not SND. It is not Theorem A’s Sobolev \(H^1\).
 
-Phone packet: [`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md). H1 object: [`H1-OBJECT.md`](H1-OBJECT.md). Tube SoT: [`H1-SOT.md`](H1-SOT.md).
+Phone packet: [`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md). H1 object: [`H1-OBJECT.md`](H1-OBJECT.md). Locator: [`WHERE-H1.md`](WHERE-H1.md). Tube SoT: [`H1-SOT.md`](H1-SOT.md).
 
 ---
 

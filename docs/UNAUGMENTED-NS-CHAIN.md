@@ -234,7 +234,7 @@ On Bad, \(|\sin\varphi|\) is large, so the kernel is not improved.
 
 ## 8. What to do next
 
-WRITE (6) was attempted on one cylinder (§12). It did not close. H1 as a holdable object, and the only three shapes that still look like it, are §13. Arithmetic of those shapes: [`H1-SHAPES.md`](H1-SHAPES.md). CS-summable volume thinness is still \(E^{3/2}\), not H1. Lookups: all miss ([`LOOKUP-H1.md`](LOOKUP-H1.md)). Literature check: §14. H1 is not in the record under another name.
+WRITE (6) was attempted on one cylinder (§12). It did not close. H1 as a holdable object, and the only three shapes that still look like it, are §13. Arithmetic of those shapes: [`H1-SHAPES.md`](H1-SHAPES.md). CS-summable volume thinness is still \(E^{3/2}\), not H1. Lookups: all miss ([`LOOKUP-H1.md`](LOOKUP-H1.md)). Locator: [`WHERE-H1.md`](WHERE-H1.md). Literature check: §14. H1 is not in the record under another name.
 
 Next work is still **prove 1, 2, or 3 on one cylinder** — not a new name. The estimates are written. They are not theorems. Do not reprove Lemma C. Do not add \(K(t)\). Keep **H1, H2, H3, \(R_\phi\)** separate.
 

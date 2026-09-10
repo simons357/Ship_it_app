@@ -117,3 +117,4 @@ by local dissipation plus \(r^{-2}\iint|\omega|^2\) from
 the energy class alone.
 
 All five are misses. H1 is not under another name.
+Locator (the object, not a paper): [`WHERE-H1.md`](WHERE-H1.md).

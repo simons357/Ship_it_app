@@ -48,6 +48,8 @@ still on the star lane.
 Gaps: §11. Literature:
 docs/LITERATURE-H.md (H1 not under another
 name). Lookups: all miss. docs/LOOKUP-H1.md.
+Where it is (named leftover, not a paper):
+docs/WHERE-H1.md.
 Shapes as estimates, not proved:
 docs/H1-SHAPES.md. CS-thinness is still
 E^{3/2}, not H1.

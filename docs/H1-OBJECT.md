@@ -50,4 +50,5 @@ Do not cash “assume thin” as 1 (that is Lemma C). Do not cash Lemma J on gen
 
 Work H1. Keep H2 and H3 labeled. Lemma C stays an if. If H1 sits and H2-from-energy does not, the cylinder is still open.
 
+Where it is (locator, not a hunt): [`WHERE-H1.md`](WHERE-H1.md).
 Literature: H1 is not in the record under another name. Closest cousins (Grujić 2009, Grujić–Guberović 2010) are still ifs. Packet §14.
