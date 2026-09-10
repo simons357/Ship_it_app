@@ -1,10 +1,11 @@
 # Lemma★ — locked packaging
 
 10 September 2026. Energy-budget writing of leftover (6).
-**Dead as a closer on ABC_λ.** Write-up \(\mathcal R_\star\sim\lambda^3\)
-at \(\lambda=2,4,8,16\): `docs/CS-REMAINDER.md`.
-Evaluator ≠ proof. **NS is not solved.**
-H1 is a different integral and was **not** run on this field.
+**OPEN.** Evaluator ≠ proof. Exact core ≠ proof.
+**NS is not solved.** A finite ABC_λ climb raises
+\(C_{\mathrm{geom}}\); it does not kill ★
+(`docs/CS-REMAINDER.md`). H1 is a different integral
+and was **not** run on ABC_λ. Q-stack is out of this book.
 
 Drill: [PR 48](https://github.com/simons357/Ship_it_app/pull/48)
 (`cursor/ns-five-lane-lemma-star-1390`).
@@ -179,9 +180,9 @@ fan (\(\mathcal R_\star\sim\beta/\alpha\)). No kill.
 The \(m^{1/2}\) heuristic has not found a lattice home.
 H1 on one cylinder is the other live writing
 ([`H1-SOT.md`](H1-SOT.md)).
-ABC_λ kills the uniform bound as a closer
-(`docs/CS-REMAINDER.md`). The leftover writing is H1,
-which was not run on that field.
+The uniform global triadic bound remains completely open.
+ABC_λ is a finite climb, not \(\mathcal R_\star\to\infty\).
+Do not start H1 from that table.
 Uniform pre-Young \(C\) is off. Attack-2 \(C_*\) is a
 different door. Do not revive K=0. Do not cash a triad
 \(\mathcal R_\star\) as \(C_0\). Numerically bounded samples
@@ -228,7 +229,7 @@ file not overwritten):
 [`LEMMA-STAR-CORE.md`](LEMMA-STAR-CORE.md).
 Object app (pictures; bound still open):
 [`THE-OBJECT-APP.md`](THE-OBJECT-APP.md).
-Localized ABC (rejected recon, not a kill):
+Localized ABC (finite climb, not a falsifier):
 [`CS-REMAINDER.md`](CS-REMAINDER.md).
 N-shell maximizer (saturates; not a bound):
 [`RSTAR-SHELL-CLIMB.md`](RSTAR-SHELL-CLIMB.md).

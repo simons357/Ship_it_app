@@ -1,66 +1,66 @@
-# ABC_λ exact printout — λ=2,4,8,16
+# Localized ABC — evaluator, not a proof. ★ still OPEN.
 
-10 September 2026. **NS not solved.** Evaluator ≠ proof.
+10 September 2026. **NS not solved.** Exact core ≠ proof.
+H1 is a different integral and was **not** run on ABC_λ.
+Augmented / Q-stack is out of this book.
 
-Normalization is the write-up, not an ABC-only variant:
+Score vs SuperGrok and DA:
+`docs/ns-recovery/CS-REMAINDER-VS-DA-REJECT.md`
+(PR 45 comparison: https://github.com/simons357/Ship_it_app/pull/45).
 
-\[
-\mathcal R_\star
-=
-\frac{(T_c)_+^2}{\mathcal D_s\,E\,Y}
-\qquad\text{from }\texttt{scripts/ns\_lemma\_star\_core.py}.
-\]
+This book’s kill rule: \(\mathcal R_\star\to\infty\) kills ★.
+One large finite value only raises \(C_{\mathrm{geom}}\).
+Largest FFT number on the gate table is **0.327 at λ=8**
+(after reverse). That is not a falsifier. Do not stamp
+Target A / CS / ★-as-closer. Do not stop patching Lemma★.
 
-\(T_c(-v)=-T_c(v)\). On this family \(T_c<0\), so boxed \(\mathcal R_\star=0\).
-The column below is boxed \(\mathcal R_\star(-v)=T_c^2/(\mathcal D_s E Y)\).
-Same object. Formula lock vs `stokes_moments.probe` sits
-(\(T_c,D_s,\mathcal R_\star\) err \(<10^{-15}\)).
+## Same \(\mathcal R_\star\) (Claude 1)
 
-H1 is a different integral. **H1 was not run on ABC_λ.**
-The H1-TUBE ABC is exact Beltrami, not this field.
+Write-up: \(\mathcal R_\star=(T_c)_+^2/(\mathcal D_s E Y)\).
+JSON `R_star` is that object and is **0** here (\(T_c<0\)).
+The published climb is `R_star_signed` \(=T_c^2/(\mathcal D_s E Y)\)
+= canonical \(\mathcal R_\star(-v)\). Not an ABC-only variant.
 
-## What this package does on this field
+## H1 on ABC_λ (Claude 2)
 
-On this family, with this normalization:
+**Untested.** Named only. Do not start H1 from this page.
 
-- Target A fails (\(\mathcal R_\star\) does not stay \(O(1)\)).
-- The CS remainder \(\|A^{1/2}B\|_2\le C\sqrt{EY}\) fails.
-- Lemma★ fails as a closer for unaugmented NSE.
-
-Stop patching Lemma★. Do not send this as a solve.
-N-shell samples still saturate. That is a different family.
-
-## Exact-check table
+## Exact script — four jobs, already ran
 
 `scripts/ns_attacks/cs_remainder_exact_check.py`
-JSON: `results/cs_remainder_bump/exact_core_check.json`
-Grids \(n=16\lambda\) (same as the FFT local_abc table).
 
-Full-field FFT (Galerkin; convention locked on a sparse triad).
-Flip column = write-up \(\mathcal R_\star(-v)\).
+1. 3-mode triad vs `probe` (on that field \(T_c=0\); \(\mathcal D_s\) matches).
+2. Export 99% energy modes and sum the triad — **λ=2, 3, 4 only**.
+3. Same truncated field on a grid: FFT \(T_c\) = triad to \(10^{-13}\).
+4. \(v(n\cdot)\) leaves \(\mathcal R_\star\) flat.
 
-| \(\lambda\) | \(n\) | \(\|A^{1/2}B\|_2/\sqrt{EY}\) | \(\mathrm{CS}/\lambda^{3/2}\) | \(\mathcal R_\star(-v)\) | \(\mathcal R_\star/\lambda^3\) |
-|---|---|---|---|---|---|
-| 2 | 48 | 2.492 | 0.881 | 0.005170 | \(6.46\times 10^{-4}\) |
-| 4 | 64 | 7.104 | 0.888 | 0.04086 | \(6.38\times 10^{-4}\) |
-| 8 | 128 | 20.114 | 0.889 | 0.3266 | \(6.38\times 10^{-4}\) |
-| 16 | 256 | 56.899 | 0.889 | 2.612 | \(6.38\times 10^{-4}\) |
+It never ran λ=8 or 16. More finite rows would not close a kill.
 
-Standalone / embed on a high-energy export (λ=2: `R_star`; λ≥4: embed FFT = triad on that support):
+## FFT table (full field; different from the cutoff)
 
-| \(\lambda\) | modes | keep | \(\mathcal R_\star(-v)\) | \(\mathcal R_\star/\lambda^3\) |
-|---|---|---|---|---|
-| 2 | 1902 | 0.9999 | 0.004542 | \(5.68\times 10^{-4}\) |
-| 4 | 15284 | 0.9999 | 0.03586 | \(5.60\times 10^{-4}\) |
-| 8 | 86318 | 0.999 | 0.2212 | \(4.32\times 10^{-4}\) |
-| 16 | 690576 | 0.999 | 1.767 | \(4.31\times 10^{-4}\) |
+| λ | CS \(\|A^{1/2}B\|_2/\sqrt{EY}\) | \(\mathcal R_\star(-v)\) |
+|---|---|---|
+| 2 | 2.492 | 0.00517 |
+| 3 | 4.607 | 0.0173 |
+| 4 | 7.104 | 0.0409 |
+| 5 | 9.934 | 0.0798 |
+| 6 | 13.062 | 0.138 |
+| 8 | 20.114 | **0.327** |
 
-Both columns climb. FFT is \(\sim\lambda^3\) to three digits from λ=4 to 16.
-Export 8→16 exponent \(\log_2(1.767/0.221)=2.997\).
-Same truncated field: embed \(T_c\) equals the exact triad sum to \(10^{-13}\) at λ=2.
-\(v(n\cdot)\) leaves boxed \(\mathcal R_\star\) invariant.
+Fit on six grids: CS \(\sim 0.88\lambda^{3/2}\),
+\(\mathcal R_\star\sim 6.47\times 10^{-4}\lambda^3\).
+A fit is not \(\mathcal R_\star\to\infty\).
 
-The 99% cutoff in the older printout was a different field.
-This printout uses the write-up objects on \(n=16\lambda\).
+## Exact-core table (99% cutoff — a different field)
+
+| λ | modes | \(\mathcal R_\star(-v)\) | \(T_c\) rel vs full FFT |
+|---|---|---|---|
+| 2 | 836 | 0.001748 | 0.535 |
+| 3 | 2820 | 0.005181 | 0.565 |
+| 4 | 6672 | 0.013669 | 0.542 |
+
+N-shell max saturates. This family does not on the grids
+they ran. That is a live kill-lane clue. It is not a
+logged reject of ★.
 
 Stay in this chat.

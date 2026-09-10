@@ -44,9 +44,9 @@ Does not climb **on this family**. Extra shells do
 not beat two. Fourier dilation \(v(n\cdot)\) stays
 flat.
 
-ABC_λ is a different family: write-up \(\mathcal R_\star\sim\lambda^3\)
-at \(\lambda=2,4,8,16\). See `docs/CS-REMAINDER.md`.
-This N-shell table saturates. That one does not.
+ABC_λ does not saturate on the grids they ran.
+That is a kill-lane clue, not a logged reject of ★.
+See `docs/CS-REMAINDER.md`. This N-shell table saturates.
 
 JSON: `results/rstar_shell_climb/maximizer.json`
 Script: `scripts/ns_attacks/maximize_rstar_shells.py`

@@ -1,9 +1,9 @@
 # Lemma★ — canonical claim (working foundation)
 
 **Date:** 2026-09-10  
-**Status:** **Dead as a closer on ABC_λ.** Write-up \(\mathcal R_\star\sim\lambda^3\)
-at \(\lambda=2,4,8,16\): `docs/CS-REMAINDER.md`.
-Evaluator ≠ proof. **NS not solved.**
+**Status:** **OPEN.** Evaluator ≠ proof. Exact core ≠ proof.
+A finite ABC_λ climb raises \(C_{\mathrm{geom}}\); it does not kill ★.
+`docs/CS-REMAINDER.md`. **NS not solved.**
 H1 / WRITE (6) is a different integral and was not run on ABC_λ.
 
 Identities: [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md).  
@@ -119,14 +119,16 @@ That is \(K_{\alpha,\beta}(w)\) times the squared cosine of the angle in the \(\
 
 ## Remaining target
 
-On ABC_λ, with the write-up \(\mathcal R_\star=(T_c)_+^2/(\mathcal D_s E Y)\),
-the exact printout at \(\lambda=2,4,8,16\) climbs as \(\lambda^3\).
-Target A and the CS remainder fail on this family. ★ fails as a
-closer. Stop patching. Phone: [`../../CS-REMAINDER.md`](../../CS-REMAINDER.md).
+ABC_λ is a finite climb on the grids they ran (FFT through λ=8,
+core through λ=4). Largest FFT \(\mathcal R_\star(-v)\approx 0.327\).
+That raises \(C_{\mathrm{geom}}\). It is not \(\mathcal R_\star\to\infty\).
+Do not stamp a falsifier. Do not stop patching.
+Phone: [`../../CS-REMAINDER.md`](../../CS-REMAINDER.md).
+Score: [`../../ns-recovery/CS-REMAINDER-VS-DA-REJECT.md`](../../ns-recovery/CS-REMAINDER-VS-DA-REJECT.md).
 
 N-shell Fourier samples still saturate. They are not this field.
 Fourier dilation \(v(n\cdot)\) stays invariant.
 
 K=0 is dead. The \(a^4\) “missing inequality” is dead. Uniform pre-Young \(C\) is dead. Attack-2 \(C_*\) is a different door. Fixed-output \(\Theta(m^2)\) is a counting error. Freiman-AP is already dead. ★ is not a close of unaugmented NSE. H1 / WRITE (6) is a different integral and was not run on ABC_λ.
 
-**NS not solved.** Evaluator ≠ proof. Leftover (6) still open.
+**NS not solved.** Lemma★ OPEN. Leftover (6) still open.

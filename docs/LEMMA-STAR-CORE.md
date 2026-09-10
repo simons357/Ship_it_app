@@ -1,7 +1,8 @@
 # Independent Lemma★ core
 
 10 September 2026. Phone lock. **Exact evaluator, not a proof.**
-ABC_λ printout: `docs/CS-REMAINDER.md`. **NS not solved.**
+**Lemma★ is still open. NS not solved.**
+ABC_λ table: `docs/CS-REMAINDER.md`. Not a falsifier.
 
 Standalone: `scripts/ns_lemma_star_core.py`.
 Does not import the Stokes library.
