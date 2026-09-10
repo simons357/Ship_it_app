@@ -45,29 +45,24 @@ Naming the hole is not closing it.
 
 ## Blocked exactly here
 
-Uniform pre-Young
+You still need something like
 \[
-|\mathfrak T_c|\le C\|u\|_2 X\Lambda
+|\mathfrak T_c|\le C\|u\|_2 X^{3/2}
 \]
-with \(C\) independent of \(u\) is **dead**. Attack 6: on the
-scaled triad \(k\mapsto sk\),
-\(\lvert T_c\rvert/(\|u\|_2 X\Lambda)\simeq 0.158\,s\to\infty\).
-Ordinary 3D product / Agmon estimates do not close the other door
-either.
+(or equivalent). Ordinary 3D product / Agmon estimates do
+**not** give that from energy alone.
 
-**Live door (door 2):**
-\[
-|\mathfrak T_c|\le C_* X^{3/2}\Lambda
-\]
-with \(C_*\) absolute. On that same family the ratio is
-\(\simeq 0.0404\), independent of \(s\) and of amplitude.
-One family is not a proof. HH→L is still the gap.
+Five-lane rule against that door: kill ★ with a blowing
+ratio, or sustain numeric bounds and keep the analytic
+gap explicit — **not** “almost proved.”
 
-If \(C_*\) sits, then \(K\le C_*\sqrt{X}\) and Leray plus
-Cauchy–Schwarz give \(\int_0^T\sqrt{X}<\infty\), hence DA-NS-2
-on every finite interval **in this packaging**. Not proved.
-
-File: [`LEMMA-STAR-NEXT.md`](LEMMA-STAR-NEXT.md).
+**Attack 6 (scored, not a new leftover).** One equivalent
+was uniform pre-Young \(|T_c|\le C\|u\|_2 X\Lambda\). That
+form is **dead**: \(\lvert R_{\mathrm{pre}}\rvert\simeq 0.158\,s\)
+on the scaled triad. Another equivalent,
+\(|T_c|\le C_* X^{3/2}\Lambda\), stayed \(\simeq 0.0404\) on
+that family. One family is not a proof. HH→L is still
+the gap. File: [`LEMMA-STAR-NEXT.md`](LEMMA-STAR-NEXT.md).
 
 ---
 
@@ -93,9 +88,12 @@ A family that did not blow is not a uniform geometric constant.
 
 ## Live door
 
-Prove or kill \(|T_c|\le C_* X^{3/2}\Lambda\) with HH→L
-controlled. Uniform pre-Young \(C\) is off (Attack 6).
+The packaging still needs a product bound of the
+\(|T_c|\le C\|u\|_2 X^{3/2}\) class (or equivalent).
+Uniform pre-Young \(C\) is off. The remaining equivalent
+to try is \(C_* X^{3/2}\Lambda\), with HH→L controlled.
 Do not revive K=0. Do not cash a triad ratio as \(C_*\).
+Do not write “almost proved.”
 
 ---
 
