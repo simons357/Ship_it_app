@@ -10,8 +10,8 @@
 | Item | Value |
 |------|-------|
 | Branch | `cursor/ns-five-lane-lemma-star-1390` |
-| Tip commit | `d75460a5904342debd0c241f954b554f0bfb94e8` (locator); prior SoT tip `bd374ed0feb802a3cffdcdb33bda92da046f24c3` |
-| Tip subject | Add FIVE_LANE_PACK_LOCATOR for Lemma★ SoT inventory |
+| Tip commit | `154f6b4264ad4f637e04556f208bc86b5756ff2b` (β-split / Attack-3 precision); prior locator `554679b` / SoT tip `bd374ed` |
+| Tip subject | SoT: 9B β>α≠HH→L split; Attack 3 not strict HH→L; 9C SoT-only |
 | Remote | `origin/cursor/ns-five-lane-lemma-star-1390` |
 | GitHub PR | **https://github.com/simons357/Ship_it_app/pull/48** |
 | PR title | Five-lane Lemma★ drill: K=0 dead, ★ survives numeric |
