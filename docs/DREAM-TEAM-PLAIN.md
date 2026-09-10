@@ -58,11 +58,21 @@ not fill the hole.
 
 ---
 
+## Tonight’s letters (10 September 2026)
+
+A second look at those papers, scored against
+the H-split. Not a phone call. Not a close.
+
+They would sign the map. They would not
+sign WRITE (6). File:
+[`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
+
 ## What to do with that
 
 Keep the maps. Do not call the team again
-expecting a last line. The answer will be
-the same cannot.
+expecting a last line. Tonight’s read is
+the same cannot on (6). The map is theirs.
+The bound is not.
 
 If a real sentence for a hole appears later,
 bring it here. DA will check it.

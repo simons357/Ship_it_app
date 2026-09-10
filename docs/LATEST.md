@@ -37,7 +37,10 @@ name). Lookups: docs/LOOKUP-H1.md.
 WRITE (6): docs/WRITE_6.md
 (supported: docs/WRITE_6_SUPPORTED.md).
 Score of the write: aimed leftover yes;
-theorem no. No \(K(t)\). No Q1.
+theorem no. Dream-team read:
+docs/DREAM-TEAM-H.md
+(they would sign the map, not (6)).
+No \(K(t)\). No Q1.
 
 **RH — open**
 docs/RH-CHAIN.md

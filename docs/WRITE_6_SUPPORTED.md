@@ -88,6 +88,7 @@ Succeeds as a bound. Same class as H3. Not absorbed. Near-Bad remains (6).
 | CKN 1982 | Energy \(\varepsilon\)-regularity | No. That is H2-smallness |
 
 No paper is (6). Full pass: [`LITERATURE-H.md`](LITERATURE-H.md).
+Dream-team read: they would sign the map, not (6). [`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
 
 ---
 

@@ -70,7 +70,7 @@ At \(q=6\): need \(L^4_t L^6\). Sobolev is one-sided:
 
 **Cubic bound.** \(|S_{\mathrm{tot}}|\le C E^3\) after Young. Allows \(E\sim(T_*-t)^{-1/2}\). Does not give \(\int E^2\). The 1934 wall.
 
-**No Type-I self-similar blowup.** Nečas–Růžička–Šverák 1996.
+**No Leray backward self-similar profile.** Nečas–Růžička–Šverák 1996. Not a blanket Type-I theorem.
 
 **CKN.** Singular set of a suitable weak solution has parabolic 1-measure zero. Set not proved empty.
 
@@ -220,7 +220,7 @@ On Bad, \(|\sin\varphi|\) is large, so the kernel is not improved.
 | Serrin / ESS as criteria | Proved |
 | \(\int E^2\Rightarrow L^4_t L^6\) | Proved (one-sided) |
 | Cubic bound \(\dot E\le CE^3\) | Proved, too weak |
-| No Type-I self-similar | Proved |
+| No Leray self-similar profile (NRS) | Proved |
 | CKN measure of singular set | Proved |
 | Lemma C (good pairs) | Proved (conditional theorem) |
 | H2 as smallness criterion | Proved (CKN 1982) |
@@ -610,6 +610,8 @@ An a priori H1. An a priori H2. Alignment of \(\xi\) on the high-vorticity set. 
 What it does give, and what the packet already uses: energy, Serrin/ESS as criteria, CKN measure, NRS on Leray profiles, CF/BdVB as *if*, Grujić as *local if*.
 
 The H-split matches the map of the field. The leftover they left is the leftover we named.
+
+**Dream-team read of tonight’s map.** Papers, not a phone call. They would sign the map. They would not sign (6). CF/BdVB: the Hölder \(1/2\) cut is theirs; Bad pairs are the pairs they refused; (6) is the right name for what they left; they would not bound it. Grujić: 2009 localizes the condition, not \(A_{\mathrm{bad}}\); 2010 weights coherence; 2013 assumes sparseness; H3 is why 2009 exists; none of those papers is (6). CKN: H2-smallness is theirs, energy level; reject “H1+H2 \(\Rightarrow\) empty singular set” unless local Serrin after a closed enstrophy budget; a CKN-small cylinder never needed H1. ESS/Serrin: criteria; local Serrin after the budget, not a substitute for (6). NRS: Leray profiles only. Unanimous: do not merge letters; (6) is the request and is not in the record; if (6) sits and H2-from-energy does not, the cylinder still does not close; next work is (6) on one cylinder, or a new wall — not another criterion paper. File: [`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
 
 ---
 

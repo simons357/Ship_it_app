@@ -53,3 +53,4 @@ Work H1. Keep H2 and H3 labeled. Lemma C stays an if.
 
 The estimate (stated, not proved): [`WRITE_6.md`](WRITE_6.md).
 Supporting data: [`WRITE_6_SUPPORTED.md`](WRITE_6_SUPPORTED.md).
+Dream-team read (map yes, (6) no): [`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).

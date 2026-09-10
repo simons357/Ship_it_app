@@ -39,6 +39,11 @@ H1 is not under another name
 Lookups (yes/no, for Grok or a library):
 [`LOOKUP-H1.md`](LOOKUP-H1.md). Five questions.
 A hit is a theorem. A miss is another if.
+Dream-team read of the map:
+[`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
+They would sign the map. They would not
+sign (6). Next work is (6) on one cylinder,
+or a new wall. Not another criterion paper.
 
 ---
 

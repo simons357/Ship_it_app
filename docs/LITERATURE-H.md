@@ -88,6 +88,23 @@ The H-split matches the map of the field. The leftover they left is the leftover
 
 ---
 
+## Dream-team read of tonight’s map
+
+Papers, not a phone call. Nothing is being sent.
+They would sign the map. They would not sign (6).
+
+- **CF / BdVB.** Hölder \(1/2\) cut is theirs. Good pairs are their theorem. Bad pairs are the pairs they refused. WRITE (6) is the right name for what they left. They would not bound it.
+- **Grujić.** 2009 localizes the condition, not \(A_{\mathrm{bad}}\). 2010 weights coherence. 2013 assumes sparseness. H3 is why 2009 exists. None of those papers is (6).
+- **CKN.** H2-smallness is theirs, energy level. Reject “H1+H2 \(\Rightarrow\) empty singular set” unless local Serrin after a closed enstrophy budget. A CKN-small cylinder never needed H1.
+- **ESS / Serrin.** Criteria. Local Serrin after the budget closes. Not a substitute for (6).
+- **NRS.** Leray profiles only. Strike any “no Type I” bigger than that.
+
+**Unanimous.** Do not merge H, C, H1, H2, H3. (6) is the request. It is not in the record. If (6) sits and H2-from-energy does not, the cylinder still does not close. Next work is (6) on one cylinder, or a new wall. Not another criterion paper.
+
+Phone copy: [`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
+
+---
+
 ## Citation list
 
 1. J. Leray, *Acta Math.* 63 (1934).
