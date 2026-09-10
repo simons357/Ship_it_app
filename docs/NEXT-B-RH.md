@@ -19,11 +19,19 @@ equation. Keep \(1/r^4\). No \(Q_1\).
 
 Have (1)–(5). WRITE (6) open. Live leftover on
 this path: **H1** (\(A_{\mathrm{bad}}\) on \(Q_r\)).
-H2 a priori from energy also open. Do not
-reprove Lemma C. Do not add \(K(t)\).
+H2 a priori from energy also open. H3
+(\(A_{\mathrm{ext}}\)) named, a priori open.
+Do not reprove Lemma C. Do not add \(K(t)\).
+\(R_\phi\) is not free.
 
 Do not: \(\Phi\), \(n=64\), leftover-close B42,
 BKM from \(L^2\), export A.
+
+Next write: **H1 on one cylinder.** Keep H1, H2,
+H3, \(R_\phi\) separate. Do not emit H1. Writing
+gaps (exterior remainder, cutoff error, local
+Serrin citation) are filed in
+[`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md) §11.
 
 ---
 

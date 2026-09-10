@@ -90,9 +90,11 @@ A2 is live and did not blow on the B15 path (B40, B41).
 
 **(6)** **Write.** Live leftover on this path: **H1**
 (\(A_{\mathrm{bad}}\) a priori on \(Q_r\)). H2 a priori
-from energy is also open. Other writings of the
-same leftover: \(\int_0^T\mathcal{R}\), all-data A1/A2,
-a killing field, DA-NS-2. No \(K(t)\). No \(Q_1\).
+from energy is also open. H3 (\(A_{\mathrm{ext}}\))
+named, a priori open. \(R_\phi\) is not free. Closed
+budget implies local Serrin, not CKN. Other writings
+of the same leftover: \(\int_0^T\mathcal{R}\), all-data
+A1/A2, a killing field, DA-NS-2. No \(K(t)\). No \(Q_1\).
 *[the next write]*
 
 **(7)** **Gronwall.** From (3) and (6), \(X(t)\) stays
@@ -138,6 +140,8 @@ Classify one:
 - a killing field for the stretching leftover
 - DA-NS-2 (same leftover; identities already have)
 - H1: \(A_{\mathrm{bad}}\) a priori on \(Q_r\) (live path, 10 Sep 2026)
+- H3: a priori control of \(A_{\mathrm{ext}}\) from \(\int E<\infty\) (named remainder; not the next write)
+- \(R_\phi\): cutoff lemma for localizing Lemma C (not free; not H1)
 
 Machine: [`DA-PROOF.md`](DA-PROOF.md)  
 From your work: [`DA-FROM.md`](DA-FROM.md)

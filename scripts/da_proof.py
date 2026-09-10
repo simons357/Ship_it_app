@@ -97,8 +97,9 @@ NS_LINES = [
         "status": "write",
         "text": (
             "WRITE. Live leftover: H1 (A_bad a priori on a cylinder Q_r). "
-            "H2 a priori from energy also open. No K(t). No Q1. "
-            "Other writings of the same leftover: int R, A1, A2, killing field, DA-NS-2."
+            "H2 a priori from energy also open. H3 = A_ext ≲ r^{-3/2}∫ E^{1/2} E_loc dt, a priori open. "
+            "R_phi cutoff is not free. Closed budget implies local Serrin, not CKN. "
+            "No K(t). No Q1. Other writings of the same leftover: int R, A1, A2, killing field, DA-NS-2."
         ),
     },
     {

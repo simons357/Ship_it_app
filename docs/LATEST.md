@@ -25,7 +25,8 @@ https://github.com/simons357/Ship_it_app/blob/cursor/unaugmented-r4-vorticity-f8
 
 10 September packet. Lemma C sits (if). Last
 line is H1 (\(A_{\mathrm{bad}}\) a priori). H2
-a priori from energy also open. No \(K(t)\).
+and H3 a priori from energy also open.
+Writing gaps repaired in §11. No \(K(t)\).
 No Q1.
 
 **RH — open**
