@@ -33,6 +33,11 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any
 
+from .rstar_quantities import (
+    DOC_PATH as RSTAR_EXACT_DOC,
+    HARD_RULES as RSTAR_HARD_RULES,
+    exact_formula_inventory,
+)
 from .shape_texture import extract_shape, extract_texture, shape_match
 from .theory_splicer import (
     SpliceResult,
@@ -290,6 +295,8 @@ class LemmaStarReport:
     five_lane: dict[str, Any] = field(default_factory=dict)
     shape_form: dict[str, Any] = field(default_factory=dict)
     kill_rules: list[str] = field(default_factory=list)
+    exact_formulas: dict[str, Any] = field(default_factory=dict)
+    hard_rules: list[str] = field(default_factory=list)
     shape: dict[str, Any] = field(default_factory=dict)
     texture: dict[str, Any] = field(default_factory=dict)
     attack_routes: list[dict[str, Any]] = field(default_factory=list)
@@ -316,10 +323,15 @@ class LemmaStarReport:
             f"Viscosity form: {self.expression_canonical}",
             f"Shape form:     {self.expression_shape_form}",
             f"R_★:            {self.expression_r_star}",
+            f"Exact formulas: {RSTAR_EXACT_DOC}",
             "",
             "R_★ kill / status rules:",
         ]
         for rule in self.kill_rules:
+            lines.append(f"  • {rule}")
+        lines.append("")
+        lines.append("Hard rules (exact T_c / R_★):")
+        for rule in self.hard_rules or list(RSTAR_HARD_RULES):
             lines.append(f"  • {rule}")
         lines.extend(
             [
@@ -483,16 +495,22 @@ def analyze_lemma_star(text: str | None = None) -> LemmaStarReport:
     refusals = detect_proved_refusal(raw)
     shape, texture = _lemma_star_shape_texture()
 
+    inventory = exact_formula_inventory()
     notes = [
         "USER LOCK-IN: Lemma★ is a SHAPE STATEMENT via R_★ — not a viscosity statement.",
         "Under u=av, size optimization cancels ν; decisive form is uniform R_★.",
+        f"Boxed shape form: {inventory['boxed_shape_form']}.",
+        f"Exact Fourier identities encoded in {RSTAR_EXACT_DOC} "
+        "and domain_architect/rstar_quantities.py "
+        "(moments X,Y,Z,Λ; three D_s forms; two-shell; signed T_c; Λ' sign check).",
         "Lemma★ is Millennium packaging (locked), not a side lemma: "
         "Λ blowup prevention → finite enstrophy → global regularity.",
         "Broken at PRODUCT-BLOCK / Agmon-product = missing uniform R_★: "
         "need |T_c|≤C‖u‖₂ X^{3/2} ≡ R_★ ≤ 4θ C_0; ordinary 3D Sobolev/product "
         "estimates INSUFFICIENT from energy alone.",
         "Analytic bottleneck: Bony HH→L (five-lane Attack 3) — still the gap; "
-        "triadic reason NOT WRITTEN.",
+        "triadic reason NOT WRITTEN. HH→L restricted ≠ complete T_c for kill.",
+        "NEVER abs the triad sum. Only complete T_c decides failure.",
         "C₀ geometric-only is already required and does not close the product / R_★ gap.",
         "Five-lane PR #48: K=0 dead ↔ D_s=0 kill; ★ survives numeric kill only ≠ proved "
         "(numeric bound ≠ uniform bound); NS NOT SOLVED.",
@@ -523,6 +541,8 @@ def analyze_lemma_star(text: str | None = None) -> LemmaStarReport:
         five_lane=dict(FIVE_LANE_STATUS),
         shape_form=dict(SHAPE_FORM_STATUS),
         kill_rules=list(R_STAR_KILL_RULES),
+        exact_formulas=inventory,
+        hard_rules=list(RSTAR_HARD_RULES),
         shape=shape,
         texture=texture,
         attack_routes=list(ATTACK_ROUTES),

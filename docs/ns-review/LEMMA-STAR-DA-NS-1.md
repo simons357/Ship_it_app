@@ -3,10 +3,12 @@
 **Audience:** Jonathan R. Simons  
 **Status:** HYPOTHESIS (not proved) — **NS NOT SOLVED**  
 **Tooling:** `python3 -m domain_architect --lemma-star`  
+**Exact Fourier formulas:** [`LEMMA-STAR-EXACT-FORMULAS.md`](./LEMMA-STAR-EXACT-FORMULAS.md) · code `domain_architect/rstar_quantities.py`  
 **Companion:** [`DA-GAP-CLOSURE-PLAYBOOK.md`](./DA-GAP-CLOSURE-PLAYBOOK.md), [`THEOREM-H-ATTACK-PLAN.md`](./THEOREM-H-ATTACK-PLAN.md)  
 **Five-lane drill:** [PR #48](https://github.com/simons357/Ship_it_app/pull/48) · branch `cursor/ns-five-lane-lemma-star-1390` · `docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md`
 
-**USER LOCK-IN (supersedes viscosity-first wording):** Lemma★ is **no longer a viscosity statement. It is a shape statement.** Decisive form: uniform bound on \(\mathcal R_\star(v)\).  
+**USER LOCK-IN (supersedes viscosity-first wording):** Lemma★ is **no longer a viscosity statement. It is a shape statement.** Decisive form: uniform bound on \(\mathcal R_\star(v)\). Under \(u=av\), \(\nu\) cancels. Boxed: \((T_c(v)_+)^2\le 4\theta C_0 D_s(v)\|v\|_2^2 Y(v)\).  
+**Hard rules:** NEVER abs the triad sum; HH→L restricted ≠ complete \(T_c\) for kill; finite small \(\mathcal R_\star\) samples ≠ uniform bound; only complete \(T_c\) decides failure.  
 **Rule of this document:** Broken at PRODUCT-BLOCK / HH→L = missing uniform bound on \(\mathcal R_\star\) → close by …  
 Proving Lemma★ ≡ Clay B in this packaging. DA will **not** green it without that bound.  
 **Refuse:** “almost proved,” “survives numeric ⇒ proved,” “finite samples green ★,” greening language. Numerics ≠ proof. **No SFE glue.**
@@ -43,7 +45,7 @@ If this holds for every divergence-free \(v\) on the torus with one \(C_0(\theta
 \mathcal R_\star(v) = \frac{\bigl(T_c(v)_+\bigr)^2}{D_s(v)\,\|v\|_2^2\,Y(v)}
 \]
 
-**Pure geometry.** Same for \(av\) as \(v\). **Independent of viscosity.**
+**Pure geometry.** Same for \(av\) as \(v\). **Independent of viscosity.** Complete \([T_c]_+\) in the numerator — not an HH→L proxy.
 
 Registry claims: `R-STAR` / `SHAPE-FORM` — equivalent decisive form of `LEMMA-STAR`.
 
@@ -53,6 +55,10 @@ Registry claims: `R-STAR` / `SHAPE-FORM` — equivalent decisive form of `LEMMA-
 - If \(D_s=0\) (one Fourier shell) and \(T_c>0\) → ★ **dead** on that field. Pure single shell: both sides vanish (not a kill). Live kill = almost-single-shell that still stretches. (**Aligns with five-lane: K=0 dead** ↔ \(D_s=0\) kill lane.)
 - If every shape has \(\mathcal R_\star\) below one number → that number is ★ (up to \(4\theta\))
 - A list of fields with small \(\mathcal R_\star\) is **not** that number — only that those shapes did not kill it. **Numerics = evidence only.** Numeric bound ≠ uniform bound.
+
+### Exact Fourier book (moments / \(D_s\) / \(T_c\))
+
+Full identities (linear moments \(X,Y,Z,\Lambda\); three forms of \(D_s\); two-shell closed form; signed triad \(T_k\); \(T_c=M-\Lambda N\); \(\Lambda'=(2/X)(T_c-\nu D_s)\)) live in [`LEMMA-STAR-EXACT-FORMULAS.md`](./LEMMA-STAR-EXACT-FORMULAS.md) and `domain_architect/rstar_quantities.py`.
 
 ### What a proof would have to be
 
@@ -196,8 +202,10 @@ python3 -m domain_architect --splice-screen LEMMA-STAR
 python3 -m domain_architect --theory-express DA-NS-1
 python3 -m domain_architect --shape-compare DA-NS-1 SND-C
 python3 -m domain_architect --gap-closure 'Lemma★: T_c <= theta*nu*(Z-Lambda*Y)+C_0*nu^{-1}*||u||_2^2*X*Lambda'
+python3 -m unittest tests.test_rstar_quantities -v
 python3 scripts/da_lemma_star_demo.py
 ```
 
+**Exact formulas:** [`LEMMA-STAR-EXACT-FORMULAS.md`](./LEMMA-STAR-EXACT-FORMULAS.md).  
 **Inventory:** `data/domain_architect/millennium_books.json` (books `DA-NS-1`, `PRODUCT-BLOCK`), `historical_equations.json` (`LEMMA-STAR001`, `PRODUCT-BLOCK001`, `R-STAR001`), `snd_claim_inventory.json` (`LEMMA-STAR`, `R-STAR`, `SHAPE-FORM`, `PRODUCT-BLOCK`, `FIVE-LANE-LEMMA-STAR`).  
 **Five-lane evidence:** [PR #48](https://github.com/simons357/Ship_it_app/pull/48).

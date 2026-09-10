@@ -36,6 +36,7 @@ from .lemma_star import (
     refuse_proved_lemma_star,
     screen_lemma_star,
 )
+from .rstar_quantities import exact_formula_inventory
 from .theory_splicer import (
     cut,
     express,
@@ -193,8 +194,10 @@ def main(argv: list[str] | None = None) -> int:
         "--lemma-star",
         action="store_true",
         help=(
-            "analyze Lemma★ / DA-NS-1 shape statement via R_★ "
-            "(HYPOTHESIS; broken at PRODUCT-BLOCK / uniform R_★; refuse PROVED / numerics-prove)"
+            "analyze Lemma★ / DA-NS-1 SHAPE form via R_★ "
+            "(exact Fourier formulas in docs/ns-review/LEMMA-STAR-EXACT-FORMULAS.md; "
+            "HYPOTHESIS; broken at PRODUCT-BLOCK / uniform R_★; refuse PROVED / numerics-prove; "
+            "NS not solved; no SFE)"
         ),
     )
     args = parser.parse_args(argv)
@@ -215,6 +218,7 @@ def main(argv: list[str] | None = None) -> int:
         )
         payload = {
             "analysis": report.to_dict(),
+            "exact_formulas": exact_formula_inventory(),
             "screen": screen_rep,
             "shape_compare": shapes,
             "product_block": block,
@@ -228,12 +232,25 @@ def main(argv: list[str] | None = None) -> int:
         else:
             print(report.narrative())
             print()
+            inv = payload["exact_formulas"]
+            print("Exact Fourier formulas (shape form):")
+            print(f"  doc: {inv['doc']}")
+            print(f"  boxed: {inv['boxed_shape_form']}")
+            print(f"  R_★:   {inv['R_star']}")
+            print(f"  D_s:   {len(inv['D_s_forms'])} equivalent forms + two-shell closed form")
+            print(f"  T_c:   signed triad sum (never abs); complete T_c only for kill")
+            print(f"  ns_solved={inv['ns_solved']} sfe={inv['sfe']}")
+            print()
             print(screen_rep["statement"])
             print(f"  lemma welds: {len(screen_rep['lemma_welds'])}")
             print(f"  withheld: {screen_rep['withheld_count']}")
             print()
             print("R_★ kill rules:")
             for rule in report.kill_rules:
+                print(f"  • {rule}")
+            print()
+            print("Hard rules:")
+            for rule in inv["hard_rules"]:
                 print(f"  • {rule}")
             print()
             print("Shape compare:")
