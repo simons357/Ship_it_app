@@ -4,7 +4,7 @@
 
 | Item | Value |
 |------|-------|
-| Tip SHA | `59388025f1e176c01e969d7de89386de206d5659` |
+| Tip SHA | `1d1860e275e2a6e16ae54b73b82b51c026a17c57` |
 | Branch | `cursor/ns-five-lane-lemma-star-1390` |
 | PR | https://github.com/simons357/Ship_it_app/pull/48 |
 | Source | Full `scripts/ns_attacks/` + `tests/test_ns_attacks_lemma_star.py` from that tip |

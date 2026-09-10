@@ -10,7 +10,7 @@
 | Item | Value |
 |------|-------|
 | Branch | `cursor/ns-five-lane-lemma-star-1390` |
-| Tip commit | `1179958d893edbea8a175e14ee59686bd3ab5ac8` (locator); SoT exact lock `013793096ab951648d86eed89634201810bdf9b1` |
+| Tip commit | `1d1860e275e2a6e16ae54b73b82b51c026a17c57` (ns_lemma_star_core); prior locator `1179958d893edbea8a175e14ee59686bd3ab5ac8`; SoT exact lock `013793096ab951648d86eed89634201810bdf9b1` |
 | Tip subject | SoT: Lemma★ canonical shape form exact lock (p+q+r=0; K restricted) |
 | Remote | `origin/cursor/ns-five-lane-lemma-star-1390` |
 | GitHub PR | **https://github.com/simons357/Ship_it_app/pull/48** |
