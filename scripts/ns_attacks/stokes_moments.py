@@ -3,30 +3,44 @@
 Truth-only numerics for Lemma★ / Route N spectral drift attacks.
 Does NOT claim a proof. NS is not solved.
 
-Notation (Foias–Temam / Constantin–Foias style on T^3):
-  E = ||u||_2^2
-  X = ||A^{1/2} u||_2^2 = sum |k|^2 |û(k)|^2
-  Y = ||A u||_2^2       = sum |k|^4 |û(k)|^2
-  Z = ||A^{3/2} u||_2^2 = sum |k|^6 |û(k)|^2
+Exact lock (see docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md):
+
+  T^3 = (R/2πZ)^3
+  v(x) = sum_{k≠0} v_k e^{ik·x},  k·v_k=0,  v_{-k}=conj(v_k)
+  λ_k = |k|^2,  A = -PΔ,  (Av)_k = λ_k v_k
+
+  ||v||_2^2 = sum |v_k|^2           (code alias: E)
+  X = ||A^{1/2}v||_2^2 = sum λ_k |v_k|^2
+  Y = ||Av||_2^2       = sum λ_k^2 |v_k|^2
+  Z = ||A^{3/2}v||_2^2 = sum λ_k^3 |v_k|^2
   Λ = Y/X
-  Ds = Z − Λ Y = X · Var_μ(|k|^2) ≥ 0
-  B(u,u) = P((u·∇)u)
-  N = −⟨B(u,u), A u⟩
-  M = −⟨A B(u,u), A u⟩   (= −⟨B(u,u), A^2 u⟩ by self-adjointness of A)
-  Tc = M − Λ N
+
+  Ds = Z − Λ Y = Z − Y^2/X
+     = sum λ_k (λ_k−Λ)^2 |v_k|^2
+     = (1/(2X)) sum_{k,ℓ} λ_k λ_ℓ (λ_k−λ_ℓ)^2 |v_k|^2 |v_ℓ|^2
+  Two shells α,β with energies e_α,e_β:
+     Ds = α β (α−β)^2 e_α e_β / (α e_α + β e_β)
+
+  B(v,v) = P[(v·∇)v]
+  B̂_k = i P_k sum_{p+q=k} (q·v_p) v_q ,  P_k = I − k⊗k/|k|^2
+  T_k = −Re(B̂_k · conj(v_k)) = sum_{p+q=k} Im[(q·v_p)(v_q·conj(v_k))]
+        (SIGNED Im — never abs)
+  N = −⟨B,Av⟩ = sum λ_k T_k
+  M = −⟨AB,Av⟩ = sum λ_k^2 T_k
+  Tc = M − Λ N = sum λ_k (λ_k−Λ) T_k
+     = sum_{p+q=k} λ_k (λ_k−Λ) Im[(q·v_p)(v_q·conj(v_k))]
+
+  Sign check: Λ' = 2/X (Tc − ν Ds)
+
+  R_★(v) = (Tc)^2 / (Ds · ||v||_2^2 · Y)   (amp- and ν-invariant)
+  code: ratio_R_star_shape  (alias ratio_R_star)
 
 Lemma★ — CANONICAL SHAPE FORM (OPEN; NS not solved):
-  (Tc(v))^2 ≤ C_geom · Ds(v) · E(v) · Y(v)
-  R_star_shape(v) := Tc(v)^2 / (Ds(v) E(v) Y(v))   (amp- and ν-invariant)
-Viscosity packaging (equivalent via Young / u=av optimizing a):
-  Tc ≤ θ ν Ds + C0 ν^{-1} E X Λ    with C0 = C_geom / (4θ)
-since X Λ = Y.
+  (Tc(v))^2 ≤ C_geom · Ds(v) · ||v||_2^2 · Y(v)
 
-Survivor bound from Attack 2 (K=0 killed):
-  Tc ≤ θ ν Ds + C* X^{3/2} Λ
-
-Kill criteria (shape): R_star_shape → ∞; or Ds=0 with Tc>0.
+Kill criteria (shape): R_★ → ∞; or Ds=0 with Tc≠0.
 Pure single shell (Tc=0=Ds) is vacuous. Live attempt: almost-single-shell.
+HH→L can identify mechanism; only complete signed Tc kills ★.
 """
 
 from __future__ import annotations
@@ -77,6 +91,7 @@ def scale_field(field: Field, B: float) -> Field:
 
 
 def moments(field: Field) -> Dict[str, float]:
+    """Linear Stokes moments. E := ||v||_2^2 = sum |v_k|^2."""
     E = X = Y = Z = 0.0
     for k, v in field.items():
         amp2 = float(np.vdot(v, v).real)
@@ -100,8 +115,54 @@ def moments(field: Field) -> Dict[str, float]:
     }
 
 
+def Ds_variance_sum(field: Field, Lambda: float | None = None) -> float:
+    """Ds = sum_k λ_k (λ_k − Λ)^2 |v_k|^2."""
+    if Lambda is None:
+        Lambda = moments(field)["Lambda"]
+    s = 0.0
+    for k, v in field.items():
+        lam = k_norm2(k)
+        if lam == 0:
+            continue
+        amp2 = float(np.vdot(v, v).real)
+        s += lam * (lam - Lambda) ** 2 * amp2
+    return s
+
+
+def Ds_double_sum(field: Field) -> float:
+    """Ds = (1/(2X)) sum_{k,ℓ} λ_k λ_ℓ (λ_k−λ_ℓ)^2 |v_k|^2 |v_ℓ|^2."""
+    modes = [(k_norm2(k), float(np.vdot(v, v).real)) for k, v in field.items() if k_norm2(k) > 0]
+    X = sum(lam * e for lam, e in modes)
+    if X <= 0:
+        return float("nan")
+    acc = 0.0
+    for lam_k, ek in modes:
+        for lam_l, el in modes:
+            acc += lam_k * lam_l * (lam_k - lam_l) ** 2 * ek * el
+    return acc / (2.0 * X)
+
+
+def Ds_two_shell(alpha: float, beta: float, e_alpha: float, e_beta: float) -> float:
+    """Two-eigenvalue closed form: αβ(α−β)^2 e_α e_β / (α e_α + β e_β)."""
+    denom = alpha * e_alpha + beta * e_beta
+    if denom <= 0:
+        return float("nan")
+    return (alpha * beta * (alpha - beta) ** 2 * e_alpha * e_beta) / denom
+
+
+def shell_energies(field: Field) -> Dict[float, float]:
+    """Map λ = |k|^2 → e_λ = sum_{|k|^2=λ} |v_k|^2."""
+    shells: Dict[float, float] = {}
+    for k, v in field.items():
+        lam = k_norm2(k)
+        if lam == 0:
+            continue
+        shells[lam] = shells.get(lam, 0.0) + float(np.vdot(v, v).real)
+    return shells
+
+
 def nonlinear_B(field: Field) -> Field:
-    """B(u,u) = P((u·∇)u) in Fourier: i sum_{p+q=k} (û(p)·q) û(q), then Leray."""
+    """B(v,v)=P[(v·∇)v]: B̂_k = i P_k sum_{p+q=k} (q·v_p) v_q."""
     keys = list(field.keys())
     raw: Field = {}
     for p in keys:
@@ -111,8 +172,9 @@ def nonlinear_B(field: Field) -> Field:
             k = (p[0] + q[0], p[1] + q[1], p[2] + q[2])
             if k == (0, 0, 0):
                 continue
-            # (u·∇) contribution: i (û(p)·q) û(q)
-            coeff = 1j * np.dot(up, np.array(q, dtype=np.float64))
+            # (q · v_p) with q real — same as (v_p · q)
+            q_vec = np.array(q, dtype=np.float64)
+            coeff = 1j * np.dot(q_vec, up)
             contrib = coeff * uq
             raw[k] = raw.get(k, np.zeros(3, dtype=np.complex128)) + contrib
     out: Field = {}
@@ -121,10 +183,61 @@ def nonlinear_B(field: Field) -> Field:
     return out
 
 
+def triad_Im_transfer(field: Field) -> Dict[ModeKey, float]:
+    """T_k = sum_{p+q=k} Im[(q·v_p)(v_q · conj(v_k))]  (signed; no abs).
+
+    Equivalent to −Re(B̂_k · conj(v_k)) with Leray-projected B̂.
+    """
+    Buu = nonlinear_B(field)
+    Tk: Dict[ModeKey, float] = {}
+    for k, vk in field.items():
+        if k_norm2(k) == 0:
+            continue
+        bk = Buu.get(k, np.zeros(3, dtype=np.complex128))
+        # −Re(B̂_k · conj(v_k)) = −Re(⟨B̂_k, v_k⟩) with ⟨a,b⟩=a·conj(b)? 
+        # With Euclidean: B̂·conj(v) = sum_j B_j conj(v_j) = ⟨v, B⟩ in numpy vdot(B,v)? 
+        # np.vdot(bk, vk) = sum conj(bk_i)*vk_i, so Re(B̂·conj(v)) = Re(sum B_i conj(v_i))
+        # = Re(sum conj(conj(B_i) v_i)) = Re(conj(np.vdot(bk, vk))) = Re(np.vdot(vk, bk))
+        # Simpler: Re(B̂ · conj(v)) = Re(np.dot(bk, np.conjugate(vk)))
+        Tk[k] = -float(np.dot(bk, np.conjugate(vk)).real)
+    return Tk
+
+
+def Tc_from_triads(field: Field, Lambda: float | None = None) -> float:
+    """Complete signed Tc = sum_{p+q=k} λ_k(λ_k−Λ) Im[(q·v_p)(v_q·conj(v_k))]."""
+    if Lambda is None:
+        Lambda = moments(field)["Lambda"]
+    keys = list(field.keys())
+    Tc = 0.0
+    for p in keys:
+        vp = field[p]
+        for q in keys:
+            vq = field[q]
+            k = (p[0] + q[0], p[1] + q[1], p[2] + q[2])
+            if k == (0, 0, 0) or k not in field:
+                continue
+            lam = k_norm2(k)
+            if lam == 0:
+                continue
+            vk = field[k]
+            q_vec = np.array(q, dtype=np.float64)
+            # After Leray: Im term matches −Re(B̂·conj(v)) only with projected B.
+            # Direct Im[(q·vp)(vq·conj(vk))] is the pre-projection triad; for
+            # divergence-free fields P_k^* v_k = v_k so the projected form agrees
+            # when summed against v_k. Use projected contribution for exact match.
+            coeff = 1j * np.dot(q_vec, vp)
+            raw = coeff * vq
+            bk_contrib = leray_project(k, raw)
+            tk_piece = -float(np.dot(bk_contrib, np.conjugate(vk)).real)
+            Tc += lam * (lam - Lambda) * tk_piece
+    return Tc
+
+
 def N_and_M(field: Field) -> Tuple[float, float, Field]:
-    """Return N, M, B(u,u) with
-    N = −⟨B, A u⟩ = − sum |k|^2 ⟨B_k, û_k⟩
-    M = −⟨B, A^2 u⟩ = − sum |k|^4 ⟨B_k, û_k⟩
+    """Return N, M, B(v,v) with
+    N = −⟨B, A v⟩ = sum λ_k T_k
+    M = −⟨AB, A v⟩ = sum λ_k^2 T_k
+    where T_k = −Re(B̂_k · conj(v_k)).
     """
     Buu = nonlinear_B(field)
     N = 0.0 + 0.0j
@@ -136,15 +249,32 @@ def N_and_M(field: Field) -> Tuple[float, float, Field]:
             continue
         uk = field.get(k, np.zeros(3, dtype=np.complex128))
         bk = Buu.get(k, np.zeros(3, dtype=np.complex128))
-        ip = np.vdot(bk, uk)
-        N -= kn2 * ip
-        M -= (kn2 * kn2) * ip
+        # T_k = −Re(B̂·conj(u)); N = sum λ T_k
+        Tk = -np.dot(bk, np.conjugate(uk))
+        N += kn2 * Tk
+        M += (kn2 * kn2) * Tk
     return float(N.real), float(M.real), Buu
+
+
+def Lambda_prime_rhs(Tc: float, Ds: float, X: float, nu: float) -> float:
+    """Λ' = 2/X (Tc − ν Ds)."""
+    if X <= 0:
+        return float("nan")
+    return (2.0 / X) * (Tc - nu * Ds)
+
+
+def Lambda_prime_from_XY(N: float, M: float, X: float, Y: float, Z: float, nu: float) -> float:
+    """Λ' from X'=-2νY+2N, Y'=-2νZ+2M (sign convention identity)."""
+    if X <= 0:
+        return float("nan")
+    Xp = -2.0 * nu * Y + 2.0 * N
+    Yp = -2.0 * nu * Z + 2.0 * M
+    return (Yp * X - Y * Xp) / (X * X)
 
 
 @dataclass
 class ProbeResult:
-    E: float
+    E: float  # ||v||_2^2
     X: float
     Y: float
     Z: float
@@ -166,6 +296,11 @@ class ProbeResult:
     B_L2: float
     label: str = ""
 
+    @property
+    def ratio_R_star(self) -> float:
+        """Alias for complete quotient R_★ = Tc^2 / (Ds ||v||_2^2 Y)."""
+        return self.ratio_R_star_shape
+
 
 def probe(field: Field, label: str = "") -> ProbeResult:
     field = enforce_reality(field)
@@ -182,7 +317,7 @@ def probe(field: Field, label: str = "") -> ProbeResult:
     denom_star = E * X * Lam if E > 0 and X > 0 and Lam > 0 else float("nan")
     denom_pre = (np.sqrt(E) * X * Lam) if E > 0 and X > 0 and Lam > 0 else float("nan")
     denom_cstar = (X ** 1.5) * Lam if X > 0 and Lam > 0 else float("nan")
-    # Shape★: Tc^2 / (Ds E Y); XΛ = Y so this is Tc^2 / (Ds E X Λ)
+    # Shape★: Tc^2 / (Ds ||v||_2^2 Y); XΛ = Y
     denom_R_star_shape = Ds * E * Y if E > 0 and Y > 0 and Ds > 1e-30 else float("nan")
 
     def div(num: float, den: float) -> float:
@@ -311,7 +446,7 @@ def bony_channel_split(field: Field, k_cut: float) -> Dict[str, float]:
             k = (p[0] + q[0], p[1] + q[1], p[2] + q[2])
             if k == (0, 0, 0):
                 continue
-            coeff = 1j * np.dot(up, np.array(q, dtype=np.float64))
+            coeff = 1j * np.dot(np.array(q, dtype=np.float64), up)
             contrib = leray_project(k, coeff * uq)
             if pn >= k_cut and qn >= k_cut:
                 ch = "HH"

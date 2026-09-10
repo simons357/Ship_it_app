@@ -52,7 +52,7 @@ def Tc_by_channel(field, k_cut: float) -> dict:
             k = (p[0] + q[0], p[1] + q[1], p[2] + q[2])
             if k == (0, 0, 0):
                 continue
-            coeff = 1j * np.dot(up, np.array(q, dtype=np.float64))
+            coeff = 1j * np.dot(np.array(q, dtype=np.float64), up)
             contrib = leray_project(k, coeff * uq)
             if pn >= k_cut and qn >= k_cut:
                 ch = "HH"
@@ -73,9 +73,9 @@ def Tc_by_channel(field, k_cut: float) -> dict:
             if kn2 == 0:
                 continue
             uk = field.get(k, np.zeros(3, dtype=np.complex128))
-            ip = np.vdot(bk, uk)
-            N -= kn2 * ip
-            M -= (kn2 * kn2) * ip
+            Tk = -np.dot(bk, np.conjugate(uk))
+            N += kn2 * Tk
+            M += (kn2 * kn2) * Tk
         N = float(N.real)
         M = float(M.real)
         out[ch] = {"N": N, "M": M, "Tc": M - Lam * N}
