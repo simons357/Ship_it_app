@@ -96,12 +96,13 @@ NS_LINES = [
         "n": 6,
         "status": "write",
         "text": (
-            "WRITE. Live leftover: H1 (A_bad a priori on a cylinder Q_r). "
+            "WRITE. Live leftover: H1 = Lemma I on the ball (A_bad a priori on Q_r). "
+            "Not global H. Lemma C is an if, not an H. Do not merge letters. "
             "Object: ∬_Bad |ω(x)|²|ω(y)|/|z|³ φ ≲ (ν/8)∬|∇ω|² φ + C r^{-2}∬|ω|². "
             "Not a theorem. Three unwritten shapes: (1) thinness / HLS gain, "
             "(2) J on folds + Vitali, (3) NSE forbids alternatives on r²/ν. "
+            "If H1 sits and H2-from-energy does not, the cylinder is still open. "
             "Not in the literature under another name. "
-            "Attempted 10 Sep: mid-Bad is H3-class; near-Bad hits Morrey. Still open. "
             "H2 a priori from energy also open. H3 = A_ext ≲ r^{-3/2}∫ E^{1/2} E_loc dt, a priori open. "
             "R_phi cutoff is not free. Closed budget implies local Serrin, not CKN. "
             "No K(t). No Q1. Other writings of the same leftover: int R, A1, A2, killing field, DA-NS-2."

@@ -47,9 +47,10 @@ docs/SHARE-MAPS.md
 Overnight NS score (DA-NS-2 is leftover 6):
 docs/DA-NS-2.md
 
-Live unaug packet (H1 open; object + 3 shapes):
-docs/UNAUGMENTED-NS-CHAIN.md
+Live unaug packet (H1 open; do not merge letters):
+docs/H-SYSTEM.md
 docs/H1-OBJECT.md
+docs/UNAUGMENTED-NS-CHAIN.md
 Writing gaps: docs/GAPS_DESTROYED.md
 
 Latest three chains plus the others:

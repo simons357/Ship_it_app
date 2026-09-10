@@ -1,6 +1,8 @@
 # H1 as an object you can hold
 
-It is not in hand as a theorem. Good pairs are already gone. Flux is H2. Exterior is H3.
+Alias: WRITE (6) = Lemma I on the ball. Same leftover. Not a new name.
+It is not in hand as a theorem. Good pairs are already gone (Lemma C). Flux is H2. Exterior is H3.
+Do not merge with global H. Glossary: [`H-SYSTEM.md`](H-SYSTEM.md).
 
 ## H1
 
@@ -28,8 +30,10 @@ Prove one of these, and you have H1. None of them is written.
 2. **J on folds only.** Every persistent-bad pair in \(Q_r\) sits in a fold (geometry A), not a sheet or a gap, so \(\int_{B_{2\rho}}|\nabla\omega|^2\gtrsim\Lambda^2\rho^2\) and a Vitali sum closes.
 3. **Dynamics.** NSE forbids 2’s alternatives on the time scale \(r^2/\nu\).
 
-Next work is 1, 2, or 3 on one cylinder — not a new name.
+Next work is 1, 2, or 3 on one cylinder — not a new leftover name. Lemma I is an alias of H1.
 
 Do not cash “assume thin” as 1 (that is Lemma C). Do not cash Lemma J on generic fields as 2. Do not cash an imposed waiting time as 3.
 
-Literature: H1 is not in the record under another name. Closest cousins (Grujić 2009, Grujić–Guberović 2010) are still ifs. §14 of the packet.
+Work H1. Keep H2 and H3 labeled. Lemma C stays an if. If H1 sits and H2-from-energy does not, the cylinder is still open.
+
+Literature: H1 is not in the record under another name. Closest cousins (Grujić 2009, Grujić–Guberović 2010) are still ifs. Packet §14.

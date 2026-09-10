@@ -18,11 +18,12 @@ Object: \(X=\|\omega\|_2^2\) on the classical
 equation. Keep \(1/r^4\). No \(Q_1\).
 
 Have (1)–(5). WRITE (6) open. Live leftover on
-this path: **H1** (\(A_{\mathrm{bad}}\) on \(Q_r\)).
-H2 a priori from energy also open. H3
-(\(A_{\mathrm{ext}}\)) named, a priori open.
-Do not reprove Lemma C. Do not add \(K(t)\).
-\(R_\phi\) is not free.
+this path: **H1 = Lemma I on the ball**
+(\(A_{\mathrm{bad}}\) on \(Q_r\)). Not global H.
+Lemma C is an if, not an H. H2 a priori
+from energy also open. H3 named, a priori
+open. \(R_\phi\) is not free. Do not merge
+letters: [`H-SYSTEM.md`](H-SYSTEM.md).
 
 Do not: \(\Phi\), \(n=64\), leftover-close B42,
 BKM from \(L^2\), export A.

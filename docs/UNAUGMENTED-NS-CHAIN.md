@@ -4,7 +4,7 @@
 **Use.** This is the live unaugmented-chain document.  
 **Status.** Proof *chain*. Last estimate open. No augmentation, no \(K(t)\), no Q-stack. Only \(\nu\Delta u\).
 
-Desk: leftover WRITE (6) on this path is **H1** (\(A_{\mathrm{bad}}\) a priori). **H2** a priori from energy is also open. **H3** (\(A_{\mathrm{ext}}\)) is a named remainder; a priori from energy is open. \(R_\phi\) is not free. Lemma C is a criterion, not alignment. Theorem A is a different PDE. DA-NS-2 and the old \(\int\mathcal R\) line are other writings of the same leftover, not this packet’s next write. Keep Biot–Savart at \(1/r^4\). Do not add \(Q_1\).
+Desk: leftover WRITE (6) on this path is **H1 = Lemma I on the ball** (\(A_{\mathrm{bad}}\) a priori). Do not merge with global **H**. Lemma C is an if, not an H. **H2** a priori from energy is also open. **H3** (\(A_{\mathrm{ext}}\)) is a named remainder; a priori from energy is open. \(R_\phi\) is not free. If H1 sits and H2-from-energy does not, the cylinder is still open. Theorem A is a different PDE. DA-NS-2 and the old \(\int\mathcal R\) line are other writings of the same leftover, not this packet’s next write. Keep Biot–Savart at \(1/r^4\). Do not add \(Q_1\). Glossary: [`H-SYSTEM.md`](H-SYSTEM.md).
 
 Machine write-up: [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md).  
 Barycenter sibling (not this path): [`DA-NS-2.md`](DA-NS-2.md).  
@@ -34,6 +34,8 @@ S_{\mathrm{tot}}=\int\alpha|\omega|^2\,dx,\qquad
 \]
 
 Parabolic cylinder: \(Q_r(x_0,t_0)=B_r(x_0)\times(t_0-r^2,t_0]\).
+
+H-system (do not merge letters): [`H-SYSTEM.md`](H-SYSTEM.md). **H** = global stretching (parent, open). **Lemma C** = Good pairs, an if, not an H. **H1 = WRITE (6) = Lemma I on the ball** = Bad pairs on \(Q_r\) (the request). **H2** = annulus flux. **H3** = exterior Biot–Savart. A cylinder closes only if \(\mathrm{C}+R_\phi\), H1, H2-a priori (or CKN-small), and H3 all sit. Local Serrin then, not CKN. If H1 sits and H2-from-energy does not, the cylinder is still open.
 
 ---
 
@@ -235,6 +237,8 @@ On Bad, \(|\sin\varphi|\) is large, so the kernel is not improved.
 WRITE (6) was attempted on one cylinder (§12). It did not close. H1 as a holdable object, and the only three shapes that still look like it, are §13. Literature check: §14. H1 is not in the record under another name.
 
 Next work is **1, 2, or 3 on one cylinder** — not a new name. Do not reprove Lemma C. Do not add \(K(t)\). Keep **H1, H2, H3, \(R_\phi\)** separate.
+
+Work H1. Keep H2 and H3 labeled. Lemma C stays an if. If H1 sits and H2-from-energy does not, the cylinder is still open. Glossary: [`H-SYSTEM.md`](H-SYSTEM.md).
 
 DA will not emit H1 and call it proved.
 
