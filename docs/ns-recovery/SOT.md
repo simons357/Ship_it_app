@@ -51,3 +51,4 @@ H1 on the cylinder is the other live track if the packet line is shelved. It is 
 | `tests/test_same_shell_packet.py` | Locks 48 / 288 / \(d=2\) zeros / \(O(m)\) not \(O(m^2)\) |
 | `docs/ns-recovery/SAME-SHELL-PACKET-NOTE.md` | Expanded packet note |
 | `docs/ns-recovery/CENTERED-SPECTRAL-DRIFT-MASTER-REPORT.md` | Prior-source recovery; exact Stokes-moment paste still missing |
+| `docs/ns-recovery/five-lane-pack/` | **PR #48 five-lane / Lemma★ pack** recovered 10 Sep 2026. Index: `five-lane-pack/HIT.md`. Live: https://github.com/simons357/Ship_it_app/pull/48 |
