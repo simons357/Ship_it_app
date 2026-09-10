@@ -95,7 +95,9 @@ fold). \(J/X\) falls.
 Fixed circulation, \(\rho\) down:
 thinness stays \(O(1)\) (1.51 at
 \(\rho=0.28\), 1.30 at \(\rho=0.60\)).
-From Biot–Savart, not a picture. Not H1.
+From Biot–Savart, not a picture. A sample
+of an approximately low-pass field, not
+Lemma P1 ([`H1-P1.md`](H1-P1.md)). Not H1.
 Thinness without stretching is not the
 close.
 

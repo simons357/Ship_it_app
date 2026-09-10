@@ -39,6 +39,8 @@ J=0 by imposed strain; pair thinness
 O(1) from Biot–Savart).
 Estimate package OPEN, not a GR close:
 docs/DOOR-B-H1-ESTIMATE-PLAN.md
+P1 low-pass Biot–Savart sits (not H1):
+docs/H1-P1.md
 L∞ sketch (MISSING marks):
 docs/DOOR-B-H1-B5-LINFTY-SKETCH.md
 Outside-E identity blocked. Enumerator

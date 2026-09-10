@@ -16,8 +16,11 @@ class H1EstimatePackageTests(unittest.TestCase):
         self.assertIn("**OPEN. Not a GR close.", text)
         self.assertIn("Outside-\\(\\mathcal{E}\\) identity: **blocked**.", text)
         self.assertIn("Lattice closure enumerator", text)
-        self.assertIn("Zero boxes sit", text)
+        self.assertIn("One box sits (P1 on a stated class)", text)
+        self.assertIn("NSE-class", text)
+        self.assertIn("H1-P1.md", text)
         self.assertNotIn("NS is solved", text)
+        self.assertNotIn("Zero boxes sit", text)
 
     def test_sketch_keeps_missing_marks(self):
         text = SKETCH.read_text()

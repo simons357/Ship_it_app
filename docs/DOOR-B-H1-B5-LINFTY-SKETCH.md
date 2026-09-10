@@ -112,13 +112,23 @@ E_{\mathrm{tube}}
 
 is the 1-D budget.
 
-**MISSING-4.** This inequality as an
-estimate on the class, not on one pair.
-A Gaussian pair gave a number
-\(\simeq 1.3\)–\(1.5\). Straight-tube
-self-stretch was \(0\) (no axial strain).
-Thinness without stretching is not H1.
-Do not cash “assume thin” (Lemma C).
+**Lemma P1 (sits).** On the low-pass class
+\(\widehat{\omega}(k)=0\) for \(|k|>K\),
+\(\int|\omega|^2\le K^2\int|u|^2\). If
+\(K\le C/\rho\), the display above holds
+with global energy. File: [`H1-P1.md`](H1-P1.md).
+
+**MISSING-4.** NSE membership in that
+class. Localized tube energy (cutoff) is
+not written. A Gaussian pair gave a
+number \(\simeq 1.3\)–\(1.5\); that is a
+sample, not the lemma. High-pass at the
+same \(\rho\) breaks the \(O(1)\) claim.
+Straight-tube self-stretch was \(0\)
+(no axial strain). Thinness without
+stretching is not H1. Do not cash
+“assume thin” (Lemma C). Do not cash
+Lemma P1 as WRITE (6).
 
 **4. Waiting, or no viscosity.**
 Viscosity eats the tube on
@@ -170,6 +180,8 @@ Do not paste a lattice peak in as
 
 ## What would fill the sketch
 
+Lemma P1 replaced the *number* in
+MISSING-4. Membership is still MISSING-4.
 Replace MISSING-1–5 by estimates. Then
 MISSING-6 is ordinary BKM on a cylinder.
 MISSING-7–8 are still not GR. MISSING-9

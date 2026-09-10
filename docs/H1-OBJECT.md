@@ -33,16 +33,17 @@ The kernel on Bad is still \(|z|^{-3}\). HLS turns that into local \(E^3\). The 
 
 ## The only shapes that still look like H1
 
-Prove one of these, and you have H1. None of them is written.
+Prove one of these, and you have H1. P1-lowpass is written and sits. NSE membership is not. Shapes 2 and 3 are not.
 
 1. **Thinness.** Bad-pair measure in each \(B_r\) is small enough that HLS picks up a factor that turns \(E^3\) into \(E^2\) or into dissipation.
 2. **J on folds only.** Every persistent-bad pair in \(Q_r\) sits in a fold (geometry A), not a sheet or a gap, so \(\int_{B_{2\rho}}|\nabla\omega|^2\gtrsim\Lambda^2\rho^2\) and a Vitali sum closes.
 3. **Dynamics.** NSE forbids 2’s alternatives on the time scale \(r^2/\nu\).
 
-Next work is 1, 2, or 3 on one cylinder — not a new leftover name. Lemma I is an alias of H1.
+Next work is 1, 2, or 3 on one cylinder, or NSE membership in the P1 class — not a new leftover name. Lemma I is an alias of H1. Do not cash Lemma P1 as 1.
 
 The three shapes as estimates (not proved): [`H1-SHAPES.md`](H1-SHAPES.md).
 CS-summable volume thinness stays the \(E^{3/2}\) class, not H1.
+P1 low-pass Biot–Savart sits on a stated class, not on NSE leftover fields: [`H1-P1.md`](H1-P1.md).
 Lookups: all miss. [`LOOKUP-H1.md`](LOOKUP-H1.md).
 
 Do not cash “assume thin” as 1 (that is Lemma C). Do not cash Lemma J on generic fields as 2. Do not cash an imposed waiting time as 3.

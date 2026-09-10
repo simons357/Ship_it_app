@@ -60,10 +60,15 @@ picture:
 \text{energy captured by the tube}.
 \]
 
-A Gaussian pair gave this as a *number*
-(\(\simeq 1.3\)–\(1.5\)). That is not the
-estimate. CS-summable volume thinness is
-still \(E^{3/2}\), not H1.
+**Lemma P1 sits** on the low-pass class
+(\(\widehat{\omega}(k)=0\) for \(|k|>K\le C/\rho\)):
+\(\rho^2\int|\omega|^2\le C^2\int|u|^2\).
+File: [`H1-P1.md`](H1-P1.md). A Gaussian
+pair was a sample, not the estimate.
+NSE membership is open. Localized tube
+energy (cutoff) is not written.
+CS-summable volume thinness is still
+\(E^{3/2}\), not H1.
 
 **P2. J on folds.**
 
@@ -123,7 +128,8 @@ Estimate-complete \(\neq\) GR close
 
 | Box | Estimate? | Now |
 |---|---|---|
-| P1 thinness, uniform in the class, from Biot–Savart | no | one pair, a number |
+| P1 thinness on the low-pass class, from Biot–Savart | **yes** | [`H1-P1.md`](H1-P1.md) |
+| P1 membership: NSE puts Bad on that class | no | high-pass is a counterexample |
 | P2 \(J=O(1)\) independent of \(\lvert\omega\rvert\), or paid | no | ABC: \(J\sim A\) |
 | P3 waiting derived, or viscosity-free geometric bound | no | snapshot; Burgers locked |
 | P4 every MISSING in the B5 sketch filled | no | sketch only |
@@ -131,8 +137,9 @@ Estimate-complete \(\neq\) GR close
 | Outside-\(\mathcal{E}\) identity | blocked | no candidate |
 | Uniform triadic bound on \(\mathcal R_\star\) | open | enumerator still on ★ |
 
-Zero boxes sit. The package can live on
-disk in that state. That is not a close.
+One box sits (P1 on a stated class). NSE-class
+boxes do not. The package is not
+estimate-complete. That is not a close.
 
 ---
 
@@ -147,9 +154,11 @@ A kill of packaging is not a kill of NS.
 
 ## Next
 
-Fill one MISSING in the B5 sketch, or one
-box on the bar, as an estimate.
+P1-lowpass sits. Next is still one hole
+as an estimate: P1 membership, or P2, or
+P3, or one MISSING in the B5 sketch.
 Do not write a new leftover name.
+Do not cash Lemma P1 as WRITE (6).
 Do not wait for the ★ enumerator to finish
 before writing H1, and do not merge the
 lanes when it does.

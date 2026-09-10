@@ -55,6 +55,11 @@ from energy.
 
 **Lookup 1.** Miss. See [`LOOKUP-H1.md`](LOOKUP-H1.md).
 
+**Not this, and not H1.** Frequency thinness
+of a low-pass field is Lemma P1. It sits.
+[`H1-P1.md`](H1-P1.md). It does not thin the
+Bad set, and it does not drop the kernel.
+
 ---
 
 ## 2. J on folds only

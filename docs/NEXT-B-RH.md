@@ -41,6 +41,8 @@ None of 1, 2, 3 is proved. H1 object:
 direction bound is REPAIR. Estimate
 package (OPEN, not a GR close):
 [`DOOR-B-H1-ESTIMATE-PLAN.md`](DOOR-B-H1-ESTIMATE-PLAN.md).
+P1 low-pass Biot–Savart (sits; not H1):
+[`H1-P1.md`](H1-P1.md).
 \(L^\infty\) sketch with MISSING marks:
 [`DOOR-B-H1-B5-LINFTY-SKETCH.md`](DOOR-B-H1-B5-LINFTY-SKETCH.md).
 Outside-\(\mathcal{E}\) identity blocked

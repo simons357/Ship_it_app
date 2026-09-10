@@ -99,6 +99,7 @@ Dream-team read: they would sign the map, not (6). [`DREAM-TEAM-H.md`](DREAM-TEA
 3. Dynamics: NSE forbids 2’s alternatives on the scale \(r^2/\nu\).
 
 Shapes written as estimates, not proved: [`H1-SHAPES.md`](H1-SHAPES.md).
+P1 low-pass Biot–Savart sits on a stated class, not as (6): [`H1-P1.md`](H1-P1.md).
 Lookups: all miss. [`LOOKUP-H1.md`](LOOKUP-H1.md).
 
 ---
