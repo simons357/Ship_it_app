@@ -33,7 +33,10 @@ H1, H2-a priori (or CKN-small), and H3.
 Local Serrin then, not CKN. Object:
 docs/H1-OBJECT.md. Tube SoT (opened):
 docs/H1-SOT.md. First tube numbers:
-docs/H1-TUBE.md. Gaps: §11. Literature:
+docs/H1-TUBE.md
+(ABC stretch ~ A, not C(ρ,L); Burgers
+J=0 by imposed strain; pair thinness
+O(1) from Biot–Savart). Gaps: §11. Literature:
 docs/LITERATURE-H.md (H1 not under another
 name). Lookups: all miss. docs/LOOKUP-H1.md.
 Shapes as estimates, not proved:
