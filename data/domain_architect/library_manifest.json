@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-08-28T08:49:28.666485+00:00",
+  "scanned_at": "2026-09-10T09:29:56.446550+00:00",
   "source_files": [
     "data/domain_architect/historical_equations.json",
     "data/domain_architect/snd_tweet_equations.json",
@@ -1049,12 +1049,12 @@
         "shape_id": "shape-SND-HYP-PH\u03c8\u03bb\u03a6E-73d0f1eb7ee5",
         "source": "Assume SND: inf_t J(t)/X(t) >= c_* > 0 on unaugmented NS (hypothesis)",
         "fingers": {
-          "P": "admissibility",
-          "E": "environment",
-          "\u03c8": "state",
           "H": "interaction",
           "\u03a6": "realized_output",
-          "\u03bb": "scale_response"
+          "P": "admissibility",
+          "\u03bb": "scale_response",
+          "E": "environment",
+          "\u03c8": "state"
         },
         "role_topology": [
           "unresolved"
@@ -1106,12 +1106,12 @@
         "shape_id": "shape-SND-C-PH\u03c8\u03bb\u03a6E-c1abef5378cb",
         "source": "SND-C under X<=M, rho<=rho_0, X>=delta_*: |Pi_{j*}| <= C_*(nu,delta_*,M,rho_0)",
         "fingers": {
-          "P": "admissibility",
-          "E": "environment",
-          "\u03c8": "state",
           "H": "interaction",
           "\u03a6": "realized_output",
-          "\u03bb": "scale_response"
+          "P": "admissibility",
+          "\u03bb": "scale_response",
+          "E": "environment",
+          "\u03c8": "state"
         },
         "role_topology": [
           "unresolved"
@@ -1218,12 +1218,12 @@
         "shape_id": "shape-SND-C-PH\u03c8\u03bb\u03a6E-c1abef5378cb",
         "source": "Theorem H: (X>=delta_*, X<=M, rho<=rho_0) => SND-C with C_*=C_*(nu,delta_*,M,rho_0,C_S)",
         "fingers": {
-          "P": "admissibility",
-          "E": "environment",
-          "\u03c8": "state",
           "H": "interaction",
           "\u03a6": "realized_output",
-          "\u03bb": "scale_response"
+          "P": "admissibility",
+          "\u03bb": "scale_response",
+          "E": "environment",
+          "\u03c8": "state"
         },
         "role_topology": [
           "unresolved"
@@ -1328,12 +1328,12 @@
         "shape_id": "shape-NS-Q1-PH\u03c8\u03bb\u03a6E-623a2b33aa9d",
         "source": "Q1: partial_t u + (u\u00b7\u2207)u = -\u2207p + \u03bd\u0394u - \u03b5(-\u0394)^{1+\u03b4}u",
         "fingers": {
-          "P": "admissibility",
-          "E": "environment",
-          "\u03c8": "state",
           "H": "interaction",
           "\u03a6": "realized_output",
-          "\u03bb": "scale_response"
+          "P": "admissibility",
+          "\u03bb": "scale_response",
+          "E": "environment",
+          "\u03c8": "state"
         },
         "role_topology": [
           "unresolved"
@@ -1377,12 +1377,12 @@
         "shape_id": "shape-RING-BVB-PH\u03c8\u03bb\u03a6E-cda460770d50",
         "source": "Ring Lemma: on shell S_{j*}, direction of omega is Lipschitz on E_c={|omega|>=c 2^{j*}||u||_{L2}}",
         "fingers": {
-          "P": "admissibility",
-          "E": "environment",
-          "\u03c8": "state",
           "H": "interaction",
           "\u03a6": "realized_output",
-          "\u03bb": "scale_response"
+          "P": "admissibility",
+          "\u03bb": "scale_response",
+          "E": "environment",
+          "\u03c8": "state"
         },
         "role_topology": [
           "unresolved"
@@ -1434,12 +1434,12 @@
         "shape_id": "shape-RING-BVB-PH\u03c8\u03bb\u03a6E-cda460770d50",
         "source": "BVB on E_c: weighted integral bound linking vorticity direction to shell flux (band-limited)",
         "fingers": {
-          "P": "admissibility",
-          "E": "environment",
-          "\u03c8": "state",
           "H": "interaction",
           "\u03a6": "realized_output",
-          "\u03bb": "scale_response"
+          "P": "admissibility",
+          "\u03bb": "scale_response",
+          "E": "environment",
+          "\u03c8": "state"
         },
         "role_topology": [
           "unresolved"
@@ -1536,12 +1536,12 @@
         "shape_id": "shape-BOOT-M-PH\u03c8\u03bb\u03a6E-6ead91f1088b",
         "source": "Bootstrap lemma (OPEN): M = M(||u0||_{H^1}) s.t. X(t)<=M for all t in [0,T*) without circular input to Theorem H",
         "fingers": {
-          "P": "admissibility",
-          "E": "environment",
-          "\u03c8": "state",
           "H": "interaction",
           "\u03a6": "realized_output",
-          "\u03bb": "scale_response"
+          "P": "admissibility",
+          "\u03bb": "scale_response",
+          "E": "environment",
+          "\u03c8": "state"
         },
         "role_topology": [
           "unresolved"
@@ -1590,18 +1590,179 @@
       ]
     },
     {
+      "object_id": "obj-eq-LEMMA-STAR001",
+      "label": "LEMMA-STAR001: Lemma\u2605 (HYPOTHESIS): T_c <= theta*nu*(Z - Lambda*Y",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "Lemma\u2605 (HYPOTHESIS): T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda with C_0 geometric only",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Lemma\u2605 (HYPOTHESIS): T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda with C_0 geometric only",
+        "notation": "energy_budget_spectral_drift",
+        "domain": "unspecified",
+        "hypothesis_tags": [
+          "C0_geometric",
+          "Lemma\u2605_hypothesis",
+          "hypothesis_framing"
+        ],
+        "symbols": [
+          "C_0",
+          "HYPOTHESIS",
+          "Lambda",
+          "Lemma",
+          "T_c",
+          "X",
+          "Y",
+          "Z",
+          "_2",
+          "geometric",
+          "nu",
+          "only",
+          "theta",
+          "u",
+          "with"
+        ],
+        "book_id": "LEMMA-STAR001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#LEMMA-STAR001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-DA-NS-1001",
+      "label": "DA-NS-1001: DA-NS-1 (HYPOTHESIS): energy-budget spectral drift",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "DA-NS-1 (HYPOTHESIS): energy-budget spectral drift control \u2014 same as Lemma\u2605",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "DA-NS-1 (HYPOTHESIS): energy-budget spectral drift control \u2014 same as Lemma\u2605",
+        "notation": "energy_budget_spectral_drift",
+        "domain": "unspecified",
+        "hypothesis_tags": [
+          "Lemma\u2605_hypothesis",
+          "hypothesis_framing"
+        ],
+        "symbols": [
+          "DA",
+          "HYPOTHESIS",
+          "Lemma",
+          "NS",
+          "as",
+          "budget",
+          "control",
+          "drift",
+          "energy",
+          "same",
+          "spectral"
+        ],
+        "book_id": "DA-NS-1001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#DA-NS-1001"
+      ]
+    },
+    {
+      "object_id": "obj-eq-PRODUCT-BLOCK001",
+      "label": "PRODUCT-BLOCK001: PRODUCT-BLOCK (OPEN): need |T_c| <= C*||u||_2*X^{3",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "PRODUCT-BLOCK (OPEN): need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D product estimates do not give this from energy alone",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "PRODUCT-BLOCK (OPEN): need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D product estimates do not give this from energy alone",
+        "notation": "energy_budget_spectral_drift",
+        "domain": "unspecified",
+        "hypothesis_tags": [
+          "PRODUCT-BLOCK_open"
+        ],
+        "symbols": [
+          "BLOCK",
+          "C",
+          "D",
+          "OPEN",
+          "PRODUCT",
+          "T_c",
+          "X",
+          "_2",
+          "alone",
+          "do",
+          "energy",
+          "estimates",
+          "from",
+          "give",
+          "need",
+          "not",
+          "ordinary",
+          "product",
+          "this",
+          "u"
+        ],
+        "book_id": "PRODUCT-BLOCK001",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "KEEP",
+      "source_refs": [
+        "historical_equations.json#PRODUCT-BLOCK001"
+      ]
+    },
+    {
       "object_id": "obj-tweet-SND-TWEET-CENTER001",
       "label": "Central spectral condition (Bypass / shell-helical)",
       "shape": {
         "shape_id": "shape-SND-BYPASS-PH\u03c8\u03bb\u03a6E-843ef741afeb",
         "source": "inf_{t>=0} lambda_min(tilde_H_N[u(t)]) / lambda_max(tilde_H_N[u(t)]) > -1/2",
         "fingers": {
-          "P": "admissibility",
-          "E": "environment",
-          "\u03c8": "state",
           "H": "interaction",
           "\u03a6": "realized_output",
-          "\u03bb": "scale_response"
+          "P": "admissibility",
+          "\u03bb": "scale_response",
+          "E": "environment",
+          "\u03c8": "state"
         },
         "role_topology": [
           "unresolved"
@@ -1645,12 +1806,12 @@
         "shape_id": "shape-SND-HYP-PH\u03c8\u03bb\u03a6E-73d0f1eb7ee5",
         "source": "inf_t J(t)/X(t) >= c_* > 0",
         "fingers": {
-          "P": "admissibility",
-          "E": "environment",
-          "\u03c8": "state",
           "H": "interaction",
           "\u03a6": "realized_output",
-          "\u03bb": "scale_response"
+          "P": "admissibility",
+          "\u03bb": "scale_response",
+          "E": "environment",
+          "\u03c8": "state"
         },
         "role_topology": [
           "unresolved"
@@ -1738,12 +1899,12 @@
         "shape_id": "shape-SND-C-PH\u03c8\u03bb\u03a6E-c1abef5378cb",
         "source": "Theorem H (SND-C): (X>=delta_*, X<=M, rho<=rho_0) => |Pi_{j*}| <= C_*(nu,delta_*,M,rho_0,C_S)",
         "fingers": {
-          "P": "admissibility",
-          "E": "environment",
-          "\u03c8": "state",
           "H": "interaction",
           "\u03a6": "realized_output",
-          "\u03bb": "scale_response"
+          "P": "admissibility",
+          "\u03bb": "scale_response",
+          "E": "environment",
+          "\u03c8": "state"
         },
         "role_topology": [
           "unresolved"
@@ -1799,12 +1960,12 @@
         "shape_id": "shape-SND-BYPASS-PH\u03c8\u03bb\u03a6E-843ef741afeb",
         "source": "Bypass Lemma: tilde_H_N norm bound with 5\u00d7 safety margin on T^3",
         "fingers": {
-          "P": "admissibility",
-          "E": "environment",
-          "\u03c8": "state",
           "H": "interaction",
           "\u03a6": "realized_output",
-          "\u03bb": "scale_response"
+          "P": "admissibility",
+          "\u03bb": "scale_response",
+          "E": "environment",
+          "\u03c8": "state"
         },
         "role_topology": [
           "unresolved"
@@ -1854,12 +2015,12 @@
         "shape_id": "shape-RING-BVB-PH\u03c8\u03bb\u03a6E-cda460770d50",
         "source": "Ring Lemma: Borromean triadic cancellation on interlocked Littlewood-Paley shells",
         "fingers": {
-          "P": "admissibility",
-          "E": "environment",
-          "\u03c8": "state",
           "H": "interaction",
           "\u03a6": "realized_output",
-          "\u03bb": "scale_response"
+          "P": "admissibility",
+          "\u03bb": "scale_response",
+          "E": "environment",
+          "\u03c8": "state"
         },
         "role_topology": [
           "unresolved"
@@ -1905,12 +2066,12 @@
         "shape_id": "shape-SND-C-PH\u03c8\u03bb\u03a6E-c1abef5378cb",
         "source": "Main result: global regularity on T^3 \u2014 no finite-time blowup (proved)",
         "fingers": {
-          "P": "admissibility",
-          "E": "environment",
-          "\u03c8": "state",
           "H": "interaction",
           "\u03a6": "realized_output",
-          "\u03bb": "scale_response"
+          "P": "admissibility",
+          "\u03bb": "scale_response",
+          "E": "environment",
+          "\u03c8": "state"
         },
         "role_topology": [
           "unresolved"
@@ -1960,12 +2121,12 @@
         "shape_id": "shape-SND-HYP-PH\u03c8\u03bb\u03a6E-73d0f1eb7ee5",
         "source": "inf_t J(t)/X(t) >= c_* > 0 for all suitable H^1(T^3) / Leray-Hopf data, with c_* from data and nu only (no a priori X<=M).",
         "fingers": {
-          "P": "admissibility",
-          "E": "environment",
-          "\u03c8": "state",
           "H": "interaction",
           "\u03a6": "realized_output",
-          "\u03bb": "scale_response"
+          "P": "admissibility",
+          "\u03bb": "scale_response",
+          "E": "environment",
+          "\u03c8": "state"
         },
         "role_topology": [
           "unresolved"
@@ -2027,12 +2188,12 @@
         "shape_id": "shape-SND-C-PH\u03c8\u03bb\u03a6E-c1abef5378cb",
         "source": "Shell-conditioned bound on dominant-shell flux Pi_{j*} in the spread regime rho<=rho_0, with C_*=C_*(nu, delta_*, M, rho_0, C_S), assuming X<=M.",
         "fingers": {
-          "P": "admissibility",
-          "E": "environment",
-          "\u03c8": "state",
           "H": "interaction",
           "\u03a6": "realized_output",
-          "\u03bb": "scale_response"
+          "P": "admissibility",
+          "\u03bb": "scale_response",
+          "E": "environment",
+          "\u03c8": "state"
         },
         "role_topology": [
           "unresolved"
@@ -2156,12 +2317,12 @@
         "shape_id": "shape-SND-C-PH\u03c8\u03bb\u03a6E-c1abef5378cb",
         "source": "Favorable ARCHON roleplay packaging that substitutes SND-U for SND-C.",
         "fingers": {
-          "P": "admissibility",
-          "E": "environment",
-          "\u03c8": "state",
           "H": "interaction",
           "\u03a6": "realized_output",
-          "\u03bb": "scale_response"
+          "P": "admissibility",
+          "\u03bb": "scale_response",
+          "E": "environment",
+          "\u03c8": "state"
         },
         "role_topology": [
           "unresolved"
@@ -2245,6 +2406,162 @@
       "status": "PARK",
       "source_refs": [
         "snd_claim_inventory.json#CSTAR-ARITHMETIC"
+      ]
+    },
+    {
+      "object_id": "obj-claim-LEMMA-STAR",
+      "label": "Lemma\u2605 / DA-NS-1 energy-budget closing estimate",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda with C_0 geometric only; T_c=M-Lambda*N.",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda with C_0 geometric only; T_c=M-Lambda*N.",
+        "notation": "energy_budget_spectral_drift",
+        "domain": "unspecified",
+        "hypothesis_tags": [
+          "C0_geometric"
+        ],
+        "symbols": [
+          "C_0",
+          "Lambda",
+          "M",
+          "N",
+          "T_c",
+          "X",
+          "Y",
+          "Z",
+          "_2",
+          "geometric",
+          "nu",
+          "only",
+          "theta",
+          "u",
+          "with"
+        ],
+        "book_id": "generic",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "snd_claim_inventory.json#LEMMA-STAR"
+      ]
+    },
+    {
+      "object_id": "obj-claim-DA-NS-1",
+      "label": "DA-NS-1 energy-budget spectral drift control",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "Control centered spectral drift T_c by viscous variance plus remainder built only from Leray energy E=||u||_2^2.",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Control centered spectral drift T_c by viscous variance plus remainder built only from Leray energy E=||u||_2^2.",
+        "notation": "energy_budget_spectral_drift",
+        "domain": "unspecified",
+        "hypothesis_tags": [],
+        "symbols": [
+          "Control",
+          "E",
+          "Leray",
+          "T_c",
+          "_2",
+          "built",
+          "by",
+          "centered",
+          "drift",
+          "energy",
+          "from",
+          "only",
+          "plus",
+          "remainder",
+          "spectral",
+          "u",
+          "variance",
+          "viscous"
+        ],
+        "book_id": "generic",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "snd_claim_inventory.json#DA-NS-1"
+      ]
+    },
+    {
+      "object_id": "obj-claim-PRODUCT-BLOCK",
+      "label": "Product estimate blocker for Lemma\u2605",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "Need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D Sobolev/product estimates INSUFFICIENT from energy alone.",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D Sobolev/product estimates INSUFFICIENT from energy alone.",
+        "notation": "energy_budget_spectral_drift",
+        "domain": "unspecified",
+        "hypothesis_tags": [
+          "PRODUCT-BLOCK_open"
+        ],
+        "symbols": [
+          "C",
+          "D",
+          "INSUFFICIENT",
+          "Need",
+          "Sobolev",
+          "T_c",
+          "X",
+          "_2",
+          "alone",
+          "energy",
+          "estimates",
+          "from",
+          "ordinary",
+          "product",
+          "u"
+        ],
+        "book_id": "generic",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "snd_claim_inventory.json#PRODUCT-BLOCK"
       ]
     },
     {
@@ -2724,6 +3041,158 @@
       ]
     },
     {
+      "object_id": "obj-book-DA-NS-1",
+      "label": "Lemma\u2605 / DA-NS-1 energy-budget spectral drift",
+      "shape": {
+        "shape_id": "shape-DA-NS-1-PH\u03c8\u03bb\u03a6E-3ec3f7e43d44",
+        "source": "DA-NS-1",
+        "fingers": {
+          "P": "admissibility",
+          "E": "environment",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response",
+          "\u03c8": "state"
+        },
+        "role_topology": [
+          "admissibility",
+          "environment",
+          "interaction",
+          "realized_output",
+          "scale_response",
+          "state"
+        ],
+        "compatibility_class": "DA-NS-1",
+        "dependency_hints": [
+          "centered_spectral_drift",
+          "T_c",
+          "Lambda",
+          "X",
+          "Y",
+          "Z",
+          "Leray_energy",
+          "viscous_variance",
+          "energy_budget"
+        ],
+        "notes": [
+          "Extracted from theory book DA-NS-1."
+        ]
+      },
+      "texture": {
+        "source": "DA-NS-1",
+        "notation": "energy_budget_spectral_drift",
+        "domain": "unspecified",
+        "hypothesis_tags": [
+          "C0_geometric",
+          "Lemma\u2605_hypothesis",
+          "hypothesis_framing"
+        ],
+        "symbols": [
+          "C_0",
+          "HYPOTHESIS",
+          "Lambda",
+          "Lemma",
+          "T_c",
+          "X",
+          "Y",
+          "Z",
+          "_2",
+          "geometric",
+          "nu",
+          "only",
+          "theta",
+          "u",
+          "with"
+        ],
+        "book_id": "DA-NS-1",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book DA-NS-1 status=HYPOTHESIS"
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "millennium_books.json#DA-NS-1"
+      ]
+    },
+    {
+      "object_id": "obj-book-PRODUCT-BLOCK",
+      "label": "Product estimate blocker for Lemma\u2605",
+      "shape": {
+        "shape_id": "shape-PRODUCT-BLOCK-PH\u03c8\u03bb\u03a6-790b52755f0d",
+        "source": "PRODUCT-BLOCK",
+        "fingers": {
+          "P": "admissibility",
+          "H": "interaction",
+          "\u03a6": "realized_output",
+          "\u03bb": "scale_response",
+          "\u03c8": "state"
+        },
+        "role_topology": [
+          "admissibility",
+          "interaction",
+          "realized_output",
+          "scale_response",
+          "state"
+        ],
+        "compatibility_class": "PRODUCT-BLOCK",
+        "dependency_hints": [
+          "product_estimate",
+          "Sobolev",
+          "T_c_bound",
+          "energy_alone"
+        ],
+        "notes": [
+          "Extracted from theory book PRODUCT-BLOCK."
+        ]
+      },
+      "texture": {
+        "source": "PRODUCT-BLOCK",
+        "notation": "energy_budget_spectral_drift",
+        "domain": "unspecified",
+        "hypothesis_tags": [
+          "PRODUCT-BLOCK_open"
+        ],
+        "symbols": [
+          "BLOCK",
+          "C",
+          "D",
+          "OPEN",
+          "PRODUCT",
+          "T_c",
+          "X",
+          "_2",
+          "alone",
+          "do",
+          "energy",
+          "estimates",
+          "from",
+          "give",
+          "need",
+          "not",
+          "ordinary",
+          "product",
+          "this",
+          "u"
+        ],
+        "book_id": "PRODUCT-BLOCK",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures.",
+          "Book PRODUCT-BLOCK status=OPEN"
+        ]
+      },
+      "millennium_tags": [
+        "NS"
+      ],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "millennium_books.json#PRODUCT-BLOCK"
+      ]
+    },
+    {
       "object_id": "obj-book-RH-ROUTE-C",
       "label": "Route C exploratory",
       "shape": {
@@ -3146,9 +3615,9 @@
       ]
     }
   ],
-  "object_count": 61,
-  "keep_count": 29,
-  "hypothesis_count": 15,
+  "object_count": 69,
+  "keep_count": 32,
+  "hypothesis_count": 20,
   "park_count": 17,
   "coverage_gaps": [
     "data/zenodo/deposit_metadata.json not present \u2014 Zenodo KEEP/PARK not indexed"
@@ -3156,7 +3625,7 @@
   "millennium_coverage": {
     "FRA": 4,
     "SFE": 6,
-    "NS": 26,
+    "NS": 31,
     "CLAY": 3,
     "RH": 3,
     "YANG-MILLS": 1,
@@ -3172,6 +3641,7 @@
     "docs/ns-review/DA-FULL-CHAIN-REPORT.md",
     "docs/ns-review/DA-GAP-CLOSURE-PLAYBOOK.md",
     "docs/ns-review/DA-RESOLUTION-CLUES.md",
+    "docs/ns-review/LEMMA-STAR-DA-NS-1.md",
     "docs/ns-review/PR-DRAFT-COMPETITIVE-PACKAGE.md",
     "docs/ns-review/README.md",
     "docs/ns-review/SND-TWEET-DA-AUDIT.md",

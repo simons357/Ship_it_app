@@ -25,16 +25,19 @@ class TestSNDInventory(unittest.TestCase):
     def test_inventory_file_loads(self):
         inv = load_inventory()
         ids = {c["claim_id"] for c in inv["claims"]}
-        self.assertEqual(
-            ids,
-            {
-                "SND-U",
-                "SND-C",
-                "CLAY-B",
-                "THEOREM-H-MISLABEL",
-                "CSTAR-ARITHMETIC",
-            },
-        )
+        required = {
+            "SND-U",
+            "SND-C",
+            "CLAY-B",
+            "THEOREM-H-MISLABEL",
+            "CSTAR-ARITHMETIC",
+            "LEMMA-STAR",
+            "DA-NS-1",
+            "PRODUCT-BLOCK",
+        }
+        self.assertTrue(required.issubset(ids))
+        self.assertEqual(inventory_status_map()["LEMMA-STAR"], "hypothesis")
+        self.assertEqual(inventory_status_map()["PRODUCT-BLOCK"], "open")
 
 
 class TestRefusal(unittest.TestCase):

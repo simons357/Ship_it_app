@@ -517,7 +517,7 @@ def detect_claim_markers(expression: str) -> dict[str, bool]:
             or "lemmastar" in compact
             or "da-ns-1" in raw
             or "da_ns_1" in raw
-            or ("t_c" in compact and "lambda" in compact and ("c_0" in compact or "c0" in compact))
+            or ("tc" in compact and "lambda" in compact and ("c0" in compact or "c_0" in raw))
             or "centeredspectraldrift" in compact
             or "energy-budget" in raw
             or "energy budget" in raw
@@ -526,8 +526,7 @@ def detect_claim_markers(expression: str) -> dict[str, bool]:
             "product-block" in raw
             or "product_block" in raw
             or "productblock" in compact
-            or ("|t_c|" in compact and "3/2" in compact)
-            or ("t_c" in compact and "x^{3/2}" in compact)
+            or ("tc" in compact and "3/2" in compact)
             or ("ordinary" in raw and "product" in raw and "insufficient" in raw)
         ),
         "clay_equiv": (
