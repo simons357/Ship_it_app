@@ -6,6 +6,7 @@ NS not solved. These samples did not kill Lemma★.**
 Locked form: [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md).
 AP probe: `python3 scripts/ns_attacks/attack9_packet.py`
 Same-shell: `python3 scripts/ns_attacks/attack10_same_shell.py`
+Adjacent spheres: `python3 scripts/ns_attacks/attack11_adjacent_spheres.py`
 
 ---
 
@@ -110,11 +111,10 @@ kill.
 Probe: `python3 scripts/ns_attacks/attack10_same_shell.py`
 
 P and Q on one eigenvalue \(N\), R on the most popular
-sum-shell \(T\neq N\). \(O(m^2)\) closures among those
-pairs. Energy normalized. Aligned swirl, one phase per
-shell. Small \(m\) keeps actual T-pairs (edge-preserving
-subset), so the packet does not collapse to an empty
-field.
+sum-shell \(T\neq N\). Energy normalized. Aligned swirl,
+one phase per shell. That sweep is not the natural
+adjacent-sphere ensemble (Attack 11). Do not read its
+cartesian pair list as \(\Theta(m^2)\) aligned closures.
 
 Eigenvalues do not spread with \(m\). \(\mathcal D_s\) is
 the shell gap, not AP width. That is the test the wide
@@ -138,21 +138,53 @@ The \(O(1)\)-denominator heuristic now has the denominator
 it asked for.
 
 \(T_c\) did not grow like \(m^{1/2}\). It fell or wandered.
-Pair count is still \(O(m^2)\) (480 pairs at \(m=96\)).
-The cubic terms did not add. Random phases on the full
-shell: \(\mathcal R_\star\approx 5\times 10^{-7}\).
+The pair list at \(N=54\) (480 ordered pairs at 96 keys) is
+not \(\Theta(m^2)\) additive density. Random phases on the
+full shell: \(\mathcal R_\star\approx 5\times 10^{-7}\).
 
 Full shells \(N=2,5,14,18,26,41,54,90\): every
 \(\mathcal R_\star\le 1.7\times 10^{-3}\). Peak on the
 \(m\)-sweep \(\approx 4.2\times 10^{-3}\). Do not cash
 that as \(C_0\) or as a kill.
 
-**Score.** Same-shell is not a kill. The AP failure mode
-(Ds outrunning \(T_c\)) is off. The remaining failure
-mode on this construction is the numerator: incompressibility,
-phases, or triadic counting. That is the estimate a proof
-has to write. It is not written. Finite \(m\) on two
-shells is not \(\sup\mathcal R_\star<\infty\).
+**Score.** Same-shell at fixed \(N\) (popular partner \(T\)) is not a kill.
+Do not read the cartesian pair list as \(\Theta(m^2)\) aligned closures.
+A lattice sphere is not an additive basis of that density.
+The natural ensemble is Attack 11.
+
+---
+
+## Attack 11 — full adjacent spheres (the natural same-shell ensemble)
+
+Probe: `python3 scripts/ns_attacks/attack11_adjacent_spheres.py`
+
+Two Fourier spheres \(|k|^2=n\) and \(|k|^2=n+d\). Energy split.
+\(m=\#\)keys grows with \(n\). No AP width. \(\mathcal D_s\) is the
+gap: \(\lambda\sim n\), so \(\mathcal D_s\sim O(n)\) at fixed \(d\).
+
+**What grew.** On \(d=1\) (the live gap), closures exist — 48 landings
+at \(n=9\) to 288 at \(n=89\) — but they scale like \(O(m)\), not
+\(O(m^2)\). At \(n=89\): 144+120 keys, 288 landings. \(d=2\): no
+landings on the range tested. \(d=3\): sporadic landings, same decay.
+
+**What \(\mathcal R_\star\) did.** Largest at the smallest shell:
+\(n=9\), \(\mathcal R_\star\simeq 0.11\). At \(n=89\),
+\(\mathcal R_\star\simeq 0.031\). The ratio falls. It does not
+track \(m^{1/2}\).
+
+The \(O(1)\) denominator is available (gap, not width). \(T_c\) still
+does not produce \(\mathcal R_\star\sim m\). Whole-sphere packets do
+not supply the \(O(m^2)\) aligned closures the heuristic assumed.
+
+**Score.** Isolated triangles, wide APs, narrow APs, full adjacent
+spheres: no kill. Finite \(n\) is not \(\sup\mathcal R_\star<\infty\).
+Do not cash \(0.11\) as \(C_0\).
+
+**What would still be a packet kill.** A designed subset of two
+fixed shells with \(\Theta(m^2)\) closures and locked phases — not
+the full sphere. Until that object is built and \(\mathcal R_\star\)
+tracks \(m\), the heuristic is false for the natural same-shell
+ensemble.
 
 ---
 
@@ -164,15 +196,16 @@ shells is not \(\sup\mathcal R_\star<\infty\).
 - polarization zero is accidental
 - wide AP: \(T_c\) grew, \(\mathcal D_s\) faster; not a kill
 - narrow AP: finite-\(m\) rise then rollover; not a kill
-- same-shell: \(\mathcal D_s\) stayed the gap, \(T_c\)
-  did not grow like \(m^{1/2}\); not a kill
-- the remaining packet target is an HH→L fan that
-  actually grows, or H1 on one cylinder
+- popular-\(T\) same-shell: \(\mathcal D_s\) stayed the gap; not a kill
+- full adjacent spheres: landings \(O(m)\), not \(O(m^2)\);
+  \(\mathcal R_\star\) falls; not a kill
+- the remaining packet target is a designed two-shell subset
+  with \(\Theta(m^2)\) closures and locked phases, or H1 on one cylinder
 - the uniform global triadic bound remains completely open
 
 Do not: more isolated triangles, more frozen rays, more
 uniform dilations, more \(k_{\max}=8\) samples, another AP,
-K=0, or gluing this to H1.
+another full sphere, K=0, or gluing this to H1.
 
 The other live writing is still H1 on one cylinder
 (thinness / J on folds / waiting time). Same leftover
@@ -181,7 +214,7 @@ class, different integral. Work one.
 The uniform triadic bound is still completely open.
 NS is not solved.
 
-Say **fan** for the remaining packet target, or **H1**
+Say **subset** for the \(\Theta(m^2)\) designed packet, or **H1**
 for the cylinder.
 
 Do not merge with H1. Do not add \(K(t)\) to the PDE.

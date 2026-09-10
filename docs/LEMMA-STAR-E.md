@@ -90,7 +90,8 @@ only.
 - fixed additive offset becomes safer on the tested ray
 - polarization zero is accidental
 - the live falsification target is a growing coherent
-  triad packet or HH→L fan (same-shell scored: no kill)
+  triad packet or HH→L fan (adjacent spheres: no kill;
+  remaining: designed \(\Theta(m^2)\) subset)
 - the uniform global triadic bound remains completely open
 
 A frozen ray is not the \(|e|/|k_0|\to 0\) supremum. The

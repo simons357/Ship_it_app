@@ -61,10 +61,11 @@ First family: closing three-key. Two Fourier
 keys is not that test. Two shells can be live.
 Attack 8 did not kill it. Live target:
 a growing coherent triad packet or HH→L fan.
-Same-shell packet scored: Ds stayed the
-gap, Tc did not grow like \(m^{1/2}\).
-No kill. Remaining packet target: HH→L
-fan, or H1 on one cylinder. Work one.
+Adjacent spheres scored: landings \(O(m)\),
+not \(O(m^2)\); \(\mathcal R_\star\) falls.
+No kill. Remaining packet target: a
+designed two-shell subset with \(\Theta(m^2)\)
+closures, or H1 on one cylinder. Work one.
 The uniform global triadic bound remains
 completely open.
 Samples are evidence only. K=0 dead.
