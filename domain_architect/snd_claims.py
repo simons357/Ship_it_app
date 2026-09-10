@@ -57,12 +57,16 @@ REFUSAL_PATTERNS: tuple[tuple[str, str], ...] = (
         "REFUSE: c*=6/pi^2 is arithmetic analogy, not continuum SND floor",
     ),
     (
-        r"(lemma\s*[\*★]|lemma-?star|da-?ns-?1).{0,40}(proved|resolved|closed)",
-        "REFUSE: Lemma★ / DA-NS-1 is HYPOTHESIS — broken at PRODUCT-BLOCK",
+        r"(lemma\s*[\*★]|lemma-?star|da-?ns-?1).{0,40}(proved|resolved|closed|almost\s+proved)",
+        "REFUSE: Lemma★ / DA-NS-1 is HYPOTHESIS — broken at PRODUCT-BLOCK / HH→L; NS NOT SOLVED",
     ),
     (
         r"(lemma\s*[\*★]|lemma-?star).{0,30}(closes|implies)\s+(clay|millennium)",
-        "REFUSE: Lemma★→Clay B WITHHELD until PRODUCT-BLOCK closes",
+        "REFUSE: Lemma★→Clay B WITHHELD until PRODUCT-BLOCK / HH→L closes",
+    ),
+    (
+        r"almost\s+proved|numeric(al)?\s+surviv.{0,30}proof",
+        "REFUSE: ‘almost proved’ / numeric survive ≠ proof — HH→L gap open; NS NOT SOLVED",
     ),
 )
 

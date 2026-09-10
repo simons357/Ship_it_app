@@ -4,10 +4,11 @@
 
 | | |
 | --- | --- |
-| **Branch** | `cursor/da-theory-splicer-0cc5` |
-| **PR** | [#40](https://github.com/simons357/Ship_it_app/pull/40) |
-| **Companion** | Lemma★ / DA-NS-1 (NS-only, no SFE glue) — merged into this branch |
+| **Branch** | `cursor/da-lemma-star-five-lane-0cc5` (sync) · base package `cursor/da-theory-splicer-0cc5` |
+| **PR** | Package [#40](https://github.com/simons357/Ship_it_app/pull/40) · Lemma★ [#49](https://github.com/simons357/Ship_it_app/pull/49) · five-lane evidence [#48](https://github.com/simons357/Ship_it_app/pull/48) |
+| **Companion** | Lemma★ / DA-NS-1 = Millennium packaging (locked); NS-only, no SFE glue |
 | **Audience** | Jonathan R. Simons |
+| **Honesty lock** | Lemma★ **not proved**; PRODUCT-BLOCK / HH→L gap open; numeric survive ≠ proof; **NS NOT SOLVED** |
 
 ---
 
@@ -61,7 +62,7 @@ Deep dive: [`SHAPE-TEXTURE-ONTOLOGY.md`](./SHAPE-TEXTURE-ONTOLOGY.md) · Ops pla
 | `docs/domain-architect/THEORY-SPLICER-PACKAGE.md` | **This file** — whole-package entry |
 | `docs/domain-architect/THEORY-SPLICER-PLAYBOOK.md` | CRISPR ops walkthrough (NS then RH) |
 | `docs/domain-architect/SHAPE-TEXTURE-ONTOLOGY.md` | Shape / texture ontology |
-| `docs/ns-review/LEMMA-STAR-DA-NS-1.md` | Lemma★ statement, PRODUCT-BLOCK, refuse rules |
+| `docs/ns-review/LEMMA-STAR-DA-NS-1.md` | Lemma★ Millennium packaging, PRODUCT-BLOCK / HH→L, five-lane sync → PR #48 |
 
 ### Demos & tests
 
@@ -150,6 +151,8 @@ JSON on any flag: add `--json`.
 | SND-C → SND-U | **INCOMPATIBLE** |
 | Theorem D Clay ⇔ SND | **INCOMPATIBLE** |
 | Lemma★ proved without PRODUCT-BLOCK | **REFUSED** (WITHHELD weld; EXPRESS refuses green) |
+| Lemma★ “almost proved” / greening / numeric survive = proof | **REFUSED** |
+| K=0 absorption as Lemma★ | **DEAD** (five-lane Attack 2 — PR #48) |
 | Any Millennium EXPRESS as PROVED | **REFUSED** unless reconstruction honesty path passes (none do for Clay) |
 
 ---
@@ -158,7 +161,7 @@ JSON on any flag: add `--json`.
 
 | Problem | Registry status | Honest note |
 | --- | --- | --- |
-| **NS** | OPEN | Clay B NOT proved. SND-C conditional under X≤M. Lemma★ = HYPOTHESIS; Clay weld WITHHELD until PRODUCT-BLOCK. |
+| **NS** | OPEN | Clay B NOT proved. **NS NOT SOLVED.** SND-C conditional under X≤M. Lemma★ = Millennium packaging (HYPOTHESIS); Clay weld WITHHELD until PRODUCT-BLOCK / HH→L closes. Five-lane (PR #48): K=0 dead; ★ survives numeric kill only ≠ proved. |
 | **RH** | OPEN | NOT proved. Q6 KEEP arithmetic — no RH claim. Route C exploratory. |
 | **Yang–Mills** | OPEN | Stub only. |
 | **P vs NP** | OPEN | Stub only. |
@@ -174,13 +177,15 @@ NS books of note: `NS-B`, `SND-C`, `SND-U` (RETIRE), `CLAY-B` (RETIRE), `BOOT-M`
 
 | PR | Topic |
 | --- | --- |
-| **[#40](https://github.com/simons357/Ship_it_app/pull/40)** | **This package** — theory splicer + shape/texture + Lemma★ |
+| **[#40](https://github.com/simons357/Ship_it_app/pull/40)** | Theory splicer whole package + shape/texture + Lemma★ |
+| **[#49](https://github.com/simons357/Ship_it_app/pull/49)** | Lemma★ / DA-NS-1 companion (NS-only) |
+| **[#48](https://github.com/simons357/Ship_it_app/pull/48)** | Five-lane Lemma★ drill — K=0 dead; ★ survives numeric; HH→L gap; **NS not solved** |
 | [#36](https://github.com/simons357/Ship_it_app/pull/36) | DA gap-closure / SND audit / refuse Clay glue |
 | [#35](https://github.com/simons357/Ship_it_app/pull/35) | ARCHON Theorem H panel |
 | [#28](https://github.com/simons357/Ship_it_app/pull/28) | Five-finger auto-router |
 | [#30](https://github.com/simons357/Ship_it_app/pull/30) | Domain Architect v1 |
 
-Lemma★ companion branch: `cursor/da-lemma-star-0cc5` (merged into #40; NS-only, **no SFE glue**).
+Five-lane sync branch: `cursor/da-lemma-star-five-lane-0cc5`. Lemma★ earlier companion: `cursor/da-lemma-star-0cc5` (NS-only, **no SFE glue**).
 
 ---
 

@@ -8,7 +8,7 @@
       "clay_name": "Navier-Stokes (Clay Statement B)",
       "status": "OPEN",
       "alias": "NAVIER-STOKES",
-      "honest_note": "Clay Statement B NOT proved. SND-C is conditional under X≤M. DA refuses H→Clay glue. Lemma★/DA-NS-1 is HYPOTHESIS packaging of Clay B — WITHHELD until PRODUCT-BLOCK closes.",
+      "honest_note": "Clay Statement B NOT proved. NS NOT SOLVED. SND-C is conditional under X≤M. DA refuses H→Clay glue. Lemma★/DA-NS-1 is locked Millennium packaging (HYPOTHESIS) — WITHHELD until PRODUCT-BLOCK / HH→L closes. Five-lane PR #48: K=0 dead; ★ survives numeric only ≠ proved.",
       "books": [
         {
           "book_id": "NS-B",
@@ -219,7 +219,7 @@
           "label": "Lemma★ / DA-NS-1 energy-budget spectral drift",
           "status": "HYPOTHESIS",
           "alias": "LEMMA-STAR",
-          "honest_status": "HYPOTHESIS — energy-budget form of DA-NS-1; NOT proved. Proving it ≡ Clay B in this packaging.",
+          "honest_status": "HYPOTHESIS — locked Millennium packaging (not a side lemma); NOT proved. PRODUCT-BLOCK / HH→L open. Five-lane: K=0 dead; survives numeric only ≠ proved. NS NOT SOLVED.",
           "expression": "Lemma★ (HYPOTHESIS): T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda  with C_0 geometric only",
           "roles": [
             "admissibility",
@@ -260,7 +260,7 @@
               "status": "HYPOTHESIS",
               "equation_ref": "LEMMA-STAR001",
               "roles": ["interaction", "scale_response", "realized_output", "environment"],
-              "notes": "Candidate closing estimate. If true: Lambda cannot blow up in finite time → enstrophy finite → global regularity on T^3. DA will not green this without PRODUCT-BLOCK."
+              "notes": "Candidate closing estimate. If true: Lambda cannot blow up in finite time → enstrophy finite → global regularity on T^3. DA will not green without PRODUCT-BLOCK / HH→L. Refuse almost proved. Five-lane PR #48: survives numeric kill only ≠ proved. NS NOT SOLVED."
             },
             {
               "claim_id": "DA-NS-1",
@@ -269,17 +269,17 @@
               "status": "HYPOTHESIS",
               "equation_ref": "DA-NS-1001",
               "roles": ["interaction", "scale_response", "environment"],
-              "notes": "Same object as Lemma★ — energy-budget packaging of Millennium Statement B."
+              "notes": "Same object as Lemma★ — locked Millennium packaging of Statement B. NS NOT SOLVED."
             }
           ],
-          "notes": "Honest packaging of Clay B as one estimate. Broken at PRODUCT-BLOCK. Links: SND-C (shell J/X texture), BOOT-M (enstrophy ceiling), NS-B (classical PDE)."
+          "notes": "Honest packaging of Clay B as one estimate. Broken at PRODUCT-BLOCK / Agmon-product; analytic gap HH→L. Five-lane PR #48. Links: SND-C (shell J/X texture), BOOT-M (enstrophy ceiling), NS-B (classical PDE)."
         },
         {
           "book_id": "PRODUCT-BLOCK",
-          "label": "Product estimate blocker for Lemma★",
+          "label": "Product / Agmon estimate blocker for Lemma★",
           "status": "OPEN",
-          "honest_status": "OPEN blocker — need |T_c|<=C*||u||_2*X^{3/2}; ordinary 3D Sobolev/product estimates INSUFFICIENT from energy alone.",
-          "expression": "PRODUCT-BLOCK (OPEN): need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D product estimates do not give this from energy alone",
+          "honest_status": "OPEN blocker — need |T_c|<=C*||u||_2*X^{3/2}; ordinary 3D Sobolev/product/Agmon INSUFFICIENT from energy alone; Bony HH→L still the gap (PR #48).",
+          "expression": "PRODUCT-BLOCK (OPEN): need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D product/Agmon estimates do not give this from energy alone; HH→L gap",
           "roles": [
             "admissibility",
             "interaction",
@@ -287,29 +287,29 @@
             "scale_response",
             "realized_output"
           ],
-          "terms": ["product_estimate", "Sobolev", "T_c_bound", "energy_alone"],
+          "terms": ["product_estimate", "Sobolev", "Agmon", "HH_to_L", "T_c_bound", "energy_alone"],
           "equation_refs": ["PRODUCT-BLOCK001"],
           "claims": [
             {
               "claim_id": "PRODUCT-BLOCK",
-              "label": "Product estimate gap",
-              "expression": "|T_c| <= C*||u||_2*X^{3/2} required; ordinary 3D Sobolev/product estimates INSUFFICIENT from energy alone",
+              "label": "Product / Agmon estimate gap",
+              "expression": "|T_c| <= C*||u||_2*X^{3/2} required; ordinary 3D Sobolev/product/Agmon estimates INSUFFICIENT from energy alone; HH→L bottleneck",
               "status": "OPEN",
               "equation_ref": "PRODUCT-BLOCK001",
               "roles": ["interaction", "scale_response"],
-              "notes": "Missing weld that blocks Lemma★. Closing this (or showing energy alone cannot) decides the packaging."
+              "notes": "Missing weld that blocks Lemma★. Five-lane Attack 3: HH→L live. Closing this (or kill via blowing R_pre) decides the packaging."
             },
             {
               "claim_id": "PRODUCT-3D-INSUFFICIENT",
               "label": "Ordinary 3D product estimates insufficient",
-              "expression": "Ordinary 3D Sobolev/product estimates cannot bound |T_c| by C*||u||_2*X^{3/2} from Leray energy alone",
+              "expression": "Ordinary 3D Sobolev/product/Agmon estimates cannot bound |T_c| by C*||u||_2*X^{3/2} from Leray energy alone",
               "status": "REFERENCE",
               "equation_ref": "PRODUCT-BLOCK001",
               "roles": ["interaction"],
               "notes": "Diagnosis, not a proof of impossibility — marks the known estimate class as insufficient."
             }
           ],
-          "notes": "INSERT candidate for theory splicer. Lemma★→Clay B remains WITHHELD until this closes."
+          "notes": "INSERT candidate for theory splicer. Lemma★→Clay B remains WITHHELD until this closes. Numeric survive ≠ proof."
         }
       ],
       "welds": [
