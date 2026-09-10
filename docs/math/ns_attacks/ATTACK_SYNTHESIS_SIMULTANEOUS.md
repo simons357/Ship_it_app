@@ -35,7 +35,7 @@ When \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Kill cares about stretching \(T_c>0\).
 | 5 Route2 kill | `attack5_route2_kill.py` | Sample list ≠ constant | Kill lane still **LIVE** |
 | **8 Correct record** | `ATTACK_8_CORRECT_RECORD.md` | **CORRECT RECORD** | Invariants; lanes LIVE; archive split |
 | **9A Packet fan** | `attack9_packet_fan.py` | **Did not kill ★** — \(\gamma\approx-1.39\) | \(\mathcal D_s\) grew faster than \(T_c\); \(D_s\|v\|_2^2 Y=O(1)\) **false** for AP family |
-| **9B Exact-shell \(K_{\alpha,\beta}\)** | `attack9b_exact_shell_K.py` | **LIVE** | \(v_\varepsilon=w_\alpha+\varepsilon z_\beta\); \(\mathcal R_\star\to K\); kill lane still LIVE |
+| **9B Exact-shell \(K_{\alpha,\beta}\)** | `attack9b_exact_shell_K.py` | **LIVE** — \(\max K\approx0.641\) at \((4,8)\) | \(\mathcal R_\star\to K\); controls PASS; not a kill; kill lane still LIVE |
 
 ## Attack 9A — failure (truth)
 
@@ -52,6 +52,18 @@ Base packet = many same-shell modes; \(\mathcal D_s\) only from small closing co
 Caveat: “narrow” ≠ \(\mathcal D_s=O(1)\). Next after 9B: controlled finite shell thickness — **not** another widening AP packet.  
 Doc: [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md).  
 Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/`
+
+### Runtime 2026-09-10 (seed 1390, kmax≤10 shells)
+
+| Metric | Value |
+|--------|-------|
+| Pairs probed | 24 |
+| \(\max K_{\alpha,\beta}\) seen | \(\approx 0.641\) at \((\alpha,\beta)=(4,8)\) |
+| Controls | **PASS** (amp inv.; exact-shell \(\mathcal D_s\approx0\)) |
+| \(\varepsilon\to0\) limit vs \(K\) | **PASS** on pairs with \(K>0\) |
+| Verdict | Finite sample max — **not** a kill of ★; kill lane **LIVE** |
+
+Other notable \(K\): \((1,2)\approx0.578\), \((2,4)\approx0.296\), \((5,10)\approx0.298\), \((13,26)\approx0.234\). Many \((\alpha,\beta)\) have \(K=0\) (kinematic: \(\Pi_\beta B(w,w)=0\) on the tested fan).
 
 ## Exact inequality still to attack
 

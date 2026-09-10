@@ -109,7 +109,7 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | Formula lock (linear / \(\mathcal D_s\) / \(T_c\) / \(\mathcal R_\star\) / \(\Lambda'\)) | **LOCKED in docs + unit tests** | `LEMMA_STAR_SHAPE_FORM.md`; `tests/test_ns_attacks_lemma_star.py` |
 | Attack 8 correct record | **CORRECT RECORD** | Kill lane LIVE; \(\mathcal R_\star\) invariants; \((T_c)_+\) |
 | Attack 9A packet fan \(\gamma\) | **Did not kill ★** — \(\gamma\approx-1.39\) (decaying) | \(\mathcal D_s\|v\|_2^2 Y=O(1)\) false for AP family; see `ATTACK_9A_AP_PACKET_FAILURE.md` |
-| Attack 9B exact-shell \(K_{\alpha,\beta}\) | **LIVE** | \(v_\varepsilon=w_\alpha+\varepsilon z_\beta\); \(\mathcal R_\star\to K\); kill lane still LIVE |
+| Attack 9B exact-shell \(K_{\alpha,\beta}\) | **LIVE** — sample \(\max K\approx0.641\) at \((4,8)\) | \(\mathcal R_\star\to K\); controls PASS; not a kill; kill lane still LIVE |
 
 ## What a proof would have to be
 

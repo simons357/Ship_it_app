@@ -168,3 +168,44 @@ def test_attack9_controls_on_small_packet():
     tc_tri = Tc_from_triads(f)
     tc_fft = Tc_from_B_field(f, nonlinear_B_fft_dealiased(f))
     assert abs(tc_tri - tc_fft) < 1e-6 * max(1.0, abs(tc_tri))
+
+
+def test_attack9b_exact_shell_K_eps_limit_and_controls():
+    """9B: exact-shell Ds≈0; K amp-invariant; R_★(w+εz)→K as ε→0."""
+    from ns_attacks.attack9b_exact_shell_K import (
+        K_of_w,
+        build_exact_shell_field,
+        closing_packet_from_PiB,
+        combine_eps,
+        choose_closing_sign,
+        eps_limit_check,
+        normalize_field,
+        project_B_to_shell,
+        shells_up_to,
+    )
+
+    shells = shells_up_to(5)
+    modes = shells[5][:6]
+    assert len(modes) >= 2
+    rng = np.random.default_rng(1390)
+    amps = rng.uniform(0.4, 1.2, size=len(modes))
+    thetas = rng.uniform(0, 2 * np.pi, size=len(modes))
+    phis = rng.uniform(0, 2 * np.pi, size=len(modes))
+    w = normalize_field(build_exact_shell_field(modes, amps, thetas, phis))
+    m = moments(w)
+    assert abs(m["Ds"]) < 1e-10
+    alpha, beta = 5.0, 10.0
+    info = K_of_w(w, alpha, beta)
+    assert math.isfinite(info["K"])
+    for a in (0.3, 5.0):
+        assert abs(K_of_w(scale_field(w, a), alpha, beta)["K"] - info["K"]) < 1e-9
+    if info["PiB_L2"] > 1e-12:
+        chk = eps_limit_check(w, alpha, beta, eps_list=(1e-2, 1e-3))
+        assert chk["limit_ok"]
+        assert chk["rel_err_at_smallest_eps"] < 0.15
+        Buu = nonlinear_B(w)
+        PiB = project_B_to_shell(Buu, beta)
+        z = closing_packet_from_PiB(PiB, sign=choose_closing_sign(w, PiB))
+        r = probe(combine_eps(w, z, 1e-3))
+        assert math.isfinite(r.ratio_R_star)
+        assert abs(r.ratio_R_star - info["K"]) / max(info["K"], 1e-30) < 0.15

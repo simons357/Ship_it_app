@@ -102,4 +102,14 @@ Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/` (`attack9b.json`, `HEAD
 | Bounded sample max on tested pairs | Those shells did not kill ★ — **not** a proof; kill lane LIVE |
 | \(\varepsilon\)-limit fails to match \(K\) | Implementation / alignment bug — fix before claiming |
 
+## Runtime 2026-09-10 (seed 1390)
+
+| Metric | Value |
+|--------|-------|
+| \(\max K\) seen | \(\approx 0.641\) at \((\alpha,\beta)=(4,8)\) |
+| Controls / \(\varepsilon\)-limit | **PASS** |
+| Verdict | Finite sample — **not** a kill; kill lane **LIVE** |
+
+Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/` (`attack9b.json`, `HEADLINE.md`, `K_by_ab_pair.png`, `R_star_eps_limit.png`).
+
 **NS not solved.**
