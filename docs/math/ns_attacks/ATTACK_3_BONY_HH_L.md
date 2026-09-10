@@ -13,6 +13,6 @@ Partition the bilinear form driving \(\mathfrak T_c\) into parent-wavevector cha
 
 `scripts/ns_attacks/attack3_bony_hh_l.py`.
 
-## Live result
+## Live result (2026-09-10)
 
-See `attack3.json` and synthesis.
+HH is the sole channel on a pure high triad; random HH frac p90 \(\approx0.51\). **No closure.** See `attack3.json`.

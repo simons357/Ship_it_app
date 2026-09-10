@@ -12,6 +12,6 @@
 Fixed-shape high triad amplitude sweep; \(X=1\) shape scan; scale-separated triads.
 Script: `scripts/ns_attacks/attack2_triad_k0_cstar.py`.
 
-## Live result
+## Live result (2026-09-10)
 
-See `attack2.json` and synthesis.
+**K=0 DEAD** (\(\lvert T_c\rvert/\mathcal D_s\sim B\)). **\(C_*\approx0.004058\)** amp-invariant on fixed triad. See `attack2.json`.

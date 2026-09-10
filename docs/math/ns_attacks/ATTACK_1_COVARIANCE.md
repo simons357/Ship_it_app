@@ -22,6 +22,6 @@ stays uniformly bounded under amplitude scaling \(u\mapsto Bu\), phase rotations
 
 If \(\sup|R_\star|\to\infty\) on a controlled family (especially \(B\to\infty\) at fixed shape), Lemma★’s uniform \(C_0\) is **KILLED**.
 
-## Live result
+## Live result (2026-09-10)
 
-See runtime JSON under `/opt/cursor/artifacts/ns_five_lane_*/attack1.json` and `ATTACK_SYNTHESIS_SIMULTANEOUS.md`.
+**SURVIVE numeric (NOT proof).** Post-Young \(R_\star\) falls as \(B\uparrow\). Pre-Young phase diam \(\approx0.155\). See `/opt/cursor/artifacts/ns_five_lane_2026-09-10/attack1.json` and `ATTACK_SYNTHESIS_SIMULTANEOUS.md`.

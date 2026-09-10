@@ -19,6 +19,6 @@ Bounded ratios ⇒ **SURVIVE numeric** — still **not a proof**.
 
 `scripts/ns_attacks/attack5_route2_kill.py`.
 
-## Live result
+## Live result (2026-09-10)
 
-See `attack5.json` and synthesis.
+**SURVIVE numeric.** \(n=978\); max \(\lvert R_{\mathrm{pre}}\rvert\approx5.09\); max \(\lvert C_*\rvert\approx0.0406\); Lemma★ \(C_0\) **not killed**. See `attack5.json` and synthesis.

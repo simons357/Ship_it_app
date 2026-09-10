@@ -14,6 +14,6 @@ homogeneity under \(u\mapsto Bu\), and the necessity of a remainder beyond \(\th
 
 `scripts/ns_attacks/attack4_stokes.py`.
 
-## Live result
+## Live result (2026-09-10)
 
-See `attack4.json` and synthesis.
+\(\mathcal D_s\ge0\) identity OK; homogeneity OK; pure viscous absorption insufficient. See `attack4.json`.
