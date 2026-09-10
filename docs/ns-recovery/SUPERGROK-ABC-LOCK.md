@@ -34,3 +34,5 @@ N-shell max saturates; this family does not on the grids they ran. That is a liv
 Do not stop patching Lemma★. Do not start H1 from this screenshot. Do not glue Q-stack.
 
 Score detail: [`CS-REMAINDER-VS-DA-REJECT.md`](CS-REMAINDER-VS-DA-REJECT.md) · PR https://github.com/simons357/Ship_it_app/pull/45
+
+Small-lattice check of the paper envelope against this core (not the PR #24 FFT table): [`ABC-SMALL-LATTICE.md`](ABC-SMALL-LATTICE.md). Well-posed. Unrestricted ★ not killed.

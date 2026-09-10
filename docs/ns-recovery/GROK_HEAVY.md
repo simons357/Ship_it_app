@@ -22,7 +22,7 @@ Human: Jonathan Simons (`winchester.anesthesia@gmail.com` / `simonsmedical@iclou
 - Do **not** invent missing formulas. Do **not** abs-value the triad sum.
 - Kill / ★ decisions use **complete signed** \(T_c\) only — never an HH→L-only proxy.
 - Proving the boxed shape inequality \(\Rightarrow\) GR **in this packaging** (one direction). Equivalence to GR is **not** in these files.
-- **Do not import PR #24’s “Target A / Lemma★ false” stamp.** Localized ABC is a finite climb on Galerkin grids, not a diverging family. Comparison: [`CS-REMAINDER-VS-DA-REJECT.md`](CS-REMAINDER-VS-DA-REJECT.md).
+- **Do not import PR #24’s “Target A / Lemma★ false” stamp.** Localized ABC is a finite climb on Galerkin grids, not a diverging family. SuperGrok lock: [`SUPERGROK-ABC-LOCK.md`](SUPERGROK-ABC-LOCK.md).
 
 **Two different “fives” (do not mix):**
 
@@ -225,6 +225,7 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 | **This file** | Grok Heavy entry |
 | [`SOT.md`](SOT.md) | Packet source of truth |
 | [`SUPERGROK-ABC-LOCK.md`](SUPERGROK-ABC-LOCK.md) | SuperGrok ABC_λ filing: keep evaluator line; **refuse** falsifier stamp |
+| [`ABC-SMALL-LATTICE.md`](ABC-SMALL-LATTICE.md) | Truncated ABC envelope on locked core; well-posed; ★ not killed |
 | [`CS-REMAINDER-VS-DA-REJECT.md`](CS-REMAINDER-VS-DA-REJECT.md) | PR #24 ABC / λ table vs DA exact-core REJECT; ★ still OPEN |
 | [`DREAM-TEAM-SUMMARY.md`](DREAM-TEAM-SUMMARY.md) | Paper+experiment seating vs this book; vote cannot close |
 | [`FIVE_LANE_PACK_LOCATOR.md`](FIVE_LANE_PACK_LOCATOR.md) | Absolute `/workspace/scripts/ns_attacks/` paths + box drop |
