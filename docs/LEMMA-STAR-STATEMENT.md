@@ -168,6 +168,12 @@ number after reverse: \(0.327\) at λ=8. Raises
 
 H1 was not run on ABC_λ. Do not start it here.
 
+Explore-boundedness score (SuperGrok 19:08):
+[`LEMMA-STAR-EXPLORE.md`](LEMMA-STAR-EXPLORE.md).
+Two-shell \(D_s\) already sits. \(T_c\) is not
+shell energies alone. Spatial \(v(\mu x)\) is
+not Fourier dilation. Do not stop patching.
+
 ---
 
 ## Score of the incoming explanation

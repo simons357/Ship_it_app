@@ -21,6 +21,7 @@ class LemmaStarStatementTests(unittest.TestCase):
         self.assertIn("That is not the same sentence as", text)
         self.assertIn("H1 / WRITE (6)", text)
         self.assertIn("LEMMA_STAR_CANONICAL.md", text)
+        self.assertIn("LEMMA-STAR-EXPLORE.md", text)
 
     def test_canonical_still_open(self):
         text = CANON.read_text()
