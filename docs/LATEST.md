@@ -61,9 +61,10 @@ triad did not kill ★.
 docs/LEMMA-STAR-E.md
 Packets (Attack 9): wide AP made Tc grow,
 but Ds grew faster, so the O(1)
-denominator failed. Next object: a
-same-shell coherent packet, not another
-AP. Or H1 on one cylinder. Work one.
+denominator failed. Same-shell (Attack 10):
+Ds stayed the gap; Tc did not grow like
+m^{1/2}. No kill. Remaining packet target:
+HH→L fan, or H1 on one cylinder. Work one.
 docs/LEMMA-STAR-PACKET.md
 Attack 6: uniform pre-Young C dead
 (|R_pre| ~ s). That is not ★ dying.

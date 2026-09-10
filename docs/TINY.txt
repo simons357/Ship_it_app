@@ -75,8 +75,8 @@ Three-key family (Attack 8):
 docs/LEMMA-STAR-E.md
 Two Fourier keys is the wrong test, not
 two shells. Wide AP: Tc grew, Ds faster.
-Narrow packet tests O(1) Ds. Next object:
-same-shell packet, not another AP.
+Same-shell: Ds stayed the gap, Tc did
+not grow like m^{1/2}. No kill.
 Or H1 on one cylinder. Work one.
 Bound open. docs/LEMMA-STAR-PACKET.md
 Samples are evidence only.

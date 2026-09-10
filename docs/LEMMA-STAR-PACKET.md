@@ -1,10 +1,11 @@
-# Lemma★ — coherent triad packets (Attack 9)
+# Lemma★ — coherent triad packets (Attacks 9–10)
 
 10 September 2026. Live falsification target. **Not a proof.
-NS not solved. This sample did not kill Lemma★.**
+NS not solved. These samples did not kill Lemma★.**
 
 Locked form: [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md).
-Probe: `python3 scripts/ns_attacks/attack9_packet.py`
+AP probe: `python3 scripts/ns_attacks/attack9_packet.py`
+Same-shell: `python3 scripts/ns_attacks/attack10_same_shell.py`
 
 ---
 
@@ -98,48 +99,80 @@ spread stops it from diverging. Not a kill.
 
 ---
 
-## Status
-
-- isolated closed triad tested: no kill
-- dilation confirmed exactly neutral
-- fixed additive offset becomes safer on the tested ray
-- polarization zero is accidental
-- the live falsification target is a growing coherent
-  triad packet or HH→L fan
-- the uniform global triadic bound remains completely open
-
 The AP construction above is one packet, not that target
 closed. Do not cash a peak of \(0.25\) as \(C_0\) or as a
 kill.
 
 ---
 
-## Next object
+## Attack 10 — same-shell coherent packet
 
-A **same-shell coherent packet**, not another arithmetic
-progression.
+Probe: `python3 scripts/ns_attacks/attack10_same_shell.py`
 
-The wide AP failed the heuristic because \(\mathcal D_s\)
-is the packet width, and width grew with \(m\). The narrow
-AP only delayed that. As soon as \(m\) is no longer
-\(\ll|k_0|\), the denominator blows again. That family
-cannot test
-\[
-\mathcal D_s\|v\|_2^2 Y\sim O(1).
-\]
+P and Q on one eigenvalue \(N\), R on the most popular
+sum-shell \(T\neq N\). \(O(m^2)\) closures among those
+pairs. Energy normalized. Aligned swirl, one phase per
+shell. Small \(m\) keeps actual T-pairs (edge-preserving
+subset), so the packet does not collapse to an empty
+field.
 
-What would test it: packets \(P,Q,R=P+Q\) whose eigenvalues
-do not spread with \(m\). Concretely, many keys on two (or
-three) **fixed shells**, with \(O(m^2)\) closures, energy
-normalized. Then \(\mathcal D_s\) is the shell gap, not the
-AP width. If \(T_c\) still grows like \(m^{1/2}\) there,
-Lemma★ is in trouble. If incompressibility, phases, or
-triadic counting kill that growth, that is the estimate a
-proof has to write.
+Eigenvalues do not spread with \(m\). \(\mathcal D_s\) is
+the shell gap, not AP width. That is the test the wide
+and narrow APs could not run.
+
+Fixed shell \(N=54\) (\(|S|=96\), \(T=126\)):
+
+| \(m\) | pairs | \(\mathcal R_\star\) | \(T_c\) | \(\mathcal D_s\) |
+|---|---|---|---|---|
+| 5 | 8 | \(4.16\times 10^{-3}\) | \(1.91\times 10^{3}\) | \(1.01\times 10^{5}\) |
+| 12 | 20 | \(1.31\times 10^{-3}\) | \(1.08\times 10^{3}\) | \(1.01\times 10^{5}\) |
+| 18 | 32 | \(6.29\times 10^{-4}\) | \(7.53\times 10^{2}\) | \(1.00\times 10^{5}\) |
+| 24 | 46 | \(1.04\times 10^{-3}\) | \(9.61\times 10^{2}\) | \(1.01\times 10^{5}\) |
+| 36 | 80 | \(1.15\times 10^{-3}\) | \(9.76\times 10^{2}\) | \(1.02\times 10^{5}\) |
+| 48 | 148 | \(7.25\times 10^{-4}\) | \(8.23\times 10^{2}\) | \(9.51\times 10^{4}\) |
+| 72 | 288 | \(4.29\times 10^{-4}\) | \(6.32\times 10^{2}\) | \(8.71\times 10^{4}\) |
+| 96 | 480 | \(5.46\times 10^{-4}\) | \(7.13\times 10^{2}\) | \(8.71\times 10^{4}\) |
+
+\(\mathcal D_s\) stayed flat in \(m\) (max/min \(\approx 1.17\)).
+The \(O(1)\)-denominator heuristic now has the denominator
+it asked for.
+
+\(T_c\) did not grow like \(m^{1/2}\). It fell or wandered.
+Pair count is still \(O(m^2)\) (480 pairs at \(m=96\)).
+The cubic terms did not add. Random phases on the full
+shell: \(\mathcal R_\star\approx 5\times 10^{-7}\).
+
+Full shells \(N=2,5,14,18,26,41,54,90\): every
+\(\mathcal R_\star\le 1.7\times 10^{-3}\). Peak on the
+\(m\)-sweep \(\approx 4.2\times 10^{-3}\). Do not cash
+that as \(C_0\) or as a kill.
+
+**Score.** Same-shell is not a kill. The AP failure mode
+(Ds outrunning \(T_c\)) is off. The remaining failure
+mode on this construction is the numerator: incompressibility,
+phases, or triadic counting. That is the estimate a proof
+has to write. It is not written. Finite \(m\) on two
+shells is not \(\sup\mathcal R_\star<\infty\).
+
+---
+
+## Status
+
+- isolated closed triad tested: no kill
+- dilation confirmed exactly neutral
+- fixed additive offset becomes safer on the tested ray
+- polarization zero is accidental
+- wide AP: \(T_c\) grew, \(\mathcal D_s\) faster; not a kill
+- narrow AP: finite-\(m\) rise then rollover; not a kill
+- same-shell: \(\mathcal D_s\) stayed the gap, \(T_c\)
+  did not grow like \(m^{1/2}\); not a kill
+- the remaining packet target is an HH→L fan that
+  actually grows, or H1 on one cylinder
+- the uniform global triadic bound remains completely open
 
 Do not: more isolated triangles, more frozen rays, more
-uniform dilations, more \(k_{\max}=8\) samples, K=0, or
-gluing this to H1.
+uniform dilations, more \(k_{\max}=8\) samples, another AP,
+K=0, or gluing this to H1.
 
 The other live writing is still H1 on one cylinder
 (thinness / J on folds / waiting time). Same leftover
@@ -148,7 +181,7 @@ class, different integral. Work one.
 The uniform triadic bound is still completely open.
 NS is not solved.
 
-Say **packet** for the same-shell construction, or **H1**
+Say **fan** for the remaining packet target, or **H1**
 for the cylinder.
 
 Do not merge with H1. Do not add \(K(t)\) to the PDE.

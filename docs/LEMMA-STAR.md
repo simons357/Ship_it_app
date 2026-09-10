@@ -141,11 +141,12 @@ The first family is the closing three-key
 \(k_0,k_0+e,2k_0+e\). Two Fourier keys is not that test.
 Two shells can be live. Hunt with \(|e|/|k_0|\to 0\)
 (fix \(e\), send \(|k_0|\to\infty\)); a frozen ray is not
-the supremum. Attack 8 did not kill it. Live target:
-a growing coherent triad packet or HH→L fan. Next object:
-same-shell packet (eigenvalues fixed as \(m\) grows), not
-another AP. Or H1 on one cylinder. Work one. The uniform
-global triadic bound remains completely open.
+the supremum. Attack 8 did not kill it. Same-shell
+packet (Attack 10): \(\mathcal D_s\) stayed the gap,
+\(T_c\) did not grow like \(m^{1/2}\). No kill.
+Remaining packet target: HH→L fan, or H1 on one
+cylinder. Work one. The uniform global triadic bound
+remains completely open.
 Uniform pre-Young \(C\) is off. Attack-2 \(C_*\) is a
 different door. Do not revive K=0. Do not cash a triad
 \(\mathcal R_\star\) as \(C_0\). Numerically bounded samples
