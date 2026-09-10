@@ -50,7 +50,7 @@ C_{\mathrm{geom}}\,
 Y(v).
 \]
 
-Complete quotient (scripts: `ratio_R_star` / `ratio_R_star_shape`):
+Complete quotient (**canonical** code: `ratio_R_star_shape`; alias `ratio_R_star`):
 \[
 \mathcal{R}_\star(v)
 =
@@ -58,6 +58,7 @@ Complete quotient (scripts: `ratio_R_star` / `ratio_R_star_shape`):
 \quad(\mathcal{D}_s>0).
 \]
 
+**Legacy `ratio_star`:** \(T_c/(E X\Lambda)\) — **different** post-Young object; do not confuse with \(\mathcal R_\star\).
 **\((T_c)_+\) vs prior \(T_c^2\):** when \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Kill cares about stretching \(T_c>0\).
 
 **Numerics hygiene:** do not compare \(0.065\), \(0.073\), \(1.93\times10^{-3}\) unless each used this exact formula.
@@ -106,13 +107,13 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | Lemma★ \(\Rightarrow\) no finite-time blowup of \(\Lambda\) in this packaging \(\Rightarrow\) GR on \(\mathbb{T}^3\) **in this packaging** | **Conditional implication only** | Packaging / differential inequality; **not** a Clay submission |
 | K=0 form \(T_c\le\theta\nu\mathcal D_s\) | **KILLED** | Attack 2: \(\lvert T_c\rvert/\mathcal D_s\sim B\) on fixed-shape high triad |
 | Young reduction of \(T_c\) toward a norm of \(B(v,v)\) | **Partial / formal** | Polarization exists; does not close 3D product gap |
-| \(\lvert T_c\rvert\le C\|v\|_2 X^{3/2}\) (or equiv) by Agmon/product | **GAP — does not close** | HH→L bottleneck (Attack 3); HH is diagnostic only |
+| \(\lvert T_c\rvert\le C\|v\|_2 X^{3/2}\) (or equiv) by Agmon/product | **GAP — does not close** | Attack 3 HH **input** bottleneck (not strict HH→L — no low-output restriction) |
 | Uniform geometric \(C_{\mathrm{geom}}\) / \(C_0\) for Lemma★ (shape form) | **OPEN — kill lane LIVE** | Sample maxes (shape★ formula only) are **not** a proof and **do not** close falsification |
 | Formula lock (linear / \(\mathcal D_s\) / \(T_c\) / \(\mathcal R_\star\) / \(\Lambda'\)) | **LOCKED in docs + unit tests** | `LEMMA_STAR_SHAPE_FORM.md`; `tests/test_ns_attacks_lemma_star.py` |
 | Attack 8 correct record | **CORRECT RECORD** | Kill lane LIVE; \(\mathcal R_\star\) invariants; \((T_c)_+\) |
 | Attack 9A packet fan \(\gamma\) | **Did not kill ★** — \(\gamma\approx-1.39\) (decaying) | \(\mathcal D_s\|v\|_2^2 Y=O(1)\) false for AP family; see `ATTACK_9A_AP_PACKET_FAILURE.md` |
-| Attack 9B exact-shell \(K_{\alpha,\beta}\) | **LIVE** — sample \(\max K\approx0.641\) at \((4,8)\) | \(\mathcal R_\star\to K\); controls PASS; not a kill; kill lane still LIVE |
-| Attack 9C fixed-gap spheres | **Did not kill ★** — \(\mathcal R_\star\) \(0.11\to 0.031\) | \(\mathcal D_s\) from gap; closures \(O(m)\); does not track \(m^{1/2}\); SoT-only until probe |
+| Attack 9B exact-shell \(K_{\alpha,\beta}\) | **LIVE** — \(\max_{\beta>\alpha}K\approx0.641\) at \((4,8)\); \(\max_{\beta<\alpha}K\approx0.0123\) at \((5,2)\) | \((4,8)\) is **not** HH→L (\(\beta>\alpha\)); \(\mathcal R_\star\to K\); controls PASS; not a kill |
+| Attack 9C fixed-gap spheres | **Did not kill ★** — \(\mathcal R_\star\) \(0.11\to 0.031\) | **SoT-only** — no sweep script/data in PR #48; natural same-shell **NOT** a kill |
 | Attack 9D \(\Theta(m^2)\) locked phase | **LIVE falsifier** (stub) | Designed \(\Theta(m^2)\)-closure subset with locked phases |
 
 ## What a proof would have to be

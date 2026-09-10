@@ -30,13 +30,13 @@ When \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Kill cares about stretching \(T_c>0\).
 |------|----------------|-----------------|-----------|
 | 1 Covariance | `attack1_covariance.py` | Numeric support only | Homogeneity checks; **not** a proof |
 | 2 Triad / K=0 / C* | `attack2_triad_k0_cstar.py` | **K=0 DEAD** | Viscosity-only absorption dies with amplitude |
-| 3 Bony HH→L | `attack3_bony_hh_l.py` | HH channel live bottleneck | Diagnostic only; kill uses **total** \(T_c\) |
+| 3 Bony HH (not strict HH→L) | `attack3_bony_hh_l.py` | HH **input** channel live bottleneck | Diagnostic only; filters high inputs, **not** low-output; kill uses **total** \(T_c\) |
 | 4 Stokes | `attack4_stokes.py` | Identities OK | Remainder still needed |
 | 5 Route2 kill | `attack5_route2_kill.py` | Sample list ≠ constant | Kill lane still **LIVE** |
 | **8 Correct record** | `ATTACK_8_CORRECT_RECORD.md` | **CORRECT RECORD** | Invariants; lanes LIVE; archive split |
 | **9A Packet fan** | `attack9_packet_fan.py` | **Did not kill ★** — \(\gamma\approx-1.39\) | \(\mathcal D_s\) grew faster than \(T_c\); \(D_s\|v\|_2^2 Y=O(1)\) **false** for AP family |
-| **9B Exact-shell \(K_{\alpha,\beta}\)** | `attack9b_exact_shell_K.py` | **LIVE** — \(\max K\approx0.641\) at \((4,8)\) | \(\mathcal R_\star\to K\); controls PASS; not a kill; kill lane still LIVE |
-| **9C Fixed-gap spheres** | SoT-only (no probe script yet) | **Did not kill ★** — \(\mathcal R_\star\) \(0.11\to 0.031\) | \(\mathcal D_s\) from **gap**; closures \(O(m)\); does **not** track \(m^{1/2}\); natural same-shell **NOT** a kill |
+| **9B Exact-shell \(K_{\alpha,\beta}\)** | `attack9b_exact_shell_K.py` | **LIVE** — \(\max_{\beta>\alpha}K\approx0.641\) at \((4,8)\); \(\max_{\beta<\alpha}K\approx0.0123\) at \((5,2)\) | \((4,8)\) is **\(\beta>\alpha\)** (higher shell, **not** HH→L); controls PASS; not a kill |
+| **9C Fixed-gap spheres** | SoT-only (no probe script yet) | **Did not kill ★** — \(\mathcal R_\star\) \(0.11\to 0.031\) | Snapshot only — **lacks** sweep script/data in PR #48; natural same-shell **NOT** a kill |
 | **9D \(\Theta(m^2)\) locked phase** | stub / spec | **LIVE falsifier** (not run) | Designed \(\Theta(m^2)\)-closure subset with locked phases |
 
 ## Attack 9A — failure (truth)
@@ -52,26 +52,33 @@ K_{\alpha,\beta}=\sup_{Aw=\alpha w}\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2
 \]
 Base packet = many same-shell modes; \(\mathcal D_s\) only from small closing component; \(\varepsilon\) cancels in limiting \(\mathcal R_\star\to K\).  
 Caveat: “narrow” ≠ \(\mathcal D_s=O(1)\).  
+**CRITICAL:** \(\beta>\alpha\) = higher-shell transfer (**not** HH→L); genuine HH→L subfamily needs \(\beta<\alpha\).  
 Doc: [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md).  
+Locator: [`FIVE_LANE_PACK_LOCATOR.md`](./FIVE_LANE_PACK_LOCATOR.md) — https://github.com/simons357/Ship_it_app/pull/48  
 Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/`
 
 ### Runtime 2026-09-10 (seed 1390, kmax≤10 shells)
 
 | Metric | Value |
 |--------|-------|
-| Pairs probed | 24 |
-| \(\max K_{\alpha,\beta}\) seen | \(\approx 0.641\) at \((\alpha,\beta)=(4,8)\) |
+| Pairs probed | 24 (\(21\) with \(\beta>\alpha\), \(3\) with \(\beta<\alpha\)) |
+| \(\max K\) all / \(\beta>\alpha\) (higher shell, **not** HH→L) | \(\approx 0.641\) at \((\alpha,\beta)=(4,8)\) |
+| \(\max K\) with \(\beta<\alpha\) (genuine HH→L) | \(\approx 0.0123\) at \((\alpha,\beta)=(5,2)\) |
 | Controls | **PASS** (amp inv.; exact-shell \(\mathcal D_s\approx0\)) |
 | \(\varepsilon\to0\) limit vs \(K\) | **PASS** on pairs with \(K>0\) |
 | Verdict | Finite sample max — **not** a kill of ★; kill lane **LIVE** |
 
-Other notable \(K\): \((1,2)\approx0.578\), \((2,4)\approx0.296\), \((5,10)\approx0.298\), \((13,26)\approx0.234\). Many \((\alpha,\beta)\) have \(K=0\) (kinematic: \(\Pi_\beta B(w,w)=0\) on the tested fan).
+Other notable \(K\) (\(\beta>\alpha\)): \((1,2)\approx0.578\), \((2,4)\approx0.296\), \((5,10)\approx0.298\), \((13,26)\approx0.234\). Many \((\alpha,\beta)\) have \(K=0\) (kinematic: \(\Pi_\beta B(w,w)=0\) on the tested fan).
 
-## Attack 9C — fixed-gap spheres (not a kill)
+## Attack 3 — not strictly HH→L
+
+Attack 3 filters high-frequency **inputs** (Bony HH/HL/LL) without restricting **output** to low frequencies. Diagnostic only. Doc: [`ATTACK_3_BONY_HH_L.md`](./ATTACK_3_BONY_HH_L.md).
+
+## Attack 9C — fixed-gap spheres (not a kill; SoT-only)
 
 Fixed-gap spheres \(n\) and \(n+d\): \(\mathcal D_s\) from the **gap** (not packet width); natural closures only \(O(m)\); \(\mathcal R_\star\) **falls** with \(n\) (\(0.11\to 0.031\)) and does **not** track \(m^{1/2}\). **Natural same-shell ensemble is NOT a kill.**  
 Doc: [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md).  
-**Probe:** SoT-only until implemented (no `scripts/ns_attacks/attack9c_*.py` yet).
+**Probe:** **SoT-only until implemented** — snapshot records \(0.11\to0.031\) but **lacks** supporting fixed-gap sweep script/data in PR #48 (no `scripts/ns_attacks/attack9c_*.py` yet).
 
 ## Attack 9D — next falsifier (stub)
 

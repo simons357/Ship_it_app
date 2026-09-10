@@ -3,8 +3,8 @@
 **Date:** 2026-09-10  
 **Branch:** `cursor/ns-five-lane-lemma-star-1390`  
 **Status:** **Did not kill ★.** Natural same-shell ensemble is **NOT** a kill. Kill lane remains **LIVE**. **NS not solved.**  
-**Prior:** Attack 9B (exact-shell \(K_{\alpha,\beta}\)) — finite sample \(\max K\approx0.641\), not a kill — [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md).
-
+**Prior:** Attack 9B (exact-shell \(K_{\alpha,\beta}\)) — \(\max_{\beta>\alpha}K\approx0.641\) at \((4,8)\) (**not** HH→L); \(\max_{\beta<\alpha}K\approx0.0123\) at \((5,2)\) — not a kill — [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md).
+**SoT status:** **SoT-only until implemented.** Snapshot \(0.11\to0.031\) is locked as user/runtime truth; PR #48 **lacks** a supporting fixed-gap sweep script and raw sweep data.
 ## Family
 
 Two Stokes eigen-spheres separated by a **fixed gap** \(d\), at shell indices \(n\) and \(n+d\):
@@ -31,8 +31,9 @@ The structural reason is consistent with 9A/9B caveats: with \(\mathcal{D}_s\) f
 
 ## Probe / script status
 
-**SoT-only until implemented.** No dedicated probe script yet under `scripts/ns_attacks/` for fixed-gap spheres (contrast `attack9b_exact_shell_K.py` for 9B). Numbers \(0.11\to 0.031\) are locked as user/runtime truth into this Source of Truth; a future `attack9c_fixed_gap_spheres.py` (name TBD) should reproduce them under the same controls as 9A/9B (amplitude invariance of \(\mathcal{R}_\star\), complete signed \(T_c\), report total \(T_c\) not HH→L-only).
+**SoT-only until implemented.** No dedicated probe script yet under `scripts/ns_attacks/` for fixed-gap spheres (contrast `attack9b_exact_shell_K.py` for 9B). Numbers \(0.11\to 0.031\) are locked as user/runtime truth into this Source of Truth; **PR #48 does not contain** a supporting fixed-gap sweep script or raw sweep dataset to re-derive them. A future `attack9c_fixed_gap_spheres.py` (name TBD) should reproduce them under the same controls as 9A/9B (amplitude invariance of \(\mathcal{R}_\star\), complete signed \(T_c\), report total \(T_c\) not HH→L-only).
 
+Pack locator: [`FIVE_LANE_PACK_LOCATOR.md`](./FIVE_LANE_PACK_LOCATOR.md) — https://github.com/simons357/Ship_it_app/pull/48.
 ## Decisive output
 
 | Outcome | Meaning |

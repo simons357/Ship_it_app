@@ -35,7 +35,11 @@ Exact lock (see docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md):
   R_★(v) = (Tc)_+^2 / (Ds · ||v||_2^2 · Y)   (amp-, dilation-, and ν-invariant)
   where (Tc)_+ = max(Tc, 0). When Tc ≥ 0, (Tc)_+^2 = Tc^2.
   For kill we care about stretching Tc > 0.
-  code: ratio_R_star_shape  (alias ratio_R_star)
+
+  CANONICAL quotient code name: ratio_R_star_shape  (= R_★)
+  Alias:                       ratio_R_star         → same as ratio_R_star_shape
+  LEGACY (different object):   ratio_star           = Tc / (E X Λ)  post-Young
+                               (scales as 1/a on fixed shape; NOT R_★)
 
 Lemma★ — CANONICAL SHAPE FORM (OPEN; NS not solved):
   (Tc(v)_+)^2 ≤ C_geom · Ds(v) · ||v||_2^2 · Y(v)
@@ -403,7 +407,8 @@ class ProbeResult:
     N: float
     M: float
     Tc: float
-    # Post-Young viscosity packaging: Tc / (E X Λ) — scales as 1/B on fixed shape
+    # Post-Young viscosity packaging: Tc / (E X Λ) — scales as 1/a on fixed shape.
+    # LEGACY name ratio_star — DIFFERENT from canonical R_★ (do not confuse).
     ratio_star: float
     # Pre-Young geometric ratio: Tc / (√E · X · Λ) — amplitude-invariant
     ratio_preyoung: float
@@ -411,7 +416,9 @@ class ProbeResult:
     ratio_cstar: float
     # K=0 form: Tc / Ds  (blows ~B with amplitude)
     ratio_k0: float
-    # Canonical shape★ ratio: (Tc)_+^2 / (Ds E Y) — amp-/dilation-/ν-invariant
+    # CANONICAL shape★ quotient R_★ = (Tc)_+^2 / (Ds E Y) — amp-/dilation-/ν-invariant.
+    # Code name: ratio_R_star_shape. Alias property ratio_R_star → same.
+    # NOT the same as legacy ratio_star above.
     ratio_R_star_shape: float
     B_L2: float
     label: str = ""

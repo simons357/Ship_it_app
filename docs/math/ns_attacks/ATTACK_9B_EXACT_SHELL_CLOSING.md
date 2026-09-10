@@ -3,7 +3,8 @@
 **Date:** 2026-09-10  
 **Branch:** `cursor/ns-five-lane-lemma-star-1390`  
 **Status:** **LIVE kill attempt** (numerics). Lemma★ **OPEN**. **NS not solved.**  
-**Prior:** Attack 9A (AP packet) did **not** kill ★ — see [`ATTACK_9A_AP_PACKET_FAILURE.md`](./ATTACK_9A_AP_PACKET_FAILURE.md).
+**Prior:** Attack 9A (AP packet) did **not** kill ★ — see [`ATTACK_9A_AP_PACKET_FAILURE.md`](./ATTACK_9A_AP_PACKET_FAILURE.md).  
+**Pack locator:** [`FIVE_LANE_PACK_LOCATOR.md`](./FIVE_LANE_PACK_LOCATOR.md) — PR https://github.com/simons357/Ship_it_app/pull/48
 
 ## Family
 
@@ -26,12 +27,23 @@ The base packet \(w_\alpha\) may contain **many same-shell modes** (coherent fan
 K_{\alpha,\beta}
 =
 \sup_{Aw=\alpha w}
-\frac{\beta\,\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\,\|w\|_2^4}.
+\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\|w\|_2^4}.
 }
 \]
 
 If \(\sup_{\alpha,\beta}K_{\alpha,\beta}=\infty\), then \(\sup\mathcal{R}_\star=\infty\) along the corresponding \(\varepsilon\to0\) family → **★ dead**.  
 Finite sample maxima are **not** a proof that \(K\) is bounded; kill lane stays **LIVE**.
+
+## CRITICAL — \(\beta>\alpha\) is NOT HH→L
+
+| Subfamily | Meaning | Sample max \(K\) (seed 1390, kmax≤10) |
+|-----------|---------|--------------------------------------|
+| \(\beta>\alpha\) | Transfer to a **higher** shell — **NOT** HH→L | \(\approx 0.641\) at \((\alpha,\beta)=(4,8)\) |
+| \(\beta<\alpha\) | Genuine HH→L subfamily (output on **lower** shell) | \(\approx 0.0123\) at \((\alpha,\beta)=(5,2)\) |
+
+**Do not** report global \(\max K\approx0.641\) at \((4,8)\) as an HH→L result. That pair has \(\beta>\alpha\). Always split \(\beta>\alpha\) vs \(\beta<\alpha\) when quoting Attack 9B maxima.
+
+(Attack 3 is also **not** a strict HH→L map — it filters high-frequency **inputs** without restricting **output** to low frequencies; see [`ATTACK_3_BONY_HH_L.md`](./ATTACK_3_BONY_HH_L.md).)
 
 ## \(\varepsilon\to0\) analysis (two-shell asymptotics)
 
@@ -79,7 +91,8 @@ amplifies small lattice eigenvalue gaps.
 ## After 9B (SoT)
 
 **Attack 9C** — fixed-gap spheres \(n\) and \(n+d\): \(\mathcal{D}_s\) from the **gap** (not packet width); natural closures only \(O(m)\); \(\mathcal{R}_\star\) **falls** with \(n\) (\(0.11\to 0.031\)), does **not** track \(m^{1/2}\). Natural same-shell ensemble is **NOT** a kill.  
-Doc: [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md) (SoT-only until a probe script exists).
+**SoT-only until implemented** — snapshot records \(0.11\to0.031\) but **lacks** a supporting fixed-gap sweep script/data in PR #48.  
+Doc: [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md).
 
 **Next falsifier (9D):** designed \(\Theta(m^2)\)-closure subset with **locked phases** — [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md).
 
@@ -91,6 +104,7 @@ Doc: [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md) (SoT-o
 | Exact-shell \(\varepsilon=0\): \(\mathcal{D}_s\approx0\) | Pass (machine eps) |
 | \(\varepsilon\to0\) probe: \(\mathcal{R}_\star(v_\varepsilon)\to K_{\alpha,\beta}(w)\) | Relative error \(\to0\) |
 | Report **total** signed \(T_c\) | Not HH→L-only |
+| Report \(\max K\) for \(\beta>\alpha\) and \(\beta<\alpha\) **separately** | Required |
 
 ## Script
 
@@ -99,7 +113,7 @@ PYTHONPATH=scripts python3 scripts/ns_attacks/attack9b_exact_shell_K.py \
   --outdir /opt/cursor/artifacts/attack9b_exact_shell
 ```
 
-Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/` (`attack9b.json`, `HEADLINE.md`, plots).
+Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/` (`attack9b.json`, `HEADLINE.md`, `NOTES_BETA_SPLIT.md`, plots).
 
 ## Decisive output
 
@@ -113,11 +127,13 @@ Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/` (`attack9b.json`, `HEAD
 
 | Metric | Value |
 |--------|-------|
-| \(\max K\) seen | \(\approx 0.641\) at \((\alpha,\beta)=(4,8)\) |
+| \(\max K\) all pairs | \(\approx 0.641\) at \((\alpha,\beta)=(4,8)\) — **\(\beta>\alpha\)**, NOT HH→L |
+| \(\max K\) with \(\beta>\alpha\) (higher shell) | \(\approx 0.641\) at \((4,8)\) |
+| \(\max K\) with \(\beta<\alpha\) (genuine HH→L) | \(\approx 0.0123\) at \((5,2)\) |
 | Controls / \(\varepsilon\)-limit | **PASS** |
 | Verdict | Finite sample — **not** a kill; kill lane **LIVE** |
 
-Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/` (`attack9b.json`, `HEADLINE.md`, `K_by_ab_pair.png`, `R_star_eps_limit.png`).
+Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/` (`attack9b.json`, `HEADLINE.md`, `NOTES_BETA_SPLIT.md`, `K_by_ab_pair.png`, `R_star_eps_limit.png`).
 
 **NS not solved.**
 

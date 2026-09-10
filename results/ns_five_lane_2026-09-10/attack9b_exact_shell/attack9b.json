@@ -1,7 +1,7 @@
 {
   "attack": "9B",
   "name": "Exact-shell coherent fan + small closing packet",
-  "boxed_K": "K_{\u03b1,\u03b2} = \u03b2 \u2016\u03a0_\u03b2 B(w,w)\u2016\u2082\u00b2 / (\u03b1\u00b2 \u2016w\u2016\u2082\u2074)",
+  "boxed_K": "K_{\u03b1,\u03b2} = sup_{Aw=\u03b1w} \u03b2 \u2016\u03a0_\u03b2 B(w,w)\u2016\u2082\u00b2 / (\u03b1\u00b2 \u2016w\u2016\u2082\u2074)",
   "relation": "lim_{\u03b5\u21920} R_\u2605(w+\u03b5 z_\u03b2) = K_{\u03b1,\u03b2}(w) for z_\u03b2 \u2225 \u03a0_\u03b2 B(w,w)",
   "attack_9A": "DID NOT kill \u2605 \u2014 Ds grew faster than Tc; Ds\u2016v\u2016\u00b2Y=O(1) false for AP family",
   "kill_lane": "LIVE",
@@ -1521,6 +1521,33 @@
   },
   "controls_all_pass": true,
   "eps_limit_all_pass": true,
-  "caveat": "Narrow \u2260 Ds=O(1). Lattice amplifies (\u03bb_k\u2212\u039b)\u00b2. Next: controlled finite shell thickness \u2014 not widening AP packet.",
-  "truth": "NS is NOT solved. Falsification and proof both LIVE. 9A did not kill \u2605."
+  "caveat": "Narrow \u2260 Ds=O(1). Lattice amplifies (\u03bb_k\u2212\u039b)\u00b2. Next: controlled finite shell thickness \u2014 not widening AP packet. \u03b2>\u03b1 \u2260 HH\u2192L.",
+  "truth": "NS is NOT solved. Falsification and proof both LIVE. 9A did not kill \u2605.",
+  "shell_transfer_split": {
+    "beta_gt_alpha": "higher-shell transfer \u2014 NOT HH\u2192L",
+    "beta_lt_alpha": "genuine HH\u2192L subfamily (output on lower shell)",
+    "note": "Reported global max K\u22480.641 at (\u03b1,\u03b2)=(4,8) has \u03b2>\u03b1; do NOT label it HH\u2192L."
+  },
+  "max_K_beta_gt_alpha": {
+    "K": 0.6410131735094131,
+    "alpha": 4,
+    "beta": 8,
+    "n_modes_pos": 3,
+    "PiB_L2": 1.132266023078864,
+    "n_pairs": 21
+  },
+  "max_K_beta_lt_alpha": {
+    "K": 0.012320184062780926,
+    "alpha": 5,
+    "beta": 2,
+    "n_modes_pos": 10,
+    "PiB_L2": 0.39243126886725216,
+    "n_pairs": 3
+  },
+  "max_K_beta_eq_alpha": {
+    "K": null,
+    "alpha": null,
+    "beta": null,
+    "n_pairs": 0
+  }
 }

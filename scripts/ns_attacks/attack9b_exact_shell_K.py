@@ -8,6 +8,11 @@ Family:
 Boxed quantity:
   K_{α,β} = sup_{A w = α w}  β ‖Π_β B(w,w)‖₂² / (α² ‖w‖₂⁴)
 
+Shell-transfer split (CRITICAL):
+  β > α  → transfer to a *higher* shell (NOT HH→L).
+  β < α  → genuine HH→L subfamily (output on lower shell).
+  Report max K for each subfamily separately. Sample max at (4,8) is β>α.
+
 ε→0: R_★(v_ε) → K_{α,β}(w) for optimally aligned unit closing packet.
 ε cancels in the limiting quotient; Ds is generated only by the closing component.
 
@@ -502,12 +507,41 @@ def main() -> int:
         if r.get("eps_limit") and r.get("K", 0) > 1e-14
     )
 
+    def _best_of(pred):
+        subset = [r for r in rows if pred(r)]
+        if not subset:
+            return {"K": None, "alpha": None, "beta": None, "n_pairs": 0}
+        best = max(subset, key=lambda r: r["K"])
+        return {
+            "K": best["K"],
+            "alpha": best["alpha"],
+            "beta": best["beta"],
+            "n_modes_pos": best.get("n_modes_pos"),
+            "PiB_L2": best.get("PiB_L2"),
+            "n_pairs": len(subset),
+        }
+
+    # β>α: higher-shell transfer (NOT HH→L). β<α: genuine HH→L subfamily.
+    max_K_beta_gt_alpha = _best_of(lambda r: r["beta"] > r["alpha"])
+    max_K_beta_lt_alpha = _best_of(lambda r: r["beta"] < r["alpha"])
+    max_K_beta_eq_alpha = _best_of(lambda r: r["beta"] == r["alpha"])
+
     # JSON-safe rows (drop huge params from top summary duplicate)
     summary = {
         "attack": "9B",
         "name": "Exact-shell coherent fan + small closing packet",
-        "boxed_K": "K_{α,β} = β ‖Π_β B(w,w)‖₂² / (α² ‖w‖₂⁴)",
+        "boxed_K": (
+            "K_{α,β} = sup_{Aw=αw} β ‖Π_β B(w,w)‖₂² / (α² ‖w‖₂⁴)"
+        ),
         "relation": "lim_{ε→0} R_★(w+ε z_β) = K_{α,β}(w) for z_β ∥ Π_β B(w,w)",
+        "shell_transfer_split": {
+            "beta_gt_alpha": "higher-shell transfer — NOT HH→L",
+            "beta_lt_alpha": "genuine HH→L subfamily (output on lower shell)",
+            "note": (
+                "Reported global max K≈0.641 at (α,β)=(4,8) has β>α; "
+                "do NOT label it HH→L."
+            ),
+        },
         "attack_9A": "DID NOT kill ★ — Ds grew faster than Tc; Ds‖v‖²Y=O(1) false for AP family",
         "kill_lane": "LIVE",
         "ns_solved": False,
@@ -515,6 +549,9 @@ def main() -> int:
         "kmax": args.kmax,
         "n_pairs": len(rows),
         "max_K": best_global,
+        "max_K_beta_gt_alpha": max_K_beta_gt_alpha,
+        "max_K_beta_lt_alpha": max_K_beta_lt_alpha,
+        "max_K_beta_eq_alpha": max_K_beta_eq_alpha,
         "per_pair": [
             {
                 k: v
@@ -528,7 +565,8 @@ def main() -> int:
         "eps_limit_all_pass": limit_pass,
         "caveat": (
             "Narrow ≠ Ds=O(1). Lattice amplifies (λ_k−Λ)². "
-            "Next: controlled finite shell thickness — not widening AP packet."
+            "Next: controlled finite shell thickness — not widening AP packet. "
+            "β>α ≠ HH→L."
         ),
         "truth": "NS is NOT solved. Falsification and proof both LIVE. 9A did not kill ★.",
     }
@@ -542,25 +580,39 @@ def main() -> int:
         "**Kill lane:** LIVE",
         "**NS solved:** false",
         "**Lemma★:** OPEN",
-        f"**max K seen:** {best_global.get('K')}",
-        f"**at (α,β):** ({best_global.get('alpha')}, {best_global.get('beta')})",
+        f"**max K (all pairs):** {best_global.get('K')} at "
+        f"(α,β)=({best_global.get('alpha')}, {best_global.get('beta')})",
+        f"**max K with β>α (higher shell, NOT HH→L):** "
+        f"{max_K_beta_gt_alpha.get('K')} at "
+        f"({max_K_beta_gt_alpha.get('alpha')}, {max_K_beta_gt_alpha.get('beta')})",
+        f"**max K with β<α (genuine HH→L subfamily):** "
+        f"{max_K_beta_lt_alpha.get('K')} at "
+        f"({max_K_beta_lt_alpha.get('alpha')}, {max_K_beta_lt_alpha.get('beta')})",
+        "",
+        "CRITICAL: (4,8) has β>α → transfer to a *higher* shell, **not** HH→L.",
         f"**controls_all_pass:** {ctrl_pass}",
         f"**eps_limit_all_pass:** {limit_pass}",
         "",
-        "| α | β | n_pos | K | Π_βB L2 | Ds(ε=0) | ε-limit OK |",
-        "|---|---|-------|---|---------|---------|------------|",
+        "| α | β | transfer | n_pos | K | Π_βB L2 | Ds(ε=0) | ε-limit OK |",
+        "|---|---|----------|-------|---|---------|---------|------------|",
     ]
     for r in sorted(rows, key=lambda x: -x["K"]):
         el = r.get("eps_limit") or {}
+        if r["beta"] > r["alpha"]:
+            xfer = "β>α higher"
+        elif r["beta"] < r["alpha"]:
+            xfer = "β<α HH→L"
+        else:
+            xfer = "β=α"
         lines.append(
-            f"| {r['alpha']} | {r['beta']} | {r.get('n_modes_pos')} | "
+            f"| {r['alpha']} | {r['beta']} | {xfer} | {r.get('n_modes_pos')} | "
             f"{r['K']:.6e} | {r.get('PiB_L2', 0):.6e} | {r.get('Ds_eps0')} | "
             f"{el.get('limit_ok')} |"
         )
     lines.extend(
         [
             "",
-            "Boxed: K_{α,β}=β‖Π_β B(w,w)‖₂²/(α²‖w‖₂⁴).",
+            "Boxed: K_{α,β}=sup_{Aw=αw} β‖Π_β B(w,w)‖₂²/(α²‖w‖₂⁴).",
             "ε→0: R_★→K for z_β∥Π_β B. Finite sample max ≠ proof. Kill lane LIVE.",
             "NS not solved.",
         ]
@@ -616,6 +668,8 @@ def main() -> int:
         json.dumps(
             {
                 "max_K": best_global,
+                "max_K_beta_gt_alpha": max_K_beta_gt_alpha,
+                "max_K_beta_lt_alpha": max_K_beta_lt_alpha,
                 "controls_all_pass": ctrl_pass,
                 "eps_limit_all_pass": limit_pass,
                 "n_pairs": len(rows),

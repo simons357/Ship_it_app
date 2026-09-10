@@ -10,7 +10,15 @@
 
 Change only the size of a fixed shape \(v\) via \(u=av\). Optimize over size. Worst size cancels \(\nu\). What remains is pure geometry on the shape.
 
-Scripts: `scripts/ns_attacks/stokes_moments.py` (aliases: \(E=\|v\|_2^2\), `Tc`\(=\mathcal T_c\) / \(T_c\), `Ds`\(=\mathcal D_s\), `ratio_R_star_shape`\(=\mathcal R_\star\)).
+Scripts: `scripts/ns_attacks/stokes_moments.py`
+
+| Code name | Object |
+|-----------|--------|
+| **`ratio_R_star_shape`** | **Canonical** \(\mathcal R_\star=(T_c)_+^2/(\mathcal D_s\|v\|_2^2 Y)\) |
+| `ratio_R_star` | Alias property → same as `ratio_R_star_shape` |
+| **`ratio_star`** (legacy) | **Different** post-Young \(T_c/(E X\Lambda)\) — scales as \(1/a\); **not** \(\mathcal R_\star\) |
+
+Do **not** confuse legacy `ratio_star` with the canonical shape quotient.
 
 ---
 
@@ -112,7 +120,8 @@ T_c
 
 (Equivalent cyclic writings that keep the same signed \(\mathrm{Im}\) are allowed; absolute-value rearrangements are not.)
 
-HH→L channel splits can **identify** a mechanism; only the **complete** signed \(T_c\) enters the kill criterion for ★.
+HH→L channel splits can **identify** a mechanism; only the **complete** signed \(T_c\) enters the kill criterion for ★.  
+**Attack 3 caveat:** the Bony HH split filters high-frequency **inputs** and does **not** restrict **output** to low frequencies — Attack 3 is **not** a strict HH→L map ([`ATTACK_3_BONY_HH_L.md`](./ATTACK_3_BONY_HH_L.md)). Genuine HH→L as an **output** subfamily in 9B requires \(\beta<\alpha\).
 
 ---
 
@@ -228,7 +237,9 @@ Reason from how **signed** triads add that stretching cannot get large unless sp
   K_{\alpha,\beta}=\sup_{Aw=\alpha w}\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\|w\|_2^4},\quad
   \lim_{\varepsilon\to0}\mathcal R_\star(w_\alpha+\varepsilon z_\beta)=K_{\alpha,\beta}(w).
   \]
-- Fixed-gap spheres (9C, **not** a kill): [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md) — \(\mathcal R_\star\) \(0.11\to 0.031\); SoT-only until probe
+  **CRITICAL:** sample \(\max K\approx0.641\) at \((4,8)\) has \(\beta>\alpha\) (higher shell, **not** HH→L). Genuine HH→L subfamily \(\beta<\alpha\): sample max \(\approx0.0123\) at \((5,2)\).
+- Fixed-gap spheres (9C, **not** a kill): [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md) — \(\mathcal R_\star\) \(0.11\to 0.031\); **SoT-only** until probe (no sweep script/data in PR #48)
+- Pack locator: [`FIVE_LANE_PACK_LOCATOR.md`](./FIVE_LANE_PACK_LOCATOR.md) — https://github.com/simons357/Ship_it_app/pull/48
 - Next falsifier (9D stub): [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md) — designed \(\Theta(m^2)\) locked-phase closures
 - Synthesis: [`ATTACK_SYNTHESIS_SIMULTANEOUS.md`](./ATTACK_SYNTHESIS_SIMULTANEOUS.md)
 - Archive (NOT ★): [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_Q6_SHELL/), [`../ARCHIVE_NOT_LEMMA_STAR.md`](../ARCHIVE_NOT_LEMMA_STAR.md)

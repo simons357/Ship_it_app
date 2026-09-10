@@ -573,18 +573,34 @@
     },
     "controls_all_pass": true,
     "eps_limit_all_pass": true,
-    "n_pairs": 24
+    "n_pairs": 24,
+    "max_K_beta_gt_alpha": {
+      "K": 0.6410131735094131,
+      "alpha": 4,
+      "beta": 8,
+      "n_modes_pos": 3,
+      "PiB_L2": 1.132266023078864,
+      "n_pairs": 21
+    },
+    "max_K_beta_lt_alpha": {
+      "K": 0.012320184062780926,
+      "alpha": 5,
+      "beta": 2,
+      "n_modes_pos": 10,
+      "PiB_L2": 0.39243126886725216,
+      "n_pairs": 3
+    },
+    "shell_transfer_split": {
+      "beta_gt_alpha": "higher-shell transfer \u2014 NOT HH\u2192L",
+      "beta_lt_alpha": "genuine HH\u2192L subfamily (output on lower shell)",
+      "note": "Reported global max K\u22480.641 at (\u03b1,\u03b2)=(4,8) has \u03b2>\u03b1; do NOT label it HH\u2192L."
+    },
+    "note": "(4,8) has beta>alpha \u2014 higher-shell transfer, NOT HH\u2192L. Genuine HH\u2192L needs beta<alpha."
   },
   "attack9c": {
-    "verdict": "DID_NOT_KILL_STAR",
-    "family": "fixed_gap_spheres_n_and_n_plus_d",
-    "Ds_source": "gap_not_packet_width",
-    "closures": "O(m)_natural_only",
-    "R_star_vs_n": {"from": 0.11, "to": 0.031, "trend": "falls"},
-    "tracks_m_sqrt": false,
-    "natural_same_shell_ensemble_is_kill": false,
-    "probe_script": null,
-    "note": "SoT-only until attack9c probe implemented"
+    "verdict": "DID_NOT_KILL_SOT_ONLY",
+    "R_star_span": "0.11\u21920.031",
+    "note": "SoT-only until implemented; PR #48 lacks fixed-gap sweep script/data."
   },
   "attack9d": {
     "verdict": "LIVE_FALSIFIER_STUB",
@@ -594,5 +610,5 @@
   },
   "kill_lane": "LIVE",
   "lemma_star": "OPEN",
-  "ns_solved": false
+  "pack_locator": "https://github.com/simons357/Ship_it_app/pull/48"
 }
