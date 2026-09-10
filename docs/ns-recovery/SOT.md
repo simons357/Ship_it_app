@@ -65,7 +65,7 @@ H1 on the cylinder is the other live track if the packet line is shelved. It is 
 | `docs/ns-recovery/SAME-SHELL-PACKET-NOTE.md` | Expanded packet note |
 | `docs/ns-recovery/CENTERED-SPECTRAL-DRIFT-MASTER-REPORT.md` | 7 Sep search; Stokes-moment paste was missing until PR #48 |
 | `docs/ns-recovery/GROK_HEAVY.md` | **Grok Heavy entry** — formulas, five-lane JSON, live work |
-| `docs/ns-recovery/FIVE-LANE-DISCUSSION-AND-MATH.md` | Five-lane discussion + math (PR #48); **not** 9A–9D |
+| `docs/ns-recovery/FIVE_LANE_PACK_LOCATOR.md` | Absolute script paths + box drop for 9B / \(R_★\) |
 | `docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md` | Working foundation: uniform \(\mathcal R_\star\) |
 | `docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md` | Operator / triad identities |
 | `docs/math/ns_attacks/ARCHIVE_OLDER_LEMMA_STAR_PROOF.md` | Older Section 4 is **not** a theorem |

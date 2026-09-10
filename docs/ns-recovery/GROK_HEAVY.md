@@ -223,7 +223,7 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 |---|---|
 | **This file** | Grok Heavy entry |
 | [`SOT.md`](SOT.md) | Packet source of truth |
-| [`FIVE-LANE-DISCUSSION-AND-MATH.md`](FIVE-LANE-DISCUSSION-AND-MATH.md) | Recovered five-lane discussion + math; **9A–9D are not the lanes** |
+| [`FIVE_LANE_PACK_LOCATOR.md`](FIVE_LANE_PACK_LOCATOR.md) | Absolute `/workspace/scripts/ns_attacks/` paths + box drop |
 | [`five-lane-pack/HIT.md`](five-lane-pack/HIT.md) | Pack index / PR pointers |
 | [`docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md`](../math/ns_attacks/LEMMA_STAR_CANONICAL.md) | **Working foundation** |
 | [`docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](../math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md) | Exact identities |
