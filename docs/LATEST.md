@@ -25,11 +25,12 @@ https://github.com/simons357/Ship_it_app/blob/cursor/unaugmented-r4-vorticity-f8
 
 10 September packet. Lemma C sits (if). Last
 line is H1 (\(A_{\mathrm{bad}}\) a priori). WRITE
-(6) attempted on one cylinder (§12). Still
-open. Morrey wall: W^{1,2} does not give
-Hölder 1/2. H2 and H3 a priori from energy
-also open. Writing gaps repaired in §11.
-No \(K(t)\). No Q1.
+(6) tried on one cylinder (§12). Close:
+none. Pieces that sit: Good-local, mid-Bad
+bound, direction identity, \(R_\phi\) on the
+annulus. Near-Bad hits Morrey. H2 and H3
+a priori from energy also open. Writing
+gaps repaired in §11. No \(K(t)\). No Q1.
 
 **RH — open**
 docs/RH-CHAIN.md

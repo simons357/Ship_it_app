@@ -27,10 +27,11 @@ Do not reprove Lemma C. Do not add \(K(t)\).
 Do not: \(\Phi\), \(n=64\), leftover-close B42,
 BKM from \(L^2\), export A.
 
-Next write: **H1 on one cylinder** was attempted
-(§12). It did not close. Morrey wall:
-\(W^{1,2}(H)\not\subset C^{0,1/2}\). Mid-Bad is
-named, H3-class. Near-Bad is still H1.
+Next write: **H1 on one cylinder** was tried
+(§12). Close: none. Pieces that sit:
+Good-local, mid-Bad bound, direction
+identity, \(R_\phi\) on the annulus. Near-Bad
+hits Morrey: \(W^{1,2}(H)\not\subset C^{0,1/2}\).
 Keep H1, H2, H3, \(R_\phi\) separate. Do not
 emit H1. Writing gaps are filed in
 [`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md) §11.

@@ -225,7 +225,7 @@ On Bad, \(|\sin\varphi|\) is large, so the kernel is not improved.
 | H1 / \(A_{\mathrm{bad}}\) a priori | **Open** (attempted §12; Morrey wall) |
 | H2 a priori from energy | **Open** |
 | H3 / \(A_{\mathrm{ext}}\) a priori | **Open** (bound named) |
-| \(R_\phi\) cutoff error | Lemma to write or cite; not free |
+| \(R_\phi\) cutoff error | Annulus support sits. A priori absorb: **open** (H2-class) |
 | Type-II Liouville | Open, separate |
 
 ---
@@ -377,7 +377,7 @@ C r^{-2}\iint_{Q_r}|\omega|^2.
 | Term | Status |
 |---|---|
 | \(A_{\mathrm{good}}^{\mathrm{loc}}\) | CF/BdVB on interior Good pairs |
-| \(R_\phi\) | Cutoff error. Estimate or cite. Not free |
+| \(R_\phi\) | Annulus support sits. A priori absorb: open (H2-class) |
 | \(A_{\mathrm{bad}}\) | H1 / WRITE (6). Open |
 | \(A_{\mathrm{ext}}\) | H3. Bound named. Open a priori |
 | \(F_{\mathrm{adv}}\) | H2. Smallness: CKN 1982. A priori from \(\int E\): open |
@@ -385,7 +385,7 @@ C r^{-2}\iint_{Q_r}|\omega|^2.
 
 **What is not claimed.** H1 is not proved. H2-from-energy is not proved. H3-from-energy is not proved. The three *writing* gaps are gone. The last estimate is still WRITE (6).
 
-**Desk score of this repair.** Gap (iii) is the right implication (local Serrin, not CKN). Gap (ii) is a valid crude bound; H3 is a real extra term. Gap (i) stops a free move; \(R_\phi\) is still a lemma. Writing sloppiness is gone. H1, H2-from-energy, and H3-from-energy are not proved.
+**Desk score of this repair.** Gap (iii) is the right implication (local Serrin, not CKN). Gap (ii) is a valid crude bound; H3 is a real extra term. Gap (i) stops a free move; \(R_\phi\) lives on the annulus (tried §12). A priori absorb of \(R_\phi\) is H2-class, still open. H1, H2-from-energy, and H3-from-energy are not proved.
 
 Phone copy of this section: [`GAPS_DESTROYED.md`](GAPS_DESTROYED.md).
 
@@ -393,7 +393,25 @@ Phone copy of this section: [`GAPS_DESTROYED.md`](GAPS_DESTROYED.md).
 
 ## 12. WRITE (6) — H1 on one cylinder (attempted; still open)
 
-Asked: write leftover (6). Object: one cylinder \(Q_r\). Keep H2, H3, \(R_\phi\) off this line. Do not add \(K(t)\). Do not emit H1.
+Asked: write leftover (6). Then: try the possibilities and see which is successful. Object: one cylinder \(Q_r\). Do not add \(K(t)\). Do not emit H1.
+
+### Which succeeded
+
+| Item | Successful? | As what |
+|---|---|---|
+| \(A_{\mathrm{good}}^{\mathrm{loc}}\) | **yes** | CF/BdVB kernel drop \(\lvert z\rvert^{-5/2}\) on interior Good pairs (zero extension). Lemma C’s mechanism, not alignment. |
+| Mid-Bad \(A_{\mathrm{bad}}^{\ge\rho}\) | **yes** as a bound | CS on shells \(\lvert z\rvert\ge\rho\): \(\le C\rho^{-3/2}\int E_{\mathrm{loc}}^{3/2}\,dt\). Named remainder. **Not** absorbed from \(\int E<\infty\). |
+| Direction energy | **yes** as an identity | \(\lvert\nabla\omega\rvert^2=\lvert\nabla\lvert\omega\rvert\rvert^2+\lvert\omega\rvert^2\lvert\nabla\xi\rvert^2\) on \(\{\omega\neq 0\}\). Does **not** give Hölder \(1/2\). |
+| \(R_\phi\) support | **yes** as localization | \(\lvert\phi(x)-\phi(y)\rvert=0\) on \(B_{r/2}\times B_{r/2}\). Error lives on the annulus. Kernel \(\lvert z\rvert^{-3/2}/r\) is locally integrable. A priori absorb: **open** (H2-class). |
+| H3 exterior bound | **yes** as a bound | Already §11. A priori from energy: **open**. |
+| Local Serrin from a closed budget | **yes** as a theorem | Serrin 1962, not CKN. Needs the budget. |
+| H2 as CKN smallness | **yes** as a criterion | CKN 1982. A priori from energy: **open**. |
+| Aimed H1 (near-Bad absorbed) | **no** | Morrey wall: \(W^{1,2}\not\subset C^{0,1/2}\) in 3D. |
+| HLS, path-cost, Lemma J, signed \(D\), thin Bad, fold-only, waiting time, Bony, \(K(t)\) | **no** | Fail or refuse. §6 and below. |
+
+**Successful close of WRITE (6): none.**
+**Successful named pieces: Good-local, mid-Bad bound, direction identity, \(R_\phi\) on the annulus, H3 bound, local Serrin, H2-smallness.**
+
 
 **Aimed estimate.**
 \[
@@ -421,7 +439,14 @@ On Bad, \(|\sin\varphi|>C_*|x-y|^{1/2}\), so \(|D|\) does not drop the kernel to
 
 Fix \(\rho\in(0,r)\). Bad \(=\) Bad\(^{\ge\rho}\cup\) Bad\(^{<\rho}\).
 
-**Mid.** Same Cauchy–Schwarz as H3, now at scale \(\rho\): for \(|x-y|\ge\rho\),
+**Mid.** Worked bound. For \(x\in B_{r/2}\) and \(y\in B_r\) with \(|x-y|\ge\rho\), shells \(A_k=\{2^k\rho\le|x-y|<2^{k+1}\rho\}\):
+
+\[
+\int_{A_k\cap B_r}\frac{|\omega(y)|}{|z|^3}\,dy
+\le
+\Bigl(\int_{A_k}|z|^{-6}\,dy\Bigr)^{1/2}\|\omega\|_{L^2(A_k\cap B_r)}.
+\]
+The first factor is \(\lesssim(2^k\rho)^{-3/2}\). Sum in \(k\ge 0\) is geometric, so
 \[
 |\alpha_{\mathrm{bad}}^{\ge\rho}(x)|
 \le
@@ -432,15 +457,32 @@ A_{\mathrm{bad}}^{\ge\rho}(Q_r)
 \le
 C\rho^{-3/2}\int_{t_0-r^2}^{t_0} E_{\mathrm{loc}}(t)^{3/2}\,dt.
 \]
-Named remainder. Not absorbed into \(r^{-2}\iint|\omega|^2\) as \(r\to 0\) from \(\int E<\infty\). Same class as H3. **Not H1.**
+**Succeeds as a bound.** Not absorbed into \(r^{-2}\iint|\omega|^2\) as \(r\to 0\) from \(\int E<\infty\). Same class as H3. **Not H1.**
 
 **Near.** Pairs with \(|x-y|<\rho\). This is the core of WRITE (6).
+
+### \(R_\phi\) tried
+
+Take the companion cutoff \(\eta=\phi\). Then \(\phi\equiv 1\) on \(B_{r/2}\), so
+\[
+|\phi(x)-\phi(y)|=0\qquad\text{on }B_{r/2}\times B_{r/2}.
+\]
+The integrand of \(R_\phi\) vanishes unless at least one of \(x,y\) lies in the annulus \(A=B_r\setminus B_{r/2}\). On the remaining pairs,
+\[
+|\phi(x)-\phi(y)|\le\min\bigl(2,C|x-y|/r\bigr),
+\]
+and the Good kernel times that factor is \(\lesssim r^{-1}|z|^{-3/2}\). In 3D, \(|z|^{-3/2}\) is locally integrable.
+
+**Succeeds as localization:** \(R_\phi\) is an annulus term.
+**Does not succeed as a priori absorb:** the potential \(I_{3/2}|\omega|\) on \(L^2\) is an HLS endpoint. Young returns a piece of local \(\int E^2\) or needs extra smallness — the same class as H2, not a closed estimate from \(\int E<\infty\).
+
 
 ### Possibilities scored
 
 | Try | What it is | Verdict |
 |---|---|---|
 | HLS / CZ on Bad, kernel \(\lvert z\rvert^{-3}\) | Recovers the cubic \(E^3\) bound, or the original stretching | **fail** as H1. Already §6 |
+| \(R_\phi\) annulus support | \(\lvert\phi(x)-\phi(y)\rvert=0\) on the inner ball | **pass** as localization. **fail** as a priori absorb (H2-class) |
 | Dyadic CS on near shells \(2^{-k}\) | Factor \(2^{3k/2}\) blows up as \(k\to\infty\) | **fail** at small scales. Mid (\(\lvert z\rvert\ge\rho\)) is the row above |
 | Direction energy | On \(\{\omega\neq 0\}\): \(\lvert\nabla\omega\rvert^2=\lvert\nabla\lvert\omega\rvert\rvert^2+\lvert\omega\rvert^2\lvert\nabla\xi\rvert^2\). Hence \(\int_H\lvert\nabla\xi\rvert^2\le\Lambda^{-2}\int\lvert\nabla\omega\rvert^2\) | **pass** as identity. **fail** as Hölder \(1/2\) |
 | Morrey / Sobolev | In 3D, \(W^{1,p}\subset C^{0,1-3/p}\) needs \(p>3\). Hölder \(1/2\) needs \(p=6\). Energy gives \(\nabla\xi\in L^2(H)\). Even if \(H\) were a ball, \(W^{1,2}\not\subset C^{0,1/2}\) | **wall**. This is why energy does not empty near-Bad |
@@ -456,7 +498,7 @@ Named remainder. Not absorbed into \(r^{-2}\iint|\omega|^2\) as \(r\to 0\) from 
 | Bony LP split | LLH / LHH / HHH | **fail**. Needs \(\lVert\omega_{\mathrm{low}}\rVert_\infty\) or pieces of \(\int E^2\). Already §6 |
 | \(K(t)\) / Q-stack / \(\Phi\) | Different PDE | **refuse**. Not unaugmented NSE |
 
-**Successful as write, not as close.** The mid split \(A_{\mathrm{bad}}^{\ge\rho}\) is a named remainder. The direction-energy identity sits. The Morrey gap is the named wall for the near piece.
+**Successful as write, not as close.** Good-local, mid-Bad CS, direction identity, \(R_\phi\) on the annulus. The Morrey gap is the named wall for the near piece.
 
 **Not successful.** No row proves the aimed estimate from \(\int E<\infty\).
 
