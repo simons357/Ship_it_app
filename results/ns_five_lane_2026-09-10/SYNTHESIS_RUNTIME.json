@@ -556,5 +556,25 @@
     "attack4": "STOKES_IDENTITIES_OK_absorption_needs_remainder",
     "attack5": "SURVIVE_numeric_gap_remains",
     "LemmaStar_C0_killed": false
-  }
+  },
+  "attack9a": {
+    "verdict": "DID_NOT_KILL_STAR",
+    "reason": "Tc increased but Ds increased faster; Ds||v||^2 Y = O(1) FALSE for AP family",
+    "gamma": -1.388857766821222
+  },
+  "attack9b": {
+    "verdict": "LIVE_NOT_A_KILL",
+    "max_K": {
+      "K": 0.6410131735094131,
+      "alpha": 4,
+      "beta": 8,
+      "n_modes_pos": 3,
+      "PiB_L2": 1.132266023078864
+    },
+    "controls_all_pass": true,
+    "eps_limit_all_pass": true,
+    "n_pairs": 24
+  },
+  "kill_lane": "LIVE",
+  "lemma_star": "OPEN"
 }
