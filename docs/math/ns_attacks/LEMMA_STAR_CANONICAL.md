@@ -1,10 +1,10 @@
 # Lemma★ — canonical claim (working foundation)
 
 **Date:** 2026-09-10  
-**Status:** **OPEN.** Uniform \(\sup\mathcal R_\star<\infty\) is not proved.
-Localized ABC is a rejected reconstruction, not a kill:
-`docs/CS-REMAINDER.md`. **NS not solved.**
-H1 / WRITE (6) is a different integral. Still open.
+**Status:** **Dead as a closer on ABC_λ.** Write-up \(\mathcal R_\star\sim\lambda^3\)
+at \(\lambda=2,4,8,16\): `docs/CS-REMAINDER.md`.
+Evaluator ≠ proof. **NS not solved.**
+H1 / WRITE (6) is a different integral and was not run on ABC_λ.
 
 Identities: [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md).  
 Phone lock of the four corrections: [`../../LEMMA-STAR-CORRECTIONS.md`](../../LEMMA-STAR-CORRECTIONS.md).  
@@ -119,13 +119,14 @@ That is \(K_{\alpha,\beta}(w)\) times the squared cosine of the angle in the \(\
 
 ## Remaining target
 
-The uniform bound is **OPEN**. The localized-ABC FFT table
-is a cutoff-plus-Leray reconstruction, not ABC. DA rejects
-that recon as a kill. Phone: [`../../CS-REMAINDER.md`](../../CS-REMAINDER.md).
+On ABC_λ, with the write-up \(\mathcal R_\star=(T_c)_+^2/(\mathcal D_s E Y)\),
+the exact printout at \(\lambda=2,4,8,16\) climbs as \(\lambda^3\).
+Target A and the CS remainder fail on this family. ★ fails as a
+closer. Stop patching. Phone: [`../../CS-REMAINDER.md`](../../CS-REMAINDER.md).
 
 N-shell Fourier samples still saturate. They are not this field.
 Fourier dilation \(v(n\cdot)\) stays invariant.
 
-K=0 is dead. The \(a^4\) “missing inequality” is dead. Uniform pre-Young \(C\) is dead. Attack-2 \(C_*\) is a different door. Fixed-output \(\Theta(m^2)\) is a counting error. Freiman-AP is already dead. ★ is not a close of unaugmented NSE. H1 / WRITE (6) is a different integral.
+K=0 is dead. The \(a^4\) “missing inequality” is dead. Uniform pre-Young \(C\) is dead. Attack-2 \(C_*\) is a different door. Fixed-output \(\Theta(m^2)\) is a counting error. Freiman-AP is already dead. ★ is not a close of unaugmented NSE. H1 / WRITE (6) is a different integral and was not run on ABC_λ.
 
-**NS not solved.** ★ OPEN. Leftover (6) still open.
+**NS not solved.** Evaluator ≠ proof. Leftover (6) still open.

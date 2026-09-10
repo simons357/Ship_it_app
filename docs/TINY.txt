@@ -72,13 +72,14 @@ Lookups: all miss. docs/LOOKUP-H1.md
 WRITE (6) alone: docs/WRITE_6.md
 WRITE (6) plus data: docs/WRITE_6_SUPPORTED.md
 
-Lemma★ is still open.
-Localized ABC is a rejected recon,
-not a kill. Table only:
+Lemma★ is dead as a closer on ABC_λ.
+Write-up R★ ~ λ³ at λ=2,4,8,16.
+Evaluator ≠ proof. NS not solved.
+H1 untested on this field.
 docs/CS-REMAINDER.md
 N-shell samples still saturate:
 docs/RSTAR-SHELL-CLIMB.md
-Locked packaging (OPEN):
+Locked packaging (not a closer):
 docs/LEMMA-STAR.md
 Working claim + identities:
 docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md
@@ -112,7 +113,7 @@ K=0 dead. Lattice fan did not kill.
 NS not solved.
 Five-lane drill: GitHub PR 48.
 Independent Lemma★ core (evaluator, not a proof;
-★ still open; live Stokes not overwritten):
+live Stokes not overwritten):
 docs/LEMMA-STAR-CORE.md
 scripts/ns_lemma_star_core.py
 Object app (pictures; bound still open):
@@ -120,7 +121,7 @@ docs/THE-OBJECT-APP.md
 apps/the-object/
 R★ maximizer N=2,3,4,5 vs |k|_max:
 docs/RSTAR-SHELL-CLIMB.md
-Does not climb. Target A not killed.
+N-shell does not climb. ABC_λ does.
 Five-lane pack (ffe858c, full folder plus tests):
 docs/FIVE-LANE-PACK.md
 jonathan-handoff/GROK-HEAVY/01-swirl-publishing/five-lane-pack/

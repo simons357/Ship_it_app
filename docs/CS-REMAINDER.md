@@ -1,88 +1,66 @@
-# Localized ABC — DISPUTED. DA REJECT. ★ still OPEN.
+# ABC_λ exact printout — λ=2,4,8,16
 
-10 September 2026. **NS not solved.** Lemma★ is still open.
-This is a table, not a stamp.
+10 September 2026. **NS not solved.** Evaluator ≠ proof.
 
-The prior Target A / “★ killed” language on this branch
-is walked back. DA’s live lock keeps
-\(\sup\mathcal R_\star<\infty\) **OPEN**
-(`docs/ns-review/PROOF_LemmaStar_LIVE_LOCK.md` on PR 60).
-The evaluator lock stands: exact triad sum is not a proof.
-
-## Against DA REJECT
-
-Exact ABC is Beltrami: \(B(\mathrm{ABC},\mathrm{ABC})=0\),
-so \(T_c=0\). The field on this branch is a reconstruction
+Normalization is the write-up, not an ABC-only variant:
 
 \[
-v_\lambda
+\mathcal R_\star
 =
--
-\frac{P(\gamma_\lambda\,\mathrm{ABC}_\lambda)}
-{\|P(\gamma_\lambda\,\mathrm{ABC}_\lambda)\|_2},
-\qquad
-\widehat{\gamma}_\lambda(k)=\exp(-|k|^2/(2\lambda^2)).
+\frac{(T_c)_+^2}{\mathcal D_s\,E\,Y}
+\qquad\text{from }\texttt{scripts/ns\_lemma\_star\_core.py}.
 \]
 
-That is cutoff plus Leray, not ABC. DA rejects that recon
-as a kill of the uniform bound.
+\(T_c(-v)=-T_c(v)\). On this family \(T_c<0\), so boxed \(\mathcal R_\star=0\).
+The column below is boxed \(\mathcal R_\star(-v)=T_c^2/(\mathcal D_s E Y)\).
+Same object. Formula lock vs `stokes_moments.probe` sits
+(\(T_c,D_s,\mathcal R_\star\) err \(<10^{-15}\)).
 
-`cs_remainder_exact_check.py` sits as a checker, not a close.
+H1 is a different integral. **H1 was not run on ABC_λ.**
+The H1-TUBE ABC is exact Beltrami, not this field.
 
-| Check | What this branch has | Against the reject |
-|---|---|---|
-| Requested frame \(\lambda=2,4,8,16\) | Not run | Missing \(\lambda=16\). Exact core never ran 8 or 16. |
-| FFT Galerkin (all modes) | \(\lambda=2,3,4,5,6,8\) | Extra 3,5,6. Not the requested set. |
-| Exact triad core | \(\lambda=2,3,4\) on a **99% energy cutoff** | Different field from the full FFT. \(T_c\) differs \(\sim 50\)–\(56\%\). |
-| Same truncated field | FFT \(T_c\) = triad sum to \(10^{-13}\) | Convention sits. Does not make the cutoff into ABC. |
-| Fourier dilation \(v(n\cdot)\) | \(\mathcal R_\star\) invariant (rel \(=0\)) | The boxed family is invariant. Spatial concentration is a different scaling. |
-| Exact ABC | Not computed here | \(B=0\). A climb on \(P(\gamma_\lambda\mathrm{ABC}_\lambda)\) is the recon. |
+## What this package does on this field
 
-N-shell samples still saturate. That table stands.
-H1 is a different integral.
+On this family, with this normalization:
 
-## Requested frame \(\lambda=2,4,8,16\)
+- Target A fails (\(\mathcal R_\star\) does not stay \(O(1)\)).
+- The CS remainder \(\|A^{1/2}B\|_2\le C\sqrt{EY}\) fails.
+- Lemma★ fails as a closer for unaugmented NSE.
 
-Not on disk. Closest FFT rows (signed \(\mathcal R_\star\),
-\(T_c<0\) then reverse):
+Stop patching Lemma★. Do not send this as a solve.
+N-shell samples still saturate. That is a different family.
 
-| \(\lambda\) | \(\|A^{1/2}B\|_2/\sqrt{EY}\) | signed \(\mathcal R_\star\) |
-|---|---|---|
-| 2 | 2.492 | 0.00517 |
-| 4 | 7.104 | 0.0409 |
-| 8 | 20.114 | 0.327 |
-| 16 | — | not run |
+## Exact-check table
 
-## Exact-core table (99% energy cutoff)
-
-Direct pair sum on the exported modes. Reverse so \(T_c>0\).
-These are **not** the full FFT fields.
-
-| \(\lambda\) | modes | exact \(\mathcal R_\star\) | FFT \(\mathcal R_\star\) (same \(\lambda\), full field) | \(T_c\) rel. gap |
-|---|---|---|---|---|
-| 2 | 836 | 0.001748 | 0.00517 | 0.535 |
-| 3 | 2820 | 0.005181 | 0.0173 | 0.565 |
-| 4 | 6672 | 0.013669 | 0.0409 | 0.542 |
-| 8 | — | not run | 0.327 | — |
-| 16 | — | not run | — | — |
-
-The first table compared a full FFT field to a 99% cutoff.
-Those are different fields. \(T_c\) lives in the tail.
-That gap is not a convention bug. It is why the recon
-does not sit as a continuum family.
-
-Checked against the exact triad core before any stamp.
-Locks that sit (not a kill):
-
-- Fast triad \(T_c\) matches `stokes_moments.probe` on a three-mode field.
-- Same truncated export: FFT \(T_c\) equals the triad sum to \(10^{-13}\).
-- Fourier dilation \(v(n\cdot)\) leaves that cutoff \(\mathcal R_\star\) invariant.
-
-Do not cash 0.327, 0.0137, or a \(\lambda^3\) fit as \(C_0\).
-Do not restamp Target A false from this family.
-
-Script: `scripts/ns_attacks/cs_remainder_exact_check.py`
+`scripts/ns_attacks/cs_remainder_exact_check.py`
 JSON: `results/cs_remainder_bump/exact_core_check.json`
-FFT table: `results/cs_remainder_bump/cs_remainder.json`
+Grids \(n=16\lambda\) (same as the FFT local_abc table).
+
+Full-field FFT (Galerkin; convention locked on a sparse triad).
+Flip column = write-up \(\mathcal R_\star(-v)\).
+
+| \(\lambda\) | \(n\) | \(\|A^{1/2}B\|_2/\sqrt{EY}\) | \(\mathrm{CS}/\lambda^{3/2}\) | \(\mathcal R_\star(-v)\) | \(\mathcal R_\star/\lambda^3\) |
+|---|---|---|---|---|---|
+| 2 | 48 | 2.492 | 0.881 | 0.005170 | \(6.46\times 10^{-4}\) |
+| 4 | 64 | 7.104 | 0.888 | 0.04086 | \(6.38\times 10^{-4}\) |
+| 8 | 128 | 20.114 | 0.889 | 0.3266 | \(6.38\times 10^{-4}\) |
+| 16 | 256 | 56.899 | 0.889 | 2.612 | \(6.38\times 10^{-4}\) |
+
+Standalone / embed on a high-energy export (λ=2: `R_star`; λ≥4: embed FFT = triad on that support):
+
+| \(\lambda\) | modes | keep | \(\mathcal R_\star(-v)\) | \(\mathcal R_\star/\lambda^3\) |
+|---|---|---|---|---|
+| 2 | 1902 | 0.9999 | 0.004542 | \(5.68\times 10^{-4}\) |
+| 4 | 15284 | 0.9999 | 0.03586 | \(5.60\times 10^{-4}\) |
+| 8 | 86318 | 0.999 | 0.2212 | \(4.32\times 10^{-4}\) |
+| 16 | 690576 | 0.999 | 1.767 | \(4.31\times 10^{-4}\) |
+
+Both columns climb. FFT is \(\sim\lambda^3\) to three digits from λ=4 to 16.
+Export 8→16 exponent \(\log_2(1.767/0.221)=2.997\).
+Same truncated field: embed \(T_c\) equals the exact triad sum to \(10^{-13}\) at λ=2.
+\(v(n\cdot)\) leaves boxed \(\mathcal R_\star\) invariant.
+
+The 99% cutoff in the older printout was a different field.
+This printout uses the write-up objects on \(n=16\lambda\).
 
 Stay in this chat.

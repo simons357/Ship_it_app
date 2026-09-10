@@ -1,4 +1,4 @@
-"""Localized ABC numbers exist. DA REJECT as a kill. Not a plate."""
+"""ABC_λ exact printout on λ=2,4,8,16. Evaluator ≠ proof. Not a plate."""
 
 from __future__ import annotations
 
@@ -21,12 +21,11 @@ class CsRemainderTests(unittest.TestCase):
     def test_phone_and_json(self):
         self.assertTrue(PHONE.is_file())
         text = PHONE.read_text()
-        self.assertIn("DISPUTED", text)
-        self.assertIn("DA REJECT", text)
-        self.assertIn("still OPEN", text)
         self.assertIn("NS not solved", text)
-        self.assertIn("ABC", text)
-        self.assertNotIn("Target A is false", text)
+        self.assertIn("2,4,8,16", text.replace(" ", ""))
+        self.assertIn("(T_c)_+", text.replace(" ", "").replace("\\", ""))
+        self.assertIn("H1 was not run", text)
+        self.assertIn("Stop patching", text)
         data = json.loads(JSON.read_text())
         self.assertIs(data["ns_solved"], False)
         self.assertTrue(data["climbs_cs"])
@@ -38,18 +37,28 @@ class CsRemainderTests(unittest.TestCase):
         self.assertGreater(Rs[-1], 0.3)
         self.assertGreater(Rs[-1] / Rs[0], 40.0)
 
-    def test_exact_core_check(self):
+    def test_exact_core_2416(self):
         self.assertTrue(CORE.is_file())
         data = json.loads(CORE.read_text())
+        self.assertIs(data["ns_solved"], False)
+        self.assertIs(data["H1_tested_on_ABC_lambda"], False)
         self.assertTrue(data["same_field_matches"])
         self.assertTrue(data["dilation_invariant"])
         self.assertTrue(data["core_R_climbs"])
+        self.assertTrue(data["fft_R_climbs"])
+        self.assertIn("(T_c)_+", data["normalization"])
+        lams = [r["lambda"] for r in data["rows"]]
+        self.assertEqual(lams, [2, 4, 8, 16])
+        flips = data["fft_R_flip"]
+        self.assertLess(flips[0], 0.01)
+        self.assertGreater(flips[-1], 2.0)
+        self.assertGreater(flips[-1] / flips[0], 400.0)
+        # λ³: R(16)/R(2) = 8³ = 512
+        self.assertGreater(flips[-1] / flips[0], 400.0)
+        self.assertLess(flips[-1] / flips[0], 600.0)
         self.assertLess(data["same_field"]["R_rel"], 1e-9)
-        Rs = data["core_R"]
-        self.assertGreater(Rs[-1] / Rs[0], 6.0)
         text = PHONE.read_text()
-        self.assertIn("exact triad core", text)
-        self.assertIn("99% energy cutoff", text)
+        self.assertIn("exact triad", text)
         self.assertIn("2,4,8,16", text.replace(" ", ""))
 
     def test_live_lambda_2_to_3(self):

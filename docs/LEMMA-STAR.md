@@ -1,9 +1,10 @@
 # Lemma★ — locked packaging
 
 10 September 2026. Energy-budget writing of leftover (6).
-**OPEN.** Uniform bound not proved. **NS is not solved.**
-Localized ABC is a rejected reconstruction, not a kill:
-`docs/CS-REMAINDER.md`. H1 is a different integral.
+**Dead as a closer on ABC_λ.** Write-up \(\mathcal R_\star\sim\lambda^3\)
+at \(\lambda=2,4,8,16\): `docs/CS-REMAINDER.md`.
+Evaluator ≠ proof. **NS is not solved.**
+H1 is a different integral and was **not** run on this field.
 
 Drill: [PR 48](https://github.com/simons357/Ship_it_app/pull/48)
 (`cursor/ns-five-lane-lemma-star-1390`).
@@ -178,7 +179,9 @@ fan (\(\mathcal R_\star\sim\beta/\alpha\)). No kill.
 The \(m^{1/2}\) heuristic has not found a lattice home.
 H1 on one cylinder is the other live writing
 ([`H1-SOT.md`](H1-SOT.md)).
-The uniform global triadic bound remains completely open.
+ABC_λ kills the uniform bound as a closer
+(`docs/CS-REMAINDER.md`). The leftover writing is H1,
+which was not run on that field.
 Uniform pre-Young \(C\) is off. Attack-2 \(C_*\) is a
 different door. Do not revive K=0. Do not cash a triad
 \(\mathcal R_\star\) as \(C_0\). Numerically bounded samples
