@@ -98,6 +98,8 @@ Uniform pre-Young C is dead.
 K=0 dead. Lattice fan did not kill.
 NS not solved.
 Five-lane drill: GitHub PR 48.
+Export (defs + HH→L map):
+docs/five-lane-export/INDEX.md
 
 Latest three chains plus the others:
 docs/LATEST.md

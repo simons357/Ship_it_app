@@ -96,6 +96,8 @@ docs/LEMMA-STAR-NEXT.md
 K=0 dead. Lattice HH→L did not kill.
 Numeric kill-survive is not a proof.
 Drill: GitHub PR 48.
+Five-lane export (defs + HH→L):
+docs/five-lane-export/INDEX.md
 No \(K(t)\). No Q1.
 
 **RH — open**
