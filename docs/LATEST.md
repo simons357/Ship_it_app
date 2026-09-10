@@ -71,6 +71,8 @@ docs/OPENAI-NS-CLAIM.md
 Lemma★ (energy-budget leftover, locked
 as hypothesis, not proved):
 docs/LEMMA-STAR.md
+Statement from the lock (not a reconstruction):
+docs/LEMMA-STAR-STATEMENT.md
 Working claim:
 docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md
 docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md

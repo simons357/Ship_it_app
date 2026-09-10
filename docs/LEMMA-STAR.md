@@ -48,6 +48,8 @@ The inequality is the hole.
 That is why, in this packaging, Lemma★ names the
 unforced leftover (Fefferman (B) on the torus).
 Naming the hole is not closing it.
+Statement from the lock (not a reconstruction):
+[`LEMMA-STAR-STATEMENT.md`](LEMMA-STAR-STATEMENT.md).
 Working claim:
 [`math/ns_attacks/LEMMA_STAR_CANONICAL.md`](math/ns_attacks/LEMMA_STAR_CANONICAL.md).
 Identities:

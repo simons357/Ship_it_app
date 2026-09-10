@@ -20,6 +20,7 @@ Tests: `tests/test_ns_lemma_star_core.py`
 \]
 
 Same objects as
+[`LEMMA-STAR-STATEMENT.md`](LEMMA-STAR-STATEMENT.md),
 [`math/ns_attacks/LEMMA_STAR_CANONICAL.md`](math/ns_attacks/LEMMA_STAR_CANONICAL.md)
 and
 [`math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md).
