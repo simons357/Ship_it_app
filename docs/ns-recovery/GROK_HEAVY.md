@@ -224,6 +224,7 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 |---|---|
 | **This file** | Grok Heavy entry |
 | [`SOT.md`](SOT.md) | Packet source of truth |
+| [`SUPERGROK-ABC-LOCK.md`](SUPERGROK-ABC-LOCK.md) | SuperGrok ABC_λ filing: keep evaluator line; **refuse** falsifier stamp |
 | [`CS-REMAINDER-VS-DA-REJECT.md`](CS-REMAINDER-VS-DA-REJECT.md) | PR #24 ABC / λ table vs DA exact-core REJECT; ★ still OPEN |
 | [`DREAM-TEAM-SUMMARY.md`](DREAM-TEAM-SUMMARY.md) | Paper+experiment seating vs this book; vote cannot close |
 | [`FIVE_LANE_PACK_LOCATOR.md`](FIVE_LANE_PACK_LOCATOR.md) | Absolute `/workspace/scripts/ns_attacks/` paths + box drop |

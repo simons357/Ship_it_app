@@ -54,7 +54,7 @@ Isolated triangles, wide APs, narrow APs, full adjacent spheres, and fixed-\(s\)
 
 H1 on the cylinder is the other live track if the packet line is shelved. It is **not** started by this lock.
 
-PR #24 localized ABC / CS remainder is **not** this packet line. Finite Galerkin climb, not a ★ kill. [`CS-REMAINDER-VS-DA-REJECT.md`](CS-REMAINDER-VS-DA-REJECT.md).
+PR #24 localized ABC / CS remainder is **not** this packet line. Finite Galerkin climb, not a ★ kill. Lock: [`SUPERGROK-ABC-LOCK.md`](SUPERGROK-ABC-LOCK.md). Detail: [`CS-REMAINDER-VS-DA-REJECT.md`](CS-REMAINDER-VS-DA-REJECT.md).
 
 Dream team = papers and measurements, not another model. Vote cannot close. [`DREAM-TEAM-SUMMARY.md`](DREAM-TEAM-SUMMARY.md).
 
