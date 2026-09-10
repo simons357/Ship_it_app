@@ -50,6 +50,14 @@ This week, publish the map as a map:
 OpenAI C/D is not WRITE (6):
 [`OPENAI-NS-CLAIM.md`](OPENAI-NS-CLAIM.md).
 
+**Lemma★ locked (energy-budget writing).**
+Same leftover class as (6). Not H1.
+Hypothesis, not a theorem. K=0 dead.
+HH→L still the gap. Numeric survival
+is not a proof. File:
+[`LEMMA-STAR.md`](LEMMA-STAR.md).
+Drill: PR 48.
+
 ---
 
 ## RH

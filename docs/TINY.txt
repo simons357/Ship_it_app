@@ -67,6 +67,11 @@ What to look up next: docs/LOOKUP-H1.md
 WRITE (6) alone: docs/WRITE_6.md
 WRITE (6) plus data: docs/WRITE_6_SUPPORTED.md
 
+Lemma★ locked as hypothesis (not proved):
+docs/LEMMA-STAR.md
+K=0 dead. HH→L still the gap. NS not solved.
+Five-lane drill: GitHub PR 48.
+
 Latest three chains plus the others:
 docs/LATEST.md
 docs/A-CHAIN.md

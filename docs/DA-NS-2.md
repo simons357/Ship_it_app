@@ -26,9 +26,19 @@ X ≤ |u0|_2^2 Λ, then continuation.
 The implication is the usual skeleton.
 The integral is the hole.
 
-Live unaug path (10 September 2026): H1
-(\(A_{\mathrm{bad}}\) a priori). Same leftover,
-different writing. Work H1. Do not add \(K(t)\).
+**Lemma★ (locked 10 September 2026).**
+Energy-budget writing of the same leftover:
+T_c ≤ θ ν (Z−Λ Y) + C_0 ν^{-1} ||u||_2^2 X Λ,
+C_0 geometry-only. Would freeze Λ in this
+packaging. **Not proved.** Blocked at a
+3D product / Agmon bound on T_c (HH→L).
+K=0 absorption is dead. Numeric survival
+is not a proof. File: docs/LEMMA-STAR.md
+PR 48 is the five-lane drill, not a close.
+
+Live geometric path: H1 (A_bad a priori).
+Same leftover class, different integral.
+Do not merge. Do not add K(t) to the PDE.
 Packet: docs/UNAUGMENTED-NS-CHAIN.md
 
 ---

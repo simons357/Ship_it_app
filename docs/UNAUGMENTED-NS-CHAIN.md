@@ -4,7 +4,7 @@
 **Use.** This is the live unaugmented-chain document.  
 **Status.** Proof *chain*. Last estimate open. No augmentation, no \(K(t)\), no Q-stack. Only \(\nu\Delta u\).
 
-Desk: leftover WRITE (6) on this path is **H1 = Lemma I on the ball** (\(A_{\mathrm{bad}}\) a priori). Do not merge with global **H**. Lemma C is an if, not an H. **H2** a priori from energy is also open. **H3** (\(A_{\mathrm{ext}}\)) is a named remainder; a priori from energy is open. \(R_\phi\) is not free. If H1 sits and H2-from-energy does not, the cylinder is still open. Theorem A is a different PDE. DA-NS-2 and the old \(\int\mathcal R\) line are other writings of the same leftover, not this packet’s next write. Keep Biot–Savart at \(1/r^4\). Do not add \(Q_1\). Glossary: [`H-SYSTEM.md`](H-SYSTEM.md).
+Desk: leftover WRITE (6) on the geometric path is **H1 = Lemma I on the ball** (\(A_{\mathrm{bad}}\) a priori). Energy-budget writing of the same leftover class: **Lemma★** (locked as hypothesis; not proved; K=0 dead; HH→L still the gap). [`LEMMA-STAR.md`](LEMMA-STAR.md). Do not merge ★ with H1, and do not merge either with global **H**. Lemma C is an if, not an H. **H2** a priori from energy is also open. **H3** (\(A_{\mathrm{ext}}\)) is a named remainder; a priori from energy is open. \(R_\phi\) is not free. If H1 sits and H2-from-energy does not, the cylinder is still open. Theorem A is a different PDE. DA-NS-2 and the old \(\int\mathcal R\) line are other writings of the same leftover. Keep Biot–Savart at \(1/r^4\). Do not add \(Q_1\). Do not add \(K(t)\) to the PDE. Numeric survival of ★ is not a proof. Glossary: [`H-SYSTEM.md`](H-SYSTEM.md).
 
 Machine write-up: [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md).  
 Barycenter sibling (not this path): [`DA-NS-2.md`](DA-NS-2.md).  

@@ -97,7 +97,10 @@ from energy is also open. H3 (\(A_{\mathrm{ext}}\))
 named, a priori open. \(R_\phi\) is not free. Closed
 budget implies local Serrin, not CKN. Other writings
 of the same leftover: \(\int_0^T\mathcal{R}\), all-data
-A1/A2, a killing field, DA-NS-2. No \(K(t)\). No \(Q_1\).
+A1/A2, a killing field, DA-NS-2, Lemma★ (energy-budget
+form; locked as hypothesis; K=0 dead; HH→L gap;
+[`LEMMA-STAR.md`](LEMMA-STAR.md)). No \(K(t)\) in the PDE.
+No \(Q_1\). Numeric survival of ★ is not a proof.
 *[attempted; WRITE (6) open]*
 
 **(7)** **Gronwall.** From (3) and (6), \(X(t)\) stays
@@ -142,7 +145,12 @@ Classify one:
 - a different integrable residual
 - a killing field for the stretching leftover
 - DA-NS-2 (same leftover; identities already have)
-- H1: \(A_{\mathrm{bad}}\) a priori on \(Q_r\) (live path, 10 Sep 2026; attempted §12, still open; Morrey wall)
+- Lemma★ / DA-NS-1: energy-budget form of leftover (6);
+  locked as hypothesis 10 Sep 2026; K=0 dead; HH→L gap;
+  numeric survival ≠ proof. [`LEMMA-STAR.md`](LEMMA-STAR.md).
+  Drill: PR 48. **Not a close.**
+- H1: \(A_{\mathrm{bad}}\) a priori on \(Q_r\) (geometric
+  path; attempted §12, still open; Morrey wall)
 - H3: a priori control of \(A_{\mathrm{ext}}\) from \(\int E<\infty\) (named remainder; not the next write)
 - \(R_\phi\): cutoff lemma for localizing Lemma C (not free; not H1)
 

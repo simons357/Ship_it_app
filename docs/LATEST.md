@@ -46,6 +46,12 @@ Magazine cut: docs/SWIRL-MAGAZINE.md
 This week: docs/SWIRL-DEPOSIT.md
 OpenAI forced blowup is C/D, not (6):
 docs/OPENAI-NS-CLAIM.md
+Lemma★ (energy-budget leftover, locked
+as hypothesis, not proved):
+docs/LEMMA-STAR.md
+K=0 dead. HH→L still the gap.
+Numeric kill-survive is not a proof.
+Drill: GitHub PR 48.
 No \(K(t)\). No Q1.
 
 **RH — open**
