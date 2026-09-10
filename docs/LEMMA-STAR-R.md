@@ -13,7 +13,7 @@ Write \(u=av\), \(a>0\). Then \(T_c\sim a^3\), \(\mathcal D_s\sim a^2\),
 \(\Lambda\) is amplitude-invariant, and \(X\Lambda=Y\).
 
 Optimizing Lemma★ over \(a>0\) converts it into the viscosity-free
-inequality
+geometric inequality
 \[
 \bigl(T_c(v)_+\bigr)^2
 \le
@@ -21,8 +21,9 @@ inequality
 \mathcal D_s(v)\,
 \|v\|_2^2\,Y(v).
 \]
+(\(\mathcal D_s=D_s=Z-\Lambda Y\). Same object.)
 
-The decisive dimensionless ratio is
+Thus the decisive dimensionless ratio is
 \[
 \mathcal R_\star(v)
 =
@@ -36,9 +37,22 @@ The decisive dimensionless ratio is
   geometry or cancellation.
 - Numerically bounded samples remain evidence only.
 
+Derivation (one line). After \(u=av\), ★ says
+\(A+Ba^2-Ca\ge 0\) for every \(a>0\), with
+\(A=\theta\nu\mathcal D_s(v)\),
+\(B=C_0\nu^{-1}\|v\|_2^2 Y(v)\),
+\(C=T_c(v)_+\).
+The minimum is \(A-C^2/(4B)\). Nonnegativity is
+\(C^2\le 4AB\), and \(\nu\) cancels.
+
 \(C_0\) may depend on \(\theta\in(0,1)\). Finite \(\sup\mathcal R_\star\)
 gives \(C_0(\theta)\ge(\sup\mathcal R_\star)/(4\theta)\). Unbounded
 \(\mathcal R_\star\) kills every finite \(C_0\).
+
+This boxed form **is** Lemma★. It is not a weaker restatement.
+The \(C_*\) remainder \(|T_c|\le C_* X^{3/2}\Lambda\) is a
+different sufficient door for DA-NS-2. It is not this
+reduction.
 
 ---
 
@@ -69,7 +83,8 @@ Amplitude: \(\mathcal R_\star(av)=\mathcal R_\star(v)\). Checked.
 \(\sup\mathcal R_\star<\infty\) is Lemma★. It is not proved.
 HH→L is still the gap. A near-mono probe with one frozen
 perturbation gave \(T_c=0\); that is not a bound. Do not cash
-\(0.022\) on one triad as \(C_0\).
+\(0.022\) on one triad as \(C_0\). Numerically bounded samples
+remain evidence only.
 
 Do not merge with H1. Do not add \(K(t)\) to the PDE.
 Do not write “almost proved.”

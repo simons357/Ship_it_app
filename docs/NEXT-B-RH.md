@@ -52,14 +52,14 @@ OpenAI C/D is not WRITE (6):
 
 **Lemma★ locked (energy-budget writing).**
 Same leftover class as (6). Not H1.
-Hypothesis, not a theorem. K=0 dead.
-HH→L still the gap. Numeric survival
-is not a proof. File:
-[`LEMMA-STAR.md`](LEMMA-STAR.md).
-Attack 6: uniform pre-Young \(C\) is dead
-(\(|R_{\mathrm{pre}}|\sim s\)). \(C_*\) still open.
-[`LEMMA-STAR-NEXT.md`](LEMMA-STAR-NEXT.md).
-Exact reduction \(\mathcal R_\star\):
+Hypothesis, not a theorem. Exact form is
+the viscosity-free geometric inequality
+on \(\mathcal R_\star\). If \(\sup\mathcal R_\star=\infty\),
+★ is dead. A proof is a uniform bound from
+triadic geometry or cancellation. Samples
+are evidence only. K=0 dead. Uniform
+pre-Young \(C\) dead. HH→L still the gap.
+File: [`LEMMA-STAR.md`](LEMMA-STAR.md),
 [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md).
 Drill: PR 48.
 

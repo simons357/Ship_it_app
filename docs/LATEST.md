@@ -49,10 +49,14 @@ docs/OPENAI-NS-CLAIM.md
 Lemma★ (energy-budget leftover, locked
 as hypothesis, not proved):
 docs/LEMMA-STAR.md
+Exact form: viscosity-free geometric
+inequality on R★. If sup R★ = ∞, ★ is
+dead. A proof is a uniform bound from
+triadic geometry. Samples are evidence
+only. File: docs/LEMMA-STAR-R.md
 Attack 6: uniform pre-Young C dead
-(|R_pre| ~ s). C* still open.
+(|R_pre| ~ s). That is not ★ dying.
 docs/LEMMA-STAR-NEXT.md
-Boxed ratio (exact ★): docs/LEMMA-STAR-R.md
 K=0 dead. HH→L still the gap.
 Numeric kill-survive is not a proof.
 Drill: GitHub PR 48.

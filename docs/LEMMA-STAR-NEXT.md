@@ -17,14 +17,12 @@ Probe: `python3 scripts/ns_attacks/attack6_scale_law.py`
    \(s\), that door is dead. Measure the law. Do not draw more
    random samples at \(k_{\max}=8\).
 
-2. **The live remainder is \(C_*\).**
-   \(|T_c|\le C_* X^{3/2}\Lambda\) is amplitude-invariant on a
-   fixed shape (Attack 2). If it is also scale-invariant, it is
-   the bound that matches the cubic wall. Then
-   \(K\le C_*\sqrt{X}\), and on a finite interval Leray plus
-   Cauchy–Schwarz gives \(\int\sqrt{X}<\infty\). That would close
-   DA-NS-2 **in this packaging**. It is not proved. HH→L is
-   still the analytic gap.
+2. **The exact ★ remainder is \(\mathcal R_\star\), not \(C_*\).**
+   Optimizing ★ over amplitude is the boxed ratio
+   [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md). \(C_*\)
+   (\(|T_c|\le C_* X^{3/2}\Lambda\)) is a different sufficient
+   door for DA-NS-2. Do not treat a bounded \(C_*\) sample as
+   a bound on \(\mathcal R_\star\). HH→L is still the gap.
 
 3. **Coherent HH→L fan.**
    Many high pairs with the same sum. Product estimates lose a
@@ -81,17 +79,20 @@ fan again, randomize phases.
 
 ## What to write next
 
-Prove, or kill,
+Lemma★ **is** a uniform bound on
 \[
-|T_c|\le C_* X^{3/2}\Lambda
+\mathcal R_\star(v)
+=
+\frac{\bigl(T_c(v)_+\bigr)^2}
+{\mathcal D_s(v)\,\|v\|_2^2\,Y(v)}.
 \]
-with \(C_*\) absolute, HH→L included. That is door 2 in
-[`LEMMA-STAR.md`](LEMMA-STAR.md). Door 1 (uniform pre-Young) is
-off. K=0 stays dead.
+Prove it from triadic geometry or cancellation, or kill
+it with a family where \(\mathcal R_\star\to\infty\).
+File: [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md).
 
-A kill of \(C_*\) is a smooth family with
-\(|T_c|/(X^{3/2}\Lambda)\to\infty\). A proof of \(C_*\) is
-harmonic analysis on the centered bilinear form, not more
-Galerkin samples.
+Door 1 (uniform pre-Young \(C\)) is off. K=0 stays dead.
+The \(C_*\) remainder \(|T_c|\le C_* X^{3/2}\Lambda\) is a
+different sufficient attack on DA-NS-2, not the boxed
+form. Do not cash a bounded sample as \(C_0\).
 
 H1 on a cylinder is a different integral. Do not merge.

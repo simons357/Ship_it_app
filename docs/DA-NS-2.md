@@ -29,11 +29,16 @@ The integral is the hole.
 **Lemma★ (locked 10 September 2026).**
 Energy-budget writing of the same leftover:
 T_c ≤ θ ν (Z−Λ Y) + C_0 ν^{-1} ||u||_2^2 X Λ,
-C_0 geometry-only. Would freeze Λ in this
-packaging. **Not proved.** Blocked at a
-3D product / Agmon bound on T_c (HH→L).
-K=0 absorption is dead. Numeric survival
-is not a proof. File: docs/LEMMA-STAR.md
+C_0 geometry-only. Exact equivalent: the
+viscosity-free geometric inequality
+(T_c(v)_+)^2 ≤ 4 θ C_0 D_s(v) ||v||_2^2 Y(v).
+Would freeze Λ in this packaging.
+**Not proved.** Blocked at a uniform bound
+on R★ from triadic geometry (HH→L).
+K=0 absorption is dead. Uniform pre-Young
+C is dead. Numeric survival is evidence
+only. File: docs/LEMMA-STAR.md,
+docs/LEMMA-STAR-R.md
 PR 48 is the five-lane drill, not a close.
 
 Live geometric path: H1 (A_bad a priori).

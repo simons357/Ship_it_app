@@ -47,7 +47,8 @@ Naming the hole is not closing it.
 
 Write \(u=av\), \(a>0\). \(T_c\sim a^3\), \(\mathcal D_s\sim a^2\),
 \(\Lambda\) amplitude-invariant, \(X\Lambda=Y\). Optimizing ★
-over amplitude is equivalent to
+over \(a>0\) converts it into the viscosity-free geometric
+inequality
 \[
 \bigl(T_c(v)_+\bigr)^2
 \le
@@ -62,33 +63,36 @@ Decisive ratio:
 \frac{\bigl(T_c(v)_+\bigr)^2}
 {\mathcal D_s(v)\,\|v\|_2^2\,Y(v)}.
 \]
-If \(\sup\mathcal R_\star=\infty\), ★ is dead. If \(\mathcal D_s=0\)
-and \(T_c>0\), dead immediately (does not fire on a single shell:
-both vanish). A proof is a uniform bound on \(\mathcal R_\star\).
-Samples are evidence only. File: [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md).
+- If \(\sup_v\mathcal R_\star=\infty\), ★ is dead.
+- If \(\mathcal D_s=0\) and \(T_c>0\), dead immediately
+  (does not fire on a single shell: both vanish).
+- A proof is a uniform bound on \(\mathcal R_\star\) from
+  triadic geometry or cancellation.
+- Numerically bounded samples remain evidence only.
+
+File: [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md).
 
 ---
 
 ## Blocked exactly here
 
-You still need something like
-\[
-|\mathfrak T_c|\le C\|u\|_2 X^{3/2}
-\]
-(or equivalent). Ordinary 3D product / Agmon estimates do
-**not** give that from energy alone.
+The exact equivalent of ★ is a uniform bound on
+\(\mathcal R_\star\). Ordinary 3D product / Agmon estimates
+do **not** give that from energy alone.
 
-Five-lane rule against that door: kill ★ with a blowing
-ratio, or sustain numeric bounds and keep the analytic
-gap explicit — **not** “almost proved.”
+Five-lane rule: kill ★ with \(\mathcal R_\star\to\infty\),
+or sustain numeric bounds and keep the analytic gap
+explicit — **not** “almost proved.”
 
-**Attack 6 (scored, not a new leftover).** One equivalent
-was uniform pre-Young \(|T_c|\le C\|u\|_2 X\Lambda\). That
-form is **dead**: \(\lvert R_{\mathrm{pre}}\rvert\simeq 0.158\,s\)
-on the scaled triad. Another equivalent,
-\(|T_c|\le C_* X^{3/2}\Lambda\), stayed \(\simeq 0.0404\) on
-that family. One family is not a proof. HH→L is still
-the gap. File: [`LEMMA-STAR-NEXT.md`](LEMMA-STAR-NEXT.md).
+**Attack 6 (scored, not a new leftover).** Uniform pre-Young
+\(|T_c|\le C\|u\|_2 X\Lambda\) is **dead**:
+\(\lvert R_{\mathrm{pre}}\rvert\simeq 0.158\,s\) on the
+scaled triad. That is not ★ dying. On the same family
+\(\mathcal R_\star\) is flat (\(\sim 0.022\) at best phase).
+The \(C_*\) remainder \(|T_c|\le C_* X^{3/2}\Lambda\) is a
+different sufficient door for DA-NS-2, not this boxed
+form. One family is not a proof. HH→L is still the gap.
+File: [`LEMMA-STAR-NEXT.md`](LEMMA-STAR-NEXT.md).
 
 ---
 
@@ -97,7 +101,7 @@ the gap. File: [`LEMMA-STAR-NEXT.md`](LEMMA-STAR-NEXT.md).
 | Lane | Verdict |
 |---|---|
 | K=0 form \(\mathfrak T_c\le\theta\nu\mathcal D_s\) | **Dead.** Ratio \(\lvert T_c\rvert/\mathcal D_s\) blows with amplitude. |
-| Lemma★ / geometric \(C_0\) | **Survives numeric kill only.** Max \(\lvert R_{\mathrm{pre}}\rvert\approx 5.09\) on 978 samples. Not \(\to\infty\). **Not a proof.** |
+| Lemma★ / geometric \(C_0\) | **Survives numeric kill only.** The 978-sample max \(\lvert R_{\mathrm{pre}}\rvert\approx 5.09\) is the *dead* pre-Young ratio, not \(\mathcal R_\star\). On the scaled triad \(\mathcal R_\star\) stayed \(\sim 0.022\). Not \(\to\infty\). **Not a proof.** |
 | HH→L | **Still the gap.** High triad is the HH channel. No analytic closure. |
 | Stokes identities | Sit. \(\mathcal D_s\ge 0\). \(\theta\nu\mathcal D_s\) alone is not enough. |
 | \(C_* X^{3/2}\Lambda\) remainder | Numeric support on tested families. Not a theorem. |
@@ -114,12 +118,12 @@ A family that did not blow is not a uniform geometric constant.
 
 ## Live door
 
-The packaging still needs a product bound of the
-\(|T_c|\le C\|u\|_2 X^{3/2}\) class (or equivalent).
 The exact equivalent of ★ is a uniform bound on
-\(\mathcal R_\star\). Uniform pre-Young \(C\) is off.
+\(\mathcal R_\star\) from triadic geometry or cancellation.
+Uniform pre-Young \(C\) is off. \(C_*\) is a different door.
 Do not revive K=0. Do not cash a triad \(\mathcal R_\star\)
-as \(C_0\). Do not write “almost proved.”
+as \(C_0\). Numerically bounded samples remain evidence
+only. Do not write “almost proved.”
 
 ---
 
