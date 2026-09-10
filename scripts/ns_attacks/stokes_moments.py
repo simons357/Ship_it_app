@@ -121,6 +121,26 @@ def shell_energies(field: Field) -> Dict[float, float]:
     return shells
 
 
+def triad_Im_transfer(field: Field) -> Dict[ModeKey, float]:
+    """T_k = sum_{p+q=k} Im[(q·v_p)(v_q · conj(v_k))]  (signed; no abs).
+
+    Equivalent to −Re(B̂_k · conj(v_k)) with Leray-projected B̂.
+    """
+    Buu = nonlinear_B(field)
+    Tk: Dict[ModeKey, float] = {}
+    for k, vk in field.items():
+        if k_norm2(k) == 0:
+            continue
+        bk = Buu.get(k, np.zeros(3, dtype=np.complex128))
+        Tk[k] = -float(np.dot(bk, np.conjugate(vk)).real)
+    return Tk
+
+
+def sum_Tk(field: Field) -> float:
+    """Σ_k T_k. Energy identity: Σ T_k = 0 on mean-zero divergence-free fields."""
+    return float(sum(triad_Im_transfer(field).values()))
+
+
 def nonlinear_B(field: Field) -> Field:
     """B(u,u) = P((u·∇)u) in Fourier: i sum_{p+q=k} (û(p)·q) û(q), then Leray."""
     keys = list(field.keys())

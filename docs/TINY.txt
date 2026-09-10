@@ -103,6 +103,9 @@ docs/five-lane-export/INDEX.md
 Original JSON (10 Sep run):
 docs/five-lane-export/COMPUTE.md
 results/ns_five_lane_2026-09-10/
+Attack 9B exact-shell K (finite max, not a kill):
+docs/five-lane-export/ATTACK_9B.md
+results/ns_five_lane_2026-09-10/attack9b_exact_shell/
 
 Latest three chains plus the others:
 docs/LATEST.md

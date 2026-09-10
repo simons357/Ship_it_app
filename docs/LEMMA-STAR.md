@@ -180,3 +180,5 @@ Incidence Route A (conditional, not a theorem):
 [`LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md`](LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md).
 Original five-lane JSON (PR 48 run, not a re-proof):
 [`five-lane-export/COMPUTE.md`](five-lane-export/COMPUTE.md).
+Attack 9B exact-shell \(K_{\alpha,\beta}\) (finite sample,
+not a kill): [`five-lane-export/ATTACK_9B.md`](five-lane-export/ATTACK_9B.md).

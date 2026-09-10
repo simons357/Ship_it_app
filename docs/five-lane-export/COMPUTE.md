@@ -17,6 +17,7 @@ Phone: stay in this chat.
 | Merged runtime | `results/ns_five_lane_2026-09-10/SYNTHESIS_RUNTIME.json` |
 | Lanes 1–5 JSON | `results/ns_five_lane_2026-09-10/attack{1–5}.json` |
 | Later R★ drill | `results/ns_five_lane_shape_star/` |
+| Attack 9B \(K_{\alpha,\beta}\) | `results/ns_five_lane_2026-09-10/attack9b_exact_shell/`; phone [`ATTACK_9B.md`](ATTACK_9B.md) |
 | Scripts | `scripts/ns_attacks/run_all_five.py`, `attack1_covariance.py` … `attack5_route2_kill.py` |
 | Lane notes | `docs/math/ns_attacks/ATTACK_{1–5}_*.md`, `ATTACK_SYNTHESIS_SIMULTANEOUS.md` |
 | Defs | `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md` (same lock as `docs/five-lane-export/LEMMA_STAR_SHAPE_FORM.md`) |

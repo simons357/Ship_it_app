@@ -152,6 +152,9 @@ attack3 script.
 `results/ns_five_lane_shape_star/`.
 Scripts: `scripts/ns_attacks/run_all_five.py`,
 `attack1`–`attack5`.
+Attack 9B (exact-shell \(K_{\alpha,\beta}\); finite max,
+not a kill): [`ATTACK_9B.md`](ATTACK_9B.md).
+9C is Attack 11 here. 9D is Freiman-AP, already dead.
 
 ---
 

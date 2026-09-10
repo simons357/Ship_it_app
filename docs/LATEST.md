@@ -101,6 +101,9 @@ docs/five-lane-export/INDEX.md
 Original computation (JSON, not a re-proof):
 docs/five-lane-export/COMPUTE.md
 results/ns_five_lane_2026-09-10/
+Attack 9B exact-shell \(K_{\alpha,\beta}\)
+(max \(K\approx 0.641\) at \((4,8)\); not a kill):
+docs/five-lane-export/ATTACK_9B.md
 No \(K(t)\). No Q1.
 
 **RH — open**

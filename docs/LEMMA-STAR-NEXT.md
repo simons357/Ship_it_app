@@ -112,6 +112,7 @@ one cylinder, or the uniform triadic bound.
 Packets: [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
 Original five-lane JSON:
 [`five-lane-export/COMPUTE.md`](five-lane-export/COMPUTE.md).
+Attack 9B: [`five-lane-export/ATTACK_9B.md`](five-lane-export/ATTACK_9B.md).
 
 Route A incidence (conditional continuum
 \(I\ll m^{4/3}\Rightarrow C(S)=O(m^{4/3})\); lattice

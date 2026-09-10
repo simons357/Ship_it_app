@@ -243,6 +243,11 @@ X1–X4/X6 MISSING. Next: Hyp-Lat★. Do not cash ST as ★.
 
 Original five-lane JSON (PR 48 run):
 [`five-lane-export/COMPUTE.md`](five-lane-export/COMPUTE.md).
+Attack 9B exact-shell closer (\(K_{\alpha,\beta}\),
+\(\max K\approx 0.641\) at \((4,8)\); controls PASS;
+not a kill):
+[`five-lane-export/ATTACK_9B.md`](five-lane-export/ATTACK_9B.md).
+9C is Attack 11 here. 9D is Freiman-AP, already dead.
 
 Do not merge with H1.
 
