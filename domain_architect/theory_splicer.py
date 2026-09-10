@@ -207,11 +207,15 @@ def get_millennium_problem(problem_id: str, registry: dict[str, Any] | None = No
 def get_book(book_id: str, registry: dict[str, Any] | None = None) -> TheoryBook:
     reg = registry or load_millennium_registry()
     bid = book_id.upper().replace("★", "STAR").replace("*", "STAR")
-    # Normalize Lemma★ / Lemma-Star style aliases
+    # Normalize Lemma★ / Lemma-Star / R_★ style aliases
     alias_map = {
         "LEMMA-STAR": "DA-NS-1",
         "LEMMASTAR": "DA-NS-1",
         "LEMMA★": "DA-NS-1",
+        "R-STAR": "DA-NS-1",
+        "RSTAR": "DA-NS-1",
+        "SHAPE-FORM": "DA-NS-1",
+        "SHAPEFORM": "DA-NS-1",
     }
     bid = alias_map.get(bid, bid)
     for prob in reg.get("problems", {}).values():
@@ -671,10 +675,12 @@ def express(book_id: str, *, registry: dict[str, Any] | None = None) -> SpliceRe
     if refused:
         return refused
 
-    # Lemma★ / DA-NS-1: never green as closed Clay; PRODUCT-BLOCK incomplete
+    # Lemma★ / DA-NS-1: never green as closed Clay; PRODUCT-BLOCK / uniform R_★ incomplete
     if book.book_id in ("DA-NS-1", "PRODUCT-BLOCK") or book.status == "HYPOTHESIS":
         if book.book_id in ("DA-NS-1", "PRODUCT-BLOCK") or any(
-            c.claim_id in ("LEMMA-STAR", "DA-NS-1", "PRODUCT-BLOCK") for c in book.claims
+            c.claim_id
+            in ("LEMMA-STAR", "DA-NS-1", "PRODUCT-BLOCK", "R-STAR", "SHAPE-FORM")
+            for c in book.claims
         ):
             return SpliceResult(
                 operation="EXPRESS",
@@ -682,25 +688,27 @@ def express(book_id: str, *, registry: dict[str, Any] | None = None) -> SpliceRe
                 book_id=book.book_id,
                 bullshit_destroyed=True,
                 bullshit_flags=[
-                    "Lemma★ / DA-NS-1 is HYPOTHESIS — refuse claiming PROVED / almost proved",
-                    "Broken at PRODUCT-BLOCK: |T_c|<=C||u||_2 X^{3/2} missing; HH→L still the gap",
-                    "Clay weld WITHHELD until PRODUCT-BLOCK closes",
-                    "Numeric survive ≠ proof; NS NOT SOLVED (five-lane PR #48)",
+                    "Lemma★ / DA-NS-1 is HYPOTHESIS shape statement — refuse PROVED / almost proved / numerics-prove-★",
+                    "Broken at PRODUCT-BLOCK: |T_c|<=C||u||_2 X^{3/2} ≡ uniform R_★ missing; HH→L still the gap",
+                    "Clay weld WITHHELD until PRODUCT-BLOCK / uniform R_★ closes",
+                    "Numeric bound ≠ uniform bound; NS NOT SOLVED (five-lane PR #48: K=0↔D_s=0)",
                 ],
                 suggested_fix=(
-                    "Broken at PRODUCT-BLOCK → HH→L still the gap → close by structure "
-                    "on T_c=M−ΛN or conditional under SND/dominant shell. "
-                    "Do not claim PROVED or almost proved."
+                    "Broken at PRODUCT-BLOCK → HH→L still the gap → missing uniform R_★ → "
+                    "close by triad structure on T_c=M−ΛN or conditional under SND/dominant shell. "
+                    "Do not claim PROVED, almost proved, or numerics-prove-★."
                 ),
                 message=(
-                    f"EXPRESS refuses to green {book.book_id}: status HYPOTHESIS; "
-                    "proving Lemma★ ≡ Clay B in this packaging — PRODUCT-BLOCK / HH→L open; "
-                    "NS NOT SOLVED."
+                    f"EXPRESS refuses to green {book.book_id}: status HYPOTHESIS "
+                    "(shape statement via R_★); proving Lemma★ ≡ Clay B in this packaging — "
+                    "PRODUCT-BLOCK / HH→L / uniform R_★ open; NS NOT SOLVED."
                 ),
                 details={
                     "status": "HYPOTHESIS",
                     "blocker": "PRODUCT-BLOCK",
                     "analytic_gap": "HH→L",
+                    "shape_statement": True,
+                    "viscosity_cancelled": True,
                     "clay_implication": "CONDITIONAL",
                     "clay_weld": "WITHHELD",
                     "honesty_rule": "lemma_star_not_proved",

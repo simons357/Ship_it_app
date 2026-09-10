@@ -286,37 +286,39 @@ CLOSURE_CATALOG: tuple[ClosureMove, ...] = (
     ClosureMove(
         break_id="PRODUCT-BLOCK",
         where_da=(
-            "Lemma★ / DA-NS-1 HYPOTHESIS book: Clay weld WITHHELD; "
-            "missing weld PRODUCT-BLOCK001 — ordinary 3D product INSUFFICIENT"
+            "Lemma★ / DA-NS-1 HYPOTHESIS book (shape statement via R_★): "
+            "Clay weld WITHHELD; missing weld PRODUCT-BLOCK001 — ordinary 3D "
+            "product INSUFFICIENT ≡ missing uniform R_★"
         ),
         where_math=(
-            "Need |T_c| ≤ C ‖u‖₂ X^{3/2} to close energy-budget estimate "
-            "T_c ≤ θν(Z−ΛY) + C₀ ν⁻¹ ‖u‖₂² X Λ; energy alone does not give it"
+            "Need |T_c| ≤ C ‖u‖₂ X^{3/2} ≡ uniform R_★(v) ≤ 4θ C_0 to close "
+            "energy-budget / shape-form estimate; energy alone does not give it"
         ),
         why=(
-            "Lemma★ packages Clay B correctly: Λ blowup prevention → finite "
-            "enstrophy → regularity. Without the product bound the estimate "
-            "does not close from Leray energy."
+            "Lemma★ packages Clay B correctly as a shape statement: Λ blowup "
+            "prevention → finite enstrophy → regularity. Without the product / "
+            "uniform-R_★ bound the estimate does not close from Leray energy."
         ),
         closure_move=(
-            "Broken at PRODUCT-BLOCK → close by (1) structure/cancellations on "
-            "T_c=M−ΛN, or (2) conditional under SND/dominant shell; "
-            "C₀ geometric-only does not close; negative energy-alone "
-            "counterexample would kill the packaging"
+            "Broken at PRODUCT-BLOCK → HH→L still the gap → missing uniform R_★ → "
+            "close by (1) triad structure/cancellations on T_c=M−ΛN, or "
+            "(2) conditional under SND/dominant shell; C₀ geometric-only does "
+            "not close; R_★→∞ or D_s=0 with T_c>0 would kill the packaging"
         ),
         patch_sketch=(
-            "Target: prove |T_c|≤C‖u‖₂ X^{3/2} via divergence form / moment "
-            "identities on M−ΛN, or reduce under J/X concentration; "
-            "do NOT claim Lemma★ PROVED until this weld exists"
+            "Target: prove uniform R_★(v)≤4θ C_0 (equiv. |T_c|≤C‖u‖₂ X^{3/2}) "
+            "via triad/HH→L structure on M−ΛN, or reduce under J/X concentration; "
+            "do NOT claim Lemma★ PROVED / numerics-prove-★ until this weld exists"
         ),
         success_test=(
-            "PRODUCT-BLOCK marked closed only with explicit estimate; "
+            "PRODUCT-BLOCK marked closed only with explicit uniform R_★ bound; "
             "DA still refuses green Lemma★ without that weld; "
-            "Lemma★→CLAY-B001 stays WITHHELD until then"
+            "Lemma★→CLAY-B001 stays WITHHELD until then; numeric samples ≠ proof"
         ),
         fake_closure_risk=(
-            "Declaring C₀ geometric-only as if it closed the product gap, "
-            "or greening Lemma★ while still using ordinary 3D product estimates"
+            "Declaring C₀ geometric-only or finite-sample R_★ as if it closed "
+            "the product gap, or greening Lemma★ while still using ordinary 3D "
+            "product estimates / missing uniform R_★"
         ),
         tractability_rank=2,
         kind="analytic",

@@ -58,15 +58,15 @@ REFUSAL_PATTERNS: tuple[tuple[str, str], ...] = (
     ),
     (
         r"(lemma\s*[\*★]|lemma-?star|da-?ns-?1).{0,40}(proved|resolved|closed|almost\s+proved)",
-        "REFUSE: Lemma★ / DA-NS-1 is HYPOTHESIS — broken at PRODUCT-BLOCK / HH→L; NS NOT SOLVED",
+        "REFUSE: Lemma★ / DA-NS-1 is HYPOTHESIS — broken at PRODUCT-BLOCK / HH→L / uniform R_★; NS NOT SOLVED",
     ),
     (
         r"(lemma\s*[\*★]|lemma-?star).{0,30}(closes|implies)\s+(clay|millennium)",
-        "REFUSE: Lemma★→Clay B WITHHELD until PRODUCT-BLOCK / HH→L closes",
+        "REFUSE: Lemma★→Clay B WITHHELD until PRODUCT-BLOCK / HH→L / uniform R_★ closes",
     ),
     (
-        r"almost\s+proved|numeric(al)?\s+surviv.{0,30}proof",
-        "REFUSE: ‘almost proved’ / numeric survive ≠ proof — HH→L gap open; NS NOT SOLVED",
+        r"almost\s+proved|numeric(al)?\s+surviv.{0,30}proof|numerics?\s+prove|finite\s+samples?\s+(prove|green)",
+        "REFUSE: ‘almost proved’ / numerics ≠ proof — HH→L / uniform R_★ gap open; NS NOT SOLVED",
     ),
 )
 
@@ -103,6 +103,10 @@ LEMMA_STAR_MARKERS = (
     "centered spectral drift",
     "energy-budget",
     "energy budget",
+    "r_star",
+    "r-star",
+    "shape form",
+    "shape statement",
 )
 PRODUCT_BLOCK_MARKERS = (
     "product-block",
@@ -110,6 +114,8 @@ PRODUCT_BLOCK_MARKERS = (
     "x^{3/2}",
     "ordinary 3d product",
     "ordinary 3d sobolev",
+    "uniform r_star",
+    "missing uniform r",
 )
 
 
@@ -180,7 +186,7 @@ def anatomize_claim(text: str, inventory: dict[str, Any] | None = None) -> SNDCl
     hits: list[ClaimHit] = []
     notes: list[str] = [
         "SND-U is open/hypothesis; SND-C is conditional under X<=M; Clay B is NOT resolved.",
-        "Lemma★ / DA-NS-1 is HYPOTHESIS packaging of Clay B — WITHHELD until PRODUCT-BLOCK.",
+        "Lemma★ / DA-NS-1 is HYPOTHESIS packaging of Clay B (shape statement via R_★) — WITHHELD until PRODUCT-BLOCK.",
         "Favorable ARCHON panel consensus is roleplay, not peer review.",
     ]
 

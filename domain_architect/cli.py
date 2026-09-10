@@ -193,8 +193,8 @@ def main(argv: list[str] | None = None) -> int:
         "--lemma-star",
         action="store_true",
         help=(
-            "analyze Lemma★ / DA-NS-1 energy-budget estimate "
-            "(HYPOTHESIS; broken at PRODUCT-BLOCK; refuse PROVED claims)"
+            "analyze Lemma★ / DA-NS-1 shape statement via R_★ "
+            "(HYPOTHESIS; broken at PRODUCT-BLOCK / uniform R_★; refuse PROVED / numerics-prove)"
         ),
     )
     args = parser.parse_args(argv)
@@ -204,11 +204,14 @@ def main(argv: list[str] | None = None) -> int:
         screen_rep = screen_lemma_star()
         shapes = compare_lemma_star_shapes()
         block = product_block_incompleteness()
-        probe_text = args.expression or "Lemma★ (HYPOTHESIS) energy-budget estimate"
+        probe_text = args.expression or "Lemma★ (HYPOTHESIS) shape statement via R_★"
         proved = refuse_proved_lemma_star(probe_text)
         # Always demonstrate refusal of an explicit proved claim
         proved_demo = refuse_proved_lemma_star(
             "Lemma★ proved; DA-NS-1 closes Clay Statement B"
+        )
+        numerics_demo = refuse_proved_lemma_star(
+            "Numerics prove Lemma★; finite samples green R_star"
         )
         payload = {
             "analysis": report.to_dict(),
@@ -216,6 +219,7 @@ def main(argv: list[str] | None = None) -> int:
             "shape_compare": shapes,
             "product_block": block,
             "refuse_proved": proved_demo,
+            "refuse_numerics_prove": numerics_demo,
             "input_probe": proved,
         }
         if args.json:
@@ -228,6 +232,10 @@ def main(argv: list[str] | None = None) -> int:
             print(f"  lemma welds: {len(screen_rep['lemma_welds'])}")
             print(f"  withheld: {screen_rep['withheld_count']}")
             print()
+            print("R_★ kill rules:")
+            for rule in report.kill_rules:
+                print(f"  • {rule}")
+            print()
             print("Shape compare:")
             for key in ("vs_SND-C", "vs_NS-B"):
                 m = shapes[key]
@@ -235,9 +243,12 @@ def main(argv: list[str] | None = None) -> int:
             print()
             print(block["headline"])
             print(f"  ordinary 3D: {block['ordinary_3d']}")
+            print(f"  equivalent gap: {block.get('equivalent_gap')}")
             print()
             print("EXPRESS as proved:")
             print(f"  refused={proved_demo['refused']}: {proved_demo['message']}")
+            print("Numerics prove ★:")
+            print(f"  refused={numerics_demo['refused']}: {numerics_demo['message']}")
         return 2 if proved["refused"] else 0
 
     if args.library_scan:

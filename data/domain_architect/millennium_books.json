@@ -8,7 +8,7 @@
       "clay_name": "Navier-Stokes (Clay Statement B)",
       "status": "OPEN",
       "alias": "NAVIER-STOKES",
-      "honest_note": "Clay Statement B NOT proved. NS NOT SOLVED. SND-C is conditional under X≤M. DA refuses H→Clay glue. Lemma★/DA-NS-1 is locked Millennium packaging (HYPOTHESIS) — WITHHELD until PRODUCT-BLOCK / HH→L closes. Five-lane PR #48: K=0 dead; ★ survives numeric only ≠ proved.",
+      "honest_note": "Clay Statement B NOT proved. NS NOT SOLVED. SND-C is conditional under X≤M. DA refuses H→Clay glue. Lemma★/DA-NS-1 is locked Millennium packaging as a SHAPE STATEMENT via R_star (HYPOTHESIS) — WITHHELD until PRODUCT-BLOCK / uniform R_star / HH→L closes. Five-lane PR #48: K=0 dead ↔ D_s=0 kill; ★ survives numeric only ≠ proved.",
       "books": [
         {
           "book_id": "NS-B",
@@ -216,11 +216,11 @@
         },
         {
           "book_id": "DA-NS-1",
-          "label": "Lemma★ / DA-NS-1 energy-budget spectral drift",
+          "label": "Lemma★ / DA-NS-1 shape statement (R_★)",
           "status": "HYPOTHESIS",
           "alias": "LEMMA-STAR",
-          "honest_status": "HYPOTHESIS — locked Millennium packaging (not a side lemma); NOT proved. PRODUCT-BLOCK / HH→L open. Five-lane: K=0 dead; survives numeric only ≠ proved. NS NOT SOLVED.",
-          "expression": "Lemma★ (HYPOTHESIS): T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda  with C_0 geometric only",
+          "honest_status": "HYPOTHESIS — locked Millennium packaging as SHAPE STATEMENT via R_star (not viscosity-first); NOT proved. PRODUCT-BLOCK / HH→L = missing uniform R_star. Five-lane: K=0 dead ↔ D_s=0 kill; survives numeric only ≠ proved. NS NOT SOLVED.",
+          "expression": "Lemma★ (HYPOTHESIS / SHAPE): (T_c(v)_+)^2 <= 4*theta*C_0*D_s(v)*||v||_2^2*Y(v); viscosity form T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda",
           "roles": [
             "admissibility",
             "interaction",
@@ -232,6 +232,9 @@
           "terms": [
             "centered_spectral_drift",
             "T_c",
+            "D_s",
+            "R_star",
+            "shape_form",
             "Lambda",
             "X",
             "Y",
@@ -241,45 +244,65 @@
             "energy_budget"
           ],
           "quantities": {
-            "T_c": "M - Lambda*N (centered spectral drift)",
+            "T_c": "M - Lambda*N (centered spectral drift / stretching)",
+            "D_s": "spectral spread (quadratic in field)",
+            "R_star": "(T_c_+)^2 / (D_s * ||v||_2^2 * Y) — pure geometry; viscosity-independent",
             "Lambda": "spectral scale / eigenvalue marker (blowup target)",
             "X": "enstrophy / ||grad u||_L2^2 scale",
-            "Y": "viscous cross term companion",
+            "Y": "viscous cross term companion / shape-form Y(v)",
             "Z": "viscous variance companion",
             "E": "||u||_2^2 Leray energy",
-            "nu": "viscosity",
+            "nu": "viscosity (cancels under u=av size optimization)",
             "theta": "geometric/structure constant in viscous term",
             "C_0": "geometric constant only — independent of field wildness"
           },
-          "equation_refs": ["LEMMA-STAR001", "DA-NS-1001"],
+          "equation_refs": ["LEMMA-STAR001", "R-STAR001", "DA-NS-1001"],
           "claims": [
             {
               "claim_id": "LEMMA-STAR",
-              "label": "Lemma★ closing estimate",
-              "expression": "T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda",
+              "label": "Lemma★ closing estimate (shape statement)",
+              "expression": "(T_c(v)_+)^2 <= 4*theta*C_0*D_s(v)*||v||_2^2*Y(v); viscosity ASCII T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda",
               "status": "HYPOTHESIS",
               "equation_ref": "LEMMA-STAR001",
               "roles": ["interaction", "scale_response", "realized_output", "environment"],
-              "notes": "Candidate closing estimate. If true: Lambda cannot blow up in finite time → enstrophy finite → global regularity on T^3. DA will not green without PRODUCT-BLOCK / HH→L. Refuse almost proved. Five-lane PR #48: survives numeric kill only ≠ proved. NS NOT SOLVED."
+              "notes": "USER LOCK-IN: shape statement via R_star; viscosity cancelled under u=av. Candidate closing estimate. DA will not green without PRODUCT-BLOCK / uniform R_star / HH→L. Refuse almost proved / numerics-prove-★. Five-lane PR #48. NS NOT SOLVED."
+            },
+            {
+              "claim_id": "R-STAR",
+              "label": "R_★ pure-geometry ratio — decisive form",
+              "expression": "R_star(v) = (T_c(v)_+)^2 / (D_s(v)*||v||_2^2*Y(v))",
+              "status": "HYPOTHESIS",
+              "equation_ref": "R-STAR001",
+              "roles": ["interaction", "scale_response", "realized_output"],
+              "notes": "Equivalent decisive form of LEMMA-STAR / SHAPE-FORM. Kill: R_star→∞ or D_s=0 with T_c>0. Finite samples ≠ uniform bound."
+            },
+            {
+              "claim_id": "SHAPE-FORM",
+              "label": "Shape form after u=av size optimization",
+              "expression": "(T_c(v)_+)^2 <= 4*theta*C_0*D_s(v)*||v||_2^2*Y(v)",
+              "status": "HYPOTHESIS",
+              "equation_ref": "R-STAR001",
+              "roles": ["interaction", "scale_response", "environment"],
+              "notes": "Supersedes viscosity-first wording. Same object as R-STAR / LEMMA-STAR."
             },
             {
               "claim_id": "DA-NS-1",
               "label": "DA-NS-1 energy-budget spectral drift control",
-              "expression": "Control centered spectral drift T_c=M-Lambda*N by viscous variance (Z-Lambda*Y) plus remainder built only from Leray energy E=||u||_2^2",
+              "expression": "Control centered spectral drift T_c=M-Lambda*N by viscous variance (Z-Lambda*Y) plus remainder built only from Leray energy E=||u||_2^2 — equiv. uniform R_star",
               "status": "HYPOTHESIS",
               "equation_ref": "DA-NS-1001",
               "roles": ["interaction", "scale_response", "environment"],
-              "notes": "Same object as Lemma★ — locked Millennium packaging of Statement B. NS NOT SOLVED."
+              "notes": "Same object as Lemma★ — locked Millennium packaging of Statement B. Shape statement. NS NOT SOLVED."
             }
           ],
-          "notes": "Honest packaging of Clay B as one estimate. Broken at PRODUCT-BLOCK / Agmon-product; analytic gap HH→L. Five-lane PR #48. Links: SND-C (shell J/X texture), BOOT-M (enstrophy ceiling), NS-B (classical PDE)."
+          "notes": "Honest packaging of Clay B as one estimate / uniform R_star. Broken at PRODUCT-BLOCK / HH→L = missing uniform R_star. Five-lane PR #48: K=0 ↔ D_s=0. Links: SND-C (shell J/X texture), BOOT-M (enstrophy ceiling), NS-B (classical PDE). No SFE glue."
         },
         {
           "book_id": "PRODUCT-BLOCK",
-          "label": "Product / Agmon estimate blocker for Lemma★",
+          "label": "Product / Agmon / missing uniform R_★ blocker for Lemma★",
           "status": "OPEN",
-          "honest_status": "OPEN blocker — need |T_c|<=C*||u||_2*X^{3/2}; ordinary 3D Sobolev/product/Agmon INSUFFICIENT from energy alone; Bony HH→L still the gap (PR #48).",
-          "expression": "PRODUCT-BLOCK (OPEN): need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D product/Agmon estimates do not give this from energy alone; HH→L gap",
+          "honest_status": "OPEN blocker — need |T_c|<=C*||u||_2*X^{3/2} ≡ uniform R_star; ordinary 3D Sobolev/product/Agmon INSUFFICIENT from energy alone; Bony HH→L still the gap (PR #48).",
+          "expression": "PRODUCT-BLOCK (OPEN): need |T_c| <= C*||u||_2*X^{3/2} ≡ uniform R_star; ordinary 3D product/Agmon estimates do not give this from energy alone; HH→L gap",
           "roles": [
             "admissibility",
             "interaction",
@@ -287,29 +310,29 @@
             "scale_response",
             "realized_output"
           ],
-          "terms": ["product_estimate", "Sobolev", "Agmon", "HH_to_L", "T_c_bound", "energy_alone"],
+          "terms": ["product_estimate", "Sobolev", "Agmon", "HH_to_L", "T_c_bound", "R_star", "energy_alone"],
           "equation_refs": ["PRODUCT-BLOCK001"],
           "claims": [
             {
               "claim_id": "PRODUCT-BLOCK",
-              "label": "Product / Agmon estimate gap",
-              "expression": "|T_c| <= C*||u||_2*X^{3/2} required; ordinary 3D Sobolev/product/Agmon estimates INSUFFICIENT from energy alone; HH→L bottleneck",
+              "label": "Product / Agmon / missing uniform R_★ gap",
+              "expression": "|T_c| <= C*||u||_2*X^{3/2} required ≡ uniform R_star; ordinary 3D Sobolev/product/Agmon estimates INSUFFICIENT from energy alone; HH→L bottleneck",
               "status": "OPEN",
               "equation_ref": "PRODUCT-BLOCK001",
               "roles": ["interaction", "scale_response"],
-              "notes": "Missing weld that blocks Lemma★. Five-lane Attack 3: HH→L live. Closing this (or kill via blowing R_pre) decides the packaging."
+              "notes": "Missing weld that blocks Lemma★ = missing uniform R_star. Five-lane Attack 3: HH→L live. Closing this (or kill via R_star→∞) decides the packaging."
             },
             {
               "claim_id": "PRODUCT-3D-INSUFFICIENT",
               "label": "Ordinary 3D product estimates insufficient",
-              "expression": "Ordinary 3D Sobolev/product/Agmon estimates cannot bound |T_c| by C*||u||_2*X^{3/2} from Leray energy alone",
+              "expression": "Ordinary 3D Sobolev/product/Agmon estimates cannot bound |T_c| by C*||u||_2*X^{3/2} (nor uniform R_star) from Leray energy alone",
               "status": "REFERENCE",
               "equation_ref": "PRODUCT-BLOCK001",
               "roles": ["interaction"],
               "notes": "Diagnosis, not a proof of impossibility — marks the known estimate class as insufficient."
             }
           ],
-          "notes": "INSERT candidate for theory splicer. Lemma★→Clay B remains WITHHELD until this closes. Numeric survive ≠ proof."
+          "notes": "INSERT candidate for theory splicer. Lemma★→Clay B remains WITHHELD until this closes. Numeric survive ≠ proof. Numeric bound ≠ uniform R_star."
         }
       ],
       "welds": [
@@ -380,30 +403,40 @@
           "left_id": "LEMMA-STAR",
           "right_id": "CLAY-B001",
           "relation": "INSUFFICIENT_INFORMATION",
-          "evidence": "Lemma★ packages Clay B correctly: if proved, Lambda cannot blow up → enstrophy finite → regularity. WITHHELD until PRODUCT-BLOCK closes — not fraud, honest Millennium packaging.",
+          "evidence": "Lemma★ packages Clay B correctly: if proved (uniform R_star), Lambda cannot blow up → enstrophy finite → regularity. WITHHELD until PRODUCT-BLOCK / uniform R_star closes — not fraud, honest Millennium packaging.",
           "status": "WITHHELD",
           "requires_weld_lemma": true,
-          "notes": "DA will not green Lemma★→Clay B without PRODUCT-BLOCK. Proving Lemma★ ≡ Clay B in this book."
+          "notes": "DA will not green Lemma★→Clay B without PRODUCT-BLOCK / uniform R_star. Shape statement. Proving Lemma★ ≡ Clay B in this book."
         },
         {
           "weld_id": "W-NS-LEMMASTAR-PRODUCT",
           "left_id": "LEMMA-STAR",
           "right_id": "PRODUCT-BLOCK",
           "relation": "COMPATIBLE_DISTINCT",
-          "evidence": "Lemma★ requires a product-class bound |T_c|<=C||u||_2 X^{3/2}; PRODUCT-BLOCK is the missing weld.",
+          "evidence": "Lemma★ requires a product-class bound |T_c|<=C||u||_2 X^{3/2} ≡ uniform R_star; PRODUCT-BLOCK is the missing weld.",
           "status": "OPEN",
           "requires_weld_lemma": true,
-          "notes": "Broken at PRODUCT-BLOCK → close by structure on T_c, conditional SND/shell, or negative energy-alone counterexample."
+          "notes": "Broken at PRODUCT-BLOCK → HH→L still the gap → missing uniform R_star → close by triad structure on T_c, conditional SND/shell, or negative R_star→∞ kill."
+        },
+        {
+          "weld_id": "W-NS-RSTAR-LEMMASTAR",
+          "left_id": "R-STAR",
+          "right_id": "LEMMA-STAR",
+          "relation": "EQUIVALENT",
+          "evidence": "R-STAR / SHAPE-FORM is the equivalent decisive form of LEMMA-STAR after u=av cancels viscosity.",
+          "status": "COMPATIBLE",
+          "requires_weld_lemma": true,
+          "notes": "USER LOCK-IN: ★ = shape statement via R_star; viscosity cancelled."
         },
         {
           "weld_id": "W-NS-LEMMASTAR-SNDC",
           "left_id": "LEMMA-STAR",
           "right_id": "SND-C001",
           "relation": "COMPATIBLE_DISTINCT",
-          "evidence": "Same NS regularity shape; different texture — energy-budget T_c/Λ vs shell J/X SND-C under X≤M.",
+          "evidence": "Same NS regularity shape; different texture — energy-budget / R_star vs shell J/X SND-C under X≤M.",
           "status": "COMPATIBLE",
           "requires_weld_lemma": true,
-          "notes": "Conditional under SND/dominant shell reduces Lemma★ product gap to known open SND packaging."
+          "notes": "Conditional under SND/dominant shell reduces Lemma★ product / R_star gap to known open SND packaging."
         },
         {
           "weld_id": "W-NS-LEMMASTAR-BOOTM",
@@ -430,10 +463,10 @@
           "left_id": "PRODUCT-BLOCK",
           "right_id": "CLAY-B001",
           "relation": "INSUFFICIENT_INFORMATION",
-          "evidence": "PRODUCT-BLOCK is the analytic gap inside Lemma★ packaging; closing it is necessary for this Clay route.",
+          "evidence": "PRODUCT-BLOCK is the analytic gap inside Lemma★ packaging (missing uniform R_star); closing it is necessary for this Clay route.",
           "status": "OPEN",
           "requires_weld_lemma": true,
-          "notes": "Ordinary 3D product estimates marked INSUFFICIENT from energy alone."
+          "notes": "Ordinary 3D product estimates marked INSUFFICIENT from energy alone. Numeric bound ≠ uniform R_star."
         }
       ]
     },

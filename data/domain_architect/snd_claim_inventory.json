@@ -58,39 +58,57 @@
       "claim_id": "LEMMA-STAR",
       "label": "Lemma★ / DA-NS-1 energy-budget closing estimate",
       "status": "hypothesis",
-      "status_detail": "hypothesis_not_proved_millennium_packaging",
-      "definition": "T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda with C_0 geometric only; T_c=M-Lambda*N. Locked Millennium packaging (not a side lemma).",
+      "status_detail": "hypothesis_not_proved_shape_statement",
+      "definition": "Shape statement (locked): (T_c(v)_+)^2 <= 4*theta*C_0*D_s(v)*||v||_2^2*Y(v) for every div-free v on T^3 with one geometric C_0(theta). Viscosity form (ASCII): T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda. Under u=av, size optimization cancels nu. Equivalent decisive form: uniform bound on R_star(v).",
       "clay_relevance": "If proved, packages Clay Statement B: Lambda blowup prevention → finite enstrophy → global regularity on T^3. Proving Lemma★ ≡ Clay B in this book.",
-      "notes": "WITHHELD from Clay green until PRODUCT-BLOCK / HH→L closed. Five-lane PR #48: K=0 dead; survives numeric kill only ≠ proved; NS NOT SOLVED. Refuse ‘almost proved’."
+      "notes": "USER LOCK-IN: ★ is a shape statement, not a viscosity statement. WITHHELD from Clay green until PRODUCT-BLOCK / uniform R_star / HH→L closed. Five-lane PR #48: K=0 dead ↔ D_s=0 kill; survives numeric kill only ≠ proved; NS NOT SOLVED. Refuse ‘almost proved’ / numerics-prove-★."
+    },
+    {
+      "claim_id": "R-STAR",
+      "label": "R_★(v) pure-geometry ratio — decisive form of Lemma★",
+      "status": "hypothesis",
+      "status_detail": "equivalent_decisive_form_of_lemma_star",
+      "definition": "R_star(v) = (T_c(v)_+)^2 / (D_s(v)*||v||_2^2*Y(v)). Pure geometry; same for av as v; independent of viscosity. ★ holds iff R_star is uniformly bounded by 4*theta*C_0.",
+      "clay_relevance": "Equivalent decisive form of LEMMA-STAR / SHAPE-FORM. Missing uniform bound = PRODUCT-BLOCK / HH→L.",
+      "notes": "Kill: R_star→∞ on some shapes ⇒ ★ dead. Kill: D_s=0 with T_c>0 ⇒ ★ dead (K=0 lane). Pure single shell both sides vanish ≠ kill. Finite-sample small R_star ≠ the uniform number. Numerics = evidence only."
+    },
+    {
+      "claim_id": "SHAPE-FORM",
+      "label": "Lemma★ shape form after u=av size optimization",
+      "status": "hypothesis",
+      "status_detail": "equivalent_decisive_form_of_lemma_star",
+      "definition": "(T_c(v)_+)^2 <= 4*theta*C_0*D_s(v)*||v||_2^2*Y(v). Change only size of fixed shape v; worst size cancels nu. If one C_0(theta) works for every div-free v on T^3, original ★ holds for every amplitude and every nu.",
+      "clay_relevance": "Same as R-STAR / LEMMA-STAR — Clay CONDITIONAL on uniform R_star (= PRODUCT-BLOCK / HH→L).",
+      "notes": "Supersedes viscosity-first wording. Proof would need triadic reason (HH→L channel) that stretching cannot outrun spectral spread — not written. NS NOT SOLVED."
     },
     {
       "claim_id": "DA-NS-1",
       "label": "DA-NS-1 energy-budget spectral drift control",
       "status": "hypothesis",
       "status_detail": "alias_of_lemma_star",
-      "definition": "Control centered spectral drift T_c by viscous variance plus remainder built only from Leray energy E=||u||_2^2.",
-      "clay_relevance": "Same as LEMMA-STAR — Clay implication CONDITIONAL on PRODUCT-BLOCK / HH→L.",
-      "notes": "Book/claim alias of Lemma★. NS NOT SOLVED."
+      "definition": "Control centered spectral drift T_c by viscous variance plus remainder built only from Leray energy E=||u||_2^2 — equivalently uniform geometric bound on R_star(v).",
+      "clay_relevance": "Same as LEMMA-STAR — Clay implication CONDITIONAL on PRODUCT-BLOCK / HH→L / uniform R_star.",
+      "notes": "Book/claim alias of Lemma★. Shape statement via R_star. NS NOT SOLVED."
     },
     {
       "claim_id": "PRODUCT-BLOCK",
       "label": "Product / Agmon estimate blocker for Lemma★",
       "status": "open",
-      "status_detail": "blocker_open_hh_to_l_gap",
-      "definition": "Need |T_c| <= C*||u||_2*X^{3/2} (or |T_c|<=C||u||_2 X Lambda then Young); ordinary 3D Sobolev/product/Agmon estimates INSUFFICIENT from energy alone. Analytic bottleneck: Bony HH→L.",
-      "clay_relevance": "Missing weld inside Lemma★ packaging; closes or kills the energy-budget Clay route.",
-      "notes": "INSERT candidate. Five-lane PR #48 Attack 3: HH→L still the gap. Ranked attacks: T_c structure controlling HH→L; SND/shell conditional; C_0 alone insufficient; negative kill via blowing R_pre."
+      "status_detail": "blocker_open_missing_uniform_r_star_hh_to_l",
+      "definition": "Need |T_c| <= C*||u||_2*X^{3/2} (or |T_c|<=C||u||_2 X Lambda then Young); equivalently uniform R_star(v) <= 4*theta*C_0. Ordinary 3D Sobolev/product/Agmon estimates INSUFFICIENT from energy alone. Analytic bottleneck: Bony HH→L.",
+      "clay_relevance": "Missing weld inside Lemma★ packaging = missing uniform bound on R_star; closes or kills the energy-budget / shape-form Clay route.",
+      "notes": "INSERT candidate. Five-lane PR #48 Attack 3: HH→L still the gap. Ranked attacks: triad/HH→L structure on T_c; SND/shell conditional; C_0 alone insufficient; negative kill via R_star→∞ or D_s=0 with T_c>0."
     },
     {
       "claim_id": "FIVE-LANE-LEMMA-STAR",
       "label": "Five-lane Lemma★ drill (PR #48)",
       "status": "diagnostic",
-      "status_detail": "k0_dead_star_survives_numeric_hh_l_gap",
-      "definition": "Simultaneous Attacks 1–5 on centered spectral drift T_c / Lemma★ packaging (2026-09-10).",
-      "clay_relevance": "Does not close Clay. Numeric survival is not a proof. NS NOT SOLVED.",
+      "status_detail": "k0_dead_ds0_kill_star_survives_numeric_hh_l_gap",
+      "definition": "Simultaneous Attacks 1–5 on centered spectral drift T_c / Lemma★ packaging (2026-09-10). Cross-link: K=0 dead ↔ D_s=0 kill lane in R_star shape form.",
+      "clay_relevance": "Does not close Clay. Numeric survival is not a proof. Numeric bound ≠ uniform bound on R_star. NS NOT SOLVED.",
       "evidence_pr": 48,
       "evidence_url": "https://github.com/simons357/Ship_it_app/pull/48",
-      "notes": "K=0 absorption DEAD; Lemma★ survives numeric kill only (max |R_pre|≈5.09) ≠ proved; Bony HH→L live bottleneck; PRODUCT-BLOCK unchanged."
+      "notes": "K=0 absorption DEAD ↔ D_s=0 kill; Lemma★ survives numeric kill only (max |R_pre|≈5.09) ≠ proved; Bony HH→L live bottleneck; PRODUCT-BLOCK = missing uniform R_star."
     }
   ],
   "refused_routings": [
@@ -110,6 +128,12 @@
     "almost proved",
     "ns solved",
     "navier-stokes solved",
-    "numeric survival is proof"
+    "numeric survival is proof",
+    "numerics prove lemma star",
+    "numerics prove ★",
+    "finite samples prove lemma star",
+    "finite samples green lemma star",
+    "r_star bounded on samples proves star",
+    "shape form proved"
   ]
 }
