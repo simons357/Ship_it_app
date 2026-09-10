@@ -1059,7 +1059,7 @@
     ],
     "audit_disposition": "RETAIN",
     "alias": "LEMMA-STAR",
-    "notes": "DA will not green as PROVED. WITHHELD→Clay B until PRODUCT-BLOCK closed. Not fraud — honest Millennium packaging."
+    "notes": "DA will not green as PROVED. WITHHELD→Clay B until PRODUCT-BLOCK / HH→L closed. Five-lane PR #48: K=0 dead; survives numeric only ≠ proved. NS NOT SOLVED. Refuse almost proved."
   },
   {
     "equation_id": "DA-NS-1001",
@@ -1082,24 +1082,24 @@
     "source_terms": "",
     "nonlinearity": "NS",
     "couplings": "",
-    "unknown_definitions": "PRODUCT-BLOCK",
+    "unknown_definitions": "PRODUCT-BLOCK / HH→L",
     "dimensional_status": "as NS-B",
-    "known_limit_status": "HYPOTHESIS alias of Lemma★",
+    "known_limit_status": "HYPOTHESIS alias of Lemma★ — NS NOT SOLVED",
     "conflicts": [
       "CLAY-B001",
       "PRODUCT-BLOCK001"
     ],
     "audit_disposition": "RETAIN",
     "alias": "DA-NS-1",
-    "notes": "Book alias of LEMMA-STAR001."
+    "notes": "Book alias of LEMMA-STAR001. NS NOT SOLVED."
   },
   {
     "equation_id": "PRODUCT-BLOCK001",
     "family": "PRODUCT-BLOCK",
     "date": "2026-09",
-    "original_source": "Lemma★ blocker analysis — ordinary 3D product gap",
-    "original_expression": "|T_c| <= C*||u||_2*X^{3/2} required; ordinary 3D Sobolev/product estimates INSUFFICIENT from energy alone",
-    "audited_expression": "PRODUCT-BLOCK (OPEN): need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D product estimates do not give this from energy alone",
+    "original_source": "Lemma★ blocker analysis — ordinary 3D product / Agmon gap",
+    "original_expression": "|T_c| <= C*||u||_2*X^{3/2} required; ordinary 3D Sobolev/product/Agmon estimates INSUFFICIENT from energy alone; HH→L bottleneck",
+    "audited_expression": "PRODUCT-BLOCK (OPEN): need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D product/Agmon estimates do not give this from energy alone; Bony HH→L still the gap (PR #48)",
     "original_symbol_definitions": "T_c centered spectral drift; ||u||_2 Leray L2; X enstrophy scale",
     "original_stated_interpretation": "Missing weld that blocks Lemma★ / DA-NS-1",
     "original_claimed_consequence": "Until closed (or negatively refuted for energy-alone packaging), Lemma★→Clay B stays WITHHELD",
@@ -1112,17 +1112,17 @@
     "geometry": "T^3",
     "gauge_conditions": "",
     "source_terms": "",
-    "nonlinearity": "3D product / Sobolev",
+    "nonlinearity": "3D product / Sobolev / Agmon; HH→L",
     "couplings": "",
-    "unknown_definitions": "structure/cancellation on T_c=M-Lambda*N beyond energy",
+    "unknown_definitions": "structure/cancellation on T_c=M-Lambda*N controlling HH→L beyond energy",
     "dimensional_status": "as NS-B",
-    "known_limit_status": "OPEN — ordinary 3D estimates INSUFFICIENT",
+    "known_limit_status": "OPEN — ordinary 3D estimates INSUFFICIENT; HH→L gap (PR #48)",
     "conflicts": [
       "LEMMA-STAR001",
       "CLAY-B001"
     ],
     "audit_disposition": "RETAIN",
     "alias": "PRODUCT-BLOCK",
-    "notes": "INSERT candidate. Ranked attacks: structure on T_c; conditional SND/shell; geometric C_0 alone insufficient; negative energy-alone counterexample."
+    "notes": "INSERT candidate. Five-lane Attack 3: HH→L live. Ranked attacks: structure on T_c; conditional SND/shell; geometric C_0 alone insufficient; negative kill via blowing R_pre. Numeric survive ≠ proof."
   }
 ]
