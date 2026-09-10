@@ -182,3 +182,5 @@ Original five-lane JSON (PR 48 run, not a re-proof):
 [`five-lane-export/COMPUTE.md`](five-lane-export/COMPUTE.md).
 Attack 9B exact-shell \(K_{\alpha,\beta}\) (finite sample,
 not a kill): [`five-lane-export/ATTACK_9B.md`](five-lane-export/ATTACK_9B.md).
+Fixed-output \(\Theta(m^2)\) is a counting error
+(\(K\le 16s\)): [`LEMMA-STAR-9B-COUNTING.md`](LEMMA-STAR-9B-COUNTING.md).

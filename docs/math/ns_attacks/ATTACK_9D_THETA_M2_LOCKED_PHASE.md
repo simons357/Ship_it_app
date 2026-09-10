@@ -5,9 +5,20 @@
 **Status:** **SPEC / STUB** on the five-lane branch — remaining packet falsifier there. Kill lane **LIVE**. Lemma★ **OPEN**. **NS not solved.**  
 **Prior non-kill:** Attack 9C (fixed-gap spheres) — natural same-shell ensemble **NOT** a kill; \(\mathcal{R}_\star\) fell \(0.11\to 0.031\) — [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md).
 
-**On this branch.** The designed \(\Theta(m^2)\) locked-phase subset
-is Freiman-AP. Already scored. Already dead (\(\mathcal D_s\) wins).
-Do not rebuild it. File: [`../../LEMMA-STAR-PACKET.md`](../../LEMMA-STAR-PACKET.md).
+**On this branch.** Two writings of “9D,” do not merge:
+
+1. Designed \(\Theta(m^2)\) locked-phase **subset** (Freiman-AP).
+   Already scored. Already dead (\(\mathcal D_s\) wins).
+   Do not rebuild. [`../../LEMMA-STAR-PACKET.md`](../../LEMMA-STAR-PACKET.md).
+2. Screenshot: \(\Theta(m^2)\) pairs onto **one** output, or a
+   **fixed** number of outputs. **Analytically excluded.**
+   Per output, \(p+q=k\) gives at most \(m\) pairs.
+   \(K_{\alpha,\beta}\le 16s\). Fixed \(s\) cannot unbound \(K\).
+   File: [`../../LEMMA-STAR-9B-COUNTING.md`](../../LEMMA-STAR-9B-COUNTING.md).
+
+Growing the **number of output modes** stays a 9B test
+(complex polarizations, keep \(|k|\)). That is not (1) and
+not (2).
 
 ## Motivation (why 9C failed → what 9D must change)
 

@@ -66,6 +66,12 @@ The JSON is the `results/` tree above.
   Not a kill.
 - **9D** designed \(\Theta(m^2)\) locked phase: Freiman-AP,
   already dead. Do not rebuild.
+- **Screenshot 9D** (\(\Theta(m^2)\) onto a fixed output set):
+  counting error. Excluded. \(K\le 16s\).
+  [`../LEMMA-STAR-9B-COUNTING.md`](../LEMMA-STAR-9B-COUNTING.md).
+
+Growing output support is still a 9B test. Keep
+\(|k|\). Do not cash a finite \(\sqrt{K}\) as \(C_0\).
 
 Five-lane lanes 1–5: [`COMPUTE.md`](COMPUTE.md).
 Packets: [`../LEMMA-STAR-PACKET.md`](../LEMMA-STAR-PACKET.md).

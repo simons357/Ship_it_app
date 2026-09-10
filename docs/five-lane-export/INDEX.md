@@ -155,6 +155,8 @@ Scripts: `scripts/ns_attacks/run_all_five.py`,
 Attack 9B (exact-shell \(K_{\alpha,\beta}\); finite max,
 not a kill): [`ATTACK_9B.md`](ATTACK_9B.md).
 9C is Attack 11 here. 9D is Freiman-AP, already dead.
+Fixed-output \(\Theta(m^2)\): excluded.
+[`../LEMMA-STAR-9B-COUNTING.md`](../LEMMA-STAR-9B-COUNTING.md).
 
 ---
 

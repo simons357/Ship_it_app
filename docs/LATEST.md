@@ -104,6 +104,8 @@ results/ns_five_lane_2026-09-10/
 Attack 9B exact-shell \(K_{\alpha,\beta}\)
 (max \(K\approx 0.641\) at \((4,8)\); not a kill):
 docs/five-lane-export/ATTACK_9B.md
+Fixed-output \(\Theta(m^2)\): counting error,
+\(K\le 16s\). docs/LEMMA-STAR-9B-COUNTING.md
 No \(K(t)\). No Q1.
 
 **RH — open**

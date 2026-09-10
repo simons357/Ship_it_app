@@ -215,10 +215,19 @@ Do not cash \(0.71\) as \(C_0\).
 - wide / narrow AP: \(\mathcal D_s\) wins
 - fixed-gap spheres: closures \(O(m)\), \(\mathcal R_\star\) falls
 - designed \(\Theta(m^2)\) subset: Freiman-AP, already dead
+- screenshot \(\Theta(m^2)\) on one / fixed outputs:
+  counting error, excluded (\(K\le 16s\))
+  [`LEMMA-STAR-9B-COUNTING.md`](LEMMA-STAR-9B-COUNTING.md)
 - HH→L fan, one key or whole low shell:
   \(\mathcal R_\star\sim\beta/\alpha\), no blow
 
-The \(m^{1/2}\) heuristic has not found a lattice home.
+The \(m^{1/2}\) heuristic has not found a lattice home
+**per output**: at most \(m\) pairs land on a fixed \(k\).
+Growing the number of output modes remains legitimate.
+The uniform 9B target is
+\(\|\Pi_\beta B\|_2\le C(\alpha/\sqrt{\beta})\|w\|_2^2\),
+i.e. \(\sup K_{\alpha,\beta}<\infty\). A bound
+\(C\alpha\|w\|_2^2\) is the wrong packaging.
 The uniform global triadic bound remains completely open.
 
 Do not: more isolated triangles, more frozen rays, more
@@ -247,7 +256,9 @@ Attack 9B exact-shell closer (\(K_{\alpha,\beta}\),
 \(\max K\approx 0.641\) at \((4,8)\); controls PASS;
 not a kill):
 [`five-lane-export/ATTACK_9B.md`](five-lane-export/ATTACK_9B.md).
-9C is Attack 11 here. 9D is Freiman-AP, already dead.
+9C is Attack 11 here. 9D Freiman-AP already dead.
+Screenshot \(\Theta(m^2)\) on a fixed output set:
+excluded. [`LEMMA-STAR-9B-COUNTING.md`](LEMMA-STAR-9B-COUNTING.md).
 
 Do not merge with H1.
 

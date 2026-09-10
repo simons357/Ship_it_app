@@ -106,6 +106,9 @@ results/ns_five_lane_2026-09-10/
 Attack 9B exact-shell K (finite max, not a kill):
 docs/five-lane-export/ATTACK_9B.md
 results/ns_five_lane_2026-09-10/attack9b_exact_shell/
+Fixed-output Θ(m²) is a counting error:
+docs/LEMMA-STAR-9B-COUNTING.md
+K ≤ 16s. Growing s stays live.
 
 Latest three chains plus the others:
 docs/LATEST.md
