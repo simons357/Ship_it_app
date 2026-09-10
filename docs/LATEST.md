@@ -55,6 +55,9 @@ Score of the write: aimed leftover yes;
 theorem no. Dream-team read:
 docs/DREAM-TEAM-H.md
 (they would sign the map, not (6)).
+Tonight’s ★ / ABC_λ desk:
+docs/DREAM-TEAM-ABC.md
+(finite table is not a kill).
 Swirl paper (map, not a proof):
 docs/SWIRL-PAPER.pdf
 Magazine cut: docs/SWIRL-MAGAZINE.md
