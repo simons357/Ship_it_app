@@ -8,9 +8,9 @@
 
 | Role | File |
 |------|------|
-| **Canonical boxed claim** (+ viscosity packaging + kill table) | [`LEMMA_STAR_CANONICAL.md`](./LEMMA_STAR_CANONICAL.md) → [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md) |
+| **Primary SoT (boxed claim + viscosity + kill table)** | [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md) (alias [`LEMMA_STAR_CANONICAL.md`](./LEMMA_STAR_CANONICAL.md)) |
 | **Exact formulas** (this file) | linear moments, all \(\mathcal{D}_s\) forms, two-shell, \(B/T_k/N/M/T_c\), ordered / \(p+q+r=0\) triad, boxed \(\mathcal{R}_\star\), \(\Lambda'\) |
-| Code | `scripts/ns_attacks/stokes_moments.py` (`Tc = M - Lam * N`, **`ratio_R_star_shape`**) |
+| Scripts | `scripts/ns_attacks/stokes_moments.py` — \(E=\|v\|_2^2\), \(T_c=\mathcal{T}_c\), \(D_s=\mathcal{D}_s\), `ratio_R_star_shape`\(=\mathcal{R}_\star\); code (`Tc = M - Lam * N`, **`ratio_R_star_shape`**) |
 
 Desktop paths (`/Users/jonathansimons/Desktop/Harmonic Universe Book/LEMMA_STAR_EXACT_FORMULAS.md`, `LEMMA_STAR_CANONICAL.md`) were **not mounted** here; LaTeX norms restored as \(\|\cdot\|_2\), missing equals restored from the on-branch SoT lock. Do **not** invent a second claim box here.
 

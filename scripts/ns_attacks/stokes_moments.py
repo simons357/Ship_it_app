@@ -3,7 +3,9 @@
 Truth-only numerics for Lemma★ / Route N spectral drift attacks.
 Does NOT claim a proof. NS is not solved. Kill lane LIVE.
 
-Exact lock (see docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md):
+Exact lock 2026-09-10 (docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md primary SoT;
+LEMMA_STAR_EXACT_FORMULAS.md for long expansions). Locks formulas; does NOT prove ★.
+NS is NOT solved. Lemma★ is OPEN. ★ is a SHAPE statement (u=av; worst size cancels ν).
 
   T^3 = (R/2πZ)^3
   v(x) = sum_{k≠0} v_k e^{ik·x},  k·v_k=0,  v_{-k}=conj(v_k)
@@ -16,35 +18,36 @@ Exact lock (see docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md):
   Z = ||A^{3/2}v||_2^2 = sum λ_k^3 |v_k|^2
   Λ = Y/X
 
-  Ds = Z − Y^2/X = Z − Λ Y = ||(A−Λ) A^{1/2} v||_2^2
+  Ds = D_s = mathcal{D}_s = Z − Y^2/X = Z − Λ Y = ||(A−Λ) A^{1/2} v||_2^2
      = sum λ_k (λ_k−Λ)^2 |v_k|^2
-     = (1/(2X)) sum_{k,ℓ} λ_k λ_ℓ (λ_k−λ_ℓ)^2 |v_k|^2 |v_ℓ|^2
-  (SoT writes D_s; older docs may write script D_s = mathcal{D}_s — same object.)
+     = (1/(2X)) sum_{k,ℓ} λ_k λ_ℓ (λ_k−λ_ℓ)^2 |v_k|^2 |v_ℓ|^2  (≥ 0)
   Two shells α,β with energies e_α,e_β:
      Ds = α β (α−β)^2 e_α e_β / (α e_α + β e_β)
 
   B̂_k = i P_k sum_{p+q=k} (q·v_p) v_q ,  P_k = I − k⊗k/|k|^2
   T_k = −Re(B̂_k · conj(v_k)) = sum_{p+q=k} Im[(q·v_p)(v_q·conj(v_k))]
-        (SIGNED Im — never abs)
+        (SIGNED Im — never abs; cyclic (p,q,r) OK; abs NOT)
   N = −⟨B,Av⟩ = sum λ_k T_k
   M = −⟨AB,Av⟩ = sum λ_k^2 T_k
-  Tc = −⟨B(v,v), A(A−Λ)v⟩ = M − Λ N = sum λ_k (λ_k−Λ) T_k
+  Tc = T_c = mathcal{T}_c = −⟨B(v,v), A(A−Λ)v⟩ = M − Λ N
+     = sum λ_k (λ_k−Λ) T_k
      = sum_{p+q=k} λ_k (λ_k−Λ) Im[(q·v_p)(v_q·conj(v_k))]
+     = sum_{p+q+r=0} λ_{-r}(λ_{-r}−Λ) Im[(q·v_p)(v_q·conj(v_{-r}))]
   (code: Tc = M - Lam * N — matches the inner-product SoT form)
 
-  Sign check: Λ' = 2/X (Tc − ν Ds)
+  Sign check: Λ' = 2/X (Tc − ν Ds)   from X'=-2νY+2N, Y'=-2νZ+2M
 
   R_★(v) = (Tc)_+^2 / (Ds · ||v||_2^2 · Y)   (amp-, dilation-, and ν-invariant)
   where (Tc)_+ = max(Tc, 0). When Tc ≥ 0, (Tc)_+^2 = Tc^2.
   For kill we care about stretching Tc > 0.
 
-  CANONICAL quotient code name: ratio_R_star_shape  (= R_★)
+  CANONICAL quotient code name: ratio_R_star_shape  (= R_★ = mathcal{R}_★)
   Alias:                       ratio_R_star         → same as ratio_R_star_shape
   LEGACY (different object):   ratio_star           = Tc / (E X Λ)  post-Young
                                (scales as 1/a on fixed shape; NOT R_★)
 
-Lemma★ — FULL exact shape form (OPEN; NS not solved):
-  ∃ C_geom < ∞  ∀ v ∈ C^∞_{div,0}(T^3)\\{0}:
+Lemma★ — FULL exact shape form (OPEN; NS not solved; locks formulas only):
+  ∃ C_geom < ∞  ∀ nonzero v ∈ C^∞_{div,0}(T^3):
     (Tc(v)_+)^2 ≤ C_geom · Ds(v) · ||v||_2^2 · Y(v)
   Equiv. (Ds>0): sup (Tc_+)^2 / (Ds ||v||_2^2 Y) < ∞
   For Ds=0: one shell and Tc=0.

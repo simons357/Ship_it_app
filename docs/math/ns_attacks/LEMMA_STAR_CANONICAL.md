@@ -1,16 +1,17 @@
 # Lemma★ — canonical claim (filename alias)
 
-**Status:** alias pointer. Bound on \(C_{\mathrm{geom}}\) / \(\sup\mathcal{R}_\star\) **OPEN**. **NS not solved.** Kill lane **LIVE**.
-
 **Date:** 2026-09-10  
-**Branch:** `cursor/ns-five-lane-lemma-star-1390` / PR #48
+**Branch:** `cursor/ns-five-lane-lemma-star-1390`  
+**Lock:** Truth only. **NS is NOT solved.** Lemma★ is **OPEN**. Locks formulas; does **not** prove ★.
 
-Desktop `LEMMA_STAR_CANONICAL.md` maps onto this branch as an **alias pointer**. Do **not** maintain a second independent claim box here — edit the primary SoT for claim text.
+Desktop `LEMMA_STAR_CANONICAL.md` maps onto this branch as an **alias pointer**. Do **not** maintain a second independent claim box here.
 
 **Primary SoT (canonical shape form — exact lock):**  
 → [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md)
 
-**Exact-formula companion (definitions / identities):**  
+**Long expansions (Fourier / \(\mathcal{D}_s\) / \(p+q+r=0\) triad):**  
 → [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md)
+
+**Reframe:** ★ is a **shape** statement, not a viscosity statement. \(u=av\); optimize size; worst size cancels \(\nu\); remainder is pure geometry.
 
 **NS not solved.**

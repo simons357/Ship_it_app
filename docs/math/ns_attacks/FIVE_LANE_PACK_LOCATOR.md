@@ -10,8 +10,8 @@
 | Item | Value |
 |------|-------|
 | Branch | `cursor/ns-five-lane-lemma-star-1390` |
-| Tip commit | `8b6cd097ae5228d4287f166690d79ae49da61347` (CANONICAL alias + locator); SoT `45372d27679d9aea576f5ab6d3792f558ac2766f` |
-| Tip subject | Add LEMMA_STAR_CANONICAL alias pointer; refresh locator tip |
+| Tip commit | `PENDING_EXACT_LOCK` (2026-09-10 exact lock; primary SoT `LEMMA_STAR_SHAPE_FORM.md`) |
+| Tip subject | SoT: Lemma★ canonical shape form exact lock (p+q+r=0; K restricted) |
 | Remote | `origin/cursor/ns-five-lane-lemma-star-1390` |
 | GitHub PR | **https://github.com/simons357/Ship_it_app/pull/48** |
 | PR title | Five-lane Lemma★ drill: K=0 dead, ★ survives numeric |

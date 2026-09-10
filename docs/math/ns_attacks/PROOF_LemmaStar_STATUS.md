@@ -15,8 +15,8 @@
 
 ## Canonical form: FULL exact shape statement (absolute SoT)
 
-**Lemma★ is a shape statement** (viscosity packaging is derived). Absolute lock:
-[`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md).
+**Reframe:** ★ is a **shape** statement, not a viscosity statement (\(u=av\); worst size cancels \(\nu\)). Absolute lock (2026-09-10 exact lock):
+[`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md). Long expansions: [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md).
 
 For nonzero mean-zero divergence-free \(v\) on \(\mathbb{T}^3=(\mathbb{R}/2\pi\mathbb{Z})^3\),
 \[
