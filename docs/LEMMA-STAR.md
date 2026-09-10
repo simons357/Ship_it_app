@@ -121,9 +121,9 @@ File: [`LEMMA-STAR-NEXT.md`](LEMMA-STAR-NEXT.md).
 | \(C_* X^{3/2}\Lambda\) remainder | Numeric support on tested families. Not a theorem. |
 
 **Headline.** K=0 dead. Uniform pre-Young \(C\) dead (Attack 6:
-\(\lvert R_{\mathrm{pre}}\rvert\simeq 0.158\,s\)). \(C_*\)
-survives the scaled triad (\(\simeq 0.0404\)). HH→L still the
-gap. NS not solved.
+\(\lvert R_{\mathrm{pre}}\rvert\simeq 0.158\,s\)). Attack-2
+\(C_*\) survives the scaled triad (\(\simeq 0.0404\)). That
+is not \(C_{\star}\). HH→L still the gap. NS not solved.
 
 Do not cash a bounded ratio on a Galerkin sample as \(C_0\).
 A family that did not blow is not a uniform geometric constant.
