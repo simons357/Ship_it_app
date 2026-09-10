@@ -59,6 +59,9 @@ from energy.
 of a low-pass field is Lemma P1. It sits.
 [`H1-P1.md`](H1-P1.md). It does not thin the
 Bad set, and it does not drop the kernel.
+Path-cost of one pair is Lemma PC. It sits
+as a curve bound. It does not thin the set.
+[`H1-PC.md`](H1-PC.md).
 
 ---
 
@@ -67,8 +70,9 @@ Bad set, and it does not drop the kernel.
 A bad pair is one of three pictures: fold (dissipation
 spread in a ball), reconnection (thin bridge), two blobs
 (gap with \(\omega\approx 0\)). Path-cost of \(\nabla\xi\)
-dies on a sheet or a gap. Lemma J on generic fields is
-false.
+dies on a sheet or a gap as H1. Lemma PC sits as the
+1-D bound ([`H1-PC.md`](H1-PC.md)). Lemma J on generic
+fields is false.
 
 **Vitali write (sufficient, not proved).**
 Assume every near-Bad pair at scale \(\rho\) sits in a
@@ -143,7 +147,9 @@ A hit would have been a theorem. These are still ifs.
 ## Status
 
 Shapes 1–3 are now holdable as estimates.
-None is proved. H1 is still the leftover.
+None is proved. Lemma PC sits as the 1-D
+path-cost ([`H1-PC.md`](H1-PC.md)). That is
+not shape 2 and not H1. H1 is still the leftover.
 
 Do not: another criterion paper, glue to Lemma★,
 add \(K(t)\) to the PDE, cash this file as (6).

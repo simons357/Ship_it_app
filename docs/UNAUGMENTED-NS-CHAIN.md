@@ -201,7 +201,7 @@ On Bad, \(|\sin\varphi|\) is large, so the kernel is not improved.
 ## 6. Attempts already made (do not repeat as proofs)
 
 - HLS on all pairs: recovers \(\int E^3\). No gain.
-- Path-cost of \(\nabla\xi\): lower bound is on a segment, not in \(L^2(B_r)\). Fails on reconnection / two-blobs.
+- Path-cost of \(\nabla\xi\): lower bound is on a segment, not in \(L^2(B_r)\). Fails on reconnection / two-blobs. Lemma PC sits as that segment bound ([`H1-PC.md`](H1-PC.md)). Still fail as H1.
 - Lemma J (pointwise pair paid by \(\fint|\nabla\omega|^2\)): false for generic fields; Biot–Savart averages \(\omega\), not \(\nabla\omega\); \(\xi\)-equation has no sign and is degenerate at \(\omega=0\).
 - Signed kernel \(D\): no cancelation for an isolated pair (fixed spherical harmonic in \(\hat z\)).
 - Thinness of Bad: not known. Assuming it is Lemma C again.
@@ -488,7 +488,7 @@ and the Good kernel times that factor is \(\lesssim r^{-1}|z|^{-3/2}\). In 3D, \
 | Dyadic CS on near shells \(2^{-k}\) | Factor \(2^{3k/2}\) blows up as \(k\to\infty\) | **fail** at small scales. Mid (\(\lvert z\rvert\ge\rho\)) is the row above |
 | Direction energy | On \(\{\omega\neq 0\}\): \(\lvert\nabla\omega\rvert^2=\lvert\nabla\lvert\omega\rvert\rvert^2+\lvert\omega\rvert^2\lvert\nabla\xi\rvert^2\). Hence \(\int_H\lvert\nabla\xi\rvert^2\le\Lambda^{-2}\int\lvert\nabla\omega\rvert^2\) | **pass** as identity. **fail** as Hölder \(1/2\) |
 | Morrey / Sobolev | In 3D, \(W^{1,p}\subset C^{0,1-3/p}\) needs \(p>3\). Hölder \(1/2\) needs \(p=6\). Energy gives \(\nabla\xi\in L^2(H)\). Even if \(H\) were a ball, \(W^{1,2}\not\subset C^{0,1/2}\) | **wall**. This is why energy does not empty near-Bad |
-| Path-cost of \(\nabla\xi\) | Segment lower bound \(\lvert\xi(x)-\xi(y)\rvert\lesssim\int_\gamma\lvert\nabla\xi\rvert\) | **fail** as H1. Reconnection / two-blobs leave \(H\). Already §6 |
+| Path-cost of \(\nabla\xi\) | Segment lower bound \(\lvert\xi(x)-\xi(y)\rvert\lesssim\int_\gamma\lvert\nabla\xi\rvert\) | **pass** as Lemma PC (1-D). **fail** as H1. Reconnection / two-blobs leave \(H\). Already §6. [`H1-PC.md`](H1-PC.md) |
 | Lemma J (pair paid by \(\fint\lvert\nabla\omega\rvert^2\)) | Pointwise | **fail**. Biot–Savart averages \(\omega\), not \(\nabla\omega\). Already §6 |
 | Signed \(D\) | Cancelation in the kernel | **fail** for an isolated pair. Already §6 |
 | Thin Bad | Measure of Bad small | **fail** as proof. Assuming it is Lemma C. Already §6 |

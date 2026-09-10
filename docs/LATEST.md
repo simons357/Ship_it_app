@@ -41,6 +41,8 @@ Estimate package OPEN, not a GR close:
 docs/DOOR-B-H1-ESTIMATE-PLAN.md
 P1 low-pass Biot–Savart sits (not H1):
 docs/H1-P1.md
+Path-cost of one Bad pair sits (not H1):
+docs/H1-PC.md
 L∞ sketch (MISSING marks):
 docs/DOOR-B-H1-B5-LINFTY-SKETCH.md
 Outside-E identity blocked. Enumerator

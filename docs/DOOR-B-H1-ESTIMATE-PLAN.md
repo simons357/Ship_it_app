@@ -129,6 +129,8 @@ Estimate-complete \(\neq\) GR close
 | Box | Estimate? | Now |
 |---|---|---|
 | P1 thinness on the low-pass class, from Biot–Savart | **yes** | [`H1-P1.md`](H1-P1.md) |
+| PC path-cost of one Bad pair, on a path in \(\{|\omega|\ge\Lambda\}\) | **yes** | [`H1-PC.md`](H1-PC.md) |
+| PC \(\Rightarrow\) fold / Vitali / \(A_{\mathrm{bad}}\) absorbed | no | gap; thin tube; still 1-D |
 | P1 membership: NSE puts Bad on that class | no | high-pass is a counterexample |
 | P2 \(J=O(1)\) independent of \(\lvert\omega\rvert\), or paid | no | ABC: \(J\sim A\) |
 | P3 waiting derived, or viscosity-free geometric bound | no | snapshot; Burgers locked |
@@ -137,9 +139,10 @@ Estimate-complete \(\neq\) GR close
 | Outside-\(\mathcal{E}\) identity | blocked | no candidate |
 | Uniform triadic bound on \(\mathcal R_\star\) | open | enumerator still on ★ |
 
-One box sits (P1 on a stated class). NSE-class
-boxes do not. The package is not
-estimate-complete. That is not a close.
+Two boxes sit (P1 on a stated class, PC on a
+path). Neither is H1. NSE-class boxes do not.
+The package is not estimate-complete. That is
+not a close.
 
 ---
 
@@ -154,9 +157,10 @@ A kill of packaging is not a kill of NS.
 
 ## Next
 
-P1-lowpass sits. Next is still one hole
-as an estimate: P1 membership, or P2, or
-P3, or one MISSING in the B5 sketch.
+P1-lowpass sits. PC sits as a 1-D bound.
+Next is still one hole as an estimate: P1
+membership, or P2, or P3, or one MISSING
+in the B5 sketch. Do not cash PC as (6).
 Do not write a new leftover name.
 Do not cash Lemma P1 as WRITE (6).
 Do not wait for the ★ enumerator to finish

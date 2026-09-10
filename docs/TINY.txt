@@ -74,6 +74,8 @@ docs/DREAM-TEAM-H.md
 H1 shapes (not proved): docs/H1-SHAPES.md
 P1 low-pass Biot–Savart (sits; not H1):
 docs/H1-P1.md
+Path-cost of one pair (sits as 1-D; not H1):
+docs/H1-PC.md
 Lookups: all miss. docs/LOOKUP-H1.md
 Where H1 is (named leftover, not a paper):
 docs/WHERE-H1.md

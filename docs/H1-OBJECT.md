@@ -29,7 +29,7 @@ That is the whole request. Majorant of \(A_{\mathrm{bad}}\) (\(|D|\le C|\sin\var
 
 ## Why the last passes did not give it
 
-The kernel on Bad is still \(|z|^{-3}\). HLS turns that into local \(E^3\). The Hölder cut does not change the exponent; it only changes the set. A thin set would save it. A path jump in \(\xi\) does not prove the set is thin.
+The kernel on Bad is still \(|z|^{-3}\). HLS turns that into local \(E^3\). The Hölder cut does not change the exponent; it only changes the set. A thin set would save it. A path jump in \(\xi\) is Lemma PC (sits as 1-D). It does not prove the set is thin. [`H1-PC.md`](H1-PC.md).
 
 ## The only shapes that still look like H1
 
@@ -44,6 +44,7 @@ Next work is 1, 2, or 3 on one cylinder, or NSE membership in the P1 class — n
 The three shapes as estimates (not proved): [`H1-SHAPES.md`](H1-SHAPES.md).
 CS-summable volume thinness stays the \(E^{3/2}\) class, not H1.
 P1 low-pass Biot–Savart sits on a stated class, not on NSE leftover fields: [`H1-P1.md`](H1-P1.md).
+Path-cost of one Bad pair sits as a 1-D bound, not as H1: [`H1-PC.md`](H1-PC.md).
 Lookups: all miss. [`LOOKUP-H1.md`](LOOKUP-H1.md).
 
 Do not cash “assume thin” as 1 (that is Lemma C). Do not cash Lemma J on generic fields as 2. Do not cash an imposed waiting time as 3.

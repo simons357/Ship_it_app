@@ -21,6 +21,7 @@ class WhereH1Tests(unittest.TestCase):
         self.assertIn("not under another name", text.lower())
         self.assertIn("Do not start H1 from ABC", text)
         self.assertIn("P1-lowpass", text)
+        self.assertIn("H1-PC.md", text)
         self.assertNotIn("NS is solved", text)
         self.assertNotIn("H1 is proved", text)
 

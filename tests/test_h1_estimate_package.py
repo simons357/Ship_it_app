@@ -16,9 +16,11 @@ class H1EstimatePackageTests(unittest.TestCase):
         self.assertIn("**OPEN. Not a GR close.", text)
         self.assertIn("Outside-\\(\\mathcal{E}\\) identity: **blocked**.", text)
         self.assertIn("Lattice closure enumerator", text)
-        self.assertIn("One box sits (P1 on a stated class)", text)
+        self.assertIn("Two boxes sit (P1 on a stated class, PC on a", text)
+        self.assertIn("Neither is H1", text)
         self.assertIn("NSE-class", text)
         self.assertIn("H1-P1.md", text)
+        self.assertIn("H1-PC.md", text)
         self.assertNotIn("NS is solved", text)
         self.assertNotIn("Zero boxes sit", text)
 
