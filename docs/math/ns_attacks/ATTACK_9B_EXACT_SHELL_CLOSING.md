@@ -74,7 +74,14 @@ Exact shell \(\Rightarrow\mathcal{D}_s=0\) at \(\varepsilon=0\). A merely “nar
 \[
 \mathcal{D}_s=\sum_k\lambda_k(\lambda_k-\Lambda)^2|v_k|^2
 \]
-amplifies small lattice eigenvalue gaps. Next after 9B: controlled finite shell thickness — **not** another widening AP packet.
+amplifies small lattice eigenvalue gaps.
+
+## After 9B (SoT)
+
+**Attack 9C** — fixed-gap spheres \(n\) and \(n+d\): \(\mathcal{D}_s\) from the **gap** (not packet width); natural closures only \(O(m)\); \(\mathcal{R}_\star\) **falls** with \(n\) (\(0.11\to 0.031\)), does **not** track \(m^{1/2}\). Natural same-shell ensemble is **NOT** a kill.  
+Doc: [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md) (SoT-only until a probe script exists).
+
+**Next falsifier (9D):** designed \(\Theta(m^2)\)-closure subset with **locked phases** — [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md).
 
 ## Required controls
 
@@ -113,3 +120,7 @@ Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/` (`attack9b.json`, `HEAD
 Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/` (`attack9b.json`, `HEADLINE.md`, `K_by_ab_pair.png`, `R_star_eps_limit.png`).
 
 **NS not solved.**
+
+## Next
+
+[`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md) → [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md).

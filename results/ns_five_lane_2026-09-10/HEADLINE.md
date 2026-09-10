@@ -29,8 +29,9 @@
 
 - \(\mathcal R_\star\to\infty\) on a shape family → ★ dead
 - \(\mathcal D_s=0\) and \(T_c>0\) → ★ dead; pure single shell (both vanish) is vacuous
-- Almost-single-shell with stretching is the live attempt
+- Almost-single-shell / 9B \(K_{\alpha,\beta}\) / **9D** designed \(\Theta(m^2)\) locked-phase: live attempts
+- **9C fixed-gap** natural same-shell: **NOT** a kill (\(\mathcal R_\star\) \(0.11\to 0.031\))
 
 ## Exact inequality still open
 
-Prove \(\sup\mathcal R_\star<\infty\) (boxed shape ★) **or** geometric C in |Tc| ≤ C ||u||₂ X Λ (pre-Young → viscosity ★) **or** |Tc| ≤ C* X^1.5 Λ, with HH→L control. That reason is NOT written.
+Prove \(\sup\mathcal R_\star<\infty\) (boxed shape ★) **or** geometric C in |Tc| ≤ C ||u||₂ X Λ (pre-Young → viscosity ★) **or** |Tc| ≤ C* X^1.5 Λ, with HH→L control. That reason is NOT written. **NS not solved.** Kill lane **LIVE**.

@@ -200,7 +200,8 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | Some shapes make \(\mathcal R_\star\) arbitrarily large | no finite \(C_{\mathrm{geom}}\) → **★ dead** |
 | \(\mathcal D_s=0\) (one Fourier shell) and \(T_c>0\) | **★ dead** on that field |
 | Pure single shell, both sides vanish (\(T_c=0=\mathcal D_s\)) | vacuous — not a kill |
-| Live kill attempt | almost-single-shell / near two-shell / exact-shell + closing (Attack 9B \(K_{\alpha,\beta}\)); AP packet fan (9A) did **not** kill ★ |
+| Live kill attempt | almost-single-shell / near two-shell / exact-shell + closing (9B \(K_{\alpha,\beta}\)); designed \(\Theta(m^2)\) locked-phase (9D, stub) |
+| AP packet fan (9A) / fixed-gap natural ensemble (9C) | **Did not kill ★** — 9C: \(\mathcal R_\star\) falls \(0.11\to 0.031\), not \(m^{1/2}\) |
 | Every shape has \(\mathcal R_\star\le K\) | that number is ★ (up to \(4\theta\)) |
 | A list of fields with small \(\mathcal R_\star\) | **NOT** that number — those shapes did not kill it |
 | Failure to find a numerical counterexample | does **NOT** close the kill lane — falsification **LIVE**, proof **LIVE** |
@@ -227,6 +228,8 @@ Reason from how **signed** triads add that stretching cannot get large unless sp
   K_{\alpha,\beta}=\sup_{Aw=\alpha w}\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\|w\|_2^4},\quad
   \lim_{\varepsilon\to0}\mathcal R_\star(w_\alpha+\varepsilon z_\beta)=K_{\alpha,\beta}(w).
   \]
+- Fixed-gap spheres (9C, **not** a kill): [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md) — \(\mathcal R_\star\) \(0.11\to 0.031\); SoT-only until probe
+- Next falsifier (9D stub): [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md) — designed \(\Theta(m^2)\) locked-phase closures
 - Synthesis: [`ATTACK_SYNTHESIS_SIMULTANEOUS.md`](./ATTACK_SYNTHESIS_SIMULTANEOUS.md)
 - Archive (NOT ★): [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_Q6_SHELL/), [`../ARCHIVE_NOT_LEMMA_STAR.md`](../ARCHIVE_NOT_LEMMA_STAR.md)
-- Probe / harness: `scripts/ns_attacks/stokes_moments.py`, `attack5_route2_kill.py`, `lemma_star_near_shell_search.py`, `attack9_packet_fan.py`, `attack9b_exact_shell_K.py`
+- Probe / harness: `scripts/ns_attacks/stokes_moments.py`, `attack5_route2_kill.py`, `lemma_star_near_shell_search.py`, `attack9_packet_fan.py`, `attack9b_exact_shell_K.py` (9C/9D scripts not yet present)

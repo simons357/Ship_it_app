@@ -31,10 +31,12 @@ Attack 8 is the **canonical status record** for Lemma★ after the shape-form lo
 
 ## Next live kill attempt
 
-[`ATTACK_9_PACKET_FAN.md`](./ATTACK_9_PACKET_FAN.md) — coherent packet/fan growth of \(\mathcal R_\star(v_m)\sim m^\gamma\).
+[`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md) — designed \(\Theta(m^2)\)-closure subset with locked phases.  
+(9A AP fan and 9C fixed-gap natural ensemble did **not** kill ★; 9B sample \(K\) finite — kill lane still **LIVE**.)
 
 ## Related
 
 - [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md)
 - [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md)
 - [`ATTACK_SYNTHESIS_SIMULTANEOUS.md`](./ATTACK_SYNTHESIS_SIMULTANEOUS.md)
+- [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md)

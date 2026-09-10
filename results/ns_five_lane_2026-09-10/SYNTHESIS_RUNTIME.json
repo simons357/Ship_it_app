@@ -575,6 +575,24 @@
     "eps_limit_all_pass": true,
     "n_pairs": 24
   },
+  "attack9c": {
+    "verdict": "DID_NOT_KILL_STAR",
+    "family": "fixed_gap_spheres_n_and_n_plus_d",
+    "Ds_source": "gap_not_packet_width",
+    "closures": "O(m)_natural_only",
+    "R_star_vs_n": {"from": 0.11, "to": 0.031, "trend": "falls"},
+    "tracks_m_sqrt": false,
+    "natural_same_shell_ensemble_is_kill": false,
+    "probe_script": null,
+    "note": "SoT-only until attack9c probe implemented"
+  },
+  "attack9d": {
+    "verdict": "LIVE_FALSIFIER_STUB",
+    "family": "designed_Theta_m2_closure_locked_phases",
+    "probe_script": null,
+    "note": "Remaining packet falsifier; spec in ATTACK_9D_THETA_M2_LOCKED_PHASE.md"
+  },
   "kill_lane": "LIVE",
-  "lemma_star": "OPEN"
+  "lemma_star": "OPEN",
+  "ns_solved": false
 }

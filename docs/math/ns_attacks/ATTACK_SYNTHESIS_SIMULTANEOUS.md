@@ -36,6 +36,8 @@ When \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Kill cares about stretching \(T_c>0\).
 | **8 Correct record** | `ATTACK_8_CORRECT_RECORD.md` | **CORRECT RECORD** | Invariants; lanes LIVE; archive split |
 | **9A Packet fan** | `attack9_packet_fan.py` | **Did not kill ★** — \(\gamma\approx-1.39\) | \(\mathcal D_s\) grew faster than \(T_c\); \(D_s\|v\|_2^2 Y=O(1)\) **false** for AP family |
 | **9B Exact-shell \(K_{\alpha,\beta}\)** | `attack9b_exact_shell_K.py` | **LIVE** — \(\max K\approx0.641\) at \((4,8)\) | \(\mathcal R_\star\to K\); controls PASS; not a kill; kill lane still LIVE |
+| **9C Fixed-gap spheres** | SoT-only (no probe script yet) | **Did not kill ★** — \(\mathcal R_\star\) \(0.11\to 0.031\) | \(\mathcal D_s\) from **gap**; closures \(O(m)\); does **not** track \(m^{1/2}\); natural same-shell **NOT** a kill |
+| **9D \(\Theta(m^2)\) locked phase** | stub / spec | **LIVE falsifier** (not run) | Designed \(\Theta(m^2)\)-closure subset with locked phases |
 
 ## Attack 9A — failure (truth)
 
@@ -49,7 +51,7 @@ Artifacts: `/opt/cursor/artifacts/attack9_packet_fan/`
 K_{\alpha,\beta}=\sup_{Aw=\alpha w}\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\|w\|_2^4}.
 \]
 Base packet = many same-shell modes; \(\mathcal D_s\) only from small closing component; \(\varepsilon\) cancels in limiting \(\mathcal R_\star\to K\).  
-Caveat: “narrow” ≠ \(\mathcal D_s=O(1)\). Next after 9B: controlled finite shell thickness — **not** another widening AP packet.  
+Caveat: “narrow” ≠ \(\mathcal D_s=O(1)\).  
 Doc: [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md).  
 Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/`
 
@@ -65,10 +67,20 @@ Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/`
 
 Other notable \(K\): \((1,2)\approx0.578\), \((2,4)\approx0.296\), \((5,10)\approx0.298\), \((13,26)\approx0.234\). Many \((\alpha,\beta)\) have \(K=0\) (kinematic: \(\Pi_\beta B(w,w)=0\) on the tested fan).
 
+## Attack 9C — fixed-gap spheres (not a kill)
+
+Fixed-gap spheres \(n\) and \(n+d\): \(\mathcal D_s\) from the **gap** (not packet width); natural closures only \(O(m)\); \(\mathcal R_\star\) **falls** with \(n\) (\(0.11\to 0.031\)) and does **not** track \(m^{1/2}\). **Natural same-shell ensemble is NOT a kill.**  
+Doc: [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md).  
+**Probe:** SoT-only until implemented (no `scripts/ns_attacks/attack9c_*.py` yet).
+
+## Attack 9D — next falsifier (stub)
+
+Designed \(\Theta(m^2)\)-closure subset with **locked phases**. Spec only.  
+Doc: [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md).
+
 ## Exact inequality still to attack
 
 Close **either** boxed shape ★, or a pre-Young geometric bound that Young-lifts — with a proof controlling signed triads. Numerics ≠ proof. **NS not solved.**
-
 ## Archive — NOT Lemma★
 
 Route N / Q6 / LP-shell / shell floor \(M\le256\):  
