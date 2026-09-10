@@ -106,8 +106,9 @@ The first family is the closing three-key. Two Fourier
 keys is not that test. Two shells can be live. Hunt by
 \(|e|/|k_0|\to 0\) with the supremum recomputed. Attack 8
 did not kill it: [`LEMMA-STAR-E.md`](LEMMA-STAR-E.md).
-Attack 9 (packets) did not kill it:
-[`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
+Live target: a growing coherent triad packet or HH→L fan.
+The uniform global triadic bound remains completely open.
+One AP construction: [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
 
 Door 1 (uniform pre-Young \(C\)) is off. K=0 stays dead.
 The Attack-2 remainder \(|T_c|\le C_* X^{3/2}\Lambda\) is a

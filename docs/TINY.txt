@@ -74,7 +74,8 @@ docs/LEMMA-STAR-R.md
 Three-key family (Attack 8):
 docs/LEMMA-STAR-E.md
 Two Fourier keys is the wrong test, not
-two shells. Packets (Attack 9):
+two shells. Live target: a growing
+coherent packet or HH→L fan. Bound open.
 docs/LEMMA-STAR-PACKET.md
 Samples are evidence only.
 Uniform pre-Young C is dead.

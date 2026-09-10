@@ -60,7 +60,8 @@ Tc=0; two shells can be live. Isolated
 triad did not kill ★.
 docs/LEMMA-STAR-E.md
 Packets (Attack 9): heuristic R★ ~ m if
-Ds Y stays O(1). AP packet did not kill.
+Ds Y stays O(1). Live target still a
+growing coherent packet or HH→L fan.
 docs/LEMMA-STAR-PACKET.md
 Attack 6: uniform pre-Young C dead
 (|R_pre| ~ s). That is not ★ dying.

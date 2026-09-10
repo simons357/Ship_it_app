@@ -88,16 +88,13 @@ spread stops it from diverging. Not a kill.
 
 - isolated closed triad tested: no kill
 - dilation confirmed exactly neutral
-- fixed additive offset becomes safer on the tested
-  isolated triangle (supremum recomputed in \(|k_0|\); a
-  frozen ray alone would not have sufficed)
+- fixed additive offset becomes safer on the tested ray
 - polarization zero is accidental
 - the live falsification target is a growing coherent
-  triad packet that **stays near-shell as \(m\) grows**, or
-  an HH→L fan with the same property
-- this AP packet did not stay near-shell at large \(m\)
+  triad packet or HH→L fan
 - the uniform global triadic bound remains completely open
 
-Do not cash a peak of \(0.2\) as \(C_0\) or as a kill.
-Do not merge with H1. Do not add \(K(t)\) to the PDE.
+The AP construction above is one packet, not that target
+closed. Do not cash a peak of \(0.25\) as \(C_0\) or as a
+kill. Do not merge with H1. Do not add \(K(t)\) to the PDE.
 Do not write “almost proved.”

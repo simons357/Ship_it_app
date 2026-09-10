@@ -61,8 +61,9 @@ A near-shell or HH→L sequence with
 First family: closing three-key. Two Fourier
 keys is not that test. Two shells can be live.
 Attack 8 did not kill it. Live target:
-coherent packets (Attack 9); that sample
-did not kill it either.
+a growing coherent triad packet or HH→L fan.
+The uniform global triadic bound remains
+completely open.
 Samples are evidence only. K=0 dead.
 Uniform pre-Young \(C\) dead. File:
 [`LEMMA-STAR.md`](LEMMA-STAR.md),

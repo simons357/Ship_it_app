@@ -83,20 +83,19 @@ only.
 
 ---
 
-## Verdict (Attack 8)
+## Status
 
-Isolated closed triad: no kill.
-Dilation: exactly neutral.
-Fixed additive offset: safer on the tested isolated
-triangle, including the recomputed supremum; a frozen ray
-alone would not have been enough to say that.
-Polarization zero: accidental.
+- isolated closed triad tested: no kill
+- dilation confirmed exactly neutral
+- fixed additive offset becomes safer on the tested ray
+- polarization zero is accidental
+- the live falsification target is a growing coherent
+  triad packet or HH→L fan
+- the uniform global triadic bound remains completely open
 
-The live falsification target is a **growing coherent
-triad packet** or HH→L fan, not more isolated triangles.
-Attack 9: [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
-
-The uniform global triadic bound remains completely open.
+A frozen ray is not the \(|e|/|k_0|\to 0\) supremum. The
+live target is not more isolated triangles. Packets:
+[`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
 
 Do not merge with H1. Do not add \(K(t)\) to the PDE.
 Do not write “almost proved.”
