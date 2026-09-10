@@ -100,6 +100,9 @@ NS not solved.
 Five-lane drill: GitHub PR 48.
 Export (defs + HH→L map):
 docs/five-lane-export/INDEX.md
+Original JSON (10 Sep run):
+docs/five-lane-export/COMPUTE.md
+results/ns_five_lane_2026-09-10/
 
 Latest three chains plus the others:
 docs/LATEST.md

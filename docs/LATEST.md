@@ -98,6 +98,9 @@ Numeric kill-survive is not a proof.
 Drill: GitHub PR 48.
 Five-lane export (defs + HH→L):
 docs/five-lane-export/INDEX.md
+Original computation (JSON, not a re-proof):
+docs/five-lane-export/COMPUTE.md
+results/ns_five_lane_2026-09-10/
 No \(K(t)\). No Q1.
 
 **RH — open**

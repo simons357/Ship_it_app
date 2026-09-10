@@ -25,6 +25,10 @@ That C* is not the trilinear C_star in
   [Tc]_+ ≤ C_star ||v||_2 ||Av||_2 ||(A-Λ)A^{1/2} v||_2
   with C_star^2 = 4 θ C0. The latter is the exact ★ form.
   ratio_box is (Tc_+)^2 / (Ds E Y) = R_star.
+  Five-lane scripts (PR 48) named that field ratio_R_star_shape
+  (alias ratio_R_star). Those names are properties of ProbeResult
+  here; they are the same number as ratio_box. Do not cash a
+  finite sample as C0.
 """
 
 from __future__ import annotations
@@ -98,6 +102,25 @@ def moments(field: Field) -> Dict[str, float]:
     }
 
 
+def Ds_two_shell(alpha: float, beta: float, e_alpha: float, e_beta: float) -> float:
+    """Two-eigenvalue closed form: αβ(α−β)^2 e_α e_β / (α e_α + β e_β)."""
+    denom = alpha * e_alpha + beta * e_beta
+    if denom <= 0:
+        return float("nan")
+    return (alpha * beta * (alpha - beta) ** 2 * e_alpha * e_beta) / denom
+
+
+def shell_energies(field: Field) -> Dict[float, float]:
+    """Map λ = |k|^2 → e_λ = sum_{|k|^2=λ} |v_k|^2."""
+    shells: Dict[float, float] = {}
+    for k, v in field.items():
+        lam = k_norm2(k)
+        if lam == 0:
+            continue
+        shells[lam] = shells.get(lam, 0.0) + float(np.vdot(v, v).real)
+    return shells
+
+
 def nonlinear_B(field: Field) -> Field:
     """B(u,u) = P((u·∇)u) in Fourier: i sum_{p+q=k} (û(p)·q) û(q), then Leray."""
     keys = list(field.keys())
@@ -163,6 +186,21 @@ class ProbeResult:
     ratio_box: float
     B_L2: float
     label: str = ""
+
+    @property
+    def Tc_plus(self) -> float:
+        """Positive part (Tc)_+ = max(Tc, 0)."""
+        return max(self.Tc, 0.0)
+
+    @property
+    def ratio_R_star_shape(self) -> float:
+        """Five-lane name for ratio_box = (Tc_+)^2 / (Ds E Y)."""
+        return self.ratio_box
+
+    @property
+    def ratio_R_star(self) -> float:
+        """Five-lane alias for ratio_box."""
+        return self.ratio_box
 
 
 def probe(field: Field, label: str = "") -> ProbeResult:
@@ -897,6 +935,47 @@ def two_shell_field(
         v = make_divfree_amp(k, (1.0, 0.3, -0.7))
         nrm = np.linalg.norm(v)
         field[k] = (amp * np.exp(1j * ph) / nrm) * v
+    return enforce_reality(field)
+
+
+def almost_single_shell_field(
+    rng: np.random.Generator,
+    k_main: ModeKey = (3, 1, 0),
+    n_pert: int = 3,
+    eps: float = 1e-3,
+    kmax_pert: int = 6,
+) -> Field:
+    """Nearly one Fourier shell + small multi-mode perturbation (live ★ kill attempt).
+
+    Pure single shell: Ds=0 and typically Tc=0 (vacuous). Live kill needs Ds→0+ with
+    stretching that keeps R_star_shape = Tc^2/(Ds E Y) from staying bounded.
+    """
+    field: Field = {}
+    v = make_divfree_amp(k_main, (1.0, 0.2, -0.5))
+    nrm = np.linalg.norm(v)
+    if nrm < 1e-15:
+        v = make_divfree_amp(k_main, (0.0, 1.0, 0.0))
+        nrm = np.linalg.norm(v)
+    field[k_main] = v / nrm
+
+    candidates = [
+        (i, j, k)
+        for i in range(-kmax_pert, kmax_pert + 1)
+        for j in range(-kmax_pert, kmax_pert + 1)
+        for k in range(-kmax_pert, kmax_pert + 1)
+        if (i, j, k) != (0, 0, 0)
+        and (i, j, k) != k_main
+        and (i, j, k) != (-k_main[0], -k_main[1], -k_main[2])
+        and (i > 0 or (i == 0 and j > 0) or (i == 0 and j == 0 and k > 0))
+    ]
+    rng.shuffle(candidates)
+    for k in candidates[:n_pert]:
+        vp = make_divfree_amp(k, rng.normal(size=3))
+        n = np.linalg.norm(vp)
+        if n < 1e-15:
+            continue
+        phase = rng.uniform(0, 2 * np.pi)
+        field[k] = (eps * np.exp(1j * phase) / n) * vp
     return enforce_reality(field)
 
 

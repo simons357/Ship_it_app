@@ -178,3 +178,5 @@ Three-key: [`LEMMA-STAR-E.md`](LEMMA-STAR-E.md).
 Packets: [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
 Incidence Route A (conditional, not a theorem):
 [`LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md`](LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md).
+Original five-lane JSON (PR 48 run, not a re-proof):
+[`five-lane-export/COMPUTE.md`](five-lane-export/COMPUTE.md).

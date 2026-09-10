@@ -93,7 +93,8 @@ Uniform pre-Young \(C\) dead. File:
 [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md),
 [`LEMMA-STAR-E.md`](LEMMA-STAR-E.md),
 [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
-Drill: PR 48.
+Drill: PR 48. Original JSON:
+[`five-lane-export/COMPUTE.md`](five-lane-export/COMPUTE.md).
 
 ---
 

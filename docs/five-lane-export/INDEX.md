@@ -146,6 +146,13 @@ Copied here: shape form, Attack 3, headline,
 shape-star summary, proof-status board,
 attack3 script.
 
+**Original computation (the JSON, not a re-proof):**
+[`COMPUTE.md`](COMPUTE.md).
+`results/ns_five_lane_2026-09-10/`,
+`results/ns_five_lane_shape_star/`.
+Scripts: `scripts/ns_attacks/run_all_five.py`,
+`attack1`–`attack5`.
+
 ---
 
 ## Five-lane headline (already scored here)

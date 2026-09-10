@@ -241,6 +241,9 @@ theorem): [`LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md`](LEMMA-STAR-STRUCTURE-ROU
 \(\Theta(m^2)\) in the continuum model. Lattice transfer
 X1–X4/X6 MISSING. Next: Hyp-Lat★. Do not cash ST as ★.
 
+Original five-lane JSON (PR 48 run):
+[`five-lane-export/COMPUTE.md`](five-lane-export/COMPUTE.md).
+
 Do not merge with H1.
 
 NS is not solved.
