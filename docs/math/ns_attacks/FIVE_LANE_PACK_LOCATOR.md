@@ -10,7 +10,7 @@
 | Item | Value |
 |------|-------|
 | Branch | `cursor/ns-five-lane-lemma-star-1390` |
-| Tip commit | _(updated on full Lemma★ SoT lock — see `git log -1`)_ |
+| Tip commit | `b20d9aadf788c758676c86fa6820fa358c6d2840` (full Lemma★ SoT lock); prior 9B SoT `c8cb290` / locator `c8a67de` |
 | Tip subject | SoT: lock full exact Lemma★ shape form (\(D_s\), \(K_{\alpha,\beta}\) restricted) |
 | Remote | `origin/cursor/ns-five-lane-lemma-star-1390` |
 | GitHub PR | **https://github.com/simons357/Ship_it_app/pull/48** |
