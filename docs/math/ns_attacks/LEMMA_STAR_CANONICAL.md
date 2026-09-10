@@ -5,14 +5,12 @@
 **Date:** 2026-09-10  
 **Branch:** `cursor/ns-five-lane-lemma-star-1390` / PR #48
 
-Desktop path `LEMMA_STAR_CANONICAL.md` was not mounted here. On this branch the **absolute Source of Truth for the boxed full Lemma★ claim** (exact shape form + viscosity packaging + \(K_{\alpha,\beta}\) scope) is:
+Desktop `LEMMA_STAR_CANONICAL.md` maps onto this branch as an **alias pointer**. Do **not** maintain a second independent claim box here — edit the primary SoT for claim text.
 
-→ **[`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md)**
+**Primary SoT (canonical shape form — exact lock):**  
+→ [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md)
 
-Companion exact-formula identities (linear moments, all \(D_s\) forms, ordered triad \(T_c\), boxed \(\mathcal{R}_\star\), \(\Lambda'\)):
-
-→ **[`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md)**
-
-Do **not** maintain a second independent claim box in this alias file — edit `LEMMA_STAR_SHAPE_FORM.md` for claim text.
+**Exact-formula companion (definitions / identities):**  
+→ [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md)
 
 **NS not solved.**
