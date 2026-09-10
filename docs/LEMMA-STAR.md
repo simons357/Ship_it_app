@@ -142,7 +142,9 @@ The first family is the closing three-key
 Two shells can be live. Hunt with \(|e|/|k_0|\to 0\)
 (fix \(e\), send \(|k_0|\to\infty\)); a frozen ray is not
 the supremum. Attack 8 did not kill it. Live target:
-a growing coherent triad packet or HH→L fan. The uniform
+a growing coherent triad packet or HH→L fan. Next object:
+same-shell packet (eigenvalues fixed as \(m\) grows), not
+another AP. Or H1 on one cylinder. Work one. The uniform
 global triadic bound remains completely open.
 Uniform pre-Young \(C\) is off. Attack-2 \(C_*\) is a
 different door. Do not revive K=0. Do not cash a triad
