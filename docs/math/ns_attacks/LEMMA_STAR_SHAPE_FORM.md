@@ -200,7 +200,7 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | Some shapes make \(\mathcal R_\star\) arbitrarily large | no finite \(C_{\mathrm{geom}}\) → **★ dead** |
 | \(\mathcal D_s=0\) (one Fourier shell) and \(T_c>0\) | **★ dead** on that field |
 | Pure single shell, both sides vanish (\(T_c=0=\mathcal D_s\)) | vacuous — not a kill |
-| Live kill attempt | almost-single-shell / near two-shell / coherent packet fan (Attack 9) with complete \(T_c\) so that \(\mathcal R_\star\to\infty\) |
+| Live kill attempt | almost-single-shell / near two-shell / exact-shell + closing (Attack 9B \(K_{\alpha,\beta}\)); AP packet fan (9A) did **not** kill ★ |
 | Every shape has \(\mathcal R_\star\le K\) | that number is ★ (up to \(4\theta\)) |
 | A list of fields with small \(\mathcal R_\star\) | **NOT** that number — those shapes did not kill it |
 | Failure to find a numerical counterexample | does **NOT** close the kill lane — falsification **LIVE**, proof **LIVE** |
@@ -221,7 +221,12 @@ Reason from how **signed** triads add that stretching cannot get large unless sp
 
 - Status board: [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md)
 - Correct record: [`ATTACK_8_CORRECT_RECORD.md`](./ATTACK_8_CORRECT_RECORD.md)
-- Packet fan: [`ATTACK_9_PACKET_FAN.md`](./ATTACK_9_PACKET_FAN.md)
+- Packet fan (9A, did not kill ★): [`ATTACK_9_PACKET_FAN.md`](./ATTACK_9_PACKET_FAN.md), [`ATTACK_9A_AP_PACKET_FAILURE.md`](./ATTACK_9A_AP_PACKET_FAILURE.md)
+- Exact-shell closing (9B): [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md)
+  \[
+  K_{\alpha,\beta}=\sup_{Aw=\alpha w}\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\|w\|_2^4},\quad
+  \lim_{\varepsilon\to0}\mathcal R_\star(w_\alpha+\varepsilon z_\beta)=K_{\alpha,\beta}(w).
+  \]
 - Synthesis: [`ATTACK_SYNTHESIS_SIMULTANEOUS.md`](./ATTACK_SYNTHESIS_SIMULTANEOUS.md)
 - Archive (NOT ★): [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_Q6_SHELL/), [`../ARCHIVE_NOT_LEMMA_STAR.md`](../ARCHIVE_NOT_LEMMA_STAR.md)
-- Probe / harness: `scripts/ns_attacks/stokes_moments.py`, `attack5_route2_kill.py`, `lemma_star_near_shell_search.py`, `attack9_packet_fan.py`
+- Probe / harness: `scripts/ns_attacks/stokes_moments.py`, `attack5_route2_kill.py`, `lemma_star_near_shell_search.py`, `attack9_packet_fan.py`, `attack9b_exact_shell_K.py`

@@ -1,8 +1,10 @@
-# ATTACK 9 — Coherent Packet / Fan Test
+# ATTACK 9 — Coherent Packet / Fan Test (Attack 9A family)
 
 **Date:** 2026-09-10  
 **Branch:** `cursor/ns-five-lane-lemma-star-1390`  
-**Status:** **LIVE kill attempt** (numerics). Lemma★ **OPEN**. **NS not solved.**
+**Status:** **9A did NOT kill ★.** Kill lane remains **LIVE**. Lemma★ **OPEN**. **NS not solved.**  
+**Failure note:** [`ATTACK_9A_AP_PACKET_FAILURE.md`](./ATTACK_9A_AP_PACKET_FAILURE.md)  
+**Next family:** [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md)
 
 ## Goal
 
@@ -54,11 +56,25 @@ Artifacts: `/opt/cursor/artifacts/attack9_packet_fan/` (`attack9.json`, `HEADLIN
 | Controls | **PASS** (amp inv., dilation inv., \(\sum T_k=0\), triad=FFT total \(T_c\)) |
 | \(\max_m\mathcal R_\star\) on this run | \(\approx 0.103\) at \(m=1\) |
 
-Decay under this coherent fan is **not** a kill of ★ and **not** closure of the kill lane. Next analytic target if other fans stay flat/decaying: square-summation / orthogonality preventing coherent triad accumulation. Kill lane remains **LIVE**.
+Decay under this coherent fan is **not** a kill of ★ and **not** closure of the kill lane.
+
+### 9A failure reason (truth lock)
+
+AP / coherent packet growth increased \(T_c\), but spectral variance \(\mathcal{D}_s\) increased **faster**. The working assumption
+\[
+\mathcal{D}_s\,\|v\|_2^2\,Y=O(1)\quad\text{in packet size}
+\]
+was **FALSE** for this family: widening AP packets spread mass across more Stokes eigenvalues, and
+\[
+\mathcal{D}_s=\sum_k\lambda_k(\lambda_k-\Lambda)^2|v_k|^2
+\]
+amplifies those gaps. **Attack 9A did not kill Lemma★.**
+
+Merely “narrow” packets do not auto-fix \(\mathcal{D}_s=O(1)\). Next clean test: **exact-shell** coherent fan + small closing packet (Attack 9B) — **not** another widening AP packet.
 
 ## Relation to Attack 8
 
-[`ATTACK_8_CORRECT_RECORD.md`](./ATTACK_8_CORRECT_RECORD.md) locks that the kill lane is **LIVE** and that \(\mathcal R_\star\) is amplitude/dilation invariant. Attack 9 is the next falsification probe under that record.
+[`ATTACK_8_CORRECT_RECORD.md`](./ATTACK_8_CORRECT_RECORD.md) locks that the kill lane is **LIVE** and that \(\mathcal R_\star\) is amplitude/dilation invariant. Attack 9 is the next falsification probe under that record. Attack 9B continues the kill lane with exact-shell \(K_{\alpha,\beta}\).
 
 ## Archive warning
 

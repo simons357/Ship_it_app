@@ -34,15 +34,24 @@ When \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Kill cares about stretching \(T_c>0\).
 | 4 Stokes | `attack4_stokes.py` | Identities OK | Remainder still needed |
 | 5 Route2 kill | `attack5_route2_kill.py` | Sample list ≠ constant | Kill lane still **LIVE** |
 | **8 Correct record** | `ATTACK_8_CORRECT_RECORD.md` | **CORRECT RECORD** | Invariants; lanes LIVE; archive split |
-| **9 Packet fan** | `attack9_packet_fan.py` | **LIVE** — \(\gamma\approx-1.39\) (decaying on this fan) | Controls PASS; not a kill; kill lane still LIVE |
+| **9A Packet fan** | `attack9_packet_fan.py` | **Did not kill ★** — \(\gamma\approx-1.39\) | \(\mathcal D_s\) grew faster than \(T_c\); \(D_s\|v\|_2^2 Y=O(1)\) **false** for AP family |
+| **9B Exact-shell \(K_{\alpha,\beta}\)** | `attack9b_exact_shell_K.py` | **LIVE** | \(v_\varepsilon=w_\alpha+\varepsilon z_\beta\); \(\mathcal R_\star\to K\); kill lane still LIVE |
 
-## Attack 9 decisive rule
+## Attack 9A — failure (truth)
 
-- Sustained \(\gamma>0\) → counterexample route  
-- Flat → next analytic target: square-summation / orthogonality  
-- This run (\(m=1..8\)): \(\gamma\approx-1.389\), verdict `DECAYING_gamma_lt_0` — **not** a counterexample; **not** lane closure
-
+AP packet increased \(T_c\), but \(\mathcal D_s\) increased faster. Assumption \(\mathcal D_s\|v\|_2^2 Y=O(1)\) in packet size was **FALSE**. **9A did not kill Lemma★.**  
+Docs: [`ATTACK_9A_AP_PACKET_FAILURE.md`](./ATTACK_9A_AP_PACKET_FAILURE.md), [`ATTACK_9_PACKET_FAN.md`](./ATTACK_9_PACKET_FAN.md).  
 Artifacts: `/opt/cursor/artifacts/attack9_packet_fan/`
+
+## Attack 9B — exact-shell closing
+
+\[
+K_{\alpha,\beta}=\sup_{Aw=\alpha w}\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\|w\|_2^4}.
+\]
+Base packet = many same-shell modes; \(\mathcal D_s\) only from small closing component; \(\varepsilon\) cancels in limiting \(\mathcal R_\star\to K\).  
+Caveat: “narrow” ≠ \(\mathcal D_s=O(1)\). Next after 9B: controlled finite shell thickness — **not** another widening AP packet.  
+Doc: [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md).  
+Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/`
 
 ## Exact inequality still to attack
 
@@ -60,5 +69,7 @@ Route N ledger remains linked and labeled **NOT Lemma★** (`docs/math/NS-BRUTE-
 ```bash
 PYTHONPATH=scripts python3 scripts/ns_attacks/attack9_packet_fan.py \
   --m-min 1 --m-max 8 --outdir /opt/cursor/artifacts/attack9_packet_fan
+PYTHONPATH=scripts python3 scripts/ns_attacks/attack9b_exact_shell_K.py \
+  --outdir /opt/cursor/artifacts/attack9b_exact_shell
 PYTHONPATH=scripts python3 -m pytest tests/test_ns_attacks_lemma_star.py -q
 ```

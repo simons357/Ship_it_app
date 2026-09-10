@@ -93,7 +93,8 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | \(\mathcal R_\star(v_n)\to\infty\) on some smooth family | no finite \(C_{\mathrm{geom}}\) → **★ dead** |
 | \(\mathcal D_s=0\) and \(T_c>0\) | **★ dead** on that field |
 | Pure single shell (\(T_c=0=\mathcal D_s\)) | both sides vanish — **not** a kill |
-| Almost-single-shell / near two-shell / packet fan (Attack 9) with \(\mathcal R_\star\to\infty\) | **LIVE kill attempt** |
+| Almost-single-shell / near two-shell / exact-shell+closing (9B) with \(\mathcal R_\star\to\infty\) or \(K_{\alpha,\beta}\to\infty\) | **LIVE kill attempt** |
+| AP / coherent packet fan (Attack 9A) | **Did not kill ★** — \(\mathcal D_s\) grew faster than \(T_c\) |
 | Bounded \(\mathcal R_\star\) on a sample list | those shapes did not kill it — **not a proof**; kill lane still **LIVE** |
 
 ## What is proved / killed / open
@@ -107,7 +108,8 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | Uniform geometric \(C_{\mathrm{geom}}\) / \(C_0\) for Lemma★ (shape form) | **OPEN — kill lane LIVE** | Sample maxes (shape★ formula only) are **not** a proof and **do not** close falsification |
 | Formula lock (linear / \(\mathcal D_s\) / \(T_c\) / \(\mathcal R_\star\) / \(\Lambda'\)) | **LOCKED in docs + unit tests** | `LEMMA_STAR_SHAPE_FORM.md`; `tests/test_ns_attacks_lemma_star.py` |
 | Attack 8 correct record | **CORRECT RECORD** | Kill lane LIVE; \(\mathcal R_\star\) invariants; \((T_c)_+\) |
-| Attack 9 packet fan \(\gamma\) | **LIVE** — this fan \(\gamma\approx-1.39\) (decaying) | Controls PASS; not a kill; falsification still LIVE |
+| Attack 9A packet fan \(\gamma\) | **Did not kill ★** — \(\gamma\approx-1.39\) (decaying) | \(\mathcal D_s\|v\|_2^2 Y=O(1)\) false for AP family; see `ATTACK_9A_AP_PACKET_FAILURE.md` |
+| Attack 9B exact-shell \(K_{\alpha,\beta}\) | **LIVE** | \(v_\varepsilon=w_\alpha+\varepsilon z_\beta\); \(\mathcal R_\star\to K\); kill lane still LIVE |
 
 ## What a proof would have to be
 
@@ -116,7 +118,7 @@ Reason from how **signed** triads add that stretching cannot get large unless sp
 ## Live door
 
 1. **Prove** the boxed shape inequality (uniform \(C_{\mathrm{geom}}\) / \(\sup\mathcal R_\star<\infty\)); **or**
-2. **Kill** by exhibiting a smooth shape family with \(\mathcal R_\star\to\infty\) (Attack 9 packet fan: sustained \(\gamma>0\); almost-single-shell) using **complete** \(T_c\); **or**
+2. **Kill** by exhibiting a smooth shape family with \(\mathcal R_\star\to\infty\) (Attack 9B: \(K_{\alpha,\beta}\to\infty\); almost-single-shell; not another widening AP packet) using **complete** \(T_c\); **or**
 3. Upgrade centering cancellation beyond \(T_c=M-\Lambda N\) to remove the dangerous HH→L piece.
 
 ## Archive (NOT Lemma★)
@@ -128,8 +130,12 @@ Route N / Q6 / LP-shell floors: [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_
 - `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md` — **canonical exact formulas**
 - `docs/math/ns_attacks/ATTACK_8_CORRECT_RECORD.md`
 - `docs/math/ns_attacks/ATTACK_9_PACKET_FAN.md`
+- `docs/math/ns_attacks/ATTACK_9A_AP_PACKET_FAILURE.md`
+- `docs/math/ns_attacks/ATTACK_9B_EXACT_SHELL_CLOSING.md`
 - `docs/math/ns_attacks/ATTACK_SYNTHESIS_SIMULTANEOUS.md`
 - `scripts/ns_attacks/stokes_moments.py`
 - `scripts/ns_attacks/attack9_packet_fan.py`
+- `scripts/ns_attacks/attack9b_exact_shell_K.py`
 - `tests/test_ns_attacks_lemma_star.py`
 - `/opt/cursor/artifacts/attack9_packet_fan/`
+- `/opt/cursor/artifacts/attack9b_exact_shell/`
