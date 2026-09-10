@@ -38,6 +38,27 @@ bodies. GitHub PR 48 is the pack.
 
 ---
 
+## Original five lanes (not 9A–9D)
+
+Lock: [`FIVE_LANES.md`](FIVE_LANES.md).
+Phone: [`../FIVE-LANE-DISCUSSION.md`](../FIVE-LANE-DISCUSSION.md).
+
+Screenshots did not name all five. The pack did
+(`run_all_five.py`):
+
+1. Covariance
+2. Triad / K=0 / \(C_*\) (\(\lvert T_c\rvert\le C_* X^{3/2}\Lambda\))
+3. Bony HH→L
+4. Stokes
+5. Route 2
+
+**9A–9D are later. Do not substitute them.**
+Attack 12’s lattice fan is not lane 3.
+The \(a^4\) line \(\lvert T_c\rvert\le C\|u\|_2 X^{3/2}\)
+is not lane 2.
+
+---
+
 ## 1. Absolute defs (five-lane pack)
 
 Working foundation:

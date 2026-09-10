@@ -5,6 +5,12 @@ PR 48 (`cursor/ns-five-lane-lemma-star-1390`).
 **NS not solved. ★ not proved.** This is the
 scored JSON, not a new search.
 
+**Original five lanes (not 9A–9D).**
+[`FIVE_LANES.md`](FIVE_LANES.md). Screenshots did not
+name them. `run_all_five.py` did: covariance; triad /
+K=0 / \(C_*\); Bony HH→L; Stokes; Route 2. Do not
+substitute packet attacks 9A–9D.
+
 Phone: stay in this chat.
 
 ---

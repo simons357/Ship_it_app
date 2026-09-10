@@ -30,6 +30,7 @@ class FiveLaneComputeTests(unittest.TestCase):
         self.assertIn("results/ns_five_lane_2026-09-10", text)
         self.assertIn("K0_DEAD_Cstar_SURVIVES_numeric", text)
         self.assertIn("run_all_five.py", text)
+        self.assertIn("FIVE_LANES.md", text)
         self.assertIn("NS not solved", text)
         self.assertNotIn("NS is solved", text)
 

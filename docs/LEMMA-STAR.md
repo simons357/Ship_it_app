@@ -125,13 +125,26 @@ File: [`LEMMA-STAR-NEXT.md`](LEMMA-STAR-NEXT.md).
 
 ## Five-lane drill (done 1) — 10 September 2026
 
+Original five, from PR 48 (`run_all_five.py`).
+**Not** 9A–9D. File:
+[`five-lane-export/FIVE_LANES.md`](five-lane-export/FIVE_LANES.md).
+
 | Lane | Verdict |
 |---|---|
-| K=0 form \(\mathfrak T_c\le\theta\nu\mathcal D_s\) | **Dead.** Ratio \(\lvert T_c\rvert/\mathcal D_s\) blows with amplitude. |
-| Lemma★ / geometric \(C_0\) | **Survives numeric kill only.** The 978-sample max \(\lvert R_{\mathrm{pre}}\rvert\approx 5.09\) is the *dead* pre-Young ratio, not \(\mathcal R_\star\). On the scaled triad \(\mathcal R_\star\) stayed \(\sim 0.022\). Not \(\to\infty\). **Not a proof.** |
-| HH→L | Lattice fan scored: \(\mathcal R_\star\sim\beta/\alpha\), no blow. Analytic bound still missing. |
-| Stokes identities | Sit. \(\mathcal D_s\ge 0\). \(\theta\nu\mathcal D_s\) alone is not enough. |
-| \(C_* X^{3/2}\Lambda\) remainder | Numeric support on tested families. Not a theorem. |
+| 1 Covariance | Numeric support only. Not a proof. |
+| 2 Triad / K=0 / \(C_*\) | K=0 **dead** (\(\lvert T_c\rvert/\mathcal D_s\) blows with amplitude). Remainder \(\lvert T_c\rvert\le C_* X^{3/2}\Lambda\) survives numeric on the triad (\(\simeq 0.004058\)). That is **not** \(C_{\star}\). Not a theorem. |
+| 3 Bony HH→L | Channel diagnostic. No closure. The older \(\lvert T_c\rvert\le C\|u\|_2 X^{3/2}\) target is **DEAD BY SCALING**. Not lane 2. |
+| 4 Stokes | Identities sit. \(\mathcal D_s\ge 0\). \(\theta\nu\mathcal D_s\) alone is not enough. |
+| 5 Route 2 | Survives numeric kill only. The 978-sample max \(\lvert R_{\mathrm{pre}}\rvert\approx 5.09\) is the *dead* pre-Young ratio, not \(\mathcal R_\star\). On the scaled triad \(\mathcal R_\star\) stayed \(\sim 0.022\). Not \(\to\infty\). **Not a proof.** |
+
+Screenshot headline: K=0 dead; Lemma★ survives numeric
+kill only (not proved); HH→L still the gap.
+A later Grok note called lane 2 an analytic
+\(X^{3/2}\) bound: that is the \(C_*\) remainder,
+not the \(a^4\) line.
+
+Lattice HH→L fan (Attack 12) is **later**, not lane 3.
+Packets 9A–9D are **later**. Do not substitute them.
 
 **Headline.** K=0 dead. Uniform pre-Young \(C\) dead (Attack 6:
 \(\lvert R_{\mathrm{pre}}\rvert\simeq 0.158\,s\)). Attack-2
@@ -195,6 +208,8 @@ Incidence Route A (conditional, not a theorem):
 [`LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md`](LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md).
 Original five-lane JSON (PR 48 run, not a re-proof):
 [`five-lane-export/COMPUTE.md`](five-lane-export/COMPUTE.md).
+Original five lanes (not 9A–9D):
+[`five-lane-export/FIVE_LANES.md`](five-lane-export/FIVE_LANES.md).
 Attack 9B exact-shell \(K_{\alpha,\beta}\) (finite sample,
 not a kill): [`five-lane-export/ATTACK_9B.md`](five-lane-export/ATTACK_9B.md).
 Fixed-output \(\Theta(m^2)\) is a counting error

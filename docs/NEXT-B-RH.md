@@ -100,7 +100,10 @@ Uniform pre-Young \(C\) dead. File:
 [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md),
 [`LEMMA-STAR-E.md`](LEMMA-STAR-E.md),
 [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
-Drill: PR 48. Original JSON:
+Drill: PR 48. Original five lanes (not 9A–9D):
+[`FIVE-LANE-DISCUSSION.md`](FIVE-LANE-DISCUSSION.md),
+[`five-lane-export/FIVE_LANES.md`](five-lane-export/FIVE_LANES.md).
+Original JSON:
 [`five-lane-export/COMPUTE.md`](five-lane-export/COMPUTE.md).
 Attack 9B (\(K_{\alpha,\beta}\), finite max, not a kill):
 [`five-lane-export/ATTACK_9B.md`](five-lane-export/ATTACK_9B.md).

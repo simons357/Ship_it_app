@@ -105,6 +105,12 @@ Uniform pre-Young C is dead.
 K=0 dead. Lattice fan did not kill.
 NS not solved.
 Five-lane drill: GitHub PR 48.
+Original five lanes (not 9A–9D):
+docs/FIVE-LANE-DISCUSSION.md
+docs/five-lane-export/FIVE_LANES.md
+1 covariance, 2 triad/K=0/C*, 3 Bony HH→L,
+4 Stokes, 5 Route 2. Do not substitute
+packet attacks 9A–9D.
 Export (defs + HH→L map):
 docs/five-lane-export/INDEX.md
 Original JSON (10 Sep run):

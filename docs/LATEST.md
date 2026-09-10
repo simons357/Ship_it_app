@@ -104,6 +104,9 @@ docs/LEMMA-STAR-NEXT.md
 K=0 dead. Lattice HH→L did not kill.
 Numeric kill-survive is not a proof.
 Drill: GitHub PR 48.
+Original five lanes (not 9A–9D):
+docs/FIVE-LANE-DISCUSSION.md
+docs/five-lane-export/FIVE_LANES.md
 Five-lane export (defs + HH→L):
 docs/five-lane-export/INDEX.md
 Original computation (JSON, not a re-proof):

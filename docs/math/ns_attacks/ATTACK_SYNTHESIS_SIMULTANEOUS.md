@@ -21,23 +21,32 @@ Full lock: [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md).
 \frac{(T_c(v)_+)^2}{\mathcal D_s(v)\,\|v\|_2^2\,Y(v)}.
 \]
 
-When \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Kill cares about stretching \(T_c>0\).  
-**Hygiene:** do not compare \(0.065\), \(0.073\), \(1.93\times10^{-3}\) unless each used this exact formula.
+When \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Keep \((T_c)_+\) in the boxed form. \(T_c\) is odd: reverse a large negative field.
+Do **not** compare \(0.065\), \(0.073\), \(1.93\times10^{-3}\) unless each used this exact formula.
 
-## Lane board
+## Original five lanes (PR 48) — not 9A–9D
+
+Lock: [`../../five-lane-export/FIVE_LANES.md`](../../five-lane-export/FIVE_LANES.md).
 
 | Lane | Script / doc | Runtime verdict | Key notes |
 |------|----------------|-----------------|-----------|
 | 1 Covariance | `attack1_covariance.py` | Numeric support only | Homogeneity checks; **not** a proof |
-| 2 Triad / K=0 / C* | `attack2_triad_k0_cstar.py` | **K=0 DEAD** | Viscosity-only absorption dies with amplitude |
+| 2 Triad / K=0 / C* | `attack2_triad_k0_cstar.py` | **K=0 DEAD** | Remainder \(\lvert T_c\rvert\le C_* X^{3/2}\Lambda\); not the \(a^4\) line; not \(C_{\star}\) |
 | 3 Bony HH→L | `attack3_bony_hh_l.py` | HH channel live bottleneck | Diagnostic only; kill uses **total** \(T_c\) |
 | 4 Stokes | `attack4_stokes.py` | Identities OK | Remainder still needed |
 | 5 Route2 kill | `attack5_route2_kill.py` | Sample list ≠ constant | Kill lane still **LIVE** |
-| **8 Correct record** | `ATTACK_8_CORRECT_RECORD.md` | **CORRECT RECORD** | Invariants; lanes LIVE; archive split |
-| **9A Packet fan** | `attack9_packet_fan.py` | **Did not kill ★** — \(\gamma\approx-1.39\) | \(\mathcal D_s\) grew faster than \(T_c\); \(D_s\|v\|_2^2 Y=O(1)\) **false** for AP family |
-| **9B Exact-shell \(K_{\alpha,\beta}\)** | `attack9b_exact_shell_K.py` | **LIVE** — \(\max K\approx0.641\) at \((4,8)\) | \(\mathcal R_\star\to K\); controls PASS; not a kill; kill lane still LIVE |
-| **9C Fixed-gap spheres** | SoT-only (no probe script yet) | **Did not kill ★** — \(\mathcal R_\star\) \(0.11\to 0.031\) | \(\mathcal D_s\) from **gap**; closures \(O(m)\); does **not** track \(m^{1/2}\); natural same-shell **NOT** a kill |
-| **9D \(\Theta(m^2)\) locked phase** | stub / spec | **LIVE falsifier** (not run) | Designed \(\Theta(m^2)\)-closure subset with locked phases |
+
+## Later packets (not the five lanes)
+
+Do **not** substitute these for lanes 1–5.
+
+| Later | Script / doc | Runtime verdict | Key notes |
+|------|----------------|-----------------|-----------|
+| 8 Correct record (PR 48 file) | `ATTACK_8_CORRECT_RECORD.md` | status lock on that PR | Not this branch’s three-key Attack 8 |
+| **9A Packet fan** | `attack9_packet_fan.py` | **Did not kill ★** — \(\gamma\approx-1.39\) | \(\mathcal D_s\) grew faster than \(T_c\) |
+| **9B Exact-shell \(K_{\alpha,\beta}\)** | `attack9b_exact_shell_K.py` | **LIVE** — \(\max K\approx0.641\) at \((4,8)\) | Finite sample; not a kill |
+| **9C Fixed-gap spheres** | this branch: Attack 11 | **Did not kill ★** — \(\mathcal R_\star\) \(0.11\to 0.031\) | Natural same-shell **NOT** a kill |
+| **9D \(\Theta(m^2)\) locked phase** | Freiman-AP, already dead | not a five-lane | Screenshot fixed-output version is a counting error |
 
 ## Attack 9A — failure (truth)
 

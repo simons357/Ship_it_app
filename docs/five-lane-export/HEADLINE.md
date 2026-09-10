@@ -2,7 +2,7 @@
 
 **NS is NOT solved. Lemma★ is NOT proved.**
 
-**Canonical ★ = shape form:** \(T_c(v)^2\le C_{\mathrm{geom}}\mathcal D_s(v)\,E(v)\,Y(v)\), \(\mathcal R_\star=T_c^2/(\mathcal D_s E Y)\). See `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`.
+**Canonical ★ = shape form.** See `docs/five-lane-export/FIVE_LANES.md` for the original five lanes. 9A–9D are later and are not those lanes.
 
 ```json
 {
@@ -29,9 +29,8 @@
 
 - \(\mathcal R_\star\to\infty\) on a shape family → ★ dead
 - \(\mathcal D_s=0\) and \(T_c>0\) → ★ dead; pure single shell (both vanish) is vacuous
-- Almost-single-shell / 9B \(K_{\alpha,\beta}\) / **9D** designed \(\Theta(m^2)\) locked-phase: live attempts
-- **9C fixed-gap** natural same-shell: **NOT** a kill (\(\mathcal R_\star\) \(0.11\to 0.031\))
+- Almost-single-shell (lane 5) / later 9B \(K_{\alpha,\beta}\) / **not** 9C natural same-shell
 
 ## Exact inequality still open
 
-Prove \(\sup\mathcal R_\star<\infty\) (boxed shape ★) **or** geometric C in |Tc| ≤ C ||u||₂ X Λ (pre-Young → viscosity ★) **or** |Tc| ≤ C* X^1.5 Λ, with HH→L control. That reason is NOT written. **NS not solved.** Kill lane **LIVE**.
+Prove \(\sup\mathcal R_\star<\infty\) (boxed shape ★). Uniform pre-Young \(C\) is dead. The \(a^4\) line \(|T_c|\le C\|u\|_2 X^{3/2}\) is dead by scaling. Attack-2 \(C_*\) in \(|T_c|\le C_* X^{3/2}\Lambda\) is a different remainder, not \(C_{\star}\). That reason for a uniform geometric constant is NOT written. **NS not solved.** Kill lane **LIVE**.

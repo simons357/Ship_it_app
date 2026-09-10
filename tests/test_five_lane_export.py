@@ -10,6 +10,8 @@ IDX = ROOT / "docs" / "five-lane-export" / "INDEX.md"
 SHAPE = ROOT / "docs" / "five-lane-export" / "LEMMA_STAR_SHAPE_FORM.md"
 CANON = ROOT / "docs" / "five-lane-export" / "LEMMA_STAR_CANONICAL.md"
 PROOF = ROOT / "docs" / "five-lane-export" / "PROOF_LemmaStar_STATUS.md"
+LANES = ROOT / "docs" / "five-lane-export" / "FIVE_LANES.md"
+PHONE = ROOT / "docs" / "FIVE-LANE-DISCUSSION.md"
 
 
 class FiveLaneExportTests(unittest.TestCase):
@@ -38,6 +40,25 @@ class FiveLaneExportTests(unittest.TestCase):
         self.assertIn("DEAD BY SCALING", proof)
         self.assertIn("One direction only", proof)
         self.assertIn("NS is NOT solved", proof)
+
+    def test_original_five_lanes_not_9A_to_9D(self):
+        text = LANES.read_text()
+        self.assertIn("https://github.com/simons357/Ship_it_app/pull/48", text)
+        self.assertIn("cursor/ns-five-lane-lemma-star-1390", text)
+        self.assertIn("attack1_covariance.py", text)
+        self.assertIn("attack2_triad_k0_cstar.py", text)
+        self.assertIn("attack3_bony_hh_l.py", text)
+        self.assertIn("attack4_stokes.py", text)
+        self.assertIn("attack5_route2_kill.py", text)
+        self.assertIn("X^{3/2}\\Lambda", text)
+        self.assertIn("DEAD BY SCALING", text)
+        self.assertIn("not the five lanes", text.lower())
+        self.assertIn("NS not solved", text)
+        phone = PHONE.read_text()
+        self.assertIn("Do **not** substitute 9A–9D", phone)
+        idx = IDX.read_text()
+        self.assertIn("FIVE_LANES.md", idx)
+        self.assertIn("9A–9D are later", idx)
 
 
 if __name__ == "__main__":

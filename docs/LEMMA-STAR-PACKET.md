@@ -11,6 +11,10 @@ Same-shell: `python3 scripts/ns_attacks/attack10_same_shell.py`
 Adjacent spheres: `python3 scripts/ns_attacks/attack11_adjacent_spheres.py`
 HH→L fan: `python3 scripts/ns_attacks/attack12_hh_l_fan.py`
 
+These packet attacks are **later**. They are not the
+original five lanes of PR 48:
+[`five-lane-export/FIVE_LANES.md`](five-lane-export/FIVE_LANES.md).
+
 ---
 
 ## The heuristic
