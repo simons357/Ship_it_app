@@ -1,20 +1,22 @@
-# Lemma★ — canonical exact shape form (absolute Source of Truth)
+# Lemma★ — full canonical statement (exact shape form)
+
+**Status:** definitions + claim of ★. Bound on \(C_{\mathrm{geom}}\) / \(\sup\mathcal{R}_\star\) **OPEN**. **NS not solved.** Kill lane **LIVE**.
+
+**Branch provenance:** `cursor/ns-five-lane-lemma-star-1390` / PR #48 (`LEMMA_STAR_SHAPE_FORM.md`).
+
+This is an **exact reduction** and an **open closing estimate**. It is **not** yet a proof of global regularity.
 
 **Date:** 2026-09-10  
-**Branch:** `cursor/ns-five-lane-lemma-star-1390`  
-**Lock:** Truth only. **NS is NOT solved.** Lemma★ is **OPEN**. Kill lane **LIVE**.  
-This note locks the **full** exact shape form. It does **not** prove ★.
+**Absolute Source of Truth** for the full Lemma★ claim (refined lock). Desktop prose path was not mounted in this environment; this file is the on-branch SoT.
 
 Scripts: `scripts/ns_attacks/stokes_moments.py`  
-Canonical quotient code name: **`ratio_R_star_shape`** \(=(T_c)_+^2/(D_s\|v\|_2^2 Y)\).  
-Alias: `ratio_R_star` → same.  
-Legacy **`ratio_star`** \(=T_c/(E X\Lambda)\) is a **different** post-Young object (scales as \(1/a\)) — **not** the shape quotient.
+Code: **`ratio_R_star_shape`** \(=\mathcal{R}_\star\). Legacy **`ratio_star`** is **different**.
 
 ---
 
 ## Absolute Source of Truth (lock verbatim meaning)
 
-For a nonzero, mean-zero, divergence-free field \(v\) on the normalized torus \(\mathbb{T}^3=(\mathbb{R}/2\pi\mathbb{Z})^3\), set
+For nonzero mean-zero divergence-free \(v\) on \(\mathbb{T}^3=(\mathbb{R}/2\pi\mathbb{Z})^3\):
 \[
 A=-P\Delta,\qquad B(v,v)=P[(v\cdot\nabla)v],
 \]
@@ -23,14 +25,16 @@ E=\|v\|_2^2,\quad
 X=\|A^{1/2}v\|_2^2,\quad
 Y=\|Av\|_2^2,\quad
 Z=\|A^{3/2}v\|_2^2,\qquad
-\Lambda=\frac{Y}{X}.
+\Lambda=\frac{Y}{X},
 \]
-Define
 \[
 D_s=Z-\frac{Y^2}{X}=\|(A-\Lambda)A^{1/2}v\|_2^2,\qquad
 T_c=-\langle B(v,v),A(A-\Lambda)v\rangle.
 \]
-The exact shape form of Lemma★ is:
+
+**Equivalent triad form:** \(T_c=M-\Lambda N=\sum_k\lambda_k(\lambda_k-\Lambda)T_k\) with signed \(T_k\); see [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md).
+
+**Boxed:**
 \[
 \boxed{
 \exists\,C_{\mathrm{geom}}<\infty\quad
@@ -40,25 +44,25 @@ The exact shape form of Lemma★ is:
 C_{\mathrm{geom}}\,D_s(v)\,\|v\|_2^2\,Y(v).
 }
 \]
-Here \(T_c{}_+=\max(T_c,0)\). The constant depends only on the fixed geometry and normalization—not on amplitude, Fourier support, shell count or viscosity.
 
-Equivalently, for \(D_s>0\),
+\(T_c{}_+=\max(T_c,0)\). Constant depends only on fixed geometry/normalization — **not** amplitude, Fourier support, shell count, or viscosity.
+
+Equiv. for \(D_s>0\):
 \[
-\boxed{
-\sup_v
-\frac{\bigl(T_c(v)_+\bigr)^2}{D_s(v)\,\|v\|_2^2\,Y(v)}
-<\infty.
-}
+\sup_v\frac{\bigl(T_c(v)_+\bigr)^2}{D_s(v)\,\|v\|_2^2\,Y(v)}<\infty.
 \]
-For \(D_s=0\), the field lies on one shell and \(T_c=0\).
 
-For any fixed \(0<\theta<1\), its equivalent viscosity packaging is
+Code: `ratio_R_star_shape` \(=\mathcal{R}_\star\). Legacy `ratio_star` different.
+
+\(D_s=0\): one shell, \(T_c=0\) — **vacuous, not a kill**.
+
+**Viscosity packaging:** for \(0<\theta<1\),
 \[
 T_c(u)\le\theta\nu D_s(u)+C_0(\theta)\nu^{-1}\|u\|_2^2 Y(u),\qquad
 C_{\mathrm{geom}}=4\theta\,C_0(\theta).
 \]
 
-**This is the full lemma.** The near-shell quantity \(K_{\alpha,\beta}\) tests only a **restricted limiting family** — it is **not** the full lemma (see Attack 9B).
+**Scope:** Full lemma. \(K_{\alpha,\beta}\) = restricted limiting family (Attack 9B); sample \(K\) bound does **not** prove ★.
 
 ---
 
@@ -88,7 +92,7 @@ T_c
 =M-\Lambda N
 =\sum_k\lambda_k(\lambda_k-\Lambda)T_k.
 \]
-Code computes `Tc = M - Lam * N`; that matches the inner-product form above (self-adjoint \(A\)).
+Code computes `Tc = M - Lam * N`; that matches the inner-product form above (self-adjoint \(A\)). Full triad expansion: [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md).
 
 ---
 
@@ -127,28 +131,19 @@ D_s=\frac1{2X}\sum_{k,\ell}\lambda_k\lambda_\ell(\lambda_k-\lambda_\ell)^2|v_k|^
 
 ## Nonlinear transfer (signed)
 
-\[
-\widehat{B(v,v)}_k
-=i\,P_k\sum_{p+q=k}(q\cdot v_p)v_q,\quad
-P_k=I-\frac{k\otimes k}{|k|^2}.
-\]
+See [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md) for the full triad identities. Summary:
+
 \[
 T_k(v)
 =-\mathrm{Re}\bigl(\widehat{B}_k\cdot\overline{v_k}\bigr)
-=\sum_{p+q=k}\mathrm{Im}\bigl[(q\cdot v_p)(v_q\cdot\overline{v_k})\bigr].
+=\sum_{p+q=k}\mathrm{Im}\bigl[(q\cdot v_p)(v_q\cdot\overline{v_k})\bigr],
+\]
+\[
+N=\sum\lambda_k T_k,\quad M=\sum\lambda_k^2 T_k,\quad
+T_c=M-\Lambda N.
 \]
 
 **Caution:** keep the **signed** complex triad sum. Do **not** replace \(\mathrm{Im}(\cdots)\) by absolute values.
-
-\[
-N=-\langle B,Av\rangle=\sum\lambda_k T_k,\quad
-M=-\langle AB,Av\rangle=\sum\lambda_k^2 T_k,
-\]
-\[
-T_c
-=\sum_{p+q=k}\lambda_k(\lambda_k-\Lambda)\,
-\mathrm{Im}\bigl[(q\cdot v_p)(v_q\cdot\overline{v_k})\bigr].
-\]
 
 HH→L channel splits can **identify** a mechanism; only the **complete** signed \(T_c\) enters the kill criterion for ★.  
 **Attack 3 caveat:** the Bony HH split filters high-frequency **inputs** and does **not** restrict **output** to low frequencies — Attack 3 is **not** a strict HH→L map ([`ATTACK_3_BONY_HH_L.md`](./ATTACK_3_BONY_HH_L.md)). Genuine HH→L as an **output** subfamily in 9B requires \(\beta<\alpha\).
@@ -170,7 +165,7 @@ When \(D_s(v)>0\), \(\|v\|_2>0\), \(Y(v)>0\):
 =
 \frac{(T_c(v)_+)^2}{D_s(v)\,\|v\|_2^2\,Y(v)}.
 \]
-Lemma★ asserts \(\sup_v\mathcal{R}_\star<\infty\), with that supremum equal to \(C_{\mathrm{geom}}\) when finite.
+Lemma★ **claims** \(\sup_v\mathcal{R}_\star<\infty\), with that supremum equal to \(C_{\mathrm{geom}}\) when finite. That bound is **OPEN** (not proved).
 
 **Alignment with prior \(T_c^2\) form:** when \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Kill cares about stretching \(T_c>0\); compression \(T_c<0\) gives \(\mathcal{R}_\star=0\) under the \((T_c)_+\) form.
 
@@ -209,7 +204,7 @@ and studies
 \]
 on the **exact-shell + infinitesimal closing** family.
 
-**CRITICAL lock:** \(K_{\alpha,\beta}\) is a **restricted near-shell / limiting-family probe**. Bounding or sampling \(K\) is **not** equivalent to proving or falsifying the full Lemma★ over all smooth divergence-free mean-zero fields. The full lemma is the boxed shape inequality / \(\sup\mathcal{R}_\star<\infty\) above. See [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md).
+**CRITICAL lock:** \(K_{\alpha,\beta}\) is a **restricted near-shell / limiting-family probe**. Bounding or sampling \(K\) is **not** equivalent to proving or falsifying the full Lemma★ over all smooth divergence-free mean-zero fields. The full lemma is the boxed shape inequality / \(\sup\mathcal{R}_\star<\infty\) above — and that bound remains **OPEN**. See [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md).
 
 ---
 
@@ -219,12 +214,12 @@ on the **exact-shell + infinitesimal closing** family.
 |---------|---------|
 | Some shapes make \(\mathcal{R}_\star\) arbitrarily large | no finite \(C_{\mathrm{geom}}\) → **★ dead** |
 | \(D_s=0\) (one Fourier shell) and \(T_c>0\) | **★ dead** on that field (contradicts SoT \(T_c=0\) on one shell if it occurs) |
-| Pure single shell, both sides vanish (\(T_c=0=D_s\)) | vacuous — not a kill; matches SoT |
+| Pure single shell, both sides vanish (\(T_c=0=D_s\)) | **vacuous — not a kill**; matches SoT |
 | Live kill attempt | almost-single-shell / near two-shell / exact-shell + closing (9B \(K_{\alpha,\beta}\) **restricted family**); designed \(\Theta(m^2)\) locked-phase (9D, stub) |
 | AP packet fan (9A) / fixed-gap natural ensemble (9C) | **Did not kill ★** — 9C: \(\mathcal{R}_\star\) falls \(0.11\to 0.031\), not \(m^{1/2}\) |
-| Every shape has \(\mathcal{R}_\star\le K\) | that number is ★ (up to \(4\theta\)) |
+| Every shape has \(\mathcal{R}_\star\le K\) | that number is ★ (up to \(4\theta\)) — **not proved** |
 | A list of fields with small \(\mathcal{R}_\star\) | **NOT** that number — those shapes did not kill it |
-| Finite sample \(K_{\alpha,\beta}\) | **NOT** a proof of ★ — restricted family only |
+| Finite sample \(K_{\alpha,\beta}\) | **NOT** a proof of ★ — restricted family only; \(C_{\mathrm{geom}}\) / \(\sup\mathcal{R}_\star\) **OPEN** |
 | Failure to find a numerical counterexample | does **NOT** close the kill lane — falsification **LIVE**, proof **LIVE** |
 
 **Retired false claim:** “The kill lane is closed.” — **FALSE.**
@@ -237,10 +232,11 @@ on the **exact-shell + infinitesimal closing** family.
 
 Reason from how **signed** triads add that stretching cannot get large unless spectrum also spreads or phases cancel. That reason is **NOT written**.
 
-**NS not solved.** Kill lane **LIVE**.
+**NS not solved.** Bound on \(C_{\mathrm{geom}}\) / \(\sup\mathcal{R}_\star\) **OPEN**. Kill lane **LIVE**.
 
 ## Related
 
+- Exact triad formulas: [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md)
 - Status board: [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md)
 - Correct record: [`ATTACK_8_CORRECT_RECORD.md`](./ATTACK_8_CORRECT_RECORD.md)
 - Packet fan (9A, did not kill ★): [`ATTACK_9_PACKET_FAN.md`](./ATTACK_9_PACKET_FAN.md), [`ATTACK_9A_AP_PACKET_FAILURE.md`](./ATTACK_9A_AP_PACKET_FAILURE.md)

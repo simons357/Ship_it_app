@@ -1,9 +1,10 @@
 # PROOF status — Lemma★ (energy remainder)
 
 **Date:** 2026-09-10  
-**Lock:** **NS is NOT solved.** Lemma★ is **OPEN**. Numerics are not a proof.  
+**Lock:** **NS is NOT solved.** Lemma★ is **OPEN**. Bound on \(C_{\mathrm{geom}}\) / \(\sup\mathcal{R}_\star\) **OPEN**. Numerics are not a proof.  
 **Kill lane:** **LIVE.** Proof lane: **LIVE.**  
-**Correct record:** [`ATTACK_8_CORRECT_RECORD.md`](./ATTACK_8_CORRECT_RECORD.md)
+**Correct record:** [`ATTACK_8_CORRECT_RECORD.md`](./ATTACK_8_CORRECT_RECORD.md)  
+**Exact triad formulas:** [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md)
 
 ## Retired false claims (screenshot correction)
 
@@ -32,9 +33,9 @@ Z=\|A^{3/2}v\|_2^2,\quad
 D_s=Z-Y^2/X=\|(A-\Lambda)A^{1/2}v\|_2^2,\qquad
 T_c=-\langle B(v,v),A(A-\Lambda)v\rangle.
 \]
-(Alias: older docs \(\mathcal{D}_s=Z-\Lambda Y\) — same as \(D_s\). Code: `Tc = M - Λ N` matches the inner-product form.)
+(Alias: older docs \(\mathcal{D}_s=Z-\Lambda Y\) — same as \(D_s\). Equivalent triad form \(T_c=M-\Lambda N=\sum_k\lambda_k(\lambda_k-\Lambda)T_k\): [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md).)
 
-**Full Lemma★:**
+**Full Lemma★ (claim; closing bound OPEN):**
 \[
 \boxed{
 \exists\,C_{\mathrm{geom}}<\infty\quad
@@ -45,8 +46,8 @@ C_{\mathrm{geom}}\,D_s(v)\,\|v\|_2^2\,Y(v).
 }
 \]
 Equivalently (\(D_s>0\)): \(\sup_v (T_c)_+^2/(D_s\|v\|_2^2 Y)<\infty\).  
-For \(D_s=0\): one shell and \(T_c=0\).  
-\(C_{\mathrm{geom}}\) depends only on fixed geometry/normalization — not amplitude, Fourier support, shell count, or viscosity.
+For \(D_s=0\): one shell and \(T_c=0\) — **vacuous, not a kill**.  
+\(C_{\mathrm{geom}}\) depends only on fixed geometry/normalization — not amplitude, Fourier support, shell count, or viscosity. **Existence of finite \(C_{\mathrm{geom}}\) is OPEN.**
 
 Complete quotient (**canonical** code: `ratio_R_star_shape`; alias `ratio_R_star`):
 \[
@@ -106,8 +107,8 @@ C_{\mathrm{geom}}=4\theta\,C_0(\theta).
 | K=0 form \(T_c\le\theta\nu\mathcal D_s\) | **KILLED** | Attack 2: \(\lvert T_c\rvert/\mathcal D_s\sim B\) on fixed-shape high triad |
 | Young reduction of \(T_c\) toward a norm of \(B(v,v)\) | **Partial / formal** | Polarization exists; does not close 3D product gap |
 | \(\lvert T_c\rvert\le C\|v\|_2 X^{3/2}\) (or equiv) by Agmon/product | **GAP — does not close** | Attack 3 HH **input** bottleneck (not strict HH→L — no low-output restriction) |
-| Uniform geometric \(C_{\mathrm{geom}}\) / \(C_0\) for Lemma★ (shape form) | **OPEN — kill lane LIVE** | Sample maxes (shape★ formula only) are **not** a proof and **do not** close falsification |
-| Formula lock (linear / \(D_s\) / \(T_c\) / \(\mathcal R_\star\) / \(\Lambda'\); full shape ★) | **LOCKED in docs + unit tests** | `LEMMA_STAR_SHAPE_FORM.md`; `tests/test_ns_attacks_lemma_star.py` |
+| Uniform geometric \(C_{\mathrm{geom}}\) / \(C_0\) / \(\sup\mathcal{R}_\star<\infty\) for Lemma★ (shape form) | **OPEN — kill lane LIVE** | Definitions + claim locked; closing estimate **not proved**; sample maxes ≠ proof |
+| Formula lock (linear / \(D_s\) / \(T_c\) / \(\mathcal R_\star\) / \(\Lambda'\); full shape ★) | **LOCKED in docs + unit tests** | `LEMMA_STAR_SHAPE_FORM.md`, `LEMMA_STAR_EXACT_FORMULAS.md`; `tests/test_ns_attacks_lemma_star.py` |
 | Attack 8 correct record | **CORRECT RECORD** | Kill lane LIVE; \(\mathcal R_\star\) invariants; \((T_c)_+\) |
 | Attack 9A packet fan \(\gamma\) | **Did not kill ★** — \(\gamma\approx-1.39\) (decaying) | \(\mathcal D_s\|v\|_2^2 Y=O(1)\) false for AP family; see `ATTACK_9A_AP_PACKET_FAILURE.md` |
 | Attack 9B exact-shell \(K_{\alpha,\beta}\) | **LIVE** — \(\max_{\beta>\alpha}K\approx0.641\) at \((4,8)\); \(\max_{\beta<\alpha}K\approx0.0123\) at \((5,2)\) | **Restricted near-shell probe, not full ★**; SoT: `ATTACK_9B_EXACT_SHELL_CLOSING.md`; \((4,8)\) is **not** HH→L; controls PASS; not a kill |
@@ -130,7 +131,8 @@ Route N / Q6 / LP-shell floors: [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_
 
 ## Related files
 
-- `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md` — **canonical exact formulas**
+- `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md` — **canonical full claim (absolute SoT)**
+- `docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md` — triad / spectral identities
 - `docs/math/ns_attacks/ATTACK_8_CORRECT_RECORD.md`
 - `docs/math/ns_attacks/ATTACK_9_PACKET_FAN.md`
 - `docs/math/ns_attacks/ATTACK_9A_AP_PACKET_FAILURE.md`

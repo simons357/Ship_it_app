@@ -3,8 +3,9 @@
 **Date:** 2026-09-10  
 **Branch:** `cursor/ns-five-lane-lemma-star-1390`  
 **Rule:** Truth only. **Navier–Stokes is NOT solved. No Millennium claim.**  
-**Kill lane:** **LIVE.** Proof lane: **LIVE.**  
-**Correct record:** [`ATTACK_8_CORRECT_RECORD.md`](./ATTACK_8_CORRECT_RECORD.md)
+**Kill lane:** **LIVE.** Proof lane: **LIVE.** Bound on \(C_{\mathrm{geom}}\) / \(\sup\mathcal{R}_\star\) **OPEN**.  
+**Correct record:** [`ATTACK_8_CORRECT_RECORD.md`](./ATTACK_8_CORRECT_RECORD.md)  
+**SoT:** [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md) · triad: [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md)
 
 ## Retired false claims
 
@@ -32,12 +33,13 @@ Equivalently (\(D_s>0\)):
 \qquad
 \sup_v\mathcal R_\star<\infty.
 \]
-For \(D_s=0\): one shell and \(T_c=0\). Alias: \(\mathcal{D}_s\equiv D_s\).  
+For \(D_s=0\): one shell and \(T_c=0\) — **vacuous, not a kill**. Alias: \(\mathcal{D}_s\equiv D_s\).  
+Triad form: \(T_c=M-\Lambda N=\sum_k\lambda_k(\lambda_k-\Lambda)T_k\) — [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md).  
 Viscosity packaging: \(T_c\le\theta\nu D_s+C_0(\theta)\nu^{-1}\|u\|_2^2 Y\) with \(C_{\mathrm{geom}}=4\theta C_0(\theta)\).
 
 When \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Kill cares about stretching \(T_c>0\).  
 **Hygiene:** do not compare \(0.065\), \(0.073\), \(1.93\times10^{-3}\) unless each used this exact formula.  
-**Near-shell \(K_{\alpha,\beta}\):** restricted limiting family only — **not** the full lemma.
+**Near-shell \(K_{\alpha,\beta}\):** restricted limiting family only — **not** the full lemma; sample \(K\) ≠ proof of ★.
 
 ## Lane board
 
