@@ -58,6 +58,8 @@ docs/DREAM-TEAM-H.md
 Tonight’s ★ / ABC_λ desk:
 docs/DREAM-TEAM-ABC.md
 (finite table is not a kill).
+Errors already caught (not a close):
+docs/DREAM-TEAM-CAUGHT.md
 Swirl paper (map, not a proof):
 docs/SWIRL-PAPER.pdf
 Magazine cut: docs/SWIRL-MAGAZINE.md

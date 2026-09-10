@@ -26,6 +26,8 @@ Dream-team look (already ran, did not finish):
 docs/DREAM-TEAM-PLAIN.md
 Tonight’s ★ / ABC_λ desk (map yes, kill no):
 docs/DREAM-TEAM-ABC.md
+Errors already caught (not a close):
+docs/DREAM-TEAM-CAUGHT.md
 
 SND and H are not the key to ordinary NS:
 docs/SND-H-PLAIN.md

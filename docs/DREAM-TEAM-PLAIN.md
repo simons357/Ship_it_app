@@ -67,6 +67,9 @@ They would sign the map. They would not
 sign WRITE (6). File:
 [`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
 
+What the desk already stopped:
+[`DREAM-TEAM-CAUGHT.md`](DREAM-TEAM-CAUGHT.md).
+
 Tonight’s ★ / ABC_λ desk against those papers:
 [`DREAM-TEAM-ABC.md`](DREAM-TEAM-ABC.md).
 They would refuse a falsifier stamp from a

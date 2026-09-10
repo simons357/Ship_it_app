@@ -10,6 +10,7 @@ Q-stack is out of this book.
 
 H-split (map yes, (6) no): [`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
 Plain shot: [`DREAM-TEAM-PLAIN.md`](DREAM-TEAM-PLAIN.md).
+Errors already caught: [`DREAM-TEAM-CAUGHT.md`](DREAM-TEAM-CAUGHT.md).
 ABC score: [`ns-recovery/CS-REMAINDER-VS-DA-REJECT.md`](ns-recovery/CS-REMAINDER-VS-DA-REJECT.md).
 
 Einstein / Weinberg / PDG / Cosmo do not sit here.
