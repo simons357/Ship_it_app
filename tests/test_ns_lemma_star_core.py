@@ -40,7 +40,8 @@ from ns_attacks.stokes_moments import (  # noqa: E402
 )
 
 
-CORE = ROOT / "scripts" / "ns_attacks" / "ns_lemma_star_core.py"
+CORE = ROOT / "scripts" / "ns_lemma_star_core.py"
+SHIM = ROOT / "scripts" / "ns_attacks" / "ns_lemma_star_core.py"
 LIVE = ROOT / "scripts" / "ns_attacks" / "stokes_moments.py"
 PHONE = ROOT / "docs" / "LEMMA-STAR-CORE.md"
 
@@ -61,10 +62,16 @@ def _assert_divfree_reality(field: Field, places: int = 10) -> None:
 class LemmaStarCoreTests(unittest.TestCase):
     def test_phone_and_live_stokes_not_replaced(self):
         self.assertTrue(CORE.is_file())
+        self.assertTrue(SHIM.is_file())
         self.assertTrue(PHONE.is_file())
+        core_src = CORE.read_text()
+        self.assertNotIn("from ns_attacks.stokes", core_src)
+        self.assertNotIn("import stokes_moments", core_src)
+        self.assertIn("isqrt", core_src)
         phone = PHONE.read_text()
-        self.assertIn("ns_lemma_star_core.py", phone)
+        self.assertIn("scripts/ns_lemma_star_core.py", phone)
         self.assertIn("not overwritten", phone)
+        self.assertIn("still open", phone)
         self.assertIn("NS not solved", phone)
         live = LIVE.read_text()
         self.assertIn("def hh_l_sphere_pairs", live)
@@ -111,7 +118,7 @@ class LemmaStarCoreTests(unittest.TestCase):
         def boom(*_a, **_k):
             return 123.456
 
-        import ns_attacks.ns_lemma_star_core as core
+        import ns_lemma_star_core as core
 
         old = core.D_s_direct_form
         core.D_s_direct_form = boom
@@ -185,6 +192,19 @@ class LemmaStarCoreTests(unittest.TestCase):
         r1 = R_star(v)
         r2 = R_star(roundtrip)
         self.assertAlmostEqual(r1["R_star"], r2["R_star"], places=12)
+
+    def test_false_u2_X32_product_is_dead(self):
+        """|T_c| ≤ C ||u||_2 X^{3/2} dies by scaling. Not ★. Not Attack-2 C_*."""
+        v = from_mode_dict(high_triad_field(amp=1.0))
+        r1 = R_star(v)
+        r_small = R_star(v.scale(1e-3))
+        self.assertGreater(abs(r1["T_c"]), 1e-12)
+
+        def false_a4(r):
+            return abs(r["T_c"]) / (math.sqrt(r["E"]) * (r["X"] ** 1.5))
+
+        self.assertGreater(false_a4(r_small) / false_a4(r1), 100.0)
+        self.assertAlmostEqual(r1["R_star"], r_small["R_star"], places=8)
 
     def test_single_shell_vacuous(self):
         w = random_shell_field(5, np.random.default_rng(3))

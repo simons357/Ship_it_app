@@ -1,14 +1,15 @@
 # Independent Lemma★ core
 
-10 September 2026. Phone lock. **Not a proof. NS not solved.**
+10 September 2026. Phone lock. **Exact evaluator, not a proof.**
+**Lemma★ is still open. NS not solved.**
 
-Paste: `ns_lemma_star_core.py`. Self-contained
-writing of the boxed shape quantities. Direct
-triad sum. Two \(\mathcal D_s\) formulas
-cross-checked on every \(\mathcal R_\star\)
-call. Live `stokes_moments.py` was **not overwritten**.
-
-Code: `scripts/ns_attacks/ns_lemma_star_core.py`
+Standalone: `scripts/ns_lemma_star_core.py`.
+Does not import the Stokes library.
+\(v_{-k}=\overline{v_k}\) is enforced in `set_mode`.
+\(T_c\) is a direct triad sum. Two \(\mathcal D_s\)
+formulas are checked on every \(\mathcal R_\star\) call.
+Live `stokes_moments.py` was **not overwritten**.
+Shim only: `scripts/ns_attacks/ns_lemma_star_core.py`.
 Tests: `tests/test_ns_lemma_star_core.py`
 
 \[
@@ -33,6 +34,5 @@ Engineering only (same math):
 - Aligned \(z_\beta\parallel\Pi_\beta B\) recovers
   \(K_{\alpha,\beta}\). A misaligned closer does not.
 
-Remaining job: uniform \(\mathcal R_\star\), or a
-family that diverges. One large finite value is
-not a kill. Stay in this chat.
+This file is an exact evaluator, not a proof.
+Lemma★ is still open. Stay in this chat.
