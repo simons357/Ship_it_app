@@ -59,6 +59,8 @@ is not a proof. File:
 Attack 6: uniform pre-Young \(C\) is dead
 (\(|R_{\mathrm{pre}}|\sim s\)). \(C_*\) still open.
 [`LEMMA-STAR-NEXT.md`](LEMMA-STAR-NEXT.md).
+Exact reduction \(\mathcal R_\star\):
+[`LEMMA-STAR-R.md`](LEMMA-STAR-R.md).
 Drill: PR 48.
 
 ---

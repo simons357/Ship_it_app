@@ -52,6 +52,7 @@ docs/LEMMA-STAR.md
 Attack 6: uniform pre-Young C dead
 (|R_pre| ~ s). C* still open.
 docs/LEMMA-STAR-NEXT.md
+Boxed ratio (exact ★): docs/LEMMA-STAR-R.md
 K=0 dead. HH→L still the gap.
 Numeric kill-survive is not a proof.
 Drill: GitHub PR 48.

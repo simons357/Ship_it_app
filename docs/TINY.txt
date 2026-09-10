@@ -70,7 +70,10 @@ WRITE (6) plus data: docs/WRITE_6_SUPPORTED.md
 Lemma★ locked as hypothesis (not proved):
 docs/LEMMA-STAR.md
 Attack 6 (scale law): docs/LEMMA-STAR-NEXT.md
+Boxed ratio R★ (exact reduction of ★):
+docs/LEMMA-STAR-R.md
 Uniform pre-Young C is dead. C* still open.
+R★ is the ratio that actually is ★.
 K=0 dead. HH→L still the gap. NS not solved.
 Five-lane drill: GitHub PR 48.
 

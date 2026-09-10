@@ -43,6 +43,32 @@ Naming the hole is not closing it.
 
 ---
 
+## Exact reduction (algebra sits)
+
+Write \(u=av\), \(a>0\). \(T_c\sim a^3\), \(\mathcal D_s\sim a^2\),
+\(\Lambda\) amplitude-invariant, \(X\Lambda=Y\). Optimizing ★
+over amplitude is equivalent to
+\[
+\bigl(T_c(v)_+\bigr)^2
+\le
+4\theta C_0\,
+\mathcal D_s(v)\,
+\|v\|_2^2\,Y(v).
+\]
+Decisive ratio:
+\[
+\mathcal R_\star(v)
+=
+\frac{\bigl(T_c(v)_+\bigr)^2}
+{\mathcal D_s(v)\,\|v\|_2^2\,Y(v)}.
+\]
+If \(\sup\mathcal R_\star=\infty\), ★ is dead. If \(\mathcal D_s=0\)
+and \(T_c>0\), dead immediately (does not fire on a single shell:
+both vanish). A proof is a uniform bound on \(\mathcal R_\star\).
+Samples are evidence only. File: [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md).
+
+---
+
 ## Blocked exactly here
 
 You still need something like
@@ -90,10 +116,10 @@ A family that did not blow is not a uniform geometric constant.
 
 The packaging still needs a product bound of the
 \(|T_c|\le C\|u\|_2 X^{3/2}\) class (or equivalent).
-Uniform pre-Young \(C\) is off. The remaining equivalent
-to try is \(C_* X^{3/2}\Lambda\), with HH→L controlled.
-Do not revive K=0. Do not cash a triad ratio as \(C_*\).
-Do not write “almost proved.”
+The exact equivalent of ★ is a uniform bound on
+\(\mathcal R_\star\). Uniform pre-Young \(C\) is off.
+Do not revive K=0. Do not cash a triad \(\mathcal R_\star\)
+as \(C_0\). Do not write “almost proved.”
 
 ---
 

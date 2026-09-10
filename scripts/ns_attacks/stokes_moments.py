@@ -155,6 +155,8 @@ class ProbeResult:
     ratio_cstar: float
     # K=0 form: Tc / Ds  (blows ~B with amplitude)
     ratio_k0: float
+    # Exact ★ reduction: (Tc_+)^2 / (Ds E Y). Amplitude-invariant. Decisive.
+    ratio_box: float
     B_L2: float
     label: str = ""
 
@@ -173,6 +175,9 @@ def probe(field: Field, label: str = "") -> ProbeResult:
     denom_star = E * X * Lam if E > 0 and X > 0 and Lam > 0 else float("nan")
     denom_pre = (np.sqrt(E) * X * Lam) if E > 0 and X > 0 and Lam > 0 else float("nan")
     denom_cstar = (X ** 1.5) * Lam if X > 0 and Lam > 0 else float("nan")
+    Y = m["Y"]
+    tc_plus = max(Tc, 0.0)
+    denom_box = Ds * E * Y if Ds > 0 and E > 0 and Y > 0 else float("nan")
 
     def div(num: float, den: float) -> float:
         return num / den if den and den == den and abs(den) > 0 else float("nan")
@@ -191,6 +196,7 @@ def probe(field: Field, label: str = "") -> ProbeResult:
         ratio_preyoung=div(Tc, denom_pre),
         ratio_cstar=div(Tc, denom_cstar),
         ratio_k0=div(Tc, Ds) if Ds > 1e-30 else float("nan"),
+        ratio_box=div(tc_plus ** 2, denom_box),
         B_L2=B_L2,
         label=label,
     )
@@ -326,5 +332,5 @@ def format_probe(r: ProbeResult) -> str:
     return (
         f"{r.label:28s} E={r.E:.4e} X={r.X:.4e} Λ={r.Lambda:.4f} Ds={r.Ds:.4e} "
         f"Tc={r.Tc:.4e} R★={r.ratio_star:.4e} Rpre={r.ratio_preyoung:.4e} "
-        f"Rc*={r.ratio_cstar:.4e} Rk0={r.ratio_k0:.4e}"
+        f"Rc*={r.ratio_cstar:.4e} Rk0={r.ratio_k0:.4e} Rbox={r.ratio_box:.4e}"
     )
