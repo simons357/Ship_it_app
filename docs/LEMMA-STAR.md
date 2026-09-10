@@ -105,7 +105,7 @@ scaled triad. That is not ★ dying. On the same family
 \(\mathcal R_\star\) is flat (\(\sim 0.022\) at best phase).
 The Attack-2 remainder \(|T_c|\le C_* X^{3/2}\Lambda\) is a
 different sufficient door for DA-NS-2, not this boxed
-form. One family is not a proof. HH→L is still the gap.
+form. One family is not a proof. Lattice HH→L did not kill.
 File: [`LEMMA-STAR-NEXT.md`](LEMMA-STAR-NEXT.md).
 
 ---
@@ -116,14 +116,14 @@ File: [`LEMMA-STAR-NEXT.md`](LEMMA-STAR-NEXT.md).
 |---|---|
 | K=0 form \(\mathfrak T_c\le\theta\nu\mathcal D_s\) | **Dead.** Ratio \(\lvert T_c\rvert/\mathcal D_s\) blows with amplitude. |
 | Lemma★ / geometric \(C_0\) | **Survives numeric kill only.** The 978-sample max \(\lvert R_{\mathrm{pre}}\rvert\approx 5.09\) is the *dead* pre-Young ratio, not \(\mathcal R_\star\). On the scaled triad \(\mathcal R_\star\) stayed \(\sim 0.022\). Not \(\to\infty\). **Not a proof.** |
-| HH→L | **Still the gap.** High triad is the HH channel. No analytic closure. |
+| HH→L | Lattice fan scored: \(\mathcal R_\star\sim\beta/\alpha\), no blow. Analytic bound still missing. |
 | Stokes identities | Sit. \(\mathcal D_s\ge 0\). \(\theta\nu\mathcal D_s\) alone is not enough. |
 | \(C_* X^{3/2}\Lambda\) remainder | Numeric support on tested families. Not a theorem. |
 
 **Headline.** K=0 dead. Uniform pre-Young \(C\) dead (Attack 6:
 \(\lvert R_{\mathrm{pre}}\rvert\simeq 0.158\,s\)). Attack-2
 \(C_*\) survives the scaled triad (\(\simeq 0.0404\)). That
-is not \(C_{\star}\). HH→L still the gap. NS not solved.
+is not \(C_{\star}\). Lattice HH→L did not kill. NS not solved.
 
 Do not cash a bounded ratio on a Galerkin sample as \(C_0\).
 A family that did not blow is not a uniform geometric constant.
@@ -141,13 +141,13 @@ The first family is the closing three-key
 \(k_0,k_0+e,2k_0+e\). Two Fourier keys is not that test.
 Two shells can be live. Hunt with \(|e|/|k_0|\to 0\)
 (fix \(e\), send \(|k_0|\to\infty\)); a frozen ray is not
-the supremum. Attack 8 did not kill it. Adjacent
-spheres (Attack 11): landings \(O(m)\), not \(O(m^2)\);
-\(\mathcal R_\star\) falls. No kill. Remaining packet
-target: a designed two-shell subset with \(\Theta(m^2)\)
-closures and locked phases, or H1 on one cylinder.
-Work one. The uniform global triadic bound remains
-completely open.
+the supremum. Attack 8 did not kill it. Lattice packets
+scored: isolated triad, AP (\(D_s\) wins), adjacent
+spheres (closures \(O(m)\)), Freiman-AP subset, HH→L
+fan (\(\mathcal R_\star\sim\beta/\alpha\)). No kill.
+The \(m^{1/2}\) heuristic has not found a lattice home.
+H1 on one cylinder is the other live writing.
+The uniform global triadic bound remains completely open.
 Uniform pre-Young \(C\) is off. Attack-2 \(C_*\) is a
 different door. Do not revive K=0. Do not cash a triad
 \(\mathcal R_\star\) as \(C_0\). Numerically bounded samples

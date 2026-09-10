@@ -66,15 +66,17 @@ Packets (Attack 9): wide AP made Tc grow,
 but Ds grew faster, so the O(1)
 denominator failed. Adjacent spheres
 (Attack 11): d=1 landings O(m), not
-O(m^2); R★ falls (0.11 → 0.031). No
-kill. Remaining packet target: a
-designed two-shell subset with Θ(m^2)
-closures, or H1 on one cylinder. Work one.
+O(m^2); R★ falls. HH→L fan (Attack 12):
+R★ ~ β/α, no blow. Designed Θ(m^2)
+subset is Freiman-AP, already dead.
+The m^{1/2} heuristic has no lattice
+home. H1 on one cylinder is the other
+live writing. Bound open.
 docs/LEMMA-STAR-PACKET.md
 Attack 6: uniform pre-Young C dead
 (|R_pre| ~ s). That is not ★ dying.
 docs/LEMMA-STAR-NEXT.md
-K=0 dead. HH→L still the gap.
+K=0 dead. Lattice HH→L did not kill.
 Numeric kill-survive is not a proof.
 Drill: GitHub PR 48.
 No \(K(t)\). No Q1.

@@ -22,13 +22,11 @@ Probe: `python3 scripts/ns_attacks/attack6_scale_law.py`
    File: [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md). The Attack-2
    remainder \(|T_c|\le C_* X^{3/2}\Lambda\) is a different
    sufficient door for DA-NS-2. Do not merge those constants.
-   HH→L is still the gap.
+   HH→L lattice fan scored: no kill.
 
-3. **Coherent HH→L fan.**
-   Many high pairs with the same sum. Product estimates lose a
-   count of pairs. If they add in \(T_c\), they could send
-   \(\mathcal R_\star\to\infty\). A fan with frozen polarization
-   is not a test; \(T_c=0\) there is an accident, not a bound.
+3. **Coherent HH→L fan — scored, no kill.**
+   Partners on a high sphere. \(\mathcal R_\star\sim\beta/\alpha\).
+   Multiplicity does not flip it. File: [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
 
 4. **Closing three-key, not two keys.**
    \(k_0+(k_0+e)=2k_0+e\). Two shells can be live. The
@@ -106,12 +104,11 @@ The first family is the closing three-key. Two Fourier
 keys is not that test. Two shells can be live. Hunt by
 \(|e|/|k_0|\to 0\) with the supremum recomputed. Attack 8
 did not kill it: [`LEMMA-STAR-E.md`](LEMMA-STAR-E.md).
-Live target: a growing coherent triad packet or HH→L fan.
-Adjacent spheres scored: landings \(O(m)\), not \(O(m^2)\);
-\(\mathcal R_\star\) falls. No kill. Remaining: designed
-two-shell subset with \(\Theta(m^2)\) closures, or H1 on
-one cylinder. Work one.
-The uniform global triadic bound remains completely open.
+Live target was a growing coherent triad packet or HH→L fan.
+Scored: AP, adjacent spheres, Freiman-AP subset, HH→L fan
+(\(\mathcal R_\star\sim\beta/\alpha\)). No kill. The \(m^{1/2}\)
+heuristic has not found a lattice home. Remaining: H1 on
+one cylinder, or the uniform triadic bound.
 Packets: [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
 
 Door 1 (uniform pre-Young \(C\)) is off. K=0 stays dead.

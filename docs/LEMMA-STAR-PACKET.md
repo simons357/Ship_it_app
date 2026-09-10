@@ -1,4 +1,4 @@
-# Lemma★ — coherent triad packets (Attacks 9–10)
+# Lemma★ — coherent triad packets (Attacks 9–12)
 
 10 September 2026. Live falsification target. **Not a proof.
 NS not solved. These samples did not kill Lemma★.**
@@ -7,6 +7,7 @@ Locked form: [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md).
 AP probe: `python3 scripts/ns_attacks/attack9_packet.py`
 Same-shell: `python3 scripts/ns_attacks/attack10_same_shell.py`
 Adjacent spheres: `python3 scripts/ns_attacks/attack11_adjacent_spheres.py`
+HH→L fan: `python3 scripts/ns_attacks/attack12_hh_l_fan.py`
 
 ---
 
@@ -95,8 +96,8 @@ not \(\mathcal R_\star\to\infty\). The heuristic is not
 destroyed at moderate \(m\) on this construction; spectral
 spread stops it from diverging. Not a kill.
 
-**HH→L fan** (randomized, low mode populated):
-\(\mathcal R_\star\) small, not growing like \(m\).
+**HH→L fan** (Attack 9 randomized control): small, not \(\sim m\).
+The sphere fan is Attack 12.
 
 ---
 
@@ -180,42 +181,57 @@ not supply the \(O(m^2)\) aligned closures the heuristic assumed.
 spheres: no kill. Finite \(n\) is not \(\sup\mathcal R_\star<\infty\).
 Do not cash \(0.11\) as \(C_0\).
 
-**What would still be a packet kill.** A designed subset of two
-fixed shells with \(\Theta(m^2)\) closures and locked phases — not
-the full sphere. Until that object is built and \(\mathcal R_\star\)
-tracks \(m\), the heuristic is false for the natural same-shell
-ensemble.
+A designed subset with \(\Theta(m^2)\) closures is Freiman-AP.
+That family already ran (wide / narrow AP). \(D_s\) wins. Dead
+as a new object.
 
 ---
 
-## Status
+## Attack 12 — HH→L fan (one key or whole low shell)
 
-- isolated closed triad tested: no kill
-- dilation confirmed exactly neutral
-- fixed additive offset becomes safer on the tested ray
-- polarization zero is accidental
-- wide AP: \(T_c\) grew, \(\mathcal D_s\) faster; not a kill
-- narrow AP: finite-\(m\) rise then rollover; not a kill
-- popular-\(T\) same-shell: \(\mathcal D_s\) stayed the gap; not a kill
-- full adjacent spheres: landings \(O(m)\), not \(O(m^2)\);
-  \(\mathcal R_\star\) falls; not a kill
-- the remaining packet target is a designed two-shell subset
-  with \(\Theta(m^2)\) closures and locked phases, or H1 on one cylinder
-- the uniform global triadic bound remains completely open
+Probe: `python3 scripts/ns_attacks/attack12_hh_l_fan.py`
+
+**Single low key.** Partners of \(k\) on a high sphere \(\alpha\).
+Pair counts 2–12. \(\mathcal R_\star\) is largest when
+\(\alpha\sim\beta\) (e.g. \(0.71\) at \(\alpha=5\), \(\beta=4\))
+and falls as \(\alpha/\beta\) grows, tracking \(\sim\beta/\alpha\).
+That is the incompressibility factor: the vertex carries
+\(\sqrt{\beta}\), not \(\sqrt{\alpha}\). More pairs at higher
+\(\alpha\) do not flip it.
+
+**Whole low shell.** Up to 144 pairs, 96 high keys. Same decay.
+\(\beta=2\), \(\alpha=9\): \(\mathcal R_\star\simeq 0.060\).
+\(\beta=2\), \(\alpha=85\): \(\mathcal R_\star\simeq 7\times 10^{-4}\).
+Multiplicity did not beat the \(\beta/\alpha\) suppression.
+
+**Score.** HH→L fan, one key or whole low shell: no kill.
+Do not cash \(0.71\) as \(C_0\).
+
+---
+
+## Status, updated
+
+- isolated triad: no kill
+- wide / narrow AP: \(\mathcal D_s\) wins
+- fixed-gap spheres: closures \(O(m)\), \(\mathcal R_\star\) falls
+- designed \(\Theta(m^2)\) subset: Freiman-AP, already dead
+- HH→L fan, one key or whole low shell:
+  \(\mathcal R_\star\sim\beta/\alpha\), no blow
+
+The \(m^{1/2}\) heuristic has not found a lattice home.
+The uniform global triadic bound remains completely open.
 
 Do not: more isolated triangles, more frozen rays, more
 uniform dilations, more \(k_{\max}=8\) samples, another AP,
-another full sphere, K=0, or gluing this to H1.
+another full sphere, another fan, K=0, or gluing this to H1.
 
-The other live writing is still H1 on one cylinder
+The other live writing is H1 on one cylinder
 (thinness / J on folds / waiting time). Same leftover
-class, different integral. Work one.
+class, different integral.
 
-The uniform triadic bound is still completely open.
 NS is not solved.
 
-Say **subset** for the \(\Theta(m^2)\) designed packet, or **H1**
-for the cylinder.
+Say **H1** for the cylinder.
 
 Do not merge with H1. Do not add \(K(t)\) to the PDE.
 Do not write “almost proved.”

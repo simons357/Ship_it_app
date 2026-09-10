@@ -76,14 +76,15 @@ Three-key family (Attack 8):
 docs/LEMMA-STAR-E.md
 Two Fourier keys is the wrong test, not
 two shells. Wide AP: Tc grew, Ds faster.
-Adjacent spheres: landings O(m), not
-O(m^2). R★ falls. No kill.
-Next packet: designed subset with
-Θ(m^2) closures, or H1. Work one.
-Bound open. docs/LEMMA-STAR-PACKET.md
+Adjacent spheres: landings O(m). Fan:
+R★ ~ β/α, no blow. Freiman-AP dead.
+The m^{1/2} heuristic has no lattice home.
+H1 is the other writing. Bound open.
+docs/LEMMA-STAR-PACKET.md
 Samples are evidence only.
 Uniform pre-Young C is dead.
-K=0 dead. HH→L still the gap. NS not solved.
+K=0 dead. Lattice fan did not kill.
+NS not solved.
 Five-lane drill: GitHub PR 48.
 
 Latest three chains plus the others:

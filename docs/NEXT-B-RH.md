@@ -59,13 +59,13 @@ A near-shell or HH→L sequence with
 \(\mathcal R_\star\to\infty\) kills it.
 First family: closing three-key. Two Fourier
 keys is not that test. Two shells can be live.
-Attack 8 did not kill it. Live target:
-a growing coherent triad packet or HH→L fan.
-Adjacent spheres scored: landings \(O(m)\),
-not \(O(m^2)\); \(\mathcal R_\star\) falls.
-No kill. Remaining packet target: a
-designed two-shell subset with \(\Theta(m^2)\)
-closures, or H1 on one cylinder. Work one.
+Attack 8 did not kill it. Isolated triad,
+wide / narrow AP (\(D_s\) wins), fixed-gap
+spheres (closures \(O(m)\)), Freiman-AP
+subset, HH→L fan (\(\mathcal R_\star\sim\beta/\alpha\)):
+no kill. The \(m^{1/2}\) heuristic has not
+found a lattice home. H1 on one cylinder
+is the other live writing.
 The uniform global triadic bound remains
 completely open.
 Samples are evidence only. K=0 dead.

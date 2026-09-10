@@ -204,9 +204,9 @@ Amplitude: \(\mathcal R_\star(av)=\mathcal R_\star(v)\). Checked.
 ## Still open
 
 \(\sup\mathcal R_\star<\infty\) is Lemma★. It is not proved.
-HH→L is still the gap. A near-mono probe with one frozen
-perturbation gave \(T_c=0\); that is not a bound. Do not cash
-\(0.022\) on one triad as \(C_0\). Numerically bounded samples
+Lattice HH→L fan: \(\mathcal R_\star\sim\beta/\alpha\), no blow.
+The uniform triadic bound is still the gap. Do not cash
+\(0.71\) or \(0.022\) as \(C_0\). Numerically bounded samples
 remain evidence only.
 
 Do not merge with H1. Do not add \(K(t)\) to the PDE.
