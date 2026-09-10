@@ -53,7 +53,9 @@ A miss is another if.
 Dream-team read of the map:
 [`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
 They would sign the map. They would not
-sign (6). Next work is (6) on one cylinder,
+sign (6). Errors already caught:
+[`DREAM-TEAM-CAUGHT.md`](DREAM-TEAM-CAUGHT.md).
+Next work is (6) on one cylinder,
 or a new wall. Not another criterion paper.
 
 This week, publish the map as a map:
