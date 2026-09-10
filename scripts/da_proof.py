@@ -96,9 +96,9 @@ NS_LINES = [
         "n": 6,
         "status": "write",
         "text": (
-            "WRITE. One all-data integrable residual: int_0^T R(t) dt < infinity, "
-            "or all-data A1, or all-data A2, or a field that kills the stretching leftover, "
-            "or DA-NS-2 (cutoff-uniform int [T_c - theta nu D_s]_+/Y)."
+            "WRITE. Live leftover: H1 (A_bad a priori on a cylinder Q_r). "
+            "H2 a priori from energy also open. No K(t). No Q1. "
+            "Other writings of the same leftover: int R, A1, A2, killing field, DA-NS-2."
         ),
     },
     {

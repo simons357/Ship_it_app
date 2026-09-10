@@ -1,4 +1,4 @@
-# Latest chains — 7 September 2026
+# Latest chains — 10 September 2026
 
 Phone pack. Same GitHub login as PR 24.
 Branch: cursor/unaugmented-r4-vorticity-f80e
@@ -23,9 +23,10 @@ open. Paper: docs/THEOREM-A-Q1.pdf
 docs/UNAUGMENTED-NS-CHAIN.md
 https://github.com/simons357/Ship_it_app/blob/cursor/unaugmented-r4-vorticity-f80e/docs/UNAUGMENTED-NS-CHAIN.md
 
-HAVE (1)–(5) and (3a) barycenter. WRITE (6)
-still missing (∫R or A1 or A2 or killing
-field or DA-NS-2). Keep 1/r^4. No Q1.
+10 September packet. Lemma C sits (if). Last
+line is H1 (\(A_{\mathrm{bad}}\) a priori). H2
+a priori from energy also open. No \(K(t)\).
+No Q1.
 
 **RH — open**
 docs/RH-CHAIN.md

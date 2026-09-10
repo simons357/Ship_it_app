@@ -26,6 +26,11 @@ X ≤ |u0|_2^2 Λ, then continuation.
 The implication is the usual skeleton.
 The integral is the hole.
 
+Live unaug path (10 September 2026): H1
+(\(A_{\mathrm{bad}}\) a priori). Same leftover,
+different writing. Work H1. Do not add \(K(t)\).
+Packet: docs/UNAUGMENTED-NS-CHAIN.md
+
 ---
 
 ## Identities that sit (algebra)

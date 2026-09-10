@@ -88,11 +88,11 @@ data (hole 1). A2 = \(\int\|\lambda_2^+\|\) for all data
 A2 is live and did not blow on the B15 path (B40, B41).
 *[have]*
 
-**(6)** **Write.** One all-data integrable residual:
-\(\int_0^T\mathcal{R}(t)\,dt<\infty\), or all-data A1,
-or all-data A2, or a field that kills the stretching
-leftover, or DA-NS-2 (cutoff-uniform
-\(\int[\mathfrak T_c-\theta\nu\mathcal D_s]_+/Y\)).
+**(6)** **Write.** Live leftover on this path: **H1**
+(\(A_{\mathrm{bad}}\) a priori on \(Q_r\)). H2 a priori
+from energy is also open. Other writings of the
+same leftover: \(\int_0^T\mathcal{R}\), all-data A1/A2,
+a killing field, DA-NS-2. No \(K(t)\). No \(Q_1\).
 *[the next write]*
 
 **(7)** **Gronwall.** From (3) and (6), \(X(t)\) stays
@@ -121,7 +121,7 @@ If (6) sits, (7)–(9) close the theorem.
 | Lines | Status |
 |---|---|
 | (1)–(5) | **done** |
-| (6) all-data \(\mathcal{R}\) / A1 / A2 / killing field / DA-NS-2 | **not done** |
+| (6) H1 / \(A_{\mathrm{bad}}\) a priori (or equivalent leftover) | **not done** |
 | (7)–(9) Gronwall / continuation / bootstrap | waiting on (6) |
 
 Please-finish-bad does not change this table.
@@ -137,6 +137,7 @@ Classify one:
 - a different integrable residual
 - a killing field for the stretching leftover
 - DA-NS-2 (same leftover; identities already have)
+- H1: \(A_{\mathrm{bad}}\) a priori on \(Q_r\) (live path, 10 Sep 2026)
 
 Machine: [`DA-PROOF.md`](DA-PROOF.md)  
 From your work: [`DA-FROM.md`](DA-FROM.md)

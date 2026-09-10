@@ -47,6 +47,9 @@ docs/SHARE-MAPS.md
 Overnight NS score (DA-NS-2 is leftover 6):
 docs/DA-NS-2.md
 
+Live unaug packet (H1 open, 10 Sep):
+docs/UNAUGMENTED-NS-CHAIN.md
+
 Latest three chains plus the others:
 docs/LATEST.md
 docs/A-CHAIN.md

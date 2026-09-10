@@ -17,21 +17,10 @@ A (done, other PDE): [`A-CHAIN.md`](A-CHAIN.md).
 Object: \(X=\|\omega\|_2^2\) on the classical
 equation. Keep \(1/r^4\). No \(Q_1\).
 
-Have (1)–(5). WRITE (6) open. (7)–(9) wait.
-
-**First candidate, not a close:** all-data A2.
-The time integral of \(\|\lambda_2^+\|_{L^q}\)
-for every finite-energy / \(H^1\) datum, with a
-\(q\) that feeds the leftover form.
-
-Classify: Track B, **open**. Live on the \(n=32\)
-box is not all-data. Miller identity without the
-integral is not A2. Theorem A is a different
-equation.
-
-If A2 fails, leftover (6) is still (6). Next
-candidates: all-data A1, a different integrable
-\(\mathcal{R}\), or a killing field.
+Have (1)–(5). WRITE (6) open. Live leftover on
+this path: **H1** (\(A_{\mathrm{bad}}\) on \(Q_r\)).
+H2 a priori from energy also open. Do not
+reprove Lemma C. Do not add \(K(t)\).
 
 Do not: \(\Phi\), \(n=64\), leftover-close B42,
 BKM from \(L^2\), export A.

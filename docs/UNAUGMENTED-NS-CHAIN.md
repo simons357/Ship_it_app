@@ -1,153 +1,229 @@
-# Unaugmented NS — chain and what closes it
+# Unaugmented 3D Navier–Stokes — working packet
 
-7 September 2026. Latest unaug NS. Classical NSE. Keep \(1/r^4\).
-No \(Q_1\). Object \(X=\|\omega\|_2^2\).
+**Date.** 10 September 2026  
+**Use.** This is the live unaugmented-chain document.  
+**Status.** Proof *chain*. Last estimate open. No augmentation, no \(K(t)\), no Q-stack. Only \(\nu\Delta u\).
 
-This is the chain that was asked for, plus
-exactly what must sit to close. It is not QED.
-`check B` stays open until WRITE (6) sits.
+Desk: leftover WRITE (6) on this path is **H1** (\(A_{\mathrm{bad}}\) a priori). **H2** a priori from energy is also open. Lemma C is a criterion, not alignment. Theorem A is a different PDE. DA-NS-2 and the old \(\int\mathcal R\) line are other writings of the same leftover, not this packet’s next write. Keep Biot–Savart at \(1/r^4\). Do not add \(Q_1\).
 
-Machine write-up: [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md).
-Open chain PDF: [`TRACK-B-CHAIN.pdf`](TRACK-B-CHAIN.pdf).
-Residual holes: [`TRACK-B-RESIDUAL.md`](TRACK-B-RESIDUAL.md).
-From this desk: [`DA-FROM.md`](DA-FROM.md).
+Machine write-up: [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md).  
+Barycenter sibling (not this path): [`DA-NS-2.md`](DA-NS-2.md).  
+Augmented (other PDE): [`A-CHAIN.md`](A-CHAIN.md).
 
 ---
 
-## Aimed theorem
-
-A smooth solution of three-dimensional incompressible
-Navier–Stokes (periodic or whole space), viscosity
-\(\nu>0\), no \(Q_1\), Biot–Savart kept at \(1/r^4\),
-stays smooth for all time: \(X\) stays finite on every
-\([0,T]\).
-
----
-
-## Have
-
-**(1) Energy.** Leray: \(\int_0^T X<\infty\) on these
-packets, energy inequality.
-
-**(2) Enstrophy identity.**
+## 0. Equation and notation
 
 \[
-\frac{d}{dt}X+\nu\|\nabla\omega\|_2^2
-=-\int\omega\cdot S\omega
+\partial_t u+(u\cdot\nabla)u=-\nabla p+\nu\Delta u,\qquad\nabla\cdot u=0
 \]
 
-up to lower-order terms already controlled.
-
-**(3) Leftover form.**
+on \(\mathbb{R}^3\) or \(\mathbb{T}^3\), \(\nu>0\), \(f\equiv 0\), smooth divergence-free finite-energy data.
 
 \[
-\frac{d}{dt}X+\nu\|\nabla\omega\|_2^2
-\le\varepsilon\nu\|\nabla\omega\|_2^2
-+C_\varepsilon X\cdot\mathcal{R}(t).
+\mathcal{E}(t)=\tfrac12\|u\|_{L^2}^2,\qquad
+E(t)=\|\nabla u\|_{L^2}^2,\qquad
+\omega=\nabla\times u,\qquad
+\xi=\omega/|\omega|\ \ (\omega\neq 0),
 \]
-
-The only term that can beat viscosity is the
-stretching leftover.
-
-**(3a) Centered barycenter.** On a strong
-interval, \(X=|A^{1/2}u|_2^2\), \(Y=|Au|_2^2\),
-\(Z=|A^{3/2}u|_2^2\), \(\Lambda=Y/X\),
-\(\mathcal D_s=Z-\Lambda Y\ge 0\),
-\(\mathfrak T_c=\mathcal M-\Lambda\mathcal N\),
-and \((\log\Lambda)'=2/Y(\mathfrak T_c-\nu\mathcal D_s)\).
-Identity. Not the leftover. Overnight keep:
-[`DA-NS-2.md`](DA-NS-2.md).
-
-**(4) Split.**
 
 \[
-\int\omega\cdot S\omega
-=\text{hole 1 (aligned }P_+\text{ on }E_c)
-+\text{hole 2 (unaligned }P_+\text{ on }E_c)
-+\text{hole 3 (off }E_c).
+\alpha=\xi\cdot S_{\mathrm{strain}}\xi,\qquad
+S_{\mathrm{tot}}=\int\alpha|\omega|^2\,dx,\qquad
+\varphi(x,y)=\angle(\omega(x),\omega(y)).
 \]
 
-Scored as B37 on the \(n=32\) box. Naming the holes
-is not the estimate.
-
-**(5) Named blanks.** A1 = alignment in time for all
-data (hole 1). A2 = \(\int\|\lambda_2^+\|\) for all data
-(live cubic; Miller cut B38). On this box A1 is off.
-A2 is live and did not blow on the B15 path. The box
-is not all data.
+Parabolic cylinder: \(Q_r(x_0,t_0)=B_r(x_0)\times(t_0-r^2,t_0]\).
 
 ---
 
-## Write — this is what closes
+## 1. Proved floor
 
-**(6)** Provide **one** of these, for **all data**,
-on the **classical** equation:
+**Energy (while smooth).**
+\[
+\frac{d}{dt}\mathcal{E}+\nu E=0
+\qquad\Rightarrow\qquad
+\int_0^T E(t)\,dt\le\mathcal{E}(0)/\nu.
+\]
+Leray–Hopf weak solutions: inequality instead of equality. Budget only on the smooth interval.
 
-1. \(\displaystyle\int_0^T\mathcal{R}(t)\,dt<\infty\),
-   with \(\mathcal{R}\) the residual in (3), or
-2. **all-data A1** — alignment in time, or
-3. **all-data A2** — \(\displaystyle\int_0^T\|\lambda_2^+\|_{L^q}\,dt<\infty\)
-   for a \(q\) that feeds (3), or
-4. a field that **kills** the stretching leftover,
-   so the cubic does not beat viscosity, or
-5. **DA-NS-2** — cutoff-uniform
-   \(\displaystyle\sup_n\int_0^T
-   [\mathfrak T_c^{(n)}-\theta\nu\mathcal D_s^{(n)}]_+/Y^{(n)}\,dt<\infty\)
-   for a fixed \(\theta\in[0,1)\). Same leftover
-   as (1). The Joint Gap–Charge budget is a
-   target for writing this, not a substitute.
+**Energy class.** \(u\in L^\infty_t L^2\cap L^2_t\dot H^1\).
 
-Then **(7) Gronwall** (\(X\) stays finite),
-**(8) Beale–Kato–Majda** (continuation; \(L^2\) is
-not \(\|\omega\|_\infty\)), **(9) bootstrap** to
-smoothness on arbitrary \(T\) **follow**. You do
-not write (7)–(9) as new ideas. They wait on (6).
+**Sobolev.** \(\|u\|_{L^6}\lesssim E^{1/2}\), so \(u\in L^2_t L^6\). This is the floor.
 
-If (6) sits, the theorem sits. If it does not,
-B stays open.
+**Local existence.** Fujita–Kato: strong solution on a short interval. Question is continuation.
 
----
+**Serrin / LPS (criterion).** If \(u\in L^p_t L^q_x\) with \(2/p+3/q=1\), \(q>3\), then smooth on \([0,T]\).  
+At \(q=6\): need \(L^4_t L^6\). Sobolev is one-sided:
+\[
+\int E^2\,dt<\infty\quad\Longrightarrow\quad\int\|u\|_{L^6}^4\,dt<\infty.
+\]
 
-## Exactly what to provide
+**ESS (criterion).** \(u\in L^\infty_t L^3\Rightarrow\) regular.
 
-A proof that one of (1)–(5) under WRITE (6) holds
-for every finite-energy / \(H^1\) divergence-free
-initial datum, viscosity \(\nu>0\), no extra stress,
-Biot–Savart kept at \(1/r^4\).
+**Enstrophy identity.**
+\[
+\tfrac12\dot E+\nu\|D^2 u\|_2^2=S_{\mathrm{tot}}.
+\]
 
-The estimate must be an a priori bound, not a
-reading on \(n=32\), not an identity, not a named
-hole, not Theorem A.
+**Cubic bound.** \(|S_{\mathrm{tot}}|\le C E^3\) after Young. Allows \(E\sim(T_*-t)^{-1/2}\). Does not give \(\int E^2\). The 1934 wall.
 
-Overnight alias (7 September 2026): DA-NS-2
-is this same leftover — a cutoff-uniform
-integral of \([\mathfrak T_c-\theta\nu\mathcal D_s]_+/Y\).
-Score: [`DA-NS-2.md`](DA-NS-2.md). Identities
-are not the integral. The Joint Gap–Charge
-budget is a target, not a theorem.
+**No Type-I self-similar blowup.** Nečas–Růžička–Šverák 1996.
+
+**CKN.** Singular set of a suitable weak solution has parabolic 1-measure zero. Set not proved empty.
+
+**Interpolation used later.**
+\[
+E^2\le 2\mathcal{E}\,\|D^2 u\|_2^2.
+\]
+So a bound on \(\int\|D^2 u\|_2^2\) gives \(\int E^2\).
 
 ---
 
-## What does not close it
+## 2. Lemma C — good pairs (theorem)
 
-- Theorem A / \(Q_1\) / \(\varepsilon>0\)
-- \(\Phi\)-cancel
-- Exporting A onto B
-- The B-chain PDF
-- Living walls L55–L76
-- Miller identity without the integral
-- “A2 did not blow on B15”
-- Route C, Q, SND, SFE
-- DA or this chat emitting a last line
-- variance absorption, charge-only close,
-  automatic dephasing, frozen log-charge
-  at \(\theta=1\) (overnight kills;
-  [`DA-NS-2.md`](DA-NS-2.md))
+**CF 1993.** If \(|\sin\varphi(x,y)|\le|x-y|/\rho\) whenever both \(|\omega|\ge\Lambda\), then the solution is strong on \([0,T]\).  
+**BdVB 2002.** Hölder \(1/2\) suffices: \(|\sin\varphi|\le C|x-y|^{1/2}\).
+
+Mechanism: strain is a \(|z|^{-3}\) kernel of \(\omega\). Alignment puts \(|\sin\varphi|\) in the numerator and drops the kernel to \(|z|^{-2}\) (Lipschitz) or \(|z|^{-5/2}\) (Hölder \(1/2\)). That is absorbable into \(\nu\|\nabla\omega\|_2^2+CE\).
+
+Cutoff used below: **Hölder \(1/2\)** — weakest alignment that still absorbs, smallest leftover. Lipschitz is the same line with a stricter cut.
+
+Lemma C does not prove alignment. It assumes it.
 
 ---
 
-## Status
+## 3. Partition
 
-- (1)–(5): done
-- (6): not done
-- (7)–(9): waiting on (6)
+High-vorticity set \(H=\{|\omega|\ge\Lambda\}\). Pairs in \(H\times H\) with \(|x-y|<\delta\):
+
+- **Good:** \(|\sin\varphi|\le C_*|x-y|^{1/2}\). Contribution \(A_{\mathrm{good}}\) absorbed by Lemma C.
+- **Bad:** \(|\sin\varphi|>C_*|x-y|^{1/2}\). Contribution \(A_{\mathrm{bad}}\). Open.
+- **Low vorticity** \(|\omega|<\Lambda\): stretching \(\le C\Lambda E\). Harmless.
+
+A bad pair is one of three pictures: fold (dissipation spread in a ball), reconnection (thin bridge), two blobs (gap with \(\omega\approx 0\)).
+
+---
+
+## 4. Local enstrophy on a cylinder
+
+Cutoff \(\phi\equiv 1\) on \(B_{r/2}\), supported in \(B_r\), \(|\nabla\phi|\lesssim 1/r\). Vorticity form — pressure drops.
+
+\[
+\tfrac12\frac{d}{dt}\int|\omega|^2\phi+\nu\int|\nabla\omega|^2\phi
+=
+\int\alpha|\omega|^2\phi
++\tfrac12\int|\omega|^2(\partial_t\phi+u\cdot\nabla\phi)
++\tfrac\nu2\int|\omega|^2\Delta\phi.
+\]
+
+Time-integrate on \(Q_r\):
+
+\[
+\nu\iint_{Q_r}|\nabla\omega|^2\phi
+\le
+\text{bottom data}
++A_{\mathrm{good}}+A_{\mathrm{bad}}+A_{\mathrm{far}}+A_{\mathrm{low}}
++F_{\mathrm{adv}}+F_{\nu}.
+\]
+
+Moved with justification:
+
+- \(A_{\mathrm{good}}\): Lemma C localized.
+- \(A_{\mathrm{low}}\): \(\le C\Lambda\iint|\omega|^2\).
+- \(A_{\mathrm{far}}\): empty if \(r<\delta\).
+- \(F_{\nu}\): \(\le C\nu r^{-2}\iint_{\mathrm{annulus}}|\omega|^2\).
+
+Left:
+
+\[
+\frac\nu2\iint_{Q_r}|\nabla\omega|^2
+\le
+\text{bottom}
++A_{\mathrm{bad}}(Q_r)
++F_{\mathrm{adv}}(Q_r)
++C r^{-2}\iint_{Q_r}|\omega|^2.
+\]
+
+---
+
+## 5. Last line — two halves
+
+**H1**
+\[
+A_{\mathrm{bad}}(Q_r)
+\le
+\frac\nu8\iint_{Q_r}|\nabla\omega|^2
++C r^{-2}\iint_{Q_r}|\omega|^2.
+\]
+
+**H2**
+\[
+F_{\mathrm{adv}}(Q_r)
+\le
+\frac\nu8\iint_{Q_r}|\nabla\omega|^2
++C r^{-2}\iint_{Q_r}|\omega|^2,
+\]
+where \(F_{\mathrm{adv}}=\tfrac12\iint|\omega|^2(\partial_t\phi+u\cdot\nabla\phi)\) lives on the annulus, and the dangerous piece is \(r^{-1}\iint|u||\omega|^2\).
+
+If H1 and H2 hold for all small \(r\), the cylinder is regular at enstrophy level and the singular set is empty.
+
+**H2.** True as a *smallness* criterion (energy-CKN-small cylinder). Not proved as an a priori bound from \(\int E<\infty\). Remainder after Young is local \(\int E^2\).
+
+**H1.** Open. This is the CF leftover. Equivalent to the remaining problem on this path.
+
+CF stretching kernel (for reference):
+\[
+\alpha(x)=\mathrm{P.V.}\int D(\hat z,\xi(x),\xi(y))\frac{|\omega(y)|}{|z|^3}\,dy,
+\qquad
+|D|\le C|\sin\varphi|.
+\]
+On Bad, \(|\sin\varphi|\) is large, so the kernel is not improved.
+
+---
+
+## 6. Attempts already made (do not repeat as proofs)
+
+- HLS on all pairs: recovers \(\int E^3\). No gain.
+- Path-cost of \(\nabla\xi\): lower bound is on a segment, not in \(L^2(B_r)\). Fails on reconnection / two-blobs.
+- Lemma J (pointwise pair paid by \(\fint|\nabla\omega|^2\)): false for generic fields; Biot–Savart averages \(\omega\), not \(\nabla\omega\); \(\xi\)-equation has no sign and is degenerate at \(\omega=0\).
+- Signed kernel \(D\): no cancelation for an isolated pair (fixed spherical harmonic in \(\hat z\)).
+- Thinness of Bad: not known. Assuming it is Lemma C again.
+- Persistence for time \(r^2/\nu\): filter on which cylinders to use. Waiting time imposed, not derived. Pathwise enstrophy does not produce \(\int|\nabla\omega|^2\).
+- Bony LP split of stretching: LLH needs \(\|\omega_{\mathrm{low}}\|_\infty\) (BKM); LHH remainder \(\|\omega_{\mathrm{low}}\|_\infty^2 E_{\mathrm{high}}\); HHH remainder is pieces of \(\int E^2\).
+- Swirl ODE / fading \(K(t)\) / Q-stack: not unaugmented NSE. Out of this packet.
+
+---
+
+## 7. Ledger
+
+| Item | Status |
+|---|---|
+| Energy, \(\int E<\infty\) | Proved |
+| \(L^2_t L^6\) | Proved |
+| Serrin / ESS as criteria | Proved |
+| \(\int E^2\Rightarrow L^4_t L^6\) | Proved (one-sided) |
+| Cubic bound \(\dot E\le CE^3\) | Proved, too weak |
+| No Type-I self-similar | Proved |
+| CKN measure of singular set | Proved |
+| Lemma C (good pairs) | Proved (conditional theorem) |
+| H2 as smallness criterion | Proved |
+| H1 / \(A_{\mathrm{bad}}\) a priori | **Open** |
+| H2 a priori from energy | **Open** |
+| Type-II Liouville | Open, separate |
+
+---
+
+## 8. What to do next
+
+Work **H1** on a single cylinder \(Q_r\). Do not reprove Lemma C. Do not add \(K(t)\). Keep H1 and H2 separate so a failure is labeled.
+
+Optional sibling (not shorter): \(L^\infty_t L^3\) mass on the bad set; Type-II profile. Only after H1 has a new estimate or a new wall.
+
+DA will not emit H1 and call it proved.
+
+---
+
+## 9. One paragraph for the top of a paper / note
+
+Unaugmented 3D NSE has a complete chain from energy to Serrin except control of stretching from misaligned high-vorticity pairs. Constantin–Fefferman / Beirão da Veiga–Berselli absorb pairs whose direction turns at most like Hölder \(1/2\). The leftover integral \(A_{\mathrm{bad}}\) on a parabolic cylinder, together with the advective enstrophy flux through the annulus, is the last line. Neither term is known to be bounded by local dissipation plus \(r^{-2}\iint|\omega|^2\) from the energy class alone.
