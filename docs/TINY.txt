@@ -110,10 +110,10 @@ Uniform pre-Young C is dead.
 K=0 dead. Lattice fan did not kill.
 NS not solved.
 Five-lane drill: GitHub PR 48.
-Independent Lemma★ core (direct triad sum;
-live stokes_moments.py not overwritten):
+Independent Lemma★ core (evaluator, not a proof;
+★ still open; live Stokes not overwritten):
 docs/LEMMA-STAR-CORE.md
-scripts/ns_attacks/ns_lemma_star_core.py
+scripts/ns_lemma_star_core.py
 Object app (pictures; bound still open):
 docs/THE-OBJECT-APP.md
 apps/the-object/
