@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import math
 import unittest
 
 from domain_architect.rstar_quantities import (
