@@ -227,3 +227,29 @@ DA will not emit H1 and call it proved.
 ## 9. One paragraph for the top of a paper / note
 
 Unaugmented 3D NSE has a complete chain from energy to Serrin except control of stretching from misaligned high-vorticity pairs. Constantin–Fefferman / Beirão da Veiga–Berselli absorb pairs whose direction turns at most like Hölder \(1/2\). The leftover integral \(A_{\mathrm{bad}}\) on a parabolic cylinder, together with the advective enstrophy flux through the annulus, is the last line. Neither term is known to be bounded by local dissipation plus \(r^{-2}\iint|\omega|^2\) from the energy class alone.
+
+---
+
+## 10. Desk score (10 September 2026)
+
+The packet is a **good map**. It is not a proof of ordinary NS.
+
+**Floor (§1).** Correct literature: energy, \(L^2_t L^6\), Fujita–Kato, Serrin/LPS, ESS as a criterion, enstrophy identity, cubic \(E^3\) wall, CKN measure, interpolation \(E^2\le 2\mathcal{E}\|D^2u\|_2^2\). “No Type-I self-similar” is the NRS 1996 Leray profile, not every Type-I statement in the later literature.
+
+**Lemma C.** CF 1993 / BdVB 2002 sit as **if**. Hölder \(1/2\) is the right cut for this path. Lemma C does not prove alignment. That sentence is the whole point.
+
+**H1.** The right leftover on this path. \(A_{\mathrm{bad}}\) is stretching from misaligned high-vorticity pairs. On Bad the kernel stays \(|z|^{-3}\). An a priori bound of that integral by local dissipation plus \(r^{-2}\iint|\omega|^2\) is WRITE (6) here. Open.
+
+**H2.** Smallness criterion is true. A priori from \(\int E<\infty\) is not. After Young the remainder is local \(\int E^2\). So even if H1 sits, H2-from-energy is a second wall. Keep them separate.
+
+**Gaps in the cylinder write, not in the leftover name.**
+- Localizing Lemma C to \(Q_r\) is not free. CF/BdVB are global-in-time hypotheses on \(\{|\omega|\ge\Lambda\}\).
+- \(A_{\mathrm{far}}=\emptyset\) if \(r<\delta\) only kills pairs *inside* \(B_r\). Biot–Savart from vorticity *outside* the ball still feeds \(\alpha\) inside.
+- H1+H2 \(\Rightarrow\) empty singular set is CKN-style. Cite an \(\varepsilon\)-regularity theorem; do not treat it as immediate.
+
+**Refuse list (§6).** Sound. Do not rerun HLS, Lemma J, signed \(D\), thin-Bad-as-Lemma-C, imposed waiting time, or \(K(t)\)/Q-stack as a close.
+
+**Not equivalent to DA-NS-2.** Spectral-barycenter integral is another writing of leftover (6). This packet’s next write is H1 on one cylinder.
+
+**Verdict.** Use this as the unaugmented chain. Work H1. Do not emit H1. Theorem A stays a different equation.
+
