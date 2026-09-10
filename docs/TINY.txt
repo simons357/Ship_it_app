@@ -24,6 +24,8 @@ Plain page: docs/WHAT-DA-CAN.md
 
 Dream-team look (already ran, did not finish):
 docs/DREAM-TEAM-PLAIN.md
+Tonight’s ★ / ABC_λ desk (map yes, kill no):
+docs/DREAM-TEAM-ABC.md
 
 SND and H are not the key to ordinary NS:
 docs/SND-H-PLAIN.md
