@@ -13,9 +13,9 @@ Old ARCHON briefing “everything else is solid / Statement (B)” is **rejected
 | `06_status_errata` + `ARCHIVE-FIX` | Withdraw overclaim DOIs |
 | Bridge\* / \(H_N\) scripts | Proved pair + multi-rep; refute full-spectrum / −3/14 universal |
 | `route_c_gap_a_verify.py` | Killed archived Lemma A; \(R(v_{\mathrm{alt}})\not\to -1/(2\pi)\) |
-| `docs/math/NS-EXTRACTION-LEDGER.md` + `route_n_shell_floor_probe.py` | Route N: convexity true; shellwise principal blocks of \(\widetilde Q\)/\(H\) clear \(-1/2\) in probe (LEAD); **NS still not solved** |
+| `docs/math/NS-EXTRACTION-LEDGER.md` + `route_n_shell_floor_probe.py` | Route N: convexity true; shellwise principal blocks of \(\widetilde Q\)/\(H\) clear \(-1/2\) in probe (LEAD); **NOT Lemma★** — see `ARCHIVE_NOT_LEMMA_STAR.md`; **NS still not solved** |
 
-| `docs/math/ns_attacks/` five-lane Lemma★ probes | **OPEN** — canonical **shape form** (`LEMMA_STAR_SHAPE_FORM.md`); K=0 killed; \(\max\mathcal R_\star\approx0.0227\) survive numeric only; **NS still not solved** |
+| `docs/math/ns_attacks/` Lemma★ desk | **OPEN** — shape form + \((T_c)_+\); kill lane **LIVE**; Attack 8 **CORRECT RECORD**; Attack 9 packet fan \(\gamma\); **NS still not solved** |
 
 **Zenodo archive-only (stamp notice, do not delete):**  
 `20405526`, `20269843`, `20405589` (or replace with proper Q6), `20405593`, `20552171`, `20552400`

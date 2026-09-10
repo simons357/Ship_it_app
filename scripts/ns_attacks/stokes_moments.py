@@ -32,15 +32,22 @@ Exact lock (see docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md):
 
   Sign check: Λ' = 2/X (Tc − ν Ds)
 
-  R_★(v) = (Tc)^2 / (Ds · ||v||_2^2 · Y)   (amp- and ν-invariant)
+  R_★(v) = (Tc)_+^2 / (Ds · ||v||_2^2 · Y)   (amp-, dilation-, and ν-invariant)
+  where (Tc)_+ = max(Tc, 0). When Tc ≥ 0, (Tc)_+^2 = Tc^2.
+  For kill we care about stretching Tc > 0.
   code: ratio_R_star_shape  (alias ratio_R_star)
 
 Lemma★ — CANONICAL SHAPE FORM (OPEN; NS not solved):
-  (Tc(v))^2 ≤ C_geom · Ds(v) · ||v||_2^2 · Y(v)
+  (Tc(v)_+)^2 ≤ C_geom · Ds(v) · ||v||_2^2 · Y(v)
 
-Kill criteria (shape): R_★ → ∞; or Ds=0 with Tc≠0.
-Pure single shell (Tc=0=Ds) is vacuous. Live attempt: almost-single-shell.
+Kill criteria (shape): R_★ → ∞ on a family; or Ds=0 with Tc>0.
+Failure to find a numerical counterexample does NOT close the kill lane —
+falsification and proof both remain LIVE.
+Pure single shell (Tc=0=Ds) is vacuous. Live attempt: almost-single-shell /
+coherent packet growth (Attack 9).
 HH→L can identify mechanism; only complete signed Tc kills ★.
+Amplitude and uniform Fourier dilation leave R_★ exactly invariant
+(do NOT claim they make the ratio smaller — that was an older non-optimized budget).
 """
 
 from __future__ import annotations
@@ -88,6 +95,119 @@ def enforce_reality(field: Field) -> Field:
 
 def scale_field(field: Field, B: float) -> Field:
     return {k: B * v for k, v in field.items()}
+
+
+def dilate_field(field: Field, n: int) -> Field:
+    """Uniform Fourier dilation: mode k ↦ mode n·k with the same amplitude.
+
+    Exact shape★ identity: R_★(v(n·)) = R_★(v) for integer n ≠ 0
+    (λ scales by n²; T_c, D_s, Y, ||v||₂² scale homogeneously so the quotient cancels).
+    """
+    if n == 0:
+        raise ValueError("dilation factor n must be nonzero")
+    out: Field = {}
+    for k, v in field.items():
+        nk = (n * k[0], n * k[1], n * k[2])
+        out[nk] = np.asarray(v, dtype=np.complex128).copy()
+    return enforce_reality(out)
+
+
+def sum_Tk(field: Field) -> float:
+    """Σ_k T_k. For the NS triad nonlinearity on mean-zero fields this vanishes
+    (energy conservation of the bilinear form): Σ T_k = 0."""
+    Tk = triad_Im_transfer(field)
+    return float(sum(Tk.values()))
+
+
+def nonlinear_B_fft_dealiased(field: Field, n_grid: int | None = None) -> Field:
+    """Dealiased FFT evaluation of B(v,v)=P[(v·∇)v] on a periodic grid.
+
+    Mathematical Fourier convention: v(x)=Σ v_k e^{ik·x}. Uses 2/3-rule dealiasing.
+    For Galerkin control: Tc from this B̂ must agree with direct triad summation on
+    the occupied modes of a band-limited field.
+    """
+    if not field:
+        return {}
+    kmax = max(max(abs(c) for c in k) for k in field)
+    need = max(8, 3 * kmax + 2)
+    if n_grid is None:
+        n_grid = 2
+        while n_grid < 2 * need:
+            n_grid *= 2
+    N = int(n_grid)
+    # Store mathematical Fourier coefficients in FFT arrays
+    vx = np.zeros((N, N, N), dtype=np.complex128)
+    vy = np.zeros((N, N, N), dtype=np.complex128)
+    vz = np.zeros((N, N, N), dtype=np.complex128)
+    for (kx, ky, kz), v in field.items():
+        if abs(kx) >= N // 2 or abs(ky) >= N // 2 or abs(kz) >= N // 2:
+            continue
+        ix, iy, iz = kx % N, ky % N, kz % N
+        vx[ix, iy, iz] = v[0]
+        vy[ix, iy, iz] = v[1]
+        vz[ix, iy, iz] = v[2]
+    # Physical fields: u = Σ û e^{ikx} = N³ ifftn(û)
+    scale = float(N) ** 3
+    ux = np.fft.ifftn(vx) * scale
+    uy = np.fft.ifftn(vy) * scale
+    uz = np.fft.ifftn(vz) * scale
+    kx = np.fft.fftfreq(N) * N
+    KX, KY, KZ = np.meshgrid(kx, kx, kx, indexing="ij")
+
+    def phys_deriv(uhat, Kj):
+        return np.fft.ifftn(1j * Kj * uhat) * scale
+
+    dx_ux, dy_ux, dz_ux = phys_deriv(vx, KX), phys_deriv(vx, KY), phys_deriv(vx, KZ)
+    dx_uy, dy_uy, dz_uy = phys_deriv(vy, KX), phys_deriv(vy, KY), phys_deriv(vy, KZ)
+    dx_uz, dy_uz, dz_uz = phys_deriv(vz, KX), phys_deriv(vz, KY), phys_deriv(vz, KZ)
+    nx = ux * dx_ux + uy * dy_ux + uz * dz_ux
+    ny = ux * dx_uy + uy * dy_uy + uz * dz_uy
+    nz = ux * dx_uz + uy * dy_uz + uz * dz_uz
+    # Forward FFT: û = fftn(u) / N³
+    Bx = np.fft.fftn(nx) / scale
+    By = np.fft.fftn(ny) / scale
+    Bz = np.fft.fftn(nz) / scale
+    # 2/3-rule dealias
+    cut = N // 3
+    kx_i = np.where(np.arange(N) <= N // 2, np.arange(N), np.arange(N) - N)
+    KXi, KYi, KZi = np.meshgrid(kx_i, kx_i, kx_i, indexing="ij")
+    mask = np.maximum(np.maximum(np.abs(KXi), np.abs(KYi)), np.abs(KZi)) > cut
+    Bx[mask] = 0
+    By[mask] = 0
+    Bz[mask] = 0
+    out: Field = {}
+    mode_set = set(field.keys())
+    keys = list(field.keys())
+    for p in keys:
+        for q in keys:
+            k = (p[0] + q[0], p[1] + q[1], p[2] + q[2])
+            if k != (0, 0, 0):
+                mode_set.add(k)
+    for k in mode_set:
+        kx_, ky_, kz_ = k
+        if max(abs(kx_), abs(ky_), abs(kz_)) > cut:
+            continue
+        if abs(kx_) >= N // 2 or abs(ky_) >= N // 2 or abs(kz_) >= N // 2:
+            continue
+        ix, iy, iz = kx_ % N, ky_ % N, kz_ % N
+        raw = np.array([Bx[ix, iy, iz], By[ix, iy, iz], Bz[ix, iy, iz]], dtype=np.complex128)
+        out[k] = leray_project(k, raw)
+    return out
+
+
+def Tc_from_B_field(field: Field, Buu: Field, Lambda: float | None = None) -> float:
+    """Complete signed Tc from a precomputed B̂ (triad or FFT)."""
+    if Lambda is None:
+        Lambda = moments(field)["Lambda"]
+    Tc = 0.0
+    for k, vk in field.items():
+        lam = k_norm2(k)
+        if lam == 0:
+            continue
+        bk = Buu.get(k, np.zeros(3, dtype=np.complex128))
+        Tk = -float(np.dot(bk, np.conjugate(vk)).real)
+        Tc += lam * (lam - Lambda) * Tk
+    return Tc
 
 
 def moments(field: Field) -> Dict[str, float]:
@@ -291,14 +411,19 @@ class ProbeResult:
     ratio_cstar: float
     # K=0 form: Tc / Ds  (blows ~B with amplitude)
     ratio_k0: float
-    # Canonical shape★ ratio: Tc^2 / (Ds E Y) — amp- and ν-invariant; C_geom candidate
+    # Canonical shape★ ratio: (Tc)_+^2 / (Ds E Y) — amp-/dilation-/ν-invariant
     ratio_R_star_shape: float
     B_L2: float
     label: str = ""
 
     @property
+    def Tc_plus(self) -> float:
+        """Positive part (Tc)_+ = max(Tc, 0)."""
+        return max(self.Tc, 0.0)
+
+    @property
     def ratio_R_star(self) -> float:
-        """Alias for complete quotient R_★ = Tc^2 / (Ds ||v||_2^2 Y)."""
+        """Alias for complete quotient R_★ = (Tc)_+^2 / (Ds ||v||_2^2 Y)."""
         return self.ratio_R_star_shape
 
 
@@ -308,6 +433,7 @@ def probe(field: Field, label: str = "") -> ProbeResult:
     N, M, Buu = N_and_M(field)
     Lam = m["Lambda"]
     Tc = M - Lam * N
+    Tc_plus = max(Tc, 0.0)
     E, X, Ds = m["E"], m["X"], m["Ds"]
     B_L2 = 0.0
     for v in Buu.values():
@@ -317,7 +443,8 @@ def probe(field: Field, label: str = "") -> ProbeResult:
     denom_star = E * X * Lam if E > 0 and X > 0 and Lam > 0 else float("nan")
     denom_pre = (np.sqrt(E) * X * Lam) if E > 0 and X > 0 and Lam > 0 else float("nan")
     denom_cstar = (X ** 1.5) * Lam if X > 0 and Lam > 0 else float("nan")
-    # Shape★: Tc^2 / (Ds ||v||_2^2 Y); XΛ = Y
+    # Shape★: (Tc)_+^2 / (Ds ||v||_2^2 Y); XΛ = Y
+    # When Tc ≥ 0, (Tc)_+^2 = Tc^2. Kill cares about stretching Tc > 0.
     denom_R_star_shape = Ds * E * Y if E > 0 and Y > 0 and Ds > 1e-30 else float("nan")
 
     def div(num: float, den: float) -> float:
@@ -337,7 +464,7 @@ def probe(field: Field, label: str = "") -> ProbeResult:
         ratio_preyoung=div(Tc, denom_pre),
         ratio_cstar=div(Tc, denom_cstar),
         ratio_k0=div(Tc, Ds) if Ds > 1e-30 else float("nan"),
-        ratio_R_star_shape=div(Tc * Tc, denom_R_star_shape),
+        ratio_R_star_shape=div(Tc_plus * Tc_plus, denom_R_star_shape),
         B_L2=B_L2,
         label=label,
     )

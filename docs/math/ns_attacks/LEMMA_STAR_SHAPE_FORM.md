@@ -128,17 +128,24 @@ From the Galerkin identities \(X'=-2\nu Y+2N\), \(Y'=-2\nu Z+2M\):
 
 ## Complete quotient / canonical shape★
 
-When \(\mathcal D_s(v)>0\), \(\|v\|_2>0\), \(Y(v)>0\):
+When \(\mathcal D_s(v)>0\), \(\|v\|_2>0\), \(Y(v)>0\), with positive part \((T_c)_+=\max(T_c,0)\):
 
 \[
 \mathcal{R}_\star(v)
 =
+\frac{(T_c(v)_+)^2}{\mathcal{D}_s(v)\,\|v\|_2^2\,Y(v)}.
+\]
+
+Expanded (same when \(T_c\ge0\)):
+\[
+\mathcal{R}_\star(v)
+=
 \frac{
-\Bigl[
+\Bigl(
 \sum_{p+q=k}
 \lambda_k(\lambda_k-\Lambda)\,
 \mathrm{Im}\bigl((q\cdot v_p)(v_q\cdot\overline{v_k})\bigr)
-\Bigr]^2
+\Bigr)_+^{\!2}
 }{
 \bigl[\sum\lambda_k(\lambda_k-\Lambda)^2|v_k|^2\bigr]
 \bigl[\sum|v_k|^2\bigr]
@@ -146,15 +153,14 @@ When \(\mathcal D_s(v)>0\), \(\|v\|_2>0\), \(Y(v)>0\):
 }.
 \]
 
-Equivalently
-\[
-\mathcal{R}_\star(v)=\frac{(T_c(v))^2}{\mathcal{D}_s(v)\,\|v\|_2^2\,Y(v)}.
-\]
+**Alignment with prior \(T_c^2\) form:** older Galerkin probes used \(T_c^2\) in the numerator. When \(T_c\ge0\), \((T_c)_+^2=T_c^2\). For kill we care about stretching \(T_c>0\); compression \(T_c<0\) gives \(\mathcal R_\star=0\) under the \((T_c)_+\) form and is not a stretching counterexample.
+
+**Numerics hygiene:** do **not** compare legacy reported values \(0.065\), \(0.073\), \(1.93\times10^{-3}\) unless each used exactly this \(\mathcal R_\star\) formula.
 
 **Boxed shape inequality (canonical ★):** there exists one geometric constant \(C_{\mathrm{geom}}\) (independent of amplitude and of \(\nu\)) such that for every divergence-free \(v\) on \(\mathbb{T}^3\),
 \[
 \boxed{
-\bigl(T_c(v)\bigr)^2
+\bigl(T_c(v)_+\bigr)^2
 \le
 C_{\mathrm{geom}}\,
 \mathcal{D}_s(v)\,
@@ -164,7 +170,7 @@ Y(v)
 \]
 i.e. \(\sup_v\mathcal R_\star<\infty\) with that supremum equal to \(C_{\mathrm{geom}}\) (when the sup is finite).
 
-Homogeneity (\(a>0\)):
+Homogeneity (\(a>0\)) — **exact invariance** (not “ratio gets smaller”):
 \[
 T_c(av)=a^3 T_c(v),\quad
 \mathcal D_s(av)=a^2\mathcal D_s(v),\quad
@@ -173,6 +179,8 @@ Y(av)=a^2 Y(v),\quad
 \Lambda(av)=\Lambda(v),\quad
 \mathcal R_\star(av)=\mathcal R_\star(v).
 \]
+
+Uniform Fourier dilation \(v(n\cdot)\) (mode \(k\mapsto nk\)) likewise leaves \(\mathcal R_\star\) **exactly invariant**. Claims that amplitude or frequency makes the ratio smaller concern an **older non-optimized budget**, not \(\mathcal R_\star\).
 
 ### Viscosity packaging (derived, not primary)
 
@@ -190,13 +198,18 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | Outcome | Verdict |
 |---------|---------|
 | Some shapes make \(\mathcal R_\star\) arbitrarily large | no finite \(C_{\mathrm{geom}}\) → **★ dead** |
-| \(\mathcal D_s=0\) (one Fourier shell) and \(T_c\neq 0\) | **★ dead** on that field |
+| \(\mathcal D_s=0\) (one Fourier shell) and \(T_c>0\) | **★ dead** on that field |
 | Pure single shell, both sides vanish (\(T_c=0=\mathcal D_s\)) | vacuous — not a kill |
-| Live kill attempt | almost-single-shell / near two-shell with \(\mathcal D_s\to0^+\) and complete signed \(T_c\) so that \(\mathcal R_\star\to\infty\) |
+| Live kill attempt | almost-single-shell / near two-shell / coherent packet fan (Attack 9) with complete \(T_c\) so that \(\mathcal R_\star\to\infty\) |
 | Every shape has \(\mathcal R_\star\le K\) | that number is ★ (up to \(4\theta\)) |
 | A list of fields with small \(\mathcal R_\star\) | **NOT** that number — those shapes did not kill it |
+| Failure to find a numerical counterexample | does **NOT** close the kill lane — falsification **LIVE**, proof **LIVE** |
 
-**Do not confuse** with post-Young \(R_{\mathrm{post}}=T_c/(\|v\|_2^2 Y)\) (scales as \(1/a\)) or pre-Young \(R_{\mathrm{pre}}=T_c/(\|v\|_2\,X\Lambda)\).
+**Retired false claim:** “The kill lane is closed.” — **FALSE.**
+
+**Do not confuse** with post-Young \(R_{\mathrm{post}}=T_c/(\|v\|_2^2 Y)\) (scales as \(1/a\)) or pre-Young \(R_{\mathrm{pre}}=T_c/(\|v\|_2\,X\Lambda)\). Those older budgets are where “amplitude makes the ratio smaller” can appear; they are **not** \(\mathcal R_\star\).
+
+**Archive:** Route N / Q6 / LP-shell floors → [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_Q6_SHELL/) (**NOT Lemma★**).
 
 ## What a proof would have to be
 
@@ -207,5 +220,8 @@ Reason from how **signed** triads add that stretching cannot get large unless sp
 ## Related
 
 - Status board: [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md)
+- Correct record: [`ATTACK_8_CORRECT_RECORD.md`](./ATTACK_8_CORRECT_RECORD.md)
+- Packet fan: [`ATTACK_9_PACKET_FAN.md`](./ATTACK_9_PACKET_FAN.md)
 - Synthesis: [`ATTACK_SYNTHESIS_SIMULTANEOUS.md`](./ATTACK_SYNTHESIS_SIMULTANEOUS.md)
-- Probe / harness: `scripts/ns_attacks/stokes_moments.py`, `attack5_route2_kill.py`, `lemma_star_near_shell_search.py`
+- Archive (NOT ★): [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_Q6_SHELL/), [`../ARCHIVE_NOT_LEMMA_STAR.md`](../ARCHIVE_NOT_LEMMA_STAR.md)
+- Probe / harness: `scripts/ns_attacks/stokes_moments.py`, `attack5_route2_kill.py`, `lemma_star_near_shell_search.py`, `attack9_packet_fan.py`

@@ -15,14 +15,19 @@ from ns_attacks.stokes_moments import (
     Ds_variance_sum,
     Lambda_prime_from_XY,
     Lambda_prime_rhs,
+    Tc_from_B_field,
     Tc_from_triads,
+    dilate_field,
     enforce_reality,
     high_triad_field,
     make_divfree_amp,
     moments,
+    nonlinear_B,
+    nonlinear_B_fft_dealiased,
     probe,
     scale_field,
     shell_energies,
+    sum_Tk,
     two_shell_field,
 )
 
@@ -70,6 +75,16 @@ def test_R_star_invariant_under_amplitude_scaling():
         assert abs(r1.ratio_R_star_shape - r2.ratio_R_star_shape) < 1e-9
 
 
+def test_R_star_invariant_under_uniform_Fourier_dilation():
+    """R_★(v(n·)) = R_★(v) — exact; amplitude/frequency do NOT shrink R_★."""
+    base = high_triad_field(amp=1.0)
+    r1 = probe(base)
+    for n in (2, 3):
+        r2 = probe(dilate_field(base, n))
+        assert math.isfinite(r1.ratio_R_star)
+        assert abs(r1.ratio_R_star - r2.ratio_R_star) < 1e-8
+
+
 def test_amplitude_homogeneity_legacy_ratios():
     base = high_triad_field(amp=1.0)
     r1 = probe(base)
@@ -80,11 +95,16 @@ def test_amplitude_homogeneity_legacy_ratios():
     assert abs(r2.ratio_k0 / r1.ratio_k0 - 7.0) < 1e-6
 
 
-def test_shape_ratio_matches_definition():
+def test_shape_ratio_matches_Tc_plus_definition():
+    """R_★ = (Tc)_+^2 / (Ds E Y); when Tc≥0 this equals Tc^2/(Ds E Y)."""
     r = probe(high_triad_field(amp=1.2))
-    expect = (r.Tc ** 2) / (r.Ds * r.E * r.Y)
+    Tc_plus = max(r.Tc, 0.0)
+    expect = (Tc_plus ** 2) / (r.Ds * r.E * r.Y)
     assert abs(r.ratio_R_star_shape - expect) < 1e-9
     assert abs(r.ratio_R_star - expect) < 1e-9
+    assert abs(r.Tc_plus - Tc_plus) < 1e-15
+    if r.Tc >= 0:
+        assert abs(r.ratio_R_star - (r.Tc ** 2) / (r.Ds * r.E * r.Y)) < 1e-9
 
 
 def test_Tc_from_signed_triads_matches_M_minus_Lambda_N():
@@ -92,9 +112,23 @@ def test_Tc_from_signed_triads_matches_M_minus_Lambda_N():
     r = probe(f)
     tc_tri = Tc_from_triads(f)
     assert abs(tc_tri - r.Tc) < 1e-8 * max(1.0, abs(r.Tc))
-    # Signed — flipping global phase of one triad parent changes Im continuously;
-    # absolute-value rearrangement would not match M−ΛN.
     assert math.isfinite(tc_tri)
+
+
+def test_sum_Tk_vanishes():
+    f = high_triad_field(amp=1.4, phases=(0.3, -0.2, 0.7))
+    assert abs(sum_Tk(f)) < 1e-10
+
+
+def test_triad_agrees_with_dealiased_FFT_Tc():
+    f = high_triad_field(amp=1.0, phases=(0.1, 0.4, -0.5))
+    Buu = nonlinear_B(f)
+    Buu_fft = nonlinear_B_fft_dealiased(f)
+    tc_tri = Tc_from_triads(f)
+    tc_fft = Tc_from_B_field(f, Buu_fft)
+    tc_B = Tc_from_B_field(f, Buu)
+    assert abs(tc_tri - tc_B) < 1e-8 * max(1.0, abs(tc_tri))
+    assert abs(tc_tri - tc_fft) < 1e-6 * max(1.0, abs(tc_tri))
 
 
 def test_pure_single_shell_vacuous():
@@ -114,3 +148,23 @@ def test_reality_pairs():
         mk = (-k[0], -k[1], -k[2])
         assert mk in f
         assert np.allclose(f[mk], np.conjugate(v))
+
+
+def test_attack9_controls_on_small_packet():
+    """Attack 9 required controls on m=1 packet."""
+    from ns_attacks.attack9_packet_fan import field_from_params, random_packet_params
+
+    rng = np.random.default_rng(42)
+    params = random_packet_params(1, rng)
+    f = field_from_params(1, params)
+    r0 = probe(f)
+    assert math.isfinite(r0.ratio_R_star) or r0.Ds < 1e-30
+    if math.isfinite(r0.ratio_R_star):
+        for a in (0.5, 4.0):
+            assert abs(probe(scale_field(f, a)).ratio_R_star - r0.ratio_R_star) < 1e-8
+        for n in (2, 3):
+            assert abs(probe(dilate_field(f, n)).ratio_R_star - r0.ratio_R_star) < 1e-7
+    assert abs(sum_Tk(f)) < 1e-9
+    tc_tri = Tc_from_triads(f)
+    tc_fft = Tc_from_B_field(f, nonlinear_B_fft_dealiased(f))
+    assert abs(tc_tri - tc_fft) < 1e-6 * max(1.0, abs(tc_tri))

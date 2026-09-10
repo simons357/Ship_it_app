@@ -1,7 +1,16 @@
 # PROOF status — Lemma★ (energy remainder)
 
 **Date:** 2026-09-10  
-**Lock:** **NS is NOT solved.** Lemma★ is **OPEN**. Numerics are not a proof.
+**Lock:** **NS is NOT solved.** Lemma★ is **OPEN**. Numerics are not a proof.  
+**Kill lane:** **LIVE.** Proof lane: **LIVE.**  
+**Correct record:** [`ATTACK_8_CORRECT_RECORD.md`](./ATTACK_8_CORRECT_RECORD.md)
+
+## Retired false claims (screenshot correction)
+
+| Claim | Verdict |
+|-------|---------|
+| “The kill lane is closed” | **FALSE.** Failure to find a numerical counterexample does **not** close falsification. |
+| “Amplitude or frequency makes the ratio smaller” | **FALSE for \(\mathcal R_\star\).** Concerns an older non-optimized budget. Correct \(\mathcal R_\star\) is **exactly invariant** under amplitude and uniform Fourier dilation. |
 
 ## Canonical form: shape statement (exact lock)
 
@@ -33,7 +42,7 @@ T_c=M-\Lambda N=\sum\lambda_k(\lambda_k-\Lambda)T_k,
 \]
 the **canonical ★** asserts one geometric constant \(C_{\mathrm{geom}}\) such that
 \[
-\bigl(T_c(v)\bigr)^2
+\bigl(T_c(v)_+\bigr)^2
 \le
 C_{\mathrm{geom}}\,
 \mathcal{D}_s(v)\,
@@ -45,9 +54,13 @@ Complete quotient (scripts: `ratio_R_star` / `ratio_R_star_shape`):
 \[
 \mathcal{R}_\star(v)
 =
-\frac{(T_c(v))^2}{\mathcal{D}_s(v)\,\|v\|_2^2\,Y(v)}
+\frac{(T_c(v)_+)^2}{\mathcal{D}_s(v)\,\|v\|_2^2\,Y(v)}
 \quad(\mathcal{D}_s>0).
 \]
+
+**\((T_c)_+\) vs prior \(T_c^2\):** when \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Kill cares about stretching \(T_c>0\).
+
+**Numerics hygiene:** do not compare \(0.065\), \(0.073\), \(1.93\times10^{-3}\) unless each used this exact formula.
 
 Sign check identity (code-locked):
 \[
@@ -61,7 +74,7 @@ Two-shell closed form (search harness + unit tests):
 
 If \(\sup_v\mathcal R_\star<\infty\), that supremum **is** ★ (up to \(4\theta\)). A finite list of small-\(\mathcal R_\star\) fields is **not** that number.
 
-**Caution:** HH→L can identify a mechanism; only **complete signed** \(T_c\) enters the ★ kill criterion.
+**Caution:** HH→L can identify a mechanism; only **complete signed** \(T_c\) (total, not favorable HH→L-only) enters the ★ kill criterion.
 
 ### Equivalent viscosity packaging (derived, not primary)
 
@@ -71,17 +84,17 @@ T_c\le\theta\nu\mathcal D_s+C_0\nu^{-1}\|v\|_2^2\,Y
 \]
 with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 
-**\(u=av\):** worst size cancels \(\nu\); \(\mathcal R_\star(av)=\mathcal R_\star(v)\). If the shape line holds for every \(v\) with one \(C_{\mathrm{geom}}\), original ★ holds for every amplitude and every \(\nu\). If it fails for even one shape, ★ is false.
+**Invariants:** \(\mathcal R_\star(av)=\mathcal R_\star(v)\); \(\mathcal R_\star(v(n\cdot))=\mathcal R_\star(v)\).
 
 ## Live kill criteria (shape)
 
 | Criterion | Meaning |
 |-----------|---------|
 | \(\mathcal R_\star(v_n)\to\infty\) on some smooth family | no finite \(C_{\mathrm{geom}}\) → **★ dead** |
-| \(\mathcal D_s=0\) and \(T_c\neq 0\) | **★ dead** on that field |
+| \(\mathcal D_s=0\) and \(T_c>0\) | **★ dead** on that field |
 | Pure single shell (\(T_c=0=\mathcal D_s\)) | both sides vanish — **not** a kill |
-| Almost-single-shell / near two-shell with \(\mathcal D_s\to0^+\) but \(\mathcal R_\star\to\infty\) (complete \(T_c\)) | **live kill attempt** |
-| Bounded \(\mathcal R_\star\) on a sample list | those shapes did not kill it — **not a proof** of a uniform \(C_{\mathrm{geom}}\) |
+| Almost-single-shell / near two-shell / packet fan (Attack 9) with \(\mathcal R_\star\to\infty\) | **LIVE kill attempt** |
+| Bounded \(\mathcal R_\star\) on a sample list | those shapes did not kill it — **not a proof**; kill lane still **LIVE** |
 
 ## What is proved / killed / open
 
@@ -91,28 +104,32 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | K=0 form \(T_c\le\theta\nu\mathcal D_s\) | **KILLED** | Attack 2: \(\lvert T_c\rvert/\mathcal D_s\sim B\) on fixed-shape high triad |
 | Young reduction of \(T_c\) toward a norm of \(B(v,v)\) | **Partial / formal** | Polarization exists; does not close 3D product gap |
 | \(\lvert T_c\rvert\le C\|v\|_2 X^{3/2}\) (or equiv) by Agmon/product | **GAP — does not close** | HH→L bottleneck (Attack 3); HH is diagnostic only |
-| Uniform geometric \(C_{\mathrm{geom}}\) / \(C_0\) for Lemma★ (shape form) | **OPEN — survives numeric kill drill** | Attack 5 prior: \(\max\mathcal R_\star\approx0.0227\). Near-shell+HH→L harness (complete signed \(T_c\), two-shell \(\mathcal D_s\)): \(n=261\), \(\max\mathcal R_\star\approx2.3\cdot10^{-4}\), `kill_Ds0_nonzero_Tc=0`, verdict `SURVIVE_numeric_gap_remains`. Finite sample max is **not** a proof |
+| Uniform geometric \(C_{\mathrm{geom}}\) / \(C_0\) for Lemma★ (shape form) | **OPEN — kill lane LIVE** | Sample maxes (shape★ formula only) are **not** a proof and **do not** close falsification |
 | Formula lock (linear / \(\mathcal D_s\) / \(T_c\) / \(\mathcal R_\star\) / \(\Lambda'\)) | **LOCKED in docs + unit tests** | `LEMMA_STAR_SHAPE_FORM.md`; `tests/test_ns_attacks_lemma_star.py` |
-| Amplitude-invariant \(C_*\) for \(X^{3/2}\Lambda\) remainder | **OPEN (numeric support)** | Attack 2 / Attack 5 survivors |
+| Attack 8 correct record | **CORRECT RECORD** | Kill lane LIVE; \(\mathcal R_\star\) invariants; \((T_c)_+\) |
+| Attack 9 packet fan \(\gamma\) | **LIVE** | `attack9_packet_fan.py` / `ATTACK_9_PACKET_FAN.md` |
 
 ## What a proof would have to be
 
 Reason from how **signed** triads add that stretching cannot get large unless spectrum also spreads or phases cancel. HH→L is the channel that could refuse that. **That reason is NOT written.** Until it is mathematics (not numerics), **do not claim global regularity.** **NS not solved.**
 
-## Live door (unchanged in substance)
+## Live door
 
-1. **Prove** the boxed shape inequality (uniform \(C_{\mathrm{geom}}\) / \(\sup\mathcal R_\star<\infty\)), or the weaker \(C_* X^{3/2}\Lambda\) bound; **or**
-2. **Kill** by exhibiting a smooth shape family with \(\mathcal R_\star\to\infty\) (esp. almost-single-shell / near two-shell) using **complete** \(T_c\); **or**
+1. **Prove** the boxed shape inequality (uniform \(C_{\mathrm{geom}}\) / \(\sup\mathcal R_\star<\infty\)); **or**
+2. **Kill** by exhibiting a smooth shape family with \(\mathcal R_\star\to\infty\) (Attack 9 packet fan: sustained \(\gamma>0\); almost-single-shell) using **complete** \(T_c\); **or**
 3. Upgrade centering cancellation beyond \(T_c=M-\Lambda N\) to remove the dangerous HH→L piece.
+
+## Archive (NOT Lemma★)
+
+Route N / Q6 / LP-shell floors: [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_Q6_SHELL/), [`../ARCHIVE_NOT_LEMMA_STAR.md`](../ARCHIVE_NOT_LEMMA_STAR.md). Ledgers stay linked, labeled **NOT Lemma★**.
 
 ## Related files
 
 - `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md` — **canonical exact formulas**
+- `docs/math/ns_attacks/ATTACK_8_CORRECT_RECORD.md`
+- `docs/math/ns_attacks/ATTACK_9_PACKET_FAN.md`
 - `docs/math/ns_attacks/ATTACK_SYNTHESIS_SIMULTANEOUS.md`
-- `docs/math/ns_attacks/DA-SHAPE-TEXTURE-LINK.md`
-- `scripts/ns_attacks/stokes_moments.py` — Galerkin moments / \(T_c\) / \(\mathcal R_\star\)
-- `scripts/ns_attacks/lemma_star_near_shell_search.py` — near-shell + HH→L harness
-- `scripts/ns_attacks/attack5_route2_kill.py`
+- `scripts/ns_attacks/stokes_moments.py`
+- `scripts/ns_attacks/attack9_packet_fan.py`
 - `tests/test_ns_attacks_lemma_star.py`
-- `/opt/cursor/artifacts/ns_five_lane_2026-09-10/`
-- `/opt/cursor/artifacts/lemma_star_formula_lock/` — formula-lock walkthrough
+- `/opt/cursor/artifacts/attack9_packet_fan/`
