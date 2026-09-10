@@ -10,8 +10,8 @@
 | Item | Value |
 |------|-------|
 | Branch | `cursor/ns-five-lane-lemma-star-1390` |
-| Tip commit | `45372d27679d9aea576f5ab6d3792f558ac2766f` (refined full Lemma★ SoT); prior full lock `b20d9aa` / locator `b1f2a78` |
-| Tip subject | SoT: refined full canonical Lemma★ (bound OPEN; triad formulas) |
+| Tip commit | `8b6cd097ae5228d4287f166690d79ae49da61347` (CANONICAL alias + locator); SoT `45372d27679d9aea576f5ab6d3792f558ac2766f` |
+| Tip subject | Add LEMMA_STAR_CANONICAL alias pointer; refresh locator tip |
 | Remote | `origin/cursor/ns-five-lane-lemma-star-1390` |
 | GitHub PR | **https://github.com/simons357/Ship_it_app/pull/48** |
 | PR title | Five-lane Lemma★ drill: K=0 dead, ★ survives numeric |
@@ -187,6 +187,7 @@ Pointers:
 
 ### Docs — SoT pack (`/workspace/docs/math/ns_attacks/`)
 - `/workspace/docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`
+- `/workspace/docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md` (alias → shape form)
 - `/workspace/docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`
 - `/workspace/docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md`
 - `/workspace/docs/math/ns_attacks/ATTACK_SYNTHESIS_SIMULTANEOUS.md`
