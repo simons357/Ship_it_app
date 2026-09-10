@@ -101,4 +101,4 @@ H1 on the cylinder remains the other live track if the packet line is shelved. T
 |---|---|
 | User note 10 Sep 2026 | Packet vs AP; \(\mathcal R_\star\) values; heuristic false; kill criterion; NS not solved |
 | This agent, independent | \(r_3\) counts; 48 and 288 mixed closures; \(O(m)\) vs \(O(m^2)\); \(d=2\) zeros on the listed shells; two-mass \(D_s=\Theta(n)\) |
-| Not done | No invented \(\mathfrak T_c\) formula; no \(\mathcal R_\star\) recompute; no NS claim; no H1-cylinder write |
+| Not done | No \(\mathcal R_\star\) recompute of \(0.11\to 0.031\); no NS claim; no H1-cylinder write. Formula lock now lives in the five-lane pack. |
