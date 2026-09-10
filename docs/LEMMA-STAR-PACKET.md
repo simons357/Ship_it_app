@@ -49,6 +49,20 @@ Two-key vs two-shell check, as corrected:
 
 ---
 
+## Diagnosis
+
+The wide AP packet made \(T_c\) grow, but \(\mathcal D_s\)
+grew faster, so the \(O(1)\) denominator heuristic failed.
+
+A near-shell (narrow) packet is the next construction:
+keep \(|e_{\mathrm{packet}}|/|k_0|\) small so \(\mathcal D_s\)
+can stay \(O(1)\). If \(\mathcal R_\star\) then grows like
+\(m\), the heuristic is live. If \(\mathcal D_s\) still
+outruns \(T_c\), or the packet leaves the shell as \(m\)
+grows, that construction is not a kill.
+
+---
+
 ## Score
 
 **Wide AP** (\(p_0=(5,2,1)\), \(q_0=(-3,1,1)\)). \(T_c\)
@@ -59,9 +73,9 @@ at \(m=16\)). Random phases sit near zero. Not a kill.
 
 **Narrow AP** (carrier \(\sim 32\), same step, so
 \(|e_{\mathrm{packet}}|/|k_0|\) starts small). Denominator
-stays flatter. \(\mathcal R_\star\) grew through \(m=12\)
-then rolled over as the packet width ceased to be small
-compared with \(|k_0|\):
+stays flatter while \(m\ll|k_0|\). \(\mathcal R_\star\)
+grew through \(m=12\) then rolled over as the packet width
+ceased to be small compared with \(|k_0|\):
 
 | \(m\) | \(\mathcal R_\star\) (narrow) |
 |---|---|

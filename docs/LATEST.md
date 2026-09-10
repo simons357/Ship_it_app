@@ -59,9 +59,12 @@ Three-key (Attack 8): two Fourier keys
 Tc=0; two shells can be live. Isolated
 triad did not kill ★.
 docs/LEMMA-STAR-E.md
-Packets (Attack 9): heuristic R★ ~ m if
-Ds Y stays O(1). Live target still a
-growing coherent packet or HH→L fan.
+Packets (Attack 9): wide AP made Tc grow,
+but Ds grew faster, so the O(1)
+denominator failed. Narrow packet is
+the near-shell test of that heuristic.
+Live target still a growing coherent
+packet or HH→L fan.
 docs/LEMMA-STAR-PACKET.md
 Attack 6: uniform pre-Young C dead
 (|R_pre| ~ s). That is not ★ dying.
