@@ -36,7 +36,9 @@ Vitali. 3 NSE forbids 2’s alternatives on
 [`H1-OBJECT.md`](H1-OBJECT.md). Literature:
 H1 is not under another name
 ([`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md) §14).
-Do not emit H1.
+Lookups (yes/no, for Grok or a library):
+[`LOOKUP-H1.md`](LOOKUP-H1.md). Five questions.
+A hit is a theorem. A miss is another if.
 
 ---
 
