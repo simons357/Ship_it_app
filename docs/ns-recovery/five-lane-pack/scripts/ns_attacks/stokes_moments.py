@@ -15,7 +15,7 @@ Exact lock (see docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md):
   Z = ||A^{3/2}v||_2^2 = sum λ_k^3 |v_k|^2
   Λ = Y/X
 
-  Ds = Z − Λ Y = Z − Y^2/X
+  Ds = Z − Λ Y = Z − Y^2/X = ||(A−Λ) A^{1/2} v||_2^2
      = sum λ_k (λ_k−Λ)^2 |v_k|^2
      = (1/(2X)) sum_{k,ℓ} λ_k λ_ℓ (λ_k−λ_ℓ)^2 |v_k|^2 |v_ℓ|^2
   Two shells α,β with energies e_α,e_β:
@@ -27,27 +27,22 @@ Exact lock (see docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md):
         (SIGNED Im — never abs)
   N = −⟨B,Av⟩ = sum λ_k T_k
   M = −⟨AB,Av⟩ = sum λ_k^2 T_k
-  Tc = M − Λ N = sum λ_k (λ_k−Λ) T_k
+  Tc = −⟨B, A(A−Λ)v⟩ = M − Λ N = sum λ_k (λ_k−Λ) T_k
      = sum_{p+q=k} λ_k (λ_k−Λ) Im[(q·v_p)(v_q·conj(v_k))]
+
+  If Ds=0 then the field is one shell and Tc=0 (not a kill).
 
   Sign check: Λ' = 2/X (Tc − ν Ds)
 
   R_★(v) = (Tc)_+^2 / (Ds · ||v||_2^2 · Y)   (amp-, dilation-, and ν-invariant)
-  where (Tc)_+ = max(Tc, 0). When Tc ≥ 0, (Tc)_+^2 = Tc^2.
-  For kill we care about stretching Tc > 0.
-  code: ratio_R_star_shape  (alias ratio_R_star)
 
-Lemma★ — CANONICAL SHAPE FORM (OPEN; NS not solved):
+Lemma★ — FULL SHAPE FORM (OPEN; NS not solved):
   (Tc(v)_+)^2 ≤ C_geom · Ds(v) · ||v||_2^2 · Y(v)
+  C_geom depends only on geometry/normalization — not amplitude, support, shells, or ν.
+  K_{α,β} tests only a restricted near-shell family, not the full lemma.
 
-Kill criteria (shape): R_★ → ∞ on a family; or Ds=0 with Tc>0.
-Failure to find a numerical counterexample does NOT close the kill lane —
-falsification and proof both remain LIVE.
-Pure single shell (Tc=0=Ds) is vacuous. Live attempt: almost-single-shell /
-coherent packet growth (Attack 9).
-HH→L can identify mechanism; only complete signed Tc kills ★.
-Amplitude and uniform Fourier dilation leave R_★ exactly invariant
-(do NOT claim they make the ratio smaller — that was an older non-optimized budget).
+Kill: R_★ → ∞ on a family. Ds=0 is vacuous (Tc=0).
+Failure to find a numerical counterexample does NOT close the kill lane.
 """
 
 from __future__ import annotations
@@ -235,8 +230,29 @@ def moments(field: Field) -> Dict[str, float]:
     }
 
 
+def Ds_operator_norm(field: Field, Lambda: float | None = None) -> float:
+    """Ds = ||(A−Λ) A^{1/2} v||_2^2. Same as Ds_variance_sum."""
+    return Ds_variance_sum(field, Lambda)
+
+
+def Tc_from_operator_inner(field: Field, Lambda: float | None = None) -> float:
+    """Tc = −⟨B(v,v), A(A−Λ)v⟩ (real L2 inner product)."""
+    if Lambda is None:
+        Lambda = moments(field)["Lambda"]
+    Buu = nonlinear_B(field)
+    Tc = 0.0
+    for k, vk in field.items():
+        lam = k_norm2(k)
+        if lam == 0:
+            continue
+        bk = Buu.get(k, np.zeros(3, dtype=np.complex128))
+        w = lam * (lam - Lambda) * vk
+        Tc += -float(np.dot(bk, np.conjugate(w)).real)
+    return Tc
+
+
 def Ds_variance_sum(field: Field, Lambda: float | None = None) -> float:
-    """Ds = sum_k λ_k (λ_k − Λ)^2 |v_k|^2."""
+    """Ds = sum_k λ_k (λ_k − Λ)^2 |v_k|^2 = ||(A−Λ)A^{1/2}v||_2^2."""
     if Lambda is None:
         Lambda = moments(field)["Lambda"]
     s = 0.0

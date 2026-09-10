@@ -21,6 +21,7 @@ Attack 8 is the **canonical status record** for Lemma★ after the shape-form lo
 3. **Positive part.** User form uses \((T_c)_+\). Prior Galerkin code used \(T_c^2\). Alignment: when \(T_c\ge 0\), \((T_c)_+^2=T_c^2\); for kill we care about stretching \(T_c>0\). Code now uses \((T_c)_+\).
 4. **Numerics hygiene.** Do **not** compare reported values \(0.065\), \(0.073\), \(1.93\times10^{-3}\) unless each used exactly the \(\mathcal R_\star\) formula above.
 5. **Archive separation.** LP-shell direction estimates, Route N, Q6 damping, and numerical shell floors through \(M=256\) do **not** establish Lemma★. See [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_Q6_SHELL/) and [`../ARCHIVE_NOT_LEMMA_STAR.md`](../ARCHIVE_NOT_LEMMA_STAR.md).
+6. **Full lemma vs \(K_{\alpha,\beta}\).** The lemma is the uniform bound on \(\mathcal R_\star\) over all divergence-free \(v\). Near-shell \(K_{\alpha,\beta}\) tests only a restricted \(\varepsilon\to0\) family. A bounded \(K\) sample is not ★; an unbounded \(K\) on that family would still kill ★.
 
 ## What Attack 8 is not
 
@@ -31,12 +32,12 @@ Attack 8 is the **canonical status record** for Lemma★ after the shape-form lo
 
 ## Next live kill attempt
 
-[`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md) — designed \(\Theta(m^2)\)-closure subset with locked phases.  
-(9A AP fan and 9C fixed-gap natural ensemble did **not** kill ★; 9B sample \(K\) finite — kill lane still **LIVE**.)
+[`LEMMA_STAR_FULL.md`](./LEMMA_STAR_FULL.md) is the full statement.  
+[`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md) — growing I/O (fixed-output \(\Theta(m^2)\) excluded). \(K_{\alpha,\beta}\) is a restricted family, not the lemma.
 
 ## Related
 
-- [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md)
+- [`LEMMA_STAR_FULL.md`](./LEMMA_STAR_FULL.md)
 - [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md)
 - [`ATTACK_SYNTHESIS_SIMULTANEOUS.md`](./ATTACK_SYNTHESIS_SIMULTANEOUS.md)
 - [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md)

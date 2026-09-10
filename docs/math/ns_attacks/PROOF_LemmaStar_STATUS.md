@@ -91,9 +91,8 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | Criterion | Meaning |
 |-----------|---------|
 | \(\mathcal R_\star(v_n)\to\infty\) on some smooth family | no finite \(C_{\mathrm{geom}}\) → **★ dead** |
-| \(\mathcal D_s=0\) and \(T_c>0\) | **★ dead** on that field |
-| Pure single shell (\(T_c=0=\mathcal D_s\)) | both sides vanish — **not** a kill |
-| Almost-single-shell / near two-shell / exact-shell+closing (9B) with \(\mathcal R_\star\to\infty\) or \(K_{\alpha,\beta}\to\infty\) | **LIVE kill attempt** (sample finite) |
+| \(D_s=0\) | one shell and \(T_c=0\) — **not a kill** |
+| Almost-single-shell / near two-shell / exact-shell+closing (9B) with \(\mathcal R_\star\to\infty\) or \(K_{\alpha,\beta}\to\infty\) | **LIVE kill attempt** on a **restricted** family (sample finite); not the full lemma |
 | AP / coherent packet fan (Attack 9A) | **Did not kill ★** — \(\mathcal D_s\) grew faster than \(T_c\) |
 | Fixed-gap spheres \(n,n+d\) (Attack 9C) | **Did not kill ★** — \(\mathcal R_\star\) falls \(0.11\to 0.031\); natural same-shell **NOT** a kill |
 | Designed \(\Theta(m^2)\) onto **fixed** outputs (old 9D screenshot) | **EXCLUDED** — counting \(q=k-p\); \(K\le 16s\) |
@@ -133,7 +132,8 @@ Route N / Q6 / LP-shell floors: [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_
 
 ## Related files
 
-- `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md` — **canonical exact formulas**
+- `docs/math/ns_attacks/LEMMA_STAR_FULL.md` — **full lemma (operator form)**
+- `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md` — Fourier expansions
 - `docs/math/ns_attacks/ATTACK_8_CORRECT_RECORD.md`
 - `docs/math/ns_attacks/ATTACK_9_PACKET_FAN.md`
 - `docs/math/ns_attacks/ATTACK_9A_AP_PACKET_FAILURE.md`

@@ -54,9 +54,10 @@ Z=\sum_k \lambda_k^3\,|v_k|^2,
 
 ## Spectral spread \(D_s\) — three equivalent forms
 
-**Form 1 (moment difference):**
+**Form 1 (moment / operator):**
 \[
-D_s = Z-\Lambda Y = Z-\frac{Y^2}{X}.
+D_s = Z-\Lambda Y = Z-\frac{Y^2}{X}
+=\bigl\|(A-\Lambda)A^{1/2}v\bigr\|_2^2.
 \]
 
 **Form 2 (weighted variance):**
@@ -83,7 +84,7 @@ D_s
 \]
 (Equals Form 1–3 on that two-shell support.)
 
-Pure single shell: \(D_s=0\). Pure single shell with vanishing stretch is **not** a kill (both sides of the shape inequality vanish). Live kill = almost-single-shell that still stretches (\(D_s\to 0\) with \(T_c>0\)).
+Pure single shell: \(D_s=0\) and \(T_c=0\) identically (\(A(A-\Lambda)v=0\)). **Not a kill.** Almost-single-shell (\(D_s\to 0^+\) with stretching) is a restricted-family test, not the full lemma.
 
 ---
 
@@ -108,8 +109,10 @@ Weighted sums:
 N=\sum_k \lambda_k\, T_k,
 \qquad
 M=\sum_k \lambda_k^2\, T_k,
-\qquad
-T_c=M-\Lambda N=\sum_k \lambda_k\bigl(\lambda_k-\Lambda\bigr)\,T_k.
+\]
+\[
+T_c=-\bigl\langle B(v,v),\,A(A-\Lambda)v\bigr\rangle
+=M-\Lambda N=\sum_k \lambda_k\bigl(\lambda_k-\Lambda\bigr)\,T_k.
 \]
 
 ### Expanded ordered triad (\(p+q=k\))
@@ -161,10 +164,9 @@ Positive part: \(T_c_+=\max(T_c,0)\). If \(T_c\le 0\), then \(\mathcal R_\star=0
 
 | Rule | Meaning |
 | --- | --- |
-| \(\sup_v \mathcal R_\star=\infty\) | no finite \(C_0\) → ★ **dead** |
-| \(D_s=0\) and \(T_c>0\) | ★ **dead** on that field |
-| Pure single shell, both vanish | **not** a kill |
-| Almost-single-shell that stretches | **live kill** |
+| \(\sup_v \mathcal R_\star=\infty\) | no finite \(C_{\mathrm{geom}}\) → ★ **dead** |
+| \(D_s=0\) | one shell, \(T_c=0\) — **not** a kill |
+| Almost-single-shell / \(K_{\alpha,\beta}\) | restricted-family test, **not** the full lemma |
 | Finite small \(\mathcal R_\star\) samples | **≠** uniform bound (evidence only) |
 
 ---

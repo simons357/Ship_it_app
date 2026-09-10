@@ -46,7 +46,8 @@ Natural same-shell (9C), AP fan (9A), and finite 9B \(K_{\alpha,\beta}\) samples
 
 ## Canonical formulas (locked)
 
-Source of lock: `five-lane-pack/docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`  
+Source of lock: `docs/math/ns_attacks/LEMMA_STAR_FULL.md` (full operator statement)  
+Fourier expansions: `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`  
 Same formulas: `five-lane-pack/docs/ns-review/LEMMA-STAR-EXACT-FORMULAS.md`  
 Code: `five-lane-pack/scripts/ns_attacks/stokes_moments.py`
 
@@ -61,7 +62,7 @@ Z=\sum\lambda_k^3|v_k|^2,\quad
 \]
 
 \[
-\mathcal D_s=Z-\Lambda Y=Z-Y^2/X=\sum_k\lambda_k(\lambda_k-\Lambda)^2|v_k|^2\ge0.
+\mathcal D_s=Z-\Lambda Y=Z-Y^2/X=\|(A-\Lambda)A^{1/2}v\|_2^2=\sum_k\lambda_k(\lambda_k-\Lambda)^2|v_k|^2\ge0.
 \]
 
 Two-shell closed form:
@@ -78,7 +79,8 @@ N=\sum\lambda_k T_k,\quad
 M=\sum\lambda_k^2 T_k,
 \]
 \[
-T_c=M-\Lambda N=\sum_k\lambda_k(\lambda_k-\Lambda)T_k.
+T_c=-\bigl\langle B(v,v),\,A(A-\Lambda)v\bigr\rangle
+=M-\Lambda N=\sum_k\lambda_k(\lambda_k-\Lambda)T_k.
 \]
 
 Sign check: \(\Lambda'=2(T_c-\nu\mathcal D_s)/X\).
@@ -96,7 +98,7 @@ Boxed ★:
 \bigl(T_c(v)_+\bigr)^2\le C_{\mathrm{geom}}\,\mathcal D_s(v)\,\|v\|_2^2\,Y(v).
 \]
 
-Exact invariance: \(\mathcal R_\star(av)=\mathcal R_\star(v)\) and \(\mathcal R_\star(v(n\cdot))=\mathcal R_\star(v)\). Claims that amplitude or frequency make “the ratio” smaller concern **older budgets**, not \(\mathcal R_\star\).
+The constant depends only on geometry and normalization — not amplitude, support, shell count, or \(\nu\). \(K_{\alpha,\beta}\) tests only a restricted near-shell family.
 
 Derived Young packaging (not primary):
 \[
@@ -213,7 +215,8 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 | **This file** | Grok Heavy entry |
 | [`SOT.md`](SOT.md) | Packet source of truth |
 | [`five-lane-pack/HIT.md`](five-lane-pack/HIT.md) | Pack index / PR pointers |
-| [`five-lane-pack/docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`](five-lane-pack/docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md) | **Canonical exact formulas** |
+| [`docs/math/ns_attacks/LEMMA_STAR_FULL.md`](../math/ns_attacks/LEMMA_STAR_FULL.md) | **Full lemma (operator form)** |
+| [`docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`](../math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md) | Fourier expansions |
 | [`five-lane-pack/docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md`](five-lane-pack/docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md) | Status board |
 | [`five-lane-pack/docs/math/ns_attacks/ATTACK_SYNTHESIS_SIMULTANEOUS.md`](five-lane-pack/docs/math/ns_attacks/ATTACK_SYNTHESIS_SIMULTANEOUS.md) | Lane board |
 | [`five-lane-pack/docs/math/ns_attacks/ATTACK_8_CORRECT_RECORD.md`](five-lane-pack/docs/math/ns_attacks/ATTACK_8_CORRECT_RECORD.md) | Kill lane LIVE; ratio invariants |
@@ -282,13 +285,12 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 | Outcome | Verdict |
 |---|---|
 | Some shapes make \(\mathcal R_\star\) arbitrarily large | no finite \(C_{\mathrm{geom}}\) → **★ dead** |
-| \(\mathcal D_s=0\) and \(T_c>0\) | **★ dead** on that field |
-| Pure single shell, \(T_c=0=\mathcal D_s\) | vacuous — not a kill |
-| Bounded samples of \(\mathcal R_\star\) | those shapes did not kill it — **not a proof** |
+| \(D_s=0\) | one shell, \(T_c=0\) — **not a kill** |
+| Bounded samples of \(\mathcal R_\star\) or of \(K_{\alpha,\beta}\) | those shapes did not kill it — **not a proof**; \(K\) is not the lemma |
 | 9A AP / 9C natural same-shell | **not kills** |
 | 9B finite \(\max K\approx0.641\) | **not a kill**; kill lane still LIVE |
-| 9D \(\mathcal R_\star\to\infty\) on designed locked-phase family | **★ dead** |
-| 9D bounded/decaying on that family | those shapes did not kill ★ — still not a proof |
+| 9D \(\mathcal R_\star\to\infty\) or \(C_{\mathrm{obs}}\to\infty\) on growing I/O | **★ dead** on that family |
+| 9D bounded on that family | not a proof |
 
 **K=0** form \(T_c\le\theta\nu\mathcal D_s\): **DEAD** (Attack 2 amplitude scaling).
 

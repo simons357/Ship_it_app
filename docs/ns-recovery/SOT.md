@@ -5,6 +5,8 @@
 
 Navier–Stokes is **not solved**. The uniform triadic bound is **open**.
 
+**Full lemma (operator form, OPEN):** [`docs/math/ns_attacks/LEMMA_STAR_FULL.md`](../math/ns_attacks/LEMMA_STAR_FULL.md). \(K_{\alpha,\beta}\) is a restricted near-shell test, not the lemma.
+
 ---
 
 ## Locked

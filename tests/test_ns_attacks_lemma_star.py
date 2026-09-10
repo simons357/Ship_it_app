@@ -11,11 +11,13 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from ns_attacks.stokes_moments import (
     Ds_double_sum,
+    Ds_operator_norm,
     Ds_two_shell,
     Ds_variance_sum,
     Lambda_prime_from_XY,
     Lambda_prime_rhs,
     Tc_from_B_field,
+    Tc_from_operator_inner,
     Tc_from_triads,
     dilate_field,
     enforce_reality,
@@ -40,6 +42,7 @@ def test_Ds_nonnegative_and_equivalent_forms():
     assert abs(m["Ds"] - expect) < 1e-9
     assert abs(m["Ds"] - Ds_variance_sum(f)) < 1e-9
     assert abs(m["Ds"] - Ds_double_sum(f)) < 1e-8
+    assert abs(m["Ds"] - Ds_operator_norm(f)) < 1e-9
 
 
 def test_Ds_two_shell_closed_form():
@@ -62,6 +65,41 @@ def test_Lambda_prime_sign_convention_identity():
         rhs = Lambda_prime_rhs(r.Tc, r.Ds, r.X, nu)
         assert math.isfinite(lhs) and math.isfinite(rhs)
         assert abs(lhs - rhs) < 1e-10 * max(1.0, abs(rhs))
+
+
+def test_Tc_equals_operator_inner_product():
+    """Tc = −⟨B, A(A−Λ)v⟩ matches triad / M−ΛN forms."""
+    f = high_triad_field(amp=1.4, phases=(0.2, -0.5, 0.7))
+    r = probe(f)
+    inner = Tc_from_operator_inner(f)
+    tri = Tc_from_triads(f)
+    assert abs(inner - r.Tc) < 1e-8 * max(1.0, abs(r.Tc))
+    assert abs(inner - tri) < 1e-8 * max(1.0, abs(tri))
+
+
+def test_single_shell_Ds_zero_implies_Tc_zero():
+    """Ds=0 ⇒ one shell and Tc=0. Not a kill."""
+    from ns_attacks.attack9b_exact_shell_K import (
+        build_exact_shell_field,
+        normalize_field,
+        shells_up_to,
+    )
+
+    modes = shells_up_to(4)[5]
+    rng = np.random.default_rng(1390)
+    n = len(modes)
+    w = normalize_field(
+        build_exact_shell_field(
+            modes,
+            rng.uniform(0.4, 1.2, size=n),
+            rng.uniform(0, 2 * np.pi, size=n),
+            rng.uniform(0, 2 * np.pi, size=n),
+        )
+    )
+    r = probe(w)
+    assert abs(r.Ds) < 1e-10
+    assert abs(r.Tc) < 1e-10
+    assert abs(Tc_from_operator_inner(w)) < 1e-10
 
 
 def test_R_star_invariant_under_amplitude_scaling():
