@@ -26,6 +26,7 @@
 | Role | Absolute path |
 |------|----------------|
 | **Canonical defs (Lemma★ shape form)** | `/workspace/docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md` |
+| **Canonical filename alias** | `/workspace/docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md` → shape form |
 | **Exact triad / spectral formulas** | `/workspace/docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md` |
 | **Status board** | `/workspace/docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md` |
 | **Code lock (moments / \(T_c\) / \(\mathcal R_\star\))** | `/workspace/scripts/ns_attacks/stokes_moments.py` |
