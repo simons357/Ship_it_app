@@ -36,11 +36,7 @@ Human: Jonathan Simons (`winchester.anesthesia@gmail.com` / `simonsmedical@iclou
 
 Live work, in order:
 
-1. **Attack 9D (remaining packet falsifier):** build a **designed** two-shell subset with \(\Theta(m^2)\) closures **and locked phases**; compute complete
-   \[
-   \mathcal R_\star(v)=\frac{(T_c(v)_+)^2}{\mathcal D_s(v)\,\|v\|_2^2\,Y(v)}
-   \]
-   and see whether it tracks \(m\) (or otherwise \(\to\infty\)). Spec: `five-lane-pack/docs/math/ns_attacks/ATTACK_9D_THETA_M2_LOCKED_PHASE.md`. Script **does not exist yet**.
+1. **Attack 9D (retargeted):** growing input **and** output supports, full complex polarizations, frequency factors retained. Uniform 9B target \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}\|w\|_2^2\). Fixed-output \(\Theta(m^2)\) is **excluded** (\(K\le 16s\)). Spec: `docs/math/ns_attacks/ATTACK_9D_THETA_M2_LOCKED_PHASE.md`. Exclusion: `docs/math/ns_attacks/ATTACK_9B_COUNTING_CS_EXCLUSION.md`.
 2. **Lemma★ proof:** write the triadic reason that stretching cannot outrun spectral spread. HH→L is the dangerous channel. That reason is **not written**.
 3. **Optional other track:** H1 on the cylinder — **not started**. Do not start it unless the packet line is shelved.
 

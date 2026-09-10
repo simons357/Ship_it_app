@@ -81,7 +81,7 @@ amplifies small lattice eigenvalue gaps.
 **Attack 9C** — fixed-gap spheres \(n\) and \(n+d\): \(\mathcal{D}_s\) from the **gap** (not packet width); natural closures only \(O(m)\); \(\mathcal{R}_\star\) **falls** with \(n\) (\(0.11\to 0.031\)), does **not** track \(m^{1/2}\). Natural same-shell ensemble is **NOT** a kill.  
 Doc: [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md) (SoT-only until a probe script exists).
 
-**Next falsifier (9D):** designed \(\Theta(m^2)\)-closure subset with **locked phases** — [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md).
+**Next falsifier (9D, retargeted):** growing input **and** output supports with complex polarizations. Fixed-output \(\Theta(m^2)\) is **excluded** (\(K\le 16s\)) — [`ATTACK_9B_COUNTING_CS_EXCLUSION.md`](./ATTACK_9B_COUNTING_CS_EXCLUSION.md), [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md).
 
 ## Required controls
 
@@ -123,4 +123,4 @@ Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/` (`attack9b.json`, `HEAD
 
 ## Next
 
-[`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md) → [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md).
+[`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md) → [`ATTACK_9B_COUNTING_CS_EXCLUSION.md`](./ATTACK_9B_COUNTING_CS_EXCLUSION.md) → [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md).

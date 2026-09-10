@@ -37,7 +37,8 @@ When \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Kill cares about stretching \(T_c>0\).
 | **9A Packet fan** | `attack9_packet_fan.py` | **Did not kill ★** — \(\gamma\approx-1.39\) | \(\mathcal D_s\) grew faster than \(T_c\); \(D_s\|v\|_2^2 Y=O(1)\) **false** for AP family |
 | **9B Exact-shell \(K_{\alpha,\beta}\)** | `attack9b_exact_shell_K.py` | **LIVE** — \(\max K\approx0.641\) at \((4,8)\) | \(\mathcal R_\star\to K\); controls PASS; not a kill; kill lane still LIVE |
 | **9C Fixed-gap spheres** | SoT-only (no probe script yet) | **Did not kill ★** — \(\mathcal R_\star\) \(0.11\to 0.031\) | \(\mathcal D_s\) from **gap**; closures \(O(m)\); does **not** track \(m^{1/2}\); natural same-shell **NOT** a kill |
-| **9D \(\Theta(m^2)\) locked phase** | stub / spec | **LIVE falsifier** (not run) | Designed \(\Theta(m^2)\)-closure subset with locked phases |
+| **9D \(\Theta(m^2)\) onto fixed outputs** | counting + CS | **EXCLUDED** — \(K\le 16s\) | Cannot unbounded-\(K\) at fixed \(s\) |
+| **9D growing I/O** | `attack9d_growing_io.py` | **LIVE test** | Complex pols; \(\alpha/\sqrt{\beta}\) target; not a proof |
 
 ## Attack 9A — failure (truth)
 
@@ -73,10 +74,10 @@ Fixed-gap spheres \(n\) and \(n+d\): \(\mathcal D_s\) from the **gap** (not pack
 Doc: [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md).  
 **Probe:** SoT-only until implemented (no `scripts/ns_attacks/attack9c_*.py` yet).
 
-## Attack 9D — next falsifier (stub)
+## Attack 9D — retarget (fixed-output excluded)
 
-Designed \(\Theta(m^2)\)-closure subset with **locked phases**. Spec only.  
-Doc: [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md).
+Fixed-output \(\Theta(m^2)\) is **analytically excluded** (\(K\le 16s\)). Live test: growing input **and** output supports, complex polarizations, frequency factors retained. Uniform 9B target \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}\|w\|_2^2\).  
+Docs: [`ATTACK_9B_COUNTING_CS_EXCLUSION.md`](./ATTACK_9B_COUNTING_CS_EXCLUSION.md), [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md).
 
 ## Exact inequality still to attack
 

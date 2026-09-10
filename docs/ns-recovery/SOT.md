@@ -22,18 +22,25 @@ The \(O(1)\) gap is available in this model, and that still does not produce \(\
 
 ## Remaining packet falsifier
 
-A **designed** subset of two fixed-gap shells with \(\Theta(m^2)\) closures **and locked phases** — not the full sphere. Until that object is built and \(\mathcal R_\star\) tracks \(m\), the aligned-closure heuristic stays false on the natural ensemble.
+**Fixed-output \(\Theta(m^2)\) 9D is excluded.** For each output \(k\), \(q=k-p\), so at most \(m\) ordered pairs land on that mode. Occupied output count \(s\) on shell \(\beta\) gives \(K_{\alpha,\beta}\le 16s\). A fixed number of outputs cannot produce unbounded \(K\). Note: [`docs/math/ns_attacks/ATTACK_9B_COUNTING_CS_EXCLUSION.md`](../math/ns_attacks/ATTACK_9B_COUNTING_CS_EXCLUSION.md).
 
-Isolated triangles, wide APs, narrow APs, and full adjacent spheres: **no kill**.
+**Still live:** growing **input and output** supports, full complex polarizations, frequency factors retained. Uniform 9B target:
+\[
+\|\Pi_\beta B(w,w)\|_2\le C\frac{\alpha}{\sqrt{\beta}}\|w\|_2^2.
+\]
+A bound \(C\alpha\|w\|_2^2\) is insufficient. Spec: [`docs/math/ns_attacks/ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](../math/ns_attacks/ATTACK_9D_THETA_M2_LOCKED_PHASE.md).
+
+Isolated triangles, wide APs, narrow APs, full adjacent spheres, and fixed-\(s\) designed packets: **no kill**.
 
 ---
 
 ## Do not write
 
 - Do not treat full lattice spheres as an additive basis of density \(\Theta(m^2)\).
+- Do not claim \(\Theta(m^2)\) pairs onto one output, or onto a fixed number of outputs.
 - Do not restore an AP-width \(D_s\) for this construction.
 - Do not claim a uniform triadic bound or Clay regularity from this ensemble.
-- Do not invent a second \(T_c\) formula. Canonical lock: `five-lane-pack/docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`,
+- Canonical lock: `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`,
   \[
   \mathcal R_\star(v)=\frac{(T_c(v)_+)^2}{\mathcal D_s(v)\,\|v\|_2^2\,Y(v)}.
   \]
@@ -56,4 +63,6 @@ H1 on the cylinder is the other live track if the packet line is shelved. It is 
 | `docs/ns-recovery/SAME-SHELL-PACKET-NOTE.md` | Expanded packet note |
 | `docs/ns-recovery/CENTERED-SPECTRAL-DRIFT-MASTER-REPORT.md` | 7 Sep search; Stokes-moment paste was missing until PR #48 |
 | `docs/ns-recovery/GROK_HEAVY.md` | **Grok Heavy entry** — formulas, five-lane JSON, live work |
+| `docs/math/ns_attacks/ATTACK_9B_COUNTING_CS_EXCLUSION.md` | Fixed-output \(\Theta(m^2)\) excluded; \(K\le 16s\) |
+| `docs/math/ns_attacks/ATTACK_9D_THETA_M2_LOCKED_PHASE.md` | Live 9D: growing I/O, complex pols |
 | `docs/ns-recovery/five-lane-pack/` | PR #48 five-lane / Lemma★ pack. Index: `five-lane-pack/HIT.md`. Live: https://github.com/simons357/Ship_it_app/pull/48 |

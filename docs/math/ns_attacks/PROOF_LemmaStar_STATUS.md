@@ -96,7 +96,8 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | Almost-single-shell / near two-shell / exact-shell+closing (9B) with \(\mathcal R_\star\to\infty\) or \(K_{\alpha,\beta}\to\infty\) | **LIVE kill attempt** (sample finite) |
 | AP / coherent packet fan (Attack 9A) | **Did not kill ★** — \(\mathcal D_s\) grew faster than \(T_c\) |
 | Fixed-gap spheres \(n,n+d\) (Attack 9C) | **Did not kill ★** — \(\mathcal R_\star\) falls \(0.11\to 0.031\); natural same-shell **NOT** a kill |
-| Designed \(\Theta(m^2)\) locked-phase closures (Attack 9D) | **LIVE falsifier** (spec; not run) |
+| Designed \(\Theta(m^2)\) onto **fixed** outputs (old 9D screenshot) | **EXCLUDED** — counting \(q=k-p\); \(K\le 16s\) |
+| Growing I/O exact-shell, complex pols (retargeted 9D) | **LIVE test** of \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}\|w\|_2^2\) |
 | Bounded \(\mathcal R_\star\) on a sample list | those shapes did not kill it — **not a proof**; kill lane still **LIVE** |
 
 ## What is proved / killed / open
@@ -113,7 +114,8 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | Attack 9A packet fan \(\gamma\) | **Did not kill ★** — \(\gamma\approx-1.39\) (decaying) | \(\mathcal D_s\|v\|_2^2 Y=O(1)\) false for AP family; see `ATTACK_9A_AP_PACKET_FAILURE.md` |
 | Attack 9B exact-shell \(K_{\alpha,\beta}\) | **LIVE** — sample \(\max K\approx0.641\) at \((4,8)\) | \(\mathcal R_\star\to K\); controls PASS; not a kill; kill lane still LIVE |
 | Attack 9C fixed-gap spheres | **Did not kill ★** — \(\mathcal R_\star\) \(0.11\to 0.031\) | \(\mathcal D_s\) from gap; closures \(O(m)\); does not track \(m^{1/2}\); SoT-only until probe |
-| Attack 9D \(\Theta(m^2)\) locked phase | **LIVE falsifier** (stub) | Designed \(\Theta(m^2)\)-closure subset with locked phases |
+| Attack 9D fixed-output \(\Theta(m^2)\) | **EXCLUDED** — \(K\le 16s\) | Counting + CS; cannot unbounded-\(K\) at fixed \(s\) |
+| Attack 9D growing I/O | **LIVE** (probe) | Complex polarizations; uniform target \(\alpha/\sqrt{\beta}\) |
 
 ## What a proof would have to be
 
@@ -122,7 +124,7 @@ Reason from how **signed** triads add that stretching cannot get large unless sp
 ## Live door
 
 1. **Prove** the boxed shape inequality (uniform \(C_{\mathrm{geom}}\) / \(\sup\mathcal R_\star<\infty\)); **or**
-2. **Kill** by exhibiting a smooth shape family with \(\mathcal R_\star\to\infty\) (Attack 9D: designed \(\Theta(m^2)\) locked-phase closures; 9B: \(K_{\alpha,\beta}\to\infty\); almost-single-shell; **not** natural fixed-gap same-shell, **not** another widening AP packet) using **complete** \(T_c\); **or**
+2. **Kill** by exhibiting a smooth shape family with \(\mathcal R_\star\to\infty\) (retargeted 9D: growing input **and** output supports with complex polarizations; 9B: \(K_{\alpha,\beta}\to\infty\); **not** fixed-output \(\Theta(m^2)\), **not** natural fixed-gap same-shell, **not** another widening AP packet) using **complete** \(T_c\); **or**
 3. Upgrade centering cancellation beyond \(T_c=M-\Lambda N\) to remove the dangerous HH→L piece.
 
 ## Archive (NOT Lemma★)
@@ -137,11 +139,12 @@ Route N / Q6 / LP-shell floors: [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_
 - `docs/math/ns_attacks/ATTACK_9A_AP_PACKET_FAILURE.md`
 - `docs/math/ns_attacks/ATTACK_9B_EXACT_SHELL_CLOSING.md`
 - `docs/math/ns_attacks/ATTACK_9C_FIXED_GAP_SPHERES.md`
+- `docs/math/ns_attacks/ATTACK_9B_COUNTING_CS_EXCLUSION.md`
 - `docs/math/ns_attacks/ATTACK_9D_THETA_M2_LOCKED_PHASE.md`
 - `docs/math/ns_attacks/ATTACK_SYNTHESIS_SIMULTANEOUS.md`
 - `scripts/ns_attacks/stokes_moments.py`
 - `scripts/ns_attacks/attack9_packet_fan.py`
-- `scripts/ns_attacks/attack9b_exact_shell_K.py`
+- `scripts/ns_attacks/attack9d_growing_io.py`
 - `tests/test_ns_attacks_lemma_star.py`
 - `/opt/cursor/artifacts/attack9_packet_fan/`
 - `/opt/cursor/artifacts/attack9b_exact_shell/`

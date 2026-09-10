@@ -209,3 +209,61 @@ def test_attack9b_exact_shell_K_eps_limit_and_controls():
         r = probe(combine_eps(w, z, 1e-3))
         assert math.isfinite(r.ratio_R_star)
         assert abs(r.ratio_R_star - info["K"]) / max(info["K"], 1e-30) < 0.15
+
+
+def test_fixed_output_counting_at_most_m_pairs():
+    """Each output k has at most m ordered partners q=k-p."""
+    from ns_attacks.counting_cs import max_ordered_pairs_per_output, ordered_pairs_onto_k
+
+    support = [(1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1)]
+    m = len(support)
+    k = (1, 1, 0)
+    n = ordered_pairs_onto_k(support, k)
+    assert 0 <= n <= m
+    assert max_ordered_pairs_per_output(support, support) <= m
+
+
+def test_cs_and_K_le_16s_on_exact_shell():
+    """|B̂_k| ≤ |k| E and K ≤ s (β/α)² ≤ 16s, all phases/pols."""
+    from ns_attacks.attack9b_exact_shell_K import (
+        K_of_w,
+        build_exact_shell_field,
+        field_l2,
+        normalize_field,
+        project_B_to_shell,
+        shells_up_to,
+    )
+    from ns_attacks.counting_cs import (
+        K_cs_fixed_s,
+        beta_from_two_alpha_inputs_max,
+        check_cs_pointwise,
+        occupied_shell_keys,
+    )
+
+    shells = shells_up_to(5)
+    alpha, beta = 5, 10
+    assert beta <= beta_from_two_alpha_inputs_max(alpha)
+    modes = shells[alpha]
+    rng = np.random.default_rng(1390)
+    for _ in range(8):
+        n = len(modes)
+        w = normalize_field(
+            build_exact_shell_field(
+                modes,
+                rng.uniform(0.3, 1.5, size=n),
+                rng.uniform(0, 2 * np.pi, size=n),
+                rng.uniform(0, 2 * np.pi, size=n),
+            )
+        )
+        Buu = nonlinear_B(w)
+        assert check_cs_pointwise(w, Buu)
+        PiB = project_B_to_shell(Buu, float(beta))
+        s = len(occupied_shell_keys(PiB, float(beta)))
+        info = K_of_w(w, float(alpha), float(beta))
+        cap = K_cs_fixed_s(max(s, 1), float(alpha), float(beta))
+        if s == 0:
+            assert info["K"] < 1e-12
+        else:
+            assert info["K"] <= cap + 1e-8
+            assert info["K"] <= 16.0 * s + 1e-8
+        assert abs(field_l2(w) ** 2 - 1.0) < 1e-12
