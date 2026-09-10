@@ -73,6 +73,9 @@ Independent core (direct triad sum;
 live stokes_moments.py not overwritten):
 docs/LEMMA-STAR-CORE.md
 scripts/ns_attacks/ns_lemma_star_core.py
+Object app (pictures; bound still open):
+docs/THE-OBJECT-APP.md
+apps/the-object/
 The \(a^4\) missing inequality is dead.
 ★ implies GR in this packaging; not equivalent.
 Test both signs of \(T_c\). Section 4 is not proved.

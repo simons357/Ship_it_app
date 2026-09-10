@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The leftover object</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="mast">
+    <p class="kicker">A shape you can hold. Not a close.</p>
+    <h1>The leftover object</h1>
+    <p class="lede">
+      Lemma★ is a geometric quotient on divergence-free fields.
+      Stretching squared, paid by spectral spread, energy, and enstrophy.
+      The uniform bound is <strong>open</strong>.
+    </p>
+    <p class="status" role="status">NS not solved · ★ OPEN · kill lane LIVE</p>
+  </header>
+
+  <main>
+    <section class="stage">
+      <canvas id="space" width="720" height="560" aria-label="Fourier shells of the object"></canvas>
+      <div class="readout">
+        <p class="plain-formula" id="plain-formula">(T<sub>c</sub>)<sub>+</sub>² / (𝒟<sub>s</sub> E Y)</p>
+        <dl>
+          <div><dt>α, β</dt><dd id="ab">4, 8</dd></div>
+          <div><dt>K</dt><dd id="k-val">—</dd></div>
+          <div><dt>ℛ★</dt><dd id="r-val">—</dd></div>
+          <div><dt>T<sub>c</sub></dt><dd id="tc-val">—</dd></div>
+          <div><dt>𝒟<sub>s</sub></dt><dd id="ds-val">—</dd></div>
+        </dl>
+        <label class="slider">
+          <span>ε closer</span>
+          <input id="eps" type="range" min="0" max="8" step="1" value="4" />
+          <output id="eps-out">0.03</output>
+        </label>
+        <label class="toggle">
+          <input id="aligned" type="checkbox" checked />
+          aligned closer (recovers K)
+        </label>
+        <p class="hint">Drag the lattice. A finite K is not a constant. An orthogonal closer is not the 9B quotient.</p>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <figure>
+        <img src="stills/object_shells.png" alt="Two Fourier shells in k-space, alpha=4 and beta=8" />
+        <figcaption>The object as two eigenvalue shells. Transfer lives on triads p+q=k.</figcaption>
+      </figure>
+      <figure>
+        <img src="stills/object_aligned.png" alt="R-star versus epsilon for aligned and orthogonal closers" />
+        <figcaption>Aligned z<sub>β</sub> recovers K as ε→0. Orthogonal z<sub>β</sub> does not.</figcaption>
+      </figure>
+      <figure>
+        <img src="stills/object_quotient.png" alt="Bar chart of Tc squared, Ds, E, and Y" />
+        <figcaption>The four pieces of the quotient, at one size. Amplitude cancels. Shape remains.</figcaption>
+      </figure>
+      <figure>
+        <img src="stills/object_samples.png" alt="Histogram of K on random exact-shell fields" />
+        <figcaption>Samples raise a constant a proof would need. They do not prove one exists.</figcaption>
+      </figure>
+    </section>
+
+    <section class="note">
+      <h2>What this is</h2>
+      <p>
+        A public instrument for the boxed leftover, not an announcement that the leftover sits.
+        Release the folder. The picture is the object. The bound is still the hole.
+      </p>
+      <p>
+        Featured pair (α,β)=(4,8) — the same shells as the 9B peak.
+        9B max K ≈ 0.641 on a different seed. This gallery’s featured K is a single field, not that peak, and not C<sub>0</sub>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Jonathan Robert Simons · Prime Field Technologies · 10 September 2026</p>
+    <p>Direct triad sum. Two 𝒟<sub>s</sub> formulas. Live Stokes file not replaced.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

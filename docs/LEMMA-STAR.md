@@ -221,3 +221,5 @@ Section 4 not proved):
 Independent core (direct triad sum; live Stokes
 file not overwritten):
 [`LEMMA-STAR-CORE.md`](LEMMA-STAR-CORE.md).
+Object app (pictures; bound still open):
+[`THE-OBJECT-APP.md`](THE-OBJECT-APP.md).
