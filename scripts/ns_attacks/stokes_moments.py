@@ -530,6 +530,90 @@ def same_shell_packet_field(
     return field, meta
 
 
+def adjacent_sphere_landings(
+    n: int, d: int
+) -> Tuple[List[ModeKey], List[ModeKey], List[Tuple[ModeKey, ModeKey, ModeKey]]]:
+    """Unordered p,q on shell n with p+q on shell n+d. A sphere is not an additive basis of density Θ(m)."""
+    A = integer_shell(n)
+    B = integer_shell(n + d)
+    Bset = set(B)
+    pairs: List[Tuple[ModeKey, ModeKey, ModeKey]] = []
+    for i, p in enumerate(A):
+        for q in A[i:]:  # unordered, includes p=q (never lands: |2p|^2=4n)
+            r = add_modes(p, q)
+            if r in Bset:
+                pairs.append((p, q, r))
+    return A, B, pairs
+
+
+def adjacent_spheres_field(
+    n: int,
+    d: int = 1,
+    phase_n: float = 0.0,
+    phase_npd: float = 0.5 * np.pi,
+    pol_seed: Sequence[float] = (0.2, 1.0, -0.3),
+    aligned_pol: bool = True,
+    random_phases: bool = False,
+    rng: np.random.Generator | None = None,
+) -> Tuple[Field, dict]:
+    """Full lattice spheres |k|^2=n and |k|^2=n+d. Energy split equally.
+
+    Ds is the shell gap, not AP width. m = #keys grows with n.
+    Landings p+q on the partner sphere scale like O(m), not O(m^2).
+    """
+    A, B, pairs = adjacent_sphere_landings(n, d)
+    meta = {
+        "n": n,
+        "d": d,
+        "n_A": len(A),
+        "n_B": len(B),
+        "m": len(A) + len(B),
+        "n_landings": len(pairs),
+        "shells": sorted({n, n + d}) if B or A else [n],
+        "n_shells": 2 if A and B else (1 if A or B else 0),
+    }
+    if not A or not B:
+        return {}, meta
+
+    # Equal energy per shell, then L2-normalize (reality may drop a partner).
+    amp_A = 1.0 / np.sqrt(2.0 * max(len(A), 1))
+    amp_B = 1.0 / np.sqrt(2.0 * max(len(B), 1))
+    field: Field = {}
+
+    def put(k: ModeKey, amp: float, phase: float) -> None:
+        if k == (0, 0, 0):
+            return
+        mk = (-k[0], -k[1], -k[2])
+        if k in field or mk in field:
+            return
+        if aligned_pol and not random_phases:
+            seed: Sequence[float] = _aligned_pol_seed(k)
+        elif rng is not None and random_phases:
+            seed = tuple(float(x) for x in rng.normal(size=3))
+        else:
+            seed = pol_seed
+        v = make_divfree_amp(k, seed)
+        nrm = np.linalg.norm(v)
+        if nrm < 1e-15:
+            v = make_divfree_amp(k, (seed[1], seed[2], seed[0]))
+            nrm = np.linalg.norm(v)
+        if nrm < 1e-15:
+            return
+        if random_phases and rng is not None:
+            phase = float(rng.uniform(0, 2 * np.pi))
+        field[k] = (amp * np.exp(1j * phase) / nrm) * v
+
+    for k in A:
+        put(k, amp_A, phase_n)
+    for k in B:
+        put(k, amp_B, phase_npd)
+    field = l2_normalize(enforce_reality(field))
+    meta["n_modes"] = len(field)
+    meta["shells"] = sorted({int(k_norm2(k)) for k in field})
+    meta["n_shells"] = len(meta["shells"])
+    return field, meta
+
+
 def two_eigenvalue_closed_triad(
     phases: Tuple[float, float, float] = (0.0, 0.3, -0.2),
     pol_seeds: Tuple[Sequence[float], Sequence[float], Sequence[float]] = (
