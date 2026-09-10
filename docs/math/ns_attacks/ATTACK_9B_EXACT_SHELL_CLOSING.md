@@ -7,6 +7,7 @@
 **Pack locator:** [`FIVE_LANE_PACK_LOCATOR.md`](./FIVE_LANE_PACK_LOCATOR.md) — PR https://github.com/simons357/Ship_it_app/pull/48  
 **Full Lemma★ SoT:** [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md)  
 **Triad identities:** [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md)
+**Status docs:** LIVE lock [`PROOF_LemmaStar_LIVE_LOCK.md`](./PROOF_LemmaStar_LIVE_LOCK.md); annotated proof-attempt archive [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md) (does **not** green ★; unconditional ★ **OPEN**).
 
 **Canonical quotient:** code name `ratio_R_star_shape` \(=\mathcal{R}_\star=(T_c)_+^2/(D_s\|v\|_2^2 Y)\). Alias `ratio_R_star` → same. Legacy `ratio_star` \(=T_c/(E X\Lambda)\) is a **different** post-Young object — do **not** confuse with \(\mathcal{R}_\star\).  
 (Alias: older docs write \(\mathcal{D}_s\) for the same \(D_s=Z-Y^2/X\).)

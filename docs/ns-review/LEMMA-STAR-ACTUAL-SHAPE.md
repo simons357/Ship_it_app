@@ -4,6 +4,8 @@
 
 **Companion (pointer + same boxes):** [`docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`](../math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md)
 
+**Status docs (do not green ★):** LIVE kill/proof-lane lock [`PROOF_LemmaStar_LIVE_LOCK.md`](./PROOF_LemmaStar_LIVE_LOCK.md); annotated older proof attempt (archive) [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md). Unconditional \(\sup\mathcal{R}_\star\) / finite \(C_{\mathrm{geom}}\) for **all** \(v\) remains **OPEN**.
+
 **Refusal:** Near-shell \(K_{\alpha,\beta}\) tests **only a restricted limiting family**. Do **not** claim \(K_{\alpha,\beta}=\) full ★.
 
 ---
@@ -68,4 +70,4 @@ Code name for the decisive quotient (when \(D_s\|v\|_2^2 Y>0\)): **`ratio_R_star
 
 ---
 
-**NS not solved.**
+**NS not solved.** Unconditional Lemma★ is **not** proved; see [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md) §7–8 and [`PROOF_LemmaStar_LIVE_LOCK.md`](./PROOF_LemmaStar_LIVE_LOCK.md).

@@ -4,11 +4,13 @@
 **Status:** HYPOTHESIS (not proved) — **NS NOT SOLVED**  
 **Tooling:** `python3 -m domain_architect --lemma-star`  
 **Companion:** [`DA-GAP-CLOSURE-PLAYBOOK.md`](./DA-GAP-CLOSURE-PLAYBOOK.md), [`THEOREM-H-ATTACK-PLAN.md`](./THEOREM-H-ATTACK-PLAN.md)  
-**Five-lane drill:** [PR #48](https://github.com/simons357/Ship_it_app/pull/48) · branch `cursor/ns-five-lane-lemma-star-1390` · `docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md`
+**Five-lane drill:** [PR #48](https://github.com/simons357/Ship_it_app/pull/48) · branch `cursor/ns-five-lane-lemma-star-1390` · LIVE lock [`PROOF_LemmaStar_LIVE_LOCK.md`](./PROOF_LemmaStar_LIVE_LOCK.md) · archive [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md)
 
-**Rule of this document:** Broken at PRODUCT-BLOCK / Agmon-product gap → close by …  
-Proving Lemma★ ≡ Clay B in this packaging. DA will **not** green it without PRODUCT-BLOCK.  
+**Rule of this document:** Broken at the uniform shape bound \(\sup\mathcal{R}_\star<\infty\) (HH→L / structure on signed \(T_c\)) → close by …  
+Proving Lemma★ ≡ Clay B in this packaging. DA will **not** green it without that bound for **all** \(v\).  
 **Refuse:** “almost proved,” “survives numeric ⇒ proved,” greening language. Numerics ≠ proof.
+
+**Audit (10 Sep 2026):** the older PRODUCT-BLOCK sketch that demanded a universal \(|T_c|\le C\|u\|_2 X^{3/2}\) is **algebraically false** (scales \(a^3\) vs \(a^4\) under \(u=av\)) — discarded; see archive [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md) §5. Live target is uniform \(\mathcal{R}_\star=(T_c)_+^2/(D_s E Y)\).
 
 ---
 
@@ -48,33 +50,35 @@ If Lemma★ holds with geometric \(C_0\):
 3. Finite enstrophy on \(T^3\) → **3D Navier–Stokes globally regular**
 
 So “prove Lemma★” is not a small lemma — it is Clay Statement B under this book. DA records the Clay weld as **WITHHELD** (honest packaging), not as refuse-as-fraud.  
-**Conditional implication only** until PRODUCT-BLOCK closes. **NS remains unsolved.**
+**Conditional implication only** until uniform \(\mathcal{R}_\star\) / geometric \(C_0\) closes for **all** \(v\). **NS remains unsolved.**
 
 ---
 
-## Exact blocker: PRODUCT-BLOCK / Agmon-product gap
+## Exact blocker: uniform \(\mathcal{R}_\star\) / HH→L (PRODUCT-BLOCK renamed)
 
-You still need something like
-
+**Discarded false target (do not revive):**
 \[
 |T_c|\le C\|u\|_2\,X^{3/2}
 \]
+is **not** a universal estimate — LHS \(\sim a^3\), RHS \(\sim a^4\) under \(u=av\) ([`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md) §5). Ordinary 3D Sobolev / Agmon sketches that aimed at that inequality are **archive only**.
 
-(or the pre-Young equivalent \(|T_c|\le C\|u\|_2 X\Lambda\) with geometric \(C\), then Young in \(\nu\)).
-
-**Ordinary 3D Sobolev / product / Agmon estimates are INSUFFICIENT from energy alone.**
+**Live blocker:** prove
+\[
+\sup_v\frac{(T_c)_+^2}{D_s\|v\|_2^2 Y}<\infty
+\]
+(equivalently finite geometric \(C_{\mathrm{geom}}\) / \(C_0\) in the viscosity packaging), or kill by a smooth family with \(\mathcal{R}_\star\to\infty\).
 
 | Break | Content |
 | --- | --- |
-| Break ID | PRODUCT-BLOCK (Agmon-product gap) |
+| Break ID | PRODUCT-BLOCK (legacy name) → live: **uniform \(\mathcal{R}_\star\) / HH→L gap** |
 | Where (DA) | Books `DA-NS-1` / `PRODUCT-BLOCK`; weld `W-NS-LEMMASTAR-CLAY` status **WITHHELD**; `W-NS-LEMMASTAR-PRODUCT` OPEN |
-| Where (math) | Product-class bound on centered spectral drift from Leray energy |
-| Analytic bottleneck | **Bony HH→L** — still the gap (five-lane Attack 3) |
-| Why | Without it, the energy-budget closing estimate does not close |
+| Where (math) | Uniform shape bound on centered spectral drift; not the discarded \(X^{3/2}\) product |
+| Analytic bottleneck | **Bony HH→L** — still the gap (five-lane Attack 3); Attack 9B \(K_{\alpha,\beta}\) is only a **restricted** near-shell probe |
+| Why | Without uniform \(\mathcal{R}_\star\), the energy-budget closing estimate does not close for all \(v\) |
 | **Closure move** | Structure on \(T_c=M-\Lambda N\) controlling HH→L, or conditional under SND / dominant shell |
-| Fake-closure risk | Treating geometric \(C_0\), numeric survival, or “almost proved” as if PRODUCT-BLOCK closed |
+| Fake-closure risk | Treating geometric \(C_0\), numeric survival, finite 9B sample \(K\), or “almost proved” as if the bound closed |
 
-**Headline:** Broken at PRODUCT-BLOCK → HH→L still the gap → close by structure on \(T_c\) or SND/shell conditional. **Not almost proved.**
+**Headline:** Broken at uniform \(\mathcal{R}_\star\) → HH→L still the gap → close by structure on \(T_c\) or SND/shell conditional. **Not almost proved.** Kill lane **LIVE** ([`PROOF_LemmaStar_LIVE_LOCK.md`](./PROOF_LemmaStar_LIVE_LOCK.md)).
 
 ---
 
@@ -85,13 +89,12 @@ Source: [PR #48](https://github.com/simons357/Ship_it_app/pull/48) · `docs/math
 | Lane / claim | Status | Honesty |
 | --- | --- | --- |
 | **K=0** absorption \(T_c\le\theta\nu\mathcal D_s\) | **DEAD** | Amplitude scaling blows \(\lvert T_c\rvert/\mathcal D_s\) |
-| **Lemma★** uniform geometric \(C_0\) / \(C\) | **OPEN** | Survives numeric kill only (max \(\lvert R_{\mathrm{pre}}\rvert\approx5.09\)) — **≠ proved** |
+| **Lemma★** uniform geometric \(C_0\) / \(C_{\mathrm{geom}}\) / \(\sup\mathcal{R}_\star\) | **OPEN** | Survives numeric kill only — **≠ proved**; kill lane **LIVE** |
 | **HH→L** (Bony) | **GAP (live)** | Analytic bottleneck; no closure |
-| Product / Agmon from energy alone | **INSUFFICIENT** | PRODUCT-BLOCK unchanged |
+| Discarded \(X^{3/2}\) universal product | **FALSE (scaling)** | Do not revive as PRODUCT-BLOCK target |
 | Global regularity / Clay B | **NOT SOLVED** | Do not green |
 
-Survivor *form* (still unproved): \(T_c\le\theta\nu(Z-\Lambda Y)+C_* X^{3/2}\Lambda\). Numerics support bounded ratios on tested families; **that is not a proof.**
-
+Survivor *form* (still unproved): viscosity packaging with geometric \(C_0\), equivalently finite \(\sup\mathcal{R}_\star\). Numerics support bounded ratios on tested families; **that is not a proof.**
 ---
 
 ## DA diagnosis

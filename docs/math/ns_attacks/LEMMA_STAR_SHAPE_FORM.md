@@ -10,6 +10,7 @@ Scripts: `scripts/ns_attacks/stokes_moments.py` — aliases \(E=\|v\|_2^2\), \(T
 Legacy **`ratio_star`** \(=T_c/(E X\Lambda)\) is a **different** post-Young object (scales as \(1/a\)) — **not** the shape quotient.
 
 Long expansions (Fourier sums, all \(\mathcal{D}_s\) forms, ordered / \(p+q+r=0\) triad \(T_c\)): [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md).  
+**Status docs:** LIVE lock [`PROOF_LemmaStar_LIVE_LOCK.md`](./PROOF_LemmaStar_LIVE_LOCK.md); annotated proof-attempt archive [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md) (does **not** green ★; unconditional ★ **OPEN**).
 Filename alias for desktop `LEMMA_STAR_CANONICAL.md`: [`LEMMA_STAR_CANONICAL.md`](./LEMMA_STAR_CANONICAL.md) → this file.
 
 ---

@@ -6,6 +6,7 @@
 
 **Rule:** Truth only. **Navier–Stokes is NOT solved.** Lemma★ is **OPEN**. Bound on \(C_{\mathrm{geom}}\) / \(\sup\mathcal{R}_\star\) **OPEN**.
 
+**Status docs:** LIVE lock [`PROOF_LemmaStar_LIVE_LOCK.md`](./PROOF_LemmaStar_LIVE_LOCK.md); annotated proof-attempt archive [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md) (does **not** green ★; unconditional ★ **OPEN**).
 ## What Attack 8 is
 
 Attack 8 is the **canonical status record** for Lemma★ after the shape-form lock. It supersedes any chat/screenshot language that closed the kill lane or claimed amplitude/frequency shrinks \(\mathcal R_\star\).

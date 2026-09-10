@@ -1,6 +1,6 @@
 # Proof attempt — Lemma★ and what actually closes
 
-> **Working foundation (controlling):** `LEMMA_STAR_CANONICAL.md` + `LEMMA_STAR_EXACT_FORMULAS.md` + shape SoT [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md) / [`docs/ns-review/LEMMA-STAR-ACTUAL-SHAPE.md`](../../../docs/ns-review/LEMMA-STAR-ACTUAL-SHAPE.md).  
+> **Working foundation (controlling):** `LEMMA_STAR_CANONICAL.md` + `LEMMA_STAR_EXACT_FORMULAS.md` + shape SoT [`LEMMA_STAR_SHAPE_FORM.md`](../math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md) / [`docs/ns-review/LEMMA-STAR-ACTUAL-SHAPE.md`](./LEMMA-STAR-ACTUAL-SHAPE.md).  
 > **LIVE kill/proof-lane lock (Attack 8 / 9A–9D):** [`PROOF_LemmaStar_LIVE_LOCK.md`](./PROOF_LemmaStar_LIVE_LOCK.md) — prefer this for current Attack 9 status.  
 > **Five-lane recovered discussion:** `FIVE_LANE_RECOVERY.md` (PR #48; original five lane names **not** fully recovered — do not substitute 9A–9D).  
 > **This file:** annotated **archive** of an older attempt. Keep for history; do not treat unmarked claims as current SoT.  
@@ -405,10 +405,10 @@ Foundation: `LEMMA_STAR_CANONICAL.md`, `LEMMA_STAR_EXACT_FORMULAS.md`.
 
 | Topic | Where |
 |---|---|
-| Canonical shape ★ / \(\mathcal R_\star\) | [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md), [`LEMMA-STAR-ACTUAL-SHAPE.md`](../../../docs/ns-review/LEMMA-STAR-ACTUAL-SHAPE.md) |
+| Canonical shape ★ / \(\mathcal R_\star\) | [`LEMMA_STAR_SHAPE_FORM.md`](../math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md), [`LEMMA-STAR-ACTUAL-SHAPE.md`](./LEMMA-STAR-ACTUAL-SHAPE.md) |
 | LIVE kill criteria + Attack 9 table | [`PROOF_LemmaStar_LIVE_LOCK.md`](./PROOF_LemmaStar_LIVE_LOCK.md) |
-| Attack 9B near-shell \(K_{\alpha,\beta}\) | [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md) — restricted family; finite sample ≠ proof |
-| Attack 9C / 9D | [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md), [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md) |
+| Attack 9B near-shell \(K_{\alpha,\beta}\) | [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](../math/ns_attacks/ATTACK_9B_EXACT_SHELL_CLOSING.md) — restricted family; finite sample ≠ proof |
+| Attack 9C / 9D | [`ATTACK_9C_FIXED_GAP_SPHERES.md`](../math/ns_attacks/ATTACK_9C_FIXED_GAP_SPHERES.md), [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](../math/ns_attacks/ATTACK_9D_THETA_M2_LOCKED_PHASE.md) |
 | PRODUCT-BLOCK / discarded \(\lvert T_c\rvert\le C\|u\|_2 X^{3/2}\) | **FALSE by scaling** (this archive §5); live gap is uniform \(\mathcal R_\star\) / HH→L structure — see LIVE lock |
 
 **Do not** read any “proved” label in §§1–5 as unconditional ★. Only ★ ⇒ GR (one direction), K=0 impossible, and Young reduction are claimed proved here; unconditional ★ remains **open**.

@@ -8,6 +8,7 @@
 **SoT status:** **SoT-only until implemented.** Snapshot \(0.11\to0.031\) is locked as user/runtime truth; PR #48 **lacks** a supporting fixed-gap sweep script and raw sweep data.
 ## Family
 
+**Status docs:** LIVE lock [`PROOF_LemmaStar_LIVE_LOCK.md`](./PROOF_LemmaStar_LIVE_LOCK.md); annotated proof-attempt archive [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md) (does **not** green ★; unconditional ★ **OPEN**).
 Two Stokes eigen-spheres separated by a **fixed gap** \(d\), at shell indices \(n\) and \(n+d\):
 \[
 \operatorname{supp}\widehat v\subset\{k:\lambda_k=n\}\cup\{k:\lambda_k=n+d\}.

@@ -12,6 +12,8 @@ Desktop `LEMMA_STAR_CANONICAL.md` maps onto this branch as an **alias pointer**.
 **Long expansions (Fourier / \(\mathcal{D}_s\) / \(p+q+r=0\) triad):**  
 → [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md)
 
+**Status docs:** LIVE lock [`PROOF_LemmaStar_LIVE_LOCK.md`](./PROOF_LemmaStar_LIVE_LOCK.md); annotated proof-attempt archive [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md) (does **not** green ★; unconditional ★ **OPEN**).
+
 **Reframe:** ★ is a **shape** statement, not a viscosity statement. \(u=av\); optimize size; worst size cancels \(\nu\); remainder is pure geometry.
 
 **NS not solved.**

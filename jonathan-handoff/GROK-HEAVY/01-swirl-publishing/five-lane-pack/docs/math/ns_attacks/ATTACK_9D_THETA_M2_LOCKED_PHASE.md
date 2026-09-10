@@ -5,6 +5,7 @@
 **Status:** **SPEC / STUB** — remaining packet falsifier. Not yet run. Kill lane **LIVE**. Lemma★ **OPEN**. **NS not solved.**  
 **Prior non-kill:** Attack 9C (fixed-gap spheres) — natural same-shell ensemble **NOT** a kill; \(\mathcal{R}_\star\) fell \(0.11\to 0.031\) — [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md).
 
+**Status docs:** LIVE lock [`PROOF_LemmaStar_LIVE_LOCK.md`](./PROOF_LemmaStar_LIVE_LOCK.md); annotated proof-attempt archive [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md) (does **not** green ★; unconditional ★ **OPEN**).
 ## Motivation (why 9C failed → what 9D must change)
 
 Attack 9C locked:
