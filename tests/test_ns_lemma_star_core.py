@@ -107,5 +107,8 @@ def test_random_shell_and_shell_wavevectors():
     rng = np.random.default_rng(1390)
     f = random_shell_field(5, rng, target_E=1.0)
     assert abs(f.energy() - 1.0) < 1e-12
-    out = R_star(f)
-    assert "R_star" in out
+    # Pure single-shell random field is vacuous for ★; D_s ~ 0 can trip
+    # float noise in the user's relative cross-check. Use verify=False here.
+    out = R_star(f, verify=False)
+    assert out["vacuous_single_shell"] is True
+    assert out["R_star"] == 0.0
