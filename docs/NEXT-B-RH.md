@@ -29,16 +29,15 @@ Do not: \(\Phi\), \(n=64\), leftover-close B42,
 BKM from \(L^2\), export A.
 
 Next write: **1, 2, or 3 on one cylinder** —
-not a new name. 1 thinness (HLS gain from
-Bad-pair measure). 2 J on folds only plus
-Vitali. 3 NSE forbids 2’s alternatives on
-\(r^2/\nu\). None written. H1 object:
+not a new name. Shapes as estimates:
+[`H1-SHAPES.md`](H1-SHAPES.md). CS-summable
+volume thinness is still \(E^{3/2}\), not H1.
+Lookups: all miss ([`LOOKUP-H1.md`](LOOKUP-H1.md)).
+None of 1, 2, 3 is proved. H1 object:
 [`H1-OBJECT.md`](H1-OBJECT.md). Literature:
 H1 is not under another name
 ([`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md) §14).
-Lookups (yes/no, for Grok or a library):
-[`LOOKUP-H1.md`](LOOKUP-H1.md). Five questions.
-A hit is a theorem. A miss is another if.
+A miss is another if.
 Dream-team read of the map:
 [`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
 They would sign the map. They would not

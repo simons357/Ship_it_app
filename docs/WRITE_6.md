@@ -26,5 +26,6 @@ That is the write. It is not a theorem.
 Kernel on Bad is still \(|z|^{-3}\). HLS gives local \(E^3\). Path-cost of \(\nabla\xi\) dies on a sheet or a gap.
 
 Supported data (identities, literature, calculations that do **not** prove this): [`WRITE_6_SUPPORTED.md`](WRITE_6_SUPPORTED.md).
+Shapes as estimates (not proved): [`H1-SHAPES.md`](H1-SHAPES.md).
 Dream-team read (they would sign the map, not (6)): [`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
 Glossary: [`H-SYSTEM.md`](H-SYSTEM.md).

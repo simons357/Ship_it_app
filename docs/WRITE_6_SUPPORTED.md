@@ -98,7 +98,8 @@ Dream-team read: they would sign the map, not (6). [`DREAM-TEAM-H.md`](DREAM-TEA
 2. J on folds only: persistent Bad pairs sit in a fold, \(\int_{B_{2\rho}}|\nabla\omega|^2\gtrsim\Lambda^2\rho^2\), Vitali closes.
 3. Dynamics: NSE forbids 2’s alternatives on the scale \(r^2/\nu\).
 
-Lookups: [`LOOKUP-H1.md`](LOOKUP-H1.md).
+Shapes written as estimates, not proved: [`H1-SHAPES.md`](H1-SHAPES.md).
+Lookups: all miss. [`LOOKUP-H1.md`](LOOKUP-H1.md).
 
 ---
 

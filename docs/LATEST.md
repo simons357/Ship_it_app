@@ -33,7 +33,10 @@ H1, H2-a priori (or CKN-small), and H3.
 Local Serrin then, not CKN. Object:
 docs/H1-OBJECT.md. Gaps: §11. Literature:
 docs/LITERATURE-H.md (H1 not under another
-name). Lookups: docs/LOOKUP-H1.md.
+name). Lookups: all miss. docs/LOOKUP-H1.md.
+Shapes as estimates, not proved:
+docs/H1-SHAPES.md. CS-thinness is still
+E^{3/2}, not H1.
 WRITE (6): docs/WRITE_6.md
 (supported: docs/WRITE_6_SUPPORTED.md).
 Score of the write: aimed leftover yes;

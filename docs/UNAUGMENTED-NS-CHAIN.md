@@ -234,9 +234,9 @@ On Bad, \(|\sin\varphi|\) is large, so the kernel is not improved.
 
 ## 8. What to do next
 
-WRITE (6) was attempted on one cylinder (§12). It did not close. H1 as a holdable object, and the only three shapes that still look like it, are §13. Literature check: §14. H1 is not in the record under another name.
+WRITE (6) was attempted on one cylinder (§12). It did not close. H1 as a holdable object, and the only three shapes that still look like it, are §13. Arithmetic of those shapes: [`H1-SHAPES.md`](H1-SHAPES.md). CS-summable volume thinness is still \(E^{3/2}\), not H1. Lookups: all miss ([`LOOKUP-H1.md`](LOOKUP-H1.md)). Literature check: §14. H1 is not in the record under another name.
 
-Next work is **1, 2, or 3 on one cylinder** — not a new name. Do not reprove Lemma C. Do not add \(K(t)\). Keep **H1, H2, H3, \(R_\phi\)** separate.
+Next work is still **prove 1, 2, or 3 on one cylinder** — not a new name. The estimates are written. They are not theorems. Do not reprove Lemma C. Do not add \(K(t)\). Keep **H1, H2, H3, \(R_\phi\)** separate.
 
 Work H1. Keep H2 and H3 labeled. Lemma C stays an if. If H1 sits and H2-from-energy does not, the cylinder is still open. Glossary: [`H-SYSTEM.md`](H-SYSTEM.md).
 
@@ -258,7 +258,7 @@ The packet is a **good map**. It is not a proof of ordinary NS.
 
 **Lemma C.** CF 1993 / BdVB 2002 sit as **if**. Hölder \(1/2\) is the right cut for this path. Lemma C does not prove alignment. That sentence is the whole point.
 
-**H1.** The right leftover on this path. Holdable object: the Bad-pair integral versus local dissipation plus \(r^{-2}\iint|\omega|^2\) (§13). WRITE (6) was written on one cylinder in §12. Mid-Bad is named. Near-Bad is still open. The only remaining shapes are thinness, J on folds, and dynamics. None written. Literature: not under another name (§14). The aimed estimate is **not** proved.
+**H1.** The right leftover on this path. Holdable object: the Bad-pair integral versus local dissipation plus \(r^{-2}\iint|\omega|^2\) (§13). WRITE (6) was written on one cylinder in §12. Mid-Bad is named. Near-Bad is still open. The only remaining shapes are thinness, J on folds, and dynamics. Arithmetic: [`H1-SHAPES.md`](H1-SHAPES.md). CS-thinness is still \(E^{3/2}\), not H1. Lookups: all miss. Literature: not under another name (§14). The aimed estimate is **not** proved.
 
 **H2.** Smallness criterion is true. A priori from \(\int E<\infty\) is not. After Young the remainder is local \(\int E^2\). So even if H1 sits, H2-from-energy is a second wall. Keep them separate.
 
@@ -541,9 +541,9 @@ That is the whole request. Good pairs are already gone. Flux is H2. Exterior is 
 
 **Why the last passes did not give it.** The kernel on Bad is still \(|z|^{-3}\). HLS turns that into local \(E^3\). The Hölder cut does not change the exponent; it only changes the set. A thin set would save it. A path jump in \(\xi\) does not prove the set is thin. Morrey (\(W^{1,2}\not\subset C^{0,1/2}\)) is why energy does not empty the set.
 
-**The only shapes that still look like H1.** Prove one of these, and you have H1. None of them is written.
+**The only shapes that still look like H1.** Prove one of these, and you have H1. Arithmetic written: [`H1-SHAPES.md`](H1-SHAPES.md). None of them is a theorem.
 
-1. **Thinness.** Bad-pair measure in each \(B_r\) is small enough that HLS picks up a factor that turns \(E^3\) into \(E^2\) or into dissipation.
+1. **Thinness.** Bad-pair measure in each \(B_r\) is small enough that HLS picks up a factor that turns \(E^3\) into \(E^2\) or into dissipation. CS-summable volume thinness only recovers the \(E^{3/2}\) (mid-Bad) class.
 2. **J on folds only.** Every persistent-bad pair in \(Q_r\) sits in a fold (geometry A), not a sheet or a gap, so \(\displaystyle\int_{B_{2\rho}}|\nabla\omega|^2\gtrsim\Lambda^2\rho^2\) and a Vitali sum closes.
 3. **Dynamics.** NSE forbids 2’s alternatives on the time scale \(r^2/\nu\).
 
@@ -551,7 +551,7 @@ That is the whole request. Good pairs are already gone. Flux is H2. Exterior is 
 
 **Not a new leftover name.** These are writings of H1. §6 still stands as refuse of *fake closes*: assuming thinness is Lemma C; Lemma J on generic fields is false; an imposed waiting time is not derived. The shapes still have to be *proved*.
 
-**Status.** None of 1, 2, 3 sits. Next work is 1, 2, or 3 on one cylinder.
+**Status.** None of 1, 2, 3 sits. Lookups all miss. Next work is still prove 1, 2, or 3 on one cylinder.
 
 ---
 

@@ -56,6 +56,8 @@ by local dissipation plus \(r^{-2}\iint|\omega|^2\) from the energy class alone.
 
 That integral is H1 / WRITE (6) / Lemma I on the ball. It is not in the record as a theorem.
 
+Lookups scored 10 September: all miss. File: [`LOOKUP-H1.md`](LOOKUP-H1.md). Shapes as estimates: [`H1-SHAPES.md`](H1-SHAPES.md).
+
 ---
 
 ## H2 versus literature

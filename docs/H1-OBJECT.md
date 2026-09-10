@@ -32,6 +32,10 @@ Prove one of these, and you have H1. None of them is written.
 
 Next work is 1, 2, or 3 on one cylinder — not a new leftover name. Lemma I is an alias of H1.
 
+The three shapes as estimates (not proved): [`H1-SHAPES.md`](H1-SHAPES.md).
+CS-summable volume thinness stays the \(E^{3/2}\) class, not H1.
+Lookups: all miss. [`LOOKUP-H1.md`](LOOKUP-H1.md).
+
 Do not cash “assume thin” as 1 (that is Lemma C). Do not cash Lemma J on generic fields as 2. Do not cash an imposed waiting time as 3.
 
 Work H1. Keep H2 and H3 labeled. Lemma C stays an if. If H1 sits and H2-from-energy does not, the cylinder is still open.

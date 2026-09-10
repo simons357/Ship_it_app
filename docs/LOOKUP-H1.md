@@ -65,3 +65,55 @@ by local dissipation plus \(r^{-2}\iint|\omega|^2\) from energy alone?
 ---
 
 Do not look up: \(K(t)\), Q-stack, \(\Phi\), leftover-close B42, \(n=64\), A\(\Rightarrow\)B, SND, matrix \(H_N\), Theorem A as ordinary NS.
+
+---
+
+## Scored (10 September 2026)
+
+Arithmetic of the three shapes: [`H1-SHAPES.md`](H1-SHAPES.md).
+Not a proof.
+
+**1. Thinness — miss.**
+Grujić, *Nonlinearity* 26 (2013) = arXiv:1111.0217.
+Theorems 4.1–4.2: no blowup *if* the superlevel set is
+linearly \(\delta\)-sparse around each point at a scale
+at most the analyticity radius. Sparseness is the
+hypothesis. Later \(Z_\alpha\) work (Bradshaw–Farhat–Grujić,
+*Arch. Ration. Mech. Anal.* 2019; Grujić–Xu 2024) still
+treats sparseness as a class. Faraco-type remarks
+(*Nonlinearity* 2022) caution that some of those classes
+do not rule out more than energy-level \(L^\infty_t L^2\).
+No paper *derives* Bad-pair measure small enough for HLS
+gain from \(\int E<\infty\).
+
+**2. Folds only — miss.**
+No published estimate that every persistent Bad pair in
+a cylinder sits in a fold with
+\(\int_{B_{2\rho}}|\nabla\omega|^2\gtrsim\Lambda^2\rho^2\),
+sheets and gaps excluded by NSE, and a Vitali sum that
+closes H1. CF/BdVB remain alignment ifs.
+
+**3. Dynamics — miss.**
+No theorem that NSE forbids persistent sheets or gaps
+on the scale \(r^2/\nu\). Averaged filament-stretching
+pictures (Dascaliuc–Grujić) are not that theorem.
+
+**4. Grujić 2009 / H3 — miss (expected).**
+*Comm. Math. Phys.* 290 (2009), 861–870, localizes the
+Hölder-\(1/2\) coherence condition (with GrZh06).
+Secondary citations (Grujić 2012 survey) are consistent:
+exterior / nonlocal stretching is controlled under that
+local if. Not a bound on \(A_{\mathrm{ext}}\) from energy
+alone. Packet §11 crude remainder stands.
+(PDF sentence not re-quoted this pass; the role of the
+paper is not in dispute.)
+
+**5. Exact integral — miss.**
+Confirmed. No paper bounds
+\[
+\iint_{\{|\sin\varphi|>C|x-y|^{1/2}\}}\frac{|\omega(x)|^2|\omega(y)|}{|x-y|^3}
+\]
+by local dissipation plus \(r^{-2}\iint|\omega|^2\) from
+the energy class alone.
+
+All five are misses. H1 is not under another name.

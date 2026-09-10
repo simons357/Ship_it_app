@@ -53,6 +53,8 @@ Work H1. Keep H2 and H3 labeled. Lemma C stays an if.
 
 The estimate (stated, not proved): [`WRITE_6.md`](WRITE_6.md).
 Supporting data: [`WRITE_6_SUPPORTED.md`](WRITE_6_SUPPORTED.md).
+Shapes as estimates, not proved: [`H1-SHAPES.md`](H1-SHAPES.md).
+Lookups: all miss ([`LOOKUP-H1.md`](LOOKUP-H1.md)).
 Dream-team read (map yes, (6) no): [`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
 
 **Lemma★ is not an H.** Energy-budget writing of leftover (6) on \(\mathbb{T}^3\). Hypothesis. Exact form: scale-invariant trilinear bound on \(\mathcal R_\star\). Isolated triad: no kill. Same-shell packet: \(\mathcal D_s\) stayed the gap, \(T_c\) did not grow like \(m^{1/2}\); no kill. Remaining packet target: HH→L fan, or H1 on one cylinder. Uniform global triadic bound completely open. K=0 dead. Uniform pre-Young \(C\) dead. Samples are evidence only. Do not merge with H1. File: [`LEMMA-STAR.md`](LEMMA-STAR.md), [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md), [`LEMMA-STAR-E.md`](LEMMA-STAR-E.md), [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
