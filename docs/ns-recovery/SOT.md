@@ -54,6 +54,8 @@ Isolated triangles, wide APs, narrow APs, full adjacent spheres, and fixed-\(s\)
 
 H1 on the cylinder is the other live track if the packet line is shelved. It is **not** started by this lock.
 
+PR #24 localized ABC / CS remainder is **not** this packet line. Finite Galerkin climb, not a ★ kill. [`CS-REMAINDER-VS-DA-REJECT.md`](CS-REMAINDER-VS-DA-REJECT.md).
+
 ---
 
 ## Pointers (do not override)
@@ -66,6 +68,7 @@ H1 on the cylinder is the other live track if the packet line is shelved. It is 
 | `docs/ns-recovery/CENTERED-SPECTRAL-DRIFT-MASTER-REPORT.md` | 7 Sep search; Stokes-moment paste was missing until PR #48 |
 | `docs/ns-recovery/GROK_HEAVY.md` | **Grok Heavy entry** — formulas, five-lane JSON, live work |
 | `docs/ns-recovery/FIVE_LANE_PACK_LOCATOR.md` | Absolute script paths + box drop for 9B / \(R_★\) |
+| `docs/ns-recovery/CS-REMAINDER-VS-DA-REJECT.md` | PR #24 ABC / λ vs DA reject; do not import “★ false” |
 | `docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md` | Working foundation: uniform \(\mathcal R_\star\) |
 | `docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md` | Operator / triad identities |
 | `docs/math/ns_attacks/ARCHIVE_OLDER_LEMMA_STAR_PROOF.md` | Older Section 4 is **not** a theorem |

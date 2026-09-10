@@ -105,6 +105,8 @@ Establish a uniform bound on \(\mathcal R_\star\), **or** construct a family on 
 
 One large **finite** value only **raises** the required \(C_{\mathrm{geom}}\). It does **not** disprove existence of a finite constant.
 
+PR #24 localized ABC (`docs/CS-REMAINDER.md` on that branch) is in this class: finite \(\mathcal R_\star\) climb on Galerkin grids (FFT through λ = 8, exact core through λ = 4; **no λ = 16**). Do **not** import “Target A / Lemma★ false.” Comparison: [`docs/ns-recovery/CS-REMAINDER-VS-DA-REJECT.md`](../../ns-recovery/CS-REMAINDER-VS-DA-REJECT.md).
+
 Fixed-output \(\Theta(m^2)\) 9D is excluded (\(K\le 16s\)). Natural same-shell and AP fans did not kill ★.
 
 **NS not solved.**

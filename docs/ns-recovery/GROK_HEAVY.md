@@ -22,6 +22,7 @@ Human: Jonathan Simons (`winchester.anesthesia@gmail.com` / `simonsmedical@iclou
 - Do **not** invent missing formulas. Do **not** abs-value the triad sum.
 - Kill / ★ decisions use **complete signed** \(T_c\) only — never an HH→L-only proxy.
 - Proving the boxed shape inequality \(\Rightarrow\) GR **in this packaging** (one direction). Equivalence to GR is **not** in these files.
+- **Do not import PR #24’s “Target A / Lemma★ false” stamp.** Localized ABC is a finite climb on Galerkin grids, not a diverging family. Comparison: [`CS-REMAINDER-VS-DA-REJECT.md`](CS-REMAINDER-VS-DA-REJECT.md).
 
 **Two different “fives” (do not mix):**
 
@@ -223,6 +224,7 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 |---|---|
 | **This file** | Grok Heavy entry |
 | [`SOT.md`](SOT.md) | Packet source of truth |
+| [`CS-REMAINDER-VS-DA-REJECT.md`](CS-REMAINDER-VS-DA-REJECT.md) | PR #24 ABC / λ table vs DA exact-core REJECT; ★ still OPEN |
 | [`FIVE_LANE_PACK_LOCATOR.md`](FIVE_LANE_PACK_LOCATOR.md) | Absolute `/workspace/scripts/ns_attacks/` paths + box drop |
 | [`jonathan-handoff/GROK-HEAVY/PASTE-THIS.md`](../jonathan-handoff/GROK-HEAVY/PASTE-THIS.md) | Prompt to send with the two ZIPs |
 | [`five-lane-pack/HIT.md`](five-lane-pack/HIT.md) | Pack index / PR pointers |
@@ -287,6 +289,7 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 | [#50](https://github.com/simons357/Ship_it_app/pull/50) | DA sync to five-lane (HH→L gap) |
 | [#51](https://github.com/simons357/Ship_it_app/pull/51) | ★ is \(\mathcal R_\star\) shape statement |
 | [#52](https://github.com/simons357/Ship_it_app/pull/52) | Exact Fourier formulas |
+| [#24](https://github.com/simons357/Ship_it_app/pull/24) | Unaugmented track: CS remainder / localized ABC (do not merge; do not import “★ false”) |
 
 **Not found (do not invent):** `Hyp-ST`, `Hyp-Lat`, `Lat-Emb`, `LAST-KEY-LEMMA-STAR`, `NS_H_SND_NoCancellation_Reconstruction`, `centered_spectral_drift_note`.
 
