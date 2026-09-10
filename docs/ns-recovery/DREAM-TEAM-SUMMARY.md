@@ -67,7 +67,7 @@ They would refuse:
 | Five lanes 1–5 (PR #48) | K=0 **DEAD**. ★ survives numeric. HH→L still the gap. |
 | 9A / 9C / finite 9B | Not kills. \(\max K\approx 0.641\) at (4, 8). |
 | Exact core `ns_lemma_star_core.py` | Evaluator only. Not a proof. |
-| PR #24 localized ABC / CS remainder | Finite climb on Galerkin grids. FFT through λ = 8 (\(\mathcal R_\star\approx 0.327\) after reverse). Exact core through λ = 4. **No λ = 16.** DA rejected the first stamp (two different fields). Same-field FFT = triad sits. **Not a ★ kill.** |
+| PR #24 localized ABC / CS remainder | Finite climb on Galerkin grids. FFT through λ = 8 (\(\mathcal R_\star\approx 0.327\) after reverse). Exact core through λ = 4. **No λ = 16.** DA rejected the first stamp (two different fields). Same-field FFT = triad sits. **Not a ★ kill.** SuperGrok 17:56 filing: keep “evaluator ≠ proof”; **refuse** “falsifier-of-record / stop patching ★.” Score: [`CS-REMAINDER-VS-DA-REJECT.md`](CS-REMAINDER-VS-DA-REJECT.md). |
 | H1 on the cylinder | Not started in this book. |
 
 Formula lock: \(|T_c|\le C\|u\|_2 X^{3/2}\) is **false** (\(a^3\) vs \(a^4\)). Discard.
