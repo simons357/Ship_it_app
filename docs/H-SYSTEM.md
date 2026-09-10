@@ -30,7 +30,7 @@ A_{\mathrm{bad}}(Q_r)
 
 Open. This is the request. HLS gives local \(E^3\). Path-cost of \(\nabla\xi\) dies on a sheet or a gap.
 
-Physical-space rewrite on one vortex tube (same leftover class, different integral): [`H1-SOT.md`](H1-SOT.md). Packet attacks on \(\mathcal R_\star\) are exhausted as lattice objects. H1 opened there. First computation: \(J\) and thinness ([`H1-TUBE.md`](H1-TUBE.md)). Do not merge the integrals. Do not quote the Ring Lemma as proved. Do not glue H1 to \(H_N\).
+Physical-space rewrite on one vortex tube (same leftover class, different integral): [`H1-SOT.md`](H1-SOT.md). Estimate package: [`DOOR-B-H1-ESTIMATE-PLAN.md`](DOOR-B-H1-ESTIMATE-PLAN.md) (OPEN, not a GR close). Packet attacks on \(\mathcal R_\star\) are exhausted as lattice objects. H1 opened there. First computation: \(J\) and thinness ([`H1-TUBE.md`](H1-TUBE.md)). Do not merge the integrals. Do not quote the Ring Lemma as proved. Do not glue H1 to \(H_N\). Outside-\(\mathcal{E}\) identity blocked. Enumerator still on the ★ lane.
 
 **H2 — flux through the skin,** \(r^{-1}\iint|u||\omega|^2\).
 Smallness: proved (CKN 1982). From energy alone: open. Remainder is local \(\int E^2\).

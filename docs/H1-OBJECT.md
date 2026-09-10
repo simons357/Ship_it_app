@@ -7,7 +7,7 @@ Do not merge with global H. Glossary: [`H-SYSTEM.md`](H-SYSTEM.md).
 Two writings of leftover (6). Different integrals. Do not merge.
 
 1. **Bad-pair integral on \(Q_r\)** (this page). Aimed leftover yes. Theorem no.
-2. **Tube stretching on one cylinder.** SoT: [`H1-SOT.md`](H1-SOT.md). First numbers: [`H1-TUBE.md`](H1-TUBE.md). Same leftover class. Localized Lemma★ packaging. Still not a theorem.
+2. **Tube stretching on one cylinder.** SoT: [`H1-SOT.md`](H1-SOT.md). First numbers: [`H1-TUBE.md`](H1-TUBE.md). Estimate plan (OPEN, not GR close): [`DOOR-B-H1-ESTIMATE-PLAN.md`](DOOR-B-H1-ESTIMATE-PLAN.md). \(L^\infty\) sketch: [`DOOR-B-H1-B5-LINFTY-SKETCH.md`](DOOR-B-H1-B5-LINFTY-SKETCH.md). Same leftover class. Localized Lemma★ packaging. Still not a theorem.
 
 Do not glue H1 to the GCD matrix \(H_N\) / \(H_M[a]\).
 Do not quote the Ring Lemma direction bound as proved (REPAIR).

@@ -59,6 +59,8 @@ docs/H-SYSTEM.md
 docs/H1-OBJECT.md
 docs/H1-SOT.md
 docs/H1-TUBE.md
+docs/DOOR-B-H1-ESTIMATE-PLAN.md
+docs/DOOR-B-H1-B5-LINFTY-SKETCH.md
 docs/UNAUGMENTED-NS-CHAIN.md
 Writing gaps: docs/GAPS_DESTROYED.md
 Literature vs H-system: docs/LITERATURE-H.md
@@ -83,6 +85,9 @@ R★ ~ β/α, no blow. Freiman-AP dead.
 The m^{1/2} heuristic has no lattice home.
 H1 on one cylinder is the other writing.
 Tube SoT: docs/H1-SOT.md
+Estimate package OPEN, not a GR close.
+Outside-E identity blocked. Enumerator
+still on the star lane.
 Bound open.
 docs/LEMMA-STAR-PACKET.md
 Samples are evidence only.

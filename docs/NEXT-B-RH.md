@@ -38,7 +38,14 @@ None of 1, 2, 3 is proved. H1 object:
 (physical space, one cylinder; opened):
 [`H1-SOT.md`](H1-SOT.md). First numbers:
 [`H1-TUBE.md`](H1-TUBE.md). Ring Lemma
-direction bound is REPAIR. Do not glue
+direction bound is REPAIR. Estimate
+package (OPEN, not a GR close):
+[`DOOR-B-H1-ESTIMATE-PLAN.md`](DOOR-B-H1-ESTIMATE-PLAN.md).
+\(L^\infty\) sketch with MISSING marks:
+[`DOOR-B-H1-B5-LINFTY-SKETCH.md`](DOOR-B-H1-B5-LINFTY-SKETCH.md).
+Outside-\(\mathcal{E}\) identity blocked
+(no candidate). Lattice enumerator still
+on the ★ lane. Do not glue
 H1 to \(H_N\). Literature:
 H1 is not under another name
 ([`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md) §14).
@@ -73,7 +80,8 @@ found a lattice home. H1 on one cylinder
 is the other live writing
 ([`H1-SOT.md`](H1-SOT.md)).
 The uniform global triadic bound remains
-completely open.
+completely open. Lattice closure enumerator
+still running on this lane.
 Samples are evidence only. K=0 dead.
 Uniform pre-Young \(C\) dead. File:
 [`LEMMA-STAR.md`](LEMMA-STAR.md),

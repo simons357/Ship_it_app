@@ -229,8 +229,12 @@ The other live writing is H1 on one cylinder
 (thinness / J on folds / waiting time). Same leftover
 class, different integral. SoT:
 [`H1-SOT.md`](H1-SOT.md). First tube numbers:
-[`H1-TUBE.md`](H1-TUBE.md). Do not quote the
-Ring Lemma as proved. Do not glue H1 to \(H_N\).
+[`H1-TUBE.md`](H1-TUBE.md). Estimate package
+(OPEN, not a GR close):
+[`DOOR-B-H1-ESTIMATE-PLAN.md`](DOOR-B-H1-ESTIMATE-PLAN.md).
+Do not quote the Ring Lemma as proved. Do not glue H1 to \(H_N\).
+Lattice enumerator still running on this lane.
+Do not merge with H1.
 
 NS is not solved.
 

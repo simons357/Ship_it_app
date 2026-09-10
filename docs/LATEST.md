@@ -36,7 +36,14 @@ docs/H1-SOT.md. First tube numbers:
 docs/H1-TUBE.md
 (ABC stretch ~ A, not C(ρ,L); Burgers
 J=0 by imposed strain; pair thinness
-O(1) from Biot–Savart). Gaps: §11. Literature:
+O(1) from Biot–Savart).
+Estimate package OPEN, not a GR close:
+docs/DOOR-B-H1-ESTIMATE-PLAN.md
+L∞ sketch (MISSING marks):
+docs/DOOR-B-H1-B5-LINFTY-SKETCH.md
+Outside-E identity blocked. Enumerator
+still on the star lane.
+Gaps: §11. Literature:
 docs/LITERATURE-H.md (H1 not under another
 name). Lookups: all miss. docs/LOOKUP-H1.md.
 Shapes as estimates, not proved:

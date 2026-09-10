@@ -155,10 +155,22 @@ thin cylinder.
 
 Scores: [`H1-TUBE.md`](H1-TUBE.md).
 
+Estimate package (OPEN, not a GR close):
+[`DOOR-B-H1-ESTIMATE-PLAN.md`](DOOR-B-H1-ESTIMATE-PLAN.md).
+\(L^\infty\) sketch with MISSING marks:
+[`DOOR-B-H1-B5-LINFTY-SKETCH.md`](DOOR-B-H1-B5-LINFTY-SKETCH.md).
+Outside-\(\mathcal{E}\) identity: blocked, no
+candidate. Lattice enumerator still on the
+★ lane. Do not merge.
+
 ---
 
 ## Status
 
 Packet attacks on \(\mathcal R_\star\): negatives, written.
-H1: opened. Uniform triadic bound still open.
+H1: opened. Estimate package on disk: **OPEN**,
+not a GR close. Outside-\(\mathcal{E}\) identity
+blocked (no candidate). Lattice closure
+enumerator still running on the ★ lane.
+Uniform triadic bound still open.
 NS not solved.
