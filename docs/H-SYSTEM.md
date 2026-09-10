@@ -51,4 +51,5 @@ If you get H1 and miss H2-from-energy, you still do not have the cylinder.
 
 Work H1. Keep H2 and H3 labeled. Lemma C stays an if.
 
-Literature: H1 is not under another name. Paste: [`LITERATURE-H.md`](LITERATURE-H.md).
+The estimate (stated, not proved): [`WRITE_6.md`](WRITE_6.md).
+Supporting data: [`WRITE_6_SUPPORTED.md`](WRITE_6_SUPPORTED.md).

@@ -33,7 +33,10 @@ H1, H2-a priori (or CKN-small), and H3.
 Local Serrin then, not CKN. Object:
 docs/H1-OBJECT.md. Gaps: §11. Literature:
 docs/LITERATURE-H.md (H1 not under another
-name). No \(K(t)\). No Q1.
+name). Lookups: docs/LOOKUP-H1.md.
+WRITE (6): docs/WRITE_6.md
+(supported: docs/WRITE_6_SUPPORTED.md).
+No \(K(t)\). No Q1.
 
 **RH — open**
 docs/RH-CHAIN.md
