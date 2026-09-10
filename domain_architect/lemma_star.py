@@ -28,7 +28,7 @@ Attack 9A (AP packet) = negative for kill (D_s grew faster) — refuse
 “AP packet closed kill lane”. Fixed-gap / natural same-shell = not a kill
 (R_★ falls 0.11→0.031) — refuse “same-shell ensemble kills ★”.
 Next structured: Attack 9B exact-shell + closing → K_{α,β}.
-Remaining falsifier: Attack 9C designed Θ(m²)-closure subset, locked phases.
+Remaining falsifier: Attack 9D designed Θ(m²)-closure subset, locked phases. (9C = fixed-gap non-kill; Θ(m²) renamed 9C→9D.)
 
 DA will not green Lemma★ as PROVED. Refuses “almost proved”,
 “numerics prove ★”, greening from finite samples. No SFE glue.
@@ -46,10 +46,12 @@ from .kab_quantity import (
     ATTACK_9A_STATUS,
     ATTACK_9B_STATUS,
     ATTACK_9C_STATUS,
+    ATTACK_9D_STATUS,
     ATTACK_9_FIXED_GAP_STATUS,
     KAB_FORMULA,
     kab_inventory,
     refuse_ap_packet_closed_kill_lane,
+    refuse_nine_b_killed_star,
     refuse_same_shell_ensemble_kills_star,
 )
 from .rstar_quantities import (
@@ -212,7 +214,7 @@ PROVED_REFUSAL_PATTERNS: tuple[tuple[str, str], ...] = (
         r"(natural\s+same[-\s]?shell).{0,40}(kill|closed)",
         "REFUSE: natural same-shell / fixed-gap ensemble is NOT a kill "
         "(R_★ falls 0.11→0.031 under exact formula); kill lane LIVE via "
-        "Attack 9C (designed Θ(m²)-closure, locked phases); NS NOT SOLVED",
+        "Attack 9D (designed Θ(m²)-closure, locked phases); NS NOT SOLVED",
     ),
 )
 
@@ -252,13 +254,15 @@ FIVE_LANE_STATUS: dict[str, Any] = {
         "attack_9a": "NEGATIVE_FOR_KILL",
         "attack_9_fixed_gap": "NEGATIVE_FOR_KILL_NATURAL_SAME_SHELL",
         "attack_9b": "EXACT_SHELL_CLOSING_KAB_PROTOCOL",
-        "attack_9c": "REMAINING_THETA_M2_CLOSURE_FALSIFIER",
+        "attack_9c": "NEGATIVE_FOR_KILL_NATURAL_SAME_SHELL",
+        "attack_9d": "REMAINING_THETA_M2_CLOSURE_FALSIFIER",
     },
     "kill_lane": dict(KILL_LANE_STATUS),
     "attack_9a": dict(ATTACK_9A_STATUS),
     "attack_9_fixed_gap": dict(ATTACK_9_FIXED_GAP_STATUS),
     "attack_9b": dict(ATTACK_9B_STATUS),
     "attack_9c": dict(ATTACK_9C_STATUS),
+    "attack_9d": dict(ATTACK_9D_STATUS),
     "K_alpha_beta": KAB_FORMULA,
     "cross_link": (
         "K=0 dead ↔ D_s=0 kill criterion in R_★ shape form; "
@@ -266,19 +270,20 @@ FIVE_LANE_STATUS: dict[str, Any] = {
         "9A AP packet negative for kill (D_s faster); "
         "fixed-gap / natural same-shell not a kill (R_★ 0.11→0.031); "
         "9B exact-shell + closing → K_{α,β}; "
-        "9C remaining falsifier = designed Θ(m²)-closure, locked phases; "
+        "9C fixed-gap / natural same-shell not a kill (R_★ 0.11→0.031); "
+        "9D remaining falsifier = designed Θ(m²)-closure, locked phases; "
         "numeric bound ≠ uniform bound on R_★"
     ),
     "headline": (
         "K=0 dead ↔ D_s=0 kill criterion; kill lane LIVE (both directions); "
-        "Attack 9A / fixed-gap negative for kill; 9B K_{α,β}; 9C Θ(m²); "
+        "Attack 9A / 9C fixed-gap negative for kill; 9B K_{α,β} finite sample; 9D Θ(m²); "
         "Lemma★ survives numeric kill only ≠ proved "
         "(numeric ≠ uniform R_★); HH→L still the gap; NS NOT SOLVED"
     ),
     "retired_grok": "docs/ns-review/GROK-RETIRED-CONCLUSIONS.md",
     "attack_8_record": "docs/ns-review/ATTACK-8-RECORD.md",
     "attack_9": "docs/ns-review/ATTACK-9-COHERENT-PACKET-FAN.md",
-    "attack_9_fixed_gap": "docs/ns-review/ATTACK-9-FIXED-GAP-SPHERES.md",
+    "attack_9_fixed_gap": "docs/ns-review/ATTACK-9C-FIXED-GAP-SPHERES.md",
     "attack_9b": "docs/ns-review/ATTACK-9B-EXACT-SHELL-CLOSING.md",
     "side_archive": "docs/ns-review/LEMMA-STAR-SIDE-ARCHIVE.md",
 }
@@ -309,6 +314,7 @@ SHAPE_FORM_STATUS: dict[str, Any] = {
     "attack_9_fixed_gap": dict(ATTACK_9_FIXED_GAP_STATUS),
     "attack_9b": "docs/ns-review/ATTACK-9B-EXACT-SHELL-CLOSING.md",
     "attack_9c": dict(ATTACK_9C_STATUS),
+    "attack_9d": dict(ATTACK_9D_STATUS),
     "K_alpha_beta": KAB_FORMULA,
 }
 
@@ -362,7 +368,7 @@ ATTACK_ROUTES: tuple[dict[str, Any], ...] = (
             "Attack 9A AP packet did not kill (D_s faster). "
             "Fixed-gap / natural same-shell not a kill (R_★ 0.11→0.031). "
             "9B: exact-shell + closing → K_{α,β}. "
-            "Remaining falsifier: Attack 9C designed Θ(m²)-closure, locked phases."
+            "Remaining falsifier: Attack 9D designed Θ(m²)-closure, locked phases."
         ),
     },
     {
@@ -383,8 +389,8 @@ ATTACK_ROUTES: tuple[dict[str, Any], ...] = (
     },
     {
         "rank": 6,
-        "id": "ATTACK-9-FIXED-GAP-SPHERES",
-        "title": "Attack 9 — Fixed-gap spheres (natural same-shell)",
+        "id": "ATTACK-9C-FIXED-GAP-SPHERES",
+        "title": "Attack 9C — Fixed-gap spheres (natural same-shell)",
         "move": (
             "Fixed-gap spheres n and n+d; D_s from gap (not width); "
             "closures O(m); track R_★ vs n under exact formula"
@@ -395,31 +401,32 @@ ATTACK_ROUTES: tuple[dict[str, Any], ...] = (
             "Natural same-shell ensemble is NOT a kill. "
             "Refuse 'same-shell ensemble kills ★'."
         ),
-        "doc": "docs/ns-review/ATTACK-9-FIXED-GAP-SPHERES.md",
+        "doc": "docs/ns-review/ATTACK-9C-FIXED-GAP-SPHERES.md",
         "verdict": "NEGATIVE_FOR_KILL",
         "R_star_attested": (0.11, 0.031),
     },
     {
         "rank": 7,
         "id": "ATTACK-9B-EXACT-SHELL-CLOSING",
-        "title": "Attack 9B — Exact-shell + closing → K_{α,β}",
+        "title": "Attack 9B — Exact-shell + closing → K_{α,β} (max K≈0.641, not a kill)",
         "move": (
             "v_ε = w_α + ε z_β with z_β ∥ Π_β B(w_α,w_α); "
             "base = many same-shell modes; D_s from closing only; "
             "read limiting quotient via K_{α,β}"
         ),
         "honesty": (
-            "Protocol/quantity lock only. Caveat: narrow ≠ O(1) D_s on lattice. "
-            "Structured next family after 9A / fixed-gap negatives. "
-            "Does not prove ★."
+            "Runtime 2026-09-10 seed 1390: max K≈0.641 at (4,8); controls/ε-limit "
+            "PASS; finite sample NOT a kill; kill lane LIVE. Refuse '9B killed ★'. "
+            "Caveat: narrow ≠ O(1) D_s on lattice. Does not prove ★."
         ),
         "doc": "docs/ns-review/ATTACK-9B-EXACT-SHELL-CLOSING.md",
         "quantity": KAB_FORMULA,
+        "verdict": "FINITE_SAMPLE_NOT_KILL_LANE_LIVE",
     },
     {
         "rank": 8,
-        "id": "ATTACK-9C-THETA-M2-CLOSURE",
-        "title": "Attack 9C — Designed Θ(m²)-closure subset, locked phases",
+        "id": "ATTACK-9D-THETA-M2-CLOSURE",
+        "title": "Attack 9D — Designed Θ(m²)-closure subset, locked phases",
         "move": (
             "Design a Θ(m²)-closure subset (not merely O(m)) with locked "
             "phases; evaluate complete signed T_c and exact R_★"
@@ -429,7 +436,7 @@ ATTACK_ROUTES: tuple[dict[str, Any], ...] = (
             "failed to kill. Kill lane LIVE via this route. "
             "Finite samples ≠ kill lane closed; ≠ ★ proved."
         ),
-        "doc": "docs/ns-review/ATTACK-9-FIXED-GAP-SPHERES.md",
+        "doc": "docs/ns-review/ATTACK-9D-THETA-M2-LOCKED-PHASE.md",
         "verdict": "REMAINING_PACKET_FALSIFIER",
     },
 )
@@ -693,7 +700,7 @@ def analyze_lemma_star(text: str | None = None) -> LemmaStarReport:
         "fixed-gap / natural same-shell = NOT a kill (R_★ 0.11→0.031 exact); "
         "refuse 'same-shell ensemble kills ★'; "
         "9B exact-shell + closing → K_{α,β}; "
-        "remaining falsifier Attack 9C designed Θ(m²)-closure, locked phases "
+        "remaining falsifier Attack 9D designed Θ(m²)-closure, locked phases "
         "(docs/ns-review/ATTACK-9-FIXED-GAP-SPHERES.md).",
         "Side archive (not ★ evidence): LP-shell / Route N / Q6 / M=256 floor.",
         "Proving Lemma★ ≡ Clay B in this book; DA will not green without "
@@ -1001,6 +1008,7 @@ def load_lemma_star_inventory() -> dict[str, Any]:
         "ATTACK-9-FIXED-GAP",
         "ATTACK-9B",
         "ATTACK-9C",
+        "ATTACK-9D",
         "KILL-LANE",
     }
     return {
@@ -1030,6 +1038,7 @@ def load_lemma_star_inventory() -> dict[str, Any]:
         "kill_lane": dict(KILL_LANE_STATUS),
         "attack_9_fixed_gap": dict(ATTACK_9_FIXED_GAP_STATUS),
         "attack_9c": dict(ATTACK_9C_STATUS),
+        "attack_9d": dict(ATTACK_9D_STATUS),
         "rstar_invariances": check_rstar_invariances(),
         "comparison_warning": warn_rstar_comparison_without_attestation(),
     }

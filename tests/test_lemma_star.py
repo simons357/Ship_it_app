@@ -109,7 +109,7 @@ class TestAnalyzeHypothesis(unittest.TestCase):
             report.attack_routes[4]["verdict"], "NEGATIVE_FOR_KILL"
         )
         self.assertEqual(
-            report.attack_routes[5]["id"], "ATTACK-9-FIXED-GAP-SPHERES"
+            report.attack_routes[5]["id"], "ATTACK-9C-FIXED-GAP-SPHERES"
         )
         self.assertEqual(
             report.attack_routes[5]["verdict"], "NEGATIVE_FOR_KILL"
@@ -119,7 +119,7 @@ class TestAnalyzeHypothesis(unittest.TestCase):
         )
         self.assertIn("K_{alpha,beta}", report.attack_routes[6]["quantity"])
         self.assertEqual(
-            report.attack_routes[7]["id"], "ATTACK-9C-THETA-M2-CLOSURE"
+            report.attack_routes[7]["id"], "ATTACK-9D-THETA-M2-CLOSURE"
         )
         self.assertEqual(
             report.attack_routes[7]["verdict"], "REMAINING_PACKET_FALSIFIER"
@@ -309,6 +309,7 @@ class TestRegistryBooks(unittest.TestCase):
         self.assertIn("ATTACK-9-FIXED-GAP", ids)
         self.assertIn("ATTACK-9B", ids)
         self.assertIn("ATTACK-9C", ids)
+        self.assertIn("ATTACK-9D", ids)
         self.assertTrue(any("numerics" in r for r in inv["refused_routings"]))
         self.assertTrue(any("kill lane" in r for r in inv["refused_routings"]))
         self.assertEqual(inv["kill_lane"]["status"], "LIVE")

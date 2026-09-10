@@ -3,7 +3,7 @@
 **Date:** 2026-09-10  
 **Name (locked):** **Attack 9 — Coherent Packet/Fan Test**  
 **Depends on:** exact \(\mathcal R_\star\) ([`LEMMA-STAR-EXACT-FORMULAS.md`](./LEMMA-STAR-EXACT-FORMULAS.md)), Attack 8 record ([`ATTACK-8-RECORD.md`](./ATTACK-8-RECORD.md))  
-**Status:** **Attack 9A (AP packet) recorded — negative for kill.** Fixed-gap spheres / natural same-shell = **not a kill** ([`ATTACK-9-FIXED-GAP-SPHERES.md`](./ATTACK-9-FIXED-GAP-SPHERES.md)). Kill lane still **LIVE**. **NS NOT SOLVED.** No SFE. No “almost proved.”
+**Status:** **Attack 9A (AP packet) recorded — negative for kill.** Attack **9C** fixed-gap spheres / natural same-shell = **not a kill** ([`ATTACK-9C-FIXED-GAP-SPHERES.md`](./ATTACK-9C-FIXED-GAP-SPHERES.md)). Attack **9B** finite sample max K≈0.641 = **not a kill** ([`ATTACK-9B-EXACT-SHELL-CLOSING.md`](./ATTACK-9B-EXACT-SHELL-CLOSING.md)). Remaining falsifier = **9D** Θ(m²) ([`ATTACK-9D-THETA-M2-LOCKED-PHASE.md`](./ATTACK-9D-THETA-M2-LOCKED-PHASE.md)). Kill lane still **LIVE**. **NS NOT SOLVED.** No SFE. No “almost proved.”
 
 ---
 
