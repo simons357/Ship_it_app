@@ -103,6 +103,8 @@ Uniform pre-Young \(C\) dead. File:
 Drill: PR 48. Original five lanes (not 9A–9D):
 [`FIVE-LANE-DISCUSSION.md`](FIVE-LANE-DISCUSSION.md),
 [`five-lane-export/FIVE_LANES.md`](five-lane-export/FIVE_LANES.md).
+Pack (ffe858c folder plus tests):
+[`FIVE-LANE-PACK.md`](FIVE-LANE-PACK.md).
 Original JSON:
 [`five-lane-export/COMPUTE.md`](five-lane-export/COMPUTE.md).
 Attack 9B (\(K_{\alpha,\beta}\), finite max, not a kill):

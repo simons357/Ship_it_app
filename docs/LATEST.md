@@ -107,6 +107,8 @@ Drill: GitHub PR 48.
 Original five lanes (not 9A–9D):
 docs/FIVE-LANE-DISCUSSION.md
 docs/five-lane-export/FIVE_LANES.md
+Pack (ffe858c folder plus tests):
+docs/FIVE-LANE-PACK.md
 Five-lane export (defs + HH→L):
 docs/five-lane-export/INDEX.md
 Original computation (JSON, not a re-proof):

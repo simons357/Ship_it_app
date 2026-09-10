@@ -26,6 +26,10 @@ an analytic \(X^{3/2}\)-type bound.
 Those excerpts do not name all five lanes.
 The pack does.
 
+ffe858c folder plus tests (desktop ZIPs
+were not attached; recovered from PR 48):
+[`FIVE-LANE-PACK.md`](FIVE-LANE-PACK.md).
+
 ---
 
 ## Original five (not 9A–9D)

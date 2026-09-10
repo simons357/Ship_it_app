@@ -56,6 +56,10 @@ projection against \(B(w,w)\), not necessarily \(K\).
 Controls PASS. \(\varepsilon\)-limit PASS.
 `kill_lane: LIVE`. `lemma_star: OPEN`.
 
+Plots rebuilt from that JSON:
+`K_by_ab_pair.png`, `R_star_eps_limit.png`.
+β-split notes from PR 48: `BETA_SPLIT_CONFIRM.md`.
+Pack snapshot: [`../../FIVE-LANE-PACK.md`](../../FIVE-LANE-PACK.md).
 Do not cash \(0.641\) as \(C_0\).
 
 The other VM wrote `/opt/cursor/artifacts/attack9b_exact_shell/`.

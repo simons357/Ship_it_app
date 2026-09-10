@@ -57,6 +57,9 @@ Attack 12’s lattice fan is not lane 3.
 The \(a^4\) line \(\lvert T_c\rvert\le C\|u\|_2 X^{3/2}\)
 is not lane 2.
 
+ffe858c folder plus tests:
+[`../../FIVE-LANE-PACK.md`](../../FIVE-LANE-PACK.md).
+
 ---
 
 ## 1. Absolute defs (five-lane pack)
