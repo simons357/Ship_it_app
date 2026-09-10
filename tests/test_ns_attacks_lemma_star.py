@@ -25,12 +25,33 @@ def test_amplitude_homogeneity_LemmaStar_ratio():
     r1 = probe(base)
     r2 = probe(scale_field(base, 7.0))
     assert math.isfinite(r1.ratio_preyoung)
-    # Post-Young R★ scales as 1/B; pre-Young and C* are invariant
+    assert math.isfinite(r1.ratio_R_star_shape)
+    # Post-Young R_post scales as 1/B; pre-Young, C*, and shape★ are invariant
     assert abs(r2.ratio_star / r1.ratio_star - 1.0 / 7.0) < 1e-6
     assert abs(r1.ratio_preyoung - r2.ratio_preyoung) < 1e-9
     assert abs(r1.ratio_cstar - r2.ratio_cstar) < 1e-9
+    assert abs(r1.ratio_R_star_shape - r2.ratio_R_star_shape) < 1e-9
     # K=0 ratio scales ~ B
     assert abs(r2.ratio_k0 / r1.ratio_k0 - 7.0) < 1e-6
+
+
+def test_shape_ratio_matches_definition():
+    r = probe(high_triad_field(amp=1.2))
+    expect = (r.Tc ** 2) / (r.Ds * r.E * r.Y)
+    assert abs(r.ratio_R_star_shape - expect) < 1e-9
+
+
+def test_pure_single_shell_vacuous():
+    """Pure one-mode: Ds=0 and Tc=0 — vacuous, not a kill of ★."""
+    from ns_attacks.stokes_moments import enforce_reality, make_divfree_amp
+
+    k = (2, 1, 0)
+    f = {k: make_divfree_amp(k, (1.0, 0.0, 0.0))}
+    f[k] = f[k] / np.linalg.norm(f[k])
+    r = probe(enforce_reality(f))
+    assert r.Ds < 1e-12
+    assert abs(r.Tc) < 1e-12
+    assert not math.isfinite(r.ratio_R_star_shape) or r.Ds <= 1e-30
 
 
 def test_reality_pairs():

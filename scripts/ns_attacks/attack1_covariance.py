@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Attack 1 — Covariance / Lemma★ amplitude survival.
 
-Probe whether R★ = Tc / (E X Λ) stays uniformly bounded as amplitude B→∞
-and across random fields / phase rotations. If max |R★| → ∞, Lemma★ C0 is KILLED.
-If R★ falls or plateaus, Lemma★ SURVIVES numerically (still not a proof).
+Shape★ R_star_shape = Tc^2/(Ds E Y) is amp-invariant on fixed shape (canonical).
+Post-Young R_post = Tc/(E X Λ) falls as B→∞; pre-Young R_pre = Tc/(√E X Λ)
+is amp-invariant. If max |R_star_shape| or |R_pre| → ∞ across shapes, ★ C_geom
+is KILLED. Fixed-shape B↑ alone cannot kill shape★ (ν already cancelled).
+NS not solved.
 """
 
 from __future__ import annotations
@@ -43,6 +45,7 @@ def run(seed: int = 0, n_random: int = 200, B_list=None) -> dict:
                 "ratio_preyoung": r.ratio_preyoung,
                 "ratio_cstar": r.ratio_cstar,
                 "ratio_k0": r.ratio_k0,
+                "ratio_R_star_shape": r.ratio_R_star_shape,
                 "Tc": r.Tc,
                 "E": r.E,
                 "X": r.X,
@@ -79,14 +82,27 @@ def run(seed: int = 0, n_random: int = 200, B_list=None) -> dict:
     star_high = np.mean([abs(x["ratio_star"]) for x in triad_ratios[-3:]])
     pre_spread = float(np.max(pre_abs) / max(np.min(pre_abs), 1e-30)) if pre_abs else None
 
+    # Shape★ amp-invariance on fixed triad
+    shape_vals = [
+        abs(x["ratio_R_star_shape"])
+        for x in triad_ratios
+        if np.isfinite(x["ratio_R_star_shape"])
+    ]
+    shape_spread = (
+        float(np.max(shape_vals) / max(np.min(shape_vals), 1e-30)) if shape_vals else None
+    )
+
     summary = {
         "attack": 1,
         "name": "covariance_LemmaStar",
+        "canonical_form": "shape: R_star_shape = Tc^2/(Ds E Y)",
         "triad_amp_sweep": triad_ratios,
         "triad_abs_ratio_preyoung_max": float(np.max(pre_abs)) if pre_abs else None,
         "triad_abs_ratio_preyoung_min": float(np.min(pre_abs)) if pre_abs else None,
         "triad_preyoung_amp_spread_factor": pre_spread,
         "triad_preyoung_diam": float(np.max(pre_abs) - np.min(pre_abs)) if pre_abs else None,
+        "triad_R_star_shape_max": float(np.max(shape_vals)) if shape_vals else None,
+        "triad_R_star_shape_amp_spread_factor": shape_spread,
         "phase_abs_preyoung_max": float(np.max(phase_abs)) if phase_abs else None,
         "phase_abs_preyoung_diam": float(np.max(phase_abs) - np.min(phase_abs)) if phase_abs else None,
         "rand_abs_preyoung_max": float(np.max(rand_abs)) if rand_abs else None,
@@ -95,7 +111,7 @@ def run(seed: int = 0, n_random: int = 200, B_list=None) -> dict:
         "postYoung_Rstar_falls_as_B_increases": bool(star_high < 0.5 * star_low),
         "amp_trend_star_low_mean_abs": float(star_low),
         "amp_trend_star_high_mean_abs": float(star_high),
-        "blows_with_amplitude": False,  # fixed-shape R★ falls; kill needs shape family on Rpre
+        "blows_with_amplitude": False,  # fixed-shape R_post falls; kill needs shape family
         "verdict": (
             "KILL_LemmaStar_C0"
             if (rand_abs and np.max(rand_abs) > 1e3)

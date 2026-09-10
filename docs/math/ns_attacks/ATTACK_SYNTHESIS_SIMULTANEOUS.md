@@ -14,14 +14,32 @@
 | Centered-drift recovery | `docs/ns-recovery/CENTERED-SPECTRAL-DRIFT-MASTER-REPORT.md` | Exact Stokes-moment proof package was lost; names recovered |
 | Prior ATTACK_* / PROOF_LemmaStar | — | **Absent** at branch start; created this pass |
 
-## Lemma★ (packaging)
+## Lemma★ (canonical: shape form)
+
+**Lemma★ is a shape statement, not a viscosity statement.** Full lock: [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md).
 
 \[
-\mathfrak T_c\le\theta\nu(Z-\Lambda Y)+C_0\nu^{-1}\|u\|_2^2 X\Lambda,
+\bigl(\mathfrak T_c(v)\bigr)^2
+\le
+C_{\mathrm{geom}}\,
+\mathcal D_s(v)\,
+E(v)\,
+Y(v),
+\qquad
+\mathcal R_\star(v)
+=
+\frac{\bigl(\mathfrak T_c(v)\bigr)^2}{\mathcal D_s(v)\,E(v)\,Y(v)}.
 \]
-\(C_0\) geometric only. Pre-Young form (amp-invariant): \(|\mathfrak T_c|\le C\|u\|_2 X\Lambda\), then Young → Lemma★.
 
-If Lemma★ holds with uniform \(C_0\), then \(\Lambda\) cannot blow in finite time **in this packaging** ⇒ GR on \(\mathbb{T}^3\) **in this packaging**. **Lemma★ is not proved.**
+\(u=av\): worst size cancels \(\nu\); what remains is the boxed line. Viscosity packaging
+\[
+\mathfrak T_c\le\theta\nu(Z-\Lambda Y)+C_0\nu^{-1}\|u\|_2^2 X\Lambda
+\]
+is equivalent with \(C_0=C_{\mathrm{geom}}/(4\theta)\). Pre-Young (amp-invariant): \(|\mathfrak T_c|\le C\|u\|_2 X\Lambda\), then Young → viscosity ★.
+
+If the shape line holds for every divergence-free \(v\) with one \(C_{\mathrm{geom}}\), original ★ holds for every amplitude and every \(\nu\). If it fails for even one shape, ★ is false. A list of small-\(\mathcal R_\star\) fields is **not** that constant.
+
+If Lemma★ holds with uniform \(C_0\), then \(\Lambda\) cannot blow in finite time **in this packaging** ⇒ GR on \(\mathbb{T}^3\) **in this packaging**. **Lemma★ is not proved. NS is not solved.**
 
 ## Lane board — runtime 2026-09-10 (parallel, ~7s)
 
@@ -34,23 +52,26 @@ Artifacts: `/opt/cursor/artifacts/ns_five_lane_2026-09-10/`
 | 2 Triad / K=0 / C* | `attack2_triad_k0_cstar.py` | **K=0 DEAD; C* survives numeric** | \(\lvert T_c\rvert/\mathcal D_s\): \(0.0035\to349\) as \(B:0.1\to10^4\); \(C_*\approx0.004058\) amp-invariant on fixed triad; \(X=1\) slice \(\lvert T_c\rvert/\Lambda\lesssim0.0076\) |
 | 3 Bony HH→L | `attack3_bony_hh_l.py` | **HH channel live bottleneck** | High triad is 100% HH by cut; random HH frac mean \(\approx0.09\), p90 \(\approx0.51\) — no analytic closure |
 | 4 Stokes | `attack4_stokes.py` | **Identities OK; remainder needed** | \(\mathcal D_s\ge0\) (0 negatives / 100); \(D_s=Z-Y^2/X\) err \(<10^{-9}\); homogeneity OK; \(\theta\nu\mathcal D_s\) alone insufficient at large \(B\) |
-| 5 Route2 kill | `attack5_route2_kill.py` | **SURVIVE numeric; gap remains** | \(n=978\); max \(\lvert R_{\mathrm{pre}}\rvert\approx5.09\) (tag `sep_32_p0`); p99 \(\approx2.48\); max \(\lvert C_*\rvert\approx0.0406\); **not killed** (threshold \(10^3\)) |
+| 5 Route2 kill | `attack5_route2_kill.py` | **SURVIVE numeric; gap remains** | Shape★ \(\mathcal R_\star=T_c^2/(\mathcal D_s E Y)\); almost-shell kill attempt; see `max_R_star_shape` in `attack5.json`; prior \(n=978\) max \(\lvert R_{\mathrm{pre}}\rvert\approx5.09\); **not killed** |
 
-## Lemma★ kill-or-survive
 
-**SURVIVE (numeric only).** Thorough Galerkin search (random, triad phase, scale separation to \(s=32\), two-shell, near-mono, dense modes) did **not** produce \(\lvert T_c\rvert/(\sqrt{E}\,X\Lambda)\to\infty\). Strongest lower/upper style bounds this run:
+## Lemma★ kill-or-survive (shape \(\mathcal R_\star\))
+
+**SURVIVE (numeric only).** Thorough Galerkin search (random, triad phase, scale separation to \(s=32\), two-shell, near-mono / almost-single-shell, dense modes) did **not** produce \(\mathcal R_\star\to\infty\) nor \(\lvert T_c\rvert/(\sqrt{E}\,X\Lambda)\to\infty\). Live kill criteria: \(\mathcal R_\star\to\infty\), or \(\mathcal D_s=0\) with \(\mathfrak T_c>0\); pure single shell (both sides vanish) is vacuous. Strongest bounds this run:
 
 - \(\sup\lvert R_{\mathrm{pre}}\rvert \gtrsim 5.09\) (achieved)
-- \(\sup\lvert R_{\mathrm{pre}}\rvert\) still \(O(1)\) on tested family — **no proof of a uniform geometric \(C\)**
+- \(\sup\lvert R_{\mathrm{pre}}\rvert\) still \(O(1)\) on tested family — **no proof of a uniform geometric \(C_{\mathrm{geom}}\)**
 - \(\sup\lvert C_*\rvert\approx0.0406\) on the same family (matches prior triad \(\sim0.0357\) order)
+- Almost-single-shell \(\mathcal R_\star\) max: see Attack 5 / `attack5.json` (`max_R_star_shape`, `almost_shell` block) — sample list ≠ proof
 
 ## Exact inequality still to attack
 
 Close **either**:
-1. \(|\mathfrak T_c|\le C\|u\|_2 X\Lambda\) (pre-Young / geometric \(C\)) → Young-lifts to Lemma★, **or**
-2. \(|\mathfrak T_c|\le C_* X^{3/2}\Lambda\) (weaker survivor; remainder \(K\sim\sqrt{X}\)),
+1. Boxed shape form \(\mathfrak T_c(v)^2\le C_{\mathrm{geom}}\mathcal D_s(v)\,E(v)\,Y(v)\) (equivalently \(\sup\mathcal R_\star<\infty\)), **or**
+2. \(|\mathfrak T_c|\le C\|u\|_2 X\Lambda\) (pre-Young / geometric \(C\)) → Young-lifts to viscosity ★, **or**
+3. \(|\mathfrak T_c|\le C_* X^{3/2}\Lambda\) (weaker survivor; remainder \(K\sim\sqrt{X}\)),
 
-with a proof that controls the **HH→L** channel. Standard 3D product / Agmon estimates do **not** close the gap. Numerics ≠ proof.
+with a proof that controls the **HH→L** channel — reason from how triads add that stretching cannot get large unless spectrum spreads or phases cancel. That reason is **not written**. Standard 3D product / Agmon estimates do **not** close the gap. Numerics ≠ proof. **NS not solved.**
 
 ## Route N (arithmetic) — separate book
 

@@ -38,14 +38,23 @@ Ontology: `docs/domain-architect/SHAPE-TEXTURE-ONTOLOGY.md` on `cursor/da-theory
 
 Same mathematical object can wear many textures; rhyming symbols are **not** a proof. DA’s job is map → compare shape → flag texture Δ → refuse illegal splices.
 
-## Connection to five-lane attacks / Lemma★
+## Connection to five-lane attacks / Lemma★ (shape form)
+
+**Canonical ★ is a shape statement** — [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md). Map DA language onto that reframe carefully (metaphor only; **not** a weld):
+
+| DA term | Five-lane / Lemma★ object | Notes |
+|---------|---------------------------|-------|
+| **SHAPE** \(v\) | Divergence-free field shape in \(u=av\) | Amplitude \(a\) only changes size; geometry lives on \(v\). DA SHAPE = HB role skeleton; five-lane shape = Fourier profile. **Related metaphor, not the same data structure.** |
+| **TEXTURE** / ratio | \(\mathcal R_\star(v)=\mathfrak T_c(v)^2/(\mathcal D_s(v)\,E(v)\,Y(v))\) | Stretching per unit spread, energy, and \(Y\). Pure geometry; same for \(av\) as \(v\); independent of \(\nu\). A chart of small \(\mathcal R_\star\) values is **texture on samples**, not a proof that \(\sup\mathcal R_\star<\infty\). |
+| Same shape, different texture | Fixed \(v\), different notation / packaging (viscosity ★ vs boxed shape ★ vs pre-Young) | DA `SAME_SHAPE_DIFFERENT_TEXTURE` rhymes with “same \(v\), many remainder writings” — **not** a product estimate. |
+| Illegal splice | Treating a finite \(\mathcal R_\star\) list as \(C_{\mathrm{geom}}\), or DA navigation as Clay | Refuse. |
 
 | Layer | Link |
 |-------|------|
-| Shared language | Five-lane Attack 2 uses **fixed-shape** high triad amplitude sweeps (`B↑`); DA formalizes “shape” as HB roles. Related metaphor, **not** the same data structure. |
-| Lemma★ packaging | On the DA side, Lemma★ is book **DA-NS-1** / `--lemma-star` (see `docs/ns-review/LEMMA-STAR-DA-NS-1.md` on splicer). Clay weld **WITHHELD** until **PRODUCT-BLOCK** closes. |
-| Five-lane numeric | This branch: Attacks 1–5 kill K=0, leave Lemma★ / \(C_*\) **surviving numeric only** (`PROOF_LemmaStar_STATUS.md`). |
-| Do not weld | Do **not** treat DA `SAME_SHAPE_DIFFERENT_TEXTURE` as a closed product estimate, and do **not** treat five-lane plots as a DA library proof. |
+| Shared language | Five-lane Attack 2 uses **fixed-shape** high triad amplitude sweeps (`B↑`); DA formalizes “shape” as HB roles. |
+| Lemma★ packaging | On the DA side, Lemma★ is book **DA-NS-1** / `--lemma-star` (see `docs/ns-review/LEMMA-STAR-DA-NS-1.md` on splicer). Clay weld **WITHHELD** until **PRODUCT-BLOCK** closes. On this branch: shape-form canonical in `LEMMA_STAR_SHAPE_FORM.md` / `PROOF_LemmaStar_STATUS.md`. |
+| Five-lane numeric | This branch: Attacks 1–5 kill K=0, leave Lemma★ / \(C_*\) / \(\sup\mathcal R_\star\) **surviving numeric only**. |
+| Do not weld | Do **not** treat DA `SAME_SHAPE_DIFFERENT_TEXTURE` as a closed product estimate, and do **not** treat five-lane plots as a DA library proof. **NS not solved.** |
 
 `da-shape-texture` itself is **NS/RH library navigation**, not the five-lane Galerkin kill drill. Lemma★ demo artifacts live separately under `/opt/cursor/artifacts/da-lemma-star/` (when that agent’s pod wrote them).
 
@@ -63,6 +72,6 @@ Same mathematical object can wear many textures; rhyming symbols are **not** a p
 ## Next actions
 
 1. On splicer: `python3 -m domain_architect --lemma-star` / `--navigate DA-NS-1` — confirm PRODUCT-BLOCK still OPEN.  
-2. On this branch: continue proof/kill work on pre-Young \(C\) or \(C_* X^{3/2}\Lambda\) + HH→L (see `ATTACK_SYNTHESIS_SIMULTANEOUS.md`).  
+2. On this branch: continue proof/kill work on boxed shape ★ / \(\sup\mathcal R_\star\), or \(C_* X^{3/2}\Lambda\) + HH→L (see `ATTACK_SYNTHESIS_SIMULTANEOUS.md`, `LEMMA_STAR_SHAPE_FORM.md`). Live kill = almost-single-shell with \(\mathcal R_\star\to\infty\).  
 3. Do **not** move five-lane attack code onto `tao-snd-h-panel-a0eb`.  
 4. If Jonathan wants one desk: merge **docs pointers** first; code merge only after PRODUCT-BLOCK / five-lane doors are explicit.

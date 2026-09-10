@@ -4,21 +4,32 @@
 
 ## Target
 
-Maximize \(|R_\star|=|\mathfrak T_c|/(\|u\|_2^2 X\Lambda)\) over random fields, triads, scale separations, two-shell data, and near-monochromatic perturbations. Also compare alternate remainders (Route 2):
-- \(\|u\|_2^2 X\Lambda\) (Lemma★)
+Kill or bound the **shape** constant
+\[
+\mathcal R_\star(v)=\frac{\bigl(\mathfrak T_c(v)\bigr)^2}{\mathcal D_s(v)\,E(v)\,Y(v)}
+\]
+([`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md)). Also track pre-Young \(R_{\mathrm{pre}}=\mathfrak T_c/(\|u\|_2 X\Lambda)\) and alternate remainders (Route 2):
+- \(\mathcal D_s\,E\,Y\) (shape ★ denominator)
+- \(\|u\|_2^2 X\Lambda\) (viscosity / post-Young packaging)
 - \(X^{3/2}\Lambda\) (Attack-2 survivor)
 - \(\mathcal D_s\) (K=0)
 - Young-style \(\|B(u,u)\|_2\) products
 
+Families: random fields, triads, scale separations, two-shell data, and **almost-single-shell** perturbations (live kill attempt: \(\mathcal D_s\to0^+\) while stretching stays alive).
+
 ## Kill criterion
 
-Empirical \(\sup|R_\star|\) exploding (\(\gg 10^3\) on smooth Galerkin families) ⇒ Lemma★ \(C_0\) **KILLED**.
-Bounded ratios ⇒ **SURVIVE numeric** — still **not a proof**.
+| Signal | Verdict |
+|--------|---------|
+| \(\sup\mathcal R_\star\to\infty\) (or \(\gg 10^3\)) on smooth Galerkin families | Lemma★ \(C_{\mathrm{geom}}\) **KILLED** |
+| \(\mathcal D_s=0\) and \(\mathfrak T_c>0\) | **★ dead** on that field |
+| Pure single shell, \(\mathfrak T_c=0=\mathcal D_s\) | vacuous — not a kill |
+| Bounded \(\mathcal R_\star\) / \(R_{\mathrm{pre}}\) on the search | **SURVIVE numeric** — still **not a proof**; sample list ≠ uniform constant |
 
 ## Method
 
-`scripts/ns_attacks/attack5_route2_kill.py`.
+`scripts/ns_attacks/attack5_route2_kill.py` (includes `almost_single_shell` / mono+eps probe reporting `max_R_star_shape`).
 
 ## Live result (2026-09-10)
 
-**SURVIVE numeric.** \(n=978\); max \(\lvert R_{\mathrm{pre}}\rvert\approx5.09\); max \(\lvert C_*\rvert\approx0.0406\); Lemma★ \(C_0\) **not killed**. See `attack5.json` and synthesis.
+**SURVIVE numeric.** \(n=978\); max \(\lvert R_{\mathrm{pre}}\rvert\approx5.09\); max \(\lvert C_*\rvert\approx0.0406\); Lemma★ \(C_{\mathrm{geom}}\) / \(C_0\) **not killed**. Re-run after shape-form probe extension updates `max_R_star_shape` / almost-shell block in `attack5.json`. See synthesis.

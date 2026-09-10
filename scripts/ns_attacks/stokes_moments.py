@@ -15,12 +15,18 @@ Notation (Foias–Temam / Constantin–Foias style on T^3):
   M = −⟨A B(u,u), A u⟩   (= −⟨B(u,u), A^2 u⟩ by self-adjointness of A)
   Tc = M − Λ N
 
-Lemma★ (energy remainder; OPEN):
-  Tc ≤ θ ν Ds + C0 ν^{-1} E X Λ
-with C0 geometric only (independent of amplitude / viscosity scale).
+Lemma★ — CANONICAL SHAPE FORM (OPEN; NS not solved):
+  (Tc(v))^2 ≤ C_geom · Ds(v) · E(v) · Y(v)
+  R_star_shape(v) := Tc(v)^2 / (Ds(v) E(v) Y(v))   (amp- and ν-invariant)
+Viscosity packaging (equivalent via Young / u=av optimizing a):
+  Tc ≤ θ ν Ds + C0 ν^{-1} E X Λ    with C0 = C_geom / (4θ)
+since X Λ = Y.
 
 Survivor bound from Attack 2 (K=0 killed):
   Tc ≤ θ ν Ds + C* X^{3/2} Λ
+
+Kill criteria (shape): R_star_shape → ∞; or Ds=0 with Tc>0.
+Pure single shell (Tc=0=Ds) is vacuous. Live attempt: almost-single-shell.
 """
 
 from __future__ import annotations
@@ -147,14 +153,16 @@ class ProbeResult:
     N: float
     M: float
     Tc: float
-    # Post-Young Lemma★ ratio: Tc / (E X Λ) — scales as 1/B on fixed shape (degree 3/4)
+    # Post-Young viscosity packaging: Tc / (E X Λ) — scales as 1/B on fixed shape
     ratio_star: float
-    # Pre-Young geometric ratio: Tc / (√E · X · Λ) — amplitude-invariant; true C0 candidate
+    # Pre-Young geometric ratio: Tc / (√E · X · Λ) — amplitude-invariant
     ratio_preyoung: float
     # Survivor C* form: Tc / (X^{3/2} Λ) — amplitude-invariant
     ratio_cstar: float
     # K=0 form: Tc / Ds  (blows ~B with amplitude)
     ratio_k0: float
+    # Canonical shape★ ratio: Tc^2 / (Ds E Y) — amp- and ν-invariant; C_geom candidate
+    ratio_R_star_shape: float
     B_L2: float
     label: str = ""
 
@@ -170,9 +178,12 @@ def probe(field: Field, label: str = "") -> ProbeResult:
     for v in Buu.values():
         B_L2 += float(np.vdot(v, v).real)
     B_L2 = np.sqrt(max(B_L2, 0.0))
+    Y = m["Y"]
     denom_star = E * X * Lam if E > 0 and X > 0 and Lam > 0 else float("nan")
     denom_pre = (np.sqrt(E) * X * Lam) if E > 0 and X > 0 and Lam > 0 else float("nan")
     denom_cstar = (X ** 1.5) * Lam if X > 0 and Lam > 0 else float("nan")
+    # Shape★: Tc^2 / (Ds E Y); XΛ = Y so this is Tc^2 / (Ds E X Λ)
+    denom_R_star_shape = Ds * E * Y if E > 0 and Y > 0 and Ds > 1e-30 else float("nan")
 
     def div(num: float, den: float) -> float:
         return num / den if den and den == den and abs(den) > 0 else float("nan")
@@ -180,7 +191,7 @@ def probe(field: Field, label: str = "") -> ProbeResult:
     return ProbeResult(
         E=E,
         X=X,
-        Y=m["Y"],
+        Y=Y,
         Z=m["Z"],
         Lambda=Lam,
         Ds=Ds,
@@ -191,6 +202,7 @@ def probe(field: Field, label: str = "") -> ProbeResult:
         ratio_preyoung=div(Tc, denom_pre),
         ratio_cstar=div(Tc, denom_cstar),
         ratio_k0=div(Tc, Ds) if Ds > 1e-30 else float("nan"),
+        ratio_R_star_shape=div(Tc * Tc, denom_R_star_shape),
         B_L2=B_L2,
         label=label,
     )
@@ -325,6 +337,47 @@ def bony_channel_split(field: Field, k_cut: float) -> Dict[str, float]:
 def format_probe(r: ProbeResult) -> str:
     return (
         f"{r.label:28s} E={r.E:.4e} X={r.X:.4e} Λ={r.Lambda:.4f} Ds={r.Ds:.4e} "
-        f"Tc={r.Tc:.4e} R★={r.ratio_star:.4e} Rpre={r.ratio_preyoung:.4e} "
-        f"Rc*={r.ratio_cstar:.4e} Rk0={r.ratio_k0:.4e}"
+        f"Tc={r.Tc:.4e} Rshape={r.ratio_R_star_shape:.4e} Rpost={r.ratio_star:.4e} "
+        f"Rpre={r.ratio_preyoung:.4e} Rc*={r.ratio_cstar:.4e} Rk0={r.ratio_k0:.4e}"
     )
+
+
+def almost_single_shell_field(
+    rng: np.random.Generator,
+    k_main: ModeKey = (3, 1, 0),
+    n_pert: int = 3,
+    eps: float = 1e-3,
+    kmax_pert: int = 6,
+) -> Field:
+    """Nearly one Fourier shell + small multi-mode perturbation (live ★ kill attempt).
+
+    Pure single shell: Ds=0 and typically Tc=0 (vacuous). Live kill needs Ds→0+ with
+    stretching that keeps R_star_shape = Tc^2/(Ds E Y) from staying bounded.
+    """
+    field: Field = {}
+    v = make_divfree_amp(k_main, (1.0, 0.2, -0.5))
+    nrm = np.linalg.norm(v)
+    if nrm < 1e-15:
+        v = make_divfree_amp(k_main, (0.0, 1.0, 0.0))
+        nrm = np.linalg.norm(v)
+    field[k_main] = v / nrm
+
+    candidates = [
+        (i, j, k)
+        for i in range(-kmax_pert, kmax_pert + 1)
+        for j in range(-kmax_pert, kmax_pert + 1)
+        for k in range(-kmax_pert, kmax_pert + 1)
+        if (i, j, k) != (0, 0, 0)
+        and (i, j, k) != k_main
+        and (i, j, k) != (-k_main[0], -k_main[1], -k_main[2])
+        and (i > 0 or (i == 0 and j > 0) or (i == 0 and j == 0 and k > 0))
+    ]
+    rng.shuffle(candidates)
+    for k in candidates[:n_pert]:
+        vp = make_divfree_amp(k, rng.normal(size=3))
+        n = np.linalg.norm(vp)
+        if n < 1e-15:
+            continue
+        phase = rng.uniform(0, 2 * np.pi)
+        field[k] = (eps * np.exp(1j * phase) / n) * vp
+    return enforce_reality(field)

@@ -68,12 +68,12 @@ DA ranking (impact × closability): multi-rep Bridge\* ≫ Paper1 A–C packagin
 | | |
 |--|--|
 | **Where** | `docs/math/ns_attacks/`; probes `scripts/ns_attacks/` |
-| **Lemma★** | \(\mathfrak T_c\le\theta\nu\mathcal D_s+C_0\nu^{-1}\|u\|_2^2 X\Lambda\) — **OPEN** |
+| **Lemma★** | **Canonical shape form:** \(\mathfrak T_c(v)^2\le C_{\mathrm{geom}}\mathcal D_s(v)\,E(v)\,Y(v)\) with \(\mathcal R_\star=T_c^2/(\mathcal D_s E Y)\) — **OPEN** (viscosity packaging equivalent via \(u=av\)) |
 | **K=0** | **KILLED** (ratio grows with amplitude) |
 | **C\* survivor** | Numeric amp-invariance on triads; **not proved** |
-| **Kill drill** | Max pre-Young \(\lvert R_{\mathrm{pre}}\rvert\approx5.09\) on 978 samples — **survives**, not a proof |
+| **Kill drill** | Max pre-Young \(\lvert R_{\mathrm{pre}}\rvert\approx5.09\); almost-shell \(\mathcal R_\star\) probe — **survives**, not a proof; sample list ≠ \(C_{\mathrm{geom}}\) |
 | **Does not buy** | Clay / unconditional GR |
-| **Status** | **LEAD / OPEN**; **NS NOT SOLVED** |
+| **Status** | **LEAD / OPEN**; **NS NOT SOLVED**; see `LEMMA_STAR_SHAPE_FORM.md` |
 
 ---
 
