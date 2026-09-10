@@ -1,15 +1,15 @@
 {
   "meta": {
-    "version": "0.1.0",
+    "version": "0.1.1",
     "source": "docs/math/DA-REPORT-2026-08-28.md",
-    "updated": "2026-08-28",
+    "updated": "2026-09-08",
     "description": "Structured DA ledger for PFPI search and GET /v1/ledger"
   },
   "summary": {
     "CLOSED": 8,
     "KILLED": 7,
-    "LEAD": 4,
-    "HARD": 4
+    "LEAD": 5,
+    "HARD": 5
   },
   "entries": [
     {
@@ -169,6 +169,15 @@
       "tags": ["concentration:herfindahl", "weight:critical_line"]
     },
     {
+      "id": "lead-route-n-shellwise",
+      "status": "LEAD",
+      "claim": "Route N: shellwise principal-block λ_min of Q̃/H clears −1/2 (convexity bypass for auxiliary H_M[a])",
+      "where": "docs/math/NS-EXTRACTION-LEDGER.md",
+      "notes": "Convexity TRUE; probe through M=256 clears −1/2 (worst Q̃ shell ≈−0.234) while full Q̃ fails. NOT a theorem. Different from killed full-spectrum Bridge. Does NOT prove NS.",
+      "keep_cut": "KEEP",
+      "tags": ["floor:half", "operator:Q_tilde", "operator:H_N", "route:N"]
+    },
+    {
       "id": "hard-snd-unconditional",
       "status": "HARD",
       "claim": "SND unconditional / noncircular M",
@@ -203,6 +212,15 @@
       "notes": "Cancel 1/r^4 in unaugmented variables",
       "keep_cut": "KEEP",
       "tags": ["domain:NS"]
+    },
+    {
+      "id": "hard-route-n-pde-bridge",
+      "status": "HARD",
+      "claim": "Route N PDE bridge: GCD / inverse-GCD form controls vortex-stretch or shell-transfer",
+      "where": "docs/math/NS-EXTRACTION-LEDGER.md",
+      "notes": "Even proved shellwise arithmetic floor ≠ NS. Cool-check: NS not solved; Thm H ≠ unconditional SND.",
+      "keep_cut": "KEEP",
+      "tags": ["domain:NS", "route:N"]
     }
   ]
 }

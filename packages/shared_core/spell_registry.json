@@ -38,6 +38,14 @@
       "args_schema": {},
       "output": null
     },
+    "route_n_shell_floor": {
+      "name": "Route N Shellwise Floor Probe",
+      "script": "scripts/route_n_shell_floor_probe.py",
+      "doc": "docs/math/NS-EXTRACTION-LEDGER.md",
+      "tags": ["floor:half", "operator:Q_tilde", "operator:H_N", "route:N"],
+      "args_schema": {"Mmax": "int"},
+      "output": null
+    },
     "route_c_gap_a": {
       "name": "Route C Gap A Verify",
       "script": "scripts/route_c_gap_a_verify.py",

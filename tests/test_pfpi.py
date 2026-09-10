@@ -59,15 +59,20 @@ class TestPFPI(unittest.TestCase):
         from tools.pfpi.ledger import filter_ledger
 
         leads = filter_ledger(status="LEAD")
-        self.assertEqual(len(leads), 4)
+        self.assertEqual(len(leads), 5)
         ids = {e["id"] for e in leads}
         self.assertIn("lead-spectral-constant", ids)
+        self.assertIn("lead-route-n-shellwise", ids)
+        hards = filter_ledger(status="HARD")
+        self.assertEqual(len(hards), 5)
+        self.assertIn("hard-route-n-pde-bridge", {e["id"] for e in hards})
 
     def test_ledger_json_valid(self) -> None:
         path = REPO_ROOT / "tools/pfpi/ledger.json"
         data = json.loads(path.read_text(encoding="utf-8"))
         self.assertIn("entries", data)
-        self.assertEqual(data["summary"]["LEAD"], 4)
+        self.assertEqual(data["summary"]["LEAD"], 5)
+        self.assertEqual(data["summary"]["HARD"], 5)
 
 
 class TestSpellRunner(unittest.TestCase):
