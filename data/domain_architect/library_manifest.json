@@ -1,5 +1,5 @@
 {
-  "scanned_at": "2026-09-10T09:31:14.827568+00:00",
+  "scanned_at": "2026-09-10T09:40:23.612272+00:00",
   "source_files": [
     "data/domain_architect/historical_equations.json",
     "data/domain_architect/snd_tweet_equations.json",
@@ -1051,8 +1051,8 @@
         "fingers": {
           "\u03c8": "state",
           "H": "interaction",
-          "\u03bb": "scale_response",
           "E": "environment",
+          "\u03bb": "scale_response",
           "P": "admissibility",
           "\u03a6": "realized_output"
         },
@@ -1108,8 +1108,8 @@
         "fingers": {
           "\u03c8": "state",
           "H": "interaction",
-          "\u03bb": "scale_response",
           "E": "environment",
+          "\u03bb": "scale_response",
           "P": "admissibility",
           "\u03a6": "realized_output"
         },
@@ -1220,8 +1220,8 @@
         "fingers": {
           "\u03c8": "state",
           "H": "interaction",
-          "\u03bb": "scale_response",
           "E": "environment",
+          "\u03bb": "scale_response",
           "P": "admissibility",
           "\u03a6": "realized_output"
         },
@@ -1330,8 +1330,8 @@
         "fingers": {
           "\u03c8": "state",
           "H": "interaction",
-          "\u03bb": "scale_response",
           "E": "environment",
+          "\u03bb": "scale_response",
           "P": "admissibility",
           "\u03a6": "realized_output"
         },
@@ -1379,8 +1379,8 @@
         "fingers": {
           "\u03c8": "state",
           "H": "interaction",
-          "\u03bb": "scale_response",
           "E": "environment",
+          "\u03bb": "scale_response",
           "P": "admissibility",
           "\u03a6": "realized_output"
         },
@@ -1436,8 +1436,8 @@
         "fingers": {
           "\u03c8": "state",
           "H": "interaction",
-          "\u03bb": "scale_response",
           "E": "environment",
+          "\u03bb": "scale_response",
           "P": "admissibility",
           "\u03a6": "realized_output"
         },
@@ -1538,8 +1538,8 @@
         "fingers": {
           "\u03c8": "state",
           "H": "interaction",
-          "\u03bb": "scale_response",
           "E": "environment",
+          "\u03bb": "scale_response",
           "P": "admissibility",
           "\u03a6": "realized_output"
         },
@@ -1699,7 +1699,7 @@
       "label": "PRODUCT-BLOCK001: PRODUCT-BLOCK (OPEN): need |T_c| <= C*||u||_2*X^{3",
       "shape": {
         "shape_id": "shape-generic-generic-68b409c556dc",
-        "source": "PRODUCT-BLOCK (OPEN): need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D product estimates do not give this from energy alone",
+        "source": "PRODUCT-BLOCK (OPEN): need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D product/Agmon estimates do not give this from energy alone; Bony HH\u2192L still the gap (PR #48)",
         "fingers": {},
         "role_topology": [
           "unresolved"
@@ -1711,17 +1711,22 @@
         ]
       },
       "texture": {
-        "source": "PRODUCT-BLOCK (OPEN): need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D product estimates do not give this from energy alone",
+        "source": "PRODUCT-BLOCK (OPEN): need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D product/Agmon estimates do not give this from energy alone; Bony HH\u2192L still the gap (PR #48)",
         "notation": "energy_budget_spectral_drift",
         "domain": "unspecified",
         "hypothesis_tags": [
           "PRODUCT-BLOCK_open"
         ],
         "symbols": [
+          "Agmon",
           "BLOCK",
+          "Bony",
           "C",
           "D",
+          "HH",
+          "L",
           "OPEN",
+          "PR",
           "PRODUCT",
           "T_c",
           "X",
@@ -1731,13 +1736,8 @@
           "energy",
           "estimates",
           "from",
-          "give",
-          "need",
-          "not",
-          "ordinary",
-          "product",
-          "this",
-          "u"
+          "gap",
+          "give"
         ],
         "book_id": "PRODUCT-BLOCK001",
         "notes": [
@@ -1759,8 +1759,8 @@
         "fingers": {
           "\u03c8": "state",
           "H": "interaction",
-          "\u03bb": "scale_response",
           "E": "environment",
+          "\u03bb": "scale_response",
           "P": "admissibility",
           "\u03a6": "realized_output"
         },
@@ -1808,8 +1808,8 @@
         "fingers": {
           "\u03c8": "state",
           "H": "interaction",
-          "\u03bb": "scale_response",
           "E": "environment",
+          "\u03bb": "scale_response",
           "P": "admissibility",
           "\u03a6": "realized_output"
         },
@@ -1901,8 +1901,8 @@
         "fingers": {
           "\u03c8": "state",
           "H": "interaction",
-          "\u03bb": "scale_response",
           "E": "environment",
+          "\u03bb": "scale_response",
           "P": "admissibility",
           "\u03a6": "realized_output"
         },
@@ -1962,8 +1962,8 @@
         "fingers": {
           "\u03c8": "state",
           "H": "interaction",
-          "\u03bb": "scale_response",
           "E": "environment",
+          "\u03bb": "scale_response",
           "P": "admissibility",
           "\u03a6": "realized_output"
         },
@@ -2017,8 +2017,8 @@
         "fingers": {
           "\u03c8": "state",
           "H": "interaction",
-          "\u03bb": "scale_response",
           "E": "environment",
+          "\u03bb": "scale_response",
           "P": "admissibility",
           "\u03a6": "realized_output"
         },
@@ -2068,8 +2068,8 @@
         "fingers": {
           "\u03c8": "state",
           "H": "interaction",
-          "\u03bb": "scale_response",
           "E": "environment",
+          "\u03bb": "scale_response",
           "P": "admissibility",
           "\u03a6": "realized_output"
         },
@@ -2123,8 +2123,8 @@
         "fingers": {
           "\u03c8": "state",
           "H": "interaction",
-          "\u03bb": "scale_response",
           "E": "environment",
+          "\u03bb": "scale_response",
           "P": "admissibility",
           "\u03a6": "realized_output"
         },
@@ -2190,8 +2190,8 @@
         "fingers": {
           "\u03c8": "state",
           "H": "interaction",
-          "\u03bb": "scale_response",
           "E": "environment",
+          "\u03bb": "scale_response",
           "P": "admissibility",
           "\u03a6": "realized_output"
         },
@@ -2319,8 +2319,8 @@
         "fingers": {
           "\u03c8": "state",
           "H": "interaction",
-          "\u03bb": "scale_response",
           "E": "environment",
+          "\u03bb": "scale_response",
           "P": "admissibility",
           "\u03a6": "realized_output"
         },
@@ -2412,20 +2412,20 @@
       "object_id": "obj-claim-LEMMA-STAR",
       "label": "Lemma\u2605 / DA-NS-1 energy-budget closing estimate",
       "shape": {
-        "shape_id": "shape-generic-generic-68b409c556dc",
-        "source": "T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda with C_0 geometric only; T_c=M-Lambda*N.",
+        "shape_id": "shape-SND-U-generic-6844df8d211f",
+        "source": "T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda with C_0 geometric only; T_c=M-Lambda*N. Locked Millennium packaging (not a side lemma).",
         "fingers": {},
         "role_topology": [
           "unresolved"
         ],
-        "compatibility_class": "generic",
+        "compatibility_class": "SND-U",
         "dependency_hints": [],
         "notes": [
           "Shape = invariant role skeleton; not a proof claim."
         ]
       },
       "texture": {
-        "source": "T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda with C_0 geometric only; T_c=M-Lambda*N.",
+        "source": "T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda with C_0 geometric only; T_c=M-Lambda*N. Locked Millennium packaging (not a side lemma).",
         "notation": "energy_budget_spectral_drift",
         "domain": "unspecified",
         "hypothesis_tags": [
@@ -2434,21 +2434,26 @@
         "symbols": [
           "C_0",
           "Lambda",
+          "Locked",
           "M",
+          "Millennium",
           "N",
           "T_c",
           "X",
           "Y",
           "Z",
           "_2",
+          "a",
           "geometric",
+          "lemma",
+          "not",
           "nu",
           "only",
-          "theta",
-          "u",
-          "with"
+          "packaging",
+          "side",
+          "theta"
         ],
-        "book_id": "generic",
+        "book_id": "SND-U",
         "notes": [
           "Texture = coordinate chart; same shape may wear many textures."
         ]
@@ -2515,10 +2520,10 @@
     },
     {
       "object_id": "obj-claim-PRODUCT-BLOCK",
-      "label": "Product estimate blocker for Lemma\u2605",
+      "label": "Product / Agmon estimate blocker for Lemma\u2605",
       "shape": {
         "shape_id": "shape-generic-generic-68b409c556dc",
-        "source": "Need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D Sobolev/product estimates INSUFFICIENT from energy alone.",
+        "source": "Need |T_c| <= C*||u||_2*X^{3/2} (or |T_c|<=C||u||_2 X Lambda then Young); ordinary 3D Sobolev/product/Agmon estimates INSUFFICIENT from energy alone. Analytic bottleneck: Bony HH\u2192L.",
         "fingers": {},
         "role_topology": [
           "unresolved"
@@ -2530,28 +2535,31 @@
         ]
       },
       "texture": {
-        "source": "Need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D Sobolev/product estimates INSUFFICIENT from energy alone.",
+        "source": "Need |T_c| <= C*||u||_2*X^{3/2} (or |T_c|<=C||u||_2 X Lambda then Young); ordinary 3D Sobolev/product/Agmon estimates INSUFFICIENT from energy alone. Analytic bottleneck: Bony HH\u2192L.",
         "notation": "energy_budget_spectral_drift",
         "domain": "unspecified",
-        "hypothesis_tags": [
-          "PRODUCT-BLOCK_open"
-        ],
+        "hypothesis_tags": [],
         "symbols": [
+          "Agmon",
+          "Analytic",
+          "Bony",
           "C",
           "D",
+          "HH",
           "INSUFFICIENT",
+          "L",
+          "Lambda",
           "Need",
           "Sobolev",
           "T_c",
           "X",
+          "Young",
           "_2",
           "alone",
+          "bottleneck",
           "energy",
           "estimates",
-          "from",
-          "ordinary",
-          "product",
-          "u"
+          "from"
         ],
         "book_id": "generic",
         "notes": [
@@ -2562,6 +2570,51 @@
       "status": "HYPOTHESIS",
       "source_refs": [
         "snd_claim_inventory.json#PRODUCT-BLOCK"
+      ]
+    },
+    {
+      "object_id": "obj-claim-FIVE-LANE-LEMMA-STAR",
+      "label": "Five-lane Lemma\u2605 drill (PR #48)",
+      "shape": {
+        "shape_id": "shape-generic-generic-68b409c556dc",
+        "source": "Simultaneous Attacks 1\u20135 on centered spectral drift T_c / Lemma\u2605 packaging (2026-09-10).",
+        "fingers": {},
+        "role_topology": [
+          "unresolved"
+        ],
+        "compatibility_class": "generic",
+        "dependency_hints": [],
+        "notes": [
+          "Shape = invariant role skeleton; not a proof claim."
+        ]
+      },
+      "texture": {
+        "source": "Simultaneous Attacks 1\u20135 on centered spectral drift T_c / Lemma\u2605 packaging (2026-09-10).",
+        "notation": "energy_budget_spectral_drift",
+        "domain": "unspecified",
+        "hypothesis_tags": [
+          "Lemma\u2605_hypothesis"
+        ],
+        "symbols": [
+          "Attacks",
+          "Lemma",
+          "Simultaneous",
+          "T_c",
+          "centered",
+          "drift",
+          "on",
+          "packaging",
+          "spectral"
+        ],
+        "book_id": "generic",
+        "notes": [
+          "Texture = coordinate chart; same shape may wear many textures."
+        ]
+      },
+      "millennium_tags": [],
+      "status": "HYPOTHESIS",
+      "source_refs": [
+        "snd_claim_inventory.json#FIVE-LANE-LEMMA-STAR"
       ]
     },
     {
@@ -3120,7 +3173,7 @@
     },
     {
       "object_id": "obj-book-PRODUCT-BLOCK",
-      "label": "Product estimate blocker for Lemma\u2605",
+      "label": "Product / Agmon estimate blocker for Lemma\u2605",
       "shape": {
         "shape_id": "shape-PRODUCT-BLOCK-PH\u03c8\u03bb\u03a6-790b52755f0d",
         "source": "PRODUCT-BLOCK",
@@ -3142,6 +3195,8 @@
         "dependency_hints": [
           "product_estimate",
           "Sobolev",
+          "Agmon",
+          "HH_to_L",
           "T_c_bound",
           "energy_alone"
         ],
@@ -3157,9 +3212,12 @@
           "PRODUCT-BLOCK_open"
         ],
         "symbols": [
+          "Agmon",
           "BLOCK",
           "C",
           "D",
+          "HH",
+          "L",
           "OPEN",
           "PRODUCT",
           "T_c",
@@ -3170,13 +3228,10 @@
           "energy",
           "estimates",
           "from",
+          "gap",
           "give",
           "need",
-          "not",
-          "ordinary",
-          "product",
-          "this",
-          "u"
+          "not"
         ],
         "book_id": "PRODUCT-BLOCK",
         "notes": [
@@ -3615,9 +3670,9 @@
       ]
     }
   ],
-  "object_count": 69,
+  "object_count": 70,
   "keep_count": 32,
-  "hypothesis_count": 20,
+  "hypothesis_count": 21,
   "park_count": 17,
   "coverage_gaps": [
     "data/zenodo/deposit_metadata.json not present \u2014 Zenodo KEEP/PARK not indexed"
