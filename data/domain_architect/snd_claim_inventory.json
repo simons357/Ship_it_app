@@ -1,0 +1,208 @@
+{
+  "schema_version": "2026-08-25",
+  "title": "SND / Theorem H / Clay B claim inventory",
+  "source_audit": "docs/ns-review/ARCHON-PANEL-ADVERSARIAL-VERDICT.md",
+  "presentation_rule": "Never route unconditional regularity or Clay B resolved. Favorable ARCHON roleplay is not peer review.",
+  "claims": [
+    {
+      "claim_id": "SND-U",
+      "label": "Unconditional Spectral Non-Dispersal",
+      "status": "open",
+      "status_detail": "hypothesis",
+      "definition": "inf_t J(t)/X(t) >= c_* > 0 for all suitable H^1(T^3) / Leray-Hopf data, with c_* from data and nu only (no a priori X<=M).",
+      "clay_relevance": "Necessary structural ingredient (with a clean SND=>regularity arrow) for Statement B to be in play.",
+      "zenodo_keep_doi": "10.5281/zenodo.22050976",
+      "notes": "Not proved in available manuscripts. Do not green as Theorem H."
+    },
+    {
+      "claim_id": "SND-C",
+      "label": "Conditional shell-flux / Spectral Non-Dispersal (conditioned)",
+      "status": "conditional",
+      "status_detail": "proved_under_X_le_M",
+      "definition": "Shell-conditioned bound on dominant-shell flux Pi_{j*} in the spread regime rho<=rho_0, with C_*=C_*(nu, delta_*, M, rho_0, C_S), assuming X<=M.",
+      "clay_relevance": "Circular for Clay B: uses the enstrophy ceiling Statement B must produce.",
+      "theorem_label": "Theorem H (as written in 20518057 / claim paper)",
+      "zenodo_keep_doi": "10.5281/zenodo.22050976",
+      "notes": "Legitimate toolkit lemma. Not unconditional SND."
+    },
+    {
+      "claim_id": "CLAY-B",
+      "label": "Clay Millennium Statement (B) \u2014 3D Navier-Stokes global regularity",
+      "status": "not_resolved",
+      "status_detail": "open",
+      "definition": "Global regularity for suitable H^1 data on T^3 without an extra unproved structural hypothesis (SND-U or a priori X<=M).",
+      "clay_relevance": "Prize problem remains open on available sources.",
+      "zenodo_park_doi": "10.5281/zenodo.20405526",
+      "zenodo_keep_doi": "10.5281/zenodo.22050976",
+      "notes": "PARK Statement B packaging; KEEP conditional Ring+SND framing."
+    },
+    {
+      "claim_id": "THEOREM-H-MISLABEL",
+      "label": "Briefing mislabel: Theorem H = SND for all H^1 data",
+      "status": "refuted_as_written",
+      "status_detail": "naming_fraud_vs_manuscript",
+      "definition": "Favorable ARCHON roleplay packaging that substitutes SND-U for SND-C.",
+      "clay_relevance": "Must not be used in deposits or marketing.",
+      "notes": "Panel consensus is not peer review."
+    },
+    {
+      "claim_id": "CSTAR-ARITHMETIC",
+      "label": "c_* = 6/pi^2 as continuum NS SND floor",
+      "status": "analogy_only",
+      "status_detail": "not_continuum_floor",
+      "definition": "zeta(2)^{-1} squarefree/coprime density from arithmetic Triple Lock packaging.",
+      "clay_relevance": "Not load-bearing for continuum NS proofs.",
+      "notes": "Fluids small-data c_* is data-dependent when present."
+    },
+    {
+      "claim_id": "LEMMA-STAR",
+      "label": "Lemma\u2605 / DA-NS-1 energy-budget closing estimate",
+      "status": "hypothesis",
+      "status_detail": "hypothesis_not_proved_shape_statement",
+      "definition": "Shape statement (locked): (T_c(v)_+)^2 <= 4*theta*C_0*D_s(v)*||v||_2^2*Y(v) for every div-free v on T^3 with one geometric C_0(theta). Viscosity form (ASCII): T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda. Under u=av, size optimization cancels nu. Equivalent decisive form: uniform bound on R_star(v).",
+      "clay_relevance": "If proved, packages Clay Statement B: Lambda blowup prevention \u2192 finite enstrophy \u2192 global regularity on T^3. Proving Lemma\u2605 \u2261 Clay B in this book.",
+      "notes": "USER LOCK-IN: \u2605 is a shape statement, not a viscosity statement. Exact R_star is amplitude- and dilation-invariant. WITHHELD from Clay green until PRODUCT-BLOCK / uniform R_star / HH\u2192L closed. Five-lane PR #48: K=0 dead \u2194 D_s=0 kill criterion; kill lane LIVE (falsification AND proof); survives numeric kill only \u2260 proved; NS NOT SOLVED. Refuse \u2018almost proved\u2019 / numerics-prove-\u2605 / \u2018kill lane closed\u2019."
+    },
+    {
+      "claim_id": "R-STAR",
+      "label": "R_\u2605(v) pure-geometry ratio \u2014 decisive form of Lemma\u2605",
+      "status": "hypothesis",
+      "status_detail": "equivalent_decisive_form_of_lemma_star",
+      "definition": "R_star(v) = (T_c(v)_+)^2 / (D_s(v)*||v||_2^2*Y(v)). Pure geometry; R_star(a*v)=R_star(v); R_star(v(n\u00b7))=R_star(v); independent of viscosity. \u2605 holds iff R_star is uniformly bounded by 4*theta*C_0.",
+      "clay_relevance": "Equivalent decisive form of LEMMA-STAR / SHAPE-FORM. Missing uniform bound = PRODUCT-BLOCK / HH\u2192L.",
+      "notes": "Kill: R_star\u2192\u221e on some shapes \u21d2 \u2605 dead. Kill: D_s=0 with T_c>0 \u21d2 \u2605 dead (K=0 criterion). Pure single shell both sides vanish \u2260 kill. Finite-sample small R_star \u2260 the uniform number. Do not compare legacy 0.065/0.073/1.93e-3 without exact-formula attestation. Numerics = evidence only."
+    },
+    {
+      "claim_id": "SHAPE-FORM",
+      "label": "Lemma\u2605 shape form after u=av size optimization",
+      "status": "hypothesis",
+      "status_detail": "equivalent_decisive_form_of_lemma_star",
+      "definition": "(T_c(v)_+)^2 <= 4*theta*C_0*D_s(v)*||v||_2^2*Y(v). Change only size of fixed shape v; worst size cancels nu. If one C_0(theta) works for every div-free v on T^3, original \u2605 holds for every amplitude and every nu.",
+      "clay_relevance": "Same as R-STAR / LEMMA-STAR \u2014 Clay CONDITIONAL on uniform R_star (= PRODUCT-BLOCK / HH\u2192L).",
+      "notes": "Supersedes viscosity-first wording. Proof would need triadic reason (HH\u2192L channel) that stretching cannot outrun spectral spread \u2014 not written. NS NOT SOLVED."
+    },
+    {
+      "claim_id": "DA-NS-1",
+      "label": "DA-NS-1 energy-budget spectral drift control",
+      "status": "hypothesis",
+      "status_detail": "alias_of_lemma_star",
+      "definition": "Control centered spectral drift T_c by viscous variance plus remainder built only from Leray energy E=||u||_2^2 \u2014 equivalently uniform geometric bound on R_star(v).",
+      "clay_relevance": "Same as LEMMA-STAR \u2014 Clay implication CONDITIONAL on PRODUCT-BLOCK / HH\u2192L / uniform R_star.",
+      "notes": "Book/claim alias of Lemma\u2605. Shape statement via R_star. NS NOT SOLVED."
+    },
+    {
+      "claim_id": "PRODUCT-BLOCK",
+      "label": "Product / Agmon estimate blocker for Lemma\u2605",
+      "status": "open",
+      "status_detail": "blocker_open_missing_uniform_r_star_hh_to_l",
+      "definition": "Need |T_c| <= C*||u||_2*X^{3/2} (or |T_c|<=C||u||_2 X Lambda then Young); equivalently uniform R_star(v) <= 4*theta*C_0. Ordinary 3D Sobolev/product/Agmon estimates INSUFFICIENT from energy alone. Analytic bottleneck: Bony HH\u2192L.",
+      "clay_relevance": "Missing weld inside Lemma\u2605 packaging = missing uniform bound on R_star; closes or kills the energy-budget / shape-form Clay route.",
+      "notes": "INSERT candidate. Five-lane PR #48 Attack 3: HH\u2192L still the gap. Ranked attacks: triad/HH\u2192L structure on T_c; SND/shell conditional; C_0 alone insufficient; negative kill via R_star\u2192\u221e or D_s=0 with T_c>0."
+    },
+    {
+      "claim_id": "FIVE-LANE-LEMMA-STAR",
+      "label": "Five-lane Lemma\u2605 drill (PR #48)",
+      "status": "diagnostic",
+      "status_detail": "k0_dead_ds0_kill_star_survives_numeric_hh_l_gap_kill_lane_live",
+      "definition": "Simultaneous Attacks 1\u20135 on centered spectral drift T_c / Lemma\u2605 packaging (2026-09-10). Cross-link: K=0 dead \u2194 D_s=0 kill criterion in R_star shape form. Kill lane LIVE (falsification AND proof).",
+      "clay_relevance": "Does not close Clay. Numeric survival is not a proof. Numeric bound \u2260 uniform bound on R_star. Kill lane not closed. NS NOT SOLVED.",
+      "evidence_pr": 48,
+      "evidence_url": "https://github.com/simons357/Ship_it_app/pull/48",
+      "notes": "K=0 absorption DEAD \u2194 D_s=0 kill criterion; kill lane LIVE both directions; Lemma\u2605 survives numeric kill only (max |R_pre|\u22485.09) \u2260 proved; Bony HH\u2192L live bottleneck; PRODUCT-BLOCK = missing uniform R_star. Attack 9A / fixed-gap negative for kill; 9B K_{\u03b1,\u03b2}; remaining falsifier 9C \u0398(m^2)-closure."
+    },
+    {
+      "claim_id": "KILL-LANE",
+      "label": "R_\u2605 kill lane (falsification + proof)",
+      "status": "live",
+      "status_detail": "live_falsification_and_proof",
+      "definition": "Kill lane for Lemma\u2605 / R_star: falsification via R_star\u2192\u221e or D_s=0 with T_c>0; proof via uniform geometric bound on exact R_star. Both directions LIVE.",
+      "clay_relevance": "Does not resolve Clay. Closing either direction changes \u2605 status only under exact R_star.",
+      "notes": "USER CORRECTIONS 2026-09-10: 'kill lane closed' is FALSE/RETIRED. Failure to find a numerical counterexample (including Attack 9A and fixed-gap same-shell) does NOT close the lane. Refuse 'AP packet closed kill lane' and 'same-shell ensemble kills \u2605'. Remaining falsifier: Attack 9C. See docs/ns-review/GROK-RETIRED-CONCLUSIONS.md."
+    },
+    {
+      "claim_id": "ATTACK-8",
+      "label": "Attack 8 \u2014 revised correct record",
+      "status": "record",
+      "status_detail": "user_revised_authoritative",
+      "definition": "USER-revised Attack 8 is the correct attack record: kill lane LIVE both directions; exact R_star only; complete T_c; numeric non-find \u2260 closed lane.",
+      "clay_relevance": "Does not prove \u2605. Points to Attack 9B / 9C after 9A and fixed-gap negatives.",
+      "notes": "Authoritative doc: docs/ns-review/ATTACK-8-RECORD.md. Not found as ATTACK_8*.md in PR #48 (Attacks 1\u20135 only); USER CORRECTIONS 2026-09-10 are the record."
+    },
+    {
+      "claim_id": "ATTACK-9A",
+      "label": "Attack 9A \u2014 AP Coherent Packet/Fan",
+      "status": "negative_for_kill",
+      "status_detail": "did_not_kill_lemma_star",
+      "definition": "AP packet coherent fan: T_c increased but widening spectral variance increased D_s faster. Assumption D_s||v||_2^2 Y = O(1) in packet size was FALSE for that family.",
+      "clay_relevance": "Did not kill \u2605. Not a proof of \u2605. Kill lane remains LIVE.",
+      "notes": "Doc: docs/ns-review/ATTACK-9-COHERENT-PACKET-FAN.md. Refuse 'AP packet closed kill lane'."
+    },
+    {
+      "claim_id": "ATTACK-9-FIXED-GAP",
+      "label": "Attack 9 \u2014 Fixed-gap spheres (natural same-shell)",
+      "status": "negative_for_kill",
+      "status_detail": "natural_same_shell_not_a_kill",
+      "definition": "Fixed-gap spheres n and n+d: D_s from the gap (not width); closures only O(m); R_star falls with n (0.11\u21920.031) under exact quotient for this family; does not track m^{1/2}.",
+      "clay_relevance": "Natural same-shell ensemble is NOT a kill. Not a proof of \u2605. Kill lane remains LIVE.",
+      "notes": "Doc: docs/ns-review/ATTACK-9-FIXED-GAP-SPHERES.md. Attest exact R_star = (T_c_+)^2/(D_s||v||_2^2 Y). Refuse 'same-shell ensemble kills \u2605'."
+    },
+    {
+      "claim_id": "ATTACK-9B",
+      "label": "Attack 9B \u2014 Exact-shell + closing \u2192 K_{\u03b1,\u03b2}",
+      "status": "protocol",
+      "status_detail": "exact_shell_closing_kab_quantity",
+      "definition": "v_\u03b5 = w_\u03b1 + \u03b5 z_\u03b2 with z_\u03b2 \u2225 \u03a0_\u03b2 B(w_\u03b1,w_\u03b1). Boxed K_{\u03b1,\u03b2} = sup_{Aw=\u03b1w} \u03b2||\u03a0_\u03b2 B(w,w)||_2^2 / (\u03b1^2 ||w||_2^4). Base = same-shell; D_s from closing only; \u03b5 cancels in limiting quotient.",
+      "clay_relevance": "Structured next family after 9A / fixed-gap. Does not prove \u2605. Caveat: narrow \u2260 O(1) D_s on lattice.",
+      "notes": "Doc: docs/ns-review/ATTACK-9B-EXACT-SHELL-CLOSING.md. Code: domain_architect/kab_quantity.py."
+    },
+    {
+      "claim_id": "ATTACK-9C",
+      "label": "Attack 9C \u2014 Designed \u0398(m^2)-closure subset, locked phases",
+      "status": "remaining_falsifier",
+      "status_detail": "theta_m2_closure_locked_phases",
+      "definition": "Remaining packet falsifier after natural same-shell / fixed-gap failed to kill: designed \u0398(m^2)-closure subset with locked phases (not merely O(m) natural closures).",
+      "clay_relevance": "Kill lane remains LIVE via this designed-closure route. Finite samples \u2260 kill lane closed; \u2260 \u2605 proved.",
+      "notes": "Doc: docs/ns-review/ATTACK-9-FIXED-GAP-SPHERES.md. Code: domain_architect/kab_quantity.py ATTACK_9C_STATUS."
+    }
+  ],
+  "refused_routings": [
+    "unconditional regularity",
+    "unconditional global regularity",
+    "clay statement b resolved",
+    "clay b solved",
+    "millennium prize solved",
+    "snd for all data proved",
+    "theorem h equals unconditional snd",
+    "c_*=6/pi^2 is the fluids snd threshold",
+    "lemma star proved",
+    "lemma\u2605 proved",
+    "da-ns-1 proved",
+    "lemma star closes clay",
+    "lemma star almost proved",
+    "almost proved",
+    "ns solved",
+    "navier-stokes solved",
+    "numeric survival is proof",
+    "numerics prove lemma star",
+    "numerics prove \u2605",
+    "finite samples prove lemma star",
+    "finite samples green lemma star",
+    "r_star bounded on samples proves star",
+    "shape form proved",
+    "kill lane closed",
+    "the kill lane is closed",
+    "amplitude or frequency makes the ratio smaller",
+    "compare legacy R values without exact R_star attestation",
+    "lp-shell establishes lemma star",
+    "route n establishes lemma star",
+    "q6 damping establishes lemma star",
+    "m=256 shell floor establishes lemma star",
+    "ap packet closed kill lane",
+    "attack 9a closed kill lane",
+    "narrow packet implies D_s = O(1)",
+    "same-shell ensemble kills star",
+    "same-shell ensemble kills \u2605",
+    "natural same-shell kills star",
+    "fixed-gap spheres kill star"
+  ]
+}
