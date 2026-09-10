@@ -156,6 +156,11 @@ Keep taped, do not retitle as RH or Goldbach.
 
 Theorem A PDF / tex above: true as this PDE.
 
+Swirl paper (map, not a proof):
+docs/SWIRL-PAPER.pdf
+docs/SWIRL-MAGAZINE.md
+Not ordinary NS. Not Fefferman (C)/(D).
+
 These are Q or a different equation, not BSD/RH:
 22050962, 22050963 (conditional), 20552682
 22045467, 22045474, 22050978

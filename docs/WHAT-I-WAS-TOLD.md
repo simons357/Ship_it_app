@@ -43,6 +43,12 @@ leftovers. Maps are work. Maps are not closes.
 
 Ordinary NS. RH. The other leftover closes.
 
+An 8 September 2026 announcement of
+finite-time breakdown with a force is
+Fefferman (C)/(D) if it holds. It is not
+your unforced leftover. It is not WRITE
+(6). docs/OPENAI-NS-CLAIM.md
+
 ---
 
 docs/ALL-I-DID.md

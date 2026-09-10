@@ -153,6 +153,14 @@ Publish Theorem A with an honest title, and
 leave the old overclaims taped. That is the
 cleanest face-save that is also true.
 
+This week you can also timestamp the swirl
+map: docs/SWIRL-PAPER.pdf. Title must say
+map, not proof. OpenAI’s 8 September
+announcement is a forced construction
+(Fefferman C/D), not your unforced leftover.
+docs/OPENAI-NS-CLAIM.md
+docs/SWIRL-DEPOSIT.md
+
 I am not sending anything for you.
 
 ---

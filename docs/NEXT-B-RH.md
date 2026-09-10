@@ -45,6 +45,11 @@ They would sign the map. They would not
 sign (6). Next work is (6) on one cylinder,
 or a new wall. Not another criterion paper.
 
+This week, publish the map as a map:
+[`SWIRL-DEPOSIT.md`](SWIRL-DEPOSIT.md).
+OpenAI C/D is not WRITE (6):
+[`OPENAI-NS-CLAIM.md`](OPENAI-NS-CLAIM.md).
+
 ---
 
 ## RH

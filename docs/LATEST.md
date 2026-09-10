@@ -40,6 +40,12 @@ Score of the write: aimed leftover yes;
 theorem no. Dream-team read:
 docs/DREAM-TEAM-H.md
 (they would sign the map, not (6)).
+Swirl paper (map, not a proof):
+docs/SWIRL-PAPER.pdf
+Magazine cut: docs/SWIRL-MAGAZINE.md
+This week: docs/SWIRL-DEPOSIT.md
+OpenAI forced blowup is C/D, not (6):
+docs/OPENAI-NS-CLAIM.md
 No \(K(t)\). No Q1.
 
 **RH — open**

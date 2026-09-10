@@ -55,10 +55,20 @@ Heading: Working papers / preprints
    floor and the false H_N floor. Keep this
    next to 22045478.
 
+Optional, after the DOI exists, as a map
+not a theorem:
+
+4. J. R. Simons. Swirl, alignment, and the
+   leftover in three-dimensional
+   Navier-Stokes (a map, not a proof).
+   Zenodo, [year]. [DOI].
+   One line: Names the CF / BdVB leftover.
+   Does not prove ordinary NS.
+
 Optional, only if you write it as a process
 note and not a theorem:
 
-4. Domain Architect — process note
+5. Domain Architect — process note
    (checker / map; does not prove NS or RH).
 
 ---

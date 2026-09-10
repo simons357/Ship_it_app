@@ -15,6 +15,12 @@ None of this is a leftover close.
    docs/DA-ZENODO-SAY.md
    docs/THEOREM-A-Q1.pdf
 
+1b. Deposit the swirl paper as a map.
+   Not a close. Not OpenAI’s C/D.
+   docs/SWIRL-DEPOSIT.md
+   docs/SWIRL-PAPER.pdf
+   Magazine cut: docs/SWIRL-MAGAZINE.md
+
 2. Keep 22045478 and 22045484 up.
    GCD / matrix. Errata next to the paper.
    Do not retitle as RH or Goldbach.
@@ -138,15 +144,14 @@ attempt as the only use of this pile.
 
 ---
 
-## If you only squeeze three things
+## If you only squeeze four things
 
 Zenodo Theorem A.
+Zenodo the swirl map (honest title).
 Leave Q6 + errata taped.
-CV those three lines.
+CV those lines.
 
-The maps stay on GitHub for you. The
-software stays a project. The leftover
-stays open. That is the extract.
+The leftover stays open. That is the extract.
 
 docs/ALL-I-DID.md
 docs/PUBLISH-LIST.md

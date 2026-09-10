@@ -41,6 +41,13 @@ docs/ALL-I-DID.md
 What you can send to publish:
 docs/PUBLISH-LIST.md
 
+This week — swirl paper (map, not a proof):
+docs/SWIRL-DEPOSIT.md
+docs/SWIRL-PAPER.pdf
+docs/SWIRL-MAGAZINE.md
+OpenAI C/D is not your leftover:
+docs/OPENAI-NS-CLAIM.md
+
 How to put the maps online:
 docs/SHARE-MAPS.md
 

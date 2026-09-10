@@ -24,6 +24,25 @@ Goldbach’s conjecture.
 
 ---
 
+## Swirl essay (this week)
+
+Upload:
+docs/SWIRL-PAPER.pdf
+(and optionally docs/SWIRL-MAGAZINE.md)
+
+Title (paste):
+
+Swirl, alignment, and the leftover in
+three-dimensional Navier-Stokes
+(a map, not a proof)
+
+Description (paste): docs/SWIRL-DEPOSIT.md
+
+Not a close. Not Fefferman (C)/(D).
+OpenAI classification: docs/OPENAI-NS-CLAIM.md
+
+---
+
 ## Ordinary NS map (open)
 
 Upload:
@@ -109,16 +128,21 @@ RH solved.
 Goldbach’s conjecture.
 Theorem A titled as ordinary NS.
 Q titled as RH.
+OpenAI’s forced vortex titled as your close.
+WRITE (6) titled as a theorem.
 
 ---
 
 ## Order if you do this today
 
 1. Theorem A (this PDE only) if not up.
-2. Leave 22045478 and 22045484.
-3. NS map with the title above.
-4. RH map with the title above.
-5. Skip a new Goldbach file unless you
+2. Swirl paper (map, not a proof).
+   docs/SWIRL-DEPOSIT.md
+3. Leave 22045478 and 22045484.
+4. NS map with the title above, if you
+   want the longer chain next to the essay.
+5. RH map with the title above.
+6. Skip a new Goldbach file unless you
    want the corollary alone.
 
 I am not uploading these for you.

@@ -1,0 +1,129 @@
+% Swirl paper --- a map, not a proof.
+% Ordinary unaugmented Navier--Stokes leftover after CF / BdVB.
+% Not a close. Not Fefferman (C)/(D). Not Theorem A retitled.
+% Compile with pdflatex when a TeX tree is present.
+% Phone PDF: python3 scripts/da_swirl_pdf.py
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\title{Swirl, alignment, and the leftover in\\
+three-dimensional Navier--Stokes\\
+\large A map, not a proof}
+\author{Jonathan Robert Simons\\
+Prime Field Technologies}
+\date{10 September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The geometric swirl leftover after Constantin--Fefferman (1993)
+and Beir\~ao da Veiga--Berselli (2002) is recorded. Alignment of
+vorticity direction at Lipschitz scale, and then at H\"older
+exponent \(1/2\), is a theorem as an \emph{if}. The pairs those
+papers refused remain. This note names the missing local bound
+WRITE~(6) and does not prove it. A forced finite-time construction
+with a smooth external force, announced 8~September 2026, addresses
+a different official statement (Fefferman (C)/(D)) from unforced
+regularity ((A)/(B)). It is not WRITE~(6). A separate note records
+global regularity for a Ladyzhenskaya / \(p\)-Laplacian augmentation;
+that is a different equation.
+\end{abstract}
+
+\section{What swirl is, in this note}
+
+Let \(u\) be a divergence-free velocity in three dimensions,
+\(\omega=\nabla\times u\), \(\xi=\omega/|\omega|\) on
+\(\{\omega\neq 0\}\), and \(\varphi(x,y)\) the angle between
+\(\xi(x)\) and \(\xi(y)\). Vortex stretching is
+\[
+\alpha(x)=\mathrm{P.V.}\int D(\hat z,\xi(x),\xi(y))
+\frac{|\omega(y)|}{|x-y|^3}\,dy,
+\qquad
+|D|\le C|\sin\varphi|.
+\]
+The local enstrophy identity on a cutoff \(\phi\) supported in a
+ball of radius \(r\) has stretching \(\int\alpha|\omega|^2\phi\)
+on the right and dissipation \(\nu\int|\nabla\omega|^2\phi\) on
+the left. This is the classical unaugmented equation.
+
+\section{The cut that sits, as an if}
+
+Constantin--Fefferman (1993): if
+\(|\sin\varphi(x,y)|\le|x-y|/\rho\) whenever both
+\(|\omega|\ge\Lambda\), the solution is strong on \([0,T]\).
+Beir\~ao da Veiga--Berselli (2002): H\"older \(1/2\) suffices.
+Alignment drops the kernel. Call those pairs Good. The complementary
+intense pairs with \(|\sin\varphi|>C_*|x-y|^{1/2}\) are Bad.
+Good pairs are their theorem. Bad pairs are the pairs they refused.
+Gruji\'c (2009) localizes the \emph{condition}, not the bad-pair
+integral.
+
+\section{WRITE (6)}
+
+On a parabolic cylinder \(Q_r\), Bad pairs only,
+\[
+A_{\mathrm{bad}}(Q_r)
+\le
+\frac\nu8\iint_{Q_r}|\nabla\omega|^2\phi
++C r^{-2}\iint_{Q_r}|\omega|^2.
+\]
+The kernel on Bad is still \(|z|^{-3}\). Hardy--Littlewood--Sobolev
+returns local \(E^3\). The estimate is stated. It is not proved.
+
+\section{A cylinder still needs more than (6)}
+
+Skin flux at energy level is Caffarelli--Kohn--Nirenberg as
+smallness, not as an a priori from finite energy. Exterior
+Biot--Savart is not absorbed as \(r\to 0\) from energy. Local
+Serrin after a closed enstrophy budget is the right implication;
+it is not a substitute for (6). If (6) sits and the skin flux
+from energy does not, the cylinder is still open.
+
+\section{A forced vortex is not this leftover}
+
+Fefferman's official statement: (A)/(B) unforced regularity;
+(C)/(D) breakdown with a smooth force allowed. A finite-time
+singularity with a smooth external force, announced
+8~September 2026, lives in (C) or (D) if it holds. It does not
+decide (A) or (B) and does not bound WRITE~(6). This author did
+not write that construction and does not claim it.
+
+\section{What is claimed}
+
+The map above. A separate write-up of global regularity for
+Navier--Stokes plus Ladyzhenskaya / \(p\)-Laplacian stress at
+\(\varepsilon>0\), \(\beta\ge 1/2\) (this PDE only). Inverse-GCD
+facts posted as Zenodo 22045478, not as the Riemann hypothesis.
+Not claimed: ordinary unforced Navier--Stokes; WRITE~(6) as a
+theorem; axisymmetric ordinary NS with swirl as finished; the
+forced construction of 8~September 2026.
+
+\begin{thebibliography}{11}
+\bibitem{L34} J.~Leray, \textit{Acta Math.} 63 (1934).
+\bibitem{S62} J.~Serrin, \textit{Arch.\ Rational Mech.\ Anal.} 9 (1962).
+\bibitem{CKN} L.~Caffarelli, R.~Kohn, L.~Nirenberg,
+\textit{Comm.\ Pure Appl.\ Math.} 35 (1982), 771--831.
+\bibitem{CF} P.~Constantin, C.~Fefferman,
+\textit{Indiana Univ.\ Math.\ J.} 42 (1993), 775--789.
+\bibitem{BdVB} H.~Beir\~ao da Veiga, L.~C.~Berselli,
+\textit{Diff.\ Int.\ Eq.} 15 (2002), 345--356.
+\bibitem{NRS} J.~Ne\v{c}as, M.~R\r{u}\v{z}i\v{c}ka, V.~\v{S}ver\'ak,
+\textit{Acta Math.} 176 (1996).
+\bibitem{ESS} L.~Escauriaza, G.~Seregin, V.~\v{S}ver\'ak,
+\textit{Uspekhi Mat.\ Nauk} 58 (2003).
+\bibitem{G09} Z.~Gruji\'c, \textit{Comm.\ Math.\ Phys.} 290 (2009).
+\bibitem{Feff} C.~L.~Fefferman,
+\textit{Existence and smoothness of the Navier--Stokes equation},
+Clay Mathematics Institute.
+\bibitem{L69} O.~A.~Ladyzhenskaya,
+\textit{The Mathematical Theory of Viscous Incompressible Flow}, 1969.
+\bibitem{MNR} J.~M\'alek, J.~Ne\v{c}as, M.~R\r{u}\v{z}i\v{c}ka,
+\textit{Weak and Measure-valued Solutions to Evolutionary PDEs}, 1996.
+\end{thebibliography}
+
+\end{document}

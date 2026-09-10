@@ -99,9 +99,20 @@ disclaimer: research / educational only.
    Title: GCD matrix / spectral floor.
    Not RH. Not Goldbach’s conjecture.
 
+3. Swirl paper (map / magazine essay)
+   Title: Swirl, alignment, and the leftover
+   in three-dimensional Navier-Stokes
+   (a map, not a proof).
+   docs/SWIRL-PAPER.pdf
+   Magazine cut: docs/SWIRL-MAGAZINE.md
+   This week: docs/SWIRL-DEPOSIT.md
+   Not ordinary NS solved. Not OpenAI’s
+   forced construction. Not Theorem A
+   retitled.
+
 ## Optional, not a theorem journal
 
-3. A short DA process note (what it is,
+4. A short DA process note (what it is,
    what it cannot do). No leftover close.
 
 ## Maps may go online as maps
@@ -135,9 +146,9 @@ public date and an honest title.
 **1. You, first. Zenodo.**
 You already deposit there. No endorser.
 DOI and a date. That is “published” in the
-sense of a public timestamp. Send Theorem A
-and keep Q6 (22045478) as the GCD paper.
-This is the box.
+sense of a public timestamp. Send Theorem A,
+the swirl map (honest title), and keep Q6
+(22045478) as the GCD paper. This is the box.
 
 **2. Not required: a journal.**
 Theorem A is a known class in your notation.
