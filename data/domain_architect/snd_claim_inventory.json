@@ -53,6 +53,33 @@
       "definition": "zeta(2)^{-1} squarefree/coprime density from arithmetic Triple Lock packaging.",
       "clay_relevance": "Not load-bearing for continuum NS proofs.",
       "notes": "Fluids small-data c_* is data-dependent when present."
+    },
+    {
+      "claim_id": "LEMMA-STAR",
+      "label": "Lemma★ / DA-NS-1 energy-budget closing estimate",
+      "status": "hypothesis",
+      "status_detail": "hypothesis_not_proved",
+      "definition": "T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda with C_0 geometric only; T_c=M-Lambda*N.",
+      "clay_relevance": "If proved, packages Clay Statement B: Lambda blowup prevention → finite enstrophy → global regularity on T^3. Proving Lemma★ ≡ Clay B in this book.",
+      "notes": "WITHHELD from Clay green until PRODUCT-BLOCK closed. Not fraud — honest Millennium packaging."
+    },
+    {
+      "claim_id": "DA-NS-1",
+      "label": "DA-NS-1 energy-budget spectral drift control",
+      "status": "hypothesis",
+      "status_detail": "alias_of_lemma_star",
+      "definition": "Control centered spectral drift T_c by viscous variance plus remainder built only from Leray energy E=||u||_2^2.",
+      "clay_relevance": "Same as LEMMA-STAR — Clay implication CONDITIONAL on PRODUCT-BLOCK.",
+      "notes": "Book/claim alias of Lemma★."
+    },
+    {
+      "claim_id": "PRODUCT-BLOCK",
+      "label": "Product estimate blocker for Lemma★",
+      "status": "open",
+      "status_detail": "blocker_open",
+      "definition": "Need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D Sobolev/product estimates INSUFFICIENT from energy alone.",
+      "clay_relevance": "Missing weld inside Lemma★ packaging; closes or kills the energy-budget Clay route.",
+      "notes": "INSERT candidate. Ranked attacks: T_c structure; SND/shell conditional; C_0 alone insufficient; negative energy-alone counterexample."
     }
   ],
   "refused_routings": [
@@ -63,6 +90,10 @@
     "millennium prize solved",
     "snd for all data proved",
     "theorem h equals unconditional snd",
-    "c_*=6/pi^2 is the fluids snd threshold"
+    "c_*=6/pi^2 is the fluids snd threshold",
+    "lemma star proved",
+    "lemma★ proved",
+    "da-ns-1 proved",
+    "lemma star closes clay"
   ]
 }

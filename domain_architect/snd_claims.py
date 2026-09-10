@@ -56,6 +56,14 @@ REFUSAL_PATTERNS: tuple[tuple[str, str], ...] = (
         r"c\s*\*\s*=\s*6\s*/\s*pi\s*\^\s*2.*(fluids|ns|navier|snd\s+floor|threshold)",
         "REFUSE: c*=6/pi^2 is arithmetic analogy, not continuum SND floor",
     ),
+    (
+        r"(lemma\s*[\*★]|lemma-?star|da-?ns-?1).{0,40}(proved|resolved|closed)",
+        "REFUSE: Lemma★ / DA-NS-1 is HYPOTHESIS — broken at PRODUCT-BLOCK",
+    ),
+    (
+        r"(lemma\s*[\*★]|lemma-?star).{0,30}(closes|implies)\s+(clay|millennium)",
+        "REFUSE: Lemma★→Clay B WITHHELD until PRODUCT-BLOCK closes",
+    ),
 )
 
 SND_U_MARKERS = (
@@ -80,6 +88,24 @@ CLAY_MARKERS = (
     "clay b",
     "millennium",
     "global regularity prize",
+)
+LEMMA_STAR_MARKERS = (
+    "lemma★",
+    "lemma*",
+    "lemma-star",
+    "lemma star",
+    "da-ns-1",
+    "da ns-1",
+    "centered spectral drift",
+    "energy-budget",
+    "energy budget",
+)
+PRODUCT_BLOCK_MARKERS = (
+    "product-block",
+    "product block",
+    "x^{3/2}",
+    "ordinary 3d product",
+    "ordinary 3d sobolev",
 )
 
 
@@ -150,6 +176,7 @@ def anatomize_claim(text: str, inventory: dict[str, Any] | None = None) -> SNDCl
     hits: list[ClaimHit] = []
     notes: list[str] = [
         "SND-U is open/hypothesis; SND-C is conditional under X<=M; Clay B is NOT resolved.",
+        "Lemma★ / DA-NS-1 is HYPOTHESIS packaging of Clay B — WITHHELD until PRODUCT-BLOCK.",
         "Favorable ARCHON panel consensus is roleplay, not peer review.",
     ]
 
@@ -157,6 +184,8 @@ def anatomize_claim(text: str, inventory: dict[str, Any] | None = None) -> SNDCl
         ("SND-U", SND_U_MARKERS),
         ("SND-C", SND_C_MARKERS),
         ("CLAY-B", CLAY_MARKERS),
+        ("LEMMA-STAR", LEMMA_STAR_MARKERS),
+        ("PRODUCT-BLOCK", PRODUCT_BLOCK_MARKERS),
     ):
         matched = _marker_hits(norm, markers)
         if matched:
@@ -186,6 +215,14 @@ def anatomize_claim(text: str, inventory: dict[str, Any] | None = None) -> SNDCl
     if refusal:
         allowed = None
         notes.append("Routing refused: overclaim language detected.")
+    elif any(h.claim_id == "LEMMA-STAR" for h in hits):
+        allowed = "LEMMA-STAR_hypothesis_PRODUCT-BLOCK"
+        notes.append(
+            "Allowed routing: Lemma★ as HYPOTHESIS; Clay WITHHELD until PRODUCT-BLOCK."
+        )
+    elif any(h.claim_id == "PRODUCT-BLOCK" for h in hits):
+        allowed = "PRODUCT-BLOCK_open"
+        notes.append("Allowed routing: PRODUCT-BLOCK as open weld / INSERT candidate.")
     elif any(h.claim_id == "SND-C" for h in hits):
         allowed = "SND-C_conditional_under_X_le_M"
         notes.append("Allowed routing: conditional SND-C / Theorem H-as-written.")

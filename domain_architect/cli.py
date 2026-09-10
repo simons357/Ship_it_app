@@ -26,6 +26,16 @@ from .shape_texture import (
     shape_match,
     texture_translate,
 )
+from .lemma_star import (
+    analyze_lemma_star,
+    compare_lemma_star_shapes,
+    express_lemma_star_as_proved,
+    insert_product_block_candidate,
+    navigate_lemma_star,
+    product_block_incompleteness,
+    refuse_proved_lemma_star,
+    screen_lemma_star,
+)
 from .theory_splicer import (
     cut,
     express,
@@ -179,7 +189,56 @@ def main(argv: list[str] | None = None) -> int:
         metavar="MILLENNIUM_ID",
         help="one-theory-at-a-time: list library objects sharing shape with target problem",
     )
+    parser.add_argument(
+        "--lemma-star",
+        action="store_true",
+        help=(
+            "analyze Lemma★ / DA-NS-1 energy-budget estimate "
+            "(HYPOTHESIS; broken at PRODUCT-BLOCK; refuse PROVED claims)"
+        ),
+    )
     args = parser.parse_args(argv)
+
+    if args.lemma_star:
+        report = analyze_lemma_star(args.expression)
+        screen_rep = screen_lemma_star()
+        shapes = compare_lemma_star_shapes()
+        block = product_block_incompleteness()
+        probe_text = args.expression or "Lemma★ (HYPOTHESIS) energy-budget estimate"
+        proved = refuse_proved_lemma_star(probe_text)
+        # Always demonstrate refusal of an explicit proved claim
+        proved_demo = refuse_proved_lemma_star(
+            "Lemma★ proved; DA-NS-1 closes Clay Statement B"
+        )
+        payload = {
+            "analysis": report.to_dict(),
+            "screen": screen_rep,
+            "shape_compare": shapes,
+            "product_block": block,
+            "refuse_proved": proved_demo,
+            "input_probe": proved,
+        }
+        if args.json:
+            json.dump(payload, sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print(report.narrative())
+            print()
+            print(screen_rep["statement"])
+            print(f"  lemma welds: {len(screen_rep['lemma_welds'])}")
+            print(f"  withheld: {screen_rep['withheld_count']}")
+            print()
+            print("Shape compare:")
+            for key in ("vs_SND-C", "vs_NS-B"):
+                m = shapes[key]
+                print(f"  {key}: {m.get('verdict')} — {m.get('statement', '')[:100]}")
+            print()
+            print(block["headline"])
+            print(f"  ordinary 3D: {block['ordinary_3d']}")
+            print()
+            print("EXPRESS as proved:")
+            print(f"  refused={proved_demo['refused']}: {proved_demo['message']}")
+        return 2 if proved["refused"] else 0
 
     if args.library_scan:
         manifest = scan_library(write_manifest=True)
@@ -196,6 +255,19 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if args.navigate:
+        nav_key = args.navigate.strip().upper().replace("★", "STAR").replace("*", "STAR")
+        if nav_key in ("DA-NS-1", "LEMMA-STAR", "LEMMASTAR", "PRODUCT-BLOCK"):
+            nav = navigate_lemma_star()
+            if args.json:
+                json.dump(nav, sys.stdout, indent=2, default=str)
+                sys.stdout.write("\n")
+            else:
+                print(f"Domain Architect — Navigate {nav['navigate_target']}")
+                print(nav["statement"])
+                print()
+                print(nav["screen"]["statement"])
+                print(nav["product_block"]["headline"])
+            return 0
         nav = navigate_millennium(args.navigate)
         if args.json:
             json.dump(nav.to_dict(), sys.stdout, indent=2, default=str)
@@ -284,6 +356,21 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if args.splice_screen:
+        key = args.splice_screen.strip().upper().replace("★", "STAR").replace("*", "STAR")
+        if key in ("LEMMA-STAR", "LEMMASTAR", "DA-NS-1", "PRODUCT-BLOCK"):
+            report = screen_lemma_star()
+            if args.json:
+                json.dump(report, sys.stdout, indent=2, default=str)
+                sys.stdout.write("\n")
+            else:
+                print(f"Theory splicer — SCREEN LEMMA-STAR")
+                print(report["statement"])
+                for w in report["lemma_welds"]:
+                    print(
+                        f"  [{w.get('screen_verdict', w.get('status', '?'))}] "
+                        f"{w['weld_id']}: {w['relation']} — {w['evidence'][:90]}"
+                    )
+            return 0
         report = screen(args.splice_screen)
         if args.json:
             json.dump(report.to_dict(), sys.stdout, indent=2, default=str)

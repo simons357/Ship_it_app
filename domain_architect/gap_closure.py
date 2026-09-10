@@ -40,6 +40,14 @@ EXPR_CLAY_GLUE = (
     "Broken glue claim: Theorem H (X<=M) implies unconditional SND "
     "and Clay Statement B"
 )
+EXPR_LEMMA_STAR = (
+    "Lemma★ (HYPOTHESIS): T_c <= theta*nu*(Z - Lambda*Y) + "
+    "C_0*nu^{-1}*||u||_2^2*X*Lambda"
+)
+EXPR_PRODUCT_BLOCK = (
+    "PRODUCT-BLOCK (OPEN): need |T_c| <= C*||u||_2*X^{3/2}; "
+    "ordinary 3D product estimates INSUFFICIENT from energy alone"
+)
 
 
 @dataclass(frozen=True)
@@ -275,6 +283,44 @@ CLOSURE_CATALOG: tuple[ClosureMove, ...] = (
         tractability_rank=7,
         kind="structural",
     ),
+    ClosureMove(
+        break_id="PRODUCT-BLOCK",
+        where_da=(
+            "Lemma★ / DA-NS-1 HYPOTHESIS book: Clay weld WITHHELD; "
+            "missing weld PRODUCT-BLOCK001 — ordinary 3D product INSUFFICIENT"
+        ),
+        where_math=(
+            "Need |T_c| ≤ C ‖u‖₂ X^{3/2} to close energy-budget estimate "
+            "T_c ≤ θν(Z−ΛY) + C₀ ν⁻¹ ‖u‖₂² X Λ; energy alone does not give it"
+        ),
+        why=(
+            "Lemma★ packages Clay B correctly: Λ blowup prevention → finite "
+            "enstrophy → regularity. Without the product bound the estimate "
+            "does not close from Leray energy."
+        ),
+        closure_move=(
+            "Broken at PRODUCT-BLOCK → close by (1) structure/cancellations on "
+            "T_c=M−ΛN, or (2) conditional under SND/dominant shell; "
+            "C₀ geometric-only does not close; negative energy-alone "
+            "counterexample would kill the packaging"
+        ),
+        patch_sketch=(
+            "Target: prove |T_c|≤C‖u‖₂ X^{3/2} via divergence form / moment "
+            "identities on M−ΛN, or reduce under J/X concentration; "
+            "do NOT claim Lemma★ PROVED until this weld exists"
+        ),
+        success_test=(
+            "PRODUCT-BLOCK marked closed only with explicit estimate; "
+            "DA still refuses green Lemma★ without that weld; "
+            "Lemma★→CLAY-B001 stays WITHHELD until then"
+        ),
+        fake_closure_risk=(
+            "Declaring C₀ geometric-only as if it closed the product gap, "
+            "or greening Lemma★ while still using ordinary 3D product estimates"
+        ),
+        tractability_rank=2,
+        kind="analytic",
+    ),
 )
 
 
@@ -463,6 +509,26 @@ def detect_claim_markers(expression: str) -> dict[str, bool]:
             or "shellhelical" in compact
             or ("lambdamin" in compact and "lambdamax" in compact)
             or ("lambda_min" in raw and "lambda_max" in raw)
+        ),
+        "lemma_star": (
+            "lemma*" in raw
+            or "lemma★" in raw
+            or "lemma-star" in raw
+            or "lemmastar" in compact
+            or "da-ns-1" in raw
+            or "da_ns_1" in raw
+            or ("t_c" in compact and "lambda" in compact and ("c_0" in compact or "c0" in compact))
+            or "centeredspectraldrift" in compact
+            or "energy-budget" in raw
+            or "energy budget" in raw
+        ),
+        "product_block": (
+            "product-block" in raw
+            or "product_block" in raw
+            or "productblock" in compact
+            or ("|t_c|" in compact and "3/2" in compact)
+            or ("t_c" in compact and "x^{3/2}" in compact)
+            or ("ordinary" in raw and "product" in raw and "insufficient" in raw)
         ),
         "clay_equiv": (
             ("<=>" in expression or "<->" in expression or "iff" in raw)
@@ -700,8 +766,28 @@ def diagnose_gap(expression: str) -> GapClosureReport:
             )
         )
 
+    if markers["lemma_star"] or markers["product_block"]:
+        move = _move_by_id("PRODUCT-BLOCK")
+        findings.append(
+            WeldFinding(
+                break_id="PRODUCT-BLOCK",
+                severity="warn",
+                broken_weld=(
+                    "Lemma★ / DA-NS-1 energy-budget estimate blocked: need "
+                    "|T_c|≤C‖u‖₂ X^{3/2}; ordinary 3D product estimates "
+                    "INSUFFICIENT from energy alone — Clay weld WITHHELD"
+                ),
+                suggested_closure=move.closure_move,
+                markers_hit=[k for k, v in markers.items() if v],
+                relation=ConflictRelation.INSUFFICIENT_INFORMATION.value,
+                move=move,
+            )
+        )
+
     refuses = any(f.severity == "refuse" for f in findings)
-    if markers["ns_classical"] and not (
+    if markers["lemma_star"] or markers["product_block"]:
+        book = "DA-NS-1"
+    elif markers["ns_classical"] and not (
         markers["snd_u"] or markers["clay_b"] or markers["snd_c"]
     ):
         book = "NS-B"

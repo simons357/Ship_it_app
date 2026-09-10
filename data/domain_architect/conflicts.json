@@ -288,6 +288,62 @@
     "notes": "Candidate completion — not a resolution claim."
   },
   {
+    "left_id": "LEMMA-STAR001",
+    "right_id": "CLAY-B001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "Lemma★ packages Clay B correctly in energy-budget form. WITHHELD until PRODUCT-BLOCK closes — not refuse-as-fraud; this IS the Millennium problem in this book.",
+    "status": "withheld",
+    "notes": "Proving Lemma★ ≡ Clay B here. DA will not green without PRODUCT-BLOCK."
+  },
+  {
+    "left_id": "DA-NS-1001",
+    "right_id": "CLAY-B001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "DA-NS-1 is the same object as Lemma★; Clay implication CONDITIONAL on PRODUCT-BLOCK.",
+    "status": "withheld",
+    "notes": "Alias weld of LEMMA-STAR001↔CLAY-B001."
+  },
+  {
+    "left_id": "LEMMA-STAR001",
+    "right_id": "PRODUCT-BLOCK001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Lemma★ needs |T_c|<=C||u||_2 X^{3/2}; PRODUCT-BLOCK is the missing analytic weld. Ordinary 3D product estimates INSUFFICIENT from energy alone.",
+    "status": "recorded",
+    "notes": "Broken at PRODUCT-BLOCK → close by T_c structure, SND/shell conditional, or negative energy-alone counterexample."
+  },
+  {
+    "left_id": "LEMMA-STAR001",
+    "right_id": "SND-C001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Shared NS regularity shape; texture differs — energy-budget T_c/Λ vs shell J/X under X≤M.",
+    "status": "recorded",
+    "notes": "Conditional under SND/dominant shell reduces product gap to known open SND packaging."
+  },
+  {
+    "left_id": "LEMMA-STAR001",
+    "right_id": "BOOT-M001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Lemma★ Λ-blowup prevention and BOOT-M enstrophy ceiling are adjacent energy/enstrophy control routes.",
+    "status": "recorded",
+    "notes": "Neither greens Clay alone."
+  },
+  {
+    "left_id": "LEMMA-STAR001",
+    "right_id": "NS-B001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Lemma★ is an estimate sitting on classical NS-B spectral/energy quantities.",
+    "status": "recorded",
+    "notes": "Organizational adjacency."
+  },
+  {
+    "left_id": "PRODUCT-BLOCK001",
+    "right_id": "CLAY-B001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "PRODUCT-BLOCK is necessary for the Lemma★→Clay route; not itself a Clay claim.",
+    "status": "recorded",
+    "notes": "OPEN weld lemma slot."
+  },
+  {
     "left_id": "SFE-H002",
     "right_id": "NS-B001",
     "relation": "INCOMPATIBLE",

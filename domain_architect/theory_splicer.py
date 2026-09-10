@@ -206,10 +206,19 @@ def get_millennium_problem(problem_id: str, registry: dict[str, Any] | None = No
 
 def get_book(book_id: str, registry: dict[str, Any] | None = None) -> TheoryBook:
     reg = registry or load_millennium_registry()
-    bid = book_id.upper()
+    bid = book_id.upper().replace("★", "STAR").replace("*", "STAR")
+    # Normalize Lemma★ / Lemma-Star style aliases
+    alias_map = {
+        "LEMMA-STAR": "DA-NS-1",
+        "LEMMASTAR": "DA-NS-1",
+        "LEMMA★": "DA-NS-1",
+    }
+    bid = alias_map.get(bid, bid)
     for prob in reg.get("problems", {}).values():
         for raw in prob.get("books", []):
             if str(raw["book_id"]).upper() == bid:
+                return _book_from_dict(raw, prob["id"])
+            if str(raw.get("alias", "")).upper() == bid:
                 return _book_from_dict(raw, prob["id"])
     raise KeyError(f"unknown theory book: {book_id}")
 
@@ -593,6 +602,7 @@ def screen(millennium_id: str, *, registry: dict[str, Any] | None = None) -> Scr
     compatible = incompatible = open_count = 0
     bullshit = False
 
+    withheld = 0
     for raw in prob.get("welds", []):
         w = TheoryWeld(**{k: v for k, v in raw.items() if k in TheoryWeld.__dataclass_fields__})
         entry = w.to_dict()
@@ -601,6 +611,14 @@ def screen(millennium_id: str, *, registry: dict[str, Any] | None = None) -> Scr
             incompatible += 1
             bullshit = True
             entry["bullshit_flag"] = "illegal glue — splice must refuse"
+        elif w.status == "WITHHELD":
+            entry["screen_verdict"] = "WITHHELD"
+            withheld += 1
+            open_count += 1
+            entry["honesty_flag"] = (
+                "honest packaging WITHHELD — not fraud; needs weld lemma "
+                "(e.g. PRODUCT-BLOCK for Lemma★→Clay)"
+            )
         elif w.status == "COMPATIBLE" or w.relation in ALLOWED_SPLICE_RELATIONS:
             entry["screen_verdict"] = "COMPATIBLE"
             compatible += 1
@@ -639,8 +657,9 @@ def screen(millennium_id: str, *, registry: dict[str, Any] | None = None) -> Scr
         bullshit_destroyed=bullshit,
         statement=(
             f"Screened {len(welds_out)} welds for {prob.get('clay_name', millennium_id)}: "
-            f"{compatible} COMPATIBLE, {incompatible} INCOMPATIBLE, {open_count} OPEN. "
-            "DA does not prove this problem — it maps honest splice routes."
+            f"{compatible} COMPATIBLE, {incompatible} INCOMPATIBLE, {open_count} OPEN"
+            + (f" ({withheld} WITHHELD)" if withheld else "")
+            + ". DA does not prove this problem — it maps honest splice routes."
         ),
     )
 
@@ -651,6 +670,38 @@ def express(book_id: str, *, registry: dict[str, Any] | None = None) -> SpliceRe
     refused = _refuse_proved_millennium(book, "EXPRESS")
     if refused:
         return refused
+
+    # Lemma★ / DA-NS-1: never green as closed Clay; PRODUCT-BLOCK incomplete
+    if book.book_id in ("DA-NS-1", "PRODUCT-BLOCK") or book.status == "HYPOTHESIS":
+        if book.book_id in ("DA-NS-1", "PRODUCT-BLOCK") or any(
+            c.claim_id in ("LEMMA-STAR", "DA-NS-1", "PRODUCT-BLOCK") for c in book.claims
+        ):
+            return SpliceResult(
+                operation="EXPRESS",
+                success=False,
+                book_id=book.book_id,
+                bullshit_destroyed=True,
+                bullshit_flags=[
+                    "Lemma★ / DA-NS-1 is HYPOTHESIS — refuse claiming PROVED",
+                    "Broken at PRODUCT-BLOCK: |T_c|<=C||u||_2 X^{3/2} missing",
+                    "Clay weld WITHHELD until PRODUCT-BLOCK closes",
+                ],
+                suggested_fix=(
+                    "Broken at PRODUCT-BLOCK → close by structure on T_c=M−ΛN "
+                    "or conditional under SND/dominant shell. Do not claim PROVED."
+                ),
+                message=(
+                    f"EXPRESS refuses to green {book.book_id}: status HYPOTHESIS; "
+                    "proving Lemma★ ≡ Clay B in this packaging — PRODUCT-BLOCK open."
+                ),
+                details={
+                    "status": "HYPOTHESIS",
+                    "blocker": "PRODUCT-BLOCK",
+                    "clay_implication": "CONDITIONAL",
+                    "clay_weld": "WITHHELD",
+                    "honesty_rule": "lemma_star_not_proved",
+                },
+            )
 
     expr = _book_expression(book)
     audit = audit_expression(expr)

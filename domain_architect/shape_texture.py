@@ -68,10 +68,12 @@ NOTATION_PATTERNS: list[tuple[str, str]] = [
     (r"partial_t|nabla|Delta|div\s+u", "NS_PDE"),
     (r"lambda_(min|max)|tilde_H_N|shell.?helical", "shell_helical_operator"),
     (r"J\(t\)|X\(t\)|Pi_\{?j", "SND_shell_flux"),
+    (r"T_c|Z\s*[-−]\s*Lambda|energy.?budget|Lemma\s*[\*★]|DA-NS-1", "energy_budget_spectral_drift"),
     (r"zeta|L\(s|critical", "RH_zeta"),
     (r"Q6|arithmetic", "Q6_lattice"),
     (r"<=>|Clay Statement", "Clay_packaging"),
     (r"bootstrap|M=\|\|u0\|\|", "bootstrap_lemma"),
+    (r"PRODUCT-BLOCK|X\^\{?3/2\}?", "product_estimate_gap"),
 ]
 
 HYPOTHESIS_TAGS: list[tuple[str, str]] = [
@@ -83,6 +85,9 @@ HYPOTHESIS_TAGS: list[tuple[str, str]] = [
     (r"hypothesis|assume", "hypothesis_framing"),
     (r"epsilon|hyperdissipat|Q1", "Q1_hyperdissipation"),
     (r"5\s*[×x]\s*safety|Bypass Lemma", "bypass_lemma"),
+    (r"Lemma\s*[\*★]|DA-NS-1|Lemma-?Star", "Lemma★_hypothesis"),
+    (r"PRODUCT-BLOCK|product estimate", "PRODUCT-BLOCK_open"),
+    (r"C_0|geometric only", "C0_geometric"),
 ]
 
 
