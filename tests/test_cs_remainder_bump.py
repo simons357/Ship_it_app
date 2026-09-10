@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from ns_attacks.cs_remainder_bump import localized_abc, probe_hat  # noqa: E402
 
 JSON = ROOT / "results" / "cs_remainder_bump" / "cs_remainder.json"
+CORE = ROOT / "results" / "cs_remainder_bump" / "exact_core_check.json"
 PHONE = ROOT / "docs" / "CS-REMAINDER.md"
 
 
@@ -33,6 +34,19 @@ class CsRemainderTests(unittest.TestCase):
         self.assertLess(Rs[0], 0.01)
         self.assertGreater(Rs[-1], 0.3)
         self.assertGreater(Rs[-1] / Rs[0], 40.0)
+
+    def test_exact_core_check(self):
+        self.assertTrue(CORE.is_file())
+        data = json.loads(CORE.read_text())
+        self.assertTrue(data["same_field_matches"])
+        self.assertTrue(data["dilation_invariant"])
+        self.assertTrue(data["core_R_climbs"])
+        self.assertLess(data["same_field"]["R_rel"], 1e-9)
+        Rs = data["core_R"]
+        self.assertGreater(Rs[-1] / Rs[0], 6.0)
+        text = PHONE.read_text()
+        self.assertIn("exact triad core", text)
+        self.assertIn("99% energy cutoff", text)
 
     def test_live_lambda_2_to_3(self):
         a = probe_hat(*localized_abc(32, width=2.0, k0=2))

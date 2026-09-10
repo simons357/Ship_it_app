@@ -1,0 +1,94 @@
+{
+  "ns_solved": false,
+  "formula_lock": {
+    "probe_Tc": 0.0,
+    "exact_Tc": 0.0,
+    "probe_Ds": 0.2366464194949618,
+    "exact_Ds": 0.2366464194949618,
+    "Tc_err": 0.0,
+    "Ds_err": 0.0
+  },
+  "rows": [
+    {
+      "lambda": 2,
+      "n_grid": 32,
+      "n_modes": 836,
+      "energy_keep": 0.99,
+      "fft_Y": 167.5739219071138,
+      "core_Y": 153.11282090619207,
+      "fft_Ds": 879.763090012239,
+      "core_Ds": 616.2690342662086,
+      "fft_Tc": -27.608690353872028,
+      "core_Tc": -12.843678342137135,
+      "fft_R_signed": 0.005170344015564107,
+      "core_R_signed": 0.0017482234320750877,
+      "probe_R_signed": null,
+      "fft_cs": 2.4919331214631746,
+      "Tc_rel": 0.5347958132923226,
+      "Ds_rel": 0.2995056950415649,
+      "R_rel": 0.661874833316222
+    },
+    {
+      "lambda": 3,
+      "n_grid": 36,
+      "n_modes": 2820,
+      "energy_keep": 0.99,
+      "fft_Y": 844.3555846423683,
+      "core_Y": 769.9019462630483,
+      "fft_Ds": 9973.950341285672,
+      "core_Ds": 6903.726342269772,
+      "fft_Tc": -381.37157144315506,
+      "core_Tc": -165.9432158507061,
+      "fft_R_signed": 0.0172704657932735,
+      "core_R_signed": 0.005180838074551112,
+      "probe_R_signed": null,
+      "fft_cs": 4.60718480261755,
+      "Tc_rel": 0.5648778559378262,
+      "Ds_rel": 0.307824271623568,
+      "R_rel": 0.7000174670118657
+    },
+    {
+      "lambda": 4,
+      "n_grid": 48,
+      "n_modes": 6672,
+      "energy_keep": 0.99,
+      "fft_Y": 2665.412962351087,
+      "core_Y": 2427.8180921098065,
+      "fft_Ds": 55973.672190288635,
+      "core_Ds": 38507.13233236398,
+      "fft_Tc": -2469.102009187791,
+      "core_Tc": -1130.4419611354656,
+      "fft_R_signed": 0.04086295414298129,
+      "core_R_signed": 0.013669077905198213,
+      "probe_R_signed": null,
+      "fft_cs": 7.10436167044485,
+      "Tc_rel": 0.542164739679053,
+      "Ds_rel": 0.3120492041069815,
+      "R_rel": 0.6654897279974056
+    }
+  ],
+  "dilation": {
+    "R_base": 0.0017482234320750877,
+    "R_dilated": 0.0017482234320750877,
+    "rel": 0.0,
+    "n_modes": 836
+  },
+  "same_field": {
+    "n_modes": 836,
+    "exact_Tc": -12.843678342137135,
+    "fft_Tc": -12.843678342137796,
+    "exact_R": 0.0017482234320750877,
+    "fft_R": 0.001748223432075267,
+    "Tc_rel": 5.1449804849826066e-14,
+    "R_rel": 1.0257672791643499e-13
+  },
+  "same_field_matches": true,
+  "dilation_invariant": true,
+  "core_R_climbs": true,
+  "core_R": [
+    0.0017482234320750877,
+    0.005180838074551112,
+    0.013669077905198213
+  ],
+  "verdict": "Exact core confirms the climb. Same truncated field: FFT=triad. v(n\u00b7) leaves R\u2605 invariant. Spatial ABC family still climbs."
+}
