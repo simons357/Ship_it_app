@@ -53,7 +53,8 @@ K_{\alpha,\beta}=\sup_{Aw=\alpha w}\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2
 Base packet = many same-shell modes; \(\mathcal D_s\) only from small closing component; \(\varepsilon\) cancels in limiting \(\mathcal R_\star\to K\).  
 Caveat: “narrow” ≠ \(\mathcal D_s=O(1)\).  
 **CRITICAL:** \(\beta>\alpha\) = higher-shell transfer (**not** HH→L); genuine HH→L subfamily needs \(\beta<\alpha\).  
-Doc: [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md).  
+Canonical quotient: `ratio_R_star_shape` \(=\mathcal R_\star\); legacy `ratio_star` is a **different** post-Young object.  
+Doc (canonical SoT): [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md).  
 Locator: [`FIVE_LANE_PACK_LOCATOR.md`](./FIVE_LANE_PACK_LOCATOR.md) — https://github.com/simons357/Ship_it_app/pull/48  
 Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/`
 

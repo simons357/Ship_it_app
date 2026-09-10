@@ -6,6 +6,10 @@
 **Prior:** Attack 9A (AP packet) did **not** kill ★ — see [`ATTACK_9A_AP_PACKET_FAILURE.md`](./ATTACK_9A_AP_PACKET_FAILURE.md).  
 **Pack locator:** [`FIVE_LANE_PACK_LOCATOR.md`](./FIVE_LANE_PACK_LOCATOR.md) — PR https://github.com/simons357/Ship_it_app/pull/48
 
+**Canonical quotient:** code name `ratio_R_star_shape` \(=\mathcal{R}_\star\). Alias `ratio_R_star` → same. Legacy `ratio_star` \(=T_c/(E X\Lambda)\) is a **different** post-Young object — do **not** confuse with \(\mathcal{R}_\star\).
+
+---
+
 ## Family
 
 Dominant exact Stokes eigen-shell plus a small closing component:
@@ -19,6 +23,8 @@ Choose the closing direction to align with the projected self-interaction on she
 z_\beta\parallel\Pi_\beta B(w_\alpha,w_\alpha).
 \]
 The base packet \(w_\alpha\) may contain **many same-shell modes** (coherent fan). Spectral variance \(\mathcal{D}_s\) is generated **only** by the small closing component when \(\varepsilon>0\). At \(\varepsilon=0\), exact single shell \(\Rightarrow\mathcal{D}_s=0\) (and typically \(T_c=0\): vacuous, not a kill).
+
+---
 
 ## Boxed quantity
 
@@ -34,16 +40,23 @@ K_{\alpha,\beta}
 If \(\sup_{\alpha,\beta}K_{\alpha,\beta}=\infty\), then \(\sup\mathcal{R}_\star=\infty\) along the corresponding \(\varepsilon\to0\) family → **★ dead**.  
 Finite sample maxima are **not** a proof that \(K\) is bounded; kill lane stays **LIVE**.
 
-## CRITICAL — \(\beta>\alpha\) is NOT HH→L
+---
 
-| Subfamily | Meaning | Sample max \(K\) (seed 1390, kmax≤10) |
-|-----------|---------|--------------------------------------|
-| \(\beta>\alpha\) | Transfer to a **higher** shell — **NOT** HH→L | \(\approx 0.641\) at \((\alpha,\beta)=(4,8)\) |
-| \(\beta<\alpha\) | Genuine HH→L subfamily (output on **lower** shell) | \(\approx 0.0123\) at \((\alpha,\beta)=(5,2)\) |
+## CRITICAL callout — \(\beta>\alpha\) is NOT HH→L
 
-**Do not** report global \(\max K\approx0.641\) at \((4,8)\) as an HH→L result. That pair has \(\beta>\alpha\). Always split \(\beta>\alpha\) vs \(\beta<\alpha\) when quoting Attack 9B maxima.
+> **Runtime max \(K\approx0.641\) at \((\alpha,\beta)=(4,8)\) is NOT HH→L.**  
+> That pair has \(\beta>\alpha\) = transfer to a **higher** shell.  
+> Genuine HH→L needs \(\beta<\alpha\) (output on a **lower** shell).  
+> Always report \(\max K\) for \(\beta>\alpha\) and \(\beta<\alpha\) **separately**.
 
-(Attack 3 is also **not** a strict HH→L map — it filters high-frequency **inputs** without restricting **output** to low frequencies; see [`ATTACK_3_BONY_HH_L.md`](./ATTACK_3_BONY_HH_L.md).)
+| Subfamily | Meaning | Sample max \(K\) (seed 1390, kmax≤10 shells) |
+|-----------|---------|----------------------------------------------|
+| \(\beta>\alpha\) | Higher-shell transfer — **NOT** HH→L | \(\approx 0.641\) at \((\alpha,\beta)=(4,8)\) |
+| \(\beta<\alpha\) | Genuine HH→L subfamily | \(\approx 0.0123\) at \((\alpha,\beta)=(5,2)\) |
+
+**Attack 3** is also **not** a strict HH→L map — it filters high-frequency **inputs** without restricting **output** to low frequencies; see [`ATTACK_3_BONY_HH_L.md`](./ATTACK_3_BONY_HH_L.md).
+
+---
 
 ## \(\varepsilon\to0\) analysis (two-shell asymptotics)
 
@@ -80,6 +93,8 @@ for unit \(w\). The \((\alpha-\beta)\) factors cancel between numerator and \(\m
 \le K_{\alpha,\beta}.
 \]
 
+---
+
 ## Caveat
 
 Exact shell \(\Rightarrow\mathcal{D}_s=0\) at \(\varepsilon=0\). A merely “narrow” (finite-thickness) packet does **not** auto-keep \(\mathcal{D}_s=O(1)\):
@@ -88,6 +103,8 @@ Exact shell \(\Rightarrow\mathcal{D}_s=0\) at \(\varepsilon=0\). A merely “nar
 \]
 amplifies small lattice eigenvalue gaps.
 
+---
+
 ## After 9B (SoT)
 
 **Attack 9C** — fixed-gap spheres \(n\) and \(n+d\): \(\mathcal{D}_s\) from the **gap** (not packet width); natural closures only \(O(m)\); \(\mathcal{R}_\star\) **falls** with \(n\) (\(0.11\to 0.031\)), does **not** track \(m^{1/2}\). Natural same-shell ensemble is **NOT** a kill.  
@@ -95,6 +112,8 @@ amplifies small lattice eigenvalue gaps.
 Doc: [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md).
 
 **Next falsifier (9D):** designed \(\Theta(m^2)\)-closure subset with **locked phases** — [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md).
+
+---
 
 ## Required controls
 
@@ -106,6 +125,8 @@ Doc: [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md).
 | Report **total** signed \(T_c\) | Not HH→L-only |
 | Report \(\max K\) for \(\beta>\alpha\) and \(\beta<\alpha\) **separately** | Required |
 
+---
+
 ## Script
 
 ```bash
@@ -115,6 +136,8 @@ PYTHONPATH=scripts python3 scripts/ns_attacks/attack9b_exact_shell_K.py \
 
 Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/` (`attack9b.json`, `HEADLINE.md`, `NOTES_BETA_SPLIT.md`, plots).
 
+---
+
 ## Decisive output
 
 | Outcome | Meaning |
@@ -122,6 +145,8 @@ Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/` (`attack9b.json`, `HEAD
 | Sample \(K_{\alpha,\beta}\) unbounded / growing with shell size | Counterexample route still open |
 | Bounded sample max on tested pairs | Those shells did not kill ★ — **not** a proof; kill lane LIVE |
 | \(\varepsilon\)-limit fails to match \(K\) | Implementation / alignment bug — fix before claiming |
+
+---
 
 ## Runtime 2026-09-10 (seed 1390)
 
@@ -133,9 +158,13 @@ Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/` (`attack9b.json`, `HEAD
 | Controls / \(\varepsilon\)-limit | **PASS** |
 | Verdict | Finite sample — **not** a kill; kill lane **LIVE** |
 
+Re-run confirmation (same `--seed 1390 --kmax 6`): same argmax pairs; \(\max_{\beta>\alpha}K\approx0.656\) at \((4,8)\), \(\max_{\beta<\alpha}K\approx0.0126\) at \((5,2)\) — optimizer scatter only; β-split unchanged. See `/opt/cursor/artifacts/attack9b_sot_rewrite/BETA_SPLIT_CONFIRM.md`.
+
 Artifacts: `/opt/cursor/artifacts/attack9b_exact_shell/` (`attack9b.json`, `HEADLINE.md`, `NOTES_BETA_SPLIT.md`, `K_by_ab_pair.png`, `R_star_eps_limit.png`).
 
 **NS not solved.**
+
+---
 
 ## Next
 

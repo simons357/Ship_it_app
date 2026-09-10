@@ -112,7 +112,7 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | Formula lock (linear / \(\mathcal D_s\) / \(T_c\) / \(\mathcal R_\star\) / \(\Lambda'\)) | **LOCKED in docs + unit tests** | `LEMMA_STAR_SHAPE_FORM.md`; `tests/test_ns_attacks_lemma_star.py` |
 | Attack 8 correct record | **CORRECT RECORD** | Kill lane LIVE; \(\mathcal R_\star\) invariants; \((T_c)_+\) |
 | Attack 9A packet fan \(\gamma\) | **Did not kill ★** — \(\gamma\approx-1.39\) (decaying) | \(\mathcal D_s\|v\|_2^2 Y=O(1)\) false for AP family; see `ATTACK_9A_AP_PACKET_FAILURE.md` |
-| Attack 9B exact-shell \(K_{\alpha,\beta}\) | **LIVE** — \(\max_{\beta>\alpha}K\approx0.641\) at \((4,8)\); \(\max_{\beta<\alpha}K\approx0.0123\) at \((5,2)\) | \((4,8)\) is **not** HH→L (\(\beta>\alpha\)); \(\mathcal R_\star\to K\); controls PASS; not a kill |
+| Attack 9B exact-shell \(K_{\alpha,\beta}\) | **LIVE** — \(\max_{\beta>\alpha}K\approx0.641\) at \((4,8)\); \(\max_{\beta<\alpha}K\approx0.0123\) at \((5,2)\) | Canonical SoT: `ATTACK_9B_EXACT_SHELL_CLOSING.md`; \((4,8)\) is **not** HH→L (\(\beta>\alpha\)); \(\mathcal R_\star\to K\); controls PASS; not a kill |
 | Attack 9C fixed-gap spheres | **Did not kill ★** — \(\mathcal R_\star\) \(0.11\to 0.031\) | **SoT-only** — no sweep script/data in PR #48; natural same-shell **NOT** a kill |
 | Attack 9D \(\Theta(m^2)\) locked phase | **LIVE falsifier** (stub) | Designed \(\Theta(m^2)\)-closure subset with locked phases |
 
