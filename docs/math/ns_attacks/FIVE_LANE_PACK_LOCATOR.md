@@ -10,7 +10,7 @@
 | Item | Value |
 |------|-------|
 | Branch | `cursor/ns-five-lane-lemma-star-1390` |
-| Tip commit | `PENDING_EXACT_LOCK` (2026-09-10 exact lock; primary SoT `LEMMA_STAR_SHAPE_FORM.md`) |
+| Tip commit | `013793096ab951648d86eed89634201810bdf9b1` (2026-09-10 exact lock; primary SoT `LEMMA_STAR_SHAPE_FORM.md`) |
 | Tip subject | SoT: Lemma★ canonical shape form exact lock (p+q+r=0; K restricted) |
 | Remote | `origin/cursor/ns-five-lane-lemma-star-1390` |
 | GitHub PR | **https://github.com/simons357/Ship_it_app/pull/48** |
@@ -25,7 +25,7 @@
 
 | Role | Absolute path |
 |------|----------------|
-| **Canonical defs (Lemma★ shape form)** | `/workspace/docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md` |
+| **Primary SoT (canonical shape form — exact lock)** | `/workspace/docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md` |
 | **Canonical filename alias** | `/workspace/docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md` → shape form |
 | **Exact triad / spectral formulas** | `/workspace/docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md` |
 | **Status board** | `/workspace/docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md` |
