@@ -358,6 +358,178 @@ def l2_normalize(field: Field) -> Field:
     return {k: s * v for k, v in field.items()}
 
 
+def integer_shell(N: int) -> List[ModeKey]:
+    """All nonzero k in Z^3 with |k|^2 = N."""
+    if N <= 0:
+        return []
+    kmax = int(N ** 0.5) + 1
+    out: List[ModeKey] = []
+    for i in range(-kmax, kmax + 1):
+        for j in range(-kmax, kmax + 1):
+            for k in range(-kmax, kmax + 1):
+                if i * i + j * j + k * k == N and (i, j, k) != (0, 0, 0):
+                    out.append((i, j, k))
+    return out
+
+
+def shell_closing_pairs(
+    P: List[ModeKey],
+    Q: List[ModeKey] | None = None,
+    *,
+    forbid: Iterable[int] | None = None,
+) -> Tuple[int, List[Tuple[ModeKey, ModeKey, ModeKey]]]:
+    """Pairs p in P, q in Q with p+q nonzero. Return the most popular |p+q|^2 and those triads.
+
+    *forbid* drops sum-shells (so the third leg can be forced off the
+    P/Q eigenvalue: otherwise a one-shell packet has Ds=0 and is not
+    a test of the O(1)-denominator heuristic).
+    """
+    if Q is None:
+        Q = P
+    banned = set(forbid) if forbid is not None else set()
+    buckets: Dict[int, List[Tuple[ModeKey, ModeKey, ModeKey]]] = {}
+    for p in P:
+        for q in Q:
+            r = add_modes(p, q)
+            if r == (0, 0, 0):
+                continue
+            t = int(k_norm2(r))
+            if t in banned:
+                continue
+            buckets.setdefault(t, []).append((p, q, r))
+    if not buckets:
+        raise ValueError("no closing pairs")
+    T, pairs = max(buckets.items(), key=lambda kv: len(kv[1]))
+    return T, pairs
+
+
+def _edge_preserving_subset(
+    keys: List[ModeKey],
+    pairs: Sequence[Tuple[ModeKey, ModeKey, ModeKey]],
+    m: int,
+) -> List[ModeKey]:
+    """Keep *m* vertices that still carry actual closing pairs.
+
+    Degree-ranking the global graph then dropping vertices can leave a
+    subset with *zero* remaining edges on the original best T
+    (seen at N=14, m=8). Walk the pair list and take both endpoints
+    until the budget is spent, so a small packet is still two-shell.
+    """
+    if m <= 0 or len(keys) <= m:
+        return list(keys)
+    used: List[ModeKey] = []
+    seen = set()
+    for p, q, _r in pairs:
+        for k in (p, q):
+            if k in seen:
+                continue
+            seen.add(k)
+            used.append(k)
+            if len(used) >= m:
+                return used
+    for k in keys:
+        if k in seen:
+            continue
+        seen.add(k)
+        used.append(k)
+        if len(used) >= m:
+            break
+    return used
+
+
+def _aligned_pol_seed(k: ModeKey) -> Tuple[float, float, float]:
+    """Deterministic swirl k × e_z (or k × e_x if k is vertical)."""
+    kx, ky, kz = float(k[0]), float(k[1]), float(k[2])
+    if abs(kx) + abs(ky) > 0:
+        return (ky, -kx, 0.0)
+    return (0.0, kz, 0.0)
+
+
+def same_shell_packet_field(
+    N: int,
+    m: int | None = None,
+    phase_p: float = 0.0,
+    phase_q: float = 0.0,
+    phase_r_shift: float = 0.5 * np.pi,
+    pol_seed: Sequence[float] = (0.2, 1.0, -0.3),
+    random_phases: bool = False,
+    aligned_pol: bool = True,
+    rng: np.random.Generator | None = None,
+) -> Tuple[Field, dict]:
+    """Coherent packet on one Fourier shell, partner on a second eigenvalue.
+
+    Keys of P and Q sit on shell N. The third leg is the most popular
+    sum-shell T ≠ N among closing pairs, so Ds is a shell gap, not an
+    AP-width sum. Eigenvalues do not spread with m. Amplitudes are
+    equal after L2 normalization. Phases are one value per shell
+    unless random_phases. Polarizations default to aligned swirl.
+
+    If m is not None, keep m vertices that still carry closing pairs
+    on that fixed T (edge-preserving subset).
+    """
+    S = integer_shell(N)
+    if len(S) < 3:
+        raise ValueError(f"shell {N} too thin")
+    T, pairs = shell_closing_pairs(S, forbid={N})
+    if m is not None:
+        keys_p = _edge_preserving_subset(S, pairs, m)
+        keyset = set(keys_p)
+        pairs = [tr for tr in pairs if tr[0] in keyset and tr[1] in keyset]
+    if not pairs:
+        raise ValueError(f"shell {N} m={m}: no remaining T-pairs")
+    Pkeys = sorted(set(p for p, _q, _r in pairs))
+    Qkeys = sorted(set(q for _p, q, _r in pairs))
+    Rkeys = sorted(set(r for _p, _q, r in pairs))
+    field: Field = {}
+
+    def put(k: ModeKey, phase: float) -> None:
+        if k == (0, 0, 0):
+            return
+        mk = (-k[0], -k[1], -k[2])
+        if k in field or mk in field:
+            return
+        if aligned_pol and not random_phases:
+            seed: Sequence[float] = _aligned_pol_seed(k)
+        elif rng is not None and random_phases:
+            seed = tuple(float(x) for x in rng.normal(size=3))
+        else:
+            seed = pol_seed
+        v = make_divfree_amp(k, seed)
+        nrm = np.linalg.norm(v)
+        if nrm < 1e-15:
+            v = make_divfree_amp(k, (seed[1], seed[2], seed[0]))
+            nrm = np.linalg.norm(v)
+        if nrm < 1e-15:
+            return
+        if random_phases and rng is not None:
+            phase = float(rng.uniform(0, 2 * np.pi))
+        field[k] = (np.exp(1j * phase) / nrm) * v
+
+    n_phase = phase_p
+    t_phase = phase_p + phase_q + phase_r_shift
+    for k in Pkeys:
+        put(k, n_phase)
+    for k in Qkeys:
+        put(k, n_phase)
+    for k in Rkeys:
+        put(k, t_phase)
+    field = l2_normalize(enforce_reality(field))
+    shells = sorted({int(k_norm2(k)) for k in field})
+    meta = {
+        "N": N,
+        "T": T,
+        "m_requested": m,
+        "n_P": len(Pkeys),
+        "n_Q": len(Qkeys),
+        "n_R": len(Rkeys),
+        "n_pairs": len(pairs),
+        "n_modes": len(field),
+        "shells": shells,
+        "n_shells": len(shells),
+    }
+    return field, meta
+
+
 def two_eigenvalue_closed_triad(
     phases: Tuple[float, float, float] = (0.0, 0.3, -0.2),
     pol_seeds: Tuple[Sequence[float], Sequence[float], Sequence[float]] = (
