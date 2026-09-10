@@ -224,6 +224,7 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 | **This file** | Grok Heavy entry |
 | [`SOT.md`](SOT.md) | Packet source of truth |
 | [`FIVE_LANE_PACK_LOCATOR.md`](FIVE_LANE_PACK_LOCATOR.md) | Absolute `/workspace/scripts/ns_attacks/` paths + box drop |
+| [`jonathan-handoff/GROK-HEAVY/PASTE-THIS.md`](../jonathan-handoff/GROK-HEAVY/PASTE-THIS.md) | Prompt to send with the two ZIPs |
 | [`five-lane-pack/HIT.md`](five-lane-pack/HIT.md) | Pack index / PR pointers |
 | [`docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md`](../math/ns_attacks/LEMMA_STAR_CANONICAL.md) | **Working foundation** |
 | [`docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](../math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md) | Exact identities |
