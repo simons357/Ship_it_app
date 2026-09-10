@@ -76,6 +76,8 @@ scripts/ns_attacks/ns_lemma_star_core.py
 Object app (pictures; bound still open):
 docs/THE-OBJECT-APP.md
 apps/the-object/
+R★ maximizer (N shells vs |k|_max; does not climb):
+docs/RSTAR-SHELL-CLIMB.md
 The \(a^4\) missing inequality is dead.
 ★ implies GR in this packaging; not equivalent.
 Test both signs of \(T_c\). Section 4 is not proved.

@@ -112,6 +112,9 @@ scripts/ns_attacks/ns_lemma_star_core.py
 Object app (pictures; bound still open):
 docs/THE-OBJECT-APP.md
 apps/the-object/
+R★ maximizer N=2,3,4,5 vs |k|_max:
+docs/RSTAR-SHELL-CLIMB.md
+Does not climb. Target A not killed.
 Five-lane pack (ffe858c, full folder plus tests):
 docs/FIVE-LANE-PACK.md
 jonathan-handoff/GROK-HEAVY/01-swirl-publishing/five-lane-pack/
