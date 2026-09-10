@@ -6,9 +6,8 @@
 **Companion:** [`DA-GAP-CLOSURE-PLAYBOOK.md`](./DA-GAP-CLOSURE-PLAYBOOK.md), [`THEOREM-H-ATTACK-PLAN.md`](./THEOREM-H-ATTACK-PLAN.md)  
 **Five-lane drill:** [PR #48](https://github.com/simons357/Ship_it_app/pull/48) · branch `cursor/ns-five-lane-lemma-star-1390` · `docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md`
 
-**Rule of this document:** Broken at PRODUCT-BLOCK / Agmon-product gap → close by …  
-Proving Lemma★ ≡ Clay B in this packaging. DA will **not** green it without PRODUCT-BLOCK.  
-**Refuse:** “almost proved,” “survives numeric ⇒ proved,” greening language. Numerics ≠ proof.
+**Rule of this document:** Lemma★ \(\Rightarrow\) GR in this packaging is the supported direction. Equivalence is not claimed. The estimate \(|T_c|\le C\|u\|_2 X^{3/2}\) is algebraically false as a universal bound.  
+DA will **not** green ★. Numerics ≠ proof.
 
 ---
 
@@ -35,7 +34,7 @@ Canonical ASCII (registry):
 `T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda`
 
 This is the energy-budget form of **DA-NS-1**: control \(T_c\) by viscous variance plus a remainder built only from Leray energy.  
-**Lemma★ is not a side lemma** — in this packaging it **is** the Millennium problem.
+**Lemma★ \(\Rightarrow\) GR in this packaging is supported. Equivalence is not.** There is no converse that global regularity would force \(\sup\mathcal R_\star<\infty\).
 
 ---
 
@@ -47,34 +46,28 @@ If Lemma★ holds with geometric \(C_0\):
 2. Spectral scale stays controlled → **enstrophy stays finite**
 3. Finite enstrophy on \(T^3\) → **3D Navier–Stokes globally regular**
 
-So “prove Lemma★” is not a small lemma — it is Clay Statement B under this book. DA records the Clay weld as **WITHHELD** (honest packaging), not as refuse-as-fraud.  
-**Conditional implication only** until PRODUCT-BLOCK closes. **NS remains unsolved.**
+So Lemma★, if proved, would give GR **in this packaging**. That is **one direction**. There is no converse in these files. DA weld **WITHHELD**. **NS remains unsolved.**
 
 ---
 
-## Exact blocker: PRODUCT-BLOCK / Agmon-product gap
+## Exact blocker: the \(\|u\|_2 X^{3/2}\) product is not a candidate
 
-You still need something like
-
+The older “missing inequality”
 \[
 |T_c|\le C\|u\|_2\,X^{3/2}
 \]
+is **false as a universal estimate**: under \(u=av\), \(T_c\sim a^3\) while \(\|u\|_2 X^{3/2}\sim a^4\). Discard it by algebra. See [`LEMMA_STAR_CANONICAL.md`](../../math/ns_attacks/LEMMA_STAR_CANONICAL.md).
 
-(or the pre-Young equivalent \(|T_c|\le C\|u\|_2 X\Lambda\) with geometric \(C\), then Young in \(\nu\)).
-
-**Ordinary 3D Sobolev / product / Agmon estimates are INSUFFICIENT from energy alone.**
+Pre-Young \(|T_c|\le C\|u\|_2 X\Lambda\) is homogeneous of degree 3, still **unproved**. Ordinary 3D Sobolev / Agmon from energy remain insufficient. HH→L is diagnostic only.
 
 | Break | Content |
 | --- | --- |
-| Break ID | PRODUCT-BLOCK (Agmon-product gap) |
-| Where (DA) | Books `DA-NS-1` / `PRODUCT-BLOCK`; weld `W-NS-LEMMASTAR-CLAY` status **WITHHELD**; `W-NS-LEMMASTAR-PRODUCT` OPEN |
-| Where (math) | Product-class bound on centered spectral drift from Leray energy |
-| Analytic bottleneck | **Bony HH→L** — still the gap (five-lane Attack 3) |
-| Why | Without it, the energy-budget closing estimate does not close |
-| **Closure move** | Structure on \(T_c=M-\Lambda N\) controlling HH→L, or conditional under SND / dominant shell |
-| Fake-closure risk | Treating geometric \(C_0\), numeric survival, or “almost proved” as if PRODUCT-BLOCK closed |
+| Break ID | discarded \(\|u\|_2 X^{3/2}\) product (not a candidate) |
+| Where (math) | Homogeneous remainder on \(T_c\) (e.g. unproved pre-Young \(\|u\|_2 X\Lambda\)) |
+| Analytic bottleneck | Uniform \(\sup\mathcal R_\star<\infty\); HH→L diagnostic only |
+| Fake-closure risk | Calling older Section 4 “proved”; treating numeric survival as ★ |
 
-**Headline:** Broken at PRODUCT-BLOCK → HH→L still the gap → close by structure on \(T_c\) or SND/shell conditional. **Not almost proved.**
+**Headline:** Remaining target is \(\sup\mathcal R_\star<\infty\), or a diverging family. The \(\|u\|_2 X^{3/2}\) product is discarded. **Not almost proved.**
 
 ---
 

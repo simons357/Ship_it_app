@@ -62,11 +62,12 @@ Hence
 \]
 for unit \(w\). The \((\alpha-\beta)\) factors cancel between numerator and \(\mathcal{D}_s\). \(\varepsilon\) cancels in the limiting quotient.
 
-**Relation:** for each fixed exact-shell \(w\),
+**Relation:** for each fixed exact-shell \(w\) and an **aligned, sign-selected** \(z_\beta\parallel\Pi_\beta B(w,w)\),
 \[
-\lim_{\varepsilon\to0}\mathcal{R}_\star(w+\varepsilon z_\beta(w))=K_{\alpha,\beta}(w)
+\lim_{\varepsilon\to0}\mathcal{R}_\star(w+\varepsilon z_\beta)=K_{\alpha,\beta}(w)
 \le K_{\alpha,\beta}.
 \]
+For **arbitrary** \(z_\beta\), the limit depends on the projection of \(z_\beta\) against \(B(w,w)\). This family is **not** the full lemma.
 
 ## Caveat
 

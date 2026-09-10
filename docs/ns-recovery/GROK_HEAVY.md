@@ -21,7 +21,7 @@ Human: Jonathan Simons (`winchester.anesthesia@gmail.com` / `simonsmedical@iclou
 - Do **not** glue SND \(J/X\), Theorem H, Phi-renorm, Triple Lock, Route N / Q6 / LP-shell floors, or Domain Architect “five fingers” into this book.
 - Do **not** invent missing formulas. Do **not** abs-value the triad sum.
 - Kill / ★ decisions use **complete signed** \(T_c\) only — never an HH→L-only proxy.
-- Proving the boxed shape inequality with geometric \(C_{\mathrm{geom}}\) \(\equiv\) Clay B **in this packaging**. That weld is **WITHHELD** until PRODUCT-BLOCK / HH→L closes.
+- Proving the boxed shape inequality \(\Rightarrow\) GR **in this packaging** (one direction). Equivalence to GR is **not** in these files.
 
 **Two different “fives” (do not mix):**
 
@@ -46,8 +46,9 @@ Natural same-shell (9C), AP fan (9A), and finite 9B \(K_{\alpha,\beta}\) samples
 
 ## Canonical formulas (locked)
 
-Source of lock: `docs/math/ns_attacks/LEMMA_STAR_FULL.md` (full operator statement)  
-Fourier expansions: `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`  
+Source of lock: `docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md`  
+Fourier expansions: `docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`  
+Shape-form expansion: `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`  
 Same formulas: `five-lane-pack/docs/ns-review/LEMMA-STAR-EXACT-FORMULAS.md`  
 Code: `five-lane-pack/scripts/ns_attacks/stokes_moments.py`
 
@@ -112,7 +113,8 @@ Energy-budget / DA-NS-1 form (PR #49):
 T_c\le\theta\nu(Z-\Lambda Y)+C_0\nu^{-1}\|u\|_2^2 X\Lambda.
 \]
 
-PRODUCT-BLOCK still open: need something like \(|T_c|\le C\|u\|_2 X^{3/2}\) (or pre-Young \(|T_c|\le C\|u\|_2 X\Lambda\)). Ordinary 3D product/Agmon from energy **insufficient**. HH→L is the channel that blocks it.
+Working foundation: `docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md`, `docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`.  
+The estimate \(|T_c|\le C\|u\|_2 X^{3/2}\) is **false** as a universal bound (\(a^3\) vs \(a^4\)). Discard it.
 
 ### Ratio hygiene (do not mix)
 
@@ -215,8 +217,9 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 | **This file** | Grok Heavy entry |
 | [`SOT.md`](SOT.md) | Packet source of truth |
 | [`five-lane-pack/HIT.md`](five-lane-pack/HIT.md) | Pack index / PR pointers |
-| [`docs/math/ns_attacks/LEMMA_STAR_FULL.md`](../math/ns_attacks/LEMMA_STAR_FULL.md) | **Full lemma (operator form)** |
-| [`docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`](../math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md) | Fourier expansions |
+| [`docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md`](../math/ns_attacks/LEMMA_STAR_CANONICAL.md) | **Working foundation** |
+| [`docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](../math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md) | Exact identities |
+| [`docs/math/ns_attacks/ARCHIVE_OLDER_LEMMA_STAR_PROOF.md`](../math/ns_attacks/ARCHIVE_OLDER_LEMMA_STAR_PROOF.md) | Older Section 4: **not** a theorem |
 | [`five-lane-pack/docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md`](five-lane-pack/docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md) | Status board |
 | [`five-lane-pack/docs/math/ns_attacks/ATTACK_SYNTHESIS_SIMULTANEOUS.md`](five-lane-pack/docs/math/ns_attacks/ATTACK_SYNTHESIS_SIMULTANEOUS.md) | Lane board |
 | [`five-lane-pack/docs/math/ns_attacks/ATTACK_8_CORRECT_RECORD.md`](five-lane-pack/docs/math/ns_attacks/ATTACK_8_CORRECT_RECORD.md) | Kill lane LIVE; ratio invariants |

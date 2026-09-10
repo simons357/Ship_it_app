@@ -5,7 +5,7 @@
 
 Navier–Stokes is **not solved**. The uniform triadic bound is **open**.
 
-**Full lemma (operator form, OPEN):** [`docs/math/ns_attacks/LEMMA_STAR_FULL.md`](../math/ns_attacks/LEMMA_STAR_FULL.md). \(K_{\alpha,\beta}\) is a restricted near-shell test, not the lemma.
+**Full lemma (OPEN):** [`docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md`](../math/ns_attacks/LEMMA_STAR_CANONICAL.md). Formulas: [`docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](../math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md). \(K_{\alpha,\beta}\) is a restricted near-shell test, not the lemma.
 
 ---
 
@@ -65,6 +65,9 @@ H1 on the cylinder is the other live track if the packet line is shelved. It is 
 | `docs/ns-recovery/SAME-SHELL-PACKET-NOTE.md` | Expanded packet note |
 | `docs/ns-recovery/CENTERED-SPECTRAL-DRIFT-MASTER-REPORT.md` | 7 Sep search; Stokes-moment paste was missing until PR #48 |
 | `docs/ns-recovery/GROK_HEAVY.md` | **Grok Heavy entry** — formulas, five-lane JSON, live work |
-| `docs/math/ns_attacks/ATTACK_9B_COUNTING_CS_EXCLUSION.md` | Fixed-output \(\Theta(m^2)\) excluded; \(K\le 16s\) |
+| `docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md` | Working foundation: uniform \(\mathcal R_\star\) |
+| `docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md` | Operator / triad identities |
+| `docs/math/ns_attacks/ARCHIVE_OLDER_LEMMA_STAR_PROOF.md` | Older Section 4 is **not** a theorem |
+| `docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md` | Operator / triad identities |
 | `docs/math/ns_attacks/ATTACK_9D_THETA_M2_LOCKED_PHASE.md` | Live 9D: growing I/O, complex pols |
 | `docs/ns-recovery/five-lane-pack/` | PR #48 five-lane / Lemma★ pack. Index: `five-lane-pack/HIT.md`. Live: https://github.com/simons357/Ship_it_app/pull/48 |

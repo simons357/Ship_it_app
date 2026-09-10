@@ -106,7 +106,10 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | Lemma★ \(\Rightarrow\) no finite-time blowup of \(\Lambda\) in this packaging \(\Rightarrow\) GR on \(\mathbb{T}^3\) **in this packaging** | **Conditional implication only** | Packaging / differential inequality; **not** a Clay submission |
 | K=0 form \(T_c\le\theta\nu\mathcal D_s\) | **KILLED** | Attack 2: \(\lvert T_c\rvert/\mathcal D_s\sim B\) on fixed-shape high triad |
 | Young reduction of \(T_c\) toward a norm of \(B(v,v)\) | **Partial / formal** | Polarization exists; does not close 3D product gap |
-| \(\lvert T_c\rvert\le C\|v\|_2 X^{3/2}\) (or equiv) by Agmon/product | **GAP — does not close** | HH→L bottleneck (Attack 3); HH is diagnostic only |
+| \(\lvert T_c\rvert\le C\|v\|_2 X^{3/2}\) | **FALSE as a universal estimate** | Scales \(a^3\) vs \(a^4\); discard by algebra |
+| Lemma★ \(\Rightarrow\) GR in this packaging | **Supported (one direction)** | Quotient / \(\Lambda\)-control; **not** equivalence |
+| Lemma★ \(\Leftrightarrow\) GR | **NOT supported** | No converse in these files |
+| Older Section 4 / \(\|\nabla u\|_\infty^2 X\) remainder | **NOT a theorem** | Incomplete; later replaced by a conditional; do not label proved |
 | Uniform geometric \(C_{\mathrm{geom}}\) / \(C_0\) for Lemma★ (shape form) | **OPEN — kill lane LIVE** | Sample maxes (shape★ formula only) are **not** a proof and **do not** close falsification |
 | Formula lock (linear / \(\mathcal D_s\) / \(T_c\) / \(\mathcal R_\star\) / \(\Lambda'\)) | **LOCKED in docs + unit tests** | `LEMMA_STAR_SHAPE_FORM.md`; `tests/test_ns_attacks_lemma_star.py` |
 | Attack 8 correct record | **CORRECT RECORD** | Kill lane LIVE; \(\mathcal R_\star\) invariants; \((T_c)_+\) |
@@ -132,8 +135,9 @@ Route N / Q6 / LP-shell floors: [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_
 
 ## Related files
 
-- `docs/math/ns_attacks/LEMMA_STAR_FULL.md` — **full lemma (operator form)**
-- `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md` — Fourier expansions
+- `docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md` — **working foundation**
+- `docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`
+- `docs/math/ns_attacks/ARCHIVE_OLDER_LEMMA_STAR_PROOF.md` — Section 4 is **not** a theorem
 - `docs/math/ns_attacks/ATTACK_8_CORRECT_RECORD.md`
 - `docs/math/ns_attacks/ATTACK_9_PACKET_FAN.md`
 - `docs/math/ns_attacks/ATTACK_9A_AP_PACKET_FAILURE.md`

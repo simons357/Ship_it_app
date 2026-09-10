@@ -77,6 +77,34 @@ def test_Tc_equals_operator_inner_product():
     assert abs(inner - tri) < 1e-8 * max(1.0, abs(tri))
 
 
+def test_Tc_odd_Ds_E_Y_even_under_reversal():
+    """Tc(-v)=-Tc(v); Ds,E,Y even. Universal (Tc_+)^2 bound ≡ Tc^2 bound."""
+    f = high_triad_field(amp=1.1, phases=(0.3, -0.2, 0.6))
+    r = probe(f)
+    rm = probe(scale_field(f, -1.0))
+    assert abs(rm.Tc + r.Tc) < 1e-8 * max(1.0, abs(r.Tc))
+    assert abs(rm.Ds - r.Ds) < 1e-8 * max(1.0, abs(r.Ds))
+    assert abs(rm.E - r.E) < 1e-12
+    assert abs(rm.Y - r.Y) < 1e-8 * max(1.0, abs(r.Y))
+    # (Tc_+)^2(v) and (Tc_+)^2(-v) cover Tc(v)^2 between them
+    pos = max(r.Tc, 0.0) ** 2
+    pos_m = max(rm.Tc, 0.0) ** 2
+    assert abs(max(pos, pos_m) - r.Tc ** 2) < 1e-8 * max(1.0, r.Tc ** 2)
+
+
+def test_false_u2_X32_product_fails_as_a_to_zero():
+    """|Tc| <= C ||u||_2 X^{3/2} cannot hold uniformly: ratio ~ 1/a as a→0."""
+    f = high_triad_field(amp=1.0)
+    r = probe(f)
+    assert abs(r.Tc) > 1e-8
+    ratios = []
+    for a in (1.0, 0.1, 0.01, 1e-3):
+        ra = probe(scale_field(f, a))
+        denom = math.sqrt(ra.E) * (ra.X ** 1.5)
+        ratios.append(abs(ra.Tc) / denom)
+    assert ratios[-1] / ratios[0] > 50.0
+
+
 def test_single_shell_Ds_zero_implies_Tc_zero():
     """Ds=0 ⇒ one shell and Tc=0. Not a kill."""
     from ns_attacks.attack9b_exact_shell_K import (
@@ -247,6 +275,78 @@ def test_attack9b_exact_shell_K_eps_limit_and_controls():
         r = probe(combine_eps(w, z, 1e-3))
         assert math.isfinite(r.ratio_R_star)
         assert abs(r.ratio_R_star - info["K"]) / max(info["K"], 1e-30) < 0.15
+
+
+def _field_inner(a, b) -> float:
+    keys = set(a) | set(b)
+    s = 0.0
+    zero = np.zeros(3, dtype=np.complex128)
+    for k in keys:
+        s += float(np.vdot(a.get(k, zero), b.get(k, zero)).real)
+    return s
+
+
+def test_near_shell_limit_needs_aligned_sign_selected_zbeta():
+    """lim R_★(w+ε z_β)=K only for aligned, stretch-oriented z_β ∥ Π_β B.
+
+    Arbitrary z_β: the limit tracks the squared projection against B(w,w).
+    The compressing sign makes (Tc)_+=0, so R_★→0, not K.
+    """
+    from ns_attacks.attack9b_exact_shell_K import (
+        K_of_w,
+        build_exact_shell_field,
+        closing_packet_from_PiB,
+        combine_eps,
+        choose_closing_sign,
+        field_l2,
+        normalize_field,
+        project_B_to_shell,
+        shells_up_to,
+    )
+
+    shells = shells_up_to(5)
+    modes_a, modes_b = shells[5], shells[10]
+    rng = np.random.default_rng(1390)
+    w = normalize_field(
+        build_exact_shell_field(
+            modes_a,
+            rng.uniform(0.4, 1.2, size=len(modes_a)),
+            rng.uniform(0, 2 * np.pi, size=len(modes_a)),
+            rng.uniform(0, 2 * np.pi, size=len(modes_a)),
+        )
+    )
+    alpha, beta = 5.0, 10.0
+    info = K_of_w(w, alpha, beta)
+    assert info["PiB_L2"] > 1e-8
+    PiB = project_B_to_shell(nonlinear_B(w), beta)
+    stretch = choose_closing_sign(w, PiB)
+    z_align = closing_packet_from_PiB(PiB, sign=stretch)
+    z_compress = closing_packet_from_PiB(PiB, sign=-stretch)
+    r_align = probe(combine_eps(w, z_align, 1e-3))
+    r_comp = probe(combine_eps(w, z_compress, 1e-3))
+    assert abs(r_align.ratio_R_star - info["K"]) / info["K"] < 0.15
+    assert r_comp.Tc < 0
+    assert r_comp.ratio_R_star == 0.0 or r_comp.ratio_R_star < 1e-12
+
+    z_rand = normalize_field(
+        build_exact_shell_field(
+            modes_b,
+            rng.uniform(0.3, 1.5, size=len(modes_b)),
+            rng.uniform(0, 2 * np.pi, size=len(modes_b)),
+            rng.uniform(0, 2 * np.pi, size=len(modes_b)),
+        )
+    )
+    n_pib = field_l2(PiB)
+    cos2 = (_field_inner(z_rand, PiB) / max(n_pib, 1e-30)) ** 2
+    r_rand = probe(combine_eps(w, z_rand, 1e-3))
+    expected = info["K"] * cos2
+    if r_rand.Tc <= 0:
+        assert r_rand.ratio_R_star < 0.15 * info["K"]
+    else:
+        assert abs(r_rand.ratio_R_star - expected) / max(expected, 1e-12) < 0.25
+        # misaligned: not the full K unless the random field happened to align
+        if cos2 < 0.7:
+            assert r_rand.ratio_R_star < 0.85 * info["K"]
 
 
 def test_fixed_output_counting_at_most_m_pairs():

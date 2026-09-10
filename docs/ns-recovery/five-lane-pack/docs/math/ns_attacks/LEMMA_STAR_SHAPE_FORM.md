@@ -3,7 +3,7 @@
 **Date:** 2026-09-10  
 **Lock:** Truth only. **NS is NOT solved.** Lemma★ is **OPEN**. This note expands the operator statement; it does not prove ★.
 
-**Full lemma (operator form):** [`LEMMA_STAR_FULL.md`](./LEMMA_STAR_FULL.md).  
+**Working foundation:** [`LEMMA_STAR_CANONICAL.md`](./LEMMA_STAR_CANONICAL.md), [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md).  
 **\(K_{\alpha,\beta}\) is not the lemma.** It tests only a restricted near-shell limiting family.
 
 ## Reframe (lock)
@@ -229,13 +229,13 @@ Reason from how **signed** triads add that stretching cannot get large unless sp
 - Packet fan (9A, did not kill ★): [`ATTACK_9_PACKET_FAN.md`](./ATTACK_9_PACKET_FAN.md), [`ATTACK_9A_AP_PACKET_FAILURE.md`](./ATTACK_9A_AP_PACKET_FAILURE.md)
 - Exact-shell closing (9B): [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md) — **restricted family only**
   \[
-  K_{\alpha,\beta}=\sup_{Aw=\alpha w}\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\|w\|_2^4},\quad
-  \lim_{\varepsilon\to0}\mathcal R_\star(w_\alpha+\varepsilon z_\beta)=K_{\alpha,\beta}(w).
+  K_{\alpha,\beta}=\sup_{Aw=\alpha w}\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\|w\|_2^4}.
   \]
+  The displayed \(\varepsilon\to0\) limit equals \(K_{\alpha,\beta}(w)\) only for an aligned, sign-selected \(z_\beta\parallel\Pi_\beta B(w,w)\). For arbitrary \(z_\beta\) the limit depends on the projection against \(B(w,w)\).
 - Counting exclusion: [`ATTACK_9B_COUNTING_CS_EXCLUSION.md`](./ATTACK_9B_COUNTING_CS_EXCLUSION.md)
 - Fixed-gap spheres (9C, **not** a kill): [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md)
 - Retargeted 9D (growing I/O): [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md)
-- Full lemma: [`LEMMA_STAR_FULL.md`](./LEMMA_STAR_FULL.md)
+- Archive (older proof, NOT a theorem): [`ARCHIVE_OLDER_LEMMA_STAR_PROOF.md`](./ARCHIVE_OLDER_LEMMA_STAR_PROOF.md)
 - Synthesis: [`ATTACK_SYNTHESIS_SIMULTANEOUS.md`](./ATTACK_SYNTHESIS_SIMULTANEOUS.md)
 - Archive (NOT ★): [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_Q6_SHELL/), [`../ARCHIVE_NOT_LEMMA_STAR.md`](../ARCHIVE_NOT_LEMMA_STAR.md)
 - Probe / harness: `scripts/ns_attacks/stokes_moments.py`, `attack5_route2_kill.py`, `lemma_star_near_shell_search.py`, `attack9_packet_fan.py`, `attack9b_exact_shell_K.py` (9C/9D scripts not yet present)

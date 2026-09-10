@@ -24,7 +24,9 @@ This is **not** a proof. NS is **not** solved. Lemma★ is **OPEN**.
 
 ## 1. Absolute defs (five-lane pack)
 
-Source of lock: `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md` (PR #48)  
+Source of lock: `docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md` with `LEMMA_STAR_EXACT_FORMULAS.md`  
+Older proof attempt: `ARCHIVE_OLDER_LEMMA_STAR_PROOF.md` (not a theorem)  
+Shape-form expansion: `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md` (PR #48)  
 Same formulas: `docs/ns-review/LEMMA-STAR-EXACT-FORMULAS.md` (PR #52)
 
 Torus \(\mathbb{T}^3=(\mathbb{R}/2\pi\mathbb{Z})^3\). Stokes \(A=-P\Delta\), \(\lambda_k=|k|^2\), \((Av)_k=\lambda_k v_k\).
