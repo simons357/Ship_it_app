@@ -34,12 +34,13 @@ When \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Kill cares about stretching \(T_c>0\).
 | 4 Stokes | `attack4_stokes.py` | Identities OK | Remainder still needed |
 | 5 Route2 kill | `attack5_route2_kill.py` | Sample list ≠ constant | Kill lane still **LIVE** |
 | **8 Correct record** | `ATTACK_8_CORRECT_RECORD.md` | **CORRECT RECORD** | Invariants; lanes LIVE; archive split |
-| **9 Packet fan** | `attack9_packet_fan.py` | **LIVE** — report \(\gamma\) | Coherent \(P,Q,R=P+Q\); fit \(\mathcal R_\star\sim m^\gamma\) |
+| **9 Packet fan** | `attack9_packet_fan.py` | **LIVE** — \(\gamma\approx-1.39\) (decaying on this fan) | Controls PASS; not a kill; kill lane still LIVE |
 
 ## Attack 9 decisive rule
 
 - Sustained \(\gamma>0\) → counterexample route  
 - Flat → next analytic target: square-summation / orthogonality  
+- This run (\(m=1..8\)): \(\gamma\approx-1.389\), verdict `DECAYING_gamma_lt_0` — **not** a counterexample; **not** lane closure
 
 Artifacts: `/opt/cursor/artifacts/attack9_packet_fan/`
 

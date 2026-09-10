@@ -107,7 +107,7 @@ with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 | Uniform geometric \(C_{\mathrm{geom}}\) / \(C_0\) for Lemma★ (shape form) | **OPEN — kill lane LIVE** | Sample maxes (shape★ formula only) are **not** a proof and **do not** close falsification |
 | Formula lock (linear / \(\mathcal D_s\) / \(T_c\) / \(\mathcal R_\star\) / \(\Lambda'\)) | **LOCKED in docs + unit tests** | `LEMMA_STAR_SHAPE_FORM.md`; `tests/test_ns_attacks_lemma_star.py` |
 | Attack 8 correct record | **CORRECT RECORD** | Kill lane LIVE; \(\mathcal R_\star\) invariants; \((T_c)_+\) |
-| Attack 9 packet fan \(\gamma\) | **LIVE** | `attack9_packet_fan.py` / `ATTACK_9_PACKET_FAN.md` |
+| Attack 9 packet fan \(\gamma\) | **LIVE** — this fan \(\gamma\approx-1.39\) (decaying) | Controls PASS; not a kill; falsification still LIVE |
 
 ## What a proof would have to be
 

@@ -44,6 +44,18 @@ PYTHONPATH=scripts python3 scripts/ns_attacks/attack9_packet_fan.py \
 
 Artifacts: `/opt/cursor/artifacts/attack9_packet_fan/` (`attack9.json`, `HEADLINE.md`, `R_star_vs_m.png`).
 
+## Runtime 2026-09-10 (m=1..8, seed 1390)
+
+| Metric | Value |
+|--------|-------|
+| \(\gamma\) (OLS log–log) | \(\approx -1.389\) |
+| \(R^2\) | \(\approx 0.818\) |
+| Verdict | `DECAYING_gamma_lt_0` — this fan does **not** open a sustained \(\gamma>0\) counterexample route |
+| Controls | **PASS** (amp inv., dilation inv., \(\sum T_k=0\), triad=FFT total \(T_c\)) |
+| \(\max_m\mathcal R_\star\) on this run | \(\approx 0.103\) at \(m=1\) |
+
+Decay under this coherent fan is **not** a kill of ★ and **not** closure of the kill lane. Next analytic target if other fans stay flat/decaying: square-summation / orthogonality preventing coherent triad accumulation. Kill lane remains **LIVE**.
+
 ## Relation to Attack 8
 
 [`ATTACK_8_CORRECT_RECORD.md`](./ATTACK_8_CORRECT_RECORD.md) locks that the kill lane is **LIVE** and that \(\mathcal R_\star\) is amplitude/dilation invariant. Attack 9 is the next falsification probe under that record.
