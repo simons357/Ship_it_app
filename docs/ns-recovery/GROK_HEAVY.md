@@ -27,7 +27,7 @@ Human: Jonathan Simons (`winchester.anesthesia@gmail.com` / `simonsmedical@iclou
 
 | Name | What it is |
 |---|---|
-| **Five lanes** (this pack) | Attacks 1–5 on Lemma★ / Stokes moments / HH→L / kill drill |
+| **Five lanes** (this pack) | Attacks **1–5 only**: covariance, triad/K=0/\(C_*\), Bony HH→L, Stokes, Route-2 kill. Discussion: [`FIVE-LANE-DISCUSSION-AND-MATH.md`](FIVE-LANE-DISCUSSION-AND-MATH.md). **9A–9D are not these lanes.** |
 | **Five fingers** | Domain Architect role router (`P,H,\psi,\lambda;\Phi`). Organizational software, **not** this math |
 
 ---
@@ -134,6 +134,8 @@ The shape-star Attack 5 `best_R_star_shape` tag `sep_1_p8` has **\(T_c<0\)** (\(
 
 ## Five-lane computation (the run you asked for)
 
+**Discussion lock:** [`FIVE-LANE-DISCUSSION-AND-MATH.md`](FIVE-LANE-DISCUSSION-AND-MATH.md). Attacks **9A–9D are not** these five lanes.
+
 **Date:** 10 September 2026 · seed / branch tag `1390`  
 **Harness:** `five-lane-pack/scripts/ns_attacks/run_all_five.py`  
 **Original artifacts on PR #48:** `results/ns_five_lane_2026-09-10/` and `results/ns_five_lane_shape_star/`  
@@ -161,10 +163,15 @@ Headline (`SYNTHESIS_RUNTIME.json`):
 | 3 Bony HH→L | `attack3_bony_hh_l.py` | HH live bottleneck, **no closure** | Pure high triad: all \(T_c\) in HH; random HH frac p90 \(\approx0.51\) |
 | 4 Stokes identities | `attack4_stokes.py` | Identities OK | \(\mathcal D_s\ge0\); viscous-only absorption insufficient |
 | 5 Route-2 kill | `attack5_route2_kill.py` | SURVIVE numeric, gap remains | First pass \(n=978\), \(\max\lvert R_{\mathrm{pre}}\rvert\approx5.088\), \(\max\lvert C_*\rvert\approx0.04065\). Shape re-run \(n=1242\), \(\max T_c^2/(D_s E Y)\approx0.0227\) (see hygiene); almost-shell max \(\sim3.6\cdot10^{-6}\); pure-shell kills \(0\) |
+
+**Not the five lanes** (later probes; do not substitute):
+
+| Attack | Script | Verdict | Key numbers |
+|---|---|---|---|
 | 9A AP packet | `attack9_packet_fan.py` | **Did not kill ★** | \(\gamma\approx-1.39\); \(\mathcal D_s\) grew faster than \(T_c\) |
 | 9B exact-shell \(K_{\alpha,\beta}\) | `attack9b_exact_shell_K.py` | Finite sample, **not a kill** | \(\max K\approx0.641\) at \((\alpha,\beta)=(4,8)\); controls PASS |
 | 9C fixed-gap spheres | SoT / combinatorial probe | **Did not kill ★** | Closures \(O(m)\) not \(O(m^2)\); reported \(\mathcal R_\star\) \(0.11\to0.031\) |
-| 9D \(\Theta(m^2)\) locked phase | **stub** | **LIVE falsifier** | Not implemented |
+| 9D \(\Theta(m^2)\) locked phase | **stub** / growing I/O | **LIVE test** | Fixed-output \(\Theta(m^2)\) excluded; growing I/O remains |
 
 JSON files (complete run records):
 
@@ -216,6 +223,7 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 |---|---|
 | **This file** | Grok Heavy entry |
 | [`SOT.md`](SOT.md) | Packet source of truth |
+| [`FIVE-LANE-DISCUSSION-AND-MATH.md`](FIVE-LANE-DISCUSSION-AND-MATH.md) | Recovered five-lane discussion + math; **9A–9D are not the lanes** |
 | [`five-lane-pack/HIT.md`](five-lane-pack/HIT.md) | Pack index / PR pointers |
 | [`docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md`](../math/ns_attacks/LEMMA_STAR_CANONICAL.md) | **Working foundation** |
 | [`docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](../math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md) | Exact identities |

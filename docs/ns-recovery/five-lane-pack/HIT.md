@@ -3,9 +3,27 @@
 **Dropped into:** `docs/ns-recovery/five-lane-pack/`  
 **Date recovered:** 10 September 2026 (this agent)
 
-**Grok Heavy:** start at [`../GROK_HEAVY.md`](../GROK_HEAVY.md). Run JSON is under `results/`.
+**Grok Heavy:** start at [`../GROK_HEAVY.md`](../GROK_HEAVY.md). Run JSON is under `results/`.  
+**Five-lane discussion and math:** [`../FIVE-LANE-DISCUSSION-AND-MATH.md`](../FIVE-LANE-DISCUSSION-AND-MATH.md). Attacks 9A–9D are **not** the five lanes.
 
 This is **not** a proof. NS is **not** solved. Lemma★ is **OPEN**.
+
+---
+
+## 0. The five lanes (do not substitute 9A–9D)
+
+Screenshot: “Five-lane drill done; K=0 dead; Lemma★ survives numeric kill only (not proved); HH→L still the gap.”  
+The screenshot does **not** list the five names. PR #48 files do:
+
+| Lane | Name | Script |
+|---|---|---|
+| 1 | Covariance | `attack1_covariance.py` |
+| 2 | Triad / K=0 / \(C_*\) | `attack2_triad_k0_cstar.py` |
+| 3 | Bony HH→L | `attack3_bony_hh_l.py` |
+| 4 | Stokes | `attack4_stokes.py` |
+| 5 | Route-2 kill | `attack5_route2_kill.py` |
+
+Harness: `scripts/ns_attacks/run_all_five.py`. Later Grok “Lane two” = analytic \(X^{3/2}\) attempt; in these files Lane 2 is the triad / K=0 / \(C_*\) numeric lane. The product \(\lvert T_c\rvert\le C\|u\|_2 X^{3/2}\) is false (\(a^3\) vs \(a^4\)).
 
 ---
 

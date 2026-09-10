@@ -55,6 +55,8 @@ C_{\mathrm{geom}}=4\theta\,C_0(\theta),
 
 If \(D_s=0\), the field is one shell and \(T_c=0\). Not a kill.
 
+Five-lane drill record (Attacks 1–5 only; 9A–9D are later): [`../../../FIVE-LANE-DISCUSSION-AND-MATH.md`](../../../FIVE-LANE-DISCUSSION-AND-MATH.md).
+
 ---
 
 ## Four corrections

@@ -13,7 +13,8 @@
 
 ## Lemma★ (canonical: shape form)
 
-Full lock: [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md).
+Working foundation: [`LEMMA_STAR_CANONICAL.md`](./LEMMA_STAR_CANONICAL.md), [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md).  
+Five-lane discussion (do not substitute 9A–9D): [`../../ns-recovery/FIVE-LANE-DISCUSSION-AND-MATH.md`](../../ns-recovery/FIVE-LANE-DISCUSSION-AND-MATH.md).
 
 \[
 \mathcal R_\star(v)
@@ -24,18 +25,27 @@ Full lock: [`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md).
 When \(T_c\ge0\), \((T_c)_+^2=T_c^2\). Kill cares about stretching \(T_c>0\).  
 **Hygiene:** do not compare \(0.065\), \(0.073\), \(1.93\times10^{-3}\) unless each used this exact formula.
 
-## Lane board
+## The five lanes (the drill)
+
+`run_all_five.py` launches **only** these five. Attacks 8 and 9A–9D are **not** the five lanes.
 
 | Lane | Script / doc | Runtime verdict | Key notes |
 |------|----------------|-----------------|-----------|
 | 1 Covariance | `attack1_covariance.py` | Numeric support only | Homogeneity checks; **not** a proof |
-| 2 Triad / K=0 / C* | `attack2_triad_k0_cstar.py` | **K=0 DEAD** | Viscosity-only absorption dies with amplitude |
+| 2 Triad / K=0 / C* | `attack2_triad_k0_cstar.py` | **K=0 DEAD** | Viscosity-only absorption dies with amplitude; \(C_*\) sample ≠ uniform bound |
 | 3 Bony HH→L | `attack3_bony_hh_l.py` | HH channel live bottleneck | Diagnostic only; kill uses **total** \(T_c\) |
 | 4 Stokes | `attack4_stokes.py` | Identities OK | Remainder still needed |
 | 5 Route2 kill | `attack5_route2_kill.py` | Sample list ≠ constant | Kill lane still **LIVE** |
+
+A later Grok screenshot called “Lane two” an analytic \(X^{3/2}\) attempt. In these files Lane 2 is the triad / K=0 / \(C_*\) numeric lane. The product \(\lvert T_c\rvert\le C\|u\|_2 X^{3/2}\) is **false** (\(a^3\) vs \(a^4\)); the homogeneous \(C_*\) form is a different, still unproved object.
+
+## Later attacks (not the five lanes)
+
+| Attack | Script / doc | Runtime verdict | Key notes |
+|------|----------------|-----------------|-----------|
 | **8 Correct record** | `ATTACK_8_CORRECT_RECORD.md` | **CORRECT RECORD** | Invariants; lanes LIVE; archive split |
 | **9A Packet fan** | `attack9_packet_fan.py` | **Did not kill ★** — \(\gamma\approx-1.39\) | \(\mathcal D_s\) grew faster than \(T_c\); \(D_s\|v\|_2^2 Y=O(1)\) **false** for AP family |
-| **9B Exact-shell \(K_{\alpha,\beta}\)** | `attack9b_exact_shell_K.py` | **LIVE** — \(\max K\approx0.641\) at \((4,8)\) | \(\mathcal R_\star\to K\); controls PASS; not a kill; kill lane still LIVE |
+| **9B Exact-shell \(K_{\alpha,\beta}\)** | `attack9b_exact_shell_K.py` | **LIVE** — \(\max K\approx0.641\) at \((4,8)\) | \(\mathcal R_\star\to K\) only for aligned, sign-selected \(z_\beta\); not a kill |
 | **9C Fixed-gap spheres** | SoT-only (no probe script yet) | **Did not kill ★** — \(\mathcal R_\star\) \(0.11\to 0.031\) | \(\mathcal D_s\) from **gap**; closures \(O(m)\); does **not** track \(m^{1/2}\); natural same-shell **NOT** a kill |
 | **9D \(\Theta(m^2)\) onto fixed outputs** | counting + CS | **EXCLUDED** — \(K\le 16s\) | Cannot unbounded-\(K\) at fixed \(s\) |
 | **9D growing I/O** | `attack9d_growing_io.py` | **LIVE test** | Complex pols; \(\alpha/\sqrt{\beta}\) target; not a proof |
