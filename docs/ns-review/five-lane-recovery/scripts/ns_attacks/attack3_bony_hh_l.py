@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Attack 3 — Bony HH→L channel bottleneck.
+"""Attack 3 — Bony HH channel diagnostic (not strictly HH→L).
 
 Decompose the nonlinear transfer into HH / HL / LL parent-wavevector channels
 and measure which channel dominates the centered remainder Tc.
 
-Prior note: HH→L is the live analytic bottleneck for closing product estimates
+Precision lock: this filters high-frequency *inputs* (parents vs cutoff). It does
+NOT restrict bilinear *output* to a low shell — therefore not strictly HH→L.
+Prior analytic note: HH→L is the live bottleneck story for product estimates
 toward |Tc| ≤ C ||u||_2 X^{3/2} (or equiv). Numerics here only diagnose channel
-size — they do not prove a Bony estimate.
+size — they do not prove a Bony estimate. Kill uses complete signed Tc.
 """
 
 from __future__ import annotations

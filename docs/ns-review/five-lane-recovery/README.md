@@ -86,22 +86,26 @@ T_c\le\theta\nu\mathcal{D}_s+C_0\nu^{-1}\|v\|_2^2\,Y
 \]
 with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\). Here \(\theta\in(0,1)\) is the Young absorption fraction; \(\nu\) is viscosity.
 
-Code aliases: `E`, `Tc`, `Ds`, `Lambda`, `ratio_R_star` in `scripts/ns_attacks/stokes_moments.py`.
+Code aliases: `E`, `Tc`, `Ds`, `Lambda`, **`ratio_R_star_shape`** (canonical \(\mathcal{R}_\star\); alias `ratio_R_star`). Legacy **`ratio_star`** is different — do not compare. Bookkeeping: [`../FIVE-LANE-BOOKKEEPING.md`](../FIVE-LANE-BOOKKEEPING.md).
 
 ---
 
-## HH→L statement (recovered)
+## HH→L statement (recovered) — not strictly HH→L
 
-From `ATTACK_3_BONY_HH_L.md`:
+From `ATTACK_3_BONY_HH_L.md` (precision-updated):
 
 > Partition the bilinear form driving \(\mathfrak T_c\) into parent-wavevector channels HH / HL / LL (Bony-style). Prior analytic note: **HH→L is the channel that blocks a clean product bound toward**
 > \[
 > |\mathfrak T_c|\le C\|u\|_2 X^{3/2}.
 > \]
 
+**Precision:** Attack 3 filters high-frequency **inputs**; it does **not** restrict output to low → **not strictly HH→L**.
+
 Live 2026-09-10 result: HH is the sole channel on a pure high triad; random HH frac p90 \(\approx0.51\). **No closure.** Diagnostic only — kill decisions use **complete signed** \(T_c\), not HH→L-only.
 
 **Honest gap:** There is **no proved analytic HH→L → L map** in the pack. What exists is (1) the bottleneck statement above, (2) the Galerkin channel splitter `attack3_bony_hh_l.py`, (3) synthesis notes that HH→L remains the PRODUCT-BLOCK gap.
+
+**9B note:** runtime \(\max K\approx0.641\) at \((\alpha,\beta)=(4,8)\) has \(\beta>\alpha\) → **not** HH→L (higher-shell transfer).
 
 ---
 

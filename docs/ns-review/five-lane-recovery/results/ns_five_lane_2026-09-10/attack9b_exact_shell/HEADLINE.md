@@ -38,4 +38,7 @@
 
 Boxed: K_{α,β}=β‖Π_β B(w,w)‖₂²/(α²‖w‖₂⁴).
 ε→0: R_★→K for z_β∥Π_β B. Finite sample max ≠ proof. Kill lane LIVE.
+Precision: max at (α,β)=(4,8) has β>α → NOT HH→L (higher-shell). Genuine HH→L needs β<α.
+Naming: 9A fail, 9B this, 9C fixed-gap (SoT-only), 9D Θ(m²).
+Quotient: ratio_R_star_shape only (not legacy ratio_star).
 NS not solved.

@@ -403,7 +403,8 @@ class ProbeResult:
     N: float
     M: float
     Tc: float
-    # Post-Young viscosity packaging: Tc / (E X Λ) — scales as 1/B on fixed shape
+    # LEGACY / DIFFERENT: Tc / (E X Λ) — scales as 1/B on fixed shape.
+    # Do NOT compare to ratio_R_star_shape (see FIVE-LANE-BOOKKEEPING.md).
     ratio_star: float
     # Pre-Young geometric ratio: Tc / (√E · X · Λ) — amplitude-invariant
     ratio_preyoung: float
@@ -411,7 +412,7 @@ class ProbeResult:
     ratio_cstar: float
     # K=0 form: Tc / Ds  (blows ~B with amplitude)
     ratio_k0: float
-    # Canonical shape★ ratio: (Tc)_+^2 / (Ds E Y) — amp-/dilation-/ν-invariant
+    # CANONICAL shape★ ratio: (Tc)_+^2 / (Ds E Y) — amp-/dilation-/ν-invariant
     ratio_R_star_shape: float
     B_L2: float
     label: str = ""

@@ -10,7 +10,9 @@
 
 Change only the size of a fixed shape \(v\) via \(u=av\). Optimize over size. Worst size cancels \(\nu\). What remains is pure geometry on the shape.
 
-Scripts: `scripts/ns_attacks/stokes_moments.py` (aliases: \(E=\|v\|_2^2\), `Tc`\(=\mathcal T_c\) / \(T_c\), `Ds`\(=\mathcal D_s\), `ratio_R_star_shape`\(=\mathcal R_\star\)).
+Scripts: `scripts/ns_attacks/stokes_moments.py` (aliases: \(E=\|v\|_2^2\), `Tc`\(=\mathcal T_c\) / \(T_c\), `Ds`\(=\mathcal D_s\), **`ratio_R_star_shape`**\(=\mathcal R_\star\); property alias `ratio_R_star`).
+
+**Quotient naming lock:** canonical kill/shape quotient is **`ratio_R_star_shape`**. Legacy field **`ratio_star`** \(=T_c/(E X\Lambda)\) is a **different** post-Young packaging ratio — **do not compare** numeric values across the two. See [`FIVE-LANE-BOOKKEEPING.md`](../../../../FIVE-LANE-BOOKKEEPING.md).
 
 ---
 

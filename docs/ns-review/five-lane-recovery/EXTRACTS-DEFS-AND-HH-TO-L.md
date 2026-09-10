@@ -22,14 +22,19 @@ Centered transfer:
 - \(\Lambda'=2/X\,(T_c-\nu\mathcal{D}_s)\)
 
 Shape★:
-- \(\mathcal{R}_\star=(T_c)_+^2/(\mathcal{D}_s\,E\,Y)\)
+- \(\mathcal{R}_\star=(T_c)_+^2/(\mathcal{D}_s\,E\,Y)\) — code: **`ratio_R_star_shape`**
+- Legacy **`ratio_star`** \(=T_c/(E X\Lambda)\) is **different** — do not compare
 - Viscosity form: \(T_c\le\theta\nu\mathcal{D}_s+C_0\nu^{-1}\|v\|_2^2 Y\) with \(C_0=C_{\mathrm{geom}}/(4\theta)\)
 
-## HH→L (`ATTACK_3_BONY_HH_L.md`)
+Bookkeeping: [`../FIVE-LANE-BOOKKEEPING.md`](../FIVE-LANE-BOOKKEEPING.md).
+
+## HH→L (`ATTACK_3_BONY_HH_L.md`) — not strictly HH→L
 
 Partition bilinear form driving \(\mathfrak{T}_c\) into Bony channels HH / HL / LL.
 **Claimed bottleneck:** HH→L blocks a clean product bound toward
 \(|\mathfrak{T}_c|\le C\|u\|_2 X^{3/2}\).
+
+**Precision:** filters high-frequency **inputs**; does **not** restrict output to low → **not strictly HH→L**.
 
 Status: diagnostic only; no analytic closure; kill uses complete signed \(T_c\).
 

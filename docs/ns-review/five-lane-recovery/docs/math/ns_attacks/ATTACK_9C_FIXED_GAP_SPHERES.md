@@ -31,7 +31,18 @@ The structural reason is consistent with 9A/9B caveats: with \(\mathcal{D}_s\) f
 
 ## Probe / script status
 
-**SoT-only until implemented.** No dedicated probe script yet under `scripts/ns_attacks/` for fixed-gap spheres (contrast `attack9b_exact_shell_K.py` for 9B). Numbers \(0.11\to 0.031\) are locked as user/runtime truth into this Source of Truth; a future `attack9c_fixed_gap_spheres.py` (name TBD) should reproduce them under the same controls as 9A/9B (amplitude invariance of \(\mathcal{R}_\star\), complete signed \(T_c\), report total \(T_c\) not HH→L-only).
+**SoT-only until implemented.**
+
+| Inventory check | Result |
+|-----------------|--------|
+| Dedicated 9C probe under `scripts/ns_attacks/` | **Absent** (contrast `attack9b_exact_shell_K.py`) |
+| Sweep script in PR #48 | **None** |
+| Sweep data / JSON in PR #48 recovered pack | **None** |
+| Recorded span \(0.11\to 0.031\) | Locked as user/runtime truth into this SoT only |
+
+Do **not** invent a sweep artifact. A future `attack9c_fixed_gap_spheres.py` (name TBD) should reproduce the span under the same controls as 9A/9B (amplitude invariance of \(\mathcal{R}_\star\) via `ratio_R_star_shape`, complete signed \(T_c\), report total \(T_c\) not HH→L-only).
+
+See bookkeeping: [`FIVE-LANE-BOOKKEEPING.md`](../../../../FIVE-LANE-BOOKKEEPING.md).
 
 ## Decisive output
 
