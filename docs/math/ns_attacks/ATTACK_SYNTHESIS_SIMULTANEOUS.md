@@ -56,6 +56,11 @@ with a proof that controls the **HH→L** channel. Standard 3D product / Agmon e
 
 Shellwise principal-block floor of \(\widetilde Q\) remains a **LEAD** (`scripts/route_n_shell_floor_probe.py`), not a PDE theorem. Do not weld Route N matrices to Lemma★ without a map.
 
+## Domain Architect shape–texture (separate desk)
+
+Library navigation demo artifacts: `/opt/cursor/artifacts/da-shape-texture/` (JSON map of HB shapes vs textures; NS/RH splicer screens).  
+**Not** a five-lane run and **not** a Lemma★ proof. Code lives on `cursor/da-theory-splicer-0cc5`. Cross-link: [`DA-SHAPE-TEXTURE-LINK.md`](./DA-SHAPE-TEXTURE-LINK.md).
+
 ## Reproduce
 
 ```bash

@@ -44,6 +44,8 @@ Until one of these lands as mathematics (not numerics), **do not claim global re
 ## Related files
 
 - `docs/math/ns_attacks/ATTACK_SYNTHESIS_SIMULTANEOUS.md`
+- `docs/math/ns_attacks/DA-SHAPE-TEXTURE-LINK.md` — DA library navigation vs this kill drill (branch routing)
 - `docs/ns-recovery/CENTERED-SPECTRAL-DRIFT-MASTER-REPORT.md`
 - `scripts/ns_attacks/`
 - `/opt/cursor/artifacts/ns_five_lane_2026-09-10/`
+- `/opt/cursor/artifacts/da-shape-texture/` — DA shape/texture demo (splicer branch), not a proof
