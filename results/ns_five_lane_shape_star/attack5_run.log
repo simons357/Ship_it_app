@@ -1,0 +1,71 @@
+                             E=6.0000e+00 X=9.2000e+01 Λ=16.4783 Ds=1.6910e+03 Tc=5.9009e+01 Rshape=2.2639e-04 Rpost=6.4873e-03 Rpre=1.5891e-02 Rc*=4.0581e-03 Rk0=3.4897e-02
+best preYoung so far: {'abs_ratio_preyoung': 5.092754943405386, 'ratio_preyoung': 5.092754943405386, 'ratio_star': 2.0791084993966362, 'ratio_R_star_shape': 0.022707658884265753, 'tag': 'sep_32_p10', 'ratio_cstar': 0.040642883485572524, 'E': 6.0, 'X': 94208.0, 'Lambda': 16873.739130434784, 'Ds': 1815650739956.8672, 'Tc': 19830219379.060825}
+best R_star_shape so far: {'abs_R_star_shape': 0.02271065269757461, 'ratio_R_star_shape': 0.02271065269757461, 'ratio_preyoung': -0.15915908283544858, 'tag': 'sep_1_p8', 'E': 5.999999999999999, 'X': 91.99999999999997, 'Y': 1515.9999999999995, 'Lambda': 16.47826086956522, 'Ds': 1690.9565217391282, 'Tc': -591.0255479683334}
+
+=== ATTACK 5 SUMMARY ===
+{
+  "attack": 5,
+  "name": "route2_LemmaStar_shape_kill_drill",
+  "canonical_form": "shape: Tc^2 <= C_geom * Ds * E * Y; R_star_shape = Tc^2/(Ds E Y)",
+  "n_samples": 1242,
+  "abs_ratio_preyoung_max": 5.092754943405386,
+  "abs_ratio_preyoung_p50": 0.0,
+  "abs_ratio_preyoung_p95": 0.15773643991724237,
+  "abs_ratio_preyoung_p99": 2.0057426678266834,
+  "abs_ratio_cstar_max": 0.04064556260797448,
+  "max_R_star_shape": 0.02271065269757461,
+  "R_star_shape_p50": 0.0,
+  "R_star_shape_p95": 0.0187442603923506,
+  "R_star_shape_p99": 0.022310964132242355,
+  "almost_shell": {
+    "n_samples": 740,
+    "max_R_star_shape": 3.6129475876853755e-06,
+    "R_star_shape_p95": 0.0,
+    "note": "Live kill attempt: Ds\u21920+ with stretching. Finite max on this search \u2260 proof of uniform C_geom."
+  },
+  "pure_shell": {
+    "vacuous_Tc0_Ds0_count": 7,
+    "kill_Tc_nonzero_Ds0_count": 0,
+    "note": "Pure single shell with Tc=0=Ds is vacuous, not a kill."
+  },
+  "alternate_remainders_on_unit_triad": {
+    "Tc_over_E_X_Lambda_postYoung": 0.006487325830326495,
+    "Tc_over_sqrtE_X_Lambda_preYoung": 0.01589063807947711,
+    "Tc_over_X32_Lambda": 0.004058102832923564,
+    "Tc_over_Ds": 0.034896648727526146,
+    "R_star_shape_Tc2_over_Ds_E_Y": 0.0002263859306819106,
+    "Tc_over_E_Y": 0.006487325830326495,
+    "Tc_over_B_L2_Y": 0.004836779293149436,
+    "Young_gap_note": "Canonical shape\u2605: Tc^2 \u2264 C_geom Ds E Y (R_star_shape = Tc^2/(Ds E Y)). Viscosity remainder is the Young lift with C0 = C_geom/(4\u03b8). C* form uses |Tc|\u2264C* X^{3/2} \u039b. HH\u2192L blocks standard 3D product close."
+  },
+  "LemmaStar_C0_killed": false,
+  "verdict": "SURVIVE_numeric_gap_remains",
+  "analytic_gap": "Canonical shape\u2605: Tc(v)^2 \u2264 C_geom Ds(v) E(v) Y(v), i.e. sup R_star_shape < \u221e. Young / u=av lifts to viscosity \u2605 with C0 = C_geom/(4\u03b8). Weaker survivor: |Tc| \u2264 C* X^{3/2} \u039b. Numerics support bounded ratios on tested families; standard 3D product/Agmon do not close HH\u2192L. Sample list of small R_star_shape is NOT the constant. NOT A PROOF. NS NOT SOLVED.",
+  "ns_solved": false
+}
+best_preYoung= {
+  "abs_ratio_preyoung": 5.092754943405386,
+  "ratio_preyoung": 5.092754943405386,
+  "ratio_star": 2.0791084993966362,
+  "ratio_R_star_shape": 0.022707658884265753,
+  "tag": "sep_32_p10",
+  "ratio_cstar": 0.040642883485572524,
+  "E": 6.0,
+  "X": 94208.0,
+  "Lambda": 16873.739130434784,
+  "Ds": 1815650739956.8672,
+  "Tc": 19830219379.060825
+}
+best_R_star_shape= {
+  "abs_R_star_shape": 0.02271065269757461,
+  "ratio_R_star_shape": 0.02271065269757461,
+  "ratio_preyoung": -0.15915908283544858,
+  "tag": "sep_1_p8",
+  "E": 5.999999999999999,
+  "X": 91.99999999999997,
+  "Y": 1515.9999999999995,
+  "Lambda": 16.47826086956522,
+  "Ds": 1690.9565217391282,
+  "Tc": -591.0255479683334
+}
+wrote /opt/cursor/artifacts/ns_five_lane_shape_star/attack5.json

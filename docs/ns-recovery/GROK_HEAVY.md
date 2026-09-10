@@ -137,7 +137,8 @@ The shape-star Attack 5 `best_R_star_shape` tag `sep_1_p8` has **\(T_c<0\)** (\(
 **Date:** 10 September 2026 · seed / branch tag `1390`  
 **Harness:** `five-lane-pack/scripts/ns_attacks/run_all_five.py`  
 **Original artifacts on PR #48:** `results/ns_five_lane_2026-09-10/` and `results/ns_five_lane_shape_star/`  
-**Copied here:** `five-lane-pack/results/`
+**Original paths (restored from PR #48 onto this branch):** `results/ns_five_lane_2026-09-10/` and `results/ns_five_lane_shape_star/`  
+**Nested copy:** `five-lane-pack/results/`
 
 Headline (`SYNTHESIS_RUNTIME.json`):
 
