@@ -228,6 +228,10 @@ The uniform 9B target is
 \(\|\Pi_\beta B\|_2\le C(\alpha/\sqrt{\beta})\|w\|_2^2\),
 i.e. \(\sup K_{\alpha,\beta}<\infty\). A bound
 \(C\alpha\|w\|_2^2\) is the wrong packaging.
+Sweep (288 fields): pairs \(\le m\), CS, and
+\(K\le 16s\) all sat; max \(K\approx 0.506\),
+max \(\sqrt{K}\approx 0.711\). Not \(C_0\).
+File: [`LEMMA-STAR-9B-COUNTING.md`](LEMMA-STAR-9B-COUNTING.md).
 The uniform global triadic bound remains completely open.
 
 Do not: more isolated triangles, more frozen rays, more

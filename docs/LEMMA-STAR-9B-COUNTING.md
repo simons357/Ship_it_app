@@ -105,6 +105,30 @@ is not this target.
 
 ---
 
+## Sweep (seed 1390, this branch)
+
+`python3 scripts/ns_attacks/attack9b_output_counting.py`
+JSON: `results/attack9b_counting/attack9b_counting.json`
+
+288 exact-shell fields, complex polarizations,
+\(\beta=2\alpha\) when the shell exists.
+
+| Check | Result |
+|---|---|
+| pairs on one \(k\) \(\le m\) | 0 fails (max pairs on one \(k\) = 4) |
+| \(\lvert\widehat B_k\rvert\le\lvert k\rvert\|w\|_2^2\) | 0 fails (max ratio \(\approx 0.173\)) |
+| \(K\le 16s\) | 0 fails |
+| max \(K\) | \(\approx 0.506\) at \((\alpha,\beta)=(4,8)\), \(s=12\) |
+| max \(\sqrt{K}\) | \(\approx 0.711\) |
+| max \(s\) | 24 |
+
+Finite \(\sqrt{K}\) is not \(C_0\). Do not merge
+this \(0.711\) with Attack 12’s \(\mathcal R_\star\approx 0.71\)
+(different object). Inequalities sat. Kill of
+fixed-\(s\) 9D sits. Uniform \(K\) still open.
+
+---
+
 ## What remains
 
 Full complex polarizations, growing input
