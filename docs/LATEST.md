@@ -49,12 +49,11 @@ docs/OPENAI-NS-CLAIM.md
 Lemma★ (energy-budget leftover, locked
 as hypothesis, not proved):
 docs/LEMMA-STAR.md
-Exact form: viscosity-free geometric
-inequality on R★. Meaning: a shape
-statement, not a viscosity statement.
-If sup R★ = ∞, ★ is dead. A proof is a
-uniform bound from triadic geometry.
-Samples are evidence only.
+Exact form: scale-invariant trilinear
+shape estimate on R★. Live fork: sup R★
+finite proves ★; a near-shell or HH→L
+sequence with R★ → ∞ kills it. Samples
+are evidence only.
 File: docs/LEMMA-STAR-R.md
 Attack 6: uniform pre-Young C dead
 (|R_pre| ~ s). That is not ★ dying.

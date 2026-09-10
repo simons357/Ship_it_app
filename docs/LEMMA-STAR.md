@@ -19,8 +19,9 @@ Do not weld SND, Route N, \(K(t)\), or \(Q_1\).
 On divergence-free fields on \(\mathbb{T}^3\),
 \(X=\|A^{1/2}u\|_2^2\), \(Y=\|Au\|_2^2\),
 \(Z=\|A^{3/2}u\|_2^2\), \(\Lambda=Y/X\),
-\(\mathcal D_s=Z-\Lambda Y\ge 0\),
-\(\mathfrak T_c=\mathcal M-\Lambda\mathcal N\).
+\(\mathcal D_s=Z-\Lambda Y=\|(A-\Lambda)A^{1/2}u\|_2^2\ge 0\),
+\(\mathfrak T_c=\mathcal M-\Lambda\mathcal N
+=-\langle B(u,u),A(A-\Lambda)u\rangle\).
 
 **Lemma★.** For every \(\theta\in(0,1)\) there is a
 geometry-only \(C_0\) (independent of \(u,\nu\)) such that
@@ -70,7 +71,19 @@ Decisive ratio:
   triadic geometry or cancellation.
 - Numerically bounded samples remain evidence only.
 
-Meaning: a shape statement, not a viscosity statement.
+Equivalent trilinear form (\(C_{\star}^2=4\theta C_0\)):
+\[
+\bigl[-\langle B(v,v),A(A-\Lambda)v\rangle\bigr]_+
+\le
+C_{\star}\,
+\|v\|_2\,\|Av\|_2\,
+\bigl\|(A-\Lambda)A^{1/2}v\bigr\|_2.
+\]
+Do not merge this \(C_{\star}\) with the Attack-2 remainder
+\(|T_c|\le C_* X^{3/2}\Lambda\).
+
+Meaning: a scale-invariant trilinear shape estimate, not a
+viscosity statement.
 File: [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md).
 
 ---
@@ -90,7 +103,7 @@ explicit — **not** “almost proved.”
 \(\lvert R_{\mathrm{pre}}\rvert\simeq 0.158\,s\) on the
 scaled triad. That is not ★ dying. On the same family
 \(\mathcal R_\star\) is flat (\(\sim 0.022\) at best phase).
-The \(C_*\) remainder \(|T_c|\le C_* X^{3/2}\Lambda\) is a
+The Attack-2 remainder \(|T_c|\le C_* X^{3/2}\Lambda\) is a
 different sufficient door for DA-NS-2, not this boxed
 form. One family is not a proof. HH→L is still the gap.
 File: [`LEMMA-STAR-NEXT.md`](LEMMA-STAR-NEXT.md).
@@ -119,12 +132,15 @@ A family that did not blow is not a uniform geometric constant.
 
 ## Live door
 
-The exact equivalent of ★ is a uniform bound on
-\(\mathcal R_\star\) from triadic geometry or cancellation.
-Uniform pre-Young \(C\) is off. \(C_*\) is a different door.
-Do not revive K=0. Do not cash a triad \(\mathcal R_\star\)
-as \(C_0\). Numerically bounded samples remain evidence
-only. Do not write “almost proved.”
+The exact equivalent of ★ is the scale-invariant trilinear
+bound on \(\mathcal R_\star\) (or \(C_{\star}\)) from triadic
+geometry or cancellation.
+\(\sup\mathcal R_\star<\infty\) proves it. A near-shell or
+HH→L sequence with \(\mathcal R_\star\to\infty\) kills it.
+Uniform pre-Young \(C\) is off. Attack-2 \(C_*\) is a
+different door. Do not revive K=0. Do not cash a triad
+\(\mathcal R_\star\) as \(C_0\). Numerically bounded samples
+remain evidence only. Do not write “almost proved.”
 
 ---
 

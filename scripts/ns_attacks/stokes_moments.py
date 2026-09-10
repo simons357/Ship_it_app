@@ -19,8 +19,12 @@ Lemma★ (energy remainder; OPEN):
   Tc ≤ θ ν Ds + C0 ν^{-1} E X Λ
 with C0 geometric only (independent of amplitude / viscosity scale).
 
-Survivor bound from Attack 2 (K=0 killed):
+Survivor bound from Attack 2 (K=0 killed; NOT Lemma★):
   Tc ≤ θ ν Ds + C* X^{3/2} Λ
+That C* is not the trilinear C_star in
+  [Tc]_+ ≤ C_star ||v||_2 ||Av||_2 ||(A-Λ)A^{1/2} v||_2
+  with C_star^2 = 4 θ C0. The latter is the exact ★ form.
+  ratio_box is (Tc_+)^2 / (Ds E Y) = R_star.
 """
 
 from __future__ import annotations

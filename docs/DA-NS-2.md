@@ -33,12 +33,13 @@ C_0 geometry-only. Exact equivalent: the
 viscosity-free geometric inequality
 (T_c(v)_+)^2 ≤ 4 θ C_0 D_s(v) ||v||_2^2 Y(v).
 Would freeze Λ in this packaging.
-**Not proved.** Blocked at a uniform bound
-on R★ from triadic geometry (HH→L).
-K=0 absorption is dead. Uniform pre-Young
-C is dead. Numeric survival is evidence
-only. File: docs/LEMMA-STAR.md,
-docs/LEMMA-STAR-R.md
+**Not proved.** Blocked at a uniform triadic
+bound on R★ (near-shell or HH→L). K=0
+absorption is dead. Uniform pre-Young C
+is dead. Numeric survival is evidence
+only. The missing content is that bound,
+not more viscosity bookkeeping. File:
+docs/LEMMA-STAR.md, docs/LEMMA-STAR-R.md
 PR 48 is the five-lane drill, not a close.
 
 Live geometric path: H1 (A_bad a priori).

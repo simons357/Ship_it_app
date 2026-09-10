@@ -50,9 +50,9 @@ gives \(C_0(\theta)\ge(\sup\mathcal R_\star)/(4\theta)\). Unbounded
 \(\mathcal R_\star\) kills every finite \(C_0\).
 
 This boxed form **is** Lemma★. It is not a weaker restatement.
-The \(C_*\) remainder \(|T_c|\le C_* X^{3/2}\Lambda\) is a
+The Attack-2 remainder \(|T_c|\le C_* X^{3/2}\Lambda\) is a
 different sufficient door for DA-NS-2. It is not this
-reduction.
+reduction. Do not merge that \(C_*\) with \(C_{\star}\) below.
 
 ---
 
@@ -107,6 +107,68 @@ add, that stretching cannot get large unless the spectrum also
 spreads or the phases cancel. High-high \(\to\) low is the
 channel that could refuse that. That reason is not written.
 NS is not solved.
+
+---
+
+## Scale-invariant trilinear form (live fork)
+
+The entire problem is now a scale-invariant trilinear shape
+estimate.
+
+Centered identities (sit):
+\[
+T_c(v)
+=
+-\bigl\langle B(v,v),A(A-\Lambda)v\bigr\rangle,
+\qquad
+\mathcal D_s(v)
+=
+\bigl\|(A-\Lambda)A^{1/2}v\bigr\|_2^2.
+\]
+(\(T_c=M-\Lambda N\), \(\mathcal D_s=Z-\Lambda Y\). The second
+line uses \(\Lambda=Y/X\).)
+
+Lemma★ is equivalent to proving
+\[
+\bigl[-\langle B(v,v),A(A-\Lambda)v\rangle\bigr]_+
+\le
+C_{\star}\,
+\|v\|_2\,\|Av\|_2\,
+\bigl\|(A-\Lambda)A^{1/2}v\bigr\|_2
+\]
+for every smooth, mean-zero, divergence-free \(v\) on the
+fixed torus, where
+\[
+C_{\star}^2=4\theta C_0.
+\]
+This \(C_{\star}\) **is** the boxed ratio:
+\(C_{\star}=\sqrt{\sup\mathcal R_\star}\) when the sup is
+finite. It is not the Attack-2 remainder \(C_*\) in
+\(|T_c|\le C_* X^{3/2}\Lambda\).
+
+This formulation makes three things transparent:
+
+- A pure shell vanishes because \((A-\Lambda)v=0\).
+- Multiplying \(v\) by an amplitude changes neither
+  \(\mathcal R_\star\) nor the question.
+- Moving the same configuration to uniformly higher Fourier
+  frequency also does not change \(\mathcal R_\star\)
+  (lattice dilation \(k\mapsto sk\), integer \(s\); algebra
+  of homogeneity, checked on one triad in Attack 6). A
+  counterexample therefore needs increasingly pathological
+  *relative* shell geometry, phase alignment, or coherent
+  triad accumulation — not merely large amplitude or high
+  frequency.
+
+So the live fork is exact:
+
+- \(\sup_v\mathcal R_\star(v)<\infty\) proves Lemma★.
+- A near-shell or HH\(\to\)L sequence with
+  \(\mathcal R_\star(v_n)\to\infty\) kills it.
+
+The missing mathematical content is the uniform triadic
+bound — not more viscosity bookkeeping, and not more
+bounded numerical samples.
 
 ---
 
