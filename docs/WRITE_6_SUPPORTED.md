@@ -29,7 +29,7 @@ A_{\mathrm{bad}}(Q_r)
 
 Bad pairs: \(|\omega|\ge\Lambda\) and \(|\sin\varphi|>C_*|x-y|^{1/2}\). Kernel still \(|z|^{-3}\).
 
-Alone: [`WRITE_6.md`](WRITE_6.md).
+Alone: [`WRITE_6.md`](WRITE_6.md). Score: aimed leftover yes; theorem no. Absolute value is sufficient, not necessary. The triple-integral form is a majorant via \(|D|\le C|\sin\varphi|\).
 
 ---
 

@@ -36,7 +36,8 @@ docs/LITERATURE-H.md (H1 not under another
 name). Lookups: docs/LOOKUP-H1.md.
 WRITE (6): docs/WRITE_6.md
 (supported: docs/WRITE_6_SUPPORTED.md).
-No \(K(t)\). No Q1.
+Score of the write: aimed leftover yes;
+theorem no. No \(K(t)\). No Q1.
 
 **RH — open**
 docs/RH-CHAIN.md

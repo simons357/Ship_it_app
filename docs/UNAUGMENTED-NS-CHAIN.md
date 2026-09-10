@@ -161,7 +161,7 @@ Left (names, not a closed estimate):
 \[
 A_{\mathrm{bad}}(Q_r)
 \le
-\frac\nu8\iint_{Q_r}|\nabla\omega|^2
+\frac\nu8\iint_{Q_r}|\nabla\omega|^2\phi
 +C r^{-2}\iint_{Q_r}|\omega|^2.
 \]
 
@@ -169,7 +169,7 @@ A_{\mathrm{bad}}(Q_r)
 \[
 F_{\mathrm{adv}}(Q_r)
 \le
-\frac\nu8\iint_{Q_r}|\nabla\omega|^2
+\frac\nu8\iint_{Q_r}|\nabla\omega|^2\phi
 +C r^{-2}\iint_{Q_r}|\omega|^2,
 \]
 where \(F_{\mathrm{adv}}=\tfrac12\iint|\omega|^2(\partial_t\phi+u\cdot\nabla\phi)\) lives on the annulus, and the dangerous piece is \(r^{-1}\iint|u||\omega|^2\).
@@ -419,7 +419,7 @@ Asked: write leftover (6). Then: try the possibilities and see which is successf
 \[
 A_{\mathrm{bad}}(Q_r)
 \le
-\frac\nu8\iint_{Q_r}|\nabla\omega|^2
+\frac\nu8\iint_{Q_r}|\nabla\omega|^2\phi
 +C r^{-2}\iint_{Q_r}|\omega|^2.
 \]
 

@@ -16,7 +16,7 @@ On \(Q_r\), only pairs with \(|\omega|\ge\Lambda\) and \(|\sin\varphi|>C_*|x-y|^
 +C r^{-2}\iint_{Q_r}|\omega|^2.
 \]
 
-That is the whole request. Packet: [`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md) §13.
+That is the whole request. Majorant of \(A_{\mathrm{bad}}\) (\(|D|\le C|\sin\varphi|\le C\)), not a second leftover. Score of the write: [`WRITE_6.md`](WRITE_6.md). Packet: [`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md) §13.
 
 ## Why the last passes did not give it
 
