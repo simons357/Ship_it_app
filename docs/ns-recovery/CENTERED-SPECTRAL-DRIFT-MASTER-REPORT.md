@@ -543,6 +543,20 @@ It adds an **honest map of the work that *was* saved**, and a **precise negative
 
 ---
 
+## 8b. Addendum — 10 September 2026 same-shell packet (not an AP)
+
+**User note on this agent.** Full write-up: [`SAME-SHELL-PACKET-NOTE.md`](SAME-SHELL-PACKET-NOTE.md). Probe: `scripts/same_shell_packet_probe.py`.
+
+**Construction (packet, not AP):** full lattice spheres \(S_n\cup S_{n+d}\), \(m=r_3(n)+r_3(n+d)\) growing with \(n\), fixed gap \(d\). Mixed closures are \(k+p+r=0\) of type \((n,n,n+d)\). Two-mass \(\mathcal D_s=(XZ-Y^2)/X\) uses that gap; for \(d=1\) it is \(\Theta(n)\).
+
+**Independently checked:** \(n=9\), \(d=1\) has 30+24 keys and **48** mixed closures; \(n=89\), \(d=1\) has **144+120** keys and **288** mixed closures. Closures scale like \(O(m)\), not \(O(m^2)\). On the same \(n\)-list, \(d=2\) mixed landings are **zero**; \(d=3\) is sporadic.
+
+**User-reported, not recomputed:** \(\mathcal R_\star\simeq 0.11\) at \(n=9\), \(\simeq 0.031\) at \(n=89\); the ratio falls and does not track \(m^{1/2}\). No \(\mathfrak T_c\) formula for this packet is in git.
+
+**Classification:** **numerical / combinatorial.** Heuristic “whole-sphere packets give \(\Theta(m^2)\) aligned closures, hence \(\mathcal R_\star\sim m\)” is **false** on this ensemble. A packet kill would still require a **designed** two-shell subset with \(\Theta(m^2)\) closures and locked phases. Uniform triadic bound **open**. Navier–Stokes **not solved**. H1 on the cylinder was named as the other live writing and was **not** started here.
+
+---
+
 ## 9. Provenance of this report
 
 | Kind | What |
