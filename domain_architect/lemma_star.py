@@ -1,13 +1,23 @@
 """Lemma★ / DA-NS-1 energy-budget spectral drift — Domain Architect encoding.
 
-Honest packaging of Clay Statement B as one closing estimate (locked Millennium
-packaging — not a side lemma):
+Canonical full shape SoT: docs/ns-review/LEMMA-STAR-ACTUAL-SHAPE.md
 
-    T_c ≤ θ ν (Z − Λ Y) + C₀ ν⁻¹ ‖u‖₂² X Λ
+    T_c = -⟨B(v,v), A(A−Λ)v⟩
+    (equivalent to M − Λ N when those triad moments exist)
 
-with C₀ geometric only. Status: HYPOTHESIS. Broken at PRODUCT-BLOCK /
-Agmon-product gap (|T_c| ≤ C ‖u‖₂ X^{3/2} not available from energy alone
-via ordinary 3D product estimates). Analytic bottleneck: Bony HH→L.
+Exact shape form (full lemma — not the near-shell K_{α,β} restriction):
+
+    ∃ C_geom < ∞ ∀ v ≠ 0:  (T_c(v)_+)^2 ≤ C_geom D_s(v) ‖v‖₂² Y(v)
+
+Viscosity packaging (0<θ<1), with C_geom = 4 θ C_0(θ):
+
+    T_c ≤ θ ν D_s + C₀(θ) ν⁻¹ ‖u‖₂² Y
+
+Status: HYPOTHESIS. Broken at PRODUCT-BLOCK / Agmon-product gap
+(|T_c| ≤ C ‖u‖₂ X^{3/2} not available from energy alone via ordinary 3D
+product estimates). Analytic bottleneck: Bony HH→L.
+
+REFUSE: K_{α,β} = full ★ — near-shell K tests only a restricted limiting family.
 
 Five-lane drill (PR #48): K=0 dead; Lemma★ survives numeric kill only
 (≠ proved); HH→L still the gap; NS NOT SOLVED.
@@ -49,15 +59,20 @@ EXPR_PRODUCT_BLOCK = (
 )
 
 QUANTITIES: dict[str, str] = {
-    "T_c": "M - Lambda*N (centered spectral drift)",
-    "Lambda": "spectral scale / eigenvalue marker (blowup target)",
-    "X": "enstrophy / ||grad u||_L2^2 scale",
-    "Y": "viscous cross term companion",
-    "Z": "viscous variance companion",
-    "E": "||u||_2^2 Leray energy",
+    "T_c": (
+        "-<B(v,v), A(A-Lambda)v> (centered spectral drift); "
+        "equivalent to M - Lambda*N when those moments exist"
+    ),
+    "D_s": "Z - Y^2/X = ||(A-Lambda)A^{1/2}v||_2^2",
+    "Lambda": "Y/X spectral scale marker (blowup target)",
+    "X": "||A^{1/2}v||_2^2 enstrophy scale",
+    "Y": "||Av||_2^2",
+    "Z": "||A^{3/2}v||_2^2",
+    "E": "||v||_2^2 Leray energy",
     "nu": "viscosity",
-    "theta": "geometric/structure constant in viscous term",
-    "C_0": "geometric constant only — independent of field wildness",
+    "theta": "Young/AM-GM share in viscous packaging (0<theta<1)",
+    "C_0": "viscosity-packaging constant; C_geom = 4*theta*C_0(theta)",
+    "C_geom": "geometry-only constant in full shape form (not amplitude/shell/nu)",
 }
 
 # Recognition patterns for Lemma★ expression variants
@@ -94,6 +109,16 @@ PRODUCT_BLOCK_PATTERNS: tuple[re.Pattern[str], ...] = (
 )
 
 PROVED_REFUSAL_PATTERNS: tuple[tuple[str, str], ...] = (
+    (
+        r"k[_\s]*(\{|\\?alpha)?[αa].{0,12}(β|beta).{0,40}"
+        r"(full|complete|entire|equals?|=).{0,20}(lemma\s*[\*★]|lemma-?star|\★)",
+        "REFUSE: K_{α,β} ≠ full ★ — near-shell tests only a restricted limiting family",
+    ),
+    (
+        r"(k[_\s]*(\{|\\?alpha)?|near.?shell\s+k).{0,30}"
+        r"(is|equals?|=|≡).{0,15}(full|the)\s*(lemma\s*[\*★]|★)",
+        "REFUSE: K_{α,β} ≠ full ★ — near-shell tests only a restricted limiting family",
+    ),
     (
         r"(lemma\s*[\*★]|lemma-?star|da-?ns-?1).{0,40}(proved|resolved|closed|established)",
         "REFUSE: Lemma★ / DA-NS-1 is HYPOTHESIS — not proved; broken at PRODUCT-BLOCK / HH→L",
@@ -144,7 +169,7 @@ ATTACK_ROUTES: tuple[dict[str, Any], ...] = (
     {
         "rank": 1,
         "id": "TC-STRUCTURE-HH-L",
-        "title": "Better structure on T_c = M − Λ N (control HH→L)",
+        "title": "Better structure on T_c = -⟨B, A(A−Λ)v⟩ ≡ M − Λ N (control HH→L)",
         "move": (
             "Exploit cancellations / divergence form / spectral moment identities "
             "so the Bony HH→L channel is controlled and |T_c| is bounded without "
@@ -365,6 +390,9 @@ def analyze_lemma_star(text: str | None = None) -> LemmaStarReport:
         "C₀ geometric-only is already required and does not close the product gap.",
         "Five-lane PR #48: K=0 dead; ★ survives numeric kill only ≠ proved; "
         "NS NOT SOLVED.",
+        "Full shape SoT: (T_c_+)^2 ≤ C_geom D_s ‖v‖₂² Y; "
+        "T_c = -⟨B, A(A−Λ)v⟩ (≡ M−ΛN when both exist). "
+        "K_{α,β} is restricted — not the full lemma.",
         "Proving Lemma★ ≡ Clay B in this book; DA will not green without "
         "PRODUCT-BLOCK. Refuse ‘almost proved’ / greening.",
     ]
@@ -546,7 +574,8 @@ def product_block_incompleteness() -> dict[str, Any]:
         "break_id": "PRODUCT-BLOCK",
         "headline": (
             "Broken at PRODUCT-BLOCK / Agmon-product → HH→L still the gap → "
-            "close by structure on T_c=M−ΛN or conditional SND/dominant shell"
+            "close by structure on T_c=-⟨B,A(A−Λ)v⟩≡M−ΛN or conditional "
+            "SND/dominant shell (K_{α,β} ≠ full ★)"
         ),
         "status": "OPEN",
         "need": "|T_c| <= C*||u||_2*X^{3/2}",

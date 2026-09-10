@@ -1,10 +1,10 @@
-# Lemma★ — full shape statement (canonical SoT)
+# Lemma★ — shape form (pointer card)
 
-**NS not solved.** Lemma★ is **OPEN**. This card is the **authoritative full Lemma★ shape statement**. It supersedes prior shape cards.
+**Canonical SoT (full statement):** [`docs/ns-review/LEMMA-STAR-ACTUAL-SHAPE.md`](../../ns-review/LEMMA-STAR-ACTUAL-SHAPE.md)
 
-**Companion (pointer + same boxes):** [`docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`](../math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md)
+**NS not solved.** Lemma★ is **OPEN**. This file mirrors the SoT boxes only; do not treat it as a second, competing lock.
 
-**Refusal:** Near-shell \(K_{\alpha,\beta}\) tests **only a restricted limiting family**. Do **not** claim \(K_{\alpha,\beta}=\) full ★.
+**Refusal:** \(K_{\alpha,\beta}\) is **not** the full lemma — near-shell tests only a restricted limiting family.
 
 ---
 
@@ -23,9 +23,7 @@ D_s=Z-\frac{Y^2}{X}=\|(A-\Lambda)A^{1/2}v\|_2^2,\qquad
 T_c=-\langle B(v,v),A(A-\Lambda)v\rangle.
 \]
 
-(Note: when the triad moments \(M,N\) exist, \(T_c=M-\Lambda N\) is equivalent to the inner-product form above.)
-
-Positive part: \(T_c_+=\max(T_c,0)\).
+(When \(M,N\) exist: \(T_c=M-\Lambda N\) is equivalent.)
 
 ---
 
@@ -38,7 +36,7 @@ Positive part: \(T_c_+=\max(T_c,0)\).
 }
 \]
 
-Constant depends only on fixed geometry/normalization — **not** on amplitude, Fourier support, shell count, or viscosity.
+\(T_c_+=\max(T_c,0)\). Constant depends only on fixed geometry/normalization — **not** on amplitude, Fourier support, shell count, or viscosity.
 
 Equivalently, for \(D_s>0\):
 
@@ -60,12 +58,6 @@ T_c(u)\le\theta\nu D_s(u)+C_0(\theta)\nu^{-1}\|u\|_2^2 Y(u),\qquad C_{\mathrm{ge
 
 ---
 
-## This is the full lemma
-
 **This is the full lemma.** Near-shell \(K_{\alpha,\beta}\) tests only a restricted limiting family.
-
-Code name for the decisive quotient (when \(D_s\|v\|_2^2 Y>0\)): **`ratio_R_star_shape`**. Do **not** use legacy **`ratio_star`** \(=T_c/(E X\Lambda)\) — different packaging.
-
----
 
 **NS not solved.**

@@ -52,8 +52,10 @@ class TestAnalyzeHypothesis(unittest.TestCase):
 
     def test_quantities_present(self):
         report = analyze_lemma_star()
-        for key in ("T_c", "Lambda", "X", "Y", "Z", "E", "nu", "theta", "C_0"):
+        for key in ("T_c", "Lambda", "X", "Y", "Z", "E", "nu", "theta", "C_0", "C_geom", "D_s"):
             self.assertIn(key, report.quantities)
+        self.assertIn("A(A-Lambda)", report.quantities["T_c"])
+        self.assertIn("M - Lambda", report.quantities["T_c"])
 
     def test_attack_routes_ranked(self):
         report = analyze_lemma_star()
@@ -117,6 +119,15 @@ class TestRefuseProved(unittest.TestCase):
     def test_refuse_ns_solved(self):
         result = refuse_proved_lemma_star("Navier-Stokes solved via Lemma★")
         self.assertTrue(result["refused"])
+
+    def test_refuse_kab_equals_full_star(self):
+        result = refuse_proved_lemma_star(
+            "K_{alpha,beta} equals the full Lemma★"
+        )
+        self.assertTrue(result["refused"])
+        joined = " ".join(result["refusal_reasons"])
+        self.assertIn("K_", joined)
+        self.assertIn("restricted", joined.lower())
 
     def test_express_da_ns_1_refuses_green(self):
         result = express("DA-NS-1")
