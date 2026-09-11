@@ -1,30 +1,32 @@
 # Draft PR body — Lemma★ campaign paper
 
 **Branch:** `cursor/lemma-star-campaign-paper-0cc5` → `main`  
-**Suggested title:** Lemma★ campaign paper: CRNA Savannah, 18-month report card, wife-friendly figures  
-**Draft:** yes
+**Suggested title:** Lemma★ wife-test visual paper: max pictures, CRNA Savannah, door locked  
+**Draft:** yes  
+**PR:** https://github.com/JRSimons-tech/harmonic-blueprint/pull/63 (update in place if already open)
 
-> Paste into GitHub if auto-PR / ManagePullRequest is unavailable (`gh` createPullRequest denied for this token).
+> Paste / refresh GitHub PR body if auto-PR / ManagePullRequest is unavailable (`gh` createPullRequest denied for this token).
 
 ## Summary
 
-Visual Lemma★ campaign package for Jonathan follow-up:
+Wife-test visual Lemma★ package Jonathan asked for so someone he loves can read it in one sitting:
 
-- **CRNA in Savannah** opener + **normal person with a phone** motivation
-- **18-month report card** for **NS** and **RH**
-- Warm / proud / honest voice; recognition for the map; not dunking on OpenAI
-- Wife-friendly diagrams (tea cup, shape≠size, tug-of-war, R★ scoreboard, claim vs not, viscosity melts)
-- Extra wife-test visuals (subway map, door+key, discoveries→products, postcard report card, photo alts)
-- Jonathan-shared barycenter orbit maps in `docs/ns-review/assets/lemma-campaign/`
-- Products-in-dev light touch (Ship_it · Harmonic Blueprint · Domain Architect)
+- **Start here:** `docs/ns-review/EXPLAIN-TO-SOMEONE-YOU-LOVE.md` (pictures first; min jargon)
+- **Full paper:** `docs/ns-review/LEMMA-STAR-CAMPAIGN-PAPER.md`
+- **X thread:** `docs/ns-review/LEMMA-STAR-X-THREAD.md` (image-first captions)
+- **Figures:** `docs/ns-review/assets/lemma-campaign/` (23 PNGs; ≥15 wife-test diagrams)
 
-### Deliverables
-- `docs/ns-review/LEMMA-STAR-CAMPAIGN-PAPER.md`
-- `docs/ns-review/LEMMA-STAR-X-THREAD.md` (image-first)
-- `docs/ns-review/EXPLAIN-TO-SOMEONE-YOU-LOVE.md`
-- Figures under `docs/ns-review/assets/lemma-campaign/`
+### Framing
+- CRNA in Savannah · normal person with a phone
+- 18-month postcard / report card for **NS** and **RH**
+- Discoveries → products (Ship_it · DA · HB) — light, dignity first
+- Classy recognition; no OpenAI dunking
+- Dense idea ≠ bad teacher
 
 ### Honesty lock
 ★ NOT proved · NS NOT solved · kill lane LIVE · RH NOT proved
+
+### Figure checklist
+Tea/coffee swirl · shape ≠ size · tug-of-war · R★ scoreboard · barycenter map · five-lane/9A–9D · door locked/key=R★ · claim vs not · viscosity melts · Savannah postcard · discoveries→products
 
 Related: #48 · #49 · #62

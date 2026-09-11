@@ -1,6 +1,6 @@
 # Lemma★ campaign — image inventory
 
-Updated for Jonathan follow-up (CRNA Savannah / phone / 18-month report card / wife-friendly set).
+Updated for Jonathan follow-up (CRNA Savannah / phone / 18-month postcard / wife-test max-pictures set).
 
 Copied into:
 
@@ -15,32 +15,30 @@ Copied into:
 | `00-barycenter-map.png` | Same attached map | Campaign alias / X media |
 | `00-barycenter-map-alt.png` | Second attachment (`b8195ff3-…png`) | Alt / backup hero |
 
-## Wife-friendly diagrams (generated, matching cream/tan + red attack style + honest footer)
+## Wife-friendly diagrams (must-have set)
 
 | File | Metaphor | Caption gist |
 | --- | --- | --- |
 | `08-crna-savannah-phone.png` | Phone opener | CRNA in Savannah; normal person with a phone |
-| `07-eighteen-month-report-card.png` | Report card | NS + RH 18-month grades; doors locked |
+| `07b-postcard-report-card.png` | Postcard | NS + RH 18-month postcard from Savannah |
+| `07-eighteen-month-report-card.png` | Report card | NS + RH grades; doors locked |
+| `01b-coffee-tea-swirl.png` | Real swirl photo | Coffee/tea swirl — fluid intuition |
 | `01-tea-cup-viscosity-melts.png` | Tea cup | Viscosity melts edges; shape remains |
+| `02b-shape-not-size-hero.png` | Quiet vs louder | Shape ≠ size hero |
 | `02-shape-ne-size.png` | Two blobs | Shape ≠ size; amp/dilation cancel |
-| `03-tug-of-war-stretch-vs-spread.png` | Tug-of-war | \(T_c\) vs \(\mathcal{D}_s\); \(\mathcal{R}_\star\) score |
+| `03-tug-of-war-stretch-vs-spread.png` | Tug-of-war | Stretch vs spread; R★ score |
 | `04-rstar-scoreboard.png` | Scoreboard | Attacks 9A–9D outcomes |
+| `09-five-lane-subway-map.png` | Five-lane map | Lanes + 9A–9D orbit; door locked |
+| `10-door-locked-key-rstar.png` | Door + key card | Key is R★; not turned yet |
+| `10b-door-locked-photo.png` | Door photo | Atmospheric locked-door metaphor |
 | `05-claim-vs-not.png` | Two columns | What we claim / do not claim |
 | `06-viscosity-melts-wrapper.png` | Orbit rings | Viscosity = outer wrapper only |
+| `11-discoveries-to-products.png` | Products light | Ship_it · DA · HB fed by discoveries |
 
-### Extra wife-test visuals (photo / postcard pass)
+Generators:
 
-| File | Metaphor | Caption gist |
-| --- | --- | --- |
-| `01b-coffee-tea-swirl.png` | Coffee/tea swirl photo | Everyday swirl; viscosity melts; shape question remains |
-| `02b-shape-not-size-hero.png` | Shape ≠ size hero | Same shape, different size — amp cancels |
-| `07b-postcard-report-card.png` | Postcard report card | Soft 18-month NS/RH grades for sharing |
-| `09-five-lane-subway-map.png` | Subway map | Five-lane attacks as nearby stops, not the center |
-| `10-door-locked-key-rstar.png` | Door + key | Map found; \(\mathcal{R}_\star\) key; door still locked |
-| `10b-door-locked-photo.png` | Photo door | Same honesty message, photo texture |
-| `11-discoveries-to-products.png` | Pipeline | Discoveries → Ship_it · HB · Domain Architect (light) |
-
-Generator: `generate_wife_friendly_diagrams.py` (re-runnable).
+- `generate_wife_friendly_diagrams.py` (core cream set)
+- `generate_extra_wife_diagrams.py` (five-lane / door / products / postcard)
 
 ## Prior campaign / spectral figures
 
@@ -56,4 +54,8 @@ Generator: `generate_wife_friendly_diagrams.py` (re-runnable).
 
 `Outcome: ★ NOT proved · NS NOT solved · kill lane LIVE · uniform R★ / HH→L still open`
 
-(Report-card variant also notes RH NOT proved.)
+(Report-card / postcard variants also note RH NOT proved.)
+
+## Count
+
+**23 distinct PNGs** in this folder (≥ 8–12 required). Core wife-test set alone is **15**.
