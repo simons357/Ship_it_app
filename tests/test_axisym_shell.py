@@ -60,6 +60,7 @@ class AxisymShellTests(unittest.TestCase):
         self.assertEqual(rows["AS_omega_star"]["verdict"], "pass")
         self.assertEqual(rows["AS_pairing_check"]["verdict"], "pass")
         self.assertEqual(rows["AS_remainder"]["verdict"], "fail")
+        self.assertEqual(rows["AS_tjj_young"]["verdict"], "fail")
         self.assertEqual(rows["AS_rho"]["verdict"], "fail")
         self.assertEqual(rows["AS_door3"]["verdict"], "fail")
         self.assertEqual(rows["AS_page_clean"]["verdict"], "pass")

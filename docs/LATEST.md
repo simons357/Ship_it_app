@@ -25,6 +25,11 @@ https://github.com/simons357/Ship_it_app/blob/cursor/unaugmented-r4-vorticity-f8
 Axisymmetric shell estimate (identity
 and far Young sit; T_{j←j} open):
 docs/AXISYM-SHELL.md
+Requested Young line (figured out,
+not written; energy+viscosity R false;
+pure swirl vanishes; T_mm is the bulk;
+chain stays a chain):
+docs/TJJ-ESTIMATE.md
 Swirl probe (class samples; not a close):
 docs/AXISYM-SWIRL-PROBE.md
 Filter (KEEP / DISCARD / PARK):

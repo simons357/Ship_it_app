@@ -29,6 +29,8 @@ class EstimateAuditTests(unittest.TestCase):
         self.assertNotIn("NS is solved", text)
         self.assertNotIn("falsifier-of-record", text)
         self.assertIn("The axisymmetric shell estimate is", text)
+        self.assertIn("TJJ-ESTIMATE.md", text)
+        self.assertIn("EAud_tjj_young", text)
 
     def test_probe_scores(self):
         payload = run()
@@ -39,6 +41,7 @@ class EstimateAuditTests(unittest.TestCase):
         self.assertEqual(rows["EAud_remainder_named"]["verdict"], "pass")
         self.assertEqual(rows["EAud_tau_seated"]["verdict"], "pass")
         self.assertEqual(rows["EAud_omega_star_seated"]["verdict"], "pass")
+        self.assertEqual(rows["EAud_tjj_young"]["verdict"], "fail")
         self.assertEqual(rows["EAud_door1_closed"]["verdict"], "fail")
         self.assertEqual(rows["EAud_door3_closed"]["verdict"], "fail")
         self.assertEqual(rows["EAud_discard_in_claim"]["verdict"], "fail")

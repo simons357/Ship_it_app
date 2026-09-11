@@ -13,6 +13,9 @@ named constants \(C_{\mathrm{IR}}[\varphi]\)
 and \(C_{\mathrm{UV}}[\varphi]\).
 
 Filter: [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md).
+Requested Young line (not written;
+the chain stays a chain):
+[`TJJ-ESTIMATE.md`](TJJ-ESTIMATE.md).
 Probe: `python3 scripts/axisym_shell.py`
 
 This is not Lemma★. This is not H1 /
@@ -353,6 +356,7 @@ that paragraph is out.
 | AS_omega_star | **pass** | shift by a constant, not by \(\Lambda\) |
 | AS_pairing_check | **pass** | residual printed; lattice, not \(\mathbb{R}^3\) |
 | AS_remainder | **fail** | \(T_{j\leftarrow j}\) open |
+| AS_tjj_young | **fail** | requested \(\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu D_j+R\) with allowed \(R\) is not written ([`TJJ-ESTIMATE.md`](TJJ-ESTIMATE.md)) |
 | AS_rho | **fail** | [ρ] is assumed, not measured for the class |
 | AS_door3 | **fail** | \(\alpha\) is a criterion |
 | AS_ns_solved | **fail** | class and \(\rho_j\) stay in the sentence |

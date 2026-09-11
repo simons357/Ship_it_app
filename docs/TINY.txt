@@ -4,6 +4,13 @@ Axisymmetric shell estimate (identity
 and far-shell Young sit; remainder
 T_{j←j} open; [ρ] not measured):
 docs/AXISYM-SHELL.md
+Requested Young line (figured out,
+not written: energy+viscosity R is
+false; pure swirl pairing vanishes;
+T_mm is the bulk on mixed samples,
+not T_ss; allowed R blocked;
+chain stays a chain):
+docs/TJJ-ESTIMATE.md
 Swirl probe of that remainder
 (pairing closed; class samples printed;
 not a close):
