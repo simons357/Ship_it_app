@@ -15,6 +15,11 @@ This is **not** H1 / \(A_{\mathrm{bad}}\). Same leftover
 class as WRITE (6) and DA-NS-2. Different integral.
 Do not merge with H, Lemma C, H1, H2, H3.
 Do not weld SND, Route N, \(K(t)\), or \(Q_1\).
+The axisymmetric shell filter
+([`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md))
+is a different remainder
+(\(T_{j\leftarrow j}\)). Do not weld it
+to ★.
 
 ---
 

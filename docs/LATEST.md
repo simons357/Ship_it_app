@@ -22,6 +22,9 @@ open. Paper: docs/THEOREM-A-Q1.pdf
 **Unaug NS (ordinary) — open**
 docs/UNAUGMENTED-NS-CHAIN.md
 https://github.com/simons357/Ship_it_app/blob/cursor/unaugmented-r4-vorticity-f80e/docs/UNAUGMENTED-NS-CHAIN.md
+Estimate audit (axisymmetric shell filter;
+not a close):
+docs/ESTIMATE-AUDIT.md
 
 10 September packet. H-system:
 docs/H-SYSTEM.md

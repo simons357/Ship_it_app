@@ -1,5 +1,10 @@
 Stay here. This chat is DA.
 
+Estimate audit (axisymmetric shell filter;
+KEEP / DISCARD / PARK; remainder T_{j←j};
+not a close):
+docs/ESTIMATE-AUDIT.md
+
 Words I should have defined:
 
   desk = this project’s pile of notes and

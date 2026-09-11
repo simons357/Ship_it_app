@@ -46,6 +46,11 @@ Domain Architect as a **process machine** (slots, generator, fail-able checker) 
 
 ---
 
+The live estimate filter (KEEP / DISCARD / PARK) is
+[`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md). SFE as a
+constitutive law of classical NS is DISCARD there.
+Apps and HB-as-model are PARK.
+
 ## How to treat a shelved paragraph if it comes back
 
 1. Naming SFE, HB, UHF, or DHFA is allowed. Halt only the *close*: do not load them into \(\Pi_j\), \(\omega\cdot S\omega\), \(1/r^4\), or \(H_N\); do not call them \(F\); do not retune `nodes.json`. DA-the-process is already the good extraction from HB chapter 1. A destination (“spectrum, not a bag”) may be typed on U as **open**.
