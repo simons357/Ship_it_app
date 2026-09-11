@@ -21,7 +21,9 @@ filter [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md))
 is a different remainder
 (\(T_{j\leftarrow j}\)). Identity and
 far-shell Young sit there. The local
-block does not. Do not weld it to ★.
+block does not. Class samples:
+[`AXISYM-SWIRL-PROBE.md`](AXISYM-SWIRL-PROBE.md).
+Do not weld it to ★.
 
 ---
 
