@@ -216,6 +216,12 @@ Paths relative to this document; mirrors also under `/opt/cursor/artifacts/lemma
 | 4 | `assets/lemma-campaign/03-tug-of-war-stretch-vs-spread.png` | **Tug-of-war.** Stretch (\(T_c\)) vs spread (\(\mathcal{D}_s\)); \(\mathcal{R}_\star\) is the score. |
 | 5 | `assets/lemma-campaign/04-rstar-scoreboard.png` | **R★ scoreboard.** Attacks 9A–9D outcomes; kill lane LIVE. |
 | 6 | `assets/lemma-campaign/05-claim-vs-not.png` | **Claim vs not.** Recognition for the map — not for a prize that was not won. |
+| 7 | `assets/lemma-campaign/09-five-lane-subway-map.png` | **Five-lane subway.** Attacks as nearby stops around the barycenter — not the center itself. |
+| 8 | `assets/lemma-campaign/10-door-locked-key-rstar.png` | **Door locked.** Map found; \(\mathcal{R}_\star\) is the key shape; door still locked. |
+| 9 | `assets/lemma-campaign/11-discoveries-to-products.png` | **Discoveries → products.** Ship_it · Harmonic Blueprint · Domain Architect — light, not a pitch. |
+| 2b | `assets/lemma-campaign/01b-coffee-tea-swirl.png` | Alt tea/coffee swirl (photo texture). |
+| 3b | `assets/lemma-campaign/02b-shape-not-size-hero.png` | Alt shape≠size hero. |
+| 0c | `assets/lemma-campaign/07b-postcard-report-card.png` | Postcard-style 18-month report card. |
 | 7 | `assets/lemma-campaign/06-viscosity-melts-wrapper.png` | **Viscosity melts.** Outer energy-budget form is derived; center is pure shape. |
 | 8 | `assets/lemma-campaign/amp_ratios_triad.png` | **Attack 2 hard hit.** K=0 blows; geometric ratios stay amplitude-invariant. |
 | 9 | `assets/lemma-campaign/attack5_bounds.png` | **Attack 5 kill drill.** Survives numeric ≠ proved. |

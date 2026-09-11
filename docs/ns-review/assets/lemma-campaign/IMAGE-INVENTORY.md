@@ -28,6 +28,18 @@ Copied into:
 | `05-claim-vs-not.png` | Two columns | What we claim / do not claim |
 | `06-viscosity-melts-wrapper.png` | Orbit rings | Viscosity = outer wrapper only |
 
+### Extra wife-test visuals (photo / postcard pass)
+
+| File | Metaphor | Caption gist |
+| --- | --- | --- |
+| `01b-coffee-tea-swirl.png` | Coffee/tea swirl photo | Everyday swirl; viscosity melts; shape question remains |
+| `02b-shape-not-size-hero.png` | Shape ≠ size hero | Same shape, different size — amp cancels |
+| `07b-postcard-report-card.png` | Postcard report card | Soft 18-month NS/RH grades for sharing |
+| `09-five-lane-subway-map.png` | Subway map | Five-lane attacks as nearby stops, not the center |
+| `10-door-locked-key-rstar.png` | Door + key | Map found; \(\mathcal{R}_\star\) key; door still locked |
+| `10b-door-locked-photo.png` | Photo door | Same honesty message, photo texture |
+| `11-discoveries-to-products.png` | Pipeline | Discoveries → Ship_it · HB · Domain Architect (light) |
+
 Generator: `generate_wife_friendly_diagrams.py` (re-runnable).
 
 ## Prior campaign / spectral figures

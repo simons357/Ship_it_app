@@ -14,6 +14,7 @@ Visual Lemma★ campaign package for Jonathan follow-up:
 - **18-month report card** for **NS** and **RH**
 - Warm / proud / honest voice; recognition for the map; not dunking on OpenAI
 - Wife-friendly diagrams (tea cup, shape≠size, tug-of-war, R★ scoreboard, claim vs not, viscosity melts)
+- Extra wife-test visuals (subway map, door+key, discoveries→products, postcard report card, photo alts)
 - Jonathan-shared barycenter orbit maps in `docs/ns-review/assets/lemma-campaign/`
 - Products-in-dev light touch (Ship_it · Harmonic Blueprint · Domain Architect)
 
