@@ -29,7 +29,7 @@ It is **not** a Millennium prover. EXPRESS never greens Clay NS, RH, Yang–Mill
 
 **Shape** is the invariant finger topology (HB roles P, H, ψ, λ, Φ, E / compatibility class). **Texture** is the surface chart (NS PDE vs shell `J/X` vs energy-budget `T_c`/`Λ` vs ζ notation). Same shape can wear different textures; DA compares shape first, then flags texture mismatch — it does not treat a notation collision as a proof route.
 
-Deep dive: [`SHAPE-TEXTURE-ONTOLOGY.md`](./SHAPE-TEXTURE-ONTOLOGY.md) · Ops playbook: [`THEORY-SPLICER-PLAYBOOK.md`](./THEORY-SPLICER-PLAYBOOK.md) · Lemma★: [`../ns-review/LEMMA-STAR-DA-NS-1.md`](../ns-review/LEMMA-STAR-DA-NS-1.md)
+Deep dive: [`SHAPE-TEXTURE-ONTOLOGY.md`](./SHAPE-TEXTURE-ONTOLOGY.md) · Ops playbook: [`THEORY-SPLICER-PLAYBOOK.md`](./THEORY-SPLICER-PLAYBOOK.md) · Lemma★ lock: [`../ns-review/LEMMA-STAR-LOCK.md`](../ns-review/LEMMA-STAR-LOCK.md) · full: [`../ns-review/LEMMA-STAR-DA-NS-1.md`](../ns-review/LEMMA-STAR-DA-NS-1.md)
 
 ---
 

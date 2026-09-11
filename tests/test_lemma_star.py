@@ -76,6 +76,10 @@ class TestAnalyzeHypothesis(unittest.TestCase):
         self.assertIn("survives numeric kill only", report.five_lane["status_note"])
         self.assertIn("USER LOCK", report.five_lane["headline"])
         self.assertIn("Millennium", report.five_lane["user_lock"])
+        self.assertEqual(
+            report.five_lane["artifacts"]["user_lock"],
+            "docs/ns-review/LEMMA-STAR-LOCK.md",
+        )
 
 
 class TestProductBlock(unittest.TestCase):
