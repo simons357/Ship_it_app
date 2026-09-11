@@ -294,6 +294,20 @@ than the 4-fold field. Both are allowed
 in as printed measurements. Neither
 closes [ρ].
 
+Class measurement (compact swirl on
+\(\mathbb{R}^3\), \(R=2.4<\pi\); dealiased
+interpolant): [`AXISYM-SWIRL-PROBE.md`](AXISYM-SWIRL-PROBE.md).
+Pairing closed. Rotation residual
+\(10^{-15}\). Pure swirl printed
+\(\rho_j\sim 0\). Swirl plus meridional
+printed \(\max\lvert T_{j\leftarrow j}/X_j\rvert\)
+in \(6\times 10^{-4}\) to \(1.4\times 10^{-3}\)
+on \(n=32,48\), and moved with \(n\)
+and with the meridional weight. That
+is not [ρ] for the class. Occupancy
+was not scored. \(\alpha\) stayed
+separate.
+
 Named in the audit and **not
 regenerated** here:
 

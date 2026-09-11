@@ -4,6 +4,10 @@ Axisymmetric shell estimate (identity
 and far-shell Young sit; remainder
 T_{j←j} open; [ρ] not measured):
 docs/AXISYM-SHELL.md
+Swirl probe of that remainder
+(pairing closed; class samples printed;
+not a close):
+docs/AXISYM-SWIRL-PROBE.md
 Filter (KEEP / DISCARD / PARK):
 docs/ESTIMATE-AUDIT.md
 

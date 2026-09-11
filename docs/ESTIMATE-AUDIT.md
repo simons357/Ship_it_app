@@ -19,6 +19,8 @@ The estimate this filter wrote:
 [`AXISYM-SHELL.md`](AXISYM-SHELL.md).
 Identity and far-shell Young sit.
 Remainder \(T_{j\leftarrow j}\) is open.
+Class samples of that remainder:
+[`AXISYM-SWIRL-PROBE.md`](AXISYM-SWIRL-PROBE.md).
 
 ---
 
