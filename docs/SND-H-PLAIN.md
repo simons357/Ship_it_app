@@ -45,6 +45,10 @@ SND sitting is not that bound.
 The live estimate filter discards [SND] in
 its large form as if it were measured
 smallness: [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md).
+The estimate that filter wrote:
+[`AXISYM-SHELL.md`](AXISYM-SHELL.md).
+Remainder there is \(T_{j\leftarrow j}\),
+not SND.
 
 ---
 

@@ -15,6 +15,11 @@ PARK lives in another stack.
 
 Probe: `python3 scripts/estimate_audit.py`
 
+The estimate this filter wrote:
+[`AXISYM-SHELL.md`](AXISYM-SHELL.md).
+Identity and far-shell Young sit.
+Remainder \(T_{j\leftarrow j}\) is open.
+
 ---
 
 ## The estimate this filter is for
@@ -90,13 +95,17 @@ If the identity is not closed in the
 time series, do not quote the sign
 of \(\Lambda'\).
 
-Named, allowed, **not seated as
-theorems on this branch**:
+Seated as identities in
+[`AXISYM-SHELL.md`](AXISYM-SHELL.md)
+(not as bounds):
 
 - Closed-triad rewrite
   \(\tau=(\omega(p)-\omega(r))J_p+(\omega(q)-\omega(r))J_q\).
 - Shift by a lattice constant
   \(\omega_*\), not by \(\Lambda\).
+
+Still named, not closed:
+
 - Audit Door 1: shell budget. The
   only remainder is \(T_{j\leftarrow j}\).
   This is **not** Attack-6 “Door 1”
@@ -240,15 +249,17 @@ Not this estimate.
 | EAud_class_named | **pass** | axisymmetric with swirl, not all data |
 | EAud_lambda_bookkeeping | **pass** | \(\Lambda'\) sits as an identity, not the LHS |
 | EAud_remainder_named | **pass** | \(T_{j\leftarrow j}\) is the named hole |
-| EAud_tau_seated | **fail** | \(\tau\) rewrite is allowed, not a theorem here |
-| EAud_omega_star_seated | **fail** | \(\omega_*\) shift is allowed, not a theorem here |
+| EAud_tau_seated | **pass** | Proposition AS-τ: rewrite, not a bound |
+| EAud_omega_star_seated | **pass** | Proposition AS-ω\*: constant shift, not \(\Lambda\) |
 | EAud_door1_closed | **fail** | shell budget remainder is open |
 | EAud_door3_closed | **fail** | \(\alpha\) is a criterion to test, not a bound |
 | EAud_discard_in_claim | **fail** | discard list does not enter the claim |
 | EAud_ns_solved | **fail** | class and \(\rho_j\) stay in the sentence |
 
 The axisymmetric shell estimate is
-**OPEN**. The filter sits.
+**OPEN**. Filter: this page.
+Estimate: [`AXISYM-SHELL.md`](AXISYM-SHELL.md).
+Identity and far-shell Young sit.
 The remainder does not.
 
 Do not start H1 from this page.

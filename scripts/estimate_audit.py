@@ -84,14 +84,14 @@ def lemmas() -> list[dict]:
         rec(
             "EAud_tau_seated",
             "closed-triad rewrite τ is a theorem on this branch",
-            "fail",
-            "Allowed to enter. Not seated.",
+            "pass",
+            "Proposition AS-τ in AXISYM-SHELL.md. Rewrite, not a bound.",
         ),
         rec(
             "EAud_omega_star_seated",
             "shift by lattice constant ω_* is a theorem on this branch",
-            "fail",
-            "Allowed to enter. Not seated. Do not shift by Λ.",
+            "pass",
+            "Proposition AS-ω* in AXISYM-SHELL.md. Shift by a constant, not by Λ.",
         ),
         rec(
             "EAud_door1_closed",

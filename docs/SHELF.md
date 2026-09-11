@@ -46,7 +46,9 @@ Domain Architect as a **process machine** (slots, generator, fail-able checker) 
 
 ---
 
-The live estimate filter (KEEP / DISCARD / PARK) is
+The live estimate is
+[`AXISYM-SHELL.md`](AXISYM-SHELL.md).
+The filter (KEEP / DISCARD / PARK) is
 [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md). SFE as a
 constitutive law of classical NS is DISCARD there.
 Apps and HB-as-model are PARK.

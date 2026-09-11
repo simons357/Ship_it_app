@@ -22,8 +22,10 @@ open. Paper: docs/THEOREM-A-Q1.pdf
 **Unaug NS (ordinary) — open**
 docs/UNAUGMENTED-NS-CHAIN.md
 https://github.com/simons357/Ship_it_app/blob/cursor/unaugmented-r4-vorticity-f80e/docs/UNAUGMENTED-NS-CHAIN.md
-Estimate audit (axisymmetric shell filter;
-not a close):
+Axisymmetric shell estimate (identity
+and far Young sit; T_{j←j} open):
+docs/AXISYM-SHELL.md
+Filter (KEEP / DISCARD / PARK):
 docs/ESTIMATE-AUDIT.md
 
 10 September packet. H-system:

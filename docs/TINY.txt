@@ -1,8 +1,10 @@
 Stay here. This chat is DA.
 
-Estimate audit (axisymmetric shell filter;
-KEEP / DISCARD / PARK; remainder T_{j←j};
-not a close):
+Axisymmetric shell estimate (identity
+and far-shell Young sit; remainder
+T_{j←j} open; [ρ] not measured):
+docs/AXISYM-SHELL.md
+Filter (KEEP / DISCARD / PARK):
 docs/ESTIMATE-AUDIT.md
 
 Words I should have defined:

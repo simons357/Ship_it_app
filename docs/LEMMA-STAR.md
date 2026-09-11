@@ -15,11 +15,13 @@ This is **not** H1 / \(A_{\mathrm{bad}}\). Same leftover
 class as WRITE (6) and DA-NS-2. Different integral.
 Do not merge with H, Lemma C, H1, H2, H3.
 Do not weld SND, Route N, \(K(t)\), or \(Q_1\).
-The axisymmetric shell filter
-([`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md))
+The axisymmetric shell estimate
+([`AXISYM-SHELL.md`](AXISYM-SHELL.md);
+filter [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md))
 is a different remainder
-(\(T_{j\leftarrow j}\)). Do not weld it
-to ★.
+(\(T_{j\leftarrow j}\)). Identity and
+far-shell Young sit there. The local
+block does not. Do not weld it to ★.
 
 ---
 
