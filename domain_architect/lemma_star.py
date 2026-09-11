@@ -121,23 +121,44 @@ PROVED_REFUSAL_PATTERNS: tuple[tuple[str, str], ...] = (
 )
 
 # Five-lane drill status (PR #48) — inventory sync, not a proof upgrade
+# USER LOCK (Jonathan): Lemma★ IS Millennium packaging; do not re-litigate.
 FIVE_LANE_STATUS: dict[str, Any] = {
     "pr": 48,
     "pr_url": "https://github.com/simons357/Ship_it_app/pull/48",
     "branch": "cursor/ns-five-lane-lemma-star-1390",
+    "tip_sha": "a00370a",
     "date": "2026-09-10",
+    "user_lock": (
+        "Lemma★ is not a side lemma — in this packaging it IS the Millennium "
+        "problem; blocked at |T_c|<=C||u||_2 X^{3/2} (PRODUCT-BLOCK / Agmon)"
+    ),
+    "da_recovery_pr": 55,
     "ns_solved": False,
     "lemma_star_proved": False,
+    "express_proved_refused": True,
+    "sfe_glue": False,
     "lanes": {
         "K0_absorption": "DEAD",
         "lemma_star_numeric_kill": "SURVIVES_NUMERIC_ONLY_NOT_PROVED",
         "bony_hh_to_l": "GAP_LIVE",
         "product_block_agmon": "OPEN_INSUFFICIENT",
     },
-    "headline": (
-        "K=0 dead; Lemma★ survives numeric kill only ≠ proved; "
-        "HH→L still the gap; NS NOT SOLVED"
+    "status_note": (
+        "survives numeric kill only; HH→L open; NS not solved; K=0 lane dead"
     ),
+    "headline": (
+        "USER LOCK recorded. K=0 dead; Lemma★ survives numeric kill only ≠ proved; "
+        "HH→L still the gap; NS NOT SOLVED; EXPRESS/PROVED refused; no SFE glue"
+    ),
+    "artifacts": {
+        "status_sot": "docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md",
+        "synthesis": "docs/math/ns_attacks/ATTACK_SYNTHESIS_SIMULTANEOUS.md",
+        "hh_to_l": "docs/math/ns_attacks/ATTACK_3_BONY_HH_L.md",
+        "k0": "docs/math/ns_attacks/ATTACK_2_TRIAD_K0_CSTAR.md",
+        "runtime_headline": "results/ns_five_lane_2026-09-10/HEADLINE.md",
+        "da_doc": "docs/ns-review/LEMMA-STAR-DA-NS-1.md#locked--user-lock-jonathan",
+        "da_recovery": "docs/ns-review/five-lane-recovery/",
+    },
 }
 
 ATTACK_ROUTES: tuple[dict[str, Any], ...] = (

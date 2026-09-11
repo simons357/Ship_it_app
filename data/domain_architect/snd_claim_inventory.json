@@ -61,7 +61,7 @@
       "status_detail": "hypothesis_not_proved_millennium_packaging",
       "definition": "T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda with C_0 geometric only; T_c=M-Lambda*N. Locked Millennium packaging (not a side lemma).",
       "clay_relevance": "If proved, packages Clay Statement B: Lambda blowup prevention → finite enstrophy → global regularity on T^3. Proving Lemma★ ≡ Clay B in this book.",
-      "notes": "WITHHELD from Clay green until PRODUCT-BLOCK / HH→L closed. Five-lane PR #48: K=0 dead; survives numeric kill only ≠ proved; NS NOT SOLVED. Refuse ‘almost proved’."
+      "notes": "USER LOCK (Jonathan): Lemma★ IS the Millennium packaging (not a side lemma). Status: HYPOTHESIS. Survives numeric kill only; HH→L open; NS not solved; K=0 lane dead. WITHHELD from Clay green until PRODUCT-BLOCK closes. Refuse EXPRESS/PROVED / almost proved. No SFE glue. Five-lane PR #48."
     },
     {
       "claim_id": "DA-NS-1",
@@ -70,7 +70,7 @@
       "status_detail": "alias_of_lemma_star",
       "definition": "Control centered spectral drift T_c by viscous variance plus remainder built only from Leray energy E=||u||_2^2.",
       "clay_relevance": "Same as LEMMA-STAR — Clay implication CONDITIONAL on PRODUCT-BLOCK / HH→L.",
-      "notes": "Book/claim alias of Lemma★. NS NOT SOLVED."
+      "notes": "Alias of LEMMA-STAR. USER LOCK recorded. HYPOTHESIS. Survives numeric kill only; HH→L open; NS not solved; K=0 lane dead. No SFE glue."
     },
     {
       "claim_id": "PRODUCT-BLOCK",
@@ -79,7 +79,7 @@
       "status_detail": "blocker_open_hh_to_l_gap",
       "definition": "Need |T_c| <= C*||u||_2*X^{3/2} (or |T_c|<=C||u||_2 X Lambda then Young); ordinary 3D Sobolev/product/Agmon estimates INSUFFICIENT from energy alone. Analytic bottleneck: Bony HH→L.",
       "clay_relevance": "Missing weld inside Lemma★ packaging; closes or kills the energy-budget Clay route.",
-      "notes": "INSERT candidate. Five-lane PR #48 Attack 3: HH→L still the gap. Ranked attacks: T_c structure controlling HH→L; SND/shell conditional; C_0 alone insufficient; negative kill via blowing R_pre."
+      "notes": "PRODUCT-BLOCK / Agmon gap named. USER LOCK blocker. Five-lane Attack 3: HH→L still the gap. INSERT candidate. Survives numeric kill only ≠ closed."
     },
     {
       "claim_id": "FIVE-LANE-LEMMA-STAR",
@@ -90,7 +90,9 @@
       "clay_relevance": "Does not close Clay. Numeric survival is not a proof. NS NOT SOLVED.",
       "evidence_pr": 48,
       "evidence_url": "https://github.com/simons357/Ship_it_app/pull/48",
-      "notes": "K=0 absorption DEAD; Lemma★ survives numeric kill only (max |R_pre|≈5.09) ≠ proved; Bony HH→L live bottleneck; PRODUCT-BLOCK unchanged."
+      "evidence_branch": "cursor/ns-five-lane-lemma-star-1390",
+      "da_recovery_pr": 55,
+      "notes": "Survives numeric kill only; HH→L open; NS not solved; K=0 lane dead. Max |R_pre|≈5.09 ≠ proved. Artifacts: docs/math/ns_attacks/* + results/ns_five_lane_2026-09-10/ on PR #48; DA mirror PR #55 docs/ns-review/five-lane-recovery/."
     }
   ],
   "refused_routings": [
