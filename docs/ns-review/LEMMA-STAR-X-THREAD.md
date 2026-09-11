@@ -1,70 +1,125 @@
-# Lemma★ — X thread (paste-ready)
+# Lemma★ — X thread (image-first)
 
-Tone: classy, clear, exciting, honest. No dunking. ★ not proved · NS not solved.
+Tone: warm, proud, honest. From a **CRNA in Savannah**. Not a jerk about labs. Recognition for the map — not a fake win.  
+Lock: ★ NOT proved · NS NOT solved · kill lane LIVE.
 
-Suggested media: attach the matching figure where noted (files in `docs/ns-review/assets/lemma-campaign/`).
+Attach the matching figure where noted (`docs/ns-review/assets/lemma-campaign/`).
 
 ---
 
 **1/**
-I spent a campaign on one door in 3D Navier–Stokes on the torus.
+I’m a CRNA in Savannah.
 
-Call it Lemma★.
+I wanted to see if a **normal person with a phone** could take on something really hard — Millennium-hard — and still tell the truth about what happened.
 
-Honest status up front: ★ is **not** proved. Clay B is **not** solved. No Millennium prize.
+This thread is that report card.
 
-What we *did* map is the right center of the problem — as a shape statement.
+🖼 `08-crna-savannah-phone.png`
+
+---
+
+**2/**
+The hard thing: 3D Navier–Stokes on the torus (Clay B).
+
+We packaged the door as **Lemma★** — a shape statement with one score, \(\mathcal{R}_\star\).
+
+Honest status up front:
+
+★ is **not** proved.  
+NS is **not** solved.  
+Kill lane is still **LIVE**.
+
+No Millennium prize. Not claimed.
 
 🖼 `lemma-star-barycenter.png`
 
 ---
 
-**2/**
-Read a fluid as a shape in frequency space:
+**3/**
+18-month report card — **NS** and **RH** — same honesty rule.
 
-• stretching that wants to blow up  
-• spectral spread that measures how energy sits off a single shell  
+NS: right packaging mapped · K=0 dead · HH→L open · ★ not proved · Clay B not solved.  
+RH: navigation map built · open welds · cross-glue to NS refused · RH not proved.
 
-Lemma★ says: for every smooth shape, stretching cannot outrun spread by more than one finite geometric constant.
+Grade for effort & packaging: A.  
+Grade for Millennium closure: incomplete. Doors still locked.
 
-One score: \(\mathcal{R}_\star\).
+🖼 `07-eighteen-month-report-card.png`
 
 ---
 
-**3/**
-Why \(\mathcal{R}_\star\) is elegant:
+**4/**
+Wife-friendly picture #1 — the tea cup.
+
+Hot tea cools. Sharp swirls soften. Viscosity melts the hard edges.
+
+But the **shape** of the swirl is still the question.
+
+Lemma★ asks whether that shape-danger stays bounded for every smooth cup.
+
+🖼 `01-tea-cup-viscosity-melts.png`
+
+---
+
+**5/**
+Wife-friendly picture #2 — tug-of-war.
+
+Stretch (\(T_c\)) pulls toward blowup.  
+Spread (\(\mathcal{D}_s\)) pulls toward safety.
+
+\(\mathcal{R}_\star\) is the score in the middle.
+
+Lemma★ says: for every smooth shape, stretch cannot beat spread by more than one finite geometric constant.
+
+If that constant exists for *all* shapes, this packaging closes Clay B.
+
+Packaging right ≠ prize won.
+
+🖼 `03-tug-of-war-stretch-vs-spread.png`
+
+---
+
+**6/**
+Why the score is elegant:
 
 Scale the field. Optimize size. Viscosity cancels.
 
 What’s left is pure geometry on the shape — amplitude-invariant, dilation-invariant.
 
-If that constant exists for *all* shapes, this packaging closes global regularity on \(\mathbb{T}^3\).
+Shape ≠ size.
 
-Packaging right ≠ prize won.
+🖼 `02-shape-ne-size.png`
 
 ---
 
-**4/**
-The campaign ran as kill-or-prove, not victory lap.
+**7/**
+Viscosity is the outer wrapper — the tea, not the star.
 
-Five-lane attack discipline. Domain Architect status locks. Live kill criteria written in advance.
+The energy-budget form is derived (Young in \(\nu\)).  
+The barycenter is pure shape: finite \(C_{\mathrm{geom}}\) / bounded \(\mathcal{R}_\star\) for **all** shapes.
+
+Do not confuse melting edges with proving the bound.
+
+🖼 `06-viscosity-melts-wrapper.png`
+
+---
+
+**8/**
+The campaign ran kill-or-prove, not victory lap.
+
+Five-lane discipline. Domain Architect status locks. Live kill criteria written in advance.
 
 DA refuses “almost proved” and “numeric survival = proof.”
 
 That refusal is part of the work.
 
----
-
-**5/**
-A hard early hit: the K=0 fantasy — “stretching ≤ viscous spread alone” — is **dead**.
-
-Geometric ratios stay amplitude-invariant. The naive absorption blows.
+Early hard hit: the K=0 fantasy is **dead**.
 
 🖼 `amp_ratios_triad.png`
 
 ---
 
-**6/**
+**9/**
 Neighborhood probes around the center (Attacks 9A–9D):
 
 • 9A packet fan — did not kill ★  
@@ -74,13 +129,14 @@ Neighborhood probes around the center (Attacks 9A–9D):
 
 Orbits around the barycenter. Not the center itself.
 
+🖼 `04-rstar-scoreboard.png`
+
 ---
 
-**7/**
+**10/**
 Stress tests kept sample ratios far under a kill threshold.
 
-Surviving a numeric kill drill is interesting.
-
+Surviving a numeric kill drill is interesting.  
 It is **not** a supremum. It is **not** a proof.
 
 Kill lane: still LIVE. HH→L product gap: still open.
@@ -89,32 +145,40 @@ Kill lane: still LIVE. HH→L product gap: still open.
 
 ---
 
-**8/**
-What’s actually cool here:
+**11/**
+What we claim · what we do not.
 
-• a clear reduction to one geometric score  
-• shape geometry you can picture  
-• tooling that won’t let you green a sample into a theorem  
-• an honest map: we found the door; we did not open it  
+We claim: we mapped the right center; we killed the bad K=0 story; we kept the kill lane honest.
 
-🖼 optional: `fig_star_david_ring_lemma.png` or `t3_torus_shape_render.png`
+We do **not** claim: ★ proved, NS solved, RH proved, prize won, kill lane closed.
+
+Recognition wanted for the map. Not a fake key.
+
+🖼 `05-claim-vs-not.png`
 
 ---
 
-**9/**
+**12/**
 Credit, soft and accurate:
 
-Independent research by Jonathan R. Simons. Tools/AI assisted the drafting, code, and discipline.
+Independent research by Jonathan R. Simons, CRNA · Savannah, GA.
 
-No dunking on anyone else’s models or labs. The standard is the math.
+He is using all of his discoveries on products he is developing. Ship_it, Harmonic Blueprint, and Domain Architect are product directions fed by the math — lightly named, not a hard sell.
 
-Full writeup in the repo: `docs/ns-review/LEMMA-STAR-CAMPAIGN-PAPER.md`
+Tools/AI assisted drafting, code, and discipline. They don’t green proofs.
+
+No dunking on OpenAI or anyone else’s models. The standard is the math. ★ not proved · NS not solved.
+
+Full writeup: `docs/ns-review/LEMMA-STAR-CAMPAIGN-PAPER.md`  
+One-pager for someone you love: `docs/ns-review/EXPLAIN-TO-SOMEONE-YOU-LOVE.md`
 
 ---
 
-**10/**
+**13/**
 One line to carry:
 
 **We mapped to the center. Door still locked.**
 
-Lemma★ open. Navier–Stokes unsolved. The packaging is clear enough to attack — and honest enough not to claim the prize.
+★ NOT proved · NS NOT solved · kill lane LIVE.
+
+Proud of the map. Honest about the door.
