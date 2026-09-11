@@ -168,5 +168,8 @@ paste had no new family):
 Cube family (named later; computed;
 not a kill):
 [`LEMMA-STAR-CUBE.md`](LEMMA-STAR-CUBE.md).
+Analytic review (files absent; \(M_0\)
+not locked):
+[`LEMMA-STAR-CUBE-REVIEW.md`](LEMMA-STAR-CUBE-REVIEW.md).
 
 Stay in this chat.

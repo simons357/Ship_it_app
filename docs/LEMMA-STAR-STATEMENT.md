@@ -174,6 +174,8 @@ Family check vs lock (that paste; not a kill):
 [`LEMMA-STAR-FAMILY-CHECK.md`](LEMMA-STAR-FAMILY-CHECK.md).
 Cube family (named, computed; not a kill):
 [`LEMMA-STAR-CUBE.md`](LEMMA-STAR-CUBE.md).
+Cube analytic review (files absent; \(M_0\) not locked):
+[`LEMMA-STAR-CUBE-REVIEW.md`](LEMMA-STAR-CUBE-REVIEW.md).
 Two-shell \(D_s\) already sits. \(T_c\) is not
 shell energies alone. Spatial \(v(\mu x)\) is
 not Fourier dilation. Do not stop patching.

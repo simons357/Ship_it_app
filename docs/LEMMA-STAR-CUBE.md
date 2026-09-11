@@ -14,6 +14,10 @@ Family-check paste (no family):
 
 Probe: `python3 scripts/lemma_star_cube_family.py --nmax 3`
 
+Analytic-review score (files absent;
+quadratic moments sit; \(M_0\) not locked):
+[`LEMMA-STAR-CUBE-REVIEW.md`](LEMMA-STAR-CUBE-REVIEW.md).
+
 The dump named a family. This branch
 did not have it. It does now.
 Screenshots are not a stamp.
@@ -91,6 +95,7 @@ as the core. Reverse required. \(N=\sum\lambda T_k\).
 | 4 | 648 | \(0.1240\) | \(5.255\times 10^{-6}\) | \(8.211\times 10^{-8}\) | \(6.97\) | \(28.2\) | \(3.72\) | \(0.00775\) |
 | 5 | 1210 | \(0.1243\) | \(8.675\times 10^{-6}\) | \(6.940\times 10^{-8}\) | \(5.74\) | \(21.8\) | \(2.85\) | \(0.00497\) |
 | 6 | 2028 | \(0.1314\) | \(1.342\times 10^{-5}\) | \(6.212\times 10^{-8}\) | \(5.01\) | \(18.2\) | \(2.35\) | \(0.00365\) |
+| 7 | 3150 | \(0.1424\) | \(1.974\times 10^{-5}\) | \(5.754\times 10^{-8}\) | \(4.53\) | \(15.9\) | \(2.04\) | \(0.00291\) |
 
 \(N=0\) on these samples (noise at \(10^{-17}\)
 for odd \(n\)).
@@ -102,14 +107,16 @@ Two \(\mathcal D_s\) formulas agree.
 Their \(T_c=49509/32768\) is a digit slip:
 the lock is \(4959/32768\).
 
-Their \(c_{\mathrm{box}}\) fraction
-\(1523085778924828999575/3839130303817223093956294737922\)
-equals \(3.967\times 10^{-10}\).
-The same dump writes
-\(\approx 3.9677\times 10^{-8}\).
-Those two numbers disagree.
-Neither is the discrete
-\(\mathcal R_\star/n^3\) on \(n=2,\dots,6\).
+The old dump fraction equals
+\(3.967\times 10^{-10}\).
+The review float
+\(3.967267736160021\times 10^{-8}\)
+is \(M_0^2/(D_0 E_0 Y_0)\) after the
+quadratic moments of \(F\) are
+corrected. See
+[`LEMMA-STAR-CUBE-REVIEW.md`](LEMMA-STAR-CUBE-REVIEW.md).
+Discrete \(\mathcal R_\star/n^3\) at
+\(n=7\) is still \(5.75\times 10^{-8}\).
 
 ---
 
@@ -137,8 +144,8 @@ Neither is the discrete
 
 **“Unrestricted ★ is false.”**
 The lock has finite \(\mathcal R_\star\)
-on \(n\le 6\), largest
-\(1.34\times 10^{-5}\).
+on \(n\le 7\), largest
+\(1.97\times 10^{-5}\).
 Kill is \(\mathcal R_\star(v_n)\to\infty\).
 A short increasing list at \(10^{-6}\)
 is a clue, not that limit.
@@ -148,12 +155,12 @@ N-shell still sits at \(0.610\).
 unboundedness.**
 \(n^3 E\), \(Y/n\), \(\mathcal D_s/n^3\),
 and \(T_c/n^2\) are still falling
-through \(n=6\).
-\(\mathcal R_\star/n^3\) rose then fell
-(\(1.06\times 10^{-7}\) at \(n=3\) to
-\(6.21\times 10^{-8}\) at \(n=6\)).
-No settled positive \(c_{\mathrm{box}}\)
-on this branch.
+through \(n=7\).
+\(\mathcal R_\star/n^3\) at \(n=7\) is
+\(5.75\times 10^{-8}\).
+\(T_c/n^2\) is still \(4.4\times\) the
+claimed \(M_0\).
+No settled leading term on this branch.
 
 **Change the working-file status line.**
 Not on this book. The boxed claim stays

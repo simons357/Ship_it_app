@@ -102,6 +102,8 @@ Family check vs lock (not a kill):
 docs/LEMMA-STAR-FAMILY-CHECK.md
 Cube family (named, computed; not a kill):
 docs/LEMMA-STAR-CUBE.md
+Cube analytic review (files absent; not a kill):
+docs/LEMMA-STAR-CUBE-REVIEW.md
 Working claim + identities:
 docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md
 docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md
