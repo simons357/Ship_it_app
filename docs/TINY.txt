@@ -100,6 +100,8 @@ Explore-boundedness score (not a close):
 docs/LEMMA-STAR-EXPLORE.md
 Family check vs lock (not a kill):
 docs/LEMMA-STAR-FAMILY-CHECK.md
+Cube family (named, computed; not a kill):
+docs/LEMMA-STAR-CUBE.md
 Working claim + identities:
 docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md
 docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md

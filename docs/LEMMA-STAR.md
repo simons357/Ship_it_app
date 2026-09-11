@@ -185,6 +185,15 @@ H1 on one cylinder is the other live writing
 The uniform global triadic bound remains completely open.
 ABC_λ is a finite climb, not \(\mathcal R_\star\to\infty\).
 Do not start H1 from that table.
+The growing cube
+([`LEMMA-STAR-CUBE.md`](LEMMA-STAR-CUBE.md))
+matches SuperGrok at \(n=2\)
+(\(\mathcal R_\star\approx 8.06\times 10^{-7}\)).
+Through \(n=6\) the ratio is
+\(1.34\times 10^{-5}\) and
+\(\mathcal R_\star/n^3\) is still falling.
+Not \(\to\infty\). Do not change the
+status line from screenshots.
 Uniform pre-Young \(C\) is off. Attack-2 \(C_*\) is a
 different door. Do not revive K=0. Do not cash a triad
 \(\mathcal R_\star\) as \(C_0\). Numerically bounded samples
@@ -235,3 +244,5 @@ Localized ABC (finite climb, not a falsifier):
 [`CS-REMAINDER.md`](CS-REMAINDER.md).
 N-shell maximizer (saturates; not a bound):
 [`RSTAR-SHELL-CLIMB.md`](RSTAR-SHELL-CLIMB.md).
+Growing cube (named, computed; not a kill):
+[`LEMMA-STAR-CUBE.md`](LEMMA-STAR-CUBE.md).

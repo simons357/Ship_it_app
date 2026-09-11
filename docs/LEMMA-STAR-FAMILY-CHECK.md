@@ -103,9 +103,12 @@ the book (N-shell peak on \((1,2)\);
 9B family on \((4,8)\)). Not
 \(\mathcal R_\star\to\infty\).
 
-No unnamed SuperGrok family was sent.
-If one arrives, run the same lock on
-*that* mode list. Do not invent it.
+No unnamed SuperGrok family was sent
+with that paste. The later screenshot
+dump named a growing cube. Score:
+[`LEMMA-STAR-CUBE.md`](LEMMA-STAR-CUBE.md).
+Run the lock on that mode list.
+Do not invent a second family.
 
 ---
 

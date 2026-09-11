@@ -162,8 +162,11 @@ write “almost proved.”
 There is no Lemma★ proof to walk through.
 The hole is still \(\sup\mathcal R_\star<\infty\).
 
-Family-check score (lock first; no new
-family; small lattice is not a kill):
+Family-check score (lock first; that
+paste had no new family):
 [`LEMMA-STAR-FAMILY-CHECK.md`](LEMMA-STAR-FAMILY-CHECK.md).
+Cube family (named later; computed;
+not a kill):
+[`LEMMA-STAR-CUBE.md`](LEMMA-STAR-CUBE.md).
 
 Stay in this chat.
