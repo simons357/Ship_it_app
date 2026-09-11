@@ -70,6 +70,12 @@ class TestAnalyzeHypothesis(unittest.TestCase):
         self.assertIn("NOT_PROVED", report.five_lane["lanes"]["lemma_star_numeric_kill"])
         self.assertEqual(report.five_lane["lanes"]["bony_hh_to_l"], "GAP_LIVE")
         self.assertFalse(report.five_lane["lemma_star_proved"])
+        self.assertFalse(report.five_lane["ns_solved"])
+        self.assertTrue(report.five_lane["express_proved_refused"])
+        self.assertFalse(report.five_lane["sfe_glue"])
+        self.assertIn("survives numeric kill only", report.five_lane["status_note"])
+        self.assertIn("USER LOCK", report.five_lane["headline"])
+        self.assertIn("Millennium", report.five_lane["user_lock"])
 
 
 class TestProductBlock(unittest.TestCase):
