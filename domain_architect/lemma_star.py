@@ -156,7 +156,9 @@ FIVE_LANE_STATUS: dict[str, Any] = {
         "hh_to_l": "docs/math/ns_attacks/ATTACK_3_BONY_HH_L.md",
         "k0": "docs/math/ns_attacks/ATTACK_2_TRIAD_K0_CSTAR.md",
         "runtime_headline": "results/ns_five_lane_2026-09-10/HEADLINE.md",
+        "user_lock": "docs/ns-review/LEMMA-STAR-LOCK.md",
         "da_doc": "docs/ns-review/LEMMA-STAR-DA-NS-1.md#locked--user-lock-jonathan",
+        "package": "docs/domain-architect/THEORY-SPLICER-PACKAGE.md",
         "da_recovery": "docs/ns-review/five-lane-recovery/",
     },
 }

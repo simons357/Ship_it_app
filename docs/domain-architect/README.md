@@ -24,6 +24,7 @@ Approved plain-language explanation:
 | [GROK-ATTACK-CHECKLIST](GROK-ATTACK-CHECKLIST.md) | Bullet attack surface for Grok / external review |
 | [PR-28 Grok section](PR-28-GROK-HANDOFF-SECTION.md) | Fragment to paste into PR #28 description |
 | [**Theory Splicer Whole Package**](THEORY-SPLICER-PACKAGE.md) | **Start here** — CRISPR theory-book toolkit + Lemma★ inventory |
+| [Lemma★ USER LOCK](../ns-review/LEMMA-STAR-LOCK.md) | Authoritative: Lemma★ = Millennium packaging; NS not solved; gap = PRODUCT-BLOCK / HH→L |
 | [Theory Splicer Playbook](THEORY-SPLICER-PLAYBOOK.md) | CUT / INSERT / SPLICE / SCREEN / EXPRESS walkthrough |
 | [Shape–Texture Ontology](SHAPE-TEXTURE-ONTOLOGY.md) | Jonathan Simons insight formalized — shape vs texture navigation |
 
