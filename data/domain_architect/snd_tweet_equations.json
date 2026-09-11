@@ -1,0 +1,117 @@
+{
+  "source": {
+    "tweet_url": "https://x.com/simonsmedical/status/2072045366430601408/photo/1",
+    "tweet_id": "2072045366430601408",
+    "media_id": "2072045175761760256",
+    "image_url": "https://pbs.twimg.com/media/HMFiG_PXcAAqwQ6.png?name=orig",
+    "image_local": "/opt/cursor/artifacts/da-snd-equations/snd_tweet_image.png",
+    "author": "Jonathan R. Simons (@simonsmedical)",
+    "date": "2026-06-30",
+    "title": "Navier-Stokes Global Regularity on T^3 — One-Page Summary",
+    "fetch_method": "fxtwitter.com mirror API (direct x.com returned 403)",
+    "zenodo_refs": [
+      "10.5281/zenodo.19842060",
+      "Global Regularity of the Navier-Stokes Equations on T^3 (May 2026)"
+    ]
+  },
+  "equations": [
+    {
+      "equation_id": "SND-TWEET-CENTER001",
+      "family": "SND-TWEET-CENTER",
+      "label": "Central spectral condition (Bypass / shell-helical)",
+      "latex": "\\inf_{t \\ge 0} \\frac{\\lambda_{\\min}(\\tilde{H}_N[u(t)])}{\\lambda_{\\max}(\\tilde{H}_N[u(t)])} > -\\frac{1}{2}",
+      "da_expression": "inf_{t>=0} lambda_min(tilde_H_N[u(t)]) / lambda_max(tilde_H_N[u(t)]) > -1/2",
+      "plain_text": "The normalized shell-helical operator tilde_H_N[u] does not develop a ground state more negative than -1/2 of its top eigenvalue.",
+      "symbol_definitions": "tilde_H_N = H_N[u] normalized by total energy Sigma(t); lambda_min/lambda_max are extremal eigenvalues of the shell-helical operator on the flow state.",
+      "tweet_status": "Proved (per one-page summary table)",
+      "repo_mapping": "Distinct from J/X SND-U; closer to Bypass Lemma spectral-ratio book. Not identical to inf J/X >= c_* in historical_equations.json.",
+      "audit_disposition": "RETAIN",
+      "conflicts": ["SND-U001", "CLAY-B001"],
+      "notes": "Tweet packages this as the single condition at center of proof. DA routes as generic/shell-helical unless Bypass markers added; does NOT auto-prove Clay B."
+    },
+    {
+      "equation_id": "SND-TWEET-SND001",
+      "family": "SND-U",
+      "label": "[SND] spectral non-dispersal",
+      "latex": "\\inf_{t \\ge 0} \\frac{J(t)}{X(t)} \\ge c_* > 0",
+      "da_expression": "inf_t J(t)/X(t) >= c_* > 0",
+      "plain_text": "Spectral Non-Dispersal: dominant shell enstrophy stays a fixed fraction of total enstrophy for all time.",
+      "symbol_definitions": "X(t)=||grad u||_{L2}^2; J(t)=max_j X_j(t); c_*>0 spectral floor.",
+      "tweet_status": "Proved in small/bounded-H^2/large-data regimes (table row)",
+      "repo_mapping": "Maps to SND-HYP001 / SND-U001 depending on M-dependence; Thm D claims Clay <=> [SND].",
+      "audit_disposition": "RETAIN",
+      "conflicts": ["SND-C001", "CLAY-B001"],
+      "notes": "Tweet table marks [SND] proved in three regimes; DA still treats unconditional SND-U as open unless M-free weld shown."
+    },
+    {
+      "equation_id": "SND-TWEET-THM-D001",
+      "family": "CLAY-B",
+      "label": "Theorem D — Clay equivalence claim",
+      "latex": "\\text{Clay Statement B} \\Leftrightarrow [\\text{SND}]",
+      "da_expression": "Clay Statement B <=> [SND]",
+      "plain_text": "Clay Millennium Statement B on T^3 is exactly equivalent to the SND spectral condition.",
+      "symbol_definitions": "Clay B = global regularity for suitable H^1 data; [SND] = inf J/X >= c_*.",
+      "tweet_status": "Proved (per table)",
+      "repo_mapping": "CLAY-B001 + SND-U001 glue; DA gap-closure refuses unconditional routing.",
+      "audit_disposition": "RETIRE",
+      "conflicts": ["SND-C001", "SND-U001", "CLAY-B001"],
+      "notes": "Equivalence claim exceeds available manuscript proofs per ARCHON panel; DA refuses Clay glue."
+    },
+    {
+      "equation_id": "SND-TWEET-THM-H001",
+      "family": "SND-C",
+      "label": "Theorem H (SND-C)",
+      "latex": "(X \\ge \\delta_*,\\ X \\le M,\\ \\rho \\le \\rho_0) \\Rightarrow |\\Pi_{j_*}| \\le C_*(\\nu,\\delta_*,M,\\rho_0,C_S)",
+      "da_expression": "Theorem H (SND-C): (X>=delta_*, X<=M, rho<=rho_0) => |Pi_{j*}| <= C_*(nu,delta_*,M,rho_0,C_S)",
+      "plain_text": "Shell-conditioned dominant-flux bound under spread regime and a priori enstrophy ceiling.",
+      "symbol_definitions": "As SND-C001 in historical_equations.json.",
+      "tweet_status": "Proved (table: CCFS + Young)",
+      "repo_mapping": "SND-C001 / THM-H001",
+      "audit_disposition": "RETAIN",
+      "conflicts": ["SND-U001", "CLAY-B001"],
+      "notes": "Conditional book; keystone X<=M gap remains for Clay B."
+    },
+    {
+      "equation_id": "SND-TWEET-BYPASS001",
+      "family": "SND-TWEET-BYPASS",
+      "label": "Bypass Lemma",
+      "latex": "\\|\\tilde{H}_N[u]\\| \\le \\text{bound with } 5\\times \\text{ safety margin}",
+      "da_expression": "Bypass Lemma: tilde_H_N norm bound with 5× safety margin on T^3",
+      "plain_text": "Normalizes H_N[u] by total energy Sigma(t), reducing regularity to a pure shell-ratio observable with stated 5× margin.",
+      "symbol_definitions": "tilde_H_N = H_N/Sigma; margin factor 5 from tweet mechanism section.",
+      "tweet_status": "Proved",
+      "repo_mapping": "Links central lambda_min/lambda_max condition to L^2 orthogonality tool.",
+      "audit_disposition": "RETAIN",
+      "conflicts": [],
+      "notes": "Not in historical_equations.json before this audit; arithmetic H_N book collision documented in 04-NOTATION-COLLISIONS.md."
+    },
+    {
+      "equation_id": "SND-TWEET-RING001",
+      "family": "RING-BVB",
+      "label": "Ring Lemma",
+      "latex": "\\text{Borromean triadic cancellation on interlocked Littlewood-Paley shells}",
+      "da_expression": "Ring Lemma: Borromean triadic cancellation on interlocked Littlewood-Paley shells",
+      "plain_text": "Three interlocked dyadic shells satisfy a Borromean topological constraint preventing geometric chaos.",
+      "symbol_definitions": "As RING-BVB001 in historical_equations.json.",
+      "tweet_status": "Proved",
+      "repo_mapping": "RING-BVB001",
+      "audit_disposition": "RETAIN",
+      "conflicts": ["SND-U001"],
+      "notes": "Band-limited geometry toolkit; does not alone imply SND-U."
+    },
+    {
+      "equation_id": "SND-TWEET-MAIN001",
+      "family": "CLAY-B",
+      "label": "Main result",
+      "latex": "\\text{no blowup on } T^3",
+      "da_expression": "Main result: global regularity on T^3 — no finite-time blowup (proved)",
+      "plain_text": "Global Regularity of Navier-Stokes on the 3-torus; full chain above.",
+      "symbol_definitions": "Clay Statement B packaging on T^3.",
+      "tweet_status": "Proved (table footer)",
+      "repo_mapping": "CLAY-B001",
+      "audit_disposition": "RETIRE",
+      "conflicts": ["SND-C001", "SND-U001"],
+      "notes": "DA refuses unconditional Clay routing; tweet overclaims relative to gap-closure audit."
+    }
+  ]
+}

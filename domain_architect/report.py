@@ -75,6 +75,12 @@ class AuditReport:
     canonical_sfe_status: str = CANONICAL_SFE_STATUS
     language_flags: list[str] = field(default_factory=list)
     notes: list[str] = field(default_factory=list)
+    hb_map: dict[str, Any] | None = None
+    reconstruction: dict[str, Any] | None = None
+    tuning_export: dict[str, Any] | None = None
+    incompleteness: dict[str, Any] | None = None
+    decomposition: dict[str, Any] | None = None
+    gap_closure: dict[str, Any] | None = None
 
     def narrative(self) -> str:
         lines = [
@@ -140,6 +146,82 @@ class AuditReport:
                 "Independently necessary structures recorded in E: "
                 + ", ".join(self.extra_structures)
             )
+        if self.reconstruction:
+            lines.append("")
+            lines.append("Reconstruction check (mapper fidelity, not a PDE solve):")
+            lines.append(f"  passed: {self.reconstruction.get('passed')}")
+            lines.append(f"  kind: {self.reconstruction.get('kind')}")
+            lines.append(f"  {self.reconstruction.get('statement')}")
+            missing = self.reconstruction.get("missing_roles") or []
+            if missing:
+                lines.append(f"  missing roles: {', '.join(missing)}")
+            lines.append(
+                f"  recomposed summary: {self.reconstruction.get('recomposed_summary')}"
+            )
+        if self.tuning_export:
+            lines.append("")
+            te = self.tuning_export
+            lines.append("Auto tuning export (control variables for intervention apps)")
+            lines.append(f"  domain_book: {te.get('domain_book')}")
+            lines.append(f"  auto_assigned: {te.get('auto_assigned')}")
+            lines.append("Free / selector controls:")
+            controls = te.get("controls") or []
+            shown = False
+            for c in controls:
+                if c.get("status") not in {"free", "protocol_selector"}:
+                    continue
+                shown = True
+                lines.append(
+                    f"  - {c.get('name')} [{c.get('status')}] "
+                    f"role={c.get('role')}/{c.get('subtype')}: {c.get('why')}"
+                )
+                lines.append(f"      intervene: {c.get('default_intervention')}")
+                if c.get("bridge_app_hint"):
+                    lines.append(f"      bridge hint: {c.get('bridge_app_hint')}")
+            if not shown:
+                lines.append("  (none)")
+            fixed = te.get("fixed_structure") or []
+            if fixed:
+                lines.append("Structural / fixed (do not casually retune):")
+                for item in fixed:
+                    lines.append(f"  - {item}")
+            if te.get("statement"):
+                lines.append(str(te["statement"]))
+            if te.get("protocol_reminder"):
+                lines.append(str(te["protocol_reminder"]))
+        if self.incompleteness:
+            lines.append("")
+            inc = self.incompleteness
+            lines.append("Incompleteness / math-complete candidates:")
+            lines.append(f"  complete: {inc.get('is_complete')}")
+            if inc.get("missing_roles"):
+                lines.append(
+                    f"  missing roles: {', '.join(inc['missing_roles'])}"
+                )
+            if inc.get("missing_terms"):
+                lines.append(
+                    f"  missing terms: {', '.join(inc['missing_terms'])}"
+                )
+            for c in inc.get("candidates") or []:
+                lines.append(
+                    f"  - [{c.get('kind')}/{c.get('confidence')}] "
+                    f"{c.get('proposal')}"
+                )
+            if inc.get("equation_sketch"):
+                lines.append(f"  book sketch: {inc['equation_sketch']}")
+            if inc.get("statement"):
+                lines.append(f"  {inc['statement']}")
+        if self.decomposition:
+            lines.append("")
+            dec = self.decomposition
+            lines.append("Drill-down + recompose:")
+            lines.append(
+                f"  book={dec.get('domain_book')} depth={dec.get('depth')} "
+                f"terminals={dec.get('terminal_count')} "
+                f"recompose_ok={dec.get('all_recompose_ok')}"
+            )
+            if dec.get("statement"):
+                lines.append(f"  {dec['statement']}")
         if self.warnings:
             lines.append("")
             lines.append("Warnings:")
@@ -172,5 +254,11 @@ class AuditReport:
             "canonical_sfe_status": self.canonical_sfe_status,
             "language_flags": self.language_flags,
             "notes": self.notes,
+            "hb_map": self.hb_map,
+            "reconstruction": self.reconstruction,
+            "tuning_export": self.tuning_export,
+            "incompleteness": self.incompleteness,
+            "decomposition": self.decomposition,
+            "gap_closure": self.gap_closure,
             "narrative": self.narrative(),
         }
