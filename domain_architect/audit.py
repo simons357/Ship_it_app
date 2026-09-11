@@ -20,9 +20,23 @@ from .checks import (
 from .classify import classify_parse
 from .gravity import newtonian_fra_map, solve_periodic_poisson
 from .identifiability import analyze_product_abx
+from .hb_loop import attach_loop_to_report
+from .incompleteness import attach_incompleteness
+from .decompose import attach_decomposition
+from .gap_closure import diagnose_gap
+from .snd_claims import anatomize_claim
+from .navier_stokes import (
+    DOMAIN_ID as NS_DOMAIN_ID,
+    NS_EXTRA_STRUCTURES,
+    NS_NO_MILLENNIUM,
+    NS_SCOPE_STATEMENT,
+    classical_ns_fra_map,
+    detect_classical_ns,
+)
 from .parser import NodeKind, parse_expression
 from .recovery import classify_recovery
 from .report import AuditReport, ConfidenceTaxonomy
+from .tuning_export import build_tuning_export
 from .schema import (
     CANONICAL_SFE_STATUS,
     EvidenceLevel,
@@ -66,6 +80,12 @@ def audit_expression(
     """Audit one expression. Does not invent a unified theory."""
     context = dict(context or {})
     parsed = parse_expression(expression)
+    ns_detection = detect_classical_ns(expression, parsed)
+    if ns_detection.matched and context.get("domain") not in {"GR", "gravity"}:
+        # Auto-route classical NS into the Track B organizational book.
+        context.setdefault("domain", NS_DOMAIN_ID)
+        context.setdefault("fluids_book", NS_DOMAIN_ID)
+        context.setdefault("ns_form", ns_detection.form)
     classification = classify_parse(parsed, context)
     warnings = list(parsed.warnings) + list(classification.warnings)
     extra = list(classification.extra_structures)
@@ -77,6 +97,17 @@ def audit_expression(
     notes: list[str] = []
     math_status = MathValidationStatus.NOT_PERFORMED
     phys_status = PhysicalValidationStatus.NONE
+
+    if ns_detection.matched and context.get("domain") == NS_DOMAIN_ID:
+        notes.append(NS_SCOPE_STATEMENT)
+        notes.append(NS_NO_MILLENNIUM)
+        notes.append(
+            "Detection reasons: " + "; ".join(ns_detection.reasons)
+        )
+        notes.append(classical_ns_fra_map()["mechanism_sketch"])
+        extra.extend(NS_EXTRA_STRUCTURES)
+        # Organizational classification only — no known-limit recovery claim.
+        evidence = EvidenceLevel.COHERENT_CLASSIFICATION
 
     if parsed.tree is not None:
         dim = check_dimensions(parsed.tree, context.get("units"))
@@ -208,6 +239,52 @@ def audit_expression(
         extra_structures=_unique(extra),
         canonical_sfe_status=CANONICAL_SFE_STATUS,
         notes=_unique(notes),
+    )
+    attach_loop_to_report(report)
+    attach_incompleteness(report)
+    attach_decomposition(report)
+    gap = diagnose_gap(expression)
+    report.gap_closure = gap.to_dict()
+    snd = anatomize_claim(expression)
+    if gap.findings:
+        report.notes = _unique(
+            list(report.notes)
+            + [f.narrative_line() for f in gap.findings]
+            + [gap.statement]
+        )
+        if gap.refuses_unconditional_clay:
+            report.warnings = _unique(
+                list(report.warnings)
+                + [
+                    "REFUSE: unconditional Clay / SND-U routing blocked "
+                    "(broken weld; see gap_closure)."
+                ]
+            )
+    if snd.refused:
+        report.warnings = _unique(list(report.warnings) + snd.refusal_reasons)
+        report.notes = _unique(
+            list(report.notes)
+            + [
+                "SND inventory: SND-U=open/hypothesis; SND-C=conditional "
+                "under X<=M; Clay B=NOT resolved."
+            ]
+        )
+    elif snd.allowed_routing and snd.allowed_routing != "no_snd_clay_claim_detected":
+        report.notes = _unique(
+            list(report.notes) + [f"SND inventory routing: {snd.allowed_routing}"]
+        )
+    report.tuning_export = build_tuning_export(report).to_dict()
+    report.notes = _unique(
+        list(report.notes)
+        + [
+            "Auto mode: Domain Architect assigns functional roles from structure/"
+            "domain books; it does not require hand-labeling P,H,ψ,λ,Φ.",
+            "Tuning export lists control variables for bridge-style intervention "
+            "apps; freeze protocol before optimizing.",
+            "Incompleteness candidates are book templates only — not Clay/ToE.",
+            "Drill-down stops at defined/measurable/standard operators.",
+            "Gap closure prints Broken weld → Suggested closure; not status-only OPEN.",
+        ]
     )
     report.narrative()
     return report
