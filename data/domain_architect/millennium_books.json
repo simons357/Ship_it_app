@@ -8,7 +8,7 @@
       "clay_name": "Navier-Stokes (Clay Statement B)",
       "status": "OPEN",
       "alias": "NAVIER-STOKES",
-      "honest_note": "Clay Statement B NOT proved. NS NOT SOLVED. SND-C is conditional under X≤M. DA refuses H→Clay glue. Lemma★/DA-NS-1 is locked Millennium packaging (HYPOTHESIS) — WITHHELD until PRODUCT-BLOCK / HH→L closes. Five-lane PR #48: K=0 dead; ★ survives numeric only ≠ proved.",
+      "honest_note": "Clay Statement B NOT proved. NS NOT SOLVED. USER LOCK: Lemma★/DA-NS-1 IS the Millennium packaging (HYPOTHESIS) — not a side lemma. PRODUCT-BLOCK / Agmon gap named. Survives numeric kill only; HH→L open; NS not solved; K=0 lane dead. EXPRESS/PROVED refused. No SFE glue. Five-lane PR #48. SND-C conditional under X≤M. DA refuses H→Clay glue.",
       "books": [
         {
           "book_id": "NS-B",
@@ -219,7 +219,7 @@
           "label": "Lemma★ / DA-NS-1 energy-budget spectral drift",
           "status": "HYPOTHESIS",
           "alias": "LEMMA-STAR",
-          "honest_status": "HYPOTHESIS — locked Millennium packaging (not a side lemma); NOT proved. PRODUCT-BLOCK / HH→L open. Five-lane: K=0 dead; survives numeric only ≠ proved. NS NOT SOLVED.",
+          "honest_status": "HYPOTHESIS — USER LOCK: Lemma★ IS Millennium packaging (not a side lemma); NOT proved. PRODUCT-BLOCK / Agmon gap named. Survives numeric kill only; HH→L open; NS not solved; K=0 lane dead. EXPRESS/PROVED refused. No SFE glue.",
           "expression": "Lemma★ (HYPOTHESIS): T_c <= theta*nu*(Z - Lambda*Y) + C_0*nu^{-1}*||u||_2^2*X*Lambda  with C_0 geometric only",
           "roles": [
             "admissibility",
@@ -260,7 +260,7 @@
               "status": "HYPOTHESIS",
               "equation_ref": "LEMMA-STAR001",
               "roles": ["interaction", "scale_response", "realized_output", "environment"],
-              "notes": "Candidate closing estimate. If true: Lambda cannot blow up in finite time → enstrophy finite → global regularity on T^3. DA will not green without PRODUCT-BLOCK / HH→L. Refuse almost proved. Five-lane PR #48: survives numeric kill only ≠ proved. NS NOT SOLVED."
+              "notes": "USER LOCK Millennium packaging. If true: Lambda freeze → enstrophy finite → regularity on T^3. HYPOTHESIS. Survives numeric kill only; HH→L open; NS not solved; K=0 dead. Refuse EXPRESS/PROVED. Five-lane PR #48."
             },
             {
               "claim_id": "DA-NS-1",
@@ -269,16 +269,16 @@
               "status": "HYPOTHESIS",
               "equation_ref": "DA-NS-1001",
               "roles": ["interaction", "scale_response", "environment"],
-              "notes": "Same object as Lemma★ — locked Millennium packaging of Statement B. NS NOT SOLVED."
+              "notes": "Same object as Lemma★ — USER LOCK Millennium packaging. HYPOTHESIS. Survives numeric kill only; HH→L open; NS not solved; K=0 lane dead. No SFE glue."
             }
           ],
-          "notes": "Honest packaging of Clay B as one estimate. Broken at PRODUCT-BLOCK / Agmon-product; analytic gap HH→L. Five-lane PR #48. Links: SND-C (shell J/X texture), BOOT-M (enstrophy ceiling), NS-B (classical PDE)."
+          "notes": "USER LOCK (Jonathan): Lemma★ is the Millennium problem in this packaging. Broken at PRODUCT-BLOCK / Agmon-product; HH→L gap. Survives numeric kill only ≠ proved. Five-lane PR #48. No SFE glue. Links: SND-C, BOOT-M, NS-B."
         },
         {
           "book_id": "PRODUCT-BLOCK",
           "label": "Product / Agmon estimate blocker for Lemma★",
           "status": "OPEN",
-          "honest_status": "OPEN blocker — need |T_c|<=C*||u||_2*X^{3/2}; ordinary 3D Sobolev/product/Agmon INSUFFICIENT from energy alone; Bony HH→L still the gap (PR #48).",
+          "honest_status": "OPEN — PRODUCT-BLOCK / Agmon gap named. Need |T_c|<=C*||u||_2*X^{3/2}; ordinary 3D product/Agmon INSUFFICIENT from energy alone; HH→L still the gap. USER LOCK blocker.",
           "expression": "PRODUCT-BLOCK (OPEN): need |T_c| <= C*||u||_2*X^{3/2}; ordinary 3D product/Agmon estimates do not give this from energy alone; HH→L gap",
           "roles": [
             "admissibility",

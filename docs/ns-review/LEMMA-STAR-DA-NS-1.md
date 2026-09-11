@@ -4,11 +4,39 @@
 **Status:** HYPOTHESIS (not proved) — **NS NOT SOLVED**  
 **Tooling:** `python3 -m domain_architect --lemma-star`  
 **Companion:** [`DA-GAP-CLOSURE-PLAYBOOK.md`](./DA-GAP-CLOSURE-PLAYBOOK.md), [`THEOREM-H-ATTACK-PLAN.md`](./THEOREM-H-ATTACK-PLAN.md)  
-**Five-lane drill:** [PR #48](https://github.com/simons357/Ship_it_app/pull/48) · branch `cursor/ns-five-lane-lemma-star-1390` · `docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md`
+**Five-lane drill:** [PR #48](https://github.com/simons357/Ship_it_app/pull/48) · branch `cursor/ns-five-lane-lemma-star-1390` · SoT on that branch: `docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md`  
+**DA recovery mirror:** [PR #55](https://github.com/simons357/Ship_it_app/pull/55) · `docs/ns-review/five-lane-recovery/`
 
 **Rule of this document:** Broken at PRODUCT-BLOCK / Agmon-product gap → close by …  
 Proving Lemma★ ≡ Clay B in this packaging. DA will **not** green it without PRODUCT-BLOCK.  
-**Refuse:** “almost proved,” “survives numeric ⇒ proved,” greening language. Numerics ≠ proof.
+**Refuse:** EXPRESS / PROVED / “almost proved,” “survives numeric ⇒ proved,” greening language. Numerics ≠ proof. **No SFE glue.**
+
+---
+
+## LOCKED — USER LOCK (Jonathan)
+
+Treat as settled. Do not re-litigate.
+
+Lemma★ is **not** a side lemma. In this packaging it **is** the Millennium problem:
+
+\[
+T_c \le \theta\nu(Z-\Lambda Y)+C_0\nu^{-1}\|u\|_2^2\,X\Lambda
+\]
+
+with \(C_0\) geometry-only. Would freeze \(\Lambda\) → global regularity on \(T^3\).
+
+**Blocked exactly here:** need something like \(|T_c|\le C\|u\|_2 X^{3/2}\) (or equivalent). Ordinary 3D product / Agmon estimates do **not** give that from energy alone.
+
+**Five-lane drill done** ([PR #48](https://github.com/simons357/Ship_it_app/pull/48), tip `a00370a` on `cursor/ns-five-lane-lemma-star-1390`):
+
+| Outcome | Status |
+| --- | --- |
+| K=0 absorption | **DEAD** |
+| Lemma★ | survives **numeric kill only** (not proved) |
+| HH→L | still the gap |
+| NS / Clay B | **not solved** |
+
+**Registry:** `DA-NS-1` / `LEMMA-STAR` = **HYPOTHESIS**; `PRODUCT-BLOCK` / Agmon gap named; status note: *survives numeric kill only; HH→L open; NS not solved; K=0 lane dead*. EXPRESS/PROVED refused. No SFE glue.
 
 ---
 
@@ -78,9 +106,9 @@ You still need something like
 
 ---
 
-## Five-lane drill (PR #48) — status sync 2026-09-10
+## Five-lane drill (PR #48) — status sync 2026-09-11
 
-Source: [PR #48](https://github.com/simons357/Ship_it_app/pull/48) · `docs/math/ns_attacks/ATTACK_SYNTHESIS_SIMULTANEOUS.md`
+Source: [PR #48](https://github.com/simons357/Ship_it_app/pull/48) · branch `cursor/ns-five-lane-lemma-star-1390`
 
 | Lane / claim | Status | Honesty |
 | --- | --- | --- |
@@ -91,6 +119,23 @@ Source: [PR #48](https://github.com/simons357/Ship_it_app/pull/48) · `docs/math
 | Global regularity / Clay B | **NOT SOLVED** | Do not green |
 
 Survivor *form* (still unproved): \(T_c\le\theta\nu(Z-\Lambda Y)+C_* X^{3/2}\Lambda\). Numerics support bounded ratios on tested families; **that is not a proof.**
+
+### Five-lane artifacts (links)
+
+Canonical pack lives on [PR #48](https://github.com/simons357/Ship_it_app/pull/48) / `cursor/ns-five-lane-lemma-star-1390`:
+
+| Artifact | Path / link |
+| --- | --- |
+| Status SoT | [`PROOF_LemmaStar_STATUS.md`](https://github.com/simons357/Ship_it_app/blob/cursor/ns-five-lane-lemma-star-1390/docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md) |
+| Synthesis | [`ATTACK_SYNTHESIS_SIMULTANEOUS.md`](https://github.com/simons357/Ship_it_app/blob/cursor/ns-five-lane-lemma-star-1390/docs/math/ns_attacks/ATTACK_SYNTHESIS_SIMULTANEOUS.md) |
+| HH→L (Attack 3) | [`ATTACK_3_BONY_HH_L.md`](https://github.com/simons357/Ship_it_app/blob/cursor/ns-five-lane-lemma-star-1390/docs/math/ns_attacks/ATTACK_3_BONY_HH_L.md) |
+| K=0 / triad (Attack 2) | [`ATTACK_2_TRIAD_K0_CSTAR.md`](https://github.com/simons357/Ship_it_app/blob/cursor/ns-five-lane-lemma-star-1390/docs/math/ns_attacks/ATTACK_2_TRIAD_K0_CSTAR.md) |
+| Shape form | [`LEMMA_STAR_SHAPE_FORM.md`](https://github.com/simons357/Ship_it_app/blob/cursor/ns-five-lane-lemma-star-1390/docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md) |
+| Runtime headline | [`results/ns_five_lane_2026-09-10/HEADLINE.md`](https://github.com/simons357/Ship_it_app/blob/cursor/ns-five-lane-lemma-star-1390/results/ns_five_lane_2026-09-10/HEADLINE.md) |
+| Runtime JSON | [`SYNTHESIS_RUNTIME.json`](https://github.com/simons357/Ship_it_app/blob/cursor/ns-five-lane-lemma-star-1390/results/ns_five_lane_2026-09-10/SYNTHESIS_RUNTIME.json) |
+| Handoff scripts | [`jonathan-handoff/.../five-lane-pack/`](https://github.com/simons357/Ship_it_app/tree/cursor/ns-five-lane-lemma-star-1390/jonathan-handoff/GROK-HEAVY/01-swirl-publishing/five-lane-pack) |
+
+DA-side recovered inventory (subset): [PR #55](https://github.com/simons357/Ship_it_app/pull/55) · `docs/ns-review/five-lane-recovery/` (README, extracts, mirrored docs/results when present on that branch).
 
 ---
 
@@ -145,5 +190,6 @@ python3 -m domain_architect --gap-closure 'Lemma★: T_c <= theta*nu*(Z-Lambda*Y
 python3 scripts/da_lemma_star_demo.py
 ```
 
-**Inventory:** `data/domain_architect/millennium_books.json` (books `DA-NS-1`, `PRODUCT-BLOCK`), `historical_equations.json` (`LEMMA-STAR001`, `PRODUCT-BLOCK001`), `snd_claim_inventory.json`.  
-**Five-lane evidence:** [PR #48](https://github.com/simons357/Ship_it_app/pull/48).
+**Inventory:** `data/domain_architect/millennium_books.json` (books `DA-NS-1`, `PRODUCT-BLOCK`), `historical_equations.json` (`LEMMA-STAR001`, `PRODUCT-BLOCK001`), `snd_claim_inventory.json` (`LEMMA-STAR`, `DA-NS-1`, `PRODUCT-BLOCK`, `FIVE-LANE-LEMMA-STAR`).  
+**Five-lane evidence:** [PR #48](https://github.com/simons357/Ship_it_app/pull/48) · artifact table above · DA mirror [PR #55](https://github.com/simons357/Ship_it_app/pull/55).  
+**USER LOCK:** recorded in § LOCKED — USER LOCK (Jonathan).
