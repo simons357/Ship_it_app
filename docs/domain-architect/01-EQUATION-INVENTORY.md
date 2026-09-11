@@ -104,7 +104,7 @@ These are real research objects in this repo family. They are **not** UHF, SFE, 
 |---|---|---|---|
 | NS-B | \(\partial_t\omega+(u\cdot\nabla)\omega=(\omega\cdot\nabla)u+\nu\Delta\omega\), \(\nabla\cdot u=0\) | Track B, classical NS | Route as a separate domain. Do not derive from SFE |
 | NS-A | \(\partial_t u+(u\cdot\nabla)u=-\nabla p+\nu\Delta u+\varepsilon^\alpha\mathbb P\,\mathrm{div}(\lvert\nabla u\rvert^\beta\nabla u)\) | Track A, augmented NS | Different PDE. \(\mathbb P\) here is the Leray projector, not permission \(P\) and not primes |
-| NS-Φ | \(\Gamma=ru_\theta\), \(\Phi=\Gamma/r^2=u_\theta/r\), \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) | axisymmetric swirl algebra | **Do not reuse \(\Phi\)** as the FRA output symbol in the same document |
+| NS-Φ | \(\Gamma=ru_\theta\), \(\Phi=\Gamma/r^2=u_\theta/r\), \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) | axisymmetric swirl algebra; June 30 conditional paper under `docs/papers/swirl/` | **KEEP** algebra. Open barrier \(\|u^r/r\|_\infty\) (see `PHI-RENORM-AUDIT-2026-08-22.md`). **Do not reuse \(\Phi\)** as the FRA output symbol; **not** Clay |
 | ARITH-H | \(H_N=D^{-1/2}\widetilde Q_N D^{-1/2}\) | inverse-GCD / spectral floor | Separate arithmetic book. \(H_N\) is not coupling \(H\) |
 | ARITH-B | Bridge* pair Rayleigh \(R(e_p-e_q)>-1/2\) | pair vectors only | Keep only as arithmetic, if at all. Not a fluids or SFE input |
 
