@@ -1,4 +1,4 @@
-# Requested Young line — not written
+# Requested Young line — figured out, not written
 
 11 September 2026.
 **Not a close. NS not solved.
@@ -8,246 +8,217 @@ Axisymmetric-with-swirl Navier–Stokes,
 unaugmented, on \(\mathbb{R}^3\); quantity
 \(Z_j=\|\Delta_j\omega\|_{L^2(\mathbb{R}^3)}^2\);
 remainder \(T_{j\leftarrow j}\); [no extra
-field]. This page answers one request:
+field]. Request:
 
 \[
 \lvert T_{j\leftarrow j}\rvert
 \le
 \varepsilon\nu P_j+R,
 \]
-where \(R\) uses only energy, \(Z\), and
-maybe a direction factor — not
-\(\dot Z_j\), not \(\Lambda'\).
+with \(R\) from energy, \(Z\), and maybe
+a direction factor — not \(\dot Z_j\),
+not \(\Lambda'\). Read \(P_j\) as the
+seated slot \(D_j=\|\nabla\Delta_j\omega\|_2^2\).
 
-That line is **not seated**. Emitting it
-as a theorem is the discarded WRITE.
-Identity and far-shell Young already sit
-in [`AXISYM-SHELL.md`](AXISYM-SHELL.md).
+What was figured out: the local block
+splits, the energy-only \(R\) is
+**false**, and \(\alpha Z_j\) is sharp
+for the main stretch. The allowed \(R\)
+still cannot host the commutators.
+The line is **not seated**.
+
 Filter: [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md).
+Shell page: [`AXISYM-SHELL.md`](AXISYM-SHELL.md).
+Probe: `python3 scripts/tjj_estimate.py`
 
 This is not Lemma★. This is not H1 /
 WRITE (6). Do not glue those three.
 
 ---
 
-## 1. What the symbols would have to mean
+## 1. Split that sits
 
-\(P_j\) is not a seated symbol on this
-door. The only dissipative slot in
-Proposition AS-Id is
-\(D_j=\|\nabla\Delta_j\omega\|_2^2\).
-Read the request as leftover form (3)
-on the local block:
+Write \(u_{\mathrm{loc}}=(\Delta_{j-1}+\Delta_j+\Delta_{j+1})u\).
+Then \(\Delta_j\omega_{\mathrm{loc}}=\Delta_j\omega\),
+and \(u_{\mathrm{loc}}\) stays
+divergence-free.
 
+**Proposition TJJ-Trans.**
 \[
-\lvert T_{j\leftarrow j}\rvert
-\le
-\varepsilon\nu D_j+R.
+\int\bigl(u_{\mathrm{loc}}\cdot\nabla\bigr)\Delta_j\omega\cdot\Delta_j\omega=0.
 \]
+The main transport term vanishes.
+Only the commutator
+\([\Delta_j,u_{\mathrm{loc}}\cdot\nabla]\)
+remains from transport.
 
-Older \(P_{j_*}=X_{j_*-1}+X_{j_*}+X_{j_*+1}\)
-and hole-1 \(P_+\) are different objects.
-They do not enter.
-
-Allowed in an \(R\), if one existed:
-
-- energy \(\mathcal E=\tfrac12\|u\|_2^2\),
-  or a three-shell energy
-  \(\mathcal E_{\mathrm{loc}}\);
-- the family \(\{Z_k\}\), used as a
-  *lower-order* term, not as
-  \(\dot Z_j\);
-- maybe a direction factor
-  \(\alpha=\xi\cdot S_{\mathrm{strain}}\xi\).
-
-Forbidden in \(R\) (audit DISCARD):
-
-- \(\dot Z_j\) (the user’s \(\dot e_j\);
-  no seated \(e_j\));
-- \(\Lambda'=2(T_c-\nu\mathcal D_s)/X\);
-- a new symbol of the same size as
-  \(T_{j\leftarrow j}\).
-
-Leftover form (3) already sits globally
-as a *shape* in
-[`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md):
+**Proposition TJJ-α.**
 \[
-\frac{d}{dt}X+\nu\|\nabla\omega\|_2^2
-\le\varepsilon\nu\|\nabla\omega\|_2^2
-+C_\varepsilon X\cdot\mathcal R(t).
-\]
-HAVE (3) is not WRITE of the local
-block. The request is exactly that
-missing Young.
-
----
-
-## 2. Verdict
-
-**The estimate cannot be written.**
-
-No identity, Young step, or measurement
-on disk produces
-\(\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu D_j+R\)
-with \(R\) built only from energy,
-\(\{Z_k\}\), and maybe \(\alpha\),
-independent of \(\dot Z_j\) and
-\(\Lambda'\).
-
-AS_remainder stays **fail**.
-EAud_door1_closed stays **fail**.
-The chain stays a chain.
-
----
-
-## 3. Why the natural writings fail the \(R\)-constraint
-
-### 3.1 Bernstein + Young — valid inequality, wrong \(R\)
-
-On the local block the standard Hölder /
-Bernstein bound sits as an inequality
-(constants depend only on \(\varphi\)):
-
-\[
-\lvert T_{j\leftarrow j}\rvert
-\le
-C[\varphi]\,\|u_{\mathrm{loc}}\|_\infty\,D_j^{1/2}Z_j^{1/2}
-+
-C[\varphi]\,\|\nabla u_{\mathrm{loc}}\|_\infty\,Z_j.
-\]
-
-Young on the transport piece:
-
-\[
-C\|u_{\mathrm{loc}}\|_\infty D_j^{1/2}Z_j^{1/2}
-\le
-\varepsilon\nu D_j
-+
-C_\varepsilon\nu^{-1}\|u_{\mathrm{loc}}\|_\infty^2 Z_j.
-\]
-
-The stretching piece remains. Bernstein
-on three neighboring shells gives
-\(\|\nabla u_{\mathrm{loc}}\|_\infty\lesssim 2^{j/2}Z_{\mathrm{loc}}^{1/2}\),
-hence a remainder of size
-\[
-C\,2^{j/2}Z_{\mathrm{loc}}^{1/2}Z_j.
-\]
-That is the cubic wall at one shell.
-It uses a frequency weight \(2^{j/2}\),
-not energy, and it is quadratic in the
-\(Z\)-scale after one more Young against
-\(D_j\sim 2^{2j}Z_j\). Leftover form (3)
-needs a coefficient that is integrable
-from the energy inequality. Shell-cubic
-is not that coefficient.
-
-\(\|u_{\mathrm{loc}}\|_\infty\) is not
-energy. Bernstein
-\(\|u_{\mathrm{loc}}\|_\infty\lesssim 2^{3j/2}\mathcal E_{\mathrm{loc}}^{1/2}\)
-puts \(2^{3j}\) into \(R\). Frequency
-weights are not on the allowed list.
-
-This inequality may be printed as a
-*template*. It is not the requested
-line.
-
-### 3.2 Direction rewrite — identity, not a bound
-
-Door 3:
-\[
-\alpha=\xi\cdot S_{\mathrm{strain}}\xi.
-\]
-The stretching pairing may be rewritten
-\[
-T_{j\leftarrow j}^{\mathrm{stretch}}
+\int\bigl((\Delta_j\omega)\cdot\nabla u_{\mathrm{loc}}\bigr)\cdot\Delta_j\omega
 =
-\int\alpha_{\mathrm{loc}}\,\lvert\Delta_j\omega\rvert^2
-+
-\text{commutators}.
+\int\alpha_{\mathrm{loc},j}\,\lvert\Delta_j\omega\rvert^2,
 \]
-Then
-\(\lvert\int\alpha_{\mathrm{loc}}\,\lvert\Delta_j\omega\rvert^2\rvert
-\le\|\alpha_{\mathrm{loc}}\|_\infty Z_j\).
-Young against \(D_j\) only moves
-\(\|\alpha_{\mathrm{loc}}\|_\infty\) into
-\(R\). That factor is not controlled by
-energy or by \(\{Z_k\}\)
-(\(W^{1,2}\not\subset L^\infty\) on the
-strain). The commutators are not
-estimated. A printed \(\alpha\) is a
-criterion, not a bound
-([`AXISYM-SHELL.md`](AXISYM-SHELL.md) §6).
-Putting \(\alpha\) into \(R\) restates
-Door 3. The chain stays a chain.
+where
+\(\alpha_{\mathrm{loc},j}=\xi_j\cdot S(u_{\mathrm{loc}})\,\xi_j\)
+and \(\xi_j=\Delta_j\omega/\lvert\Delta_j\omega\rvert\)
+on \(\{\Delta_j\omega\neq 0\}\).
+The antisymmetric part of \(\nabla u\)
+drops. This is an identity, not a bound.
 
-### 3.3 Energy-linear remainder — would close, not proved
+Lattice check (`scripts/tjj_estimate.py`,
+vortex blob, \(n=32\)): transport
+residual \(10^{-23}\); stretch versus
+\(\int\alpha\lvert\omega_j\rvert^2\)
+residual \(0\).
 
-The line that would finish the shell
-budget, given AS-IR / transport Young /
-AS-UV and a finite infrared sum, is
+So
 \[
-\lvert T_{j\leftarrow j}\rvert
+T_{j\leftarrow j}
+=
+\int\alpha_{\mathrm{loc},j}\,\lvert\Delta_j\omega\rvert^2
++
+T_{j\leftarrow j}^{\mathrm{comm}}.
+\]
+
+---
+
+## 2. What is true, and is not the request
+
+Young on the transport commutator,
+constants from \(\varphi\) only:
+
+\[
+\lvert T_{j\leftarrow j}^{\mathrm{comm,\,trans}}\rvert
 \le
 \varepsilon\nu D_j
 +
-C_\varepsilon\,\mathcal E\,Z_j
+C_\varepsilon[\varphi]\,\nu^{-1}\|u_{\mathrm{loc}}\|_\infty^2 Z_j.
 \]
-or the same with an integrable
-\(\|\omega\|_\infty\) in place of
-\(\mathcal E\). Then Gronwall and
-\(\int\mathcal E<\infty\) (actually
-\(\int E<\infty\) from the energy
-equality) keep \(Z_j\) finite, which is
-Theorem AS-ρ without assuming [ρ].
 
-That is the estimate the request asked
-for. It is not on disk. Writing it here
-as a theorem is the discarded move:
-an LLM emits the WRITE line.
+The main stretch is one-sided:
+\[
+\int\alpha_{\mathrm{loc},j}\,\lvert\Delta_j\omega\rvert^2
+\le
+\|(\alpha_{\mathrm{loc},j})_+\|_\infty Z_j.
+\]
+Neighbor-shell stretch commutators are
+at most
+\(C[\varphi]\,\|\nabla u_{\mathrm{loc}}\|_\infty\sum_{|k-j|\le 1}Z_k\).
 
-[ρ] remains an extra hypothesis, in
-the open.
+**Proposition TJJ-template.**
+\[
+T_{j\leftarrow j}
+\le
+\varepsilon\nu D_j
++
+\|(\alpha_{\mathrm{loc},j})_+\|_\infty Z_j
++
+C_\varepsilon[\varphi]\,\nu^{-1}\|u_{\mathrm{loc}}\|_\infty^2 Z_j
++
+C[\varphi]\,\|\nabla u_{\mathrm{loc}}\|_\infty\sum_{|k-j|\le 1}Z_k.
+\]
 
-### 3.4 Forbidden closings
+This inequality sits. Its remainder is
+**not** the allowed \(R\):
+\(\|u_{\mathrm{loc}}\|_\infty\) and
+\(\|\nabla u_{\mathrm{loc}}\|_\infty\)
+are not energy, not \(Z\), and not a
+direction factor. Bernstein puts
+\(2^{3j}\) or \(2^{j/2}Z^{1/2}\) back
+in. That is the cubic wall.
 
-From AS-Id,
+Door 3: a printed \(\alpha\) is a
+criterion. \(\|(\alpha)_+\|_\infty\) is
+not controlled by energy or by
+\(\{Z_k\}\) (\(W^{1,2}\not\subset L^\infty\)).
+
+---
+
+## 3. Energy-linear \(R\) is false
+
+The line that would have finished the
+shell budget is
+\[
+\lvert T_{j\leftarrow j}\rvert
+\le
+\varepsilon\nu D_j+C\,\mathcal E\,Z_j.
+\]
+It is not open. It is **false** as a
+uniform bound (\(C,\varepsilon\)
+independent of the field and of \(j\)).
+
+**Proposition TJJ-E-false.**
+Let \(\varphi\) be smooth, compactly
+supported, divergence-free, and not
+identically zero. Set
+\(u^\lambda(x)=\lambda^{3/2}\varphi(\lambda x)\).
+Then \(\mathcal E\) is invariant,
+the occupied shell is \(j\sim\log_2\lambda\),
+and
+\[
+Z_{j(\lambda)}\sim\lambda^2,\qquad
+D_{j(\lambda)}\sim\lambda^4,\qquad
+T_{j(\lambda)\leftarrow j(\lambda)}\sim\lambda^{9/2}.
+\]
+Hence
+\[
+\frac{\lvert T_{j\leftarrow j}\rvert}{\varepsilon\nu D_j+C\,\mathcal E\,Z_j}
+\sim\lambda^{1/2}\to\infty
+\qquad(\lambda\to\infty).
+\]
+
+The same scaling shows
+\(\|(\alpha)_+\|_\infty Z_j\sim\lambda^{9/2}\)
+is sharp for the main stretch: strain
+is \(\sim\lambda^{5/2}\). Direction
+matches the leftover size and is not
+an integrable coefficient from the
+energy inequality.
+
+\(1/r^4\) Hardy on the swirl source
+does not repair this. Localized Hardy
+fails on slow fat swirl
+([`SWIRL-PAPER.md`](SWIRL-PAPER.md) §6;
+[`UNAUGMENTED-R4-VORTICITY-PLAN.md`](UNAUGMENTED-R4-VORTICITY-PLAN.md)).
+
+---
+
+## 4. Forbidden slots stay out
+
+AS-Id:
 \(T_j=\tfrac12\dot Z_j+\nu D_j\).
 Bounding \(T_{j\leftarrow j}\) by
 \(\dot Z_j\) restates the identity.
-Audit KEEP: never bound the growing
-term by a copy of the time derivative
-you are estimating.
 
 \(\Lambda'=2(T_c-\nu\mathcal D_s)/X\)
-already contains the leftover \(T_c\).
-It is bookkeeping, not this LHS, and
-not a bound. No time series of that
-identity is closed on this door. The
-sign of \(\Lambda'\) is not quoted.
+already contains the leftover. Not this
+LHS. No closed time series on this
+door. The sign of \(\Lambda'\) is not
+quoted.
 
 ---
 
-## 4. What sits, and what does not
+## 5. Verdict
 
-| Item | Status |
-|---|---|
-| AS-Id, AS-Split | sit |
-| AS-IR, IR-transport Young, AS-UV | sit |
-| AS-τ, AS-ω\* | sit as identities, not bounds |
-| Requested line \(\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu D_j+R\) with allowed \(R\) | **not written** |
-| [ρ] for the class | not measured |
-| Door 3 \(\alpha\) as a bound | fail |
-| Lemma★ / H1 / unrestricted 3-D | other doors; not this page |
+The request asked for one estimate
+whose \(R\) is only energy, \(Z\), and
+maybe \(\alpha\).
 
-Samples of \(T_{j\leftarrow j}/Z_j\) may
-come out either way. Visibility of
-cancellation is not uniform smallness.
-Those numbers are in
-[`AXISYM-SHELL.md`](AXISYM-SHELL.md) §9
-and
-[`AXISYM-SWIRL-PROBE.md`](AXISYM-SWIRL-PROBE.md).
-They are not this estimate.
+- Energy plus viscosity: **false**
+  (Proposition TJJ-E-false).
+- Direction \(\alpha Z_j\): true for
+  the main stretch, uncontrolled, and
+  does not eat the commutators.
+- Commutators: need
+  \(\|u_{\mathrm{loc}}\|_\infty\) or
+  \(\|\nabla u_{\mathrm{loc}}\|_\infty\),
+  which are not on the allowed list.
+- \(\dot Z_j\), \(\Lambda'\): discarded.
+
+**The estimate cannot be written.**
+AS_remainder stays **fail**.
+EAud_door1_closed stays **fail**.
+The chain stays a chain.
 
 ---
 
@@ -255,11 +226,13 @@ They are not this estimate.
 
 | id | Verdict | What it is |
 |---|---|---|
-| TJJ_requested_line | **fail** | \(\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu D_j+R\) with allowed \(R\) is not seated |
-| TJJ_forbidden_slots | **pass** | \(\dot Z_j\) and \(\Lambda'\) were not used as a bound |
-| TJJ_bernstein_template | **pass** | §3.1 is an inequality with the wrong \(R\); not cashed as the line |
-| TJJ_direction | **fail** | \(\alpha\) in \(R\) is Door 3, still a criterion |
-| TJJ_energy_linear | **fail** | the closing shape is named, not proved |
+| TJJ_transport_vanishes | **pass** | Proposition TJJ-Trans |
+| TJJ_stretch_is_alpha | **pass** | Proposition TJJ-α |
+| TJJ_template | **pass** | §2 inequality; remainder not allowed |
+| TJJ_energy_visc_false | **pass** | energy-linear \(+\) viscosity is false |
+| TJJ_requested_line | **fail** | allowed \(R\) is not seated |
+| TJJ_forbidden_slots | **pass** | \(\dot Z_j\) and \(\Lambda'\) not used as a bound |
+| TJJ_direction | **fail** | \(\alpha\) is Door 3, still a criterion |
 | TJJ_chain | **pass** | HAVE / WRITE / THEN stay a chain |
 | TJJ_ns_solved | **fail** | class and \(\rho_j\) stay in the sentence |
 
