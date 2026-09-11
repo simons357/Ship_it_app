@@ -29,6 +29,7 @@ from axisym_shell import (  # noqa: E402
     shell_id,
     split_field,
 )
+from axisym_swirl_probe import compact_swirl, compact_swirl_meridional  # noqa: E402
 from estimate_audit import classify_paragraph  # noqa: E402
 from track_b_lemmas import rec  # noqa: E402
 
@@ -94,6 +95,64 @@ def local_block_identities(uh: np.ndarray, j: int) -> dict:
     }
 
 
+def enstrophy_bilinear(uh_a, uh_b, uh_test, kx, ky, kz, mask) -> float:
+    """⟨ω_a·∇u_b - u_a·∇ω_b, Δ_j ω_test⟩."""
+    wa = physical(curl(uh_a, kx, ky, kz))
+    ua = physical(uh_a)
+    du_b = _grads(uh_b, kx, ky, kz)
+    dw_b = _grads(curl(uh_b, kx, ky, kz), kx, ky, kz)
+    stretch = wa[0] * du_b[0] + wa[1] * du_b[1] + wa[2] * du_b[2]
+    trans = ua[0] * dw_b[0] + ua[1] * dw_b[1] + ua[2] * dw_b[2]
+    bh = np.stack([np.fft.fftn(stretch[c] - trans[c]) for c in range(3)], axis=0)
+    tes = curl(uh_test, kx, ky, kz) * mask
+    n = uh_test.shape[1]
+    return float(np.vdot(bh, tes).real) / (n**3)
+
+
+def split_mer_swirl_phys(u: np.ndarray, xc: np.ndarray, yc: np.ndarray):
+    r = np.sqrt(xc * xc + yc * yc + 1e-30)
+    u_th = (-yc * u[0] + xc * u[1]) / r
+    us = np.stack([u_th * (-yc / r), u_th * (xc / r), np.zeros_like(u_th)])
+    return u - us, us
+
+
+def grid_centered(n: int):
+    x = np.linspace(0.0, 2.0 * math.pi, n, endpoint=False)
+    X, Y, _Z = np.meshgrid(x, x, x, indexing="ij")
+    return X - math.pi, Y - math.pi
+
+
+def axisym_bilinear_split(uh: np.ndarray, j: int) -> dict:
+    n = uh.shape[1]
+    kx, ky, kz, k2, _safe, dealias = mesh(n)
+    uh = uh * dealias
+    shells = shell_id(k2)
+    _ir, loc, _uv = split_field(uh, shells, j)
+    mask = shells == j
+    xc, yc = grid_centered(n)
+    um, us = split_mer_swirl_phys(physical(loc), xc, yc)
+    uh_m = from_physical(um)
+    uh_s = from_physical(us)
+    t_mm = enstrophy_bilinear(uh_m, uh_m, uh, kx, ky, kz, mask)
+    t_ss = enstrophy_bilinear(uh_s, uh_s, uh, kx, ky, kz, mask)
+    t_ms = enstrophy_bilinear(uh_m, uh_s, uh, kx, ky, kz, mask)
+    t_sm = enstrophy_bilinear(uh_s, uh_m, uh, kx, ky, kz, mask)
+    t_sum = t_mm + t_ss + t_ms + t_sm
+    t_full = enstrophy_bilinear(loc, loc, uh, kx, ky, kz, mask)
+    scale = max(abs(t_full), abs(t_sum), 1e-30)
+    return {
+        "j": j,
+        "T_mm": t_mm,
+        "T_ss": t_ss,
+        "T_ms": t_ms,
+        "T_sm": t_sm,
+        "T_cross": t_ms + t_sm,
+        "T_sum": t_sum,
+        "T_full": t_full,
+        "split_rel": abs(t_full - t_sum) / scale,
+    }
+
+
 def vortex_blob(n: int, width: float) -> np.ndarray:
     x = np.linspace(-math.pi, math.pi, n, endpoint=False)
     X, Y, Z = np.meshgrid(x, x, x, indexing="ij")
@@ -142,7 +201,39 @@ def concentration_row(n: int, width: float) -> dict:
     return best or {"width": width, "ratio_D_EZ": 0.0, "ratio_EZ": 0.0}
 
 
-def lemmas(id_row: dict, page_ok: bool) -> list[dict]:
+def pick_live_shell(uh: np.ndarray) -> int:
+    n = uh.shape[1]
+    kx, ky, kz, k2, _safe, dealias = mesh(n)
+    uh = uh * dealias
+    shells = shell_id(k2)
+    wh = curl(uh, kx, ky, kz)
+    for j in sorted(int(j) for j in np.unique(shells) if j >= 0):
+        if energy(wh * (shells == j)) > 1e-12:
+            return j
+    return 2
+
+
+def axisym_split_report(n: int) -> dict:
+    uh_pure = from_physical(compact_swirl(n))
+    uh_mix = from_physical(compact_swirl_meridional(n, meridional=1.0))
+    j_pure = pick_live_shell(uh_pure)
+    j_mix = pick_live_shell(uh_mix)
+    pure = axisym_bilinear_split(uh_pure, j_pure)
+    mix = axisym_bilinear_split(uh_mix, j_mix)
+    # Also the global (all-shell) pairing size for pure swirl.
+    kx, ky, kz, k2, _safe, dealias = mesh(n)
+    uh_pure = uh_pure * dealias
+    mask_all = k2 > 0
+    t_pure_all = enstrophy_bilinear(uh_pure, uh_pure, uh_pure, kx, ky, kz, mask_all)
+    e_pure = energy(uh_pure)
+    return {
+        "pure": {**pure, "T_all": t_pure_all, "E": e_pure},
+        "mix": mix,
+        "pure_T_all_rel": abs(t_pure_all) / max(e_pure ** 1.5, 1e-30),
+    }
+
+
+def lemmas(id_row: dict, split_row: dict, page_ok: bool) -> list[dict]:
     return [
         rec(
             "TJJ_transport_vanishes",
@@ -163,10 +254,22 @@ def lemmas(id_row: dict, page_ok: bool) -> list[dict]:
             "False. λ^{3/2} concentration: T ~ λ^{9/2}, ενD+CEZ ~ λ^4. TJJ-ESTIMATE.md §4.",
         ),
         rec(
+            "TJJ_pure_swirl_vanishes",
+            "pure swirl nonlinear pairing vanishes",
+            "pass" if split_row["pure_T_all_rel"] < 1e-12 else "fail",
+            "u^r=u^z=0 ⇒ curl((u·∇)u) ⊥ ω. Identity, not a bound.",
+        ),
+        rec(
+            "TJJ_as_bilinear_split",
+            "local T = T_mm + T_ss + T_cross",
+            "pass" if split_row["mix"]["split_rel"] < 1e-8 else "fail",
+            "Bilinear split of the local block. Lattice check.",
+        ),
+        rec(
             "TJJ_requested_line",
             "|T_{j<-j}| ≤ εν D_j + R with allowed R",
             "fail",
-            "Commutators still carry ||u_loc||_∞ or ||∇u_loc||_∞. Chain stays a chain.",
+            "Centrifugal T_ss and commutators are not allowed R. Chain stays a chain.",
         ),
         rec(
             "TJJ_page_clean",
@@ -205,7 +308,8 @@ def run(n: int = 32, out: Path | None = None) -> dict:
     page_text = PAGE.read_text() if PAGE.exists() else ""
     page_cls = classify_paragraph(page_text)
     page_ok = page_cls["allowed_in_estimate"] and "cannot be written" in page_text.lower()
-    rows = lemmas(id_row, page_ok)
+    split_row = axisym_split_report(n)
+    rows = lemmas(id_row, split_row, page_ok)
     counts = {"pass": 0, "fail": 0, "open": 0}
     for item in rows:
         counts[item["verdict"]] += 1
@@ -218,6 +322,7 @@ def run(n: int = 32, out: Path | None = None) -> dict:
             "n": n,
         },
         "identities": id_row,
+        "axisym_split": split_row,
         "concentration": climb,
         "page_filter": page_cls,
         "lemmas": rows,
@@ -225,7 +330,8 @@ def run(n: int = 32, out: Path | None = None) -> dict:
         "domain_verdict": "open",
         "claim": (
             "Transport main term vanishes; stretch is α. "
-            "Energy+viscosity R is false. Allowed R is not written."
+            "Pure swirl pairing vanishes. Local T = T_mm+T_ss+T_cross. "
+            "T_mm is not small on mixed samples. Allowed R is not written."
         ),
     }
     if out is not None:

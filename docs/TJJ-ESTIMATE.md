@@ -183,7 +183,68 @@ fails on slow fat swirl
 
 ---
 
-## 4. Forbidden slots stay out
+## 4. Axisymmetric split — what sits, what failed
+
+Write \(u=u_{\mathrm{mer}}+u_{\mathrm{swirl}}\) about the axis.
+
+**Proposition TJJ-pure.** If \(u^r=u^z=0\), then
+\(\operatorname{curl}((u\cdot\nabla)u)\) is purely azimuthal
+and \(\omega\) is purely meridional, so
+\(\langle B(u),\omega\rangle=0\). In particular
+\(T_j=T_{j\leftarrow j}=0\).
+This is why the compact pure-swirl probe
+printed \(\rho_j\sim 0\). It is not a
+bound on a mixed field.
+
+**Proposition TJJ-AS-split.** On the local
+block the pairing is bilinear:
+\[
+T_{j\leftarrow j}
+=
+T^{\mathrm{mm}}+T^{\mathrm{ss}}+T^{\mathrm{cross}}.
+\]
+\(T^{\mathrm{ss}}\) is the centrifugal
+source (the \(1/r^4\) pairing of
+\(\partial_z(\Gamma^2)\) against
+\(\omega^\theta\)). \(T^{\mathrm{mm}}\)
+is meridional self-stretch. The split
+residual on the mixed blob is \(10^{-15}\).
+
+A tempting sentence: “no-swirl is
+regular, so only \(T^{\mathrm{ss}}\)
+remains.” That sentence is **false**
+as a measurement on this class.
+
+Compact swirl + meridional, \(n=24\),
+energy-carrying shells:
+
+| \(j\) | \(T^{\mathrm{mm}}\) | \(T^{\mathrm{ss}}\) | \(T^{\mathrm{cross}}\) | \(T_{j\leftarrow j}\) |
+|---|---|---|---|---|
+| 1 | \(8.15\times 10^3\) | \(-62\) | \(217\) | \(8.30\times 10^3\) |
+| 2 | \(-1.08\times 10^4\) | \(4.03\times 10^3\) | \(-142\) | \(-6.89\times 10^3\) |
+| 3 | \(-1.32\times 10^4\) | \(622\) | \(88\) | \(-1.25\times 10^4\) |
+
+\(T^{\mathrm{mm}}\) is the bulk.
+\(T^{\mathrm{ss}}\) is visible, not
+the remainder. The meridional piece of
+a *mixed* field is not a no-swirl
+solution; no-swirl regularity does not
+give
+\(\lvert T^{\mathrm{mm}}\rvert\le\varepsilon\nu D_j+C\mathcal E Z_j\).
+
+Tube / off-axis Hardy for
+\(T^{\mathrm{ss}}\) stays the swirl
+track already on disk
+([`UNAUGMENTED-R4-VORTICITY-PLAN.md`](UNAUGMENTED-R4-VORTICITY-PLAN.md)).
+Localized Hardy fails on slow fat
+swirl. It does not write the requested
+\(R\), and it would not have been
+enough anyway: \(T^{\mathrm{mm}}\) is
+still there.
+
+---
+
+## 5. Forbidden slots stay out
 
 AS-Id:
 \(T_j=\tfrac12\dot Z_j+\nu D_j\).
@@ -198,7 +259,7 @@ quoted.
 
 ---
 
-## 5. Verdict
+## 6. Verdict
 
 The request asked for one estimate
 whose \(R\) is only energy, \(Z\), and
@@ -206,6 +267,11 @@ maybe \(\alpha\).
 
 - Energy plus viscosity: **false**
   (Proposition TJJ-E-false).
+- Pure swirl: pairing vanishes. Not
+  the mixed class.
+- Centrifugal-only leftover: **false**
+  on the mixed samples. \(T^{\mathrm{mm}}\)
+  is the bulk.
 - Direction \(\alpha Z_j\): true for
   the main stretch, uncontrolled, and
   does not eat the commutators.
@@ -230,6 +296,9 @@ The chain stays a chain.
 | TJJ_stretch_is_alpha | **pass** | Proposition TJJ-α |
 | TJJ_template | **pass** | §2 inequality; remainder not allowed |
 | TJJ_energy_visc_false | **pass** | energy-linear \(+\) viscosity is false |
+| TJJ_pure_swirl_vanishes | **pass** | Proposition TJJ-pure |
+| TJJ_as_bilinear_split | **pass** | Proposition TJJ-AS-split |
+| TJJ_ss_is_the_remainder | **fail** | \(T^{\mathrm{mm}}\) is the bulk on mixed samples |
 | TJJ_requested_line | **fail** | allowed \(R\) is not seated |
 | TJJ_forbidden_slots | **pass** | \(\dot Z_j\) and \(\Lambda'\) not used as a bound |
 | TJJ_direction | **fail** | \(\alpha\) is Door 3, still a criterion |
