@@ -94,6 +94,12 @@ def lemmas() -> list[dict]:
             "Proposition AS-ω* in AXISYM-SHELL.md. Shift by a constant, not by Λ.",
         ),
         rec(
+            "EAud_tjj_young",
+            "|T_{j<-j}| ≤ εν D_j + R with R from energy, Z, maybe α",
+            "fail",
+            "Requested line not seated. TJJ-ESTIMATE.md. Chain stays a chain.",
+        ),
+        rec(
             "EAud_door1_closed",
             "Audit Door 1 shell budget is closed",
             "fail",

@@ -19,6 +19,13 @@ The estimate this filter wrote:
 [`AXISYM-SHELL.md`](AXISYM-SHELL.md).
 Identity and far-shell Young sit.
 Remainder \(T_{j\leftarrow j}\) is open.
+Requested Young line
+\(\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu D_j+R\)
+with \(R\) from energy, \(Z\), maybe
+\(\alpha\) — not \(\dot Z_j\), not
+\(\Lambda'\) — is not written. The
+chain stays a chain:
+[`TJJ-ESTIMATE.md`](TJJ-ESTIMATE.md).
 Class samples of that remainder:
 [`AXISYM-SWIRL-PROBE.md`](AXISYM-SWIRL-PROBE.md).
 
@@ -253,6 +260,7 @@ Not this estimate.
 | EAud_remainder_named | **pass** | \(T_{j\leftarrow j}\) is the named hole |
 | EAud_tau_seated | **pass** | Proposition AS-τ: rewrite, not a bound |
 | EAud_omega_star_seated | **pass** | Proposition AS-ω\*: constant shift, not \(\Lambda\) |
+| EAud_tjj_young | **fail** | requested \(\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu D_j+R\) with allowed \(R\) is not seated |
 | EAud_door1_closed | **fail** | shell budget remainder is open |
 | EAud_door3_closed | **fail** | \(\alpha\) is a criterion to test, not a bound |
 | EAud_discard_in_claim | **fail** | discard list does not enter the claim |
@@ -263,6 +271,9 @@ The axisymmetric shell estimate is
 Estimate: [`AXISYM-SHELL.md`](AXISYM-SHELL.md).
 Identity and far-shell Young sit.
 The remainder does not.
+The requested Young line is not written:
+[`TJJ-ESTIMATE.md`](TJJ-ESTIMATE.md).
+The chain stays a chain.
 
 Do not start H1 from this page.
 Do not cash a cube family or

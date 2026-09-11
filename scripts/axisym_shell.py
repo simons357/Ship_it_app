@@ -334,6 +334,12 @@ def lemmas(payload_fields: list[dict], tau_row: dict, page_ok: bool) -> list[dic
             "Named remainder. Samples print a ratio; that is not [ρ].",
         ),
         rec(
+            "AS_tjj_young",
+            "|T_{j<-j}| ≤ εν D_j + R with allowed R",
+            "fail",
+            "Requested Young line not written. TJJ-ESTIMATE.md. Chain stays a chain.",
+        ),
+        rec(
             "AS_rho",
             "[ρ] holds for axisymmetric-with-swirl NS",
             "fail",
