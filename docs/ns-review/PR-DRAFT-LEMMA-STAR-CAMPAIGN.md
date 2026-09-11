@@ -3,7 +3,7 @@
 **Branch:** `cursor/lemma-star-campaign-paper-0cc5` → `main`  
 **Suggested title:** Lemma★ wife-test visual paper: max pictures, CRNA Savannah, door locked  
 **Draft:** yes  
-**PR:** https://github.com/JRSimons-tech/harmonic-blueprint/pull/63 (update in place if already open)
+**PR:** https://github.com/simons357/Ship_it_app/pull/63 (draft; update in place)
 
 > Paste / refresh GitHub PR body if auto-PR / ManagePullRequest is unavailable (`gh` createPullRequest denied for this token).
 
