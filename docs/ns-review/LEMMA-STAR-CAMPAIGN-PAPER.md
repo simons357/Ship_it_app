@@ -285,6 +285,7 @@ No dunking on labs, models, or institutions — including OpenAI. The standard h
 
 ## Companion posts
 
+- **Fundamentals (what / where / how / invariance):** [`LEMMA-STAR-WHAT-IS-IT.md`](https://github.com/simons357/Ship_it_app/blob/cursor/lemma-star-fundamentals-0cc5/docs/ns-review/LEMMA-STAR-WHAT-IS-IT.md) (branch `cursor/lemma-star-fundamentals-0cc5`)
 - Paste-ready X thread: [`LEMMA-STAR-X-THREAD.md`](./LEMMA-STAR-X-THREAD.md)
 - Explain to someone you love: [`EXPLAIN-TO-SOMEONE-YOU-LOVE.md`](./EXPLAIN-TO-SOMEONE-YOU-LOVE.md)
 - Short outline: [`LEMMA-STAR-FOR-X.md`](./LEMMA-STAR-FOR-X.md)
