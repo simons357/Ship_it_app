@@ -9,6 +9,7 @@
 | **Companion** | Lemma★ / DA-NS-1 = Millennium packaging (locked); NS-only, no SFE glue |
 | **Audience** | Jonathan R. Simons |
 | **Honesty lock** | Lemma★ **not proved**; PRODUCT-BLOCK / HH→L gap open; numeric survive ≠ proof; **NS NOT SOLVED** |
+| **USER LOCK card** | [`../ns-review/LEMMA-STAR-LOCK.md`](../ns-review/LEMMA-STAR-LOCK.md) — Millennium packaging + five-lane outcome |
 
 ---
 
@@ -62,7 +63,8 @@ Deep dive: [`SHAPE-TEXTURE-ONTOLOGY.md`](./SHAPE-TEXTURE-ONTOLOGY.md) · Ops pla
 | `docs/domain-architect/THEORY-SPLICER-PACKAGE.md` | **This file** — whole-package entry |
 | `docs/domain-architect/THEORY-SPLICER-PLAYBOOK.md` | CRISPR ops walkthrough (NS then RH) |
 | `docs/domain-architect/SHAPE-TEXTURE-ONTOLOGY.md` | Shape / texture ontology |
-| `docs/ns-review/LEMMA-STAR-DA-NS-1.md` | Lemma★ Millennium packaging, PRODUCT-BLOCK / HH→L, five-lane sync → PR #48 |
+| `docs/ns-review/LEMMA-STAR-LOCK.md` | **USER LOCK** short card — Lemma★ = Millennium packaging; drill outcome; PR #48 |
+| `docs/ns-review/LEMMA-STAR-DA-NS-1.md` | Lemma★ full packaging, PRODUCT-BLOCK / HH→L, five-lane sync → PR #48 |
 
 ### Demos & tests
 

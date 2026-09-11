@@ -3,9 +3,11 @@
 **Audience:** Jonathan R. Simons  
 **Status:** HYPOTHESIS (not proved) — **NS NOT SOLVED**  
 **Tooling:** `python3 -m domain_architect --lemma-star`  
+**USER LOCK (short):** [`LEMMA-STAR-LOCK.md`](./LEMMA-STAR-LOCK.md) — authoritative framing  
 **Companion:** [`DA-GAP-CLOSURE-PLAYBOOK.md`](./DA-GAP-CLOSURE-PLAYBOOK.md), [`THEOREM-H-ATTACK-PLAN.md`](./THEOREM-H-ATTACK-PLAN.md)  
 **Five-lane drill:** [PR #48](https://github.com/simons357/Ship_it_app/pull/48) · branch `cursor/ns-five-lane-lemma-star-1390` · SoT on that branch: `docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md`  
-**DA recovery mirror:** [PR #55](https://github.com/simons357/Ship_it_app/pull/55) · `docs/ns-review/five-lane-recovery/`
+**DA recovery mirror:** [PR #55](https://github.com/simons357/Ship_it_app/pull/55) · `docs/ns-review/five-lane-recovery/`  
+**Package:** [`../domain-architect/THEORY-SPLICER-PACKAGE.md`](../domain-architect/THEORY-SPLICER-PACKAGE.md) · PRs [#40](https://github.com/simons357/Ship_it_app/pull/40) / [#49](https://github.com/simons357/Ship_it_app/pull/49)
 
 **Rule of this document:** Broken at PRODUCT-BLOCK / Agmon-product gap → close by …  
 Proving Lemma★ ≡ Clay B in this packaging. DA will **not** green it without PRODUCT-BLOCK.  
@@ -15,7 +17,7 @@ Proving Lemma★ ≡ Clay B in this packaging. DA will **not** green it without 
 
 ## LOCKED — USER LOCK (Jonathan)
 
-Treat as settled. Do not re-litigate.
+Short lock card: [`LEMMA-STAR-LOCK.md`](./LEMMA-STAR-LOCK.md). Treat as settled. Do not re-litigate.
 
 Lemma★ is **not** a side lemma. In this packaging it **is** the Millennium problem:
 
