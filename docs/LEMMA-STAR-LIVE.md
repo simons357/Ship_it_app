@@ -77,8 +77,11 @@ Do not invent it.
   on one field definition, plus a fixed-\(\lambda\)
   resolution study. Clue only. Do not stop
   patching ★ from more finite rows.
-- H1 on the cylinder — named, not started.
+- H1 on the cylinder — started on shape 3
+  (predictive CF ODE; fold/sheet/gap).
+  Alignment frozen. Not a theorem.
   Do not start it from ABC screenshots.
+  [`H1-PREDICTIVE.md`](H1-PREDICTIVE.md).
 
 ---
 

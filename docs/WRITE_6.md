@@ -30,6 +30,7 @@ Shapes as estimates (not proved): [`H1-SHAPES.md`](H1-SHAPES.md).
 P1 low-pass Biot–Savart (sits; not this write): [`H1-P1.md`](H1-P1.md).
 P1-loc cutoff (sits, \(\nabla u\) kept; not this write): [`H1-P1-LOC.md`](H1-P1-LOC.md).
 Path-cost of one pair (sits as 1-D; not this write): [`H1-PC.md`](H1-PC.md).
+Shape 3 predictive (started; not this write): [`H1-PREDICTIVE.md`](H1-PREDICTIVE.md).
 Dream-team read (they would sign the map, not (6)): [`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
 Where it is: [`WHERE-H1.md`](WHERE-H1.md).
 Glossary: [`H-SYSTEM.md`](H-SYSTEM.md).

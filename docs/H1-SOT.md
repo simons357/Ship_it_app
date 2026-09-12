@@ -177,7 +177,11 @@ candidate. Lattice enumerator still on the
 ## Status
 
 Packet attacks on \(\mathcal R_\star\): negatives, written.
-H1: opened. Lemma P1 sits on the low-pass
+H1: opened. Shape 3 predictive CF ODE
+(fold/sheet/gap; not ABC_λ): alignment
+frozen on \(4\tau\). Not a theorem.
+[`H1-PREDICTIVE.md`](H1-PREDICTIVE.md).
+Lemma P1 sits on the low-pass
 class ([`H1-P1.md`](H1-P1.md)); it is not H1.
 P1-loc cutoff sits ([`H1-P1-LOC.md`](H1-P1-LOC.md));
 dropping \(\nabla u\) does not.

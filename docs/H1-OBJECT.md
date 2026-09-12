@@ -46,6 +46,8 @@ CS-summable volume thinness stays the \(E^{3/2}\) class, not H1.
 P1 low-pass Biot–Savart sits on a stated class, not on NSE leftover fields: [`H1-P1.md`](H1-P1.md).
 P1-loc cutoff sits, with \(\nabla u\) kept; dropping \(\nabla u\) does not: [`H1-P1-LOC.md`](H1-P1-LOC.md).
 Path-cost of one Bad pair sits as a 1-D bound, not as H1: [`H1-PC.md`](H1-PC.md).
+Shape 3 predictive CF ODE (fold/sheet/gap; not ABC_λ):
+alignment frozen on \(4\tau\). Not H1. [`H1-PREDICTIVE.md`](H1-PREDICTIVE.md).
 Lookups: all miss. [`LOOKUP-H1.md`](LOOKUP-H1.md).
 
 Do not cash “assume thin” as 1 (that is Lemma C). Do not cash Lemma J on generic fields as 2. Do not cash an imposed waiting time as 3.

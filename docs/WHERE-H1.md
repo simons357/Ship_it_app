@@ -62,6 +62,7 @@ Literature lookup: all miss. H1 is not under another name. [`LOOKUP-H1.md`](LOOK
 | Fluids **H** | Global parent stretching. Not this cylinder request. |
 | Theorem A’s Sobolev \(H^1\) | Augmented track. A is not B. |
 | ABC_λ table | Untested. Named only. Do not start H1 from that screenshot. |
+| Predictive CF ODE | Shape 3 test. Alignment frozen. Not WRITE (6). [`H1-PREDICTIVE.md`](H1-PREDICTIVE.md). |
 | Ring Lemma | REPAIR. Do not quote as proved. |
 | P1-lowpass | Sitting cousin on a class. Not WRITE (6). |
 | P1-loc cutoff | Sitting cutoff, \(\nabla u\) kept. Not WRITE (6). |

@@ -14,6 +14,9 @@ docs/TJJ-ESTIMATE.md
 Two live writes (9D growing full-complex
 pol; ★ reason not written):
 docs/LEMMA-STAR-LIVE.md
+H1 shape 3 predictive (started; not a
+theorem; not ABC_λ):
+docs/H1-PREDICTIVE.md
 9B growing-s linear-pol samples (scored;
 finite max is not C0):
 docs/LEMMA-STAR-9B-GROWING.md

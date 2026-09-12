@@ -130,6 +130,11 @@ enstrophy does not produce \(\int|\nabla\omega|^2\).
 
 **Lookup 3.** Miss.
 
+Predictive CF two-blob ODE (not NSE, not ABC_λ):
+holder stays put on \(4\rho^2/\nu\) for fold, sheet,
+and gap. Alignment does not heal. Shape 3 is not
+seated by that ODE. [`H1-PREDICTIVE.md`](H1-PREDICTIVE.md).
+
 ---
 
 ## Lookups (scored)

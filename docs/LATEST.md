@@ -141,6 +141,9 @@ I ≪ m^{4/3}. Lattice transfer X1–X4/X6
 MISSING. Next: Hyp-Lat★. Not a theorem.
 H1 on one cylinder is the other
 live writing (docs/H1-SOT.md). Bound open.
+Shape 3 predictive (not ABC_λ; alignment
+frozen; not a theorem):
+docs/H1-PREDICTIVE.md
 docs/LEMMA-STAR-PACKET.md
 Attack 6: uniform pre-Young C dead
 (|R_pre| ~ s). That is not ★ dying.
