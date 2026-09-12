@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#05070a">
+<title>About / Credits — AI Surgeon</title>
+<style>
+  :root{
+    --bg:#05070a; --panel:#0b1016; --steel:#c8d3dd; --steel-dim:#7d8996;
+    --cyan:#3fd0e8; --cyan-dim:#1d6f80; --gold:#d4af37; --line:#1c2731;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--steel);
+    font-family:ui-sans-serif,-apple-system,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+    font-size:14px;letter-spacing:.01em;
+    padding:calc(env(safe-area-inset-top) + 26px) 18px calc(env(safe-area-inset-bottom) + 40px);
+    max-width:640px;margin:0 auto}
+  .chrome{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+  .chrome img{width:36px;height:36px;object-fit:contain;background:#000;border-radius:50%;
+    border:1px solid var(--line);flex:0 0 auto}
+  .kicker{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--cyan)}
+  h1{font-size:26px;font-weight:600;color:#eef4f8;letter-spacing:-.015em;line-height:1.15}
+  .wordmark{display:block;width:100%;max-width:520px;margin:18px 0 8px;background:#000;
+    border:1px solid var(--line);border-radius:6px}
+  .lock{margin-top:10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold);line-height:1.7}
+  .lock span{display:block;color:var(--cyan);letter-spacing:.2em;font-size:10px}
+  p{margin-top:12px;font-size:13px;line-height:1.6;color:var(--steel-dim);max-width:36em}
+  .voices{position:relative;margin-top:16px;padding:14px 15px;border:1px solid var(--line);
+    border-radius:5px;overflow:hidden;background:#07090c}
+  .voices::before{content:"";position:absolute;inset:-50% -30% auto -30%;height:180px;pointer-events:none;
+    background:radial-gradient(ellipse at 50% 0%,rgba(63,208,232,.18),transparent 70%),
+               radial-gradient(ellipse at 20% 40%,rgba(212,175,55,.07),transparent 50%)}
+  .voices p{position:relative;margin-top:0}
+  .voices p + p{margin-top:10px}
+  .voices b{display:block;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:6px;font-weight:500}
+  .voices p.mine b{color:var(--cyan)}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:14px 15px;margin-top:16px}
+  .panel b{display:block;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--steel);margin-bottom:8px;font-weight:500}
+  a{color:var(--cyan);text-decoration:none}
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);
+    font-size:10.5px;line-height:1.7;color:#57626d}
+</style>
+</head>
+<body>
+  <div class="chrome">
+    <img src="art/cg-reticle-logo.png" width="36" height="36" alt="Chronogate CG reticle, cyan C and gold G">
+    <div>
+      <div class="kicker">About / Credits</div>
+      <h1>AI Surgeon</h1>
+    </div>
+  </div>
+
+  <img class="wordmark" src="art/chronogate-wordmark.png" width="520" height="auto"
+       alt="Chronogate wordmark: CG, CHRONOGATE, The Field Journal, Prime Field Technologies">
+
+  <p class="lock">
+    Chronogate
+    <span>The Field Journal</span>
+    <span>Prime Field Technologies</span>
+  </p>
+
+  <p>AI Surgeon is the game. Chronogate is the house that publishes it. Prime Field Technologies
+  is the studio name on the same lock. The Field Journal is the desk. The CG reticle — cyan C,
+  gold G — sits small in the chrome. It is not a second product.</p>
+
+  <div class="voices" id="two-voices">
+    <p class="mine" id="medical-big-picture"><b>Medical big picture · theirs</b>
+      Identify before you cut. The Pen is the one instrument — knife, clamp, retractor.
+      Cases, physiology, trauma, anaesthesia, coherence — death-enabled from trauma onward.
+      This is what the playable product is.
+      <a href="docs/THEIRS-medical-big-picture.md">THEIRS</a> ·
+      <a href="docs/THE-PEN.md">The Pen</a>.</p>
+    <p class="lake" id="harrisons-lake"><b>Harrison’s · Lady of the Lake</b>
+      Mythic authority that gives the sword from the water. Lake and mist are atmosphere here,
+      not a fantasy reskin of the OR. No Harrison’s quotations are invented here.
+      <a href="docs/HARRISONS-arthurian-lady-of-the-lake.md">Harrison’s</a>.</p>
+  </div>
+
+  <div class="panel">
+    <b>Gift manga</b>
+    <a href="manga/">黒塔と湖</a> is a twelve-chapter manga for a daughter and a son.
+    Japanese characters. Same storyline as the writer’s story; sparse places filled.
+    Good conquers evil. The last line is a residue of love. Kids episode bible and
+    ~90 min script live with the pages (not a finished TV file). You are loved.
+    It is not a training case and not a medical device.
+  </div>
+
+  <div class="panel">
+    <b>Credit</b>
+    Clinical content, case ladder, and design: Jonathan Simons, CRNA, Simons Medical Innovations, LLC.
+    Named papers stay with the publishers listed in <a href="docs/CITATIONS.md">CITATIONS</a>.
+    The 2025 investor bible lives at
+    <a href="docs/bible/AI-Surgeon-Final-With-Citations.txt">docs/bible/AI-Surgeon-Final-With-Citations.txt</a>.
+  </div>
+
+  <div class="panel">
+    <b>What this is not</b>
+    Not a cleared medical device. Not FDA/510(k)/CE-mark language. Not a clinical reference.
+    Not a substitute for supervised surgical training. Not ChatVault, not Domain Architect,
+    not RH, not NS. No footage was invented for the field-demo slot.
+  </div>
+
+  <p><a href="index.html">← Residency hub</a></p>
+
+  <footer>
+    Phone first. Same modules, same score ledger, same anatomy.
+    Serve on port 8770 — <code>python3 -m ai_surgeon</code>.
+  </footer>
+</body>
+</html>

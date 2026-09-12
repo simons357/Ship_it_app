@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#0A1218"/><stop offset="1" stop-color="#060A0D"/>
+  </linearGradient>
+  <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#2A1418"/><stop offset="1" stop-color="#140A0C"/>
+  </linearGradient>
+  <radialGradient id="lamp" cx="0.5" cy="0.32" r="0.62">
+    <stop offset="0" stop-color="#3D2126" stop-opacity="0.95"/>
+    <stop offset="1" stop-color="#0E0709" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="tissue1" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#B4736A"/><stop offset="1" stop-color="#7E4A46"/>
+  </linearGradient>
+  <linearGradient id="tissue2" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#C98F80"/><stop offset="1" stop-color="#8E5A50"/>
+  </linearGradient>
+  <linearGradient id="fat" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#D9B776"/><stop offset="1" stop-color="#9B7C46"/>
+  </linearGradient>
+  <linearGradient id="drape" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#1E4750"/><stop offset="1" stop-color="#123037"/>
+  </linearGradient>
+</defs>
+<rect width="390" height="844" rx="0" fill="url(#bg)"/>
+<text x="22" y="26" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#E9EFF1">9:41</text>
+<g fill="#E9EFF1"><rect x="330" y="18" width="3" height="7" rx="1"/><rect x="336" y="15" width="3" height="10" rx="1"/>
+<rect x="342" y="12" width="3" height="13" rx="1"/><rect x="350" y="14" width="16" height="9" rx="2.5" opacity="0.5"/>
+<rect x="352" y="16" width="10" height="5" rx="1"/></g>
+
+<path d="M22 62 l-8 8 l8 8" stroke="#7C9299" stroke-width="2" fill="none" stroke-linecap="round"/>
+<text x="40" y="66" font-family="DejaVu Sans" font-size="9" font-weight="bold" fill="#31B9A4" letter-spacing="1.4">TRAUMA MODE &#183; CASE 07</text>
+<text x="40" y="80" font-family="DejaVu Sans" font-size="12.5" font-weight="bold" fill="#E9EFF1">Tension pneumothorax</text>
+<text x="368" y="68" text-anchor="end" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#E9EFF1">590</text>
+<text x="368" y="80" text-anchor="end" font-family="DejaVu Sans" font-size="8" fill="#546A72" letter-spacing="0.8">POINTS</text>
+<text x="22" y="99" font-family="DejaVu Sans" font-size="8" fill="#546A72" letter-spacing="0.8">COHERENCE</text>
+<rect x="86" y="92" width="96" height="4" rx="2" fill="#22333D"/>
+<rect x="86" y="92" width="42" height="4" rx="2" fill="#DFA33C"/>
+<text x="190" y="99" font-family="DejaVu Sans" font-size="8" font-weight="bold" fill="#DFA33C">44</text>
+<line x1="0" y1="112" x2="390" y2="112" stroke="#22333D" stroke-width="1"/>
+<rect x="22" y="126" width="122" height="26" rx="13" fill="#2A1518" stroke="#D2454D" stroke-width="1.2" opacity="1"/><text x="83" y="144" font-family="DejaVu Sans" font-size="9.5" fill="#D2454D" font-weight="bold" text-anchor="middle" letter-spacing="0">ACUITY  ×2.5</text><rect x="152" y="126" width="216" height="26" rx="13" fill="#241A10" stroke="#DFA33C" stroke-width="1" opacity="1"/><text x="260" y="144" font-family="DejaVu Sans" font-size="9" fill="#DFA33C" font-weight="bold" text-anchor="middle" letter-spacing="0">PATIENT DEATH ENABLED</text><rect x="22" y="164" width="346" height="158" rx="14" fill="#04090C" stroke="#22333D" stroke-width="1" opacity="1"/><text x="38" y="186" font-family="DejaVu Sans" font-size="8.5" fill="#31B9A4" font-weight="bold" text-anchor="start" letter-spacing="1.2">ECG  II</text><path d="M38 250 L45 250 L47 244 L49 262 L51 226 L54 258 L57 250 L64 250 L79 250 L81 244 L83 262 L85 226 L88 258 L91 250 L98 250 L113 250 L115 244 L117 262 L119 226 L122 258 L125 250 L132 250 L147 250 L149 244 L151 262 L153 226 L156 258 L159 250 L166 250 L181 250 L183 244 L185 262 L187 226 L190 258 L193 250 L200 250 L215 250 L217 244 L219 262 L221 226 L224 258 L227 250 L234 250 L249 250 L251 244 L253 262 L255 226 L258 258 L261 250 L268 250 L283 250 L285 244 L287 262 L289 226 L292 258 L295 250 L302 250 L317 250 L319 244 L321 262 L323 226 L326 258 L329 250 L336 250 L351 250 L353 244 L355 262 L357 226 L360 258 L363 250 L370 250" stroke="#31B9A4" stroke-width="1.7" fill="none" opacity="0.95"/><line x1="38" y1="204" x2="352" y2="204" stroke="#22333D" stroke-width="0.6"/><text x="60" y="292" font-family="DejaVu Sans" font-size="8.5" fill="#546A72" font-weight="bold" text-anchor="middle" letter-spacing="1">HR</text><text x="60" y="312" font-family="DejaVu Sans" font-size="18" fill="#D2454D" font-weight="bold" text-anchor="middle" letter-spacing="0">138</text><text x="150" y="292" font-family="DejaVu Sans" font-size="8.5" fill="#546A72" font-weight="bold" text-anchor="middle" letter-spacing="1">BP</text><text x="150" y="312" font-family="DejaVu Sans" font-size="18" fill="#D2454D" font-weight="bold" text-anchor="middle" letter-spacing="0">72/44</text><text x="250" y="292" font-family="DejaVu Sans" font-size="8.5" fill="#546A72" font-weight="bold" text-anchor="middle" letter-spacing="1">SpO2</text><text x="250" y="312" font-family="DejaVu Sans" font-size="18" fill="#D2454D" font-weight="bold" text-anchor="middle" letter-spacing="0">81</text><rect x="22" y="334" width="346" height="76" rx="14" fill="#111C23" stroke="#1B6A5F" stroke-width="1.2" opacity="1"/><g transform="translate(38,346) scale(0.6)">
+  <path d="M0 30 L0 10 L7 0 L25 0 L32 10 L32 30 Z" fill="#1C2B33" stroke="#22333D" stroke-width="1"/>
+  <path d="M4 12 L28 12 L26 20 L6 20 Z" fill="#080D11"/>
+  <rect x="7" y="14.5" width="7" height="2.6" rx="1.3" fill="#31B9A4"/>
+  <rect x="18" y="14.5" width="7" height="2.6" rx="1.3" fill="#31B9A4"/>
+  <path d="M16 22 L16 27" stroke="#22333D" stroke-width="1"/>
+  <path d="M-5 30 L37 30 L34 44 L-2 44 Z" fill="#16232A" stroke="#22333D" stroke-width="1"/>
+  <path d="M16 32 L16 44" stroke="#22333D" stroke-width="0.8"/>
+</g><text x="66" y="360" font-family="DejaVu Sans" font-size="8" fill="#31B9A4" font-weight="bold" text-anchor="start" letter-spacing="1.4">ANAESTHESIA</text><text x="66" y="378" font-family="DejaVu Sans" font-size="10" fill="#E9EFF1" font-weight="normal" text-anchor="start" letter-spacing="0">Pressure is falling and I cannot ventilate</text><text x="66" y="392" font-family="DejaVu Sans" font-size="10" fill="#E9EFF1" font-weight="normal" text-anchor="start" letter-spacing="0">him. This is obstructive, not</text><text x="66" y="406" font-family="DejaVu Sans" font-size="10" fill="#E9EFF1" font-weight="normal" text-anchor="start" letter-spacing="0">hypovolaemic. Move.</text><rect x="22" y="424" width="346" height="58" rx="14" fill="#2A1518" stroke="#D2454D" stroke-width="1.5" opacity="1"/><text x="38" y="446" font-family="DejaVu Sans" font-size="8.5" fill="#D2454D" font-weight="bold" text-anchor="start" letter-spacing="1">TIME TO DECOMPRESSION</text><text x="38" y="468" font-family="DejaVu Sans" font-size="11" fill="#E9EFF1" font-weight="bold" text-anchor="start" letter-spacing="0">Arrest at current trajectory</text><rect x="258" y="434" width="94" height="32" rx="16" fill="#3A1B20" stroke="#D2454D" stroke-width="1.2" opacity="1"/><text x="305" y="455" font-family="DejaVu Sans" font-size="15" fill="#D2454D" font-weight="bold" text-anchor="middle" letter-spacing="0">00:41</text><rect x="22" y="498" width="346" height="46" rx="12" fill="#17242C" stroke="#22333D" stroke-width="1" opacity="1"/><text x="38" y="520" font-family="DejaVu Sans" font-size="10.5" fill="#E9EFF1" font-weight="bold" text-anchor="start" letter-spacing="0">Needle decompression, 2nd ICS</text><text x="38" y="534" font-family="DejaVu Sans" font-size="8.5" fill="#7C9299" font-weight="normal" text-anchor="start" letter-spacing="0">buys time, does not fix it</text><rect x="22" y="551" width="346" height="46" rx="12" fill="#17242C" stroke="#22333D" stroke-width="1" opacity="1"/><text x="38" y="573" font-family="DejaVu Sans" font-size="10.5" fill="#E9EFF1" font-weight="bold" text-anchor="start" letter-spacing="0">Tube thoracostomy, 5th ICS</text><text x="38" y="587" font-family="DejaVu Sans" font-size="8.5" fill="#7C9299" font-weight="normal" text-anchor="start" letter-spacing="0">definitive</text><rect x="22" y="604" width="346" height="46" rx="12" fill="#17242C" stroke="#22333D" stroke-width="1" opacity="1"/><text x="38" y="626" font-family="DejaVu Sans" font-size="10.5" fill="#E9EFF1" font-weight="bold" text-anchor="start" letter-spacing="0">Fluid bolus</text><text x="38" y="640" font-family="DejaVu Sans" font-size="8.5" fill="#7C9299" font-weight="normal" text-anchor="start" letter-spacing="0">wrong physiology</text><rect x="22" y="664" width="346" height="84" rx="14" fill="#101A20" stroke="#22333D" stroke-width="1" opacity="1"/><text x="40" y="688" font-family="DejaVu Sans" font-size="8.5" fill="#DFA33C" font-weight="bold" text-anchor="start" letter-spacing="0.9">COHERENCE IS RUNNING THE CLOCK</text><text x="40" y="708" font-family="DejaVu Sans" font-size="9.5" fill="#C3D2D7" font-weight="normal" text-anchor="start" letter-spacing="0">You are ahead of this module, so the</text><text x="40" y="722" font-family="DejaVu Sans" font-size="9.5" fill="#C3D2D7" font-weight="normal" text-anchor="start" letter-spacing="0">deterioration model is running faster than</text><text x="40" y="736" font-family="DejaVu Sans" font-size="9.5" fill="#C3D2D7" font-weight="normal" text-anchor="start" letter-spacing="0">baseline.</text><text x="195" y="786" font-family="DejaVu Sans" font-size="9.5" fill="#546A72" font-weight="normal" text-anchor="middle" letter-spacing="0">Errors first. Time only breaks ties.</text></svg>

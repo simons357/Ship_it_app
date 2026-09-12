@@ -1,0 +1,18 @@
+AI Surgeon — Warrior Surgeon dump manifest
+Not ChatVault / Domain Architect / RH. Not a medical device.
+
+Both uploads on 28 Aug 2026 are the same file:
+
+  Warrior_Surgeon__a2aa.docx     md5 08bca7fbdf5ed9f27da7bdf13e80ddc3
+  Warrior_Surgeon__2_e010.docx   md5 08bca7fbdf5ed9f27da7bdf13e80ddc3
+
+sha256 7bf441eac94c016f2fcffeacc276375b48acc65212c960087f6fb89d1753824f
+bytes  68604
+
+They were treated as one blob. IDENTICAL bytes. Split by voice (not by filename):
+
+  THEIRS     = medical big picture  → ../THEIRS-medical-big-picture.md
+  HARRISON'S = Arthurian Lady of the Lake → ../HARRISONS-arthurian-lady-of-the-lake.md
+
+Full extract of the identical blob: Warrior-Surgeon.extracted.txt
+Canonical copy of the .docx: Warrior_Surgeon.docx

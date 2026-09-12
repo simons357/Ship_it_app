@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#0A1218"/><stop offset="1" stop-color="#060A0D"/>
+  </linearGradient>
+  <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#2A1418"/><stop offset="1" stop-color="#140A0C"/>
+  </linearGradient>
+  <radialGradient id="lamp" cx="0.5" cy="0.32" r="0.62">
+    <stop offset="0" stop-color="#3D2126" stop-opacity="0.95"/>
+    <stop offset="1" stop-color="#0E0709" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="tissue1" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#B4736A"/><stop offset="1" stop-color="#7E4A46"/>
+  </linearGradient>
+  <linearGradient id="tissue2" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#C98F80"/><stop offset="1" stop-color="#8E5A50"/>
+  </linearGradient>
+  <linearGradient id="fat" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#D9B776"/><stop offset="1" stop-color="#9B7C46"/>
+  </linearGradient>
+  <linearGradient id="drape" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#1E4750"/><stop offset="1" stop-color="#123037"/>
+  </linearGradient>
+</defs>
+<rect width="390" height="844" rx="0" fill="url(#bg)"/>
+<text x="22" y="26" font-family="DejaVu Sans" font-size="11" font-weight="bold" fill="#E9EFF1">9:41</text>
+<g fill="#E9EFF1"><rect x="330" y="18" width="3" height="7" rx="1"/><rect x="336" y="15" width="3" height="10" rx="1"/>
+<rect x="342" y="12" width="3" height="13" rx="1"/><rect x="350" y="14" width="16" height="9" rx="2.5" opacity="0.5"/>
+<rect x="352" y="16" width="10" height="5" rx="1"/></g>
+
+<path d="M22 62 l-8 8 l8 8" stroke="#7C9299" stroke-width="2" fill="none" stroke-linecap="round"/>
+<text x="40" y="66" font-family="DejaVu Sans" font-size="9" font-weight="bold" fill="#31B9A4" letter-spacing="1.4">PHASE 3 OF 4 &#183; DO ONE</text>
+<text x="40" y="80" font-family="DejaVu Sans" font-size="12.5" font-weight="bold" fill="#E9EFF1">Call for the instrument</text>
+<text x="368" y="68" text-anchor="end" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#E9EFF1">335</text>
+<text x="368" y="80" text-anchor="end" font-family="DejaVu Sans" font-size="8" fill="#546A72" letter-spacing="0.8">POINTS</text>
+<text x="22" y="99" font-family="DejaVu Sans" font-size="8" fill="#546A72" letter-spacing="0.8">COHERENCE</text>
+<rect x="86" y="92" width="96" height="4" rx="2" fill="#22333D"/>
+<rect x="86" y="92" width="78" height="4" rx="2" fill="#31B9A4"/>
+<text x="190" y="99" font-family="DejaVu Sans" font-size="8" font-weight="bold" fill="#31B9A4">81</text>
+<line x1="0" y1="112" x2="390" y2="112" stroke="#22333D" stroke-width="1"/>
+<rect x="22" y="130" width="346" height="74" rx="14" fill="#111C23" stroke="#31B9A4" stroke-width="1.5" opacity="1"/><g transform="translate(38,142) scale(0.62)">
+  <path d="M0 30 L0 10 L7 0 L25 0 L32 10 L32 30 Z" fill="#1C2B33" stroke="#22333D" stroke-width="1"/>
+  <path d="M4 12 L28 12 L26 20 L6 20 Z" fill="#080D11"/>
+  <rect x="7" y="14.5" width="7" height="2.6" rx="1.3" fill="#31B9A4"/>
+  <rect x="18" y="14.5" width="7" height="2.6" rx="1.3" fill="#31B9A4"/>
+  <path d="M16 22 L16 27" stroke="#22333D" stroke-width="1"/>
+  <path d="M-5 30 L37 30 L34 44 L-2 44 Z" fill="#16232A" stroke="#22333D" stroke-width="1"/>
+  <path d="M16 32 L16 44" stroke="#22333D" stroke-width="0.8"/>
+</g><text x="68" y="156" font-family="DejaVu Sans" font-size="8" fill="#31B9A4" font-weight="bold" text-anchor="start" letter-spacing="1.4">AI ATTENDING</text><text x="68" y="176" font-family="DejaVu Sans" font-size="11.5" fill="#E9EFF1" font-weight="bold" text-anchor="start" letter-spacing="0">“Open the peritoneum between two of</text><text x="68" y="192" font-family="DejaVu Sans" font-size="11.5" fill="#E9EFF1" font-weight="bold" text-anchor="start" letter-spacing="0">these. Ask the scrub. By name.”</text><text x="22" y="228" font-family="DejaVu Sans" font-size="8.5" fill="#546A72" font-weight="bold" text-anchor="start" letter-spacing="1.2">STERILE BACK TABLE</text><text x="368" y="228" font-family="DejaVu Sans" font-size="8.5" fill="#546A72" font-weight="normal" text-anchor="end" letter-spacing="0">you have no instruments until you ask</text><rect x="22" y="240" width="346" height="300" rx="14" fill="#0D171C" stroke="#22333D" stroke-width="1" opacity="1"/><rect x="36" y="258" width="318" height="42" rx="10" fill="#0F2C2B" stroke="#31B9A4" stroke-width="1.4" opacity="1"/><rect x="50" y="274" width="34" height="3" rx="1.5" fill="#C3D0D6"/><rect x="50" y="280" width="26" height="2.4" rx="1.2" fill="#8E9DA4" opacity="0.7"/><text x="96" y="278" font-family="DejaVu Sans" font-size="10.5" fill="#E9EFF1" font-weight="bold" text-anchor="start" letter-spacing="0">Hemostat</text><text x="96" y="291" font-family="DejaVu Sans" font-size="8.5" fill="#31B9A4" font-weight="normal" text-anchor="start" letter-spacing="0">Kelly / mosquito</text><text x="340" y="284" font-family="DejaVu Sans" font-size="14" fill="#31B9A4" font-weight="bold" text-anchor="end" letter-spacing="0">✓</text><rect x="36" y="305" width="318" height="42" rx="10" fill="#17242C" stroke="#22333D" stroke-width="1" opacity="1"/><rect x="50" y="321" width="34" height="3" rx="1.5" fill="#546A72"/><rect x="50" y="327" width="26" height="2.4" rx="1.2" fill="#546A72" opacity="0.7"/><text x="96" y="325" font-family="DejaVu Sans" font-size="10.5" fill="#AEBEC4" font-weight="normal" text-anchor="start" letter-spacing="0">Metzenbaum scissors</text><text x="96" y="338" font-family="DejaVu Sans" font-size="8.5" fill="#546A72" font-weight="normal" text-anchor="start" letter-spacing="0">sharp dissection</text><rect x="36" y="352" width="318" height="42" rx="10" fill="#17242C" stroke="#22333D" stroke-width="1" opacity="1"/><rect x="50" y="368" width="34" height="3" rx="1.5" fill="#546A72"/><rect x="50" y="374" width="26" height="2.4" rx="1.2" fill="#546A72" opacity="0.7"/><text x="96" y="372" font-family="DejaVu Sans" font-size="10.5" fill="#AEBEC4" font-weight="normal" text-anchor="start" letter-spacing="0">Babcock clamp</text><text x="96" y="385" font-family="DejaVu Sans" font-size="8.5" fill="#546A72" font-weight="normal" text-anchor="start" letter-spacing="0">delivers the cecum</text><rect x="36" y="399" width="318" height="42" rx="10" fill="#17242C" stroke="#22333D" stroke-width="1" opacity="1"/><rect x="50" y="415" width="34" height="3" rx="1.5" fill="#546A72"/><rect x="50" y="421" width="26" height="2.4" rx="1.2" fill="#546A72" opacity="0.7"/><text x="96" y="419" font-family="DejaVu Sans" font-size="10.5" fill="#AEBEC4" font-weight="normal" text-anchor="start" letter-spacing="0">Army-Navy retractor</text><text x="96" y="432" font-family="DejaVu Sans" font-size="8.5" fill="#546A72" font-weight="normal" text-anchor="start" letter-spacing="0">wound edge</text><rect x="36" y="446" width="318" height="42" rx="10" fill="#17242C" stroke="#22333D" stroke-width="1" opacity="1"/><rect x="50" y="462" width="34" height="3" rx="1.5" fill="#546A72"/><rect x="50" y="468" width="26" height="2.4" rx="1.2" fill="#546A72" opacity="0.7"/><text x="96" y="466" font-family="DejaVu Sans" font-size="10.5" fill="#AEBEC4" font-weight="normal" text-anchor="start" letter-spacing="0">0-Vicryl on driver</text><text x="96" y="479" font-family="DejaVu Sans" font-size="8.5" fill="#546A72" font-weight="normal" text-anchor="start" letter-spacing="0">fascial closure</text><rect x="36" y="493" width="318" height="42" rx="10" fill="#17242C" stroke="#22333D" stroke-width="1" opacity="1"/><rect x="50" y="509" width="34" height="3" rx="1.5" fill="#546A72"/><rect x="50" y="515" width="26" height="2.4" rx="1.2" fill="#546A72" opacity="0.7"/><text x="96" y="513" font-family="DejaVu Sans" font-size="10.5" fill="#AEBEC4" font-weight="normal" text-anchor="start" letter-spacing="0">Bovie</text><text x="96" y="526" font-family="DejaVu Sans" font-size="8.5" fill="#546A72" font-weight="normal" text-anchor="start" letter-spacing="0">electrocautery</text><rect x="22" y="556" width="346" height="62" rx="14" fill="#12262B" stroke="#1B6A5F" stroke-width="1" opacity="1"/><text x="38" y="578" font-family="DejaVu Sans" font-size="8" fill="#31B9A4" font-weight="bold" text-anchor="start" letter-spacing="1.4">SCRUB TECH</text><text x="38" y="598" font-family="DejaVu Sans" font-size="10.5" fill="#E9EFF1" font-weight="normal" text-anchor="start" letter-spacing="0">“Two hemostats. Careful, they're loaded.”</text><rect x="22" y="634" width="346" height="70" rx="14" fill="#241A10" stroke="#DFA33C" stroke-width="1" opacity="1"/><text x="38" y="656" font-family="DejaVu Sans" font-size="8.5" fill="#DFA33C" font-weight="bold" text-anchor="start" letter-spacing="0.9">WRONG INSTRUMENT COSTS POINTS</text><text x="38" y="676" font-family="DejaVu Sans" font-size="9.5" fill="#D9C9A8" font-weight="normal" text-anchor="start" letter-spacing="0">And the scrub says so. Nobody hands you the</text><text x="38" y="690" font-family="DejaVu Sans" font-size="9.5" fill="#D9C9A8" font-weight="normal" text-anchor="start" letter-spacing="0">wrong thing silently.</text><rect x="22" y="722" width="346" height="52" rx="26" fill="#1B6A5F" stroke="#31B9A4" stroke-width="1.4" opacity="1"/><text x="195" y="753" font-family="DejaVu Sans" font-size="12" fill="#DFF7F2" font-weight="bold" text-anchor="middle" letter-spacing="1.4">CALL FOR IT</text><text x="195" y="796" font-family="DejaVu Sans" font-size="9" fill="#546A72" font-weight="normal" text-anchor="middle" letter-spacing="0">Voice or tap. Spoken aloud scores higher.</text></svg>

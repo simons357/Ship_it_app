@@ -1,0 +1,110 @@
+{
+  "id": "kuroto-mizumi",
+  "title": "黒塔と湖",
+  "title_en": "The Black Tower and the Lake",
+  "style": {
+    "look": "speed-racer-cel",
+    "notes": "Budget 1960s Japanese cartoon: speed lines, limited palette (red, white, black, gold, teal), thick ink, no photoreal Unreal cinematic. Gift for a daughter who loves Japanese things. Respect, not costume.",
+    "palette": ["#e31c23", "#f4ead6", "#111111", "#d4af37", "#2a6f7a"]
+  },
+  "engines": {
+    "play_now": "web-dojo",
+    "budget_team": "godot4",
+    "later_studio": "unreal5",
+    "why_not_unreal_first": "Unreal is a studio bill. Same storyboard JSON feeds Godot now and Unreal later. Do not rebuild the plot twice."
+  },
+  "moral": {
+    "solomon": "There is no Warrior. Just the Surgeon.",
+    "kirana": "武は守り — the warrior fights for life.",
+    "ending": "Something is left, but a residue of love.",
+    "current": "You are loved."
+  },
+  "episode": {
+    "id": "ep01",
+    "runtime_minutes": 90,
+    "current": "You are loved.",
+    "current_ja": "あなたは、愛されている。",
+    "honest": "Script + manga pages. Not a finished television file.",
+    "bible": "../manga/EPISODE.md",
+    "script": "../manga/script.json",
+    "musician_consult": "A Japanese player (musician) is welcome later. Original cel. No IP theft."
+  },
+  "respect": {
+    "for": "a daughter who loves Japanese things; respect, not costume",
+    "modernity": "Japan Air Self-Defense Force flies F-35s; Jun’s sky cadet is not foreign to that",
+    "not_ip": ["David Carradine", "Kung Fu television series", "Warner Bros. television IP"],
+    "not_slurs": true,
+    "not_a_medical_device": true,
+    "camera": "optional frame-diff only — not pose AI, not cleared tracking, not PT"
+  },
+  "cast": [
+    {"id": "jun", "name": "奥村淳", "name_en": "Okumura Jun", "role": "sky cadet, healer-student"},
+    {"id": "solomon", "name": "ソロモン先生", "name_en": "Solomon-sensei", "role": "teacher"},
+    {"id": "kirana", "name": "霧花キラナ", "name_en": "Kirana", "role": "lake miko"},
+    {"id": "kaito", "name": "海斗", "role": "brother"},
+    {"id": "hana", "name": "花", "role": "sister"}
+  ],
+  "chapters": [
+    {"id": "ch01", "beat": "sky", "title": "空の上", "set": "pale hawk over earth grids", "action": "black pyramids, transmission", "lesson": "say a name you trust"},
+    {"id": "ch02", "beat": "beach", "title": "砂の門", "set": "1023 hometown beach", "action": "Solomon, key, leave-when-you-want", "lesson": "a teacher never locks the door"},
+    {"id": "ch03", "beat": "oracle", "title": "導く光", "set": "childhood room", "action": "Kirana, crimson ribbon", "lesson": "do the next right thing anyway"},
+    {"id": "ch04", "beat": "contract", "title": "約束", "set": "white room", "action": "blank slate, harmonics, no Warrior just Surgeon", "lesson": "titles that sound like winning are often a way to stop healing"},
+    {"id": "ch05", "beat": "ants", "title": "蟻の縫い", "set": "jungle river", "action": "look then sew, Kaito fetches", "lesson": "identify before you cut"},
+    {"id": "ch06", "beat": "cellar", "title": "金の時間", "set": "old-empire cellar", "action": "name the patient, reduce then cut dead tissue", "lesson": "time is gold because a person is in it"},
+    {"id": "ch07", "beat": "tent", "title": "良いも悪いも", "set": "canvas under fire", "action": "clock does not pause", "lesson": "do the work, then rest"},
+    {"id": "ch08", "beat": "mirror", "title": "鏡", "set": "search", "action": "ant carrying the world", "lesson": "search is not surrender"},
+    {"id": "ch09", "beat": "lake", "title": "湖", "set": "Avalon", "action": "Holy Well, light has no shadows", "lesson": "ask to see its light"},
+    {"id": "ch10", "beat": "songs", "title": "歌", "set": "cabin", "action": "keep his lyrics", "lesson": "the most powerful songs are prayers"},
+    {"id": "ch11", "beat": "light", "title": "光に影なし", "set": "tower heart", "action": "choir not army, Tower cannot show light", "lesson": "do not become a sharper machine"},
+    {"id": "ch12", "beat": "residue", "title": "愛の残り香", "set": "lake at dawn", "action": "ribbon on a reed, two children", "lesson": "inherit the habit of being kind"}
+  ],
+  "dojo": {
+    "id": "exercise-spar",
+    "title": "道場",
+    "why": "Gaming engine lets the story teach skills with the body. Fake fight. Real exercise. No bought sword tray — fight with what is around you. Japanese pilots fly F-35s; Jun’s sky is not foreign to that. Bare-hand, leopard, tai chi. Cartoon. Nobody is wasted.",
+    "weapons_from_the_room": ["broom", "ribbon", "sand", "voice", "empty hands"],
+    "disclaimer": "Not a medical device. Not pose AI. Camera is frame-diff only. Not supervised martial-arts training. Not PT. Cartoon spar. Nobody is wasted.",
+    "not": ["miniature toy swords", "blood fatality", "pay-to-win stances", "racial caricature", "David Carradine IP"],
+    "skills": [
+      {
+        "id": "leopard",
+        "name": "豹歩",
+        "name_en": "Leopard stance",
+        "kind": "hold",
+        "seconds": 20,
+        "motion": "still",
+        "maps_to_pen": "squeeze",
+        "coach": "Root. Squeeze the ground. Do not bounce. This is exercise."
+      },
+      {
+        "id": "tai_chi",
+        "name": "太極浪",
+        "name_en": "Tai chi wave",
+        "kind": "slow_sequence",
+        "counts": 8,
+        "seconds_per_count": 3,
+        "motion": "slow",
+        "maps_to_pen": "twist",
+        "coach": "Twist like the plunger — slow on purpose. Fast is a miss."
+      },
+      {
+        "id": "surroundings",
+        "name": "手元",
+        "name_en": "What is around you",
+        "kind": "choose",
+        "options": ["broom", "ribbon", "sand", "empty"],
+        "maps_to_pen": "twist",
+        "coach": "No sword on the table. Pick what the room already has."
+      },
+      {
+        "id": "spar",
+        "name": "礼",
+        "name_en": "Bow, then three exchanges",
+        "kind": "spar",
+        "exchanges": 3,
+        "maps_to_pen": "click",
+        "coach": "Click is one palm. Not a flurry. Bow first. Bow after. Cartoon. Nobody falls down for real."
+      }
+    ]
+  }
+}

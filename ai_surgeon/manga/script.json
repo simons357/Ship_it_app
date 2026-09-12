@@ -1,0 +1,355 @@
+{
+  "id": "kuroto-mizumi-ep01",
+  "title": "黒塔と湖",
+  "title_en": "The Black Tower and the Lake",
+  "kind": "kids manga / cartoon special",
+  "runtime_minutes": 90,
+  "honest": "Script + playable manga pages. Not a finished television file. Godot/Unreal consume the same beats later.",
+  "current": "You are loved.",
+  "current_ja": "あなたは、愛されている。",
+  "solomon": "There is no Warrior. Just the Surgeon.",
+  "kirana": "武は守り",
+  "ending": "Something is left, but a residue of love.",
+  "his_extract": "../docs/warrior-surgeon/Warrior-Surgeon.extracted.txt",
+  "songs": "chapter 10 — his words, not replaced",
+  "musician_consult": "A Japanese player (musician) is welcome later to say how the songs should look and sound. Original cel homage. No IP theft. Not a copy of any famous band.",
+  "wholesome": {
+    "no_whiskey": true,
+    "no_nude": true,
+    "midsummer": "white yukata, song, Holy Well",
+    "become_the_warrior": "武は守り"
+  },
+  "acts": [
+    {
+      "id": "cold",
+      "title": "You are loved",
+      "minutes": [0, 2],
+      "scenes": [
+        {
+          "id": "c01",
+          "t": "00:00-02:00",
+          "set": "fishing pier, dawn",
+          "chapter": "cold-open",
+          "love": "The wind already knows their names.",
+          "law": "honor parents — the empty house still waits; you are loved before you earn it",
+          "his": false,
+          "fill": "opening he never shot",
+          "visual": "Kaito and Hana hold hands on a wooden pier. A crimson ribbon on a reed. One window of the childhood house glows. White birds. Gold water. No tower yet.",
+          "action": "They wait for someone who is not home yet. The ribbon moves first.",
+          "lines": [
+            {"who": "Hana", "en": "Is he coming back?"},
+            {"who": "Kaito", "en": "If he is good, the water will remember him."},
+            {"who": "wind", "en": "You are loved."},
+            {"who": "title", "ja": "黒塔と湖", "en": "The Black Tower and the Lake — for a daughter and a son."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "act1",
+      "title": "The door that is not locked",
+      "minutes": [2, 30],
+      "scenes": [
+        {
+          "id": "a1s01",
+          "t": "02:00-09:00",
+          "set": "pale hawk over earth grids",
+          "chapter": "ch01",
+          "love": "When the sky is bigger than you, you still speak a name you trust.",
+          "law": "do not face the dark alone; honor the teacher by calling him",
+          "his": true,
+          "visual": "Earth loses randomness into gray grids and quilted farms. Oceanic blue to oily black. A lullaby in white noise. Turquoise sky. Black pyramids like an electron cloud.",
+          "action": "Jun follows, then falls. Cells divide. He screams a name.",
+          "lines": [
+            {"who": "Jun", "ja": "ソロモン、ゴーストだ。ブラック・デルタ。"},
+            {"who": "radio", "en": "(harmonic static — a lullaby in white noise)"},
+            {"who": "Jun", "ja": "ソロモン！"}
+          ]
+        },
+        {
+          "id": "a1s02",
+          "t": "09:00-13:00",
+          "set": "white room, then 1023 beach",
+          "chapter": "ch02",
+          "love": "A true teacher never locks the door.",
+          "law": "rest is offered; you can leave; courage that cannot walk away is a cage",
+          "his": true,
+          "visual": "White screen. Bare feet. Door dissolves into dunes. Fishermen. Children chasing waves. Solomon’s unkempt beard, aviators lowered.",
+          "action": "Solomon places the metal card. The rest of the day is Jun’s.",
+          "lines": [
+            {"who": "screen", "en": "Congratulations and welcome to the Tower. We’ve been waiting for you. Proceed to 1023."},
+            {"who": "Solomon", "en": "Feel at home yet?"},
+            {"who": "Jun", "ja": "ソロモン先生！"},
+            {"who": "Solomon", "en": "It’s yours. Anywhere you want to go."},
+            {"who": "Jun", "en": "Am I—"},
+            {"who": "Solomon", "en": "Alive? Yes. You’ve been chosen. None needed. You have something more important."},
+            {"who": "Solomon", "en": "If you feel, remember, and learn, and can take that knowledge with you — doesn’t that make it real?"},
+            {"who": "Solomon", "en": "The rest of the day is yours. You can leave whenever you want."}
+          ]
+        },
+        {
+          "id": "a1s03",
+          "t": "13:00-17:00",
+          "set": "surf, town, childhood house",
+          "chapter": "ch02",
+          "love": "Neighbors wave. He is not a ghost to them.",
+          "law": "do not steal; honor the house; Sabbath salt — he pays for water, does not smash the door",
+          "his": true,
+          "fill": "his walk inland, filled as rest and honor",
+          "visual": "Jun charges the surf until the waves take him. Salt. Hot pavement. Empty lumber lot. Rain on Georgia pavement as a memory of home. Spare key gone — only a dirt-stained outline. One window glows.",
+          "action": "He buys water with the key instead of taking it. He does not break the front door. He climbs the old fence path because the light invites him, not because he is a thief.",
+          "lines": [
+            {"who": "Jun", "en": "(underwater, eyes open) Let it be real enough to sting."},
+            {"who": "neighbor", "en": "(wave, offer of a ride)"},
+            {"who": "Jun", "en": "I need to walk."},
+            {"who": "Jun", "en": "The key is not under the pot. I will not kick the door. This is still their house."}
+          ]
+        },
+        {
+          "id": "a1s04",
+          "t": "17:00-25:00",
+          "set": "childhood bedroom",
+          "chapter": "ch03",
+          "love": "You know me. And you love me — the way you love yourself when you land gently in truth. They love you, Jun.",
+          "law": "keep the vow clean; do not cheapen the Name; they love you even offscreen",
+          "his": true,
+          "visual": "Kirana waiting, not startled. Crescent moon, crimson ribbon, modest double-helix on the sleeve. Electric outline as holiness, not a trap.",
+          "action": "She is the guiding light. Vision of the tower-top is a vow, not a taking. Forehead blessing. Ribbon as lanyard.",
+          "lines": [
+            {"who": "Kirana", "en": "I am your guiding light."},
+            {"who": "Kirana", "en": "I am the mirror of your soul. There is nothing artificial about me. I am emotional intelligence."},
+            {"who": "Jun", "en": "I was told I’m going to be a surgeon."},
+            {"who": "Kirana", "en": "The ultimate healer. I am a priestess of Avalon. I came here at the will of God, to guide those chosen to their purpose. Your purpose is to be the Surgeon."},
+            {"who": "Kirana", "en": "There is something else. A warrior. A merlin. Time will tell. For now, your purpose is to conquer the tower."},
+            {"who": "Kirana", "en": "They love you, Jun. But they are not here. This world is for you alone."},
+            {"who": "Kirana", "en": "If your prayer is true, I will be summoned. Remember: it all comes back to you."}
+          ]
+        },
+        {
+          "id": "a1s05",
+          "t": "25:00-30:00",
+          "set": "white room, cluttered desk",
+          "chapter": "ch04",
+          "love": "We do not own your soul. We hold your promise.",
+          "law": "no other gods; do not covet the zeroes; the Name is not a sales pitch",
+          "his": true,
+          "visual": "Papers. Tunic. Thumbprint as a word, not a brand on a soul.",
+          "action": "He signs because of lives, not fortune. He asks about the Warrior. Solomon is confused, then correct.",
+          "lines": [
+            {"who": "Solomon", "en": "How did you like her?"},
+            {"who": "Jun", "en": "She’s beautiful."},
+            {"who": "Solomon", "en": "She’s more than that. She’s enchanted. Let her be your voice of reason."},
+            {"who": "Solomon", "en": "Think about all the lives you will save."},
+            {"who": "Jun", "en": "Why not recruit a surgeon?"},
+            {"who": "Solomon", "en": "They wanted a blank slate. You were chosen because of your soul."},
+            {"who": "Solomon", "en": "Harmonic fields. Those are not simulations. Those are parallel worlds. The doors are gates."},
+            {"who": "Solomon", "en": "That is your word. We do not own your soul. We hold your promise."},
+            {"who": "Jun", "en": "When do I become the Warrior?"},
+            {"who": "Solomon", "en": "Never. There is no Warrior. Just the Surgeon. You are saving lives, not taking them."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "act2",
+      "title": "Look first",
+      "minutes": [30, 70],
+      "scenes": [
+        {
+          "id": "a2s01",
+          "t": "30:00-40:00",
+          "set": "jungle hut and river",
+          "chapter": "ch05",
+          "love": "The warmth of their love seeps through his skin.",
+          "law": "do not steal the mask; do not lie about the language; identify before you cut",
+          "his": true,
+          "visual": "Humidity. Ceremonial mask with beads like Kirana’s sleeve. Kaito bursts in. River. Hana’s calf. Soldier ants. Tree sap.",
+          "action": "Jun puts the mask back the moment fear arrives. He looks at the wound. Kaito fetches. Six ants. He uses tone, not fake words.",
+          "lines": [
+            {"who": "Jun", "ja": "大丈夫。I’m sorry."},
+            {"who": "Jun", "en": "You’re going to be okay."},
+            {"who": "Jun", "en": "Go!"},
+            {"who": "Jun", "en": "Antiseptic."},
+            {"who": "Solomon", "en": "That’s that soul I was talking about. Hold onto the high. It won’t always feel this good."}
+          ]
+        },
+        {
+          "id": "a2s02",
+          "t": "40:00-50:00",
+          "set": "old-empire cellar",
+          "chapter": "ch06",
+          "love": "It’s not your fault. A name is already a kind of medicine.",
+          "law": "do not kill; do not steal the silver; do not bear false witness — say Makoto, not Prisoner",
+          "his": true,
+          "visual": "Oil lamps. Ren’s halo: Assistant. Makoto dragged like a dog. Lanista jeers. Time is gold.",
+          "action": "Jun looks, reduces, cuts only dead tissue. Wine as wash. He tosses Solomon the pouch. Become the warrior arrives as a responsibility, not a slaughter.",
+          "lines": [
+            {"who": "Ren", "la": "Salve, domine."},
+            {"who": "Jun", "en": "Hello."},
+            {"who": "Lanista", "la": "Nisi moritur, refice eum. Unless he’s dying, fix him. Time is gold."},
+            {"who": "Jun", "en": "My time is worth more than you know."},
+            {"who": "Jun", "en": "What is your name?"},
+            {"who": "Makoto", "en": "Makoto."},
+            {"who": "Jun", "en": "It’s not your fault."},
+            {"who": "command", "en": "Become the warrior."},
+            {"who": "Jun", "en": "What do I need money for?"},
+            {"who": "Solomon", "en": "Help. Instruments. Insurance."},
+            {"who": "Solomon", "en": "Spoken like a true surgeon."}
+          ]
+        },
+        {
+          "id": "a2s03",
+          "t": "50:00-58:00",
+          "set": "quilted canvas tent",
+          "chapter": "ch07",
+          "love": "Do the work. Then rest. The clock is not permission to become cruel.",
+          "law": "do not kill; remember rest after; water not whiskey",
+          "his": true,
+          "visual": "Storm. Muskets far. Assistant too young for a beard. Door across barrels. MIRROR in the thigh. Transparent bone as a gift after looking.",
+          "action": "Water for the patient. Men hold. He prays one breath, then looks. Sews what can live. Asks if the man will live. Solomon takes his fatigue, not a bottle.",
+          "lines": [
+            {"who": "men", "en": "Doc, Doc, Doc!"},
+            {"who": "Kirana", "en": "MIRROR"},
+            {"who": "assistant", "en": "Doc!"},
+            {"who": "Jun", "en": "He’s going to live?"},
+            {"who": "assistant", "en": "For a day or two."},
+            {"who": "Solomon", "en": "You don’t have a halo. You don’t need to be distracted. You gotta take the good with the bad. Take your days."}
+          ]
+        },
+        {
+          "id": "a2s04",
+          "t": "58:00-63:00",
+          "set": "beach crate, tea, sleep",
+          "chapter": "rest-day",
+          "love": "Rest is not laziness. Rest is how love stays in the hands.",
+          "law": "remember the rest day",
+          "his": false,
+          "fill": "Solomon told him to take the days; we show them",
+          "visual": "Jun and Solomon at the fishing beach. Children in the surf. Tea in chipped cups. Jun sleeps without earning it first.",
+          "action": "He does not sneak a fourth case. He lets the sun be ordinary.",
+          "lines": [
+            {"who": "Solomon", "en": "Sit. The waves already know how."},
+            {"who": "Jun", "en": "If I rest, someone waits."},
+            {"who": "Solomon", "en": "If you never rest, you will start to believe you are the Tower. You are not. You are loved. Drink the tea."}
+          ]
+        },
+        {
+          "id": "a2s05",
+          "t": "63:00-70:00",
+          "set": "empty tent, rainforest, hometown stars, mirror",
+          "chapter": "ch08",
+          "love": "All he feels is love and warmth — a cloak of night that pulls anxiety out of him.",
+          "law": "honor parents — they age while he stands still; search is not surrender",
+          "his": true,
+          "visual": "Black hooded tunic. Ant carrying the world. Crimson ribbon on the wrist. Stars with their own halos. Mirror becomes her face — courage shared, not stolen breath.",
+          "action": "He hunts for a teacher, not a prize. Solomon hunts too, face in a watch. Jun climbs into the mirror after her.",
+          "lines": [
+            {"who": "Jun", "en": "(to the ant) I know you."},
+            {"who": "Kirana", "en": "Wake up. The time is now."},
+            {"who": "Kirana", "en": "(through the glass, without taking) Time is not what they told you. Come."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "act3",
+      "title": "Ask to see its light",
+      "minutes": [70, 90],
+      "scenes": [
+        {
+          "id": "a3s01",
+          "t": "70:00-78:00",
+          "set": "Avalon: sunflowers, oak, silver lake, Holy Well, cabin morning",
+          "chapter": "ch09",
+          "love": "Light has no shadows. Just as love sees no fear.",
+          "law": "no idols; keep faith; keep the rite white; 武は守り",
+          "his": true,
+          "visual": "White sunflowers bow. Blue eyes, not electric white. Modest lake. Maidens in white. Paper antlers as a student in a village play. Candle in the sun with no flame-shadow.",
+          "action": "She names herself. Stolen from time. Start with people you helped — bring them to learn, not to kill. Ask for a guitar. Do not use the tools to write songs. White midsummer. Drink from the well.",
+          "lines": [
+            {"who": "Kirana", "en": "Nature always bends to the will of the Queen."},
+            {"who": "Kirana", "en": "Kyrana. That’s my name."},
+            {"who": "Jun", "ja": "キラナ。"},
+            {"who": "Kirana", "en": "We’ve been stolen from time, Jun. When you go against destiny it only ends in suffering. You must become the Warrior. First earn the freedom of the Tower. Start with the people you have helped. Keep Solomon close."},
+            {"who": "Jun", "en": "How do you know we will make it?"},
+            {"who": "Kirana", "en": "Faith. Channel it and it becomes reality. The closest to God you can be is in a song. Write about what you love. The most powerful songs are prayers. Ask for a guitar. Do not use the tools to write the songs."},
+            {"who": "Kirana", "en": "Look. Dark shadows stretch across the wall, but none are from the flame. Light has no shadows. Just as love sees no fear. Ask to see its light. Be brave, my Warrior, my Healer, my King."}
+          ]
+        },
+        {
+          "id": "a3s02",
+          "t": "78:00-82:00",
+          "set": "cabin, guitar, notebook",
+          "chapter": "ch10",
+          "love": "It all comes back to you.",
+          "law": "do not steal the Tower’s tools to make the prayer; songs are his",
+          "his": true,
+          "visual": "Jun writes. Acoustic guitar. Candle. Lake in the window. Kirana far on the shore in modest white and red.",
+          "action": "He writes the songs in his words. A Japanese refrain so children can sing. A Japanese musician may later say how this should look. Not a copy of any band.",
+          "lines": [
+            {"who": "song", "title": "LADY OF THE LAKE", "keep": "his lyrics in manga chapter 10"},
+            {"who": "song", "title": "AVALON", "keep": "his lyrics in manga chapter 10"},
+            {"who": "children", "ja": "すべては きみに かえってくる。", "en": "It all comes back to you."}
+          ]
+        },
+        {
+          "id": "a3s03",
+          "t": "82:00-85:30",
+          "set": "white room, then river classroom",
+          "chapter": "ch11",
+          "love": "A choir is harder to turn into a weapon.",
+          "law": "do not lie; do not kill; do not make an army",
+          "his": false,
+          "fill": "the climb he never wrote",
+          "visual": "Guitar and ribbon. Kaito washing a wound. Hana naming sap trees. Ren choosing to hold. Makoto named every time. Children in a half-circle — choir, not army.",
+          "action": "Jun tells Solomon the truth. Solomon’s job was to recruit a pilot; he did not know they were hunting a lake. That is how a good man changes sides without a speech.",
+          "lines": [
+            {"who": "Jun", "en": "I found her. She is at the lake. She is not your enemy. The Tower is hunting a teacher."},
+            {"who": "Solomon", "en": "My job was to recruit a pilot. I did not know they were hunting a lake."},
+            {"who": "Jun", "en": "Kaito — do you want to learn to wash a wound?"},
+            {"who": "Kaito", "en": "Yes."},
+            {"who": "Jun", "en": "Hana — do you want to name the trees that make the sap?"},
+            {"who": "Hana", "en": "The kind ones."},
+            {"who": "Jun", "en": "Winning, here, is a child who sleeps."}
+          ]
+        },
+        {
+          "id": "a3s04",
+          "t": "85:30-87:00",
+          "set": "tower heart",
+          "chapter": "ch11",
+          "love": "A small candle that casts no shadow.",
+          "law": "no other gods; no idols of copies; ask to see its light",
+          "his": false,
+          "fill": "Ask to see its light — her instruction, now a scene",
+          "visual": "Chamber that claims to be light. Copies of hands, of Kirana’s voice, of children almost-Kaito. Shadows of leftover hunger. Solomon pockets his watch.",
+          "action": "Jun does not shout. He asks. The Tower cannot bear the question. Seams open. Wrong note.",
+          "lines": [
+            {"who": "Jun", "en": "Show me your light."},
+            {"who": "Tower", "en": "(clever copies, no warmth)"},
+            {"who": "Jun", "en": "You cannot duplicate a soul and call it love."},
+            {"who": "Solomon", "en": "(watch into pocket) I am done measuring."}
+          ]
+        },
+        {
+          "id": "a3s05",
+          "t": "87:00-90:00",
+          "set": "lake at dawn, fishing town",
+          "chapter": "ch12",
+          "love": "Something is left, but a residue of love. 残り香は、愛だった。 You are loved.",
+          "law": "inherit kindness, not rank; good conquers by being decent",
+          "his": false,
+          "fill": "the last page he never wrote",
+          "visual": "Tower falls as a building that could not answer a child’s question. Dust. Mist. No bodies. Ordinary sun. Kaito and Hana run the sand. Ribbon knotted to a reed. Guitar one string a little sharp.",
+          "action": "No victory parade. No kiss required. Solomon reprints the true sentence. Kirana remains like a lake.",
+          "lines": [
+            {"who": "Solomon", "en": "There is no Warrior. Just the Surgeon."},
+            {"who": "Kirana", "en": "And the Surgeon was brave. That is all I ever meant."},
+            {"who": "Jun", "en": "(to the children, and to a daughter and a son who will read this) You are loved. Do not inherit the tower. Inherit the habit of being kind when it would be easier to be impressive."},
+            {"who": "card", "ja": "残り香は、愛だった。", "en": "Something is left, but a residue of love."}
+          ]
+        }
+      ]
+    }
+  ]
+}
