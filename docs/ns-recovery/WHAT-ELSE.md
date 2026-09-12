@@ -1,44 +1,44 @@
 # What else — locked remaining work
 
-**Locked:** 12 September 2026 (priority update)  
+**Locked:** 12 September 2026 (after PR #24 grow-\(s\) landing)  
 **This wording is the record.** Longer notes do not override it.
 
 **NS is not solved. Lemma★ is OPEN.**
 
+Two live writes are seated. Everything else stayed scored or refused.
+
 ---
 
-## Primary math target
+## 1. Attack 9D — grow \(s\) on the 9B family (secondary)
 
-**Need★ dual size on HH→L.** After the gap-cancel reduction \(T_c=M-\Lambda N\), the **signed dual** that would size the leftover HH→L piece against spectral spread \(D_s\) is still **MISSING**. That is the ★ reason, named. It is **not written**. Do not invent it. Do not substitute an HH→L-only proxy for complete signed \(T_c\).
+Same \(B\). Target \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}\|w\|_2^2\) iff \(\sup K<\infty\). Growing input and output, full complex polarizations, \(|k|\) kept. Fixed-output \(\Theta(m^2)\) excluded. Designed \(\Theta(m^2)\) stays dead. `attack9d_theta_m2_locked_phase.py` was not written.
 
-Live door 3 in [`docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md`](../math/ns_attacks/PROOF_LemmaStar_STATUS.md): upgrade centering beyond \(T_c=M-\Lambda N\) to control the dangerous HH→L piece. Identities: [`docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](../math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md).
+PR #24 draw (seed 1390, \(k_{\max}=8\)): 2084 input fields, 39853 occupied \((\alpha,\beta)\) rows. \(\max K\approx 0.456\) at \((16,32)\), \(s=4\). \(\max\sqrt{K}\approx 0.675\). \(\max s=192\). Pairs / CS / \(K\le 16s\): no fails. On the \(K\) vs \(s\) curve, \(\max K\) for \(s\le 8\) is \(0.456\); for \(s\ge 24\) it is \(0.239\). Larger occupancy did not raise \(K\) on this draw.
 
-Until that dual sits, or until \(\mathcal R_\star\to\infty\) on a family, Lemma★ stays OPEN.
+That is **not** the aligned 9B search (\(K\approx 0.641\) at \((4,8)\)). Do not merge them. A finite max is not \(C_0\). This draw did not kill ★.
 
-## Secondary
+Score: [`PR24-GROW-S-SCORE.md`](PR24-GROW-S-SCORE.md). Source: https://github.com/simons357/Ship_it_app/pull/24
 
-**Attack 9D** — kill-lane pressure only. Growing input and output supports, full complex polarizations, frequency factors kept. Target \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}\|w\|_2^2\). Fixed-output \(\Theta(m^2)\) excluded. Same \(B\) as 9B; no I/O exponent locked. Setup: [`docs/math/ns_attacks/ATTACK_9D_SETUP.md`](../math/ns_attacks/ATTACK_9D_SETUP.md).
+## 2. The ★ reason — map, not a theorem (primary leftover)
 
-Kill lane is still live. Bounded samples are not a proof. A diverging family would kill ★. A larger finite number only raises \(C_{\mathrm{geom}}\).
+Keep \(\mathrm{Im}\). HH→L is the dangerous channel (weight \(\sim\beta\cdot\alpha\); Attack 12 vertex carries \(\sqrt{\beta}\)). Cheap CS returns occupancy — the same hole as \(K\le 16s\). Until that sentence is a theorem, or \(\mathcal R_\star\to\infty\), **leftover 4 stays OPEN**.
 
-## Soft X
+Primary math target remains **Need★ dual size on HH→L** after gap-cancel. The signed dual is still **MISSING**. Do not invent it.
 
-**Silent.** Do not work Soft X / energy-class leftover-\(X\) on this desk.
+---
 
-## Paths to DA
+Kill lane LIVE. Bounded samples are not a proof. A diverging family would kill ★. A larger finite number only raises \(C_{\mathrm{geom}}\).
 
-As soon as a dual write or a 9D result **lands** (a named estimate, a diverging family, or a scored fail), point Domain Architect at that card. Do not send a close. Do not glue SND, Theorem H, five fingers, or Q-stack.
+**Soft X silent.** Path to DA: the grow-\(s\) draw has landed (finite, not a kill). Do not send a close.
 
-## Optional, not next by default
+## Not done (optional, not next)
 
-- Recompute the user-reported 9C \(0.11\to 0.031\) with locked \(\mathcal R_\star\) (never done here).
-- Exact-core ABC at λ = 8 and 16 on one field definition, plus a fixed-λ resolution study. Clue only. Do not stop patching ★ from more finite rows.
-- H1 on the cylinder — named, not started. Do not start it from ABC screenshots.
+Locked-\(\mathcal R_\star\) 9C recompute; exact-core ABC at \(\lambda=8,16\); H1 from ABC_λ.
 
-## Do not redo
+## Not redone
 
-Five lanes 1–5, 9A, natural 9C, finite 9B (\(K\approx 0.641\)), small-lattice truncated ABC, SuperGrok falsifier stamp, Dream Team vote.
+Five lanes, 9A, natural 9C, finite 9B (\(0.641\)), truncated ABC, SuperGrok stamp, Dream Team vote.
 
 ## Out of this book
 
-Q-stack, SND, Theorem H, five fingers, augmented NSE, Soft X.
+Q-stack, SND, Theorem H, five fingers, augmented NSE.

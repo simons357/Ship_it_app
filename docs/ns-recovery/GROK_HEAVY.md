@@ -35,7 +35,7 @@ Human: Jonathan Simons (`winchester.anesthesia@gmail.com` / `simonsmedical@iclou
 
 ## What you are being asked to do
 
-Remaining-work lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Live work, in order (lock: [`WHAT-ELSE.md`](WHAT-ELSE.md)):
+Remaining-work lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Live work, in order:
 
 1. **Primary — Need★ dual size on HH→L.** After gap-cancel \(T_c=M-\Lambda N\), the signed dual that sizes the leftover HH→L piece against \(D_s\) is **MISSING**. Do not invent it. Soft X silent.
 2. **Secondary — Attack 9D:** kill-lane pressure only. Growing I/O, complex polarizations, \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}\|w\|_2^2\). Setup: [`docs/math/ns_attacks/ATTACK_9D_SETUP.md`](../math/ns_attacks/ATTACK_9D_SETUP.md).
