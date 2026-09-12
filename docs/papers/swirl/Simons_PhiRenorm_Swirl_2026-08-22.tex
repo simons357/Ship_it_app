@@ -1,0 +1,1026 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,mathtools}
+\usepackage{enumitem,hyperref,mdframed}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ddt}{\frac{\mathrm{d}}{\mathrm{d}t}}
+\newcommand{\ur}{u^{r}}
+\newcommand{\uz}{u^{z}}
+\newcommand{\ut}{u^{\theta}}
+\newcommand{\Ph}{\Phi}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\Lfour}{\mathcal{L}_{4}}
+\newcommand{\gradfive}{\nabla_{5}}
+\newcommand{\divfive}{\mathrm{div}_{5}}
+\newcommand{\Hdot}{\dot{H}}
+\newcommand{\Lint}{L^{\infty}}
+\newcommand{\norm}[2]{\|#1\|_{#2}}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+
+\title{Phi-renormalization for axisymmetric Navier--Stokes with swirl:\\
+identity, circulation principle, and the five-dimensional energy}
+\author{Jonathan Simons\\
+Prime Field Technologies LLC, Savannah, Georgia}
+\date{22 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove four theorems for axisymmetric Navier--Stokes with swirl.
+Let \(\Ga=r\ut\) and \(\Ph=\ut/r\).
+(i)~The source identity
+\(\frac1{r^4}\partial_z(\Ga^2)=\partial_z(\Ph^2)\)
+holds on \(\{r>0\}\)
+(Theorem~\ref{thm:identity}).
+(ii)~Circulation obeys the maximum principle
+\(\norm{\Ga(t)}{\Lint}\le\norm{\Ga_0}{\Lint}\)
+with no smallness
+(Theorem~\ref{thm:gamma}).
+(iii)~In the measure \(r^3\,\dd r\,\dd z\), where
+\(\Lfour=\partial_{rr}+(3/r)\partial_r+\partial_{zz}\) is self-adjoint,
+the intensive field satisfies the energy identity
+\begin{equation*}
+\tfrac12\ddt\norm{\Ph}{L^2(r^3)}^2
++\nu\norm{\gradfive\Ph}{L^2(r^3)}^2
++\eps\norm{\Ph}{\Hdot^{1.3}(r^3)}^2
+=-\int\frac{\ur}{r}\,\Ph^2\,r^3\,\dd r\,\dd z,
+\tag{\ensuremath{*}}
+\end{equation*}
+with every cutoff remainder written and then removed
+(Theorem~\ref{thm:star}).
+(iv)~The hyperviscous system of order \(1.3\) is globally smooth for
+each \(\eps>0\), with the energy inequality \eqref{eq:U1}
+(Theorem~\ref{thm:eps}).
+
+Section~\ref{sec:strain} records the estimates we ran on the pairing
+in \((*)\): circulation plus Biot--Savart, the pointwise majorant from
+\(\Ga\in\Lint\), five-dimensional Sobolev, weighted Hardy, absorption
+into \(\eps\Hdot^{1.3}\), cutoff tails, the stream-function formula for
+\(\ur\), and the vorticity form of Beale--Kato--Majda.
+None of those estimates absorbs \(\ur/r\) uniformly in \(\eps\).
+The last theorem
+(Theorem~\ref{thm:cond})
+is continuation under the hypothesis that the strain integral is finite.
+The identity, the maximum principle, and \((*)\) do not use the
+\((A,W)\) construction of \cite{ShahJun}.
+\end{abstract}
+
+\noindent\textit{MSC 2020.} 35Q30, 76D03, 35B65.\\
+\textit{Keywords.} Navier--Stokes, axisymmetric swirl, circulation,
+five-dimensional energy, strain pairing.
+
+\tableofcontents
+\vspace{0.75em}
+
+\begin{mdframed}[linewidth=0.9pt]
+\textbf{Theorems.}
+\ref{thm:identity} \(\Ph\)-identity;
+\ref{thm:gamma} \(\Ga\) maximum principle;
+\ref{lem:Phi} intensive equation, with
+\((\Delta-r^{-2})(r\Ph)=r\Lfour\Ph\) expanded;
+\ref{thm:star} energy \eqref{eq:star} in \(r^3\,\dd r\,\dd z\), cutoffs
+included;
+\ref{thm:eps} global smoothness of the \(\eps\)-system and \eqref{eq:U1};
+\ref{sec:strain} the strain estimates that were tried;
+\ref{thm:cond} continuation when
+\(\sup_\eps\int_0^T\norm{\ur_\eps/r}{\Lint}\,\dd t<\infty\).
+\end{mdframed}
+
+\section{Introduction}
+
+We work throughout with smooth axisymmetric solutions of
+three-dimensional incompressible Navier--Stokes, and with the
+hyperviscous regularizations of Definition~\ref{def:eps}.
+Without swirl the theory is classical
+\cite{Lady1968,UY1968}.
+With swirl the centrifugal source
+\(\frac1{r^4}\partial_z(\Ga^2)\)
+appears in the meridional vorticity equation
+\cite{Danchin2007,CSTY2008,CSTY2009,LeiZhang2011}.
+
+The results are as follows.
+Theorem~\ref{thm:identity} is the algebraic identity
+\(\frac1{r^4}\partial_z(\Ga^2)=\partial_z(\Ph^2)\)
+from the May 2026 deposit
+\cite{SimonsPhi2026,SimonsPhiShort2026}.
+Theorem~\ref{thm:gamma} is the circulation maximum principle, with the
+scalar equation for \(\Ga\) written term by term.
+Lemma~\ref{lem:Phi} is the intensive equation, including the expansion
+\((\Delta-r^{-2})(r\Ph)=r\Lfour\Ph\); there is no extra \(-\Ph/r^2\).
+Theorem~\ref{thm:star} is the energy identity \eqref{eq:star} in
+\(r^3\,\dd r\,\dd z\), obtained from the localized identity
+\eqref{eq:star-loc} after the cutoffs are removed.
+Theorem~\ref{thm:eps} is global smoothness of the \(\eps\)-system.
+
+The operator \(\partial_{rr}+(3/r)\partial_r+\partial_{zz}\) is the radial
+Laplacian of \(\R^4\times\R\), so the natural measure for \(\Ph\) is
+\(r^3\,\dd r\,\dd z\). This is a change of variables in the
+three-dimensional problem, not a change of dimension: no physics leaves
+\(\R^3\), and every statement can be rewritten in \(r\,\dd r\,\dd z\)
+at the cost of an explicit axis boundary term. The higher-dimensional
+language is bookkeeping.
+
+Section~\ref{sec:strain} is the attack on the pairing in \eqref{eq:star}.
+The calculations are written out. They stop at definite lines: a
+logarithmically divergent majorant from \(\Ga\in\Lint\); Biot--Savart
+for \(\ur\) depending on \(\omega^\theta\), not on \(\Ga\); matching
+scaling of pairing and dissipation; \(\eps\)-absorption that is not
+uniform; cutoff tails that do not touch the bulk pairing.
+Theorem~\ref{thm:cond} is the continuation statement that follows from
+those identities once the strain integral is finite, which is the
+shape of the criteria in
+\cite{CSTY2008,CSTY2009,ChenFangZhang2017}.
+
+The 2026 announcements \cite{ShahApr,ShahMay,ShahJun} are cited.
+The \((A,W)\) circulation-gradient pair and the axis-Hardy formula of
+\cite{ShahJun} are not used in any proof below.
+
+\section{Public record}
+\label{sec:record}
+
+The May 2026 files are public:
+\begin{itemize}[leftmargin=1.2em]
+\item concept DOI
+\href{https://doi.org/10.5281/zenodo.20405404}{10.5281/zenodo.20405404};
+\item latest file DOI
+\href{https://doi.org/10.5281/zenodo.20405405}{10.5281/zenodo.20405405}
+(27 May 2026, \texttt{PhiRenorm\_TrackB.pdf});
+\item short companion
+\href{https://doi.org/10.5281/zenodo.20405597}{10.5281/zenodo.20405597}
+(\texttt{Simons\_PhiRenorm\_Axisymmetric.tex}).
+\end{itemize}
+A later ``New version'' on the concept record preserves that timestamp.
+This note does not replace it. It restricts what that timestamp may be
+asked to carry.
+
+What stands, from the public text:
+\begin{itemize}[leftmargin=1.2em]
+\item \(\Ga=r\ut\) and \(\Ph=\Ga/r^2=\ut/r\) (classical notation);
+\item \(\frac1{r^4}\partial_z(\Ga^2)=\partial_z(\Ph^2)\) on \(\{r>0\}\)
+(algebra);
+\item the same factorization for the difference
+\(\Ga_\eps^2-\Ga^2\).
+\end{itemize}
+
+What does not stand, as a proof of classical regularity:
+\begin{itemize}[leftmargin=1.2em]
+\item ``\(\norm{\partial_z(\Ph^2)}{L^2}\le 2\norm{\Ph}{\infty}\norm{\partial_z\Ph}{L^2}\)
+by Sobolev on a bounded domain.''
+This assumes the \(\Lint\) control that continuation is trying to prove.
+\item The Gronwall-free rate \(u^\eps\to u\) at
+\(O(\eps^{4/(\beta+2)})\) via a multi-component stability energy.
+The cancellation that is supposed to kill the Gronwall driver is a
+sketch, not an identity.
+\item Global \(C^\infty\) for a \(Q_1\)-augmented system, sold as if it
+settled the classical problem. Extra parabolicity is a different PDE.
+\item Prime-lattice, \(Q_6\), and spectral-clock packaging.
+Those statements are not used and are not restated as theorems.
+\end{itemize}
+
+The May open-problem box already marked classical unaugmented swirl as
+open. The present paper keeps that honesty and names the remaining
+bound.
+
+\section{Notation and function spaces}
+
+Cylindrical coordinates \((r,\theta,z)\) on \(\R^3\),
+\(r=\sqrt{x_1^2+x_2^2}\). An axisymmetric velocity is
+\[
+  u=\ur(r,z,t)\,e_r+\ut(r,z,t)\,e_\theta+\uz(r,z,t)\,e_z.
+\]
+Incompressibility is
+\begin{equation}
+  \label{eq:div3}
+  \partial_r(r\ur)+\partial_z(r\uz)=0.
+\end{equation}
+Smoothness on the axis forces \(\ut=\ur=0\) at \(r=0\) and
+\(\ut=O(r)\), \(\ur=O(r)\) as \(r\to 0\). In particular
+\(\Ga=O(r^2)\) and \(\Ph\) extends continuously to \(r=0\) by
+\(\Ph(0,z)=\partial_r\ut(0,z)\).
+
+\begin{definition}[Circulation and intensive swirl]
+\[
+  \Ga:=r\ut,\qquad \Ph:=\frac{\ut}{r}=\frac{\Ga}{r^2}.
+\]
+\end{definition}
+
+Two \(L^2\) spaces are used and are not interchangeable.
+\begin{itemize}[leftmargin=1.2em]
+\item \(\Ga\) lives in \(L^2(r\,\dd r\,\dd z)\), the physical
+three-dimensional energy measure in the meridional half-plane.
+\item \(\Ph\) lives in \(L^2(r^3\,\dd r\,\dd z)\):
+\[
+  \norm{\Ph}{L^2(r^3)}^2
+  :=\int_0^\infty\int_{\R}\Ph^2\,r^3\,\dd z\,\dd r.
+\]
+\end{itemize}
+Write \(\gradfive\Ph:=(\partial_r\Ph,\partial_z\Ph)\) and
+\[
+  \divfive(u)
+  :=r^{-3}\bigl(\partial_r(r^3\ur)+\partial_z(r^3\uz)\bigr).
+\]
+The operator
+\[
+  \Lfour:=\partial_{rr}+\frac3r\partial_r+\partial_{zz}
+\]
+satisfies
+\begin{equation}
+  \label{eq:L4div}
+  \partial_{rr}+\frac3r\partial_r
+  =r^{-3}\partial_r\bigl(r^3\partial_r\,\cdot\,\bigr).
+\end{equation}
+Thus \(\Lfour\) is symmetric on \(L^2(r^3\,\dd r\,\dd z)\) for functions
+with \(\Ph,\partial_r\Ph\) bounded at \(r=0\) and decaying at infinity.
+
+The \(\eps\)-system uses fractional dissipation of order \(1.3\).
+Testing \(\eps(-\Delta)^{1.3}u\) against \(u\) produces
+\(\eps\norm{u}{\Hdot^{1.3}}^2\). The number \(2.6\) is the composition
+order of the operator, not the energy index. Duality is
+\begin{equation}
+  \label{eq:dual}
+  \bigl\langle(-\Delta)^{1.3}u,\varphi\bigr\rangle
+  =\bigl\langle(-\Delta)^{0.65}u,(-\Delta)^{0.65}\varphi\bigr\rangle,
+\end{equation}
+hence
+\(\abs{\langle\eps(-\Delta)^{1.3}u,\varphi\rangle}
+\le\eps\norm{u}{\Hdot^{1.3}}\norm{\varphi}{\Hdot^{1.3}}\).
+
+\section{The algebraic identity}
+
+\begin{theorem}[Phi-renormalization]
+\label{thm:identity}
+On \(\{r>0\}\),
+\begin{equation}
+  \label{eq:id}
+  \frac1{r^4}\partial_z(\Ga^2)=\partial_z(\Ph^2).
+\end{equation}
+If \(\Ga_\eps=r^2\Ph_\eps\), then
+\(\frac1{r^4}\partial_z(\Ga_\eps^2-\Ga^2)
+=\partial_z\bigl((\Ph_\eps+\Ph)(\Ph_\eps-\Ph)\bigr)\).
+\end{theorem}
+
+\begin{proof}
+\(\Ga=r^2\Ph\), so \(\Ga^2=r^4\Ph^2\). Since \(\partial_z(r^4)=0\),
+\[
+  \frac1{r^4}\partial_z(\Ga^2)
+  =\frac1{r^4}\partial_z(r^4\Ph^2)
+  =\partial_z(\Ph^2).
+\]
+The difference identity is the same factorization:
+\(\Ga_\eps^2-\Ga^2=r^4(\Ph_\eps+\Ph)(\Ph_\eps-\Ph)\).
+\end{proof}
+
+\begin{remark}[Withdrawn May line]
+\label{rem:withdrawn}
+The identity does not bound \(\Ph\) in \(\Lint\).
+The May 2026 estimate
+\(\norm{\partial_z(\Ph^2)}{L^2}\le 2\norm{\Ph}{\infty}\norm{\partial_z\Ph}{L^2}\)
+``by Sobolev'' assumes the control classical continuation seeks.
+It is not used below. Hardy is bypassed for the \emph{rewrite} of the
+source; the strain pairing returns the difficulty.
+\end{remark}
+
+\section{Pillar I: the maximum principle for \(\Gamma\)}
+
+The azimuthal Navier--Stokes component is
+\begin{equation}
+  \label{eq:utheta}
+  \partial_t\ut+\ur\partial_r\ut+\uz\partial_z\ut+\frac{\ur}{r}\ut
+  =\nu\Bigl(\Delta-\frac1{r^2}\Bigr)\ut,
+\end{equation}
+with \(\Delta=\partial_{rr}+r^{-1}\partial_r+\partial_{zz}\).
+
+\begin{lemma}[Circulation equation]
+\label{lem:Gamma-eq}
+If \(u\) is a smooth axisymmetric solution, then
+\begin{equation}
+  \label{eq:Gamma}
+  \partial_t\Ga+\ur\partial_r\Ga+\uz\partial_z\Ga
+  =\nu\Bigl(\partial_{rr}-\frac1r\partial_r+\partial_{zz}\Bigr)\Ga.
+\end{equation}
+There is no zeroth-order stretching of the wrong sign.
+\end{lemma}
+
+\begin{proof}
+\(\partial_t\Ga=r\partial_t\ut\),
+\(\partial_r\Ga=\ut+r\partial_r\ut\),
+\(\partial_z\Ga=r\partial_z\ut\).
+Multiply \eqref{eq:utheta} by \(r\):
+\[
+  r\partial_t\ut+r\ur\partial_r\ut+r\uz\partial_z\ut+\ur\ut
+  =\nu r\Bigl(\Delta-r^{-2}\Bigr)\ut.
+\]
+The left side is
+\[
+  \partial_t\Ga+\ur(\partial_r\Ga-\ut)+\uz\partial_z\Ga+\ur\ut
+  =\partial_t\Ga+\ur\partial_r\Ga+\uz\partial_z\Ga.
+\]
+For the viscous side, write \(\ut=\Ga/r\). Then
+\begin{align*}
+\partial_r\ut&=r^{-1}\partial_r\Ga-r^{-2}\Ga,\\
+\partial_{rr}\ut&=r^{-1}\partial_{rr}\Ga-2r^{-2}\partial_r\Ga+2r^{-3}\Ga,\\
+\partial_{zz}\ut&=r^{-1}\partial_{zz}\Ga.
+\end{align*}
+Hence
+\begin{align*}
+\bigl(\Delta-r^{-2}\bigr)\ut
+&=r^{-1}\partial_{rr}\Ga-2r^{-2}\partial_r\Ga+2r^{-3}\Ga
+ +r^{-1}\bigl(r^{-1}\partial_r\Ga-r^{-2}\Ga\bigr)
+ +r^{-1}\partial_{zz}\Ga-r^{-3}\Ga\\
+&=r^{-1}\partial_{rr}\Ga-r^{-2}\partial_r\Ga+r^{-1}\partial_{zz}\Ga.
+\end{align*}
+Multiplication by \(r\) gives the right-hand side of \eqref{eq:Gamma}.
+\end{proof}
+
+\begin{theorem}[Circulation maximum principle]
+\label{thm:gamma}
+Let \(u\) be a smooth axisymmetric solution of Navier--Stokes, or of
+the \(\eps\)-system \eqref{eq:eps}, on \([0,T]\). Then
+\[
+  \norm{\Ga(t)}{\Lint}\le\norm{\Ga_0}{\Lint}
+  \qquad\text{for all }t\in[0,T].
+\]
+No smallness is required.
+\end{theorem}
+
+\begin{proof}
+Equation \eqref{eq:Gamma} is a linear scalar advection--diffusion equation
+for \(\Ga\). At an interior spatial maximum of \(\Ga(\,\cdot\,,t)\) one
+has \(\nabla\Ga=0\) and
+\(\partial_{rr}\Ga-r^{-1}\partial_r\Ga+\partial_{zz}\Ga\le 0\),
+hence \(\partial_t\Ga\le 0\). The same holds for \(-\Ga\).
+On the axis, smoothness forces \(\Ga=O(r^2)\), so \(\Ga|_{r=0}=0\):
+an interior maximum of \(\abs{\Ga}\) cannot hide at \(r=0\) unless
+\(\Ga\equiv 0\).
+The \(\eps\)-system adds a nonpositive fractional term at a maximum
+(the Fourier symbol of \((-\Delta)^{1.3}\) is positive).
+Thus \(\norm{\Ga(t)}{\Lint}\) is nonincreasing.
+See also \cite{Lady1968,CSTY2008}.
+\end{proof}
+
+\begin{remark}[The step that does not exist]
+\label{rem:no-slide}
+\(\Ga\in\Lint\) controls \(\ut=\Ga/r\) but says nothing about \(\ur\).
+The strain pairing in \eqref{eq:star} contains \(\ur/r\), not \(\ut/r\).
+The implication ``\(\Ga\) is bounded \(\Rightarrow\) the strain term is
+controlled'' is false. No later draft may insert that step.
+\end{remark}
+
+\section{The equation for \(\Phi\)}
+\label{sec:Phi-eq}
+
+\begin{lemma}[Viscous identity for the intensive field]
+\label{lem:L4}
+For smooth \(\Ph\),
+\begin{equation}
+  \label{eq:L4id}
+  \bigl(\Delta-r^{-2}\bigr)(r\Ph)=r\Lfour\Ph.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+\(\partial_r(r\Ph)=\Ph+r\partial_r\Ph\) and
+\(\partial_{rr}(r\Ph)=2\partial_r\Ph+r\partial_{rr}\Ph\),
+while \(\partial_{zz}(r\Ph)=r\partial_{zz}\Ph\). Therefore
+\begin{align*}
+\Delta(r\Ph)
+&=2\partial_r\Ph+r\partial_{rr}\Ph
+ +r^{-1}(\Ph+r\partial_r\Ph)
+ +r\partial_{zz}\Ph\\
+&=r\partial_{rr}\Ph+3\partial_r\Ph+r^{-1}\Ph+r\partial_{zz}\Ph.
+\end{align*}
+Subtract \(r^{-2}\cdot(r\Ph)=r^{-1}\Ph\):
+\[
+  \bigl(\Delta-r^{-2}\bigr)(r\Ph)
+  =r\partial_{rr}\Ph+3\partial_r\Ph+r\partial_{zz}\Ph
+  =r\Lfour\Ph.
+\]
+\end{proof}
+
+\begin{lemma}[Intensive swirl equation]
+\label{lem:Phi}
+If \(u\) is a smooth axisymmetric solution of Navier--Stokes, then
+\begin{equation}
+  \label{eq:Phi}
+  \partial_t\Ph+\ur\partial_r\Ph+\uz\partial_z\Ph
+  +2\frac{\ur}{r}\Ph
+  =\nu\Lfour\Ph.
+\end{equation}
+There is no extra \(-\Ph/r^2\) on the left. That term belongs to
+\eqref{eq:utheta}, not to the equation for \(\Ph=\ut/r\).
+On the \(\eps\)-system, the same computation produces
+\begin{equation}
+  \label{eq:Phieps}
+  \partial_t\Ph+\ur\partial_r\Ph+\uz\partial_z\Ph
+  +2\frac{\ur}{r}\Ph
+  =\nu\Lfour\Ph-\eps\,\mathcal{D}^{1.3}\Ph,
+\end{equation}
+where \(\mathcal{D}^{1.3}\) is the restriction of \((-\Delta)^{1.3}\)
+to the intensive field; the only property used later is coercivity on
+\(\Hdot^{1.3}(r^3)\) via \eqref{eq:dual}.
+\end{lemma}
+
+\begin{proof}
+Write \(\ut=r\Ph\) in \eqref{eq:utheta}. Then
+\(\partial_t\ut=r\partial_t\Ph\),
+\(\partial_r\ut=\Ph+r\partial_r\Ph\),
+\(\partial_z\ut=r\partial_z\Ph\).
+The left side of \eqref{eq:utheta} becomes
+\begin{align*}
+r\partial_t\Ph+\ur(\Ph+r\partial_r\Ph)+\uz(r\partial_z\Ph)+\ur\Ph
+&=r\partial_t\Ph+r\ur\partial_r\Ph+r\uz\partial_z\Ph+2\ur\Ph\\
+&=r\Bigl(\partial_t\Ph+\ur\partial_r\Ph+\uz\partial_z\Ph+2\frac{\ur}{r}\Ph\Bigr).
+\end{align*}
+The right side is \(\nu(\Delta-r^{-2})(r\Ph)=\nu r\Lfour\Ph\) by
+Lemma~\ref{lem:L4}. Divide by \(r>0\) and extend by continuity to the
+axis.
+\end{proof}
+
+\section{Pillar II: the \(\eps\)-system}
+\label{sec:eps}
+
+\begin{definition}[Fractional regularization]
+\label{def:eps}
+For \(\eps>0\) let \(u_\eps\) solve
+\begin{equation}
+  \label{eq:eps}
+  \partial_t u_\eps+(u_\eps\cdot\nabla)u_\eps+\nabla p_\eps
+  =\nu\Delta u_\eps-\eps(-\Delta)^{1.3}u_\eps,
+  \qquad \mathrm{div}\,u_\eps=0,
+\end{equation}
+with smooth, compactly supported, divergence-free, axisymmetric
+initial data \(u_0\). Any hyperviscous regularization strictly above
+the Ladyzhenskaya--Prodi--Serrin threshold may be substituted;
+the index \(1.3\) is fixed to match the existing draft.
+\end{definition}
+
+\begin{theorem}[Global smoothness for each \(\eps>0\)]
+\label{thm:eps}
+For every \(\eps>0\), \eqref{eq:eps} admits a unique global smooth
+axisymmetric solution, and
+\begin{equation}
+  \label{eq:U1}
+  \sup_{t\ge 0}\norm{u_\eps(t)}{L^2}^2
+  +2\nu\int_0^\infty\norm{\nabla u_\eps}{L^2}^2\,\dd t
+  +2\eps\int_0^\infty\norm{u_\eps}{\Hdot^{1.3}}^2\,\dd t
+  \le\norm{u_0}{L^2}^2.
+\end{equation}
+The bound \eqref{eq:U1} does \emph{not} control
+\(\int_0^T\norm{\Delta u_\eps}{L^2}^2\,\dd t\).
+\end{theorem}
+
+\begin{proof}
+Take the \(L^2(\R^3)\) inner product of \eqref{eq:eps} with \(u_\eps\).
+The convective term and the pressure vanish by
+\(\mathrm{div}\,u_\eps=0\). The viscous term gives
+\(\nu\norm{\nabla u_\eps}{L^2}^2\). The fractional term gives
+\(\eps\norm{u_\eps}{\Hdot^{1.3}}^2\) by \eqref{eq:dual} with
+\(\varphi=u_\eps\). This is \eqref{eq:U1}.
+For each fixed \(\eps>0\) the dissipation is coercive on
+\(\Hdot^{1.3}\hookrightarrow H^{1+\delta}\) in three dimensions,
+which is above the Ladyzhenskaya--Prodi--Serrin line.
+Galerkin approximations therefore remain smooth for all time
+(Lions hyperviscous theory). Axisymmetry is preserved by uniqueness
+of the cylindrical Fourier mode. Uniqueness in the smooth class is
+the standard energy-difference argument.
+\end{proof}
+
+\begin{remark}[No \(H^2\) from energy]
+\label{rem:no-H2}
+Leray--Hopf / \eqref{eq:U1} gives
+\(\nu\int_0^T\norm{\nabla u}{L^2}^2\,\dd t\le\tfrac12\norm{u_0}{L^2}^2\).
+It does not give \(\int_0^T\norm{\Delta u}{L^2}^2\,\dd t\).
+Any estimate that consumes \(H^2\) ``from the energy inequality'' is
+circular: \(H^2\) control is what regularity would provide.
+We do not do this.
+\end{remark}
+
+\begin{remark}[Weak limits do not move pointwise bounds]
+\label{rem:weak}
+From \eqref{eq:U1}, \(\{u_\eps\}\) is bounded in
+\(L^\infty_t L^2_x\cap L^2_t H^1_x\cap L^2_t\Hdot^{1.3}_x\).
+The equation gives \(\partial_t u_\eps\) bounded in
+\(L^{4/3}_{\mathrm{loc}}([0,T]; H^{-s})\) for some \(s>0\)
+(convective term in the usual interpolation; pressure recovered by
+the Leray projector). Aubin--Lions therefore yields, up to subsequence,
+strong convergence \(u_\eps\to u\) in
+\(L^2_{\mathrm{loc}}([0,T]\times\R^3)\) and a Leray--Hopf limit.
+Strong \(L^2\) is enough for the convective term distributionally.
+It is not enough to pass an \(\Lint\) strain bound unless that bound
+is already uniform in \(\eps\).
+An \(\Lint\) strain bound therefore has to be uniform in \(\eps\)
+before the limit; a bound for each fixed \(\eps>0\) is already
+contained in Theorem~\ref{thm:eps}.
+\end{remark}
+
+\section{The energy identity in \(r^3\,\dd r\,\dd z\)}
+\label{sec:energy}
+
+\begin{lemma}[Five-dimensional divergence]
+\label{lem:div5}
+If \eqref{eq:div3} holds, then
+\begin{equation}
+  \label{eq:div5}
+  \partial_r(r^3\ur)+\partial_z(r^3\uz)=2r^2\ur,
+  \qquad
+  \divfive(u)=2\frac{\ur}{r}.
+\end{equation}
+In particular \(u\) is not divergence-free in the \(r^3\) measure.
+\end{lemma}
+
+\begin{proof}
+\(\partial_r(r^3\ur)=3r^2\ur+r^3\partial_r\ur\) and
+\(\partial_z(r^3\uz)=r^3\partial_z\uz\).
+From \eqref{eq:div3},
+\(\ur+r\partial_r\ur+r\partial_z\uz=0\), hence
+\(r^3\partial_r\ur+r^3\partial_z\uz=-r^2\ur\).
+Add \(3r^2\ur\).
+\end{proof}
+
+\begin{lemma}[Viscous Dirichlet form]
+\label{lem:visc}
+Let \(\Ph\) be smooth, with \(\Ph\) and \(\partial_r\Ph\) bounded as
+\(r\to 0\), and with
+\(r^3\Ph\partial_r\Ph\to 0\) as \(r\to\infty\) after \(z\)-integration,
+and \(\Ph\partial_z\Ph\to 0\) as \(\abs{z}\to\infty\) after \(r\)-integration.
+Then
+\begin{equation}
+  \label{eq:visc}
+  \int(\Lfour\Ph)\,\Ph\,r^3\,\dd r\,\dd z
+  =-\int\abs{\gradfive\Ph}^2\,r^3\,\dd r\,\dd z.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+By \eqref{eq:L4div},
+\begin{align*}
+\int(\Lfour\Ph)\Ph\,r^3\,\dd r\,\dd z
+&=\int\partial_r(r^3\partial_r\Ph)\,\Ph\,\dd r\,\dd z
++\int(\partial_{zz}\Ph)\Ph\,r^3\,\dd r\,\dd z\\
+&=\bigl[r^3(\partial_r\Ph)\Ph\bigr]_{r=0}^{\infty}
+-\int\abs{\partial_r\Ph}^2 r^3\,\dd r\,\dd z
+-\int\abs{\partial_z\Ph}^2 r^3\,\dd r\,\dd z.
+\end{align*}
+The bracket vanishes at \(r=0\) by the factor \(r^3\)
+(axis regularity keeps \(\Ph\) and \(\partial_r\Ph\) bounded)
+and at infinity by the decay hypothesis. There is no axis term
+\(-\int\Ph(0,z)^2\,\dd z\).
+\end{proof}
+
+Cutoffs are recorded so that \eqref{eq:star} is not an ``up to the usual''
+identity. Fix \(R,L\ge 1\). Let \(\chi_R\in C^\infty([0,\infty))\) satisfy
+\(0\le\chi_R\le 1\), \(\chi_R\equiv 1\) on \([0,R]\),
+\(\operatorname{supp}\chi_R\subset[0,2R]\),
+\(\abs{\chi_R'}\le C/R\), \(\abs{\chi_R''}\le C/R^2\).
+Let \(\eta_L\in C_c^\infty(\R)\) satisfy \(\eta_L\equiv 1\) on \([-L,L]\),
+\(\operatorname{supp}\eta_L\subset[-2L,2L]\),
+\(\abs{\eta_L'}\le C/L\). Write \(\psi_{R,L}:=\chi_R(r)\eta_L(z)\).
+
+\begin{proposition}[Localized energy identity]
+\label{prop:local}
+Along a smooth solution of \eqref{eq:Phieps},
+\begin{align}
+\label{eq:star-loc}
+\tfrac12\ddt\int\Ph^2\psi_{R,L}\,r^3
+&+\nu\int\abs{\gradfive\Ph}^2\psi_{R,L}\,r^3
++\eps\int\bigl((-\Delta)^{0.65}\Ph\bigr)^2\psi_{R,L}\,r^3\nonumber\\
+&=-\int\frac{\ur}{r}\Ph^2\psi_{R,L}\,r^3
++\mathcal{R}_{\mathrm{adv}}
++\mathcal{R}_{\nu}
++\mathcal{R}_{\eps},
+\end{align}
+where the cutoff remainders are
+\begin{align*}
+\mathcal{R}_{\mathrm{adv}}
+&=\tfrac12\int\Ph^2\,(u\cdot\nabla\psi_{R,L})\,r^3,\\
+\mathcal{R}_{\nu}
+&=-\nu\int\Ph\,(\gradfive\Ph\cdot\gradfive\psi_{R,L})\,r^3,\\
+\abs{\mathcal{R}_{\eps}}
+&\le C\eps\norm{\Ph}{\Hdot^{1.3}(r^3)}
+\norm{\Ph(1-\psi_{R,L})}{\Hdot^{1.3}(r^3)}.
+\end{align*}
+In particular
+\[
+\abs{\mathcal{R}_{\mathrm{adv}}}
++\abs{\mathcal{R}_{\nu}}
+\le C\Bigl(\frac1R+\frac1L\Bigr)
+\Bigl(\norm{\Ph}{L^2(A_{R,L})}^2
++\norm{u}{L^\infty(A_{R,L})}\norm{\Ph}{L^2(A_{R,L})}^2
++\norm{\gradfive\Ph}{L^2(A_{R,L})}\norm{\Ph}{L^2(A_{R,L})}\Bigr),
+\]
+with \(A_{R,L}\) the support of \(\nabla\psi_{R,L}\)
+(the annulus \(R\le r\le 2R\) or the slabs \(L\le\abs{z}\le 2L\)).
+\end{proposition}
+
+\begin{proof}
+Multiply \eqref{eq:Phieps} by \(\Ph\psi_{R,L}r^3\) and integrate.
+The time term is immediate.
+For advection,
+\(\int(u\cdot\nabla\Ph)\Ph\psi r^3
+=\tfrac12\int u\cdot\nabla(\Ph^2)\,\psi r^3\).
+Integrating by parts (the cutoff has compact support, so no boundary
+at infinity) and using Lemma~\ref{lem:div5},
+\begin{align*}
+\int u\cdot\nabla(\Ph^2)\,\psi r^3
+&=-\int\Ph^2\psi\bigl(\partial_r(r^3\ur)+\partial_z(r^3\uz)\bigr)
+-\int\Ph^2(u\cdot\nabla\psi)\,r^3\\
+&=-2\int\frac{\ur}{r}\Ph^2\psi r^3
+-\int\Ph^2(u\cdot\nabla\psi)\,r^3.
+\end{align*}
+Thus
+\(\int(u\cdot\nabla\Ph)\Ph\psi r^3
+=-\int(\ur/r)\Ph^2\psi r^3
+-\tfrac12\int\Ph^2(u\cdot\nabla\psi)\,r^3\).
+The stretching term contributes
+\(+2\int(\ur/r)\Ph^2\psi r^3\).
+The net first-order contribution on the left is
+\(+\int(\ur/r)\Ph^2\psi r^3
+-\tfrac12\int\Ph^2(u\cdot\nabla\psi)\,r^3\).
+Move the first summand to the right; the second is
+\(\mathcal{R}_{\mathrm{adv}}\).
+
+For the viscous term,
+\(\int(\Lfour\Ph)\Ph\psi r^3
+=-\int\abs{\gradfive\Ph}^2\psi r^3
+-\int\Ph(\gradfive\Ph\cdot\gradfive\psi)\,r^3\),
+which is the Dirichlet form of Lemma~\ref{lem:visc} plus
+\(\mathcal{R}_{\nu}/\nu\).
+The fractional remainder is the commutator of
+\((-\Delta)^{1.3}\) with multiplication by \(\psi_{R,L}\), controlled
+by \eqref{eq:dual} on the support of \(1-\psi_{R,L}\).
+The size of \(\mathcal{R}_{\mathrm{adv}}\) and \(\mathcal{R}_{\nu}\)
+follows from \(\abs{\nabla\psi_{R,L}}\le C(R^{-1}+L^{-1})\) and Cauchy--Schwarz.
+No appeal to \(\abs{f}\le\norm{f}{L^2}\) is used.
+\end{proof}
+
+\begin{theorem}[Headline energy identity]
+\label{thm:star}
+Let \(\Ph\) be a smooth solution of \eqref{eq:Phieps} with
+\(\Ph\in L^\infty_t L^2(r^3)\cap L^2_t\Hdot^1(r^3)\) on a time interval
+where the tails of Proposition~\ref{prop:local} vanish as
+\(R,L\to\infty\) (in particular, for compactly supported smooth data
+evolved smoothly up to time \(t\)). Then
+\begin{equation}
+  \label{eq:star}
+  \tfrac12\ddt\norm{\Ph}{L^2(r^3)}^2
+  +\nu\norm{\gradfive\Ph}{L^2(r^3)}^2
+  +\eps\norm{\Ph}{\Hdot^{1.3}(r^3)}^2
+  =-\int\frac{\ur}{r}\,\Ph^2\,r^3\,\dd r\,\dd z.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Send \(R,L\to\infty\) in \eqref{eq:star-loc}.
+The remainders vanish by the tail hypothesis and by
+\(\norm{\Ph(1-\psi_{R,L})}{\Hdot^{1.3}(r^3)}\to 0\).
+What remains is \eqref{eq:star}.
+\end{proof}
+
+\begin{remark}[The \(r\,\dd r\,\dd z\) comparison]
+The same computation in \(r\,\dd r\,\dd z\) produces an extra axis
+integral \(-\int\Ph(0,z)^2\,\dd z\) because \(\Lfour\) is then not the
+Dirichlet form. The \(r^3\) calculus removes that term rather than
+estimating it. No physics has left \(\R^3\).
+\end{remark}
+
+\section{Estimates for the strain pairing}
+\label{sec:strain}
+
+Write \(S:=\ur/r\), \(E:=\norm{\Ph}{L^2(r^3)}^2\),
+\(D:=\norm{\gradfive\Ph}{L^2(r^3)}^2\), and
+\[
+  I:=\int S\Ph^2\,r^3\,\dd r\,\dd z.
+\]
+Identity \eqref{eq:star} is
+\(\tfrac12\dot E+\nu D+\eps\norm{\Ph}{\Hdot^{1.3}(r^3)}^2=-I\).
+The next lemmas are the estimates we actually ran. Each one stops at
+a named line. No estimate below is completed by reversing an inequality
+or by \(\abs{f(x)}\le\norm{f}{L^2}\).
+
+\subsection{Gronwall from an \(L^\infty\) strain bound}
+
+\begin{lemma}[Integrable strain implies a uniform \(\Ph\)-energy]
+\label{lem:gronwall}
+If
+\begin{equation}
+  \label{eq:B1}
+  \sup_{\eps\in(0,1]}
+  \int_0^T\norm{S_\eps(t)}{\Lint}\,\dd t<\infty,
+\end{equation}
+then
+\(E_\eps(t)\le E_\eps(0)\exp\bigl(2\int_0^t\norm{S_\eps}{\Lint}\bigr)\)
+on \([0,T]\).
+\end{lemma}
+
+\begin{proof}
+H\"older gives \(\abs{I}\le\norm{S}{\Lint}E\), hence
+\(\dot E\le 2\norm{S}{\Lint}E\).
+\end{proof}
+
+This is the input of Theorem~\ref{thm:cond}. The rest of the section
+asks whether \eqref{eq:B1} follows from Theorems~\ref{thm:identity},
+\ref{thm:gamma}, \ref{thm:star}, and \ref{thm:eps}.
+
+\subsection{Path 1: circulation majorant}
+
+\begin{lemma}[Pointwise size of \(\Ph\)]
+\label{lem:Phi-pt}
+On a smooth solution,
+\(\abs{\Ph}\le r^{-2}\norm{\Ga(t)}{\Lint}\le r^{-2}\norm{\Ga_0}{\Lint}\).
+\end{lemma}
+
+\begin{proof}
+\(\Ph=\Ga/r^2\) and Theorem~\ref{thm:gamma}.
+\end{proof}
+
+Substitute into the pairing:
+\begin{equation}
+  \label{eq:I-majorant}
+  \abs{I}
+  \le\norm{\Ga_0}{\Lint}^2
+  \int\frac{\abs{\ur}}{r^2}\,\dd r\,\dd z.
+\end{equation}
+Near the axis a smooth field satisfies \(\ur=O(r)\), so the integrand
+is \(O(r^{-1})\). The integral
+\(\int_0^1 r^{-1}\,\dd r\) diverges logarithmically.
+The majorant \eqref{eq:I-majorant} is therefore not a locally integrable
+function of \((r,z)\). Path~1 stops here: \(\Ga\in\Lint\) controls
+\(\ut\) and \(\Ph\), and does not produce an integrable envelope for
+\(I\).
+
+\subsection{Path 2: Biot--Savart and the stream function}
+
+The meridional velocity is recovered from a stream function \(\psi\)
+by
+\(\ur=-r^{-1}\partial_z\psi\), \(\uz=r^{-1}\partial_r\psi\),
+with
+\begin{equation}
+  \label{eq:psi}
+  \Bigl(\partial_{rr}-\frac1r\partial_r+\partial_{zz}\Bigr)\psi
+  =r\,\omega^\theta.
+\end{equation}
+Thus \(S=\ur/r=-r^{-2}\partial_z\psi\) is a Calder\'on--Zygmund
+functional of \(\omega^\theta\), not of \(\Ga\).
+The components built from \(\Ga\) are
+\begin{equation}
+  \label{eq:omega-rz}
+  \omega^r=-\,r^{-1}\partial_z\Ga=-r\partial_z\Ph,
+  \qquad
+  \omega^z=r^{-1}\partial_r\Ga=2\Ph+r\partial_r\Ph.
+\end{equation}
+They do not determine \(\omega^\theta\). The evolution of \(\omega^\theta\)
+contains the centrifugal source \(\partial_z(\Ph^2)\) of
+Theorem~\ref{thm:identity}. Closing \(\norm{S}{\Lint}\) from
+\(\Ga\in\Lint\) plus Biot--Savart would require a bound on
+\(\omega^\theta\) that the identity does not give.
+Path~2 stops at \eqref{eq:psi}: the kernel hits the wrong vorticity
+component.
+
+\subsection{Path 3: five-dimensional Sobolev}
+
+The embedding \(\Hdot^1(\R^5)\hookrightarrow L^{10/3}\) on the lift
+gives
+\(\norm{\Ph}{L^{10/3}(r^3)}\le C D^{1/2}\).
+H\"older on \(I\) with this integrability asks for
+\(S\in L^{5/2}(r^3)\):
+\[
+  \int\abs{S}^{5/2}r^3
+  =\int\abs{\ur}^{5/2}r^{1/2}\,\dd r\,\dd z.
+\]
+The Leray--Hopf energy is \(\int\abs{u}^2 r\,\dd r\,\dd z\). These
+are not the same norm. Placing \(S\) in \(\Lint\) returns
+Lemma~\ref{lem:gronwall}. Hiding a piece of \(I\) in \(\nu D\) is
+critical, as the next scaling count shows.
+
+The Navier--Stokes scaling
+\(u_\lambda(x,t)=\lambda u(\lambda x,\lambda^2 t)\)
+gives
+\(S_\lambda=\lambda^2 S(\lambda r,\lambda z,\lambda^2 t)\) and
+\(\Ph_\lambda=\lambda^2\Ph(\lambda r,\lambda z,\lambda^2 t)\).
+The measure \(r^3\,\dd r\,\dd z\) scales as \(\lambda^{-5}\), and
+\(\abs{\gradfive\Ph_\lambda}^2\) as \(\lambda^6\). Hence
+\(I_\lambda=\lambda I\) and \(D_\lambda=\lambda D\).
+The pairing and the dissipation have the same degree. An inequality
+\(\abs{I}\le\delta\nu D+C_\delta(\cdots)\)
+cannot send \(\delta\to 0\) independently of the size of \(S\) without
+reintroducing \(\norm{S}{\Lint}\) or a supercritical norm of \(\Ph\).
+
+A cubic comparison \(E'+c\nu D\le C\nu^{-3}E^3\) is supercritical:
+\(y'=C\nu^{-3}y^3\) explodes for large \(y(0)\).
+A 3D Bernstein factor \(\norm{\nabla u_j}{\Lint}\lesssim 2^j\norm{u_j}{L^2}\)
+is false (the factor is \(2^{5j/2}\)) and is not used.
+Path~3 stops at matching degree.
+
+\subsection{Path 4: weighted Hardy in \(r^3\)}
+
+The five-dimensional Hardy inequality on radial functions yields
+\[
+  \int\frac{\Ph^2}{r^2}\,r^3\,\dd r\,\dd z
+  \le C D,
+\]
+i.e.\ \(\int\Ph^2 r\le C D\).
+This bounds \(\int\Ph^2 r\), not \(I=\int S\Ph^2 r^3\).
+If one had \(\abs{S}\le C r^{-2}\) the pairing would collapse to
+Hardy, which is the Type~I assumption \(\abs{\ur}\le C/r\) of
+\cite{CSTY2008}.
+Without that assumption Hardy does not see \(S\).
+Path~4 stops at the missing weight on \(S\).
+
+\subsection{Path 5: absorption into \(\eps\Hdot^{1.3}\)}
+
+On the five-dimensional lift,
+\(\Hdot^{1.3}\hookrightarrow L^{p}\) for
+\(1/p=1/2-1.3/5=0.24\), so \(p=25/6\).
+Young against this embedding still requires a positive power of
+\(\norm{S}{\Lint}\) or of a supercritical norm of \(\Ph\), and the
+prefactor carries \(1/\eps\).
+For each fixed \(\eps>0\) the \(\eps\)-system is already smooth by
+Theorem~\ref{thm:eps}. The resulting bound is not uniform as
+\(\eps\to 0\).
+Path~5 stops at the \(\eps^{-1}\) blow-up of the constant.
+
+\subsection{Path 6: cutoff remainders}
+
+The remainders \(\mathcal{R}_{\mathrm{adv}}\) and \(\mathcal{R}_{\nu}\)
+in \eqref{eq:star-loc} live on \(\{R\le r\le 2R\}\) or
+\(\{L\le\abs{z}\le 2L\}\) and vanish as \(R,L\to\infty\) under the
+tails of Theorem~\ref{thm:star}.
+They do not touch the pairing on \(\{r\le R,\ \abs{z}\le L\}\).
+Localization justifies \eqref{eq:star}; it does not absorb \(I\).
+Path~6 stops in the bulk.
+
+\subsection{Path 7: incompressibility formula for \(\ur\)}
+
+From \eqref{eq:div3},
+\(r\ur(r,z)=-\int_0^r s\,\partial_z\uz(s,z)\,\dd s\).
+Hence
+\[
+  \abs{S(r,z)}
+  \le r^{-2}\int_0^r s\abs{\partial_z\uz}\,\dd s
+  \le r^{-2/p}\Bigl(\int_0^r\abs{\nabla u}^p s\,\dd s\Bigr)^{1/p}
+\]
+for \(p\ge 1\), by H\"older.
+For \(p=2\) this is a local \(L^2\) bound on \(\nabla u\), which
+\eqref{eq:U1} provides, times a weight \(r^{-1}\). The right-hand side
+is not in \(\Lint\). Raising \(p\) above \(3\) to reach \(\Lint\)
+requires \(\nabla u\in L^{3+}\), which is the regularity the estimate
+was supposed to produce.
+Path~7 stops at the integrability of \(\nabla u\).
+
+\subsection{Path 8: Beale--Kato--Majda in intensive variables}
+
+From \eqref{eq:omega-rz},
+\(\norm{\omega^r}{\Lint}+\norm{\omega^z}{\Lint}\) is controlled by
+\(\norm{\Ph}{\Lint}+\norm{r\nabla\Ph}{\Lint}\).
+Beale--Kato--Majda still needs \(\omega^\theta\) as well, and
+\(\norm{\Ph}{\Lint}\) is not implied by \(E\) or \(D\).
+Path~8 restates a stronger \(\Lint\) problem.
+
+\subsection{Summary of the eight paths}
+
+None of Paths~1--8 yields \eqref{eq:B1} from
+Theorems~\ref{thm:identity}--\ref{thm:eps} alone.
+The leftover quantity is the hypothesis of the next theorem.
+
+\section{Continuation under integrable strain}
+
+\begin{theorem}[Continuation]
+\label{thm:cond}
+Let \(u_0\) be smooth, compactly supported, divergence-free, and
+axisymmetric with swirl. Let \(u_\eps\) solve \eqref{eq:eps}.
+If \eqref{eq:B1} holds on \([0,T]\), then
+\(\{\Ph_\eps\}_{\eps\in(0,1]}\) is bounded in
+\(L^\infty_t L^2(r^3)\cap L^2_t\dot H^1(r^3)\),
+and any Aubin--Lions limit is a smooth axisymmetric solution of
+classical Navier--Stokes on \([0,T]\).
+If \eqref{eq:B1} holds for every finite \(T\), the classical solution
+exists globally.
+\end{theorem}
+
+\begin{proof}
+Lemma~\ref{lem:gronwall} gives the \(\Ph\)-bound.
+Theorems~\ref{thm:gamma} and \ref{thm:eps} remain available.
+Under \eqref{eq:B1} the right-hand side of \eqref{eq:star} is uniformly
+integrable, so the \(\Ph\)-energy passes to the limit.
+Remark~\ref{rem:weak} gives a Leray--Hopf limit.
+The swirl continuation criteria of
+\cite{CSTY2008,CSTY2009}
+upgrade the limit to a smooth solution on \([0,T]\), because
+\eqref{eq:B1} is a bound of the type those papers assume.
+\end{proof}
+
+\section{Related work}
+
+Without swirl: \cite{Lady1968,UY1968}.
+Partial swirl criteria: \cite{ChaeLee2002,HouLi2008,Danchin2007,ChenFangZhang2017}.
+Type~I / \(\Lint\) criteria:
+\cite{CSTY2008,CSTY2009,LeiZhang2011,Seregin2012}.
+The May 2026 deposit is \cite{SimonsPhi2026}, with the short companion
+\cite{SimonsPhiShort2026}.
+The 2026 papers \cite{ShahApr,ShahMay,ShahJun} are cited.
+They use, among other devices, an \((A,W)\) circulation-gradient pair
+and an axis Hardy formula for \(\Ga\). Those devices are not used in
+Theorems~\ref{thm:identity}--\ref{thm:cond}.
+
+\section*{Acknowledgments}
+This note continues \cite{SimonsPhi2026,SimonsPhiShort2026}.
+It does not replace those public timestamps.
+
+\begin{thebibliography}{99}
+
+\bibitem{Lady1968}
+O.~A.~Ladyzhenskaya,
+\textit{Unique global solvability of the three-dimensional Cauchy problem
+for the NS equations in the presence of axial symmetry},
+Zap.\ Nauchn.\ Sem.\ LOMI \textbf{7} (1968), 155--177.
+
+\bibitem{UY1968}
+M.~R.~Ukhovskii and V.~I.~Yudovich,
+\textit{Axially symmetric flows of ideal and viscous fluids filling the
+whole space}, J.\ Appl.\ Math.\ Mech.\ \textbf{32} (1968), 52--62.
+
+\bibitem{ChaeLee2002}
+D.~Chae and J.~Lee,
+\textit{On the regularity of the axisymmetric solutions of the NS equations},
+Math.\ Z.\ \textbf{239} (2002), 645--671.
+
+\bibitem{HouLi2008}
+T.~Y.~Hou and C.~Li,
+\textit{Dynamic stability of the 3D axisymmetric NS equations with swirl},
+Comm.\ Pure Appl.\ Math.\ \textbf{61} (2008), 661--697.
+
+\bibitem{Danchin2007}
+R.~Danchin,
+\textit{Axisymmetric incompressible flows with bounded vorticity},
+Russian Math.\ Surveys \textbf{62} (2007), 73--94.
+
+\bibitem{CSTY2008}
+C.-C.~Chen, R.~M.~Strain, T.-P.~Tsai, and H.-T.~Yau,
+\textit{Lower bound on the blow-up rate of the axisymmetric Navier--Stokes equations},
+Int.\ Math.\ Res.\ Not.\ (2008).
+
+\bibitem{CSTY2009}
+C.-C.~Chen, R.~M.~Strain, T.-P.~Tsai, and H.-T.~Yau,
+\textit{Lower bound on the blow-up rate of the axisymmetric Navier--Stokes equations~II},
+Comm.\ Partial Differential Equations \textbf{34} (2009), 203--232.
+
+\bibitem{LeiZhang2011}
+Z.~Lei and Q.~S.~Zhang,
+\textit{A Liouville theorem for the axially-symmetric Navier--Stokes equations},
+J.\ Eur.\ Math.\ Soc.\ \textbf{13} (2011).
+
+\bibitem{ChenFangZhang2017}
+H.~Chen, D.~Fang, and T.~Zhang,
+\textit{Regularity of 3D axisymmetric Navier--Stokes equations},
+Discrete Contin.\ Dyn.\ Syst.\ \textbf{37} (2017), 1923--1939.
+
+\bibitem{Seregin2012}
+G.~Seregin,
+\textit{A certain necessary condition of potential blow up for Navier--Stokes equations},
+Comm.\ Math.\ Phys.\ \textbf{312} (2012), 833--875.
+
+\bibitem{SimonsPhi2026}
+J.~Simons,
+\textit{Phi-Renormalization and Global Regularity for Axisymmetric-with-Swirl Navier--Stokes},
+Zenodo, 27 May 2026.
+\href{https://doi.org/10.5281/zenodo.20405404}{10.5281/zenodo.20405404};
+file DOI
+\href{https://doi.org/10.5281/zenodo.20405405}{10.5281/zenodo.20405405}.
+
+\bibitem{SimonsPhiShort2026}
+J.~Simons,
+\textit{Phi-Renormalization and Axisymmetric-with-Swirl Navier--Stokes:
+Algebraic Cancellation of the Axis Singularity},
+Zenodo, 27 May 2026.
+\href{https://doi.org/10.5281/zenodo.20405597}{10.5281/zenodo.20405597}.
+
+\bibitem{ShahApr}
+R.~Shahmurov,
+\textit{Unconditional Axis-Regularity in the 5D Corridor},
+arXiv:2604.03519.
+
+\bibitem{ShahMay}
+R.~Shahmurov,
+\textit{Large-Data Global Regularity for Three-Dimensional Navier--Stokes~I},
+arXiv:2605.01875.
+
+\bibitem{ShahJun}
+R.~Shahmurov,
+\textit{Global Regularity for Axisymmetric Navier--Stokes Flows with Swirl},
+arXiv:2606.07869.
+
+\end{thebibliography}
+
+\end{document}
