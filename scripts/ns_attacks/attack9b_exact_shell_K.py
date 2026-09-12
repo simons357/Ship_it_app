@@ -128,11 +128,17 @@ def shell_field_norm2(field: Field) -> float:
     return sum(float(np.vdot(v, v).real) for v in field.values())
 
 
-def K_of_w(w: Field, alpha: float, beta: float) -> Dict[str, float]:
+def K_of_w(
+    w: Field,
+    alpha: float,
+    beta: float,
+    Buu: Optional[Field] = None,
+) -> Dict[str, float]:
     """K_{α,β}(w) = β ‖Π_β B(w,w)‖₂² / (α² ‖w‖₂⁴)."""
     w = enforce_reality(w)
     e = field_l2(w) ** 2
-    Buu = nonlinear_B(w)
+    if Buu is None:
+        Buu = nonlinear_B(w)
     PiB = project_B_to_shell(Buu, beta)
     pi_norm2 = shell_field_norm2(PiB)
     denom = (alpha ** 2) * (e ** 2)

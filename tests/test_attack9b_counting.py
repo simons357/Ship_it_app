@@ -44,7 +44,7 @@ class CountingLockTests(unittest.TestCase):
         self.assertIn("Remaining packet falsifier", grow)
         self.assertIn("Full complex polarizations", grow)
         self.assertIn("frequency factors kept", grow.lower())
-        self.assertIn("Same \(B\) as 9B", grow)
+        self.assertIn(r"Same \(B\) as 9B", grow)
         self.assertIn("LIVE", grow)
 
     def test_one_output_has_at_most_m_pairs(self):

@@ -170,6 +170,10 @@ Also:
 
 Scores: [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
 9B JSON: [`five-lane-export/ATTACK_9B.md`](five-lane-export/ATTACK_9B.md).
+Linear-pol growing-\(s\) samples on this
+branch (scored; \(K\approx 0.631\); do not
+merge with \(0.456\) or \(0.641\)):
+[`LEMMA-STAR-9B-GROWING.md`](LEMMA-STAR-9B-GROWING.md).
 
 Setup call (do not start 9D):
 [`ATTACK-9D-SETUP.md`](ATTACK-9D-SETUP.md).
