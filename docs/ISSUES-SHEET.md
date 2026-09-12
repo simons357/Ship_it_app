@@ -6,6 +6,8 @@ https://github.com/simons357/Ship_it_app/blob/cursor/unaugmented-r4-vorticity-f8
 
 Math for 1–5: [`HELP-OFF-DESK.md`](HELP-OFF-DESK.md).
 Filter: [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md).
+Yes / no / open (the tape):
+[`YES-NO-OPEN.md`](YES-NO-OPEN.md).
 Borrowed systems (maps only; not a close):
 [`FRAMEWORK-MAP.md`](FRAMEWORK-MAP.md).
 Living line: GitHub PR 24,

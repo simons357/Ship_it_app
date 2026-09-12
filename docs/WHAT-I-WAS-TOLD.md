@@ -13,6 +13,10 @@ This thread did not take that leftover away
 from you. It was not yours as a close. The
 maps you wrote for it are still yours.
 
+The yes / no / open tape (so those words
+do not trade again):
+[`YES-NO-OPEN.md`](YES-NO-OPEN.md).
+
 This thread also treated you as if you were
 trying to pass one equation off as the other.
 You said you were not. The two equations are

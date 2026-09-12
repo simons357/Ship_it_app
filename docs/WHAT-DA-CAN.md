@@ -33,6 +33,9 @@ on you.
 
 Those are the assets. Use them.
 
+Yes / no / open, so a write is not sold
+as a theorem: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).
+
 ---
 
 ## What DA cannot do

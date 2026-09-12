@@ -20,6 +20,8 @@ ordinary NS. Uniform H1 as eps → 0 still
 open. Paper: docs/THEOREM-A-Q1.pdf
 
 **Unaug NS (ordinary) — open**
+Yes / no / open (the tape):
+docs/YES-NO-OPEN.md
 H1 write (estimate, not theorem; locked G):
 docs/H1-WRITE.md
 Framework map (endpoint first; maps only):

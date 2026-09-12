@@ -1,5 +1,8 @@
 Stay here. This chat is DA.
 
+Yes / no / open (the tape; a write is
+not a theorem):
+docs/YES-NO-OPEN.md
 H1 write (the estimate, not the theorem;
 locked G; machine refuses a fake close):
 docs/H1-WRITE.md
