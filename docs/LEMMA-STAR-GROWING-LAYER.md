@@ -28,6 +28,7 @@ is still pending. The live evaluators already
 reproduce the identity on \(n=1,\dots,10\).
 That is not a proof assistant.
 
+Derivation: [`math/ns_attacks/LEMMA_STAR_GROWING_LAYER_COUNTEREXAMPLE.md`](math/ns_attacks/LEMMA_STAR_GROWING_LAYER_COUNTEREXAMPLE.md).
 Machine: `scripts/ns_attacks/verify_pr24_closure_review.py`
 Audit: `results/pr24_closure_review/audit.json`
 Locked statement: [`LEMMA-STAR-STATEMENT.md`](LEMMA-STAR-STATEMENT.md).

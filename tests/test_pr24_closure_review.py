@@ -14,19 +14,25 @@ from verify_pr24_closure_review import run  # noqa: E402
 
 PAGE = ROOT / "docs" / "LEMMA-STAR-GROWING-LAYER.md"
 BOUND = ROOT / "docs" / "ATTACK-9D-FULL-SUPPORT-BOUND.md"
+MATH_BOUND = ROOT / "docs" / "math" / "ns_attacks" / "ATTACK_9D_FULL_SUPPORT_BOUND.md"
+MATH_KILL = ROOT / "docs" / "math" / "ns_attacks" / "LEMMA_STAR_GROWING_LAYER_COUNTEREXAMPLE.md"
 TAPE = ROOT / "docs" / "YES-NO-OPEN.md"
 SHEET = ROOT / "docs" / "ISSUES-SHEET.md"
 
 
 class Pr24ClosureReviewTests(unittest.TestCase):
     def test_pages_do_not_close_ns(self):
-        for path in (PAGE, BOUND):
+        for path in (PAGE, BOUND, MATH_BOUND, MATH_KILL):
             text = path.read_text()
             self.assertIn("not solved", text.lower())
             self.assertNotIn("NS is solved", text)
             self.assertNotIn("Clay is solved", text)
             self.assertNotIn("almost proved", text.lower())
             self.assertNotIn("hygiene", text.lower())
+        self.assertGreater(len(MATH_BOUND.read_text()), 800)
+        self.assertGreater(len(MATH_KILL.read_text()), 800)
+        self.assertIn("16/9", MATH_BOUND.read_text())
+        self.assertIn("165888", MATH_KILL.read_text())
 
     def test_family_kills_the_box_on_the_live_evaluator(self):
         payload = run()

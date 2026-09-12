@@ -23,6 +23,7 @@ Designed \(\Theta(m^2)\) 9D stays **NO**.
 Grow-\(s\) samples stay historical.
 Do not cash \(0.456\) or \(0.641\) as \(C_0\).
 
+Derivation: [`math/ns_attacks/ATTACK_9D_FULL_SUPPORT_BOUND.md`](math/ns_attacks/ATTACK_9D_FULL_SUPPORT_BOUND.md).
 Machine: `scripts/ns_attacks/verify_pr24_closure_review.py`.
 Grow-\(s\) page: [`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md).
 
