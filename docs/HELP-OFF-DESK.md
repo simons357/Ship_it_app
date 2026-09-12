@@ -169,6 +169,7 @@ Mid-Bad is a named remainder. It is not
 H1. Tube stretching on one cylinder is
 the same leftover class, a different
 integral. Do not merge the two.
+[`H1-WRITE.md`](H1-WRITE.md),
 [`WRITE_6.md`](WRITE_6.md),
 [`H1-OBJECT.md`](H1-OBJECT.md),
 [`WHERE-H1.md`](WHERE-H1.md),

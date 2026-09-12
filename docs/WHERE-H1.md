@@ -20,6 +20,8 @@ A_{\mathrm{bad}}(Q_r)
 \]
 
 That is H1. Object: [`H1-OBJECT.md`](H1-OBJECT.md). Write: [`WRITE_6.md`](WRITE_6.md).
+Full write (locked \(\mathcal G\); not a theorem):
+[`H1-WRITE.md`](H1-WRITE.md).
 
 **Near-Bad** (\(|x-y|<\rho\)) is the core. Mid-Bad is a named remainder. It is not H1. Packet §12: [`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md).
 

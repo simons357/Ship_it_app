@@ -1,5 +1,9 @@
 Stay here. This chat is DA.
 
+H1 write (the estimate, not the theorem;
+locked G; machine refuses a fake close):
+docs/H1-WRITE.md
+scripts/h1_machine.py
 Framework map (endpoint first;
 specialty out; leftover stays open):
 docs/FRAMEWORK-MAP.md

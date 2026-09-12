@@ -29,7 +29,7 @@ One person, one row. Do not glue 1, 4, and 5.
 
 | # | Issue | Object | What would close it | File |
 |---|---|---|---|---|
-| 1 | H1 = WRITE (6) | Bad-pair stretching \(A_{\mathrm{bad}}\) on the cylinder \(Q_r\) | Prove thinness, or \(J\) on folds, or dynamics on \(r^2/\nu\); or write a named kill of those shapes. Not another *if*. | `docs/WRITE_6.md`, `docs/H1-OBJECT.md` |
+| 1 | H1 = WRITE (6) | Bad-pair stretching \(A_{\mathrm{bad}}\) on the cylinder \(Q_r\) | Prove thinness, or \(J\) on folds, or dynamics on \(r^2/\nu\); or write a named kill of those shapes. Not another *if*. | `docs/H1-WRITE.md`, `docs/WRITE_6.md`, `docs/H1-OBJECT.md` |
 | 2 | H2 from energy | Flux \(r^{-1}\iint|u||\omega|^2\) on the same cylinder | A priori from energy, or keep CKN-smallness and say so. CKN-small already sits. | `docs/H-SYSTEM.md` |
 | 3 | H3 | Exterior Biot–Savart on the same cylinder | Absorb as \(r\to 0\). Written, not absorbed. | `docs/H-SYSTEM.md` |
 | 4 | Lemma★ | \(\sup\mathcal R_\star<\infty\) on \(\mathbb{T}^3\), \(\mathcal R_\star=(T_c)_+^2/(\mathcal D_s E Y)\) | A geometry-only bound, or a sequence with \(\mathcal R_\star\to\infty\). | `docs/LEMMA-STAR-STATEMENT.md` |

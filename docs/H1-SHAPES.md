@@ -9,6 +9,8 @@ Tube writing of the same leftover class (different
 integral): [`H1-SOT.md`](H1-SOT.md).
 Do not merge with H, Lemma C, H2, H3, or Lemma★.
 
+Full write (locked \(\mathcal G\); not a theorem):
+[`H1-WRITE.md`](H1-WRITE.md).
 These are writings of H1. None of them sits.
 Do not cash “assume thin” as 1. Do not cash Lemma J
 on generic fields as 2. Do not cash an imposed

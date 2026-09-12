@@ -14,6 +14,9 @@ A_{\mathrm{bad}}(Q_r)
 \]
 
 That is the write. It is not a theorem.
+The full write (locked ratio \(\mathcal G\),
+Hölder cut spent once, machine):
+[`H1-WRITE.md`](H1-WRITE.md).
 
 **Score of the write.** Aimed leftover: **yes**. Theorem: **no**.
 
