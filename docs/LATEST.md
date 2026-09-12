@@ -163,6 +163,9 @@ Attack 9B exact-shell \(K_{\alpha,\beta}\)
 docs/five-lane-export/ATTACK_9B.md
 Fixed-output \(\Theta(m^2)\): counting error,
 \(K\le 16s\). docs/LEMMA-STAR-9B-COUNTING.md
+9B growing-\(s\) campaign (not 9D;
+finite max is not \(C_0\)):
+docs/LEMMA-STAR-9B-GROWING.md
 No \(K(t)\). No Q1.
 
 **RH — open**

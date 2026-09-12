@@ -11,6 +11,9 @@ T_mm is the bulk on mixed samples,
 not T_ss; allowed R blocked;
 chain stays a chain):
 docs/TJJ-ESTIMATE.md
+9B growing-s (live lane; not 9D;
+finite max is not C0):
+docs/LEMMA-STAR-9B-GROWING.md
 Swirl probe of that remainder
 (pairing closed; class samples printed;
 not a close):

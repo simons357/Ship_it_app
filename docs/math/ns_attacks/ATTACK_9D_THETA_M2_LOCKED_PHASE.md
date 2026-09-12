@@ -53,7 +53,8 @@ occupied keys of \(\Pi_\beta B(w,w)\) on shell \(\beta\).
 The crude phase-free bound is \(K\le 16s\). Fixed \(s\)
 is closed. Whether \(K\) stays bounded as \(m\) and \(s\)
 **grow** is the open 9B test
-(`attack9b_output_counting.py`). Finding that scaling
+(`attack9b_growing_s.py`, also
+`attack9b_output_counting.py`). Finding that scaling
 is **not** a 9D lemma.
 
 9D’s \(\Theta(m^2)\) is a *design size for a closure

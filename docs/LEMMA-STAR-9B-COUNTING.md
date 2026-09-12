@@ -144,6 +144,8 @@ Growing input and output supports is the
 remaining **9B** test. No exponent tying
 \((m,s)\) to \((\alpha,\beta)\) is seated.
 9D does not supply that exponent.
+Campaign: [`LEMMA-STAR-9B-GROWING.md`](LEMMA-STAR-9B-GROWING.md),
+`scripts/ns_attacks/attack9b_growing_s.py`.
 Attack 12 \(\mathcal R_\star\sim\beta/\alpha\)
 may be cited as a channel diagnostic only.
 Do not build a ★ sentence from those

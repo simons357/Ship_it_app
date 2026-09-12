@@ -81,6 +81,7 @@ The JSON is the `results/` tree above.
 
 Growing output support is still a 9B test. Keep
 \(|k|\). Do not cash a finite \(\sqrt{K}\) as \(C_0\).
+Campaign: [`../LEMMA-STAR-9B-GROWING.md`](../LEMMA-STAR-9B-GROWING.md).
 
 Five-lane lanes 1–5: [`COMPUTE.md`](COMPUTE.md).
 Packets: [`../LEMMA-STAR-PACKET.md`](../LEMMA-STAR-PACKET.md).

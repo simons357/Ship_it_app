@@ -269,6 +269,9 @@ not a kill):
 9C is Attack 11 here. 9D Freiman-AP already dead.
 Screenshot \(\Theta(m^2)\) on a fixed output set:
 excluded. [`LEMMA-STAR-9B-COUNTING.md`](LEMMA-STAR-9B-COUNTING.md).
+Growing \(m\) and \(s\) (same \(B\); not 9D;
+finite max is not \(C_0\)):
+[`LEMMA-STAR-9B-GROWING.md`](LEMMA-STAR-9B-GROWING.md).
 
 Do not merge with H1.
 
