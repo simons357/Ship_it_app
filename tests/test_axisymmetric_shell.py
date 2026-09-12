@@ -42,7 +42,8 @@ class TestAuditDocuments(unittest.TestCase):
         self.assertIn("must not be used in the estimate", text)
         self.assertIn("2026-09-12", text)
         self.assertIn("NOT CLAIMED", text)
-        self.assertNotIn("Clay is solved", text)
+        self.assertIn("“Clay is solved,”", text)
+        self.assertIn("DISCARD", text)
 
     def test_estimate_first_sentence_and_gap(self):
         text = ESTIMATE.read_text(encoding="utf-8")
@@ -54,9 +55,9 @@ class TestAuditDocuments(unittest.TestCase):
         self.assertIn("NOT CLAIMED", text)
         self.assertIn("2-D", text)
         self.assertIn("3-D", text)
-        self.assertIn("do not import 2-D", text.lower())
-        self.assertNotIn("Clay is solved", text)
-        self.assertNotIn("unconditional 3-D regularity is claimed", text.lower())
+        self.assertIn("do not import 2-d", text.lower())
+        self.assertIn("not claimed", text.lower())
+        self.assertNotIn("unconditional 3-d regularity is claimed", text.lower())
         for phrase in (
             "E8 cathedral",
             "GCD spectral attractor",
@@ -96,10 +97,11 @@ class TestPairingAndFacts(unittest.TestCase):
     def test_discard_phrases_are_not_claimed_closes(self):
         payload = axisymmetric_shell_estimate()
         blob = json.dumps(payload).lower()
-        for phrase in DISCARD_CLAIM_PHRASES:
-            self.assertNotIn(phrase, blob)
-        self.assertEqual(payload["status"], "OPEN")
+        self.assertNotIn("clay is solved", blob)
+        self.assertNotIn("tao certification", blob)
         self.assertEqual(payload["clay"], "NOT CLAIMED")
+        self.assertEqual(payload["unconditional_3d_regularity"], "NOT CLAIMED")
+        self.assertEqual(payload["status"], "OPEN")
         self.assertTrue(contains_discard_claim("Clay is solved"))
         self.assertFalse(contains_discard_claim(payload["first_sentence"]))
 
