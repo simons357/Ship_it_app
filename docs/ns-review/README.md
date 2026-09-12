@@ -2,18 +2,23 @@
 
 Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS packaging.
 
+## Scientific face (preferred)
+
+Strictly scientific package (no campaign / outreach framing):
+
+- [`SCIENTIFIC-REPORT.md`](./SCIENTIFIC-REPORT.md) — problem statement, objects, Lemma★ / PRODUCT-BLOCK status, proved vs hypothesized vs parked
+- [`DA-AUDIT.md`](./DA-AUDIT.md) — Domain Architect check + language sanitize (CONDITIONAL PASS)
+- [`METHOD-PANEL-REVIEW.md`](./METHOD-PANEL-REVIEW.md) — simulated method-seat review (not peer review; not real mathematicians)
+- [`PROOF-CHAIN-CLEAN.md`](./PROOF-CHAIN-CLEAN.md) — definitions of \(T_c,\Lambda,X,Y,Z,E\); Lemma★; open estimate (prefer SCIENTIFIC-REPORT §4 for live PRODUCT-BLOCK = uniform \(\mathcal{R}_\star\))
+
+Reproducibility: [`scripts/ns_attacks/`](../../scripts/ns_attacks/).
+
 ## Proof chain (visual + clean math)
 
-Public click-through for the packaging and adjacent books — figures first, notation aligned, open nodes marked neutrally as *open estimate*:
+- [`PROOF-CHAIN-CLEAN.md`](./PROOF-CHAIN-CLEAN.md) — math companion
+- [`visual-journey/`](./visual-journey/) — Mermaid + PNG/SVG chain map, captions
 
-- Campaign landing: [`../campaign/PROOF-JOURNEY.md`](../campaign/PROOF-JOURNEY.md)
-- Reputation lock: [`../campaign/REPUTATION-LOCK.md`](../campaign/REPUTATION-LOCK.md)
-- Notation glossary: [`../campaign/NOTATION-GLOSSARY.md`](../campaign/NOTATION-GLOSSARY.md)
-- [`PROOF-CHAIN-CLEAN.md`](./PROOF-CHAIN-CLEAN.md) — definitions of \(T_c,\Lambda,X,Y,Z,E\); Lemma★; product estimate needs
-- [`visual-journey/`](./visual-journey/) — Mermaid + PNG/SVG chain map, captions, reused shell/barycenter figures
-- Campaign mirror: [`../campaign/visual-journey/`](../campaign/visual-journey/)
-
-Monday visual: `visual-journey/figures/proof-chain.png`.
+Campaign / outreach materials (if present under `docs/campaign/`) are **not** part of the scientific face.
 
 ## Φ-renorm (KEEP; conditional)
 
