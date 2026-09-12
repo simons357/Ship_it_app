@@ -41,11 +41,10 @@ class CountingLockTests(unittest.TestCase):
         self.assertIn("do not implement this", stub.lower())
         self.assertIn("Freiman-AP", stub)
         grow = (ROOT / "docs" / "ATTACK-9D-GROW-S.md").read_text()
-        self.assertIn("Remaining packet falsifier", grow)
+        self.assertIn("Historical", grow)
         self.assertIn("Full complex polarizations", grow)
         self.assertIn("frequency factors kept", grow.lower())
         self.assertIn(r"Same \(B\) as 9B", grow)
-        self.assertIn("LIVE", grow)
 
     def test_one_output_has_at_most_m_pairs(self):
         field = {}

@@ -14,7 +14,7 @@ Neither finite maximum is \(C_0\).
 
 ---
 
-## 1. Exact-shell 9D — claimed full-support bound
+## 1. Attack 9D — claimed full-support bound
 
 Same \(B=B(w,w)\). Same exact-shell target
 \[

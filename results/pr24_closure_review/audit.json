@@ -1,0 +1,273 @@
+{
+  "review": "pr24-closure-review",
+  "ns_solved": false,
+  "accepted_as_ns_close": false,
+  "soft_x": "silent",
+  "unrestricted_lemma_star": "KILLED_BY_EXPLICIT_FAMILY",
+  "exact_shell_9d_bound": "CLAIMED_C_4_OVER_3",
+  "need_star_repairs_unrestricted": false,
+  "specialist_review": "pending",
+  "proof_assistant": false,
+  "seed": {
+    "shell_T": {
+      "1": 0.75,
+      "2": -1.0,
+      "5": 0.25
+    },
+    "N": 0.0,
+    "M": 3.0,
+    "claimed_shell_T": {
+      "1": 0.75,
+      "2": -1.0,
+      "5": 0.25
+    },
+    "cubic_counts": {
+      "1": 7,
+      "2": 19,
+      "3": 37,
+      "4": 61,
+      "5": 91
+    },
+    "ok": true
+  },
+  "family": {
+    "rows": [
+      {
+        "n": 1,
+        "modes": 18,
+        "E": 12.0,
+        "N": 0.0,
+        "Tc": 21.0,
+        "Ds": 97.69811320754707,
+        "R_star": 0.0013983596600429915,
+        "core_R_star": 0.00139835966004299,
+        "tc_closed_form": 21.0,
+        "R_over_n": 0.0013983596600429915,
+        "elementary_lb": 6.028163580246913e-06,
+        "E_formula": 12,
+        "ok": true
+      },
+      {
+        "n": 2,
+        "modes": 30,
+        "E": 20.0,
+        "N": 0.0,
+        "Tc": 1824.0,
+        "Ds": 9648.188235294103,
+        "R_star": 0.0025748886886151107,
+        "core_R_star": 0.002574888688615107,
+        "tc_closed_form": 1824.0,
+        "R_over_n": 0.0012874443443075553,
+        "elementary_lb": 1.2056327160493826e-05,
+        "E_formula": 20,
+        "ok": true
+      },
+      {
+        "n": 3,
+        "modes": 42,
+        "E": 28.0,
+        "N": 0.0,
+        "Tc": 26973.0,
+        "Ds": 148682.02649006643,
+        "R_star": 0.003771825398056551,
+        "core_R_star": 0.003771825398056557,
+        "tc_closed_form": 26973.0,
+        "R_over_n": 0.001257275132685517,
+        "elementary_lb": 1.808449074074074e-05,
+        "E_formula": 28,
+        "ok": true
+      },
+      {
+        "n": 4,
+        "modes": 54,
+        "E": 36.0,
+        "N": 0.0,
+        "Tc": 187392.0,
+        "Ds": 1054584.0,
+        "R_star": 0.004972851263004261,
+        "core_R_star": 0.004972851263004261,
+        "tc_closed_form": 187392.0,
+        "R_over_n": 0.0012432128157510653,
+        "elementary_lb": 2.4112654320987653e-05,
+        "E_formula": 36,
+        "ok": true
+      },
+      {
+        "n": 5,
+        "modes": 66,
+        "E": 44.0,
+        "N": 0.0,
+        "Tc": 853125.0,
+        "Ds": 4861631.725301199,
+        "R_star": 0.006175510981550192,
+        "core_R_star": 0.006175510981550182,
+        "tc_closed_form": 853125.0,
+        "R_over_n": 0.0012351021963100384,
+        "elementary_lb": 3.0140817901234566e-05,
+        "E_formula": 44,
+        "ok": true
+      },
+      {
+        "n": 6,
+        "modes": 78,
+        "E": 52.0,
+        "N": 0.0,
+        "Tc": 2962656.0,
+        "Ds": 17025425.395973146,
+        "R_star": 0.007379023646201678,
+        "core_R_star": 0.0073790236462016896,
+        "tc_closed_form": 2962656.0,
+        "R_over_n": 0.0012298372743669464,
+        "elementary_lb": 3.616898148148148e-05,
+        "E_formula": 52,
+        "ok": true
+      },
+      {
+        "n": 8,
+        "modes": 102,
+        "E": 68.0,
+        "N": 0.0,
+        "Tc": 21331968.0,
+        "Ds": 123889504.969697,
+        "R_star": 0.009787402881363299,
+        "core_R_star": 0.009787402881363302,
+        "tc_closed_form": 21331968.0,
+        "R_over_n": 0.0012234253601704124,
+        "elementary_lb": 4.8225308641975306e-05,
+        "E_formula": 68,
+        "ok": true
+      },
+      {
+        "n": 10,
+        "modes": 126,
+        "E": 84.0,
+        "N": 0.0,
+        "Tc": 99300000.0,
+        "Ds": 580391639.1643724,
+        "R_star": 0.01219673989516164,
+        "core_R_star": 0.01219673989516163,
+        "tc_closed_form": 99300000.0,
+        "R_over_n": 0.001219673989516164,
+        "elementary_lb": 6.028163580246913e-05,
+        "E_formula": 84,
+        "ok": true
+      }
+    ],
+    "all_ok": true,
+    "asymptotic_R_over_n": 0.0012054866653116781,
+    "last_R_over_n": 0.001219673989516164,
+    "diverges_on_checked_n": true
+  },
+  "exact_shell": {
+    "K_bound": 1.7777777777777777,
+    "C": 1.3333333333333333,
+    "max_K_on_samples": 0.4552948273627157,
+    "rows": [
+      {
+        "K": 0.4552948273627157,
+        "PiB_L2": 7.4200560107038385,
+        "PiB_L2_sq": 55.057231201982155,
+        "E_w": 7.77581335607423,
+        "alpha": 4.0,
+        "beta": 8.0,
+        "ok": true
+      },
+      {
+        "K": 0.004768415608020326,
+        "PiB_L2": 2.8718345967239554,
+        "PiB_L2_sq": 8.247433950940643,
+        "E_w": 16.635366139815098,
+        "alpha": 5.0,
+        "beta": 4.0,
+        "ok": true
+      },
+      {
+        "K": 0.0010997638910159135,
+        "PiB_L2": 3.5151944541620637,
+        "PiB_L2_sq": 12.356592050571727,
+        "E_w": 23.55521716442241,
+        "alpha": 9.0,
+        "beta": 4.0,
+        "ok": true
+      },
+      {
+        "K": 0.17189850958201672,
+        "PiB_L2": 6.587031301336742,
+        "PiB_L2_sq": 43.38898136479001,
+        "E_w": 5.617055022660819,
+        "alpha": 16.0,
+        "beta": 32.0,
+        "ok": true
+      },
+      {
+        "K": 0.18845031353644442,
+        "PiB_L2": 1.964882055813833,
+        "PiB_L2_sq": 3.860761493259194,
+        "E_w": 6.401077010293734,
+        "alpha": 1.0,
+        "beta": 2.0,
+        "ok": true
+      }
+    ],
+    "weighted_counts": [
+      {
+        "alpha": 4,
+        "beta": 8,
+        "n_input": 6,
+        "n_output_used": 12,
+        "ratio": 1.1114643839782619,
+        "bound": 3.0,
+        "ok": true,
+        "vacuous": false
+      },
+      {
+        "alpha": 5,
+        "beta": 4,
+        "n_input": 24,
+        "n_output_used": 6,
+        "ratio": 0.12700670110496873,
+        "bound": 3.0,
+        "ok": true,
+        "vacuous": false
+      },
+      {
+        "alpha": 1,
+        "beta": 2,
+        "n_input": 6,
+        "n_output_used": 12,
+        "ratio": 1.297529608707877,
+        "bound": 3.0,
+        "ok": true,
+        "vacuous": false
+      }
+    ],
+    "all_K_under_bound": true,
+    "all_counts_under_3": true
+  },
+  "grow_s_historical": {
+    "n_input_fields": 2084,
+    "n_occupied_rows": 39853,
+    "max_K": 0.4558313481376803,
+    "max_s": 192,
+    "worst": {
+      "K": 0.4558313481376803,
+      "sqrt_K": 0.67515283317015,
+      "alpha": 16.0,
+      "beta": 32.0,
+      "s": 4,
+      "m": 4
+    },
+    "historical_only": true,
+    "used_as_C0": false
+  },
+  "source_sha256": {
+    "docs/ATTACK-9D-GROW-S.md": "2be75ece0a3c6845bb15a72ece93f45c7ca4a73f53359e8df5f01b7265a46417",
+    "docs/LEMMA-STAR-REASON.md": "54375d5afb37ac3d32120803997af891d72593f86836daf529d19eeb9b77bce4",
+    "docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md": "05bc900fdce193e310345dceb3b8494e3542cfcbb3c449fdf41192f51bc3ad2c",
+    "docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md": "97959b278b092e71df7b9e1c89e6aedad0dcb8ab5a0a7ead2e7010ffe2cb72cd",
+    "scripts/ns_attacks/stokes_moments.py": "7aab75c44791fbf1fb3cf17001ba4da1a0c9218d2ee1876011b8a9e4465908ed",
+    "scripts/ns_lemma_star_core.py": "20bc0f7dbffb2972511524b9290dd307d91568c5c47d61be768d200f70a239ab",
+    "results/attack9b_grow_s/grow_s.json": "cf5a0105527a3d0b05a6361238a78b8637e85fab5e8c2089b9b6a040e6b20b85"
+  },
+  "stokes_moments_overwritten": false
+}

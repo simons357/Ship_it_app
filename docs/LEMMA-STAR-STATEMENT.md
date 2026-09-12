@@ -3,7 +3,7 @@
 12 September 2026. Phone.
 **The boxed unrestricted claim is killed
 by the growing-layer family.**
-Replacement closure **OPEN.** Not a proof.
+Replacement energy-budget closure **OPEN.** Not a proof.
 NS not solved.
 This page still quotes the claim that died.
 It is not a reconstruction.
@@ -190,10 +190,10 @@ not Fourier dilation. Do not stop patching.
 ## Score of the incoming explanation
 
 Keep: evaluator ≠ proof; exact boxed ratio; one-shell
-vacuous; proof must be uniform on the whole class;
-finite samples raise \(C_{\mathrm{geom}}\); kill is
+vacuous; a uniform bound must cover the whole class;
+finite samples are not \(C_{\mathrm{geom}}\); kill is
 \(\mathcal R_\star\to\infty\); H1 outside this statement;
-★ still open.
+the unrestricted box is now that kill.
 
 Correct: “NS is not solved if ★ holds.” The lock
 says the opposite direction in this packaging.
@@ -201,8 +201,7 @@ Write: ★ is not proved, so NS is not solved.
 If ★ holds, GR follows in this packaging. No converse.
 
 There is no Lemma★ proof to walk through line by line.
-The work still required is to prove or disprove
-\(\sup\mathcal R_\star<\infty\) on the whole
-divergence-free class.
+The unrestricted box is dead. The work that remains
+is a replacement energy-budget closure.
 
 Stay in this chat.
