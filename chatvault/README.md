@@ -44,6 +44,6 @@ remain the historical baseline if/when they are exported.
 
 ## Honest limits
 
-- No accounts, no iOS package, no paid subscription.
+- Personal vault. No accounts, no inbox, no App Store listing (`NO-HASSLE.md`).
 - Ingest is structured paste, not OCR/PDF/DOCX yet.
 - Demo fixtures are labeled research-memory examples, not solved theorems.
