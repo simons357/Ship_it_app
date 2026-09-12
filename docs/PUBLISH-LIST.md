@@ -126,6 +126,8 @@ Sendable issues sheet (not a close):
 docs/ISSUES-SHEET.md
 Math of the four jobs:
 docs/HELP-OFF-DESK.md
+Monday extract and cover paste:
+docs/MONDAY-PACKET.md
 
 ## Do not send as finished science
 

@@ -133,4 +133,6 @@ Named leftover jobs for collaborators:
 [`ISSUES-SHEET.md`](ISSUES-SHEET.md)
 (one page) and
 [`HELP-OFF-DESK.md`](HELP-OFF-DESK.md)
-(the integrals). Not a close.
+(the integrals). Monday extract:
+[`MONDAY-PACKET.md`](MONDAY-PACKET.md).
+Not a close.

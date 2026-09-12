@@ -556,6 +556,8 @@ clears as a *map*, not as QED.
    a map, not a proof.
    `docs/SWIRL-PAPER.pdf`.
    Paste: [`SWIRL-DEPOSIT.md`](SWIRL-DEPOSIT.md).
+   Monday order and cover:
+   [`MONDAY-PACKET.md`](MONDAY-PACKET.md).
    The operator uploads. This chat does
    not.
 2. **Theorem A**, honest title, class

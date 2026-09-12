@@ -144,6 +144,9 @@ attempt as the only use of this pile.
 
 ---
 
+Monday order and cover paste:
+docs/MONDAY-PACKET.md
+
 ## If you only squeeze four things
 
 Zenodo Theorem A.

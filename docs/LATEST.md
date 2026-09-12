@@ -20,6 +20,8 @@ ordinary NS. Uniform H1 as eps → 0 still
 open. Paper: docs/THEOREM-A-Q1.pdf
 
 **Unaug NS (ordinary) — open**
+Monday packet (pile, not leftovers):
+docs/MONDAY-PACKET.md
 Every leftover on one sheet (send this):
 docs/ISSUES-SHEET.md
 Math for rows 1–5:

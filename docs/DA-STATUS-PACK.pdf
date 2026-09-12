@@ -61,7 +61,7 @@ ET
 endstream
 endobj
 10 0 obj
-<< /Length 4266 >>
+<< /Length 4488 >>
 stream
 BT
 /F1 10 Tf
@@ -79,15 +79,24 @@ BT
 0 -13 Td (         controlled\).) Tj
 0 -13 Td (  \(3\) [HAVE] Leftover form. Absorb a slice of dissipation to obtain dX/dt + nu ||grad) Tj
 0 -13 Td (         omega||_2^2 <= eps nu ||grad omega||_2^2 + C_eps X R\(t\), with R unknown.) Tj
-0 -13 Td (         The only term that can beat viscosity is the stretching leftover.) Tj
+0 -13 Td (         The only term that can beat viscosity is the stretching leftover. Centered) Tj
+0 -13 Td (         barycenter \(3a\): Lambda = Y/X, D_s = Z - Lambda Y >= 0, \(log Lambda\)' =) Tj
+0 -13 Td (         2/Y \(T_c - nu D_s\). Identity. Not leftover \(6\).) Tj
 0 -13 Td (  \(4\) [HAVE] Split. int omega . S omega = hole 1 \(aligned P+ on E_c\) + hole 2) Tj
 0 -13 Td (         \(unaligned P+ on E_c\) + hole 3 \(off E_c\). Scored on the n=32 box as B37.) Tj
 0 -13 Td (  \(5\) [HAVE] Named blanks. A1 = alignment in time for all data \(hole 1\). A2 = int) Tj
 0 -13 Td (         ||lambda_2^+|| for all data \(live cubic; Miller cut B38\). On this box A1) Tj
 0 -13 Td (         is off and A2 is live and did not blow on the B15 path \(B40, B41\).) Tj
-0 -13 Td (  \(6\) [WRITE] WRITE. One all-data integrable residual: int_0^T R\(t\) dt < infinity, or) Tj
-0 -13 Td (         all-data A1, or all-data A2, or a field that kills the stretching) Tj
-0 -13 Td (         leftover.) Tj
+0 -13 Td (  \(6\) [WRITE] WRITE. Live leftover: H1 = Lemma I on the ball \(A_bad a priori on Q_r\).) Tj
+0 -13 Td (         Not global H. Lemma C is an if, not an H. Do not merge letters. Object:) Tj
+0 -13 Td (         ?_Bad |omega\(x\)|?|omega\(y\)|/|z|? phi ? \(nu/8\)?|?omega|? phi + C) Tj
+0 -13 Td (         r^{-2}?|omega|?. Not a theorem. Three unwritten shapes: \(1\) thinness / HLS) Tj
+0 -13 Td (         gain, \(2\) J on folds + Vitali, \(3\) NSE forbids alternatives on r?/nu. If) Tj
+0 -13 Td (         H1 sits and H2-from-energy does not, the cylinder is still open. Not in) Tj
+0 -13 Td (         the literature under another name. H2 a priori from energy also open. H3 =) Tj
+0 -13 Td (         A_ext ? r^{-3/2}? E^{1/2} E_loc dt, a priori open. R_phi cutoff is not) Tj
+0 -13 Td (         free. Closed budget implies local Serrin, not CKN. No K\(t\). No Q1. Other) Tj
+0 -13 Td (         writings of the same leftover: int R, A1, A2, killing field, DA-NS-2.) Tj
 0 -13 Td (  \(7\) [THEN] Gronwall. From \(3\) and \(6\), X\(t\) stays finite on [0, T].) Tj
 0 -13 Td (  \(8\) [THEN] Continuation. Beale-Kato-Majda: if int_0^T ||omega||_infty dt < infinity) Tj
 0 -13 Td (         then the solution continues. A bound that yields that integral, or an) Tj
@@ -109,7 +118,16 @@ BT
 0 -13 Td (         limit is a weak solution \(Minty-Browder on the extra stress\).) Tj
 0 -13 Td (  \(4\) [HAVE] beta>=1/2 in 3D. Extra integrability of grad u meets Ladyzhenskaya p>=5/2.) Tj
 0 -13 Td (         Unique strong solution in L^infty_t H^1 cap L^2_t H^2. The constant) Tj
-0 -13 Td (         depends on eps and blows up as eps->0.) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Length 3852 >>
+stream
+BT
+/F1 10 Tf
+50 742 Td
+(         depends on eps and blows up as eps->0.) Tj
 0 -13 Td (  \(5\) [HAVE] Bootstrap. Frozen eps>0, uniformly elliptic Stokes. Difference quotients) Tj
 0 -13 Td (         to H^k, then C^infty.) Tj
 0 -13 Td (  \(6\) [HAVE] Theorem A. Unique u in C^infty\(T^3 x \(0,infty\)\) cap L^infty_t H^1 for this) Tj
@@ -118,16 +136,7 @@ BT
 0 -13 Td (  \(7\) [WRITE] WRITE. ||u||_H1 <= C with C independent of eps, for all smooth) Tj
 0 -13 Td (         divergence-free H^1 data, or a named obstruction that C must blow up. A) Tj
 0 -13 Td (         decaying Q1 integral is not that bound \(A9\).) Tj
-ET
-endstream
-endobj
-11 0 obj
-<< /Length 3930 >>
-stream
-BT
-/F1 10 Tf
-50 742 Td
-(  \(8\) [THEN] Uniform Lemma 4. From \(4\) and \(7\), the H^1 bound stays finite as eps->0.) Tj
+0 -13 Td (  \(8\) [THEN] Uniform Lemma 4. From \(4\) and \(7\), the H^1 bound stays finite as eps->0.) Tj
 0 -13 Td (  \(9\) [THEN] Still not B. If \(7\) sits you have a uniform bound on this family.) Tj
 0 -13 Td (         Classical NS is a separate Track B write \(integrable R\). A=>B stays fail.) Tj
 0 -13 Td () Tj
@@ -170,7 +179,16 @@ BT
 0 -13 Td (  Omega * Reg * #Sha * prod_p c_p / #E\(Q\)_tors^2.) Tj
 0 -13 Td (  \(1\) [HAVE] Elliptic curve. E/Q, Weierstrass model, conductor N, finite torsion) Tj
 0 -13 Td (         E\(Q\)_tors.) Tj
-0 -13 Td (  \(2\) [HAVE] Mordell-Weil. E\(Q\) is finitely generated: E\(Q\) = Z^r ? E\(Q\)_tors. r is the) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Length 4001 >>
+stream
+BT
+/F1 10 Tf
+50 742 Td
+(  \(2\) [HAVE] Mordell-Weil. E\(Q\) is finitely generated: E\(Q\) = Z^r ? E\(Q\)_tors. r is the) Tj
 0 -13 Td (         algebraic rank.) Tj
 0 -13 Td (  \(3\) [HAVE] Modularity. Every E/Q is modular \(Wiles / BCDT\). L\(E,s\) = L\(f,s\) for a) Tj
 0 -13 Td (         weight-2 newform, entire, functional equation s <-> 2-s.) Tj
@@ -179,16 +197,7 @@ BT
 0 -13 Td (         / Kolyvagin; Coates-Wiles for many CM rank-0 cases\). Literature, not a) Tj
 0 -13 Td (         theorem of this desk.) Tj
 0 -13 Td (  \(6\) [WRITE] WRITE. For every E/Q: r = r_an, Sha\(E/Q\) is finite, and the leading) Tj
-ET
-endstream
-endobj
-12 0 obj
-<< /Length 3946 >>
-stream
-BT
-/F1 10 Tf
-50 742 Td
-(         coefficient of L\(E,s\) at s=1 equals Omega * Reg * #Sha * prod Tamagawa /) Tj
+0 -13 Td (         coefficient of L\(E,s\) at s=1 equals Omega * Reg * #Sha * prod Tamagawa /) Tj
 0 -13 Td (         #E\(Q\)_tors^2.) Tj
 0 -13 Td (  \(7\) [THEN] If \(6\) sits, the arithmetic of E\(Q\) is read from L\(E,s\). Still not RH.) Tj
 0 -13 Td (         Still not Q. Still not Goldbach. Still not NS.) Tj
@@ -231,7 +240,16 @@ BT
 0 -13 Td (  polynomial-time clock.) Tj
 0 -13 Td (  \(1\) [HAVE] P. Languages decided by a deterministic Turing machine in time n^{O\(1\)}.) Tj
 0 -13 Td (  \(2\) [HAVE] NP. Languages with a polynomial-time verifier, equivalently a) Tj
-0 -13 Td (         nondeterministic TM in polynomial time.) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Length 759 >>
+stream
+BT
+/F1 10 Tf
+50 742 Td
+(         nondeterministic TM in polynomial time.) Tj
 0 -13 Td (  \(3\) [HAVE] NP-complete. Cook-Levin: SAT is NP-complete. Polynomial-time reductions.) Tj
 0 -13 Td (  \(4\) [HAVE] SFE is not the model. The letter's H\(x\) is a field path, not a TM.) Tj
 0 -13 Td (         Shelved. It does not decide a language in P or NP.) Tj
@@ -240,16 +258,7 @@ BT
 0 -13 Td (         write.) Tj
 0 -13 Td (  \(6\) [THEN] If \(5\) sits, every NP language is in P, or some NP language is not. Still) Tj
 0 -13 Td (         not NS. Still not Hodge. Still not SFE.) Tj
-ET
-endstream
-endobj
-13 0 obj
-<< /Length 31 >>
-stream
-BT
-/F1 10 Tf
-50 742 Td
-() Tj
+0 -13 Td () Tj
 ET
 endstream
 endobj
@@ -296,12 +305,12 @@ xref
 0000000784 00000 n 
 0000000912 00000 n 
 0000002661 00000 n 
-0000006980 00000 n 
-0000010963 00000 n 
-0000014962 00000 n 
-0000015044 00000 n 
-0000016139 00000 n 
+0000007202 00000 n 
+0000011107 00000 n 
+0000015161 00000 n 
+0000015972 00000 n 
+0000017067 00000 n 
 trailer << /Size 16 /Root 1 0 R >>
 startxref
-16210
+17138
 %%EOF

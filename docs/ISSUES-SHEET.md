@@ -89,6 +89,8 @@ as a close of 5. Do not retitle Q as 6 or 10.
 
 ## D. What Monday can close without closing A
 
+Operator page (cover paste, file list):
+[`MONDAY-PACKET.md`](MONDAY-PACKET.md).
 These clear the *pile*. They do not close rows 1–12.
 
 1. Zenodo the swirl paper as a **map**.
