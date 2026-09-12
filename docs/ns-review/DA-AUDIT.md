@@ -84,7 +84,7 @@ Scanned files:
 | Numerics treated as proof | **No** | Explicit “numerics ≠ proof” |
 | False universal \(\|v\|_2 X^{3/2}\) product revived as live target | **No** | Marked discarded (scale-false) |
 
-`PROOF-CHAIN-CLEAN.md` still contains a **schematic** product line \(|T_c|\lesssim\|v\|_2 X^{3/2}\). The scientific report **overrides** that as a discarded false universal target and points to uniform \(\mathcal{R}_\star\) as PRODUCT-BLOCK. Campaign-titled files outside this package were not rewritten.
+`PROOF-CHAIN-CLEAN.md` §5 is aligned to uniform \(\mathcal{R}_\star\) as the live PRODUCT-BLOCK target; the scale-false \(X^{3/2}\) universal is marked discarded. Campaign-titled files outside this package are not part of the DA scientific sanitize.
 
 ---
 
@@ -116,7 +116,7 @@ Scanned files:
 **Conditions / limitations (why not unconditional PASS):**
 
 1. Mainline DA CLI only reaches **Level 0** on NS packaging ASCII — no dedicated `--lemma-star` / millennium-book weld audit on this branch.  
-2. Companion `PROOF-CHAIN-CLEAN.md` still carries schematic product wording that conflicts with the scale-false audit; readers must prefer `SCIENTIFIC-REPORT.md` §4 for the live PRODUCT-BLOCK statement.  
+2. Companion `PROOF-CHAIN-CLEAN.md` §5 now matches the live PRODUCT-BLOCK statement (uniform \(\mathcal{R}_\star\)); older schematic \(X^{3/2}\) wording is marked discarded.  
 3. Higher-formality DA checks (identifiability, equivalence, computational hypothesis tests) were **not** performed on Stokes/Leray objects because the parser does not attach those roles.
 
 **FAIL would require:** greening language, Clay-closed claims, SFE glue, or treating Level 0 classification as a proof. None found in the scientific package.

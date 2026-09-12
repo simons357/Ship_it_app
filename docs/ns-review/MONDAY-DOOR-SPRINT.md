@@ -8,16 +8,14 @@
 
 ## Where the door is
 
-Main trunk open node (§5 of `PROOF-CHAIN-CLEAN.md`):
+Main trunk open node (§5 of `PROOF-CHAIN-CLEAN.md` / §4 of `SCIENTIFIC-REPORT.md`):
 
 \[
-|T_c|
-\;\lesssim\;
-\|v\|_2\, X^{3/2}
-\quad\text{or equivalent geometry-only product control}
+\sup_v\mathcal{R}_\star(v)<\infty
+\quad\text{(equivalently geometric \(C_{\mathrm{geom}}\) / Young \(C_0\))}
 \]
 
-that feeds the Young form of Lemma★. Ordinary energy-only 3D products do not give it. Five-lane / Bony diagnostics flag the **HH input channel** as the live bottleneck.
+that feeds the energy-budget form of Lemma★. Ordinary energy-only 3D products do not give it. The scale-false universal \(|T_c|\le C\|v\|_2 X^{3/2}\) is **retired**. Five-lane / Bony diagnostics flag the **HH input channel** as the live bottleneck.
 
 Φ-branch door (separate book): \(\int \|u^r/r\|_\infty\,dt\) uniform — not this sprint’s primary hinge.
 
@@ -27,7 +25,7 @@ that feeds the Young form of Lemma★. Ordinary energy-only 3D products do not g
 
 | # | Goal | Success looks like |
 | --- | --- | --- |
-| 1 | **Measure distance** | Probe tables for \(\|T_c\|/(\|v\|_2 X^{3/2})\), \(R_\star\), HH-channel share on structured families |
+| 1 | **Measure distance** | Probe tables for \(\mathcal{R}_\star\), HH-channel share, and retired diagnostic ratios on structured families |
 | 2 | **Attack memo** | Short list of analytic moves (cancellations in \(T_c=M-\Lambda N\), HH restriction, near-shell) with status TRY / BLOCKED |
 | 3 | **Push one move** | Either a partial reduction (conditional bound under a stated hypothesis) or a clean numeric ceiling on a named family |
 | 4 | **Public face** | Journey/chain still shows open node as math; Monday posts use knocking language |

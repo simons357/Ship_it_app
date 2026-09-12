@@ -36,8 +36,27 @@ That \(\Lambda\) is the **barycenter**. Relative to it we keep score of:
 - **shape score** \(\mathcal{R}_\star = (T_c)_+^2/(D_s\, E\, Y)\) — tug-of-war at that center  
 
 **Being in the room** = the bookkeeping is correctly centered there.  
-**The door** = a product-scale bound on \(T_c\) (or finiteness of \(\mathcal{R}_\star\)) with geometry-only constants — the hinge that would freeze blowup of \(\Lambda(t)\).  
+**The last door on this floor** = prove the shape score stays finite for every smooth field: \(\sup_v\mathcal{R}_\star(v)<\infty\) (geometry-only constant). That is what would freeze blowup of \(\Lambda(t)\) in this packaging.  
 **Upstairs** = full regularity / Clay packaging — mapped as open territory, not claimed as finished.
+
+---
+
+## Floor plan (what the study has mapped)
+
+| Room / wing | What we know | Status |
+| --- | --- | --- |
+| Entry — classical NSE on \(\mathbb{T}^3\) | Leray projector, Stokes operator \(A\), bilinear \(B\) | Mapped |
+| Moment hall | \(E,X,Y,Z\) and barycenter \(\Lambda=Y/X\) | Mapped (definitions) |
+| Spread alcove | \(D_s=Z-\Lambda Y\ge 0\) | Mapped (algebra) |
+| Stretch alcove | \(T_c=M-\Lambda N\); identity \(\Lambda'=2(T_c-\nu D_s)/X\) | Mapped (algebra along strong solutions) |
+| Lemma★ packaging room | Shape / energy-budget form of ★ | **Hypothesis** — not a theorem |
+| **Last door (this floor)** | Uniform \(\mathcal{R}_\star\) / PRODUCT-BLOCK; stress = high×high channel | **Open estimate** |
+| Continuation stair | ★ ⇒ Gronwall on \(\Lambda\) ⇒ continuation | Mapped **as implication only** |
+| Upstairs | Clay Statement B / full regularity announcement | **Not claimed** |
+| Φ / swirl wing | Identity KEEP; door \(\int\|u^r/r\|_\infty\,dt\) | Separate open door |
+| Archive / parked | SFE↔NS glue, ARCHON/RH as Clay, false \(X^{3/2}\) universal product | Do not reopen |
+
+Pictures: chain map = whole layout; barycenter figure = this room; dashed node = last door.
 
 ---
 
@@ -47,19 +66,28 @@ That \(\Lambda\) is the **barycenter**. Relative to it we keep score of:
 | --- | --- |
 | Chain map | Whole layout of the house we’ve mapped |
 | Barycenter figure | “This room” — stretch vs spread at \(\Lambda\) |
-| Open dashed node | The door — named as math, not shame |
+| Open dashed node | The last door — named as math, not shame |
 | Φ / swirl wing | Another wing of the house (axisymmetric); its own door \(\|u^r/r\|_\infty\) |
 | KEEP shelf | Rooms we stand behind |
 | Archive shelf | Earlier furniture we moved to storage |
 
 ---
 
-## How to go through the door (honest directions)
+## The last door — where it is, how to approach it (legal only)
 
-1. Control \(|T_c|\) by a product of Leray-scale quantities (schematically \(\|v\|_2 X^{3/2}\)), **or** keep \(\mathcal{R}_\star\) uniformly bounded.  
-2. Ordinary 3D energy-only products are not enough; the live analytic stress is the **high×high input channel** in the triad sum for \(T_c\).  
-3. If that estimate is closed with geometric constants, the energy-budget form of Lemma★ feeds Gronwall on \(\Lambda\) and continuation.  
-4. Until then: we leave the door described, illuminated, and open as an **estimate** — not closed with a slogan.
+**Where:** on this floor, after the barycenter bookkeeping, before the continuation stair. Math name: **PRODUCT-BLOCK** = \(\sup_v\mathcal{R}_\star<\infty\).
+
+**Legal directions** (estimates and structure — the only way through):
+
+1. Prove \(\mathcal{R}_\star\) is uniformly bounded with a geometry-only constant, **or** an equivalent Young energy-budget form with geometric \(C_0\).  
+2. Hunt cancellations in \(T_c=M-\Lambda N\); budget the **high×high** triad channel separately if HL/LL are classical.  
+3. Honest conditional papers (★ under an explicit HH / shell hypothesis) are allowed — labeled conditional, not Clay.  
+4. Searching for a family with \(\mathcal{R}_\star\to\infty\) is also legal: that would show this door cannot open this way.  
+5. Ordinary energy-only 3D products are not enough. The old universal \(|T_c|\le C\|v\|_2 X^{3/2}\) target is **false** (wrong scaling) — do not use it.  
+6. No slogan, no glue from SFE, no numeric “we survived so far” as a key.
+
+Scientific write-up: [`../ns-review/SCIENTIFIC-REPORT.md`](../ns-review/SCIENTIFIC-REPORT.md) §4.  
+Until the estimate closes: leave the door described and open as math.
 
 ---
 
