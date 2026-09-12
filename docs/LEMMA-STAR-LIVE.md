@@ -1,129 +1,99 @@
-# Lemma★ — two live writes
+# Lemma★ — two analytic conclusions
 
-12 September 2026. Desk lock.
-**NS not solved. Lemma★ OPEN.**
+12 September 2026. This review.
+**NS not solved.**
+Unrestricted \(\sup\mathcal R_\star<\infty\) is **NO**.
+Exact-shell 9D \(K\le 16/9\) is **CLAIMED**.
+Specialist review pending. Replacement
+energy-budget closure **OPEN.**
 
 Phone: stay in this chat.
 
-Everything else is scored or refused.
-Kill lane is still live.
+The recorded experiments stay separate.
+Neither finite maximum is \(C_0\).
 
 ---
 
-## 1. Attack 9D — grow \(s\) on the 9B family
+## 1. Exact-shell 9D — claimed full-support bound
 
-Same \(B=B(w,w)=P[(w\cdot\nabla)w]\).
-Same 9B family
-\(v_\varepsilon=w_\alpha+\varepsilon z_\beta\),
-\(z_\beta\parallel\Pi_\beta B(w,w)\).
-
-Target
+Same \(B=B(w,w)\). Same exact-shell target
 \[
 \|\Pi_\beta B\|_2
 \le
 C\alpha\beta^{-1/2}\|w\|_2^2
 \qquad\Longleftrightarrow\qquad
-\sup K_{\alpha,\beta}<\infty,
+\sup K_{\alpha,\beta}<\infty.
 \]
-\[
-K
-=
-\frac{\beta\|\Pi_\beta B\|_2^2}{\alpha^2\|w\|_2^4}.
-\]
-Growing input and output. Full complex
-polarizations. \(|k|\) kept.
+This review claims \(C=4/3\), equivalently
+\(K\le 16/9\), by a weighted count plus
+polarization cancellation. Both supports
+may grow. Full complex polarizations.
+Designed \(\Theta(m^2)\) stays
+dead. `attack9d_theta_m2_locked_phase.py`
+was not written.
 
-Fixed-output \(\Theta(m^2)\) excluded
-(\(K\le 16s\)). Designed \(\Theta(m^2)\)
-stays dead. `attack9d_theta_m2_locked_phase.py`
-was not written. Do not write it.
+This does not control a multi-shell field.
+The growing-layer family is multi-shell.
 
-Seed 1390, \(k_{\max}=8\): 2084 input
-fields, 39853 occupied \((\alpha,\beta)\)
-rows. Max \(K\approx 0.456\) at
-\((16,32)\), \(s=4\). Max \(\sqrt{K}\approx 0.675\).
-Max \(s=192\). Pairs / CS / \(K\le 16s\):
-no fails. On the \(K\) vs \(s\) curve,
-max \(K\) for \(s\le 8\) is \(0.456\);
-for \(s\ge 24\) it is \(0.239\). Larger
-occupancy did not raise \(K\) on this draw.
+Page: [`ATTACK-9D-FULL-SUPPORT-BOUND.md`](ATTACK-9D-FULL-SUPPORT-BOUND.md).
 
-That is not the aligned 9B search
-(\(K\approx 0.641\) at \((4,8)\)).
-Do not merge them. A finite max is not
-\(C_0\). This draw did not kill ★.
-
-Page: [`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md).
-JSON: `results/attack9b_grow_s/grow_s.json`.
-Probe: `python3 scripts/ns_attacks/attack9b_grow_s.py`.
-Setup: [`ATTACK-9D-SETUP.md`](ATTACK-9D-SETUP.md).
-
-This branch’s smaller sweeps stay scored
-and separate. Do not merge them with
-\(0.456\) or \(0.641\):
-
-- linear-pol growing-\(s\): \(K\approx 0.631\)
-  ([`LEMMA-STAR-9B-GROWING.md`](LEMMA-STAR-9B-GROWING.md));
-- 225-field full-complex: \(K\approx 0.612\)
-  (`scripts/ns_attacks/attack9d_growing.py`).
+Grow-\(s\) (seed 1390, \(k_{\max}=8\)):
+2084 input fields, 39853 occupied rows,
+max \(K\approx 0.456\) at \((16,32)\),
+max \(s=192\). Historical. Not \(C_0\).
+Not the aligned \(0.641\).
+[`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md).
 
 ---
 
-## 2. The ★ reason — map, not a theorem
+## 2. Unrestricted ★ — explicit diverging family
 
-Keep \(\mathrm{Im}\). Do not replace it
-by an absolute value. HH→L is the
-dangerous channel (weight \(\sim\beta\cdot\alpha\);
-Attack 12 vertex carries \(\sqrt{\beta}\)).
-Cheap CS returns occupancy — the same
-hole as \(K\le 16s\).
+Keep \(\mathrm{Im}\). The boxed
+\(\sup\mathcal R_\star<\infty\) on all
+divergence-free fields is killed by
+\[
+v_n=D_n(z)\,(U_1(nx,ny),U_2(nx,ny),0).
+\]
+On the locked evaluators,
+\(N(v_n)=0\),
+\(T_c=3n^5(3n^2+3n+1)\),
+\(\mathcal R_\star(v_n)\ge n/165888\to\infty\).
 
-Until that sentence is a theorem, or
-\(\mathcal R_\star\to\infty\), leftover 4
-stays OPEN.
+That is not a singular NSE solution.
+Need★ cannot repair the same box.
+Cheap CS still hides occupancy; that
+map is not the kill. The ★ reason stays
+a map, not a theorem.
 
-Need★ (signed dual on HH→L after
-gap-cancel) is still **MISSING**.
-
-[`LEMMA-STAR-REASON.md`](LEMMA-STAR-REASON.md).
-[`NEED-STAR-HH-L-DUAL.md`](NEED-STAR-HH-L-DUAL.md).
+Page: [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
+Map: [`LEMMA-STAR-REASON.md`](LEMMA-STAR-REASON.md).
 Tape: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).
 
 ---
 
-Kill lane LIVE. Bounded samples are
-not a proof. A diverging family would
-kill ★. A larger finite number only
-raises \(C_{\mathrm{geom}}\).
+Specialist review should check the
+weighted sphere count, the polarization
+factor, seed transfer signs, vertical
+cancellation, and match to the
+unrestricted statement. A mathematical
+objection should name a failing equation
+or an admissibility condition the family
+violates.
 
----
+Audit:
+`python3 scripts/ns_attacks/verify_pr24_closure_review.py --out results/pr24_closure_review/audit.json`
 
-## Optional, not next by default
+Not done (optional, not next): locked
+\(\mathcal R_\star\) 9C; exact-core ABC
+at \(\lambda=8,16\); H1 from ABC_λ.
 
-- Locked-\(\mathcal R_\star\) 9C recompute
-  (\(0.11\to 0.031\)). Never done here.
-- Exact-core ABC at \(\lambda=8\) and \(16\)
-  on one field definition. Clue only.
-- H1 from ABC_λ. Do not start it.
-  This branch started shape 3
-  (predictive CF ODE). Alignment frozen.
-  Not a theorem.
-  [`H1-PREDICTIVE.md`](H1-PREDICTIVE.md).
+Not redone: five lanes, 9A, natural 9C,
+finite 9B (\(0.641\)), truncated ABC,
+SuperGrok stamp, Dream Team vote.
 
----
+Out of this book: Q-stack, SND, Theorem H,
+five fingers, augmented NSE.
 
-## Do not redo
-
-Five lanes 1–5, 9A, natural 9C, finite 9B
-(\(K\approx 0.641\)), small-lattice truncated
-ABC, SuperGrok falsifier stamp, Dream Team
-vote.
-
----
-
-## Out of this book
-
-Q-stack, SND, Theorem H, five fingers,
-augmented NSE.
-
-NS not solved. Lemma★ OPEN.
+NS not solved. The boxed unrestricted ★
+is dead. The door that remains is a
+different closure.

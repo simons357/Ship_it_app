@@ -46,7 +46,7 @@ class Attack9DTests(unittest.TestCase):
         self.assertIn("HH", reason)
         self.assertIn("occupancy", reason.lower())
         grow = GROW.read_text()
-        self.assertIn("Remaining packet falsifier", grow)
+        self.assertIn("Historical", grow)
         self.assertIn("attack9b_grow_s.py", grow)
         self.assertIn("0.456", grow)
         spec = DOC.read_text()

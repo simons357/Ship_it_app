@@ -13,7 +13,8 @@ CANON = ROOT / "docs" / "math" / "ns_attacks" / "LEMMA_STAR_CANONICAL.md"
 class LemmaStarStatementTests(unittest.TestCase):
     def test_quotes_boxed_claim_and_stays_open(self):
         text = PAGE.read_text()
-        self.assertIn("**OPEN. Not a proof. NS not solved.**", text)
+        self.assertIn("Killed by", text)
+        self.assertIn("NS not solved", text)
         self.assertIn("C_{\\mathrm{geom}}", text)
         self.assertIn("\\sup_v\\mathcal R_\\star<\\infty", text)
         self.assertIn("not a reconstruction", text.lower())

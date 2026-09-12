@@ -17,17 +17,17 @@ SETUP = ROOT / "docs" / "ATTACK-9D-SETUP.md"
 
 
 class Attack9BGrowSTests(unittest.TestCase):
-    def test_page_is_the_live_falsifier_not_a_close(self):
+    def test_page_is_historical_not_a_close(self):
         text = PAGE.read_text()
-        self.assertIn("Remaining packet falsifier", text)
+        self.assertIn("Historical", text)
         self.assertIn("Designed", text)
         self.assertIn("attack9d_theta_m2_locked_phase.py", text)
         self.assertIn("\\Pi_\\beta B", text)
         self.assertIn("16s", text)
-        self.assertIn("OPEN", text)
         self.assertIn("0.456", text)
         self.assertIn("C_0", text)
         self.assertIn("not a kill", text)
+        self.assertIn("killed", text.lower())
         self.assertNotIn("NS is solved", text)
         self.assertNotIn("Clay is solved", text)
 
@@ -39,8 +39,8 @@ class Attack9BGrowSTests(unittest.TestCase):
         self.assertEqual(g["n_fail_cs"], 0)
         self.assertEqual(g["n_fail_K_le_16s"], 0)
         self.assertIs(summary["ns_solved"], False)
-        self.assertEqual(summary["lemma_star"], "OPEN")
-        self.assertEqual(summary["kill_lane"], "LIVE")
+        self.assertEqual(summary["lemma_star"], "KILLED")
+        self.assertEqual(summary["kill_lane"], "CLOSED_BY_V_N")
         self.assertTrue(summary["verdict"].startswith("GROW_S"))
         self.assertIn("theta", summary["not"])
 

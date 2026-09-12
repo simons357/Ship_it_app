@@ -1,9 +1,10 @@
 # Attack 9D — grow \(s\) on the 9B family
 
 12 September 2026.
-**Remaining packet falsifier. Not a close.
+**Historical packet sweep. Not a close.
 Designed \(\Theta(m^2)\) 9D is still dead.
-★ is OPEN. NS is not solved.**
+Unrestricted ★ is killed by a different
+family. NS is not solved.**
 
 This is live write 1. Same \(B\) as 9B.
 Fixed-output \(\Theta(m^2)\) is excluded
@@ -124,9 +125,9 @@ JSON: `results/attack9b_grow_s/grow_s.json`
 |---|---|
 | Designed 9D \(\Theta(m^2)\) | **NO.** Dead. |
 | Fixed \(s\) | **NO** as a kill. \(K\le 16s\). |
-| Grow \(m\) and \(s\), \(\lvert k\rvert\) kept | **OPEN** as a test |
-| \(\sup K<\infty\) | **OPEN** |
-| Lemma★ | **OPEN** |
+| Grow \(m\) and \(s\), \(\lvert k\rvert\) kept | **historical** as a test |
+| Exact-shell \(\sup K<\infty\) | **CLAIMED** \(16/9\). Other page. |
+| Unrestricted Lemma★ | **NO.** Killed by \(v_n\). |
 
-Kill lane LIVE. Bounded samples are
-not a proof. NS not solved.
+Bounded samples are not that kill.
+NS not solved.

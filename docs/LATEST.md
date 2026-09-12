@@ -166,21 +166,24 @@ Attack 9B exact-shell \(K_{\alpha,\beta}\)
 docs/five-lane-export/ATTACK_9B.md
 Fixed-output \(\Theta(m^2)\): counting error,
 \(K\le 16s\). docs/LEMMA-STAR-9B-COUNTING.md
-Two live writes:
+Two analytic conclusions:
 docs/LEMMA-STAR-LIVE.md
-Attack 9D grow \(s\) on the 9B family
-(full complex pol, \(|k|\) kept; seed 1390,
-\(k_{\max}=8\): max \(K\approx 0.456\) at
-\((16,32)\), max \(s=192\); not \(C_0\);
+Exact-shell 9D claimed \(C=4/3\)
+(\(K\le 16/9\); specialist pending):
+docs/ATTACK-9D-FULL-SUPPORT-BOUND.md
+Unrestricted ★ killed by \(v_n\):
+docs/LEMMA-STAR-GROWING-LAYER.md
+Grow \(s\) historical (max \(K\approx 0.456\)
+at \((16,32)\), max \(s=192\); not \(C_0\);
 not the aligned \(0.641\)):
 docs/ATTACK-9D-GROW-S.md
 results/attack9b_grow_s/grow_s.json
-★ reason as a map, not a theorem
-(HH→L the dangerous channel; Need★
-signed dual still MISSING):
+★ reason remains a map of cheap CS:
 docs/LEMMA-STAR-REASON.md
+Need★ cannot repair the dead box:
 docs/NEED-STAR-HH-L-DUAL.md
 Tape: docs/YES-NO-OPEN.md
+Audit: results/pr24_closure_review/audit.json
 Setup (do not start designed 9D):
 docs/ATTACK-9D-SETUP.md
 9B growing-\(s\) linear-pol samples

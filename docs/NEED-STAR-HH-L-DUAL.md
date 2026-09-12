@@ -8,14 +8,16 @@ quantity is the signed dual
 after the gap-cancel reduction;
 remainder is unsigned CS / occupancy \(s\);
 no extra field; the signed bound is
-**MISSING.** Leftover 4 stays **OPEN.**
+**MISSING.** Unrestricted leftover 4
+is **KILLED** by \(v_n\). This write
+cannot repair that box.
 
-**This is the primary math target.
-It is a write of the missing estimate.
+**This is a two-shell estimate, not
+the dead unrestricted claim.
 It is not a theorem. NS is not solved.**
 
-9D / grow \(s\) is secondary kill-lane
-pressure on the same leftover.
+9D / grow \(s\) is historical, not
+secondary kill-lane pressure.
 Soft X silent. Cosmo five fingers,
 Q-stack, SND, Theorem H, augmented
 NSE: out of this book. The B-hand
@@ -172,9 +174,8 @@ is a sample. It is not Need★.
 |---|---|
 | Two-shell gap-cancel | **YES** as an identity |
 | Unsigned CS / \(K\le 16s\) | **YES** as a bound. Hides \(s\). |
-| Signed dual Need★ | **MISSING.** **OPEN.** |
+| Signed dual Need★ | **MISSING.** **OPEN** as a two-shell write. |
 | Attack 12 table as Need★ | **NO.** Sample. |
-| Lemma★ | **OPEN** |
+| Unrestricted Lemma★ | **KILLED** by \(v_n\). Cannot repair. |
 
-Kill lane LIVE. Bounded samples are
-not a proof. NS not solved.
+Bounded samples are not a proof. NS not solved.

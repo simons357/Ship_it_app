@@ -1,8 +1,9 @@
 # Lemma★ — canonical claim (working foundation)
 
 **Date:** 2026-09-10  
-**Status:** **OPEN.** Evaluator ≠ proof. Exact core ≠ proof.
-A finite ABC_λ climb raises \(C_{\mathrm{geom}}\); it does not kill ★.
+**Status:** boxed unrestricted claim **KILLED** by \(v_n\).
+Regularity **OPEN.** Evaluator matched the family.
+Exact core matched. Finite ABC_λ is not that kill.
 `docs/CS-REMAINDER.md`. **NS not solved.**
 H1 / WRITE (6) is a different integral and was not run on ABC_λ.
 

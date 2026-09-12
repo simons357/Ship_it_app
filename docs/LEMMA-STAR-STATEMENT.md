@@ -1,8 +1,13 @@
 # Lemma★ — statement from the lock, not a reconstruction
 
-10 September 2026. Phone. **OPEN. Not a proof. NS not solved.**
-This page quotes the on-branch write-up. It does not
-invent a second claim.
+12 September 2026. Phone.
+**The boxed unrestricted claim is killed
+by the growing-layer family.**
+Replacement closure **OPEN.** Not a proof.
+NS not solved.
+This page still quotes the claim that died.
+It is not a reconstruction.
+The kill: [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
 
 Sources (in this order):
 
@@ -146,10 +151,10 @@ does not sit yet. Do not add \(K(t)\) to the PDE.
 | \(A,B,E,X,Y,Z,\Lambda,\mathcal D_s,T_c,\mathcal R_\star\) | closed (algebra + triad) |
 | One shell: \(\mathcal D_s=0\Rightarrow T_c=0\) | closed |
 | \(T_c(-v)=-T_c(v)\); reverse to test stretching | closed (correction 3) |
-| \(\sup\mathcal R_\star<\infty\) | **open** |
-| Bound on \(C_{\mathrm{geom}}\) | **open** |
-| Kill lane | live |
-| Unaugmented NSE solved by ★ | no (★ is open) |
+| \(\sup\mathcal R_\star<\infty\) | **NO.** Killed by \(v_n\). |
+| Bound on \(C_{\mathrm{geom}}\) | **NO** as a finite universal constant |
+| Kill lane | closed by \(v_n\); replacement **OPEN** |
+| Unaugmented NSE solved by ★ | no (the box is dead; NS still open) |
 | H1 / WRITE (6) | different integral; outside this statement |
 
 K=0 dead. Uniform pre-Young \(C\) dead. Older
