@@ -1,5 +1,7 @@
 Stay here. This chat is DA.
 
+Attack 9D setup (do not start 9D):
+docs/ATTACK-9D-SETUP.md
 Monday packet (pile, not leftovers):
 docs/MONDAY-PACKET.md
 Every leftover on one sheet (send this):

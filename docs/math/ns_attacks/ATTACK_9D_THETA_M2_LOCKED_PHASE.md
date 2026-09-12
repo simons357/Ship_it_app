@@ -5,6 +5,12 @@
 **Status:** **SPEC / STUB** on the five-lane branch — remaining packet falsifier there. Kill lane **LIVE**. Lemma★ **OPEN**. **NS not solved.**  
 **Prior non-kill:** Attack 9C (fixed-gap spheres) — natural same-shell ensemble **NOT** a kill; \(\mathcal{R}_\star\) fell \(0.11\to 0.031\) — [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md).
 
+**The call (12 September):** do not implement this
+stub. Setup answered:
+[`../../ATTACK-9D-SETUP.md`](../../ATTACK-9D-SETUP.md).
+Same \(B\) as 9B. Growing \(s\) is a 9B test,
+not a new 9D object. HH→L is a different family.
+
 **On this branch.** Two writings of “9D,” do not merge:
 
 1. Designed \(\Theta(m^2)\) locked-phase **subset** (Freiman-AP).

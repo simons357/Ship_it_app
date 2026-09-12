@@ -76,7 +76,7 @@ as a close of 5. Do not retitle Q as 6 or 10.
 | \(K=0\) | Dead. Amplitude kills it. |
 | \(\lvert T_c\rvert\le C\|u\|_2 X^{3/2}\) | Dead. Scaling \(a^3\) vs \(a^4\). |
 | Uniform pre-Young \(C\) | Dead. |
-| Attack 9D designed \(\Theta(m^2)\) | Freiman-AP. **Dead.** Do not start 9D. |
+| Attack 9D designed \(\Theta(m^2)\) | Freiman-AP. **Dead.** Do not start 9D. Setup: `docs/ATTACK-9D-SETUP.md`. Same \(B\) as 9B. Growing \(s\) is a 9B test. |
 | Fixed-output \(\Theta(m^2)\) | Counting error. \(K\le 16s\). |
 | Detector occupation | 5-D occupation from the swirl wall. **Withdrawn.** |
 | Full Q floor \(>-1/2\), \(H_N\ge -3/14\) | Taken back. Stay back. |

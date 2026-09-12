@@ -142,6 +142,10 @@ kept. Probe:
 Scores: [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
 9B JSON: [`five-lane-export/ATTACK_9B.md`](five-lane-export/ATTACK_9B.md).
 
+Setup call (do not start 9D):
+[`ATTACK-9D-SETUP.md`](ATTACK-9D-SETUP.md).
+Same \(B\) as 9B. HH→L is a different family.
+
 Do not cash a finite \(\sqrt{K}\) as \(C_0\).
 Do not glue this to H1.
 NS not solved. ★ open.
