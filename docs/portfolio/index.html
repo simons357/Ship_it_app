@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prime Field — App Portfolio · August 2026</title>
+  <style>
+    :root {
+      --void: #070b12;
+      --foam: #e8eef6;
+      --mist: #9aadc2;
+      --solar: #c9a24a;
+      --line: rgba(232, 238, 246, 0.14);
+      --good: #7dcea0;
+      --warn: #e8b86d;
+      --cut: #c97b7b;
+      --card: rgba(18, 28, 42, 0.72);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--foam);
+      font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #152033, var(--void) 55%);
+      line-height: 1.45;
+    }
+    .wrap { width: min(980px, 100%); margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+    .kicker {
+      font-family: system-ui, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--solar);
+      margin: 0;
+    }
+    h1 {
+      font-size: clamp(2.1rem, 6vw, 3.4rem);
+      font-weight: 600;
+      margin: 0.35rem 0 0.6rem;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: 1.35rem;
+      margin: 2.4rem 0 0.7rem;
+      font-weight: 600;
+    }
+    h3 { font-size: 1.08rem; margin: 0 0 0.35rem; }
+    .lede, p, li { color: var(--foam); }
+    .lede { color: var(--mist); max-width: 42rem; font-size: 1.05rem; }
+    .meta { font-family: system-ui, sans-serif; color: var(--mist); font-size: 0.88rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin: 1.2rem 0 0.4rem; }
+    .stat {
+      border: 1px solid var(--line);
+      background: var(--card);
+      padding: 1rem 1.05rem;
+    }
+    .stat b { display: block; font-size: 1.55rem; color: var(--solar); font-family: system-ui, sans-serif; }
+    .stat span { color: var(--mist); font-size: 0.86rem; font-family: system-ui, sans-serif; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: system-ui, sans-serif;
+      font-size: 0.9rem;
+      margin: 0.6rem 0 1.2rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.55rem 0.5rem;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th { color: var(--solar); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .rank { font-variant-numeric: tabular-nums; color: var(--solar); font-weight: 700; width: 2.2rem; }
+    .tag {
+      display: inline-block;
+      font-family: system-ui, sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      padding: 0.12rem 0.4rem;
+      color: var(--mist);
+    }
+    .tag.core { color: var(--good); border-color: rgba(125, 206, 160, 0.35); }
+    .tag.option { color: var(--warn); border-color: rgba(232, 184, 109, 0.35); }
+    .tag.cut { color: var(--cut); border-color: rgba(201, 123, 123, 0.4); }
+    .holding {
+      border: 1px solid var(--line);
+      background: var(--card);
+      padding: 1.1rem 1.15rem 1.05rem;
+      margin: 0 0 0.75rem;
+    }
+    .holding header { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; flex-wrap: wrap; }
+    .holding p { margin: 0.4rem 0 0; color: var(--mist); font-size: 0.98rem; }
+    .holding .why { color: var(--foam); }
+    .books { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.7rem; }
+    .book { border: 1px solid var(--line); padding: 0.9rem 1rem; background: var(--card); font-family: system-ui, sans-serif; font-size: 0.88rem; }
+    .book strong { display: block; color: var(--solar); margin-bottom: 0.25rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    footer {
+      margin-top: 2.5rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+      color: var(--mist);
+      font-family: system-ui, sans-serif;
+      font-size: 0.85rem;
+    }
+    a { color: var(--solar); }
+    .verdict { font-size: 1.12rem; max-width: 44rem; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="kicker">Prime Field Technologies LLC · Confidential working copy</p>
+    <h1>App portfolio</h1>
+    <p class="lede">Total inventory, ranked by likelihood to take money first. Prepared 17 August 2026 for Jonathan Simons. Ranking key: probability of first cash in 12 months — not headline TAM.</p>
+    <p class="meta">Full write-up: <a href="APP-PORTFOLIO-2026-08.md">APP-PORTFOLIO-2026-08.md</a> · Contact: js@primefieldtechnologies.com</p>
+
+    <div class="grid">
+      <div class="stat"><b>~47</b><span>Named items on the shelf</span></div>
+      <div class="stat"><b>26</b><span>Software products / platforms</span></div>
+      <div class="stat"><b>3</b><span>Holdings that should get funded</span></div>
+      <div class="stat"><b>~$50k</b><span>As-is software NAV (opinion)</span></div>
+    </div>
+
+    <h2>Verdict</h2>
+    <p class="verdict">Not a weak catalog. A too-wide catalog. As-is the software is worth about <strong>$25k–$120k</strong>. A focused 18-month book could be a <strong>$0.5–2.5M</strong> pre-seed option. Status-quo spray is worth roughly nothing and falling. TITAN-X planning revenue is not part of this NAV.</p>
+
+    <h2>Fund these</h2>
+    <article class="holding">
+      <header>
+        <h3>1 · AquaQuarts</h3>
+        <span class="tag core">Core · first dollar</span>
+      </header>
+      <p class="why"><strong>Why it belongs:</strong> It does not need the math to be true. Vessel, pour, Lithia Springs, keep-the-decanter, a price. No FDA. No Clay.</p>
+      <p>As-is $0–$25k · focused 12-month revenue $10k–$150k possible · highest cash odds in the book.</p>
+    </article>
+    <article class="holding">
+      <header>
+        <h3>2 · Operator Assist (Quantum Menu)</h3>
+        <span class="tag core">Core · clinical software</span>
+      </header>
+      <p class="why"><strong>Why it belongs:</strong> Matches the actual profession: complexity at the head of the table. Many futures → short menu → you choose. Domain authority nobody else in this repo has.</p>
+      <p>As-is $0 · teaching path is the 12-month cash · Vigilant feeds it; Vigilant does not lead.</p>
+    </article>
+    <article class="holding">
+      <header>
+        <h3>3 · Field Lock <em>or</em> Maritime / HarborShield</h3>
+        <span class="tag core">Core · one B2B peek</span>
+      </header>
+      <p class="why"><strong>Why it belongs:</strong> Strangers can click both today. Presence-bound keys, or instability-before-failure on trade lanes. Pick <em>one</em> for the quarter. Bundle FieldEncrypt/SpectraLock into Field Lock. HarborShield is the enterprise coat on Maritime — not a second company.</p>
+      <p>As-is $5k–$40k (Lock) / $5k–$30k (Maritime) · drop superlative crypto claims.</p>
+    </article>
+
+    <h2>Full ranking (cash first)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Holding</th>
+          <th>As-is</th>
+          <th>12-mo cash</th>
+          <th>Job in the book</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank">1</td><td>AquaQuarts</td><td>$0–25k</td><td>Highest</td><td><span class="tag core">Fund</span></td></tr>
+        <tr><td class="rank">2</td><td>Operator Assist</td><td>$0</td><td>Medium (schools)</td><td><span class="tag core">Fund</span></td></tr>
+        <tr><td class="rank">3</td><td>Field Lock</td><td>$5–40k</td><td>Med-low</td><td><span class="tag core">Fund XOR #4</span></td></tr>
+        <tr><td class="rank">4</td><td>Maritime + HarborShield</td><td>$5–30k</td><td>Med-low</td><td><span class="tag core">Fund XOR #3</span></td></tr>
+        <tr><td class="rank">5</td><td>Vigilant Patch</td><td>$0–50k option</td><td>Low</td><td><span class="tag option">File IP</span></td></tr>
+        <tr><td class="rank">6</td><td>NAV-42</td><td>$10–75k if honest</td><td>Low</td><td><span class="tag option">Vault · freeze % drag</span></td></tr>
+        <tr><td class="rank">7</td><td>Solenne</td><td>$0–20k</td><td>Low</td><td><span class="tag option">Later</span></td></tr>
+        <tr><td class="rank">8</td><td>Harmonic Blueprint</td><td>$0–15k</td><td>Low-med small $</td><td><span class="tag option">Brand / art</span></td></tr>
+        <tr><td class="rank">9</td><td>Kyrana</td><td>$0–5k</td><td>Very low</td><td><span class="tag option">Toy · $0 budget</span></td></tr>
+        <tr><td class="rank">10</td><td>Explorer family</td><td>$0–10k</td><td>~0 as SaaS</td><td><span class="tag option">Gallery</span></td></tr>
+        <tr><td class="rank">11</td><td>ChatVault</td><td>$0</td><td>—</td><td><span class="tag cut">MVP or delete</span></td></tr>
+        <tr><td class="rank">12</td><td>Ship It</td><td>$0</td><td>—</td><td><span class="tag cut">Abandoned</span></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Do not fund</h2>
+    <table>
+      <thead><tr><th>Holding</th><th>Why it does not belong in a money book</th></tr></thead>
+      <tbody>
+        <tr><td>ExoRatio</td><td>Prior audit: no sellable signal. Cut.</td></tr>
+        <tr><td>FieldPredict Stocks / Sports</td><td>Regulation + trust tax on the whole portfolio.</td></tr>
+        <tr><td>FieldEncrypt as its own brand</td><td>Fold into Field Lock. Superlatives are a liability.</td></tr>
+        <tr><td>Pac-Man / Risk clones</td><td>No original IP. Hobby.</td></tr>
+        <tr><td>Planet Hunter · Scallion · Ship It</td><td>Already abandoned.</td></tr>
+        <tr><td>Clay / Triple Lock packaging</td><td>Not a product. Phi-renorm method note is the math keeper.</td></tr>
+        <tr><td>TITAN-X</td><td>Not an app. $13M/unit concept. Separate vehicle or shelf.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>How to hold it</h2>
+    <div class="books">
+      <div class="book"><strong>Book A · Cash</strong>AquaQuarts</div>
+      <div class="book"><strong>Book B · Software</strong>Operator Assist</div>
+      <div class="book"><strong>Book C · One peek</strong>Field Lock XOR Maritime</div>
+      <div class="book"><strong>Book D · Options</strong>Vigilant IP · NAV-42 · Solenne later</div>
+      <div class="book"><strong>Book E · Art</strong>Blueprint · Explorer · Kyrana</div>
+      <div class="book"><strong>Book F · Starve</strong>Predict · clones · Clay · Ship It</div>
+    </div>
+
+    <h2>Single number</h2>
+    <p>If you need one figure for “what is the app inventory worth this week”: <strong>about $50,000</strong>, plus a call option that is only in the money if three holdings run and the rest starve. The book gets more valuable every time a logo is cut, not added.</p>
+
+    <footer>
+      Opinion, not an appraisal. No documented revenue or LOI in the public record. Live URLs checked 17 Aug 2026. Sources listed in the markdown report.
+    </footer>
+  </main>
+</body>
+</html>
