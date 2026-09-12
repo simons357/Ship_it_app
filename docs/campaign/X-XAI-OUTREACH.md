@@ -72,10 +72,33 @@ Not asking for a prize call. Happy for models/tools to read the chain and figure
 | Mon | Post 1 (chain map) |
 | Mon–Tue | Post 2 (barycenter) + soft @xai with link |
 | Wed | One more figure (tug-of-war or torus) + journey link again |
-| Later | Only new math/figures — still no “imminent” language |
+| Close | Post 4 — bow-out (below). Then stop NS claim-posting. |
+
+---
+
+## Post 4 — bow-out (copy-paste)
+
+[Attach: proof-chain.png or barycenter]
+
+We've taken this Navier–Stokes / swirl / spectral packaging as far as our desk goes.
+
+**We're knocking on the door. We're not opening it.**
+
+The full chain, figures, and notes are public for specialists who want to look. Open estimates stay visible as math — not as slogans.
+
+Handing the door to the people who live in this analysis. Grateful for the AI tools that helped build the map. Story of *claiming* a close ends here; the math library stays.
+
+— Jonathan R. Simons
+
+---
+
+## Soft line to specialists / @xai (final)
+
+Sharing a visual proof-chain and notebook for classical NS packaging + swirl/Φ bookkeeping. We are **at the construction’s barycenter / shape locus** in our notes — and we are **not** announcing a regularity theorem. Open product / axis estimates are drawn on the map. If this is useful as a map for people who do this for a living, it’s yours to stress-test. We’re stepping back from the prize narrative.
 
 ---
 
 ## Reputation one-liner (for you)
 
-Mistakes can sit under the paper. The chain can show open nodes without shame. Reputation rides on **visible complete work**, not on a management ping that a close is imminent.
+**Deal:** knocking ≠ opening.  
+Mistakes can sit under the paper. The chain can show open nodes without shame. Reputation rides on **visible complete work and a clean exit**, not on forcing a close for attention.

@@ -62,3 +62,15 @@ Correction and status text belongs in the status index and chapter notes, subord
 | Correct under content | Dream-team / investigator theater |
 
 Entry: [`PROOF-JOURNEY.md`](./PROOF-JOURNEY.md).
+
+---
+
+## Exit deal (locked)
+
+**We are knocking on the door. We are not opening it.**
+
+- Public face: visual chain + barycenter locus + click-through body of work.
+- Specialists get the open estimates as math; we do not force a close for attention.
+- After the bow-out post (`X-XAI-OUTREACH.md` Post 4), stop NS prize-narrative posting.
+- Doctorate / further study is a personal path; it is not a substitute Clay announcement.
+- Attention that lasts comes from a **clean map others can use** — not from claiming the door opened.
