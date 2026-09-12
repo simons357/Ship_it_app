@@ -3,6 +3,7 @@
 We broke into the house of Navier–Stokes. He’s not in this room right now — we think we heard someone upstairs. We know where we are: **at the door**, in the spectral **barycenter** room. Here is how the room looks, how it behaves, and how you go through the door. Pictures first. Click for depth. No “solved” stamp.
 
 Longer plain-language face: [`HOUSE-OF-NS.md`](./HOUSE-OF-NS.md)  
+**Adult FAQ (what object? blowup? universe?):** [`WHAT-IS-THIS.md`](./WHAT-IS-THIS.md)  
 **Companion lock:** [`REPUTATION-LOCK.md`](./REPUTATION-LOCK.md)  
 **Notation:** [`NOTATION-GLOSSARY.md`](./NOTATION-GLOSSARY.md)  
 **Clean math face:** [`../ns-review/PROOF-CHAIN-CLEAN.md`](../ns-review/PROOF-CHAIN-CLEAN.md)  

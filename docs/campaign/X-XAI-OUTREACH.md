@@ -23,6 +23,12 @@ https://github.com/simons357/Ship_it_app/blob/cursor/ns-proof-chain-visual-0cc5/
 
 ## X thread (copy-paste)
 
+**Post 0 — before the thread (optional pin)**  
+Smart adults keep asking: what object? is it real? where is it? what’s a blowup — the Big Bang??  
+
+Short FAQ: [link WHAT-IS-THIS.md]  
+Then the pictures.
+
 **Post 1 — floor plan**  
 [Attach: proof-chain.png]
 
