@@ -140,6 +140,8 @@ def combinatorial_census(
         return (r["s_geom"], r["max_rep"], r["total_pairs"])
 
     rows_sorted = sorted(rows, key=key_room, reverse=True)
+    max_rep_row = max(rows, key=lambda r: (r["max_rep"], r["s_geom"])) if rows else {}
+    max_ratio_row = max(rows, key=lambda r: (r["max_rep"] / r["m"] if r["m"] else 0, r["max_rep"])) if rows else {}
     by_s = defaultdict(list)
     by_m = defaultdict(list)
     for r in rows:
@@ -165,6 +167,20 @@ def combinatorial_census(
             (r["s_geom"] / (r["m"] ** 2) for r in rows if r["m"] > 0),
             default=0.0,
         ),
+        "max_rep_at": {
+            "alpha": max_rep_row.get("alpha"),
+            "beta": max_rep_row.get("beta"),
+            "m": max_rep_row.get("m"),
+            "s_geom": max_rep_row.get("s_geom"),
+            "max_rep": max_rep_row.get("max_rep"),
+        } if max_rep_row else {},
+        "max_rep_over_m_at": {
+            "alpha": max_ratio_row.get("alpha"),
+            "beta": max_ratio_row.get("beta"),
+            "m": max_ratio_row.get("m"),
+            "s_geom": max_ratio_row.get("s_geom"),
+            "max_rep": max_ratio_row.get("max_rep"),
+        } if max_ratio_row else {},
         "top": rows_sorted[: min(24, len(rows_sorted))],
         "beta_2alpha": [
             r
@@ -535,6 +551,8 @@ def write_headline(summary: Dict, path: Path) -> None:
         f"- max (max_rep / m) = {c.get('max_rep_over_m')}",
         f"- max (s_geom / m) = {c.get('max_s_over_m')}",
         f"- max (s_geom / m²) = {c.get('max_s_over_m2')}",
+        f"- max_rep at = {c.get('max_rep_at')}",
+        f"- max_rep/m at = {c.get('max_rep_over_m_at')}",
         f"- pairs-per-output ≤ m failures = {c.get('n_fail_pairs_le_m')}",
         "",
         r"Room is not K. \(K\le 16s\) still sits.",
@@ -560,6 +578,79 @@ def write_headline(summary: Dict, path: Path) -> None:
     path.write_text("\n".join(lines))
 
 
+def write_plots(summary: Dict, outdir: Path) -> None:
+    try:
+        import matplotlib
+
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+    except Exception as exc:  # pragma: no cover
+        (outdir / "plot_error.txt").write_text(str(exc) + "\n")
+        return
+    f = summary["fields"]
+    outdir.mkdir(parents=True, exist_ok=True)
+
+    def _xy(rows, xk, yk="K"):
+        xs = [r[xk] for r in rows]
+        ys = [r[yk] for r in rows]
+        return xs, ys
+
+    fig, ax = plt.subplots(figsize=(6.2, 4.0))
+    xs, ys = _xy(f.get("best_K_by_s") or [], "s")
+    ax.plot(xs, ys, "o-", color="#2c5f6e", label="best K in bin")
+    ax.set_xlabel("occupied output support s")
+    ax.set_ylabel(r"$K_{\alpha,\beta}$")
+    ax.set_title("9B growing-s — best K vs s (samples, not C0)")
+    ax.grid(True, alpha=0.3)
+    ax.legend()
+    fig.tight_layout()
+    fig.savefig(outdir / "K_vs_s.png", dpi=140)
+    plt.close(fig)
+
+    fig, ax = plt.subplots(figsize=(6.2, 4.0))
+    xs, ys = _xy(f.get("best_K_by_m") or [], "m")
+    ax.plot(xs, ys, "s-", color="#8a3a2c", label="best K in bin")
+    ax.set_xlabel("input support m (conjugate-closed)")
+    ax.set_ylabel(r"$K_{\alpha,\beta}$")
+    ax.set_title("9B growing-s — best K vs m (samples, not C0)")
+    ax.grid(True, alpha=0.3)
+    ax.legend()
+    fig.tight_layout()
+    fig.savefig(outdir / "K_vs_m.png", dpi=140)
+    plt.close(fig)
+
+
+def focus_high_rep(
+    rng: np.random.Generator,
+    pairs: Sequence[Tuple[int, int]],
+    kmax: int = 30,
+    n_opt_trials: int = 12,
+    n_opt_refine: int = 6,
+) -> List[Dict]:
+    """Phase-optimize the census extremes. Large m; still not C0."""
+    shells = shells_up_to(kmax)
+    rows = []
+    for alpha, beta in pairs:
+        pos = shells.get(alpha, [])
+        if len(pos) < 2:
+            print(f"  focus skip α={alpha}: n_pos={len(pos)}", flush=True)
+            continue
+        print(f"  focus α={alpha} β={beta} n_pos={len(pos)}", flush=True)
+        recs = score_construction(
+            pos,
+            float(beta),
+            rng,
+            n_random=2,
+            n_opt_trials=n_opt_trials,
+            n_opt_refine=n_opt_refine,
+            tag=f"focus_full_a{alpha}_b{beta}",
+        )
+        for r in recs:
+            r["focus"] = True
+        rows.extend(recs)
+    return rows
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--out", type=str, default="")
@@ -570,6 +661,7 @@ def main() -> int:
     ap.add_argument("--n-random", type=int, default=6)
     ap.add_argument("--opt-trials", type=int, default=16)
     ap.add_argument("--opt-refine", type=int, default=8)
+    ap.add_argument("--plots-dir", type=str, default="")
     args = ap.parse_args()
     summary = run(
         seed=args.seed,
@@ -589,6 +681,9 @@ def main() -> int:
         Path(args.headline).parent.mkdir(parents=True, exist_ok=True)
         write_headline(_py(summary), Path(args.headline))
         print(f"wrote {args.headline}", flush=True)
+    if args.plots_dir:
+        write_plots(_py(summary), Path(args.plots_dir))
+        print(f"wrote plots in {args.plots_dir}", flush=True)
     return 0 if summary["verdict"].startswith("GROWING_S") else 1
 
 

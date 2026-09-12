@@ -38,6 +38,8 @@ class GrowingSTests(unittest.TestCase):
         self.assertIn(r"not \(C_0\)", text)
         self.assertIn("attack9b_growing_s.py", text)
         self.assertIn("no seated exponent", text)
+        self.assertIn("0.631", text)
+        self.assertIn("36895", text)
         self.assertNotIn("NS is solved", text)
         self.assertTrue(SCRIPT.is_file())
         counting = COUNTING.read_text()
@@ -111,6 +113,27 @@ class GrowingSTests(unittest.TestCase):
         self.assertEqual(c["n_fail_pairs_le_m"], 0)
         self.assertGreater(c["max_s_geom"], 0)
         self.assertAlmostEqual(c["max_cs_ceiling"], 16.0 * c["max_s_geom"], places=8)
+        self.assertIn("alpha", c["max_rep_at"])
+        self.assertLessEqual(c["max_rep_over_m"], 1.0)
+
+    def test_results_json_is_a_sample_not_a_kill(self):
+        import json
+
+        path = ROOT / "results" / "attack9b_growing_s" / "attack9b_growing_s.json"
+        self.assertTrue(path.is_file())
+        data = json.loads(path.read_text())
+        self.assertEqual(data["attack"], "9B-growing-s")
+        self.assertIs(data["ns_solved"], False)
+        self.assertEqual(data["lemma_star"], "OPEN")
+        self.assertEqual(data["kill_lane"], "LIVE")
+        self.assertTrue(data["verdict"].startswith("GROWING_S_SAMPLES"))
+        self.assertEqual(data["census"]["n_fail_pairs_le_m"], 0)
+        self.assertEqual(data["census"]["n_pairs_with_sums"], 36895)
+        self.assertEqual(data["fields"]["n_fail_K_le_16s"], 0)
+        self.assertLess(data["fields"]["max_K"], 1.0)
+        self.assertGreater(data["fields"]["max_K"], 0.5)
+        self.assertLess(data["fields"]["loglog_slope_K_vs_s"], 0.0)
+        self.assertLess(data["fields"]["loglog_slope_K_vs_m"], 0.0)
 
 
 if __name__ == "__main__":
