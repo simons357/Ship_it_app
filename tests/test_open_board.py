@@ -76,6 +76,7 @@ class TestOpenBoard(unittest.TestCase):
         shell = next(row for row in payload["still_open"] if row["id"] == "axisymmetric-shell")
         self.assertEqual(shell["bucket"], "STILL_OPEN")
         self.assertIn("NOT COMPUTED", shell["problem"])
+        self.assertIn("REFUSED", shell["problem"])
         self.assertIn("NOT CLAIMED", shell["problem"])
         self.assertIn("FAIL", shell["problem"])
         self.assertIn("FAIL", payload["da_vc_01"])

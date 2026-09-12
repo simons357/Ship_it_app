@@ -40,6 +40,8 @@ Implied by those rows and implemented with them: **C3, C7, C8, C17, C18, C19, C2
 
 **Recorded 2026-09-12 (next step, not a close).** Class: unaugmented axisymmetric Navier–Stokes with swirl. Quantity: \(Z_j=\tfrac12\|P_j u\|_{L^2}^2\). Remainder: \(T_{j\leftarrow j}\). Assumed: [no DNS; no closed stepper]. The Door-1 pairing is written; the algebraic pairing residual is a unit check; \(T_{j\leftarrow j}/Z_j\) is **NOT COMPUTED**. Status stays **OPEN**. Clay is **NOT CLAIMED**. DA-VC-01 stays **FAIL**.
 
+**Recorded 2026-09-12 (fold Sept 11 Tjj chain, not a close).** Class: unaugmented axisymmetric-with-swirl. Quantity: \(Z_j\) (energy in §1; enstrophy on the Sept 11 write). Remainder: \(T_{j\leftarrow j}\). Assumed: [compact samples are not DNS]. Far-shell Young sits. Requested \(\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu D_j+R\) stays **REFUSED**. Status stays **OPEN**. Clay is **NOT CLAIMED**. DA-VC-01 stays **FAIL**. Source branch `origin/cursor/tjj-estimate-chain-e5c5` was read, not checked out as HEAD.
+
 Live software today (verified 2026-08-24 before this rewrite): local desktop app at `http://127.0.0.1:8765/`, CLI, 51 unit tests green. That package was a three-verb UI around Firestone analogy, equation-error OLS, RK4, saturated PD, FFT Poisson, and a three-pattern classifier. This rewrite implements the marked table.
 
 ---

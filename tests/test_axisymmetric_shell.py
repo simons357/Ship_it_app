@@ -11,6 +11,8 @@ from domain_architect.app import handle_api
 from domain_architect.audit import audit_expression
 from domain_architect.axisymmetric_shell import (
     DISCARD_CLAIM_PHRASES,
+    MIXED_SPLIT_SAMPLES,
+    REFUSED_YOUNG,
     THREE_D_FACTS,
     TWO_D_FACTS,
     axisymmetric_shell_estimate,
@@ -22,6 +24,7 @@ from domain_architect.axisymmetric_shell import (
     pairing_closed,
     pairing_residual,
     shell_diagnostic,
+    swirl_split_residual,
 )
 from domain_architect.lab_cases import SHELL_REMAINDER_LAB, SWIRL_LEFTOVER_LAB
 from domain_architect.pipeline import run_named_cycle
@@ -68,14 +71,26 @@ class TestAuditDocuments(unittest.TestCase):
             "Q6-Kabbalah",
             "Lightning Flash",
         ):
-            self.assertNotIn(phrase, text.split("## 7.")[0] if "## 7." in text else text)
+            self.assertNotIn(
+                phrase,
+                text.split("What this note refuses")[0]
+                if "What this note refuses" in text
+                else text,
+            )
         self.assertIn("NOT COMPUTED", text)
         self.assertIn("no DNS", text)
-        identity_and_measure = text.split("## 7.")[0]
+        identity_and_measure = (
+            text.split("What this note refuses")[0]
+            if "What this note refuses" in text
+            else text
+        )
         self.assertEqual(claim_tripwire_hits(identity_and_measure), [])
         self.assertNotIn("we close", identity_and_measure.lower())
         self.assertNotIn("small leftover", identity_and_measure.lower())
         self.assertNotIn("T_{j\\leftarrow j} is O(", identity_and_measure)
+        self.assertIn("REFUSED", text)
+        self.assertIn("not dns", text.lower())
+        self.assertIn("T^{\\mathrm{mm}}", text)
 
     def test_estimate_writes_exact_pairing(self):
         text = ESTIMATE.read_text(encoding="utf-8")
@@ -166,6 +181,41 @@ class TestPairingAndFacts(unittest.TestCase):
         self.assertNotIn("Clay is solved", printed)
         self.assertEqual(claim_tripwire_hits(printed), [])
         self.assertIn("NOT COMPUTED", " ".join(audit_expression(SHELL_REMAINDER_LAB).warnings))
+
+    def test_refused_young_is_not_a_close(self):
+        self.assertEqual(REFUSED_YOUNG["status"], "REFUSED")
+        payload = axisymmetric_shell_estimate()
+        self.assertEqual(payload["refused_young"]["status"], "REFUSED")
+        self.assertEqual(payload["status"], "OPEN")
+        self.assertEqual(payload["tjj_over_zj"]["status"], "NOT COMPUTED")
+        printed = format_shell_diagnostic()
+        self.assertIn("REFUSED", printed)
+        self.assertNotIn("requested local Young is seated", printed.lower())
+
+    def test_tjj_chain_facts_are_labeled(self):
+        payload = axisymmetric_shell_estimate()
+        samples = payload["measured_facts"]["compact_swirl_samples"]
+        self.assertEqual(samples["kind"], "named compact samples, not DNS, not a class bound")
+        self.assertFalse(samples["imported_from_2d"])
+        self.assertFalse(samples["imported_to_3d_cfm"])
+        self.assertAlmostEqual(samples["mixed_m1_n32_max_|Tjj/Xj|"], 0.00112)
+        self.assertLess(samples["pure_swirl_n32_max_|Tjj/Xj|"], 1e-18)
+        split = payload["measured_facts"]["mixed_split_samples"]
+        self.assertTrue(split["T_mm_is_the_bulk"])
+        self.assertFalse(split["centrifugal_only_leftover"])
+        self.assertIn("n=24", split["class"])
+        exact = swirl_split_residual(8.0, -1.0, 0.5, 7.5)
+        self.assertLessEqual(exact, 1e-16)
+        rounded = MIXED_SPLIT_SAMPLES["shells"][0]
+        self.assertGreater(
+            swirl_split_residual(
+                rounded["T_mm"], rounded["T_ss"], rounded["T_cross"], rounded["Tjj"]
+            ),
+            1.0,
+        )
+        printed = format_shell_diagnostic()
+        self.assertIn("not DNS", printed)
+        self.assertIn("T_mm is the bulk", printed)
 
 
 class TestDecomposeAndGlue(unittest.TestCase):

@@ -16,6 +16,8 @@ turbulence-reduction program, not leftover-split strain
 
 Estimate note that must obey this filter:
 [`docs/papers/swirl/AXISYMMETRIC-SHELL-ESTIMATE.md`](../papers/swirl/AXISYMMETRIC-SHELL-ESTIMATE.md).
+Predecessor filter (11 Sept, other branch, not this HEAD):
+`origin/cursor/tjj-estimate-chain-e5c5` `docs/ESTIMATE-AUDIT.md`.
 
 Operator contract: [`DA-MODE.md`](DA-MODE.md).  
 Decisions: [`DECISIONS.md`](DECISIONS.md) (2026-09-12 lock).  

@@ -9,7 +9,9 @@ This is not a close. Clay is NOT CLAIMED. DA-VC-01 stays FAIL.
 Leftover-split strain is a different remainder. Analog 15% intensity
 is a different lumped setpoint. Turbulence-reduction is PARK.
 This environment has no DNS and no closed NS stepper, so
-T_{j←j}/Z_j is NOT COMPUTED.
+class T_{j←j}/Z_j is NOT COMPUTED. Compact-sample ratios
+from origin/cursor/tjj-estimate-chain-e5c5 are labeled
+samples, not a class close. Requested local Young is REFUSED.
 """
 
 from __future__ import annotations
@@ -42,6 +44,41 @@ THREE_D_FACTS = {
     "HHH_occupancy_on_orbits_run": 1.0,
     "alignment_alpha": 0.5,
     "occupancy_imported_to_cfm": False,
+}
+
+# Sept 11 Tjj chain. Labeled compact samples, not DNS, not a class ρ_j.
+TJJ_CHAIN_SOURCE = "origin/cursor/tjj-estimate-chain-e5c5"
+REFUSED_YOUNG = {
+    "line": "|T_{j←j}| <= εν D_j + R",
+    "status": "REFUSED",
+    "allowed_R": "energy, Z, maybe a direction factor; not dZj; not Lambda'",
+    "reason": (
+        "allowed R is not seated; energy-linear R is false by "
+        "λ^{3/2} concentration"
+    ),
+}
+COMPACT_SWIRL_SAMPLES = {
+    "class": "compact axisymmetric-with-swirl blobs on R^3, R=2.4<π",
+    "kind": "named compact samples, not DNS, not a class bound",
+    "re_run_here": False,
+    "imported_to_3d_cfm": False,
+    "imported_from_2d": False,
+    "pure_swirl_n32_max_|Tjj/Xj|": 3.2e-19,
+    "mixed_m1_n32_max_|Tjj/Xj|": 0.00112,
+    "mixed_m3_n32_max_|Tjj/Xj|": 0.00141,
+    "mixed_m1_n48_max_|Tjj/Xj|": 0.000583,
+    "mixed_moved_with_n": True,
+}
+MIXED_SPLIT_SAMPLES = {
+    "class": "compact swirl+meridional, n=24, energy-carrying shells",
+    "kind": "named compact samples, not DNS; rounded print",
+    "T_mm_is_the_bulk": True,
+    "centrifugal_only_leftover": False,
+    "shells": (
+        {"j": 1, "T_mm": 8.15e3, "T_ss": -62.0, "T_cross": 217.0, "Tjj": 8.30e3},
+        {"j": 2, "T_mm": -1.08e4, "T_ss": 4.03e3, "T_cross": -142.0, "Tjj": -6.89e3},
+        {"j": 3, "T_mm": -1.32e4, "T_ss": 622.0, "T_cross": 88.0, "Tjj": -1.25e4},
+    ),
 }
 
 DISCARD_CLAIM_PHRASES = (
@@ -84,6 +121,8 @@ REFUSED = (
     "no TRANSFORMABLE without a real T",
     "no quote of sign(Lambda') unless pairing residual <= 1e-16 "
     "and a closed time series exists",
+    "no seating of |Tjj| <= εν Dj + R with energy-linear R",
+    "no treating compact-sample ratios as class rho_j",
 )
 
 FIRST_SENTENCE = (
@@ -162,6 +201,11 @@ def lambda_prime_bookkeeping(tc: float, nu: float, ds: float, x: float) -> float
 def contains_discard_claim(text: str) -> bool:
     lowered = (text or "").lower()
     return any(phrase in lowered for phrase in DISCARD_CLAIM_PHRASES)
+
+
+def swirl_split_residual(t_mm: float, t_ss: float, t_cross: float, tjj: float) -> float:
+    """Bilinear split identity: T_mm + T_ss + T_cross = Tjj."""
+    return abs(float(t_mm) + float(t_ss) + float(t_cross) - float(tjj))
 
 
 def claim_tripwire_hits(text: str) -> list[str]:
@@ -271,11 +315,24 @@ def axisymmetric_shell_estimate(
             "swirl_removes_free_helical_HHH": (
                 "class statement, not a measured 3-D CFM close"
             ),
+            "tjj_chain_source": TJJ_CHAIN_SOURCE,
+            "compact_swirl_samples": dict(COMPACT_SWIRL_SAMPLES),
+            "mixed_split_samples": {
+                "class": MIXED_SPLIT_SAMPLES["class"],
+                "kind": MIXED_SPLIT_SAMPLES["kind"],
+                "T_mm_is_the_bulk": MIXED_SPLIT_SAMPLES["T_mm_is_the_bulk"],
+                "centrifugal_only_leftover": MIXED_SPLIT_SAMPLES[
+                    "centrifugal_only_leftover"
+                ],
+                "shells": [dict(row) for row in MIXED_SPLIT_SAMPLES["shells"]],
+            },
         },
+        "refused_young": dict(REFUSED_YOUNG),
         "tjj_over_zj": {
             "status": "NOT COMPUTED",
             "reason": (
-                "no DNS and no closed NS time-series stepper in this environment"
+                "no DNS and no closed NS time-series stepper in this environment; "
+                "compact-sample ratios are not a class rho_j"
             ),
             "class": "axisymmetric-with-swirl",
         },
@@ -355,6 +412,14 @@ def shell_diagnostic(
             "class statement, not a measured 3-D CFM close"
         ),
         "galerkin_pairing": dict(GALERKIN_PAIRING),
+        "refused_young": dict(REFUSED_YOUNG),
+        "compact_swirl_samples": dict(COMPACT_SWIRL_SAMPLES),
+        "mixed_split_samples": {
+            "class": MIXED_SPLIT_SAMPLES["class"],
+            "kind": MIXED_SPLIT_SAMPLES["kind"],
+            "T_mm_is_the_bulk": MIXED_SPLIT_SAMPLES["T_mm_is_the_bulk"],
+            "centrifugal_only_leftover": False,
+        },
         "status": "OPEN",
         "clay": "NOT CLAIMED",
         "da_vc_01": "FAIL",
@@ -403,6 +468,25 @@ def format_shell_diagnostic(diag: dict[str, Any] | None = None) -> str:
             "separate from occupancy"
         ),
         f"swirl removes free helical HHH: {d['swirl_removes_free_helical_HHH']}",
+        (
+            f"requested local Young {d['refused_young']['line']}: "
+            f"{d['refused_young']['status']} "
+            f"({d['refused_young']['reason']})"
+        ),
+        (
+            "compact samples (not DNS, not class rho_j): "
+            f"pure swirl n=32 max|Tjj/Xj| ~ "
+            f"{d['compact_swirl_samples']['pure_swirl_n32_max_|Tjj/Xj|']:.1e}; "
+            f"mixed m=1 n=32 ~ "
+            f"{d['compact_swirl_samples']['mixed_m1_n32_max_|Tjj/Xj|']}; "
+            f"mixed m=3 n=32 ~ "
+            f"{d['compact_swirl_samples']['mixed_m3_n32_max_|Tjj/Xj|']}; "
+            "moved with n"
+        ),
+        (
+            "mixed split n=24: T_mm is the bulk; "
+            "centrifugal-only leftover is false"
+        ),
         f"sign(Lambda'): {d['lambda_prime_sign']}",
         (
             f"T_{{j←j}}/Z_j: {tjj['status']} "

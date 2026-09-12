@@ -1,8 +1,9 @@
 # Axisymmetric-with-swirl shell estimate
 
 **Filter:** [`docs/domain-architect/AXISYMMETRIC-SHELL-AUDIT.md`](../../domain-architect/AXISYMMETRIC-SHELL-AUDIT.md)  
+**Predecessor (11 Sept, not this HEAD):** `origin/cursor/tjj-estimate-chain-e5c5` — `docs/ESTIMATE-AUDIT.md`, `docs/AXISYM-SHELL.md`, `docs/TJJ-ESTIMATE.md`, `docs/AXISYM-SWIRL-PROBE.md`.  
 **Date:** 2026-09-12  
-**Status:** OPEN. Remainder \(T_{j\leftarrow j}\) is not computed here and is not shown small. Clay is **NOT CLAIMED**. Unconditional 3-D regularity is **NOT CLAIMED**. DA-VC-01 stays **FAIL**.
+**Status:** OPEN. Remainder \(T_{j\leftarrow j}\) is still open. Far-shell Young sits. The requested local Young is **REFUSED**. Compact-sample ratios are not a class \(\rho_j\). Clay is **NOT CLAIMED**. Unconditional 3-D regularity is **NOT CLAIMED**. DA-VC-01 stays **FAIL**.
 
 Class: unaugmented axisymmetric Navier–Stokes with swirl. Quantity: dyadic shell block \(Z_j\). Remainder after the Door-1 budget: intra-shell transfer \(T_{j\leftarrow j}\). Assumed, in brackets: [smooth compactly supported divergence-free axisymmetric-with-swirl solutions of classical NS; no added field; unaugmented normalization; pairing identity closed only when the stepper and the diagnostic agree to \(10^{-16}\)].
 
@@ -131,35 +132,167 @@ Refuse “visibility of cancellation = uniform smallness.”
 
 ---
 
-## 5. Extra hypotheses in brackets
+## 5. Sept 11 enstrophy Door-1 and far-shell Young
+
+Class: unaugmented axisymmetric-with-swirl NS on \(\mathbb{R}^3\). Quantity on that write: the enstrophy shell \(Z_j=\|\Delta_j\omega\|_{L^2}^2\) (this is **not** the energy \(Z_j=\tfrac12\|P_j u\|_{L^2}^2\) of §1; same remainder letter, different shell). Remainder: \(T_{j\leftarrow j}\). Assumed: [smooth rapidly decreasing axisymmetric-with-swirl; no added field; radial LP bump \(\varphi\)].
+
+Source: `docs/AXISYM-SHELL.md` on `origin/cursor/tjj-estimate-chain-e5c5`. Not re-derived here.
+
+Write \(B(\omega,u)=\omega\cdot\nabla u-u\cdot\nabla\omega\), and
+\[
+T_j=\langle\Delta_j B(\omega,u),\Delta_j\omega\rangle,
+\qquad
+\tfrac12\dot Z_j+\nu D_j=T_j,
+\qquad
+D_j=\|\nabla\Delta_j\omega\|_2^2.
+\]
+Infrared / local / ultraviolet split of the field:
+\(u_{\mathrm{IR}}=S_{j-2}u\),
+\(u_{\mathrm{loc}}=(\Delta_{j-1}+\Delta_j+\Delta_{j+1})u\)
+(this local block is the \(b=1\) grouping),
+\(u_{\mathrm{UV}}=u-u_{\mathrm{IR}}-u_{\mathrm{loc}}\). Then
+\[
+T_j=T_{j\leftarrow\mathrm{IR}}+T_{j\leftarrow j}+T_{j\leftarrow\mathrm{UV}}.
+\]
+The only remainder after the next two lemmas is still \(T_{j\leftarrow j}\).
+
+**Lemma AS-IR.** There is a finite \(C_{\mathrm{IR}}=C_{\mathrm{IR}}[\varphi]\) such that
+\[
+\lvert T_{j\leftarrow\mathrm{IR}}\rvert
+\le
+C_{\mathrm{IR}}\Bigl(\sum_{k\le j-2}2^{3k/2}Z_k^{1/2}\Bigr)Z_j
++
+C_{\mathrm{IR}}\Bigl(\sum_{k\le j-2}2^{k/2}Z_k^{1/2}\Bigr)D_j^{1/2}Z_j^{1/2}.
+\]
+Infrared *transport* absorbs as
+\(\lvert T_{j\leftarrow\mathrm{IR}}^{\mathrm{trans}}\rvert\le\frac\nu4 D_j+C_{\mathrm{IR}}^2\nu^{-1}\|u_{\mathrm{IR}}\|_\infty^2 Z_j\).
+That absorption is not an estimate of \(T_{j\leftarrow j}\).
+
+**Lemma AS-UV.** There is a finite \(C_{\mathrm{UV}}=C_{\mathrm{UV}}[\varphi]\) such that
+\[
+\lvert T_{j\leftarrow\mathrm{UV}}\rvert
+\le
+C_{\mathrm{UV}}\sum_{\ell\ge j+2}2^{j-\ell/2}Z_\ell\,Z_j^{1/2}.
+\]
+
+Constants named: \(C_{\mathrm{IR}}[\varphi]\), \(C_{\mathrm{UV}}[\varphi]\). Scope: far shells only. The local block is not in these two lemmas.
+
+---
+
+## 6. Requested local Young — REFUSED
+
+Class: same unaugmented axisymmetric-with-swirl class. Quantity: the §5 enstrophy shell. Remainder: \(T_{j\leftarrow j}\). Assumed: [no extra field; \(R\) only from energy, \(Z\), maybe a direction factor; not \(\dot Z_j\); not \(\Lambda'\)].
+
+Source: `docs/TJJ-ESTIMATE.md` on `origin/cursor/tjj-estimate-chain-e5c5`.
+
+The requested line
+\[
+\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu D_j+R
+\]
+with that allowed \(R\) is **REFUSED**. It is not seated.
+
+What was figured out and is **not** the request:
+
+- Main transport vanishes: \(\int(u_{\mathrm{loc}}\cdot\nabla)\Delta_j\omega\cdot\Delta_j\omega=0\). Only the commutator remains from transport.
+- Main stretch is \(\int\alpha_{\mathrm{loc},j}\,\lvert\Delta_j\omega\rvert^2\), an identity, not a bound.
+- A template with \(\|u_{\mathrm{loc}}\|_\infty\) and \(\|\nabla u_{\mathrm{loc}}\|_\infty\) sits. Those norms are not energy, not \(Z\), and not a direction factor. Bernstein puts \(2^{3j}\) back in.
+
+Energy-linear \(R\) is **false** as a uniform bound: on \(u^\lambda(x)=\lambda^{3/2}\varphi(\lambda x)\),
+\(\lvert T_{j\leftarrow j}\rvert/(\varepsilon\nu D_j+C\,\mathcal E\,Z_j)\sim\lambda^{1/2}\to\infty\).
+That scaling is why the line stays refused.
+
+\(\dot Z_j\) and \(\Lambda'\) stay out as bounds.
+
+---
+
+## 7. Transport / \(\alpha\) / swirl bilinear split
+
+Class: unaugmented axisymmetric-with-swirl. Quantity: local enstrophy pairing. Remainder: \(T_{j\leftarrow j}\). Assumed: [local block as in §5; no added field].
+
+On the local block
+\[
+T_{j\leftarrow j}
+=
+\int\alpha_{\mathrm{loc},j}\,\lvert\Delta_j\omega\rvert^2
++
+T_{j\leftarrow j}^{\mathrm{comm}}.
+\]
+Door 3: a printed \(\alpha\) is a criterion. \(\|(\alpha)_+\|_\infty\) is not controlled by energy.
+
+Write \(u=u_{\mathrm{mer}}+u_{\mathrm{swirl}}\). The pairing is bilinear:
+\[
+T_{j\leftarrow j}=T^{\mathrm{mm}}+T^{\mathrm{ss}}+T^{\mathrm{cross}}.
+\]
+\(T^{\mathrm{ss}}\) is the centrifugal source. \(T^{\mathrm{mm}}\) is meridional self-stretch.
+
+If \(u^r=u^z=0\), then \(T_j=T_{j\leftarrow j}=0\). That is why the compact *pure-swirl* samples printed \(\sim 0\). It is not a bound on a mixed field.
+
+A tempting sentence — “no-swirl is regular, so only \(T^{\mathrm{ss}}\) remains” — is **false** as a measurement on this class. On the mixed compact samples, \(T^{\mathrm{mm}}\) is the bulk. Do not set \(T^{\mathrm{ss}}\) equal to leftover-split strain \(\int\|u^r/r\|_\infty\,dt\).
+
+---
+
+## 8. Compact swirl samples (not DNS)
+
+Class: named compact axisymmetric-with-swirl blobs on \(\mathbb{R}^3\), support in a ball of radius \(R=2.4<\pi\), scored on a 2/3-dealiased Leray interpolant. Quantity: printed \(\max\lvert T_{j\leftarrow j}/X_j\rvert\) on that interpolant. Remainder: \(T_{j\leftarrow j}\). Assumed: [these named fields only; pairing closed on the samples; no time series].
+
+Source: `docs/AXISYM-SWIRL-PROBE.md` and the mixed-split table in `docs/TJJ-ESTIMATE.md` on `origin/cursor/tjj-estimate-chain-e5c5`. **Not re-run here. Not DNS. Not [ρ] for the class.**
+
+Pairing residual on those samples \(\le 3\times 10^{-18}\) relative. Rotation residual \(\le 4\times 10^{-15}\). Occupancy was not scored. \(\alpha\) stayed separate. The sign of \(\Lambda'\) was not quoted.
+
+| field | \(n\) | \(\max\lvert T_{j\leftarrow j}/X_j\rvert\) | \(\overline{\alpha}\) |
+|---|---|---|---|
+| pure swirl | 32 | \(3.2\times 10^{-19}\) | \(0\) |
+| swirl+meridional \(m=1\) | 32 | \(0.00112\) | \(-1.3\times 10^{-4}\) |
+| swirl+meridional \(m=3\) | 32 | \(0.00141\) | \(-1.0\times 10^{-4}\) |
+| swirl+meridional \(m=1\) | 48 | \(0.000583\) | \(-9.2\times 10^{-5}\) |
+| swirl+meridional \(m=3\) | 48 | \(0.000726\) | \(-4.5\times 10^{-5}\) |
+
+Pure swirl printed as zero to residual on these two grids. Mixed ratios sit at \(O(10^{-3})\) on \(n=32\) and **moved with \(n\) and with \(m\)**. The continuum value of these blobs is not locked.
+
+Mixed split, compact swirl+meridional, \(n=24\), energy-carrying shells (rounded print; not a \(10^{-16}\) sum check):
+
+| \(j\) | \(T^{\mathrm{mm}}\) | \(T^{\mathrm{ss}}\) | \(T^{\mathrm{cross}}\) | \(T_{j\leftarrow j}\) |
+|---|---|---|---|---|
+| 1 | \(8.15\times 10^3\) | \(-62\) | \(217\) | \(8.30\times 10^3\) |
+| 2 | \(-1.08\times 10^4\) | \(4.03\times 10^3\) | \(-142\) | \(-6.89\times 10^3\) |
+| 3 | \(-1.32\times 10^4\) | \(622\) | \(88\) | \(-1.25\times 10^4\) |
+
+\(T^{\mathrm{mm}}\) is the bulk. 2-D \(\lvert T_c\rvert/D_s\sim 0.017\) is not used here.
+
+---
+
+## 9. Extra hypotheses in brackets
 
 A conditional theorem is a theorem. A hidden hypothesis is not.
 
 - [axisymmetric with swirl] — real geometry; preferred over a modified PDE that is no longer classical NS.
 - [pairing closed] — stepper and diagnostic agree to \(10^{-16}\); otherwise do not quote \(\mathrm{sign}(\Lambda')\). This environment has no stepper, so the algebraic residual is not a time-series close.
-- [measured \(\rho_j=T_{j\leftarrow j}/Z_j\)] — not printed here.
+- [measured \(\rho_j=T_{j\leftarrow j}/Z_j\)] — not a class print. Compact-sample ratios in §8 are not this hypothesis.
+- [ρ] (Sept 11, extra, not measured): \(\int_0^T(T_{j\leftarrow j})_+/Z_j\,dt<\infty\) and the infrared sum of Lemma AS-IR finite. Under [ρ] the far-shell lemmas keep that enstrophy shell finite on \([0,T]\). [ρ] is not shown for the class.
 
 [SND] in its **large** form (“assume the dangerous interactions are not dangerous”) is **not** used as measured smallness. Ring \(\inf J/X\ge c_*\) remains a leftover-split **CONDITIONAL** hypothesis on a different book; it is not a measured bound of \(T_{j\leftarrow j}\) here.
 
 ---
 
-## 6. Gap (send the work with the gap visible)
+## 10. Gap (send the work with the gap visible)
 
-The leftover is still \(T_{j\leftarrow j}\) and still **OPEN**. There is no Young step. There is no printed \(\rho_j\). Clay is **NOT CLAIMED**. Unconditional 3-D regularity is **NOT CLAIMED**.
+The leftover is still \(T_{j\leftarrow j}\) and still **OPEN**. Far-shell Young sits. The requested local Young is **REFUSED**. There is no class \(\rho_j\).
 
 Modified / hyperviscous / Q1-augmented equations stay **separate** from classical NS. A close of another PDE is not a close of NS.
 
 ---
 
-## 7. What this note refuses
+## 11. What this note refuses
 
 Discard list objects do not enter the identity, the Young step, or the claim: SFE / coherence viscosity / Q1–Q6 as constitutive classical NS; bounding the bad term by \(\Lambda'\) or \(\dot Z_j\); large-form [SND] as measured smallness; GCD spectral attractor / E8 cathedral / prime-harmonic lock / Borromean coherence as mechanisms that force \(T_{j\leftarrow j}\) small; Base 44 / gematria as estimates; Q6-Kabbalah / Lightning Flash inside the proof; 2-D \(\rho=0.02\) imported to 3-D; occupancy 1 imported to CFM; FFT-aliased orbits treated as \(\dot\Lambda=2(T_c-\nu D_s)\); “Clay is solved”; Tao certification; coherence-floor / extra memory / prime gates added to NS and called the Millennium problem.
 
 Parked elsewhere (not deleted): Harmonic Blueprint / SFE archive; apps; Base 44 partition experiment until \(\rho_j\) is tested; defense stacks; RH / Goldbach; turbulence-reduction (ships ACTIVE; other slots QUEUED); leftover-split strain; Ring / Paper2 / Route J.
 
+Left on the Sept 11 branch, not welded here: Lemma★, H1 / WRITE (6), `SWIRL-PAPER.md` Hardy as a repair of \(R\), lattice random / 4-fold / Taylor–Green interpolant ratios (not this class), the FFT probe scripts themselves.
+
 ---
 
-## 8. DA lab
+## 12. DA lab
 
 ```
 python -m domain_architect cycle axisymmetric-shell

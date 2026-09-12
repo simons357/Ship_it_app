@@ -95,9 +95,10 @@ SHELL_REMAINDER_WARNINGS = (
     "This is the axisymmetric-with-swirl Door-1 remainder Tjj/Zj. "
     "The only remainder after the shell budget is T_{j←j}. The "
     "pairing residual is an algebraic unit check. Tjj/Zj is NOT "
-    "COMPUTED here (no DNS, no closed stepper). Status OPEN. Clay "
-    "NOT CLAIMED. Not leftover-split strain, not Ring SND, and not "
-    "Paper2 simplex.",
+    "COMPUTED here (no DNS, no closed stepper). Requested local "
+    "Young is REFUSED. Compact-sample ratios are not a class "
+    "rho_j. Status OPEN. Clay NOT CLAIMED. Not leftover-split "
+    "strain, not Ring SND, and not Paper2 simplex.",
 )
 
 BOTH_BOOKS_WARNING = (
