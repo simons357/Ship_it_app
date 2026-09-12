@@ -3,11 +3,11 @@
 A caring, plain-language face for the journey.  
 **Not a claim that NS is solved.** A claim that we know **where we are**.
 
+Navier–Stokes is a house. Below is the map of **what our study has revealed so far** — rooms we can name, doors we can describe, wings we keep separate. Nothing more is drawn than the work supports.
+
 ---
 
 ## The picture in words
-
-Navier–Stokes is a house. Here is the map of what our study has revealed so far.
 
 We’re not in *every* room yet.  
 Some floors are still for specialists.  
@@ -43,20 +43,88 @@ That \(\Lambda\) is the **barycenter**. Relative to it we keep score of:
 
 ## Floor plan (what the study has mapped)
 
-| Room / wing | What we know | Status |
-| --- | --- | --- |
-| Entry — classical NSE on \(\mathbb{T}^3\) | Leray projector, Stokes operator \(A\), bilinear \(B\) | Mapped |
-| Moment hall | \(E,X,Y,Z\) and barycenter \(\Lambda=Y/X\) | Mapped (definitions) |
-| Spread alcove | \(D_s=Z-\Lambda Y\ge 0\) | Mapped (algebra) |
-| Stretch alcove | \(T_c=M-\Lambda N\); identity \(\Lambda'=2(T_c-\nu D_s)/X\) | Mapped (algebra along strong solutions) |
-| Lemma★ packaging room | Shape / energy-budget form of ★ | **Hypothesis** — not a theorem |
-| **Last door (this floor)** | Uniform \(\mathcal{R}_\star\) / PRODUCT-BLOCK; stress = high×high channel | **Open estimate** |
-| Continuation stair | ★ ⇒ Gronwall on \(\Lambda\) ⇒ continuation | Mapped **as implication only** |
-| Upstairs | Clay Statement B / full regularity announcement | **Not claimed** |
-| Φ / swirl wing | Identity KEEP; door \(\int\|u^r/r\|_\infty\,dt\) | Separate open door |
-| Archive / parked | SFE↔NS glue, ARCHON/RH as Clay, false \(X^{3/2}\) universal product | Do not reopen |
+Drawn only from definitions, identities, probes, and honesty locks in the scientific face. Status words mean what they say.
 
-Pictures: chain map = whole layout; barycenter figure = this room; dashed node = last door.
+### Ground floor — classical entry
+
+| Room | What the study shows | Status |
+| --- | --- | --- |
+| Front door / setting | Smooth mean-zero divergence-free velocity on \(\mathbb{T}^3\) | Mapped |
+| Projector closet | Leray projector \(P\), Stokes operator \(A=-P\Delta\), bilinear \(B(v,v)\) | Mapped |
+| Viscosity dial | \(\nu>0\) in the classical NSE | Mapped |
+
+### First floor — spectral bookkeeping (where we stand)
+
+| Room | What the study shows | Status |
+| --- | --- | --- |
+| Moment hall | \(E=\|v\|_2^2\), \(X=\|A^{1/2}v\|_2^2\), \(Y=\|Av\|_2^2\), \(Z=\|A^{3/2}v\|_2^2\) | Mapped (definitions) |
+| Barycenter room | \(\Lambda=Y/X\) (enstrophy-weighted mean eigenvalue) | Mapped — **we are here** |
+| Spread alcove | \(D_s=Z-\Lambda Y=\|(A-\Lambda)A^{1/2}v\|_2^2\ge 0\) | Mapped (algebra) |
+| Stretch alcove | \(T_c=M-\Lambda N=-\langle B(v,v),A(A-\Lambda)v\rangle\) | Mapped (definition) |
+| Clock identity | Along strong solutions: \(\Lambda'=2(T_c-\nu D_s)/X\) | Mapped (algebra) |
+| Single-shell niche | One shell ⇒ \(D_s=0\) and \(T_c=0\) (shape score vacuous) | Mapped |
+| Shape-score desk | \(\mathcal{R}_\star=(T_c)_+^2/(D_s E Y)\); amplitude- and dilation-invariant | Mapped (definition) |
+
+### Same floor — packaging and the last door
+
+| Room | What the study shows | Status |
+| --- | --- | --- |
+| Lemma★ packaging room | Shape form / Young energy-budget form of ★ | **Hypothesis** — not a theorem |
+| Young wrapper shelf | \(T_c\le\theta\nu D_s+C_0(\theta)\nu^{-1} E Y\) as bookkeeping | Mapped as wrapper; \(C_0\) open |
+| **Last door (this floor)** | PRODUCT-BLOCK: \(\sup_v\mathcal{R}_\star<\infty\); live stress = high×high triad channel | **Open estimate** |
+| False-key bin | Universal \(|T_c|\le C\|v\|_2 X^{3/2}\) | **Retired** (wrong scaling) |
+| Continuation stair | If ★ holds ⇒ Gronwall on \(\Lambda\) ⇒ continuation | Mapped **as implication only** |
+
+### Diagnostic closet (five-lane / probes — stress tests, not proofs)
+
+| Drawer | What probes say | Status |
+| --- | --- | --- |
+| Pure viscous absorption (\(K=0\)) | \(T_c\le\theta\nu D_s\) alone | **Dead** (amplitude scaling) |
+| Uniform \(\mathcal{R}_\star\) | Survives kill on tested families | **Open** ≠ proved |
+| HH input channel | Flagged as live bottleneck for \(T_c\) | **Gap (live)** |
+| Near-shell \(K_{\alpha,\beta}\) | Restricted laboratory | Probe only |
+| Kill search | Families with \(\mathcal{R}_\star\to\infty\) | Lane still live |
+
+Reproducible scripts: `scripts/ns_attacks/` (`ns_lemma_star_core.py`, `product_bound_probe.py`, five-lane attacks).
+
+### Upper floor — Clay packaging
+
+| Room | Status |
+| --- | --- |
+| Statement B / full regularity announcement | **Not claimed** — upstairs is drawn, not occupied |
+
+### Side wing — Φ / swirl (separate house wing)
+
+| Room | What the study shows | Status |
+| --- | --- | --- |
+| Swirl identity KEEP | \(\partial_z(\Gamma^2)/r^4=\partial_z(\Phi^2)\) | Mapped (algebra) |
+| Φ wing door | \(\int\|u^r/r\|_\infty\,dt\) uniform | **Separate open door** |
+| Glue to Lemma★ | — | **Refuse** (incompatible books) |
+
+### Basement / archive (do not reopen as live Clay paths)
+
+| Shelf | Disposition |
+| --- | --- |
+| SFE ↔ NS glue | Incompatible / refuse |
+| RH / ARCHON as Clay vehicle | Parked |
+| SND / Ring as unconditional Statement B | Parked (conditional texture only) |
+| Numeric survival as theorem | Refuse |
+
+---
+
+## Picture → room index
+
+| Picture | Room it lights |
+| --- | --- |
+| `../ns-review/visual-journey/figures/proof-chain.png` | Whole floor plan (dashed = open doors) |
+| `../ns-review/visual-journey/figures/chain-status-card.png` | Status strip for the same plan |
+| `../ns-review/visual-journey/assets/lemma-star-barycenter.png` | Barycenter room (this floor) |
+| `../ns-review/visual-journey/assets/03-tug-of-war-stretch-vs-spread.png` | Shape-score desk |
+| `../ns-review/visual-journey/assets/02-shape-ne-size.png` | Amplitude / dilation invariance |
+| `../ns-review/visual-journey/assets/06-viscosity-melts-wrapper.png` | Young wrapper shelf |
+| `../ns-review/visual-journey/assets/t3_torus_shape_render.png` | Entry object (velocity on \(\mathbb{T}^3\)) |
+| `../ns-review/visual-journey/assets/fig_three_spheres.png` | Shell nesting vocabulary |
+| `../ns-review/visual-journey/assets/fig_star_david_ring_lemma.png` | Optional SND / triad atmosphere (not the last door) |
 
 ---
 
@@ -67,9 +135,9 @@ Pictures: chain map = whole layout; barycenter figure = this room; dashed node =
 | Chain map | Whole layout of the house we’ve mapped |
 | Barycenter figure | “This room” — stretch vs spread at \(\Lambda\) |
 | Open dashed node | The last door — named as math, not shame |
-| Φ / swirl wing | Another wing of the house (axisymmetric); its own door \(\|u^r/r\|_\infty\) |
+| Φ / swirl wing | Another wing; its own door \(\|u^r/r\|_\infty\) |
 | KEEP shelf | Rooms we stand behind |
-| Archive shelf | Earlier furniture we moved to storage |
+| Archive shelf | Earlier furniture moved to storage |
 
 ---
 
@@ -97,7 +165,8 @@ Until the estimate closes: leave the door described and open as math.
 - Speak like a host: “here’s the room,” not “we won the building.”  
 - Never punch at other people or labs.  
 - Mistakes live under the rug (errata in descriptions), not painted on the front door.  
-- Specialists who hear the upstairs floorboards will know what the dashed node means.
+- Specialists who hear the upstairs floorboards will know what the dashed node means.  
+- Draw only what the study supports; blank rooms stay blank until the math fills them.
 
 **Entry:** [`PROOF-JOURNEY.md`](./PROOF-JOURNEY.md)  
 **Monday hero:** `../ns-review/visual-journey/figures/proof-chain.png`  
