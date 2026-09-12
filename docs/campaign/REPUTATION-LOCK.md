@@ -67,10 +67,10 @@ Entry: [`PROOF-JOURNEY.md`](./PROOF-JOURNEY.md).
 
 ## Exit deal (locked)
 
-**We broke into the house. We’re at the door. We’re not opening it.**
+**We’re mapping the house. We’re at the door. We’re not claiming we opened it.**
 
 - Public face: floor plan + barycenter room + how the door works + pictures + caring explanations.
 - Specialists get the open estimates as math; we do not force a close for attention.
 - After the bow-out post (`X-XAI-OUTREACH.md` Post 4), stop NS prize-narrative posting.
 - Doctorate / further study is a personal path; it is not a substitute Clay announcement.
-- Attention that lasts comes from a **clean map others can use** — not from claiming we caught him upstairs.
+- Attention that lasts comes from a **clean map others can use** — not from claiming upstairs is finished.

@@ -7,10 +7,10 @@ A caring, plain-language face for the journey.
 
 ## The picture in words
 
-We broke into the house of Navier–Stokes.
+Navier–Stokes is a house. Here is the map of what our study has revealed so far.
 
-He’s not in *this* room right now.  
-We think we heard someone upstairs.  
+We’re not in *every* room yet.  
+Some floors are still for specialists.  
 We know where we stand: **at the door of this floor** — the spectral **barycenter**, the center of mass of the energy in frequency space.
 
 Here is **how the room looks**.  
@@ -37,7 +37,7 @@ That \(\Lambda\) is the **barycenter**. Relative to it we keep score of:
 
 **Being in the room** = the bookkeeping is correctly centered there.  
 **The door** = a product-scale bound on \(T_c\) (or finiteness of \(\mathcal{R}_\star\)) with geometry-only constants — the hinge that would freeze blowup of \(\Lambda(t)\).  
-**Upstairs** = full regularity / Clay packaging — we are not announcing we caught him.
+**Upstairs** = full regularity / Clay packaging — mapped as open territory, not claimed as finished.
 
 ---
 
@@ -59,7 +59,7 @@ That \(\Lambda\) is the **barycenter**. Relative to it we keep score of:
 1. Control \(|T_c|\) by a product of Leray-scale quantities (schematically \(\|v\|_2 X^{3/2}\)), **or** keep \(\mathcal{R}_\star\) uniformly bounded.  
 2. Ordinary 3D energy-only products are not enough; the live analytic stress is the **high×high input channel** in the triad sum for \(T_c\).  
 3. If that estimate is closed with geometric constants, the energy-budget form of Lemma★ feeds Gronwall on \(\Lambda\) and continuation.  
-4. Until then: we leave the door described, illuminated, and open as an **estimate** — not kicked in with a slogan.
+4. Until then: we leave the door described, illuminated, and open as an **estimate** — not closed with a slogan.
 
 ---
 

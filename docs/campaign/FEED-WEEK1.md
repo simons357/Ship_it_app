@@ -9,14 +9,14 @@ Voice tags: **[Jonathan]** / **[Desk robot]**
 **Figure:** `proof-chain.png`  
 **Skool [Desk robot]**
 
-We broke into the house of Navier–Stokes. Floor plan attached.
+Navier–Stokes is a house. Floor plan attached — what our study has mapped so far.
 
-He’s not in this room. We’re at the door — the spectral bookkeeping room. Open steps are drawn as dashed math, not as hype.
+We’re at the door of this floor — the spectral bookkeeping room. Open steps are drawn as dashed math, not as hype.
 
 Longer story + FAQ (what’s a blowup? not the Big Bang): link Substack / `WHAT-IS-THIS` + `HOUSE-OF-NS`.
 
 **Substack [Jonathan]** ★  
-Personal open: why publish the map without claiming the catch. Soft, no enemies.
+Personal open: why publish the map without claiming the prize. Soft, no enemies.
 
 ---
 
