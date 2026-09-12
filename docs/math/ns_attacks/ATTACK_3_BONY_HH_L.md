@@ -5,7 +5,7 @@
 
 ## Target
 
-Partition the bilinear form driving \(\mathfrak T_c\) / \(T_c\) into parent-wavevector channels HH / HL / LL (Bony-style). Prior analytic note: the **HH** channel is the live bottleneck for closing a clean product bound toward
+Partition the bilinear form driving \(T_c\) (alias \(\mathcal{T}_c\)) into parent-wavevector channels HH / HL / LL (Bony-style). Prior analytic note: the **HH** channel is the live bottleneck for closing a clean product bound toward
 \[
 |T_c|\le C\|u\|_2 X^{3/2}.
 \]

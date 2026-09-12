@@ -68,7 +68,7 @@ DA ranking (impact × closability): multi-rep Bridge\* ≫ Paper1 A–C packagin
 | | |
 |--|--|
 | **Where** | `docs/math/ns_attacks/`; probes `scripts/ns_attacks/` |
-| **Lemma★** | **Canonical shape form:** \(\mathfrak T_c(v)^2\le C_{\mathrm{geom}}\mathcal D_s(v)\,E(v)\,Y(v)\) with \(\mathcal R_\star=T_c^2/(\mathcal D_s E Y)\) — **OPEN** (viscosity packaging equivalent via \(u=av\)) |
+| **Lemma★** | **Canonical shape form:** \((T_c(v)_+)^2\le C_{\mathrm{geom}}\,D_s(v)\,\|v\|_2^2\,Y(v)\) with \(\mathcal{R}_\star=(T_c)_+^2/(D_s E Y)\) — **OPEN** (viscosity packaging equivalent via \(u=av\); aliases \(T_c=\mathcal{T}_c\), \(D_s=\mathcal{D}_s\), \(E=\|v\|_2^2\)) |
 | **K=0** | **KILLED** (ratio grows with amplitude) |
 | **C\* survivor** | Numeric amp-invariance on triads; **not proved** |
 | **Kill drill** | Max pre-Young \(\lvert R_{\mathrm{pre}}\rvert\approx5.09\); almost-shell \(\mathcal R_\star\) probe — **survives**, not a proof; sample list ≠ \(C_{\mathrm{geom}}\) |

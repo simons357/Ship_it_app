@@ -6,34 +6,36 @@
 
 **Canonical ★ is the shape form** ([`LEMMA_STAR_SHAPE_FORM.md`](./LEMMA_STAR_SHAPE_FORM.md)):
 \[
-\bigl(\mathfrak T_c(v)\bigr)^2
+\bigl(T_c(v)_+\bigr)^2
 \le
 C_{\mathrm{geom}}\,
-\mathcal D_s(v)\,
-E(v)\,
+D_s(v)\,
+\|v\|_2^2\,
 Y(v),
 \qquad
-\mathcal R_\star(v)
+\mathcal{R}_\star(v)
 =
-\frac{\bigl(\mathfrak T_c(v)\bigr)^2}{\mathcal D_s(v)\,E(v)\,Y(v)}.
+\frac{\bigl(T_c(v)_+\bigr)^2}{D_s(v)\,\|v\|_2^2\,Y(v)}.
 \]
+Aliases: \(T_c=\mathcal{T}_c\), \(D_s=\mathcal{D}_s\), \(E=\|v\|_2^2\). Here \(T_c{}_+=\max(T_c,0)\).
 
-Equivalent viscosity packaging uses a geometric \(C_0=C_{\mathrm{geom}}/(4\theta)\):
+Equivalent viscosity packaging uses a geometric \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\):
 \[
-\mathfrak T_c \le \theta\nu(Z-\Lambda Y)+C_0\nu^{-1}\|u\|_2^2 X\Lambda.
+T_c \le \theta\nu D_s+C_0(\theta)\nu^{-1}\|u\|_2^2 Y
 \]
+(with \(D_s=Z-\Lambda Y\) and \(Y=X\Lambda\)).
 
-Attack 1 asks whether amplitude scaling \(u\mapsto Bu\) at **fixed shape** only rescales size (so \(\mathcal R_\star\) and the pre-Young ratio stay invariant / post-Young falls), and whether random Galerkin / phase rotations keep these ratios from exploding.
+Attack 1 asks whether amplitude scaling \(u\mapsto Bu\) at **fixed shape** only rescales size (so \(\mathcal{R}_\star\) and the pre-Young ratio stay invariant / post-Young falls), and whether random Galerkin / phase rotations keep these ratios from exploding.
 
 Dimensionless ratios tracked:
 \[
-\mathcal R_\star=\frac{\mathfrak T_c^2}{\mathcal D_s\,E\,Y}
+\mathcal{R}_\star=\frac{(T_c)_+^2}{D_s\,E\,Y}
 \quad(\text{shape; amp-invariant}),
 \qquad
-R_{\mathrm{pre}}=\frac{\mathfrak T_c}{\|u\|_2\,X\Lambda}
+R_{\mathrm{pre}}=\frac{T_c}{\|u\|_2\,X\Lambda}
 \quad(\text{pre-Young}),
 \qquad
-R_{\mathrm{post}}=\frac{\mathfrak T_c}{\|u\|_2^2 X\Lambda}
+R_{\mathrm{post}}=\frac{T_c}{\|u\|_2^2 X\Lambda}
 \quad(\text{post-Young; falls as }1/B).
 \]
 
@@ -43,9 +45,9 @@ R_{\mathrm{post}}=\frac{\mathfrak T_c}{\|u\|_2^2 X\Lambda}
 
 ## Kill criterion
 
-- \(\sup\mathcal R_\star\to\infty\) on a controlled **shape** family ⇒ Lemma★ \(C_{\mathrm{geom}}\) / \(C_0\) **KILLED**.
+- \(\sup\mathcal{R}_\star\to\infty\) on a controlled **shape** family ⇒ Lemma★ \(C_{\mathrm{geom}}\) / \(C_0\) **KILLED**.
 - Fixed-shape \(B\to\infty\) alone does **not** kill shape-★ (worst size already cancelled \(\nu\)); it only checks homogeneity.
-- \(\mathcal D_s=0\) with \(\mathfrak T_c>0\) ⇒ **★ dead**; pure single shell (both sides vanish) is vacuous.
+- \(D_s=0\) with \(T_c>0\) ⇒ **★ dead**; pure single shell (both sides vanish) is vacuous.
 
 ## Live result (2026-09-10)
 

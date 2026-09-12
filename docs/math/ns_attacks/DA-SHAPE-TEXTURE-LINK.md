@@ -45,7 +45,7 @@ Same mathematical object can wear many textures; rhyming symbols are **not** a p
 | DA term | Five-lane / Lemma★ object | Notes |
 |---------|---------------------------|-------|
 | **SHAPE** \(v\) | Divergence-free field shape in \(u=av\) | Amplitude \(a\) only changes size; geometry lives on \(v\). DA SHAPE = HB role skeleton; five-lane shape = Fourier profile. **Related metaphor, not the same data structure.** |
-| **TEXTURE** / ratio | \(\mathcal R_\star(v)=\mathfrak T_c(v)^2/(\mathcal D_s(v)\,E(v)\,Y(v))\) | Stretching per unit spread, energy, and \(Y\). Pure geometry; same for \(av\) as \(v\); independent of \(\nu\). A chart of small \(\mathcal R_\star\) values is **texture on samples**, not a proof that \(\sup\mathcal R_\star<\infty\). |
+| **TEXTURE** / ratio | \(\mathcal{R}_\star(v)=(T_c(v)_+)^2/(D_s(v)\,E(v)\,Y(v))\) | Stretching per unit spread, energy, and \(Y\). Pure geometry; same for \(av\) as \(v\); independent of \(\nu\). A chart of small \(\mathcal{R}_\star\) values is **texture on samples**, not a proof that \(\sup\mathcal{R}_\star<\infty\). Aliases: \(T_c=\mathcal{T}_c\), \(D_s=\mathcal{D}_s\). |
 | Same shape, different texture | Fixed \(v\), different notation / packaging (viscosity ★ vs boxed shape ★ vs pre-Young) | DA `SAME_SHAPE_DIFFERENT_TEXTURE` rhymes with “same \(v\), many remainder writings” — **not** a product estimate. |
 | Illegal splice | Treating a finite \(\mathcal R_\star\) list as \(C_{\mathrm{geom}}\), or DA navigation as Clay | Refuse. |
 
