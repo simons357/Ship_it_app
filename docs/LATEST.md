@@ -20,6 +20,9 @@ ordinary NS. Uniform H1 as eps → 0 still
 open. Paper: docs/THEOREM-A-Q1.pdf
 
 **Unaug NS (ordinary) — open**
+Two live writes (grow s; ★ reason as a map):
+docs/ATTACK-9D-GROW-S.md
+docs/LEMMA-STAR-REASON.md
 Yes / no / open (the tape):
 docs/YES-NO-OPEN.md
 H1 write (estimate, not theorem; locked G):

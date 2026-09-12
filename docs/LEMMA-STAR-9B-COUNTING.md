@@ -136,7 +136,11 @@ fixed-\(s\) 9D sits. Uniform \(K\) still open.
 
 Full complex polarizations, growing input
 **and** output support, frequency factors
-kept. Probe:
+kept. Live write:
+[`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md).
+Probe:
+`python3 scripts/ns_attacks/attack9b_grow_s.py`
+Also:
 `python3 scripts/ns_attacks/attack9b_output_counting.py`
 
 Scores: [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).

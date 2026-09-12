@@ -1,5 +1,9 @@
 Stay here. This chat is DA.
 
+Two live writes (everything else scored):
+docs/ATTACK-9D-GROW-S.md
+docs/LEMMA-STAR-REASON.md
+scripts/ns_attacks/attack9b_grow_s.py
 Yes / no / open (the tape; a write is
 not a theorem):
 docs/YES-NO-OPEN.md

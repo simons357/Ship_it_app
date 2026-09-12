@@ -180,13 +180,21 @@ X1–X4/X6 still MISSING.
    Keep \(|k|\). Report \(K_{\alpha,\beta}\)
    and pairing. A finite max only raises
    \(C_{\mathrm{geom}}\).
-   Probe already sits:
+   Live write:
+   [`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md).
+   Probe:
+   `scripts/ns_attacks/attack9b_grow_s.py`,
    `scripts/ns_attacks/attack9b_output_counting.py`,
    `scripts/ns_attacks/attack9b_exact_shell_K.py`.
    Do not overwrite
    `scripts/ns_attacks/stokes_moments.py`.
-4. The other live writing is H1 on one
-   cylinder. Different integral. Do not
+4. The ★ reason is written as a map:
+   [`LEMMA-STAR-REASON.md`](LEMMA-STAR-REASON.md).
+   Not a theorem. Do not turn Attack 12
+   into that sentence.
+5. H1 on the cylinder is named. The
+   write sits. It is not a theorem.
+   Do not start it from ABC_λ. Do not
    glue.
 
 NS not solved. ★ open.

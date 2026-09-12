@@ -111,12 +111,13 @@ under a new name.
 Grow \(s\) on the 9B family is a **test**
 of leftover 4. It is OPEN as a test.
 It is not a yes. It is not designed 9D.
+Live write: [`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md).
 
-The ★ reason (why signed stretching
-cannot outrun spectral spread) is
-**not written**. Until it is, or until
-\(\mathcal R_\star\to\infty\), leftover 4
-stays OPEN.
+The ★ reason is **written as a map**
+([`LEMMA-STAR-REASON.md`](LEMMA-STAR-REASON.md)).
+It is **NO** as a theorem. Leftover 4
+stays OPEN until \(\sup\mathcal R_\star<\infty\)
+or \(\mathcal R_\star\to\infty\).
 
 ---
 
