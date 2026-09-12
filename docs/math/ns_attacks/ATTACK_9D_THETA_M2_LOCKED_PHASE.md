@@ -2,7 +2,8 @@
 
 **Date:** 10 September 2026  
 **Status:** **LIVE test** of the uniform 9B target. Lemma★ **OPEN**. **NS not solved.**  
-**Prior:** Fixed-output \(\Theta(m^2)\) 9D is **analytically excluded** — [`ATTACK_9B_COUNTING_CS_EXCLUSION.md`](./ATTACK_9B_COUNTING_CS_EXCLUSION.md). Natural same-shell (9C) is **not** a kill.
+**Prior:** Fixed-output \(\Theta(m^2)\) 9D is **analytically excluded** — [`ATTACK_9B_COUNTING_CS_EXCLUSION.md`](./ATTACK_9B_COUNTING_CS_EXCLUSION.md). Natural same-shell (9C) is **not** a kill.  
+**Setup (do not guess \(B\) or an exponent):** [`ATTACK_9D_SETUP.md`](./ATTACK_9D_SETUP.md).
 
 ## Exclusion (do not revive)
 

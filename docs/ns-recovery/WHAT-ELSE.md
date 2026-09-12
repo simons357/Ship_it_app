@@ -28,5 +28,6 @@ Five lanes 1–5, 9A, natural 9C, finite 9B (\(K\approx 0.641\)), small-lattice 
 
 Q-stack, SND, Theorem H, five fingers, augmented NSE.
 
-Spec for 9D: [`docs/math/ns_attacks/ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](../math/ns_attacks/ATTACK_9D_THETA_M2_LOCKED_PHASE.md).  
+Setup (what \(B\) is; no exponent locked): [`docs/math/ns_attacks/ATTACK_9D_SETUP.md`](../math/ns_attacks/ATTACK_9D_SETUP.md).  
+Spec: [`docs/math/ns_attacks/ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](../math/ns_attacks/ATTACK_9D_THETA_M2_LOCKED_PHASE.md).  
 Exclusion: [`docs/math/ns_attacks/ATTACK_9B_COUNTING_CS_EXCLUSION.md`](../math/ns_attacks/ATTACK_9B_COUNTING_CS_EXCLUSION.md).
