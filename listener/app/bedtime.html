@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#00FF00">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Tonight’s listening</title>
+  <style>
+    :root { --green: #00FF00; --ink: #fff; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body {
+      background: var(--green);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      overflow: hidden;
+    }
+    body.night { background: #0b1020; --green: #0b1020; }
+    .safe {
+      min-height: 100%;
+      padding: calc(16px + env(safe-area-inset-top)) 28px calc(20px + env(safe-area-inset-bottom));
+      display: flex;
+      flex-direction: column;
+    }
+    .meta {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 13px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      text-shadow: 0 1px 0 #000, 0 0 8px #000;
+      opacity: .95;
+    }
+    h1 {
+      margin: 10px 0 6px;
+      font-size: clamp(28px, 6vw, 54px);
+      font-weight: 500;
+      text-shadow: 0 2px 0 #000, 0 0 16px #000;
+    }
+    .source { margin: 0 0 18px; text-shadow: 0 1px 0 #000; opacity: .9; }
+    .line {
+      flex: 1;
+      font-size: clamp(26px, 5.4vw, 48px);
+      line-height: 1.35;
+      text-shadow: 0 2px 0 #000, 0 0 18px #000;
+      cursor: pointer;
+    }
+    .bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    button, a {
+      font: inherit;
+      color: #fff;
+      text-decoration: none;
+      background: #000;
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 16px;
+      letter-spacing: .08em;
+    }
+    body.clean .bar,
+    body.clean .meta,
+    body.clean h1,
+    body.clean .source { opacity: 0; pointer-events: none; }
+  </style>
+</head>
+<body>
+  <div class="safe">
+    <div class="meta" id="when">Tonight’s listening</div>
+    <h1 id="title"></h1>
+    <p class="source" id="source"></p>
+    <p class="line" id="line"></p>
+    <div class="bar">
+      <button type="button" id="asStory">STORY</button>
+      <button type="button" id="asLesson">LESSON</button>
+      <button type="button" id="listen">LISTEN</button>
+      <button type="button" id="read">I’LL READ</button>
+      <button type="button" id="next">NEXT LINE</button>
+      <button type="button" id="stop">STOP</button>
+      <button type="button" id="hide">HIDE BUTTONS</button>
+      <button type="button" id="mode">NIGHT LAMP</button>
+      <a href="./index.html">LISTENER</a>
+    </div>
+  </div>
+  <script type="module">
+    import { ageLine, tonightStory } from "./js/stories.js";
+    import { todayLesson } from "./js/lessons.js";
+
+    const params = new URLSearchParams(location.search);
+    const night = params.has("night");
+    if (night) document.body.classList.add("night");
+
+    let kind = params.get("kind") === "lesson" ? "lesson" : "story";
+    let book = kind === "lesson" ? todayLesson() : tonightStory();
+    const when = document.getElementById("when");
+    const title = document.getElementById("title");
+    const source = document.getElementById("source");
+    const line = document.getElementById("line");
+    const listenBtn = document.getElementById("listen");
+    const readBtn = document.getElementById("read");
+    const modeBtn = document.getElementById("mode");
+    const today = new Date().toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
+
+    let i = 0;
+    let timer = 0;
+    const stamp = () => {
+      when.textContent = kind === "lesson"
+        ? `A lesson · older · rarer · ${today} · for whoever is teaching · ${i + 1} / ${book.pages.length}`
+        : `Tonight · older · rarer · ${today} · ${i + 1} / ${book.pages.length}`;
+    };
+    const paint = () => {
+      title.textContent = book.title;
+      source.textContent = ageLine(book);
+      line.textContent = book.pages[i] || "";
+      readBtn.textContent = kind === "lesson" ? "I’LL TEACH" : "I’LL READ";
+      stamp();
+    };
+    paint();
+
+    const stop = () => {
+      clearInterval(timer);
+      timer = 0;
+      speechSynthesis.cancel();
+      listenBtn.textContent = "LISTEN";
+    };
+
+    const load = (nextKind) => {
+      stop();
+      kind = nextKind;
+      book = kind === "lesson" ? todayLesson() : tonightStory();
+      i = 0;
+      const url = new URL(location.href);
+      if (kind === "lesson") url.searchParams.set("kind", "lesson");
+      else url.searchParams.delete("kind");
+      history.replaceState({}, "", url);
+      paint();
+    };
+
+    const next = () => {
+      if (i >= book.pages.length - 1) {
+        stop();
+        return false;
+      }
+      i += 1;
+      paint();
+      return true;
+    };
+
+    listenBtn.onclick = () => {
+      if (!window.speechSynthesis) return;
+      stop();
+      i = 0;
+      paint();
+      listenBtn.textContent = "LISTENING";
+      const say = (n) => {
+        if (n >= book.pages.length) { stop(); return; }
+        i = n;
+        paint();
+        const u = new SpeechSynthesisUtterance(book.pages[n]);
+        u.rate = 0.88;
+        u.onend = () => say(n + 1);
+        u.onerror = stop;
+        speechSynthesis.speak(u);
+      };
+      say(0);
+    };
+
+    document.getElementById("read").onclick = () => {
+      stop();
+      i = 0;
+      paint();
+      timer = setInterval(() => {
+        if (!next()) stop();
+      }, 5200);
+    };
+
+    document.getElementById("asStory").onclick = () => load("story");
+    document.getElementById("asLesson").onclick = () => load("lesson");
+    document.getElementById("next").onclick = () => next();
+    document.getElementById("stop").onclick = stop;
+    document.getElementById("hide").onclick = (e) => {
+      e.stopPropagation();
+      document.body.classList.add("clean");
+    };
+    line.onclick = (e) => {
+      e.stopPropagation();
+      next();
+    };
+    document.body.addEventListener("click", (e) => {
+      if (!document.body.classList.contains("clean")) return;
+      if (e.target.closest(".bar")) return;
+      document.body.classList.remove("clean");
+    });
+    modeBtn.onclick = () => {
+      const on = document.body.classList.toggle("night");
+      modeBtn.textContent = on ? "GREEN SCREEN" : "NIGHT LAMP";
+    };
+  </script>
+</body>
+</html>

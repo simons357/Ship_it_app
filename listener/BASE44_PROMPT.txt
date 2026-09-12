@@ -1,0 +1,111 @@
+You are Base44. Build LISTENER. The owner will paste this and should not have to explain anything. Do not interview them. Do not invent extra modes. Do not ask clarifying questions unless a secret or Apple account is required. Implement the product below.
+
+PRODUCT
+Listener is a wildlife-only acoustic field instrument. Phones, AirPods, and later sensors become a simple field network. The owner is Jonathan Simons. Home is a real house / porch (Wilmington Island / Savannah area). The first screen is that house. The second screen is a radar / field plot. Sessions start from the radar, not from a giant sale-sticker START button.
+
+ONE SENTENCE
+What the wild is saying.
+
+DESIGN LAW
+Complex underneath. Obvious on top. If a normal person has to understand networking, GPS frames, or signal processing to use a control, the control is unfinished. Consumer language only. Never say peer, socket, route negotiation, MSC, HRV, BirdNET, GBIF, or eBird on the main screens.
+
+LOOK
+Copy the dark field-instrument look in listener/inbox/index.html (also inbox/index-2.html). Black / deep forest (#020504), glass panels (#07100de8), thin green lines (#29483b), signal green (#7dffa5), muted sage (#91a49a), amber (#ffd176), cyan for remote nodes (#82ddff). SF Pro / system UI. Tight letter-spacing on labels. No emoji zoo. No cartoon animals. No grocery-store sale UI. No giant circular START / STOP ball. That ball already failed and must never come back.
+
+MARK
+App icon and porch mark: solid black tile, one warm amber handmade glow. A home node in the center, rings going out — listening for non-human biological signals (animals, insects, birds, and the weather they live in). Same family as Descent (black + amber), not Descent’s inward spiral, not a satellite dish, not SETI chrome, not a photoreal carving. Source asset if you can import it: listener/app/icons/home-node.png
+
+WHAT THE FIRST TWO SCREENS ARE
+
+SCREEN 1 — HOME (this house)
+- Full-screen home field. Sky follows the real clock: night / dawn / day / dusk. Do not invent rain or snow unless the owner’s weather is actually connected.
+- The house / porch is the subject. Let the owner set a photo of their real house (camera roll). Until they do, show a quiet house + porch, not a cartoon, with the amber listen mark on the porch and faint rings going out over the yard.
+- Copy: LISTENER / WHAT THE WILD IS SAYING / HOME FIELD · THIS HOUSE
+- Actions only: OPEN FIELD    and    ＋ START SESSION
+- Optional: “Use a picture of this house”
+- No Air mode. No Water mode. No Party mode. No species list. No coherence numbers. No giant START circle.
+
+SCREEN 2 — FIELD (radar)
+This is the instrument. Copy the layout of listener/inbox/index.html:
+- Full-bleed dark field / radar plot (FIELD / SAT / HYBRID map modes later; FIELD plot is fine for v1)
+- Header: LISTENER / WHAT THE WILD IS SAYING     and a small network line such as ● FIELD READY / 1 LISTENER
+- Tabs: HOME · FIELD · BROADCAST · SIGNALS
+- Left chip: FIELD COHERENCE · DA     value is "—"     status is INSUFFICIENT FIELD DATA until a real multi-node measurement exists. Never show 0.91 or any fake number.
+- Right: small compass
+- Plot marks only for real things: ⌂ HOME · PORCH (base), SCOUT · YOU if they are scouting, other nodes only if they actually paired, encounters only if the user saved them. Never place a barred owl, frog, clapper rail, painted bunting, or cicada you invented.
+- Bottom live card: live field status in plain language. Default: “Start a session to listen” / PRIVATE / ON DEVICE
+- Bottom pill actions: ＋ SESSION    FIELD NOTE    ↶ RETURN    GO SCOUT
+- ＋ SESSION opens the Start a Session sheet (see below). That is how listening begins.
+
+START A SESSION SHEET (from ＋ SESSION)
+Title: Start a Session
+Body: Every Listener keeps its own evidence. If the link drops we keep recording and sync when you're back.
+Choices: HOME FIELD     WANDER / SCOUT     BROADCAST     ADD STATION
+Primary: START LISTENING
+Then the device is in session on the FIELD radar. If they are recording, show a small ON AIR lamp and a small STOP control — a thin pill, not a giant circle. After STOP: “What was that?” They may type rain or a bird or leave UNKNOWN. Optional photo. KEEP. Original stays on this phone. Not contributed.
+
+OTHER SCREENS
+BROADCAST: people can watch. Watching is not contributing. No fake “14 people listening.”
+SIGNALS: Listener Signal Library. Empty state is honest. CTA: SEND US YOUR LISTENER SIGNALS. Opt-in only. Sharing a card is a different permission from contributing the original.
+
+HARD RULES — NEVER BREAK
+- Wildlife-only encounters. Non-human biological signals only.
+- If it is probably human speech: do not transcribe, do not identify the speaker, do not create a wildlife encounter, do not put it in the Signal Library.
+- UNKNOWN is first-class. Keep the original. Do not invent a species to look smart.
+- No fake animals, no fake GPS animal pins, no fake viewer counts, no fake COH / MSC / HRV numbers.
+- Do not build Claude’s demo: Savannah marsh, Air / Water / Party, Field coherence 0.91, Listener coherence 0.31, GBIF + eBird + BirdNET theater, clapper rail / painted bunting / leopard frog lists.
+- Do not build a grocery-store giant green START ball.
+- Do not put “LISTEN TO THIS RAIN” on the first screen. Rain is something you might type after STOP, or weather if the owner’s weather app is plugged in.
+- Privacy by default: exact home coordinates, raw wander routes, and private media stay on device. Public location is coarse unless they explicitly change that.
+- Sharing ≠ contributing.
+- Offline must not lose the session. If the link drops: “Scout connection lost. Still recording — we'll sync when you're back.”
+- Mic denied: “This phone needs the microphone to keep the original. Your session is still here.”
+
+ROLES (automatic, do not quiz)
+- HOME FIELD / BASE: this house, porch phone, stationary
+- SCOUT: moving phone. AirPods if connected, else this phone’s mic. GPS breadcrumb. RETURN traces the recorded trail back to Session Start (safety aid, not a map replacement).
+- HUB: later, a desktop coordinator
+- NODE: another contributed device
+- BROADCAST: the social room around a session
+
+DATA (v1, on device)
+Broadcast → Session → Nodes → Encounters / Field Notes / Media → Cards
+Signal Library is a separate opted-in store.
+Encounter: time, user label or UNKNOWN, optional photo, optional audio original, lat/lon if available, not a species claim.
+COH: store "—" / INSUFFICIENT FIELD DATA unless you have two synchronized real nodes and a defined measurement. If you cannot do that math for real, leave the dash.
+
+V1 SCOPE — BUILD THIS, NOTHING ELSE
+1. HOME house page with optional owner photo
+2. FIELD radar page with real session start
+3. Start a Session sheet
+4. Record on this phone, ON AIR pill, STOP, What was that?, KEEP
+5. Field notes: saw / heard / photo / mystery (and human-speech exclusion)
+6. RETURN breadcrumb
+7. GO SCOUT
+8. Honest empty Broadcast + Signals
+9. Local persistence (the session survives a refresh)
+
+NOT V1
+ChatVault search, owner weather identity, Domain Architect science, ultrasonic sensors, multi-station localization, Sound/X-Ray Lab, App Store upload, Open-Meteo, synthesized marsh soundscapes, fake heart-rate coherence.
+
+STACK
+iPhone-first PWA or native. Camera + microphone + location permissions. Works in Safari / Add to Home Screen. If you generate a backend, it is optional; the phone remains the source of truth.
+
+OWNER PLUGS (later, do not block v1)
+The owner may later set:
+- listener.weather → their weather app
+- listener.search → their ChatVault
+Until then, do not fetch a stranger’s weather and do not invent rain on the sky.
+
+SUCCESS
+A first-time user leaves one phone on the porch as HOME and opens FIELD on the other, starts a session, and walks, in under a minute, without learning the network. The house looks like home. The radar looks like an instrument. Nothing looks like a supermarket START button or a fake bird app.
+
+EXISTING CODE YOU MAY IMPORT
+GitHub repo: simons357/Ship_it_app
+Folder: listener/
+Visual prototype (look): listener/inbox/index.html
+Working PWA (logic, not the failed giant START screen): listener/app/
+Spec: listener/MASTER_SPEC.md
+Icon: listener/app/icons/home-node.png
+
+Build HOME + FIELD from this brief. If anything in an old build conflicts with this brief, this brief wins.
