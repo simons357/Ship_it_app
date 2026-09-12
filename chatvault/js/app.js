@@ -224,7 +224,7 @@ function renderPrivacy() {
   return `
     <header class="hero">
       <h1>Privacy &amp; data</h1>
-      <p class="kicker">Local-first on this device. Not an App Store build yet.</p>
+      <p class="kicker">Personal vault. No accounts. No inbox.</p>
     </header>
     <div class="panel">
       <p>Records live in this browser’s local storage unless you export them. There is no ChatVault cloud account in this engine build, so there is no inbox for strangers to message you through the app.</p>

@@ -7,6 +7,8 @@
 
 **Why not let Base44 glass win outright:** It holds ~14 conversation records, but they read as SaaS seed data (rate limiter, CRM, investor deck), not Jonathan’s research corpus. Seed data must be archived, not used as “live content wins.” Its `Conversation` schema has no claims, theorems, gaps, or ledger. Rebuilding that model later is the expensive mistake. C2 is a landing page plus Drive OAuth. C3 is an empty paper vault. Claude’s original is historical and still not in this workshop.
 
-**Apple (12 Sep 2026):** Owner has an Apple Developer membership. That is recorded. It is not permission to wrap Base44 or to submit. Combined with “I don’t want people hassling me”: no public App Store listing, no support inbox, no TestFlight public link.
+**No hassle (12 Sep 2026):** Owner does not want people hassling him. Binding. ChatVault is a personal tool, not a public product, until he says otherwise. See `NO-HASSLE.md`.
+
+**Apple (12 Sep 2026):** Owner has an Apple Developer membership. That is recorded. It is not permission to wrap Base44 or to submit. Combined with the hassle constraint: no public App Store listing, no support inbox, no TestFlight public link.
 
 **What this agent refuses:** exporting Base44 by guessing credentials; tagging `Ship_it_app` `main` as `v0.1-canonical`; fabricating `build-a` / `build-b-glass` / `build-legacy` branches without source (HTML snapshots already live under `docs/chatvault-audit/evidence/`); turning on Stripe; wrapping the Base44 preview in Capacitor; deleting any Base44 record; submitting this web vault to App Review.

@@ -12,7 +12,7 @@ The freeze you hit is the **Base44 editor** (`app.base44.com/.../editor/preview`
 
 - Side-by-side matrix of A / B-glass / C-paper / git engine (`chatvault/FEATURE-MATRIX.md`).
 - Identity lock: Claude = original; B-glass = latest look (`DECISIONS.md`).
-- Shareable app URL (not the editor): https://preview--6a58e103fedcde66a0a7710e.base44.app/
+- Owner-only glass preview (not the editor; do not circulate — it is world-writable): https://preview--6a58e103fedcde66a0a7710e.base44.app/
 - Local engine: paste ingest, immutable raw text, CLAIM_LEDGER, AND/OR/phrase/`claim:` search, private vs professional export. Tests: `cd chatvault && node --test tests/engine.test.mjs` (7/7).
 - Git-engine freeze mitigations: 50-item pagination, render error panel, PWA service worker. These do not fix the Base44 *editor* freeze.
 - Honest Apple path: PWA first, no wrapper of Base44. Apple Developer membership is owned; we still do not submit.
@@ -36,12 +36,12 @@ The freeze you hit is the **Base44 editor** (`app.base44.com/.../editor/preview`
 3. **Create a private GitHub repo named `chatvault` and grant this agent access, or keep working in `Ship_it_app`?** Recommendation: **new private repo.** `Ship_it_app` is a research workshop. Tagging it `v0.1-canonical` would be a lie.
 4. **Custom domain** (chatvault.primefield.tech vs other). Recommendation: a subdomain on a domain you already own. Do not wait on a new brand domain to ship the PWA.
 5. **Ship web PWA now vs spend the Apple $99 this quarter.** **Decided:** you already have Apple Developer. That closes the fee. It does not close Guideline 4.2. Recommendation stands: **PWA / Add to Home Screen now. No App Store submission. No Base44 wrapper.** Private TestFlight to yourself only, later, if we build a real native layer.
-6. **Public listing / people hassling you.** **Decided (your words):** you do not want people hassling you. Recommendation: keep ChatVault local-first, leave the public Base44 preview as a look reference (or lock it), do not list on the App Store, do not put a support email on a store page, do not turn on Stripe until you want customers.
+6. **Public listing / people hassling you.** **Decided (your words):** you do not want people hassling you. That is now policy (`chatvault/NO-HASSLE.md`): local-first only, no App Store listing, no support email, no Stripe, do not circulate the Base44 preview URL.
 
 ## 6. Live URL
 
-**Glass product (latest look):** https://preview--6a58e103fedcde66a0a7710e.base44.app/  
-**Do not send:** https://app.base44.com/apps/6a58e103fedcde66a0a7710e/editor/preview  
+**Glass product (owner reference only):** https://preview--6a58e103fedcde66a0a7710e.base44.app/  
+**Do not send anyone:** the editor URL, or the preview URL. Preview is unauthenticated and writable.  
 **Published host:** 404 App not found  
 **Engine (this repo, local):** `cd chatvault && python3 -m http.server 4173` → http://127.0.0.1:4173/  
 **Vercel production:** none
