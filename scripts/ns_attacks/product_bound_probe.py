@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Product-bound / door-distance probe for Lemma★ packaging.
+"""Product-bound probe for Lemma★ packaging (finite-sample ceilings).
 
 Measures how large |T_c| is relative to the classical product scales
     ||v||_2 * X^{3/2}
 and the shape quotient R_★ = (T_c)_+^2 / (D_s E Y).
 
 Does NOT prove Lemma★. Does NOT claim NS regularity.
-Knocking on the door — measuring the gap — not opening it.
+Finite samples ≠ supremum; numerics ≠ proof.
 """
 
 from __future__ import annotations
@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from ns_lemma_star_core import Field, R_star, project_perp, shell_wavevectors  # noqa: E402
 
 
-OUT = Path("/opt/cursor/artifacts/monday-door-sprint")
+OUT = Path("/opt/cursor/artifacts/ns-scientific-report")
 OUT.mkdir(parents=True, exist_ok=True)
 
 
@@ -132,8 +132,8 @@ def main() -> int:
             default=None,
         ),
         "note": (
-            "Finite sample ceilings only. No Lemma★ close. "
-            "Knocking on the product door — not opening it."
+            "Finite sample ceilings only. Does not prove Lemma★ / uniform R_★. "
+            "Numerics ≠ proof."
         ),
     }
 
@@ -142,7 +142,7 @@ def main() -> int:
     out_json.write_text(json.dumps(payload, indent=2))
 
     lines = [
-        "Monday door sprint — product bound probe",
+        "product_bound_probe — finite-sample ceilings (scientific)",
         summary["note"],
         f"measured={summary['n_measured']}  max|Tc|/(||v||2 X^{3/2})={summary['max_abs_Tc_over_v2_X32']}",
         f"max R_star (finite)={summary['max_R_star']}",

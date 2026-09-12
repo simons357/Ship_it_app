@@ -119,6 +119,8 @@ Scanned files:
 2. Companion `PROOF-CHAIN-CLEAN.md` §5 now matches the live PRODUCT-BLOCK statement (uniform \(\mathcal{R}_\star\)); older schematic \(X^{3/2}\) wording is marked discarded.  
 3. Higher-formality DA checks (identifiability, equivalence, computational hypothesis tests) were **not** performed on Stokes/Leray objects because the parser does not attach those roles.
 
+JSON / log evidence: `/opt/cursor/artifacts/ns-scientific-report/` (`da_*.json`, `sanitize_scan.log`, `product_bound_probe*.log`).
+
 **FAIL would require:** greening language, Clay-closed claims, SFE glue, or treating Level 0 classification as a proof. None found in the scientific package.
 
 ---
