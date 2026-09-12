@@ -142,25 +142,21 @@ If the shape (or energy-budget) bound holds with geometric constants, the identi
 
 ---
 
-## 5. Product estimate — open node
+## 5. Product / shape estimate — open node (PRODUCT-BLOCK)
 
-Closing the energy-budget form from Leray-scale quantities requires a product-class bound on the centered cascade, schematically
+The live target that closes the energy-budget form is **uniform shape control**
 
 \[
-|T_c|
-\lesssim
-\|v\|_2\,X^{3/2}
-\quad\text{or}\quad
-|T_c|
-\lesssim
-\|v\|_2\,X\Lambda
+\sup_v\mathcal{R}_\star(v)<\infty
 \]
 
-with a constant depending only on geometry — or an equivalent structure that feeds Young in \(\nu\).
+(equivalently a geometric \(C_{\mathrm{geom}}\) or Young \(C_0\)). That is the hinge between Lemma★ packaging and the regularity-continuation arrow.
 
-Ordinary 3D Sobolev / Agmon product estimates from energy alone do not deliver this. In the Bony channel diagnostic, the high×high input channel is the live bottleneck for a clean product bound (historical label “HH→L”; the diagnostic is an input-channel split, not a proved high→low output map).
+**Schematic product language** in older notes pointed at structure that feeds Young in \(\nu\). A once-proposed universal bound \(|T_c|\le C\|v\|_2 X^{3/2}\) is **algebraically false** as a scale-invariant estimate (LHS \(\sim a^3\), RHS \(\sim a^4\) under \(v\mapsto a v\)) and must not be revived; see [`SCIENTIFIC-REPORT.md`](./SCIENTIFIC-REPORT.md) §4.
 
-In the chain diagram this node is marked **open estimate**. It is the hinge between Lemma★ packaging and the regularity continuation arrow — neither scarlet letter nor celebration, just the estimate still needed.
+Ordinary 3D Sobolev / Agmon product estimates from energy alone do not deliver uniform \(\mathcal{R}_\star\). In the Bony channel diagnostic, the high×high input channel is the live bottleneck (historical label “HH→L”; input-channel split, not a proved high→low output map).
+
+In the chain diagram this node is marked **open estimate**.
 
 ---
 
