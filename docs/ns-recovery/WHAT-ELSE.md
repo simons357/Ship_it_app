@@ -11,12 +11,12 @@
 
 The review’s growing-layer family was built on this book’s exact core. \(n=1\ldots4\) match the pasted `stokes_moments` table. \(\mathcal R_\star(v_n)\ge n/165888\to\infty\). That kills the unrestricted instantaneous bound. It does **not** construct a singular NSE solution.
 
-The two proof markdowns named in the review are **not** on cited commit `213e103`. Exact-shell 9D with \(C=4/3\) / \(K\le16/9\) is **not stamped** here.
+Writeups later landed on the PR #24 tip. Exact-shell 9D with \(C=4/3\) / \(K\le16/9\) remains **CLAIMED, not stamped** (their page and this book). Specialist pending.
 
 ## What is still open
 
-- Unaugmented regularity / Clay: needs a **replacement closure**.
-- Exact-shell 9D / \(\sup K<\infty\): different statement; writeup missing from the cited commit.
+- Unaugmented regularity / Clay: needs a **replacement closure**. That job is framed in [`REPLACEMENT-CLOSURE.md`](REPLACEMENT-CLOSURE.md): a different estimate, or the same ratio on a strictly smaller class. Need★ is not a repair of the old box.
+- Exact-shell 9D / \(\sup K<\infty\): different statement. Writeup is on the PR #24 tip and remains **CLAIMED, not stamped**.
 - Need★ signed dual: **cannot repair** the same unrestricted bound unless hypotheses change.
 - Soft X: silent.
 

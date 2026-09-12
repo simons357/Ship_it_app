@@ -1,10 +1,15 @@
 # Growing-layer family — scored on this book
 
 **Date:** 12 September 2026  
-**Review paste** cited PR #24 commit `213e103ff83db18519d98d2274346c884af901dd`.  
-**Those two proof files are not on that commit** (nor on the later tip checked the same day): no `ATTACK_9D_FULL_SUPPORT_BOUND.md`, no `LEMMA_STAR_GROWING_LAYER_COUNTEREXAMPLE.md`, no `verify_pr24_closure_review.py`.
+**Review paste** cited commit `213e103` (grow-\(s\) print). The two derivations were **not** on that commit.
 
-The **family** is fully specified in the review text. This book built it on [`scripts/ns_lemma_star_core.py`](../../scripts/ns_lemma_star_core.py) and scored it.
+They later landed on the PR #24 tip as
+`docs/LEMMA-STAR-GROWING-LAYER.md` and
+`docs/ATTACK-9D-FULL-SUPPORT-BOUND.md`
+(math/ copies are pointers). Audit:
+`results/pr24_closure_review/audit.json`.
+
+This book built the family on [`scripts/ns_lemma_star_core.py`](../../scripts/ns_lemma_star_core.py) and scored it independently.
 
 **NS is not solved.** This is a counterexample to the **instantaneous** uniform bound, not a singular Navier–Stokes solution.
 
@@ -64,7 +69,11 @@ The review claims
 K_{\alpha,\beta}\le\frac{16}{9}.
 \]
 
-That writeup is **not on the cited commit**. This book does **not** mark it proved. Finite samples (\(K\approx0.641\), \(K\approx0.456\)) sit below \(16/9\) and do not prove it. Exact-shell 9D and unrestricted ★ are **distinct**. The growing-layer family does not live on one shell, so it does not touch that coefficient question.
+The writeup now sits on the PR #24 tip. **That page itself says CLAIMED, specialist pending** — not proved. This book agrees and does **not** stamp \(C=4/3\).
+
+The audit prints a few exact-shell \(K\) values and three weighted-count ratios \(\le 3\). Those are checks, not the lattice theorem. Finite samples (\(K\approx0.641\), \(K\approx0.456\)) sit below \(16/9\) and do not prove it.
+
+Exact-shell 9D and unrestricted ★ are **distinct**. The growing-layer family does not live on one shell, so it does not touch that coefficient question.
 
 ---
 
@@ -76,7 +85,7 @@ That writeup is **not on the cited commit**. This book does **not** mark it prov
 | Need★ signed dual as a repair of that same bound | **Cannot repair** unless hypotheses change |
 | Exact-shell 9D / \(\sup K<\infty\) | **Not stamped.** Still a different statement |
 | Grow-\(s\) draw / aligned 9B | Historical finite samples. Do not merge |
-| Unaugmented regularity / Clay | **Open.** Needs a replacement closure. No blowup constructed |
+| Unaugmented regularity / Clay | **Open.** Needs a replacement closure ([`REPLACEMENT-CLOSURE.md`](REPLACEMENT-CLOSURE.md)). No blowup constructed |
 | Soft X | Silent |
 | ABC_λ SuperGrok falsifier | Still refused as *that* stamp. This is a different family |
 
