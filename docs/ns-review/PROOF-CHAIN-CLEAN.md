@@ -102,7 +102,9 @@ Single-shell fields have \(D_s=0\) and \(T_c=0\) (vacuous for the shape quotient
 
 ## 4. Lemma★ — shape form and energy-budget form
 
-**Shape form.** There exists a geometric constant \(C_{\mathrm{geom}}<\infty\) such that for every smooth nonzero divergence-free \(v\),
+**Status:** packaging hypothesis (blocked at §5 PRODUCT-BLOCK / uniform \(\mathcal{R}_\star\)); not a proved NS regularity theorem.
+
+**Shape form.** The desired geometric bound: there exists a geometric constant \(C_{\mathrm{geom}}<\infty\) such that for every smooth nonzero divergence-free \(v\),
 
 \[
 \bigl(T_c(v)_+\bigr)^2
@@ -142,25 +144,21 @@ If the shape (or energy-budget) bound holds with geometric constants, the identi
 
 ---
 
-## 5. Product estimate — open node
+## 5. Product / shape estimate — open node (PRODUCT-BLOCK)
 
-Closing the energy-budget form from Leray-scale quantities requires a product-class bound on the centered cascade, schematically
+The live target that closes the energy-budget form is **uniform shape control**
 
 \[
-|T_c|
-\lesssim
-\|v\|_2\,X^{3/2}
-\quad\text{or}\quad
-|T_c|
-\lesssim
-\|v\|_2\,X\Lambda
+\sup_v\mathcal{R}_\star(v)<\infty
 \]
 
-with a constant depending only on geometry — or an equivalent structure that feeds Young in \(\nu\).
+(equivalently a geometric \(C_{\mathrm{geom}}\) or Young \(C_0\)). That is the hinge between Lemma★ packaging and the regularity-continuation arrow. Lemma★ here is a packaging / hypothesis, not a claimed theorem; Clay Statement B is not claimed.
 
-Ordinary 3D Sobolev / Agmon product estimates from energy alone do not deliver this. In the Bony channel diagnostic, the high×high input channel is the live bottleneck for a clean product bound (historical label “HH→L”; the diagnostic is an input-channel split, not a proved high→low output map).
+**Schematic product language** in older notes pointed at structure that feeds Young in \(\nu\). A once-proposed universal bound \(|T_c|\le C\|v\|_2 X^{3/2}\) is **algebraically false** as a scale-invariant estimate (LHS \(\sim a^3\), RHS \(\sim a^4\) under \(v\mapsto a v\)) and must not be revived as a live target. An alternate schematic \(|T_c|\lesssim\|v\|_2 X\Lambda\) is bookkeeping language only — not a proved bound.
 
-In the chain diagram this node is marked **open estimate**. It is the hinge between Lemma★ packaging and the regularity continuation arrow — neither scarlet letter nor celebration, just the estimate still needed.
+Ordinary 3D Sobolev / Agmon product estimates from energy alone do not deliver uniform \(\mathcal{R}_\star\). In the Bony channel diagnostic, the high×high input channel is the live bottleneck (historical label “HH→L”; input-channel split, not a proved high→low output map). PRODUCT-BLOCK / uniform \(\mathcal{R}_\star\) remains **open**.
+
+In the chain diagram this node is marked **open estimate**.
 
 ---
 
