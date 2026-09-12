@@ -62,7 +62,7 @@ def main(argv: list[str] | None = None) -> int:
         "name",
         nargs="?",
         default="missing-damping",
-        help="missing-damping | control | mechanical-electrical | drag | leftover-repair | localized-repair | open-board | turbulence-intensity | available-turbulence | turbulence-reduction",
+        help="missing-damping | control | mechanical-electrical | drag | leftover-repair | localized-repair | open-board | axisymmetric-shell | turbulence-intensity | available-turbulence | turbulence-reduction",
     )
     p_cy.add_argument(
         "--excise",

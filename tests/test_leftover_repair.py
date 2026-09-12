@@ -124,6 +124,7 @@ class TestLeftoverRepairProtocol(unittest.TestCase):
         joined = " ".join(payload["refused"]).lower()
         self.assertIn("pd", joined)
         self.assertIn("clay", joined)
+        self.assertIn("t_{j", joined)
 
     def test_cycle_does_not_emit_pd_loop(self):
         report = cycle_leftover_repair()

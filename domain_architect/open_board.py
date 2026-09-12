@@ -208,11 +208,21 @@ def board_items(*, a13_closed: bool) -> list[dict[str, str]]:
             id="ns-open",
             title="Classical unaugmented NS (Clay Statement B / NS-open)",
             bucket="STILL_OPEN",
-            problem="Closing NS-open is not a DA validation gate. Stamping it from DA is an automatic DA-VC-01 fail.",
+            problem="Closing NS-open is not a DA validation gate. Stamping it from DA is an automatic DA-VC-01 fail. The axisymmetric shell remainder T_{j←j} is still open and is not a Clay close.",
             fix="Do not close. Score DA-VC-01 on honesty (A13, A5, refuse glue). "
             "Score NS-open only when the strain / simplex / SND hypotheses are proved "
-            "in their own books.",
+            "in their own books. Do not cash T_{j←j} as Clay.",
             da_op="cycle leftover-repair (shows the three carriers; does not prove them)",
+        ),
+        _item(
+            id="axisymmetric-shell",
+            title="Axisymmetric-with-swirl shell remainder T_{j←j}",
+            bucket="STILL_OPEN",
+            problem="Door-1 shell budget leaves only intra-shell transfer T_{j←j}. Not leftover-split strain. Not a measured 3-D CFM close.",
+            fix="Keep the gap visible. Smallness is a printed Tjj/Zj or an explicit "
+            "integral of ||ω||_∞, not a story. Clay NOT CLAIMED. Filter: "
+            "AXISYMMETRIC-SHELL-AUDIT.md.",
+            da_op="cycle axisymmetric-shell ; decompose Tjj / Zj",
         ),
     ]
 
@@ -246,7 +256,8 @@ def open_board() -> dict[str, Any]:
         "headline": (
             "Most of the OPEN chorus is already closed as WITHDRAWN, REJECTED, "
             "or MISSING. DA leftover-split closes the three NS failures as "
-            "conditional theorems. Clay / NS-open stays OPEN on purpose."
+            "conditional theorems. Clay / NS-open stays OPEN on purpose. "
+            "The axisymmetric-with-swirl Door-1 remainder T_{j←j} stays OPEN."
         ),
         "counts": counts,
         "a13_fail_closed": a13_closed,
@@ -293,6 +304,8 @@ def open_board() -> dict[str, Any]:
             "no Grok coating / vault / E8 superstructure in live DA",
             "no letter map J→H / urad→J / a→HN",
             "no TRANSFORMABLE without a real T",
+            "no identifying T_{j←j} with leftover-split strain",
+            "no import of 2-D rho=0.02 into 3-D",
         ],
         "notes": [
             "Correspondence is a hypothesis, not physical equivalence.",

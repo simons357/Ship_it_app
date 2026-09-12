@@ -47,14 +47,14 @@ class TestOpenBoard(unittest.TestCase):
         self.assertTrue(payload["a13_fail_closed"])
         self.assertGreaterEqual(payload["counts"]["CLOSED_WITHDRAWN"], 3)
         self.assertGreaterEqual(payload["counts"]["CLOSED_REJECTED"], 2)
-        self.assertEqual(payload["counts"]["STILL_OPEN"], 3)
+        self.assertEqual(payload["counts"]["STILL_OPEN"], 4)
         self.assertEqual(payload["counts"]["CONDITIONAL"], 3)
         self.assertEqual(payload["counts"].get("CLOSED_IDENTITY"), 2)
         self.assertEqual(payload["counts"].get("DA_ENGINEERING"), 1)
         still_ids = [row["id"] for row in payload["still_open"]]
         self.assertEqual(
             still_ids,
-            ["gap1-step-f", "route-j", "ns-open"],
+            ["gap1-step-f", "route-j", "ns-open", "axisymmetric-shell"],
         )
         cond_ids = [row["id"] for row in payload["conditional"]]
         self.assertEqual(cond_ids, ["swirl-strain", "ring-snd", "paper2-simplex"])
@@ -71,6 +71,8 @@ class TestOpenBoard(unittest.TestCase):
         self.assertIn("withdrawn", blob)
         self.assertIn("do not treat a13 refuse as a da-vc-01 pass", blob)
         self.assertIn("not claimed", blob)
+        self.assertIn("t_{j", blob)
+        self.assertIn("axisymmetric-shell", blob)
 
     def test_cycle_and_api(self):
         report = cycle_open_board()

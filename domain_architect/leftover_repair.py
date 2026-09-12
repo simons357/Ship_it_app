@@ -47,6 +47,7 @@ REFUSED = (
     "no SND ≡ GNC ≡ Bridge",
     "no identifying Q6 H_N with Paper2 H_N[a] or FRA coupling H",
     "no identifying ∫||u^r/r||_∞ dt with ||a-μ||_ℓ¹ or with J/X",
+    "no identifying T_{j←j} with leftover-split strain",
 )
 
 
@@ -121,6 +122,8 @@ def leftover_repair() -> dict[str, Any]:
             "This function does not prove Navier–Stokes regularity.",
             "Each leftover is a CONDITIONAL close: if σ then the rest of "
             "that book runs. σ stays a hypothesis. Clay / NS-open stays OPEN.",
+            "Door-1 T_{j←j} is a different remainder (axisymmetric-shell). "
+            "Do not set σ_strain = Tjj.",
         ],
         "validation_gate": ValidationGate.MATHEMATICAL.value,
         "kind": CorrespondenceKind.ANALOGY.value,

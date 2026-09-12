@@ -22,6 +22,8 @@ Q6_HN_LAB = "HN = D^((-1)/2)*Qtilde*D^((-1)/2)"
 SWIRL_IDENTITY_LAB = "(1/r^4)*dz(Gamma^2) = dz(Phi^2)"
 SWIRL_LEFTOVER_LAB = "Istrain = urad/r"
 SIMPLEX_LEFTOVER_LAB = "ell1(a - mu) = 0"
+# Door-1 remainder ratio. Not a close. Not leftover-split strain.
+SHELL_REMAINDER_LAB = "Tjj / Zj"
 
 
 def tokens_look_like_ring_snd(tokens: list[str]) -> bool:
@@ -42,6 +44,11 @@ def tokens_look_like_simplex_leftover(tokens: list[str]) -> bool:
     return "ell1" in set(tokens)
 
 
+def tokens_look_like_shell_remainder(tokens: list[str]) -> bool:
+    s = set(tokens)
+    return "Tjj" in s and "Zj" in s
+
+
 def leftover_family(tokens: list[str]) -> str | None:
     """Which leftover book a token list belongs to, if any."""
     if tokens_look_like_ring_snd(tokens):
@@ -52,6 +59,8 @@ def leftover_family(tokens: list[str]) -> str | None:
         return "swirl"
     if tokens_look_like_simplex_leftover(tokens):
         return "simplex"
+    if tokens_look_like_shell_remainder(tokens):
+        return "shell"
     return None
 
 
@@ -80,6 +89,13 @@ SIMPLEX_LEFTOVER_WARNINGS = (
     "This is Paper2 leftover ||a-μ||_ℓ¹. Leray boundedness is not "
     "simplex smallness. The simplex lemma is still open. Not Ring "
     "SND and not swirl strain.",
+)
+
+SHELL_REMAINDER_WARNINGS = (
+    "This is the axisymmetric-with-swirl Door-1 remainder Tjj/Zj. "
+    "The only remainder after the shell budget is T_{j←j}. Status "
+    "OPEN. Clay NOT CLAIMED. Not leftover-split strain, not Ring "
+    "SND, and not Paper2 simplex.",
 )
 
 BOTH_BOOKS_WARNING = (
