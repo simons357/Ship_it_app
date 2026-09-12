@@ -270,12 +270,18 @@ not a kill):
 Screenshot \(\Theta(m^2)\) on a fixed output set:
 excluded. [`LEMMA-STAR-9B-COUNTING.md`](LEMMA-STAR-9B-COUNTING.md).
 Growing \(m\) and \(s\) linear-pol samples
-(finite max is not \(C_0\)):
+(finite max is not \(C_0\); do not merge):
 [`LEMMA-STAR-9B-GROWING.md`](LEMMA-STAR-9B-GROWING.md).
-Live 9D (full complex pol, \(|k|\) kept):
+Live 9D is grow \(s\) on the 9B family
+(full complex pol, \(|k|\) kept; max
+\(K\approx 0.456\) at \((16,32)\); not
+the aligned \(0.641\)):
+[`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md),
 [`LEMMA-STAR-LIVE.md`](LEMMA-STAR-LIVE.md).
-★ reason not written:
+★ reason is a map, not a theorem:
 [`LEMMA-STAR-REASON.md`](LEMMA-STAR-REASON.md).
+Need★ signed dual still MISSING:
+[`NEED-STAR-HH-L-DUAL.md`](NEED-STAR-HH-L-DUAL.md).
 
 Do not merge with H1.
 

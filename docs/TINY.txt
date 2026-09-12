@@ -11,15 +11,28 @@ T_mm is the bulk on mixed samples,
 not T_ss; allowed R blocked;
 chain stays a chain):
 docs/TJJ-ESTIMATE.md
-Two live writes (9D growing full-complex
-pol; ★ reason not written):
+Two live writes (grow s on 9B; ★ reason
+as a map, not a theorem):
 docs/LEMMA-STAR-LIVE.md
+docs/ATTACK-9D-GROW-S.md
+docs/LEMMA-STAR-REASON.md
+docs/NEED-STAR-HH-L-DUAL.md
+docs/YES-NO-OPEN.md
+docs/ATTACK-9D-SETUP.md
+JSON: results/attack9b_grow_s/grow_s.json
+Probe: scripts/ns_attacks/attack9b_grow_s.py
+Seed 1390, k_max=8: max K≈0.456 at
+(16,32); max s=192; not C0; not the
+aligned 0.641. Designed Θ(m²) 9D dead.
+Need★ signed dual still MISSING.
 H1 shape 3 predictive (started; not a
 theorem; not ABC_λ):
 docs/H1-PREDICTIVE.md
 9B growing-s linear-pol samples (scored;
-finite max is not C0):
+K≈0.631; do not merge with 0.456):
 docs/LEMMA-STAR-9B-GROWING.md
+Leftovers on one sheet:
+docs/ISSUES-SHEET.md
 Swirl probe of that remainder
 (pairing closed; class samples printed;
 not a close):

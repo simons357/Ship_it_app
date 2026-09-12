@@ -168,11 +168,23 @@ Fixed-output \(\Theta(m^2)\): counting error,
 \(K\le 16s\). docs/LEMMA-STAR-9B-COUNTING.md
 Two live writes:
 docs/LEMMA-STAR-LIVE.md
-Attack 9D (growing supports, full complex
-pol, \(|k|\) kept). ★ reason not written.
+Attack 9D grow \(s\) on the 9B family
+(full complex pol, \(|k|\) kept; seed 1390,
+\(k_{\max}=8\): max \(K\approx 0.456\) at
+\((16,32)\), max \(s=192\); not \(C_0\);
+not the aligned \(0.641\)):
+docs/ATTACK-9D-GROW-S.md
+results/attack9b_grow_s/grow_s.json
+★ reason as a map, not a theorem
+(HH→L the dangerous channel; Need★
+signed dual still MISSING):
 docs/LEMMA-STAR-REASON.md
+docs/NEED-STAR-HH-L-DUAL.md
+Tape: docs/YES-NO-OPEN.md
+Setup (do not start designed 9D):
+docs/ATTACK-9D-SETUP.md
 9B growing-\(s\) linear-pol samples
-(finite max is not \(C_0\)):
+(\(K\approx 0.631\); do not merge):
 docs/LEMMA-STAR-9B-GROWING.md
 No \(K(t)\). No Q1.
 

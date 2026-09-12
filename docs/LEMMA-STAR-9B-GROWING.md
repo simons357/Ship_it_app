@@ -14,9 +14,14 @@ The displayed bound
 is the 9B uniform target. \(B=B(w,w)\) is the same
 exact-shell bilinear as the HH→L fan.
 Not a new field. Linear pol only.
-Live 9D (full complex pol, growing supports)
-is the remaining packet falsifier:
+This campaign is scored and separate.
+Live 9D is grow \(s\) on the 9B family
+(full complex pol; seed 1390, \(k_{\max}=8\);
+max \(K\approx 0.456\) at \((16,32)\)):
+[`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md),
 [`LEMMA-STAR-LIVE.md`](LEMMA-STAR-LIVE.md).
+Do not merge \(0.631\) with \(0.456\) or
+with aligned 9B \(0.641\).
 
 Fixed \(s\) cannot unbound \(K\) (\(K\le 16s\)).
 Growing input support \(m\) and occupied output

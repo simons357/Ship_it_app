@@ -46,8 +46,11 @@ class GrowingSTests(unittest.TestCase):
         counting = COUNTING.read_text()
         self.assertIn("LEMMA-STAR-9B-GROWING.md", counting)
         spec = SPEC_9D.read_text()
-        self.assertIn("attack9d_growing.py", spec)
-        self.assertIn("Do not redo", spec)
+        self.assertIn("do not implement this", spec.lower())
+        self.assertIn("Freiman-AP", spec)
+        grow = (ROOT / "docs" / "ATTACK-9D-GROW-S.md").read_text()
+        self.assertIn("attack9b_grow_s.py", grow)
+        self.assertIn("0.456", grow)
 
     def test_pairs_per_output_at_most_m(self):
         pos = [(2, 0, 0), (0, 2, 0), (0, 0, 2)]

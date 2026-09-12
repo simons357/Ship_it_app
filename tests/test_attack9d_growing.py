@@ -25,9 +25,11 @@ from ns_attacks.attack9b_exact_shell_K import (  # noqa: E402
 from ns_attacks.stokes_moments import enforce_reality  # noqa: E402
 
 DOC = ROOT / "docs" / "math" / "ns_attacks" / "ATTACK_9D_THETA_M2_LOCKED_PHASE.md"
+GROW = ROOT / "docs" / "ATTACK-9D-GROW-S.md"
 LIVE = ROOT / "docs" / "LEMMA-STAR-LIVE.md"
 REASON = ROOT / "docs" / "LEMMA-STAR-REASON.md"
 SCRIPT = ROOT / "scripts" / "ns_attacks" / "attack9d_growing.py"
+SEATED = ROOT / "scripts" / "ns_attacks" / "attack9b_grow_s.py"
 
 
 class Attack9DTests(unittest.TestCase):
@@ -35,16 +37,22 @@ class Attack9DTests(unittest.TestCase):
         live = LIVE.read_text()
         self.assertIn("Attack 9D", live)
         self.assertIn("full complex", live.lower())
-        self.assertIn("not written", live)
+        self.assertIn("map, not a theorem", live)
+        self.assertIn("0.456", live)
         self.assertIn("NS not solved", live)
         self.assertNotIn("NS is solved", live)
         reason = REASON.read_text()
-        self.assertIn("not written", reason)
+        self.assertIn("map, not a theorem", reason)
         self.assertIn("HH", reason)
+        self.assertIn("occupancy", reason.lower())
+        grow = GROW.read_text()
+        self.assertIn("Remaining packet falsifier", grow)
+        self.assertIn("attack9b_grow_s.py", grow)
+        self.assertIn("0.456", grow)
         spec = DOC.read_text()
-        self.assertIn("remaining packet falsifier", spec)
-        self.assertIn("Frequency factors kept", spec)
-        self.assertIn("That sentence is not written", spec)
+        self.assertIn("do not implement this", spec.lower())
+        self.assertIn("Freiman-AP", spec)
+        self.assertTrue(SEATED.is_file())
         self.assertTrue(SCRIPT.is_file())
 
     def test_full_complex_is_divfree_and_wider_than_linear(self):

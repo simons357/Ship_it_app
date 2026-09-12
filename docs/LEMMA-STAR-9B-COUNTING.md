@@ -132,7 +132,7 @@ fixed-\(s\) 9D sits. Uniform \(K\) still open.
 
 ---
 
-## Order (do not guess 9D first)
+## Order (do not guess designed 9D)
 
 The displayed bound
 \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}\|w\|_2^2\)
@@ -141,18 +141,15 @@ is the same shell-projected bilinear as the
 HH→L / exact-shell fan. Not a new field.
 
 The remaining packet falsifier of this target
-is **Attack 9D**: growing \(m\) and \(s\), full
-complex polarizations, frequency factors kept.
-[`LEMMA-STAR-LIVE.md`](LEMMA-STAR-LIVE.md),
-`scripts/ns_attacks/attack9d_growing.py`.
-Linear-pol growing-\(s\) samples are scored
-and are not that close:
-[`LEMMA-STAR-9B-GROWING.md`](LEMMA-STAR-9B-GROWING.md).
-No exponent tying \((m,s)\) to \((\alpha,\beta)\)
-is seated. Attack 12 \(\mathcal R_\star\sim\beta/\alpha\)
+is grow \(s\) on the 9B family: growing \(m\)
+and \(s\), full complex polarizations,
+frequency factors kept.
+[`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md).
+Attack 12 \(\mathcal R_\star\sim\beta/\alpha\)
 is a channel diagnostic only.
 Do not build a ★ sentence from those
-numbers. The ★ reason is not written.
+numbers. The ★ reason is a map, not a
+theorem. [`LEMMA-STAR-REASON.md`](LEMMA-STAR-REASON.md).
 
 ---
 
@@ -160,11 +157,23 @@ numbers. The ★ reason is not written.
 
 Full complex polarizations, growing input
 **and** output support, frequency factors
-kept. Probe:
+kept. Live write:
+[`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md).
+Seed 1390, \(k_{\max}=8\): max
+\(K\approx 0.456\) at \((16,32)\),
+max \(s=192\). Larger \(s\) did not
+raise \(K\). Not \(C_0\). Not the
+aligned \(0.641\). Probe:
+`python3 scripts/ns_attacks/attack9b_grow_s.py`
+Also:
 `python3 scripts/ns_attacks/attack9b_output_counting.py`
 
 Scores: [`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md).
 9B JSON: [`five-lane-export/ATTACK_9B.md`](five-lane-export/ATTACK_9B.md).
+
+Setup call (do not start 9D):
+[`ATTACK-9D-SETUP.md`](ATTACK-9D-SETUP.md).
+Same \(B\) as 9B. HH→L is a different family.
 
 Do not cash a finite \(\sqrt{K}\) as \(C_0\).
 Do not glue this to H1.

@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-"""Attack 9D — remaining packet falsifier.
+"""Scored 9D sample — not the seated grow-s write.
 
-Growing input and output supports. Full complex (elliptical)
-polarizations. Frequency factors kept.
+Smaller full-complex sweep on this branch (225 fields,
+max K≈0.612 at (4,8)). Do not merge with seated 9D
+(attack9b_grow_s.py, max K≈0.456 at (16,32)) or with
+aligned 9B (K≈0.641).
 
 Target: ||Π_β B(w,w)||_2 ≤ C (α/√β) ||w||_2^2
      iff  sup K_{α,β} < ∞.
 
 Fixed-output Θ(m²) is excluded (K≤16s). Freiman-AP is dead.
 Do not redo finite 9B (K≈0.641, linear pol).
+Do not write attack9d_theta_m2_locked_phase.py.
 
 Bounded samples are not a proof. A diverging family would
 kill ★. NS is not solved. Lemma★ OPEN.
