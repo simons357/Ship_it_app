@@ -1,7 +1,8 @@
 # Attack 9D — the call (do not start 9D)
 
 12 September 2026.
-**Not a close. ★ is open. NS is not solved.**
+**Not a close. Unrestricted ★ is killed.
+Exact-shell bound claimed. NS is not solved.**
 This page answers the setup question.
 It does not reopen 9D as a live script.
 

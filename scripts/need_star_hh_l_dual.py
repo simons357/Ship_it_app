@@ -65,7 +65,7 @@ def classify_need_star_claim(text: str) -> dict:
         "allowed_as_write": len(hits) == 0 and audit["allowed_in_estimate"],
         "discard_hits": audit["discard_hits"],
         "signed_dual": "MISSING",
-        "lemma_star": "OPEN",
+        "lemma_star": "KILLED",
     }
 
 
@@ -180,13 +180,13 @@ def run(seed: int = 1390) -> dict:
         "claim": claim,
         "accepted_as_close": False,
         "ns_solved": False,
-        "lemma_star": "OPEN",
-        "kill_lane": "LIVE",
-        "nine_d": "secondary",
+        "lemma_star": "KILLED",
+        "kill_lane": "CLOSED_BY_V_N",
+        "nine_d": "historical",
         "soft_x": "silent",
         "note": (
             "Gap-cancel sits. Unsigned CS hides s. "
-            "Signed dual Need★ is MISSING. Finite N_star is not the bound. "
+            "Signed dual Need★ is MISSING. Cannot repair dead unrestricted ★. "
             "NS not solved."
         ),
     }

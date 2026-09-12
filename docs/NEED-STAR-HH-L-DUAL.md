@@ -138,9 +138,9 @@ unsigned size, is the leftover.
   (largest \(\approx 0.71\)) is a sample.
   Do not turn it into Need★.
 - Designed \(\Theta(m^2)\) 9D. Dead.
-- Grow \(s\) as a close. Secondary
-  pressure. Finite \(K\approx 0.456\)
-  is not \(C_0\).
+- Grow \(s\) as a close. Historical.
+  Finite \(K\approx 0.456\) is not
+  \(C_0\). It did not kill ★.
 - H1. Soft X. Cosmo five fingers.
   The B-hand map is not this estimate.
 

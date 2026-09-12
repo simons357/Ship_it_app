@@ -77,7 +77,7 @@ FINGERS = [
         "class": "unaugmented NS on T^3, two-shell / HH→L",
         "quantity": "signed dual S_star = T_beta^{HH→L}",
         "remainder": "unsigned CS hiding occupancy s",
-        "status": "Need★ MISSING as a bound; leftover 4 OPEN",
+        "status": "Need★ MISSING; cannot repair dead unrestricted ★; leftover 4 is a replacement",
         "leftover": 4,
     },
     {
@@ -111,8 +111,9 @@ STATES = {
     "fire": {
         "meaning": "what is live now",
         "is": [
-            "Need★ signed dual MISSING (primary)",
-            "grow s on 9B secondary; finite max K≈0.456, max s=192; not a kill",
+            "replacement energy-budget closure (leftover 4); unrestricted ★ killed by v_n",
+            "Need★ signed dual MISSING; cannot repair that box",
+            "grow s on 9B historical; finite max K≈0.456, max s=192; not a kill",
             "H1 write sits; theorem no",
             "axisymmetric occupancy printed; [ρ] not written",
             "Catalog B open 1",
@@ -133,7 +134,7 @@ STATES = {
     "future": {
         "meaning": "what would have to sit; DA cannot invent this",
         "is": [
-            "Need★ bound, or R_star(v_n)→∞",
+            "replacement energy-budget estimate that v_n does not kill",
             "or an H1 shape, or G(v_n)→∞ (Ring would have to leave REPAIR if used)",
             "or a class bound on ∫ρ_j, or a killing field in the class",
             "then Path 1 (7)–(9) can be written",
@@ -153,7 +154,7 @@ FILLED = [
 
 UNFILLED = [
     "Need★ signed dual bound",
-    "sup R_star < ∞ or R_star → ∞",
+    "replacement energy-budget closure that v_n does not kill",
     "H1 as a theorem / a shape / G → ∞",
     "H2 a priori from energy",
     "H3 absorb as r → 0",
@@ -173,7 +174,7 @@ def classify_bhand_claim(text: str) -> dict:
         "allowed_as_map": len(hits) == 0 and audit["allowed_in_estimate"],
         "discard_hits": audit["discard_hits"],
         "verdict": "MAP",
-        "lemma_star": "OPEN",
+        "lemma_star": "KILLED",
         "need_star": "MISSING",
     }
 
@@ -187,7 +188,7 @@ def run() -> dict:
         "verdict": "MAP",
         "accepted_as_close": False,
         "ns_solved": False,
-        "lemma_star": "OPEN",
+        "lemma_star": "KILLED",
         "need_star": "SIGNED_DUAL_MISSING",
         "h1_theorem": False,
         "soft_x": "silent",

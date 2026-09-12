@@ -125,9 +125,9 @@ JSON: `results/attack9b_grow_s/grow_s.json`
 |---|---|
 | Designed 9D \(\Theta(m^2)\) | **NO.** Dead. |
 | Fixed \(s\) | **NO** as a kill. \(K\le 16s\). |
-| Grow \(m\) and \(s\), \(\lvert k\rvert\) kept | **OPEN** as a test |
-| \(\sup K<\infty\) | **OPEN** |
-| Lemma★ | **OPEN** |
+| Grow \(m\) and \(s\) as a ★ kill | **NO.** Historical. |
+| Exact-shell \(\sup K<\infty\) | **CLAIMED** on the other page |
+| Unrestricted Lemma★ | **NO.** Killed by \(v_n\). |
 
 This draw did not kill ★. The named
 kill is [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).

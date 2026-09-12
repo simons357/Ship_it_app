@@ -33,7 +33,7 @@ One framework, one row. Do not weld
 | # | Endpoint | Object that would have to move |
 |---|---|---|
 | 1 | H1 = WRITE (6) | Bad-pair \(A_{\mathrm{bad}}\) on \(Q_r\) |
-| 4 | Lemma★ | \(\sup\mathcal R_\star<\infty\), \(\mathcal R_\star=(T_c)_+^2/(\mathcal D_s E Y)\) |
+| 4 | Replacement energy-budget closure | A different estimate than unrestricted \(\sup\mathcal R_\star<\infty\). That box is killed by \(v_n\). |
 | 5 | Axisymmetric remainder | \(\int\rho_j=\int(T_{j\leftarrow j})_+/Z_j\) |
 | 6 | RH WRITE (6) | Every non-trivial zero on \(\operatorname{Re}s=1/2\) |
 
@@ -147,8 +147,9 @@ a row.
 1. **Kill rule, leftover 4.**
    A family dies as a boundedness
    witness if \(\mathcal R_\star(v_n)\to\infty\).
-   That sentence already sits in
-   [`LEMMA-STAR-STATEMENT.md`](LEMMA-STAR-STATEMENT.md).
+   That sentence already sits, and
+   it already fired on \(v_n\).
+   [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
    Evolution did not add it.
 
 2. **Grow \(s\), leftover 4.**
@@ -156,23 +157,20 @@ a row.
    occupancy on the 9B family
    \(v_\varepsilon=w_\alpha+\varepsilon z_\beta\).
    Fixed \(s\) is dead (\(K\le 16s\)).
-   Growing \(s\) is the remaining
-   packet test. Scripts:
+   Growing \(s\) is historical.
+   It did not kill ★. Scripts:
    `scripts/ns_attacks/attack9b_exact_shell_K.py`,
    `scripts/ns_attacks/attack9b_output_counting.py`.
    Do **not** implement
    `attack9d_theta_m2_locked_phase.py`.
 
 3. **Hunt, leftover 4.**
-   Mutate support and phase; keep a
-   field only if \(\mathcal R_\star\)
-   rises. That is the kill lane
-   already live. A larger finite
-   number raises \(C_{\mathrm{geom}}\).
-   Only a sequence with
-   \(\mathcal R_\star\to\infty\)
-   kills ★. Bounded samples are
-   not a proof.
+   The unrestricted hunt closed on
+   \(v_n\). A larger finite \(K\) is
+   not that kill. The leftover is a
+   replacement estimate that \(v_n\)
+   does not kill. Need★ cannot
+   repair the dead box.
 
 Nothing in the table hooks leftover
 1 as an estimate. The geometric
@@ -223,11 +221,11 @@ the sheet. The next honest move
 on this lane is the same as it
 was before the metaphor:
 
-- leftover 4: grow \(s\) on the
-  9B family, or write the ★
-  reason (why signed stretching
-  cannot outrun spectral spread)
-  if that sentence appears;
+- leftover 4: a replacement
+  energy-budget estimate that
+  \(v_n\) does not kill. The
+  unrestricted box is already
+  dead. Need★ cannot repair it;
 - leftover 1: the three shapes,
   not from ABC_λ, and not from
   this page;

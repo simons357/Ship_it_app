@@ -71,7 +71,7 @@ class LemmaStarCoreTests(unittest.TestCase):
         phone = PHONE.read_text()
         self.assertIn("scripts/ns_lemma_star_core.py", phone)
         self.assertIn("not overwritten", phone)
-        self.assertIn("still open", phone)
+        self.assertIn("killed", phone.lower())
         self.assertIn("NS not solved", phone)
         live = LIVE.read_text()
         self.assertIn("def hh_l_sphere_pairs", live)

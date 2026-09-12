@@ -44,10 +44,13 @@ class Pr24ClosureReviewTests(unittest.TestCase):
     def test_tape_and_sheet_record_the_kill(self):
         tape = TAPE.read_text()
         sheet = SHEET.read_text()
+        statement = (ROOT / "docs" / "LEMMA-STAR-STATEMENT.md").read_text()
         self.assertIn("LEMMA-STAR-GROWING-LAYER.md", tape)
         self.assertIn("LEMMA-STAR-GROWING-LAYER.md", sheet)
         self.assertIn("KILLED", tape)
         self.assertIn("replacement", sheet.lower())
+        self.assertIn("Killed by", statement)
+        self.assertIn("Replacement energy-budget closure", statement)
 
 
 if __name__ == "__main__":

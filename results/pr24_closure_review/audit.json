@@ -239,10 +239,10 @@
     "used_as_C0": false
   },
   "source_sha256": {
-    "docs/ATTACK-9D-GROW-S.md": "05ffa70ff083b4dc3d32cb9f744b404e2edea04ebf23dbccc17f72d05b646bd0",
-    "docs/LEMMA-STAR-REASON.md": "bc61a827ffdcce41d919bef052a2736b63da32c61501507862c274ca4cbef277",
-    "docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md": "bdaf76dfe9f957d00a352c1b89eb37a86fc52f855cf728cd655e861299ef1400",
-    "docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md": "a8d985891e76705b327686381dd7f7e161e2fd0d76191f091fb7b411fdb93da1",
+    "docs/ATTACK-9D-GROW-S.md": "d64d5b003ffb80ba68c7356c1f96d220c02d72e58bf881a1809e722f1752c6e4",
+    "docs/LEMMA-STAR-REASON.md": "6b085bef6954e2c9e2cfcb348067d5b5a0d3fff98bcf65963f43c5b21c7e6c2f",
+    "docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md": "05bc900fdce193e310345dceb3b8494e3542cfcbb3c449fdf41192f51bc3ad2c",
+    "docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md": "97959b278b092e71df7b9e1c89e6aedad0dcb8ab5a0a7ead2e7010ffe2cb72cd",
     "scripts/ns_attacks/stokes_moments.py": "7aab75c44791fbf1fb3cf17001ba4da1a0c9218d2ee1876011b8a9e4465908ed",
     "scripts/ns_lemma_star_core.py": "20bc0f7dbffb2972511524b9290dd307d91568c5c47d61be768d200f70a239ab",
     "results/attack9b_grow_s/grow_s.json": "cf5a0105527a3d0b05a6361238a78b8637e85fab5e8c2089b9b6a040e6b20b85"

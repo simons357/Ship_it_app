@@ -49,7 +49,7 @@ class DaNsFiveFingerTests(unittest.TestCase):
         self.assertEqual(summary["verdict"], "MAP")
         self.assertIs(summary["accepted_as_close"], False)
         self.assertIs(summary["ns_solved"], False)
-        self.assertEqual(summary["lemma_star"], "OPEN")
+        self.assertEqual(summary["lemma_star"], "KILLED")
         self.assertEqual(summary["need_star"], "SIGNED_DUAL_MISSING")
         self.assertIs(summary["h1_theorem"], False)
         self.assertEqual(summary["soft_x"], "silent")

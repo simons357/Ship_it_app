@@ -604,8 +604,11 @@ quantity, remainder, what is assumed.
 - Remainder of the shell estimate is
   \(T_{j\leftarrow j}\).
 - Remainder of H1 is \(A_{\mathrm{bad}}\).
-- Remainder of ★ is
-  \(\sup\mathcal R_\star\).
+- Remainder of leftover 4 is a
+  replacement energy-budget
+  estimate. Unrestricted
+  \(\sup\mathcal R_\star<\infty\)
+  is killed.
 - Smallness is a printed ratio or an
   explicit integral of \(\|\omega\|_\infty\),
   not a story.
@@ -636,7 +639,7 @@ reply as certification.
 | Job | Object | Verdict | What help is |
 |---|---|---|---|
 | 1 | \(A_{\mathrm{bad}}\) on \(Q_r\) | **open** | Prove one shape, or kill the shapes |
-| 2 | \(\sup\mathcal R_\star\) | **open** | Bound or \(\mathcal R_\star\to\infty\) |
+| 2 | unrestricted \(\sup\mathcal R_\star\) | **killed** | \(v_n\); leftover is a replacement |
 | 3 | \(\int\rho_j\) on the swirl class | **open** | Class bound or a blowing field |
 | 4 | Every zeta zero on the line | **open** | One estimate; Q is not it |
 | A | Extra-stress NS | **sits** | Do not retitle as B |

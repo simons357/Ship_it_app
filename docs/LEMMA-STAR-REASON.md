@@ -120,24 +120,24 @@ how the screenshot 9D died.
 
 ---
 
-## What would move leftover 4
+## What leftover 4 is now
 
-- Need★: a signed dual bound on
-  HH→L after gap-cancel, occupancy
-  killed or proved bounded.
-  [`NEED-STAR-HH-L-DUAL.md`](NEED-STAR-HH-L-DUAL.md).
-- A geometry-only bound
-  \(\sup\mathcal R_\star<\infty\),
-  with the occupancy factor killed or
-  proved bounded.
-- Or a family with
-  \(\mathcal R_\star\to\infty\).
-  Growing \(s\) on the 9B family is
-  the remaining packet test of that.
+The named kill arrived:
+\(\mathcal R_\star(v_n)\to\infty\).
+Family: [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
+Unrestricted \(\sup\mathcal R_\star<\infty\)
+is **NO**. Grow \(s\) on the 9B family
+is historical. It did not kill ★.
 
-A larger finite number only raises
-\(C_{\mathrm{geom}}\). Bounded samples
-are not a proof. Kill lane LIVE.
+Leftover 4 is a replacement
+energy-budget estimate that \(v_n\)
+does not kill. Need★ cannot repair
+the dead box unless its hypotheses
+or conclusion change.
+[`NEED-STAR-HH-L-DUAL.md`](NEED-STAR-HH-L-DUAL.md).
+
+A larger finite \(K\) only raises a
+sample. It is not this kill.
 
 Do not redo: five lanes 1–5, 9A,
 natural 9C, finite 9B

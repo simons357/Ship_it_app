@@ -140,7 +140,8 @@ docs/CS-REMAINDER.md
 docs/ns-recovery/CS-REMAINDER-VS-DA-REJECT.md
 N-shell samples still saturate:
 docs/RSTAR-SHELL-CLIMB.md
-Locked packaging (OPEN):
+Locked packaging (unrestricted box killed;
+replacement OPEN):
 docs/LEMMA-STAR.md
 Statement from the lock (not a reconstruction):
 docs/LEMMA-STAR-STATEMENT.md
@@ -174,9 +175,9 @@ MISSING. docs/LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md
 H1 on one cylinder is the other writing.
 Tube SoT: docs/H1-SOT.md
 Estimate package OPEN, not a GR close.
-Outside-E identity blocked. Enumerator
-still on the star lane.
-Bound open.
+Outside-E identity blocked.
+Unrestricted ★ killed by v_n.
+Replacement closure open.
 docs/LEMMA-STAR-PACKET.md
 Samples are evidence only.
 Uniform pre-Young C is dead.
@@ -214,7 +215,7 @@ docs/five-lane-export/ATTACK_9B.md
 results/ns_five_lane_2026-09-10/attack9b_exact_shell/
 Fixed-output Θ(m²) is a counting error:
 docs/LEMMA-STAR-9B-COUNTING.md
-K ≤ 16s. Growing s stays live.
+K ≤ 16s. Growing s is historical.
 
 Latest three chains plus the others:
 docs/LATEST.md

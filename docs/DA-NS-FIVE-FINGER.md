@@ -121,7 +121,7 @@ Need★ (MISSING as a bound):
 \]
 Locked ratio \(\mathcal N_\star=\lvert\mathcal S_\star\rvert/((\alpha/\sqrt{\beta})e_\alpha\sqrt{e_\beta})\).
 A finite sample is not the bound. Printed \(\mathcal N_\star\approx 0.099\)
-is a sample. Grow \(s\) is secondary kill-lane pressure, not this sentence.
+is a sample. Grow \(s\) is historical, not this sentence.
 Attack 12's table is not Need★.
 
 Status: **Need★ MISSING. Cannot repair the dead box.** Write sits in
@@ -147,9 +147,10 @@ Status: **OPEN.** Do not import 2-D \(\rho\). Do not bound the bad term by
 
 The work that can move. Not Cosmo. Not A. Not Soft X.
 
-- Need★ is the primary math target. Signed dual on HH→L after gap-cancel.
-  MISSING as a bound.
-- Grow \(s\) on 9B is secondary. Finite max \(K\approx 0.456\), max \(s=192\).
+- Replacement energy-budget closure is leftover 4. Unrestricted ★ is
+  killed by \(v_n\). Need★ cannot repair that box. Signed dual on HH→L
+  after gap-cancel is still MISSING as a restricted estimate.
+- Grow \(s\) on 9B is historical. Finite max \(K\approx 0.456\), max \(s=192\).
   Not a kill. Designed \(\Theta(m^2)\) 9D stays **NO**.
 - H1 write sits. Theorem no. Do not start from ABC\(_\lambda\).
 - Axisymmetric shell: occupancy printed, \([\rho]\) not written.
@@ -176,8 +177,8 @@ DA cannot invent this. DA can only name what a close would look like.
 
 One of these, not a weld of all three:
 
-1. Need★ bound sits, or a sequence with \(\mathcal R_\star(v_n)\to\infty\)
-   kills the locked form. Leftover 4 moves.
+1. A replacement energy-budget estimate that \(v_n\) does not kill.
+   Need★ cannot repair the dead unrestricted box. Leftover 4 moves.
 2. An H1 shape sits, or \(\mathcal G(v_n)\to\infty\) kills the geometric
    write. Leftover 1 moves. Ring would have to leave REPAIR first if the
    shape uses it.
@@ -224,6 +225,7 @@ Machine: `scripts/da_ns_five_finger.py`.
 - Geometric write: `docs/H1-WRITE.md`, `docs/H1-SOT.md`.
 - After the spindle blanks: `docs/PATH-AND-DA.md`, `docs/NS-PROOF-CHAIN.md`.
 - Need★: `docs/NEED-STAR-HH-L-DUAL.md`.
+- Growing-layer kill: `docs/LEMMA-STAR-GROWING-LAYER.md`.
 - ★ reason: `docs/LEMMA-STAR-REASON.md`.
 - Grow \(s\): `docs/ATTACK-9D-GROW-S.md`.
 - Axisymmetric shell: `docs/AXISYM-SHELL.md`.

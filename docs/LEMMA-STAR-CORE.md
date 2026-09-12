@@ -1,8 +1,10 @@
 # Independent Lemma★ core
 
 10 September 2026. Phone lock. **Exact evaluator, not a proof.**
-**Lemma★ is still open. NS not solved.**
-ABC_λ table: `docs/CS-REMAINDER.md`. Not a falsifier.
+Unrestricted Lemma★ is **killed** by \(v_n\).
+Replacement closure **OPEN.** NS not solved.
+ABC_λ table: `docs/CS-REMAINDER.md`. Not that kill.
+Named kill: [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
 
 Standalone: `scripts/ns_lemma_star_core.py`.
 Does not import the Stokes library.

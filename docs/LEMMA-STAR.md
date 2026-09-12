@@ -1,11 +1,14 @@
 # Lemma★ — locked packaging
 
 10 September 2026. Energy-budget writing of leftover (6).
-**OPEN.** Evaluator ≠ proof. Exact core ≠ proof.
-**NS is not solved.** A finite ABC_λ climb raises
-\(C_{\mathrm{geom}}\); it does not kill ★
-(`docs/CS-REMAINDER.md`). H1 is a different integral
-and was **not** run on ABC_λ. Q-stack is out of this book.
+Boxed unrestricted claim **KILLED** by \(v_n\).
+Replacement closure **OPEN.** Evaluator ≠ proof.
+Exact core ≠ proof. **NS is not solved.**
+A finite ABC_λ climb raises a sample; it is
+not this kill (`docs/CS-REMAINDER.md`).
+The named kill: [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
+H1 is a different integral and was **not**
+run on ABC_λ. Q-stack is out of this book.
 
 Drill: [PR 48](https://github.com/simons357/Ship_it_app/pull/48)
 (`cursor/ns-five-lane-lemma-star-1390`).
@@ -192,8 +195,11 @@ fan (\(\mathcal R_\star\sim\beta/\alpha\)). No kill.
 The \(m^{1/2}\) heuristic has not found a lattice home.
 H1 on one cylinder is the other live writing
 ([`H1-SOT.md`](H1-SOT.md)).
-The uniform global triadic bound remains completely open.
-ABC_λ is a finite climb, not \(\mathcal R_\star\to\infty\).
+The unrestricted triadic bound is killed by
+the growing-layer family
+([`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md)).
+ABC_λ is a finite climb, not that kill.
+The leftover is a replacement closure.
 Do not start H1 from that table.
 The growing cube
 ([`LEMMA-STAR-CUBE.md`](LEMMA-STAR-CUBE.md))

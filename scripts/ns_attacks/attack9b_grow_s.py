@@ -158,8 +158,8 @@ def grow_sweep(
             else "INEQUALITY_FAIL_check_implementation"
         ),
         "ns_solved": False,
-        "lemma_star": "OPEN",
-        "kill_lane": "LIVE",
+        "lemma_star": "KILLED",
+        "kill_lane": "CLOSED_BY_V_N",
         "rows": rows,
     }
 
@@ -176,12 +176,13 @@ def run(seed: int = 1390, kmax: int = 8, n_trials: int = 4) -> Dict:
         "growing_rows": sweep["rows"],
         "verdict": sweep["verdict"],
         "ns_solved": False,
-        "lemma_star": "OPEN",
-        "kill_lane": "LIVE",
+        "lemma_star": "KILLED",
+        "kill_lane": "CLOSED_BY_V_N",
         "note": (
             "Fixed-s excluded: K≤16s. Designed 9D dead. "
             "Growing m and s, complex pol, |k| kept. "
-            "Finite max K is not C0. NS not solved."
+            "Finite max K is not C0. This sweep is historical. "
+            "Unrestricted ★ killed by v_n. NS not solved."
         ),
     }
 

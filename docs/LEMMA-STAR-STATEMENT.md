@@ -3,7 +3,8 @@
 12 September 2026. Phone.
 **The boxed unrestricted claim is killed
 by the growing-layer family.**
-**OPEN. Not a proof. NS not solved.**
+Replacement closure **OPEN.** Not a proof.
+NS not solved.
 This page still quotes the claim that died.
 It is not a reconstruction.
 The kill: [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
@@ -134,9 +135,9 @@ regularity **in this packaging**. One direction.
 No converse. Do not write “★ equivalent to GR.”
 
 The inequality is the hole. The implication is the
-skeleton. ★ is not proved, so unaugmented NSE is
-not solved. That is not the same sentence as
-“NS is not solved if ★ holds.”
+skeleton. The boxed claim is dead, so this packaging
+does not give unaugmented regularity.
+That is not a singular NSE solution.
 
 DA-NS-2: if ★ sits, DA-NS-2 sits. The integral
 does not sit yet. Do not add \(K(t)\) to the PDE.
@@ -150,10 +151,11 @@ does not sit yet. Do not add \(K(t)\) to the PDE.
 | \(A,B,E,X,Y,Z,\Lambda,\mathcal D_s,T_c,\mathcal R_\star\) | closed (algebra + triad) |
 | One shell: \(\mathcal D_s=0\Rightarrow T_c=0\) | closed |
 | \(T_c(-v)=-T_c(v)\); reverse to test stretching | closed (correction 3) |
-| \(\sup\mathcal R_\star<\infty\) | **open** |
-| Bound on \(C_{\mathrm{geom}}\) | **open** |
-| Kill lane | live |
-| Unaugmented NSE solved by ★ | no (★ is open) |
+| \(\sup\mathcal R_\star<\infty\) | **NO.** Killed by \(v_n\) |
+| Bound on \(C_{\mathrm{geom}}\) | **NO.** No finite constant |
+| Kill of that box | sits. [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md) |
+| Replacement energy-budget closure | **open** |
+| Unaugmented NSE solved by ★ | no (the box is dead) |
 | H1 / WRITE (6) | different integral; outside this statement |
 
 K=0 dead. Uniform pre-Young \(C\) dead. Older
@@ -164,11 +166,10 @@ K=0 dead. Uniform pre-Young \(C\) dead. Older
 
 ## ABC_λ relative to this lemma
 
-Evaluator for the quotient. Not a proof that
-\(\sup\mathcal R_\star<\infty\). Not a proof that
-the supremum is infinite. Largest gate-table
-number after reverse: \(0.327\) at λ=8. Raises
-\(C_{\mathrm{geom}}\). Not a falsifier.
+Evaluator for the quotient. ABC_λ did not
+kill ★. Largest gate-table number after
+reverse: \(0.327\) at λ=8. A finite climb,
+not the \(v_n\) family.
 
 H1 was not run on ABC_λ. Do not start it here.
 
@@ -189,19 +190,14 @@ not Fourier dilation. Do not stop patching.
 ## Score of the incoming explanation
 
 Keep: evaluator ≠ proof; exact boxed ratio; one-shell
-vacuous; proof must be uniform on the whole class;
-finite samples raise \(C_{\mathrm{geom}}\); kill is
-\(\mathcal R_\star\to\infty\); H1 outside this statement;
-★ still open.
+vacuous; the unrestricted claim had to be uniform;
+finite samples are not a kill; the named kill is
+\(\mathcal R_\star\to\infty\); H1 outside this statement.
 
-Correct: “NS is not solved if ★ holds.” The lock
-says the opposite direction in this packaging.
-Write: ★ is not proved, so NS is not solved.
-If ★ holds, GR follows in this packaging. No converse.
-
-There is no Lemma★ proof to walk through line by line.
-The work still required is to prove or disprove
-\(\sup\mathcal R_\star<\infty\) on the whole
-divergence-free class.
+The unrestricted box is dead. The leftover is a
+different energy-budget estimate that \(v_n\)
+does not kill. Need★ cannot repair this box.
+If a different estimate holds, GR in this
+packaging is a separate implication. No converse.
 
 Stay in this chat.

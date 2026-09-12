@@ -1,6 +1,6 @@
 # Lemma★ — exact formulas (shape form)
 
-**Status:** definitions / identities only. Bound on \(C_{\mathrm{geom}}\) / \(\sup\mathcal{R}_\star\) **OPEN**. **NS not solved.** Kill lane **LIVE**.
+**Status:** definitions / identities only. Unrestricted \(\sup\mathcal{R}_\star<\infty\) **KILLED** by \(v_n\). Replacement closure **OPEN**. **NS not solved.**
 
 **Date:** 2026-09-10  
 **Branch:** `cursor/unaugmented-r4-vorticity-f80e` (identities from PR #48 / five-lane lock)  

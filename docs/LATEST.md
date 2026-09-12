@@ -109,9 +109,10 @@ Magazine cut: docs/SWIRL-MAGAZINE.md
 This week: docs/SWIRL-DEPOSIT.md
 OpenAI forced blowup is C/D, not (6):
 docs/OPENAI-NS-CLAIM.md
-Lemma★ (energy-budget leftover, locked
-as hypothesis, not proved):
+Lemma★ (boxed unrestricted claim killed
+by v_n; replacement closure open):
 docs/LEMMA-STAR.md
+docs/LEMMA-STAR-GROWING-LAYER.md
 Statement from the lock (not a reconstruction):
 docs/LEMMA-STAR-STATEMENT.md
 Explore-boundedness score (not a close):
@@ -140,10 +141,10 @@ The \(a^4\) missing inequality is dead.
 ★ implies GR in this packaging; not equivalent.
 Test both signs of \(T_c\). Section 4 is not proved.
 Exact form: scale-invariant trilinear
-shape estimate on R★. Live fork: sup R★
-finite proves ★; a near-shell or HH→L
-sequence with R★ → ∞ kills it. Samples
-are evidence only.
+shape estimate on R★. Unrestricted sup R★ is killed by the
+growing-layer family. Samples on other
+families are not that kill. Replacement
+closure remains the leftover.
 File: docs/LEMMA-STAR-R.md
 Three-key (Attack 8): two Fourier keys
 Tc=0; two shells can be live. Isolated
