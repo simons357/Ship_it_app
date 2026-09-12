@@ -14,11 +14,14 @@ from domain_architect.axisymmetric_shell import (
     THREE_D_FACTS,
     TWO_D_FACTS,
     axisymmetric_shell_estimate,
+    claim_tripwire_hits,
     closed_triad_rewrite,
     contains_discard_claim,
     cycle_axisymmetric_shell,
+    format_shell_diagnostic,
     pairing_closed,
     pairing_residual,
+    shell_diagnostic,
 )
 from domain_architect.lab_cases import SHELL_REMAINDER_LAB, SWIRL_LEFTOVER_LAB
 from domain_architect.pipeline import run_named_cycle
@@ -66,6 +69,20 @@ class TestAuditDocuments(unittest.TestCase):
             "Lightning Flash",
         ):
             self.assertNotIn(phrase, text.split("## 7.")[0] if "## 7." in text else text)
+        self.assertIn("NOT COMPUTED", text)
+        self.assertIn("no DNS", text)
+        identity_and_measure = text.split("## 7.")[0]
+        self.assertEqual(claim_tripwire_hits(identity_and_measure), [])
+        self.assertNotIn("we close", identity_and_measure.lower())
+        self.assertNotIn("small leftover", identity_and_measure.lower())
+        self.assertNotIn("T_{j\\leftarrow j} is O(", identity_and_measure)
+
+    def test_estimate_writes_exact_pairing(self):
+        text = ESTIMATE.read_text(encoding="utf-8")
+        self.assertIn("P_j(u\\cdot\\nabla u)", text)
+        self.assertIn("T_{j\\leftarrow \\ell m}", text)
+        self.assertIn("locality width", text.lower())
+        self.assertIn("The one term that can grow the quantity", text)
 
 
 class TestPairingAndFacts(unittest.TestCase):
@@ -102,8 +119,53 @@ class TestPairingAndFacts(unittest.TestCase):
         self.assertEqual(payload["clay"], "NOT CLAIMED")
         self.assertEqual(payload["unconditional_3d_regularity"], "NOT CLAIMED")
         self.assertEqual(payload["status"], "OPEN")
+        self.assertEqual(payload["remainder"], "T_{j←j}")
+        self.assertEqual(payload["da_vc_01"], "FAIL")
         self.assertTrue(contains_discard_claim("Clay is solved"))
         self.assertFalse(contains_discard_claim(payload["first_sentence"]))
+        self.assertEqual(claim_tripwire_hits(payload["first_sentence"]), [])
+        self.assertEqual(
+            claim_tripwire_hits(json.dumps(payload["identity"])),
+            [],
+        )
+
+    def test_closed_pairing_without_time_series_does_not_quote_lambda(self):
+        payload = axisymmetric_shell_estimate()
+        self.assertTrue(payload["pairing"]["closed"])
+        self.assertLessEqual(payload["pairing"]["residual"], 1e-16)
+        self.assertFalse(payload["bookkeeping"]["time_series_closed"])
+        self.assertIsNone(payload["bookkeeping"]["value"])
+        self.assertFalse(payload["bookkeeping"]["sign_quoted"])
+
+    def test_two_d_ratio_is_not_a_three_d_close(self):
+        payload = axisymmetric_shell_estimate()
+        three = payload["measured_facts"]["3d"]
+        self.assertNotIn("adversary_|Tc|/Ds", three)
+        self.assertNotEqual(three.get("random_phase_ratio"), 0.017)
+        self.assertFalse(payload["measured_facts"]["2d"]["imported_to_3d"])
+        self.assertFalse(three["occupancy_imported_to_cfm"])
+
+    def test_identity_residual_gate_and_open_leftover(self):
+        diag = shell_diagnostic()
+        self.assertTrue(diag["pairing"]["closed_triad_closed"])
+        self.assertLessEqual(diag["pairing"]["closed_triad_residual"], 1e-16)
+        self.assertFalse(diag["pairing"]["broken_triad_closed"])
+        self.assertGreater(diag["pairing"]["broken_triad_residual"], 1e-16)
+        self.assertEqual(diag["tjj_over_zj"]["status"], "NOT COMPUTED")
+        self.assertEqual(diag["remainder_status"], "OPEN")
+        self.assertEqual(diag["lambda_prime_sign"], "NOT QUOTED")
+        self.assertEqual(diag["clay"], "NOT CLAIMED")
+        self.assertEqual(diag["da_vc_01"], "FAIL")
+        printed = format_shell_diagnostic(diag)
+        self.assertIn("NOT COMPUTED", printed)
+        self.assertIn("2-D recorded", printed)
+        self.assertIn("0.017", printed)
+        self.assertIn("3-D recorded", printed)
+        self.assertIn("NOT QUOTED", printed)
+        self.assertIn("OPEN", printed)
+        self.assertNotIn("Clay is solved", printed)
+        self.assertEqual(claim_tripwire_hits(printed), [])
+        self.assertIn("NOT COMPUTED", " ".join(audit_expression(SHELL_REMAINDER_LAB).warnings))
 
 
 class TestDecomposeAndGlue(unittest.TestCase):
@@ -132,6 +194,8 @@ class TestCycleAndApi(unittest.TestCase):
         self.assertEqual(report.prediction["status"], "OPEN")
         self.assertEqual(report.prediction["clay"], "NOT CLAIMED")
         self.assertEqual(report.prediction["remainder"], "T_{j←j}")
+        self.assertEqual(report.prediction["tjj_over_zj"]["status"], "NOT COMPUTED")
+        self.assertEqual(report.prediction["da_vc_01"], "FAIL")
         blob = json.dumps(report.to_dict()).lower()
         self.assertNotIn("control u = k", blob)
         self.assertNotIn("clay is solved", blob)

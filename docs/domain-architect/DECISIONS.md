@@ -38,6 +38,8 @@ Implied by those rows and implemented with them: **C3, C7, C8, C17, C18, C19, C2
 
 **Recorded 2026-09-12.** Jonathan Simons locked the written KEEP / DISCARD / PARK audit as the **binding filter** for **one** program: the axisymmetric (with swirl) shell estimate. File: [`AXISYMMETRIC-SHELL-AUDIT.md`](AXISYMMETRIC-SHELL-AUDIT.md). Estimate note: [`docs/papers/swirl/AXISYMMETRIC-SHELL-ESTIMATE.md`](../papers/swirl/AXISYMMETRIC-SHELL-ESTIMATE.md). Remainder \(T_{j\leftarrow j}\) stays visible. Clay / unconditional 3-D regularity is **NOT CLAIMED**. Turbulence-reduction stays a **different** stack (PARK). Do not copy the ship envelope onto this estimate. Do not treat a Tao-positive reply as proof certification.
 
+**Recorded 2026-09-12 (next step, not a close).** Class: unaugmented axisymmetric Navier–Stokes with swirl. Quantity: \(Z_j=\tfrac12\|P_j u\|_{L^2}^2\). Remainder: \(T_{j\leftarrow j}\). Assumed: [no DNS; no closed stepper]. The Door-1 pairing is written; the algebraic pairing residual is a unit check; \(T_{j\leftarrow j}/Z_j\) is **NOT COMPUTED**. Status stays **OPEN**. Clay is **NOT CLAIMED**. DA-VC-01 stays **FAIL**.
+
 Live software today (verified 2026-08-24 before this rewrite): local desktop app at `http://127.0.0.1:8765/`, CLI, 51 unit tests green. That package was a three-verb UI around Firestone analogy, equation-error OLS, RK4, saturated PD, FFT Poisson, and a three-pattern classifier. This rewrite implements the marked table.
 
 ---

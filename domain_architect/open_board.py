@@ -218,11 +218,12 @@ def board_items(*, a13_closed: bool) -> list[dict[str, str]]:
             id="axisymmetric-shell",
             title="Axisymmetric-with-swirl shell remainder T_{j←j}",
             bucket="STILL_OPEN",
-            problem="Door-1 shell budget leaves only intra-shell transfer T_{j←j}. Not leftover-split strain. Not a measured 3-D CFM close.",
-            fix="Keep the gap visible. Smallness is a printed Tjj/Zj or an explicit "
-            "integral of ||ω||_∞, not a story. Clay NOT CLAIMED. Filter: "
+            problem="Door-1 identity is written. The only remainder is intra-shell transfer T_{j←j}. Pairing residual is an algebraic unit check. Tjj/Zj is NOT COMPUTED (no DNS, no closed stepper). Not leftover-split strain. Not a measured 3-D CFM close. Clay NOT CLAIMED. DA-VC-01 stays FAIL.",
+            fix="Keep OPEN. Remainder is T_{j←j}. Do not quote sign(Lambda'). "
+            "Smallness is a printed Tjj/Zj or an explicit integral of "
+            "||ω||_∞, not a story. Clay NOT CLAIMED. Filter: "
             "AXISYMMETRIC-SHELL-AUDIT.md.",
-            da_op="cycle axisymmetric-shell ; decompose Tjj / Zj",
+            da_op="cycle axisymmetric-shell ; python -m domain_architect.axisymmetric_shell",
         ),
     ]
 

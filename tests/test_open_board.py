@@ -73,6 +73,13 @@ class TestOpenBoard(unittest.TestCase):
         self.assertIn("not claimed", blob)
         self.assertIn("t_{j", blob)
         self.assertIn("axisymmetric-shell", blob)
+        shell = next(row for row in payload["still_open"] if row["id"] == "axisymmetric-shell")
+        self.assertEqual(shell["bucket"], "STILL_OPEN")
+        self.assertIn("NOT COMPUTED", shell["problem"])
+        self.assertIn("NOT CLAIMED", shell["problem"])
+        self.assertIn("FAIL", shell["problem"])
+        self.assertIn("FAIL", payload["da_vc_01"])
+        self.assertNotIn("DA-VC-01 PASS", payload["da_vc_01"])
 
     def test_cycle_and_api(self):
         report = cycle_open_board()
