@@ -27,6 +27,11 @@ Probe: `python3 scripts/swirl_wall_correction.py`
 Do not start H1. Do not weld ★.
 Do not use this wall to close
 \(T_{j\leftarrow j}\).
+Local-remainder occupancy on the
+named swirl blobs is a different
+printed number
+([`AXISYM-SWIRL-PROBE.md`](AXISYM-SWIRL-PROBE.md)).
+It is not this detector.
 
 ---
 

@@ -165,6 +165,57 @@ def transfer_into(uh_src_pair: np.ndarray, uh_test: np.ndarray, kx, ky, kz, mask
     return -float(np.vdot(b, tes).real) / (n**3)
 
 
+OCC_REL = 1e-3
+
+
+def modewise_pairing(b: np.ndarray, tes: np.ndarray, n: int) -> np.ndarray:
+    """Per-mode energy pairing. Sum over a mask equals -Re(vdot(b, tes))/n³."""
+    raw = np.zeros(tes.shape[1:], dtype=np.float64)
+    for c in range(3):
+        raw += (np.conj(b[c]) * tes[c]).real
+    return -raw / (n**3)
+
+
+def remainder_occupancy(contrib: np.ndarray, mask: np.ndarray, xj: float) -> dict:
+    """Occupancy and cancellation of the local remainder on one shell.
+
+    C = |sum contrib| / sum |contrib|. 1 = no cancel. None if vacuous.
+    occ_support = share of shell modes above OCC_REL of max |contrib|.
+    occ_part = participation ratio of |contrib|.
+    Not 5-D spatial occupation. Not Constantin–Fefferman.
+    """
+    c = contrib[mask]
+    n_modes = int(c.size)
+    signed = float(c.sum()) if n_modes else 0.0
+    l1 = float(np.abs(c).sum()) if n_modes else 0.0
+    scale = max(abs(xj) ** 1.5, 1e-30)
+    # Live remainder, not cancelled noise: |T| must sit above pairing residual.
+    vacuous = n_modes == 0 or abs(signed) <= 1e-14 * scale
+    if vacuous:
+        return {
+            "n_modes": n_modes,
+            "C": None,
+            "occ_support": 0.0,
+            "occ_part": 0.0,
+            "l1": l1,
+            "signed": signed,
+            "vacuous": True,
+        }
+    ac = np.abs(c)
+    mx = float(ac.max())
+    occ_support = float(np.mean(ac >= OCC_REL * mx))
+    occ_part = float((ac.sum() ** 2) / (n_modes * float(np.dot(ac, ac)) + 1e-30))
+    return {
+        "n_modes": n_modes,
+        "C": abs(signed) / l1,
+        "occ_support": occ_support,
+        "occ_part": occ_part,
+        "l1": l1,
+        "signed": signed,
+        "vacuous": False,
+    }
+
+
 def enstrophy_transfer(uh: np.ndarray, kx, ky, kz, mask) -> float:
     wh = curl(uh, kx, ky, kz)
     # B(ω,u) = ω·∇u - u·∇ω
@@ -228,7 +279,11 @@ def score_field(uh: np.ndarray, name: str) -> dict:
         ir, loc, _uv = split_field(uh, shells, j)
         t_full = transfer_into(uh, uh, kx, ky, kz, mask)
         t_no_ir = transfer_into(uh - ir, uh, kx, ky, kz, mask)
-        t_loc = transfer_into(loc, uh, kx, ky, kz, mask)
+        b_loc = bilinear(loc, kx, ky, kz)
+        tes = uh * mask
+        t_loc = -float(np.vdot(b_loc, tes).real) / (n**3)
+        contrib = modewise_pairing(b_loc, tes, n)
+        occ = remainder_occupancy(contrib, mask, xj)
         t_ir = t_full - t_no_ir
         t_uv = t_no_ir - t_loc
         split_err = abs(t_full - (t_ir + t_loc + t_uv))
@@ -254,6 +309,11 @@ def score_field(uh: np.ndarray, name: str) -> dict:
                 "Z_IR": z_ir,
                 "Z_loc": z_loc,
                 "Z_UV": z_uv,
+                "C": occ["C"],
+                "occ_support": occ["occ_support"],
+                "occ_part": occ["occ_part"],
+                "vacuous": occ["vacuous"],
+                "n_modes": occ["n_modes"],
             }
         )
         sum_t += t_full
@@ -262,6 +322,33 @@ def score_field(uh: np.ndarray, name: str) -> dict:
     rho_e = [r["rho_E"] for r in live if r["rho_E"] is not None]
     rho_z = [r["rho_Z"] for r in live if r["rho_Z"] is not None and r["Z_j"] > 1e-14]
     align = strain_alignment(uh, kx, ky, kz, thresh=1e-8 * (energy(curl(uh, kx, ky, kz)) + 1e-30))
+    peak = max(live, key=lambda r: abs(r["rho_E"] or 0.0), default=None)
+    measured = [r for r in live if not r["vacuous"] and r["C"] is not None]
+    wsum = sum(r["X_j"] for r in measured)
+    rem = {
+        "peak_j": None if peak is None else peak["j"],
+        "C_peak": None if peak is None else peak["C"],
+        "occ_support_peak": None if peak is None else peak["occ_support"],
+        "occ_part_peak": None if peak is None else peak["occ_part"],
+        "peak_vacuous": True if peak is None else bool(peak["vacuous"]),
+        "C_mean": (
+            None
+            if wsum <= 0
+            else float(sum(r["C"] * r["X_j"] for r in measured) / wsum)
+        ),
+        "occ_support_mean": (
+            None
+            if wsum <= 0
+            else float(sum(r["occ_support"] * r["X_j"] for r in measured) / wsum)
+        ),
+        "occ_part_mean": (
+            None
+            if wsum <= 0
+            else float(sum(r["occ_part"] * r["X_j"] for r in measured) / wsum)
+        ),
+        "n_live": len(live),
+        "n_measured": len(measured),
+    }
     return {
         "name": name,
         "n": n,
@@ -277,6 +364,7 @@ def score_field(uh: np.ndarray, name: str) -> dict:
         "max_abs_rho_E": max((abs(x) for x in rho_e), default=0.0),
         "max_abs_rho_Z": max((abs(x) for x in rho_z), default=0.0),
         "alignment": align,
+        "remainder": rem,
         "shells": rows,
     }
 

@@ -15,7 +15,8 @@ continuum field. Rotation residual says how much SO(2) survived.
 Remainder T_{j<-j} is not bounded. [ρ] is not claimed.
 If pairing_rel >= 1e-15, the identity is not closed.
 Do not quote the sign of Lambda'.
-Occupancy is not scored here. α is printed separately.
+Local-remainder occupancy and cancellation C are printed.
+They are not the withdrawn wall occupation. α stays separate.
 NS is not solved.
 """
 
@@ -151,8 +152,9 @@ def summarize(scored: dict, rot: float, kind: str, r_ball: float, kz: float) -> 
         "rho_E": scored["rho_E"],
         "rho_Z": scored["rho_Z"],
         "alignment": scored["alignment"],
+        "remainder": scored["remainder"],
         "rotation_residual": rot,
-        "occupancy_scored": False,
+        "occupancy_scored": True,
     }
 
 
@@ -210,7 +212,19 @@ def lemmas(rows: list[dict], page_ok: bool) -> list[dict]:
             "ASW_alpha_separate",
             "alignment α is printed and is not occupancy",
             "pass",
-            "Door 3 criterion. Occupancy not scored. Not a bound.",
+            "Door 3 criterion. Separate from remainder occupancy. Not a bound.",
+        ),
+        rec(
+            "ASW_occ_printed",
+            "local-remainder occupancy and C are printed on the swirl samples",
+            "pass",
+            "Support share and cancellation of T_{j<-j}. Not 5-D occupation. Not CFM.",
+        ),
+        rec(
+            "ASW_occ_class",
+            "remainder occupancy is small for the class",
+            "fail",
+            "A printed number. Not a class fact. 2-D 0.15 is not used.",
         ),
         rec(
             "ASW_remainder",
@@ -260,6 +274,8 @@ def run(
     page_ok = page_cls["allowed_in_estimate"]
     if page_text:
         page_ok = page_ok and "not a close" in page_text.lower()
+        page_ok = page_ok and "occupation from the detector withdrawn" in page_text.lower()
+        page_ok = page_ok and "local-remainder occupancy" in page_text.lower()
     rows = lemmas(fields, page_ok)
     counts = {"pass": 0, "fail": 0, "open": 0}
     for item in rows:
@@ -277,7 +293,7 @@ def run(
             "estimate_open": True,
             "kill": False,
             "lambda_prime_sign_quoted": False,
-            "occupancy_scored": False,
+            "occupancy_scored": True,
             "n": n,
             "r_ball": r_ball,
             "kz": kz,
@@ -291,7 +307,7 @@ def run(
         "claim": (
             "Axisymmetric-with-swirl unaugmented NS; Z_j shell budget; "
             "remainder T_{j<-j}; compact-swirl interpolants measured; "
-            "[ρ] not assumed as a class fact."
+            "local-remainder occupancy printed; [ρ] not assumed as a class fact."
         ),
     }
     if out is not None:

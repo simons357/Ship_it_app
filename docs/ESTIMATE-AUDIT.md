@@ -19,7 +19,9 @@ The estimate this filter wrote:
 [`AXISYM-SHELL.md`](AXISYM-SHELL.md).
 Identity and far-shell Young sit.
 Remainder \(T_{j\leftarrow j}\) is open.
-Class samples of that remainder:
+Class samples of that remainder
+(local-remainder occupancy printed;
+not a class bound):
 [`AXISYM-SWIRL-PROBE.md`](AXISYM-SWIRL-PROBE.md).
 Wall / dictionary correction (occupation
 from the detector withdrawn; not a close

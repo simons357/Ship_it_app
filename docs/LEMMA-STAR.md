@@ -22,8 +22,9 @@ is a different remainder
 (\(T_{j\leftarrow j}\)). Identity and
 far-shell Young sit there. The local
 block does not. Class samples:
-[`AXISYM-SWIRL-PROBE.md`](AXISYM-SWIRL-PROBE.md).
-Do not weld it to ★.
+[`AXISYM-SWIRL-PROBE.md`](AXISYM-SWIRL-PROBE.md)
+(remainder occupancy printed; not a
+close). Do not weld it to ★.
 
 ---
 

@@ -12,6 +12,7 @@ of radius \(R=2.4<\pi\); quantity
 interpolant; remainder
 \(T_{j\leftarrow j}\); [no extra field];
 pairing closed on these samples;
+local-remainder occupancy printed;
 [ρ] not assumed for the class.
 
 Estimate: [`AXISYM-SHELL.md`](AXISYM-SHELL.md).
@@ -23,8 +24,9 @@ Probe: `python3 scripts/axisym_swirl_probe.py`
 
 This is a measurement of named fields.
 It is not a bound. It is not H1. It is
-not Lemma★. Occupancy is not scored.
-\(\alpha\) is printed separately.
+not Lemma★. Occupation from the detector
+withdrawn. Local-remainder occupancy is
+printed and kept separate from \(\alpha\).
 The sign of \(\Lambda'\) is not quoted
 (no closed time series).
 
@@ -74,6 +76,27 @@ time series.
 | swirl+meridional \(m=1\) | 48 | \(0.000583\) | \(0.000569\) | \(-9.2\times 10^{-5}\) |
 | swirl+meridional \(m=3\) | 48 | \(0.000726\) | \(0.000617\) | \(-4.5\times 10^{-5}\) |
 
+Local remainder, on the shell of
+\(\max\lvert T_{j\leftarrow j}/X_j\rvert\).
+\(C=\lvert T_{j\leftarrow j}\rvert/\sum_k\lvert\mathrm{contrib}(k)\rvert\).
+\(\mathrm{occ}_{\mathrm{supp}}\) is the
+share of that shell’s modes with
+\(\lvert\mathrm{contrib}\rvert\ge 10^{-3}\)
+of the shell max. \(\mathrm{occ}_{\mathrm{part}}\)
+is the participation ratio of
+\(\lvert\mathrm{contrib}\rvert\). Vacuous
+when \(\lvert T_{j\leftarrow j}\rvert\) is
+at pairing residual.
+
+| field | \(n\) | peak \(j\) | \(C\) | \(\mathrm{occ}_{\mathrm{supp}}\) | \(\mathrm{occ}_{\mathrm{part}}\) |
+|---|---|---|---|---|---|
+| pure swirl | 32 | vacuous | — | — | — |
+| swirl+meridional \(m=1\) | 32 | \(1\) | \(0.225\) | \(0.982\) | \(0.690\) |
+| swirl+meridional \(m=3\) | 32 | \(1\) | \(0.220\) | \(0.982\) | \(0.666\) |
+| pure swirl | 48 | vacuous | — | — | — |
+| swirl+meridional \(m=1\) | 48 | \(1\) | \(0.222\) | \(0.982\) | \(0.700\) |
+| swirl+meridional \(m=3\) | 48 | \(1\) | \(0.216\) | \(0.982\) | \(0.679\) |
+
 The meridional ratio moved with \(n\)
 and with \(m\). A number can come out
 the other way. Both resolutions are
@@ -84,8 +107,23 @@ Pure swirl on this family printed as
 zero to residual. That is a fact about
 these two grids, not a class bound.
 
+The peak remainder sat on shell \(j=1\)
+at both \(n=32\) and \(n=48\). That
+shell is a fixed integer lattice
+(\(4\le\lvert k\rvert^2<16\)).
+\(\mathrm{occ}_{\mathrm{supp}}=55/56\)
+did not move with \(n\). \(\rho_j\) did.
+Cancellation \(C\sim 0.22\) on the peak
+shell: the signed sum is about a fifth
+of the \(\ell^1\). Visibility of that
+cancel is not uniform smallness.
+
 2-D \(\rho\sim 0.017\) is not used here.
 Occupancy 1 is not imported.
+2-D occupancy \(\sim 0.15\) is not used.
+This is not five-dimensional spatial
+occupation, and it is not the withdrawn
+wall detector.
 
 ---
 
@@ -99,6 +137,10 @@ Occupancy 1 is not imported.
   \(\dot Z_j\).
 - Occupation decay from the swirl-wall
   detector. That claim is withdrawn.
+- Remainder occupancy small for the
+  class. \(0.982\) is a printed share
+  on these blobs. It did not fall
+  with \(n\).
 
 ---
 
@@ -110,7 +152,9 @@ Occupancy 1 is not imported.
 | ASW_pairing | **pass** | residual \(10^{-18}\) |
 | ASW_split | **pass** | Door 1 on the interpolant |
 | ASW_rho_printed | **pass** | ratios in the table |
-| ASW_alpha_separate | **pass** | \(\alpha\) printed; occupancy not scored |
+| ASW_alpha_separate | **pass** | \(\alpha\) printed; not occupancy |
+| ASW_occ_printed | **pass** | \(C\) and \(\mathrm{occ}\) on the peak remainder |
+| ASW_occ_class | **fail** | not a class fact; did not decay with \(n\) |
 | ASW_remainder | **fail** | \(T_{j\leftarrow j}\) open |
 | ASW_rho_class | **fail** | [ρ] is not a class fact |
 | ASW_ns_solved | **fail** | class and \(\rho_j\) stay in the sentence |

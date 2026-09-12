@@ -311,9 +311,14 @@ printed \(\max\lvert T_{j\leftarrow j}/X_j\rvert\)
 in \(6\times 10^{-4}\) to \(1.4\times 10^{-3}\)
 on \(n=32,48\), and moved with \(n\)
 and with the meridional weight. That
-is not [ρ] for the class. Occupancy
-was not scored. \(\alpha\) stayed
-separate.
+is not [ρ] for the class. Local-remainder
+occupancy is now printed on those
+blobs: \(C\sim 0.22\),
+\(\mathrm{occ}_{\mathrm{supp}}=55/56\)
+on the peak shell \(j=1\), and that
+share did not fall with \(n\).
+\(\alpha\) stayed separate. Occupation
+from the wall detector stays withdrawn.
 
 Named in the audit and **not
 regenerated** here:

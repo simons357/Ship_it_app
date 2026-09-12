@@ -28,7 +28,9 @@ class AxisymSwirlProbeTests(unittest.TestCase):
         self.assertIn("[no extra field]", text)
         self.assertIn("**Not a close. NS not solved.", text)
         self.assertIn("[ρ] not assumed", text)
-        self.assertIn("Occupancy is not scored", text)
+        self.assertIn("local-remainder occupancy", text)
+        self.assertIn("Occupation from the detector", text)
+        self.assertIn("withdrawn", text)
         self.assertNotIn("NS is solved", text)
         self.assertNotIn("Clay is solved", text)
         self.assertNotIn("coherence viscosity", text)
@@ -55,6 +57,8 @@ class AxisymSwirlProbeTests(unittest.TestCase):
         self.assertEqual(rows["ASW_split"]["verdict"], "pass")
         self.assertEqual(rows["ASW_rho_printed"]["verdict"], "pass")
         self.assertEqual(rows["ASW_alpha_separate"]["verdict"], "pass")
+        self.assertEqual(rows["ASW_occ_printed"]["verdict"], "pass")
+        self.assertEqual(rows["ASW_occ_class"]["verdict"], "fail")
         self.assertEqual(rows["ASW_remainder"]["verdict"], "fail")
         self.assertEqual(rows["ASW_rho_class"]["verdict"], "fail")
         self.assertEqual(rows["ASW_page_clean"]["verdict"], "pass")
@@ -62,7 +66,7 @@ class AxisymSwirlProbeTests(unittest.TestCase):
         self.assertEqual(payload["domain_verdict"], "open")
         self.assertTrue(payload["meta"]["estimate_open"])
         self.assertFalse(payload["meta"]["lambda_prime_sign_quoted"])
-        self.assertFalse(payload["meta"]["occupancy_scored"])
+        self.assertTrue(payload["meta"]["occupancy_scored"])
         self.assertFalse(payload["meta"]["h1_started"])
         self.assertFalse(payload["meta"]["tuning_the_pde"])
         by_name = {f["name"]: f for f in payload["fields"]}
@@ -77,6 +81,12 @@ class AxisymSwirlProbeTests(unittest.TestCase):
         mer = by_name["swirl_meridional_m3"]
         self.assertLess(pure["max_abs_rho_E"], 1e-12)
         self.assertGreater(mer["max_abs_rho_E"], pure["max_abs_rho_E"])
+        self.assertTrue(pure["remainder"]["peak_vacuous"])
+        self.assertFalse(mer["remainder"]["peak_vacuous"])
+        self.assertGreater(mer["remainder"]["C_peak"], 0.0)
+        self.assertLessEqual(mer["remainder"]["C_peak"], 1.0)
+        self.assertGreater(mer["remainder"]["occ_support_peak"], 0.0)
+        self.assertLessEqual(mer["remainder"]["occ_support_peak"], 1.0)
         self.assertIn("AXISYM-SWIRL-PROBE.md", ESTIMATE.read_text())
 
 
