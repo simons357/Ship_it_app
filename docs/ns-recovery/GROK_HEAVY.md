@@ -35,7 +35,7 @@ Human: Jonathan Simons (`winchester.anesthesia@gmail.com` / `simonsmedical@iclou
 
 ## What you are being asked to do
 
-Live work, in order:
+Remaining-work lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Live work, in order:
 
 1. **Attack 9D (retargeted):** growing input **and** output supports, full complex polarizations, frequency factors retained. Uniform 9B target \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}\|w\|_2^2\). Fixed-output \(\Theta(m^2)\) is **excluded** (\(K\le 16s\)). Spec: `docs/math/ns_attacks/ATTACK_9D_THETA_M2_LOCKED_PHASE.md`. Exclusion: `docs/math/ns_attacks/ATTACK_9B_COUNTING_CS_EXCLUSION.md`.
 2. **Lemma★ proof:** write the triadic reason that stretching cannot outrun spectral spread. HH→L is the dangerous channel. That reason is **not written**.
@@ -224,6 +224,7 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 |---|---|
 | **This file** | Grok Heavy entry |
 | [`SOT.md`](SOT.md) | Packet source of truth |
+| [`WHAT-ELSE.md`](WHAT-ELSE.md) | Remaining work: 9D + ★ reason only |
 | [`SUPERGROK-ABC-LOCK.md`](SUPERGROK-ABC-LOCK.md) | SuperGrok ABC_λ filing: keep evaluator line; **refuse** falsifier stamp |
 | [`ABC-SMALL-LATTICE.md`](ABC-SMALL-LATTICE.md) | Truncated ABC envelope on locked core; well-posed; ★ not killed |
 | [`CS-REMAINDER-VS-DA-REJECT.md`](CS-REMAINDER-VS-DA-REJECT.md) | PR #24 ABC / λ table vs DA exact-core REJECT; ★ still OPEN |
