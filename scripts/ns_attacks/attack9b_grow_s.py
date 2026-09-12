@@ -26,6 +26,7 @@ from ns_attacks.attack9b_output_counting import (  # noqa: E402
     cs_rows,
     random_exact_shell_w,
 )
+from ns_attacks.stokes_moments import k_norm2, nonlinear_B  # noqa: E402
 
 
 def _py(x):
@@ -48,9 +49,16 @@ def input_sizes(n_pos: int) -> List[int]:
     return out
 
 
-def betas_for_alpha(alpha: int, shells_ext: Dict[int, Sequence]) -> List[int]:
-    """Outputs reachable by two inputs on shell α: β ≤ 4α, β ≠ α."""
-    return sorted(b for b in shells_ext if b != alpha and b <= 4 * alpha)
+def occupied_betas(Buu: Dict, alpha: int, tol: float = 1e-14) -> List[int]:
+    """Output shells that B actually hits. β ≤ 4α, β ≠ α. Empty shells skipped."""
+    seen = set()
+    for k, vec in Buu.items():
+        if float(np.linalg.norm(vec)) <= tol:
+            continue
+        beta = int(k_norm2(k))
+        if beta != alpha and beta <= 4 * alpha:
+            seen.add(beta)
+    return sorted(seen)
 
 
 def grow_sweep(
@@ -59,27 +67,29 @@ def grow_sweep(
     n_trials: int = 4,
 ) -> Dict:
     shells = shells_up_to(kmax)
-    shells_ext = shells_up_to(max(4 * kmax, 16))
     rows = []
     worst = {"K": -1.0}
+    n_fields_w = 0
 
     for alpha, modes_pos in sorted(shells.items()):
         n_pos = len(modes_pos)
         if n_pos < 2:
             continue
-        betas = betas_for_alpha(int(alpha), shells_ext)
-        if not betas:
-            continue
         for m in input_sizes(n_pos):
-            for beta in betas:
-                for t in range(n_trials):
-                    if m == n_pos:
-                        use = list(modes_pos)
-                    else:
-                        pick = rng.choice(n_pos, size=m, replace=False)
-                        use = [modes_pos[int(i)] for i in pick]
-                    w = random_exact_shell_w(use, rng)
-                    rec = cs_rows(w, float(beta))
+            for t in range(n_trials):
+                if m == n_pos:
+                    use = list(modes_pos)
+                else:
+                    pick = rng.choice(n_pos, size=m, replace=False)
+                    use = [modes_pos[int(i)] for i in pick]
+                w = random_exact_shell_w(use, rng)
+                Buu = nonlinear_B(w)
+                n_fields_w += 1
+                betas = occupied_betas(Buu, int(alpha))
+                if not betas:
+                    continue
+                for beta in betas:
+                    rec = cs_rows(w, float(beta), Buu=Buu)
                     rec["trial"] = t
                     rec["m_requested"] = int(m)
                     rec["n_pos_shell"] = n_pos
@@ -120,6 +130,7 @@ def grow_sweep(
     ks = [r["K"] / r["s"] for r in rows if r["s"] > 0 and math.isfinite(r["K"])]
     return {
         "n_fields": len(rows),
+        "n_input_fields": n_fields_w,
         "kmax": kmax,
         "n_trials": n_trials,
         "max_K": _max("K"),
@@ -187,7 +198,7 @@ def main() -> int:
     print(json.dumps(_py(slim), indent=2), flush=True)
     if args.out:
         Path(args.out).parent.mkdir(parents=True, exist_ok=True)
-        Path(args.out).write_text(json.dumps(_py(summary), indent=2))
+        Path(args.out).write_text(json.dumps(_py(slim), indent=2))
         print(f"wrote {args.out}", flush=True)
     return 0 if summary["verdict"].startswith("GROW_S") else 1
 

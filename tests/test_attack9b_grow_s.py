@@ -25,6 +25,9 @@ class Attack9BGrowSTests(unittest.TestCase):
         self.assertIn("\\Pi_\\beta B", text)
         self.assertIn("16s", text)
         self.assertIn("OPEN", text)
+        self.assertIn("0.456", text)
+        self.assertIn("C_0", text)
+        self.assertIn("not a kill", text)
         self.assertNotIn("NS is solved", text)
         self.assertNotIn("Clay is solved", text)
 

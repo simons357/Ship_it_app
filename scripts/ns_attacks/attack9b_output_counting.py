@@ -71,11 +71,12 @@ def max_pairs_per_output(support: Sequence[ModeKey]) -> Tuple[int, int]:
     return best, m
 
 
-def cs_rows(w: Field, beta: float, tol: float = 1e-14) -> Dict:
+def cs_rows(w: Field, beta: float, tol: float = 1e-14, Buu: Field | None = None) -> Dict:
     """Check |B̂_k| ≤ |k| ||w||₂² on shell β; count occupied outputs s."""
     w = normalize_field(w)
     e = field_l2(w) ** 2
-    Buu = nonlinear_B(w)
+    if Buu is None:
+        Buu = nonlinear_B(w)
     PiB = project_B_to_shell(Buu, beta)
     occupied = []
     max_ratio = 0.0
@@ -104,7 +105,11 @@ def cs_rows(w: Field, beta: float, tol: float = 1e-14) -> Dict:
         alpha = float("nan")
     else:
         alpha = float(next(iter(alphas)))
-    info = K_of_w(w, float(alpha), beta) if alpha == alpha else {"K": float("nan"), "PiB_L2": 0.0}
+    info = (
+        K_of_w(w, float(alpha), beta, Buu=Buu)
+        if alpha == alpha
+        else {"K": float("nan"), "PiB_L2": 0.0}
+    )
     s_bound = s * (beta ** 2) / (alpha ** 2) if alpha > 0 else float("nan")
     return {
         "alpha": float(alpha),

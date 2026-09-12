@@ -104,7 +104,7 @@ The **field and the quotient are different**.
 |---|---|---|
 | Field | Exact-shell \(w_\alpha\) plus \(\varepsilon\)-closer on \(\beta\), aligned with \(\Pi_\beta B(w_\alpha,w_\alpha)\) | Partners of a low key (or the whole low shell) on a high sphere \(\alpha\) |
 | Reported number | \(K_{\alpha,\beta}\), or \(\mathcal R_\star\to K\) | Full \(\mathcal R_\star(v)\) |
-| Scored behaviour | Finite samples: \(\max K\approx 0.641\) at \((4,8)\); counting sweep \(\max K\approx 0.506\), \(\max\sqrt{K}\approx 0.711\) | \(\mathcal R_\star\sim\beta/\alpha\); largest \(\approx 0.71\) at \(\alpha=5\), \(\beta=4\); falls as \(\alpha/\beta\) grows |
+| Scored behaviour | Finite samples: aligned \(\max K\approx 0.641\) at \((4,8)\); counting \(\max K\approx 0.506\), \(\max\sqrt{K}\approx 0.711\); grow-\(s\) random pol \(\max K\approx 0.456\) at \((16,32)\), \(\max s=192\) | \(\mathcal R_\star\sim\beta/\alpha\); largest \(\approx 0.71\) at \(\alpha=5\), \(\beta=4\); falls as \(\alpha/\beta\) grows |
 | Why | Frequency factors in \(K\) | Vertex carries \(\sqrt{\beta}\), not \(\sqrt{\alpha}\) |
 
 Do **not** merge Attack 12’s \(0.71\) with

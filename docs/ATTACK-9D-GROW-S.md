@@ -72,10 +72,13 @@ Both grow. Full complex polarizations.
 ## Sweep (this branch)
 
 Seed 1390. Exact shells through
-\(k_{\max}=8\). Random subsets of the
-positive half, then the full shell.
-Every \(\beta\le 4\alpha\), \(\beta\neq\alpha\).
-Four trials per \((m,\alpha,\beta)\).
+\(k_{\max}=8\) (\(|k_i|\le 8\)).
+Random subsets of the positive half,
+then the full shell. One \(B(w,w)\)
+per input field. Every occupied
+output shell with \(\beta\le 4\alpha\),
+\(\beta\neq\alpha\). Four trials per
+\((m,\alpha)\).
 
 Inequalities sit (pairs on one \(k\le m\);
 \(\lvert\widehat B_k\rvert\le\lvert k\rvert\|w\|_2^2\);
@@ -84,9 +87,34 @@ Inequalities sit (pairs on one \(k\le m\);
 raises \(C_{\mathrm{geom}}\).
 \(\mathcal R_\star\to\infty\) would kill ★.
 
-Numbers after the probe runs live in
-the JSON. This page does not cash them
-as a bound or a kill.
+Printed samples on that draw
+(seed 1390, \(k_{\max}=8\), four trials):
+2084 input fields, 39853 occupied
+\((\alpha,\beta)\) rows. Max
+\(K\approx 0.456\) at
+\((\alpha,\beta)=(16,32)\), \(s=4\),
+\(m=4\). Max \(\sqrt{K}\approx 0.675\).
+Max \(s=192\). Max \(m=120\).
+Pairs / CS / \(K\le 16s\): no fails.
+On the \(K\) vs \(s\) curve, max \(K\)
+for \(s\le 8\) is \(0.456\); for
+\(s\ge 24\) it is \(0.239\). Larger
+occupancy did not raise \(K\) here.
+
+This is random polarizations on
+growing supports. It is not the
+aligned 9B search that printed
+\(K\approx 0.641\) at \((4,8)\).
+Do not merge those two numbers.
+A finite max is not \(C_0\).
+A larger finite number only raises
+\(C_{\mathrm{geom}}\).
+\(\mathcal R_\star\to\infty\) would
+kill ★. This draw did not. It is
+not a kill.
+
+JSON: `results/attack9b_grow_s/grow_s.json`
+(summary; per-row dump not committed).
 
 ---
 

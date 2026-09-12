@@ -80,8 +80,11 @@ spheres: landings \(O(m)\),
 \(\mathcal R_\star\sim\beta/\alpha\),
 falls as the high shell climbs.
 N-shell: saturates. 9B aligned closer:
-finite \(K\) on samples. ABC_λ: finite
-gate, not a kill.
+finite \(K\) on samples. Grow \(s\)
+(random pol, \(k_{\max}=8\)): max
+\(K\approx 0.456\), max \(s=192\);
+larger \(s\) did not raise \(K\).
+ABC_λ: finite gate, not a kill.
 
 That is the map. It is not the reason
 as a theorem. The reason would force

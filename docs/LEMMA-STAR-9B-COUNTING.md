@@ -138,7 +138,11 @@ Full complex polarizations, growing input
 **and** output support, frequency factors
 kept. Live write:
 [`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md).
-Probe:
+Seed 1390, \(k_{\max}=8\): max
+\(K\approx 0.456\) at \((16,32)\),
+max \(s=192\). Larger \(s\) did not
+raise \(K\). Not \(C_0\). Not the
+aligned \(0.641\). Probe:
 `python3 scripts/ns_attacks/attack9b_grow_s.py`
 Also:
 `python3 scripts/ns_attacks/attack9b_output_counting.py`

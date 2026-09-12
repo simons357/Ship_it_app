@@ -40,7 +40,7 @@ The Riemann hypothesis is not solved.
 | RH sits | Q / 22045478 sits as inverse-GCD. | **NO** as RH. **YES** as Q. |
 | Occupation decays | Detector claim was wrong. | **NO.** Withdrawn. |
 | 9D is live | Designed \(\Theta(m^2)\) is Freiman-AP. Growing \(s\) is a 9B test. | **NO** as designed 9D. **OPEN** as grow \(s\) on 9B. Same \(B\). Not a new object. |
-| \(0.327\) / \(0.641\) / \(0.610\) kills ★ | Finite. Raises \(C_{\mathrm{geom}}\). | **NO** as a kill. **YES** as printed samples. |
+| \(0.327\) / \(0.641\) / \(0.610\) / grow-\(s\) \(0.456\) kills ★ | Finite. Raises \(C_{\mathrm{geom}}\). | **NO** as a kill. **YES** as printed samples. |
 | H1 is written, so H1 sits | The estimate is stated. | **YES** as a write. **NO** as a theorem. **OPEN** as leftover 1. |
 | Ring sits | Direction bound is REPAIR. | **NO** as proved. |
 | Evolution / biology closes a row | Maps only. | **NO** as a close. |
@@ -87,7 +87,7 @@ under a new name.
 | Ring as proved | REPAIR. |
 | P1 / P1-loc / PC as H1 | Cousins. |
 | CS \(E^{3/2}\) as shape 1 | Mid-Bad / H3 class. |
-| Finite \(0.641\), \(0.610\), \(0.327\), HH→L \(0.71\) as \(C_0\) or a falsifier | Samples. |
+| Finite \(0.641\), \(0.610\), \(0.327\), HH→L \(0.71\), grow-\(s\) \(0.456\) as \(C_0\) or a falsifier | Samples. |
 | Glue H1 to ★, or either to the shell door | Different integrals. |
 | \(K(t)\) in the PDE | Forbidden on B. |
 | SFE / UHF / DHFA / HB as constitutive NS | Shelf. |
