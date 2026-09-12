@@ -81,6 +81,24 @@ class Attack9DTests(unittest.TestCase):
         self.assertTrue(summary["verdict"].startswith("9D_SAMPLES_FINITE"))
         self.assertLess(summary["max_K"], 16.0 * max(summary["max_s"], 1))
 
+    def test_results_json_is_not_a_kill(self):
+        import json
+
+        path = ROOT / "results" / "attack9d_growing" / "attack9d_growing.json"
+        self.assertTrue(path.is_file())
+        data = json.loads(path.read_text())
+        self.assertEqual(data["attack"], "9D-growing-full-complex")
+        self.assertIs(data["ns_solved"], False)
+        self.assertEqual(data["lemma_star"], "OPEN")
+        self.assertEqual(data["kill_lane"], "LIVE")
+        self.assertEqual(data["star_reason"], "NOT written")
+        self.assertEqual(data["frequency_factors"], "kept")
+        self.assertLess(data["max_K"], 1.0)
+        self.assertEqual(data["n_fail_K_le_16s"], 0)
+        headline = (ROOT / "results" / "attack9d_growing" / "HEADLINE.md").read_text()
+        self.assertIn("NOT written", headline)
+        self.assertIn("0.612", headline)
+
 
 if __name__ == "__main__":
     unittest.main()

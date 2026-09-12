@@ -87,4 +87,10 @@ PYTHONPATH=scripts python3 scripts/ns_attacks/attack9d_growing.py \
   --out results/attack9d_growing/attack9d_growing.json
 ```
 
+First sweep (seed 1390): 225 fields,
+max \(K\approx 0.612\) at \((4,8)\), \(s=12\),
+\(m=6\). Did not beat finite 9B \(0.641\).
+Did not diverge. `results/attack9d_growing/`.
+Bounded samples are not a proof.
+
 **NS not solved.** Lemma★ OPEN. Kill lane LIVE.

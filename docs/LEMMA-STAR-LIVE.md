@@ -39,6 +39,12 @@ A larger finite number only raises
 
 Probe: `python3 scripts/ns_attacks/attack9d_growing.py`
 
+First full-complex sweep (seed 1390, 225
+fields): max \(K\approx 0.612\) at \((4,8)\).
+Did not beat finite 9B \(0.641\). Did not
+diverge. Not a proof. Kill lane LIVE.
+`results/attack9d_growing/`
+
 Linear-pol growing-\(s\) samples (scored,
 not this close):
 [`LEMMA-STAR-9B-GROWING.md`](LEMMA-STAR-9B-GROWING.md).
