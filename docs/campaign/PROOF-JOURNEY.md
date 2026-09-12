@@ -73,6 +73,8 @@ flowchart TB
 
 ---
 
-## Outreach
+## Outreach & daily feed
 
-[`X-XAI-OUTREACH.md`](./X-XAI-OUTREACH.md) · [`REPUTATION-LOCK.md`](./REPUTATION-LOCK.md)
+- X / xAI one-shots: [`X-XAI-OUTREACH.md`](./X-XAI-OUTREACH.md)  
+- **Daily Substack + Skool:** [`FEED.md`](./FEED.md) · week-1 copy [`FEED-WEEK1.md`](./FEED-WEEK1.md) · log [`FEED-LOG.md`](./FEED-LOG.md)
+
