@@ -83,6 +83,15 @@ class DaMachineTests(unittest.TestCase):
         self.assertEqual(r["domain"], "U")
         self.assertEqual(r["verdict"], "open")
 
+    def test_bhand_claim_lands_in_b(self):
+        r = classify_claim("B-hand five finger map after the spindle")
+        self.assertEqual(r["domain"], "B")
+        self.assertEqual(r["verdict"], "open")
+        self.assertIn("B-hand", r["reason"])
+        fire = classify_claim("make our fire state the NS un-aug realized state")
+        self.assertEqual(fire["domain"], "B")
+        self.assertEqual(fire["verdict"], "open")
+
     def test_wave_claim_lands_in_u(self):
         r = classify_claim("can we use superposition and falsification on the waveform")
         self.assertEqual(r["domain"], "U")

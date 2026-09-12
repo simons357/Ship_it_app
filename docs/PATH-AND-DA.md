@@ -91,6 +91,14 @@ If (6) sits, B sits. If not, B stays open.
 Full chain: [`UNAUGMENTED-NS-CHAIN.md`](UNAUGMENTED-NS-CHAIN.md).
 PDF (open, not QED): [`TRACK-B-CHAIN.pdf`](TRACK-B-CHAIN.pdf).
 
+Speculated whole (map, not a close):
+[`DA-NS-FIVE-FINGER.md`](DA-NS-FIVE-FINGER.md).
+After the spindle on the geometric write
+is H2, H3, Ring (REPAIR), and shapes 1–3.
+That is not this Path 1 (6). Gronwall /
+BKM / bootstrap still wait on (6).
+Cosmo five fingers stay the other book.
+
 ---
 
 ## Path 2 — RH

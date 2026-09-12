@@ -24,6 +24,9 @@ constant.
 
 Probe: `python3 scripts/h1_one_cylinder.py`
 
+After the spindle (named blanks, not
+Gronwall): [`DA-NS-FIVE-FINGER.md`](DA-NS-FIVE-FINGER.md).
+
 ---
 
 ## Why switch

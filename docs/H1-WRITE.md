@@ -30,6 +30,9 @@ Data behind the write:
 [`WRITE_6_SUPPORTED.md`](WRITE_6_SUPPORTED.md).
 Shapes: [`H1-SHAPES.md`](H1-SHAPES.md).
 Locator: [`WHERE-H1.md`](WHERE-H1.md).
+After the spindle (H2, H3, Ring REPAIR,
+shapes 1–3; map, not a close):
+[`DA-NS-FIVE-FINGER.md`](DA-NS-FIVE-FINGER.md).
 
 ---
 

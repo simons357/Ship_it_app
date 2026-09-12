@@ -45,6 +45,8 @@ The Riemann hypothesis is not solved.
 | Ring sits | Direction bound is REPAIR. | **NO** as proved. |
 | Evolution / biology closes a row | Maps only. | **NO** as a close. |
 | SFE / HB / \(K(t)\) in the PDE | Other equation or discarded. | **NO.** |
+| Cosmo five fingers close NS | Other book (`DA-FINGERS.md`). | **NO** as constitutive NS. |
+| B-hand five fingers close NS | Named leftovers already seated. | **YES** as a map. **NO** as a close. |
 
 Those rows do not move again
 under a new name.
@@ -67,6 +69,7 @@ under a new name.
 | Locked \(\mathcal G\) | Definition of leftover 1. Not a bound. |
 | Locked \(\mathcal R_\star\) | Definition of leftover 4. Not a bound. |
 | Two-shell gap-cancel | Identity. \((\alpha-\beta)\) drops out of \(\mathcal R_\star\). Not Need★. |
+| B-hand five-finger map | Speculated whole on leftovers 1, 3, 4, 5. After the spindle named. Fire / realized / future named. [`DA-NS-FIVE-FINGER.md`](DA-NS-FIVE-FINGER.md). Not a close. |
 | Occupancy \(55/56\) | Printed on those interpolants. Did not decay with \(n\). Not \([\rho]\). |
 | \(K\le 16s\) | Counting. Fixed \(s\) cannot unbound \(K\). |
 
@@ -94,6 +97,8 @@ under a new name.
 | \(K(t)\) in the PDE | Forbidden on B. |
 | SFE / UHF / DHFA / HB as constitutive NS | Shelf. |
 | Start H1 from ABC_λ | Named only. |
+| Cosmo / SM five fingers as constitutive NS | Other book. [`DA-FINGERS.md`](DA-FINGERS.md). |
+| B-hand five-finger map as a close | MAP only. Does not move leftover 1, 4, or 5. |
 
 ---
 
@@ -135,6 +140,10 @@ If we score a framework, that is a map
 and still NO as a close.
 If we write Need★, that is YES as a
 write and still MISSING as a bound.
+If we run the B-hand five-finger
+routine, that is a map and still
+NO as a close
+([`DA-NS-FIVE-FINGER.md`](DA-NS-FIVE-FINGER.md)).
 If we run grow-\(s\), that is a test
 and still OPEN as ★.
 If a number is large and finite, that

@@ -134,6 +134,16 @@ def classify_claim(claim: str) -> dict:
             "verdict": "open",
             "reason": "looks like score U / SM Lagrangian / waveform; run sm or how",
         }
+    if re.search(
+        r"\bb-?hand\b|after the spindle|ns five.?finger|"
+        r"unaugmented five.?finger|da-ns-five|fire state",
+        text,
+    ):
+        return {
+            "domain": "B",
+            "verdict": "open",
+            "reason": "B-hand map; not Cosmo fingers. Regularity stays open. Run bhand.",
+        }
     if re.search(r"\bq_?1\b|augmented|ladyzhenskaya", text):
         return {"domain": "A", "verdict": "open", "reason": "looks like Track A; run check A"}
     if re.search(
@@ -453,6 +463,31 @@ def cmd_fingers() -> int:
         "product passes; implied F fails; vacuum/Planck width artifact; θ is the topological leftover",
     )
     print(f"wrote {payload.get('_wrote')}")
+    return 0
+
+
+def cmd_bhand() -> int:
+    from da_ns_five_finger import run as bhand_run
+
+    payload = bhand_run()
+    print("B-hand five-finger map. Verdict: MAP. Not a close.")
+    print("Cosmo / SM fingers stay the other book.")
+    for f in payload["fingers"]:
+        print(f"  Finger {f['id']} {f['name']}: {f['status']}")
+    print("After the spindle:")
+    for blank in payload["after_the_spindle"]:
+        print(f"  {blank['name']}: {blank['status']}")
+    print("Fire: Need★ MISSING (primary). Grow s secondary. H1 write sits.")
+    print("Realized: unaugmented NS OPEN. A is not B.")
+    print("Future: one leftover moved, or a kill. Not a weld.")
+    print("accepted_as_close:", payload["accepted_as_close"])
+    print("NS solved:", payload["ns_solved"])
+    append_run(
+        "B",
+        "B-hand five-finger map on unaugmented NS leftovers",
+        "open",
+        "MAP; after the spindle named; Need★ still MISSING; Cosmo fingers out",
+    )
     return 0
 
 
@@ -1270,6 +1305,10 @@ def main() -> int:
     sub.add_parser("cosmos", help="official Cosmo 16 plus isolated screen")
     sub.add_parser("sixteen", help="identify 4x4 list, run each, name the 16th")
     sub.add_parser("fingers", help="five-finger DA on the R line, recurse, fate the 16")
+    sub.add_parser(
+        "bhand",
+        help="B-hand five-finger map on unaugmented NS leftovers; not Cosmo fingers",
+    )
     sub.add_parser("fate", help="category + general fate for each of the 16, then smaller pieces")
     sub.add_parser("how", help="how a typed catalog can say possible and emit X")
     sub.add_parser("flush", help="Hilbert flush of which candidates carry the score")
@@ -1369,6 +1408,8 @@ def main() -> int:
         return cmd_sixteen()
     if args.cmd == "fingers":
         return cmd_fingers()
+    if args.cmd == "bhand":
+        return cmd_bhand()
     if args.cmd == "fate":
         return cmd_fate()
     if args.cmd == "how":

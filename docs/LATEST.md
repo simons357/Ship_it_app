@@ -20,6 +20,10 @@ ordinary NS. Uniform H1 as eps → 0 still
 open. Paper: docs/THEOREM-A-Q1.pdf
 
 **Unaug NS (ordinary) — open**
+B-hand five-finger map (speculated
+whole; after the spindle; fire /
+realized / future; MAP, not a close):
+docs/DA-NS-FIVE-FINGER.md
 Primary: Need★ signed dual on HH→L
 (MISSING after gap-cancel):
 docs/NEED-STAR-HH-L-DUAL.md

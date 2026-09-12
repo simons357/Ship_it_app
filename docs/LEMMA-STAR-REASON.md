@@ -146,6 +146,9 @@ truncated ABC, SuperGrok falsifier
 stamp, Dream Team vote.
 
 Out of this book: Q-stack, SND,
-Theorem H, five fingers, augmented NSE.
+Theorem H, Cosmo five fingers,
+augmented NSE. B-hand map:
+[`DA-NS-FIVE-FINGER.md`](DA-NS-FIVE-FINGER.md).
+MAP, not a close.
 
 NS not solved. Lemma★ OPEN.

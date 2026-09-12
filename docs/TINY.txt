@@ -4,6 +4,12 @@ Primary math target (Need★; signed dual
 MISSING after gap-cancel):
 docs/NEED-STAR-HH-L-DUAL.md
 scripts/need_star_hh_l_dual.py
+B-hand five-finger map (speculated
+whole; after the spindle; fire /
+realized / future; MAP, not a close):
+docs/DA-NS-FIVE-FINGER.md
+scripts/da_ns_five_finger.py
+Cosmo / SM fingers stay the other book.
 9D is secondary kill-lane pressure:
 docs/ATTACK-9D-GROW-S.md
 docs/LEMMA-STAR-REASON.md

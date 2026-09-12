@@ -16,9 +16,11 @@ It is not a theorem. NS is not solved.**
 
 9D / grow \(s\) is secondary kill-lane
 pressure on the same leftover.
-Soft X silent. Five fingers, Q-stack,
-SND, Theorem H, augmented NSE: out
-of this book.
+Soft X silent. Cosmo five fingers,
+Q-stack, SND, Theorem H, augmented
+NSE: out of this book. The B-hand
+map ([`DA-NS-FIVE-FINGER.md`](DA-NS-FIVE-FINGER.md))
+is a different object. MAP, not a close.
 
 Identities: [`math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md).
 Map: [`LEMMA-STAR-REASON.md`](LEMMA-STAR-REASON.md).
@@ -137,7 +139,8 @@ unsigned size, is the leftover.
 - Grow \(s\) as a close. Secondary
   pressure. Finite \(K\approx 0.456\)
   is not \(C_0\).
-- H1. Soft X. Five fingers.
+- H1. Soft X. Cosmo five fingers.
+  The B-hand map is not this estimate.
 
 ---
 

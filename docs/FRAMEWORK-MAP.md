@@ -133,6 +133,8 @@ axisymmetric class.
 | Selection on bad pairs | surviving pairs | \(A_{\mathrm{bad}}\) on \(Q_r\) | 1 | **STOP** if sold as WRITE (6). The three shapes still sit unproved. |
 | Selection on zeros | surviving zeros | \(\zeta(s)=0\) | 6 | **DEAD.** Q is not RH. Evolution does not force the line. |
 | Information bottleneck | rate–distortion | — | — | **STOP.** Already out as NS. |
+| Cosmo / SM five fingers as NS | couplings, Cosmo types | — | — | **STOP.** Other book. [`DA-FINGERS.md`](DA-FINGERS.md). |
+| B-hand five-finger map | speculated whole | identities; spindle; after the spindle; Need★; restricted class | 1, 3, 4, 5 | **MAP.** Names leftovers already seated. After the spindle is H2 / H3 / Ring REPAIR / shapes 1–3. Does not move a row. [`DA-NS-FIVE-FINGER.md`](DA-NS-FIVE-FINGER.md). |
 
 ---
 

@@ -10,6 +10,9 @@ Yes / no / open (the tape):
 [`YES-NO-OPEN.md`](YES-NO-OPEN.md).
 Borrowed systems (maps only; not a close):
 [`FRAMEWORK-MAP.md`](FRAMEWORK-MAP.md).
+B-hand five-finger map (not a leftover):
+[`DA-NS-FIVE-FINGER.md`](DA-NS-FIVE-FINGER.md).
+Cosmo / SM fingers stay the other book.
 Living line: GitHub PR 24,
 branch `cursor/unaugmented-r4-vorticity-f80e`.
 Operator: Jonathan Robert Simons
