@@ -29,6 +29,16 @@ Prime Field Technologies LLC --- Savannah, Georgia\\
 \date{June 2026 \quad|\quad Preprint}
 
 \begin{document}
+\begin{center}
+\fbox{\parbox{0.92\linewidth}{\centering\small
+\textbf{ERRATA LOCK (2026-09-12).}
+Viscosity packaging uses $\mathcal{D}\ge\nu\cdot 4^{1/\rho_0}\rho_0 X$ and
+$\alpha=2\nu\cdot 4^{1/\rho_0}\rho_0$ (not $\nu^2$).
+SND$\equiv$GNC / Goldbach packaging from older drafts is \textbf{withdrawn};
+see \texttt{docs/papers/submit/03\_t2\_shell\_flux\_gronwall.tex} and
+\texttt{06\_status\_errata.tex}. Conditional on SND only; NS not solved.}}
+\end{center}
+\vspace{0.5em}
 \maketitle
 
 \begin{mdframed}[linecolor=darkblue,linewidth=1.5pt,backgroundcolor=white,
@@ -57,7 +67,7 @@ We prove that the T2 inter-shell flux dispersal inequality
 \quad \beta_N < \alpha\cdot\eta_N,
 \]
 closes \emph{conditionally on the Spectral Non-Dispersal (SND) condition},
-with explicit decay rate $\alpha = 2\nu^2 \cdot 4^{1/\rho_0}\cdot\rho_0$
+with explicit decay rate $\alpha = 2\nu \cdot 4^{1/\rho_0}\cdot\rho_0$
 derived from the Shell-Spread Poincar\'{e} Inequality (Theorem~F of the companion paper).
 The key structural insight is a two-step reduction:
 (i) the low-frequency self-interaction flux \emph{vanishes exactly} by incompressibility,
@@ -196,10 +206,10 @@ is the absorbing ball parameter from the $Q_1$-augmented system.
 %══════════════════════════════════════════════════════════════
 
 \begin{theorem}[Explicit $\alpha$]\label{thm:alpha}
-Let $\alpha_F = 2\nu^2\cdot 4^{1/\rho_0}\cdot\rho_0$.
+Let $\alpha_F = 2\nu\cdot 4^{1/\rho_0}\cdot\rho_0$.
 Under SND with parameter $\rho_0$, the viscous dissipation satisfies:
 \[
-\mathcal{D}(t) \geq \nu^2\cdot 4^{1/\rho_0}\cdot\rho_0\cdot X(t)
+\mathcal{D}(t) \geq \nu\cdot 4^{1/\rho_0}\cdot\rho_0\cdot X(t)
 \quad\text{whenever }\ \rho(t)\leq\rho_0.
 \]
 Consequently, the shell distribution satisfies the dissipative bound:
@@ -211,11 +221,15 @@ where $\lambda_j\sim 4^j$ are the shell eigenvalues of $-\Delta$ on $\mathbb{T}^
 
 \begin{proof}
 The Shell-Spread Poincar\'{e} Inequality (Theorem F of \cite{SimonsNS2026})
-states: when $\rho(t)\leq\rho_0$, the dissipation satisfies
-$\mathcal{D}(t)\geq\nu\cdot 4^{1/\rho_0}\cdot\rho_0\cdot X(t)$.
+states: when $\rho(t)\leq\rho_0$, one has
+$\|\nabla u\|_{L^2}^2\geq 4^{1/\rho_0}\cdot\rho_0\cdot X(t)$, hence
+$\mathcal{D}(t)=\nu\|\nabla u\|_{L^2}^2\geq\nu\cdot 4^{1/\rho_0}\cdot\rho_0\cdot X(t)$.
+(The factor is $\nu$, not $\nu^2$: Poincar\'e is viscosity-free on $\|\nabla u\|^2/X$.)
+Since $\mathcal{D}=\nu X\sum_j\lambda_j a_j$, one gets
+$2\nu\sum_j\lambda_j a_j=2\mathcal{D}/X\geq 2\nu\cdot 4^{1/\rho_0}\cdot\rho_0=\alpha_F$.
 The shell eigenvalue lower bound $\lambda_j\geq 4^j$ on $\mathbb{T}^3$
-and the normalization $\sum_j a_j = 1$ give the $\ell^1$ dissipative control
-with $\alpha_F = 2\nu^2\cdot 4^{1/\rho_0}\cdot\rho_0$.\qed
+and the normalization $\sum_j a_j = 1$ give the stated $\ell^1$ dissipative control.
+\qed
 \end{proof}
 
 %══════════════════════════════════════════════════════════════
@@ -226,7 +240,7 @@ with $\alpha_F = 2\nu^2\cdot 4^{1/\rho_0}\cdot\rho_0$.\qed
 Assume SND with parameter $\rho_0$ and the $H^{2.3}$ absorbing ball.
 Define:
 \[
-\alpha = \alpha_F = 2\nu^2\cdot 4^{1/\rho_0}\cdot\rho_0,
+\alpha = \alpha_F = 2\nu\cdot 4^{1/\rho_0}\cdot\rho_0,
 \qquad
 \beta_N(t) = 2C_\varphi\cdot\mathcal{D}(t)^{1/2}\cdot X(t)^{-1/2}.
 \]
@@ -308,11 +322,13 @@ The condition $\beta_N < \alpha\eta_N$ reduces to:
 \quad\Longleftrightarrow\quad
 \frac{\mathcal{D}}{X} < \left(\frac{\alpha\eta_N}{2C_\varphi}\right)^2.
 \]
-Under SND, Theorem~F gives $\mathcal{D}/X \geq \nu^2\cdot 4^{1/\rho_0}\cdot\rho_0$
-(lower bound). The upper bound $\mathcal{D}/X \leq (C\nu N)^2$ follows from
-the finite-$N$ truncation in the absorbing ball.
-For the threshold class, the ratio $\mathcal{D}/X$ is bounded above by
-a constant depending only on $\nu,\rho_0,N$, and $\beta_N < \alpha\eta_N$ holds.\qed
+This is an \emph{upper} bound on $\mathcal{D}/X$.
+(Theorem~\ref{thm:alpha} supplies the Poincar\'e \emph{lower} bound
+$\mathcal{D}/X \geq \nu\cdot 4^{1/\rho_0}\cdot\rho_0$, which fixes $\alpha>0$,
+but does not by itself force $\beta_N$ small.)
+The needed upper bound follows from the finite-$N$ truncation in the
+$H^{2.3}$ absorbing ball. For the threshold class, that keeps
+$\beta_N < \alpha\eta_N$.\qed
 \end{proof}
 
 \begin{remark}
@@ -333,13 +349,13 @@ Assume SND with parameters $\nu, \rho_0, N, R_\varepsilon$.
 The Goldbach Non-Concentration (GNC) threshold satisfies:
 \[
 \kappa^* = \frac{\alpha_F\eta_N}{2C_\varphi}
-= \frac{2\nu^2\cdot 4^{1/\rho_0}\cdot\rho_0\cdot\eta_N}{2C\cdot N^{1/2}\cdot R_\varepsilon\cdot\nu^{-1/2}}
-= \frac{\nu^{5/2}\cdot 4^{1/\rho_0}\cdot\rho_0\cdot\eta_N}{C\cdot N^{1/2}\cdot R_\varepsilon}.
+= \frac{2\nu\cdot 4^{1/\rho_0}\cdot\rho_0\cdot\eta_N}{2C\cdot N^{1/2}\cdot R_\varepsilon\cdot\nu^{-1/2}}
+= \frac{\nu^{3/2}\cdot 4^{1/\rho_0}\cdot\rho_0\cdot\eta_N}{C\cdot N^{1/2}\cdot R_\varepsilon}.
 \]
-Under the identification SND $\equiv$ GNC (proved in \cite{SimonsUniv2026}),
-this gives an explicit computable lower bound on the density of prime pairs
-required for Goldbach's conjecture to hold for all even integers
-$n\geq n_0(\kappa^*)$.
+\underline{Withdrawn weld:} the identification SND $\equiv$ GNC and any Goldbach
+corollary from $\kappa^*$ are \textbf{not claimed} (see
+\texttt{docs/papers/submit/06\_status\_errata.tex}). The displayed $\kappa^*$ is
+only a formal rearrangement of the T2 constants under SND.
 \end{corollary}
 
 \begin{corollary}[NS $\Rightarrow$ Goldbach (Conditional)]\label{cor:goldbach}
@@ -369,11 +385,10 @@ ensuring Goldbach representations exist for $n\geq n_0(\kappa^*)$.\qed
 \item The low-frequency inter-shell flux vanishes by incompressibility (exact, unconditional).
 \item The flux bound $|\Phi_j|\leq C_\varphi\cdot 2^{-0.8j}\cdot X^{1/2}\cdot\mathcal{D}^{1/2}$
 holds under SND and the $H^{2.3}$ absorbing ball.
-\item The explicit decay rate is $\alpha = 2\nu^2\cdot 4^{1/\rho_0}\cdot\rho_0$.
+\item The explicit decay rate is $\alpha = 2\nu\cdot 4^{1/\rho_0}\cdot\rho_0$.
 \item T2 closes with $\eta_N = 0.039 < 0.20$ for threshold-class data.
 \item T2 and SND are equivalent --- the Gronwall is SND in differential form.
-\item Explicit $\kappa^*$ for GNC is computable from the above constants.
-\item Conditional on SND (i.e., conditional on NS regularity): Goldbach for $n\geq n_0$.
+\item Formal $\kappa^*$ from T2 constants is computable; \textbf{no Goldbach claim}.
 \end{enumerate}
 
 \textbf{What this paper does not prove:}

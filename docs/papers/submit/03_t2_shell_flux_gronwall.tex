@@ -57,7 +57,7 @@ We study a T2 inter-shell flux inequality
 \]
 and show that it closes \emph{conditionally on a Spectral Non-Dispersal (SND) bound}
 $\sup_t\rho(t)\le\rho_0<1$ on normalized shell energies $a_j=E_j/X$,
-with explicit rate $\alpha = 2\nu^2 \cdot 4^{1/\rho_0}\cdot\rho_0$.
+with explicit rate $\alpha = 2\nu \cdot 4^{1/\rho_0}\cdot\rho_0$.
 The argument uses: (i) exact vanishing of low-frequency self-interaction flux by
 incompressibility; (ii) under SND and an $H^{2.3}$ absorbing ball, the high-frequency
 flux bound $|\Phi_j|\le C_\varphi 2^{-0.8j} X^{1/2}\mathcal{D}^{1/2}$.
@@ -98,7 +98,12 @@ X(t) &\leq M^2 := \|u_0\|_{L^2}^2 \quad\forall t\geq 0, \label{eq:L1}\tag{L1}\\
 \int_0^\infty \mathcal{D}(t)\,dt &\leq \frac{M^2}{2} \quad\text{(finite total dissipation).}\label{eq:L2}\tag{L2}
 \end{align}
 
-\textbf{SND condition:} $\sup_{t\geq 0}\rho(t) \leq \rho_0$ for some $\rho_0 < 1$.
+\textbf{SND condition (this note):} $\sup_{t\geq 0}\rho(t) \leq \rho_0$ for some $\rho_0 < 1$.
+This is the \emph{upper-bound / non-concentration} packaging of shell fractions
+$a_j=E_j/X$ with $X=\|u\|_{L^2}^2$.
+It is \emph{not} identical to the Ring-companion lower-bound form
+$\inf_t J/X_{\mathrm{enst}}\ge c_*>0$ (enstrophy shells); see the Tao panel note
+\texttt{docs/math/TAO-MATH-PANEL-SND-H.md}. Both are conditional hypotheses.
 
 %══════════════════════════════════════════════════════════════
 \section{The Incompressibility Cancellation}
@@ -188,10 +193,10 @@ is the absorbing ball parameter from the $Q_1$-augmented system.
 %══════════════════════════════════════════════════════════════
 
 \begin{theorem}[Explicit $\alpha$]\label{thm:alpha}
-Let $\alpha_F = 2\nu^2\cdot 4^{1/\rho_0}\cdot\rho_0$.
+Let $\alpha_F = 2\nu\cdot 4^{1/\rho_0}\cdot\rho_0$.
 Under SND with parameter $\rho_0$, the viscous dissipation satisfies:
 \[
-\mathcal{D}(t) \geq \nu^2\cdot 4^{1/\rho_0}\cdot\rho_0\cdot X(t)
+\mathcal{D}(t) \geq \nu\cdot 4^{1/\rho_0}\cdot\rho_0\cdot X(t)
 \quad\text{whenever }\ \rho(t)\leq\rho_0.
 \]
 Consequently, the shell distribution satisfies the dissipative bound:
@@ -203,11 +208,15 @@ where $\lambda_j\sim 4^j$ are the shell eigenvalues of $-\Delta$ on $\mathbb{T}^
 
 \begin{proof}
 The shell-spread Poincar\'{e} inequality under SND
-states: when $\rho(t)\leq\rho_0$, the dissipation satisfies
-$\mathcal{D}(t)\geq\nu\cdot 4^{1/\rho_0}\cdot\rho_0\cdot X(t)$.
+states: when $\rho(t)\leq\rho_0$, one has
+$\|\nabla u\|_{L^2}^2\geq 4^{1/\rho_0}\cdot\rho_0\cdot X(t)$, hence
+$\mathcal{D}(t)=\nu\|\nabla u\|_{L^2}^2\geq\nu\cdot 4^{1/\rho_0}\cdot\rho_0\cdot X(t)$.
+(The factor is $\nu$, not $\nu^2$: Poincar\'e is viscosity-free on $\|\nabla u\|^2/X$.)
+Since $\mathcal{D}=\nu X\sum_j\lambda_j a_j$, the same bound is
+$2\nu\sum_j\lambda_j a_j=2\mathcal{D}/X\geq 2\nu\cdot 4^{1/\rho_0}\cdot\rho_0=\alpha_F$.
 The shell eigenvalue lower bound $\lambda_j\geq 4^j$ on $\mathbb{T}^3$
-and the normalization $\sum_j a_j = 1$ give the $\ell^1$ dissipative control
-with $\alpha_F = 2\nu^2\cdot 4^{1/\rho_0}\cdot\rho_0$.\qed
+and the normalization $\sum_j a_j = 1$ give the stated $\ell^1$ dissipative control.
+\qed
 \end{proof}
 
 %══════════════════════════════════════════════════════════════
@@ -218,7 +227,7 @@ with $\alpha_F = 2\nu^2\cdot 4^{1/\rho_0}\cdot\rho_0$.\qed
 Assume SND with parameter $\rho_0$ and the $H^{2.3}$ absorbing ball.
 Define:
 \[
-\alpha = \alpha_F = 2\nu^2\cdot 4^{1/\rho_0}\cdot\rho_0,
+\alpha = \alpha_F = 2\nu\cdot 4^{1/\rho_0}\cdot\rho_0,
 \qquad
 \beta_N(t) = 2C_\varphi\cdot\mathcal{D}(t)^{1/2}\cdot X(t)^{-1/2}.
 \]
@@ -300,11 +309,13 @@ The condition $\beta_N < \alpha\eta_N$ reduces to:
 \quad\Longleftrightarrow\quad
 \frac{\mathcal{D}}{X} < \left(\frac{\alpha\eta_N}{2C_\varphi}\right)^2.
 \]
-Under SND, Theorem~F gives $\mathcal{D}/X \geq \nu^2\cdot 4^{1/\rho_0}\cdot\rho_0$
-(lower bound). The upper bound $\mathcal{D}/X \leq (C\nu N)^2$ follows from
-the finite-$N$ truncation in the absorbing ball.
-For the threshold class, the ratio $\mathcal{D}/X$ is bounded above by
-a constant depending only on $\nu,\rho_0,N$, and $\beta_N < \alpha\eta_N$ holds.\qed
+This is an \emph{upper} bound on $\mathcal{D}/X$.
+(Theorem~\ref{thm:alpha} supplies the matching Poincar\'e \emph{lower} bound
+$\mathcal{D}/X \geq \nu\cdot 4^{1/\rho_0}\cdot\rho_0$, which fixes $\alpha>0$,
+but does not by itself force $\beta_N$ small.)
+The needed upper bound $\mathcal{D}/X \leq C(\nu,N,R_\varepsilon)$ follows from
+the finite-$N$ truncation in the $H^{2.3}$ absorbing ball.
+For the threshold class, that upper bound keeps $\beta_N < \alpha\eta_N$.\qed
 \end{proof}
 
 \begin{remark}
@@ -326,7 +337,7 @@ T2 supplies explicit rates and thresholds once SND is assumed.
 \item The low-frequency inter-shell flux vanishes by incompressibility (exact, unconditional).
 \item The flux bound $|\Phi_j|\leq C_\varphi\cdot 2^{-0.8j}\cdot X^{1/2}\cdot\mathcal{D}^{1/2}$
 holds under SND and the $H^{2.3}$ absorbing ball.
-\item The explicit decay rate is $\alpha = 2\nu^2\cdot 4^{1/\rho_0}\cdot\rho_0$.
+\item The explicit decay rate is $\alpha = 2\nu\cdot 4^{1/\rho_0}\cdot\rho_0$.
 \item T2 closes with $\eta_N = 0.039 < 0.20$ for threshold-class data.
 \item T2 and SND are equivalent --- the Gronwall is SND in differential form.
 \end{enumerate}
@@ -334,7 +345,7 @@ holds under SND and the $H^{2.3}$ absorbing ball.
 \textbf{What this paper does not prove:}
 \begin{itemize}
 \item SND unconditionally for arbitrary large $H^1$ data (open; see companion note \cite{SimonsRingSubmit}).
-\item The $\kappa^*$ formula is sharp --- it is a sufficient condition.
+\item Any Goldbach / GNC identification with SND (withdrawn; see \texttt{06\_status\_errata.tex}).
 \end{itemize}
 \end{mdframed}
 
