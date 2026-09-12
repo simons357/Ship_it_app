@@ -15,7 +15,7 @@ The freeze you hit is the **Base44 editor** (`app.base44.com/.../editor/preview`
 - Shareable app URL (not the editor): https://preview--6a58e103fedcde66a0a7710e.base44.app/
 - Local engine: paste ingest, immutable raw text, CLAIM_LEDGER, AND/OR/phrase/`claim:` search, private vs professional export. Tests: `cd chatvault && node --test tests/engine.test.mjs` (7/7).
 - Git-engine freeze mitigations: 50-item pagination, render error panel, PWA service worker. These do not fix the Base44 *editor* freeze.
-- Honest Apple path: PWA first, no wrapper of Base44.
+- Honest Apple path: PWA first, no wrapper of Base44. Apple Developer membership is owned; we still do not submit.
 
 ## 4. What is still open
 
@@ -35,7 +35,8 @@ The freeze you hit is the **Base44 editor** (`app.base44.com/.../editor/preview`
 2. **Billing model: none / one-time / subscription / freemium.** Recommendation: **none on the first web launch.** Stripe before users makes App Store 3.1.1 and web pricing both heavier. Prove anyone will ingest a week of chats first.
 3. **Create a private GitHub repo named `chatvault` and grant this agent access, or keep working in `Ship_it_app`?** Recommendation: **new private repo.** `Ship_it_app` is a research workshop. Tagging it `v0.1-canonical` would be a lie.
 4. **Custom domain** (chatvault.primefield.tech vs other). Recommendation: a subdomain on a domain you already own. Do not wait on a new brand domain to ship the PWA.
-5. **Ship web PWA now vs spend the Apple $99 this quarter.** Recommendation: **PWA now.** A Base44 wrapper will be rejected under Guideline 4.2. That is correct in your brief; I will not build the wrapper.
+5. **Ship web PWA now vs spend the Apple $99 this quarter.** **Decided:** you already have Apple Developer. That closes the fee. It does not close Guideline 4.2. Recommendation stands: **PWA / Add to Home Screen now. No App Store submission. No Base44 wrapper.** Private TestFlight to yourself only, later, if we build a real native layer.
+6. **Public listing / people hassling you.** **Decided (your words):** you do not want people hassling you. Recommendation: keep ChatVault local-first, leave the public Base44 preview as a look reference (or lock it), do not list on the App Store, do not put a support email on a store page, do not turn on Stripe until you want customers.
 
 ## 6. Live URL
 

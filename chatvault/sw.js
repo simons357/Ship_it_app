@@ -1,4 +1,4 @@
-const CACHE = "chatvault-engine-v0.1";
+const CACHE = "chatvault-engine-v0.1.1";
 const ASSETS = [
   "./",
   "./index.html",
@@ -6,6 +6,9 @@ const ASSETS = [
   "./js/app.js",
   "./js/engine.mjs",
   "./manifest.webmanifest",
+  "./icons/apple-touch-icon.png",
+  "./icons/icon-192.png",
+  "./icons/icon-512.png",
 ];
 
 self.addEventListener("install", (event) => {

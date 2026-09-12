@@ -9,5 +9,7 @@
 | Any earlier build outside Base44 | Claude original (2025), still not in this workshop; HTML/Replit/React 3D paths were described and absent |
 | Which one *feels* right to you | You said Base44 parked + morph glass is the latest; Claude is the original |
 | Does any build contain real user data you need preserved? | **Unproven.** Glass B has ~14 records that look like seed SaaS chats. Export B before anyone deletes it. |
+| Apple Developer Program | **Yes** (owner, 12 Sep 2026). Membership exists. No store listing. |
+| Hassle constraint | Owner does not want people hassling him. Local-first; no public support surface. |
 
 If row 7 is actually “yes, those 14 chats are mine,” say so once. That changes migration priority, not the skin-vs-engine split.

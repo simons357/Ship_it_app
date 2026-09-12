@@ -227,9 +227,9 @@ function renderPrivacy() {
       <p class="kicker">Local-first on this device. Not an App Store build yet.</p>
     </header>
     <div class="panel">
-      <p>Records live in this browser’s local storage unless you export them. There is no ChatVault cloud account in this engine build.</p>
+      <p>Records live in this browser’s local storage unless you export them. There is no ChatVault cloud account in this engine build, so there is no inbox for strangers to message you through the app.</p>
       <p>Private vs professional is a user-controlled plane. Professional export omits private records.</p>
-      <p>Apple App Store submission still needs a signed developer account, a hosted privacy policy URL, account deletion if accounts exist, and a packaged iOS binary. This page is the disclosure draft for that later step.</p>
+      <p>On iPhone: Safari → Share → Add to Home Screen. That is the install path. An Apple Developer membership can sign a later binary; it does not make this web vault an App Store listing, and we are not submitting one.</p>
       <p><button class="btn danger" id="wipe">Delete all local ChatVault data…</button></p>
     </div>
   `;

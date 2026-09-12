@@ -18,6 +18,8 @@ html, body { margin: 0; height: 100%; }
 body {
   font-family: var(--sans);
   color: var(--ink);
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
   background:
     radial-gradient(1200px 700px at 10% -10%, rgba(94, 234, 212, 0.18), transparent 55%),
     radial-gradient(900px 600px at 110% 10%, rgba(139, 156, 255, 0.22), transparent 50%),

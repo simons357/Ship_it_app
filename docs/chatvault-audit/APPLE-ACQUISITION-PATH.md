@@ -1,8 +1,24 @@
 # Apple Store and acquisition path
 
-Status on 24 August 2026: **not ready to submit to Apple. not an acquisition close.**
+Status on 12 September 2026: **Apple Developer membership exists. Still not ready
+to submit. Not an acquisition close.** Owner constraint: do not create a public
+surface that invites hassle (reviewers, support mail, strangers writing into a
+preview vault).
+
 The Base44 “OS for your AI” vault is the product look to keep. This git engine is
 the first maintainable backend for that look.
+
+## What the Apple membership changes
+
+It removes the $99 gate. It does **not** make a Base44 wrapper legal under
+Guideline 4.2. It does **not** authorize a first submission this quarter.
+
+Use the account later for a **private TestFlight to Jonathan only**, after there
+is a native layer worth reviewing (on-device search, Files export, native
+navigation — not a full-screen WebView of `preview--…base44.app`).
+
+Recommended reserved bundle id when he is ready: `tech.primefield.chatvault`.
+Do not create a public App Store listing until he asks.
 
 ## Best version (reconfirmed)
 
@@ -31,7 +47,8 @@ That stack is in `chatvault/js/engine.mjs` with tests.
 
 | Item | Now | Still needed |
 | --- | --- | --- |
-| Stable UI | local PWA-style web app | signed iOS wrapper (Capacitor or similar) |
+| Apple Developer Program | **owned** (owner confirmed 12 Sep 2026) | Team ID / bundle id when we actually sign |
+| Stable UI | local PWA (icons + Add to Home Screen) | genuine native layer later; **not** a Base44 wrapper |
 | Account creation | none (local-only) | only if you ship accounts |
 | Privacy policy | in-app Privacy view | hosted URL Apple can fetch |
 | Account deletion | wipe local vault | if accounts exist, server-side deletion |
@@ -56,4 +73,4 @@ A web preview is not an App Store product. Do not upload this folder to App Stor
 2. Connect this engine to the glass UI, or restyle this UI until it matches the morph-glass look 1:1.
 3. Add authenticated hosting (not the public `preview--` host).
 4. Add PDF/DOCX ingest without dropping raw bytes.
-5. Only then talk TestFlight / acquirer demo with a scripted vault of *your* research, not the SaaS seed chats on Base44.
+5. Private TestFlight to Jonathan only — after a genuine native layer exists. Not a public App Store listing. Not a Base44 wrapper.
