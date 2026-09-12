@@ -1,0 +1,97 @@
+Zenodo metadata remediation audit
+========================================================================
+[OK] 22050962 10.5281/zenodo.22050962
+  disposition: KEEP
+  live title:  The Inverse-GCD Operator Q_N (Q6): Definitions, a Restricted Rayleigh Bound, and an Exploratory Spec
+  clean title: The Inverse-GCD Operator Q_N (Q6): Definitions, a Restricted Rayleigh Bound, and an Exploratory Spec
+
+[OK] 22050974 10.5281/zenodo.22050974
+  disposition: KEEP
+  live title:  Phi-Renormalization for Axisymmetric Navier-Stokes with Swirl: Algebraic Cancellation of the 1/r^4 A
+  clean title: Phi-Renormalization for Axisymmetric Navier-Stokes with Swirl: Algebraic Cancellation of the 1/r^4 A
+
+[OK] 22050975 10.5281/zenodo.22050975
+  disposition: KEEP
+  live title:  Phi-Renormalization for Axisymmetric Navier-Stokes with Swirl: Algebraic Cancellation of the 1/r^4 A
+  clean title: Phi-Renormalization for Axisymmetric Navier-Stokes with Swirl: Algebraic Cancellation of the 1/r^4 A
+
+[OK] 22050976 10.5281/zenodo.22050976
+  disposition: KEEP
+  live title:  A Ring Lemma for Band-Limited Vorticity Direction and a Conditional Spectral Non-Dispersal Criterion
+  clean title: A Ring Lemma for Band-Limited Vorticity Direction and a Conditional Spectral Non-Dispersal Criterion
+
+[OK] 22050965 10.5281/zenodo.22050965
+  disposition: KEEP
+  live title:  Explicit Decay Rate and Quantitative Threshold for a Shell-Flux Gronwall Inequality under SND
+  clean title: Explicit Decay Rate and Quantitative Threshold for a Shell-Flux Gronwall Inequality under SND
+
+[OK] 22050963 10.5281/zenodo.22050963
+  disposition: KEEP
+  live title:  Route C: A Spectral Approach to Zero-Density Estimates, Conditional on Two Analytic Gaps
+  clean title: Route C: A Spectral Approach to Zero-Density Estimates, Conditional on Two Analytic Gaps
+
+[OK] 22050978 10.5281/zenodo.22050978
+  disposition: KEEP
+  live title:  Status and Errata: What Stands and What Is Withdrawn
+  clean title: Status and Errata: What Stands and What Is Withdrawn
+
+[REPO ONLY] domain-architect-fra
+[FIX] 20405589 10.5281/zenodo.20405589
+  disposition: PARK_ARCHIVE
+  live title:  A Q6 Spectral Route to the Strong Goldbach Conjecture: Spectral Non-Concentration and the Inverse-GC
+  clean title: A Q6 Spectral Route to the Strong Goldbach Conjecture: Spectral Non-Concentration and the Inverse-GC
+
+[FIX] 20518057 10.5281/zenodo.20518057
+  disposition: PARK_ARCHIVE
+  live title:  Spectral Non-Dispersal, the Ring Lemma, and a Conditional Regularity Framework for the Navier–Stokes
+  clean title: Spectral Non-Dispersal, the Ring Lemma, and a Conditional Regularity Framework for the Navier–Stokes
+
+[FIX] 20405526 10.5281/zenodo.20405526
+  disposition: PARK_ARCHIVE
+  live title:  [Claim withdrawn - see errata] Global Regularity of the Navier-Stokes Equations on T3: Spectral Non-
+  *** ERRATA BANNER IN TITLE ***
+  clean title: Global Regularity of the Navier-Stokes Equations on T3: Spectral Non-Dispersal, the Ring Lemma, Phi-
+
+[FIX] 20269843 10.5281/zenodo.20269843
+  disposition: PARK_ARCHIVE
+  live title:  [Superseded - see errata] The Quantum Lens: A Spectral Framework Connecting the Millennium Prize Pro
+  *** ERRATA BANNER IN TITLE ***
+  clean title: The Quantum Lens: A Spectral Framework Connecting the Millennium Prize Problems
+
+[FIX] 20405593 10.5281/zenodo.20405593
+  disposition: PARK_ARCHIVE
+  live title:  [Superseded - see errata] The Montgomery–Dyson Coincidence as a Q6 Prime Lattice Eigenvalue Identity
+  *** ERRATA BANNER IN TITLE ***
+  clean title: The Montgomery–Dyson Coincidence as a Q6 Prime Lattice Eigenvalue Identity
+
+[FIX] 20552171 10.5281/zenodo.20552171
+  disposition: PARK_ARCHIVE
+  live title:  [Claim withdrawn - see errata] A Quantum Field Theory on the Prime Manifold: Navier–Stokes, Riemann,
+  *** ERRATA BANNER IN TITLE ***
+  clean title: A Quantum Field Theory on the Prime Manifold: Navier–Stokes, Riemann, and Goldbach Under a Single Ha
+
+[FIX] 20552400 10.5281/zenodo.20552400
+  disposition: PARK_ARCHIVE
+  live title:  [Claim withdrawn - see errata] A Universal Non-Concentration Principle: SND ≡ GNC ≡ Bridge
+  *** ERRATA BANNER IN TITLE ***
+  clean title: A Universal Non-Concentration Principle: SND ≡ GNC ≡ Bridge
+
+[FIX] 20272545 10.5281/zenodo.20272545
+  disposition: PARK_ARCHIVE
+  live title:  [Claim withdrawn - see errata] Spectral Non-Concentration Implies Global Regularity for 3D Navier–St
+  *** ERRATA BANNER IN TITLE ***
+  clean title: Spectral Non-Concentration Implies Global Regularity for 3D Navier–Stokes on T³
+
+[FIX] 19842060 10.5281/zenodo.19842060
+  disposition: PARK_ARCHIVE
+  live title:  [Superseded - see errata] Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal
+  *** ERRATA BANNER IN TITLE ***
+  clean title: Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal
+
+[FIX] 20405585 10.5281/zenodo.20405585
+  disposition: PARK_ARCHIVE
+  live title:  [Superseded - see errata] Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal: A Conditiona
+  *** ERRATA BANNER IN TITLE ***
+  clean title: Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal: A Conditional Regularity Framework for
+
+Summary: 10 need fix, 8 with errata banner in live title
