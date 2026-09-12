@@ -8,7 +8,9 @@
 **Validation challenge 01:** [`DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md`](DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md) — live score **FAIL** (A13 S1 refuse is in; A5 T1 still owed)  
 **Leftover-split lab:** [`LEFTOVER-REPAIR.md`](LEFTOVER-REPAIR.md) — usable Ring SND + Q6 \(H_N\); three NS leftovers are conditional closes  
 **Localized reparation:** [`LOCALIZED-REPAIR.md`](LOCALIZED-REPAIR.md) — `excise k` on an n-step chain; default dataset is the classical unaugmented 9-step chain; leftover cut is 7–8; graft stays a hypothesis  
-**Honest OPEN board:** [`OPEN-BOARD.md`](OPEN-BOARD.md) — withdrawn / rejected / missing taken off the OPEN chorus  
+**Honest OPEN board:** [`OPEN-BOARD.md`](OPEN-BOARD.md) — withdrawn / rejected / missing taken off the OPEN chorus; \(T_{j\leftarrow j}\) stays visible  
+**Axisymmetric shell filter:** [`AXISYMMETRIC-SHELL-AUDIT.md`](AXISYMMETRIC-SHELL-AUDIT.md) — KEEP / DISCARD / PARK for one estimate only  
+**Axisymmetric shell estimate:** [`docs/papers/swirl/AXISYMMETRIC-SHELL-ESTIMATE.md`](../papers/swirl/AXISYMMETRIC-SHELL-ESTIMATE.md) — remainder \(T_{j\leftarrow j}\); not Clay  
 **Intensity vs control:** [`TURBULENCE-INTENSITY.md`](TURBULENCE-INTENSITY.md) — lumped \(x\to x^\star\) against a no-actuation arm; not 3D NS  
 **Available-tech stack:** [`AVAILABLE-TURBULENCE.md`](AVAILABLE-TURBULENCE.md) — riblets + discrete suction; 15% is the **desired** analog state  
 **Ship-hull package:** [`SHIP-RIBLET-PACKAGE.md`](SHIP-RIBLET-PACKAGE.md) — Maersk-class fouling-release riblets; 8–12% Cf is desired; 12% is outside the durable literature  
@@ -39,6 +41,7 @@ python -m domain_architect cycle leftover-repair
 python -m domain_architect cycle localized-repair
 python -m domain_architect cycle localized-repair --excise 2
 python -m domain_architect cycle open-board
+python -m domain_architect cycle axisymmetric-shell
 python -m domain_architect cycle turbulence-intensity
 python -m domain_architect cycle available-turbulence
 python -m domain_architect cycle turbulence-reduction

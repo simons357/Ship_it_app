@@ -43,6 +43,13 @@ Take only the parts that do not close. Leave what already stands.
 Same leftover *shape*: a coercive bound does not give the needed smallness.
 **Not the same estimate.** Do not set \(\sigma_{\mathrm{swirl}}=\sigma_{\mathrm{ring}}=\sigma_{\mathrm{simplex}}=\sigma_H\).
 
+The axisymmetric-with-swirl **shell** estimate is a **fourth** named
+remainder, not a leftover-split piece: Door-1 intra-shell transfer
+\(T_{j\leftarrow j}\). Filter:
+[`AXISYMMETRIC-SHELL-AUDIT.md`](AXISYMMETRIC-SHELL-AUDIT.md).
+Do not set \(\sigma_{\mathrm{strain}}=T_{j\leftarrow j}\). That program
+stays **OPEN**. Clay is **NOT CLAIMED**.
+
 ## What live DA does with them
 
 Decompose of each usable / leftover string returns `unclassified` at Level 0

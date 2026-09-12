@@ -36,6 +36,8 @@ Implied by those rows and implemented with them: **C3, C7, C8, C17, C18, C19, C2
 
 **Recorded 2026-08-24 (logo, confirmed).** Black & gold and all-silver 3D lockups both stay as official looks (peer Mark views). Lambda Lab stays as the vector construction tool. Neither replaces the other.
 
+**Recorded 2026-09-12.** Jonathan Simons locked the written KEEP / DISCARD / PARK audit as the **binding filter** for **one** program: the axisymmetric (with swirl) shell estimate. File: [`AXISYMMETRIC-SHELL-AUDIT.md`](AXISYMMETRIC-SHELL-AUDIT.md). Estimate note: [`docs/papers/swirl/AXISYMMETRIC-SHELL-ESTIMATE.md`](../papers/swirl/AXISYMMETRIC-SHELL-ESTIMATE.md). Remainder \(T_{j\leftarrow j}\) stays visible. Clay / unconditional 3-D regularity is **NOT CLAIMED**. Turbulence-reduction stays a **different** stack (PARK). Do not copy the ship envelope onto this estimate. Do not treat a Tao-positive reply as proof certification.
+
 Live software today (verified 2026-08-24 before this rewrite): local desktop app at `http://127.0.0.1:8765/`, CLI, 51 unit tests green. That package was a three-verb UI around Firestone analogy, equation-error OLS, RK4, saturated PD, FFT Poisson, and a three-pattern classifier. This rewrite implements the marked table.
 
 ---
