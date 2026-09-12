@@ -20,12 +20,16 @@ ordinary NS. Uniform H1 as eps → 0 still
 open. Paper: docs/THEOREM-A-Q1.pdf
 
 **Unaug NS (ordinary) — open**
-Two live writes (grow s; ★ reason as a map):
+Primary: Need★ signed dual on HH→L
+(MISSING after gap-cancel):
+docs/NEED-STAR-HH-L-DUAL.md
+9D secondary (grow s; ★ reason as a map):
 docs/ATTACK-9D-GROW-S.md
 (grow-s samples: max K≈0.456 at (16,32),
 max s=192; not C0; not a kill)
 docs/LEMMA-STAR-REASON.md
 (map; HH→L the dangerous channel; not a theorem)
+Soft X silent.
 Yes / no / open (the tape):
 docs/YES-NO-OPEN.md
 H1 write (estimate, not theorem; locked G):

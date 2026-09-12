@@ -175,10 +175,14 @@ X1–X4/X6 still MISSING.
    table into a ★ sentence. That table is
    a non-kill. Flagging extrapolations
    does not make it a proof.
-3. If you stay on this lane: grow \(s\)
-   on the 9B family. Same \(B(w,w)\).
-   Keep \(|k|\). Report \(K_{\alpha,\beta}\)
-   and pairing. A finite max only raises
+3. Primary on this leftover is Need★:
+   signed dual on HH→L after gap-cancel.
+   Still **MISSING.**
+   [`NEED-STAR-HH-L-DUAL.md`](NEED-STAR-HH-L-DUAL.md).
+4. Grow \(s\) is secondary pressure.
+   Same \(B(w,w)\). Keep \(|k|\).
+   Report \(K_{\alpha,\beta}\) and pairing.
+   A finite max only raises
    \(C_{\mathrm{geom}}\).
    Live write:
    [`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md).
@@ -188,11 +192,11 @@ X1–X4/X6 still MISSING.
    `scripts/ns_attacks/attack9b_exact_shell_K.py`.
    Do not overwrite
    `scripts/ns_attacks/stokes_moments.py`.
-4. The ★ reason is written as a map:
+5. The ★ reason is written as a map:
    [`LEMMA-STAR-REASON.md`](LEMMA-STAR-REASON.md).
    Not a theorem. Do not turn Attack 12
    into that sentence.
-5. H1 on the cylinder is named. The
+6. H1 on the cylinder is named. The
    write sits. It is not a theorem.
    Do not start it from ABC_λ. Do not
    glue.

@@ -66,6 +66,7 @@ under a new name.
 | Hölder cut spent once | Good drops to \(\lvert z\rvert^{-5/2}\). Bad stays \(\lvert z\rvert^{-3}\). |
 | Locked \(\mathcal G\) | Definition of leftover 1. Not a bound. |
 | Locked \(\mathcal R_\star\) | Definition of leftover 4. Not a bound. |
+| Two-shell gap-cancel | Identity. \((\alpha-\beta)\) drops out of \(\mathcal R_\star\). Not Need★. |
 | Occupancy \(55/56\) | Printed on those interpolants. Did not decay with \(n\). Not \([\rho]\). |
 | \(K\le 16s\) | Counting. Fixed \(s\) cannot unbound \(K\). |
 
@@ -88,6 +89,7 @@ under a new name.
 | P1 / P1-loc / PC as H1 | Cousins. |
 | CS \(E^{3/2}\) as shape 1 | Mid-Bad / H3 class. |
 | Finite \(0.641\), \(0.610\), \(0.327\), HH→L \(0.71\), grow-\(s\) \(0.456\) as \(C_0\) or a falsifier | Samples. |
+| Attack 12 table as Need★ | Finite \(\beta/\alpha\). Not the signed dual. |
 | Glue H1 to ★, or either to the shell door | Different integrals. |
 | \(K(t)\) in the PDE | Forbidden on B. |
 | SFE / UHF / DHFA / HB as constitutive NS | Shelf. |
@@ -102,7 +104,7 @@ under a new name.
 | 1 | H1 = WRITE (6) | Shape 1, 2, or 3, or \(\mathcal G\to\infty\). The write in [`H1-WRITE.md`](H1-WRITE.md) is not this move. |
 | 2 | H2 from energy | A priori, or keep CKN-small and say so. |
 | 3 | H3 | Absorb as \(r\to 0\). |
-| 4 | Lemma★ | \(\sup\mathcal R_\star<\infty\), or \(\mathcal R_\star\to\infty\). |
+| 4 | Lemma★ | \(\sup\mathcal R_\star<\infty\), or \(\mathcal R_\star\to\infty\). Need★ (signed dual on HH→L after gap-cancel) is still **MISSING**. |
 | 4a | Hyp-Lat★ | Lattice transfer, or drop the route. |
 | 5 | \(\int\rho_j\) | Class bound, or a field with \(\int\rho_j=\infty\). |
 | 6 | RH line | One estimate that forces \(\operatorname{Re}s=1/2\). |
@@ -115,7 +117,11 @@ Live write: [`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md).
 
 The ★ reason is **written as a map**
 ([`LEMMA-STAR-REASON.md`](LEMMA-STAR-REASON.md)).
-It is **NO** as a theorem. Leftover 4
+It is **NO** as a theorem. Need★ is the
+named hole in that map
+([`NEED-STAR-HH-L-DUAL.md`](NEED-STAR-HH-L-DUAL.md)):
+**YES** as a write, **MISSING** as a
+bound, **NO** as a theorem. Leftover 4
 stays OPEN until \(\sup\mathcal R_\star<\infty\)
 or \(\mathcal R_\star\to\infty\).
 
@@ -127,6 +133,8 @@ If we write H1, that is YES as a write
 and still NO as a theorem.
 If we score a framework, that is a map
 and still NO as a close.
+If we write Need★, that is YES as a
+write and still MISSING as a bound.
 If we run grow-\(s\), that is a test
 and still OPEN as ★.
 If a number is large and finite, that

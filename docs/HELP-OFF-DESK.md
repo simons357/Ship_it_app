@@ -472,6 +472,13 @@ not sign (6). [`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
 \(\sup_v\mathcal R_\star<\infty\),
 or a sequence \(v_n\) with
 \(\mathcal R_\star(v_n)\to\infty\).
+Primary writing of that bound on the
+dangerous channel: Need★ = signed
+dual on HH→L after gap-cancel.
+Still **MISSING.**
+[`NEED-STAR-HH-L-DUAL.md`](NEED-STAR-HH-L-DUAL.md).
+9D / grow \(s\) is secondary pressure.
+Soft X silent.
 
 **Acceptable close of this job.**
 

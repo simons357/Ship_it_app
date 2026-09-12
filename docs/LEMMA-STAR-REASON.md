@@ -16,6 +16,10 @@ of Lemma★. NS is not solved.**
 Until this sentence is a theorem, or
 until \(\mathcal R_\star\to\infty\) on
 a family, leftover 4 stays OPEN.
+The hole this map points at is Need★:
+the signed dual on HH→L after
+gap-cancel. Still **MISSING.**
+[`NEED-STAR-HH-L-DUAL.md`](NEED-STAR-HH-L-DUAL.md).
 
 Do not turn Attack 12’s table into
 this sentence. Do not merge \(0.71\)
@@ -118,6 +122,10 @@ how the screenshot 9D died.
 
 ## What would move leftover 4
 
+- Need★: a signed dual bound on
+  HH→L after gap-cancel, occupancy
+  killed or proved bounded.
+  [`NEED-STAR-HH-L-DUAL.md`](NEED-STAR-HH-L-DUAL.md).
 - A geometry-only bound
   \(\sup\mathcal R_\star<\infty\),
   with the occupancy factor killed or

@@ -1,9 +1,14 @@
 Stay here. This chat is DA.
 
-Two live writes (everything else scored):
+Primary math target (Need★; signed dual
+MISSING after gap-cancel):
+docs/NEED-STAR-HH-L-DUAL.md
+scripts/need_star_hh_l_dual.py
+9D is secondary kill-lane pressure:
 docs/ATTACK-9D-GROW-S.md
 docs/LEMMA-STAR-REASON.md
 scripts/ns_attacks/attack9b_grow_s.py
+Soft X silent.
 Yes / no / open (the tape; a write is
 not a theorem):
 docs/YES-NO-OPEN.md
