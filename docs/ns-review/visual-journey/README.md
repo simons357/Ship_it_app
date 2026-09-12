@@ -40,8 +40,10 @@ Captions: [`CAPTIONS.md`](./CAPTIONS.md).
 
 ## Monday visual
 
-Post first: **`figures/proof-chain.png`** — one composition, the whole chain, open estimates dashed and neutral.
+Post first: **`figures/proof-chain.png`** — one composition, the whole chain, open estimates dashed and named as math objects.
+
+Campaign landing (all chapters): [`../../campaign/PROOF-JOURNEY.md`](../../campaign/PROOF-JOURNEY.md).
 
 ## Tone
 
-Craftsman. Superior notation. Quiet confidence. No biography framing, no scarlet-letter banners on open nodes.
+Craftsman. Superior notation. Quiet confidence. No biography framing, no scarlet-letter banners on open nodes. No cast-list theater.

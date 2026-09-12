@@ -18,8 +18,8 @@ Mistakes are acceptable when they are corrected in place and the chain stays hon
 
 ## What reputation is not
 
-- Not a verdict stamp (“we solved” / “we have not solved”).
-- Not theater (dream-team cast lists, investigator biography framing, shade posts).
+- Not a verdict stamp (prize-outcome announcements, either direction).
+- Not theater (cast-list biography framing, shade posts).
 - Not collapsing adjacent books into one Millennium claim.
 
 Experts read status from the chain. Campaign materials **show the construction**; they do not announce a prize outcome.
@@ -35,7 +35,7 @@ The spectral **barycenter** figure is the central visual — “we are there” 
 - centered stretch \(T_c\),
 - shape quotient \(\mathcal{R}_\star\).
 
-It marks where the packaging lives. It is **not** a claim that Clay Statement (B) is closed, and campaign copy must not say “Clay solved,” “Millennium closed,” or the negated billboard forms either.
+It marks where the packaging lives. It is **not** a Millennium / Clay Statement (B) announcement. Campaign copy must not billboard prize outcomes — positive or negative.
 
 ---
 
@@ -55,11 +55,11 @@ Correction and status text belongs in the status index and chapter notes, subord
 
 | Do | Do not |
 | --- | --- |
-| Link the whole body of work | Billboard solved / unsolved |
+| Link the whole body of work | Billboard prize-outcome stamps |
 | Label open nodes as estimates | Stamp FAILED / ERRATA on journey heroes |
-| Keep barycenter as construction locus | Claim Clay / Millennium closure |
+| Keep barycenter as construction locus | Billboard prize / Statement (B) outcomes |
 | Prefer KEEP DOIs for citation | Glue Q6 / Φ / SND / Lemma★ into one prize proof |
-| Correct under content | Dream-team / investigator theater |
+| Correct under content | Cast-list / biography theater |
 
 Entry: [`PROOF-JOURNEY.md`](./PROOF-JOURNEY.md).
 

@@ -8,9 +8,9 @@ Accessible captions with expert-accurate math. No solved / unsolved stamps.
 
 **File:** `figures/proof-chain.png` (also `.svg`, `.mmd`)
 
-The main trunk runs classical Navier–Stokes on \(\mathbb{T}^3\) through spectral moments \(E,X,Y,Z\) and scale \(\Lambda=Y/X\), through the identities for spread \(D_s\) and centered cascade \(T_c\), into Lemma★ packaging, then through a product estimate into continuation.
+The main trunk runs classical Navier–Stokes on \(\mathbb{T}^3\) through spectral moments \(E,X,Y,Z\) and scale \(\Lambda=Y/X\), through the identities for spread \(D_s\) and centered cascade \(T_c\), into Lemma★ packaging and five-lane diagnostics, then through a product bound on \(T_c\) into continuation.
 
-Dashed warm nodes are **open estimates** (product bound; \(\|u^r/r\|_\infty\) on the Φ-renorm branch). The muted side node is optional SND / Ring Lemma texture — conditional shell bookkeeping, not a substitute for the product step.
+Dashed warm nodes are **open estimates** named as math objects (product bound on \(T_c\); \(\|u^r/r\|_\infty\) integrability on the Φ-renorm branch). The muted side node is optional SND / Ring Lemma texture — conditional shell bookkeeping, not a substitute for the product step.
 
 ---
 

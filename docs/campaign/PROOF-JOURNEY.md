@@ -201,4 +201,4 @@ History only — superseded concepts, withdrawn Millennium packaging, soft point
 
 ## Tone
 
-Craftsman. Completeness + clarity. Barycenter = where the shape construction lives. No dream-team / investigator theater on campaign pages. Reputation rules: [`REPUTATION-LOCK.md`](./REPUTATION-LOCK.md).
+Craftsman. Completeness + clarity. Barycenter = where the shape construction lives. No cast-list biography framing on campaign pages. Reputation rules: [`REPUTATION-LOCK.md`](./REPUTATION-LOCK.md).

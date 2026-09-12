@@ -217,9 +217,12 @@ Do not reuse FRA output symbol \(\Phi\) for swirl \(\Phi\). Do not identify \(T_
 2. Moments \(E,X,Y,Z\) and scale \(\Lambda\).
 3. Identities for \(D_s\) and \(T_c\); \(\Lambda'=2(T_c-\nu D_s)/X\).
 4. Lemma★ shape / energy-budget packaging.
-5. Product estimate (open).
-6. Continuation / regularity arrow (feeds on 4+5).
-7. Side: Φ-renorm identity + open strain barrier.
-8. Optional: SND conditional texture.
+5. Five-lane diagnostics (Bony / shell / packet probes) — stress tests, not a substitute bound.
+6. Product bound on \(T_c\) (open estimate).
+7. Continuation / regularity arrow (feeds on 4+6).
+8. Side: Φ-renorm identity + open \(\|u^r/r\|_\infty\) integrability.
+9. Optional: SND conditional texture.
+
+Campaign landing with all adjacent books: [`../campaign/PROOF-JOURNEY.md`](../campaign/PROOF-JOURNEY.md).
 
 Diagram sources: [`visual-journey/proof-chain.mmd`](./visual-journey/proof-chain.mmd), rendered SVG/PNG under [`visual-journey/figures/`](./visual-journey/figures/).

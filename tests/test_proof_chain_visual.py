@@ -14,6 +14,11 @@ GEN = ROOT / "scripts" / "visual_journey" / "generate_proof_chain_figures.py"
 JOURNEY = ROOT / "docs" / "ns-review" / "visual-journey"
 CLEAN = ROOT / "docs" / "ns-review" / "PROOF-CHAIN-CLEAN.md"
 MMD = JOURNEY / "proof-chain.mmd"
+CAMPAIGN = ROOT / "docs" / "campaign"
+PROOF_JOURNEY = CAMPAIGN / "PROOF-JOURNEY.md"
+REPUTATION = CAMPAIGN / "REPUTATION-LOCK.md"
+GLOSSARY = CAMPAIGN / "NOTATION-GLOSSARY.md"
+JOURNEY_MMD = CAMPAIGN / "journey-chain.mmd"
 
 FORBIDDEN_VERDICT = re.compile(
     r"\b(NS\s+(NOT\s+)?solved|Clay\s+(NOT\s+)?(closed|solved)|Millennium\s+closed|"
@@ -35,6 +40,10 @@ def _campaign_text_files() -> list[Path]:
         JOURNEY / "CAPTIONS.md",
         ROOT / "docs" / "campaign" / "visual-journey" / "README.md",
         MMD,
+        PROOF_JOURNEY,
+        REPUTATION,
+        GLOSSARY,
+        JOURNEY_MMD,
     ]
     return [p for p in files if p.is_file()]
 
@@ -63,8 +72,9 @@ def test_mermaid_marks_open_neutrally() -> None:
     text = MMD.read_text(encoding="utf-8")
     assert "open estimate" in text
     assert "FAILED" not in text
-    assert "PRODUCT" in text.upper() or "Product" in text
-    assert "Phi" in text or "Φ" in text or "renorm" in text.lower() or "Phi" in text
+    assert "Product bound" in text or "T_c" in text
+    assert "Five-lane" in text or "five-lane" in text.lower()
+    assert "Phi" in text or "Φ" in text or "renorm" in text.lower()
 
 
 def test_clean_note_has_definitions() -> None:
@@ -89,3 +99,34 @@ def test_phi_relabel_visible_in_chain_docs() -> None:
     blob = "\n".join(p.read_text(encoding="utf-8") for p in _campaign_text_files())
     assert "1.3" in blob
     assert "u^r/r" in blob or "u^r" in blob or "ur/r" in blob or "u^{r}" in blob
+
+
+def test_proof_journey_links_major_chapters() -> None:
+    text = PROOF_JOURNEY.read_text(encoding="utf-8")
+    for needle in [
+        "Lemma",
+        "five-lane",
+        "Φ-renorm",
+        "SND",
+        "Q6",
+        "Domain Architect",
+        "22050974",
+        "Archive",
+        "barycenter",
+        "PROOF-CHAIN-CLEAN",
+    ]:
+        assert needle in text, f"missing chapter cue {needle!r}"
+
+
+def test_reputation_lock_barycenter_not_clay() -> None:
+    text = REPUTATION.read_text(encoding="utf-8")
+    assert "barycenter" in text.lower()
+    assert "full evidence" in text.lower() or "clean chain" in text.lower()
+    assert "locus" in text.lower()
+    assert "billboard" in text.lower()
+
+
+def test_glossary_has_core_symbols() -> None:
+    text = GLOSSARY.read_text(encoding="utf-8")
+    for sym in ["T_c", "D_s", "Lambda", "Phi", "SND"]:
+        assert sym in text or sym.replace("Lambda", "\\Lambda") in text or "Λ" in text

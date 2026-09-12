@@ -12,21 +12,22 @@ flowchart TB
     MOM["Moments E, X, Y, Z<br/>spectral scale Λ = Y/X"]
     ID["Identities<br/>Dₛ = Z−ΛY, T_c = M−ΛN<br/>Λ' = 2(T_c − ν Dₛ)/X"]
     STAR["Lemma★ packaging<br/>shape form R★ / energy-budget form"]
-    PROD["Product estimate<br/>open estimate"]
+    FIVE["Five-lane diagnostics<br/>Bony / shell / packet probes"]
+    PROD["Product bound on T_c<br/>open estimate"]
     REG["Continuation / regularity<br/>from controlled Λ"]
   end
 
   subgraph phi["Φ-renorm branch — axisymmetric swirl"]
     PHIID["Γ → Φ identity<br/>r⁻⁴ ∂_z(Γ²) = ∂_z(Φ²)"]
     HDOT["Dissipation label<br/>Ḣ¹·³ (relabeled)"]
-    BAR["‖uʳ/r‖_∞ barrier<br/>open estimate"]
+    BAR["‖uʳ/r‖_∞ integrability<br/>open estimate"]
   end
 
   subgraph snd["Optional texture"]
     SNDN["SND / Ring Lemma<br/>conditional shell texture"]
   end
 
-  NSE --> MOM --> ID --> STAR --> PROD --> REG
+  NSE --> MOM --> ID --> STAR --> FIVE --> PROD --> REG
   PHIID --> HDOT --> BAR
   ID -.-> SNDN
   SNDN -.-> PROD
@@ -39,6 +40,6 @@ flowchart TB
 
   class NSE,MOM classical
   class ID,PHIID,HDOT identity
-  class STAR,REG package
+  class STAR,FIVE,REG package
   class PROD,BAR open
   class SNDN optional

@@ -17,8 +17,10 @@ from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 ROOT = Path(__file__).resolve().parents[2]
 OUT_DIR = ROOT / "docs" / "ns-review" / "visual-journey" / "figures"
 ART_DIR = Path("/opt/cursor/artifacts/ns-proof-chain-visual")
+JOURNEY_ART_DIR = Path("/opt/cursor/artifacts/ns-proof-journey")
 CAMPAIGN_ASSETS = ROOT / "docs" / "ns-review" / "assets" / "lemma-campaign"
 JOURNEY_ASSETS = ROOT / "docs" / "ns-review" / "visual-journey" / "assets"
+CAMPAIGN_DIR = ROOT / "docs" / "campaign"
 
 # Quiet craftsman palette — no purple glow cluster
 C_CLASSICAL = "#dce6ef"
@@ -76,16 +78,16 @@ def _arrow(ax, a, b):
 
 def render_proof_chain(out_dir: Path) -> dict[str, Path]:
     out_dir.mkdir(parents=True, exist_ok=True)
-    fig, ax = plt.subplots(figsize=(11.5, 8.2), dpi=160)
+    fig, ax = plt.subplots(figsize=(12.0, 9.0), dpi=160)
     fig.patch.set_facecolor(C_BG)
     ax.set_facecolor(C_BG)
-    ax.set_xlim(0, 12)
-    ax.set_ylim(0, 9)
+    ax.set_xlim(0, 12.5)
+    ax.set_ylim(0, 10)
     ax.axis("off")
 
     ax.text(
         6.0,
-        8.55,
+        9.55,
         "Proof chain — Navier–Stokes packaging",
         ha="center",
         va="center",
@@ -95,7 +97,7 @@ def render_proof_chain(out_dir: Path) -> dict[str, Path]:
     )
     ax.text(
         6.0,
-        8.15,
+        9.15,
         "Node color = chain status · dashed = open estimate · optional texture muted",
         ha="center",
         va="center",
@@ -105,75 +107,84 @@ def render_proof_chain(out_dir: Path) -> dict[str, Path]:
     )
 
     # Main trunk (left-center column)
-    nse = _box(ax, (4.2, 7.2), 3.2, 0.85, "Classical NSE on $\\mathbb{T}^3$\n$\\nabla\\cdot u=0$, viscosity $\\nu$", C_CLASSICAL)
-    mom = _box(ax, (4.2, 5.9), 3.2, 0.85, "Moments $E,X,Y,Z$\nspectral scale $\\Lambda=Y/X$", C_CLASSICAL)
+    nse = _box(ax, (4.0, 8.2), 3.2, 0.75, "Classical NSE on $\\mathbb{T}^3$\n$\\nabla\\cdot u=0$, viscosity $\\nu$", C_CLASSICAL)
+    mom = _box(ax, (4.0, 7.05), 3.2, 0.75, "Moments $E,X,Y,Z$\nspectral scale $\\Lambda=Y/X$", C_CLASSICAL)
     ident = _box(
         ax,
-        (4.2, 4.55),
+        (4.0, 5.8),
         3.4,
-        0.95,
+        0.85,
         "Identities\n$D_s=Z-\\Lambda Y$,\\; $T_c=M-\\Lambda N$\n$\\Lambda'=2(T_c-\\nu D_s)/X$",
         C_IDENTITY,
         fontsize=8.5,
     )
     star = _box(
         ax,
-        (4.2, 3.2),
+        (4.0, 4.5),
         3.4,
-        0.95,
+        0.85,
         "Lemma$\\star$ packaging\nshape form $\\mathcal{R}_\\star$ / energy budget",
+        C_PACKAGE,
+        fontsize=8.5,
+    )
+    five = _box(
+        ax,
+        (4.0, 3.3),
+        3.4,
+        0.8,
+        "Five-lane diagnostics\nBony / shell / packet probes",
         C_PACKAGE,
         fontsize=8.5,
     )
     prod = _box(
         ax,
-        (4.2, 1.85),
+        (4.0, 2.05),
         3.4,
-        0.9,
-        "Product estimate\nopen estimate",
+        0.85,
+        "Product bound on $T_c$\nopen estimate",
         C_OPEN,
         dashed=True,
         fontsize=9,
     )
     reg = _box(
         ax,
-        (4.2, 0.65),
+        (4.0, 0.8),
         3.4,
-        0.85,
+        0.8,
         "Continuation / regularity\nfrom controlled $\\Lambda$",
         C_PACKAGE,
         fontsize=8.5,
     )
 
-    for a, b in [(nse, mom), (mom, ident), (ident, star), (star, prod), (prod, reg)]:
+    for a, b in [(nse, mom), (mom, ident), (ident, star), (star, five), (five, prod), (prod, reg)]:
         _arrow(ax, a, b)
 
     # Phi branch (right)
-    ax.text(9.3, 7.55, "Φ-renorm branch", ha="center", fontsize=9, color="#5a6b7d")
+    ax.text(9.4, 8.55, "Φ-renorm branch", ha="center", fontsize=9, color="#5a6b7d")
     phi = _box(
         ax,
-        (9.3, 6.6),
+        (9.4, 7.6),
         3.0,
-        0.9,
+        0.85,
         "$\\Gamma\\to\\Phi$ identity\n$r^{-4}\\partial_z(\\Gamma^2)=\\partial_z(\\Phi^2)$",
         C_IDENTITY,
         fontsize=8,
     )
     hdot = _box(
         ax,
-        (9.3, 5.2),
+        (9.4, 6.3),
         3.0,
-        0.8,
+        0.75,
         "Dissipation label\n$\\dot H^{1.3}$ (relabeled)",
         C_IDENTITY,
         fontsize=8.5,
     )
     bar = _box(
         ax,
-        (9.3, 3.85),
+        (9.4, 5.0),
         3.0,
         0.85,
-        "$\\|u^r/r\\|_\\infty$ barrier\nopen estimate",
+        "$\\|u^r/r\\|_\\infty$ integrability\nopen estimate",
         C_OPEN,
         dashed=True,
         fontsize=8.5,
@@ -182,10 +193,10 @@ def render_proof_chain(out_dir: Path) -> dict[str, Path]:
     _arrow(ax, hdot, bar)
 
     # Optional SND
-    ax.text(9.3, 2.55, "Optional texture", ha="center", fontsize=9, color="#5a6b7d")
+    ax.text(9.4, 3.55, "Optional texture", ha="center", fontsize=9, color="#5a6b7d")
     snd = _box(
         ax,
-        (9.3, 1.7),
+        (9.4, 2.7),
         3.0,
         0.85,
         "SND / Ring Lemma\nconditional shell texture",
@@ -218,7 +229,7 @@ def render_proof_chain(out_dir: Path) -> dict[str, Path]:
             ("optional texture", C_OPTIONAL, True),
         ]
     ):
-        x0 = 0.55 + i * 2.25
+        x0 = 0.45 + i * 2.35
         patch = FancyBboxPatch(
             (x0, legend_y - 0.12),
             0.35,
@@ -248,23 +259,24 @@ def render_chain_status_card(out_dir: Path) -> Path:
         ("Moments $E,X,Y,Z$ and $\\Lambda$", "defined", C_CLASSICAL),
         ("$D_s$, $T_c$, $\\Lambda'$ identities", "in place", C_IDENTITY),
         ("Lemma$\\star$ shape / energy-budget packaging", "stated", C_PACKAGE),
-        ("Product / HH-channel bound", "open estimate", C_OPEN),
+        ("Five-lane diagnostics (Bony / shell / packet)", "probes", C_PACKAGE),
+        ("Product bound on $T_c$", "open estimate", C_OPEN),
         ("Continuation arrow (needs product + packaging)", "conditional edge", C_PACKAGE),
         ("$\\Phi$-renorm $\\Gamma\\to\\Phi$ identity", "in place", C_IDENTITY),
         ("$\\dot H^{1.3}$ dissipation label", "corrected", C_IDENTITY),
-        ("$\\|u^r/r\\|_\\infty$ barrier", "open estimate", C_OPEN),
+        ("$\\|u^r/r\\|_\\infty$ integrability", "open estimate", C_OPEN),
         ("SND / Ring conditional texture", "optional", C_OPTIONAL),
     ]
 
-    fig, ax = plt.subplots(figsize=(9.5, 7.2), dpi=160)
+    fig, ax = plt.subplots(figsize=(9.5, 7.8), dpi=160)
     fig.patch.set_facecolor(C_BG)
     ax.set_facecolor(C_BG)
     ax.set_xlim(0, 10)
-    ax.set_ylim(0, 11)
+    ax.set_ylim(0, 12)
     ax.axis("off")
     ax.text(
         5,
-        10.4,
+        11.3,
         "Chain status",
         ha="center",
         fontsize=16,
@@ -272,14 +284,14 @@ def render_chain_status_card(out_dir: Path) -> Path:
     )
     ax.text(
         5,
-        9.95,
+        10.8,
         "Colors mark nodes in the proof chain — not grades, not verdicts",
         ha="center",
         fontsize=9,
         color="#5a6b7d",
     )
 
-    y = 9.2
+    y = 10.0
     for name, status, color in rows:
         patch = FancyBboxPatch(
             (0.6, y - 0.32),
@@ -326,11 +338,22 @@ def stage_journey_assets() -> list[Path]:
     return copied
 
 
-def sync_artifacts(paths: list[Path]) -> None:
-    ART_DIR.mkdir(parents=True, exist_ok=True)
+def sync_artifacts(paths: list[Path], dest: Path) -> None:
+    dest.mkdir(parents=True, exist_ok=True)
     for p in paths:
         if p.is_file():
-            shutil.copy2(p, ART_DIR / p.name)
+            shutil.copy2(p, dest / p.name)
+
+
+def stage_campaign_docs() -> list[Path]:
+    """Journey landing docs for artifact walkthrough."""
+    wanted = [
+        "PROOF-JOURNEY.md",
+        "REPUTATION-LOCK.md",
+        "NOTATION-GLOSSARY.md",
+        "journey-chain.mmd",
+    ]
+    return [CAMPAIGN_DIR / name for name in wanted if (CAMPAIGN_DIR / name).is_file()]
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -348,9 +371,12 @@ def main(argv: list[str] | None = None) -> int:
     if mmd_src.is_file():
         shutil.copy2(mmd_src, mmd_dst)
 
-    all_paths = [chain["png"], chain["svg"], status, mmd_dst, *assets]
+    campaign_docs = stage_campaign_docs()
+    all_paths = [chain["png"], chain["svg"], status, mmd_dst, *assets, *campaign_docs]
     if not args.no_artifacts:
-        sync_artifacts([p for p in all_paths if p and Path(p).exists()])
+        existing = [p for p in all_paths if p and Path(p).exists()]
+        sync_artifacts(existing, ART_DIR)
+        sync_artifacts(existing, JOURNEY_ART_DIR)
 
     print("Wrote:")
     for p in all_paths:

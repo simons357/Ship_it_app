@@ -1,30 +1,24 @@
-# PR draft — NS proof-chain visual journey
+# PR draft — NS proof journey (visual + campaign)
 
 **Branch:** `cursor/ns-proof-chain-visual-0cc5`  
 **Base:** `main`
 
 ## Summary
 
-Public face for the Navier–Stokes packaging: a visual proof-chain journey with clean math. Experts read the chain; node colors carry status. Campaign materials do **not** stamp solved / unsolved.
+Click-through proof journey for the whole body of work: campaign landing, reputation lock, notation glossary, expanded chain diagram (five-lane on the trunk; open nodes named as math objects), and clean math face. Experts read status from the chain. Campaign materials do **not** stamp solved / unsolved, and do not claim Clay closure.
 
 ## Deliverables
 
-- `docs/ns-review/PROOF-CHAIN-CLEAN.md` — superior exposition (\(T_c,\Lambda,X,Y,Z,E\), Lemma★, product needs)
-- `docs/ns-review/visual-journey/` — Mermaid + PNG/SVG chain map, chain-status card, captions, reused barycenter/shell figures
-- `docs/campaign/visual-journey/` — campaign pointer
-- Optional one-pager PDF: `docs/ns-review/visual-journey/proof-chain-onepager.pdf`
+- `docs/campaign/PROOF-JOURNEY.md` — landing + chapters (PhiRenorm, Lemma★, five-lane, Q6, SND, DA, Zenodo KEEP, archive shelf)
+- `docs/campaign/REPUTATION-LOCK.md` — mistakes OK if corrected under content; rep = full evidence + clean chain; barycenter = locus
+- `docs/campaign/NOTATION-GLOSSARY.md` — symbol card + cleanup pointers
+- `docs/campaign/journey-chain.mmd` — body-of-work Mermaid
+- `docs/ns-review/PROOF-CHAIN-CLEAN.md` + `docs/ns-review/visual-journey/` — clean math + PNG/SVG chain
 - Generator + tests: `scripts/visual_journey/generate_proof_chain_figures.py`, `tests/test_proof_chain_visual.py`
 
-## Math cleaned
+## Monday first click
 
-- Notation aligned across Lemma★ / Φ-renorm / SND texture
-- \(\dot H^{1.3}\) relabel visible on the Φ branch
-- Open nodes labeled **open estimate** (not FAILED / ERRATA)
-- Theater / biography framing kept out of this pack
-
-## Monday visual
-
-Post first: `docs/ns-review/visual-journey/figures/proof-chain.png`
+`docs/ns-review/visual-journey/figures/proof-chain.png` — then barycenter `assets/lemma-star-barycenter.png`.
 
 ## Test plan
 

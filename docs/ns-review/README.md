@@ -4,8 +4,11 @@ Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS p
 
 ## Proof chain (visual + clean math)
 
-Public face for the packaging journey — figures first, notation aligned, open nodes marked neutrally as *open estimate*:
+Public click-through for the packaging and adjacent books — figures first, notation aligned, open nodes marked neutrally as *open estimate*:
 
+- Campaign landing: [`../campaign/PROOF-JOURNEY.md`](../campaign/PROOF-JOURNEY.md)
+- Reputation lock: [`../campaign/REPUTATION-LOCK.md`](../campaign/REPUTATION-LOCK.md)
+- Notation glossary: [`../campaign/NOTATION-GLOSSARY.md`](../campaign/NOTATION-GLOSSARY.md)
 - [`PROOF-CHAIN-CLEAN.md`](./PROOF-CHAIN-CLEAN.md) — definitions of \(T_c,\Lambda,X,Y,Z,E\); Lemma★; product estimate needs
 - [`visual-journey/`](./visual-journey/) — Mermaid + PNG/SVG chain map, captions, reused shell/barycenter figures
 - Campaign mirror: [`../campaign/visual-journey/`](../campaign/visual-journey/)
