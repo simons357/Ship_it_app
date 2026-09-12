@@ -1,8 +1,8 @@
 Stay here. This chat is DA.
 
-Help to get this off the desk
-(one-page sheet, then the integrals):
+Every leftover on one sheet (send this):
 docs/ISSUES-SHEET.md
+Math for rows 1–5:
 docs/HELP-OFF-DESK.md
 Swirl wall correction (F=u^θ/r,
 G=ω^θ/r; time-window if; occupation

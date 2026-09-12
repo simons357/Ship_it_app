@@ -31,13 +31,26 @@ class IssuesSheetTests(unittest.TestCase):
         self.assertNotIn("Clay is solved", text)
         self.assertNotIn("coherence viscosity", text)
 
-    def test_four_jobs_are_named(self):
+    def test_every_open_row_is_named(self):
         text = PAGE.read_text()
-        self.assertIn("H1 = WRITE (6)", text)
-        self.assertIn("Lemma★", text)
-        self.assertIn("Axisymmetric remainder", text)
-        self.assertIn("RH WRITE (6)", text)
-        self.assertIn("55/56", text)
+        for mark in (
+            "H1 = WRITE (6)",
+            "H2 from energy",
+            "H3",
+            "Lemma★",
+            "Hyp-Lat★",
+            "Axisymmetric remainder",
+            "RH WRITE (6)",
+            "Uniform",
+            "Goldbach",
+            "Yang–Mills",
+            "BSD",
+            "Hodge",
+            "P vs NP",
+            "55/56",
+            "9D",
+        ):
+            self.assertIn(mark, text)
 
     def test_help_report_points_at_the_sheet(self):
         text = HELP.read_text()

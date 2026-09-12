@@ -1,86 +1,95 @@
-# Issues sheet — what still has to be solved
+# Issues sheet — every leftover that still needs an estimate
 
 12 September 2026.
-**One page. Send this.** Math is in
-[`HELP-OFF-DESK.md`](HELP-OFF-DESK.md).
+**One page. Send this.**
+https://github.com/simons357/Ship_it_app/blob/cursor/unaugmented-r4-vorticity-f80e/docs/ISSUES-SHEET.md
+
+Math for 1–5: [`HELP-OFF-DESK.md`](HELP-OFF-DESK.md).
 Filter: [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md).
-
-Ordinary Navier–Stokes is not solved.
-The Riemann hypothesis is not solved.
-Do not retitle anything below as a close.
-
 Living line: GitHub PR 24,
 branch `cursor/unaugmented-r4-vorticity-f80e`.
 Operator: Jonathan Robert Simons
 (Prime Field Technologies).
 
+Ordinary Navier–Stokes is not solved.
+The Riemann hypothesis is not solved.
+Do not retitle any row below as a close.
+
+Catalog B open count is 1 (`B_regularity`).
+That is ordinary NS. It is row 1 or 4 or 5,
+not a thirteenth NS leftover.
+
 ---
 
-## Open leftovers (one person, one integral)
+## A. Open — need an estimate or a named kill
 
-| # | Issue | Object | What would close it | Who |
+One person, one row. Do not glue 1, 4, and 5.
+
+| # | Issue | Object | What would close it | File |
 |---|---|---|---|---|
-| 1 | H1 = WRITE (6) | Bad-pair stretching \(A_{\mathrm{bad}}\) on the cylinder \(Q_r\) | Prove one of the three shapes (thinness / \(J\) on folds / dynamics on \(r^2/\nu\)), or write a named kill of those shapes. Not another *if*. | Geometric NS / vorticity stretching |
-| 2 | Lemma★ | \(\sup\mathcal R_\star<\infty\) on \(\mathbb{T}^3\), \(\mathcal R_\star=(T_c)_+^2/(\mathcal D_s E Y)\) | A geometry-only bound, or a sequence with \(\mathcal R_\star\to\infty\). Lattice transfer X1–X4/X6 still missing. | Fourier / triad NS |
-| 3 | Axisymmetric remainder | \(\int\rho_j=\int(T_{j\leftarrow j})_+/Z_j\) on unaugmented axisymmetric-with-swirl \(\mathbb{R}^3\) | A class bound, or a field in the class with \(\int\rho_j=\infty\). Occupancy \(55/56\) already printed; it did not decay. | Axisymmetric NS with swirl |
-| 4 | RH WRITE (6) | Every non-trivial zero of \(\zeta\) on \(\operatorname{Re}s=1/2\) | One estimate that forces the line. Q is not it. | Analytic number theory |
+| 1 | H1 = WRITE (6) | Bad-pair stretching \(A_{\mathrm{bad}}\) on the cylinder \(Q_r\) | Prove thinness, or \(J\) on folds, or dynamics on \(r^2/\nu\); or write a named kill of those shapes. Not another *if*. | `docs/WRITE_6.md`, `docs/H1-OBJECT.md` |
+| 2 | H2 from energy | Flux \(r^{-1}\iint|u||\omega|^2\) on the same cylinder | A priori from energy, or keep CKN-smallness and say so. CKN-small already sits. | `docs/H-SYSTEM.md` |
+| 3 | H3 | Exterior Biot–Savart on the same cylinder | Absorb as \(r\to 0\). Written, not absorbed. | `docs/H-SYSTEM.md` |
+| 4 | Lemma★ | \(\sup\mathcal R_\star<\infty\) on \(\mathbb{T}^3\), \(\mathcal R_\star=(T_c)_+^2/(\mathcal D_s E Y)\) | A geometry-only bound, or a sequence with \(\mathcal R_\star\to\infty\). | `docs/LEMMA-STAR-STATEMENT.md` |
+| 4a | Hyp-Lat★ | Lattice transfer X1–X4/X6 of the continuum incidence \(I\ll m^{4/3}\) | Write the transfer, or drop the incidence route. Continuum \(m^{4/3}\) is not a lattice theorem. | `docs/LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md` |
+| 5 | Axisymmetric remainder | \(\int\rho_j=\int(T_{j\leftarrow j})_+/Z_j\) on unaugmented axisymmetric-with-swirl \(\mathbb{R}^3\) | A class bound, or a field in the class with \(\int\rho_j=\infty\). Occupancy \(55/56\) already printed; it did not decay. | `docs/AXISYM-SHELL.md`, `docs/AXISYM-SWIRL-PROBE.md` |
+| 6 | RH WRITE (6) | Every non-trivial zero of \(\zeta\) on \(\operatorname{Re}s=1/2\) | One estimate that forces the line. Q is not it. | `docs/RH-CHAIN.md` |
+| 7 | Uniform \(H^1\) as \(\varepsilon\to 0\) | Track A extra-stress NS | A bound independent of \(\varepsilon\). **Not required** for Theorem A to stay finished. A is not B. | `docs/A-CHAIN.md` |
+| 8 | Goldbach’s conjecture | Every even integer \(\ge 4\) is a sum of two primes | That statement. The matrix corollary \(R\ge -2/9\) already sits and is not this. | `docs/GOLDBACH-CHAIN.md` |
+| 9 | Yang–Mills mass gap | Spectrum of 4-D quantum YM on the vacuum-orthogonal subspace bounded below by a positive constant | That gap. The SM kinetic term is not it. | `docs/YM-PROOF-CHAIN.md` |
+| 10 | BSD | For every \(E/\mathbb{Q}\): algebraic rank = analytic rank, \(\Sha\) finite, leading term | That identity for every curve. Zenodo 20552682 is Q as a prototype, not BSD. | `docs/BSD-PROOF-CHAIN.md` |
+| 11 | Hodge | Every rational Hodge class on a smooth complex projective variety is algebraic | That for every such \(X\). No Hodge paper sits here. | `docs/HODGE-PROOF-CHAIN.md` |
+| 12 | P vs NP | A Turing-machine proof that \(\mathrm{P}=\mathrm{NP}\) or \(\mathrm{P}\neq\mathrm{NP}\) | That proof in the TM model. SFE is not the model. | `docs/PNP-PROOF-CHAIN.md` |
 
-Do not glue 1–3. A number on one is not a
-bound on the others. Do not start H1 from
-ABC_λ. Do not cash \(0.641\), \(0.610\),
-or \(0.327\). Do not restore occupation
-decay from the wall detector.
+A cylinder (ordinary NS, geometric path) closes only if
+C+\(R_\phi\), **1**, **2** (or CKN-small), and **3** all sit.
+Then local Serrin, not CKN. Lemma C is an *if*, not an H.
+Global parent stretching **H** is open and is not a
+cylinder. \(R_\phi\) is not free.
 
----
-
-## Same cylinder, not Job 1
-
-A cylinder closes only if all of these sit.
-H1 alone is not enough.
-
-| Letter | Object | Status |
-|---|---|---|
-| C | Good pairs (alignment *if*) | Theorem as an *if*. Not an H. |
-| H1 | Bad pairs | **Open. Job 1.** |
-| H2 | Flux \(r^{-1}\iint\|u\|\|\omega\|^2\) | CKN-smallness sits. From energy alone: **open**. |
-| H3 | Exterior Biot–Savart | Written. Not absorbed as \(r\to 0\). **Open.** |
-| \(R_\phi\) | Cutoff error | Not free. |
-| H | Global parent stretching | Open. A cylinder is not this parent. |
-
-Ring Lemma \(\|\nabla\xi\|_{L^\infty(E_c)}\le C\,2^{j^*}\)
-is **REPAIR**. Do not quote it as proved.
+Do not start 1 from ABC_λ. Do not cash \(0.641\),
+\(0.610\), or \(0.327\) as a close of 4. Do not
+restore occupation decay from the wall detector
+as a close of 5. Do not retitle Q as 6 or 10.
 
 ---
 
-## Already off this desk (do not redo)
+## B. Already sit — do not redo
 
 | Item | What it is | Send as |
 |---|---|---|
-| Theorem A | Extra-stress / \(Q_1\)-NS, \(\varepsilon>0\), \(\beta\ge 1/2\) | This PDE only. Known class. Not ordinary NS. Uniform \(H^1\) as \(\varepsilon\to 0\) is extra and still open. |
-| Q / 22045478 | Inverse-GCD: Bridge*, Theorem P, \(H_N\ge -1\), nonnegative form | August GCD paper. Not RH. |
-| Goldbach-shaped | \(R\ge -2/9\) if that prime-difference vector is nonzero | Matrix corollary. Not Goldbach’s conjecture. |
+| Theorem A | Extra-stress / \(Q_1\)-NS, \(\varepsilon>0\), \(\beta\ge 1/2\) | This PDE only. Known class. Not ordinary NS. |
+| Q / 22045478 | Inverse-GCD: Bridge*, Theorem P, \(H_N\ge -1\), nonnegative form | August GCD paper. Not RH. Not BSD. |
+| Goldbach-shaped | \(R\ge -2/9\) if that prime-difference vector is nonzero | Matrix corollary. Not row 8. |
 | Poincaré | Perelman | Literature reprint. Not ours as a proof. |
-| Detector occupation | 5-D occupation from the swirl wall | **Withdrawn.** |
+| Lemma C | Good-pair alignment *if* | Their theorem as an *if*. |
+| P1 / P1-loc / PC | Low-pass, cutoff, one-path cost | Sit. None is H1. |
+| Far-shell Young | Axisymmetric \(T_{j\leftarrow\mathrm{IR}}\), \(T_{j\leftarrow\mathrm{UV}}\) | Sit. Remainder is still row 5. |
 | Good-set | supplied estimate | **Fixed.** Do not rewrite. |
-| Full Q floor, \(H_N\ge -3/14\), \(\Phi\)-cancel as ordinary NS, HB as unifier | taken back | Stay back. |
 
 ---
 
-## Other maps (open; not this week’s four jobs)
+## C. Dead or withdrawn — do not rebuild
 
-YM mass gap, BSD, Hodge, P vs NP: reading
-maps only. Missing step stays missing.
-Files: `docs/YM-PROOF-CHAIN.md`,
-`docs/BSD-PROOF-CHAIN.md`,
-`docs/HODGE-PROOF-CHAIN.md`,
-`docs/PNP-PROOF-CHAIN.md`.
+| Item | Status |
+|---|---|
+| \(K=0\) | Dead. Amplitude kills it. |
+| \(\lvert T_c\rvert\le C\|u\|_2 X^{3/2}\) | Dead. Scaling \(a^3\) vs \(a^4\). |
+| Uniform pre-Young \(C\) | Dead. |
+| Attack 9D designed \(\Theta(m^2)\) | Freiman-AP. **Dead.** Do not start 9D. |
+| Fixed-output \(\Theta(m^2)\) | Counting error. \(K\le 16s\). |
+| Detector occupation | 5-D occupation from the swirl wall. **Withdrawn.** |
+| Full Q floor \(>-1/2\), \(H_N\ge -3/14\) | Taken back. Stay back. |
+| \(\Phi\)-cancel as ordinary NS | Dropped. |
+| HB as a unifier | Thrown out. |
+| SFE / UHF / DHFA as constitutive NS | Shelved. |
+| Ring Lemma \(\|\nabla\xi\|_{L^\infty(E_c)}\le C\,2^{j^*}\) | **REPAIR.** Do not quote as proved. |
 
 ---
 
-## What Monday can close without a leftover close
+## D. What Monday can close without closing A
 
-These clear the *pile*. They do not close
-Jobs 1–4.
+These clear the *pile*. They do not close rows 1–12.
 
 1. Zenodo the swirl paper as a **map**.
    Paste: [`SWIRL-DEPOSIT.md`](SWIRL-DEPOSIT.md).
@@ -88,37 +97,33 @@ Jobs 1–4.
 2. Theorem A, honest title, class credited.
    `docs/THEOREM-A-Q1.pdf`.
 3. Leave 22045478 as the GCD paper.
-4. Send this sheet plus
-   [`HELP-OFF-DESK.md`](HELP-OFF-DESK.md)
-   to everyone who worked the project.
+4. Send **this sheet** to everyone who worked
+   the project. Attach [`HELP-OFF-DESK.md`](HELP-OFF-DESK.md)
+   if they are taking a row in 1–5.
 5. Tape: “ordinary NS solved” and
    “RH solved” stay false.
 
-**Do not send.** A theft letter. WRITE (6)
-as a theorem. Theorem A as unaugmented NS.
+**Do not send.** A theft letter. WRITE (6) as a
+theorem. Theorem A as unaugmented NS.
 Axisymmetric-with-swirl as finished.
-A cold letter as a close.
+A cold letter as a close. Attack 9D as live.
 
 ---
 
-## Attachments
+## E. Attachments if they take a row
 
 - This sheet.
-- [`HELP-OFF-DESK.md`](HELP-OFF-DESK.md)
-  (the four integrals, stated).
+- [`HELP-OFF-DESK.md`](HELP-OFF-DESK.md) (rows 1–5).
 - [`WRITE_6.md`](WRITE_6.md).
 - [`LEMMA-STAR-STATEMENT.md`](LEMMA-STAR-STATEMENT.md).
 - [`AXISYM-SHELL.md`](AXISYM-SHELL.md),
   [`AXISYM-SWIRL-PROBE.md`](AXISYM-SWIRL-PROBE.md),
   [`SWIRL-WALL-CORRECTION.md`](SWIRL-WALL-CORRECTION.md).
 - [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md).
-- `docs/SWIRL-PAPER.pdf`,
-  `docs/THEOREM-A-Q1.pdf`.
+- `docs/SWIRL-PAPER.pdf`, `docs/THEOREM-A-Q1.pdf`.
 
-Do not send the PR 48 SND/SFE pile as
-this leftover. Do not overwrite
-`scripts/ns_attacks/stokes_moments.py`.
+Do not send the PR 48 SND/SFE pile as this leftover.
+Do not overwrite `scripts/ns_attacks/stokes_moments.py`.
 
 NS not solved. RH not solved.
-The door is named. The last line is not
-written.
+The door is named. The last line is not written.

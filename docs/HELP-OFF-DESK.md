@@ -7,9 +7,9 @@ solved. This is a request for estimates.**
 
 To everyone who worked on this project.
 
-One-page send sheet (the table):
+One-page send sheet (every leftover, rows 1–12):
 [`ISSUES-SHEET.md`](ISSUES-SHEET.md).
-This page is the math. A person who was
+This page is the math for rows 1–5. A person who was
 not in the chat can work the leftovers
 from either page. It does not ask anyone
 to certify a proof that is not there. It
