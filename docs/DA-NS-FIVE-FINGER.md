@@ -3,7 +3,7 @@
 **Class:** axisymmetric-with-swirl is only Finger 5. Fingers 1–4 are on the full
 unaugmented 3-D NSE on \(\mathbb{R}^3\) or \(\mathbb{T}^3\). Quantity and remainder
 are per finger. This page is a map. It is not a theorem. It does not weld
-the three writings. Soft X stays silent.
+the three writings. Soft X silent.
 
 The Cosmo / SM five-finger stack (`docs/DA-FINGERS.md`,
 \(R=\exp(-\tfrac12\chi^2_{\mathrm{ext}})\exp(-\tfrac12\chi^2_{\mathrm{int}})\),
@@ -201,7 +201,7 @@ Future is unaugmented NS with one leftover moved, or a kill of that leftover.
 - Ring as proved. Occupancy \(55/56\) as \([\rho]\).
 - Finite \(K\approx 0.641\), \(0.506\), \(0.456\), \(\sqrt{K}\approx 0.711\),
   \(\mathcal N_\star\approx 0.099\) as \(C_0\) or a kill.
-- “Almost proved.” A⇒B. SND≡Bridge.
+- A leftover retitled as closed. A⇒B. SND≡Bridge.
 
 ---
 
@@ -225,7 +225,7 @@ Machine: `scripts/da_ns_five_finger.py`.
 - Need★: `docs/NEED-STAR-HH-L-DUAL.md`.
 - ★ reason: `docs/LEMMA-STAR-REASON.md`.
 - Grow \(s\): `docs/ATTACK-9D-GROW-S.md`.
-- Axisymmetric shell: `docs/AXISYM-SHELL-DOOR.md`.
+- Axisymmetric shell: `docs/AXISYM-SHELL.md`.
 - Cosmo hand (other book): `docs/DA-FINGERS.md`.
 - Tape: `docs/YES-NO-OPEN.md`.
 - Leftovers: `docs/ISSUES-SHEET.md`.
