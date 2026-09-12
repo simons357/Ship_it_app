@@ -35,11 +35,12 @@ Human: Jonathan Simons (`winchester.anesthesia@gmail.com` / `simonsmedical@iclou
 
 ## What you are being asked to do
 
-Remaining-work lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Live work, in order:
+Remaining-work lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Live work, in order (lock: [`WHAT-ELSE.md`](WHAT-ELSE.md)):
 
-1. **Attack 9D (retargeted):** growing input **and** output supports, full complex polarizations, frequency factors retained. Uniform 9B target \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}\|w\|_2^2\). Fixed-output \(\Theta(m^2)\) is **excluded** (\(K\le 16s\)). Spec: `docs/math/ns_attacks/ATTACK_9D_THETA_M2_LOCKED_PHASE.md`. Exclusion: `docs/math/ns_attacks/ATTACK_9B_COUNTING_CS_EXCLUSION.md`.
-2. **Lemma★ proof:** write the triadic reason that stretching cannot outrun spectral spread. HH→L is the dangerous channel. That reason is **not written**.
-3. **Optional other track:** H1 on the cylinder — **not started**. Do not start it unless the packet line is shelved.
+1. **Primary — Need★ dual size on HH→L.** After gap-cancel \(T_c=M-\Lambda N\), the signed dual that sizes the leftover HH→L piece against \(D_s\) is **MISSING**. Do not invent it. Soft X silent.
+2. **Secondary — Attack 9D:** kill-lane pressure only. Growing I/O, complex polarizations, \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}\|w\|_2^2\). Setup: [`docs/math/ns_attacks/ATTACK_9D_SETUP.md`](../math/ns_attacks/ATTACK_9D_SETUP.md).
+3. **Paths to DA** as soon as a dual write or 9D result lands. Do not send a close.
+4. **Optional other track:** H1 on the cylinder — **not started**. Do not start it unless the packet line is shelved.
 
 Natural same-shell (9C), AP fan (9A), and finite 9B \(K_{\alpha,\beta}\) samples are **not kills**. Do not re-run them as if they were the remaining job.
 

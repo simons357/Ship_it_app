@@ -26,7 +26,7 @@ The \(O(1)\) gap is available in this model, and that still does not produce \(\
 
 **Fixed-output \(\Theta(m^2)\) 9D is excluded.** For each output \(k\), \(q=k-p\), so at most \(m\) ordered pairs land on that mode. Occupied output count \(s\) on shell \(\beta\) gives \(K_{\alpha,\beta}\le 16s\). A fixed number of outputs cannot produce unbounded \(K\). Note: [`docs/math/ns_attacks/ATTACK_9B_COUNTING_CS_EXCLUSION.md`](../math/ns_attacks/ATTACK_9B_COUNTING_CS_EXCLUSION.md).
 
-Board lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Two live writes only (9D + ★ reason).
+Board lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Primary = Need★ dual size on HH→L (signed dual still missing). 9D secondary. Soft X silent.
 
 **Still live:** growing **input and output** supports, full complex polarizations, frequency factors retained. Uniform 9B target:
 \[
