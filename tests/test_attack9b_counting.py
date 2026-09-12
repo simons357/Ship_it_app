@@ -31,7 +31,18 @@ class CountingLockTests(unittest.TestCase):
         self.assertIn(r"C\frac{\alpha}{\sqrt{\beta}}", text)
         self.assertIn(r"Fixed \(s\)", text)
         self.assertIn("NS not solved", text)
+        self.assertIn("**is this page** (9B uniform target)", text)
+        self.assertIn("It is not a 9D object.", text)
+        self.assertIn("Do not build a ★ sentence", text)
         self.assertNotIn("NS is solved", text)
+
+    def test_9d_spec_does_not_claim_the_B_bound(self):
+        text = (ROOT / "docs" / "math" / "ns_attacks" / "ATTACK_9D_THETA_M2_LOCKED_PHASE.md").read_text()
+        self.assertIn("is **Attack 9B**, not 9D", text)
+        self.assertIn("**not** a new 9D field", text)
+        self.assertIn("Finding that scaling", text)
+        self.assertIn("is **not** a 9D lemma", text)
+        self.assertIn("SPEC / STUB", text)
 
     def test_one_output_has_at_most_m_pairs(self):
         field = {}

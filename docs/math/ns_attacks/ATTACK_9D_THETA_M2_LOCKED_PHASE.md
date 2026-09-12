@@ -20,6 +20,48 @@ Growing the **number of output modes** stays a 9B test
 (complex polarizations, keep \(|k|\)). That is not (1) and
 not (2).
 
+## Setup lock — do not guess this as 9D
+
+The uniform target
+\[
+\|\Pi_\beta B(w,w)\|_2
+\le
+C\frac{\alpha}{\sqrt{\beta}}\|w\|_2^2
+\]
+is **Attack 9B**, not 9D.
+[`../../LEMMA-STAR-9B-COUNTING.md`](../../LEMMA-STAR-9B-COUNTING.md).
+
+- \(B=B(w,w)=P[(w\cdot\nabla)w]\) is the same bilinear
+  as the exact-shell / HH→L fan work. \(w=w_\alpha\)
+  lives on one Stokes eigen-shell \(Aw=\alpha w\).
+  \(\Pi_\beta\) is the projector onto shell \(\beta\).
+  This is **not** a new 9D field.
+- Equivalent form:
+  \(\sup K_{\alpha,\beta}<\infty\), with
+  \(K_{\alpha,\beta}=\beta\|\Pi_\beta B(w,w)\|_2^2/(\alpha^2\|w\|_2^4)\).
+- Attack 12’s \(\mathcal R_\star\sim\beta/\alpha\) is a
+  **different quotient** on a **different family**
+  (partners of a low key on a high sphere). Do **not**
+  merge \(\sqrt{K}\approx 0.711\) with Attack 12’s
+  \(\mathcal R_\star\approx 0.71\).
+
+**Growth law.** There is no seated exponent that ties
+input/output support sizes to \(\alpha,\beta\).
+\(\alpha,\beta\) are eigenvalues. \(m\) is the number of
+input keys on shell \(\alpha\). \(s\) is the number of
+occupied keys of \(\Pi_\beta B(w,w)\) on shell \(\beta\).
+The crude phase-free bound is \(K\le 16s\). Fixed \(s\)
+is closed. Whether \(K\) stays bounded as \(m\) and \(s\)
+**grow** is the open 9B test
+(`attack9b_output_counting.py`). Finding that scaling
+is **not** a 9D lemma.
+
+9D’s \(\Theta(m^2)\) is a *design size for a closure
+subset*, not a proven law for \(\|\Pi_\beta B\|_2\).
+Writing (1) already died. Writing (2) is excluded.
+Do not start a 9D pass by inventing a support
+\(\leftrightarrow(\alpha,\beta)\) exponent.
+
 ## Motivation (why 9C failed → what 9D must change)
 
 Attack 9C locked:

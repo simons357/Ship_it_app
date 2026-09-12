@@ -132,6 +132,25 @@ fixed-\(s\) 9D sits. Uniform \(K\) still open.
 
 ---
 
+## Order (do not guess 9D first)
+
+The displayed bound
+\(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}\|w\|_2^2\)
+**is this page** (9B uniform target). \(B=B(w,w)\)
+is the same shell-projected bilinear as the
+HH→L / exact-shell fan. It is not a 9D object.
+
+Growing input and output supports is the
+remaining **9B** test. No exponent tying
+\((m,s)\) to \((\alpha,\beta)\) is seated.
+9D does not supply that exponent.
+Attack 12 \(\mathcal R_\star\sim\beta/\alpha\)
+may be cited as a channel diagnostic only.
+Do not build a ★ sentence from those
+numbers and call it 9D.
+
+---
+
 ## What remains
 
 Full complex polarizations, growing input
