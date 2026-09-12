@@ -8,7 +8,7 @@
 | File | Role |
 | --- | --- |
 | [`docs/papers/swirl/Simons_PhiRenorm_Swirl_2026-06-30.tex`](../papers/swirl/Simons_PhiRenorm_Swirl_2026-06-30.tex) | June 30 SoT TeX (relabeled) |
-| [`docs/papers/swirl/Simons_PhiRenorm_Swirl_2026-06-30.pdf`](../papers/swirl/Simons_PhiRenorm_Swirl_2026-06-30.pdf) | Compiled face dated 30 Jun 2026 (still shows pre-relabel \(\dot H^{2.6}\) in the PDF binary) |
+| [`docs/papers/swirl/Simons_PhiRenorm_Swirl_2026-06-30.pdf`](../papers/swirl/Simons_PhiRenorm_Swirl_2026-06-30.pdf) | Recompiled face with \(\dot H^{1.3}\) (upload pack for Zenodo `21071991`; live Zenodo PDF may still be pre-relabel until token apply) |
 | [`docs/papers/swirl/Simons_PhiRenorm_Swirl_2026-08-22.tex`](../papers/swirl/Simons_PhiRenorm_Swirl_2026-08-22.tex) | Companion Part D note with \(\dot H^{1.3}\) and \(r^3\) energy already in place |
 | [`PHI-RENORM-WHAT-IS-KEPT.md`](./PHI-RENORM-WHAT-IS-KEPT.md) | KEEP / PARK honesty card (separate from Lemma★) |
 

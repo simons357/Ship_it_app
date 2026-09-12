@@ -368,7 +368,7 @@
       "NEEDS_TITLE_CLEAN": 0,
       "NEEDS_AUDIT_FIX": 1
     },
-    "fetched_at": "2026-09-12T00:10:03Z"
+    "fetched_at": "2026-09-12T14:07:48Z"
   },
   "records": [
     {
@@ -415,7 +415,7 @@
       "disposition": "KEEP",
       "flags": "",
       "alias": "Unaugmented NS + SND hypothesis framing (Ring + SND conditional)",
-      "notes": "Honest conditional framing; SND remains an open hypothesis for unaugmented NS."
+      "notes": "Honest conditional framing; SND remains an open hypothesis for unaugmented NS. Live abstract already walks back overclaims; title clean."
     },
     {
       "record_id": "22050975",
@@ -438,7 +438,7 @@
       "disposition": "KEEP",
       "flags": "",
       "alias": "Φ-renorm swirl algebra (short concept)",
-      "notes": "Companion short concept to 22050974."
+      "notes": "Companion short concept to 22050974. Live abstract already walks back overclaims; title clean."
     },
     {
       "record_id": "22050974",
@@ -461,7 +461,7 @@
       "disposition": "KEEP",
       "flags": "",
       "alias": "Φ-renorm swirl algebra (long concept)",
-      "notes": "Q1-augmented / Phi system only."
+      "notes": "Q1-augmented / Phi system only. Live abstract already walks back overclaims; title clean."
     },
     {
       "record_id": "22050965",
@@ -484,7 +484,7 @@
       "disposition": "KEEP",
       "flags": "",
       "alias": "T2 shell-flux Gronwall under SND",
-      "notes": "Conditional on SND only."
+      "notes": "Conditional on SND only. Live abstract already walks back overclaims; title clean."
     },
     {
       "record_id": "22050963",
@@ -507,7 +507,7 @@
       "disposition": "KEEP",
       "flags": "",
       "alias": "Route C exploratory (zero-density architecture)",
-      "notes": "Exploratory conditional note. RH not proved."
+      "notes": "Exploratory conditional note. RH not proved. Live abstract already walks back overclaims; title clean."
     },
     {
       "record_id": "22050962",
@@ -530,7 +530,7 @@
       "disposition": "KEEP",
       "flags": "",
       "alias": "Möbius–GCD Q6 v2.1 (crown-jewel operator note)",
-      "notes": "Primary public Q6 home. RH not proved; Q6 has no RH claim."
+      "notes": "Primary public Q6 home. RH not proved; Q6 has no RH claim. Live abstract already walks back overclaims; title clean."
     },
     {
       "record_id": "21071991",
@@ -577,7 +577,7 @@
       "disposition": "PARK/ARCHIVE",
       "flags": "",
       "alias": "Triple Lock SND ≡ GNC ≡ Bridge",
-      "notes": "URGENT title fix. Bridge packaging retired. Settled pack expected title banner; live title may already be cleaned."
+      "notes": "URGENT title fix. Bridge packaging retired."
     },
     {
       "record_id": "20552223",
@@ -600,8 +600,8 @@
       "revision": 7,
       "disposition": "PARK/ARCHIVE",
       "flags": "",
-      "alias": "",
-      "notes": "Not in settled Aug-2026 KEEP set. Categorical PARK (unconditional/Millennium/RH/SFE/banner packaging)."
+      "alias": "Three-in-one NS/RH/Goldbach (alternate packaging)",
+      "notes": "PARK overclaim packaging; clean title already live; needs description errata."
     },
     {
       "record_id": "20552171",
@@ -625,7 +625,7 @@
       "disposition": "PARK/ARCHIVE",
       "flags": "",
       "alias": "Three-in-one / Prime Manifold Hamiltonian",
-      "notes": "URGENT title fix. Settled pack expected title banner; live title may already be cleaned."
+      "notes": "URGENT title fix."
     },
     {
       "record_id": "20552080",
@@ -648,8 +648,8 @@
       "revision": 3,
       "disposition": "PARK/ARCHIVE",
       "flags": "",
-      "alias": "",
-      "notes": "Superseded concept version from settled inventory. See KEEP 10.5281/zenodo.22050965."
+      "alias": "T2 + GNC–Goldbach bridge (old)",
+      "notes": "Superseded by KEEP T2-under-SND 22050965."
     },
     {
       "record_id": "20518388",
@@ -671,8 +671,8 @@
       "revision": 3,
       "disposition": "PARK/ARCHIVE",
       "flags": "",
-      "alias": "",
-      "notes": "Superseded concept version from settled inventory. See KEEP 10.5281/zenodo.22050963."
+      "alias": "Route C older spectral-closure packaging",
+      "notes": "Superseded by KEEP Route C exploratory 22050963. Live title has trailing quote artifact — clean it."
     },
     {
       "record_id": "20518057",
@@ -717,8 +717,8 @@
       "revision": 7,
       "disposition": "PARK/ARCHIVE",
       "flags": "",
-      "alias": "",
-      "notes": "Not in settled Aug-2026 KEEP set. Categorical PARK (unconditional/Millennium/RH/SFE/banner packaging)."
+      "alias": "GCD Spectral Attractor unified / SFE packaging",
+      "notes": "PARK overclaim; SFE glue retired."
     },
     {
       "record_id": "20405597",
@@ -740,8 +740,8 @@
       "revision": 3,
       "disposition": "PARK/ARCHIVE",
       "flags": "",
-      "alias": "",
-      "notes": "Superseded concept version from settled inventory. See KEEP 10.5281/zenodo.22050975."
+      "alias": "Older Phi-renorm axisymmetric concept",
+      "notes": "Superseded by KEEP Phi-renorm 22050974/22050975."
     },
     {
       "record_id": "20405593",
@@ -764,7 +764,7 @@
       "disposition": "PARK/ARCHIVE",
       "flags": "",
       "alias": "Montgomery–Dyson as Q6 identity",
-      "notes": "URGENT title fix. Settled pack expected title banner; live title may already be cleaned."
+      "notes": "URGENT title fix."
     },
     {
       "record_id": "20405591",
@@ -786,8 +786,8 @@
       "revision": 7,
       "disposition": "PARK/ARCHIVE",
       "flags": "",
-      "alias": "",
-      "notes": "Not in settled Aug-2026 KEEP set. Categorical PARK (unconditional/Millennium/RH/SFE/banner packaging)."
+      "alias": "Q_N operator RH spectral route",
+      "notes": "PARK RH-overclaim; Q6 KEEP is exploratory 22050962 without RH claim."
     },
     {
       "record_id": "20405589",
@@ -834,7 +834,7 @@
       "disposition": "PARK/ARCHIVE",
       "flags": "",
       "alias": "Ring Lemma Borromean (May conditional toolkit)",
-      "notes": "URGENT title fix. Settled pack expected title banner; live title may already be cleaned."
+      "notes": "URGENT title fix."
     },
     {
       "record_id": "20405526",
@@ -858,7 +858,7 @@
       "disposition": "PARK/ARCHIVE",
       "flags": "",
       "alias": "Global Regularity / Clay Statement (B) packaging",
-      "notes": "URGENT title fix: remove banner; move withdrawal to description. Settled pack expected title banner; live title may already be cleaned."
+      "notes": "URGENT title fix: remove banner; move withdrawal to description."
     },
     {
       "record_id": "20405405",
@@ -880,8 +880,8 @@
       "revision": 3,
       "disposition": "PARK/ARCHIVE",
       "flags": "",
-      "alias": "",
-      "notes": "Superseded concept version from settled inventory. See KEEP 10.5281/zenodo.22050974."
+      "alias": "Phi-renorm + global regularity (old Track B)",
+      "notes": "PARK; superseded by honest KEEP Phi notes 22050974/75 and conditional 21071991."
     },
     {
       "record_id": "20272545",
@@ -905,7 +905,7 @@
       "disposition": "PARK/ARCHIVE",
       "flags": "",
       "alias": "SND implies global NS regularity (May packaging)",
-      "notes": "URGENT title fix. Settled pack expected title banner; live title may already be cleaned."
+      "notes": "URGENT title fix."
     },
     {
       "record_id": "20269843",
@@ -928,7 +928,7 @@
       "disposition": "PARK/ARCHIVE",
       "flags": "",
       "alias": "Quantum Lens Millennium connector",
-      "notes": "URGENT title fix. Settled pack expected title banner; live title may already be cleaned."
+      "notes": "URGENT title fix."
     },
     {
       "record_id": "19842060",
@@ -953,7 +953,7 @@
       "disposition": "PARK/ARCHIVE",
       "flags": "",
       "alias": "Early Ring Lemma / Borromean note",
-      "notes": "URGENT title fix. Settled pack expected title banner; live title may already be cleaned."
+      "notes": "URGENT title fix."
     },
     {
       "record_id": "20552682",
@@ -976,8 +976,8 @@
       "revision": 7,
       "disposition": "REVIEW",
       "flags": "",
-      "alias": "",
-      "notes": "Not in settled Aug-2026 KEEP set. Needs human disposition; not in settled KEEP/PARK list."
+      "alias": "BSD Hamiltonian / prime lattice prototype",
+      "notes": "REVIEW — not in KEEP set; do not cite as settled. Soft description notice only."
     },
     {
       "record_id": "20271457",
@@ -999,8 +999,8 @@
       "revision": 9,
       "disposition": "REVIEW",
       "flags": "",
-      "alias": "",
-      "notes": "Not in settled Aug-2026 KEEP set. Needs human disposition; not in settled KEEP/PARK list."
+      "alias": "Ramanujan–Möbius / prime lattice spectral theory",
+      "notes": "REVIEW — exploratory arithmetic spectral note; not KEEP."
     },
     {
       "record_id": "20271879",
@@ -1023,8 +1023,8 @@
       "revision": 7,
       "disposition": "REVIEW",
       "flags": "",
-      "alias": "",
-      "notes": "Not in settled Aug-2026 KEEP set. Needs human disposition; not in settled KEEP/PARK list."
+      "alias": "GCD operators and Ramanujan quadratic forms",
+      "notes": "REVIEW — companion spectral note; not KEEP."
     },
     {
       "record_id": "20269536",
@@ -1046,8 +1046,8 @@
       "revision": 7,
       "disposition": "REVIEW",
       "flags": "",
-      "alias": "",
-      "notes": "Not in settled Aug-2026 KEEP set. Needs human disposition; not in settled KEEP/PARK list."
+      "alias": "SND criteria Paper2 draft",
+      "notes": "REVIEW / dated draft; KEEP Ring+SND is 22050976."
     },
     {
       "record_id": "20184148",
@@ -1069,8 +1069,8 @@
       "revision": 7,
       "disposition": "REVIEW",
       "flags": "",
-      "alias": "",
-      "notes": "Not in settled Aug-2026 KEEP set. Needs human disposition; not in settled KEEP/PARK list."
+      "alias": "Montgomery–Dyson 'resolved' packaging",
+      "notes": "REVIEW overclaim packaging; PARK sibling 20405593 already listed."
     },
     {
       "record_id": "20183673",
@@ -1092,8 +1092,8 @@
       "revision": 8,
       "disposition": "REVIEW",
       "flags": "",
-      "alias": "",
-      "notes": "Not in settled Aug-2026 KEEP set. Needs human disposition; not in settled KEEP/PARK list."
+      "alias": "Diffuse cascade / triad equidistribution numerics",
+      "notes": "REVIEW numerical note; not a regularity proof."
     }
   ]
 }
