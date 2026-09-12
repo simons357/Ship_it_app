@@ -9,6 +9,7 @@ Strictly scientific package (no campaign / outreach framing):
 - [`SCIENTIFIC-REPORT.md`](./SCIENTIFIC-REPORT.md) — problem statement, objects, Lemma★ / PRODUCT-BLOCK status, proved vs hypothesized vs parked
 - [`RESEARCH-POLICY.md`](./RESEARCH-POLICY.md) — locked policy: analytic main path; no HPC arms race; live target \(\sup\mathcal{R}_\star<\infty\) (**OPEN**; no Clay)
 - [`UNIFORM-RSTAR-ATTACK.md`](./UNIFORM-RSTAR-ATTACK.md) — Λ-relative HH/HL/LL reduction map + light numeric maximizer / kill-lane status (**uniform \(\mathcal{R}_\star\) still OPEN**)
+- [`UNIFORM-RSTAR-PROGRESS.md`](./UNIFORM-RSTAR-PROGRESS.md) — close-attempt lemmas (Cauchy / channels / two-shell \(D_s\)); HL/LL **not** classical; no kill
 - [`DA-AUDIT.md`](./DA-AUDIT.md) — Domain Architect check + language sanitize (CONDITIONAL PASS)
 - [`METHOD-PANEL-REVIEW.md`](./METHOD-PANEL-REVIEW.md) — simulated method-seat review (not peer review; not real mathematicians)
 - [`PROOF-CHAIN-CLEAN.md`](./PROOF-CHAIN-CLEAN.md) — definitions of \(T_c,\Lambda,X,Y,Z,E\); Lemma★; open estimate (prefer SCIENTIFIC-REPORT §4 for live PRODUCT-BLOCK = uniform \(\mathcal{R}_\star\))

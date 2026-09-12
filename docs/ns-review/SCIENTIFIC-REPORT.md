@@ -207,7 +207,7 @@ Core module: `scripts/ns_attacks/ns_lemma_star_core.py`. Focused uniform-\(\math
 
 ### 4.3 Analytic reduction (attack map — not a theorem)
 
-Λ-relative input split \(T_c=T_c^{\mathrm{HH}}+T_c^{\mathrm{HL}}+T_c^{\mathrm{LL}}\) (mode high iff \(\lambda_k\ge\theta\Lambda\)). **If** HL/LL admit classical product control **and** HH is bounded by \(C_{\mathrm{HH}} D_s E Y\), then \(\sup\mathcal{R}_\star<\infty\). HH remains the live gap; the reduction is **not** closed. Details: [`UNIFORM-RSTAR-ATTACK.md`](./UNIFORM-RSTAR-ATTACK.md).
+Λ-relative input split \(T_c=T_c^{\mathrm{HH}}+T_c^{\mathrm{HL}}+T_c^{\mathrm{LL}}\) (mode high iff \(\lambda_k\ge\theta\Lambda\)). **If** both HL/LL and HH admit geometric bounds against \(D_s E Y\), then \(\sup\mathcal{R}_\star<\infty\). Close-attempt progress: Cauchy form \(|T_c|\le\sqrt{D_s}\|A^{1/2}B\|_2\) and exact two-shell \(D_s\) are proved; **HL/LL is not classical** on elementary estimates (loses dilation invariance); HH unbound; no kill family found. Details: [`UNIFORM-RSTAR-PROGRESS.md`](./UNIFORM-RSTAR-PROGRESS.md), [`UNIFORM-RSTAR-ATTACK.md`](./UNIFORM-RSTAR-ATTACK.md).
 
 ---
 
@@ -265,4 +265,4 @@ A smooth family with \(\mathcal{R}_\star(v_n)\to\infty\) would **kill** the pack
 
 ## 9. One-line status
 
-**Lemma★ / DA-NS-1 = HYPOTHESIS, blocked at PRODUCT-BLOCK (uniform \(\mathcal{R}_\star\)). HH-channel reduction still OPEN. NS / Clay B not solved. SFE incompatible. RH / ARCHON parked. Numerics ≠ proof.**
+**Lemma★ / DA-NS-1 = HYPOTHESIS, blocked at PRODUCT-BLOCK (uniform \(\mathcal{R}_\star\)). HL/LL and HH both OPEN geometrically. NS / Clay B not solved. SFE incompatible. RH / ARCHON parked. Numerics ≠ proof.**
