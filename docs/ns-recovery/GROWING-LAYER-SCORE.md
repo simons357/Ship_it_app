@@ -85,11 +85,12 @@ Exact-shell 9D and unrestricted ★ are **distinct**. The growing-layer family d
 | Need★ signed dual as a repair of that same bound | **Cannot repair** unless hypotheses change |
 | Exact-shell 9D / \(\sup K<\infty\) | **Not stamped.** Still a different statement |
 | Grow-\(s\) draw / aligned 9B | Historical finite samples. Do not merge |
-| Unaugmented regularity / Clay | **Open.** Needs a replacement closure ([`REPLACEMENT-CLOSURE.md`](REPLACEMENT-CLOSURE.md)). No blowup constructed |
+| Unaugmented regularity / Clay | **Open.** Replacement must be a different estimate. Bounded aspect does **not** exclude \(v_n\) (aspect \(=6\)). See [`REPLACEMENT-CLOSURE.md`](REPLACEMENT-CLOSURE.md) |
 | Soft X | Silent |
 | ABC_λ SuperGrok falsifier | Still refused as *that* stamp. This is a different family |
 
 Evaluator: [`scripts/growing_layer_counterexample.py`](../../scripts/growing_layer_counterexample.py)  
-JSON: [`results/growing_layer.json`](../../results/growing_layer.json)
+JSON: [`results/growing_layer.json`](../../results/growing_layer.json)  
+Replacement-factor check: [`scripts/growing_layer_replacement_factors.py`](../../scripts/growing_layer_replacement_factors.py)
 
 **NS not solved.**

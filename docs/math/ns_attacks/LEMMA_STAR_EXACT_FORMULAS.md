@@ -1,7 +1,7 @@
 # Lemma★ — exact formulas (working foundation)
 
 **Companion:** [`LEMMA_STAR_CANONICAL.md`](./LEMMA_STAR_CANONICAL.md)  
-**Status:** identity lock. Lemma★ **OPEN**. **NS not solved.**
+**Status:** identity lock. Unrestricted Lemma★ is **FALSE** on \(v_n\). **NS not solved.**
 
 Do not use \(|T_c|\le C\|u\|_2 X^{3/2}\) as a universal estimate — it fails by amplitude scaling. See Canonical, correction 1.
 

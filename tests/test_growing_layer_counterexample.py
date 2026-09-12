@@ -48,7 +48,7 @@ def test_not_a_single_shell_and_not_a_dilation():
 
 
 def test_run_payload_does_not_claim_ns_solved():
-    payload = gl.run(ns=(1, 2, 3, 4))
+    payload = gl.run()
     assert payload["ns_solved"] is False
     assert payload["singular_nse"] is False
     assert payload["unrestricted_lemma_star"] == "KILLED_as_uniform_bound_on_this_family"

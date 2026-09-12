@@ -138,7 +138,7 @@ def run(ns=(1, 2, 3, 4, 5, 6, 8)) -> dict:
         "all_Ds_positive": all(r["D_s"] > 1e-12 for r in rows),
         "note": (
             "Exact-shell 9D bound is a different statement and is not stamped here. "
-            "Proof markdown was not on the cited commit. "
+            "Writeup later landed on the PR 24 tip as CLAIMED, specialist pending. "
             "This is not a Navier-Stokes singularity."
         ),
     }

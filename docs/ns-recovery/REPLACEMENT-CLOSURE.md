@@ -8,6 +8,11 @@ Ordinary Navier–Stokes regularity is **still open**.
 This page does **not** construct a singular solution and does
 **not** close Clay.
 
+The score pasted on this turn is **confirmed**:
+the two statements are distinct; unrestricted ★ is dead on \(v_n\);
+exact-shell 9D is not stamped; Need★ cannot repair the old box;
+specialist review of the paper derivations has not happened.
+
 ---
 
 ## What died
@@ -37,25 +42,72 @@ The growing-layer family \(v_n\) is admissible and
 
 ---
 
-## What a replacement must be
+## Bounded aspect does not exclude \(v_n\)
 
-A replacement is a **different estimate**, or the **same ratio on
-a strictly smaller class**. Examples of smaller classes (not
-theorems):
+An earlier draft of this page guessed that \(v_n\) had aspect
+\(\lambda_{\max}/\lambda_{\min}\sim n^2\). That is **false**.
 
-1. **Exact one-shell fields.** Then \(D_s=0\) and \(T_c=0\).
-   No ★ statement. The 9D coefficient is a **different** bound
-   (\(B\)-norm, not \(\mathcal R_\star\)).
-2. **Bounded eigenvalue aspect.** Fields whose occupied
-   eigenvalues satisfy \(\lambda_{\max}/\lambda_{\min}\le R\)
-   for a fixed \(R\). The family \(v_n\) has aspect
-   \(\sim n^2\) and would be excluded. Whether \(\mathcal R_\star\)
-   is then bounded is **open** and is a new claim.
-3. **An extra moment in the denominator.** A bound of the form
-   \((T_c_+)^2\le C\,D_s\,E\,Y\cdot\Phi\) with \(\Phi\) a
-   documented higher moment (or \(\lambda_{\max}\) factor) that
-   grows at least like \(n\) on \(v_n\). That is a **different
-   inequality**. It is not “★ with a larger \(C_{\mathrm{geom}}\)”.
+The occupied eigenvalues are
+\[
+\lambda=n^2|r|^2+j^2,\qquad
+|r|^2\in\{1,2,5\},\qquad |j|\le n.
+\]
+Hence
+\[
+\lambda_{\min}=n^2,\qquad \lambda_{\max}=6n^2,\qquad
+\frac{\lambda_{\max}}{\lambda_{\min}}=6
+\]
+for every integer \(n\ge 1\). Checked on the locked core
+(`scripts/growing_layer_replacement_factors.py`).
+
+A restriction “\(\lambda_{\max}/\lambda_{\min}\le R\)” for any
+fixed \(R\ge 6\) **still contains** \(v_n\). It cannot restore
+\[
+\sup\mathcal R_\star<\infty
+\]
+on that class. The same ★ ratio on aspect-bounded fields is
+already false.
+
+Exact one-shell fields remain vacuous (\(D_s=0\), \(T_c=0\)).
+Whether a **two-shell** (or other sparse-spectrum) class restores
+a finite \(\sup\mathcal R_\star\) is a **new claim**. \(v_n\)
+occupies \(\Theta(n)\) eigenvalues and is not two-shell.
+
+---
+
+## Extra-factor diagnostics — not a replacement theorem
+
+On this family \(\mathcal R_\star(v_n)\) grows like \(n\).
+Two homogeneous field functionals also grow like \(n\):
+
+\[
+\sqrt{\frac{X}{E}}=\frac{\|A^{1/2}v\|_2}{\|v\|_2},\qquad
+\sqrt{\lambda_{\max}}.
+\]
+
+Their ratios on the evaluator sample do **not** climb with \(n\):
+
+| \(n\) | shells | \(\mathcal R_\star\) | \(\mathcal R_\star\big/\sqrt{X/E}\) | \(\mathcal R_\star\big/\sqrt{\lambda_{\max}}\) |
+|---:|---:|---:|---:|---:|
+| 1 | 5 | 0.00139836 | 0.000665383 | 0.000570878 |
+| 2 | 8 | 0.00257489 | 0.000624502 | 0.000525597 |
+| 4 | 14 | 0.00497285 | 0.000609047 | 0.000507540 |
+| 8 | 26 | 0.00978740 | 0.000602373 | 0.000499461 |
+
+JSON: [`results/growing_layer_replacement_factors.json`](../../results/growing_layer_replacement_factors.json).
+
+A **different** inequality of the form
+\[
+(T_c_+)^2
+\le
+C\,D_s\,E\,Y\,\sqrt{\frac{X}{E}}
+\quad\text{or}\quad
+C\,D_s\,E\,Y\,\sqrt{\lambda_{\max}}
+\]
+would be compatible with this family. That is **not proved**.
+It is not “★ with a larger \(C_{\mathrm{geom}}\)”.
+It has not been checked on any other family.
+It is not known to be strong enough for a regularity closure.
 
 Do **not** invent a Need★ dual whose only job is to restore the
 dead box. If a signed dual is written, its hypotheses must be
@@ -79,13 +131,4 @@ That closure is gone. A new closure must:
 This book will not send Domain Architect a Clay/regularity close
 from a guessed replacement.
 
----
-
-## Next concrete check (if anyone continues here)
-
-Do **not** start H1 or 9C to save ★.
-
-If the next page is a **restricted-class** claim, write the class
-first, then evaluate \(\mathcal R_\star(v)\) only on that class.
-If the next page is a **new inequality**, write the extra factor
-and test it on \(v_n\) with `scripts/growing_layer_counterexample.py`.
+**NS not solved.**

@@ -5,7 +5,7 @@
 
 Navier–Stokes is **not solved**. Unrestricted uniform \(\mathcal R_\star\) is **false** on the growing-layer family. Packet SoT below is unchanged. Score: [`GROWING-LAYER-SCORE.md`](GROWING-LAYER-SCORE.md).
 
-**Full lemma (OPEN):** [`docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md`](../math/ns_attacks/LEMMA_STAR_CANONICAL.md). Formulas: [`docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](../math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md). \(K_{\alpha,\beta}\) is a restricted near-shell test, not the lemma.
+**Unrestricted lemma:** **FALSE** on \(v_n\). Canonical: [`docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md`](../math/ns_attacks/LEMMA_STAR_CANONICAL.md). Formulas: [`docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](../math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md). \(K_{\alpha,\beta}\) is a restricted near-shell test, not the lemma.
 
 ---
 

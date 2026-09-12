@@ -15,7 +15,7 @@ Writeups later landed on the PR #24 tip. Exact-shell 9D with \(C=4/3\) / \(K\le1
 
 ## What is still open
 
-- Unaugmented regularity / Clay: needs a **replacement closure**. That job is framed in [`REPLACEMENT-CLOSURE.md`](REPLACEMENT-CLOSURE.md): a different estimate, or the same ratio on a strictly smaller class. Need★ is not a repair of the old box.
+- Unaugmented regularity / Clay: needs a **replacement closure**. Framed in [`REPLACEMENT-CLOSURE.md`](REPLACEMENT-CLOSURE.md). Bounded aspect does **not** exclude \(v_n\) (aspect is exactly 6). Need★ is not a repair of the old box. Extra-factor ratios \(\mathcal R_\star/\sqrt{X/E}\) on this family are diagnostics only — not a theorem.
 - Exact-shell 9D / \(\sup K<\infty\): different statement. Writeup is on the PR #24 tip and remains **CLAIMED, not stamped**.
 - Need★ signed dual: **cannot repair** the same unrestricted bound unless hypotheses change.
 - Soft X: silent.
