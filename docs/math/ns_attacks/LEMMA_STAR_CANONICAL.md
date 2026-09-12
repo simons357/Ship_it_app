@@ -1,7 +1,7 @@
 # Lemma★ — canonical working statement
 
-**Date:** 10 September 2026  
-**Status:** **OPEN.** Working foundation with [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md). **NS is not solved.**
+**Date:** 12 September 2026  
+**Status:** Unrestricted uniform \(\sup\mathcal R_\star<\infty\) is **FALSE** on the growing-layer family \(v_n\) (evaluator-confirmed). Working identities: [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md). Score: [`docs/ns-recovery/GROWING-LAYER-SCORE.md`](../../ns-recovery/GROWING-LAYER-SCORE.md). **NS is not solved.** No singular NSE solution is constructed.
 
 Older proof attempts belong in the **annotated archive**, not in this file. See [`ARCHIVE_OLDER_LEMMA_STAR_PROOF.md`](./ARCHIVE_OLDER_LEMMA_STAR_PROOF.md).
 
@@ -101,9 +101,11 @@ holds only for an **appropriately aligned, sign-selected** perturbation \(z_\bet
 
 ## Remaining target
 
-Establish a uniform bound on \(\mathcal R_\star\), **or** construct a family on which it **diverges**.
+The unrestricted uniform bound is **already killed** by \(v_n\) (growing layer). One large finite value is not the issue; this family diverges.
 
-One large **finite** value only **raises** the required \(C_{\mathrm{geom}}\). It does **not** disprove existence of a finite constant.
+Unaugmented regularity still needs a **replacement closure** (a different estimate, or a restriction of the function class). Need★ dual cannot repair the same unrestricted bound unless its hypotheses change.
+
+Exact-shell 9D (\(\sup K_{\alpha,\beta}<\infty\)) is a **different** statement and is not stamped here.
 
 PR #24 localized ABC (`docs/CS-REMAINDER.md` on that branch) is in this class: finite \(\mathcal R_\star\) climb on Galerkin grids (FFT through λ = 8, exact core through λ = 4; **no λ = 16**). Do **not** import “Target A / Lemma★ false.” Comparison: [`docs/ns-recovery/CS-REMAINDER-VS-DA-REJECT.md`](../../ns-recovery/CS-REMAINDER-VS-DA-REJECT.md).
 

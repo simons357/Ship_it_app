@@ -14,9 +14,10 @@ Human: Jonathan Simons (`winchester.anesthesia@gmail.com` / `simonsmedical@iclou
 
 ## Honesty lock (do not weaken)
 
-- **Navier–Stokes is not solved.**
-- **Lemma★ is OPEN.** Uniform \(\sup \mathcal R_\star < \infty\) is not proved.
-- **Kill lane is LIVE.** Failure to find a numerical counterexample does **not** close falsification.
+- **Navier–Stokes is not solved.** No singular solution is constructed.
+- **Unrestricted Lemma★ is dead** as a uniform \(\sup\mathcal R_\star<\infty\): growing-layer family \(v_n\), evaluator-confirmed. [`GROWING-LAYER-SCORE.md`](GROWING-LAYER-SCORE.md).
+- Exact-shell 9D / \(\sup K<\infty\) is a **different** statement and is **not stamped**.
+- **Kill lane for unrestricted ★ has succeeded.** Bounded samples were never a proof; this family diverges.
 - Numerics \(\neq\) proof. Do **not** green ★ from bounded samples.
 - Do **not** glue SND \(J/X\), Theorem H, Phi-renorm, Triple Lock, Route N / Q6 / LP-shell floors, or Domain Architect “five fingers” into this book.
 - Do **not** invent missing formulas. Do **not** abs-value the triad sum.
@@ -35,12 +36,12 @@ Human: Jonathan Simons (`winchester.anesthesia@gmail.com` / `simonsmedical@iclou
 
 ## What you are being asked to do
 
-Remaining-work lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Live work, in order:
+Remaining-work lock: [`WHAT-ELSE.md`](WHAT-ELSE.md).
 
-1. **Primary — Need★ dual size on HH→L.** After gap-cancel \(T_c=M-\Lambda N\), the signed dual is still **MISSING**. Leftover 4 OPEN. Do not invent it. Soft X silent.
-2. **Secondary — Attack 9D grow \(s\):** PR #24 draw scored (seed 1390, \(k_{\max}=8\), \(\max K\approx 0.456\) at \((16,32)\)). **Not a kill.** Do not merge with aligned 9B \(0.641\). [`PR24-GROW-S-SCORE.md`](PR24-GROW-S-SCORE.md).
-3. **Paths to DA:** grow-\(s\) draw has landed (finite sample). Do not send a close.
-4. **Optional other track:** H1 on the cylinder — **not started**. Do not start it unless the packet line is shelved.
+1. **Unrestricted ★ is dead** on \(v_n\). Replacement closure for unaugmented regularity is the live analytic job. Need★ dual cannot repair the same bound.
+2. **Exact-shell 9D** (\(K\le16/9\) claimed): **not stamped** (proof files absent from cited commit `213e103`).
+3. **Paths to DA:** growing-layer score has landed. Do not send a regularity close.
+4. Soft X silent. H1 not started from ABC_λ.
 
 Natural same-shell (9C), AP fan (9A), and finite 9B \(K_{\alpha,\beta}\) samples are **not kills**. Do not re-run them as if they were the remaining job.
 
@@ -225,7 +226,8 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 |---|---|
 | **This file** | Grok Heavy entry |
 | [`SOT.md`](SOT.md) | Packet source of truth |
-| [`WHAT-ELSE.md`](WHAT-ELSE.md) | Remaining work: Need★ dual primary; 9D grow-\(s\) scored |
+| [`WHAT-ELSE.md`](WHAT-ELSE.md) | Unrestricted ★ dead on \(v_n\); 9D exact-shell not stamped |
+| [`GROWING-LAYER-SCORE.md`](GROWING-LAYER-SCORE.md) | Growing-layer family: evaluator kill of uniform \(\mathcal R_\star\) |
 | [`PR24-GROW-S-SCORE.md`](PR24-GROW-S-SCORE.md) | PR #24 grow-\(s\): \(\max K\approx 0.456\), not a kill |
 | [`docs/math/ns_attacks/ATTACK_9D_SETUP.md`](../math/ns_attacks/ATTACK_9D_SETUP.md) | 9D: same \(B\) as 9B; no I/O exponent locked |
 | [`SUPERGROK-ABC-LOCK.md`](SUPERGROK-ABC-LOCK.md) | SuperGrok ABC_λ filing: keep evaluator line; **refuse** falsifier stamp |

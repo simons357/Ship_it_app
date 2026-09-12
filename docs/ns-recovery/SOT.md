@@ -3,7 +3,7 @@
 **Locked:** 10 September 2026  
 **This file is the source of truth** for the packet line. Longer notes do not override it.
 
-Navier–Stokes is **not solved**. The uniform triadic bound is **open**.
+Navier–Stokes is **not solved**. Unrestricted uniform \(\mathcal R_\star\) is **false** on the growing-layer family. Packet SoT below is unchanged. Score: [`GROWING-LAYER-SCORE.md`](GROWING-LAYER-SCORE.md).
 
 **Full lemma (OPEN):** [`docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md`](../math/ns_attacks/LEMMA_STAR_CANONICAL.md). Formulas: [`docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](../math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md). \(K_{\alpha,\beta}\) is a restricted near-shell test, not the lemma.
 
@@ -26,7 +26,7 @@ The \(O(1)\) gap is available in this model, and that still does not produce \(\
 
 **Fixed-output \(\Theta(m^2)\) 9D is excluded.** For each output \(k\), \(q=k-p\), so at most \(m\) ordered pairs land on that mode. Occupied output count \(s\) on shell \(\beta\) gives \(K_{\alpha,\beta}\le 16s\). A fixed number of outputs cannot produce unbounded \(K\). Note: [`docs/math/ns_attacks/ATTACK_9B_COUNTING_CS_EXCLUSION.md`](../math/ns_attacks/ATTACK_9B_COUNTING_CS_EXCLUSION.md).
 
-Board lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Primary = Need★ dual (still missing). 9D grow-\(s\) draw scored, not a kill. Soft X silent.
+Board lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Unrestricted ★ dead on \(v_n\). Exact-shell 9D not stamped. Soft X silent.
 
 **Still live:** growing **input and output** supports, full complex polarizations, frequency factors retained. Uniform 9B target:
 \[

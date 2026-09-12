@@ -1,44 +1,31 @@
 # What else — locked remaining work
 
-**Locked:** 12 September 2026 (after PR #24 grow-\(s\) landing)  
-**This wording is the record.** Longer notes do not override it.
+**Locked:** 12 September 2026 (after growing-layer score)  
+**This wording is the record.**
 
-**NS is not solved. Lemma★ is OPEN.**
-
-Two live writes are seated. Everything else stayed scored or refused.
+**NS is not solved.** Unrestricted Lemma★ (one finite \(C_{\mathrm{geom}}\) for every divergence-free field) is **dead** on \(v_n\). Score: [`GROWING-LAYER-SCORE.md`](GROWING-LAYER-SCORE.md).
 
 ---
 
-## 1. Attack 9D — grow \(s\) on the 9B family (secondary)
+## What landed
 
-Same \(B\). Target \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}\|w\|_2^2\) iff \(\sup K<\infty\). Growing input and output, full complex polarizations, \(|k|\) kept. Fixed-output \(\Theta(m^2)\) excluded. Designed \(\Theta(m^2)\) stays dead. `attack9d_theta_m2_locked_phase.py` was not written.
+The review’s growing-layer family was built on this book’s exact core. \(n=1\ldots4\) match the pasted `stokes_moments` table. \(\mathcal R_\star(v_n)\ge n/165888\to\infty\). That kills the unrestricted instantaneous bound. It does **not** construct a singular NSE solution.
 
-PR #24 draw (seed 1390, \(k_{\max}=8\)): 2084 input fields, 39853 occupied \((\alpha,\beta)\) rows. \(\max K\approx 0.456\) at \((16,32)\), \(s=4\). \(\max\sqrt{K}\approx 0.675\). \(\max s=192\). Pairs / CS / \(K\le 16s\): no fails. On the \(K\) vs \(s\) curve, \(\max K\) for \(s\le 8\) is \(0.456\); for \(s\ge 24\) it is \(0.239\). Larger occupancy did not raise \(K\) on this draw.
+The two proof markdowns named in the review are **not** on cited commit `213e103`. Exact-shell 9D with \(C=4/3\) / \(K\le16/9\) is **not stamped** here.
 
-That is **not** the aligned 9B search (\(K\approx 0.641\) at \((4,8)\)). Do not merge them. A finite max is not \(C_0\). This draw did not kill ★.
+## What is still open
 
-Score: [`PR24-GROW-S-SCORE.md`](PR24-GROW-S-SCORE.md). Source: https://github.com/simons357/Ship_it_app/pull/24
+- Unaugmented regularity / Clay: needs a **replacement closure**.
+- Exact-shell 9D / \(\sup K<\infty\): different statement; writeup missing from the cited commit.
+- Need★ signed dual: **cannot repair** the same unrestricted bound unless hypotheses change.
+- Soft X: silent.
 
-## 2. The ★ reason — map, not a theorem (primary leftover)
+## Already scored (do not redo)
 
-Keep \(\mathrm{Im}\). HH→L is the dangerous channel (weight \(\sim\beta\cdot\alpha\); Attack 12 vertex carries \(\sqrt{\beta}\)). Cheap CS returns occupancy — the same hole as \(K\le 16s\). Until that sentence is a theorem, or \(\mathcal R_\star\to\infty\), **leftover 4 stays OPEN**.
-
-Primary math target remains **Need★ dual size on HH→L** after gap-cancel. The signed dual is still **MISSING**. Do not invent it.
-
----
-
-Kill lane LIVE. Bounded samples are not a proof. A diverging family would kill ★. A larger finite number only raises \(C_{\mathrm{geom}}\).
-
-**Soft X silent.** Path to DA: the grow-\(s\) draw has landed (finite, not a kill). Do not send a close.
-
-## Not done (optional, not next)
-
-Locked-\(\mathcal R_\star\) 9C recompute; exact-core ABC at \(\lambda=8,16\); H1 from ABC_λ.
-
-## Not redone
-
-Five lanes, 9A, natural 9C, finite 9B (\(0.641\)), truncated ABC, SuperGrok stamp, Dream Team vote.
+Grow-\(s\) draw \(\max K\approx0.456\); aligned 9B \(0.641\); five lanes; 9A; natural 9C; truncated ABC; SuperGrok ABC stamp (still refused as *that* stamp); Dream Team vote.
 
 ## Out of this book
 
 Q-stack, SND, Theorem H, five fingers, augmented NSE.
+
+DA path: point Domain Architect at [`GROWING-LAYER-SCORE.md`](GROWING-LAYER-SCORE.md). Do not send a regularity close.
