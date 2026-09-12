@@ -1,6 +1,6 @@
 # Proof journey
 
-We broke into the house of Navier–Stokes. He’s not in this room right now — we think we heard someone upstairs. We know where we are: **at the door**, in the spectral **barycenter** room. Here is how the room looks, how it behaves, and how you go through the door. Pictures first. Click for depth. No “solved” stamp.
+Navier–Stokes is a house. Here is the map of what our study has revealed so far. We know where we are: **at the door**, in the spectral **barycenter** room. Here is how the room looks, how it behaves, and how you go through the door. Pictures first. Click for depth. No “solved” stamp.
 
 Longer plain-language face: [`HOUSE-OF-NS.md`](./HOUSE-OF-NS.md)  
 **Adult FAQ (what object? blowup? universe?):** [`WHAT-IS-THIS.md`](./WHAT-IS-THIS.md)  

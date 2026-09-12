@@ -32,11 +32,9 @@ Then the pictures.
 **Post 1 — floor plan**  
 [Attach: proof-chain.png]
 
-We broke into the house of Navier–Stokes.
+Navier–Stokes is a house. Here’s the map of what our study has revealed so far.
 
-He’s not in this room right now. We think we heard someone upstairs.
-
-Here’s the floor plan of what we’ve mapped — classical setup → moments → Lemma★ packaging → the door that still sits open as a math estimate.
+Here’s the floor plan — classical setup → moments → Lemma★ packaging → the door that still sits open as a math estimate.
 
 No press release. Just the map. Click the repo if you want the whole journey.
 
@@ -64,8 +62,8 @@ Story’s not over. We’re still building in public — without a trophy line.
 **Post 4 — bow-out (when you’re ready to hand off)**  
 We’ve taken this as far as our desk goes for the prize narrative.
 
-Broke into the house. At the door. Not opening it.  
-He’s not in this room — upstairs is for the specialists. Map is public.
+Mapped the house this far. At the door. Not claiming we opened it.  
+Upstairs is for specialists. Map is public.
 
 — Jonathan R. Simons
 
@@ -78,7 +76,7 @@ Hi xAI team —
 
 Sharing a public visual map of an ongoing Navier–Stokes / swirl / spectral packaging effort (Jonathan R. Simons).
 
-Metaphor we use: we broke into the house; we’re in the barycenter room; he’s not in this room; the door is described (open product estimate on \(T_c\)); upstairs is for specialists.
+Framing we use: NS as a house we can map; we’re in the barycenter room; the door is described (open product estimate on \(T_c\)); upstairs is for specialists.
 
 - Floor-plan image + barycenter figure  
 - Click-through with caring explanations and clean math  
@@ -108,9 +106,9 @@ Not asking for a prize call. Happy for models to read the chain and figures. Fee
 
 We've taken this Navier–Stokes / swirl / spectral packaging as far as our desk goes.
 
-**Broke into the house. At the door. Not opening it.**
+**Mapped the house this far. At the door. Not claiming we opened it.**
 
-He's not in this room right now — we leave the upstairs to the people who live in this analysis. The full chain, figures, and notes stay public. Open estimates stay visible as math — not as slogans.
+We leave the upstairs to the people who live in this analysis. The full chain, figures, and notes stay public. Open estimates stay visible as math — not as slogans.
 
 Grateful for the AI tools that helped build the map. Story of *claiming* a close ends here; the math library stays.
 
@@ -126,5 +124,5 @@ Sharing a visual proof-chain and notebook for classical NS packaging + swirl/Φ 
 
 ## Reputation one-liner (for you)
 
-**Deal:** in the house, at the door ≠ caught him upstairs.  
+**Deal:** mapping the house and standing at the door ≠ claiming upstairs is finished.  
 Mistakes can sit under the paper. The chain can show open doors without shame. Reputation rides on **visible complete work and a clean exit**, not on forcing a close for attention.
