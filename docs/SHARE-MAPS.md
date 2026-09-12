@@ -46,6 +46,8 @@ OpenAI classification: docs/OPENAI-NS-CLAIM.md
 ## Ordinary NS map (open)
 
 Upload:
+docs/ISSUES-SHEET.md
+docs/HELP-OFF-DESK.md
 docs/UNAUGMENTED-NS-CHAIN.md
 docs/DA-NS-2.md
 docs/TRACK-B-CHAIN.pdf (if you have it)

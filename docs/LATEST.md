@@ -20,7 +20,9 @@ ordinary NS. Uniform H1 as eps → 0 still
 open. Paper: docs/THEOREM-A-Q1.pdf
 
 **Unaug NS (ordinary) — open**
-Help to clear the desk (four jobs):
+Help to clear the desk (one-page sheet,
+then the four integrals):
+docs/ISSUES-SHEET.md
 docs/HELP-OFF-DESK.md
 docs/UNAUGMENTED-NS-CHAIN.md
 https://github.com/simons357/Ship_it_app/blob/cursor/unaugmented-r4-vorticity-f80e/docs/UNAUGMENTED-NS-CHAIN.md

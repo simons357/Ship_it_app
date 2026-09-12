@@ -1,7 +1,8 @@
 Stay here. This chat is DA.
 
 Help to get this off the desk
-(four jobs; not a close):
+(one-page sheet, then the integrals):
+docs/ISSUES-SHEET.md
 docs/HELP-OFF-DESK.md
 Swirl wall correction (F=u^θ/r,
 G=ω^θ/r; time-window if; occupation

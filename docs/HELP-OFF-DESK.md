@@ -7,12 +7,14 @@ solved. This is a request for estimates.**
 
 To everyone who worked on this project.
 
-This page is the handoff. It is written so
-a person who was not in the chat can work
-the leftovers. It does not ask anyone to
-certify a proof that is not there. It does
-not ask OpenAI, Tao, or Albritton to finish
-the leftover by attention.
+One-page send sheet (the table):
+[`ISSUES-SHEET.md`](ISSUES-SHEET.md).
+This page is the math. A person who was
+not in the chat can work the leftovers
+from either page. It does not ask anyone
+to certify a proof that is not there. It
+does not ask OpenAI, Tao, or Albritton
+to finish the leftover by attention.
 
 Operator: Jonathan Robert Simons
 (Prime Field Technologies). Living line:
@@ -638,6 +640,8 @@ NS not solved. RH not solved.
 
 Maps, not proofs:
 
+- [`ISSUES-SHEET.md`](ISSUES-SHEET.md)
+  (one page; send first).
 - This page.
 - [`WRITE_6.md`](WRITE_6.md) and
   [`WRITE_6_SUPPORTED.md`](WRITE_6_SUPPORTED.md).

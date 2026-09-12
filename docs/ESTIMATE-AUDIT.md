@@ -27,7 +27,8 @@ Wall / dictionary correction (occupation
 from the detector withdrawn; not a close
 of \(T_{j\leftarrow j}\)):
 [`SWIRL-WALL-CORRECTION.md`](SWIRL-WALL-CORRECTION.md).
-Handoff (what help is; four jobs):
+Handoff (one-page sheet, then four jobs):
+[`ISSUES-SHEET.md`](ISSUES-SHEET.md),
 [`HELP-OFF-DESK.md`](HELP-OFF-DESK.md).
 
 ---

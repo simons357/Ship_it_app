@@ -122,6 +122,10 @@ title says map / named hole, not a
 proof. Goldbach-shaped corollary: yes,
 as a matrix fact, not the conjecture.
 Paste titles: docs/SHARE-MAPS.md
+Sendable issues sheet (not a close):
+docs/ISSUES-SHEET.md
+Math of the four jobs:
+docs/HELP-OFF-DESK.md
 
 ## Do not send as finished science
 

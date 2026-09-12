@@ -128,3 +128,9 @@ A demand letter to OpenAI.
 
 The public date is the move.
 The honest title is the protection.
+
+Named leftover jobs for collaborators:
+[`ISSUES-SHEET.md`](ISSUES-SHEET.md)
+(one page) and
+[`HELP-OFF-DESK.md`](HELP-OFF-DESK.md)
+(the integrals). Not a close.
