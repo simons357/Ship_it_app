@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://solenne.base44.app/sitemap.xml

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maritime-coherence-dashboard-100b68c0.base44.app/sitemap.xml

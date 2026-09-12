@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TITAN-X — Executive Business Plan</title>
+  <meta name="description" content="TITAN-X executive business plan for venture capitalists and business owners. Financials 2026–2030. Prime Field Technologies LLC." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --void: #070b12;
+      --panel: #121c2a;
+      --foam: #e8eef6;
+      --mist: #9aadc2;
+      --sky: #5b8fb8;
+      --solar: #c9a24a;
+      --line: rgba(232, 238, 246, 0.14);
+      --display: "Syne", "Helvetica Neue", sans-serif;
+      --body: "IBM Plex Sans", "Segoe UI", sans-serif;
+      --pad: clamp(1.2rem, 3.5vw, 2.75rem);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      background:
+        radial-gradient(ellipse 70% 40% at 85% 0%, rgba(91, 143, 184, 0.2), transparent 55%),
+        radial-gradient(ellipse 45% 30% at 0% 100%, rgba(201, 162, 74, 0.08), transparent 50%),
+        linear-gradient(180deg, #05080f 0%, var(--void) 40%, #0a1220 100%);
+      color: var(--foam);
+      font-family: var(--body);
+      font-weight: 300;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    img {
+      display: block; max-width: 100%;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .bar {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      padding: 0.7rem var(--pad);
+      background: rgba(7, 11, 18, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .bar strong {
+      font-family: var(--display); font-weight: 700;
+      letter-spacing: 0.08em; font-size: 0.95rem;
+    }
+    .bar button, .bar a {
+      font: 600 0.68rem var(--body);
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border: 1px solid var(--line); background: transparent;
+      color: var(--foam); padding: 0.4rem 0.8rem;
+      cursor: pointer; text-decoration: none;
+    }
+
+    .hero {
+      display: grid;
+      gap: 0.85rem;
+      padding: clamp(1.1rem, 3vh, 1.75rem) var(--pad) 1rem;
+      animation: rise 1s ease-out both;
+      border: 0;
+      background: transparent;
+    }
+    .hero.plate-fire {
+      margin: 0 0 1.5rem;
+    }
+    .hero-copy { max-width: 44rem; }
+    .brand {
+      font-family: var(--display); font-weight: 800;
+      font-size: clamp(2.6rem, 9vw, 4.8rem);
+      line-height: 0.92; letter-spacing: -0.03em;
+      margin: 0 0 0.35rem;
+    }
+    .plate, .hero-plate, .scene {
+      margin: 1.25rem 0 1.75rem;
+      background: #04070c;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .plate img, .hero-plate img, .scene img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+      object-position: center center;
+    }
+    .plate .cap, .hero-plate .cap, .scene .cap, .cap {
+      font-size: 0.84rem;
+      color: var(--mist);
+      margin: 0;
+      padding: 0.65rem 0.85rem 0.85rem;
+    }
+    .kicker {
+      font: 500 0.7rem var(--body);
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--solar); margin: 0 0 0.75rem;
+    }
+    .tagline {
+      font-family: var(--display); font-weight: 600;
+      font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+      margin: 0 0 0.7rem;
+    }
+    .lede { margin: 0; color: var(--mist); font-size: 1.05rem; max-width: 36rem; }
+
+    .wrap { width: min(940px, 100%); margin: 0 auto; padding: 2.75rem var(--pad) 4.5rem; }
+    section { margin: 0 0 2.75rem; }
+    h2 {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(1.45rem, 2.8vw, 1.9rem);
+      letter-spacing: -0.02em;
+      margin: 0 0 0.75rem; padding-top: 0.45rem;
+      border-top: 1px solid var(--line);
+    }
+    h3 {
+      font-family: var(--display); font-weight: 600;
+      font-size: 1.1rem; margin: 1.35rem 0 0.4rem; color: #d7e4f2;
+    }
+    p, li { font-size: 1.01rem; color: #d5e0ec; }
+    ul { margin: 0.35rem 0 0; padding-left: 1.15rem; }
+    li { margin: 0.3rem 0; }
+    .muted { color: var(--mist); }
+    .solar { color: var(--solar); }
+    .disclaimer {
+      font-size: 0.88rem; color: var(--mist);
+      border: 1px solid var(--line);
+      padding: 0.85rem 1rem; margin: 0 0 2rem;
+      background: rgba(18, 28, 42, 0.65);
+    }
+
+    table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.92rem; margin: 0.7rem 0 0;
+    }
+    th, td {
+      text-align: left; padding: 0.55rem 0.45rem;
+      border-bottom: 1px solid var(--line); vertical-align: top;
+    }
+    th {
+      font: 600 0.66rem var(--body);
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--mist);
+    }
+    td.num, th.num { text-align: right; white-space: nowrap; }
+    .snap td:nth-child(2) { color: #fff; font-weight: 500; }
+
+    .scene {
+      /* alias kept for markup; styles unified under .plate */
+    }
+
+    .callout {
+      margin: 1rem 0 0; padding: 1rem 1.1rem;
+      background: linear-gradient(135deg, rgba(91,143,184,.12), rgba(201,162,74,.06));
+      border-left: 3px solid var(--sky); color: #dbe7f4;
+    }
+    .bottom {
+      margin-top: 1.25rem; padding: 1.25rem 1.15rem;
+      background: var(--panel); border: 1px solid var(--line);
+    }
+    .bottom p { margin: 0; color: #e8eef6; }
+
+    .kpi {
+      display: grid; gap: 0.75rem;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      margin: 1rem 0 0;
+    }
+    .kpi div {
+      padding: 0.85rem 0.75rem;
+      border: 1px solid var(--line);
+      background: rgba(18, 28, 42, 0.55);
+    }
+    .kpi strong {
+      display: block;
+      font-family: var(--display); font-size: 1.25rem; font-weight: 700;
+      color: #fff; margin-bottom: 0.2rem;
+    }
+    .kpi span { font-size: 0.78rem; color: var(--mist); letter-spacing: 0.02em; }
+
+    footer {
+      margin-top: 2.5rem; padding-top: 1.1rem;
+      border-top: 1px solid var(--line);
+      color: var(--mist); font-size: 0.86rem;
+    }
+    footer strong { color: var(--foam); font-weight: 500; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    @media print {
+      .bar, .no-print { display: none !important; }
+      body { background: #070b12 !important; }
+      .hero.plate-fire {
+        page-break-after: always;
+        break-after: page;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin: 0;
+        padding: 0.1in var(--pad) 0.15in;
+      }
+      .plate, .plate-formation {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+      .hero.plate-fire img, .plate img, .plate-formation img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 5.4in !important;
+        object-fit: contain !important;
+        object-position: center center !important;
+      }
+      .brand { font-size: 42pt !important; }
+      section, table, .bottom, .kpi { break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+      img {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+    @page { margin: 0.5in; size: letter; }
+  </style>
+</head>
+<body>
+  <div class="bar no-print">
+    <strong>TITAN-X</strong>
+    <span>
+      <a href="../../TITAN-X-Executive-Business-Plan.pdf">Open PDF</a>
+      <button type="button" onclick="window.print()">Print / PDF</button>
+    </span>
+  </div>
+
+  <header class="hero plate plate-fire">
+    <div class="hero-copy">
+      <p class="kicker">Prime Field Technologies LLC · Confidential discussion materials · August 2026</p>
+      <h1 class="brand">TITAN-X</h1>
+      <p class="tagline">Executive Business Plan · 2026–2030</p>
+      <p class="lede">Stratospheric persistent aerial platform for venture capitalists and business owners — regional infrastructure between aircraft and satellites.</p>
+    </div>
+    <img src="renders/titan-x-wildfire-suppress.jpg" alt="TITAN-X firefighting configuration delivering retardant and water over a wildfire" />
+    <p class="cap">Firefighting configuration — retardant and water delivery. California is the planning early concentration.</p>
+  </header>
+
+  <main class="wrap">
+    <p class="disclaimer">Planning estimates for discussion with qualified parties. Not guarantees of future performance. Not an offer to sell securities.</p>
+
+    <section>
+      <h2>1. Executive summary</h2>
+      <p><strong>TITAN-X</strong> is a free-flight stratospheric aerostat with a <strong>20,000 lb</strong> modular payload, indefinite endurance on helium buoyancy and solar power, and mission reconfiguration by swapping gondolas and underbelly modules.</p>
+      <p><strong>Investment thesis:</strong> fund pathfinder → first full-scale hull → California firefighting + metro nodes → planning <strong>12-unit</strong> fleet by 2030. Pre-positioning converts response from days to hours; civil and commercial utilization underwrites year-round availability; dual-use configs share one cost base.</p>
+      <div class="kpi">
+        <div><strong>$13M</strong><span>Unit CAPEX (fleet volume)</span></div>
+        <div><strong>$156M</strong><span>12-unit fleet CAPEX</span></div>
+        <div><strong>$2.4M</strong><span>Annual OPEX / unit</span></div>
+        <div><strong>$200K</strong><span>Monthly break-even / unit</span></div>
+        <div><strong>17.8 : 1</strong><span>Planning 10-yr fleet ROI</span></div>
+        <div><strong>20,000 lb</strong><span>Net modular payload</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Platform at a glance</h2>
+      <table class="snap">
+        <thead><tr><th>Parameter</th><th>Value</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Size</td><td>480 ft × 200 ft</td><td>Swept manta planform</td></tr>
+          <tr><td>Net payload</td><td>20,000 lbs</td><td>≈ school-bus weight</td></tr>
+          <tr><td>Altitude range</td><td>500 – 130,000 ft</td><td>Tree-top to lower stratosphere</td></tr>
+          <tr><td>Endurance</td><td>Indefinite</td><td>Solar + buoyancy</td></tr>
+          <tr><td>Ops carbon (persistent)</td><td>Near-zero</td><td>No combustion for loiter</td></tr>
+          <tr><td>Architecture</td><td>Fully modular</td><td>Gondola / underbelly swap</td></tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>Rockoon loft to ~100,000 ft for propellant savings, then recover the platform</li>
+        <li>Civil, commercial, and defense requirements share the same platform and cost base</li>
+      </ul>
+    </section>
+
+    <figure class="plate plate-formation">
+      <img src="renders/titan-x-formation.jpg" alt="TITAN-X platforms flying in formation at high altitude" />
+      <figcaption class="cap">Formation / persistent high-altitude operations — regional pre-positioning on one modular hull family.</figcaption>
+    </figure>
+
+    <section>
+      <h2>3. Problem &amp; solution</h2>
+      <p>Wildfire and disaster response still depends on scarce surge aircraft. Satellites persist but cannot deliver mass. Cities need hours-scale airborne nodes for observation, temporary communications, and logistics.</p>
+      <p class="callout"><strong>TITAN-X fills the band between aircraft and satellites:</strong> indefinite loiter, school-bus-class modular payload, near-zero persistent ops carbon, and pre-positioned regional coverage instead of surge-only response.</p>
+    </section>
+
+    <section>
+      <h2>4. Regional deployment</h2>
+      <h3>Major cities &amp; high-value regions</h3>
+      <p>One TITAN-X (or a pair) per region, loaded with modular response packages, on station in hours — disaster response, communications restoration, observation, logistics.</p>
+      <h3>California firefighting concentration</h3>
+      <ul>
+        <li>Fire-behavior, thermal, and smoke-plume sensors</li>
+        <li>Retardant or water delivery modules</li>
+        <li>Incident command and communications packages</li>
+        <li>Decision-support for incident commanders</li>
+      </ul>
+      <p class="muted">Modules shift to other missions in lower-risk periods to preserve utilization.</p>
+      <h3>Smaller complementary platforms</h3>
+      <p>Secondary observation, relay, weather, and lower-cost coverage under full-size regional nodes.</p>
+    </section>
+
+    <section>
+      <h2>5. Customers &amp; missions</h2>
+      <table>
+        <thead><tr><th>Segment</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td>State / regional wildfire authorities</td><td>CA firefighting concentration</td></tr>
+          <tr><td>Metro &amp; high-value regions</td><td>Persistent disaster &amp; comms nodes</td></tr>
+          <tr><td>Critical infrastructure</td><td>Monitoring and logistics support</td></tr>
+          <tr><td>Maritime / shipping</td><td>Domain awareness and ship support</td></tr>
+          <tr><td>Public safety</td><td>Airborne threat awareness (low-cost drones)</td></tr>
+          <tr><td>Science / weather</td><td>High-altitude observation</td></tr>
+          <tr><td>Rockoon / launch customers</td><td>Stratospheric loft + recover</td></tr>
+          <tr><td>Dual-use / defense (selected)</td><td>ISR, relay, forward logistics, responsive access</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>6. Unit economics</h2>
+      <table>
+        <thead><tr><th>Item</th><th class="num">Planning value</th></tr></thead>
+        <tbody>
+          <tr><td>Unit CAPEX (fleet volume)</td><td class="num">$13.0M</td></tr>
+          <tr><td>12-unit fleet CAPEX</td><td class="num">$156M</td></tr>
+          <tr><td>Annual OPEX per unit</td><td class="num">$2.4M</td></tr>
+          <tr><td>Break-even utilization</td><td class="num">~$200K / month</td></tr>
+          <tr><td>Mature utilization target (base)</td><td class="num">$8–12M / unit / year</td></tr>
+          <tr><td>Contribution at $10M rev / $2.4M opex</td><td class="num">~$7.6M / unit / year</td></tr>
+        </tbody>
+      </table>
+      <h3>Illustrative mature revenue mix</h3>
+      <table>
+        <thead><tr><th>Stream</th><th>Share</th></tr></thead>
+        <tbody>
+          <tr><td>Regional standby / availability</td><td>35–45%</td></tr>
+          <tr><td>Wildfire / disaster mission fees</td><td>20–30%</td></tr>
+          <tr><td>Infrastructure / maritime / public safety</td><td>15–25%</td></tr>
+          <tr><td>Rockoon / science / specialty</td><td>5–15%</td></tr>
+          <tr><td>Dual-use / defense options</td><td>0–20%</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>7. Financial plan 2026–2030</h2>
+      <p class="muted">USD millions. Anchored to consolidated summary CAPEX / OPEX / break-even. The planning 17.8 : 1 ten-year fleet ROI is a long-horizon target on the stood-up fleet — not a 2030 cash guarantee.</p>
+
+      <h3>Fleet build (base)</h3>
+      <table>
+        <thead>
+          <tr><th></th><th class="num">2026</th><th class="num">2027</th><th class="num">2028</th><th class="num">2029</th><th class="num">2030</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Full-size units EOY</td><td class="num">0*</td><td class="num">1</td><td class="num">3</td><td class="num">6</td><td class="num">12</td></tr>
+          <tr><td>CA firefighting-primary</td><td class="num">—</td><td class="num">1</td><td class="num">2</td><td class="num">3</td><td class="num">4</td></tr>
+          <tr><td>Metro / regional nodes</td><td class="num">—</td><td class="num">0</td><td class="num">1</td><td class="num">3</td><td class="num">8</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">*Pathfinder year — endurance, station-keeping, modular swap validation.</p>
+
+      <h3>Capital expenditure (base, $M)</h3>
+      <table>
+        <thead>
+          <tr><th></th><th class="num">2026</th><th class="num">2027</th><th class="num">2028</th><th class="num">2029</th><th class="num">2030</th><th class="num">Total</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Pathfinder + engineering</td><td class="num">18</td><td class="num">6</td><td class="num">4</td><td class="num">3</td><td class="num">2</td><td class="num">33</td></tr>
+          <tr><td>Hull production (learning curve)</td><td class="num">—</td><td class="num">18</td><td class="num">30</td><td class="num">42</td><td class="num">78</td><td class="num">168</td></tr>
+          <tr><td>Ground / ops infrastructure</td><td class="num">4</td><td class="num">6</td><td class="num">8</td><td class="num">10</td><td class="num">12</td><td class="num">40</td></tr>
+          <tr><td><strong>Total CAPEX</strong></td><td class="num"><strong>22</strong></td><td class="num"><strong>30</strong></td><td class="num"><strong>42</strong></td><td class="num"><strong>55</strong></td><td class="num"><strong>92</strong></td><td class="num"><strong>241</strong></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Operating model (base, $M)</h3>
+      <table>
+        <thead>
+          <tr><th></th><th class="num">2026</th><th class="num">2027</th><th class="num">2028</th><th class="num">2029</th><th class="num">2030</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Avg units in service</td><td class="num">0</td><td class="num">0.5</td><td class="num">2.0</td><td class="num">4.5</td><td class="num">9.0</td></tr>
+          <tr><td>Revenue</td><td class="num">0.5</td><td class="num">4</td><td class="num">18</td><td class="num">42</td><td class="num">90</td></tr>
+          <tr><td>Direct OPEX</td><td class="num">1.5</td><td class="num">3.5</td><td class="num">7</td><td class="num">13</td><td class="num">24</td></tr>
+          <tr><td>Program / G&amp;A</td><td class="num">4</td><td class="num">5</td><td class="num">7</td><td class="num">9</td><td class="num">11</td></tr>
+          <tr><td><strong>EBITDA (planning)</strong></td><td class="num"><strong>(5.0)</strong></td><td class="num"><strong>(4.5)</strong></td><td class="num"><strong>4</strong></td><td class="num"><strong>20</strong></td><td class="num"><strong>55</strong></td></tr>
+        </tbody>
+      </table>
+      <p>2030 check: ~$90M revenue on ~9 average units ≈ <strong>$10M per unit-year</strong>, above the $2.4M OPEX break-even.</p>
+
+      <h3>Scenario fan — 2030</h3>
+      <table>
+        <thead><tr><th>Case</th><th class="num">Units</th><th class="num">Revenue</th><th class="num">EBITDA</th></tr></thead>
+        <tbody>
+          <tr><td>Conservative</td><td class="num">6</td><td class="num">$45M</td><td class="num">$18M</td></tr>
+          <tr><td><strong>Base</strong></td><td class="num"><strong>12</strong></td><td class="num"><strong>$90M</strong></td><td class="num"><strong>$55M</strong></td></tr>
+          <tr><td>Upside</td><td class="num">12+</td><td class="num">$130M</td><td class="num">$85M</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>8. Use of funds &amp; milestones</h2>
+      <table>
+        <thead><tr><th>Use</th><th>Share</th></tr></thead>
+        <tbody>
+          <tr><td>Pathfinder + first full-scale hull</td><td>35–45%</td></tr>
+          <tr><td>CA firefighting + first metro modules</td><td>20–30%</td></tr>
+          <tr><td>Production tooling / learning-curve</td><td>15–20%</td></tr>
+          <tr><td>Ops bases, helium, insurance, crew</td><td>10–15%</td></tr>
+          <tr><td>Corporate / BD / compliance</td><td>5–10%</td></tr>
+        </tbody>
+      </table>
+      <p class="callout">Gate heavy fleet CAPEX on endurance demo, modular swap demo, and first paid availability or mission contract.</p>
+    </section>
+
+    <section>
+      <h2>9. Risks</h2>
+      <ul>
+        <li>Airworthiness / airspace — pathfinder before fleet claims</li>
+        <li>Early unit cost above $13M volume target — learning-curve modeled explicitly</li>
+        <li>Public contracting cycles — civil commercial utilization underwrites standby</li>
+        <li>17.8 : 1 ROI is a planning ten-year fleet figure, not a 2026–2030 guarantee</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>10. The ask</h2>
+      <p>We are engaging venture capitalists and business owners to fund or co-develop:</p>
+      <ol>
+        <li>Pathfinder validation and first full-scale hull</li>
+        <li>California firefighting concentration as the first revenue-bearing mission stack</li>
+        <li>Metro pre-positioning nodes that turn TITAN-X into infrastructure</li>
+      </ol>
+      <div class="bottom">
+        <p><span class="solar">Bottom line.</span> Indefinite endurance. 20,000 lb modular payload. Near-zero persistent ops carbon. Pre-positioned regional coverage with a California firefighting emphasis. Dual-use economics on one hull family. <strong>2026–2030 builds the twelve-unit base; utilization after that is where the summary ROI lives.</strong></p>
+      </div>
+    </section>
+
+    <footer>
+      <p><strong>Prime Field Technologies LLC</strong> · TITAN-X Executive Business Plan · August 2026</p>
+      <p>Source lock: TITAN-X Consolidated Summary · Regional Deployment Concept. Planning estimates only.</p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "echo skip",
+  "buildCommand": "cp -f TITAN-X-FINAL-Investor-Plan.pdf titan-x-web/TITAN-X-FINAL-Investor-Plan.pdf",
+  "outputDirectory": "titan-x-web",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- titan-x-web vercel.json TITAN-X-FINAL-Investor-Plan.pdf",
+  "headers": [
+    {
+      "source": "/TITAN-X-FINAL-Investor-Plan.pdf",
+      "headers": [
+        { "key": "Content-Type", "value": "application/pdf" },
+        { "key": "Content-Disposition", "value": "inline; filename=\"TITAN-X-FINAL-Investor-Plan.pdf\"" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    }
+  ]
+}

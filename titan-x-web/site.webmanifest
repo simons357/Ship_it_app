@@ -1,0 +1,14 @@
+{
+  "name": "TITAN-X Investor Plan",
+  "short_name": "TITAN-X",
+  "description": "TITAN-X final investor plan — Prime Field Technologies LLC",
+  "icons": [
+    { "src": "favicon.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon.png", "sizes": "1024x1024", "type": "image/png" }
+  ],
+  "display": "standalone",
+  "background_color": "#070b12",
+  "theme_color": "#070b12"
+}
