@@ -1,12 +1,13 @@
 # Uniform \(\mathcal{R}_\star\) — close attempt progress
 
 **Date:** 2026-09-12  
-**Branch:** `cursor/uniform-rstar-dilation-00ef` → merge into `cursor/uniform-rstar-attack-0cc5` (PR #73)  
+**Branch:** `cursor/uniform-rstar-hh-push-3c58` → `cursor/uniform-rstar-attack-0cc5` (PR #73)  
 **Policy:** [`RESEARCH-POLICY.md`](./RESEARCH-POLICY.md) — analytic-first; light probes only.  
 **Honesty lock:** Lemma★ / DA-NS-1 remains a **HYPOTHESIS**. Clay Statement B is **not solved**. Numerics ≠ proof. Do **not** revive \(|T_c|\le C\|v\|_2 X^{3/2}\).  
-**Credit face:** [`CREDIT-BODY-OF-WORK.md`](./CREDIT-BODY-OF-WORK.md) · campaign map [`../campaign/TWO-YEARS-MAP.md`](../campaign/TWO-YEARS-MAP.md).
+**Credit face:** [`CREDIT-BODY-OF-WORK.md`](./CREDIT-BODY-OF-WORK.md) · campaign map [`../campaign/TWO-YEARS-MAP.md`](../campaign/TWO-YEARS-MAP.md).  
+**Publisher/X gate:** [`GATED-PUBLISH-CHECKLIST.md`](./GATED-PUBLISH-CHECKLIST.md) — **INACTIVE** until real proof.
 
-**One-line status:** **STILL OPEN** — no proof of \(\sup_v\mathcal{R}_\star<\infty\), no analytic kill family. Cauchy / channel / dilation ledger proved; elementary HL/LL Λ-power route **killed**; geometric HL/LL and HH still **OPEN**.
+**One-line status:** **STILL OPEN** — no proof of \(\sup_v\mathcal{R}_\star<\infty\), no \(\mathcal{R}_\star\to\infty\) kill. Dilation ledger + HH mass proved; elementary Λ-power HL/LL **killed**; Cauchy-sufficient \(\sup Q<\infty\) **strategically blocked** (face family); geometric HL/LL and HH still **OPEN**.
 
 ---
 
@@ -135,6 +136,54 @@ On the same two-shell class, the centered weight on a child mode is \(\lambda(\l
 
 Only triad output landing on the **high** shell can contribute positively to \(T_c\). Low-shell children feed \(T_c\le 0\) for that term. Combined with Lemma H: the \((T_c)_+\) budget on two-shell is carried by HH→β, HL→β, and LL→β only.
 
+### Lemma K — HH mass control (\(\theta>1\))
+
+Declare high iff \(\lambda_k\ge\theta\Lambda\) with \(\theta>1\). Then
+
+\[
+X_H
+:=\sum_{\lambda_k\ge\theta\Lambda}\lambda_k|v_k|^2
+\le
+\frac{D_s}{(\theta-1)^2\Lambda^2}.
+\]
+
+**Proof.** On the high set, \(|\lambda-\Lambda|\ge(\theta-1)\Lambda\), so
+\(D_s=\sum\lambda(\lambda-\Lambda)^2|v_k|^2\ge(\theta-1)^2\Lambda^2 X_H\).  
+
+**Corollary.** \(E_H\le X_H/(\theta\Lambda)\le D_s/(\theta(\theta-1)^2\Lambda^3)\).  
+Useful bookkeeping for HH estimates; **does not** by itself bound \(T_c^{\mathrm{HH}}\) against \(\sqrt{D_s E Y}\) (Agmon / \(\|\nabla v_H\|_\infty\) still lose geometry-only control).
+
+### Lemma L — Cauchy-sufficient route strategically blocked (face family)
+
+Write
+
+\[
+Q(v)=\frac{\|A^{1/2}B(v,v)\|_2^2}{E\,Y}.
+\]
+
+Lemma A gives \(\mathcal{R}_\star(v)\le Q(v)\) whenever \(T_c>0\). So \(\sup Q<\infty\) would close PRODUCT-BLOCK.  
+
+**Face family.** For \(K\in\mathbb{N}\), let \(v^{(K)}\) be \(L^2\)-normalized with Fourier support on the face
+\(\{k_1=K:\ |k_2|,|k_3|\le K\}\setminus\{0\}\) and \(\widehat v_k\parallel P_k e_2\). Then (exact finite-support computation in `uniform_rstar_hh_push.py`):
+
+| \(K\) | 2 | 4 | 6 | 8 | 10 | 12 | 16 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| \(Q(v^{(K)})\) | 0.30 | 0.73 | 1.38 | 2.25 | 3.33 | 4.62 | 7.83 |
+| \(Q/K^2\) | 0.074 | 0.046 | 0.038 | 0.035 | 0.033 | 0.032 | 0.031 |
+| \(T_c\) | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+So \(Q\) is **monotone through \(K\le 16\)** with \(Q/K^2\searrow c_\star\approx 0.03\), while \(\mathcal{R}_\star\) is vacuous/zero on the same fields (\(T_c=0\)).
+
+**What this kills.** Closing PRODUCT-BLOCK by proving a geometry-only \(\sup Q<\infty\) with an \(O(1)\) constant suggested by sparse-mode samples is **dead**: face shapes already force \(Q\gtrsim 7\), and the coherent face×face scaling heuristic (\(Q\sim c K^2\)) predicts \(Q\to\infty\).
+
+**What this does *not* kill.** PRODUCT-BLOCK / \(\sup\mathcal{R}_\star<\infty\) — on these fields \(\mathcal{R}_\star\) does not blow. Cancellations between \(B\) and \(A(A-\Lambda)v\) are **mandatory**, not optional.  
+
+**Conjecture L (not a theorem).** \(Q(v^{(K)})\to\infty\) as \(K\to\infty\). Empirically \(Q\sim c_\star K^2\). Full discrete convolution lower bound not closed in this pass — do **not** file unboundedness of \(Q\) as proved.
+
+### Lemma M — True same-shell HH→L is lattice-sparse (diagnostic)
+
+Pairs of parents on shell \(\beta\) summing to a child on shell \(\alpha<\beta\) are often **empty** on \(\mathbb{Z}^3\) (e.g. \((\alpha,\beta)\in\{(1,5),(1,13),(5,25)\}\)). When triples exist (e.g. \((2,10),(2,50)\)), light phase/amplitude samples give \(\mathcal{R}_\star\lesssim 10^{-2}\) with no divergence. Not a kill; not a bound.
+
 ---
 
 ## 2. What failed / what is not proved
@@ -156,9 +205,13 @@ still leaves ratios that are not controlled by \(E Y\) alone without further str
 
 ### 2.2 HH remains open
 
-Same for \((T_c^{\mathrm{HH}})_+^2\le C_{\mathrm{HH}} D_s E Y\). Ordinary energy-only Agmon products do not close it.
+Same for \((T_c^{\mathrm{HH}})_+^2\le C_{\mathrm{HH}} D_s E Y\). Ordinary energy-only Agmon products do not close it. Lemma K controls \(X_H\) for \(\theta>1\) but does not upgrade to a geometric HH product. Face-family blowup of \(Q\) shows why crude \(\|A^{1/2}B\|_2\) control cannot be the whole story for \(\mathcal{R}_\star\).
 
-### 2.3 Kill lane — no counterexample found
+### 2.3 Sufficient Cauchy form \(\sup Q<\infty\) — strategically blocked
+
+See Lemma L. Do not attempt to green PRODUCT-BLOCK solely by bounding \(Q\) with sparse-mode intuition. Either prove a sharp inequality that uses the signed weight \(A(A-\Lambda)v\), or produce a true \(\mathcal{R}_\star\to\infty\) family.
+
+### 2.4 Kill lane — no \(\mathcal{R}_\star\to\infty\) counterexample found
 
 Analytic constructions checked (not an HPC sweep):
 
@@ -167,6 +220,8 @@ Analytic constructions checked (not an HPC sweep):
 | Near-shell \(\varepsilon\to 0\) | \(\mathcal{R}_\star\to K_{\alpha,\beta}<\infty\) (no kill) |
 | Two-shell amplitude / ratio sweeps | Finite sample \(\mathcal{R}_\star\lesssim 10^{-2}\); no divergence in ratio |
 | Filled Fourier balls (\(|k|\le K\)) | \(\mathcal{R}_\star\) stays small; often \(T_c\le 0\) |
+| Face fields \(v^{(K)}\) (Lemma L) | \(Q\) grows; \(\mathcal{R}_\star=0\) (no PRODUCT-BLOCK kill) |
+| True same-shell HH→L triples (Lemma M) | Sparse; sampled \(\mathcal{R}_\star\) small |
 | Coherent circular shell pairs / ABC-style | Typically \(T_c\approx 0\) |
 | Naive continuum “blob” scaling \(\mathcal{R}_\star\sim\lambda^3\) | **Invalid** as a kill: ignores triad cancellations / near-shell structure; contradicted by lattice-dilation invariance on ray-supported fields and by ball probes |
 
@@ -191,20 +246,22 @@ Then \(\sup_v\mathcal{R}_\star(v)<\infty\) (e.g. \(C_{\mathrm{geom}}\le 2C_{\mat
 
 **Neither hypothesis is proved.**  
 
-**Equivalent sufficient target (cleaner inequality):**
+**Former sufficient target (now strategically blocked as a solo close):**
 
 \[
 \|A^{1/2}B(v,v)\|_2^2\le C\,E\,Y
 \qquad\text{(geometry-only \(C\))}.
 \]
 
-Isolated HH obstruction form:
+Lemma L: do not expect an \(O(1)\) \(C\) from sparse-mode intuition; face shapes inflate \(Q\) while \(\mathcal{R}_\star\) stays zero. A close must use the signed weight against \(A(A-\Lambda)v\), or bound channels in a cancellation-aware way.
+
+Isolated HH obstruction form (still live):
 
 \[
-\|A^{1/2}B^{\mathrm{HH}}(v,v)\|_2^2\le C_{\mathrm{HH}}\,E\,Y,
+\bigl(T_c^{\mathrm{HH}}\bigr)_+^2\le C_{\mathrm{HH}}\,D_s\,E\,Y,
 \]
 
-with the analogous HL+LL inequality still required (not free).
+with geometric HL+LL still required (not free).
 
 ---
 
@@ -214,15 +271,18 @@ with the analogous HL+LL inequality still required (not free).
 | --- | --- |
 | `scripts/ns_attacks/uniform_rstar_identities.py` | Verify Lemmas A–D residuals; light kill/sanity probe |
 | `scripts/ns_attacks/uniform_rstar_dilation.py` | Lemmas G–J: dilation ledger, two-shell dichotomy, naive-Λ route kill |
+| `scripts/ns_attacks/uniform_rstar_hh_push.py` | Lemmas K–M: HH mass, face \(Q\)-block, HH→L sparsity |
 | `scripts/ns_attacks/uniform_rstar_attack.py` | Existing Λ-channel maximizer (subordinate) |
 | `scripts/ns_attacks/ns_lemma_star_core.py` | Exact finite-support \(T_c\), \(D_s\), \(\mathcal{R}_\star\) |
 | `tests/test_uniform_rstar_dilation.py` | Smoke tests for G–J |
+| `tests/test_uniform_rstar_hh_push.py` | Smoke tests for K–M |
 
 ```bash
 python3 scripts/ns_attacks/uniform_rstar_identities.py
 python3 scripts/ns_attacks/uniform_rstar_dilation.py
+python3 scripts/ns_attacks/uniform_rstar_hh_push.py
 python3 scripts/ns_attacks/uniform_rstar_attack.py --quick
-python3 -m pytest tests/test_uniform_rstar_attack.py tests/test_uniform_rstar_dilation.py -q
+python3 -m pytest tests/test_uniform_rstar_attack.py tests/test_uniform_rstar_dilation.py tests/test_uniform_rstar_hh_push.py -q
 ```
 
 ---
@@ -235,16 +295,20 @@ python3 -m pytest tests/test_uniform_rstar_attack.py tests/test_uniform_rstar_di
 | Lemma★ / DA-NS-1 | **HYPOTHESIS** |
 | Lemma A–F | **Proved** (as stated) |
 | Lemma G–J (dilation / dichotomy / route kill / signs) | **Proved** (as stated) |
+| Lemma K (HH mass \(\theta>1\)) | **Proved** |
+| Lemma L (face \(Q\) block) | **Strategic block recorded**; \(Q\to\infty\) = **CONJECTURE** |
+| Lemma M (HH→L sparsity) | **Diagnostic** (proved as stated) |
 | Elementary unmatched-Λ HL/LL route | **KILLED** |
+| Cauchy-sufficient \(\sup Q<\infty\) as solo close | **STRATEGICALLY BLOCKED** |
 | HL/LL geometric bound | **OPEN** (not classical) |
 | HH geometric bound | **OPEN** |
 | Kill family \(\mathcal{R}_\star\to\infty\) | **Not found** (lane LIVE) |
 | Clay Statement B | **NOT SOLVED** |
-| Publisher / X “clean proof” offer | **Not yet** — door still open |
+| Publisher / X “clean proof” offer | **Gate CLOSED** — [`GATED-PUBLISH-CHECKLIST.md`](./GATED-PUBLISH-CHECKLIST.md) |
 | Numerics = proof? | **No** |
 
 ---
 
 ## 6. One-line status
 
-**Still OPEN. Proved: Cauchy + channels + two-shell \(D_s\) + dilation ledger + two-shell dichotomy/signs; elementary Λ-power HL/LL route killed. Remainder: geometric control of \(T_c^{\mathrm{HH}}\) and \(T_c^{\mathrm{HL/LL}}\) (equivalently \(\|A^{1/2}B\|_2^2/(EY)\)). No PRODUCT-BLOCK kill. NS / Clay B not solved.**
+**Still OPEN. Proved: Cauchy/channels/\(D_s\)/dilation/HH-mass; elementary Λ-HL/LL killed; Cauchy-only \(\sup Q\) strategically blocked by face family. Remainder: geometric \(T_c^{\mathrm{HH}}\) and \(T_c^{\mathrm{HL/LL}}\) with cancellations. No \(\mathcal{R}_\star\) kill. NS / Clay B not solved.**

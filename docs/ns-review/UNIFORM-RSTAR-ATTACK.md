@@ -1,17 +1,18 @@
 # Uniform \(\mathcal{R}_\star\) attack — analytic reduction + numeric status
 
 **Date:** 2026-09-12  
-**Branch:** `cursor/uniform-rstar-attack-0cc5` (dilation push via `cursor/uniform-rstar-dilation-00ef`)  
+**Branch:** `cursor/uniform-rstar-attack-0cc5` (HH push via `cursor/uniform-rstar-hh-push-3c58`; dilation via `cursor/uniform-rstar-dilation-00ef`)  
 **Honesty lock:** Lemma★ / DA-NS-1 remains a **HYPOTHESIS**. Clay Statement B is **not solved**. Numerics ≠ proof.  
 **Live target:** PRODUCT-BLOCK = \(\sup_v\mathcal{R}_\star(v)<\infty\) with a geometry-only constant.  
 **Research policy (locked):** [`RESEARCH-POLICY.md`](./RESEARCH-POLICY.md) — main path = analytic structure / efficient mathematical expression of truth; **not** an HPC/supercomputer arms race; light probes only as sanity checks. Still **OPEN**; no Clay claim.  
-**Credit / show-work:** [`CREDIT-BODY-OF-WORK.md`](./CREDIT-BODY-OF-WORK.md) · [`../campaign/TWO-YEARS-MAP.md`](../campaign/TWO-YEARS-MAP.md).
+**Credit / show-work:** [`CREDIT-BODY-OF-WORK.md`](./CREDIT-BODY-OF-WORK.md) · [`../campaign/TWO-YEARS-MAP.md`](../campaign/TWO-YEARS-MAP.md).  
+**Publisher/X gate:** [`GATED-PUBLISH-CHECKLIST.md`](./GATED-PUBLISH-CHECKLIST.md) — **INACTIVE**.
 
 > i dont want to get in the ring with a supercomputer. i would not survive. but i can say do whatever is the logical and most efficient way to express the truth mathematically.
 
 **Lead route:** \(T_c\) structure + Λ-relative HH channel reduction (§2). Numerics (§3) are subordinate.
 
-**Close-attempt progress (2026-09-12):** [`UNIFORM-RSTAR-PROGRESS.md`](./UNIFORM-RSTAR-PROGRESS.md) — proved Cauchy / channel / two-shell \(D_s\) / dilation ledger G–J; elementary unmatched-Λ HL/LL route **killed**; geometric HL/LL and HH **OPEN**; no PRODUCT-BLOCK kill; still **OPEN**.
+**Close-attempt progress (2026-09-12):** [`UNIFORM-RSTAR-PROGRESS.md`](./UNIFORM-RSTAR-PROGRESS.md) — Lemmas A–M: dilation ledger; HH mass; elementary Λ-HL/LL **killed**; Cauchy-only \(\sup Q\) **strategically blocked** (face family); geometric HL/LL and HH **OPEN**; no \(\mathcal{R}_\star\) kill; still **OPEN**.
 
 ---
 
@@ -79,6 +80,7 @@ Executable probe (self-contained core, no external Stokes eigenbasis):
 ```bash
 python3 scripts/ns_attacks/uniform_rstar_identities.py   # Lemmas A–D checks + light kill sanity
 python3 scripts/ns_attacks/uniform_rstar_dilation.py     # Lemmas G–J: dilation / dichotomy / Λ-route kill
+python3 scripts/ns_attacks/uniform_rstar_hh_push.py      # Lemmas K–M: HH mass / face Q-block / HH→L
 python3 scripts/ns_attacks/uniform_rstar_attack.py
 python3 scripts/ns_attacks/uniform_rstar_attack.py --quick
 ```
@@ -124,10 +126,11 @@ These ceilings are tiny on the sampled families; that does **not** prove \(\sup\
 | Lemma★ / DA-NS-1 | **HYPOTHESIS** |
 | HH-channel bound | **GAP (live)** |
 | HL/LL geometric bound | **OPEN** (elementary unmatched-Λ route **killed**; see PROGRESS Lemmas G–J) |
+| Cauchy-sufficient \(\sup Q<\infty\) | **STRATEGICALLY BLOCKED** (face family; Conjecture \(Q\to\infty\)) |
 | Kill family found | Record from latest probe run (default expectation: **no**) |
 | Clay Statement B | **NOT SOLVED** |
 | False \(X^{3/2}\) universal | **DISCARDED** |
-| Publisher / X “clean proof” | **Not yet** — door open |
+| Publisher / X “clean proof” | **Gate CLOSED** — [`GATED-PUBLISH-CHECKLIST.md`](./GATED-PUBLISH-CHECKLIST.md) |
 | Numerics = proof? | **No** |
 
 Domain Architect: packaging symbols typically Level-0 on mainline CLI; do not treat DA output as greening PRODUCT-BLOCK. See [`DA-AUDIT.md`](./DA-AUDIT.md).
@@ -136,4 +139,4 @@ Domain Architect: packaging symbols typically Level-0 on mainline CLI; do not tr
 
 ## 5. One-line status
 
-**Uniform \(\mathcal{R}_\star\) still OPEN. Elementary Λ-power HL/LL route killed; geometric HL/LL and HH unbound. Cauchy/channel/dilation lemmas proved. No PRODUCT-BLOCK kill. NS / Clay B not solved. Numerics ≠ proof.**
+**Uniform \(\mathcal{R}_\star\) still OPEN. Elementary Λ-HL/LL killed; Cauchy-only \(\sup Q\) blocked by face family; geometric HL/LL and HH unbound. No \(\mathcal{R}_\star\) kill. NS / Clay B not solved. Publisher gate CLOSED. Numerics ≠ proof.**
