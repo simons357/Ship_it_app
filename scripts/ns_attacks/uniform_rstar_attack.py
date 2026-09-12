@@ -356,7 +356,19 @@ def amplitude_scaling_false_product_check(rng: np.random.Generator) -> dict:
     and → ∞ as a→0 — cannot be a universal product bound.
     R_★ is amplitude-invariant (should stay flat).
     """
-    f0 = two_shell_field(1, 5, rng, amp2=1.0, per_shell=3)
+    # Prefer a triad with nonzero T_c; fall back to two-shell retries.
+    f0 = None
+    for _ in range(40):
+        try:
+            cand = triad_packet_field((1, 0, 0), (2, 1, 0), rng, amp_r=1.0)
+        except Exception:  # noqa: BLE001
+            cand = two_shell_field(1, 2, rng, amp2=1.0, per_shell=3)
+        rec0 = R_star(cand, verify=True)
+        if abs(float(rec0["T_c"])) > 1e-12 and not rec0.get("vacuous_single_shell"):
+            f0 = cand
+            break
+    if f0 is None:
+        f0 = two_shell_field(1, 2, rng, amp2=1.0, per_shell=4)
     rows = []
     for a in (0.25, 0.5, 1.0, 2.0, 4.0, 8.0):
         f = f0.scale(a)
