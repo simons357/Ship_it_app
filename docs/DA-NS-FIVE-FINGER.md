@@ -13,7 +13,8 @@ This page is the B-hand on leftover regularity. Same word, different object.
 A map is not a close. Naming a blank is not an estimate
 (`docs/TRACK-B-RESIDUAL.md` B40*). A finite number is not \(C_0\) and not a kill.
 
-NS is not solved. Lemma★ is OPEN. Need★ is MISSING as a bound. H1 is not a
+NS is not solved. Unrestricted Lemma★ is killed.
+Need★ is MISSING as a bound and cannot repair that box. H1 is not a
 theorem. The axisymmetric shell door is OPEN.
 
 ---
@@ -36,7 +37,7 @@ A into B.
 | Writing | What it is | Status |
 |---|---|---|
 | Geometric path — H1 | Bad-pair \(A_{\mathrm{bad}}\) on \(Q_r\). Aimed leftover yes. Theorem no. | Write sits. Leftover 1 OPEN. |
-| Energy-budget path — Lemma★ / Need★ | Locked \(\mathcal R_\star=(T_c)_+^2/(\mathcal D_s E Y)\). Signed dual on HH→L after gap-cancel. | Need★ MISSING. Leftover 4 OPEN. |
+| Energy-budget path — Lemma★ / Need★ | Locked \(\mathcal R_\star=(T_c)_+^2/(\mathcal D_s E Y)\). Unrestricted box killed by \(v_n\). Signed dual cannot repair it. | Replacement OPEN. |
 | Axisymmetric shell estimate | \(Z_j=\|\Delta_j\omega\|_2^2\). Remainder \(T_{j\leftarrow j}\). Occupancy \(55/56\) printed. | Leftover 5 OPEN. |
 
 Do not weld. Closing one finger is not ordinary NS.
@@ -123,7 +124,7 @@ A finite sample is not the bound. Printed \(\mathcal N_\star\approx 0.099\)
 is a sample. Grow \(s\) is secondary kill-lane pressure, not this sentence.
 Attack 12's table is not Need★.
 
-Status: **Need★ MISSING. Leftover 4 OPEN.** Write sits in
+Status: **Need★ MISSING. Cannot repair the dead box.** Write sits in
 `docs/NEED-STAR-HH-L-DUAL.md`.
 
 ### Finger 5 — restricted class (axisymmetric shell)

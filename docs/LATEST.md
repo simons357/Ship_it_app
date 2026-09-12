@@ -20,19 +20,17 @@ ordinary NS. Uniform H1 as eps → 0 still
 open. Paper: docs/THEOREM-A-Q1.pdf
 
 **Unaug NS (ordinary) — open**
-B-hand five-finger map (speculated
-whole; after the spindle; fire /
-realized / future; MAP, not a close):
-docs/DA-NS-FIVE-FINGER.md
-Primary: Need★ signed dual on HH→L
-(MISSING after gap-cancel):
+Unrestricted Lemma★ killed by v_n.
+Not a blowup. Replacement closure open:
+docs/LEMMA-STAR-GROWING-LAYER.md
+Exact-shell 9D bound CLAIMED (C=4/3):
+docs/ATTACK-9D-FULL-SUPPORT-BOUND.md
+Need★ cannot repair the dead box:
 docs/NEED-STAR-HH-L-DUAL.md
-9D secondary (grow s; ★ reason as a map):
+Grow-s historical (max K≈0.456):
 docs/ATTACK-9D-GROW-S.md
-(grow-s samples: max K≈0.456 at (16,32),
-max s=192; not C0; not a kill)
-docs/LEMMA-STAR-REASON.md
-(map; HH→L the dangerous channel; not a theorem)
+B-hand map, not a close:
+docs/DA-NS-FIVE-FINGER.md
 Soft X silent.
 Yes / no / open (the tape):
 docs/YES-NO-OPEN.md

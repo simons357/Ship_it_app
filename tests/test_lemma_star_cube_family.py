@@ -26,7 +26,7 @@ class LemmaStarCubeFamilyTests(unittest.TestCase):
         self.assertIn("not** Fourier dilation", text)
         self.assertNotIn("NS is solved", text)
         self.assertNotIn("falsifier-of-record", text)
-        self.assertIn("unrestricted ★ is OPEN", text)
+        self.assertIn("this cube did not kill ★", text)
 
     def test_claimed_c_box_fraction_is_not_the_float(self):
         self.assertAlmostEqual(C_BOX, C_BOX_NUM / C_BOX_DEN, places=20)

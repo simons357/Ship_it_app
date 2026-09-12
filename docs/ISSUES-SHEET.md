@@ -37,7 +37,7 @@ One person, one row. Do not glue 1, 4, and 5.
 | 1 | H1 = WRITE (6) | Bad-pair stretching \(A_{\mathrm{bad}}\) on the cylinder \(Q_r\) | Prove thinness, or \(J\) on folds, or dynamics on \(r^2/\nu\); or write a named kill of those shapes. Not another *if*. | `docs/H1-WRITE.md`, `docs/WRITE_6.md`, `docs/H1-OBJECT.md` |
 | 2 | H2 from energy | Flux \(r^{-1}\iint|u||\omega|^2\) on the same cylinder | A priori from energy, or keep CKN-smallness and say so. CKN-small already sits. | `docs/H-SYSTEM.md` |
 | 3 | H3 | Exterior Biot–Savart on the same cylinder | Absorb as \(r\to 0\). Written, not absorbed. | `docs/H-SYSTEM.md` |
-| 4 | Lemma★ | \(\sup\mathcal R_\star<\infty\) on \(\mathbb{T}^3\), \(\mathcal R_\star=(T_c)_+^2/(\mathcal D_s E Y)\) | A geometry-only bound, or a sequence with \(\mathcal R_\star\to\infty\). Need★ = signed dual on HH→L after gap-cancel: still **MISSING**. | `docs/NEED-STAR-HH-L-DUAL.md`, `docs/LEMMA-STAR-STATEMENT.md`, `docs/LEMMA-STAR-REASON.md`, `docs/ATTACK-9D-GROW-S.md` |
+| 4 | Replacement energy-budget closure | A different estimate that the growing-layer family \(v_n\) does not kill | Write that estimate, or drop the energy-budget path. Unrestricted \(\sup\mathcal R_\star<\infty\) is **KILLED**. Need★ cannot repair that box. | `docs/LEMMA-STAR-GROWING-LAYER.md`, `docs/LEMMA-STAR-STATEMENT.md`, `docs/NEED-STAR-HH-L-DUAL.md` |
 | 4a | Hyp-Lat★ | Lattice transfer X1–X4/X6 of the continuum incidence \(I\ll m^{4/3}\) | Write the transfer, or drop the incidence route. Continuum \(m^{4/3}\) is not a lattice theorem. | `docs/LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md` |
 | 5 | Axisymmetric remainder | \(\int\rho_j=\int(T_{j\leftarrow j})_+/Z_j\) on unaugmented axisymmetric-with-swirl \(\mathbb{R}^3\) | A class bound, or a field in the class with \(\int\rho_j=\infty\). Occupancy \(55/56\) already printed; it did not decay. | `docs/AXISYM-SHELL.md`, `docs/AXISYM-SWIRL-PROBE.md` |
 | 6 | RH WRITE (6) | Every non-trivial zero of \(\zeta\) on \(\operatorname{Re}s=1/2\) | One estimate that forces the line. Q is not it. | `docs/RH-CHAIN.md` |
@@ -55,7 +55,8 @@ Global parent stretching **H** is open and is not a
 cylinder. \(R_\phi\) is not free.
 
 Do not start 1 from ABC_λ. Do not cash \(0.641\),
-\(0.610\), or \(0.327\) as a close of 4. Do not
+\(0.610\), or \(0.327\) as the \(v_n\) kill.
+The named kill of unrestricted ★ already sits. Do not
 restore occupation decay from the wall detector
 as a close of 5. Do not retitle Q as 6 or 10.
 Evolution / biology / other systems are maps
@@ -86,7 +87,8 @@ move a row. [`FRAMEWORK-MAP.md`](FRAMEWORK-MAP.md).
 | \(K=0\) | Dead. Amplitude kills it. |
 | \(\lvert T_c\rvert\le C\|u\|_2 X^{3/2}\) | Dead. Scaling \(a^3\) vs \(a^4\). |
 | Uniform pre-Young \(C\) | Dead. |
-| Attack 9D designed \(\Theta(m^2)\) | Freiman-AP. **Dead.** Do not start 9D. Setup: `docs/ATTACK-9D-SETUP.md`. Same \(B\) as 9B. Growing \(s\) is a 9B test. |
+| Attack 9D designed \(\Theta(m^2)\) | Freiman-AP. **Dead.** Do not start 9D. Setup: `docs/ATTACK-9D-SETUP.md`. Same \(B\) as 9B. Grow-\(s\) samples are historical. |
+| Unrestricted \(\sup\mathcal R_\star<\infty\) | **Killed** by the growing-layer family \(v_n\). `docs/LEMMA-STAR-GROWING-LAYER.md`. Not a singular NSE solution. |
 | Fixed-output \(\Theta(m^2)\) | Counting error. \(K\le 16s\). |
 | Detector occupation | 5-D occupation from the swirl wall. **Withdrawn.** |
 | Full Q floor \(>-1/2\), \(H_N\ge -3/14\) | Taken back. Stay back. |

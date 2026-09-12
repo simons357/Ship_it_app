@@ -36,7 +36,7 @@ class LemmaStarCubeReviewTests(unittest.TestCase):
         self.assertIn("on this branch", text)
         self.assertNotIn("NS is solved", text)
         self.assertNotIn("falsifier-of-record", text)
-        self.assertIn("unrestricted ★ is OPEN", text)
+        self.assertIn("this review did not kill ★", text)
 
     def test_quadratic_moments(self):
         self.assertEqual(E0, Fraction(736, 315))

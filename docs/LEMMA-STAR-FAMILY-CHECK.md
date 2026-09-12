@@ -121,9 +121,11 @@ Do not invent a second family.
 | LSfam_dilation_flat | **pass** | \(v(n\cdot)\) does not move \(\mathcal R_\star\) |
 | LSfam_wellposed_kills | **fail** | “well-posed on paper” is not a kill |
 | LSfam_small_lattice_kills | **fail** | finite \(\mathcal R_\star\) on small \(n\) is not \(\to\infty\) |
-| LSfam_unrestricted_killed | **fail** | unrestricted ★ is OPEN |
+| LSfam_unrestricted_killed | **fail** | this paste did not kill ★ |
 
-★ stays OPEN. Kill lane stays LIVE.
+This paste did not diverge. A later family
+did: [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
+Unrestricted ★ is KILLED by \(v_n\).
 Do not start H1. Do not stop patching.
 
 NS not solved.

@@ -1,8 +1,12 @@
 # Lemma★ — statement from the lock, not a reconstruction
 
-10 September 2026. Phone. **OPEN. Not a proof. NS not solved.**
-This page quotes the on-branch write-up. It does not
-invent a second claim.
+12 September 2026. Phone.
+**The boxed unrestricted claim is killed
+by the growing-layer family.**
+**OPEN. Not a proof. NS not solved.**
+This page still quotes the claim that died.
+It is not a reconstruction.
+The kill: [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
 
 Sources (in this order):
 

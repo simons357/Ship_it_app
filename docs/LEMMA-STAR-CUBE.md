@@ -189,9 +189,11 @@ No. Score here. Compute here.
 | LScube_screenshot_stamp | **fail** | screenshots are not the lock |
 | LScube_bernstein_every_n | **fail** | every-\(n\ge 2\) certificate absent |
 | LScube_ns_solved | **fail** | not NSE; not H1 |
-| LScube_unrestricted_killed | **fail** | unrestricted ★ is OPEN |
+| LScube_unrestricted_killed | **fail** | this cube did not kill ★ |
 
-★ stays OPEN. Kill lane stays LIVE.
+This cube did not diverge. A later family
+did: [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
+Unrestricted ★ is KILLED by \(v_n\).
 The cube is the first named family
 here whose support grows.
 It has not diverged on the lock.

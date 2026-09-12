@@ -6,20 +6,20 @@ quantity is
 \(\mathcal R_\star=(T_c)_+^2/(\mathcal D_s E Y)\);
 remainder is signed stretching \((T_c)_+\)
 versus spectral spread \(\mathcal D_s\);
-no extra field; **OPEN.**
+no extra field. Unrestricted
+\(\sup\mathcal R_\star<\infty\) is **NO**.
 
-**This is live write 2. The sentence
-below is a map of the identities and
-the scored families. It is not a proof
-of Lemma★. NS is not solved.**
+**This page is a map of cheap CS.
+It is not a proof. It is not the kill.
+The kill is the growing-layer family.
+NS is not solved.**
 
-Until this sentence is a theorem, or
-until \(\mathcal R_\star\to\infty\) on
-a family, leftover 4 stays OPEN.
-The hole this map points at is Need★:
-the signed dual on HH→L after
-gap-cancel. Still **MISSING.**
-[`NEED-STAR-HH-L-DUAL.md`](NEED-STAR-HH-L-DUAL.md).
+The named kill arrived. Unrestricted
+\(\sup\mathcal R_\star<\infty\) is **NO**.
+Family: [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
+This page stays a map of why cheap CS
+hides occupancy. It is not the kill.
+Need★ cannot repair the dead box.
 
 Do not turn Attack 12’s table into
 this sentence. Do not merge \(0.71\)
@@ -151,4 +151,5 @@ augmented NSE. B-hand map:
 [`DA-NS-FIVE-FINGER.md`](DA-NS-FIVE-FINGER.md).
 MAP, not a close.
 
-NS not solved. Lemma★ OPEN.
+NS not solved. Unrestricted ★ killed.
+Replacement closure OPEN.

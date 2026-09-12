@@ -24,7 +24,7 @@ class LemmaStarFamilyCheckTests(unittest.TestCase):
         self.assertIn("Fourier dilation", text)
         self.assertNotIn("NS is solved", text)
         self.assertNotIn("falsifier-of-record", text)
-        self.assertIn("unrestricted ★ is OPEN", text)
+        self.assertIn("this paste did not kill ★", text)
 
     def test_probe_scores(self):
         payload = run(seed=3)

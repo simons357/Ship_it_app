@@ -60,7 +60,7 @@ class CsRemainderTests(unittest.TestCase):
         self.assertTrue(SCORE.is_file())
         text = SCORE.read_text()
         self.assertIn("Refuse", text)
-        self.assertIn("Lemma★ is OPEN", text)
+        self.assertIn("ABC_λ did not kill ★", text)
         self.assertIn("0.327", text)
         self.assertIn("Do not stop patching", text)
         self.assertIn("Q-stack", text)

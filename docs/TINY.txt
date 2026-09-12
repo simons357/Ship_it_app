@@ -1,19 +1,17 @@
 Stay here. This chat is DA.
 
-Primary math target (Need★; signed dual
-MISSING after gap-cancel):
-docs/NEED-STAR-HH-L-DUAL.md
-scripts/need_star_hh_l_dual.py
-B-hand five-finger map (speculated
-whole; after the spindle; fire /
-realized / future; MAP, not a close):
+Unrestricted Lemma★ is killed by the
+growing-layer family. Not a blowup.
+Replacement closure is the leftover:
+docs/LEMMA-STAR-GROWING-LAYER.md
+scripts/ns_attacks/verify_pr24_closure_review.py
+Exact-shell 9D bound CLAIMED
+(C=4/3, specialist pending):
+docs/ATTACK-9D-FULL-SUPPORT-BOUND.md
+Need★ cannot repair the dead box.
+B-hand map (not a close):
 docs/DA-NS-FIVE-FINGER.md
-scripts/da_ns_five_finger.py
-Cosmo / SM fingers stay the other book.
-9D is secondary kill-lane pressure:
-docs/ATTACK-9D-GROW-S.md
-docs/LEMMA-STAR-REASON.md
-scripts/ns_attacks/attack9b_grow_s.py
+Grow-s samples are historical.
 Soft X silent.
 Yes / no / open (the tape; a write is
 not a theorem):
@@ -132,7 +130,9 @@ docs/WHERE-H1.md
 WRITE (6) alone: docs/WRITE_6.md
 WRITE (6) plus data: docs/WRITE_6_SUPPORTED.md
 
-Lemma★ still open. Evaluator ≠ proof.
+Unrestricted ★ killed. Evaluator matched
+the family. Exact core matched.
+Replacement closure open. Evaluator ≠ NS.
 Exact core ≠ proof. NS not solved.
 Finite ABC_λ climb is not a falsifier.
 H1 untested on ABC_λ. Q-stack out.
@@ -184,7 +184,7 @@ K=0 dead. Lattice fan did not kill.
 NS not solved.
 Five-lane drill: GitHub PR 48.
 Independent Lemma★ core (evaluator, not a proof;
-★ still open; live Stokes not overwritten):
+unrestricted ★ killed; live Stokes not overwritten):
 docs/LEMMA-STAR-CORE.md
 scripts/ns_lemma_star_core.py
 Object app (pictures; bound still open):

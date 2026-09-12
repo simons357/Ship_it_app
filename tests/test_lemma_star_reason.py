@@ -27,7 +27,7 @@ class LemmaStarReasonTests(unittest.TestCase):
         self.assertIn("It is not a proof", flat)
         self.assertIn("occupancy", text.lower())
         self.assertIn("16s", text)
-        self.assertIn("Lemma★ OPEN", text)
+        self.assertIn("Unrestricted ★ killed", text)
         self.assertNotIn("NS is solved", text)
         self.assertNotIn("Clay is solved", text)
         self.assertNotIn("almost proved", text.lower())

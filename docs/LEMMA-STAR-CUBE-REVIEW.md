@@ -192,10 +192,12 @@ new lemmas.
 | LSrev_M0_from_lock | **fail** | \(T_c/n^2\) has not settled |
 | LSrev_no_defect_35 | **fail** | §§3–5 not here |
 | LSrev_samples_unnecessary | **fail** | \(n=7\) still far from \(M_0\) |
-| LSrev_unrestricted_killed | **fail** | unrestricted ★ is OPEN |
+| LSrev_unrestricted_killed | **fail** | this review did not kill ★ |
 | LSrev_ns_h1 | **fail** | not NSE; not H1 |
 
-★ stays OPEN. Kill lane stays LIVE.
+This review did not diverge. A later family
+did: [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
+Unrestricted ★ is KILLED by \(v_n\).
 Do not start H1.
 Do not stop patching.
 

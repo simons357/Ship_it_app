@@ -1,9 +1,10 @@
 # Attack 9D — grow \(s\) on the 9B family
 
 12 September 2026.
-**Remaining packet falsifier. Not a close.
+**Historical packet sweep. Not a close.
 Designed \(\Theta(m^2)\) 9D is still dead.
-★ is OPEN. NS is not solved.**
+Unrestricted ★ is killed by a different
+family. NS is not solved.**
 
 This is live write 1. Same \(B\) as 9B.
 Fixed-output \(\Theta(m^2)\) is excluded
@@ -128,5 +129,9 @@ JSON: `results/attack9b_grow_s/grow_s.json`
 | \(\sup K<\infty\) | **OPEN** |
 | Lemma★ | **OPEN** |
 
-Kill lane LIVE. Bounded samples are
-not a proof. NS not solved.
+This draw did not kill ★. The named
+kill is [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
+Exact-shell \(K\le 16/9\) is claimed on
+[`ATTACK-9D-FULL-SUPPORT-BOUND.md`](ATTACK-9D-FULL-SUPPORT-BOUND.md).
+Bounded samples are not a proof.
+NS not solved.

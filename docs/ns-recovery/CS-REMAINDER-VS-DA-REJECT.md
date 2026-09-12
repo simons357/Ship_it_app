@@ -4,9 +4,12 @@
 **This book:** `cursor/unaugmented-r4-vorticity-f80e` · PR https://github.com/simons357/Ship_it_app/pull/24
 **Scored note:** PR https://github.com/simons357/Ship_it_app/pull/45 · `docs/ns-recovery/CS-REMAINDER-VS-DA-REJECT.md`
 
-**NS is not solved. Lemma★ is OPEN.** This note is a score.
-It does not stamp a kill or a proof. Do not start H1.
-Do not glue Q-stack. Do not stop patching Lemma★.
+**NS is not solved.** ABC_λ did not kill ★.
+This note is a score of that false stamp.
+The later growing-layer family did kill
+unrestricted ★. Do not start H1.
+Do not glue Q-stack. Do not cash 0.327.
+Do not stop patching a replacement closure.
 
 ---
 
