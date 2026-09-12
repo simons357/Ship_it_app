@@ -37,9 +37,9 @@ Human: Jonathan Simons (`winchester.anesthesia@gmail.com` / `simonsmedical@iclou
 
 Remaining-work lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Live work, in order:
 
-1. **Primary — Need★ dual size on HH→L.** After gap-cancel \(T_c=M-\Lambda N\), the signed dual that sizes the leftover HH→L piece against \(D_s\) is **MISSING**. Do not invent it. Soft X silent.
-2. **Secondary — Attack 9D:** kill-lane pressure only. Growing I/O, complex polarizations, \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}\|w\|_2^2\). Setup: [`docs/math/ns_attacks/ATTACK_9D_SETUP.md`](../math/ns_attacks/ATTACK_9D_SETUP.md).
-3. **Paths to DA** as soon as a dual write or 9D result lands. Do not send a close.
+1. **Primary — Need★ dual size on HH→L.** After gap-cancel \(T_c=M-\Lambda N\), the signed dual is still **MISSING**. Leftover 4 OPEN. Do not invent it. Soft X silent.
+2. **Secondary — Attack 9D grow \(s\):** PR #24 draw scored (seed 1390, \(k_{\max}=8\), \(\max K\approx 0.456\) at \((16,32)\)). **Not a kill.** Do not merge with aligned 9B \(0.641\). [`PR24-GROW-S-SCORE.md`](PR24-GROW-S-SCORE.md).
+3. **Paths to DA:** grow-\(s\) draw has landed (finite sample). Do not send a close.
 4. **Optional other track:** H1 on the cylinder — **not started**. Do not start it unless the packet line is shelved.
 
 Natural same-shell (9C), AP fan (9A), and finite 9B \(K_{\alpha,\beta}\) samples are **not kills**. Do not re-run them as if they were the remaining job.
@@ -225,7 +225,8 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 |---|---|
 | **This file** | Grok Heavy entry |
 | [`SOT.md`](SOT.md) | Packet source of truth |
-| [`WHAT-ELSE.md`](WHAT-ELSE.md) | Remaining work: 9D + ★ reason only |
+| [`WHAT-ELSE.md`](WHAT-ELSE.md) | Remaining work: Need★ dual primary; 9D grow-\(s\) scored |
+| [`PR24-GROW-S-SCORE.md`](PR24-GROW-S-SCORE.md) | PR #24 grow-\(s\): \(\max K\approx 0.456\), not a kill |
 | [`docs/math/ns_attacks/ATTACK_9D_SETUP.md`](../math/ns_attacks/ATTACK_9D_SETUP.md) | 9D: same \(B\) as 9B; no I/O exponent locked |
 | [`SUPERGROK-ABC-LOCK.md`](SUPERGROK-ABC-LOCK.md) | SuperGrok ABC_λ filing: keep evaluator line; **refuse** falsifier stamp |
 | [`ABC-SMALL-LATTICE.md`](ABC-SMALL-LATTICE.md) | Truncated ABC envelope on locked core; well-posed; ★ not killed |
