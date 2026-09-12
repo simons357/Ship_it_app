@@ -30,6 +30,8 @@ of \(T_{j\leftarrow j}\)):
 Handoff (one-page sheet, then four jobs):
 [`ISSUES-SHEET.md`](ISSUES-SHEET.md),
 [`HELP-OFF-DESK.md`](HELP-OFF-DESK.md).
+Borrowed systems (maps only):
+[`FRAMEWORK-MAP.md`](FRAMEWORK-MAP.md).
 
 ---
 

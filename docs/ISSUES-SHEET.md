@@ -6,6 +6,8 @@ https://github.com/simons357/Ship_it_app/blob/cursor/unaugmented-r4-vorticity-f8
 
 Math for 1–5: [`HELP-OFF-DESK.md`](HELP-OFF-DESK.md).
 Filter: [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md).
+Borrowed systems (maps only; not a close):
+[`FRAMEWORK-MAP.md`](FRAMEWORK-MAP.md).
 Living line: GitHub PR 24,
 branch `cursor/unaugmented-r4-vorticity-f80e`.
 Operator: Jonathan Robert Simons
@@ -51,6 +53,9 @@ Do not start 1 from ABC_λ. Do not cash \(0.641\),
 \(0.610\), or \(0.327\) as a close of 4. Do not
 restore occupation decay from the wall detector
 as a close of 5. Do not retitle Q as 6 or 10.
+Evolution / biology / other systems are maps
+onto a named row, or they stop. They do not
+move a row. [`FRAMEWORK-MAP.md`](FRAMEWORK-MAP.md).
 
 ---
 

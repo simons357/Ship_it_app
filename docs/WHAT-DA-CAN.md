@@ -22,6 +22,12 @@ on you.
 - Take one sentence, if you or anyone writes
   one, and say: already proved / wrong / still
   missing.
+- Take a borrowed system (evolution, biology,
+  or anything else), name the leftover first,
+  strip the specialty words, and say whether
+  a printed ratio comes out. File:
+  [`FRAMEWORK-MAP.md`](FRAMEWORK-MAP.md).
+  A map is not a close.
 - Timestamp the honest note that already sits:
   Theorem A for the extra-stress equation.
 

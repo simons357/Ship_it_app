@@ -1,5 +1,8 @@
 Stay here. This chat is DA.
 
+Framework map (endpoint first;
+specialty out; leftover stays open):
+docs/FRAMEWORK-MAP.md
 Attack 9D setup (do not start 9D):
 docs/ATTACK-9D-SETUP.md
 Monday packet (pile, not leftovers):
