@@ -91,33 +91,49 @@ def combinatorial_census(
     kmax: int,
     max_pairs: int = 80,
 ) -> Dict:
-    """Additive room on integer spheres. Cheap. No phases."""
+    """Additive room on integer spheres. One O(m²) pass per α. No phases."""
     shells_pos = shells_up_to(kmax)
     shells_full = {a: close_shell(modes) for a, modes in shells_pos.items()}
-    betas = sorted(shells_full)
+    valid = set(shells_full)
     rows = []
     n_fail = 0
     for alpha, modes in sorted(shells_full.items()):
         if len(modes) < 2:
             continue
-        for beta in betas:
-            if beta == alpha:
-                continue
-            if beta > 4 * alpha:
-                continue
-            rec = pair_census(modes, int(beta))
-            if rec["s_geom"] == 0:
-                continue
-            rec["alpha"] = int(alpha)
-            rec["beta"] = int(beta)
-            rec["n_pos"] = len(shells_pos[alpha])
-            rec["beta_over_alpha"] = float(beta) / float(alpha)
+        buckets: Dict[int, Dict[ModeKey, int]] = defaultdict(lambda: defaultdict(int))
+        for p in modes:
+            px, py, pz = p
+            for q in modes:
+                k = (px + q[0], py + q[1], pz + q[2])
+                if k == (0, 0, 0):
+                    continue
+                beta = k[0] * k[0] + k[1] * k[1] + k[2] * k[2]
+                if beta == alpha or beta > 4 * alpha or beta not in valid:
+                    continue
+                buckets[beta][k] += 1
+        n_pos = len(shells_pos[alpha])
+        m = len(modes)
+        for beta, counts in buckets.items():
+            s = len(counts)
+            max_rep = max(counts.values()) if counts else 0
+            total = sum(counts.values())
+            rec = {
+                "m": m,
+                "s_geom": s,
+                "max_rep": int(max_rep),
+                "total_pairs": int(total),
+                "pairs_le_m": bool(max_rep <= m),
+                "K_cs_ceiling": float(16.0 * s) if s else 0.0,
+                "mean_rep": float(total / s) if s else 0.0,
+                "heuristic_s_eq_m_room": float(16.0 * m),
+                "alpha": int(alpha),
+                "beta": int(beta),
+                "n_pos": n_pos,
+                "beta_over_alpha": float(beta) / float(alpha),
+            }
             rows.append(rec)
             if not rec["pairs_le_m"]:
                 n_fail += 1
-            if len(rows) >= max_pairs and max_pairs > 0:
-                # keep collecting a bit more on β=2α, then stop later
-                pass
 
     # Prefer keeping all rows; max_pairs only trims the *reported* top list.
     def key_room(r):
@@ -137,6 +153,18 @@ def combinatorial_census(
         "max_rep": max((r["max_rep"] for r in rows), default=0),
         "max_m": max((r["m"] for r in rows), default=0),
         "max_cs_ceiling": max((r["K_cs_ceiling"] for r in rows), default=0.0),
+        "max_rep_over_m": max(
+            (r["max_rep"] / r["m"] for r in rows if r["m"] > 0),
+            default=0.0,
+        ),
+        "max_s_over_m": max(
+            (r["s_geom"] / r["m"] for r in rows if r["m"] > 0),
+            default=0.0,
+        ),
+        "max_s_over_m2": max(
+            (r["s_geom"] / (r["m"] ** 2) for r in rows if r["m"] > 0),
+            default=0.0,
+        ),
         "top": rows_sorted[: min(24, len(rows_sorted))],
         "beta_2alpha": [
             r
@@ -308,8 +336,10 @@ def field_campaign(
             pairs.append((a, b, shells_pos[a]))
 
     rows: List[Dict] = []
-    for alpha, beta, pos in pairs:
+    n_pair = len(pairs)
+    for ip, (alpha, beta, pos) in enumerate(pairs, 1):
         n = len(pos)
+        print(f"  fields {ip}/{n_pair}  α={alpha} β={beta} n_pos={n}", flush=True)
         m_targets = []
         for m in m_list:
             if 2 <= m <= n:
@@ -448,7 +478,14 @@ def run(
     m_list: Sequence[int] = (2, 4, 8, 16),
 ) -> Dict:
     rng = np.random.default_rng(seed)
+    print(f"9B growing-s  seed={seed}  census kmax={kmax_census}", flush=True)
     census = combinatorial_census(kmax_census)
+    print(
+        f"  census pairs={census['n_pairs_with_sums']}  "
+        f"max s_geom={census['max_s_geom']}  max_rep={census['max_rep']}",
+        flush=True,
+    )
+    print(f"  fields kmax={kmax_fields}", flush=True)
     fields = field_campaign(
         rng,
         kmax=kmax_fields,
@@ -495,6 +532,9 @@ def write_headline(summary: Dict, path: Path) -> None:
         f"- max s_geom = {c.get('max_s_geom')}",
         f"- max representations on one k = {c.get('max_rep')}",
         f"- max CS ceiling 16 s_geom = {c.get('max_cs_ceiling')}",
+        f"- max (max_rep / m) = {c.get('max_rep_over_m')}",
+        f"- max (s_geom / m) = {c.get('max_s_over_m')}",
+        f"- max (s_geom / m²) = {c.get('max_s_over_m2')}",
         f"- pairs-per-output ≤ m failures = {c.get('n_fail_pairs_le_m')}",
         "",
         r"Room is not K. \(K\le 16s\) still sits.",
