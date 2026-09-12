@@ -1,7 +1,7 @@
 # Uniform \(\mathcal{R}_\star\) attack — analytic reduction + numeric status
 
 **Date:** 2026-09-12  
-**Branch:** `cursor/uniform-rstar-attack-0cc5`  
+**Branch:** `cursor/uniform-rstar-close-0cc5` (extends `cursor/uniform-rstar-attack-0cc5`)  
 **Honesty lock:** Lemma★ / DA-NS-1 remains a **HYPOTHESIS**. Clay Statement B is **not solved**. Numerics ≠ proof.  
 **Live target:** PRODUCT-BLOCK = \(\sup_v\mathcal{R}_\star(v)<\infty\) with a geometry-only constant.  
 **Research policy (locked):** [`RESEARCH-POLICY.md`](./RESEARCH-POLICY.md) — main path = analytic structure / efficient mathematical expression of truth; **not** an HPC/supercomputer arms race; light probes only as sanity checks. Still **OPEN**; no Clay claim.
@@ -9,6 +9,8 @@
 > i dont want to get in the ring with a supercomputer. i would not survive. but i can say do whatever is the logical and most efficient way to express the truth mathematically.
 
 **Lead route:** \(T_c\) structure + Λ-relative HH channel reduction (§2). Numerics (§3) are subordinate.
+
+**Close-attempt progress (2026-09-12):** [`UNIFORM-RSTAR-PROGRESS.md`](./UNIFORM-RSTAR-PROGRESS.md) — proved Cauchy / channel / two-shell \(D_s\) lemmas; **HL/LL not classical**; HH open; no kill; PRODUCT-BLOCK still **OPEN**.
 
 ---
 
@@ -38,30 +40,32 @@ T_c=T_c^{\mathrm{HH}}+T_c^{\mathrm{HL}}+T_c^{\mathrm{LL}}.
 
 **Conditional reduction (honest):**
 
-1. **HL / LL classical (if available).** On HL and LL channels, at least one parent is low relative to \(\Lambda\). Standard 3D product / paraproduct estimates at the energy–enstrophy scale are expected to give
+1. **HL / LL (not filed as classical).** On HL and LL channels, at least one parent is low relative to \(\Lambda\). The *intended* bound is
    \[
    \bigl(T_c^{\mathrm{HL}}+T_c^{\mathrm{LL}}\bigr)_+^2
    \le
    C_{\mathrm{HL/LL}}\,D_s\,E\,Y
    \]
-   (or a Young form feeding the same Gronwall). This step is **classical-ish bookkeeping**, not the prize difficulty — but it must still be written carefully with the centered weight \(\lambda_k(\lambda_k-\Lambda)\). Status on this branch: **assumed as a lemma to prove**, not claimed closed in code.
+   (or a Young form feeding the same Gronwall). **Correction (close attempt):** elementary Sobolev / paraproduct estimates lose dilation-invariant control (field-dependent \(\Lambda\) powers). HL/LL is **OPEN**, not “classical bookkeeping done.” See [`UNIFORM-RSTAR-PROGRESS.md`](./UNIFORM-RSTAR-PROGRESS.md).
 
-2. **HH is the bottleneck.** The remaining piece is
+2. **HH is also unbound.** The high×high piece is
    \[
    \bigl(T_c^{\mathrm{HH}}\bigr)_+^2
    \le
    C_{\mathrm{HH}}\,D_s\,E\,Y.
    \]
-   Ordinary Agmon / energy-only Sobolev products do **not** deliver this for all \(v\). This is the live PRODUCT-BLOCK core (historical diagnostic label “HH→L”: **input** channel, not a proved high→low output map).
+   Ordinary Agmon / energy-only Sobolev products do **not** deliver this for all \(v\). Historical diagnostic label “HH→L”: **input** channel, not a proved high→low output map. Together with open HL/LL, this is the live PRODUCT-BLOCK core.
 
 3. **Therefore:** if (1) and (2) both hold with geometric constants, then
    \[
    \sup_v\mathcal{R}_\star(v)<\infty
    \]
    and the energy-budget form of Lemma★ closes → Gronwall on \(\Lambda(t)\) → continuation (Statement B packaging).  
-   **Conversely:** without HH control, the reduction does **not** close PRODUCT-BLOCK.
+   **Conversely:** without both channel bounds, the reduction does **not** close PRODUCT-BLOCK.
 
-**Status of the reduction itself:** the *logic* “HL/LL classical + HH bound ⇒ uniform \(\mathcal{R}_\star\)” is the intended attack map. **Neither** half is proved as a theorem on this branch. HH remains **OPEN**. Do not green DA-NS-1.
+**Status of the reduction itself:** the *logic* “HL/LL bound + HH bound ⇒ uniform \(\mathcal{R}_\star\)” is the intended attack map. **Neither** half is proved. HL/LL is **not** classical on present estimates; HH remains **OPEN**. Sufficient form: \(\|A^{1/2}B\|_2^2\le C E Y\). Do not green DA-NS-1.
+
+**Efficient mathematical target (policy):** express HH control as a clean geometric inequality on the high×high triad sum — not as a larger Fourier box. See [`RESEARCH-POLICY.md`](./RESEARCH-POLICY.md).
 
 ---
 
@@ -72,6 +76,7 @@ T_c=T_c^{\mathrm{HH}}+T_c^{\mathrm{HL}}+T_c^{\mathrm{LL}}.
 Executable probe (self-contained core, no external Stokes eigenbasis):
 
 ```bash
+python3 scripts/ns_attacks/uniform_rstar_identities.py   # Lemmas A–D checks + light kill sanity
 python3 scripts/ns_attacks/uniform_rstar_attack.py
 python3 scripts/ns_attacks/uniform_rstar_attack.py --quick
 ```
@@ -91,6 +96,22 @@ What it does:
 
 Artifacts: `/opt/cursor/artifacts/uniform-rstar-attack/`.
 
+### 3.1 Latest finite-sample ceiling (this branch)
+
+From `python3 scripts/ns_attacks/uniform_rstar_attack.py` (seed 20260912):
+
+| Quantity | Value |
+| --- | --- |
+| max \(\mathcal{R}_\star\) (default seed, full pass) | \(\approx 1.86\times 10^{-2}\) (`triad_packet_max`) |
+| max \(\mathcal{R}_\star\) (quick pass, same seed) | \(\approx 4.49\times 10^{-2}\) (RNG path differs) |
+| Observed ceiling across passes | \(\approx 4.5\times 10^{-2}\) on tested families |
+| Kill family found? | **No** |
+| Channel-sum error \(\lvert\sum_{\mathrm{ch}}T_c^{\mathrm{ch}}-T_c\rvert\) | \(\lesssim 10^{-14}\) |
+| False-product \(\lvert T_c\rvert/(\|v\|_2 X^{3/2})\) max/min under \(a\in[1/4,8]\) | \(32\) (\(=1/a\) scaling) while \(\mathcal{R}_\star\) flat |
+| PRODUCT-BLOCK | **still OPEN** |
+
+These ceilings are tiny on the sampled families; that does **not** prove \(\sup\mathcal{R}_\star<\infty\).
+
 ---
 
 ## 4. Honesty / DA status
@@ -100,7 +121,7 @@ Artifacts: `/opt/cursor/artifacts/uniform-rstar-attack/`.
 | PRODUCT-BLOCK / uniform \(\mathcal{R}_\star\) | **OPEN** |
 | Lemma★ / DA-NS-1 | **HYPOTHESIS** |
 | HH-channel bound | **GAP (live)** |
-| HL/LL classical reduction | **Not filed as proved** (attack map only) |
+| HL/LL geometric bound | **OPEN** (not classical; see PROGRESS) |
 | Kill family found | Record from latest probe run (default expectation: **no**) |
 | Clay Statement B | **NOT SOLVED** |
 | False \(X^{3/2}\) universal | **DISCARDED** |
@@ -112,4 +133,4 @@ Domain Architect: packaging symbols typically Level-0 on mainline CLI; do not tr
 
 ## 5. One-line status
 
-**Uniform \(\mathcal{R}_\star\) still OPEN. HH control would close the reduction if HL/LL are classical; HH unbound. NS / Clay B not solved. Numerics ≠ proof.**
+**Uniform \(\mathcal{R}_\star\) still OPEN. HL/LL and HH both unbound geometrically; Cauchy/channel lemmas proved. No kill. NS / Clay B not solved. Numerics ≠ proof.**

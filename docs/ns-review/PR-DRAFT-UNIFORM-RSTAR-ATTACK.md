@@ -33,4 +33,13 @@ Locks Jonathan's research policy and focuses the live PRODUCT-BLOCK node: unifor
 ```bash
 python3 scripts/ns_attacks/uniform_rstar_attack.py
 python3 scripts/ns_attacks/uniform_rstar_attack.py --quick
+python3 -m pytest -q tests/test_uniform_rstar_attack.py
 ```
+
+## Probe snapshot (not a proof)
+
+- max R_★ ≈ 4.5e-2 (quick) / 1.9e-2 (full) on triad/near-shell samples
+- kill_found = False; kill lane LIVE
+- channel-sum error ≲ 1e-14
+- false X^{3/2} product scales as 1/a (ratio max/min = 32 on a∈[1/4,8]); R_★ flat
+- **PRODUCT-BLOCK still OPEN**
