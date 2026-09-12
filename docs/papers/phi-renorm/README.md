@@ -1,5 +1,14 @@
-# Phi-renorm sources (Zenodo)
+# Φ-renorm June 30 (repo mirror)
 
-- `Simons_PhiRenorm_Swirl_2026-06-30.tex` — fetched from Zenodo record `21071991` (DOI `10.5281/zenodo.21071991`).
-- Disposition: **KEEP conditional** (open \(\|u^r/r\|_\infty\)). Flag **NEEDS_AUDIT_FIX** for remaining \(\dot H^{2.6}\) labels.
-- Prefer citing cleaned algebra KEEP DOIs `22050974` / `22050975` for the Φ-system cancel story.
+Canonical SoT after the 22 Aug 2026 audit lives under `docs/papers/swirl/`.
+
+This directory mirrors the corrected TeX (`\dot H^{1.3}` energy labels).
+
+| Item | Status |
+| --- | --- |
+| Disposition | **KEEP conditional** |
+| Open gap | `||u^r/r||_∞` / `op:gronwall` |
+| Zenodo | `10.5281/zenodo.21071991` (file replacement pack in `data/zenodo/upload_packs/21071991/`) |
+| Clay / unconditional NS | **Not** claimed |
+
+See `docs/ns-review/PHI-RENORM-AUDIT-2026-08-22.md`.

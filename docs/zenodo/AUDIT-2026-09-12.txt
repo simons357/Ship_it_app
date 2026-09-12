@@ -1,0 +1,34 @@
+# Zenodo deposit fixes — audit 2026-09-12
+
+## What was wrong
+
+| Class | Count | Detail |
+| --- | ---: | --- |
+| Historical title banners (ERRATA / Claim withdrawn / Superseded) | 8 | Already cleared on live Zenodo before this branch; scarlet-letter titles were the mistake |
+| Live title banners remaining | **0** | Confirmed via API |
+| PARK/REVIEW deposits missing description correction notice | **23** | Overclaim abstracts still sit alone without an underneath errata block |
+| Trailing quote in title `20518388` | **1** | `...Gaps"` → clean without `"` |
+| File content mistake on KEEP `21071991` | **1** | Live TeX+PDF still had `\dot H^{2.6}` energy labels; correct is `\dot H^{1.3}` |
+| Stale in-repo metadata claiming banners still live | yes | `deposit_metadata.json` refreshed from live API |
+
+## What this branch fixes in-repo
+
+- Refresh `data/zenodo/deposit_metadata.json` against live API (31 owned records).
+- Remediation script: audit, description HTML blocks, manual instructions, optional API apply, 21071991 file packaging.
+- Recompile corrected PhiRenorm PDF; sync `docs/papers/phi-renorm/` mirror; upload pack under `data/zenodo/upload_packs/21071991/`.
+- Per-deposit docs + `MANUAL-INSTRUCTIONS.md` + correction index.
+
+## Applied live vs blocked
+
+| Action | Status |
+| --- | --- |
+| Metadata description errata on PARK/REVIEW | **Blocked** — no `ZENODO_ACCESS_TOKEN` / `ZENODO_TOKEN` in environment |
+| New version + file replace for `21071991` | **Blocked** on same token |
+| Title banner cleanup | Already done live (nothing to re-apply) |
+
+## Honesty constraints honored
+
+- KEEP set unchanged; PARK not deleted.
+- `21071991` stays conditional; barrier open; no Clay claim.
+- No RH proof language; no SFE→NS glue.
+- No ERRATA banners put back into titles.

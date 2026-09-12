@@ -49,7 +49,8 @@ EXTRA_KEEP = {
         "alias": "PhiRenorm June 30 conditional (open ||u^r/r||_∞)",
         "notes": (
             "KEEP as conditional Phi-renorm deposit. Open gap: ||u^r/r||_∞. "
-            "Aug 22 audit flagged possible Hdot^2.6 labels — NEEDS_AUDIT_FIX."
+            "Repo+upload pack corrected (Hdot^2.6→1.3); live Zenodo files still "
+            "pre-relabel until token apply — NEEDS_AUDIT_FIX on live only."
         ),
         "flags": ["NEEDS_AUDIT_FIX"],
     }
