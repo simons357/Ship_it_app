@@ -33,7 +33,8 @@ class GrowingSTests(unittest.TestCase):
     def test_doc_locks_the_lane(self):
         text = DOC.read_text()
         self.assertIn("9B", text)
-        self.assertIn("not a 9D object", text)
+        self.assertIn("Not a new field", text)
+        self.assertIn("Live 9D", text)
         self.assertIn("NS not solved", text)
         self.assertIn(r"not \(C_0\)", text)
         self.assertIn("attack9b_growing_s.py", text)
@@ -45,7 +46,8 @@ class GrowingSTests(unittest.TestCase):
         counting = COUNTING.read_text()
         self.assertIn("LEMMA-STAR-9B-GROWING.md", counting)
         spec = SPEC_9D.read_text()
-        self.assertIn("attack9b_growing_s.py", spec)
+        self.assertIn("attack9d_growing.py", spec)
+        self.assertIn("Do not redo", spec)
 
     def test_pairs_per_output_at_most_m(self):
         pos = [(2, 0, 0), (0, 2, 0), (0, 0, 2)]

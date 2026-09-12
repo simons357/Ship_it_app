@@ -13,7 +13,10 @@ The displayed bound
 \(\|\Pi_\beta B(w,w)\|_2\le C\alpha\beta^{-1/2}\|w\|_2^2\)
 is the 9B uniform target. \(B=B(w,w)\) is the same
 exact-shell bilinear as the HH→L fan.
-It is not a 9D object.
+Not a new field. Linear pol only.
+Live 9D (full complex pol, growing supports)
+is the remaining packet falsifier:
+[`LEMMA-STAR-LIVE.md`](LEMMA-STAR-LIVE.md).
 
 Fixed \(s\) cannot unbound \(K\) (\(K\le 16s\)).
 Growing input support \(m\) and occupied output

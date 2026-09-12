@@ -138,18 +138,21 @@ The displayed bound
 \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}\|w\|_2^2\)
 **is this page** (9B uniform target). \(B=B(w,w)\)
 is the same shell-projected bilinear as the
-HH→L / exact-shell fan. It is not a 9D object.
+HH→L / exact-shell fan. Not a new field.
 
-Growing input and output supports is the
-remaining **9B** test. No exponent tying
-\((m,s)\) to \((\alpha,\beta)\) is seated.
-9D does not supply that exponent.
-Campaign: [`LEMMA-STAR-9B-GROWING.md`](LEMMA-STAR-9B-GROWING.md),
-`scripts/ns_attacks/attack9b_growing_s.py`.
-Attack 12 \(\mathcal R_\star\sim\beta/\alpha\)
-may be cited as a channel diagnostic only.
+The remaining packet falsifier of this target
+is **Attack 9D**: growing \(m\) and \(s\), full
+complex polarizations, frequency factors kept.
+[`LEMMA-STAR-LIVE.md`](LEMMA-STAR-LIVE.md),
+`scripts/ns_attacks/attack9d_growing.py`.
+Linear-pol growing-\(s\) samples are scored
+and are not that close:
+[`LEMMA-STAR-9B-GROWING.md`](LEMMA-STAR-9B-GROWING.md).
+No exponent tying \((m,s)\) to \((\alpha,\beta)\)
+is seated. Attack 12 \(\mathcal R_\star\sim\beta/\alpha\)
+is a channel diagnostic only.
 Do not build a ★ sentence from those
-numbers and call it 9D.
+numbers. The ★ reason is not written.
 
 ---
 
