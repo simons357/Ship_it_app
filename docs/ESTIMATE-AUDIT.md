@@ -21,6 +21,10 @@ Identity and far-shell Young sit.
 Remainder \(T_{j\leftarrow j}\) is open.
 Class samples of that remainder:
 [`AXISYM-SWIRL-PROBE.md`](AXISYM-SWIRL-PROBE.md).
+Wall / dictionary correction (occupation
+from the detector withdrawn; not a close
+of \(T_{j\leftarrow j}\)):
+[`SWIRL-WALL-CORRECTION.md`](SWIRL-WALL-CORRECTION.md).
 
 ---
 

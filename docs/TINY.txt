@@ -1,5 +1,9 @@
 Stay here. This chat is DA.
 
+Swirl wall correction (F=u^θ/r,
+G=ω^θ/r; time-window if; occupation
+from the detector withdrawn):
+docs/SWIRL-WALL-CORRECTION.md
 Axisymmetric shell estimate (identity
 and far-shell Young sit; remainder
 T_{j←j} open; [ρ] not measured):

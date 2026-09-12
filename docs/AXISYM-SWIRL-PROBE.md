@@ -16,6 +16,9 @@ pairing closed on these samples;
 
 Estimate: [`AXISYM-SHELL.md`](AXISYM-SHELL.md).
 Filter: [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md).
+Wall / dictionary
+(occupation from the detector withdrawn):
+[`SWIRL-WALL-CORRECTION.md`](SWIRL-WALL-CORRECTION.md).
 Probe: `python3 scripts/axisym_swirl_probe.py`
 
 This is a measurement of named fields.
@@ -94,6 +97,8 @@ Occupancy 1 is not imported.
 - A close of the shell estimate.
 - A bound by \(\Lambda'\) or
   \(\dot Z_j\).
+- Occupation decay from the swirl-wall
+  detector. That claim is withdrawn.
 
 ---
 

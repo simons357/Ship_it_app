@@ -20,6 +20,13 @@ WRITE (6). This is not unrestricted
 three-dimensional regularity. Do not glue
 those three. Do not add a field.
 
+Swirl dictionary and wall correction
+(occupation from the detector withdrawn):
+[`SWIRL-WALL-CORRECTION.md`](SWIRL-WALL-CORRECTION.md).
+\(F=u^\theta/r\), \(G=\omega^\theta/r\).
+The wall is a time-window *if*. It does
+not close \(T_{j\leftarrow j}\).
+
 ---
 
 ## 1. Class and equation
