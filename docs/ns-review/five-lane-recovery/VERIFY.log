@@ -1,0 +1,73 @@
+five-lane recovery verification 2026-09-10T11:19:46Z
+branch: cursor/da-five-lane-recovery-0cc5
+PR48: https://github.com/simons357/Ship_it_app/pull/48
+agent: https://cursor.com/agents/bc-6378e748-26ec-5035-bfac-1ef1b5071390
+files_in_recovery:
+49
+docs/ns-review/five-lane-recovery/docs/math/ARCHIVE_NOT_LEMMA_STAR.md
+docs/ns-review/five-lane-recovery/docs/math/ns_attacks/ARCHIVE_ROUTE_N_Q6_SHELL/README.md
+docs/ns-review/five-lane-recovery/docs/math/ns_attacks/ATTACK_1_COVARIANCE.md
+docs/ns-review/five-lane-recovery/docs/math/ns_attacks/ATTACK_2_TRIAD_K0_CSTAR.md
+docs/ns-review/five-lane-recovery/docs/math/ns_attacks/ATTACK_3_BONY_HH_L.md
+docs/ns-review/five-lane-recovery/docs/math/ns_attacks/ATTACK_4_STOKES.md
+docs/ns-review/five-lane-recovery/docs/math/ns_attacks/ATTACK_5_ROUTE2.md
+docs/ns-review/five-lane-recovery/docs/math/ns_attacks/ATTACK_8_CORRECT_RECORD.md
+docs/ns-review/five-lane-recovery/docs/math/ns_attacks/ATTACK_9A_AP_PACKET_FAILURE.md
+docs/ns-review/five-lane-recovery/docs/math/ns_attacks/ATTACK_9B_EXACT_SHELL_CLOSING.md
+docs/ns-review/five-lane-recovery/docs/math/ns_attacks/ATTACK_9C_FIXED_GAP_SPHERES.md
+docs/ns-review/five-lane-recovery/docs/math/ns_attacks/ATTACK_9D_THETA_M2_LOCKED_PHASE.md
+docs/ns-review/five-lane-recovery/docs/math/ns_attacks/ATTACK_9_PACKET_FAN.md
+docs/ns-review/five-lane-recovery/docs/math/ns_attacks/ATTACK_SYNTHESIS_SIMULTANEOUS.md
+docs/ns-review/five-lane-recovery/docs/math/ns_attacks/DA-SHAPE-TEXTURE-LINK.md
+docs/ns-review/five-lane-recovery/docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md
+docs/ns-review/five-lane-recovery/docs/math/ns_attacks/PROOF_LemmaStar_STATUS.md
+docs/ns-review/five-lane-recovery/EXTRACTS-DEFS-AND-HH-TO-L.md
+docs/ns-review/five-lane-recovery/HITS.md
+docs/ns-review/five-lane-recovery/README.md
+docs/ns-review/five-lane-recovery/results/ns_five_lane_2026-09-10/amp_ratios_triad.png
+docs/ns-review/five-lane-recovery/results/ns_five_lane_2026-09-10/attack1.json
+docs/ns-review/five-lane-recovery/results/ns_five_lane_2026-09-10/attack2.json
+docs/ns-review/five-lane-recovery/results/ns_five_lane_2026-09-10/attack3.json
+docs/ns-review/five-lane-recovery/results/ns_five_lane_2026-09-10/attack4.json
+docs/ns-review/five-lane-recovery/results/ns_five_lane_2026-09-10/attack5_bounds.png
+docs/ns-review/five-lane-recovery/results/ns_five_lane_2026-09-10/attack5.json
+docs/ns-review/five-lane-recovery/results/ns_five_lane_2026-09-10/attack9b_exact_shell/attack9b.json
+docs/ns-review/five-lane-recovery/results/ns_five_lane_2026-09-10/attack9b_exact_shell/HEADLINE.md
+docs/ns-review/five-lane-recovery/results/ns_five_lane_2026-09-10/attack9b_exact_shell/run.log
+docs/ns-review/five-lane-recovery/results/ns_five_lane_2026-09-10/HEADLINE.md
+docs/ns-review/five-lane-recovery/results/ns_five_lane_2026-09-10/SYNTHESIS_RUNTIME.json
+docs/ns-review/five-lane-recovery/results/ns_five_lane_shape_star/attack1.json
+docs/ns-review/five-lane-recovery/results/ns_five_lane_shape_star/attack1_run.log
+docs/ns-review/five-lane-recovery/results/ns_five_lane_shape_star/attack5.json
+docs/ns-review/five-lane-recovery/results/ns_five_lane_shape_star/attack5_run.log
+docs/ns-review/five-lane-recovery/results/ns_five_lane_shape_star/SUMMARY.md
+docs/ns-review/five-lane-recovery/scripts/ns_attacks/attack1_covariance.py
+docs/ns-review/five-lane-recovery/scripts/ns_attacks/attack2_triad_k0_cstar.py
+docs/ns-review/five-lane-recovery/scripts/ns_attacks/attack3_bony_hh_l.py
+docs/ns-review/five-lane-recovery/scripts/ns_attacks/attack4_stokes.py
+docs/ns-review/five-lane-recovery/scripts/ns_attacks/attack5_route2_kill.py
+docs/ns-review/five-lane-recovery/scripts/ns_attacks/attack9b_exact_shell_K.py
+docs/ns-review/five-lane-recovery/scripts/ns_attacks/attack9_packet_fan.py
+docs/ns-review/five-lane-recovery/scripts/ns_attacks/__init__.py
+docs/ns-review/five-lane-recovery/scripts/ns_attacks/lemma_star_near_shell_search.py
+docs/ns-review/five-lane-recovery/scripts/ns_attacks/run_all_five.py
+docs/ns-review/five-lane-recovery/scripts/ns_attacks/stokes_moments.py
+docs/ns-review/five-lane-recovery/tests/test_ns_attacks_lemma_star.py
+
+defs_snippet:
+1:# Extracts — absolute defs + HH→L (from PR #48 pack)
+10:- \(X=\|A^{1/2}v\|_2^2=\sum\lambda_k|v_k|^2\)
+11:- \(Y=\|Av\|_2^2=\sum\lambda_k^2|v_k|^2\)
+12:- \(Z=\|A^{3/2}v\|_2^2=\sum\lambda_k^3|v_k|^2\)
+17:- \(\mathcal{D}_s=Z-\Lambda Y=Z-Y^2/X=\sum_k\lambda_k(\lambda_k-\Lambda)^2|v_k|^2\)
+21:- \(T_c=M-\Lambda N=\sum_k\lambda_k(\lambda_k-\Lambda)T_k\)
+22:- \(\Lambda'=2/X\,(T_c-\nu\mathcal{D}_s)\)
+25:- \(\mathcal{R}_\star=(T_c)_+^2/(\mathcal{D}_s\,E\,Y)\)
+26:- Viscosity form: \(T_c\le\theta\nu\mathcal{D}_s+C_0\nu^{-1}\|v\|_2^2 Y\) with \(C_0=C_{\mathrm{geom}}/(4\theta)\)
+28:## HH→L (`ATTACK_3_BONY_HH_L.md`)
+30:Partition bilinear form driving \(\mathfrak{T}_c\) into Bony channels HH / HL / LL.
+31:**Claimed bottleneck:** HH→L blocks a clean product bound toward
+34:Status: diagnostic only; no analytic closure; kill uses complete signed \(T_c\).
+38:- Pre-Young: \(|T_c|\le C\|u\|_2 X\Lambda\) (geometry)
+39:- Survivor \(C_*\): \(|T_c|\le C_* X^{3/2}\Lambda\)
+40:- K=0 kill form: \(T_c/\mathcal{D}_s\) blows with amplitude
