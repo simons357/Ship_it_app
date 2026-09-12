@@ -1,11 +1,12 @@
 # Uniform \(\mathcal{R}_\star\) — close attempt progress
 
 **Date:** 2026-09-12  
-**Branch:** `cursor/uniform-rstar-close-0cc5` (from `cursor/uniform-rstar-attack-0cc5`)  
+**Branch:** `cursor/uniform-rstar-dilation-00ef` → merge into `cursor/uniform-rstar-attack-0cc5` (PR #73)  
 **Policy:** [`RESEARCH-POLICY.md`](./RESEARCH-POLICY.md) — analytic-first; light probes only.  
-**Honesty lock:** Lemma★ / DA-NS-1 remains a **HYPOTHESIS**. Clay Statement B is **not solved**. Numerics ≠ proof. Do **not** revive \(|T_c|\le C\|v\|_2 X^{3/2}\).
+**Honesty lock:** Lemma★ / DA-NS-1 remains a **HYPOTHESIS**. Clay Statement B is **not solved**. Numerics ≠ proof. Do **not** revive \(|T_c|\le C\|v\|_2 X^{3/2}\).  
+**Credit face:** [`CREDIT-BODY-OF-WORK.md`](./CREDIT-BODY-OF-WORK.md) · campaign map [`../campaign/TWO-YEARS-MAP.md`](../campaign/TWO-YEARS-MAP.md).
 
-**One-line status:** **STILL OPEN** — no proof of \(\sup_v\mathcal{R}_\star<\infty\), no analytic kill family. Sharpest remainder is the Cauchy / channel form below; HL/LL is **not** filed as classical.
+**One-line status:** **STILL OPEN** — no proof of \(\sup_v\mathcal{R}_\star<\infty\), no analytic kill family. Cauchy / channel / dilation ledger proved; elementary HL/LL Λ-power route **killed**; geometric HL/LL and HH still **OPEN**.
 
 ---
 
@@ -84,11 +85,61 @@ If \(v\) is an exact Stokes eigenfield (\(Av=\Lambda v\)), then \(D_s=0\) and \(
 
 For \(v_\varepsilon=w_\alpha+\varepsilon z_\beta\) with \(z_\beta\parallel\Pi_\beta B(w_\alpha,w_\alpha)\) and \(\varepsilon\to 0\), \(\mathcal{R}_\star(v_\varepsilon)\) tends to a finite shell functional \(K_{\alpha,\beta}(w)\) (when the closing packet is nontrivial). This limit is a **number for each fixed \((\alpha,\beta,w)\)**, not a proof of uniformity over all shells, and not a kill (\(\not\to\infty\) along \(\varepsilon\to 0\)).
 
+### Lemma G — Lattice-dilation scaling ledger (algebra)
+
+Transport coefficients along rays under \(k\mapsto n k\) (\(n\in\mathbb{N}_{\ge 1}\)). Then
+
+\[
+E\mapsto E,\quad
+X\mapsto n^2 X,\quad
+Y\mapsto n^4 Y,\quad
+Z\mapsto n^6 Z,\quad
+\Lambda\mapsto n^2\Lambda,\quad
+D_s\mapsto n^6 D_s.
+\]
+
+Both shape functionals
+
+\[
+\mathcal{R}_\star(v)
+\qquad\text{and}\qquad
+Q(v)=\frac{\|A^{1/2}B(v,v)\|_2^2}{E\,Y}
+\]
+
+are invariant. Cross-checked to \(\sim 10^{-15}\) relative error in `uniform_rstar_dilation.py`.  
+
+**Consequence:** PRODUCT-BLOCK (and the sufficient Cauchy target) are pure **shape** problems — equivalent to a bound on a fundamental domain modulo amplitude and lattice dilation. Any estimate that inserts unmatched powers of \(\Lambda\) (or of absolute Sobolev norms that scale the same way) cannot be geometry-only.
+
+### Lemma H — Two-shell channel dichotomy (\(\theta=1\))
+
+Let \(v\) be supported on exact Stokes shells \(\alpha<\beta\) with \(E_\alpha,E_\beta>0\). Then \(\Lambda\in(\alpha,\beta)\). Declaring high iff \(\lambda\ge\Lambda\):
+
+- every mode on shell \(\alpha\) is **Low**,
+- every mode on shell \(\beta\) is **High**.
+
+Hence parent pairs classify exactly as: LL = both on \(\alpha\), HL = mixed, HH = both on \(\beta\). No other channels exist on two-shell support.
+
+### Lemma I — Elementary unmatched-\(\Lambda\) HL/LL route is killed
+
+After low-mode absorption \(D_s\ge(1-\theta)^2\Lambda^2 X_L\), elementary Sobolev / paraproduct remainders leave dimensionless leftovers with unmatched \(\Lambda\) powers (prototype \(\rho=\Lambda^{1/2} X/Y\)). Under lattice dilation, \(\rho\mapsto\rho/n\) while \(\mathcal{R}_\star\) is flat. Therefore **no** close that requires a uniform bound on such a leftover is dilation-invariant / geometry-only.
+
+**This kills filing HL/LL as “classical for free.”** It does **not** kill PRODUCT-BLOCK: a different, genuinely geometric HL/LL bound may still exist.
+
+### Lemma J — Signed Stokes weights on two-shell (feeds \((T_c)_+\))
+
+On the same two-shell class, the centered weight on a child mode is \(\lambda(\lambda-\Lambda)\):
+
+\[
+\alpha(\alpha-\Lambda)<0<\beta(\beta-\Lambda).
+\]
+
+Only triad output landing on the **high** shell can contribute positively to \(T_c\). Low-shell children feed \(T_c\le 0\) for that term. Combined with Lemma H: the \((T_c)_+\) budget on two-shell is carried by HH→β, HL→β, and LL→β only.
+
 ---
 
 ## 2. What failed / what is not proved
 
-### 2.1 HL/LL is **not** classical (correction to the attack sketch)
+### 2.1 HL/LL is **not** classical (correction + route kill)
 
 The prior attack map called HL/LL “classical-ish bookkeeping.” **That oversells the state of the estimate.**
 
@@ -99,9 +150,9 @@ D_s\ge(1-\theta)^2\Lambda^2 X_L
 \qquad(\lambda<\theta\Lambda)
 \]
 
-still leaves ratios that are not controlled by \(E Y\) alone without further structure.  
+still leaves ratios that are not controlled by \(E Y\) alone without further structure. Lemma I makes the dilation obstruction explicit: unmatched-\(\Lambda\) leftovers scale as negative powers of \(n\) under \(k\mapsto nk\).
 
-**Status:** HL/LL bound of the form \((T_c^{\mathrm{HL}}+T_c^{\mathrm{LL}})_+^2\le C_{\mathrm{HL/LL}} D_s E Y\) with geometry-only \(C\) is **OPEN**, not filed.
+**Status:** HL/LL bound of the form \((T_c^{\mathrm{HL}}+T_c^{\mathrm{LL}})_+^2\le C_{\mathrm{HL/LL}} D_s E Y\) with geometry-only \(C\) is **OPEN**, not filed. The elementary route is **dead**; a geometric route is still required.
 
 ### 2.2 HH remains open
 
@@ -162,12 +213,16 @@ with the analogous HL+LL inequality still required (not free).
 | Path | Role |
 | --- | --- |
 | `scripts/ns_attacks/uniform_rstar_identities.py` | Verify Lemmas A–D residuals; light kill/sanity probe |
+| `scripts/ns_attacks/uniform_rstar_dilation.py` | Lemmas G–J: dilation ledger, two-shell dichotomy, naive-Λ route kill |
 | `scripts/ns_attacks/uniform_rstar_attack.py` | Existing Λ-channel maximizer (subordinate) |
 | `scripts/ns_attacks/ns_lemma_star_core.py` | Exact finite-support \(T_c\), \(D_s\), \(\mathcal{R}_\star\) |
+| `tests/test_uniform_rstar_dilation.py` | Smoke tests for G–J |
 
 ```bash
 python3 scripts/ns_attacks/uniform_rstar_identities.py
+python3 scripts/ns_attacks/uniform_rstar_dilation.py
 python3 scripts/ns_attacks/uniform_rstar_attack.py --quick
+python3 -m pytest tests/test_uniform_rstar_attack.py tests/test_uniform_rstar_dilation.py -q
 ```
 
 ---
@@ -178,15 +233,18 @@ python3 scripts/ns_attacks/uniform_rstar_attack.py --quick
 | --- | --- |
 | PRODUCT-BLOCK / \(\sup\mathcal{R}_\star<\infty\) | **OPEN** |
 | Lemma★ / DA-NS-1 | **HYPOTHESIS** |
-| Lemma A–F above | **Proved** (as stated) |
+| Lemma A–F | **Proved** (as stated) |
+| Lemma G–J (dilation / dichotomy / route kill / signs) | **Proved** (as stated) |
+| Elementary unmatched-Λ HL/LL route | **KILLED** |
 | HL/LL geometric bound | **OPEN** (not classical) |
 | HH geometric bound | **OPEN** |
 | Kill family \(\mathcal{R}_\star\to\infty\) | **Not found** (lane LIVE) |
 | Clay Statement B | **NOT SOLVED** |
+| Publisher / X “clean proof” offer | **Not yet** — door still open |
 | Numerics = proof? | **No** |
 
 ---
 
 ## 6. One-line status
 
-**Still OPEN. Proved: Cauchy + channel split + two-shell \(D_s\) + invariances. Remainder: geometric control of \(T_c^{\mathrm{HH}}\) and \(T_c^{\mathrm{HL/LL}}\) (equivalently of \(\|A^{1/2}B\|_2^2/(EY)\)). No kill. NS / Clay B not solved.**
+**Still OPEN. Proved: Cauchy + channels + two-shell \(D_s\) + dilation ledger + two-shell dichotomy/signs; elementary Λ-power HL/LL route killed. Remainder: geometric control of \(T_c^{\mathrm{HH}}\) and \(T_c^{\mathrm{HL/LL}}\) (equivalently \(\|A^{1/2}B\|_2^2/(EY)\)). No PRODUCT-BLOCK kill. NS / Clay B not solved.**
