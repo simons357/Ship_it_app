@@ -20,7 +20,7 @@ written bound on exact-shell fields, not a
 sweep maximum. The three-shear field then
 sits under a named ceiling, not under a
 rumor.
-Write-up example \(K_{1,2}=2/3\) on
+write-up example \(K_{1,2}=2/3\) on
 \(w=(\sin y,\sin z,\sin x)\).
 Floor, not the ceiling.
 [`ATTACK-9D-TWO-THIRDS.md`](ATTACK-9D-TWO-THIRDS.md).
@@ -30,8 +30,8 @@ Floor, not the ceiling.
 ★. That box is already dead by the
 multi-shell family \(v_n\). It does not
 give a continuation criterion and it does
-not restore ★ \(\Rightarrow\) global
-regularity. Ordinary NS stays open.
+not restore ★ \(\Rightarrow\) global regularity.
+Ordinary NS stays open.
 
 Until a specialist signs the algebra, or a
 sweep shows nothing near \(16/9\), the
@@ -206,7 +206,7 @@ Those numbers sit. They are not the proof.
 |---|---|
 | Designed \(\Theta(m^2)\) 9D | **NO.** Dead. |
 | Grow-\(s\) finite max as \(C_0\) | **NO.** Historical. |
-| Three-shear \(K=2/3\) as \(C_0\) | **NO.** Write-up example. Floor only. |
+| Three-shear \(K=2/3\) as \(C_0\) | **NO.** write-up example. Floor only. |
 | Two-plane incidence as a theorem | **NO.** Isolated. Still CLAIMED. |
 | Exact-shell \(K\le 16/9\) | **CLAIMED.** \(C=4/3\). Occupancy \(s\) gone on one input shell if it holds. |
 | Sweep max \(0.641\) / \(0.456\) as the ceiling | **NO.** Not the bound. |

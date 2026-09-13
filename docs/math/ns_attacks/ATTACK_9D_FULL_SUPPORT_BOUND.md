@@ -213,7 +213,7 @@ or a near-ceiling sweep. Neither sits.
 |---|---|
 | Designed \(\Theta(m^2)\) 9D | **NO.** Dead. |
 | Grow-\(s\) finite max as \(C_0\) | **NO.** Historical. |
-| Three-shear \(K=2/3\) as \(C_0\) | **NO.** Write-up example. Floor only. |
+| Three-shear \(K=2/3\) as \(C_0\) | **NO.** write-up example. Floor only. |
 | Two-plane incidence as a theorem | **NO.** Isolated. Still CLAIMED. |
 | Exact-shell \(K\le 16/9\) | **CLAIMED.** \(C=4/3\). Occupancy \(s\) gone on one input shell if it holds. |
 | Sweep max \(0.641\) / \(0.456\) as the ceiling | **NO.** Not the bound. |
