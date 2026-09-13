@@ -47,7 +47,7 @@ Attack 3 (Bony HH→L) is a **diagnostic partition of complete signed \(T_c\)**.
 \]
 
 Finite 9B sample: \(\max K\approx 0.641\) at \((4,8)\). Not a kill.  
-Write-up example (not a bound): \(w=(\sin y,\sin z,\sin x)\) has \(K_{1,2}=2/3\). Floor only. [`docs/ns-recovery/NINE-D-TWO-THIRDS.md`](../../ns-recovery/NINE-D-TWO-THIRDS.md).
+Write-up example (not a bound): \(w=(\sin y,\sin z,\sin x)\) has \(K_{1,2}=2/3\). Floor only. If \(K\le 16/9\) holds, occupancy \(s\) is gone on a single input shell and that example sits under a named ceiling. Still **CLAIMED**. **No as a regularity close.** [`docs/ns-recovery/NINE-D-TWO-THIRDS.md`](../../ns-recovery/NINE-D-TWO-THIRDS.md).
 
 ---
 

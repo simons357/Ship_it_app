@@ -63,9 +63,11 @@ Evaluator matches (this book’s core, PR #24 `stokes_moments`, the closure-revi
 
 ## 5. If the 9D bound is true, does it feed a regularity argument?
 
-**Not as written. It sits unused for regularity.**
+**No as a regularity close.**
 
-Even if the four-thirds coefficient were later proved, it is an **exact-shell** bound on \(\|\Pi_\beta B(w,w)\|_2\). That is not unrestricted Lemma★.
+If \(K\le 16/9\) holds, occupancy \(s\) is gone on a single input shell. That is a written bound on exact-shell fields, not a sweep maximum. The three-shear field then sits under a named ceiling, not under a rumor.
+
+A true \(4/3\) does not kill or repair unrestricted ★. That box is already dead by the multi-shell family \(v_n\). It does not give a continuation criterion and it does not restore ★ \(\Rightarrow\) global regularity. Ordinary NS stays open. It is an **exact-shell** bound on \(\|\Pi_\beta B(w,w)\|_2\). That is not unrestricted Lemma★.
 
 - The growing-layer family \(v_n\) that killed unrestricted ★ is **not** exact-shell. 9D does not control it.
 - Near-shell, \(\mathcal R_\star(w+\varepsilon z_\beta)\to K_{\alpha,\beta}(w)\) only for an aligned, sign-selected closer. That is a restricted family.

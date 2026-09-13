@@ -54,9 +54,18 @@ It sits well under \(16/9\approx 1.778\).
 One explicit value proves the floor of the supremum. It does **not**
 prove the ceiling. \(2/3\) is **not** \(C_0\).
 
-Exact-shell \(K\le 16/9\) stays **CLAIMED**. Moving that to supported
-still needs the closed-form derivation, or a sweep that shows nothing
-gets near \(16/9\). Neither sits. Specialist review is still pending.
+If \(K\le 16/9\) holds, occupancy \(s\) is gone on a single input
+shell. That is a written bound on exact-shell fields, not a sweep
+maximum. The three-shear field then sits under a named ceiling, not
+under a rumor.
+
+**No as a regularity close.** A true \(4/3\) does not kill or repair
+unrestricted ★. That box is already dead by the multi-shell family
+\(v_n\). It does not give a continuation criterion and it does not
+restore ★ \(\Rightarrow\) global regularity. Ordinary NS stays open.
+
+Until a specialist signs the algebra, or a sweep shows nothing near
+\(16/9\), the word is still **CLAIMED**. Soft X silent.
 
 This book’s aligned 9B row at \((1,2)\) was \(K\approx 0.578\) on a
 **different** field. That sweep did not name this interaction.

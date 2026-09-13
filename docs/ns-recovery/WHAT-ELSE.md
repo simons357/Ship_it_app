@@ -11,7 +11,7 @@
 
 The review’s growing-layer family was built on this book’s exact core. \(n=1\ldots4\) match the pasted `stokes_moments` table. \(\mathcal R_\star(v_n)\ge n/165888\to\infty\). That kills the unrestricted instantaneous bound. It does **not** construct a singular NSE solution.
 
-Writeups later landed on the PR #24 tip. Exact-shell 9D with \(C=4/3\) / \(K\le16/9\) remains **CLAIMED, not stamped**. The three-shear field \(w=(\sin y,\sin z,\sin x)\) is the write-up example: \(K_{1,2}=2/3\) by hand. That is a floor (\(\sup K\ge 2/3\)), not the bound and not \(C_0\). Score: [`NINE-D-TWO-THIRDS.md`](NINE-D-TWO-THIRDS.md). Specialist pending.
+Writeups later landed on the PR #24 tip. Exact-shell 9D with \(C=4/3\) / \(K\le16/9\) remains **CLAIMED**. If that bound holds, occupancy \(s\) is gone on a single input shell — a written exact-shell ceiling, not a sweep maximum — and the three-shear \(K=2/3\) sits under a named number. **No as a regularity close:** a true \(4/3\) does not kill or repair unrestricted ★, does not give a continuation criterion, and does not restore ★ \(\Rightarrow\) GR. Until a specialist signs the algebra, or a sweep shows nothing near \(16/9\), the word is still CLAIMED. Soft X silent. Score: [`NINE-D-TWO-THIRDS.md`](NINE-D-TWO-THIRDS.md).
 
 ## What is still open
 
