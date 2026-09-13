@@ -71,7 +71,31 @@ with the locked Plancherel measure of
 [`math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md).
 \(K_{\alpha,\beta}\) is defined only for
 \(\alpha>0\) and \(w\neq 0\).
-Vacuous if \(\beta>4\alpha\) (no pairs).
+
+**Admissible \((\alpha,\beta)\).** Input
+shell \(\alpha>0\). Output shell
+\(\beta>0\). Lattice pairs require
+\(\lvert p+q\rvert\le 2\sqrt{\alpha}\), so
+\(\beta\le 4\alpha\). If \(\beta>4\alpha\)
+the sum is empty and the bound is
+vacuous. The closed constraint set used
+for the \(16/9\) maximum is therefore
+\[
+\alpha>0,\qquad
+0<\beta\le 4\alpha,
+\qquad\text{equivalently}\qquad
+x=\beta/\alpha\in(0,4].
+\]
+
+Pairing on polarizations: \(k\in\mathbb{Z}^3\)
+is real, so \(k\cdot w=\sum k_i w_i\)
+coincides with the Hermitian inner
+product \(\langle k,w\rangle\) on
+\(\mathbb{C}^3\). Cauchy–Schwarz is
+\(\lvert\langle u,v\rangle\rvert\le\|u\|_2\|v\|_2\)
+for that Hermitian product. It does
+not require real or aligned
+polarizations.
 
 \[
 K_{\alpha,\beta}(w)
@@ -156,10 +180,14 @@ P_k\!\bigl[(q\cdot w_p)w_q+(p\cdot w_q)w_p\bigr]
 
 The in-plane components cancel after
 projection. The remaining component
-satisfies Cauchy–Schwarz even with
-independently complex polarizations.
-The complete calculation is §3 of the
-underlying proof.
+is estimated by Hermitian
+Cauchy–Schwarz on \(\mathbb{C}^3\).
+Independent complex polarizations are
+allowed because the inner product is
+\(\langle u,v\rangle=\sum_i \overline{u_i}v_i\);
+the inequality does not use a real
+alignment. The complete calculation is
+§3 of the underlying proof.
 
 The ordered convolution equals half
 its symmetrization. Squaring contributes
@@ -172,13 +200,53 @@ its symmetrization. Squaring contributes
 \frac34\beta\Bigl(1-\frac{\beta}{4\alpha}\Bigr)\|w\|_2^4.
 \]
 
-That gives the stated \(K\le 16/9\).
-Let \(x=\beta/\alpha\in(0,4]\). The
-elementary maximum of
-\((3/4)x^2(1-x/4)\) is \(16/9\) at
-\(x=8/3\). Then
+---
+
+## One-variable maximum (redo by hand)
+
+From the last display and the definition
+of \(K\), on the admissible set
+\(x=\beta/\alpha\in(0,4]\),
+
+\[
+K_{\alpha,\beta}(w)
+\le
+\frac34 x^2\Bigl(1-\frac{x}{4}\Bigr)
+=:f(x).
+\]
+
+Endpoints: \(f(x)\to 0\) as \(x\to 0^+\),
+and \(f(4)=0\). Interior critical points:
+
+\[
+f'(x)=\frac34 x\Bigl(2-\frac{3x}{4}\Bigr)=0
+\quad\Rightarrow\quad
+x=\frac83
+\]
+
+(\(x=0\) is not interior). The point
+\(x=8/3\) lies in \((0,4]\). Then
+
+\[
+f\Bigl(\frac83\Bigr)
+=
+\frac34\cdot\frac{64}{9}\cdot\Bigl(1-\frac{2}{3}\Bigr)
+=
+\frac34\cdot\frac{64}{9}\cdot\frac13
+=
+\frac{16}{9}.
+\]
+
+So \(\sup f=16/9\) on the closed
+constraint set above. Then
 \(C=4/3=\sqrt{16/9}\) in
 \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}E\).
+This is the step an independent
+reviewer should redo by hand. It is
+not a search result. The claimed bound
+is this elementary maximum, not a
+statement that \(x=8/3\) is attained
+on the integer lattice.
 
 ---
 
@@ -255,9 +323,12 @@ Those numbers sit. They are not the proof.
 ## Next review
 
 Verify the weighted incidence argument
-and the complex-polarization identity.
-The exact-shell scope is correctly
-separated from unrestricted ★.
+and the complex-polarization identity
+(Hermitian CS after the in-plane cancel).
+Redo the one-variable maximum of
+\(f(x)=(3/4)x^2(1-x/4)\) on \((0,4]\)
+by hand. The exact-shell scope is
+correctly separated from unrestricted ★.
 
 ---
 
@@ -271,7 +342,9 @@ separated from unrestricted ★.
 | Internal audit of the exact-shell argument | **Passed.** No gap found. Not an outside sign. |
 | Named verifier symbolic checks | **Passed.** Not a proof assistant. |
 | Two-plane incidence as a theorem | **CLAIMED.** Isolated. Next review. |
-| Complex-polarization identity | **CLAIMED.** Next review. |
+| Complex-polarization identity | **CLAIMED.** Hermitian CS after in-plane cancel. Next review. |
+| Admissible \((\alpha,\beta)\) / \(x\in(0,4]\) | **Stated.** \(\beta\le 4\alpha\) from \(\lvert p+q\rvert\le 2\sqrt{\alpha}\). |
+| One-variable max \(f(8/3)=16/9\) | **Written.** Redo by hand. Not a lattice attainment. |
 | Exact-shell \(K\le 16/9\) | **CLAIMED.** Written derivation available; internal checks passed; independent specialist review pending. |
 | Sweep as a path to “supported” | **NO.** Consistency checks only. |
 | True \(4/3\) as a regularity close | **NO.** Does not repair ★. No continuation. |

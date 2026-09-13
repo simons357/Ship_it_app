@@ -35,6 +35,16 @@ Designed \(\Theta(m^2)\) 9D stays **NO**.
 \(\mathbb{T}^3=(\mathbb{R}/2\pi\mathbb{Z})^3\).
 \(K_{\alpha,\beta}\) is defined only for
 \(\alpha>0\) and \(w\neq 0\).
+Admissible output shells satisfy
+\(0<\beta\le 4\alpha\) because
+\(\lvert p+q\rvert\le 2\sqrt{\alpha}\);
+equivalently \(x=\beta/\alpha\in(0,4]\).
+Pairing is the Hermitian product on
+\(\mathbb{C}^3\): \(k\) real implies
+\(k\cdot w=\langle k,w\rangle\).
+Cauchy–Schwarz is
+\(\lvert\langle u,v\rangle\rvert\le\|u\|_2\|v\|_2\)
+and does not require real alignment.
 
 ---
 
@@ -132,8 +142,12 @@ P_k\!\bigl[(q\cdot w_p)w_q+(p\cdot w_q)w_p\bigr]
 
 The in-plane components cancel after
 projection. The remaining component
-satisfies Cauchy–Schwarz even with
-independently complex polarizations.
+is estimated by Hermitian
+Cauchy–Schwarz on \(\mathbb{C}^3\),
+\(\langle u,v\rangle=\sum_i\overline{u_i}v_i\).
+Independent complex polarizations are
+allowed; the inequality does not use
+a real alignment.
 
 The ordered convolution equals half
 its symmetrization:
@@ -155,11 +169,23 @@ Together,
 \frac34\beta\Bigl(1-\frac{\beta}{4\alpha}\Bigr)\|w\|_2^4.
 \]
 
-That gives \(K\le 16/9\). The coefficient
-comes from algebra and geometry, not
-from search results. Internal audit
-found no gap. Independent specialist
-review of this identity is pending.
+On \(x=\beta/\alpha\in(0,4]\),
+
+\[
+K\le f(x)=\frac34 x^2\Bigl(1-\frac{x}{4}\Bigr).
+\]
+
+Endpoints vanish: \(f\to 0\) as \(x\to 0^+\)
+and \(f(4)=0\). The only interior critical
+point is \(x=8/3\in(0,4]\), where
+\(f(8/3)=16/9\). Redo this one-variable
+maximum by hand. The coefficient comes
+from algebra and geometry, not from
+search results. Attainment of \(x=8/3\)
+on the integer lattice is not claimed.
+Internal audit found no gap. Independent
+specialist review of the identity and
+the incidence count is pending.
 
 ---
 

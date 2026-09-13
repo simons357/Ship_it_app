@@ -35,6 +35,8 @@ class Pr24ClosureReviewTests(unittest.TestCase):
         self.assertIn("Geometry on one input shell", MATH_BOUND.read_text())
         self.assertIn("8/3", MATH_BOUND.read_text())
         self.assertIn("Symmetrized interaction estimate", MATH_BOUND.read_text())
+        self.assertIn("Hermitian", MATH_BOUND.read_text())
+        self.assertIn("(0,4]", MATH_BOUND.read_text())
         self.assertIn("consistency checks only", MATH_BOUND.read_text())
         self.assertNotIn("or a sweep shows", MATH_BOUND.read_text())
         self.assertIn("165888", MATH_KILL.read_text())

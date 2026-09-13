@@ -282,6 +282,9 @@ def check_symmetrized_identity(seed: int = 1390, n_pairs: int = 40) -> dict:
     curve = 0.75 * (xs**2) * (1.0 - xs / 4.0)
     max_curve = float(curve.max())
     x_at = float(xs[int(np.argmax(curve))])
+    f_at_8_3 = (3.0 / 4.0) * ((8.0 / 3.0) ** 2) * (1.0 - (8.0 / 3.0) / 4.0)
+    f_at_4 = (3.0 / 4.0) * (4.0**2) * (1.0 - 4.0 / 4.0)
+    exact_max_ok = abs(f_at_8_3 - 16.0 / 9.0) < 1e-15 and abs(f_at_4) < 1e-15
     three_shear = {
         (0, 1, 0): np.array([-0.5j, 0.0, 0.0], dtype=np.complex128),
         (0, 0, 1): np.array([0.0, -0.5j, 0.0], dtype=np.complex128),
@@ -295,6 +298,8 @@ def check_symmetrized_identity(seed: int = 1390, n_pairs: int = 40) -> dict:
         "n_random_pairs": len(rows),
         "max_K_curve": max_curve,
         "max_K_curve_ok": abs(max_curve - 16.0 / 9.0) < 5e-3 and abs(x_at - 8.0 / 3.0) < 0.05,
+        "exact_f_8_over_3": f_at_8_3,
+        "exact_max_ok": exact_max_ok,
         "three_shear_K": rec["K"],
         "three_shear_ok": abs(rec["K"] - 2.0 / 3.0) < 1e-12,
         "all_ok": bool(
@@ -302,6 +307,7 @@ def check_symmetrized_identity(seed: int = 1390, n_pairs: int = 40) -> dict:
             and ineq_ok
             and rows
             and abs(max_curve - 16.0 / 9.0) < 5e-3
+            and exact_max_ok
             and abs(rec["K"] - 2.0 / 3.0) < 1e-12
         ),
         "note": (
