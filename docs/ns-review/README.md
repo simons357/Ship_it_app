@@ -12,14 +12,11 @@ Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS p
 
 **Do not conflate** with Lemma★ PRODUCT-BLOCK packaging.
 
-## Cosmic GRAFITTI (PARK reprint, recovered)
+## Cosmic GRAFITTI (swirl leftover magazine)
 
-The May 2026 *Universal Geometry / Cosmic Star Lattice* essay was
-filed on another branch and looked “lost” as a magazine. Reprint:
+Issue 01 is Jonathan’s 10 September 2026 swirl cut — WRITE (6) named,
+not proved — not the May universal-geometry essay.
 
 - Wall: [`apps/cosmic-grafitti/index.html`](../../apps/cosmic-grafitti/index.html)
-- Cut: [`docs/COSMIC-GRAFITTI-MAGAZINE.md`](../COSMIC-GRAFITTI-MAGAZINE.md)
+- Print cut: [`docs/SWIRL-MAGAZINE.md`](../SWIRL-MAGAZINE.md)
 - Found note: [`archives/COSMIC-GRAFITTI-FOUND.md`](archives/COSMIC-GRAFITTI-FOUND.md)
-- Essay as written: [`docs/papers/swirl/PHI_GEOMETRY_BRIDGE.md`](../papers/swirl/PHI_GEOMETRY_BRIDGE.md)
-
-Cosmic / Kabbalah / CMB / Saturn pictures stay PARK. The \(\Phi\)-identity stays KEEP algebra.

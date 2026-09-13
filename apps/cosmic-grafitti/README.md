@@ -1,11 +1,11 @@
 # Cosmic GRAFITTI — Issue 01
 
-Lost-and-found reprint of Jonathan’s May 2026 *Universal Geometry /
-Cosmic Star Lattice* essay, as a phone-first graffiti magazine.
+Phone-first face of Jonathan’s 10 September 2026 swirl leftover
+magazine. Not the May universal-geometry essay.
 
-Open `index.html` in a browser. On a phone, swipe the wall.
+Open `index.html`. Swipe the wall.
 
-**Honesty:** the \(\Phi\)-identity is KEEP algebra. CMB / Saturn /
-Kabbalah / “Planck confirms NS” are PARK. NS is not solved.
+Print cut: [`docs/SWIRL-MAGAZINE.md`](../../docs/SWIRL-MAGAZINE.md).
 
-See [`docs/COSMIC-GRAFITTI-MAGAZINE.md`](../../docs/COSMIC-GRAFITTI-MAGAZINE.md).
+**Honesty:** WRITE (6) is named and not proved. Forced breakdown is
+Fefferman C/D, not unforced A/B. Ordinary NS is not solved.

@@ -8,9 +8,9 @@ This is the author’s May 2026 geometry-bridge essay, filed as written.
 It is **not** the 22 August theorem paper and it is **not** live Domain
 Architect. Domain Architect’s reading is
 [`DA-ON-PHI-GEOMETRY.md`](DA-ON-PHI-GEOMETRY.md).
-Magazine reprint (lost-and-found wall):
-[`apps/cosmic-grafitti/index.html`](../../../apps/cosmic-grafitti/index.html)
-· [`docs/COSMIC-GRAFITTI-MAGAZINE.md`](../../COSMIC-GRAFITTI-MAGAZINE.md).
+This essay is **not** Cosmic GRAFITTI Issue 01. The magazine is the
+swirl leftover cut (`docs/SWIRL-MAGAZINE.md`,
+`apps/cosmic-grafitti/index.html`). This file stays PARK cosmic prose.
 
 ---
 
