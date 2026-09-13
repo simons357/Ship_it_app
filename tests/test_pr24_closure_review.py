@@ -28,10 +28,11 @@ class Pr24ClosureReviewTests(unittest.TestCase):
             self.assertNotIn("almost proved", text.lower())
             self.assertNotIn("hygiene", text.lower())
         bound = BOUND.read_text()
+        flat = " ".join(bound.split())
         self.assertIn("CLAIMED", bound)
         self.assertIn(
             "CLAIMED: written derivation available; internal checks passed; independent specialist review pending. Numerical sweeps provide consistency checks only.",
-            " ".join(bound.split()),
+            flat,
         )
         self.assertIn("single input shell", bound)
         self.assertIn("No as a regularity close", bound)
@@ -39,7 +40,7 @@ class Pr24ClosureReviewTests(unittest.TestCase):
         self.assertIn("three-shear", bound)
         self.assertIn("K=2/3", bound.replace(" ", ""))
         self.assertIn("normalized torus", bound)
-        self.assertIn("does not perform the shell-count experiments", bound)
+        self.assertIn("does not perform the shell-count experiments", flat)
         self.assertNotIn("sweep shows nothing near", bound)
         self.assertIn("weighted incidence", bound)
         self.assertIn("complex-polarization identity", bound)

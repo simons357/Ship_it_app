@@ -53,7 +53,7 @@ Grow-\(s\) page: [`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md).
 
 ## Conventions
 
-Normalized torus
+On the normalized torus
 \(\mathbb{T}^3=(\mathbb{R}/2\pi\mathbb{Z})^3\)
 with measure \((2\pi)^{-3}\,dx\). Then
 \[
@@ -277,7 +277,7 @@ None of them is \(C_0\).
 checks the symbolic identity and compares
 growing-layer calculations with the
 evaluator. It reads the saved sweep
-summary. It does not perform the
+summary; it does not perform the
 shell-count experiments described here.
 
 The three-shear \(K=2/3\) is an exact
