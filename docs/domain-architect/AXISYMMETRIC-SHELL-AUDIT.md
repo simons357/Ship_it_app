@@ -61,6 +61,7 @@ paragraph is **OUT**. Including as “motivation” inside the proof.
 ## KEEP — Objects that earned their place today
 
 - \(\Lambda'=2(T_c-\nu D_s)/X\) as bookkeeping, not as the final left-hand side.
+- Spectral-shift identity: closed-triad rewrite \(\tau=(\omega(p)-\omega(r))J_p+(\omega(q)-\omega(r))J_q\) and shift by a lattice constant \(\omega_*\), not by \(\Lambda\). Bookkeeping only. Establishing the identity does not establish the Lemma★ ratio bound and does not control nonlinear transfer.
 - Closed-triad rewrite \(\tau=(\omega(p)-\omega(r))J_p+(\omega(q)-\omega(r))J_q\).
 - Shift by a lattice constant \(\omega_*\), not by \(\Lambda\).
 - Door 1: shell budget. The only remainder is \(T_{j\leftarrow j}\).
@@ -85,6 +86,9 @@ paragraph is **OUT**. Including as “motivation” inside the proof.
 - GCD spectral attractor, E8 cathedral, prime-harmonic lock, Borromean coherence as mechanisms that force \(T_{j\leftarrow j}\) small.
 - Base 44 / gematria / letter-number maps as estimates. They do not bound a flux.
 - Q6-Kabbalah, Lightning Flash, syncretic narrative inside the proof. Opinion stack only.
+- Treating the spectral-shift identity as the Lemma★ ratio bound, or as control of nonlinear transfer.
+- Treating palinstrophy-normalized \(\rho_j<\nu\) as absorption on the displayed shell-energy budget (viscous slot \(\nu Z_j\) or \(\nu D_j\)). That comparison belongs to the enstrophy–palinstrophy route (A) only.
+- Treating occupancy 1 together with alignment \(\alpha\approx 1/2\) as the depletion required for closure.
 - Importing 2-D \(\rho=0.02\) into 3-D, or occupancy 1 into CFM.
 - FFT-aliased orbits used as if \(\dot\Lambda=2(T_c-\nu D_s)\) held.
 - “Clay is solved,” “unconditional 3-D regularity,” or any sentence that drops the class and the measured \(\rho_j\).
@@ -106,6 +110,7 @@ paragraph is **OUT**. Including as “motivation” inside the proof.
 | Leftover-split strain \(\int\|u^r/r\|_\infty\,dt\) | [`LEFTOVER-REPAIR.md`](LEFTOVER-REPAIR.md). Same class, **different** remainder. Do not set \(\sigma_{\mathrm{strain}}=T_{j\leftarrow j}\) |
 | Ring SND / Paper2 simplex / Route J / T2 Gronwall | [`docs/papers/ring/`](../papers/ring/README.md), [`docs/papers/ns-snd/`](../papers/ns-snd/). Route J stays separate from SND / GNC / Bridge Triple Lock. `03_t2_shell_flux_gronwall.tex` is **MISSING**; do not invent it |
 | Missing bytes (`SND_GNC_BRIDGE_EXTRACTED.txt`, `SYNTHESIS-AXISYMMETRIC-SND-BRIDGE.md`, July 23 claim ledger, `Paper2_NS_Regularity_SND_FIXED.tex`) | hunt receipts only. Do not invent a close |
+| Lemma★ / attack notes / Lemma★ ratio bound | earlier attack notes. Distinct from the spectral-shift identity. Do not revive as this remainder or as transfer control |
 
 ---
 
@@ -114,6 +119,9 @@ paragraph is **OUT**. Including as “motivation” inside the proof.
 - It does not prove classical unaugmented Navier–Stokes.
 - It does not award unconditional 3-D regularity.
 - It does not treat swirl geometry “removes free helical HHH” as a measured 3-D CFM close. That is a **class** statement.
+- It does not treat the spectral-shift identity as Lemma★ or as transfer control.
+- It does not treat \(\rho_j<\nu\) as absorption on the energy budget.
+- It does not treat occupancy 1 with \(\alpha\approx 1/2\) as depletion.
 - It does not overwrite DA-VC-01 as PASS.
 - It does not stamp `TRANSFORMABLE` / SPE without a real \(T\).
 - It does not rewrite Maersk / ship riblet docs to satisfy this audit.

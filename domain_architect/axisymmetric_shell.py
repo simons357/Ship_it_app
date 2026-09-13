@@ -44,6 +44,39 @@ THREE_D_FACTS = {
     "HHH_occupancy_on_orbits_run": 1.0,
     "alignment_alpha": 0.5,
     "occupancy_imported_to_cfm": False,
+    "occupancy_alpha_is_depletion": False,
+}
+
+ENERGY_SHELL = "Z_j = (1/2)||P_j u||_L2^2 (P_j = LP projector)"
+ENSTROPHY_SHELL = "Z_j = ||Δ_j ω||_L2^2"
+PALINSTROPHY = "P_j palinstrophy, not the LP projector"
+
+STANDING_LANGUAGE = {
+    "spectral_shift_identity": (
+        "bookkeeping; distinct from Lemma-star ratio bound; "
+        "does not control nonlinear transfer"
+    ),
+    "rho_j_lt_nu": (
+        "enstrophy-palinstrophy (A) only; not absorption on the "
+        "displayed energy budget"
+    ),
+    "cross_scale": (
+        "precise bounds and summability remain to be supplied; "
+        "not established by this note"
+    ),
+    "routes_A_B_C": "candidate routes, not theorems",
+    "step_6": (
+        "proposed; requires (A) or a depletion estimate implying (A); "
+        "no e_dot_j, Z_dot, or Lambda'"
+    ),
+    "principal_unresolved": "T_{j←j}",
+    "scope": (
+        "small exact disks and stated restricted classes; "
+        "no K_max→∞; no generic data"
+    ),
+    "occupancy_alpha_is_depletion": False,
+    "identity_is_lemma_star": False,
+    "rho_j_lt_nu_is_energy_absorption": False,
 }
 
 # Sept 11 Tjj chain. Labeled compact samples, not DNS, not a class ρ_j.
@@ -63,6 +96,8 @@ COMPACT_SWIRL_SAMPLES = {
     "re_run_here": False,
     "imported_to_3d_cfm": False,
     "imported_from_2d": False,
+    "kmax_to_infinity": False,
+    "generic_data": False,
     "pure_swirl_n32_max_|Tjj/Xj|": 3.2e-19,
     "mixed_m1_n32_max_|Tjj/Xj|": 0.00112,
     "mixed_m3_n32_max_|Tjj/Xj|": 0.00141,
@@ -96,6 +131,9 @@ DISCARD_CLAIM_PHRASES = (
     "coherence-floor",
     "tao certification",
     "tao-positive",
+    "depletion established",
+    "lemma-star close",
+    "lemma★ close",
 )
 
 # Claim-shaped strings. A hit in identity / diagnostic text is a fail.
@@ -109,6 +147,7 @@ CLAIM_TRIPWIRE = (
     "certified",
     "tao-positive",
     "tao certification",
+    "depletion established",
 )
 
 REFUSED = (
@@ -123,6 +162,10 @@ REFUSED = (
     "and a closed time series exists",
     "no seating of |Tjj| <= εν Dj + R with energy-linear R",
     "no treating compact-sample ratios as class rho_j",
+    "no treating spectral-shift identity as Lemma-star or transfer control",
+    "no treating rho_j<nu as energy-budget absorption",
+    "no treating occupancy 1 with alpha~1/2 as depletion",
+    "no using e_dot_j, Z_dot, or Lambda' in Step 6 to bound Tjj",
 )
 
 FIRST_SENTENCE = (
@@ -281,6 +324,13 @@ def axisymmetric_shell_estimate(
             "[no DNS / no closed stepper in this environment]",
         ],
         "identity": dict(IDENTITY),
+        "shells_labeled": {
+            "energy": ENERGY_SHELL,
+            "enstrophy": ENSTROPHY_SHELL,
+            "palinstrophy": PALINSTROPHY,
+            "glued": False,
+        },
+        "standing_language": dict(STANDING_LANGUAGE),
         "bookkeeping": {
             "Lambda_prime": "2(Tc - ν Ds)/X",
             "is_final_lhs": False,
@@ -290,8 +340,11 @@ def axisymmetric_shell_estimate(
             "reason": book_reason,
         },
         "closed_triad": {
+            "name": "spectral-shift identity",
             "rewrite": "tau = (ω(p)-ω(r)) Jp + (ω(q)-ω(r)) Jq",
             "shift": "ω_* lattice constant, not Lambda",
+            "is_lemma_star": False,
+            "controls_nonlinear_transfer": False,
             "omega_star": omega_star,
             "tau": tau,
             "Jp": jp,
@@ -408,6 +461,13 @@ def shell_diagnostic(
             "re_run_here": False,
         },
         "door_3": dict(payload["door_3"]),
+        "standing_language": dict(STANDING_LANGUAGE),
+        "shells_labeled": {
+            "energy": ENERGY_SHELL,
+            "enstrophy": ENSTROPHY_SHELL,
+            "palinstrophy": PALINSTROPHY,
+            "glued": False,
+        },
         "swirl_removes_free_helical_HHH": (
             "class statement, not a measured 3-D CFM close"
         ),
@@ -468,6 +528,30 @@ def format_shell_diagnostic(diag: dict[str, Any] | None = None) -> str:
             "separate from occupancy"
         ),
         f"swirl removes free helical HHH: {d['swirl_removes_free_helical_HHH']}",
+        (
+            "spectral-shift identity: bookkeeping; not Lemma-star; "
+            "does not control nonlinear transfer"
+        ),
+        (
+            "rho_j<nu: enstrophy-palinstrophy (A) only; "
+            "not energy-budget absorption"
+        ),
+        (
+            "occupancy 1 with alpha~1/2: does not establish depletion"
+        ),
+        (
+            "routes (A)-(C) and Step 6: candidate routes, not theorems; "
+            "principal unresolved T_{j←j}"
+        ),
+        (
+            "scope: small exact disks / restricted classes; "
+            "no K_max→∞; no generic data"
+        ),
+        (
+            f"energy shell: {d['shells_labeled']['energy']}; "
+            f"enstrophy shell: {d['shells_labeled']['enstrophy']}; "
+            "not glued"
+        ),
         (
             f"requested local Young {d['refused_young']['line']}: "
             f"{d['refused_young']['status']} "

@@ -97,8 +97,11 @@ SHELL_REMAINDER_WARNINGS = (
     "pairing residual is an algebraic unit check. Tjj/Zj is NOT "
     "COMPUTED here (no DNS, no closed stepper). Requested local "
     "Young is REFUSED. Compact-sample ratios are not a class "
-    "rho_j. Status OPEN. Clay NOT CLAIMED. Not leftover-split "
-    "strain, not Ring SND, and not Paper2 simplex.",
+    "rho_j. Spectral-shift identity is not Lemma-star. "
+    "rho_j<nu is not energy-budget absorption. Occupancy 1 "
+    "with alpha~1/2 is not depletion. Status OPEN. Clay "
+    "NOT CLAIMED. Not leftover-split strain, not Ring SND, "
+    "and not Paper2 simplex.",
 )
 
 BOTH_BOOKS_WARNING = (

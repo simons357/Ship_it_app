@@ -11,6 +11,26 @@ This note uses **only** KEEP objects from the audit. Discard items do not appear
 
 Swirl \(\Phi=u_\theta/r\) is not FRA/DA \(\Phi\), not Newtonian \(\Phi_g\), and not Paper2 \(\Phi_j\). This remainder is **not** leftover-split strain \(\int\|u^r/r\|_\infty\,dt\) and **not** Paper2 simplex \(\|a-\mu\|_{\ell^1}\).
 
+Two shells stay labeled and are not glued. **Energy** \(Z_j=\tfrac12\|P_j u\|_{L^2}^2\) is the displayed §1 quantity (\(P_j\) here is the Littlewood–Paley projector). **Enstrophy** \(Z_j=\|\Delta_j\omega\|_{L^2}^2\) is the Sept 11 write. Palinstrophy \(P_j\) in the standing language below is **not** the LP projector. The leftover print \(T_{j\leftarrow j}/Z_j\) is **not** the palinstrophy-normalized \(\rho_j\) of route (A).
+
+---
+
+## Standing language (filed 13 September 2026)
+
+Class: unaugmented axisymmetric-with-swirl. Quantity: the labeled shell in use. Remainder: \(T_{j\leftarrow j}\). Assumed: [these five blocks are standing language for this program; they do not close the leftover].
+
+**Terminology.** We call the exact bookkeeping relation the **spectral-shift identity**. It is distinct from the **Lemma★ ratio bound** discussed in earlier attack notes. Establishing the identity does not establish that bound or control nonlinear transfer.
+
+**Dissipation threshold.** Because \(\rho_j\) is normalized by palinstrophy \(P_j\), the comparison \(\rho_j<\nu\) belongs to the enstrophy–palinstrophy estimate in (A). It is not an absorption criterion for the displayed shell-energy budget, whose viscous term is \(\nu Z_j\).
+
+**Cross-scale terms.** This program proposes to handle cross-scale interactions using standard estimates. Their precise bounds and summability remain to be supplied within this chain; they are not established by this note.
+
+**Remaining closure.** Conditions (A)–(C) describe candidate routes for completing this particular proof chain. The principal unresolved term is the same-scale transfer \(T_{j\leftarrow j}\). Step 6 describes a proposed closure mechanism: it requires (A), or a depletion estimate implying (A), without using \(\dot e_j\), \(\dot Z\) or \(\Lambda'\) to reintroduce the quantity being bounded.
+
+**Scope of computations.** The reported measurements concern small exact disks and the stated restricted classes. They establish no uniform conclusion as \(K_{\max}\to\infty\) or for generic data. Observed occupancy 1 alongside alignment approximately \(1/2\) does not establish the depletion required for closure.
+
+Letters, so they do not glue: LP projector \(P_j\) in §1 \(\neq\) palinstrophy \(P_j\) in (A). Energy \(Z_j=\tfrac12\|P_j u\|_{L^2}^2\) \(\neq\) enstrophy \(Z_j=\|\Delta_j\omega\|_{L^2}^2\). The §1 pairing writes dissipation as \(\nu D_j=\nu\|\nabla P_j u\|_{L^2}^2\). Whether one writes that slot as \(\nu D_j\) or as \(\nu Z_j\), \(\rho_j<\nu\) is still not absorption on the energy budget.
+
 ---
 
 ## 1. Identity first
@@ -24,7 +44,7 @@ Z_j(t)
 \tfrac12\|P_j u(t)\|_{L^2}^2,
 \]
 with \(P_j\) the Littlewood–Paley projector onto frequencies \(\sim 2^j\).
-(The enstrophy shell \(\tfrac12\|P_j\omega\|_{L^2}^2\), \(\omega=\nabla\times u\), has the same Door-1 *shape*; using it changes the global sum, which then equals stretching, not zero. This note takes the energy shell as the quantity so that the telescope below is the energy pairing.)
+(The Sept 11 enstrophy shell \(Z_j=\|\Delta_j\omega\|_{L^2}^2\), \(\omega=\nabla\times u\), is a different quantity. Using it changes the global sum, which then equals stretching, not zero. This note takes the energy shell as the displayed quantity so that the telescope below is the energy pairing. Do not glue the two \(Z_j\)’s.)
 Remainder: \(T_{j\leftarrow j}\).
 Assumed: [smooth compactly supported divergence-free axisymmetric-with-swirl classical NS; \(P_j\) a Fourier multiplier, self-adjoint, commuting with derivatives, and preserving divergence-free fields; no added field].
 
@@ -93,14 +113,16 @@ is bookkeeping for signed production versus dissipation. It is **not** the final
 
 ---
 
-## 3. Closed-triad rewrite and lattice shift
+## 3. Spectral-shift identity (bookkeeping, not Lemma★)
 
 On a closed triad, the interaction is rewritten
 \[
 \tau=(\omega(p)-\omega(r))J_p+(\omega(q)-\omega(r))J_q.
 \]
 
-Frequencies are shifted by a lattice constant \(\omega_*\), **not** by \(\Lambda\). Unaugmented normalization: do not add a field to help the estimate.
+Frequencies are shifted by a lattice constant \(\omega_*\), **not** by \(\Lambda\). This pair — the rewrite and the constant shift — is the **spectral-shift identity**. It is exact bookkeeping. It is distinct from the Lemma★ ratio bound. Establishing the identity does not establish that bound and does not control nonlinear transfer.
+
+Unaugmented normalization: do not add a field to help the estimate.
 
 **Proposition (listed triad; not a bound of \(T_{j\leftarrow j}\)).**
 Class: one closed Fourier triad \((p,q,r)\) of a divergence-free periodic velocity. Quantity: \(S=J_p+J_q+J_r\). Remainder of this proposition: none (\(S=0\) is the identity). Assumed: [standard incompressible triad pairing; no added field]. Then \(S=0\). Constants: none besides the floating-point gate \(10^{-16}\) used to *check* the identity. Scope: the listed triad. This is not a time series and does not bound \(T_{j\leftarrow j}\).
@@ -120,11 +142,11 @@ What *is* printed (see `python -m domain_architect.axisymmetric_shell`):
 | pairing residual \(\lvert J_p+J_q+J_r\rvert\) on a listed triad | algebraic / any dimension of the triad pairing | unit check; closed only at \(\le 10^{-16}\) |
 | same residual on a broken triad \((1,1,1)\) | algebraic | gate demonstration; not closed |
 | \(\lvert T_c\rvert/D_s\sim 0.017\); occupancy \(\sim 0.15\) | **2-D**, recorded, not re-run | stay 2-D; do not import 2-D \(\rho=0.02\) into 3-D |
-| random-phase \(O(10^{-2})\); HHH occupancy 1 on the orbits that were run; \(\alpha\approx 0.5\) | **3-D**, recorded, not re-run | stay 3-D; occupancy 1 is not CFM |
+| random-phase \(O(10^{-2})\); HHH occupancy 1 on the orbits that were run; \(\alpha\approx 0.5\) | **3-D**, recorded, not re-run; small exact disks / restricted class | stay 3-D; occupancy 1 is not CFM; occupancy 1 with \(\alpha\approx 1/2\) does not establish depletion |
 | \(\mathrm{sign}(\Lambda')\) | — | **NOT QUOTED** (no closed time series) |
 | \(T_{j\leftarrow j}/Z_j\) | axisymmetric-with-swirl | **NOT COMPUTED** |
 
-Door 3: vorticity-direction alignment \(\alpha\) is a **criterion to test**, kept **separate** from triad-phase occupancy. The 3-D number \(\alpha\approx 0.5\) is a recorded 3-D fact, not a close.
+Door 3: vorticity-direction alignment \(\alpha\) is a **criterion to test**, kept **separate** from triad-phase occupancy. The 3-D number \(\alpha\approx 0.5\) is a recorded 3-D fact on the orbits that were run. Observed occupancy 1 alongside alignment approximately \(1/2\) does not establish the depletion required for closure.
 
 Swirl geometry is the **class** that removes free helical HHH. That is a class statement, not a measured 3-D CFM close.
 
@@ -175,7 +197,7 @@ That absorption is not an estimate of \(T_{j\leftarrow j}\).
 C_{\mathrm{UV}}\sum_{\ell\ge j+2}2^{j-\ell/2}Z_\ell\,Z_j^{1/2}.
 \]
 
-Constants named: \(C_{\mathrm{IR}}[\varphi]\), \(C_{\mathrm{UV}}[\varphi]\). Scope: far shells only. The local block is not in these two lemmas.
+Constants named: \(C_{\mathrm{IR}}[\varphi]\), \(C_{\mathrm{UV}}[\varphi]\). Scope: far shells only. The local block is not in these two lemmas. Precise bounds and summability of the cross-scale terms remain to be supplied; they are not established by this note.
 
 ---
 
@@ -235,7 +257,9 @@ A tempting sentence — “no-swirl is regular, so only \(T^{\mathrm{ss}}\) rema
 
 Class: named compact axisymmetric-with-swirl blobs on \(\mathbb{R}^3\), support in a ball of radius \(R=2.4<\pi\), scored on a 2/3-dealiased Leray interpolant. Quantity: printed \(\max\lvert T_{j\leftarrow j}/X_j\rvert\) on that interpolant. Remainder: \(T_{j\leftarrow j}\). Assumed: [these named fields only; pairing closed on the samples; no time series].
 
-Source: `docs/AXISYM-SWIRL-PROBE.md` and the mixed-split table in `docs/TJJ-ESTIMATE.md` on `origin/cursor/tjj-estimate-chain-e5c5`. **Not re-run here. Not DNS. Not [ρ] for the class.**
+Source: `docs/AXISYM-SWIRL-PROBE.md` and the mixed-split table in `docs/TJJ-ESTIMATE.md` on `origin/cursor/tjj-estimate-chain-e5c5`. **Not re-run here. Not DNS.**
+
+**Scope of these numbers.** They concern small exact disks and the stated restricted classes. They establish no uniform conclusion as \(K_{\max}\to\infty\) or for generic data. They are not a class leftover ratio and not palinstrophy-normalized \(\rho_j\). Occupancy was not scored on this table.
 
 Pairing residual on those samples \(\le 3\times 10^{-18}\) relative. Rotation residual \(\le 4\times 10^{-15}\). Occupancy was not scored. \(\alpha\) stayed separate. The sign of \(\Lambda'\) was not quoted.
 
@@ -274,25 +298,39 @@ A conditional theorem is a theorem. A hidden hypothesis is not.
 
 ---
 
-## 10. Gap (send the work with the gap visible)
+## 10. Candidate routes (A)–(C) and Step 6
 
-The leftover is still \(T_{j\leftarrow j}\) and still **OPEN**. Far-shell Young sits. The requested local Young is **REFUSED**. There is no class \(\rho_j\).
+Class: unaugmented axisymmetric-with-swirl. Quantity: the labeled shell in use. Remainder: \(T_{j\leftarrow j}\). Assumed: [(A)–(C) and Step 6 are candidate routes, not theorems; no extra field].
+
+- **(A)** — enstrophy–palinstrophy route. Palinstrophy-normalized \(\rho_j<\nu\) lives here. It is not absorption on the displayed energy budget.
+- **(B)**, **(C)** — named candidate routes. Their statements are not supplied on this page. This note does not invent them.
+- **Step 6** — a proposed closure mechanism. It requires (A), or a depletion estimate implying (A), without using \(\dot e_j\), \(\dot Z\), or \(\Lambda'\) to reintroduce the quantity being bounded.
+
+The principal unresolved term is still \(T_{j\leftarrow j}\). None of (A)–(C) or Step 6 is seated here.
+
+---
+
+## 11. Gap (send the work with the gap visible)
+
+The leftover is still \(T_{j\leftarrow j}\) and still **OPEN**. Far-shell Young templates sit; precise cross-scale bounds and summability are not established by this note. The requested local Young is **REFUSED**. There is no class leftover ratio. Palinstrophy \(\rho_j<\nu\) is not energy-budget absorption. Occupancy 1 with \(\alpha\approx 1/2\) is not depletion.
 
 Modified / hyperviscous / Q1-augmented equations stay **separate** from classical NS. A close of another PDE is not a close of NS.
 
 ---
 
-## 11. What this note refuses
+## 12. What this note refuses
 
 Discard list objects do not enter the identity, the Young step, or the claim: SFE / coherence viscosity / Q1–Q6 as constitutive classical NS; bounding the bad term by \(\Lambda'\) or \(\dot Z_j\); large-form [SND] as measured smallness; GCD spectral attractor / E8 cathedral / prime-harmonic lock / Borromean coherence as mechanisms that force \(T_{j\leftarrow j}\) small; Base 44 / gematria as estimates; Q6-Kabbalah / Lightning Flash inside the proof; 2-D \(\rho=0.02\) imported to 3-D; occupancy 1 imported to CFM; FFT-aliased orbits treated as \(\dot\Lambda=2(T_c-\nu D_s)\); “Clay is solved”; Tao certification; coherence-floor / extra memory / prime gates added to NS and called the Millennium problem.
 
+This note also refuses: treating the spectral-shift identity as the Lemma★ ratio bound or as control of nonlinear transfer; treating \(\rho_j<\nu\) as absorption on the displayed energy budget; treating occupancy 1 with \(\alpha\approx 1/2\) as the depletion required for closure; using \(\dot e_j\), \(\dot Z\), or \(\Lambda'\) in Step 6 to reintroduce the leftover.
+
 Parked elsewhere (not deleted): Harmonic Blueprint / SFE archive; apps; Base 44 partition experiment until \(\rho_j\) is tested; defense stacks; RH / Goldbach; turbulence-reduction (ships ACTIVE; other slots QUEUED); leftover-split strain; Ring / Paper2 / Route J.
 
-Left on the Sept 11 branch, not welded here: Lemma★, H1 / WRITE (6), `SWIRL-PAPER.md` Hardy as a repair of \(R\), lattice random / 4-fold / Taylor–Green interpolant ratios (not this class), the FFT probe scripts themselves.
+Left on the Sept 11 branch, not welded here: Lemma★ / attack notes, H1 / WRITE (6), `SWIRL-PAPER.md` Hardy as a repair of \(R\), lattice random / 4-fold / Taylor–Green interpolant ratios (not this class), the FFT probe scripts themselves.
 
 ---
 
-## 12. DA lab
+## 13. DA lab
 
 ```
 python -m domain_architect cycle axisymmetric-shell

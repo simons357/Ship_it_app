@@ -91,6 +91,13 @@ class TestAuditDocuments(unittest.TestCase):
         self.assertIn("REFUSED", text)
         self.assertIn("not dns", text.lower())
         self.assertIn("T^{\\mathrm{mm}}", text)
+        self.assertIn("spectral-shift identity", text.lower())
+        self.assertIn("not an absorption criterion", text.lower())
+        self.assertIn("k_{\\max}", text.lower())
+        self.assertIn("candidate routes", text.lower())
+        self.assertNotIn("depletion established", text.lower())
+        self.assertIn("energy \\(z_j=", text.lower())
+        self.assertIn("enstrophy", text.lower())
 
     def test_estimate_writes_exact_pairing(self):
         text = ESTIMATE.read_text(encoding="utf-8")
@@ -216,6 +223,32 @@ class TestPairingAndFacts(unittest.TestCase):
         printed = format_shell_diagnostic()
         self.assertIn("not DNS", printed)
         self.assertIn("T_mm is the bulk", printed)
+
+    def test_standing_language_refuses_false_closes(self):
+        payload = axisymmetric_shell_estimate()
+        standing = payload["standing_language"]
+        self.assertFalse(standing["identity_is_lemma_star"])
+        self.assertFalse(standing["rho_j_lt_nu_is_energy_absorption"])
+        self.assertFalse(standing["occupancy_alpha_is_depletion"])
+        self.assertEqual(standing["principal_unresolved"], "T_{j←j}")
+        self.assertEqual(standing["routes_A_B_C"], "candidate routes, not theorems")
+        self.assertFalse(payload["closed_triad"]["is_lemma_star"])
+        self.assertFalse(payload["closed_triad"]["controls_nonlinear_transfer"])
+        self.assertFalse(payload["shells_labeled"]["glued"])
+        self.assertIn("LP projector", payload["shells_labeled"]["energy"])
+        self.assertIn("palinstrophy", payload["shells_labeled"]["palinstrophy"])
+        self.assertFalse(payload["measured_facts"]["3d"]["occupancy_alpha_is_depletion"])
+        self.assertFalse(payload["measured_facts"]["compact_swirl_samples"]["kmax_to_infinity"])
+        self.assertFalse(payload["measured_facts"]["compact_swirl_samples"]["generic_data"])
+        self.assertEqual(payload["status"], "OPEN")
+        printed = format_shell_diagnostic()
+        self.assertIn("not Lemma-star", printed)
+        self.assertIn("not energy-budget absorption", printed)
+        self.assertIn("does not establish depletion", printed)
+        self.assertIn("candidate routes, not theorems", printed)
+        self.assertNotIn("depletion established", printed.lower())
+        self.assertTrue(contains_discard_claim("depletion established"))
+        self.assertFalse(contains_discard_claim(printed))
 
 
 class TestDecomposeAndGlue(unittest.TestCase):
