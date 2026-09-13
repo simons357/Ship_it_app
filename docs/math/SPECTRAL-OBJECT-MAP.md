@@ -13,8 +13,19 @@ Quick answers after pulling the Zenodo spectral stack into `docs/papers/zenodo-s
 | \(H_M[a]\) | Arithmetic (Route N) | Convex combo \(\sum a_j B_{M,j}\) | **≠** fluids Theorem H |
 | Theorem H | Fluids | SND-C / shell flux under \(X\le M\) | Conditional; **≠** unconditional SND |
 | Ring Lemma | Fluids | Band-limited \(\|\nabla(\omega/|\omega|)\|_{L^\infty(E_c)}\le C\,2^{j^*}\) | Toolkit; Statement (B) not proved |
+| **Spectral-shift identity** | Fluids (axisymmetric shell budget) | Exact triad/lattice bookkeeping (shift by \(\omega_*\), not \(\Lambda\)) | Bookkeeping only; **≠** Lemma★ ratio bound; does **not** close \(T_{j\leftarrow j}\) |
+| Lemma★ ratio bound \(\mathcal{R}_\star\) | Fluids (Stokes-moment shape) | \(\sup (T_c)_+^2/(D_s E Y)<\infty\) / \(C_{\mathrm{geom}}\) | **OPEN** on five-lane SoT; not established by spectral-shift identity |
 
 See `docs/math/NS-EXTRACTION-LEDGER.md` (Route N) and `docs/math/TAO-MATH-PANEL-SND-H.md` (H vs \(H_N\)).
+
+## Spectral-shift identity ≠ Lemma★
+
+Do **not** conflate:
+
+- **Spectral-shift identity** — Status / Terminology / Scope on the axisymmetric-with-swirl shell estimate (`cursor/axisymmetric-shell-audit-9d6b` / PR https://github.com/simons357/Ship_it_app/pull/70, also `cursor/spectral-shift-terminology-a0eb`). Exact bookkeeping. Establishing it does not establish a ratio bound or control nonlinear transfer. \(\rho_j<\nu\) (palinstrophy-normalized) is an enstrophy–palinstrophy route-(A) comparison, **not** absorption on the displayed shell-energy budget. Cross-scale bounds, (A)–(C), and Step 6 remain candidate / open. Numerics: small exact disks / restricted classes only.
+- **Lemma★ ratio bound** — five-lane SoT (`cursor/ns-five-lane-lemma-star-1390` / PR https://github.com/simons357/Ship_it_app/pull/48). Shape quotient \(\mathcal{R}_\star\). **OPEN.**
+
+**NS not solved.**
 
 ## Dominant shell ≠ Q6
 
