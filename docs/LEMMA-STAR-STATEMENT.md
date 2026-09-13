@@ -25,6 +25,12 @@ H1 / WRITE (6) is a different integral.
 
 ## The boxed claim (this is Lemma★)
 
+One line, every symbol below:
+no finite \(C_{\mathrm{geom}}\) satisfies
+\((T_c)_+^2\le C_{\mathrm{geom}}\,\mathcal D_s E Y\)
+on the class written here. That line is
+**killed** by \(v_n\).
+
 On divergence-free fields on \(\mathbb{T}^3\),
 \(E=\|v\|_2^2\), \(Y=\|Av\|_2^2\),
 \(\mathcal D_s=Z-\Lambda Y\), \(T_c=M-\Lambda N\):

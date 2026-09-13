@@ -12,6 +12,17 @@ finite Fourier support, \(\mathcal D_s>0\);
 estimate. It is not a singular Navier–Stokes solution.
 Ordinary NS is not solved. Soft X silent.**
 
+Killed inequality (one line; every symbol
+defined on [`LEMMA-STAR-STATEMENT.md`](LEMMA-STAR-STATEMENT.md)):
+there is no finite \(C_{\mathrm{geom}}\) such that
+\((T_c)_+^2\le C_{\mathrm{geom}}\,\mathcal D_s E Y\)
+for every real, mean-zero, divergence-free
+\(v\) on \(\mathbb{T}^3\) with \(\mathcal D_s>0\).
+Here \(E=\|v\|_2^2\), \(Y=\|Av\|_2^2\),
+\(\Lambda=Y/X\), \(\mathcal D_s=Z-\Lambda Y\),
+\(T_c=M-\Lambda N\),
+\(\mathcal R_\star=(T_c)_+^2/(\mathcal D_s E Y)\).
+
 The named kill of leftover 4 was
 \(\mathcal R_\star(v_n)\to\infty\).
 That sequence sits. A finite sample is not this.
@@ -74,6 +85,36 @@ Energy: \(E_n=4(2n+1)\).
 
 ---
 
+## Side-conditions from the reason page
+
+[`LEMMA-STAR-REASON.md`](LEMMA-STAR-REASON.md)
+is a map, not the kill. The kill-relevant
+conditions written there, and on the
+statement it points to, are these.
+Map comments (HH→L diagnostic, do not
+merge \(0.71\), do not start H1) are
+not extra gates on the boxed claim.
+
+| Condition | \(v_n\) |
+|---|---|
+| Unaugmented fields on \(\mathbb{T}^3\) | **YES.** |
+| Real (\(\widehat v(-k)=\overline{\widehat v(k)}\)) | **YES.** |
+| Mean-zero | **YES.** |
+| Divergence-free | **YES.** |
+| Finite Fourier support (hence \(C^\infty\)) | **YES.** |
+| \(\mathcal D_s>0\) (not one shell) | **YES.** Two eigenvalues carry mass. |
+| \(\mathcal R_\star=(T_c)_+^2/(\mathcal D_s E Y)\) | **YES.** That is the quotient that diverges. |
+| Keep \(\mathrm{Im}\); signed total, not \(\lvert\mathrm{Im}\rvert\) | **YES.** \(T_c=3n^5(3n^2+3n+1)>0\). |
+| One shell is vacuous, not this kill | **YES.** Not one shell. |
+| Not a uniform Fourier dilation | **YES.** Shape changes with \(n\). |
+| No extra field / no \(K(t)\) in the PDE | **YES.** |
+
+Admissible for the boxed claim.
+The evaluators match. That is the kill
+of unrestricted \(\sup\mathcal R_\star<\infty\).
+
+---
+
 ## Signed seed and the vertical factor
 
 The planar seed has complete signed transfers
@@ -83,10 +124,23 @@ Its energy transfer and \(N\) vanish. Its \(M=3\).
 Separation of \(D_n(z)\), including every cross
 derivative, cancels the terms paired with \(U\)
 and \(A_h U\). The surviving term is paired with
-\(A_h^2 U\). The vertical cubic is the number of
-ordered pairs \((a,b)\) with
-\(\lvert a\rvert,\lvert b\rvert,\lvert a+b\rvert\le n\),
-which is \(3n^2+3n+1\).
+\(A_h^2 U\). The vertical cubic is
+\(\langle D_n^3\rangle\), written as
+a three-line sum so a reviewer does
+not reconstruct it:
+
+\[
+\langle D_n^3\rangle
+=
+\#\{(a,b)\in\mathbb{Z}^2:
+\lvert a\rvert,\lvert b\rvert,\lvert a+b\rvert\le n\}
+=
+\sum_{a=0}^{n}(2n-a+1)
++
+\sum_{a=-n}^{-1}(2n+a+1)
+=
+3n^2+3n+1.
+\]
 
 \[
 N(v_n)=0,

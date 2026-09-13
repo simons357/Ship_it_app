@@ -11,6 +11,9 @@ docs/ATTACK-9D-FULL-SUPPORT-BOUND.md
 Three-shear write-up example K=2/3
 (floor, not the ceiling):
 docs/ATTACK-9D-TWO-THIRDS.md
+SuperGrok review scored (4/3
+stays CLAIMED, not a theorem):
+docs/PR24-SUPERGROK-REVIEW.md
 scripts/ns_attacks/attack9d_two_thirds.py
 Need★ cannot repair the dead box.
 B-hand map (not a close):

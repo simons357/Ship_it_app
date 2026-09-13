@@ -28,6 +28,9 @@ docs/ATTACK-9D-FULL-SUPPORT-BOUND.md
 Three-shear write-up example K=2/3
 (floor, not 16/9; not a sweep table):
 docs/ATTACK-9D-TWO-THIRDS.md
+SuperGrok review scored (4/3 CLAIMED,
+not a theorem):
+docs/PR24-SUPERGROK-REVIEW.md
 Need★ cannot repair the dead box:
 docs/NEED-STAR-HH-L-DUAL.md
 Grow-s historical (max K≈0.456):

@@ -65,16 +65,42 @@ Let \(S\subset\{p:\lvert p\rvert^2=\alpha\}\),
 3\Bigl(\sum_{p\in S}a_p^2\Bigr)^2.
 \]
 
-Expand the square. A fixed distinct pair
-\((p,r)\) can meet at most two outputs:
-each output must obey \(\lvert k\rvert^2=\beta\)
-and \(k\cdot p=k\cdot r=\beta/2\).
-Two independent affine planes meet a sphere
-in at most two points. The dependent distinct
-case is \(r=-p\), impossible for \(\beta>0\).
-Weighted AM-GM bounds the off-diagonal by
-twice the squared mass. The diagonal is at
-most once the squared mass.
+The lattice step uses the claimed
+two-plane incidence below.
+Weighted AM-GM then bounds the
+off-diagonal by twice the squared
+mass. The diagonal is at most once
+the squared mass.
+
+### Claimed proposition — two-plane incidence
+
+Let \(p\neq r\) lie on \(\lvert\cdot\rvert^2=\alpha\).
+An output \(k\) that can be written with
+both \(p\) and \(r\) as summands on that
+shell, and with \(\lvert k\rvert^2=\beta>0\),
+must obey
+
+\[
+k\cdot p=k\cdot r=\beta/2.
+\]
+
+If the two affine planes
+\(k\cdot p=\beta/2\) and
+\(k\cdot r=\beta/2\) are independent,
+they meet the sphere \(\lvert k\rvert^2=\beta\)
+in at most two points. So a fixed
+distinct pair meets at most two outputs.
+
+Dependent distinct case: \(r=-p\).
+Then \(k\cdot p=-k\cdot p\), so
+\(\beta=2k\cdot p=0\), excluded.
+
+**Status: CLAIMED.** Isolated so a
+specialist can accept it or break it
+by naming one pair \((p,r)\) that meets
+three outputs on a shell \(\beta>0\).
+Isolating the proposition is not a
+proof assistant.
 
 The audit draws this count on
 \((4,8)\), \((5,4)\), \((1,2)\) and prints
@@ -130,6 +156,7 @@ Phone: [`../../ATTACK-9D-TWO-THIRDS.md`](../../ATTACK-9D-TWO-THIRDS.md).
 | Designed \(\Theta(m^2)\) 9D | **NO.** Dead. |
 | Grow-\(s\) finite max as \(C_0\) | **NO.** Historical. |
 | Three-shear \(K=2/3\) as \(C_0\) | **NO.** Write-up example. Floor only. |
+| Two-plane incidence as a theorem | **NO.** Isolated. Still CLAIMED. |
 | Exact-shell \(K\le 16/9\) | **CLAIMED.** Specialist pending. |
 | Unrestricted ★ | **NO.** Other page. |
 | Ordinary NS | **OPEN.** |

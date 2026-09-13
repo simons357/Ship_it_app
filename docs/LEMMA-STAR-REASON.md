@@ -17,8 +17,11 @@ NS is not solved.**
 The named kill arrived. Unrestricted
 \(\sup\mathcal R_\star<\infty\) is **NO**.
 Family: [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
-This page stays a map of why cheap CS
-hides occupancy. It is not the kill.
+That page now lists every kill-relevant
+side-condition written here, and checks
+\(v_n\) against each. This page stays a
+map of why cheap CS hides occupancy.
+It is not the kill.
 Need★ cannot repair the dead box.
 
 Do not turn Attack 12’s table into

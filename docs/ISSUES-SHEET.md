@@ -59,6 +59,9 @@ Do not start 1 from ABC_λ. Do not cash \(0.641\),
 \(v_n\) kill or as \(16/9\).
 The write-up example for exact-shell \(K\)
 is the three-shear field, not a sweep table.
+SuperGrok’s “keep \(4/3\) as a theorem”
+is NO. CLAIMED.
+[`PR24-SUPERGROK-REVIEW.md`](PR24-SUPERGROK-REVIEW.md).
 The named kill of unrestricted ★ already sits. Do not
 restore occupation decay from the wall detector
 as a close of 5. Do not retitle Q as 6 or 10.

@@ -79,17 +79,18 @@ The claimed lattice inequality is
 3\Bigl(\sum_{p\in S}a_p^2\Bigr)^2.
 \]
 
-After expanding the square, a fixed distinct
-pair \((p,r)\) can meet at most two outputs:
-each output must obey
-\(\lvert k\rvert^2=\beta\) and
-\(k\cdot p=k\cdot r=\beta/2\).
-Two independent affine planes meet a sphere
-in at most two points. The dependent distinct
-case is \(r=-p\), impossible for \(\beta>0\).
-Weighted AM-GM bounds the off-diagonal by
-twice the squared mass. The diagonal is at
-most once the squared mass.
+The lattice step is the claimed
+two-plane incidence, isolated on
+[`math/ns_attacks/ATTACK_9D_FULL_SUPPORT_BOUND.md`](math/ns_attacks/ATTACK_9D_FULL_SUPPORT_BOUND.md):
+a fixed distinct pair \((p,r)\) meets
+at most two outputs on shell \(\beta>0\);
+the dependent case \(r=-p\) forces
+\(\beta=0\), excluded.
+Weighted AM-GM bounds the off-diagonal
+by twice the squared mass. The diagonal
+is at most once the squared mass.
+Isolating that proposition does not
+certify \(16/9\).
 
 The audit draws this count on shells
 \((4,8)\), \((5,4)\), \((1,2)\) and prints
@@ -146,6 +147,7 @@ gets near \(16/9\).
 | Designed \(\Theta(m^2)\) 9D | **NO.** Dead. |
 | Grow-\(s\) finite max as \(C_0\) | **NO.** Historical. |
 | Three-shear \(K=2/3\) as \(C_0\) | **NO.** Write-up example. Floor only. |
+| Two-plane incidence as a theorem | **NO.** Isolated. Still CLAIMED. |
 | Exact-shell \(K\le 16/9\) | **CLAIMED.** Specialist pending. |
 | Unrestricted ★ | **NO.** Other page. |
 | Ordinary NS | **OPEN.** |

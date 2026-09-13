@@ -76,6 +76,7 @@ stay samples. They are not this kill.
 | Occupancy \(55/56\) | Printed on those interpolants. Did not decay with \(n\). Not \([\rho]\). |
 | \(K\le 16s\) | Counting. Fixed \(s\) cannot unbound \(K\). |
 | Three-shear \(K_{1,2}=2/3\) | Write-up example: one line, \(K\) by hand. Floor of \(\sup K\). Not \(16/9\). Not a sweep table. [`ATTACK-9D-TWO-THIRDS.md`](ATTACK-9D-TWO-THIRDS.md). |
+| SuperGrok PR-24 table (★ dead, Need★ no repair, leftover OPEN, maxima historical) | Matches the tape. [`PR24-SUPERGROK-REVIEW.md`](PR24-SUPERGROK-REVIEW.md). |
 
 ---
 
@@ -97,6 +98,7 @@ stay samples. They are not this kill.
 | P1 / P1-loc / PC as H1 | Cousins. |
 | CS \(E^{3/2}\) as shape 1 | Mid-Bad / H3 class. |
 | Finite \(0.641\), \(0.610\), \(0.327\), HH→L \(0.71\), grow-\(s\) \(0.456\), three-shear \(2/3\) as \(C_0\) or as \(16/9\) | Samples. Floor \(\neq\) ceiling. |
+| SuperGrok “keep exact-shell \(4/3\) as a theorem” | Hand write. Specialist pending. Status **CLAIMED**. |
 | Attack 12 table as Need★ | Finite \(\beta/\alpha\). Not the signed dual. |
 | Glue H1 to ★, or either to the shell door | Different integrals. |
 | \(K(t)\) in the PDE | Forbidden on B. |
@@ -163,6 +165,8 @@ If three-shear \(K=2/3\) is written,
 that is YES as a floor of \(\sup K\)
 and as the write-up example,
 and still NO as \(16/9\).
+If SuperGrok writes \(4/3\) as a
+theorem, that is NO. CLAIMED.
 
 Those three words do not trade.
 NS not solved. RH not solved.

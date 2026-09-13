@@ -12,6 +12,17 @@ finite Fourier support, \(\mathcal D_s>0\);
 estimate. It is not a singular Navier–Stokes solution.
 Ordinary NS is not solved. Soft X silent.**
 
+Killed inequality (one line):
+no finite \(C_{\mathrm{geom}}\) satisfies
+\((T_c)_+^2\le C_{\mathrm{geom}}\,\mathcal D_s E Y\)
+on every real, mean-zero, divergence-free
+\(v\in C^\infty(\mathbb{T}^3)\) with \(\mathcal D_s>0\).
+Symbols: \(E=\|v\|_2^2\), \(X=\|A^{1/2}v\|_2^2\),
+\(Y=\|Av\|_2^2\), \(Z=\|A^{3/2}v\|_2^2\),
+\(\Lambda=Y/X\), \(\mathcal D_s=Z-\Lambda Y\),
+\(T_c=M-\Lambda N\),
+\(\mathcal R_\star=(T_c)_+^2/(\mathcal D_s E Y)\).
+
 Phone lock: [`../../LEMMA-STAR-GROWING-LAYER.md`](../../LEMMA-STAR-GROWING-LAYER.md).
 Statement: [`../../LEMMA-STAR-STATEMENT.md`](../../LEMMA-STAR-STATEMENT.md).
 Tape: [`../../YES-NO-OPEN.md`](../../YES-NO-OPEN.md).
@@ -95,10 +106,26 @@ Its energy transfer and \(N\) vanish. Its \(M=3\).
 Separation of \(D_n(z)\), including every cross
 derivative, cancels the terms paired with \(U\)
 and \(A_h U\). The surviving term is paired with
-\(A_h^2 U\). The vertical cubic is the number of
-ordered pairs \((a,b)\) with
-\(\lvert a\rvert,\lvert b\rvert,\lvert a+b\rvert\le n\),
-which is \(3n^2+3n+1\).
+\(A_h^2 U\). The vertical cubic is the three-line sum
+
+\[
+\langle D_n^3\rangle
+=
+\#\{(a,b)\in\mathbb{Z}^2:
+\lvert a\rvert,\lvert b\rvert,\lvert a+b\rvert\le n\}
+=
+\sum_{a=0}^{n}(2n-a+1)
++
+\sum_{a=-n}^{-1}(2n+a+1)
+=
+3n^2+3n+1.
+\]
+
+For \(a\ge 0\), \(b\) runs through an
+interval of length \(2n-a+1\).
+For \(a<0\), length \(2n+a+1\).
+The two sums are
+\((n+1)(3n+2)/2\) and \(n(3n+1)/2\).
 
 \[
 N(v_n)=0,
