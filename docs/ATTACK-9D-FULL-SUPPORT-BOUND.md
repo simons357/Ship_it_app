@@ -66,6 +66,14 @@ unrestricted ★.
 ## Conventions
 
 Normalized torus measure on \(\mathbb{T}^3\).
+Fourier coefficients are \(\mathbb C^3\)-valued.
+The inner product used on polarizations is
+Hermitian: \(\lvert\langle u,v\rangle\rvert\le\lvert u\rvert\,\lvert v\rvert\)
+for \(u,v\in\mathbb C^3\). That is the
+Cauchy–Schwarz that is claimed to survive
+independently complex polarizations. It is
+not a real-alignment hypothesis.
+
 The ratio \(K_{\alpha,\beta}(w)\) is defined
 only for \(\alpha>0\) and \(w\ne 0\):
 
@@ -79,6 +87,21 @@ Aw=\alpha w.
 
 \(P\) and \(P_k\) on this page are the
 Leray projector. \(B(w,w)=P[(w\cdot\nabla)w]\).
+
+Admissible \((\alpha,\beta)\) for a
+nonvacuous pair on one input shell:
+
+\[
+\alpha>0,\qquad 0<\beta\le 4\alpha.
+\]
+
+The geometric constraint is
+\(\lvert p+q\rvert\le 2\sqrt{\alpha}\), so
+\(\beta>4\alpha\) admits no pairs and
+\(\Pi_\beta B(w,w)=0\). The \(C=4/3\) form
+uses \(\beta>0\). At the endpoints of
+\(x=\beta/\alpha\in(0,4]\), the elementary
+majorant below is \(0\).
 
 ---
 
@@ -155,11 +178,16 @@ on the specified shells,
 \]
 
 The in-plane components cancel after
-projection. The remaining component
-satisfies Cauchy–Schwarz even with
-independently complex polarizations.
-The complete calculation is in §3 of
-the underlying proof.
+projection (real geometry of \(k,p,q\)).
+The remaining component is estimated by
+Hermitian Cauchy–Schwarz on \(\mathbb C^3\).
+That inequality does not require real or
+aligned polarizations; it is the same
+bound for independently complex
+transverse coefficients. The complete
+kernel calculation is in §3 of the
+underlying proof. This page does not
+replace that calculation.
 
 The ordered convolution equals half its
 symmetrization. Squaring contributes
@@ -172,26 +200,65 @@ symmetrization. Squaring contributes
 \frac34\beta\left(1-\frac{\beta}{4\alpha}\right)\|w\|_2^4.
 \]
 
-That gives the stated \(K\le 16/9\).
-Let \(x=\beta/\alpha\in(0,4]\). Then
+---
+
+## One-variable maximum (redo by hand)
+
+Assume the displayed \(L^2\) majorant and
+the constraint \(x=\beta/\alpha\in(0,4]\).
+Then
 
 \[
 K_{\alpha,\beta}(w)
 \le
-\frac{3}{4}x^2\Bigl(1-\frac{x}{4}\Bigr)
-\le
-\frac{16}{9},
+f(x)
+:=
+\frac34 x^2\Bigl(1-\frac x4\Bigr)
+=
+\frac34\Bigl(x^2-\frac{x^3}4\Bigr).
 \]
 
-with elementary maximum \(16/9\) at
-\(x=8/3\). \(C=4/3=\sqrt{16/9}\) is the
-constant in
-\(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}E\).
-Optimality is not claimed.
+Differentiate:
 
-Independent specialist review should
-check this kernel identity, the factor
-\(3/4\), the weighted incidence argument,
+\[
+f'(x)=\frac34 x\Bigl(2-\frac{3x}4\Bigr).
+\]
+
+Critical points in \((0,4]\): \(x=8/3\).
+Endpoints: \(f(x)\to 0\) as \(x\to 0^+\),
+and \(f(4)=0\). The interior value is
+
+\[
+f\Bigl(\frac83\Bigr)
+=
+\frac34\cdot\frac{64}9\cdot\Bigl(1-\frac23\Bigr)
+=
+\frac{16}9.
+\]
+
+So, **given** the claimed pointwise
+majorant and \(\beta\le 4\alpha\),
+
+\[
+K_{\alpha,\beta}(w)\le\frac{16}9.
+\]
+
+The ratio \(x=8/3\) lies strictly inside
+the geometric interval. It is not a
+missing-boundary accident of dropping
+\(\beta\le 4\alpha\).
+
+The equivalent form
+\(\|\Pi_\beta B\|_2\le\frac43\alpha\beta^{-1/2}\|w\|_2^2\)
+is \(\sqrt{16/9}=4/3\) for \(\beta>0\).
+Optimality of the constant is not claimed.
+
+This paragraph checks only the
+optimization step. It does not certify
+§3. Independent specialist review should
+redo the kernel identity, the Hermitian
+step, the factor \(3/4\), the weighted
+incidence argument, this derivative,
 and the limiting-closer scope. DA has
 not replaced that by a proof assistant.
 
@@ -270,6 +337,8 @@ That does not unclaim the bound.
 | Designed \(\Theta(m^2)\) 9D | **NO.** Dead. |
 | Grow-\(s\) finite max as \(C_0\) | **NO.** Historical. |
 | Exact-shell \(K\le 16/9\) | **CLAIMED.** Written derivation available; internal checks passed; independent specialist review pending. Occupancy \(s\) gone on one input shell if it holds. |
+| Admissible \((\alpha,\beta)\) | \(\alpha>0\), \(0<\beta\le 4\alpha\) for a nonvacuous pair. \(\beta>4\alpha\) is empty. |
+| One-variable max of \(f(x)=\frac34 x^2(1-x/4)\) on \((0,4]\) | Elementary: \(16/9\) at \(x=8/3\). Redo by hand. Does not certify §3. |
 | Numerical sweeps | Consistency checks only. Not an alternative path to the word. |
 | Sweep max \(0.641\) / \(0.456\) as the ceiling | **NO.** Not the bound. |
 | Exact three-shear \(K=2/3\) | Identity on that field. Sits under \(16/9\). Not the ceiling. |
