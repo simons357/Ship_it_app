@@ -11,7 +11,7 @@
 
 The review’s growing-layer family was built on this book’s exact core. \(n=1\ldots4\) match the pasted `stokes_moments` table. \(\mathcal R_\star(v_n)\ge n/165888\to\infty\). That kills the unrestricted instantaneous bound. It does **not** construct a singular NSE solution.
 
-Writeups later landed on the PR #24 tip. Exact-shell 9D with \(C=4/3\) / \(K\le16/9\) remains **CLAIMED, not stamped** (their page and this book). Specialist pending.
+Writeups later landed on the PR #24 tip. Exact-shell 9D with \(C=4/3\) / \(K\le16/9\) remains **CLAIMED, not stamped**. The three-shear field \(w=(\sin y,\sin z,\sin x)\) is the write-up example: \(K_{1,2}=2/3\) by hand. That is a floor (\(\sup K\ge 2/3\)), not the bound and not \(C_0\). Score: [`NINE-D-TWO-THIRDS.md`](NINE-D-TWO-THIRDS.md). Specialist pending.
 
 ## What is still open
 
@@ -22,7 +22,7 @@ Writeups later landed on the PR #24 tip. Exact-shell 9D with \(C=4/3\) / \(K\le1
 
 ## Already scored (do not redo)
 
-Grow-\(s\) draw \(\max K\approx0.456\); aligned 9B \(0.641\); five lanes; 9A; natural 9C; truncated ABC; SuperGrok ABC stamp (still refused as *that* stamp); Dream Team vote.
+Three-shear floor \(K=2/3\) (example, not bound); grow-\(s\) draw \(\max K\approx0.456\); aligned 9B \(0.641\); five lanes; 9A; natural 9C; truncated ABC; SuperGrok ABC stamp (still refused as *that* stamp); Dream Team vote.
 
 ## Out of this book
 

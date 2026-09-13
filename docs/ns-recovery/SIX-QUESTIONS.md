@@ -28,13 +28,14 @@ This book does **not** stamp that coefficient. The writeup on PR #24 says **CLAI
 
 **No.** Those two numbers are the **maxima of two different finite sweeps**. They are not a universal constant. They must not be merged into one “best \(K\)”.
 
-| Sweep | What it is | Width | Recorded max \(K\) |
+| Object | What it is | Width | \(K\) |
 |---|---|---|---|
+| Three-shear write-up example | \(w=(\sin y,\sin z,\sin x)\), by hand | one field, \((\alpha,\beta)=(1,2)\) | **\(2/3\)** (floor of \(\sup K\), not a bound) |
 | Aligned 9B (this book) | Optimized / aligned closer on exact shells | \(k_{\max}=6\), **24** \((\alpha,\beta)\) pairs | **0.641013** at \((4,8)\) |
 | Natural 9D growing I/O (this book) | Random complex polarizations, growing supports | \(k_{\max}=5\), **1632** pairs (298 with \(K>0\)) | **0.469472** at \((1,2)\) |
 | PR #24 grow-\(s\) | Random draw, seed 1390 | \(k_{\max}=8\), 2084 inputs, **39853** occupied rows | **0.45583** at \((16,32)\), \(s=4\) |
 
-The largest *observed* value on this book is **0.641**. The grow-\(s\) sweep is the widest in occupancy and did **not** beat that. Larger occupancy on that draw lowered \(K\) (\(\max K\) on \(s\ge 24\) was 0.239). None of these is an exhaustive search over all shells.
+Those sweep maxima are **not** the write-up example. The named field \(w=(\sin y,\sin z,\sin x)\) gives \(K_{1,2}=2/3\) by hand. That is a floor, \(\sup K\ge 2/3\), not a bound and not \(C_0\). See [`NINE-D-TWO-THIRDS.md`](NINE-D-TWO-THIRDS.md). It clears \(0.641\) and \(0.456\). It does not prove \(16/9\).
 
 ---
 

@@ -37,6 +37,7 @@ The growing-layer family \(v_n\) is admissible and
 |---|---|
 | Exact-shell 9D coefficient \(K\le 16/9\) | **Not stamped.** Other book: CLAIMED, specialist pending. Different statement. \(v_n\) is not exact-shell. |
 | Finite \(K\) sweeps (aligned 9B, grow-\(s\)) | Historical. Not a universal constant. |
+| Three-shear \(K_{1,2}=2/3\) | Write-up **floor** \(\sup K\ge 2/3\). Not \(C_0\), not \(16/9\). |
 | Soft X, SND, Theorem H, Phi-renorm, Triple Lock, Route N/Q6, Domain Architect “five fingers” | **Still silent.** Do not glue. |
 | Need★ signed dual as written | Cannot repair **this** unrestricted bound unless hypotheses or conclusion change. |
 
