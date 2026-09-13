@@ -477,6 +477,9 @@ That does not unclaim the bound.
 | \(\beta\to 4\alpha\) | \(\gamma\to 0\). No division by \(\gamma\). \(\sqrt{\beta}\) stays positive. |
 | Factor \(3\) | Derived on this page from incidence + AM-GM. Not Ring / Borromean. |
 | Independent specialist sign | **pending.** No name. No date. Soft X silent. |
-| Named verifier | Symbolic identity and growing-layer vs evaluator. Reads the saved sweep summary. Does not run the shell-count experiments on this page. |
+| Named verifier | Does not prove \(16/9\). Growing-layer vs evaluator; reads saved sweep. |
+| Human-checkable without the script | **Yes.** The claim is the written algebra. Specialist still pending. |
+| Superposition of several shells | **No.** Different theorem. Not claimed. |
+| Feeds BKM or \(\int\lvert Au\rvert_2^2\,dt\) | **No.** |
 
 NS not solved.
