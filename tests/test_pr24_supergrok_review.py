@@ -35,6 +35,7 @@ class Pr24SuperGrokReviewTests(unittest.TestCase):
         self.assertNotIn("almost proved", text.lower())
         self.assertNotIn("hygiene", text.lower())
         self.assertIn("Theorem stamp **NO**", text)
+        self.assertIn("8/3", text)
 
     def test_killed_inequality_and_side_conditions_sit(self):
         kill = KILL.read_text()
@@ -56,6 +57,9 @@ class Pr24SuperGrokReviewTests(unittest.TestCase):
         self.assertIn("two-plane incidence", text)
         self.assertIn("CLAIMED", text)
         self.assertIn("r=-p", text.replace("\\", ""))
+        self.assertIn("Geometry on one input shell", text)
+        self.assertIn("8/3", text)
+        self.assertIn("lambda", text.replace("\\", ""))
         tape = TAPE.read_text()
         self.assertIn("PR24-SUPERGROK-REVIEW.md", tape)
         self.assertIn("keep exact-shell", tape)

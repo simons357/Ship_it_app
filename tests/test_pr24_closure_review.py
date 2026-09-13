@@ -32,6 +32,8 @@ class Pr24ClosureReviewTests(unittest.TestCase):
         self.assertGreater(len(MATH_BOUND.read_text()), 800)
         self.assertGreater(len(MATH_KILL.read_text()), 800)
         self.assertIn("16/9", MATH_BOUND.read_text())
+        self.assertIn("Geometry on one input shell", MATH_BOUND.read_text())
+        self.assertIn("8/3", MATH_BOUND.read_text())
         self.assertIn("165888", MATH_KILL.read_text())
 
     def test_family_kills_the_box_on_the_live_evaluator(self):

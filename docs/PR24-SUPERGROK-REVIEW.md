@@ -80,10 +80,16 @@ then
 because
 \(K=\beta\|\Pi_\beta B\|_2^2/(\alpha^2\|w\|_2^4)\).
 \(16/9\) is the max of that cubic
-factor on \(0<\beta\le 4\alpha\).
+factor on \(0<\beta\le 4\alpha\),
+attained at \(x=\beta/\alpha=8/3\).
 Optimality is **not** claimed.
+The kernel geometry
+(\(k\cdot p=\beta/2\),
+\(\lvert k_\perp\rvert^2=\beta(1-\beta/(4\alpha))\))
+now sits on the bound page.
 Specialist review of the weighted
-count, the factor \(3/4\), and the
+count, the factor \(3/4\), the
+kernel step, and the
 two-plane incidence is still pending.
 
 ### 2. Evidence
