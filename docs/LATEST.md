@@ -23,7 +23,9 @@ open. Paper: docs/THEOREM-A-Q1.pdf
 Unrestricted Lemma★ killed by v_n.
 Not a blowup. Replacement closure open:
 docs/LEMMA-STAR-GROWING-LAYER.md
-Exact-shell 9D bound CLAIMED (C=4/3):
+Exact-shell 9D bound CLAIMED (C=4/3;
+good as exact-shell if it sits,
+not a regularity close):
 docs/ATTACK-9D-FULL-SUPPORT-BOUND.md
 Three-shear write-up example K=2/3
 (floor, not 16/9; not a sweep table):

@@ -51,6 +51,14 @@ finite-closer limit. It does not control a
 general multi-shell field. The growing-layer
 family is multi-shell. No contradiction.
 
+If \(K\le 16/9\) sits: yes as an
+exact-shell result (occupancy \(s\)
+gone on one input shell). No as a
+regularity close. It does not restore
+★ \(\Rightarrow\) GR. Until a specialist
+signs, or a near-ceiling sweep sits,
+the word is still CLAIMED.
+
 ---
 
 ## Weighted count

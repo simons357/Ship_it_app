@@ -66,6 +66,31 @@ family is multi-shell. No contradiction.
 
 ---
 
+## If \(K\le 16/9\) sits
+
+**Yes — as an exact-shell result.**
+Occupancy \(s\) is gone on one input
+shell. That is a bound you can write,
+not a sweep maximum. The three-shear
+field then sits under a named ceiling
+instead of under a rumor.
+
+**No — as a regularity close.**
+A true \(4/3\) does not kill or repair
+unrestricted ★. That box is already
+dead by the multi-shell family \(v_n\).
+It does not give a continuation
+criterion. It does not restore
+★ \(\Rightarrow\) GR. Ordinary NS
+stays open.
+
+Until a specialist signs the algebra,
+or a sweep shows nothing near \(16/9\),
+the right word is still **CLAIMED**.
+Soft X silent.
+
+---
+
 ## Weighted count
 
 Let \(S\subset\{p:\lvert p\rvert^2=\alpha\}\),
@@ -149,5 +174,6 @@ gets near \(16/9\).
 | Three-shear \(K=2/3\) as \(C_0\) | **NO.** Write-up example. Floor only. |
 | Two-plane incidence as a theorem | **NO.** Isolated. Still CLAIMED. |
 | Exact-shell \(K\le 16/9\) | **CLAIMED.** Specialist pending. |
+| \(16/9\) as a regularity close | **NO.** Even if the bound sits. |
 | Unrestricted ★ | **NO.** Other page. |
 | Ordinary NS | **OPEN.** |

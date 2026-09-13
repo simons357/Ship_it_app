@@ -138,6 +138,15 @@ that. Specialist review of the
 derivation is still pending. No
 such near-ceiling sweep sits.
 
+If \(K\le 16/9\) later sits: good as
+an exact-shell result, occupancy
+\(s\) gone on one input shell.
+Not a regularity close. Does not
+kill or repair unrestricted ★.
+Does not restore ★ \(\Rightarrow\) GR.
+Ordinary NS stays open. Until then
+the word is still **CLAIMED**.
+
 ---
 
 ## Status

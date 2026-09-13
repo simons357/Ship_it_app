@@ -49,9 +49,12 @@ class Attack9DTwoThirdsTests(unittest.TestCase):
         self.assertIn("2/3", bound)
         self.assertIn("CLAIMED", bound)
         self.assertIn("write-up example", bound)
+        self.assertIn("as an exact-shell result", bound)
+        self.assertIn("regularity close", bound)
         self.assertIn("ATTACK-9D-TWO-THIRDS.md", tape)
         self.assertIn("2/3", tape)
         self.assertIn("write-up example", tape)
+        self.assertIn("regularity close", tape)
 
 
 if __name__ == "__main__":

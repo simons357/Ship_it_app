@@ -6,7 +6,9 @@ Replacement closure is the leftover:
 docs/LEMMA-STAR-GROWING-LAYER.md
 scripts/ns_attacks/verify_pr24_closure_review.py
 Exact-shell 9D bound CLAIMED
-(C=4/3, specialist pending):
+(C=4/3, specialist pending;
+good as exact-shell if it sits,
+not a regularity close):
 docs/ATTACK-9D-FULL-SUPPORT-BOUND.md
 Three-shear write-up example K=2/3
 (floor, not the ceiling):
