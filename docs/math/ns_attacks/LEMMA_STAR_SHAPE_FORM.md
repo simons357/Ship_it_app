@@ -14,6 +14,23 @@ Filename alias for desktop `LEMMA_STAR_CANONICAL.md`: [`LEMMA_STAR_CANONICAL.md`
 
 ---
 
+---
+
+## Cross-link — spectral-shift identity (not this bound)
+
+The **spectral-shift identity** is exact bookkeeping on a shell/triad chain
+(lattice shift by a constant \(\omega_*\), not by \(\Lambda\)). It is **distinct**
+from the **Lemma★ ratio bound** \(\mathcal{R}_\star\) / \(C_{\mathrm{geom}}\) locked
+in this file. Establishing that identity does **not** establish this bound and
+does **not** control nonlinear transfer.
+
+Filed Status / Terminology / Scope (axisymmetric shell estimate / PR #70 stack):
+branch `cursor/axisymmetric-shell-audit-9d6b` (also
+`cursor/spectral-shift-terminology-a0eb`), path
+`docs/papers/swirl/AXISYMMETRIC-SHELL-ESTIMATE.md`.
+**NS not solved. Lemma★ remains OPEN.**
+
+
 ## Absolute Source of Truth (lock verbatim meaning)
 
 For a nonzero, mean-zero, divergence-free field \(v\) on the normalized torus \(\mathbb{T}^3=(\mathbb{R}/2\pi\mathbb{Z})^3\), set

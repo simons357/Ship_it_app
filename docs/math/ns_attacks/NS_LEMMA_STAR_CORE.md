@@ -13,6 +13,13 @@
 
 No external Stokes/eigenbasis code is imported. Independence from `stokes_moments.py` is intentional.
 
+
+## Not the spectral-shift identity
+
+Do **not** conflate Lemma★ / \(\mathcal{R}_\star\) with the **spectral-shift identity**
+(shell/triad bookkeeping on the axisymmetric-with-swirl estimate stack). That
+identity does not prove this bound. See `LEMMA_STAR_SHAPE_FORM.md` § Cross-link.
+
 ## Relation to `stokes_moments.py`
 
 Same SoT formulas; different field representation (`Field` class vs `dict` of modes). Numerical cross-checks on shared two-shell / mapped fields should agree on \(E,X,Y,Z,\Lambda,\mathcal{D}_s,T_c,\mathcal{R}_\star\) when modes are mapped 1–1. Disagreement would indicate a bug, not a different lemma.

@@ -241,3 +241,7 @@ Pointers:
 ## ManagePullRequest note
 
 `ManagePullRequest` is **not available** in this agent toolset (read-only `gh` only). PR #48 already exists and is OPEN at the URL above; locator commit should land on the same head branch so the PR picks it up automatically after push.
+
+## Spectral-shift identity (cross-link only)
+
+The **spectral-shift identity** (axisymmetric shell estimate / PR #70) is **not** the Lemma★ ratio bound. See `LEMMA_STAR_SHAPE_FORM.md` § Cross-link. **NS not solved.**
