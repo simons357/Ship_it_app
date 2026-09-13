@@ -54,7 +54,7 @@ Any proposed finite \(C_{\mathrm{geom}}\) fails for integer \(n>165888\,C_{\math
 \]
 is **false**. Lemma★ as one geometry-only constant for every divergence-free field is **dead**. Kill lane for that statement has succeeded.
 
-Specialist review should still check the closed-form derivation of \(T_c=3n^5(3n^2+3n+1)\) on paper. The evaluator match does not replace a proof-assistant check. The identity is confirmed here for \(n=1\ldots8\).
+Specialist review should still check the closed-form derivation of \(T_c=3n^5(3n^2+3n+1)\) on paper. This book checked it on the evaluator for \(n=1\ldots8\), **not** by hand for general \(n\). The elementary \(\mathcal R_\star\ge n/165888\) uses that formula. \(D_s(v_n)>0\) for every \(n\ge 1\) is by hand (eigenvalues \(n^2,2n^2,5n^2\) at \(j=0\)). Break questions: [`SPECIALIST-BREAK-QUESTIONS.md`](SPECIALIST-BREAK-QUESTIONS.md).
 
 This family is **not** a uniform dilation of one field. It is **not** exact-shell. Do **not** merge with ABC_λ or with grow-\(s\).
 

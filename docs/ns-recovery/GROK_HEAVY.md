@@ -36,7 +36,7 @@ Human: Jonathan Simons (`winchester.anesthesia@gmail.com` / `simonsmedical@iclou
 
 ## What you are being asked to do
 
-Remaining-work lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Six straight answers: [`SIX-QUESTIONS.md`](SIX-QUESTIONS.md). Replacement closure: [`REPLACEMENT-CLOSURE.md`](REPLACEMENT-CLOSURE.md). Bounded aspect does not exclude \(v_n\).
+Remaining-work lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Specialist break questions: [`SPECIALIST-BREAK-QUESTIONS.md`](SPECIALIST-BREAK-QUESTIONS.md). Six straight answers: [`SIX-QUESTIONS.md`](SIX-QUESTIONS.md). Replacement closure: [`REPLACEMENT-CLOSURE.md`](REPLACEMENT-CLOSURE.md). Bounded aspect does not exclude \(v_n\).
 
 1. **Unrestricted ★ is dead** on \(v_n\). Replacement closure for unaugmented regularity is the live analytic job. Need★ dual cannot repair the same bound.
 2. **Exact-shell 9D** (\(K\le16/9\)): **CLAIMED** — written derivation available; internal checks passed; independent specialist pending. Sweeps are consistency only. Next review: weighted incidence and the complex-polarization identity. [`ATTACK-9D-FULL-SUPPORT-SCORE.md`](ATTACK-9D-FULL-SUPPORT-SCORE.md). **No as a regularity close.**

@@ -3,7 +3,7 @@
 **Locked:** 12 September 2026 (after growing-layer score)  
 **This wording is the record.**
 
-**NS is not solved.** Unrestricted Lemma★ (one finite \(C_{\mathrm{geom}}\) for every divergence-free field) is **dead** on \(v_n\). Score: [`GROWING-LAYER-SCORE.md`](GROWING-LAYER-SCORE.md). Six straight answers: [`SIX-QUESTIONS.md`](SIX-QUESTIONS.md).
+**NS is not solved.** Unrestricted Lemma★ (one finite \(C_{\mathrm{geom}}\) for every divergence-free field) is **dead** on \(v_n\). Score: [`GROWING-LAYER-SCORE.md`](GROWING-LAYER-SCORE.md). Six straight answers: [`SIX-QUESTIONS.md`](SIX-QUESTIONS.md). Specialist break questions: [`SPECIALIST-BREAK-QUESTIONS.md`](SPECIALIST-BREAK-QUESTIONS.md).
 
 ---
 
