@@ -82,11 +82,27 @@ because
 \(16/9\) is the max of that cubic
 factor on \(0<\beta\le 4\alpha\),
 attained at \(x=\beta/\alpha=8/3\).
-Optimality is **not** claimed.
+The derivative and the endpoints
+now sit on the bound page.
+That calculus does not prove the
+envelope. Optimality is **not** claimed.
+Conventions (normalized torus,
+\(\alpha>0\), \(w\neq 0\)) and the
+constraint set sit with the bound.
+Hermitian Cauchy–Schwarz covers
+independent complex polarizations
+on the one-mode factor
+\(\lvert k\cdot w_p\rvert\le\lvert k_\perp\rvert\,\lvert w_p\rvert\).
+Live \(B\) is the ordered sum with
+no extra \(1/2\). A reconstructed
+\(3/4=(1/2)^2\cdot 3\) is **NO**.
 The kernel geometry
 (\(k\cdot p=\beta/2\),
 \(\lvert k_\perp\rvert^2=\beta(1-\beta/(4\alpha))\))
-now sits on the bound page.
+sits. The verifier is an internal
+check: live family, live sample \(K\),
+live count ratios, saved grow-\(s\).
+It does not certify \(16/9\).
 Specialist review of the weighted
 count, the factor \(3/4\), the
 kernel step, and the

@@ -24,6 +24,9 @@ Unrestricted Lemma★ killed by v_n.
 Not a blowup. Replacement closure open:
 docs/LEMMA-STAR-GROWING-LAYER.md
 Exact-shell 9D bound CLAIMED (C=4/3;
+cubic max at x=8/3 is calculus,
+not the envelope; internal check
+is not independent review;
 good as exact-shell if it sits,
 not a regularity close):
 docs/ATTACK-9D-FULL-SUPPORT-BOUND.md

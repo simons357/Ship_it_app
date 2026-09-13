@@ -61,6 +61,9 @@ The write-up example for exact-shell \(K\)
 is the three-shear field, not a sweep table.
 SuperGrok’s “keep \(4/3\) as a theorem”
 is NO. CLAIMED.
+The cubic max at \(x=8/3\) is calculus,
+not the envelope. Internal checks are
+not independent review.
 [`PR24-SUPERGROK-REVIEW.md`](PR24-SUPERGROK-REVIEW.md).
 The named kill of unrestricted ★ already sits. Do not
 restore occupation decay from the wall detector

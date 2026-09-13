@@ -175,6 +175,16 @@ It does not restore ★ \(\Rightarrow\)
 global regularity. Until a specialist
 signs, or a sweep shows nothing near
 \(16/9\), the word is still CLAIMED.
+The cubic max of the claimed envelope
+at \(x=8/3\) is YES as calculus and
+still NO as a proof of the envelope.
+Internal checks are not independent
+review. Live \(B\) has no extra \(1/2\);
+a reconstructed \(3/4=(1/2)^2\cdot 3\)
+is NO. Conventions (normalized torus,
+\(\alpha>0\), \(w\neq 0\)) and the
+constraint \(0<\beta\le 4\alpha\) sit
+on the bound page.
 
 Those three words do not trade.
 NS not solved. RH not solved.

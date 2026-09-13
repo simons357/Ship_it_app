@@ -55,10 +55,25 @@ class Attack9DTwoThirdsTests(unittest.TestCase):
         self.assertIn("Geometry on one input shell", bound)
         self.assertIn("8/3", bound)
         self.assertIn("lambda", bound.replace("\\", ""))
+        self.assertIn("Hermitian", bound)
+        self.assertIn("Constraint set", bound)
+        self.assertIn("internal check", bound)
+        self.assertIn("no extra", bound)
         self.assertIn("ATTACK-9D-TWO-THIRDS.md", tape)
         self.assertIn("2/3", tape)
         self.assertIn("write-up example", tape)
         self.assertIn("regularity close", tape)
+        self.assertIn("internal", tape.lower())
+        self.assertIn("envelope", tape.lower())
+
+    def test_claimed_cubic_max_is_16_over_9_at_eight_thirds(self):
+        def f(x: float) -> float:
+            return 0.75 * x * x * (1.0 - x / 4.0)
+
+        self.assertAlmostEqual(f(8.0 / 3.0), 16.0 / 9.0, places=12)
+        self.assertAlmostEqual(f(4.0), 0.0, places=12)
+        grid = [i / 300.0 for i in range(1, 1201)]
+        self.assertLessEqual(max(f(x) for x in grid), 16.0 / 9.0 + 1e-9)
 
 
 if __name__ == "__main__":

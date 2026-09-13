@@ -72,8 +72,30 @@ polarization may have independent complex
 coefficients. Optimality of the constant is
 not claimed.
 
-For \(\beta>4\alpha\) no pairs occur:
-\(\lvert p+q\rvert\le 2\sqrt{\alpha}\).
+**Conventions.** Normalized torus
+\(\mathbb{T}^3=(\mathbb{R}/2\pi\mathbb{Z})^3\).
+Fourier \(w=\sum\widehat w_k e^{ik\cdot x}\),
+Plancherel \(\|w\|_2^2=\sum\lvert\widehat w_k\rvert^2\).
+Same bilinear as the locked evaluator:
+\(\widehat B_k=i\,P_k\sum_{p+q=k}(q\cdot\widehat w_p)\widehat w_q\),
+both orders present, no extra \(1/2\).
+An ordered-convolution reading that writes
+the factor \(3/4\) as \((1/2)^2\) times the
+count \(3\) is a reconstruction. It does
+not match this \(B\). Do not cash it as
+the kernel remainder.
+
+**Constraint set, stated with the bound.**
+The inequality is for \(\alpha>0\),
+\(w\neq 0\), \(Aw=\alpha w\), and \(\beta>0\).
+If \(\beta>4\alpha\) no pairs occur
+(\(\lvert p+q\rvert\le 2\sqrt{\alpha}\)),
+so \(\Pi_\beta B=0\) and the line holds
+vacuously. The cubic comparison below
+uses the closed range \(0<\beta\le 4\alpha\),
+i.e. \(x=\beta/\alpha\in(0,4]\). That
+constraint sits here, not as a later
+remark.
 
 This does not control an arbitrary simultaneous
 finite-closer limit, and it does not control
@@ -94,12 +116,20 @@ Fix \(p+q=k\), \(\lvert p\rvert^2=\lvert q\rvert^2=\alpha\),
 =
 \beta\Bigl(1-\frac{\beta}{4\alpha}\Bigr).
 \]
-Because \(w_p\perp p\),
+Because \(w_p\perp p\) (complex bilinear
+\(p\cdot w_p=0\)) and \(k_\perp\) is real,
 \[
 \lvert k\cdot w_p\rvert
 \le
 \sqrt{\beta\bigl(1-\beta/(4\alpha)\bigr)}\,|w_p|.
 \]
+This is Cauchy–Schwarz on \(\mathbb{C}^3\)
+for the standard Hermitian inner product.
+It saturates when \(w_p\) is complex-parallel
+to \(k_\perp\). Independent complex
+polarizations do not weaken this one-mode
+bound. The claimed \(3/4\) is a later
+step on the sum, not this CS.
 The Fourier bilinear on the locked evaluator is
 \[
 \widehat B_k
@@ -162,6 +192,30 @@ The audit draws this count on shells
 ratio \(\le 3\). That is a check, not the
 lattice theorem.
 
+**What the machine actually ran.**
+`verify_pr24_closure_review.py` is an
+internal check. It is not independent
+review. It does four things:
+
+1. Live growing-layer moments against
+   the closed-form \(T_c\) and against
+   a saved \(n=1..4\) table.
+2. Live random exact-shell \(K\) on five
+   pairs. Those \(K\) sit under \(16/9\).
+   That is a sample, not the bound.
+3. Live random weighted-count ratios on
+   three pairs. Ratio \(\le 3\) there.
+   That is not the lattice theorem.
+4. Reads the grow-\(s\) maximum from a
+   saved sweep JSON. It does not rerun
+   that sweep.
+
+It does not run a near-ceiling search.
+It does not certify \(16/9\). A reviewer
+who treats those printed ratios as the
+count experiment will trust the number
+for the wrong reason.
+
 ---
 
 ## Polarization and the \(K\) form
@@ -180,16 +234,50 @@ K_{\alpha,\beta}(w)
 (0<\beta\le 4\alpha).
 \]
 
-Let \(x=\beta/\alpha\in(0,4]\). The elementary
-maximum of \((3/4)x^2(1-x/4)\) is \(16/9\)
-at \(x=8/3\). That is the claimed \(K\) bound.
-\(C=4/3=\sqrt{16/9}\) is the constant in
+Let \(x=\beta/\alpha\in(0,4]\) — the
+constraint set above, not an unspoken
+range. Write
+\[
+f(x)
+=
+\frac{3}{4}x^2\Bigl(1-\frac{x}{4}\Bigr)
+=
+\frac{3}{4}\Bigl(x^2-\frac{x^3}{4}\Bigr).
+\]
+Then
+\[
+f'(x)
+=
+\frac{3}{4}\Bigl(2x-\frac{3x^2}{4}\Bigr)
+=
+\frac{3}{4}\,x\Bigl(2-\frac{3x}{4}\Bigr).
+\]
+Critical points \(x=0\) (excluded) and
+\(x=8/3\in(0,4]\). Endpoints:
+\(f(x)\to 0\) as \(x\to 0^+\),
+\(f(4)=0\). The interior value is
+\[
+f\Bigl(\frac{8}{3}\Bigr)
+=
+\frac{3}{4}\cdot\frac{64}{9}\cdot\Bigl(1-\frac{2}{3}\Bigr)
+=
+\frac{3}{4}\cdot\frac{64}{9}\cdot\frac{1}{3}
+=
+\frac{16}{9}.
+\]
+That is the maximum of the **claimed
+envelope**. It does not prove the
+envelope. \(C=4/3=\sqrt{16/9}\) is the
+constant in
 \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}E\).
-Optimality is not claimed.
+Optimality of \(4/3\) is not claimed.
 
-The specialist should check the kernel
-calculation, the factor \(3/4\), and the
-limiting-closer scope.
+Internal check: this one-variable
+calculus sits. Independent review
+still has to sign the kernel, the
+factor \(3/4\), the two-plane count,
+and the limiting-closer scope.
+Those are different jobs.
 
 Random exact-shell fields on
 \((4,8)\), \((5,4)\), \((9,4)\), \((16,32)\),
@@ -209,6 +297,9 @@ Those numbers sit. They are not the proof.
 | Three-shear \(K=2/3\) as \(C_0\) | **NO.** write-up example. Floor only. |
 | Two-plane incidence as a theorem | **NO.** Isolated. Still CLAIMED. |
 | Exact-shell \(K\le 16/9\) | **CLAIMED.** \(C=4/3\). Occupancy \(s\) gone on one input shell if it holds. |
+| Cubic max of the claimed envelope | **YES** as calculus at \(x=8/3\). **NO** as a proof of the envelope. |
+| Live audit as \(16/9\) | **NO.** Internal check. Not independent review. |
+| Reconstructed \(3/4=(1/2)^2\cdot 3\) | **NO.** Live \(B\) has no extra \(1/2\). |
 | Sweep max \(0.641\) / \(0.456\) as the ceiling | **NO.** Not the bound. |
 | True \(4/3\) as a regularity close | **NO.** Does not repair ★. No continuation. |
 | Unrestricted ★ | **NO.** Dead by \(v_n\). |

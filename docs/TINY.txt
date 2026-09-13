@@ -7,6 +7,9 @@ docs/LEMMA-STAR-GROWING-LAYER.md
 scripts/ns_attacks/verify_pr24_closure_review.py
 Exact-shell 9D bound CLAIMED
 (C=4/3, specialist pending;
+cubic max at x=8/3 is calculus,
+not the envelope; internal check
+is not independent review;
 good as exact-shell if it sits,
 not a regularity close):
 docs/ATTACK-9D-FULL-SUPPORT-BOUND.md
