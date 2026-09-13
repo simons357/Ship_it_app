@@ -7,10 +7,17 @@ remainder is occupancy \(s\);
 the claimed bound removes that factor
 on a single input shell.
 
-**This is a different statement from unrestricted
-Lemma★.** The unrestricted box is killed by the
-growing-layer family. This page does not
-resurrect it. Specialist review of the
+**Limitation (labeled).** This page
+bounds \(K_{\alpha,\beta}(w)\) for a
+single input shell \(Aw=\alpha w\).
+It does not bound a general multi-shell
+field. It does not bound an arbitrary
+simultaneous finite-closer limit.
+Unrestricted Lemma★ is a different
+statement. That box is killed by \(v_n\).
+This page does not resurrect it.
+No contradiction. Do not read past
+this box. Specialist review of the
 weighted count, the kernel step, and the
 polarization factor is pending.
 NS is not solved.
@@ -74,10 +81,9 @@ i.e. \(x=\beta/\alpha\in(0,4]\). That
 constraint sits here, not as a later
 remark.
 
-This does not control an arbitrary simultaneous
-finite-closer limit, and it does not control
-a general multi-shell field. The growing-layer
-family is multi-shell. No contradiction.
+The limitation box above is the scope.
+Do not promote this line past one
+input shell.
 
 If \(K\le 16/9\) holds, occupancy \(s\)
 is gone on a single input shell.
@@ -85,12 +91,19 @@ That is a written bound on exact-shell
 fields, not a sweep maximum.
 The three-shear field then sits under
 a named ceiling, not under a rumor.
+Sanity: \(K_{1,2}=2/3\) sits strictly
+inside \(16/9\). Floor, not a proof of
+the ceiling.
 No as a regularity close. A true
 \(4/3\) does not restore
 ★ \(\Rightarrow\) global regularity.
 Until a specialist signs, or a sweep
 shows nothing near \(16/9\), the word
 is still CLAIMED.
+**Independent review.** Pending. No name.
+No date. Soft X silent. This page is
+not a letter to Tao, Albritton, Vicol,
+or Gómez-Serrano.
 
 ---
 
@@ -106,20 +119,49 @@ Fix \(p+q=k\), \(\lvert p\rvert^2=\lvert q\rvert^2=\alpha\),
 =
 \beta\Bigl(1-\frac{\beta}{4\alpha}\Bigr).
 \]
+Write \(k=k_\parallel+k_\perp\) with
+\(k_\parallel=(\beta/(2\alpha))p\), so
+\(k_\perp\cdot p=0\) and \(k_\perp\) is real.
 Because \(w_p\perp p\) (complex bilinear
-\(p\cdot w_p=0\)) and \(k_\perp\) is real,
+\(p\cdot w_p=0\)),
+\(k\cdot w_p=k_\perp\cdot w_p
+=\sum_j(k_\perp)_j(w_p)_j\).
+The standard Hermitian product on
+\(\mathbb{C}^3\) is
+\(\langle u,v\rangle=\sum_j u_j\overline{v}_j\).
+Then
 \[
 \lvert k\cdot w_p\rvert
+=
+\bigl\lvert\langle k_\perp,\overline{w_p}\rangle\bigr\rvert
 \le
+\lvert k_\perp\rvert\,\lvert w_p\rvert
+=
 \sqrt{\beta\bigl(1-\beta/(4\alpha)\bigr)}\,|w_p|.
 \]
-This is Cauchy–Schwarz on \(\mathbb{C}^3\)
-for the standard Hermitian inner product.
-It saturates when \(w_p\) is complex-parallel
-to \(k_\perp\). Independent complex
-polarizations do not weaken this one-mode
-bound. The claimed \(3/4\) is a later
-step on the sum, not this CS.
+Equality iff \(w_p=\lambda k_\perp\) for
+some \(\lambda\in\mathbb{C}\). That choice
+is a legal transverse polarization
+(still \(\perp p\)). So the one-mode
+bound is available for independently
+complex coefficients. Modewise equality
+does not make \(K=16/9\) sharp.
+The claimed \(3/4\) is a later step on
+the sum, not this CS.
+
+As \(\beta\to 4\alpha^-\),
+\(\lvert k_\perp\rvert\to 0\). The estimate
+is a product. Nothing in the argument
+divides by \(\lvert k_\perp\rvert\) or by
+\(1-\beta/(4\alpha)\). The claimed
+envelope \(f(x)\) vanishes at \(x=4\).
+The \(C\) form has \(\alpha/\sqrt{\beta}\);
+here \(\beta\to 4\alpha>0\), so
+\(\sqrt{\beta}\) stays bounded away from
+zero. At \(\beta=4\alpha\) the pairs are
+collinear, \(k_\perp=0\), \(k\cdot w_p=0\),
+and those contributions vanish. Not a
+singular limit.
 The Fourier bilinear on the locked evaluator is
 \[
 \widehat B_k
@@ -151,39 +193,62 @@ The claimed lattice inequality is
 3\Bigl(\sum_{p\in S}a_p^2\Bigr)^2.
 \]
 
-Expand the square. A fixed pair \((p,r)\)
-contributes only at outputs \(k\) that satisfy
-\(\lvert k\rvert^2=\beta\) and
-\(k\cdot p=k\cdot r=\beta/2\).
+The factor \(3\) is derived on this page
+from the two-plane proposition below
+plus AM-GM. It is not imported from
+the Ring Lemma (REPAIR) or from a
+Borromean triad count. Those are a
+different leftover. Do not glue them
+here.
+
+Expand the square:
+\[
+\sum_{\lvert k\rvert^2=\beta}c_k^2
+=
+\sum_{p,r\in S}a_p a_r
+\sum_{k\in\mathcal K(p,r)}a_{k-p}a_{k-r},
+\]
+where
+\(\mathcal K(p,r)
+=\{k:\lvert k\rvert^2=\beta,\,
+k\cdot p=k\cdot r=\beta/2,\,
+k-p,k-r\in S\}\).
+
+### Claimed proposition — two-plane incidence
+
+A fixed pair \((p,r)\) can meet only those
+outputs. Isolated on this page.
 
 - If \(p\) and \(r\) are linearly independent,
   two affine planes meet the sphere
   \(\lvert k\rvert^2=\beta\) in at most two points.
+  So \(\#\mathcal K(p,r)\le 2\).
 - If \(r=\lambda p\) and \(\lvert p\rvert^2=\lvert r\rvert^2=\alpha\),
   then \(\lambda=\pm 1\). The case \(r=p\) is
   the diagonal. The case \(r=-p\) forces
   \(\beta=0\), which is excluded.
 
-So a fixed distinct pair meets at most two
-outputs. Weighted AM-GM bounds the
-off-diagonal contribution by twice the
-squared mass. The diagonal is at most once
-the squared mass. Total factor \(3\).
+Split. Diagonal \(p=r\):
+\(\#\mathcal K(p,p)\le 1\), hence
+\[
+\sum_p a_p^2\sum_{k\in\mathcal K(p,p)}a_{k-p}^2
+\le
+\Bigl(\sum_{p\in S}a_p^2\Bigr)^2.
+\]
+Off-diagonal \(p\neq r\):
+\(\#\mathcal K(p,r)\le 2\) and AM-GM
+\(a_p a_r a_{k-p}a_{k-r}
+\le\tfrac12(a_p^2 a_{k-p}^2+a_r^2 a_{k-r}^2)\)
+bounds that contribution by twice the
+squared mass. Total factor \(3\).
 
-### Claimed proposition — two-plane incidence
-
-The two bullets above. Isolated so a
-specialist can accept or break them by
-naming one pair that meets three outputs
-on a shell \(\beta>0\). Isolating is not
-certification.
-
-**Status: CLAIMED.** Isolated so a
-specialist can accept it or break it
-by naming one pair \((p,r)\) that meets
-three outputs on a shell \(\beta>0\).
-Isolating the proposition is not a
-proof assistant.
+**Status: CLAIMED.** A specialist can
+break the two-plane step by naming one
+pair that meets three outputs on a
+shell \(\beta>0\). Isolating is not
+certification. The derivation of \(3\)
+from that proposition plus AM-GM sits
+here. There is no other pointer.
 
 The audit draws this count on
 \((4,8)\), \((5,4)\), \((1,2)\) and prints
@@ -302,7 +367,11 @@ or a near-ceiling sweep. Neither sits.
 | Designed \(\Theta(m^2)\) 9D | **NO.** Dead. |
 | Grow-\(s\) finite max as \(C_0\) | **NO.** Historical. |
 | Three-shear \(K=2/3\) as \(C_0\) | **NO.** write-up example. Floor only. |
+| \(2/3<16/9\) as a sanity check | **YES.** Floor strictly inside claimed ceiling. Not a proof of \(16/9\). |
+| Factor \(3\) as a theorem | **NO.** On-page from claimed two-plane + AM-GM. |
+| Ring Lemma / Borromean as this count | **NO.** Different leftover. REPAIR. |
 | Two-plane incidence as a theorem | **NO.** Isolated. Still CLAIMED. |
+| Named independent reviewer / date | **NO.** Pending. Soft X silent. Not a letter. |
 | Exact-shell \(K\le 16/9\) | **CLAIMED.** \(C=4/3\). Occupancy \(s\) gone on one input shell if it holds. |
 | Cubic max of the claimed envelope | **YES** as calculus at \(x=8/3\). **NO** as a proof of the envelope. |
 | Live audit as \(16/9\) | **NO.** Internal check. Not independent review. |

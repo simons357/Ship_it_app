@@ -25,8 +25,10 @@ Not a blowup. Replacement closure open:
 docs/LEMMA-STAR-GROWING-LAYER.md
 Exact-shell 9D bound CLAIMED (C=4/3;
 cubic max at x=8/3 is calculus,
-not the envelope; internal check
+not the envelope; factor 3 is
+on-page, not Ring; internal check
 is not independent review;
+no named reviewer;
 good as exact-shell if it sits,
 not a regularity close):
 docs/ATTACK-9D-FULL-SUPPORT-BOUND.md

@@ -185,6 +185,15 @@ is NO. Conventions (normalized torus,
 \(\alpha>0\), \(w\neq 0\)) and the
 constraint \(0<\beta\le 4\alpha\) sit
 on the bound page.
+The factor \(3\) is derived on that
+page from claimed two-plane plus AM-GM.
+It is not the Ring Lemma and not
+Borromean. \(2/3<16/9\) is YES as a
+sanity check and still NO as \(16/9\).
+As \(\beta\to 4\alpha\) nothing divides
+by \(\lvert k_\perp\rvert\). Independent
+review has no name and no date. Soft X
+silent. Not a letter.
 
 Those three words do not trade.
 NS not solved. RH not solved.

@@ -37,6 +37,9 @@ class Pr24ClosureReviewTests(unittest.TestCase):
         self.assertIn("Hermitian", MATH_BOUND.read_text())
         self.assertIn("Constraint set", MATH_BOUND.read_text())
         self.assertIn("internal check", MATH_BOUND.read_text())
+        self.assertIn("Limitation", MATH_BOUND.read_text())
+        self.assertIn("Ring Lemma", MATH_BOUND.read_text())
+        self.assertIn("strictly inside", MATH_BOUND.read_text())
         self.assertIn("165888", MATH_KILL.read_text())
 
     def test_family_kills_the_box_on_the_live_evaluator(self):

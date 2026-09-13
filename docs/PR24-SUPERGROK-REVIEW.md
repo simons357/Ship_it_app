@@ -103,6 +103,16 @@ sits. The verifier is an internal
 check: live family, live sample \(K\),
 live count ratios, saved grow-\(s\).
 It does not certify \(16/9\).
+The factor \(3\) is derived on the
+bound page from claimed two-plane
+plus AM-GM. Not the Ring Lemma.
+Hermitian CS is written as
+\(\lvert\langle k_\perp,\overline{w_p}\rangle\rvert\).
+\(2/3<16/9\) is a sanity check.
+As \(\beta\to 4\alpha\) nothing divides
+by \(\lvert k_\perp\rvert\).
+Independent review: no name, no date.
+Soft X silent. Not a letter.
 Specialist review of the weighted
 count, the factor \(3/4\), the
 kernel step, and the

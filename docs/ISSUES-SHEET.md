@@ -64,6 +64,9 @@ is NO. CLAIMED.
 The cubic max at \(x=8/3\) is calculus,
 not the envelope. Internal checks are
 not independent review.
+The factor \(3\) is on-page from claimed
+two-plane plus AM-GM, not the Ring Lemma.
+Independent review has no name and no date.
 [`PR24-SUPERGROK-REVIEW.md`](PR24-SUPERGROK-REVIEW.md).
 The named kill of unrestricted ★ already sits. Do not
 restore occupation decay from the wall detector
