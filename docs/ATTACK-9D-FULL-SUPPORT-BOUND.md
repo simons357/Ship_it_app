@@ -13,10 +13,26 @@ internal checks passed; independent
 specialist review pending. Numerical
 sweeps provide consistency checks only.
 
-**This is a different statement from unrestricted
-Lemma★.** The unrestricted box is the growing-layer
-family ([`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md)).
-This page does not resurrect it.
+No reviewer is named on this page.
+No date is booked. A list of possible
+later readers is not an assignment.
+Soft X silent.
+
+### Limitation (read this first)
+
+| This page claims | This page does not claim |
+|---|---|
+| A bound for \(Aw=\alpha w\) on **one input shell** | A bound for a general multi-shell field |
+| Occupancy \(s\) gone **if** \(K\le 16/9\) holds | A continuation criterion |
+| Written algebra/geometry for that shell | Unrestricted \(\star\), or a repair of \(\star\) |
+| Internal audit + symbolic checks | Independent specialist sign |
+
+Unrestricted \(\star\) is a different statement.
+Its counterexample is the growing-layer
+family \(v_n\)
+([`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md)).
+This page does not resurrect that box.
+A true \(4/3\) does not kill or repair it.
 
 If \(K\le 16/9\) holds, occupancy \(s\) is
 gone on a **single input shell**. That is a
@@ -56,10 +72,11 @@ Math pointer: [`docs/math/ns_attacks/ATTACK_9D_FULL_SUPPORT_BOUND.md`](math/ns_a
 Grow-\(s\) page: [`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md).
 
 The next review is concrete: verify the
-weighted incidence argument and the
-complex-polarization identity. The
-exact-shell scope stays separated from
-unrestricted ★.
+weighted incidence argument (factor \(3\),
+derived below on this page) and the
+Hermitian residual estimate. Do not
+import the Ring Lemma or Borromean triad
+count. Those are other statements.
 
 ---
 
@@ -102,6 +119,19 @@ The geometric constraint is
 uses \(\beta>0\). At the endpoints of
 \(x=\beta/\alpha\in(0,4]\), the elementary
 majorant below is \(0\).
+
+**Boundary \(\beta\to 4\alpha\).** Write
+\(\gamma=\sqrt{\beta(1-\beta/(4\alpha))}\).
+Then \(\gamma\to 0\). Every pair estimate
+on this page is of the form
+\(\lvert\,\cdot\,\rvert\le\gamma\,\lvert w_p\rvert\,\lvert w_q\rvert\).
+Nothing divides by \(\gamma\) or by
+\(1-\beta/(4\alpha)\). The \(C=4/3\) form
+divides by \(\sqrt{\beta}\), and
+\(\beta\to 4\alpha>0\), so that factor
+stays bounded. The case \(\beta=0\) is
+already excluded from \(K\) and from the
+pair geometry.
 
 ---
 
@@ -177,17 +207,31 @@ on the specified shells,
 \,|w_p|\,|w_q|.
 \]
 
-The in-plane components cancel after
-projection (real geometry of \(k,p,q\)).
-The remaining component is estimated by
-Hermitian Cauchy–Schwarz on \(\mathbb C^3\).
-That inequality does not require real or
-aligned polarizations; it is the same
-bound for independently complex
-transverse coefficients. The complete
-kernel calculation is in §3 of the
-underlying proof. This page does not
-replace that calculation.
+The inner product on polarizations is
+Hermitian,
+\(\langle u,v\rangle=\sum_{j=1}^3 \overline{u_j}v_j\).
+For every \(u,v\in\mathbb C^3\),
+\(\lvert\langle u,v\rangle\rvert^2\le\lvert u\rvert^2\lvert v\rvert^2\).
+No reality or alignment is used.
+
+After \(P_k\), the in-plane parts cancel
+by the real geometry of \(k,p,q\). The
+residual is a single complex multiple of
+a real unit vector \(e_\perp\perp k\):
+\(\zeta e_\perp\) with \(\zeta\in\mathbb C\).
+Then
+\(\lvert P_k[(q\cdot w_p)w_q+(p\cdot w_q)w_p]\rvert=\lvert\zeta\rvert\),
+and Hermitian Cauchy–Schwarz on the
+remaining coefficients gives
+\(\lvert\zeta\rvert\le\gamma\lvert w_p\rvert\lvert w_q\rvert\).
+Saturation is not claimed. Independently
+complex transverse coefficients stay
+inside this inequality because it never
+used \(\mathrm{Im}=0\).
+
+The complete kernel cancellation is in
+§3 of the underlying proof. This page
+does not replace that calculation.
 
 The ordered convolution equals half its
 symmetrization. Squaring contributes
@@ -264,41 +308,52 @@ not replaced that by a proof assistant.
 
 ---
 
-## Weighted count
+## Weighted count (factor \(3\), on this page)
 
 Let \(S\subset\{p:\lvert p\rvert^2=\alpha\}\),
-\(a_p\ge 0\), and
+\(a_p\ge 0\), \(M=\sum_{p\in S}a_p^2\), and
 \(c_k=\sum_{p+q=k}a_p a_q\).
-The claimed lattice inequality is
+The lattice inequality used above is
 
 \[
 \sum_{\lvert k\rvert^2=\beta}c_k^2
 \le
-3\Bigl(\sum_{p\in S}a_p^2\Bigr)^2.
+3M^2.
 \]
 
-Expand the square. A fixed pair \((p,r)\)
-contributes only at outputs \(k\) that satisfy
+This count is derived here. It is **not**
+the Ring Lemma and **not** a Borromean
+triad count. Do not import those.
+
+Expand the square. A pair \((p,r)\)
+contributes only at outputs \(k\) with
 \(\lvert k\rvert^2=\beta\) and
 \(k\cdot p=k\cdot r=\beta/2\).
+Write \(K(p,r)\) for that set of \(k\).
 
 - If \(p\) and \(r\) are linearly independent,
   two affine planes meet the sphere
-  \(\lvert k\rvert^2=\beta\) in at most two points.
-- If \(r=\lambda p\) and \(\lvert p\rvert^2=\lvert r\rvert^2=\alpha\),
-  then \(\lambda=\pm 1\). The case \(r=p\) is
-  the diagonal. The case \(r=-p\) forces
-  \(\beta=0\), which is excluded.
+  \(\lvert k\rvert^2=\beta\) in at most two
+  points: \(\lvert K(p,r)\rvert\le 2\).
+- If \(r=\lambda p\) and
+  \(\lvert p\rvert^2=\lvert r\rvert^2=\alpha\),
+  then \(\lambda=\pm 1\). The case \(r=p\)
+  is the diagonal: \(\lvert K(p,p)\rvert\le 1\).
+  The case \(r=-p\) forces \(\beta=0\),
+  which is excluded: \(K(p,-p)=\emptyset\).
 
-So a fixed distinct pair meets at most two
-outputs. Weighted AM-GM bounds the
-off-diagonal contribution by twice the
-squared mass. The diagonal is at most once
-the squared mass. Total factor \(3\).
+So a fixed distinct pair meets at most
+two outputs. Weighted AM-GM on each
+surviving summand bounds the
+off-diagonal contribution by \(2M^2\).
+The diagonal is at most \(M^2\).
+Total factor \(3\).
 
-Printed ratios \(\le 3\) on sample shells
-are consistency checks, not the lattice
-theorem.
+**Reviewer flag.** Redo the AM-GM sum
+and the plane-sphere incidence. A
+printed ratio \(\le 3\) on a sample
+shell is a consistency check, not this
+argument.
 
 ---
 
@@ -312,8 +367,14 @@ K=\frac23
 
 by direct evaluation on that field.
 This is an identity, not a search result.
-\(\frac23 < 16/9\). It sits under the
-named ceiling.
+
+**Sanity, not sharpness.**
+\(\frac23\approx 0.667 < 16/9\approx 1.778\).
+The exact example sits **strictly inside**
+the claimed upper bound. It is a lower
+example. It does not prove the upper
+bound and it does not claim that
+\(16/9\) is sharp.
 
 Historical numerical consistencies
 (not the bound, not \(C_0\)):
@@ -345,7 +406,10 @@ That does not unclaim the bound.
 | True \(4/3\) as a regularity close | **NO.** Does not repair ★. No continuation. |
 | Unrestricted ★ | **NO.** Dead by \(v_n\). |
 | Ordinary NS | **OPEN.** |
-| Independent specialist sign | **pending.** Soft X silent. |
+| \(2/3\) vs \(16/9\) | Lower example strictly inside claimed upper bound. Not sharpness. Not a proof of \(16/9\). |
+| \(\beta\to 4\alpha\) | \(\gamma\to 0\). No division by \(\gamma\). \(\sqrt{\beta}\) stays positive. |
+| Factor \(3\) | Derived on this page from incidence + AM-GM. Not Ring / Borromean. |
+| Independent specialist sign | **pending.** No name. No date. Soft X silent. |
 | Named verifier | Symbolic identity and growing-layer vs evaluator. Reads the saved sweep summary. Does not run the shell-count experiments on this page. |
 
 NS not solved.
