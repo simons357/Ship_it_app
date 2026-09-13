@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>COSMIC GRAFITTI — Issue 00 · Night Wall</title>
-<meta name="description" content="Prime Field street magazine. The leftover named on a night wall. Not a proof. NS not solved.">
+<title>COSMIC GRAFITTI — the found leftover</title>
+<meta name="description" content="Phone face of the 10 September 2026 swirl leftover magazine. WRITE (6) named, not proved. C/D is not A/B. NS not solved.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Permanent+Marker&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
@@ -15,9 +15,7 @@
     --mute: #c9bead;
     --pink: #ff2d8a;
     --acid: #c6ff3a;
-    --cyan: #3de0ff;
     --gold: #ffc857;
-    --shadow: rgba(0,0,0,.55);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body {
@@ -106,23 +104,33 @@
     letter-spacing: .02em;
   }
   h1 { font-size: clamp(64px, 16vw, 128px); }
-  h2 { font-size: clamp(40px, 10vw, 76px); margin: 0 0 12px; }
+  h2 { font-size: clamp(36px, 9vw, 68px); margin: 0 0 12px; }
   .tag {
     font-family: "Permanent Marker", cursive;
     color: var(--pink);
-    font-size: clamp(18px, 4vw, 28px);
+    font-size: clamp(18px, 4vw, 26px);
     transform: rotate(-2deg);
     display: inline-block;
+    margin-bottom: 10px;
   }
-  p { font-size: clamp(17px, 2.4vw, 20px); max-width: 38rem; }
-  p + p { margin-top: .85em; }
-  .cols {
-    display: grid;
-    gap: 18px;
-  }
+  p { font-size: clamp(17px, 2.4vw, 20px); max-width: 40rem; }
+  p + p { margin-top: .8em; }
+  .cols { display: grid; gap: 14px; }
   @media (min-width: 820px) {
     .cols { grid-template-columns: 1fr 1fr; }
-    .paste { padding-bottom: 40px; }
+  }
+  .card {
+    background: rgba(10,9,12,.72);
+    border: 1px solid rgba(243,234,216,.2);
+    padding: 12px 14px;
+    text-shadow: none;
+  }
+  .card b {
+    display: block;
+    font-family: "Bebas Neue", Impact, sans-serif;
+    letter-spacing: .08em;
+    color: var(--acid);
+    margin-bottom: 6px;
   }
   .stamp {
     display: inline-block;
@@ -133,19 +141,18 @@
     padding: 6px 10px;
     transform: rotate(-6deg);
     background: rgba(10,9,12,.45);
+    margin: 10px 8px 0 0;
   }
-  .contents { list-style: none; }
-  .contents a {
-    color: var(--paper);
-    text-decoration: none;
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 10px 0;
-    border-bottom: 1px dashed rgba(243,234,216,.25);
-    font-size: 20px;
+  .jewel {
+    margin: 14px 0;
+    padding: 14px 16px;
+    background: rgba(10,9,12,.78);
+    border: 1px solid var(--gold);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 15px;
+    color: var(--gold);
+    text-shadow: none;
   }
-  .contents a:hover { color: var(--acid); }
   .cta {
     display: inline-block;
     margin-top: 16px;
@@ -180,160 +187,191 @@
     padding: 8px 12px;
     cursor: pointer;
   }
-  .idbox {
-    margin-top: 14px;
-    padding: 14px 16px;
-    background: rgba(10,9,12,.78);
-    border: 1px solid var(--gold);
-    font-family: "IBM Plex Mono", ui-monospace, monospace;
-    font-size: 16px;
-    color: var(--gold);
-    text-shadow: none;
-  }
   .note { color: var(--mute); font-size: 15px; font-style: italic; }
+  .wheat {
+    margin-top: 14px;
+    padding: 16px;
+    background: rgba(243,234,216,.1);
+    border-left: 4px solid var(--acid);
+  }
 </style>
 </head>
 <body>
 <div class="desk">
-<nav class="rail" aria-label="Issue 00">
+<nav class="rail" aria-label="Found leftover">
   <a href="#cover">Cover</a>
-  <a href="#contents">Contents</a>
-  <a href="#editor">From the wall</a>
-  <a href="#feature">Leftover</a>
-  <a href="#swirl">Swirl</a>
-  <a href="#tube">Tube</a>
-  <a href="#primes">Tags</a>
-  <a href="#ringdown">Echo</a>
-  <a href="#honest">Honest</a>
+  <a href="#found">Found</a>
+  <a href="#if">The if</a>
+  <a href="#bad">Bad</a>
+  <a href="#write6">WRITE 6</a>
+  <a href="#cyl">Cylinder</a>
+  <a href="#force">C/D</a>
+  <a href="#qa">Thm A</a>
+  <a href="#drop">Tube</a>
+  <a href="#map">Map</a>
+  <a href="#edit">Print</a>
   <a href="#back">Back</a>
 </nav>
 
 <main class="book" id="book">
   <article class="page" id="cover">
     <div class="bleed" style="background-image:url('art/cover.png')"></div>
-    <div class="folio">00 / 10</div>
+    <div class="folio">01 / 12</div>
     <div class="paste">
-      <p class="kicker">Prime Field · Savannah · Street magazine</p>
+      <p class="kicker">Prime Field · Magazine cut · 10 September 2026</p>
       <h1>COSMIC<br>GRAFITTI</h1>
-      <p class="tag">Issue 00 · Night Wall</p>
-      <p>The leftover named on a night wall. One F, two T’s. Not a proof.</p>
+      <p class="tag">The leftover, found</p>
+      <p>Swirl, alignment, and what Navier–Stokes still owes. Occupation and alignment on the walls of the house. Not the star-lattice essay.</p>
+      <span class="stamp">NAMED · NOT PROVED</span>
       <span class="stamp">NS NOT SOLVED</span>
-      <a class="cta" href="#contents">Open the issue</a>
+      <a class="cta" href="#found">Open the found cut</a>
     </div>
   </article>
 
-  <article class="page" id="contents">
+  <article class="page" id="found">
     <div class="bleed" style="background-image:url('art/wall.png')"></div>
-    <div class="folio">01 / 10</div>
+    <div class="folio">02 / 12</div>
     <div class="paste">
-      <p class="kicker">Issue 00</p>
-      <h2>Contents</h2>
-      <ol class="contents">
-        <li><a href="#editor">From the wall <span>02</span></a></li>
-        <li><a href="#feature">The refused pairs <span>03</span></a></li>
-        <li><a href="#swirl">Plate · coffee into cosmos <span>04</span></a></li>
-        <li><a href="#tube">The tube on the pillar <span>05</span></a></li>
-        <li><a href="#primes">Chalk primes <span>06</span></a></li>
-        <li><a href="#ringdown">Closed echo <span>07</span></a></li>
-        <li><a href="#honest">What this is not <span>08</span></a></li>
-        <li><a href="#back">Colophon <span>09</span></a></li>
-      </ol>
+      <p class="kicker">Wrong one, then this one</p>
+      <h2>The leftover, not the lattice.</h2>
+      <p>You asked for the magazine you lost. The first reprint grabbed the May 2026 universal-geometry essay. That was the wrong wall.</p>
+      <p>This is the piece you already wrote to publish: <em>Swirl, alignment, and what Navier–Stokes still owes.</em> About 800 words. Not a proof. Recovered from <code>cursor/unaugmented-r4-vorticity-f80e</code>.</p>
+      <p class="note">Body: docs/SWIRL-MAGAZINE.md. Working paper: docs/SWIRL-PAPER.md. Deposit card: docs/SWIRL-DEPOSIT.md.</p>
+      <a class="cta" href="#if">Start the if</a>
     </div>
   </article>
 
-  <article class="page" id="editor">
-    <div class="bleed" style="background-image:url('art/wall.png')"></div>
-    <div class="folio">02 / 10</div>
-    <div class="paste">
-      <p class="kicker">Letter</p>
-      <h2>From the wall</h2>
-      <div class="cols">
-        <p>The last reprint put a theorem on stickers. That was the wrong magazine. Cosmic GRAFITTI is the night wall: leftover math written like a tag, stars as the brick, Savannah as the street.</p>
-        <p>I am Jonathan, a CRNA. I wanted a phone-first issue you can swipe. I did not solve Navier–Stokes. I named the leftover and put it where the paint still drips.</p>
-      </div>
-      <a class="cta" href="#feature">Read the leftover</a>
-    </div>
-  </article>
-
-  <article class="page" id="feature">
+  <article class="page" id="if">
     <div class="bleed" style="background-image:url('art/swirl.png')"></div>
-    <div class="folio">03 / 10</div>
+    <div class="folio">03 / 12</div>
     <div class="paste">
-      <p class="kicker">Feature · 10 September 2026</p>
-      <h2>The refused pairs</h2>
-      <div class="cols">
-        <p>In three-dimensional flow, vortex stretching can make vorticity grow. Constantin and Fefferman (1993) showed that if the direction of vorticity does not turn too fast where it is large, the solution stays smooth. Beirão da Veiga and Berselli lowered that cut to Hölder 1/2 in 2002. Those papers are theorems as <em>ifs</em>.</p>
-        <p>They do not estimate the pairs they refused: intense vorticity whose direction is misaligned. That refused set is the swirl leftover. I name the missing bound WRITE (6). The estimate is stated. It is not proved. A picture of a vortex that spirals in is not that estimate.</p>
-      </div>
-      <p class="note">Magazine cut. About the leftover, dated, and not sold as a close. Full map: the swirl paper.</p>
+      <p class="kicker">The cut that sits, as an if</p>
+      <h2>Hölder 1/2 is their theorem.</h2>
+      <p>In three-dimensional incompressible flow, vortex stretching is the term that can make vorticity grow.</p>
+      <p><strong>Constantin–Fefferman 1993.</strong> If the direction of vorticity does not turn too fast where the vorticity is large — Lipschitz control of the angle — the solution stays smooth.</p>
+      <p><strong>Beirão da Veiga–Berselli 2002.</strong> The geometric cut lowers to Hölder exponent 1/2.</p>
+      <p class="note">Those papers are theorems as <em>ifs</em>. They do not estimate the pairs they refused.</p>
     </div>
   </article>
 
-  <article class="page" id="swirl">
+  <article class="page" id="bad">
     <div class="bleed" style="background-image:url('art/swirl.png')"></div>
-    <div class="folio">04 / 10</div>
+    <div class="folio">04 / 12</div>
     <div class="paste">
-      <p class="kicker">Plate 01</p>
-      <h2>Coffee into cosmos</h2>
-      <p>Stir cream into coffee. The spiral is the whole vibe. Shape still matters after the edges melt. That is a picture, not a theorem. Lemma★ asks whether shape-danger stays bounded for every smooth cup. It is not proved.</p>
+      <p class="kicker">The refused set</p>
+      <h2>Intense, and misaligned.</h2>
+      <p>Good pairs are their theorem. The complementary pairs — still intense, with |sin φ| larger than the Hölder 1/2 cut — are Bad. Those papers left them.</p>
+      <p>Closest cousins (Grujić 2009 and after) localize or weight the <em>condition</em>. They do not bound the bad-pair integral from energy alone.</p>
+      <div class="cols">
+        <div class="card"><b>Good</b>Alignment puts |sin φ| in the numerator and drops the kernel. Absorbable. Their if.</div>
+        <div class="card"><b>Bad</b>Kernel still |x−y|<sup>−3</sup>. Cubic energy wall. The leftover.</div>
+      </div>
     </div>
   </article>
 
-  <article class="page" id="tube">
+  <article class="page" id="write6">
+    <div class="bleed" style="background-image:url('art/swirl.png')"></div>
+    <div class="folio">05 / 12</div>
+    <div class="paste">
+      <p class="kicker">The named hole</p>
+      <h2>WRITE (6)</h2>
+      <p>Stretching from those bad pairs, on a parabolic cylinder, absorbed by a slice of local enstrophy dissipation plus a lower-order term.</p>
+      <div class="jewel">A<sub>bad</sub>(Q<sub>r</sub>) ≤ (ν/8) ∬ |∇ω|² φ + C r<sup>−2</sup> ∬ |ω|²</div>
+      <p>The estimate is stated. It is not proved. It is not in the record under another name. ν/8 is a conventional slice, not a sharp constant. There is no dimensional obstruction. There is also no proof.</p>
+      <span class="stamp">AIMED LEFTOVER: YES</span>
+      <span class="stamp">THEOREM: NO</span>
+    </div>
+  </article>
+
+  <article class="page" id="cyl">
     <div class="bleed" style="background-image:url('art/tube.png')"></div>
-    <div class="folio">05 / 10</div>
+    <div class="folio">06 / 12</div>
     <div class="paste">
-      <p class="kicker">Axis wall</p>
-      <h2>The tube</h2>
-      <p>Near the axis, writing the swirl in the wrong variable makes a 1/r<sup>4</sup> scare. Change the unknown: Γ = r u<sub>θ</sub> extensive, Φ = u<sub>θ</sub>/r intensive. The boxed identity is algebra.</p>
-      <div class="idbox">(1/r<sup>4</sup>) ∂<sub>z</sub>(Γ<sup>2</sup>) = ∂<sub>z</sub>(Φ<sup>2</sup>)</div>
-      <p>The leftover after the rewrite is control of u<sup>r</sup>/r. That leftover is still open. The identity does not close Clay.</p>
+      <p class="kicker">Do not merge letters</p>
+      <h2>A cylinder still needs more.</h2>
+      <p>Flux through the skin, at energy level, is Caffarelli–Kohn–Nirenberg as a <em>smallness</em> criterion, not as an a priori from finite energy. Exterior Biot–Savart is why localization papers exist.</p>
+      <p>After a closed local enstrophy budget, the right implication is Serrin’s criterion on a smaller cylinder. That implication is not a substitute for (6).</p>
+      <p class="note">If (6) were proved and the skin flux were still open, the cylinder would still be open. If the cylinder is already small in the CKN sense, (6) was never needed on that cylinder.</p>
     </div>
   </article>
 
-  <article class="page" id="primes">
-    <div class="bleed" style="background-image:url('art/primes.png')"></div>
-    <div class="folio">06 / 10</div>
-    <div class="paste">
-      <p class="kicker">Tags · analogy</p>
-      <h2>Chalk on brick</h2>
-      <p>2, 3, 5, 7, 11 on a night wall. Primes as tags look like a sky. That is graffiti, not a proof of the Riemann hypothesis, and not a proof that the universe is regular for the same reason a fluid might be.</p>
-      <p class="note">Hold the picture. Do not green it.</p>
-    </div>
-  </article>
-
-  <article class="page" id="ringdown">
-    <div class="bleed" style="background-image:url('art/ringdown.png')"></div>
-    <div class="folio">07 / 10</div>
-    <div class="paste">
-      <p class="kicker">Closed file</p>
-      <h2>The echo stayed quiet</h2>
-      <p>Harmonic Blueprint Experiment 01 asked whether held-out black-hole ringdown ratios prefer a frozen node family. TEST did not reject H0. The experiment is closed. The cyan arc is still on the wall.</p>
-    </div>
-  </article>
-
-  <article class="page" id="honest">
+  <article class="page" id="force">
     <div class="bleed" style="background-image:url('art/cover.png')"></div>
-    <div class="folio">08 / 10</div>
+    <div class="folio">07 / 12</div>
     <div class="paste">
-      <p class="kicker">Stamp page</p>
-      <h2>What this is not</h2>
-      <p>Navier–Stokes is not solved. Lemma★ is not proved. The Riemann hypothesis is not proved. Clay Statement B is not claimed. A forced finite-time breakdown, if it holds, is a different official statement from unforced regularity.</p>
-      <p>Same letter Φ is not the same physics. Sharing a spiral with a galaxy is not a millennium close.</p>
-      <span class="stamp">NOT A CLOSE</span>
+      <p class="kicker">8 September 2026</p>
+      <h2>Forced is a different door.</h2>
+      <p>A construction of finite-time breakdown with a <em>smooth external force</em> was announced. Fefferman’s official statement has four alternatives.</p>
+      <div class="cols">
+        <div class="card"><b>A / B</b>Unforced smooth data. Stay smooth? This leftover lives here. Open.</div>
+        <div class="card"><b>C / D</b>A force is allowed, and breakdown is asked. A forced construction, if it holds, lives here.</div>
+      </div>
+      <p>It does not decide (A) or (B). It does not bound WRITE (6). A picture of a vortex that spirals in is not an estimate of misaligned pairs in the unforced problem. I do not claim that construction. I did not write it.</p>
+    </div>
+  </article>
+
+  <article class="page" id="qa">
+    <div class="bleed" style="background-image:url('art/wall.png')"></div>
+    <div class="folio">08 / 12</div>
+    <div class="paste">
+      <p class="kicker">A different equation</p>
+      <h2>Theorem A is not this leftover.</h2>
+      <p>Navier–Stokes with an extra Ladyzhenskaya / p-Laplacian stress is globally regular when the extra viscosity is positive and the exponent is in a known range.</p>
+      <p>That is a different equation. Sending the extra term to zero remains open. I do not claim ordinary Navier–Stokes.</p>
+      <p class="note">Inverse-GCD matrix facts posted elsewhere are not this leftover and are not the Riemann hypothesis.</p>
+    </div>
+  </article>
+
+  <article class="page" id="drop">
+    <div class="bleed" style="background-image:url('art/tube.png')"></div>
+    <div class="folio">09 / 12</div>
+    <div class="paste">
+      <p class="kicker">The path that was dropped</p>
+      <h2>Keep the 1/r<sup>4</sup> tube.</h2>
+      <p>Axisymmetric flow with swirl, keeping the 1/r<sup>4</sup> tube source, is the same leftover as the field. A localized Hardy inequality does not absorb all data.</p>
+      <p>I dropped a change of unknown that canceled the tube term. That cancel was not the unforced path.</p>
+      <span class="stamp">Φ-CANCEL ≠ ORDINARY NS</span>
+    </div>
+  </article>
+
+  <article class="page" id="map">
+    <div class="bleed" style="background-image:url('art/swirl.png')"></div>
+    <div class="folio">10 / 12</div>
+    <div class="paste">
+      <p class="kicker">What you can put a name on</p>
+      <h2>The map, this week.</h2>
+      <p>The Hölder 1/2 cut is Constantin–Fefferman and Beirão da Veiga–Berselli. Bad pairs are what they left. WRITE (6) is the right name for that remainder. It is not proved.</p>
+      <div class="wheat">
+        <p><strong>NOT A SOLUTION.</strong> This is the leftover, named, dated, and not sold as a close.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="page" id="edit">
+    <div class="bleed" style="background-image:url('art/wall.png')"></div>
+    <div class="folio">11 / 12</div>
+    <div class="paste">
+      <p class="kicker">If an editor needs one sentence</p>
+      <h2>Print this.</h2>
+      <div class="wheat">
+        <p>Swirl alignment at Hölder 1/2 is a theorem as an if; the refused pairs are still open; a forced blowup, if true, is a different official statement from unforced regularity.</p>
+      </div>
+      <p class="note">SIAM News commentary / letter, or any magazine that will take a dated essay. Do not send it as a research article that proves regularity. I am not submitting it for you.</p>
     </div>
   </article>
 
   <article class="page" id="back">
-    <div class="bleed" style="background-image:url('art/wall.png')"></div>
-    <div class="folio">09 / 10</div>
+    <div class="bleed" style="background-image:url('art/cover.png')"></div>
+    <div class="folio">12 / 12</div>
     <div class="paste">
       <p class="kicker">Colophon</p>
-      <h2>Issue 00</h2>
-      <p>COSMIC GRAFITTI · Night Wall · 13 September 2026<br>
-      Jonathan R. Simons · CRNA · Prime Field Technologies · Savannah</p>
-      <p>This issue is the magazine face of the leftover: swirl alignment as an if, refused pairs still open, axis algebra kept, cosmic tags parked. It is not the May 2026 Universal Geometry / Cosmic Star Lattice reprint.</p>
-      <p class="note">Open this file on a phone. Swipe. The paint is the point.</p>
+      <h2>The found cut</h2>
+      <p>COSMIC GRAFITTI is the phone face of the swirl leftover magazine. Body is Jonathan R. Simons, 10 September 2026, Prime Field Technologies, recovered from <code>cursor/unaugmented-r4-vorticity-f80e</code>.</p>
+      <p>The May universal-geometry essay is a different wall. Filed, not this issue.</p>
+      <span class="stamp">WRITE (6) NAMED</span>
+      <span class="stamp">NOT PROVED</span>
+      <span class="stamp">NS NOT SOLVED</span>
+      <p class="note">Open this file on a phone. Swipe. The leftover is the point.</p>
       <a class="cta" href="#cover">Back to cover</a>
     </div>
   </article>

@@ -1,8 +1,11 @@
-# COSMIC GRAFITTI — Issue 00 · Night Wall
+# COSMIC GRAFITTI — the found leftover
 
-Phone-first street magazine. Open `index.html` and swipe.
+Phone face of Jonathan’s 10 September 2026 swirl leftover magazine.
 
-This is **not** the May 2026 Universal Geometry / Cosmic Star Lattice reprint.
-Issue 00 is the leftover named on a night wall: refused pairs, axis algebra, parked cosmic tags.
+Open `index.html` and swipe.
 
-Honesty lock: NS not solved · ★ not proved · RH not proved · Clay not claimed.
+Print cut: [`docs/SWIRL-MAGAZINE.md`](../../docs/SWIRL-MAGAZINE.md).
+
+This is **not** the May 2026 Universal Geometry / Cosmic Star Lattice essay.
+
+Honesty: WRITE (6) is named and not proved. Forced breakdown is Fefferman C/D, not unforced A/B. Ordinary NS is not solved.
