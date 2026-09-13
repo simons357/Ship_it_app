@@ -79,7 +79,7 @@ This book’s aligned 9B row at \((1,2)\) was \(K\approx 0.578\) on a
 | \(K_{1,2}(w)=2/3\) on this field | **Yes.** Hand + locked core. |
 | \(\sup K\ge 2/3\) | **Yes.** Floor. Write-up example. |
 | \(2/3\) as \(C_0\) or as \(16/9\) | **No.** |
-| Exact-shell \(K\le 16/9\) | **CLAIMED.** Unchanged. |
+| Exact-shell \(K\le 16/9\) | **CLAIMED.** If true: occupancy gone on one input shell. Not a regularity close. |
 | Unrestricted ★ | **Still dead** on \(v_n\). |
 | Ordinary NS | **Open.** |
 

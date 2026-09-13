@@ -3,7 +3,7 @@
 **Locked:** 12 September 2026  
 **This wording answers the setup questions.** Spec: [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md). Exclusion: [`ATTACK_9B_COUNTING_CS_EXCLUSION.md`](./ATTACK_9B_COUNTING_CS_EXCLUSION.md).
 
-**NS not solved. Lemma★ OPEN.**
+**NS not solved.** Unrestricted Lemma★ is **dead** on \(v_n\). Exact-shell \(K\le16/9\) is **CLAIMED**. [`docs/ns-recovery/ATTACK-9D-FULL-SUPPORT-SCORE.md`](../../ns-recovery/ATTACK-9D-FULL-SUPPORT-SCORE.md).
 
 ---
 

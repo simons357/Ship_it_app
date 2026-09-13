@@ -20,7 +20,7 @@ The claimed statement is: if \(Aw=\alpha w\) and \(\beta>0\), then
 
 equivalently \(K_{\alpha,\beta}(w)\le 16/9\). Optimality is not claimed.
 
-This book does **not** stamp that coefficient. The writeup on PR #24 says **CLAIMED, specialist pending**. The audit there checks a few shells and three weighted-count ratios \(\le 3\). Those are checks, not a lattice theorem and not a proof-assistant verification.
+This book does **not** stamp that coefficient. Score of the full writeup: [`ATTACK-9D-FULL-SUPPORT-SCORE.md`](ATTACK-9D-FULL-SUPPORT-SCORE.md). The claimed steps are a weighted lattice count (factor \(3\)) plus a polarization kernel (factor \(3/4\)). The elementary max of \((3/4)x^2(1-x/4)\) is \(16/9\) at \(x=8/3\); that calculus step is not the theorem. The audit checks a few shells and three count ratios \(\le 3\). Those are checks, not a lattice theorem and not a proof-assistant verification. Existing maxima \(0.641\) and \(0.456\) are not near \(16/9\). That does not unclaim the bound.
 
 ---
 
@@ -74,7 +74,7 @@ A true \(4/3\) does not kill or repair unrestricted ★. That box is already dea
 - The unaugmented regularity program used unrestricted ★ as closure. That closure is **dead**. Nobody has written a chain “9D \(\Rightarrow\) global regularity.”
 - Soft X, SND, Theorem H stay silent. Do not glue them in.
 
-A true 9D bound would answer the exact-shell coefficient question. It would not, by itself, replace the dead instantaneous estimate.
+Until a specialist signs the algebra, or a sweep shows nothing near \(16/9\), the word is still **CLAIMED**. Soft X silent.
 
 ---
 

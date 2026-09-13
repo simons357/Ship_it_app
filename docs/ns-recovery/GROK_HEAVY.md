@@ -39,7 +39,7 @@ Human: Jonathan Simons (`winchester.anesthesia@gmail.com` / `simonsmedical@iclou
 Remaining-work lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Six straight answers: [`SIX-QUESTIONS.md`](SIX-QUESTIONS.md). Replacement closure: [`REPLACEMENT-CLOSURE.md`](REPLACEMENT-CLOSURE.md). Bounded aspect does not exclude \(v_n\).
 
 1. **Unrestricted ★ is dead** on \(v_n\). Replacement closure for unaugmented regularity is the live analytic job. Need★ dual cannot repair the same bound.
-2. **Exact-shell 9D** (\(K\le16/9\)): still **CLAIMED**. If true, occupancy \(s\) is gone on one input shell and the three-shear \(2/3\) sits under a named ceiling. **No as a regularity close.** [`NINE-D-TWO-THIRDS.md`](NINE-D-TWO-THIRDS.md).
+2. **Exact-shell 9D** (\(K\le16/9\)): still **CLAIMED**. Full writeup scored in [`ATTACK-9D-FULL-SUPPORT-SCORE.md`](ATTACK-9D-FULL-SUPPORT-SCORE.md). Occupancy gone on one input shell *if* it holds. **No as a regularity close.** Maxima \(0.641\) / \(0.456\) do not unclaim it.
 3. **Paths to DA:** growing-layer score has landed. Do not send a regularity close.
 4. Soft X silent. H1 not started from ABC_λ.
 
