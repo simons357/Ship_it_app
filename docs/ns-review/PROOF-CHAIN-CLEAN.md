@@ -4,6 +4,8 @@ A single visual and notational face for the Navier–Stokes regularity packaging
 
 Notation is aligned with the Lemma★ shape lock, the Φ-renorm swirl book, and the conditional SND texture. Branches are kept separate.
 
+**Honesty (unaugmented face):** the exact bookkeeping relation below is the **spectral-shift identity**. It is distinct from the **Lemma★ ratio bound**. Establishing the identity does **not** establish that bound, control nonlinear transfer, or imply regularity. Locked card: [`UNAUG-PROOF-CHAIN.md`](./UNAUG-PROOF-CHAIN.md). Principal shell remainder \(T_{j\leftarrow j}\) and PRODUCT-BLOCK both remain **OPEN**.
+
 ---
 
 ## 1. Setting
@@ -89,14 +91,14 @@ T_c
 
 Write \(T_c{}_+=\max(T_c,0)\). Only upward stretch enters the shape quotient.
 
-**Identity (algebra).** Along a strong solution,
+**Spectral-shift identity (algebra / bookkeeping).** Along a strong solution,
 
 \[
 \Lambda'
 =\frac{2}{X}\bigl(T_c-\nu D_s\bigr).
 \]
 
-Single-shell fields have \(D_s=0\) and \(T_c=0\) (vacuous for the shape quotient).
+This identity is **not** the Lemma★ ratio bound and does **not** by itself control nonlinear transfer or yield regularity. Single-shell fields have \(D_s=0\) and \(T_c=0\) (vacuous for the shape quotient).
 
 ---
 
@@ -138,7 +140,7 @@ C_{\mathrm{geom}}=4\theta\,C_0(\theta).
 
 (Equivalent bookkeeping with remainder \(C_0\nu^{-1} E X\Lambda\) is used in some energy-budget notes; after \(X\le E\Lambda\) the two wrappers are interchangeable up to constants.)
 
-If the shape (or energy-budget) bound holds with geometric constants, the identity for \(\Lambda'\) yields a Gronwall ceiling on \(\Lambda(t)\) on any strong-solution interval, hence finite enstrophy and continuation. The packaging is the chain from moments to that estimate; the remaining analytic step is the product control in §5.
+**Conditional only:** if the shape (or energy-budget) bound holds with geometric constants, the spectral-shift identity yields a Gronwall ceiling on \(\Lambda(t)\) on any strong-solution interval, hence finite enstrophy and continuation. The identity alone does **not** give that bound. The packaging is the chain from moments to that estimate; the remaining analytic step is the product control in §5 (PRODUCT-BLOCK). On the shell-budget writing of the unaugmented face, the principal unresolved term is \(T_{j\leftarrow j}\) — see [`UNAUG-PROOF-CHAIN.md`](./UNAUG-PROOF-CHAIN.md).
 
 ---
 
@@ -211,11 +213,11 @@ Do not reuse FRA output symbol \(\Phi\) for swirl \(\Phi\). Do not identify \(T_
 
 1. Classical NSE on \(\mathbb{T}^3\).
 2. Moments \(E,X,Y,Z\) and scale \(\Lambda\).
-3. Identities for \(D_s\) and \(T_c\); \(\Lambda'=2(T_c-\nu D_s)/X\).
-4. Lemma★ shape / energy-budget packaging.
-5. Five-lane diagnostics (Bony / shell / packet probes) — stress tests, not a substitute bound.
-6. Product bound on \(T_c\) (open estimate).
-7. Continuation / regularity arrow (feeds on 4+6).
+3. Spectral-shift identity for \(D_s\) and \(T_c\); \(\Lambda'=2(T_c-\nu D_s)/X\) (bookkeeping ≠ Lemma★ bound).
+4. Lemma★ shape / energy-budget packaging (**hypothesis**).
+5. Five-lane diagnostics (Bony / shell / packet probes) — stress tests, not a substitute bound; numerics do not establish depletion or closure.
+6. Product bound on \(T_c\) (PRODUCT-BLOCK — open estimate); shell face remainder \(T_{j\leftarrow j}\) likewise open.
+7. Continuation / regularity arrow (feeds on 4+6 only when the bound is proved — not claimed).
 8. Side: Φ-renorm identity + open \(\|u^r/r\|_\infty\) integrability.
 9. Optional: SND conditional texture.
 

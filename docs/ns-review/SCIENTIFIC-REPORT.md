@@ -2,17 +2,18 @@
 
 **Audience:** technical readers (Jonathan R. Simons and method reviewers)  
 **Scope:** Clay Millennium Problem, Navier–Stokes regularity (mild / Statement B packaging on \(\mathbb{T}^3\))  
-**Honesty lock:** Lemma★ / DA-NS-1 is a **HYPOTHESIS**, not a theorem. Clay Statement B is **not solved**. Numerics are **not** proofs.  
+**Honesty lock:** Lemma★ / DA-NS-1 is a **HYPOTHESIS**, not a theorem. Clay Statement B is **not solved**. Numerics are **not** proofs. The **spectral-shift identity** is bookkeeping only — it does **not** establish the Lemma★ ratio bound, depletion, or regularity. Unaugmented shell remainder \(T_{j\leftarrow j}\) and PRODUCT-BLOCK both remain **OPEN**. Locked card: [`UNAUG-PROOF-CHAIN.md`](./UNAUG-PROOF-CHAIN.md).  
 **Contamination rule:** this file is scientific only — no campaign, outreach, or metaphor framing.
 
 **Primary companions in this folder:**
 
+- [`UNAUG-PROOF-CHAIN.md`](./UNAUG-PROOF-CHAIN.md) — locked unaugmented-face honesty / terminology (spectral-shift ≠ ★; \(T_{j\leftarrow j}\) open)
 - [`PROOF-CHAIN-CLEAN.md`](./PROOF-CHAIN-CLEAN.md) — definitions, identities, open product / shape node  
 - [`PHI-RENORM-WHAT-IS-KEPT.md`](./PHI-RENORM-WHAT-IS-KEPT.md) — separate Φ-renorm KEEP card (do not glue)  
 - [`PHI-RENORM-AUDIT-2026-08-22.md`](./PHI-RENORM-AUDIT-2026-08-22.md) — independent swirl-paper audit  
 - Attack / probe code: [`scripts/ns_attacks/`](../../scripts/ns_attacks/)
 
-Science content formerly mixed into campaign-titled notes (e.g. `MONDAY-DOOR-SPRINT.md`) is restated here without that framing. Prefer this report + `PROOF-CHAIN-CLEAN.md` as the scientific face.
+Science content formerly mixed into campaign-titled notes (e.g. `MONDAY-DOOR-SPRINT.md`) is restated here without that framing. Prefer this report + `PROOF-CHAIN-CLEAN.md` + `UNAUG-PROOF-CHAIN.md` as the scientific face.
 
 ---
 
@@ -75,11 +76,13 @@ T_c=M-\Lambda N=-\langle B(v,v),A(A-\Lambda)v\rangle.
 
 Write \((T_c)_+=\max(T_c,0)\). Only upward stretch enters the shape quotient.
 
-**Identity (algebra; proved along strong solutions)**
+**Identity (algebra; spectral-shift bookkeeping; proved along strong solutions)**
 
 \[
 \Lambda'=\frac{2}{X}\bigl(T_c-\nu D_s\bigr).
 \]
+
+This is the **spectral-shift identity**. It is distinct from the Lemma★ ratio bound. Establishing the identity does **not** establish that bound, control nonlinear transfer, or imply regularity (see [`UNAUG-PROOF-CHAIN.md`](./UNAUG-PROOF-CHAIN.md)).
 
 Single-shell fields: \(D_s=0\) and \(T_c=0\) (vacuous for the shape quotient).
 
@@ -210,12 +213,15 @@ Core module: `scripts/ns_attacks/ns_lemma_star_core.py`. Individual attack scrip
 
 | Item | Classification |
 | --- | --- |
-| Spectral-moment definitions; \(D_s\ge 0\); \(T_c=-\langle B,A(A-\Lambda)v\rangle\); \(\Lambda'=2(T_c-\nu D_s)/X\) | **Proved algebra** (along strong solutions where stated) |
+| Spectral-moment definitions; \(D_s\ge 0\); \(T_c=-\langle B,A(A-\Lambda)v\rangle\); spectral-shift \(\Lambda'=2(T_c-\nu D_s)/X\) | **Proved algebra** (along strong solutions where stated) — **not** a Lemma★ bound |
+| Spectral-shift identity \(\Rightarrow\) ★ / regularity | **Refuse** — bookkeeping ≠ bound |
 | Pure viscous absorption false (amplitude blowup of \(T_c/D_s\)) | **Proved** (explicit triad families) |
 | Young reduction of \(|T_c|\) into \(\varepsilon D_s + C_\varepsilon\|A^{1/2}B\|_2^2\) | **Proved** (Plancherel + pointwise Young) |
 | Lemma★ ⇒ GR (conditional implication) | **Proved as implication**; hypothesis open |
 | Uniform \(\sup\mathcal{R}_\star<\infty\) / finite \(C_{\mathrm{geom}}\) | **HYPOTHESIS** (PRODUCT-BLOCK) |
-| Five-lane / packet / near-shell numeric ceilings | **Evidence only** — not theorems |
+| Same-scale shell transfer \(T_{j\leftarrow j}\) | **OPEN** (principal unaugmented-face remainder) |
+| Cross-scale shell bounds / summability on this chain | **Not yet supplied** |
+| Five-lane / packet / near-shell numeric ceilings; occupancy / alignment samples | **Evidence only** — not theorems; do **not** imply depletion or closure |
 | Φ-renorm identity \(\partial_z(\Gamma^2)/r^4=\partial_z(\Phi^2)\) | **KEEP algebra**; barrier \(\int\|u^r/r\|_\infty\,dt\) **open** |
 | Φ-renorm ⇔ Lemma★ glue | **INCOMPATIBLE / refuse** |
 | SFE ↔ NS glue | **INCOMPATIBLE / refuse** |
@@ -232,13 +238,17 @@ Finite-support Fourier probes, two-shell \(K_{\alpha,\beta}\) tables, and bounde
 - can **fail to kill** ★ on those samples;
 - cannot establish \(\sup_v\mathcal{R}_\star<\infty\);
 - cannot close PRODUCT-BLOCK;
-- cannot claim Clay Statement B.
+- cannot claim Clay Statement B;
+- cannot establish the depletion required for \(T_{j\leftarrow j}\) closure (occupancy \(\approx 1\) with alignment \(\approx 1/2\) is **not** that depletion);
+- establish no uniform conclusion as \(K_{\max}\to\infty\) or for generic data.
 
 A smooth family with \(\mathcal{R}_\star(v_n)\to\infty\) would **kill** the packaging. Absence of such a family in tests leaves the kill lane **LIVE** and the proof lane **OPEN**.
 
 ---
 
 ## 7. Adjacent books (kept separate)
+
+**Unaugmented shell / spectral-shift face.** Locked honesty: [`UNAUG-PROOF-CHAIN.md`](./UNAUG-PROOF-CHAIN.md). Spectral-shift identity ≠ Lemma★ ratio bound; \(\rho_j<\nu\) is not shell-budget absorption into \(\nu Z_j\); cross-scale bounds not yet supplied; principal open term \(T_{j\leftarrow j}\).
 
 **Φ-renorm (axisymmetric-with-swirl).** Extensive / intensive swirl \(\Gamma=r u_\theta\), \(\Phi=\Gamma/r^2\). KEEP algebraic identity; open barrier equivalent in difficulty to axisymmetric-with-swirl global regularity. See [`PHI-RENORM-WHAT-IS-KEPT.md`](./PHI-RENORM-WHAT-IS-KEPT.md). **Do not glue** to Lemma★ PRODUCT-BLOCK.
 
@@ -250,14 +260,15 @@ A smooth family with \(\mathcal{R}_\star(v_n)\to\infty\) would **kill** the pack
 
 ## 8. Reading order
 
-1. This report (status + honesty locks).  
-2. [`PROOF-CHAIN-CLEAN.md`](./PROOF-CHAIN-CLEAN.md) (full definitions and chain).  
-3. `scripts/ns_attacks/ns_lemma_star_core.py` + `product_bound_probe.py` (reproducibility).  
-4. Φ-renorm KEEP / audit cards if working the swirl branch (separate).  
-5. Method-seat review: [`METHOD-PANEL-REVIEW.md`](./METHOD-PANEL-REVIEW.md).
+1. [`UNAUG-PROOF-CHAIN.md`](./UNAUG-PROOF-CHAIN.md) (locked terminology / honesty).  
+2. This report (status + honesty locks).  
+3. [`PROOF-CHAIN-CLEAN.md`](./PROOF-CHAIN-CLEAN.md) (full definitions and chain).  
+4. `scripts/ns_attacks/ns_lemma_star_core.py` + `product_bound_probe.py` (reproducibility).  
+5. Φ-renorm KEEP / audit cards if working the swirl branch (separate).  
+6. Method-seat review: [`METHOD-PANEL-REVIEW.md`](./METHOD-PANEL-REVIEW.md).
 
 ---
 
 ## 9. One-line status
 
-**Lemma★ / DA-NS-1 = HYPOTHESIS, blocked at PRODUCT-BLOCK (uniform \(\mathcal{R}_\star\)). NS / Clay B not solved. SFE incompatible. RH / ARCHON parked. Numerics ≠ proof.**
+**Lemma★ / DA-NS-1 = HYPOTHESIS, blocked at PRODUCT-BLOCK (uniform \(\mathcal{R}_\star\)). Unaugmented face OPEN at \(T_{j\leftarrow j}\). Spectral-shift identity ≠ ★ bound. NS / Clay B not solved. SFE incompatible. RH / ARCHON parked. Numerics ≠ proof / ≠ depletion.**
