@@ -34,6 +34,11 @@ family \(v_n\)
 This page does not resurrect that box.
 A true \(4/3\) does not kill or repair it.
 
+**14.** A true \(4/3\) does not give
+multi-shell control, does not repair
+unrestricted \(\star\), and does not
+give a continuation criterion.
+
 If \(K\le 16/9\) holds, occupancy \(s\) is
 gone on a **single input shell**. That is a
 written bound on exact-shell fields, not a
@@ -71,6 +76,11 @@ shell-count experiments on this page.
 Math pointer: [`docs/math/ns_attacks/ATTACK_9D_FULL_SUPPORT_BOUND.md`](math/ns_attacks/ATTACK_9D_FULL_SUPPORT_BOUND.md).
 Grow-\(s\) page: [`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md).
 
+Written answers to the twenty
+specialist questions:
+[`ATTACK-9D-SPECIALIST-QUESTIONS.md`](ATTACK-9D-SPECIALIST-QUESTIONS.md).
+Items 5–10 and 14 are also inline below.
+
 The next review is concrete: verify the
 weighted incidence argument (factor \(3\),
 derived below on this page) and the
@@ -104,6 +114,12 @@ Aw=\alpha w.
 
 \(P\) and \(P_k\) on this page are the
 Leray projector. \(B(w,w)=P[(w\cdot\nabla)w]\).
+
+**9.** \(\Pi_\beta\) is the spectral
+projection onto the **exact lattice
+sphere** \(\{\,k\in\mathbb Z^3:\lvert k\rvert^2=\beta\,\}\),
+not a dyadic annulus of width 1.
+The factor-3 count is a lattice count.
 
 Admissible \((\alpha,\beta)\) for a
 nonvacuous pair on one input shell:
@@ -233,10 +249,35 @@ The complete kernel cancellation is in
 §3 of the underlying proof. This page
 does not replace that calculation.
 
-The ordered convolution equals half its
-symmetrization. Squaring contributes
-\(1/4\); the weighted count contributes
-\(3\). Together,
+**8.** For \(p\neq q\) the ordered
+convolution equals half its
+symmetrization as an identity of
+complex vectors. The involution
+\((p,q)\leftrightarrow(q,p)\) uses no
+conjugation. The product \(q\cdot w_p\)
+is \(\sum q_j(w_p)_j\) with \(q\) real.
+The diagonal \(p=q\) is \(\beta=4\alpha\),
+where \(\gamma=0\).
+
+**10.** Both polarizations at a single
+\(p\), with independent complex
+amplitudes, are already included:
+\(w_p\) is any vector in the complex
+plane \(p^\perp\), and the estimate uses
+only \(\lvert w_p\rvert\).
+
+**6.** Conjugation appears only in
+\(\langle u,v\rangle=\sum\overline{u_j}v_j\).
+The divergence constraint \(p\cdot w_p=0\)
+does not conjugate. No line assumes
+real polarizations.
+
+**7.** No formula on this page divides
+by \(1-\beta/(4\alpha)\).
+
+Squaring contributes \(1/4\); the
+weighted count contributes \(3\).
+Together,
 
 \[
 \|\Pi_\beta B(w,w)\|_2^2
@@ -321,9 +362,10 @@ The lattice inequality used above is
 3M^2.
 \]
 
-This count is derived here. It is **not**
-the Ring Lemma and **not** a Borromean
-triad count. Do not import those.
+**5.** This count is derived here. It is
+**not** the Ring Lemma and **not** a
+Borromean triad count. Do not import
+those.
 
 Expand the square. A pair \((p,r)\)
 contributes only at outputs \(k\) with
@@ -359,14 +401,39 @@ argument.
 
 ## Exact three-shear example and historical numbers
 
-The exact three-shear field attains
+**11.** Let \(w=(\sin y,\sin z,\sin x)\)
+on the normalized torus. Then
+\(\|w\|_2^2=3/2\). The field is
+divergence-free and supported on
+\(\lvert k\rvert^2=1\) (six modes).
 
 \[
-K=\frac23
+(w\cdot\nabla)w
+=
+(\sin z\cos y,\;\sin x\cos z,\;\sin y\cos x).
 \]
 
-by direct evaluation on that field.
-This is an identity, not a search result.
+This is already divergence-free, so
+\(P=\mathrm{Id}\). Each component has
+\(L^2\) mass \(1/4\), hence
+\(\|(w\cdot\nabla)w\|_2^2=3/4\).
+The product occupies the twelve modes
+\((0,\pm1,\pm1)\), \((\pm1,0,\pm1)\),
+\((\pm1,\pm1,0)\), all with
+\(\lvert k\rvert^2=2\). Therefore
+\(\alpha=1\), \(\beta=2\),
+\(\|\Pi_2 B(w,w)\|_2^2=3/4\), and
+
+\[
+K_{1,2}(w)
+=
+\frac{2\cdot(3/4)}{(3/2)^2}
+=
+\frac{2}{3}.
+\]
+
+No script. This is an identity, not a
+search result.
 
 **Sanity, not sharpness.**
 \(\frac23\approx 0.667 < 16/9\approx 1.778\).
