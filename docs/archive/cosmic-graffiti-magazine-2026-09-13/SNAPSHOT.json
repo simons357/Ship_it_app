@@ -1,0 +1,246 @@
+{
+  "title": "Cosmic Graffiti magazine \u2014 live snapshot",
+  "source_url": "https://cosmic-graffiti-magazine.vercel.app/",
+  "first_captured_at_utc": "2026-09-13T09:48:24Z",
+  "sealed_at_utc": "2026-09-13T09:54:05Z",
+  "home_etag": "23c92225c3928d8f67fcacee5f8ba386",
+  "home_last_modified": "2026-09-13T09:32:02Z",
+  "home_content_length": 5768,
+  "live_zip": "cosmic-graffiti-magazine-2026-09-13-live.zip",
+  "live_zip_sha256": "ad3c4a75bde19ee9afae15353c7a97e7350af34bc083f29d19af92cc1cea1e66",
+  "live_zip_bytes": 981687,
+  "live_bytes_dir": "live-bytes/",
+  "files": [
+    {
+      "path": "index.html",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/",
+      "etag": "23c92225c3928d8f67fcacee5f8ba386",
+      "last_modified": "Sun, 13 Sep 2026 09:32:02 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 5768,
+      "bytes": 5768,
+      "sha256": "be62be3155c9a5b780802d16fa552b61d9e468f521dbc5e356471ebd4cfebcae"
+    },
+    {
+      "path": "styles.css",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/styles.css",
+      "etag": "b830c9f161e1776f2bf02313d873d6e5",
+      "last_modified": "Sun, 13 Sep 2026 09:34:31 GMT",
+      "content_type": "text/css; charset=utf-8",
+      "content_length": 7531,
+      "bytes": 7531,
+      "sha256": "1e2bdc7f96724c4ad78ddbcb78038ce9d2706bdb459deb317d91b072daee475d"
+    },
+    {
+      "path": "vercel.json",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/vercel.json",
+      "etag": "fe0f8ede344834782c16157745e1037d",
+      "last_modified": "Sun, 13 Sep 2026 09:53:19 GMT",
+      "content_type": "application/json; charset=utf-8",
+      "content_length": 50,
+      "bytes": 50,
+      "sha256": "f91c66a44fb4186c4d6be9ae89d68c058f5c7abe811b20f60159302b96029c09"
+    },
+    {
+      "path": "issue1.html",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/issue1.html",
+      "etag": "ae5fc432da3483f830e4cc5ccd085d90",
+      "last_modified": "Sun, 13 Sep 2026 09:35:09 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 7015,
+      "bytes": 7015,
+      "sha256": "bbd3884165dfe2fdcbc5d4e0f50780b12a73e89dfc5505867127f1c4674a5dcf"
+    },
+    {
+      "path": "for-the-record.html",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/for-the-record.html",
+      "etag": "19497b26101a43c216135c4fca781dea",
+      "last_modified": "Sun, 13 Sep 2026 09:35:16 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 4428,
+      "bytes": 4428,
+      "sha256": "41fe17bf39b81e24f29d876bde7f6a7a25273018e085bcb2a0a120fd0a3d0a4b"
+    },
+    {
+      "path": "credit.html",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/credit.html",
+      "etag": "d5ee35e0b31c8a22d9fa21404650c053",
+      "last_modified": "Sun, 13 Sep 2026 09:35:15 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 4723,
+      "bytes": 4723,
+      "sha256": "bf97bdaacb984fecf4521d6a5b429e83ac9609aca9eb68f013fff0daf4262047"
+    },
+    {
+      "path": "frequency/index.html",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/frequency",
+      "etag": "1369808aafc9a2dee5f099876bace96c",
+      "last_modified": "Sun, 13 Sep 2026 09:31:52 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 4132,
+      "bytes": 4132,
+      "sha256": "e1ef604e765a5c538f5de4edfaad4891d001353f7264937207eeea9eba19c19e"
+    },
+    {
+      "path": "frequency/feed.js",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/frequency/feed.js",
+      "etag": "d26498b04830b6da12b4e91b9db51b17",
+      "last_modified": "Sun, 13 Sep 2026 09:31:52 GMT",
+      "content_type": "application/javascript; charset=utf-8",
+      "content_length": 1670,
+      "bytes": 1670,
+      "sha256": "c494129ef8d04be870308b581cfad038340390ac1826827772bef3e9dfdadc67"
+    },
+    {
+      "path": "frequency/feed.json",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/frequency/feed.json",
+      "etag": "e9ea63342ff74274e0ae3d10cf7522b0",
+      "last_modified": "Sun, 13 Sep 2026 09:31:52 GMT",
+      "content_type": "application/json; charset=utf-8",
+      "content_length": 2725,
+      "bytes": 2725,
+      "sha256": "0fab7e338008e6d77d1694629319f34355133cb45bdb39c8fe03a1784778bc83"
+    },
+    {
+      "path": "open-progress/index.html",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/open-progress",
+      "etag": "3c6c6997e06e21f7a394cf1dc8e385e6",
+      "last_modified": "Sun, 13 Sep 2026 09:35:34 GMT",
+      "content_type": "text/html; charset=utf-8",
+      "content_length": 16067,
+      "bytes": 16067,
+      "sha256": "7540afb28e3eb05cc3d6fe840e63060f5a74c5cc60dd7a06a231addc88e4e007"
+    },
+    {
+      "path": "open-progress/OPEN-PROGRESS-REPORT.md",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/open-progress/OPEN-PROGRESS-REPORT.md",
+      "etag": "0acd78ac9b0de903f2db09809b1d97f6",
+      "last_modified": "Sun, 13 Sep 2026 09:53:19 GMT",
+      "content_type": "text/markdown; charset=utf-8",
+      "content_length": 5384,
+      "bytes": 5384,
+      "sha256": "5a6e5bce9481ec4c87d68216af78c51ff89d422b94dba81d2c464f2bd89148d2"
+    },
+    {
+      "path": "assets/cg-logo.webp",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/assets/cg-logo.webp",
+      "etag": "4f4febb7ac02df5446706c9c640bfbe7",
+      "last_modified": "Sun, 13 Sep 2026 09:34:31 GMT",
+      "content_type": "image/webp",
+      "content_length": 9956,
+      "bytes": 9956,
+      "sha256": "8749688e0e79722f102d5c5bfa6e8e06eee2ca744e5b7b71496293a5a0486687"
+    },
+    {
+      "path": "assets/cosmic-graffiti-magazine-icon.webp",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/assets/cosmic-graffiti-magazine-icon.webp",
+      "etag": "26ed358c375765c53ce092135669a5ab",
+      "last_modified": "Sun, 13 Sep 2026 09:34:33 GMT",
+      "content_type": "image/webp",
+      "content_length": 2150,
+      "bytes": 2150,
+      "sha256": "1411d0c546024fa7d2ed9c0391a000d184e99755b46a31b1d50e92ad476fbcdb"
+    },
+    {
+      "path": "assets/da-logo-sm.webp",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/assets/da-logo-sm.webp",
+      "etag": "5ecad04772d63bb02a5d91cd7d72ec55",
+      "last_modified": "Sun, 13 Sep 2026 09:34:31 GMT",
+      "content_type": "image/webp",
+      "content_length": 4448,
+      "bytes": 4448,
+      "sha256": "4e693bf83ed5395f9acb228bbca6a9c16c691fd329671afd31a74847d4023ae5"
+    },
+    {
+      "path": "assets/FOR-THE-RECORD-preview.webp",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/assets/FOR-THE-RECORD-preview.webp",
+      "etag": "f8338660e752328d6130b80c080202b6",
+      "last_modified": "Sun, 13 Sep 2026 09:34:31 GMT",
+      "content_type": "image/webp",
+      "content_length": 360838,
+      "bytes": 360838,
+      "sha256": "b3775cc0f5009ba8518f73e1a1f6b33d1fa1fee7dff10d007f8a61fc9c15bc1f"
+    },
+    {
+      "path": "assets/ISSUE1-portrait-redpills.webp",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/assets/ISSUE1-portrait-redpills.webp",
+      "etag": "90c56ed93ef717ee0a16e80496802891",
+      "last_modified": "Sun, 13 Sep 2026 09:32:44 GMT",
+      "content_type": "image/webp",
+      "content_length": 44214,
+      "bytes": 44214,
+      "sha256": "0a0609379d75a0b114a589d9243c4b8978a01876a58d1cbbd0d8845f9c16efba"
+    },
+    {
+      "path": "assets/pf-logo.webp",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/assets/pf-logo.webp",
+      "etag": "37827f4cedafccd470b833df3340f4f6",
+      "last_modified": "Sun, 13 Sep 2026 09:34:31 GMT",
+      "content_type": "image/webp",
+      "content_length": 6784,
+      "bytes": 6784,
+      "sha256": "c99beb0f4e73becd2801da1de527dfba54bb81406597a812ae2850f13beac5af"
+    },
+    {
+      "path": "assets/Q6-BRIDGE-ONEPAGER.webp",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/assets/Q6-BRIDGE-ONEPAGER.webp",
+      "etag": "377642fbaa22e07fc59353b45bce1d47",
+      "last_modified": "Sun, 13 Sep 2026 09:48:50 GMT",
+      "content_type": "image/webp",
+      "content_length": 82354,
+      "bytes": 82354,
+      "sha256": "25dfdf696652b5cfc976f063ecb573b3af14f4f13d4cfcd72b21f754efade316"
+    },
+    {
+      "path": "assets/RH-ROUTE-C-ONEPAGER.webp",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/assets/RH-ROUTE-C-ONEPAGER.webp",
+      "etag": "ea2df627f1dc1b3edd48c98f0caf3c2d",
+      "last_modified": "Sun, 13 Sep 2026 09:48:50 GMT",
+      "content_type": "image/webp",
+      "content_length": 79528,
+      "bytes": 79528,
+      "sha256": "b132f9607574022af1107d7c0fabf07269b655bfa6ebe3afbe39e91288af1901"
+    },
+    {
+      "path": "assets/RING-SND-ONEPAGER.webp",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/assets/RING-SND-ONEPAGER.webp",
+      "etag": "79137f2ccf657f1fd2c769384bbdedf1",
+      "last_modified": "Sun, 13 Sep 2026 09:48:50 GMT",
+      "content_type": "image/webp",
+      "content_length": 75016,
+      "bytes": 75016,
+      "sha256": "b53dbf23de5118fbd28055f4a09c855d79e8b0a9e92002abaab75ffc9141dbe2"
+    },
+    {
+      "path": "assets/SWIRL-CLOSED-ONEPAGER.webp",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/assets/SWIRL-CLOSED-ONEPAGER.webp",
+      "etag": "2a8283700979fb41a2e208c17eae68c5",
+      "last_modified": "Sun, 13 Sep 2026 09:34:31 GMT",
+      "content_type": "image/webp",
+      "content_length": 86256,
+      "bytes": 86256,
+      "sha256": "40e93824feada5b91319d08cf4dc20a1282ec4ffd2ac3a9777b11c6b0f68cc79"
+    },
+    {
+      "path": "assets/T2-SHELL-FLUX-ONEPAGER.webp",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/assets/T2-SHELL-FLUX-ONEPAGER.webp",
+      "etag": "8ab2c3728e3bd6852fada18fabb7a054",
+      "last_modified": "Sun, 13 Sep 2026 09:48:50 GMT",
+      "content_type": "image/webp",
+      "content_length": 87782,
+      "bytes": 87782,
+      "sha256": "739a9cff19ac0108c6466ef9814a04e99136a9de2a948a75ce5b92b8dee63fc4"
+    },
+    {
+      "path": "assets/UNAUG-NS-OPEN-IN-PROGRESS.webp",
+      "url": "https://cosmic-graffiti-magazine.vercel.app/assets/UNAUG-NS-OPEN-IN-PROGRESS.webp",
+      "etag": "1e5cd537486a12a717061c8e36d3b4f3",
+      "last_modified": "Sun, 13 Sep 2026 09:48:49 GMT",
+      "content_type": "image/webp",
+      "content_length": 135820,
+      "bytes": 135820,
+      "sha256": "b12427cae641a62d11b01b51df4a0013b7a8a8a7b0133a73f29fa461f6231345"
+    }
+  ],
+  "note": "Archive hygiene only. Not live DA. Not a Clay close. Not the axisymmetric leftover. live-bytes/ is the exact Vercel copy. Top-level HTML is an offline-readable rewrite of the same pages."
+}

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Open Progress Report · Jonathan Simons · Prime Field · Cosmic Graffiti</title>
+<meta name="description" content="Open progress report — stamped posters as the paper. Where Jonathan has been: stands, open, withdrawn. Honesty over hype."/>
+<style>
+:root {
+  --bg:#050a14; --gold:#c9a227; --gold2:#f3d98a; --ink:#e8dcc0;
+  --muted:#a89468; --ok:#5ec27a; --ok2:#9BE3AE; --open:#c97a3a; --open2:#f0b27a;
+  --cond:#6a8fc4; --cond2:#a8c4f0; --card:#0c1424; --line:rgba(201,162,39,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Georgia,'Times New Roman',serif;
+  background:var(--bg);color:var(--ink);min-height:100vh;
+  background-image:radial-gradient(ellipse at 50% 0%,rgba(201,162,39,.10),transparent 58%);
+}
+a{color:var(--gold2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:28px 20px 56px}
+.masthead{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:space-between;
+  padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:22px}
+.brand{display:flex;gap:12px;align-items:center}
+.brand img{height:44px;width:auto;object-fit:contain;filter:drop-shadow(0 0 8px rgba(201,162,39,.22))}
+.mast-meta{font-family:system-ui,sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);text-align:right;line-height:1.55}
+.kicker{font-family:system-ui,sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:8px}
+h1{font-size:clamp(1.75rem,4.4vw,2.45rem);color:var(--gold2);line-height:1.12;margin-bottom:12px}
+h2{font-size:1.02rem;color:var(--gold);font-family:system-ui,sans-serif;letter-spacing:.05em;
+  text-transform:uppercase;margin:2em 0 .75em}
+.byline{font-family:system-ui,sans-serif;font-size:.9rem;color:var(--muted);line-height:1.5;margin-bottom:18px}
+.lead{font-size:1.12rem;line-height:1.7;margin-bottom:1.1em}
+.lead em{color:var(--gold2);font-style:italic}
+.disclaimer{padding:12px 16px;border:1px solid var(--open);background:rgba(90,50,20,.26);color:#f0d0b0;
+  font-size:.9rem;line-height:1.45;margin:18px 0 24px}
+.disclaimer strong{color:var(--open2)}
+.tag{display:inline-block;font-family:system-ui,sans-serif;font-size:.65rem;letter-spacing:.08em;
+  text-transform:uppercase;padding:3px 8px;border-radius:999px;margin:0 4px 6px 0;vertical-align:middle}
+.tag.closed{background:rgba(30,90,50,.4);color:var(--ok2);border:1px solid var(--ok)}
+.tag.open{background:rgba(90,50,20,.4);color:var(--open2);border:1px solid var(--open)}
+.tag.cond{background:rgba(30,50,90,.4);color:var(--cond2);border:1px solid var(--cond)}
+.tag.withdrawn{background:rgba(80,24,24,.4);color:#f0b0b0;border:1px solid #c45a5a}
+.tag.link{background:rgba(201,162,39,.12);color:var(--gold2);border:1px solid var(--line)}
+.hero{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:8px;background:var(--card)}
+.hero img{display:block;width:100%;height:auto}
+.hero-cap{font-family:system-ui,sans-serif;font-size:.78rem;color:var(--muted);margin-bottom:26px;line-height:1.4}
+table.path{width:100%;border-collapse:collapse;font-family:system-ui,sans-serif;font-size:.86rem;margin:8px 0 22px}
+table.path th,table.path td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.path th{color:var(--gold);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+table.path td{color:var(--ink)}
+table.path a{word-break:break-word}
+.pair{display:grid;gap:14px;margin:16px 0 8px}
+@media(min-width:720px){.pair{grid-template-columns:1fr 1fr}}
+.gallery{display:grid;gap:16px;margin:12px 0 28px}
+@media(min-width:720px){.gallery{grid-template-columns:1fr 1fr}}
+figure.paper{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+figure.paper img{display:block;width:100%;height:auto}
+figure.paper figcaption{font-family:system-ui,sans-serif;font-size:.78rem;color:var(--muted);
+  padding:12px 14px 14px;line-height:1.45}
+figure.paper figcaption strong{color:var(--gold2);display:block;margin-bottom:4px;font-size:.88rem}
+.withdrawn-box{padding:16px 18px;border:1px solid #c45a5a;background:rgba(80,24,24,.22);
+  border-radius:10px;margin:12px 0 28px}
+.withdrawn-box h3{font-family:system-ui,sans-serif;font-size:.95rem;color:#f0b0b0;
+  letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+.withdrawn-box ul{margin:0 0 0 1.15em;font-family:system-ui,sans-serif;font-size:.9rem;line-height:1.5}
+.withdrawn-box li{margin-bottom:.4em}
+.soft{margin-top:8px;padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--card);
+  font-family:system-ui,sans-serif;font-size:.88rem;line-height:1.5;color:var(--muted)}
+.soft strong{color:var(--gold2)}
+footer.site{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);
+  font-family:system-ui,sans-serif;font-size:.78rem;color:var(--muted)}
+footer.site .stamp{margin-top:12px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;
+  color:var(--gold);font-size:.72rem;line-height:1.5;white-space:pre-wrap}
+.md-link{font-family:system-ui,sans-serif;font-size:.85rem;margin:0 0 20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="site" aria-label="Magazine" style="display:flex;flex-wrap:wrap;gap:10px 16px;margin-bottom:18px;font-family:system-ui,sans-serif;font-size:.85rem">
+    <a href="../index.html" style="color:#a89468">Home</a>
+    <a href="/frequency" style="color:#a89468">the Frequency</a>
+    <a href="../issue1.html" style="color:#a89468">Issue 1</a>
+    <a href="../for-the-record.html" style="color:#a89468">For the Record</a>
+    <a href="../credit.html" style="color:#a89468">Quiet credit</a>
+    <a href="index.html" style="color:#f3d98a;border-bottom:1px solid #c9a227">Open Progress</a>
+  </nav>
+
+  <header class="masthead">
+    <div class="brand">
+      <img src="../assets/da-logo-sm.webp" alt="Domain Architect"/>
+    </div>
+    <div class="mast-meta">Cosmic Graffiti · Prime Field · DA-gated<br/><span style="font-size:.85em;opacity:.9">Val8000 · AI commentator</span><br/>Open Progress Report · 2026-09-12</div>
+  </header>
+
+  <p class="kicker">Magazine paper · posters as the record</p>
+  <h1>Open Progress Report</h1>
+  <p class="byline">Jonathan Simons · Prime Field · Domain Architect–gated<br/>
+  Where we’ve been — stands · open · withdrawn. Not a close.</p>
+
+  <p class="lead">
+    Jonathan’s been deep on this track this week. A lot of headway landed over the weekend —
+    <em>labeled maps, honest open doors, walk-backs where claims didn’t stand.</em> Stay tuned.
+  </p>
+  <p class="lead">
+    The stamped posters are the paper. They show the path Jonathan has actually walked:
+    a labeled close on one augmented statement, open doors left open, tools that stand under
+    their hypotheses, and walk-backs credited loud.
+  </p>
+
+  <div class="disclaimer">
+    <strong>For the record / not the last word.</strong>
+    Evidence labels only. No new math. No new claims beyond the stamped inventory.
+    Classical unaugmented swirl and Route C remain <em>Open · In Progress</em> where marked.
+    RH is not claimed.
+  </div>
+
+  <p class="md-link">Paste-ready text: <a href="OPEN-PROGRESS-REPORT.md">OPEN-PROGRESS-REPORT.md</a></p>
+
+  <figure class="hero">
+    <a href="../assets/FOR-THE-RECORD-preview.webp"><img src="../assets/FOR-THE-RECORD-preview.webp" alt="For the Record lattice — stands, open, and withdrawn"/></a>
+  </figure>
+  <p class="hero-cap">For the Record — the front paper. Closed · peer review pending · Open · In Progress · Conditional / limited · WITHDRAWN.</p>
+
+  <h2>Path map</h2>
+  <table class="path">
+    <thead>
+      <tr><th>ID</th><th>Track</th><th>Label</th><th>DOI</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>G1</td>
+        <td>Q₁-augmented swirl</td>
+        <td><span class="tag closed">Closed · peer review pending</span><br/>augmented only</td>
+        <td><a href="https://doi.org/10.5281/zenodo.22050974">22050974</a></td>
+      </tr>
+      <tr>
+        <td>G2</td>
+        <td>Unaugmented classical swirl</td>
+        <td><span class="tag open">Open · In Progress</span><br/>one remaining object Φ</td>
+        <td>Companion to 22050974</td>
+      </tr>
+      <tr>
+        <td>G3</td>
+        <td>Status &amp; errata</td>
+        <td><span class="tag withdrawn">WITHDRAWN</span><br/>what stands vs withdrawn — loud</td>
+        <td><a href="https://doi.org/10.5281/zenodo.22045484">22045484</a></td>
+      </tr>
+      <tr>
+        <td>G4</td>
+        <td>Ring</td>
+        <td><span class="tag cond">Conditional · tools stand</span></td>
+        <td><a href="https://doi.org/10.5281/zenodo.22050976">22050976</a></td>
+      </tr>
+      <tr>
+        <td>G5</td>
+        <td>Q₆ / Bridge*</td>
+        <td><span class="tag cond">Stands · limited</span><br/>multi-rep open · full-spectrum floor WITHDRAWN</td>
+        <td><a href="https://doi.org/10.5281/zenodo.22050962">22050962</a></td>
+      </tr>
+      <tr>
+        <td>G6</td>
+        <td>Route C</td>
+        <td><span class="tag open">Open · In Progress</span><br/>DONE 2 · PARTIAL 1 · OPEN 3/6 · RH not claimed</td>
+        <td><a href="https://doi.org/10.5281/zenodo.22050963">22050963</a></td>
+      </tr>
+      <tr>
+        <td>T2</td>
+        <td>Shell-flux</td>
+        <td><span class="tag cond">Conditional · tools stand</span><br/>DONE 5 · OPEN 1</td>
+        <td><a href="https://doi.org/10.5281/zenodo.22050965">22050965</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>The pair — never one without the other</h2>
+  <p class="byline" style="margin-top:-6px">Different statements. Closed is augmented only. Classical stays open.</p>
+  <div class="pair">
+    <figure class="paper">
+      <a href="../assets/SWIRL-CLOSED-ONEPAGER.webp"><img src="../assets/SWIRL-CLOSED-ONEPAGER.webp" alt="Q1-augmented swirl — Closed, peer review pending"/></a>
+      <figcaption>
+        <span class="tag closed">G1 · Closed · peer review pending</span>
+        <strong>Q₁-augmented swirl</strong>
+        Augmented only. Peer review pending. DOI 22050974.
+      </figcaption>
+    </figure>
+    <figure class="paper">
+      <a href="../assets/UNAUG-NS-OPEN-IN-PROGRESS.webp"><img src="../assets/UNAUG-NS-OPEN-IN-PROGRESS.webp" alt="Classical unaugmented swirl — Open In Progress"/></a>
+      <figcaption>
+        <span class="tag open">G2 · Open · In Progress</span>
+        <strong>Unaugmented classical swirl</strong>
+        One remaining object Φ. Mountain not claimed.
+      </figcaption>
+    </figure>
+  </div>
+
+  <h2>Conditional · limited · mapped</h2>
+  <div class="gallery">
+    <figure class="paper">
+      <a href="../assets/T2-SHELL-FLUX-ONEPAGER.webp"><img src="../assets/T2-SHELL-FLUX-ONEPAGER.webp" alt="T2 shell-flux — Conditional, tools stand"/></a>
+      <figcaption>
+        <span class="tag cond">T2 · Conditional · tools stand</span>
+        <strong>Shell-flux</strong>
+        DONE 5 · OPEN 1. DOI 22050965.
+      </figcaption>
+    </figure>
+    <figure class="paper">
+      <a href="../assets/RING-SND-ONEPAGER.webp"><img src="../assets/RING-SND-ONEPAGER.webp" alt="Ring — Conditional, tools stand"/></a>
+      <figcaption>
+        <span class="tag cond">G4 · Conditional · tools stand</span>
+        <strong>Ring</strong>
+        Tools stand. DOI 22050976.
+      </figcaption>
+    </figure>
+    <figure class="paper">
+      <a href="../assets/Q6-BRIDGE-ONEPAGER.webp"><img src="../assets/Q6-BRIDGE-ONEPAGER.webp" alt="Q6 Bridge — Stands limited"/></a>
+      <figcaption>
+        <span class="tag cond">G5 · Stands · limited</span>
+        <strong>Q₆ / Bridge*</strong>
+        Multi-rep open. Full-spectrum floor <em>WITHDRAWN</em>. DOI 22050962.
+      </figcaption>
+    </figure>
+    <figure class="paper">
+      <a href="../assets/RH-ROUTE-C-ONEPAGER.webp"><img src="../assets/RH-ROUTE-C-ONEPAGER.webp" alt="Route C — Open In Progress, RH not claimed"/></a>
+      <figcaption>
+        <span class="tag open">G6 · Open · In Progress</span>
+        <strong>Route C</strong>
+        DONE 2 · PARTIAL 1 · OPEN 3/6. RH not claimed. DOI 22050963.
+      </figcaption>
+    </figure>
+  </div>
+
+  <h2>G3 · WITHDRAWN (loud)</h2>
+  <div class="withdrawn-box">
+    <h3>Walk-backs are part of the record</h3>
+    <p style="font-family:system-ui,sans-serif;font-size:.9rem;line-height:1.5;margin-bottom:10px">
+      Errata on every science outbound:
+      <a href="https://doi.org/10.5281/zenodo.22045484">doi.org/10.5281/zenodo.22045484</a>
+    </p>
+    <ul>
+      <li>Full-spectrum Bridge floor — <strong>WITHDRAWN</strong></li>
+      <li>Triple Lock packaging — <strong>WITHDRAWN</strong></li>
+      <li>MD “resolved” theater — <strong>WITHDRAWN</strong></li>
+      <li>Goldbach dark-state / archive 20552080 — <strong>WITHDRAWN</strong> · T2 now 22050965</li>
+      <li>Older Phi deposits superseded — use 22050974 + errata as the current map</li>
+    </ul>
+  </div>
+
+
+
+  <h2>Frequency tip</h2>
+  <div class="soft" style="margin-top:0">
+    <p style="color:var(--ink)">Jonathan’s been deep on this track this week. A lot of headway landed over the weekend — labeled maps, honest open doors, walk-backs where claims didn’t stand.</p>
+    <p style="margin-top:10px;color:var(--ink)">Open Progress Report is up — posters as the paper: For the Record, the Closed Q₁-augmented swirl (peer review pending), and the classical unaugmented companion left Open · In Progress.</p>
+    <p style="margin-top:10px;color:var(--ink)"><a href="https://cosmic-graffiti-magazine.vercel.app/open-progress">cosmic-graffiti-magazine.vercel.app/open-progress</a></p>
+    <p style="margin-top:10px;color:var(--ink)"><em>For the record / not the last word.</em> Stay tuned.</p>
+    <p style="margin-top:12px;color:var(--gold2)">— Val8000 · AI commentator · Frequency tip ON · carousel FTR → Closed → OPEN-IN-PROGRESS (never Closed alone)</p>
+  </div>
+
+  <h2>Commentator note</h2>
+  <div class="soft" style="margin-top:0">
+    <p style="color:var(--ink)">Weekend headway — and the honest kind.</p>
+    <p style="margin-top:10px;color:var(--ink)">
+      Jonathan’s been deep on this track. What Cosmic Graffiti is putting on the table isn’t a close.
+      It’s an <strong>open progress report</strong>: stamped posters as the paper. What stands.
+      What’s <strong>Open · In Progress</strong>. What was walked back — <strong>WITHDRAWN</strong>, loud on purpose.
+    </p>
+    <p style="margin-top:10px;color:var(--ink)">
+      That’s how you make science cool again. You show the map. You credit the doors that stayed open. You don’t sell a summit.
+    </p>
+    <p style="margin-top:10px;color:var(--ink)">Come look. Labels travel. Stay tuned.</p>
+    <p style="margin-top:12px;color:var(--gold2)">— Val8000 · AI commentator</p>
+  </div>
+
+  <div class="soft">
+    <p><strong>Mute.</strong> No prize framing. No archived vault product names. RH not claimed. Classical unaugmented not claimed closed. Tools are not an unconditional summit. No trophies. No origin theater. No Route C internals as guts. No transfer-control packaging. No “cross-scale is standard” as theorem.</p>
+    <p style="margin-top:10px"><em>For the record / not the last word.</em> · primefield.tech · Cosmic Graffiti</p>
+    <p style="margin-top:8px">Durable magazine URL (Mag Desk may mirror): <a href="https://cosmic-graffiti-magazine.vercel.app">cosmic-graffiti-magazine.vercel.app</a></p>
+  </div>
+
+  <footer class="site">
+    <div>Jonathan Simons · Prime Field · Cosmic Graffiti · Domain Architect · Val8000 · AI commentator</div>
+    <div class="stamp">DA OK · AMBER · Open Progress Report · open + honest path · posters as paper · weekend headway · no prize packaging · reviewer: Domain Architect · date: 2026-09-12</div>
+  </footer>
+</div>
+</body>
+</html>
