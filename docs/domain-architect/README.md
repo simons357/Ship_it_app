@@ -18,7 +18,8 @@ Approved plain-language explanation:
 | [03 — Reconciliation](03-RECONCILIATION.md) | Six-point response to the August 2026 handoff |
 | [04 — Notation collisions](04-NOTATION-COLLISIONS.md) | `P` / `p` / `ℙ`, `Φ` / `φ` / `ϕ`, and other overloaded symbols |
 | [05 — Rectification](05-RECTIFICATION.md) | Software implementation of the August 2026 corrective specification |
-| [NS review / Φ-renorm audit](../ns-review/PHI-RENORM-AUDIT-2026-08-22.md) | Independent audit of June 30 swirl paper; KEEP identity; barrier open; not Clay |
+| [06 — Exact-shell claimed lock](06-EXACT-SHELL-CLAIMED-LOCK.md) | Pointer. Full page: [`ATTACK-9D-FULL-SUPPORT-BOUND.md`](../ATTACK-9D-FULL-SUPPORT-BOUND.md). Questions: [`ATTACK-9D-SPECIALIST-QUESTIONS.md`](../ATTACK-9D-SPECIALIST-QUESTIONS.md) |
+| [NS review / Φ-renorm audit](../ns-review/PHI-RENORM-AUDIT-2026-08-22.md) | Independent audit of June 30 swirl paper; KEEP identity; barrier open |
 
 Machine-readable provenance (original expressions are immutable):
 
