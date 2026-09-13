@@ -8,16 +8,37 @@ remainder is occupancy \(s\);
 the claimed bound removes that factor
 on a single input shell.
 
-**This is a different statement from unrestricted
-Lemma★.** The unrestricted box is killed by the
-growing-layer family
+**Limitation / assumption (read this first).**
+This page is an exact-shell statement
+only: one input eigenvalue
+\(Aw=\alpha w\). It does **not**
+control a general multi-shell field.
+It does **not** restore unrestricted
+Lemma★. That box is already killed by
+the growing-layer family \(v_n\)
 ([`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md)).
-This page does not resurrect it.
+A true \(16/9\) here is not a
+continuation criterion and is not
+★ \(\Rightarrow\) global regularity.
+Ordinary NS stays open.
 
 **CLAIMED:** written derivation available;
 internal checks passed; independent
 specialist review pending. Numerical
 sweeps provide consistency checks only.
+
+**Review audience.** A fluids /
+harmonic-analysis specialist who can
+check two-plane incidence and Hermitian
+Cauchy–Schwarz on this estimate.
+Not a Clay brief. Not a regularity
+close. The “dream team” seating
+elsewhere is published-papers-not-a-call
+([`DREAM-TEAM-PLAIN.md`](DREAM-TEAM-PLAIN.md));
+it is **not** this review and it is
+not a request to Tao, Vicol,
+Gómez-Serrano, or anyone else.
+Nobody has been asked. No timeline.
 
 An internal audit of the underlying
 proof found no gap in the exact-shell
@@ -127,10 +148,9 @@ not claimed.
 The coefficient comes from algebra and
 geometry, not from search results.
 
-This does not control an arbitrary simultaneous
-finite-closer limit, and it does not control
-a general multi-shell field. The growing-layer
-family is multi-shell. No contradiction.
+See the limitation box at the top.
+The growing-layer family is multi-shell.
+No contradiction.
 
 ---
 
@@ -178,21 +198,107 @@ P_k\!\bigl[(q\cdot w_p)w_q+(p\cdot w_q)w_p\bigr]
 \,|w_p|\,|w_q|.
 \]
 
-The in-plane components cancel after
-projection. The remaining component
-is estimated by Hermitian
-Cauchy–Schwarz on \(\mathbb{C}^3\).
-Independent complex polarizations are
-allowed because the inner product is
-\(\langle u,v\rangle=\sum_i \overline{u_i}v_i\);
-the inequality does not use a real
-alignment. The complete calculation is
-§3 of the underlying proof.
+After \(P_k\), only a real direction
+\(e\perp k\) survives. Write
+\(\langle u,v\rangle=\sum_i\overline{u_i}v_i\)
+on \(\mathbb{C}^3\). Because \(k\) is
+real, \(q\cdot w_p=k\cdot w_p=\langle k,w_p\rangle\).
+Hermitian CS on that pairing is the
+one line
+\[
+\lvert\langle k,w_p\rangle\rvert
+\le
+\lvert k_\perp\rvert\,|w_p|
+=
+\sqrt{\beta\Bigl(1-\frac{\beta}{4\alpha}\Bigr)}\,|w_p|,
+\]
+and likewise for \(w_q\). The in-plane
+pieces cancel in
+\(\langle e,(q\cdot w_p)w_q+(p\cdot w_q)w_p\rangle\).
+The leftover is then at most the
+product of those two CS bounds, so
+the displayed estimate holds for
+independently complex \(w_p,w_q\).
+No real alignment is used. The
+complete expansion is §3 of the
+underlying proof.
 
 The ordered convolution equals half
 its symmetrization. Squaring contributes
-\(1/4\); the weighted count contributes
-\(3\). Together,
+\(1/4\). The factor \(3\) is derived
+in the next section (two-plane
+incidence + AM-GM). It is **not**
+the Ring Lemma / Borromean triad
+count from the other book.
+
+**Boundary \(\beta\to 4\alpha\).**
+The geometric root
+\(\sqrt{\beta(1-\beta/4\alpha)}\)
+vanishes at \(x=4\). Nothing in this
+argument divides by that root. The
+energy bound is multiplied by it
+(squared), so the right-hand side
+goes to \(0\). The equivalent form
+with \(\alpha/\sqrt{\beta}\) is
+harmless: \(\beta=4\alpha>0\).
+Vacuous if \(\beta>4\alpha\).
+
+---
+
+## Weighted count (where the 3 comes from)
+
+Let \(S\subset\{p:\lvert p\rvert^2=\alpha\}\),
+\(a_p\ge 0\), and
+\(c_k=\sum_{p+q=k}a_p a_q\).
+The claimed lattice inequality is
+
+\[
+\sum_{\lvert k\rvert^2=\beta}c_k^2
+\le
+3\Bigl(\sum_{p\in S}a_p^2\Bigr)^2.
+\]
+
+Expand the square. A fixed pair \((p,r)\)
+contributes only at outputs \(k\) that satisfy
+\(\lvert k\rvert^2=\beta\) and
+\(k\cdot p=k\cdot r=\beta/2\).
+
+- If \(p\) and \(r\) are linearly independent,
+  two affine planes meet the sphere
+  \(\lvert k\rvert^2=\beta\) in at most two points.
+- If \(r=\lambda p\) and \(\lvert p\rvert^2=\lvert r\rvert^2=\alpha\),
+  then \(\lambda=\pm 1\). The case \(r=p\) is
+  the diagonal. The case \(r=-p\) forces
+  \(\beta=0\), which is excluded.
+
+So a fixed distinct pair meets at most two
+outputs. Write \(M=\sum_{p\in S}a_p^2\).
+Expand \(\sum_k c_k^2\). The diagonal
+\(p=r\) contributes at most \(M^2\)
+(one output). Each off-diagonal pair
+contributes at most two outputs;
+weighted AM-GM \(2a_p a_r\le a_p^2+a_r^2\)
+bounds that whole off-diagonal sum by
+\(2M^2\). Add: \(1+2=3\), so
+\(\sum_k c_k^2\le 3M^2\).
+
+That is the derivation of the \(3\)
+used above. It lives on this page.
+Do not cite Ring / Borromean as the
+source.
+
+**Claimed proposition — two-plane incidence.**
+The two bullets above. Isolated so a
+specialist can accept or break them by
+naming one pair that meets three outputs
+on a shell \(\beta>0\). Isolating is not
+certification. Internal audit found no
+gap. Independent specialist review of
+this incidence argument, and of the
+Hermitian CS line, is the next check.
+
+Half-symmetrization times this count:
+\(\tfrac14\times 3=\tfrac34\),
 
 \[
 \|\Pi_\beta B(w,w)\|_2^2
@@ -204,8 +310,8 @@ its symmetrization. Squaring contributes
 
 ## One-variable maximum (redo by hand)
 
-From the last display and the definition
-of \(K\), on the admissible set
+From the \(\tfrac34\) display and the
+definition of \(K\), on the admissible set
 \(x=\beta/\alpha\in(0,4]\),
 
 \[
@@ -250,51 +356,6 @@ on the integer lattice.
 
 ---
 
-## Weighted count
-
-Let \(S\subset\{p:\lvert p\rvert^2=\alpha\}\),
-\(a_p\ge 0\), and
-\(c_k=\sum_{p+q=k}a_p a_q\).
-The claimed lattice inequality is
-
-\[
-\sum_{\lvert k\rvert^2=\beta}c_k^2
-\le
-3\Bigl(\sum_{p\in S}a_p^2\Bigr)^2.
-\]
-
-Expand the square. A fixed pair \((p,r)\)
-contributes only at outputs \(k\) that satisfy
-\(\lvert k\rvert^2=\beta\) and
-\(k\cdot p=k\cdot r=\beta/2\).
-
-- If \(p\) and \(r\) are linearly independent,
-  two affine planes meet the sphere
-  \(\lvert k\rvert^2=\beta\) in at most two points.
-- If \(r=\lambda p\) and \(\lvert p\rvert^2=\lvert r\rvert^2=\alpha\),
-  then \(\lambda=\pm 1\). The case \(r=p\) is
-  the diagonal. The case \(r=-p\) forces
-  \(\beta=0\), which is excluded.
-
-So a fixed distinct pair meets at most two
-outputs. Weighted AM-GM bounds the
-off-diagonal contribution by twice the
-squared mass. The diagonal is at most once
-the squared mass. Total factor \(3\).
-
-**Claimed proposition — two-plane incidence.**
-The two bullets above. Isolated so a
-specialist can accept or break them by
-naming one pair that meets three outputs
-on a shell \(\beta>0\). Isolating is not
-certification. Internal audit found no
-gap. Independent specialist review of
-this incidence argument, and of the
-complex-polarization identity, is the
-meaningful next check.
-
----
-
 ## Write-up example and historical numbers
 
 The named example is the three-shear field
@@ -304,6 +365,10 @@ twelve outputs each of size \(1/16\),
 so \(K_{1,2}=2/3\) by hand.
 That proves \(\sup K\ge 2/3\). It does
 not prove the ceiling.
+Sanity: \(2/3=6/9<16/9\), strictly
+inside the claimed upper bound. A
+sharp lower example versus a claimed
+upper bound — not sharpness, not \(C_0\).
 [`ATTACK-9D-TWO-THIRDS.md`](ATTACK-9D-TWO-THIRDS.md).
 
 Historical consistency checks (not the bound):
@@ -315,20 +380,22 @@ Historical consistency checks (not the bound):
 | Grow-\(s\) (seed 1390) | \(\approx 0.456\) at \((16,32)\) | Search max. |
 
 \(2/3\) clears both search maxima and
-sits well under \(16/9\approx 1.778\).
+sits strictly inside \(16/9\approx 1.778\).
 Those numbers sit. They are not the proof.
 
 ---
 
 ## Next review
 
-Verify the weighted incidence argument
-and the complex-polarization identity
-(Hermitian CS after the in-plane cancel).
-Redo the one-variable maximum of
-\(f(x)=(3/4)x^2(1-x/4)\) on \((0,4]\)
-by hand. The exact-shell scope is
-correctly separated from unrestricted ★.
+Verify the two-plane incidence (the
+factor \(3\)) and the Hermitian CS
+line after the in-plane cancel.
+Redo \(f(8/3)=16/9\) by hand.
+Confirm the root is never inverted
+as \(\beta\to 4\alpha\).
+See the limitation box at the top
+for exact-shell versus unrestricted ★.
+Nobody has been asked. No timeline.
 
 ---
 
@@ -341,8 +408,10 @@ correctly separated from unrestricted ★.
 | Three-shear \(K=2/3\) as \(C_0\) | **NO.** Write-up example. Floor only. |
 | Internal audit of the exact-shell argument | **Passed.** No gap found. Not an outside sign. |
 | Named verifier symbolic checks | **Passed.** Not a proof assistant. |
-| Two-plane incidence as a theorem | **CLAIMED.** Isolated. Next review. |
-| Complex-polarization identity | **CLAIMED.** Hermitian CS after in-plane cancel. Next review. |
+| Two-plane incidence / factor \(3\) | **CLAIMED.** Derived on this page, not Ring/Borromean. Next review. |
+| Hermitian CS line | **CLAIMED.** Written as \(\lvert\langle k,w_p\rangle\rvert\le\lvert k_\perp\rvert\,|w_p|\). Next review. |
+| \(2/3\) vs \(16/9\) | **Sanity.** \(2/3<16/9\), strict. Floor inside claimed ceiling. |
+| \(\beta\to 4\alpha\) | **Stated.** Root vanishes; never inverted. |
 | Admissible \((\alpha,\beta)\) / \(x\in(0,4]\) | **Stated.** \(\beta\le 4\alpha\) from \(\lvert p+q\rvert\le 2\sqrt{\alpha}\). |
 | One-variable max \(f(8/3)=16/9\) | **Written.** Redo by hand. Not a lattice attainment. |
 | Exact-shell \(K\le 16/9\) | **CLAIMED.** Written derivation available; internal checks passed; independent specialist review pending. |

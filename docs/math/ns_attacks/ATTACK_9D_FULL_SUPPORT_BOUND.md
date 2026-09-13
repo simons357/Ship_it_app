@@ -223,10 +223,15 @@ the squared mass. Total factor \(3\).
 
 ### Claimed proposition — two-plane incidence
 
-The two bullets above. Isolated so a
-specialist can accept or break them by
-naming one pair that meets three outputs
-on a shell \(\beta>0\). Isolating is not
+The two bullets above, plus AM-GM:
+diagonal at most \(M^2\), off-diagonal
+at most \(2M^2\), total factor \(3\).
+That derivation is written on the
+phone page. It is not Ring / Borromean.
+Isolated so a specialist can accept
+or break the incidence by naming one
+pair that meets three outputs on a
+shell \(\beta>0\). Isolating is not
 certification.
 
 **Status: CLAIMED.** Isolated so a

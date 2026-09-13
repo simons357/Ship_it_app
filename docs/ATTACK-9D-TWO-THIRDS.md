@@ -13,10 +13,12 @@ A random-search maximum is not.
 **One explicit value does not prove
 the ceiling. It proves the floor of
 the supremum: \(\sup K\ge 2/3\).**
+Sanity: \(2/3=6/9<16/9\), strictly
+inside the claimed upper bound.
 \(2/3\approx 0.667\) clears aligned
 9B \(0.641\) and grow-\(s\) \(0.456\).
-It sits well under
-\(16/9\approx 1.778\).
+A sharp lower example versus a
+claimed ceiling — not sharpness.
 That is a step up from random
 search. It is not the bound.
 Specialist review of the \(16/9\)
