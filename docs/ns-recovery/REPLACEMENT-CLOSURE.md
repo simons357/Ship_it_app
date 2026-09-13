@@ -35,7 +35,7 @@ The growing-layer family \(v_n\) is admissible and
 
 | Object | Status on this book |
 |---|---|
-| Exact-shell 9D coefficient \(K\le 16/9\) | **CLAIMED.** If true: occupancy \(s\) gone on one input shell; three-shear sits under a named ceiling. **Not** a regularity close. Does not kill or repair ★. |
+| Exact-shell 9D coefficient \(K\le 16/9\) | **CLAIMED.** Writeup scored: [`ATTACK-9D-FULL-SUPPORT-SCORE.md`](ATTACK-9D-FULL-SUPPORT-SCORE.md). Occupancy gone on one input shell *if* it holds. **Not** a regularity close. |
 | Finite \(K\) sweeps (aligned 9B, grow-\(s\)) | Historical. Not a universal constant. |
 | Three-shear \(K_{1,2}=2/3\) | Write-up **floor** \(\sup K\ge 2/3\). Not \(C_0\), not \(16/9\). |
 | Soft X, SND, Theorem H, Phi-renorm, Triple Lock, Route N/Q6, Domain Architect “five fingers” | **Still silent.** Do not glue. |

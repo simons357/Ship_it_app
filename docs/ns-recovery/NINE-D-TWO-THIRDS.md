@@ -65,7 +65,9 @@ unrestricted ★. That box is already dead by the multi-shell family
 restore ★ \(\Rightarrow\) global regularity. Ordinary NS stays open.
 
 Until a specialist signs the algebra, or a sweep shows nothing near
-\(16/9\), the word is still **CLAIMED**. Soft X silent.
+\(16/9\), the word is still **CLAIMED**. Existing maxima \(0.641\) and
+\(0.456\) are not near \(16/9\). That does not unclaim the bound.
+Soft X silent. Full claimed writeup: [`ATTACK-9D-FULL-SUPPORT-SCORE.md`](ATTACK-9D-FULL-SUPPORT-SCORE.md).
 
 This book’s aligned 9B row at \((1,2)\) was \(K\approx 0.578\) on a
 **different** field. That sweep did not name this interaction.
