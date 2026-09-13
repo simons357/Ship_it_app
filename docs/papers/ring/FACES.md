@@ -7,8 +7,11 @@ Do **not** glue Ring SND to Paper2 operator-norm SND.
 Do **not** treat this book as Clay, swirl \(\Phi\), or Paper2 FIXED.tex.
 
 **Usable Ring SND** on this branch remains \(\inf J(t)/X(t)\ge c_*>0\).
-Unconditional SND for arbitrary large \(H^1\) data is **OPEN**. Clay is
-**NOT CLAIMED**. DA-VC-01 still **FAIL**.
+Unconditional SND for arbitrary large \(H^1\) data is **OPEN**
+(**CONDITIONAL** leftover). That remainder is \(J/X\), not
+\(T_{j\leftarrow j}\), not WRITE (6), not estimate Step 6, not Q6.
+Clay is **NOT CLAIMED**. DA-VC-01 still **FAIL**.
+Labels: [`docs/domain-architect/SND-AND-SIX.md`](../../domain-architect/SND-AND-SIX.md).
 
 | Face | File | What it is |
 |---|---|---|

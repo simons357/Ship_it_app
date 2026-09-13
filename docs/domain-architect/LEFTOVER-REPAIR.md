@@ -50,6 +50,15 @@ remainder, not a leftover-split piece: Door-1 intra-shell transfer
 Do not set \(\sigma_{\mathrm{strain}}=T_{j\leftarrow j}\). That program
 stays **OPEN**. Clay is **NOT CLAIMED**.
 
+Leftover-split has **three** pieces (this table). There is **no item #6**.
+Do not set SND leftover = \(T_{j\leftarrow j}\) = WRITE (6) = estimate
+Step 6 = Q6. Labels: [`SND-AND-SIX.md`](SND-AND-SIX.md).
+
+- **SND leftover** here is Ring \(J/X\) (#2) or Paper2 simplex 7–8 (#3).
+- **Estimate Step 6** is a proposed mechanism IF (A), **not claimed**, on the Door-1 note. Not this table.
+- **WRITE (6) / H1** is a PARK geometric leftover on the Sept 11 tjj branch. Not Door-1.
+- **Q6** as a constitutive law of Clay NS is **DISCARD**. Usable Q6 is the arithmetic \(H_N\) definition only.
+
 ## What live DA does with them
 
 Decompose of each usable / leftover string returns `unclassified` at Level 0

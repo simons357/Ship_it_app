@@ -9,6 +9,7 @@
 **Leftover-split lab:** [`LEFTOVER-REPAIR.md`](LEFTOVER-REPAIR.md) — usable Ring SND + Q6 \(H_N\); three NS leftovers are conditional closes  
 **Localized reparation:** [`LOCALIZED-REPAIR.md`](LOCALIZED-REPAIR.md) — `excise k` on an n-step chain; default dataset is the classical unaugmented 9-step chain; leftover cut is 7–8; graft stays a hypothesis  
 **Honest OPEN board:** [`OPEN-BOARD.md`](OPEN-BOARD.md) — withdrawn / rejected / missing taken off the OPEN chorus; \(T_{j\leftarrow j}\) stays visible  
+**SND and “6” labels:** [`SND-AND-SIX.md`](SND-AND-SIX.md) — leftover names only; not a proof  
 **Axisymmetric shell filter:** [`AXISYMMETRIC-SHELL-AUDIT.md`](AXISYMMETRIC-SHELL-AUDIT.md) — KEEP / DISCARD / PARK for one estimate only  
 **Axisymmetric shell estimate:** [`docs/papers/swirl/AXISYMMETRIC-SHELL-ESTIMATE.md`](../papers/swirl/AXISYMMETRIC-SHELL-ESTIMATE.md) — remainder \(T_{j\leftarrow j}\); not Clay  
 **Intensity vs control:** [`TURBULENCE-INTENSITY.md`](TURBULENCE-INTENSITY.md) — lumped \(x\to x^\star\) against a no-actuation arm; not 3D NS  

@@ -29,7 +29,7 @@ Class: unaugmented axisymmetric-with-swirl. Quantity: the labeled shell in use. 
 
 **Cross-scale terms.** This program proposes to handle cross-scale interactions using standard estimates. Their precise bounds and summability remain to be supplied within this chain; they are not established by this note.
 
-**Remaining closure.** Conditions (A)–(C) describe candidate routes for completing this particular proof chain. The principal unresolved term is the same-scale transfer \(T_{j\leftarrow j}\). Step 6 describes a proposed closure mechanism: it requires (A), or a depletion estimate implying (A), without using \(\dot e_j\), \(\dot Z\) or \(\Lambda'\) to reintroduce the quantity being bounded.
+**Remaining closure.** Conditions (A)–(C) describe candidate routes for completing this particular proof chain. The principal unresolved term is the same-scale transfer \(T_{j\leftarrow j}\). Estimate Step 6 is a **proposed** closure mechanism: it requires (A), or a depletion estimate implying (A), without using \(\dot e_j\), \(\dot Z\) or \(\Lambda'\) to reintroduce the quantity being bounded. **Not claimed.** It is not WRITE (6)/H1, not leftover-split item #6, not Q6, not Ring/Paper2 SND leftover, and not Statement-B table Step 6.
 
 **Scope of computations.** The reported measurements concern small exact disks and the stated restricted classes. They establish no uniform conclusion as \(K_{\max}\to\infty\) or for generic data. Observed occupancy \(1\) alongside alignment approximately \(1/2\) does not establish the depletion required for closure.
 
@@ -308,9 +308,9 @@ Class: unaugmented axisymmetric-with-swirl. Quantity: the labeled shell in use. 
 
 - **(A)** — enstrophy–palinstrophy route. Palinstrophy-normalized \(\rho_j<\nu\) lives here. It is not absorption on the displayed energy budget.
 - **(B)**, **(C)** — named candidate routes. Their statements are not supplied on this page. This note does not invent them.
-- **Step 6** — a proposed closure mechanism. It requires (A), or a depletion estimate implying (A), without using \(\dot e_j\), \(\dot Z\), or \(\Lambda'\) to reintroduce the quantity being bounded.
+- **Estimate Step 6** — a proposed closure mechanism. It requires (A), or a depletion estimate implying (A), without using \(\dot e_j\), \(\dot Z\), or \(\Lambda'\) to reintroduce the quantity being bounded. **Not claimed.** Not WRITE (6)/H1. Not Q6. Not the Statement-B table row “Step 6” (conditional \(H^1\) IF [SND]). Not leftover-split item #6 (that list has three pieces).
 
-The principal unresolved term is still \(T_{j\leftarrow j}\). None of (A)–(C) or Step 6 is seated here.
+The principal unresolved term is still \(T_{j\leftarrow j}\). None of (A)–(C) or estimate Step 6 is seated here. Proofs stay parked.
 
 ---
 
@@ -331,6 +331,8 @@ This note also refuses: treating the spectral-shift identity as the Lemma★ rat
 Parked elsewhere (not deleted): Harmonic Blueprint / SFE archive; apps; Base 44 partition experiment until \(\rho_j\) is tested; defense stacks; RH / Goldbach; turbulence-reduction (ships ACTIVE; other slots QUEUED); leftover-split strain; Ring / Paper2 / Route J.
 
 Left on the Sept 11 branch, not welded here: Lemma★ / attack notes, H1 / WRITE (6), `SWIRL-PAPER.md` Hardy as a repair of \(R\), lattice random / 4-fold / Taylor–Green interpolant ratios (not this class), the FFT probe scripts themselves.
+
+**WRITE (6) / H1** is a named geometric leftover (Bad-pair / \(A_{\mathrm{bad}}\) on \(Q_r\)). It is **not proved** and **not** this Door-1 remainder. Status **PARK**. Do not set WRITE (6) = estimate Step 6 = \(T_{j\leftarrow j}\) = SND leftover = Q6.
 
 ---
 
