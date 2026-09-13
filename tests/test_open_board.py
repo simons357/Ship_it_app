@@ -66,7 +66,7 @@ class TestOpenBoard(unittest.TestCase):
         self.assertIn("q6-constitutive", rejected_ids)
         step6 = next(row for row in payload["parked"] if row["id"] == "estimate-step-6")
         self.assertIn("not claimed", step6["problem"].lower())
-        self.assertIn("needs (A)", step6["problem"])
+        self.assertIn("needs (a)", step6["problem"].lower())
         write6 = next(row for row in payload["parked"] if row["id"] == "write-6-h1")
         self.assertIn("Not Door-1", write6["problem"])
         self.assertFalse(payload["leftover_split"]["reconstruction_closed"])

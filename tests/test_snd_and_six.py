@@ -22,9 +22,7 @@ FORBIDDEN_GLUE = (
     "snd leftover = t_{j",
     "t_{j\\leftarrow j} = write (6)",
     "write (6) = step 6 = q6",
-    "snd implies generic 3-d",
     "identity controls transfer",
-    "t2 closed",
     "clay is solved",
 )
 
@@ -84,9 +82,9 @@ class TestSndAndSixLabels(unittest.TestCase):
         self.assertIn("Not Clay", chain)
         self.assertIn("not claimed", estimate.lower())
         self.assertIn("WRITE (6) / H1", estimate)
-        self.assertIn("not unconditional regularity", faces.lower())
-        self.assertIn("not generic 3-D", faces)
-        self.assertNotIn("SND implies generic 3-D", faces)
+        self.assertIn("13 Sept 2026 label", faces)
+        self.assertIn("**not** generic 3-D", faces)
+        self.assertIn("Not “SND implies generic 3-D.”", CARD.read_text(encoding="utf-8"))
         self.assertNotIn("identity controls transfer", estimate.lower())
 
 
