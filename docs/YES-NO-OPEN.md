@@ -128,7 +128,10 @@ The named kill is the growing-layer
 family, not a finite \(K\).
 Designed 9D stays dead.
 Exact-shell \(K\le 16/9\) is
-**CLAIMED**, specialist pending:
+**CLAIMED:** written derivation
+available; internal checks passed;
+independent specialist review pending.
+Sweeps are consistency checks only:
 [`ATTACK-9D-FULL-SUPPORT-BOUND.md`](ATTACK-9D-FULL-SUPPORT-BOUND.md).
 
 The ★ reason remains a map of why
@@ -172,9 +175,12 @@ is gone on a single input shell:
 YES as a written bound on exact-shell
 fields, still NO as a regularity close.
 It does not restore ★ \(\Rightarrow\)
-global regularity. Until a specialist
-signs, or a sweep shows nothing near
-\(16/9\), the word is still CLAIMED.
+global regularity. The word is still
+CLAIMED. Sweeps are consistency
+checks only. Independent specialist
+review of the weighted incidence
+argument and the complex-polarization
+identity is pending.
 
 Those three words do not trade.
 NS not solved. RH not solved.

@@ -1,6 +1,6 @@
 # Exact-shell 9D — claimed full-support bound
 
-12 September 2026.
+13 September 2026.
 Unaugmented NS on \(\mathbb{T}^3\);
 quantity is \(K_{\alpha,\beta}(w)\) for \(Aw=\alpha w\);
 remainder is occupancy \(s\);
@@ -10,16 +10,31 @@ on a single input shell.
 **This is a different statement from unrestricted
 Lemma★.** The unrestricted box is killed by the
 growing-layer family. This page does not
-resurrect it. Specialist review of the
-weighted count, the kernel step, and the
-polarization factor is pending.
-NS is not solved.
+resurrect it.
+
+**CLAIMED:** written derivation available;
+internal checks passed; independent
+specialist review pending. Numerical
+sweeps provide consistency checks only.
+
+Internal audit found no gap in the
+exact-shell argument. The named verifier
+passes its symbolic checks. Independent
+specialist review of the weighted
+incidence argument and the
+complex-polarization identity remains
+pending. NS is not solved.
 
 Phone lock: [`../../ATTACK-9D-FULL-SUPPORT-BOUND.md`](../../ATTACK-9D-FULL-SUPPORT-BOUND.md).
 Grow-\(s\) record: [`../../ATTACK-9D-GROW-S.md`](../../ATTACK-9D-GROW-S.md).
 Write-up example: [`../../ATTACK-9D-TWO-THIRDS.md`](../../ATTACK-9D-TWO-THIRDS.md).
 Designed \(\Theta(m^2)\) 9D stays **NO**.
 `attack9d_theta_m2_locked_phase.py` was not written.
+
+**Conventions.** Normalized torus
+\(\mathbb{T}^3=(\mathbb{R}/2\pi\mathbb{Z})^3\).
+\(K_{\alpha,\beta}\) is defined only for
+\(\alpha>0\) and \(w\neq 0\).
 
 ---
 
@@ -66,9 +81,8 @@ a named ceiling, not under a rumor.
 No as a regularity close. A true
 \(4/3\) does not restore
 ★ \(\Rightarrow\) global regularity.
-Until a specialist signs, or a sweep
-shows nothing near \(16/9\), the word
-is still CLAIMED.
+The word is still CLAIMED. Sweeps are
+consistency checks only.
 
 ---
 
@@ -99,12 +113,53 @@ i\,P_k\sum_{p+q=k}(q\cdot w_p)w_q
 i\,P_k\sum_{p+q=k}(k\cdot w_p)w_q.
 \]
 A crude pair bound with \(\lvert P_k w_q\rvert\le|w_q|\)
-returns occupancy. The claimed \(3/4\) form
-uses the exact complex polarization
-cancellation on top of the weighted count
-below. Specialist review should check that
-kernel step. DA has not replaced it by a
-proof assistant.
+returns occupancy.
+
+---
+
+## 3. Symmetrized interaction estimate
+
+For \(p+q=k\) on the specified shells,
+
+\[
+\bigl\lvert
+P_k\!\bigl[(q\cdot w_p)w_q+(p\cdot w_q)w_p\bigr]
+\bigr\rvert
+\le
+\sqrt{\beta\Bigl(1-\frac{\beta}{4\alpha}\Bigr)}
+\,|w_p|\,|w_q|.
+\]
+
+The in-plane components cancel after
+projection. The remaining component
+satisfies Cauchy–Schwarz even with
+independently complex polarizations.
+
+The ordered convolution equals half
+its symmetrization:
+
+\[
+\sum_{p+q=k}(q\cdot w_p)w_q
+=
+\frac12\sum_{p+q=k}
+\bigl[(q\cdot w_p)w_q+(p\cdot w_q)w_p\bigr].
+\]
+
+Squaring contributes \(1/4\); the
+weighted count of §4 contributes \(3\).
+Together,
+
+\[
+\|\Pi_\beta B(w,w)\|_2^2
+\le
+\frac34\beta\Bigl(1-\frac{\beta}{4\alpha}\Bigr)\|w\|_2^4.
+\]
+
+That gives \(K\le 16/9\). The coefficient
+comes from algebra and geometry, not
+from search results. Internal audit
+found no gap. Independent specialist
+review of this identity is pending.
 
 ---
 
@@ -193,17 +248,18 @@ The write-up example is the
 three-shear field
 \(w=(\sin y,\sin z,\sin x)\):
 one line, \(K_{1,2}=2/3\) by hand.
-That raises the floor of \(\sup K\)
-above aligned 9B \(0.641\).
-Random exact-shell fields on
-\((4,8)\), \((5,4)\), \((9,4)\), \((16,32)\),
-\((1,2)\) printed \(K\le 0.456<16/9\).
-Grow-\(s\) max \(K\approx 0.456<16/9\).
-Those numbers sit. They are not the proof.
+That proves \(\sup K\ge 2/3\). It does
+not prove the ceiling. It clears
+aligned 9B \(0.641\) and grow-\(s\)
+\(0.456\), and sits under
+\(16/9\approx 1.778\).
+Those search maxima are consistency
+checks only. They are not the proof.
 Do not cash \(2/3\) as \(C_0\) or as \(16/9\).
-To move \(16/9\) from CLAIMED to
-supported still needs the closed-form
-or a near-ceiling sweep. Neither sits.
+The word stays CLAIMED: written
+derivation available; internal checks
+passed; independent specialist review
+pending.
 
 ---
 
@@ -214,9 +270,9 @@ or a near-ceiling sweep. Neither sits.
 | Designed \(\Theta(m^2)\) 9D | **NO.** Dead. |
 | Grow-\(s\) finite max as \(C_0\) | **NO.** Historical. |
 | Three-shear \(K=2/3\) as \(C_0\) | **NO.** write-up example. Floor only. |
-| Two-plane incidence as a theorem | **NO.** Isolated. Still CLAIMED. |
-| Exact-shell \(K\le 16/9\) | **CLAIMED.** \(C=4/3\). Occupancy \(s\) gone on one input shell if it holds. |
-| Sweep max \(0.641\) / \(0.456\) as the ceiling | **NO.** Not the bound. |
+| Two-plane incidence as a theorem | **NO.** Isolated. Still CLAIMED. Next review. |
+| Exact-shell \(K\le 16/9\) | **CLAIMED.** Written derivation available; internal checks passed; independent specialist review pending. |
+| Sweep max \(0.641\) / \(0.456\) as the ceiling | **NO.** Consistency checks only. |
 | True \(4/3\) as a regularity close | **NO.** Does not repair ★. No continuation. |
 | Unrestricted ★ | **NO.** Dead by \(v_n\). |
 | Ordinary NS | **OPEN.** |

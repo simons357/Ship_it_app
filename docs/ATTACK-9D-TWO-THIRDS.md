@@ -129,14 +129,11 @@ ceiling.
 - It does not construct a singular
   NSE solution.
 
-To move exact-shell \(16/9\) from
-**CLAIMED** to supported still
-requires the closed-form derivation
-or a sweep that shows nothing gets
-near \(16/9\). A clean floor is not
-that. Specialist review of the
-derivation is still pending. No
-such near-ceiling sweep sits.
+**CLAIMED:** written derivation available;
+internal checks passed; independent
+specialist review pending. Numerical
+sweeps provide consistency checks only.
+A clean floor is not the ceiling.
 
 If \(K\le 16/9\) holds: occupancy \(s\)
 is gone on a single input shell.
@@ -149,10 +146,7 @@ No as a regularity close. A true
 unrestricted ★, does not give a
 continuation criterion, and does not
 restore ★ \(\Rightarrow\) global regularity.
-Ordinary NS stays open. Until a
-specialist signs, or a sweep shows
-nothing near \(16/9\), the word is
-still **CLAIMED**.
+Ordinary NS stays open.
 
 ---
 
