@@ -101,7 +101,8 @@ SHELL_REMAINDER_WARNINGS = (
     "rho_j<nu is not energy-budget absorption. Occupancy 1 "
     "with alpha~1/2 is not depletion. Status OPEN. Clay "
     "NOT CLAIMED. Not leftover-split strain, not Ring SND, "
-    "and not Paper2 simplex.",
+    "and not Paper2 simplex. Not estimate Step 6, not "
+    "WRITE (6)/H1, not Q6.",
 )
 
 BOTH_BOOKS_WARNING = (

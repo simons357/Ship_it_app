@@ -125,6 +125,13 @@ class TestLeftoverRepairProtocol(unittest.TestCase):
         self.assertIn("pd", joined)
         self.assertIn("clay", joined)
         self.assertIn("t_{j", joined)
+        self.assertIn("write (6)", joined)
+        self.assertIn("no leftover-split item #6", joined)
+        notes = " ".join(payload["notes"]).lower()
+        self.assertIn("proposed mechanism", notes)
+        self.assertIn("not claimed", notes)
+        self.assertIn("write (6)", notes)
+        self.assertIn("no item #6", notes)
 
     def test_cycle_does_not_emit_pd_loop(self):
         report = cycle_leftover_repair()

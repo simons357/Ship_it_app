@@ -66,8 +66,10 @@ STANDING_LANGUAGE = {
     ),
     "routes_A_B_C": "candidate routes, not theorems",
     "step_6": (
-        "proposed; requires (A) or a depletion estimate implying (A); "
-        "no e_dot_j, Z_dot, or Lambda'"
+        "proposed mechanism, needs (A), not claimed; "
+        "or a depletion estimate implying (A); "
+        "no e_dot_j, Z_dot, or Lambda'; "
+        "not WRITE (6); not Q6; not SND leftover 7-8"
     ),
     "principal_unresolved": "T_{j←j}",
     "scope": (
@@ -166,6 +168,7 @@ REFUSED = (
     "no treating rho_j<nu as energy-budget absorption",
     "no treating occupancy 1 with alpha~1/2 as depletion",
     "no using e_dot_j, Z_dot, or Lambda' in Step 6 to bound Tjj",
+    "no identifying Tjj with estimate Step 6, WRITE (6), Q6, or SND leftover 7-8",
 )
 
 FIRST_SENTENCE = (
@@ -540,8 +543,9 @@ def format_shell_diagnostic(diag: dict[str, Any] | None = None) -> str:
             "occupancy 1 with alpha~1/2: does not establish depletion"
         ),
         (
-            "routes (A)-(C) and Step 6: candidate routes, not theorems; "
-            "principal unresolved T_{j←j}"
+            "routes (A)-(C): candidate routes, not theorems; "
+            "estimate Step 6: proposed mechanism, needs (A), not claimed; "
+            "not WRITE (6); not Q6; remainder still T_{j←j}"
         ),
         (
             "scope: small exact disks / restricted classes; "

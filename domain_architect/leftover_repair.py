@@ -15,8 +15,11 @@ Protocol
    σ stays a hypothesis. Do not identify the leftovers.
 
 The three NS leftovers are swirl strain, unconditional Ring SND, and
-Paper2 simplex closeness. Usable Ring SND and Q6 H_N sit beside them
-as concentration diagnostics that can coexist without being multiplied.
+Paper2 simplex closeness. There is no leftover-split item #6.
+Usable Ring SND and Q6 H_N sit beside them as concentration
+diagnostics that can coexist without being multiplied.
+Door-1 T_{j←j}, estimate Step 6, WRITE (6)/H1, and constitutive Q6
+are different objects.
 """
 
 from __future__ import annotations
@@ -48,6 +51,8 @@ REFUSED = (
     "no identifying Q6 H_N with Paper2 H_N[a] or FRA coupling H",
     "no identifying ∫||u^r/r||_∞ dt with ||a-μ||_ℓ¹ or with J/X",
     "no identifying T_{j←j} with leftover-split strain",
+    "no identifying T_{j←j} with estimate Step 6, WRITE (6), Q6, or Paper2 leftover 7-8",
+    "no leftover-split item #6 (the list is three: swirl, Ring SND, Paper2 simplex)",
 )
 
 
@@ -124,6 +129,12 @@ def leftover_repair() -> dict[str, Any]:
             "that book runs. σ stays a hypothesis. Clay / NS-open stays OPEN.",
             "Door-1 T_{j←j} is a different remainder (axisymmetric-shell). "
             "Do not set σ_strain = Tjj.",
+            "Estimate Step 6 is a proposed mechanism that needs (A); "
+            "not claimed; not the remainder.",
+            "WRITE (6) / H1 is a PARK geometric leftover on the Sept 11 "
+            "tjj branch; not Door-1.",
+            "Q6 as a constitutive law of Clay NS is DISCARD. "
+            "Leftover-split has no item #6.",
         ],
         "validation_gate": ValidationGate.MATHEMATICAL.value,
         "kind": CorrespondenceKind.ANALOGY.value,

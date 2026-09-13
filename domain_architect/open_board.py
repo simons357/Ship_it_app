@@ -208,22 +208,51 @@ def board_items(*, a13_closed: bool) -> list[dict[str, str]]:
             id="ns-open",
             title="Classical unaugmented NS (Clay Statement B / NS-open)",
             bucket="STILL_OPEN",
-            problem="Closing NS-open is not a DA validation gate. Stamping it from DA is an automatic DA-VC-01 fail. The axisymmetric shell remainder T_{j←j} is still open and is not a Clay close.",
+            problem="Closing NS-open is not a DA validation gate. Stamping it from DA is an automatic DA-VC-01 fail. T_{j←j} is a different remainder and is not a Clay close. SND leftover is simplex 7-8 or Ring J/X, not Tjj.",
             fix="Do not close. Score DA-VC-01 on honesty (A13, A5, refuse glue). "
             "Score NS-open only when the strain / simplex / SND hypotheses are proved "
-            "in their own books. Do not cash T_{j←j} as Clay.",
+            "in their own books. Do not cash T_{j←j} or estimate Step 6 as Clay.",
             da_op="cycle leftover-repair (shows the three carriers; does not prove them)",
         ),
         _item(
             id="axisymmetric-shell",
             title="Axisymmetric-with-swirl shell remainder T_{j←j}",
             bucket="STILL_OPEN",
-            problem="Class: unaugmented axisymmetric NS with swirl. Quantity: labeled energy Z_j vs enstrophy Z_j. Remainder: T_{j←j}. Assumed: [no DNS; no closed stepper]. Spectral-shift identity is bookkeeping, not Lemma-star. rho_j<nu is not energy-budget absorption. Occupancy 1 with alpha~1/2 is not depletion. Requested local Young is REFUSED. Tjj/Zj is NOT COMPUTED as a class print. Clay NOT CLAIMED. DA-VC-01 stays FAIL.",
+            problem="Class: unaugmented axisymmetric NS with swirl. Quantity: labeled energy Z_j vs enstrophy Z_j. Remainder: T_{j←j}. Assumed: [no DNS; no closed stepper]. Spectral-shift identity is bookkeeping, not Lemma-star, not transfer control. rho_j<nu is not energy-budget absorption. Occupancy 1 with alpha~1/2 is not depletion. Requested local Young is REFUSED. Tjj/Zj is NOT COMPUTED as a class print. Clay NOT CLAIMED. DA-VC-01 stays FAIL. Not SND leftover. Not WRITE (6). Not Q6.",
             fix="Keep OPEN. Remainder is T_{j←j}. Do not quote sign(Lambda'). "
             "Do not treat the identity as Lemma-star or as transfer control. "
             "Do not absorb rho_j<nu on the energy budget. "
-            "Clay NOT CLAIMED. Filter: AXISYMMETRIC-SHELL-AUDIT.md.",
+            "Estimate Step 6 is a proposed mechanism (needs (A), not claimed); "
+            "it is not the remainder. Clay NOT CLAIMED. Filter: AXISYMMETRIC-SHELL-AUDIT.md.",
             da_op="cycle axisymmetric-shell ; python -m domain_architect.axisymmetric_shell",
+        ),
+        _item(
+            id="estimate-step-6",
+            title="Estimate Step 6 (proposed IF (A))",
+            bucket="PARK",
+            problem="Proposed closure mechanism on the Door-1 program. Needs (A) or depletion implying (A). Not claimed. Not the remainder T_{j←j}.",
+            fix="Leave as proposed mechanism, needs (A), not claimed. "
+            "Do not write the proof tonight. Not Statement-B table Step 6. "
+            "Not WRITE (6). Not Q6. Not leftover-split item #6.",
+            da_op="none — parked candidate; proofs Monday",
+        ),
+        _item(
+            id="write-6-h1",
+            title="WRITE (6) / H1 geometric leftover",
+            bucket="PARK",
+            problem="Named geometric leftover (Lemma I on the ball / Bad-pair A_bad). Lives on origin/cursor/tjj-estimate-chain-e5c5 docs/WRITE_6.md. Not proved. Not Door-1 T_{j←j}.",
+            fix="Keep PARK. Not this Door-1 remainder. Not estimate Step 6. "
+            "Not Q6. Not SND leftover 7-8.",
+            da_op="none — parked on the Sept 11 tjj branch",
+        ),
+        _item(
+            id="q6-constitutive",
+            title="Q6 as constitutive law of Clay NS",
+            bucket="CLOSED_REJECTED",
+            problem="Q1-Q6 as constitutive classical NS is a different PDE. Not estimate Step 6.",
+            fix="DISCARD as constitutive Clay NS. Usable Q6 is the arithmetic "
+            "H_N definition only. Not Step 6. Not WRITE (6).",
+            da_op="none — discard constitutive; keep Q6 H_N definition",
         ),
     ]
 
@@ -252,6 +281,7 @@ def open_board() -> dict[str, Any]:
 
     still = [row for row in items if row["bucket"] == "STILL_OPEN"]
     conditional = [row for row in items if row["bucket"] == "CONDITIONAL"]
+    parked = [row for row in items if row["bucket"] == "PARK"]
     return {
         "protocol": "open-board",
         "headline": (
@@ -267,6 +297,7 @@ def open_board() -> dict[str, Any]:
         "items": items,
         "still_open": still,
         "conditional": conditional,
+        "parked": parked,
         "leftover_split": {
             "pieces": leftover["pieces"],
             "reconstruction_closed": leftover["reconstruction"]["closed"],
@@ -306,6 +337,8 @@ def open_board() -> dict[str, Any]:
             "no letter map J→H / urad→J / a→HN",
             "no TRANSFORMABLE without a real T",
             "no identifying T_{j←j} with leftover-split strain",
+            "no identifying T_{j←j} with estimate Step 6, WRITE (6), Q6, or SND leftover 7-8",
+            "no leftover-split item #6",
             "no import of 2-D rho=0.02 into 3-D",
         ],
         "notes": [

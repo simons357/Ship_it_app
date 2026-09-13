@@ -250,6 +250,9 @@ class TestPairingAndFacts(unittest.TestCase):
         self.assertFalse(standing["occupancy_alpha_is_depletion"])
         self.assertEqual(standing["principal_unresolved"], "T_{j←j}")
         self.assertEqual(standing["routes_A_B_C"], "candidate routes, not theorems")
+        self.assertIn("not claimed", standing["step_6"])
+        self.assertIn("needs (A)", standing["step_6"])
+        self.assertIn("not WRITE (6)", standing["step_6"])
         self.assertFalse(payload["closed_triad"]["is_lemma_star"])
         self.assertFalse(payload["closed_triad"]["controls_nonlinear_transfer"])
         self.assertFalse(payload["shells_labeled"]["glued"])
@@ -277,6 +280,8 @@ class TestDecomposeAndGlue(unittest.TestCase):
         self.assertIn("T_{j←j}", joined)
         self.assertIn("OPEN", joined)
         self.assertIn("NOT CLAIMED", joined)
+        self.assertIn("Not estimate Step 6", joined)
+        self.assertIn("WRITE (6)", joined)
         self.assertNotIn("TRANSFORMABLE", joined)
 
     def test_strain_vs_shell_refuses_map(self):
