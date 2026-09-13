@@ -17,12 +17,15 @@ field. It does not bound unrestricted
 is already dead by the growing-layer
 family \(v_n\)
 ([`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md)).
-This page does not resurrect it. A true
-\(4/3\) is **NO** as a regularity close:
-it does not repair ★, does not restore
-★ \(\Rightarrow\) global regularity, and
-is not a continuation criterion.
+This page does not resurrect it.
+**A true \(4/3\) does not repair
+unrestricted ★, does not give a
+continuation criterion, and does not
+control a multi-shell field.**
 Ordinary NS stays open.
+
+Specialist questions:
+[`PR24-SPECIALIST-QUESTIONS.md`](PR24-SPECIALIST-QUESTIONS.md).
 
 If \(K\le 16/9\) holds, occupancy \(s\) is
 gone on a **single input shell**. That is a
@@ -70,6 +73,11 @@ The same \(E,A,B,P\) as
 [`math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md).
 \(K_{\alpha,\beta}(w)\) is defined only for
 \(\alpha>0\) and \(w\neq 0\).
+\(\Pi_\beta\) is the spectral projection
+onto the exact lattice shell
+\(\{k\in\mathbb{Z}^3:\lvert k\rvert^2=\beta\}\).
+It is not a dyadic annulus of width 1.
+The count below is a lattice count.
 
 ---
 
@@ -189,20 +197,31 @@ the explicit line
 \le
 \lvert k_\perp\rvert\,|w_p|,
 \]
-and likewise for \(w_q\). The pairing is
-the standard Hermitian product against a
-real vector (modulus unchanged if one
-conjugates \(w_p\)). This uses only
-\(p\cdot w_p=0\) and \(k_\perp\in\mathbb{R}^3\).
-It does not use reality or alignment of
-the two polarizations. After the in-plane
-cancellation in §3, the projected
-symmetrized term is bounded by this
-factor times \(|w_q|\), not twice that.
+and likewise for \(w_q\). The pairing \(k\cdot w_p\) is bilinear
+in the coordinates. It does not
+conjugate \(w_p\). Conjugation is used
+only to form
+\(\lvert w_p\rvert^2=\sum_j(w_p)_j\overline{(w_p)_j}\)
+and in the proof of Cauchy–Schwarz.
+This uses only \(p\cdot w_p=0\) and
+\(k_\perp\in\mathbb{R}^3\). Both
+transverse polarizations at \(p\) may
+be occupied, with independent complex
+amplitudes; \(w_p\) is an arbitrary
+vector in \(p^\perp\subset\mathbb{C}^3\).
+After the in-plane cancellation in §3,
+the projected symmetrized term is
+bounded by this factor times
+\(|w_q|\), not twice that.
 Saturation is not claimed.
 
 The ordered convolution equals half its
-symmetrization:
+symmetrization for complex coefficients
+as well, because the pairing is bilinear
+and the sum runs over all ordered pairs
+\(p+q=k\). A sesquilinear pairing would
+break the identity. The locked pairing
+is \(q\cdot w_p=\sum q_j(w_p)_j\).
 \[
 \sum_{p+q=k}(q\cdot w_p)w_q
 =
@@ -257,10 +276,12 @@ two outputs. Weighted AM-GM
 bounds that contribution by \(2M^2\).
 The diagonal \(p=r\) contributes at most
 \(M^2\). Adding those pieces gives the
-factor \(3\). This count is derived here
-from the two-plane incidence and that
-AM-GM. It is not a finite-shell
-experiment.
+factor \(3\). This count is proved
+**on this page**, from the two-plane
+incidence and that AM-GM. It is not
+proved on a Ring Lemma or Borromean
+page. Those are a different integral.
+It is not a finite-shell experiment.
 
 This is not the Ring Lemma and not a
 Borromean triad. Those are a different
@@ -362,7 +383,10 @@ form \(\|\Pi_\beta B\|_2\le(4/3)\alpha\beta^{-1/2}E\)
 divides by \(\sqrt{\beta}=2\sqrt{\alpha}>0\),
 not by \(\lvert k_\perp\rvert\). The
 quotient \(K\) has \(\beta\) in the
-numerator. The endpoint is regular.
+numerator. Nothing divides by
+\(1-\beta/(4\alpha)\), including in the
+definition of \(K\). The endpoint is
+regular.
 
 ---
 
@@ -384,6 +408,40 @@ ceiling: \(2/3=6/9<16/9\). It is an exact
 lower example, not a matching lower bound,
 and it does not make \(16/9\) sharp.
 
+Public coefficients, so a reviewer can
+reproduce \(2/3\) without the script.
+Six input modes, each of mass \(1/4\):
+\(\widehat w_{(0,1,0)}=(-i/2,0,0)\) and
+conjugate; \(\widehat w_{(0,0,1)}=(0,-i/2,0)\)
+and conjugate;
+\(\widehat w_{(1,0,0)}=(0,0,-i/2)\) and
+conjugate. Then \(\|w\|_2^2=3/2\).
+Twelve output modes on \(\lvert k\rvert^2=2\),
+each of mass \(1/16\):
+\(\widehat B_{(0,\pm 1,\pm 1)}\) along \(e_1\),
+\(\widehat B_{(\pm 1,0,\pm 1)}\) along \(e_2\),
+\(\widehat B_{(\pm 1,\pm 1,0)}\) along \(e_3\),
+with amplitudes \(\pm i/4\) as in
+[`PR24-SPECIALIST-QUESTIONS.md`](PR24-SPECIALIST-QUESTIONS.md)
+(question 11). Then
+\(\|\Pi_2 B\|_2^2=12/16=3/4\) and
+\(K_{1,2}=2\cdot(3/4)/(3/2)^2=2/3\).
+
+No exact-shell field in this repo has
+\(K>1\). The ceiling is \(16/9\) because
+that is \(\sup g\), not because a field
+attained it. A counterexample would be
+one pair \((\alpha,\beta)\) and one
+conjugate-closed list on
+\(\lvert k\rvert^2=\alpha\) with
+\(K_{\alpha,\beta}>16/9\).
+
+A finite superposition of exact-shell
+fields does **not** inherit a \(C\) that
+depends only on the number of shells.
+That would be a different theorem.
+This page does not claim it.
+
 Historical numerical maxima sit beside it.
 They are consistency checks, not the bound.
 
@@ -402,14 +460,28 @@ None of them is \(C_0\).
 ## Verifier
 
 `scripts/ns_attacks/verify_pr24_closure_review.py`
-checks the symbolic identity and compares
-growing-layer calculations with the
-evaluator. It reads the saved sweep
-summary; it does not perform the
+proves nothing. It checks the planar
+seed transfers, the small-\(n\) cubic
+count, and growing-layer moments
+against the two evaluators. It computes
+the three-shear \(K=2/3\) and
+\(g(8/3)=16/9\). It reads the saved
+sweep summary. It does not perform the
 shell-count experiments described here.
+If the script is deleted, the writes
+on this page and on the kill page
+remain human-checkable.
 
-The three-shear \(K=2/3\) is an exact
-example, not a sweep.
+The first written estimate that \(v_n\)
+does not refute is the displayed
+exact-shell bound above. It is
+instantaneous on \(Aw=\alpha w\), not
+invariant along NS, and it feeds no
+continuation criterion (not BKM, not
+\(\int\|Au\|_2^2\,dt<\infty\)).
+A replacement energy-budget closure
+on the full class is **OPEN** and is
+not written.
 
 ---
 

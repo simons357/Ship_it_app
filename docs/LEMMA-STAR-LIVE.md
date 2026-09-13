@@ -89,6 +89,8 @@ a map, not a theorem.
 Page: [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
 Map: [`LEMMA-STAR-REASON.md`](LEMMA-STAR-REASON.md).
 Tape: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).
+Specialist questions:
+[`PR24-SPECIALIST-QUESTIONS.md`](PR24-SPECIALIST-QUESTIONS.md).
 
 ---
 

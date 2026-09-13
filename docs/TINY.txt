@@ -22,6 +22,7 @@ docs/ATTACK-9D-GROW-S.md
 docs/LEMMA-STAR-REASON.md
 docs/NEED-STAR-HH-L-DUAL.md
 docs/YES-NO-OPEN.md
+docs/PR24-SPECIALIST-QUESTIONS.md
 docs/ATTACK-9D-SETUP.md
 JSON: results/attack9b_grow_s/grow_s.json
 Audit: results/pr24_closure_review/audit.json

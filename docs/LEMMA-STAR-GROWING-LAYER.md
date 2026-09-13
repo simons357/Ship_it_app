@@ -10,8 +10,13 @@ finite Fourier support, \(\mathcal D_s>0\);
 in this review.**
 
 **This is a counterexample to the boxed instantaneous
-estimate. It is not a singular Navier–Stokes solution.
-Ordinary NS is not solved. Soft X silent.**
+estimate.** The admissible class is
+divergence-free, real, mean-zero, finite
+Fourier support, \(\mathcal D_s>0\) on
+\(\mathbb{T}^3\). \(v_n\) sits in that
+class. It is not an NSE trajectory and
+not a singular Navier–Stokes solution.
+Ordinary NS is not solved. Soft X silent.
 
 The named kill of leftover 4 was
 \(\mathcal R_\star(v_n)\to\infty\).
@@ -25,10 +30,13 @@ unless its hypotheses or conclusion change.
 H1 and the axisymmetric shell door are other
 integrals. Do not glue.
 
-Specialist review of the all-\(n\) \(T_c\) identity
-is still pending. The live evaluators already
-reproduce the identity on \(n=1,\dots,10\).
-That is not a proof assistant.
+Specialist review of the all-\(n\) \(T_c\)
+identity is still pending. The live
+evaluators already reproduce the
+identity on \(n=1,\dots,10\), not only
+\(n\le 8\). That is not a proof assistant.
+Specialist questions:
+[`PR24-SPECIALIST-QUESTIONS.md`](PR24-SPECIALIST-QUESTIONS.md).
 
 Machine: `scripts/ns_attacks/verify_pr24_closure_review.py`
 Audit: `results/pr24_closure_review/audit.json`
@@ -75,8 +83,12 @@ mean-zero, and divergence-free
 (\(k\cdot\widehat v_n(k)=0\)).
 Six planar seeds times \(2n+1\) vertical
 copies give \(6(2n+1)\) modes.
-At least two eigenvalues carry mass, so
-\(\mathcal D_s>0\).
+The \(j=0\) copies already occupy
+eigenvalues \(n^2\), \(2n^2\), and
+\(5n^2\), which are distinct for every
+\(n\ge 1\). So \(\mathcal D_s>0\) for
+every \(n\ge 1\), not only on computed
+rows.
 The packet changes shape with \(n\).
 It is not a uniform Fourier dilation of one field.
 
@@ -105,6 +117,28 @@ cubic is the number of ordered pairs
 \((a,b)\) with
 \(\lvert a\rvert,\lvert b\rvert,\lvert a+b\rvert\le n\),
 which is \(3n^2+3n+1\).
+That count is elementary for every
+\(n\ge 1\): for \(a\ge 0\), \(b\) has
+\(2n-a+1\) values; for \(a<0\),
+\(2n+a+1\) values; the sums add to
+\(3n^2+3n+1\).
+The remaining \(3n^5\) and the
+vertical cancellation that drops the
+terms paired with \(U\) and \(A_h U\)
+are the identities a specialist must
+still accept. If that \(T_c\) formula
+fails, the elementary lower bound
+fails. Those identities were matched
+on \(n=1,\dots,10\). They are not a
+hand proof for general \(n\).
+
+A consistent change of torus measure
+or amplitude does not flip
+\(\mathcal R_\star\to\infty\).
+\(\mathcal R_\star(av)=\mathcal R_\star(v)\).
+Omitting the \(n\) in \(U(nx,ny)\)
+writes a different field, not a
+renormalization of \(v_n\).
 
 \[
 N(v_n)=0,

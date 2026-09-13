@@ -14,6 +14,7 @@ from verify_pr24_closure_review import run  # noqa: E402
 
 PAGE = ROOT / "docs" / "LEMMA-STAR-GROWING-LAYER.md"
 BOUND = ROOT / "docs" / "ATTACK-9D-FULL-SUPPORT-BOUND.md"
+QUESTIONS = ROOT / "docs" / "PR24-SPECIALIST-QUESTIONS.md"
 TAPE = ROOT / "docs" / "YES-NO-OPEN.md"
 SHEET = ROOT / "docs" / "ISSUES-SHEET.md"
 
@@ -54,6 +55,21 @@ class Pr24ClosureReviewTests(unittest.TestCase):
         self.assertIn("No named reviewer", bound)
         self.assertIn("not the Ring Lemma", bound)
         self.assertIn(r"k\cdot w_p", bound)
+        self.assertIn("spectral projection", bound)
+        self.assertIn("on this page", bound)
+        self.assertIn("does not conjugate", flat)
+        self.assertIn("sesquilinear", bound)
+        self.assertIn("does not repair unrestricted", flat)
+        self.assertIn("PR24-SPECIALIST-QUESTIONS.md", bound)
+        kill = PAGE.read_text()
+        self.assertIn("instantaneous", kill)
+        self.assertIn("n\\ge 1", kill)
+        qs = QUESTIONS.read_text()
+        for n in range(1, 21):
+            self.assertIn(f"**{n}.", qs)
+        self.assertIn("exact-shell page", qs)
+        self.assertIn("bilinear", qs)
+        self.assertIn("None. Not BKM", qs)
 
     def test_family_kills_the_box_on_the_live_evaluator(self):
         payload = run()

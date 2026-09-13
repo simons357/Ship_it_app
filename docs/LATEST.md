@@ -175,6 +175,9 @@ specialist review pending; three-shear
 \(K=2/3\) exact; sweeps are consistency
 checks only):
 docs/ATTACK-9D-FULL-SUPPORT-BOUND.md
+Specialist questions (20, written
+before anyone else reads the pages):
+docs/PR24-SPECIALIST-QUESTIONS.md
 Unrestricted ★ killed by \(v_n\):
 docs/LEMMA-STAR-GROWING-LAYER.md
 Grow \(s\) historical (max \(K\approx 0.456\)

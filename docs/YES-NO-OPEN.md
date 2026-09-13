@@ -129,6 +129,8 @@ occupancy \(s\) is gone on one input shell.
 A true \(4/3\) is **NO** as a regularity
 close. Soft X silent.
 [`ATTACK-9D-FULL-SUPPORT-BOUND.md`](ATTACK-9D-FULL-SUPPORT-BOUND.md).
+Questions a specialist will use:
+[`PR24-SPECIALIST-QUESTIONS.md`](PR24-SPECIALIST-QUESTIONS.md).
 
 Unrestricted ★ is **KILLED** by \(v_n\)
 ([`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md)).
