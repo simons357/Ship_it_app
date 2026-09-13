@@ -7,9 +7,19 @@ Unrestricted Lemma★ is the boxed sup R_star < ∞.
 A diverging admissible family is the named kill of that box.
 The exact-shell 9D bound is a different statement.
 
-Specialist review of the all-n T_c identity and the weighted
-sphere count is still pending. This script records hashes and
-finite checks. It is not a proof assistant.
+This script:
+  * checks the symbolic / algebraic identities used in the
+    exact-shell write-up (half-symmetrization, K=2/3 field,
+    elementary 16/9 maximum);
+  * compares growing-layer calculations with the evaluator;
+  * reads the saved grow-s sweep summary.
+
+It does not perform the 9B / grow-s shell-count campaigns.
+Those pages record historical consistency checks only.
+
+Specialist review of the weighted incidence argument and the
+complex-polarization identity is still pending. This script
+is not a proof assistant.
 """
 
 from __future__ import annotations
@@ -30,6 +40,7 @@ sys.path.insert(0, str(ROOT / "scripts" / "ns_attacks"))
 from stokes_moments import (  # noqa: E402
     enforce_reality,
     k_norm2,
+    leray_project,
     probe,
 )
 from attack9b_exact_shell_K import (  # noqa: E402
@@ -208,6 +219,104 @@ def check_exact_shell_K(seed: int = 1390) -> dict:
     }
 
 
+def _pol_perp(k: tuple[int, int, int], rng: np.random.Generator) -> np.ndarray:
+    kk = np.array(k, dtype=np.float64)
+    nrm = float(np.linalg.norm(kk))
+    seed = np.array([1.0, 0.0, 0.0])
+    if abs(np.dot(seed, kk)) > 0.9 * nrm:
+        seed = np.array([0.0, 1.0, 0.0])
+    e1 = seed - (np.dot(seed, kk) / (nrm * nrm)) * kk
+    e1 = e1 / np.linalg.norm(e1)
+    e2 = np.cross(kk / nrm, e1)
+    e2 = e2 / np.linalg.norm(e2)
+    amp = rng.uniform(0.3, 1.4)
+    th = rng.uniform(0.0, 2.0 * math.pi)
+    ph = rng.uniform(0.0, 2.0 * math.pi)
+    return (amp * np.exp(1j * ph) * (math.cos(th) * e1 + math.sin(th) * e2)).astype(
+        np.complex128
+    )
+
+
+def check_symmetrized_identity(seed: int = 1390, n_pairs: int = 40) -> dict:
+    """Symbolic / algebraic checks for the exact-shell write-up.
+
+    Not the 9B or grow-s shell-count campaigns.
+    """
+    rng = np.random.default_rng(seed)
+    pairs = [((0, 1, 0), (1, 0, 0)), ((0, 2, 0), (2, 0, 0)), ((1, 1, 0), (1, -1, 0))]
+    half_ok = True
+    ineq_ok = True
+    rows = []
+    for _ in range(n_pairs):
+        p, q = pairs[int(rng.integers(0, len(pairs)))]
+        if rng.random() < 0.35:
+            p, q = q, p
+        k = (p[0] + q[0], p[1] + q[1], p[2] + q[2])
+        alpha = float(k_norm2(p))
+        beta = float(k_norm2(k))
+        if alpha <= 0 or beta <= 0 or abs(k_norm2(q) - alpha) > 1e-12:
+            continue
+        wp = _pol_perp(p, rng)
+        wq = _pol_perp(q, rng)
+        ordered = (np.dot(np.array(q, dtype=np.float64), wp)) * wq
+        other = (np.dot(np.array(p, dtype=np.float64), wq)) * wp
+        half = 0.5 * (ordered + other)
+        half_ok = half_ok and np.allclose(ordered + other, 2.0 * half)
+        lhs = np.linalg.norm(leray_project(k, ordered + other))
+        geom = math.sqrt(beta * (1.0 - beta / (4.0 * alpha)))
+        rhs = geom * np.linalg.norm(wp) * np.linalg.norm(wq)
+        ineq_ok = ineq_ok and (lhs <= rhs + 1e-10)
+        rows.append(
+            {
+                "p": p,
+                "q": q,
+                "alpha": alpha,
+                "beta": beta,
+                "lhs": float(lhs),
+                "rhs": float(rhs),
+                "ok": bool(lhs <= rhs + 1e-10),
+            }
+        )
+
+    xs = np.linspace(1e-6, 4.0, 400)
+    curve = 0.75 * (xs**2) * (1.0 - xs / 4.0)
+    max_curve = float(curve.max())
+    x_at = float(xs[int(np.argmax(curve))])
+    f_at_8_3 = (3.0 / 4.0) * ((8.0 / 3.0) ** 2) * (1.0 - (8.0 / 3.0) / 4.0)
+    f_at_4 = (3.0 / 4.0) * (4.0**2) * (1.0 - 4.0 / 4.0)
+    exact_max_ok = abs(f_at_8_3 - 16.0 / 9.0) < 1e-15 and abs(f_at_4) < 1e-15
+    three_shear = {
+        (0, 1, 0): np.array([-0.5j, 0.0, 0.0], dtype=np.complex128),
+        (0, 0, 1): np.array([0.0, -0.5j, 0.0], dtype=np.complex128),
+        (1, 0, 0): np.array([0.0, 0.0, -0.5j], dtype=np.complex128),
+    }
+    w = enforce_reality({kk: vv.copy() for kk, vv in three_shear.items()})
+    rec = K_of_w(w, 1.0, 2.0)
+    return {
+        "half_symmetrization_ok": bool(half_ok),
+        "polarization_inequality_ok": bool(ineq_ok and rows),
+        "n_random_pairs": len(rows),
+        "max_K_curve": max_curve,
+        "max_K_curve_ok": abs(max_curve - 16.0 / 9.0) < 5e-3 and abs(x_at - 8.0 / 3.0) < 0.05,
+        "exact_f_8_over_3": f_at_8_3,
+        "exact_max_ok": exact_max_ok,
+        "three_shear_K": rec["K"],
+        "three_shear_ok": abs(rec["K"] - 2.0 / 3.0) < 1e-12,
+        "all_ok": bool(
+            half_ok
+            and ineq_ok
+            and rows
+            and abs(max_curve - 16.0 / 9.0) < 5e-3
+            and exact_max_ok
+            and abs(rec["K"] - 2.0 / 3.0) < 1e-12
+        ),
+        "note": (
+            "Symbolic / algebraic checks only. "
+            "Does not run the 9B or grow-s shell-count campaigns."
+        ),
+    }
+
+
 def check_grow_s_record() -> dict:
     data = json.loads(GROW_S_JSON.read_text())
     g = data["growing"]
@@ -225,6 +334,7 @@ def check_grow_s_record() -> dict:
 def run() -> dict:
     family = check_family([1, 2, 3, 4, 5, 6, 8, 10])
     shell = check_exact_shell_K()
+    symbolic = check_symmetrized_identity()
     grow = check_grow_s_record()
     hashes = {str(p.relative_to(ROOT)): sha256(p) for p in SOURCES if p.exists()}
     return {
@@ -236,8 +346,10 @@ def run() -> dict:
         "exact_shell_9d_bound": "CLAIMED_C_4_OVER_3",
         "need_star_repairs_unrestricted": False,
         "specialist_review": "pending",
+        "internal_audit": "no_gap_found",
         "proof_assistant": False,
         "family": family,
+        "symbolic": symbolic,
         "exact_shell": shell,
         "grow_s_historical": grow,
         "source_sha256": hashes,
@@ -261,10 +373,11 @@ def main() -> int:
     print("unrestricted Lemma★:", payload["unrestricted_lemma_star"])
     print("exact-shell 9D:", payload["exact_shell_9d_bound"])
     print("family all_ok:", payload["family"]["all_ok"])
+    print("symbolic all_ok:", payload["symbolic"]["all_ok"])
     print("last R_star:", payload["family"]["rows"][-1]["R_star"])
-    print("max sample K:", payload["exact_shell"]["max_K_on_samples"])
+    print("three-shear K:", payload["symbolic"]["three_shear_K"])
     print("NS solved:", payload["ns_solved"])
-    return 0 if payload["family"]["all_ok"] else 1
+    return 0 if payload["family"]["all_ok"] and payload["symbolic"]["all_ok"] else 1
 
 
 if __name__ == "__main__":
