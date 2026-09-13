@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>COSMIC GRAFITTI — Issue 00 · Night Wall</title>
+<meta name="description" content="Prime Field street magazine. The leftover named on a night wall. Not a proof. NS not solved.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Permanent+Marker&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a090c;
+    --paper: #f3ead8;
+    --mute: #c9bead;
+    --pink: #ff2d8a;
+    --acid: #c6ff3a;
+    --cyan: #3de0ff;
+    --gold: #ffc857;
+    --shadow: rgba(0,0,0,.55);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: #05040a;
+    color: var(--paper);
+    font-family: "Newsreader", "Times New Roman", serif;
+    line-height: 1.45;
+  }
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background: url("art/wall.png") center/cover no-repeat;
+    filter: blur(18px) saturate(1.2);
+    opacity: .28;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .desk { position: relative; z-index: 1; }
+  nav.rail {
+    position: sticky; top: 0; z-index: 20;
+    display: flex; gap: 10px; overflow-x: auto;
+    padding: 10px 14px calc(10px + env(safe-area-inset-top));
+    background: linear-gradient(to bottom, rgba(5,4,10,.92), rgba(5,4,10,.55) 70%, transparent);
+    scrollbar-width: none;
+  }
+  nav.rail::-webkit-scrollbar { display: none; }
+  nav.rail a {
+    flex: 0 0 auto;
+    font-family: "Bebas Neue", Impact, sans-serif;
+    letter-spacing: .08em;
+    font-size: 15px;
+    color: var(--paper);
+    text-decoration: none;
+    border: 1px solid rgba(243,234,216,.28);
+    padding: 6px 10px;
+    background: rgba(10,9,12,.55);
+  }
+  nav.rail a:focus-visible, .cta:focus-visible, .flip button:focus-visible {
+    outline: 2px solid var(--acid);
+    outline-offset: 2px;
+  }
+  .book {
+    height: 100dvh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+  .page {
+    min-height: 100dvh;
+    scroll-snap-align: start;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+  .bleed {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  .bleed::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(5,4,10,.92) 0%, rgba(5,4,10,.35) 42%, rgba(5,4,10,.15) 100%);
+  }
+  .paste {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    width: min(720px, calc(100% - 28px));
+    padding: 22px 20px calc(28px + env(safe-area-inset-bottom));
+  }
+  .kicker {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  h1, h2 {
+    font-family: "Bebas Neue", Impact, sans-serif;
+    line-height: .9;
+    letter-spacing: .02em;
+  }
+  h1 { font-size: clamp(64px, 16vw, 128px); }
+  h2 { font-size: clamp(40px, 10vw, 76px); margin: 0 0 12px; }
+  .tag {
+    font-family: "Permanent Marker", cursive;
+    color: var(--pink);
+    font-size: clamp(18px, 4vw, 28px);
+    transform: rotate(-2deg);
+    display: inline-block;
+  }
+  p { font-size: clamp(17px, 2.4vw, 20px); max-width: 38rem; }
+  p + p { margin-top: .85em; }
+  .cols {
+    display: grid;
+    gap: 18px;
+  }
+  @media (min-width: 820px) {
+    .cols { grid-template-columns: 1fr 1fr; }
+    .paste { padding-bottom: 40px; }
+  }
+  .stamp {
+    display: inline-block;
+    border: 3px solid var(--pink);
+    color: var(--pink);
+    font-family: "Bebas Neue", Impact, sans-serif;
+    letter-spacing: .12em;
+    padding: 6px 10px;
+    transform: rotate(-6deg);
+    background: rgba(10,9,12,.45);
+  }
+  .contents { list-style: none; }
+  .contents a {
+    color: var(--paper);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(243,234,216,.25);
+    font-size: 20px;
+  }
+  .contents a:hover { color: var(--acid); }
+  .cta {
+    display: inline-block;
+    margin-top: 16px;
+    font-family: "Bebas Neue", Impact, sans-serif;
+    letter-spacing: .1em;
+    color: var(--ink);
+    background: var(--acid);
+    text-decoration: none;
+    padding: 10px 14px;
+  }
+  .folio {
+    position: absolute; right: 16px; top: calc(18px + env(safe-area-inset-top));
+    z-index: 3;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: .16em;
+    color: var(--mute);
+  }
+  .flip {
+    position: fixed; bottom: calc(16px + env(safe-area-inset-bottom));
+    right: 16px; z-index: 30;
+    display: flex; gap: 8px;
+  }
+  .flip button {
+    font-family: "Bebas Neue", Impact, sans-serif;
+    letter-spacing: .08em;
+    border: 0;
+    background: var(--paper);
+    color: var(--ink);
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  .idbox {
+    margin-top: 14px;
+    padding: 12px 14px;
+    background: rgba(243,234,216,.08);
+    border-left: 4px solid var(--gold);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 14px;
+  }
+  .note { color: var(--mute); font-size: 15px; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="desk">
+<nav class="rail" aria-label="Issue 00">
+  <a href="#cover">Cover</a>
+  <a href="#contents">Contents</a>
+  <a href="#editor">From the wall</a>
+  <a href="#feature">Leftover</a>
+  <a href="#swirl">Swirl</a>
+  <a href="#tube">Tube</a>
+  <a href="#primes">Tags</a>
+  <a href="#ringdown">Echo</a>
+  <a href="#honest">Honest</a>
+  <a href="#back">Back</a>
+</nav>
+
+<main class="book" id="book">
+  <article class="page" id="cover">
+    <div class="bleed" style="background-image:url('art/cover.png')"></div>
+    <div class="folio">00 / 10</div>
+    <div class="paste">
+      <p class="kicker">Prime Field · Savannah · Street magazine</p>
+      <h1>COSMIC<br>GRAFITTI</h1>
+      <p class="tag">Issue 00 · Night Wall</p>
+      <p>The leftover named on a night wall. One F, two T’s. Not a proof.</p>
+      <span class="stamp">NS NOT SOLVED</span>
+      <a class="cta" href="#contents">Open the issue</a>
+    </div>
+  </article>
+
+  <article class="page" id="contents">
+    <div class="bleed" style="background-image:url('art/wall.png')"></div>
+    <div class="folio">01 / 10</div>
+    <div class="paste">
+      <p class="kicker">Issue 00</p>
+      <h2>Contents</h2>
+      <ol class="contents">
+        <li><a href="#editor">From the wall <span>02</span></a></li>
+        <li><a href="#feature">The refused pairs <span>03</span></a></li>
+        <li><a href="#swirl">Plate · coffee into cosmos <span>04</span></a></li>
+        <li><a href="#tube">The tube on the pillar <span>05</span></a></li>
+        <li><a href="#primes">Chalk primes <span>06</span></a></li>
+        <li><a href="#ringdown">Closed echo <span>07</span></a></li>
+        <li><a href="#honest">What this is not <span>08</span></a></li>
+        <li><a href="#back">Colophon <span>09</span></a></li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="page" id="editor">
+    <div class="bleed" style="background-image:url('art/wall.png')"></div>
+    <div class="folio">02 / 10</div>
+    <div class="paste">
+      <p class="kicker">Letter</p>
+      <h2>From the wall</h2>
+      <div class="cols">
+        <p>The last reprint put a theorem on stickers. That was the wrong magazine. Cosmic GRAFITTI is the night wall: leftover math written like a tag, stars as the brick, Savannah as the street.</p>
+        <p>I am Jonathan, a CRNA. I wanted a phone-first issue you can swipe. I did not solve Navier–Stokes. I named the leftover and put it where the paint still drips.</p>
+      </div>
+      <a class="cta" href="#feature">Read the leftover</a>
+    </div>
+  </article>
+
+  <article class="page" id="feature">
+    <div class="bleed" style="background-image:url('art/swirl.png')"></div>
+    <div class="folio">03 / 10</div>
+    <div class="paste">
+      <p class="kicker">Feature · 10 September 2026</p>
+      <h2>The refused pairs</h2>
+      <div class="cols">
+        <p>In three-dimensional flow, vortex stretching can make vorticity grow. Constantin and Fefferman (1993) showed that if the direction of vorticity does not turn too fast where it is large, the solution stays smooth. Beirão da Veiga and Berselli lowered that cut to Hölder 1/2 in 2002. Those papers are theorems as <em>ifs</em>.</p>
+        <p>They do not estimate the pairs they refused: intense vorticity whose direction is misaligned. That refused set is the swirl leftover. I name the missing bound WRITE (6). The estimate is stated. It is not proved. A picture of a vortex that spirals in is not that estimate.</p>
+      </div>
+      <p class="note">Magazine cut. About the leftover, dated, and not sold as a close. Full map: the swirl paper.</p>
+    </div>
+  </article>
+
+  <article class="page" id="swirl">
+    <div class="bleed" style="background-image:url('art/swirl.png')"></div>
+    <div class="folio">04 / 10</div>
+    <div class="paste">
+      <p class="kicker">Plate 01</p>
+      <h2>Coffee into cosmos</h2>
+      <p>Stir cream into coffee. The spiral is the whole vibe. Shape still matters after the edges melt. That is a picture, not a theorem. Lemma★ asks whether shape-danger stays bounded for every smooth cup. It is not proved.</p>
+    </div>
+  </article>
+
+  <article class="page" id="tube">
+    <div class="bleed" style="background-image:url('art/tube.png')"></div>
+    <div class="folio">05 / 10</div>
+    <div class="paste">
+      <p class="kicker">Axis wall</p>
+      <h2>The tube</h2>
+      <p>Near the axis, writing the swirl in the wrong variable makes a 1/r<sup>4</sup> scare. Change the unknown: Γ = r u<sub>θ</sub> extensive, Φ = u<sub>θ</sub>/r intensive. The boxed identity is algebra.</p>
+      <div class="idbox">(1/r<sup>4</sup>) ∂<sub>z</sub>(Γ<sup>2</sup>) = ∂<sub>z</sub>(Φ<sup>2</sup>)</div>
+      <p>The leftover after the rewrite is control of u<sup>r</sup>/r. That leftover is still open. The identity does not close Clay.</p>
+    </div>
+  </article>
+
+  <article class="page" id="primes">
+    <div class="bleed" style="background-image:url('art/primes.png')"></div>
+    <div class="folio">06 / 10</div>
+    <div class="paste">
+      <p class="kicker">Tags · analogy</p>
+      <h2>Chalk on brick</h2>
+      <p>2, 3, 5, 7, 11 on a night wall. Primes as tags look like a sky. That is graffiti, not a proof of the Riemann hypothesis, and not a proof that the universe is regular for the same reason a fluid might be.</p>
+      <p class="note">Hold the picture. Do not green it.</p>
+    </div>
+  </article>
+
+  <article class="page" id="ringdown">
+    <div class="bleed" style="background-image:url('art/ringdown.png')"></div>
+    <div class="folio">07 / 10</div>
+    <div class="paste">
+      <p class="kicker">Closed file</p>
+      <h2>The echo stayed quiet</h2>
+      <p>Harmonic Blueprint Experiment 01 asked whether held-out black-hole ringdown ratios prefer a frozen node family. TEST did not reject H0. The experiment is closed. The cyan arc is still on the wall.</p>
+    </div>
+  </article>
+
+  <article class="page" id="honest">
+    <div class="bleed" style="background-image:url('art/cover.png')"></div>
+    <div class="folio">08 / 10</div>
+    <div class="paste">
+      <p class="kicker">Stamp page</p>
+      <h2>What this is not</h2>
+      <p>Navier–Stokes is not solved. Lemma★ is not proved. The Riemann hypothesis is not proved. Clay Statement B is not claimed. A forced finite-time breakdown, if it holds, is a different official statement from unforced regularity.</p>
+      <p>Same letter Φ is not the same physics. Sharing a spiral with a galaxy is not a millennium close.</p>
+      <span class="stamp">NOT A CLOSE</span>
+    </div>
+  </article>
+
+  <article class="page" id="back">
+    <div class="bleed" style="background-image:url('art/wall.png')"></div>
+    <div class="folio">09 / 10</div>
+    <div class="paste">
+      <p class="kicker">Colophon</p>
+      <h2>Issue 00</h2>
+      <p>COSMIC GRAFITTI · Night Wall · 13 September 2026<br>
+      Jonathan R. Simons · CRNA · Prime Field Technologies · Savannah</p>
+      <p>This issue is the magazine face of the leftover: swirl alignment as an if, refused pairs still open, axis algebra kept, cosmic tags parked. It is not the May 2026 Universal Geometry / Cosmic Star Lattice reprint.</p>
+      <p class="note">Open this file on a phone. Swipe. The paint is the point.</p>
+      <a class="cta" href="#cover">Back to cover</a>
+    </div>
+  </article>
+</main>
+
+<div class="flip">
+  <button type="button" id="prev" aria-label="Previous spread">Prev</button>
+  <button type="button" id="next" aria-label="Next spread">Next</button>
+</div>
+</div>
+<script>
+  const pages = [...document.querySelectorAll(".page")];
+  const book = document.getElementById("book");
+  function currentIndex() {
+    const y = book.scrollTop + book.clientHeight * 0.35;
+    let idx = 0;
+    pages.forEach((p, i) => { if (p.offsetTop <= y) idx = i; });
+    return idx;
+  }
+  function go(delta) {
+    const i = Math.min(pages.length - 1, Math.max(0, currentIndex() + delta));
+    pages[i].scrollIntoView({ behavior: "smooth" });
+  }
+  document.getElementById("prev").addEventListener("click", () => go(-1));
+  document.getElementById("next").addEventListener("click", () => go(1));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown" || e.key === "ArrowRight" || e.key === "PageDown") { e.preventDefault(); go(1); }
+    if (e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); go(-1); }
+  });
+</script>
+</body>
+</html>
