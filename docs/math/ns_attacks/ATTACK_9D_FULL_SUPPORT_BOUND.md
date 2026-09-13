@@ -106,14 +106,19 @@ factor, and the limiting-closer scope.
 DA has not replaced that reading by a
 proof assistant.
 
-The three-shear field
-\(w=(\sin y,\sin z,\sin x)\)
-gives \(K_{1,2}=2/3\) by hand.
+The write-up example is the
+three-shear field
+\(w=(\sin y,\sin z,\sin x)\):
+one line, \(K_{1,2}=2/3\) by hand.
 That raises the floor of \(\sup K\)
 above aligned 9B \(0.641\).
 Grow-\(s\) max \(K\approx 0.456\).
+A sweep table is not the example.
 A sample is not the bound.
 Do not cash \(2/3\) as \(C_0\) or as \(16/9\).
+To move \(16/9\) from CLAIMED to
+supported still needs the closed-form
+or a near-ceiling sweep. Neither sits.
 Phone: [`../../ATTACK-9D-TWO-THIRDS.md`](../../ATTACK-9D-TWO-THIRDS.md).
 
 ---
@@ -124,6 +129,7 @@ Phone: [`../../ATTACK-9D-TWO-THIRDS.md`](../../ATTACK-9D-TWO-THIRDS.md).
 |---|---|
 | Designed \(\Theta(m^2)\) 9D | **NO.** Dead. |
 | Grow-\(s\) finite max as \(C_0\) | **NO.** Historical. |
+| Three-shear \(K=2/3\) as \(C_0\) | **NO.** Write-up example. Floor only. |
 | Exact-shell \(K\le 16/9\) | **CLAIMED.** Specialist pending. |
 | Unrestricted ★ | **NO.** Other page. |
 | Ordinary NS | **OPEN.** |

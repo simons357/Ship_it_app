@@ -18,5 +18,5 @@
   "ns_solved": false,
   "exact_shell_9d": "CLAIMED",
   "ok": true,
-  "note": "Hand-built floor K=2/3. Not the 16/9 bound. Not C0. NS not solved."
+  "note": "Write-up example: one line, K=2/3 by hand. Floor of sup K, not the 16/9 bound. Not a sweep table. Not C0. NS not solved."
 }

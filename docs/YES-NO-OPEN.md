@@ -75,7 +75,7 @@ stay samples. They are not this kill.
 | B-hand five-finger map | Speculated whole on leftovers 1, 3, 4, 5. After the spindle named. Fire / realized / future named. [`DA-NS-FIVE-FINGER.md`](DA-NS-FIVE-FINGER.md). Not a close. |
 | Occupancy \(55/56\) | Printed on those interpolants. Did not decay with \(n\). Not \([\rho]\). |
 | \(K\le 16s\) | Counting. Fixed \(s\) cannot unbound \(K\). |
-| Three-shear \(K_{1,2}=2/3\) | Hand + evaluator. Floor of \(\sup K\). Not \(16/9\). [`ATTACK-9D-TWO-THIRDS.md`](ATTACK-9D-TWO-THIRDS.md). |
+| Three-shear \(K_{1,2}=2/3\) | Write-up example: one line, \(K\) by hand. Floor of \(\sup K\). Not \(16/9\). Not a sweep table. [`ATTACK-9D-TWO-THIRDS.md`](ATTACK-9D-TWO-THIRDS.md). |
 
 ---
 
@@ -161,6 +161,7 @@ is YES as a sample and still NO as
 the \(v_n\) kill.
 If three-shear \(K=2/3\) is written,
 that is YES as a floor of \(\sup K\)
+and as the write-up example,
 and still NO as \(16/9\).
 
 Those three words do not trade.

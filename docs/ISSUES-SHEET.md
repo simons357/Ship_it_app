@@ -57,6 +57,8 @@ cylinder. \(R_\phi\) is not free.
 Do not start 1 from ABC_λ. Do not cash \(0.641\),
 \(0.610\), \(0.327\), or three-shear \(2/3\) as the
 \(v_n\) kill or as \(16/9\).
+The write-up example for exact-shell \(K\)
+is the three-shear field, not a sweep table.
 The named kill of unrestricted ★ already sits. Do not
 restore occupation decay from the wall detector
 as a close of 5. Do not retitle Q as 6 or 10.

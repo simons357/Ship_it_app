@@ -3,15 +3,22 @@
 13 September 2026.
 Unaugmented NS on \(\mathbb{T}^3\);
 quantity is \(K_{\alpha,\beta}(w)\) for \(Aw=\alpha w\);
-the field below is one exact-shell example;
-**this is a floor, not the ceiling.**
+**this is the write-up example,
+not a sweep table.**
+A field you can write in one line
+and whose \(K\) you can compute by hand.
+That is the point of this page.
+A random-search maximum is not.
 
 **One explicit value does not prove
-\(\sup K\le 16/9\). It proves
-\(\sup K\ge 2/3\).**
-Aligned 9B \(0.641\) and grow-\(s\)
-\(0.456\) sit below this.
-\(2/3\approx 0.667<16/9\approx 1.778\).
+the ceiling. It proves the floor of
+the supremum: \(\sup K\ge 2/3\).**
+\(2/3\approx 0.667\) clears aligned
+9B \(0.641\) and grow-\(s\) \(0.456\).
+It sits well under
+\(16/9\approx 1.778\).
+That is a step up from random
+search. It is not the bound.
 Specialist review of the \(16/9\)
 derivation is still pending.
 Unrestricted ★ is killed by \(v_n\).
@@ -87,6 +94,29 @@ not a second claim.
 
 ---
 
+## Why this field, not a table
+
+Aligned 9B printed \(\max K\approx 0.641\).
+Grow-\(s\) printed \(\max K\approx 0.456\).
+Those are numbers that fell out of a
+sweep. They do not name an interaction.
+
+This field does. Three shears,
+cyclic axes, twelve outputs on
+shell 2, each of size \(1/16\).
+You can point at the pair
+\((0,1,0)+(1,0,0)=(1,1,0)\) and
+finish the arithmetic. That is
+what a write-up can use.
+
+A table of random maxima is weaker
+than one clean floor you can check
+without a seed. The catch is the
+same as before: a floor is not a
+ceiling.
+
+---
+
 ## What this does not do
 
 - It does not prove \(K\le 16/9\).
@@ -102,9 +132,11 @@ not a second claim.
 To move exact-shell \(16/9\) from
 **CLAIMED** to supported still
 requires the closed-form derivation
-(specialist pending) or a sweep that
-shows nothing approaches \(16/9\).
-A clean floor is not that.
+or a sweep that shows nothing gets
+near \(16/9\). A clean floor is not
+that. Specialist review of the
+derivation is still pending. No
+such near-ceiling sweep sits.
 
 ---
 
@@ -112,8 +144,8 @@ A clean floor is not that.
 
 | Item | Verdict |
 |---|---|
-| \(K_{1,2}(w)=2/3\) on this field | **YES.** Hand + evaluator. |
-| \(\sup K\ge 2/3\) | **YES.** Floor. |
+| \(K_{1,2}(w)=2/3\) on this field | **YES.** By hand + evaluator. |
+| \(\sup K\ge 2/3\) | **YES.** Floor. Write-up example. |
 | \(2/3\) as \(C_0\) or as \(16/9\) | **NO.** |
 | Exact-shell \(K\le 16/9\) | **CLAIMED.** Unchanged. |
 | Unrestricted ★ | **NO.** Other page. |

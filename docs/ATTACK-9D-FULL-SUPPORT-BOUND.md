@@ -23,10 +23,13 @@ Designed \(\Theta(m^2)\) 9D stays **NO**.
 Grow-\(s\) samples stay historical.
 Do not cash \(0.456\), \(0.641\), or
 \(2/3\) as \(C_0\).
-The three-shear field
-\(w=(\sin y,\sin z,\sin x)\)
-gives \(K_{1,2}=2/3\) by hand.
-That is a floor. It is not \(16/9\).
+The write-up example is the
+three-shear field
+\(w=(\sin y,\sin z,\sin x)\):
+one line, \(K_{1,2}=2/3\) by hand.
+That is a floor of \(\sup K\).
+It is not \(16/9\). A random-search
+table is not the example.
 [`ATTACK-9D-TWO-THIRDS.md`](ATTACK-9D-TWO-THIRDS.md).
 
 Derivation: [`math/ns_attacks/ATTACK_9D_FULL_SUPPORT_BOUND.md`](math/ns_attacks/ATTACK_9D_FULL_SUPPORT_BOUND.md).
@@ -116,17 +119,23 @@ calculation, the factor \(3/4\), and the
 limiting-closer scope. DA has not replaced
 that reading by a proof assistant.
 
-The three-shear field prints
+The write-up example is the
+three-shear field: one line,
 \(K_{1,2}=2/3\) by hand and on the
-live evaluator. Aligned 9B
-\(K\approx 0.641<2/3\). Grow-\(s\)
-max \(K\approx 0.456<2/3\).
-Random exact-shell samples on
-\((4,8)\), \((5,4)\), \((9,4)\), \((16,32)\),
-\((1,2)\) printed \(K\le 0.456\).
-Those numbers sit. \(2/3\) raises
-the floor of \(\sup K\). None of
-them is the \(16/9\) proof.
+live evaluator. That clears
+aligned 9B \(0.641\) and grow-\(s\)
+\(0.456\). It sits well under
+\(16/9\). Random exact-shell
+samples on \((4,8)\), \((5,4)\),
+\((9,4)\), \((16,32)\), \((1,2)\)
+printed \(K\le 0.456\). Those are
+sweep maxima. The hand field is
+the example. None of them is the
+\(16/9\) proof. To move \(16/9\)
+from CLAIMED to supported still
+needs the closed-form derivation
+or a sweep that shows nothing
+gets near \(16/9\).
 
 ---
 
@@ -136,7 +145,7 @@ them is the \(16/9\) proof.
 |---|---|
 | Designed \(\Theta(m^2)\) 9D | **NO.** Dead. |
 | Grow-\(s\) finite max as \(C_0\) | **NO.** Historical. |
-| Three-shear \(K=2/3\) as \(C_0\) | **NO.** Floor only. |
+| Three-shear \(K=2/3\) as \(C_0\) | **NO.** Write-up example. Floor only. |
 | Exact-shell \(K\le 16/9\) | **CLAIMED.** Specialist pending. |
 | Unrestricted ★ | **NO.** Other page. |
 | Ordinary NS | **OPEN.** |

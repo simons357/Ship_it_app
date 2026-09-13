@@ -112,6 +112,12 @@ Do **not** merge Attack 12’s \(0.71\) with
 the counting-lock \(\sqrt{K}\approx 0.711\).
 Different objects. Neither is \(C_0\).
 Neither is \(\mathcal R_\star\to\infty\).
+The write-up example for exact-shell
+\(K\) is the three-shear field
+\(w=(\sin y,\sin z,\sin x)\),
+\(K_{1,2}=2/3\) by hand, not those
+sweep maxima
+([`ATTACK-9D-TWO-THIRDS.md`](ATTACK-9D-TWO-THIRDS.md)).
 
 HH→L is a scored non-kill. It is not the
 9B closer, and it is not 9D.

@@ -53,6 +53,11 @@ projection against \(B(w,w)\), not necessarily \(K\).
 | SoT | `docs/math/ns_attacks/ATTACK_9B_EXACT_SHELL_CLOSING.md` |
 
 `max K \approx 0.641` at \((\alpha,\beta)=(4,8)\).
+That is a sweep maximum, not the
+write-up example. The hand field is
+\(w=(\sin y,\sin z,\sin x)\),
+\(K_{1,2}=2/3\)
+([`../ATTACK-9D-TWO-THIRDS.md`](../ATTACK-9D-TWO-THIRDS.md)).
 Controls PASS. \(\varepsilon\)-limit PASS.
 `kill_lane: LIVE`. `lemma_star: OPEN`.
 

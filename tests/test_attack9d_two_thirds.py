@@ -24,6 +24,9 @@ class Attack9DTwoThirdsTests(unittest.TestCase):
         self.assertIn("floor", text.lower())
         self.assertIn("16/9", text)
         self.assertIn("CLAIMED", text)
+        self.assertIn("write-up example", text)
+        self.assertIn("by hand", text)
+        self.assertIn("random", text.lower())
         self.assertNotIn("NS is solved", text)
         self.assertNotIn("Clay is solved", text)
         self.assertNotIn("almost proved", text.lower())
@@ -45,8 +48,10 @@ class Attack9DTwoThirdsTests(unittest.TestCase):
         tape = TAPE.read_text()
         self.assertIn("2/3", bound)
         self.assertIn("CLAIMED", bound)
+        self.assertIn("write-up example", bound)
         self.assertIn("ATTACK-9D-TWO-THIRDS.md", tape)
         self.assertIn("2/3", tape)
+        self.assertIn("write-up example", tape)
 
 
 if __name__ == "__main__":

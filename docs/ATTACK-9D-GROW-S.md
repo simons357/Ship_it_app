@@ -107,7 +107,14 @@ growing supports. It is not the
 aligned 9B search that printed
 \(K\approx 0.641\) at \((4,8)\).
 Do not merge those two numbers.
-A finite max is not \(C_0\).
+The write-up example is the
+three-shear field
+\(w=(\sin y,\sin z,\sin x)\),
+\(K_{1,2}=2/3\) by hand
+([`ATTACK-9D-TWO-THIRDS.md`](ATTACK-9D-TWO-THIRDS.md)).
+A table of random maxima is not
+that example. A finite max is not
+\(C_0\).
 A larger finite number only raises
 \(C_{\mathrm{geom}}\).
 \(\mathcal R_\star\to\infty\) would

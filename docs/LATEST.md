@@ -25,7 +25,8 @@ Not a blowup. Replacement closure open:
 docs/LEMMA-STAR-GROWING-LAYER.md
 Exact-shell 9D bound CLAIMED (C=4/3):
 docs/ATTACK-9D-FULL-SUPPORT-BOUND.md
-Three-shear floor K=2/3 (not 16/9):
+Three-shear write-up example K=2/3
+(floor, not 16/9; not a sweep table):
 docs/ATTACK-9D-TWO-THIRDS.md
 Need★ cannot repair the dead box:
 docs/NEED-STAR-HH-L-DUAL.md

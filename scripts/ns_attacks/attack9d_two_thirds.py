@@ -65,8 +65,9 @@ def run() -> dict:
             and abs(rec["K"] - 2.0 / 3.0) < 1e-12
         ),
         "note": (
-            "Hand-built floor K=2/3. Not the 16/9 bound. "
-            "Not C0. NS not solved."
+            "Write-up example: one line, K=2/3 by hand. "
+            "Floor of sup K, not the 16/9 bound. "
+            "Not a sweep table. Not C0. NS not solved."
         ),
     }
 
