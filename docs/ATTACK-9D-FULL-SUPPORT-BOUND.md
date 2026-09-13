@@ -70,6 +70,29 @@ The same \(E,A,B,P\) as
 
 ---
 
+## Admissible \((\alpha,\beta)\)
+
+The output shell is \(\beta>0\).
+A pair \(p+q=k\) with
+\(\lvert p\rvert^2=\lvert q\rvert^2=\alpha\)
+and \(\lvert k\rvert^2=\beta\) exists only if
+\[
+0<\beta\le 4\alpha,
+\]
+because \(\lvert p+q\rvert\le\lvert p\rvert+\lvert q\rvert=2\sqrt{\alpha}\).
+For \(\beta>4\alpha\), \(\Pi_\beta B=0\) and \(K=0\).
+The nontrivial constraint set sitting next
+to the bound is therefore
+\[
+\alpha>0,\qquad w\neq 0,\qquad 0<\beta\le 4\alpha.
+\]
+Equivalently \(x=\beta/\alpha\in(0,4]\).
+The \(16/9\) line is the maximum of a
+one-variable function on that interval,
+not a maximum over an unstated range.
+
+---
+
 ## Claimed bound
 
 For \(Aw=\alpha w\), the same Leray-projected
@@ -89,8 +112,8 @@ polarization may have independent complex
 coefficients. Optimality of the constant is
 not claimed.
 
-For \(\beta>4\alpha\) no pairs occur:
-\(\lvert p+q\rvert\le 2\sqrt{\alpha}\).
+For \(\beta>4\alpha\) the bound is vacuous:
+\(\Pi_\beta B=0\).
 
 This does not control an arbitrary simultaneous
 finite-closer limit, and it does not control
@@ -149,9 +172,18 @@ P_k\bigl[(q\cdot w_p)w_q+(p\cdot w_q)w_p\bigr]
 \]
 
 The in-plane components cancel after
-projection. The remaining component
-satisfies Cauchy–Schwarz even with
-independently complex polarizations.
+projection. The remaining component is
+estimated in the Hermitian inner product
+on \(\mathbb{C}^3\). Cauchy–Schwarz then
+gives \(\lvert\langle u,v\rangle\rvert\le\lvert u\rvert\lvert v\rvert\)
+for any two vectors, including
+independently complex polarizations in
+the two transverse planes. Real or
+aligned polarizations are not assumed.
+The factor \(\sqrt{\beta(1-\beta/(4\alpha))}\)
+is the Euclidean length of the remaining
+real direction \(k_\perp\). Saturation of
+Cauchy–Schwarz is not claimed.
 The complete calculation is in §3 of
 the underlying proof.
 
@@ -231,14 +263,52 @@ K_{\alpha,\beta}(w)
 (0<\beta\le 4\alpha).
 \]
 
-Let \(x=\beta/\alpha\in(0,4]\). The elementary
-maximum of \((3/4)x^2(1-x/4)\) is \(16/9\)
-at \(x=8/3\). That is the claimed \(K\) bound.
+Let \(x=\beta/\alpha\in(0,4]\) and
+\[
+g(x)
+=
+\frac34 x^2\Bigl(1-\frac x4\Bigr)
+=
+\frac34\Bigl(x^2-\frac{x^3}4\Bigr).
+\]
+Then
+\[
+g'(x)
+=
+\frac34\Bigl(2x-\frac{3x^2}4\Bigr)
+=
+\frac34 x\Bigl(2-\frac{3x}4\Bigr).
+\]
+The only critical point in \((0,4]\) is
+\(x=8/3\). The endpoints give
+\(g(x)\to 0\) as \(x\to 0^+\) and \(g(4)=0\).
+At the critical point
+\[
+g\Bigl(\frac83\Bigr)
+=
+\frac34\cdot\frac{64}9\cdot\Bigl(1-\frac23\Bigr)
+=
+\frac34\cdot\frac{64}9\cdot\frac13
+=
+\frac{16}9.
+\]
+So \(\sup_{x\in(0,4]}g(x)=16/9\).
+That is the claimed \(K\) bound.
 \(C=4/3=\sqrt{16/9}\) is the constant in
 \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}E\).
-Optimality is not claimed.
+
+The ratio \(x=8/3\) occurs on the lattice:
+\(p=(1,1,1)\), \(q=(1,1,-1)\) give
+\(\alpha=3\), \(\beta=8\). The maximizer of
+the bound function is not excluded by
+shell geometry. That does not say \(K\)
+attains \(16/9\). Optimality of the
+constant is not claimed.
 The coefficient is algebra and geometry,
-not a search result.
+not a search result. A reviewer should
+still redo this derivative by hand.
+Independent review of the §3 kernel
+step remains pending.
 
 ---
 
@@ -287,8 +357,12 @@ example, not a sweep.
 
 ## What the next review checks
 
-Verify the weighted incidence argument
-and the complex-polarization identity.
+Redo the one-variable maximum of
+\(g(x)=(3/4)x^2(1-x/4)\) on \((0,4]\).
+The written calculus sits above.
+Then verify the weighted incidence
+argument and the complex-polarization identity
+in the Hermitian product.
 The exact-shell scope is correctly
 separated from unrestricted ★.
 

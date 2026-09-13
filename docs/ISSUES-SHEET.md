@@ -22,7 +22,7 @@ Do not retitle any row below as a close.
 |---|---|---|---|
 | 1 | H1 = WRITE (6) | Shape 1, 2, or 3, or \(\mathcal G\to\infty\). Predictive start froze alignment. Not a theorem. Do not start from ABC_λ. | `docs/H1-PREDICTIVE.md`, `docs/WRITE_6.md` |
 | 4 | Replacement energy-budget closure | A different estimate after unrestricted ★ died. Need★ cannot repair the dead box. | `docs/LEMMA-STAR-GROWING-LAYER.md`, `docs/LEMMA-STAR-REASON.md`, `docs/NEED-STAR-HH-L-DUAL.md` |
-| 4a | Exact-shell 9D \(K\le 16/9\) | **CLAIMED.** Written derivation available; internal checks passed; independent specialist review pending. Numerical sweeps provide consistency checks only. If it holds, \(s\) is gone on one input shell. Not a regularity close. Soft X silent. | `docs/ATTACK-9D-FULL-SUPPORT-BOUND.md` |
+| 4a | Exact-shell 9D \(K\le 16/9\) | **CLAIMED.** Written derivation available; internal checks passed; independent specialist review pending. Numerical sweeps provide consistency checks only. Constraint set \(\alpha>0\), \(0<\beta\le 4\alpha\); \(16/9\) is \(\sup g\) on that interval. If it holds, \(s\) is gone on one input shell. Not a regularity close. Soft X silent. | `docs/ATTACK-9D-FULL-SUPPORT-BOUND.md` |
 | 5 | Axisymmetric remainder \(T_{j\leftarrow j}\) | Requested Young line, or a class bound on \(\int\rho_j\). Energy-linear \(R\) is false. | `docs/TJJ-ESTIMATE.md`, `docs/AXISYM-SHELL.md` |
 
 Need★ page: [`NEED-STAR-HH-L-DUAL.md`](NEED-STAR-HH-L-DUAL.md).

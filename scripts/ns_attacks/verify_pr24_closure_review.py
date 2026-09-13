@@ -23,6 +23,7 @@ import argparse
 import hashlib
 import json
 import sys
+from fractions import Fraction
 from pathlib import Path
 
 import numpy as np
@@ -188,8 +189,9 @@ def three_shear_field() -> dict:
     return enforce_reality(field)
 
 
-def k_form(x: float) -> float:
-    return 0.75 * (x**2) * (1.0 - x / 4.0)
+def k_form(x: Fraction | float) -> Fraction:
+    xx = Fraction(x).limit_denominator()
+    return Fraction(3, 4) * xx * xx * (1 - xx / 4)
 
 
 def check_exact_shell_symbolic() -> dict:
@@ -203,14 +205,18 @@ def check_exact_shell_symbolic() -> dict:
         and abs(rec["E_w"] - 1.5) < 1e-12
         and abs(rec["PiB_L2_sq"] - 0.75) < 1e-12
     )
-    xs = [i / 64.0 for i in range(1, 4 * 64 + 1)]
+    xs = [Fraction(i, 64) for i in range(1, 4 * 64 + 1)]
     vals = [k_form(x) for x in xs]
     sampled_max = max(vals)
-    at_eight_thirds = k_form(8.0 / 3.0)
+    at_eight_thirds = k_form(Fraction(8, 3))
+    # g'(x) = (3/4) x (2 - 3x/4) vanishes in (0,4] only at x=8/3.
+    critical = Fraction(8, 3)
+    gprime_factor = 2 - 3 * critical / 4
     form_ok = (
-        abs(at_eight_thirds - K_BOUND) < 1e-12
-        and sampled_max <= K_BOUND + 1e-12
-        and k_form(4.0) <= 1e-12
+        at_eight_thirds == Fraction(16, 9)
+        and sampled_max <= Fraction(16, 9)
+        and k_form(4) == 0
+        and gprime_factor == 0
     )
     return {
         "K_bound": K_BOUND,
@@ -230,8 +236,11 @@ def check_exact_shell_symbolic() -> dict:
             "ok": bool(shear_ok),
         },
         "k_form": {
-            "value_at_8_over_3": at_eight_thirds,
-            "sampled_max_on_64ths": sampled_max,
+            "value_at_8_over_3": float(at_eight_thirds),
+            "value_at_8_over_3_exact": "16/9",
+            "sampled_max_on_64ths": float(sampled_max),
+            "critical_x": "8/3",
+            "constraint": "alpha>0 and 0<beta<=4*alpha",
             "ok": bool(form_ok),
         },
         "performs_shell_count_experiments": False,

@@ -176,8 +176,11 @@
       "ok": true
     },
     "k_form": {
-      "value_at_8_over_3": 1.777777777777778,
+      "value_at_8_over_3": 1.7777777777777777,
+      "value_at_8_over_3_exact": "16/9",
       "sampled_max_on_64ths": 1.7777574062347412,
+      "critical_x": "8/3",
+      "constraint": "alpha>0 and 0<beta<=4*alpha",
       "ok": true
     },
     "performs_shell_count_experiments": false,

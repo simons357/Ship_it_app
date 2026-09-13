@@ -37,11 +37,18 @@ C\alpha\beta^{-1/2}\|w\|_2^2
 This review claims \(C=4/3\), equivalently
 \(K\le 16/9\), by the symmetrized
 interaction estimate, the weighted count,
-and the \(1/4\times 3\) coefficient. Both
-supports may grow. Full complex
-polarizations. The three-shear field has
-exact \(K=2/3\). That example is not the
-ceiling.
+and the \(1/4\times 3\) coefficient. The
+nontrivial pairs live on
+\(\alpha>0\), \(0<\beta\le 4\alpha\).
+The \(16/9\) line is
+\(\sup g=16/9\) for
+\(g(x)=(3/4)x^2(1-x/4)\) on \((0,4]\),
+at \(x=8/3\). Polarizations are estimated
+in the Hermitian product on \(\mathbb{C}^3\).
+Both supports may grow. Full complex
+polarizations. The three-shear
+field has exact \(K=2/3\). That example
+is not the ceiling.
 Designed \(\Theta(m^2)\) stays
 dead. `attack9d_theta_m2_locked_phase.py`
 was not written.

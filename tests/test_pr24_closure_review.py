@@ -43,7 +43,11 @@ class Pr24ClosureReviewTests(unittest.TestCase):
         self.assertIn("does not perform the shell-count experiments", flat)
         self.assertNotIn("sweep shows nothing near", bound)
         self.assertIn("weighted incidence", bound)
-        self.assertIn("complex-polarization identity", bound)
+        self.assertIn("complex-polarization identity", flat)
+        self.assertIn("Hermitian", bound)
+        self.assertIn("0<\\beta\\le4\\alpha", bound.replace(" ", ""))
+        self.assertIn("g'(x)", bound.replace(" ", ""))
+        self.assertIn("8/3", bound)
 
     def test_family_kills_the_box_on_the_live_evaluator(self):
         payload = run()
