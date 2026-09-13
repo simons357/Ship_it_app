@@ -6,5 +6,8 @@ The claimed \(C=4/3\) write sits in
 CLAIMED: written derivation available; internal
 checks passed; independent specialist review
 pending. Numerical sweeps provide consistency
-checks only. Designed \(\Theta(m^2)\) 9D stays dead.
-Ordinary NS is not solved.
+checks only. Admissible pairs satisfy
+\(0<\beta\le 4\alpha\); the \(16/9\) is the
+elementary maximum of \(g(x)=(3/4)x^2(1-x/4)\)
+on that interval. Designed \(\Theta(m^2)\) 9D
+stays dead. Ordinary NS is not solved.

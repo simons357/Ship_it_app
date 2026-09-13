@@ -1,6 +1,6 @@
 # Exact-shell 9D — claimed full-support bound
 
-12 September 2026.
+12 September 2026; editor pass 13 September 2026.
 Unaugmented NS on \(\mathbb{T}^3\);
 quantity is \(K_{\alpha,\beta}(w)\) for
 \(Aw=\alpha w\);
@@ -68,29 +68,44 @@ The same \(E,A,B,P\) as
 \(K_{\alpha,\beta}(w)\) is defined only for
 \(\alpha>0\) and \(w\neq 0\).
 
+**Admissible \((\alpha,\beta)\) for a
+nonzero pair contribution.** Lattice
+eigenvalues \(\alpha,\beta\in
+\{\lvert n\rvert^2:n\in\mathbb{Z}^3\setminus\{0\}\}\).
+If \(Aw=\alpha w\) and \(p+q=k\) with
+\(\lvert p\rvert^2=\lvert q\rvert^2=\alpha\),
+then \(\lvert k\rvert\le 2\sqrt{\alpha}\), so
+\[
+0<\beta\le 4\alpha.
+\]
+If \(\beta>4\alpha\), no such pairs exist,
+\(\Pi_\beta B(w,w)=0\), and \(K_{\alpha,\beta}(w)=0\).
+The \(16/9\) calculus below is only on this
+closed interval in the ratio \(x=\beta/\alpha\).
+
 ---
 
 ## Claimed bound
 
-For \(Aw=\alpha w\), the same Leray-projected
-\(B(w,w)=P[(w\cdot\nabla)w]\) satisfies
+On the admissible set
+\(\alpha>0\), \(w\neq 0\), \(Aw=\alpha w\),
+and \(0<\beta\le 4\alpha\), the same
+Leray-projected \(B(w,w)=P[(w\cdot\nabla)w]\)
+satisfies
 
 \[
 \|\Pi_\beta B(w,w)\|_2
 \le
-\frac{4}{3}\frac{\alpha}{\sqrt{\beta}}\|w\|_2^2,
-\qquad
-\beta>0.
+\frac{4}{3}\frac{\alpha}{\sqrt{\beta}}\|w\|_2^2.
 \]
 
 Equivalently \(K_{\alpha,\beta}(w)\le 16/9\).
 Both supports may grow. Each transverse
 polarization may have independent complex
 coefficients. Optimality of the constant is
-not claimed.
-
-For \(\beta>4\alpha\) no pairs occur:
-\(\lvert p+q\rvert\le 2\sqrt{\alpha}\).
+not claimed. If \(\beta>4\alpha\), the
+left-hand side is zero by the pair constraint
+above.
 
 This does not control an arbitrary simultaneous
 finite-closer limit, and it does not control
@@ -149,11 +164,20 @@ P_k\bigl[(q\cdot w_p)w_q+(p\cdot w_q)w_p\bigr]
 \]
 
 The in-plane components cancel after
-projection. The remaining component
-satisfies Cauchy–Schwarz even with
-independently complex polarizations.
-The complete calculation is in §3 of
-the underlying proof.
+projection. What remains is estimated
+with the standard Hermitian inner
+product on \(\mathbb{C}^3\),
+\(\langle u,v\rangle=\sum_{j=1}^3 u_j\overline{v_j}\),
+restricted to the plane orthogonal to
+\(k\). Cauchy–Schwarz for that product
+is \(\lvert\langle u,v\rangle\rvert\le
+\|u\|\,\|v\|\) and does not require
+real or aligned polarizations. The
+bound is the inequality, not
+saturation: independently complex
+\(w_p,w_q\) need not attain the
+constant. The complete calculation is
+in §3 of the underlying proof.
 
 The ordered convolution equals half its
 symmetrization:
@@ -217,23 +241,52 @@ Together,
 \|w\|_2^4.
 \]
 
-Then
+Then, on the same admissible set
+\(0<\beta\le 4\alpha\),
+
 \[
 K_{\alpha,\beta}(w)
 =
 \frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\|w\|_2^4}
 \le
 \frac34\Bigl(\frac{\beta}{\alpha}\Bigr)^2
-\Bigl(1-\frac{\beta}{4\alpha}\Bigr)
-\le
-\frac{16}{9}
-\qquad
-(0<\beta\le 4\alpha).
+\Bigl(1-\frac{\beta}{4\alpha}\Bigr).
 \]
 
-Let \(x=\beta/\alpha\in(0,4]\). The elementary
-maximum of \((3/4)x^2(1-x/4)\) is \(16/9\)
-at \(x=8/3\). That is the claimed \(K\) bound.
+**One-variable maximum (redo by hand).**
+Let \(x=\beta/\alpha\). Geometry forces
+\(x\in(0,4]\). Write
+\[
+g(x)=\frac34 x^2\Bigl(1-\frac{x}{4}\Bigr)
+=\frac34 x^2-\frac{3}{16}x^3.
+\]
+Differentiate:
+\[
+g'(x)=\frac32 x-\frac{9}{16}x^2
+=\frac{3x}{16}\bigl(8-3x\bigr).
+\]
+Critical points in \(\mathbb{R}\) are
+\(x=0\) and \(x=8/3\). The point
+\(x=8/3\) lies in the open interval
+\((0,4)\). Endpoint values:
+\(g(x)\to 0\) as \(x\to 0^+\), and
+\(g(4)=0\). The interior value is
+\[
+g\Bigl(\frac83\Bigr)
+=\frac34\cdot\frac{64}{9}\cdot\Bigl(1-\frac{2}{3}\Bigr)
+=\frac34\cdot\frac{64}{9}\cdot\frac13
+=\frac{16}{9}.
+\]
+Hence \(g(x)\le 16/9\) on the whole
+admissible interval, and
+\(K_{\alpha,\beta}(w)\le 16/9\).
+No extra constraint was dropped:
+\(8/3\le 4\) is the shell geometry
+already used to exclude \(\beta>4\alpha\).
+A lattice pair with \(\beta/\alpha=8/3\)
+need not exist; the bound does not
+require that it does.
+
 \(C=4/3=\sqrt{16/9}\) is the constant in
 \(\|\Pi_\beta B\|_2\le C\alpha\beta^{-1/2}E\).
 Optimality is not claimed.
@@ -288,7 +341,12 @@ example, not a sweep.
 ## What the next review checks
 
 Verify the weighted incidence argument
-and the complex-polarization identity.
+and the complex-polarization identity
+(Hermitian Cauchy–Schwarz after the
+in-plane cancellation). Redo the
+one-variable maximum of \(g(x)\) on
+\(x\in(0,4]\) by hand; the \(16/9\)
+is that calculus, not a sweep.
 The exact-shell scope is correctly
 separated from unrestricted ★.
 
@@ -301,6 +359,7 @@ separated from unrestricted ★.
 | Designed \(\Theta(m^2)\) 9D | **NO.** Dead. |
 | Grow-\(s\) finite max as \(C_0\) | **NO.** Historical. |
 | Exact-shell \(K\le 16/9\) | **CLAIMED.** Written derivation available; internal checks passed; independent specialist review pending. Numerical sweeps provide consistency checks only. |
+| Admissible \((\alpha,\beta)\) and \(g(x)\) max | Written: \(0<\beta\le 4\alpha\), \(g(8/3)=16/9\), endpoints \(0\). Redo by hand. |
 | Three-shear \(K=2/3\) as the ceiling | **NO.** Exact example under the claimed bound. |
 | Sweep max \(0.641\) / \(0.456\) as the ceiling | **NO.** Not the bound. |
 | True \(4/3\) as a regularity close | **NO.** Does not repair ★. No continuation. |
