@@ -113,6 +113,8 @@ As \(\beta\to 4\alpha\) nothing divides
 by \(\lvert k_\perp\rvert\).
 Independent review: no name, no date.
 Soft X silent. Not a letter.
+Break questions answered:
+[`PR24-SPECIALIST-BREAK.md`](PR24-SPECIALIST-BREAK.md).
 Specialist review of the weighted
 count, the factor \(3/4\), the
 kernel step, and the

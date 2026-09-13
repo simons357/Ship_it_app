@@ -197,6 +197,17 @@ Live Stokes was not overwritten.
 Need★ cannot repair this unrestricted box
 unless its hypotheses or conclusion change.
 
+Specialist break answers 1–4 and 16–20:
+[`../../PR24-SPECIALIST-BREAK.md`](../../PR24-SPECIALIST-BREAK.md).
+\(\langle D_n^3\rangle\) is general \(n\).
+Live \(T_c\) match is \(n=1,\dots,10\),
+not merely \(n\le 8\).
+\(\mathcal D_s>0\) for every \(n\ge 1\)
+because \(\lambda=n^2\) and \(\lambda=2n^2\)
+both carry mass.
+Instantaneous class, not a trajectory.
+No replacement inequality is displayed.
+
 ---
 
 ## What this does not do

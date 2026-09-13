@@ -360,6 +360,34 @@ or a near-ceiling sweep. Neither sits.
 
 ---
 
+## Specialist break lines
+
+Phone answers for 5–15:
+[`../../PR24-SPECIALIST-BREAK.md`](../../PR24-SPECIALIST-BREAK.md).
+
+**5.** Factor \(3\) on this page
+(two-plane + AM-GM). Not Ring.
+**6.** Conjugation is in
+\(\langle k_\perp,\overline{w_p}\rangle\).
+**7.** \(K\) does not divide by
+\(1-\beta/(4\alpha)\).
+**8.** Live \(B\) is not half the
+symmetrization, real or complex.
+**9.** \(\Pi_\beta\) is
+\(\lvert k\rvert^2=\beta\) exactly
+on \(\mathbb{Z}^3\).
+**10.** Both polarizations,
+independent complex amplitudes:
+claimed.
+**14.** A true \(4/3\) does not
+repair ★, does not give a
+continuation criterion, and does
+not control a multi-shell field.
+**15.** No multi-shell \(C\) from
+shell count.
+
+---
+
 ## Status
 
 | Item | Verdict |

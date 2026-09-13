@@ -233,5 +233,54 @@ Live Stokes was not overwritten.
 | Ordinary NS | **OPEN.** |
 | Specialist reading of the \(T_c\) identity | **pending** |
 
+---
+
+## Specialist break lines
+
+Full answers:
+[`PR24-SPECIALIST-BREAK.md`](PR24-SPECIALIST-BREAK.md).
+
+**1.** The identity a specialist can
+still break is
+\(T_c(v_n)=3n^5(3n^2+3n+1)\).
+\(\langle D_n^3\rangle\) is a
+three-line sum for general \(n\),
+brute-checked through \(n=20\).
+Live evaluators match the product
+on \(n=1,\dots,10\), not merely
+\(n\le 8\).
+
+**2.** \(\mathcal D_s(v_n)>0\) for
+every \(n\ge 1\): eigenvalues
+\(n^2\) and \(2n^2\) both carry
+mass. Computed rows are a check.
+
+**3.** Amplitude invariance and a
+global Plancherel constant do not
+change the sign of
+\(\mathcal R_\star\to\infty\).
+The \(n\) in \(U(nx,ny)\) is part
+of the family, not a later
+normalization.
+
+**4.** Instantaneous admissible
+class, not a trajectory. Not a
+Navier–Stokes solution. Not a
+blowup.
+
+**16–17.** The verifier checks live
+moments and reads grow-\(s\) JSON.
+It does not prove all-\(n\) \(T_c\).
+If it is deleted, the elementary
+lower bound \(\mathcal R_\star\ge n/165888\)
+remains human-checkable once the
+\(T_c\) identity is granted.
+
+**18–20.** No replacement inequality
+is displayed. Leftover 4 is OPEN.
+A true \(4/3\) feeds no continuation
+criterion: not BKM, not
+\(\int\|Au\|_2^2\,dt<\infty\).
+
 NS not solved. The boxed unrestricted ★ is dead.
 The door that remains is a different closure.

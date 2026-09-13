@@ -364,6 +364,81 @@ Those numbers sit. They are not the proof.
 
 ---
 
+## Specialist break lines
+
+Full answers:
+[`PR24-SPECIALIST-BREAK.md`](PR24-SPECIALIST-BREAK.md).
+These six plus 14 sit here so a
+reviewer does not hunt.
+
+**5.** Factor \(3\) is derived on this
+page (two-plane + AM-GM). Not Ring.
+Not Borromean.
+
+**6.** For \(w_p\in\mathbb{C}^3\),
+\(w_p\perp p\), no reality:
+\(\lvert k\cdot w_p\rvert
+=\lvert\langle k_\perp,\overline{w_p}\rangle\rvert
+\le\lvert k_\perp\rvert\,\lvert w_p\rvert\).
+Conjugation is in
+\(\langle u,v\rangle=\sum u_j\overline{v}_j\),
+used once, on \(w_p\).
+
+**7.** Nothing divides by
+\(1-\beta/(4\alpha)\). The boxed
+\(K=\beta\|\Pi_\beta B\|_2^2/(\alpha^2\|w\|_2^4)\)
+has no such factor.
+
+**8.** Ordered convolution is not
+half the symmetrization, for real
+or for complex. Live \(B\) keeps
+both orders and no extra \(1/2\).
+
+**9.** \(\Pi_\beta\) is the spectral
+projection onto the lattice shell
+\(\lvert k\rvert^2=\beta\) exactly.
+Not a dyadic shell of width 1.
+
+**10.** Yes. Both transverse
+polarizations at \(p\), independent
+complex amplitudes. The one-mode
+line uses \(\lvert w_p\rvert\).
+The factor \(3/4\) is still CLAIMED
+for that class.
+
+**11.** Public modes of
+\(w=(\sin y,\sin z,\sin x)\):
+\(\widehat w(0,\pm 1,0)=(\mp i/2,0,0)\),
+\(\widehat w(0,0,\pm 1)=(0,\mp i/2,0)\),
+\(\widehat w(\pm 1,0,0)=(0,0,\mp i/2)\).
+Twelve outputs on \(\beta=2\), each
+\(\lvert\widehat B_k\rvert^2=1/16\),
+so \(K_{1,2}=2/3\). Hand arithmetic
+on [`ATTACK-9D-TWO-THIRDS.md`](ATTACK-9D-TWO-THIRDS.md).
+
+**12.** No exact-shell field in this
+repo has \(K>1\). The seated max is
+\(2/3\). The ceiling is \(16/9\)
+because that is the envelope max,
+not because a sample approached it.
+
+**13.** A counterexample is one pair
+\((\alpha,\beta)\) and one
+conjugate-closed divergence-free
+list on \(\lvert p\rvert^2=\alpha\)
+with \(K_{\alpha,\beta}(w)>16/9\).
+
+**14.** A true \(4/3\) does not repair
+unrestricted ★, does not give a
+continuation criterion, and does
+not control a multi-shell field.
+
+**15.** No. A constant that depends
+only on the number of shells is a
+different theorem.
+
+---
+
 ## Status
 
 | Item | Verdict |
@@ -385,5 +460,8 @@ Those numbers sit. They are not the proof.
 | Unrestricted ★ | **NO.** Dead by \(v_n\). |
 | Ordinary NS | **OPEN.** |
 | Specialist sign of the algebra | **pending.** Soft X silent. |
+| Factor \(3\) from Ring / Borromean | **NO.** On this page. |
+| \(K>1\) in the repo | **NO.** Seated max \(2/3\). |
+| Multi-shell \(C\) from shell count | **NO.** Different theorem. |
 
 NS not solved.

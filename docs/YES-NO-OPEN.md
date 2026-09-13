@@ -194,6 +194,14 @@ As \(\beta\to 4\alpha\) nothing divides
 by \(\lvert k_\perp\rvert\). Independent
 review has no name and no date. Soft X
 silent. Not a letter.
+Specialist break questions, answered
+before anyone else reads the pages:
+[`PR24-SPECIALIST-BREAK.md`](PR24-SPECIALIST-BREAK.md).
+A true \(4/3\) does not repair ★,
+does not give a continuation
+criterion, and does not control a
+multi-shell field. No replacement
+inequality is displayed.
 
 Those three words do not trade.
 NS not solved. RH not solved.

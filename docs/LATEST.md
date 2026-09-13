@@ -23,6 +23,8 @@ open. Paper: docs/THEOREM-A-Q1.pdf
 Unrestricted Lemma★ killed by v_n.
 Not a blowup. Replacement closure open:
 docs/LEMMA-STAR-GROWING-LAYER.md
+Specialist break questions, answered:
+docs/PR24-SPECIALIST-BREAK.md
 Exact-shell 9D bound CLAIMED (C=4/3;
 cubic max at x=8/3 is calculus,
 not the envelope; factor 3 is
