@@ -1,0 +1,24 @@
+{
+  "id": 20272545,
+  "doi": "10.5281/zenodo.20272545",
+  "conceptrecid": "20272544",
+  "title": "Spectral Non-Concentration Implies Global Regularity for 3D Navier\u2013Stokes on T\u00b3",
+  "date": "2026-05-18",
+  "creators": [
+    "Simons, Jonathan"
+  ],
+  "files": [
+    {
+      "key": "Paper2_NS_Regularity_SND.pdf",
+      "url": "https://zenodo.org/api/records/20272545/files/Paper2_NS_Regularity_SND.pdf/content",
+      "size": 360856
+    },
+    {
+      "key": "image.png",
+      "url": "https://zenodo.org/api/records/20272545/files/image.png/content",
+      "size": 1390153
+    }
+  ],
+  "keywords": null,
+  "desc": "<p>We establish a spectral framework for global regularity of the 3D incompressible Navier&ndash;Stokes equations on the torus T&sup3;. The central object is the shell-helical GCD interaction operator H_N[u(t)], whose minimum eigenvalue governs spectral stability of the Leray&ndash;Hopf flow. The main result (Theorem 4.1) proves that the Spectral Non-Concentration (SND) condition implies inf_{t&ge;0} &lambda;_min(H_N[u(t)]) &gt; &minus;1/2, precluding spectral blowup for all time. The proof redu"
+}

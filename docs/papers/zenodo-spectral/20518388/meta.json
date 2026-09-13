@@ -1,0 +1,19 @@
+{
+  "id": 20518388,
+  "doi": "10.5281/zenodo.20518388",
+  "conceptrecid": "20518249",
+  "title": "Route C: Spectral Closure of the Zero-Density Law \u2014 Conditional on Two Analytic Gaps\"",
+  "date": "2026-06-03",
+  "creators": [
+    "Simons, Jonathan"
+  ],
+  "files": [
+    {
+      "key": "d8fcfda3f_RouteC_fresh.tex",
+      "url": "https://zenodo.org/api/records/20518388/files/d8fcfda3f_RouteC_fresh.tex/content",
+      "size": 16012
+    }
+  ],
+  "keywords": null,
+  "desc": "<p class=\"my-2 leading-relaxed\">We present a spectral approach to the Riemann Hypothesis via the normalized GCD operator Q_N, defined by Q_N[i,j] = 1/(gcd(i,j)&radic;ij). The core result is the asymptotic limit &lambda;_min(Q_N)/log N &rarr; &minus;1/(2&pi;), established as an original result for this normalized operator. Combined with Bombieri&ndash;Vinogradov local M&ouml;bius control and the Ring Lemma gradient bound, this yields a conditional proof that all non-trivial zeros of &zeta;(s) sat"
+}

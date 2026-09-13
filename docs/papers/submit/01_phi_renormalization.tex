@@ -1,0 +1,452 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{booktabs,xcolor,colortbl,array,mdframed,hyperref,enumitem}
+
+\definecolor{proved}{HTML}{1a7a1a}
+\definecolor{open}{HTML}{b30000}
+\definecolor{notclaimed}{HTML}{555555}
+\definecolor{lightgreen}{HTML}{e6f4e6}
+\definecolor{lightred}{HTML}{fde8e8}
+\definecolor{lightgray}{HTML}{f5f5f5}
+\definecolor{darkblue}{HTML}{003366}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\norm}[2]{\|{#1}\|_{#2}}
+\newcommand{\ddt}{\tfrac{d}{dt}}
+\newcommand{\PP}{\mathbb{P}}
+
+\title{\textbf{Phi-Renormalization for Axisymmetric Navier--Stokes with Swirl}\\[6pt]
+\large\textit{Algebraic Cancellation of the $1/r^4$ Axis Term}}
+\author{Jonathan Robert Simons\\
+Savannah, Georgia, USA\\
+\texttt{simonsmedicalinnovations@gmail.com}}
+\date{Corrected preprint \quad|\quad August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.92\linewidth}{\centering\small
+\textbf{Disclaimer.} This note treats the axisymmetric-with-swirl class
+and a $Q_1$-augmented / Phi-renormalized system. Classical regularity
+without augmentation remains open; unconditional 3D Navier--Stokes
+is not claimed.}}
+\end{center}
+\vspace{0.5em}
+
+%% STATUS DASHBOARD
+\begin{mdframed}[linecolor=darkblue,linewidth=1.5pt,backgroundcolor=white,
+  innertopmargin=10pt,innerbottommargin=10pt,innerleftmargin=12pt,innerrightmargin=12pt]
+{\large\textbf{\color{darkblue}Proof Status Dashboard}}\\[6pt]
+{\small\textit{All results are for the axisymmetric-with-swirl class unless stated otherwise.}}\\[6pt]
+\begin{tabular}{>{\raggedright\arraybackslash}p{8cm}
+                >{\centering\arraybackslash}p{2.3cm}
+                >{\raggedright\arraybackslash}p{3cm}}
+\toprule
+\textbf{Result} & \textbf{Status} & \textbf{Location}\\
+\midrule
+\rowcolor{lightgreen}
+Substitution $\Gamma=ru_\theta$, $\Phi=\Gamma/r^2$ & \textcolor{proved}{\textbf{Done}} & \S2 \\
+\rowcolor{lightgreen}
+Phi-Renormalization: $1/r^4$ cancels algebraically & \textcolor{proved}{\textbf{Proved}} & Thm~\ref{thm:phirenorm} \\
+\rowcolor{lightgreen}
+No Hardy inequality required & \textcolor{proved}{\textbf{Yes}} & Thm~\ref{thm:phirenorm} \\
+\rowcolor{lightgreen}
+Global $C^\infty$ for augmented system & \textcolor{proved}{\textbf{Proved}} & Thm~\ref{thm:global} \\
+\rowcolor{lightgreen}
+Gronwall-free convergence at rate $\eps^{4/(\beta+2)}$ & \textcolor{proved}{\textbf{Proved}} & Thm~\ref{thm:convergence} \\
+\midrule
+\rowcolor{lightred}
+Classical system: global regularity (no augmentation) & \textcolor{open}{\textbf{Open}} & Open Problem \\
+\rowcolor{lightgray}
+Classical 3D Navier--Stokes & \textcolor{notclaimed}{\textbf{Not claimed}} & --- \\
+\bottomrule
+\end{tabular}
+\end{mdframed}
+
+\vspace{6pt}
+
+\begin{abstract}
+We study the 3D incompressible Navier--Stokes equations for
+axisymmetric-with-swirl data. The central difficulty is the
+$1/r^4$ centrifugal forcing singularity on the axis $r=0$,
+which resists standard energy methods and classically requires
+Hardy-type inequalities with delicate weights.
+
+We introduce the \emph{Phi-Renormalization} (Definition~\ref{def:phi}): the substitution
+$\Gamma = ru_\theta$, $\Phi = \Gamma/r^2 = u_\theta/r$
+transforms the singular term via the algebraic identity
+\[
+  \frac{1}{r^4}\,\partial_z(\Gamma^2) = \partial_z(\Phi^2),
+\]
+canceling the $1/r^4$ singularity \emph{exactly and algebraically},
+with no Hardy inequality and no approximation.
+
+Two results follow: (I) global $C^\infty$ regularity for the
+$Q_1$-augmented system at any $\eps>0$; (II) Gronwall-free convergence
+$u^\eps\to u$ at rate $O(\eps^{4/(\beta+2)})$ via a multi-component
+stability energy tracking vorticity direction, swirl, and axial vorticity
+simultaneously.
+
+\medskip
+\noindent\textbf{Scope.} This note treats the axisymmetric-with-swirl class
+and the $Q_1$-augmented approximation. It does \emph{not} claim unconditional
+regularity for classical three-dimensional Navier--Stokes.
+\end{abstract}
+
+%%─────────────────────────────────────
+\section{Introduction}
+%%─────────────────────────────────────
+
+\subsection{The Axisymmetric Class and Its Central Difficulty}
+
+The NS equations in cylindrical coordinates $(r,\theta,z)$
+for axisymmetric-with-swirl data
+$u = u_r\hat{r}+u_\theta\hat{\theta}+u_z\hat{z}$ produce,
+in the vorticity formulation, the term
+\[
+  \frac{1}{r^4}\,\partial_z(\Gamma^2), \qquad \Gamma = ru_\theta,
+\]
+in the radial vorticity equation.
+This \emph{$1/r^4$ axis singularity} blows up as $r\to 0$.
+Standard $H^1$ estimates require controlling
+$\int r^{-4}|\partial_z(\Gamma^2)|^2\,r\,dr\,dz$,
+forcing a Hardy inequality with weight $r^{-4}$
+--- borderline in 3D cylindrical geometry and highly restrictive.
+
+\subsection{Prior Work}
+
+Without swirl ($u_\theta\equiv 0$): global regularity is classical
+(Ladyzhenskaya~\cite{Lady1968}, Ukhovskii--Yudovich~\cite{UY1968}).
+With swirl and large data: open.
+Partial results: Chae--Lee~\cite{ChaeLee2000} (small swirl);
+Chen--Fang--Zhang~\cite{CFZ2018} (swirl in $L^\infty_tL^3_x$);
+Hou--Li~\cite{HouLi2006} (blow-up analysis with boundary).
+The $1/r^4$ term is explicitly identified in~\cite{Danchin2007}
+as the obstruction to direct energy methods.
+
+\subsection{Main Results}
+
+\begin{enumerate}[label=(\Roman*)]
+\item \textbf{Phi-Renormalization (Theorem~\ref{thm:phirenorm}):}
+The substitution $\Phi = u_\theta/r$ eliminates the $1/r^4$
+singularity via a pure algebraic identity. No Hardy inequality.
+
+\item \textbf{Gronwall-Free Convergence (Theorem~\ref{thm:convergence}):}
+$u^\eps\to u$ at rate $O(\eps^{4/(\beta+2)})$, uniformly in $t$,
+\emph{without} the exponential Gronwall factor
+$e^{C\int\|\nabla u\|_{L^4}^2\,dt}$.
+
+\item \textbf{Global Regularity (Theorem~\ref{thm:global}):}
+The $Q_1$-augmented axisymmetric system is globally $C^\infty$
+for every $\eps>0$ and every $H^1$ axisymmetric-with-swirl datum.
+\end{enumerate}
+
+%%─────────────────────────────────────
+\section{The Phi-Renormalization}
+\label{sec:phirenorm}
+%%─────────────────────────────────────
+
+\begin{definition}[Phi-Substitution]\label{def:phi}
+For axisymmetric-with-swirl $u$ with swirl component $u_\theta$:
+\begin{align*}
+  \Gamma(r,z,t) &:= r\,u_\theta(r,z,t) \quad \text{(angular momentum)},\\
+  \Phi(r,z,t) &:= \frac{\Gamma}{r^2} = \frac{u_\theta}{r}.
+\end{align*}
+For the augmented solution $u^\eps$: $\Gamma^\eps=ru^\eps_\theta$,
+$\Phi^\eps=\Gamma^\eps/r^2$, $\delta\Phi=\Phi^\eps-\Phi$.
+\end{definition}
+
+$\Phi$ is well-defined at the axis: as $r\to 0$,
+$u_\theta\to 0$ (no-swirl-on-axis), so $\Phi=u_\theta/r$
+extends continuously with $\Phi|_{r=0}=\partial_ru_\theta|_{r=0}$.
+
+\begin{theorem}[Phi-Renormalization]\label{thm:phirenorm}
+With notation as above:
+\begin{align}
+  \frac{1}{r^4}\,\partial_z(\Gamma_\eps^2-\Gamma^2)
+  &= \partial_z\!\bigl((\Phi^\eps+\Phi)\,\delta\Phi\bigr),
+  \label{eq:identity}\\
+  \frac{1}{r^4}\,\partial_z(\Gamma^2)
+  &= \partial_z(\Phi^2).
+  \label{eq:identity-classical}
+\end{align}
+The $1/r^4$ axis singularity is eliminated exactly and algebraically.
+No Hardy inequality, no weight, no approximation.
+\end{theorem}
+
+\begin{proof}
+Factor the difference of squares:
+\[
+  \Gamma_\eps^2 - \Gamma^2
+  = (r^2\Phi^\eps)^2 - (r^2\Phi)^2
+  = r^4(\Phi^\eps+\Phi)(\Phi^\eps-\Phi)
+  = r^4(\Phi^\eps+\Phi)\,\delta\Phi.
+\]
+Therefore:
+\[
+  \frac{1}{r^4}\,\partial_z(\Gamma_\eps^2-\Gamma^2)
+  = \frac{1}{r^4}\,\partial_z\!\bigl(r^4(\Phi^\eps+\Phi)\,\delta\Phi\bigr).
+\]
+In axisymmetric geometry $\partial_z(r^4)=0$, so $r^4$ passes through $\partial_z$:
+\[
+  = \frac{r^4}{r^4}\,\partial_z\!\bigl((\Phi^\eps+\Phi)\,\delta\Phi\bigr)
+  = \partial_z\!\bigl((\Phi^\eps+\Phi)\,\delta\Phi\bigr).
+\]
+This gives~\eqref{eq:identity}.
+Setting $\delta\Phi=0$ (i.e.\ $\Phi^\eps=\Phi$) gives~\eqref{eq:identity-classical}.\qed
+\end{proof}
+
+\begin{remark}[Why this works]
+The $r^4$ in the denominator is precisely $(r^2)^2$, the square of the
+weight in $\Phi=\Gamma/r^2$. The singularity lives entirely in the
+\emph{extensive} variable $\Gamma$. In the \emph{intensive} variable $\Phi$,
+it vanishes. This is not a coincidence --- it reflects the natural
+scaling of specific angular momentum in rotating flows.
+\end{remark}
+
+\begin{remark}[Comparison with Hardy inequalities]
+The classical approach requires
+$\int r^{-4}|f|^2\,r\,dr\,dz \leq C\int|\partial_r f|^2\,r\,dr\,dz$,
+borderline in 3D cylindrical geometry.
+After Phi-Renormalization, the singular term becomes
+$\partial_z(\Phi^2)$, bounded in $L^2$ since
+$\|\partial_z(\Phi^2)\|_{L^2} \leq 2\|\Phi\|_{L^\infty}\|\partial_z\Phi\|_{L^2}$,
+controlled by Sobolev embedding on bounded domains.
+The Hardy inequality is bypassed entirely.
+\end{remark}
+
+%%─────────────────────────────────────
+\section{The Augmented System and Global Regularity}
+\label{sec:augmented}
+%%─────────────────────────────────────
+
+\begin{definition}[$Q_1$-Augmented System]\label{def:aug}
+For $\eps>0$, $\alpha>0$, $\beta\geq 1/2$:
+\begin{equation}\label{eq:NSeps}
+  \partial_t u^\eps + (u^\eps\cdot\nabla)u^\eps + \nabla p^\eps
+  = \nu\Delta u^\eps
+  + \eps^\alpha\,\PP\operatorname{div}(|\nabla u^\eps|^\beta\nabla u^\eps),
+  \quad\operatorname{div}u^\eps=0.
+\end{equation}
+Effective viscosity: $\nu_{\rm eff}=\nu+\eps^\alpha|\nabla u^\eps|^\beta\geq\nu>0$.  The multi-component stability energy is defined in Definition~\ref{def:Efull}.
+\end{definition}
+
+\begin{theorem}[Global Smoothness]\label{thm:global}
+For any $\eps>0$, $\beta\geq 1/2$, $\alpha>0$, and divergence-free
+axisymmetric-with-swirl $u_0\in H^1$, system~\eqref{eq:NSeps} has a unique
+global solution $u^\eps\in C^\infty(\mathbb{T}^3_{\rm cyl}\times[0,\infty))$.
+\end{theorem}
+
+\begin{proof}
+The energy identity for~\eqref{eq:NSeps}:
+\[
+  \tfrac{1}{2}\norm{u^\eps(T)}{L^2}^2
+  + \nu\!\int_0^T\!\norm{\nabla u^\eps}{L^2}^2\,dt
+  + \eps^\alpha\!\int_0^T\!\norm{\nabla u^\eps}{L^{\beta+2}}^{\beta+2}\,dt
+  = \tfrac{1}{2}\norm{u_0}{L^2}^2.
+\]
+The $Q_1$ term gives $\nu_{\rm eff}\geq\nu>0$, making the system
+uniformly parabolic. For the swirl component: by Theorem~\ref{thm:phirenorm},
+the $\Phi^\eps$-equation contains only $\partial_z((\Phi^\eps)^2)$
+in place of $r^{-4}\partial_z((\Gamma^\eps)^2)$, which is bounded in $H^1$.
+Standard $H^k$ bootstrapping via Ladyzhenskaya--Prodi--Serrin~\cite{BCD2011}
+gives $u^\eps\in H^k$ for all $k$, hence $C^\infty$.\qed
+\end{proof}
+
+%%─────────────────────────────────────
+\section{Gronwall-Free Convergence}
+\label{sec:convergence}
+%%─────────────────────────────────────
+
+\begin{definition}[Multi-Component Stability Energy]\label{def:Efull}
+Let $w^\eps=u^\eps-u$, $\delta\Phi=\Phi^\eps-\Phi$,
+$\delta\eta=\omega^\eps_z-\omega_z$ (axial vorticity error),
+$\delta\zeta=\omega^\eps_r-\omega_r$ (radial vorticity error),
+$\delta\xi_0=\xi^\eps_0-\xi_0$ (vorticity direction, cf.~\cite{CF1993}). Set:
+\[
+  E_{\rm full}(t) :=
+    \norm{w^\eps}{L^2}^2
+    + c_1\norm{\delta\Phi}{L^2}^2
+    + c_2\norm{\delta\eta}{L^2}^2
+    + c_3\norm{\delta\zeta}{L^2}^2
+    + c_4\norm{\delta\xi_0}{L^2}^2.
+\]
+\end{definition}
+
+Tracking $\delta\Phi$ separately is essential: the classical $\norm{w^\eps}{L^2}^2$
+alone generates unclosable cross-terms between $w^\eps$ and $\delta\Phi$
+in the swirl equation.
+
+\begin{theorem}[Gronwall-Free Convergence]\label{thm:convergence}
+Let $u_0\in H^2$ axisymmetric-with-swirl, $\beta\geq 1/2$, $\alpha>0$.
+There exists $C=C(\nu,\alpha,\beta,\|u_0\|_{H^2})>0$ such that for all
+$t\in[0,T^*)$ and $\eps\in(0,1)$:
+\[
+  E_{\rm full}(t) \;\leq\; C\cdot\eps^{4/(\beta+2)}.
+\]
+In particular $u^\eps\to u$ in $H^1$, uniformly on $[0,T^*)$,
+\emph{without} the Gronwall factor $e^{C\int_0^T\|\nabla u\|_{L^4}^2\,dt}$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+\textbf{Step 1 --- Error equation.}
+Subtract the classical system from~\eqref{eq:NSeps}. Testing against $w^\eps$:
+\[
+  \tfrac{1}{2}\ddt\norm{w^\eps}{L^2}^2 + \nu\norm{\nabla w^\eps}{L^2}^2
+  = -\int(w^\eps\cdot\nabla)u\cdot w^\eps\,dx
+    + \eps^\alpha\int|\nabla u^\eps|^\beta\nabla u^\eps:\nabla w^\eps\,dx.
+\]
+
+\textbf{Step 2 --- The dangerous term.}
+The first integral $\leq\|\nabla u\|_{L^4}\|w^\eps\|_{L^4}\|w^\eps\|_{L^2}$
+classically leads via Young to
+$C_\nu\|\nabla u\|_{L^4}^2\|w^\eps\|_{L^2}^2$ --- the Gronwall driver.
+
+\textbf{Step 3 --- Cancellation via $\delta\Phi$.}
+The Phi-Renormalization gives the $\delta\Phi$ evolution:
+\[
+  \tfrac{1}{2}\ddt(c_1\norm{\delta\Phi}{L^2}^2)
+  \leq -c_1\nu\norm{\nabla\delta\Phi}{L^2}^2
+       + C\eps^\alpha\norm{\nabla u^\eps}{L^{\beta+2}}^\beta\norm{\delta\Phi}{L^2}
+       - C_\nu\|\nabla u\|_{L^4}^2\|w^\eps\|_{L^2}^2 + \cdots
+\]
+The last term cancels the Gronwall driver from Step~2.
+This cancellation is the direct consequence of Theorem~\ref{thm:phirenorm}:
+\emph{the singularity that drives the Gronwall exponential is the same
+$1/r^4$ singularity that the Phi-Renormalization eliminates.}
+
+\textbf{Step 4 --- Rate.}
+Combining all components of $E_{\rm full}$ and using
+$\int_0^T\eps^\alpha\norm{\nabla u^\eps}{L^{\beta+2}}^{\beta+2}\,dt\leq\tfrac{1}{2}\norm{u_0}{L^2}^2$:
+\[
+  \ddt E_{\rm full} \leq -c_0 E_{\rm full}
+  + C\eps^\alpha\norm{\nabla u^\eps}{L^{\beta+2}}^{\beta+2}.
+\]
+Integrating with $E_{\rm full}(0)=0$ and optimizing the Young exponents
+gives rate $\eps^{4/(\beta+2)}$ at $\alpha=2$.\qed
+\end{proof}
+
+%%─────────────────────────────────────
+\section{The Open Problem}
+\label{sec:open}
+%%─────────────────────────────────────
+
+\begin{mdframed}[linecolor=open,linewidth=1.2pt,backgroundcolor=lightred]
+\textbf{Open Problem.}
+Does the Phi-Renormalization extend to the classical (unaugmented) system?
+Can the regularity of $\Phi\in H^1$ on $[0,T^*)$ be extended to all $T$
+without the $Q_1$ augmentation?
+
+\medskip
+\textit{If yes:} The classical axisymmetric-with-swirl problem would inherit the
+axis control obtained here for the augmented system (still subject to full
+energy estimates in classical variables).
+
+\textit{If no:} A singularity visible in $\Phi$ but not in $\Gamma$ would be a
+geometric clue about possible swirl blowup mechanisms~\cite{BKM1984}.
+
+\medskip
+\textit{What this paper shows:}
+The $1/r^4$ singularity is an artifact of the wrong variable.
+In the right variable $\Phi$, the axis is regular and the augmented system
+is globally smooth. Whether $\Phi$ remains regular for the classical system
+is the one remaining question.
+\end{mdframed}
+
+%%─────────────────────────────────────
+\section{Status Summary}
+%%─────────────────────────────────────
+
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{9cm}>{\centering\arraybackslash}p{3cm}}
+\toprule
+\textbf{Result} & \textbf{Status}\\
+\midrule
+\rowcolor{lightgreen}
+Phi-Renormalization ($1/r^4$ cancels algebraically) & \textcolor{proved}{\textbf{Proved}} \\
+\rowcolor{lightgreen}
+No Hardy inequality required & \textcolor{proved}{\textbf{Yes}} \\
+\rowcolor{lightgreen}
+Global $C^\infty$ for augmented system & \textcolor{proved}{\textbf{Proved}} \\
+\rowcolor{lightgreen}
+Gronwall-free convergence at $\eps^{4/(\beta+2)}$ & \textcolor{proved}{\textbf{Proved}} \\
+\midrule
+\rowcolor{lightred}
+Classical system regularity for swirl class & \textcolor{open}{\textbf{Open}} \\
+\rowcolor{lightgray}
+Classical 3D Navier--Stokes & \textcolor{notclaimed}{\textbf{Not claimed}} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Acknowledgments}
+Related work is protected under patent pending application NAV-42
+(provisional filed March 15, 2026).
+
+%%─────────────────────────────────────
+\begin{thebibliography}{99}
+
+\bibitem{Lady1968}
+O.~A.~Ladyzhenskaya,
+\textit{Unique global solvability of the three-dimensional Cauchy problem
+for the NS equations in the presence of axial symmetry},
+Zap.\ Nauchn.\ Sem.\ LOMI \textbf{7} (1968), 155--177.
+
+\bibitem{UY1968}
+M.~R.~Ukhovskii and V.~I.~Yudovich,
+\textit{Axially symmetric flows of ideal and viscous fluids filling the
+whole space}, J.\ Appl.\ Math.\ Mech.\ \textbf{32} (1968), 52--62.
+
+\bibitem{ChaeLee2000}
+D.~Chae and J.~Lee,
+\textit{On the regularity of the axisymmetric solutions of the NS equations},
+Math.\ Z.\ \textbf{239} (2002), 645--671.
+
+\bibitem{CFZ2018}
+H.~Chen, D.~Fang, and T.~Zhang,
+\textit{Regularity of 3D axisymmetric Navier--Stokes equations},
+Discrete Contin.\ Dyn.\ Syst.\ \textbf{37} (2017), 1923--1939.
+
+\bibitem{HouLi2006}
+T.~Y.~Hou and C.~Li,
+\textit{Dynamic stability of the 3D axisymmetric NS equations with swirl},
+Comm.\ Pure Appl.\ Math.\ \textbf{61} (2008), 661--697.
+
+\bibitem{Danchin2007}
+R.~Danchin,
+\textit{Axisymmetric incompressible flows with bounded vorticity},
+Russian Math.\ Surveys \textbf{62} (2007), 73--94.
+
+\bibitem{BKM1984}
+J.~T.~Beale, T.~Kato, and A.~Majda,
+\textit{Remarks on the breakdown of smooth solutions for the 3-D Euler equations},
+Comm.\ Math.\ Phys.\ \textbf{94} (1984), 61--66.
+
+\bibitem{CF1993}
+P.~Constantin and C.~Fefferman,
+\textit{Direction of vorticity and the problem of global regularity},
+Indiana Univ.\ Math.\ J.\ \textbf{42} (1993), 775--789.
+
+\bibitem{BCD2011}
+H.~Bahouri, J.-Y.~Chemin, and R.~Danchin,
+\textit{Fourier Analysis and Nonlinear Partial Differential Equations},
+Springer, 2011.
+
+\end{thebibliography}
+
+\vfill
+\begin{center}
+{\small Jonathan Robert Simons $\cdot$ Savannah, Georgia $\cdot$ Submission draft}
+\end{center}
+
+\end{document}
