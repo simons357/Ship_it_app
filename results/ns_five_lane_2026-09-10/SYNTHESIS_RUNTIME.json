@@ -1,0 +1,614 @@
+{
+  "elapsed_sec": 7.069549083709717,
+  "ns_solved": false,
+  "lanes": {
+    "attack1": {
+      "attack": 1,
+      "name": "covariance_LemmaStar",
+      "triad_amp_sweep": [
+        {
+          "B": 0.1,
+          "ratio_star": 0.06487325830326492,
+          "ratio_preyoung": 0.01589063807947711,
+          "ratio_cstar": 0.004058102832923564,
+          "ratio_k0": 0.0034896648727526227,
+          "Tc": 0.0590087157526498,
+          "E": 0.06000000000000001,
+          "X": 0.9200000000000002,
+          "Lambda": 16.47826086956522,
+          "Ds": 16.909565217391247
+        },
+        {
+          "B": 0.5,
+          "ratio_star": 0.01297465166065299,
+          "ratio_preyoung": 0.01589063807947711,
+          "ratio_cstar": 0.004058102832923564,
+          "ratio_k0": 0.017448324363763073,
+          "Tc": 7.376089469081223,
+          "E": 1.4999999999999998,
+          "X": 22.999999999999996,
+          "Lambda": 16.47826086956522,
+          "Ds": 422.73913043478206
+        },
+        {
+          "B": 1.0,
+          "ratio_star": 0.006487325830326495,
+          "ratio_preyoung": 0.01589063807947711,
+          "ratio_cstar": 0.004058102832923564,
+          "ratio_k0": 0.034896648727526146,
+          "Tc": 59.008715752649785,
+          "E": 5.999999999999999,
+          "X": 91.99999999999999,
+          "Lambda": 16.47826086956522,
+          "Ds": 1690.9565217391282
+        },
+        {
+          "B": 2.0,
+          "ratio_star": 0.0032436629151632473,
+          "ratio_preyoung": 0.01589063807947711,
+          "ratio_cstar": 0.004058102832923564,
+          "ratio_k0": 0.06979329745505229,
+          "Tc": 472.0697260211983,
+          "E": 23.999999999999996,
+          "X": 367.99999999999994,
+          "Lambda": 16.47826086956522,
+          "Ds": 6763.826086956513
+        },
+        {
+          "B": 5.0,
+          "ratio_star": 0.001297465166065302,
+          "ratio_preyoung": 0.015890638079477146,
+          "ratio_cstar": 0.004058102832923574,
+          "ratio_k0": 0.17448324363763087,
+          "Tc": 7376.089469081241,
+          "E": 150.0,
+          "X": 2300.0,
+          "Lambda": 16.47826086956522,
+          "Ds": 42273.91304347827
+        },
+        {
+          "B": 10.0,
+          "ratio_star": 0.000648732583032651,
+          "ratio_preyoung": 0.015890638079477146,
+          "ratio_cstar": 0.004058102832923574,
+          "ratio_k0": 0.34896648727526175,
+          "Tc": 59008.71575264993,
+          "E": 600.0,
+          "X": 9200.0,
+          "Lambda": 16.47826086956522,
+          "Ds": 169095.65217391308
+        },
+        {
+          "B": 50.0,
+          "ratio_star": 0.00012974651660652983,
+          "ratio_preyoung": 0.015890638079477104,
+          "ratio_cstar": 0.004058102832923563,
+          "ratio_k0": 1.7448324363763068,
+          "Tc": 7376089.469081221,
+          "E": 15000.0,
+          "X": 230000.0,
+          "Lambda": 16.47826086956522,
+          "Ds": 4227391.304347821
+        },
+        {
+          "B": 100.0,
+          "ratio_star": 6.487325830326491e-05,
+          "ratio_preyoung": 0.015890638079477104,
+          "ratio_cstar": 0.004058102832923563,
+          "ratio_k0": 3.4896648727526136,
+          "Tc": 59008715.75264977,
+          "E": 60000.0,
+          "X": 920000.0,
+          "Lambda": 16.47826086956522,
+          "Ds": 16909565.217391282
+        },
+        {
+          "B": 500.0,
+          "ratio_star": 1.2974651660653004e-05,
+          "ratio_preyoung": 0.015890638079477132,
+          "ratio_cstar": 0.00405810283292357,
+          "ratio_k0": 17.448324363763096,
+          "Tc": 7376089469.081233,
+          "E": 1499999.9999999998,
+          "X": 23000000.0,
+          "Lambda": 16.47826086956522,
+          "Ds": 422739130.434782
+        },
+        {
+          "B": 1000.0,
+          "ratio_star": 6.487325830326502e-06,
+          "ratio_preyoung": 0.015890638079477132,
+          "ratio_cstar": 0.00405810283292357,
+          "ratio_k0": 34.89664872752619,
+          "Tc": 59008715752.649864,
+          "E": 5999999.999999999,
+          "X": 92000000.0,
+          "Lambda": 16.47826086956522,
+          "Ds": 1690956521.739128
+        }
+      ],
+      "triad_abs_ratio_preyoung_max": 0.015890638079477146,
+      "triad_abs_ratio_preyoung_min": 0.015890638079477104,
+      "triad_preyoung_amp_spread_factor": 1.0000000000000027,
+      "triad_preyoung_diam": 4.163336342344337e-17,
+      "phase_abs_preyoung_max": 0.1591699108069197,
+      "phase_abs_preyoung_diam": 0.15544246454795033,
+      "rand_abs_preyoung_max": 0.03268503066644908,
+      "rand_abs_preyoung_p95": 0.0020832513854986867,
+      "n_random": 200,
+      "postYoung_Rstar_falls_as_B_increases": true,
+      "amp_trend_star_low_mean_abs": 0.028111745264748134,
+      "amp_trend_star_high_mean_abs": 2.8111745264748137e-05,
+      "blows_with_amplitude": false,
+      "verdict": "SURVIVE_numeric_NOT_proof",
+      "ns_solved": false
+    },
+    "attack2": {
+      "attack": 2,
+      "name": "triad_K0_Cstar",
+      "rows": [
+        {
+          "B": 0.1,
+          "ratio_k0": 0.0034896648727526227,
+          "ratio_cstar": 0.004058102832923564,
+          "ratio_star": 0.06487325830326492,
+          "Tc": 0.0590087157526498,
+          "Ds": 16.909565217391247,
+          "X": 0.9200000000000002
+        },
+        {
+          "B": 1.0,
+          "ratio_k0": 0.034896648727526146,
+          "ratio_cstar": 0.004058102832923564,
+          "ratio_star": 0.006487325830326495,
+          "Tc": 59.008715752649785,
+          "Ds": 1690.9565217391282,
+          "X": 91.99999999999999
+        },
+        {
+          "B": 10.0,
+          "ratio_k0": 0.34896648727526175,
+          "ratio_cstar": 0.004058102832923574,
+          "ratio_star": 0.000648732583032651,
+          "Tc": 59008.71575264993,
+          "Ds": 169095.65217391308,
+          "X": 9200.0
+        },
+        {
+          "B": 100.0,
+          "ratio_k0": 3.4896648727526136,
+          "ratio_cstar": 0.004058102832923563,
+          "ratio_star": 6.487325830326491e-05,
+          "Tc": 59008715.75264977,
+          "Ds": 16909565.217391282,
+          "X": 920000.0
+        },
+        {
+          "B": 1000.0,
+          "ratio_k0": 34.89664872752619,
+          "ratio_cstar": 0.00405810283292357,
+          "ratio_star": 6.487325830326502e-06,
+          "Tc": 59008715752.649864,
+          "Ds": 1690956521.739128,
+          "X": 92000000.0
+        },
+        {
+          "B": 10000.0,
+          "ratio_k0": 348.9664872752613,
+          "ratio_cstar": 0.004058102832923569,
+          "ratio_star": 6.4873258303265e-07,
+          "Tc": 59008715752649.84,
+          "Ds": 169095652173.9131,
+          "X": 9200000000.0
+        }
+      ],
+      "x1_rows": [
+        {
+          "k1": [
+            4,
+            2,
+            1
+          ],
+          "k2": [
+            -3,
+            1,
+            1
+          ],
+          "X": 0.9999999999999999,
+          "Tc_over_Lambda": 0.00405810283292357,
+          "ratio_cstar": 0.0040581028329235705,
+          "ratio_star": 0.06222424343816141,
+          "ratio_k0": 0.003638227130987868
+        },
+        {
+          "k1": [
+            8,
+            1,
+            1
+          ],
+          "k2": [
+            -5,
+            2,
+            1
+          ],
+          "X": 1.0,
+          "Tc_over_Lambda": 0.006860505759688873,
+          "ratio_cstar": 0.006860505759688873,
+          "ratio_star": 0.2698465598810957,
+          "ratio_k0": 0.0008574315644914545
+        },
+        {
+          "k1": [
+            16,
+            4,
+            2
+          ],
+          "k2": [
+            -12,
+            3,
+            1
+          ],
+          "X": 1.0,
+          "Tc_over_Lambda": 0.0050454969770980605,
+          "ratio_cstar": 0.0050454969770980605,
+          "ratio_star": 0.847643492152474,
+          "ratio_k0": 0.0001741085793797738
+        },
+        {
+          "k1": [
+            3,
+            3,
+            1
+          ],
+          "k2": [
+            -2,
+            -2,
+            1
+          ],
+          "X": 1.0000000000000002,
+          "Tc_over_Lambda": -0.0011710671257824296,
+          "ratio_cstar": -0.001171067125782429,
+          "ratio_star": -0.013272094092200865,
+          "ratio_k0": -0.0005164491188596556
+        },
+        {
+          "k1": [
+            7,
+            0,
+            1
+          ],
+          "k2": [
+            -4,
+            2,
+            1
+          ],
+          "X": 1.0000000000000002,
+          "Tc_over_Lambda": 0.007635419715450829,
+          "ratio_cstar": 0.007635419715450825,
+          "ratio_star": 0.2239723116532242,
+          "ratio_k0": 0.0011961405126948788
+        }
+      ],
+      "sep_rows": [
+        {
+          "scale": 1,
+          "ratio_cstar": 0.0040581028329235705,
+          "ratio_star": 0.06222424343816141
+        },
+        {
+          "scale": 2,
+          "ratio_cstar": 0.0040581028329235705,
+          "ratio_star": 0.24889697375264563
+        },
+        {
+          "scale": 4,
+          "ratio_cstar": 0.0040581028329235705,
+          "ratio_star": 0.9955878950105825
+        },
+        {
+          "scale": 8,
+          "ratio_cstar": 0.004058102832923569,
+          "ratio_star": 3.982351580042329
+        }
+      ],
+      "K0_killed": true,
+      "K0_ratio_abs_by_B": [
+        0.0034896648727526227,
+        0.034896648727526146,
+        0.34896648727526175,
+        3.4896648727526136,
+        34.89664872752619,
+        348.9664872752613
+      ],
+      "Cstar_abs_max": 0.004058102832923574,
+      "Cstar_abs_min": 0.004058102832923563,
+      "Cstar_amplitude_spread_factor": 1.0000000000000029,
+      "Cstar_amplitude_invariant_approx": true,
+      "x1_max_abs_Tc_over_Lambda": 0.007635419715450829,
+      "verdict": "K0_DEAD_Cstar_SURVIVES_numeric",
+      "ns_solved": false
+    },
+    "attack3": {
+      "attack": 3,
+      "name": "bony_HH_to_L",
+      "cases": [
+        {
+          "name": "high_triad",
+          "probe": 0.006487325830326495,
+          "channels": {
+            "HH": {
+              "N": 3.3049193827583334,
+              "M": 113.46803949462411,
+              "Tc": 59.00871575264983
+            },
+            "HL": {
+              "N": 0.0,
+              "M": 0.0,
+              "Tc": 0.0
+            },
+            "LL": {
+              "N": 0.0,
+              "M": 0.0,
+              "Tc": 0.0
+            },
+            "cut": 1.6583123951777,
+            "Lambda": 16.47826086956522
+          }
+        },
+        {
+          "name": "two_shell_ah=1.0",
+          "ratio_star": 0.0,
+          "Tc": 0.0,
+          "HH_Tc": 0.0,
+          "HL_Tc": 0.0,
+          "LL_Tc": 0.0,
+          "HH_frac": 0.0
+        },
+        {
+          "name": "two_shell_ah=5.0",
+          "ratio_star": 0.0,
+          "Tc": 0.0,
+          "HH_Tc": 0.0,
+          "HL_Tc": 0.0,
+          "LL_Tc": 0.0,
+          "HH_frac": 0.0
+        },
+        {
+          "name": "two_shell_ah=20.0",
+          "ratio_star": 0.0,
+          "Tc": 0.0,
+          "HH_Tc": 0.0,
+          "HL_Tc": 0.0,
+          "LL_Tc": 0.0,
+          "HH_frac": 0.0
+        }
+      ],
+      "random_HH_frac_mean": 0.0925562698885492,
+      "random_HH_frac_p90": 0.5055589290413259,
+      "bottleneck_note": "HH channel often carries a large fraction of |Tc|; analytic close of |Tc|\u2272||u||_2 X^{3/2} needs HH\u2192L product control beyond Agmon/standard 3D.",
+      "verdict": "HH_CHANNEL_LIVE_BOTTLENECK_no_closure",
+      "ns_solved": false
+    },
+    "attack4": {
+      "attack": 4,
+      "name": "stokes_moments",
+      "neg_Ds_count": 0,
+      "Ds_identity_max_err": 4.656612873077393e-10,
+      "scaling": [
+        {
+          "B": 1.0,
+          "E_over_B2": 5.999999999999999,
+          "X_over_B2": 91.99999999999999,
+          "Ds_over_B2": 1690.9565217391282,
+          "Tc_over_B3": 59.008715752649785,
+          "ratio_star": 0.006487325830326495,
+          "ratio_cstar": 0.004058102832923564,
+          "ratio_k0_over_B": 0.034896648727526146
+        },
+        {
+          "B": 2.0,
+          "E_over_B2": 5.999999999999999,
+          "X_over_B2": 91.99999999999999,
+          "Ds_over_B2": 1690.9565217391282,
+          "Tc_over_B3": 59.008715752649785,
+          "ratio_star": 0.0032436629151632473,
+          "ratio_cstar": 0.004058102832923564,
+          "ratio_k0_over_B": 0.034896648727526146
+        },
+        {
+          "B": 4.0,
+          "E_over_B2": 5.999999999999999,
+          "X_over_B2": 91.99999999999999,
+          "Ds_over_B2": 1690.9565217391282,
+          "Tc_over_B3": 59.008715752649785,
+          "ratio_star": 0.0016218314575816236,
+          "ratio_cstar": 0.004058102832923564,
+          "ratio_k0_over_B": 0.034896648727526146
+        }
+      ],
+      "absorption_rows": [
+        {
+          "nu": 1.0,
+          "B": 1.0,
+          "Tc": 59.008715752649785,
+          "nu_Ds": 1690.9565217391282,
+          "remainder_Tc_minus_nuDs": -1631.9478059864784,
+          "rem_over_EXLam": -0.17941378693782747,
+          "rem_over_X32Lam": -0.11223108197130584
+        },
+        {
+          "nu": 1.0,
+          "B": 10.0,
+          "Tc": 59008.71575264993,
+          "nu_Ds": 169095.65217391308,
+          "remainder_Tc_minus_nuDs": -110086.93642126315,
+          "rem_over_EXLam": -0.0012102785446488913,
+          "rem_over_X32Lam": -0.007570815647499383
+        },
+        {
+          "nu": 1.0,
+          "B": 100.0,
+          "Tc": 59008715.75264977,
+          "nu_Ds": 16909565.217391282,
+          "remainder_Tc_minus_nuDs": 42099150.53525849,
+          "rem_over_EXLam": 4.628314702644952e-05,
+          "rem_over_X32Lam": 0.002895210984881269
+        },
+        {
+          "nu": 0.1,
+          "B": 1.0,
+          "Tc": 59.008715752649785,
+          "nu_Ds": 169.09565217391284,
+          "remainder_Tc_minus_nuDs": -110.08693642126306,
+          "rem_over_EXLam": -0.012102785446488906,
+          "rem_over_X32Lam": -0.007570815647499377
+        },
+        {
+          "nu": 0.1,
+          "B": 10.0,
+          "Tc": 59008.71575264993,
+          "nu_Ds": 16909.565217391308,
+          "remainder_Tc_minus_nuDs": 42099.150535258625,
+          "rem_over_EXLam": 0.00046283147026449675,
+          "rem_over_X32Lam": 0.002895210984881279
+        },
+        {
+          "nu": 0.1,
+          "B": 100.0,
+          "Tc": 59008715.75264977,
+          "nu_Ds": 1690956.5217391283,
+          "remainder_Tc_minus_nuDs": 57317759.230910644,
+          "rem_over_EXLam": 6.301424717558338e-05,
+          "rem_over_X32Lam": 0.003941813648119333
+        },
+        {
+          "nu": 0.01,
+          "B": 1.0,
+          "Tc": 59.008715752649785,
+          "nu_Ds": 16.909565217391282,
+          "remainder_Tc_minus_nuDs": 42.0991505352585,
+          "rem_over_EXLam": 0.004628314702644955,
+          "rem_over_X32Lam": 0.0028952109848812703
+        },
+        {
+          "nu": 0.01,
+          "B": 10.0,
+          "Tc": 59008.71575264993,
+          "nu_Ds": 1690.956521739131,
+          "remainder_Tc_minus_nuDs": 57317.7592309108,
+          "rem_over_EXLam": 0.0006301424717558356,
+          "rem_over_X32Lam": 0.003941813648119345
+        },
+        {
+          "nu": 0.01,
+          "B": 100.0,
+          "Tc": 59008715.75264977,
+          "nu_Ds": 169095.65217391282,
+          "remainder_Tc_minus_nuDs": 58839620.100475855,
+          "rem_over_EXLam": 6.468735719049676e-05,
+          "rem_over_X32Lam": 0.004046473914443139
+        }
+      ],
+      "scaling_ok": true,
+      "verdict": "STOKES_IDENTITIES_OK_absorption_needs_remainder",
+      "ns_solved": false
+    },
+    "attack5": {
+      "attack": 5,
+      "name": "route2_LemmaStar_kill_drill",
+      "n_samples": 978,
+      "abs_ratio_preyoung_max": 5.088092305509681,
+      "abs_ratio_preyoung_p50": 0.0,
+      "abs_ratio_preyoung_p95": 0.23960007064874989,
+      "abs_ratio_preyoung_p99": 2.484448627259518,
+      "abs_ratio_cstar_max": 0.04064733078460401,
+      "best": {
+        "abs_ratio_preyoung": 5.088092305509681,
+        "ratio_preyoung": 5.088092305509681,
+        "ratio_star": 2.077204985446663,
+        "tag": "sep_32_p0",
+        "ratio_cstar": 0.04060567316407925,
+        "E": 6.0,
+        "X": 94208.0,
+        "Lambda": 16873.73913043478,
+        "Ds": 1815650739956.875,
+        "Tc": 19812063953.68017
+      },
+      "alternate_remainders_on_unit_triad": {
+        "Tc_over_E_X_Lambda_postYoung": 0.006487325830326495,
+        "Tc_over_sqrtE_X_Lambda_preYoung": 0.01589063807947711,
+        "Tc_over_X32_Lambda": 0.004058102832923564,
+        "Tc_over_Ds": 0.034896648727526146,
+        "Tc_over_E_Y": 0.006487325830326495,
+        "Tc_over_B_L2_Y": 0.004836779293149436,
+        "Young_gap_note": "Lemma\u2605 remainder is the Young lift of a degree-3 bound |Tc|\u2264C||u||_2 X \u039b; C* form uses |Tc|\u2264C* X^{3/2} \u039b. HH\u2192L blocks standard 3D product close."
+      },
+      "LemmaStar_C0_killed": false,
+      "verdict": "SURVIVE_numeric_gap_remains",
+      "analytic_gap": "Pre-Young target |Tc| \u2264 C ||u||_2 X \u039b (amp-invariant C), which Young-lifts to Lemma\u2605's \u03bd^{-1}||u||_2^2 X \u039b remainder; or weaker |Tc| \u2264 C* X^{3/2} \u039b. Numerics support bounded ratios on tested families; standard 3D product/Agmon do not close HH\u2192L. NOT A PROOF. NS NOT SOLVED.",
+      "ns_solved": false
+    }
+  },
+  "headline": {
+    "attack1": "SURVIVE_numeric_NOT_proof",
+    "attack2": "K0_DEAD_Cstar_SURVIVES_numeric",
+    "attack3": "HH_CHANNEL_LIVE_BOTTLENECK_no_closure",
+    "attack4": "STOKES_IDENTITIES_OK_absorption_needs_remainder",
+    "attack5": "SURVIVE_numeric_gap_remains",
+    "LemmaStar_C0_killed": false
+  },
+  "attack9a": {
+    "verdict": "DID_NOT_KILL_STAR",
+    "reason": "Tc increased but Ds increased faster; Ds||v||^2 Y = O(1) FALSE for AP family",
+    "gamma": -1.388857766821222
+  },
+  "attack9b": {
+    "verdict": "LIVE_NOT_A_KILL",
+    "max_K": {
+      "K": 0.6410131735094131,
+      "alpha": 4,
+      "beta": 8,
+      "n_modes_pos": 3,
+      "PiB_L2": 1.132266023078864
+    },
+    "controls_all_pass": true,
+    "eps_limit_all_pass": true,
+    "n_pairs": 24,
+    "max_K_beta_gt_alpha": {
+      "K": 0.6410131735094131,
+      "alpha": 4,
+      "beta": 8,
+      "n_modes_pos": 3,
+      "PiB_L2": 1.132266023078864,
+      "n_pairs": 21
+    },
+    "max_K_beta_lt_alpha": {
+      "K": 0.012320184062780926,
+      "alpha": 5,
+      "beta": 2,
+      "n_modes_pos": 10,
+      "PiB_L2": 0.39243126886725216,
+      "n_pairs": 3
+    },
+    "shell_transfer_split": {
+      "beta_gt_alpha": "higher-shell transfer \u2014 NOT HH\u2192L",
+      "beta_lt_alpha": "genuine HH\u2192L subfamily (output on lower shell)",
+      "note": "Reported global max K\u22480.641 at (\u03b1,\u03b2)=(4,8) has \u03b2>\u03b1; do NOT label it HH\u2192L."
+    },
+    "note": "(4,8) has beta>alpha \u2014 higher-shell transfer, NOT HH\u2192L. Genuine HH\u2192L needs beta<alpha."
+  },
+  "attack9c": {
+    "verdict": "DID_NOT_KILL_SOT_ONLY",
+    "R_star_span": "0.11\u21920.031",
+    "note": "SoT-only until implemented; PR #48 lacks fixed-gap sweep script/data."
+  },
+  "attack9d": {
+    "verdict": "LIVE_FALSIFIER_STUB",
+    "family": "designed_Theta_m2_closure_locked_phases",
+    "probe_script": null,
+    "note": "Remaining packet falsifier; spec in ATTACK_9D_THETA_M2_LOCKED_PHASE.md"
+  },
+  "kill_lane": "LIVE",
+  "lemma_star": "OPEN",
+  "pack_locator": "https://github.com/simons357/Ship_it_app/pull/48"
+}

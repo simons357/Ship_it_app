@@ -1,0 +1,146 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,booktabs,hyperref,xcolor,array,colortbl}
+
+\definecolor{proved}{HTML}{1a7a1a}
+\definecolor{killed}{HTML}{b30000}
+\definecolor{lightgreen}{HTML}{e6f4e6}
+\definecolor{lightred}{HTML}{fde8e8}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{\textbf{Positive-GCD $Q$: Pair Bounds,\\
+Positive Definiteness, and a Zero-Diagonal Kill}\\[4pt]
+\large\textit{Closure note --- Theorems A/B/C proved; C$'$ false}}
+\author{Jonathan Robert Simons\\
+Savannah, Georgia, USA\\
+\texttt{simonsmedicalinnovations@gmail.com}}
+\date{Corrected preprint \quad|\quad August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.92\linewidth}{\centering\small
+\textbf{Operator.} $Q_{ij}=\gcd(i,j)/\sqrt{ij}$ (positive GCD --- not inverse-GCD $\widetilde Q$).
+No Navier--Stokes claim.}}
+\end{center}
+
+\vspace{0.5em}
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{9cm}>{\centering\arraybackslash}p{3cm}}
+\toprule
+\textbf{Claim} & \textbf{Status}\\
+\midrule
+\rowcolor{lightgreen}
+A: $R(e_a-e_b)>0$ on $Q$ & \textcolor{proved}{\textbf{Proved}}\\
+\rowcolor{lightgreen}
+B: $R_{\widehat Q}(e_a-e_b)\ge -1$ & \textcolor{proved}{\textbf{Proved}}\\
+\rowcolor{lightgreen}
+C: $Q_N\succ 0$ (all $N$) & \textcolor{proved}{\textbf{Proved}}\\
+\rowcolor{lightred}
+C$'$: $\lambda_{\min}(\widehat Q)>-1/2$ for all $N$ & \textcolor{killed}{\textbf{False}}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{abstract}
+On the positive-GCD Gram matrix $Q_N(i,j)=\gcd(i,j)/\sqrt{ij}$ we prove
+restricted pair bounds (Theorems~A--B), positive definiteness of $Q_N$ for every
+$N$ (Theorem~C, via congruence with the classical GCD matrix), and kill the
+zero-diagonal full-spectrum claim $\lambda_{\min}(\widehat Q)>-1/2$.
+Companion inverse-GCD Bridge$^*$ lives in \texttt{04\_q6\_inverse\_gcd.tex};
+do not mix the two operators.
+\end{abstract}
+
+\section{Operator}
+
+\[
+Q_N(i,j)=\frac{\gcd(i,j)}{\sqrt{ij}},\qquad 1\le i,j\le N.
+\]
+In particular $Q_N(a,a)=1$. Write $\widehat Q_N$ for $Q_N$ with diagonal zeroed.
+Let $G_N(i,j)=\gcd(i,j)$ and $D=\mathrm{diag}(1,2,\ldots,N)$, so
+\[
+Q_N = D^{-1/2}\,G_N\,D^{-1/2}.
+\]
+
+\section{Theorem A --- diagonal pair positivity}
+
+\begin{theorem}[A]\label{thm:A}
+For integers $a\neq b$,
+\[
+R(e_a-e_b)=1-\frac{\gcd(a,b)}{\sqrt{ab}}\;>\;0.
+\]
+\end{theorem}
+
+\begin{proof}
+Set $g=\gcd(a,b)/\sqrt{ab}$. Then $g<1$ for $a\neq b$, and
+$R=1-g>0$.
+\end{proof}
+
+\section{Theorem B --- zero-diagonal pair bound}
+
+\begin{proposition}[B]\label{prop:B}
+For $a\neq b$,
+\[
+R_{\widehat Q}(e_a-e_b)
+=-\frac{\gcd(a,b)}{\sqrt{ab}}
+\;\ge\;-1.
+\]
+\end{proposition}
+
+\begin{proof}
+Immediate from $\gcd(a,b)/\sqrt{ab}\le 1$.
+\end{proof}
+
+\section{Theorem C --- positive definiteness}
+
+\begin{theorem}[C]\label{thm:C}
+For every $N\ge 1$, the matrix $Q_N$ is positive definite.
+\end{theorem}
+
+\begin{proof}
+The classical GCD matrix $G_N=(\gcd(i,j))_{1\le i,j\le N}$ is positive
+definite (Beslin--Ligh; equivalently $\det G_N=\prod_{k=1}^N\varphi(k)>0$
+by Smith's formula, and the same for principal minors on initial segments).
+The diagonal matrix $D^{-1/2}$ is invertible, so
+$Q_N=D^{-1/2}G_N D^{-1/2}$ is congruent to $G_N$ and hence positive definite.
+\end{proof}
+
+\section{Kill C$'$ --- zero-diagonal full spectrum}
+
+\begin{theorem}[C$'$, kill]\label{thm:Cp}
+There exist $N$ such that $\lambda_{\min}(\widehat Q_N)<-1/2$.
+\end{theorem}
+
+\begin{proof}[Numeric certificate]
+E.g.\ $\lambda_{\min}(\widehat Q_5)\approx -0.793<-1/2$
+(\texttt{scripts/positive\_gcd\_floor\_verify.py}).
+\end{proof}
+
+\begin{remark}[Hygiene]
+Inverse-GCD $\widetilde Q$ already has $\lambda_{\min}<-1/2$ for moderate $N$.
+That kill does \emph{not} transfer to positive-GCD $Q$ (which is PD).
+Zero-diagonalization destroys the PD property and produces the C$'$ counterexamples.
+\end{remark}
+
+\begin{thebibliography}{9}
+\bibitem{BeslinLigh}
+S.~Beslin and S.~Ligh,
+\textit{Greatest common divisor matrices},
+Linear Algebra Appl.\ \textbf{118} (1989), 69--76.
+
+\bibitem{Smith1876}
+H.J.S.~Smith,
+\textit{On the value of a certain arithmetical determinant},
+Proc.\ London Math.\ Soc.\ \textbf{7} (1876), 208--212.
+
+\bibitem{ZenodoPaper1}
+J.R.~Simons,
+\textit{GCD Spectral Paper~1} (v1),
+Zenodo \href{https://doi.org/10.5281/zenodo.20269738}{10.5281/zenodo.20269738}.
+\end{thebibliography}
+
+\end{document}

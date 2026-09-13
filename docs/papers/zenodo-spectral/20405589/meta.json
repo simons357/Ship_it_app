@@ -1,0 +1,27 @@
+{
+  "id": 20405589,
+  "doi": "10.5281/zenodo.20405589",
+  "conceptrecid": "20405588",
+  "title": "A Q6 Spectral Route to the Strong Goldbach Conjecture: Spectral Non-Concentration and the Inverse-GCD Operator",
+  "date": "2026-05-27",
+  "creators": [
+    "Simons, Jonathan R."
+  ],
+  "files": [
+    {
+      "key": "Simons_Goldbach_Q6_Spectral.tex",
+      "url": "https://zenodo.org/api/records/20405589/files/Simons_Goldbach_Q6_Spectral.tex/content",
+      "size": 8045
+    }
+  ],
+  "keywords": [
+    "Goldbach conjecture",
+    "Q6 operator",
+    "inverse-GCD",
+    "spectral non-concentration",
+    "prime lattice",
+    "Riemann Hypothesis",
+    "bridge conjecture"
+  ],
+  "desc": "We reformulate the Strong Goldbach Conjecture in terms of spectral properties of the inverse-GCD operator Q_N(i,j) = 1/gcd(i,j). A Goldbach hole at k forces the prime-indicator difference vector v_k into the kernel of a local truncation of Q_N. Under the Bridge Conjecture (lambda_min(Q_N) &gt; -1/2, equivalent to RH), this creates a structural contradiction provided v_k lies in the positive eigenspace of Q_N. The residual condition \u2014 Goldbach Non-Concentration (GNC) \u2014 is shown to be structurally"
+}

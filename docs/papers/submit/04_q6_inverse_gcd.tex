@@ -1,0 +1,333 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{booktabs,hyperref,enumitem,array,xcolor,colortbl,mdframed}
+
+\definecolor{proved}{HTML}{1a7a1a}
+\definecolor{open}{HTML}{b30000}
+\definecolor{withdrawn}{HTML}{555555}
+\definecolor{lightgreen}{HTML}{e6f4e6}
+\definecolor{lightred}{HTML}{fde8e8}
+\definecolor{lightgray}{HTML}{f5f5f5}
+\definecolor{darkblue}{HTML}{003366}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{openproblem}{Open Problem}
+
+\newcommand{\Qt}{\widetilde{Q}}
+\newcommand{\lmin}{\lambda_{\min}}
+
+\title{\textbf{The Inverse-GCD Operator $Q_N$ (Q6):\\
+Definitions, a Restricted Rayleigh Bound,\\
+and an Exploratory Spectral Programme}\\[6pt]
+\large\textit{Crown-jewel operator note --- what is proved and what is open}}
+\author{Jonathan Robert Simons\\
+Savannah, Georgia, USA\\
+\texttt{simonsmedicalinnovations@gmail.com}}
+\date{Corrected preprint \quad|\quad August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.92\linewidth}{\centering\small
+\textbf{Scope.}
+Q6 is developed here as a spectral operator on $\{1,\ldots,N\}$.
+Proved: Bridge$^*$ on single prime pairs, multi-representation Goldbach
+vectors, and the nonnegative cone.
+False as stated: universal full-spectrum floors $\lmin>-1/2$.
+No Navier--Stokes claim.}}
+\end{center}
+\vspace{0.6em}
+
+\begin{mdframed}[linecolor=darkblue,linewidth=1.2pt]
+{\large\textbf{\color{darkblue}Status}}\\[4pt]
+\begin{tabular}{>{\raggedright\arraybackslash}p{9.2cm}
+                >{\centering\arraybackslash}p{3.2cm}}
+\toprule
+\textbf{Claim} & \textbf{Status}\\
+\midrule
+\rowcolor{lightgreen}
+Definitions of $Q_N$, $\Qt_N$, $H_N$ & \textcolor{proved}{\textbf{Locked}}\\
+\rowcolor{lightgreen}
+Bridge$^*$: $R(e_p-e_q)>-1/2$ on $\Qt_N$ & \textcolor{proved}{\textbf{Proved}}\\
+\rowcolor{lightgreen}
+Positive orthant: $v\ge 0\Rightarrow v^\top\Qt_N v\ge 0$ & \textcolor{proved}{\textbf{Proved}}\\
+\rowcolor{lightred}
+$\lmin(Q_N)>-1/2$ for all $N$ & \textcolor{withdrawn}{\textbf{False}}\\
+\rowcolor{lightred}
+$\lmin(\Qt_N)>-1/2$ for all $N$ & \textcolor{withdrawn}{\textbf{False}}\\
+\rowcolor{lightred}
+Dark-state $\Leftrightarrow$ Goldbach (June 2026 draft) & \textcolor{withdrawn}{\textbf{Withdrawn}}\\
+\rowcolor{lightgreen}
+Multi-representation Bridge$^*$ & \textcolor{proved}{\textbf{Proved}}\\
+\bottomrule
+\end{tabular}
+\end{mdframed}
+
+\begin{abstract}
+We give a corrected account of the inverse-GCD operators used in earlier
+``Q6'' drafts. Write
+\[
+Q_N(i,j)=\frac{1}{\gcd(i,j)},\qquad
+\Qt_N(i,j)=\frac{1}{\gcd(i,j)\sqrt{ij}},
+\qquad 1\le i,j\le N,
+\]
+and let $H_N$ be the degree-normalized form of $\Qt_N$.
+We prove Bridge$^*$ for single prime pairs $v=e_p-e_q$ and for
+multi-representation vectors
+$v_k=\sum_{p\in\mathcal{R}(k)}(e_p-e_{k-p})$ (even $k$): both satisfy
+$R>-1/2$ on $\Qt_N$. The multi-rep case reduces to the pair case by a
+nonnegative cross-term identity.
+We also record that every nonnegative vector has nonnegative Rayleigh
+quotient on $\Qt_N$.
+We withdraw the full-spectrum Bridge claim $\lmin>-1/2$: already for
+moderate $N$, $\lmin(Q_N)<-1/2$ and $\lmin(\Qt_N)<-1/2$.
+Earlier dark-state / Goldbach packaging and any Navier--Stokes claim from
+these matrices are withdrawn.
+\end{abstract}
+
+\section{Operators}
+
+\begin{definition}[Raw inverse-GCD]
+\[
+Q_N(i,j)=\frac{1}{\gcd(i,j)},\qquad 1\le i,j\le N.
+\]
+\end{definition}
+
+\begin{definition}[Normalized inverse-GCD]
+\[
+\Qt_N(i,j)=\frac{1}{\gcd(i,j)\sqrt{ij}}.
+\]
+In particular, for distinct primes $p,q\le N$,
+\[
+\Qt_N(p,p)=\frac1{p^2},\qquad
+\Qt_N(p,q)=\frac1{\sqrt{pq}}.
+\]
+\end{definition}
+
+\begin{definition}[Degree-normalized form]
+Let $d_i=\sum_{j=1}^N \Qt_N(i,j)$ and $D=\mathrm{diag}(d_1,\ldots,d_N)$.
+Set
+\[
+H_N = D^{-1/2}\,\Qt_N\,D^{-1/2}.
+\]
+\end{definition}
+
+\begin{remark}[Hygiene]
+These three matrices are different.
+A spectral statement about one does not automatically transfer to another,
+nor to any fluid commutator called ``Theorem~H'' in companion notes.
+\end{remark}
+
+\begin{remark}[Withdrawn identity]
+Some June 2026 drafts asserted
+$1/n=\sum_{d\mid n}\mu(d)\varphi(d)/d^2$.
+This fails already at $n=2$ ($1/2$ versus $3/4$).
+No argument in this note uses that identity.
+\end{remark}
+
+\section{What fails: full-spectrum floors}
+
+\begin{proposition}[Full-spectrum Bridge is false]\label{prop:floorfails}
+There exist $N$ such that
+\[
+\lmin(Q_N)<-1/2
+\qquad\text{and}\qquad
+\lmin(\Qt_N)<-1/2.
+\]
+In particular the universal claims
+$\lmin(Q_N)>-1/2$ and $\lmin(\Qt_N)>-1/2$ for all $N$ are false.
+\end{proposition}
+
+\begin{proof}[Numeric certificate]
+Direct eigendecomposition yields, for example,
+$\lmin(Q_{10})\approx -1.90<-1/2$ and
+$\lmin(\Qt_{20})\approx -0.505<-1/2$.
+Reproducible by the accompanying script
+\texttt{scripts/bridge\_floor\_verify.py}.
+\end{proof}
+
+\begin{remark}
+A claimed universal lower bound $\lmin(H_N)\ge -3/14$ is likewise not
+uniform in small $N$; see the companion verification suite.
+We do not package any $H_N$ floor as a theorem here.
+\end{remark}
+
+\section{Bridge$^*$: single prime pair}
+
+\begin{theorem}[Bridge$^*$, single pair]\label{thm:bridge}
+Let $p\neq q$ be primes and $N\ge\max(p,q)$. For $v=e_p-e_q$,
+\[
+R(v)
+:=\frac{v^\top\Qt_N v}{\|v\|_2^2}
+=\frac12\Big(\frac1{p^2}+\frac1{q^2}\Big)-\frac1{\sqrt{pq}}
+\;>\;-\frac12.
+\]
+\end{theorem}
+
+\begin{proof}
+Since $\|v\|_2^2=2$,
+\[
+v^\top\Qt_N v
+=\Qt_N(p,p)+\Qt_N(q,q)-2\Qt_N(p,q)
+=\frac1{p^2}+\frac1{q^2}-\frac{2}{\sqrt{pq}},
+\]
+hence
+\[
+R=\frac12\Big(\frac1{p^2}+\frac1{q^2}\Big)-\frac1{\sqrt{pq}}.
+\]
+Then
+\[
+R+\frac12
+=\frac12+\frac1{2p^2}+\frac1{2q^2}-\frac1{\sqrt{pq}}
+>\frac12-\frac1{\sqrt{pq}}.
+\]
+Distinct primes force $pq\ge 6$, so $1/\sqrt{pq}\le 1/\sqrt6<1/2$.
+Therefore $R+1/2>0$.
+\end{proof}
+
+\begin{remark}
+The quotient may be negative: $(p,q)=(2,3)$ gives $R\approx -0.228>-1/2$.
+The bound is a \emph{restricted} floor on difference vectors of single
+prime pairs, not a full-spectrum eigenvalue floor.
+\end{remark}
+
+\begin{corollary}[Uniform pair floor]\label{cor:sharp}
+For distinct primes $p,q$, $R(e_p-e_q)>-1/\sqrt{pq}\ge -1/\sqrt6\approx -0.408$.
+\end{corollary}
+
+\begin{proof}
+From Theorem~\ref{thm:bridge}, $R+1/2>\tfrac12-1/\sqrt{pq}$, hence $R>-1/\sqrt{pq}$.
+Distinct primes give $pq\ge 6$.
+\end{proof}
+
+\section{Positive orthant}
+
+\begin{proposition}[Nonnegative cone]\label{prop:cone}
+If $v\in\mathbb{R}^N$ satisfies $v_i\ge 0$ for all $i$, then
+$v^\top\Qt_N v\ge 0$.
+\end{proposition}
+
+\begin{proof}
+Every entry of $\Qt_N$ is positive, so the quadratic form on the
+nonnegative orthant is a sum of nonnegative terms.
+\end{proof}
+
+\section{Earlier drafts --- corrected status}
+
+Earlier public drafts pushed Q6 toward Strong Goldbach via a
+dark-state lemma and a full-spectrum Bridge floor, and toward
+RH / Navier--Stokes packaging. Those extensions are not supported
+by the arguments as written; they are marked exploratory-failed below
+and are not part of the proved core.
+
+\begin{enumerate}[leftmargin=1.2em]
+\item \textbf{Broken detector.}
+The indicator difference
+$v_k(j)=1_{\mathbb{P}}(j)-1_{\mathbb{P}}(k-j)$
+vanishes on genuine Goldbach pairs $p+(k-p)=k$, so it does not detect
+them.
+\item \textbf{False sign lemma.}
+On raw $Q_N$, for $v=e_p-e_q$,
+$\langle v,Q_N v\rangle=1/p+1/q-2$ is typically negative
+(e.g.\ $(3,7)\mapsto -1.52$).
+A claimed equivalence ``dark state $\Leftrightarrow$ no Goldbach'' does
+not hold as written.
+\item \textbf{No NS map.}
+A spectral floor on $Q_N$, $\Qt_N$, or $H_N$ is not, by itself, a
+bound on $\|(u\cdot\nabla)u\|$ for Leray--Hopf solutions on
+$\mathbb{T}^3$.
+\end{enumerate}
+
+Older DOIs may remain as dated history.
+The public credit for this operator is
+Theorem~\ref{thm:bridge}, Theorem~\ref{thm:multirep}, and
+Propositions~\ref{prop:floorfails}--\ref{prop:cone}.
+
+\section{Bridge$^*$: multi-representation}
+
+\begin{lemma}[Cross-term factorization]\label{lem:cross}
+For distinct primes $p\neq q$ and $r\neq s$,
+\[
+\widetilde Q_N(p,r)-\widetilde Q_N(p,s)-\widetilde Q_N(q,r)+\widetilde Q_N(q,s)
+=\Bigl(p^{-1/2}-q^{-1/2}\Bigr)\Bigl(r^{-1/2}-s^{-1/2}\Bigr).
+\]
+In particular, if $p<q$ and $r<s$, the cross term is strictly positive.
+\end{lemma}
+
+\begin{proof}
+Each off-diagonal entry is $(\,\cdot\,)^{-1/2}$ for distinct primes, so the
+left-hand side factors as claimed.
+\end{proof}
+
+\begin{theorem}[Bridge$^*$, multi-representation]\label{thm:multirep}
+Let $k\le N$ be even and
+\[
+\mathcal{R}(k)=\{p\text{ prime}:2\le p<k/2,\ k-p\text{ prime}\}.
+\]
+Set $v_k=\sum_{p\in\mathcal{R}(k)}(e_p-e_{k-p})$ (indices $\le N$).
+If $v_k\neq 0$, then
+\[
+R(v_k)=\frac{v_k^\top\Qt_N v_k}{\|v_k\|_2^2}
+\;>\;-\frac12.
+\]
+\end{theorem}
+
+\begin{proof}
+Distinct unordered Goldbach pairs for fixed $k$ are pairwise disjoint as
+sets of prime sites: a shared prime forces the same complementary prime.
+Write $v_k=\sum_{a=1}^{m}v_a$ with $v_a=e_{p_a}-e_{q_a}$, $p_a<q_a=k-p_a$.
+Then $\|v_k\|_2^2=\sum_a\|v_a\|_2^2=2m$ and
+\[
+v_k^\top\Qt_N v_k
+=\sum_a v_a^\top\Qt_N v_a
++2\sum_{a<b}v_a^\top\Qt_N v_b.
+\]
+Each diagonal block equals $\|v_a\|_2^2\,R(v_a)$ with $R(v_a)>-1/2$ by
+Theorem~\ref{thm:bridge}. Each cross block equals the factorization in
+Lemma~\ref{lem:cross} with $p_a<q_a$ and $p_b<q_b$, hence is positive.
+Therefore
+\[
+R(v_k)
+\ge\frac{\sum_a\|v_a\|_2^2\,R(v_a)}{\sum_a\|v_a\|_2^2}
+\ge\min_a R(v_a)
+\;>\;-\frac12.
+\]
+\end{proof}
+
+\begin{remark}
+The worst multi-rep Rayleigh through $N=200$ coincides with a single-pair
+case (e.g.\ $k=8$, pair $(3,5)$, $R\approx-0.183$). Richer multi-rep
+vectors sit strictly higher because of positive cross terms.
+\end{remark}
+
+\section*{Reproducibility}
+
+\begin{verbatim}
+python3 scripts/bridge_floor_verify.py 50
+python3 -m unittest tests.test_bridge_star_h_n -v
+\end{verbatim}
+
+\section*{Acknowledgments}
+This note supersedes the earlier Q6 preprint
+(\href{https://doi.org/10.5281/zenodo.20405589}{10.5281/zenodo.20405589})
+as the author's intended public write-up of the inverse-GCD operator.
+
+\begin{thebibliography}{9}
+\bibitem{ZenodoQ6}
+J.R.~Simons,
+\textit{Earlier Q6 draft} (archive),
+Zenodo \href{https://doi.org/10.5281/zenodo.20405589}{10.5281/zenodo.20405589}.
+
+\bibitem{BridgeStarMD}
+J.R.~Simons,
+\textit{Bridge$^*$ proof draft},
+repository note \texttt{docs/BRIDGE-STAR-PROOF.md} (2026).
+\end{thebibliography}
+
+\end{document}

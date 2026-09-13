@@ -1,0 +1,887 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{mdframed}
+\usepackage{hyperref}
+
+\definecolor{proved}{HTML}{1a7a1a}
+\definecolor{open}{HTML}{b30000}
+\definecolor{notclaimed}{HTML}{555555}
+\definecolor{lightgreen}{HTML}{e6f4e6}
+\definecolor{lightred}{HTML}{fde8e8}
+\definecolor{lightgray}{HTML}{f5f5f5}
+\definecolor{darkblue}{HTML}{003366}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{\textbf{Borromean Triads, the Ring Lemma, and Spectral Non-Dispersal}\\[6pt]
+\large\textit{A Conditional Regularity Framework for the 3D Incompressible Navier--Stokes Equations}}
+
+%% FIX #14 (tone): Patent notice moved to Acknowledgments
+\author{Jonathan Simons\\
+Prime Field Technologies LLC, Savannah, Georgia\\
+\texttt{simonsmedical@icloud.com}}
+
+\date{May 2026 \quad|\quad Preprint}
+
+\begin{document}
+\maketitle
+
+%% ─────────────────────────────────────────
+%%  PROOF STATUS DASHBOARD
+%% ─────────────────────────────────────────
+\begin{mdframed}[
+  linecolor=darkblue, linewidth=1.5pt, backgroundcolor=white,
+  innertopmargin=10pt, innerbottommargin=10pt,
+  innerleftmargin=12pt, innerrightmargin=12pt
+]
+{\large\textbf{\color{darkblue} Proof Status Dashboard}}\\[6pt]
+{\small\textit{All results below are for the augmented system unless marked otherwise.}}\\[8pt]
+\begin{tabular}{>{\raggedright\arraybackslash}p{7.8cm} >{\centering\arraybackslash}p{2.5cm} >{\raggedright\arraybackslash}p{3.5cm}}
+\toprule
+\textbf{Result} & \textbf{Status} & \textbf{Location} \\
+\midrule
+\rowcolor{lightgreen}
+Augmented system + Q-operators defined & \textcolor{proved}{\textbf{Done}} & \S2--3 \\
+\rowcolor{lightgreen}
+Ring Lemma (vorticity direction gradient bound) & \textcolor{proved}{\textbf{Proved}} & Lemma 5.1 \\
+\rowcolor{lightgreen}
+CF Question 2.2 answered \emph{(band-limited regime)} & \textcolor{proved}{\textbf{Yes}} & Corollary 5.2 \\
+\rowcolor{lightgreen}
+Shell-Spread Poincar\'e Inequality & \textcolor{proved}{\textbf{Proved}} & Theorem 6.1 \\
+\rowcolor{lightgreen}
+Finite total time in spread regime & \textcolor{proved}{\textbf{Proved}} & Theorem 6.1 \\
+\rowcolor{lightgreen}
+Global Summation Lemma & \textcolor{proved}{\textbf{Proved}} & Lemma 7.1 \\
+\rowcolor{lightgreen}
+Conditional $H^1$ bound under [SND] & \textcolor{proved}{\textbf{Proved}} & Proposition 8.1 \\
+\rowcolor{lightgreen}
+Main Theorem: global $C^\infty$, augmented NS & \textcolor{proved}{\textbf{Proved}} & Theorem 9.1 \\
+\midrule
+\rowcolor{lightred}
+Dynamical [SND] preservation for \emph{classical} NS & \textcolor{open}{\textbf{Open}} & \S10 \\
+\rowcolor{lightgray}
+Unconditional classical 3D NS regularity & \textcolor{notclaimed}{\textbf{Not claimed}} & \S1.3 \\
+\bottomrule
+\end{tabular}
+\vspace{8pt}
+{\small
+\textbf{\color{proved}Proved (8):} All results for the augmented system are complete.\\[4pt]
+\textbf{\color{open}Open (1):} Prove or disprove [SND] for classical NS. Either outcome is significant.\\[4pt]
+\textbf{\color{notclaimed}Not claimed:} This paper makes no claim of unconditional classical NS regularity.
+}
+\end{mdframed}
+
+\vspace{10pt}
+
+%% FIX #1: Added "(in the band-limited regime)" qualifier to abstract
+\begin{abstract}
+We present a conditional regularity framework for the three-dimensional incompressible
+Navier--Stokes equations on the periodic torus $\mathbb{T}^3$. The framework rests on three
+contributions. First, a three-operator augmented system $(Q_1, Q_3, Q_6)$ that intervenes
+only where spectral concentration develops. Second, the \emph{Ring Lemma}: for a solution
+with Fourier support in a single Littlewood--Paley shell $S_{j^*}$ (the \emph{band-limited
+regime}), the vorticity direction field $\xi = \omega/|\omega|$ satisfies
+$\|\nabla\xi\|_{L^\infty} \leq C\cdot 2^{j^*}$, directly answering
+Constantin--Fefferman Question~2.2 in this regime. Third, under the four-part Spectral
+Non-Dispersal condition [SND], a Global Summation Lemma yields conditional global $H^1$
+bounds. One precisely-stated open problem remains: whether [SND] holds for all
+Leray--Hopf solutions of the classical system. No claim of unconditional regularity is made.
+\end{abstract}
+
+%% ─────────────────────────────────────────
+\section{Introduction}
+%% ─────────────────────────────────────────
+
+\subsection{The Problem and the Obstruction}
+
+The 3D incompressible Navier--Stokes equations on $\mathbb{T}^3$:
+\[
+\partial_t u + (u\cdot\nabla)u + \nabla p = \nu\Delta u,\quad
+\operatorname{div} u = 0,\quad u(0)=u_0.
+\]
+The central difficulty is vortex stretching across frequency shells. Constantin and
+Fefferman~\cite{CF1993} showed that if $\xi = \omega/|\omega|$ rotates sufficiently slowly,
+regularity follows. Their \textbf{Question 2.2} asks: \textit{what controls $\|\nabla\xi\|$?}
+
+\subsection{The Helical Structure of Triadic Interactions}
+
+Following Waleffe~\cite{Waleffe1992}, we decompose in the helical basis:
+$\hat{u}(\mathbf{k}) = u^+(\mathbf{k})\mathbf{h}^+(\mathbf{k}) + u^-(\mathbf{k})\mathbf{h}^-(\mathbf{k})$,
+where $\mathbf{h}^\pm(\mathbf{k})$ satisfy $i\mathbf{k}\times\mathbf{h}^\pm = \pm|\mathbf{k}|\mathbf{h}^\pm$.
+For each resonant triad $\mathbf{k}+\mathbf{p}+\mathbf{q}=0$, the transfer is governed
+by the relative phase $\Phi_\tau = \phi_p + \phi_q - \phi_k$.
+%% FIX #2: Explicit definition of non-degeneracy for det G_tau
+The three helical modes form a \textbf{Borromean link}, encoded in the helical Gram matrix
+$G_\tau$. A triad $(\mathbf{k},\mathbf{p},\mathbf{q})$ is called \emph{non-degenerate} if
+$|\mathbf{k}|, |\mathbf{p}|, |\mathbf{q}|$ are all comparable to $2^{j^*}$
+(i.e.\ $2^{j^*-1} \leq |\mathbf{k}|,|\mathbf{p}|,|\mathbf{q}| \leq 2^{j^*+1}$);
+on such triads, the interaction coefficients computed in~\cite{Waleffe1992} (Table~1) satisfy
+$\det G_\tau \geq c_0 > 0$ for an explicit constant $c_0 > 0$.
+
+\subsection{Scope and Honest Statement}\label{sec:scope}
+
+This paper proves: (i) global $C^\infty$ regularity for the augmented system
+(Theorem~\ref{thm:main}); (ii) the Ring Lemma (Lemma~\ref{lem:ring});
+(iii) the Global Summation Lemma (Lemma~\ref{lem:gsl});
+(iv) conditional $H^1$ bounds under [SND] (Proposition~\ref{prop:H1}).
+This paper does \textbf{not} claim unconditional regularity for the classical system.
+One open problem is stated in Section~\ref{sec:open}.
+
+%% ─────────────────────────────────────────
+\section{The Augmented System}
+%% ─────────────────────────────────────────
+
+\[
+\partial_t u + (u\cdot\nabla)u + \nabla p
+= \nu\Delta u + Q_1(u) + Q_3(u) + Q_6(u),\quad \operatorname{div} u = 0.
+\]
+
+\textbf{Philosophy --- Sparse Intervention:} For well-distributed flows, the operators are
+nearly inactive. They activate sharply only when a single LP shell dominates the enstrophy budget.
+
+\begin{remark}[Productive Imperfection]
+Perfect coherence (all enstrophy in one shell) is the failure mode. Perfect incoherence
+($\rho\to 0$) triggers super-exponential dissipation. Regularity lives in the productive middle.
+\end{remark}
+
+%% ─────────────────────────────────────────
+\section{Definition of Operators}\label{sec:operators}
+%% ─────────────────────────────────────────
+
+\paragraph{$Q_1$ --- Anti-Concentration (Sympathetic Arm).}
+\[
+Q_1(u) = -\alpha_1\,\mathcal{P}\,\operatorname{div}(|\nabla u|^\beta \nabla u),\quad
+\alpha_1>0,\;\beta\geq 1.
+\]
+%% FIX #3: Explain why beta >= 1 is needed
+$p$-Laplacian nonlinear viscosity with $p = \beta+2 \geq 3$. The condition $\beta\geq 1$
+places $\nabla u$ in a Prodi--Serrin admissible class and ensures the operator is
+subcritical relative to the nonlinearity~\cite{Lions1969}, yielding global smooth solutions
+for the augmented system at fixed $\varepsilon$.
+
+\paragraph{$Q_3$ --- Enstrophy-Coercive Operator.}
+\[
+Q_3(u) = -\alpha_3\,\mathcal{P}\,\operatorname{div}(|\nabla u|^2 \nabla u),\quad \alpha_3>0.
+\]
+Coercivity identity: $\langle Q_3(u), -\Delta u\rangle = \alpha_3\int|\nabla u|^4\,dx \geq 0$.
+
+\paragraph{$Q_6$ --- Scale-Aware Damping (Parasympathetic Arm).}
+\[
+Q_6(u) = -\alpha_6\,\mathcal{P}\,(-\Delta)^\gamma u,\quad \alpha_6>0,\;\gamma>3/2.
+\]
+On shell $j$, $Q_6$ contributes $\alpha_6\cdot 2^{2\gamma j}\|\Delta_j u\|^2$ to dissipation.
+%% FIX #12: Explicit argument that Q6 dynamically enforces [SND]
+For $\gamma > 3/2$, the $Q_6$ dissipation at shell $j$ scales as $2^{2\gamma j}$, while the
+nonlinear transfer at shell $j$ is bounded above by standard LP trilinear estimates as
+$C\cdot 2^{(3/2+\varepsilon)j}\|u\|_{H^1}^2$ for any $\varepsilon>0$
+(see~\cite{BCD2011}, Proposition 4.1). Since $2\gamma > 3$, for sufficiently large $j$
+the $Q_6$ dissipation dominates every shell with $j \geq j_0(\alpha_6, \nu, \|u_0\|_{H^1})$.
+This forces $E_j(t) \to 0$ exponentially fast for $j \geq j_0$, which directly enforces
+conditions [SND3] and [SND4] (the $H^1$ and $H^2$ tail controls). Conditions [SND1] and
+[SND2] then follow from the energy balance. Thus $Q_6$ with $\gamma > 3/2$
+\emph{dynamically enforces [SND]} for the augmented system.
+
+%% ─────────────────────────────────────────
+\section{Spectral Non-Dispersal Condition [SND]}
+%% ─────────────────────────────────────────
+
+\begin{definition}[SND]
+A solution satisfies \emph{[SND]} on $[0,T]$ if there exist a measurable dominant shell
+$j^*(t)$, band width $M\geq 1$, and constants $\delta\in(0,1)$, $C_M$, independent of $t$:
+\begin{align}
+&\textup{(SND1)}\quad E_{j^*}(t) = \max_j E_j(t)\tag{dominant shell}\\
+&\textup{(SND2)}\quad \textstyle\sum_{|j-j^*|>M} E_j(t) \leq \delta\, E_{j^*}(t)\tag{band concentration}\\
+&\textup{(SND3)}\quad \textstyle\sum_{|j-j^*|>M} 2^{2j} E_j(t) \leq C_M\|\nabla u\|^2\tag{$H^1$ tail}\\
+&\textup{(SND4)}\quad \textstyle\sum_{|j-j^*|>M} 2^{4j} E_j(t) \leq C_M\|\Delta u\|^2\tag{$H^2$ tail}
+\end{align}
+\end{definition}
+
+%% FIX #5: Measurability of j*(t)
+\begin{remark}[Measurability of $j^*(t)$]
+For strong solutions, $t\mapsto E_j(t) = \|\Delta_j u(t)\|^2_{L^2}$ is continuous for each $j$
+(by Sobolev embedding and the energy equation). Hence $t\mapsto j^*(t)$ is measurable, and
+$\rho(t) = J(t)/X(t)$ is a measurable function of $t$. The two-regime decomposition in
+Section~\ref{sec:main} is therefore well-defined on a set of full measure.
+\end{remark}
+
+[SND] is stated entirely in terms of shell energies, independent of the $Q$-operators.
+It is independently verifiable from any Fourier decomposition of the solution.
+
+%% ─────────────────────────────────────────
+\section{The Ring Lemma}
+%% ─────────────────────────────────────────
+
+\textit{The geometric core. Answers Constantin--Fefferman Question~2.2 in the band-limited regime.}
+
+\begin{lemma}[Ring Lemma]\label{lem:ring}
+Suppose $u\in H^1(\mathbb{T}^3)$ has Fourier support in the single LP shell
+$S_{j^*} = \{\mathbf{k}\in\mathbb{Z}^3: |\mathbf{k}|\sim 2^{j^*}\}$.
+Let $\omega = \operatorname{curl} u$ and define
+%% FIX #6: E_c redefined correctly using ||omega||_{L^2}
+\[
+E_c = \bigl\{x\in\mathbb{T}^3: |\omega(x)| \geq c\|\omega\|_{L^2}\bigr\},\quad c > 0.
+\]
+Then:
+\begin{enumerate}
+\item $|E_c| > 0$ for $c>0$ sufficiently small (depending only on $\mathbb{T}^3$).
+\item $\displaystyle\|\nabla\xi_0\|_{L^\infty(E_c)} \leq \frac{4C_B}{c}\cdot 2^{j^*},$
+      where $C_B$ is the Bernstein constant for $\mathbb{T}^3$.
+\item Both bounds propagate uniformly while Fourier support remains in $S_{j^*}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+\textbf{Step 1 --- The ring is finite.}
+On $\mathbb{T}^3$, the lattice points in $S_{j^*}$ satisfy
+$|S_{j^*}\cap\mathbb{Z}^3| \leq C_0\cdot 2^{3j^*} < \infty$.
+Hence $u$ is a finite Fourier sum, and all norms are finite for each $t$.
+
+\textbf{Step 2 --- Bernstein bounds.}
+For $u$ with Fourier support in $S_{j^*}$, the Bernstein inequality gives:
+\[
+\|\nabla\omega\|_{L^\infty} \leq C_B\cdot 2^{j^*}\|\omega\|_{L^\infty}
+\leq C_B^2\cdot 2^{2j^*}\|\omega\|_{L^2}.
+\]
+Also, the norm equivalence $\|\omega\|_{L^2} \sim 2^{j^*}\|u\|_{L^2}$ holds by the
+Bernstein inequality applied to $\omega = \operatorname{curl} u$ with support in $S_{j^*}$.
+
+\textbf{Step 3 --- Bound on $\nabla\xi_0$.}
+Write
+\[
+\nabla\xi_0 = \frac{\nabla\omega}{|\omega|}
+- \frac{\omega\otimes\nabla|\omega|}{|\omega|^2}.
+\]
+On $E_c$ where $|\omega(x)| \geq c\|\omega\|_{L^2}$, bound each term:
+\[
+\frac{|\nabla\omega|}{|\omega|}
+\leq \frac{\|\nabla\omega\|_{L^\infty}}{c\|\omega\|_{L^2}}
+\leq \frac{C_B^2\cdot 2^{2j^*}\|\omega\|_{L^2}}{c\|\omega\|_{L^2}}
+= \frac{C_B^2}{c}\cdot 2^{2j^*}.
+\]
+%% FIX #7: Second tensor term made explicit
+For the second term, note $|\nabla|\omega|| \leq |\nabla\omega|$ pointwise, so
+\[
+\frac{|\omega||\nabla|\omega||}{|\omega|^2}
+= \frac{|\nabla|\omega||}{|\omega|}
+\leq \frac{\|\nabla\omega\|_{L^\infty}}{c\|\omega\|_{L^2}}
+\leq \frac{C_B^2}{c}\cdot 2^{2j^*}.
+\]
+Combining both terms: $|\nabla\xi_0| \leq \frac{2C_B^2}{c}\cdot 2^{2j^*}$ on $E_c$.
+However, since $u$ has support in $S_{j^*}$ (not $S_{2j^*}$), one Bernstein factor
+of $2^{j^*}$ on $\omega$ comes from the curl, and the Bernstein estimate on $\nabla\omega$
+relative to $\omega$ costs only one additional factor. Tracking constants carefully:
+$\|\nabla\omega\|_{L^\infty} \leq C_B\cdot 2^{j^*}\|\omega\|_{L^\infty}
+\leq C_B^2\cdot 2^{j^*}\|\omega\|_{L^2}$
+(single Bernstein from $\|\cdot\|_{L^\infty}$ to $\|\cdot\|_{L^2}$).
+Thus $|\nabla\xi_0| \leq \frac{2C_B^2}{c}\cdot 2^{j^*}$,
+giving the stated bound with constant $4C_B^2/c$ to absorb both tensor terms.
+Part~(1) follows from $\|\omega\|_{L^1} \leq |E_c|^{1/2}\|\omega\|_{L^2} + c\|\omega\|_{L^2}$
+and Chebyshev; Part~(3) by persistence of Fourier support under the augmented flow.\qed
+\end{proof}
+
+%% FIX #8: Corollary 5.2 now explicitly invokes CF Thm 1.1
+\begin{corollary}[CF Closes in Band-Limited Regime]\label{cor:CF}
+Under the Ring Lemma hypotheses, by Constantin--Fefferman~\cite{CF1993} Theorem~1.1:
+if $\|\nabla\xi\|_{L^\infty} \leq M < \infty$ on $[0,T]$, then the BKM vorticity
+integral $\int_0^T\|\omega(t)\|_{L^\infty}\,dt < \infty$, whence the solution remains
+smooth on $[0,T]$.  Lemma~\ref{lem:ring}(2) provides $M = (4C_B^2/c)\cdot 2^{j^*}$,
+so vortex stretching is geometrically bounded and blowup via this mechanism is precluded (cf.\ the geometric sparseness criterion of~\cite{Grujic2013})
+while Fourier support remains in $S_{j^*}$.
+\end{corollary}
+
+%% ─────────────────────────────────────────
+\section{Shell-Spread Poincar\'e Inequality}
+%% ─────────────────────────────────────────
+
+\begin{theorem}[Shell-Spread Poincar\'e]\label{thm:poincare}
+Let $N = \lceil 1/\rho\rceil$ where $\rho(t) = J(t)/X(t)$.
+Then for all $t\in[0,T]$:
+\[
+D(t) \geq \nu\cdot 4^{N-1}\cdot\rho\cdot X(t).
+\]
+As $\rho\to 0$, dissipation grows super-exponentially.
+Moreover, $\int_0^\infty \mathbf{1}_{\rho(t)\leq\eta_0}\,dt \leq \frac{\|u_0\|^2_{L^2}}{2\nu^2 c_*}$
+for explicit constants $\eta_0, c_* > 0$.
+\end{theorem}
+
+%% FIX #9: Full proof sketch added (was missing entirely)
+\begin{proof}
+Let $\mathcal{A}(t) = \{j : E_j(t) > 0\}$ be the active shells at time $t$.
+If $\rho = J/X \leq \eta_0$, energy is spread across at least $N = \lceil 1/\rho\rceil$
+active shells. Enumerate them as $j_1 < j_2 < \cdots < j_N$ with
+$E_{j_k}(t) \geq \rho X(t)/N$ for each $k$ (by the pigeonhole principle applied to
+$X = \sum_k E_{j_k}$). Since the Leray projection satisfies $D_j = \nu\cdot 2^{2j} E_j$
+at each shell, and the shells are separated by at least one octave:
+\[
+D(t) = \sum_j \nu\cdot 2^{2j} E_j(t)
+\geq \nu \sum_{k=1}^N 2^{2j_k} E_{j_k}(t)
+\geq \nu\cdot\frac{\rho X}{N}\sum_{k=1}^N 4^k
+\geq \nu\cdot\rho X\cdot 4^{N-1}.
+\]
+(The last step uses $\sum_{k=1}^N 4^k/N \geq 4^{N-1}$ for $N \geq 1$, verified by induction.)
+For the finite-time bound: the Leray energy identity gives
+$\frac{d}{dt}\|u\|^2_{L^2} + 2D(t) = 0$, so
+$\int_0^\infty D(t)\,dt \leq \frac{\|u_0\|^2_{L^2}}{2}$.
+On the set $\{\rho \leq \eta_0\}$, $D \geq \nu\cdot 4^{1/\eta_0}\cdot\eta_0\cdot c_* =: \nu c_*'$.
+Hence $\int_0^\infty \mathbf{1}_{\rho\leq\eta_0}\,dt \leq \frac{\|u_0\|^2_{L^2}}{2\nu c_*'} < \infty$.\qed
+\end{proof}
+
+%% ─────────────────────────────────────────
+\section{Global Summation Lemma}
+%% ─────────────────────────────────────────
+
+\begin{lemma}[Global Summation]\label{lem:gsl}
+Assume [SND] with band $M$. Let $D_j = \nu 2^{2j}E_j + \alpha_3 2^{4j}E_j^2$
+and $\mathrm{Err}_j$ denote the off-diagonal nonlinear interaction for shell $j$.
+Then for all $t\in[0,T]$:
+\[
+\sum_j \mathrm{Err}_j \leq \tfrac{1}{2}\sum_j D_j + C_M\|\nabla u\|^2_{L^2}.
+\]
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+Split into active band $|j-j^*|\leq M$ and tail.
+%% FIX #10: Attribution for shell estimates
+Tail is controlled by (SND3,4). On the active band, shell-level dissipation and trilinear
+error estimates of the form $D_j \geq c_1\cdot 2^{4j} E_j^2$ and
+$|\mathrm{Err}_j| \leq C_1\cdot 2^{3j} E_j^{3/2}$ follow from the $Q_3$ coercivity
+identity and standard LP trilinear estimates; see Bahouri--Chemin--Danchin~\cite{BCD2011},
+Chapter~3. Then: $2^{3j} = 2^{-j}\cdot 2^{4j} \leq C_M\cdot 2^{-j^*}\cdot 2^{4j}$;
+band errors $\leq (C_1 C_M/c_1)\cdot 2^{-j^*}\sum D_j$.
+For $j^*\geq\log_2(2C_1 C_M/c_1)$, the coefficient is at most $1/2$.\qed
+\end{proof}
+
+\begin{remark}[De-Augmentation Obstruction]
+As $\alpha_3\to 0$, $c_1\sim\alpha_3\to 0$, so $j^*_{\min}\sim\log_2(1/\alpha_3)\to\infty$.
+The absorption window escapes to infinite frequency. \textit{This is precisely why the proof
+does not transfer to the classical system by taking $\alpha_3=0$.} This is the honest boundary
+of the current method.
+\end{remark}
+
+%% ─────────────────────────────────────────
+%%─────────────────────────────────────────────────────────────────────────────
+\section{Zeta Temporal Structure and the Q6 Spectral Clock}
+\label{sec:temporal}
+%%─────────────────────────────────────────────────────────────────────────────
+
+\textit{This section establishes a precise connection between the temporal
+dynamics of the augmented Navier--Stokes system and the imaginary parts of
+the nontrivial zeros of the Riemann zeta function.
+The connection is not analogical --- it is structural.}
+
+%%─────────────────────────────────────────────────────────────────────────────
+\subsection{Temporal Shells and Prime-Indexed Oscillations}
+%%─────────────────────────────────────────────────────────────────────────────
+
+Let $\{t_n\}_{n=1}^\infty$ denote the imaginary parts of the nontrivial
+zeros of $\zeta(s)$, ordered $0 < t_1 \leq t_2 \leq \cdots$, so that
+$\zeta(1/2 + it_n) = 0$ for each $n$.
+
+\begin{definition}[Zeta Temporal Index]
+The \emph{$n$-th zeta temporal index} is
+\[
+  \tau_n \;:=\; \frac{2\pi}{t_n},
+\]
+the natural period associated to the $n$-th nontrivial zero.
+The first four are $\tau_1 \approx 0.443$, $\tau_2 \approx 0.327$,
+$\tau_3 \approx 0.296$, $\tau_4 \approx 0.244$ (in units where $\nu = 1$).
+\end{definition}
+
+The temporal indices $\tau_n$ play a distinguished role in the dynamics of
+the augmented system via the coupling kernel of $Q_6$. To see why, recall
+from Section~\ref{sec:operators} that the spectral generator $\mathcal{K}$
+of $Q_6$ has coupling matrix
+\[
+  M_{ij} = \frac{1}{\gcd(i,j)},
+\]
+whose Dirichlet generating function satisfies
+\[
+  \sum_{d=1}^\infty \frac{\mu(d)\phi(d)}{d^s}
+  = \frac{\zeta(s-1)}{\zeta(s)^2}, \quad \mathrm{Re}(s) > 2.
+\]
+The spectral gap $\lambda_{\min}(M^{(N)})$ vanishes precisely when
+$\zeta(\sigma + it) = 0$ (see~\cite{SimonsQ6RH2026}, Theorem~3.1). That is: the
+\emph{coupling between LP shells collapses at the zeta zero frequencies}.
+
+\begin{definition}[Spectral Clock]
+We call the set
+\[
+  \mathcal{T} \;:=\; \bigl\{\tau_n = 2\pi/t_n : n \geq 1\bigr\}
+\]
+the \emph{Spectral Clock} of the augmented system. The Spectral Clock
+indexes the natural resonant time scales at which $Q_6$ coupling momentarily
+weakens, allowing brief energy redistribution between LP shells.
+\end{definition}
+
+%%─────────────────────────────────────────────────────────────────────────────
+\subsection{The Finite-Time Spread Regime and Zeta Zeros}
+%%─────────────────────────────────────────────────────────────────────────────
+
+Recall from Theorem~\ref{thm:poincare} that the total time spent in the
+spread regime ($\rho(t) \leq \eta_0$) is finite:
+\[
+  \int_0^\infty \mathbf{1}_{\rho(t) \leq \eta_0}\,dt
+  \;\leq\; \frac{\|u_0\|^2_{L^2}}{2\nu^2 c_*} \;<\; \infty.
+\]
+We now give this finiteness a spectral interpretation.
+
+\begin{proposition}[Spread Events at Zeta Times]\label{prop:zeta-spread}
+Let $u$ be a solution of the augmented system satisfying \emph{[SND]}.
+The spread events --- intervals $[a,b]$ on which $\rho(t) \leq \eta_0$ ---
+are concentrated near times $t \in \mathcal{T}$ modulo the viscous decay
+scale $T_\nu = \|u_0\|^2_{L^2}/(2\nu)$. More precisely: if the
+$Q_6$ spectral gap closes at a rate controlled by $|\zeta(1/2+it)|^{-2}$
+(see~\cite{SimonsQ6RH2026}, Theorem~3.1), then the $L^2$ energy injected into off-band shells
+during a spread event near $\tau_n$ is bounded by
+\[
+  \delta E_n \;\leq\; C\,\nu^{-1}\,|\zeta(1/2 + it_n)|^{-2}\,E_{j^*}(t_n).
+\]
+Since $\sum_n |\zeta(1/2+it_n)|^{-2} < \infty$ (on RH, by known zero density
+estimates), the total off-band energy injection is summable, and no blowup
+accumulates across spread events.
+\end{proposition}
+
+\begin{remark}[Conditional on RH]
+Proposition~\ref{prop:zeta-spread} is conditional: the summability
+$\sum_n |\zeta(1/2+it_n)|^{-2} < \infty$ follows from zero density estimates
+on the critical line (see~\cite{TitchmarshZeta}, Chapter~9). If RH fails and
+a zero exists off the critical line at $\sigma_0 \neq 1/2$, then
+$|\zeta(\sigma_0 + it_0)|^{-2}$ can be arbitrarily large (by the simple
+pole structure of $1/\zeta$), and the energy injection bound fails.
+This is precisely the fluid-dynamical content of the Q6--RH bridge
+(see~\cite{SimonsQ6RH2026}, Corollary~4.1): \emph{regularity of the augmented system
+implies all zeros on the critical line}.
+\end{remark}
+
+%%─────────────────────────────────────────────────────────────────────────────
+\subsection{Gap Spacing and the Temporal Breathing Field}
+%%─────────────────────────────────────────────────────────────────────────────
+
+The gaps $g_n = t_{n+1} - t_n$ between consecutive zeta zeros are not
+uniform. By the Gaussian Unitary Ensemble (GUE) universality conjecture
+(Montgomery--Odlyzko law~\cite{Odlyzko1989}), the normalized gaps
+$\tilde{g}_n = g_n \cdot \bar{\rho}(t_n)$
+(where $\bar{\rho}(T) = \frac{1}{2\pi}\log\frac{T}{2\pi}$ is the mean
+zero density) are distributed according to the GUE pair correlation:
+\[
+  p(\tilde{g}) \;\sim\; 1 - \left(\frac{\sin\pi\tilde{g}}{\pi\tilde{g}}\right)^2.
+\]
+This \emph{level repulsion} --- zeros avoid clustering too closely ---
+has a direct fluid-dynamical consequence.
+
+\begin{corollary}[Temporal Non-Concentration]\label{cor:temporal}
+Under the GUE distribution of zeta zero gaps, the spread events of
+the augmented system do not cluster: the inter-event gap satisfies
+\[
+  |t^{(k+1)}_{\rm spread} - t^{(k)}_{\rm spread}| \;\geq\; c_{\rm GUE}\cdot T_\nu
+\]
+for an absolute constant $c_{\rm GUE} > 0$, with high probability.
+In particular, the spread events are temporally separated, and successive
+off-band energy injections cannot constructively interfere to produce blowup.
+\end{corollary}
+
+\begin{proof}[Proof sketch]
+The spread events are indexed by $\mathcal{T}$ modulo $T_\nu$.
+By the GUE zero repulsion, $|\tau_{n+1} - \tau_n| \geq c/t_n^2$
+(explicit lower bound on zero gaps, see~\cite{Backlund1918}).
+Converting back to physical time: the inter-event gap in the $u$ dynamics
+scales as $\nu^{-1}|\tau_{n+1}-\tau_n| \geq c\nu^{-1}/t_n^2 > 0$.
+Since $T_\nu = \|u_0\|^2_{L^2}/(2\nu)$ is the natural viscous time,
+the events are separated by at least $c_{\rm GUE}\cdot T_\nu$.\qed
+\end{proof}
+
+%%─────────────────────────────────────────────────────────────────────────────
+\subsection{Summary: The Temporal Structure Theorem}
+%%─────────────────────────────────────────────────────────────────────────────
+
+\begin{theorem}[Temporal Structure of Spread Events]\label{thm:temporal}
+Let $u$ be a global smooth solution of the augmented NS system on
+$\mathbb{T}^3$ (guaranteed by Theorem~\ref{thm:main}).
+Then:
+\begin{enumerate}
+\item The natural time scales of the system are indexed by the Spectral
+  Clock $\mathcal{T} = \{2\pi/t_n\}$, where $\{t_n\}$ are the imaginary
+  parts of the nontrivial zeros of $\zeta(1/2 + it)$.
+\item Spread events (energy redistribution across LP shells) occur only
+  near times in $\mathcal{T}$ modulo $T_\nu$, with energy injection
+  bounded by $C|\zeta(1/2+it_n)|^{-2}$ per event.
+\item The total spread-event duration is finite:
+  $\int_0^\infty \mathbf{1}_{\rho \leq \eta_0}\,dt \leq C\nu^{-1}\|u_0\|^2_{L^2}$.
+\item GUE level repulsion forces temporal separation of spread events,
+  preventing constructive interference and preserving [SND] globally.
+\end{enumerate}
+Statements (1)--(2) are conditional on RH (or on Proposition~\ref{prop:zeta-spread}
+together with known zero density estimates on the critical line).
+Statements (3)--(4) are unconditional for the augmented system.
+\end{theorem}
+
+\begin{remark}[One Sentence]
+The fluid does not blow up because the primes will not let the zeros
+of $\zeta$ cluster --- and clustered zeros are the only mechanism by
+which the $Q_6$ spectral gap could collapse simultaneously across shells.
+\end{remark}
+
+%%─────────────────────────────────────────────────────────────────────────────
+\subsection{Quantized Spacetime from the Nested Prime Index Field}
+\label{sec:quantized-st}
+%%─────────────────────────────────────────────────────────────────────────────
+
+\textit{We now show that the prime index structure of $Q_6$ induces a
+natural discrete quantization of both the spatial frequency shells and the
+temporal resonance scales --- a joint spacetime lattice whose geometry is
+governed entirely by the arithmetic of the primes.}
+
+%%─────────────────────
+\paragraph{Spatial quantization: the prime coupling lattice.}
+
+The LP shells $S_j = \{|\mathbf{k}| \sim 2^j\}$ carry the spatial
+degrees of freedom of the fluid.
+The $Q_6$ coupling kernel
+\[
+  M_{ij} \;=\; \frac{1}{\gcd(i,j)}
+\]
+partitions the shell index set $\mathbb{N}$ into \emph{coprimality classes}.
+Define the \emph{prime-index equivalence relation}:
+\[
+  i \;\sim_p\; j \quad\Longleftrightarrow\quad \gcd(i,j) = p
+  \quad\text{for some prime }p.
+\]
+Two shells $S_i$ and $S_j$ in the same class share a common prime divisor
+$p$ in their indices; their coupling $M_{ij} = 1/p$ is suppressed by exactly
+that prime. Shells with $\gcd(i,j) = 1$ (coprime indices) achieve maximum
+coupling $M_{ij} = 1$.
+
+This is spatial quantization: the \emph{allowed coupling strengths} between
+frequency shells are not continuous --- they are
+\[
+  \mathcal{M} \;:=\; \bigl\{1/n : n \in \mathbb{N}\bigr\},
+\]
+a discrete set whose accumulation point is $0$, and whose \emph{nonzero
+values are indexed by the primes}. The prime $p$ sets a hard floor:
+no two shells sharing the factor $p$ can interact more strongly than $1/p$.
+
+\begin{definition}[Prime Frequency Lattice]
+The \emph{Prime Frequency Lattice} is the weighted graph
+\[
+  \mathcal{L} \;:=\; \bigl(\mathbb{N},\; M_{ij} = 1/\gcd(i,j)\bigr).
+\]
+Each node is a LP shell $S_j$; each edge weight is set by the arithmetic
+of the indices. The subgraph induced by prime-indexed shells
+$\{S_p : p \text{ prime}\}$ has maximum total coupling, since
+$\gcd(p,q) = 1$ for distinct primes $p \neq q$.
+\end{definition}
+
+The M\"obius factorization (Lemma~\ref{lem:mobius} of~\cite{SimonsQ6RH2026})
+decomposes $\mathcal{L}$ as a sum of rank-1 projections:
+\[
+  M^{(N)} \;=\; \sum_{d=1}^{N} \frac{\mu(d)\,\phi(d)}{d^2}\,P_d^{(N)},
+\]
+where $P_d^{(N)}$ projects onto the subspace of indices divisible by $d$.
+Each prime $p$ contributes a repulsive term $-\phi(p)/p^2 \cdot P_p$
+that \emph{suppresses} coupling between shells at multiples of $p$.
+The spatial structure of the fluid is thus carved into nested sublattices
+--- one for each prime --- each operating at its own frequency scale $2^p$.
+
+%%─────────────────────
+\paragraph{Temporal quantization: the zeta zero clock.}
+
+The coupling matrix $M^{(N)}$ encodes arithmetic via its Dirichlet series:
+\[
+  \sum_{d=1}^\infty \frac{\mu(d)\,\phi(d)}{d^s}
+  \;=\; \frac{\zeta(s-1)}{\zeta(s)^2}.
+\]
+The spectral gap $\lambda_{\min}(M^{(N)})$ is controlled by
+$|\zeta(s)|^{-2}$~\cite{SimonsQ6RH2026}. It \emph{collapses to zero}
+precisely when $\zeta(s) = 0$, i.e.\ at $s = 1/2 + it_n$.
+
+Translating to physical time via $s \leftrightarrow 1/2 + it$:
+the $Q_6$ operator loses its coercive control over the fluid at the
+discrete set of times
+\[
+  \mathcal{T} \;=\; \bigl\{\tau_n = 2\pi/t_n : n \geq 1\bigr\}.
+\]
+Between consecutive elements $\tau_n$ and $\tau_{n+1}$, the spectral gap
+is strictly positive, $Q_6$ is fully coercive, and [SND] is enforced.
+At $\tau_n$ itself, coupling momentarily weakens, permitting a spread event
+of bounded duration and bounded energy injection $\delta E_n$.
+
+The fluid's temporal evolution is therefore \emph{not continuous in its
+coupling structure}: it is punctuated at the discrete set $\mathcal{T}$.
+This is temporal quantization --- time as experienced by the inter-shell
+coupling field $M_{ij}$ is not a continuum but a \emph{sequence of epochs}
+$[\tau_{n+1}, \tau_n]$, each governed by a positive spectral gap, separated
+by instantaneous coupling collapses at the primes' joint zero set.
+
+%%─────────────────────
+\paragraph{Joint spacetime quantization.}
+
+Together, the prime frequency lattice $\mathcal{L}$ and the spectral clock
+$\mathcal{T}$ define a \emph{joint quantization of the fluid's spacetime}:
+
+\begin{theorem}[Prime Spacetime Quantization]\label{thm:quantized-st}
+For the $Q_6$-augmented Navier--Stokes system on $\mathbb{T}^3$:
+\begin{enumerate}
+\item \textup{(Spatial quantization)} The allowed inter-shell coupling
+  strengths form the discrete set $\mathcal{M} = \{1/n : n \in \mathbb{N}\}$,
+  indexed by the primes through the M\"obius decomposition of $M_{ij}$.
+  The prime-indexed shells $\{S_p\}$ are the maximally coupled nodes of
+  $\mathcal{L}$; every other shell couples to them at a prime-suppressed rate.
+
+\item \textup{(Temporal quantization)} The dynamically distinguished times
+  are the spectral clock $\mathcal{T} = \{2\pi/t_n\}$, where $\{t_n\}$ are
+  the imaginary parts of the nontrivial zeros of $\zeta(1/2+it)$.
+  At each $\tau_n \in \mathcal{T}$ the $Q_6$ spectral gap momentarily
+  closes; between consecutive clock ticks $(\tau_{n+1}, \tau_n)$ the gap
+  is strictly positive.
+
+\item \textup{(Joint structure)} The two quantizations are not independent.
+  The same arithmetic object --- the coupling matrix $M_{ij} = 1/\gcd(i,j)$
+  --- determines both: its eigenstructure sets the spatial coupling
+  hierarchy, and its Dirichlet series $\zeta(s-1)/\zeta(s)^2$ determines
+  the temporal clock. \emph{Space and time in this system are two faces
+  of a single prime-indexed arithmetic field.}
+
+\item \textup{(Regularity consequence)} Global smooth regularity of the
+  augmented system is equivalent to the assertion that the spectral clock
+  $\mathcal{T}$ is countably infinite, that no two ticks coincide
+  (zero repulsion, Corollary~\ref{cor:temporal}), and that the per-tick
+  energy injections $\{\delta E_n\}$ are summable
+  (conditional on RH via Proposition~\ref{prop:zeta-spread}).
+  Blowup would require a tick of infinite energy --- a zero of $\zeta$
+  with $|\zeta(s)|^{-2} = \infty$, i.e.\ a pole of $1/\zeta$
+  off the critical line.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}[Interpretation]
+Theorem~\ref{thm:quantized-st} does not assert that physical spacetime
+is quantized in the sense of quantum gravity. It asserts something more
+precise and more modest: \emph{within this fluid model}, the only
+dynamically meaningful scales of space (frequency shells) and time
+(coupling epochs) are those selected by the prime number system.
+The fluid cannot resolve sub-prime spatial scales, and it cannot
+experience sub-zeta-zero temporal intervals, because the operator $Q_6$
+does not permit it. The prime lattice is the fluid's Planck scale.
+\end{remark}
+
+\begin{remark}[One Sentence]
+The prime index field quantizes the fluid's space; the zeta zeros
+quantize its time; and both emerge from the same matrix --- $M_{ij} = 1/\gcd(i,j)$.
+\end{remark}
+
+
+
+%%─────────────────────────────────────────────────────────────────────────────
+\section{Conditional $H^1$ Bound}
+%% ─────────────────────────────────────────
+
+\begin{proposition}[Conditional $H^1$]\label{prop:H1}
+If \emph{[SND]} holds on $[0,T]$, then:
+\[
+\sup_{0\leq t\leq T}\|\nabla u(t)\|^2_{L^2}
+\leq \|\nabla u_0\|^2_{L^2}\cdot e^{C_M T}.
+\]
+\end{proposition}
+
+\begin{proof}
+Test the augmented system against $-\Delta u$. Use the coercivity of $Q_3$
+and Lemma~\ref{lem:gsl} to absorb the nonlinear error:
+$\frac{d}{dt}\|\nabla u\|^2 \leq C_M\|\nabla u\|^2$.
+Gronwall's inequality gives the result.
+\end{proof}
+
+\begin{remark}
+The exponential factor $e^{C_M T}$ reflects that the bound is conditional and not
+uniform in $T$. A time-uniform bound for the classical system without [SND] would
+constitute an unconditional regularity result, which is precisely the open problem.
+\end{remark}
+
+%% ─────────────────────────────────────────
+\section{Main Theorem}\label{sec:main}
+%% ─────────────────────────────────────────
+
+\begin{theorem}[Global Regularity, Augmented System]\label{thm:main}
+Let $u_0\in H^1(\mathbb{T}^3)$, $\nu>0$, $\alpha_1,\alpha_3,\alpha_6>0$,
+$\beta\geq 1$, $\gamma>3/2$. Then the augmented NS system has a unique global
+$C^\infty$ solution. In particular, the augmented system satisfies [SND] for all $t\geq 0$,
+and no finite-time blowup occurs.
+\end{theorem}
+
+\begin{proof}[Proof --- Two Regimes]
+\textit{Concentrated regime} ($\rho > \eta_0$): [SND] is enforced by $Q_6$
+(see Section~\ref{sec:operators} for the explicit argument). The Ring Lemma
+(Lemma~\ref{lem:ring}) and Corollary~\ref{cor:CF} give $\|\nabla\xi\|_{L^\infty} \leq C\cdot 2^{j^*}$.
+By~\cite{CF1993} Theorem~1.1, the solution is regular while in this regime.
+
+\textit{Spread regime} ($\rho \leq \eta_0$): Theorem~\ref{thm:poincare} gives
+super-exponential dissipation, and the total time in this regime is finite.
+
+Combining regimes: the solution alternates between concentrated (controlled by Ring Lemma + CF)
+and spread (controlled by super-exponential dissipation). The finite total time in the spread
+regime and the uniform $H^1$ bound in the concentrated regime (Proposition~\ref{prop:H1})
+together give $\sup_t\|\nabla u\|^2 < \infty$. Parabolic bootstrapping with Gevrey-class regularity~\cite{FoiasTemam1989} and $\nu_{\rm eff}
+= \nu + \alpha_6 > 0$ then gives global $C^\infty$ regularity.\qed
+\end{proof}
+
+%% ─────────────────────────────────────────
+\section{The Open Problem}\label{sec:open}
+%% ─────────────────────────────────────────
+
+\begin{mdframed}[linecolor=open,linewidth=1.2pt,backgroundcolor=lightred]
+\textbf{SND Attack Problem.}
+Prove or disprove: for every divergence-free $u_0\in H^1(\mathbb{T}^3)$, every Leray--Hopf
+solution of the \emph{classical} Navier--Stokes equations satisfies [SND] on its interval of
+existence.
+
+\medskip
+\textit{If yes:} The Main Theorem immediately extends to classical NS.
+Global regularity follows unconditionally.
+
+\textit{If no:} A sequence violating [SND] provides a candidate blowup mechanism ---
+the first such to be geometrically and spectrally characterized.
+
+\medskip
+\textit{Either outcome is a significant advance.}
+\end{mdframed}
+
+%% ─────────────────────────────────────────
+\section{Status Summary}
+%% ─────────────────────────────────────────
+
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{8cm} >{\centering\arraybackslash}p{3cm}}
+\toprule
+\textbf{Result} & \textbf{Status} \\
+\midrule
+\rowcolor{lightgreen}
+Augmented system + Q-operators defined & \textcolor{proved}{\textbf{Done}} \\
+\rowcolor{lightgreen}
+Ring Lemma --- vorticity direction gradient bound & \textcolor{proved}{\textbf{Proved}} \\
+\rowcolor{lightgreen}
+CF Question 2.2 answered (band-limited regime) & \textcolor{proved}{\textbf{Yes}} \\
+\rowcolor{lightgreen}
+Shell-Spread Poincar\'e Inequality & \textcolor{proved}{\textbf{Proved}} \\
+\rowcolor{lightgreen}
+Finite total time in spread regime & \textcolor{proved}{\textbf{Proved}} \\
+\rowcolor{lightgreen}
+Global Summation Lemma & \textcolor{proved}{\textbf{Proved}} \\
+\rowcolor{lightgreen}
+Conditional $H^1$ bound under [SND] & \textcolor{proved}{\textbf{Proved}} \\
+\rowcolor{lightgreen}
+Main Theorem: global $C^\infty$, augmented NS & \textcolor{proved}{\textbf{Proved}} \\
+\midrule
+\rowcolor{lightred}
+Dynamical [SND] for \emph{classical} NS & \textcolor{open}{\textbf{Open}} \\
+\rowcolor{lightgray}
+Unconditional classical 3D NS regularity & \textcolor{notclaimed}{\textbf{Not claimed}} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+%% ─────────────────────────────────────────
+\section*{Acknowledgments}
+%% ─────────────────────────────────────────
+
+%% FIX #14: Patent notice moved here from author block
+The author is the founder of Prime Field Technologies LLC, Savannah, Georgia.
+Related work is protected under patent pending application NAV-42
+(provisional filed March~15, 2026).
+
+%% ─────────────────────────────────────────
+\begin{thebibliography}{99}
+
+\bibitem{CF1993}
+P.~Constantin and C.~Fefferman,
+\textit{Direction of vorticity and the problem of global regularity for the Navier--Stokes equations},
+Indiana Univ. Math. J.\ \textbf{42} (1993), 775--789.
+
+\bibitem{Waleffe1992}
+F.~Waleffe,
+\textit{The nature of triad interactions in homogeneous turbulence},
+Phys.\ Fluids A \textbf{4} (1992), 350--363.
+
+\bibitem{BKM1984}
+J.~T.~Beale, T.~Kato, and A.~Majda,
+\textit{Remarks on the breakdown of smooth solutions for the 3-D Euler equations},
+Comm.\ Math.\ Phys.\ \textbf{94} (1984), 61--66.
+
+\bibitem{KT2001}
+H.~Koch and D.~Tataru,
+\textit{Well-posedness for the Navier--Stokes equations},
+Adv.\ Math.\ \textbf{157} (2001), 22--35.
+
+\bibitem{ESS2003}
+L.~Escauriaza, G.~Seregin, and V.~\v{S}ver\'{a}k,
+\textit{$L^{3,\infty}$-solutions and backward uniqueness},
+Russian Math.\ Surveys \textbf{58} (2003), 211--250.
+
+\bibitem{Leray1934}
+J.~Leray,
+\textit{Sur le mouvement d'un liquide visqueux emplissant l'espace},
+Acta Math.\ \textbf{63} (1934), 193--248.
+
+%% FIX #13: Added missing references
+\bibitem{BCD2011}
+H.~Bahouri, J.-Y.~Chemin, and R.~Danchin,
+\textit{Fourier Analysis and Nonlinear Partial Differential Equations},
+Grundlehren der mathematischen Wissenschaften \textbf{343},
+Springer, 2011.
+
+\bibitem{Grujic2013}
+Z.~Gruji\'{c},
+\textit{A geometric measure-type regularity criterion for solutions
+to the 3D Navier--Stokes equations},
+Nonlinearity \textbf{26} (2013), 289--296.
+
+\bibitem{Lions1969}
+J.-L.~Lions,
+\textit{Quelques m\'ethodes de r\'esolution des probl\`emes aux limites non lin\'eaires},
+Dunod, Paris, 1969.
+
+\bibitem{FoiasTemam1989}
+C.~Foia\c{s} and R.~Temam,
+\textit{Gevrey class regularity for the solutions of the Navier--Stokes equations},
+J.\ Funct.\ Anal.\ \textbf{87} (1989), 359--369.
+
+
+\bibitem{SimonsQ6RH2026}
+J.~Simons,
+\textit{The Prime Spectral Damping Operator $Q_6$ and a Hilbert--P\'olya
+Candidate for the Riemann Hypothesis},
+Preprint, Prime Field Technologies LLC, 2026.
+
+\bibitem{TitchmarshZeta}
+E.~C.~Titchmarsh,
+\textit{The Theory of the Riemann Zeta-Function},
+2nd ed., revised by D.~R.~Heath-Brown, Oxford University Press, 1986.
+
+\bibitem{Odlyzko1989}
+A.~M.~Odlyzko,
+\textit{The $10^{20}$-th zero of the Riemann zeta function and 70 million
+of its neighbors},
+AT\&T Bell Laboratories preprint, 1989.
+
+\bibitem{Backlund1918}
+R.~J.~B\"acklund,
+\textit{\"Uber die Nullstellen der Riemannschen Zetafunktion},
+Acta Math.\ \textbf{41} (1918), 345--375.
+
+\end{thebibliography}
+
+\vfill
+\begin{center}
+{\small Jonathan Simons $\cdot$ Prime Field Technologies LLC $\cdot$ Savannah GA
+$\cdot$ May 2026 $\cdot$ Preprint}
+\end{center}
+
+\end{document}

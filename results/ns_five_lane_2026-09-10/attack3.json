@@ -1,0 +1,61 @@
+{
+  "attack": 3,
+  "name": "bony_HH_to_L",
+  "cases": [
+    {
+      "name": "high_triad",
+      "probe": 0.006487325830326495,
+      "channels": {
+        "HH": {
+          "N": 3.3049193827583334,
+          "M": 113.46803949462411,
+          "Tc": 59.00871575264983
+        },
+        "HL": {
+          "N": 0.0,
+          "M": 0.0,
+          "Tc": 0.0
+        },
+        "LL": {
+          "N": 0.0,
+          "M": 0.0,
+          "Tc": 0.0
+        },
+        "cut": 1.6583123951777,
+        "Lambda": 16.47826086956522
+      }
+    },
+    {
+      "name": "two_shell_ah=1.0",
+      "ratio_star": 0.0,
+      "Tc": 0.0,
+      "HH_Tc": 0.0,
+      "HL_Tc": 0.0,
+      "LL_Tc": 0.0,
+      "HH_frac": 0.0
+    },
+    {
+      "name": "two_shell_ah=5.0",
+      "ratio_star": 0.0,
+      "Tc": 0.0,
+      "HH_Tc": 0.0,
+      "HL_Tc": 0.0,
+      "LL_Tc": 0.0,
+      "HH_frac": 0.0
+    },
+    {
+      "name": "two_shell_ah=20.0",
+      "ratio_star": 0.0,
+      "Tc": 0.0,
+      "HH_Tc": 0.0,
+      "HL_Tc": 0.0,
+      "LL_Tc": 0.0,
+      "HH_frac": 0.0
+    }
+  ],
+  "random_HH_frac_mean": 0.0925562698885492,
+  "random_HH_frac_p90": 0.5055589290413259,
+  "bottleneck_note": "HH channel often carries a large fraction of |Tc|; analytic close of |Tc|\u2272||u||_2 X^{3/2} needs HH\u2192L product control beyond Agmon/standard 3D.",
+  "verdict": "HH_CHANNEL_LIVE_BOTTLENECK_no_closure",
+  "ns_solved": false
+}

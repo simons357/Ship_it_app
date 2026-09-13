@@ -1,0 +1,19 @@
+{
+  "id": 20269842,
+  "doi": "10.5281/zenodo.20269843",
+  "conceptrecid": "20269842",
+  "title": "The Quantum Lens: A Spectral Framework Connecting the Millennium Prize Problems",
+  "date": "2026-05-18",
+  "creators": [
+    "Simons, Jonathan"
+  ],
+  "files": [
+    {
+      "key": "e39ad1642_QUANTUM_MILLENNIUM.tex",
+      "url": "https://zenodo.org/api/records/20269843/files/e39ad1642_QUANTUM_MILLENNIUM.tex/content",
+      "size": 149330
+    }
+  ],
+  "keywords": null,
+  "desc": "<p>We present a unified spectral framework in which the Q6 GCD operator &mdash; developed to prove Navier&ndash;Stokes global regularity &mdash; serves as a structural hub connecting five of the seven Millennium Prize Problems. The central operator Q_N^&mu;(i,j) = &mu;(i/g)&mu;(j/g)g/&radic;(ij) is shown to be a renormalization group fixed point whose spectral properties encode the mass gap of abelian gauge theories, the rank of elliptic curves, the arithmetic structure of Hodge cycles, and the "
+}
