@@ -2,7 +2,9 @@
 
 **Date:** 2026-09-10  
 **Branch:** `cursor/ns-five-lane-lemma-star-1390`  
-**Status:** **SPEC / STUB** on the five-lane branch — remaining packet falsifier there. Kill lane **LIVE**. Lemma★ **OPEN**. **NS not solved.**  
+**Status:** Two writings of “9D” are **dead or excluded**. The remaining
+lane is growing output-support \(s\) on the 9B family (already scored).
+**No 9D close.** Kill lane **LIVE**. Lemma★ **OPEN**. **NS not solved.**  
 **Prior non-kill:** Attack 9C (fixed-gap spheres) — natural same-shell ensemble **NOT** a kill; \(\mathcal{R}_\star\) fell \(0.11\to 0.031\) — [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md).
 
 **On this branch.** Two writings of “9D,” do not merge:
@@ -58,17 +60,36 @@ So the remaining packet falsifier is **not** another natural same-shell random/e
 | Phase lock | Reproducible; no silent random re-phase |
 | Report **total** signed \(T_c\) | Not HH→L-only |
 
-## Script status
+## Script status (13 Sep 2026 lock)
 
-**Not implemented.** Planned name (TBD): `scripts/ns_attacks/attack9d_theta_m2_locked_phase.py`.  
-Until then this note is **spec-only** in the Source of Truth.
+The team **already had** the live remaining lane. It was not missing.
+It lived under a 9B name:
 
-## Reproduce (placeholder)
+- Analytic lock + growing-\(s\) sweep:
+  `scripts/ns_attacks/attack9b_output_counting.py`
+- Score: [`../../LEMMA-STAR-9B-COUNTING.md`](../../LEMMA-STAR-9B-COUNTING.md)
+- JSON: `results/attack9b_counting/attack9b_counting.json`
+
+A thin 9D entry point now calls that same sweep (does **not** rebuild
+Freiman-AP or the fixed-\(s\) screenshot):
+
+`scripts/ns_attacks/attack9d_growing_output_s.py`
+
+**No 9D claim.** Finite \(\max K\approx 0.506\), \(\max s=24\) on the
+288-field sweep is **not** \(C_0\). Lemma★ **OPEN**. Kill lane **LIVE**.
+Drive/Gmail had no separate `attack9d_*.py`. Do not invent one.
+
+## Reproduce
 
 ```bash
-# Not yet available — SoT stub only
-# PYTHONPATH=scripts python3 scripts/ns_attacks/attack9d_theta_m2_locked_phase.py \
-#   --outdir /opt/cursor/artifacts/attack9d_theta_m2_locked_phase
+PYTHONPATH=scripts python3 scripts/ns_attacks/attack9d_growing_output_s.py \
+  --out /opt/cursor/artifacts/attack9d_growing_output_s.json
+```
+
+Same math as:
+
+```bash
+PYTHONPATH=scripts python3 scripts/ns_attacks/attack9b_output_counting.py
 ```
 
 ## Related
