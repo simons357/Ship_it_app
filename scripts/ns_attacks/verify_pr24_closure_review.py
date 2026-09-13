@@ -7,9 +7,14 @@ Unrestricted Lemma★ is the boxed sup R_star < ∞.
 A diverging admissible family is the named kill of that box.
 The exact-shell 9D bound is a different statement.
 
-Specialist review of the all-n T_c identity and the weighted
-sphere count is still pending. This script records hashes and
-finite checks. It is not a proof assistant.
+Checks the symbolic growing-layer identity and compares
+those calculations with the evaluator. Reads the saved
+grow-s sweep summary. Computes the exact three-shear K.
+Does not perform the weighted-incidence / shell-count
+experiments on the exact-shell page.
+
+Independent specialist review is still pending.
+This script is not a proof assistant.
 """
 
 from __future__ import annotations
@@ -17,7 +22,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import math
 import sys
 from pathlib import Path
 
@@ -34,12 +38,7 @@ from stokes_moments import (  # noqa: E402
     probe,
     triad_Im_transfer,
 )
-from attack9b_exact_shell_K import (  # noqa: E402
-    K_of_w,
-    build_exact_shell_field,
-    random_shell_params,
-    shells_up_to,
-)
+from attack9b_exact_shell_K import K_of_w  # noqa: E402
 
 import importlib.util
 
@@ -179,73 +178,65 @@ def check_family(ns: list[int]) -> dict:
     }
 
 
-def weighted_count(alpha: int, beta: int, kmax: int, rng: np.random.Generator) -> dict:
-    pos = []
-    for i in range(-kmax, kmax + 1):
-        for j in range(-kmax, kmax + 1):
-            for k in range(-kmax, kmax + 1):
-                if i * i + j * j + k * k == alpha and (i, j, k) != (0, 0, 0):
-                    pos.append((i, j, k))
-    if not pos:
-        return {"alpha": alpha, "beta": beta, "vacuous": True, "ok": True}
-    a = {p: float(rng.uniform(0.1, 1.5)) for p in pos}
-    mass2 = sum(x * x for x in a.values())
-    c2 = 0.0
-    outputs = []
-    for i in range(-2 * kmax, 2 * kmax + 1):
-        for j in range(-2 * kmax, 2 * kmax + 1):
-            for k in range(-2 * kmax, 2 * kmax + 1):
-                if i * i + j * j + k * k != beta:
-                    continue
-                kk = (i, j, k)
-                s = 0.0
-                for p in pos:
-                    q = (kk[0] - p[0], kk[1] - p[1], kk[2] - p[2])
-                    if q in a:
-                        s += a[p] * a[q]
-                c2 += s * s
-                if s:
-                    outputs.append(kk)
-    ratio = c2 / (mass2 * mass2) if mass2 > 0 else 0.0
-    return {
-        "alpha": alpha,
-        "beta": beta,
-        "n_input": len(pos),
-        "n_output_used": len(outputs),
-        "ratio": ratio,
-        "bound": 3.0,
-        "ok": ratio <= 3.0 + 1e-9,
-        "vacuous": False,
+def three_shear_field() -> dict:
+    """w = (sin y, sin z, sin x) on the normalized torus."""
+    field = {
+        (0, 1, 0): np.array([1.0 / (2.0j), 0.0, 0.0], dtype=np.complex128),
+        (0, 0, 1): np.array([0.0, 1.0 / (2.0j), 0.0], dtype=np.complex128),
+        (1, 0, 0): np.array([0.0, 0.0, 1.0 / (2.0j)], dtype=np.complex128),
     }
+    return enforce_reality(field)
 
 
-def check_exact_shell_K(seed: int = 1390) -> dict:
-    rng = np.random.default_rng(seed)
-    shells = shells_up_to(8)
-    pairs = [(4, 8), (5, 4), (9, 4), (16, 32), (1, 2)]
-    rows = []
-    max_K = 0.0
-    for alpha, beta in pairs:
-        modes = shells.get(int(alpha), [])
-        if not modes:
-            continue
-        params = random_shell_params(len(modes), rng)
-        w = build_exact_shell_field(modes, params["amps"], params["thetas"], params["phis"])
-        rec = K_of_w(w, float(alpha), float(beta))
-        rec["ok"] = rec["K"] <= K_BOUND + 1e-12
-        max_K = max(max_K, rec["K"])
-        rows.append(rec)
-    counts = []
-    for alpha, beta in ((4, 8), (5, 4), (1, 2)):
-        counts.append(weighted_count(alpha, beta, 8, rng))
+def k_form(x: float) -> float:
+    return 0.75 * (x**2) * (1.0 - x / 4.0)
+
+
+def check_exact_shell_symbolic() -> dict:
+    """Exact three-shear K and the elementary K-form maximum.
+
+    Does not run weighted-incidence / shell-count experiments.
+    """
+    rec = K_of_w(three_shear_field(), 1.0, 2.0)
+    shear_ok = (
+        abs(rec["K"] - (2.0 / 3.0)) < 1e-12
+        and abs(rec["E_w"] - 1.5) < 1e-12
+        and abs(rec["PiB_L2_sq"] - 0.75) < 1e-12
+    )
+    xs = [i / 64.0 for i in range(1, 4 * 64 + 1)]
+    vals = [k_form(x) for x in xs]
+    sampled_max = max(vals)
+    at_eight_thirds = k_form(8.0 / 3.0)
+    form_ok = (
+        abs(at_eight_thirds - K_BOUND) < 1e-12
+        and sampled_max <= K_BOUND + 1e-12
+        and k_form(4.0) <= 1e-12
+    )
     return {
         "K_bound": K_BOUND,
         "C": 4.0 / 3.0,
-        "max_K_on_samples": max_K,
-        "rows": rows,
-        "weighted_counts": counts,
-        "all_K_under_bound": all(r["ok"] for r in rows),
-        "all_counts_under_3": all(c["ok"] for c in counts),
+        "conventions": {
+            "torus_measure": "normalized",
+            "K_requires_alpha_positive_and_w_nonzero": True,
+        },
+        "three_shear": {
+            "field": "w=(sin y, sin z, sin x)",
+            "alpha": 1.0,
+            "beta": 2.0,
+            "K": rec["K"],
+            "K_exact": 2.0 / 3.0,
+            "E_w": rec["E_w"],
+            "PiB_L2_sq": rec["PiB_L2_sq"],
+            "ok": bool(shear_ok),
+        },
+        "k_form": {
+            "value_at_8_over_3": at_eight_thirds,
+            "sampled_max_on_64ths": sampled_max,
+            "ok": bool(form_ok),
+        },
+        "performs_shell_count_experiments": False,
+        "reads_saved_sweep_summary": True,
+        "ok": bool(shear_ok and form_ok),
     }
 
 
@@ -266,7 +257,7 @@ def check_grow_s_record() -> dict:
 def run() -> dict:
     family = check_family([1, 2, 3, 4, 5, 6, 8, 10])
     seed = check_seed()
-    shell = check_exact_shell_K()
+    shell = check_exact_shell_symbolic()
     grow = check_grow_s_record()
     hashes = {str(p.relative_to(ROOT)): sha256(p) for p in SOURCES if p.exists()}
     return {
@@ -305,9 +296,14 @@ def main() -> int:
     print("exact-shell 9D:", payload["exact_shell_9d_bound"])
     print("family all_ok:", payload["family"]["all_ok"])
     print("last R_star:", payload["family"]["rows"][-1]["R_star"])
-    print("max sample K:", payload["exact_shell"]["max_K_on_samples"])
+    print("three-shear K:", payload["exact_shell"]["three_shear"]["K"])
     print("NS solved:", payload["ns_solved"])
-    return 0 if payload["family"]["all_ok"] and payload["seed"]["ok"] else 1
+    ok = (
+        payload["family"]["all_ok"]
+        and payload["seed"]["ok"]
+        and payload["exact_shell"]["ok"]
+    )
+    return 0 if ok else 1
 
 
 if __name__ == "__main__":

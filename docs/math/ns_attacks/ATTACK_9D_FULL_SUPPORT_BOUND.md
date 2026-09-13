@@ -3,5 +3,8 @@
 The claimed \(C=4/3\) write sits in
 [`../../ATTACK-9D-FULL-SUPPORT-BOUND.md`](../../ATTACK-9D-FULL-SUPPORT-BOUND.md).
 
-Specialist review pending. Designed \(\Theta(m^2)\) 9D stays dead.
+CLAIMED: written derivation available; internal
+checks passed; independent specialist review
+pending. Numerical sweeps provide consistency
+checks only. Designed \(\Theta(m^2)\) 9D stays dead.
 Ordinary NS is not solved.

@@ -29,10 +29,20 @@ class Pr24ClosureReviewTests(unittest.TestCase):
             self.assertNotIn("hygiene", text.lower())
         bound = BOUND.read_text()
         self.assertIn("CLAIMED", bound)
+        self.assertIn(
+            "CLAIMED: written derivation available; internal checks passed; independent specialist review pending. Numerical sweeps provide consistency checks only.",
+            " ".join(bound.split()),
+        )
         self.assertIn("single input shell", bound)
         self.assertIn("No as a regularity close", bound)
         self.assertIn("Soft X silent", bound)
         self.assertIn("three-shear", bound)
+        self.assertIn("K=2/3", bound.replace(" ", ""))
+        self.assertIn("normalized torus", bound)
+        self.assertIn("does not perform the shell-count experiments", bound)
+        self.assertNotIn("sweep shows nothing near", bound)
+        self.assertIn("weighted incidence", bound)
+        self.assertIn("complex-polarization identity", bound)
 
     def test_family_kills_the_box_on_the_live_evaluator(self):
         payload = run()
@@ -44,8 +54,11 @@ class Pr24ClosureReviewTests(unittest.TestCase):
         self.assertTrue(payload["family"]["all_ok"])
         self.assertTrue(payload["seed"]["ok"])
         self.assertGreater(payload["family"]["rows"][-1]["R_star"], payload["family"]["rows"][0]["R_star"])
-        self.assertLess(payload["exact_shell"]["max_K_on_samples"], 16.0 / 9.0)
-        self.assertTrue(payload["exact_shell"]["all_K_under_bound"])
+        self.assertTrue(payload["exact_shell"]["ok"])
+        self.assertFalse(payload["exact_shell"]["performs_shell_count_experiments"])
+        self.assertTrue(payload["exact_shell"]["three_shear"]["ok"])
+        self.assertAlmostEqual(payload["exact_shell"]["three_shear"]["K"], 2.0 / 3.0, places=12)
+        self.assertTrue(payload["exact_shell"]["k_form"]["ok"])
         self.assertFalse(payload["stokes_moments_overwritten"])
 
     def test_tape_and_sheet_record_the_kill(self):

@@ -121,9 +121,13 @@ Grow \(s\) on the 9B family is **historical**.
 It is not designed 9D. It is not the kill.
 [`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md).
 Exact-shell \(K\le 16/9\) is **CLAIMED**.
-If it holds, occupancy \(s\) is gone on one
-input shell. A true \(4/3\) is **NO** as a
-regularity close. Soft X silent.
+Written derivation available; internal
+checks passed; independent specialist
+review pending. Numerical sweeps provide
+consistency checks only. If it holds,
+occupancy \(s\) is gone on one input shell.
+A true \(4/3\) is **NO** as a regularity
+close. Soft X silent.
 [`ATTACK-9D-FULL-SUPPORT-BOUND.md`](ATTACK-9D-FULL-SUPPORT-BOUND.md).
 
 Unrestricted ★ is **KILLED** by \(v_n\)

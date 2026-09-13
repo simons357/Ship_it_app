@@ -126,7 +126,7 @@ JSON: `results/attack9b_grow_s/grow_s.json`
 | Designed 9D \(\Theta(m^2)\) | **NO.** Dead. |
 | Fixed \(s\) | **NO** as a kill. \(K\le 16s\). |
 | Grow \(m\) and \(s\), \(\lvert k\rvert\) kept | **historical** as a test |
-| Exact-shell \(\sup K<\infty\) | **CLAIMED** \(16/9\). Other page. |
+| Exact-shell \(\sup K<\infty\) | **CLAIMED** \(16/9\). Written derivation; internal checks passed; specialist pending. Other page. |
 | Unrestricted Lemma★ | **NO.** Killed by \(v_n\). |
 
 Bounded samples are not that kill.

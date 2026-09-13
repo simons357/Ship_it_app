@@ -12,8 +12,9 @@ not T_ss; allowed R blocked;
 chain stays a chain):
 docs/TJJ-ESTIMATE.md
 Two analytic conclusions (exact-shell 9D
-claimed C=4/3; unrestricted ★ killed by
-v_n; specialist pending; NS not solved):
+claimed C=4/3, K≤16/9, internal checks
+passed, specialist pending; unrestricted
+★ killed by v_n; NS not solved):
 docs/LEMMA-STAR-LIVE.md
 docs/ATTACK-9D-FULL-SUPPORT-BOUND.md
 docs/LEMMA-STAR-GROWING-LAYER.md

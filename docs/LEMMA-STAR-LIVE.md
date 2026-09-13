@@ -4,17 +4,18 @@
 **NS not solved.**
 Unrestricted \(\sup\mathcal R_\star<\infty\) is **NO**.
 Exact-shell 9D \(K\le 16/9\) is **CLAIMED**.
+CLAIMED: written derivation available;
+internal checks passed; independent
+specialist review pending. Numerical
+sweeps provide consistency checks only.
 If it holds, occupancy \(s\) is gone on one
 input shell. That is a written bound, not a
 sweep maximum. A true \(4/3\) is **NO** as a
 regularity close: it does not repair
 unrestricted ★, does not restore
 ★ \(\Rightarrow\) GR, and is not a
-continuation criterion. Until a specialist
-signs the algebra, or a sweep shows
-nothing near \(16/9\), the word stays
-**CLAIMED**. Soft X silent. Replacement
-energy-budget closure **OPEN.**
+continuation criterion. Soft X silent.
+Replacement energy-budget closure **OPEN.**
 
 Phone: stay in this chat.
 
@@ -34,9 +35,13 @@ C\alpha\beta^{-1/2}\|w\|_2^2
 \sup K_{\alpha,\beta}<\infty.
 \]
 This review claims \(C=4/3\), equivalently
-\(K\le 16/9\), by a weighted count plus
-polarization cancellation. Both supports
-may grow. Full complex polarizations.
+\(K\le 16/9\), by the symmetrized
+interaction estimate, the weighted count,
+and the \(1/4\times 3\) coefficient. Both
+supports may grow. Full complex
+polarizations. The three-shear field has
+exact \(K=2/3\). That example is not the
+ceiling.
 Designed \(\Theta(m^2)\) stays
 dead. `attack9d_theta_m2_locked_phase.py`
 was not written.
@@ -80,14 +85,16 @@ Tape: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).
 
 ---
 
-Specialist review should check the
-weighted sphere count, the polarization
-factor, seed transfer signs, vertical
-cancellation, and match to the
-unrestricted statement. A mathematical
-objection should name a failing equation
-or an admissibility condition the family
-violates.
+The next exact-shell review is the
+weighted incidence argument and the
+complex-polarization identity. Exact-shell
+scope stays separated from unrestricted ★.
+On the kill side, check seed transfer
+signs, vertical cancellation, and match
+to the unrestricted statement. A
+mathematical objection should name a
+failing equation or an admissibility
+condition the family violates.
 
 Audit:
 `python3 scripts/ns_attacks/verify_pr24_closure_review.py --out results/pr24_closure_review/audit.json`

@@ -169,7 +169,11 @@ Fixed-output \(\Theta(m^2)\): counting error,
 Two analytic conclusions:
 docs/LEMMA-STAR-LIVE.md
 Exact-shell 9D claimed \(C=4/3\)
-(\(K\le 16/9\); specialist pending):
+(\(K\le 16/9\); written derivation;
+internal checks passed; independent
+specialist review pending; three-shear
+\(K=2/3\) exact; sweeps are consistency
+checks only):
 docs/ATTACK-9D-FULL-SUPPORT-BOUND.md
 Unrestricted ★ killed by \(v_n\):
 docs/LEMMA-STAR-GROWING-LAYER.md

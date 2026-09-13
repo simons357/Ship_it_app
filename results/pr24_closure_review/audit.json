@@ -161,88 +161,28 @@
   "exact_shell": {
     "K_bound": 1.7777777777777777,
     "C": 1.3333333333333333,
-    "max_K_on_samples": 0.4552948273627157,
-    "rows": [
-      {
-        "K": 0.4552948273627157,
-        "PiB_L2": 7.4200560107038385,
-        "PiB_L2_sq": 55.057231201982155,
-        "E_w": 7.77581335607423,
-        "alpha": 4.0,
-        "beta": 8.0,
-        "ok": true
-      },
-      {
-        "K": 0.004768415608020326,
-        "PiB_L2": 2.8718345967239554,
-        "PiB_L2_sq": 8.247433950940643,
-        "E_w": 16.635366139815098,
-        "alpha": 5.0,
-        "beta": 4.0,
-        "ok": true
-      },
-      {
-        "K": 0.0010997638910159135,
-        "PiB_L2": 3.5151944541620637,
-        "PiB_L2_sq": 12.356592050571727,
-        "E_w": 23.55521716442241,
-        "alpha": 9.0,
-        "beta": 4.0,
-        "ok": true
-      },
-      {
-        "K": 0.17189850958201672,
-        "PiB_L2": 6.587031301336742,
-        "PiB_L2_sq": 43.38898136479001,
-        "E_w": 5.617055022660819,
-        "alpha": 16.0,
-        "beta": 32.0,
-        "ok": true
-      },
-      {
-        "K": 0.18845031353644442,
-        "PiB_L2": 1.964882055813833,
-        "PiB_L2_sq": 3.860761493259194,
-        "E_w": 6.401077010293734,
-        "alpha": 1.0,
-        "beta": 2.0,
-        "ok": true
-      }
-    ],
-    "weighted_counts": [
-      {
-        "alpha": 4,
-        "beta": 8,
-        "n_input": 6,
-        "n_output_used": 12,
-        "ratio": 1.1114643839782619,
-        "bound": 3.0,
-        "ok": true,
-        "vacuous": false
-      },
-      {
-        "alpha": 5,
-        "beta": 4,
-        "n_input": 24,
-        "n_output_used": 6,
-        "ratio": 0.12700670110496873,
-        "bound": 3.0,
-        "ok": true,
-        "vacuous": false
-      },
-      {
-        "alpha": 1,
-        "beta": 2,
-        "n_input": 6,
-        "n_output_used": 12,
-        "ratio": 1.297529608707877,
-        "bound": 3.0,
-        "ok": true,
-        "vacuous": false
-      }
-    ],
-    "all_K_under_bound": true,
-    "all_counts_under_3": true
+    "conventions": {
+      "torus_measure": "normalized",
+      "K_requires_alpha_positive_and_w_nonzero": true
+    },
+    "three_shear": {
+      "field": "w=(sin y, sin z, sin x)",
+      "alpha": 1.0,
+      "beta": 2.0,
+      "K": 0.6666666666666669,
+      "K_exact": 0.6666666666666666,
+      "E_w": 1.4999999999999998,
+      "PiB_L2_sq": 0.75,
+      "ok": true
+    },
+    "k_form": {
+      "value_at_8_over_3": 1.777777777777778,
+      "sampled_max_on_64ths": 1.7777574062347412,
+      "ok": true
+    },
+    "performs_shell_count_experiments": false,
+    "reads_saved_sweep_summary": true,
+    "ok": true
   },
   "grow_s_historical": {
     "n_input_fields": 2084,
@@ -261,7 +201,7 @@
     "used_as_C0": false
   },
   "source_sha256": {
-    "docs/ATTACK-9D-GROW-S.md": "2be75ece0a3c6845bb15a72ece93f45c7ca4a73f53359e8df5f01b7265a46417",
+    "docs/ATTACK-9D-GROW-S.md": "ca04c6fd70a3a0206e5184e1e6daf3694cfc81b14a9c00f70475ab28c6bc52cf",
     "docs/LEMMA-STAR-REASON.md": "54375d5afb37ac3d32120803997af891d72593f86836daf529d19eeb9b77bce4",
     "docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md": "05bc900fdce193e310345dceb3b8494e3542cfcbb3c449fdf41192f51bc3ad2c",
     "docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md": "97959b278b092e71df7b9e1c89e6aedad0dcb8ab5a0a7ead2e7010ffe2cb72cd",
