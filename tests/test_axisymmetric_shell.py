@@ -99,6 +99,24 @@ class TestAuditDocuments(unittest.TestCase):
         self.assertIn("energy \\(z_j=", text.lower())
         self.assertIn("enstrophy", text.lower())
 
+    def test_estimate_locks_spectral_shift_terminology_scope(self):
+        text = ESTIMATE.read_text(encoding="utf-8")
+        self.assertIn("## Status / Terminology / Scope", text)
+        self.assertIn("spectral-shift identity", text)
+        self.assertIn("Lemma★ ratio bound", text)
+        self.assertIn("Dissipation threshold", text)
+        self.assertIn("Cross-scale terms", text)
+        self.assertIn("Remaining closure", text)
+        self.assertIn("Scope of computations", text)
+        self.assertIn("T_{j\\leftarrow j}", text)
+        self.assertIn("K_{\\max}", text)
+        self.assertIn("does not establish the depletion", text.lower())
+        # Must not claim NS / ★ closed
+        scope = text.split("## Status / Terminology / Scope", 1)[1].split("## 1.", 1)[0]
+        self.assertIn("NS not solved", scope)
+        self.assertNotIn("NS is solved", scope)
+        self.assertEqual(claim_tripwire_hits(scope), [])
+
     def test_estimate_writes_exact_pairing(self):
         text = ESTIMATE.read_text(encoding="utf-8")
         self.assertIn("P_j(u\\cdot\\nabla u)", text)

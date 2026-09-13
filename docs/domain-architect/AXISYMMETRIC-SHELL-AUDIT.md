@@ -61,14 +61,16 @@ paragraph is **OUT**. Including as “motivation” inside the proof.
 ## KEEP — Objects that earned their place today
 
 - \(\Lambda'=2(T_c-\nu D_s)/X\) as bookkeeping, not as the final left-hand side.
-- Spectral-shift identity: closed-triad rewrite \(\tau=(\omega(p)-\omega(r))J_p+(\omega(q)-\omega(r))J_q\) and shift by a lattice constant \(\omega_*\), not by \(\Lambda\). Bookkeeping only. Establishing the identity does not establish the Lemma★ ratio bound and does not control nonlinear transfer.
-- Closed-triad rewrite \(\tau=(\omega(p)-\omega(r))J_p+(\omega(q)-\omega(r))J_q\).
-- Shift by a lattice constant \(\omega_*\), not by \(\Lambda\).
+- **Spectral-shift identity:** closed-triad rewrite \(\tau=(\omega(p)-\omega(r))J_p+(\omega(q)-\omega(r))J_q\) and shift by a lattice constant \(\omega_*\), not by \(\Lambda\). Exact bookkeeping only. Distinct from the Lemma★ ratio bound; establishing the identity does not establish that bound or control nonlinear transfer. See Status / Terminology / Scope in the estimate note.
 - Door 1: shell budget. The only remainder is \(T_{j\leftarrow j}\).
 - Door 3 as a criterion to test: vorticity-direction alignment \(\alpha\), kept separate from triad-phase occupancy.
 - 2-D fact: adversary \(|T_c|/D_s\sim 0.017\), occupancy \(\sim 0.15\).
-- 3-D fact: random-phase ratio still \(O(10^{-2})\), HHH occupancy 1 on the orbits that were run, \(\alpha\approx 0.5\).
+- 3-D fact: random-phase ratio still \(O(10^{-2})\), HHH occupancy 1 on the orbits that were run, \(\alpha\approx 0.5\). Occupancy \(1\) with alignment \(\approx 1/2\) does **not** establish the depletion required for closure.
+- Dissipation threshold hygiene: \(\rho_j<\nu\) (when \(\rho_j\) is normalized by palinstrophy) belongs to an enstrophy–palinstrophy route (A); it is not absorption for the displayed shell-energy budget (viscous term \(\nu Z_j\)).
+- Cross-scale bounds and summability: proposed, **not** established by this filter or the estimate note.
+- Conditions (A)–(C) and Step 6: candidate closure routes only; principal unresolved term remains \(T_{j\leftarrow j}\); Step 6 must not reintroduce the bounded quantity via \(\dot e_j\), \(\dot Z\), or \(\Lambda'\).
 - Swirl geometry as the class that removes free helical HHH.
+- Scope of computations: small exact disks / stated restricted classes only — no uniform conclusion as \(K_{\max}\to\infty\) or for generic data.
 
 ## KEEP — Habits
 
