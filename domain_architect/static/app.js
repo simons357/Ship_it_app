@@ -146,6 +146,12 @@ $("cyOpenBoard").addEventListener("click", async () => {
   show($("cyOut"), await api("/api/cycle", { name: "open-board" }));
 });
 
+$("cyShell").addEventListener("click", async () => {
+  $("cyName").value = "axisymmetric-shell";
+  $("cyOut").textContent = "Naming Door-1 remainder Tjj (OPEN, not Clay)…";
+  show($("cyOut"), await api("/api/cycle", { name: "axisymmetric-shell" }));
+});
+
 $("cyIntensity").addEventListener("click", async () => {
   $("cyName").value = "turbulence-intensity";
   $("cyOut").textContent = "Running intensity vs no-actuation control…";

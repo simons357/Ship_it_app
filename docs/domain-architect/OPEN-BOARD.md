@@ -1,7 +1,8 @@
 # Honest OPEN board
 
-**Status:** a Domain Architect lab protocol, August 2026  
-**Not a Navier–Stokes proof.** Clay is **NOT CLAIMED**. DA-VC-01 stays **FAIL**.
+**Status:** a Domain Architect lab protocol, September 2026  
+**Not a Navier–Stokes proof.** Clay is **NOT CLAIMED**. DA-VC-01 stays **FAIL**.  
+**Shell-estimate filter:** [`AXISYMMETRIC-SHELL-AUDIT.md`](AXISYMMETRIC-SHELL-AUDIT.md).
 
 The OPEN chorus was mixing four different kinds of unfinished work:
 
@@ -15,16 +16,20 @@ The OPEN chorus was mixing four different kinds of unfinished work:
 | **STILL OPEN** | Genuine remaining math | Short list only |
 
 Canonical spec: [`docs/DOMAIN-ARCHITECT.md`](../DOMAIN-ARCHITECT.md).  
-Siblings: [`LEFTOVER-REPAIR.md`](LEFTOVER-REPAIR.md), [`LOCALIZED-REPAIR.md`](LOCALIZED-REPAIR.md).  
-Challenge: [`DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md`](DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md).
+Siblings: [`LEFTOVER-REPAIR.md`](LEFTOVER-REPAIR.md), [`LOCALIZED-REPAIR.md`](LOCALIZED-REPAIR.md), [`SND-AND-SIX.md`](SND-AND-SIX.md).  
+Challenge: [`DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md`](DA_Validation_Challenge_01_Unaugmented_Navier_Stokes.md).  
+Shell estimate (this remainder is \(T_{j\leftarrow j}\), not Clay): [`docs/papers/swirl/AXISYMMETRIC-SHELL-ESTIMATE.md`](../papers/swirl/AXISYMMETRIC-SHELL-ESTIMATE.md).
 
 ## What actually remains open (math)
 
 1. **GAP1 Step F / Fujii remainder** — one calculation, not a slogan. Operators A and B are already **not identical**. \(\lambda_{\min}/\log N\to-1/(2\pi)\) is **not a theorem**.
-2. **Route J all-\(N\)** — \(N\le 800\) numerical. Not a regularity proof.
-3. **NS-open / Clay Statement B** — not a DA validation gate. Stamping it from DA fails DA-VC-01.
+2. **Route J all-\(N\)** — \(N\le 800\) numerical. Not a regularity proof. Stays separate from SND / GNC / Bridge Triple Lock.
+3. **NS-open / Clay Statement B** — not a DA validation gate. Stamping it from DA fails DA-VC-01. Not a close of the axisymmetric shell estimate.
+4. **Axisymmetric-with-swirl shell remainder \(T_{j\leftarrow j}\)** — Class: unaugmented axisymmetric NS with swirl. Quantity: labeled \(Z_j\) (energy \(\neq\) enstrophy). Remainder: \(T_{j\leftarrow j}\). Assumed: [no DNS; no closed stepper]. Spectral-shift identity is bookkeeping, not Lemma★, not transfer control. \(\rho_j<\nu\) is enstrophy–palinstrophy (A), not energy-budget absorption. Occupancy 1 with \(\alpha\approx 1/2\) is not depletion. Leftover still **OPEN**. Clay **NOT CLAIMED**. DA-VC-01 stays **FAIL**.
 
-The three NS leftovers (swirl strain, unconditional Ring SND, Paper2 simplex 7–8) are **conditional closes**: if \(\sigma\) then the rest of that book runs. \(\sigma\) is not proved. That is the only honest theorem-shaped close DA can give them.
+Do **not** read item 4 as SND, WRITE (6), Q6, or leftover-split #6. Estimate Step 6 is a **proposed** mechanism on this program (needs (A), **not claimed**); it is not the remainder. WRITE (6)/H1 stays **PARK**. Q6 constitutive is **DISCARD**. See [`SND-AND-SIX.md`](SND-AND-SIX.md).
+
+The three NS leftovers (swirl strain, unconditional Ring SND, Paper2 simplex 7–8) are **conditional closes**: if \(\sigma\) then the rest of that book runs. \(\sigma\) is not proved. That is the only honest theorem-shaped close DA can give them. Do **not** set \(\sigma_{\mathrm{strain}}=T_{j\leftarrow j}\). There is **no leftover-split item #6**.
 
 ## What DA just closed in software (A13)
 
@@ -39,12 +44,13 @@ This does **not** make DA-VC-01 a pass. T1 still needs a declared
 
 ```
 python -m domain_architect cycle open-board
+python -m domain_architect cycle axisymmetric-shell
 python -m domain_architect synthesize --target "global smoothness of unaugmented axisymmetric Navier-Stokes with swirl" --constraint "classical NS"
 python -m domain_architect cycle leftover-repair
 python -m domain_architect cycle localized-repair
 ```
 
-Desktop Cycle tab: **Honest OPEN board**.
+Desktop Cycle tab: **Honest OPEN board** and **Axisymmetric shell (T_{j←j} OPEN)**.
 
 ## What this does not do
 

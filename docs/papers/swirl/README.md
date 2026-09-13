@@ -48,6 +48,13 @@ On this branch, compile [`Simons_PhiRenorm_Swirl_2026-08-22.tex`](Simons_PhiReno
 
 [`SWIRL-CONTINUATION.md`](SWIRL-CONTINUATION.md) is the 22 August reconstruction of what stands. [`phi_renorm_continuation.tex`](phi_renorm_continuation.tex) is the earlier continuation sketch. Plain English: [`WHERE-WE-STAND.md`](WHERE-WE-STAND.md).
 
+**Shell estimate (Door 1 remainder \(T_{j\leftarrow j}\), not a close):**
+[`AXISYMMETRIC-SHELL-ESTIMATE.md`](AXISYMMETRIC-SHELL-ESTIMATE.md).
+Binding filter:
+[`docs/domain-architect/AXISYMMETRIC-SHELL-AUDIT.md`](../../domain-architect/AXISYMMETRIC-SHELL-AUDIT.md).
+Swirl geometry removing free helical HHH is a **class** statement, not
+a measured 3-D CFM close. Clay **NOT CLAIMED**.
+
 ## May 2026 geometry-bridge essay
 
 [`PHI_GEOMETRY_BRIDGE.md`](PHI_GEOMETRY_BRIDGE.md) is the author’s

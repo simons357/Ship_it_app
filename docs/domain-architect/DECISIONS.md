@@ -36,6 +36,16 @@ Implied by those rows and implemented with them: **C3, C7, C8, C17, C18, C19, C2
 
 **Recorded 2026-08-24 (logo, confirmed).** Black & gold and all-silver 3D lockups both stay as official looks (peer Mark views). Lambda Lab stays as the vector construction tool. Neither replaces the other.
 
+**Recorded 2026-09-12.** Jonathan Simons locked the written KEEP / DISCARD / PARK audit as the **binding filter** for **one** program: the axisymmetric (with swirl) shell estimate. File: [`AXISYMMETRIC-SHELL-AUDIT.md`](AXISYMMETRIC-SHELL-AUDIT.md). Estimate note: [`docs/papers/swirl/AXISYMMETRIC-SHELL-ESTIMATE.md`](../papers/swirl/AXISYMMETRIC-SHELL-ESTIMATE.md). Remainder \(T_{j\leftarrow j}\) stays visible. Clay / unconditional 3-D regularity is **NOT CLAIMED**. Turbulence-reduction stays a **different** stack (PARK). Do not copy the ship envelope onto this estimate. Do not treat a Tao-positive reply as proof certification.
+
+**Recorded 2026-09-12 (next step, not a close).** Class: unaugmented axisymmetric Navier–Stokes with swirl. Quantity: \(Z_j=\tfrac12\|P_j u\|_{L^2}^2\). Remainder: \(T_{j\leftarrow j}\). Assumed: [no DNS; no closed stepper]. The Door-1 pairing is written; the algebraic pairing residual is a unit check; \(T_{j\leftarrow j}/Z_j\) is **NOT COMPUTED**. Status stays **OPEN**. Clay is **NOT CLAIMED**. DA-VC-01 stays **FAIL**.
+
+**Recorded 2026-09-12 (fold Sept 11 Tjj chain, not a close).** Class: unaugmented axisymmetric-with-swirl. Quantity: \(Z_j\) (energy in §1; enstrophy on the Sept 11 write). Remainder: \(T_{j\leftarrow j}\). Assumed: [compact samples are not DNS]. Far-shell Young sits. Requested \(\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu D_j+R\) stays **REFUSED**. Status stays **OPEN**. Clay is **NOT CLAIMED**. DA-VC-01 stays **FAIL**. Source branch `origin/cursor/tjj-estimate-chain-e5c5` was read, not checked out as HEAD.
+
+**Recorded 2026-09-13 (Status / Terminology / Scope standing language, not a close).** Class: unaugmented axisymmetric-with-swirl. Quantity: labeled energy \(Z_j\) vs enstrophy \(Z_j\). Remainder: \(T_{j\leftarrow j}\). Assumed: [Jon’s five blocks filed as standing language]. Spectral-shift identity is bookkeeping, not Lemma★, not transfer control. \(\rho_j<\nu\) is enstrophy–palinstrophy (A), not energy-budget absorption. Occupancy 1 with \(\alpha\approx 1/2\) is not depletion. (A)–(C) stay candidate routes. Estimate Step 6 stays a **proposed** mechanism (needs (A), **not claimed**); it is not the remainder. Status stays **OPEN**. Clay is **NOT CLAIMED**. DA-VC-01 stays **FAIL**.
+
+**Recorded 2026-09-13 (SND / 6 cleanup, not a close).** Math/proofs parked. SND leftover stays Ring \(J/X\) or Paper2 steps 7–8 (**CONDITIONAL**). Estimate Step 6 stays proposed IF (A), not claimed. WRITE (6)/H1 stays **PARK** (not Door-1). Q6 constitutive stays **DISCARD**. Leftover-split has no item #6. Do not glue those names. Card: [`SND-AND-SIX.md`](SND-AND-SIX.md). Clay is **NOT CLAIMED**. DA-VC-01 stays **FAIL**.
+
 Live software today (verified 2026-08-24 before this rewrite): local desktop app at `http://127.0.0.1:8765/`, CLI, 51 unit tests green. That package was a three-verb UI around Firestone analogy, equation-error OLS, RK4, saturated PD, FFT Poisson, and a three-pattern classifier. This rewrite implements the marked table.
 
 ---

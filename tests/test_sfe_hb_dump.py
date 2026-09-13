@@ -110,6 +110,7 @@ class TestLivePathDropsSfeHb(unittest.TestCase):
             "lab_cases.py",
             "localized_repair.py",
             "open_board.py",
+            "axisymmetric_shell.py",
             "turbulence_intensity.py",
             "available_turbulence.py",
             "turbulence_program.py",
