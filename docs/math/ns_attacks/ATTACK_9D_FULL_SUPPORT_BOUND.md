@@ -51,13 +51,16 @@ finite-closer limit. It does not control a
 general multi-shell field. The growing-layer
 family is multi-shell. No contradiction.
 
-If \(K\le 16/9\) sits: yes as an
-exact-shell result (occupancy \(s\)
-gone on one input shell). No as a
-regularity close. It does not restore
-★ \(\Rightarrow\) GR. Until a specialist
-signs, or a near-ceiling sweep sits,
-the word is still CLAIMED.
+If \(K\le 16/9\) holds, occupancy \(s\)
+is gone on a single input shell.
+That is a written bound on exact-shell
+fields, not a sweep maximum.
+No as a regularity close. A true
+\(4/3\) does not restore
+★ \(\Rightarrow\) global regularity.
+Until a specialist signs, or a sweep
+shows nothing near \(16/9\), the word
+is still CLAIMED.
 
 ---
 

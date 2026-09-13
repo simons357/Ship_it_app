@@ -68,25 +68,26 @@ family is multi-shell. No contradiction.
 
 ## If \(K\le 16/9\) sits
 
-**Yes — as an exact-shell result.**
-Occupancy \(s\) is gone on one input
-shell. That is a bound you can write,
-not a sweep maximum. The three-shear
-field then sits under a named ceiling
-instead of under a rumor.
+**Yes.**
+If \(K\le 16/9\) holds, occupancy \(s\)
+is gone on a single input shell.
+That is a written bound on exact-shell
+fields, not a sweep maximum.
+The three-shear field then sits under
+a named ceiling, not under a rumor.
 
-**No — as a regularity close.**
+**No as a regularity close.**
 A true \(4/3\) does not kill or repair
 unrestricted ★. That box is already
 dead by the multi-shell family \(v_n\).
 It does not give a continuation
-criterion. It does not restore
-★ \(\Rightarrow\) GR. Ordinary NS
-stays open.
+criterion and it does not restore
+★ \(\Rightarrow\) global regularity.
+Ordinary NS stays open.
 
 Until a specialist signs the algebra,
 or a sweep shows nothing near \(16/9\),
-the right word is still **CLAIMED**.
+the word is still **CLAIMED**.
 Soft X silent.
 
 ---

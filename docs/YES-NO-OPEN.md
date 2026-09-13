@@ -167,14 +167,14 @@ and as the write-up example,
 and still NO as \(16/9\).
 If SuperGrok writes \(4/3\) as a
 theorem, that is NO. CLAIMED.
-If \(K\le 16/9\) sits, that is YES
-as an exact-shell result
-(occupancy \(s\) gone on one input
-shell) and still NO as a regularity close.
-It does not restore ★ \(\Rightarrow\) GR.
-Until a specialist signs, or a
-near-ceiling sweep sits, the word
-is CLAIMED.
+If \(K\le 16/9\) holds, occupancy \(s\)
+is gone on a single input shell:
+YES as a written bound on exact-shell
+fields, still NO as a regularity close.
+It does not restore ★ \(\Rightarrow\)
+global regularity. Until a specialist
+signs, or a sweep shows nothing near
+\(16/9\), the word is still CLAIMED.
 
 Those three words do not trade.
 NS not solved. RH not solved.
