@@ -8,9 +8,9 @@
 
 ## 1. Is the exact-shell 9D four-thirds coefficient proven?
 
-**No. It is still a claim.** Specialist review has not happened.
+**CLAIMED:** written derivation available; internal checks passed; independent specialist review pending. Numerical sweeps provide consistency checks only.
 
-The claimed statement is: if \(Aw=\alpha w\) and \(\beta>0\), then
+The claimed statement is: if \(Aw=\alpha w\), \(\alpha>0\), \(w\neq 0\), and \(\beta>0\), then
 
 \[
 \|\Pi_\beta B(w,w)\|_2
@@ -20,7 +20,7 @@ The claimed statement is: if \(Aw=\alpha w\) and \(\beta>0\), then
 
 equivalently \(K_{\alpha,\beta}(w)\le 16/9\). Optimality is not claimed.
 
-This book does **not** stamp that coefficient. Score of the full writeup: [`ATTACK-9D-FULL-SUPPORT-SCORE.md`](ATTACK-9D-FULL-SUPPORT-SCORE.md). The claimed steps are a weighted lattice count (factor \(3\)) plus a polarization kernel (factor \(3/4\)). The elementary max of \((3/4)x^2(1-x/4)\) is \(16/9\) at \(x=8/3\); that calculus step is not the theorem. The audit checks a few shells and three count ratios \(\le 3\). Those are checks, not a lattice theorem and not a proof-assistant verification. Existing maxima \(0.641\) and \(0.456\) are not near \(16/9\). That does not unclaim the bound.
+This book does **not** stamp that coefficient. Score: [`ATTACK-9D-FULL-SUPPORT-SCORE.md`](ATTACK-9D-FULL-SUPPORT-SCORE.md). The missing step in earlier summaries is the symmetrized interaction estimate; ordered convolution is half the symmetrization, so squaring contributes \(1/4\) and the weighted count contributes \(3\). An internal audit reported no gap. Independent specialist review remains pending. The named verifier checks the symbolic identity and growing-layer vs the evaluator; it reads the saved sweep summary and does **not** run the shell-count experiments. Sweeps are consistency only.
 
 ---
 
@@ -57,7 +57,7 @@ Every plotted \(K\) sits below the claimed \(16/9\approx 1.778\). That does not 
 
 **No.**
 
-Evaluator matches (this book’s core, PR #24 `stokes_moments`, the closure-review audit) are in-circle computational checks. They are not an independent specialist reading of the weighted sphere count or the polarization factor. The record still says specialist review pending.
+An internal audit of the exact-shell argument reported no gap, and the named verifier passed its symbolic checks. That is in-circle. The meaningful next review is the weighted incidence argument and the complex-polarization identity. Independent specialist review remains pending.
 
 ---
 
@@ -74,7 +74,7 @@ A true \(4/3\) does not kill or repair unrestricted ★. That box is already dea
 - The unaugmented regularity program used unrestricted ★ as closure. That closure is **dead**. Nobody has written a chain “9D \(\Rightarrow\) global regularity.”
 - Soft X, SND, Theorem H stay silent. Do not glue them in.
 
-Until a specialist signs the algebra, or a sweep shows nothing near \(16/9\), the word is still **CLAIMED**. Soft X silent.
+**CLAIMED:** written derivation available; internal checks passed; independent specialist review pending. Soft X silent.
 
 ---
 

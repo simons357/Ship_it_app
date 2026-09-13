@@ -11,12 +11,12 @@
 
 The review’s growing-layer family was built on this book’s exact core. \(n=1\ldots4\) match the pasted `stokes_moments` table. \(\mathcal R_\star(v_n)\ge n/165888\to\infty\). That kills the unrestricted instantaneous bound. It does **not** construct a singular NSE solution.
 
-Writeups later landed on the PR #24 tip. The full-support 9D page is scored here as **CLAIMED**: [`ATTACK-9D-FULL-SUPPORT-SCORE.md`](ATTACK-9D-FULL-SUPPORT-SCORE.md). If \(K\le16/9\) holds, occupancy \(s\) is gone on a single input shell — a written exact-shell ceiling, not a sweep maximum — and the three-shear \(K=2/3\) sits under a named number. Existing maxima \(0.641\) and \(0.456\) are not near \(16/9\); that does not unclaim the bound. **No as a regularity close.** Soft X silent. Floor: [`NINE-D-TWO-THIRDS.md`](NINE-D-TWO-THIRDS.md).
+Writeups later landed on the PR #24 tip. Exact-shell 9D: **CLAIMED** — written derivation available; internal checks passed; independent specialist review pending. Numerical sweeps provide consistency checks only. Score: [`ATTACK-9D-FULL-SUPPORT-SCORE.md`](ATTACK-9D-FULL-SUPPORT-SCORE.md). If \(K\le16/9\) holds, occupancy \(s\) is gone on a single input shell, and the three-shear \(K=2/3\) sits under a named ceiling. **No as a regularity close.** Soft X silent. Floor: [`NINE-D-TWO-THIRDS.md`](NINE-D-TWO-THIRDS.md).
 
 ## What is still open
 
 - Unaugmented regularity / Clay: needs a **replacement closure**. Framed in [`REPLACEMENT-CLOSURE.md`](REPLACEMENT-CLOSURE.md). Bounded aspect does **not** exclude \(v_n\) (aspect is exactly 6). Need★ is not a repair of the old box. Extra-factor ratios \(\mathcal R_\star/\sqrt{X/E}\) on this family are diagnostics only — not a theorem.
-- Exact-shell 9D / \(K\le16/9\): different statement. Full writeup scored; word still **CLAIMED**. Specialist or a near-ceiling sweep still missing.
+- Exact-shell 9D / \(K\le16/9\): different statement. **CLAIMED** (written derivation; internal checks; independent specialist pending). Sweeps are consistency only. Next review: weighted incidence and the complex-polarization identity.
 - Need★ signed dual: **cannot repair** the same unrestricted bound unless hypotheses change.
 - Soft X: silent.
 

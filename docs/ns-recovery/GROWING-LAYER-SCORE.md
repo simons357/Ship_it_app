@@ -69,9 +69,9 @@ The review claims
 K_{\alpha,\beta}\le\frac{16}{9}.
 \]
 
-The writeup now sits on the PR #24 tip. **That page itself says CLAIMED, specialist pending** — not proved. This book agrees and does **not** stamp \(C=4/3\).
+The writeup now sits on the PR #24 tip. **CLAIMED:** written derivation available; internal checks passed; independent specialist review pending. Numerical sweeps provide consistency checks only. This book does **not** stamp \(C=4/3\).
 
-The audit prints a few exact-shell \(K\) values and three weighted-count ratios \(\le 3\). Those are checks, not the lattice theorem. The write-up example is the three-shear field \(K_{1,2}=2/3\) (floor, not ceiling). Sweep maxima \(0.641\) and \(0.456\) are weaker objects. None of these proves \(16/9\). Score: [`NINE-D-TWO-THIRDS.md`](NINE-D-TWO-THIRDS.md).
+The named verifier checks the symbolic identity and growing-layer vs the evaluator; it reads the saved sweep summary and does not run the shell-count experiments. The write-up example is the three-shear field \(K_{1,2}=2/3\) (floor, not ceiling). Sweep maxima \(0.641\) and \(0.456\) are consistency only. Score: [`ATTACK-9D-FULL-SUPPORT-SCORE.md`](ATTACK-9D-FULL-SUPPORT-SCORE.md).
 
 Exact-shell 9D and unrestricted ★ are **distinct**. The growing-layer family does not live on one shell, so it does not touch that coefficient question.
 
