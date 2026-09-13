@@ -93,9 +93,11 @@ Tape: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).
 ---
 
 The next exact-shell review is the
-weighted incidence argument and the
-complex-polarization identity. Exact-shell
-scope stays separated from unrestricted ★.
+two-plane incidence plus AM-GM, and the
+Hermitian line for \(k\cdot w_p\).
+Exact-shell scope is a labeled limitation:
+one input shell, not unrestricted ★.
+No named reviewer and no date.
 On the kill side, check seed transfer
 signs, vertical cancellation, and match
 to the unrestricted statement. A

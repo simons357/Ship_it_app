@@ -8,10 +8,21 @@ remainder is occupancy \(s\);
 the claimed bound removes that factor
 on a single input shell.
 
-**This is a different statement from unrestricted
-Lemma★.** The unrestricted box is the growing-layer
-family ([`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md)).
-This page does not resurrect it.
+**Limitation / assumption.** This page
+bounds \(K_{\alpha,\beta}(w)\) only for a
+single input eigen-shell \(Aw=\alpha w\).
+It does not bound a general multi-shell
+field. It does not bound unrestricted
+\(\mathcal R_\star\). The unrestricted box
+is already dead by the growing-layer
+family \(v_n\)
+([`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md)).
+This page does not resurrect it. A true
+\(4/3\) is **NO** as a regularity close:
+it does not repair ★, does not restore
+★ \(\Rightarrow\) global regularity, and
+is not a continuation criterion.
+Ordinary NS stays open.
 
 If \(K\le 16/9\) holds, occupancy \(s\) is
 gone on a **single input shell**. That is a
@@ -19,14 +30,6 @@ written bound on exact-shell fields, not a
 sweep maximum. The three-shear field then
 sits under a named ceiling, not under a
 rumor.
-
-**No as a regularity close.** A true
-\(4/3\) does not kill or repair unrestricted
-★. That box is already dead by the
-multi-shell family \(v_n\). It does not
-give a continuation criterion and it does
-not restore ★ \(\Rightarrow\) global
-regularity. Ordinary NS stays open.
 
 **CLAIMED: written derivation available;
 internal checks passed; independent
@@ -115,10 +118,8 @@ not claimed.
 For \(\beta>4\alpha\) the bound is vacuous:
 \(\Pi_\beta B=0\).
 
-This does not control an arbitrary simultaneous
-finite-closer limit, and it does not control
-a general multi-shell field. The growing-layer
-family is multi-shell. No contradiction.
+See the limitation box above. No contradiction
+with the multi-shell kill of unrestricted ★.
 
 ---
 
@@ -171,21 +172,34 @@ P_k\bigl[(q\cdot w_p)w_q+(p\cdot w_q)w_p\bigr]
 \,|w_p|\,|w_q|.
 \]
 
-The in-plane components cancel after
-projection. The remaining component is
-estimated in the Hermitian inner product
-on \(\mathbb{C}^3\). Cauchy–Schwarz then
-gives \(\lvert\langle u,v\rangle\rvert\le\lvert u\rvert\lvert v\rvert\)
-for any two vectors, including
-independently complex polarizations in
-the two transverse planes. Real or
-aligned polarizations are not assumed.
-The factor \(\sqrt{\beta(1-\beta/(4\alpha))}\)
-is the Euclidean length of the remaining
-real direction \(k_\perp\). Saturation of
-Cauchy–Schwarz is not claimed.
-The complete calculation is in §3 of
-the underlying proof.
+Because \(k\) is real and \(p\cdot w_p=0\),
+\[
+k\cdot w_p
+=
+k_\perp\cdot w_p
+=
+\sum_{j=1}^3 (k_\perp)_j\,(w_p)_j.
+\]
+Cauchy–Schwarz on \(\mathbb{C}^3\) is then
+the explicit line
+\[
+\bigl\lvert k\cdot w_p\bigr\rvert
+=
+\Bigl\lvert\sum_{j=1}^3 (k_\perp)_j\,(w_p)_j\Bigr\rvert
+\le
+\lvert k_\perp\rvert\,|w_p|,
+\]
+and likewise for \(w_q\). The pairing is
+the standard Hermitian product against a
+real vector (modulus unchanged if one
+conjugates \(w_p\)). This uses only
+\(p\cdot w_p=0\) and \(k_\perp\in\mathbb{R}^3\).
+It does not use reality or alignment of
+the two polarizations. After the in-plane
+cancellation in §3, the projected
+symmetrized term is bounded by this
+factor times \(|w_q|\), not twice that.
+Saturation is not claimed.
 
 The ordered convolution equals half its
 symmetrization:
@@ -212,27 +226,48 @@ The claimed lattice inequality is
 3\Bigl(\sum_{p\in S}a_p^2\Bigr)^2.
 \]
 
-Expand the square. A fixed pair \((p,r)\)
-contributes only at outputs \(k\) that satisfy
+Write \(M=\sum_{p\in S}a_p^2\) and expand
+\[
+\sum_k c_k^2
+=
+\sum_{p,r\in S}
+a_p a_r
+\sum_{k\in K(p,r)}
+a_{k-p}a_{k-r},
+\]
+where \(K(p,r)\) is the set of \(k\) with
 \(\lvert k\rvert^2=\beta\) and
-\(k\cdot p=k\cdot r=\beta/2\).
+\(k\cdot p=k\cdot r=\beta/2\)
+(so that \(k-p\) and \(k-r\) lie on the
+input shell).
 
 - If \(p\) and \(r\) are linearly independent,
-  two affine planes meet the sphere
-  \(\lvert k\rvert^2=\beta\) in at most two points.
-- If \(r=\lambda p\) and \(\lvert p\rvert^2=\lvert r\rvert^2=\alpha\),
+  the two affine planes meet the sphere
+  \(\lvert k\rvert^2=\beta\) in at most two
+  points, so \(\lvert K(p,r)\rvert\le 2\).
+- If \(r=\lambda p\) and
+  \(\lvert p\rvert^2=\lvert r\rvert^2=\alpha\),
   then \(\lambda=\pm 1\). The case \(r=p\) is
   the diagonal. The case \(r=-p\) forces
   \(\beta=0\), which is excluded.
 
-So a fixed distinct pair meets at most two
-outputs. Weighted AM-GM bounds the
-off-diagonal contribution by twice the
-squared mass. The diagonal is at most once
-the squared mass. Total factor \(3\).
+Off-diagonal terms therefore meet at most
+two outputs. Weighted AM-GM
+\(2a_pa_ra_{k-p}a_{k-r}\le a_p^2 a_{k-p}^2+a_r^2 a_{k-r}^2\)
+bounds that contribution by \(2M^2\).
+The diagonal \(p=r\) contributes at most
+\(M^2\). Adding those pieces gives the
+factor \(3\). This count is derived here
+from the two-plane incidence and that
+AM-GM. It is not a finite-shell
+experiment.
 
-That is the incidence argument. It is not
-a finite-shell experiment.
+This is not the Ring Lemma and not a
+Borromean triad. Those are a different
+integral, and the Ring Lemma is not
+quoted as proved
+([`LEMMA-STAR-PACKET.md`](LEMMA-STAR-PACKET.md),
+[`H1-SOT.md`](H1-SOT.md)).
 
 ---
 
@@ -312,6 +347,25 @@ step remains pending.
 
 ---
 
+## Boundary \(\beta\to 4\alpha\)
+
+At \(\beta=4\alpha\), \(\lvert k_\perp\rvert=0\)
+and \(g(4)=0\). The interaction estimate
+uses \(\lvert k_\perp\rvert\) as a
+**multiplier**, never as a denominator.
+Nothing in the argument divides by
+\(\lvert k_\perp\rvert\) or requires it
+bounded away from zero. At the endpoint
+the symmetrized bound is \(0\), so those
+pairs do not contribute. The equivalent
+form \(\|\Pi_\beta B\|_2\le(4/3)\alpha\beta^{-1/2}E\)
+divides by \(\sqrt{\beta}=2\sqrt{\alpha}>0\),
+not by \(\lvert k_\perp\rvert\). The
+quotient \(K\) has \(\beta\) in the
+numerator. The endpoint is regular.
+
+---
+
 ## Three-shear example and historical numbers
 
 The three-shear field
@@ -325,6 +379,10 @@ and gives
 \(\|\Pi_2 B(w,w)\|_2^2=3/4\),
 hence **\(K=2/3\) exactly**.
 The locked evaluator reproduces that value.
+This sits **strictly inside** the claimed
+ceiling: \(2/3=6/9<16/9\). It is an exact
+lower example, not a matching lower bound,
+and it does not make \(16/9\) sharp.
 
 Historical numerical maxima sit beside it.
 They are consistency checks, not the bound.
@@ -355,16 +413,33 @@ example, not a sweep.
 
 ---
 
+## Independent review
+
+No named reviewer. No date.
+Independent specialist review is
+**pending**. This page is not assigned
+to Tao, Vicol, Gómez-Serrano, or any
+other named reader of the broader NS
+program. Those names are a different
+list. They have not been asked to sign
+this estimate. This is not a Dream Team
+vote. Soft X silent.
+
+---
+
 ## What the next review checks
 
 Redo the one-variable maximum of
 \(g(x)=(3/4)x^2(1-x/4)\) on \((0,4]\).
 The written calculus sits above.
 Then verify the weighted incidence
-argument and the complex-polarization identity
-in the Hermitian product.
-The exact-shell scope is correctly
-separated from unrestricted ★.
+argument (two-plane plus AM-GM) that
+produces the factor \(3\), and the
+complex-polarization identity: the
+Hermitian line
+\(\lvert k\cdot w_p\rvert\le\lvert k_\perp\rvert\,|w_p|\)
+together with the §3 in-plane cancellation.
+The limitation box is the scope.
 
 ---
 

@@ -35,7 +35,8 @@ class Pr24ClosureReviewTests(unittest.TestCase):
             flat,
         )
         self.assertIn("single input shell", bound)
-        self.assertIn("No as a regularity close", bound)
+        self.assertIn("Limitation / assumption", bound)
+        self.assertIn("as a regularity close", bound)
         self.assertIn("Soft X silent", bound)
         self.assertIn("three-shear", bound)
         self.assertIn("K=2/3", bound.replace(" ", ""))
@@ -48,6 +49,11 @@ class Pr24ClosureReviewTests(unittest.TestCase):
         self.assertIn("0<\\beta\\le4\\alpha", bound.replace(" ", ""))
         self.assertIn("g'(x)", bound.replace(" ", ""))
         self.assertIn("8/3", bound)
+        self.assertIn("strictly inside", bound)
+        self.assertIn("multiplier", bound)
+        self.assertIn("No named reviewer", bound)
+        self.assertIn("not the Ring Lemma", bound)
+        self.assertIn(r"k\cdot w_p", bound)
 
     def test_family_kills_the_box_on_the_live_evaluator(self):
         payload = run()
