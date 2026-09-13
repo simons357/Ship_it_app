@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>COSMIC GRAFITTI — Issue 01</title>
+<meta name="description" content="Lost-and-found reprint of the May 2026 Universal Geometry wall. Algebra KEEP. Sky PARK. NS not solved.">
+<style>
+  :root {
+    --wall: #07060b;
+    --brick: #141018;
+    --chrome: #f4efe4;
+    --mute: #b7b0a4;
+    --pink: #ff2d8a;
+    --acid: #c6ff3a;
+    --cyan: #3de0ff;
+    --gold: #ffc857;
+    --rust: #ff5a36;
+    --violet: #8b5cff;
+    --stamp: #111;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--wall);
+    color: var(--chrome);
+    font-family: "IBM Plex Sans", "Avenir Next", "Segoe UI", sans-serif;
+    line-height: 1.45;
+  }
+  body {
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(255,45,138,.16), transparent 28%),
+      radial-gradient(circle at 88% 8%, rgba(61,224,255,.12), transparent 26%),
+      radial-gradient(circle at 70% 90%, rgba(198,255,58,.08), transparent 30%),
+      repeating-linear-gradient(90deg, transparent 0 46px, rgba(255,255,255,.015) 46px 47px),
+      repeating-linear-gradient(0deg, transparent 0 28px, rgba(255,255,255,.02) 28px 29px);
+  }
+  .hex {
+    position: fixed; inset: 0; pointer-events: none; opacity: .16;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='86' height='100' viewBox='0 0 86 100'><path d='M43 2 L83 25 V75 L43 98 L3 75 V25 Z' fill='none' stroke='%23c6ff3a' stroke-width='1'/></svg>");
+    background-size: 86px 100px;
+    mix-blend-mode: screen;
+  }
+  .book {
+    height: 100dvh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+  .page {
+    min-height: 100dvh;
+    scroll-snap-align: start;
+    padding: calc(22px + env(safe-area-inset-top)) 22px calc(28px + env(safe-area-inset-bottom));
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .page::before {
+    content: "";
+    position: absolute; inset: 10px;
+    border: 1px dashed rgba(255,255,255,.08);
+    pointer-events: none;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: .34em;
+    text-transform: uppercase;
+    color: var(--acid);
+    margin-bottom: 10px;
+  }
+  h1.wild {
+    font-family: "Bebas Neue", "Impact", "Arial Narrow", sans-serif;
+    font-size: clamp(64px, 18vw, 120px);
+    line-height: .78;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    color: var(--chrome);
+    text-shadow:
+      4px 4px 0 #000,
+      -2px -2px 0 var(--pink),
+      6px 0 0 var(--cyan);
+    transform: skew(-8deg, -1deg);
+  }
+  h1.wild span {
+    display: block;
+    color: var(--acid);
+    text-shadow:
+      4px 4px 0 #000,
+      2px -3px 0 var(--violet),
+      -4px 2px 0 var(--pink);
+  }
+  h2.tag {
+    font-family: "Permanent Marker", "Comic Sans MS", cursive;
+    font-size: clamp(28px, 8vw, 44px);
+    color: var(--gold);
+    transform: rotate(-2deg);
+    margin: 8px 0 16px;
+    text-shadow: 2px 3px 0 #000;
+  }
+  p, li { font-size: 16.5px; color: var(--chrome); max-width: 38rem; }
+  p + p { margin-top: 12px; }
+  .lede { font-size: 19px; color: #fff; max-width: 34rem; }
+  .mute { color: var(--mute); }
+  .stamp {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 8px 10px;
+    border: 3px solid var(--rust);
+    color: var(--rust);
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    font-size: 11px;
+    transform: rotate(-3deg);
+    background: rgba(0,0,0,.45);
+  }
+  .stamp.keep {
+    border-color: var(--acid);
+    color: var(--acid);
+    transform: rotate(2deg);
+  }
+  .stamp.park {
+    border-color: var(--pink);
+    color: var(--pink);
+  }
+  .wheat {
+    background: #efe6c9;
+    color: #1a120c;
+    padding: 18px 16px 16px;
+    box-shadow: 8px 10px 0 rgba(0,0,0,.45);
+    transform: rotate(-1.2deg);
+    position: relative;
+  }
+  .wheat::after {
+    content: "";
+    position: absolute; inset: -6px -4px auto auto;
+    width: 48px; height: 22px;
+    background: rgba(255,45,138,.35);
+    transform: rotate(12deg);
+  }
+  .wheat h3 {
+    font-family: "Bebas Neue", Impact, sans-serif;
+    font-size: 28px;
+    letter-spacing: .08em;
+    color: #b42318;
+  }
+  .wheat p { color: #2a2118; font-size: 15.5px; }
+  .jewel {
+    margin: 18px 0;
+    padding: 18px 14px;
+    background: #0c0b12;
+    border: 2px solid var(--acid);
+    box-shadow: 0 0 0 6px rgba(198,255,58,.08), 10px 12px 0 #000;
+    text-align: center;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: clamp(16px, 4.4vw, 22px);
+    color: var(--acid);
+  }
+  .grid {
+    display: grid;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  @media (min-width: 720px) {
+    .grid.two { grid-template-columns: 1fr 1fr; }
+    .page { padding-left: 10vw; padding-right: 10vw; }
+  }
+  .card {
+    background: rgba(20,16,24,.86);
+    border: 1px solid rgba(255,255,255,.1);
+    padding: 14px;
+  }
+  .card b {
+    display: block;
+    color: var(--cyan);
+    letter-spacing: .14em;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin-top: 12px;
+  }
+  th, td {
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    padding: 8px 6px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { color: var(--gold); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+  .pg {
+    position: absolute;
+    right: 18px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    font-size: 11px;
+    letter-spacing: .2em;
+    color: var(--mute);
+  }
+  nav.rail {
+    position: sticky; top: 0; z-index: 5;
+    display: flex; gap: 8px; overflow-x: auto;
+    padding: 8px 12px;
+    background: rgba(7,6,11,.78);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  nav.rail a {
+    flex: 0 0 auto;
+    color: var(--chrome);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,.16);
+    padding: 5px 8px;
+  }
+  nav.rail a:hover, nav.rail a:focus { border-color: var(--acid); color: var(--acid); }
+  .drip {
+    position: absolute; width: 4px; background: linear-gradient(var(--pink), transparent);
+    opacity: .55; pointer-events: none;
+  }
+  .cover-meta { margin-top: 22px; color: var(--mute); font-size: 14px; }
+  .cover-meta strong { color: var(--chrome); display: block; font-size: 16px; }
+  ul.clean { margin: 10px 0 0 18px; }
+  ul.clean li { margin: 6px 0; }
+  .split { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  footer.colophon { color: var(--mute); font-size: 13px; }
+  a { color: var(--cyan); }
+</style>
+</head>
+<body>
+<div class="hex" aria-hidden="true"></div>
+<nav class="rail" aria-label="Issue map">
+  <a href="#cover">Cover</a>
+  <a href="#found">Found</a>
+  <a href="#inspector">Lock</a>
+  <a href="#keep">Keep</a>
+  <a href="#tube">Tube</a>
+  <a href="#phi">Φ</a>
+  <a href="#bounds">Bounds</a>
+  <a href="#chladni">Node</a>
+  <a href="#cmb">CMB</a>
+  <a href="#saturn">Saturn</a>
+  <a href="#dodec">12</a>
+  <a href="#tikkun">Tikkun</a>
+  <a href="#unify">Law</a>
+  <a href="#sky">Sky</a>
+  <a href="#remark">Remark</a>
+  <a href="#da">DA</a>
+  <a href="#back">Back</a>
+</nav>
+<main class="book">
+
+<section class="page" id="cover">
+  <div class="drip" style="left:18%;top:0;height:38%"></div>
+  <div class="drip" style="left:72%;top:8%;height:26%;background:linear-gradient(var(--acid),transparent)"></div>
+  <p class="kicker">Prime Field · Wall reprint · No. 01</p>
+  <h1 class="wild">Cosmic <span>GRAFITTI</span></h1>
+  <p class="lede" style="margin-top:18px">The lost magazine. One F, two T’s. May 2026 cosmic star-lattice essay, wheatpasted back onto the wall.</p>
+  <p class="cover-meta"><strong>J.R. Simons · CRNA, MMed</strong>Found 13 September 2026 · filed May 2026 · not Clay</p>
+  <div class="stamp park">Park · analogy · NS not solved</div>
+  <span class="pg">01 / 17</span>
+</section>
+
+<section class="page" id="found">
+  <p class="kicker">Lost it?</p>
+  <h2 class="tag">It was on the other wall.</h2>
+  <p class="lede">The May essay was never missing from the research tree. It lived under a quieter name: <em>The Phi-Renormalization as Universal Geometry — Linking the NS Axis Proof to the Cosmic Star Lattice.</em></p>
+  <p>An archive agent found the title and the glue risk, then left an empty slot for the prose. The prose was already filed on another branch. This issue is the magazine face that went missing — the graffiti reprint, not a new theorem.</p>
+  <p class="mute">Source of the body: <code>docs/papers/swirl/PHI_GEOMETRY_BRIDGE.md</code>. Inspector: <code>DA-ON-PHI-GEOMETRY.md</code>.</p>
+  <span class="pg">02 / 17</span>
+</section>
+
+<section class="page" id="inspector">
+  <div class="wheat">
+    <h3>CITY INSPECTOR</h3>
+    <p style="margin-top:8px"><strong>Condemnation sticker, not a dunk.</strong> Jonathan may hold the poetic lattice. The repo’s job is narrower.</p>
+    <p style="margin-top:10px">★ NOT proved · NS NOT solved · kill lane LIVE · RH NOT proved.</p>
+    <p style="margin-top:10px">Do not claim Clay Statement B. Do not say Planck confirmed Navier–Stokes. Sharing the letter Φ, the integer 2, or the pattern <em>intensive = extensive / scale²</em> does not make two systems the same physics.</p>
+  </div>
+  <div class="split">
+    <div class="stamp keep">Keep = algebra</div>
+    <div class="stamp park">Park = the sky</div>
+  </div>
+  <span class="pg">03 / 17</span>
+</section>
+
+<section class="page" id="keep">
+  <p class="kicker">The keep wall</p>
+  <h2 class="tag">Wrong variable, not cosmic signal.</h2>
+  <p>Axisymmetric-with-swirl. Velocity independent of θ, with a swirl component u<sub>θ</sub>.</p>
+  <p>Extensive: Γ = r u<sub>θ</sub> — angular-momentum density.<br>
+     Intensive: Φ = Γ/r² = u<sub>θ</sub>/r — specific swirl.</p>
+  <div class="jewel">(1/r<sup>4</sup>) ∂<sub>z</sub>(Γ<sup>2</sup>) = ∂<sub>z</sub>(Φ<sup>2</sup>)</div>
+  <p>Proof: Γ² = r⁴ Φ², and r does not depend on z. The 1/r⁴ factor is an artifact of writing the tube in the extensive unknown. In Φ the same term is ordinary.</p>
+  <p class="mute">This rewrite does not prove Φ ∈ L∞. It does not kill the strain pairing. It does not select a hexagonal eigenmode.</p>
+  <span class="pg">04 / 17</span>
+</section>
+
+<section class="page" id="tube">
+  <p class="kicker">Part I · The tube</p>
+  <h2 class="tag">The 1/r⁴ scare.</h2>
+  <p>Near the axis, u<sub>θ</sub> itself must vanish for a smooth field. Γ grows with radius because distant fluid carries more momentum. Write the centrifugal source in Γ and the axis looks like a catastrophe.</p>
+  <p>Older notes borrowed Hardy inequalities to control that weight. The May essay’s keeper is simpler: change unknown. The singularity does not need to be estimated if it is not present in the right variable.</p>
+  <p class="mute">Domain Architect already tags this NS-Φ and refuses C-GLUE-4: identity is not a path to Theorem H, SFE, or FRA Φ.</p>
+  <span class="pg">05 / 17</span>
+</section>
+
+<section class="page" id="phi">
+  <p class="kicker">The substitution</p>
+  <h2 class="tag">Φ is the node variable.</h2>
+  <p>The axis is a quantization boundary in the essay’s language: the natural unit changes from extensive to intensive. The algebraic weight is r². The essay calls that prime p = 2.</p>
+  <p>DA’s reading: the integer 2 is the weight of that substitution inside <em>one</em> PDE. It is not a prime acting on the night sky.</p>
+  <div class="grid two">
+    <div class="card"><b>Keep</b>Change of dependent variable. ∂<sub>z</sub>(r⁴) = 0, so the source becomes ∂<sub>z</sub>(Φ²).</div>
+    <div class="card"><b>Park</b>“The universe is regular for the same reason” as established fact.</div>
+  </div>
+  <span class="pg">06 / 17</span>
+</section>
+
+<section class="page" id="bounds">
+  <p class="kicker">Part II · Three walls</p>
+  <h2 class="tag">Axis · shell · clock.</h2>
+  <div class="grid">
+    <div class="card"><b>A · Physical axis</b>r = 0. Extensive Γ, intensive Φ. Essay: 6-fold cross-section because 6 = 2 × 3. DA: packaging, not a 22 August theorem.</div>
+    <div class="card"><b>B · Dominant shell j*</b>Frequency space. Q<sub>6</sub>-weighted energy. Essay: dodecahedral coupling. DA: no checked structure map.</div>
+    <div class="card"><b>C · Spectral clock</b>Riemann zeros as ticks. Essay: Montgomery–Dyson / GUE. DA: RH not proved; do not glue Q6 to the zeros as a prize.</div>
+  </div>
+  <span class="pg">07 / 17</span>
+</section>
+
+<section class="page" id="chladni">
+  <p class="kicker">Connection 1 · Park picture</p>
+  <h2 class="tag">Chladni node.</h2>
+  <p>Sand avoids the antinode and collects where the plate has nothing to say. The essay tags r = 0 as that nodal line: u<sub>θ</sub> = 0 by symmetry, and Φ is what you read when you look at the node correctly.</p>
+  <p class="mute">Beautiful. Not a witness that CMB sand and swirl sand are one theorem.</p>
+  <span class="pg">08 / 17</span>
+</section>
+
+<section class="page" id="cmb">
+  <p class="kicker">Connection 2 · Park picture</p>
+  <h2 class="tag">Quadrupole on the brick.</h2>
+  <p>The essay notes the CMB quadrupole (ℓ = 2) sitting far below a ΛCDM guess, and rhymes it with the r² weight and a Poincaré dodecahedral candidate (12 = 2² × 3).</p>
+  <p>“Same prime. Same suppression. Same mechanism. Different scales.” That sentence is graffiti. It is not a morphism T with a witness. Planck did not confirm Navier–Stokes.</p>
+  <div class="stamp park">False glue if sold as proof</div>
+  <span class="pg">09 / 17</span>
+</section>
+
+<section class="page" id="saturn">
+  <p class="kicker">Connection 3 · Park picture</p>
+  <h2 class="tag">Hexagon at the pole.</h2>
+  <p>Saturn’s north polar hexagon is a standing wave in a rotating fluid. The essay says the NS pole selects p = 2 and 2 × 3 = 6, always.</p>
+  <p>DA: the identity does not select a hexagonal eigenmode. Physical analogy. Hold it. Do not green it.</p>
+  <span class="pg">10 / 17</span>
+</section>
+
+<section class="page" id="dodec">
+  <p class="kicker">Connection 4 · Park picture</p>
+  <h2 class="tag">Twelve faces.</h2>
+  <p>12 faces, 20 vertices, 30 edges, group order 60 — all products of 2, 3, 5. The essay sets that next to Littlewood–Paley shells at |ξ| ~ 2<sup>j</sup> and a dominant shell j* ~ log<sub>2</sub>(ν⁻¹).</p>
+  <p class="mute">If the universe has dodecahedral topology, that is cosmology. It is not implied by Γ ↦ r²Φ inside axisymmetric NS.</p>
+  <span class="pg">11 / 17</span>
+</section>
+
+<section class="page" id="tikkun">
+  <p class="kicker">Connection 5 · Park table</p>
+  <h2 class="tag">Tikkun on wheatpaste.</h2>
+  <table>
+    <thead><tr><th>Wall name</th><th>Essay’s NS tag</th></tr></thead>
+    <tbody>
+      <tr><td>Tzimtzum</td><td>LP shells appear</td></tr>
+      <tr><td>Or / Kli</td><td>Energy E<sub>j</sub> into shell S<sub>j*</sub></td></tr>
+      <tr><td>Shevirat</td><td>1/r⁴ at r = 0</td></tr>
+      <tr><td>Phi-renorm</td><td>Vessel holds — algebraically</td></tr>
+      <tr><td>Tikkun</td><td>Q6 bound, dE/dt ≤ 0</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:14px" class="mute">Interpretive table. Not PDE equivalence. Ein Sof is not a function space.</p>
+  <span class="pg">12 / 17</span>
+</section>
+
+<section class="page" id="unify">
+  <p class="kicker">Part IV · The essay’s backbone</p>
+  <h2 class="tag">Intensive = extensive / scale²</h2>
+  <table>
+    <thead><tr><th>Context</th><th>Keeps the blowup from</th><th>DA</th></tr></thead>
+    <tbody>
+      <tr><td>NS axis</td><td>Wrong-variable 1/r⁴</td><td>KEEP algebra</td></tr>
+      <tr><td>Q6 spectral</td><td>Shell language</td><td>Separate book; no RH</td></tr>
+      <tr><td>CMB / Kabbalah / cymatics</td><td>Named pictures</td><td>PARK analogy</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:14px">The essay says this is not a metaphor. The inspector says: correspondence is a hypothesis until a tested map exists. Translate of the identity against CMB language returns analogy, confidence low, <em>no checked structure map</em>.</p>
+  <span class="pg">13 / 17</span>
+</section>
+
+<section class="page" id="sky">
+  <p class="kicker">Part V · Do not green</p>
+  <h2 class="tag">“The CMB is Φ written in the sky.”</h2>
+  <p>The essay’s prediction pack: Axis of Evil as p = 2; ℓ = 2 suppressed; recovery at ℓ = 6; dodecahedral topology; “all four confirmed by Planck 2018.”</p>
+  <p>Those are extra physical hypotheses. They are not implied by the swirl identity. If you came for Clay, turn around. If you came for the wall, look, then read the sticker.</p>
+  <div class="stamp park">Observational rhyme ≠ theorem</div>
+  <span class="pg">14 / 17</span>
+</section>
+
+<section class="page" id="remark">
+  <p class="kicker">The remark · Track B §5 voice</p>
+  <h2 class="tag">One sentence, two rooms.</h2>
+  <div class="wheat">
+    <h3>AS FILED</h3>
+    <p style="margin-top:10px">“The fluid is regular because the prime number system quantizes its axis, its cascade, and its time — and in each case, the quantization prevents the intensive variable from diverging.”</p>
+    <p style="margin-top:10px">“The universe is regular for the same reason.”</p>
+  </div>
+  <p style="margin-top:16px">Keep the identity in a box. Park the second sentence as graffiti. Classical unaugmented swirl is still open. The leftover has a name; it is not this reprint.</p>
+  <div class="jewel">(1/r<sup>4</sup>) ∂<sub>z</sub>(Γ<sup>2</sup>) = ∂<sub>z</sub>(Φ<sup>2</sup>)</div>
+  <span class="pg">15 / 17</span>
+</section>
+
+<section class="page" id="da">
+  <p class="kicker">Domain Architect · inspector’s report</p>
+  <h2 class="tag">Same letter ≠ same physics.</h2>
+  <ul class="clean">
+    <li>Γ = r u<sub>θ</sub>, Φ = u<sub>θ</sub>/r — definitions in one PDE.</li>
+    <li>The boxed identity on {r &gt; 0} — algebra. Direct substitution.</li>
+    <li>Hardy not needed <em>for that rewrite</em>. False if sold as “axis difficulty gone.”</li>
+    <li>Classical unaugmented swirl globally regular — <strong>open</strong>.</li>
+    <li>Strain pairing absorbed uniformly in ε — <strong>not closed</strong>.</li>
+    <li>Three prime-lattice boundaries / Theorem 5.4 packaging — strip from any submit.</li>
+    <li>CMB, Saturn, Venus pentagram, dodecahedron, Tikkun as one law — analogy at most. Structure-preserving equivalence refused.</li>
+    <li>Swirl Φ = FRA Φ = Newtonian Φ<sub>g</sub> — forbidden glue.</li>
+  </ul>
+  <span class="pg">16 / 17</span>
+</section>
+
+<section class="page" id="back">
+  <p class="kicker">Colophon</p>
+  <h1 class="wild" style="font-size:clamp(42px,12vw,80px)">Issue <span>01</span></h1>
+  <p style="margin-top:16px">Cosmic GRAFITTI. Lost-and-found wall. Body recovered from <code>cursor/sfe-rewrite-domain-architect-9d6b</code>. Magazine cut 13 September 2026.</p>
+  <p class="mute">Anchored in the essay to PhiRenorm_TrackB.tex §§2,3,5 and Simons_NS_Illustrated.tex §3. Live swirl SoT on this repo remains the June 30 / 22 August TeX faces — conditional, barrier open.</p>
+  <div class="split">
+    <div class="stamp keep">Identity KEEP</div>
+    <div class="stamp park">Lattice PARK</div>
+    <div class="stamp">NS not solved</div>
+  </div>
+  <footer class="colophon" style="margin-top:22px">
+    J.R. Simons · Prime Field Technologies LLC<br>
+    Open the essay and the inspector next to this wall.<br>
+    <a href="../../docs/papers/swirl/PHI_GEOMETRY_BRIDGE.md">Essay</a> ·
+    <a href="../../docs/papers/swirl/DA-ON-PHI-GEOMETRY.md">DA reading</a> ·
+    <a href="../../docs/COSMIC-GRAFITTI-MAGAZINE.md">Magazine cut</a>
+  </footer>
+  <span class="pg">17 / 17</span>
+</section>
+
+</main>
+</body>
+</html>

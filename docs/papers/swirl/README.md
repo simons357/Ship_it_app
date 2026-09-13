@@ -9,3 +9,8 @@
 **Honesty:** conditional on \(\|u^r/r\|_{L^\infty}\) uniform in \(\eps\). Not a global regularity proof. Not Clay.
 
 **Audit:** [`docs/ns-review/PHI-RENORM-AUDIT-2026-08-22.md`](../../ns-review/PHI-RENORM-AUDIT-2026-08-22.md)
+
+**Cosmic / PARK reprint:** May 2026 universal-geometry essay
+[`PHI_GEOMETRY_BRIDGE.md`](PHI_GEOMETRY_BRIDGE.md) (algebra KEEP; sky PARK) ·
+DA reading [`DA-ON-PHI-GEOMETRY.md`](DA-ON-PHI-GEOMETRY.md) ·
+magazine [`apps/cosmic-grafitti/index.html`](../../../apps/cosmic-grafitti/index.html)
