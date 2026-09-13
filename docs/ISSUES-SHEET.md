@@ -55,7 +55,8 @@ Global parent stretching **H** is open and is not a
 cylinder. \(R_\phi\) is not free.
 
 Do not start 1 from ABC_λ. Do not cash \(0.641\),
-\(0.610\), or \(0.327\) as the \(v_n\) kill.
+\(0.610\), \(0.327\), or three-shear \(2/3\) as the
+\(v_n\) kill or as \(16/9\).
 The named kill of unrestricted ★ already sits. Do not
 restore occupation decay from the wall detector
 as a close of 5. Do not retitle Q as 6 or 10.

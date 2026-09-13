@@ -40,7 +40,7 @@ The Riemann hypothesis is not solved.
 | RH sits | Q / 22045478 sits as inverse-GCD. | **NO** as RH. **YES** as Q. |
 | Occupation decays | Detector claim was wrong. | **NO.** Withdrawn. |
 | 9D is live | Designed \(\Theta(m^2)\) is Freiman-AP. Growing \(s\) is a 9B test. | **NO** as designed 9D. **OPEN** as grow \(s\) on 9B. Same \(B\). Not a new object. |
-| \(0.327\) / \(0.641\) / \(0.610\) / grow-\(s\) \(0.456\) kills ★ | Finite. Raises \(C_{\mathrm{geom}}\). | **NO** as a kill. **YES** as printed samples. |
+| \(0.327\) / \(0.641\) / \(0.610\) / grow-\(s\) \(0.456\) / three-shear \(2/3\) kills ★ or proves \(16/9\) | Finite. \(2/3\) raises the floor of \(\sup K\). | **NO** as a kill or as \(16/9\). **YES** as printed samples. |
 | H1 is written, so H1 sits | The estimate is stated. | **YES** as a write. **NO** as a theorem. **OPEN** as leftover 1. |
 | Ring sits | Direction bound is REPAIR. | **NO** as proved. |
 | Evolution / biology closes a row | Maps only. | **NO** as a close. |
@@ -75,6 +75,7 @@ stay samples. They are not this kill.
 | B-hand five-finger map | Speculated whole on leftovers 1, 3, 4, 5. After the spindle named. Fire / realized / future named. [`DA-NS-FIVE-FINGER.md`](DA-NS-FIVE-FINGER.md). Not a close. |
 | Occupancy \(55/56\) | Printed on those interpolants. Did not decay with \(n\). Not \([\rho]\). |
 | \(K\le 16s\) | Counting. Fixed \(s\) cannot unbound \(K\). |
+| Three-shear \(K_{1,2}=2/3\) | Hand + evaluator. Floor of \(\sup K\). Not \(16/9\). [`ATTACK-9D-TWO-THIRDS.md`](ATTACK-9D-TWO-THIRDS.md). |
 
 ---
 
@@ -95,7 +96,7 @@ stay samples. They are not this kill.
 | Ring as proved | REPAIR. |
 | P1 / P1-loc / PC as H1 | Cousins. |
 | CS \(E^{3/2}\) as shape 1 | Mid-Bad / H3 class. |
-| Finite \(0.641\), \(0.610\), \(0.327\), HH→L \(0.71\), grow-\(s\) \(0.456\) as \(C_0\) or a falsifier | Samples. |
+| Finite \(0.641\), \(0.610\), \(0.327\), HH→L \(0.71\), grow-\(s\) \(0.456\), three-shear \(2/3\) as \(C_0\) or as \(16/9\) | Samples. Floor \(\neq\) ceiling. |
 | Attack 12 table as Need★ | Finite \(\beta/\alpha\). Not the signed dual. |
 | Glue H1 to ★, or either to the shell door | Different integrals. |
 | \(K(t)\) in the PDE | Forbidden on B. |
@@ -158,6 +159,9 @@ historical sample and still NO as a kill.
 If a number is large and finite, that
 is YES as a sample and still NO as
 the \(v_n\) kill.
+If three-shear \(K=2/3\) is written,
+that is YES as a floor of \(\sup K\)
+and still NO as \(16/9\).
 
 Those three words do not trade.
 NS not solved. RH not solved.

@@ -106,11 +106,15 @@ factor, and the limiting-closer scope.
 DA has not replaced that reading by a
 proof assistant.
 
-Samples sit under \(16/9\):
-aligned 9B \(K\approx 0.641\);
-grow-\(s\) max \(K\approx 0.456\).
+The three-shear field
+\(w=(\sin y,\sin z,\sin x)\)
+gives \(K_{1,2}=2/3\) by hand.
+That raises the floor of \(\sup K\)
+above aligned 9B \(0.641\).
+Grow-\(s\) max \(K\approx 0.456\).
 A sample is not the bound.
-Do not cash either number as \(C_0\).
+Do not cash \(2/3\) as \(C_0\) or as \(16/9\).
+Phone: [`../../ATTACK-9D-TWO-THIRDS.md`](../../ATTACK-9D-TWO-THIRDS.md).
 
 ---
 

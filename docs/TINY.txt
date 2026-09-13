@@ -8,6 +8,9 @@ scripts/ns_attacks/verify_pr24_closure_review.py
 Exact-shell 9D bound CLAIMED
 (C=4/3, specialist pending):
 docs/ATTACK-9D-FULL-SUPPORT-BOUND.md
+Three-shear floor K=2/3 (not the ceiling):
+docs/ATTACK-9D-TWO-THIRDS.md
+scripts/ns_attacks/attack9d_two_thirds.py
 Need★ cannot repair the dead box.
 B-hand map (not a close):
 docs/DA-NS-FIVE-FINGER.md

@@ -1,0 +1,22 @@
+{
+  "field": "w=(sin y, sin z, sin x)",
+  "alpha": 1.0,
+  "beta": 2.0,
+  "E": 1.4999999999999998,
+  "E_exact": 1.5,
+  "K": 0.6666666666666669,
+  "K_exact": 0.6666666666666666,
+  "PiB_L2_sq": 0.75,
+  "PiB_L2_sq_exact": 0.75,
+  "floor_of_sup_K": 0.6666666666666666,
+  "old_aligned_9B_max": 0.641,
+  "claimed_ceiling": 1.7777777777777777,
+  "clears_old_max": true,
+  "under_claimed_ceiling": true,
+  "is_C0": false,
+  "proves_16_over_9": false,
+  "ns_solved": false,
+  "exact_shell_9d": "CLAIMED",
+  "ok": true,
+  "note": "Hand-built floor K=2/3. Not the 16/9 bound. Not C0. NS not solved."
+}
