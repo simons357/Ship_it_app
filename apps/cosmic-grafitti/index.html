@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>COSMIC GRAFITTI — Issue 01</title>
+<meta name="description" content="The swirl leftover magazine. WRITE (6) named, not proved. OpenAI C/D is not A/B. NS not solved.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --wall: #07060b;
+    --brick: #141018;
+    --chrome: #f4efe4;
+    --mute: #b7b0a4;
+    --pink: #ff2d8a;
+    --acid: #c6ff3a;
+    --cyan: #3de0ff;
+    --gold: #ffc857;
+    --rust: #ff5a36;
+    --violet: #8b5cff;
+    --stamp: #111;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--wall);
+    color: var(--chrome);
+    font-family: "IBM Plex Sans", "Avenir Next", "Segoe UI", sans-serif;
+    line-height: 1.45;
+  }
+  body {
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(255,45,138,.16), transparent 28%),
+      radial-gradient(circle at 88% 8%, rgba(61,224,255,.12), transparent 26%),
+      radial-gradient(circle at 70% 90%, rgba(198,255,58,.08), transparent 30%),
+      repeating-linear-gradient(90deg, transparent 0 46px, rgba(255,255,255,.015) 46px 47px),
+      repeating-linear-gradient(0deg, transparent 0 28px, rgba(255,255,255,.02) 28px 29px);
+  }
+  .hex {
+    position: fixed; inset: 0; pointer-events: none; opacity: .18;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='86' height='100' viewBox='0 0 86 100'><path d='M43 2 L83 25 V75 L43 98 L3 75 V25 Z' fill='none' stroke='%23c6ff3a' stroke-width='1'/></svg>");
+    background-size: 86px 100px;
+    mix-blend-mode: screen;
+  }
+  .spray {
+    position: fixed; inset: 0; pointer-events: none; opacity: .22;
+    background-image:
+      radial-gradient(circle at 8% 22%, rgba(255,45,138,.55) 0 1px, transparent 2px),
+      radial-gradient(circle at 18% 70%, rgba(198,255,58,.4) 0 1px, transparent 2px),
+      radial-gradient(circle at 77% 16%, rgba(61,224,255,.45) 0 1px, transparent 2px),
+      radial-gradient(circle at 91% 62%, rgba(255,200,87,.4) 0 1px, transparent 2px),
+      radial-gradient(circle at 40% 90%, rgba(255,45,138,.35) 0 1px, transparent 2px);
+    background-size: 180px 220px, 140px 160px, 200px 180px, 160px 200px, 220px 140px;
+    mix-blend-mode: screen;
+  }
+  .tagwall {
+    position: absolute; right: 6%; top: 18%;
+    font-family: "Permanent Marker", cursive;
+    font-size: clamp(48px, 12vw, 110px);
+    color: rgba(255,45,138,.12);
+    transform: rotate(18deg);
+    pointer-events: none; z-index: 0;
+    letter-spacing: .04em;
+  }
+  .book {
+    height: 100dvh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+  .page {
+    min-height: 100dvh;
+    scroll-snap-align: start;
+    padding: calc(28px + env(safe-area-inset-top)) 22px calc(48px + env(safe-area-inset-bottom));
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+  .page > * { position: relative; z-index: 1; max-width: 42rem; }
+  .page > .jewel, .page > .wheat, .page > .grid, .page > table, .page > .split { max-width: 46rem; }
+  .page > .drip, .page > .tagwall, .page > .pg { max-width: none; }
+  .page::before {
+    content: "";
+    position: absolute; inset: 10px;
+    border: 1px dashed rgba(255,255,255,.08);
+    pointer-events: none;
+  }
+  .kicker {
+    font-size: 11px;
+    letter-spacing: .34em;
+    text-transform: uppercase;
+    color: var(--acid);
+    margin-bottom: 10px;
+  }
+  h1.wild {
+    font-family: "Bebas Neue", "Impact", "Arial Narrow", sans-serif;
+    font-size: clamp(64px, 18vw, 120px);
+    line-height: .78;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    color: var(--chrome);
+    text-shadow:
+      4px 4px 0 #000,
+      -2px -2px 0 var(--pink),
+      6px 0 0 var(--cyan);
+    transform: skew(-8deg, -1deg);
+  }
+  h1.wild span {
+    display: block;
+    color: var(--acid);
+    text-shadow:
+      4px 4px 0 #000,
+      2px -3px 0 var(--violet),
+      -4px 2px 0 var(--pink);
+  }
+  h2.tag {
+    font-family: "Permanent Marker", "Comic Sans MS", cursive;
+    font-size: clamp(32px, 8vw, 52px);
+    color: var(--gold);
+    transform: rotate(-2deg);
+    margin: 8px 0 16px;
+    text-shadow: 3px 4px 0 #000, 0 0 18px rgba(255,200,87,.25);
+    line-height: 1.05;
+  }
+  p, li { font-size: 17.5px; color: var(--chrome); max-width: 38rem; }
+  p + p { margin-top: 12px; }
+  .lede { font-size: 19px; color: #fff; max-width: 34rem; }
+  .mute { color: var(--mute); }
+  .stamp {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 12px;
+    border: 4px solid var(--rust);
+    color: var(--rust);
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    font-size: 12px;
+    transform: rotate(-3deg);
+    background: rgba(0,0,0,.55);
+    box-shadow: 4px 4px 0 #000;
+  }
+  .stamp.keep {
+    border-color: var(--acid);
+    color: var(--acid);
+    transform: rotate(2deg);
+  }
+  .stamp.park {
+    border-color: var(--pink);
+    color: var(--pink);
+  }
+  .wheat {
+    background: #efe6c9;
+    color: #1a120c;
+    padding: 18px 16px 16px;
+    box-shadow: 8px 10px 0 rgba(0,0,0,.45);
+    transform: rotate(-1.2deg);
+    position: relative;
+  }
+  .wheat::after {
+    content: "";
+    position: absolute; inset: -6px -4px auto auto;
+    width: 48px; height: 22px;
+    background: rgba(255,45,138,.35);
+    transform: rotate(12deg);
+  }
+  .wheat h3 {
+    font-family: "Bebas Neue", Impact, sans-serif;
+    font-size: 28px;
+    letter-spacing: .08em;
+    color: #b42318;
+  }
+  .wheat p { color: #2a2118; font-size: 15.5px; }
+  .jewel {
+    margin: 18px 0;
+    padding: 18px 14px;
+    background: #0c0b12;
+    border: 2px solid var(--acid);
+    box-shadow: 0 0 0 6px rgba(198,255,58,.08), 10px 12px 0 #000;
+    text-align: center;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: clamp(16px, 4.4vw, 22px);
+    color: var(--acid);
+  }
+  .grid {
+    display: grid;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  @media (min-width: 720px) {
+    .grid.two { grid-template-columns: 1fr 1fr; }
+    .page { padding-left: 10vw; padding-right: 10vw; }
+  }
+  .card {
+    background: rgba(20,16,24,.86);
+    border: 1px solid rgba(255,255,255,.1);
+    padding: 14px;
+  }
+  .card b {
+    display: block;
+    color: var(--cyan);
+    letter-spacing: .14em;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin-top: 12px;
+  }
+  th, td {
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    padding: 8px 6px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { color: var(--gold); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+  .pg {
+    position: absolute;
+    right: 18px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    font-size: 11px;
+    letter-spacing: .2em;
+    color: var(--mute);
+  }
+  nav.rail {
+    position: sticky; top: 0; z-index: 5;
+    display: flex; gap: 8px; overflow-x: auto;
+    padding: 8px 12px;
+    background: rgba(7,6,11,.78);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  nav.rail a {
+    flex: 0 0 auto;
+    color: var(--chrome);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,.16);
+    padding: 5px 8px;
+  }
+  nav.rail a:hover, nav.rail a:focus { border-color: var(--acid); color: var(--acid); }
+  .drip {
+    position: absolute; width: 4px; background: linear-gradient(var(--pink), transparent);
+    opacity: .55; pointer-events: none;
+  }
+  .cover-meta { margin-top: 22px; color: var(--mute); font-size: 14px; }
+  .cover-meta strong { color: var(--chrome); display: block; font-size: 16px; }
+  ul.clean { margin: 10px 0 0 18px; }
+  ul.clean li { margin: 6px 0; }
+  .split { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  footer.colophon { color: var(--mute); font-size: 13px; }
+  a { color: var(--cyan); }
+</style>
+</head>
+<body>
+<div class="hex" aria-hidden="true"></div>
+<div class="spray" aria-hidden="true"></div>
+<nav class="rail" aria-label="Issue map">
+  <a href="#cover">Cover</a>
+  <a href="#found">This one</a>
+  <a href="#if">The if</a>
+  <a href="#bad">Bad</a>
+  <a href="#write6">WRITE 6</a>
+  <a href="#cyl">Cylinder</a>
+  <a href="#force">C/D</a>
+  <a href="#qa">Thm A</a>
+  <a href="#drop">Drop Φ</a>
+  <a href="#map">Map</a>
+  <a href="#edit">Editor</a>
+  <a href="#back">Back</a>
+</nav>
+<main class="book">
+
+<section class="page" id="cover">
+  <div class="tagwall">WRITE(6)</div>
+  <div class="drip" style="left:18%;top:0;height:38%"></div>
+  <div class="drip" style="left:72%;top:8%;height:26%;background:linear-gradient(var(--acid),transparent)"></div>
+  <p class="kicker">Prime Field · Magazine cut · No. 01</p>
+  <h1 class="wild">Cosmic <span>GRAFITTI</span></h1>
+  <p class="lede" style="margin-top:18px">The swirl leftover. Occupation and alignment on the walls of the house. Not the star-lattice essay. That was the wrong wall.</p>
+  <p class="cover-meta"><strong>J.R. Simons · Prime Field Technologies</strong>10 September 2026 cut · phone face 13 September 2026 · not a proof</p>
+  <div class="stamp">Named · not proved · NS not solved</div>
+  <span class="pg">01 / 12</span>
+</section>
+
+<section class="page" id="found">
+  <p class="kicker">Wrong one, then this one</p>
+  <h2 class="tag">The leftover, not the lattice.</h2>
+  <p class="lede">You asked for the magazine you lost. First reprint grabbed the May 2026 universal-geometry essay. That was the wrong wall.</p>
+  <p>This issue is the piece you already wrote to publish: <em>Swirl, alignment, and what Navier–Stokes still owes.</em> Domain Architect’s language for it: the form is the building; occupation and alignment are graffiti on the walls.</p>
+  <p class="mute">Body: <code>docs/SWIRL-MAGAZINE.md</code>. Working paper: <code>docs/SWIRL-PAPER.md</code>. Deposit card: <code>docs/SWIRL-DEPOSIT.md</code>.</p>
+  <span class="pg">02 / 12</span>
+</section>
+
+<section class="page" id="if">
+  <p class="kicker">The cut that sits, as an if</p>
+  <h2 class="tag">Hölder 1/2 is their theorem.</h2>
+  <p>In three-dimensional incompressible flow, vortex stretching is the term that can make vorticity grow.</p>
+  <p><strong>Constantin–Fefferman 1993.</strong> If the direction of vorticity does not turn too fast where the vorticity is large — Lipschitz control of the angle — the solution stays smooth.</p>
+  <p><strong>Beirão da Veiga–Berselli 2002.</strong> The geometric cut lowers to Hölder exponent 1/2.</p>
+  <p class="mute">Those papers are theorems as <em>ifs</em>. They do not estimate the pairs they refused.</p>
+  <span class="pg">03 / 12</span>
+</section>
+
+<section class="page" id="bad">
+  <div class="tagwall" style="color:rgba(255,45,138,.14);transform:rotate(-12deg)">BAD</div>
+  <p class="kicker">The refused set</p>
+  <h2 class="tag">Intense, and misaligned.</h2>
+  <p>Good pairs are their theorem. The complementary pairs — still intense, with |sin φ| larger than the Hölder 1/2 cut — are Bad. Those papers left them.</p>
+  <p>Closest cousins (Grujić 2009 and after) localize or weight the <em>condition</em>. They do not bound the bad-pair integral from energy alone.</p>
+  <div class="grid two">
+    <div class="card"><b>Good</b>Alignment puts |sin φ| in the numerator and drops the kernel. Absorbable. Their if.</div>
+    <div class="card"><b>Bad</b>Kernel still |x−y|<sup>−3</sup>. Cubic energy wall. The leftover.</div>
+  </div>
+  <span class="pg">04 / 12</span>
+</section>
+
+<section class="page" id="write6">
+  <p class="kicker">The named hole</p>
+  <h2 class="tag">WRITE (6)</h2>
+  <p>Stretching from those bad pairs, on a parabolic cylinder, absorbed by a slice of local enstrophy dissipation plus a lower-order term.</p>
+  <div class="jewel">A<sub>bad</sub>(Q<sub>r</sub>) ≤ (ν/8) ∬ |∇ω|² φ + C r<sup>−2</sup> ∬ |ω|²</div>
+  <p>The estimate is stated. It is not proved. It is not in the record under another name. ν/8 is a conventional slice, not a sharp constant. There is no dimensional obstruction. There is also no proof.</p>
+  <div class="stamp keep">Aimed leftover: yes</div>
+  <div class="stamp">Theorem: no</div>
+  <span class="pg">05 / 12</span>
+</section>
+
+<section class="page" id="cyl">
+  <p class="kicker">Do not merge letters</p>
+  <h2 class="tag">A cylinder still needs more.</h2>
+  <p>Flux through the skin, at energy level, is Caffarelli–Kohn–Nirenberg as a <em>smallness</em> criterion, not as an a priori from finite energy. Exterior Biot–Savart is why localization papers exist.</p>
+  <p>After a closed local enstrophy budget, the right implication is Serrin’s criterion on a smaller cylinder. That implication is not a substitute for (6).</p>
+  <p class="mute">If (6) were proved and the skin flux were still open, the cylinder would still be open. If the cylinder is already small in the CKN sense, (6) was never needed on that cylinder.</p>
+  <span class="pg">06 / 12</span>
+</section>
+
+<section class="page" id="force">
+  <p class="kicker">8 September 2026</p>
+  <h2 class="tag">Forced is a different door.</h2>
+  <p>A construction of finite-time breakdown with a <em>smooth external force</em> was announced. Fefferman’s official statement has four alternatives.</p>
+  <div class="grid two">
+    <div class="card"><b>A / B</b>Unforced smooth data. Stay smooth? This leftover lives here. Open.</div>
+    <div class="card"><b>C / D</b>A force is allowed, and breakdown is asked. A forced construction, if it holds, lives here.</div>
+  </div>
+  <p style="margin-top:14px">It does not decide (A) or (B). It does not bound WRITE (6). A picture of a vortex that spirals in is not an estimate of misaligned pairs in the unforced problem. I do not claim that construction. I did not write it.</p>
+  <span class="pg">07 / 12</span>
+</section>
+
+<section class="page" id="qa">
+  <p class="kicker">A different equation</p>
+  <h2 class="tag">Theorem A is not this leftover.</h2>
+  <p>Navier–Stokes with an extra Ladyzhenskaya / p-Laplacian stress is globally regular when the extra viscosity is positive and the exponent is in a known range.</p>
+  <p>That is a different equation. Sending the extra term to zero remains open. I do not claim ordinary Navier–Stokes.</p>
+  <p class="mute">Inverse-GCD matrix facts posted elsewhere are not this leftover and are not the Riemann hypothesis.</p>
+  <span class="pg">08 / 12</span>
+</section>
+
+<section class="page" id="drop">
+  <p class="kicker">The path that was dropped</p>
+  <h2 class="tag">Keep the 1/r⁴ tube.</h2>
+  <p>Axisymmetric flow with swirl, keeping the 1/r⁴ tube source, is the same leftover as the field. A localized Hardy inequality does not absorb all data.</p>
+  <p>I dropped a change of unknown that canceled the tube term. That cancel was not the unforced path.</p>
+  <div class="stamp park">Φ-cancel ≠ ordinary NS</div>
+  <span class="pg">09 / 12</span>
+</section>
+
+<section class="page" id="map">
+  <p class="kicker">What you can put a name on</p>
+  <h2 class="tag">The map, this week.</h2>
+  <p>The Hölder 1/2 cut is Constantin–Fefferman and Beirão da Veiga–Berselli. Bad pairs are what they left. WRITE (6) is the right name for that remainder. It is not proved.</p>
+  <div class="wheat">
+    <h3>NOT A SOLUTION</h3>
+    <p style="margin-top:10px">This is the leftover, named, dated, and not sold as a close.</p>
+  </div>
+  <span class="pg">10 / 12</span>
+</section>
+
+<section class="page" id="edit">
+  <p class="kicker">If an editor needs one sentence</p>
+  <h2 class="tag">Print this.</h2>
+  <div class="wheat">
+    <h3>THE CUT</h3>
+    <p style="margin-top:10px">Swirl alignment at Hölder 1/2 is a theorem as an if; the refused pairs are still open; a forced blowup, if true, is a different official statement from unforced regularity.</p>
+  </div>
+  <p style="margin-top:16px" class="mute">SIAM News commentary / letter, or any magazine that will take a dated essay. Do not send it as a research article that proves regularity. I am not submitting it for you.</p>
+  <span class="pg">11 / 12</span>
+</section>
+
+<section class="page" id="back">
+  <p class="kicker">Colophon</p>
+  <h1 class="wild" style="font-size:clamp(42px,12vw,80px)">Issue <span>01</span></h1>
+  <p style="margin-top:16px">Cosmic GRAFITTI is the phone face of the swirl leftover magazine. Body is Jonathan’s 10 September 2026 cut, recovered from <code>cursor/unaugmented-r4-vorticity-f80e</code>.</p>
+  <p class="mute">The May universal-geometry essay is a different wall. Filed, not this issue.</p>
+  <div class="split">
+    <div class="stamp keep">WRITE (6) named</div>
+    <div class="stamp">Not proved</div>
+    <div class="stamp park">NS not solved</div>
+  </div>
+  <footer class="colophon" style="margin-top:22px">
+    J.R. Simons · Prime Field Technologies<br>
+    <a href="../../docs/SWIRL-MAGAZINE.md">Magazine cut</a> ·
+    <a href="../../docs/SWIRL-PAPER.md">Working paper</a> ·
+    <a href="../../docs/SWIRL-DEPOSIT.md">Deposit card</a>
+  </footer>
+  <span class="pg">12 / 12</span>
+</section>
+
+</main>
+</body>
+</html>

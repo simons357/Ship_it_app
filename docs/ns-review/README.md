@@ -11,3 +11,12 @@ Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS p
 **Open barrier (unchanged):** \(\|u^r/r\|_{L^\infty}\) uniform in \(\eps\) — equivalent to axisymmetric-with-swirl global regularity. Paper remains a conditional reduction. Clay is not closed.
 
 **Do not conflate** with Lemma★ PRODUCT-BLOCK packaging.
+
+## Cosmic GRAFITTI (swirl leftover magazine)
+
+Issue 01 is Jonathan’s 10 September 2026 swirl cut — WRITE (6) named,
+not proved — not the May universal-geometry essay.
+
+- Wall: [`apps/cosmic-grafitti/index.html`](../../apps/cosmic-grafitti/index.html)
+- Print cut: [`docs/SWIRL-MAGAZINE.md`](../SWIRL-MAGAZINE.md)
+- Found note: [`archives/COSMIC-GRAFITTI-FOUND.md`](archives/COSMIC-GRAFITTI-FOUND.md)
