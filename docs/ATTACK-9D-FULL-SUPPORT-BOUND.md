@@ -13,10 +13,27 @@ Lemma★.** The unrestricted box is the growing-layer
 family ([`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md)).
 This page does not resurrect it.
 
-Specialist review of the weighted sphere count
-and the polarization identity is pending.
-Computational samples sit under \(16/9\).
-A sample is not the bound. Soft X silent.
+If \(K\le 16/9\) holds, occupancy \(s\) is
+gone on a **single input shell**. That is a
+written bound on exact-shell fields, not a
+sweep maximum. The three-shear field then
+sits under a named ceiling, not under a
+rumor.
+
+**No as a regularity close.** A true
+\(4/3\) does not kill or repair unrestricted
+★. That box is already dead by the
+multi-shell family \(v_n\). It does not
+give a continuation criterion and it does
+not restore ★ \(\Rightarrow\) global
+regularity. Ordinary NS stays open.
+
+Until a specialist signs the algebra, or a
+sweep shows nothing near \(16/9\), the
+word is still **CLAIMED**. Existing maxima
+\(0.641\) and \(0.456\) are not near
+\(16/9\approx 1.778\). That does not
+unclaim the bound. Soft X silent.
 NS is not solved.
 
 Designed \(\Theta(m^2)\) 9D stays **NO**.
@@ -176,8 +193,11 @@ Those numbers sit. They are not the proof.
 |---|---|
 | Designed \(\Theta(m^2)\) 9D | **NO.** Dead. |
 | Grow-\(s\) finite max as \(C_0\) | **NO.** Historical. |
-| Exact-shell \(K\le 16/9\) | **CLAIMED** in this review, \(C=4/3\). Specialist pending. |
-| Unrestricted ★ | **NO.** Other page. |
+| Exact-shell \(K\le 16/9\) | **CLAIMED.** \(C=4/3\). Occupancy \(s\) gone on one input shell if it holds. |
+| Sweep max \(0.641\) / \(0.456\) as the ceiling | **NO.** Not the bound. |
+| True \(4/3\) as a regularity close | **NO.** Does not repair ★. No continuation. |
+| Unrestricted ★ | **NO.** Dead by \(v_n\). |
 | Ordinary NS | **OPEN.** |
+| Specialist sign of the algebra | **pending.** Soft X silent. |
 
 NS not solved.

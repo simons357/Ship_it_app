@@ -4,7 +4,16 @@
 **NS not solved.**
 Unrestricted \(\sup\mathcal R_\star<\infty\) is **NO**.
 Exact-shell 9D \(K\le 16/9\) is **CLAIMED**.
-Specialist review pending. Replacement
+If it holds, occupancy \(s\) is gone on one
+input shell. That is a written bound, not a
+sweep maximum. A true \(4/3\) is **NO** as a
+regularity close: it does not repair
+unrestricted ★, does not restore
+★ \(\Rightarrow\) GR, and is not a
+continuation criterion. Until a specialist
+signs the algebra, or a sweep shows
+nothing near \(16/9\), the word stays
+**CLAIMED**. Soft X silent. Replacement
 energy-budget closure **OPEN.**
 
 Phone: stay in this chat.

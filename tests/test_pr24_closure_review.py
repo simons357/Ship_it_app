@@ -27,6 +27,12 @@ class Pr24ClosureReviewTests(unittest.TestCase):
             self.assertNotIn("Clay is solved", text)
             self.assertNotIn("almost proved", text.lower())
             self.assertNotIn("hygiene", text.lower())
+        bound = BOUND.read_text()
+        self.assertIn("CLAIMED", bound)
+        self.assertIn("single input shell", bound)
+        self.assertIn("No as a regularity close", bound)
+        self.assertIn("Soft X silent", bound)
+        self.assertIn("three-shear", bound)
 
     def test_family_kills_the_box_on_the_live_evaluator(self):
         payload = run()
