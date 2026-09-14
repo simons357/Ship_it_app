@@ -110,6 +110,7 @@ python -m domain_architect --millennium-look
 python -m domain_architect --pair
 python -m domain_architect --breakdown-children
 python -m domain_architect --ns-model
+python -m domain_architect --odlyzko
 ```
 
 ## Next steps

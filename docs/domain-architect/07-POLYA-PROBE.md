@@ -21,6 +21,9 @@ unification of Millennium problems.
 Theorems and candidates already in the Hilbert–Pólya briefing, plus a
 further unfiltered Pólya ingest:
 
+- Pólya 1914 Göttingen remark (Odlyzko letter 3 Jan 1982): documented origin,
+  not a Hamiltonian
+- Hilbert independent 1910s formulation: **empty** in that source
 - Pólya 1915 integer-valued entire functions
 - Pólya 1918 / 1923 zeros of entire functions
 - Pólya 1921 random-walk recurrence / transience
@@ -32,7 +35,7 @@ further unfiltered Pólya ingest:
 - Pólya–Szegő 1951 isoperimetric inequalities in mathematical physics
 - Pólya 1954 membrane eigenvalues
 
-Registry: `HP-H001`–`HP-H025`, `HP-H027`, plus `NS-H001`–`NS-H003`.
+Registry: `HP-H001`–`HP-H028` (HP-H026 origin remark; HP-H028 Hilbert empty), plus `NS-H001`–`NS-H004`.
 
 Run the CLI for the live component count, filter pops, and DA’s request list.
 
@@ -42,6 +45,7 @@ Run the CLI for the live component count, filter pops, and DA’s request list.
 
 ```bash
 python -m domain_architect --polya-probe
+python -m domain_architect --odlyzko
 python -m domain_architect --pair
 python -m domain_architect --breakdown-children
 python -m domain_architect --ns-model

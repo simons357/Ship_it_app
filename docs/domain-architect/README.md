@@ -38,7 +38,8 @@ python -m domain_architect --millennium-look
 python -m domain_architect --pair
 python -m domain_architect --breakdown-children
 python -m domain_architect --ns-model
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya tests.test_polya_probe tests.test_millennium_overlap tests.test_breakdown_children tests.test_ns_model
+python -m domain_architect --odlyzko
+python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya tests.test_polya_probe tests.test_millennium_overlap tests.test_breakdown_children tests.test_ns_model tests.test_odlyzko_origin
 ```
 
 Related closed experiment in this repository:

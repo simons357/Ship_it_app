@@ -145,7 +145,9 @@ Assigning \(\Phi:=\{\gamma_n\}\) is recorded as a circular fill (HP-H007), not a
 | HP-H023 | Pólya 1918 / 1923 zeros of entire functions | Earlier zero-distribution calculus | **RETAIN**; not \(\operatorname{spec}(H)=\{\gamma_n\}\) |
 | HP-H024 | Pólya 1915 integer-valued entire functions | Entire functions taking integer values | **RETAIN** as dump; different book from \(\xi\) |
 | HP-H025 | Pólya–Szegő rearrangement \(\int\lvert\nabla u^\ast\rvert^2\le\int\lvert\nabla u\rvert^2\) | PDE estimate tool | **RETAIN**; LOOK-NS-REARRANGE; not Clay NS |
+| HP-H026 | Pólya 1914/1982: RH iff eigenvalues of a physical problem are real, given a connection of \(\Xi\) zeros to that problem | Documented origin of Pólya’s remark (Odlyzko letters) | **RETAIN** as remark; **not** \(H\); weaker than HP-H001 |
 | HP-H027 | \(d\ge 3\) transience / Green \(\sim 1/\lvert x\rvert^{d-2}\) | Newtonian kernel family | **RETAIN**; LOOK-NS-GREEN closest NS rhyme; not regularity |
+| HP-H028 | (no documented Hilbert formulation) | Folk independent Hilbert origin | **RETIRE** as a formula; `NULL-HP-HILBERT-ORIGIN` |
 
 Machine-readable NS book used in the look (aliases NS-B, NS-Φ):
 

@@ -302,5 +302,29 @@
     "evidence": "3D Green kernel of −Δ versus Biot–Savart u=∇×(−Δ)^{-1}ω. Same inverse-Laplacian response R(κ)=1/κ²; different realized outputs (kernel vs velocity). Not Clay NS.",
     "status": "recorded",
     "notes": "The pair that was run through DA. Shared scale response, not identity."
+  },
+  {
+    "left_id": "HP-H026",
+    "right_id": "HP-H001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Pólya 1914/1982: RH iff all eigenvalues of a physical problem are real, given a connection of Ξ zeros to that problem. HP-H001 is the later slogan spec(H)={γ_n} for an independently specified self-adjoint H. The letter does not construct H. Do not upgrade the remark.",
+    "status": "recorded",
+    "notes": "Odlyzko origin dump. Weaker conditional vs modern program statement."
+  },
+  {
+    "left_id": "HP-H028",
+    "right_id": "HP-H001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "No documented Hilbert formulation in the Odlyzko correspondence. Taussky-Todd had no NT conversations with Hilbert. Folk dual-origin is not a formula.",
+    "status": "recorded",
+    "notes": "NULL-HP-HILBERT-ORIGIN. Do not invent Hilbert’s H."
+  },
+  {
+    "left_id": "HP-H026",
+    "right_id": "HP-H005",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "Pólya’s 1914 remark does not mention random matrices. Odlyzko’s GUE comparison is 1981–82; he called the chain of reasoning very weak. Pólya 26 Apr 1982 did not understand the graphs yet.",
+    "status": "recorded",
+    "notes": "Do not read GUE back into the 1914 remark."
   }
 ]

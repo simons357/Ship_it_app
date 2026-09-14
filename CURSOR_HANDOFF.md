@@ -42,6 +42,7 @@ What DA did in this thread:
 3. Millennium look (`--millennium-look`, `--pair`). Rhymes, not solutions. Green / Biot–Savart: `COMPATIBLE_DISTINCT`. Two \(\Phi\)s: `INCOMPATIBLE`.
 4. Breakdown children (`--breakdown-children`). Refusals are **path guidance**, not leftover noise.
 5. Kept NS model entered (`--ns-model`). DA accepted it as a **fluids book**. KEEP algebra in \(E\). Prize output empty. Barrier still \(\|u^r/r\|_\infty\).
+6. Odlyzko–Pólya origin dump (`--odlyzko`). 1914 remark KEEP as a remark, not \(H\). Hilbert side empty. GUE chain already called weak by Odlyzko.
 
 ---
 
@@ -195,13 +196,15 @@ There is **no** file named `docs/VORTEX.md` in this checkout. Vortex-stretching 
 | `domain_architect/polya_probe.py` | `--polya-probe` |
 | `domain_architect/millennium_overlap.py` | `--millennium-look`, `--pair` |
 | `domain_architect/breakdown_children.py` | `--breakdown-children` |
+| `domain_architect/odlyzko_origin.py` | `--odlyzko` (1914 remark; Hilbert empty) |
 | `results/polya-probe.txt` | Live narrative |
 | `results/millennium-look.txt` | Live narrative |
 | `results/pair-run.txt` | Green/Biot–Savart + \(\Phi\) collision |
 | `results/breakdown-children.txt` | Children + path guidance |
+| `results/odlyzko-polya.txt` | Origin dump narrative |
 | `data/domain_architect/null_results.json` | `NULL-HP-*`, `NULL-POLYA-LIOUVILLE` |
 
-Registry HP ids: `HP-H001`–`HP-H025`, `HP-H027` (`HP-H026` unused).
+Registry HP ids: `HP-H001`–`HP-H028` (`HP-H026` = 1914 remark; `HP-H028` = Hilbert origin empty).
 
 ### 4.3 Quantum Q&A
 
@@ -301,6 +304,7 @@ python -m domain_architect --millennium-look
 python -m domain_architect --pair
 python -m domain_architect --breakdown-children
 python -m domain_architect --ns-model
+python -m domain_architect --odlyzko
 
 python -m unittest \
   tests.test_domain_architect_acceptance \
@@ -309,7 +313,8 @@ python -m unittest \
   tests.test_polya_probe \
   tests.test_millennium_overlap \
   tests.test_breakdown_children \
-  tests.test_ns_model
+  tests.test_ns_model \
+  tests.test_odlyzko_origin
 ```
 
 ---

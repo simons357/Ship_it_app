@@ -206,7 +206,9 @@ class TestRegistryRecords(unittest.TestCase):
             "HP-H023",
             "HP-H024",
             "HP-H025",
+            "HP-H026",
             "HP-H027",
+            "HP-H028",
         ):
             self.assertIn(eq_id, registry.equations)
         self.assertIn("NS-H001", registry.equations)
@@ -215,16 +217,21 @@ class TestRegistryRecords(unittest.TestCase):
         self.assertEqual(registry.equations["HP-H007"].audit_disposition, "RETIRE")
         self.assertEqual(registry.equations["HP-H011"].audit_disposition, "RETAIN")
         self.assertEqual(registry.equations["HP-H013"].audit_disposition, "RETIRE")
+        self.assertEqual(registry.equations["HP-H026"].audit_disposition, "RETAIN")
+        self.assertEqual(registry.equations["HP-H028"].audit_disposition, "RETIRE")
         null_ids = {n.null_id for n in registry.nulls}
         self.assertIn("NULL-HP-CIRCULAR", null_ids)
         self.assertIn("NULL-HP-GUE", null_ids)
         self.assertIn("NULL-HP-OSCILLATOR", null_ids)
+        self.assertIn("NULL-HP-HILBERT-ORIGIN", null_ids)
         pairs = {(c.left_id, c.right_id, c.relation) for c in registry.conflicts}
         self.assertIn(("HP-H003", "HP-H004", "INCOMPATIBLE"), pairs)
         self.assertIn(("HP-H007", "HP-H001", "INCOMPATIBLE"), pairs)
         self.assertIn(("HP-H008", "HP-H003", "COMPATIBLE_DISTINCT"), pairs)
         self.assertIn(("HP-H017", "HP-H011", "GENERALIZATION"), pairs)
         self.assertIn(("HP-H020", "HP-H010", "COMPATIBLE_DISTINCT"), pairs)
+        self.assertIn(("HP-H026", "HP-H001", "COMPATIBLE_DISTINCT"), pairs)
+        self.assertIn(("HP-H028", "HP-H001", "INSUFFICIENT_INFORMATION"), pairs)
 
     def test_cli_default_program(self):
         proc = subprocess.run(

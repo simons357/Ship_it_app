@@ -14,6 +14,7 @@ from .hilbert_polya import (
 )
 from .breakdown_children import run_breakdown_children
 from .ns_model import render_ns_model, run_ns_model
+from .odlyzko_origin import render_odlyzko_origin, run_odlyzko_origin
 from .millennium_overlap import (
     list_pair_ids,
     millennium_look_narrative,
@@ -50,7 +51,7 @@ def main(argv: list[str] | None = None) -> int:
         help=(
             "Hilbert–Pólya candidate id for --hilbert-polya "
             "(unspecified, target-identity, diagonal-zeros, berry-keating, "
-            "connes, montgomery-gue, weil-explicit)"
+            "connes, montgomery-gue, weil-explicit, polya-1914)"
         ),
     )
     parser.add_argument(
@@ -95,7 +96,26 @@ def main(argv: list[str] | None = None) -> int:
             "into Domain Architect and report what happens; Clay NS not claimed"
         ),
     )
+    parser.add_argument(
+        "--odlyzko",
+        action="store_true",
+        help=(
+            "ingest Odlyzko’s Pólya correspondence on the origins of "
+            "Hilbert–Pólya; does not construct H and does not prove RH"
+        ),
+    )
     args = parser.parse_args(argv)
+
+    if args.odlyzko:
+        report = run_odlyzko_origin()
+        if args.json:
+            json.dump(report.to_dict(), sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print(render_odlyzko_origin(report))
+            print()
+            print(f"Canonical SFE status: {CANONICAL_SFE_STATUS}.")
+        return 0
 
     if args.ns_model:
         report = run_ns_model()

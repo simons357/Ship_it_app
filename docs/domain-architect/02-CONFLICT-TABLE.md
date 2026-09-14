@@ -103,6 +103,8 @@ Columns:
 | C-HP-11 | HP-H019 1951 isoperimetric book | HP-H001 / Clay NS | Spectral vocabulary vs prize | **INSUFFICIENT_INFORMATION.** Dump is not a bridge |
 | C-LOOK-1 | HP-H027 \(d\ge 3\) Green | NS-H001 vorticity / Biot–Savart | Kernel family | **COMPATIBLE_DISTINCT.** Closest NS rhyme. Not regularity |
 | C-LOOK-2 | HP-H012 Riemann kernel \(\Phi\) | NS-H002 swirl \(\Phi=u_\theta/r\) | Letter \(\Phi\) | **INCOMPATIBLE.** Notation collision |
+| C-HP-12 | HP-H026 Pólya 1914/1982 remark | HP-H001 \(\operatorname{spec}(H)=\{\gamma_n\}\) | Origin vs modern slogan | **COMPATIBLE_DISTINCT.** Do not upgrade the letter |
+| C-HP-13 | HP-H028 Hilbert origin empty | HP-H001 program statement | Folk dual-origin | **INSUFFICIENT_INFORMATION.** Do not invent Hilbert’s \(H\) |
 
 Pólya probe (N independently specifiable components, not a five-role cap): `python -m domain_architect --polya-probe`. Millennium look: `python -m domain_architect --millennium-look`. Write-up: [07 — Pólya probe](07-POLYA-PROBE.md).
 

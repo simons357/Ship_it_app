@@ -87,6 +87,10 @@ class TestPolyaProbe(unittest.TestCase):
         self.assertTrue(any(r["result"] == "false" and "Liouville" in r["source"] for r in board))
         self.assertTrue(any(r["result"] == "incomplete" and "Hilbert" in r["source"] for r in board))
         self.assertIn("the only one whose theorems survive", " ".join(probe.filter_pops))
+        self.assertTrue(any(c.component_id == "C-Origin1914" for c in probe.components))
+        self.assertTrue(any(r["result"] == "survived-as-remark" for r in board))
+        self.assertTrue(any(r["result"] == "empty" and "Hilbert" in r["source"] for r in board))
+        self.assertIn("HP-H026", EquationRegistry.load_default().equations)
 
     def test_cli_probe(self):
         proc = subprocess.run(

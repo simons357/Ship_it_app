@@ -287,6 +287,36 @@ def briefing_components() -> list[ComponentRecord]:
             "HP-S0",
         ),
         ComponentRecord(
+            "C-Origin1914",
+            "E-history",
+            "Pólya 1914/1982: RH iff all eigenvalues of a physical problem are real, given a connection of Ξ zeros to that problem",
+            "documented-remark",
+            True,
+            "accepted as the only documented origin of Pólya’s Hilbert–Pólya remark; refused as a fill of H",
+            "weaker than spec(H)={γ_n}; the connection is the missing object; never published",
+            "HP-H026 / Odlyzko correspondence",
+        ),
+        ComponentRecord(
+            "C-HilbertEmpty",
+            "E-history",
+            "Hilbert independent 1910s formulation: no documented formula (Taussky-Todd 1982)",
+            "undocumented",
+            True,
+            "classified empty; do not invent Hilbert’s reasoning",
+            "folk dual-origin is not a Hamiltonian",
+            "HP-H028 / NULL-HP-HILBERT-ORIGIN",
+        ),
+        ComponentRecord(
+            "C-OdlyzkoWeak",
+            "E-history",
+            "Odlyzko 1982: GUE resemblance; chain of reasoning ‘very weak’; Pólya did not yet understand the graphs",
+            "numerics-plus-caveat",
+            True,
+            "GUE stays HP-G1; Odlyzko’s caveat KEEP; not an endorsement of H",
+            "do not read random matrices back into the 1914 remark",
+            "HP-H005 plus Odlyzko letters",
+        ),
+        ComponentRecord(
             "C-psi",
             "ψ",
             "eigenfunctions of an independently specified H",
@@ -762,6 +792,18 @@ def filter_scoreboard() -> list[dict[str, str]]:
             ),
         },
         {
+            "source": "Pólya 1914 Göttingen remark (Odlyzko letter 3 Jan 1982)",
+            "result": "survived-as-remark",
+            "objects": "RH iff eigenvalues of a physical problem are real, given a connection to Ξ zeros",
+            "notes": "Only documented origin of Pólya’s Hilbert–Pólya remark. Not H. Weaker than spec(H)={γ_n}. Never published.",
+        },
+        {
+            "source": "Hilbert independent 1910s formulation",
+            "result": "empty",
+            "objects": "(no documented Hilbert formula)",
+            "notes": "Taussky-Todd had no NT conversations with Hilbert. Folk dual-origin is not a formula.",
+        },
+        {
             "source": "de Bruijn–Newman–Rodgers–Tao (continuation of Pólya 1926)",
             "result": "survived-as-continuation",
             "objects": "de Bruijn–Newman Λ; Λ ≥ 0 theorem; RH ⇔ Λ = 0",
@@ -832,6 +874,11 @@ def filter_pops() -> list[str]:
         "Berry–Keating, Connes, GUE-as-identity, diag(γ_n), the oscillator, "
         "and SFE-HAM do not survive as a filled Hamiltonian. Pólya also lost "
         "one: the Liouville-sum conjecture is false.",
+        "Pólya’s 1914 Göttingen remark (Odlyzko letter, 3 Jan 1982) survived as "
+        "a remark, not as H: RH iff all eigenvalues of a physical problem are "
+        "real, given a connection of Ξ zeros to that problem. Hilbert’s "
+        "independent formulation is empty in that source. Odlyzko already "
+        "called the GUE chain of reasoning very weak.",
         "N(T) rejects equal-spaced H (the oscillator). Hermite polynomials in "
         "the oscillator, GUE, and Jensen(ξ) are a special-function collision, not H.",
         "Two Pólya routes stay unmerged: a self-adjoint Hamiltonian versus "
@@ -899,6 +946,9 @@ def _findings() -> list[str]:
         "ξ(1/2+iz) as an entire function of the LP class (all zeros real). Both "
         "imply RH if completed. Each is missing its independent object (H, or an "
         "LP-membership proof that does not assume RH).",
+        "Odlyzko’s Pólya letters (1982) document the 1914 remark and nothing more. "
+        "Do not upgrade ‘eigenvalues real given a connection’ to spec(H)={γ_n}. "
+        "Do not invent Hilbert’s side. Do not read GUE back into 1914.",
         "Feeding Pólya’s proven LP / Jensen calculus does not fill H. It restates "
         "the reality of zeros in entire-function language.",
         "Pólya 1926 is the actual attempt to solve H with proven Pólya analysis: "

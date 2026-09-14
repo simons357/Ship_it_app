@@ -5,10 +5,10 @@ Pólya probe. Domain Architect chooses how many independently specifiable compon
 This is a completeness audit of the Hilbert–Pólya program. It is not a proof of the Riemann hypothesis, not a canonical SFE, and not evidence that primes are physically privileged.
 
 Instance: polya-probe
-DA decided the component count for this subject: 43
-Independently specifiable components recorded: 43 (5 core interface letters + 38 extension / E)
+DA decided the component count for this subject: 46
+Independently specifiable components recorded: 46 (5 core interface letters + 41 extension / E)
 P, H, ψ, λ, Φ are an interface, not a cap. The count can be 7, 8, 15, or whatever the subject requires. DA decides. Five is what we started with, not what quantum Hilbert–Pólya fitted into.
-Interface letters recorded: 5 (P, H, ψ, λ, Φ). Extra independently specifiable objects: 38.
+Interface letters recorded: 5 (P, H, ψ, λ, Φ). Extra independently specifiable objects: 41.
 Hilbert–Pólya status: incomplete; no independent Hamiltonian on record whose spectrum is identified with the nontrivial zeros.
 Riemann hypothesis status: not claimed.
 Canonical SFE status: unresolved.
@@ -29,6 +29,12 @@ Who survived the filter (RH-attack sources):
   [survived] George Pólya (proven entire-function / Fourier / multiplier / frequency)
     Laguerre–Pólya class; Pólya–Schur multipliers; 1926 cosine-zero criterion; 1926 Acta ξ integral; Pólya frequency kernels; 1918/1923 zero distribution
     Only RH-attack source whose theorems remain as usable objects. Does not fill H. Does not prove RH. Heat-flow continuation is Λ.
+  [survived-as-remark] Pólya 1914 Göttingen remark (Odlyzko letter 3 Jan 1982)
+    RH iff eigenvalues of a physical problem are real, given a connection to Ξ zeros
+    Only documented origin of Pólya’s Hilbert–Pólya remark. Not H. Weaker than spec(H)={γ_n}. Never published.
+  [empty] Hilbert independent 1910s formulation
+    (no documented Hilbert formula)
+    Taussky-Todd had no NT conversations with Hilbert. Folk dual-origin is not a formula.
   [survived-as-continuation] de Bruijn–Newman–Rodgers–Tao (continuation of Pólya 1926)
     de Bruijn–Newman Λ; Λ ≥ 0 theorem; RH ⇔ Λ = 0
     They extended Pólya’s win to one real number. Still not RH.
@@ -62,6 +68,7 @@ Who survived the filter (RH-attack sources):
 
 What popped through the DA filter:
   * Among RH-attack sources, Pólya is the only one whose theorems survive as usable objects. Hilbert–Pólya is still a strategy with no H. Berry–Keating, Connes, GUE-as-identity, diag(γ_n), the oscillator, and SFE-HAM do not survive as a filled Hamiltonian. Pólya also lost one: the Liouville-sum conjecture is false.
+  * Pólya’s 1914 Göttingen remark (Odlyzko letter, 3 Jan 1982) survived as a remark, not as H: RH iff all eigenvalues of a physical problem are real, given a connection of Ξ zeros to that problem. Hilbert’s independent formulation is empty in that source. Odlyzko already called the GUE chain of reasoning very weak.
   * N(T) rejects equal-spaced H (the oscillator). Hermite polynomials in the oscillator, GUE, and Jensen(ξ) are a special-function collision, not H.
   * Two Pólya routes stay unmerged: a self-adjoint Hamiltonian versus Laguerre–Pólya / Pólya 1926 kernel conditions.
   * Pólya 1926 plus heat flow contracts the missing object to one real number Λ (de Bruijn–Newman). Rodgers–Tao: Λ ≥ 0 is a theorem. RH ⇔ Λ = 0. This is a second scale occupant, not H and not {γ_n}.
@@ -82,6 +89,18 @@ What Domain Architect did with the supplied objects:
     occupant: no unique independent Hamiltonian; several incompatible candidates exist
     DA action: refused to pick a winner by symbol overlap; kept candidates distinct
     verdict: load-bearing gap remains
+  [C-Origin1914] role=E-history kind=documented-remark (specified)
+    occupant: Pólya 1914/1982: RH iff all eigenvalues of a physical problem are real, given a connection of Ξ zeros to that problem
+    DA action: accepted as the only documented origin of Pólya’s Hilbert–Pólya remark; refused as a fill of H
+    verdict: weaker than spec(H)={γ_n}; the connection is the missing object; never published
+  [C-HilbertEmpty] role=E-history kind=undocumented (specified)
+    occupant: Hilbert independent 1910s formulation: no documented formula (Taussky-Todd 1982)
+    DA action: classified empty; do not invent Hilbert’s reasoning
+    verdict: folk dual-origin is not a Hamiltonian
+  [C-OdlyzkoWeak] role=E-history kind=numerics-plus-caveat (specified)
+    occupant: Odlyzko 1982: GUE resemblance; chain of reasoning ‘very weak’; Pólya did not yet understand the graphs
+    DA action: GUE stays HP-G1; Odlyzko’s caveat KEEP; not an endorsement of H
+    verdict: do not read random matrices back into the 1914 remark
   [C-psi] role=ψ kind=downstream (not independently specified)
     occupant: eigenfunctions of an independently specified H
     DA action: kept downstream of H; not a free wavefunction to tune
@@ -250,6 +269,7 @@ What Domain Architect did with the supplied objects:
 Findings (classification, not discovery of a Hamiltonian):
   - Quantum Hilbert–Pólya does not fit in five letters. DA decided the count from the subject and expanded to Hilbert space, inner product, domain/boundary data, unitary evolution, implicit Ξ = 0, arithmetic (Euler/Weil), entire-function data (ξ, functional equation, Laguerre–Pólya, Jensen), statistics (GUE), and symmetry (time-reversal breaking). Another subject can land at 7 or 8. This one did not.
   - Two parallel Pólya routes exist and must not be merged: (1) Hilbert–Pólya — a self-adjoint H whose eigenvalues are the γ_n; (2) Laguerre–Pólya — ξ(1/2+iz) as an entire function of the LP class (all zeros real). Both imply RH if completed. Each is missing its independent object (H, or an LP-membership proof that does not assume RH).
+  - Odlyzko’s Pólya letters (1982) document the 1914 remark and nothing more. Do not upgrade ‘eigenvalues real given a connection’ to spec(H)={γ_n}. Do not invent Hilbert’s side. Do not read GUE back into 1914.
   - Feeding Pólya’s proven LP / Jensen calculus does not fill H. It restates the reality of zeros in entire-function language.
   - Pólya 1926 is the actual attempt to solve H with proven Pólya analysis: a sufficient condition for cosine transforms to have only real zeros. Riemann Ξ has that shape. The hypotheses are not a checked theorem for Riemann’s Φ. Pólya relocates the gap, then heat flow contracts it to Λ. DA’s pop: one real number with target Λ = 0, distinct from the H role and from {γ_n}.
   - Berry–Keating xp is the only supplied emission-Hamiltonian candidate with an independent classical symbol. Connes is a different object. GUE is not an object of that type. diag(γ_n) is circular.
@@ -355,6 +375,7 @@ Candidate scores (unmerged):
   diagonal-zeros: independent_H=False circular=True complete=False missing=HP-U1, HP-U2, HP-U3, HP-S0, HP-S1, HP-S2…
   berry-keating: independent_H=True circular=False complete=False missing=HP-U2, HP-U3, HP-S1, HP-S2, HP-S3, HP-T2…
   connes: independent_H=True circular=False complete=False missing=HP-U2, HP-U3, HP-S1, HP-S2, HP-S3, HP-T2…
+  polya-1914: independent_H=False circular=False complete=False missing=HP-U1, HP-U2, HP-U3, HP-S0, HP-S1, HP-S2…
   montgomery-gue: independent_H=False circular=False complete=False missing=HP-U1, HP-U2, HP-U3, HP-S0, HP-S1, HP-S2…
   weil-explicit: independent_H=False circular=False complete=False missing=HP-U1, HP-U2, HP-U3, HP-S0, HP-S1, HP-S2…
 
@@ -383,9 +404,9 @@ Pólya probe. Domain Architect chooses how many independently specifiable compon
 Pieces on the Hilbert–Pólya checklist: HP-U1, HP-U2, HP-U3, HP-S0, HP-S1, HP-S2, HP-S3, HP-T1, HP-T2, HP-S5, HP-G1, HP-D1, HP-F1
 UHF extras that remain required: Hilbert space ℋ and inner product; operator domain D(H) and deficiency indices; archimedean / Gamma factor of ξ; Weil explicit formula (primes on the geometric side); multiplicity of zeros / eigenvalues; possible continuous spectrum versus point spectrum; time-reversal breaking if GUE (not GOE) is expected; regularization or cutoff if the classical symbol is xp
 
-Registry HP ids: HP-H001, HP-H002, HP-H003, HP-H004, HP-H005, HP-H006, HP-H007, HP-H008, HP-H009, HP-H010, HP-H011, HP-H012, HP-H013, HP-H014, HP-H015, HP-H016, HP-H017, HP-H018, HP-H019, HP-H020, HP-H021, HP-H022, HP-H023, HP-H024, HP-H025, HP-H027
-Conflicts involving HP: 24
-Nulls involving HP: NULL-HP-CIRCULAR, NULL-HP-GUE, NULL-HP-COMPLETE, NULL-HP-OSCILLATOR, NULL-HP-POLYA1926
-Protocol hash: 2ca1d555a2c2092c12be8a044f2d053ba8de6bffb35754d7bc0ccb1e2c6f0302
+Registry HP ids: HP-H001, HP-H002, HP-H003, HP-H004, HP-H005, HP-H006, HP-H007, HP-H008, HP-H009, HP-H010, HP-H011, HP-H012, HP-H013, HP-H014, HP-H015, HP-H016, HP-H017, HP-H018, HP-H019, HP-H020, HP-H021, HP-H022, HP-H023, HP-H024, HP-H025, HP-H026, HP-H027, HP-H028
+Conflicts involving HP: 28
+Nulls involving HP: NULL-HP-CIRCULAR, NULL-HP-GUE, NULL-HP-COMPLETE, NULL-HP-OSCILLATOR, NULL-HP-POLYA1926, NULL-HP-HILBERT-ORIGIN
+Protocol hash: 08c74e0371d3d58ebfe3075d6d33a4d77ffb104fecf72d4db3333a1a111b719a
 
 Canonical SFE status: unresolved.

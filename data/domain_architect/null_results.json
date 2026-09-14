@@ -86,5 +86,13 @@
     "evidence": "HP-H013",
     "source": "Pólya probe 2026-09",
     "created_at": "2026-09-14T00:00:00Z"
+  },
+  {
+    "null_id": "NULL-HP-HILBERT-ORIGIN",
+    "kind": "undocumented origin",
+    "statement": "Hilbert’s independent formulation of Hilbert–Pólya is not documented in the Odlyzko correspondence. Olga Taussky-Todd (25 Jan 1982) had no number-theory conversations with Hilbert. Folk ‘Hilbert and Pólya independently, 1910s’ is not a Hilbert formula.",
+    "evidence": "HP-H028; https://www-users.cse.umn.edu/~odlyzko/polya/index.html",
+    "source": "Odlyzko–Pólya origin dump 2026-09",
+    "created_at": "2026-09-14T00:00:00Z"
   }
 ]

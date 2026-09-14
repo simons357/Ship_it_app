@@ -78,6 +78,8 @@ _ZERO_PHRASES: tuple[str, ...] = (
     "zeros of zeta",
     "zeros of ξ",
     "zeros of xi",
+    "ξ zeros",
+    "xi zeros",
     "gamma_n",
     "γ_n",
     "{γ",
@@ -513,6 +515,22 @@ def historical_candidates() -> tuple[CandidateRecord, ...]:
             ),
         ),
         CandidateRecord(
+            candidate_id="polya-1914",
+            formula=(
+                "RH iff all eigenvalues of a physical problem are real, "
+                "given a connection of Ξ zeros to that problem (Pólya 1914/1982)"
+            ),
+            hamiltonian_independent_of_zeros=False,
+            supplies_pieces=(),
+            missing_pieces=_all_construction_pieces(),
+            circular=False,
+            notes=(
+                "Documented origin of Pólya’s remark (Odlyzko letter 3 Jan 1982). "
+                "A conditional physical reason, not an independently specified H. "
+                "Weaker than spec(H)={γ_n}."
+            ),
+        ),
+        CandidateRecord(
             candidate_id="montgomery-gue",
             formula="pair correlation of zeros matches GUE",
             hamiltonian_independent_of_zeros=False,
@@ -577,6 +595,8 @@ def hamiltonian_is_independent(formula: str) -> bool:
             "explicit formula",
             "pair correlation",
             "functional equation",
+            "physical problem are real",
+            "physical-reason remark",
         )
     ):
         return False

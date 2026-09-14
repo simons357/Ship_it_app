@@ -29,6 +29,7 @@ from .polya_probe import run_polya_probe
 from .breakdown_children import run_breakdown_children
 from .millennium_overlap import millennium_look_narrative
 from .ns_model import NSModelReport, render_ns_model, run_ns_model
+from .odlyzko_origin import OdlyzkoOriginReport, render_odlyzko_origin, run_odlyzko_origin
 from .report import AuditReport
 
 __all__ = [
@@ -51,6 +52,9 @@ __all__ = [
     "NSModelReport",
     "render_ns_model",
     "run_ns_model",
+    "OdlyzkoOriginReport",
+    "render_odlyzko_origin",
+    "run_odlyzko_origin",
 ]
 
-__version__ = "0.4.7"
+__version__ = "0.4.8"

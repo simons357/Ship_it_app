@@ -16,13 +16,27 @@ It does **not** construct that system. Assigning the zeros to the realized
 output \(\Phi\) is the *target identity* of the program. It is not a fill of
 \(H\).
 
+**Origin (Odlyzko correspondence).** Pólya’s 3 January 1982 letter is the
+only documented source of *his* remark. In Göttingen, ending around the
+beginning of 1914, Landau asked for a physical reason RH should be true.
+Pólya answered: if the nontrivial zeros of \(\Xi\) were so connected with
+a physical problem that RH would be equivalent to all eigenvalues of that
+problem being real. He never published it. That is weaker than
+\(\operatorname{spec}(H)=\{\gamma_n\}\). Hilbert’s independent formulation
+is **empty** in this source (Taussky-Todd 1982). Odlyzko already called the
+GUE chain of reasoning “very weak.” Source:
+<https://www-users.cse.umn.edu/~odlyzko/polya/index.html>.
+Run: `python -m domain_architect --odlyzko`.
+
 Run:
 
 ```bash
 python -m domain_architect --hilbert-polya
 python -m domain_architect --hilbert-polya --candidate berry-keating
 python -m domain_architect --hilbert-polya --candidate montgomery-gue
+python -m domain_architect --hilbert-polya --candidate polya-1914
 python -m domain_architect --polya-probe
+python -m domain_architect --odlyzko
 python -m domain_architect --millennium-look
 python -m unittest tests.test_hilbert_polya tests.test_polya_probe tests.test_millennium_overlap
 ```
