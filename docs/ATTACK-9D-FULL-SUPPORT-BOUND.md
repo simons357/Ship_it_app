@@ -67,6 +67,14 @@ Designed \(\Theta(m^2)\) 9D stays **NO**.
 Grow-\(s\) samples stay historical.
 Do not cash \(0.456\) or \(0.641\) as \(C_0\).
 
+If another Cursor says “9D is dead,” ask which object it named.
+Designed \(\Theta(m^2)\), fixed-\(s\), grow-\(s\) as \(C_0\), and 9D-as-a-close
+are already **DEAD** on this page and on [`NS-TREE.md`](NS-TREE.md).
+That is also what PR [#80](https://github.com/simons357/Ship_it_app/pull/80) locked.
+Exact-shell \(K\le 16/9\) is the other object: **CLAIMED**, not dead, not proved.
+Do not unclaim it without a named failing line.
+Do not upgrade CLAIMED to proved to win the argument.
+
 Machine: `scripts/ns_attacks/verify_pr24_closure_review.py`.
 That script checks the symbolic identity
 and compares growing-layer calculations
@@ -466,6 +474,7 @@ That does not unclaim the bound.
 |---|---|
 | Designed \(\Theta(m^2)\) 9D | **NO.** Dead. |
 | Grow-\(s\) finite max as \(C_0\) | **NO.** Historical. |
+| PR #80 “no 9D claim” / desktop “9D is dead” | **Agree** on designed / fixed-\(s\) / grow-\(s\)-as-\(C_0\) / 9D-as-close. **Not** a named kill of the next row. |
 | Exact-shell \(K\le 16/9\) | **CLAIMED.** Written derivation available; internal checks passed; independent specialist review pending. Occupancy \(s\) gone on one input shell if it holds. |
 | Admissible \((\alpha,\beta)\) | \(\alpha>0\), \(0<\beta\le 4\alpha\) for a nonvacuous pair. \(\beta>4\alpha\) is empty. |
 | One-variable max of \(f(x)=\frac34 x^2(1-x/4)\) on \((0,4]\) | Elementary: \(16/9\) at \(x=8/3\). Redo by hand. Does not certify §3. |

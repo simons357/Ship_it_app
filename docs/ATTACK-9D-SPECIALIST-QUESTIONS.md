@@ -4,6 +4,9 @@
 Answers before anyone else reads the page.
 Ordinary NS stays **open**. Soft X silent.
 Word on exact-shell \(16/9\): **CLAIMED**.
+A desktop “9D is dead” is the other object
+(designed / fixed-\(s\) / 9D-as-close). Split:
+[`NS-TREE.md`](NS-TREE.md).
 Items 5–10 and 14 are also on
 [`ATTACK-9D-FULL-SUPPORT-BOUND.md`](ATTACK-9D-FULL-SUPPORT-BOUND.md).
 

@@ -18,6 +18,34 @@ Soft X silent.
 Living means the branch still has a question or a tool.
 It does not mean proved.
 
+---
+
+## If another Cursor says DEAD
+
+That is usually a **name collision**, not a named kill of the gold node.
+
+The word **9D** has been used for two different objects.
+Do not glue them.
+
+| Object | Word on this tree | Typical desktop / PR #80 sentence |
+|---|---|---|
+| Designed \(\Theta(m^2)\) 9D; Freiman-AP; fixed-\(s\) \(\Theta(m^2)\) with \(K\le 16s\); grow-\(s\) as \(C_0\) | **DEAD** | “9D is dead.” “No 9D claim.” “Team already had growing-\(s\).” |
+| Exact-shell as a **close** of unrestricted \(\star\) or of ordinary NS | **DEAD as a close** | “9D does not solve NS.” “A true \(4/3\) does not continue.” |
+| Exact-shell one-input-shell bound \(K\le 16/9\) | **CLAIMED** | This is the other object. Desktop is **not** contradicting the red nodes by calling the old 9D dead. |
+
+PR [#80](https://github.com/simons357/Ship_it_app/pull/80) locks the **first** object: no claim on that kill-lane; grow-\(s\) remains a sweep, not \(C_0\).
+This tree agrees with that lock.
+
+This PR locks the **third** object: a written one-shell bilinear bound, claimed, not proved, not a close.
+
+**Do not reconcile by unclaiming \(16/9\)** unless a failing line is named
+(kernel, factor \(3\), half-symmetrization, or Hermitian residual).
+**Do not reconcile by upgrading CLAIMED to proved.**
+A desktop “dead” with no named algebraic error is a verdict on the old 9D, or on 9D-as-close, not on the gold node.
+
+If desktop **did** name a failing line in the \(16/9\) algebra, paste that line.
+Then this gold node moves to DEAD. Until then it stays CLAIMED.
+
 ```mermaid
 flowchart TD
   root["Unaugmented NS on T³<br/>ordinary regularity: OPEN"]
@@ -135,4 +163,6 @@ Do not draw an arrow from those into ordinary NS.
 
 ## One-line status
 
-Tools live. Unrestricted \(\star\) dead as a box. Exact-shell \(16/9\) claimed on one shell. Ordinary NS open.
+Tools live. Unrestricted \(\star\) dead as a box. Designed 9D dead. Exact-shell \(16/9\) claimed on one shell. Ordinary NS open.
+
+Desktop “9D is dead” agrees with the red 9D nodes. It does not, by itself, kill the gold node.
