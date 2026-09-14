@@ -63,8 +63,8 @@ If a real SFE-style oscillation were on the table, it would need:
 - a **predicted number** — what value, at what time, with what units?
 
 We do not have those. Leaving that gap visible is honest. Filling it
-with “well, \(a(t)\) changes, so the field is breathing” would be a fake
-close.
+with “well, \(a(t)\) changes, so the field is breathing” would be a
+fake close.
 
 ## What this is not
 
