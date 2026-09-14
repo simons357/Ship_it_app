@@ -10,7 +10,7 @@ comment after. Rap can punch hype; it cannot fake a theorem.
 Do not claim unaugmented Navier–Stokes regularity is closed. Do not claim
 the Riemann hypothesis is proved. Do not glue Φ / Q6 / H_N as one object
 (a joke about letters colliding is allowed). If Cosmo Evolution is in the
-issue, comment as drawer-3: what we do not claim. Autobiography stays out
+issue, comment as drawer-3 / PULLED BACK: what we do not claim. Autobiography stays out
 of git. No prize talk. No red-eye face.
 
 Credit line to paste under finished bars:

@@ -136,8 +136,8 @@ A ruler in the galaxy map is a real instrument.
 “Dark energy might be evolving” is a maybe
 that still changes clothes when the supernova catalog does.
 
-If Cosmo Evolution is in the issue, I’m drawer three:
-what we do not claim.
+If Cosmo Evolution is in the issue, I’m drawer three —
+PULLED BACK: what we do not claim.
 I will not glue tonight’s sky to a notebook letter
 and call it one object.
 
