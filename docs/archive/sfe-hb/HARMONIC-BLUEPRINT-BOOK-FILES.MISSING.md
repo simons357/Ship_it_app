@@ -1,0 +1,21 @@
+# Harmonic Blueprint book files — not received on this VM
+
+Jon pointed at Desktop / Downloads copies. This environment **cannot
+read** Mac `/Users/…` or iCloud. Filenames below are untrusted aliases
+until bytes arrive (paste, upload, or a public URL).
+
+**Not live Domain Architect.** **Not Clay.** Do not invent TeX from
+titles. Do not import into `domain_architect/`.
+
+| Named file | Where Jon had it | Status here |
+|---|---|---|
+| `HARMONIC_PERSPECTIVE_ON_RH.md` | Desktop `RH_Proof_Chain_Synthesis/00_status/` (115 lines) | **Paste arrived.** Filed as [`Harmonic_Perspective_on_RH_2026-08-14.md`](Harmonic_Perspective_on_RH_2026-08-14.md). Hard rule stands. RH bridge **OPEN**. |
+| `Harmonic_Blueprint_HARDBACK.docx` | filename only | **not received** |
+| `SFE_Research_Map.html` | `Downloads/SFE_Research_Map.html` | **not received** |
+| `The_Harmonic_Blueprint_Full_Book__Chapter 8 - The Simons Field Equation Explained.txt` | filename only | **not received** |
+| `The Harmonic Blueprint FULL.docx` | filename only | **not received** |
+| `The Harmonic Blueprint FULL 150 PAGES.pdf` | filename only | **not received** |
+| `Simons_Field_Equation_White_Paper.txt` | filename only | **not received** as a file. A related book-chapter paste is filed as [`SFE_Breathing_Field_Book_Paste.md`](SFE_Breathing_Field_Book_Paste.md) (truncated in chat). |
+
+If you want those kept, paste the text or drop the files where this
+agent can read them. Do not treat a filename as the book.

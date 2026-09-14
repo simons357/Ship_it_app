@@ -410,6 +410,27 @@ class TestRhHarmonicPerspectiveStaysArchived(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("14 Aug RH harmonic-perspective note", gcd)
 
+    def test_millennium_primer_is_rejected_as_a_solve(self):
+        path = ARCHIVE_SFE_HB / "Unified_Harmonic_Solutions_Millennium_Problems.md"
+        self.assertTrue(path.is_file(), path)
+        text = path.read_text(encoding="utf-8")
+        self.assertIn("NOT CLAIMED", text)
+        self.assertIn("rejected as a solve", text)
+        self.assertIn("does **not** prove RH", text)
+        self.assertIn("Harmonic_Perspective_on_RH_2026-08-14.md", text)
+        missing = ARCHIVE_SFE_HB / "HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md"
+        self.assertTrue(missing.is_file(), missing)
+        miss = missing.read_text(encoding="utf-8")
+        self.assertIn("not received", miss.lower())
+        self.assertIn("150 PAGES.pdf", miss)
+        paste = ARCHIVE_SFE_HB / "SFE_Breathing_Field_Book_Paste.md"
+        self.assertTrue(paste.is_file(), paste)
+        body = paste.read_text(encoding="utf-8")
+        self.assertIn("NOT CLAIMED", body)
+        self.assertIn("does **not** unify", body)
+        self.assertIn("truncated", body.lower())
+        self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
+
 
 class TestSpectralUnificationPaperArchived(unittest.TestCase):
     """Frankie SPECTRAL_UNIFICATION_PAPER.tex is archive-only overclaim. Not Clay."""

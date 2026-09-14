@@ -5,6 +5,14 @@
 Hard rule there: the harmonic stack does **not** prove RH. Bridge lemma
 **OPEN**. Not live DA. Not Clay.
 
+Millennium primer *Unified Harmonic Solutions…* is archived beside it and
+**rejected as a solve**:
+[`Unified_Harmonic_Solutions_Millennium_Problems.md`](Unified_Harmonic_Solutions_Millennium_Problems.md).
+Breathing-field book paste (Ch. I–III fragment, truncated):
+[`SFE_Breathing_Field_Book_Paste.md`](SFE_Breathing_Field_Book_Paste.md).
+Mac hardback / 150-page PDF / research map **not received**:
+[`HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md`](HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md).
+
 [`Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md`](Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md)
 
 SHA-256 `4d49cd1ee629…`. 15 899 bytes. Chat paste of 19 August 2026
