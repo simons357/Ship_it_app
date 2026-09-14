@@ -16,8 +16,10 @@
 > Consciousness / spiritual / patent layers are **not** Domain Architect.
 > DA does **not** file patents.
 >
-> Paste was **truncated** in chat at Chapter III. Full book files on the
-> Mac were **not received**. Receipt:
+> Paste was **truncated** in chat at Chapter III. The 5 June 2025 white
+> paper txt **arrived** as a **different** file
+> ([`Simons_Field_Equation_White_Paper.txt`](Simons_Field_Equation_White_Paper.txt)).
+> Do not glue them. Receipt:
 > [`HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md`](HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md).
 >
 > Control for RH remains the 14 Aug note:

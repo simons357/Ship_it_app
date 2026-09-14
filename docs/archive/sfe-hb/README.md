@@ -11,7 +11,8 @@ Millennium primer *Unified Harmonic Solutions…* is archived beside it and
 Breathing-field book paste (Ch. I–III fragment, truncated):
 [`SFE_Breathing_Field_Book_Paste.md`](SFE_Breathing_Field_Book_Paste.md).
 Named 150-page PDF **arrived as a 12-page padded stub** (SHA `c6d669f140…`),
-not 150 pages. Research map / Ch.8 Explained txt still **not received**:
+not 150 pages. White paper txt **arrived** (SHA `72b5507c…`, 5 June 2025
+outline). Research map / Ch.8 Explained txt still **not received**:
 [`HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md`](HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md).
 
 Hardback **arrived from Drive** (2 777 161 bytes, SHA `57e0a0bcf25f…`):
@@ -25,6 +26,8 @@ SHA `fe4bbc6875…`), not the book:
 `The Harmonic Blueprint FULL 150 PAGES.pdf` **arrived as a 12-page
 padded stub** (14 082 bytes, SHA `c6d669f140…`), not 150 pages:
 [`The_Harmonic_Blueprint_FULL_150_PAGES.pdf`](The_Harmonic_Blueprint_FULL_150_PAGES.pdf).
+White paper txt **arrived** (4 734 bytes, SHA `72b5507c…`):
+[`Simons_Field_Equation_White_Paper.txt`](Simons_Field_Equation_White_Paper.txt).
 Chapter 8 “SFE Explained” txt **not received**:
 [`Chapter8-SFE-Explained.MISSING.md`](Chapter8-SFE-Explained.MISSING.md).
 

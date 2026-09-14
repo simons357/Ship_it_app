@@ -641,6 +641,51 @@ class TestRhHarmonicPerspectiveStaysArchived(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("Chapter8-SFE-Explained.MISSING.md", lookup)
 
+    def test_white_paper_txt_arrived_not_as_a_theorem(self):
+        path = ARCHIVE_SFE_HB / "Simons_Field_Equation_White_Paper.txt"
+        receipt = ARCHIVE_SFE_HB / "Simons_Field_Equation_White_Paper.RECEIPT.md"
+        self.assertTrue(path.is_file(), path)
+        self.assertTrue(receipt.is_file(), receipt)
+        raw = path.read_bytes()
+        self.assertEqual(len(raw), 4734)
+        self.assertEqual(
+            hashlib.sha256(raw).hexdigest(),
+            "72b5507c49abdc6f3765ee0edb97725fe62c5dc0593ddb48bd45ac0e4f6a0682",
+        )
+        text = raw.decode("utf-8")
+        self.assertIn("June 05, 2025", text)
+        self.assertIn("𝛷 ∇ Ψ = Σ π (e^{iθ}) f(n, p) Δτ", text)
+        note = receipt.read_text(encoding="utf-8")
+        self.assertIn("NOT CLAIMED", note)
+        self.assertIn("symbol juxtaposition", note)
+        self.assertIn("swirl", note)
+        self.assertIn("field potential", note)
+        self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
+        self.assertFalse((LIVE_ROOT / "harmonic_blueprint.py").is_file())
+        miss = (
+            ARCHIVE_SFE_HB / "HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Simons_Field_Equation_White_Paper.txt", miss)
+        self.assertIn("72b5507c", miss)
+        sfe_readme = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("Simons_Field_Equation_White_Paper.txt", sfe_readme)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Simons_Field_Equation_White_Paper.txt", archive_index)
+        self.assertIn("72b5507c", archive_index)
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("72b5507c", lookup)
+        gcd = (
+            Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("72b5507c", gcd)
+
 
 class TestSpectralUnificationPaperArchived(unittest.TestCase):
     """Frankie SPECTRAL_UNIFICATION_PAPER.tex is archive-only overclaim. Not Clay."""
