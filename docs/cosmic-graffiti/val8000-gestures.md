@@ -34,8 +34,7 @@ Do not write these plays into `assets/skins/skins.json`.
 
 ## Jon’s bits
 
-When he is bored, he takes a deep breath in, then blows out and puffs up
-like a big puffy bag.
+When he is bored, he takes a deep breath in, then blows out and puffs up like a big puffy bag.
 
 If you insult him, he sticks his tongue out.
 
