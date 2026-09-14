@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="t d">
+  <title id="t">VAL8000 music and art room pin</title>
+  <desc id="d">Accessory overlay only. Quiet music/art pin. Original Cosmic Graffiti mark.</desc>
+  <circle cx="812" cy="812" r="78" fill="#0a101c" stroke="#c9a227" stroke-width="5"/>
+  <rect x="772" y="784" width="36" height="50" rx="4" fill="none" stroke="#f3d98a" stroke-width="3"/>
+  <rect x="780" y="796" width="20" height="26" fill="#c9a227"/>
+  <ellipse cx="832" cy="826" rx="14" ry="11" fill="#f3d98a"/>
+  <rect x="840" y="784" width="6" height="46" fill="#f3d98a"/>
+  <polygon points="846,784 866,794 846,804" fill="#c9a227"/>
+</svg>
