@@ -5,12 +5,25 @@ Pólya probe. Domain Architect chooses how many independently specifiable compon
 This is a completeness audit of the Hilbert–Pólya program. It is not a proof of the Riemann hypothesis, not a canonical SFE, and not evidence that primes are physically privileged.
 
 Instance: polya-probe
-Independently specifiable components recorded: 40 (5 core roles + 35 extension / E)
+DA decided the component count for this subject: 40
+Independently specifiable components recorded: 40 (5 core interface letters + 35 extension / E)
+P, H, ψ, λ, Φ are an interface, not a cap. The count can be 7, 8, 15, or whatever the subject requires. DA decides. Five is what we started with, not what quantum Hilbert–Pólya fitted into.
+Interface letters recorded: 5 (P, H, ψ, λ, Φ). Extra independently specifiable objects: 35.
 Hilbert–Pólya status: incomplete; no independent Hamiltonian on record whose spectrum is identified with the nontrivial zeros.
 Riemann hypothesis status: not claimed.
 Canonical SFE status: unresolved.
 Program complete: False
 Highest evidence level actually supported: Level 1
+
+How quantum fitted (DA expanded; it did not squeeze into five):
+  * A quantum Hamiltonian is not five letters. DA kept P, H, ψ, λ, Φ as the interface and recorded every extra object the subject needed.
+  * ℋ: Hilbert space must be declared (L²(ℝ), adelic space, …) — quantum does not fit in five letters without ℋ
+  * ⟨,⟩: inner product / units / normalization on ℋ — missing until ℋ is chosen
+  * ℬ: boundary conditions and deficiency indices of D(H) — xp is not essentially self-adjoint without this
+  * D: evolution e^{-iHt} once H is self-adjoint; alternatively d/dt — dynamics do not invent the operator
+  * Ξ: decoherence / damping = 0 for a closed Hamiltonian system — GUE statistics assume a closed chaotic system, not open dissipation
+  * E-symmetry: time-reversal breaking if the statistics are GUE rather than GOE — constraint on a future H, not a formula for H
+  * Those extras are how quantum fitted. Hiding them to keep a count of five would lose the theory.
 
 Who survived the filter (RH-attack sources):
   [survived] George Pólya (proven entire-function / Fourier / multiplier / frequency)
@@ -83,8 +96,8 @@ What Domain Architect did with the supplied objects:
     verdict: circular if Φ := zeros is used as the instance
   [C-Hspace] role=ℋ kind=open (not independently specified)
     occupant: Hilbert space must be declared (L²(ℝ), adelic space, …)
-    DA action: promoted out of the five-role map into E / UHF
-    verdict: quantum does not fit in five roles without ℋ
+    DA action: promoted into E; quantum needed ℋ as its own component
+    verdict: quantum does not fit in five letters without ℋ
   [C-inner] role=⟨,⟩ kind=open (not independently specified)
     occupant: inner product / units / normalization on ℋ
     DA action: recorded as a separate component (changes self-adjointness)
@@ -223,7 +236,7 @@ What Domain Architect did with the supplied objects:
     verdict: no checked map to ξ, H, or Navier–Stokes
 
 Findings (classification, not discovery of a Hamiltonian):
-  - Quantum Hilbert–Pólya does not fit in five roles. DA expanded the record to Hilbert space, inner product, domain/boundary data, unitary evolution, implicit Ξ = 0, arithmetic (Euler/Weil), entire-function data (ξ, functional equation, Laguerre–Pólya, Jensen), statistics (GUE), and symmetry (time-reversal breaking).
+  - Quantum Hilbert–Pólya does not fit in five letters. DA decided the count from the subject and expanded to Hilbert space, inner product, domain/boundary data, unitary evolution, implicit Ξ = 0, arithmetic (Euler/Weil), entire-function data (ξ, functional equation, Laguerre–Pólya, Jensen), statistics (GUE), and symmetry (time-reversal breaking). Another subject can land at 7 or 8. This one did not.
   - Two parallel Pólya routes exist and must not be merged: (1) Hilbert–Pólya — a self-adjoint H whose eigenvalues are the γ_n; (2) Laguerre–Pólya — ξ(1/2+iz) as an entire function of the LP class (all zeros real). Both imply RH if completed. Each is missing its independent object (H, or an LP-membership proof that does not assume RH).
   - Feeding Pólya’s proven LP / Jensen calculus does not fill H. It restates the reality of zeros in entire-function language.
   - Pólya 1926 is the actual attempt to solve H with proven Pólya analysis: a sufficient condition for cosine transforms to have only real zeros. Riemann Ξ has that shape. The hypotheses are not a checked theorem for Riemann’s Φ. Pólya relocates the gap, then heat flow contracts it to Λ. DA’s pop: one real number with target Λ = 0, distinct from the H role and from {γ_n}.
@@ -292,6 +305,6 @@ UHF extras that remain required: Hilbert space ℋ and inner product; operator d
 Registry HP ids: HP-H001, HP-H002, HP-H003, HP-H004, HP-H005, HP-H006, HP-H007, HP-H008, HP-H009, HP-H010, HP-H011, HP-H012, HP-H013, HP-H014, HP-H015, HP-H016, HP-H017, HP-H018, HP-H019, HP-H020, HP-H021, HP-H022, HP-H023, HP-H024
 Conflicts involving HP: 18
 Nulls involving HP: NULL-HP-CIRCULAR, NULL-HP-GUE, NULL-HP-COMPLETE, NULL-HP-OSCILLATOR, NULL-HP-POLYA1926
-Protocol hash: a24ab39c4252802e3429f2cb40383cc85ffb8f27b68f6ed72722979cedbe31ec
+Protocol hash: 9926480f6606e01897456321eaea6ba629ba43092a3900c94dcb0fab20274854
 
 Canonical SFE status: unresolved.
