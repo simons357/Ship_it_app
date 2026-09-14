@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>VAL8000 skins drawer</title>
+  <style>
+    :root {
+      --navy: #0a101c;
+      --gold: #c9a227;
+      --paper: #e8dcc0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 16px/1.45 "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+      background: var(--navy);
+      color: var(--paper);
+    }
+    header {
+      padding: 28px 32px 12px;
+      border-bottom: 1px solid rgba(201,162,39,.35);
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 1.6rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    header p { margin: 0; max-width: 46rem; opacity: .9; }
+    .path {
+      font: 13px/1.4 ui-monospace, Menlo, Consolas, monospace;
+      color: var(--gold);
+      margin-top: 10px;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 28px 32px;
+    }
+    figure {
+      margin: 0;
+      width: 300px;
+      background: #101412;
+      border: 1px solid rgba(201,162,39,.42);
+      border-radius: 14px;
+      padding: 12px;
+    }
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      background: #111;
+    }
+    figcaption {
+      margin-top: 10px;
+      font-size: .92rem;
+    }
+    figcaption strong { color: var(--gold); display: block; margin-bottom: 4px; }
+    #drawer-file {
+      margin: 0 32px 40px;
+      background: #12151c;
+      border: 1px solid rgba(201,162,39,.35);
+      border-radius: 14px;
+      padding: 20px 22px 24px;
+    }
+    #drawer-file h2 {
+      margin: 0 0 8px;
+      color: var(--gold);
+      font-size: 1.1rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    pre {
+      white-space: pre-wrap;
+      font: 13.5px/1.45 ui-monospace, Menlo, Consolas, monospace;
+      margin: 12px 0 0;
+      color: #f0e6cc;
+    }
+    .tray {
+      margin: 0 32px 36px;
+      padding: 16px 18px;
+      border: 1px dashed rgba(201,162,39,.5);
+      border-radius: 12px;
+      max-width: 52rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>VAL8000 skins</h1>
+    <p>This is the drawer. Default is the unadorned square. Overlays sit on the face. They do not replace the mouth or the eye. He still types in the box.</p>
+    <p class="path">docs/cosmic-graffiti/val8000-skins.md</p>
+  </header>
+  <section class="row" id="wardrobe">
+    <figure>
+      <img src="../val8000-mouth-line.png" alt="VAL8000 unadorned square, idle mouth line, no accessory"/>
+      <figcaption>
+        <strong>Default — unadorned square</strong>
+        No accessory. Idle line. This is the face file, not a skin copy.
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="worn-glasses-ordinary.png" alt="VAL8000 square wearing ordinary round gold glasses"/>
+      <figcaption>
+        <strong>Ordinary glasses</strong>
+        Original frames on the square. Not a brand. Overlay: glasses-ordinary.png
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="worn-glasses-camera.png" alt="VAL8000 square wearing glasses with a small camera on the frame"/>
+      <figcaption>
+        <strong>Camera-frame glasses</strong>
+        Accessory analog. Not a product. Not a keylogger. VAL still types.
+      </figcaption>
+    </figure>
+  </section>
+  <section class="tray">
+    <strong style="color:var(--gold)">Tessellation tray</strong>
+    <p>Empty on purpose. Jon’s tessellation app is not in this repo. Drop cool outputs in <code>assets/skins/tessellation/</code>. Patterns to wear, not physics.</p>
+  </section>
+  <section id="drawer-file">
+    <h2>The drawer file</h2>
+    <p class="path">docs/cosmic-graffiti/val8000-skins.md</p>
+    <pre id="skins-md">Loading val8000-skins.md…</pre>
+  </section>
+  <script>
+    fetch("../../val8000-skins.md")
+      .then((r) => r.text())
+      .then((t) => { document.getElementById("skins-md").textContent = t; })
+      .catch(() => { document.getElementById("skins-md").textContent = "(open this page over http to load the drawer file)"; });
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-labelledby="t d">
+  <title id="t">VAL8000 camera-frame glasses</title>
+  <desc id="d">Accessory overlay only. Original round gold frames with a small camera on the rim. Analog of camera-glasses, not a brand product, not a logo, not a keylogger. VAL8000 still types in the box. Not a studio still.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="259" y1="464" x2="100" y2="484" stroke="#5c4612" stroke-width="10"/>
+    <line x1="259" y1="464" x2="100" y2="484" stroke="#c9a227" stroke-width="6"/>
+    <line x1="765" y1="464" x2="924" y2="484" stroke="#5c4612" stroke-width="10"/>
+    <line x1="765" y1="464" x2="924" y2="484" stroke="#c9a227" stroke-width="6"/>
+    <circle cx="100" cy="484" r="5" fill="#c9a227" stroke="none"/>
+    <circle cx="924" cy="484" r="5" fill="#c9a227" stroke="none"/>
+    <circle cx="378" cy="458" r="116" fill="rgba(186,210,230,0.15)" stroke="none"/>
+    <circle cx="646" cy="458" r="116" fill="rgba(186,210,230,0.15)" stroke="none"/>
+    <path d="M330 400 a70 40 0 0 1 80 -8" stroke="rgba(255,255,255,0.35)" stroke-width="8"/>
+    <path d="M598 400 a70 40 0 0 1 80 -8" stroke="rgba(255,255,255,0.35)" stroke-width="8"/>
+    <circle cx="378" cy="458" r="128" stroke="#5c4612" stroke-width="8"/>
+    <circle cx="646" cy="458" r="128" stroke="#5c4612" stroke-width="8"/>
+    <circle cx="378" cy="458" r="124" stroke="#c9a227" stroke-width="12"/>
+    <circle cx="646" cy="458" r="124" stroke="#c9a227" stroke-width="12"/>
+    <circle cx="378" cy="458" r="118" stroke="#ecd278" stroke-width="3"/>
+    <circle cx="646" cy="458" r="118" stroke="#ecd278" stroke-width="3"/>
+    <path d="M490 430 Q512 400 534 430" stroke="#5c4612" stroke-width="9"/>
+    <path d="M490 430 Q512 400 534 430" stroke="#c9a227" stroke-width="5"/>
+    <circle cx="258" cy="468" r="8" fill="#5c4612" stroke="none"/>
+    <circle cx="258" cy="468" r="5" fill="#ecd278" stroke="none"/>
+    <circle cx="766" cy="468" r="8" fill="#5c4612" stroke="none"/>
+    <circle cx="766" cy="468" r="5" fill="#ecd278" stroke="none"/>
+    <circle cx="768" cy="430" r="24" fill="#37373a" stroke="none"/>
+    <circle cx="768" cy="430" r="22" fill="#1c1c20" stroke="#bebec3" stroke-width="3"/>
+    <circle cx="768" cy="430" r="13" fill="#0c0e12" stroke="none"/>
+    <circle cx="768" cy="430" r="6" fill="#181e26" stroke="none"/>
+    <circle cx="762" cy="424" r="3" fill="#dce6f0" stroke="none"/>
+    <circle cx="780" cy="418" r="3.5" fill="#404842" stroke="none"/>
+  </g>
+</svg>

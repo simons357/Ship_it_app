@@ -9,9 +9,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from pathlib import Path
-
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "docs" / "cosmic-graffiti" / "assets"
@@ -162,6 +160,62 @@ def overlay_music_art() -> Image.Image:
     return _down(im, s)
 
 
+def overlay_glasses_ordinary(camera: bool = False) -> Image.Image:
+    """Round original frames on the square. Optional small camera on the rim."""
+    scale = 2
+    size = 1024 * scale
+    layer = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer, "RGBA")
+    cx, cy = 512 * scale, 461 * scale
+    gold = (201, 162, 39, 255)
+    gold_dark = (92, 70, 18, 255)
+    gold_light = (236, 210, 120, 255)
+    r = 124 * scale
+    dx = 134 * scale
+    ly = cy - 6
+    lx, rx = cx - dx, cx + dx
+
+    def bbox(x, y, rad):
+        return [x - rad, y - rad, x + rad, y + rad]
+
+    temple_y = ly + 12
+    temple_end_y = temple_y + 40
+    d.line([(lx - r + 10, temple_y), (200, temple_end_y)], fill=gold_dark, width=20)
+    d.line([(lx - r + 10, temple_y), (200, temple_end_y)], fill=gold, width=12)
+    d.line([(rx + r - 10, temple_y), (size - 200, temple_end_y)], fill=gold_dark, width=20)
+    d.line([(rx + r - 10, temple_y), (size - 200, temple_end_y)], fill=gold, width=12)
+    for ex, ey in ((200, temple_end_y), (size - 200, temple_end_y)):
+        d.ellipse([ex - 10, ey - 10, ex + 10, ey + 10], fill=gold)
+        d.ellipse([ex - 6, ey - 6, ex + 6, ey + 6], fill=gold_light)
+
+    glass = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    gd = ImageDraw.Draw(glass, "RGBA")
+    for x in (lx, rx):
+        gd.ellipse(bbox(x, ly, r - 8), fill=(186, 210, 230, 38))
+        gd.arc(bbox(x - 20, ly - 36, r - 78), start=200, end=300, fill=(255, 255, 255, 90), width=16)
+    layer = Image.alpha_composite(layer, glass.filter(ImageFilter.GaussianBlur(radius=4)))
+    d = ImageDraw.Draw(layer, "RGBA")
+    for x in (lx, rx):
+        d.ellipse(bbox(x, ly, r + 8), outline=gold_dark, width=16)
+        d.ellipse(bbox(x, ly, r), outline=gold, width=24)
+        d.ellipse(bbox(x, ly, r - 12), outline=gold_light, width=6)
+    d.arc([lx + r - 36, ly - 88, rx - r + 36, ly + 70], start=210, end=330, fill=gold_dark, width=18)
+    d.arc([lx + r - 36, ly - 88, rx - r + 36, ly + 70], start=210, end=330, fill=gold, width=11)
+    for hx, hy in ((lx - r + 4, ly + 10), (rx + r - 4, ly + 10)):
+        d.ellipse([hx - 16, hy - 16, hx + 16, hy + 16], fill=gold_dark)
+        d.ellipse([hx - 10, hy - 10, hx + 10, hy + 10], fill=gold_light)
+    if camera:
+        cam_cx, cam_cy = rx + r - 4, ly - 56
+        d.ellipse([cam_cx - 48, cam_cy - 48, cam_cx + 48, cam_cy + 48], fill=(55, 55, 58, 255))
+        d.ellipse([cam_cx - 44, cam_cy - 44, cam_cx + 44, cam_cy + 44], fill=(28, 28, 32, 255))
+        d.ellipse([cam_cx - 40, cam_cy - 40, cam_cx + 40, cam_cy + 40], outline=(190, 190, 195, 255), width=6)
+        d.ellipse([cam_cx - 26, cam_cy - 26, cam_cx + 26, cam_cy + 26], fill=(12, 14, 18, 255))
+        d.ellipse([cam_cx - 12, cam_cy - 12, cam_cx + 12, cam_cy + 12], fill=(24, 30, 38, 255))
+        d.ellipse([cam_cx + 14, cam_cy - 30, cam_cx + 28, cam_cy - 16], fill=(64, 72, 66, 255))
+        d.ellipse([cam_cx - 16, cam_cy - 18, cam_cx - 4, cam_cy - 6], fill=(220, 230, 240, 200))
+    return layer.resize((1024, 1024), Image.Resampling.LANCZOS)
+
+
 OVERLAYS = {
     "frequency": overlay_frequency,
     "weekend-update": overlay_weekend_update,
@@ -225,6 +279,15 @@ def main() -> None:
         overlay.save(dest, "PNG")
         built[name] = overlay
         print("wrote", dest, overlay.size, overlay.mode)
+    ordinary = overlay_glasses_ordinary(False)
+    camera = overlay_glasses_ordinary(True)
+    (SKINS / "glasses-ordinary.png").parent.mkdir(parents=True, exist_ok=True)
+    ordinary.save(SKINS / "glasses-ordinary.png", "PNG")
+    camera.save(SKINS / "glasses-camera.png", "PNG")
+    print("wrote", SKINS / "glasses-ordinary.png")
+    print("wrote", SKINS / "glasses-camera.png")
+    composite(idle, ordinary).save(SKINS / "worn-glasses-ordinary.png", "PNG")
+    composite(idle, camera).save(SKINS / "worn-glasses-camera.png", "PNG")
     sheet(idle, built, SHEET)
 
 

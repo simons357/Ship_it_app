@@ -13,6 +13,15 @@
     issue1: { overlay: "overlay-issue1.png", title: "Issue 1 two-red-pill pin" },
     scientist: { overlay: "overlay-scientist.png", title: "Scientist visor" },
     "music-art": { overlay: "overlay-music-art.png", title: "Music and art room pin" },
+    "glasses-ordinary": {
+      overlay: "glasses-ordinary.png",
+      title: "Ordinary glasses",
+    },
+    "glasses-camera": {
+      overlay: "glasses-camera.png",
+      title: "Camera-frame glasses",
+    },
+    "tessellation-tray": { overlay: null, title: "Tessellation tray" },
   };
 
   function overlayDir(square) {
