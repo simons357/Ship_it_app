@@ -67,5 +67,5 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 ## Tests
 
 ```bash
-python -m unittest tests.test_hb_ringdown tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya tests.test_polya_probe tests.test_millennium_overlap
+python -m unittest tests.test_hb_ringdown tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya tests.test_polya_probe tests.test_millennium_overlap tests.test_breakdown_children
 ```
