@@ -161,7 +161,39 @@ class TestPrimeFieldArchiveIntake(unittest.TestCase):
         self.assertFalse(
             (ARCHIVE_PRIME_FIELD / "Simons_Prime_Resonance_Law_2.pdf").is_file()
         )
+        self.assertFalse(
+            (ARCHIVE_PRIME_FIELD / "Simons_Prime_Resonance_Law_6.pdf").is_file()
+        )
         self.assertFalse((LIVE_ROOT / "prime_field_coherence.py").is_file())
+
+    def test_law_6_is_alias_of_six_page_kepler_pdf(self):
+        receipt = ARCHIVE_PRIME_FIELD / "Simons_Prime_Resonance_Law_6.ALIAS.md"
+        self.assertTrue(receipt.is_file(), receipt)
+        text = receipt.read_text(encoding="utf-8")
+        self.assertIn("alias", text.lower())
+        self.assertIn("not re-filed", text.lower())
+        self.assertIn("a sixth law", text.lower())
+        self.assertIn(
+            "7aa187c62f20190e012e4c7f7209c69abb7b8aa112755e5d8aeaa45a6cc06264",
+            text,
+        )
+        self.assertIn("1qUZwwu5nY4cwIzqLW5fDQlXd9bD5si3Y", text)
+        self.assertIn("6 pages", text.lower())
+        self.assertIn("C-CLM-4", text)
+        self.assertIn("NOT CLAIMED", text)
+        self.assertIn("Prime_order_Kepler.pdf", text)
+        self.assertIn("f2da5ae51db4", text)
+        self.assertIn("import into `domain_architect/`", text)
+        self.assertNotIn("DA-VC-01 PASS", text)
+        index = (ROOT / "docs" / "archive" / "README.md").read_text(encoding="utf-8")
+        self.assertIn("Simons Prime Resonance Law 6.pdf", index)
+        self.assertIn("7aa187c62f20", index)
+        for invented in (
+            "Simons_Prime_Resonance_Law_6.pdf",
+            "Simons Prime Resonance Law 6.pdf",
+        ):
+            self.assertFalse((ARCHIVE_PRIME_FIELD / invented).is_file(), invented)
+            self.assertFalse((LIVE_ROOT / invented).is_file(), invented)
 
     def test_readme_is_historical_not_canonical_sfe(self):
         note = (ARCHIVE_PRIME_FIELD / "README.md").read_text(encoding="utf-8")
@@ -176,6 +208,9 @@ class TestPrimeFieldArchiveIntake(unittest.TestCase):
         self.assertIn("Not live DA", note)
         self.assertIn("duplicate", note.lower())
         self.assertIn("PhiRenorm_TrackB_May16", note)
+        self.assertIn("Simons Prime Resonance Law 6.pdf", note)
+        self.assertIn("a sixth law", note.lower())
+        self.assertIn("not re-filed", note.lower())
         self.assertIn("prime-field-2026-08-25/", index)
         self.assertIn("not live DA", index)
         self.assertIn("not FIXED.tex", index)
