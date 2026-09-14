@@ -1,6 +1,12 @@
-# Exact-shell 9D — claimed full-support bound
+# Exact-shell bound — claimed full-support (\(C=4/3\))
 
 12 September 2026.
+Do not write “9D is claimed.”
+Designed \(\Theta(m^2)\) 9D is **NO.** Dead.
+The exact-shell bound \(C=4/3\)
+(\(K\le 16/9\)) is **CLAIMED.**
+Same bilinear. Different objects.
+
 Unaugmented NS on \(\mathbb{T}^3\);
 quantity is \(K_{\alpha,\beta}(w)\) for
 \(Aw=\alpha w\);
@@ -370,6 +376,9 @@ Full answers:
 [`PR24-SPECIALIST-BREAK.md`](PR24-SPECIALIST-BREAK.md).
 These six plus 14 sit here so a
 reviewer does not hunt.
+Do not write “9D is claimed.”
+Designed 9D is dead. This page
+is the exact-shell bound.
 
 **5.** Factor \(3\) is derived on this
 page (two-plane + AM-GM). Not Ring.

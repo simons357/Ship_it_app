@@ -25,7 +25,7 @@ Kill: [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
 
 | Claim | SuperGrok | Tape |
 |---|---|---|
-| Exact-shell 9D, \(C=4/3\) | Believable hand proof; keep as a theorem of exact-shell theory, not multi-shell | Scope restriction **YES**. Theorem stamp **NO**. Status **CLAIMED**. |
+| Exact-shell bound, \(C=4/3\) | Believable hand proof; keep as a theorem of exact-shell theory, not multi-shell | Scope restriction **YES**. Theorem stamp **NO**. Status **CLAIMED**. Designed 9D is a different object and is **NO.** |
 | Unrestricted ★, one geometry constant | Family admissible; matches the evaluator; treat the unrestricted claim as false | **YES.** Killed by \(v_n\). |
 | Signed-dual repair of that box | Not available without changing the statement | **YES.** Need★ cannot repair. |
 | Unaugmented regularity | Needs a new closure; this patch does not provide one | **YES.** Replacement **OPEN**. |

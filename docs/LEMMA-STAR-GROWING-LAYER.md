@@ -215,7 +215,7 @@ Live Stokes was not overwritten.
 
 - It does not construct a blowup of NSE.
 - It does not kill H1 or \(\int\rho_j\).
-- It does not prove the exact-shell 9D bound.
+- It does not prove the exact-shell bound.
 - It does not make Need★ a theorem.
 - It does not put \(K(t)\) in the PDE.
 - It does not turn A into B.

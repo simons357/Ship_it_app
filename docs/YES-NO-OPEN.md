@@ -99,6 +99,7 @@ stay samples. They are not this kill.
 | CS \(E^{3/2}\) as shape 1 | Mid-Bad / H3 class. |
 | Finite \(0.641\), \(0.610\), \(0.327\), HH→L \(0.71\), grow-\(s\) \(0.456\), three-shear \(2/3\) as \(C_0\) or as \(16/9\) | Samples. Floor \(\neq\) ceiling. |
 | SuperGrok “keep exact-shell \(4/3\) as a theorem” | Hand write. Specialist pending. Status **CLAIMED**. |
+| “9D is claimed” | Designed \(\Theta(m^2)\) 9D is **NO.** The claimed object is the exact-shell bound \(C=4/3\). Do not glue the word. |
 | Attack 12 table as Need★ | Finite \(\beta/\alpha\). Not the signed dual. |
 | Glue H1 to ★, or either to the shell door | Different integrals. |
 | \(K(t)\) in the PDE | Forbidden on B. |
@@ -127,6 +128,7 @@ Grow \(s\) on the 9B family is
 The named kill is the growing-layer
 family, not a finite \(K\).
 Designed 9D stays dead.
+Do not write “9D is claimed.”
 Exact-shell \(K\le 16/9\) is
 **CLAIMED**, specialist pending:
 [`ATTACK-9D-FULL-SUPPORT-BOUND.md`](ATTACK-9D-FULL-SUPPORT-BOUND.md).

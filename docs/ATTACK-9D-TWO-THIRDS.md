@@ -1,4 +1,4 @@
-# Exact-shell 9D — three-shear floor \(K=2/3\)
+# Exact-shell three-shear floor \(K=2/3\)
 
 13 September 2026.
 Unaugmented NS on \(\mathbb{T}^3\);

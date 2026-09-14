@@ -83,7 +83,13 @@ NSE, and it is not a blowup.
 
 ---
 
-## On exact-shell 9D
+## On the exact-shell bound
+
+Do not write “9D is claimed.”
+Designed \(\Theta(m^2)\) 9D is **NO.**
+This section is the exact-shell
+bound \(C=4/3\) (\(K\le 16/9\)),
+status **CLAIMED.**
 
 **5. Where is the factor \(3\) proved?**
 
@@ -339,6 +345,8 @@ Ordinary NS stays open.
 | \(v_n\) kills unrestricted ★ | **YES.** Instantaneous class. |
 | \(T_c\) identity for all \(n\) | **CLAIMED.** Hand cubic. Live \(n\le 10\). |
 | Exact-shell \(16/9\) | **CLAIMED.** |
+| Designed \(\Theta(m^2)\) 9D | **NO.** Dead. Not claimed. |
+| “9D is claimed” | **NO.** Bad sentence. |
 | Factor \(3\) from Ring / Borromean | **NO.** |
 | \(K>1\) in the repo | **NO.** |
 | Replacement inequality displayed | **NO.** OPEN. |

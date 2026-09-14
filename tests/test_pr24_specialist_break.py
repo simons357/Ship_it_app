@@ -65,6 +65,21 @@ class Pr24SpecialistBreakTests(unittest.TestCase):
         self.assertIn("PR24-SPECIALIST-BREAK.md", tape)
         self.assertIn("does not repair", tape)
 
+    def test_nine_d_is_not_the_claimed_sentence(self):
+        bound = BOUND.read_text()
+        tiny = ROOT / "docs" / "TINY.txt"
+        latest = ROOT / "docs" / "LATEST.md"
+        self.assertTrue(bound.startswith("# Exact-shell bound"))
+        self.assertNotIn("Exact-shell 9D — claimed", bound)
+        self.assertNotIn("9D bound CLAIMED", tiny.read_text())
+        self.assertNotIn("9D bound CLAIMED", latest.read_text())
+        self.assertIn("Do not write", bound)
+        tape = TAPE.read_text()
+        self.assertIn("Do not write", tape)
+        self.assertIn("CLAIMED", bound)
+        self.assertIn("Designed", bound)
+        self.assertNotIn("NS is solved", bound)
+
 
 if __name__ == "__main__":
     unittest.main()

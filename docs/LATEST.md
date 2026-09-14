@@ -25,7 +25,8 @@ Not a blowup. Replacement closure open:
 docs/LEMMA-STAR-GROWING-LAYER.md
 Specialist break questions, answered:
 docs/PR24-SPECIALIST-BREAK.md
-Exact-shell 9D bound CLAIMED (C=4/3;
+Exact-shell bound CLAIMED (C=4/3;
+designed 9D is dead, not claimed;
 cubic max at x=8/3 is calculus,
 not the envelope; factor 3 is
 on-page, not Ring; internal check
