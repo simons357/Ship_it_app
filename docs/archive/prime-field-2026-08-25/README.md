@@ -30,6 +30,7 @@ sketch (SFE / UHF / DHFA / NAV-42 scoring). It is **not** live DA.
 |---|---|
 | `Cosmic_Scale_Paper_Clean_654f.pdf` and `Cosmic_Scale_Paper_Clean_ed05.pdf` | **Identical** (210 182 bytes, SHA-256 `6453503a07f1…`). One copy filed. |
 | `Simons_Prime_Resonance_Law_2_c76f.pdf` and `Simons_Prime_Resonance_Law_3_40dd.pdf` | **Identical** (403 089 bytes, SHA-256 `7aa187c62f20…`). One copy filed. |
+| Spoken / hunt name `Simons Prime Resonance Law 6.pdf` | **Alias of the same 6-page PDF** (Drive id `1qUZwwu5nY4cwIzqLW5fDQlXd9bD5si3Y`). **Not** a sixth law. **Not re-filed.** Receipt: [`Simons_Prime_Resonance_Law_6.ALIAS.md`](Simons_Prime_Resonance_Law_6.ALIAS.md). |
 | `PhiRenorm_TrackB_May16_e075.pdf` | **Duplicate** of the existing swirl May Zenodo PDF [`docs/papers/swirl/zenodo-may/PhiRenorm_TrackB.pdf`](../../papers/swirl/zenodo-may/PhiRenorm_TrackB.pdf) (13 524 bytes, SHA-256 `477a857f8ab4…`). Swirl Book B, already on disk. **Not** SFE. No second copy. |
 
 `Prime_order_Kepler.pdf` shares the Prime Resonance Law **title** but
@@ -43,7 +44,7 @@ is **distinct bytes** (403 012 vs 403 089). Both stay.
 | [`Arithmetic_Tests_of_the_Simons_Field_Equation.pdf`](Arithmetic_Tests_of_the_Simons_Field_Equation.pdf) | 199 772 | `d486bdb286b2…` | 4 pp. Arithmetic core extracted from SFE. |
 | [`SFE_RH_Probes_Preprint.docx`](SFE_RH_Probes_Preprint.docx) | 22 060 | `6d414dee5ee2…` | Upload name was `SFE_RH_Probes_Preprint.pdf______52b4.docx`. Word RH probes from SFE. |
 | [`SFE_formal_reference.pdf`](SFE_formal_reference.pdf) | 204 066 | `c44488294e00…` | 5 pp. “Simons Field Equation — Formal Mathematics Reference.” |
-| [`Simons_Prime_Resonance_Law.pdf`](Simons_Prime_Resonance_Law.pdf) | 403 089 | `7aa187c62f20…` | 6 pp. Kepler multi-planet prime-ordered orbits. |
+| [`Simons_Prime_Resonance_Law.pdf`](Simons_Prime_Resonance_Law.pdf) | 403 089 | `7aa187c62f20…` | 6 pp. Kepler multi-planet prime-ordered orbits. Spoken name “Law 6” is **this file**. |
 | [`Simons_Prime_Resonance_Law.docx`](Simons_Prime_Resonance_Law.docx) | 271 661 | `8da0163a58ee…` | Word face of the same title family. |
 | [`Prime_order_Kepler.pdf`](Prime_order_Kepler.pdf) | 403 012 | `f2da5ae51db4…` | Same title family, later Word export, distinct bytes. |
 | [`Simons_Prime_Harmony_Law.pdf`](Simons_Prime_Harmony_Law.pdf) | 83 155 | `96f836c859dd…` | 3 pp. Prime-sum orbital resonances. |

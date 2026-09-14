@@ -24,10 +24,17 @@ SHA-256 `a239112289a1a150d7a7a2212ec7f3649382b81542b49d5d2300f8611df3d6b1`.
 
 **What is false / withdrawn:** \(\lambda_{\min}>-1/2\) for all \(N\); dark-state \(\Leftrightarrow\) Goldbach; any Navier–Stokes claim from these matrices.
 
-The 19 Aug 2026 UHSA session dump ([`docs/archive/sfe-hb/`](../../archive/sfe-hb/)) repeats \(Q_N\) positive-definiteness in its §7 “bedrock.” That arithmetic fact belongs **here**. Do not glue it to NS regularity, RH, YM, BSD, or Hodge. The dump is archive-only, not a Q6 product face. The matplotlib Equation Explorer paste in that folder is **not** Q6 \(H_N\).
+The 19 Aug 2026 UHSA session dump ([`docs/archive/sfe-hb/`](../../archive/sfe-hb/)) repeats \(Q_N\) positive-definiteness in its §7 “bedrock.” That arithmetic fact belongs **here**. Do not glue it to NS regularity, RH, YM, BSD, or Hodge. The dump is archive-only, not a Q6 product face. The 14 Aug RH harmonic-perspective note in that folder says the same: Blueprint language is not a Mertens transfer lemma. The millennium SFE primer in that folder is **rejected as a solve** and is **not** a Q6 product face. The truncated breathing-field book paste is **not** Q6 \(H_N\)
+(later Glass follow-up: same truncated file already archived; still
+**not** a unification theorem). The Drive hardback Word book in that folder (SHA `57e0a0bcf25f…`) is **not** Q6 \(H_N\). The FULL.docx stub in that folder (SHA `fe4bbc6875…`) is **not** Q6 \(H_N\). The named 150-page PDF stub in that folder (SHA `c6d669f140…`, 12 pages) is **not** Q6 \(H_N\). The 5 June 2025 white paper txt in that folder (SHA `72b5507c…`) is **not** Q6 \(H_N\). The matplotlib Equation Explorer paste in that folder is **not** Q6 \(H_N\).
 The Track C SFE black-hole `FuncAnimation` paste
 ([`docs/archive/nav-42-cbfd-2026-04/sfe_black_hole_simulator_paste.py`](../../archive/nav-42-cbfd-2026-04/sfe_black_hole_simulator_paste.py);
-**chat paste arrived**) is also **not** Q6 \(H_N\).
+**chat paste arrived**) is also **not** Q6 \(H_N\). The CosmoEvolution
+QNM–zeta DA note
+([`docs/archive/hb-ringdown/QNM_Prime_Zeta_DA_Analysis_2026-08.md`](../../archive/hb-ringdown/QNM_Prime_Zeta_DA_Analysis_2026-08.md))
+is **not** Q6 \(H_N\); its RH↔GCD glue is **withdrawn**. The split note
+[`QNM_ZETA_WHAT_REMAINS.md`](../../archive/hb-ringdown/QNM_ZETA_WHAT_REMAINS.md)
+is also **not** Q6 \(H_N\).
 
 DA leftover-split lab (this definition beside Ring SND; not a joint operator): [`docs/domain-architect/LEFTOVER-REPAIR.md`](../../domain-architect/LEFTOVER-REPAIR.md).
 

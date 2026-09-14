@@ -1,5 +1,40 @@
 # Aug 19 UHSA session synthesis — archive only
 
+14 August 2026 companion (more honest RH note, same stack):
+[`Harmonic_Perspective_on_RH_2026-08-14.md`](Harmonic_Perspective_on_RH_2026-08-14.md).
+Hard rule there: the harmonic stack does **not** prove RH. Bridge lemma
+**OPEN**. Not live DA. Not Clay.
+
+Millennium primer *Unified Harmonic Solutions…* is archived beside it and
+**rejected as a solve**:
+[`Unified_Harmonic_Solutions_Millennium_Problems.md`](Unified_Harmonic_Solutions_Millennium_Problems.md).
+Breathing-field book paste (Ch. I–III fragment, truncated):
+[`SFE_Breathing_Field_Book_Paste.md`](SFE_Breathing_Field_Book_Paste.md).
+Later Glass follow-up is the **same truncated file** already archived.
+Chapter III body is now filed as it arrived (replacement boxes ■). Still
+truncated. **Not** a GR+QM unification theorem. White paper is a
+**DIFFERENT** file.
+Named 150-page PDF **arrived as a 12-page padded stub** (SHA `c6d669f140…`),
+not 150 pages. White paper txt **arrived** (SHA `72b5507c…`, 5 June 2025
+outline). Research map / Ch.8 Explained txt still **not received**:
+[`HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md`](HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md).
+
+Hardback **arrived from Drive** (2 777 161 bytes, SHA `57e0a0bcf25f…`):
+[`Harmonic_Blueprint_HARDBACK.docx`](Harmonic_Blueprint_HARDBACK.docx).
+Receipt: [`Harmonic_Blueprint_HARDBACK.RECEIPT.md`](Harmonic_Blueprint_HARDBACK.RECEIPT.md).
+Book only. Not Clay. Not live DA.
+
+`The Harmonic Blueprint FULL.docx` **arrived as a stub** (36 775 bytes,
+SHA `fe4bbc6875…`), not the book:
+[`The_Harmonic_Blueprint_FULL.docx`](The_Harmonic_Blueprint_FULL.docx).
+`The Harmonic Blueprint FULL 150 PAGES.pdf` **arrived as a 12-page
+padded stub** (14 082 bytes, SHA `c6d669f140…`), not 150 pages:
+[`The_Harmonic_Blueprint_FULL_150_PAGES.pdf`](The_Harmonic_Blueprint_FULL_150_PAGES.pdf).
+White paper txt **arrived** (4 734 bytes, SHA `72b5507c…`):
+[`Simons_Field_Equation_White_Paper.txt`](Simons_Field_Equation_White_Paper.txt).
+Chapter 8 “SFE Explained” txt **not received**:
+[`Chapter8-SFE-Explained.MISSING.md`](Chapter8-SFE-Explained.MISSING.md).
+
 [`Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md`](Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md)
 
 SHA-256 `4d49cd1ee629…`. 15 899 bytes. Chat paste of 19 August 2026

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import ast
 import hashlib
+import re
 import unittest
 from pathlib import Path
 
@@ -61,6 +62,10 @@ UHSA_SYNTHESIS = (
 )
 UHSA_SYNTHESIS_SHA256 = (
     "4d49cd1ee629e6c2fbf0ad93fa08c107d6d4587ea5a06121930ecbdeb848e363"
+)
+RH_HARMONIC_NOTE = ARCHIVE_SFE_HB / "Harmonic_Perspective_on_RH_2026-08-14.md"
+RH_HARMONIC_NOTE_SHA256 = (
+    "7062f4cacedd386392e55f8539d3060ed30acfc66b22a6ae2425513564b1b1ff"
 )
 SPECTRAL_UNIFICATION_TEX = ARCHIVE_SFE_HB / "SPECTRAL_UNIFICATION_PAPER.tex"
 SPECTRAL_UNIFICATION_NOTE = ARCHIVE_SFE_HB / "SPECTRAL_UNIFICATION_PAPER.md"
@@ -372,6 +377,409 @@ class TestUhsaSessionSynthesisStaysArchived(unittest.TestCase):
                     hay,
                     f"{path.name} must not contain archived UHSA token {token!r}",
                 )
+
+
+class TestRhHarmonicPerspectiveStaysArchived(unittest.TestCase):
+    """14 Aug 2026 RH harmonic note stays historical. Does not prove RH."""
+
+    def test_note_is_in_archive_not_a_clay_claim(self):
+        self.assertTrue(RH_HARMONIC_NOTE.is_file(), RH_HARMONIC_NOTE)
+        raw = RH_HARMONIC_NOTE.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), RH_HARMONIC_NOTE_SHA256)
+        self.assertEqual(len(raw), 9439)
+        text = raw.decode("utf-8")
+        self.assertIn("Not live Domain Architect", text)
+        self.assertIn("NOT CLAIMED", text)
+        self.assertIn("do not prove RH", text)
+        self.assertIn("Bridge lemma", text)
+        self.assertIn("OPEN", text)
+        self.assertIn("inverted", text)
+        self.assertIn("import into `domain_architect/`", text)
+        self.assertFalse((LIVE_ROOT / "harmonic_blueprint.py").is_file())
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("Harmonic_Perspective_on_RH_2026-08-14.md", note)
+        self.assertIn("does **not** prove RH", note)
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Harmonic_Perspective_on_RH_2026-08-14.md", lookup)
+        gcd = (
+            Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("14 Aug RH harmonic-perspective note", gcd)
+
+    def test_millennium_primer_is_rejected_as_a_solve(self):
+        path = ARCHIVE_SFE_HB / "Unified_Harmonic_Solutions_Millennium_Problems.md"
+        self.assertTrue(path.is_file(), path)
+        text = path.read_text(encoding="utf-8")
+        self.assertIn("NOT CLAIMED", text)
+        self.assertIn("rejected** as a solve", text)
+        self.assertIn("does **not** prove RH", text)
+        self.assertIn("Harmonic_Perspective_on_RH_2026-08-14.md", text)
+        missing = ARCHIVE_SFE_HB / "HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md"
+        self.assertTrue(missing.is_file(), missing)
+        miss = missing.read_text(encoding="utf-8")
+        self.assertIn("not received", miss.lower())
+        self.assertIn("150 PAGES.pdf", miss)
+        map_receipt = ARCHIVE_SFE_HB / "SFE_Research_Map.MISSING.md"
+        self.assertTrue(map_receipt.is_file(), map_receipt)
+        self.assertIn("not received", map_receipt.read_text(encoding="utf-8").lower())
+        self.assertFalse((ARCHIVE_SFE_HB / "SFE_Research_Map.html").is_file())
+        paste = ARCHIVE_SFE_HB / "SFE_Breathing_Field_Book_Paste.md"
+        self.assertTrue(paste.is_file(), paste)
+        body = paste.read_text(encoding="utf-8")
+        self.assertIn("NOT CLAIMED", body)
+        self.assertIn("does **not** unify", body)
+        self.assertIn("truncated", body.lower())
+        self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("rejected as a solve", note)
+        self.assertIn("Unified_Harmonic_Solutions_Millennium_Problems.md", note)
+        self.assertIn("HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md", note)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Unified_Harmonic_Solutions_Millennium_Problems.md", archive_index)
+        self.assertIn("rejected as a solve", archive_index)
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Unified_Harmonic_Solutions_Millennium_Problems.md", lookup)
+        self.assertIn("rejected as a solve", lookup)
+        self.assertIn("HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md", lookup)
+        gcd = (
+            Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("rejected as a solve", gcd)
+        self.assertIn("not** a q6 product face", gcd.lower())
+        faces = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "papers"
+            / "ns-snd"
+            / "FACES.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Unified_Harmonic_Solutions_Millennium_Problems.md", faces)
+        self.assertIn("rejected as a solve", faces)
+        self.assertIn("Not** a Paper2 face", faces)
+        self.assertIn("SFE_Breathing_Field_Book_Paste.md", faces)
+
+    def test_breathing_field_paste_same_truncated_opening_not_unification(self):
+        paste = ARCHIVE_SFE_HB / "SFE_Breathing_Field_Book_Paste.md"
+        self.assertTrue(paste.is_file(), paste)
+        body = paste.read_text(encoding="utf-8")
+        self.assertIn("NOT CLAIMED", body)
+        self.assertIn("does **not** unify", body)
+        self.assertIn("truncated", body.lower())
+        self.assertIn(
+            "In essence, nature uses prime-based coherence not just to form space",
+            body,
+        )
+        self.assertIn("■", body)
+        self.assertIn("same truncated", body)
+        self.assertIn("rejected", body.lower())
+        self.assertIn("DIFFERENT", body)
+        self.assertIn("72b5507c", body)
+        self.assertIn("57e0a0bc", body)
+        self.assertIn("fe4bbc68", body)
+        self.assertIn("c6d669f140", body)
+        self.assertIn("field potential", body)
+        self.assertIn("import into `domain_architect/`", body)
+        self.assertIn("Do not invent", body)
+        self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
+        self.assertFalse((LIVE_ROOT / "harmonic_blueprint.py").is_file())
+        miss = (
+            ARCHIVE_SFE_HB / "HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("same truncated file already archived", miss)
+        self.assertIn("not received", miss.lower())
+        self.assertFalse((ARCHIVE_SFE_HB / "SFE_Research_Map.html").is_file())
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("same truncated file", note)
+        self.assertIn("DIFFERENT", note)
+
+    def test_hardback_docx_arrived_from_drive_not_as_clay(self):
+        path = ARCHIVE_SFE_HB / "Harmonic_Blueprint_HARDBACK.docx"
+        self.assertTrue(path.is_file(), path)
+        raw = path.read_bytes()
+        self.assertEqual(len(raw), 2777161)
+        self.assertEqual(
+            hashlib.sha256(raw).hexdigest(),
+            "57e0a0bcf25f230fddfaede8a5f8dfdd0fd05339ff86a6ba5c3d082c8d678ae6",
+        )
+        self.assertEqual(raw[:4], b"PK\x03\x04")
+        receipt = (
+            ARCHIVE_SFE_HB / "Harmonic_Blueprint_HARDBACK.RECEIPT.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("NOT CLAIMED", receipt)
+        self.assertIn("1qhkiK2Bv777KTcnFjr25cxzvwDVz84KP", receipt)
+        self.assertIn("9798289278081", receipt)
+        self.assertIn("Not RH", receipt)
+        self.assertIn("Appendix B", receipt)
+        self.assertIn("temporal harmonic shell", receipt)
+        self.assertIn("Mertens", receipt)
+        self.assertFalse((LIVE_ROOT / "harmonic_blueprint.py").is_file())
+        miss = (
+            ARCHIVE_SFE_HB / "HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Harmonic_Blueprint_HARDBACK.docx", miss)
+        self.assertIn("arrived", miss.lower())
+        self.assertIn("150 PAGES.pdf", miss)
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("Harmonic_Blueprint_HARDBACK.docx", note)
+        self.assertIn("arrived from Drive", note)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Harmonic_Blueprint_HARDBACK.docx", archive_index)
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Harmonic_Blueprint_HARDBACK.docx", lookup)
+        self.assertIn("57e0a0bcf25f", lookup)
+        gcd = (
+            Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("57e0a0bcf25f", gcd)
+
+    def test_full_docx_stub_is_not_the_book(self):
+        stub = ARCHIVE_SFE_HB / "The_Harmonic_Blueprint_FULL.docx"
+        receipt = ARCHIVE_SFE_HB / "The_Harmonic_Blueprint_FULL.RECEIPT.md"
+        hardback = ARCHIVE_SFE_HB / "Harmonic_Blueprint_HARDBACK.docx"
+        self.assertTrue(stub.is_file(), stub)
+        self.assertTrue(receipt.is_file(), receipt)
+        raw = stub.read_bytes()
+        self.assertEqual(len(raw), 36775)
+        self.assertEqual(
+            hashlib.sha256(raw).hexdigest(),
+            "fe4bbc6875cd541459ab15ff7499eaca50711a60d5758922126987474523f71a",
+        )
+        self.assertEqual(raw[:4], b"PK\x03\x04")
+        self.assertNotEqual(
+            hashlib.sha256(raw).hexdigest(),
+            hashlib.sha256(hardback.read_bytes()).hexdigest(),
+        )
+        text = receipt.read_text(encoding="utf-8")
+        self.assertIn("not the book", text.lower())
+        self.assertIn("placeholder", text.lower())
+        self.assertIn("NOT CLAIMED", text)
+        self.assertFalse((LIVE_ROOT / "harmonic_blueprint.py").is_file())
+        miss = (
+            ARCHIVE_SFE_HB / "HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("arrived as a stub", miss.lower())
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("The_Harmonic_Blueprint_FULL.docx", note)
+        self.assertIn("arrived as a stub", note)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("The_Harmonic_Blueprint_FULL.docx", archive_index)
+        self.assertIn("stub", archive_index.lower())
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("The_Harmonic_Blueprint_FULL.docx", lookup)
+        self.assertIn("fe4bbc6875", lookup)
+        gcd = (
+            Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("fe4bbc6875", gcd)
+
+    def test_full_150_pages_pdf_is_twelve_page_stub_not_the_book(self):
+        pdf = ARCHIVE_SFE_HB / "The_Harmonic_Blueprint_FULL_150_PAGES.pdf"
+        receipt = ARCHIVE_SFE_HB / "The_Harmonic_Blueprint_FULL_150_PAGES.RECEIPT.md"
+        hardback = ARCHIVE_SFE_HB / "Harmonic_Blueprint_HARDBACK.docx"
+        stub_docx = ARCHIVE_SFE_HB / "The_Harmonic_Blueprint_FULL.docx"
+        self.assertTrue(pdf.is_file(), pdf)
+        self.assertTrue(receipt.is_file(), receipt)
+        raw = pdf.read_bytes()
+        self.assertEqual(len(raw), 14082)
+        self.assertEqual(
+            hashlib.sha256(raw).hexdigest(),
+            "c6d669f140020a21364bb6546577d3e2e42162a67f115167a2107832378eb0af",
+        )
+        self.assertTrue(raw.startswith(b"%PDF"))
+        self.assertEqual(len(re.findall(rb"/Type\s*/Page(?!s)", raw)), 12)
+        self.assertNotEqual(
+            hashlib.sha256(raw).hexdigest(),
+            hashlib.sha256(hardback.read_bytes()).hexdigest(),
+        )
+        self.assertNotEqual(
+            hashlib.sha256(raw).hexdigest(),
+            hashlib.sha256(stub_docx.read_bytes()).hexdigest(),
+        )
+        text = receipt.read_text(encoding="utf-8")
+        self.assertIn("12", text)
+        self.assertIn("not 150", text.lower())
+        self.assertIn("not the book", text.lower())
+        self.assertIn("NOT CLAIMED", text)
+        self.assertIn("Sacred Geometry", text)
+        self.assertFalse((LIVE_ROOT / "harmonic_blueprint.py").is_file())
+        miss = (
+            ARCHIVE_SFE_HB / "HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("12-page padded stub", miss)
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("The_Harmonic_Blueprint_FULL_150_PAGES.pdf", note)
+        self.assertIn("12-page", note)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("The_Harmonic_Blueprint_FULL_150_PAGES.pdf", archive_index)
+        self.assertIn("c6d669f140", archive_index)
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("c6d669f140", lookup)
+        gcd = (
+            Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("c6d669f140", gcd)
+
+    def test_chapter8_sfe_explained_txt_is_missing_not_invented(self):
+        receipt = ARCHIVE_SFE_HB / "Chapter8-SFE-Explained.MISSING.md"
+        named = (
+            ARCHIVE_SFE_HB
+            / "The_Harmonic_Blueprint_Full_Book__Chapter 8 - The Simons Field Equation Explained.txt"
+        )
+        self.assertTrue(receipt.is_file(), receipt)
+        self.assertFalse(named.is_file())
+        text = receipt.read_text(encoding="utf-8")
+        self.assertIn("not received", text.lower())
+        self.assertIn("Cymatics, Voice Identity", text)
+        self.assertIn("1THWPUeCc6mLZiuy3yNIDfLfjIeJcYN-2", text)
+        self.assertNotIn("invented the missing chapter", text.lower())
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("Chapter 8", note)
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Chapter8-SFE-Explained.MISSING.md", lookup)
+
+    def test_white_paper_txt_arrived_not_as_a_theorem(self):
+        path = ARCHIVE_SFE_HB / "Simons_Field_Equation_White_Paper.txt"
+        receipt = ARCHIVE_SFE_HB / "Simons_Field_Equation_White_Paper.RECEIPT.md"
+        self.assertTrue(path.is_file(), path)
+        self.assertTrue(receipt.is_file(), receipt)
+        raw = path.read_bytes()
+        self.assertEqual(len(raw), 4734)
+        self.assertEqual(
+            hashlib.sha256(raw).hexdigest(),
+            "72b5507c49abdc6f3765ee0edb97725fe62c5dc0593ddb48bd45ac0e4f6a0682",
+        )
+        text = raw.decode("utf-8")
+        self.assertIn("June 05, 2025", text)
+        self.assertIn("𝛷 ∇ Ψ = Σ π (e^{iθ}) f(n, p) Δτ", text)
+        note = receipt.read_text(encoding="utf-8")
+        self.assertIn("NOT CLAIMED", note)
+        self.assertIn("symbol juxtaposition", note)
+        self.assertIn("swirl", note)
+        self.assertIn("field potential", note)
+        self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
+        self.assertFalse((LIVE_ROOT / "harmonic_blueprint.py").is_file())
+        miss = (
+            ARCHIVE_SFE_HB / "HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Simons_Field_Equation_White_Paper.txt", miss)
+        self.assertIn("72b5507c", miss)
+        sfe_readme = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("Simons_Field_Equation_White_Paper.txt", sfe_readme)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Simons_Field_Equation_White_Paper.txt", archive_index)
+        self.assertIn("72b5507c", archive_index)
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("72b5507c", lookup)
+        gcd = (
+            Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("72b5507c", gcd)
+
+    def test_cosmoevolution_qnm_zeta_note_unification_withdrawn(self):
+        path = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "archive"
+            / "hb-ringdown"
+            / "QNM_Prime_Zeta_DA_Analysis_2026-08.md"
+        )
+        self.assertTrue(path.is_file(), path)
+        text = path.read_text(encoding="utf-8")
+        self.assertIn("NOT CLAIMED", text)
+        self.assertIn("withdrawn", text.lower())
+        self.assertIn("Motl", text)
+        self.assertIn("monodromy", text)
+        self.assertIn("not** reject H0", text)
+        self.assertIn("Do not reopen Experiment 01", text)
+        self.assertIn("no `TRANSFORMABLE`", text)
+        self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
+        self.assertFalse((LIVE_ROOT / "qnm_zeta.py").is_file())
+        note = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "archive"
+            / "hb-ringdown"
+            / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("QNM_Prime_Zeta_DA_Analysis_2026-08.md", note)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("hb-ringdown/", archive_index)
+        self.assertIn("QNM_Prime_Zeta_DA_Analysis_2026-08.md", archive_index)
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("QNM_Prime_Zeta_DA_Analysis_2026-08.md", lookup)
+        gcd = (
+            Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("QNM_Prime_Zeta_DA_Analysis_2026-08.md", gcd)
+
+        remains = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "archive"
+            / "hb-ringdown"
+            / "QNM_ZETA_WHAT_REMAINS.md"
+        )
+        self.assertTrue(remains.is_file(), remains)
+        body = remains.read_text(encoding="utf-8")
+        self.assertIn("NOT CLAIMED", body)
+        self.assertIn("What this paper is", body)
+        self.assertIn("Motl", body)
+        self.assertIn("`TRANSFORMABLE`", body)
+        self.assertIn("QNM_ZETA_WHAT_REMAINS.md", note)
+        self.assertIn("QNM_ZETA_WHAT_REMAINS.md", lookup)
+        self.assertIn("QNM_ZETA_WHAT_REMAINS.md", archive_index)
 
 
 class TestSpectralUnificationPaperArchived(unittest.TestCase):
