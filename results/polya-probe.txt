@@ -12,7 +12,43 @@ Canonical SFE status: unresolved.
 Program complete: False
 Highest evidence level actually supported: Level 1
 
+Who survived the filter (RH-attack sources):
+  [survived] George Pólya (proven entire-function / Fourier / multiplier / frequency)
+    Laguerre–Pólya class; Pólya–Schur multipliers; 1926 cosine-zero criterion; 1926 Acta ξ integral; Pólya frequency kernels; 1918/1923 zero distribution
+    Only RH-attack source whose theorems remain as usable objects. Does not fill H. Does not prove RH. Heat-flow continuation is Λ.
+  [survived-as-continuation] de Bruijn–Newman–Rodgers–Tao (continuation of Pólya 1926)
+    de Bruijn–Newman Λ; Λ ≥ 0 theorem; RH ⇔ Λ = 0
+    They extended Pólya’s win to one real number. Still not RH.
+  [incomplete] Hilbert–Pólya program
+    strategy: self-adjoint H with spec(H) = {γ_n}
+    No independent Hamiltonian on record. Strategy, not a theorem.
+  [incomplete] Berry–Keating xp
+    classical symbol xp with cutoff
+    Independent emission candidate. Missing quantization, cutoff, spectral identity.
+  [incomplete] Connes adelic absorption
+    missing lines / absorption spectrum
+    Incompatible with Berry–Keating. Not a compact point spectrum of {γ_n}.
+  [not-identity] Montgomery–Odlyzko GUE
+    pair correlation / universality class
+    Statistics survive as HP-G1. A frozen GUE matrix is not {γ_n}.
+  [retired] H = diag(γ_n) / Φ := zeros
+    circular FRA fill
+    Tautological or assumes RH.
+  [rejected] harmonic oscillator / equal spacing as H
+    Hermite eigenfunctions; equal gaps
+    N(T) kills equal spacing. Hermite-in-three-books is not H.
+  [incompatible] retired SFE-HAM
+    inverse-GCD Fock Hamiltonian
+    Different book. Not Hilbert–Pólya.
+  [false] Pólya Liouville-sum conjecture
+    L(x) ≤ 0
+    The Pólya claim that does not survive. Proven Pólya is not every Pólya sentence.
+  [insufficient] Pólya–Szegő 1951 / membrane 1954 / enumeration / random walk as Clay NS
+    isoperimetric physics; membrane Weyl law; combinatorics; lattice walk
+    Proven Pólya, other books. No checked map to Clay NS or to spec(H) = {γ_n}.
+
 What popped through the DA filter:
+  * Among RH-attack sources, Pólya is the only one whose theorems survive as usable objects. Hilbert–Pólya is still a strategy with no H. Berry–Keating, Connes, GUE-as-identity, diag(γ_n), the oscillator, and SFE-HAM do not survive as a filled Hamiltonian. Pólya also lost one: the Liouville-sum conjecture is false.
   * N(T) rejects equal-spaced H (the oscillator). Hermite polynomials in the oscillator, GUE, and Jensen(ξ) are a special-function collision, not H.
   * Two Pólya routes stay unmerged: a self-adjoint Hamiltonian versus Laguerre–Pólya / Pólya 1926 kernel conditions.
   * Pólya 1926 plus heat flow contracts the missing object to one real number Λ (de Bruijn–Newman). Rodgers–Tao: Λ ≥ 0 is a theorem. RH ⇔ Λ = 0. This is a second scale occupant, not H and not {γ_n}.
@@ -197,6 +233,7 @@ Findings (classification, not discovery of a Hamiltonian):
   - No checked transformation connects these objects to Navier–Stokes or to a canonical SFE. Other-book formulas were classified, not absorbed. Dumping the 1951 isoperimetric book, 1954 membrane eigenvalues, 1937 enumeration theorem, and 1921 random walk does not create a bridge.
   - Pólya frequency / variation-diminishing structure is the natural language of the 1926 kernel hypotheses. DA recorded it as a possible fill of those hypotheses, not as H and not as a proof that Riemann’s Φ is PF.
   - A filled N-component map is still classification (Level 0) plus negative laboratories (Level 1). It is not a surprise Hamiltonian. The Weyl screen is a surprise *filter*: it can throw out the wrong H now, without proving RH.
+  - Filter scoreboard: Pólya is the only RH-attack source whose theorems survive as usable objects. That is a win for entire-function / Fourier calculus, not a Hamiltonian and not RH. Everyone else in the attack column is incomplete, not-identity, retired, rejected, incompatible, false, or insufficient.
 
 Domain Architect still needs (cannot invent these):
   - One independent operator formula for H, with a declared Hilbert space, inner product, and domain — not a merge of xp, adeles, GUE, and diag(γ_n).
@@ -255,6 +292,6 @@ UHF extras that remain required: Hilbert space ℋ and inner product; operator d
 Registry HP ids: HP-H001, HP-H002, HP-H003, HP-H004, HP-H005, HP-H006, HP-H007, HP-H008, HP-H009, HP-H010, HP-H011, HP-H012, HP-H013, HP-H014, HP-H015, HP-H016, HP-H017, HP-H018, HP-H019, HP-H020, HP-H021, HP-H022, HP-H023, HP-H024
 Conflicts involving HP: 18
 Nulls involving HP: NULL-HP-CIRCULAR, NULL-HP-GUE, NULL-HP-COMPLETE, NULL-HP-OSCILLATOR, NULL-HP-POLYA1926
-Protocol hash: ba845fb3da2b81cd7cb8414372fe65e7986243684d88d18379b3ad767a717a13
+Protocol hash: a24ab39c4252802e3429f2cb40383cc85ffb8f27b68f6ed72722979cedbe31ec
 
 Canonical SFE status: unresolved.
