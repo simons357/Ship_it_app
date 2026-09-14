@@ -1,0 +1,74 @@
+# Pólya probe — what Domain Architect did with the full briefing
+
+**Status:** exploratory classification, 2026-09-14  
+**Riemann hypothesis status:** not claimed  
+**Canonical SFE status:** unresolved  
+**Run:** `python -m domain_architect --polya-probe`
+
+This is the probe asked for after the five-role Hilbert–Pólya map: put every
+relevant object in, let Domain Architect decide how many independently
+specifiable components it needs (not a cap of five), include proven Pólya
+entire-function facts, and see whether anything pops out.
+
+Core roles remain an *interface*. Informal nicknames (“N-fingers”, “slots”)
+are not product vocabulary. The method name is Functional Role Analysis.
+
+---
+
+## What was ingested
+
+Theorems: Euler product, \(\xi(s)=\xi(1-s)\), Weil explicit formula,
+\(N(T)\), Laguerre–Pólya class, Jensen polynomials (GORZ Hermite limit).
+
+Candidates: Berry–Keating \(xp\), Connes absorption spectrum, Montgomery GUE,
+circular \(\operatorname{diag}(\gamma_n)\).
+
+Other books, classified not absorbed: retired SFE-HAM, Navier–Stokes.
+
+Quantum extras DA promoted out of a five-role map: Hilbert space \(\mathcal H\),
+inner product, domain/\(\mathcal B\), evolution \(D\), implicit \(\Xi=0\),
+time-reversal breaking.
+
+Registry: `HP-H001`–`HP-H010`.
+
+---
+
+## What DA returned
+
+**24 independently specifiable components** (5 core + 19 extension / \(E\)).
+Program complete: **false**. Evidence: Level 0 classification plus Level 1
+negative GUE laboratory (a frozen GUE matrix is not \(\{\gamma_n\}\)).
+
+The result that is actually a finding, not a Hamiltonian:
+
+1. Quantum Hilbert–Pólya does not fit in five roles. That is how quantum
+   “fits”: extra components, not a tighter five-letter formula.
+2. There are **two parallel Pólya routes**, and they must not be merged:
+   - Hilbert–Pólya: a self-adjoint \(H\) with \(\operatorname{spec}(H)=\{\gamma_n\}\);
+   - Laguerre–Pólya: \(\xi(1/2+iz)\) in the LP class (all zeros real).
+   Completing either would imply RH. Stating either does not. Feeding Pólya’s
+   proven LP / Jensen calculus **does not fill \(H\)**; it restates reality of
+   zeros in entire-function language.
+3. Berry–Keating \(xp\) is the only supplied *emission* Hamiltonian with an
+   independent classical symbol. Connes is a different object. GUE is
+   statistics. \(\operatorname{diag}(\gamma_n)\) is circular.
+4. No checked transformation to Navier–Stokes or to a canonical SFE.
+   Other Millennium problems: RH is the only one with a direct Pólya object;
+   BSD is the same *style* of explicit formula for a different \(L\)-function;
+   Yang–Mills / Hodge / P vs NP have no checked Pólya map.
+
+---
+
+## What DA still needs (it cannot invent these)
+
+- One independent operator formula for \(H\), with \(\mathcal H\), inner
+  product, and domain — not a merge of \(xp\), adeles, GUE, and \(\operatorname{diag}(\gamma_n)\).
+- Essential self-adjointness.
+- Whether an \(xp\) cutoff is \(P\), \(\mathcal B\), or extra regularization in \(E\).
+- Weil from \(\operatorname{Tr} f(H)\), or \(\xi(s)\) as a proven determinant.
+- If the LP route is chosen instead: an RH-free proof that \(\xi(1/2+iz)\) lies
+  in the Laguerre–Pólya class.
+- If a Navier–Stokes bridge is claimed: an explicit checked transformation.
+
+There was no surprise Hamiltonian. A filled N-component map is still
+classification.

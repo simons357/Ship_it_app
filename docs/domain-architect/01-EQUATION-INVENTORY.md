@@ -127,8 +127,11 @@ Assigning \(\Phi:=\{\gamma_n\}\) is recorded as a circular fill (HP-H007), not a
 | HP-H005 | pair correlation of \(\{\gamma_n\}\) matches GUE | Universality class, not identity | **RETAIN** as statistics only |
 | HP-H006 | \(\xi(s)=\xi(1-s)\) | Theorem; possible left-hand side of a \(\det\) identity | **RETAIN** as theorem |
 | HP-H007 | \(\Phi:=\{\gamma_n\}\) or \(H=\operatorname{diag}(\gamma_n)\) | Circular FRA fill | **RETIRE** as a construction; keep as a null |
+| HP-H008 | Laguerre–Pólya class of \(\xi(1/2+iz)\) | Proven entire-function calculus; parallel RH route | **RETAIN** as theorem; not a Hamiltonian |
+| HP-H009 | Jensen polynomials of \(\xi\) \(\to\) Hermite (GORZ) | Asymptotic real-rootedness | **RETAIN**; not RH |
+| HP-H010 | \(N(T)=(T/2\pi)\log(T/2\pi e)+S(T)+O(1)\) | Weyl-law target | **RETAIN** as theorem |
 
-Do not merge HP-H003 with HP-H004, HP-H005, or retired SFE-HAM (`SFE-H003`).
+Do not merge HP-H003 with HP-H004, HP-H005, HP-H008, or retired SFE-HAM (`SFE-H003`).
 
 ---
 

@@ -12,6 +12,7 @@ from .hilbert_polya import (
     default_program_audit,
     list_candidate_ids,
 )
+from .polya_probe import run_polya_probe
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 
@@ -44,7 +45,26 @@ def main(argv: list[str] | None = None) -> int:
             "connes, montgomery-gue, weil-explicit)"
         ),
     )
+    parser.add_argument(
+        "--polya-probe",
+        action="store_true",
+        help=(
+            "ingest the full Pólya / Hilbert–Pólya briefing and expand E; "
+            "does not prove RH"
+        ),
+    )
     args = parser.parse_args(argv)
+
+    if args.polya_probe:
+        probe = run_polya_probe()
+        if args.json:
+            json.dump(probe.to_dict(), sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print(probe.narrative())
+            print()
+            print(f"Canonical SFE status: {CANONICAL_SFE_STATUS}.")
+        return 0
 
     if args.hilbert_polya:
         if args.candidate:

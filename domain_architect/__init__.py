@@ -24,6 +24,7 @@ from .schema import (
 )
 from .audit import audit_expression
 from .hilbert_polya import audit_candidate, default_program_audit
+from .polya_probe import run_polya_probe
 from .report import AuditReport
 
 __all__ = [
@@ -39,6 +40,7 @@ __all__ = [
     "audit_candidate",
     "audit_expression",
     "default_program_audit",
+    "run_polya_probe",
 ]
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"

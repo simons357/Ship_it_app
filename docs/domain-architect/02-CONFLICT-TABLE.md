@@ -96,6 +96,9 @@ Columns:
 | C-HP-4 | HP-H002 Weil explicit formula | HP-H003 \(xp\) | Theorem vs heuristic Hamiltonian | The explicit formula is in \(E\). It is not \(H\) |
 | C-HP-5 | Retired SFE-HAM (`SFE-H003`) | HP-H003 | Which Hamiltonian | Different books. Inverse-GCD Fock model is not Hilbert–Pólya |
 | C-HP-6 | Informal “five fingers” with \(\Phi\) set to the zeros | Audited core roles \(P,H,\psi,\lambda,\Phi\) | Vocabulary and circularity | Do not revive the nickname. Do not fill \(\Phi\) with zeros to create \(H\) |
+| C-HP-7 | HP-H008 Laguerre–Pólya class | HP-H001 / HP-H003 Hilbert–Pólya / \(xp\) | Which Pólya route | **COMPATIBLE_DISTINCT.** Entire-function LP membership is not a Hamiltonian. Do not merge |
+
+Pólya probe (N independently specifiable components, not a five-role cap): `python -m domain_architect --polya-probe`. Write-up: [07 — Pólya probe](07-POLYA-PROBE.md).
 
 ---
 

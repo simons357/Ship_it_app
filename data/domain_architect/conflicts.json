@@ -142,5 +142,21 @@
     "evidence": "Retired inverse-GCD Fock Hamiltonian versus Berry–Keating xp. Different spaces, interactions, and claims. Shared letter H is not a transformation.",
     "status": "recorded",
     "notes": "SFE-HAM stays in the retired SFE book. It is not a Hilbert–Pólya operator."
+  },
+  {
+    "left_id": "HP-H008",
+    "right_id": "HP-H003",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Laguerre–Pólya class is entire-function calculus. Berry–Keating xp is a heuristic Hamiltonian. Parallel routes to RH; no checked transformation identifies them.",
+    "status": "recorded",
+    "notes": "Do not merge LP membership with H = xp."
+  },
+  {
+    "left_id": "HP-H008",
+    "right_id": "HP-H001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Hilbert–Pólya asks for a self-adjoint operator. Laguerre–Pólya asks for LP membership of ξ(1/2+iz). Same conclusion type (real zeros), different missing object.",
+    "status": "recorded",
+    "notes": "Two Pólya routes. Completing either would imply RH; stating either does not."
   }
 ]

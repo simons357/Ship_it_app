@@ -22,7 +22,8 @@ Run:
 python -m domain_architect --hilbert-polya
 python -m domain_architect --hilbert-polya --candidate berry-keating
 python -m domain_architect --hilbert-polya --candidate montgomery-gue
-python -m unittest tests.test_hilbert_polya
+python -m domain_architect --polya-probe
+python -m unittest tests.test_hilbert_polya tests.test_polya_probe
 ```
 
 ---

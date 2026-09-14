@@ -52,6 +52,7 @@ known theory.
 | Train / validation / held-out protocol hash | `protocol.py` |
 | Null and counterexample registry | `null_results.json`, `EquationRegistry.record_null` |
 | Hilbert–Pólya completeness audit; circular \(\Phi:=\)zeros refused | `hilbert_polya.py` |
+| Pólya probe (N-component briefing, LP class, no Millennium glue) | `polya_probe.py` |
 | GUE statistics \(\neq\) spectral identity laboratory | `hilbert_polya.gue_is_not_riemann_spectrum` |
 
 ## Canonical SFE
