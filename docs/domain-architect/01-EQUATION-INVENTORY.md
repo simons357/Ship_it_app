@@ -135,6 +135,15 @@ Assigning \(\Phi:=\{\gamma_n\}\) is recorded as a circular fill (HP-H007), not a
 | HP-H013 | \(L(x)=\sum_{n\le x}\lambda(n)\le 0\) | Pólya Liouville conjecture | **RETIRE** — disproved (Haselgrove) |
 | HP-H014 | \(\Xi_t\) real-zero for \(t\ge\Lambda\); \(\Lambda\ge 0\); RH \(\Leftrightarrow\Lambda=0\) | de Bruijn–Newman constant | **RETAIN**; \(\Lambda\ge 0\) theorem; \(\Lambda=0\) is RH; not \(H\) |
 | HP-H015 | Pólya–Schur multiplier sequences | Algebraic LP filter | **RETAIN**; \(\gamma_k\) multipliers \(\neq\) Riemann \(\gamma_n\) |
+| HP-H016 | Pólya 1926 Acta integral representation of \(\xi\) | Distinct from the cosine-zero criterion | **RETAIN** as representation |
+| HP-H017 | Pólya frequency / variation-diminishing kernels | Language of the 1926 hypotheses | **RETAIN**; a PF check on Riemann’s \(\Phi\) is not \(H\) |
+| HP-H018 | Turán inequalities | Coefficient tests for LP / Jensen | **RETAIN**; not RH unless checked for \(\xi\) without assuming RH |
+| HP-H019 | Pólya–Szegő 1951 isoperimetric inequalities in mathematical physics | Capacity, torsion, Laplacian eigenvalues | **RETAIN** as other-book; **INSUFFICIENT** as Clay NS |
+| HP-H020 | Pólya 1954 membrane eigenvalues | Domain Weyl law | **RETAIN**; unmerged with \(N(T)\) |
+| HP-H021 | Pólya 1937 enumeration theorem | Combinatorics | **RETAIN** as dump; no \(\xi\) map |
+| HP-H022 | Pólya 1921 random-walk recurrence/transience | Probability | **RETAIN** as dump; no \(\xi\) map |
+| HP-H023 | Pólya 1918 / 1923 zeros of entire functions | Earlier zero-distribution calculus | **RETAIN**; not \(\operatorname{spec}(H)=\{\gamma_n\}\) |
+| HP-H024 | Pólya 1915 integer-valued entire functions | Entire functions taking integer values | **RETAIN** as dump; different book from \(\xi\) |
 
 Do not merge HP-H003 with HP-H004, HP-H005, HP-H008, or retired SFE-HAM (`SFE-H003`).
 

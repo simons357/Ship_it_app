@@ -196,6 +196,15 @@ class TestRegistryRecords(unittest.TestCase):
             "HP-H013",
             "HP-H014",
             "HP-H015",
+            "HP-H016",
+            "HP-H017",
+            "HP-H018",
+            "HP-H019",
+            "HP-H020",
+            "HP-H021",
+            "HP-H022",
+            "HP-H023",
+            "HP-H024",
         ):
             self.assertIn(eq_id, registry.equations)
         self.assertEqual(registry.equations["HP-H002"].audit_disposition, "RETAIN")
@@ -210,6 +219,8 @@ class TestRegistryRecords(unittest.TestCase):
         self.assertIn(("HP-H003", "HP-H004", "INCOMPATIBLE"), pairs)
         self.assertIn(("HP-H007", "HP-H001", "INCOMPATIBLE"), pairs)
         self.assertIn(("HP-H008", "HP-H003", "COMPATIBLE_DISTINCT"), pairs)
+        self.assertIn(("HP-H017", "HP-H011", "GENERALIZATION"), pairs)
+        self.assertIn(("HP-H020", "HP-H010", "COMPATIBLE_DISTINCT"), pairs)
 
     def test_cli_default_program(self):
         proc = subprocess.run(

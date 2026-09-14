@@ -190,5 +190,61 @@
     "evidence": "Heat-flow deformation of the Pólya 1926 cosine-transform program. Λ ≥ 0 is proved; the 1926 hypotheses on undeformed Φ remain unverified.",
     "status": "recorded",
     "notes": "Continuation of 1926, not a fill of H."
+  },
+  {
+    "left_id": "HP-H016",
+    "right_id": "HP-H011",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "The 1926 Acta integral representation of ξ is not the same theorem as the cosine-transform real-zero criterion.",
+    "status": "recorded",
+    "notes": "Two 1920s Pólya papers. Do not merge into one fill of H."
+  },
+  {
+    "left_id": "HP-H017",
+    "right_id": "HP-H011",
+    "relation": "GENERALIZATION",
+    "evidence": "Pólya frequency / variation-diminishing kernels are the language of the 1926/1927 cosine-zero hypotheses. A PF check on Riemann’s Φ would address those hypotheses, not produce H.",
+    "status": "recorded",
+    "notes": "Possible kernel fill. Not a Hamiltonian."
+  },
+  {
+    "left_id": "HP-H018",
+    "right_id": "HP-H008",
+    "relation": "SPECIAL_CASE",
+    "evidence": "Turán inequalities are coefficient tests for Laguerre–Pólya membership / Jensen hyperbolicity.",
+    "status": "recorded",
+    "notes": "Coefficient form of the LP route. Still not H."
+  },
+  {
+    "left_id": "HP-H020",
+    "right_id": "HP-H010",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Pólya membrane eigenvalue counts are a Weyl law for domains. N(T) is the Riemann–von Mangoldt law for zeros of ξ. Shared word Weyl is not a transformation.",
+    "status": "recorded",
+    "notes": "Two Weyl laws. Do not merge."
+  },
+  {
+    "left_id": "HP-H019",
+    "right_id": "HP-H001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "Isoperimetric inequalities in mathematical physics share spectral vocabulary with Hilbert–Pólya. No checked map identifies membrane/torsion estimates with spec(H) = {γ_n} or with Clay NS regularity.",
+    "status": "recorded",
+    "notes": "Dumped because NS was asked about. Do not glue."
+  },
+  {
+    "left_id": "HP-H021",
+    "right_id": "HP-H001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "Pólya enumeration is combinatorics. No checked map to a Hilbert–Pólya Hamiltonian.",
+    "status": "recorded",
+    "notes": "Dump of proven Pólya. Not a zeta object."
+  },
+  {
+    "left_id": "HP-H022",
+    "right_id": "HP-H001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "Lattice random-walk recurrence/transience is not spec(H) = {γ_n}.",
+    "status": "recorded",
+    "notes": "Dump of proven Pólya. Not RH."
   }
 ]

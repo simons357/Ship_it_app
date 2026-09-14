@@ -508,6 +508,96 @@ def briefing_components() -> list[ComponentRecord]:
             "proven; does not fill H; notation collision on γ",
             "HP-H015",
         ),
+        ComponentRecord(
+            "C-XiIntegral",
+            "E-entire",
+            "Pólya 1926 Acta: integral representation of Riemann’s ξ",
+            "theorem",
+            True,
+            "ingested as the 1926 ξ-representation paper, kept distinct from the cosine-zero criterion",
+            "representation of ξ, not H",
+            "HP-H016",
+        ),
+        ComponentRecord(
+            "C-PF",
+            "E-entire",
+            "Pólya frequency functions / variation-diminishing convolutions (totally positive kernels)",
+            "theorem",
+            True,
+            "ingested as the analytic engine behind cosine-transform real-zero criteria",
+            "a PF / variation-diminishing check on Riemann’s Φ is a possible fill of the 1926 hypotheses, not a Hamiltonian",
+            "HP-H017",
+        ),
+        ComponentRecord(
+            "C-Turan",
+            "E-entire",
+            "Turán inequalities on Taylor coefficients of LP-class entire functions",
+            "theorem",
+            True,
+            "ingested as coefficient tests for the LP class / Jensen hyperbolicity",
+            "necessary for LP membership; not RH unless checked for ξ without assuming RH",
+            "HP-H018",
+        ),
+        ComponentRecord(
+            "C-EntireZeros",
+            "E-entire",
+            "Pólya 1918 / 1923: distribution of zeros of certain entire functions",
+            "theorem",
+            True,
+            "ingested as Pólya’s earlier zero-distribution calculus",
+            "general entire-function zeros; not spec(H) = {γ_n}",
+            "HP-H023",
+        ),
+        ComponentRecord(
+            "C-IntegerEntire",
+            "E-entire",
+            "Pólya 1915: integer-valued entire functions (ganzwertige ganze Funktionen)",
+            "theorem",
+            True,
+            "ingested because it is proven Pólya entire-function work",
+            "different book from ξ; no checked map to Riemann zeros",
+            "HP-H024",
+        ),
+        ComponentRecord(
+            "C-Isoperimetric",
+            "other-book",
+            "Pólya–Szegő 1951 Isoperimetric Inequalities in Mathematical Physics",
+            "other_book",
+            True,
+            "ingested as the mathematical-physics book (eigenvalues, torsion, capacity)",
+            "spectral geometry / isoperimetric estimates; no checked map to Clay NS regularity",
+            "HP-H019",
+        ),
+        ComponentRecord(
+            "C-Membrane",
+            "other-book",
+            "Pólya 1954: eigenvalues of vibrating membranes (Weyl-type counts for domains)",
+            "other_book",
+            True,
+            "ingested as a second Weyl-law book, kept unmerged with N(T)",
+            "domain eigenvalue asymptotics are not the Riemann–von Mangoldt law",
+            "HP-H020",
+        ),
+        ComponentRecord(
+            "C-Enumeration",
+            "other-book",
+            "Pólya 1937 enumeration theorem (cycle index of group actions)",
+            "other_book",
+            True,
+            "ingested as proven Pólya combinatorics",
+            "no checked map to ξ, H, or Navier–Stokes",
+            "HP-H021",
+        ),
+        ComponentRecord(
+            "C-RandomWalk",
+            "other-book",
+            "Pólya 1921: simple random walk is recurrent in d=1,2 and transient in d≥3",
+            "other_book",
+            True,
+            "ingested as proven Pólya probability",
+            "no checked map to ξ, H, or Navier–Stokes",
+            "HP-H022",
+        ),
     ]
 
 
@@ -522,7 +612,10 @@ def millennium_routing() -> list[dict[str, str]]:
         },
         {
             "prize": "Navier–Stokes existence and smoothness",
-            "polya_object": "Pólya–Szegő inequalities ingested; no checked map to regularity",
+            "polya_object": (
+                "Pólya–Szegő inequalities; 1951 isoperimetric book; "
+                "1954 membrane eigenvalues; no checked map to regularity"
+            ),
             "relation": "INSUFFICIENT_INFORMATION",
             "status": "separate book; do not derive from ξ or xp",
         },
@@ -565,6 +658,15 @@ def filter_pops() -> list[str]:
         "RH ⇔ Λ = 0. This is a second scale occupant, not H and not {γ_n}.",
         "Pólya–Schur multiplier sequences are a proven algebraic filter on "
         "real-rooted polynomials. Their γ_k are not the Riemann heights γ_n.",
+        "Pólya frequency / variation-diminishing kernels are the analytic "
+        "engine of the 1926 cosine criterion. Checking that Riemann’s Φ is "
+        "PF of sufficient order would be a kernel fill, not H.",
+        "Two Weyl laws stay unmerged: Riemann–von Mangoldt N(T) versus "
+        "Pólya membrane eigenvalue counts for domains.",
+        "Turán inequalities are coefficient tests for the LP class. They "
+        "are not RH unless they are checked for ξ without assuming RH.",
+        "Pólya 1937 enumeration and 1921 random-walk recurrence ingest as "
+        "proven work; no checked map to ξ, H, or Navier–Stokes.",
         "Pólya’s Liouville-sum conjecture does not survive the filter (false).",
         "No checked Pólya map to Navier–Stokes or the other Clay problems.",
     ]
@@ -586,6 +688,13 @@ def da_requests() -> list[str]:
         "not assume RH. Λ ≥ 0 is already a theorem.",
         "If a Navier–Stokes or other-prize bridge is claimed: an explicit checked "
         "transformation. Shared letters are not enough.",
+        "A check whether Riemann’s Φ is a Pólya frequency function "
+        "(variation-diminishing of sufficient order). That would address the "
+        "1926 hypotheses; it would still not be an operator H.",
+        "Turán / Jensen hyperbolicity inequalities for ξ that do not assume RH.",
+        "If vibrating-membrane or 1951 isoperimetric estimates are claimed for "
+        "Navier–Stokes: an explicit regularity map from those inequalities to "
+        "smoothness of 3D incompressible flow.",
     ]
 
 
@@ -621,7 +730,13 @@ def _findings() -> list[str]:
         "not a shared H. Classical xp matches the leading von Mangoldt term "
         "(compatibility, not identity).",
         "No checked transformation connects these objects to Navier–Stokes or to "
-        "a canonical SFE. Other-book formulas were classified, not absorbed.",
+        "a canonical SFE. Other-book formulas were classified, not absorbed. "
+        "Dumping the 1951 isoperimetric book, 1954 membrane eigenvalues, 1937 "
+        "enumeration theorem, and 1921 random walk does not create a bridge.",
+        "Pólya frequency / variation-diminishing structure is the natural "
+        "language of the 1926 kernel hypotheses. DA recorded it as a possible "
+        "fill of those hypotheses, not as H and not as a proof that Riemann’s "
+        "Φ is PF.",
         "A filled N-component map is still classification (Level 0) plus "
         "negative laboratories (Level 1). It is not a surprise Hamiltonian. "
         "The Weyl screen is a surprise *filter*: it can throw out the wrong H "

@@ -57,6 +57,25 @@ class TestPolyaProbe(unittest.TestCase):
         self.assertIn("de bruijn", " ".join(probe.filter_pops).lower())
         self.assertTrue(any(c.component_id == "C-BN" for c in probe.components))
         self.assertIn("HP-H014", EquationRegistry.load_default().equations)
+        dumped = {c.component_id for c in probe.components}
+        for cid in (
+            "C-PF",
+            "C-Turan",
+            "C-Isoperimetric",
+            "C-Membrane",
+            "C-Enumeration",
+            "C-RandomWalk",
+            "C-XiIntegral",
+            "C-EntireZeros",
+            "C-IntegerEntire",
+        ):
+            self.assertIn(cid, dumped)
+        self.assertGreaterEqual(probe.component_count, 30)
+        pops = " ".join(probe.filter_pops).lower()
+        self.assertIn("frequency", pops)
+        self.assertIn("membrane", pops)
+        self.assertIn("HP-H017", EquationRegistry.load_default().equations)
+        self.assertIn("HP-H024", EquationRegistry.load_default().equations)
 
     def test_cli_probe(self):
         proc = subprocess.run(
@@ -72,6 +91,8 @@ class TestPolyaProbe(unittest.TestCase):
         self.assertIn("INSUFFICIENT_INFORMATION", proc.stdout)
         self.assertIn("What popped through the DA filter", proc.stdout)
         self.assertIn("de Bruijn", proc.stdout)
+        self.assertIn("Pólya frequency", proc.stdout)
+        self.assertIn("vibrating membrane", proc.stdout)
         self.assertNotIn("proves the riemann hypothesis", proc.stdout.lower())
 
 

@@ -1,90 +1,57 @@
-# Pólya probe — what Domain Architect did with the full briefing
+# Pólya probe — dump and run
 
 **Status:** exploratory classification, 2026-09-14  
 **Riemann hypothesis status:** not claimed  
 **Canonical SFE status:** unresolved  
 **Run:** `python -m domain_architect --polya-probe`
 
-This is the probe asked for after the five-role Hilbert–Pólya map: put every
-relevant object in, let Domain Architect decide how many independently
-specifiable components it needs (not a cap of five), include proven Pólya
-entire-function facts, and see whether anything pops out.
+Dump Pólya’s record into Domain Architect. Do not pre-filter what belongs.
+DA chooses how many independently specifiable components to record (core
+roles are an interface, not a cap). Then DA asks for whatever else it needs.
 
-Core roles remain an *interface*. Informal nicknames (“N-fingers”, “slots”)
-are not product vocabulary. The method name is Functional Role Analysis.
-
----
-
-## What was ingested
-
-Theorems: Euler product, \(\xi(s)=\xi(1-s)\), Weil explicit formula,
-\(N(T)\), Laguerre–Pólya class, Jensen polynomials (GORZ Hermite limit).
-
-Candidates: Berry–Keating \(xp\), Connes absorption spectrum, Montgomery GUE,
-circular \(\operatorname{diag}(\gamma_n)\).
-
-Other books, classified not absorbed: retired SFE-HAM, Navier–Stokes.
-
-Quantum extras DA promoted out of a five-role map: Hilbert space \(\mathcal H\),
-inner product, domain/\(\mathcal B\), evolution \(D\), implicit \(\Xi=0\),
-time-reversal breaking.
-
-Registry: `HP-H001`–`HP-H015`.
-
-The CLI now leads with **what popped through the DA filter**. The pop from
-staying on Pólya is the de Bruijn–Newman constant \(\Lambda\): Pólya 1926
-plus heat flow contracts an infinite spectral claim to one real number.
-\(\Lambda\ge 0\) is a theorem. \(\Lambda=0\) is still RH. It is not \(H\).
+This is classification, not a proof of the Riemann hypothesis and not a
+unification of Millennium problems.
 
 ---
 
-## What DA returned
+## What was dumped
 
-**25 independently specifiable components** (5 core + 20 extension / \(E\)).
-Program complete: **false**. Evidence: Level 0 classification plus Level 1
-laboratories (GUE is not \(\{\gamma_n\}\); the oscillator is rejected by \(N(T)\)).
+Theorems and candidates already in the Hilbert–Pólya briefing, plus a
+further unfiltered Pólya ingest:
 
-The result that is actually a finding, not a Hamiltonian:
+- Pólya 1915 integer-valued entire functions
+- Pólya 1918 / 1923 zeros of entire functions
+- Pólya 1921 random-walk recurrence / transience
+- Pólya 1926 Acta integral representation of \(\xi\) (kept distinct from
+  the cosine-zero criterion)
+- Pólya frequency / variation-diminishing kernels
+- Turán inequalities
+- Pólya 1937 enumeration theorem
+- Pólya–Szegő 1951 isoperimetric inequalities in mathematical physics
+- Pólya 1954 membrane eigenvalues
 
-1. Quantum Hilbert–Pólya does not fit in five roles. That is how quantum
-   “fits”: extra components, not a tighter five-letter formula.
-2. There are **two parallel Pólya routes**, and they must not be merged:
-   - Hilbert–Pólya: a self-adjoint \(H\) with \(\operatorname{spec}(H)=\{\gamma_n\}\);
-   - Laguerre–Pólya: \(\xi(1/2+iz)\) in the LP class (all zeros real).
-   Completing either would imply RH. Stating either does not. Feeding Pólya’s
-   proven LP / Jensen calculus **does not fill \(H\)**; it restates reality of
-   zeros in entire-function language.
-3. **Usable surprise — a filter, not a Hamiltonian.** \(N(T)\) rejects the
-   harmonic oscillator and any equally spaced spectrum: Riemann mean gaps
-   shrink like \(1/\log T\), oscillator gaps do not. Hermite polynomials show
-   up in the oscillator, in GUE, and as the GORZ limit of Jensen(\(\xi\)).
-   That is a special-function collision, not identity of \(H\). Classical
-   \(xp\) matches the leading von Mangoldt term (compatibility, not identity).
-4. Berry–Keating \(xp\) is the only supplied *emission* Hamiltonian with an
-   independent classical symbol that survives this Weyl screen. Connes is a
-   different object. GUE is statistics. \(\operatorname{diag}(\gamma_n)\) is circular.
-5. No checked transformation to Navier–Stokes or to a canonical SFE.
+Registry: `HP-H001`–`HP-H024`.
 
-**Can proven Pólya fill \(H\)?** No. Pólya 1926 is the real attempt: a
-sufficient condition for \(\int\Phi\cos(zt)\,dt\) to have only real zeros.
-Riemann’s \(\Xi\) has that shape. The hypotheses are not a checked theorem
-for that \(\Phi\). DA’s classification: this **relocates** the gap from
-“find \(H\)” to “verify a kernel condition.” It does not occupy the \(H\)
-role. Pólya’s Liouville-sum conjecture is **false**, so Pólya is not an
-oracle for other Millennium problems.
+Run the CLI for the live component count, filter pops, and DA’s request list.
 
 ---
 
-## What DA still needs (it cannot invent these)
+## What to read as DA’s output
 
-- One independent operator formula for \(H\), with \(\mathcal H\), inner
-  product, and domain — not a merge of \(xp\), adeles, GUE, and \(\operatorname{diag}(\gamma_n)\).
-- Essential self-adjointness.
-- Whether an \(xp\) cutoff is \(P\), \(\mathcal B\), or extra regularization in \(E\).
-- Weil from \(\operatorname{Tr} f(H)\), or \(\xi(s)\) as a proven determinant.
-- If the LP route is chosen instead: an RH-free proof that \(\xi(1/2+iz)\) lies
-  in the Laguerre–Pólya class.
-- If a Navier–Stokes bridge is claimed: an explicit checked transformation.
+```bash
+python -m domain_architect --polya-probe
+```
 
-There was no surprise Hamiltonian. The surprise is a **Weyl-law filter**:
-DA can throw out the wrong \(H\) now, without proving RH.
+The narrative leads with **what popped through the DA filter**, then the
+full component list, then **Domain Architect still needs**. Those needs
+are not optional commentary. They are the missing independent objects DA
+cannot invent:
+
+- an independent self-adjoint \(H\), or
+- an RH-free LP / 1926 / PF / Turán check on Riemann’s \(\Phi\) or \(\xi\), or
+- \(\Lambda\le 0\) without assuming RH, or
+- an explicit checked map if a Navier–Stokes (or other prize) bridge is claimed.
+
+Do not merge Berry–Keating, Connes, GUE, \(\operatorname{diag}(\gamma_n)\),
+the LP class, \(\Lambda\), Pólya frequency kernels, membrane Weyl laws,
+enumeration, or random walk into one object.

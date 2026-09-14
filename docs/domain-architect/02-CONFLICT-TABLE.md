@@ -97,6 +97,10 @@ Columns:
 | C-HP-5 | Retired SFE-HAM (`SFE-H003`) | HP-H003 | Which Hamiltonian | Different books. Inverse-GCD Fock model is not Hilbert–Pólya |
 | C-HP-6 | Informal “five fingers” with \(\Phi\) set to the zeros | Audited core roles \(P,H,\psi,\lambda,\Phi\) | Vocabulary and circularity | Do not revive the nickname. Do not fill \(\Phi\) with zeros to create \(H\) |
 | C-HP-7 | HP-H008 Laguerre–Pólya class | HP-H001 / HP-H003 Hilbert–Pólya / \(xp\) | Which Pólya route | **COMPATIBLE_DISTINCT.** Entire-function LP membership is not a Hamiltonian. Do not merge |
+| C-HP-8 | HP-H016 1926 Acta \(\xi\) integral | HP-H011 cosine-zero criterion | Which 1920s Pólya paper | **COMPATIBLE_DISTINCT.** Do not merge into one fill of \(H\) |
+| C-HP-9 | HP-H017 Pólya frequency kernels | HP-H011 1926 hypotheses | Kernel language vs criterion | **GENERALIZATION.** A PF check on Riemann’s \(\Phi\) would address 1926, not produce \(H\) |
+| C-HP-10 | HP-H020 membrane eigenvalues | HP-H010 \(N(T)\) | Which Weyl law | **COMPATIBLE_DISTINCT.** Domain spectrum is not zeros of \(\xi\) |
+| C-HP-11 | HP-H019 1951 isoperimetric book | HP-H001 / Clay NS | Spectral vocabulary vs prize | **INSUFFICIENT_INFORMATION.** Dump is not a bridge |
 
 Pólya probe (N independently specifiable components, not a five-role cap): `python -m domain_architect --polya-probe`. Write-up: [07 — Pólya probe](07-POLYA-PROBE.md).
 

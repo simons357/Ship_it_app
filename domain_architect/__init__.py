@@ -43,4 +43,4 @@ __all__ = [
     "run_polya_probe",
 ]
 
-__version__ = "0.4.0"
+__version__ = "0.4.1"
