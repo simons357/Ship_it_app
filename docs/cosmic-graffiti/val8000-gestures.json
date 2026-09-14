@@ -1,0 +1,73 @@
+{
+  "character": "VAL8000",
+  "rule": "Insult is the tongue, not teeth. Bored is inhale then puff-bag, not idle rest. Masthead is the un-puffed idle line.",
+  "not_skins": true,
+  "types_in_the_box": true,
+  "no_tts": true,
+  "mouth_timing_file": "val8000.md",
+  "skins_catalog": "assets/skins/skins.json",
+  "do_not_overwrite": ["assets/skins/skins.json", "val8000.md mouth timing"],
+  "mappings": [
+    {
+      "intent": "idle",
+      "channel": "mouth",
+      "frames": ["line"],
+      "masthead_ok": true
+    },
+    {
+      "intent": "normal_answer",
+      "channel": "mouth",
+      "frames": ["smile"],
+      "masthead_ok": false
+    },
+    {
+      "intent": "compliment",
+      "channel": "mouth",
+      "frames": ["teeth"],
+      "masthead_ok": false
+    },
+    {
+      "intent": "funny_joke",
+      "channel": "mouth",
+      "frames": ["teeth"],
+      "masthead_ok": false
+    },
+    {
+      "intent": "sarcasm",
+      "channel": "mouth",
+      "frames": ["teeth"],
+      "masthead_ok": false
+    },
+    {
+      "intent": "insult",
+      "channel": "gesture",
+      "frames": ["tongue-out"],
+      "masthead_ok": false,
+      "not": "teeth"
+    },
+    {
+      "intent": "bored",
+      "channel": "gesture",
+      "frames": ["inhale", "puff-bag"],
+      "masthead_ok": false,
+      "not": "idle"
+    },
+    {
+      "intent": "masthead",
+      "channel": "mouth",
+      "frames": ["line"],
+      "masthead_ok": true,
+      "never": ["tongue-out", "puff-bag", "inhale"]
+    }
+  ],
+  "stills": {
+    "inhale": "assets/val8000-gesture-inhale.png",
+    "puff-bag": "assets/val8000-gesture-puff-bag.png",
+    "tongue-out": "assets/val8000-gesture-tongue-out.png"
+  },
+  "mouth_stills": {
+    "line": "assets/val8000-mouth-line.png",
+    "smile": "assets/val8000-mouth-smile.png",
+    "teeth": "assets/val8000-mouth-teeth.png"
+  }
+}
