@@ -5,10 +5,10 @@ Pólya probe. Domain Architect chooses how many independently specifiable compon
 This is a completeness audit of the Hilbert–Pólya program. It is not a proof of the Riemann hypothesis, not a canonical SFE, and not evidence that primes are physically privileged.
 
 Instance: polya-probe
-DA decided the component count for this subject: 40
-Independently specifiable components recorded: 40 (5 core interface letters + 35 extension / E)
+DA decided the component count for this subject: 43
+Independently specifiable components recorded: 43 (5 core interface letters + 38 extension / E)
 P, H, ψ, λ, Φ are an interface, not a cap. The count can be 7, 8, 15, or whatever the subject requires. DA decides. Five is what we started with, not what quantum Hilbert–Pólya fitted into.
-Interface letters recorded: 5 (P, H, ψ, λ, Φ). Extra independently specifiable objects: 35.
+Interface letters recorded: 5 (P, H, ψ, λ, Φ). Extra independently specifiable objects: 38.
 Hilbert–Pólya status: incomplete; no independent Hamiltonian on record whose spectrum is identified with the nontrivial zeros.
 Riemann hypothesis status: not claimed.
 Canonical SFE status: unresolved.
@@ -69,9 +69,9 @@ What popped through the DA filter:
   * Pólya frequency / variation-diminishing kernels are the analytic engine of the 1926 cosine criterion. Checking that Riemann’s Φ is PF of sufficient order would be a kernel fill, not H.
   * Two Weyl laws stay unmerged: Riemann–von Mangoldt N(T) versus Pólya membrane eigenvalue counts for domains.
   * Turán inequalities are coefficient tests for the LP class. They are not RH unless they are checked for ξ without assuming RH.
-  * Pólya 1937 enumeration and 1921 random-walk recurrence ingest as proven work; no checked map to ξ, H, or Navier–Stokes.
+  * Pólya 1937 enumeration and 1921 random-walk recurrence ingest as proven work. The 1921 d≥3 transience rhymes with the 3D Newtonian kernel in Biot–Savart; that is not Clay NS.
   * Pólya’s Liouville-sum conjecture does not survive the filter (false).
-  * No checked Pólya map to Navier–Stokes or the other Clay problems.
+  * Looked across Clay prizes: tool/kernel rhymes with NS, family resemblance with BSD L-functions, vocabulary with Yang–Mills. No Pólya object unifies the prizes. Live prize for the surviving theorems is still RH.
 
 What Domain Architect did with the supplied objects:
   [C-P] role=P kind=open (not independently specified)
@@ -232,8 +232,20 @@ What Domain Architect did with the supplied objects:
     verdict: no checked map to ξ, H, or Navier–Stokes
   [C-RandomWalk] role=other-book kind=other_book (specified)
     occupant: Pólya 1921: simple random walk is recurrent in d=1,2 and transient in d≥3
-    DA action: ingested as proven Pólya probability
-    verdict: no checked map to ξ, H, or Navier–Stokes
+    DA action: ingested as proven Pólya probability; compared with 3D Biot–Savart
+    verdict: LOOK-NS-GREEN: d≥3 transience shares the Green/Newtonian family with 3D NS; not regularity
+  [C-Rearrange] role=other-book kind=other_book (specified)
+    occupant: Pólya–Szegő rearrangement: Dirichlet integral does not increase under Schwarz symmetrization
+    DA action: looked at as a PDE estimate tool next to NS energy methods
+    verdict: shared-tool with Sobolev / Ladyzhenskaya; not Clay NS smoothness
+  [C-StokesOp] role=other-book kind=other_book (specified)
+    occupant: Stokes operator A = −ℙΔ on divergence-free fields (spectral sibling of membrane Laplacian)
+    DA action: looked at next to Pólya 1954 membrane eigenvalues
+    verdict: spectral sibling of HP-H020; not Hilbert–Pólya H; not Clay NS
+  [C-NSPhi] role=other-book kind=other_book (specified)
+    occupant: this-repo swirl algebra: Γ=r u_θ, Φ=u_θ/r, r^{-4}∂_z(Γ²)=∂_z(Φ²)
+    DA action: ingested because it is the kept NS identity in this repo; Φ here is not FRA Φ and not Riemann’s kernel Φ
+    verdict: KEEP algebra; open barrier ‖u^r/r‖_∞; notation collision with Riemann Φ
 
 Findings (classification, not discovery of a Hamiltonian):
   - Quantum Hilbert–Pólya does not fit in five letters. DA decided the count from the subject and expanded to Hilbert space, inner product, domain/boundary data, unitary evolution, implicit Ξ = 0, arithmetic (Euler/Weil), entire-function data (ξ, functional equation, Laguerre–Pólya, Jensen), statistics (GUE), and symmetry (time-reversal breaking). Another subject can land at 7 or 8. This one did not.
@@ -243,7 +255,7 @@ Findings (classification, not discovery of a Hamiltonian):
   - Berry–Keating xp is the only supplied emission-Hamiltonian candidate with an independent classical symbol. Connes is a different object. GUE is not an object of that type. diag(γ_n) is circular.
   - A frozen GUE matrix is not the sequence γ_n after a best affine map. Random-matrix agreement cannot substitute for the spectral identity.
   - Usable filter: N(T) rejects the harmonic oscillator and any equally spaced spectrum. Riemann mean gaps shrink like 1/log T; oscillator gaps do not. Hermite polynomials appearing in the oscillator, in GUE, and as the GORZ limit of Jensen(ξ) is a special-function collision, not a shared H. Classical xp matches the leading von Mangoldt term (compatibility, not identity).
-  - No checked transformation connects these objects to Navier–Stokes or to a canonical SFE. Other-book formulas were classified, not absorbed. Dumping the 1951 isoperimetric book, 1954 membrane eigenvalues, 1937 enumeration theorem, and 1921 random walk does not create a bridge.
+  - No checked transformation connects these objects to Navier–Stokes or to a canonical SFE. Other-book formulas were classified, not absorbed. Dumping the 1951 isoperimetric book, 1954 membrane eigenvalues, 1937 enumeration theorem, and 1921 random walk does not create a bridge. Looking at rearrangement, Biot–Savart/Green, and the Stokes operator found rhymes, not a Clay solution.
   - Pólya frequency / variation-diminishing structure is the natural language of the 1926 kernel hypotheses. DA recorded it as a possible fill of those hypotheses, not as H and not as a proof that Riemann’s Φ is PF.
   - A filled N-component map is still classification (Level 0) plus negative laboratories (Level 1). It is not a surprise Hamiltonian. The Weyl screen is a surprise *filter*: it can throw out the wrong H now, without proving RH.
   - Filter scoreboard: Pólya is the only RH-attack source whose theorems survive as usable objects. That is a win for entire-function / Fourier calculus, not a Hamiltonian and not RH. Everyone else in the attack column is incomplete, not-identity, retired, rejected, incompatible, false, or insufficient.
@@ -263,11 +275,80 @@ Domain Architect still needs (cannot invent these):
 
 Millennium-problem routing (no silent glue):
   Riemann hypothesis: direct open strategy — Hilbert–Pólya; LP class; Pólya 1926; de Bruijn–Newman Λ (RH ⇔ Λ=0) [open; probe does not prove it]
-  Navier–Stokes existence and smoothness: INSUFFICIENT_INFORMATION — Pólya–Szegő inequalities; 1951 isoperimetric book; 1954 membrane eigenvalues; no checked map to regularity [separate book; do not derive from ξ or xp]
+  Navier–Stokes existence and smoothness: INSUFFICIENT_INFORMATION — LOOKED: 1921 Green/Biot–Savart rhyme; rearrangement as PDE tool; membrane vs Stokes operator; heat-name rhyme; Φ-letter collision. No regularity map. [separate book; do not derive from ξ or xp]
   Yang–Mills mass gap: INSUFFICIENT_INFORMATION — spectral language only (no checked operator map) [shared word “spectrum” is not a transformation]
   Birch and Swinnerton-Dyer: COMPATIBLE_DISTINCT — L-functions in the same arithmetic family as ζ [same explicit-formula style; different L-function; not solved here]
   Hodge conjecture: INSUFFICIENT_INFORMATION — none checked [no Pólya input ingested]
   P versus NP: INSUFFICIENT_INFORMATION — none checked [no Pólya input ingested]
+
+What rhymed when we looked across prizes (not a unification):
+  * Closest NS rhyme: Pólya 1921 transience in d≥3 and the 3D Newtonian / Biot–Savart kernel. Same dimension, same Green-function family. Not regularity.
+  * NS tool overlap: Pólya–Szegő rearrangement sits in the isoperimetric book that feeds Sobolev / Ladyzhenskaya estimates. A tool, not Clay NS.
+  * Spectral sibling: membrane Laplacian (Pólya 1954) versus Stokes operator A = −ℙΔ. Sibling Weyl laws. Not Hilbert–Pólya H.
+  * Notation collision: Riemann kernel Φ versus swirl Φ = u_θ/r in this repo. Keep both; do not merge.
+  * No Pólya object in this briefing unifies the Clay prizes. The live prize for the theorems that survived the RH-attack filter is still RH.
+
+Looks (parts of Pólya vs each prize):
+  [LOOK-NS-GREEN] Navier–Stokes existence and smoothness  match=shared-kernel-family
+    Pólya part: Pólya 1921: simple random walk is transient in d≥3; discrete Green ~ 1/|x|^{d-2}
+    other: 3D Biot–Savart: u = ∇×(−Δ)^{-1}ω, Newtonian kernel 1/|x|
+    matched: d=3 is the dimension where Pólya transience and the Newtonian potential used by NS both live
+    did not: Transience is not regularity. Biot–Savart is already standard NS, not a Pólya derivation of Clay NS
+    LOOKED; closest structural rhyme; not a bridge
+  [LOOK-NS-REARRANGE] Navier–Stokes existence and smoothness  match=shared-tool
+    Pólya part: Pólya–Szegő rearrangement: Dirichlet integral does not increase under Schwarz symmetrization
+    other: Sobolev / Ladyzhenskaya estimates used in NS energy methods
+    matched: Same isoperimetric / rearrangement family that feeds Sobolev constants in PDE estimates
+    did not: An estimate tool is not 3D global smoothness
+    LOOKED; tool overlap; not a solution
+  [LOOK-NS-STOKES-OP] Navier–Stokes existence and smoothness  match=spectral-sibling
+    Pólya part: Pólya 1954 membrane eigenvalues (scalar Laplacian Weyl law on a domain)
+    other: Stokes operator A = −ℙΔ on divergence-free fields
+    matched: Self-adjoint Laplacian-type operators on domains, both with Weyl-type counts
+    did not: Scalar membrane ≠ vector Stokes. Neither is Hilbert–Pólya H. Neither solves Clay NS
+    LOOKED; sibling spectra; not identity
+  [LOOK-NS-HEAT] Navier–Stokes existence and smoothness  match=shared-pde-name
+    Pólya part: de Bruijn–Newman heat flow on Ξ (continuation of Pólya 1926)
+    other: viscous term νΔu in Navier–Stokes
+    matched: Both deform by a heat/diffusion operator
+    did not: Ξ_t is a deformation of an entire function. NS is a vector PDE. Heat is not a unifier
+    LOOKED; name-rhyme; not a transformation
+  [LOOK-NS-PHI-LETTER] Navier–Stokes (this repo, NS-Φ swirl algebra)  match=notation-collision
+    Pólya part: Riemann kernel Φ in Ξ(z) = ∫ Φ(t) cos(zt) dt
+    other: swirl Φ = u_θ/r and r^{-4}∂_z(Γ²) = ∂_z(Φ²)
+    matched: The same letter Φ
+    did not: Riemann’s Fourier kernel is not swirl angular rate. Do not merge
+    LOOKED; collision only; keep both books
+  [LOOK-YM-LAPLACE] Yang–Mills mass gap  match=shared-word-spectrum
+    Pólya part: Pólya membrane / Laplacian eigenvalues
+    other: spectrum of a gauge Hamiltonian / Hodge Laplacian on connections
+    matched: The word spectrum and a Laplacian-type operator
+    did not: No checked map from a vibrating membrane to a mass gap
+    LOOKED; vocabulary only
+  [LOOK-BSD-L] Birch and Swinnerton-Dyer  match=same-analytic-family
+    Pólya part: Riemann ξ, Weil explicit formula, Pólya 1926 cosine representation
+    other: L-functions of elliptic curves; rank vs order of vanishing
+    matched: Completed L-functions and explicit formulae live in one analytic book
+    did not: Pólya 1926 is about Riemann ξ, not L(E,s). Different L-function, different prize
+    LOOKED; family resemblance; not BSD
+  [LOOK-HODGE] Hodge conjecture  match=none
+    Pólya part: none of the ingested Pólya theorems
+    other: algebraic cycles vs Hodge classes
+    matched: nothing checked
+    did not: No Pólya object in this briefing is a Hodge-class statement
+    LOOKED; empty
+  [LOOK-PNP] P versus NP  match=none
+    Pólya part: Pólya 1937 enumeration (cycle index / orbit counting)
+    other: Turing-machine complexity classes
+    matched: both involve counting, at a slogan level
+    did not: Orbit counting of group actions is not P vs NP
+    LOOKED; slogan only
+  [LOOK-RH] Riemann hypothesis  match=direct-open-strategy
+    Pólya part: Hilbert–Pólya; Laguerre–Pólya; Pólya 1926; de Bruijn–Newman Λ
+    other: nontrivial zeros of ζ on Re s = 1/2
+    matched: This is the prize Pólya’s surviving theorems actually address
+    did not: Those theorems do not prove RH. Λ = 0 is still RH. H is still missing
+    LOOKED; this is the live prize for the surviving Pólya objects
 
 Candidate scores (unmerged):
   target-identity: independent_H=False circular=True complete=False missing=HP-U1, HP-U2, HP-U3, HP-S0, HP-S1, HP-S2…
@@ -302,9 +383,9 @@ Pólya probe. Domain Architect chooses how many independently specifiable compon
 Pieces on the Hilbert–Pólya checklist: HP-U1, HP-U2, HP-U3, HP-S0, HP-S1, HP-S2, HP-S3, HP-T1, HP-T2, HP-S5, HP-G1, HP-D1, HP-F1
 UHF extras that remain required: Hilbert space ℋ and inner product; operator domain D(H) and deficiency indices; archimedean / Gamma factor of ξ; Weil explicit formula (primes on the geometric side); multiplicity of zeros / eigenvalues; possible continuous spectrum versus point spectrum; time-reversal breaking if GUE (not GOE) is expected; regularization or cutoff if the classical symbol is xp
 
-Registry HP ids: HP-H001, HP-H002, HP-H003, HP-H004, HP-H005, HP-H006, HP-H007, HP-H008, HP-H009, HP-H010, HP-H011, HP-H012, HP-H013, HP-H014, HP-H015, HP-H016, HP-H017, HP-H018, HP-H019, HP-H020, HP-H021, HP-H022, HP-H023, HP-H024
-Conflicts involving HP: 18
+Registry HP ids: HP-H001, HP-H002, HP-H003, HP-H004, HP-H005, HP-H006, HP-H007, HP-H008, HP-H009, HP-H010, HP-H011, HP-H012, HP-H013, HP-H014, HP-H015, HP-H016, HP-H017, HP-H018, HP-H019, HP-H020, HP-H021, HP-H022, HP-H023, HP-H024, HP-H025, HP-H027
+Conflicts involving HP: 24
 Nulls involving HP: NULL-HP-CIRCULAR, NULL-HP-GUE, NULL-HP-COMPLETE, NULL-HP-OSCILLATOR, NULL-HP-POLYA1926
-Protocol hash: 9926480f6606e01897456321eaea6ba629ba43092a3900c94dcb0fab20274854
+Protocol hash: 2ca1d555a2c2092c12be8a044f2d053ba8de6bffb35754d7bc0ccb1e2c6f0302
 
 Canonical SFE status: unresolved.
