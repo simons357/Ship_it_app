@@ -133,7 +133,7 @@ class TestVal8000Mouth(unittest.TestCase):
         self.assertNotIn("val8000-mouth-teeth.png", public)
         self.assertIn("Idle / masthead", public)
         self.assertIn("After he answers", public)
-        self.assertIn("straight line while idle", public)
+        self.assertIn("straight mouth line while idle", public)
         self.assertIn("Not the teeth", public)
         self.assertNotIn("slight smile", public.lower())
         self.assertNotIn("HAL 9000", public)
