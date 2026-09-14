@@ -72,6 +72,7 @@ class PolyaProbeReport:
     gue_laboratory: dict[str, Any]
     weyl_laboratory: dict[str, Any]
     filter_pops: list[str]
+    filter_scoreboard: list[dict[str, str]]
     registry_hp_ids: list[str]
     conflicts: list[str]
     nulls: list[str]
@@ -106,8 +107,14 @@ class PolyaProbeReport:
             f"Program complete: {self.complete}",
             f"Highest evidence level actually supported: Level {self.highest_evidence_level}",
             "",
-            "What popped through the DA filter:",
+            "Who survived the filter (RH-attack sources):",
         ]
+        for row in self.filter_scoreboard:
+            lines.append(f"  [{row['result']}] {row['source']}")
+            lines.append(f"    {row['objects']}")
+            lines.append(f"    {row['notes']}")
+        lines.append("")
+        lines.append("What popped through the DA filter:")
         for pop in self.filter_pops:
             lines.append(f"  * {pop}")
         lines.append("")
@@ -646,9 +653,93 @@ def millennium_routing() -> list[dict[str, str]]:
     ]
 
 
+def filter_scoreboard() -> list[dict[str, str]]:
+    """RH-attack sources only. Classical input theorems (Euler, Riemann, Weil) are not scored here."""
+    return [
+        {
+            "source": "George Pólya (proven entire-function / Fourier / multiplier / frequency)",
+            "result": "survived",
+            "objects": (
+                "Laguerre–Pólya class; Pólya–Schur multipliers; 1926 cosine-zero "
+                "criterion; 1926 Acta ξ integral; Pólya frequency kernels; "
+                "1918/1923 zero distribution"
+            ),
+            "notes": (
+                "Only RH-attack source whose theorems remain as usable objects. "
+                "Does not fill H. Does not prove RH. Heat-flow continuation is Λ."
+            ),
+        },
+        {
+            "source": "de Bruijn–Newman–Rodgers–Tao (continuation of Pólya 1926)",
+            "result": "survived-as-continuation",
+            "objects": "de Bruijn–Newman Λ; Λ ≥ 0 theorem; RH ⇔ Λ = 0",
+            "notes": "They extended Pólya’s win to one real number. Still not RH.",
+        },
+        {
+            "source": "Hilbert–Pólya program",
+            "result": "incomplete",
+            "objects": "strategy: self-adjoint H with spec(H) = {γ_n}",
+            "notes": "No independent Hamiltonian on record. Strategy, not a theorem.",
+        },
+        {
+            "source": "Berry–Keating xp",
+            "result": "incomplete",
+            "objects": "classical symbol xp with cutoff",
+            "notes": "Independent emission candidate. Missing quantization, cutoff, spectral identity.",
+        },
+        {
+            "source": "Connes adelic absorption",
+            "result": "incomplete",
+            "objects": "missing lines / absorption spectrum",
+            "notes": "Incompatible with Berry–Keating. Not a compact point spectrum of {γ_n}.",
+        },
+        {
+            "source": "Montgomery–Odlyzko GUE",
+            "result": "not-identity",
+            "objects": "pair correlation / universality class",
+            "notes": "Statistics survive as HP-G1. A frozen GUE matrix is not {γ_n}.",
+        },
+        {
+            "source": "H = diag(γ_n) / Φ := zeros",
+            "result": "retired",
+            "objects": "circular FRA fill",
+            "notes": "Tautological or assumes RH.",
+        },
+        {
+            "source": "harmonic oscillator / equal spacing as H",
+            "result": "rejected",
+            "objects": "Hermite eigenfunctions; equal gaps",
+            "notes": "N(T) kills equal spacing. Hermite-in-three-books is not H.",
+        },
+        {
+            "source": "retired SFE-HAM",
+            "result": "incompatible",
+            "objects": "inverse-GCD Fock Hamiltonian",
+            "notes": "Different book. Not Hilbert–Pólya.",
+        },
+        {
+            "source": "Pólya Liouville-sum conjecture",
+            "result": "false",
+            "objects": "L(x) ≤ 0",
+            "notes": "The Pólya claim that does not survive. Proven Pólya is not every Pólya sentence.",
+        },
+        {
+            "source": "Pólya–Szegő 1951 / membrane 1954 / enumeration / random walk as Clay NS",
+            "result": "insufficient",
+            "objects": "isoperimetric physics; membrane Weyl law; combinatorics; lattice walk",
+            "notes": "Proven Pólya, other books. No checked map to Clay NS or to spec(H) = {γ_n}.",
+        },
+    ]
+
+
 def filter_pops() -> list[str]:
     """What survives DA’s filter as a distinct, usable object — not a Hamiltonian."""
     return [
+        "Among RH-attack sources, Pólya is the only one whose theorems survive "
+        "as usable objects. Hilbert–Pólya is still a strategy with no H. "
+        "Berry–Keating, Connes, GUE-as-identity, diag(γ_n), the oscillator, "
+        "and SFE-HAM do not survive as a filled Hamiltonian. Pólya also lost "
+        "one: the Liouville-sum conjecture is false.",
         "N(T) rejects equal-spaced H (the oscillator). Hermite polynomials in "
         "the oscillator, GUE, and Jensen(ξ) are a special-function collision, not H.",
         "Two Pólya routes stay unmerged: a self-adjoint Hamiltonian versus "
@@ -741,6 +832,11 @@ def _findings() -> list[str]:
         "negative laboratories (Level 1). It is not a surprise Hamiltonian. "
         "The Weyl screen is a surprise *filter*: it can throw out the wrong H "
         "now, without proving RH.",
+        "Filter scoreboard: Pólya is the only RH-attack source whose theorems "
+        "survive as usable objects. That is a win for entire-function / Fourier "
+        "calculus, not a Hamiltonian and not RH. Everyone else in the attack "
+        "column is incomplete, not-identity, retired, rejected, incompatible, "
+        "false, or insufficient.",
     ]
 
 
@@ -823,6 +919,7 @@ def run_polya_probe() -> PolyaProbeReport:
             "forbid_millennium_glue": True,
             "gue_is_not_identity": True,
             "weyl_law_screen": True,
+            "filter_scoreboard": True,
         }
     )
 
@@ -845,6 +942,7 @@ def run_polya_probe() -> PolyaProbeReport:
         gue_laboratory=gue,
         weyl_laboratory=weyl,
         filter_pops=filter_pops(),
+        filter_scoreboard=filter_scoreboard(),
         registry_hp_ids=hp_ids,
         conflicts=conflicts,
         nulls=nulls,

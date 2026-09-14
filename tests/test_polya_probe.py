@@ -76,6 +76,12 @@ class TestPolyaProbe(unittest.TestCase):
         self.assertIn("membrane", pops)
         self.assertIn("HP-H017", EquationRegistry.load_default().equations)
         self.assertIn("HP-H024", EquationRegistry.load_default().equations)
+        board = probe.filter_scoreboard
+        self.assertEqual(board[0]["result"], "survived")
+        self.assertIn("Pólya", board[0]["source"])
+        self.assertTrue(any(r["result"] == "false" and "Liouville" in r["source"] for r in board))
+        self.assertTrue(any(r["result"] == "incomplete" and "Hilbert" in r["source"] for r in board))
+        self.assertIn("the only one whose theorems survive", " ".join(probe.filter_pops))
 
     def test_cli_probe(self):
         proc = subprocess.run(
@@ -93,6 +99,9 @@ class TestPolyaProbe(unittest.TestCase):
         self.assertIn("de Bruijn", proc.stdout)
         self.assertIn("Pólya frequency", proc.stdout)
         self.assertIn("vibrating membrane", proc.stdout)
+        self.assertIn("Who survived the filter", proc.stdout)
+        self.assertIn("[survived] George Pólya", proc.stdout)
+        self.assertIn("the only one whose theorems survive", proc.stdout)
         self.assertNotIn("proves the riemann hypothesis", proc.stdout.lower())
 
 

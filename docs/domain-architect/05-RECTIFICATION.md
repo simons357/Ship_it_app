@@ -52,7 +52,7 @@ known theory.
 | Train / validation / held-out protocol hash | `protocol.py` |
 | Null and counterexample registry | `null_results.json`, `EquationRegistry.record_null` |
 | Hilbert–Pólya completeness audit; circular \(\Phi:=\)zeros refused | `hilbert_polya.py` |
-| Pólya probe (N-component briefing, LP class, unfiltered Pólya dump, no Millennium glue) | `polya_probe.py` |
+| Pólya probe (N-component briefing, filter scoreboard, unfiltered dump, no Millennium glue) | `polya_probe.py` |
 | GUE statistics \(\neq\) spectral identity laboratory | `hilbert_polya.gue_is_not_riemann_spectrum` |
 | Weyl-law screen rejects oscillator / equal spacing | `hilbert_polya.weyl_law_screen` |
 

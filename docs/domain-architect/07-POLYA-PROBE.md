@@ -42,8 +42,8 @@ Run the CLI for the live component count, filter pops, and DA’s request list.
 python -m domain_architect --polya-probe
 ```
 
-The narrative leads with **what popped through the DA filter**, then the
-full component list, then **Domain Architect still needs**. Those needs
+The narrative leads with **who survived the filter**, then **what popped**,
+then the full component list, then **Domain Architect still needs**. Those needs
 are not optional commentary. They are the missing independent objects DA
 cannot invent:
 
@@ -51,6 +51,10 @@ cannot invent:
 - an RH-free LP / 1926 / PF / Turán check on Riemann’s \(\Phi\) or \(\xi\), or
 - \(\Lambda\le 0\) without assuming RH, or
 - an explicit checked map if a Navier–Stokes (or other prize) bridge is claimed.
+
+Among RH-attack sources, Pólya is the only one whose theorems survive as
+usable objects. Hilbert–Pólya remains a strategy with no \(H\). Pólya also
+lost one: the Liouville-sum conjecture is false.
 
 Do not merge Berry–Keating, Connes, GUE, \(\operatorname{diag}(\gamma_n)\),
 the LP class, \(\Lambda\), Pólya frequency kernels, membrane Weyl laws,
