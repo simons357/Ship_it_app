@@ -1,0 +1,91 @@
+{
+  "updated": "2026-09-14",
+  "lane": "the Frequency through Cosmic Graffiti",
+  "note": "Working news feed. Real stories with dates and URLs. Not in-house tips. Not a paywall. Val8000 remains the older HTML commentator; this file is desk copy Jon can edit.",
+  "items": [
+    {
+      "id": "freq-2026-09-14-desi",
+      "date": "2025-10-06",
+      "kicker": "the Frequency · cosmology",
+      "title": "A ruler in the galaxy map, and a maybe about dark energy",
+      "href": "https://doi.org/10.1103/tr6y-kpc6",
+      "sources": [
+        "https://doi.org/10.1103/tr6y-kpc6",
+        "https://arxiv.org/abs/2503.14738",
+        "https://newscenter.lbl.gov/2025/03/19/new-desi-results-strengthen-hints-that-dark-energy-may-evolve/",
+        "https://www.desi.lbl.gov/2025/03/19/more-than-a-hint-of-evolving-dark-energy-new-results-and-data-from-desi/",
+        "https://doi.org/10.1093/mnras/stag632",
+        "https://arxiv.org/abs/2511.07517"
+      ],
+      "status": "reported"
+    },
+    {
+      "id": "freq-2026-09-14-gwtc5",
+      "date": "2026-05-26",
+      "kicker": "the Frequency · gravity waves",
+      "title": "Three hundred and ninety rings in the catalog, and a listening window ahead",
+      "href": "https://ligo.org/detections/o4b-catalog/",
+      "sources": [
+        "https://ligo.org/detections/o4b-catalog/",
+        "https://dcc.ligo.org/LIGO-P2600152/public",
+        "https://arxiv.org/abs/2605.27225",
+        "https://gwosc.org/GWTC-5.0/",
+        "https://observing.docs.ligo.org/plan/"
+      ],
+      "status": "reported"
+    },
+    {
+      "id": "freq-2026-09-14-hydrogym",
+      "date": "2026-09-10",
+      "kicker": "the Frequency · fluids",
+      "title": "A gym for teaching machines to push on turbulence",
+      "href": "https://www.nature.com/articles/s41586-026-10917-6",
+      "sources": [
+        "https://www.nature.com/articles/s41586-026-10917-6",
+        "https://www.nature.com/nature/volumes/657/issues/8131",
+        "https://arxiv.org/abs/2512.17534"
+      ],
+      "status": "reported"
+    },
+    {
+      "id": "freq-2026-09-14-prime-gaps",
+      "date": "2026-08-31",
+      "kicker": "the Frequency · primes",
+      "title": "Bounded gaps between primes moved. Twin primes did not.",
+      "href": "https://arxiv.org/abs/2608.31126",
+      "sources": [
+        "https://arxiv.org/abs/2608.31126",
+        "https://cdn.openai.com/pdf/51126fac-1b68-4128-9666-c908bcc16033/short_gaps.pdf",
+        "https://www.sciencenews.org/article/human-math-record-twin-primes-openai"
+      ],
+      "status": "reported"
+    },
+    {
+      "id": "freq-2026-09-14-mom-z14",
+      "date": "2026-01-30",
+      "kicker": "the Frequency · deep sky",
+      "title": "A spectroscopically confirmed galaxy at redshift 14.44",
+      "href": "https://doi.org/10.33232/001c.156033",
+      "sources": [
+        "https://doi.org/10.33232/001c.156033",
+        "https://arxiv.org/abs/2505.11263",
+        "https://astro.theoj.org/article/156033-a-cosmic-miracle-a-remarkably-luminous-galaxy-at-_z_-sub-spec-sub-14-44-confirmed-with-jwst"
+      ],
+      "status": "reported"
+    },
+    {
+      "id": "freq-2026-09-14-ns-week",
+      "date": "2026-09-08",
+      "kicker": "the Frequency · fluids math",
+      "title": "A company announced a Navier–Stokes blowup. A quieter preprint left an endpoint open.",
+      "href": "https://openai.com/index/navier-stokes-solution/",
+      "sources": [
+        "https://openai.com/index/navier-stokes-solution/",
+        "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+        "https://www.quantamagazine.org/ai-has-solved-one-of-maths-1-million-millennium-prize-problems-20260908/",
+        "https://arxiv.org/abs/2609.03877"
+      ],
+      "status": "reported-not-certified"
+    }
+  ]
+}
