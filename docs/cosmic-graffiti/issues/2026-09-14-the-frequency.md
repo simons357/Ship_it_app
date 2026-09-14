@@ -243,7 +243,7 @@ Front door, if Jon wants a public one: **Substack** and/or **Skool**. This issue
 | Free: The Frequency | **this file** + existing Vercel rail | Sourced news, CG comments, room to talk |
 | Free: wonder essays | **this file**, Around us | Ordinary-life physics/math, labeled |
 | Paid: apps | **plan, not live** | Packaged access to local DA docs, demos, and later installers Jon actually builds |
-| Paid: archive / IP packet | **plan, not live** | Historical patent-style documents and related archive Jon may *choose* to share. **Not** DA filings. **Not** “we patented the universe.” DA does not file patents. Jon has said he is not suing. |
+| Paid: archive / IP packet | **plan, not live** | Historical patent-style documents and related archive Jon may *choose* to share. **Not** DA filings. **Not** “we patented the universe.” Domain Architect does **not** file patents. Jon has said he is not suing. |
 | Paid: deeper lab notes | **plan, not live** | Cycle reports, paper-face maps, walk-backs. Still not closed theorems by subscription. |
 | Paywall code in this repo | **off** | Do not fake one. |
 
