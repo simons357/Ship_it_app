@@ -1,14 +1,20 @@
 # Aug 19 UHSA session synthesis — archive only
 
-14 September 2026 HB math/physics dossier (A1–A14 / S01–S17):
-[`HB_Math_Physics_Dossier_2026-09-14.docx`](HB_Math_Physics_Dossier_2026-09-14.docx),
-receipt [`HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md`](HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md).
-SHA-256 `16228b707961bce7…`. 1 445 673 bytes. **Reference only.**
-Recovered historical equations. **Not** a new live theory. Competing
-cores stay unlocked. Formulas are 147 PNG drawings (0 OMML). Square
-glyphs and the claimed 81.7 percent alignment stay visible gaps.
-Do **not** import into `domain_architect/`. A11 gravity stays **off**
-default DECOMPOSE.
+## 14 Sep 2026 equation dump — book on the shelf
+
+[`HB_Math_Physics_Dossier_2026-09-14.docx`](HB_Math_Physics_Dossier_2026-09-14.docx)
+
+SHA-256 `16228b707961bce7…`. 1 445 673 bytes. Catalog A1–A14 / S01–S17.
+Receipt [`HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md`](HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md).
+
+**Unknown provenance. Unknown author.** One copy. Keep it as a book on
+the shelf. Do **not** use it in live Domain Architect work (not
+`domain_architect/`, not the live DA cycle, not the August Q6 public
+face, not swirl leftover). If a later study finds an equation here that
+is actually relevant, **notify Jon**. Do not look down on the book.
+Letters \(\Phi\), Q6, \(H_N\) still collide — record them as inventory.
+Formulas are 147 PNG drawings (0 OMML). Do **not** invent a second copy.
+Do **not** import into `domain_architect/`.
 
 [`Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md`](Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md)
 

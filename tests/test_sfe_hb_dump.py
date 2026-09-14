@@ -720,7 +720,7 @@ class TestAprilOverleafExportsStayQuarantined(unittest.TestCase):
 
 
 class TestHbMathPhysicsDossierStaysArchived(unittest.TestCase):
-    """14 Sep 2026 recovered A1–A14 stay reference-only. Not a locked SFE."""
+    """14 Sep 2026 dump stays a shelf book. Unknown provenance. Not live DA."""
 
     def test_hash_lock_and_raster_gaps(self):
         self.assertTrue(HB_DOSSIER.is_file(), HB_DOSSIER)
@@ -729,6 +729,12 @@ class TestHbMathPhysicsDossierStaysArchived(unittest.TestCase):
         self.assertEqual(len(raw), HB_DOSSIER_BYTES)
         self.assertEqual(hashlib.sha256(raw).hexdigest(), HB_DOSSIER_SHA256)
         self.assertEqual(raw[:4], b"PK\x03\x04")
+        copies = list(
+            (Path(__file__).resolve().parents[1] / "docs" / "archive").rglob(
+                "HB_Math_Physics_Dossier_2026-09-14.docx"
+            )
+        )
+        self.assertEqual(len(copies), 1, copies)
         with zipfile.ZipFile(HB_DOSSIER) as zf:
             xml = zf.read("word/document.xml")
             root = ET.fromstring(xml)
@@ -751,36 +757,41 @@ class TestHbMathPhysicsDossierStaysArchived(unittest.TestCase):
         self.assertIn("81.7 percent alignment", text)
         self.assertIn("square marks an unreadable source subscript", text.lower())
 
-    def test_receipt_is_reference_only_with_visible_gaps(self):
+    def test_receipt_is_neutral_shelf_book(self):
         receipt = HB_DOSSIER_RECEIPT.read_text(encoding="utf-8")
-        self.assertIn("reference only", receipt.lower())
-        self.assertIn("Not** a new live theory", receipt)
+        self.assertIn("Shelf book", receipt)
+        self.assertIn("Unknown provenance", receipt)
+        self.assertIn("Unknown author", receipt)
+        self.assertIn("notify Jon", receipt)
+        self.assertIn("Do not look down", receipt)
+        self.assertIn("Do not invent an author", receipt)
+        self.assertIn("Do not invent a crank label", receipt)
+        self.assertIn("inventory, not mockery", receipt)
+        self.assertIn("DECOMPOSE \u2192 CROSS-DOMAIN TRANSLATE \u2192 SYNTHESIZE", receipt)
         self.assertIn("Not live Domain Architect", receipt)
         self.assertIn("import into `domain_architect/`", receipt)
         self.assertIn("Competing cores stay unlocked", receipt)
         self.assertIn("16228b707961bce72369a25446b3945ae2ceb5b1d6e78391a9a8dae912a25834", receipt)
-        self.assertIn("1 445 673", receipt)
-        self.assertIn("A1–A14", receipt)
-        self.assertIn("S01–S17", receipt)
-        self.assertIn("0", receipt)
+        self.assertIn("1\u202f445\u202f673", receipt)
+        self.assertIn("A1\u2013A14", receipt)
+        self.assertIn("S01\u2013S17", receipt)
         self.assertIn("147", receipt)
-        self.assertIn("81.7 percent alignment is not measured here", receipt)
-        self.assertIn("square subscript", receipt.lower())
+        self.assertIn("81.7 percent alignment is not measured in this filing", receipt)
+        self.assertIn("unreadable source subscript", receipt.lower())
         self.assertIn("T_{j\\leftarrow j}", receipt)
         self.assertIn("a2391122", receipt)
         self.assertIn("Cardinal", receipt)
         self.assertIn("Mertens", receipt)
-        self.assertIn("NO-GO", receipt)
-        self.assertIn("withdrawn", receipt.lower())
-        self.assertIn("C-CLM-4", receipt)
-        self.assertIn("2.2 Hz", receipt)
-        self.assertIn("retired", receipt.lower())
-        self.assertIn("A11 gravity", receipt)
-        self.assertIn("off** default DECOMPOSE", receipt)
-        self.assertIn("does **not** file patents", receipt)
-        self.assertIn("Do **not** use as closed", receipt)
-        self.assertIn("archived — not part of Domain Architect v1.0", receipt)
+        self.assertIn("August Q6 public face", receipt)
+        self.assertIn("swirl leftover", receipt)
+        self.assertIn("NAV-42", receipt)
+        self.assertIn("archived \u2014 not part of Domain Architect v1.0", receipt)
         self.assertNotIn("the canonical sfe", receipt.lower())
+        self.assertNotIn("Jonathan uploaded", receipt)
+        self.assertNotIn("crank", receipt.lower().replace("do not invent a crank label", ""))
+        self.assertNotIn("Clay", receipt)
+        self.assertNotIn("prize", receipt.lower())
+        self.assertNotIn("NO-GO", receipt)
         self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
         self.assertFalse((LIVE_ROOT / "hb.py").is_file())
         self.assertFalse((LIVE_ROOT / "a11.py").is_file())
@@ -810,7 +821,7 @@ class TestHbMathPhysicsDossierStaysArchived(unittest.TestCase):
         self.assertNotIn("HB_Math_Physics_Dossier", hist)
         self.assertNotIn("16228b707961bce7", hist)
 
-    def test_a11_gravity_off_default_decompose_and_no_nav42_in_live_py(self):
+    def test_live_cycle_does_not_load_the_dump_or_nav42(self):
         dec = decompose("m*xdd + c*xd + k*x = f")
         blob = (dec.tree.pretty() + " ".join(dec.warnings)).lower()
         self.assertNotIn("a11", blob)
@@ -829,20 +840,23 @@ class TestHbMathPhysicsDossierStaysArchived(unittest.TestCase):
                 continue
             self.assertNotIn("NAV-42", hay, path.name)
 
-    def test_indexes_point_at_the_dossier_not_live_da(self):
+    def test_indexes_point_at_the_shelf_book_not_live_da(self):
         note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
         self.assertIn("HB_Math_Physics_Dossier_2026-09-14.docx", note)
-        self.assertIn("Reference only", note)
-        self.assertIn("81.7 percent", note)
-        self.assertIn("A11 gravity stays **off**", note)
+        self.assertIn("Unknown provenance", note)
+        self.assertIn("Unknown author", note)
+        self.assertIn("notify Jon", note)
+        self.assertIn("Do not look down", note)
         self.assertIn("import into `domain_architect/`", note)
         archive_index = (
             Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
         ).read_text(encoding="utf-8")
         self.assertIn("HB_Math_Physics_Dossier_2026-09-14.docx", archive_index)
         self.assertIn("16228b707961bce7", archive_index)
-        self.assertIn("reference only", archive_index.lower())
+        self.assertIn("shelf book", archive_index.lower())
+        self.assertIn("unknown provenance", archive_index.lower())
         self.assertIn("not live DA", archive_index)
+        self.assertIn("notify Jon", archive_index)
         lookup = (
             Path(__file__).resolve().parents[1]
             / "docs"
@@ -851,12 +865,14 @@ class TestHbMathPhysicsDossierStaysArchived(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("HB_Math_Physics_Dossier_2026-09-14.docx", lookup)
         self.assertIn("16228b707961bce72369a25446b3945ae2ceb5b1d6e78391a9a8dae912a25834", lookup)
-        self.assertIn("not measured here", lookup)
+        self.assertIn("Unknown provenance", lookup)
+        self.assertIn("notify Jon", lookup)
         gcd = (
             Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
         ).read_text(encoding="utf-8")
         self.assertIn("16228b707961bce7", gcd)
         self.assertIn("Cardinal/Mertens", gcd)
+        self.assertIn("shelf book", gcd.lower())
         faces = (
             Path(__file__).resolve().parents[1]
             / "docs"
@@ -866,6 +882,7 @@ class TestHbMathPhysicsDossierStaysArchived(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("HB_Math_Physics_Dossier_2026-09-14.docx", faces)
         self.assertIn("Not** a Paper2 face", faces)
+        self.assertIn("unknown provenance", faces.lower())
         swirl = (
             Path(__file__).resolve().parents[1]
             / "docs"
@@ -875,6 +892,7 @@ class TestHbMathPhysicsDossierStaysArchived(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn(r"\Phi=u_\theta/r", swirl)
         self.assertIn("HB_Math_Physics_Dossier_2026-09-14.docx", swirl)
+        self.assertIn("unknown provenance", swirl.lower())
         ring = (
             Path(__file__).resolve().parents[1]
             / "docs"
@@ -884,6 +902,7 @@ class TestHbMathPhysicsDossierStaysArchived(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("HB_Math_Physics_Dossier_2026-09-14.docx", ring)
         self.assertIn("Not** Ring SND", ring)
+        self.assertIn("unknown provenance", ring.lower())
         inventory = (
             Path(__file__).resolve().parents[1]
             / "docs"
@@ -891,8 +910,9 @@ class TestHbMathPhysicsDossierStaysArchived(unittest.TestCase):
             / "rectification-2026-08"
             / "01-EQUATION-INVENTORY.md"
         ).read_text(encoding="utf-8")
-        self.assertIn("A1–A14", inventory)
+        self.assertIn("A1\u2013A14", inventory)
         self.assertIn("Do **not** merge", inventory)
+        self.assertIn("unknown provenance", inventory.lower())
         conflicts = (
             Path(__file__).resolve().parents[1]
             / "docs"
@@ -901,10 +921,11 @@ class TestHbMathPhysicsDossierStaysArchived(unittest.TestCase):
             / "02-CONFLICT-TABLE.md"
         ).read_text(encoding="utf-8")
         self.assertIn("C-SFE-7", conflicts)
-        self.assertIn("Competing cores stay unlocked", conflicts)
+        self.assertIn("unknown author", conflicts.lower())
+        self.assertIn("notify Jon", conflicts)
         html = (LIVE_ROOT / "static" / "index.html").read_text(encoding="utf-8")
         self.assertNotIn("HB_Math_Physics_Dossier", html)
-        self.assertNotIn("A1–A14", html)
+        self.assertNotIn("A1\u2013A14", html)
         self.assertIn("DECOMPOSE", html)
 
 

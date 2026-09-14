@@ -34,11 +34,13 @@ Letters collide: Q6 \(H_N\) \(\neq\) Paper2 \(H_N[a]\) \(\neq\) FRA \(H\).
 - **PAPER_A / PAPER_B / `GCD_Spectral_Paper1_UPDATED_*`:** pack-only, **not on this VM**. They **never lived** in Overleaf exports. Do not hunt them as Overleaf-required. Policy [`docs/packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md`](../../packets/OVERLEAF-VS-PACK-AUDIT-2026-08-15.md). Drive Missing Fifteen: still needed via upload/paste. Zenodo lead for PAPER_B is a deposit that may carry source — **not** MAGNUM mix TeX `f41194c7…` and **not** automatically the August Q6 PDF `a2391122…`. Packet [`docs/packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md`](../../packets/MISSING-FIFTEEN-RECOVERY-AUDIT-2026-08-25.md).
 - **April Overleaf CLAY/SERPENT mains:** **not** Q6 arithmetic. **Not received.** Receipt [`docs/archive/overleaf-2026-04/`](../../archive/overleaf-2026-04/). Clay **NOT CLAIMED**.
 
-- **14 Sep 2026 HB math/physics dossier:** archive
+- **14 Sep 2026 equation dump:** shelf book
   [`docs/archive/sfe-hb/HB_Math_Physics_Dossier_2026-09-14.docx`](../../archive/sfe-hb/HB_Math_Physics_Dossier_2026-09-14.docx)
-  (SHA `16228b707961bce7…`). A2 Möbius–GCD and A11 \(Q_N=\mathrm{gcd}/\sqrt{ij}\)
-  are **not** this August Q6 PDF. **Not** Cardinal/Mertens. **Not** this book.
-  **Not** live DA. Receipt
+  (SHA `16228b707961bce7…`). Unknown provenance. Unknown author. A2
+  Möbius–GCD and A11 \(Q_N=\mathrm{gcd}/\sqrt{ij}\) collide with this
+  book; they are **not** this August Q6 PDF and **not** Cardinal/Mertens.
+  Do **not** use that dump as this face. If a later study finds a
+  relevant equation there, notify Jon. Receipt
   [`HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md`](../../archive/sfe-hb/HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md).
 
 Sibling Frankie `SPECTRAL_UNIFICATION_PAPER.tex` is archived under

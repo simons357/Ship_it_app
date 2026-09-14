@@ -132,10 +132,13 @@ Until the files in [03 — Reconciliation §6](03-RECONCILIATION.md) arrive, the
 - unpublished SFE / UHF / DHFA book chapters;
 - any additional SFE variants that exist only in Kara / Gemini / camera-roll drafts.
 
-A 14 September 2026 recovered catalog A1–A14 (S01–S17) arrived as
+A 14 September 2026 catalog A1–A14 (S01–S17) is filed as a **shelf
+book**
 [`docs/archive/sfe-hb/HB_Math_Physics_Dossier_2026-09-14.docx`](../sfe-hb/HB_Math_Physics_Dossier_2026-09-14.docx)
-(**reference only**; SHA `16228b707961bce7…`). Do **not** merge those
-rows into SFE-PUB / SFE-QM / FRA-5. Competing cores stay unlocked.
+(unknown provenance, unknown author; SHA `16228b707961bce7…`). Do
+**not** merge those rows into SFE-PUB / SFE-QM / FRA-5 or into live
+Domain Architect. If a later study finds an equation there that is
+actually relevant, notify Jon.
 Receipt: [`HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md`](../sfe-hb/HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md).
 
 A later pass must add those as new IDs, not overwrite the rows above.
