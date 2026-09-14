@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Open Progress · three outs · Assembly desk</title>
+<link rel="icon" href="assets/cosmic-graffiti-magazine-icon.webp"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="wrap-narrow">
+  <header class="masthead">
+    <div class="logos">
+      <img src="assets/cg-logo.webp" alt="Cosmic Graffiti"/>
+      <img src="assets/pf-logo.webp" alt="Prime Field"/>
+      <img src="assets/da-logo-sm.webp" alt="Domain Architect"/>
+    </div>
+    <div class="mast-meta">Assembly desk · Open Progress<br/><span style="font-size:.85em;opacity:.9">Three outs</span></div>
+  </header>
+  <nav class="site">
+    <a href="index.html">Rundown</a>
+    <a href="issue-1.html">Issue 1</a>
+    <a class="active" href="open-progress.html">Open Progress</a>
+    <a href="teaching-pictures.html">Teaching pictures</a>
+    <a href="https://cosmic-graffiti-magazine.vercel.app/open-progress/" rel="noopener">Live report</a>
+  </nav>
+
+  <p class="kicker" id="record">Card · live · 2026-09-12</p>
+  <h1>Open Progress Report</h1>
+  <p class="byline">Posters as the paper · stands · open · withdrawn<br/>Unaugmented leftover OPEN · DA-VC-01 FAIL</p>
+  <div class="disclaimer">
+    <strong>For the record / not the last word.</strong>
+    Evidence labels only. Never ship the closed card without the open companion. Different statements.
+    Substack: <a href="https://jonathansimonscrna.substack.com">jonathansimonscrna.substack.com</a>. Paywall off.
+  </div>
+  <p class="cli">python3 scripts/cg_desk.py show open-progress</p>
+
+  <div class="outs" role="tablist">
+    <button type="button" class="active" data-out="magazine">Magazine</button>
+    <button type="button" data-out="substack">Substack</button>
+    <button type="button" data-out="skool">Skool</button>
+  </div>
+
+  <div id="out-magazine" class="out-panel active">
+    <figure class="hero">
+      <img src="assets/FOR-THE-RECORD-preview.webp" alt="For the Record lattice board — Closed, Open In Progress, Conditional, WITHDRAWN."/>
+    </figure>
+    <p class="hero-cap">For the Record — the front paper</p>
+    <article>
+      <p>Jonathan’s been deep on this track this week. A lot of headway landed over the weekend — labeled maps, honest open doors, walk-backs where claims didn’t stand. Stay tuned.</p>
+      <p>This is an open progress report, not a close. The stamped posters are the paper.</p>
+      <h2>The pair — never one without the other</h2>
+      <div class="pair">
+        <figure>
+          <img src="assets/SWIRL-CLOSED-ONEPAGER.webp" alt="Q1-augmented swirl — Closed, peer review pending, augmented only"/>
+          <figcaption><span class="tag closed">G1 · Closed · peer review pending</span><br/>Augmented only. DOI 22050974.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/UNAUG-NS-OPEN-IN-PROGRESS.webp" alt="Classical unaugmented swirl — Open In Progress"/>
+          <figcaption><span class="tag open">G2 · Open · In Progress</span><br/>Unaugmented leftover OPEN. Mountain not claimed.</figcaption>
+        </figure>
+      </div>
+      <p>Route C does not claim the Riemann hypothesis. Walk-backs (full-spectrum Bridge floor, Triple Lock packaging, MD “resolved” theater) stay <strong>WITHDRAWN</strong>, loud on purpose.</p>
+    </article>
+    <aside class="val-box">
+      <div class="val-face" aria-hidden="true"><div class="val-eye"></div><div class="val-mouth"></div></div>
+      <div class="val-copy">
+        <p class="val-name">VAL8000 · after the news</p>
+        <p>Weekend headway — and the honest kind. You show the map. You credit the doors that stayed open. You don’t sell a summit.</p>
+        <p>The unaugmented leftover stays open. I am a comment box, not a stamp.</p>
+        <p>Come look. Labels travel.</p>
+      </div>
+    </aside>
+  </div>
+
+  <div id="out-substack" class="out-panel" hidden>
+    <p class="kicker">Paste-ready · jonathansimonscrna.substack.com</p>
+    <p><strong>Title:</strong> Open Progress Report</p>
+    <p><strong>Dek:</strong> Weekend headway. Posters as the paper. Unaugmented leftover OPEN. Not a close.</p>
+    <p class="paste">Images: FOR-THE-RECORD-preview.webp, then the closed/open pair (never 2 without 3).
+Upload alts from rundown.json. Body: labeled map, DA-VC-01 FAIL, letters collide, paywall off.
+Then VAL after the body.</p>
+  </div>
+
+  <div id="out-skool" class="out-panel" hidden>
+    <p><strong>Hook:</strong> Weekend headway, the honest kind. Open progress report — posters as the paper. Unaugmented leftover stays OPEN. Not a close.</p>
+    <p style="margin-top:1em"><strong>Ask in this thread:</strong> Which label do you want unpacked next — closed, open, conditional, or WITHDRAWN?</p>
+  </div>
+
+  <footer class="site">
+    <div>Cosmic Graffiti · Open Progress card</div>
+    <div><em>For the record / not the last word.</em></div>
+  </footer>
+</div>
+<script>
+(function () {
+  var buttons = [].slice.call(document.querySelectorAll(".outs [data-out]"));
+  function show(name) {
+    buttons.forEach(function (btn) {
+      var on = btn.getAttribute("data-out") === name;
+      btn.classList.toggle("active", on);
+    });
+    ["magazine", "substack", "skool"].forEach(function (id) {
+      var el = document.getElementById("out-" + id);
+      if (!el) return;
+      var on = id === name;
+      el.classList.toggle("active", on);
+      if (on) el.removeAttribute("hidden"); else el.setAttribute("hidden", "");
+    });
+  }
+  buttons.forEach(function (btn) {
+    btn.addEventListener("click", function () { show(btn.getAttribute("data-out")); });
+  });
+})();
+</script>
+</body>
+</html>

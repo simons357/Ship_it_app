@@ -1,0 +1,195 @@
+{
+  "magazine": "Cosmic Graffiti",
+  "desk": "assembly",
+  "updated": "2026-09-14",
+  "owner": "Jonathan Simons · Prime Field Technologies LLC · Savannah, GA",
+  "live_site": "https://cosmic-graffiti-magazine.vercel.app/",
+  "substack": "https://jonathansimonscrna.substack.com",
+  "substack_not": "https://jonathansimons.substack.com",
+  "paywall": "off",
+  "note": "One rundown. Cue cards. Empty trays. VAL8000 comments after the news, never the lead. This is a workspace to assemble, not a second brand.",
+  "labels": [
+    "reported ≠ certified",
+    "unaugmented leftover OPEN",
+    "DA-VC-01 FAIL",
+    "correspondence ≠ physical equivalence",
+    "letters collide"
+  ],
+  "entries": [
+    {
+      "slug": "issue-1",
+      "title": "Ten thousand agents",
+      "kicker": "Issue 1",
+      "dek": "A reported swarm-scale attempt on Navier–Stokes. Reported · not DA-certified.",
+      "status": "live",
+      "seeded": true,
+      "date": "2026-09-09",
+      "live_url": "https://cosmic-graffiti-magazine.vercel.app/issue1.html",
+      "hero": "entries/issue-1/assets/ISSUE1-portrait-redpills.webp",
+      "val": true,
+      "images": [
+        {
+          "file": "ISSUE1-portrait-redpills.webp",
+          "alt": "Issue 1 portrait — Jonathan Simons in a blue-lit lab, black leather jacket and sunglasses, both palms open holding two red pills.",
+          "caption": "Issue 1 portrait · Cosmic Graffiti Frequency"
+        }
+      ]
+    },
+    {
+      "slug": "open-progress",
+      "title": "Open Progress Report",
+      "kicker": "Report",
+      "dek": "Weekend headway. Posters as the paper. Stands, open, WITHDRAWN. Unaugmented leftover OPEN.",
+      "status": "live",
+      "seeded": true,
+      "date": "2026-09-12",
+      "live_url": "https://cosmic-graffiti-magazine.vercel.app/open-progress/",
+      "hero": "entries/open-progress/assets/FOR-THE-RECORD-preview.webp",
+      "val": true,
+      "images": [
+        {
+          "file": "FOR-THE-RECORD-preview.webp",
+          "alt": "For the Record lattice board — Closed, Open In Progress, Conditional, WITHDRAWN.",
+          "caption": "For the Record — the front paper"
+        },
+        {
+          "file": "SWIRL-CLOSED-ONEPAGER.webp",
+          "alt": "Q1-augmented swirl one-pager stamped Closed, peer review pending, augmented only.",
+          "caption": "G1 · Closed · peer review pending · augmented only"
+        },
+        {
+          "file": "UNAUG-NS-OPEN-IN-PROGRESS.webp",
+          "alt": "Classical unaugmented swirl one-pager stamped Open In Progress. One remaining object. Mountain not claimed.",
+          "caption": "G2 · Open · In Progress · unaugmented leftover OPEN"
+        }
+      ]
+    },
+    {
+      "slug": "for-the-record",
+      "title": "For the Record",
+      "kicker": "Inventory",
+      "dek": "Closed · peer review pending · Open · In Progress · Conditional · WITHDRAWN. Never the closed card without the open companion.",
+      "status": "live",
+      "seeded": false,
+      "date": "2026-09-13",
+      "live_url": "https://cosmic-graffiti-magazine.vercel.app/for-the-record.html",
+      "hero": "entries/open-progress/assets/FOR-THE-RECORD-preview.webp",
+      "val": false,
+      "share_assets_from": "open-progress",
+      "images": [
+        {
+          "file": "FOR-THE-RECORD-preview.webp",
+          "alt": "For the Record lattice board — stands, open, and withdrawn on one inventory.",
+          "caption": "Quiet-credit lattice"
+        }
+      ]
+    },
+    {
+      "slug": "teaching-pictures",
+      "title": "The periodic box and one shell",
+      "kicker": "Visualizer · art beat",
+      "dek": "Fourier space bookkeeping, not cosmology. Pictures that already teach: the periodic box T³ and exact-shell interaction.",
+      "status": "draft",
+      "seeded": true,
+      "date": "2026-09-14",
+      "hero": "entries/teaching-pictures/assets/periodic-box-t3.jpg",
+      "val": true,
+      "images": [
+        {
+          "file": "periodic-box-t3.jpg",
+          "alt": "Teaching diagram: a transparent cube labeled Periodic box T³ filled with a lattice of cyan dots. A circled shell inside. Captions: opposite faces identified; fluid fills the cube — no hole in the center; wavevector space k in Z³; exact shell |k|² = α (one sphere). Footer: this is Fourier space bookkeeping, not cosmology.",
+          "caption": "Periodic box T³ — Fourier space bookkeeping, not cosmology"
+        },
+        {
+          "file": "exact-shell-interaction.jpg",
+          "alt": "Teaching diagram: Exact-shell interaction. Points p and q on a large sphere (input shell |·|² = α) connect to an output wavevector k = p + q on a smaller shell |k|² = β. A vertical leftover length is labeled |k⊥|² = β(1 − β/4α). Note: when β → 4α the leftover vanishes. Caption on the leftover: this length is the shape of the claimed 4/3 bound.",
+          "caption": "Exact-shell interaction — leftover length is the shape of a claimed bound, not a close"
+        }
+      ]
+    },
+    {
+      "slug": "frequency-2026-09-14",
+      "title": "News from the neighborhood",
+      "kicker": "The Frequency · 14 Sep",
+      "dek": "Sourced news through Cosmic Graffiti. Dates and URLs. Reported, not certified. Working chapter — not a second magazine.",
+      "status": "draft",
+      "seeded": false,
+      "date": "2026-09-14",
+      "working_chapter": "docs/cosmic-graffiti/issues/2026-09-14-the-frequency.md",
+      "hero": "entries/frequency-2026-09-14/assets/cg-frequency-masthead-2026-09-14.png",
+      "val": true,
+      "images": [
+        {
+          "file": "cg-frequency-masthead-2026-09-14.png",
+          "alt": "Dark editorial masthead. Cosmic Graffiti’s ornate G on a star field. A gold ribbon reads THE FREQUENCY, 14 September 2026.",
+          "caption": "The Frequency · 14 September 2026"
+        },
+        {
+          "file": "cg-humor-letters-collide.png",
+          "alt": "Kind cartoon. Four capital Phi figures in evening clothes with different name tags, one spilling coffee. A capital H looks at two stacked name tags. Gold caption: SAME LETTER ≠ SAME OBJECT.",
+          "caption": "Humor · letters collide"
+        }
+      ]
+    },
+    {
+      "slug": "ask-the-desk",
+      "title": "Ask the Desk",
+      "kicker": "Q&A tray",
+      "dek": "People send questions. We explain. Empty until copy lands. Do not glue this to Cosmo Evolution.",
+      "status": "tray",
+      "seeded": false,
+      "val": false
+    },
+    {
+      "slug": "cosmo-evolution",
+      "title": "Cosmo Evolution",
+      "kicker": "Column tray",
+      "dek": "Three drawers: the sky, the attempt, pulled back. Never mixed into one theorem. Empty until copy lands.",
+      "status": "tray",
+      "seeded": false,
+      "val": false
+    },
+    {
+      "slug": "val-weekend-update",
+      "title": "VAL Weekend Update",
+      "kicker": "VAL8000 slot",
+      "dek": "Empty slot. When there is a weekend note, VAL comments after the news in a little box. Not the masthead lead.",
+      "status": "tray",
+      "seeded": false,
+      "val": true
+    },
+    {
+      "slug": "photos",
+      "title": "Jon’s photos",
+      "kicker": "Tray",
+      "dek": "Drop pictures here. Alt text and a caption, or they do not ship.",
+      "status": "tray",
+      "seeded": false,
+      "kind": "tray-file",
+      "path": "trays/photos.md",
+      "val": false
+    },
+    {
+      "slug": "jon-story",
+      "title": "Jon’s story",
+      "kicker": "Tray",
+      "dek": "A piece in your own voice when you have one. Not childhood autobiography in git.",
+      "status": "tray",
+      "seeded": false,
+      "kind": "tray-file",
+      "path": "trays/jon-story.md",
+      "val": false
+    },
+    {
+      "slug": "later-frequency",
+      "title": "Later Frequency items",
+      "kicker": "Tray",
+      "dek": "Date, URL, two-sentence paraphrase, CG comment. No URL → no item.",
+      "status": "tray",
+      "seeded": false,
+      "kind": "tray-file",
+      "path": "trays/later-frequency.md",
+      "val": false
+    }
+  ]
+}
