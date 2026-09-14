@@ -64,7 +64,7 @@ Those A-rows are **historical recovered equations**. They are **not**
 added to `data/domain_architect/historical_equations.json`. Existing
 cores stay competing: `SFE-H001` (SFE-PUB sine sum) vs `SFE-H002`
 (compact \(\Delta[(P\cdot H\cdot\psi)^2\lambda]=\Phi\)) vs `SFE-H003`
-(Fock Hamiltonian) vs FRA-5. Canonical SFE status remains
+(Fock Hamiltonian) vs FRA-5. The archived-SFE status remains
 `archived — not part of Domain Architect v1.0`.
 
 ## Visible gaps (keep them)
