@@ -62,6 +62,10 @@ UHSA_SYNTHESIS = (
 UHSA_SYNTHESIS_SHA256 = (
     "4d49cd1ee629e6c2fbf0ad93fa08c107d6d4587ea5a06121930ecbdeb848e363"
 )
+RH_HARMONIC_NOTE = ARCHIVE_SFE_HB / "Harmonic_Perspective_on_RH_2026-08-14.md"
+RH_HARMONIC_NOTE_SHA256 = (
+    "7062f4cacedd386392e55f8539d3060ed30acfc66b22a6ae2425513564b1b1ff"
+)
 SPECTRAL_UNIFICATION_TEX = ARCHIVE_SFE_HB / "SPECTRAL_UNIFICATION_PAPER.tex"
 SPECTRAL_UNIFICATION_NOTE = ARCHIVE_SFE_HB / "SPECTRAL_UNIFICATION_PAPER.md"
 SPECTRAL_UNIFICATION_SHA256 = (
@@ -372,6 +376,39 @@ class TestUhsaSessionSynthesisStaysArchived(unittest.TestCase):
                     hay,
                     f"{path.name} must not contain archived UHSA token {token!r}",
                 )
+
+
+class TestRhHarmonicPerspectiveStaysArchived(unittest.TestCase):
+    """14 Aug 2026 RH harmonic note stays historical. Does not prove RH."""
+
+    def test_note_is_in_archive_not_a_clay_claim(self):
+        self.assertTrue(RH_HARMONIC_NOTE.is_file(), RH_HARMONIC_NOTE)
+        raw = RH_HARMONIC_NOTE.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), RH_HARMONIC_NOTE_SHA256)
+        self.assertEqual(len(raw), 9439)
+        text = raw.decode("utf-8")
+        self.assertIn("Not live Domain Architect", text)
+        self.assertIn("NOT CLAIMED", text)
+        self.assertIn("do not prove RH", text)
+        self.assertIn("Bridge lemma", text)
+        self.assertIn("OPEN", text)
+        self.assertIn("inverted", text)
+        self.assertIn("import into `domain_architect/`", text)
+        self.assertFalse((LIVE_ROOT / "harmonic_blueprint.py").is_file())
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("Harmonic_Perspective_on_RH_2026-08-14.md", note)
+        self.assertIn("does **not** prove RH", note)
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Harmonic_Perspective_on_RH_2026-08-14.md", lookup)
+        gcd = (
+            Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("14 Aug RH harmonic-perspective note", gcd)
 
 
 class TestSpectralUnificationPaperArchived(unittest.TestCase):

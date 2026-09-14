@@ -1,5 +1,10 @@
 # Aug 19 UHSA session synthesis — archive only
 
+14 August 2026 companion (more honest RH note, same stack):
+[`Harmonic_Perspective_on_RH_2026-08-14.md`](Harmonic_Perspective_on_RH_2026-08-14.md).
+Hard rule there: the harmonic stack does **not** prove RH. Bridge lemma
+**OPEN**. Not live DA. Not Clay.
+
 [`Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md`](Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md)
 
 SHA-256 `4d49cd1ee629…`. 15 899 bytes. Chat paste of 19 August 2026
