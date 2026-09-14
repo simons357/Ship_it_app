@@ -18,3 +18,8 @@
 .val8000-square[data-skin]:not([data-skin="naked"]):not([data-skin=""]) > .val8000-accessory {
   display: block;
 }
+
+.val8000-square[data-skin] > .val8000-accessory[hidden],
+.val8000-square[data-skin="tessellation-tray"] > .val8000-accessory {
+  display: none;
+}

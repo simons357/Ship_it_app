@@ -1,52 +1,123 @@
 {
   "character": "VAL8000",
+  "drawer": "docs/cosmic-graffiti/val8000-skins.md",
+  "overlay_dir": "docs/cosmic-graffiti/assets/skins",
   "rule": "Accessories on the same square. Not a new character. Default is the naked square.",
   "default": "naked",
+  "default_skin": "naked",
   "idle_mouth": "straight line under every skin",
   "how_to_change": "Set data-skin on .val8000-square, or call VAL8000_applySkin(el, id).",
   "types_in_the_box": true,
   "no_tts": true,
+  "note": "Overlays sit on the VAL8000 square. They do not replace mouth or eye PNGs. Default is unadorned.",
   "skins": [
     {
       "id": "naked",
+      "name": "Unadorned square",
       "title": "Naked square",
+      "kind": "other",
+      "files": [],
       "overlay": null,
+      "notes": "Default. No accessory. Just the VAL8000 square: red eye, idle line, he types in the box.",
       "when": "Default. Masthead. Idle."
     },
     {
       "id": "frequency",
+      "name": "Frequency ribbon",
       "title": "Frequency ribbon",
+      "kind": "other",
+      "files": ["overlay-frequency.png", "overlay-frequency.svg"],
       "overlay": "overlay-frequency.png",
       "svg": "overlay-frequency.svg",
+      "notes": "Tiny gold Frequency ribbon. Accessory, not a new face.",
       "when": "Frequency issue nights."
     },
     {
       "id": "weekend-update",
+      "name": "Weekend Update glasses",
       "title": "Weekend Update glasses",
+      "kind": "glasses",
+      "files": ["overlay-weekend-update.png", "overlay-weekend-update.svg"],
       "overlay": "overlay-weekend-update.png",
       "svg": "overlay-weekend-update.svg",
+      "notes": "Thin joke rims. Original. Not a brand.",
       "when": "Jokes after the news."
     },
     {
       "id": "issue1",
+      "name": "Issue 1 two-red-pill pin",
       "title": "Issue 1 two-red-pill pin",
+      "kind": "pin",
+      "files": ["overlay-issue1.png", "overlay-issue1.svg"],
       "overlay": "overlay-issue1.png",
       "svg": "overlay-issue1.svg",
+      "notes": "Two red pills, both red.",
       "when": "Issue 1. Both pills red."
     },
     {
       "id": "scientist",
+      "name": "Scientist visor",
       "title": "Scientist visor",
+      "kind": "hat",
+      "files": ["overlay-scientist.png", "overlay-scientist.svg"],
       "overlay": "overlay-scientist.png",
       "svg": "overlay-scientist.svg",
+      "notes": "Lab visor. Does not cover the idle mouth line.",
       "when": "Lab / measurement nights."
     },
     {
       "id": "music-art",
+      "name": "Music and art room pin",
       "title": "Music and art room pin",
+      "kind": "pin",
+      "files": ["overlay-music-art.png", "overlay-music-art.svg"],
       "overlay": "overlay-music-art.png",
       "svg": "overlay-music-art.svg",
+      "notes": "Quiet music / art-room pin.",
       "when": "Quiet music / art room."
+    },
+    {
+      "id": "glasses-ordinary",
+      "name": "Ordinary glasses",
+      "title": "Ordinary glasses",
+      "kind": "glasses",
+      "files": ["glasses-ordinary.png", "glasses-ordinary.svg"],
+      "overlay": "glasses-ordinary.png",
+      "svg": "glasses-ordinary.svg",
+      "notes": "Original round frames on the square. Not a brand. Not a product photo. Worn preview: worn-glasses-ordinary.png.",
+      "when": "Ordinary glasses on the square."
+    },
+    {
+      "id": "glasses-camera",
+      "name": "Camera-frame glasses",
+      "title": "Camera-frame glasses",
+      "kind": "glasses",
+      "files": ["glasses-camera.png", "glasses-camera.svg"],
+      "overlay": "glasses-camera.png",
+      "svg": "glasses-camera.svg",
+      "notes": "Same frames, small camera on the rim. Meta Ray-Ban analog only — original art, no logo, no product photo. Accessory, not a surveillance product, not a keylogger. VAL still types in the box. Worn preview: worn-glasses-camera.png.",
+      "when": "Camera-glasses analog. Accessory only."
+    },
+    {
+      "id": "monocle",
+      "name": "Monocle",
+      "title": "Monocle",
+      "kind": "glasses",
+      "files": ["monocle.png", "monocle.svg"],
+      "overlay": "monocle.png",
+      "svg": "monocle.svg",
+      "notes": "Swap skin. Original round gold lens on the red-eye square. Same CG gold as ordinary glasses. Not a brand. Not a product photo. Good for Go deeper / sarcasm / Weekend Update scientist beat. Not automatic on insult — insult is the tongue. Worn preview: worn-monocle.png.",
+      "when": "Swap only. Go deeper / sarcasm / Weekend Update scientist beat. Not automatic on insult."
+    },
+    {
+      "id": "tessellation-tray",
+      "name": "Tessellation tray",
+      "title": "Tessellation tray",
+      "kind": "tessellation",
+      "files": [],
+      "overlay": null,
+      "notes": "Source slot for cool outputs from Jon's tessellation app. App is not in this repo. Drop files in tessellation/. Patterns to wear, not physics. Not NAV-42, not Fluid-Q, not Q OS.",
+      "when": "Empty until Jon drops a print."
     }
   ]
 }
