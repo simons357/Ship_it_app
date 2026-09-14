@@ -470,6 +470,40 @@ class TestRhHarmonicPerspectiveStaysArchived(unittest.TestCase):
         self.assertIn("Not** a Paper2 face", faces)
         self.assertIn("SFE_Breathing_Field_Book_Paste.md", faces)
 
+    def test_breathing_field_paste_same_truncated_opening_not_unification(self):
+        paste = ARCHIVE_SFE_HB / "SFE_Breathing_Field_Book_Paste.md"
+        self.assertTrue(paste.is_file(), paste)
+        body = paste.read_text(encoding="utf-8")
+        self.assertIn("NOT CLAIMED", body)
+        self.assertIn("does **not** unify", body)
+        self.assertIn("truncated", body.lower())
+        self.assertIn(
+            "In essence, nature uses prime-based coherence not just to form space",
+            body,
+        )
+        self.assertIn("■", body)
+        self.assertIn("same truncated", body)
+        self.assertIn("rejected", body.lower())
+        self.assertIn("DIFFERENT", body)
+        self.assertIn("72b5507c", body)
+        self.assertIn("57e0a0bc", body)
+        self.assertIn("fe4bbc68", body)
+        self.assertIn("c6d669f140", body)
+        self.assertIn("field potential", body)
+        self.assertIn("import into `domain_architect/`", body)
+        self.assertIn("Do not invent", body)
+        self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
+        self.assertFalse((LIVE_ROOT / "harmonic_blueprint.py").is_file())
+        miss = (
+            ARCHIVE_SFE_HB / "HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("same truncated file already archived", miss)
+        self.assertIn("not received", miss.lower())
+        self.assertFalse((ARCHIVE_SFE_HB / "SFE_Research_Map.html").is_file())
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("same truncated file", note)
+        self.assertIn("DIFFERENT", note)
+
     def test_hardback_docx_arrived_from_drive_not_as_clay(self):
         path = ARCHIVE_SFE_HB / "Harmonic_Blueprint_HARDBACK.docx"
         self.assertTrue(path.is_file(), path)

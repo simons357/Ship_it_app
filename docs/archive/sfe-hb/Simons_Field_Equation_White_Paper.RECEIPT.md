@@ -39,7 +39,9 @@ is labeled “curvature.” It is **not** the prime-counting function
 ## What it is not
 
 - **Not** [`SFE_Breathing_Field_Book_Paste.md`](SFE_Breathing_Field_Book_Paste.md)
-  (different document: book-opening Ch. I–III fragment).
+  (different document: book-opening Ch. I–III fragment). The later Glass
+  follow-up is that same truncated paste already archived, not this white
+  paper.
 - **Not** Drive `Multi_Scale_Cymatics_White_Paper.pdf`
   (`1AEUmH_ptXi3LelpO-TiV0OJqAc6X2O19`).
 - **Not** the missing Chapter 8 Explained txt.

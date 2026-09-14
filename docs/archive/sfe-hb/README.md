@@ -10,6 +10,10 @@ Millennium primer *Unified Harmonic Solutions…* is archived beside it and
 [`Unified_Harmonic_Solutions_Millennium_Problems.md`](Unified_Harmonic_Solutions_Millennium_Problems.md).
 Breathing-field book paste (Ch. I–III fragment, truncated):
 [`SFE_Breathing_Field_Book_Paste.md`](SFE_Breathing_Field_Book_Paste.md).
+Later Glass follow-up is the **same truncated file** already archived.
+Chapter III body is now filed as it arrived (replacement boxes ■). Still
+truncated. **Not** a GR+QM unification theorem. White paper is a
+**DIFFERENT** file.
 Named 150-page PDF **arrived as a 12-page padded stub** (SHA `c6d669f140…`),
 not 150 pages. White paper txt **arrived** (SHA `72b5507c…`, 5 June 2025
 outline). Research map / Ch.8 Explained txt still **not received**:
