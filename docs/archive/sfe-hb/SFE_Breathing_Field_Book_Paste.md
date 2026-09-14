@@ -12,8 +12,8 @@
 > **field-program ansatz**. The archived Equation Explorer toy uses a
 > related sum that **does not even depend on \(x\)**. Do not glue this
 > breathing \(\Phi\) to swirl \(\Phi=u_\theta/r\), DA output \(\Phi\),
-> Newtonian \(\Phi_g\), Paper2 \(\Phi_j\), or the white-paper “field
-> potential” \(\Phi\).
+> Newtonian \(\Phi_g\), Paper2 \(\Phi_j\), or the white-paper
+> “field potential” \(\Phi\).
 >
 > “SFE satisfies all three unification criteria” is **rejected** as a
 > proof claim. Testable-model language is a program, not a result.
