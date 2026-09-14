@@ -53,6 +53,7 @@ known theory.
 | Null and counterexample registry | `null_results.json`, `EquationRegistry.record_null` |
 | Hilbert–Pólya completeness audit; circular \(\Phi:=\)zeros refused | `hilbert_polya.py` |
 | Pólya probe + Millennium look (parts vs Clay prizes, rhymes not solutions) | `polya_probe.py`, `millennium_overlap.py` |
+| Breakdown children (refusals as path guidance) | `breakdown_children.py` |
 | GUE statistics \(\neq\) spectral identity laboratory | `hilbert_polya.gue_is_not_riemann_spectrum` |
 | Weyl-law screen rejects oscillator / equal spacing | `hilbert_polya.weyl_law_screen` |
 
@@ -68,7 +69,7 @@ is a valid scientific outcome and is stored as `NULL-SFE-CANON`.
 rectification report.
 
 ```bash
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya tests.test_polya_probe tests.test_millennium_overlap
+python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya tests.test_polya_probe tests.test_millennium_overlap tests.test_breakdown_children
 ```
 
 ```bash

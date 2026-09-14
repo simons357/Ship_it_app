@@ -103,9 +103,8 @@ A completed interface *map* is still only classification. Completeness of the
 
 ## 3. Piece-by-piece work breakdown
 
-Each piece is independently specifiable in the Domain Architect sense: it can
-be written, tested, or marked blocked without silently merging it into the
-others.
+Each parent piece has **children** (sub-pieces). Refusals are path guidance.
+Run: `python -m domain_architect --breakdown-children`.
 
 ### Configuration layer (UHF) — can be started now
 

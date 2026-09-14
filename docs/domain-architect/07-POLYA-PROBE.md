@@ -43,6 +43,7 @@ Run the CLI for the live component count, filter pops, and DA’s request list.
 ```bash
 python -m domain_architect --polya-probe
 python -m domain_architect --pair
+python -m domain_architect --breakdown-children
 ```
 
 The narrative leads with **who survived the filter**, then **what popped**,
@@ -61,6 +62,5 @@ NS / Yang–Mills / BSD / Hodge / P vs NP. Closest NS rhyme is Pólya 1921
 Riemann kernel \(\Phi\) collides in notation with swirl \(\Phi=u_\theta/r\).
 No Pólya object unifies the Clay prizes.
 
-Do not merge Berry–Keating, Connes, GUE, \(\operatorname{diag}(\gamma_n)\),
-the LP class, \(\Lambda\), Pólya frequency kernels, membrane Weyl laws,
-enumeration, or random walk into one object.
+Refusals and blocked children are **path guidance** for the NS/RH chase:
+`python -m domain_architect --breakdown-children`.

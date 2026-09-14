@@ -25,6 +25,7 @@ from .schema import (
 from .audit import audit_expression
 from .hilbert_polya import audit_candidate, default_program_audit
 from .polya_probe import run_polya_probe
+from .breakdown_children import run_breakdown_children
 from .millennium_overlap import millennium_look_narrative
 from .report import AuditReport
 
@@ -43,6 +44,7 @@ __all__ = [
     "default_program_audit",
     "run_polya_probe",
     "millennium_look_narrative",
+    "run_breakdown_children",
 ]
 
-__version__ = "0.4.5"
+__version__ = "0.4.6"

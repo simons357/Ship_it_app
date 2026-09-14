@@ -35,7 +35,8 @@ python -m domain_architect --hilbert-polya
 python -m domain_architect --polya-probe
 python -m domain_architect --millennium-look
 python -m domain_architect --pair
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya tests.test_polya_probe tests.test_millennium_overlap
+python -m domain_architect --breakdown-children
+python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya tests.test_polya_probe tests.test_millennium_overlap tests.test_breakdown_children
 ```
 
 Related closed experiment in this repository:

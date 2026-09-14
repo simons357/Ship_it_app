@@ -12,13 +12,14 @@ from .hilbert_polya import (
     default_program_audit,
     list_candidate_ids,
 )
-from .polya_probe import run_polya_probe
+from .breakdown_children import run_breakdown_children
 from .millennium_overlap import (
     list_pair_ids,
     millennium_look_narrative,
     run_default_pairs,
     run_equation_pair,
 )
+from .polya_probe import run_polya_probe
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 
@@ -77,7 +78,37 @@ def main(argv: list[str] | None = None) -> int:
             "(default if flag is present with no name)"
         ),
     )
+    parser.add_argument(
+        "--breakdown-children",
+        action="store_true",
+        help=(
+            "split parent breakdowns into children, run parseable ones, "
+            "and list path guidance from refusals"
+        ),
+    )
     args = parser.parse_args(argv)
+
+    if args.breakdown_children:
+        text = run_breakdown_children()
+        if args.json:
+            from .breakdown_children import breakdown_children, path_guides
+
+            json.dump(
+                {
+                    "children": [c.to_dict() for c in breakdown_children()],
+                    "path_guides": path_guides(),
+                    "narrative": text,
+                },
+                sys.stdout,
+                indent=2,
+                default=str,
+            )
+            sys.stdout.write("\n")
+        else:
+            print(text)
+            print()
+            print(f"Canonical SFE status: {CANONICAL_SFE_STATUS}.")
+        return 0
 
     if args.pair:
         try:
