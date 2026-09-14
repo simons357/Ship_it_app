@@ -27,7 +27,10 @@ class TestVal8000HumorAndMouth(unittest.TestCase):
         self.assertIn("He is **not** Skynet", text)
         self.assertIn("Idle mouth: a straight line.", text)
         self.assertIn("After he answers, he usually smiles.", text)
-        self.assertIn("Metal teeth are rare.", text)
+        self.assertIn("Teeth when someone compliments him.", text)
+        self.assertIn("Teeth when he tells a funny joke.", text)
+        self.assertIn("Teeth when he uses sarcasm.", text)
+        self.assertNotIn("Metal teeth are rare.", text)
         self.assertNotIn("Smile when the joke earns it.", text)
         self.assertNotIn("not a terminator, not a skull", text.lower())
 

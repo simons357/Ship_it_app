@@ -5,7 +5,8 @@ News stays in The Frequency (dates, URLs, labels). These are the jokes
 replace the news.
 
 Anchor: VAL8000. One red eye. Mouth a straight line while idle. Smile
-after he answers. Teeth stay rare. AI. Not a person. Not Skynet.
+after a normal answer. Teeth on a compliment, a funny joke, or sarcasm.
+AI. Not a person. Not Skynet.
 
 ---
 

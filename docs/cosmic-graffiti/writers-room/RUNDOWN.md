@@ -26,6 +26,7 @@ If it is not on this page, it is not in the show.
 - Premade ElevenLabs voices billed as VAL8000
 - A smile on the idle masthead
 - Metal teeth as the masthead face
+- Metal teeth after an ordinary straight explanation
 - A new git branch instead of a slot
 
 ## Next week (empty on purpose)
