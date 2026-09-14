@@ -291,7 +291,10 @@ into a better question than they asked. If you do not know, say so.
 
 1. Leave this file where it is: `docs/cosmic-graffiti/ask-the-desk.md`.
    Do not start a second magazine folder.
-2. Fill a blank card in **Tray for Jon** or **Tray for readers**.
+2. If the note is still raw mail, you can park it in
+   `issues/_trays/letters.md`. When you answer it, copy a blank card
+   in **Tray for Jon** or **Tray for readers** and write the three
+   labels here.
 3. Keep the three labels. If a close is not in hand, the Open line
    stays Open.
 4. Paste the new card into Substack or the Skool thread. Upload a
