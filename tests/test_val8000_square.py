@@ -43,6 +43,7 @@ class TestSquareLivesInTheDaView(unittest.TestCase):
         html = _read(STATIC / "index.html")
         self.assertIn('id="val8000-dock"', html)
         self.assertIn('class="val8000-square"', html)
+        self.assertIn("val8000-mouth-mark", html)
         self.assertIn("val8000-mouth-line.png", html)
         self.assertIn("Help with unanswered", html)
         self.assertIn("Ask the Desk", html)
@@ -67,6 +68,7 @@ class TestSquareLivesInTheDaView(unittest.TestCase):
         css = _read(DOCK / "val8000-dock.css")
         self.assertIn(".val8000-dock", css)
         self.assertIn("7.2rem", css)
+        self.assertIn("val8000-mouth-mark", css)
         self.assertIn("position: sticky", css)
         self.assertNotIn("display: none", css.split(".val8000-square")[1][:400])
 

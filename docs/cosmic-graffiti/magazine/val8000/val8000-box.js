@@ -223,7 +223,6 @@
       input.disabled = false;
       send.disabled = false;
       helpBtn.disabled = false;
-      input.focus();
     });
   }
 
@@ -250,7 +249,6 @@
       input.disabled = false;
       send.disabled = false;
       helpBtn.disabled = false;
-      input.focus();
     });
   });
   square.addEventListener("click", function () {
@@ -261,7 +259,7 @@
     setOpen(false);
     square.focus();
   });
-  input.addEventListener("focus", function () {
+  input.addEventListener("input", function () {
     if (!busy) setMouth(false);
   });
   document.addEventListener("keydown", function (ev) {

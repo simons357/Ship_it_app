@@ -61,11 +61,11 @@ body.val8000-ready {
 }
 .val8000-square-face,
 .val8000-launcher img {
-  width: 168%;
-  height: 168%;
-  margin: -8% -34% -60% -34%;
+  width: 112%;
+  height: 112%;
+  margin: -6%;
   object-fit: cover;
-  object-position: 50% 42%;
+  object-position: 50% 50%;
   pointer-events: none;
   display: block;
 }
