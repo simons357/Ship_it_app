@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>The House · Cosmic Graffiti · Jonathan Simons</title>
+<meta name="description" content="Cosmic Graffiti is the public house. Domain Architect is the lab. Three doors: street, investor table, $99 studio (plan)."/>
+<style>
+  :root {
+    --ink: #f4efe6;
+    --muted: #b7aa98;
+    --gold: #d4b56a;
+    --navy: #0c1018;
+    --panel: #161c28;
+    --line: #2a3344;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--navy);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  header, main, footer { max-width: 920px; margin: 0 auto; padding: 2rem 1.25rem; }
+  header { padding-top: 3rem; }
+  .kicker { color: var(--gold); letter-spacing: .18em; text-transform: uppercase; font-size: .72rem; font-family: system-ui, sans-serif; }
+  h1 { font-weight: normal; font-size: 2.4rem; margin: .3rem 0 0.6rem; }
+  h2 { font-weight: normal; font-size: 1.4rem; color: var(--gold); }
+  p.lead { font-size: 1.15rem; color: var(--muted); }
+  .doors { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 2rem 0; }
+  article.door {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 1.1rem 1.15rem 1.2rem;
+    min-height: 12rem;
+  }
+  article.door h3 { margin: 0 0 .4rem; font-size: 1.15rem; }
+  .price { font-family: system-ui, sans-serif; font-size: .75rem; color: var(--gold); letter-spacing: .08em; text-transform: uppercase; }
+  ul { padding-left: 1.1rem; }
+  li { margin: .25rem 0; }
+  a { color: var(--gold); }
+  .warn { border: 1px solid var(--gold); padding: .8rem 1rem; color: var(--muted); }
+  footer { color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); }
+</style>
+</head>
+<body>
+<header>
+  <p class="kicker">Prime Field Technologies · Savannah</p>
+  <h1>The House</h1>
+  <p class="lead">Jonathan Simons. Cosmic Graffiti is the magazine on the street. Domain Architect is the lab in the back. One building. Three doors.</p>
+</header>
+<main>
+  <p class="warn"><strong>The $99 studio is a sign, not a lock.</strong> There is no paywall in this repo. Domain Architect does not file patents. Live lab: DECOMPOSE → CROSS-DOMAIN TRANSLATE → SYNTHESIZE.</p>
+
+  <section class="doors" aria-label="Three doors">
+    <article class="door">
+      <p class="price">Street · free</p>
+      <h3>Walk in</h3>
+      <p>Science, music, and art as they show up around us. The Frequency prints the news. VAL8000 jokes after. Humor is the check.</p>
+      <p><a href="https://cosmic-graffiti-magazine.vercel.app/">Open the magazine</a></p>
+    </article>
+    <article class="door">
+      <p class="price">Table · investor walk</p>
+      <h3>See the work</h3>
+      <p>Domain Architect on a local machine. Paper faces with OPEN labeled OPEN. Turbulence program: ships active, other slots queued. A too-wide app catalog, named so nobody is surprised.</p>
+      <p><a href="../CATALOG.md">Catalog</a></p>
+    </article>
+    <article class="door">
+      <p class="price">Studio · $99 plan</p>
+      <h3>Later, a key</h3>
+      <p>Cleaned apps that actually run. Books and papers. Conceptual ideas. Patent-style archive Jon chooses to share — not DA filings, not “we patented the universe.”</p>
+      <p>Not wired. Do not charge air.</p>
+    </article>
+  </section>
+
+  <h2>What runs today</h2>
+  <ul>
+    <li>Magazine site — cosmic-graffiti-magazine.vercel.app</li>
+    <li>Working issues — docs/cosmic-graffiti/</li>
+    <li>Domain Architect — <code>python3 -m domain_architect app</code> on your computer (not a public website)</li>
+  </ul>
+
+  <h2>What does not run on this origin this week</h2>
+  <p>Twenty-six product names from the August 2026 census, Base44-gated explorers, hollow ChatVault, abandoned Ship It. Cleaning them onto one site is the work. Dumping them here is how the catalog got too wide.</p>
+
+  <h2>Writers</h2>
+  <p>The magazine is staffed like a comedy table: one rundown, one cue-card issue, VAL8000 on Weekend Update. Agents get slots. They do not get private magazines.</p>
+</main>
+<footer>
+  <div>For the record / not the last word.</div>
+  <div>Jonathan Simons · Prime Field Technologies LLC · Cosmic Graffiti</div>
+</footer>
+</body>
+</html>

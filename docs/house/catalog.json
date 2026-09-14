@@ -1,0 +1,31 @@
+{
+  "title": "Prime Field / Cosmic Graffiti house",
+  "updated": "2026-09-14",
+  "live_lab": "Domain Architect",
+  "magazine": "Cosmic Graffiti",
+  "paywall": "off",
+  "studio_price_usd": 99,
+  "studio_status": "plan",
+  "patents": "Domain Architect does not file patents. Studio archive is not a DA filing.",
+  "doors": {
+    "street": {"price_usd": 0, "status": "live-copy", "who": "anyone"},
+    "table": {"price_usd": 0, "status": "walk", "who": "investor or partner"},
+    "studio": {"price_usd": 99, "status": "plan", "who": "subscriber later"}
+  },
+  "items": [
+    {"id": "cg-magazine", "name": "Cosmic Graffiti", "kind": "magazine", "door": "street", "status": "runs", "where": "https://cosmic-graffiti-magazine.vercel.app/"},
+    {"id": "frequency", "name": "The Frequency", "kind": "magazine", "door": "street", "status": "magazine", "where": "docs/cosmic-graffiti/issues/"},
+    {"id": "val8000", "name": "VAL8000", "kind": "magazine", "door": "street", "status": "magazine", "where": "Weekend Update"},
+    {"id": "domain-architect", "name": "Domain Architect", "kind": "lab", "door": "table", "status": "local", "where": "python3 -m domain_architect app"},
+    {"id": "turbulence", "name": "Turbulence-reduction program", "kind": "program", "door": "table", "status": "local", "where": "docs/projects/turbulence-reduction/"},
+    {"id": "swirl", "name": "Swirl book", "kind": "paper", "door": "table", "status": "paper", "where": "docs/papers/swirl/"},
+    {"id": "gcd", "name": "GCD / Q6 book", "kind": "paper", "door": "table", "status": "paper", "where": "docs/papers/gcd/"},
+    {"id": "ns-snd", "name": "NS–SND Paper2", "kind": "paper", "door": "table", "status": "conditional", "where": "docs/papers/ns-snd/"},
+    {"id": "ring", "name": "Ring lemma", "kind": "paper", "door": "table", "status": "conditional", "where": "docs/papers/ring/"},
+    {"id": "primefield-tech", "name": "primefield.tech", "kind": "site", "door": "table", "status": "runs", "where": "https://primefield.tech/"},
+    {"id": "studio-apps", "name": "Cleaned apps packet", "kind": "apps", "door": "studio", "status": "plan", "where": "not wired"},
+    {"id": "studio-books", "name": "Books and papers zip", "kind": "books", "door": "studio", "status": "plan", "where": "not wired"},
+    {"id": "studio-ideas", "name": "Conceptual ideas", "kind": "ideas", "door": "studio", "status": "plan", "where": "not wired"},
+    {"id": "studio-patents", "name": "Patent-style archive", "kind": "archive", "door": "studio", "status": "plan", "where": "not DA filings"}
+  ]
+}
