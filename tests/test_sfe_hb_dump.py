@@ -415,7 +415,7 @@ class TestRhHarmonicPerspectiveStaysArchived(unittest.TestCase):
         self.assertTrue(path.is_file(), path)
         text = path.read_text(encoding="utf-8")
         self.assertIn("NOT CLAIMED", text)
-        self.assertIn("rejected as a solve", text)
+        self.assertIn("rejected** as a solve", text)
         self.assertIn("does **not** prove RH", text)
         self.assertIn("Harmonic_Perspective_on_RH_2026-08-14.md", text)
         missing = ARCHIVE_SFE_HB / "HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md"
