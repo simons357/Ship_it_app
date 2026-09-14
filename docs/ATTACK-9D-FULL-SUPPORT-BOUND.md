@@ -79,6 +79,8 @@ Grow-\(s\) page: [`ATTACK-9D-GROW-S.md`](ATTACK-9D-GROW-S.md).
 Written answers to the twenty
 specialist questions:
 [`ATTACK-9D-SPECIALIST-QUESTIONS.md`](ATTACK-9D-SPECIALIST-QUESTIONS.md).
+Tree of dead vs living branches:
+[`NS-TREE.md`](NS-TREE.md).
 Items 5–10 and 14 are also inline below.
 
 The next review is concrete: verify the
