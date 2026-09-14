@@ -71,6 +71,7 @@
   display: none;
   flex-direction: column;
   max-height: min(38rem, calc(100vh - 24px));
+  overflow: hidden;
   background:
     radial-gradient(circle at 12% 0%, rgba(193, 18, 31, 0.16), transparent 42%),
     radial-gradient(circle at 88% 100%, rgba(201, 162, 39, 0.12), transparent 46%),
@@ -228,9 +229,10 @@
   color: #d8ccb0;
 }
 .val8000-deeper[open] .val8000-deep {
-  max-height: min(14rem, 36vh);
+  max-height: min(11rem, 28vh);
   overflow: auto;
   padding-right: 4px;
+  padding-bottom: 6px;
 }
 .val8000-deep p { margin: 0 0 0.7em; }
 .val8000-deep p:last-child { margin-bottom: 0; }
