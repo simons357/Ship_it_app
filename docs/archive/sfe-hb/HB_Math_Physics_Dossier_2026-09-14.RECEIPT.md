@@ -120,8 +120,9 @@ dump’s \(\Phi\) is **not** that leftover.
 
 ## What this filing does not do
 
-- Does **not** import the book into `domain_architect/`. No `sfe.py`,
-  `hb.py`, `a11.py`, or live Harmonic Blueprint engine.
+- Does **not** import the book into `domain_architect/`. Do **not**
+  import into `domain_architect/`. No `sfe.py`, `hb.py`, `a11.py`, or
+  live Harmonic Blueprint engine.
 - Does **not** merge A1–A14 into FRA-5 or lock one formula as “the”
   SFE.
 - Does **not** use the book as the August Q6 public face.

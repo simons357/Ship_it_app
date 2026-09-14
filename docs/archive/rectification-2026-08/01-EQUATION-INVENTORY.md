@@ -135,8 +135,7 @@ Until the files in [03 — Reconciliation §6](03-RECONCILIATION.md) arrive, the
 A 14 September 2026 catalog A1–A14 (S01–S17) is filed as a **shelf
 book**
 [`docs/archive/sfe-hb/HB_Math_Physics_Dossier_2026-09-14.docx`](../sfe-hb/HB_Math_Physics_Dossier_2026-09-14.docx)
-(unknown provenance, unknown author; SHA `16228b707961bce7…`). Do
-**not** merge those rows into SFE-PUB / SFE-QM / FRA-5 or into live
+(unknown provenance, unknown author; SHA `16228b707961bce7…`). Do **not** merge those rows into SFE-PUB / SFE-QM / FRA-5 or into live
 Domain Architect. If a later study finds an equation there that is
 actually relevant, notify Jon.
 Receipt: [`HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md`](../sfe-hb/HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md).
