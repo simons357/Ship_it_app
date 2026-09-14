@@ -24,6 +24,8 @@ Letters collide: Q6 \(H_N\) \(\neq\) Paper2 \(H_N[a]\) \(\neq\) FRA \(H\).
 
 - **Public / usable Q6 arithmetic:** 21 August Zenodo PDF. Definitions,
   Bridge\* on a prime pair, nonnegative cone. Do not overwrite.
+- **Q6 \(\to\) Mertens transfer:** [`Q6_MERTENS_TRANSFER.md`](Q6_MERTENS_TRANSFER.md)
+  **still OPEN**. Not Cardinal. Not Redheffer. Clay **NOT CLAIMED.**
 - **MAGNUM TeX:** alias of the May mix TeX (SHA `f41194c7…`). Do not re-file.
   Receipt [`docs/archive/gcd-spectral-attractor-2026-05/GCD_SPECTRAL_ATTRACTOR_MAGNUM.ALIAS.md`](../../archive/gcd-spectral-attractor-2026-05/GCD_SPECTRAL_ATTRACTOR_MAGNUM.ALIAS.md).
 - **May mix / attractor metaphysics:** archive only. Do not upgrade NS / RH /
