@@ -44,6 +44,7 @@ Run the CLI for the live component count, filter pops, and DA’s request list.
 python -m domain_architect --polya-probe
 python -m domain_architect --pair
 python -m domain_architect --breakdown-children
+python -m domain_architect --ns-model
 ```
 
 The narrative leads with **who survived the filter**, then **what popped**,
@@ -64,3 +65,6 @@ No Pólya object unifies the Clay prizes.
 
 Refusals and blocked children are **path guidance** for the NS/RH chase:
 `python -m domain_architect --breakdown-children`.
+
+The **kept NS model** (axisymmetric-with-swirl KEEP algebra) is a separate
+DA instance: `python -m domain_architect --ns-model`. Clay NS is not claimed.

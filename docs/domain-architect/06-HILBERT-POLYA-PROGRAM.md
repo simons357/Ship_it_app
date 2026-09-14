@@ -258,3 +258,5 @@ constructions and kept as historical records.
 - Merging Berry–Keating, Connes, GUE statistics, and \(\operatorname{diag}(\gamma_n)\).
 - Claiming the Riemann hypothesis, a Millennium result, or a canonical SFE.
 - Reintroducing the informal nickname “five fingers” as product language.
+
+The kept NS model is a **different instance**: `python -m domain_architect --ns-model`. See [08 — Kept NS model](08-NS-MODEL.md).

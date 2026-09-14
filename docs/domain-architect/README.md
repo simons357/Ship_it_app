@@ -20,6 +20,7 @@ Approved plain-language explanation:
 | [05 — Rectification](05-RECTIFICATION.md) | Software implementation of the August 2026 corrective specification |
 | [06 — Hilbert–Pólya program](06-HILBERT-POLYA-PROGRAM.md) | Core-role map and piece-by-piece completeness audit; not a proof of RH |
 | [07 — Pólya probe](07-POLYA-PROBE.md) | Full briefing: N components, proven Pólya facts, no Millennium glue |
+| [08 — Kept NS model](08-NS-MODEL.md) | What happens when the KEEP swirl model is entered into DA; Clay NS not claimed |
 | [NS review / Φ-renorm audit](../ns-review/PHI-RENORM-AUDIT-2026-08-22.md) | Independent audit of June 30 swirl paper; KEEP identity; barrier open; not Clay |
 
 Machine-readable provenance (original expressions are immutable):
@@ -36,7 +37,8 @@ python -m domain_architect --polya-probe
 python -m domain_architect --millennium-look
 python -m domain_architect --pair
 python -m domain_architect --breakdown-children
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya tests.test_polya_probe tests.test_millennium_overlap tests.test_breakdown_children
+python -m domain_architect --ns-model
+python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya tests.test_polya_probe tests.test_millennium_overlap tests.test_breakdown_children tests.test_ns_model
 ```
 
 Related closed experiment in this repository:

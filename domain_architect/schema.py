@@ -31,6 +31,8 @@ HILBERT_POLYA_STATUS: Final[str] = (
 
 RH_STATUS: Final[str] = "not claimed"
 
+NS_CLAY_STATUS: Final[str] = "not claimed"
+
 ROLE_GLOSSARY: Final[dict[str, str]] = {
     "P": "admissibility/selection role",
     "H": "interaction/coupling role",

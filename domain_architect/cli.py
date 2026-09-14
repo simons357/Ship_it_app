@@ -13,6 +13,7 @@ from .hilbert_polya import (
     list_candidate_ids,
 )
 from .breakdown_children import run_breakdown_children
+from .ns_model import render_ns_model, run_ns_model
 from .millennium_overlap import (
     list_pair_ids,
     millennium_look_narrative,
@@ -86,7 +87,26 @@ def main(argv: list[str] | None = None) -> int:
             "and list path guidance from refusals"
         ),
     )
+    parser.add_argument(
+        "--ns-model",
+        action="store_true",
+        help=(
+            "enter the kept NS model (axisymmetric-with-swirl Φ-renorm) "
+            "into Domain Architect and report what happens; Clay NS not claimed"
+        ),
+    )
     args = parser.parse_args(argv)
+
+    if args.ns_model:
+        report = run_ns_model()
+        if args.json:
+            json.dump(report.to_dict(), sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print(render_ns_model(report))
+            print()
+            print(f"Canonical SFE status: {CANONICAL_SFE_STATUS}.")
+        return 0
 
     if args.breakdown_children:
         text = run_breakdown_children()

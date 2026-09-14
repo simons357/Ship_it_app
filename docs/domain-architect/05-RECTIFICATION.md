@@ -69,11 +69,12 @@ is a valid scientific outcome and is stored as `NULL-SFE-CANON`.
 rectification report.
 
 ```bash
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya tests.test_polya_probe tests.test_millennium_overlap tests.test_breakdown_children
+python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya tests.test_polya_probe tests.test_millennium_overlap tests.test_breakdown_children tests.test_ns_model
 ```
 
 ```bash
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
 python -m domain_architect --hilbert-polya
+python -m domain_architect --ns-model
 ```

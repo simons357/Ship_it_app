@@ -76,7 +76,7 @@ Aligned with Jonathan’s settled inventory (Phi-renorm KEEP; Bridge / Triple Lo
 | Open condition \(\|u^r/r\|_{L^\infty}\) uniform in \(\eps\) | Equivalent to axisymmetric-with-swirl GR |
 | Möbius–GCD / Q6 structure notes **without** “RH proved” | Separate arithmetic book |
 | Unaugmented NS + SND | **Hypothesis** (open) |
-| Domain Architect | Honesty / routing — refuses false glue |
+| Domain Architect | Honesty / routing — refuses false glue. Live ingest: `python -m domain_architect --ns-model` |
 
 ### PARK / analogy (hold poetically; do not green as proof)
 

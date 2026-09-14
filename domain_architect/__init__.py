@@ -17,6 +17,7 @@ from .schema import (
     HILBERT_POLYA_STATUS,
     PRODUCT_DESCRIPTION,
     RH_STATUS,
+    NS_CLAY_STATUS,
     EvidenceLevel,
     PermissionSubtype,
     RecoveryKind,
@@ -27,6 +28,7 @@ from .hilbert_polya import audit_candidate, default_program_audit
 from .polya_probe import run_polya_probe
 from .breakdown_children import run_breakdown_children
 from .millennium_overlap import millennium_look_narrative
+from .ns_model import NSModelReport, render_ns_model, run_ns_model
 from .report import AuditReport
 
 __all__ = [
@@ -34,6 +36,7 @@ __all__ = [
     "HILBERT_POLYA_STATUS",
     "PRODUCT_DESCRIPTION",
     "RH_STATUS",
+    "NS_CLAY_STATUS",
     "AuditReport",
     "EvidenceLevel",
     "PermissionSubtype",
@@ -45,6 +48,9 @@ __all__ = [
     "run_polya_probe",
     "millennium_look_narrative",
     "run_breakdown_children",
+    "NSModelReport",
+    "render_ns_model",
+    "run_ns_model",
 ]
 
-__version__ = "0.4.6"
+__version__ = "0.4.7"
