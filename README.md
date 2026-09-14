@@ -23,6 +23,14 @@ single plant: [`docs/projects/turbulence-reduction/README.md`](docs/projects/tur
 Ships (Maersk-class) is ACTIVE. Aircraft (drones included), submarines,
 and hypersonic vehicles are QUEUED slots for later DA studies.
 
+## Cosmic Graffiti
+
+Public magazine. Working issues live in
+[`docs/cosmic-graffiti/`](docs/cosmic-graffiti/README.md).
+**The Frequency** is the news feed that goes into the magazine. Live
+product remains Domain Architect. The magazine is the public table, not
+a second physics engine, and this repo does not turn on a paywall.
+
 ## Open the app
 
 This is a local desktop app. It is not a public website.
@@ -70,5 +78,5 @@ the provenance requirement.
 ## Tests
 
 ```bash
-python -m unittest tests.test_sfe_hb_dump tests.test_domain_architect_v1 tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_historical_archive tests.test_brand_mark tests.test_desktop_app tests.test_phi_geometry_bridge tests.test_challenge_01_ns tests.test_available_turbulence tests.test_turbulence_program
+python -m unittest tests.test_sfe_hb_dump tests.test_domain_architect_v1 tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_historical_archive tests.test_brand_mark tests.test_desktop_app tests.test_phi_geometry_bridge tests.test_challenge_01_ns tests.test_available_turbulence tests.test_turbulence_program tests.test_cosmic_graffiti_frequency
 ```
