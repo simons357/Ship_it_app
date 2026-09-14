@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Assembly desk · Cosmic Graffiti</title>
+<meta name="description" content="Workspace to assemble Cosmic Graffiti chapters for magazine, Substack, and Skool. Not a second brand."/>
+<link rel="icon" href="assets/cosmic-graffiti-magazine-icon.webp"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <div class="logos">
+      <img src="assets/cg-logo.webp" alt="Cosmic Graffiti"/>
+      <img src="assets/pf-logo.webp" alt="Prime Field"/>
+      <img src="assets/da-logo-sm.webp" alt="Domain Architect"/>
+    </div>
+    <div class="mast-meta">Assembly desk · not a second brand<br/><span style="font-size:.85em;opacity:.9">Magazine · Substack · Skool</span></div>
+  </header>
+
+  <nav class="site" aria-label="Desk">
+    <a class="active" href="index.html">Rundown</a>
+    <a href="issue-1.html">Issue 1 · three outs</a>
+    <a href="open-progress.html">Open Progress</a>
+    <a href="teaching-pictures.html">Teaching pictures</a>
+    <a href="https://cosmic-graffiti-magazine.vercel.app/" rel="noopener">Live magazine</a>
+  </nav>
+
+  <p class="kicker">Workspace · Cosmic Graffiti · 14 September 2026</p>
+  <h1>Assemble the chapter</h1>
+  <p class="byline">
+    One rundown. Cue cards. Empty trays.<br/>
+    Not ten thousand staff. Three outs: magazine, Substack, Skool.<br/>
+    VAL8000 sits in a little box <em>after</em> the news — never the lead.
+  </p>
+
+  <div class="disclaimer">
+    <strong>This is the desk, not a second brand.</strong>
+    Live public feel stays
+    <a href="https://cosmic-graffiti-magazine.vercel.app/">cosmic-graffiti-magazine.vercel.app</a>.
+    Paywall off. Domain Architect is the local lab, not a public website.
+    Substack: <a href="https://jonathansimonscrna.substack.com">jonathansimonscrna.substack.com</a>
+    (not the education-policy namesake).
+  </div>
+
+  <div class="cue" aria-label="Cue cards">
+    <div class="cue-card"><strong>Magazine</strong> Navy/gold HTML. Issue 1 quality. Labels loud.</div>
+    <div class="cue-card"><strong>Substack</strong> Title, dek, body, image list, alt text. Paste.</div>
+    <div class="cue-card"><strong>Skool</strong> Shorter hook. Pictures. Ask in this thread.</div>
+    <div class="cue-card"><strong>VAL8000</strong> Red circular eye. Mouth is a line. Comments after.</div>
+  </div>
+
+  <section class="lead">
+    <div class="lead-copy">
+      <p class="kicker">How you add a card</p>
+      <p>
+        Folder <code>desk/entries/&lt;slug&gt;/</code> with <code>magazine.md</code>,
+        <code>substack.md</code>, <code>skool.md</code>, pictures in <code>assets/</code>,
+        optional <code>val.md</code>. Then a row in <code>rundown.json</code>:
+        live, draft, or tray.
+      </p>
+      <p class="cli">python3 scripts/cg_desk.py list<br/>python3 scripts/cg_desk.py show issue-1<br/>python3 scripts/cg_desk.py substack issue-1<br/>python3 scripts/cg_desk.py skool issue-1</p>
+      <p>Standing spec: <code>docs/cosmic-graffiti/ASSEMBLY.md</code></p>
+    </div>
+    <figure class="hero" style="margin:0">
+      <img src="assets/ISSUE1-portrait-redpills.webp" alt="Issue 1 portrait — two red pills, blue lab light"/>
+    </figure>
+  </section>
+
+  <div class="section-head">
+    <h2>On the board</h2>
+    <span>live · draft · tray</span>
+  </div>
+  <div class="cards">
+    <a class="card" href="issue-1.html">
+      <img src="assets/ISSUE1-portrait-redpills.webp" alt="Issue 1 portrait"/>
+      <span class="tag live">Live</span>
+      <span class="tag reported">Reported · not certified</span>
+      <h3>Ten thousand agents</h3>
+      <p>Issue 1. Swarm-scale attempt. Reported · not DA-certified. Three outs ready.</p>
+    </a>
+    <a class="card" href="open-progress.html">
+      <img src="assets/FOR-THE-RECORD-preview.webp" alt="For the Record lattice"/>
+      <span class="tag live">Live</span>
+      <span class="tag open">Unaugmented OPEN</span>
+      <h3>Open Progress</h3>
+      <p>Posters as the paper. Stands, open, WITHDRAWN. Never closed without the open companion.</p>
+    </a>
+    <a class="card" href="open-progress.html#record">
+      <img src="assets/SWIRL-CLOSED-ONEPAGER.webp" alt="Closed swirl one-pager"/>
+      <span class="tag live">Live</span>
+      <h3>For the Record</h3>
+      <p>Inventory. Closed · Open · Conditional · WITHDRAWN. Same pictures as Open Progress.</p>
+    </a>
+    <a class="card" href="teaching-pictures.html">
+      <img src="assets/periodic-box-t3.jpg" alt="Periodic box T³ teaching diagram"/>
+      <span class="tag draft">Draft</span>
+      <h3>The periodic box and one shell</h3>
+      <p>Fourier space bookkeeping, not cosmology. Pictures that already teach.</p>
+    </a>
+    <a class="card" href="https://cosmic-graffiti-magazine.vercel.app/" rel="noopener">
+      <img src="assets/cg-frequency-masthead-2026-09-14.png" alt="The Frequency masthead, 14 September 2026"/>
+      <span class="tag draft">Draft</span>
+      <h3>News from the neighborhood</h3>
+      <p>Frequency 14 Sep working chapter. Sourced news. Paywall off. Full paste via the CLI.</p>
+    </a>
+  </div>
+
+  <div class="section-head">
+    <h2>Empty trays</h2>
+    <span>honest holes</span>
+  </div>
+  <div class="cards">
+    <div class="card tray-card">
+      <div class="empty-art">Ask the Desk</div>
+      <span class="tag tray">Tray</span>
+      <h3>Ask the Desk</h3>
+      <p>Q&amp;A when copy lands. Known / Open / Picture. Do not invent answers to fill the hole.</p>
+    </div>
+    <div class="card tray-card">
+      <div class="empty-art">Cosmo Evolution</div>
+      <span class="tag tray">Tray</span>
+      <h3>Cosmo Evolution</h3>
+      <p>Three drawers: the sky, the attempt, pulled back. Never one theorem.</p>
+    </div>
+    <div class="card tray-card">
+      <div class="empty-art">VAL Weekend Update</div>
+      <span class="tag tray">Tray</span>
+      <h3>VAL Weekend Update</h3>
+      <p>Empty slot. When there is a note, VAL comments after the news. Not the masthead lead.</p>
+    </div>
+    <div class="card tray-card">
+      <div class="empty-art">Photos</div>
+      <span class="tag tray">Tray</span>
+      <h3>Jon’s photos</h3>
+      <p>Drop pictures. Alt text and a caption, or they do not ship.</p>
+    </div>
+    <div class="card tray-card">
+      <div class="empty-art">Story</div>
+      <span class="tag tray">Tray</span>
+      <h3>Jon’s story</h3>
+      <p>Your voice, when you have it. Not childhood autobiography in git.</p>
+    </div>
+    <div class="card tray-card">
+      <div class="empty-art">Later Frequency</div>
+      <span class="tag tray">Tray</span>
+      <h3>Later Frequency items</h3>
+      <p>Date, URL, two-sentence paraphrase, CG comment. No URL → no item.</p>
+    </div>
+  </div>
+
+  <div class="val-box" aria-label="VAL8000 face language">
+    <div class="val-face" aria-hidden="true">
+      <div class="val-eye"></div>
+      <div class="val-mouth"></div>
+    </div>
+    <div class="val-copy">
+      <p class="val-name">VAL8000 · little box · not the lead</p>
+      <p>Red circular eye. Mouth is a line. A smile when the joke lands. I comment after the news. I cannot certify a theorem. Unaugmented leftover stays open.</p>
+      <p>Make science cool again.</p>
+    </div>
+  </div>
+
+  <div class="soft">
+    <p><strong style="color:var(--gold2)">Labels that travel:</strong> reported ≠ certified · unaugmented leftover OPEN · DA-VC-01 FAIL · correspondence ≠ physical equivalence · letters collide.</p>
+    <p style="margin-top:8px">Jonathan Simons · Prime Field Technologies LLC · Savannah, GA · paywall off · DA does not file patents.</p>
+    <p style="margin-top:8px"><em>For the record / not the last word.</em></p>
+  </div>
+
+  <footer class="site">
+    <div>Cosmic Graffiti assembly desk · workspace, not a deploy</div>
+    <div>Live: cosmic-graffiti-magazine.vercel.app</div>
+  </footer>
+</div>
+</body>
+</html>

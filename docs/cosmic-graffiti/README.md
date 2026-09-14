@@ -29,6 +29,7 @@ not a rename and not a second brand.
 | Public HTML stack | [cosmic-graffiti-magazine.vercel.app](https://cosmic-graffiti-magazine.vercel.app/) |
 | Locked 13 Sep copy | git branch `cursor/cosmic-graffiti-archive-9d6b` under `docs/archive/cosmic-graffiti-magazine-2026-09-13/` |
 | Working markdown (this folder) | issues Jon can edit, plus Frequency items with real URLs |
+| **Assembly desk** (three outs) | [`ASSEMBLY.md`](ASSEMBLY.md) · [`desk/`](desk/) · local board [`desk/public/index.html`](desk/public/index.html) |
 | Older swirl leftover / “GRAFITTI” typo cut | other branches only; do not revive the misspelling here |
 
 The older Frequency rail was mostly in-house tips (open doors, Zenodo
@@ -53,6 +54,15 @@ The Frequency (sourced news)
 Paste-ready Substack markdown lives in `issues/`. A short Skool variant
 sits next to the issue. Pictures live in `issues/assets/`. Drop files for
 later in `issues/_trays/`.
+
+To assemble **one chapter into three outs** (magazine / Substack / Skool),
+use the assembly desk: [`ASSEMBLY.md`](ASSEMBLY.md). One rundown, cue
+cards, empty trays. VAL8000 is a little box after the news, not the lead.
+
+```bash
+python3 scripts/cg_desk.py list
+python3 scripts/cg_desk.py show issue-1
+```
 
 ## How Jon adds to it
 
@@ -90,5 +100,5 @@ theory.
 ## Tests
 
 ```bash
-python -m unittest tests.test_cosmic_graffiti_frequency
+python -m unittest tests.test_cosmic_graffiti_frequency tests.test_cg_assembly_desk
 ```

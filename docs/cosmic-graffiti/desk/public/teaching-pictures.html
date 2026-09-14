@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Teaching pictures · three outs · Assembly desk</title>
+<link rel="icon" href="assets/cosmic-graffiti-magazine-icon.webp"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="wrap-narrow">
+  <header class="masthead">
+    <div class="logos">
+      <img src="assets/cg-logo.webp" alt="Cosmic Graffiti"/>
+      <img src="assets/pf-logo.webp" alt="Prime Field"/>
+      <img src="assets/da-logo-sm.webp" alt="Domain Architect"/>
+    </div>
+    <div class="mast-meta">Assembly desk · visualizer beat<br/><span style="font-size:.85em;opacity:.9">Three outs</span></div>
+  </header>
+  <nav class="site">
+    <a href="index.html">Rundown</a>
+    <a href="issue-1.html">Issue 1</a>
+    <a href="open-progress.html">Open Progress</a>
+    <a class="active" href="teaching-pictures.html">Teaching pictures</a>
+  </nav>
+
+  <p class="kicker">Card · draft · visualizer / art</p>
+  <h1>The periodic box and one shell</h1>
+  <p class="byline">Fourier space bookkeeping, not cosmology<br/>Pictures that already teach. No new theorem.</p>
+  <div class="disclaimer">
+    <strong>Draft on the desk.</strong>
+    These drawings already earn their captions. This card does not close unaugmented leftover.
+    <strong>DA-VC-01</strong> remains <strong>FAIL</strong>.
+    Substack: <a href="https://jonathansimonscrna.substack.com">jonathansimonscrna.substack.com</a>. Paywall off.
+  </div>
+  <p class="cli">python3 scripts/cg_desk.py show teaching-pictures</p>
+
+  <div class="outs" role="tablist">
+    <button type="button" class="active" data-out="magazine">Magazine</button>
+    <button type="button" data-out="substack">Substack</button>
+    <button type="button" data-out="skool">Skool</button>
+  </div>
+
+  <div id="out-magazine" class="out-panel active">
+    <figure class="figure">
+      <img src="assets/periodic-box-t3.jpg" alt="Teaching diagram: Periodic box T³. Lattice of cyan dots in a cube. Opposite faces identified. Fluid fills the cube — no hole in the center. Exact shell |k|² = α. Footer: this is Fourier space bookkeeping, not cosmology."/>
+      <figcaption>Periodic box T³. Opposite faces identified. Fluid fills the cube — no hole in the center. Wavevectors k ∈ ℤ³. One circled sphere is an exact shell. Fourier space bookkeeping, not cosmology.</figcaption>
+    </figure>
+    <article>
+      <p>A periodic box is a cube whose opposite faces are the same face. Walk off the right wall, you come in from the left. The cyan dots are integer wavevectors. The pretty circle is not a hole in the room. It is one shell in wavevector space.</p>
+      <p>People sometimes look at a cube of dots and hear “universe.” The caption on the drawing already refuses that. Correspondence is not physical equivalence.</p>
+    </article>
+    <figure class="figure">
+      <img src="assets/exact-shell-interaction.jpg" alt="Teaching diagram: Exact-shell interaction. p and q on input shell, output k = p + q on shell |k|² = β. Leftover |k⊥|² = β(1 − β/4α). When β → 4α the leftover vanishes. This length is the shape of the claimed 4/3 bound."/>
+      <figcaption>Exact-shell interaction. p and q on the input shell. Output k = p + q on |k|² = β. The leftover length is the shape of a claimed 4/3 bound — a shape, not a close.</figcaption>
+    </figure>
+    <article>
+      <p>When the output shell gets as large as this setup allows, that leftover shrinks to nothing. That geometry is why people draw this diagram. It is not a certificate that unaugmented Navier–Stokes regularity is closed.</p>
+    </article>
+    <aside class="val-box">
+      <div class="val-face" aria-hidden="true"><div class="val-eye"></div><div class="val-mouth smile"></div></div>
+      <div class="val-copy">
+        <p class="val-name">VAL8000 · after the pictures</p>
+        <p>Okay. The cube looks like a star box. I get it. You want it to be a cosmos. It is a spreadsheet for waves.</p>
+        <p>The leftover length is the <em>shape</em> of a claimed bound. Shape. Claimed. I will not upgrade those words from a comment box.</p>
+        <p>Letters collide. I smile when they do.</p>
+      </div>
+    </aside>
+  </div>
+
+  <div id="out-substack" class="out-panel" hidden>
+    <p class="kicker">Paste-ready · jonathansimonscrna.substack.com</p>
+    <p><strong>Title:</strong> The periodic box and one shell</p>
+    <p><strong>Dek:</strong> Two teaching pictures. Fourier bookkeeping, not cosmology. A claimed leftover length is not a close.</p>
+    <p class="paste">Upload periodic-box-t3.jpg then exact-shell-interaction.jpg with the alt text from rundown.json.
+Body: cube is not a hole in the universe; shell interaction leftover |k⊥|² = β(1 − β/4α); unaugmented OPEN; DA-VC-01 FAIL.
+VAL after the body.</p>
+  </div>
+
+  <div id="out-skool" class="out-panel" hidden>
+    <p><strong>Hook:</strong> Two pictures that actually teach. A cube of dots is not a hole in the universe. Claimed ≠ closed. Unaugmented leftover stays OPEN.</p>
+    <p style="margin-top:1em"><strong>Ask in this thread:</strong> What did you first see in the cube — a room with a hole, or a lattice of waves?</p>
+  </div>
+
+  <footer class="site">
+    <div>Cosmic Graffiti · teaching-pictures card</div>
+    <div><em>For the record / not the last word.</em></div>
+  </footer>
+</div>
+<script>
+(function () {
+  var buttons = [].slice.call(document.querySelectorAll(".outs [data-out]"));
+  function show(name) {
+    buttons.forEach(function (btn) {
+      var on = btn.getAttribute("data-out") === name;
+      btn.classList.toggle("active", on);
+    });
+    ["magazine", "substack", "skool"].forEach(function (id) {
+      var el = document.getElementById("out-" + id);
+      if (!el) return;
+      var on = id === name;
+      el.classList.toggle("active", on);
+      if (on) el.removeAttribute("hidden"); else el.setAttribute("hidden", "");
+    });
+  }
+  buttons.forEach(function (btn) {
+    btn.addEventListener("click", function () { show(btn.getAttribute("data-out")); });
+  });
+})();
+</script>
+</body>
+</html>
