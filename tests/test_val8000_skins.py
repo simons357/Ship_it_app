@@ -259,5 +259,104 @@ class TestVal8000SkinsDrawer(unittest.TestCase):
         self.assertNotIn("Clay", self.spec)
 
 
+class TestVal8000StripeBody(unittest.TestCase):
+    """Stripe-body paint is a swap skin. Lens stays the face. Default stays naked."""
+
+    FORBIDDEN_MARKS = (
+        b"EVH",
+        b"Gibson",
+        b"Kramer",
+        b"5150",
+        b"Frankenstrat",
+        b"FrankenStrat",
+        b"Eddie",
+        b"VAN HALEN",
+        b"Van Halen",
+    )
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
+        cls.spec = SKINS_DOC.read_text(encoding="utf-8")
+        cls.persona = DOC.read_text(encoding="utf-8")
+        cls.js = JS.read_text(encoding="utf-8")
+        cls.by_id = {row["id"]: row for row in cls.catalog["skins"]}
+        cls.overlay = SKINS_DIR / "val8000-skin-stripe-body.png"
+        cls.sheet = SKINS_DIR / "val8000-skin-stripe-body-sheet.png"
+
+    def test_stripe_body_file_exists(self) -> None:
+        self.assertTrue(self.overlay.is_file(), self.overlay.name)
+        self.assertGreater(self.overlay.stat().st_size, 400)
+        width, height, color_type = _png_ihdr(self.overlay)
+        self.assertEqual((width, height), (1024, 1024), self.overlay.name)
+        self.assertEqual(color_type, 6, f"{self.overlay.name} must be RGBA overlay")
+        self.assertTrue(self.sheet.is_file(), self.sheet.name)
+        sheet_w, sheet_h, _color = _png_ihdr(self.sheet)
+        self.assertGreater(sheet_w, 800)
+        self.assertGreater(sheet_h, 400)
+
+    def test_catalog_lists_stripe_body_default_still_naked(self) -> None:
+        ids = [row["id"] for row in self.catalog["skins"]]
+        self.assertIn("stripe-body", ids)
+        row = self.by_id["stripe-body"]
+        self.assertEqual(row["overlay"], "val8000-skin-stripe-body.png")
+        self.assertEqual(row["kind"], "other")
+        self.assertIn("val8000-skin-stripe-body.png", row["files"])
+        notes = row["notes"].lower()
+        self.assertIn("swap skin", notes)
+        self.assertIn("body paint", notes)
+        self.assertIn("striped-guitar homage", notes)
+        self.assertIn("do not cover the pupil", notes)
+        self.assertEqual(self.catalog["default"], "naked")
+        self.assertEqual(self.catalog["default_skin"], "naked")
+        self.assertIsNone(self.by_id["naked"]["overlay"])
+        self.assertIn("stripe-body", self.js)
+        self.assertIn('DEFAULT_SKIN = "naked"', self.js)
+
+    def test_spec_says_lens_not_covered_idle_stays_a_line(self) -> None:
+        lower = self.spec.lower()
+        self.assertIn("stripes do not cover the pupil", lower)
+        self.assertIn("or the rings", lower)
+        self.assertIn("striped-guitar homage", lower)
+        self.assertIn("`stripe-body`", self.spec)
+        self.assertIn("thin line", lower)
+        self.assertIn("pickguard", lower)
+        self.assertIn("inner aperture rings", lower)
+        self.assertIn("default remains the naked square", lower)
+        self.assertIn("Idle mouth stays a straight line under every skin.", self.spec)
+
+    def test_lens_cutout_leaves_pupil_and_rings_open(self) -> None:
+        from PIL import Image
+
+        px = Image.open(self.overlay).convert("RGBA")
+        self.assertEqual(px.size, (1024, 1024))
+        pupil = px.getpixel((510, 461))[3]
+        ring = px.getpixel((510 + 140, 461))[3]
+        ring2 = px.getpixel((510, 461 - 160))[3]
+        self.assertLess(pupil, 20, "pupil must not be covered by stripes")
+        self.assertLess(ring, 20, "inner rings must not be covered by stripes")
+        self.assertLess(ring2, 40, "outer ring must not be covered by stripes")
+        body = px.getpixel((140, 200))[3]
+        self.assertGreater(body, 200, "square panel should be painted")
+        corner_out = px.getpixel((20, 20))[3]
+        self.assertLess(corner_out, 20, "outside the square stays transparent")
+
+    def test_public_png_has_no_trademark_wordmarks(self) -> None:
+        blob = self.overlay.read_bytes()
+        sheet = self.sheet.read_bytes()
+        for mark in self.FORBIDDEN_MARKS:
+            self.assertNotIn(mark, blob, mark.decode("ascii"))
+            self.assertNotIn(mark, sheet, mark.decode("ascii"))
+        public = "\n".join([self.persona, json.dumps(self.catalog), self.spec])
+        self.assertNotIn("Eddie", public)
+        self.assertNotIn("EVH", public)
+        self.assertNotIn("Gibson", public)
+        self.assertNotIn("Kramer", public)
+        self.assertNotIn("5150", public)
+        self.assertNotIn("Frankenstrat", public)
+        self.assertNotIn("HAL 9000", self.spec)
+        self.assertIn("VAL8000", self.spec)
+
+
 if __name__ == "__main__":
     unittest.main()

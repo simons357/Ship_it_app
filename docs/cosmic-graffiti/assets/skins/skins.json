@@ -110,6 +110,16 @@
       "when": "Swap only. Go deeper / sarcasm / Weekend Update scientist beat. Not automatic on insult."
     },
     {
+      "id": "stripe-body",
+      "name": "Stripe body",
+      "title": "Stripe body",
+      "kind": "other",
+      "files": ["val8000-skin-stripe-body.png", "val8000-skin-stripe-body-sheet.png"],
+      "overlay": "val8000-skin-stripe-body.png",
+      "notes": "Swap skin. Original body paint on the same square: cream field, bold red and black irregular angular stripes. Striped-guitar homage. Circular lens cutout — stripes do not cover the pupil or the rings. Idle mouth stays a thin line, not a pickguard jaw. Teeth, when on, live inside the camera rings. Default remains the naked square.",
+      "when": "Swap only. Body paint. Not the masthead default."
+    },
+    {
       "id": "tessellation-tray",
       "name": "Tessellation tray",
       "title": "Tessellation tray",
