@@ -11,6 +11,10 @@ Live product remains **Domain Architect**:
 DECOMPOSE → CROSS-DOMAIN TRANSLATE → SYNTHESIZE
 ```
 
+The dual-purpose **house** (street magazine, investor table, $99 studio
+as a **plan**) lives in [`docs/house/SITE.md`](../house/SITE.md). This
+folder is still the magazine working copy. Do not turn on a paywall here.
+
 Spec: [`docs/DOMAIN-ARCHITECT.md`](../DOMAIN-ARCHITECT.md).  
 Operator: [`docs/domain-architect/DA-MODE.md`](../domain-architect/DA-MODE.md).  
 Decision: Jon `accept grok table`.
