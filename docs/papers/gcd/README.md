@@ -28,6 +28,16 @@ The 19 Aug 2026 UHSA session dump ([`docs/archive/sfe-hb/`](../../archive/sfe-hb
 The Track C SFE black-hole `FuncAnimation` paste
 ([`docs/archive/nav-42-cbfd-2026-04/sfe_black_hole_simulator_paste.py`](../../archive/nav-42-cbfd-2026-04/sfe_black_hole_simulator_paste.py);
 **chat paste arrived**) is also **not** Q6 \(H_N\).
+The 14 Sep 2026 equation dump
+([`docs/archive/sfe-hb/HB_Math_Physics_Dossier_2026-09-14.docx`](../../archive/sfe-hb/HB_Math_Physics_Dossier_2026-09-14.docx),
+SHA `16228b707961bce7…`) is a **shelf book** (unknown provenance,
+unknown author). It prints both a Möbius–GCD kernel and
+\(Q_N=\mathrm{gcd}/\sqrt{ij}\). Those letters collide with this book;
+they are **not** this August PDF and **not** a Cardinal/Mertens
+transfer. Do **not** use that dump as this Q6 face. If a later study
+finds an equation there that is actually relevant here, notify Jon.
+Receipt:
+[`HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md`](../../archive/sfe-hb/HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md).
 
 DA leftover-split lab (this definition beside Ring SND; not a joint operator): [`docs/domain-architect/LEFTOVER-REPAIR.md`](../../domain-architect/LEFTOVER-REPAIR.md).
 

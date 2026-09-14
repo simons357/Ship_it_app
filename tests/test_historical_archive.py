@@ -14,6 +14,7 @@ from pathlib import Path
 
 import numpy as np
 
+from domain_architect.decompose import decompose
 from domain_architect.index_audit import audit_canonical_index
 from domain_architect.registry import EquationRegistry
 from domain_architect.historical import CANONICAL_SFE_STATUS
@@ -221,6 +222,44 @@ class TestUhsaSessionDumpIsHistorical(unittest.TestCase):
         self.assertIn("NOT CLAIMED", text)
         self.assertFalse((LIVE_ROOT / "d_master.py").is_file())
         self.assertFalse((LIVE_ROOT / "c_master.py").is_file())
+
+
+class TestHbMathPhysicsDossierIsHistorical(unittest.TestCase):
+    def test_dossier_stays_under_archive_sfe_hb(self):
+        path = ROOT / "docs" / "archive" / "sfe-hb" / "HB_Math_Physics_Dossier_2026-09-14.docx"
+        receipt = ROOT / "docs" / "archive" / "sfe-hb" / "HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md"
+        self.assertTrue(path.is_file(), path)
+        self.assertTrue(receipt.is_file(), receipt)
+        raw = path.read_bytes()
+        self.assertEqual(len(raw), 1445673)
+        self.assertEqual(
+            hashlib.sha256(raw).hexdigest(),
+            "16228b707961bce72369a25446b3945ae2ceb5b1d6e78391a9a8dae912a25834",
+        )
+        text = receipt.read_text(encoding="utf-8")
+        self.assertIn("unknown provenance", text.lower())
+        self.assertIn("unknown author", text.lower())
+        self.assertIn("notify Jon", text)
+        self.assertIn("Not live Domain Architect", text)
+        self.assertIn("Competing cores stay unlocked", text)
+        self.assertNotIn("Jonathan uploaded", text)
+        self.assertNotIn("Clay", text)
+        self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
+        self.assertFalse((LIVE_ROOT / "a11.py").is_file())
+        self.assertFalse((LIVE_ROOT / "hb.py").is_file())
+        index = (ROOT / "docs" / "archive" / "README.md").read_text(encoding="utf-8")
+        self.assertIn("HB_Math_Physics_Dossier_2026-09-14.docx", index)
+        self.assertIn("16228b707961bce7", index)
+        self.assertIn("not live DA", index)
+        dec = decompose("m*xdd + c*xd + k*x = f")
+        blob = (dec.tree.pretty() + " ".join(dec.warnings)).lower()
+        self.assertNotIn("a11", blob)
+        self.assertNotIn("harmonic blueprint", blob)
+        self.assertNotIn("hb_math_physics", blob)
+        gravity = (LIVE_ROOT / "gravity.py").read_text(encoding="utf-8")
+        self.assertIn("does not derive gravity", gravity)
+        self.assertNotIn("A11", gravity)
+        self.assertNotIn("HB_Math_Physics", gravity)
 
 
 class TestEquationExplorerIsHistorical(unittest.TestCase):

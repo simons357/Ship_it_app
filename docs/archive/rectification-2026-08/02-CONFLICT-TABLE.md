@@ -20,6 +20,7 @@ Columns:
 | C-SFE-4 | SFE-QM is called a Lagrangian | SFE-QM is also called an equation of motion | What the displayed string *is* | A Lagrangian density and an Euler–Lagrange equation are different objects. **RETIRE** until one is defined |
 | C-SFE-5 | Prior NS agent: “this is what SFE actually is” (SFE-PUB) | Audited handoff: canonical SFE remains unresolved | Whether a canonical formula exists | The handoff wins. Naming SFE-PUB as canonical was a drift |
 | C-SFE-6 | Early guess: SFE = Shell Flux Estimate | Later correction: SFE ≠ NS flux | Acronym | **RETIRE** the guess. Flux bounds stay in the fluids book |
+| C-SFE-7 | 14 Sep 2026 catalog A1–A14 (shelf book; unknown author) | FRA-5 / SFE-PUB / SFE-QM / SFE-HAM | Which formula is SFE | **Do not merge.** Keep that dump on the shelf. Do not use it as live SFE. If a later study finds a relevant equation, notify Jon. Receipt [`docs/archive/sfe-hb/HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md`](../sfe-hb/HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md) |
 
 ---
 
