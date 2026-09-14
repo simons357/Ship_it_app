@@ -56,7 +56,8 @@ class TestOdlyzkoOrigin(unittest.TestCase):
         self.assertIn("HP-H026", proc.stdout)
         self.assertIn("1914", proc.stdout)
         self.assertIn("Riemann hypothesis status: not claimed", proc.stdout)
-        self.assertIn("cannot document Hilbert", proc.stdout.lower())
+        self.assertIn("it is empty", proc.stdout.lower())
+        self.assertIn("very weak", proc.stdout.lower())
         self.assertNotIn("proves the riemann hypothesis", proc.stdout.lower())
 
 
