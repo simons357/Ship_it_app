@@ -516,6 +516,76 @@ class TestRhHarmonicPerspectiveStaysArchived(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("57e0a0bcf25f", gcd)
 
+    def test_full_docx_stub_is_not_the_book(self):
+        stub = ARCHIVE_SFE_HB / "The_Harmonic_Blueprint_FULL.docx"
+        receipt = ARCHIVE_SFE_HB / "The_Harmonic_Blueprint_FULL.RECEIPT.md"
+        hardback = ARCHIVE_SFE_HB / "Harmonic_Blueprint_HARDBACK.docx"
+        self.assertTrue(stub.is_file(), stub)
+        self.assertTrue(receipt.is_file(), receipt)
+        raw = stub.read_bytes()
+        self.assertEqual(len(raw), 36775)
+        self.assertEqual(
+            hashlib.sha256(raw).hexdigest(),
+            "fe4bbc6875cd541459ab15ff7499eaca50711a60d5758922126987474523f71a",
+        )
+        self.assertEqual(raw[:4], b"PK\x03\x04")
+        self.assertNotEqual(
+            hashlib.sha256(raw).hexdigest(),
+            hashlib.sha256(hardback.read_bytes()).hexdigest(),
+        )
+        text = receipt.read_text(encoding="utf-8")
+        self.assertIn("not the book", text.lower())
+        self.assertIn("placeholder", text.lower())
+        self.assertIn("NOT CLAIMED", text)
+        self.assertFalse((LIVE_ROOT / "harmonic_blueprint.py").is_file())
+        miss = (
+            ARCHIVE_SFE_HB / "HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("arrived as a stub", miss.lower())
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("The_Harmonic_Blueprint_FULL.docx", note)
+        self.assertIn("arrived as a stub", note)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("The_Harmonic_Blueprint_FULL.docx", archive_index)
+        self.assertIn("stub", archive_index.lower())
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("The_Harmonic_Blueprint_FULL.docx", lookup)
+        self.assertIn("fe4bbc6875", lookup)
+        gcd = (
+            Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("fe4bbc6875", gcd)
+
+    def test_chapter8_sfe_explained_txt_is_missing_not_invented(self):
+        receipt = ARCHIVE_SFE_HB / "Chapter8-SFE-Explained.MISSING.md"
+        named = (
+            ARCHIVE_SFE_HB
+            / "The_Harmonic_Blueprint_Full_Book__Chapter 8 - The Simons Field Equation Explained.txt"
+        )
+        self.assertTrue(receipt.is_file(), receipt)
+        self.assertFalse(named.is_file())
+        text = receipt.read_text(encoding="utf-8")
+        self.assertIn("not received", text.lower())
+        self.assertIn("Cymatics, Voice Identity", text)
+        self.assertIn("1THWPUeCc6mLZiuy3yNIDfLfjIeJcYN-2", text)
+        self.assertNotIn("invented the missing chapter", text.lower())
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("Chapter 8", note)
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Chapter8-SFE-Explained.MISSING.md", lookup)
+
 
 class TestSpectralUnificationPaperArchived(unittest.TestCase):
     """Frankie SPECTRAL_UNIFICATION_PAPER.tex is archive-only overclaim. Not Clay."""
