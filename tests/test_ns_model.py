@@ -60,8 +60,10 @@ class TestNSModel(unittest.TestCase):
         self.assertIn("fluids book", text)
         self.assertIn("load-bearing gap", text)
         self.assertNotIn("proves the riemann hypothesis", text)
-        self.assertNotIn("clay ns closed", text)
-        self.assertNotIn("proves navier", text)
+        self.assertNotIn("proves clay", text)
+        self.assertNotIn("ns is solved", text)
+        self.assertIn("not claimed", text)
+        self.assertIn("cannot call this clay ns closed", text)
 
     def test_swirl_phi_is_not_fra_phi(self):
         roles = {c.component_id: c for c in ns_components()}
@@ -87,7 +89,8 @@ class TestNSModel(unittest.TestCase):
         self.assertIn("NS-H002", proc.stdout)
         self.assertIn("fluids book", proc.stdout)
         self.assertNotIn("proves the riemann hypothesis", proc.stdout.lower())
-        self.assertNotIn("proves navier–stokes", proc.stdout.lower())
+        self.assertNotIn("proves clay", proc.stdout.lower())
+        self.assertIn("cannot call this clay ns closed", proc.stdout.lower())
 
 
 if __name__ == "__main__":
