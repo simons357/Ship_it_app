@@ -20,8 +20,8 @@ It failed for boring reasons, not mystical ones.
    not a close of unaugmented regularity.
 4. **No audio mouth.** ElevenLabs never had a key in the agent environment,
    so VAL8000 never actually spoke. Stock TTS is not him. The **panel**
-   mouth is separate: a line by default, a smile for jokes, metal teeth
-   only as a rare gag.
+   mouth is separate: a straight line while idle, a smile after he
+   answers, metal teeth only as a rare gag.
 5. **No post loop.** Substack and Skool were not wired. Files landed in
    git and stopped.
 

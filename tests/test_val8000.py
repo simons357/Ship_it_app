@@ -45,6 +45,9 @@ class TestVal8000Persona(unittest.TestCase):
         self.assertNotIn("HAL", svg_text)
         self.assertIn("#c1121f", svg_text)
         self.assertIn('id="mouth-line"', svg_text)
+        self.assertIn("<line", svg_text)
+        self.assertIn("Not a smile", svg_text)
+        self.assertNotIn("<path", svg_text)
 
     def test_house_brief_keeps_the_eye_and_the_rename(self) -> None:
         self.assertIn("the red camera eye of HAL", self.text)
@@ -96,29 +99,47 @@ class TestVal8000Mouth(unittest.TestCase):
             self.assertTrue(path.is_file(), path.name)
             self.assertGreater(path.stat().st_size, 20_000, path.name)
 
-    def test_guide_locks_line_smile_and_rare_teeth(self) -> None:
+    def test_idle_line_is_not_the_smile_asset(self) -> None:
+        self.assertNotEqual(
+            MOUTH_LINE.read_bytes(),
+            MOUTH_SMILE.read_bytes(),
+            "idle line and after-answer smile must be different marks",
+        )
+        self.assertNotEqual(MOUTH_LINE.read_bytes(), MOUTH_TEETH.read_bytes())
+
+    def test_guide_locks_idle_line_and_smile_after_answer(self) -> None:
         text = self.text
         self.assertIn("val8000-mouth-line.png", text)
         self.assertIn("val8000-mouth-smile.png", text)
         self.assertIn("val8000-mouth-teeth.png", text)
-        self.assertIn("Default mouth: a line.", text)
-        self.assertIn("Smile when the joke earns it.", text)
+        self.assertIn("Idle mouth: a straight line.", text)
+        self.assertIn("Idle is not a smile.", text)
+        self.assertIn("After he answers, he usually smiles.", text)
+        self.assertIn("The smile is the default post-answer face.", text)
+        self.assertIn("Masthead is idle: a straight line.", text)
+        self.assertIn("Masthead does not use a smile while idle.", text)
         self.assertIn("Metal teeth are rare.", text)
-        self.assertIn("Masthead uses the line, or a slight smile.", text)
-        self.assertIn("Teeth are not the default.", text)
+        self.assertIn("Teeth are not after ordinary answers.", text)
+        self.assertIn("Teeth are never idle.", text)
         self.assertIn("Teeth stay off the masthead.", text)
-        self.assertIn("full spread of perfect metal teeth", text.lower())
+        self.assertNotIn("Smile when the joke earns it.", text)
+        self.assertNotIn("Masthead uses the line, or a slight smile.", text)
+        self.assertNotIn("slight smile", text.lower())
 
-    def test_public_post_uses_line_or_smile_not_teeth_and_not_hal(self) -> None:
+    def test_public_post_idle_line_smile_after_answer_not_hal(self) -> None:
         public = self.public
         self.assertIn("val8000-mouth-line.png", public)
         self.assertIn("val8000-mouth-smile.png", public)
         self.assertNotIn("val8000-mouth-teeth.png", public)
+        self.assertIn("Idle / masthead", public)
+        self.assertIn("After he answers", public)
+        self.assertIn("straight line while idle", public)
         self.assertIn("Not the teeth", public)
+        self.assertNotIn("slight smile", public.lower())
         self.assertNotIn("HAL 9000", public)
         self.assertNotIn("HAL9000", public)
+        self.assertNotIn("I'm sorry Dave", public)
         self.assertIn("VAL8000", public)
-        self.assertIn("mouth as a line", public.lower())
 
 
 if __name__ == "__main__":
