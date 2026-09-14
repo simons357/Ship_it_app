@@ -29,7 +29,12 @@ Quantum extras DA promoted out of a five-role map: Hilbert space \(\mathcal H\),
 inner product, domain/\(\mathcal B\), evolution \(D\), implicit \(\Xi=0\),
 time-reversal breaking.
 
-Registry: `HP-H001`–`HP-H010`.
+Registry: `HP-H001`–`HP-H015`.
+
+The CLI now leads with **what popped through the DA filter**. The pop from
+staying on Pólya is the de Bruijn–Newman constant \(\Lambda\): Pólya 1926
+plus heat flow contracts an infinite spectral claim to one real number.
+\(\Lambda\ge 0\) is a theorem. \(\Lambda=0\) is still RH. It is not \(H\).
 
 ---
 

@@ -174,5 +174,21 @@
     "evidence": "A disproved Pólya arithmetic conjecture is not interchangeable with a proven Pólya Fourier theorem.",
     "status": "recorded",
     "notes": "Proven Pólya work only. Pólya is not an oracle for Millennium problems."
+  },
+  {
+    "left_id": "HP-H014",
+    "right_id": "HP-H001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "de Bruijn–Newman Λ is one real number (RH ⇔ Λ=0). Hilbert–Pólya asks for an infinite real spectrum {γ_n}. Same prize, different scale occupant.",
+    "status": "recorded",
+    "notes": "Do not write Λ and γ_n as the same FRA λ."
+  },
+  {
+    "left_id": "HP-H014",
+    "right_id": "HP-H011",
+    "relation": "GENERALIZATION",
+    "evidence": "Heat-flow deformation of the Pólya 1926 cosine-transform program. Λ ≥ 0 is proved; the 1926 hypotheses on undeformed Φ remain unverified.",
+    "status": "recorded",
+    "notes": "Continuation of 1926, not a fill of H."
   }
 ]

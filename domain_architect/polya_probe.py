@@ -71,6 +71,7 @@ class PolyaProbeReport:
     expression_audits: list[dict[str, Any]]
     gue_laboratory: dict[str, Any]
     weyl_laboratory: dict[str, Any]
+    filter_pops: list[str]
     registry_hp_ids: list[str]
     conflicts: list[str]
     nulls: list[str]
@@ -105,8 +106,12 @@ class PolyaProbeReport:
             f"Program complete: {self.complete}",
             f"Highest evidence level actually supported: Level {self.highest_evidence_level}",
             "",
-            "What Domain Architect did with the supplied objects:",
+            "What popped through the DA filter:",
         ]
+        for pop in self.filter_pops:
+            lines.append(f"  * {pop}")
+        lines.append("")
+        lines.append("What Domain Architect did with the supplied objects:")
         for item in self.components:
             spec = "specified" if item.independently_specified else "not independently specified"
             lines.append(
@@ -483,6 +488,26 @@ def briefing_components() -> list[ComponentRecord]:
             "Pólya is not an oracle; this claim is false",
             "HP-H013",
         ),
+        ComponentRecord(
+            "C-BN",
+            "λ-alt",
+            "de Bruijn–Newman constant Λ; Ξ_t has only real zeros iff t ≥ Λ; Λ ≥ 0 theorem; RH ⇔ Λ = 0",
+            "theorem_plus_open",
+            True,
+            "promoted to a second scale occupant, not merged with {γ_n} and not called H",
+            "pop through the DA filter: one real number instead of an infinite spectrum. Λ = 0 is still RH",
+            "HP-H014",
+        ),
+        ComponentRecord(
+            "C-PolyaSchur",
+            "E-entire",
+            "Pólya–Schur multiplier sequences (preserve real-rooted polynomials)",
+            "theorem",
+            True,
+            "accepted as the algebraic filter of the LP class; γ_k multipliers ≠ Riemann γ_n",
+            "proven; does not fill H; notation collision on γ",
+            "HP-H015",
+        ),
     ]
 
 
@@ -491,7 +516,7 @@ def millennium_routing() -> list[dict[str, str]]:
     return [
         {
             "prize": "Riemann hypothesis",
-            "polya_object": "Hilbert–Pólya; Laguerre–Pólya class; Pólya 1926 cosine-transform criterion",
+            "polya_object": "Hilbert–Pólya; LP class; Pólya 1926; de Bruijn–Newman Λ (RH ⇔ Λ=0)",
             "relation": "direct open strategy",
             "status": "open; probe does not prove it",
         },
@@ -528,6 +553,23 @@ def millennium_routing() -> list[dict[str, str]]:
     ]
 
 
+def filter_pops() -> list[str]:
+    """What survives DA’s filter as a distinct, usable object — not a Hamiltonian."""
+    return [
+        "N(T) rejects equal-spaced H (the oscillator). Hermite polynomials in "
+        "the oscillator, GUE, and Jensen(ξ) are a special-function collision, not H.",
+        "Two Pólya routes stay unmerged: a self-adjoint Hamiltonian versus "
+        "Laguerre–Pólya / Pólya 1926 kernel conditions.",
+        "Pólya 1926 plus heat flow contracts the missing object to one real "
+        "number Λ (de Bruijn–Newman). Rodgers–Tao: Λ ≥ 0 is a theorem. "
+        "RH ⇔ Λ = 0. This is a second scale occupant, not H and not {γ_n}.",
+        "Pólya–Schur multiplier sequences are a proven algebraic filter on "
+        "real-rooted polynomials. Their γ_k are not the Riemann heights γ_n.",
+        "Pólya’s Liouville-sum conjecture does not survive the filter (false).",
+        "No checked Pólya map to Navier–Stokes or the other Clay problems.",
+    ]
+
+
 def da_requests() -> list[str]:
     return [
         "One independent operator formula for H, with a declared Hilbert space, "
@@ -540,6 +582,8 @@ def da_requests() -> list[str]:
         "If Laguerre–Pólya / Pólya 1926 is the route instead of a Hamiltonian: "
         "an independent verification that Riemann’s Φ meets the 1926 hypotheses, "
         "or that ξ(1/2+iz) lies in the LP class, not an appeal to RH.",
+        "If the de Bruijn–Newman route is chosen: a proof of Λ ≤ 0 that does "
+        "not assume RH. Λ ≥ 0 is already a theorem.",
         "If a Navier–Stokes or other-prize bridge is claimed: an explicit checked "
         "transformation. Shared letters are not enough.",
     ]
@@ -562,9 +606,9 @@ def _findings() -> list[str]:
         "Pólya 1926 is the actual attempt to solve H with proven Pólya analysis: "
         "a sufficient condition for cosine transforms to have only real zeros. "
         "Riemann Ξ has that shape. The hypotheses are not a checked theorem for "
-        "Riemann’s Φ. So Pólya relocates the gap (kernel condition instead of H) "
-        "and does not fill the H role. A disproved Pólya conjecture (Liouville "
-        "sums) is recorded so proven theorems are not treated as an oracle.",
+        "Riemann’s Φ. Pólya relocates the gap, then heat flow contracts it to Λ. "
+        "DA’s pop: one real number with target Λ = 0, distinct from the H role "
+        "and from {γ_n}.",
         "Berry–Keating xp is the only supplied emission-Hamiltonian candidate "
         "with an independent classical symbol. Connes is a different object. "
         "GUE is not an object of that type. diag(γ_n) is circular.",
@@ -685,6 +729,7 @@ def run_polya_probe() -> PolyaProbeReport:
         expression_audits=_audit_expressions(),
         gue_laboratory=gue,
         weyl_laboratory=weyl,
+        filter_pops=filter_pops(),
         registry_hp_ids=hp_ids,
         conflicts=conflicts,
         nulls=nulls,

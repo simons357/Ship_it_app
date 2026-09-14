@@ -133,6 +133,8 @@ Assigning \(\Phi:=\{\gamma_n\}\) is recorded as a circular fill (HP-H007), not a
 | HP-H011 | Pólya 1926 cosine-transform real-zero criterion | Proven sufficient condition; hypotheses unverified for Riemann’s \(\Phi\) | **RETAIN** as theorem; does not fill \(H\) |
 | HP-H012 | \(\Xi(z)=\int_0^\infty\Phi(t)\cos(zt)\,dt\) | Shape that makes 1926 applicable in principle | **RETAIN** as representation |
 | HP-H013 | \(L(x)=\sum_{n\le x}\lambda(n)\le 0\) | Pólya Liouville conjecture | **RETIRE** — disproved (Haselgrove) |
+| HP-H014 | \(\Xi_t\) real-zero for \(t\ge\Lambda\); \(\Lambda\ge 0\); RH \(\Leftrightarrow\Lambda=0\) | de Bruijn–Newman constant | **RETAIN**; \(\Lambda\ge 0\) theorem; \(\Lambda=0\) is RH; not \(H\) |
+| HP-H015 | Pólya–Schur multiplier sequences | Algebraic LP filter | **RETAIN**; \(\gamma_k\) multipliers \(\neq\) Riemann \(\gamma_n\) |
 
 Do not merge HP-H003 with HP-H004, HP-H005, HP-H008, or retired SFE-HAM (`SFE-H003`).
 

@@ -9,6 +9,7 @@ import unittest
 from pathlib import Path
 
 from domain_architect.polya_probe import run_polya_probe
+from domain_architect.registry import EquationRegistry
 from domain_architect.schema import CANONICAL_SFE_STATUS, RH_STATUS
 
 
@@ -53,7 +54,9 @@ class TestPolyaProbe(unittest.TestCase):
         self.assertTrue(any(s["candidate_id"] == "berry-keating" and not s["complete"] for s in probe.candidate_scores))
         self.assertIn("relocates the gap", " ".join(probe.findings).lower())
         self.assertTrue(any(c.component_id == "C-Polya1926" for c in probe.components))
-        self.assertFalse(any(c.role == "H" and "1926" in c.occupant for c in probe.components))
+        self.assertIn("de bruijn", " ".join(probe.filter_pops).lower())
+        self.assertTrue(any(c.component_id == "C-BN" for c in probe.components))
+        self.assertIn("HP-H014", EquationRegistry.load_default().equations)
 
     def test_cli_probe(self):
         proc = subprocess.run(
@@ -67,7 +70,8 @@ class TestPolyaProbe(unittest.TestCase):
         self.assertIn("Riemann hypothesis status: not claimed", proc.stdout)
         self.assertIn("Laguerre", proc.stdout)
         self.assertIn("INSUFFICIENT_INFORMATION", proc.stdout)
-        self.assertIn("oscillator rejected: true", proc.stdout.lower())
+        self.assertIn("What popped through the DA filter", proc.stdout)
+        self.assertIn("de Bruijn", proc.stdout)
         self.assertNotIn("proves the riemann hypothesis", proc.stdout.lower())
 
 
