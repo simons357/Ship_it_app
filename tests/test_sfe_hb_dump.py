@@ -711,7 +711,77 @@ class TestAprilOverleafExportsStayQuarantined(unittest.TestCase):
         self.assertIn("not received", qstack.lower())
 
 
+class TestUniverseNotStaticNote(unittest.TestCase):
+    """Ordinary a(t) is not SFE breathing. Archive only. Not live DA."""
+
+    NOTE = ARCHIVE_SFE_HB / "UNIVERSE-NOT-STATIC.md"
+    FORBIDDEN_GLUE = (
+        "2.2 Hz",
+        "2.2Hz",
+        "EEG",
+        "Kepler",
+        "QNM",
+        "pull request",
+        "PR #",
+    )
+
+    def test_note_is_archive_only_and_does_not_claim_sfe_breathing(self):
+        self.assertTrue(self.NOTE.is_file(), self.NOTE)
+        self.assertFalse((LIVE_ROOT / "UNIVERSE-NOT-STATIC.md").is_file())
+        self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
+        text = self.NOTE.read_text(encoding="utf-8")
+        self.assertIn("The universe in ordinary cosmology is **not** a frozen", text)
+        self.assertIn("scale factor", text)
+        self.assertIn("a(t)", text)
+        self.assertIn("not** the sfe breathing", text.lower())
+        self.assertIn("sum of prime-indexed sines", text)
+        self.assertIn("do **not** claim sfe-breathing", text.lower())
+        self.assertIn("SFE-breathing", text)
+        self.assertIn("retired as a physical law", text.lower())
+        self.assertIn("retired** as", text.lower())
+        self.assertIn("load-bearing", text)
+        self.assertIn("SFE-PUB", text)
+        self.assertIn("named observable", text)
+        self.assertIn("predicted number", text)
+        self.assertIn("NOT CLAIMED", text)
+        self.assertIn("import into `domain_architect/`", text)
+        self.assertIn("DECOMPOSE", text)
+        self.assertIn("CROSS-DOMAIN TRANSLATE", text)
+        self.assertIn("SYNTHESIZE", text)
+        self.assertIn("fake close", text)
+        self.assertNotIn("the universe is SFE-breathing", text)
+        for token in self.FORBIDDEN_GLUE:
+            self.assertNotIn(token, text, token)
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("UNIVERSE-NOT-STATIC.md", note)
+        self.assertIn("not static", note.lower())
+        self.assertIn("retired** as a physical law", note)
+        self.assertIn("import into `domain_architect/`", note)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("UNIVERSE-NOT-STATIC.md", archive_index)
+        self.assertIn("not** SFE breathing", archive_index)
+        self.assertIn("retired** as a physical law", archive_index)
+        for path in sorted(LIVE_ROOT.glob("*.py")):
+            if path.name == "historical.py":
+                continue
+            hay = path.read_text(encoding="utf-8")
+            self.assertNotIn("UNIVERSE-NOT-STATIC", hay, path.name)
+            self.assertNotIn("SFE-breathing", hay, path.name)
+
+    def test_live_package_has_no_breathing_universe_module(self):
+        live_names = " ".join(p.name for p in LIVE_ROOT.iterdir())
+        self.assertNotIn("universe_not_static", live_names)
+        self.assertNotIn("sfe_breathing", live_names)
+        html = (LIVE_ROOT / "static" / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn("breathing universe", html.lower())
+        self.assertNotIn("SFE-PUB", html)
+        self.assertIn("DECOMPOSE", html)
+
+
 class TestNoPaddedParameterLevel(unittest.TestCase):
+
     def test_mechanism_is_not_wrapped_in_dummy_parameter(self):
         dec = decompose("m*xdd + c*xd + k*x = f")
         levels = {n.level for n in dec.tree.walk()}

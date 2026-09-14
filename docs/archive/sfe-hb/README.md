@@ -1,5 +1,13 @@
 # Aug 19 UHSA session synthesis — archive only
 
+Plain-English answer to “it’s not static?”:
+[`UNIVERSE-NOT-STATIC.md`](UNIVERSE-NOT-STATIC.md).
+Ordinary cosmology: the scale factor \(a(t)\) changes. That is **not**
+SFE breathing \(\Phi=\sum\) prime sines. Breathing is **retired** as
+load-bearing. SFE-PUB is **retired** as a physical law. Do **not** claim
+SFE-breathing for the universe. Clay is **NOT CLAIMED**. Do **not** import
+into `domain_architect/`.
+
 [`Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md`](Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md)
 
 SHA-256 `4d49cd1ee629…`. 15 899 bytes. Chat paste of 19 August 2026
