@@ -14,24 +14,31 @@ has exactly four inputs and one output.
 
 from .schema import (
     CANONICAL_SFE_STATUS,
+    HILBERT_POLYA_STATUS,
     PRODUCT_DESCRIPTION,
+    RH_STATUS,
     EvidenceLevel,
     PermissionSubtype,
     RecoveryKind,
     ScaleResponseSubtype,
 )
 from .audit import audit_expression
+from .hilbert_polya import audit_candidate, default_program_audit
 from .report import AuditReport
 
 __all__ = [
     "CANONICAL_SFE_STATUS",
+    "HILBERT_POLYA_STATUS",
     "PRODUCT_DESCRIPTION",
+    "RH_STATUS",
     "AuditReport",
     "EvidenceLevel",
     "PermissionSubtype",
     "RecoveryKind",
     "ScaleResponseSubtype",
+    "audit_candidate",
     "audit_expression",
+    "default_program_audit",
 ]
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"

@@ -12,12 +12,14 @@ to treat representation of a known equation as derivation.
 
 - Package: `domain_architect/`
 - Notes: [`docs/domain-architect/README.md`](docs/domain-architect/README.md)
+- Hilbert–Pólya completeness audit: [`docs/domain-architect/06-HILBERT-POLYA-PROGRAM.md`](docs/domain-architect/06-HILBERT-POLYA-PROGRAM.md) (strategy map; **not** a proof of RH)
 - Canonical SFE status: **unresolved**
 
 ```bash
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units
+python -m domain_architect --hilbert-polya
+python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya
 ```
 
 ## Harmonic Blueprint Experiment 01
@@ -61,5 +63,5 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 ## Tests
 
 ```bash
-python -m unittest tests/test_hb_ringdown.py
+python -m unittest tests.test_hb_ringdown tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya
 ```

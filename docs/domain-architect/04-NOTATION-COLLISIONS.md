@@ -29,6 +29,8 @@ Functional Role Analysis reuses short letters that already have other meanings i
 | Symbol | Allowed meaning in FRA | Other meanings that must be aliased |
 |---|---|---|
 | \(H\) | coupling / interaction | Hamiltonian in a declared mechanics model |
+| \(H_{\mathrm{HP}}\) | — | Hilbert–Pólya candidate operator; only after an independent formula is given |
+| \(\gamma_n\) | — | imaginary part of a nontrivial zero, \(\rho=1/2+i\gamma_n\); not FRA \(\lambda\) until a spectral identity is proved |
 | \(H_g=4\pi G\) | Newtonian coupling in the gravity benchmark | — |
 | \(H_N\) | — | degree-normalized inverse-GCD matrix |
 | \(\hat H_{\mathrm{SFE}}\) | — | retired Fock operator from prize-packaged drafts |

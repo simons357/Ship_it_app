@@ -24,6 +24,13 @@ ORGANIZING_GRAMMAR: Final[str] = "Φ = ℱ(P, H, ψ, λ; E)"
 
 CANONICAL_SFE_STATUS: Final[str] = "unresolved"
 
+HILBERT_POLYA_STATUS: Final[str] = (
+    "incomplete; no independent Hamiltonian on record whose spectrum "
+    "is identified with the nontrivial zeros"
+)
+
+RH_STATUS: Final[str] = "not claimed"
+
 ROLE_GLOSSARY: Final[dict[str, str]] = {
     "P": "admissibility/selection role",
     "H": "interaction/coupling role",
@@ -202,6 +209,8 @@ FORBIDDEN_CLAIM_PHRASES: Final[tuple[str, ...]] = (
     "universal physical equation",
     "physically privileged",
     "prime structure is fundamental",
+    "proves the riemann hypothesis",
+    "proves rh",
 )
 
 PREFERRED_CLAIM_VERBS: Final[tuple[str, ...]] = (
@@ -226,6 +235,9 @@ SCOPE_PROHIBITIONS: Final[tuple[str, ...]] = (
     "rewriting a known theory in Functional Role Analysis notation "
     "constitutes a derivation of that theory",
     "agreement between AI systems constitutes independent validation",
+    "assigning Φ to the Riemann zeros constructs a Hilbert–Pólya Hamiltonian",
+    "GUE / random-matrix agreement is a spectral identity with the zeros",
+    "a filled five-role map proves the Riemann hypothesis",
 )
 
 SOURCE_STATE_WARNING: Final[str] = (

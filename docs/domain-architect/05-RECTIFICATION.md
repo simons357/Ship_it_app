@@ -51,7 +51,8 @@ known theory.
 | Equal-budget selector laboratory | `selectors.py` |
 | Train / validation / held-out protocol hash | `protocol.py` |
 | Null and counterexample registry | `null_results.json`, `EquationRegistry.record_null` |
-| Confidence taxonomy | `report.ConfidenceTaxonomy` |
+| Hilbert–Pólya completeness audit; circular \(\Phi:=\)zeros refused | `hilbert_polya.py` |
+| GUE statistics \(\neq\) spectral identity laboratory | `hilbert_polya.gue_is_not_riemann_spectrum` |
 
 ## Canonical SFE
 
@@ -65,10 +66,11 @@ is a valid scientific outcome and is stored as `NULL-SFE-CANON`.
 rectification report.
 
 ```bash
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units
+python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya
 ```
 
 ```bash
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
+python -m domain_architect --hilbert-polya
 ```

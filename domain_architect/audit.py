@@ -19,6 +19,7 @@ from .checks import (
 )
 from .classify import classify_parse
 from .gravity import newtonian_fra_map, solve_periodic_poisson
+from .hilbert_polya import looks_like_hilbert_polya
 from .identifiability import analyze_product_abx
 from .parser import NodeKind, parse_expression
 from .recovery import classify_recovery
@@ -181,6 +182,27 @@ def audit_expression(
 
     if geometry is not None:
         extra.extend(f"{k}={v}" for k, v in expand_environment(geometry).items())
+
+    if looks_like_hilbert_polya(expression):
+        extra.extend(
+            [
+                "Hilbert space ℋ",
+                "operator domain D(H)",
+                "Weil explicit formula",
+                "spectral identity with zeta zeros",
+            ]
+        )
+        warnings.append(
+            "Hilbert–Pólya is a program, not a filled Hamiltonian. "
+            "Assigning Φ to the Riemann zeros is the target identity, "
+            "not a construction of H. GUE matching is universality, "
+            "not spectral identity. Run: python -m domain_architect "
+            "--hilbert-polya"
+        )
+        notes.append(
+            "This expression was routed to the Hilbert–Pólya completeness "
+            "audit. Riemann hypothesis status: not claimed."
+        )
 
     notes.append(f"Canonical SFE status: {CANONICAL_SFE_STATUS}.")
     notes.append(

@@ -7,6 +7,11 @@ import json
 import sys
 
 from .audit import audit_expression
+from .hilbert_polya import (
+    audit_candidate,
+    default_program_audit,
+    list_candidate_ids,
+)
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 
@@ -22,7 +27,41 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="print equation provenance and conflict summary",
     )
+    parser.add_argument(
+        "--hilbert-polya",
+        action="store_true",
+        help=(
+            "audit the Hilbert–Pólya program as a Functional Role Analysis "
+            "instance (does not prove RH)"
+        ),
+    )
+    parser.add_argument(
+        "--candidate",
+        default="",
+        help=(
+            "Hilbert–Pólya candidate id for --hilbert-polya "
+            "(unspecified, target-identity, diagonal-zeros, berry-keating, "
+            "connes, montgomery-gue, weil-explicit)"
+        ),
+    )
     args = parser.parse_args(argv)
+
+    if args.hilbert_polya:
+        if args.candidate:
+            try:
+                hp = audit_candidate(args.candidate)
+            except KeyError as exc:
+                parser.error(str(exc) + f" known={list_candidate_ids()}")
+        else:
+            hp = default_program_audit()
+        if args.json:
+            json.dump(hp.to_dict(), sys.stdout, indent=2, default=str)
+            sys.stdout.write("\n")
+        else:
+            print(hp.narrative())
+            print()
+            print(f"Canonical SFE status: {CANONICAL_SFE_STATUS}.")
+        return 0
 
     if args.registry:
         registry = EquationRegistry.load_default()

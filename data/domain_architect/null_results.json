@@ -38,5 +38,29 @@
     "evidence": "DHFA-H001 unknown_definitions",
     "source": "Domain Architect rectification 2026-08",
     "created_at": "2026-08-22T00:00:00Z"
+  },
+  {
+    "null_id": "NULL-HP-CIRCULAR",
+    "kind": "circular role fill",
+    "statement": "Setting the realized output Φ, the scale role λ, or the operator H to the Riemann zeros does not specify a Hilbert–Pólya Hamiltonian. H := diag(γ_n) is tautological or incomplete.",
+    "evidence": "domain_architect/hilbert_polya.py is_circular_fill; HP-H007; docs/domain-architect/06-HILBERT-POLYA-PROGRAM.md §4",
+    "source": "Hilbert–Pólya FRA program 2026-09",
+    "created_at": "2026-09-14T00:00:00Z"
+  },
+  {
+    "null_id": "NULL-HP-GUE",
+    "kind": "statistics are not identity",
+    "statement": "GUE / random-matrix agreement is a universality class for local spacings. A frozen GUE matrix is not the sequence of Riemann γ_n after any affine map. Pair correlation does not fill H and does not prove RH.",
+    "evidence": "gue_is_not_riemann_spectrum; HP-H005; Montgomery–Odlyzko dictionary is HP-G1 only",
+    "source": "Hilbert–Pólya FRA program 2026-09",
+    "created_at": "2026-09-14T00:00:00Z"
+  },
+  {
+    "null_id": "NULL-HP-COMPLETE",
+    "kind": "candidate Hamiltonian failed completeness checklist",
+    "statement": "No historical Hilbert–Pólya candidate independently specifies a self-adjoint H and proves spec(H) = {γ_n}. Berry–Keating, Connes, GUE statistics, and the Weil explicit formula remain distinct and incomplete as a proof of RH.",
+    "evidence": "audit_candidate for berry-keating, connes, montgomery-gue, weil-explicit; HP-H001 through HP-H007",
+    "source": "Hilbert–Pólya FRA program 2026-09",
+    "created_at": "2026-09-14T00:00:00Z"
   }
 ]

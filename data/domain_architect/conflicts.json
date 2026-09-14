@@ -102,5 +102,45 @@
     "evidence": "No justified canonical formula exists to compare against SFE-H001.",
     "status": "unresolved",
     "notes": "Canonical SFE status remains unresolved."
+  },
+  {
+    "left_id": "HP-H003",
+    "right_id": "HP-H004",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Berry–Keating emission Hamiltonian xp versus Connes absorption / missing-line spectrum. No checked transformation identifies the two operators.",
+    "status": "recorded",
+    "notes": "Keep both as incomplete Hilbert–Pólya candidates. Do not merge."
+  },
+  {
+    "left_id": "HP-H007",
+    "right_id": "HP-H001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Circular assignment Φ := {γ_n} or H = diag(γ_n) is not the independent-H strategy stated by Hilbert–Pólya.",
+    "status": "recorded",
+    "notes": "HP-H007 is retired as a construction. HP-H001 remains the program statement."
+  },
+  {
+    "left_id": "HP-H005",
+    "right_id": "HP-H001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "GUE pair correlation is a statistical conjecture about zeros; Hilbert–Pólya is a spectral-identity strategy. No transformation turns pair correlation into spec(H) = {γ_n}.",
+    "status": "recorded",
+    "notes": "Universality is not identity."
+  },
+  {
+    "left_id": "HP-H002",
+    "right_id": "HP-H003",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Weil explicit formula is a theorem about ζ. Berry–Keating xp is a heuristic Hamiltonian. The former is the target trace identity, not a derivation from the latter.",
+    "status": "recorded",
+    "notes": "Do not rename the explicit formula as H."
+  },
+  {
+    "left_id": "SFE-H003",
+    "right_id": "HP-H003",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Retired inverse-GCD Fock Hamiltonian versus Berry–Keating xp. Different spaces, interactions, and claims. Shared letter H is not a transformation.",
+    "status": "recorded",
+    "notes": "SFE-HAM stays in the retired SFE book. It is not a Hilbert–Pólya operator."
   }
 ]

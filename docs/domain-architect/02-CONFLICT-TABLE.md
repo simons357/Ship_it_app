@@ -86,7 +86,20 @@ Columns:
 
 ---
 
-## 7. Software versus mathematics
+## 7. Hilbert–Pólya is not a filled Hamiltonian
+
+| ID | Left | Right | Object | Resolution |
+|---|---|---|---|---|
+| C-HP-1 | HP-H001: independent self-adjoint \(H\) whose spectrum is \(\{\gamma_n\}\) | HP-H007: \(\Phi:=\{\gamma_n\}\) or \(H=\operatorname{diag}(\gamma_n)\) | Construction vs circular fill | **Do not treat the target identity as an instance.** HP-H007 is retired as a construction |
+| C-HP-2 | HP-H003 Berry–Keating \(H=xp\) | HP-H004 Connes absorption spectrum | Which operator | **Do not merge.** Emission vs missing lines |
+| C-HP-3 | HP-H005 GUE pair correlation | HP-H001 spectral identity | Statistics vs identity | Universality is not \(\operatorname{spec}(H)=\{\gamma_n\}\). Keep as HP-G1 |
+| C-HP-4 | HP-H002 Weil explicit formula | HP-H003 \(xp\) | Theorem vs heuristic Hamiltonian | The explicit formula is in \(E\). It is not \(H\) |
+| C-HP-5 | Retired SFE-HAM (`SFE-H003`) | HP-H003 | Which Hamiltonian | Different books. Inverse-GCD Fock model is not Hilbert–Pólya |
+| C-HP-6 | Informal “five fingers” with \(\Phi\) set to the zeros | Audited core roles \(P,H,\psi,\lambda,\Phi\) | Vocabulary and circularity | Do not revive the nickname. Do not fill \(\Phi\) with zeros to create \(H\) |
+
+---
+
+## 8. Software versus mathematics
 
 | ID | Left | Right | Object | Resolution |
 |---|---|---|---|---|
@@ -96,7 +109,7 @@ Columns:
 
 ---
 
-## 8. Conflicts inside the audited gravity map (repair list)
+## 9. Conflicts inside the audited gravity map (repair list)
 
 These are not historical enemies. They are defects to fix before a gravity laboratory is treated as confirmatory.
 

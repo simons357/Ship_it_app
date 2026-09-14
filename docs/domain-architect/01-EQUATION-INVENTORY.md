@@ -110,7 +110,29 @@ These are real research objects in this repo family. They are **not** UHF, SFE, 
 
 ---
 
-## G. Public / web formulas not treated as Simons SFE
+## G. Hilbert–Pólya program (adjacent book, 2026-09)
+
+This is **not** SFE, not a canonical Hamiltonian, and **not** a proof of RH.
+Full write-up: [06 — Hilbert–Pólya program](06-HILBERT-POLYA-PROGRAM.md).
+Software: `python -m domain_architect --hilbert-polya`.
+
+Assigning \(\Phi:=\{\gamma_n\}\) is recorded as a circular fill (HP-H007), not as a construction.
+
+| ID | Formula | Declared meaning | Disposition |
+|---|---|---|---|
+| HP-H001 | \(H=H^\ast\) and \(\operatorname{spec}(H)=\{\gamma_n\}\) \(\Rightarrow\) RH | Program statement / strategy | **RETAIN-ARCH** as a strategy, not a theorem |
+| HP-H002 | Weil explicit formula (zeros \(\leftrightarrow\) primes) | Theorem; belongs in \(E\), not as FRA \(H\) | **RETAIN** as theorem |
+| HP-H003 | \(H=xp\) (or \((xp+px)/2\)) with cutoff | Berry–Keating heuristic | **UNRESOLVED** as a Hamiltonian |
+| HP-H004 | adelic absorption spectrum (missing lines) | Connes program; not the same operator as HP-H003 | **UNRESOLVED** |
+| HP-H005 | pair correlation of \(\{\gamma_n\}\) matches GUE | Universality class, not identity | **RETAIN** as statistics only |
+| HP-H006 | \(\xi(s)=\xi(1-s)\) | Theorem; possible left-hand side of a \(\det\) identity | **RETAIN** as theorem |
+| HP-H007 | \(\Phi:=\{\gamma_n\}\) or \(H=\operatorname{diag}(\gamma_n)\) | Circular FRA fill | **RETIRE** as a construction; keep as a null |
+
+Do not merge HP-H003 with HP-H004, HP-H005, or retired SFE-HAM (`SFE-H003`).
+
+---
+
+## H. Public / web formulas not treated as Simons SFE
 
 Retrieved by prior agents; authorship or domain is mixed or unrelated. Listed so they are not silently absorbed.
 
@@ -123,7 +145,7 @@ Retrieved by prior agents; authorship or domain is mixed or unrelated. Listed so
 
 ---
 
-## H. Still missing from the inventory
+## I. Still missing from the inventory
 
 Until the files in [03 — Reconciliation §6](03-RECONCILIATION.md) arrive, the following historical objects cannot be inventoried from primary text:
 
