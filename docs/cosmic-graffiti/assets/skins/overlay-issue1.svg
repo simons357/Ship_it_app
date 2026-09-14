@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="t d">
+  <title id="t">VAL8000 Issue 1 two-red-pill pin</title>
+  <desc id="d">Accessory overlay only. Two red pills, both red, original Cosmic Graffiti pin. Not a film still.</desc>
+  <rect x="118" y="720" width="192" height="180" rx="28" fill="#0a101c" stroke="#c9a227" stroke-width="4"/>
+  <text x="214" y="752" text-anchor="middle" font-family="Helvetica, Arial, sans-serif"
+        font-size="18" font-weight="700" letter-spacing="3" fill="#f3d98a">ISSUE 1</text>
+  <rect x="147" y="766" width="56" height="108" rx="28" fill="#c1121f" stroke="#f3d98a" stroke-width="3"/>
+  <rect x="220" y="766" width="56" height="108" rx="28" fill="#c1121f" stroke="#f3d98a" stroke-width="3"/>
+  <ellipse cx="168" cy="786" rx="10" ry="11" fill="#dc4646"/>
+  <ellipse cx="241" cy="786" rx="10" ry="11" fill="#dc4646"/>
+</svg>

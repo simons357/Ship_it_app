@@ -1,0 +1,20 @@
+/* Clip-on accessory layer for the VAL8000 square. Do not replace sibling box CSS. */
+
+.val8000-square,
+.val8000-launcher {
+  position: relative;
+}
+
+.val8000-accessory {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  display: none;
+}
+
+.val8000-square[data-skin]:not([data-skin="naked"]):not([data-skin=""]) > .val8000-accessory {
+  display: block;
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="t d">
+  <title id="t">VAL8000 Weekend Update glasses</title>
+  <desc id="d">Accessory overlay only. Gold glasses on the same square. Original mark. Not a studio still.</desc>
+  <g fill="none" stroke-linecap="round">
+    <ellipse cx="430" cy="460" rx="70" ry="70" stroke="#c9a227" stroke-width="10"/>
+    <ellipse cx="594" cy="460" rx="70" ry="70" stroke="#f3d98a" stroke-width="10"/>
+    <line x1="500" y1="458" x2="524" y2="458" stroke="#c9a227" stroke-width="10"/>
+    <line x1="280" y1="430" x2="360" y2="448" stroke="#c9a227" stroke-width="6"/>
+    <line x1="664" y1="448" x2="744" y2="430" stroke="#c9a227" stroke-width="6"/>
+  </g>
+</svg>

@@ -1,0 +1,52 @@
+{
+  "character": "VAL8000",
+  "rule": "Accessories on the same square. Not a new character. Default is the naked square.",
+  "default": "naked",
+  "idle_mouth": "straight line under every skin",
+  "how_to_change": "Set data-skin on .val8000-square, or call VAL8000_applySkin(el, id).",
+  "types_in_the_box": true,
+  "no_tts": true,
+  "skins": [
+    {
+      "id": "naked",
+      "title": "Naked square",
+      "overlay": null,
+      "when": "Default. Masthead. Idle."
+    },
+    {
+      "id": "frequency",
+      "title": "Frequency ribbon",
+      "overlay": "overlay-frequency.png",
+      "svg": "overlay-frequency.svg",
+      "when": "Frequency issue nights."
+    },
+    {
+      "id": "weekend-update",
+      "title": "Weekend Update glasses",
+      "overlay": "overlay-weekend-update.png",
+      "svg": "overlay-weekend-update.svg",
+      "when": "Jokes after the news."
+    },
+    {
+      "id": "issue1",
+      "title": "Issue 1 two-red-pill pin",
+      "overlay": "overlay-issue1.png",
+      "svg": "overlay-issue1.svg",
+      "when": "Issue 1. Both pills red."
+    },
+    {
+      "id": "scientist",
+      "title": "Scientist visor",
+      "overlay": "overlay-scientist.png",
+      "svg": "overlay-scientist.svg",
+      "when": "Lab / measurement nights."
+    },
+    {
+      "id": "music-art",
+      "title": "Music and art room pin",
+      "overlay": "overlay-music-art.png",
+      "svg": "overlay-music-art.svg",
+      "when": "Quiet music / art room."
+    }
+  ]
+}
