@@ -33,7 +33,8 @@ python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
 python -m domain_architect --hilbert-polya
 python -m domain_architect --polya-probe
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya tests.test_polya_probe
+python -m domain_architect --millennium-look
+python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya tests.test_polya_probe tests.test_millennium_overlap
 ```
 
 Related closed experiment in this repository:

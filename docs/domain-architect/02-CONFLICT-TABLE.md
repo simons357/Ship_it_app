@@ -101,8 +101,10 @@ Columns:
 | C-HP-9 | HP-H017 Pólya frequency kernels | HP-H011 1926 hypotheses | Kernel language vs criterion | **GENERALIZATION.** A PF check on Riemann’s \(\Phi\) would address 1926, not produce \(H\) |
 | C-HP-10 | HP-H020 membrane eigenvalues | HP-H010 \(N(T)\) | Which Weyl law | **COMPATIBLE_DISTINCT.** Domain spectrum is not zeros of \(\xi\) |
 | C-HP-11 | HP-H019 1951 isoperimetric book | HP-H001 / Clay NS | Spectral vocabulary vs prize | **INSUFFICIENT_INFORMATION.** Dump is not a bridge |
+| C-LOOK-1 | HP-H027 \(d\ge 3\) Green | NS-H001 vorticity / Biot–Savart | Kernel family | **COMPATIBLE_DISTINCT.** Closest NS rhyme. Not regularity |
+| C-LOOK-2 | HP-H012 Riemann kernel \(\Phi\) | NS-H002 swirl \(\Phi=u_\theta/r\) | Letter \(\Phi\) | **INCOMPATIBLE.** Notation collision |
 
-Pólya probe (N independently specifiable components, not a five-role cap): `python -m domain_architect --polya-probe`. Write-up: [07 — Pólya probe](07-POLYA-PROBE.md).
+Pólya probe (N independently specifiable components, not a five-role cap): `python -m domain_architect --polya-probe`. Millennium look: `python -m domain_architect --millennium-look`. Write-up: [07 — Pólya probe](07-POLYA-PROBE.md).
 
 ---
 

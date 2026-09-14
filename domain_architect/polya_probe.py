@@ -26,6 +26,7 @@ from .hilbert_polya import (
     program_pieces,
     weyl_law_screen,
 )
+from .millennium_overlap import closest_rhymes, overlap_looks
 from .protocol import freeze_protocol
 from .registry import EquationRegistry
 from .schema import (
@@ -109,6 +110,8 @@ class PolyaProbeReport:
     filter_scoreboard: list[dict[str, str]]
     how_quantum_fitted: list[str]
     count_policy: str
+    millennium_looks: list[dict[str, str]]
+    closest_rhymes: list[str]
     registry_hp_ids: list[str]
     conflicts: list[str]
     nulls: list[str]
@@ -187,6 +190,19 @@ class PolyaProbeReport:
                 f"  {row['prize']}: {row['relation']} — {row['polya_object']} "
                 f"[{row['status']}]"
             )
+        lines.append("")
+        lines.append("What rhymed when we looked across prizes (not a unification):")
+        for rhyme in self.closest_rhymes:
+            lines.append(f"  * {rhyme}")
+        lines.append("")
+        lines.append("Looks (parts of Pólya vs each prize):")
+        for look in self.millennium_looks:
+            lines.append(f"  [{look['look_id']}] {look['prize']}  match={look['match_level']}")
+            lines.append(f"    Pólya part: {look['polya_part']}")
+            lines.append(f"    other: {look['other_object']}")
+            lines.append(f"    matched: {look['what_matched']}")
+            lines.append(f"    did not: {look['what_did_not']}")
+            lines.append(f"    {look['status']}")
         lines.append("")
         lines.append("Candidate scores (unmerged):")
         for row in self.candidate_scores:
@@ -646,9 +662,39 @@ def briefing_components() -> list[ComponentRecord]:
             "Pólya 1921: simple random walk is recurrent in d=1,2 and transient in d≥3",
             "other_book",
             True,
-            "ingested as proven Pólya probability",
-            "no checked map to ξ, H, or Navier–Stokes",
-            "HP-H022",
+            "ingested as proven Pólya probability; compared with 3D Biot–Savart",
+            "LOOK-NS-GREEN: d≥3 transience shares the Green/Newtonian family with 3D NS; not regularity",
+            "HP-H022 / HP-H027",
+        ),
+        ComponentRecord(
+            "C-Rearrange",
+            "other-book",
+            "Pólya–Szegő rearrangement: Dirichlet integral does not increase under Schwarz symmetrization",
+            "other_book",
+            True,
+            "looked at as a PDE estimate tool next to NS energy methods",
+            "shared-tool with Sobolev / Ladyzhenskaya; not Clay NS smoothness",
+            "HP-H025",
+        ),
+        ComponentRecord(
+            "C-StokesOp",
+            "other-book",
+            "Stokes operator A = −ℙΔ on divergence-free fields (spectral sibling of membrane Laplacian)",
+            "other_book",
+            True,
+            "looked at next to Pólya 1954 membrane eigenvalues",
+            "spectral sibling of HP-H020; not Hilbert–Pólya H; not Clay NS",
+            "NS-H003",
+        ),
+        ComponentRecord(
+            "C-NSPhi",
+            "other-book",
+            "this-repo swirl algebra: Γ=r u_θ, Φ=u_θ/r, r^{-4}∂_z(Γ²)=∂_z(Φ²)",
+            "other_book",
+            True,
+            "ingested because it is the kept NS identity in this repo; Φ here is not FRA Φ and not Riemann’s kernel Φ",
+            "KEEP algebra; open barrier ‖u^r/r‖_∞; notation collision with Riemann Φ",
+            "NS-H002",
         ),
     ]
 
@@ -665,8 +711,9 @@ def millennium_routing() -> list[dict[str, str]]:
         {
             "prize": "Navier–Stokes existence and smoothness",
             "polya_object": (
-                "Pólya–Szegő inequalities; 1951 isoperimetric book; "
-                "1954 membrane eigenvalues; no checked map to regularity"
+                "LOOKED: 1921 Green/Biot–Savart rhyme; rearrangement as PDE tool; "
+                "membrane vs Stokes operator; heat-name rhyme; Φ-letter collision. "
+                "No regularity map."
             ),
             "relation": "INSUFFICIENT_INFORMATION",
             "status": "separate book; do not derive from ξ or xp",
@@ -802,9 +849,13 @@ def filter_pops() -> list[str]:
         "Turán inequalities are coefficient tests for the LP class. They "
         "are not RH unless they are checked for ξ without assuming RH.",
         "Pólya 1937 enumeration and 1921 random-walk recurrence ingest as "
-        "proven work; no checked map to ξ, H, or Navier–Stokes.",
+        "proven work. The 1921 d≥3 transience rhymes with the 3D Newtonian "
+        "kernel in Biot–Savart; that is not Clay NS.",
         "Pólya’s Liouville-sum conjecture does not survive the filter (false).",
-        "No checked Pólya map to Navier–Stokes or the other Clay problems.",
+        "Looked across Clay prizes: tool/kernel rhymes with NS, family "
+        "resemblance with BSD L-functions, vocabulary with Yang–Mills. "
+        "No Pólya object unifies the prizes. Live prize for the surviving "
+        "theorems is still RH.",
     ]
 
 
@@ -870,7 +921,9 @@ def _findings() -> list[str]:
         "No checked transformation connects these objects to Navier–Stokes or to "
         "a canonical SFE. Other-book formulas were classified, not absorbed. "
         "Dumping the 1951 isoperimetric book, 1954 membrane eigenvalues, 1937 "
-        "enumeration theorem, and 1921 random walk does not create a bridge.",
+        "enumeration theorem, and 1921 random walk does not create a bridge. "
+        "Looking at rearrangement, Biot–Savart/Green, and the Stokes operator "
+        "found rhymes, not a Clay solution.",
         "Pólya frequency / variation-diminishing structure is the natural "
         "language of the 1926 kernel hypotheses. DA recorded it as a possible "
         "fill of those hypotheses, not as H and not as a proof that Riemann’s "
@@ -968,6 +1021,7 @@ def run_polya_probe() -> PolyaProbeReport:
             "weyl_law_screen": True,
             "filter_scoreboard": True,
             "da_decides_component_count": True,
+            "millennium_look": True,
         }
     )
 
@@ -993,6 +1047,8 @@ def run_polya_probe() -> PolyaProbeReport:
         filter_scoreboard=filter_scoreboard(),
         how_quantum_fitted=how_quantum_fitted(components),
         count_policy=COUNT_POLICY,
+        millennium_looks=[look.to_dict() for look in overlap_looks()],
+        closest_rhymes=closest_rhymes(),
         registry_hp_ids=hp_ids,
         conflicts=conflicts,
         nulls=nulls,

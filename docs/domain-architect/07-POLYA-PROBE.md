@@ -54,9 +54,11 @@ cannot invent:
 - \(\Lambda\le 0\) without assuming RH, or
 - an explicit checked map if a Navier–Stokes (or other prize) bridge is claimed.
 
-Among RH-attack sources, Pólya is the only one whose theorems survive as
-usable objects. Hilbert–Pólya remains a strategy with no \(H\). Pólya also
-lost one: the Liouville-sum conjecture is false.
+The narrative also records a **Millennium look**: parts of Pólya versus
+NS / Yang–Mills / BSD / Hodge / P vs NP. Closest NS rhyme is Pólya 1921
+\(d\ge 3\) transience with the 3D Biot–Savart kernel. That is not regularity.
+Riemann kernel \(\Phi\) collides in notation with swirl \(\Phi=u_\theta/r\).
+No Pólya object unifies the Clay prizes.
 
 Do not merge Berry–Keating, Connes, GUE, \(\operatorname{diag}(\gamma_n)\),
 the LP class, \(\Lambda\), Pólya frequency kernels, membrane Weyl laws,

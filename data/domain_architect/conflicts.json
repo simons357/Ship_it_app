@@ -246,5 +246,53 @@
     "evidence": "Lattice random-walk recurrence/transience is not spec(H) = {γ_n}.",
     "status": "recorded",
     "notes": "Dump of proven Pólya. Not RH."
+  },
+  {
+    "left_id": "HP-H025",
+    "right_id": "NS-H001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Pólya–Szegő rearrangement is a Dirichlet-integral tool. NS-H001 is the vorticity PDE. Same estimate family as Sobolev/Ladyzhenskaya, not a regularity theorem.",
+    "status": "recorded",
+    "notes": "LOOK-NS-REARRANGE. Tool overlap, not Clay NS."
+  },
+  {
+    "left_id": "HP-H027",
+    "right_id": "NS-H001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Pólya transience in d≥3 and 3D Biot–Savart share the Newtonian/Green kernel family. Transience is not smoothness of 3D NS.",
+    "status": "recorded",
+    "notes": "LOOK-NS-GREEN. Closest structural rhyme. Not a bridge."
+  },
+  {
+    "left_id": "HP-H020",
+    "right_id": "NS-H003",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Membrane Laplacian eigenvalues versus Stokes operator A=−ℙΔ. Sibling Weyl laws, different operators.",
+    "status": "recorded",
+    "notes": "LOOK-NS-STOKES-OP. Not Hilbert–Pólya H."
+  },
+  {
+    "left_id": "HP-H014",
+    "right_id": "NS-H001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "de Bruijn–Newman heat flow on Ξ and viscous diffusion νΔu share the word heat. Ξ_t is an entire-function deformation; NS is a vector PDE.",
+    "status": "recorded",
+    "notes": "LOOK-NS-HEAT. Name-rhyme only."
+  },
+  {
+    "left_id": "HP-H012",
+    "right_id": "NS-H002",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Riemann cosine-transform kernel Φ is not swirl Φ=u_θ/r. Shared letter is a notation collision.",
+    "status": "recorded",
+    "notes": "LOOK-NS-PHI-LETTER. Keep both books."
+  },
+  {
+    "left_id": "NS-H001",
+    "right_id": "HP-H001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "Classical NS vorticity is not a Hilbert–Pólya Hamiltonian. Shared spectral vocabulary with the Stokes operator is not spec(H)={γ_n}.",
+    "status": "recorded",
+    "notes": "Do not glue NS to RH."
   }
 ]

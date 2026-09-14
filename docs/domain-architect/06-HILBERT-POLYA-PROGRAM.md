@@ -23,7 +23,8 @@ python -m domain_architect --hilbert-polya
 python -m domain_architect --hilbert-polya --candidate berry-keating
 python -m domain_architect --hilbert-polya --candidate montgomery-gue
 python -m domain_architect --polya-probe
-python -m unittest tests.test_hilbert_polya tests.test_polya_probe
+python -m domain_architect --millennium-look
+python -m unittest tests.test_hilbert_polya tests.test_polya_probe tests.test_millennium_overlap
 ```
 
 ---
@@ -95,7 +96,7 @@ to fake a five-letter count:
 - time-reversal breaking if GUE rather than GOE is expected;
 - regularization / cutoff if the classical symbol is \(xp\).
 
-A completed five-role *map* is still only classification. Completeness of the
+A completed interface *map* is still only classification. Completeness of the
 **program** requires the pieces in §3.
 
 ---

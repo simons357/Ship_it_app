@@ -110,6 +110,8 @@ class TestPolyaProbe(unittest.TestCase):
         self.assertIn("Who survived the filter", proc.stdout)
         self.assertIn("[survived] George Pólya", proc.stdout)
         self.assertIn("the only one whose theorems survive", proc.stdout)
+        self.assertIn("What rhymed when we looked", proc.stdout)
+        self.assertIn("Biot", proc.stdout)
         self.assertNotIn("proves the riemann hypothesis", proc.stdout.lower())
 
 

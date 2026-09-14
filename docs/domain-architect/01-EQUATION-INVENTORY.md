@@ -144,6 +144,16 @@ Assigning \(\Phi:=\{\gamma_n\}\) is recorded as a circular fill (HP-H007), not a
 | HP-H022 | Pólya 1921 random-walk recurrence/transience | Probability | **RETAIN** as dump; no \(\xi\) map |
 | HP-H023 | Pólya 1918 / 1923 zeros of entire functions | Earlier zero-distribution calculus | **RETAIN**; not \(\operatorname{spec}(H)=\{\gamma_n\}\) |
 | HP-H024 | Pólya 1915 integer-valued entire functions | Entire functions taking integer values | **RETAIN** as dump; different book from \(\xi\) |
+| HP-H025 | Pólya–Szegő rearrangement \(\int\lvert\nabla u^\ast\rvert^2\le\int\lvert\nabla u\rvert^2\) | PDE estimate tool | **RETAIN**; LOOK-NS-REARRANGE; not Clay NS |
+| HP-H027 | \(d\ge 3\) transience / Green \(\sim 1/\lvert x\rvert^{d-2}\) | Newtonian kernel family | **RETAIN**; LOOK-NS-GREEN closest NS rhyme; not regularity |
+
+Machine-readable NS book used in the look (aliases NS-B, NS-Φ):
+
+| ID | Formula | Declared meaning | Disposition |
+|---|---|---|---|
+| NS-H001 | \(\partial_t\omega+(u\cdot\nabla)\omega=(\omega\cdot\nabla)u+\nu\Delta\omega\), \(\nabla\cdot u=0\) | Classical vorticity NS | **RETAIN** as separate book |
+| NS-H002 | \(\Gamma=ru_\theta\), \(\Phi=u_\theta/r\), \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) | KEEP swirl algebra | **RETAIN**; \(\Phi\) here \(\neq\) FRA \(\Phi\) \(\neq\) Riemann kernel \(\Phi\) |
+| NS-H003 | \(A=-\mathbb P\Delta\) on \(\nabla\cdot u=0\) | Stokes operator | **RETAIN**; spectral sibling of HP-H020 |
 
 Do not merge HP-H003 with HP-H004, HP-H005, HP-H008, or retired SFE-HAM (`SFE-H003`).
 

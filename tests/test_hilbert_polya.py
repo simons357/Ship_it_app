@@ -205,8 +205,12 @@ class TestRegistryRecords(unittest.TestCase):
             "HP-H022",
             "HP-H023",
             "HP-H024",
+            "HP-H025",
+            "HP-H027",
         ):
             self.assertIn(eq_id, registry.equations)
+        self.assertIn("NS-H001", registry.equations)
+        self.assertIn("NS-H002", registry.equations)
         self.assertEqual(registry.equations["HP-H002"].audit_disposition, "RETAIN")
         self.assertEqual(registry.equations["HP-H007"].audit_disposition, "RETIRE")
         self.assertEqual(registry.equations["HP-H011"].audit_disposition, "RETAIN")

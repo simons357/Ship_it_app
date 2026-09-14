@@ -13,6 +13,7 @@ from .hilbert_polya import (
     list_candidate_ids,
 )
 from .polya_probe import run_polya_probe
+from .millennium_overlap import millennium_look_narrative
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 
@@ -53,7 +54,35 @@ def main(argv: list[str] | None = None) -> int:
             "does not prove RH"
         ),
     )
+    parser.add_argument(
+        "--millennium-look",
+        action="store_true",
+        help=(
+            "look at parts of Pólya against open Clay prizes; "
+            "does not unify them and does not prove RH or NS"
+        ),
+    )
     args = parser.parse_args(argv)
+
+    if args.millennium_look:
+        text = millennium_look_narrative()
+        if args.json:
+            from .millennium_overlap import overlap_looks, closest_rhymes
+
+            json.dump(
+                {
+                    "looks": [look.to_dict() for look in overlap_looks()],
+                    "rhymes": closest_rhymes(),
+                },
+                sys.stdout,
+                indent=2,
+            )
+            sys.stdout.write("\n")
+        else:
+            print(text)
+            print()
+            print(f"Canonical SFE status: {CANONICAL_SFE_STATUS}.")
+        return 0
 
     if args.polya_probe:
         probe = run_polya_probe()
