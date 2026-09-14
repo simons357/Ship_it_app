@@ -27,6 +27,8 @@ not a rename and not a second brand.
 | Piece | Where it already lives |
 |---|---|
 | Public HTML stack | [cosmic-graffiti-magazine.vercel.app](https://cosmic-graffiti-magazine.vercel.app/) |
+| Live look + VAL8000 little box | [`magazine/`](magazine/README.md) — Issue 1 stays the lead; VAL docks in the corner |
+| VAL8000 persona | [`val8000.md`](val8000.md) — resident superagent, after the news |
 | Locked 13 Sep copy | git branch `cursor/cosmic-graffiti-archive-9d6b` under `docs/archive/cosmic-graffiti-magazine-2026-09-13/` |
 | Working markdown (this folder) | issues Jon can edit, plus Frequency items with real URLs |
 | Older swirl leftover / “GRAFITTI” typo cut | other branches only; do not revive the misspelling here |
@@ -90,5 +92,5 @@ theory.
 ## Tests
 
 ```bash
-python -m unittest tests.test_cosmic_graffiti_frequency
+python -m unittest tests.test_cosmic_graffiti_frequency tests.test_val8000 tests.test_val8000_box
 ```
