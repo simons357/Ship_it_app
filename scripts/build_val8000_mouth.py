@@ -4,7 +4,7 @@
 Idle and smile stay thin lines BELOW the lens (those are not teeth).
 The teeth PNG paints a concentric metallic aperture grille INTO the
 existing red circular lens. No chin. No cartoon jaw under the square.
-PIL / numpy only. No film stills. No HAL 9000 wordmark. Gold-free.
+PIL / numpy only. No film stills. Public name VAL8000 only. Gold-free.
 """
 
 from __future__ import annotations
