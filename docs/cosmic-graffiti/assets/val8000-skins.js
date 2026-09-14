@@ -25,6 +25,10 @@
       overlay: "monocle.png",
       title: "Monocle",
     },
+    "stripe-body": {
+      overlay: "val8000-skin-stripe-body.png",
+      title: "Stripe body",
+    },
     "tessellation-tray": { overlay: null, title: "Tessellation tray" },
   };
 

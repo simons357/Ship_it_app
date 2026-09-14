@@ -75,6 +75,7 @@ are issue / night looks, not a second face.
 | `glasses-ordinary` | ordinary glasses on the square | [`skins/glasses-ordinary.svg`](assets/skins/glasses-ordinary.svg) |
 | `glasses-camera` | glasses with a small camera on the frame | [`skins/glasses-camera.svg`](assets/skins/glasses-camera.svg) |
 | `monocle` | one round gold lens on the red-eye square | [`skins/monocle.svg`](assets/skins/monocle.svg) |
+| `stripe-body` | cream / red / black stripe body paint | [`skins/val8000-skin-stripe-body.png`](assets/skins/val8000-skin-stripe-body.png) |
 | `issue1` | two red pills, both red | [`skins/overlay-issue1.svg`](assets/skins/overlay-issue1.svg) |
 | `scientist` | scientist visor | [`skins/overlay-scientist.svg`](assets/skins/overlay-scientist.svg) |
 | `music-art` | quiet music / art room pin | [`skins/overlay-music-art.svg`](assets/skins/overlay-music-art.svg) |
@@ -111,6 +112,28 @@ Weekend Update glasses stay in the tray too. Those are the thin joke
 rims. Ordinary and camera-frame are the pair this drawer was opened for.
 The monocle is the one-lens swap in the same gold family.
 
+## Stripe body
+
+**Stripe body.** Paint on the same square, not a new character. Cream / white
+field with bold red and black irregular angular stripes. Original geometric
+art. Striped-guitar homage. Not a photograph of anyone’s guitar. No third-party
+wordmarks on the PNG.
+
+The red circular camera lens stays the face. Stripes do not cover the pupil
+or the rings — the overlay cuts a circular hole so the eye shows through.
+Idle mouth stays a thin line. Do not read a pickguard as a jaw. When teeth
+are on, they occupy the inner aperture rings. They do not grow a chin.
+
+This is a swap skin, like glasses. **Default remains the naked square.**
+Masthead stays unadorned.
+
+![VAL8000 stripe body — idle line and teeth in rings](assets/skins/val8000-skin-stripe-body-sheet.png)
+
+*Overlay:* [`assets/skins/val8000-skin-stripe-body.png`](assets/skins/val8000-skin-stripe-body.png)
+
+Rebuild with `python3 scripts/val8000_stripe_body.py` (also hooked from
+`python3 scripts/build_val8000_skins.py`).
+
 ## Tessellation
 
 Searched this repo for a tessellation / tesselation / tessellate /
@@ -144,3 +167,5 @@ instead.
 - Do not revive NAV-42 / Fluid-Q / Q OS as physics so a pattern looks
   “deep.”
 - Rebuild overlays with `python3 scripts/build_val8000_skins.py`.
+- Stripe-body paint is original geometry. Do not put a third-party guitar
+  wordmark on the public PNG. Do not ship a photo of someone else’s guitar.

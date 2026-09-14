@@ -2,15 +2,22 @@
 """Build VAL8000 accessory overlay PNGs and a walkthrough sheet.
 
 Overlays are transparent layers for the same 1024 square as
-val8000-mouth-line.png. They do not redraw the eye or the idle mouth.
+val8000-mouth-line.png. Clip-on accessories do not redraw the eye.
+The stripe-body paint cuts out the circular lens and keeps a thin idle line.
 """
 
 from __future__ import annotations
 
 import math
+import sys
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
+
+_SCRIPTS = Path(__file__).resolve().parent
+if str(_SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(_SCRIPTS))
+from val8000_stripe_body import build as build_stripe_body
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "docs" / "cosmic-graffiti" / "assets"
@@ -356,6 +363,7 @@ def main() -> None:
     print("wrote", SKINS / "monocle.png")
     composite(idle, monocle).save(SKINS / "worn-monocle.png", "PNG")
     print("wrote", SKINS / "worn-monocle.png")
+    build_stripe_body()
     sheet(idle, built, SHEET)
 
 
