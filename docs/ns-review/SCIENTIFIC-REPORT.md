@@ -261,14 +261,48 @@ A smooth family with \(\mathcal{R}_\star(v_n)\to\infty\) would **kill** the pack
 ## 8. Reading order
 
 1. [`UNAUG-PROOF-CHAIN.md`](./UNAUG-PROOF-CHAIN.md) (locked terminology / honesty).  
-2. This report (status + honesty locks).  
+2. This report (status + honesty locks) — especially §9 for what can still be worked on.  
 3. [`PROOF-CHAIN-CLEAN.md`](./PROOF-CHAIN-CLEAN.md) (full definitions and chain).  
 4. `scripts/ns_attacks/ns_lemma_star_core.py` + `product_bound_probe.py` (reproducibility).  
 5. Φ-renorm KEEP / audit cards if working the swirl branch (separate).  
-6. Method-seat review: [`METHOD-PANEL-REVIEW.md`](./METHOD-PANEL-REVIEW.md).
+6. Method-seat review: [`METHOD-PANEL-REVIEW.md`](./METHOD-PANEL-REVIEW.md).  
+7. Public visual curriculum (education / map only): [`../campaign/VISUAL-NS-BOOK/`](../campaign/VISUAL-NS-BOOK/).
 
 ---
 
-## 9. One-line status
+## 9. What can still be worked on (honest brief)
+
+Direct answer for technical readers: what is still live, what is already settled, and what will **not** resolve on a short calendar.
+
+### Still OPEN — work these
+
+| Target | Status | Remaining attack routes |
+| --- | --- | --- |
+| **PRODUCT-BLOCK** / uniform \(\sup_v\mathcal{R}_\star(v)<\infty\) | **OPEN** (live trunk door) | (1) **HH-channel** bound on the high×high input piece of \(T_c\); (2) **HL/LL** control by classical products once HH is handled, including **dilation-invariant** forms that respect \(\mathcal{R}_\star\)’s scaling; (3) structure / cancellation rewrites of the triad \(T_c=M-\Lambda N\); (4) honest **conditional** paper under an explicit HH / shell / SND hypothesis (labeled conditional, not Clay) |
+| **Kill search** | **LIVE** (negative control) | Search smooth families with \(\mathcal{R}_\star(v_n)\to\infty\); a hit kills the packaging and must be recorded |
+| Unaugmented shell remainder \(T_{j\leftarrow j}\) | **OPEN** (separate face) | Principal remainder on the unaugmented face; not closed by occupancy/alignment samples (see [`UNAUG-PROOF-CHAIN.md`](./UNAUG-PROOF-CHAIN.md)) |
+| Cross-scale shell bounds / summability | **Not yet supplied** | Needed for a full shell-budget story; do not pretend they follow from spectral-shift alone |
+| Φ-renorm barrier \(\int\|u^r/r\|_\infty\,dt\) | **OPEN** (side wing) | Keep separate; do **not** glue to PRODUCT-BLOCK |
+
+### Already settled (do not re-open as live Clay paths)
+
+- Spectral-moment definitions; \(D_s\ge 0\); \(T_c\) definition; **spectral-shift identity** \(\Lambda'=2(T_c-\nu D_s)/X\) as algebra / bookkeeping along strong solutions.
+- **Spectral-shift ≠ Lemma★ bound:** proving the identity does **not** prove \(\sup\mathcal{R}_\star<\infty\), depletion, or regularity.
+- False universal product \(|T_c|\le C\|v\|_2 X^{3/2}\) — **algebraically false** (wrong amplitude scaling); archive only.
+- Pure viscous absorption \(T_c\le\theta\nu D_s\) alone — **DEAD** (amplitude blowup).
+- Lemma★ ⇒ GR implication (conditional packaging) — proved **as implication**; hypothesis still open.
+- Numerics / five-lane survival ≠ theorem; occupancy \(\approx 1\) + alignment \(\approx 1/2\) ≠ depletion.
+
+### Will NOT resolve soon (calendar honesty)
+
+- **Clay Statement B closed by Monday** (or any short sprint) — **will not happen** on this packaging. PRODUCT-BLOCK is an open analytic estimate, not a weekend checkbox.
+- Full Millennium / prize announcement from this trunk — **not on the table**.
+- Glue of SFE ↔ NS, RH / ARCHON → Statement B, or Φ-renorm ↔ Lemma★ — **refuse / parked**, not “almost done.”
+
+**NS / Clay B is not solved.** Lemma★ / DA-NS-1 remains a **HYPOTHESIS** blocked at PRODUCT-BLOCK.
+
+---
+
+## 10. One-line status
 
 **Lemma★ / DA-NS-1 = HYPOTHESIS, blocked at PRODUCT-BLOCK (uniform \(\mathcal{R}_\star\)). Unaugmented face OPEN at \(T_{j\leftarrow j}\). Spectral-shift identity ≠ ★ bound. NS / Clay B not solved. SFE incompatible. RH / ARCHON parked. Numerics ≠ proof / ≠ depletion.**

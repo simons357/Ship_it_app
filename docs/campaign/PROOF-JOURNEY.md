@@ -4,6 +4,7 @@ Navier–Stokes is a house. Here is the map of what our study has revealed so fa
 
 Longer plain-language face: [`HOUSE-OF-NS.md`](./HOUSE-OF-NS.md)  
 **Adult FAQ (what object? blowup? universe?):** [`WHAT-IS-THIS.md`](./WHAT-IS-THIS.md)  
+**Skool + Substack visual book (map, not proof):** [`VISUAL-NS-BOOK/`](./VISUAL-NS-BOOK/)  
 **Companion lock:** [`REPUTATION-LOCK.md`](./REPUTATION-LOCK.md)  
 **Notation:** [`NOTATION-GLOSSARY.md`](./NOTATION-GLOSSARY.md)  
 **Clean math face:** [`../ns-review/PROOF-CHAIN-CLEAN.md`](../ns-review/PROOF-CHAIN-CLEAN.md)  
