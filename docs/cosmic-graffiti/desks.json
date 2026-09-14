@@ -1,0 +1,39 @@
+{
+  "magazine": "Cosmic Graffiti",
+  "rule": "one desk, one file; do not fight; Frequency prints first",
+  "not_skynet": true,
+  "not_ten_thousand_agents": true,
+  "ten_thousand_agents_were": "OpenAI-scale NS compute mentioned in Issue 1, not a Cosmic Graffiti staff",
+  "desks": [
+    {
+      "id": "frequency",
+      "title": "The Frequency",
+      "job": "Sourced news with a date and a URL. No invented headlines.",
+      "owns": ["docs/cosmic-graffiti/frequency/feed.json", "docs/cosmic-graffiti/issues/"]
+    },
+    {
+      "id": "val8000",
+      "title": "VAL8000",
+      "job": "Rap comment after the news. Terminator/Skynet jokes allowed. Not actually Skynet.",
+      "owns": ["docs/cosmic-graffiti/val8000.md"]
+    },
+    {
+      "id": "ask",
+      "title": "Ask the Desk",
+      "job": "Reader questions, plain-English answers. Known vs open vs picture.",
+      "owns": ["docs/cosmic-graffiti/ask-the-desk.md"]
+    },
+    {
+      "id": "cosmo",
+      "title": "Cosmo Evolution",
+      "job": "Three drawers: THE SKY, THE ATTEMPT, PULLED BACK. Never one theorem.",
+      "owns": ["docs/cosmic-graffiti/cosmo-evolution.md"]
+    },
+    {
+      "id": "humor",
+      "title": "Humor",
+      "job": "Check on self-importance. VAL8000 may double as this desk.",
+      "owns": ["docs/cosmic-graffiti/val8000.md"]
+    }
+  ]
+}
