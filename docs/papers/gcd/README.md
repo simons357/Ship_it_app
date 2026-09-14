@@ -32,7 +32,9 @@ The Track C SFE black-hole `FuncAnimation` paste
 **chat paste arrived**) is also **not** Q6 \(H_N\). The CosmoEvolution
 QNM–zeta DA note
 ([`docs/archive/hb-ringdown/QNM_Prime_Zeta_DA_Analysis_2026-08.md`](../../archive/hb-ringdown/QNM_Prime_Zeta_DA_Analysis_2026-08.md))
-is **not** Q6 \(H_N\); its RH↔GCD glue is **withdrawn**.
+is **not** Q6 \(H_N\); its RH↔GCD glue is **withdrawn**. The split note
+[`QNM_ZETA_WHAT_REMAINS.md`](../../archive/hb-ringdown/QNM_ZETA_WHAT_REMAINS.md)
+is also **not** Q6 \(H_N\).
 
 DA leftover-split lab (this definition beside Ring SND; not a joint operator): [`docs/domain-architect/LEFTOVER-REPAIR.md`](../../domain-architect/LEFTOVER-REPAIR.md).
 

@@ -12,4 +12,9 @@ This is the author’s own withdrawal list. Use it before citing any May/June 20
 
 Phi–Q6 correspondence is withdrawn as load-bearing.
 
-This note does not make Domain Architect a fluids solver.
+The CosmoEvolution QNM–prime unification is likewise **withdrawn**.
+What remains is the split note
+[`docs/archive/hb-ringdown/QNM_ZETA_WHAT_REMAINS.md`](../../archive/hb-ringdown/QNM_ZETA_WHAT_REMAINS.md).
+That split is **not** a Clay paper and **not** live Domain Architect.
+
+This errata PDF does not make Domain Architect a fluids solver.

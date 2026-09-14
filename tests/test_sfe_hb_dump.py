@@ -764,6 +764,23 @@ class TestRhHarmonicPerspectiveStaysArchived(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("QNM_Prime_Zeta_DA_Analysis_2026-08.md", gcd)
 
+        remains = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "archive"
+            / "hb-ringdown"
+            / "QNM_ZETA_WHAT_REMAINS.md"
+        )
+        self.assertTrue(remains.is_file(), remains)
+        body = remains.read_text(encoding="utf-8")
+        self.assertIn("NOT CLAIMED", body)
+        self.assertIn("What this paper is", body)
+        self.assertIn("Motl", body)
+        self.assertIn("`TRANSFORMABLE`", body)
+        self.assertIn("QNM_ZETA_WHAT_REMAINS.md", note)
+        self.assertIn("QNM_ZETA_WHAT_REMAINS.md", lookup)
+        self.assertIn("QNM_ZETA_WHAT_REMAINS.md", archive_index)
+
 
 class TestSpectralUnificationPaperArchived(unittest.TestCase):
     """Frankie SPECTRAL_UNIFICATION_PAPER.tex is archive-only overclaim. Not Clay."""
