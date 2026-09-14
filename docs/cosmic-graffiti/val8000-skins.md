@@ -74,6 +74,7 @@ are issue / night looks, not a second face.
 | `weekend-update` | Weekend Update glasses | [`skins/overlay-weekend-update.svg`](assets/skins/overlay-weekend-update.svg) |
 | `glasses-ordinary` | ordinary glasses on the square | [`skins/glasses-ordinary.svg`](assets/skins/glasses-ordinary.svg) |
 | `glasses-camera` | glasses with a small camera on the frame | [`skins/glasses-camera.svg`](assets/skins/glasses-camera.svg) |
+| `monocle` | one round gold lens on the red-eye square | [`skins/monocle.svg`](assets/skins/monocle.svg) |
 | `issue1` | two red pills, both red | [`skins/overlay-issue1.svg`](assets/skins/overlay-issue1.svg) |
 | `scientist` | scientist visor | [`skins/overlay-scientist.svg`](assets/skins/overlay-scientist.svg) |
 | `music-art` | quiet music / art room pin | [`skins/overlay-music-art.svg`](assets/skins/overlay-music-art.svg) |
@@ -98,8 +99,17 @@ the box.
 
 *Overlay:* [`assets/skins/glasses-camera.png`](assets/skins/glasses-camera.png)
 
+**Monocle.** One original round gold lens on the red-eye square. Same CG
+gold family as the ordinary glasses. Not a brand. Not a product photo.
+Monocle is a swap skin — good for Go deeper / sarcasm / Weekend Update scientist beat — not automatic on insult (insult is tongue).
+
+![VAL8000 square wearing a monocle](assets/skins/worn-monocle.png)
+
+*Overlay:* [`assets/skins/monocle.png`](assets/skins/monocle.png)
+
 Weekend Update glasses stay in the tray too. Those are the thin joke
 rims. Ordinary and camera-frame are the pair this drawer was opened for.
+The monocle is the one-lens swap in the same gold family.
 
 ## Tessellation
 

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-labelledby="t d">
+  <title id="t">VAL8000 monocle</title>
+  <desc id="d">Accessory overlay only. Original round gold lens on the same red-eye square. Same CG gold family as the ordinary glasses. Not a brand logo. Not a product photo. Swap skin. Idle mouth stays a straight line. VAL8000 still types in the box. Not a studio still.</desc>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="512" cy="458" r="148" fill="rgba(186,210,230,0.15)" stroke="none"/>
+    <path d="M430 392 a90 50 0 0 1 110 -10" stroke="rgba(255,255,255,0.35)" stroke-width="8"/>
+    <circle cx="512" cy="458" r="160" stroke="#5c4612" stroke-width="8"/>
+    <circle cx="512" cy="458" r="156" stroke="#c9a227" stroke-width="12"/>
+    <circle cx="512" cy="458" r="148" stroke="#ecd278" stroke-width="3"/>
+    <circle cx="656" cy="500" r="8" fill="#5c4612" stroke="none"/>
+    <circle cx="656" cy="500" r="5" fill="#ecd278" stroke="none"/>
+    <path d="M662 508 C720 560 748 620 762 690" stroke="#5c4612" stroke-width="7"/>
+    <path d="M662 508 C720 560 748 620 762 690" stroke="#c9a227" stroke-width="4"/>
+    <circle cx="690" cy="538" r="7" stroke="#5c4612" stroke-width="4"/>
+    <circle cx="690" cy="538" r="7" stroke="#c9a227" stroke-width="2.5"/>
+    <circle cx="720" cy="590" r="7" stroke="#5c4612" stroke-width="4"/>
+    <circle cx="720" cy="590" r="7" stroke="#c9a227" stroke-width="2.5"/>
+    <circle cx="742" cy="642" r="7" stroke="#5c4612" stroke-width="4"/>
+    <circle cx="742" cy="642" r="7" stroke="#c9a227" stroke-width="2.5"/>
+    <circle cx="762" cy="700" r="11" stroke="#5c4612" stroke-width="5"/>
+    <circle cx="762" cy="700" r="11" stroke="#c9a227" stroke-width="3"/>
+    <circle cx="762" cy="700" r="4" fill="#ecd278" stroke="none"/>
+  </g>
+</svg>

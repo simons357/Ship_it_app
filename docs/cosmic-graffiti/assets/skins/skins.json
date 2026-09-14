@@ -99,6 +99,17 @@
       "when": "Camera-glasses analog. Accessory only."
     },
     {
+      "id": "monocle",
+      "name": "Monocle",
+      "title": "Monocle",
+      "kind": "glasses",
+      "files": ["monocle.png", "monocle.svg"],
+      "overlay": "monocle.png",
+      "svg": "monocle.svg",
+      "notes": "Swap skin. Original round gold lens on the red-eye square. Same CG gold as ordinary glasses. Not a brand. Not a product photo. Good for Go deeper / sarcasm / Weekend Update scientist beat. Not automatic on insult — insult is the tongue. Worn preview: worn-monocle.png.",
+      "when": "Swap only. Go deeper / sarcasm / Weekend Update scientist beat. Not automatic on insult."
+    },
+    {
       "id": "tessellation-tray",
       "name": "Tessellation tray",
       "title": "Tessellation tray",

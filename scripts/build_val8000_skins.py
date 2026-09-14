@@ -7,6 +7,7 @@ val8000-mouth-line.png. They do not redraw the eye or the idle mouth.
 
 from __future__ import annotations
 
+import math
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
@@ -216,6 +217,68 @@ def overlay_glasses_ordinary(camera: bool = False) -> Image.Image:
     return layer.resize((1024, 1024), Image.Resampling.LANCZOS)
 
 
+def overlay_monocle() -> Image.Image:
+    """One original round gold lens on the red-eye square. Same CG gold as ordinary glasses."""
+    scale = 2
+    size = 1024 * scale
+    layer = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer, "RGBA")
+    cx, cy = 512 * scale, 461 * scale
+    gold = (201, 162, 39, 255)
+    gold_dark = (92, 70, 18, 255)
+    gold_light = (236, 210, 120, 255)
+    r = 152 * scale
+    ly = cy - 6
+
+    def bbox(x, y, rad):
+        return [x - rad, y - rad, x + rad, y + rad]
+
+    glass = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    gd = ImageDraw.Draw(glass, "RGBA")
+    gd.ellipse(bbox(cx, ly, r - 8), fill=(186, 210, 230, 38))
+    gd.arc(
+        bbox(cx - 24, ly - 40, r - 86),
+        start=200,
+        end=300,
+        fill=(255, 255, 255, 90),
+        width=16,
+    )
+    layer = Image.alpha_composite(layer, glass.filter(ImageFilter.GaussianBlur(radius=4)))
+    d = ImageDraw.Draw(layer, "RGBA")
+    d.ellipse(bbox(cx, ly, r + 8), outline=gold_dark, width=16)
+    d.ellipse(bbox(cx, ly, r), outline=gold, width=24)
+    d.ellipse(bbox(cx, ly, r - 12), outline=gold_light, width=6)
+
+    attach_ang = math.radians(28)
+    hx = cx + int((r - 4) * math.cos(attach_ang))
+    hy = ly + int((r - 4) * math.sin(attach_ang))
+    d.ellipse([hx - 16, hy - 16, hx + 16, hy + 16], fill=gold_dark)
+    d.ellipse([hx - 10, hy - 10, hx + 10, hy + 10], fill=gold_light)
+
+    chain_end = (cx + 250 * scale, ly + 250 * scale)
+    ctrl = (cx + 210 * scale, ly + 110 * scale)
+    start = (hx + 8, hy + 10)
+
+    def quad(t: float) -> tuple[int, int]:
+        mt = 1 - t
+        x = mt * mt * start[0] + 2 * mt * t * ctrl[0] + t * t * chain_end[0]
+        y = mt * mt * start[1] + 2 * mt * t * ctrl[1] + t * t * chain_end[1]
+        return int(x), int(y)
+
+    chain_pts = [quad(i / 24) for i in range(25)]
+    d.line(chain_pts, fill=gold_dark, width=10)
+    d.line(chain_pts, fill=gold, width=6)
+    for i in (6, 12, 18):
+        px, py = chain_pts[i]
+        d.ellipse([px - 12, py - 12, px + 12, py + 12], outline=gold_dark, width=6)
+        d.ellipse([px - 12, py - 12, px + 12, py + 12], outline=gold, width=3)
+    ex, ey = chain_pts[-1]
+    d.ellipse([ex - 22, ey - 22, ex + 22, ey + 22], outline=gold_dark, width=8)
+    d.ellipse([ex - 22, ey - 22, ex + 22, ey + 22], outline=gold, width=5)
+    d.ellipse([ex - 8, ey - 8, ex + 8, ey + 8], fill=gold_light)
+    return layer.resize((1024, 1024), Image.Resampling.LANCZOS)
+
+
 OVERLAYS = {
     "frequency": overlay_frequency,
     "weekend-update": overlay_weekend_update,
@@ -288,6 +351,11 @@ def main() -> None:
     print("wrote", SKINS / "glasses-camera.png")
     composite(idle, ordinary).save(SKINS / "worn-glasses-ordinary.png", "PNG")
     composite(idle, camera).save(SKINS / "worn-glasses-camera.png", "PNG")
+    monocle = overlay_monocle()
+    monocle.save(SKINS / "monocle.png", "PNG")
+    print("wrote", SKINS / "monocle.png")
+    composite(idle, monocle).save(SKINS / "worn-monocle.png", "PNG")
+    print("wrote", SKINS / "worn-monocle.png")
     sheet(idle, built, SHEET)
 
 

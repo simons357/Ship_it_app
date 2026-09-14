@@ -21,6 +21,10 @@
       overlay: "glasses-camera.png",
       title: "Camera-frame glasses",
     },
+    monocle: {
+      overlay: "monocle.png",
+      title: "Monocle",
+    },
     "tessellation-tray": { overlay: null, title: "Tessellation tray" },
   };
 

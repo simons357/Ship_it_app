@@ -209,7 +209,11 @@ class TestVal8000SkinsDrawer(unittest.TestCase):
         self.assertNotIn("Clay", self.spec)
 
     def test_worn_previews_do_not_replace_face_files(self) -> None:
-        for name in ("worn-glasses-ordinary.png", "worn-glasses-camera.png"):
+        for name in (
+            "worn-glasses-ordinary.png",
+            "worn-glasses-camera.png",
+            "worn-monocle.png",
+        ):
             path = SKINS_DIR / name
             self.assertTrue(path.is_file(), name)
             width, height, _color = _png_ihdr(path)
@@ -217,6 +221,42 @@ class TestVal8000SkinsDrawer(unittest.TestCase):
         line = ASSETS / "val8000-mouth-line.png"
         worn = SKINS_DIR / "worn-glasses-ordinary.png"
         self.assertNotEqual(line.read_bytes(), worn.read_bytes())
+        self.assertNotEqual(line.read_bytes(), (SKINS_DIR / "worn-monocle.png").read_bytes())
+
+    def test_monocle_listed_default_still_naked_idle_unchanged(self) -> None:
+        ids = [row["id"] for row in self.catalog["skins"]]
+        self.assertIn("monocle", ids)
+        row = self.by_id["monocle"]
+        self.assertEqual(row["kind"], "glasses")
+        self.assertEqual(row["overlay"], "monocle.png")
+        self.assertEqual(row["svg"], "monocle.svg")
+        png = SKINS_DIR / "monocle.png"
+        svg = SKINS_DIR / "monocle.svg"
+        self.assertTrue(png.is_file(), png.name)
+        self.assertTrue(svg.is_file(), svg.name)
+        width, height, color_type = _png_ihdr(png)
+        self.assertEqual((width, height), (1024, 1024), png.name)
+        self.assertEqual(color_type, 6, f"{png.name} must be RGBA overlay")
+        svg_text = svg.read_text(encoding="utf-8")
+        self.assertIn("VAL8000", svg_text)
+        self.assertNotIn("HAL", svg_text)
+        self.assertNotIn("mouth-line", svg_text)
+        self.assertNotIn("Google", svg_text)
+        self.assertIn("monocle", self.js)
+        notes = row["notes"].lower()
+        self.assertIn("swap skin", notes)
+        self.assertIn("not automatic on insult", notes)
+        self.assertIn("tongue", notes)
+        self.assertIn("go deeper", notes)
+        self.assertEqual(self.catalog["default"], "naked")
+        self.assertEqual(self.catalog["default_skin"], "naked")
+        self.assertIsNone(self.by_id["naked"]["overlay"])
+        self.assertEqual(self.catalog["idle_mouth"], "straight line under every skin")
+        self.assertIn("Idle mouth stays a straight line under every skin.", self.spec)
+        self.assertIn("not automatic on insult (insult is tongue)", self.spec)
+        self.assertIn("`monocle`", self.spec)
+        self.assertNotIn("HAL 9000", self.spec)
+        self.assertNotIn("Clay", self.spec)
 
 
 if __name__ == "__main__":
