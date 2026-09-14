@@ -46,12 +46,12 @@
   <p class="cli">python3 scripts/cg_desk.py show issue-1<br/>python3 scripts/cg_desk.py substack issue-1<br/>python3 scripts/cg_desk.py skool issue-1</p>
 
   <div class="outs" role="tablist" aria-label="Three outs">
-    <button type="button" class="active" data-out="magazine" role="tab" aria-selected="true">Magazine</button>
+    <button type="button" data-out="magazine" role="tab" aria-selected="true">Magazine</button>
     <button type="button" data-out="substack" role="tab" aria-selected="false">Substack</button>
     <button type="button" data-out="skool" role="tab" aria-selected="false">Skool</button>
   </div>
 
-  <div id="out-magazine" class="out-panel active" role="tabpanel">
+  <div id="magazine" class="out-panel" role="tabpanel">
     <figure class="hero">
       <img src="assets/ISSUE1-portrait-redpills.webp" alt="Issue 1 portrait — Jonathan Simons in a blue-lit lab, black leather jacket and sunglasses, both palms open holding two red pills."/>
     </figure>
@@ -117,7 +117,7 @@
     </aside>
   </div>
 
-  <div id="out-substack" class="out-panel" role="tabpanel" hidden>
+  <div id="substack" class="out-panel" role="tabpanel">
     <p class="kicker">Paste-ready · jonathansimonscrna.substack.com · paywall off</p>
     <h2 style="text-transform:none;letter-spacing:0;font-family:Georgia,serif;color:var(--gold2)">Title</h2>
     <p>Ten thousand agents</p>
@@ -142,7 +142,7 @@ For the record / not the last word.
 Then paste VAL8000 after the body — not in the title.</p>
   </div>
 
-  <div id="out-skool" class="out-panel" role="tabpanel" hidden>
+  <div id="skool" class="out-panel" role="tabpanel">
     <p class="kicker">Paste-ready · Cosmic Graffiti group · paywall off</p>
     <p>
       <strong>Hook:</strong> Issue 1 is up. A reported swarm of roughly ten thousand agents claimed a finite-time Navier–Stokes singularity <em>with a smooth external force</em>. This magazine is paying attention together. <strong>Reported · not DA-certified.</strong> Peers still verify. Not a fight. An acknowledgment.
@@ -171,12 +171,9 @@ Then paste VAL8000 after the body — not in the title.</p>
       btn.setAttribute("aria-selected", on ? "true" : "false");
     });
     ["magazine", "substack", "skool"].forEach(function (id) {
-      var el = document.getElementById("out-" + id);
+      var el = document.getElementById(id);
       if (!el) return;
-      var on = id === name;
-      el.classList.toggle("active", on);
-      if (on) el.removeAttribute("hidden");
-      else el.setAttribute("hidden", "");
+      el.classList.toggle("active", id === name);
     });
   }
   buttons.forEach(function (btn) {

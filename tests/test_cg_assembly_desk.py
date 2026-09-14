@@ -269,6 +269,9 @@ class TestBoardChrome(unittest.TestCase):
 
     def test_issue1_html_has_three_outs_and_val_after(self) -> None:
         html = (PUBLIC / "issue-1.html").read_text(encoding="utf-8")
+        self.assertIn("id=\"magazine\"", html)
+        self.assertIn("id=\"substack\"", html)
+        self.assertIn("id=\"skool\"", html)
         self.assertIn("data-out=\"magazine\"", html)
         self.assertIn("data-out=\"substack\"", html)
         self.assertIn("data-out=\"skool\"", html)

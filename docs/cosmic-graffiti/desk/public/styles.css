@@ -81,9 +81,16 @@ footer.site{margin-top:36px;padding-top:16px;border-top:1px solid var(--line);fo
   font-family:system-ui,sans-serif;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;
   padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer
 }
-.outs button.active,.outs button:hover{color:var(--gold2);border-color:var(--gold);background:rgba(201,162,39,.1)}
+.outs button.active,.outs button:hover,
+body:has(#magazine:target) .outs [data-out="magazine"],
+body:has(#substack:target) .outs [data-out="substack"],
+body:has(#skool:target) .outs [data-out="skool"],
+body:not(:has(.out-panel:target)) .outs [data-out="magazine"]{
+  color:var(--gold2);border-color:var(--gold);background:rgba(201,162,39,.1)
+}
 .out-panel{display:none}
-.out-panel.active{display:block}
+.out-panel.active,.out-panel:target{display:block}
+body:not(:has(.out-panel:target)) #magazine.out-panel{display:block}
 .paste{
   font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   font-size:.86rem;line-height:1.55;white-space:pre-wrap;color:var(--ink);
