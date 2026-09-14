@@ -18,6 +18,12 @@ Hardback **arrived from Drive** (2 777 161 bytes, SHA `57e0a0bcf25f…`):
 Receipt: [`Harmonic_Blueprint_HARDBACK.RECEIPT.md`](Harmonic_Blueprint_HARDBACK.RECEIPT.md).
 Book only. Not Clay. Not live DA.
 
+`The Harmonic Blueprint FULL.docx` **arrived as a stub** (36 775 bytes,
+SHA `fe4bbc6875…`), not the book:
+[`The_Harmonic_Blueprint_FULL.docx`](The_Harmonic_Blueprint_FULL.docx).
+Chapter 8 “SFE Explained” txt **not received**:
+[`Chapter8-SFE-Explained.MISSING.md`](Chapter8-SFE-Explained.MISSING.md).
+
 [`Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md`](Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md)
 
 SHA-256 `4d49cd1ee629…`. 15 899 bytes. Chat paste of 19 August 2026
