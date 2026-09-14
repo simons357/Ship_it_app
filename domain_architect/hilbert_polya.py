@@ -282,7 +282,7 @@ def core_role_map() -> list[CoreRoleOccupant]:
 
 
 def extra_structures() -> list[str]:
-    """Independently necessary objects that must not be hidden to keep five roles."""
+    """Independently necessary objects. Do not hide them to fake a five-letter map."""
     return [
         "Hilbert space ℋ and inner product",
         "operator domain D(H) and deficiency indices",

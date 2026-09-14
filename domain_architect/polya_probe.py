@@ -42,6 +42,40 @@ PROBE_SCOPE: str = (
     "proof of the Riemann hypothesis and not a unification of Millennium problems."
 )
 
+COUNT_POLICY: str = (
+    "P, H, ψ, λ, Φ are an interface, not a cap. The count can be 7, 8, 15, "
+    "or whatever the subject requires. DA decides. Five is what we started "
+    "with, not what quantum Hilbert–Pólya fitted into."
+)
+
+QUANTUM_FIT_IDS: tuple[str, ...] = (
+    "C-Hspace",
+    "C-inner",
+    "C-B",
+    "C-D",
+    "C-decoherence",
+    "C-Tbreak",
+)
+
+
+def how_quantum_fitted(components: list[ComponentRecord] | None = None) -> list[str]:
+    """What DA added because a quantum Hamiltonian does not fit in five letters."""
+    items = components if components is not None else briefing_components()
+    lines = [
+        "A quantum Hamiltonian is not five letters. DA kept P, H, ψ, λ, Φ "
+        "as the interface and recorded every extra object the subject needed.",
+    ]
+    for item in items:
+        if item.component_id in QUANTUM_FIT_IDS:
+            lines.append(
+                f"{item.role}: {item.occupant} — {item.verdict}"
+            )
+    lines.append(
+        "Those extras are how quantum fitted. Hiding them to keep a count of "
+        "five would lose the theory."
+    )
+    return lines
+
 
 @dataclass
 class ComponentRecord:
@@ -73,6 +107,8 @@ class PolyaProbeReport:
     weyl_laboratory: dict[str, Any]
     filter_pops: list[str]
     filter_scoreboard: list[dict[str, str]]
+    how_quantum_fitted: list[str]
+    count_policy: str
     registry_hp_ids: list[str]
     conflicts: list[str]
     nulls: list[str]
@@ -99,16 +135,25 @@ class PolyaProbeReport:
             PROGRAM_SCOPE,
             "",
             f"Instance: {self.instance_name}",
+            f"DA decided the component count for this subject: {self.component_count}",
             f"Independently specifiable components recorded: {self.component_count} "
-            f"({self.core_role_count} core roles + {self.extension_count} extension / E)",
+            f"({self.core_role_count} core interface letters + {self.extension_count} extension / E)",
+            self.count_policy,
+            f"Interface letters recorded: {self.core_role_count} "
+            f"(P, H, ψ, λ, Φ). Extra independently specifiable objects: "
+            f"{self.extension_count}.",
             f"Hilbert–Pólya status: {self.hilbert_polya_status}.",
             f"Riemann hypothesis status: {self.rh_status}.",
             f"Canonical SFE status: {self.canonical_sfe_status}.",
             f"Program complete: {self.complete}",
             f"Highest evidence level actually supported: Level {self.highest_evidence_level}",
             "",
-            "Who survived the filter (RH-attack sources):",
+            "How quantum fitted (DA expanded; it did not squeeze into five):",
         ]
+        for line in self.how_quantum_fitted:
+            lines.append(f"  * {line}")
+        lines.append("")
+        lines.append("Who survived the filter (RH-attack sources):")
         for row in self.filter_scoreboard:
             lines.append(f"  [{row['result']}] {row['source']}")
             lines.append(f"    {row['objects']}")
@@ -261,8 +306,8 @@ def briefing_components() -> list[ComponentRecord]:
             "Hilbert space must be declared (L²(ℝ), adelic space, …)",
             "open",
             False,
-            "promoted out of the five-role map into E / UHF",
-            "quantum does not fit in five roles without ℋ",
+            "promoted into E; quantum needed ℋ as its own component",
+            "quantum does not fit in five letters without ℋ",
             "UHF requirement",
         ),
         ComponentRecord(
@@ -791,11 +836,13 @@ def da_requests() -> list[str]:
 
 def _findings() -> list[str]:
     return [
-        "Quantum Hilbert–Pólya does not fit in five roles. DA expanded the "
-        "record to Hilbert space, inner product, domain/boundary data, unitary "
-        "evolution, implicit Ξ = 0, arithmetic (Euler/Weil), entire-function "
-        "data (ξ, functional equation, Laguerre–Pólya, Jensen), statistics "
-        "(GUE), and symmetry (time-reversal breaking).",
+        "Quantum Hilbert–Pólya does not fit in five letters. DA decided "
+        "the count from the subject and expanded to Hilbert space, inner "
+        "product, domain/boundary data, unitary evolution, implicit Ξ = 0, "
+        "arithmetic (Euler/Weil), entire-function data (ξ, functional "
+        "equation, Laguerre–Pólya, Jensen), statistics (GUE), and symmetry "
+        "(time-reversal breaking). Another subject can land at 7 or 8. "
+        "This one did not.",
         "Two parallel Pólya routes exist and must not be merged: (1) Hilbert–Pólya "
         "— a self-adjoint H whose eigenvalues are the γ_n; (2) Laguerre–Pólya — "
         "ξ(1/2+iz) as an entire function of the LP class (all zeros real). Both "
@@ -920,6 +967,7 @@ def run_polya_probe() -> PolyaProbeReport:
             "gue_is_not_identity": True,
             "weyl_law_screen": True,
             "filter_scoreboard": True,
+            "da_decides_component_count": True,
         }
     )
 
@@ -943,6 +991,8 @@ def run_polya_probe() -> PolyaProbeReport:
         weyl_laboratory=weyl,
         filter_pops=filter_pops(),
         filter_scoreboard=filter_scoreboard(),
+        how_quantum_fitted=how_quantum_fitted(components),
+        count_policy=COUNT_POLICY,
         registry_hp_ids=hp_ids,
         conflicts=conflicts,
         nulls=nulls,

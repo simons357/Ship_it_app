@@ -64,11 +64,16 @@ the sequence \(\gamma_n\)). Nothing here is Levels 2–6, and nothing is Clay.
 
 ---
 
-## 2. Core-role map (the five roles, honestly occupied)
+## 2. Core-role interface (not a cap of five)
 
 \[
 \Phi=\mathcal F(P,H,\psi,\lambda;E).
 \]
+
+\(P,H,\psi,\lambda,\Phi\) are interface letters. Domain Architect decides
+how many independently specifiable components the subject needs — 7, 8, 15,
+or more. Quantum Hilbert–Pólya does not fit in five. The extras below are
+how it fitted.
 
 | Role | Target occupant | Independent of zeros? | Status |
 |---|---|---|---|
@@ -78,8 +83,8 @@ the sequence \(\gamma_n\)). Nothing here is Levels 2–6, and nothing is Clay.
 | \(\lambda\) | Eigenvalue parameter \(E_n\) in \(H\psi=E_n\psi\) (subtype: **eigenvalue**, not a transfer function) | the *parameter* is; the *claim* \(E_n=\gamma_n\) is not a fill | target identity |
 | \(\Phi\) | Spectral data of \(H\) (point spectrum, spectral measure, or \(\det\)) | the *kind* of output is; \(\Phi:=\{\gamma_n\}\) is not a fill | target identity |
 
-Independently necessary structure that must sit in \(E\), not be hidden to
-preserve a five-role count:
+Independently necessary structure that must sit in \(E\). Do not hide it
+to fake a five-letter count:
 
 - Hilbert space \(\mathcal H\) and inner product;
 - operator domain \(D(H)\) and deficiency indices;

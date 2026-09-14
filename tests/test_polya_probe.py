@@ -19,9 +19,14 @@ ROOT = Path(__file__).resolve().parents[1]
 class TestPolyaProbe(unittest.TestCase):
     def test_expands_past_five_roles_and_asks_for_h(self):
         probe = run_polya_probe()
-        self.assertGreater(probe.component_count, 5)
+        self.assertGreater(probe.component_count, 8)
         self.assertEqual(probe.core_role_count, 5)
-        self.assertGreater(probe.extension_count, 0)
+        self.assertGreater(probe.extension_count, 2)
+        narrative = probe.narrative()
+        self.assertIn("DA decided the component count", narrative)
+        self.assertIn("not a cap", narrative)
+        self.assertIn("How quantum fitted", narrative)
+        self.assertTrue(any("ℋ" in line or "Hilbert space" in line for line in probe.how_quantum_fitted))
         self.assertFalse(probe.complete)
         self.assertEqual(probe.rh_status, RH_STATUS)
         self.assertEqual(probe.canonical_sfe_status, CANONICAL_SFE_STATUS)
@@ -92,6 +97,9 @@ class TestPolyaProbe(unittest.TestCase):
             check=True,
         )
         self.assertIn("Independently specifiable components recorded:", proc.stdout)
+        self.assertIn("DA decided the component count", proc.stdout)
+        self.assertIn("How quantum fitted", proc.stdout)
+        self.assertIn("not a cap", proc.stdout)
         self.assertIn("Riemann hypothesis status: not claimed", proc.stdout)
         self.assertIn("Laguerre", proc.stdout)
         self.assertIn("INSUFFICIENT_INFORMATION", proc.stdout)

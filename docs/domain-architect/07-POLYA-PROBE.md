@@ -6,8 +6,10 @@
 **Run:** `python -m domain_architect --polya-probe`
 
 Dump Pólya’s record into Domain Architect. Do not pre-filter what belongs.
-DA chooses how many independently specifiable components to record (core
-roles are an interface, not a cap). Then DA asks for whatever else it needs.
+DA chooses how many independently specifiable components to record — 7, 8,
+15, or whatever the subject needs. Core roles are an interface, not a cap.
+Quantum Hilbert–Pólya fitted by expansion (\(ℋ\), inner product, \(ℬ\),
+\(D\), \(\Xi=0\), time-reversal), not by squeezing into five.
 
 This is classification, not a proof of the Riemann hypothesis and not a
 unification of Millennium problems.
