@@ -4,7 +4,8 @@ News stays in The Frequency (dates, URLs, labels). These are the jokes
 **after**. Paste each bit under the matching Frequency item. Do not
 replace the news.
 
-Anchor: VAL8000. One red eye. AI. Not a person. Not Skynet.
+Anchor: VAL8000. One red eye. Mouth a line. Smile for the joke. Teeth
+stay rare. AI. Not a person. Not Skynet.
 
 ---
 

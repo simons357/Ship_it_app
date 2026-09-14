@@ -18,8 +18,10 @@ It failed for boring reasons, not mystical ones.
 3. **“Ten thousand agents” was not us.** Issue 1 reported someone else’s
    Navier–Stokes swarm. That is not a Cosmic Graffiti staff, and it is
    not a close of unaugmented regularity.
-4. **No mouth.** ElevenLabs never had a key in the agent environment, so
-   VAL8000 never actually spoke. Stock TTS is not him.
+4. **No audio mouth.** ElevenLabs never had a key in the agent environment,
+   so VAL8000 never actually spoke. Stock TTS is not him. The **panel**
+   mouth is separate: a line by default, a smile for jokes, metal teeth
+   only as a rare gag.
 5. **No post loop.** Substack and Skool were not wired. Files landed in
    git and stopped.
 

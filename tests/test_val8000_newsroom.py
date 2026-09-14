@@ -25,6 +25,9 @@ class TestVal8000HumorAndMouth(unittest.TestCase):
         self.assertIn("Skynet", text)
         self.assertIn("I'll be back — after the footnote.", text)
         self.assertIn("He is **not** Skynet", text)
+        self.assertIn("Default mouth: a line.", text)
+        self.assertIn("Smile when the joke earns it.", text)
+        self.assertIn("Metal teeth are rare.", text)
         self.assertNotIn("not a terminator, not a skull", text.lower())
 
     def test_elevenlabs_never_falls_back_to_stock_tts(self) -> None:

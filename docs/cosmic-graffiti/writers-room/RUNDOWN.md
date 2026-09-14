@@ -24,6 +24,7 @@ If it is not on this page, it is not in the show.
 - Any sketch that “solves” unaugmented Navier–Stokes
 - Any sketch that “proves” RH
 - Premade ElevenLabs voices billed as VAL8000
+- Metal teeth as the masthead face
 - A new git branch instead of a slot
 
 ## Next week (empty on purpose)

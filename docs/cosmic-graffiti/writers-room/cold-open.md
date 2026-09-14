@@ -13,7 +13,7 @@ name tag is different.
 
 They try to hug. Coffee hits the table.
 
-**VAL8000** *(one red eye, not flying the ship)*:  
+**VAL8000** *(one red eye, mouth a line, not flying the ship)*:  
 Same letter. Different guest. I’ll be back — after you change the tags.  
 Skynet this ain’t. That’s a typesetting problem.
 

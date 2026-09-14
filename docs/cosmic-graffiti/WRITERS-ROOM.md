@@ -41,7 +41,9 @@ people, no show.
    it is cut at the table. Humor is allowed. Lying is not.
 5. **Terminator / Skynet:** punchlines. VAL8000 may say “I’ll be back —
    after the footnote.” He does not launch anything.
-6. **Mouth:** ElevenLabs clone only. Stock voices are not VAL8000.
+6. **Audio mouth:** ElevenLabs clone only. Stock voices are not VAL8000.
+7. **Panel mouth:** line by default; smile for jokes; metal teeth rare,
+   never the masthead.
 
 ## Commands
 
