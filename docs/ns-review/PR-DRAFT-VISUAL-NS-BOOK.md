@@ -2,7 +2,8 @@
 
 **Branch:** `cursor/visual-ns-book-0cc5`  
 **Base:** `main`  
-**Compare:** https://github.com/simons357/Ship_it_app/compare/main...cursor/visual-ns-book-0cc5
+**Compare:** https://github.com/simons357/Ship_it_app/compare/main...cursor/visual-ns-book-0cc5  
+**PR create:** blocked here (`gh` integration 403; no ManagePullRequest tool in this run). Open the compare link to file the draft PR if the environment does not auto-open one.
 
 ## Title
 
