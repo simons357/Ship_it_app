@@ -56,6 +56,11 @@ class TestNewsroomIsNotSkynet(unittest.TestCase):
         self.assertEqual(ids, {"frequency", "val8000", "ask", "cosmo", "humor"})
         self.assertTrue(roster["not_skynet"])
         self.assertTrue(roster["not_ten_thousand_agents"])
+        self.assertIn("Saturday Night Live", roster["analogy"])
+        self.assertEqual(roster["showrunner"], "Jonathan Simons")
+        roles = {d["id"]: d["snl_role"] for d in roster["desks"]}
+        self.assertEqual(roles["frequency"], "Weekend Update news")
+        self.assertEqual(roles["val8000"], "Weekend Update jokes")
         news = NEWSROOM.read_text(encoding="utf-8").lower()
         self.assertIn("why", news)
         self.assertIn("parallel git branches", news)
@@ -81,6 +86,38 @@ class TestNewsroomIsNotSkynet(unittest.TestCase):
         self.assertIn("not Skynet", status.stdout)
         self.assertIn("val8000.md", status.stdout)
         self.assertIn("present", status.stdout)
+
+
+class TestWritersRoomIsSNLNotSwarm(unittest.TestCase):
+    def test_table_prints_weekend_update(self) -> None:
+        proc = subprocess.run(
+            ["python3", str(NEWSROOM_PY), "table"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        self.assertIn("Weekend Update jokes", proc.stdout)
+        self.assertIn("private magazines", proc.stdout)
+        self.assertIn("RUNDOWN.md", proc.stdout)
+
+    def test_packet_is_jokes_after_news_not_closes(self) -> None:
+        update = (CG / "writers-room" / "weekend-update.md").read_text(
+            encoding="utf-8"
+        )
+        cold = (CG / "writers-room" / "cold-open.md").read_text(encoding="utf-8")
+        room = (CG / "WRITERS-ROOM.md").read_text(encoding="utf-8")
+        blob = "\n".join([update, cold]).lower()
+        self.assertIn("weekend update", room.lower())
+        self.assertIn("one rundown", room.lower())
+        self.assertIn("coffee did not explode", update.lower())
+        self.assertIn("nobody in those papers claimed 2", update.lower())
+        self.assertIn("da-vc-01", update.lower())
+        self.assertIn("fail", update.lower())
+        self.assertNotIn("ns solved", blob)
+        self.assertNotIn("rh is proved", blob)
+        self.assertNotIn("riemann hypothesis is proved", blob)
+        self.assertIn("be back", cold.lower())
 
 
 if __name__ == "__main__":

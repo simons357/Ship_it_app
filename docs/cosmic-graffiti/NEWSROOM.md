@@ -60,3 +60,7 @@ them. Do not invent a second magazine to fill a hole.
 
 When Jon says “run the desk tonight,” one agent reads this file, fills
 the empty trays, and stops. That is the network.
+
+The comedy version of the same table — SNL-style writers, one rundown,
+Weekend Update = VAL8000 — is [`WRITERS-ROOM.md`](WRITERS-ROOM.md).
+`python3 scripts/cg_newsroom.py table`

@@ -1,6 +1,11 @@
 {
   "magazine": "Cosmic Graffiti",
-  "rule": "one desk, one file; do not fight; Frequency prints first",
+  "rule": "one show, one rundown, writers get slots; Frequency prints first",
+  "show": "Cosmic Graffiti",
+  "analogy": "Saturday Night Live writers' table — not a swarm, not Skynet",
+  "showrunner": "Jonathan Simons",
+  "cue_cards": "docs/cosmic-graffiti/issues/",
+  "rundown": "docs/cosmic-graffiti/writers-room/RUNDOWN.md",
   "not_skynet": true,
   "not_ten_thousand_agents": true,
   "ten_thousand_agents_were": "OpenAI-scale NS compute mentioned in Issue 1, not a Cosmic Graffiti staff",
@@ -8,32 +13,37 @@
     {
       "id": "frequency",
       "title": "The Frequency",
+      "snl_role": "Weekend Update news",
       "job": "Sourced news with a date and a URL. No invented headlines.",
       "owns": ["docs/cosmic-graffiti/frequency/feed.json", "docs/cosmic-graffiti/issues/"]
     },
     {
       "id": "val8000",
       "title": "VAL8000",
+      "snl_role": "Weekend Update jokes",
       "job": "Rap comment after the news. Terminator/Skynet jokes allowed. Not actually Skynet.",
-      "owns": ["docs/cosmic-graffiti/val8000.md"]
+      "owns": ["docs/cosmic-graffiti/val8000.md", "docs/cosmic-graffiti/writers-room/weekend-update.md"]
     },
     {
       "id": "ask",
       "title": "Ask the Desk",
+      "snl_role": "audience question",
       "job": "Reader questions, plain-English answers. Known vs open vs picture.",
       "owns": ["docs/cosmic-graffiti/ask-the-desk.md"]
     },
     {
       "id": "cosmo",
       "title": "Cosmo Evolution",
+      "snl_role": "pretaped sketch",
       "job": "Three drawers: THE SKY, THE ATTEMPT, PULLED BACK. Never one theorem.",
       "owns": ["docs/cosmic-graffiti/cosmo-evolution.md"]
     },
     {
       "id": "humor",
       "title": "Humor",
+      "snl_role": "cold open / short",
       "job": "Check on self-importance. VAL8000 may double as this desk.",
-      "owns": ["docs/cosmic-graffiti/val8000.md"]
+      "owns": ["docs/cosmic-graffiti/val8000.md", "docs/cosmic-graffiti/writers-room/cold-open.md"]
     }
   ]
 }

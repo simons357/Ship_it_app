@@ -58,12 +58,38 @@ def why() -> int:
     return 0
 
 
+def table() -> int:
+    roster = load_roster()
+    rundown = ROOT / roster.get(
+        "rundown", "docs/cosmic-graffiti/writers-room/RUNDOWN.md"
+    )
+    print(f"Show: {roster.get('show', roster['magazine'])}")
+    print(f"Analogy: {roster.get('analogy', 'writers table')}")
+    print(f"Showrunner: {roster.get('showrunner', 'Jon')}")
+    print("One rundown. Writers get slots. They do not get private magazines.")
+    print()
+    for desk in roster["desks"]:
+        role = desk.get("snl_role", "")
+        print(f"{desk['id']:10}  {role}")
+        print(f"            {desk['job']}")
+    print()
+    if rundown.is_file():
+        print(f"Rundown: {rundown.relative_to(ROOT)}")
+        print(rundown.read_text(encoding="utf-8").splitlines()[0])
+    else:
+        print("Rundown missing. Do not invent a second show.")
+        return 2
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("status", "why"))
+    parser.add_argument("command", choices=("status", "why", "table"))
     args = parser.parse_args(argv)
     if args.command == "status":
         return status()
+    if args.command == "table":
+        return table()
     return why()
 
 
