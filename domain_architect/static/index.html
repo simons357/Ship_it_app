@@ -171,18 +171,20 @@
       </section>
     </main>
   </div>
-  <aside id="val8000-dock" class="val8000-dock" data-val-mode="da" role="complementary" aria-label="VAL8000, resident commentator">
-    <div id="val8000-square" class="val8000-square" title="VAL8000">
+  <aside id="val8000-dock" class="val8000-dock" data-val-mode="type" data-val-audio="off" role="complementary" aria-label="VAL8000 type box">
+    <button type="button" id="val8000-square" class="val8000-square" title="VAL8000 — always-visible square. He types.">
       <img id="val8000-face" src="/val8000/val8000-mouth-line.png" alt="VAL8000 red circular lens and a straight mouth line on a dark square panel" />
-    </div>
+    </button>
     <div class="val8000-rail">
       <p class="val8000-name">VAL8000</p>
-      <p class="val8000-job">Resident · in the view · AI</p>
-      <p id="val8000-status" class="val8000-status">Idle. Mouth a line. If a field is empty, I can help with unanswered questions.</p>
+      <p class="val8000-job">He types. Voice later.</p>
+      <p id="val8000-status" class="val8000-status">Idle. Mouth a line. Type a question, or help with unanswered.</p>
       <button type="button" id="val8000-help">Help with unanswered</button>
-      <label class="val8000-ask-label" for="val8000-ask">Ask the Desk
-        <textarea id="val8000-ask" rows="2" placeholder="One question. I'll label Known / Open / Picture. I do not invent theorems."></textarea>
-      </label>
+      <form id="val8000-ask-form" class="val8000-ask-label" action="#" method="get">
+        <label for="val8000-ask">Ask the Desk</label>
+        <textarea id="val8000-ask" rows="2" placeholder="Type to VAL8000. No audio."></textarea>
+        <button type="submit">Type</button>
+      </form>
       <div id="val8000-answer" class="val8000-answer" hidden></div>
     </div>
   </aside>

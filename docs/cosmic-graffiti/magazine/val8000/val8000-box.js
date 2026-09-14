@@ -203,7 +203,11 @@
 
   function ask(question) {
     var q = String(question || "").replace(/\s+/g, " ").trim();
-    if (!q || busy) return;
+    if (busy) return;
+    if (!q) {
+      helpBtn.click();
+      return;
+    }
     busy = true;
     input.value = "";
     input.disabled = true;

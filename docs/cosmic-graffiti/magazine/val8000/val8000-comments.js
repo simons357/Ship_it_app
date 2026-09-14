@@ -65,10 +65,7 @@ window.VAL8000_COMMENTS = {
   }
 };
 
-window.VAL8000_HELP =
-  "Ask the Desk. I type what I already know. I do not invent theorems. " +
-  "I do not stamp TRANSFORMABLE without a real T. DA-VC-01 stays FAIL. " +
-  "Voice later — I only type in this box.";
+window.VAL8000_HELP = "Ask the Desk. I type what I already know. I do not invent theorems. I do not stamp TRANSFORMABLE without a real T. DA-VC-01 stays FAIL. Voice later — I only type in this box.";
 
 window.VAL8000_FAIL =
   "DA-VC-01 stays FAIL. Classical unaugmented Navier–Stokes regularity stays OPEN. " +
@@ -86,7 +83,7 @@ window.VAL8000_reply = function (question, entry) {
   if (/transformable/.test(lower)) return window.VAL8000_NO_T;
 
   if (
-    /da-vc-01|unaugmented|navier|leftover|closed the mountain/.test(
+    /da-vc-01|unaugmented|navier|leftover|closed the mountain|solved the swirl/.test(
       lower
     )
   ) {

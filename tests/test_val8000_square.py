@@ -66,7 +66,7 @@ class TestSquareLivesInTheDaView(unittest.TestCase):
     def test_css_keeps_a_square_in_the_layout(self) -> None:
         css = _read(DOCK / "val8000-dock.css")
         self.assertIn(".val8000-dock", css)
-        self.assertIn("4.35rem", css)
+        self.assertIn("7.2rem", css)
         self.assertIn("position: sticky", css)
         self.assertNotIn("display: none", css.split(".val8000-square")[1][:400])
 

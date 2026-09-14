@@ -3,6 +3,10 @@
 
   var LINE = "/val8000/val8000-mouth-line.png";
   var SMILE = "/val8000/val8000-mouth-smile.png";
+  var HELP =
+    "Ask the Desk. I type what I already know. I do not invent theorems. " +
+    "I do not stamp TRANSFORMABLE without a real T. DA-VC-01 stays FAIL. " +
+    "Voice later — I only type in this box.";
 
   var FIELDS = [
     {
@@ -10,7 +14,7 @@
       pane: "decompose",
       label: "Decompose expression",
       fill: "xdd + k*x = 0",
-      say: [
+      type: [
         "Empty decompose. I parked an incomplete oscillator — missing damping is a role hole, not a solved mountain.",
         "I do not invent theorems. Correspondence is a hypothesis, not physical equivalence.",
         "Unaugmented leftover stays OPEN. DA-VC-01 stays FAIL."
@@ -21,7 +25,7 @@
       pane: "translate",
       label: "System A",
       fill: "m*xdd + c*xd + k*x = f",
-      say: [
+      type: [
         "System A was blank. Mechanical oscillator is a labeled example with an executable T on the electrical twin.",
         "I will not stamp TRANSFORMABLE without a real T. SND vs H_N still refuses a letter map."
       ]
@@ -31,7 +35,7 @@
       pane: "translate",
       label: "System B",
       fill: "L*qdd + R*qd + kC*q = v",
-      say: [
+      type: [
         "System B was blank. Series RLC is the twin that actually has a T, not a slogan.",
         "I will not stamp TRANSFORMABLE without a real T. Unaugmented leftover stays OPEN."
       ]
@@ -41,7 +45,7 @@
       pane: "synthesize",
       label: "Target state",
       fill: "x★ = 1",
-      say: [
+      type: [
         "Empty target. x★ = 1 is a desired state for the analog loop — a hypothesis, not a tank certificate.",
         "I do not close OPEN leftovers. DA-VC-01 stays FAIL."
       ]
@@ -51,7 +55,7 @@
       pane: "synthesize",
       label: "Constraints",
       fill: "|u| ≤ 6, manufacturable",
-      say: [
+      type: [
         "Constraints were blank. I filled a bounded, manufacturable request. Hardware 15% is still not a 3D NS proof.",
         "DA-VC-01 stays FAIL."
       ]
@@ -61,7 +65,7 @@
       pane: "cycle",
       label: "Step k",
       fill: "7",
-      say: [
+      type: [
         "Step k was blank. Default classical surgery cuts leftover 7–8. Step 2 is Ring Lemma and is already PROVED.",
         "I will not close the unaugmented leftover. DA-VC-01 stays FAIL."
       ]
@@ -112,20 +116,62 @@
     dock.classList.toggle("is-smile", which === "smile");
   }
 
+  var reduce =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var busy = false;
+
+  function replyFor(question) {
+    var q = String(question || "").replace(/\s+/g, " ").trim();
+    if (!q) return HELP;
+    var lower = q.toLowerCase();
+    if (/transformable/.test(lower)) {
+      return "I do not stamp TRANSFORMABLE without a real T. Correspondence is a hypothesis, not physical equivalence. DA-VC-01 stays FAIL.";
+    }
+    if (/da-vc-01|unaugmented|navier|leftover/.test(lower)) {
+      return "DA-VC-01 stays FAIL. Classical unaugmented Navier–Stokes regularity stays OPEN. Reported is not certified. I do not invent theorems.";
+    }
+    if (/speak|talk|voice|elevenlabs|espeak|autoplay|audio/.test(lower)) {
+      return "VAL8000. I type in this box. I do not talk yet — voice later, clone only, never stock. I do not fly the ship.";
+    }
+    return HELP;
+  }
+
+  function typeInto(box, text, done) {
+    box.hidden = false;
+    if (reduce) {
+      box.textContent = text;
+      if (typeof done === "function") done();
+      return;
+    }
+    var i = 0;
+    box.textContent = "";
+    function tick() {
+      i += 1;
+      box.textContent = text.slice(0, i);
+      if (i < text.length) window.setTimeout(tick, 10);
+      else if (typeof done === "function") done();
+    }
+    tick();
+  }
+
   function showAnswer(lines, smile) {
     var dock = $("val8000-dock");
     var box = $("val8000-answer");
     var status = $("val8000-status");
     if (!dock || !box || !status) return;
     dock.classList.add("is-help");
-    box.hidden = false;
-    box.innerHTML = lines.map(function (p) {
-      return "<p>" + p + "</p>";
-    }).join("");
-    status.textContent = smile
-      ? "Answered. Mouth a smile. I still do not fly the ship."
-      : "Idle. Mouth a line. If a field is empty, I can help with unanswered questions.";
-    setMouth(smile ? "smile" : "line");
+    var text = lines.map(function (p) {
+      return String(p).replace(/<[^>]+>/g, "");
+    }).join("\n");
+    status.textContent = "Typing. Mouth a line until I finish.";
+    setMouth("line");
+    typeInto(box, text, function () {
+      status.textContent = smile
+        ? "Answered. Mouth a smile. I still do not fly the ship. Voice later — I only type."
+        : "Idle. Mouth a line. If a field is empty, I can help with unanswered questions.";
+      setMouth(smile ? "smile" : "line");
+    });
   }
 
   function helpUnanswered() {
@@ -159,7 +205,7 @@
     if (node) node.value = first.fill;
     lines = [
       "Unanswered: <strong>" + first.label + "</strong>. I filled a labeled example. I do not invent theorems."
-    ].concat(first.say);
+    ].concat(first.type);
     showAnswer(lines, true);
     if (node) node.focus();
   }
@@ -171,6 +217,34 @@
 
   var helpBtn = $("val8000-help");
   if (helpBtn) helpBtn.addEventListener("click", helpUnanswered);
+
+  var ask = $("val8000-ask");
+  var askForm = $("val8000-ask-form");
+  function askTyped() {
+    if (!ask) return;
+    var q = String(ask.value || "").trim();
+    if (!q) {
+      showAnswer([HELP], true);
+      return;
+    }
+    showAnswer(["You: " + q, "VAL8000: " + replyFor(q)], true);
+  }
+  if (askForm) {
+    askForm.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      askTyped();
+    });
+  }
+
+  var square = $("val8000-square");
+  if (square) {
+    square.style.cursor = "pointer";
+    square.addEventListener("click", function () {
+      var dock = $("val8000-dock");
+      if (dock) dock.classList.add("is-help");
+      if (ask) ask.focus();
+    });
+  }
 
   ["decRun", "trRun", "syRun", "cyRun", "cyExciseStep"].forEach(function (id) {
     var btn = $(id);

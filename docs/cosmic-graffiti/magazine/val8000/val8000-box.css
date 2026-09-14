@@ -11,7 +11,7 @@ body.val8000-ready {
   position: sticky;
   top: 16px;
   z-index: 80;
-  width: 4.5rem;
+  width: 7.4rem;
   margin: 16px 12px 24px 0;
   display: flex;
   flex-direction: column;
@@ -36,8 +36,8 @@ body.val8000-ready {
 .val8000-launcher {
   position: relative;
   display: flex;
-  width: 4.35rem;
-  height: 4.35rem;
+  width: 7.2rem;
+  height: 7.2rem;
   padding: 0;
   border: 1px solid rgba(201, 162, 39, 0.45);
   border-radius: 14px;
@@ -61,9 +61,11 @@ body.val8000-ready {
 }
 .val8000-square-face,
 .val8000-launcher img {
-  width: 100%;
-  height: 100%;
+  width: 168%;
+  height: 168%;
+  margin: -8% -34% -60% -34%;
   object-fit: cover;
+  object-position: 50% 42%;
   pointer-events: none;
   display: block;
 }
