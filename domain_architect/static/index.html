@@ -6,6 +6,7 @@
   <title>Domain Architect</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/val8000/val8000-dock.css" />
 </head>
 <body>
   <div class="shell">
@@ -170,7 +171,23 @@
       </section>
     </main>
   </div>
+  <aside id="val8000-dock" class="val8000-dock" data-val-mode="da" role="complementary" aria-label="VAL8000, resident commentator">
+    <div id="val8000-square" class="val8000-square" title="VAL8000">
+      <img id="val8000-face" src="/val8000/val8000-mouth-line.png" alt="VAL8000 red circular lens and a straight mouth line on a dark square panel" />
+    </div>
+    <div class="val8000-rail">
+      <p class="val8000-name">VAL8000</p>
+      <p class="val8000-job">Resident · in the view · AI</p>
+      <p id="val8000-status" class="val8000-status">Idle. Mouth a line. If a field is empty, I can help with unanswered questions.</p>
+      <button type="button" id="val8000-help">Help with unanswered</button>
+      <label class="val8000-ask-label" for="val8000-ask">Ask the Desk
+        <textarea id="val8000-ask" rows="2" placeholder="One question. I'll label Known / Open / Picture. I do not invent theorems."></textarea>
+      </label>
+      <div id="val8000-answer" class="val8000-answer" hidden></div>
+    </div>
+  </aside>
   <script src="/studio.js"></script>
   <script src="/app.js"></script>
+  <script src="/val8000/val8000-dock.js"></script>
 </body>
 </html>

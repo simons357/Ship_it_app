@@ -86,6 +86,26 @@ class TestVal8000Persona(unittest.TestCase):
         self.assertNotIn("red lens is out", lower)
         self.assertNotIn("not a terminator, not a skull", lower)
         self.assertNotIn("spray-can", lower)
+        self.assertNotIn("boombox portrait", lower)
+        self.assertIn("retired the red lens", lower)
+
+    def test_little_box_is_resident_not_the_lead(self) -> None:
+        text = self.text
+        lower = text.lower()
+        self.assertIn("little box", lower)
+        self.assertIn("per-entry content window", lower)
+        self.assertIn("resident superagent", lower)
+        self.assertIn("not the story", lower)
+        self.assertIn("not the lead", lower)
+        self.assertIn("Weekend Update", text)
+        self.assertIn("Go deeper", text)
+        self.assertIn("DA-VC-01 stays FAIL", text)
+        self.assertIn("Unaugmented leftover OPEN", text)
+        self.assertIn("TRANSFORMABLE", text)
+        self.assertIn("Reported ≠ certified", text)
+        self.assertIn("Not HAL 9000 as a product name", text)
+        self.assertIn("always-visible square", lower)
+        self.assertIn("help with unanswered", lower)
 
 
 class TestVal8000Mouth(unittest.TestCase):

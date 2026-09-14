@@ -1,14 +1,16 @@
 # Cosmic Graffiti — live stack + VAL8000 little box
 
 This folder is the **out-of-box magazine** Jon already posted, with VAL8000
-available in a **little box** on each page.
+as an **always-visible square** in the view on each page.
 
 It is not a second magazine. Issue 1 stays Issue 1. The red-pills portrait
 stays the lead. The Frequency rail is still those same pieces.
 
 Live site today: [cosmic-graffiti-magazine.vercel.app](https://cosmic-graffiti-magazine.vercel.app/).
 This overlay is what to open when you want the resident commentator on that
-look.
+look. The square does not leave. Idle mouth is a straight line. After he
+answers — including **help with unanswered** Ask-the-Desk prompts — he
+usually smiles. Teeth stay off this dock.
 
 ## Tap it
 
@@ -20,9 +22,12 @@ From this folder:
 
 Then open [http://127.0.0.1:8765/](http://127.0.0.1:8765/).
 
-Or open `index.html` in a browser. Click the red-eye square in the corner.
-That is VAL8000. Funny first line. **Go deeper** for the hard object on
-that page.
+The red-eye **square** sits in the view. That is VAL8000. Funny first line.
+**Go deeper** for the hard object on that page. If a prompt is blank, use
+**Help with unanswered**.
+
+Domain Architect’s local UI docks the same square:
+`python -m domain_architect app`.
 
 | Page | Story (unchanged) | VAL in the box |
 |---|---|---|

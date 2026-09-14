@@ -188,7 +188,7 @@ class DomainArchitectHandler(SimpleHTTPRequestHandler):
             parsed_path = "/index.html"
         else:
             parsed_path = parsed.path
-        if parsed_path.endswith((".html", ".js", ".css")):
+        if parsed_path.endswith((".html", ".js", ".css", ".png", ".svg", ".webp")):
             rel = parsed_path.lstrip("/")
             path = (STATIC_DIR / rel).resolve()
             root = STATIC_DIR.resolve()
@@ -200,6 +200,9 @@ class DomainArchitectHandler(SimpleHTTPRequestHandler):
                 ".html": "text/html; charset=utf-8",
                 ".js": "text/javascript; charset=utf-8",
                 ".css": "text/css; charset=utf-8",
+                ".png": "image/png",
+                ".svg": "image/svg+xml",
+                ".webp": "image/webp",
             }.get(suffix, "application/octet-stream")
             self._send(200, path.read_bytes(), ctype)
             return
