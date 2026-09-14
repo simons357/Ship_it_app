@@ -482,12 +482,35 @@ class TestRhHarmonicPerspectiveStaysArchived(unittest.TestCase):
         self.assertIn("1qhkiK2Bv777KTcnFjr25cxzvwDVz84KP", receipt)
         self.assertIn("9798289278081", receipt)
         self.assertIn("Not RH", receipt)
+        self.assertIn("Appendix B", receipt)
+        self.assertIn("temporal harmonic shell", receipt)
+        self.assertIn("Mertens", receipt)
         self.assertFalse((LIVE_ROOT / "harmonic_blueprint.py").is_file())
         miss = (
             ARCHIVE_SFE_HB / "HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md"
         ).read_text(encoding="utf-8")
         self.assertIn("Harmonic_Blueprint_HARDBACK.docx", miss)
         self.assertIn("arrived", miss.lower())
+        self.assertIn("150 PAGES.pdf", miss)
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("Harmonic_Blueprint_HARDBACK.docx", note)
+        self.assertIn("arrived from Drive", note)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Harmonic_Blueprint_HARDBACK.docx", archive_index)
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Harmonic_Blueprint_HARDBACK.docx", lookup)
+        self.assertIn("57e0a0bcf25f", lookup)
+        gcd = (
+            Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("57e0a0bcf25f", gcd)
 
 
 class TestSpectralUnificationPaperArchived(unittest.TestCase):

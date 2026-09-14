@@ -10,7 +10,7 @@ Millennium primer *Unified Harmonic Solutions…* is archived beside it and
 [`Unified_Harmonic_Solutions_Millennium_Problems.md`](Unified_Harmonic_Solutions_Millennium_Problems.md).
 Breathing-field book paste (Ch. I–III fragment, truncated):
 [`SFE_Breathing_Field_Book_Paste.md`](SFE_Breathing_Field_Book_Paste.md).
-Mac hardback / 150-page PDF / research map **not received**:
+150-page PDF / research map / Ch.8 txt still **not received**:
 [`HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md`](HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md).
 
 Hardback **arrived from Drive** (2 777 161 bytes, SHA `57e0a0bcf25f…`):

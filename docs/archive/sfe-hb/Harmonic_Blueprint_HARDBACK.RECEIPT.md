@@ -35,8 +35,11 @@ not lock all of them as “the” equation.
 ## What it is not
 
 - **Not RH.** Appendix A’s line that zeta zeros are eigenstates of
-  \(\hat S_C\) is **not** a proof of the Riemann Hypothesis. Control
-  remains [`Harmonic_Perspective_on_RH_2026-08-14.md`](Harmonic_Perspective_on_RH_2026-08-14.md).
+  \(\hat S_C\) is **not** a proof of the Riemann Hypothesis. Appendix B’s
+  line that each zero \(s_n=1/2+it_n\) is a “temporal harmonic shell”
+  inside \(\Phi(x,t)\) is the same kind of labeled analogy, not a
+  Mertens transfer lemma. Control remains
+  [`Harmonic_Perspective_on_RH_2026-08-14.md`](Harmonic_Perspective_on_RH_2026-08-14.md).
   Bridge lemma **OPEN**.
 - **Not** a GR / QM unification theorem. Comparison tables are
   program language.
