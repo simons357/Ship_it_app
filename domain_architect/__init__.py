@@ -45,4 +45,4 @@ __all__ = [
     "millennium_look_narrative",
 ]
 
-__version__ = "0.4.4"
+__version__ = "0.4.5"

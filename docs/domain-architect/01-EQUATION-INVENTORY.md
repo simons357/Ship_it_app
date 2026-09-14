@@ -153,7 +153,7 @@ Machine-readable NS book used in the look (aliases NS-B, NS-Φ):
 |---|---|---|---|
 | NS-H001 | \(\partial_t\omega+(u\cdot\nabla)\omega=(\omega\cdot\nabla)u+\nu\Delta\omega\), \(\nabla\cdot u=0\) | Classical vorticity NS | **RETAIN** as separate book |
 | NS-H002 | \(\Gamma=ru_\theta\), \(\Phi=u_\theta/r\), \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) | KEEP swirl algebra | **RETAIN**; \(\Phi\) here \(\neq\) FRA \(\Phi\) \(\neq\) Riemann kernel \(\Phi\) |
-| NS-H003 | \(A=-\mathbb P\Delta\) on \(\nabla\cdot u=0\) | Stokes operator | **RETAIN**; spectral sibling of HP-H020 |
+| NS-H004 | \(u=\nabla\times(-\Delta)^{-1}\omega\) | Biot–Savart | **RETAIN**; pair-run with HP-H027; shared \(R(\kappa)=1/\kappa^2\) |
 
 Do not merge HP-H003 with HP-H004, HP-H005, HP-H008, or retired SFE-HAM (`SFE-H003`).
 

@@ -294,5 +294,13 @@
     "evidence": "Classical NS vorticity is not a Hilbert–Pólya Hamiltonian. Shared spectral vocabulary with the Stokes operator is not spec(H)={γ_n}.",
     "status": "recorded",
     "notes": "Do not glue NS to RH."
+  },
+  {
+    "left_id": "HP-H027",
+    "right_id": "NS-H004",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "3D Green kernel of −Δ versus Biot–Savart u=∇×(−Δ)^{-1}ω. Same inverse-Laplacian response R(κ)=1/κ²; different realized outputs (kernel vs velocity). Not Clay NS.",
+    "status": "recorded",
+    "notes": "The pair that was run through DA. Shared scale response, not identity."
   }
 ]

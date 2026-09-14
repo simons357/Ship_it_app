@@ -32,7 +32,7 @@ further unfiltered Pólya ingest:
 - Pólya–Szegő 1951 isoperimetric inequalities in mathematical physics
 - Pólya 1954 membrane eigenvalues
 
-Registry: `HP-H001`–`HP-H024`.
+Registry: `HP-H001`–`HP-H025`, `HP-H027`, plus `NS-H001`–`NS-H003`.
 
 Run the CLI for the live component count, filter pops, and DA’s request list.
 
@@ -42,6 +42,7 @@ Run the CLI for the live component count, filter pops, and DA’s request list.
 
 ```bash
 python -m domain_architect --polya-probe
+python -m domain_architect --pair
 ```
 
 The narrative leads with **who survived the filter**, then **what popped**,

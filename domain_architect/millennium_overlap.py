@@ -175,3 +175,113 @@ def millennium_look_narrative() -> str:
         lines.append(f"    did not: {look.what_did_not}")
         lines.append(f"    status: {look.status}")
     return "\n".join(lines)
+
+
+PAIRS: dict[str, dict[str, str]] = {
+    "green-biot": {
+        "left_id": "HP-H027",
+        "right_id": "NS-H004",
+        "left_parse": "laplacian(G) = -delta",
+        "right_parse": "u = curl(invLap * omega)",
+        "finding": (
+            "The Laplacian classifier put G in the realized-output seat of "
+            "ΔG = −δ and recorded R(κ)=1/κ² in E. Biot–Savart is curl of that "
+            "inverse Laplacian applied to ω. Shared scale response, different "
+            "outputs (Green kernel vs velocity). COMPATIBLE_DISTINCT. Not Clay NS."
+        ),
+    },
+    "phi": {
+        "left_id": "HP-H012",
+        "right_id": "NS-H002",
+        "left_parse": "Xi = I(Phi)",
+        "right_parse": "partial_z(Gamma^2)/r^4 = partial_z(Phi^2)",
+        "finding": (
+            "Both parses contain a symbol Phi. The auditor warns that Φ is an "
+            "identifier, not automatically a gravitational potential. Registry "
+            "relation is INCOMPATIBLE: Riemann’s cosine-transform kernel is not "
+            "swirl u_θ/r. Keep both books."
+        ),
+    },
+}
+
+
+def list_pair_ids() -> list[str]:
+    return list(PAIRS)
+
+
+def run_equation_pair(pair_id: str = "green-biot") -> str:
+    """Audit both registered equations of a look pair. Does not merge them."""
+    from .audit import audit_expression
+    from .registry import EquationRegistry
+    from .schema import CANONICAL_SFE_STATUS, RH_STATUS
+
+    if pair_id not in PAIRS:
+        known = ", ".join(list_pair_ids())
+        raise KeyError(f"unknown pair {pair_id!r}; known={known}")
+    spec = PAIRS[pair_id]
+    registry = EquationRegistry.load_default()
+    left = registry.equations[spec["left_id"]]
+    right = registry.equations[spec["right_id"]]
+    left_report = audit_expression(spec["left_parse"])
+    right_report = audit_expression(spec["right_parse"])
+    relation = "unrecorded"
+    evidence = ""
+    for conflict in registry.conflicts:
+        if {conflict.left_id, conflict.right_id} == {left.equation_id, right.equation_id}:
+            relation = conflict.relation
+            evidence = conflict.evidence
+            break
+
+    def _roles(report) -> list[str]:
+        rows = []
+        for item in report.role_assignments:
+            rows.append(
+                f"{item.get('symbol')}: role={item.get('candidate_role')} "
+                f"subtype={item.get('subtype')}"
+            )
+        return rows
+
+    lines = [
+        f"Domain Architect — pair run ({pair_id})",
+        "",
+        "Both equations were run through the auditor. They were not merged.",
+        f"Riemann hypothesis status: {RH_STATUS}.",
+        f"Canonical SFE status: {CANONICAL_SFE_STATUS}.",
+        "",
+        f"[{left.equation_id}] {left.original_expression}",
+        f"  book/family: {left.family}  disposition: {left.audit_disposition}",
+        f"  parse used: {spec['left_parse']}",
+        f"  evidence: Level {int(left_report.highest_evidence_level)}",
+        f"  extra E: {left_report.extra_structures or 'none'}",
+    ]
+    for row in _roles(left_report):
+        lines.append(f"  {row}")
+    lines.extend(
+        [
+            "",
+            f"[{right.equation_id}] {right.original_expression}",
+            f"  book/family: {right.family}  disposition: {right.audit_disposition}",
+            f"  parse used: {spec['right_parse']}",
+            f"  evidence: Level {int(right_report.highest_evidence_level)}",
+            f"  extra E: {right_report.extra_structures or 'none'}",
+        ]
+    )
+    for row in _roles(right_report):
+        lines.append(f"  {row}")
+    lines.extend(
+        [
+            "",
+            f"Recorded relation: {relation}",
+            f"  {evidence}" if evidence else "  (no conflict row)",
+            "",
+            "What DA did with the pair:",
+            f"  {spec['finding']}",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def run_default_pairs() -> str:
+    """Run the two look-pairs that were on the table: Green/Biot–Savart and the Φs."""
+    blocks = [run_equation_pair("green-biot"), "", run_equation_pair("phi")]
+    return "\n".join(blocks)

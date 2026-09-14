@@ -13,7 +13,12 @@ from .hilbert_polya import (
     list_candidate_ids,
 )
 from .polya_probe import run_polya_probe
-from .millennium_overlap import millennium_look_narrative
+from .millennium_overlap import (
+    list_pair_ids,
+    millennium_look_narrative,
+    run_default_pairs,
+    run_equation_pair,
+)
 from .registry import EquationRegistry
 from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
 
@@ -62,7 +67,35 @@ def main(argv: list[str] | None = None) -> int:
             "does not unify them and does not prove RH or NS"
         ),
     )
+    parser.add_argument(
+        "--pair",
+        nargs="?",
+        const="both",
+        default="",
+        help=(
+            "run a look-pair through the auditor: green-biot, phi, or both "
+            "(default if flag is present with no name)"
+        ),
+    )
     args = parser.parse_args(argv)
+
+    if args.pair:
+        try:
+            text = (
+                run_default_pairs()
+                if args.pair == "both"
+                else run_equation_pair(args.pair)
+            )
+        except KeyError as exc:
+            parser.error(str(exc) + f" known={list_pair_ids() + ['both']}")
+        if args.json:
+            json.dump({"pair": args.pair, "narrative": text}, sys.stdout, indent=2)
+            sys.stdout.write("\n")
+        else:
+            print(text)
+            print()
+            print(f"Canonical SFE status: {CANONICAL_SFE_STATUS}.")
+        return 0
 
     if args.millennium_look:
         text = millennium_look_narrative()
