@@ -14,6 +14,7 @@ from pathlib import Path
 
 import numpy as np
 
+from domain_architect.decompose import decompose
 from domain_architect.index_audit import audit_canonical_index
 from domain_architect.registry import EquationRegistry
 from domain_architect.historical import CANONICAL_SFE_STATUS
@@ -245,9 +246,20 @@ class TestHbMathPhysicsDossierIsHistorical(unittest.TestCase):
         self.assertNotIn("Clay", text)
         self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
         self.assertFalse((LIVE_ROOT / "a11.py").is_file())
+        self.assertFalse((LIVE_ROOT / "hb.py").is_file())
         index = (ROOT / "docs" / "archive" / "README.md").read_text(encoding="utf-8")
         self.assertIn("HB_Math_Physics_Dossier_2026-09-14.docx", index)
         self.assertIn("16228b707961bce7", index)
+        self.assertIn("not live DA", index)
+        dec = decompose("m*xdd + c*xd + k*x = f")
+        blob = (dec.tree.pretty() + " ".join(dec.warnings)).lower()
+        self.assertNotIn("a11", blob)
+        self.assertNotIn("harmonic blueprint", blob)
+        self.assertNotIn("hb_math_physics", blob)
+        gravity = (LIVE_ROOT / "gravity.py").read_text(encoding="utf-8")
+        self.assertIn("does not derive gravity", gravity)
+        self.assertNotIn("A11", gravity)
+        self.assertNotIn("HB_Math_Physics", gravity)
 
 
 class TestEquationExplorerIsHistorical(unittest.TestCase):

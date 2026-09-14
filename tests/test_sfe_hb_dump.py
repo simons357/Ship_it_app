@@ -769,6 +769,7 @@ class TestHbMathPhysicsDossierStaysArchived(unittest.TestCase):
         self.assertIn("inventory, not mockery", receipt)
         self.assertIn("DECOMPOSE \u2192 CROSS-DOMAIN TRANSLATE \u2192 SYNTHESIZE", receipt)
         self.assertIn("Not live Domain Architect", receipt)
+        self.assertIn("regular or live Domain Architect work", receipt)
         self.assertIn("import into `domain_architect/`", receipt)
         self.assertIn("Competing cores stay unlocked", receipt)
         self.assertIn("16228b707961bce72369a25446b3945ae2ceb5b1d6e78391a9a8dae912a25834", receipt)

@@ -8,7 +8,7 @@ SHA-256 `16228b707961bce7…`. 1 445 673 bytes. Catalog A1–A14 / S01–S17
 Receipt [`HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md`](HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md).
 
 **Unknown provenance. Unknown author.** One copy. Keep it as a book on
-the shelf. Do **not** use it in live Domain Architect work (not
+the shelf. Do **not** use it in regular or live Domain Architect work (not
 `domain_architect/`, not the live DA cycle, not the August Q6 public
 face, not swirl leftover). If a later study finds an equation here that
 is actually relevant, **notify Jon**. Do not look down on the book.

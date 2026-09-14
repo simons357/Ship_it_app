@@ -14,8 +14,7 @@ Live work remains Domain Architect
 ([`docs/DOMAIN-ARCHITECT.md`](../../DOMAIN-ARCHITECT.md)):
 DECOMPOSE → CROSS-DOMAIN TRANSLATE → SYNTHESIZE.
 
-**Not live Domain Architect.** Do **not** use this book in regular or
-live work. Not `domain_architect/`. Not the live DA cycle. Not the
+**Not live Domain Architect.** Do **not** use this book in regular or live Domain Architect work. Not `domain_architect/`. Not the live DA cycle. Not the
 August Q6 public face. Not swirl leftover. Leave it on the shelf.
 Competing cores stay unlocked.
 
@@ -120,8 +119,7 @@ dump’s \(\Phi\) is **not** that leftover.
 
 ## What this filing does not do
 
-- Does **not** import the book into `domain_architect/`. Do **not**
-  import into `domain_architect/`. No `sfe.py`, `hb.py`, `a11.py`, or
+- Does **not** import the book into `domain_architect/`. Do **not** import into `domain_architect/`. No `sfe.py`, `hb.py`, `a11.py`, or
   live Harmonic Blueprint engine.
 - Does **not** merge A1–A14 into FRA-5 or lock one formula as “the”
   SFE.
