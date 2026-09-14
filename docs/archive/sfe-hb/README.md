@@ -1,5 +1,15 @@
 # Aug 19 UHSA session synthesis — archive only
 
+14 September 2026 HB math/physics dossier (A1–A14 / S01–S17):
+[`HB_Math_Physics_Dossier_2026-09-14.docx`](HB_Math_Physics_Dossier_2026-09-14.docx),
+receipt [`HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md`](HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md).
+SHA-256 `16228b707961bce7…`. 1 445 673 bytes. **Reference only.**
+Recovered historical equations. **Not** a new live theory. Competing
+cores stay unlocked. Formulas are 147 PNG drawings (0 OMML). Square
+glyphs and the claimed 81.7 percent alignment stay visible gaps.
+Do **not** import into `domain_architect/`. A11 gravity stays **off**
+default DECOMPOSE.
+
 [`Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md`](Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md)
 
 SHA-256 `4d49cd1ee629…`. 15 899 bytes. Chat paste of 19 August 2026

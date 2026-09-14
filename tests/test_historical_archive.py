@@ -223,6 +223,29 @@ class TestUhsaSessionDumpIsHistorical(unittest.TestCase):
         self.assertFalse((LIVE_ROOT / "c_master.py").is_file())
 
 
+class TestHbMathPhysicsDossierIsHistorical(unittest.TestCase):
+    def test_dossier_stays_under_archive_sfe_hb(self):
+        path = ROOT / "docs" / "archive" / "sfe-hb" / "HB_Math_Physics_Dossier_2026-09-14.docx"
+        receipt = ROOT / "docs" / "archive" / "sfe-hb" / "HB_Math_Physics_Dossier_2026-09-14.RECEIPT.md"
+        self.assertTrue(path.is_file(), path)
+        self.assertTrue(receipt.is_file(), receipt)
+        raw = path.read_bytes()
+        self.assertEqual(len(raw), 1445673)
+        self.assertEqual(
+            hashlib.sha256(raw).hexdigest(),
+            "16228b707961bce72369a25446b3945ae2ceb5b1d6e78391a9a8dae912a25834",
+        )
+        text = receipt.read_text(encoding="utf-8")
+        self.assertIn("reference only", text.lower())
+        self.assertIn("Not live Domain Architect", text)
+        self.assertIn("Competing cores stay unlocked", text)
+        self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
+        self.assertFalse((LIVE_ROOT / "a11.py").is_file())
+        index = (ROOT / "docs" / "archive" / "README.md").read_text(encoding="utf-8")
+        self.assertIn("HB_Math_Physics_Dossier_2026-09-14.docx", index)
+        self.assertIn("16228b707961bce7", index)
+
+
 class TestEquationExplorerIsHistorical(unittest.TestCase):
     def test_explorer_stays_under_archive_sfe_hb(self):
         path = (
