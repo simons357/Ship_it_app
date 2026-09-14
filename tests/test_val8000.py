@@ -130,6 +130,15 @@ class TestVal8000Mouth(unittest.TestCase):
         self.assertNotIn("Smile when the joke earns it.", text)
         self.assertNotIn("Masthead uses the line, or a slight smile.", text)
         self.assertNotIn("slight smile", text.lower())
+        self.assertIn("INNER CONCENTRIC CAMERA RINGS", text)
+        self.assertIn("The aperture lines become the grille.", text)
+        self.assertIn("The lens IS the mouth.", text)
+        self.assertIn("No chin, no separate jaw, no teeth hanging off the bottom of the square.", text)
+        self.assertIn("No cartoon jaw under the square.", text)
+        self.assertIn("No smile-line-plus-teeth-below.", text)
+        self.assertIn("thin line BELOW the lens", text)
+        self.assertIn("val8000-mouth-sheet.png", text)
+        self.assertIn("teeth in the rings", text.lower())
 
     def test_public_post_idle_line_smile_after_answer_not_hal(self) -> None:
         public = self.public
