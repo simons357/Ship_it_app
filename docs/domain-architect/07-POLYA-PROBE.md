@@ -35,9 +35,9 @@ Registry: `HP-H001`–`HP-H010`.
 
 ## What DA returned
 
-**24 independently specifiable components** (5 core + 19 extension / \(E\)).
+**25 independently specifiable components** (5 core + 20 extension / \(E\)).
 Program complete: **false**. Evidence: Level 0 classification plus Level 1
-negative GUE laboratory (a frozen GUE matrix is not \(\{\gamma_n\}\)).
+laboratories (GUE is not \(\{\gamma_n\}\); the oscillator is rejected by \(N(T)\)).
 
 The result that is actually a finding, not a Hamiltonian:
 
@@ -49,13 +49,16 @@ The result that is actually a finding, not a Hamiltonian:
    Completing either would imply RH. Stating either does not. Feeding Pólya’s
    proven LP / Jensen calculus **does not fill \(H\)**; it restates reality of
    zeros in entire-function language.
-3. Berry–Keating \(xp\) is the only supplied *emission* Hamiltonian with an
-   independent classical symbol. Connes is a different object. GUE is
-   statistics. \(\operatorname{diag}(\gamma_n)\) is circular.
-4. No checked transformation to Navier–Stokes or to a canonical SFE.
-   Other Millennium problems: RH is the only one with a direct Pólya object;
-   BSD is the same *style* of explicit formula for a different \(L\)-function;
-   Yang–Mills / Hodge / P vs NP have no checked Pólya map.
+3. **Usable surprise — a filter, not a Hamiltonian.** \(N(T)\) rejects the
+   harmonic oscillator and any equally spaced spectrum: Riemann mean gaps
+   shrink like \(1/\log T\), oscillator gaps do not. Hermite polynomials show
+   up in the oscillator, in GUE, and as the GORZ limit of Jensen(\(\xi\)).
+   That is a special-function collision, not identity of \(H\). Classical
+   \(xp\) matches the leading von Mangoldt term (compatibility, not identity).
+4. Berry–Keating \(xp\) is the only supplied *emission* Hamiltonian with an
+   independent classical symbol that survives this Weyl screen. Connes is a
+   different object. GUE is statistics. \(\operatorname{diag}(\gamma_n)\) is circular.
+5. No checked transformation to Navier–Stokes or to a canonical SFE.
 
 ---
 
@@ -70,5 +73,5 @@ The result that is actually a finding, not a Hamiltonian:
   in the Laguerre–Pólya class.
 - If a Navier–Stokes bridge is claimed: an explicit checked transformation.
 
-There was no surprise Hamiltonian. A filled N-component map is still
-classification.
+There was no surprise Hamiltonian. The surprise is a **Weyl-law filter**:
+DA can throw out the wrong \(H\) now, without proving RH.

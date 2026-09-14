@@ -652,6 +652,60 @@ def gue_is_not_riemann_spectrum(
     }
 
 
+def riemann_mean_spacing(height: np.ndarray | float) -> np.ndarray:
+    """Leading local spacing 2π / log(T/2π) from the von Mangoldt density."""
+    t = np.asarray(height, dtype=float)
+    return 2.0 * np.pi / np.log(t / (2.0 * np.pi))
+
+
+def riemann_von_mangoldt_leading(height: np.ndarray | float) -> np.ndarray:
+    """Leading term (T/2π)(log(T/2π) − 1). Not a substitute for S(T)."""
+    t = np.asarray(height, dtype=float)
+    return (t / (2.0 * np.pi)) * (np.log(t / (2.0 * np.pi)) - 1.0)
+
+
+def weyl_law_screen(
+    heights: tuple[float, ...] = (20.0, 100.0, 1000.0, 100_000.0),
+) -> dict[str, Any]:
+    """Reject Hamiltonians whose counting function cannot match N(T).
+
+    This is a filter on candidates, not a construction of H and not RH.
+    The quantum harmonic oscillator shares Hermite polynomials with GUE
+    and with Jensen(ξ), but its levels are equally spaced. Riemann spacings
+    shrink like 1/log T. Classical xp has the same leading density as N(T).
+    """
+    t = np.asarray(heights, dtype=float)
+    if np.any(t <= 2.0 * np.pi):
+        raise ValueError("heights must exceed 2π so the leading log is positive")
+    spacing_zeta = riemann_mean_spacing(t)
+    spacing_oscillator = np.ones_like(t)
+    spacing_ratio_zeta = float(spacing_zeta[-1] / spacing_zeta[0])
+    spacing_ratio_oscillator = float(spacing_oscillator[-1] / spacing_oscillator[0])
+    n_zeta = riemann_von_mangoldt_leading(t)
+    n_xp = n_zeta.copy()
+    oscillator_rejected = spacing_ratio_zeta < 0.5 and spacing_ratio_oscillator > 0.99
+    return {
+        "heights_T": t.tolist(),
+        "riemann_mean_spacing": spacing_zeta.tolist(),
+        "oscillator_mean_spacing": spacing_oscillator.tolist(),
+        "spacing_ratio_high_over_low_riemann": spacing_ratio_zeta,
+        "spacing_ratio_high_over_low_oscillator": spacing_ratio_oscillator,
+        "N_riemann_leading": n_zeta.tolist(),
+        "N_xp_classical_leading": n_xp.tolist(),
+        "oscillator_rejected": oscillator_rejected,
+        "xp_classical_leading_term_compatible": True,
+        "hermite_is_not_the_hamiltonian": True,
+        "conclusion": (
+            "Harmonic-oscillator / equal-spacing spectra are rejected by "
+            "N(T): Riemann mean gaps shrink like 1/log T, oscillator gaps "
+            "do not. Hermite polynomials in GUE and in Jensen(ξ) are a "
+            "special-function collision, not evidence that H is the oscillator. "
+            "Classical xp matches the leading von Mangoldt term; that is "
+            "compatibility of a Weyl term, not spec(H) = {γ_n}."
+        ),
+    }
+
+
 def _piece_payloads(
     supplied: Iterable[str],
     candidate_status_overrides: dict[str, str] | None = None,

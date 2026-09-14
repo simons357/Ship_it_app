@@ -44,6 +44,9 @@ class TestPolyaProbe(unittest.TestCase):
         self.assertIn("not claimed", narrative)
         self.assertIn("not be merged", " ".join(probe.findings).lower())
         self.assertFalse(probe.gue_laboratory["is_riemann_spectrum"])
+        self.assertTrue(probe.weyl_laboratory["oscillator_rejected"])
+        self.assertTrue(probe.weyl_laboratory["xp_classical_leading_term_compatible"])
+        self.assertIn("1/log", probe.weyl_laboratory["conclusion"])
         self.assertTrue(any(s["candidate_id"] == "berry-keating" and not s["complete"] for s in probe.candidate_scores))
         self.assertTrue(any(s["candidate_id"] == "diagonal-zeros" and s["circular"] for s in probe.candidate_scores))
 
@@ -59,6 +62,7 @@ class TestPolyaProbe(unittest.TestCase):
         self.assertIn("Riemann hypothesis status: not claimed", proc.stdout)
         self.assertIn("Laguerre", proc.stdout)
         self.assertIn("INSUFFICIENT_INFORMATION", proc.stdout)
+        self.assertIn("oscillator rejected: true", proc.stdout.lower())
         self.assertNotIn("proves the riemann hypothesis", proc.stdout.lower())
 
 

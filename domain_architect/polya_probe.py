@@ -24,6 +24,7 @@ from .hilbert_polya import (
     gue_is_not_riemann_spectrum,
     historical_candidates,
     program_pieces,
+    weyl_law_screen,
 )
 from .protocol import freeze_protocol
 from .registry import EquationRegistry
@@ -69,6 +70,7 @@ class PolyaProbeReport:
     candidate_scores: list[dict[str, Any]]
     expression_audits: list[dict[str, Any]]
     gue_laboratory: dict[str, Any]
+    weyl_laboratory: dict[str, Any]
     registry_hp_ids: list[str]
     conflicts: list[str]
     nulls: list[str]
@@ -148,6 +150,21 @@ class PolyaProbeReport:
                 f"  is Riemann spectrum: {self.gue_laboratory.get('is_riemann_spectrum')}"
             )
             lines.append(f"  {self.gue_laboratory.get('conclusion')}")
+        if self.weyl_laboratory:
+            lines.append("")
+            lines.append("Weyl-law screen (usable filter on H, not a construction):")
+            lines.append(
+                f"  oscillator rejected: {self.weyl_laboratory.get('oscillator_rejected')}"
+            )
+            lines.append(
+                f"  xp classical leading term compatible: "
+                f"{self.weyl_laboratory.get('xp_classical_leading_term_compatible')}"
+            )
+            lines.append(
+                f"  Riemann spacing ratio high/low T: "
+                f"{self.weyl_laboratory.get('spacing_ratio_high_over_low_riemann')}"
+            )
+            lines.append(f"  {self.weyl_laboratory.get('conclusion')}")
         if self.expression_audits:
             lines.append("")
             lines.append("Expression audits (parser / role classifier, names are not physics):")
@@ -347,6 +364,16 @@ def briefing_components() -> list[ComponentRecord]:
             "GORZ 2019; Jensen / Pólya",
         ),
         ComponentRecord(
+            "C-Hermite",
+            "E-entire",
+            "Hermite polynomials: oscillator eigenfunctions, GUE orthogonal polynomials, and GORZ limit of Jensen(ξ)",
+            "collision",
+            True,
+            "recorded as a shared special function, then Weyl-screened against N(T)",
+            "not a Hamiltonian. Equal spacing is rejected; Hermite-in-three-books is not identity of H",
+            "oscillator / GUE / GORZ collision",
+        ),
+        ComponentRecord(
             "C-BK",
             "H-candidate",
             "H = xp (or (xp+px)/2) with phase-space cutoff",
@@ -496,10 +523,18 @@ def _findings() -> list[str]:
         "GUE is not an object of that type. diag(γ_n) is circular.",
         "A frozen GUE matrix is not the sequence γ_n after a best affine map. "
         "Random-matrix agreement cannot substitute for the spectral identity.",
+        "Usable filter: N(T) rejects the harmonic oscillator and any equally "
+        "spaced spectrum. Riemann mean gaps shrink like 1/log T; oscillator "
+        "gaps do not. Hermite polynomials appearing in the oscillator, in GUE, "
+        "and as the GORZ limit of Jensen(ξ) is a special-function collision, "
+        "not a shared H. Classical xp matches the leading von Mangoldt term "
+        "(compatibility, not identity).",
         "No checked transformation connects these objects to Navier–Stokes or to "
         "a canonical SFE. Other-book formulas were classified, not absorbed.",
-        "A filled N-component map is still classification (Level 0) plus one "
-        "negative laboratory (Level 1). It is not a surprise Hamiltonian.",
+        "A filled N-component map is still classification (Level 0) plus "
+        "negative laboratories (Level 1). It is not a surprise Hamiltonian. "
+        "The Weyl screen is a surprise *filter*: it can throw out the wrong H "
+        "now, without proving RH.",
     ]
 
 
@@ -558,6 +593,7 @@ def run_polya_probe() -> PolyaProbeReport:
         )
 
     gue = gue_is_not_riemann_spectrum()
+    weyl = weyl_law_screen()
     warnings = [
         GUE_NOT_IDENTITY_WARNING,
         "N independently specifiable components were recorded. That count is "
@@ -580,6 +616,7 @@ def run_polya_probe() -> PolyaProbeReport:
             "forbid_circular_fills": True,
             "forbid_millennium_glue": True,
             "gue_is_not_identity": True,
+            "weyl_law_screen": True,
         }
     )
 
@@ -600,6 +637,7 @@ def run_polya_probe() -> PolyaProbeReport:
         candidate_scores=scores,
         expression_audits=_audit_expressions(),
         gue_laboratory=gue,
+        weyl_laboratory=weyl,
         registry_hp_ids=hp_ids,
         conflicts=conflicts,
         nulls=nulls,

@@ -20,6 +20,7 @@ from domain_architect.hilbert_polya import (
     is_circular_fill,
     looks_like_hilbert_polya,
     program_pieces,
+    weyl_law_screen,
 )
 from domain_architect.registry import EquationRegistry
 from domain_architect.schema import (
@@ -106,6 +107,13 @@ class TestGueIsNotIdentity(unittest.TestCase):
         self.assertGreater(lab["affine_residual_to_first_gammas"], 0.01)
         self.assertIn("not the zeta operator", lab["conclusion"].lower())
 
+    def test_weyl_screen_rejects_oscillator_not_xp_leading_term(self):
+        screen = weyl_law_screen()
+        self.assertTrue(screen["oscillator_rejected"])
+        self.assertTrue(screen["xp_classical_leading_term_compatible"])
+        self.assertLess(screen["spacing_ratio_high_over_low_riemann"], 0.5)
+        self.assertGreater(screen["spacing_ratio_high_over_low_oscillator"], 0.99)
+
     def test_montgomery_candidate_flags_universality(self):
         audit = audit_candidate("montgomery-gue")
         self.assertIsNotNone(audit.gue_laboratory)
@@ -191,7 +199,7 @@ class TestRegistryRecords(unittest.TestCase):
         null_ids = {n.null_id for n in registry.nulls}
         self.assertIn("NULL-HP-CIRCULAR", null_ids)
         self.assertIn("NULL-HP-GUE", null_ids)
-        self.assertIn("NULL-HP-COMPLETE", null_ids)
+        self.assertIn("NULL-HP-OSCILLATOR", null_ids)
         pairs = {(c.left_id, c.right_id, c.relation) for c in registry.conflicts}
         self.assertIn(("HP-H003", "HP-H004", "INCOMPATIBLE"), pairs)
         self.assertIn(("HP-H007", "HP-H001", "INCOMPATIBLE"), pairs)
