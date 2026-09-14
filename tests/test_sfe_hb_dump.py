@@ -720,6 +720,50 @@ class TestRhHarmonicPerspectiveStaysArchived(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("72b5507c", gcd)
 
+    def test_cosmoevolution_qnm_zeta_note_unification_withdrawn(self):
+        path = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "archive"
+            / "hb-ringdown"
+            / "QNM_Prime_Zeta_DA_Analysis_2026-08.md"
+        )
+        self.assertTrue(path.is_file(), path)
+        text = path.read_text(encoding="utf-8")
+        self.assertIn("NOT CLAIMED", text)
+        self.assertIn("withdrawn", text.lower())
+        self.assertIn("Motl", text)
+        self.assertIn("monodromy", text)
+        self.assertIn("not** reject H0", text)
+        self.assertIn("Do not reopen Experiment 01", text)
+        self.assertIn("no `TRANSFORMABLE`", text)
+        self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
+        self.assertFalse((LIVE_ROOT / "qnm_zeta.py").is_file())
+        note = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "archive"
+            / "hb-ringdown"
+            / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("QNM_Prime_Zeta_DA_Analysis_2026-08.md", note)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("hb-ringdown/", archive_index)
+        self.assertIn("QNM_Prime_Zeta_DA_Analysis_2026-08.md", archive_index)
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("QNM_Prime_Zeta_DA_Analysis_2026-08.md", lookup)
+        gcd = (
+            Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("QNM_Prime_Zeta_DA_Analysis_2026-08.md", gcd)
+
 
 class TestSpectralUnificationPaperArchived(unittest.TestCase):
     """Frankie SPECTRAL_UNIFICATION_PAPER.tex is archive-only overclaim. Not Clay."""
