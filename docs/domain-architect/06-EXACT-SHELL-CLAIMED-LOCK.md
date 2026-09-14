@@ -1,7 +1,7 @@
 # Exact-shell lock
 
 The lock is [`docs/ATTACK-9D-FULL-SUPPORT-BOUND.md`](../ATTACK-9D-FULL-SUPPORT-BOUND.md).
-Twenty written answers: [`docs/ATTACK-9D-SPECIALIST-QUESTIONS.md`](../ATTACK-9D-SPECIALIST-QUESTIONS.md).
+Tree of dead vs living: [`docs/NS-TREE.md`](../NS-TREE.md).
 
 **CLAIMED:** written derivation available; internal checks passed; independent specialist review pending. Numerical sweeps provide consistency checks only.
 
