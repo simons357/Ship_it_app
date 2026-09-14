@@ -10,7 +10,7 @@ titles. Do not import into `domain_architect/`.
 | Named file | Where Jon had it | Status here |
 |---|---|---|
 | `HARMONIC_PERSPECTIVE_ON_RH.md` | Desktop `RH_Proof_Chain_Synthesis/00_status/` (115 lines) | **Paste arrived.** Filed as [`Harmonic_Perspective_on_RH_2026-08-14.md`](Harmonic_Perspective_on_RH_2026-08-14.md). Hard rule stands. RH bridge **OPEN**. |
-| `Harmonic_Blueprint_HARDBACK.docx` | filename only | **not received** |
+| `Harmonic_Blueprint_HARDBACK.docx` | filename; Drive copy found | **arrived.** [`Harmonic_Blueprint_HARDBACK.docx`](Harmonic_Blueprint_HARDBACK.docx) SHA `57e0a0bcf25f…`. Receipt: [`Harmonic_Blueprint_HARDBACK.RECEIPT.md`](Harmonic_Blueprint_HARDBACK.RECEIPT.md). Book, **not** a Clay close. |
 | `SFE_Research_Map.html` | `Downloads/SFE_Research_Map.html` | **not received** |
 | `The_Harmonic_Blueprint_Full_Book__Chapter 8 - The Simons Field Equation Explained.txt` | filename only | **not received** |
 | `The Harmonic Blueprint FULL.docx` | filename only | **not received** |

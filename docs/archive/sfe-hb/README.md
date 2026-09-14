@@ -13,6 +13,11 @@ Breathing-field book paste (Ch. I–III fragment, truncated):
 Mac hardback / 150-page PDF / research map **not received**:
 [`HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md`](HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md).
 
+Hardback **arrived from Drive** (2 777 161 bytes, SHA `57e0a0bcf25f…`):
+[`Harmonic_Blueprint_HARDBACK.docx`](Harmonic_Blueprint_HARDBACK.docx).
+Receipt: [`Harmonic_Blueprint_HARDBACK.RECEIPT.md`](Harmonic_Blueprint_HARDBACK.RECEIPT.md).
+Book only. Not Clay. Not live DA.
+
 [`Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md`](Unified_Harmonic_Spectral_Architecture_Session_Master_Synthesis_2026-08-19.md)
 
 SHA-256 `4d49cd1ee629…`. 15 899 bytes. Chat paste of 19 August 2026

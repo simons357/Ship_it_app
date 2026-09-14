@@ -430,6 +430,64 @@ class TestRhHarmonicPerspectiveStaysArchived(unittest.TestCase):
         self.assertIn("does **not** unify", body)
         self.assertIn("truncated", body.lower())
         self.assertFalse((LIVE_ROOT / "sfe.py").is_file())
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("rejected as a solve", note)
+        self.assertIn("Unified_Harmonic_Solutions_Millennium_Problems.md", note)
+        self.assertIn("HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md", note)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Unified_Harmonic_Solutions_Millennium_Problems.md", archive_index)
+        self.assertIn("rejected as a solve", archive_index)
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Unified_Harmonic_Solutions_Millennium_Problems.md", lookup)
+        self.assertIn("rejected as a solve", lookup)
+        self.assertIn("HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md", lookup)
+        gcd = (
+            Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("rejected as a solve", gcd)
+        self.assertIn("not** a q6 product face", gcd.lower())
+        faces = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "papers"
+            / "ns-snd"
+            / "FACES.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Unified_Harmonic_Solutions_Millennium_Problems.md", faces)
+        self.assertIn("rejected as a solve", faces)
+        self.assertIn("Not** a Paper2 face", faces)
+        self.assertIn("SFE_Breathing_Field_Book_Paste.md", faces)
+
+    def test_hardback_docx_arrived_from_drive_not_as_clay(self):
+        path = ARCHIVE_SFE_HB / "Harmonic_Blueprint_HARDBACK.docx"
+        self.assertTrue(path.is_file(), path)
+        raw = path.read_bytes()
+        self.assertEqual(len(raw), 2777161)
+        self.assertEqual(
+            hashlib.sha256(raw).hexdigest(),
+            "57e0a0bcf25f230fddfaede8a5f8dfdd0fd05339ff86a6ba5c3d082c8d678ae6",
+        )
+        self.assertEqual(raw[:4], b"PK\x03\x04")
+        receipt = (
+            ARCHIVE_SFE_HB / "Harmonic_Blueprint_HARDBACK.RECEIPT.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("NOT CLAIMED", receipt)
+        self.assertIn("1qhkiK2Bv777KTcnFjr25cxzvwDVz84KP", receipt)
+        self.assertIn("9798289278081", receipt)
+        self.assertIn("Not RH", receipt)
+        self.assertFalse((LIVE_ROOT / "harmonic_blueprint.py").is_file())
+        miss = (
+            ARCHIVE_SFE_HB / "HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Harmonic_Blueprint_HARDBACK.docx", miss)
+        self.assertIn("arrived", miss.lower())
 
 
 class TestSpectralUnificationPaperArchived(unittest.TestCase):
