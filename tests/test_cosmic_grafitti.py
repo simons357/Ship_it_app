@@ -18,8 +18,9 @@ class TestCosmicGrafittiFound(unittest.TestCase):
     def test_found_files_present(self) -> None:
         for path in (MAG, CUT, PAPER, DEPOSIT, FACE, FOUND):
             self.assertTrue(path.is_file(), f"missing {path}")
-        for name in ("cover.png", "swirl.png", "tube.png", "wall.png"):
+        for name in ("cover.png", "swirl.png", "tube.png", "wall.png", "swirl_stuck.png", "tube_stuck.png", "wall_stuck.png"):
             self.assertTrue((ROOT / "apps" / "cosmic-grafitti" / "art" / name).is_file())
+        self.assertTrue((ROOT / "docs" / "COSMIC-GRAFITTI-STICK.md").is_file())
 
     def test_html_is_the_leftover_not_the_lattice(self) -> None:
         html = MAG.read_text(encoding="utf-8")
@@ -32,6 +33,8 @@ class TestCosmicGrafittiFound(unittest.TestCase):
         self.assertIn("C / D", html)
         self.assertIn("href=\"#write6\"", html)
         self.assertIn("href=\"#found\"", html)
+        self.assertIn("class=\"stuck", html)
+        self.assertIn("the leftover", html.lower())
         self.assertNotIn("Tikkun", html)
         self.assertNotIn("Axis of Evil", html)
         self.assertNotIn("Planck confirms", html)
