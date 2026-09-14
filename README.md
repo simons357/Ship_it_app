@@ -67,8 +67,13 @@ Architect. They are not Domain Architect itself. DA is the role
 assignment, the broken-structure record, the substitution gate, and
 the provenance requirement.
 
+## Learn Navier–Stokes
+
+A plain-language teaching pack (not a proof):
+[`docs/learn/navier-stokes/`](docs/learn/navier-stokes/README.md).
+
 ## Tests
 
 ```bash
-python -m unittest tests.test_sfe_hb_dump tests.test_domain_architect_v1 tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_historical_archive tests.test_brand_mark tests.test_desktop_app tests.test_phi_geometry_bridge tests.test_challenge_01_ns tests.test_available_turbulence tests.test_turbulence_program
+python -m unittest tests.test_sfe_hb_dump tests.test_domain_architect_v1 tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_historical_archive tests.test_brand_mark tests.test_desktop_app tests.test_phi_geometry_bridge tests.test_challenge_01_ns tests.test_available_turbulence tests.test_turbulence_program tests.test_ns_learning_pack
 ```
