@@ -158,5 +158,21 @@
     "evidence": "Hilbert–Pólya asks for a self-adjoint operator. Laguerre–Pólya asks for LP membership of ξ(1/2+iz). Same conclusion type (real zeros), different missing object.",
     "status": "recorded",
     "notes": "Two Pólya routes. Completing either would imply RH; stating either does not."
+  },
+  {
+    "left_id": "HP-H011",
+    "right_id": "HP-H003",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Pólya 1926 is a sufficient condition on a Fourier kernel. Berry–Keating xp is a heuristic Hamiltonian. Same prize target, different missing object.",
+    "status": "recorded",
+    "notes": "1926 does not fill H. It relocates the gap to a kernel hypothesis."
+  },
+  {
+    "left_id": "HP-H013",
+    "right_id": "HP-H011",
+    "relation": "INCOMPATIBLE",
+    "evidence": "A disproved Pólya arithmetic conjecture is not interchangeable with a proven Pólya Fourier theorem.",
+    "status": "recorded",
+    "notes": "Proven Pólya work only. Pólya is not an oracle for Millennium problems."
   }
 ]

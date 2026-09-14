@@ -443,6 +443,46 @@ def briefing_components() -> list[ComponentRecord]:
             "INSUFFICIENT_INFORMATION as a Pólya-to-NS bridge; do not glue",
             "NS-B in inventory",
         ),
+        ComponentRecord(
+            "C-Polya1926",
+            "E-entire",
+            "Pólya 1926: sufficient conditions on Φ so ∫ Φ(t) cos(zt) dt has only real zeros",
+            "theorem",
+            True,
+            "accepted as a proven sufficient criterion; refused as a fill of H",
+            "relocates the gap to a kernel hypothesis; does not produce a Hamiltonian",
+            "HP-H011",
+        ),
+        ComponentRecord(
+            "C-RiemannPhi",
+            "E-entire",
+            "Ξ(z) = ∫_0^∞ Φ(t) cos(zt) dt with Riemann’s positive even kernel Φ",
+            "theorem",
+            True,
+            "recorded as the shape that makes 1926 applicable in principle",
+            "shape matches; 1926 hypotheses are not a checked theorem for this Φ",
+            "HP-H012",
+        ),
+        ComponentRecord(
+            "C-PolyaSzego",
+            "other-book",
+            "Pólya–Szegő inequalities (analysis / potential theory)",
+            "other_book",
+            True,
+            "ingested because they sometimes appear in PDE estimates; no NS map checked",
+            "INSUFFICIENT_INFORMATION as a Clay-NS solution",
+            "Pólya–Szegő, Problems and Theorems in Analysis",
+        ),
+        ComponentRecord(
+            "C-PolyaLiouville",
+            "forbidden",
+            "Pólya’s Liouville-sum conjecture L(x)≤0 (disproved)",
+            "disproved",
+            True,
+            "recorded as a disproved Pólya claim so proven work is not confused with every Pólya sentence",
+            "Pólya is not an oracle; this claim is false",
+            "HP-H013",
+        ),
     ]
 
 
@@ -451,13 +491,13 @@ def millennium_routing() -> list[dict[str, str]]:
     return [
         {
             "prize": "Riemann hypothesis",
-            "polya_object": "Hilbert–Pólya strategy; Laguerre–Pólya class of ξ(1/2+iz)",
+            "polya_object": "Hilbert–Pólya; Laguerre–Pólya class; Pólya 1926 cosine-transform criterion",
             "relation": "direct open strategy",
             "status": "open; probe does not prove it",
         },
         {
             "prize": "Navier–Stokes existence and smoothness",
-            "polya_object": "none with a checked transformation",
+            "polya_object": "Pólya–Szegő inequalities ingested; no checked map to regularity",
             "relation": "INSUFFICIENT_INFORMATION",
             "status": "separate book; do not derive from ξ or xp",
         },
@@ -497,8 +537,9 @@ def da_requests() -> list[str]:
         "A trace identity deriving Weil’s formula from Tr f(H), or a proven "
         "identification ξ(s) ∝ det((s−1/2)/i − H) times an entire factor of specified order.",
         "Multiplicity data: simple zeros versus possible multiple eigenvalues.",
-        "If Laguerre–Pólya is the route instead of a Hamiltonian: an independent "
-        "proof that ξ(1/2+iz) lies in the LP class, not an appeal to RH.",
+        "If Laguerre–Pólya / Pólya 1926 is the route instead of a Hamiltonian: "
+        "an independent verification that Riemann’s Φ meets the 1926 hypotheses, "
+        "or that ξ(1/2+iz) lies in the LP class, not an appeal to RH.",
         "If a Navier–Stokes or other-prize bridge is claimed: an explicit checked "
         "transformation. Shared letters are not enough.",
     ]
@@ -518,6 +559,12 @@ def _findings() -> list[str]:
         "LP-membership proof that does not assume RH).",
         "Feeding Pólya’s proven LP / Jensen calculus does not fill H. It restates "
         "the reality of zeros in entire-function language.",
+        "Pólya 1926 is the actual attempt to solve H with proven Pólya analysis: "
+        "a sufficient condition for cosine transforms to have only real zeros. "
+        "Riemann Ξ has that shape. The hypotheses are not a checked theorem for "
+        "Riemann’s Φ. So Pólya relocates the gap (kernel condition instead of H) "
+        "and does not fill the H role. A disproved Pólya conjecture (Liouville "
+        "sums) is recorded so proven theorems are not treated as an oracle.",
         "Berry–Keating xp is the only supplied emission-Hamiltonian candidate "
         "with an independent classical symbol. Connes is a different object. "
         "GUE is not an object of that type. diag(γ_n) is circular.",

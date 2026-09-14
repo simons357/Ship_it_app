@@ -191,11 +191,15 @@ class TestRegistryRecords(unittest.TestCase):
             "HP-H008",
             "HP-H009",
             "HP-H010",
+            "HP-H011",
+            "HP-H012",
+            "HP-H013",
         ):
             self.assertIn(eq_id, registry.equations)
         self.assertEqual(registry.equations["HP-H002"].audit_disposition, "RETAIN")
         self.assertEqual(registry.equations["HP-H007"].audit_disposition, "RETIRE")
-        self.assertEqual(registry.equations["HP-H003"].audit_disposition, "UNRESOLVED")
+        self.assertEqual(registry.equations["HP-H011"].audit_disposition, "RETAIN")
+        self.assertEqual(registry.equations["HP-H013"].audit_disposition, "RETIRE")
         null_ids = {n.null_id for n in registry.nulls}
         self.assertIn("NULL-HP-CIRCULAR", null_ids)
         self.assertIn("NULL-HP-GUE", null_ids)

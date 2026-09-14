@@ -54,6 +54,7 @@ known theory.
 | Hilbert–Pólya completeness audit; circular \(\Phi:=\)zeros refused | `hilbert_polya.py` |
 | Pólya probe (N-component briefing, LP class, no Millennium glue) | `polya_probe.py` |
 | GUE statistics \(\neq\) spectral identity laboratory | `hilbert_polya.gue_is_not_riemann_spectrum` |
+| Weyl-law screen rejects oscillator / equal spacing | `hilbert_polya.weyl_law_screen` |
 
 ## Canonical SFE
 

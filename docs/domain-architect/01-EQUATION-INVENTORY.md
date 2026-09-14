@@ -130,6 +130,9 @@ Assigning \(\Phi:=\{\gamma_n\}\) is recorded as a circular fill (HP-H007), not a
 | HP-H008 | Laguerre–Pólya class of \(\xi(1/2+iz)\) | Proven entire-function calculus; parallel RH route | **RETAIN** as theorem; not a Hamiltonian |
 | HP-H009 | Jensen polynomials of \(\xi\) \(\to\) Hermite (GORZ) | Asymptotic real-rootedness | **RETAIN**; not RH |
 | HP-H010 | \(N(T)=(T/2\pi)\log(T/2\pi e)+S(T)+O(1)\) | Weyl-law target | **RETAIN** as theorem |
+| HP-H011 | Pólya 1926 cosine-transform real-zero criterion | Proven sufficient condition; hypotheses unverified for Riemann’s \(\Phi\) | **RETAIN** as theorem; does not fill \(H\) |
+| HP-H012 | \(\Xi(z)=\int_0^\infty\Phi(t)\cos(zt)\,dt\) | Shape that makes 1926 applicable in principle | **RETAIN** as representation |
+| HP-H013 | \(L(x)=\sum_{n\le x}\lambda(n)\le 0\) | Pólya Liouville conjecture | **RETIRE** — disproved (Haselgrove) |
 
 Do not merge HP-H003 with HP-H004, HP-H005, HP-H008, or retired SFE-HAM (`SFE-H003`).
 

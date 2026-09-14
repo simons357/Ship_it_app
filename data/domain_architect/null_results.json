@@ -70,5 +70,21 @@
     "evidence": "domain_architect.hilbert_polya.weyl_law_screen; HP-H010",
     "source": "Pólya probe 2026-09",
     "created_at": "2026-09-14T00:00:00Z"
+  },
+  {
+    "null_id": "NULL-HP-POLYA1926",
+    "kind": "sufficient condition hypotheses unverified",
+    "statement": "Pólya 1926 gives a sufficient condition for a cosine transform to have only real zeros. Riemann Ξ has that shape. The 1926 hypotheses are not a checked theorem for Riemann’s Φ, so the theorem does not fill H and does not prove RH.",
+    "evidence": "HP-H011, HP-H012; docs/domain-architect/07-POLYA-PROBE.md",
+    "source": "Pólya probe 2026-09",
+    "created_at": "2026-09-14T00:00:00Z"
+  },
+  {
+    "null_id": "NULL-POLYA-LIOUVILLE",
+    "kind": "disproved conjecture",
+    "statement": "Pólya’s conjecture L(x)=Σ_{n≤x} λ(n) ≤ 0 for x≥2 is false (Haselgrove 1958). Proven Pólya theorems are not a blanket warrant for other Millennium problems.",
+    "evidence": "HP-H013",
+    "source": "Pólya probe 2026-09",
+    "created_at": "2026-09-14T00:00:00Z"
   }
 ]

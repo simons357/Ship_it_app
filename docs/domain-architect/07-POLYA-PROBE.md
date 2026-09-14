@@ -60,6 +60,14 @@ The result that is actually a finding, not a Hamiltonian:
    different object. GUE is statistics. \(\operatorname{diag}(\gamma_n)\) is circular.
 5. No checked transformation to Navier–Stokes or to a canonical SFE.
 
+**Can proven Pólya fill \(H\)?** No. Pólya 1926 is the real attempt: a
+sufficient condition for \(\int\Phi\cos(zt)\,dt\) to have only real zeros.
+Riemann’s \(\Xi\) has that shape. The hypotheses are not a checked theorem
+for that \(\Phi\). DA’s classification: this **relocates** the gap from
+“find \(H\)” to “verify a kernel condition.” It does not occupy the \(H\)
+role. Pólya’s Liouville-sum conjecture is **false**, so Pólya is not an
+oracle for other Millennium problems.
+
 ---
 
 ## What DA still needs (it cannot invent these)

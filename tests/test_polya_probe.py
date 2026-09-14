@@ -32,6 +32,9 @@ class TestPolyaProbe(unittest.TestCase):
         text = " ".join(probe.da_requests).lower()
         self.assertIn("independent operator", text)
         self.assertTrue(any("laguerre" in c.occupant.lower() for c in probe.components))
+        occupants = " ".join(c.occupant.lower() for c in probe.components)
+        self.assertIn("1926", occupants)
+        self.assertIn("cos", occupants)
 
     def test_does_not_glue_navier_stokes_or_claim_rh(self):
         probe = run_polya_probe()
@@ -48,7 +51,9 @@ class TestPolyaProbe(unittest.TestCase):
         self.assertTrue(probe.weyl_laboratory["xp_classical_leading_term_compatible"])
         self.assertIn("1/log", probe.weyl_laboratory["conclusion"])
         self.assertTrue(any(s["candidate_id"] == "berry-keating" and not s["complete"] for s in probe.candidate_scores))
-        self.assertTrue(any(s["candidate_id"] == "diagonal-zeros" and s["circular"] for s in probe.candidate_scores))
+        self.assertIn("relocates the gap", " ".join(probe.findings).lower())
+        self.assertTrue(any(c.component_id == "C-Polya1926" for c in probe.components))
+        self.assertFalse(any(c.role == "H" and "1926" in c.occupant for c in probe.components))
 
     def test_cli_probe(self):
         proc = subprocess.run(
