@@ -4,8 +4,8 @@ Phone face of Jonathan’s 10 September 2026 swirl leftover magazine.
 
 Open `index.html` and swipe.
 
-Print cut: [`docs/SWIRL-MAGAZINE.md`](../../docs/SWIRL-MAGAZINE.md).
+**Use it with:** the leftover print cut [`docs/SWIRL-MAGAZINE.md`](../../docs/SWIRL-MAGAZINE.md), leftover tags, a phone. How-to: [`docs/COSMIC-GRAFITTI-STICK.md`](../../docs/COSMIC-GRAFITTI-STICK.md).
 
 This is **not** the May 2026 Universal Geometry / Cosmic Star Lattice essay.
 
-Honesty: WRITE (6) is named and not proved. Forced breakdown is Fefferman C/D, not unforced A/B. Ordinary NS is not solved.
+Honesty: WRITE (6) is named and not proved. Forced breakdown is Fefferman C/D, not unforced A/B. Ordinary NS is not solved. HB Experiment 01 is a closed null, not an NS proof.

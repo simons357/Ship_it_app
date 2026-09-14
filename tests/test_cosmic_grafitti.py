@@ -18,7 +18,22 @@ class TestCosmicGrafittiFound(unittest.TestCase):
     def test_found_files_present(self) -> None:
         for path in (MAG, CUT, PAPER, DEPOSIT, FACE, FOUND):
             self.assertTrue(path.is_file(), f"missing {path}")
-        for name in ("cover.png", "swirl.png", "tube.png", "wall.png", "swirl_stuck.png", "tube_stuck.png", "wall_stuck.png"):
+        for name in (
+            "cover.png",
+            "swirl.png",
+            "tube.png",
+            "wall.png",
+            "swirl_stuck.png",
+            "tube_stuck.png",
+            "wall_stuck.png",
+            "true_algebra.png",
+            "true_da.png",
+            "true_echo_closed.png",
+            "true_savannah.png",
+            "true_thm_a.png",
+            "true_two_doors.png",
+            "true_wall.png",
+        ):
             self.assertTrue((ROOT / "apps" / "cosmic-grafitti" / "art" / name).is_file())
         self.assertTrue((ROOT / "docs" / "COSMIC-GRAFITTI-STICK.md").is_file())
 
@@ -35,6 +50,12 @@ class TestCosmicGrafittiFound(unittest.TestCase):
         self.assertIn("href=\"#found\"", html)
         self.assertIn("class=\"stuck", html)
         self.assertIn("the leftover", html.lower())
+        self.assertIn("TRUE WALL", html)
+        self.assertIn("ALGEBRA ONLY", html)
+        self.assertIn("SAME LETTER ≠ SAME PHYSICS", html)
+        self.assertIn("ECHO CLOSED", html)
+        self.assertIn("art/true_two_doors.png", html)
+        self.assertIn("art/true_savannah.png", html)
         self.assertNotIn("Tikkun", html)
         self.assertNotIn("Axis of Evil", html)
         self.assertNotIn("Planck confirms", html)

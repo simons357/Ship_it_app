@@ -11,7 +11,8 @@ Recovered from `cursor/unaugmented-r4-vorticity-f80e` (commit `617f373`).
 
 Working paper: [`SWIRL-PAPER.md`](SWIRL-PAPER.md).  
 Deposit card: [`SWIRL-DEPOSIT.md`](SWIRL-DEPOSIT.md).  
-Phone wall: `apps/cosmic-grafitti/index.html`.
+Phone wall: `apps/cosmic-grafitti/index.html`.  
+How to use the plates: [`COSMIC-GRAFITTI-STICK.md`](COSMIC-GRAFITTI-STICK.md).
 
 The May 2026 Universal Geometry / Cosmic Star Lattice essay is a different wall. Filed, not this issue.
 

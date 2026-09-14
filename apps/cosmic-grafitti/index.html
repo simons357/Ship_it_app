@@ -105,6 +105,8 @@
   .stuck.tl { left: 6%; top: calc(72px + env(safe-area-inset-top)); }
   .stuck.tr { right: 8%; top: calc(88px + env(safe-area-inset-top)); }
   .stuck.ml { left: 7%; top: 38%; }
+  .stuck.bl { left: 6%; bottom: 26%; top: auto; }
+  .stuck.br { right: 8%; bottom: 22%; top: auto; }
   .paste {
     position: relative;
     z-index: 2;
@@ -223,7 +225,7 @@
 <div class="desk">
 <nav class="rail" aria-label="Found leftover">
   <a href="#cover">Cover</a>
-  <a href="#found">Found</a>
+  <a href="#found">True wall</a>
   <a href="#if">The if</a>
   <a href="#bad">Bad</a>
   <a href="#write6">WRITE 6</a>
@@ -231,9 +233,9 @@
   <a href="#force">C/D</a>
   <a href="#qa">Thm A</a>
   <a href="#drop">Tube</a>
-  <a href="#map">Map</a>
+  <a href="#map">DA</a>
   <a href="#edit">Print</a>
-  <a href="#back">Back</a>
+  <a href="#back">Savannah</a>
 </nav>
 
 <main class="book" id="book">
@@ -244,22 +246,27 @@
     <div class="stuck acid sm ml">NS NOT SOLVED</div>
     <div class="folio">01 / 12</div>
     <div class="paste">
-      <p class="kicker">Prime Field · Magazine cut · 10 September 2026</p>
+      <p class="kicker">Prime Field · leftover reprint · visuals of what is true</p>
       <p class="tag">The leftover, found</p>
-      <p>Stick the leftover on the wall. Not the star-lattice essay. Named, not proved.</p>
-      <a class="cta" href="#found">Open the found cut</a>
+      <p>Fill the wall with the work that is actually true. Leftover tags. Not the lattice. Named, not proved.</p>
+      <a class="cta" href="#found">Open the true wall</a>
     </div>
   </article>
 
-  <article class="page" id="found">
-    <div class="bleed" style="background-image:url('art/wall_stuck.png')"></div>
+  <article class="page art-first" id="found">
+    <div class="bleed" style="background-image:url('art/true_wall.png')"></div>
+    <div class="stuck lg tl">TRUE WALL</div>
+    <div class="stuck pink sm tr">ALL THAT IS TRUE</div>
     <div class="folio">02 / 12</div>
     <div class="paste">
-      <p class="kicker">Wrong one, then this one</p>
-      <h2>The leftover, not the lattice.</h2>
-      <p>You asked for the magazine you lost. The first reprint grabbed the May 2026 universal-geometry essay. That was the wrong wall.</p>
-      <p>This is the piece you already wrote to publish: <em>Swirl, alignment, and what Navier–Stokes still owes.</em> About 800 words. Not a proof. Recovered from <code>cursor/unaugmented-r4-vorticity-f80e</code>.</p>
-      <p class="note">Body: docs/SWIRL-MAGAZINE.md. Working paper: docs/SWIRL-PAPER.md. Deposit card: docs/SWIRL-DEPOSIT.md.</p>
+      <p class="kicker">Inventory · how to use the plates</p>
+      <h2>Visuals of all that we do that is true.</h2>
+      <p>This is the piece you already wrote to publish: <em>Swirl, alignment, and what Navier–Stokes still owes.</em> About 800 words. Not a proof. Five plates on one brick. Swirl → leftover. Pillar → 1/r<sup>4</sup> tube. Echo → Experiment 01 closed. Alley → Savannah, phone-first. Card → swirl identity as algebra. The painted letters on the plates are atmosphere. The wheatpaste cards on top are the readable names.</p>
+      <div class="cols">
+        <div class="card"><b>Use them with</b>A phone. Swipe this file. Stick leftover tags. Print <code>docs/SWIRL-MAGAZINE.md</code> under the picture.</div>
+        <div class="card"><b>Not with</b>Clay Statement B. A proof. The May lattice. A claimed close.</div>
+      </div>
+      <p class="note">Body: docs/SWIRL-MAGAZINE.md. How-to: docs/COSMIC-GRAFITTI-STICK.md.</p>
       <a class="cta" href="#if">Start the if</a>
     </div>
   </article>
@@ -319,8 +326,10 @@
     </div>
   </article>
 
-  <article class="page" id="force">
-    <div class="bleed" style="background-image:url('art/cover.png')"></div>
+  <article class="page art-first" id="force">
+    <div class="bleed" style="background-image:url('art/true_two_doors.png')"></div>
+    <div class="stuck acid sm tl">A/B OPEN</div>
+    <div class="stuck pink sm tr">C/D IS A DIFFERENT DOOR</div>
     <div class="folio">07 / 12</div>
     <div class="paste">
       <p class="kicker">8 September 2026</p>
@@ -334,8 +343,9 @@
     </div>
   </article>
 
-  <article class="page" id="qa">
-    <div class="bleed" style="background-image:url('art/wall.png')"></div>
+  <article class="page art-first" id="qa">
+    <div class="bleed" style="background-image:url('art/true_thm_a.png')"></div>
+    <div class="stuck acid sm tl">DIFFERENT EQUATION</div>
     <div class="folio">08 / 12</div>
     <div class="paste">
       <p class="kicker">A different equation</p>
@@ -346,33 +356,39 @@
     </div>
   </article>
 
-  <article class="page" id="drop">
-    <div class="bleed" style="background-image:url('art/tube_stuck.png')"></div>
+  <article class="page art-first" id="drop">
+    <div class="bleed" style="background-image:url('art/true_algebra.png')"></div>
+    <div class="stuck acid sm tl">KEEP THE TUBE</div>
+    <div class="stuck pink sm tr">ALGEBRA ONLY</div>
     <div class="folio">09 / 12</div>
     <div class="paste">
       <p class="kicker">The path that was dropped</p>
       <h2>Keep the 1/r<sup>4</sup> tube.</h2>
-      <p>Axisymmetric flow with swirl, keeping the 1/r<sup>4</sup> tube source, is the same leftover as the field. A localized Hardy inequality does not absorb all data.</p>
+      <p>Axisymmetric flow with swirl, keeping the 1/r<sup>4</sup> tube source, is the same leftover as the field. The boxed swirl identity is algebra only: (1/r<sup>4</sup>) ∂z(Γ²) = ∂z(Φ²). A localized Hardy inequality does not absorb all data.</p>
       <p>I dropped a change of unknown that canceled the tube term. That cancel was not the unforced path.</p>
       <span class="stamp">Φ-CANCEL ≠ ORDINARY NS</span>
     </div>
   </article>
 
-  <article class="page" id="map">
-    <div class="bleed" style="background-image:url('art/swirl.png')"></div>
+  <article class="page art-first" id="map">
+    <div class="bleed" style="background-image:url('art/true_da.png')"></div>
+    <div class="stuck lg tl">DA</div>
+    <div class="stuck acid sm tr">SAME LETTER ≠ SAME PHYSICS</div>
     <div class="folio">10 / 12</div>
     <div class="paste">
       <p class="kicker">What you can put a name on</p>
       <h2>The map, this week.</h2>
-      <p>The Hölder 1/2 cut is Constantin–Fefferman and Beirão da Veiga–Berselli. Bad pairs are what they left. WRITE (6) is the right name for that remainder. It is not proved.</p>
+      <p>The Hölder 1/2 cut is Constantin–Fefferman and Beirão da Veiga–Berselli. Bad pairs are what they left. WRITE (6) is the right name for that remainder. It is not proved. Domain Architect’s job on this wall is the refuse: same letter is not the same physics.</p>
       <div class="wheat">
         <p><strong>NOT A SOLUTION.</strong> This is the leftover, named, dated, and not sold as a close.</p>
       </div>
     </div>
   </article>
 
-  <article class="page" id="edit">
-    <div class="bleed" style="background-image:url('art/wall_stuck.png')"></div>
+  <article class="page art-first" id="edit">
+    <div class="bleed" style="background-image:url('art/true_echo_closed.png')"></div>
+    <div class="stuck lg tl">PRINT THIS</div>
+    <div class="stuck acid sm tr">ECHO CLOSED</div>
     <div class="folio">11 / 12</div>
     <div class="paste">
       <p class="kicker">If an editor needs one sentence</p>
@@ -380,18 +396,21 @@
       <div class="wheat">
         <p>Swirl alignment at Hölder 1/2 is a theorem as an if; the refused pairs are still open; a forced blowup, if true, is a different official statement from unforced regularity.</p>
       </div>
+      <p>Harmonic Blueprint Experiment 01 is closed: the held-out TEST did not reject H0. That is a true close. It is not a Navier–Stokes proof.</p>
       <p class="note">SIAM News commentary / letter, or any magazine that will take a dated essay. Do not send it as a research article that proves regularity. I am not submitting it for you.</p>
     </div>
   </article>
 
-  <article class="page" id="back">
-    <div class="bleed" style="background-image:url('art/cover.png')"></div>
+  <article class="page art-first" id="back">
+    <div class="bleed" style="background-image:url('art/true_savannah.png')"></div>
+    <div class="stuck lg tl">SAVANNAH</div>
+    <div class="stuck pink sm tr">CRNA · PHONE FIRST</div>
     <div class="folio">12 / 12</div>
     <div class="paste">
       <p class="kicker">Colophon</p>
       <h2>The found cut</h2>
       <p>COSMIC GRAFITTI is the phone face of the swirl leftover magazine. Body is Jonathan R. Simons, 10 September 2026, Prime Field Technologies, recovered from <code>cursor/unaugmented-r4-vorticity-f80e</code>.</p>
-      <p>The May universal-geometry essay is a different wall. Filed, not this issue.</p>
+      <p>Jonathan is a CRNA in Savannah. The magazine is phone-first because that is how the work actually moves. The May universal-geometry essay is a different wall. Filed, not this issue.</p>
       <span class="stamp">WRITE (6) NAMED</span>
       <span class="stamp">NOT PROVED</span>
       <span class="stamp">NS NOT SOLVED</span>
