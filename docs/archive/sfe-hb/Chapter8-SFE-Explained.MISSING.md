@@ -25,6 +25,10 @@ Nearby files that are **not** this txt (do not substitute):
 - Hardback heading *Cymatics, Voice Identity, and Resonance
   Signatures* and section 8.2 *Cymatic Projection of Identity*.
   Different chapter. Different numbering.
+- Named 150-page PDF Chapter 8 is *Sacred Geometry and the Ancient
+  Memory* (12-page stub:
+  [`The_Harmonic_Blueprint_FULL_150_PAGES.RECEIPT.md`](The_Harmonic_Blueprint_FULL_150_PAGES.RECEIPT.md)).
+  Different chapter. Not 150 pages.
 
 Do not invent the Explained txt.
 

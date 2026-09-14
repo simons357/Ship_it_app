@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import ast
 import hashlib
+import re
 import unittest
 from pathlib import Path
 
@@ -562,6 +563,60 @@ class TestRhHarmonicPerspectiveStaysArchived(unittest.TestCase):
             Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
         ).read_text(encoding="utf-8")
         self.assertIn("fe4bbc6875", gcd)
+
+    def test_full_150_pages_pdf_is_twelve_page_stub_not_the_book(self):
+        pdf = ARCHIVE_SFE_HB / "The_Harmonic_Blueprint_FULL_150_PAGES.pdf"
+        receipt = ARCHIVE_SFE_HB / "The_Harmonic_Blueprint_FULL_150_PAGES.RECEIPT.md"
+        hardback = ARCHIVE_SFE_HB / "Harmonic_Blueprint_HARDBACK.docx"
+        stub_docx = ARCHIVE_SFE_HB / "The_Harmonic_Blueprint_FULL.docx"
+        self.assertTrue(pdf.is_file(), pdf)
+        self.assertTrue(receipt.is_file(), receipt)
+        raw = pdf.read_bytes()
+        self.assertEqual(len(raw), 14082)
+        self.assertEqual(
+            hashlib.sha256(raw).hexdigest(),
+            "c6d669f140020a21364bb6546577d3e2e42162a67f115167a2107832378eb0af",
+        )
+        self.assertTrue(raw.startswith(b"%PDF"))
+        self.assertEqual(len(re.findall(rb"/Type\s*/Page(?!s)", raw)), 12)
+        self.assertNotEqual(
+            hashlib.sha256(raw).hexdigest(),
+            hashlib.sha256(hardback.read_bytes()).hexdigest(),
+        )
+        self.assertNotEqual(
+            hashlib.sha256(raw).hexdigest(),
+            hashlib.sha256(stub_docx.read_bytes()).hexdigest(),
+        )
+        text = receipt.read_text(encoding="utf-8")
+        self.assertIn("12", text)
+        self.assertIn("not 150", text.lower())
+        self.assertIn("not the book", text.lower())
+        self.assertIn("NOT CLAIMED", text)
+        self.assertIn("Sacred Geometry", text)
+        self.assertFalse((LIVE_ROOT / "harmonic_blueprint.py").is_file())
+        miss = (
+            ARCHIVE_SFE_HB / "HARMONIC-BLUEPRINT-BOOK-FILES.MISSING.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("12-page padded stub", miss)
+        note = ARCHIVE_SFE_HB.joinpath("README.md").read_text(encoding="utf-8")
+        self.assertIn("The_Harmonic_Blueprint_FULL_150_PAGES.pdf", note)
+        self.assertIn("12-page", note)
+        archive_index = (
+            Path(__file__).resolve().parents[1] / "docs" / "archive" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("The_Harmonic_Blueprint_FULL_150_PAGES.pdf", archive_index)
+        self.assertIn("c6d669f140", archive_index)
+        lookup = (
+            Path(__file__).resolve().parents[1]
+            / "docs"
+            / "packets"
+            / "OLD-PAPERS-LOOK-UP.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("c6d669f140", lookup)
+        gcd = (
+            Path(__file__).resolve().parents[1] / "docs" / "papers" / "gcd" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("c6d669f140", gcd)
 
     def test_chapter8_sfe_explained_txt_is_missing_not_invented(self):
         receipt = ARCHIVE_SFE_HB / "Chapter8-SFE-Explained.MISSING.md"
