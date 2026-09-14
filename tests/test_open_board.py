@@ -47,17 +47,28 @@ class TestOpenBoard(unittest.TestCase):
         self.assertTrue(payload["a13_fail_closed"])
         self.assertGreaterEqual(payload["counts"]["CLOSED_WITHDRAWN"], 3)
         self.assertGreaterEqual(payload["counts"]["CLOSED_REJECTED"], 2)
-        self.assertEqual(payload["counts"]["STILL_OPEN"], 3)
+        self.assertEqual(payload["counts"]["STILL_OPEN"], 4)
         self.assertEqual(payload["counts"]["CONDITIONAL"], 3)
         self.assertEqual(payload["counts"].get("CLOSED_IDENTITY"), 2)
         self.assertEqual(payload["counts"].get("DA_ENGINEERING"), 1)
         still_ids = [row["id"] for row in payload["still_open"]]
         self.assertEqual(
             still_ids,
-            ["gap1-step-f", "route-j", "ns-open"],
+            ["gap1-step-f", "route-j", "ns-open", "axisymmetric-shell"],
         )
         cond_ids = [row["id"] for row in payload["conditional"]]
         self.assertEqual(cond_ids, ["swirl-strain", "ring-snd", "paper2-simplex"])
+        park_ids = [row["id"] for row in payload["parked"]]
+        self.assertEqual(park_ids, ["estimate-step-6", "write-6-h1"])
+        rejected_ids = [
+            row["id"] for row in payload["items"] if row["bucket"] == "CLOSED_REJECTED"
+        ]
+        self.assertIn("q6-constitutive", rejected_ids)
+        step6 = next(row for row in payload["parked"] if row["id"] == "estimate-step-6")
+        self.assertIn("not claimed", step6["problem"].lower())
+        self.assertIn("needs (a)", step6["problem"].lower())
+        write6 = next(row for row in payload["parked"] if row["id"] == "write-6-h1")
+        self.assertIn("Not Door-1", write6["problem"])
         self.assertFalse(payload["leftover_split"]["reconstruction_closed"])
         self.assertEqual(payload["leftover_split"]["honest_close"], "CONDITIONAL")
         self.assertTrue(
@@ -71,6 +82,16 @@ class TestOpenBoard(unittest.TestCase):
         self.assertIn("withdrawn", blob)
         self.assertIn("do not treat a13 refuse as a da-vc-01 pass", blob)
         self.assertIn("not claimed", blob)
+        self.assertIn("t_{j", blob)
+        self.assertIn("axisymmetric-shell", blob)
+        shell = next(row for row in payload["still_open"] if row["id"] == "axisymmetric-shell")
+        self.assertEqual(shell["bucket"], "STILL_OPEN")
+        self.assertIn("NOT COMPUTED", shell["problem"])
+        self.assertIn("REFUSED", shell["problem"])
+        self.assertIn("NOT CLAIMED", shell["problem"])
+        self.assertIn("FAIL", shell["problem"])
+        self.assertIn("FAIL", payload["da_vc_01"])
+        self.assertNotIn("DA-VC-01 PASS", payload["da_vc_01"])
 
     def test_cycle_and_api(self):
         report = cycle_open_board()

@@ -1,9 +1,10 @@
 # Domain Architect — operator contract
 
-**Status:** live operator policy for Domain Architect on this repo (25 August 2026)  
+**Status:** live operator policy for Domain Architect on this repo (12 September 2026)  
 **Operator:** Jonathan Robert Simons  
 **Spec:** [`docs/DOMAIN-ARCHITECT.md`](../DOMAIN-ARCHITECT.md)  
-**Program already in this mode:** [`docs/projects/turbulence-reduction/README.md`](../projects/turbulence-reduction/README.md)
+**Program already in this mode:** [`docs/projects/turbulence-reduction/README.md`](../projects/turbulence-reduction/README.md)  
+**Shell-estimate filter (one program only):** [`AXISYMMETRIC-SHELL-AUDIT.md`](AXISYMMETRIC-SHELL-AUDIT.md)
 
 This file is operating policy. It is not a proof, not a product claim, and
 not a dump of a chat prompt.
@@ -49,6 +50,15 @@ Do not glue \(\Phi\) / SND leftovers / \(H_N\) / \(A_3\) / Ring \(J\).
 Keep Route J separate from SND / GNC / Bridge Triple Lock unless an
 explicit verified source says otherwise. Do not answer Route J from a
 missing claim ledger.
+
+The axisymmetric-with-swirl **shell** estimate is a different remainder
+from leftover-split strain. Filter:
+[`AXISYMMETRIC-SHELL-AUDIT.md`](AXISYMMETRIC-SHELL-AUDIT.md).
+Class / quantity / remainder / assumed: unaugmented axisymmetric NS
+with swirl; shell block \(Z_j\); only remainder \(T_{j\leftarrow j}\);
+hypotheses in brackets. Gap stays visible. Do not import 2-D
+\(\rho=0.02\) into 3-D. Analog 15% intensity is a **separate** lumped
+setpoint, not this remainder.
 
 ## Not live product
 
