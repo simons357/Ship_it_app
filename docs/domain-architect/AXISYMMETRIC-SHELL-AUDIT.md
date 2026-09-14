@@ -69,6 +69,10 @@ paragraph is **OUT**. Including as “motivation” inside the proof.
 - Dissipation threshold hygiene: \(\rho_j<\nu\) (when \(\rho_j\) is normalized by palinstrophy) belongs to an enstrophy–palinstrophy route (A); it is not absorption for the displayed shell-energy budget (viscous term \(\nu Z_j\)).
 - Cross-scale bounds and summability: proposed, **not** established by this filter or the estimate note.
 - Conditions (A)–(C) and Step 6: candidate closure routes only; principal unresolved term remains \(T_{j\leftarrow j}\); Step 6 must not reintroduce the bounded quantity via \(\dot e_j\), \(\dot Z\), or \(\Lambda'\).
+  - **(A)** \(|T_{j\leftarrow j}|\le\varepsilon\nu P_j+R\) (palinstrophy \(P_j\)).
+  - **(B)** depletion \(\sin\phi\) or \(1-\alpha\) implying (A); occupancy 1 alone does not.
+  - **(C)** data restriction (axisymmetry-with-swirl); different theorem path.
+  - Conditional Gronwall under (A) is a **template** with explicit hypotheses; rate carries **one** \(\nu\), not \(\nu^2\); **not claimed**.
 - Swirl geometry as the class that removes free helical HHH.
 - Scope of computations: small exact disks / stated restricted classes only — no uniform conclusion as \(K_{\max}\to\infty\) or for generic data.
 

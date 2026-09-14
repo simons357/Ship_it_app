@@ -65,11 +65,27 @@ STANDING_LANGUAGE = {
         "not established by this note"
     ),
     "routes_A_B_C": "candidate routes, not theorems",
+    "route_A": (
+        "|Tjj| <= ε ν P_j + R(X,Z); palinstrophy-normalized; "
+        "not energy-budget absorption"
+    ),
+    "route_B": (
+        "depletion sinφ or (1-α) implying (A); "
+        "occupancy 1 alone does not supply this"
+    ),
+    "route_C": (
+        "data restriction (axisymmetry-with-swirl); "
+        "different theorem path, not generic 3-D"
+    ),
     "step_6": (
         "proposed mechanism, needs (A), not claimed; "
         "or a depletion estimate implying (A); "
         "no e_dot_j, Z_dot, or Lambda'; "
         "not WRITE (6); not Q6; not SND leftover 7-8"
+    ),
+    "conditional_gronwall": (
+        "template under [A_eps]+[Poincaré-shell]+[far]+[no-cycle]; "
+        "alpha carries one power of nu, not nu^2; not claimed"
     ),
     "principal_unresolved": "T_{j←j}",
     "scope": (
@@ -544,7 +560,10 @@ def format_shell_diagnostic(diag: dict[str, Any] | None = None) -> str:
         ),
         (
             "routes (A)-(C): candidate routes, not theorems; "
+            "(A) |Tjj|<=εν P_j+R; (B) depletion⇒(A); "
+            "(C) axisym restriction; "
             "estimate Step 6: proposed mechanism, needs (A), not claimed; "
+            "conditional Gronwall: ν^1 template, not claimed; "
             "not WRITE (6); not Q6; remainder still T_{j←j}"
         ),
         (

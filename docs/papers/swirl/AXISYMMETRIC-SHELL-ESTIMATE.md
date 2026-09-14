@@ -306,11 +306,62 @@ A conditional theorem is a theorem. A hidden hypothesis is not.
 
 Class: unaugmented axisymmetric-with-swirl. Quantity: the labeled shell in use. Remainder: \(T_{j\leftarrow j}\). Assumed: [(A)–(C) and Step 6 are candidate routes, not theorems; no extra field].
 
-- **(A)** — enstrophy–palinstrophy route. Palinstrophy-normalized \(\rho_j<\nu\) lives here. It is not absorption on the displayed energy budget.
-- **(B)**, **(C)** — named candidate routes. Their statements are not supplied on this page. This note does not invent them.
-- **Estimate Step 6** — a proposed closure mechanism. It requires (A), or a depletion estimate implying (A), without using \(\dot e_j\), \(\dot Z\), or \(\Lambda'\) to reintroduce the quantity being bounded. **Not claimed.** Not WRITE (6)/H1. Not Q6. Not the Statement-B table row “Step 6” (conditional \(H^1\) IF [SND]). Not leftover-split item #6 (that list has three pieces).
+Filed from the unaugmented proof-chain standing text (11–12 Sept 2026). **Not invented here. Not claimed for the class.**
+
+- **(A)** — enstrophy–palinstrophy bound
+  \[
+  \lvert T_{j\leftarrow j}\rvert
+  \le
+  \varepsilon\nu P_j
+  +
+  R(X,Z)
+  \]
+  with \(0\le\varepsilon<1\) and \(R\) controlled by energy and known quantities. Here \(P_j\) is **palinstrophy**, not the LP projector. Palinstrophy-normalized \(\rho_j=\lvert T_{j\leftarrow j}\rvert/P_j\) and the comparison \(\rho_j<\nu\) live on this route. **Not** absorption on the displayed energy budget (viscous slot \(\nu D_j\) or \(\nu Z_j\)).
+
+- **(B)** — depletion implying (A): a factor \(\sin\phi\) or \(1-\alpha\) from vorticity-direction mismatch on HHH that makes (A) true. Occupancy \(1\) on small orbits means phase rotation is **not** supplying this by itself. Recorded occupancy \(1\) with \(\alpha\approx 1/2\) does **not** establish depletion.
+
+- **(C)** — restriction of the data (axisymmetry-with-swirl, etc.). That is a **different** theorem path (this swirl/Door-1 note), not a generic 3-D close.
+
+- **Estimate Step 6** — proposed closure shape: assume (A) with \(\varepsilon<1\) (or (B)\(\Rightarrow\)(A)); sum on shells; absorb into palinstrophy dissipation; use energy from Step 0 and standard Sobolev interpolation; then enstrophy stays finite on a finite interval and BKM applies. **Not claimed.** Must not use \(\dot e_j\), \(\dot Z\), or \(\Lambda'\) to reintroduce the leftover. Not WRITE (6)/H1. Not Q6. Not the Statement-B table row “Step 6” (conditional \(H^1\) IF [SND]). Not leftover-split item #6.
 
 The principal unresolved term is still \(T_{j\leftarrow j}\). None of (A)–(C) or estimate Step 6 is seated here. Proofs stay parked.
+
+Harness (diagnostic only): `python -m domain_architect.axisym_ac_tests` and `python scripts/axisym_ac_gronwall_occupancy.py`.
+
+---
+
+## 10a. Conditional Gronwall under (A) — repaired template, not a close
+
+Class: unaugmented axisymmetric-with-swirl. Quantity: enstrophy shell \(Z_j=\|\Delta_j\omega\|_{L^2}^2\) with palinstrophy \(P_j\) (letters as in (A); **not** the displayed energy \(Z_j\) of §1). Remainder: \(T_{j\leftarrow j}\). Assumed: explicit hypotheses below. **NS not solved. Not claimed for the class.**
+
+**Broken / sloppy pattern refused.** A rate that inserts \(\nu^2\) where the viscous Poincaré / absorption chain supplies a single factor of \(\nu\) is refused here. Cross-link only: the Paper2 T2 shell-flux note’s \(\alpha_F=2\nu^2\cdot 4^{1/\rho_0}\rho_0\) conflicts with its own proof line \(\mathcal D\ge\nu\cdot 4^{1/\rho_0}\rho_0\,X\) (see [`docs/papers/ns-snd/03_t2_shell_flux_gronwall.MISSING.md`](../ns-snd/03_t2_shell_flux_gronwall.MISSING.md) errata). Do not import that \(\nu^2\) rate into this Door-1 chain. Do not bound \(T_{j\leftarrow j}\) by \(\dot e_j\), \(\dot Z\), or \(\Lambda'\).
+
+**Hypotheses (all required; none hidden).**
+
+1. **[A\(_\varepsilon\)]** Condition (A) with \(0\le\varepsilon<1\): \(\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu P_j+R\), and \(R\) is controlled by energy / known quantities (not by \(\dot e_j\), \(\dot Z\), or \(\Lambda'\)).
+2. **[Poincaré-shell]** \(P_j\ge c\,4^{j} Z_j\) for a named \(c=c[\varphi]>0\).
+3. **[far]** Infrared / ultraviolet remainders are majorized by an integrable function \(M(t)\) on \([0,T]\). Precise bounds and summability are **not** established by this note (gap).
+4. **[no-cycle]** The spectral-shift identity is bookkeeping only; it is not used as a bound of \(T_{j\leftarrow j}\).
+
+**Conditional estimate (template).** Under 1–4, the enstrophy shell satisfies
+\[
+\dot Z_j
++
+2\nu(1-\varepsilon)\,c\,4^{j}\,Z_j
+\le
+2M(t).
+\]
+Let \(\alpha:=2\nu(1-\varepsilon)\,c\,4^{j}\) (**one** power of \(\nu\)). Gronwall gives
+\[
+Z_j(t)
+\le
+Z_j(0)\,e^{-\alpha t}
++
+\int_0^t e^{-\alpha(t-s)}\,2M(s)\,ds.
+\]
+If \(M\le M_\ast\) on \([0,T]\), then \(Z_j\) stays finite on \([0,T]\). This is the shape of estimate Step 6 under (A). **Not claimed:** [A\(_\varepsilon\)] and [far] are missing for the class; the requested local Young stays **REFUSED**.
+
+**What would make a true repair need a missing lemma.** Seating [A\(_\varepsilon\)] without recycling \(\dot e_j/\dot Z/\Lambda'\), or seating [far] summability, or a depletion lemma that implies (A) without treating occupancy \(1\) as depletion. Until one of those arrives, the leftover stays \(T_{j\leftarrow j}\).
 
 ---
 

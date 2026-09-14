@@ -14,6 +14,12 @@ Class: unaugmented axisymmetric-with-swirl. Quantity: the labeled shell in use. 
 
 **Remaining closure.** Conditions (A)–(C) describe candidate routes for completing this particular proof chain. The principal unresolved term is the same-scale transfer \(T_{j\leftarrow j}\). Step 6 describes a proposed closure mechanism: it requires (A), or a depletion estimate implying (A), without using \(\dot e_j\), \(\dot Z\) or \(\Lambda'\) to reintroduce the quantity being bounded.
 
+**(A)** \(|T_{j\leftarrow j}|\le\varepsilon\nu P_j+R(X,Z)\) (palinstrophy \(P_j\); not energy-budget absorption).
+**(B)** Depletion \(\sin\phi\) or \(1-\alpha\) implying (A); occupancy 1 alone does not supply this.
+**(C)** Data restriction (axisymmetry-with-swirl); different theorem path, not generic 3-D.
+
+Conditional Gronwall under (A) is a repaired **template** (rate carries one \(\nu\), not \(\nu^2\)) with hypotheses explicit; **not claimed**. Cross-link: T2 \(\nu^2\) rate conflicts with its own Poincaré line.
+
 **Scope of computations.** The reported measurements concern small exact disks and the stated restricted classes. They establish no uniform conclusion as \(K_{\max}\to\infty\) or for generic data. Observed occupancy \(1\) alongside alignment approximately \(1/2\) does not establish the depletion required for closure.
 
 Letters, so they do not glue: LP projector \(P_j\) in §1 \(\neq\) palinstrophy \(P_j\) in (A). Energy \(Z_j=\tfrac12\|P_j u\|_{L^2}^2\) \(\neq\) enstrophy \(Z_j=\|\Delta_j\omega\|_{L^2}^2\). The §1 pairing writes dissipation as \(\nu D_j=\nu\|\nabla P_j u\|_{L^2}^2\). Whether one writes that slot as \(\nu D_j\) or as \(\nu Z_j\), \(\rho_j<\nu\) is still not absorption on the energy budget.

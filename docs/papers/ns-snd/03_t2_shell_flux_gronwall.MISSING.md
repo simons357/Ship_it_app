@@ -1,14 +1,36 @@
-> **Missing-receipt banner (25 August 2026).** T2 / shell-flux Gronwall notes
-> for Paper2. **Not closed.** **Not** June FIXED TeX. **Not** a compile of
-> June FIXED PDF `7de9444d…`. Clay is **NOT CLAIMED**. Do **not** invent
-> Gronwall. Do **not** overwrite DA-VC-01 (remains **FAIL**). Do **not**
-> overwrite sibling `675001cd1_` DRAFT, Frankie
-> `SPECTRAL_UNIFICATION_PAPER`, or Ring CF fragment.
+> **Missing-receipt banner (25 August 2026; updated 14 September 2026).**
+> T2 / shell-flux Gronwall notes for Paper2. **Not closed.** **Not** June
+> FIXED TeX. **Not** a compile of June FIXED PDF `7de9444d…`. Clay is
+> **NOT CLAIMED**. Do **not** invent Gronwall. Do **not** overwrite
+> DA-VC-01 (remains **FAIL**). Do **not** overwrite sibling `675001cd1_`
+> DRAFT, Frankie `SPECTRAL_UNIFICATION_PAPER`, or Ring CF fragment.
 
-# `03_t2_shell_flux_gronwall.tex` — not received
+# `03_t2_shell_flux_gronwall.tex` — receipt + ν² errata (not a close)
 
-**Found?** No. **SHA-256:** none (0 TeX bytes). **`\title` / `\date`:**
-unknown; not invented.
+**Found (14 Sept 2026)?** Bytes exist off-tree in this environment at
+`/opt/cursor/artifacts/zenodo-pdfs/03_t2_shell_flux_gronwall.tex` and on
+branch `origin/cursor/ns-five-lane-lemma-star-1390` as
+`docs/papers/submit/03_t2_shell_flux_gronwall.tex`. They were **not**
+present under `docs/papers/ns-snd/` at the 25 August hunt. **Still not
+closed.** August §T2 remains **withdrawn**. Owning Door-1 edits stay on
+the axisymmetric shell program (PR #70); this file is a **cross-link
+receipt**, not a Paper2 close.
+
+**ν² errata (cross-link only; do not fake a repair as Clay).** In that
+TeX, Theorem “Explicit \(\alpha\)” *proof* states the shell-spread
+Poincaré line
+\(\mathcal{D}(t)\ge\nu\cdot 4^{1/\rho_0}\rho_0\,X(t)\) (single \(\nu\)),
+but the *statement* and \(\alpha_F=2\nu^2\cdot 4^{1/\rho_0}\rho_0\) insert
+an extra \(\nu\). A formally consistent conditional rate from that
+Poincaré line carries **one** power of \(\nu\) in the dissipative
+coefficient, not \(\nu^2\). Axisymmetric Door-1 conditional Gronwall
+refuses the \(\nu^2\) pattern; see
+[`docs/papers/swirl/AXISYMMETRIC-SHELL-ESTIMATE.md`](../swirl/AXISYMMETRIC-SHELL-ESTIMATE.md)
+§10a. **Do not** mark T2 closed.
+
+**SHA-256 / title on the ns-snd tree:** still none checked in here
+(0 TeX bytes under `docs/papers/ns-snd/`). **`\title` / `\date`:** as in
+the artifact/five-lane copy when cited; not re-invented.
 
 This filename is **not** a substitute for:
 
