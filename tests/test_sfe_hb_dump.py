@@ -423,6 +423,10 @@ class TestRhHarmonicPerspectiveStaysArchived(unittest.TestCase):
         miss = missing.read_text(encoding="utf-8")
         self.assertIn("not received", miss.lower())
         self.assertIn("150 PAGES.pdf", miss)
+        map_receipt = ARCHIVE_SFE_HB / "SFE_Research_Map.MISSING.md"
+        self.assertTrue(map_receipt.is_file(), map_receipt)
+        self.assertIn("not received", map_receipt.read_text(encoding="utf-8").lower())
+        self.assertFalse((ARCHIVE_SFE_HB / "SFE_Research_Map.html").is_file())
         paste = ARCHIVE_SFE_HB / "SFE_Breathing_Field_Book_Paste.md"
         self.assertTrue(paste.is_file(), paste)
         body = paste.read_text(encoding="utf-8")
