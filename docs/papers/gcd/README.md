@@ -24,6 +24,13 @@ SHA-256 `a239112289a1a150d7a7a2212ec7f3649382b81542b49d5d2300f8611df3d6b1`.
 
 **What is false / withdrawn:** \(\lambda_{\min}>-1/2\) for all \(N\); dark-state \(\Leftrightarrow\) Goldbach; any Navier–Stokes claim from these matrices.
 
+Q6 \(\to\) Mertens transfer: **still OPEN**. Tried the Gap 1 trial on the
+locked inverse-GCD matrix. The unsigned trial has the wrong sign; the
+written Step F sum is a sum of squares; Cardinal’s transfer does not
+copy onto \(\widetilde Q_N\). Clay **NOT CLAIMED.** Note:
+[`Q6_MERTENS_TRANSFER.md`](Q6_MERTENS_TRANSFER.md). Probe:
+[`q6_mertens_bridge.py`](q6_mertens_bridge.py).
+
 The 19 Aug 2026 UHSA session dump ([`docs/archive/sfe-hb/`](../../archive/sfe-hb/)) repeats \(Q_N\) positive-definiteness in its §7 “bedrock.” That arithmetic fact belongs **here**. Do not glue it to NS regularity, RH, YM, BSD, or Hodge. The dump is archive-only, not a Q6 product face. The matplotlib Equation Explorer paste in that folder is **not** Q6 \(H_N\).
 The Track C SFE black-hole `FuncAnimation` paste
 ([`docs/archive/nav-42-cbfd-2026-04/sfe_black_hole_simulator_paste.py`](../../archive/nav-42-cbfd-2026-04/sfe_black_hole_simulator_paste.py);
