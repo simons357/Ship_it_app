@@ -29,7 +29,7 @@ Hölder cut spent once, machine):
 Kernel on Bad is still \(|z|^{-3}\). HLS gives local \(E^3\). Path-cost of \(\nabla\xi\) dies on a sheet or a gap.
 
 Supported data (identities, literature, calculations that do **not** prove this): [`WRITE_6_SUPPORTED.md`](WRITE_6_SUPPORTED.md).
-Snapshot tests (\(\Lambda=\Lambda_0\) fixed; not leftover 1): [`H1-ABAD-SNAPSHOT.md`](H1-ABAD-SNAPSHOT.md).
+Periodic snapshot diagnostics (\(\Lambda=\Lambda_0\) fixed; both integrals; not leftover 1; does not rescue unrestricted local (6)): [`H1-ABAD-SNAPSHOT.md`](H1-ABAD-SNAPSHOT.md).
 Shapes as estimates (not proved): [`H1-SHAPES.md`](H1-SHAPES.md).
 P1 low-pass Biot–Savart (sits; not this write): [`H1-P1.md`](H1-P1.md).
 P1-loc cutoff (sits, \(\nabla u\) kept; not this write): [`H1-P1-LOC.md`](H1-P1-LOC.md).

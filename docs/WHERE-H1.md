@@ -63,7 +63,7 @@ Literature lookup: all miss. H1 is not under another name. [`LOOKUP-H1.md`](LOOK
 | Matrix \(H_N\) / \(H_M[a]\) | GCD. Different letter. |
 | Fluids **H** | Global parent stretching. Not this cylinder request. |
 | Theorem A’s Sobolev \(H^1\) | Augmented track. A is not B. |
-| ABC_λ table | Snapshot \(A_{\mathrm{bad}}\) with fixed \(\Lambda_0\) is a number. Not leftover 1. Do not start H1 from that screenshot. [`H1-ABAD-SNAPSHOT.md`](H1-ABAD-SNAPSHOT.md). |
+| ABC_λ table | Periodic snapshot diagnostics with fixed \(\Lambda_0\) are numbers. Not leftover 1. Unrestricted local (6) is already defeated by that exact smooth field. Do not start H1 from that screenshot. [`H1-ABAD-SNAPSHOT.md`](H1-ABAD-SNAPSHOT.md). |
 | Ring Lemma | REPAIR. Do not quote as proved. |
 | P1-lowpass | Sitting cousin on a class. Not WRITE (6). |
 | P1-loc cutoff | Sitting cutoff, \(\nabla u\) kept. Not WRITE (6). |

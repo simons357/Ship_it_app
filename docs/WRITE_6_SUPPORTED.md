@@ -106,8 +106,10 @@ Lookups: all miss. [`LOOKUP-H1.md`](LOOKUP-H1.md).
 Snapshot \(A_{\mathrm{bad}}\) with
 \(\Lambda=\Lambda_0\) fixed, ABC and
 Taylor–Green: [`H1-ABAD-SNAPSHOT.md`](H1-ABAD-SNAPSHOT.md).
-A finite \(C_{\mathrm{needed,raw}}\) is
-not \(C_0\). Not leftover 1.
+Periodic snapshot diagnostics. Both
+integrals. A finite \(C_{\mathrm{needed,raw}}\) is
+not \(C_0\). Not leftover 1. Does not
+rescue unrestricted local (6).
 
 ---
 

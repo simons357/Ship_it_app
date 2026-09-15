@@ -1,12 +1,22 @@
-# Snapshot tests — \(A_{\mathrm{bad}}\) with \(\Lambda=\Lambda_0\) fixed
+# Periodic snapshot diagnostics — \(A_{\mathrm{bad}}\) with \(\Lambda=\Lambda_0\) fixed
 
 15 September 2026.
-**Snapshot tests. Not leftover 1. H1 is not a theorem.
-WRITE (6) is not a theorem. Ordinary NS is not solved.**
+**Periodic snapshot diagnostics. Not leftover 1.
+H1 is not a theorem. WRITE (6) is not a
+theorem. Ordinary NS is not solved.**
 
 Do not start leftover 1 from this table.
 Do not start leftover 1 from ABC_λ.
 Do not glue this integral to \(\mathcal R_\star\).
+Does not rescue unrestricted local (6).
+
+ABC as an exact smooth Beltrami field
+already defeats unrestricted local (6).
+Stretch on that field grows like amplitude
+([`H1-TUBE.md`](H1-TUBE.md)). These
+snapshots neither establish nor undo that
+result. Correcting the numerical record
+does not rescue that estimate.
 
 Probe: `python3 scripts/h1_abad_snapshot.py`
 
@@ -29,54 +39,81 @@ the sweep does not test the cut.
 amplitude \(1\), per field. Then only the
 field is scaled.
 
-`run_one()` computes `C_needed_raw`
-\(C_{\mathrm{needed,raw}}=A_{\mathrm{bad}}/(r^{-2}\iint|\omega|^2)\).
-Dissipation \(\nu/8\iint|\nabla\omega|^2\phi\)
-is not subtracted. That constant sits on
-`FieldReport` and in the printed table.
-
-The original bad-pair integral is the
-majorant
+Two integrals, same grid, same Bad pairs.
+The Bad cut does not replace the angle
+factor in the integrand.
 \[
-\iiint_{\mathrm{Bad}}
-\frac{|\omega(x)|^2|\omega(y)|}{|x-y|^3}
+\delta(x,y)=|\xi(x)\times\xi(y)|,
+\qquad
+0\le\delta\le 1.
 \]
-on \(\mathbb T^3\) at one time, \(\phi\equiv 1\),
-\(r=\pi\), \(C_*=0.25\). Periodic min-image.
+\[
+A_{\mathrm{angle}}
+=
+\iiint_{\mathrm{Bad}}
+\frac{\delta(x,y)\,|\omega(x)|^2|\omega(y)|}{|x-y|^3},
+\qquad
+A_{\mathrm{no\ angle}}
+=
+\iiint_{\mathrm{Bad}}
+\frac{|\omega(x)|^2|\omega(y)|}{|x-y|^3}.
+\]
+\(A_{\mathrm{no\ angle}}\) is a larger
+majorant. It is not the original quantity.
+Do not call it the original bad-pair
+integral.
+
+`run_one()` writes both on `FieldReport`
+as `A_angle` and `A_no_angle`.
+The requested constant subtracts
+dissipation, \(\nu=1\), \(\phi\equiv 1\):
+\[
+C_{\mathrm{needed,raw}}
+=
+\max\!\left(
+0,
+\frac{r^2}{E}
+\left[
+A_{\mathrm{angle}}
+-
+\frac{\nu}{8}D_\phi
+\right]
+\right),
+\]
+\[
+E=\int|\omega|^2,
+\qquad
+D_\phi=\int|\nabla\omega|^2\phi.
+\]
+The ratio \(r^2 A_{\mathrm{no\ angle}}/E\)
+is a legitimate diagnostic of the
+angle-free majorant. It answers a
+different question. It is not
+`C_needed_raw`.
+
+Periodic \(\mathbb T^3\), one time,
+\(r=\pi\), \(C_*=0.25\). Min-image.
 Self-pairs dropped. Not a space-time
-cylinder. That is why these are snapshot
-tests.
+cylinder. That is why these are
+periodic snapshot diagnostics.
 
 ---
 
 ## Table
 
-Numbers from `n=16`. A finite
+Corrected sweep, \(n=16\). A finite
 \(C_{\mathrm{needed,raw}}\) is not \(C_0\).
 A growing sample is not \(\mathcal G\to\infty\).
+One grid does not establish a continuum
+bound or a counterexample.
 
-Corrected sweep, \(n=16\), \(r=\pi\),
-\(C_*=0.25\). \(\Lambda_0\) is frozen at
-amplitude 1 for that field.
+\(\Lambda_0\) is frozen at amplitude 1
+for that field.
 
-| field | amplitude | fixed threshold \(\Lambda_0\) | original bad-pair integral | \(C_{\mathrm{needed,raw}}\) |
-|---|---:|---:|---:|---:|
-| ABC | 0.5 | 0.857321 | \(3.30881\times 10^{3}\) | 175.538 |
-| ABC | 1 | 0.857321 | \(3.73792\times 10^{4}\) | 495.757 |
-| ABC | 2 | 0.857321 | \(3.08149\times 10^{5}\) | 1021.74 |
-| ABC | 4 | 0.857321 | \(2.47211\times 10^{6}\) | 2049.21 |
-| Taylor–Green | 0.5 | 0.700000 | 0.242843 | 0.051533 |
-| Taylor–Green | 1 | 0.700000 | \(2.69909\times 10^{3}\) | 143.191 |
-| Taylor–Green | 2 | 0.700000 | \(2.84143\times 10^{4}\) | 376.857 |
-| Taylor–Green | 4 | 0.700000 | \(2.31941\times 10^{5}\) | 769.054 |
-
-The high set grows with amplitude because
-the threshold does not. On ABC, from
-amplitude 2 to 4, \(C_{\mathrm{needed,raw}}\)
-tracks amplitude once the high set is
-nearly full. Taylor–Green at amplitude
-0.5 still sits mostly below \(\Lambda_0\).
-A finite number is not \(C_0\).
+| field | amplitude | fixed threshold \(\Lambda_0\) | \(A_{\mathrm{angle}}\) | \(A_{\mathrm{no\ angle}}\) | \(C_{\mathrm{needed,raw}}\) |
+|---|---:|---:|---:|---:|---:|
+| ABC | *(run)* | *(run)* | *(run)* | *(run)* | *(run)* |
+| Taylor–Green | *(run)* | *(run)* | *(run)* | *(run)* | *(run)* |
 
 ---
 
@@ -88,6 +125,7 @@ A finite number is not \(C_0\).
 - not BKM
 - not \(\sup\mathcal G<\infty\)
 - not a kill of leftover 1
+- not a rescue of unrestricted local (6)
 
 NS not solved. H1 not a theorem.
 The door is named. The last line

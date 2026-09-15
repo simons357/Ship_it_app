@@ -24,9 +24,10 @@ Ring Lemma as proved. Do not add
 Machine that obeys this objective:
 `python3 scripts/h1_machine.py`
 
-Snapshot tests of \(A_{\mathrm{bad}}\) with
+Periodic snapshot diagnostics of \(A_{\mathrm{bad}}\) with
 \(\Lambda=\Lambda_0\) fixed (ABC and
-Taylor–Green; not leftover 1):
+Taylor–Green; both integrals; not leftover 1;
+does not rescue unrestricted local (6)):
 [`H1-ABAD-SNAPSHOT.md`](H1-ABAD-SNAPSHOT.md).
 `python3 scripts/h1_abad_snapshot.py`
 
@@ -102,8 +103,12 @@ A finite sample of \(\mathcal G\)
 raises the implied constant. It does
 not prove the bound. It does not
 kill the bound. The fixed-\(\Lambda_0\)
-snapshot table is that kind of
-sample. It is not this write.
+periodic snapshot table is that kind of
+sample. It is not this write. ABC as an
+exact smooth Beltrami field already
+defeats unrestricted local (6). Those
+snapshots do not undo that, and they
+do not rescue that estimate.
 
 This ratio is the cylinder writing of
 leftover 1. It is **not**

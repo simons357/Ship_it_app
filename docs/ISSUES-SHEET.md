@@ -34,7 +34,7 @@ One person, one row. Do not glue 1, 4, and 5.
 
 | # | Issue | Object | What would close it | File |
 |---|---|---|---|---|
-| 1 | H1 = WRITE (6) | Bad-pair stretching \(A_{\mathrm{bad}}\) on the cylinder \(Q_r\) | Prove thinness, or \(J\) on folds, or dynamics on \(r^2/\nu\); or write a named kill of those shapes. Not another *if*. Snapshot \(A_{\mathrm{bad}}\) with fixed \(\Lambda_0\) is a number, not this close. | `docs/H1-WRITE.md`, `docs/WRITE_6.md`, `docs/H1-OBJECT.md`, `docs/H1-ABAD-SNAPSHOT.md` |
+| 1 | H1 = WRITE (6) | Bad-pair stretching \(A_{\mathrm{bad}}\) on the cylinder \(Q_r\) | Prove thinness, or \(J\) on folds, or dynamics on \(r^2/\nu\); or write a named kill of those shapes. Not another *if*. Periodic snapshot diagnostics with fixed \(\Lambda_0\) are numbers, not this close. Unrestricted local (6) is already defeated by the exact smooth ABC field; those snapshots do not rescue it. | `docs/H1-WRITE.md`, `docs/WRITE_6.md`, `docs/H1-OBJECT.md`, `docs/H1-ABAD-SNAPSHOT.md` |
 | 2 | H2 from energy | Flux \(r^{-1}\iint|u||\omega|^2\) on the same cylinder | A priori from energy, or keep CKN-smallness and say so. CKN-small already sits. | `docs/H-SYSTEM.md` |
 | 3 | H3 | Exterior Biot–Savart on the same cylinder | Absorb as \(r\to 0\). Written, not absorbed. | `docs/H-SYSTEM.md` |
 | 4 | Replacement energy-budget closure (Lemma★ box killed) | A different estimate that the growing-layer family \(v_n\) does not kill | Write that estimate, or drop the energy-budget path. Unrestricted \(\sup\mathcal R_\star<\infty\) is **KILLED**. Need★ cannot repair that box. | `docs/LEMMA-STAR-GROWING-LAYER.md`, `docs/LEMMA-STAR-STATEMENT.md`, `docs/NEED-STAR-HH-L-DUAL.md` |
