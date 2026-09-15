@@ -82,6 +82,9 @@ The implication from this split to a bound
 on \(X\) is written in
 [`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
 SND sitting is not that bound.
+Displayed Theorem H fails even with
+\(X\le M\):
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
 
 ---
 

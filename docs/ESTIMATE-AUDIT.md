@@ -213,6 +213,9 @@ SND is a named hole, not this
 remainder: [`SND-H-PLAIN.md`](SND-H-PLAIN.md).
 Implication (not a bound on \(X\)):
 [`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+H review (displayed estimate fails even
+with \(X\le M\)):
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
 
 ---
 

@@ -71,3 +71,11 @@ still needed; circularity named):
 SND sitting is not a bound on \(X\).
 Theorem G is dead. Ring is REPAIR.
 Do not start leftover 1 from that page.
+
+Specialist review of Theorem H
+(displayed estimate fails even with
+\(X\le M\); viscous tail dropped;
+valid \(F_j\) bound is not SND
+propagation):
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+The original extract stays an extract.

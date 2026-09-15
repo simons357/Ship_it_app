@@ -32,6 +32,12 @@ A forced construction is not unforced
 regularity. A vortex picture is not
 WRITE (6).
 
+Clay’s 11 September 2026 note describes
+an evaluation process. It is not an
+award notice. Forced (C)/(D) does not
+prove unforced (B). This desk does not
+examine that announced proof.
+
 ---
 
 ## What is not yours

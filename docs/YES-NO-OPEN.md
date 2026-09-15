@@ -47,6 +47,7 @@ The Riemann hypothesis is not solved.
 | Theorem E starts the a priori | True for already-smooth \(u\). | **NO** as continuation. |
 | Theorem F as \(4^{N-1}\rho X\) | Consecutive low shells. Super-exponential dissipation as \(\rho\to 0\) is not a theorem. | **NO.** |
 | Theorem G | Needed uniform \(\rho^{1/2}\) on the low sum. B7c fail. | **NO.** G is dead. |
+| Displayed Theorem H sits under \(X\le M\) | Proof drops \(S_j\). Invalid embeddings. Shear ratio \(\to\infty\). | **NO.** [`SND-H-REVIEW.md`](SND-H-REVIEW.md). |
 | Evolution / biology closes a row | Maps only. | **NO** as a close. |
 | SFE / HB / \(K(t)\) in the PDE | Other equation or discarded. | **NO.** |
 | Cosmo five fingers close NS | Other book (`DA-FINGERS.md`). | **NO** as constitutive NS. |
@@ -103,6 +104,11 @@ stay samples. They are not this kill.
 | Theorem E as the start of the a priori | Smooth already. |
 | Theorem F as \(4^{N-1}\rho X\) | False as stated. |
 | Theorem G | G is dead. |
+| Displayed Theorem H / \(\lvert\Pi_j\rvert\) with viscous tail | Fails even with \(X\le M\). Shear family. [`SND-H-REVIEW.md`](SND-H-REVIEW.md). |
+| “Proved under \(X\le M\)” | Must be replaced. Defects before removing \(M\). |
+| Remove \(M\) from this same estimate | Amplitude \(A^3\) vs quadratic. Not the open target. |
+| Universal SND floor from \(t=0\) | Initial \(\rho=1/L\) shears. Obstructed. |
+| “Naming fraud” | definition/claim mismatch. Formulas are an error, not intent. |
 | P1 / P1-loc / PC as H1 | Cousins. |
 | CS \(E^{3/2}\) as shape 1 | Mid-Bad / H3 class. |
 | Finite \(0.641\), \(0.610\), \(0.327\), HH→L \(0.71\), grow-\(s\) \(0.456\), three-shear \(2/3\) as \(C_0\) or as \(16/9\) | Samples. Floor \(\neq\) ceiling. |
@@ -150,6 +156,12 @@ G is dead. Ring is REPAIR. Frequency
 drift from the field is still needed.
 Theorem E does not start the a priori.
 Theorem F as \(4^{N-1}\) is not a theorem.
+Displayed Theorem H is not established even with X<=M.
+Shear family kills the absolute-flux estimate.
+Valid F_j bound is not propagation.
+definition/claim mismatch, not naming fraud:
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+The original extract stays an extract.
 
 The ★ reason remains a map of why
 cheap CS hides \(s\)

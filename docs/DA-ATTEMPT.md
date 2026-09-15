@@ -119,6 +119,9 @@ SND sitting is not \(X\).
 The implication (shell condition,
 frequency drift, circularity):
 [`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+Displayed Theorem H is not established
+even with \(X\le M\):
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
 
 **Einstein.** Two regimes are two principles. Not one brand.
 
@@ -129,8 +132,13 @@ as \(\rho\to 0\). Detune \(\rho\). The script must still hold.
 
 ## H — what has to sit
 
-**Need to close.** Fluids: uniform \(|\Pi_{j^*}|\) in SPREAD
-(same write as SND-C). Arithmetic: \(H_N\ge-1\) already
+**Need to close.** Fluids: a rebuilt bound
+from the exact shell equation, tested on
+shears, amplitude, and equal shells.
+Displayed \(\lvert\Pi_{j^*}\rvert\) is not
+that bound:
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+Arithmetic: \(H_N\ge-1\) already
 sits. Sharp: \(H_N\ge-1/4\). Do not identify the two H’s.
 
 **Einstein.** Fluids H and \(H_N\) are different additions.
@@ -159,5 +167,5 @@ a resonator.
 | Experts agreeing write the missing line | **fail** |
 | `A_uniform_H1` may sit later | **open** |
 | RH WRITE may sit later | **open** |
-| Uniform SND-C in SPREAD may sit later | **open** |
+| Uniform SND-C in SPREAD may sit later | **fail** as the displayed \(\lvert\Pi_j\rvert\) estimate (even with \(X\le M\)). Rebuild from the exact shell equation is research, not leftover 1. [`SND-H-REVIEW.md`](SND-H-REVIEW.md). |
 | \(H_N\ge-1/4\) may sit later | **open** |

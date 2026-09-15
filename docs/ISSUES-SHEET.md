@@ -31,6 +31,11 @@ hole on the SND/H track, not a thirteenth leftover:
 SND sitting is not a bound on \(X\).
 Theorem G is dead. Ring is REPAIR.
 Do not merge the PR 48 SND/Q6/SFE pile.
+Displayed Theorem H is not established
+even with \(X\le M\):
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+Not a thirteenth leftover. The original
+extract stays an extract.
 
 ---
 

@@ -4,6 +4,8 @@
 **The implication is not a bound on X.
 SND sitting is not a bound on X.
 Theorem G is dead. Ring is REPAIR.
+Displayed Theorem H is not established
+even with X<=M.
 Ordinary NS is not solved.**
 
 Not leftover 1. Not leftover 4. Not \(\star\).
@@ -12,6 +14,10 @@ Do not merge PR 48 SND / Q6 / SFE pile.
 Do not start H1 from this page.
 Do not weld \(\star\).
 No more numerical sweeps on this write.
+
+Specialist H review (viscous tail,
+shear kill, valid \(F_j\) bound):
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
 
 Plain page (closing SND does not close NS):
 [`SND-H-PLAIN.md`](SND-H-PLAIN.md).

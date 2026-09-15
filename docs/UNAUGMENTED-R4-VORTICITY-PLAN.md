@@ -300,6 +300,10 @@ argument assumes the bound. SND sitting
 is not a bound on \(X\). Theorem G is
 dead. Ring is REPAIR. Do not start H1
 from that page.
+Displayed Theorem H is not established
+even with \(X\le M\). The original
+§8.1 extract is the object under review:
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
 
 Source for H: May T³ note (20405526, archive). Fluids content only. The old closure packaging is ignored.
 
@@ -328,6 +332,13 @@ Shell flux into the dominant block:
 **Theorem G (as written).** SND-C \(\Rightarrow\) concentration \(\inf J/X\ge c_*\), because if \(\rho(t_k)\to 0\) then F makes \(\mathcal{D}\) explode and SND-C forces \(\dot\rho>0\).
 
 H is a **Cartesian, periodic, velocity-paraproduct** statement. It never sees \(r\), \(\Gamma\), or \(\Phi\).
+
+This §8.1 extract is the object under review.
+Displayed absolute-flux estimate FAILS
+even with \(X\le M\) when \(\Pi_j=F_j-S_j\):
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+Living \(\Pi_j\) here was written as \(F_j\)
+only. Do not quote this block as proved.
 
 ### 8.2 Where the \(\Phi\) cancel actually hits H
 
@@ -536,7 +547,7 @@ Filter: can it enter an estimate for \(\Pi_{j_*}\), \(\omega\cdot S\omega\), or 
 | August SND / CONC | \(\inf J/X\ge c_*\) is an assumption |
 | 3-CONC \(\sigma\ge 1/2\), EQ3 | Same |
 | June SND / SPREAD | Opposite of CONC; useful as the other side |
-| SND-C / Theorem H | Wanted bound; low \(T\) open |
+| SND-C / Theorem H | Displayed absolute-flux estimate FAILS even with \(X\le M\). [`SND-H-REVIEW.md`](SND-H-REVIEW.md). |
 | Theorem G | Needs uniform H as \(\rho\to 0\) |
 | T2-ODE / \(\alpha=2\nu^2 4^{1/\rho_0}\rho_0\) | Rebuild without \(H^{2.3}\) and without F’s \(4^{N-1}\) |
 | “SND on smooth intervals” (Thm E) | True for already-smooth \(u\); does not start the a priori estimate |

@@ -48,9 +48,11 @@ SPREAD (\(\rho\le\rho_0<1\)) were both called SND.
 \(\Phi\) put in front of H. SIMPLEX used GCD arithmetic.
 
 **Repair.** Two names: CONC (\(\sigma\ge 1/2\)) and
-SPREAD (\(\sigma<1/2\)). Cut \(\Phi\) and \(Q\). Write
-SND-C only in SPREAD: uniform low paraproduct as
-\(\rho\to 0\). Do not reattach Bridge*.
+SPREAD (\(\sigma<1/2\)). Cut \(\Phi\) and \(Q\). Do
+not reattach Bridge*. Do not quote displayed
+SND-C as proved. Rebuild from the exact
+shell equation:
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
 
 **To close.** A two-regime a priori. Neither side is
 yet an all-data bound on \(X\).
@@ -59,21 +61,35 @@ yet an all-data bound on \(X\).
 
 ## H — two objects
 
-**Have.** Fluids Theorem H = SND-C in SPREAD (Bony
-\(T+T^*+R\)). Arithmetic Theorem H-floor:
+**Have.** Fluids Theorem H was written as
+SND-C in SPREAD (Bony \(T+T^*+R\)).
+That displayed estimate is **not
+established** even with \(X\le M\):
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+Arithmetic Theorem H-floor:
 \(\lambda_{\min}(H_N)\ge-1\), proved.
 
-**Fault.** Fluids: Theorem F too strong; low Bony \(T\)
-not uniform as \(\rho\to 0\); \(\Phi\)-glue. Arithmetic:
-\(-3/14\) false; \(Q>-1/2\) false. Those were fake closes.
+**Fault.** Fluids: proof drops the viscous
+tail \(S_j\); invalid 3-D embeddings;
+incomplete Bony split; Theorem F too
+strong; \(\Phi\)-glue. Arithmetic:
+\(-3/14\) false; \(Q>-1/2\) false.
 
-**Repair.** Fluids: delete B/C/I/\(\Phi\); write uniform
-SND-C on \(\mathbb{T}^3\), SPREAD, no \(\varepsilon\).
-Arithmetic: keep \(H_N\ge-1\); to sharpen, prove
-\(H_N\ge-1/4\). Do not revive \(-3/14\).
+**Repair.** Fluids: keep the original
+extract as an extract. Rebuild the
+needed bound from the exact shell
+equation. Do not remove \(M\) from the
+same quadratic estimate. Do not claim
+a universal SND floor from \(t=0\).
+Arithmetic: keep \(H_N\ge-1\); to sharpen,
+prove \(H_N\ge-1/4\). Do not revive
+\(-3/14\).
 
-**To close.** Fluids: uniform SND-C. Arithmetic:
-\(-1\) already sits; \(-1/4\) is the remaining floor.
+**To close.** Fluids: a rebuilt estimate
+tested on shears, amplitude, and equal
+shells; still not a bound on \(X\).
+Arithmetic: \(-1\) already sits; \(-1/4\)
+is the remaining floor.
 
 Plan: [`UNAUGMENTED-R4-VORTICITY-PLAN.md`](UNAUGMENTED-R4-VORTICITY-PLAN.md)  
 Floor: [`SPECTRAL-FLOOR-EXPLORATION.md`](SPECTRAL-FLOOR-EXPLORATION.md)
@@ -91,5 +107,5 @@ Floor: [`SPECTRAL-FLOOR-EXPLORATION.md`](SPECTRAL-FLOOR-EXPLORATION.md)
 | Repair H by reviving \(Q>-1/2\) or \(H\ge-3/14\) | **fail** |
 | Hearing Theorem A closed means classical NS is done | **fail** |
 | `A_uniform_H1` may sit later | **open** |
-| Uniform SND-C in SPREAD may sit later | **open** |
+| Uniform SND-C in SPREAD may sit later | **fail** as displayed. Rebuild from the exact shell equation: [`SND-H-REVIEW.md`](SND-H-REVIEW.md). |
 | \(H_N\ge-1/4\) may sit later | **open** |

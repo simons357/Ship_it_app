@@ -62,6 +62,9 @@ shell condition controls; frequency
 drift still needed; circularity named;
 SND sitting is not a bound on X):
 docs/SND-TO-REGULARITY.md
+SND-H review (displayed Theorem H
+fails even with X<=M; not leftover 1):
+docs/SND-H-REVIEW.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

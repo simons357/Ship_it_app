@@ -104,6 +104,9 @@ Goldbach’s conjecture.
 SND or H as a key that finishes NS.
 Implication written, not a close:
 [`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+Displayed Theorem H fails even with
+\(X\le M\):
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
 
 Those are not sitting. Publishing them as
 finished would not save face.

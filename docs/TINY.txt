@@ -104,6 +104,10 @@ SND-to-regularity implication (shell
 condition, frequency drift, circularity;
 not a bound on X; G dead; Ring REPAIR):
 docs/SND-TO-REGULARITY.md
+SND-H review (Theorem H not established
+even with X<=M; shear kill; F_j bound
+is not propagation):
+docs/SND-H-REVIEW.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md
