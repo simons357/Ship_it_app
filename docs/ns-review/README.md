@@ -2,6 +2,10 @@
 
 Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS packaging.
 
+## SND reviewer briefing (15 Sep 2026)
+
+- [`SND-REVIEWER-REPORT-2026-09-15.md`](./SND-REVIEWER-REPORT-2026-09-15.md) — specialist packet: what SND is, KEEP vs PARK, the \(H^1\) loop, whether to keep spectral. **NS not solved.**
+
 ## Φ-renorm (KEEP; conditional)
 
 - [`PHI-RENORM-WHAT-IS-KEPT.md`](./PHI-RENORM-WHAT-IS-KEPT.md) — field-first KEEP / PARK card; separate from Lemma★.
