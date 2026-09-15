@@ -37,6 +37,10 @@ H1 write (the estimate, not the theorem;
 locked G; machine refuses a fake close):
 docs/H1-WRITE.md
 scripts/h1_machine.py
+Snapshot A_bad, Lambda=Lambda0 fixed
+(ABC and Taylor–Green; not leftover 1):
+docs/H1-ABAD-SNAPSHOT.md
+scripts/h1_abad_snapshot.py
 Framework map (endpoint first;
 specialty out; leftover stays open):
 docs/FRAMEWORK-MAP.md

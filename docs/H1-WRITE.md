@@ -24,6 +24,12 @@ Ring Lemma as proved. Do not add
 Machine that obeys this objective:
 `python3 scripts/h1_machine.py`
 
+Snapshot tests of \(A_{\mathrm{bad}}\) with
+\(\Lambda=\Lambda_0\) fixed (ABC and
+Taylor–Green; not leftover 1):
+[`H1-ABAD-SNAPSHOT.md`](H1-ABAD-SNAPSHOT.md).
+`python3 scripts/h1_abad_snapshot.py`
+
 Object: [`H1-OBJECT.md`](H1-OBJECT.md).
 One-line write: [`WRITE_6.md`](WRITE_6.md).
 Data behind the write:
@@ -95,7 +101,9 @@ A kill of H1 is a sequence with
 A finite sample of \(\mathcal G\)
 raises the implied constant. It does
 not prove the bound. It does not
-kill the bound.
+kill the bound. The fixed-\(\Lambda_0\)
+snapshot table is that kind of
+sample. It is not this write.
 
 This ratio is the cylinder writing of
 leftover 1. It is **not**

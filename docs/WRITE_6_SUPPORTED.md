@@ -103,6 +103,11 @@ P1 low-pass Biot–Savart sits on a stated class, not as (6): [`H1-P1.md`](H1-P1
 P1-loc cutoff sits, with \(\nabla u\) kept, not as (6): [`H1-P1-LOC.md`](H1-P1-LOC.md).
 Path-cost of one pair sits as a 1-D bound, not as (6): [`H1-PC.md`](H1-PC.md).
 Lookups: all miss. [`LOOKUP-H1.md`](LOOKUP-H1.md).
+Snapshot \(A_{\mathrm{bad}}\) with
+\(\Lambda=\Lambda_0\) fixed, ABC and
+Taylor–Green: [`H1-ABAD-SNAPSHOT.md`](H1-ABAD-SNAPSHOT.md).
+A finite \(C_{\mathrm{needed,raw}}\) is
+not \(C_0\). Not leftover 1.
 
 ---
 

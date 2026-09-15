@@ -52,6 +52,9 @@ Yes / no / open (the tape):
 docs/YES-NO-OPEN.md
 H1 write (estimate, not theorem; locked G):
 docs/H1-WRITE.md
+Snapshot A_bad, Lambda=Lambda0 fixed
+(ABC and Taylor–Green; not leftover 1):
+docs/H1-ABAD-SNAPSHOT.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):
