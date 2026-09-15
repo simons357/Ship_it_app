@@ -18,6 +18,10 @@ Approved plain-language explanation:
 | [03 — Reconciliation](03-RECONCILIATION.md) | Six-point response to the August 2026 handoff |
 | [04 — Notation collisions](04-NOTATION-COLLISIONS.md) | `P` / `p` / `ℙ`, `Φ` / `φ` / `ϕ`, and other overloaded symbols |
 | [05 — Rectification](05-RECTIFICATION.md) | Software implementation of the August 2026 corrective specification |
+| [06 — Hilbert–Pólya program](06-HILBERT-POLYA-PROGRAM.md) | Core-role map and piece-by-piece completeness audit; not a proof of RH |
+| [07 — Pólya probe](07-POLYA-PROBE.md) | Full briefing: N components, proven Pólya facts, no Millennium glue |
+| [08 — Kept NS model](08-NS-MODEL.md) | What happens when the KEEP swirl model is entered into DA; Clay NS not claimed |
+| [SND \(\Rightarrow\) regularity](../ns-review/SND-TO-REGULARITY.md) | Shell condition controls \(J/X\) only; frequency-drift gap; written proofs assume \(X\le M\). Not Clay |
 | [NS review / Φ-renorm audit](../ns-review/PHI-RENORM-AUDIT-2026-08-22.md) | Independent audit of June 30 swirl paper; KEEP identity; barrier open; not Clay |
 
 Machine-readable provenance (original expressions are immutable):
@@ -29,7 +33,14 @@ Machine-readable provenance (original expressions are immutable):
 ```bash
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
-python -m unittest tests.test_domain_architect_acceptance
+python -m domain_architect --hilbert-polya
+python -m domain_architect --polya-probe
+python -m domain_architect --millennium-look
+python -m domain_architect --pair
+python -m domain_architect --breakdown-children
+python -m domain_architect --ns-model
+python -m domain_architect --odlyzko
+python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_hilbert_polya tests.test_polya_probe tests.test_millennium_overlap tests.test_breakdown_children tests.test_ns_model tests.test_odlyzko_origin
 ```
 
 Related closed experiment in this repository:

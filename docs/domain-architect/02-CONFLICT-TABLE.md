@@ -83,10 +83,36 @@ Columns:
 | C-GLUE-2 | Triple lock `SND ≡ GNC ≡ Bridge` | August audits: identity false | Equivalence | **RETIRED** |
 | C-GLUE-3 | \(\lambda_{\min}(Q_N)>-1/2\) for all \(N\) | Computed counterexamples (\(Q_{10}\approx-1.90\), later \(H_4\approx-0.225\)) | Spectral floor | Full-spectrum claim **retired**. Do not import into FRA |
 | C-GLUE-4 | Phi-cancel as a path to Theorem H | Identity \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) is algebra only | Φ-cancel | Keep the identity in the swirl book. Do not feed it to SFE or FRA \(\Phi\) |
+| C-GLUE-5 | SND-U \(\inf J/X\ge c_*\) (enstrophy concentration) | T2 \(\sup\rho\le\rho_0\) (energy non-concentration) | \(\rho\) packaging | **Freeze both.** Opposites. Do not merge. Write-up: [`SND-TO-REGULARITY.md`](../ns-review/SND-TO-REGULARITY.md) |
+| C-GLUE-6 | Theorem D “Clay \(\Leftrightarrow\) [SND]” | Fluids Theorem H under \(X\le M\) | Equivalence | **RETIRE** D (`TH-H2`). Keep H as conditional (`TH-H1`) |
 
 ---
 
-## 7. Software versus mathematics
+## 7. Hilbert–Pólya is not a filled Hamiltonian
+
+| ID | Left | Right | Object | Resolution |
+|---|---|---|---|---|
+| C-HP-1 | HP-H001: independent self-adjoint \(H\) whose spectrum is \(\{\gamma_n\}\) | HP-H007: \(\Phi:=\{\gamma_n\}\) or \(H=\operatorname{diag}(\gamma_n)\) | Construction vs circular fill | **Do not treat the target identity as an instance.** HP-H007 is retired as a construction |
+| C-HP-2 | HP-H003 Berry–Keating \(H=xp\) | HP-H004 Connes absorption spectrum | Which operator | **Do not merge.** Emission vs missing lines |
+| C-HP-3 | HP-H005 GUE pair correlation | HP-H001 spectral identity | Statistics vs identity | Universality is not \(\operatorname{spec}(H)=\{\gamma_n\}\). Keep as HP-G1 |
+| C-HP-4 | HP-H002 Weil explicit formula | HP-H003 \(xp\) | Theorem vs heuristic Hamiltonian | The explicit formula is in \(E\). It is not \(H\) |
+| C-HP-5 | Retired SFE-HAM (`SFE-H003`) | HP-H003 | Which Hamiltonian | Different books. Inverse-GCD Fock model is not Hilbert–Pólya |
+| C-HP-6 | Informal “five fingers” with \(\Phi\) set to the zeros | Audited core roles \(P,H,\psi,\lambda,\Phi\) | Vocabulary and circularity | Do not revive the nickname. Do not fill \(\Phi\) with zeros to create \(H\) |
+| C-HP-7 | HP-H008 Laguerre–Pólya class | HP-H001 / HP-H003 Hilbert–Pólya / \(xp\) | Which Pólya route | **COMPATIBLE_DISTINCT.** Entire-function LP membership is not a Hamiltonian. Do not merge |
+| C-HP-8 | HP-H016 1926 Acta \(\xi\) integral | HP-H011 cosine-zero criterion | Which 1920s Pólya paper | **COMPATIBLE_DISTINCT.** Do not merge into one fill of \(H\) |
+| C-HP-9 | HP-H017 Pólya frequency kernels | HP-H011 1926 hypotheses | Kernel language vs criterion | **GENERALIZATION.** A PF check on Riemann’s \(\Phi\) would address 1926, not produce \(H\) |
+| C-HP-10 | HP-H020 membrane eigenvalues | HP-H010 \(N(T)\) | Which Weyl law | **COMPATIBLE_DISTINCT.** Domain spectrum is not zeros of \(\xi\) |
+| C-HP-11 | HP-H019 1951 isoperimetric book | HP-H001 / Clay NS | Spectral vocabulary vs prize | **INSUFFICIENT_INFORMATION.** Dump is not a bridge |
+| C-LOOK-1 | HP-H027 \(d\ge 3\) Green | NS-H001 vorticity / Biot–Savart | Kernel family | **COMPATIBLE_DISTINCT.** Closest NS rhyme. Not regularity |
+| C-LOOK-2 | HP-H012 Riemann kernel \(\Phi\) | NS-H002 swirl \(\Phi=u_\theta/r\) | Letter \(\Phi\) | **INCOMPATIBLE.** Notation collision |
+| C-HP-12 | HP-H026 Pólya 1914/1982 remark | HP-H001 \(\operatorname{spec}(H)=\{\gamma_n\}\) | Origin vs modern slogan | **COMPATIBLE_DISTINCT.** Do not upgrade the letter |
+| C-HP-13 | HP-H028 Hilbert origin empty | HP-H001 program statement | Folk dual-origin | **INSUFFICIENT_INFORMATION.** Do not invent Hilbert’s \(H\) |
+
+Pólya probe (N independently specifiable components, not a five-role cap): `python -m domain_architect --polya-probe`. Millennium look: `python -m domain_architect --millennium-look`. Write-up: [07 — Pólya probe](07-POLYA-PROBE.md).
+
+---
+
+## 8. Software versus mathematics
 
 | ID | Left | Right | Object | Resolution |
 |---|---|---|---|---|
@@ -96,7 +122,7 @@ Columns:
 
 ---
 
-## 8. Conflicts inside the audited gravity map (repair list)
+## 9. Conflicts inside the audited gravity map (repair list)
 
 These are not historical enemies. They are defects to fix before a gravity laboratory is treated as confirmatory.
 

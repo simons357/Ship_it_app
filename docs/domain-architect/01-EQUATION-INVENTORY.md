@@ -104,13 +104,68 @@ These are real research objects in this repo family. They are **not** UHF, SFE, 
 |---|---|---|---|
 | NS-B | \(\partial_t\omega+(u\cdot\nabla)\omega=(\omega\cdot\nabla)u+\nu\Delta\omega\), \(\nabla\cdot u=0\) | Track B, classical NS | Route as a separate domain. Do not derive from SFE |
 | NS-A | \(\partial_t u+(u\cdot\nabla)u=-\nabla p+\nu\Delta u+\varepsilon^\alpha\mathbb P\,\mathrm{div}(\lvert\nabla u\rvert^\beta\nabla u)\) | Track A, augmented NS | Different PDE. \(\mathbb P\) here is the Leray projector, not permission \(P\) and not primes |
-| NS-Φ | \(\Gamma=ru_\theta\), \(\Phi=\Gamma/r^2=u_\theta/r\), \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) | axisymmetric swirl algebra; June 30 conditional paper under `docs/papers/swirl/` | **KEEP** algebra. Open barrier \(\|u^r/r\|_\infty\) (see `PHI-RENORM-AUDIT-2026-08-22.md`). **Do not reuse \(\Phi\)** as the FRA output symbol; **not** Clay |
+| NS-Φ | \(\Gamma=ru_\theta\), \(\Phi=\Gamma/r^2=u_\theta/r\), \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) | axisymmetric swirl algebra; June 30 conditional paper under `docs/papers/swirl/` | **KEEP** algebra. Open barrier \(\|u^r/r\|_\infty\) (see `PHI-RENORM-AUDIT-2026-08-22.md`). **Do not reuse \(\Phi\)** as the FRA output symbol; **not** Clay. Entered as DA instance: `python -m domain_architect --ns-model` |
 | ARITH-H | \(H_N=D^{-1/2}\widetilde Q_N D^{-1/2}\) | inverse-GCD / spectral floor | Separate arithmetic book. \(H_N\) is not coupling \(H\) |
 | ARITH-B | Bridge* pair Rayleigh \(R(e_p-e_q)>-1/2\) | pair vectors only | Keep only as arithmetic, if at all. Not a fluids or SFE input |
+| SND-U | \(\inf_t J/X\ge c_*\) with \(X=\|\nabla u\|_{L^2}^2\), \(J=\max_j X_j\) | Spectral non-dispersal (enstrophy concentration) on \(\mathbb{T}^3\) | **Hypothesis** (open). Write-up: [`SND-TO-REGULARITY.md`](../ns-review/SND-TO-REGULARITY.md). Not Clay |
+| SND-C / THM-H | \(\lvert\Pi_{j_*}\rvert\le C_*(\nu\cdot 2^{2j_*}X_{j_*}+X^{1/2}\mathcal D^{1/2})\) under \(X\le M\) and spread \(\rho\le\rho_0\) | Shell flux bound (fluids Theorem H) | **RETAIN** as conditional; warn `TH-H1`. Do not identify with ARITH-H |
+| SND-D | Clay \(\Leftrightarrow\) [SND] | Theorem D packaging | **RETIRE** (`TH-H2`) |
+| SND-T2 | \(\sup_t\rho\le\rho_0<1\) with \(\rho=\sup_j E_j/\|u\|_2^2\) | Energy-shell non-concentration; opposite packaging to SND-U | Freeze both; do not merge |
 
 ---
 
-## G. Public / web formulas not treated as Simons SFE
+## G. Hilbert–Pólya program (adjacent book, 2026-09)
+
+This is **not** SFE, not a canonical Hamiltonian, and **not** a proof of RH.
+Full write-up: [06 — Hilbert–Pólya program](06-HILBERT-POLYA-PROGRAM.md).
+Software: `python -m domain_architect --hilbert-polya`.
+
+Assigning \(\Phi:=\{\gamma_n\}\) is recorded as a circular fill (HP-H007), not as a construction.
+
+| ID | Formula | Declared meaning | Disposition |
+|---|---|---|---|
+| HP-H001 | \(H=H^\ast\) and \(\operatorname{spec}(H)=\{\gamma_n\}\) \(\Rightarrow\) RH | Program statement / strategy | **RETAIN-ARCH** as a strategy, not a theorem |
+| HP-H002 | Weil explicit formula (zeros \(\leftrightarrow\) primes) | Theorem; belongs in \(E\), not as FRA \(H\) | **RETAIN** as theorem |
+| HP-H003 | \(H=xp\) (or \((xp+px)/2\)) with cutoff | Berry–Keating heuristic | **UNRESOLVED** as a Hamiltonian |
+| HP-H004 | adelic absorption spectrum (missing lines) | Connes program; not the same operator as HP-H003 | **UNRESOLVED** |
+| HP-H005 | pair correlation of \(\{\gamma_n\}\) matches GUE | Universality class, not identity | **RETAIN** as statistics only |
+| HP-H006 | \(\xi(s)=\xi(1-s)\) | Theorem; possible left-hand side of a \(\det\) identity | **RETAIN** as theorem |
+| HP-H007 | \(\Phi:=\{\gamma_n\}\) or \(H=\operatorname{diag}(\gamma_n)\) | Circular FRA fill | **RETIRE** as a construction; keep as a null |
+| HP-H008 | Laguerre–Pólya class of \(\xi(1/2+iz)\) | Proven entire-function calculus; parallel RH route | **RETAIN** as theorem; not a Hamiltonian |
+| HP-H009 | Jensen polynomials of \(\xi\) \(\to\) Hermite (GORZ) | Asymptotic real-rootedness | **RETAIN**; not RH |
+| HP-H010 | \(N(T)=(T/2\pi)\log(T/2\pi e)+S(T)+O(1)\) | Weyl-law target | **RETAIN** as theorem |
+| HP-H011 | Pólya 1926 cosine-transform real-zero criterion | Proven sufficient condition; hypotheses unverified for Riemann’s \(\Phi\) | **RETAIN** as theorem; does not fill \(H\) |
+| HP-H012 | \(\Xi(z)=\int_0^\infty\Phi(t)\cos(zt)\,dt\) | Shape that makes 1926 applicable in principle | **RETAIN** as representation |
+| HP-H013 | \(L(x)=\sum_{n\le x}\lambda(n)\le 0\) | Pólya Liouville conjecture | **RETIRE** — disproved (Haselgrove) |
+| HP-H014 | \(\Xi_t\) real-zero for \(t\ge\Lambda\); \(\Lambda\ge 0\); RH \(\Leftrightarrow\Lambda=0\) | de Bruijn–Newman constant | **RETAIN**; \(\Lambda\ge 0\) theorem; \(\Lambda=0\) is RH; not \(H\) |
+| HP-H015 | Pólya–Schur multiplier sequences | Algebraic LP filter | **RETAIN**; \(\gamma_k\) multipliers \(\neq\) Riemann \(\gamma_n\) |
+| HP-H016 | Pólya 1926 Acta integral representation of \(\xi\) | Distinct from the cosine-zero criterion | **RETAIN** as representation |
+| HP-H017 | Pólya frequency / variation-diminishing kernels | Language of the 1926 hypotheses | **RETAIN**; a PF check on Riemann’s \(\Phi\) is not \(H\) |
+| HP-H018 | Turán inequalities | Coefficient tests for LP / Jensen | **RETAIN**; not RH unless checked for \(\xi\) without assuming RH |
+| HP-H019 | Pólya–Szegő 1951 isoperimetric inequalities in mathematical physics | Capacity, torsion, Laplacian eigenvalues | **RETAIN** as other-book; **INSUFFICIENT** as Clay NS |
+| HP-H020 | Pólya 1954 membrane eigenvalues | Domain Weyl law | **RETAIN**; unmerged with \(N(T)\) |
+| HP-H021 | Pólya 1937 enumeration theorem | Combinatorics | **RETAIN** as dump; no \(\xi\) map |
+| HP-H022 | Pólya 1921 random-walk recurrence/transience | Probability | **RETAIN** as dump; no \(\xi\) map |
+| HP-H023 | Pólya 1918 / 1923 zeros of entire functions | Earlier zero-distribution calculus | **RETAIN**; not \(\operatorname{spec}(H)=\{\gamma_n\}\) |
+| HP-H024 | Pólya 1915 integer-valued entire functions | Entire functions taking integer values | **RETAIN** as dump; different book from \(\xi\) |
+| HP-H025 | Pólya–Szegő rearrangement \(\int\lvert\nabla u^\ast\rvert^2\le\int\lvert\nabla u\rvert^2\) | PDE estimate tool | **RETAIN**; LOOK-NS-REARRANGE; not Clay NS |
+| HP-H026 | Pólya 1914/1982: RH iff eigenvalues of a physical problem are real, given a connection of \(\Xi\) zeros to that problem | Documented origin of Pólya’s remark (Odlyzko letters) | **RETAIN** as remark; **not** \(H\); weaker than HP-H001 |
+| HP-H027 | \(d\ge 3\) transience / Green \(\sim 1/\lvert x\rvert^{d-2}\) | Newtonian kernel family | **RETAIN**; LOOK-NS-GREEN closest NS rhyme; not regularity |
+| HP-H028 | (no documented Hilbert formulation) | Folk independent Hilbert origin | **RETIRE** as a formula; `NULL-HP-HILBERT-ORIGIN` |
+
+Machine-readable NS book used in the look (aliases NS-B, NS-Φ):
+
+| ID | Formula | Declared meaning | Disposition |
+|---|---|---|---|
+| NS-H001 | \(\partial_t\omega+(u\cdot\nabla)\omega=(\omega\cdot\nabla)u+\nu\Delta\omega\), \(\nabla\cdot u=0\) | Classical vorticity NS | **RETAIN** as separate book |
+| NS-H002 | \(\Gamma=ru_\theta\), \(\Phi=u_\theta/r\), \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) | KEEP swirl algebra | **RETAIN**; \(\Phi\) here \(\neq\) FRA \(\Phi\) \(\neq\) Riemann kernel \(\Phi\) |
+| NS-H004 | \(u=\nabla\times(-\Delta)^{-1}\omega\) | Biot–Savart | **RETAIN**; pair-run with HP-H027; shared \(R(\kappa)=1/\kappa^2\) |
+
+Do not merge HP-H003 with HP-H004, HP-H005, HP-H008, or retired SFE-HAM (`SFE-H003`).
+
+---
+
+## H. Public / web formulas not treated as Simons SFE
 
 Retrieved by prior agents; authorship or domain is mixed or unrelated. Listed so they are not silently absorbed.
 
@@ -123,7 +178,7 @@ Retrieved by prior agents; authorship or domain is mixed or unrelated. Listed so
 
 ---
 
-## H. Still missing from the inventory
+## I. Still missing from the inventory
 
 Until the files in [03 — Reconciliation §6](03-RECONCILIATION.md) arrive, the following historical objects cannot be inventoried from primary text:
 

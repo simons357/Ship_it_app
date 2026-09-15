@@ -1,0 +1,127 @@
+Domain Architect — kept NS model
+
+Kept NS model. Axisymmetric-with-swirl classical Navier–Stokes plus the KEEP swirl identity. Domain Architect expands E from the subject. Swirl Φ is not FRA Φ and not Riemann’s kernel Φ. Clay NS is not claimed.
+
+Instance: kept-ns-swirl
+DA decided the component count for this subject: 16
+Interface letters: 5 (P, H, ψ, λ, Φ). Extras: 11.
+Clay NS status: not claimed.
+Riemann hypothesis status: not claimed.
+Canonical SFE status: unresolved.
+
+What happens when this model is entered:
+  DA accepts it as a fluids book. It does not turn it into SFE or RH.
+  Swirl Φ is renamed Φ_swirl in the role map so it cannot occupy FRA Φ.
+  The KEEP identity is seated in E as algebra. The prize output stays empty.
+  The load-bearing gap is ‖u^r/r‖_∞, not a missing Hamiltonian.
+
+What is already filled (KEEP):
+  * KEEP swirl identity (NS-H002) — algebra
+  * Phi equation lem:Phieq — no spurious −Φ/r²
+  * Lions β=0.6 dissipation order 1.3>5/4; Ḣ^{1.3} relabel
+  * Biot–Savart reconstruction and ∇·u=0
+  * Axisymmetric-with-swirl class and cylindrical geometry
+  * PARK list refused (not ingested as this instance)
+
+What stays open:
+  * ‖u^r/r‖_∞ uniform in ε (load-bearing barrier)
+  * 3D stretching control on this class
+  * FRA realized output (global regularity) — not filled
+  * Unaugmented classical swirl GR / Clay Statement B
+
+Path guidance:
+  - You cannot fill FRA Φ with swirl Φ_swirl. The KEEP identity is algebra in E, not the prize output.
+  - You cannot call this Clay NS closed. The barrier ‖u^r/r‖_∞ is equivalent to swirl global regularity.
+  - You cannot derive this PDE from SFE/UHF/DHFA. Route between books; do not glue.
+  - You cannot identify viscous νΔω with de Bruijn–Newman heat on Ξ.
+  - You cannot treat Track A’s extra projector term as this model.
+  - You cannot use CMB / Saturn / cosmic lattice as a proof of the identity.
+  - You can keep the algebra and the Phi equation (lem:Phieq). That is what KEEP means.
+  - You can work the barrier as the live NS-side piece. That is the path.
+  - You can use Biot–Savart / R(κ)=1/κ² as a reconstruction tool without claiming regularity.
+
+Components:
+  [NS-P] role=P kind=admissibility (specified)
+    occupant: axisymmetric-with-swirl class: ∂_θ = 0, u_θ ≠ 0, ∇·u = 0, smooth on the axis r=0
+    DA action: recorded as the function class, not a prime selector and not Leray ℙ as permission
+    verdict: the class is specified; global regularity inside the class is not
+  [NS-H] role=H kind=pde-coupling (specified)
+    occupant: nonlinear coupling: convection (u·∇)ω and stretching (ω·∇)u; linear part νΔ / Stokes A=−ℙΔ
+    DA action: seated as fluids interaction, not as a Hilbert–Pólya Hamiltonian
+    verdict: specified as a PDE; stretching is the 3D obstruction; this H is not spec(H)={γ_n}
+  [NS-psi] role=ψ kind=field (specified)
+    occupant: state: velocity u, or vorticity ω=∇×u, or intensive swirl Φ_swirl=u_θ/r
+    DA action: three presentations of one state; Φ_swirl is the near-axis variable
+    verdict: specified. Intensive swirl stays finite on a smooth axis; Γ=r u_θ is the wrong near-axis variable
+  [NS-lambda] role=λ kind=scale (specified)
+    occupant: viscosity ν; axis scale r; Sobolev / Ḣ^{1.3} packaging after the Ḣ relabel
+    DA action: ν is the dissipative scale; r is geometric scale; Ḣ^{1.3} is the corrected energy label (not Ḣ^{2.6})
+    verdict: specified as parameters. Relabel was bookkeeping, not a repair of the barrier
+  [NS-Phi-FRA] role=Φ kind=target (not independently specified)
+    occupant: target realized output: globally regular u(t) on the class (Clay Statement B, restricted to swirl)
+    DA action: recorded as the prize output, not filled by the KEEP identity
+    verdict: open. The algebra does not occupy this seat. Do not write Φ_FRA := Φ_swirl
+  [NS-geom] role=g kind=geometry (specified)
+    occupant: cylindrical (r,θ,z); axis r=0 is a coordinate singularity, not necessarily a physical one
+    DA action: promoted out of five letters; quantum-style expansion for a PDE with an axis
+    verdict: specified. 1/r^4 in Γ-variables is often the wrong variable, not a catastrophe
+  [NS-Baxis] role=ℬ kind=boundary (specified)
+    occupant: axis regularity: u_θ → 0 as r→0; Φ_swirl|_{r=0}=∂_r u_θ
+    DA action: recorded as axis data, not hidden inside P
+    verdict: class requirement. The open estimate is ‖u^r/r‖_∞, not this vanishing
+  [NS-D] role=D kind=evolution (specified)
+    occupant: evolution: vorticity transport / NS in time
+    DA action: DHFA-like seat occupied by the PDE itself; dynamics are the model, not a route to invent H
+    verdict: specified as the NS Cauchy problem
+  [NS-Xi] role=Ξ kind=damping (specified)
+    occupant: viscous dissipation νΔω (damping of enstrophy)
+    DA action: recorded as NS viscosity, not de Bruijn–Newman heat on Ξ
+    verdict: specified. You cannot identify this with Ξ_t on Riemann’s cosine transform
+  [NS-N] role=N kind=nonlinearity (specified)
+    occupant: stretching (ω·∇)u — the genuinely 3D nonlinear term
+    DA action: promoted as its own component; 2D has no stretching
+    verdict: this is the obstruction. Dropping it leaves 2D NS (already regular)
+  [NS-keep] role=E-algebra kind=theorem (specified)
+    occupant: KEEP identity r^{-4}∂_z(Γ²)=∂_z(Φ_swirl²) with Γ=r u_θ, Φ_swirl=u_θ/r
+    DA action: accepted as algebra; lem:Phieq left as written
+    verdict: KEEP. Algebraic identity. Not Clay. Not cosmology
+  [NS-barrier] role=E-open kind=open-barrier (not independently specified)
+    occupant: uniform-in-ε control of ‖u^r/r‖_∞ (op:gronwall / eq:B1)
+    DA action: recorded as the remaining condition; equivalent in difficulty to swirl GR
+    verdict: OPEN. Conditional reduction only. This is the load-bearing gap of the good model
+  [NS-lions] role=E-estimate kind=theorem-bookkeeping (specified)
+    occupant: Lions bookkeeping β=0.6 ⇒ dissipation order 1.3 > 5/4; Ḣ^{1.3} after relabel
+    DA action: accepted as correct bookkeeping; Ḣ^{2.6} was a mislabel of the energy norm
+    verdict: KEEP as calculation. Does not close the barrier
+  [NS-BS] role=E-kernel kind=theorem (specified)
+    occupant: Biot–Savart u=∇×(−Δ)^{-1}ω; Green ΔG=−δ; shared R(κ)=1/κ²
+    DA action: recovered velocity from vorticity; pair-run with HP-H027
+    verdict: specified reconstruction. Shared inverse-Laplacian tool. Not smoothness
+  [NS-div] role=E-constraint kind=constraint (specified)
+    occupant: ∇·u=0 (and curl reconstruction implies it)
+    DA action: incompressibility is admissibility and a constraint, not FRA P-as-primes
+    verdict: specified
+  [NS-park] role=forbidden kind=parked (specified)
+    occupant: PARK: SFE→NS, CMB Axis of Evil as proof, Triple Lock, Lemma★ collapse, Track A as this PDE, Riemann Φ as swirl Φ
+    DA action: classified and refused as glue
+    verdict: DA does not ingest PARK items as the good model
+
+Parseable pieces run through the auditor:
+  KEEP identity: 'partial_z(Gamma^2)/r^4 = partial_z(Phi^2)' evidence=0 roles=z=unresolved, Gamma=unresolved, r=unresolved, Phi=unresolved warnings=2
+  incompressibility: 'div(u) = 0' evidence=0 roles=u=unresolved warnings=1
+  Biot–Savart: 'u = curl(invLap * omega)' evidence=0 roles=u=unresolved, invLap=unresolved, omega=unresolved warnings=1
+  vorticity NS: 'partial_t(omega) + (u * nabla)*omega = (omega * nabla)*u + nu * laplacian(omega)' evidence=0 roles=t=unresolved, omega=unresolved, u=unresolved, nabla=unresolved, nu=unresolved warnings=2
+
+Domain Architect still needs:
+  - Uniform-in-ε control of ‖u^r/r‖_∞ — the open barrier of the kept model.
+  - A bound on stretching (ω·∇)u on this class, or a reduction of Clay Statement B that does not assume the barrier.
+  - If Track A (augmented NS) is used: say so; it is a different PDE from this instance.
+  - If a map to RH is claimed: an explicit transformation, not the letter Φ and not the word spectrum.
+  - A name other than Φ for swirl u_θ/r when this instance sits next to FRA output or Riemann’s kernel.
+
+Registry ids: NS-H001, NS-H002, NS-H003, NS-H004
+Protocol hash: 51f5c8c0b5aaa4ca1778cf1cee1d719a9c59e40ae189f1be94fb20aa1b550e1e
+Live command: python -m domain_architect --ns-model
+Source: docs/ns-review/PHI-RENORM-WHAT-IS-KEPT.md
+
+Canonical SFE status: unresolved.

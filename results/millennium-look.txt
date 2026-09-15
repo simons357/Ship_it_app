@@ -1,0 +1,84 @@
+Domain Architect — Millennium look
+
+Millennium look. Parts of Pólya were compared with Navier–Stokes and the other open Clay prizes. A match of tool or kernel family is not a proof. A notation collision is not a match.
+
+What rhymed when we looked (not a unification):
+  * Closest NS rhyme: Pólya 1921 transience in d≥3 and the 3D Newtonian / Biot–Savart kernel. Same dimension, same Green-function family. Not regularity.
+  * NS tool overlap: Pólya–Szegő rearrangement sits in the isoperimetric book that feeds Sobolev / Ladyzhenskaya estimates. A tool, not Clay NS.
+  * Spectral sibling: membrane Laplacian (Pólya 1954) versus Stokes operator A = −ℙΔ. Sibling Weyl laws. Not Hilbert–Pólya H.
+  * Notation collision: Riemann kernel Φ versus swirl Φ = u_θ/r in this repo. Keep both; do not merge.
+  * No Pólya object in this briefing unifies the Clay prizes. The live prize for the theorems that survived the RH-attack filter is still RH.
+
+Looks (parts of Pólya vs each prize):
+  [LOOK-NS-GREEN] Navier–Stokes existence and smoothness
+    Pólya part: Pólya 1921: simple random walk is transient in d≥3; discrete Green ~ 1/|x|^{d-2}
+    other object: 3D Biot–Savart: u = ∇×(−Δ)^{-1}ω, Newtonian kernel 1/|x|
+    match level: shared-kernel-family
+    matched: d=3 is the dimension where Pólya transience and the Newtonian potential used by NS both live
+    did not: Transience is not regularity. Biot–Savart is already standard NS, not a Pólya derivation of Clay NS
+    status: LOOKED; closest structural rhyme; not a bridge
+  [LOOK-NS-REARRANGE] Navier–Stokes existence and smoothness
+    Pólya part: Pólya–Szegő rearrangement: Dirichlet integral does not increase under Schwarz symmetrization
+    other object: Sobolev / Ladyzhenskaya estimates used in NS energy methods
+    match level: shared-tool
+    matched: Same isoperimetric / rearrangement family that feeds Sobolev constants in PDE estimates
+    did not: An estimate tool is not 3D global smoothness
+    status: LOOKED; tool overlap; not a solution
+  [LOOK-NS-STOKES-OP] Navier–Stokes existence and smoothness
+    Pólya part: Pólya 1954 membrane eigenvalues (scalar Laplacian Weyl law on a domain)
+    other object: Stokes operator A = −ℙΔ on divergence-free fields
+    match level: spectral-sibling
+    matched: Self-adjoint Laplacian-type operators on domains, both with Weyl-type counts
+    did not: Scalar membrane ≠ vector Stokes. Neither is Hilbert–Pólya H. Neither solves Clay NS
+    status: LOOKED; sibling spectra; not identity
+  [LOOK-NS-HEAT] Navier–Stokes existence and smoothness
+    Pólya part: de Bruijn–Newman heat flow on Ξ (continuation of Pólya 1926)
+    other object: viscous term νΔu in Navier–Stokes
+    match level: shared-pde-name
+    matched: Both deform by a heat/diffusion operator
+    did not: Ξ_t is a deformation of an entire function. NS is a vector PDE. Heat is not a unifier
+    status: LOOKED; name-rhyme; not a transformation
+  [LOOK-NS-PHI-LETTER] Navier–Stokes (this repo, NS-Φ swirl algebra)
+    Pólya part: Riemann kernel Φ in Ξ(z) = ∫ Φ(t) cos(zt) dt
+    other object: swirl Φ = u_θ/r and r^{-4}∂_z(Γ²) = ∂_z(Φ²)
+    match level: notation-collision
+    matched: The same letter Φ
+    did not: Riemann’s Fourier kernel is not swirl angular rate. Do not merge
+    status: LOOKED; collision only; keep both books
+  [LOOK-YM-LAPLACE] Yang–Mills mass gap
+    Pólya part: Pólya membrane / Laplacian eigenvalues
+    other object: spectrum of a gauge Hamiltonian / Hodge Laplacian on connections
+    match level: shared-word-spectrum
+    matched: The word spectrum and a Laplacian-type operator
+    did not: No checked map from a vibrating membrane to a mass gap
+    status: LOOKED; vocabulary only
+  [LOOK-BSD-L] Birch and Swinnerton-Dyer
+    Pólya part: Riemann ξ, Weil explicit formula, Pólya 1926 cosine representation
+    other object: L-functions of elliptic curves; rank vs order of vanishing
+    match level: same-analytic-family
+    matched: Completed L-functions and explicit formulae live in one analytic book
+    did not: Pólya 1926 is about Riemann ξ, not L(E,s). Different L-function, different prize
+    status: LOOKED; family resemblance; not BSD
+  [LOOK-HODGE] Hodge conjecture
+    Pólya part: none of the ingested Pólya theorems
+    other object: algebraic cycles vs Hodge classes
+    match level: none
+    matched: nothing checked
+    did not: No Pólya object in this briefing is a Hodge-class statement
+    status: LOOKED; empty
+  [LOOK-PNP] P versus NP
+    Pólya part: Pólya 1937 enumeration (cycle index / orbit counting)
+    other object: Turing-machine complexity classes
+    match level: none
+    matched: both involve counting, at a slogan level
+    did not: Orbit counting of group actions is not P vs NP
+    status: LOOKED; slogan only
+  [LOOK-RH] Riemann hypothesis
+    Pólya part: Hilbert–Pólya; Laguerre–Pólya; Pólya 1926; de Bruijn–Newman Λ
+    other object: nontrivial zeros of ζ on Re s = 1/2
+    match level: direct-open-strategy
+    matched: This is the prize Pólya’s surviving theorems actually address
+    did not: Those theorems do not prove RH. Λ = 0 is still RH. H is still missing
+    status: LOOKED; this is the live prize for the surviving Pólya objects
+
+Canonical SFE status: unresolved.

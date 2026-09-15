@@ -102,5 +102,229 @@
     "evidence": "No justified canonical formula exists to compare against SFE-H001.",
     "status": "unresolved",
     "notes": "Canonical SFE status remains unresolved."
+  },
+  {
+    "left_id": "HP-H003",
+    "right_id": "HP-H004",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Berry–Keating emission Hamiltonian xp versus Connes absorption / missing-line spectrum. No checked transformation identifies the two operators.",
+    "status": "recorded",
+    "notes": "Keep both as incomplete Hilbert–Pólya candidates. Do not merge."
+  },
+  {
+    "left_id": "HP-H007",
+    "right_id": "HP-H001",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Circular assignment Φ := {γ_n} or H = diag(γ_n) is not the independent-H strategy stated by Hilbert–Pólya.",
+    "status": "recorded",
+    "notes": "HP-H007 is retired as a construction. HP-H001 remains the program statement."
+  },
+  {
+    "left_id": "HP-H005",
+    "right_id": "HP-H001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "GUE pair correlation is a statistical conjecture about zeros; Hilbert–Pólya is a spectral-identity strategy. No transformation turns pair correlation into spec(H) = {γ_n}.",
+    "status": "recorded",
+    "notes": "Universality is not identity."
+  },
+  {
+    "left_id": "HP-H002",
+    "right_id": "HP-H003",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Weil explicit formula is a theorem about ζ. Berry–Keating xp is a heuristic Hamiltonian. The former is the target trace identity, not a derivation from the latter.",
+    "status": "recorded",
+    "notes": "Do not rename the explicit formula as H."
+  },
+  {
+    "left_id": "SFE-H003",
+    "right_id": "HP-H003",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Retired inverse-GCD Fock Hamiltonian versus Berry–Keating xp. Different spaces, interactions, and claims. Shared letter H is not a transformation.",
+    "status": "recorded",
+    "notes": "SFE-HAM stays in the retired SFE book. It is not a Hilbert–Pólya operator."
+  },
+  {
+    "left_id": "HP-H008",
+    "right_id": "HP-H003",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Laguerre–Pólya class is entire-function calculus. Berry–Keating xp is a heuristic Hamiltonian. Parallel routes to RH; no checked transformation identifies them.",
+    "status": "recorded",
+    "notes": "Do not merge LP membership with H = xp."
+  },
+  {
+    "left_id": "HP-H008",
+    "right_id": "HP-H001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Hilbert–Pólya asks for a self-adjoint operator. Laguerre–Pólya asks for LP membership of ξ(1/2+iz). Same conclusion type (real zeros), different missing object.",
+    "status": "recorded",
+    "notes": "Two Pólya routes. Completing either would imply RH; stating either does not."
+  },
+  {
+    "left_id": "HP-H011",
+    "right_id": "HP-H003",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Pólya 1926 is a sufficient condition on a Fourier kernel. Berry–Keating xp is a heuristic Hamiltonian. Same prize target, different missing object.",
+    "status": "recorded",
+    "notes": "1926 does not fill H. It relocates the gap to a kernel hypothesis."
+  },
+  {
+    "left_id": "HP-H013",
+    "right_id": "HP-H011",
+    "relation": "INCOMPATIBLE",
+    "evidence": "A disproved Pólya arithmetic conjecture is not interchangeable with a proven Pólya Fourier theorem.",
+    "status": "recorded",
+    "notes": "Proven Pólya work only. Pólya is not an oracle for Millennium problems."
+  },
+  {
+    "left_id": "HP-H014",
+    "right_id": "HP-H001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "de Bruijn–Newman Λ is one real number (RH ⇔ Λ=0). Hilbert–Pólya asks for an infinite real spectrum {γ_n}. Same prize, different scale occupant.",
+    "status": "recorded",
+    "notes": "Do not write Λ and γ_n as the same FRA λ."
+  },
+  {
+    "left_id": "HP-H014",
+    "right_id": "HP-H011",
+    "relation": "GENERALIZATION",
+    "evidence": "Heat-flow deformation of the Pólya 1926 cosine-transform program. Λ ≥ 0 is proved; the 1926 hypotheses on undeformed Φ remain unverified.",
+    "status": "recorded",
+    "notes": "Continuation of 1926, not a fill of H."
+  },
+  {
+    "left_id": "HP-H016",
+    "right_id": "HP-H011",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "The 1926 Acta integral representation of ξ is not the same theorem as the cosine-transform real-zero criterion.",
+    "status": "recorded",
+    "notes": "Two 1920s Pólya papers. Do not merge into one fill of H."
+  },
+  {
+    "left_id": "HP-H017",
+    "right_id": "HP-H011",
+    "relation": "GENERALIZATION",
+    "evidence": "Pólya frequency / variation-diminishing kernels are the language of the 1926/1927 cosine-zero hypotheses. A PF check on Riemann’s Φ would address those hypotheses, not produce H.",
+    "status": "recorded",
+    "notes": "Possible kernel fill. Not a Hamiltonian."
+  },
+  {
+    "left_id": "HP-H018",
+    "right_id": "HP-H008",
+    "relation": "SPECIAL_CASE",
+    "evidence": "Turán inequalities are coefficient tests for Laguerre–Pólya membership / Jensen hyperbolicity.",
+    "status": "recorded",
+    "notes": "Coefficient form of the LP route. Still not H."
+  },
+  {
+    "left_id": "HP-H020",
+    "right_id": "HP-H010",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Pólya membrane eigenvalue counts are a Weyl law for domains. N(T) is the Riemann–von Mangoldt law for zeros of ξ. Shared word Weyl is not a transformation.",
+    "status": "recorded",
+    "notes": "Two Weyl laws. Do not merge."
+  },
+  {
+    "left_id": "HP-H019",
+    "right_id": "HP-H001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "Isoperimetric inequalities in mathematical physics share spectral vocabulary with Hilbert–Pólya. No checked map identifies membrane/torsion estimates with spec(H) = {γ_n} or with Clay NS regularity.",
+    "status": "recorded",
+    "notes": "Dumped because NS was asked about. Do not glue."
+  },
+  {
+    "left_id": "HP-H021",
+    "right_id": "HP-H001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "Pólya enumeration is combinatorics. No checked map to a Hilbert–Pólya Hamiltonian.",
+    "status": "recorded",
+    "notes": "Dump of proven Pólya. Not a zeta object."
+  },
+  {
+    "left_id": "HP-H022",
+    "right_id": "HP-H001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "Lattice random-walk recurrence/transience is not spec(H) = {γ_n}.",
+    "status": "recorded",
+    "notes": "Dump of proven Pólya. Not RH."
+  },
+  {
+    "left_id": "HP-H025",
+    "right_id": "NS-H001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Pólya–Szegő rearrangement is a Dirichlet-integral tool. NS-H001 is the vorticity PDE. Same estimate family as Sobolev/Ladyzhenskaya, not a regularity theorem.",
+    "status": "recorded",
+    "notes": "LOOK-NS-REARRANGE. Tool overlap, not Clay NS."
+  },
+  {
+    "left_id": "HP-H027",
+    "right_id": "NS-H001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Pólya transience in d≥3 and 3D Biot–Savart share the Newtonian/Green kernel family. Transience is not smoothness of 3D NS.",
+    "status": "recorded",
+    "notes": "LOOK-NS-GREEN. Closest structural rhyme. Not a bridge."
+  },
+  {
+    "left_id": "HP-H020",
+    "right_id": "NS-H003",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Membrane Laplacian eigenvalues versus Stokes operator A=−ℙΔ. Sibling Weyl laws, different operators.",
+    "status": "recorded",
+    "notes": "LOOK-NS-STOKES-OP. Not Hilbert–Pólya H."
+  },
+  {
+    "left_id": "HP-H014",
+    "right_id": "NS-H001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "de Bruijn–Newman heat flow on Ξ and viscous diffusion νΔu share the word heat. Ξ_t is an entire-function deformation; NS is a vector PDE.",
+    "status": "recorded",
+    "notes": "LOOK-NS-HEAT. Name-rhyme only."
+  },
+  {
+    "left_id": "HP-H012",
+    "right_id": "NS-H002",
+    "relation": "INCOMPATIBLE",
+    "evidence": "Riemann cosine-transform kernel Φ is not swirl Φ=u_θ/r. Shared letter is a notation collision.",
+    "status": "recorded",
+    "notes": "LOOK-NS-PHI-LETTER. Keep both books."
+  },
+  {
+    "left_id": "NS-H001",
+    "right_id": "HP-H001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "Classical NS vorticity is not a Hilbert–Pólya Hamiltonian. Shared spectral vocabulary with the Stokes operator is not spec(H)={γ_n}.",
+    "status": "recorded",
+    "notes": "Do not glue NS to RH."
+  },
+  {
+    "left_id": "HP-H027",
+    "right_id": "NS-H004",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "3D Green kernel of −Δ versus Biot–Savart u=∇×(−Δ)^{-1}ω. Same inverse-Laplacian response R(κ)=1/κ²; different realized outputs (kernel vs velocity). Not Clay NS.",
+    "status": "recorded",
+    "notes": "The pair that was run through DA. Shared scale response, not identity."
+  },
+  {
+    "left_id": "HP-H026",
+    "right_id": "HP-H001",
+    "relation": "COMPATIBLE_DISTINCT",
+    "evidence": "Pólya 1914/1982: RH iff all eigenvalues of a physical problem are real, given a connection of Ξ zeros to that problem. HP-H001 is the later slogan spec(H)={γ_n} for an independently specified self-adjoint H. The letter does not construct H. Do not upgrade the remark.",
+    "status": "recorded",
+    "notes": "Odlyzko origin dump. Weaker conditional vs modern program statement."
+  },
+  {
+    "left_id": "HP-H028",
+    "right_id": "HP-H001",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "No documented Hilbert formulation in the Odlyzko correspondence. Taussky-Todd had no NT conversations with Hilbert. Folk dual-origin is not a formula.",
+    "status": "recorded",
+    "notes": "NULL-HP-HILBERT-ORIGIN. Do not invent Hilbert’s H."
+  },
+  {
+    "left_id": "HP-H026",
+    "right_id": "HP-H005",
+    "relation": "INSUFFICIENT_INFORMATION",
+    "evidence": "Pólya’s 1914 remark does not mention random matrices. Odlyzko’s GUE comparison is 1981–82; he called the chain of reasoning very weak. Pólya 26 Apr 1982 did not understand the graphs yet.",
+    "status": "recorded",
+    "notes": "Do not read GUE back into the 1914 remark."
   }
 ]

@@ -29,9 +29,23 @@ Functional Role Analysis reuses short letters that already have other meanings i
 | Symbol | Allowed meaning in FRA | Other meanings that must be aliased |
 |---|---|---|
 | \(H\) | coupling / interaction | Hamiltonian in a declared mechanics model |
+| \(H_{\mathrm{HP}}\) | — | Hilbert–Pólya candidate operator; only after an independent formula is given |
+| \(\gamma_n\) | — | imaginary part of a nontrivial zero, \(\rho=1/2+i\gamma_n\); not FRA \(\lambda\) until a spectral identity is proved |
 | \(H_g=4\pi G\) | Newtonian coupling in the gravity benchmark | — |
 | \(H_N\) | — | degree-normalized inverse-GCD matrix |
 | \(\hat H_{\mathrm{SFE}}\) | — | retired Fock operator from prize-packaged drafts |
+| Theorem H (fluids) | — | SND-C shell flux bound under \(X\le M\); **not** \(H_N\) and **not** FRA \(H\) |
+
+## Enstrophy shells (SND)
+
+| Symbol | Meaning in the SND-U book | Collision |
+|---|---|---|
+| \(X\) | \(\|\nabla u\|_{L^2}^2\) (enstrophy) | T2 uses \(X=\|u\|_{L^2}^2\) (energy). Leray energy \(M\) is not Theorem H’s \(M\) |
+| \(\rho=J/X\) | SND-U: \(\inf\rho\ge c_*\) (concentration) | T2: \(\sup\rho\le\rho_0\) (non-concentration). Opposites |
+| \(j_*\) | \(\operatorname{argmax}_j X_j\) | Not frozen by SND-U; not \(j_{\mathrm{bar}}\) |
+| \(\Pi_{j_*}\) | dominant-shell flux | Not FRA \(P\); not T2’s \(\Phi_j\) |
+
+Write-up: [`SND-TO-REGULARITY.md`](../ns-review/SND-TO-REGULARITY.md).
 
 ## Scale response
 

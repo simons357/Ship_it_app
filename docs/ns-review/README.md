@@ -2,6 +2,10 @@
 
 Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS packaging.
 
+## SND \(\Rightarrow\) regularity (hypothesis; not Clay)
+
+- [`SND-TO-REGULARITY.md`](./SND-TO-REGULARITY.md) — what the shell condition controls, what frequency-drift information is still missing, and where the written proofs assume \(X\le M\). No new numerical sweeps. Theorem D remains retired.
+
 ## Φ-renorm (KEEP; conditional)
 
 - [`PHI-RENORM-WHAT-IS-KEPT.md`](./PHI-RENORM-WHAT-IS-KEPT.md) — field-first KEEP / PARK card; separate from Lemma★.

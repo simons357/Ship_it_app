@@ -1,0 +1,207 @@
+Domain Architect — breakdown children
+
+Breakdown children. DA splits each parent piece and runs the parseable ones. What you cannot do is recorded as a guide, not as a dead end.
+Parents split: 26. Children recorded: 48. Parseable children run: 9.
+Riemann hypothesis status: not claimed.
+Canonical SFE status: unresolved.
+
+Path guidance (what you cannot do, and what that points at):
+  - HP-U1.d: You cannot choose the space from the zeros. That is a circular fill (HP-F1).
+  - HP-U3.a: You cannot prove essential self-adjointness before HP-S0. Path: pick H first.
+  - HP-S0.c: You cannot define H from the zeros. Path: drop this fill; it is a null.
+  - HP-S0.d: You cannot import the inverse-GCD Fock operator as this H. Different book.
+  - HP-S1.a: You cannot skip this and still claim a unique real spectrum.
+  - HP-S2.b: You cannot ignore multiplicity. A multiple eigenvalue is not a simple zero.
+  - HP-S3.b: You cannot use the oscillator: N(T) kills equal gaps. Path: throw this H out now.
+  - HP-D1.a: You cannot construct H from dynamics. DHFA is downstream.
+  - HP-F1.a: Path: keep Φ_target as a claim, never as the instance.
+  - LP-5: You cannot close this by quoting RH. Λ = 0 is the prize.
+  - LP-F: You cannot treat every Pólya sentence as a theorem. Drop this from the chase.
+  - NS-Φ.3: You cannot reuse the letter Φ across these three seats. Path: keep three names.
+  - NS-F.1: Shared word ‘spectrum’ is not a transformation. Path: stop this glue.
+  - NS-F.2: Domain Architect may route between books. It may not derive NS from SFE.
+
+Children by parent:
+  [HP-U1]
+    HP-U1.a [open/now] chase=RH
+      Candidate ℋ = L²(ℝ).
+      guide: You can declare this space without RH. You cannot make it canonical by naming it.
+    HP-U1.b [open/now] chase=RH
+      Candidate ℋ for xp with a cutoff (half-line / phase-space window).
+      guide: Cutoff is extra structure. Do not hide it inside H.
+    HP-U1.c [open/now] chase=RH
+      Adelic / Connes space (absorption spectrum).
+      guide: A different ℋ from L²(ℝ). Do not merge with Berry–Keating by the letter H.
+    HP-U1.d [forbidden/now] chase=RH
+      ℋ = ℓ² with basis labeled by zeros.
+      guide: You cannot choose the space from the zeros. That is a circular fill (HP-F1).
+  [HP-U2]
+    HP-U2.a [open/now] chase=RH
+      Inner product / Hilbert-space metric.
+      guide: Changes which operators are self-adjoint. Declare it; do not infer it from GUE.
+    HP-U2.b [open/now] chase=RH
+      Units and eigenfunction normalization.
+      guide: Normalization is not a Hamiltonian. Keep it in E.
+  [HP-U3]
+    HP-U3.a [blocked/blocked] chase=RH
+      Deficiency indices of the chosen formula for H.
+      guide: You cannot prove essential self-adjointness before HP-S0. Path: pick H first.
+    HP-U3.b [open/now] chase=RH
+      Decide whether an xp cutoff is P, ℬ, or extra regularization in E.
+      guide: Three different seats. Do not leave the cutoff unnamed.
+  [HP-S0]
+    HP-S0.a [incomplete/now] chase=RH
+      Berry–Keating candidate H = xp.
+      guide: Independent classical symbol. You can keep searching here. You cannot call it done.
+    HP-S0.b [incomplete/now] chase=RH
+      Connes adelic absorption spectrum.
+      guide: Different object from xp. You cannot merge HP-S0.a with HP-S0.b.
+    HP-S0.c [forbidden/now] chase=RH
+      H = diag(γ_n).
+      guide: You cannot define H from the zeros. Path: drop this fill; it is a null.
+    HP-S0.d [forbidden/now] chase=RH
+      Retired SFE-HAM as Hilbert–Pólya H.
+      guide: You cannot import the inverse-GCD Fock operator as this H. Different book.
+  [HP-S1]
+    HP-S1.a [blocked/blocked] chase=RH
+      Essential self-adjointness vs a family of extensions.
+      guide: You cannot skip this and still claim a unique real spectrum.
+  [HP-S2]
+    HP-S2.a [blocked/blocked] chase=RH
+      Discrete vs continuous spectrum.
+      guide: Self-adjointness gives real spectrum, not {γ_n}. Path: do not treat realness as RH.
+    HP-S2.b [blocked/blocked] chase=RH
+      Multiplicities vs simple zeros.
+      guide: You cannot ignore multiplicity. A multiple eigenvalue is not a simple zero.
+  [HP-S3]
+    HP-S3.a [blocked/blocked] chase=RH
+      Leading Weyl term vs N(T).
+      guide: Necessary, not sufficient. Path: use it as a filter, not as a proof.
+    HP-S3.b [rejected/now] chase=RH
+      Harmonic oscillator / equal spacing as H.
+      guide: You cannot use the oscillator: N(T) kills equal gaps. Path: throw this H out now.
+    HP-S3.c [compatible-not-identity/now] chase=RH
+      Classical xp leading term vs von Mangoldt.
+      guide: You may keep xp on the Weyl screen. You cannot promote a leading-term match to spec(H)={γ_n}.
+  [HP-S5]
+    HP-S5.a [blocked/blocked] chase=RH
+      Eigenvalue identity E in spec(H) iff ζ(1/2+iE)=0.
+      guide: This child is RH given self-adjointness. You cannot skip it or replace it by GUE.
+    HP-S5.b [blocked/blocked] chase=RH
+      det identity ξ(s) ∝ det((s−1/2)/i − H) times an entire factor.
+      guide: Same prize as HP-S5.a, different packaging. You cannot treat a hoped-for det as H.
+  [HP-T1]
+    HP-T1.a [theorem/now] chase=RH
+      Zeros side of the Weil explicit formula.
+      guide: Already proved. Record in E. You cannot rename this side as H.
+    HP-T1.b [theorem/now] chase=RH
+      Primes / geometric side of the Weil explicit formula.
+      guide: Already proved. You cannot treat primes as a physical selector P_n.
+  [HP-T2]
+    HP-T2.a [blocked/blocked] chase=RH
+      Primes as periodic orbits of an independent dynamical system.
+      guide: Gutzwiller/Selberg reading. You cannot derive this from GUE statistics.
+  [HP-G1]
+    HP-G1.a [conjecture_plus_numerics/now] chase=RH
+      GUE pair correlation as universality class.
+      guide: You can keep this as HP-G1. You cannot substitute it for HP-S5.
+  [HP-D1]
+    HP-D1.a [blocked/blocked] chase=RH
+      e^{-iHt} once self-adjoint.
+      guide: You cannot construct H from dynamics. DHFA is downstream.
+  [HP-F1]
+    HP-F1.a [enforced/now] chase=RH
+      Refuse Φ := zeros as a definition.
+      guide: Path: keep Φ_target as a claim, never as the instance.
+  [HP-H008]
+    LP-0 [open-equivalent-to-RH/now] chase=RH
+      ξ(1/2+iz) in the Laguerre–Pólya class.
+      guide: Parallel route to Hilbert–Pólya. You cannot prove LP membership by assuming RH.
+  [HP-H011]
+    LP-1 [open/now] chase=RH
+      Pólya 1926 hypotheses on Riemann’s Φ.
+      guide: Relocates the gap to a kernel check. You cannot skip the hypotheses.
+  [HP-H017]
+    LP-2 [open/now] chase=RH
+      Is Riemann’s Φ a Pólya frequency function of sufficient order?
+      guide: This is a possible fill of LP-1. It is still not an operator H.
+  [HP-H018]
+    LP-3 [open/now] chase=RH
+      Turán / Jensen hyperbolicity inequalities for ξ without assuming RH.
+      guide: Coefficient tests. Finite-N hyperbolicity is not RH.
+  [HP-H014]
+    LP-4 [theorem/now] chase=RH
+      Λ ≥ 0 (Rodgers–Tao).
+      guide: Done. Path: the remaining inequality is Λ ≤ 0.
+    LP-5 [open-equivalent-to-RH/now] chase=RH
+      Λ ≤ 0 without assuming RH.
+      guide: You cannot close this by quoting RH. Λ = 0 is the prize.
+  [HP-H013]
+    LP-F [false/now] chase=RH
+      Pólya Liouville-sum conjecture.
+      guide: You cannot treat every Pólya sentence as a theorem. Drop this from the chase.
+  [HP-H027]
+    GB-1 [ran/now] chase=NS/RH
+      ΔG = −δ (3D Green kernel).
+      guide: DA seated G as realized output of a Laplacian and recorded R(κ)=1/κ². Tool, not RH, not Clay NS.
+    GB-5 [looked/now] chase=NS/RH
+      Shared scale response R(κ)=1/κ² of Green and Biot–Savart.
+      guide: You may use this as a common inverse-Laplacian tool. You cannot glue NS to RH with it.
+  [NS-H004]
+    GB-2 [ran/now] chase=NS/RH
+      u = ∇ × (−Δ)^{-1} ω (Biot–Savart).
+      guide: Curl of the inverse Laplacian on vorticity. Shared R(κ) with GB-1. Not smoothness.
+    GB-3 [theorem/now] chase=NS
+      ∇·u = 0 follows from u = curl(something).
+      guide: Incompressibility is downstream of Biot–Savart. You cannot skip the stretching term by citing this.
+  [HP-H022]
+    GB-4 [theorem/now] chase=NS
+      Pólya walk is recurrent in d=1,2 and transient in d≥3.
+      guide: Clay NS is 3D (transient side). 2D NS is globally regular (recurrent side). Dimensional rhyme, not a proof.
+  [NS-H001]
+    NS-B.1 [open-prize/now] chase=NS
+      Vorticity transport ∂_t ω + (u·∇)ω = (ω·∇)u + νΔω.
+      guide: The Clay PDE. You cannot derive it from ξ or xp.
+    NS-B.2 [open/now] chase=NS
+      Stretching term (ω·∇)u.
+      guide: This is the 3D obstruction. You cannot drop it and still be Clay NS.
+    NS-B.3 [theorem-as-term/now] chase=NS
+      Diffusion νΔω.
+      guide: Heat on vorticity. You cannot identify this with de Bruijn–Newman heat on Ξ.
+    NS-F.1 [forbidden/now] chase=NS/RH
+      Glue NS to RH because both have a spectrum.
+      guide: Shared word ‘spectrum’ is not a transformation. Path: stop this glue.
+    NS-F.2 [forbidden/now] chase=NS
+      Derive unaugmented NS from SFE / UHF / DHFA.
+      guide: Domain Architect may route between books. It may not derive NS from SFE.
+  [NS-H003]
+    NS-B.4 [open/now] chase=NS
+      Stokes operator A = −ℙΔ.
+      guide: Spectral sibling of Pólya membranes. You cannot call it Hilbert–Pólya H.
+  [NS-H002]
+    NS-Φ.1 [theorem-algebra/now] chase=NS
+      KEEP algebra r^{-4}∂_z(Γ²)=∂_z(Φ²).
+      guide: You can keep this identity. You cannot call it Clay NS.
+    NS-Φ.2 [open/now] chase=NS
+      Open barrier ‖u^r/r‖_∞.
+      guide: This is the remaining NS-side condition in the swirl book. Path: estimates here, not RH glue.
+    NS-Φ.3 [forbidden-merge/now] chase=NS/RH
+      Swirl Φ vs Riemann kernel Φ vs FRA output Φ.
+      guide: You cannot reuse the letter Φ across these three seats. Path: keep three names.
+  [HP-H025]
+    NS-T.1 [tool/now] chase=NS
+      Pólya–Szegő rearrangement as a PDE estimate.
+      guide: You may use it in energy estimates. You cannot quote it as 3D smoothness.
+
+Parseable children run through the auditor:
+  HP-S0.a  'H = xp'  evidence=0  roles=['H=unresolved', 'x=unresolved_left_factor', 'p=unresolved_right_factor']  extra=['Hilbert space ℋ', 'operator domain D(H)', 'Weil explicit formula', 'spectral identity with zeta zeros']
+  HP-S0.c  'H = diag(gamma)'  evidence=0  roles=['H=unresolved', 'd=unresolved', 'i=unresolved', 'a=unresolved', 'g=unresolved', 'gamma=unresolved']  extra=none
+  HP-S3.a  'N = (T/2pi)*log(T)'  evidence=0  roles=['N=unresolved', 'T=unresolved', 'pi=unresolved', 'l=unresolved', 'o=unresolved', 'g=unresolved']  extra=none
+  LP-0  'xi(s) = xi(1-s)'  evidence=0  roles=['xi=unresolved_left_factor', 's=unresolved_right_factor']  extra=none
+  GB-1  'laplacian(G) = -delta'  evidence=0  roles=['G=realized_output', 'kappa=scale_response', 'R=scale_response']  extra=['geometry', 'boundary', 'operator_domain']
+  GB-2  'u = curl(invLap * omega)'  evidence=0  roles=['u=unresolved', 'invLap=unresolved', 'omega=unresolved']  extra=none
+  GB-3  'div(u) = 0'  evidence=0  roles=['u=unresolved']  extra=none
+  NS-B.1  'partial_t(omega) + (u * nabla)*omega = (omega * nabla)*u + nu * laplacian(omega)'  evidence=0  roles=['t=unresolved', 'omega=unresolved', 'u=unresolved', 'nabla=unresolved', 'nu=unresolved']  extra=none
+  NS-Φ.1  'partial_z(Gamma^2)/r^4 = partial_z(Phi^2)'  evidence=0  roles=['z=unresolved', 'Gamma=unresolved', 'r=unresolved', 'Phi=unresolved']  extra=none
+
+Canonical SFE status: unresolved.
