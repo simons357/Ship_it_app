@@ -1,0 +1,43 @@
+{
+  "ns_solved": false,
+  "singular_nse": false,
+  "field": "w = (sin y, sin z, sin x)",
+  "role": "write_up_example_floor_not_bound",
+  "K_is_C0": false,
+  "exact_shell_16_over_9": "CLAIMED_not_stamped",
+  "n_modes": 6,
+  "lambdas": [
+    1.0
+  ],
+  "exact_shell_alpha_1": true,
+  "max_k_dot_v": 0.0,
+  "max_reality": 0.0,
+  "div_free": true,
+  "real_valued": true,
+  "E": 1.5,
+  "E_hand": 1.5,
+  "PiB_L2_sq": 0.75,
+  "PiB_L2_sq_hand": 0.75,
+  "n_outputs": 12,
+  "each_output_B_abs2": [
+    0.0625,
+    0.0625,
+    0.0625,
+    0.0625,
+    0.0625,
+    0.0625,
+    0.0625,
+    0.0625,
+    0.0625,
+    0.0625,
+    0.0625,
+    0.0625
+  ],
+  "all_outputs_one_sixteenth": true,
+  "K_1_2": 0.6666666666666665,
+  "K_hand": 0.6666666666666666,
+  "K_matches_two_thirds": true,
+  "hand_arithmetic": 0.6666666666666666,
+  "unrestricted_lemma_star": "still_dead_on_v_n",
+  "note": "sup K >= 2/3. 2/3 is not C_0 and not 16/9. A random-search maximum is a weaker object than this floor."
+}
