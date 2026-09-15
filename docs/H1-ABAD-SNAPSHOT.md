@@ -108,12 +108,31 @@ One grid does not establish a continuum
 bound or a counterexample.
 
 \(\Lambda_0\) is frozen at amplitude 1
-for that field.
+for that field. \(\nu=1\). \(A_{\mathrm{no\ angle}}\)
+reproduces the previous angle-free
+column on the same Bad pairs.
 
 | field | amplitude | fixed threshold \(\Lambda_0\) | \(A_{\mathrm{angle}}\) | \(A_{\mathrm{no\ angle}}\) | \(C_{\mathrm{needed,raw}}\) |
 |---|---:|---:|---:|---:|---:|
-| ABC | *(run)* | *(run)* | *(run)* | *(run)* | *(run)* |
-| Taylor–Green | *(run)* | *(run)* | *(run)* | *(run)* | *(run)* |
+| ABC | 0.5 | 0.857321 | \(1.51362\times 10^{3}\) | \(3.30881\times 10^{3}\) | 79.0662 |
+| ABC | 1 | 0.857321 | \(1.87965\times 10^{4}\) | \(3.73792\times 10^{4}\) | 248.062 |
+| ABC | 2 | 0.857321 | \(1.57075\times 10^{5}\) | \(3.08149\times 10^{5}\) | 519.584 |
+| ABC | 4 | 0.857321 | \(1.26214\times 10^{6}\) | \(2.47211\times 10^{6}\) | 1045.00 |
+| Taylor–Green | 0.5 | 0.700000 | 0.0580690 | 0.242843 | 0 |
+| Taylor–Green | 1 | 0.700000 | \(1.56803\times 10^{3}\) | \(2.69909\times 10^{3}\) | 79.4857 |
+| Taylor–Green | 2 | 0.700000 | \(1.77380\times 10^{4}\) | \(2.84143\times 10^{4}\) | 231.556 |
+| Taylor–Green | 4 | 0.700000 | \(1.45615\times 10^{5}\) | \(2.31941\times 10^{5}\) | 479.119 |
+
+On ABC, from amplitude 2 to 4,
+\(C_{\mathrm{needed,raw}}\) still
+approximately doubles
+(\(519.584\to 1045\)). That is amplitude
+scaling. Taylor–Green at amplitude 0.5
+has \(C_{\mathrm{needed,raw}}=0\):
+dissipation already covers \(A_{\mathrm{angle}}\).
+One grid does not establish a continuum
+bound or a counterexample. A finite
+number is not \(C_0\).
 
 ---
 
