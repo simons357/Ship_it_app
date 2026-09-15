@@ -188,4 +188,20 @@ This adversarial document is an audit of **available sources**, not a prize comm
 
 ## 9. One-line lock
 
-**Theorem H ≠ unconditional SND. \(X\le M\) remains the keystone gap. Keep conditional SND (`22050976`); park Statement (B) packaging (`20405526`).**
+**Theorem H ≠ unconditional SND. \(X\le M\) remains a keystone gap in the August reading. Keep conditional SND (`22050976`); park Statement (B) packaging (`20405526`).**
+
+---
+
+## 15 September 2026 mathematical erratum
+
+The August body above is **unchanged**. Attach this erratum rather than rewriting the 25 August text.
+
+**Sign error in the August opening and checklist.** The favorable panel’s slogan was transcribed as \(X(t)\ge c_* J(t)\). [SND] is \(J/X\ge c_*\), i.e. \(J\ge c_* X\), equivalently \(X\le J/c_*\). The printed \(X\ge c_* J\) is not equivalent. For \(0<c_*\le 1\) it already follows trivially from \(J\le X\).
+
+**Status of displayed Theorem H, beyond the August \(M\)-gap.**
+
+> In the supplied extract, Theorem H is not established even with \(X\le M\). Its proof drops a viscous tail, uses invalid Sobolev embeddings and does not provide a complete Bony decomposition. The displayed absolute-flux estimate fails on smooth fixed-enstrophy shear fields. A valid \(M\)-dependent bound for the nonlinear shell term can be proved separately, but its usefulness for SND propagation remains to be shown. Any SND floor asserted from time zero must respect the initial spectral distribution. Retain the spectral toolkit and rebuild the required estimate from the exact shell evolution.
+
+Replace “naming fraud” in Gap H2 with **definition/claim mismatch** / **mislabeling**. The formulas establish an error, not intent.
+
+Full calculations: [`SND-MATH-CORRECTIONS-2026-09-15.md`](./SND-MATH-CORRECTIONS-2026-09-15.md).

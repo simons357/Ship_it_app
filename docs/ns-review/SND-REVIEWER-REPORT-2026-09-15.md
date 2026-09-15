@@ -1,7 +1,7 @@
 # SND program — comprehensive report for a specialist reviewer
 
 **Author:** Jonathan R. Simons  
-**Prepared:** 15 September 2026; **revised the same day** after specialist comments  
+**Prepared:** 15 September 2026; **revised the same day** after specialist comments and the mathematical audit of the displayed Theorem H formulas  
 **Audience:** independent specialist (fluids / harmonic analysis), not a campaign reader  
 **Honesty lock:** this program does **not** claim unforced Clay Statement (B) (\(f\equiv 0\) on \(\mathbb{T}^3\)). A forced finite-time singularity (Clay C/D) was **announced** 8 September 2026 and is **under Clay evaluation** as of 11 September; that record is §0A below and is not used as a premise here. This document inventories the SND body of work.
 
@@ -9,7 +9,7 @@
 
 ## 0. What to tell the reviewer in one page
 
-**Send first:** [`THEOREM-H-STATEMENT-AND-PROOF.md`](./THEOREM-H-STATEMENT-AND-PROOF.md). Then the 25 August verdict, then this briefing. Cover: [`REVIEWER-PACKET.md`](./REVIEWER-PACKET.md).
+**Send first:** the manuscript extract [`THEOREM-H-STATEMENT-AND-PROOF.md`](./THEOREM-H-STATEMENT-AND-PROOF.md) **with** [`SND-MATH-CORRECTIONS-2026-09-15.md`](./SND-MATH-CORRECTIONS-2026-09-15.md). Then the 25 August verdict (plus erratum), then this briefing. Cover: [`REVIEWER-PACKET.md`](./REVIEWER-PACKET.md).
 
 **SND is a legitimate extra structural hypothesis, not a theorem about all data.**
 
@@ -19,13 +19,13 @@ On \(\mathbb{T}^3\), write Littlewood–Paley enstrophy shells \(X_j\), total en
 \inf_t \frac{J(t)}{X(t)}\ge c_*>0.
 \]
 
-That is a **concentration** statement: a uniform positive fraction of enstrophy stays in a dominant shell. Two arrows are separately open for large data: (i) [SND] without a circular ceiling \(M\); (ii) a cleaned [SND] \(\Rightarrow\) regularity implication. Theorem D in the manuscript asserts equivalence of [SND] with Clay; that assertion is a **sketch**, not a refereed theorem. **Do not call [SND] equivalent to the Clay problem.** The extra hypothesis is in the same *genus* as BKM / LPS. That is already enough to keep the spectral dictionary.
+That is a **concentration** statement: a uniform positive fraction of enstrophy stays in a dominant shell. Treat [SND] as a **per-solution** extra hypothesis. A uniform floor from \(t=0\) for all data of fixed enstrophy is obstructed. The [SND] \(\Rightarrow\) regularity arrow (Theorem D) is a sketch. **Do not call [SND] equivalent to the Clay problem.**
 
-**The program is up against \(H^1\) again.** That is not a new discovery. Every spectral route that looked like a close eventually re-imported an a priori enstrophy ceiling \(X\le M\), or else failed to control stretching at energy-class regularity. After the later Lemma★ / exact-shell season (September 2026), the leftover is still an \(H^1\)-class estimate: either produce \(M\) from \(\|u_0\|_{H^1}\) alone, or control tube stretching (Door B / WRITE (6)) without an amplitude-independent rate that the ABC model already kills.
+**The displayed Theorem H is not a theorem, even with \(X\le M\).** The leftover is not “remove \(M\).” Rebuild the shell estimate, or work Door B as a **different** integral. Leray–Hopf is not a uniform \(H^1\) ceiling.
 
-**Keep spectral as language and research program. Do not keep it as a claimed large-data close.** The \(X\le M\) weld is a gap in the current argument. It is not a reason to abandon Littlewood–Paley shells, the Ring Lemma, Bony \(T+T^*+R\), or T2 Lemma 1. Using those tools to *claim* unforced Statement (B), or to glue SND to arithmetic Bridge / Q6 / Triple Lock, is the part that should stay retired.
+**Keep spectral as language and research program. Do not keep the displayed Theorem H as a proved estimate.** The \(X\le M\) weld was correctly flagged and is **incomplete**: with the displayed definition of \(\Pi_j\), the absolute-value bound **fails** on smooth fixed-enstrophy shear fields. The supplied proof drops a viscous tail and uses invalid 3D Sobolev embeddings. A valid \(M\)-dependent bound exists for the nonlinear term \(F_j\) alone; it does not give dominant-shell propagation. Rebuild from the exact shell equation. Using LP tools to *claim* unforced Statement (B), or to glue SND to arithmetic Bridge / Q6 / Triple Lock, stays retired.
 
-Specialist preliminary judgment, accepted: screenshots identify a gap; they do not establish that spectral research should be abandoned. [SND] \(\Leftrightarrow\) Clay was overstated. Forced C/D (8–11 Sep) must be named in status lines and still do not decide unforced B.
+Specialist judgment, accepted: (i) \(X\le M\) screenshots were a gap, not a kill of spectral research; (ii) [SND] \(\Leftrightarrow\) Clay was overstated; (iii) the displayed Theorem H is **not** established even with the ceiling; (iv) forced C/D (8–11 Sep) must be named and still do not decide unforced B.
 
 ---
 
@@ -61,13 +61,13 @@ The phrase “up against H1 again” is accurate, but the symbol is overloaded. 
 
 | Label in this report | What it is | Status |
 | --- | --- | --- |
-| **Sobolev \(H^1\)** | Energy-class / enstrophy control \(\|u\|_{H^1}\) (or \(X=\|\nabla u\|_2^2\)) | The supercritical barrier. 3D NS is a derivative short of scaling-critical. This is Tao’s objection, not a slogan. |
-| **TH-H1 (weld)** | Theorem H as written assumes **\(X\le M\)** and a spread regime \(\rho\le\rho_0\), then bounds dominant-shell flux \(\Pi_{j_*}\) | **Circular for Clay.** The keystone estimate smuggles the conclusion. Domain Architect break card `TH-H1`. |
-| **Door B / WRITE (6) H1** | Localized stretching \(A_{\mathrm{bad}}\) on a cylinder \(Q_r\) (one vortex tube). Target: a BKM-style bound independent of \(\lvert\omega\rvert\) | **OPEN.** P1 thinness sits; \(J=O(1)\) independent of amplitude **fails** (ABC: \(J\sim A\)). Not estimate-complete. |
+| **Sobolev \(H^1\)** | Velocity \(\|u\|_{H^1}\) (or \(X=\|\nabla u\|_2^2\)) | In 3D, \(\dot H^{1/2}\) is **critical** for the NS scaling \(u_\lambda(x,t)=\lambda u(\lambda x,\lambda^2 t)\); velocity \(H^1\) is **subcritical**. The available **energy** control is supercritical. Leray–Hopf is \(L^\infty_t L^2_x\cap L^2_t H^1_x\), **not** a uniform-in-time \(H^1\) ceiling. |
+| **TH-H1 (weld)** | Displayed Theorem H assumes \(X\le M\) and spread, and claims \(\lvert\Pi_{j_*}\rvert\le C_*(\nu 2^{2j_*}X_{j_*}+X^{1/2}\mathcal{D}^{1/2})\) | **False as displayed**, even with \(X\le M\): the proof drops the viscous tail \(S_j\), uses invalid embeddings, and the absolute-value bound fails on high-tail shears. Ceiling dependence was correctly noticed and is not the only defect. |
+| **Door B / WRITE (6) H1** | Localized stretching \(A_{\mathrm{bad}}\) on a cylinder \(Q_r\) | **OPEN.** Not estimate-complete. Do not glue to the failed shell-flux statement. |
 
 There is a fourth, unrelated **H1** in this repo: Harmonic Blueprint ringdown Experiment 01 (held-out TEST did not reject H0). That is an observational protocol. It is **not** this fluids estimate.
 
-**Reading of “again”.** May–June packaging tried to close regularity through SND + Theorem H and hit \(X\le M\). August audits named that weld and retired the Clay green. September Lemma★ / exact-shell / same-shell attacks tried a different spectral-shape box and died or stayed restricted. The live remainder is again an \(H^1\)-class integral (TH-H1 or Door B). That is the honest loop.
+**Reading of “again”.** May–June packaging tried to close regularity through SND + Theorem H and hit a ceiling \(M\). August named that weld. The 15 September audit shows the displayed absolute-flux bound **already fails at fixed \(M\)**. The live remainder is a **rebuilt shell estimate**, or Door B as a separate integral — not “remove \(M\) from Theorem H.”
 
 ---
 
@@ -85,11 +85,11 @@ J(t)=\max_j X_j(t),\qquad
 
 **[SND]** \(=\ \inf_t J/X \ge c_*>0\).
 
-Call this **SND-U** when the claim is “for all relevant \(H^1(\mathbb{T}^3)\) data, without an a priori ceiling \(M\).”
+Call this **SND-U** only when the claim is a **uniform** floor for all relevant data, with \(c_*\) not allowed to depend on a circular ceiling \(M\). That uniform reading is obstructed at \(t=0\) (many equal shells, same \(X=q\)). The original [SND] as a per-solution extra hypothesis is a different statement.
 
 ### A different object that was also called “Theorem H”
 
-**(SND-C)** is a *shell-conditioned flux bound* on the peak shell \(\Pi_{j_*}\) in a **spread** regime \(\rho\le\rho_0\ll 1\), with constant \(C_*=C_*(\nu,\delta_*,M,\rho_0,\ldots)\). Manuscripts prove (or attempt) SND-C **under** \(X\le M\). That is **not** SND-U.
+**(SND-C)** is a *shell-conditioned flux bound* on the peak shell \(\Pi_{j_*}\) in a **spread** regime \(\rho\le\rho_0\ll 1\). The displayed absolute-value form is **not proved**, even under \(X\le M\). That is **not** SND-U. A uniform floor \(c_*(\nu,\delta_*,M,C_S)\) from time zero is obstructed by equal-shell shear data. Distinguish a **solution-by-solution** hypothesis from a uniform theorem.
 
 ### The June/August opposite-word bug
 
@@ -110,7 +110,7 @@ Do not let one acronym mean both.
 - Constantin–Fefferman alignment
 - axisymmetric same-shell remainder \(T_{j\leftarrow j}\)
 
-Closing (SND-C) under \(X\le M\) does **not** close unforced Statement (B). Closing large-data [SND] without circular \(M\) would still leave the **[SND] \(\Rightarrow\) regularity** arrow to be proved (Theorem D is a sketch that re-imports \(M\) on Q1 approximants). Those are two open problems. Neither is “the Clay problem” by itself. The Tao-panel one-liner that equated unconditional SND with Clay B is **withdrawn as packet language**; keep it only as a warning against packaging, not as a theorem.
+Closing a *valid* flux bound under \(X\le M\) would still not close unforced Statement (B). The displayed (SND-C) is not such a bound. A cleaned [SND] \(\Rightarrow\) regularity arrow (Theorem D) remains a sketch. Small-data theory cannot manufacture a universal initial \(\rho\). The Tao-panel one-liner that equated unconditional SND with Clay B is **withdrawn as packet language**.
 
 ---
 
@@ -120,7 +120,7 @@ Closing (SND-C) under \(X\le M\) does **not** close unforced Statement (B). Clos
 
 | Object | Honest label | Public face |
 | --- | --- | --- |
-| **Ring Lemma** | Band-limited vorticity-direction bound: \(\|\nabla\xi_0\|_{L^\infty(E_c)}\le C\,2^{j_*}\) on \(\{|\omega|\ge c\|\omega\|_2\}\) | `10.5281/zenodo.22050976` |
+| **Ring Lemma** | Band-limited vorticity-direction bound, as *claimed* in KEEP `22050976`. A KEEP label is **not** verification. Elementary Bernstein on \(E_c^\infty=\{|\omega|\ge c\|\omega\|_\infty\}\) gives \(\|\nabla\xi\|_{L^\infty(E_c^\infty)}\le C\lambda/c\) and **changes the threshold**; do not silently replace the manuscript set \(\{|\omega|\ge c\|\omega\|_2\}\). | `10.5281/zenodo.22050976` |
 | **SND as hypothesis** | Conditional spectral regularity criterion; not proved for all Leray–Hopf data | same KEEP DOI |
 | **T2 under SND** | Shell-flux Gronwall **conditional on** a spread/SND hypothesis. Lemma 1 (div-free kills far-low self-flux) is the solid brick | `10.5281/zenodo.22050965` |
 | **Φ-renorm algebra** | \(\frac1{r^4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\). Axisymmetric-with-swirl **identity**, not Clay | `10.5281/zenodo.22050974` / `22050975`; June 30 conditional reduction `21071991` |
@@ -137,7 +137,7 @@ Closing (SND-C) under \(X\le M\) does **not** close unforced Statement (B). Clos
 | **Triple Lock** `SND ≡ GNC ≡ Bridge` | Identity false. Full-spectrum \(\lambda_{\min}(Q_N)>-1/2\) false (e.g. \(Q_{10}\approx-1.90\)). Domain Architect **C-GLUE-2 RETIRED**. |
 | “SND implies global regularity” (May packaging) | `10.5281/zenodo.20272545` — PARK. SND was not a proved closure. |
 | Older SND framework | `10.5281/zenodo.20518057` — superseded by corrected Ring+SND KEEP. |
-| Unconditional “Theorem H = SND for all \(H^1\) data” | Mislabel of SND-C. Favorable ARCHON 10-expert panel is **synthetic roleplay, not peer review** (adversarial verdict 25 Aug 2026). |
+| Unconditional “Theorem H = SND for all \(H^1\) data” | **Mislabeling** of (SND-C). Favorable ARCHON 10-expert panel is **synthetic roleplay, not peer review** (adversarial verdict 25 Aug 2026). Displayed Theorem H is not established even with \(X\le M\). |
 | \(c_*=6/\pi^2=\zeta(2)^{-1}\) as fluids SND floor | Arithmetic density, not a continuum threshold. |
 | Q6 / inverse-GCD as damper of the dominant shell that “enforces SND” | Withdrawn glue. Dominant shell \(j_*\) is an LP fact; Q6 is a matrix. |
 | Φ-renorm \(\to\) Theorem H \(\to\) Clay | **C-GLUE-4**. The identity does not feed Fourier-shell H. |
@@ -162,36 +162,30 @@ These grew out of the spectral program and must be on the table so a reviewer do
 No edge from Φ-renorm into this chain:
 
 ```text
-LP shells X_j, X, J, ρ = J/X
+LP shells X_j, X, J, ρ = J/X     (≍ for general LP; = on the exact-block family)
         │
         ▼
-   SND-U: inf J/X ≥ c_* > 0          OPEN for all H¹ data
+   [SND] per solution: inf J/X ≥ c_* > 0     HYPOTHESIS (not a uniform floor from t=0)
         │
-        ├──────────► Ring Lemma (band-limited CF on E_c)     KEEP toolkit
+        ├──────────► Ring-type bound on E_c^∞     scoped Bernstein; ≠ manuscript E_c
         │
         ├──────────► T2 Lemma 1 (div-free far-low)           KEEP
-        │                 │
-        │                 ▼
-        │            T2 Gronwall under spread                 CONDITIONAL
         │
-        └──────────► SND-C / Theorem H under X ≤ M, ρ ≤ ρ₀    CONDITIONAL
-                          │
-                          ✕  TH-H1 weld: M is the unforced-B output
+        └──────────► displayed Theorem H / |Π_{j_*}|         FAILS even with X ≤ M
                           │
                           ▼
-                 conditional regularity under [SND]     Theorem D is a sketch
-                                                        not a Clay equivalence
+                 valid |F_j| bound under X ≤ M               different estimate
+                          │
+                          ▼
+                 exact ½ Ẋ_j + ν 2^{2j}‖∇Δ_j u‖² = −2^{2j} F_j
+                          │
+                          ▼
+                 rebuild J/X evolution; test shears / amplitude / equal shells
 ```
 
-**Missing conjuncts for a non-circular skeleton** (status-report synthesis, document not finished):
+**Do not** list “uniform SND-C without \(M\)” as the next repair of *this* displayed estimate. Amplitude scaling already forbids an \(M\)-free quadratic bound on cubic \(F_j\) for every spread field. Start from the boxed shell equation (corrections §8).
 
-1. uniform SND-C in SPREAD **without** feeding \(M\) from the conclusion;
-2. Ring control in a genuine 3-shell CONC regime;
-3. a **drift law** for \(j_*\) / \(\Lambda\) that prevents unbounded climb.
-
-(3) is missing. Occupation time \(\tau_C+\tau_S=T\) is not a bound on \(X\). Instantaneous random CONC does not produce a “saving climb”; viscosity tends to pull the barycenter down.
-
-**Theorem G** (SND-C \(\Rightarrow\) SND) still has \(c_*=c_*(\nu,\delta_*,M,\ldots)\). Even the spectral-gap conclusion carries the ceiling. That is break **TH-H3**.
+**Theorem G** as written still lists \(c_*=c_*(\nu,\delta_*,M,\ldots)\). A uniform such floor from \(t=0\) is obstructed (equal-shell shears). That is stronger than August break **TH-H3**.
 
 **Q1 approximants.** Smooth hyperdissipative SND need not pass to the Leray–Hopf limit. That is **TH-H7-Q1**.
 
@@ -203,17 +197,17 @@ LP shells X_j, X, J, ρ = J/X
 
 **Keep the spectral machine as a research program. Retire spectral as a claimed close of unforced Statement (B). Do not glue it to Door B H1 to fake a second close.**
 
-The specialist’s judgment is the packet’s judgment: the \(X\le M\) screenshots are a **gap**, not a kill of LP / Bony / Ring.
+The specialist’s judgment is the packet’s judgment: the \(X\le M\) screenshots were a **gap**, not a kill of LP / Ring-type bounds. The displayed Theorem H is a **failed statement**, not a theorem awaiting only the removal of \(M\).
 
 #### Keep (fluids Track B)
 
-- Littlewood–Paley shells \(X_j\), peak \(j_*\), fractions \(\rho,\sigma\)
-- Bony decomposition \(T+T^*+R\) for peak-shell flux
-- Ring Lemma as a **band-limited** geometric bound (hypotheses on the table)
+- Littlewood–Paley shells \(X_j\), peak \(j_*\), fractions \(\rho,\sigma\) (use \(\asymp\) unless the partition is frozen)
+- A **complete** Bony decomposition of \(F_j\), not the displayed identification of \(\Pi_j\) with \(F_j\)
+- Elementary Ring-type bound on \(E_c^\infty\), with the changed threshold on the page
 - T2 Lemma 1 (incompressibility identity)
-- SND **named as an extra hypothesis**, same genus as BKM/LPS
+- SND **named as a per-solution extra hypothesis**, same genus as BKM/LPS
 - Spectral-shift identity as **bookkeeping only**
-- Honest KEEP DOI `22050976`
+- Honest KEEP DOI `22050976` as a citation label, not a verification stamp
 
 #### Keep, but in a different book
 
@@ -225,6 +219,8 @@ The specialist’s judgment is the packet’s judgment: the \(X\le M\) screensho
 
 - One word “SND” for both CONC and SPREAD
 - Theorem H relabeled as “SND for all \(H^1\) data”
+- “Proved under \(X\le M\)” for the displayed \(|\Pi_{j_*}|\) bound
+- “Remove \(M\) from this same estimate for every spread field” as the live target
 - Triple Lock / Bridge / Q6 damper of the dominant shell
 - Φ-cancel as an input to Fourier-shell H
 - Unrestricted Lemma★ as a box (if the \(v_n\) kill survives specialist check)
@@ -235,9 +231,15 @@ The specialist’s judgment is the packet’s judgment: the \(X\le M\) screensho
 
 #### Why not drop spectral entirely?
 
-Because the alternative is not a proved geometric close either. Door B H1 is the *same leftover stretching*, rewritten on one cylinder. The spectral dictionary is still the right way to **state** the extra hypothesis (peak-shell occupation) and to **separate** CONC from SPREAD. Dropping LP/Bony would erase the only clean description of what SND even is. What should be dropped is the belief that shell language manufactures the missing derivative.
+Because the alternative is not a proved geometric close either. Door B H1 is leftover stretching on a cylinder, a different integral. The spectral dictionary is still the right way to **state** peak-shell occupation. Dropping LP would erase the description of [SND]. Rebuild the estimate from
 
-Tao reading, still the right *analytic* standard for energy methods: supercritical bounds alone do not manufacture the missing derivative. SND is an extra hypothesis. Averaged-NS blowup (Tao 2014) remains the obstruction to “energy methods plus optimism” for **unforced** large data. That standard is independent of whether a **forced** C/D announcement is later accepted.
+\[
+\tfrac12\dot X_j+\nu\,2^{2j}\|\nabla\Delta_j u\|_2^2=-2^{2j}F_j
+\]
+
+and test against high-tail shears, amplitude rescaling, and equal shells.
+
+Tao reading, with scaling stated correctly: energy methods are supercritical; velocity \(H^1\) is subcritical and \(\dot H^{1/2}\) is critical. Averaged-NS blowup (Tao 2014) remains an obstruction to “energy methods plus optimism” for **unforced** large data. That is independent of whether a **forced** C/D announcement is later accepted.
 
 ---
 
@@ -245,11 +247,11 @@ Tao reading, still the right *analytic* standard for energy methods: supercritic
 
 Two live estimates, **one row each, not glued**:
 
-### Row 1 — TH-H1 (spectral)
+### Row 1 — spectral shell budget (repaired)
 
-Produce \(M=M(\|u_0\|_{H^1})\) or remove \(M\) from \(C_*\) and from \(c_*\). Until that sits, Theorem H is a conditional lemma in a bounded-enstrophy class, not unforced Statement (B).
+Do **not** try to remove \(M\) from the displayed Theorem H. Write the exact shell equation, decide which evolution of \(J/X\) is needed, and prove an estimate with compatible amplitude powers. Include viscosity and domain constants. For continuation, a bound finite on each finite interval (allowed to depend on \(T\)) can suffice; an all-time \(M(\|u_0\|_{H^1})\) is stronger. Official (B) assumes **smooth** \(u_0\), not \(H^1\).
 
-Attack plan already written (`THEOREM-H-ATTACK-PLAN.md`): bootstrap / replace the worst \(M\)-power in the flux estimate by energy + dissipation; freeze a clean **SND-U \(\Rightarrow\) regularity** writeup as a separate depositable win; do not re-green Statement B.
+Test any candidate against the high-tail shears, \(u=Aw\), and \(v_L\).
 
 ### Row 2 — Door B H1 (geometric)
 
@@ -317,24 +319,27 @@ This repository’s `main` only holds a slice (Φ-renorm KEEP card, Zenodo inven
 ### Real
 
 1. **August 2026 public audit** — unusually clear retractions; KEEP set is the right cite list.
-2. **Ring Lemma** — Bernstein on a band-limited direction field; correctly scoped when hypotheses stay on the page.
+2. **Ring-type bound** — elementary Bernstein on \(E_c^\infty\) is scoped and changes the threshold; manuscript \(E_c\) is not verified by a KEEP label.
 3. **T2 Lemma 1** — incompressibility identity; pass.
 4. **Φ-renorm cancel** — algebraic identity; independent 22 Aug audit left the PDE and Lions bookkeeping intact and the strain barrier open.
 5. **Bridge\* single-pair** Rayleigh on inverse-GCD test vectors — true **number theory**, orthogonal to NS.
 6. **Regime split CONC vs SPREAD** after the naming repair.
-7. **TH-H1 diagnosis** — Theorem H assumes \(X\le M\); that is the correct keystone objection, written down in adversarial form so a loud false positive can be answered in one paragraph.
+7. **August \(M\)-diagnosis** — correctly saw the ceiling; **incomplete**, because the displayed \(|\Pi_{j_*}|\) bound already fails at fixed \(M\).
+8. **Valid \(F_j\) lemma** — \(|F_j|\le C\sqrt{M/(\nu\lambda_1)}\,X^{1/2}\mathcal{D}^{1/2}\) under mean-zero \(H^2\) and \(X\le M\); not Theorem H.
 
 ### Fails (or is not ready)
 
 1. May global-regularity packaging and any “Main Theorem / Statement (B) proved” table.
-2. Dynamic SND-U for arbitrary finite-energy data.
-3. Uniform low Bony \(T\) as \(\rho\to 0\) (supercritical hole: the low paraproduct still wants a derivative).
-4. Occupation-time glue between CONC and SPREAD as an a priori on \(X\).
-5. Geometry from Ring \(\Rightarrow\) CF alignment / cubic depletion (tested packets: median \(\lvert\cos\alpha_3\rvert\sim 1/2\), not \(\to 0\)).
-6. Cross-domain bridges (fluids SND = arithmetic Bridge = RH).
-7. Unrestricted Lemma★ (if \(v_n\) is admissible — specialist check still requested).
-8. Exact-shell 9D as a regularity consequence (even if the \(16/9\) bound is later signed).
-9. Door B H1 as “the remaining estimate that is basically done.”
+2. Displayed Theorem H / (SND-C) absolute-flux bound, even with \(X\le M\).
+3. Uniform SND floor \(c_*(\nu,\delta_*,M,C_S)\) from \(t=0\) for all data of size \(q\le M\).
+4. “Remove \(M\) from this same quadratic estimate for every spread field.”
+5. Dynamic [SND] as a theorem about all Leray–Hopf data.
+6. Occupation-time glue between CONC and SPREAD as an a priori on \(X\).
+7. Geometry from manuscript Ring \(\Rightarrow\) CF alignment / cubic depletion.
+8. Cross-domain bridges (fluids SND = arithmetic Bridge = RH).
+9. Unrestricted Lemma★ (if \(v_n\) is admissible — specialist check still requested).
+10. Exact-shell 9D as a regularity consequence.
+11. Door B H1 as “the remaining estimate that is basically done.”
 
 ---
 
@@ -342,27 +347,28 @@ This repository’s `main` only holds a slice (Φ-renorm KEEP card, Zenodo inven
 
 Cover sheet: [`REVIEWER-PACKET.md`](./REVIEWER-PACKET.md).
 
-Send **three documents**, in this order. If only one is sent, send item 1.
+Send **four documents**. If only one status file accompanies the extract, send the mathematical corrections.
 
-1. **Theorem H with definitions** — [`THEOREM-H-STATEMENT-AND-PROOF.md`](./THEOREM-H-STATEMENT-AND-PROOF.md). Complete [SND], (SND-C), statement, proof; where \(X\le M\) enters; whether it can be removed; what \(c_*\) may depend on.
-2. **25 August adversarial review** — [`ARCHON-PANEL-ADVERSARIAL-VERDICT.md`](./ARCHON-PANEL-ADVERSARIAL-VERDICT.md), [PR #35](https://github.com/simons357/Ship_it_app/pull/35).
-3. **This briefing** — [PR #101](https://github.com/simons357/Ship_it_app/pull/101). KEEP/PARK inventory, spectral keep/drop, 8–11 September public record.
+1. **Manuscript extract** — [`THEOREM-H-STATEMENT-AND-PROOF.md`](./THEOREM-H-STATEMENT-AND-PROOF.md). Object under review, not a claimed theorem.
+2. **Mathematical corrections** — [`SND-MATH-CORRECTIONS-2026-09-15.md`](./SND-MATH-CORRECTIONS-2026-09-15.md). Displayed \(|\Pi_{j_*}|\) fails at fixed \(M\); valid \(F_j\) lemma; exact shell equation.
+3. **25 August adversarial review** — [`ARCHON-PANEL-ADVERSARIAL-VERDICT.md`](./ARCHON-PANEL-ADVERSARIAL-VERDICT.md), [PR #35](https://github.com/simons357/Ship_it_app/pull/35), plus 15 Sep erratum.
+4. **This briefing**.
 
-Cite for public framing: [10.5281/zenodo.22050976](https://doi.org/10.5281/zenodo.22050976).
+Cite for public framing: [10.5281/zenodo.22050976](https://doi.org/10.5281/zenodo.22050976) (label, not verification).
 
-**Competitor / referee kill line (unforced B only):**
+**Replacement wording:**
 
-> Theorem H as written assumes \(X\le M\). Unforced Clay Statement (B) is the problem of producing a global smooth solution from data with \(f\equiv 0\). An airtight proof of (SND-C) under an a priori enstrophy ceiling does not resolve (B). Forced C/D, if later accepted, still would not decide (B).
+> In the supplied extract, Theorem H is not established even with \(X\le M\). Its proof drops a viscous tail, uses invalid Sobolev embeddings and does not provide a complete Bony decomposition. The displayed absolute-flux estimate fails on smooth fixed-enstrophy shear fields. A valid \(M\)-dependent bound for the nonlinear shell term can be proved separately, but its usefulness for SND propagation remains to be shown. Any SND floor asserted from time zero must respect the initial spectral distribution. Retain the spectral toolkit and rebuild the required estimate from the exact shell evolution.
 
 ---
 
 ## 10. Bottom line for the reviewer
 
-Jonathan Simons has a **conditional spectral regularity program** for **unforced** 3D Navier–Stokes on \(\mathbb{T}^3\), built from Littlewood–Paley occupation, a band-limited Ring Lemma, and a shell-flux estimate that currently needs an enstrophy ceiling. After an honest August retraction of Clay-(B) packaging and Triple Lock glue, and after a September season that killed or restricted the Lemma★ shape box, **the leftover in this chain is again \(H^1\)**: either remove \(M\) from Theorem H, or control stretching by a geometric estimate that is not yet estimate-complete.
+Jonathan Simons has a **conditional spectral regularity program** for **unforced** 3D Navier–Stokes on \(\mathbb{T}^3\). The displayed Theorem H absolute-flux estimate is **not established**, even with \(X\le M\). A simpler \(M\)-dependent bound on \(F_j\) is valid and does not give the proposed propagation. Rebuild from the exact shell equation. Keep spectral research.
 
-**The \(X\le M\) gap is a gap. It is not a reason to abandon spectral research.** Littlewood–Paley / Bony / Ring remain the right dictionary for [SND]. [SND] is not equivalent to Clay: the regularity implication is itself unproved.
+[SND] as a per-solution extra hypothesis is not equivalent to Clay: the regularity implication is itself unproved, and a uniform floor from \(t=0\) is obstructed.
 
-**Forced C/D** have a public announcement (8 Sep) under Clay evaluation (11 Sep). That does not decide **unforced (B)**, which is this program’s target and is **not claimed**.
+**Forced C/D** have a public announcement (8 Sep) under Clay evaluation (11 Sep). That does not decide **unforced (B)** (smooth periodic \(u_0\), \(f\equiv 0\)), which is **not claimed**.
 
 **No unforced Statement (B) claim. Clarification progress, not closure of (B).**
 
@@ -373,11 +379,13 @@ Jonathan Simons has a **conditional spectral regularity program** for **unforced
 | Symbol | Meaning |
 | --- | --- |
 | \(X_j\) | LP enstrophy (or, in the energy-shell note, energy) in shell \(j\) — **say which** |
-| \(X\) | \(\sum_j X_j=\|\omega\|_2^2\) (enstrophy convention) |
+| \(X\) | \(\sum_j X_j\asymp\|\nabla u\|_2^2\) in general LP; equality on the exact-block family |
 | \(J\) | \(\max_j X_j\) |
 | \(\rho\) | \(J/X\) |
 | \(j_*\) | \(\arg\max_j X_j\) |
-| \(\Pi_{j_*}\) | peak-shell flux |
+| \(\Pi_j\) | manuscript \(F_j-S_j\); do not identify with \(F_j\) |
+| \(F_j\) | \(\langle(u\cdot\nabla)u,\Delta_j^2 u\rangle\) |
+| \(S_j\) | viscous tail \(\nu\sum_{k>j}2^{2k}\|\Delta_k\nabla u\|_2^2\ge 0\) |
 | \(M\) | a priori enstrophy ceiling (the circular input) |
 | \(\Lambda\) | Stokes-moment quotient \(Y/X\) — **not** \(\rho\) |
 | \(\mathcal{R}_\star\) | Lemma★ shape ratio — **not** the spectral-shift identity |
@@ -386,18 +394,18 @@ Jonathan Simons has a **conditional spectral regularity program** for **unforced
 
 ## Appendix B — one-sentence answers the reviewer will ask
 
-**Is SND proved?** No. It is a hypothesis about peak-shell occupation.
+**Is SND proved?** No. Per-solution extra hypothesis. A uniform floor from \(t=0\) is obstructed.
 
-**Does SND imply regularity?** Not on this manuscript. Theorem D is a sketch. Treat [SND] \(\Rightarrow\) regularity as a second open arrow.
+**Does SND imply regularity?** Not on this manuscript. Theorem D is a sketch.
 
-**Is [SND] equivalent to Clay?** No. Premature even if \(X\le M\) were removed.
+**Is [SND] equivalent to Clay?** No.
 
-**Is Theorem H SND for all data?** No. Theorem H as written is (SND-C) under \(X\le M\) and spread.
+**Is the displayed Theorem H proved under \(X\le M\)?** No. Absolute-value bound fails on high-tail shears; proof drops \(S_j\) and uses invalid embeddings.
 
-**Should spectral be dropped?** No. The gap is in the large-data close, not in the LP/Bony/Ring dictionary.
+**Should spectral be dropped?** No. Rebuild from the exact shell equation.
 
-**Are you claiming unforced Clay (B)?** No.
+**Are you claiming unforced Clay (B)?** No. Official (B) is smooth periodic \(u_0\) with \(f\equiv 0\).
 
-**Do OpenAI C/D close your target?** No. Those statements allow a force. (B) has \(f\equiv 0\). Clay’s 11 September note is evaluation, not an award.
+**Do OpenAI C/D close your target?** No. Those statements allow a force. Clay’s 11 September note is evaluation, not an award.
 
-**What is the next estimate?** One of: M-free (or data-only \(M\)) Theorem H; Door B cylinder H1; axisymmetric \(T_{j\leftarrow j}\) — **not all three glued**.
+**What is the next estimate?** The boxed shell equation, then an \(F_j\) (or \(\Pi_j\)) bound that survives shears, amplitude, and equal shells — **not** glued to Door B.

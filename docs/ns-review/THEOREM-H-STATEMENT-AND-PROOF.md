@@ -1,25 +1,43 @@
-# Theorem H — complete statement, proof, and the \(X\le M\) gap
+# Theorem H — manuscript extract (object under review)
 
-**Packet item 1 of 3.** If only one document is sent, send this one.  
+**Packet role:** if only one *manuscript* file is sent, send this extract together with the 15 September mathematical corrections.  
 **Manuscript source:** Zenodo `20518057` mirror, `docs/papers/zenodo-spectral/20518057/98d1b1cc9_NS_UPLOAD_ZENODO.tex` on `origin/cursor/tao-snd-h-panel-a0eb` (older SND framework; superseded as a *claim* by KEEP `10.5281/zenodo.22050976`).  
-**Claim-paper overlay:** Zenodo `20405526` (PARK — greened “Theorem H: (SND-C) unconditionally”).  
-**Companion audits:** 25 Aug 2026 adversarial verdict ([PR #35](https://github.com/simons357/Ship_it_app/pull/35)); reviewer briefing ([PR #101](https://github.com/simons357/Ship_it_app/pull/101)).
+**Claim-paper overlay:** Zenodo `20405526` (PARK).  
+**Corrections (binding for packet status):** [`SND-MATH-CORRECTIONS-2026-09-15.md`](./SND-MATH-CORRECTIONS-2026-09-15.md).
 
-This note extracts the **definitions of [SND] and (SND-C)** and the **statement and proof of Theorem H** as written. Annotations after the extract answer the three questions a specialist asked: where \(X\le M\) enters, whether it can be removed, and what \(c_*\) may depend on.
-
-**This extract is not a claim that Theorem H closes Clay Statement (B).** Statement (B) is unforced global regularity on \(\mathbb{T}^3\) with \(f\equiv 0\). Theorem H as written is a shell-flux bound under an a priori enstrophy ceiling.
+Sections 1–6 below are the **extract**: definitions and the displayed Theorem H statement/proof **as written**. They are the object under review, not a claimed theorem of this packet.
 
 ---
 
-## 0. What the specialist is being asked to check
+## Status after the 15 September mathematical audit
 
-1. **[SND]** is a peak-shell occupation hypothesis: \(\inf_t J/X\ge c_*>0\).
-2. **(SND-C)** is a different object: a bound on dominant-shell flux \(\Pi_{j_*}\) in a *spread* regime \(\rho\le\rho_0\).
-3. **Theorem H** is the manuscript’s proof of (SND-C). Its hypotheses include **\(X\le M\)**.
-4. **Theorem G** converts (SND-C) into [SND] with a constant \(c_*\) that still depends on \(M\).
-5. The **[SND] \(\Rightarrow\) regularity** arrow (Theorem D) is a separate sketch, not a refereed implication. Equating [SND] with Clay Statement (B) is therefore premature even if the \(X\le M\) gap were closed.
+> In the supplied extract, Theorem H is not established even with \(X\le M\). Its proof drops a viscous tail, uses invalid Sobolev embeddings and does not provide a complete Bony decomposition. The displayed absolute-flux estimate fails on smooth fixed-enstrophy shear fields. A valid \(M\)-dependent bound for the nonlinear shell term can be proved separately, but its usefulness for SND propagation remains to be shown. Any SND floor asserted from time zero must respect the initial spectral distribution. Retain the spectral toolkit and rebuild the required estimate from the exact shell evolution.
 
-A gap in this chain is a reason to keep the hypotheses honest. It is not a reason to abandon Littlewood–Paley / Bony / Ring research.
+Earlier packet commentary that Theorem H is “proved under \(X\le M\)” is **withdrawn**. The ceiling dependence was correctly noticed; the displayed absolute-value estimate is nevertheless false on an explicit family that satisfies \(X\le M\) and \(\rho\le\rho_0\). Removing \(M\) from *this same* estimate is not an appropriate open target (amplitude scaling; see corrections §5). A universal floor \(c_*(\nu,\delta_*,M,C_S)\) from time zero is obstructed by equal-shell shear data (corrections §6).
+
+What remains of the three specialist questions, after that audit:
+
+1. **Where \(X\le M\) enters the write-up** — still as in §7.1 (hypothesis and Young / \(L^\infty\) steps). Those steps are moot for the displayed \(|\Pi_{j_*}|\) bound, which already fails at fixed \(M\).
+2. **Can \(M\) be removed from the displayed estimate?** — the wrong question for this \(\Pi_j\). Rebuild from the exact shell equation in corrections §8.
+3. **What may \(c_*\) depend on?** — no uniform \(c_*(\nu,\delta_*,M,C_S)\) from \(t=0\) for all data. Solution-by-solution [SND] is a different claim from a uniform theorem.
+
+The **[SND] \(\Rightarrow\) regularity** arrow (Theorem D) remains a sketch. Equating [SND] with Clay Statement (B) is premature. Unforced (B) uses smooth periodic data with \(f\equiv 0\), not an \(H^1\) ceiling as the official wording.
+
+---
+
+## 0. What the extract contains
+
+1. **[SND]** as written: \(\inf_t J/X\ge c_*>0\).
+2. **(SND-C)** as written: a bound on \(|\Pi_{j_*}|\) in a spread regime.
+3. **Theorem H** as written, including the hypothesis \(X\le M\).
+4. **Theorem G** as written, with \(c_*\) still listed as depending on \(M\).
+5. The identification of \(\Pi_{j_*}\) with a Bony splitting of \(F_{j_*}\) (this identification **drops** the viscous tail \(S_{j_*}\); see corrections §1).
+
+---
+
+## Manuscript extract (object under review)
+
+The definitions and displayed proof below are transcribed as written. They are **not** asserted as correct. Commentary after §6 is packet status, not part of the manuscript.
 
 ---
 
@@ -60,7 +78,7 @@ Shell flux (manuscript Definition):
 
 Call this **SND-U** when the intended claim is: the infimum holds for all relevant \(H^1(\mathbb{T}^3)\) data, with \(c_*\) not allowed to depend on an a priori ceiling \(M\) produced by the regularity one is trying to prove.
 
-**Honest status:** hypothesis / open for large data. Small-data Koch–Tataru and bounded-\(H^2\) / short-time sketches in the same paper are the regimes where a positive \(c_*\) is plausible.
+**Honest status (packet, not manuscript):** per-solution hypothesis. A **uniform** floor from \(t=0\) for all data of fixed enstrophy is obstructed (corrections §6). Small-data existence does not supply a universal initial \(\rho\).
 
 ---
 
@@ -87,7 +105,7 @@ Two mismatches live already at the definition:
 | `def:SNDC` as written | **No** — only \(\nu,\delta_*,C_S\) | **No** — only \(X\ge\delta_*/4\) and \(\rho\le\rho_0\) |
 | Theorem H as written | **Yes** — \(C_*=C_*(\nu,\delta_*,M,\rho_0,C_S)\) | **Yes** — \(X\le M\) is stated |
 
-The claim paper (`20405526`) then greens “Theorem H: (SND-C) unconditionally.” In that file, “unconditionally” means “under the definition’s hypotheses,” not “for all \(H^1\) data.” That substitution is Gap H2 of the 25 August verdict.
+The claim paper (`20405526`) then greens “Theorem H: (SND-C) unconditionally.” In that file, “unconditionally” means “under the definition’s hypotheses,” not “for all \(H^1\) data.” That substitution is a **definition/claim mismatch** (August verdict Gap H2). The formulas establish an error; they do not establish intent.
 
 ---
 
@@ -115,13 +133,15 @@ independent of \(j_*\) and \(t\), such that
 C_*\Bigl(\nu\cdot 2^{2j_*} X_{j_*} + X^{1/2}\mathcal{D}^{1/2}\Bigr).
 \]
 
-**Where \(X\le M\) enters:** it is an explicit hypothesis of the theorem, and it is an explicit argument of \(C_*\).
+**Where \(X\le M\) enters the write-up:** it is an explicit hypothesis of the displayed theorem, and an explicit argument of \(C_*\). That does **not** make the estimate true; see the status banner and [`SND-MATH-CORRECTIONS-2026-09-15.md`](./SND-MATH-CORRECTIONS-2026-09-15.md) §2.
+
+The displayed statement is written for \(u\in H^1\). On that class \(\mathcal{D}\) need not be finite. Any finite estimate should be proved first for smooth or \(H^2\) fields.
 
 ---
 
 ## 5. Theorem H — proof (complete, as written)
 
-Decompose \(\Pi_{j_*}\) by the Bony paraproduct:
+Decompose \(\Pi_{j_*}\) by the Bony paraproduct **as the manuscript writes it** (this line identifies \(\Pi_{j_*}\) with \(F_{j_*}\) and drops \(S_{j_*}\); corrections §1). The displayed splitting is not a complete indexed Bony decomposition (unquantified \(j'\); high–low uses the whole \(u\)):
 
 \[
 \Pi_{j_*}
@@ -185,7 +205,7 @@ Kato–Ponce on \(k\ge j_*+4\):
 \|\nabla\Delta_k u\|_{L^2}\|u\|_{L^\infty}.
 \]
 
-In the spread regime the manuscript writes \(\|u\|_{L^\infty}\lesssim M^{1/2}\) and \(\|\nabla u\|_{L^\infty}\lesssim C_S\mathcal{D}^{1/2}/\nu^{1/2}\). Each far shell has \(X_k\le\rho_0 X\), so after Cauchy–Schwarz
+In the spread regime the manuscript writes \(\|u\|_{L^\infty}\lesssim M^{1/2}\) and \(\|\nabla u\|_{L^\infty}\lesssim C_S\mathcal{D}^{1/2}/\nu^{1/2}\). **Neither is a general 3D Sobolev bound** (corrections §4). The write-up continues: each far shell has \(X_k\le\rho_0 X\), so after Cauchy–Schwarz
 
 \[
 |T^*|\le C_{T^*}\bigl(X^{1/2}\mathcal{D}^{1/2}\bigr),
@@ -248,9 +268,9 @@ The proof is a contradiction argument: if \(\rho(t_k)\to 0\) with \(X(t_k)\ge\de
 | Theorem E (smooth on a finite interval with \(X\le M\)) | \(c_*=c_*(M,\eta,\nu,T)\) |
 | Arithmetic slogan \(6/\pi^2=\zeta(2)^{-1}\) | **Not** a fluids threshold. PARK with Triple Lock |
 
-Even if Theorem H were granted exactly as written, Theorem G does **not** produce a universal floor \(c_*(\nu,\delta_*)\) from initial data alone. That is Gap H3 of the 25 August verdict.
+Even if the displayed Theorem H were granted, Theorem G does **not** produce a universal floor \(c_*(\nu,\delta_*)\) from initial data alone. Independently, **no** common \(c_*(\nu,\delta_*,M,C_S)\) can hold from \(t=0\) for all data of enstrophy \(q\le M\) (equal-shell shears, corrections §6). Distinguish solution-by-solution [SND] from a uniform theorem.
 
-The manuscript then states a corollary: “Assuming (SND-C), the Clay problem on \(\mathbb{T}^3\) is resolved.” That corollary is **not** licensed by Theorem H + Theorem G as written, because both still carry \(M\).
+The manuscript then states a corollary: “Assuming (SND-C), the Clay problem on \(\mathbb{T}^3\) is resolved.” That corollary is **not** licensed: the displayed (SND-C) estimate fails, Theorem G still lists \(M\), and official Statement (B) is unforced smooth data.
 
 ---
 
@@ -269,31 +289,29 @@ The manuscript then states a corollary: “Assuming (SND-C), the Clay problem on
 | Theorem D(i) sketch | “uniform [SND] with Theorem C gives \(\|u^\varepsilon\|_{H^1}\le M\)” — the regularity arrow re-imports a ceiling from Q1 approximants |
 | `def:SNDC` | **Omits** \(M\) — inconsistent with the theorem that is supposed to prove it |
 
-Clay Statement (B) (Fefferman): \(\nu>0\), \(n=3\), \(u_0\) smooth divergence-free periodic, **\(f\equiv 0\)**, global smooth solution. The bound that must come out is an \(H^1\) (in fact smoother) control from data. Feeding \(X\le M\) into the keystone estimate is circular for that statement.
+Clay Statement (B) (Fefferman): \(\nu>0\), \(n=3\), \(u_0\) **smooth** divergence-free periodic, **\(f\equiv 0\)**, global smooth solution. An \(H^1\) theory may be a route to that result; it is not the official initial-data wording. Feeding \(X\le M\) into a keystone estimate would in any case be circular for a large-data regularity claim. The displayed keystone is not established even *with* \(X\le M\).
 
 ### 7.2 Can the assumption be removed?
 
-**Not by the argument on the page.** Every Young / \(L^\infty\) step that returns \(\Pi_{j_*}\) to the target right-hand side uses a size. Replacing \(M\) by the instantaneous \(X(t)\) makes \(C_*\) grow with enstrophy; the ODE in Theorem G then does not give a uniform \(c_*\).
+**Not an appropriate open target for this displayed estimate.** The absolute-value bound already fails at fixed \(M\) (high-tail shears). Even after replacing \(\Pi_j\) by \(F_j\), the proposed right-hand side is quadratic in amplitude while \(F_j\) is cubic, so an \(M\)-free version for every spread field fails by rescaling (corrections §5).
 
-What would count as removing it:
+What remains valid:
 
-1. Prove Theorem H with \(C_*=C_*(\nu,\delta_*,\rho_0,C_S)\) **independent of \(M\)**; or
-2. Produce \(M=M(\|u_0\|_{H^1},\nu)\) by a bootstrap that does not assume the conclusion; or
-3. Restrict to a class where \(M\) is already known (small data, bounded \(H^2\), short time) and **stop claiming large-data B**.
+1. The elementary bound \(|F_j|\le C\sqrt{M/(\nu\lambda_1)}\,X^{1/2}\mathcal{D}^{1/2}\) (corrections §3) — different from Theorem H; no propagation theorem.
+2. Rebuild from the exact shell equation (corrections §8) and test against the shear family, amplitude rescaling, and equal shells.
+3. Keep [SND] as a **solution-by-solution** extra hypothesis, not a uniform floor from \(t=0\).
 
-(1) and (2) are open. (3) is the honest publishable core (Ring Lemma + conditional SND on those regimes). That is a reason to **keep** spectral research, not to abandon it.
-
-A separate analytic worry, not required to see the \(M\)-gap: the low Bony piece \(T\) still has to control a sum of many low shells uniformly as \(\rho\to 0\). The manuscript claims \(\rho^{5/4}\) saves this. Whether that bound is uniform on Leray–Hopf solutions (as opposed to smooth fields already bounded in \(H^1\)) is a specialist question *after* \(M\) is faced.
+A finite-time continuation bound may depend on \(\nu\), the domain, and an endpoint \(T\); an all-time \(M=M(\|u_0\|_{H^1})\) is stronger.
 
 ### 7.3 What may \(c_*\) depend on?
 
 From the fluids manuscript, not from arithmetic:
 
-- **If** one only has Theorem G as written: \(c_*=c_*(\nu,\delta_*,M,C_S)\). That is not a data-only constant.
-- Small data: \(c_*(\delta_{\mathrm{KT}},\nu)\) is the right shape.
+- **If** one only reads Theorem G as written: \(c_*=c_*(\nu,\delta_*,M,C_S)\). That is not a data-only constant, and it cannot hold uniformly from \(t=0\) for all data of size \(q\le M\).
+- Small-data existence does not supply a universal initial \(\rho\): amplitude scaling leaves \(\rho\) unchanged.
 - \(6/\pi^2\) is not this constant.
 
-A referee should refuse any sentence of the form “Theorem H proves SND for all \(H^1\) data with universal \(c_*\).”
+A referee should refuse any sentence of the form “Theorem H proves SND for all \(H^1\) data with universal \(c_*\).” The estimate is not proved, and the uniform floor is obstructed.
 
 ---
 
@@ -319,16 +337,17 @@ The Main Conditional Result in the same TeX file is the honest theorem-shaped ob
 
 ---
 
-## 9. What this gap does *not* mean
+## 9. What this does *not* mean
 
-- It does **not** mean Littlewood–Paley occupation, Bony flux, or the Ring Lemma should be abandoned.
-- It does **not** refute SND as a named extra structural hypothesis, in the same genus as BKM / LPS.
-- It does **not** decide unforced Statement (B). A forced finite-time singularity (Clay C/D, with \(f\not\equiv 0\)) is a different official statement; see the 15 September briefing for the 8–11 September public record.
+- It does **not** mean Littlewood–Paley occupation or a correctly scoped Ring-type bound should be abandoned. Rebuild from the exact shell equation.
+- It does **not** refute [SND] as a named extra structural hypothesis **for a given solution**, in the same genus as BKM / LPS.
+- A KEEP label is not verification of the manuscript Ring Lemma. The elementary band-limited bound lives on \(\{|\omega|\ge c\|\omega\|_\infty\}\) and **changes the threshold**.
+- It does **not** decide unforced Statement (B). Forced C/D (8–11 Sep) are a different official pair.
 
-The 25 August adversarial verdict ([PR #35](https://github.com/simons357/Ship_it_app/pull/35)) already isolated this as Gap H1. This extract is the manuscript text that verdict was reading.
+The 25 August verdict isolated circular \(M\) as Gap H1. That diagnosis **understated** the defect: the displayed \(|\Pi_{j_*}|\) bound fails even with the ceiling. See the August erratum on that file.
 
 ---
 
 ## 10. One-line lock
 
-**Theorem H proves (SND-C) only under \(X\le M\) and \(\rho\le\rho_0\), with \(C_*\) and the Theorem G constant \(c_*\) both allowed to depend on \(M\). That assumption is not removed by the written Bony–Young argument. Spectral research stays; the large-data close does not.**
+**The displayed Theorem H is not established even with \(X\le M\). Keep the extract as an extract. Keep spectral research; replace the estimate using the exact shell evolution.**
