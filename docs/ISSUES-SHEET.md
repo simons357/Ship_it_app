@@ -25,6 +25,12 @@ Do not retitle any row below as a close.
 Catalog B open count is 1 (`B_regularity`).
 That is ordinary NS. It is row 1 or 4 or 5,
 not a thirteenth NS leftover.
+SND-to-regularity implication is a named
+hole on the SND/H track, not a thirteenth leftover:
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+SND sitting is not a bound on \(X\).
+Theorem G is dead. Ring is REPAIR.
+Do not merge the PR 48 SND/Q6/SFE pile.
 
 ---
 

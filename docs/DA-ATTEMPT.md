@@ -116,6 +116,9 @@ Write from the paper: `next --ask "use my best paper and write RH"`
 \(\sigma\ge 1/2\). SPREAD: uniform SND-C (low paraproduct
 as \(\rho\to 0\)). \(X\) still needs \(\int\mathcal{R}\).
 SND sitting is not \(X\).
+The implication (shell condition,
+frequency drift, circularity):
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
 
 **Einstein.** Two regimes are two principles. Not one brand.
 

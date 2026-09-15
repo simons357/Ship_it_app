@@ -102,6 +102,8 @@ BSD, Hodge, Yang–Mills mass gap, P vs NP.
 Axisymmetric ordinary NS with swirl.
 Goldbach’s conjecture.
 SND or H as a key that finishes NS.
+Implication written, not a close:
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
 
 Those are not sitting. Publishing them as
 finished would not save face.

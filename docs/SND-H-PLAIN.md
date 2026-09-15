@@ -63,3 +63,11 @@ That is glue. DA’s job is to stop it.
 
 Ordinary NS stays the same missing step
 whether SND is open or closed.
+
+The implication itself (what the shell
+condition controls; frequency drift
+still needed; circularity named):
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+SND sitting is not a bound on \(X\).
+Theorem G is dead. Ring is REPAIR.
+Do not start leftover 1 from that page.

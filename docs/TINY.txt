@@ -100,6 +100,10 @@ docs/DREAM-TEAM-CAUGHT.md
 
 SND and H are not the key to ordinary NS:
 docs/SND-H-PLAIN.md
+SND-to-regularity implication (shell
+condition, frequency drift, circularity;
+not a bound on X; G dead; Ring REPAIR):
+docs/SND-TO-REGULARITY.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md

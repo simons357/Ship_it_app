@@ -211,6 +211,8 @@ Already off the live desk for the
 same reason: [`SHELF.md`](SHELF.md).
 SND is a named hole, not this
 remainder: [`SND-H-PLAIN.md`](SND-H-PLAIN.md).
+Implication (not a bound on \(X\)):
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
 
 ---
 

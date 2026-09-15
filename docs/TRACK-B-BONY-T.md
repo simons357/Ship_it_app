@@ -78,6 +78,10 @@ hope. CCFS locality does not turn the sum into
 
 G is dead. H at a *frozen* \(\rho\le 1/4\) can still use the
 energy-class bound. That is a different sentence.
+The implication from this split to a bound
+on \(X\) is written in
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+SND sitting is not that bound.
 
 ---
 

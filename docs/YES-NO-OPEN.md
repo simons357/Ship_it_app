@@ -43,6 +43,10 @@ The Riemann hypothesis is not solved.
 | \(0.327\) / \(0.641\) / \(0.610\) / grow-\(s\) \(0.456\) / three-shear \(2/3\) kills ★ or proves \(16/9\) | Finite. \(2/3\) raises the floor of \(\sup K\). | **NO** as a kill or as \(16/9\). **YES** as printed samples. |
 | H1 is written, so H1 sits | The estimate is stated. | **YES** as a write. **NO** as a theorem. **OPEN** as leftover 1. |
 | Ring sits | Direction bound is REPAIR. | **NO** as proved. |
+| SND sitting closes \(X\) | Occupation is a cover. G is dead. Frequency drift from the field is missing. Circularity named. | **NO** as a bound on \(X\). Implication: [`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md). |
+| Theorem E starts the a priori | True for already-smooth \(u\). | **NO** as continuation. |
+| Theorem F as \(4^{N-1}\rho X\) | Consecutive low shells. Super-exponential dissipation as \(\rho\to 0\) is not a theorem. | **NO.** |
+| Theorem G | Needed uniform \(\rho^{1/2}\) on the low sum. B7c fail. | **NO.** G is dead. |
 | Evolution / biology closes a row | Maps only. | **NO** as a close. |
 | SFE / HB / \(K(t)\) in the PDE | Other equation or discarded. | **NO.** |
 | Cosmo five fingers close NS | Other book (`DA-FINGERS.md`). | **NO** as constitutive NS. |
@@ -95,6 +99,10 @@ stay samples. They are not this kill.
 | Uniform pre-Young \(C\) | Dead. |
 | Detector occupation decay | Withdrawn. |
 | Ring as proved | REPAIR. |
+| SND sitting as a bound on \(X\) | Occupation cover, not continuation. [`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md). |
+| Theorem E as the start of the a priori | Smooth already. |
+| Theorem F as \(4^{N-1}\rho X\) | False as stated. |
+| Theorem G | G is dead. |
 | P1 / P1-loc / PC as H1 | Cousins. |
 | CS \(E^{3/2}\) as shape 1 | Mid-Bad / H3 class. |
 | Finite \(0.641\), \(0.610\), \(0.327\), HH→L \(0.71\), grow-\(s\) \(0.456\), three-shear \(2/3\) as \(C_0\) or as \(16/9\) | Samples. Floor \(\neq\) ceiling. |
@@ -133,6 +141,16 @@ Exact-shell \(K\le 16/9\) is
 **CLAIMED**, specialist pending:
 [`ATTACK-9D-FULL-SUPPORT-BOUND.md`](ATTACK-9D-FULL-SUPPORT-BOUND.md).
 
+SND-to-regularity implication is
+**OPEN** as a named hole on the SND/H
+track, not a leftover row:
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+SND sitting is not a bound on X.
+G is dead. Ring is REPAIR. Frequency
+drift from the field is still needed.
+Theorem E does not start the a priori.
+Theorem F as \(4^{N-1}\) is not a theorem.
+
 The ★ reason remains a map of why
 cheap CS hides \(s\)
 ([`LEMMA-STAR-REASON.md`](LEMMA-STAR-REASON.md)).
@@ -147,6 +165,10 @@ still not a theorem
 
 ## How to read the next sentence
 
+If we write the SND-to-regularity
+implication, that is YES as a write
+and still NO as a bound on \(X\)
+([`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md)).
 If we write H1, that is YES as a write
 and still NO as a theorem.
 If we score a framework, that is a map

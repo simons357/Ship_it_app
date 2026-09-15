@@ -57,6 +57,11 @@ Snapshot A_bad, Lambda=Lambda0 fixed
 diagnostics; not leftover 1; does not
 rescue unrestricted local (6)):
 docs/H1-ABAD-SNAPSHOT.md
+SND-to-regularity implication (what the
+shell condition controls; frequency
+drift still needed; circularity named;
+SND sitting is not a bound on X):
+docs/SND-TO-REGULARITY.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

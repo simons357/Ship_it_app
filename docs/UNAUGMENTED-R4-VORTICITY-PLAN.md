@@ -291,6 +291,16 @@ The live question is no longer “does \(\Phi\) cancel the axis?” and no longe
 
 ## 8. Theorem H and the SND dictionary
 
+The implication from the shell condition
+to ordinary regularity is written exactly
+in [`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md):
+what \(\sigma\) controls, what frequency
+drift is still needed, and where the
+argument assumes the bound. SND sitting
+is not a bound on \(X\). Theorem G is
+dead. Ring is REPAIR. Do not start H1
+from that page.
+
 Source for H: May T³ note (20405526, archive). Fluids content only. The old closure packaging is ignored.
 
 ### 8.1 What Theorem H actually says
