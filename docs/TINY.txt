@@ -108,6 +108,10 @@ SND-H review (Theorem H not established
 even with X<=M; shear kill; F_j bound
 is not propagation):
 docs/SND-H-REVIEW.md
+SND-H repair (A.2 sits; A.3 is a Dini
+ceiling, not a floor; Theorem H stays
+withdrawn; not leftover 1):
+docs/SND-H-REPAIR.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md

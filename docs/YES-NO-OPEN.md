@@ -82,6 +82,7 @@ stay samples. They are not this kill.
 | \(K\le 16s\) | Counting. Fixed \(s\) cannot unbound \(K\). |
 | Three-shear \(K_{1,2}=2/3\) | Write-up example: one line, \(K\) by hand. Floor of \(\sup K\). Not \(16/9\). Not a sweep table. [`ATTACK-9D-TWO-THIRDS.md`](ATTACK-9D-TWO-THIRDS.md). |
 | SuperGrok PR-24 table (★ dead, Need★ no repair, leftover OPEN, maxima historical) | Matches the tape. [`PR24-SUPERGROK-REVIEW.md`](PR24-SUPERGROK-REVIEW.md). |
+| \(A.2\) bound on \(F_j\) | Sits under \(X\le M\). Hölder \(6,2,3\) and Poincaré. Not Theorem H. [`SND-H-REPAIR.md`](SND-H-REPAIR.md). |
 
 ---
 
@@ -105,6 +106,8 @@ stay samples. They are not this kill.
 | Theorem F as \(4^{N-1}\rho X\) | False as stated. |
 | Theorem G | G is dead. |
 | Displayed Theorem H / \(\lvert\Pi_j\rvert\) with viscous tail | Fails even with \(X\le M\). Shear family. [`SND-H-REVIEW.md`](SND-H-REVIEW.md). |
+| Restored Theorem H from the \(F_j\) repair | \(A.2\) sits. H stays withdrawn. [`SND-H-REPAIR.md`](SND-H-REPAIR.md). |
+| \(A.3\) as a floor or as SND-C | \(A.3\) is a ceiling. Propagation unwritten. |
 | “Proved under \(X\le M\)” | Must be replaced. Defects before removing \(M\). |
 | Remove \(M\) from this same estimate | Amplitude \(A^3\) vs quadratic. Not the open target. |
 | Universal SND floor from \(t=0\) | Initial \(\rho=1/L\) shears. Obstructed. |
@@ -159,8 +162,11 @@ Theorem F as \(4^{N-1}\) is not a theorem.
 Displayed Theorem H is not established even with X<=M.
 Shear family kills the absolute-flux estimate.
 Valid F_j bound is not propagation.
+A.2 sits. A.3 is a ceiling, not a floor.
+Propagation unwritten. Theorem H withdrawn.
 definition/claim mismatch, not naming fraud:
-[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md),
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
 The original extract stays an extract.
 
 The ★ reason remains a map of why

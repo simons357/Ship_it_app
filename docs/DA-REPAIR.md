@@ -66,6 +66,9 @@ SND-C in SPREAD (Bony \(T+T^*+R\)).
 That displayed estimate is **not
 established** even with \(X\le M\):
 [`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+\(F_j\) bound sits; \(D^+\rho\) is a
+ceiling, not a floor:
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
 Arithmetic Theorem H-floor:
 \(\lambda_{\min}(H_N)\ge-1\), proved.
 
@@ -78,7 +81,10 @@ strong; \(\Phi\)-glue. Arithmetic:
 **Repair.** Fluids: keep the original
 extract as an extract. Rebuild the
 needed bound from the exact shell
-equation. Do not remove \(M\) from the
+equation. The \(F_j\) input sits; the
+propagation argument is unwritten:
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
+Do not remove \(M\) from the
 same quadratic estimate. Do not claim
 a universal SND floor from \(t=0\).
 Arithmetic: keep \(H_N\ge-1\); to sharpen,
@@ -107,5 +113,5 @@ Floor: [`SPECTRAL-FLOOR-EXPLORATION.md`](SPECTRAL-FLOOR-EXPLORATION.md)
 | Repair H by reviving \(Q>-1/2\) or \(H\ge-3/14\) | **fail** |
 | Hearing Theorem A closed means classical NS is done | **fail** |
 | `A_uniform_H1` may sit later | **open** |
-| Uniform SND-C in SPREAD may sit later | **fail** as displayed. Rebuild from the exact shell equation: [`SND-H-REVIEW.md`](SND-H-REVIEW.md). |
+| Uniform SND-C in SPREAD may sit later | **fail** as displayed. \(F_j\) bound sits; propagation unwritten: [`SND-H-REVIEW.md`](SND-H-REVIEW.md), [`SND-H-REPAIR.md`](SND-H-REPAIR.md). |
 | \(H_N\ge-1/4\) may sit later | **open** |

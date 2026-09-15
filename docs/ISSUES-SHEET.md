@@ -34,6 +34,10 @@ Do not merge the PR 48 SND/Q6/SFE pile.
 Displayed Theorem H is not established
 even with \(X\le M\):
 [`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+Repaired \(F_j\) bound sits; \(A.3\) is
+a Dini ceiling, not a floor, and not
+propagation:
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
 Not a thirteenth leftover. The original
 extract stays an extract.
 

@@ -107,6 +107,9 @@ Implication written, not a close:
 Displayed Theorem H fails even with
 \(X\le M\):
 [`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+Repaired \(F_j\) bound sits; \(A.3\) is
+a Dini ceiling, not a floor:
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
 
 Those are not sitting. Publishing them as
 finished would not save face.

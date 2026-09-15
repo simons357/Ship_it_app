@@ -216,6 +216,8 @@ Implication (not a bound on \(X\)):
 H review (displayed estimate fails even
 with \(X\le M\)):
 [`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+Repaired \(F_j\) bound; Dini ceiling:
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
 
 ---
 

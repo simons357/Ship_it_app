@@ -85,6 +85,9 @@ SND sitting is not that bound.
 Displayed Theorem H fails even with
 \(X\le M\):
 [`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+\(F_j\) bound sits; \(D^+\rho\) ceiling
+is not a floor:
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
 
 ---
 

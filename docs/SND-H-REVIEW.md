@@ -70,6 +70,11 @@ Use this as the cover-sheet correction.
 Preserve the original manuscript extract
 as an extract, clearly marked.
 
+Repaired \(F_j\) assembly and Dini
+ceiling (not a floor; Theorem H stays
+withdrawn):
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
+
 ---
 
 ## Two names for two quantities

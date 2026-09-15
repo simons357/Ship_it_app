@@ -79,3 +79,8 @@ valid \(F_j\) bound is not SND
 propagation):
 [`SND-H-REVIEW.md`](SND-H-REVIEW.md).
 The original extract stays an extract.
+Repaired \(F_j\) bound sits; the
+\(\rho\)-evolution argument is a Dini
+ceiling, not a floor, and not
+propagation:
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).

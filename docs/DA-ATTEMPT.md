@@ -122,6 +122,9 @@ frequency drift, circularity):
 Displayed Theorem H is not established
 even with \(X\le M\):
 [`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+Repaired \(F_j\) bound sits; \(D^+\rho\)
+is a ceiling, not SND-C:
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
 
 **Einstein.** Two regimes are two principles. Not one brand.
 
@@ -138,6 +141,9 @@ shears, amplitude, and equal shells.
 Displayed \(\lvert\Pi_{j^*}\rvert\) is not
 that bound:
 [`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+The \(F_j\) bound sits; the \(D^+\rho\)
+assembly is a ceiling, not that close:
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
 Arithmetic: \(H_N\ge-1\) already
 sits. Sharp: \(H_N\ge-1/4\). Do not identify the two H’s.
 
@@ -167,5 +173,5 @@ a resonator.
 | Experts agreeing write the missing line | **fail** |
 | `A_uniform_H1` may sit later | **open** |
 | RH WRITE may sit later | **open** |
-| Uniform SND-C in SPREAD may sit later | **fail** as the displayed \(\lvert\Pi_j\rvert\) estimate (even with \(X\le M\)). Rebuild from the exact shell equation is research, not leftover 1. [`SND-H-REVIEW.md`](SND-H-REVIEW.md). |
+| Uniform SND-C in SPREAD may sit later | **fail** as the displayed \(\lvert\Pi_j\rvert\) estimate (even with \(X\le M\)). \(F_j\) bound sits; \(D^+\rho\) ceiling is not SND-C. [`SND-H-REVIEW.md`](SND-H-REVIEW.md), [`SND-H-REPAIR.md`](SND-H-REPAIR.md). |
 | \(H_N\ge-1/4\) may sit later | **open** |

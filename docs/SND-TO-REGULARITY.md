@@ -18,6 +18,9 @@ No more numerical sweeps on this write.
 Specialist H review (viscous tail,
 shear kill, valid \(F_j\) bound):
 [`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+Repaired \(F_j\) assembly (Dini ceiling,
+not a floor; Theorem H withdrawn):
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
 
 Plain page (closing SND does not close NS):
 [`SND-H-PLAIN.md`](SND-H-PLAIN.md).
