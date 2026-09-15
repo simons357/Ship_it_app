@@ -21,6 +21,7 @@ Approved plain-language explanation:
 | [06 — Hilbert–Pólya program](06-HILBERT-POLYA-PROGRAM.md) | Core-role map and piece-by-piece completeness audit; not a proof of RH |
 | [07 — Pólya probe](07-POLYA-PROBE.md) | Full briefing: N components, proven Pólya facts, no Millennium glue |
 | [08 — Kept NS model](08-NS-MODEL.md) | What happens when the KEEP swirl model is entered into DA; Clay NS not claimed |
+| [SND \(\Rightarrow\) regularity](../ns-review/SND-TO-REGULARITY.md) | Shell condition controls \(J/X\) only; frequency-drift gap; written proofs assume \(X\le M\). Not Clay |
 | [NS review / Φ-renorm audit](../ns-review/PHI-RENORM-AUDIT-2026-08-22.md) | Independent audit of June 30 swirl paper; KEEP identity; barrier open; not Clay |
 
 Machine-readable provenance (original expressions are immutable):

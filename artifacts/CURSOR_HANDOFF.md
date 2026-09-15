@@ -1,10 +1,10 @@
 # Cursor handoff — Domain Architect / NS / Hilbert–Pólya
 
-**Date:** 2026-09-14  
+**Date:** 2026-09-15  
 **Repo in this environment:** `simons357/Ship_it_app`  
 **Branch that wrote this brief:** `cursor/hilbert-polya-fra-program-4642`  
 **PR:** https://github.com/simons357/Ship_it_app/pull/98  
-**Package:** `domain_architect` 0.4.7  
+**Package:** `domain_architect` 0.4.8  
 
 **How to start a new chat:** `Read CURSOR_HANDOFF.md and .cursorrules. Follow them.`
 
@@ -43,6 +43,7 @@ What DA did in this thread:
 4. Breakdown children (`--breakdown-children`). Refusals are **path guidance**, not leftover noise.
 5. Kept NS model entered (`--ns-model`). DA accepted it as a **fluids book**. KEEP algebra in \(E\). Prize output empty. Barrier still \(\|u^r/r\|_\infty\).
 6. Odlyzko–Pólya origin dump (`--odlyzko`). 1914 remark KEEP as a remark, not \(H\). Hilbert side empty. GUE chain already called weak by Odlyzko.
+7. SND \(\Rightarrow\) regularity implication written (`docs/ns-review/SND-TO-REGULARITY.md`). Shell condition controls \(J/X\) only. Frequency drift of \(j_*\) is extra data. Written Theorem H / Theorem D assume \(X\le M\). Theorem D stays retired. No new numerical sweeps.
 
 ---
 
@@ -169,6 +170,7 @@ Paths marked **this branch** are on `cursor/hilbert-polya-fra-program-4642`. Pat
 | `docs/ns-review/PHI-RENORM-AUDIT-2026-08-22.md` | 22 Aug 2026 audit; barrier open |
 | `docs/papers/swirl/Simons_PhiRenorm_Swirl_2026-06-30.tex` | June 30 conditional paper |
 | `docs/domain-architect/08-NS-MODEL.md` | What DA did with the kept model |
+| `docs/ns-review/SND-TO-REGULARITY.md` | SND-U shell share; drift gap; \(X\le M\) circularity. Not Clay |
 | `domain_architect/ns_model.py` | `--ns-model` |
 | `data/domain_architect/historical_equations.json` | `NS-H001` vorticity, `NS-H002` KEEP, `NS-H003` Stokes, `NS-H004` Biot–Savart |
 
@@ -181,6 +183,10 @@ Paths marked **this branch** are on `cursor/hilbert-polya-fra-program-4642`. Pat
 | `docs/DA-LEADS.md`, `docs/DA-DESK.md`, `docs/LITERATURE-H.md` | same |
 | `jonathan-handoff/GROK-HEAVY/01-swirl-publishing/` | five-lane / Lemma★ pack |
 | `docs/AUGMENTED-NS-PROOF-CHAIN.md` | Track A (different PDE) |
+| `docs/math/TAO-MATH-PANEL-SND-H.md`, `docs/math/SND-H-STATUS.md`, `docs/papers/SND_RING_LEMMA_NS.tex` | `cursor/tao-snd-h-panel-a0eb` (SND-U / Theorem H sources) |
+| `docs/papers/submit/03_t2_shell_flux_gronwall.tex` | same (T2 \(\rho\); opposite packaging) |
+| `docs/ns-review/SND-TWEET-DA-AUDIT.md` | `cursor/da-snd-gap-closure-0cc5` |
+| `docs/TRACK-B-CLIMB-LAW.md` | `cursor/unaugmented-r4-vorticity-f80e` (barycenter drift; not an a priori) |
 
 There is **no** file named `docs/VORTEX.md` in this checkout. Vortex-stretching literature is **not** a bound on classical \(X=\|\omega\|_2^2\). Gibbon identities are diagnostics. A forced-vortex picture is not unaugmented GR.
 
@@ -327,6 +333,7 @@ python -m unittest \
 - Or a stretching bound on this class that does **not** assume the barrier.
 - If Track A is used, **say so**; it is a different PDE.
 - Give swirl a name other than \(\Phi\) when it sits next to FRA output or Riemann’s kernel.
+- SND \(\Rightarrow\) regularity: `docs/ns-review/SND-TO-REGULARITY.md`. Next math is M-free flux and a drift law for \(j_*\), **not** more DNS. Do not green Theorem D. Do not merge SND-U with T2 \(\rho\).
 
 **RH path (set C)**
 

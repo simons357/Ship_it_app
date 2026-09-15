@@ -107,6 +107,10 @@ These are real research objects in this repo family. They are **not** UHF, SFE, 
 | NS-Φ | \(\Gamma=ru_\theta\), \(\Phi=\Gamma/r^2=u_\theta/r\), \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) | axisymmetric swirl algebra; June 30 conditional paper under `docs/papers/swirl/` | **KEEP** algebra. Open barrier \(\|u^r/r\|_\infty\) (see `PHI-RENORM-AUDIT-2026-08-22.md`). **Do not reuse \(\Phi\)** as the FRA output symbol; **not** Clay. Entered as DA instance: `python -m domain_architect --ns-model` |
 | ARITH-H | \(H_N=D^{-1/2}\widetilde Q_N D^{-1/2}\) | inverse-GCD / spectral floor | Separate arithmetic book. \(H_N\) is not coupling \(H\) |
 | ARITH-B | Bridge* pair Rayleigh \(R(e_p-e_q)>-1/2\) | pair vectors only | Keep only as arithmetic, if at all. Not a fluids or SFE input |
+| SND-U | \(\inf_t J/X\ge c_*\) with \(X=\|\nabla u\|_{L^2}^2\), \(J=\max_j X_j\) | Spectral non-dispersal (enstrophy concentration) on \(\mathbb{T}^3\) | **Hypothesis** (open). Write-up: [`SND-TO-REGULARITY.md`](../ns-review/SND-TO-REGULARITY.md). Not Clay |
+| SND-C / THM-H | \(\lvert\Pi_{j_*}\rvert\le C_*(\nu\cdot 2^{2j_*}X_{j_*}+X^{1/2}\mathcal D^{1/2})\) under \(X\le M\) and spread \(\rho\le\rho_0\) | Shell flux bound (fluids Theorem H) | **RETAIN** as conditional; warn `TH-H1`. Do not identify with ARITH-H |
+| SND-D | Clay \(\Leftrightarrow\) [SND] | Theorem D packaging | **RETIRE** (`TH-H2`) |
+| SND-T2 | \(\sup_t\rho\le\rho_0<1\) with \(\rho=\sup_j E_j/\|u\|_2^2\) | Energy-shell non-concentration; opposite packaging to SND-U | Freeze both; do not merge |
 
 ---
 

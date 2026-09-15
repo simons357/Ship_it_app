@@ -37,6 +37,8 @@ The load-bearing gap is \(\|u^r/r\|_\infty\) uniform in \(\varepsilon\), equival
 
 PARK items (SFE→NS, CMB as proof, Triple Lock, Lemma★ collapse, Track A as this PDE, Riemann \(\Phi\) as swirl \(\Phi\)) are refused, not ingested.
 
+This kept swirl model is **not** the \(\mathbb{T}^3\) SND book. SND-U is a parallel fluids hypothesis (open). The implication SND \(\Rightarrow\) regularity, including the \(X\le M\) circularity and the frequency-drift gap, is written in [`SND-TO-REGULARITY.md`](../ns-review/SND-TO-REGULARITY.md). Do not feed KEEP algebra into that chain (conflict **C-GLUE-4**).
+
 ---
 
 ## What to read as DA’s output

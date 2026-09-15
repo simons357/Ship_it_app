@@ -72,6 +72,9 @@ Do not write Φ_FRA := Φ_swirl. Do not merge either with Riemann’s kernel Φ.
 KEEP: swirl algebra, lem:Phieq, honest conditional reduction, DA as auditor.
 PARK: prize glue, CMB-as-proof, Triple Lock, Track A as this PDE, Riemann Φ as swirl Φ.
 Unaugmented NS + SND is a hypothesis (open).
+Implication write-up: `docs/ns-review/SND-TO-REGULARITY.md` (shell share only;
+frequency drift of \(j_*\) is extra; written Theorem H assumes \(X\le M\)).
+Theorem D “Clay ⇔ [SND]” stays retired. Do not merge SND-U with T2 ρ.
 
 ## Leray class names (write the class)
 
@@ -116,6 +119,7 @@ python -m domain_architect --odlyzko
 ## Next steps
 
 NS: work ‖u^r/r‖_∞ or a stretching bound that does not assume it.
+SND→regularity: M-free flux and a j_* drift law, not more DNS.
 RH: independent self-adjoint H, or RH-free LP/1926/PF/Turán, or Λ ≤ 0 without RH.
 If a cross-set map is claimed: an explicit checked transformation, not a letter.
 

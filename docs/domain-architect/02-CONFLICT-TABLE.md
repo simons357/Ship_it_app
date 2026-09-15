@@ -83,6 +83,8 @@ Columns:
 | C-GLUE-2 | Triple lock `SND ≡ GNC ≡ Bridge` | August audits: identity false | Equivalence | **RETIRED** |
 | C-GLUE-3 | \(\lambda_{\min}(Q_N)>-1/2\) for all \(N\) | Computed counterexamples (\(Q_{10}\approx-1.90\), later \(H_4\approx-0.225\)) | Spectral floor | Full-spectrum claim **retired**. Do not import into FRA |
 | C-GLUE-4 | Phi-cancel as a path to Theorem H | Identity \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) is algebra only | Φ-cancel | Keep the identity in the swirl book. Do not feed it to SFE or FRA \(\Phi\) |
+| C-GLUE-5 | SND-U \(\inf J/X\ge c_*\) (enstrophy concentration) | T2 \(\sup\rho\le\rho_0\) (energy non-concentration) | \(\rho\) packaging | **Freeze both.** Opposites. Do not merge. Write-up: [`SND-TO-REGULARITY.md`](../ns-review/SND-TO-REGULARITY.md) |
+| C-GLUE-6 | Theorem D “Clay \(\Leftrightarrow\) [SND]” | Fluids Theorem H under \(X\le M\) | Equivalence | **RETIRE** D (`TH-H2`). Keep H as conditional (`TH-H1`) |
 
 ---
 
