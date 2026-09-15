@@ -15,17 +15,17 @@ Writeups later landed on the PR #24 tip. Exact-shell 9D: **CLAIMED** — written
 
 ## What is still open
 
-- Unaugmented regularity / Clay: needs a **replacement closure**. Framed in [`REPLACEMENT-CLOSURE.md`](REPLACEMENT-CLOSURE.md). Bounded aspect does **not** exclude \(v_n\) (aspect is exactly 6). Need★ is not a repair of the old box. Extra-factor ratios \(\mathcal R_\star/\sqrt{X/E}\) on this family are diagnostics only — not a theorem.
+- Unaugmented regularity / Clay: needs a **replacement closure** for ★, or a **clean SND⇒regularity chain** that does not assume \(X\le M\). SND itself does not freeze \(j_*\). Score: [`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md). Do not glue SND to ★.
 - Exact-shell 9D / \(K\le16/9\): different statement. **CLAIMED** (written derivation; internal checks; independent specialist pending). Sweeps are consistency only. Next review: weighted incidence and the complex-polarization identity.
 - Need★ signed dual: **cannot repair** the same unrestricted bound unless hypotheses change.
 - Soft X: silent.
 
 ## Already scored (do not redo)
 
-Three-shear floor \(K=2/3\) (example, not bound); grow-\(s\) draw \(\max K\approx0.456\); aligned 9B \(0.641\); five lanes; 9A; natural 9C; truncated ABC; SuperGrok ABC stamp (still refused as *that* stamp); Dream Team vote.
+Three-shear floor \(K=2/3\) (example, not bound); grow-\(s\) draw \(\max K\approx0.456\); aligned 9B \(0.641\); five lanes; 9A; natural 9C; truncated ABC; SuperGrok ABC stamp (still refused as *that* stamp); Dream Team vote. No more \(K\) sweeps as a path to support.
 
 ## Out of this book
 
-Q-stack, SND, Theorem H, five fingers, augmented NSE.
+Q-stack, Theorem H as unconditional SND, five fingers, augmented NSE. SND⇒regularity is scored on this branch as a **different** implication ([`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md)); it is not a Clay close and is not glued to ★.
 
 DA path: point Domain Architect at [`GROWING-LAYER-SCORE.md`](GROWING-LAYER-SCORE.md). Do not send a regularity close.

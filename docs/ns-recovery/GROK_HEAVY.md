@@ -40,7 +40,7 @@ Remaining-work lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Specialist break questions:
 
 1. **Unrestricted ★ is dead** on \(v_n\). Replacement closure for unaugmented regularity is the live analytic job. Need★ dual cannot repair the same bound.
 2. **Exact-shell 9D** (\(K\le16/9\)): **CLAIMED** — written derivation available; internal checks passed; independent specialist pending. Sweeps are consistency only. Next review: weighted incidence and the complex-polarization identity. [`ATTACK-9D-FULL-SUPPORT-SCORE.md`](ATTACK-9D-FULL-SUPPORT-SCORE.md). **No as a regularity close.**
-3. **Paths to DA:** growing-layer score has landed. Do not send a regularity close.
+3. **Paths to DA:** growing-layer score has landed. SND⇒regularity is scored as a different implication ([`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md)): the shell condition does not freeze \(j_*\), and the written chain uses \(X\le M\). Do not send a regularity close.
 4. Soft X silent. H1 not started from ABC_λ.
 
 Natural same-shell (9C), AP fan (9A), and finite 9B \(K_{\alpha,\beta}\) samples are **not kills**. Do not re-run them as if they were the remaining job.
