@@ -1,13 +1,15 @@
 # SND program — comprehensive report for a specialist reviewer
 
 **Author:** Jonathan R. Simons  
-**Prepared:** 15 September 2026  
+**Prepared:** 15 September 2026; **revised the same day** after specialist comments  
 **Audience:** independent specialist (fluids / harmonic analysis), not a campaign reader  
-**Honesty lock:** classical 3D Navier–Stokes is **not** solved. Clay Statement (B) is **not** claimed. This document inventories what the SND body of work actually is.
+**Honesty lock:** this program does **not** claim unforced Clay Statement (B) (\(f\equiv 0\) on \(\mathbb{T}^3\)). A forced finite-time singularity (Clay C/D) was **announced** 8 September 2026 and is **under Clay evaluation** as of 11 September; that record is §0A below and is not used as a premise here. This document inventories the SND body of work.
 
 ---
 
 ## 0. What to tell the reviewer in one page
+
+**Send first:** [`THEOREM-H-STATEMENT-AND-PROOF.md`](./THEOREM-H-STATEMENT-AND-PROOF.md). Then the 25 August verdict, then this briefing. Cover: [`REVIEWER-PACKET.md`](./REVIEWER-PACKET.md).
 
 **SND is a legitimate extra structural hypothesis, not a theorem about all data.**
 
@@ -17,11 +19,39 @@ On \(\mathbb{T}^3\), write Littlewood–Paley enstrophy shells \(X_j\), total en
 \inf_t \frac{J(t)}{X(t)}\ge c_*>0.
 \]
 
-That is a **concentration** statement: a uniform positive fraction of enstrophy stays in a dominant shell. If it held for all Leray–Hopf data *without* assuming the \(H^1\) bound it is meant to produce, and if the SND \(\Rightarrow\) regularity arrow were clean, it would be a spectral cousin of Beale–Kato–Majda. **Neither half is proved for large data.**
+That is a **concentration** statement: a uniform positive fraction of enstrophy stays in a dominant shell. Two arrows are separately open for large data: (i) [SND] without a circular ceiling \(M\); (ii) a cleaned [SND] \(\Rightarrow\) regularity implication. Theorem D in the manuscript asserts equivalence of [SND] with Clay; that assertion is a **sketch**, not a refereed theorem. **Do not call [SND] equivalent to the Clay problem.** The extra hypothesis is in the same *genus* as BKM / LPS. That is already enough to keep the spectral dictionary.
 
 **The program is up against \(H^1\) again.** That is not a new discovery. Every spectral route that looked like a close eventually re-imported an a priori enstrophy ceiling \(X\le M\), or else failed to control stretching at energy-class regularity. After the later Lemma★ / exact-shell season (September 2026), the leftover is still an \(H^1\)-class estimate: either produce \(M\) from \(\|u_0\|_{H^1}\) alone, or control tube stretching (Door B / WRITE (6)) without an amplitude-independent rate that the ABC model already kills.
 
-**Keep spectral as language. Do not keep it as the closer.** Littlewood–Paley shells, the Ring Lemma, Bony \(T+T^*+R\), and T2 Lemma 1 are real toolkit. Using them to *claim* large-data regularity, or to glue SND to arithmetic Bridge / Q6 / Triple Lock, is the part that should stay retired.
+**Keep spectral as language and research program. Do not keep it as a claimed large-data close.** The \(X\le M\) weld is a gap in the current argument. It is not a reason to abandon Littlewood–Paley shells, the Ring Lemma, Bony \(T+T^*+R\), or T2 Lemma 1. Using those tools to *claim* unforced Statement (B), or to glue SND to arithmetic Bridge / Q6 / Triple Lock, is the part that should stay retired.
+
+Specialist preliminary judgment, accepted: screenshots identify a gap; they do not establish that spectral research should be abandoned. [SND] \(\Leftrightarrow\) Clay was overstated. Forced C/D (8–11 Sep) must be named in status lines and still do not decide unforced B.
+
+---
+
+## 0A. Public record, 8–11 September 2026 (status wording)
+
+Broad lines of the form “Navier–Stokes is not solved” / “Clay is open” are no longer accurate as *unqualified* status, because a claimed resolution of the prize problem exists in public and Clay has responded. They remain accurate for **this program’s target**.
+
+Official Fefferman statements ([Clay PDF](https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf)):
+
+| Statement | Domain | Force | Ask |
+| --- | --- | --- | --- |
+| **(A)** | \(\mathbb{R}^3\) | \(f\equiv 0\) | global smooth solutions for all admissible \(u_0\) |
+| **(B)** | \(\mathbb{T}^3\) | \(f\equiv 0\) | same, periodic |
+| **(C)** | \(\mathbb{R}^3\) | some smooth \(f\) | finite-time breakdown for some \(u_0,f\) |
+| **(D)** | \(\mathbb{T}^3\) | some smooth \(f\) | same, periodic |
+
+**(A) and (B) are compatible with (C) and (D).** Unforced global regularity and a forced blowup can both be true. The prize asks for a proof of **one** of the four.
+
+| Date | What happened | What it does *not* do |
+| --- | --- | --- |
+| **8 Sep 2026** | [OpenAI announcement](https://openai.com/index/navier-stokes-solution/): analytical write-up + Lean formalization that a fluid at rest with a **smooth external force**, finite energy throughout, develops a singularity in finite time. They present this as Clay **(C) and (D)**. They state they do not intend to claim the prize. A separate Euler result (unforced, \(\nu=0\)) is also described. | Does not prove unforced (A) or (B). Does not become a premise of the SND chain. Evaluation is not this author’s to close. |
+| **11 Sep 2026** | [Clay “Navier-Stokes Announcement”](https://www.claymath.org/news/navier-stokes-announcement/): CMI “shares in the excitement … as we contemplate the announcement that the Navier–Stokes problem has **apparently been settled**.” Prize rules “describe the process for evaluating what has been achieved and for assigning credit.” The process is “**deliberately unhurried**”; updates promised. The note does not name a claimant. | Not an award. Not a referee report. Not a decision that unforced (B) is true or false. |
+
+**Wording rule for this packet.** Write: *unforced Statement (B) is not claimed here; forced C/D have a public announcement under Clay evaluation.* Do not write “the Millennium problem is open” as if 8–11 September did not happen. Do not write “Statement (B) is closed.” Do not treat the announcement as a theorem used inside Theorem H.
+
+This program’s SND / Theorem H work is a **conditional unforced regularity** attempt on \(\mathbb{T}^3\). A forced blowup, even if later accepted as C/D, leaves that attempt mathematically live.
 
 ---
 
@@ -80,7 +110,7 @@ Do not let one acronym mean both.
 - Constantin–Fefferman alignment
 - axisymmetric same-shell remainder \(T_{j\leftarrow j}\)
 
-Closing SND-C under \(X\le M\) does **not** close ordinary NS. Closing SND-U without circular \(M\) would *essentially be* Clay Statement (B) on \(\mathbb{T}^3\), up to a refereed SND \(\Rightarrow\) regularity arrow. That is the Tao-panel one-liner, and it still stands.
+Closing (SND-C) under \(X\le M\) does **not** close unforced Statement (B). Closing large-data [SND] without circular \(M\) would still leave the **[SND] \(\Rightarrow\) regularity** arrow to be proved (Theorem D is a sketch that re-imports \(M\) on Q1 approximants). Those are two open problems. Neither is “the Clay problem” by itself. The Tao-panel one-liner that equated unconditional SND with Clay B is **withdrawn as packet language**; keep it only as a warning against packaging, not as a theorem.
 
 ---
 
@@ -115,7 +145,7 @@ Closing SND-C under \(X\le M\) does **not** close ordinary NS. Closing SND-U wit
 
 ### Later September objects (adjacent, not SND itself)
 
-These grew out of the spectral program and must be on the table so a reviewer does not think SND is still the live closer:
+These grew out of the spectral program and must be on the table so a reviewer does not think Theorem H is still a large-data closer:
 
 | Object | Status (Sept 2026, draft PRs) |
 | --- | --- |
@@ -146,10 +176,11 @@ LP shells X_j, X, J, ρ = J/X
         │
         └──────────► SND-C / Theorem H under X ≤ M, ρ ≤ ρ₀    CONDITIONAL
                           │
-                          ✕  TH-H1 weld: M is the Clay output
+                          ✕  TH-H1 weld: M is the unforced-B output
                           │
                           ▼
-                 conditional regularity under SND              NOT Clay B
+                 conditional regularity under [SND]     Theorem D is a sketch
+                                                        not a Clay equivalence
 ```
 
 **Missing conjuncts for a non-circular skeleton** (status-report synthesis, document not finished):
@@ -170,7 +201,9 @@ LP shells X_j, X, J, ρ = J/X
 
 ### Recommendation (for the reviewer, and for the author)
 
-**Keep the spectral machine. Retire spectral as the large-data closer. Do not glue it to Door B H1 to fake a second close.**
+**Keep the spectral machine as a research program. Retire spectral as a claimed close of unforced Statement (B). Do not glue it to Door B H1 to fake a second close.**
+
+The specialist’s judgment is the packet’s judgment: the \(X\le M\) screenshots are a **gap**, not a kill of LP / Bony / Ring.
 
 #### Keep (fluids Track B)
 
@@ -204,7 +237,7 @@ LP shells X_j, X, J, ρ = J/X
 
 Because the alternative is not a proved geometric close either. Door B H1 is the *same leftover stretching*, rewritten on one cylinder. The spectral dictionary is still the right way to **state** the extra hypothesis (peak-shell occupation) and to **separate** CONC from SPREAD. Dropping LP/Bony would erase the only clean description of what SND even is. What should be dropped is the belief that shell language manufactures the missing derivative.
 
-Tao reading, still the right standard: energy-supercritical methods cannot close large-data 3D NS by abstract bounds alone. SND is an *extra* hypothesis. Until it (or an equivalent critical control) is proved for all data without circular \(H^1\) bounds, NS remains open. Averaged-NS blowup (Tao 2014) is the obstruction to “energy methods plus optimism.”
+Tao reading, still the right *analytic* standard for energy methods: supercritical bounds alone do not manufacture the missing derivative. SND is an extra hypothesis. Averaged-NS blowup (Tao 2014) remains the obstruction to “energy methods plus optimism” for **unforced** large data. That standard is independent of whether a **forced** C/D announcement is later accepted.
 
 ---
 
@@ -214,7 +247,7 @@ Two live estimates, **one row each, not glued**:
 
 ### Row 1 — TH-H1 (spectral)
 
-Produce \(M=M(\|u_0\|_{H^1})\) or remove \(M\) from \(C_*\) and from \(c_*\). Until that sits, Theorem H is a conditional lemma in a bounded-enstrophy class, not Clay B.
+Produce \(M=M(\|u_0\|_{H^1})\) or remove \(M\) from \(C_*\) and from \(c_*\). Until that sits, Theorem H is a conditional lemma in a bounded-enstrophy class, not unforced Statement (B).
 
 Attack plan already written (`THEOREM-H-ATTACK-PLAN.md`): bootstrap / replace the worst \(M\)-power in the flux estimate by energy + dissipation; freeze a clean **SND-U \(\Rightarrow\) regularity** writeup as a separate depositable win; do not re-green Statement B.
 
@@ -307,29 +340,31 @@ This repository’s `main` only holds a slice (Φ-renorm KEEP card, Zenodo inven
 
 ## 9. Suggested packet for the reviewer (do not send 600 files)
 
-Send **five documents**, in this order:
+Cover sheet: [`REVIEWER-PACKET.md`](./REVIEWER-PACKET.md).
 
-1. This report.
-2. Tao panel: `docs/math/TAO-MATH-PANEL-SND-H.md` (PR #22).
-3. Adversarial Theorem H verdict: `docs/ns-review/ARCHON-PANEL-ADVERSARIAL-VERDICT.md` (PR #35).
-4. KEEP deposit abstract + PDF: [10.5281/zenodo.22050976](https://doi.org/10.5281/zenodo.22050976).
-5. Unaugmented honesty card: `docs/ns-review/UNAUG-PROOF-CHAIN.md` (PR #78), so spectral-shift is not read as a bound.
+Send **three documents**, in this order. If only one is sent, send item 1.
 
-Optional sixth, only if they ask about September: PR #74 specialist Q&A (exact-shell claimed / unrestricted ★ dead / NS still open).
+1. **Theorem H with definitions** — [`THEOREM-H-STATEMENT-AND-PROOF.md`](./THEOREM-H-STATEMENT-AND-PROOF.md). Complete [SND], (SND-C), statement, proof; where \(X\le M\) enters; whether it can be removed; what \(c_*\) may depend on.
+2. **25 August adversarial review** — [`ARCHON-PANEL-ADVERSARIAL-VERDICT.md`](./ARCHON-PANEL-ADVERSARIAL-VERDICT.md), [PR #35](https://github.com/simons357/Ship_it_app/pull/35).
+3. **This briefing** — [PR #101](https://github.com/simons357/Ship_it_app/pull/101). KEEP/PARK inventory, spectral keep/drop, 8–11 September public record.
 
-**Competitor / referee kill line (already locked):**
+Cite for public framing: [10.5281/zenodo.22050976](https://doi.org/10.5281/zenodo.22050976).
 
-> Theorem H as written assumes \(X\le M\). Clay Statement (B) is the problem of producing that bound from data. An airtight proof of SND-C under an a priori ceiling does not resolve B.
+**Competitor / referee kill line (unforced B only):**
+
+> Theorem H as written assumes \(X\le M\). Unforced Clay Statement (B) is the problem of producing a global smooth solution from data with \(f\equiv 0\). An airtight proof of (SND-C) under an a priori enstrophy ceiling does not resolve (B). Forced C/D, if later accepted, still would not decide (B).
 
 ---
 
 ## 10. Bottom line for the reviewer
 
-Jonathan Simons has a **conditional spectral regularity program** for 3D Navier–Stokes on \(\mathbb{T}^3\), built from Littlewood–Paley occupation, a band-limited Ring Lemma, and a shell-flux estimate that currently needs an enstrophy ceiling. After an honest August retraction of Clay packaging and Triple Lock glue, and after a September season that killed or restricted the Lemma★ shape box, **the leftover is again \(H^1\)**: either remove \(M\) from Theorem H, or control stretching by a geometric estimate that is not yet estimate-complete.
+Jonathan Simons has a **conditional spectral regularity program** for **unforced** 3D Navier–Stokes on \(\mathbb{T}^3\), built from Littlewood–Paley occupation, a band-limited Ring Lemma, and a shell-flux estimate that currently needs an enstrophy ceiling. After an honest August retraction of Clay-(B) packaging and Triple Lock glue, and after a September season that killed or restricted the Lemma★ shape box, **the leftover in this chain is again \(H^1\)**: either remove \(M\) from Theorem H, or control stretching by a geometric estimate that is not yet estimate-complete.
 
-**Spectral should be kept as the dictionary and the toolkit. It should not be kept as a claimed close.** Door B H1 is a parallel writing of the same leftover, not a rescue of SND. Φ-renorm is a separate axisymmetric identity with its own open barrier. Arithmetic Q6 / Bridge is a third book.
+**The \(X\le M\) gap is a gap. It is not a reason to abandon spectral research.** Littlewood–Paley / Bony / Ring remain the right dictionary for [SND]. [SND] is not equivalent to Clay: the regularity implication is itself unproved.
 
-**No Millennium claim. Clarification progress, not closure.**
+**Forced C/D** have a public announcement (8 Sep) under Clay evaluation (11 Sep). That does not decide **unforced (B)**, which is this program’s target and is **not claimed**.
+
+**No unforced Statement (B) claim. Clarification progress, not closure of (B).**
 
 ---
 
@@ -353,12 +388,16 @@ Jonathan Simons has a **conditional spectral regularity program** for 3D Navier�
 
 **Is SND proved?** No. It is a hypothesis about peak-shell occupation.
 
-**Does SND imply regularity?** Conditionally, if the arrow is cleaned and \(M\) is not smuggled. Unconditionally, that *is* the hard problem.
+**Does SND imply regularity?** Not on this manuscript. Theorem D is a sketch. Treat [SND] \(\Rightarrow\) regularity as a second open arrow.
 
-**Is Theorem H SND for all data?** No. Theorem H as written is SND-C under \(X\le M\) and spread.
+**Is [SND] equivalent to Clay?** No. Premature even if \(X\le M\) were removed.
 
-**Should spectral be dropped?** No. Drop the close, not the language.
+**Is Theorem H SND for all data?** No. Theorem H as written is (SND-C) under \(X\le M\) and spread.
 
-**Are you claiming Clay B?** No.
+**Should spectral be dropped?** No. The gap is in the large-data close, not in the LP/Bony/Ring dictionary.
+
+**Are you claiming unforced Clay (B)?** No.
+
+**Do OpenAI C/D close your target?** No. Those statements allow a force. (B) has \(f\equiv 0\). Clay’s 11 September note is evaluation, not an award.
 
 **What is the next estimate?** One of: M-free (or data-only \(M\)) Theorem H; Door B cylinder H1; axisymmetric \(T_{j\leftarrow j}\) — **not all three glued**.

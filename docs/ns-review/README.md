@@ -2,9 +2,13 @@
 
 Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS packaging.
 
-## SND reviewer briefing (15 Sep 2026)
+## Reviewer packet (15 Sep 2026)
 
-- [`SND-REVIEWER-REPORT-2026-09-15.md`](./SND-REVIEWER-REPORT-2026-09-15.md) — specialist packet: what SND is, KEEP vs PARK, the \(H^1\) loop, whether to keep spectral. **NS not solved.**
+Cover: [`REVIEWER-PACKET.md`](./REVIEWER-PACKET.md)
+
+1. [`THEOREM-H-STATEMENT-AND-PROOF.md`](./THEOREM-H-STATEMENT-AND-PROOF.md) — send this if only one document goes out.
+2. [`ARCHON-PANEL-ADVERSARIAL-VERDICT.md`](./ARCHON-PANEL-ADVERSARIAL-VERDICT.md) — 25 Aug adversarial review (PR #35).
+3. [`SND-REVIEWER-REPORT-2026-09-15.md`](./SND-REVIEWER-REPORT-2026-09-15.md) — body of work; unforced (B) not claimed; forced C/D named as 8–11 Sep public record.
 
 ## Φ-renorm (KEEP; conditional)
 
