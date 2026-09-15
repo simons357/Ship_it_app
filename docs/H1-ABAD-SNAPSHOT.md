@@ -18,8 +18,9 @@ Tube numbers (different integral): [`H1-TUBE.md`](H1-TUBE.md).
 
 ## What was asked
 
-Keep \(\Lambda=\Lambda_0\) fixed during the
-amplitude sweep. If the threshold tracks
+Keep Lambda = Lambda0 fixed during the
+amplitude sweep. \(\Lambda=\Lambda_0\).
+If the threshold tracks
 \(\|\omega\|_\infty\), a fixed-shape field
 has an amplitude-invariant high set and
 the sweep does not test the cut.
@@ -28,7 +29,7 @@ the sweep does not test the cut.
 amplitude \(1\), per field. Then only the
 field is scaled.
 
-`run_one()` computes
+`run_one()` computes `C_needed_raw`
 \(C_{\mathrm{needed,raw}}=A_{\mathrm{bad}}/(r^{-2}\iint|\omega|^2)\).
 Dissipation \(\nu/8\iint|\nabla\omega|^2\phi\)
 is not subtracted. That constant sits on
@@ -54,14 +55,28 @@ Numbers from `n=16`. A finite
 \(C_{\mathrm{needed,raw}}\) is not \(C_0\).
 A growing sample is not \(\mathcal G\to\infty\).
 
-The filled rows are written after the
-corrected sweep is run. Until then the
-script is the record.
+Corrected sweep, \(n=16\), \(r=\pi\),
+\(C_*=0.25\). \(\Lambda_0\) is frozen at
+amplitude 1 for that field.
 
 | field | amplitude | fixed threshold \(\Lambda_0\) | original bad-pair integral | \(C_{\mathrm{needed,raw}}\) |
 |---|---:|---:|---:|---:|
-| ABC | *(run)* | *(run)* | *(run)* | *(run)* |
-| Taylor–Green | *(run)* | *(run)* | *(run)* | *(run)* |
+| ABC | 0.5 | 0.857321 | \(3.30881\times 10^{3}\) | 175.538 |
+| ABC | 1 | 0.857321 | \(3.73792\times 10^{4}\) | 495.757 |
+| ABC | 2 | 0.857321 | \(3.08149\times 10^{5}\) | 1021.74 |
+| ABC | 4 | 0.857321 | \(2.47211\times 10^{6}\) | 2049.21 |
+| Taylor–Green | 0.5 | 0.700000 | 0.242843 | 0.051533 |
+| Taylor–Green | 1 | 0.700000 | \(2.69909\times 10^{3}\) | 143.191 |
+| Taylor–Green | 2 | 0.700000 | \(2.84143\times 10^{4}\) | 376.857 |
+| Taylor–Green | 4 | 0.700000 | \(2.31941\times 10^{5}\) | 769.054 |
+
+The high set grows with amplitude because
+the threshold does not. On ABC, from
+amplitude 2 to 4, \(C_{\mathrm{needed,raw}}\)
+tracks amplitude once the high set is
+nearly full. Taylor–Green at amplitude
+0.5 still sits mostly below \(\Lambda_0\).
+A finite number is not \(C_0\).
 
 ---
 
