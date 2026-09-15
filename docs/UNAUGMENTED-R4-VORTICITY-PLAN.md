@@ -293,6 +293,8 @@ The live question is no longer “does \(\Phi\) cancel the axis?” and no longe
 
 Source for H: May T³ note (20405526, archive). Fluids content only. The old closure packaging is ignored.
 
+What the shell condition controls, what frequency-drift law is still missing, and where the argument assumes the bound it wants: [`docs/SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md). That page is the implication, not a close.
+
 ### 8.1 What Theorem H actually says
 
 Shell flux into the dominant block:

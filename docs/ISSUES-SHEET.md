@@ -25,6 +25,13 @@ Do not retitle any row below as a close.
 Catalog B open count is 1 (`B_regularity`).
 That is ordinary NS. It is row 1 or 4 or 5,
 not a thirteenth NS leftover.
+The SND-to-regularity implication
+(what a shell controls, missing
+frequency drift, circular inputs)
+is written in
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+Not a thirteenth leftover. Not a close.
+No more \(K\)-sweeps for that hole.
 
 ---
 

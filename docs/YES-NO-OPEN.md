@@ -147,6 +147,15 @@ still not a theorem
 
 ## How to read the next sentence
 
+If we write SND-C, that is YES as a
+named flux bound in SPREAD and still
+NO as regularity. The shell condition
+does not control frequency drift.
+The implication assumes the desired
+bound in named places (T2 Lemma 2,
+Theorem F, Theorem E, G’s uniform
+\(C_*\)). Written:
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
 If we write H1, that is YES as a write
 and still NO as a theorem.
 If we score a framework, that is a map

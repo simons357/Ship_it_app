@@ -20,6 +20,9 @@ ordinary NS. Uniform H1 as eps → 0 still
 open. Paper: docs/THEOREM-A-Q1.pdf
 
 **Unaug NS (ordinary) — open**
+SND to regularity (shell vs drift;
+circular inputs named; not a close):
+docs/SND-TO-REGULARITY.md
 Unrestricted Lemma★ killed by v_n.
 Not a blowup. Replacement closure open:
 docs/LEMMA-STAR-GROWING-LAYER.md

@@ -63,3 +63,12 @@ That is glue. DA’s job is to stop it.
 
 Ordinary NS stays the same missing step
 whether SND is open or closed.
+
+What a shell condition actually
+controls, what frequency drift is
+still missing, and where the argument
+assumes the bound it wants:
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+That write is the implication, not a
+close. No more \(K\)-sweeps for this
+hole.

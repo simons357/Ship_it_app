@@ -53,7 +53,11 @@ SND-C only in SPREAD: uniform low paraproduct as
 \(\rho\to 0\). Do not reattach Bridge*.
 
 **To close.** A two-regime a priori. Neither side is
-yet an all-data bound on \(X\).
+yet an all-data bound on \(X\). The implication
+itself (what a shell controls, missing drift,
+circular inputs):
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+Not a close.
 
 ---
 
