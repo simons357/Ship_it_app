@@ -68,6 +68,10 @@ docs/SND-H-REVIEW.md
 SND-H repair (A.2 sits; A.3 is a Dini
 ceiling, not a floor; H withdrawn):
 docs/SND-H-REPAIR.md
+C10 chain (a_+ depletion candidate for
+leftover 5; (A) not seated; 9D frozen
+CLAIMED):
+docs/C10-CHAIN.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

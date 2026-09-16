@@ -83,6 +83,7 @@ stay samples. They are not this kill.
 | Three-shear \(K_{1,2}=2/3\) | Write-up example: one line, \(K\) by hand. Floor of \(\sup K\). Not \(16/9\). Not a sweep table. [`ATTACK-9D-TWO-THIRDS.md`](ATTACK-9D-TWO-THIRDS.md). |
 | SuperGrok PR-24 table (★ dead, Need★ no repair, leftover OPEN, maxima historical) | Matches the tape. [`PR24-SUPERGROK-REVIEW.md`](PR24-SUPERGROK-REVIEW.md). |
 | \(A.2\) bound on \(F_j\) | Sits under \(X\le M\). Hölder \(6,2,3\) and Poincaré. Not Theorem H. [`SND-H-REPAIR.md`](SND-H-REPAIR.md). |
+| Exact-shell \(C=4/3\) freeze | **CLAIMED.** No more sweeps. Independent reproduction of the projected identity / incidence. [`ATTACK-9D-FULL-SUPPORT-BOUND.md`](ATTACK-9D-FULL-SUPPORT-BOUND.md). |
 
 ---
 
@@ -115,7 +116,11 @@ stay samples. They are not this kill.
 | P1 / P1-loc / PC as H1 | Cousins. |
 | CS \(E^{3/2}\) as shape 1 | Mid-Bad / H3 class. |
 | Finite \(0.641\), \(0.610\), \(0.327\), HH→L \(0.71\), grow-\(s\) \(0.456\), three-shear \(2/3\) as \(C_0\) or as \(16/9\) | Samples. Floor \(\neq\) ceiling. |
-| SuperGrok “keep exact-shell \(4/3\) as a theorem” | Hand write. Specialist pending. Status **CLAIMED**. |
+| SuperGrok “keep exact-shell \(4/3\) as a theorem” | Hand write. Specialist pending. Status **CLAIMED**. Freeze. No more sweeps. |
+| C10 as a theorem / as leftover 1 | Named candidate for leftover 5. (A) not seated. [`C10-CHAIN.md`](C10-CHAIN.md). |
+| Merge C10 with \(T_c\) or with ★ | No explicit inequality. \(v_n\) already kills unrestricted ★. |
+| BKM from assumed spectral decay as the primary | Useful conditional. Does not attack depletion. |
+| Work Theorem H | Withdrawn. SND sits beside C10, not in front. |
 | “9D is claimed” | Designed \(\Theta(m^2)\) 9D is **NO.** The claimed object is the exact-shell bound \(C=4/3\). Do not glue the word. |
 | Attack 12 table as Need★ | Finite \(\beta/\alpha\). Not the signed dual. |
 | Glue H1 to ★, or either to the shell door | Different integrals. |
@@ -147,8 +152,13 @@ family, not a finite \(K\).
 Designed 9D stays dead.
 Do not write “9D is claimed.”
 Exact-shell \(K\le 16/9\) is
-**CLAIMED**, specialist pending:
+**CLAIMED**, freeze, no more sweeps:
 [`ATTACK-9D-FULL-SUPPORT-BOUND.md`](ATTACK-9D-FULL-SUPPORT-BOUND.md).
+C10 is not a theorem. Named leftover-5
+candidate; (A) not seated:
+[`C10-CHAIN.md`](C10-CHAIN.md).
+Do not work Theorem H. Do not merge
+C10 with \(T_c\).
 
 SND-to-regularity implication is
 **OPEN** as a named hole on the SND/H

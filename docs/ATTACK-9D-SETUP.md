@@ -33,8 +33,14 @@ Two writings of “9D” already died:
    cannot unbound \(K\).
 
 What is still live on this lane is **not**
-a new 9D object. It is growing **output**
-occupancy \(s\) on the **9B family**.
+a new 9D object. Exact-shell \(C=4/3\)
+stays **CLAIMED.** Freeze. No more
+sweeps. Independent reproduction, not
+computation: [`ATTACK-9D-FULL-SUPPORT-BOUND.md`](ATTACK-9D-FULL-SUPPORT-BOUND.md).
+Historical grow-\(s\) samples on the
+**9B family** stay historical. C10 is
+a different leftover
+([`C10-CHAIN.md`](C10-CHAIN.md)).
 
 ---
 

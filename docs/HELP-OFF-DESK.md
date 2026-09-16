@@ -514,6 +514,12 @@ class bound
 in the class on which
 \(\int\rho_j=\infty\).
 
+C10 (depletion via \(a_+\) toward (A))
+is the named candidate for this job,
+not a close:
+[`C10-CHAIN.md`](C10-CHAIN.md).
+Do not weld it to Theorem H or to \(\star\).
+
 **What is already printed and must not
 be re-litigated.** Occupancy of the
 local remainder on the named blobs is

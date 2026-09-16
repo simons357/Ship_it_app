@@ -345,6 +345,12 @@ regenerated** here:
 - A bound of the local block by
   \(\Lambda'\) or by \(\dot Z_j\).
 
+C10 (depletion via \(a_+\) toward (A))
+is a named candidate for this remainder,
+not a close:
+[`C10-CHAIN.md`](C10-CHAIN.md).
+Theorem H is not this door.
+
 If a paragraph needs an object from the
 discard list of
 [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md)

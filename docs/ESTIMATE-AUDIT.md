@@ -218,6 +218,9 @@ with \(X\le M\)):
 [`SND-H-REVIEW.md`](SND-H-REVIEW.md).
 Repaired \(F_j\) bound; Dini ceiling:
 [`SND-H-REPAIR.md`](SND-H-REPAIR.md).
+C10 candidate for the local block
+(not a theorem):
+[`C10-CHAIN.md`](C10-CHAIN.md).
 
 ---
 

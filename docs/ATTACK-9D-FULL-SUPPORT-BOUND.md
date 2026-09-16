@@ -7,6 +7,26 @@ The exact-shell bound \(C=4/3\)
 (\(K\le 16/9\)) is **CLAIMED.**
 Same bilinear. Different objects.
 
+**Freeze.** Exact-shell 9D = CLAIMED.
+Stop computational effort to make
+\(16/9\) more convincing. No more sweeps. Sweeps and
+the three-shear \(K_{1,2}=2/3\) are
+falsification / consistency checks,
+not the derivation. The remaining job
+is independent reproduction of the
+projected identity and weighted-incidence
+counting, including multiplicities and
+normalization. Do not extend 9D sweeps
+from this desk.
+
+Firewall:
+exact-shell 9D \(\neq\) unrestricted \(\star\)
+\(\neq\) regularity closure.
+
+Primary leftover-5 candidate, not this
+page: [`C10-CHAIN.md`](C10-CHAIN.md).
+Do not work Theorem H here.
+
 Unaugmented NS on \(\mathbb{T}^3\);
 quantity is \(K_{\alpha,\beta}(w)\) for
 \(Aw=\alpha w\);

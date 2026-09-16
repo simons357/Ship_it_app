@@ -112,6 +112,10 @@ SND-H repair (A.2 sits; A.3 is a Dini
 ceiling, not a floor; Theorem H stays
 withdrawn; not leftover 1):
 docs/SND-H-REPAIR.md
+C10 chain (depletion via a_+ to (A);
+named leftover-5 candidate, not a
+theorem; freeze exact-shell 9D):
+docs/C10-CHAIN.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md

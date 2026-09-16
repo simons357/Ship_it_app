@@ -21,6 +21,11 @@ shear kill, valid \(F_j\) bound):
 Repaired \(F_j\) assembly (Dini ceiling,
 not a floor; Theorem H withdrawn):
 [`SND-H-REPAIR.md`](SND-H-REPAIR.md).
+SND sits **beside** leftover 5, not in
+front of it. C10 is the named local-block
+candidate, not this implication:
+[`C10-CHAIN.md`](C10-CHAIN.md).
+Do not work Theorem H from this page.
 
 Plain page (closing SND does not close NS):
 [`SND-H-PLAIN.md`](SND-H-PLAIN.md).
