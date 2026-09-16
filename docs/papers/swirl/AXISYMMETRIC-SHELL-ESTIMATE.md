@@ -19,6 +19,8 @@ Two shells stay labeled and are not glued. **Energy** \(Z_j=\tfrac12\|P_j u\|_{L
 
 **Locked / filed 13 September 2026.** Standing honesty language for this shell-budget chain. **NS not solved.** No proofs are invented here.
 
+**Method (Jonathan, 2026-09-16):** What doesn’t work is almost as important as what actually does work — dead-end / **KILL** maps are first-class alongside **KEEP**.
+
 Class: unaugmented axisymmetric-with-swirl. Quantity: the labeled shell in use. Remainder: \(T_{j\leftarrow j}\). Assumed: [these five blocks are standing language for this program; they do not close the leftover].
 
 **Terminology.** We call the exact bookkeeping relation the **spectral-shift identity**. It is distinct from the **Lemma★ ratio bound** discussed in earlier attack notes. Establishing the identity does not establish that bound or control nonlinear transfer.

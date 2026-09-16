@@ -44,6 +44,36 @@ with \(P_j\) = **palinstrophy**, \(R\) controlled by energy / known quantities, 
 
 ---
 
+## Required structure (method lock)
+
+**Standing rule (Jonathan):** *What doesn’t work is almost as important as what actually does work.*
+
+This brief’s deliverable order is fixed:
+
+1. **Dead ends first** (KILL map) — first-class, not an afterthought.
+2. **Survivors next** (KEEP inventory, then ranked TRY/KEEP routes).
+
+Do not invent math. Do not reopen a KILL as if it seats (A).
+
+---
+
+## Dead ends (KILL list for this hunt)
+
+Do not re-open as if they seat (A):
+
+1. Occupancy \(1\) ⇒ depletion; occupancy \(1\) + \(\alpha\approx\tfrac12\) ⇒ (A).
+2. Sharp \(b=0\) energy internal \(\equiv 0\) as geometric depletion.
+3. Bounding \(T_{j\leftarrow j}\) by \(\dot e_j\), \(\dot Z\), or \(\Lambda'\).
+4. Absolute-value Young as the same-scale attack.
+5. Spectral-shift identity as Lemma★ or as transfer control.
+6. \(\rho_j<\nu\) as absorption on the **energy** budget (\(\nu Z_j\) / \(\nu D_j\)).
+7. “Axisymmetry alone ⇒ Door-1 \(T_{j\leftarrow j}\approx 0\) on mixed fields.”
+8. Importing 2-D \(\rho\sim 0.02\) / occupancy into 3-D CFM.
+9. Merging leftover-split strain, Ring/Paper2 SND, WRITE (6)/H1, Q6, or Lemma★ into this remainder.
+10. Fake close / DA-VC-01 PASS / Clay claimed.
+
+---
+
 ## Why axisymmetry alone failed on mixed fields
 
 Axisymmetry-with-swirl is a **real geometry class**: it removes free helical HHH on fully 3-D wavevector configurations incompatible with rotation about \(z\), and restricts exact-disk probes to meridional \(k=(k_x,0,k_z)\) with swirl polarization \(\hat e_y\).
@@ -55,6 +85,19 @@ What it does **not** remove:
 3. **Enstrophy same-scale** — does not inherit the energy triad telescope.
 
 So “class (C) = axisymmetric-with-swirl” is the right *plant*, not a seated bound of the remainder. Route (C) alone ≠ (A).
+
+---
+
+## Survivors — KEEP inventory (already earned)
+
+- Door-1 exact budget; remainder named \(T_{j\leftarrow j}\).
+- Sharp \(b=0\) energy identity as **hygiene** (separates near-scale from false depleters).
+- Signed \(\mathrm{Im}\) triad form; HH→L separated from same-scale.
+- Far-shell Young templates (IR/UV); summability still open.
+- Conditions (A)–(C) as **candidate** routes; Step 6 proposed IF (A).
+- Conditional Gronwall \(\nu^1\) template under explicit [A\(_\varepsilon\)], [Poincaré-shell], [far], [no-cycle].
+- Pure-swirl zero; mixed \(T^{\mathrm{mm}}\) bulk on compact samples.
+- Harness + tests: `scripts/axisym_same_scale_tjj.py`, `domain_architect.axisym_same_scale_tjj`.
 
 ---
 
@@ -125,36 +168,6 @@ Marks: **KEEP** (in the program), **TRY** (next experiment / proof move), **KILL
 **Small-data honesty.** Small data can make \(\lvert T_{j\leftarrow j}\rvert\) absorbable because everything is small — that is **not** a depletion lemma and must not be sold as (B)⇒(A) on large data.
 
 **Extra-symmetry honesty.** Compact-sample \(\overline\alpha\sim 0\) on mixed blobs did **not** kill \(T_{j\leftarrow j}\) (ratios \(O(10^{-3})\)). Alignment alone is insufficient; need a symmetry that removes meridional self-stretch or near-scale feeders.
-
----
-
-## Dead ends (KILL list for this hunt)
-
-Do not re-open as if they seat (A):
-
-1. Occupancy \(1\) ⇒ depletion; occupancy \(1\) + \(\alpha\approx\tfrac12\) ⇒ (A).
-2. Sharp \(b=0\) energy internal \(\equiv 0\) as geometric depletion.
-3. Bounding \(T_{j\leftarrow j}\) by \(\dot e_j\), \(\dot Z\), or \(\Lambda'\).
-4. Absolute-value Young as the same-scale attack.
-5. Spectral-shift identity as Lemma★ or as transfer control.
-6. \(\rho_j<\nu\) as absorption on the **energy** budget (\(\nu Z_j\) / \(\nu D_j\)).
-7. “Axisymmetry alone ⇒ Door-1 \(T_{j\leftarrow j}\approx 0\) on mixed fields.”
-8. Importing 2-D \(\rho\sim 0.02\) / occupancy into 3-D CFM.
-9. Merging leftover-split strain, Ring/Paper2 SND, WRITE (6)/H1, Q6, or Lemma★ into this remainder.
-10. Fake close / DA-VC-01 PASS / Clay claimed.
-
----
-
-## KEEP inventory (already earned)
-
-- Door-1 exact budget; remainder named \(T_{j\leftarrow j}\).
-- Sharp \(b=0\) energy identity as **hygiene** (separates near-scale from false depleters).
-- Signed \(\mathrm{Im}\) triad form; HH→L separated from same-scale.
-- Far-shell Young templates (IR/UV); summability still open.
-- Conditions (A)–(C) as **candidate** routes; Step 6 proposed IF (A).
-- Conditional Gronwall \(\nu^1\) template under explicit [A\(_\varepsilon\)], [Poincaré-shell], [far], [no-cycle].
-- Pure-swirl zero; mixed \(T^{\mathrm{mm}}\) bulk on compact samples.
-- Harness + tests: `scripts/axisym_same_scale_tjj.py`, `domain_architect.axisym_same_scale_tjj`.
 
 ---
 
