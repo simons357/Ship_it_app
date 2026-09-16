@@ -58,8 +58,20 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 | `scripts/build_qnm_table.py` | Rebuild CSV from measured + Kerr-fit sources |
 | `tests/test_hb_ringdown.py` | Unit / smoke tests |
 
+## Status map — 16 Sep 2026
+
+Desk record of open work. Instruments. No scoreboard.
+
+- Record: [`docs/STATUS-MAP.md`](docs/STATUS-MAP.md)
+- Street verbs: [`docs/status-map/STREET.txt`](docs/status-map/STREET.txt)
+- Desk card: [`docs/status-map/desk.html`](docs/status-map/desk.html)
+
+```bash
+python -m unittest tests.test_status_map_2026_09_16
+```
+
 ## Tests
 
 ```bash
-python -m unittest tests/test_hb_ringdown.py
+python -m unittest tests/test_hb_ringdown.py tests/test_status_map_2026_09_16.py
 ```

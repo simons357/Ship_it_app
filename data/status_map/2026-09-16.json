@@ -1,0 +1,115 @@
+{
+  "date": "2026-09-16",
+  "title": "Status map",
+  "kind": "instruments",
+  "scoreboard": false,
+  "operator": {
+    "name": "Jonathan Simons",
+    "entity": "Prime Field Technologies LLC",
+    "place": "Savannah",
+    "shape": "lean, founder-run"
+  },
+  "standing_rule": {
+    "rigor_first": true,
+    "gaps_named": true,
+    "visuals_and_code_make_the_math_real": true,
+    "public_output_closes_nothing": true
+  },
+  "street": {
+    "channels": ["Substack", "Cosmic Graffiti", "X", "LinkedIn"],
+    "form": "desk photo",
+    "line_rule": "one verb per line",
+    "record": "on the record"
+  },
+  "buckets": {
+    "live": [
+      {
+        "name": "Swirl",
+        "verb": "Model",
+        "notes": "axisymmetric model, unaugmented normalization, publishing package",
+        "gap": "publishing package is in progress; unaugmented frame is not a regularity close"
+      },
+      {
+        "name": "NS lemmas",
+        "verb": "Reconstruct",
+        "notes": "Python reconstructions, spectral viz, animations, negative results kept on the record",
+        "gap": "negative results stay visible; leftover estimates are not rewritten as wins"
+      },
+      {
+        "name": "Listener",
+        "verb": "Listen",
+        "notes": "nature-sound web app — design, code, OG cards",
+        "gap": "app and cards; not a physics claim"
+      },
+      {
+        "name": "Propos",
+        "verb": "Brand",
+        "notes": "brand / OG asset pipeline",
+        "gap": "pipeline, not a theorem"
+      },
+      {
+        "name": "Vigilant Monitor / Anesthesia Program",
+        "verb": "Track",
+        "notes": "ASSR–eye track, A&A / business push",
+        "gap": "clinical and business push sit beside the math desk; they do not close a PDE"
+      },
+      {
+        "name": "Lattice Edge",
+        "verb": "Grow",
+        "notes": "crystal-growth app (“how math grows better silicon”)",
+        "gap": "app sentence, not a materials proof"
+      },
+      {
+        "name": "FIELD MAPPER",
+        "verb": "Map",
+        "notes": "functional role analysis of equations",
+        "gap": "Canonical SFE status remains unresolved",
+        "here": "domain_architect/"
+      }
+    ],
+    "holding": [
+      {
+        "name": "SFE / Harmonic Blueprint",
+        "verb": "Hold",
+        "notes": "book live; unification stack still open"
+      },
+      {
+        "name": "QStack / NAV-42 / GCD shells / E8 cathedral",
+        "verb": "Hold",
+        "notes": "instruments, not claims"
+      },
+      {
+        "name": "RH / GCD-matrix notes",
+        "verb": "Hold",
+        "notes": "bounds, Q6, draft paper"
+      },
+      {
+        "name": "HarborSafe / REEF / TITAN-X / Space Power Beaming",
+        "verb": "Hold",
+        "notes": "one-pagers"
+      },
+      {
+        "name": "Prime Breath, Super Graph, Gematria (Base 44), Unified Map, ArtCritic",
+        "verb": "Hold",
+        "notes": "named pile, still on the shelf"
+      }
+    ],
+    "cold": [
+      {
+        "name": "Older NS/SFE/RH preprints on Zenodo",
+        "verb": "File",
+        "notes": "~20+"
+      },
+      {
+        "name": "IRS hobby-classification friction on Prime Field R&D",
+        "verb": "File",
+        "notes": "friction named, not argued here"
+      },
+      {
+        "name": "Journal / arXiv / Tao-addendum queue",
+        "verb": "File",
+        "notes": "in the file, not the headline"
+      }
+    ]
+  }
+}
