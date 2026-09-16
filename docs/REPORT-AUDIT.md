@@ -21,6 +21,11 @@ Sources scored here:
    done”; “C10 died”; every lane
    is \(\|\nabla u\|_\infty\) from
    \(X\le M\)).
+7. Full 16 Sep “Global Regularity
+   Program” write (queued twice).
+8. Operator: enough information
+   for a plan toward a closed
+   unaugmented equation?
 
 Tape: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).
 Handoff: [`NS-STATUS.md`](NS-STATUS.md).
@@ -187,6 +192,9 @@ ordinary NS.
 
 ## 6. Later GPT-style ceiling note
 
+Short bullets queued first.
+The full write is §8.
+
 | Claim | Tape |
 |---|---|
 | Exact shell budget, commutator, conditional \(F_j\) sit | **YES.** |
@@ -199,7 +207,90 @@ ordinary NS.
 
 ---
 
-## 7. What every report got right together
+## 8. Full 16 Sep “Global Regularity Program”
+
+Long write, queued twice.
+Most complete peer note.
+Mostly honest. Several lethal slips.
+
+### What it got right
+
+- Ordinary unforced NS is **OPEN**.
+  Nothing in that cycle closed it.
+- Displayed Theorem H is **DEAD**
+  (packet/viscous tail, false
+  embeddings, shear ratio).
+- \(M\)-free quadratic \(F_j\) is
+  **DEAD** (amplitude \(A^3\)).
+- Universal \(t=0\) SND floor is
+  **DEAD** (\(v_L\), \(\rho(0)=1/L\)).
+- Exact shell budget sits.
+- \(A.2\) sits under \(X\le M\).
+- Exact-shell \(K\le 16/9\) stays
+  **CLAIMED**, not a close.
+- Geometric-tail / BKM as primary
+  is correctly **demoted**.
+- Cover-sheet posture (“active
+  program, conditional partial,
+  catalog of kills — not near
+  proof”) is the right public
+  sentence.
+
+### What it got wrong
+
+| Claim | Tape |
+|---|---|
+| Peak-fraction floor listed under “unconditional, rigorous” | **WRONG.** Their own next sentence makes it conditional on \(\Gamma=\|\nabla u\|_\infty\) and \(\Lambda=\sup\lambda_{j_*}\). That is BKM-adjacent. On this desk \(A.3\) is a \(D^+\) **ceiling**, not a \(D^-\) floor. The displayed \(D^-\rho\ge -A(t)\rho\) write is **not seated**. |
+| \(A.2\) rests on Kato–Ponce; every §2 result waits on that citation | **WRONG.** Seated \(A.2\) is Hölder \((6,2,3)\) + Poincaré + \(\mathcal D\ge\nu\lambda_1 X\). Kato–Ponce is a cheap check for the TJJ \(L^\infty\) remainder, not the foundation of \(A.2\). |
+| “C10 died” as a program | **WRONG.** (A) failed to seat because the present remainder is \(L^\infty\). That is the circularity **risk** of the current write. It is not a death of the leftover-5 candidate. Route A is: write a dynamical \(a_+\) that avoids \(H^1\) / \(L^\infty\) / BKM, or name that death. |
+| The three lanes are “the same bet in different notation” | **HALF.** Same difficulty class (supercritical; need dynamics). Different estimate shapes and different death conditions. Treating them as notation variants is how you stop attacking cancellation. |
+| Treat C10 / 9D as no closer than the SND conditional | **HALF.** Neither is a close. C10 is still the first **write-or-kill**. 9D is frozen CLAIMED, not a regularity route. The SND \(\Gamma\)-floor is a publication fallback, not the living attack. |
+| Commutator means Bony is “not structurally necessary” | **HALF.** \(F_j=\langle[\Delta_j,u\cdot\nabla]u,\Delta_j u\rangle\) is a true identity. Indexed Bony is still what a \(\rho\)-floor would need. This desk is not writing that floor as primary. |
+
+### Its seven recommendations
+
+| # | Ask | This desk |
+|---|---|---|
+| 1 | Verify Kato–Ponce vs a primary source | **CHEAP, not primary.** Do it if the TJJ remainder cites it. Do not stall Route A on a citation. \(A.2\) does not rest on it. |
+| 2 | Synchronize a lower-Dini \(\rho\) floor and re-run shears | **REJECT as primary.** Pólya resurrection. Conditional on \(\Gamma,\Lambda\) it is BKM. \(A.3\) stays a ceiling. |
+| 3 | Close 9D by independent reproduction, or find the break | **FROZEN.** Independent reproduction only. Not this desk’s next write. No more sweeps. |
+| 4 | Next depletion candidate under the C10 discipline | **ACCEPT.** This is Route A. Dynamical \(a_+\) or a named death. |
+| 5 | “Decide whether” centered drift is worth it | **ALREADY DECIDED.** Route B. Independent. Do not merge with C10 without an inequality. |
+| 6 | Keep the \(\Gamma\)-conditional as a publishable fallback | **ACCEPT as posture.** Not the living attack. Not a close. |
+| 7 | Hunt a different quantity than \(\rho=J/X\) | **PARK.** That is leftover-4 territory if both routes die. Not critical path now. |
+
+---
+
+## 9. Last question from the operator
+
+> Do you have enough information
+> right now to write a logical,
+> authoritative, comprehensive plan
+> toward a closed Xavier Stokes on
+> [un]augmented equation?
+
+**Yes for a plan. No for a close.**
+
+This desk is **unaugmented** Track B.
+Keep \(1/r^4\). No \(Q_1\). No
+\(\Phi\)-cancel. No \(K(t)\) in the
+PDE. If the paste said “on
+augmented,” that is a different
+equation. Theorem A sits there.
+A is not B. Do not switch.
+
+The reports plus the tape are
+enough to name what is proved,
+claimed, open, and dead, and to
+order the next two writes.
+They are not enough to seat (A)
+or a useful \(K\). The plan is
+[`MASTER-PLAN.md`](MASTER-PLAN.md).
+Talking is not the close.
+
+---
+
+## 10. What every report got right together
 
 False bridges are gone:
 
@@ -242,6 +333,10 @@ Its one lethal error: unrestricted
 ★ is **KILLED**, not OPEN.
 C10 is not a sitting route.
 A.3 is not a floor.
+The long write’s “unconditional
+peak-fraction floor” is not seated.
+\(A.2\) is not Kato–Ponce.
 Blowup-search is not this line.
 Do not repair H.
+Enough for a plan. Not a close.
 NS not solved.

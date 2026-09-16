@@ -15,6 +15,19 @@ question: how do we beat unforced
 3-D Navier–Stokes with the
 machinery that survived?
 
+**Enough information?** Yes for
+this plan. No for a close.
+Incoming reports plus the tape
+are enough to name the leftover
+and order the next writes. They
+are not enough to seat (A) or a
+useful \(K\).
+
+This desk is **unaugmented**.
+Track A / \(Q_1\) / Theorem A is
+a different PDE. A is not B.
+Do not switch.
+
 Honest first sentence: **we do
 not have a seated close.** A
 successful route has to produce
@@ -309,6 +322,54 @@ bridge.
 No parallel resurrection of H.
 No Pólya \(\rho\)-floor document
 as primary. No “9D is claimed.”
+No Kato–Ponce stall of Route A.
+No switch to Track A.
+
+---
+
+## Peer recommendations, accepted or not
+
+From the long 16 Sep “Global
+Regularity Program” write.
+Full score: [`REPORT-AUDIT.md`](REPORT-AUDIT.md)
+§8.
+
+**Accept now**
+
+- Route A: next depletion write
+  under the C10 discipline
+  (dynamical \(a_+\), or name
+  the death).
+- Route B already chosen:
+  centered pairing, useful \(K\).
+- \(\Gamma\)-conditional as a
+  publication fallback, not
+  the living attack.
+- Exact-shell bound stays
+  CLAIMED. No more sweeps.
+
+**Reject as primary**
+
+- Lower-Dini \(\rho\)-floor /
+  “synchronize the corrected
+  peak-fraction floor.”
+- “C10 died — generate a
+  different mechanism” as if
+  the candidate program is
+  already dead. The failed
+  seating of (A) is the reason
+  Route A is a write-or-kill,
+  not a burial.
+- “Decide whether” centered
+  drift is worth it. It is
+  Route B.
+- Kato–Ponce citation as the
+  load-bearing next step.
+  \(A.2\) is Hölder \(6,2,3\).
+- Close 9D on this desk.
+- Switch the living line to
+  augmented NS or to a
+  blowup hunt.
 
 ---
 
@@ -347,6 +408,8 @@ target, not an estimate.
 A.3 is a ceiling, not a floor.
 Blowup-search is not this line.
 Do not repair H.
+This desk is unaugmented.
+Enough for this plan. Not a close.
 Two routes, independent, both
 OPEN, both killable.
 NS not solved.

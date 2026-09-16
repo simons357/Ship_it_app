@@ -14,6 +14,8 @@ Incoming reports scored:
 [`REPORT-AUDIT.md`](REPORT-AUDIT.md).
 How this desk moves:
 [`MASTER-PLAN.md`](MASTER-PLAN.md).
+Enough for that plan. Not a close.
+This desk is unaugmented. A is not B.
 
 Phone pack: [`TINY.txt`](TINY.txt).
 Tape: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).

@@ -47,9 +47,11 @@ Centered drift:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 SND instrument, no persistence:
 [`SND-INSTRUMENT.md`](SND-INSTRUMENT.md).
-Master plan (two OPEN routes):
+Master plan (two OPEN routes;
+enough for a plan, not a close):
 [`MASTER-PLAN.md`](MASTER-PLAN.md).
-Report audit:
+Report audit (long 16 Sep write
+scored; Kato–Ponce is not \(A.2\)):
 [`REPORT-AUDIT.md`](REPORT-AUDIT.md).
 Not a thirteenth leftover. The original
 extract stays an extract.
