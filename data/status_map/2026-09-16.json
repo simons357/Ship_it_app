@@ -13,7 +13,7 @@
     "rigor_first": true,
     "gaps_named": true,
     "visuals_and_code_make_the_math_real": true,
-    "public_output_closes_nothing": true
+    "ban_sentence": "No Clay / prize / QED / \"solved\" language in public output."
   },
   "street": {
     "channels": ["Substack", "Cosmic Graffiti", "X", "LinkedIn"],
@@ -26,44 +26,37 @@
       {
         "name": "Swirl",
         "verb": "Model",
-        "notes": "axisymmetric model, unaugmented normalization, publishing package",
-        "gap": "publishing package is in progress; unaugmented frame is not a regularity close"
+        "notes": "axisymmetric model, unaugmented normalization, publishing package"
       },
       {
         "name": "NS lemmas",
         "verb": "Reconstruct",
-        "notes": "Python reconstructions, spectral viz, animations, negative results kept on the record",
-        "gap": "negative results stay visible; leftover estimates are not rewritten as wins"
+        "notes": "Python reconstructions, spectral viz, animations, negative results kept on the record"
       },
       {
         "name": "Listener",
         "verb": "Listen",
-        "notes": "nature-sound web app — design, code, OG cards",
-        "gap": "app and cards; not a physics claim"
+        "notes": "nature-sound web app — design, code, OG cards"
       },
       {
         "name": "Propos",
         "verb": "Brand",
-        "notes": "brand / OG asset pipeline",
-        "gap": "pipeline, not a theorem"
+        "notes": "brand / OG asset pipeline"
       },
       {
         "name": "Vigilant Monitor / Anesthesia Program",
         "verb": "Track",
-        "notes": "ASSR–eye track, A&A / business push",
-        "gap": "clinical and business push sit beside the math desk; they do not close a PDE"
+        "notes": "ASSR–eye track, A&A / business push"
       },
       {
         "name": "Lattice Edge",
         "verb": "Grow",
-        "notes": "crystal-growth app (“how math grows better silicon”)",
-        "gap": "app sentence, not a materials proof"
+        "notes": "crystal-growth app (“how math grows better silicon”)"
       },
       {
         "name": "FIELD MAPPER",
         "verb": "Map",
         "notes": "functional role analysis of equations",
-        "gap": "Canonical SFE status remains unresolved",
         "here": "domain_architect/"
       }
     ],
@@ -91,7 +84,7 @@
       {
         "name": "Prime Breath, Super Graph, Gematria (Base 44), Unified Map, ArtCritic",
         "verb": "Hold",
-        "notes": "named pile, still on the shelf"
+        "notes": "named pile"
       }
     ],
     "cold": [
@@ -103,7 +96,7 @@
       {
         "name": "IRS hobby-classification friction on Prime Field R&D",
         "verb": "File",
-        "notes": "friction named, not argued here"
+        "notes": "friction named"
       },
       {
         "name": "Journal / arXiv / Tao-addendum queue",

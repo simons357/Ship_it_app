@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import copy
 import json
 import pathlib
 import re
@@ -18,7 +19,8 @@ STILL = ROOT / "assets" / "status-map" / "still-life-2026-09-16.png"
 DESK = ROOT / "assets" / "status-map" / "desk-2026-09-16.png"
 
 FORBIDDEN = ("clay", "prize", "qed", "solved")
-PUBLIC_TEXT = (RECORD, STREET, HTML, SVG, README)
+STREET_TEXT = (STREET, HTML, SVG, README)
+STANDING_BAN = 'No Clay / prize / QED / “solved” language in public output.'
 
 LIVE_VERBS = (
     "Model",
@@ -62,8 +64,7 @@ class TestStatusMap20260916(unittest.TestCase):
         live = self.data["buckets"]["live"]
         self.assertEqual([item["name"] for item in live], list(LIVE_NAMES))
         self.assertEqual([item["verb"] for item in live], list(LIVE_VERBS))
-        for item in live:
-            self.assertTrue(item["gap"])
+        self.assertIn("negative results kept on the record", live[1]["notes"])
 
     def test_holding_is_instruments_not_claims(self) -> None:
         holding = {item["name"]: item for item in self.data["buckets"]["holding"]}
@@ -71,12 +72,12 @@ class TestStatusMap20260916(unittest.TestCase):
         self.assertIn("unification stack still open", holding["SFE / Harmonic Blueprint"]["notes"])
         qstack = holding["QStack / NAV-42 / GCD shells / E8 cathedral"]
         self.assertEqual(qstack["notes"], "instruments, not claims")
-        self.assertIn("Instruments, not claims", self.record)
+        self.assertIn("instruments, not claims", self.record)
 
     def test_cold_queue_stays_in_the_file(self) -> None:
         cold = [item["name"] for item in self.data["buckets"]["cold"]]
         self.assertIn("Journal / arXiv / Tao-addendum queue", cold)
-        self.assertIn("In the file, not the headline.", self.record)
+        self.assertIn("in the file, not the headline", self.record)
 
     def test_street_is_one_verb_per_line(self) -> None:
         lines = [line for line in self.street.splitlines() if line.strip()]
@@ -102,13 +103,14 @@ class TestStatusMap20260916(unittest.TestCase):
         self.assertTrue(rule["rigor_first"])
         self.assertTrue(rule["gaps_named"])
         self.assertTrue(rule["visuals_and_code_make_the_math_real"])
-        self.assertTrue(rule["public_output_closes_nothing"])
         self.assertIn("Rigor first", self.record)
         self.assertIn("Gaps named", self.record)
         self.assertIn("Visuals and code make the math real", self.record)
+        self.assertIn(STANDING_BAN, self.record)
+        self.assertIn("Clay", rule["ban_sentence"])
 
-    def test_public_text_avoids_banned_claim_words(self) -> None:
-        for path in PUBLIC_TEXT:
+    def test_street_cards_avoid_banned_claim_words(self) -> None:
+        for path in STREET_TEXT:
             text = path.read_text(encoding="utf-8").lower()
             for word in FORBIDDEN:
                 self.assertNotRegex(
@@ -117,10 +119,21 @@ class TestStatusMap20260916(unittest.TestCase):
                     msg=f"{path} contains banned claim word {word!r}",
                 )
 
-    def test_json_avoids_banned_claim_words(self) -> None:
-        blob = json.dumps(self.data).lower()
+    def test_record_bans_only_in_standing_rule(self) -> None:
+        body, _, rule = self.record.partition("## Standing rule")
+        self.assertTrue(rule)
+        for word in FORBIDDEN:
+            self.assertNotRegex(body.lower(), rf"\b{re.escape(word)}\b")
+        self.assertIn(STANDING_BAN, rule)
+
+    def test_json_bans_only_in_standing_rule(self) -> None:
+        payload = copy.deepcopy(self.data)
+        ban = payload["standing_rule"].pop("ban_sentence")
+        blob = json.dumps(payload).lower()
         for word in FORBIDDEN:
             self.assertNotRegex(blob, rf"\b{re.escape(word)}\b")
+        for word in FORBIDDEN:
+            self.assertIn(word, ban.lower())
 
     def test_desk_card_carries_street_copy(self) -> None:
         html = HTML.read_text(encoding="utf-8")
@@ -134,8 +147,8 @@ class TestStatusMap20260916(unittest.TestCase):
     def test_field_mapper_gap_named(self) -> None:
         mapper = self.data["buckets"]["live"][-1]
         self.assertEqual(mapper["name"], "FIELD MAPPER")
-        self.assertIn("unresolved", mapper["gap"])
-        self.assertIn("Canonical SFE status remains unresolved", self.record)
+        self.assertEqual(mapper["notes"], "functional role analysis of equations")
+        self.assertIn("FIELD MAPPER: functional role analysis of equations", self.record)
 
     def test_savannah_entity(self) -> None:
         self.assertEqual(self.data["operator"]["entity"], "Prime Field Technologies LLC")

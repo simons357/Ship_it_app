@@ -18,4 +18,4 @@ Re-print the folio (needs Pillow):
 python3 scripts/render_status_map_desk.py
 ```
 
-FIELD MAPPER in this repository is Domain Architect. Canonical SFE status remains unresolved.
+FIELD MAPPER in this repository is Domain Architect.
