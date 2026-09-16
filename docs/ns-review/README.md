@@ -2,6 +2,8 @@
 
 Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS packaging.
 
+**Desk map (whole program, 16 Sep):** [`../STATUS-MAP-2026-09-16.md`](../STATUS-MAP-2026-09-16.md) — live / holding / cold / street. Instruments. No scoreboard. No Clay language in public output.
+
 ## Live lanes (16 Sep 2026)
 
 Three independent bets on the same unresolved dynamical question. None currently proves that the dynamics cooperate. C10 is **not** closer to done than BKM.
