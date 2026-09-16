@@ -2,6 +2,20 @@
 
 Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS packaging.
 
+## SND — send this
+
+Shared target: [`SND-CLARIFICATION.md`](./SND-CLARIFICATION.md) — Theorem H withdrawn, A.2 retained, A.3 wrong Dini side, boxed persistence (P).
+
+Answer: [`SND-PERSISTENCE.md`](./SND-PERSISTENCE.md) — correctly oriented lower comparison, indexed LH/HL/HH, A.2 leftover \(4^{j_*}\), Family H. **(P) is false.** No conditional local SND-persistence under only \((M,\nu,\rho_*)\). Do not repair Theorem H.
+
+Identities card: [`SND-WHAT-IS-KEPT.md`](./SND-WHAT-IS-KEPT.md) — exact shell identity, valid \(F_j\) lemma, Tests A–C.
+
+Arithmetic: `python3 scripts/snd_persistence_test.py`.
+
+Cover: [`REVIEWER-PACKET.md`](./REVIEWER-PACKET.md). Optional letter: [`PANEL-RESPONSE-2026-09-16.md`](./PANEL-RESPONSE-2026-09-16.md).
+
+Archive (do not send): Theorem H extract, August ARCHON roleplay, 15 Sep briefing, full 15 Sep audit, longer shell-budget writeup.
+
 ## Φ-renorm (KEEP; conditional)
 
 - [`PHI-RENORM-WHAT-IS-KEPT.md`](./PHI-RENORM-WHAT-IS-KEPT.md) — field-first KEEP / PARK card; separate from Lemma★.
@@ -10,4 +24,4 @@ Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS p
 
 **Open barrier (unchanged):** \(\|u^r/r\|_{L^\infty}\) uniform in \(\eps\) — equivalent to axisymmetric-with-swirl global regularity. Paper remains a conditional reduction. Clay is not closed.
 
-**Do not conflate** with Lemma★ PRODUCT-BLOCK packaging.
+**Do not conflate** with Lemma★ PRODUCT-BLOCK packaging, or with the SND shell identity above.
