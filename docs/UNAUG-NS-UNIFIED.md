@@ -31,6 +31,9 @@ Incoming boards vs tape:
 ChatGPT paste vs Grok desk vs
 the C10 word:
 [`INCOMING-WRITEUPS.md`](INCOMING-WRITEUPS.md).
+**Download (Save As) markdown:**
+[`incoming/NS-SND-FINAL-STATUS-REPORT.md`](incoming/NS-SND-FINAL-STATUS-REPORT.md).
+Incoming. Not the tape. Not a close.
 
 ---
 

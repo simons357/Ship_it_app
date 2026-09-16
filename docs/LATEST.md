@@ -24,6 +24,11 @@ Incoming ChatGPT / Grok / Claude
 write-ups (C10 “dead” is not leftover
 5 closed):
 docs/INCOMING-WRITEUPS.md
+**Download (Save As) — NS/SND Final
+Status Report, Markdown:**
+docs/incoming/NS-SND-FINAL-STATUS-REPORT.md
+https://raw.githubusercontent.com/simons357/Ship_it_app/cursor/unaug-ns-unified-status-a7a2/docs/incoming/NS-SND-FINAL-STATUS-REPORT.md
+Incoming, not the tape. Not a close.
 Unified status after peer reports
 (enough for a score, not a close):
 docs/UNAUG-NS-UNIFIED.md

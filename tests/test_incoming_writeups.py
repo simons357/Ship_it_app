@@ -17,6 +17,7 @@ TAPE = ROOT / "docs" / "YES-NO-OPEN.md"
 AUDIT = ROOT / "docs" / "REPORT-AUDIT.md"
 C10 = ROOT / "docs" / "C10-CHAIN.md"
 TINY = ROOT / "docs" / "TINY.txt"
+LATEST = ROOT / "docs" / "LATEST.md"
 
 
 class IncomingWriteupsTests(unittest.TestCase):
@@ -28,7 +29,15 @@ class IncomingWriteupsTests(unittest.TestCase):
         self.assertIn("Grok", text)
         self.assertIn("Leftover 5 stays OPEN", text)
         self.assertIn("C10 is not a theorem", text)
-        self.assertIn("GLOBAL-REGULARITY-PROGRAM-2026-09-16.md", text)
+        self.assertIn("NS-SND-FINAL-STATUS-REPORT.md", text)
+        report = ROOT / "docs" / "incoming" / "NS-SND-FINAL-STATUS-REPORT.md"
+        self.assertTrue(report.is_file())
+        report_text = report.read_text()
+        self.assertIn("Download this file", report_text)
+        self.assertIn("Not the tape itself", report_text)
+        self.assertIn("NS not solved", report_text)
+        self.assertIn("NS-SND-FINAL-STATUS-REPORT.md", TINY.read_text())
+        self.assertIn("NS-SND-FINAL-STATUS-REPORT.md", LATEST.read_text())
         self.assertNotIn("NS is solved", text)
         self.assertNotIn("Clay is solved", text)
         self.assertNotIn("almost proved", text.lower())

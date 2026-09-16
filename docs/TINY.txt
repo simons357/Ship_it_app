@@ -143,6 +143,8 @@ Claude / Grok; C10 “dead” is the
 failed seat of (A), not leftover 5
 closed):
 docs/INCOMING-WRITEUPS.md
+Download name (Save As):
+docs/incoming/NS-SND-FINAL-STATUS-REPORT.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md

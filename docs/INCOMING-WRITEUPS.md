@@ -23,14 +23,14 @@ The long 16 Sep “Global Regularity
 Program” paste is the ChatGPT-shaped
 write-up. Filed:
 [`incoming/GLOBAL-REGULARITY-PROGRAM-2026-09-16.md`](incoming/GLOBAL-REGULARITY-PROGRAM-2026-09-16.md).
+**Download name (Save As):**
+[`incoming/NS-SND-FINAL-STATUS-REPORT.md`](incoming/NS-SND-FINAL-STATUS-REPORT.md).
 It was already scored:
 [`REPORT-AUDIT.md`](REPORT-AUDIT.md) §8.
 
-The queued line “Download the complete
-NS/SND Final Status Report — Markdown”
-is not a file I can pull. Paste or
-attach the `.md` if a later export
-differs from that paste.
+I cannot press ChatGPT’s download
+button. This repo file is the
+markdown.
 
 ---
 

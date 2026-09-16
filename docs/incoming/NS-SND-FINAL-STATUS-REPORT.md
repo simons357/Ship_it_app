@@ -1,3 +1,22 @@
+# NS/SND Final Status Report — Markdown
+
+**Download this file.**
+Same body as the 16 Sep Global
+Regularity Program paste, with the
+tape on each section.
+Not the tape itself. Not a close.
+
+GitHub:
+https://github.com/simons357/Ship_it_app/blob/cursor/unaug-ns-unified-status-a7a2/docs/incoming/NS-SND-FINAL-STATUS-REPORT.md
+
+Raw (Save As):
+https://raw.githubusercontent.com/simons357/Ship_it_app/cursor/unaug-ns-unified-status-a7a2/docs/incoming/NS-SND-FINAL-STATUS-REPORT.md
+
+Living desk score (different file):
+[`../UNAUG-NS-UNIFIED.md`](../UNAUG-NS-UNIFIED.md)
+
+---
+
 # Incoming — Navier–Stokes Global Regularity Program
 
 **Incoming paste. 16 September 2026.
@@ -15,8 +34,6 @@ Do not treat this file as
 Scored: [`REPORT-AUDIT.md`](../REPORT-AUDIT.md) §8.
 Who said what:
 [`INCOMING-WRITEUPS.md`](../INCOMING-WRITEUPS.md).
-**Download (Save As) copy:**
-[`NS-SND-FINAL-STATUS-REPORT.md`](NS-SND-FINAL-STATUS-REPORT.md).
 
 **C10 “died” in §4 is NO as a program
 death.** (A) not seated. Leftover 5
