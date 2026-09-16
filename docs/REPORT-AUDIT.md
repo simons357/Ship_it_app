@@ -254,7 +254,7 @@ Mostly honest. Several lethal slips.
 | 1 | Verify Kato–Ponce vs a primary source | **CHEAP, not primary.** Do it if the TJJ remainder cites it. Do not stall Route A on a citation. \(A.2\) does not rest on it. |
 | 2 | Synchronize a lower-Dini \(\rho\) floor and re-run shears | **REJECT as primary.** Pólya resurrection. Conditional on \(\Gamma,\Lambda\) it is BKM. \(A.3\) stays a ceiling. |
 | 3 | Close 9D by independent reproduction, or find the break | **FROZEN.** Independent reproduction only. Not this desk’s next write. No more sweeps. |
-| 4 | Next depletion candidate under the C10 discipline | **ACCEPT.** This is Route A. Dynamical \(a_+\) or a named death. |
+| 4 | Next depletion candidate under the C10 discipline | **ACCEPT as write-or-kill.** Later C10 (PR 103) records the first new arrow empty. If the page cannot be written without \(H^1/L^\infty/\)BKM, name the death. PR 102 “SURVIVES” is not an inequality. |
 | 5 | “Decide whether” centered drift is worth it | **ALREADY DECIDED.** Route B. Independent. Do not merge with C10 without an inequality. |
 | 6 | Keep the \(\Gamma\)-conditional as a publishable fallback | **ACCEPT as posture.** Not the living attack. Not a close. |
 | 7 | Hunt a different quantity than \(\rho=J/X\) | **PARK.** That is leftover-4 territory if both routes die. Not critical path now. |
@@ -286,7 +286,38 @@ order the next two writes.
 They are not enough to seat (A)
 or a useful \(K\). The plan is
 [`MASTER-PLAN.md`](MASTER-PLAN.md).
+The unified page after the later
+peer ingest is
+[`UNAUG-NS-UNIFIED.md`](UNAUG-NS-UNIFIED.md).
 Talking is not the close.
+
+---
+
+## 9b. Peer cloud-agent reports (16 Sep, later)
+
+Four summarize agents plus the SND
+spectral / C10 / \(T_j\) desks.
+Not RH. Not the magazine.
+
+**Take.** Displayed H withdrawn even
+under \(X\le M\). Boxed \(\dot X_j\)
+in \(F_j\) KEEP. Tests A–C sit.
+C10 identities sit; template
+\(\to a_+\) is empty; do not repair
+with \(\|\nabla u\|_\infty\).
+PR 102 “SURVIVES” means circular
+drafts were refused. Unrestricted
+\(\star\) stays **KILLED** (do not
+revive the older “★ still OPEN”).
+Frequency drift from the field is
+still missing. Same-shell
+energy-linear \(R\) is dead.
+H1 stays OPEN on a different
+integral. Φ-renorm algebra is not
+the torus book.
+
+**Reject as a close.** Any weld of
+those reports into Statement B.
 
 ---
 

@@ -43,6 +43,10 @@ not a thirteenth leftover and not a
 theorem: [`C10-CHAIN.md`](C10-CHAIN.md).
 16 Sep handoff (four buckets):
 [`NS-STATUS.md`](NS-STATUS.md).
+Unified status after the peer
+ingest (enough for a score, not a
+close):
+[`UNAUG-NS-UNIFIED.md`](UNAUG-NS-UNIFIED.md).
 Centered drift:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 SND instrument, no persistence:

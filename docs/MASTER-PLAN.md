@@ -9,6 +9,8 @@ Adjudication of the incoming
 reports: [`REPORT-AUDIT.md`](REPORT-AUDIT.md).
 Score: [`NS-STATUS.md`](NS-STATUS.md).
 Tape: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).
+Unified status after the peer
+ingest: [`UNAUG-NS-UNIFIED.md`](UNAUG-NS-UNIFIED.md).
 
 This page answers the operator’s
 question: how do we beat unforced

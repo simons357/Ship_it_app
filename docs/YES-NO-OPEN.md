@@ -211,6 +211,11 @@ still not a theorem
 
 ## How to read the next sentence
 
+If we write a unified unaugmented
+status after the peer reports, that
+is YES as a score and still NO as a
+close
+([`UNAUG-NS-UNIFIED.md`](UNAUG-NS-UNIFIED.md)).
 If we write the SND-to-regularity
 implication, that is YES as a write
 and still NO as a bound on \(X\)

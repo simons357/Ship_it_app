@@ -20,6 +20,9 @@ ordinary NS. Uniform H1 as eps → 0 still
 open. Paper: docs/THEOREM-A-Q1.pdf
 
 **Unaug NS (ordinary) — open**
+Unified status after peer reports
+(enough for a score, not a close):
+docs/UNAUG-NS-UNIFIED.md
 Unrestricted Lemma★ killed by v_n.
 Not a blowup. Replacement closure open:
 docs/LEMMA-STAR-GROWING-LAYER.md

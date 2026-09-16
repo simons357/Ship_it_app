@@ -132,6 +132,11 @@ docs/REPORT-AUDIT.md
 Master plan (two routes; both
 OPEN; NS not solved):
 docs/MASTER-PLAN.md
+Unified status after the peer
+ingest (enough for a score, not
+a close; C10 not seated; H
+withdrawn):
+docs/UNAUG-NS-UNIFIED.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md
