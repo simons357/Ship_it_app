@@ -2,8 +2,8 @@
 
 **Filter:** [`docs/domain-architect/AXISYMMETRIC-SHELL-AUDIT.md`](../../domain-architect/AXISYMMETRIC-SHELL-AUDIT.md)  
 **Predecessor (11 Sept, not this HEAD):** `origin/cursor/tjj-estimate-chain-e5c5` — `docs/ESTIMATE-AUDIT.md`, `docs/AXISYM-SHELL.md`, `docs/TJJ-ESTIMATE.md`, `docs/AXISYM-SWIRL-PROBE.md`.  
-**Date:** 2026-09-12  
-**Status:** OPEN. Remainder \(T_{j\leftarrow j}\) is still open. Far-shell Young sits. The requested local Young is **REFUSED**. Compact-sample ratios are not a class \(\rho_j\). Clay is **NOT CLAIMED**. Unconditional 3-D regularity is **NOT CLAIMED**. DA-VC-01 stays **FAIL**.
+**Date:** 2026-09-12 (same-scale attack §14: 2026-09-16)  
+**Status:** OPEN. Remainder \(T_{j\leftarrow j}\) is still open. Far-shell Young sits. The requested local Young is **REFUSED**. Compact-sample ratios are not a class \(\rho_j\). Same-scale attack: conditional \(\theta\)-template only; (A) **not** seated. Clay is **NOT CLAIMED**. Unconditional 3-D regularity is **NOT CLAIMED**. DA-VC-01 stays **FAIL**.
 
 Class: unaugmented axisymmetric Navier–Stokes with swirl. Quantity: dyadic shell block \(Z_j\). Remainder after the Door-1 budget: intra-shell transfer \(T_{j\leftarrow j}\). Assumed, in brackets: [smooth compactly supported divergence-free axisymmetric-with-swirl solutions of classical NS; no added field; unaugmented normalization; pairing identity closed only when the stepper and the diagnostic agree to \(10^{-16}\)].
 
@@ -327,6 +327,7 @@ Filed from the unaugmented proof-chain standing text (11–12 Sept 2026). **Not 
 The principal unresolved term is still \(T_{j\leftarrow j}\). None of (A)–(C) or estimate Step 6 is seated here. Proofs stay parked.
 
 Harness (diagnostic only): `python -m domain_architect.axisym_ac_tests` and `python scripts/axisym_ac_gronwall_occupancy.py`.
+Same-scale attack harness: `python scripts/axisym_same_scale_tjj.py` (module `domain_architect.axisym_same_scale_tjj`).
 
 ---
 
@@ -365,9 +366,82 @@ If \(M\le M_\ast\) on \([0,T]\), then \(Z_j\) stays finite on \([0,T]\). This is
 
 ---
 
+## Same-scale transfer attack
+
+Class: unaugmented axisymmetric-with-swirl. Quantity: Door-1 same-scale block \(T_{j\leftarrow j}\). Remainder: \(T_{j\leftarrow j}\). Assumed: [small exact disks / restricted classes; signed \(\mathrm{Im}\) triad form; no absolute-value Young that destroys the problem; no \(\dot e_j/\dot Z/\Lambda'\) recycling; spectral-shift identity ≠ Lemma★ ratio bound]. **NS not solved. Invent no proofs.** Overall status: **OPEN**.
+
+Harness: `python scripts/axisym_same_scale_tjj.py` · module `domain_architect.axisym_same_scale_tjj` · tests `tests/test_axisym_same_scale_tjj.py`. Artifact: `/opt/cursor/artifacts/axisym_same_scale_Tjj/`.
+
+### A. Structure of the object
+
+**LP / Door-1 definition (as in §1).** With Littlewood–Paley projectors \(P_j\) and named locality width \(b\),
+\[
+T_{j\leftarrow\ell m}
+:=
+-\bigl\langle P_j\bigl((P_\ell u)\cdot\nabla(P_m u)\bigr),\,P_j u\bigr\rangle,
+\qquad
+T_{j\leftarrow j}
+:=
+\sum_{\lvert\ell-j\rvert\le b,\;\lvert m-j\rvert\le b}
+T_{j\leftarrow\ell m}.
+\]
+Cross-scale / HH→L sit in \(T_{j\leftarrow\neq j}\) and are **not** this remainder; their precise bounds and summability remain **not** established by this note.
+
+**Fourier signed form (exact-disk diagnostic).** On a closed triad \(p+q=k\) with divergence-free amplitudes \(\hat u_p,\hat u_q,\hat u_k\),
+\[
+\tau(p,q;k)
+=
+\mathrm{Im}\Bigl[(\hat u_p\cdot q)\,(\hat u_q\cdot\hat u_k^*)\Bigr].
+\]
+Same-scale disk transfer is the signed sum of \(\tau\) over triads with \(\lvert p\rvert,\lvert q\rvert,\lvert k\rvert\) all in the shell band. Absolute-value Young is **REFUSED** for this attack (it replaces the cancellation problem by a larger one).
+
+**Hygiene / sharp \(b=0\) energy identity.** For the **energy** shell with a **sharp** spectral cutoff and locality width \(b=0\) (all triad legs in an annulus closed under \(k\leftrightarrow-k\)), the internal transfer vanishes: each closed triad obeys \(J_p+J_q+J_r=0\), so sharp \(b=0\) energy \(T_{j\leftarrow j}\equiv 0\). That zero is the **triad energy identity**, not geometric depletion. Door-1 “same-scale” with \(b\ge 1\) is **near-scale** leakage (and soft LP bumps differ from sharp cutoffs). The **enstrophy** same-scale term does **not** inherit this telescope. The numeric probe records the \(b=0\) identity and attacks near-scale (\(b\ge 1\)) separately.
+
+**Known / moved vs remainder.**
+
+| Piece | Status |
+|---|---|
+| Pressure in the energy pairing | drops |
+| \(-\nu D_j\) | cannot grow \(Z_j\) |
+| \(T_{j\leftarrow\neq j}\) (incl. HH→L) | moved by Door-1 budget; bounds/summability **not** seated here |
+| Spectral-shift identity on a listed triad | bookkeeping only; ≠ Lemma★; does **not** control transfer |
+| Main local transport (enstrophy write) | vanishes; commutator remains |
+| Pure swirl \(u^r=u^z=0\) | \(T_{j\leftarrow j}=0\) on that field |
+| Sharp \(b=0\) ENERGY internal transfer | \(\equiv 0\) by triad pairing (not depletion) |
+| **Door-1 \(T_{j\leftarrow j}\) at \(b\ge 1\) (near-scale energy) / enstrophy same-scale** | **OPEN remainder** |
+
+**What axisymmetry-with-swirl kills or reduces.** Free helical HHH supported on fully 3-D wavevector configurations incompatible with axisymmetry about \(z\) are removed as a **class** statement. On exact disks the probe restricts to meridional wavevectors \(k=(k_x,0,k_z)\) with swirl polarization \(\hat e_y\) allowed. That restriction does **not** kill meridional self-stretch \(T^{\mathrm{mm}}\) on mixed fields, nor same-scale triads inside the restricted disk.
+
+### B. Attack avenues (status)
+
+| # | Avenue | Status | Finding |
+|---|---|---|---|
+| 1 | Axisymmetric cancellation / structure constants (signed \(\mathrm{Im}\)) | **PARTIAL** | Axisym slice removes free 3-D HHH support and many triads. Sharp \(b=0\) energy internal \(\equiv 0\) (identity). Near-scale \(b\ge 1\) signed transfer is **nonzero** on disks; **not** uniformly small. Absolute-value Young refused. **No uniform bound.** |
+| 2 | Depletion \(\Rightarrow\) (A) without \(\dot e_j/\dot Z/\Lambda'\) | **PARTIAL** (false candidates **KILLED**) | Killed: occupancy \(1\Rightarrow\) depletion; \((1-\lvert\alpha\rvert)\approx\tfrac12\) seats (A); recycling \(\dot Z/\Lambda'\) as (A); reading sharp \(b=0\) energy zero as depletion. Open candidate: class control of a geometric factor \(\theta\) plus a named template — **not seated**. |
+| 3 | Conditional bound under geometric factor \(\theta\) | **PARTIAL** | Template: if \(\theta\le\theta_\ast\) then \(\lvert T_{\mathrm{near}}\rvert\le\theta\,C_{\mathrm{young}}\sqrt{D}\,Z\) on the disk diagnostic. **Not** (A) (wrong normalization; no class \(\theta_\ast\)). |
+| 4 | Numeric kill/search on small exact disks | **PARTIAL** | Records sharp \(b=0\) energy identity; maximizes \(\lvert T_{\mathrm{near}}\rvert/Z^{3/2}\) for \(b\ge 1\); HH→L separate. “\(b=0\) zero \(\Rightarrow\) depletion” **KILLED**. “Axisymmetry alone forces Door-1 \(T_{j\leftarrow j}\approx 0\) on mixed fields” **KILLED** by nonzero near-scale maxima. Scope: finite disks / trials only — no \(K_{\max}\to\infty\). |
+
+**Conditional bound obtained (disk template only).** Under hypothesis \([\theta]\) (geometric factor \(\theta=\lvert\mathrm{signed}\rvert/\sum\lvert\mathrm{contrib}\rvert\le\theta_\ast\) on near-scale feeders),
+\[
+\lvert T_{\mathrm{near}}\rvert
+\le
+\theta_\ast\,C_{\mathrm{young}}\,\sqrt{D}\,Z.
+\]
+This is **not** condition (A). Bridging to (A) needs palinstrophy normalization, \(\varepsilon\nu\) absorption, and class control of \(\theta_\ast\) — none seated here. Does not use \(\dot e_j\), \(\dot Z\), or \(\Lambda'\).
+
+**What failed / dead ends.** Occupancy \(1\) with \(\alpha\approx 1/2\) as depletion; treating spectral-shift as transfer control; absolute-value Young as the same-scale attack; claiming axisym mixed fields have Door-1 \(T_{j\leftarrow j}\equiv 0\); recycling \(\dot Z/\Lambda'\) into (A); reading sharp \(b=0\) energy internal zero as depletion.
+
+**What is left for (A).** A depletion or geometric lemma that yields \(\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu P_j+R\) on the **near-scale / enstrophy** remainder (not the sharp \(b=0\) energy identity), with \(R\) controlled by energy / known quantities, without \(\dot e_j/\dot Z/\Lambda'\), and without treating occupancy as depletion. Cross-scale summability remains a separate gap.
+
+### C. Honesty locks (unchanged)
+
+Spectral-shift ≠ Lemma★. \(\rho_j<\nu\) is enstrophy–palinstrophy (A), not shell-energy absorption. Cross-scale bounds not established here. Principal open term remains same-scale \(T_{j\leftarrow j}\). Clay / unconditional 3-D regularity **NOT CLAIMED**.
+
+---
+
 ## 11. Gap (send the work with the gap visible)
 
-The leftover is still \(T_{j\leftarrow j}\) and still **OPEN**. Far-shell Young templates sit; precise cross-scale bounds and summability are not established by this note. The requested local Young is **REFUSED**. There is no class leftover ratio. Palinstrophy \(\rho_j<\nu\) is not energy-budget absorption. Occupancy 1 with \(\alpha\approx 1/2\) is not depletion.
+The leftover is still \(T_{j\leftarrow j}\) and still **OPEN**. Far-shell Young templates sit; precise cross-scale bounds and summability are not established by this note. The requested local Young is **REFUSED**. There is no class leftover ratio. Palinstrophy \(\rho_j<\nu\) is not energy-budget absorption. Occupancy 1 with \(\alpha\approx 1/2\) is not depletion. Same-scale attack (§ Same-scale transfer attack): conditional \(\theta\)-template only; (A) not seated; axisym slice does not kill mixed same-scale transfer on exact disks.
 
 Modified / hyperviscous / Q1-augmented equations stay **separate** from classical NS. A close of another PDE is not a close of NS.
 

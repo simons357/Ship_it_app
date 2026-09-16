@@ -73,6 +73,7 @@ paragraph is **OUT**. Including as “motivation” inside the proof.
   - **(B)** depletion \(\sin\phi\) or \(1-\alpha\) implying (A); occupancy 1 alone does not.
   - **(C)** data restriction (axisymmetry-with-swirl); different theorem path.
   - Conditional Gronwall under (A) is a **template** with explicit hypotheses; rate carries **one** \(\nu\), not \(\nu^2\); **not claimed**.
+- Same-scale transfer attack (2026-09-16): structured \(T_{j\leftarrow j}\) (signed \(\mathrm{Im}\); HH→L separated); sharp \(b=0\) energy internal \(\equiv 0\) (triad identity, not depletion); near-scale \(b\ge 1\) / enstrophy remain OPEN; avenues PARTIAL / false depleters KILLED; conditional \(\lvert T_{\mathrm{near}}\rvert\le\theta C\sqrt{D}\,Z\) template only — **not** (A); harness `scripts/axisym_same_scale_tjj.py`. **OPEN**.
 - Swirl geometry as the class that removes free helical HHH.
 - Scope of computations: small exact disks / stated restricted classes only — no uniform conclusion as \(K_{\max}\to\infty\) or for generic data.
 
