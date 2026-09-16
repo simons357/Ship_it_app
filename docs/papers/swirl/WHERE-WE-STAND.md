@@ -20,6 +20,14 @@ What is new as *clarity*, not as a theorem:
 - Live DA fails an honest test: it will invent a PD controller if you ask it to “prove swirl regular.”
 - The remaining obstruction has a name: control of \(u^r/r\), not the \(1/r^4\) writing of the centrifugal source.
 
+A **different** remainder on the same class is the Door-1 shell leftover
+\(T_{j\leftarrow j}\). That program has its own filter
+([`docs/domain-architect/AXISYMMETRIC-SHELL-AUDIT.md`](../../domain-architect/AXISYMMETRIC-SHELL-AUDIT.md))
+and estimate note
+([`AXISYMMETRIC-SHELL-ESTIMATE.md`](AXISYMMETRIC-SHELL-ESTIMATE.md)).
+Do not set \(\int\|u^r/r\|_\infty\,dt = T_{j\leftarrow j}\). Neither
+line is Clay.
+
 ---
 
 ## Keep the algebraic rewrite?

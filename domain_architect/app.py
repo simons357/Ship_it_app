@@ -26,6 +26,7 @@ from .synthesize import inverse_design_architecture
 from .leftover_repair import leftover_repair
 from .localized_repair import localized_repair
 from .open_board import open_board
+from .axisymmetric_shell import axisymmetric_shell_estimate
 from .available_turbulence import available_turbulence_system, maybe_available_stack
 from .turbulence_program import turbulence_reduction_program
 from .turbulence_intensity import turbulence_intensity_lab
@@ -108,6 +109,8 @@ def handle_api(path: str, payload: dict) -> tuple[int, bytes, str]:
             )
         if path == "/api/open-board":
             return _json_bytes(open_board())
+        if path == "/api/axisymmetric-shell":
+            return _json_bytes(axisymmetric_shell_estimate())
         if path == "/api/turbulence-intensity":
             return _json_bytes(turbulence_intensity_lab())
         if path == "/api/available-turbulence":

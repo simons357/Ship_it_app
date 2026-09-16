@@ -62,7 +62,7 @@ def main(argv: list[str] | None = None) -> int:
         "name",
         nargs="?",
         default="missing-damping",
-        help="missing-damping | control | mechanical-electrical | drag | leftover-repair | localized-repair | open-board | turbulence-intensity | available-turbulence | turbulence-reduction",
+        help="missing-damping | control | mechanical-electrical | drag | leftover-repair | localized-repair | open-board | axisymmetric-shell | turbulence-intensity | available-turbulence | turbulence-reduction",
     )
     p_cy.add_argument(
         "--excise",
@@ -230,6 +230,20 @@ def _cycle_text(payload: dict) -> str:
         board = prediction.get("board") or {}
         if isinstance(board, dict) and board.get("text"):
             lines.append(board["text"])
+    elif protocol == "axisymmetric-shell":
+        from .axisymmetric_shell import format_shell_diagnostic
+
+        lines.append(prediction.get("first_sentence") or "")
+        lines.append(f"status={prediction.get('status')} clay={prediction.get('clay')}")
+        lines.append(
+            "remainder={0}  Tjj/Zj={1}".format(
+                prediction.get("remainder"),
+                (prediction.get("tjj_over_zj") or {}).get("status"),
+            )
+        )
+        diag = prediction.get("diagnostic")
+        if diag:
+            lines.append(format_shell_diagnostic(diag).rstrip())
     elif protocol == "available-turbulence":
         lines.append(prediction.get("headline") or "")
         analog = prediction.get("analog") or {}

@@ -25,7 +25,7 @@ Objects: Leray–Hopf weak solution \(u(t)\); dyadic shells \(E_j\); normalized 
 | 3 | Finite-\(N\) operator continuity: \(\|H_N[a]-H_N[b]\|_{\mathrm{op}}\le C_N\|a-b\|_{\ell^1}\) | PROVED |
 | 4 | Frozen gap (Route J): \(\lambda_{\min}(\widehat H_N^\mu)>-1/2+\delta_0\) for tested \(N\le 800\) | NUMERICAL / UNDER AUDIT (no analytic all-\(N\) claim) |
 | 5 | Weyl master implication (Paper2 Thm): quantitative SND + frozen gap \(\Rightarrow\) dynamic spectral gap \(\inf_t\lambda_{\min}(H_N[u(t)])>-1/2\) | PROVED (conditional on SND + FG) |
-| 6 | Global summation / conditional \(H^1\) bound (NS-7, NS-8): if [SND] holds for all \(t\), then dangerous-regime time is finite and global \(H^1\) follows | PROVED (conditional on [SND]) |
+| 6 | Global summation / conditional \(H^1\) bound (NS-7, NS-8): if [SND] holds for all \(t\), then dangerous-regime time is finite and global \(H^1\) follows | Program row: **IF [SND]**. Not Clay. Not generic 3-D. **Not** estimate Step 6 (proposed IF (A)). **Not** WRITE (6)/H1. Leftover of this chain is **7–8**, still **OPEN**. |
 | 7 | SND simplex stability: \(\|a(t)-\mu\|_{\ell^1}\le\eta_N\) uniform in \(t\) for classical Leray–Hopf (Left arrow / Lem.~6.1) | OPEN |
 | 8 | Dynamic [SND] preservation (NS-10): unaugmented classical flow keeps \(\|H_N[u(t)]-\widehat H_N^\mu\|_{\mathrm{op}}<\delta_0\) for all \(t\ge0\) | OPEN |
 | 9 | Continuation: spectral gap / non-concentration \(\Rightarrow\) smooth Leray–Hopf continuation (must be supplied explicitly) | OPEN / INCOMPLETE in repaired Paper2 |
@@ -50,3 +50,4 @@ Status cross-check: July 23 ledger NS-6…NS-11; `NS_PAPER2_CONDITIONAL_AUDIT_AU
 - Step 2 Ring Lemma (NS-6) is **not** Ring-book fluids \(\inf J/X \ge c_*\) unless the source says so; do not identify them.
 - Letters: Paper2 \(H_N[a]\) is not Q6 \(H_N\).
 - Localized reparation default cut is leftover **7–8**, not step 2. Step 2 is already PROVED. NS-11 / Clay Statement B is not claimed.
+- Table Step 6 is a different object from estimate Step 6, WRITE (6)/H1, leftover-split item #6 (none), and Q6. Do not read “if [SND] then \(H^1\)” as SND implies generic 3-D. Labels: [`docs/domain-architect/SND-AND-SIX.md`](../../domain-architect/SND-AND-SIX.md).

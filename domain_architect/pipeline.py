@@ -254,6 +254,15 @@ def run_named_cycle(name: str, **kwargs: Any) -> CycleReport:
 
         return cycle_open_board()
     if name in {
+        "axisymmetric-shell",
+        "axisymmetric-shell-audit",
+        "shell-estimate",
+        "tjj",
+    }:
+        from .axisymmetric_shell import cycle_axisymmetric_shell
+
+        return cycle_axisymmetric_shell()
+    if name in {
         "turbulence-intensity",
         "turbulence",
         "intensity",
@@ -282,7 +291,8 @@ def run_named_cycle(name: str, **kwargs: Any) -> CycleReport:
         f"unknown cycle {name!r}; expected missing-damping, control, "
         "mechanical-electrical, drag, leftover-repair, localized-repair "
         "(use --excise K to cut a single step), open-board, "
-        "turbulence-intensity, available-turbulence, or turbulence-reduction"
+        "axisymmetric-shell, turbulence-intensity, available-turbulence, "
+        "or turbulence-reduction"
     )
 
 
