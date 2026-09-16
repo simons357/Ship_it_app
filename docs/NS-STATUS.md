@@ -14,6 +14,10 @@ Incoming reports scored:
 [`REPORT-AUDIT.md`](REPORT-AUDIT.md).
 How this desk moves:
 [`MASTER-PLAN.md`](MASTER-PLAN.md).
+Unified status after the peer
+ingest (enough for a score, not
+a close):
+[`UNAUG-NS-UNIFIED.md`](UNAUG-NS-UNIFIED.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 
