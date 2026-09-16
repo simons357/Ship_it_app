@@ -126,6 +126,12 @@ docs/CENTERED-DRIFT.md
 SND instrument (diagnostics only;
 no persistence):
 docs/SND-INSTRUMENT.md
+Report audit (GPT board vs tape;
+star is KILLED not OPEN):
+docs/REPORT-AUDIT.md
+Master plan (two routes; both
+OPEN; NS not solved):
+docs/MASTER-PLAN.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md

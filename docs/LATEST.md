@@ -82,6 +82,12 @@ docs/CENTERED-DRIFT.md
 SND instrument (frozen shells; no
 persistence claim):
 docs/SND-INSTRUMENT.md
+Report audit (GPT / rocks / Pólya
+scored against the tape):
+docs/REPORT-AUDIT.md
+Master plan for unaugmented NS
+(two routes; not a close):
+docs/MASTER-PLAN.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

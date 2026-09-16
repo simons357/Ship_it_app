@@ -120,6 +120,9 @@ stay samples. They are not this kill.
 | SuperGrok “keep exact-shell \(4/3\) as a theorem” | Hand write. Specialist pending. Status **CLAIMED**. Freeze. No more sweeps. |
 | C10 as a theorem / as leftover 1 | Named candidate for leftover 5. (A) not seated. [`C10-CHAIN.md`](C10-CHAIN.md). |
 | Merge C10 with \(T_c\) or with ★ | No explicit inequality. \(v_n\) already kills unrestricted ★. |
+| Unrestricted ★ as OPEN | **KILLED** by \(v_n\). GPT board had this wrong. Replacement leftover 4 is OPEN. [`REPORT-AUDIT.md`](REPORT-AUDIT.md). |
+| A.3 as a floor / Pólya \(\rho\)-rebuild as primary | Ceiling, not a floor. Do not repair H. |
+| OpenAI / blowup-search as this line | Forced (C)/(D) if it holds. Not unforced (B). |
 | BKM from assumed spectral decay as the primary | Useful conditional. Does not attack depletion. |
 | Work Theorem H | Withdrawn. SND sits beside C10, not in front. |
 | “9D is claimed” | Designed \(\Theta(m^2)\) 9D is **NO.** The claimed object is the exact-shell bound \(C=4/3\). Do not glue the word. |
@@ -166,6 +169,10 @@ Centered drift (★ stays killed):
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 SND instrument, no persistence:
 [`SND-INSTRUMENT.md`](SND-INSTRUMENT.md).
+Incoming reports vs tape:
+[`REPORT-AUDIT.md`](REPORT-AUDIT.md).
+Master plan (not a close):
+[`MASTER-PLAN.md`](MASTER-PLAN.md).
 
 SND-to-regularity implication is
 **OPEN** as a named hole on the SND/H

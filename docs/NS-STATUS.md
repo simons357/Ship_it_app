@@ -10,6 +10,10 @@ Do not weld \(\star\). Soft X silent.
 
 This page scores the 16 September
 orders. It does not close a leftover.
+Incoming reports scored:
+[`REPORT-AUDIT.md`](REPORT-AUDIT.md).
+How this desk moves:
+[`MASTER-PLAN.md`](MASTER-PLAN.md).
 
 Phone pack: [`TINY.txt`](TINY.txt).
 Tape: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).

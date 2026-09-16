@@ -34,6 +34,10 @@ Handoff and four-bucket score:
 [`NS-STATUS.md`](NS-STATUS.md).
 SND instrument (no persistence):
 [`SND-INSTRUMENT.md`](SND-INSTRUMENT.md).
+Master plan (Route A):
+[`MASTER-PLAN.md`](MASTER-PLAN.md).
+GPT board vs tape:
+[`REPORT-AUDIT.md`](REPORT-AUDIT.md).
 
 Do not merge (2) and (3) unless an
 explicit inequality connects them.

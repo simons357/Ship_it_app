@@ -47,6 +47,10 @@ Centered drift:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 SND instrument, no persistence:
 [`SND-INSTRUMENT.md`](SND-INSTRUMENT.md).
+Master plan (two OPEN routes):
+[`MASTER-PLAN.md`](MASTER-PLAN.md).
+Report audit:
+[`REPORT-AUDIT.md`](REPORT-AUDIT.md).
 Not a thirteenth leftover. The original
 extract stays an extract.
 
