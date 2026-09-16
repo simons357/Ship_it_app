@@ -20,6 +20,19 @@ python -m domain_architect --registry
 python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units
 ```
 
+## NS endgame notes — 16 Sep 2026
+
+Working notes. In the file, not the headline.
+Uniform triadic bound is not a theorem. The \(m^{1/2}\) heuristic
+has no lattice home. H1 on the cylinder is a separate track.
+
+- Notes: [`docs/NS-ENDGAME-NOTES.md`](docs/NS-ENDGAME-NOTES.md)
+- Gaps card: [`docs/ns-endgame/gaps.svg`](docs/ns-endgame/gaps.svg)
+
+```bash
+python -m unittest tests.test_ns_endgame_notes
+```
+
 ## Harmonic Blueprint Experiment 01
 
 Cross-event spectral selection test on black-hole ringdown modes.
