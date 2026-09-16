@@ -1,0 +1,108 @@
+{
+  "date": "2026-09-16",
+  "title": "Status map",
+  "kind": "instruments",
+  "scoreboard": false,
+  "operator": {
+    "name": "Jonathan Simons",
+    "entity": "Prime Field Technologies LLC",
+    "place": "Savannah",
+    "shape": "lean, founder-run"
+  },
+  "standing_rule": {
+    "rigor_first": true,
+    "gaps_named": true,
+    "visuals_and_code_make_the_math_real": true,
+    "ban_sentence": "No Clay / prize / QED / \"solved\" language in public output."
+  },
+  "street": {
+    "channels": ["Substack", "Cosmic Graffiti", "X", "LinkedIn"],
+    "form": "desk photo",
+    "line_rule": "one verb per line",
+    "record": "on the record"
+  },
+  "buckets": {
+    "live": [
+      {
+        "name": "Swirl",
+        "verb": "Model",
+        "notes": "axisymmetric model, unaugmented normalization, publishing package"
+      },
+      {
+        "name": "NS lemmas",
+        "verb": "Reconstruct",
+        "notes": "Python reconstructions, spectral viz, animations, negative results kept on the record"
+      },
+      {
+        "name": "Listener",
+        "verb": "Listen",
+        "notes": "nature-sound web app — design, code, OG cards"
+      },
+      {
+        "name": "Propos",
+        "verb": "Brand",
+        "notes": "brand / OG asset pipeline"
+      },
+      {
+        "name": "Vigilant Monitor / Anesthesia Program",
+        "verb": "Track",
+        "notes": "ASSR–eye track, A&A / business push"
+      },
+      {
+        "name": "Lattice Edge",
+        "verb": "Grow",
+        "notes": "crystal-growth app (“how math grows better silicon”)"
+      },
+      {
+        "name": "FIELD MAPPER",
+        "verb": "Map",
+        "notes": "functional role analysis of equations",
+        "here": "domain_architect/"
+      }
+    ],
+    "holding": [
+      {
+        "name": "SFE / Harmonic Blueprint",
+        "verb": "Hold",
+        "notes": "book live; unification stack still open"
+      },
+      {
+        "name": "QStack / NAV-42 / GCD shells / E8 cathedral",
+        "verb": "Hold",
+        "notes": "instruments, not claims"
+      },
+      {
+        "name": "RH / GCD-matrix notes",
+        "verb": "Hold",
+        "notes": "bounds, Q6, draft paper"
+      },
+      {
+        "name": "HarborSafe / REEF / TITAN-X / Space Power Beaming",
+        "verb": "Hold",
+        "notes": "one-pagers"
+      },
+      {
+        "name": "Prime Breath, Super Graph, Gematria (Base 44), Unified Map, ArtCritic",
+        "verb": "Hold",
+        "notes": "named pile"
+      }
+    ],
+    "cold": [
+      {
+        "name": "Older NS/SFE/RH preprints on Zenodo",
+        "verb": "File",
+        "notes": "~20+"
+      },
+      {
+        "name": "IRS hobby-classification friction on Prime Field R&D",
+        "verb": "File",
+        "notes": "friction named"
+      },
+      {
+        "name": "Journal / arXiv / Tao-addendum queue",
+        "verb": "File",
+        "notes": "in the file, not the headline"
+      }
+    ]
+  }
+}

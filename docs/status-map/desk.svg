@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Status map - 16 Sep 2026</title>
+  <desc id="desc">Open work. Instruments. No scoreboard. One verb per line.</desc>
+  <rect width="1200" height="675" fill="#0c1018"/>
+  <rect x="48" y="40" width="1104" height="595" fill="#f4efe6"/>
+  <text x="80" y="92" fill="#8a6d2f" font-family="Georgia, Times, serif" font-size="18" letter-spacing="4">PRIME FIELD TECHNOLOGIES / SAVANNAH</text>
+  <text x="80" y="150" fill="#0c1018" font-family="Georgia, Times, serif" font-size="48">Status map - 16 Sep 2026</text>
+  <text x="80" y="192" fill="#4a4338" font-family="Georgia, Times, serif" font-size="22">Open work. Instruments. No scoreboard.</text>
+  <line x1="80" y1="218" x2="1120" y2="218" stroke="#d4b56a" stroke-width="1"/>
+  <text x="80" y="280" fill="#0c1018" font-family="Georgia, Times, serif" font-size="36">Model.</text>
+  <text x="80" y="332" fill="#0c1018" font-family="Georgia, Times, serif" font-size="36">Reconstruct.</text>
+  <text x="80" y="384" fill="#0c1018" font-family="Georgia, Times, serif" font-size="36">Listen.</text>
+  <text x="80" y="436" fill="#0c1018" font-family="Georgia, Times, serif" font-size="36">Brand.</text>
+  <text x="620" y="280" fill="#0c1018" font-family="Georgia, Times, serif" font-size="36">Track.</text>
+  <text x="620" y="332" fill="#0c1018" font-family="Georgia, Times, serif" font-size="36">Grow.</text>
+  <text x="620" y="384" fill="#0c1018" font-family="Georgia, Times, serif" font-size="36">Map.</text>
+  <text x="620" y="436" fill="#0c1018" font-family="Georgia, Times, serif" font-size="36">Record.</text>
+  <text x="80" y="530" fill="#4a4338" font-family="Georgia, Times, serif" font-size="20">Live instruments. Holding and cold stay named.</text>
+  <text x="80" y="568" fill="#4a4338" font-family="Georgia, Times, serif" font-size="20">Rigor first. Gaps named. Visuals and code make the math real.</text>
+  <text x="80" y="606" fill="#8a6d2f" font-family="Georgia, Times, serif" font-size="16">For the record / not the last word.</text>
+</svg>
