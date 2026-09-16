@@ -203,7 +203,10 @@ Sibling class-hunt / same-scale work lives on this branch tip (`72913ae` and lat
 | Field | Value |
 |---|---|
 | Dream-team verdict | Rank 1 = \(\theta\)-class bridge to (A); Rank 2 = sparse support; Rank 3 = pure-swirl / small-data / extra symmetry as **conditional** only |
-| (A) seated? | **No** |
+| Executed KEEP/KILL | Estimate § Class hunt; harness `scripts/axisym_class_hunt.py` / `domain_architect.axisym_class_hunt` |
+| OOE / extra reflection | **KILL** as general seat (live parity keeps \(O(1)\) near-scale); empty-triad parities → sparse |
+| Spectral gap | **KEEP-CONDITIONAL** energy Door-1 under hard gap; evolutionary **KILL**; enstrophy open |
+| (A) seated? | **No** (only on trivial/conditional subclasses: pure-swirl identity, small data, fixed \(K_{\max}\)) |
 | DA-VC-01 | **FAIL** |
 | Clay | **NOT CLAIMED** |
 | Fake close | **Refused** |
