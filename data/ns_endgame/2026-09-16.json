@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-16",
+  "title": "Navier-Stokes endgame notes",
+  "kind": "working_notes",
+  "headline": false,
+  "scoreboard": false,
+  "closes_regularity": false,
+  "scope": {
+    "equation": "classical unaugmented Navier-Stokes",
+    "domain": "T^3",
+    "forced": false,
+    "catalog": "B_regularity",
+    "A_is_not_B": true
+  },
+  "gaps": [
+    {
+      "id": "uniform_triadic_bound",
+      "status": "not_a_theorem",
+      "load_bearing": true,
+      "notes": "case list is not exhaustion"
+    },
+    {
+      "id": "m_half_heuristic",
+      "status": "unresolved",
+      "lattice_realization": false,
+      "notes": "Hyp-Lat-star missing; continuum incidence is a model"
+    },
+    {
+      "id": "H1_cylinder",
+      "status": "separate_track",
+      "folded_into_main_line": false,
+      "notes": "write is not the leftover; do not start from SND"
+    }
+  ],
+  "exhaustion_routes": [
+    "covering_with_controlled_remainder",
+    "monotonicity_or_scaling_of_R_star",
+    "spectral_gap_of_the_triad_operator"
+  ],
+  "refused_glue": [
+    "phi_renorm_to_regularity",
+    "qstack_to_claim",
+    "q6_to_track_b",
+    "ring_as_sitting_lemma",
+    "case_list_as_covering",
+    "snd_sitting_as_bound_on_X",
+    "attack2_Cstar_as_coprime_cstar"
+  ],
+  "incoming_samples_not_bounds": true
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Three open objects</title>
+  <desc id="desc">Uniform triadic bound is not a theorem. The m-half heuristic is unresolved. H1 on the cylinder is a separate track.</desc>
+  <rect width="1200" height="420" fill="#0c1018"/>
+  <text x="48" y="48" fill="#d4b56a" font-family="Georgia, Times, serif" font-size="18">IN THE FILE / NOT THE HEADLINE</text>
+  <text x="48" y="96" fill="#f4efe6" font-family="Georgia, Times, serif" font-size="32">Three open objects</text>
+  <rect x="48" y="140" width="352" height="220" fill="#161c28" stroke="#2a3344"/>
+  <rect x="424" y="140" width="352" height="220" fill="#161c28" stroke="#2a3344"/>
+  <rect x="800" y="140" width="352" height="220" fill="#161c28" stroke="#2a3344"/>
+  <text x="68" y="180" fill="#d4b56a" font-family="Georgia, Times, serif" font-size="16">1</text>
+  <text x="444" y="180" fill="#d4b56a" font-family="Georgia, Times, serif" font-size="16">2</text>
+  <text x="820" y="180" fill="#d4b56a" font-family="Georgia, Times, serif" font-size="16">3</text>
+  <text x="68" y="220" fill="#f4efe6" font-family="Georgia, Times, serif" font-size="22">Uniform triadic</text>
+  <text x="68" y="252" fill="#f4efe6" font-family="Georgia, Times, serif" font-size="22">bound</text>
+  <text x="68" y="300" fill="#b7aa98" font-family="Georgia, Times, serif" font-size="16">Not a theorem.</text>
+  <text x="68" y="326" fill="#b7aa98" font-family="Georgia, Times, serif" font-size="16">A list is not a covering.</text>
+  <text x="444" y="220" fill="#f4efe6" font-family="Georgia, Times, serif" font-size="22">m-half</text>
+  <text x="444" y="252" fill="#f4efe6" font-family="Georgia, Times, serif" font-size="22">heuristic</text>
+  <text x="444" y="300" fill="#b7aa98" font-family="Georgia, Times, serif" font-size="16">No lattice home.</text>
+  <text x="444" y="326" fill="#b7aa98" font-family="Georgia, Times, serif" font-size="16">Unresolved.</text>
+  <text x="820" y="220" fill="#f4efe6" font-family="Georgia, Times, serif" font-size="22">H1 on the</text>
+  <text x="820" y="252" fill="#f4efe6" font-family="Georgia, Times, serif" font-size="22">cylinder</text>
+  <text x="820" y="300" fill="#b7aa98" font-family="Georgia, Times, serif" font-size="16">Separate track.</text>
+  <text x="820" y="326" fill="#b7aa98" font-family="Georgia, Times, serif" font-size="16">Not folded in.</text>
+</svg>
