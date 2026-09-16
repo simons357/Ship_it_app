@@ -10,6 +10,8 @@
 
 Human: Jonathan Simons (`winchester.anesthesia@gmail.com` / `simonsmedical@icloud.com`), Prime Field Technologies LLC.
 
+**Desk status map (16 Sep 2026):** [`docs/STATUS-MAP.md`](../STATUS-MAP.md). Open work. Instruments. No scoreboard. No Clay / prize / QED / “solved” in public output.
+
 ---
 
 ## Honesty lock (do not weaken)
