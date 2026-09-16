@@ -1,4 +1,4 @@
-> Packet copy of [PR #35](https://github.com/simons357/Ship_it_app/pull/35) (`cursor/archon-ns-theorem-h-review-0cc5`). Adversarial date **25 August 2026**. Body below is reproduced unchanged. For 8–11 September 2026 public record (forced C/D announcement; Clay evaluation), see [`REVIEWER-PACKET.md`](./REVIEWER-PACKET.md) and [`SND-REVIEWER-REPORT-2026-09-15.md`](./SND-REVIEWER-REPORT-2026-09-15.md) §0A.
+> **Archive — do not send.** The sendable card is [`SND-WHAT-IS-KEPT.md`](./SND-WHAT-IS-KEPT.md). Packet copy of [PR #35](https://github.com/simons357/Ship_it_app/pull/35) (`cursor/archon-ns-theorem-h-review-0cc5`). Adversarial date **25 August 2026**. Body below is reproduced unchanged.
 
 # ARCHON NS Final Review Panel — Adversarial Verdict
 

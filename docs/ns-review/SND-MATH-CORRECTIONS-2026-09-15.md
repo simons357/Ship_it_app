@@ -2,7 +2,7 @@
 
 **Prepared:** 15 September 2026  
 **For:** Jonathan R. Simons and the specialist reviewing the SND packet  
-**Status:** packet correction. The manuscript extract of Theorem H remains the **object under review**; this note replaces the packet’s earlier claim that the displayed estimate is proved under \(X\le M\).
+**Status:** packet correction. **Archive — do not send.** The sendable card is [`SND-WHAT-IS-KEPT.md`](./SND-WHAT-IS-KEPT.md). The manuscript extract of Theorem H remains the **object that was withdrawn**; this note is the calculation record.
 
 **Scope.** Direct audit of the four packet documents as supplied in this conversation. Underlying GitHub and Zenodo files were not re-checked in the audit that produced these calculations, so exact transcription of KEEP manuscripts is not claimed here. The calculations address the **formulas as displayed** in [`THEOREM-H-STATEMENT-AND-PROOF.md`](./THEOREM-H-STATEMENT-AND-PROOF.md).
 

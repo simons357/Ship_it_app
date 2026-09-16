@@ -2,16 +2,13 @@
 
 Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS packaging.
 
-## Reviewer packet (16 Sep 2026)
+## SND — send this
 
-Cover: [`REVIEWER-PACKET.md`](./REVIEWER-PACKET.md)
+[`SND-WHAT-IS-KEPT.md`](./SND-WHAT-IS-KEPT.md) — exact shell identity, valid \(F_j\) lemma, Tests A–C. Displayed Theorem H withdrawn. Unforced (B) not claimed.
 
-1. [`THEOREM-H-STATEMENT-AND-PROOF.md`](./THEOREM-H-STATEMENT-AND-PROOF.md) — manuscript extract (object under review).
-2. [`SND-MATH-CORRECTIONS-2026-09-15.md`](./SND-MATH-CORRECTIONS-2026-09-15.md) — displayed estimate fails at fixed \(M\); valid \(F_j\) lemma; exact shell equation.
-3. [`ARCHON-PANEL-ADVERSARIAL-VERDICT.md`](./ARCHON-PANEL-ADVERSARIAL-VERDICT.md) — 25 Aug review (PR #35) plus 15–16 Sep errata.
-4. [`SND-REVIEWER-REPORT-2026-09-15.md`](./SND-REVIEWER-REPORT-2026-09-15.md) — body of work; unforced (B) not claimed; forced C/D named.
-5. [`PANEL-RESPONSE-2026-09-16.md`](./PANEL-RESPONSE-2026-09-16.md) — sendable panel letter; findings 1–7 accepted.
-6. [`SND-REPAIRED-SHELL-BUDGET.md`](./SND-REPAIRED-SHELL-BUDGET.md) — boxed-equation identities and Tests A–C; not a new Theorem H.
+Cover: [`REVIEWER-PACKET.md`](./REVIEWER-PACKET.md). Optional letter: [`PANEL-RESPONSE-2026-09-16.md`](./PANEL-RESPONSE-2026-09-16.md).
+
+Archive (do not send): Theorem H extract, August ARCHON roleplay, 15 Sep briefing, full 15 Sep audit, longer shell-budget writeup.
 
 ## Φ-renorm (KEEP; conditional)
 
@@ -21,4 +18,4 @@ Cover: [`REVIEWER-PACKET.md`](./REVIEWER-PACKET.md)
 
 **Open barrier (unchanged):** \(\|u^r/r\|_{L^\infty}\) uniform in \(\eps\) — equivalent to axisymmetric-with-swirl global regularity. Paper remains a conditional reduction. Clay is not closed.
 
-**Do not conflate** with Lemma★ PRODUCT-BLOCK packaging.
+**Do not conflate** with Lemma★ PRODUCT-BLOCK packaging, or with the SND shell identity above.

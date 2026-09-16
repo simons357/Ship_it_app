@@ -1,5 +1,7 @@
 # SND program — comprehensive report for a specialist reviewer
 
+**Archive — do not send.** The sendable card is [`SND-WHAT-IS-KEPT.md`](./SND-WHAT-IS-KEPT.md).
+
 **Author:** Jonathan R. Simons  
 **Prepared:** 15 September 2026; **revised the same day** after specialist comments and the mathematical audit of the displayed Theorem H formulas  
 **Audience:** independent specialist (fluids / harmonic analysis), not a campaign reader  

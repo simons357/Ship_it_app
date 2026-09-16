@@ -1,6 +1,6 @@
 # Theorem H — manuscript extract (object under review)
 
-**Packet role:** if only one *manuscript* file is sent, send this extract together with the 15 September mathematical corrections. If a sendable letter is wanted, send [`PANEL-RESPONSE-2026-09-16.md`](./PANEL-RESPONSE-2026-09-16.md).  
+**Packet role:** **archive.** Do not send. The sendable card is [`SND-WHAT-IS-KEPT.md`](./SND-WHAT-IS-KEPT.md). This extract is the withdrawn displayed proof.  
 **Manuscript source:** Zenodo `20518057` mirror, `docs/papers/zenodo-spectral/20518057/98d1b1cc9_NS_UPLOAD_ZENODO.tex` on `origin/cursor/tao-snd-h-panel-a0eb` (older SND framework; superseded as a *claim* by KEEP `10.5281/zenodo.22050976`).  
 **Claim-paper overlay:** Zenodo `20405526` (PARK).  
 **Corrections (binding for packet status):** [`SND-MATH-CORRECTIONS-2026-09-15.md`](./SND-MATH-CORRECTIONS-2026-09-15.md).  

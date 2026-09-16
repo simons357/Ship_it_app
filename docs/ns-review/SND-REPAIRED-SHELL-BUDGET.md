@@ -1,7 +1,7 @@
 # Repaired shell budget — identities and tests, not a new Theorem H
 
 **Date:** 16 September 2026  
-**Status:** **NOT a proof of Theorem H, [SND], or unforced Statement (B).**  
+**Status:** **NOT a proof of Theorem H, [SND], or unforced Statement (B).** Archive: the sendable card is [`SND-WHAT-IS-KEPT.md`](./SND-WHAT-IS-KEPT.md).  
 **After:** panel response [`PANEL-RESPONSE-2026-09-16.md`](./PANEL-RESPONSE-2026-09-16.md) and audit [`SND-MATH-CORRECTIONS-2026-09-15.md`](./SND-MATH-CORRECTIONS-2026-09-15.md) §8.  
 **Class:** smooth, mean-zero, divergence-free solutions of **unforced** NS on a fixed torus \((\mathbb{R}/2\pi\mathbb{Z})^3\) (period changes constants, not the tests). Real self-adjoint dyadic multipliers with uniformly bounded symbols.
 
