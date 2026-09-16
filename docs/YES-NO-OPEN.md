@@ -125,7 +125,7 @@ stay samples. They are not this kill.
 | Pólya two pages (indexed Bony + \(D^+\) comparison) as the next write | \(D^+\) cannot produce \(\rho(t)\ge\rho(0)e^{-\int A}-\int B\). Wrong Dini direction. REJECT as primary. [`REPORT-AUDIT.md`](REPORT-AUDIT.md) §5. |
 | Peak-fraction floor as unconditional / Kato–Ponce as the \(A.2\) foundation | \(A.2\) is Hölder \(6,2,3\). The \(\Gamma,\Lambda\) floor is BKM-adjacent and not seated. [`REPORT-AUDIT.md`](REPORT-AUDIT.md) §8. |
 | “C10 died” as a program | (A) not seated. Lane stays the Route A write-or-kill. |
-| Enough information to close unforced NS | Enough for [`MASTER-PLAN.md`](MASTER-PLAN.md). Not enough for a close. |
+| Enough information to close unforced NS | Enough for [`MASTER-PLAN.md`](MASTER-PLAN.md). Not enough for a close. Operator report: [`NS-CLOSE-REPORT.md`](NS-CLOSE-REPORT.md). |
 | Switch this line to augmented NS / Theorem A | Track A is a different PDE. A is not B. |
 | OpenAI / blowup-search as this line | Forced (C)/(D) if it holds. Not unforced (B). |
 | BKM from assumed spectral decay as the primary | Useful conditional. Does not attack depletion. |

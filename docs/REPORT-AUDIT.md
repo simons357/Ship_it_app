@@ -37,6 +37,7 @@ Sources scored here:
 Tape: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).
 Handoff: [`NS-STATUS.md`](NS-STATUS.md).
 Master plan: [`MASTER-PLAN.md`](MASTER-PLAN.md).
+Operator report: [`NS-CLOSE-REPORT.md`](NS-CLOSE-REPORT.md).
 
 Four buckets only:
 PROVED / CLAIMED / OPEN / DEAD.

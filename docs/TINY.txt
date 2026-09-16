@@ -132,6 +132,9 @@ docs/REPORT-AUDIT.md
 Master plan (two routes; both
 OPEN; NS not solved):
 docs/MASTER-PLAN.md
+Close-report after every peer note
+(not a close):
+docs/NS-CLOSE-REPORT.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md

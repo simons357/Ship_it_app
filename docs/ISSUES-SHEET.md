@@ -50,6 +50,9 @@ SND instrument, no persistence:
 Master plan (two OPEN routes;
 enough for a plan, not a close):
 [`MASTER-PLAN.md`](MASTER-PLAN.md).
+Close-report after every peer note
+(not a close):
+[`NS-CLOSE-REPORT.md`](NS-CLOSE-REPORT.md).
 Report audit (long 16 Sep write
 scored; Kato–Ponce is not \(A.2\);
 Pólya two pages rejected — \(D^+\)

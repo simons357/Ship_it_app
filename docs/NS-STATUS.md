@@ -14,6 +14,8 @@ Incoming reports scored:
 [`REPORT-AUDIT.md`](REPORT-AUDIT.md).
 How this desk moves:
 [`MASTER-PLAN.md`](MASTER-PLAN.md).
+Operator close-report (not a close):
+[`NS-CLOSE-REPORT.md`](NS-CLOSE-REPORT.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 

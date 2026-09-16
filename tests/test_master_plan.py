@@ -13,6 +13,7 @@ TAPE = ROOT / "docs" / "YES-NO-OPEN.md"
 TINY = ROOT / "docs" / "TINY.txt"
 LATEST = ROOT / "docs" / "LATEST.md"
 ISSUES = ROOT / "docs" / "ISSUES-SHEET.md"
+CLOSE = ROOT / "docs" / "NS-CLOSE-REPORT.md"
 
 
 def _plain(path: Path) -> str:
@@ -73,11 +74,26 @@ class MasterPlanTests(unittest.TestCase):
         self.assertIn("KILLED", tape)
         self.assertIn("GPT board had this wrong", tape)
 
+    def test_close_report_does_not_close(self):
+        raw = CLOSE.read_text()
+        text = _plain(CLOSE)
+        self.assertIn("Not a proof", raw)
+        self.assertIn("seated close", text)
+        self.assertIn("Route A", raw)
+        self.assertIn("Route B", raw)
+        self.assertIn("Throw", raw)
+        self.assertIn("v_n", raw)
+        self.assertIn("Phi)-cancel", text)
+        self.assertIn("A is not B", raw)
+        self.assertNotIn("NS is solved", text)
+        self.assertNotIn("almost proved", text.lower())
+
     def test_pointers(self):
         for path in (STATUS, TAPE, TINY, LATEST, ISSUES):
             body = path.read_text()
             self.assertIn("MASTER-PLAN.md", body, msg=str(path))
             self.assertIn("REPORT-AUDIT.md", body, msg=str(path))
+            self.assertIn("NS-CLOSE-REPORT.md", body, msg=str(path))
 
 
 if __name__ == "__main__":

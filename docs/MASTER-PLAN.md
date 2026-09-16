@@ -9,6 +9,8 @@ Adjudication of the incoming
 reports: [`REPORT-AUDIT.md`](REPORT-AUDIT.md).
 Score: [`NS-STATUS.md`](NS-STATUS.md).
 Tape: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).
+Operator report after every peer
+note: [`NS-CLOSE-REPORT.md`](NS-CLOSE-REPORT.md).
 
 This page answers the operator’s
 question: how do we beat unforced

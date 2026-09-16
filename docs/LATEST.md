@@ -88,6 +88,9 @@ docs/REPORT-AUDIT.md
 Master plan for unaugmented NS
 (two routes; not a close):
 docs/MASTER-PLAN.md
+Close-report after every peer note
+(not a close):
+docs/NS-CLOSE-REPORT.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):
