@@ -433,6 +433,8 @@ This is **not** condition (A). Bridging to (A) needs palinstrophy normalization,
 
 **What is left for (A).** A depletion or geometric lemma that yields \(\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu P_j+R\) on the **near-scale / enstrophy** remainder (not the sharp \(b=0\) energy identity), with \(R\) controlled by energy / known quantities, without \(\dot e_j/\dot Z/\Lambda'\), and without treating occupancy as depletion. Cross-scale summability remains a separate gap.
 
+**DA class-hunt (routes, not a close).** Ranked usable-CLASS hunt for Door-1 / (A): [`docs/domain-architect/DA-CLASS-HUNT-BRIEF.md`](../../domain-architect/DA-CLASS-HUNT-BRIEF.md). Best next: \(\theta\)-class bridge to palinstrophy (A). Sparse support and pure-swirl/small-data/extra-symmetry stay conditional. **(A) not seated.** DA-VC-01 stays **FAIL**.
+
 ### C. Honesty locks (unchanged)
 
 Spectral-shift ≠ Lemma★. \(\rho_j<\nu\) is enstrophy–palinstrophy (A), not shell-energy absorption. Cross-scale bounds not established here. Principal open term remains same-scale \(T_{j\leftarrow j}\). Clay / unconditional 3-D regularity **NOT CLAIMED**.
