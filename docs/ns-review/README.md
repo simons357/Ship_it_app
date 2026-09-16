@@ -10,7 +10,7 @@ Three independent bets on the same unresolved dynamical question. None currently
 
 1. **C10** — [`C10-CHAIN.md`](./C10-CHAIN.md). (A) verbatim at the top. Failed arrow: \(a_+\) estimate. Do not repair by assuming \(\Gamma\). Do not merge with \(T_c\).
 2. **Exact-shell 9D** — [`EXACT-SHELL-9D-FREEZE.md`](./EXACT-SHELL-9D-FREEZE.md). **CLAIMED**, frozen. No new sweeps. Firewall: 9D ≠ unrestricted ★ ≠ regularity.
-3. **SND** — instrument (measure \(\rho\), peak, tail). Theorem H withdrawn (`cursor/snd-spectral-reviewer-report-88af`).
+3. **SND** — instrument (measure \(\rho\), peak, tail). Theorem H withdrawn. Shared target (P) is **false**: [PR #101](https://github.com/simons357/Ship_it_app/pull/101) (`SND-CLARIFICATION.md`, `SND-PERSISTENCE.md`). Do not repair Theorem H.
 4. **Centered drift** — independent target \(T_c\le\theta\nu D_s+K(t)X\). Does not require C10.
 
 **NS / Clay B not claimed.**

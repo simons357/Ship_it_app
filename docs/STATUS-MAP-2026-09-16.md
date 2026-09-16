@@ -42,6 +42,6 @@ No Clay / prize / QED / “solved” language in public output.
 This map is the **desk**. It does not reopen Theorem H, C10 as a seated (A), unrestricted ★, or Clay Statement B.
 
 - C10: identities sit; \(a_+\) estimate empty; do not repair with \(\|\nabla u\|_\infty\).
-- SND: instrument, not a theorem.
+- SND: instrument, not a theorem. Persistence (P) under only \((M,\nu,\rho_*)\) is **false** ([PR #101](https://github.com/simons357/Ship_it_app/pull/101)). Do not repair Theorem H.
 - Exact-shell \(K\le 16/9\): CLAIMED, frozen. ≠ unrestricted ★ ≠ regularity.
 - QStack / GCD / E8: **Holding — instruments, not claims**, as above.

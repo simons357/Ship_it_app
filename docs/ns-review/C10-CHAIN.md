@@ -58,7 +58,7 @@ Three **independent** bets on the same unresolved dynamical question. None curre
 | --- | --- | --- |
 | **C10** | (A) as boxed above | failed at \(a_+\) / template remainders; do not assume \(\Gamma\) to “fix” it |
 | **Centered drift** | \(T_c\le\theta\nu D_s+K(t)X\), \(K\in L^1(0,T)\) | separate; C10 need not work for drift, drift need not work for C10 |
-| **SND** | instrument: measure \(\rho\), peak migration, tail, shell pairings | demoted from engine; Theorem H withdrawn |
+| **SND** | instrument: measure \(\rho\), peak migration, tail, shell pairings | demoted from engine; Theorem H withdrawn; (P) **false** on Family H ([PR #101](https://github.com/simons357/Ship_it_app/pull/101)) |
 | **Exact-shell 9D** | \(K\le 16/9\) | **CLAIMED**, frozen; ≠ unrestricted ★ ≠ regularity |
 
 Do not merge C10 with \(T_c\) unless an explicit inequality connects them. After a NO, do not push C10 into \(T_c=M-\Lambda N\).
