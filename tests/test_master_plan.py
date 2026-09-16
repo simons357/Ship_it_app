@@ -56,6 +56,8 @@ class MasterPlanTests(unittest.TestCase):
         self.assertIn("Rocks", raw)
         self.assertIn("singularity", text)
         self.assertIn("Do not switch", raw)
+        self.assertIn("living handoff", text)
+        self.assertIn("H1/H", raw)
         self.assertNotIn("Exact-shell 9D — claimed", raw)
         self.assertNotIn("NS is solved", text)
         tape = _plain(TAPE)

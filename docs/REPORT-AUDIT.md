@@ -79,25 +79,51 @@ not a proof.
 
 ## 2. Grok / 16 Sep handoff
 
-Already the living handoff.
-Mostly **CORRECT.** Two naming
-fixes already on the tape:
+This exact paste.
+Already the living handoff:
+[`NS-STATUS.md`](NS-STATUS.md).
+Mostly **CORRECT.** It is the
+order we kept.
 
-- Do not title the claimed object
-  “Exact-shell 9D.” The claimed
-  object is the exact-shell bound.
-- “Do not spend another cycle
-  fighting H1/H” mixes two
-  leftovers. Theorem H is
-  withdrawn. Leftover 1 = H1 =
-  WRITE (6) is a different
-  integral and stays OPEN. Do
-  not start it from this audit.
+Two naming fixes stay on the tape:
+
+- The boxed line
+  “EXACT-SHELL 9D — CLAIMED”
+  is the **wrong name.** Designed
+  \(\Theta(m^2)\) 9D is **NO.**
+  The claimed object is the
+  exact-shell bound \(C=4/3\),
+  \(K\le 16/9\). Do not write
+  “9D is claimed.”
+- “Saves another cycle fighting
+  H1/H” mixes two leftovers.
+  Theorem H is withdrawn.
+  Leftover 1 = H1 = WRITE (6)
+  is a different integral and
+  stays OPEN. Do not start it
+  from this audit.
 
 C10 as first priority is a
 **research order**, not a seated
-theorem. That distinction is now
-on [`C10-CHAIN.md`](C10-CHAIN.md).
+theorem. [`C10-CHAIN.md`](C10-CHAIN.md).
+
+TASK score against this paste:
+
+| TASK | Status |
+|---|---|
+| 1 C10 write, arrows marked | **Done as a write.** Stretch \(\le a_+ Z_j\) EXACT. TJJ-template STANDARD, \(L^\infty\) remainder. Depletion NEW / unwritten. (A) **not seated.** |
+| 2 Falsify every NEW CLAIM | **Partial.** Energy-linear \(R\) DEAD. Shears give \(0=0\). Depletion is not yet a claim to kill. |
+| 3 Centered drift, useful \(K\) | Identities **PROVED.** Estimate **OPEN.** That is Route B. |
+| 4 Crossover \(a_+\to T_c\) | **Not started.** (A) did not sit. No conceptual arrow. |
+| 5 SND instrument | **Done.** No persistence. |
+| 6 Four-bucket score | **Done.** PROVED / CLAIMED / OPEN / DEAD. |
+
+Accept §§I, II (do not repair H),
+III (instrument first), V
+(\(b\ge 1\)), VII–X, and the
+freeze of sweeps.
+Keep Route A / B independent.
+This paste is **not** a close.
 
 ---
 
