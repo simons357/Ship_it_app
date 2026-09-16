@@ -16,6 +16,10 @@ Adjudication:
 [`REPORT-AUDIT.md`](REPORT-AUDIT.md).
 Plan:
 [`MASTER-PLAN.md`](MASTER-PLAN.md).
+Path to a close:
+[`PATH-TO-CLOSE.md`](PATH-TO-CLOSE.md).
+Route A write:
+[`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
 Score:
 [`NS-STATUS.md`](NS-STATUS.md).
 Tape:
@@ -257,17 +261,16 @@ machinery already built.
 
 ### Route A — first
 
-Dynamical \(a_+\) that does
-not use \(H^1\), \(L^\infty\),
-or BKM. Then
-\(\int a_+<\infty\Rightarrow\)
-(A) with an energy-class
-remainder. Then the local
-block \(T_{j\leftarrow j}\)
-no longer feeds a finite-time
-enstrophy blowup by near-scale
-stretching, together with the
-far Young that already sits.
+A-pair: control the stretch
+pairing, not
+\(\|(\alpha)_+\|_\infty\).
+Bounding \(a_+\) by
+\(\|\nabla u\|_\infty\) is
+BKM. Page:
+[`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
+Then leftover 5 can move
+with the far Young that
+already sits.
 
 If it works: leftover 5 moves.
 That is **not** leftover 1 and

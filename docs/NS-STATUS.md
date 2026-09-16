@@ -16,6 +16,10 @@ How this desk moves:
 [`MASTER-PLAN.md`](MASTER-PLAN.md).
 Operator close-report (not a close):
 [`NS-CLOSE-REPORT.md`](NS-CLOSE-REPORT.md).
+Path to a close (gates; not a close):
+[`PATH-TO-CLOSE.md`](PATH-TO-CLOSE.md).
+Route A write (A-pair; not \(L^\infty\)):
+[`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 

@@ -36,6 +36,11 @@ SND instrument (no persistence):
 [`SND-INSTRUMENT.md`](SND-INSTRUMENT.md).
 Master plan (Route A):
 [`MASTER-PLAN.md`](MASTER-PLAN.md).
+Path to a close (G1 = A-pair):
+[`PATH-TO-CLOSE.md`](PATH-TO-CLOSE.md).
+Route A write (pairing, not
+\(L^\infty a_+\)):
+[`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
 GPT board vs tape:
 [`REPORT-AUDIT.md`](REPORT-AUDIT.md).
 
@@ -408,7 +413,10 @@ for all-data geometry. If a later
 write bounds \(a_+\) from the
 equation without \(H^1\), \(L^\infty\),
 or BKM, that write is the candidate
-mechanism. It is not on this page.
+mechanism. Living G1 is A-pair
+(the pairing, not \(L^\infty\)):
+[`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
+Path: [`PATH-TO-CLOSE.md`](PATH-TO-CLOSE.md).
 
 ---
 

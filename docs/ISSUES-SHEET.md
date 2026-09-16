@@ -53,6 +53,12 @@ enough for a plan, not a close):
 Close-report after every peer note
 (not a close):
 [`NS-CLOSE-REPORT.md`](NS-CLOSE-REPORT.md).
+Path to a close (G1 then G4;
+not a close):
+[`PATH-TO-CLOSE.md`](PATH-TO-CLOSE.md).
+Route A write (A-pair; not
+\(L^\infty a_+\)):
+[`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
 Report audit (long 16 Sep write
 scored; Kato–Ponce is not \(A.2\);
 Pólya two pages rejected — \(D^+\)
@@ -74,7 +80,7 @@ One person, one row. Do not glue 1, 4, and 5.
 | 3 | H3 | Exterior Biot–Savart on the same cylinder | Absorb as \(r\to 0\). Written, not absorbed. | `docs/H-SYSTEM.md` |
 | 4 | Replacement energy-budget closure (Lemma★ box killed) | A different estimate that the growing-layer family \(v_n\) does not kill | Write that estimate, or drop the energy-budget path. Unrestricted \(\sup\mathcal R_\star<\infty\) is **KILLED**. Need★ cannot repair that box. | `docs/LEMMA-STAR-GROWING-LAYER.md`, `docs/LEMMA-STAR-STATEMENT.md`, `docs/NEED-STAR-HH-L-DUAL.md` |
 | 4a | Hyp-Lat★ | Lattice transfer X1–X4/X6 of the continuum incidence \(I\ll m^{4/3}\) | Write the transfer, or drop the incidence route. Continuum \(m^{4/3}\) is not a lattice theorem. | `docs/LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md` |
-| 5 | Axisymmetric remainder | \(\int\rho_j=\int(T_{j\leftarrow j})_+/Z_j\) on unaugmented axisymmetric-with-swirl \(\mathbb{R}^3\) | A class bound, or a field in the class with \(\int\rho_j=\infty\). Occupancy \(55/56\) already printed; it did not decay. C10 is a named candidate (depletion via \(a_+\)), not this close. | `docs/AXISYM-SHELL.md`, `docs/AXISYM-SWIRL-PROBE.md`, `docs/C10-CHAIN.md` |
+| 5 | Axisymmetric remainder | \(\int\rho_j=\int(T_{j\leftarrow j})_+/Z_j\) on unaugmented axisymmetric-with-swirl \(\mathbb{R}^3\) | A class bound, or a field in the class with \(\int\rho_j=\infty\). Occupancy \(55/56\) already printed; it did not decay. C10 \(a_+\) is the crude majorant. Living G1 is A-pair (pairing, not \(L^\infty\)). | `docs/AXISYM-SHELL.md`, `docs/AXISYM-SWIRL-PROBE.md`, `docs/C10-CHAIN.md`, `docs/ROUTE-A-WRITE.md`, `docs/PATH-TO-CLOSE.md` |
 | 6 | RH WRITE (6) | Every non-trivial zero of \(\zeta\) on \(\operatorname{Re}s=1/2\) | One estimate that forces the line. Q is not it. | `docs/RH-CHAIN.md` |
 | 7 | Uniform \(H^1\) as \(\varepsilon\to 0\) | Track A extra-stress NS | A bound independent of \(\varepsilon\). **Not required** for Theorem A to stay finished. A is not B. | `docs/A-CHAIN.md` |
 | 8 | Goldbach’s conjecture | Every even integer \(\ge 4\) is a sum of two primes | That statement. The matrix corollary \(R\ge -2/9\) already sits and is not this. | `docs/GOLDBACH-CHAIN.md` |

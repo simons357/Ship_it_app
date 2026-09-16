@@ -91,6 +91,12 @@ docs/MASTER-PLAN.md
 Close-report after every peer note
 (not a close):
 docs/NS-CLOSE-REPORT.md
+Path to a close (G1 then G4;
+not a close):
+docs/PATH-TO-CLOSE.md
+Route A write (pairing, not
+L^inf a_+; write or kill):
+docs/ROUTE-A-WRITE.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

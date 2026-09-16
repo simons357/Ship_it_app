@@ -11,6 +11,11 @@ Score: [`NS-STATUS.md`](NS-STATUS.md).
 Tape: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).
 Operator report after every peer
 note: [`NS-CLOSE-REPORT.md`](NS-CLOSE-REPORT.md).
+Path to a close (G1 then G4):
+[`PATH-TO-CLOSE.md`](PATH-TO-CLOSE.md).
+Route A write (pairing, not
+\(L^\infty\)):
+[`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
 
 This page answers the operator’s
 question: how do we beat unforced
@@ -190,12 +195,17 @@ failed arrow and stop patching.
 Leftover 5 stays OPEN.
 
 **Next write (only this).**
-A dynamical bound on \(a_+\)
-that does not use \(H^1\),
-\(L^\infty\), or BKM.
-If that page cannot be written
-without those, Route A is dead
-as an a priori. Do not invent
+A-pair: control
+\(\int(\alpha)_+\lvert\Delta_j\omega\rvert^2\)
+plus the commutator, not
+\(\|(\alpha)_+\|_\infty\).
+[`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
+Bounding \(a_+\) by
+\(\|\nabla u\|_\infty\) is BKM.
+If A-pair cannot be written
+without \(H^1\), \(L^\infty\),
+or BKM, Route A is dead as an
+a priori. Do not invent
 depletion.
 
 ### Route B — centered spectral drift
