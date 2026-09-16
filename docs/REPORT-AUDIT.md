@@ -103,6 +103,9 @@ on [`C10-CHAIN.md`](C10-CHAIN.md).
 
 ## 3. “Rocks” briefing
 
+This exact paste. Cut off at
+“viscosity always pre…”.
+
 Correct facts:
 
 - Official Statement (B) is
@@ -112,8 +115,18 @@ Correct facts:
 - OpenAI’s 8 Sep announcement
   is a **forced** construction,
   Fefferman (C)/(D) if it holds.
+  Ten thousand agents and a
+  Lean file are a method.
+  They do not move unforced (B).
 - Clay’s 11 Sep note is an
   **evaluation**, not an award.
+  “Apparently settled” in that
+  note is forced (C)/(D)
+  language. It is not a prize
+  for (A)/(B).
+- Independent verification of
+  that announcement is not
+  this desk’s job.
 - Vortex stretching and
   supercriticality name the
   difficulty. They are not a
@@ -139,9 +152,27 @@ Wrong or off this desk:
   switch the living line to
   a blowup hunt.
 - Euler blowup and Leray–Hopf
-  non-uniqueness do not prove
-  a smooth unforced
-  singularity.
+  non-uniqueness make a viscous
+  singularity look more
+  plausible as sociology.
+  They do not prove a smooth
+  unforced singularity.
+
+The cut-off second path:
+
+> “or prove that viscosity
+> always pre[vents …]”
+
+If that means an a priori
+from admissible unforced
+data, **that is this desk**
+(Routes A / B on
+[`MASTER-PLAN.md`](MASTER-PLAN.md)).
+If it means “drop the OpenAI
+force and check that the same
+profile still blows up,” that
+is still the singularity
+program. Do not weld those.
 
 File already on the tape:
 [`OPENAI-NS-CLAIM.md`](OPENAI-NS-CLAIM.md).

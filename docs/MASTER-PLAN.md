@@ -74,6 +74,12 @@ A blowup hunt (Córdoba–Martínez-Zoroa
 different program. Do not switch
 the living line to it unless the
 operator names that switch.
+Rocks’ cut-off line “prove that
+viscosity always pre[vents …]”
+is this desk **only** as an
+a priori from unforced data.
+It is not “drop the OpenAI force
+and watch the same profile.”
 
 ---
 
