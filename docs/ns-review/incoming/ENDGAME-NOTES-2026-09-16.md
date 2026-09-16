@@ -17,6 +17,7 @@ This write-up treats Φ-renorm, QStack, Shell-Spread Poincaré, Ring / Borromean
 
 The useful sentence in the paste, kept: **a kill list is not a covering argument.** That matches C10 dying as accumulated sketches, not as a mechanism.
 
+Full score: [`ENDGAME-SCORE.md`](./ENDGAME-SCORE.md).  
 Desk map: [`../../STATUS-MAP-2026-09-16.md`](../../STATUS-MAP-2026-09-16.md).
 
 ---

@@ -1,5 +1,7 @@
 # Final NS / SND status — 16 September 2026
 
+**Download copy.** Source of truth: [`docs/NS-STATUS.md`](https://github.com/simons357/Ship_it_app/blob/cursor/unaug-ns-unified-status-a7a2/docs/NS-STATUS.md) on [PR #104](https://github.com/simons357/Ship_it_app/pull/104). Companion paste: [`incoming/GLOBAL-REGULARITY-PROGRAM-2026-09-16.md`](./incoming/GLOBAL-REGULARITY-PROGRAM-2026-09-16.md). Relative links below point at that book, not this folder.
+
 Jonathan R. Simons.
 **Single handoff for Cursor / other
 reviewers and the next phase.**
