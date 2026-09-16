@@ -95,7 +95,10 @@ and watch the same profile.”
 - restoring unrestricted \(\star\),
 - starting H1 from ABC_λ,
 - welding C10 to \(T_c\) without
-  an inequality.
+  an inequality,
+- the Endgame covering of dead
+  triads / \(Q_6\) spectral gap /
+  restoring \(\Phi\) or Ring.
 
 **Keep as tools, not theorems**
 

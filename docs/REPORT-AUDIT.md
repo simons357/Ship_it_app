@@ -28,6 +28,11 @@ Sources scored here:
    unaugmented equation?
 9. Company status map
    (Live / Holding / Cold / Street).
+10. “Notes on the Endgame”
+    (Φ / QStack / Ring as the
+    sitting machine; uniform
+    triadic covering as the
+    leftover).
 
 Tape: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).
 Handoff: [`NS-STATUS.md`](NS-STATUS.md).
@@ -550,6 +555,103 @@ on the unaugmented PDE.
 
 ---
 
+## 12. “Notes on the Endgame”
+
+This exact paste. Working
+notes aimed at Official
+Statement (B) on \(\mathbb{T}^3\).
+**REJECT as the living leftover.**
+It describes the old pile, not
+Routes A / B.
+
+Keep, as observations:
+
+- Case-by-case kills are not a
+  theorem. Accumulation is not
+  exhaustion. That sentence is
+  **CORRECT.**
+- Isolated triads, wide/narrow
+  AP, fixed-gap
+  (\(0.11\to 0.031\)), designed
+  \(\Theta(m^2)\), and the HH→L
+  fan (\(\beta/\alpha\)) are real
+  negative results. They did
+  **not** kill unrestricted ★.
+  The named kill is \(v_n\).
+- The \(m^{1/2}\) heuristic has
+  no lattice home. Already on
+  the tape. Do not promote it
+  to a hidden obstruction and
+  do not spend a covering hunt
+  to “decide” it.
+- SND forward propagation is
+  where arguments leak.
+  Circularity check: **CORRECT
+  as a warning.** Displayed H
+  is already withdrawn. \(A.3\)
+  is a ceiling. Do not make
+  SND primary.
+
+Throw, as living machinery:
+
+- \(\Phi\)-renormalization that
+  “kills \(1/r^4\).” **NO on
+  Track B.** Keep \(1/r^4\).
+  \(\Phi\)-cancel stays dropped.
+- QStack \(Q_1\)–\(Q_6\) as
+  architecture that held up for
+  unforced NS. **A is not B.**
+  Q is inverse-GCD, not a
+  constitutive NS operator.
+- Ring Lemma / Borromean as
+  structural results. Ring is
+  **REPAIR**, not proved. The
+  exact-shell factor 3 is
+  on-page AM-GM, not Ring.
+- Shell-Spread Poincaré as a
+  sitting bound on \(X\). SND
+  sitting is occupation, not
+  continuation.
+- “Uniform triadic bound is
+  the load-bearing gap.” That
+  is leftover-4 / ★ packaging
+  after the box already died.
+  A covering of the killed
+  families does not restore
+  \(\sup\mathcal R_\star<\infty\).
+  Route B is a **useful** \(K\)
+  in \(T_c\le\theta\nu\mathcal D_s+K(t)X\),
+  not an exhaustion of the old
+  falsifier list.
+- \(Q_6\) spectral gap as the
+  exhaustion route. Q stays
+  off the unaugmented PDE.
+- Fold H1 into the main line
+  now. Leftover 1 is a different
+  integral. **Do not start it.**
+- Mail a panel. This desk
+  does not mail.
+- \(c_*=6/\pi^2\) as a
+  load-bearing next lemma.
+  Not Route A. Not Route B.
+
+Blunt assessment of *this*
+paste: the adversarial record
+is real and the “kills ≠
+theorem” warning is honest.
+The proposed remaining task
+is the wrong leftover. It
+puts \(\Phi\) / Q / Ring back
+on B and treats a dead ★ box
+as if a covering argument
+would finish Official
+Statement (B).
+
+Living leftover unchanged:
+Route A, then Route B.
+
+---
+
 ## Lock
 
 GPT’s board is mostly inventory.
@@ -564,5 +666,8 @@ Blowup-search is not this line.
 Do not repair H.
 Company status map is a
 portfolio, not a close.
+Endgame covering of dead
+triads is not the leftover.
+\(\Phi\)-cancel stays dropped.
 Enough for a plan. Not a close.
 NS not solved.

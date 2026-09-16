@@ -136,6 +136,8 @@ stay samples. They are not this kill.
 | \(K(t)\) in the PDE | Forbidden on B. |
 | SFE / UHF / DHFA / HB as constitutive NS | Shelf. |
 | Company status map as an NS close / scoreboard | Portfolio only. Swirl is a map. QStack stays an instrument. Standing rule accepted. [`REPORT-AUDIT.md`](REPORT-AUDIT.md) §11. |
+| Endgame note: \(\Phi\) / QStack / Ring as sitting machine; uniform triadic covering as the leftover | \(\Phi\)-cancel dropped. Q is not B. Ring is REPAIR. ★ already killed by \(v_n\). Covering dead families does not restore it. [`REPORT-AUDIT.md`](REPORT-AUDIT.md) §12. |
+| Fold H1 into the Endgame main line | Leftover 1 is a different integral. Do not start it. |
 | Start H1 from ABC_λ | Named only. |
 | Cosmo / SM five fingers as constitutive NS | Other book. [`DA-FINGERS.md`](DA-FINGERS.md). |
 | B-hand five-finger map as a close | MAP only. Does not move leftover 1, 4, or 5. |
