@@ -4,11 +4,12 @@ Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS p
 
 ## Live lanes (16 Sep 2026)
 
-Three probes of the high-frequency obstruction; **not** one theorem. Do not force them through Theorem H.
+Three independent bets on the same unresolved dynamical question. None currently proves that the dynamics cooperate. C10 is **not** closer to done than BKM.
 
-1. **C10** (primary on this branch) — [`C10-CHAIN.md`](./C10-CHAIN.md). Depletion ⇒ (A) via \(a_+\). **Empty as a mechanism.** Identities sit; the \(a_+\) estimate does not. Do not merge with \(T_c\) without an explicit inequality.
+1. **C10** — [`C10-CHAIN.md`](./C10-CHAIN.md). (A) verbatim at the top. Failed arrow: \(a_+\) estimate. Do not repair by assuming \(\Gamma\). Do not merge with \(T_c\).
 2. **Exact-shell 9D** — [`EXACT-SHELL-9D-FREEZE.md`](./EXACT-SHELL-9D-FREEZE.md). **CLAIMED**, frozen. No new sweeps. Firewall: 9D ≠ unrestricted ★ ≠ regularity.
-3. **SND** — diagnostic / spectral shape, beside these lanes, not in front. Theorem H withdrawn (packet on `cursor/snd-spectral-reviewer-report-88af`).
+3. **SND** — instrument (measure \(\rho\), peak, tail). Theorem H withdrawn (`cursor/snd-spectral-reviewer-report-88af`).
+4. **Centered drift** — independent target \(T_c\le\theta\nu D_s+K(t)X\). Does not require C10.
 
 **NS / Clay B not claimed.**
 

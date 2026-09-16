@@ -1,26 +1,11 @@
 # C10 chain — depletion ⇒ (A), written out
 
 **Date:** 16 September 2026  
-**Target:** the PR #102 “best standing line”: C10, depletion ⇒ (A) via \((\alpha_{\mathrm{loc},j})_+\), without circular Grönwall.  
-**Verdict of this note:** C10 is **not a theorem**. It is a named empty door plus seated identities. PR #102 “SURVIVES” means the circular drafts were refused, not that an inequality was proved.
-
 **Do not work on Theorem H. Do not extend 9D sweeps. NS / Clay B not claimed.**
 
-Sources (other branches; not re-proved here):
+## (A), verbatim
 
-- `docs/TJJ-ESTIMATE.md`, `docs/AXISYM-SHELL.md` on `origin/cursor/tjj-estimate-chain-e5c5`
-- `docs/ns-review/TJ-SAME-SCALE-CANDIDATES.md`, `UNAUG-PROOF-CHAIN.md` on `origin/cursor/tj-candidates-9083` ([PR #102](https://github.com/simons357/Ship_it_app/pull/102))
-- `docs/ns-review/PROOF-CHAIN-CLEAN.md` on the same PR (for \(T_c,D_s\) only)
-
-Tag legend: **EXACT** · **STANDARD LEMMA** · **NEW CLAIM** · **NUMERICAL ONLY** · **EMPTY**
-
----
-
-## 0. What “(A)” is
-
-Two different \(\rho_j\) live in the source notes. They are not interchangeable.
-
-On the shell-energy identity the viscous term is \(\nu D_j\), with \(D_j=\|\nabla\Delta_j\omega\|_2^2\) (palinstrophy of the shell). The comparison that can absorb same-scale transfer into that term is:
+On the unaugmented shell face, with \(D_j=\|\nabla\Delta_j\omega\|_2^2\) and \(0<\theta<1\),
 
 \[
 \boxed{
@@ -29,23 +14,66 @@ On the shell-energy identity the viscous term is \(\nu D_j\), with \(D_j=\|\nabl
 \le
 \theta\nu D_j
 +
-R_{\mathrm{allowed}},
-\qquad
-0<\theta<1.
+R_{\mathrm{allowed}}.
 }
 \]
 
-**Allowed \(R\)** (honesty lock): energy \(\mathcal{E}\), shell enstrophies \(\{Z_k\}\), maybe a direction factor. **Forbidden in \(R\):** \(\dot e_j\), \(\dot Z\), \(\dot Z_j\), \(\Lambda'\).
+**Allowed \(R\):** energy \(\mathcal{E}\), shell enstrophies \(\{Z_k\}\), maybe a direction factor.  
+**Forbidden in \(R\):** \(\dot e_j\), \(\dot Z\), \(\dot Z_j\), \(\Lambda'\).
 
-This is **not** absorption into \(\nu Z_j\). It is **not** the AXISYM extra hypothesis
+This is **not** absorption into \(\nu Z_j\). Closing (A) is not Clay B.
 
-\[
-\rho_j^{\mathrm{rate}}=\frac{(T_{j\leftarrow j})_+}{Z_j},\qquad \int_0^T\rho_j^{\mathrm{rate}}<\infty,
-\]
+---
 
-which is a different conditional (Theorem AS-ρ). C10 is about (A), not about AS-ρ.
+## Decision tree (this page)
 
-If (A) holds with \(R_{\mathrm{allowed}}\) integrable on \([0,T]\) in the energy inequality for \(Z_j\), then \(Z_j\) cannot blow up from the local block alone. That still leaves infrared/ultraviolet sums and a continuation argument. Closing (A) is not Clay B.
+```
+C10
+  → derive depletion from NS dynamics?
+  → depletion ⇒ (A)?
+  → noncircular?  (right-hand side not H¹ / L^∞ / BKM / (A) itself)
+  → survives adversarial families?
+```
+
+**Result: NO.** The failed arrow is recorded below. Do **not** repair it by inserting a stronger assumption (\(\|\nabla u\|_\infty\le\Gamma\), geometric tail, occupancy, BKM). That would change the question, not fill the arrow.
+
+| Gate | Answer |
+| --- | --- |
+| Derive depletion from NS dynamics? | **NO.** Empty. Occupancy samples refused. |
+| Depletion ⇒ (A)? | Tautology if depletion means the \(a_+\) line; that line is (A) for the main stretch |
+| Noncircular? | **NO** on the first new arrow: template remainders and \(\|a_+\|_\infty\) are BKM-adjacent or are (A) |
+| Adversarial families? | Energy-linear (A) **dies** on \(u^\lambda\) and on amplitude. Shears / \(v_L\) are inert |
+
+PR #102 “SURVIVES” means circular drafts were refused, not that an inequality was proved. C10 is **not** closer to done than BKM because it is phrased dynamically. “Does the dynamics produce depletion sufficient for (A)?” is not a weaker question than BKM. It is the same unresolved dynamical hope in different clothes.
+
+**Fake-weaker hypotheses.** Controlling \(a_+=(\xi\cdot S(u_{\mathrm{loc}})\xi)_+\) in \(L^\infty\) already controls a piece of \(\|\nabla u_{\mathrm{loc}}\|_\infty\). Shell occupancy / geometric tail strong enough to make Bernstein sum \(\Gamma\) is already a spectral sufficient condition for BKM. Naming those as “depletion” does not make them weaker than the forbidden regularity control.
+
+---
+
+## Operating map
+
+Three **independent** bets on the same unresolved dynamical question. None currently proves that the dynamics cooperate.
+
+| Lane | Target | Status |
+| --- | --- | --- |
+| **C10** | (A) as boxed above | failed at \(a_+\) / template remainders; do not assume \(\Gamma\) to “fix” it |
+| **Centered drift** | \(T_c\le\theta\nu D_s+K(t)X\), \(K\in L^1(0,T)\) | separate; C10 need not work for drift, drift need not work for C10 |
+| **SND** | instrument: measure \(\rho\), peak migration, tail, shell pairings | demoted from engine; Theorem H withdrawn |
+| **Exact-shell 9D** | \(K\le 16/9\) | **CLAIMED**, frozen; ≠ unrestricted ★ ≠ regularity |
+
+Do not merge C10 with \(T_c\) unless an explicit inequality connects them. After a NO, do not push C10 into \(T_c=M-\Lambda N\).
+
+Tag legend: **EXACT** · **STANDARD LEMMA** · **NEW CLAIM** · **NUMERICAL ONLY** · **EMPTY**
+
+Sources (other branches; not re-proved here): `docs/TJJ-ESTIMATE.md`, `docs/AXISYM-SHELL.md` on `origin/cursor/tjj-estimate-chain-e5c5`; `TJ-SAME-SCALE-CANDIDATES.md`, `UNAUG-PROOF-CHAIN.md` on [PR #102](https://github.com/simons357/Ship_it_app/pull/102).
+
+---
+
+## 0. Two \(\rho_j\) (do not mix)
+
+The AXISYM extra hypothesis \(\rho_j^{\mathrm{rate}}=(T_{j\leftarrow j})_+/Z_j\) with \(\int\rho_j^{\mathrm{rate}}<\infty\) is Theorem AS-ρ. It is **not** (A). C10 is about (A).
+
+If (A) holds with \(R_{\mathrm{allowed}}\) integrable on \([0,T]\) in the energy inequality for \(Z_j\), then \(Z_j\) cannot blow up from the local block alone. Infrared/ultraviolet sums and continuation remain.
 
 ---
 
@@ -370,24 +398,22 @@ Lemma★ / PRODUCT-BLOCK \(\sup_v\mathcal{R}_\star<\infty\) remains a separate O
 
 ---
 
-## 8. Three probes, not one theorem
+## 8. Independence (do not merge)
 
-| Lane | Job | Status |
-| --- | --- | --- |
-| SND diagnostic / spectral shape | names \(\rho=J/X\); conditional criteria only | Theorem H withdrawn; identities kept on the SND KEEP card |
-| C10 / near-scale depletion | produce (A) from \(a_+\) | **EMPTY** as unaugmented mechanism |
-| Centered spectral drift | \(T_c\le\theta\nu D_s+K(t)X\) | identity seated; product bound OPEN |
+C10 does **not** have to work for centered drift to work. Centered drift does **not** have to work for C10 to work. SND is an **instrument** until its dynamics earn something stronger: measure \(\rho\), peak migration, tail shape, and shell pairings, and ask whether those measurements expose a depletion mechanism. They have not.
 
-SND sits **beside** C10, not in front of it. A geometric-tail / BKM sufficient condition is a useful conditional theorem and is **not** the primary attack.
+A geometric-tail / BKM sufficient condition remains a useful **conditional** theorem. It is not a repair of the failed C10 arrow.
 
 ---
 
 ## 9. Lock
 
-**C10 is interesting only as a door. It is not a chain to (A).**  
-Seated: identities through TJJ-α and a template whose remainders are BKM-adjacent.  
-Empty: the \(a_+\) estimate that would be depletion.  
+**Failed arrow:** template \(\to a_+\) estimate (Step VI). Not repaired by assuming \(\|\nabla u\|_\infty\), a geometric envelope, or occupancy.
+
+**C10 is not a candidate mechanism.** It is not closer to done than BKM.  
+Seated: identities through TJJ-α.  
+Empty: dynamics \(\Rightarrow\) depletion \(\Rightarrow\) (A), noncircular.  
 Killed as unaugmented absolute (A): energy-linear \(R\), by \(u^\lambda\) and by amplitude.  
 Forbidden: \(\dot Z_j\), \(\Lambda'\), occupancy samples, Theorem H, 9D sweeps, merging with \(T_c\) without an inequality.
 
-If a later draft fills Step VI without those, re-run §3 and §4. Until then, do not say C10 produces (A).
+Until Step VI is filled **without** those, do not say C10 produces (A).
