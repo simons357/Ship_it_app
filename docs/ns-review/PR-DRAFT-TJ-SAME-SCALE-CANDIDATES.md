@@ -3,7 +3,7 @@
 **Branch:** `cursor/tj-candidates-9083`  
 **Base:** `main`  
 **Compare:** https://github.com/simons357/Ship_it_app/compare/main...cursor/tj-candidates-9083  
-**PR create:** attempt via `gh pr create --draft`; if 403 / no ManagePullRequest tool, open the compare link.
+**PR create:** blocked here (`gh` integration 403; no ManagePullRequest tool in this run). Open the compare link to file the draft PR if the environment does not auto-open one.
 
 ## Title
 
