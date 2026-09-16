@@ -1,4 +1,4 @@
-"""B★ attack: families first; not a seated close; star stays killed."""
+"""B★: identity sits; imag cutoff grows R_B; not a useful K; star stays killed."""
 
 from __future__ import annotations
 
@@ -16,10 +16,16 @@ from bstar_attack import (  # noqa: E402
     shear_field,
     one_shell_field,
 )
+from bstar_symmetrize import (  # noqa: E402
+    fft_probe,
+    lamb_stretch_pairing,
+    power_law_field,
+)
 from stokes_moments import high_triad_field, scale_field  # noqa: E402
 from verify_pr24_closure_review import growing_layer_field  # noqa: E402
 
 PAGE = ROOT / "docs" / "BSTAR.md"
+PROOF = ROOT / "docs" / "BSTAR-PROOF.md"
 STATUS = ROOT / "docs" / "NS-STATUS.md"
 TAPE = ROOT / "docs" / "YES-NO-OPEN.md"
 TINY = ROOT / "docs" / "TINY.txt"
@@ -61,22 +67,51 @@ class BStarArithmeticTests(unittest.TestCase):
         self.assertGreater(close["R_B"], far["R_B"])
         self.assertLess(close["R_B"], 1.0)
 
+    def test_pairing_identity_matches_probe(self):
+        ident = lamb_stretch_pairing(high_triad_field(amp=1.0))
+        self.assertAlmostEqual(ident["pairing"], ident["Tc_probe"], places=8)
+        self.assertAlmostEqual(ident["Ds_omega"], ident["Ds"], places=8)
+        self.assertGreater(ident["R_L"], ident["Tc_probe"] / (
+            ident["X"] * (ident["Lambda"] ** 0.5) * (ident["Ds"] ** 0.5)
+        ))
+
+    def test_helix_cancels_imag_grows(self):
+        helix = fft_probe(power_law_field(4, 2.0, "helix"), n=32)
+        a = fft_probe(power_law_field(4, 2.0, "imag"), n=32)
+        b = fft_probe(power_law_field(6, 2.0, "imag"), n=32)
+        self.assertLess(abs(helix["Tc"]), 1e-10)
+        self.assertGreater(b["R_B"], a["R_B"])
+        self.assertGreater(b["R_L"], a["R_L"])
+        self.assertGreater(a["R_B"], 0.05)
+
 
 class BStarPageTests(unittest.TestCase):
     def test_page_does_not_close(self):
         raw = PAGE.read_text()
         text = _plain(PAGE)
-        self.assertIn("Not seated", raw)
+        self.assertIn("No universal", raw)
         self.assertIn("Does not kill", raw)
         self.assertIn("useful", text)
-        self.assertIn("OPEN", raw)
+        self.assertIn("imag", text.lower())
+        self.assertIn("BSTAR-PROOF.md", raw)
         self.assertNotIn("NS is solved", text)
         self.assertNotIn("almost proved", text.lower())
         self.assertNotIn("B★ sits", raw)
 
+    def test_proof_page_keeps_pairing(self):
+        raw = PROOF.read_text()
+        text = _plain(PROOF)
+        self.assertIn("pairing, not", text.lower())
+        self.assertIn("wrong door", text)
+        self.assertIn("1/4", raw)
+        self.assertNotIn("NS is solved", text)
+        self.assertNotIn("almost proved", text.lower())
+
     def test_pointers(self):
         for path in (STATUS, TAPE, TINY, LATEST, ISSUES, PLAN, PATH, DRIFT):
-            self.assertIn("BSTAR.md", path.read_text(), msg=str(path))
+            body = path.read_text()
+            self.assertIn("BSTAR.md", body, msg=str(path))
+            self.assertIn("BSTAR-PROOF.md", body, msg=str(path))
 
 
 if __name__ == "__main__":

@@ -1,8 +1,10 @@
 # B★ — centered pairing vs \(\sqrt{\mathcal D_s}\)
 
 16 September 2026.
-**Attacked. Not seated. Not a close.
-Unrestricted ★ stays killed.
+**Does not sit as a universal \(C\).
+Not a closed-form kill.
+Not a useful \(K\).
+Unrestricted ★ stays killed by \(v_n\).
 NS not solved.**
 
 Operator inequality, unforced
@@ -39,8 +41,12 @@ Ratio
 A universal \(C\) is
 \(\sup R_B<\infty\).
 
+Identity and second pass:
+[`BSTAR-PROOF.md`](BSTAR-PROOF.md).
 Machine:
-`python3 scripts/bstar_attack.py`.
+`python3 scripts/bstar_attack.py`
+and
+`python3 scripts/bstar_symmetrize.py`.
 Do not overwrite
 `stokes_moments.py`.
 
@@ -52,16 +58,61 @@ Killed ★:
 
 Do not start leftover 1.
 Do not weld \(\star\).
+Do not cash B★ as G5.
 
 ---
 
-## First: try to kill it
+## Verdict
 
-Families already on the desk,
-plus the requested ones.
-Keep \(T_c\) as one pairing.
-Do not split \(M\) and \(\Lambda N\)
-as the first move.
+**No universal \(C\) sits on the
+evidence of this desk.**
+
+First-pass families (triads,
+amplitude, separation, \(v_n\),
+shears, HH→L, random) did **not**
+send \(R_B\to\infty\). That pass
+survived.
+
+Second pass kept \(T_c\) as one
+pairing and hit the imag
+\(|k|^{-2}\) cutoff family
+
+\[
+\widehat u(k)=i\,|k|^{-2}\,e_\perp(k),
+\qquad 0<|k|\le K.
+\]
+
+On the live FFT evaluator,
+\(K=3,4,6,8,10,12,16\):
+
+| \(K\) | \(\Lambda\) | \(R_B\) | \(R_B/\Lambda^{1/4}\) | \(R_L\) |
+|---|---|---|---|---|
+| 3 | 7.59 | 0.0635 | 0.0382 | 0.498 |
+| 4 | 12.1 | 0.0841 | 0.0451 | 0.569 |
+| 6 | 24.1 | 0.112 | 0.0507 | 0.718 |
+| 8 | 40.4 | 0.135 | 0.0537 | 0.835 |
+| 10 | 60.8 | 0.153 | 0.0550 | 0.939 |
+| 12 | 85.4 | 0.169 | 0.0555 | 1.036 |
+| 16 | 147 | 0.195 | 0.0561 | 1.205 |
+
+\(R_B\) rises with \(K\).
+\(R_B/\Lambda^{1/4}\) is saturating
+near \(0.056\). \(\Lambda(K)\to\infty\).
+That is the death shape for a
+uniform \(C\), the same *shape* as
+\(v_n\) for ★. A closed-form \(T_c\)
+is **not** written. Finite \(0.195\)
+is not \(C\). Do not seat B★.
+
+Helical polarization of the same
+spectrum has \(T_c\approx 0\)
+(Beltrami-like cancel). Imag does
+not cancel. Polarization is the
+content.
+
+---
+
+## First pass (still true)
 
 | Family | \(R_B\) | Verdict |
 |---|---|---|
@@ -69,44 +120,12 @@ as the first move.
 | Amplitude \(u=Au\) | Invariant. Pairing \(\sim A^3\), RHS \(\sim A^3\). | Pass. |
 | Shear \((u\cdot\nabla)u=0\) | \(T_c=0\). | \(0\le 0\). Not a test. |
 | One shell / ABC | \(\mathcal D_s=0\), \(T_c=0\). | Vacuous. |
-| Exact triad \((1,0,0),(0,m,0),(1,m,0)\) | Max \(R_B\approx 0.095\) at \(m=1\). At \(m=16\): \(R_B\approx 6\cdot 10^{-4}\). | Separation *shrinks* \(R_B\). |
-| Two keys, no closer | \(T_c=0\). | No triad. |
-| Dilated high triad | Falls with scale. | Pass. |
-| HH→L one-key (aligned) | \(T_c=0\) (gap-cancel). | Not a test. |
-| HH→L fan / energy split | \(R_B\le 0.004\). | Finite. |
-| Random many-mode, \(k_{\max}\le 5\) | \(R_B\le 0.012\). | Finite. |
-
-Largest printed \(R_B\) on this
-hunt: \(\approx 0.095\), local
-three-wave, not a high-frequency
-monster. Finite is not \(C\).
-Finite is not a kill.
-
-Cauchy–Schwarz door
-\(\lvert T_c\rvert\le\|A^{1/2}B\|_2\,\mathcal D_s^{1/2}\)
-stayed
-\(\|A^{1/2}B\|_2/\sqrt{XY}\le 0.86\)
-on the same list. That is a
-sufficient majorant, not a proof
-of a uniform \(C\).
+| Exact triad, separation | Max \(\approx 0.095\) at \(m=1\); shrinks as \(m\) grows. | Separation *shrinks* \(R_B\). |
+| Ascent on four modes | \(0.449\). | Finite local max. Not \(C\). Not the cutoff family. |
 
 ---
 
-## Why \(v_n\) cannot kill this
-
-On the unit torus, mean-zero,
-\(X\ge E\), so
-\(R_B=\sqrt{R_\star}\,\sqrt{E/X}\le\sqrt{R_\star}\).
-\(v_n\) makes \(R_\star\sim n\) and
-\(E/X\sim n^{-2}\), hence
-\(R_B\to 0\).
-B★ is a *different box* from
-unrestricted ★. Do not restore
-\(\sup R_\star<\infty\).
-
----
-
-## If it sits, it is still not a close
+## If it had sat, it was still not a close
 
 AM-GM on B★:
 
@@ -114,63 +133,31 @@ AM-GM on B★:
 \lvert T_c\rvert
 \le
 \theta\nu\mathcal D_s
-+\frac{C^2}{4\theta\nu}\,X^2\Lambda
-=
-\theta\nu\mathcal D_s
 +\frac{C^2}{4\theta\nu}\,XY.
 \]
 
 The remainder coefficient is
-\(K\sim Y/\nu\), or
-\(K_Y\sim X/\nu\).
-Neither is energy-class.
-This is **not** a useful \(K\)
-for Route B continuation.
-Gronwall still wants an
-\(H^1\) or \(H^2\) ceiling.
+\(K\sim Y/\nu\).
+Not energy-class.
+Not a useful \(K\) for Route B.
+Not G5.
 
-B★, if true, is a geometric
-bound with a \(\sqrt{\mathcal D_s}\)
-factor. It is not leftover 1.
-It does not seat G5.
-
----
-
-## Proof status
-
-**OPEN.** Survived the named
-families. Not proved.
-
-Crude Sobolev / Kato–Ponce does
-**not** seat it:
-\(\|u\cdot\nabla u\|_{H^1}\) wants
-\(\|\nabla u\|_\infty\), and
-\(H^2(\mathbb{T}^3)\not\subset W^{1,\infty}\).
-That stall is not a kill.
-
-A proof has to keep the centered
-multiplier \(A-\Lambda I\), use
-full triad symmetrization and
-incompressibility, and not
-estimate \(M\) and \(\Lambda N\)
-separately unless forced.
-That page is not written.
-
-Death if a later admissible
-field has \(R_B\to\infty\).
-Record the field and stop
-patching.
+The imag cutoff family removes
+the hypothesis. Do not AM-GM a
+false bound.
 
 ---
 
 ## Lock
 
-B★ attacked. Not seated.
-\(v_n\) does not kill it.
-Amplitude matches.
-Separation shrinks \(R_B\).
-Even a true B★ is not a
+B★ does not sit as a universal
+\(C\). Imag \(|k|^{-2}\) cutoff
+grows \(R_B\) like \(\Lambda^{1/4}\).
+Helix cancels; imag does not.
+Identity of the pairing sits
+([`BSTAR-PROOF.md`](BSTAR-PROOF.md)).
+Even a true B★ would not be a
 useful \(K\).
-★ stays killed.
+★ stays killed by \(v_n\).
 Catalog B open stays 1.
 NS not solved.

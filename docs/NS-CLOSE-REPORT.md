@@ -21,7 +21,8 @@ Path to a close:
 Route A write:
 [`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
 B★:
-[`BSTAR.md`](BSTAR.md).
+[`BSTAR.md`](BSTAR.md),
+[`BSTAR-PROOF.md`](BSTAR-PROOF.md).
 Score:
 [`NS-STATUS.md`](NS-STATUS.md).
 Tape:

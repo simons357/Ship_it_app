@@ -24,12 +24,14 @@ Arithmetic: `python3 scripts/centered_drift.py`.
 C10 did not seat (A). There is no
 crossover inequality on this page.
 
-B★ attack
+B★
 \([T_c]_+\le C X\Lambda^{1/2}\mathcal D_s^{1/2}\):
-[`BSTAR.md`](BSTAR.md).
-Survived the named families.
-Not seated. AM-GM gives
-\(K\sim Y/\nu\), not useful.
+[`BSTAR.md`](BSTAR.md),
+[`BSTAR-PROOF.md`](BSTAR-PROOF.md).
+No universal \(C\). Imag
+\(|k|^{-2}\) cutoff grows \(R_B\)
+like \(\Lambda^{1/4}\). Not a
+useful \(K\).
 
 ---
 

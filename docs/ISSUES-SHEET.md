@@ -59,9 +59,11 @@ not a close):
 Route A write (A-pair; not
 \(L^\infty a_+\)):
 [`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
-B★ attack (not leftover 4 by
+B★ (no universal \(C\); imag cutoff
+grows \(R_B\); not leftover 4 by
 itself; not a useful \(K\)):
-[`BSTAR.md`](BSTAR.md).
+[`BSTAR.md`](BSTAR.md),
+[`BSTAR-PROOF.md`](BSTAR-PROOF.md).
 Report audit (long 16 Sep write
 scored; Kato–Ponce is not \(A.2\);
 Pólya two pages rejected — \(D^+\)

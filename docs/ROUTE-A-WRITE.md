@@ -189,6 +189,9 @@ It does not move leftover 5.
 It does not imply global \(X\).
 It does not merge with \(T_c\).
 It does not restore H.
+B★ is not a universal \(C\):
+[`BSTAR.md`](BSTAR.md),
+[`BSTAR-PROOF.md`](BSTAR-PROOF.md).
 
 C10’s \(a_+\) remains the
 named crude majorant.

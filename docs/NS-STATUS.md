@@ -20,9 +20,11 @@ Path to a close (gates; not a close):
 [`PATH-TO-CLOSE.md`](PATH-TO-CLOSE.md).
 Route A write (A-pair; not \(L^\infty\)):
 [`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
-B★ attack (survived families; not
-a useful \(K\); ★ stays killed):
-[`BSTAR.md`](BSTAR.md).
+B★ (no universal \(C\); imag cutoff
+grows \(R_B\); not a useful \(K\);
+★ stays killed):
+[`BSTAR.md`](BSTAR.md),
+[`BSTAR-PROOF.md`](BSTAR-PROOF.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 

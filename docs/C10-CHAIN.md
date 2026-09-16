@@ -26,9 +26,12 @@ not in series through Theorem H:
    \(\mathcal D_s=Z-\Lambda Y\)
    → \(T_c\le\theta\nu\mathcal D_s+K(t)X\).
    [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md),
-   [`LEMMA-STAR.md`](LEMMA-STAR.md).
+   [`LEMMA-STAR.md`](LEMMA-STAR.md),
+   [`BSTAR.md`](BSTAR.md),
+   [`BSTAR-PROOF.md`](BSTAR-PROOF.md).
    Unrestricted \(\star\) is already
-   killed by \(v_n\).
+   killed by \(v_n\). B★ is not a
+   universal \(C\).
 
 Handoff and four-bucket score:
 [`NS-STATUS.md`](NS-STATUS.md).
