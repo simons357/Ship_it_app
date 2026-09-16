@@ -4,7 +4,11 @@
 **To:** the specialist reviewing the SND packet  
 **Date:** 16 September 2026
 
-This letter withdraws the displayed Theorem H. The document to read is [`SND-WHAT-IS-KEPT.md`](./SND-WHAT-IS-KEPT.md). It is **not** a repaired Theorem H.
+This letter withdraws the displayed Theorem H. It is **not** a repaired Theorem H.
+
+Shared target: [`SND-CLARIFICATION.md`](./SND-CLARIFICATION.md).  
+Test of (P): [`SND-PERSISTENCE.md`](./SND-PERSISTENCE.md).  
+Identities: [`SND-WHAT-IS-KEPT.md`](./SND-WHAT-IS-KEPT.md).
 
 ---
 
@@ -25,10 +29,12 @@ C\sqrt{\frac{M}{\nu\lambda_1}}\,
 X^{1/2}\mathcal{D}^{1/2}.
 \]
 
-The lemma is not a dominant-shell propagation result. \(F_j\) is cubic in amplitude, so no \(M\)-free quadratic bound holds. Equal-shell shears \(v_L\) make \(\rho(0)\) arbitrarily small at fixed \(X\), so [SND] is a per-solution hypothesis, not a uniform theorem from time zero. In 3D, \(H^1\) controls \(L^6\), not \(L^\infty\).
+The lemma is A.2. It is not a dominant-shell persistence result. \(F_j\) is cubic in amplitude, so no \(M\)-free quadratic bound holds. Equal-shell shears \(v_L\) make \(\rho(0)\) arbitrarily small at fixed \(X\), so [SND] is a per-solution hypothesis, not a uniform theorem from time zero. In 3D, \(H^1\) controls \(L^6\), not \(L^\infty\).
 
-Not claimed: Theorem H, Theorem G, [SND] for all data, [SND] \(\Leftrightarrow\) Clay (B), unforced Statement (B).
+The remaining question was local persistence of \(\rho=J/X\) on a time \(T(M,\nu,\rho_*)\) only. That statement is **false**. High-peak unforced shears kill the peak on the viscous timescale \(1/(\nu 4^K)\) while \(X\le M\). Using A.2 for a lower comparison leaves an unbounded \(4^{j_*}\). Do not insert \(\|\nabla u\|_\infty\) to repair this, and do not write a new Theorem H.
 
-Spectral research continues from the boxed equation. No new close until a candidate estimate survives the high-tail shear, amplitude rescaling, and equal-shell tests.
+Not claimed: Theorem H, Theorem G, [SND] for all data, [SND] \(\Leftrightarrow\) Clay (B), unforced Statement (B), conditional local SND-persistence under only \((M,\nu,\rho_*)\).
+
+Spectral research can still *measure* \(\rho\). It does not get a floor on \(\rho\) from \((M,\nu,\rho_*)\) alone.
 
 Jonathan R. Simons

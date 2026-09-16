@@ -1,11 +1,11 @@
 # SND — what is kept
 
-**Send this.** Everything else in `docs/ns-review/` is archive.
+**Identities card.** Shared target: [`SND-CLARIFICATION.md`](./SND-CLARIFICATION.md). Test of (P): [`SND-PERSISTENCE.md`](./SND-PERSISTENCE.md).
 
 **Date:** 16 September 2026  
 **Class:** smooth, mean-zero, divergence-free, **unforced** Navier–Stokes on a fixed torus \((\mathbb{R}/2\pi\mathbb{Z})^3\).
 
-Displayed Theorem H is **false**. Spectral notation is **kept**. Unforced Clay Statement (B) is **not claimed**.
+Displayed Theorem H is **false**. Do **not** repair it. Spectral notation is **kept**. Unforced Clay Statement (B) is **not claimed**.
 
 ---
 
@@ -88,6 +88,25 @@ In 3D, velocity \(\dot H^{1/2}\) is critical. \(H^1\) is **subcritical**. Energy
 
 A legitimate interpolation, if an \(L^\infty\) bound is needed, is \(\|u\|_\infty\le C\nu^{-1/4}X^{1/4}\mathcal{D}^{1/4}\). It does not restore \(S_j\).
 
+### 6. Persistence (P) — tested, false
+
+The lemma in §3 is the retained shell estimate **A.2**. It is \(j\)-uniform on \(F_j\), so \(4^j|F_j|\) still grows in the peak index. That is the paraproduct obstruction to a lower comparison that depends only on \((M,\nu,\rho_*)\).
+
+The Dini ceiling \(D^+\rho\) (old **A.3**) is the wrong side for a floor on \(\rho\).
+
+Boxed question, \(T=T(M,\nu,\rho_*)\) only:
+
+\[
+X(t)\le M,\quad\rho(0)\ge\rho_*
+\quad\Longrightarrow?\quad
+\rho(t)\ge\rho_*/2
+\text{ on }[0,T].
+\]
+
+**False** for every \(\rho_*\in(0,1)\). Unforced shears, high peak at shell \(K\), \(F_j\equiv 0\): after the peak dies and while the lower block is still frozen, \(\rho\) sits below \(\rho_*/2\). For any candidate \(T\), take \(K\) large. Arithmetic: `python3 scripts/snd_persistence_test.py`.
+
+Do not insert \(\|\nabla u\|_\infty\) or a geometric tail to “save” (P). That is a different statement, downstream of BKM. Do not write a new Theorem H.
+
 ---
 
 ## Park (do not send, do not claim)
@@ -109,4 +128,4 @@ Archive of the withdrawal (not part of the send): [`SND-MATH-CORRECTIONS-2026-09
 
 ## Lock
 
-**Identity for \(\dot X_j\) in terms of \(F_j\): yes. Absolute-value Theorem H: no. Fallback \(F_j\) lemma: yes, and not a propagation theorem. Spectral research continues from the boxed equation. No new Theorem H until a candidate estimate passes Tests A–C.**
+**Identity for \(\dot X_j\) in terms of \(F_j\): yes. Absolute-value Theorem H: no. Fallback \(F_j\) lemma (A.2): yes, and not a persistence theorem. (P) is false on Family H. No conditional local SND-persistence under only \((M,\nu,\rho_*)\). No new Theorem H.**
