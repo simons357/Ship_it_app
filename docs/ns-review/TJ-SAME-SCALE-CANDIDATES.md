@@ -111,12 +111,45 @@ Recorded 2026-09-16 run (`tj_candidate_probe_results.json`):
 
 ---
 
-## 5. Score (honesty)
+## 5. Hard run (survivors only) — 2026-09-16
+
+Jonathan: “run them.” Alive set only (**C10, C6, C11, C7, C8, C9**). **C1–C5 not revived.**  
+Command: `python3 scripts/ns_attacks/tj_survivors_hard_run.py`  
+Artifacts: `/opt/cursor/artifacts/tj-survivors-hard-run/` · repo mirror `results/tj-survivors-hard-run/`
+
+### 5.1 Hard-run verdicts
+
+| ID | Hard verdict | What the pressure test did | Evidence |
+| --- | --- | --- | --- |
+| **C10** | **SURVIVES** (principal, empty) | Refuse circular drafts; every non-circular sketch collapses onto C6 / C11 / C8-upgrade; no standalone depletion theorem found | Checklist in hard-run JSON; forbidden slots stay empty |
+| **C6** | **WEAKENED** | Concentration: \(\alpha_+ Z/T\sim 1\) (sharp); \(\alpha_+ Z/(EZ)\sim\lambda^{5/2}\to\infty\); Bernstein commutator proxy escapes \(\nu D\) (\(\sim\lambda\to\infty\)) | Ledger growth \(\alpha Z/(EZ)\): \(1.05\times 10^6\) over \(\lambda=4\to 1024\); comm/\(D\): \(256\times\) |
+| **C11** | **WEAKENED** *(axisym)* | Energy-linear \(R\) for \(T^{\mathrm{mm}}\) dies same as C1 (\(\sim\lambda^{1/2}\)); no-swirl / 2D-transfer myths killed; SO(2) ≠ cancel | Mixed table \(T^{\mathrm{mm}}\) dominates; energy-\(R\) growth \(\approx 13\) |
+| **C7** | **SURVIVES** | Naive energy-only HH product killed (\(\lvert T_{\mathrm{HH}}\rvert/(E^{1/2}X^{3/2})\sim\lambda^{3/2}\to\infty\)); `attack3` still prints live HH bottleneck | HH frac mean \(\approx 0.093\), p90 \(\approx 0.51\); naive ratio growth \(512\) |
+| **C8** | **SURVIVES** *(lab only)* | Near-shell search + light Attack 9B: no Lemma★ kill on samples; \(K_{\alpha,\beta}\) finite on budgeted fan; **not** upgraded to depletion ⇒ (A) | `LemmaStar_killed=false`; max \(\mathcal{R}_\star\approx 2.3\times 10^{-4}\); max \(K_{\beta>\alpha}\approx 0.49\) (light) |
+| **C9** | **WEAKENED** | AS-\(\tau\) / AS-\(\omega_*\): shift invariance holds (max drift \(\sim 10^{-15}\)); cannot manufacture allowed \(R\); large \(J\) + small gap still large \(\lvert\tau\rvert\) | Identity-only; standalone bound route dead |
+
+### 5.2 Who still stands (blunt)
+
+1. **C10** — still the principal door; still empty. Sketches are not a theorem.
+2. **C7** — HH channel remains the live Bony bottleneck; energy-only HH product is false.
+3. **C8** — lab only; useful evidence, not a close.
+4. **C6** — weakened to Door-3 / α-hypothesis (conditional). Not an unaugmented absolute bound.
+5. **C11** — weakened to named bulk target under axisym; energy-\(R\) myths dead.
+6. **C9** — weakened to rewrite tool under other lanes; not a standalone estimate.
+
+**Single best next theorem-shaped target:** prove **depletion ⇒ (A)** by controlling \((\alpha_{\mathrm{loc},j})_+\) (or an integrable substitute) so the main stretch enters \(\theta\nu P_j + R_{\mathrm{allowed}}\), without \(\dot e_j/\dot Z/\Lambda'\) and without the Bernstein cubic wall. (That is C10 instantiated through the honest C6 hinge — possibly under an explicit axisym / geometric hypothesis if absolute control fails.)
+
+**NS / Clay B:** **not solved.** Same-scale \(T_{j\leftarrow j}\) remains **OPEN**.
+
+---
+
+## 6. Score (honesty)
 
 | Claim | Status |
 | --- | --- |
 | Same-scale \(T_{j\leftarrow j}\) controlled | **OPEN** |
-| Path to (A) without circular recycling | **OPEN** |
+| Path to (A) without circular recycling | **OPEN** (C10 empty; collapses to C6/C11/C8) |
+| Absolute \(\alpha_+\) bound (unaugmented) | **WEAKENED / not seated** (Door-3 criterion) |
 | Spectral-shift ⇒ ★ / regularity | **Refuse** |
 | NS / Clay B solved | **Not claimed** |
-| This note as a proof | **No** — candidate filter + light probes only |
+| This note as a proof | **No** — candidate filter + hard-run pressure tests only |

@@ -2,43 +2,44 @@
 
 **Branch:** `cursor/tj-candidates-9083`  
 **Base:** `main`  
+**PR:** https://github.com/simons357/Ship_it_app/pull/102  
 **Compare:** https://github.com/simons357/Ship_it_app/compare/main...cursor/tj-candidates-9083  
-**PR create:** blocked here (`gh` integration 403; no ManagePullRequest tool in this run). Open the compare link to file the draft PR if the environment does not auto-open one.
 
 ## Title
 
-Narrow-first \(T_{j\leftarrow j}\) / (A) attack candidates (no Clay claim)
+Same-scale Tj←j attack candidates — narrow + hard-run survivors
 
 ## Body
 
 ### Summary
 
-Jonathan’s framing lock: chat “finished” = honesty + diagnostics + conditional Gronwall; proof “finished” still needs a real handle on same-scale transfer \(T_{j\leftarrow j}\) (and a non-circular path to (A)). This PR files a **narrow-first** candidate shortlist, runs cheap analytic + light numeric probes, and records who survives.
+Narrow-first candidate filter for same-scale \(T_{j\leftarrow j}\) / path to (A), then a **hard run** of the alive set only.
 
-- New: `docs/ns-review/TJ-SAME-SCALE-CANDIDATES.md`
-- New: `scripts/ns_attacks/tj_same_scale_candidate_probes.py`
-- Pointer: `docs/ns-review/README.md`
+- `docs/ns-review/TJ-SAME-SCALE-CANDIDATES.md` (incl. §5 hard-run results)
+- `scripts/ns_attacks/tj_same_scale_candidate_probes.py`
+- `scripts/ns_attacks/tj_survivors_hard_run.py`
+- `results/tj-survivors-hard-run/`
 
-### Candidates (headline)
+### Hard-run ranking (alive only; C1–C5 not revived)
 
-| Status | IDs |
+| Verdict | IDs |
 | --- | --- |
-| **DEAD** | C1 energy+visc \(R\); C2 centrifugal-only leftover; C3 circular Gronwall; C4 occupancy⇒depletion |
-| **BLOCKED** | C5 pure-swirl as class bound |
-| **SURVIVES (TRY)** | C6 α/Door-3; C7 HH-only budget; C8 near-shell lab; C9 triad structure; **C10 depletion⇒(A)** (principal); C11 \(T^{\mathrm{mm}}\) (axisym-conditional); C12 SND conditional-only |
+| **SURVIVES** | **C10** principal empty door; **C7** HH bottleneck; **C8** lab only |
+| **WEAKENED** | C6 Door-3/α criterion; C11 \(T^{\mathrm{mm}}\) bulk target (axisym); C9 identity-only rewrite |
+| **DEAD / BLOCKED** | C1–C5 (unchanged; not revived) |
+
+**Best next theorem-shaped target:** non-circular \((\alpha_{\mathrm{loc},j})_+\) (or integrable) control feeding depletion ⇒ (A), without \(\dot e_j/\dot Z/\Lambda'\) and without Bernstein cubic wall.
 
 ### Honesty
 
-- NS / Clay B **not** claimed
+- NS / Clay B **not** claimed — \(T_{j\leftarrow j}\) still **OPEN**
 - Spectral-shift ≠ Lemma★
 - No recycling \(\dot e_j / \dot Z / \Lambda'\)
-- Axisymmetry labeled conditional where used
 - Numerics ≠ depletion / ≠ theorem
 
 ### Probe
 
 ```bash
 python3 scripts/ns_attacks/tj_same_scale_candidate_probes.py
+python3 scripts/ns_attacks/tj_survivors_hard_run.py
 ```
-
-Artifacts under `/opt/cursor/artifacts/tj-same-scale-candidates/`.
