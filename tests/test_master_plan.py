@@ -58,6 +58,8 @@ class MasterPlanTests(unittest.TestCase):
         self.assertIn("Do not switch", raw)
         self.assertIn("living handoff", text)
         self.assertIn("H1/H", raw)
+        self.assertIn("Do not mail a panel", raw)
+        self.assertIn("Neither, from this desk", raw)
         self.assertNotIn("Exact-shell 9D — claimed", raw)
         self.assertNotIn("NS is solved", text)
         tape = _plain(TAPE)

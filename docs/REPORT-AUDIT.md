@@ -207,13 +207,50 @@ File already on the tape:
 
 ## 4. Theorem H audit summary
 
-**CORRECT.** Already seated.
+This exact paste. **CORRECT.**
+Already seated:
 [`SND-H-REVIEW.md`](SND-H-REVIEW.md),
 [`SND-H-REPAIR.md`](SND-H-REPAIR.md).
 
-Do not draft a repaired Theorem H
-from §8. Do not mail a panel.
-\(A.2\) sits. Propagation unwritten.
+Items 1–7 match the tape:
+
+1. Packet \(\Pi_j=F_j-S_j\). Dropping
+   \(S_j\ge 0\) kills the absolute-value
+   claim.
+2. Shear family. Locked ratio
+   \(\to\infty\) at \(K=24,28,32\).
+   Heat-evolved shear is a genuine
+   unforced solution. Not a fake field.
+3. \(H^1\not\to L^\infty\),
+   \(H^2\not\to L^\infty(\nabla u)\)
+   in 3-D. \(H^1\) controls \(L^6\).
+4. \(F_j\sim A^3\), proposed bound
+   quadratic. \(M\)-free version DEAD.
+5. Equal-shell \(v_L\), \(\rho(0)=1/L\).
+   No universal \(t=0\) floor.
+6. Fallback \(A.2\) sits. Hölder
+   \(6,2,3\) + Poincaré. Not
+   propagation.
+7. Table-7 wording fixes sit on
+   the review page.
+
+Closing question of the paste:
+
+> Draft a repaired proof from §8,
+> or first draft panel erratum
+> language?
+
+**Neither, from this desk.**
+Do not rebuild Theorem H.
+Do not mail a panel.
+Cover-sheet erratum already sits
+on [`SND-H-REPAIR.md`](SND-H-REPAIR.md)
+for operator circulation, not
+from this desk. \(A.3\) is a
+ceiling, not a floor.
+Propagation stays unwritten.
+Next writes are Route A / B,
+not H.
 
 ---
 
