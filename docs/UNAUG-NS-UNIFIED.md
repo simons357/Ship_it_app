@@ -28,6 +28,9 @@ How the desk already planned to move:
 [`MASTER-PLAN.md`](MASTER-PLAN.md).
 Incoming boards vs tape:
 [`REPORT-AUDIT.md`](REPORT-AUDIT.md).
+ChatGPT paste vs Grok desk vs
+the C10 word:
+[`INCOMING-WRITEUPS.md`](INCOMING-WRITEUPS.md).
 
 ---
 

@@ -211,6 +211,10 @@ still not a theorem
 
 ## How to read the next sentence
 
+If we file a ChatGPT paste, that is
+YES as incoming and still NO as the
+tape
+([`INCOMING-WRITEUPS.md`](INCOMING-WRITEUPS.md)).
 If we write a unified unaugmented
 status after the peer reports, that
 is YES as a score and still NO as a

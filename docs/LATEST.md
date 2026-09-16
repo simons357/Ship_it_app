@@ -20,6 +20,10 @@ ordinary NS. Uniform H1 as eps → 0 still
 open. Paper: docs/THEOREM-A-Q1.pdf
 
 **Unaug NS (ordinary) — open**
+Incoming ChatGPT / Grok / Claude
+write-ups (C10 “dead” is not leftover
+5 closed):
+docs/INCOMING-WRITEUPS.md
 Unified status after peer reports
 (enough for a score, not a close):
 docs/UNAUG-NS-UNIFIED.md

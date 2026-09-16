@@ -137,6 +137,12 @@ ingest (enough for a score, not
 a close; C10 not seated; H
 withdrawn):
 docs/UNAUG-NS-UNIFIED.md
+Incoming write-ups (ChatGPT paste
+filed; cannot log into ChatGPT /
+Claude / Grok; C10 “dead” is the
+failed seat of (A), not leftover 5
+closed):
+docs/INCOMING-WRITEUPS.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md

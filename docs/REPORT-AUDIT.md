@@ -209,8 +209,13 @@ The full write is §8.
 
 ## 8. Full 16 Sep “Global Regularity Program”
 
-Long write, queued twice.
-Most complete peer note.
+Long write, queued twice, then
+pasted into this agent chat.
+Filed as incoming (not the tape):
+[`incoming/GLOBAL-REGULARITY-PROGRAM-2026-09-16.md`](incoming/GLOBAL-REGULARITY-PROGRAM-2026-09-16.md).
+Who said what:
+[`INCOMING-WRITEUPS.md`](INCOMING-WRITEUPS.md).
+Most complete ChatGPT-shaped note.
 Mostly honest. Several lethal slips.
 
 ### What it got right
