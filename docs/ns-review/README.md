@@ -2,14 +2,16 @@
 
 Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS packaging.
 
-## Reviewer packet (15 Sep 2026)
+## Reviewer packet (16 Sep 2026)
 
 Cover: [`REVIEWER-PACKET.md`](./REVIEWER-PACKET.md)
 
 1. [`THEOREM-H-STATEMENT-AND-PROOF.md`](./THEOREM-H-STATEMENT-AND-PROOF.md) — manuscript extract (object under review).
 2. [`SND-MATH-CORRECTIONS-2026-09-15.md`](./SND-MATH-CORRECTIONS-2026-09-15.md) — displayed estimate fails at fixed \(M\); valid \(F_j\) lemma; exact shell equation.
-3. [`ARCHON-PANEL-ADVERSARIAL-VERDICT.md`](./ARCHON-PANEL-ADVERSARIAL-VERDICT.md) — 25 Aug review (PR #35) plus 15 Sep erratum.
+3. [`ARCHON-PANEL-ADVERSARIAL-VERDICT.md`](./ARCHON-PANEL-ADVERSARIAL-VERDICT.md) — 25 Aug review (PR #35) plus 15–16 Sep errata.
 4. [`SND-REVIEWER-REPORT-2026-09-15.md`](./SND-REVIEWER-REPORT-2026-09-15.md) — body of work; unforced (B) not claimed; forced C/D named.
+5. [`PANEL-RESPONSE-2026-09-16.md`](./PANEL-RESPONSE-2026-09-16.md) — sendable panel letter; findings 1–7 accepted.
+6. [`SND-REPAIRED-SHELL-BUDGET.md`](./SND-REPAIRED-SHELL-BUDGET.md) — boxed-equation identities and Tests A–C; not a new Theorem H.
 
 ## Φ-renorm (KEEP; conditional)
 

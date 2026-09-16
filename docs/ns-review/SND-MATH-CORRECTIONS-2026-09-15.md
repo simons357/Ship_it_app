@@ -373,3 +373,5 @@ Fefferman’s official formulation distinguishes unforced periodic Statement B f
 - Preserve the original manuscript extract as an extract, clearly marked as the object under review.
 - Use the boxed replacement wording on the cover sheet, in Theorem H **commentary** (not inside the extract), and as an addendum to the historical August verdict.
 - Do not edit the 25 August body except to attach this erratum and the \(X\ge c_* J\) sign correction.
+
+**16 September 2026 follow-up (not a change to the calculations above).** The sendable panel letter is [`PANEL-RESPONSE-2026-09-16.md`](./PANEL-RESPONSE-2026-09-16.md). Identities, the accepted \(F_j\) lemma, the one-sided \(\Pi_j\le F_j\) consequence, and Tests A–C against the boxed equation are recorded in [`SND-REPAIRED-SHELL-BUDGET.md`](./SND-REPAIRED-SHELL-BUDGET.md). That note does **not** re-assert Theorem H or dominant-shell propagation.

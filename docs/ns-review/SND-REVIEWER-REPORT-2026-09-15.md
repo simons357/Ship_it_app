@@ -347,12 +347,14 @@ This repository’s `main` only holds a slice (Φ-renorm KEEP card, Zenodo inven
 
 Cover sheet: [`REVIEWER-PACKET.md`](./REVIEWER-PACKET.md).
 
-Send **four documents**. If only one status file accompanies the extract, send the mathematical corrections.
+Send **six documents**. If only one status file accompanies the extract, send the mathematical corrections. If a sendable letter is wanted, send the 16 September panel response.
 
 1. **Manuscript extract** — [`THEOREM-H-STATEMENT-AND-PROOF.md`](./THEOREM-H-STATEMENT-AND-PROOF.md). Object under review, not a claimed theorem.
 2. **Mathematical corrections** — [`SND-MATH-CORRECTIONS-2026-09-15.md`](./SND-MATH-CORRECTIONS-2026-09-15.md). Displayed \(|\Pi_{j_*}|\) fails at fixed \(M\); valid \(F_j\) lemma; exact shell equation.
-3. **25 August adversarial review** — [`ARCHON-PANEL-ADVERSARIAL-VERDICT.md`](./ARCHON-PANEL-ADVERSARIAL-VERDICT.md), [PR #35](https://github.com/simons357/Ship_it_app/pull/35), plus 15 Sep erratum.
+3. **25 August adversarial review** — [`ARCHON-PANEL-ADVERSARIAL-VERDICT.md`](./ARCHON-PANEL-ADVERSARIAL-VERDICT.md), [PR #35](https://github.com/simons357/Ship_it_app/pull/35), plus 15–16 Sep errata.
 4. **This briefing**.
+5. **Panel letter** — [`PANEL-RESPONSE-2026-09-16.md`](./PANEL-RESPONSE-2026-09-16.md). Findings 1–7 accepted; displayed H withdrawn.
+6. **Shell budget** — [`SND-REPAIRED-SHELL-BUDGET.md`](./SND-REPAIRED-SHELL-BUDGET.md). Boxed-equation identities and Tests A–C; not a new Theorem H.
 
 Cite for public framing: [10.5281/zenodo.22050976](https://doi.org/10.5281/zenodo.22050976) (label, not verification).
 

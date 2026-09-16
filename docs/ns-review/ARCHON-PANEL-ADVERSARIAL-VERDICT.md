@@ -205,3 +205,9 @@ The August body above is **unchanged**. Attach this erratum rather than rewritin
 Replace “naming fraud” in Gap H2 with **definition/claim mismatch** / **mislabeling**. The formulas establish an error, not intent.
 
 Full calculations: [`SND-MATH-CORRECTIONS-2026-09-15.md`](./SND-MATH-CORRECTIONS-2026-09-15.md).
+
+---
+
+## 16 September 2026 panel letter
+
+The August body remains **unchanged**. The sendable response accepting the seven audit findings is [`PANEL-RESPONSE-2026-09-16.md`](./PANEL-RESPONSE-2026-09-16.md). Identities from the boxed shell equation, without a new Theorem H, are in [`SND-REPAIRED-SHELL-BUDGET.md`](./SND-REPAIRED-SHELL-BUDGET.md).

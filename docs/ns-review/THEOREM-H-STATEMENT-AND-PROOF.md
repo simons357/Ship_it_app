@@ -1,9 +1,11 @@
 # Theorem H — manuscript extract (object under review)
 
-**Packet role:** if only one *manuscript* file is sent, send this extract together with the 15 September mathematical corrections.  
+**Packet role:** if only one *manuscript* file is sent, send this extract together with the 15 September mathematical corrections. If a sendable letter is wanted, send [`PANEL-RESPONSE-2026-09-16.md`](./PANEL-RESPONSE-2026-09-16.md).  
 **Manuscript source:** Zenodo `20518057` mirror, `docs/papers/zenodo-spectral/20518057/98d1b1cc9_NS_UPLOAD_ZENODO.tex` on `origin/cursor/tao-snd-h-panel-a0eb` (older SND framework; superseded as a *claim* by KEEP `10.5281/zenodo.22050976`).  
 **Claim-paper overlay:** Zenodo `20405526` (PARK).  
-**Corrections (binding for packet status):** [`SND-MATH-CORRECTIONS-2026-09-15.md`](./SND-MATH-CORRECTIONS-2026-09-15.md).
+**Corrections (binding for packet status):** [`SND-MATH-CORRECTIONS-2026-09-15.md`](./SND-MATH-CORRECTIONS-2026-09-15.md).  
+**Panel letter:** [`PANEL-RESPONSE-2026-09-16.md`](./PANEL-RESPONSE-2026-09-16.md).  
+**Identities from the boxed equation (not a new Theorem H):** [`SND-REPAIRED-SHELL-BUDGET.md`](./SND-REPAIRED-SHELL-BUDGET.md).
 
 Sections 1–6 below are the **extract**: definitions and the displayed Theorem H statement/proof **as written**. They are the object under review, not a claimed theorem of this packet.
 
