@@ -135,6 +135,7 @@ stay samples. They are not this kill.
 | Glue H1 to ★, or either to the shell door | Different integrals. |
 | \(K(t)\) in the PDE | Forbidden on B. |
 | SFE / UHF / DHFA / HB as constitutive NS | Shelf. |
+| Company status map as an NS close / scoreboard | Portfolio only. Swirl is a map. QStack stays an instrument. Standing rule accepted. [`REPORT-AUDIT.md`](REPORT-AUDIT.md) §11. |
 | Start H1 from ABC_λ | Named only. |
 | Cosmo / SM five fingers as constitutive NS | Other book. [`DA-FINGERS.md`](DA-FINGERS.md). |
 | B-hand five-finger map as a close | MAP only. Does not move leftover 1, 4, or 5. |

@@ -26,6 +26,8 @@ Sources scored here:
 8. Operator: enough information
    for a plan toward a closed
    unaugmented equation?
+9. Company status map
+   (Live / Holding / Cold / Street).
 
 Tape: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).
 Handoff: [`NS-STATUS.md`](NS-STATUS.md).
@@ -485,6 +487,69 @@ They must not be forced to meet.
 
 ---
 
+## 11. Company status map — 16 Sep
+
+This exact paste. Portfolio
+map. **Not a leftover close.**
+“No scoreboard” is right for
+the company list. This desk
+still scores math in four
+buckets.
+
+**Standing rule — ACCEPT.**
+Rigor first. Gaps named.
+Visuals and code make the
+math real. No prize / QED /
+“solved” in public output.
+
+**Live, on this desk**
+
+- Swirl publishing package:
+  map, not leftover 5. \(T_{j\leftarrow j}\)
+  stays OPEN.
+- NS lemmas / reconstructions /
+  negative results on the record:
+  instruments. Unrestricted ★ is
+  **KILLED**, not an open lemma.
+
+**Live, off this line**
+
+Listener, Propos, Vigilant
+Monitor, Lattice Edge, FIELD
+MAPPER. Company work. Do not
+start them from PR 24. FIELD
+MAPPER is a map, not a bound
+on \(X\).
+
+**Holding — ACCEPT as shelf**
+
+SFE / Harmonic Blueprint stay
+off Track B. QStack / NAV-42 /
+GCD shells / E8 are instruments, not claims.
+Already the rule.
+RH leftover 6 stays OPEN. Q is
+inverse-GCD, not RH. HarborSafe
+/ REEF / TITAN-X / one-pagers
+and the other holding apps stay
+off this branch.
+
+**Cold — ACCEPT**
+
+Older preprints stay historical.
+Journal / arXiv / Tao-addendum
+queue stays in the file. This
+desk does not mail a panel.
+
+**Street — ACCEPT the posture.**
+Soft X silent on this line.
+
+This map does not move Route A
+or Route B. It does not put
+SFE / Q / \(\Phi\) / Ring back
+on the unaugmented PDE.
+
+---
+
 ## Lock
 
 GPT’s board is mostly inventory.
@@ -497,5 +562,7 @@ peak-fraction floor” is not seated.
 \(A.2\) is not Kato–Ponce.
 Blowup-search is not this line.
 Do not repair H.
+Company status map is a
+portfolio, not a close.
 Enough for a plan. Not a close.
 NS not solved.

@@ -62,6 +62,8 @@ class MasterPlanTests(unittest.TestCase):
         self.assertIn("Neither, from this desk", raw)
         self.assertIn("wrong Dini", text)
         self.assertIn("Do not write those two pages", raw)
+        self.assertIn("Company status map", raw)
+        self.assertIn("instruments, not claims", text)
         self.assertNotIn("Exact-shell 9D — claimed", raw)
         self.assertNotIn("NS is solved", text)
         tape = _plain(TAPE)
