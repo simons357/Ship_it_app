@@ -1,0 +1,151 @@
+{
+  "honesty": {
+    "ns_solved": false,
+    "clay_claimed": false,
+    "spectral_shift_is_lemma_star": false,
+    "numerics_are_depletion": false,
+    "forbidden_slots": [
+      "\\dot e_j",
+      "\\dot Z",
+      "\\dot Z_j",
+      "\\Lambda'"
+    ]
+  },
+  "summary": [
+    {
+      "id": "C1",
+      "verdict": "DEAD"
+    },
+    {
+      "id": "C2",
+      "verdict": "DEAD"
+    },
+    {
+      "id": "C3",
+      "verdict": "DEAD"
+    },
+    {
+      "id": "C4",
+      "verdict": "DEAD"
+    },
+    {
+      "id": "C5",
+      "verdict": "BLOCKED"
+    },
+    {
+      "id": "C6_alpha_door3",
+      "verdict": "TRY"
+    },
+    {
+      "id": "C7_HH_only_budget",
+      "verdict": "TRY"
+    },
+    {
+      "id": "C8_near_shell_cancellation",
+      "verdict": "TRY"
+    },
+    {
+      "id": "C9_triad_structure",
+      "verdict": "TRY"
+    },
+    {
+      "id": "C10_noncircular_depletion_to_A",
+      "verdict": "TRY"
+    },
+    {
+      "id": "C11_meridional_Tmm_cancel",
+      "verdict": "TRY"
+    },
+    {
+      "id": "C12_SND_conditional",
+      "verdict": "TRY_CONDITIONAL_ONLY"
+    },
+    {
+      "id": "C7_numeric",
+      "verdict": "SURVIVES"
+    },
+    {
+      "id": "C8_numeric",
+      "verdict": "SURVIVES_AS_LAB"
+    }
+  ],
+  "who_survived": [
+    {
+      "id": "C6_alpha_door3",
+      "verdict": "TRY"
+    },
+    {
+      "id": "C7_HH_only_budget",
+      "verdict": "TRY"
+    },
+    {
+      "id": "C8_near_shell_cancellation",
+      "verdict": "TRY"
+    },
+    {
+      "id": "C9_triad_structure",
+      "verdict": "TRY"
+    },
+    {
+      "id": "C10_noncircular_depletion_to_A",
+      "verdict": "TRY"
+    },
+    {
+      "id": "C11_meridional_Tmm_cancel",
+      "verdict": "TRY"
+    },
+    {
+      "id": "C12_SND_conditional",
+      "verdict": "TRY_CONDITIONAL_ONLY"
+    },
+    {
+      "id": "C7_numeric",
+      "verdict": "SURVIVES"
+    },
+    {
+      "id": "C8_numeric",
+      "verdict": "SURVIVES_AS_LAB"
+    }
+  ],
+  "C1": {
+    "candidate": "C1_energy_visc_R",
+    "verdict": "DEAD",
+    "lambdas": [
+      4.0,
+      16.0,
+      64.0,
+      256.0
+    ],
+    "ratio": [
+      12.307692307692307,
+      38.49624060150376,
+      79.80516317584024,
+      159.97558966222195
+    ],
+    "ratio_growth_last_over_first": 12.998016660055535,
+    "note": "ratio ~ \u03bb^{1/2} \u2192 \u221e; energy-linear R is false as a uniform bound"
+  },
+  "C2_note": {
+    "verdict": "DEAD",
+    "T_mm_dominates_abs": true
+  },
+  "C7": {
+    "candidate": "C7_HH_only_budget",
+    "expected_verdict_substring": "HH_CHANNEL_LIVE_BOTTLENECK_no_closure",
+    "probe_status": "SURVIVES",
+    "note": "HH remains live bottleneck unless script fails",
+    "verdict": "HH_CHANNEL_LIVE_BOTTLENECK_no_closure",
+    "random_HH_frac_mean": 0.0925562698885492,
+    "random_HH_frac_p90": 0.5055589290413259
+  },
+  "C8": {
+    "candidate": "C8_near_shell_cancellation",
+    "probe_ok": true,
+    "probe_status": "SURVIVES_AS_LAB",
+    "note": "Kill decision uses complete signed Tc; no theorem",
+    "LemmaStar_killed": false,
+    "max_R_star": 0.00022638593068191097,
+    "verdict": "SURVIVE_numeric_gap_remains"
+  },
+  "rstar_max_finite": 1.3936565670670352e-37
+}

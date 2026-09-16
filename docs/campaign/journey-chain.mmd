@@ -1,0 +1,65 @@
+%%{init: {'theme': 'base', 'themeVariables': {
+  'primaryColor': '#e8eef4',
+  'primaryTextColor': '#1a2332',
+  'primaryBorderColor': '#3d5a73',
+  'lineColor': '#5a6b7d',
+  'secondaryColor': '#f3efe6',
+  'tertiaryColor': '#f7f4ef'
+}}}%%
+%% Body-of-work journey chain — campaign landing companion.
+%% Open analytic nodes labeled as math objects (not scarlet letters).
+flowchart TB
+  subgraph shelf["Public shelf"]
+    KEEP["Zenodo KEEP DOIs<br/>cite set + status index"]
+    ARCH["Archive shelf<br/>PARK history / withdrawn packaging"]
+  end
+
+  subgraph trunk["Main trunk — T³ energy / shape"]
+    NSE["Classical NSE on T³"]
+    MOM["Moments E, X, Y, Z · Λ = Y/X"]
+    ID["Identities Dₛ, T_c · Λ′"]
+    STAR["Lemma★ packaging<br/>R★ / energy-budget form"]
+    FIVE["Five-lane diagnostics<br/>Bony / shell / packet probes"]
+    PROD["Product bound on T_c<br/>open estimate"]
+    REG["Continuation from controlled Λ"]
+  end
+
+  subgraph phi["Φ-renorm — axisymmetric swirl"]
+    PHIID["Γ → Φ identity<br/>r⁻⁴ ∂_z(Γ²) = ∂_z(Φ²)"]
+    HDOT["Ḣ¹·³ dissipation label"]
+    BAR["‖uʳ/r‖_∞ integrability<br/>open estimate"]
+  end
+
+  subgraph side["Adjacent books"]
+    SND["Ring Lemma + SND<br/>conditional shell texture"]
+    Q6["Q₆ / inverse-GCD<br/>operator note"]
+    DA["Domain Architect<br/>FRA / notation audit"]
+  end
+
+  KEEP --> NSE
+  KEEP --> PHIID
+  KEEP --> SND
+  KEEP --> Q6
+  ARCH -.-> KEEP
+
+  NSE --> MOM --> ID --> STAR --> FIVE --> PROD --> REG
+  PHIID --> HDOT --> BAR
+  ID -.-> SND
+  SND -.-> PROD
+  DA -.-> ID
+  DA -.-> PHIID
+  Q6 -.-> ARCH
+
+  classDef classical fill:#dce6ef,stroke:#3d5a73,color:#1a2332
+  classDef identity fill:#d4e4d8,stroke:#3d6b4f,color:#1a2332
+  classDef package fill:#e8e0d0,stroke:#7a6540,color:#1a2332
+  classDef open fill:#f5e6c8,stroke:#9a7a40,color:#1a2332,stroke-dasharray: 5 4
+  classDef optional fill:#eeeae2,stroke:#8a8580,color:#4a4540,stroke-dasharray: 2 3
+  classDef shelf fill:#eef2f6,stroke:#5a6b7d,color:#1a2332
+
+  class NSE,MOM classical
+  class ID,PHIID,HDOT identity
+  class STAR,FIVE,REG package
+  class PROD,BAR open
+  class SND,Q6,DA,ARCH optional
+  class KEEP shelf
