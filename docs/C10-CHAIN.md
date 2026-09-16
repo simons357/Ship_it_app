@@ -25,9 +25,15 @@ not in series through Theorem H:
    \(T_c=M-\Lambda N\),
    \(\mathcal D_s=Z-\Lambda Y\)
    → \(T_c\le\theta\nu\mathcal D_s+K(t)X\).
+   [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md),
    [`LEMMA-STAR.md`](LEMMA-STAR.md).
    Unrestricted \(\star\) is already
    killed by \(v_n\).
+
+Handoff and four-bucket score:
+[`NS-STATUS.md`](NS-STATUS.md).
+SND instrument (no persistence):
+[`SND-INSTRUMENT.md`](SND-INSTRUMENT.md).
 
 Do not merge (2) and (3) unless an
 explicit inequality connects them.
@@ -430,4 +436,5 @@ Shears: a_+=0 and T=0.
 Do not merge T_c.
 BKM-from-decay is not the primary.
 Leftover 5 stays OPEN.
+Handoff: NS-STATUS.md.
 NS not solved.

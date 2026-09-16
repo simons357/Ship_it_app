@@ -84,3 +84,6 @@ Repaired \(F_j\) bound sits; the
 ceiling, not a floor, and not
 propagation:
 [`SND-H-REPAIR.md`](SND-H-REPAIR.md).
+16 Sep handoff: [`NS-STATUS.md`](NS-STATUS.md).
+Instrument, no persistence:
+[`SND-INSTRUMENT.md`](SND-INSTRUMENT.md).

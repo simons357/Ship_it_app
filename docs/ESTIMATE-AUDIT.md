@@ -221,6 +221,8 @@ Repaired \(F_j\) bound; Dini ceiling:
 C10 candidate for the local block
 (not a theorem):
 [`C10-CHAIN.md`](C10-CHAIN.md).
+16 Sep handoff:
+[`NS-STATUS.md`](NS-STATUS.md).
 
 ---
 

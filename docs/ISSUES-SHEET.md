@@ -41,6 +41,12 @@ propagation:
 C10 is a named leftover-5 candidate,
 not a thirteenth leftover and not a
 theorem: [`C10-CHAIN.md`](C10-CHAIN.md).
+16 Sep handoff (four buckets):
+[`NS-STATUS.md`](NS-STATUS.md).
+Centered drift:
+[`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
+SND instrument, no persistence:
+[`SND-INSTRUMENT.md`](SND-INSTRUMENT.md).
 Not a thirteenth leftover. The original
 extract stays an extract.
 

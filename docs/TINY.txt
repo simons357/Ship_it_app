@@ -116,6 +116,16 @@ C10 chain (depletion via a_+ to (A);
 named leftover-5 candidate, not a
 theorem; freeze exact-shell 9D):
 docs/C10-CHAIN.md
+16 Sep handoff (four buckets; C10
+not seated; do not repair H):
+docs/NS-STATUS.md
+Centered drift (T_c vs D_s; star
+stays killed; K(t) is a remainder,
+not a term in the PDE):
+docs/CENTERED-DRIFT.md
+SND instrument (diagnostics only;
+no persistence):
+docs/SND-INSTRUMENT.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md

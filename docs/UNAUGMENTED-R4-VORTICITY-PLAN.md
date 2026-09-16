@@ -308,6 +308,10 @@ Repaired \(F_j\) bound sits. The
 assembled \(D^+\rho\) inequality is a
 ceiling, not a floor:
 [`SND-H-REPAIR.md`](SND-H-REPAIR.md).
+16 Sep handoff and four-bucket score:
+[`NS-STATUS.md`](NS-STATUS.md).
+SND instrument (no persistence):
+[`SND-INSTRUMENT.md`](SND-INSTRUMENT.md).
 
 Source for H: May T³ note (20405526, archive). Fluids content only. The old closure packaging is ignored.
 

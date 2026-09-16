@@ -84,6 +84,7 @@ stay samples. They are not this kill.
 | SuperGrok PR-24 table (★ dead, Need★ no repair, leftover OPEN, maxima historical) | Matches the tape. [`PR24-SUPERGROK-REVIEW.md`](PR24-SUPERGROK-REVIEW.md). |
 | \(A.2\) bound on \(F_j\) | Sits under \(X\le M\). Hölder \(6,2,3\) and Poincaré. Not Theorem H. [`SND-H-REPAIR.md`](SND-H-REPAIR.md). |
 | Exact-shell \(C=4/3\) freeze | **CLAIMED.** No more sweeps. Independent reproduction of the projected identity / incidence. [`ATTACK-9D-FULL-SUPPORT-BOUND.md`](ATTACK-9D-FULL-SUPPORT-BOUND.md). |
+| 16 Sep handoff | Four buckets. C10 not seated as (A). Centered drift independent. SND is an instrument. [`NS-STATUS.md`](NS-STATUS.md). |
 
 ---
 
@@ -159,6 +160,12 @@ candidate; (A) not seated:
 [`C10-CHAIN.md`](C10-CHAIN.md).
 Do not work Theorem H. Do not merge
 C10 with \(T_c\).
+16 Sep handoff / four-bucket score:
+[`NS-STATUS.md`](NS-STATUS.md).
+Centered drift (★ stays killed):
+[`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
+SND instrument, no persistence:
+[`SND-INSTRUMENT.md`](SND-INSTRUMENT.md).
 
 SND-to-regularity implication is
 **OPEN** as a named hole on the SND/H

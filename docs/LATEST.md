@@ -72,6 +72,16 @@ C10 chain (a_+ depletion candidate for
 leftover 5; (A) not seated; 9D frozen
 CLAIMED):
 docs/C10-CHAIN.md
+16 Sep handoff (four-bucket score;
+C10 not seated as (A); primary
+attack is high-frequency transfer):
+docs/NS-STATUS.md
+Centered spectral drift (independent;
+unrestricted star stays killed):
+docs/CENTERED-DRIFT.md
+SND instrument (frozen shells; no
+persistence claim):
+docs/SND-INSTRUMENT.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

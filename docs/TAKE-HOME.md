@@ -110,6 +110,7 @@ Displayed Theorem H fails even with
 Repaired \(F_j\) bound sits; \(A.3\) is
 a Dini ceiling, not a floor:
 [`SND-H-REPAIR.md`](SND-H-REPAIR.md).
+16 Sep handoff: [`NS-STATUS.md`](NS-STATUS.md).
 
 Those are not sitting. Publishing them as
 finished would not save face.
