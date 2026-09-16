@@ -24,6 +24,13 @@ Arithmetic: `python3 scripts/centered_drift.py`.
 C10 did not seat (A). There is no
 crossover inequality on this page.
 
+B★ attack
+\([T_c]_+\le C X\Lambda^{1/2}\mathcal D_s^{1/2}\):
+[`BSTAR.md`](BSTAR.md).
+Survived the named families.
+Not seated. AM-GM gives
+\(K\sim Y/\nu\), not useful.
+
 ---
 
 ## Target

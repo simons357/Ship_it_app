@@ -20,6 +20,8 @@ Path to a close:
 [`PATH-TO-CLOSE.md`](PATH-TO-CLOSE.md).
 Route A write:
 [`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
+B★:
+[`BSTAR.md`](BSTAR.md).
 Score:
 [`NS-STATUS.md`](NS-STATUS.md).
 Tape:

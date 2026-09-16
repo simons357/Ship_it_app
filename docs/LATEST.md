@@ -97,6 +97,10 @@ docs/PATH-TO-CLOSE.md
 Route A write (pairing, not
 L^inf a_+; write or kill):
 docs/ROUTE-A-WRITE.md
+B★ attack (survived families;
+not a useful K; star stays
+killed):
+docs/BSTAR.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

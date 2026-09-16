@@ -149,6 +149,9 @@ center. Test the remainder on
 single shells.
 
 Page: [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
+B★ hunt: [`BSTAR.md`](BSTAR.md).
+Survived families. Not a useful
+\(K\). Do not cash B★ as G5.
 
 Useful \(K\) or a named death.
 Do not restore

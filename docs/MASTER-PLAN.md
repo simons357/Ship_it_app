@@ -16,6 +16,9 @@ Path to a close (G1 then G4):
 Route A write (pairing, not
 \(L^\infty\)):
 [`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
+B★ attack (not seated; not a
+useful \(K\)):
+[`BSTAR.md`](BSTAR.md).
 
 This page answers the operator’s
 question: how do we beat unforced

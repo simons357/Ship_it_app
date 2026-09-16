@@ -127,6 +127,7 @@ stay samples. They are not this kill.
 | “C10 died” as a program | (A) not seated. Lane stays the Route A write-or-kill. |
 | Enough information to close unforced NS | Enough for [`MASTER-PLAN.md`](MASTER-PLAN.md). Not enough for a close. Operator report: [`NS-CLOSE-REPORT.md`](NS-CLOSE-REPORT.md). Path: [`PATH-TO-CLOSE.md`](PATH-TO-CLOSE.md). |
 | Bounding \(a_+\) by \(\|\nabla u\|_\infty\) as the Route A write | BKM, not an a priori. Living G1 is A-pair: the stretch pairing, not \(\|(\alpha)_+\|_\infty\). [`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md). |
+| B★ as a seated useful \(K\) / as a close | Survived the named families. Not seated. AM-GM remainder is \(Y/\nu\), not energy-class. [`BSTAR.md`](BSTAR.md). |
 | Switch this line to augmented NS / Theorem A | Track A is a different PDE. A is not B. |
 | OpenAI / blowup-search as this line | Forced (C)/(D) if it holds. Not unforced (B). |
 | BKM from assumed spectral decay as the primary | Useful conditional. Does not attack depletion. |
@@ -188,6 +189,9 @@ not a close):
 Route A write (A-pair; pairing
 not \(L^\infty\)):
 [`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
+B★ attack (survived families;
+not seated; not a useful \(K\)):
+[`BSTAR.md`](BSTAR.md).
 
 SND-to-regularity implication is
 **OPEN** as a named hole on the SND/H
