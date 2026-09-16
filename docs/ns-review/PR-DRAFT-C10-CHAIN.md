@@ -6,4 +6,4 @@ C10 is empty as an unaugmented mechanism. Identities through TJJ-α sit. The \(a
 
 9D: `docs/ns-review/EXACT-SHELL-9D-FREEZE.md` — CLAIMED, no new sweeps.
 
-Do not work Theorem H. Do not merge C10 with \(T_c\) without an explicit inequality.
+SND: persistence (P) is false on Family H. See [PR #101](https://github.com/simons357/Ship_it_app/pull/101). Do not repair Theorem H. Do not merge C10 with \(T_c\) without an explicit inequality.

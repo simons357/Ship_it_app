@@ -400,7 +400,7 @@ Lemma★ / PRODUCT-BLOCK \(\sup_v\mathcal{R}_\star<\infty\) remains a separate O
 
 ## 8. Independence (do not merge)
 
-C10 does **not** have to work for centered drift to work. Centered drift does **not** have to work for C10 to work. SND is an **instrument** until its dynamics earn something stronger: measure \(\rho\), peak migration, tail shape, and shell pairings, and ask whether those measurements expose a depletion mechanism. They have not.
+C10 does **not** have to work for centered drift to work. Centered drift does **not** have to work for C10 to work. SND is an **instrument**: persistence (P) under only \((M,\nu,\rho_*)\) is false ([PR #101](https://github.com/simons357/Ship_it_app/pull/101)). Measure \(\rho\), peak migration, tail shape, and shell pairings; they have not produced a depletion mechanism. Do not repair Theorem H.
 
 A geometric-tail / BKM sufficient condition remains a useful **conditional** theorem. It is not a repair of the failed C10 arrow.
 
