@@ -137,6 +137,9 @@ stay samples. They are not this kill.
 | Start H1 from ABC_λ | Named only. |
 | Cosmo / SM five fingers as constitutive NS | Other book. [`DA-FINGERS.md`](DA-FINGERS.md). |
 | B-hand five-finger map as a close | MAP only. Does not move leftover 1, 4, or 5. |
+| Endgame notes as the tape / as a close | Incoming folklore. Q-stack out. Ring is REPAIR. Φ-renorm is not Clay. Uniform triadic exhaustion is not leftover 4 or 5. Do not mail a panel. [`incoming/NOTES-ON-THE-ENDGAME.md`](incoming/NOTES-ON-THE-ENDGAME.md). |
+| QStack / Borromean / \(\Phi\)-glue as constitutive NS | Two books stay two books. A is not B. |
+| Lattice non-kills of \(\star\) as a covering toward Statement B | Isolated / AP / 9C / designed 9D / HH→L did not kill \(\star\). \(v_n\) did. Designed \(\Theta(m^2)\) stays **NO**. |
 
 ---
 
@@ -215,6 +218,12 @@ If we file a ChatGPT paste, that is
 YES as incoming and still NO as the
 tape
 ([`INCOMING-WRITEUPS.md`](INCOMING-WRITEUPS.md)).
+If we file “Notes on the Endgame,”
+that is YES as incoming and still
+NO as constitutive NS, NO as a
+mailer, and NO as a covering of
+the dead unrestricted \(\star\) box
+([`incoming/NOTES-ON-THE-ENDGAME.md`](incoming/NOTES-ON-THE-ENDGAME.md)).
 If we write a unified unaugmented
 status after the peer reports, that
 is YES as a score and still NO as a

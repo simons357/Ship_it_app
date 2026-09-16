@@ -376,3 +376,47 @@ Blowup-search is not this line.
 Do not repair H.
 Enough for a plan. Not a close.
 NS not solved.
+
+---
+
+## 11. “Notes on the Endgame” (16 Sep paste)
+
+Incoming. Not the tape.
+Filed:
+[`incoming/NOTES-ON-THE-ENDGAME.md`](incoming/NOTES-ON-THE-ENDGAME.md).
+Who-said-what:
+[`INCOMING-WRITEUPS.md`](INCOMING-WRITEUPS.md).
+
+The note mixes swirl \(\Phi\)-renorm,
+Q-stack, Ring/Borromean, lattice
+packet samples, leftover 1, leftover
+4, leftover 5, and inverse-GCD
+\(Q_6\) into one “two gaps remain”
+story. That weld is **NO**.
+
+| Endgame claim | Verdict |
+|---|---|
+| Φ-renorm kills \(1/r^4\) | **WRONG.** Algebra KEEP. Barrier OPEN. Keep \(1/r^4\). Not Clay. |
+| QStack \(Q_1\)–\(Q_6\) held up as NS | **WRONG.** Q-stack out. A is not B. \(Q_6\) is inverse-GCD. |
+| Ring / Borromean proved | **WRONG.** Ring is REPAIR. Picture \(\neq\) estimate. |
+| Kill list (isolated, AP, 9C, \(\Theta(m^2)\), HH→L) is the adversarial proof track | **WRONG as a close.** Those are non-kills of \(\star\), plus designed 9D **NO**. The named kill of unrestricted \(\star\) is \(v_n\). |
+| Uniform triadic bound is the load-bearing leftover | **WRONG.** Unrestricted \(\star\) is **KILLED**. Covering dead-box cases does not restore \(\star\Rightarrow\) GR. |
+| \(m^{1/2}\) unresolved | **CORRECT as a tape sentence.** Not Statement B. |
+| Fold H1 into the main line | **REJECT.** Leftover 1. Different integral. Do not start from this desk. |
+| Exhaustion / \(Q_6\) spectral gap / mail the named reviewers | **REJECT.** Other book. Papers, not a call. Nobody asked. Do not mail a panel. |
+| \(c^*=6/\pi^2\) as NS load | **REJECT as constitutive NS.** |
+| Check SND circularity first | **HALF.** Circularity already named. Persistence is not the living attack. Displayed H withdrawn. |
+| Program in good shape; two remaining tasks | **WRONG as a seated regularity program.** Routes A and B stay OPEN. NS not solved. |
+
+**Take from it.** Do not blur
+case-kills with a theorem. Do not
+assume the bound you want. Those
+two sentences were already on the
+tape.
+
+**Do not take.** The machinery
+list, the “whole remaining task,”
+the reviewer mailer, or a revival
+of unrestricted \(\star\).
+
+---

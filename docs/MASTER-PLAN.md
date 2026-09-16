@@ -414,4 +414,6 @@ This desk is unaugmented.
 Enough for this plan. Not a close.
 Two routes, independent, both
 OPEN, both killable.
+Endgame notes are not this plan.
+Q-stack out. Do not mail a panel.
 NS not solved.

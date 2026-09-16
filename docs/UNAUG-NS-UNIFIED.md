@@ -52,6 +52,7 @@ not the magazine:
 | Unaugmented summarize | Two books | Φ-renorm algebra ≠ Lemma★ / SND. |
 | NS-search summarize | Conditional toolkit | Ring + T2 Lemma 1 sit. Same-shell energy-linear \(R\) **dead**. |
 | \(T_j\) estimate | Axisymmetric remainder | Identities sit. Requested Young line not seated. |
+| Endgame notes (16 Sep paste) | Incoming folklore | **Reject as constitutive NS.** Q-stack out. Ring REPAIR. Φ-renorm ≠ Clay. Uniform triadic is not the remaining task. |
 
 Older sentences that **do not win**:
 
@@ -66,6 +67,11 @@ Older sentences that **do not win**:
   \(\Theta(m^2)\) 9D is **NO**.
 - PR 102 “C10 SURVIVES” as a close —
   superseded by PR 103.
+- Endgame “Φ-renorm / QStack / Ring
+  held up; two gaps remain” — weld
+  of two books. Unrestricted \(\star\)
+  already **KILLED** by \(v_n\).
+  Do not mail a panel.
 
 If a later sentence contradicts the
 tape, the tape wins.
@@ -184,6 +190,12 @@ Also OPEN, not a thirteenth row:
 - Detector occupation decay.
 - Triple Lock. Inverse-GCD as NS.
 - SFE / \(Q_1\) / HB as this PDE.
+- QStack / Borromean / \(\Phi\)-glue
+  as constitutive NS.
+- Uniform triadic covering as a
+  close of leftover 4 or of
+  Statement B.
+- Dream-team mailer as a write.
 
 ---
 
@@ -330,4 +342,7 @@ Exact-shell \(K\le 16/9\) CLAIMED,
 frozen, not regularity.
 Frequency drift still missing.
 Do not glue 1, 4, and 5.
+Endgame notes are incoming, not
+tape. Q-stack out. Ring is REPAIR.
+Do not mail a panel.
 NS not solved.

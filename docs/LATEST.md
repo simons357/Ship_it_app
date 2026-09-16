@@ -29,6 +29,10 @@ Status Report, Markdown:**
 docs/incoming/NS-SND-FINAL-STATUS-REPORT.md
 https://raw.githubusercontent.com/simons357/Ship_it_app/cursor/unaug-ns-unified-status-a7a2/docs/incoming/NS-SND-FINAL-STATUS-REPORT.md
 Incoming, not the tape. Not a close.
+Endgame notes (Q-stack / Ring /
+Φ-renorm-as-close are NO;
+uniform triadic is not the leftover):
+docs/incoming/NOTES-ON-THE-ENDGAME.md
 Unified status after peer reports
 (enough for a score, not a close):
 docs/UNAUG-NS-UNIFIED.md

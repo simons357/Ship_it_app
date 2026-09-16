@@ -55,8 +55,12 @@ Master plan (two OPEN routes;
 enough for a plan, not a close):
 [`MASTER-PLAN.md`](MASTER-PLAN.md).
 Report audit (long 16 Sep write
-scored; Kato–Ponce is not \(A.2\)):
+scored; Kato–Ponce is not \(A.2\);
+Endgame notes rejected as a close):
 [`REPORT-AUDIT.md`](REPORT-AUDIT.md).
+Endgame paste (incoming folklore;
+Q-stack out; not leftover 4 or 5):
+[`incoming/NOTES-ON-THE-ENDGAME.md`](incoming/NOTES-ON-THE-ENDGAME.md).
 Not a thirteenth leftover. The original
 extract stays an extract.
 
