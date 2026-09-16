@@ -327,7 +327,9 @@ bridge.
 
 No parallel resurrection of H.
 No Pólya \(\rho\)-floor document
-as primary. No “9D is claimed.”
+as primary. A \(D^+\) comparison
+cannot produce a \(\rho\) floor.
+No “9D is claimed.”
 No Kato–Ponce stall of Route A.
 No switch to Track A.
 

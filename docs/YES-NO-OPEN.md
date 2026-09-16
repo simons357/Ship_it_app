@@ -122,6 +122,7 @@ stay samples. They are not this kill.
 | Merge C10 with \(T_c\) or with ★ | No explicit inequality. \(v_n\) already kills unrestricted ★. |
 | Unrestricted ★ as OPEN | **KILLED** by \(v_n\). GPT board had this wrong. Replacement leftover 4 is OPEN. [`REPORT-AUDIT.md`](REPORT-AUDIT.md). |
 | A.3 as a floor / Pólya \(\rho\)-rebuild as primary | Ceiling, not a floor. Do not repair H. |
+| Pólya two pages (indexed Bony + \(D^+\) comparison) as the next write | \(D^+\) cannot produce \(\rho(t)\ge\rho(0)e^{-\int A}-\int B\). Wrong Dini direction. REJECT as primary. [`REPORT-AUDIT.md`](REPORT-AUDIT.md) §5. |
 | Peak-fraction floor as unconditional / Kato–Ponce as the \(A.2\) foundation | \(A.2\) is Hölder \(6,2,3\). The \(\Gamma,\Lambda\) floor is BKM-adjacent and not seated. [`REPORT-AUDIT.md`](REPORT-AUDIT.md) §8. |
 | “C10 died” as a program | (A) not seated. Lane stays the Route A write-or-kill. |
 | Enough information to close unforced NS | Enough for [`MASTER-PLAN.md`](MASTER-PLAN.md). Not enough for a close. |

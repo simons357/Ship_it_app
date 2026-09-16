@@ -256,6 +256,11 @@ not H.
 
 ## 5. Pólya \(\rho\)-floor rebuild
 
+This exact paste. “Stop defending
+the note.” Fine. The remaining
+gap is still **not** this weaker
+question as the living leftover.
+
 The proposed problem:
 
 > Assume \(X\le M\) and
@@ -263,24 +268,84 @@ The proposed problem:
 > force a later floor, or can
 > \(\rho\) collapse?
 
-That is a **weaker** question than
-regularity. Even a floor on \(\rho\)
-leaves \(1-\rho\) free to sit at
-arbitrarily high frequency. The
-audit already named that hole.
+Well-posed as a **weaker**
+question than regularity. Even a
+floor on \(\rho\) leaves \(1-\rho\)
+free to sit at arbitrarily high
+frequency. The audit already
+named that hole. SND persistence
+is not leftover 4 or leftover 5.
 
-\(A.3\) is a Dini **ceiling**, not
-a floor. Indexed Bony plus a
-comparison ODE is Theorem H
-resurrection under another name.
+Inventory that is **CORRECT:**
+
+- Exact shell law sits.
+- \(A.2\) sits under \(X\le M\).
+- \(D^+J\le\max\dot X_j\) sits
+  (Danskin / envelope).
+- Shears \(F_j=0\); cubic vs
+  quadratic if \(M\) is dropped;
+  no \(t=0\) floor if \(\rho(0)\)
+  is free.
+- \(A.2\) is too crude for a
+  floor: it does not see that a
+  peak shell cannot be fed only
+  by much higher shells without
+  Bernstein.
+- B.1–B.3 only check that \(A.2\)
+  does not contradict known
+  kills of stronger claims.
+  “Survives the three families”
+  is not persistence.
+- QStack / Ring / Borromean stay
+  off the cover until they appear
+  in a line. Already the rule.
+
+Lethal error in the plan itself:
+
+It writes \(D^+\rho\le -c\nu 4^{j_*}\rho+B\)
+and then claims the comparison
+output is
+\(\rho(t)\ge\rho(0)\,e^{-\int A}-\int B\).
+That is the **wrong Dini
+direction.** An upper bound on
+\(D^+\) gives a **ceiling**
+\(\rho\le r\), not a floor.
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md)
+already locks this: comparison
+against \(\dot r=f(r)\) from
+\(A.3\) yields \(\rho(t)\le r(t)\).
+A floor needs a **lower** bound
+on a Dini derivative. The paste
+does not supply one. It relabels
+the ceiling.
+
+The two requested pages
+(indexed Bony for \(F_{j_*}\)
+and \(\langle(u\cdot\nabla)u,\Delta u\rangle\);
+regime split + comparison with
+\(\rho(0)\ge\rho_*\Rightarrow\rho(t)\ge\rho_*/2\))
+are Theorem H resurrection under
+another name. The last term of
+\(A.3\) does not need Bony; the
+repair page already bounds it
+by Hölder. Indexed Bony is what
+a \(\rho\)-floor would need, and
+this desk is not writing that
+floor as primary.
 
 **REJECT as primary.**
-Do not write that next document
-on this desk. If someone later
-writes a conditional \(\rho\)
-statement, it is a write, not
-leftover 1, 4, or 5, and not
-ordinary NS.
+Do not write those two pages
+on this desk. Honest status
+already sits: \(A.2\) stands;
+propagation is unwritten; a
+different quantity than
+\(\rho=J/X\) may be required.
+If someone later writes a
+conditional \(\rho\) statement,
+it is a write, not leftover
+1, 4, or 5, and not ordinary
+NS. Next writes stay Route A
+then Route B.
 
 ---
 

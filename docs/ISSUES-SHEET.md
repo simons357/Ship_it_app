@@ -51,7 +51,9 @@ Master plan (two OPEN routes;
 enough for a plan, not a close):
 [`MASTER-PLAN.md`](MASTER-PLAN.md).
 Report audit (long 16 Sep write
-scored; Kato–Ponce is not \(A.2\)):
+scored; Kato–Ponce is not \(A.2\);
+Pólya two pages rejected — \(D^+\)
+cannot produce a \(\rho\) floor):
 [`REPORT-AUDIT.md`](REPORT-AUDIT.md).
 Not a thirteenth leftover. The original
 extract stays an extract.
