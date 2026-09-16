@@ -77,13 +77,16 @@ Command: `python3 scripts/ns_attacks/tj_same_scale_candidate_probes.py`
 
 ### 3.2 Light numerics (finite samples ≠ theorems)
 
+Recorded 2026-09-16 run (`tj_candidate_probe_results.json`):
+
 | Probe | Harness | Outcome | Implication for candidates |
 | --- | --- | --- | --- |
-| Product / \(\mathcal{R}_\star\) ceilings | `product_bound_probe.py` | Finite-sample ceilings; no \(\mathcal{R}_\star\to\infty\) kill on tested families | Does **not** close C8/C10; kill lane still LIVE on ★ side |
-| HH channel share | `attack3_bony_hh_l.py` | HH often large fraction of \(\lvert T_c\rvert\); verdict stays HH live bottleneck | **C7 survives**; no HH product proved |
-| Near-shell + HH diagnostic | `lemma_star_near_shell_search.py` | Complete signed \(T_c\) kill search: no divergence on budgeted families | **C8 survives as lab**; not a depletion theorem |
-
-Exact numbers are written to the artifact JSON next to this note after the probe run.
+| Analytic concentration | in-probe C1 | Ratio growth \(\approx 13\) over \(\lambda=4\to 256\) (\(\sim\lambda^{1/2}\)) | **C1 DEAD confirmed** |
+| Circular-slot refuse | in-probe C3 | Refused \(\dot Z_j\), \(\Lambda'\), \(\dot e_j\) drafts | **C3 DEAD** |
+| Centrifugal-only table | recorded TJJ mixed samples | \(T^{\mathrm{mm}}\) dominates on \(j=1,2,3\) | **C2 DEAD** |
+| Product / \(\mathcal{R}_\star\) ceilings | light two-shell sample | Finite-sample \(\mathcal{R}_\star\) tiny / vacuous on draws | No kill; not a supremum |
+| HH channel share | `attack3_bony_hh_l.py` | Verdict `HH_CHANNEL_LIVE_BOTTLENECK_no_closure`; random HH frac mean \(\approx 0.093\), p90 \(\approx 0.51\) | **C7 SURVIVES** |
+| Near-shell + HH diagnostic | `lemma_star_near_shell_search.py` (`--n-almost 40 --n-hh 30`) | `LemmaStar_killed=false`; max \(\mathcal{R}_\star\approx 2.3\times 10^{-4}\) on 127 samples; verdict `SURVIVE_numeric_gap_remains` | **C8 SURVIVES as lab** |
 
 ---
 

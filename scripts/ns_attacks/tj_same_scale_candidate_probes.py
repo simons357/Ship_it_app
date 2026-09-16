@@ -13,7 +13,7 @@ Spectral-shift ≠ Lemma★. Forbidden: bound T by ė_j, Ż, Ż_j, or Λ'.
 from __future__ import annotations
 
 import json
-import math
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -230,6 +230,12 @@ def light_rstar_ceilings(rng: np.random.Generator) -> dict:
 
 def run_subprocess_probe(script: str, args: list[str], timeout: int) -> dict:
     cmd = [sys.executable, str(ATTACKS / script), *args]
+    env = os.environ.copy()
+    # attack3 / near-shell import `ns_attacks.*` — need scripts/ on PYTHONPATH
+    scripts_dir = str(ATTACKS.parent)
+    env["PYTHONPATH"] = scripts_dir + (
+        os.pathsep + env["PYTHONPATH"] if env.get("PYTHONPATH") else ""
+    )
     try:
         proc = subprocess.run(
             cmd,
@@ -238,6 +244,7 @@ def run_subprocess_probe(script: str, args: list[str], timeout: int) -> dict:
             text=True,
             timeout=timeout,
             check=False,
+            env=env,
         )
         return {
             "script": script,

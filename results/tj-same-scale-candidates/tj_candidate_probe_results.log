@@ -1,0 +1,24 @@
+=== T_{j←j} SAME-SCALE CANDIDATE PROBES ===
+NS not solved. Spectral-shift ≠ Lemma★. Numerics ≠ depletion.
+
+Analytic DEAD/BLOCKED:
+  C1 energy+visc R: DEAD (ratio growth 13)
+  C2 centrifugal-only: DEAD (T_mm dominates=True)
+  C3 circular Gronwall: DEAD refused=['bound_by_Zdot', 'bound_by_Lambda_prime', 'bound_by_ej_dot']
+  C4 occupancy⇒depletion: DEAD
+  C5 pure-swirl class bound: BLOCKED
+
+TRY survivors:
+  C6_alpha_door3: TRY
+  C7_HH_only_budget: TRY
+  C8_near_shell_cancellation: TRY
+  C9_triad_structure: TRY
+  C10_noncircular_depletion_to_A: TRY
+  C11_meridional_Tmm_cancel: TRY [axisym-conditional]
+  C12_SND_conditional: TRY_CONDITIONAL_ONLY
+
+Light R_★ max (finite samples): 1.3936565670670352e-37
+attack3 ok=True → C7 SURVIVES
+near-shell ok=True → C8 SURVIVES_AS_LAB
+
+Wrote /opt/cursor/artifacts/tj-same-scale-candidates/tj_candidate_probe_results.json
