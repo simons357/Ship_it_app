@@ -16,6 +16,8 @@ def test_inventory_is_current_files_only():
     flat = " ".join(text.split())
     assert text.startswith("# Centered spectral drift — current-files inventory")
     assert r"T_c=M-\Lambda N" in text
+    assert "The centered equation" in text
+    assert r"-(2\nu/X)D_s+(2/X)T_c" in text
     assert "Open" in text
     assert "Never derived" in text
     assert "Ordinary NS is not solved" in text

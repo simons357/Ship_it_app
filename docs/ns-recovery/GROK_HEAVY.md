@@ -89,7 +89,8 @@ T_c=-\bigl\langle B(v,v),\,A(A-\Lambda)v\bigr\rangle
 =M-\Lambda N=\sum_k\lambda_k(\lambda_k-\Lambda)T_k.
 \]
 
-Sign check: \(\Lambda'=2(T_c-\nu\mathcal D_s)/X\).
+Centered equation (exact): \(\Lambda'=-(2\nu/X)\mathcal D_s+(2/X)T_c=2(T_c-\nu\mathcal D_s)/X\).
+Page: [`CENTERED-EQUATION.md`](CENTERED-EQUATION.md).
 
 **Lemma★ is a shape statement, not a viscosity statement.** Size \(u=av\) cancels \(\nu\). Canonical quotient:
 

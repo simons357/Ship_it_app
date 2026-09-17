@@ -38,9 +38,11 @@ two-shell
 signed triads
 \(T_k=\sum_{p+q=k}\mathrm{Im}[(q\cdot u_p)(u_q\cdot\overline{u_k})]\)
 (never abs); \(N=\sum\lambda_k T_k\), \(M=\sum\lambda_k^2 T_k\);
-spectral Cauchy \(X^2\le E Y\Rightarrow X\le E\Lambda\);
-\(\Lambda'=2(T_c-\nu\mathcal D_s)/X\), equivalently
-\((\log\Lambda)'=2(T_c-\nu\mathcal D_s)/Y\);
+spectral Cauchy \(X^2\le E Y\Rightarrow X\le E\Lambda\).
+**The centered equation** (exact, not an estimate):
+\(\Lambda'=-(2\nu/X)D_s+(2/X)T_c=2(T_c-\nu D_s)/X\),
+equivalently \((\log\Lambda)'=2(T_c-\nu D_s)/Y\).
+Page: [`CENTERED-EQUATION.md`](CENTERED-EQUATION.md).
 homogeneity \(T_c(au)=a^3 T_c(u)\), \(\mathcal D_s(au)=a^2\mathcal D_s(u)\);
 one shell \(\Rightarrow T_c=\mathcal D_s=0\).
 
