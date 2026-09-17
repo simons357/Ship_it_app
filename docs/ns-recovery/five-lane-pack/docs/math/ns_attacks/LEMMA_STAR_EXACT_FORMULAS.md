@@ -75,7 +75,15 @@ T_c=-\bigl\langle B(v,v),\,A(A-\Lambda)v\bigr\rangle
 
 Oddness: \(T_c(-v)=-T_c(v)\). Homogeneity: \(T_c(av)=a^3 T_c(v)\).
 
-Sign check: \(\Lambda'=2(T_c-\nu D_s)/X\).
+Centered equation (exact):
+\[
+\Lambda'
+=
+-\frac{2\nu}{X}D_s
++\frac{2}{X}T_c
+=
+\frac{2}{X}(T_c-\nu D_s).
+\]
 
 ---
 
