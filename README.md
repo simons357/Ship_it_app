@@ -20,6 +20,19 @@ python -m domain_architect --registry
 python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units
 ```
 
+## C-10 — leftover 5 candidate, parked
+
+Phone card. (A) is not seated. Route A parked after the
+18 Sep depletion-canon mine. Leftover 5 stays OPEN.
+Not a theorem. NS not solved.
+
+- Card: [`docs/C10.md`](docs/C10.md)
+- Lock: [`data/c10/2026-09-18.json`](data/c10/2026-09-18.json)
+
+```bash
+python -m unittest tests.test_c10
+```
+
 ## Harmonic Blueprint Experiment 01
 
 Cross-event spectral selection test on black-hole ringdown modes.
