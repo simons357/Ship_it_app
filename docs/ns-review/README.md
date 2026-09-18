@@ -2,6 +2,10 @@
 
 Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS packaging.
 
+## C-10 (18 Sep 2026)
+
+Phone card: [`../C10.md`](../C10.md). (A) verbatim at the top. Failed arrow at \(a_+\). Route A parked. Do not repair with \(\|\nabla u\|_\infty\). Do not merge with \(T_c\). Leftover 5 stays OPEN.
+
 ## Φ-renorm (KEEP; conditional)
 
 - [`PHI-RENORM-WHAT-IS-KEPT.md`](./PHI-RENORM-WHAT-IS-KEPT.md) — field-first KEEP / PARK card; separate from Lemma★.

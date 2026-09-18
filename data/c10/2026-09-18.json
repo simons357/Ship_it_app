@@ -1,0 +1,57 @@
+{
+  "id": "C10",
+  "date": "2026-09-18",
+  "headline": false,
+  "scoreboard": false,
+  "closes_regularity": false,
+  "clay_b": "open",
+  "target": "(A)",
+  "leftover": 5,
+  "leftover_5_closed": false,
+  "c10_died_means": "this_attempt_failed_A_did_not_seat",
+  "status": "parked",
+  "produces_A": false,
+  "closer_than_bkm": false,
+  "arrow2": "unresolved",
+  "failed_arrow": "TJJ-template -> a_plus_estimate",
+  "energy_linear_A": "false",
+  "seated": [
+    "AS-Id",
+    "AS-Split",
+    "TJJ-Trans",
+    "TJJ-alpha",
+    "one_sided_stretch_le_a_plus_Zj"
+  ],
+  "empty": [
+    "a_plus_estimate",
+    "noncircular_int_a_plus",
+    "commutators_in_R_allowed"
+  ],
+  "refused_repairs": [
+    "grad_u_infinity",
+    "geometric_tail",
+    "occupancy_samples",
+    "BKM",
+    "dot_Zj",
+    "Lambda_prime",
+    "theorem_H",
+    "merge_with_Tc_without_inequality",
+    "A2_staircase"
+  ],
+  "route_A": "parked",
+  "route_A1": {
+    "date": "2026-09-18",
+    "verdict": "UNRESOLVED",
+    "no_noncircular_int_a_plus": true,
+    "next": "Route B"
+  },
+  "independence": {
+    "c10_required_for_drift": false,
+    "drift_required_for_c10": false,
+    "snd": "instrument",
+    "persistence_P": false,
+    "theorem_H": "withdrawn",
+    "exact_shell_9d": "CLAIMED"
+  },
+  "next_write": "Route B useful K for T_c, independently"
+}
