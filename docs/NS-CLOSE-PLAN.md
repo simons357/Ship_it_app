@@ -234,7 +234,7 @@ other, not in series through H:
 
 | Lane | Target | Status |
 |---|---|---|
-| **Route A / C10 / leftover 5** | Dynamical \(a_+\) then (A) on the local block | Identities sit. First new arrow (template \(\to a_+\)) is **empty** or BKM-adjacent. (A) not seated. |
+| **Route A / C10 / leftover 5** | Dynamical \(a_+\) then (A) on the local block | Identities sit. Arrow 2 **UNRESOLVED** after depletion-canon mine (`ROUTE-A1.md`). No noncircular \(\int a_+\). **Parked.** (A) not seated. |
 | **Route B / leftover 4** | \(T_c\le\theta\nu\mathcal D_s+K(t)X\) with **useful** \(K\in L^1_{\mathrm{loc}}\) | Identities sit. Estimate OPEN. Unrestricted \(\star\) stays killed. Tautological \(K=(T_c-\theta\nu\mathcal D_s)_+/X\) is not content. |
 | **SND** | Instrument | Diagnostic. No persistence. Displayed H withdrawn. |
 
@@ -442,12 +442,8 @@ One person, one row. Do not glue.
    burial. “Near proof.”
 
 2. **Route A write-or-kill.**
-   Dynamical \(a_+\) without \(H^1\),
-   \(L^\infty\), or BKM — or a named
-   death of that arrow. File under
-   four buckets. Tape wins if a
-   sentence contradicts
-   `YES-NO-OPEN.md`.
+   **Done 18 Sep.** `docs/ROUTE-A1.md`.
+   Verdict UNRESOLVED. Parked. No A2.
 
 3. **Route B write-or-kill.**
    Independent. Centered pairing
@@ -529,7 +525,8 @@ Clay Statement B is open.
 Unrestricted \(\star\) is KILLED,
 not OPEN.
 Displayed Theorem H is withdrawn.
-C10 is a candidate, not a theorem.
+C10 is a parked candidate, not a theorem.
+Route A1 UNRESOLVED; no \(\int a_+\).
 Centered useful \(K\) is OPEN.
 SND is an instrument.
 Exact-shell \(K\le 16/9\) is CLAIMED,
@@ -547,15 +544,21 @@ magazine on this PDE.
 Primary attack = nonlinear
 high-frequency transfer.
 
-Next write = Route A, one page:
-dynamical \(a_+\) or a named death.
-Then Route B, independently:
-useful \(K\) or a named death.
+Route A1 (`docs/ROUTE-A1.md`, 18 Sep):
+Arrow 2 mined against the depletion
+canon. Verdict **UNRESOLVED**. No
+noncircular \(\int a_+<\infty\).
+Park Route A. No A2 staircase.
 
-Two routes, both OPEN, both
-killable. If both die, the leftover
-is a **new estimate shape**, not a
-repair of a dead box.
+Next write = Route B, independently:
+useful \(K\) / integrable
+\(\mathcal I_\Lambda/X\), or a named
+death.
+
+Two routes, A parked, B still OPEN
+and killable. If B also dies, the
+leftover is a **new estimate shape**,
+not a hybrid of wreckage.
 
 Enough for this order.
 Not a close.
