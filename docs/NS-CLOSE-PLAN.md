@@ -513,6 +513,7 @@ PR #104):
 - `docs/INCOMING-WRITEUPS.md` — who said what
 - `docs/C10-CHAIN.md` — Route A chain
 - `docs/CENTERED-DRIFT.md` — Route B target
+- `docs/FOURIER-TRIANGLE.md` — triad geometry; first missing implication
 - `docs/SND-TO-REGULARITY.md` — named hole (iii) frequency drift
 - `docs/SND-INSTRUMENT.md` — diagnostics, no persistence
 
@@ -547,10 +548,17 @@ magazine on this PDE.
 Primary attack = nonlinear
 high-frequency transfer.
 
-Next write = Route A, one page:
-dynamical \(a_+\) or a named death.
-Then Route B, independently:
-useful \(K\) or a named death.
+Route A1 parked (UNRESOLVED): no
+noncircular \(\int a_+\).
+Fourier triangles reconstructed:
+`docs/FOURIER-TRIANGLE.md`. First
+missing implication is the signed
+sum, not the time integral. Prime
+masks do not fill it.
+
+Next write = Route B snapshot:
+non-tautological \(\mathcal I_\Lambda\),
+or a named death of that CS.
 
 Two routes, both OPEN, both
 killable. If both die, the leftover
