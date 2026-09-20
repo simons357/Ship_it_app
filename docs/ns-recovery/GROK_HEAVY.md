@@ -40,7 +40,7 @@ Human: Jonathan Simons (`winchester.anesthesia@gmail.com` / `simonsmedical@iclou
 
 Remaining-work lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Specialist break questions: [`SPECIALIST-BREAK-QUESTIONS.md`](SPECIALIST-BREAK-QUESTIONS.md). Six straight answers: [`SIX-QUESTIONS.md`](SIX-QUESTIONS.md). Replacement closure: [`REPLACEMENT-CLOSURE.md`](REPLACEMENT-CLOSURE.md). Bounded aspect does not exclude \(v_n\).
 
-1. **Unrestricted ★ is dead** on \(v_n\). Direct centered route: identities sit, \(T_c\le\theta\nu\mathcal D_s+K(t)X\) is OPEN, \(K(t)\) not integrable. Inventory (do not redo): [`CENTERED-DRIFT-INVENTORY.md`](CENTERED-DRIFT-INVENTORY.md). Need★ dual cannot repair the same bound.
+1. **Unrestricted ★ is dead** on \(v_n\). Direct centered route: identities sit, \(T_c\le\theta\nu\mathcal D_s+K(t)X\) is OPEN, \(K(t)\) not integrable. Inventory (do not redo): [`CENTERED-DRIFT-INVENTORY.md`](CENTERED-DRIFT-INVENTORY.md). Triangle geometry and the first missing implication: [`FOURIER-TRIANGLE-GEOMETRY.md`](FOURIER-TRIANGLE-GEOMETRY.md). Need★ dual cannot repair the same bound.
 2. **Exact-shell 9D** (\(K\le16/9\)): **CLAIMED** — written derivation available; internal checks passed; independent specialist pending. Sweeps are consistency only. Next review: weighted incidence and the complex-polarization identity. [`ATTACK-9D-FULL-SUPPORT-SCORE.md`](ATTACK-9D-FULL-SUPPORT-SCORE.md). **No as a regularity close.**
 3. **Paths to DA:** growing-layer score has landed. SND⇒regularity is scored as a different implication ([`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md)): the shell condition does not freeze \(j_*\), and the written chain uses \(X\le M\). Do not send a regularity close.
 4. Soft X silent. H1 not started from ABC_λ.
