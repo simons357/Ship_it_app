@@ -2,6 +2,10 @@
 
 Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS packaging.
 
+## Fourier triangles (20 Sep 2026)
+
+[`FOURIER-TRIANGLE-MECHANISM.md`](./FOURIER-TRIANGLE-MECHANISM.md) — seated triad geometry, equal-length cancel, unequal-length defect, signed \(T_k\). \(I_3\) prime restrictions are **not seated**. First missing implication: triangle geometry \(\not\Rightarrow\) \(T_c\le\theta\nu D_s+K(t)X\) along the flow. Arithmetic: `python3 scripts/fourier_triangle_identities.py`. Ordinary NS not claimed.
+
 ## Φ-renorm (KEEP; conditional)
 
 - [`PHI-RENORM-WHAT-IS-KEPT.md`](./PHI-RENORM-WHAT-IS-KEPT.md) — field-first KEEP / PARK card; separate from Lemma★.
