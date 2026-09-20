@@ -102,6 +102,10 @@ grows R_B; not a useful K;
 star stays killed):
 docs/BSTAR.md
 docs/BSTAR-PROOF.md
+Fourier-triangle geometry
+(identities sit; first missing
+arrow to a useful K; not a close):
+docs/FOURIER-TRIANGLE.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

@@ -25,6 +25,11 @@ grows \(R_B\); not a useful \(K\);
 ★ stays killed):
 [`BSTAR.md`](BSTAR.md),
 [`BSTAR-PROOF.md`](BSTAR-PROOF.md).
+Fourier-triangle geometry
+(identities sit; first missing
+arrow to a useful \(K\); not a
+close):
+[`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 

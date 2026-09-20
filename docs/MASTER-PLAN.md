@@ -20,6 +20,10 @@ B★ (no universal \(C\); imag cutoff
 grows \(R_B\); not a useful \(K\)):
 [`BSTAR.md`](BSTAR.md),
 [`BSTAR-PROOF.md`](BSTAR-PROOF.md).
+Fourier-triangle geometry
+(identities sit; first missing
+arrow to Route B; not a close):
+[`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
 
 This page answers the operator’s
 question: how do we beat unforced

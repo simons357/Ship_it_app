@@ -32,6 +32,11 @@ No universal \(C\). Imag
 \(|k|^{-2}\) cutoff grows \(R_B\)
 like \(\Lambda^{1/4}\). Not a
 useful \(K\).
+Triangle reconstruction:
+[`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
+Identities sit. The first
+missing implication is this
+page’s estimate.
 
 ---
 

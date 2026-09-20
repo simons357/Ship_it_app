@@ -56,6 +56,8 @@ Centered drift:
 Killed ★:
 [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
 
+Triangle geometry:
+[`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
 Do not start leftover 1.
 Do not weld \(\star\).
 Do not cash B★ as G5.

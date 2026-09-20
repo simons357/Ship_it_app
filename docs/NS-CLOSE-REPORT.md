@@ -23,6 +23,8 @@ Route A write:
 B★:
 [`BSTAR.md`](BSTAR.md),
 [`BSTAR-PROOF.md`](BSTAR-PROOF.md).
+Fourier triangle:
+[`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
 Score:
 [`NS-STATUS.md`](NS-STATUS.md).
 Tape:

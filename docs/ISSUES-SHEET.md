@@ -64,6 +64,10 @@ grows \(R_B\); not leftover 4 by
 itself; not a useful \(K\)):
 [`BSTAR.md`](BSTAR.md),
 [`BSTAR-PROOF.md`](BSTAR-PROOF.md).
+Fourier-triangle geometry
+(identities sit; first missing
+arrow; not leftover 1):
+[`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
 Report audit (long 16 Sep write
 scored; Kato–Ponce is not \(A.2\);
 Pólya two pages rejected — \(D^+\)

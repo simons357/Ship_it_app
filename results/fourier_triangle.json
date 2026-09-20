@@ -1,0 +1,98 @@
+{
+  "not_a_close": true,
+  "star_stays_killed": true,
+  "bstar_not_seated": true,
+  "identities": {
+    "energy_sum_iso": -2.220446049250313e-16,
+    "energy_sum_uneq": -1.214306433183765e-17,
+    "energy_sum_one": 0.0,
+    "leray_idle_max_abs": 1.1102230246251565e-16,
+    "one_shell_Tc": 0.0,
+    "one_shell_Ds": 0.0,
+    "iso_two_shell": {
+      "two_shell": true,
+      "alpha": 2.0,
+      "beta": 4.0,
+      "e_a": 4.0,
+      "e_b": 1.9999999999999998,
+      "T_a": -0.6094469713045234,
+      "T_b": 0.6094469713045232,
+      "T_a_plus_T_b": -2.220446049250313e-16,
+      "Tc": 3.6566818278271396,
+      "pred_from_Ta": 3.6566818278271405,
+      "pred_from_Tb": 3.656681827827139,
+      "Ds_two_shell": 15.999999999999998,
+      "Ds_moment": 16.0,
+      "gap_in_Rstar_cancels": true
+    },
+    "uneq_three_shell": {
+      "n_shells": 3,
+      "T_by_shell": {
+        "4.0": -0.07268588664140756,
+        "5.0": -0.00846050949925607,
+        "17.0": 0.08114639614066362
+      },
+      "weights": {
+        "4.0": -13.07424960505529,
+        "5.0": -11.342812006319111,
+        "17.0": 165.43443917851505
+      },
+      "Tc": 14.470687930330557,
+      "Tc_over_T_shell": {
+        "4.0": -199.0852502318782,
+        "5.0": -1710.38020010532,
+        "17.0": 178.3281651257349
+      },
+      "reducible_to_one_gap": false
+    },
+    "iso_I3_pq_im": 0.6965108243480265,
+    "iso_I3_qp_im": -0.391787338695765,
+    "idle_z_pol_Tc": 4.440892098500626e-16,
+    "idle_z_pol_I3_im": 0.0
+  },
+  "numerical": {
+    "iso_Tc": 3.6566818278271396,
+    "uneq_Tc": 14.470687930330557,
+    "iso_phase_scan": {
+      "n": 21,
+      "min": -5.082882934476932,
+      "max": 5.083492959291835,
+      "changes_sign": true,
+      "not_identically_zero": true
+    },
+    "uneq_phase_scan": {
+      "n": 21,
+      "min": -25.620425980241382,
+      "max": 25.427455522951384,
+      "changes_sign": true,
+      "not_identically_zero": true
+    },
+    "iso_reduction_residual": 8.881784197001252e-16,
+    "iso_energy_shell_residual": 2.220446049250313e-16,
+    "uneq_n_shells": 3
+  },
+  "illustrative": {
+    "motion": "phase of one leg rotates T_c through both signs; not a trajectory",
+    "not_NSE": true
+  },
+  "I3_prime": {
+    "sit": [
+      "lattice triangle p+q=k",
+      "transverse polarizations",
+      "Leray idle in the energy pairing",
+      "reality v_{-k}=conj(v_k)",
+      "cyclic energy T_p+T_q+T_k=0",
+      "equal-length kills the T_c weight",
+      "two-shell gap-cancel of (alpha-beta) in R_star"
+    ],
+    "not_prime": [
+      "prime |k|^2 shells only",
+      "primitive gcd=1 triangles as a bound",
+      "leftover 3 / H3 absorb",
+      "Q-matrix prime block",
+      "unsigned |I3|",
+      "HH->L only"
+    ]
+  },
+  "first_missing": "exact signed triad sum does not imply T_c <= theta nu D_s + K(t) X with useful K"
+}

@@ -15,6 +15,9 @@ Score: [`NS-STATUS.md`](NS-STATUS.md).
 Plan: [`MASTER-PLAN.md`](MASTER-PLAN.md).
 Tape: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).
 First write: [`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
+Triangle geometry (identities,
+then the missing \(K\)):
+[`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
 
 This desk is **unaugmented**.
 A is not B. Keep \(1/r^4\).

@@ -146,6 +146,10 @@ grows R_B; not a useful K;
 star stays killed):
 docs/BSTAR.md
 docs/BSTAR-PROOF.md
+Fourier-triangle geometry
+(identities sit; first missing
+arrow; not a close):
+docs/FOURIER-TRIANGLE.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md

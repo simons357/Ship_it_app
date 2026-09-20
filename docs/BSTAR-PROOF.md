@@ -6,6 +6,8 @@ The uniform \(C\) does not.
 Not a close. ★ stays killed.**
 
 Living verdict: [`BSTAR.md`](BSTAR.md).
+Triangle reconstruction:
+[`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
 Machine: `python3 scripts/bstar_symmetrize.py`.
 Do not overwrite `stokes_moments.py`.
 Do not start leftover 1.
