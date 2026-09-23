@@ -27,6 +27,10 @@ arrow to Route B; not a close):
 First lift (\(K\sim\sqrt{E}\)
 dead; G4 still OPEN):
 [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
+Energy-class ladder (dead;
+pathwise \(K\) still the G4
+target):
+[`ENERGY-K.md`](ENERGY-K.md).
 
 This page answers the operator’s
 question: how do we beat unforced

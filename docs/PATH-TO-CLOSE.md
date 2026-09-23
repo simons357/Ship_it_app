@@ -20,6 +20,8 @@ then the missing \(K\)):
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
 First lift:
 [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
+Energy-class ladder (dead):
+[`ENERGY-K.md`](ENERGY-K.md).
 
 This desk is **unaugmented**.
 A is not B. Keep \(1/r^4\).
@@ -159,6 +161,13 @@ B★ hunt: [`BSTAR.md`](BSTAR.md),
 No universal \(C\). Imag cutoff
 grows \(R_B\). Not a useful \(K\).
 Do not cash B★ as G5.
+Energy-class ladder dead:
+only \(p=1/2\) matches
+amplitude, and \(v_n\) kills
+the X, mid, and Y doors.
+[`ENERGY-K.md`](ENERGY-K.md).
+Pathwise \(K\) is still the
+living G4 target.
 
 Useful \(K\) or a named death.
 Do not restore

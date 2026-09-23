@@ -21,6 +21,10 @@ First lift (two-shell sits;
 third eigenvalue dies;
 \(K\sim\sqrt{E}\) dead):
 [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
+Energy-class ladder (all
+three amplitude-legal doors
+die on \(v_n\)):
+[`ENERGY-K.md`](ENERGY-K.md).
 
 Do not start leftover 1.
 Do not weld \(\star\).
@@ -415,8 +419,11 @@ is not this arrow.
 
 A later write may kill G4 with a
 named family, or seat a different
-useful \(K\). This page does
-neither.
+useful \(K\). The energy-class
+ladder is now dead
+([`ENERGY-K.md`](ENERGY-K.md)).
+This page does not seat a
+replacement.
 
 ---
 

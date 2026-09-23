@@ -36,10 +36,15 @@ Triangle reconstruction:
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
 First lift:
 [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
+Energy-class ladder:
+[`ENERGY-K.md`](ENERGY-K.md).
 Identities sit. The first
 missing implication is this
 page’s estimate.
 \(K\sim\sqrt{E}\) is dead.
+\(K_Y\sim\sqrt{E}\) and the
+mid door die on \(v_n\) by
+closed form.
 
 ---
 
@@ -249,10 +254,13 @@ BKM, or a spectral tail already
 known to imply regularity?
 
 - If \(K\) is bounded by energy
-  only: **false** on the same
-  scaling that killed
+  only: **false.** The unique
+  amplitude-legal energy
+  remainders die on \(v_n\).
+  [`ENERGY-K.md`](ENERGY-K.md).
+  The older \(a^4\) line
   \(\lvert T_c\rvert\le C\|u\|_2 X^{3/2}\)
-  and unrestricted \(\star\).
+  is a different death.
 - If \(K\) is bounded by
   \(\|\nabla u\|_\infty\): **BKM.**
   Sufficient, not an attack on the
@@ -308,8 +316,9 @@ No new 9D sweeps.
 |---|---|
 | Spectral identities | **PROVED** (exact). |
 | Formal DI: estimate \(\Rightarrow\) \(\Lambda'\le 2K\) | **PROVED** as algebra. |
-| Drift estimate with useful \(K\) | **OPEN.** |
-| Y-remainder cousin | **OPEN.** Same circularity test. |
+| Drift estimate with useful \(K\) | **OPEN.** Pathwise, not energy-class. |
+| Energy-class \(K\sim\sqrt{E}\) / \(K_Y\sim\sqrt{E}\) / mid | **DEAD** on \(v_n\). [`ENERGY-K.md`](ENERGY-K.md). |
+| Y-remainder cousin (pathwise \(K_Y\)) | **OPEN.** Same circularity test. |
 | Unrestricted \(\star\) | **DEAD.** |
 | C10 \(\Rightarrow\) this estimate | **NO** without an inequality. C10 did not seat (A). |
 | Theorem H as a bridge | **DEAD.** Do not work it. |

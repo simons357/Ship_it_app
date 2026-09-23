@@ -27,6 +27,8 @@ Fourier triangle:
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
 First lift:
 [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
+Energy-class ladder:
+[`ENERGY-K.md`](ENERGY-K.md).
 Score:
 [`NS-STATUS.md`](NS-STATUS.md).
 Tape:

@@ -154,6 +154,10 @@ First lift (two-shell sits;
 third eigenvalue dies;
 K ~ sqrt(E) dead):
 docs/TRIANGLE-LIFT.md
+Energy-class ladder (X, mid,
+and Y doors die on v_n;
+G4 still OPEN):
+docs/ENERGY-K.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md

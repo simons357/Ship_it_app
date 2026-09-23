@@ -110,6 +110,10 @@ First lift (two-shell sits;
 third eigenvalue dies;
 K ~ sqrt(E) dead):
 docs/TRIANGLE-LIFT.md
+Energy-class ladder (X, mid,
+and Y doors die on v_n;
+G4 still OPEN):
+docs/ENERGY-K.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

@@ -34,6 +34,10 @@ First lift (same two shells
 keep the gap; third eigenvalue
 dies; \(K\sim\sqrt{E}\) dead):
 [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
+Energy-class ladder (X, mid,
+and Y doors die on \(v_n\);
+G4 still OPEN):
+[`ENERGY-K.md`](ENERGY-K.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 

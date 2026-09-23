@@ -12,6 +12,10 @@ Catalog B open stays 1.**
 
 Geometry:
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
+Energy-class ladder (Y-door
+and mid door die with
+\(K\sim\sqrt{E}\)):
+[`ENERGY-K.md`](ENERGY-K.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 Machine: `python3 scripts/triangle_lift.py`.
