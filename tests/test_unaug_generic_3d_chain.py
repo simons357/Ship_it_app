@@ -15,6 +15,7 @@ CHAIN = ROOT / "docs" / "ns-review" / "UNAUG-GENERIC-3D-PROOF-CHAIN.md"
 SWIRL = ROOT / "docs" / "SWIRL_AXIAL_REDUCTION.md"
 PROGRESS = ROOT / "docs" / "NS3D_PROGRESS_NOTE.md"
 POST = ROOT / "docs" / "PROGRESS_POST.md"
+HONESTY = ROOT / "docs" / "ns-review" / "UNAUG-PROOF-CHAIN.md"
 DATA = ROOT / "data" / "ns_proof_chain" / "2026-09-11.json"
 NS_REVIEW = ROOT / "docs" / "ns-review" / "README.md"
 README = ROOT / "README.md"
@@ -36,6 +37,7 @@ class TestUnaugGeneric3dChain(unittest.TestCase):
         cls.swirl = SWIRL.read_text(encoding="utf-8")
         cls.progress = PROGRESS.read_text(encoding="utf-8")
         cls.post = POST.read_text(encoding="utf-8")
+        cls.honesty = HONESTY.read_text(encoding="utf-8")
         cls.data = json.loads(DATA.read_text(encoding="utf-8"))
 
     def test_sources_present(self) -> None:
@@ -43,6 +45,7 @@ class TestUnaugGeneric3dChain(unittest.TestCase):
         self.assertTrue(SWIRL.is_file())
         self.assertTrue(PROGRESS.is_file())
         self.assertTrue(POST.is_file())
+        self.assertTrue(HONESTY.is_file())
         self.assertTrue(DATA.is_file())
 
     def test_machine_lock(self) -> None:
@@ -65,6 +68,15 @@ class TestUnaugGeneric3dChain(unittest.TestCase):
         self.assertFalse(self.data["B_proved"])
         self.assertTrue(self.data["C_is_subclass"])
         self.assertFalse(self.data["swirl_is_step_7"])
+        self.assertEqual(
+            self.data["rho_j_lt_nu"]["belongs_to"],
+            "A_enstrophy_palinstrophy",
+        )
+        self.assertFalse(
+            self.data["rho_j_lt_nu"]["is_shell_energy_absorption_into_nu_Zj"]
+        )
+        self.assertFalse(self.data["rho_j_lt_nu"]["proved_for_generic_data"])
+        self.assertFalse(self.data["cross_scale_bounds_supplied"])
         self.assertFalse(self.data["measurements"]["are_theorems"])
         self.assertFalse(self.data["measurements"]["pass_to_Kmax_infinity"])
         self.assertFalse(self.data["measurements"]["pass_to_generic_data"])
@@ -119,6 +131,17 @@ class TestUnaugGeneric3dChain(unittest.TestCase):
         self.assertIn(r"\dot e_j", self.chain)
         self.assertIn(r"\dot Z", self.chain)
 
+    def test_rho_is_not_shell_energy_absorption(self) -> None:
+        self.assertIn(r"\nu Z_j", self.chain)
+        self.assertIn("not an absorption criterion", self.chain)
+        self.assertIn("enstrophy–palinstrophy", self.chain)
+        self.assertIn("does not close", self.chain)
+        self.assertIn("not supplied", self.chain)
+        self.assertIn("not an absorption criterion", self.honesty)
+        self.assertIn(r"\nu Z_j", self.honesty)
+        self.assertIn("Not supplied", self.honesty)
+        self.assertIn("not absorption into the shell-energy viscous term", self.post)
+
     def test_measurements_are_not_theorems(self) -> None:
         self.assertIn("not theorems", self.chain)
         self.assertIn(r"10^{-16}", self.chain)
@@ -135,6 +158,8 @@ class TestUnaugGeneric3dChain(unittest.TestCase):
         self.assertIn("not Step 7", self.swirl)
         self.assertIn("subclass", self.swirl)
         self.assertIn(r"T_{\mathrm{ax}}", self.swirl)
+        self.assertIn(r"F=u^\theta/r", self.swirl)
+        self.assertIn(r"G=\omega^\theta/r", self.swirl)
         self.assertIn("Young", self.swirl)
         self.assertNotIn("Step 7 of generic 3-D is swirl", self.chain)
 
@@ -147,7 +172,7 @@ class TestUnaugGeneric3dChain(unittest.TestCase):
         self.assertIn("subclass", self.post)
 
     def test_pages_refuse_false_closes(self) -> None:
-        for text in (self.chain, self.swirl, self.progress, self.post):
+        for text in (self.chain, self.swirl, self.progress, self.post, self.honesty):
             for phrase in FORBIDDEN_CLAIMS:
                 self.assertNotIn(phrase, text)
 
@@ -156,6 +181,7 @@ class TestUnaugGeneric3dChain(unittest.TestCase):
         readme = README.read_text(encoding="utf-8")
         keep = PHI_KEEP.read_text(encoding="utf-8")
         self.assertIn("UNAUG-GENERIC-3D-PROOF-CHAIN.md", ns_review)
+        self.assertIn("UNAUG-PROOF-CHAIN.md", ns_review)
         self.assertIn("UNAUG-GENERIC-3D-PROOF-CHAIN.md", readme)
         self.assertIn("not Step 7", ns_review)
         self.assertIn("SWIRL_AXIAL_REDUCTION.md", keep)

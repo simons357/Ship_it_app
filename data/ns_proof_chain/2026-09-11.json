@@ -35,6 +35,12 @@
   "B_proved": false,
   "C_is_subclass": true,
   "swirl_is_step_7": false,
+  "rho_j_lt_nu": {
+    "belongs_to": "A_enstrophy_palinstrophy",
+    "is_shell_energy_absorption_into_nu_Zj": false,
+    "proved_for_generic_data": false
+  },
+  "cross_scale_bounds_supplied": false,
   "forbidden_in_remainder_bound": ["dot_e_j", "dot_Z", "Lambda_prime"],
   "measurements": {
     "are_theorems": false,
@@ -55,6 +61,7 @@
     "chain": "docs/ns-review/UNAUG-GENERIC-3D-PROOF-CHAIN.md",
     "swirl_subclass": "docs/SWIRL_AXIAL_REDUCTION.md",
     "measurements": "docs/NS3D_PROGRESS_NOTE.md",
-    "public_language": "docs/PROGRESS_POST.md"
+    "public_language": "docs/PROGRESS_POST.md",
+    "honesty_card": "docs/ns-review/UNAUG-PROOF-CHAIN.md"
   }
 }

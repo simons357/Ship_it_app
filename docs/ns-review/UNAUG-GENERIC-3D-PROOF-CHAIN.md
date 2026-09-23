@@ -28,6 +28,8 @@ Generic unaugmented 3-D regularity is not claimed.
 
 Finite energy \(X=\|u\|_{L^2}^2\). Vorticity \(\omega=\nabla\times u\). Enstrophy \(Z=\|\omega\|_{L^2}^2\). Palinstrophy \(P=\|\nabla\omega\|_{L^2}^2\).
 
+The frequency weight in Step 1 is also written \(\omega(k)=|k|\). That is not vorticity.
+
 ---
 
 ## Step 0 — energy (closed)
@@ -59,6 +61,8 @@ T_c=\sum_k\omega(k)\,J_k,
 \qquad
 \sum_k J_k=0.
 \]
+
+\(D_s\ge 0\) is the viscous spread in the same weighting. The identity names it. \(J_k\) is the modal energy flux; the nonlinear piece sums to zero. Lemma Star does not bound \(D_s\) or \(T_c\).
 
 **Lemma Star.** Fix any constant \(\omega_\ast\in\mathbb{R}\). Because \(\sum J_k=0\),
 
@@ -100,7 +104,7 @@ Dyadic shells \(S_j=\{k:|k|\sim 2^j\}\), shell energy \(e_j\), shell enstrophy \
 \tfrac12\dot e_j = T_{j\leftarrow j}+\sum_{\ell\neq j}T_{j\leftarrow\ell}-\nu Z_j.
 \]
 
-- Cross-scale blocks \(T_{j\leftarrow\ell}\), \(\ell\neq j\): Young / paraproduct. Treat as standard. Constants exist; they are not the obstruction.
+- Cross-scale blocks \(T_{j\leftarrow\ell}\), \(\ell\neq j\): Young / paraproduct. Treat as standard. Constants exist; they are not the obstruction. Precise bounds and summability are **not supplied** by this note.
 - Same-scale block \(T_{j\leftarrow j}\): three waves of comparable wavelength (HHH). This is the remainder.
 
 Define
@@ -109,7 +113,7 @@ Define
 \rho_j=\frac{\lvert T_{j\leftarrow j}\rvert}{P_j}.
 \]
 
-If \(\rho_j<\nu\) on every shell, that shell cannot be driven by its own triads.
+Because \(\rho_j\) is normalized by palinstrophy \(P_j\), the comparison \(\rho_j<\nu\) belongs to the enstrophy–palinstrophy estimate in (A). **It is not an absorption criterion for the displayed shell-energy budget, whose viscous term is \(\nu Z_j\).** If \(\rho_j<\nu\) held on every shell, the same-scale block would be absorbed by palinstrophy in (A). That comparison is not proved for generic data, and it does not close \(\dot e_j\).
 
 Lemma Star still applies inside each shell: shift the shell weight by a constant before summing fluxes.
 
@@ -179,6 +183,7 @@ Subclass note: [`SWIRL_AXIAL_REDUCTION.md`](../SWIRL_AXIAL_REDUCTION.md). Existi
 | [`SWIRL_AXIAL_REDUCTION.md`](../SWIRL_AXIAL_REDUCTION.md) | subclass only — not Step 7 |
 | [`NS3D_PROGRESS_NOTE.md`](../NS3D_PROGRESS_NOTE.md) | measurements — not theorems |
 | [`PROGRESS_POST.md`](../PROGRESS_POST.md) | public language of the claim line |
+| [`UNAUG-PROOF-CHAIN.md`](./UNAUG-PROOF-CHAIN.md) | honesty card — dissipation threshold and refuse list |
 
 Machine lock: [`data/ns_proof_chain/2026-09-11.json`](../../data/ns_proof_chain/2026-09-11.json).
 
@@ -194,6 +199,7 @@ Do not:
 
 - bound \(T_c\) or \(\sum_{\tau>0}\tau\) by a copy of \(\Lambda'\);
 - bound \(T_{j\leftarrow j}\) by \(\dot e_j\), \(\dot Z\), or \(\Lambda'\);
+- treat \(\rho_j<\nu\) as shell-energy absorption into \(\nu Z_j\);
 - treat \(\rho_j<\nu\) as a proved theorem for generic data;
 - treat occupancy \(1\) and alignment \(\approx 1/2\) as depletion;
 - insert swirl, \(Q\), or an extra field as a later step of this chain;

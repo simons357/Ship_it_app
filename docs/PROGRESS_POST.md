@@ -31,6 +31,8 @@ T_{j\leftarrow j}
 
 — three waves of comparable wavelength (HHH).
 
+The ratio \(\rho_j=\lvert T_{j\leftarrow j}\rvert/P_j\) is a palinstrophy comparison for (A). It is not absorption into the shell-energy viscous term \(\nu Z_j\).
+
 To close generic unaugmented 3-D one still needs (A) a bound of that block by a piece of palinstrophy plus a remainder controlled by energy, or (B) a depletion factor from vorticity-direction mismatch that makes (A) true. Neither is proved here for generic data.
 
 Small exact disks and helical samples support the organization. Occupancy \(1\) and alignment \(\approx 1/2\) are measured facts. They are not depletion. They do not pass to infinitely many modes or to generic data.

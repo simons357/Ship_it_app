@@ -30,6 +30,8 @@ Bulk pairing is the same organization as Steps 2–4 of the generic chain (close
 
 ## Axial remainder
 
+Standing dictionary on this face: \(F=u^\theta/r\), \(G=\omega^\theta/r\). \(F\) is the intensive swirl \(\Phi\) of the Φ-renorm book. Do not reuse \(\Phi\) as any other symbol.
+
 Near the axis the leftover is written
 
 \[

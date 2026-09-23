@@ -6,7 +6,9 @@ Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS p
 
 Authoritative reduction chain: [`UNAUG-GENERIC-3D-PROOF-CHAIN.md`](./UNAUG-GENERIC-3D-PROOF-CHAIN.md).
 
-Lemma Star (\(\omega_\ast\) shift) is finished bookkeeping. It does not bound \(T_c\). The remainder is \(T_{j\leftarrow j}\). None of (A)–(B) is proved for generic 3-D. Regularity is not claimed.
+Lemma Star (\(\omega_\ast\) shift) is finished bookkeeping. It does not bound \(T_c\). The remainder is \(T_{j\leftarrow j}\). None of (A)–(B) is proved for generic 3-D. Regularity is not claimed. \(\rho_j<\nu\) belongs to (A), not to absorption into \(\nu Z_j\).
+
+Honesty card: [`UNAUG-PROOF-CHAIN.md`](./UNAUG-PROOF-CHAIN.md).
 
 Swirl is a subclass — [`SWIRL_AXIAL_REDUCTION.md`](../SWIRL_AXIAL_REDUCTION.md) — not Step 7.
 
