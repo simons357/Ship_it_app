@@ -19,6 +19,8 @@ Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 First jet:
 [`PATHWISE.md`](PATHWISE.md).
+Short interval:
+[`INTERVAL.md`](INTERVAL.md).
 Machine: `python3 scripts/mn_cancel.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.
@@ -203,6 +205,9 @@ of this scaling. The
 \(t=0\) jet is scored
 separately:
 [`PATHWISE.md`](PATHWISE.md).
+The short interval is
+scored separately:
+[`INTERVAL.md`](INTERVAL.md).
 
 Snapshots cannot seat that
 pathwise sentence. They

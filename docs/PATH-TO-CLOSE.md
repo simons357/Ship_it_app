@@ -28,6 +28,8 @@ Instantaneous \(MN\):
 [`MN-CANCEL.md`](MN-CANCEL.md).
 First jet:
 [`PATHWISE.md`](PATHWISE.md).
+Short interval:
+[`INTERVAL.md`](INTERVAL.md).
 
 This desk is **unaugmented**.
 A is not B. Keep \(1/r^4\).
@@ -188,9 +190,18 @@ keeps \(N=0\), Euler
 generates \(N\), \(T_c\)
 grows.
 [`PATHWISE.md`](PATHWISE.md).
-Pathwise \(K\) on a
-positive-time interval is
-still the living G4 target.
+A short Stokes / NSE
+interval does not seat a
+useful \(K\): Stokes keeps
+\(N=0\), NSE keeps
+\(R_{mn}=1\), large-amp
+\(K_{1/2}\) grows.
+[`INTERVAL.md`](INTERVAL.md).
+G4 stays OPEN for a named
+bound that is more than a
+short computed path, or a
+named death of G4 that is
+not this interval.
 
 Useful \(K\) or a named death.
 Do not restore

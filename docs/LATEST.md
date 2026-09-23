@@ -124,6 +124,10 @@ docs/MN-CANCEL.md
 First jet (Stokes keeps
 N=0; T_c grows; not a K):
 docs/PATHWISE.md
+Short interval (Stokes
+keeps N=0; NSE keeps
+R_mn=1; not a K):
+docs/INTERVAL.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

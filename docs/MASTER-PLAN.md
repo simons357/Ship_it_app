@@ -37,6 +37,8 @@ Instantaneous \(MN\):
 [`MN-CANCEL.md`](MN-CANCEL.md).
 First jet:
 [`PATHWISE.md`](PATHWISE.md).
+Short interval:
+[`INTERVAL.md`](INTERVAL.md).
 
 This page answers the operator’s
 question: how do we beat unforced

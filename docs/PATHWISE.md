@@ -16,6 +16,8 @@ L-doors:
 [`L-DOOR.md`](L-DOOR.md).
 Energy-class:
 [`ENERGY-K.md`](ENERGY-K.md).
+Short interval:
+[`INTERVAL.md`](INTERVAL.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 Machine: `python3 scripts/pathwise.py`.
@@ -154,15 +156,15 @@ The \(t=0\) jet does not
 seat a useful \(K\) and
 does not kill G4.
 
+The short interval is
+scored separately:
+[`INTERVAL.md`](INTERVAL.md).
 G4 stays OPEN only for a
 \(K\) that is more than a
-snapshot and more than a
+snapshot, more than a
 \(t=0\) Taylor
-coefficient: a named
-bound along a positive
-time interval, or a
-named death of G4 that
-is not this jet.
+coefficient, and more
+than that short path.
 
 ---
 

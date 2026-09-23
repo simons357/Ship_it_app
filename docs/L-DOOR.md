@@ -17,6 +17,8 @@ Instantaneous \(MN\):
 [`MN-CANCEL.md`](MN-CANCEL.md).
 First jet:
 [`PATHWISE.md`](PATHWISE.md).
+Short interval:
+[`INTERVAL.md`](INTERVAL.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 Machine: `python3 scripts/l_door.py`.

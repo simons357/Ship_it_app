@@ -168,6 +168,10 @@ docs/MN-CANCEL.md
 First jet (Stokes keeps
 N=0; T_c grows; not a K):
 docs/PATHWISE.md
+Short interval (Stokes
+keeps N=0; NSE keeps
+R_mn=1; not a K):
+docs/INTERVAL.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md

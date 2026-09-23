@@ -92,6 +92,8 @@ stay samples. They are not this kill.
 | Growing-layer \(N=0\) | \(T_c=M\), \(R_{mn}=1\), \(R_{ab}=1\). Instantaneous \(MN\) and above/below \(\Lambda\) have no uniform \(\theta<1\). [`MN-CANCEL.md`](MN-CANCEL.md). |
 | Stokes jet of \(N\) on \(v_n\) | \(N'_{\mathrm{St}}=0\). Linear dissipation keeps the knife-edge. [`PATHWISE.md`](PATHWISE.md). |
 | Live-triangle Stokes ratio | \(N'_{\mathrm{St}}/T_c=-8/3\), amplitude-flat. [`PATHWISE.md`](PATHWISE.md). |
+| Stokes interval keeps \(N=0\) | On the printed \(v_n\) paths, \(N\) stays working-precision zero and \(R_{mn}=1\). Knife-edge is Stokes-invariant, not only a jet. [`INTERVAL.md`](INTERVAL.md). |
+| NSE interval keeps \(R_{mn}=1\) on \(v_n\) | \(N\) becomes negative, so \(-\Lambda N\) adds to \(T_c\). Instantaneous \(MN\) death persists. [`INTERVAL.md`](INTERVAL.md). |
 
 ---
 
@@ -143,6 +145,7 @@ stay samples. They are not this kill.
 | Instantaneous \(MN\) cancellation as a useful \(\theta<1\) | On \(v_n\), \(N=0\) so \(R_{mn}=1\). Above/below \(\Lambda\) is the same kill (\(R_{ab}=1\)). [`MN-CANCEL.md`](MN-CANCEL.md). |
 | Signed vertices \(R_{\mathrm{sign}}\) as a useful \(K\) | Saturates \(\sim 0.31\) on \(v_n\). Absolute vertex sum is cheap CS. Not a remainder. [`MN-CANCEL.md`](MN-CANCEL.md). |
 | \(t=0\) jet of \(N,T_c\) as a useful \(K\) / as a G4 death | Euler generates \(N\). \(T_c\) grows on \(v_n\). A Taylor coefficient is not \(L^1_{\mathrm{loc}}\) and not a death. [`PATHWISE.md`](PATHWISE.md). |
+| Short Stokes / NSE interval as a useful \(K\) / as a G4 death | Stokes keeps \(N=0\). NSE keeps \(R_{mn}=1\). Large-amp \(K_{1/2}\) grows. A short path is not \(L^1_{\mathrm{loc}}\) of a useful \(K\) and not a death. [`INTERVAL.md`](INTERVAL.md). |
 | Switch this line to augmented NS / Theorem A | Track A is a different PDE. A is not B. |
 | OpenAI / blowup-search as this line | Forced (C)/(D) if it holds. Not unforced (B). |
 | BKM from assumed spectral decay as the primary | Useful conditional. Does not attack depletion. |
@@ -221,6 +224,10 @@ uniform \(\theta<1\)):
 First jet (Stokes keeps
 \(N=0\); \(T_c\) grows):
 [`PATHWISE.md`](PATHWISE.md).
+Short interval (Stokes
+keeps \(N=0\); NSE keeps
+\(R_{mn}=1\)):
+[`INTERVAL.md`](INTERVAL.md).
 
 SND-to-regularity implication is
 **OPEN** as a named hole on the SND/H

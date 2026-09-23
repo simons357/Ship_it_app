@@ -49,6 +49,10 @@ uniform \(\theta<1\)):
 First jet (Stokes keeps
 \(N=0\); \(T_c\) grows):
 [`PATHWISE.md`](PATHWISE.md).
+Short interval (Stokes
+keeps \(N=0\); NSE keeps
+\(R_{mn}=1\)):
+[`INTERVAL.md`](INTERVAL.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 

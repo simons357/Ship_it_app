@@ -44,6 +44,8 @@ Instantaneous \(MN\):
 [`MN-CANCEL.md`](MN-CANCEL.md).
 First jet:
 [`PATHWISE.md`](PATHWISE.md).
+Short interval:
+[`INTERVAL.md`](INTERVAL.md).
 Identities sit. The first
 missing implication is this
 page’s estimate.
@@ -334,6 +336,7 @@ No new 9D sweeps.
 | Instantaneous \(MN\) / above-below \(\Lambda\) | **DEAD** as a uniform \(\theta<1\). \(N=0\) on \(v_n\). [`MN-CANCEL.md`](MN-CANCEL.md). |
 | Signed vertices \(R_{\mathrm{sign}}\) | **NO** as a useful \(K\). Saturates \(\sim 0.31\). |
 | \(t=0\) jet of \(N,T_c\) | **NO** as a useful \(K\). Stokes keeps \(N=0\). Euler generates \(N\). \(T_c\) grows. Not a G4 death. [`PATHWISE.md`](PATHWISE.md). |
+| Short Stokes / NSE interval | **NO** as a useful \(K\). Stokes keeps \(N=0\). NSE keeps \(R_{mn}=1\). Large-amp \(K_{1/2}\) grows. Not a G4 death. [`INTERVAL.md`](INTERVAL.md). |
 | Y-remainder cousin (pathwise \(K_Y\)) | **OPEN.** Same circularity test. |
 | Unrestricted \(\star\) | **DEAD.** |
 | C10 \(\Rightarrow\) this estimate | **NO** without an inequality. C10 did not seat (A). |
