@@ -8,4 +8,6 @@
 
 **Honesty:** conditional on \(\|u^r/r\|_{L^\infty}\) uniform in \(\eps\). Not a global regularity proof. Not Clay.
 
+**Not Step 7.** The generic unaugmented 3-D chain deposits swirl as a subclass only: [`docs/SWIRL_AXIAL_REDUCTION.md`](../../SWIRL_AXIAL_REDUCTION.md). Do not splice these faces into that chain.
+
 **Audit:** [`docs/ns-review/PHI-RENORM-AUDIT-2026-08-22.md`](../../ns-review/PHI-RENORM-AUDIT-2026-08-22.md)

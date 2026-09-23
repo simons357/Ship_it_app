@@ -1,0 +1,60 @@
+{
+  "id": "unaug_generic_3d_proof_chain",
+  "date": "2026-09-11",
+  "author": "Jonathan Simons",
+  "headline": false,
+  "scoreboard": false,
+  "closes_regularity": false,
+  "clay_b": "not_claimed",
+  "scope": {
+    "pde": "classical_incompressible_NS",
+    "augmentation": false,
+    "force": false,
+    "q_operator": false,
+    "domains": ["T3", "R3"]
+  },
+  "lemma_star": {
+    "status": "finished",
+    "kind": "bookkeeping_identity",
+    "controls_Lambda": false,
+    "bounds_Tc": false,
+    "is_ratio_bound_Rstar": false,
+    "forbids": "bound_Tc_by_copy_of_Lambda_prime"
+  },
+  "steps": {
+    "0_energy": "closed",
+    "1_lemma_star": "finished_bookkeeping",
+    "2_triad_decomposition": "closed_identity",
+    "3_shell_budget": "organized_remainder_named",
+    "4_measurements": "facts_not_theorems",
+    "5_A_or_B": "not_proved_generic_3d",
+    "6_absorb_BKM": "shape_only_hypothesis_missing"
+  },
+  "remainder": "T_j_leftarrow_j",
+  "A_proved": false,
+  "B_proved": false,
+  "C_is_subclass": true,
+  "swirl_is_step_7": false,
+  "forbidden_in_remainder_bound": ["dot_e_j", "dot_Z", "Lambda_prime"],
+  "measurements": {
+    "are_theorems": false,
+    "pass_to_Kmax_infinity": false,
+    "pass_to_generic_data": false,
+    "occupancy_1_is_depletion": false,
+    "alignment_half_is_depletion": false,
+    "identity_residual_2d": "1e-16",
+    "adversarial_rho_2d": 0.02,
+    "helical_C": 0.5,
+    "helical_snapshot_rho": "O(1e-2)",
+    "helical_occupancy_HHH": 1,
+    "helical_alignment": 0.5,
+    "disk_32_nu": 0.03,
+    "disk_32_Tc_over_Ds": [0.021, 0.002]
+  },
+  "companions": {
+    "chain": "docs/ns-review/UNAUG-GENERIC-3D-PROOF-CHAIN.md",
+    "swirl_subclass": "docs/SWIRL_AXIAL_REDUCTION.md",
+    "measurements": "docs/NS3D_PROGRESS_NOTE.md",
+    "public_language": "docs/PROGRESS_POST.md"
+  }
+}
