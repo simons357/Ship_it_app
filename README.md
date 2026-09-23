@@ -3,6 +3,21 @@
 This repository now contains two related research objects. Neither is a
 unified physical theory.
 
+## Unaugmented generic 3-D NS — proof chain
+
+11 September 2026 chain of reductions. Classical incompressible NS only.
+Lemma Star is finished bookkeeping. The remainder is \(T_{j\leftarrow j}\).
+Generic regularity is not claimed. Swirl is a subclass, not Step 7.
+
+- Chain: [`docs/ns-review/UNAUG-GENERIC-3D-PROOF-CHAIN.md`](docs/ns-review/UNAUG-GENERIC-3D-PROOF-CHAIN.md)
+- Honesty: [`docs/ns-review/UNAUG-PROOF-CHAIN.md`](docs/ns-review/UNAUG-PROOF-CHAIN.md)
+- Lock: [`data/ns_proof_chain/2026-09-11.json`](data/ns_proof_chain/2026-09-11.json)
+- Subclass: [`docs/SWIRL_AXIAL_REDUCTION.md`](docs/SWIRL_AXIAL_REDUCTION.md)
+
+```bash
+python3 -m unittest tests.test_unaug_generic_3d_chain
+```
+
 ## Domain Architect
 
 Functional Role Analysis and model-auditing software. It classifies
@@ -62,4 +77,5 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 
 ```bash
 python -m unittest tests/test_hb_ringdown.py
+python3 -m unittest tests.test_unaug_generic_3d_chain
 ```
