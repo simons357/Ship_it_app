@@ -167,9 +167,9 @@ in the PDE.
 | CS pairing / Target A | `docs/ns-recovery/CS-REMAINDER-VS-DA-REJECT.md` |
 | C10 identities, empty first arrow | `docs/ns-snd-final-status/C10-CHAIN.md` |
 | First adversarial triad test | `docs/ns-recovery/CENTERED-DRIFT-TRIAD-TEST.md`, `scripts/centered_drift_triad_test.py` |
+| Symmetrized coefficient / channel split | `docs/ns-recovery/CENTERED-DRIFT-TRIAD-SPLIT.md`, `scripts/centered_drift_triad_split.py` |
 
-**Next write (not done):** fully symmetrized real-triad coefficient,
-split comparable / separated / HH→L, then a non-tautological \(K\) or
-\(K_Y\) from cancellation inside \(T_c=M-\Lambda N\), true on \(v_n\) if
-that field is in the class, without \(H^1/L^\infty/\)BKM. Near-scale
-first. Do not redo the §4 triad or K=0.
+**Next write (not done):** an explicit non-tautological \(K\) or \(K_Y\)
+for the comparable / near-shell signed piece, true on \(v_n\) if that
+field is in the class, without \(H^1/L^\infty/\)BKM. Do not redo K=0,
+the §4 triad, or the \(\varepsilon\)-scan.
