@@ -33,6 +33,8 @@ target):
 [`ENERGY-K.md`](ENERGY-K.md).
 Pairing CS doors:
 [`L-DOOR.md`](L-DOOR.md).
+Instantaneous \(MN\):
+[`MN-CANCEL.md`](MN-CANCEL.md).
 
 This page answers the operator’s
 question: how do we beat unforced

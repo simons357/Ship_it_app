@@ -31,6 +31,8 @@ Energy-class ladder:
 [`ENERGY-K.md`](ENERGY-K.md).
 Pairing CS doors:
 [`L-DOOR.md`](L-DOOR.md).
+Instantaneous \(MN\):
+[`MN-CANCEL.md`](MN-CANCEL.md).
 Score:
 [`NS-STATUS.md`](NS-STATUS.md).
 Tape:

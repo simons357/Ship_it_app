@@ -118,6 +118,9 @@ Pairing CS doors (tight is
 star; LE dead; LX not a
 universal C):
 docs/L-DOOR.md
+Instantaneous MN (N=0 on
+v_n; no uniform theta<1):
+docs/MN-CANCEL.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

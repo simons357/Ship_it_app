@@ -24,6 +24,8 @@ Energy-class ladder (dead):
 [`ENERGY-K.md`](ENERGY-K.md).
 Pairing CS doors:
 [`L-DOOR.md`](L-DOOR.md).
+Instantaneous \(MN\):
+[`MN-CANCEL.md`](MN-CANCEL.md).
 
 This desk is **unaugmented**.
 A is not B. Keep \(1/r^4\).
@@ -171,6 +173,13 @@ the X, mid, and Y doors.
 Pairing CS: tight is ★,
 LE dead, LX not seated.
 [`L-DOOR.md`](L-DOOR.md).
+Instantaneous \(MN\) and
+above/below \(\Lambda\) die
+on \(v_n\) (\(N=0\),
+\(R_{mn}=R_{ab}=1\)).
+Signed vertices are not a
+useful \(K\).
+[`MN-CANCEL.md`](MN-CANCEL.md).
 Pathwise \(K\) is still the
 living G4 target.
 

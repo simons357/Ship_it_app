@@ -40,6 +40,8 @@ Energy-class ladder:
 [`ENERGY-K.md`](ENERGY-K.md).
 Pairing CS doors:
 [`L-DOOR.md`](L-DOOR.md).
+Instantaneous \(MN\):
+[`MN-CANCEL.md`](MN-CANCEL.md).
 Identities sit. The first
 missing implication is this
 page’s estimate.
@@ -277,6 +279,11 @@ known to imply regularity?
   monotone quantity), without
   embedding the unknown field into
   a supercritical norm.
+  Instantaneous \(MN\) and
+  above/below \(\Lambda\) are
+  already dead as uniform
+  \(\theta<1\).
+  [`MN-CANCEL.md`](MN-CANCEL.md).
 
 ---
 
@@ -322,6 +329,8 @@ No new 9D sweeps.
 | Energy-class \(K\sim\sqrt{E}\) / \(K_Y\sim\sqrt{E}\) / mid | **DEAD** on \(v_n\). [`ENERGY-K.md`](ENERGY-K.md). |
 | Tight CS / LE door | **DEAD.** Tight is ★. LE dies on \(v_n\). [`L-DOOR.md`](L-DOOR.md). |
 | LX door \(\|L\|_2\le C X\) | **NO** as a seated \(C\). Not a boxed kill. |
+| Instantaneous \(MN\) / above-below \(\Lambda\) | **DEAD** as a uniform \(\theta<1\). \(N=0\) on \(v_n\). [`MN-CANCEL.md`](MN-CANCEL.md). |
+| Signed vertices \(R_{\mathrm{sign}}\) | **NO** as a useful \(K\). Saturates \(\sim 0.31\). |
 | Y-remainder cousin (pathwise \(K_Y\)) | **OPEN.** Same circularity test. |
 | Unrestricted \(\star\) | **DEAD.** |
 | C10 \(\Rightarrow\) this estimate | **NO** without an inequality. C10 did not seat (A). |

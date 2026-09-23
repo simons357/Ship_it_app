@@ -13,6 +13,8 @@ Pairing:
 [`BSTAR-PROOF.md`](BSTAR-PROOF.md).
 Energy-class ladder:
 [`ENERGY-K.md`](ENERGY-K.md).
+Instantaneous \(MN\):
+[`MN-CANCEL.md`](MN-CANCEL.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 Machine: `python3 scripts/l_door.py`.
@@ -183,11 +185,10 @@ G4 stays OPEN only for a
 \(K\) that is not a uniform
 function of
 \((E,X,\|L\|_2)\) of this
-scaling: a named dynamical
-cancellation in
-\(T_c=M-\Lambda N\) itself,
-or a named death of G4
-that is not this door.
+scaling. Instantaneous
+\(MN\) cancellation is
+scored separately:
+[`MN-CANCEL.md`](MN-CANCEL.md).
 
 Tautological \(K\) is still
 forbidden.

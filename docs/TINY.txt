@@ -162,6 +162,9 @@ Pairing CS doors (tight is
 star; LE dead; LX not a
 universal C):
 docs/L-DOOR.md
+Instantaneous MN (N=0 on
+v_n; no uniform theta<1):
+docs/MN-CANCEL.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md

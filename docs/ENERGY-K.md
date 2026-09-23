@@ -15,6 +15,8 @@ First lift:
 [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
 Pairing CS doors:
 [`L-DOOR.md`](L-DOOR.md).
+Instantaneous \(MN\):
+[`MN-CANCEL.md`](MN-CANCEL.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 Machine: `python3 scripts/energy_k.py`.
@@ -201,6 +203,8 @@ produce cancellation in
 \(T_c=M-\Lambda N\) itself,
 or a named death of G4
 that is not this ladder.
+Instantaneous \(MN\):
+[`MN-CANCEL.md`](MN-CANCEL.md).
 
 ---
 

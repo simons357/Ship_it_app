@@ -29,6 +29,10 @@ Pairing CS doors (tight is
 ★; LE dead; LX not a
 universal \(C\)):
 [`L-DOOR.md`](L-DOOR.md).
+Instantaneous \(MN\)
+(\(N=0\) on \(v_n\); no
+uniform \(\theta<1\)):
+[`MN-CANCEL.md`](MN-CANCEL.md).
 
 Do not start leftover 1.
 Do not weld \(\star\).

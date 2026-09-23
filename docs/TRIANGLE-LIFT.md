@@ -18,6 +18,8 @@ and mid door die with
 [`ENERGY-K.md`](ENERGY-K.md).
 Pairing CS:
 [`L-DOOR.md`](L-DOOR.md).
+Instantaneous \(MN\):
+[`MN-CANCEL.md`](MN-CANCEL.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 Machine: `python3 scripts/triangle_lift.py`.

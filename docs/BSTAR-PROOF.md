@@ -11,6 +11,8 @@ Triangle reconstruction:
 Pairing CS doors (tight is
 ★; LE dead; LX not seated):
 [`L-DOOR.md`](L-DOOR.md).
+Instantaneous \(MN\):
+[`MN-CANCEL.md`](MN-CANCEL.md).
 Machine: `python3 scripts/bstar_symmetrize.py`.
 Do not overwrite `stokes_moments.py`.
 Do not start leftover 1.
