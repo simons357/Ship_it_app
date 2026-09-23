@@ -26,6 +26,8 @@ Pairing CS doors:
 [`L-DOOR.md`](L-DOOR.md).
 Instantaneous \(MN\):
 [`MN-CANCEL.md`](MN-CANCEL.md).
+First jet:
+[`PATHWISE.md`](PATHWISE.md).
 
 This desk is **unaugmented**.
 A is not B. Keep \(1/r^4\).
@@ -180,8 +182,15 @@ on \(v_n\) (\(N=0\),
 Signed vertices are not a
 useful \(K\).
 [`MN-CANCEL.md`](MN-CANCEL.md).
-Pathwise \(K\) is still the
-living G4 target.
+The \(t=0\) jet does not
+seat a useful \(K\): Stokes
+keeps \(N=0\), Euler
+generates \(N\), \(T_c\)
+grows.
+[`PATHWISE.md`](PATHWISE.md).
+Pathwise \(K\) on a
+positive-time interval is
+still the living G4 target.
 
 Useful \(K\) or a named death.
 Do not restore

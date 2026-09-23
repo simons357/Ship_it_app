@@ -15,6 +15,8 @@ Energy-class ladder:
 [`ENERGY-K.md`](ENERGY-K.md).
 Instantaneous \(MN\):
 [`MN-CANCEL.md`](MN-CANCEL.md).
+First jet:
+[`PATHWISE.md`](PATHWISE.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 Machine: `python3 scripts/l_door.py`.

@@ -35,6 +35,8 @@ Pairing CS doors:
 [`L-DOOR.md`](L-DOOR.md).
 Instantaneous \(MN\):
 [`MN-CANCEL.md`](MN-CANCEL.md).
+First jet:
+[`PATHWISE.md`](PATHWISE.md).
 
 This page answers the operator’s
 question: how do we beat unforced

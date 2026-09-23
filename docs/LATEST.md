@@ -121,6 +121,9 @@ docs/L-DOOR.md
 Instantaneous MN (N=0 on
 v_n; no uniform theta<1):
 docs/MN-CANCEL.md
+First jet (Stokes keeps
+N=0; T_c grows; not a K):
+docs/PATHWISE.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

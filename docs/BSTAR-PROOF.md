@@ -13,6 +13,8 @@ Pairing CS doors (tight is
 [`L-DOOR.md`](L-DOOR.md).
 Instantaneous \(MN\):
 [`MN-CANCEL.md`](MN-CANCEL.md).
+First jet:
+[`PATHWISE.md`](PATHWISE.md).
 Machine: `python3 scripts/bstar_symmetrize.py`.
 Do not overwrite `stokes_moments.py`.
 Do not start leftover 1.

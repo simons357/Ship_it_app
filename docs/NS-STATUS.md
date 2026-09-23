@@ -46,6 +46,9 @@ Instantaneous \(MN\)
 (\(N=0\) on \(v_n\); no
 uniform \(\theta<1\)):
 [`MN-CANCEL.md`](MN-CANCEL.md).
+First jet (Stokes keeps
+\(N=0\); \(T_c\) grows):
+[`PATHWISE.md`](PATHWISE.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 

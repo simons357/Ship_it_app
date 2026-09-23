@@ -42,6 +42,8 @@ Pairing CS doors:
 [`L-DOOR.md`](L-DOOR.md).
 Instantaneous \(MN\):
 [`MN-CANCEL.md`](MN-CANCEL.md).
+First jet:
+[`PATHWISE.md`](PATHWISE.md).
 Identities sit. The first
 missing implication is this
 page’s estimate.
@@ -331,6 +333,7 @@ No new 9D sweeps.
 | LX door \(\|L\|_2\le C X\) | **NO** as a seated \(C\). Not a boxed kill. |
 | Instantaneous \(MN\) / above-below \(\Lambda\) | **DEAD** as a uniform \(\theta<1\). \(N=0\) on \(v_n\). [`MN-CANCEL.md`](MN-CANCEL.md). |
 | Signed vertices \(R_{\mathrm{sign}}\) | **NO** as a useful \(K\). Saturates \(\sim 0.31\). |
+| \(t=0\) jet of \(N,T_c\) | **NO** as a useful \(K\). Stokes keeps \(N=0\). Euler generates \(N\). \(T_c\) grows. Not a G4 death. [`PATHWISE.md`](PATHWISE.md). |
 | Y-remainder cousin (pathwise \(K_Y\)) | **OPEN.** Same circularity test. |
 | Unrestricted \(\star\) | **DEAD.** |
 | C10 \(\Rightarrow\) this estimate | **NO** without an inequality. C10 did not seat (A). |

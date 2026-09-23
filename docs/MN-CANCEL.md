@@ -17,6 +17,8 @@ L-doors:
 [`L-DOOR.md`](L-DOOR.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
+First jet:
+[`PATHWISE.md`](PATHWISE.md).
 Machine: `python3 scripts/mn_cancel.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.
@@ -197,12 +199,10 @@ G4 stays OPEN only for a
 \(K\) that is not a snapshot
 function of
 \((E,X,\|L\|_2,M,N,T_k)\)
-of this scaling: a named
-**pathwise** cancellation
-along the NSE trajectory
-itself, or a named death
-of G4 that is not this
-door.
+of this scaling. The
+\(t=0\) jet is scored
+separately:
+[`PATHWISE.md`](PATHWISE.md).
 
 Snapshots cannot seat that
 pathwise sentence. They

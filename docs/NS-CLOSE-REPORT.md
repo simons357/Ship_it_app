@@ -33,6 +33,8 @@ Pairing CS doors:
 [`L-DOOR.md`](L-DOOR.md).
 Instantaneous \(MN\):
 [`MN-CANCEL.md`](MN-CANCEL.md).
+First jet:
+[`PATHWISE.md`](PATHWISE.md).
 Score:
 [`NS-STATUS.md`](NS-STATUS.md).
 Tape:
