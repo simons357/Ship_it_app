@@ -25,6 +25,8 @@ B★:
 [`BSTAR-PROOF.md`](BSTAR-PROOF.md).
 Fourier triangle:
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
+First lift:
+[`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
 Score:
 [`NS-STATUS.md`](NS-STATUS.md).
 Tape:

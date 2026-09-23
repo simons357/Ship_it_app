@@ -86,6 +86,7 @@ stay samples. They are not this kill.
 | Exact-shell \(C=4/3\) freeze | **CLAIMED.** No more sweeps. Independent reproduction of the projected identity / incidence. [`ATTACK-9D-FULL-SUPPORT-BOUND.md`](ATTACK-9D-FULL-SUPPORT-BOUND.md). |
 | 16 Sep handoff | Four buckets. C10 not seated as (A). Centered drift independent. SND is an instrument. [`NS-STATUS.md`](NS-STATUS.md). |
 | Fourier-triangle identities | Lattice triangle, transverse polarizations, Leray idle in \(T_k\), cyclic energy, equal-length cancel, two-shell gap-cancel, unequal-length defect. [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md). Not a bound. |
+| Same-two-shell lift | Any number of triangles on two eigenvalues keep the gap formula. [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md). Not a bound. |
 
 ---
 
@@ -130,6 +131,7 @@ stay samples. They are not this kill.
 | Bounding \(a_+\) by \(\|\nabla u\|_\infty\) as the Route A write | BKM, not an a priori. Living G1 is A-pair: the stretch pairing, not \(\|(\alpha)_+\|_\infty\). [`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md). |
 | B★ as a universal \(C\) / as a useful \(K\) / as a close | Imag \(|k|^{-2}\) cutoff grows \(R_B\) like \(\Lambda^{1/4}\). Not a closed-form kill. AM-GM remainder was \(Y/\nu\). [`BSTAR.md`](BSTAR.md), [`BSTAR-PROOF.md`](BSTAR-PROOF.md). |
 | Triangle geometry as the time-dependent bound | Identities sit. They do not give a useful \(K\) in \(T_c\le\theta\nu\mathcal D_s+K(t)X\). That is the first missing implication. [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md). |
+| \(K\sim\sqrt{E}\) as a useful remainder | \(R_E=\lvert T_c\rvert/(\sqrt{E}\,X)\) grows on \(v_n\) (\(0.11\to 144\)) and on imag cutoff. Dead. [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md). |
 | Switch this line to augmented NS / Theorem A | Track A is a different PDE. A is not B. |
 | OpenAI / blowup-search as this line | Forced (C)/(D) if it holds. Not unforced (B). |
 | BKM from assumed spectral decay as the primary | Useful conditional. Does not attack depletion. |

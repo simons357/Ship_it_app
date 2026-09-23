@@ -30,6 +30,10 @@ Fourier-triangle geometry
 arrow to a useful \(K\); not a
 close):
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
+First lift (same two shells
+keep the gap; third eigenvalue
+dies; \(K\sim\sqrt{E}\) dead):
+[`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 

@@ -18,6 +18,8 @@ First write: [`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
 Triangle geometry (identities,
 then the missing \(K\)):
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
+First lift:
+[`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
 
 This desk is **unaugmented**.
 A is not B. Keep \(1/r^4\).

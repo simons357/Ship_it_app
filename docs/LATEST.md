@@ -106,6 +106,10 @@ Fourier-triangle geometry
 (identities sit; first missing
 arrow to a useful K; not a close):
 docs/FOURIER-TRIANGLE.md
+First lift (two-shell sits;
+third eigenvalue dies;
+K ~ sqrt(E) dead):
+docs/TRIANGLE-LIFT.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

@@ -58,6 +58,8 @@ Killed ★:
 
 Triangle geometry:
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
+First lift:
+[`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
 Do not start leftover 1.
 Do not weld \(\star\).
 Do not cash B★ as G5.

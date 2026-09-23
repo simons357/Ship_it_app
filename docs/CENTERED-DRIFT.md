@@ -34,9 +34,12 @@ like \(\Lambda^{1/4}\). Not a
 useful \(K\).
 Triangle reconstruction:
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
+First lift:
+[`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
 Identities sit. The first
 missing implication is this
 page’s estimate.
+\(K\sim\sqrt{E}\) is dead.
 
 ---
 

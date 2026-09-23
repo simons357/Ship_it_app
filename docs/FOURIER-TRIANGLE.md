@@ -17,6 +17,10 @@ Pairing:
 [`BSTAR-PROOF.md`](BSTAR-PROOF.md).
 Time-dependent target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
+First lift (two-shell sits;
+third eigenvalue dies;
+\(K\sim\sqrt{E}\) dead):
+[`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
 
 Do not start leftover 1.
 Do not weld \(\star\).

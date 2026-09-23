@@ -24,6 +24,9 @@ Fourier-triangle geometry
 (identities sit; first missing
 arrow to Route B; not a close):
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
+First lift (\(K\sim\sqrt{E}\)
+dead; G4 still OPEN):
+[`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
 
 This page answers the operator’s
 question: how do we beat unforced

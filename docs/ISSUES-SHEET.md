@@ -68,6 +68,8 @@ Fourier-triangle geometry
 (identities sit; first missing
 arrow; not leftover 1):
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
+First lift:
+[`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
 Report audit (long 16 Sep write
 scored; Kato–Ponce is not \(A.2\);
 Pólya two pages rejected — \(D^+\)

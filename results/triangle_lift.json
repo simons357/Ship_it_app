@@ -1,0 +1,122 @@
+{
+  "not_a_close": true,
+  "star_stays_killed": true,
+  "bstar_not_seated": true,
+  "lifts_that_sit": {
+    "two_shell_a": true,
+    "two_shell_b": true,
+    "same_two_shells_still_gap": true,
+    "same_two_shells_n": 2
+  },
+  "first_failed_sum": {
+    "four_shell_n": 4,
+    "four_shell_gap_formula": false,
+    "unequal_gap_formula": false,
+    "tc_a": 3.6566818278271396,
+    "tc_c": -80.8936768006765,
+    "tc_a_plus_c": -77.23699497284936,
+    "tc_four": -106.36381862345202,
+    "nonadditive": true,
+    "same_tc_a_plus_b": 13.59665940028291,
+    "same_tc_sum": 13.59665940028291,
+    "same_nonadditive": false,
+    "unbal_still_two_shell": true,
+    "unbal_tc_a_plus_b": 6.256368269854034,
+    "unbal_tc_sum": 6.238853904667589,
+    "unbal_residual": 0.01751436518644578
+  },
+  "first_failed_evolve": {
+    "isolated_closed_under_B": false,
+    "leak_a": {
+      "n_support": 6,
+      "n_landings": 18,
+      "n_off_live": 4,
+      "B2_on": 6.217950488395431,
+      "B2_off": 3.1319910514541394,
+      "leak_frac": 0.33497439936983064,
+      "closed_under_B": false
+    },
+    "leak_same": {
+      "n_support": 12,
+      "n_landings": 66,
+      "n_off_live": 40,
+      "B2_on": 11.551283821728767,
+      "B2_off": 60.814251461291946,
+      "leak_frac": 0.8403758947328748,
+      "closed_under_B": false
+    },
+    "leak_four": {
+      "n_support": 12,
+      "n_landings": 56,
+      "n_off_live": 32,
+      "B2_on": 18.99545165302404,
+      "B2_off": 117.50990062330158,
+      "leak_frac": 0.8608446384243464,
+      "closed_under_B": false
+    },
+    "leak_uneq": {
+      "n_support": 6,
+      "n_landings": 18,
+      "n_off_live": 6,
+      "B2_on": 0.383567355195294,
+      "B2_off": 0.25301577066048,
+      "leak_frac": 0.3974591225935259,
+      "closed_under_B": false
+    }
+  },
+  "attempted_energy_K": {
+    "shape": "|T_c| <= C sqrt(E) X  =>  K ~ sqrt(E)",
+    "families": [
+      {
+        "label": "vn1",
+        "R_E": 0.11438071370737869,
+        "R_B": 0.017793530688128105,
+        "R_star": 0.0013983596600429915
+      },
+      {
+        "label": "vn4",
+        "R_E": 13.013333333333334,
+        "R_B": 0.008636710539613096,
+        "R_star": 0.004972851263004261
+      },
+      {
+        "label": "vn8",
+        "R_E": 144.09988280233551,
+        "R_B": 0.006088800847682553,
+        "R_star": 0.009787402881363299
+      },
+      {
+        "label": "sep1",
+        "R_E": 0.06718834583835902,
+        "R_B": 0.09501866991802128
+      },
+      {
+        "label": "sep8",
+        "R_E": 0.6982690368868233,
+        "R_B": 0.0023799889562713026
+      },
+      {
+        "label": "imagK4",
+        "R_E": 5.89828455068386,
+        "R_B": 0.08411674737615141,
+        "Lambda": 12.063766092097696
+      },
+      {
+        "label": "imagK6",
+        "R_E": 28.329937997143276,
+        "R_B": 0.11243574958430658,
+        "Lambda": 24.13622143665873
+      },
+      {
+        "label": "imagK8",
+        "R_E": 86.72498494397003,
+        "R_B": 0.13544787966485727,
+        "Lambda": 40.37855089236771
+      }
+    ],
+    "vn_R_E_grows": true,
+    "imag_R_E_grows": true,
+    "sits_as_universal_C": false
+  },
+  "first_missing": "two-shell gap-cancel does not lift to a useful K after a third eigenvalue or after B leaks off the triangle"
+}
