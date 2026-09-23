@@ -42,7 +42,7 @@ def test_uniform_slots_grow_on_v_n_and_young_is_packaging():
 
 def test_page_and_json_do_not_claim_a_K_or_ns():
     page = (ROOT / "docs" / "ns-recovery" / "CENTERED-DRIFT-K-CANDIDATES.md").read_text()
-    assert page.startswith("# Centered drift: \(K\)-candidate score sheet")
+    assert page.startswith(r"# Centered drift: \(K\)-candidate score sheet")
     assert "Not a closure theorem" in page
     assert "No non-tautological" in page
     assert "NS is solved" not in page
