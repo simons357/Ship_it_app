@@ -168,8 +168,11 @@ in the PDE.
 | C10 identities, empty first arrow | `docs/ns-snd-final-status/C10-CHAIN.md` |
 | First adversarial triad test | `docs/ns-recovery/CENTERED-DRIFT-TRIAD-TEST.md`, `scripts/centered_drift_triad_test.py` |
 | Symmetrized coefficient / channel split | `docs/ns-recovery/CENTERED-DRIFT-TRIAD-SPLIT.md`, `scripts/centered_drift_triad_split.py` |
+| \(K\)-candidate score sheet | `docs/ns-recovery/CENTERED-DRIFT-K-CANDIDATES.md`, `scripts/centered_drift_k_candidates.py` |
 
-**Next write (not done):** an explicit non-tautological \(K\) or \(K_Y\)
-for the comparable / near-shell signed piece, true on \(v_n\) if that
-field is in the class, without \(H^1/L^\infty/\)BKM. Do not redo K=0,
-the §4 triad, or the \(\varepsilon\)-scan.
+**Score sheet landed.** Uniform energy-class slots die on \(v_n\).
+\(K_{\mathrm{inst}}\) is Young packaging, not a bound. Claimed
+\(16/9\) is restricted-class only. No non-tautological \(K\) or
+\(K_Y\) from admissible data is written. First missing implication
+unchanged. Do not redo K=0, the §4 triad, the \(\varepsilon\)-scan,
+or this score sheet.

@@ -40,7 +40,7 @@ Human: Jonathan Simons (`winchester.anesthesia@gmail.com` / `simonsmedical@iclou
 
 Remaining-work lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Specialist break questions: [`SPECIALIST-BREAK-QUESTIONS.md`](SPECIALIST-BREAK-QUESTIONS.md). Six straight answers: [`SIX-QUESTIONS.md`](SIX-QUESTIONS.md). Replacement closure: [`REPLACEMENT-CLOSURE.md`](REPLACEMENT-CLOSURE.md). Bounded aspect does not exclude \(v_n\).
 
-1. **Unrestricted ★ is dead** on \(v_n\). Direct centered route: identities sit, \(T_c\le\theta\nu\mathcal D_s+K(t)X\) is OPEN, \(K(t)\) not integrable. Inventory (do not redo): [`CENTERED-DRIFT-INVENTORY.md`](CENTERED-DRIFT-INVENTORY.md). Triangle geometry and the first missing implication: [`FOURIER-TRIANGLE-GEOMETRY.md`](FOURIER-TRIANGLE-GEOMETRY.md). First adversarial triad test: [`CENTERED-DRIFT-TRIAD-TEST.md`](CENTERED-DRIFT-TRIAD-TEST.md). Channel split: [`CENTERED-DRIFT-TRIAD-SPLIT.md`](CENTERED-DRIFT-TRIAD-SPLIT.md). Need★ dual cannot repair the same bound.
+1. **Unrestricted ★ is dead** on \(v_n\). Direct centered route: identities sit, \(T_c\le\theta\nu\mathcal D_s+K(t)X\) is OPEN, \(K(t)\) not integrable. Inventory (do not redo): [`CENTERED-DRIFT-INVENTORY.md`](CENTERED-DRIFT-INVENTORY.md). Triangle geometry and the first missing implication: [`FOURIER-TRIANGLE-GEOMETRY.md`](FOURIER-TRIANGLE-GEOMETRY.md). First adversarial triad test: [`CENTERED-DRIFT-TRIAD-TEST.md`](CENTERED-DRIFT-TRIAD-TEST.md). Channel split: [`CENTERED-DRIFT-TRIAD-SPLIT.md`](CENTERED-DRIFT-TRIAD-SPLIT.md). \(K\)-candidate score sheet: [`CENTERED-DRIFT-K-CANDIDATES.md`](CENTERED-DRIFT-K-CANDIDATES.md) — uniform slots die on \(v_n\); \(K_{\mathrm{inst}}\) is packaging; no non-tautological formula is written. Need★ dual cannot repair the same bound.
 2. **Exact-shell 9D** (\(K\le16/9\)): **CLAIMED** — written derivation available; internal checks passed; independent specialist pending. Sweeps are consistency only. Next review: weighted incidence and the complex-polarization identity. [`ATTACK-9D-FULL-SUPPORT-SCORE.md`](ATTACK-9D-FULL-SUPPORT-SCORE.md). **No as a regularity close.**
 3. **Paths to DA:** growing-layer score has landed. SND⇒regularity is scored as a different implication ([`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md)): the shell condition does not freeze \(j_*\), and the written chain uses \(X\le M\). Do not send a regularity close.
 4. Soft X silent. H1 not started from ABC_λ.
@@ -231,6 +231,7 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 | [`SOT.md`](SOT.md) | Packet source of truth |
 | [`WHAT-ELSE.md`](WHAT-ELSE.md) | Unrestricted ★ dead on \(v_n\); 9D exact-shell not stamped |
 | [`GROWING-LAYER-SCORE.md`](GROWING-LAYER-SCORE.md) | Growing-layer family: evaluator kill of uniform \(\mathcal R_\star\) |
+| [`CENTERED-DRIFT-K-CANDIDATES.md`](CENTERED-DRIFT-K-CANDIDATES.md) | Comparable / near-shell \(K\) score sheet; uniform slots die; no proved \(K\) |
 | [`PR24-GROW-S-SCORE.md`](PR24-GROW-S-SCORE.md) | PR #24 grow-\(s\): \(\max K\approx 0.456\), not a kill |
 | [`docs/math/ns_attacks/ATTACK_9D_SETUP.md`](../math/ns_attacks/ATTACK_9D_SETUP.md) | 9D: same \(B\) as 9B; no I/O exponent locked |
 | [`SUPERGROK-ABC-LOCK.md`](SUPERGROK-ABC-LOCK.md) | SuperGrok ABC_λ filing: keep evaluator line; **refuse** falsifier stamp |
