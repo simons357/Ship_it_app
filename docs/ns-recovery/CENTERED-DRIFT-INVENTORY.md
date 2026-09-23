@@ -166,7 +166,10 @@ in the PDE.
 | Stokes identity check | `docs/math/ns_attacks/ATTACK_4_STOKES.md` |
 | CS pairing / Target A | `docs/ns-recovery/CS-REMAINDER-VS-DA-REJECT.md` |
 | C10 identities, empty first arrow | `docs/ns-snd-final-status/C10-CHAIN.md` |
+| First adversarial triad test | `docs/ns-recovery/CENTERED-DRIFT-TRIAD-TEST.md`, `scripts/centered_drift_triad_test.py` |
 
-**Next write (not done):** a non-tautological \(K\) or \(K_Y\) from
-cancellation inside \(T_c=M-\Lambda N\), true on \(v_n\) if that
-field is in the class, without \(H^1/L^\infty/\)BKM.
+**Next write (not done):** fully symmetrized real-triad coefficient,
+split comparable / separated / HH→L, then a non-tautological \(K\) or
+\(K_Y\) from cancellation inside \(T_c=M-\Lambda N\), true on \(v_n\) if
+that field is in the class, without \(H^1/L^\infty/\)BKM. Near-scale
+first. Do not redo the §4 triad or K=0.
