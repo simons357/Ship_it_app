@@ -29,6 +29,8 @@ First lift:
 [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
 Energy-class ladder:
 [`ENERGY-K.md`](ENERGY-K.md).
+Pairing CS doors:
+[`L-DOOR.md`](L-DOOR.md).
 Score:
 [`NS-STATUS.md`](NS-STATUS.md).
 Tape:

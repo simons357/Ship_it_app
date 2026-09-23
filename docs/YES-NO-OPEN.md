@@ -88,6 +88,7 @@ stay samples. They are not this kill.
 | Fourier-triangle identities | Lattice triangle, transverse polarizations, Leray idle in \(T_k\), cyclic energy, equal-length cancel, two-shell gap-cancel, unequal-length defect. [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md). Not a bound. |
 | Same-two-shell lift | Any number of triangles on two eigenvalues keep the gap formula. [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md). Not a bound. |
 | Growing-layer \(X_n,Y_n\) | \(X_n=n(2n+1)(49n+4)/3\), \(Y_n=n(2n+1)(1167n^3+174n^2+8n-4)/15\). Same family as the ★ kill. [`ENERGY-K.md`](ENERGY-K.md). |
+| Tight pairing CS is ★ | \(\|PL\|_2=\lvert T_c\rvert/\sqrt{\mathcal D_s}\) gives \(K\sim\mathcal R_\star E\Lambda\). Same dead box. [`L-DOOR.md`](L-DOOR.md). |
 
 ---
 
@@ -134,6 +135,8 @@ stay samples. They are not this kill.
 | Triangle geometry as the time-dependent bound | Identities sit. They do not give a useful \(K\) in \(T_c\le\theta\nu\mathcal D_s+K(t)X\). That is the first missing implication. [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md). |
 | \(K\sim\sqrt{E}\) as a useful remainder | \(R_E=\lvert T_c\rvert/(\sqrt{E}\,X)\) grows on \(v_n\) (\(0.11\to 144\)) and on imag cutoff. Dead. [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md). |
 | Energy-class ladder as a useful \(K\) | Only \(p=q=1/2\) matches amplitude. The X, mid, and Y doors all die on \(v_n\) (\(R_Y\sim n^{3/2}\)). Pathwise \(K\) is still allowed. Not Attack-2 \(C_*\). [`ENERGY-K.md`](ENERGY-K.md). |
+| LE door \(\|L\|_2\le C\sqrt{EX}\) as a useful \(K\) | \(R_{LE}\) grows on \(v_n\) (\(0.54\to 9.56\)) and on imag. Dead. [`L-DOOR.md`](L-DOOR.md). |
+| LX door \(\|L\|_2\le C X\) as a seated \(C\) | Grows on \(v_n\) and imag. Not a closed-form kill. Not seated. Not G5. [`L-DOOR.md`](L-DOOR.md). |
 | Switch this line to augmented NS / Theorem A | Track A is a different PDE. A is not B. |
 | OpenAI / blowup-search as this line | Forced (C)/(D) if it holds. Not unforced (B). |
 | BKM from assumed spectral decay as the primary | Useful conditional. Does not attack depletion. |
@@ -202,6 +205,9 @@ grows \(R_B\); not a useful \(K\)):
 Energy-class ladder (dead;
 G4 still OPEN):
 [`ENERGY-K.md`](ENERGY-K.md).
+Pairing CS doors (tight is
+★; LE dead; LX not seated):
+[`L-DOOR.md`](L-DOOR.md).
 
 SND-to-regularity implication is
 **OPEN** as a named hole on the SND/H

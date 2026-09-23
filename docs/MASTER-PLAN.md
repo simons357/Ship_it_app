@@ -31,6 +31,8 @@ Energy-class ladder (dead;
 pathwise \(K\) still the G4
 target):
 [`ENERGY-K.md`](ENERGY-K.md).
+Pairing CS doors:
+[`L-DOOR.md`](L-DOOR.md).
 
 This page answers the operator’s
 question: how do we beat unforced

@@ -38,6 +38,10 @@ Energy-class ladder (X, mid,
 and Y doors die on \(v_n\);
 G4 still OPEN):
 [`ENERGY-K.md`](ENERGY-K.md).
+Pairing CS doors (tight is
+★; LE dead; LX not a
+universal \(C\)):
+[`L-DOOR.md`](L-DOOR.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 

@@ -22,6 +22,8 @@ First lift:
 [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
 Energy-class ladder (dead):
 [`ENERGY-K.md`](ENERGY-K.md).
+Pairing CS doors:
+[`L-DOOR.md`](L-DOOR.md).
 
 This desk is **unaugmented**.
 A is not B. Keep \(1/r^4\).
@@ -166,6 +168,9 @@ only \(p=1/2\) matches
 amplitude, and \(v_n\) kills
 the X, mid, and Y doors.
 [`ENERGY-K.md`](ENERGY-K.md).
+Pairing CS: tight is ★,
+LE dead, LX not seated.
+[`L-DOOR.md`](L-DOOR.md).
 Pathwise \(K\) is still the
 living G4 target.
 

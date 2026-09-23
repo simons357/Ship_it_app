@@ -8,6 +8,9 @@ Not a close. ★ stays killed.**
 Living verdict: [`BSTAR.md`](BSTAR.md).
 Triangle reconstruction:
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
+Pairing CS doors (tight is
+★; LE dead; LX not seated):
+[`L-DOOR.md`](L-DOOR.md).
 Machine: `python3 scripts/bstar_symmetrize.py`.
 Do not overwrite `stokes_moments.py`.
 Do not start leftover 1.

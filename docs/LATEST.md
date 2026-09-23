@@ -114,6 +114,10 @@ Energy-class ladder (X, mid,
 and Y doors die on v_n;
 G4 still OPEN):
 docs/ENERGY-K.md
+Pairing CS doors (tight is
+star; LE dead; LX not a
+universal C):
+docs/L-DOOR.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

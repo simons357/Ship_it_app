@@ -38,6 +38,8 @@ First lift:
 [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
 Energy-class ladder:
 [`ENERGY-K.md`](ENERGY-K.md).
+Pairing CS doors:
+[`L-DOOR.md`](L-DOOR.md).
 Identities sit. The first
 missing implication is this
 page’s estimate.
@@ -318,6 +320,8 @@ No new 9D sweeps.
 | Formal DI: estimate \(\Rightarrow\) \(\Lambda'\le 2K\) | **PROVED** as algebra. |
 | Drift estimate with useful \(K\) | **OPEN.** Pathwise, not energy-class. |
 | Energy-class \(K\sim\sqrt{E}\) / \(K_Y\sim\sqrt{E}\) / mid | **DEAD** on \(v_n\). [`ENERGY-K.md`](ENERGY-K.md). |
+| Tight CS / LE door | **DEAD.** Tight is ★. LE dies on \(v_n\). [`L-DOOR.md`](L-DOOR.md). |
+| LX door \(\|L\|_2\le C X\) | **NO** as a seated \(C\). Not a boxed kill. |
 | Y-remainder cousin (pathwise \(K_Y\)) | **OPEN.** Same circularity test. |
 | Unrestricted \(\star\) | **DEAD.** |
 | C10 \(\Rightarrow\) this estimate | **NO** without an inequality. C10 did not seat (A). |

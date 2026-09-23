@@ -13,6 +13,8 @@ Geometry:
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
 First lift:
 [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
+Pairing CS doors:
+[`L-DOOR.md`](L-DOOR.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 Machine: `python3 scripts/energy_k.py`.

@@ -158,6 +158,10 @@ Energy-class ladder (X, mid,
 and Y doors die on v_n;
 G4 still OPEN):
 docs/ENERGY-K.md
+Pairing CS doors (tight is
+star; LE dead; LX not a
+universal C):
+docs/L-DOOR.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md

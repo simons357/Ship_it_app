@@ -25,6 +25,10 @@ Energy-class ladder (all
 three amplitude-legal doors
 die on \(v_n\)):
 [`ENERGY-K.md`](ENERGY-K.md).
+Pairing CS doors (tight is
+★; LE dead; LX not a
+universal \(C\)):
+[`L-DOOR.md`](L-DOOR.md).
 
 Do not start leftover 1.
 Do not weld \(\star\).
