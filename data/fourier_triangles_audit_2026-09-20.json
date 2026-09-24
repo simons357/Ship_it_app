@@ -1,0 +1,56 @@
+{
+  "title": "Fourier triangles: exact mechanism, arithmetic restrictions, remaining time estimate",
+  "reconstruction_date": "2026-09-20",
+  "filed": "2026-09-24",
+  "packet": "packets/FOURIER-TRIANGLES-AUDIT-2026-09-20.md",
+  "ns_solved": false,
+  "da_ns_2": "OPEN",
+  "missing_theorem_17": "OPEN",
+  "W_ij_reconstructed": false,
+  "I3_is": "integer realizability of wavevectors on the cubic lattice",
+  "I3_is_not": "an NS remainder, amplitude, polarization, phase, or cumulative signed transfer",
+  "does_not_alter_sbp_gate": true,
+  "does_not_alter_static_frontier": true,
+  "does_not_revert_to_census_only": true,
+  "no_global_regularity_claim": true,
+  "no_singularity_claim": true,
+  "no_novelty_claim": true,
+  "specialist_review": "pending",
+  "exact": [
+    "(1) S_pq decomposition",
+    "(3) equal-length cancellation",
+    "(4) unequal-length defect",
+    "(6) repeated-radius grouping",
+    "(7) scalene grouping",
+    "(8) exact-sphere L^2 bound",
+    "(11) |T_rep| <= (sqrt(3)/2) X sqrt(Y)",
+    "(12) I3 Hilbert-symbol criterion",
+    "(14) block derivative",
+    "(16) conditional H1 bound",
+    "(18) centered drift"
+  ],
+  "exact_finite": [
+    "transfers 0, +24, -24",
+    "generated mode (3,-2,0) has B = 3i e_3",
+    "shear E=3/2, twelve outputs, |Pi_2 B|^2 = 3/4",
+    "Hilbert regressions (96,96,0), (2,3,1), (2,2,-1), (14,14,-7)"
+  ],
+  "open": [
+    "(17) uniform scalene positive-transfer budget",
+    "DA-NS-2"
+  ],
+  "reported_not_rerun": {
+    "S(1)": {
+      "nu": 1.5,
+      "K": 1,
+      "N2": [6, 12, 20],
+      "values": [0.001337845, 0.046918627, 0.072599898],
+      "three_cutoffs_do_not_prove_uniformity": true
+    }
+  },
+  "routes": {
+    "scalene_17": "OPEN, distinct",
+    "centered": "OPEN, distinct",
+    "equivalent": false
+  }
+}
