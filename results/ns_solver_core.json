@@ -1,0 +1,78 @@
+{
+  "meta": {
+    "track": "solver-core",
+    "note": "Instantaneous inner-product energy check. Not a proof that smooth solutions stay smooth. Classical NS stays open.",
+    "fixes": [
+      "S1_instantaneous_power_balance",
+      "S2_accepted_state_diagnostics",
+      "S3_inner_product_dissipation"
+    ],
+    "n": 16,
+    "nu": 0.02,
+    "alpha": 1.0,
+    "beta": 0.5,
+    "t": 0.4,
+    "dt": 0.01
+  },
+  "runs": [
+    {
+      "eps": 0.0,
+      "nu": 0.02,
+      "beta": 0.5,
+      "alpha": 1.0,
+      "n": 16,
+      "t": 0.4,
+      "energy0": 31.006276680299813,
+      "energy_t": 29.545569732901622,
+      "diss_visc": 1.4607092923123135,
+      "diss_q1": 0.0,
+      "residual": 4.440892098500626e-16,
+      "relative_residual": 1.2330710214341755e-16,
+      "retired_integrated_residual": 2.3449141224318737e-06,
+      "enstrophy0": 93.01883004089945,
+      "enstrophy_t": 90.03723267568681,
+      "max_div": 1.8260157230671776e-15,
+      "energy_check": "instantaneous_inner_product"
+    },
+    {
+      "eps": 0.05,
+      "nu": 0.02,
+      "beta": 0.5,
+      "alpha": 1.0,
+      "n": 16,
+      "t": 0.4,
+      "energy0": 31.006276680299813,
+      "energy_t": 26.37759503730359,
+      "diss_visc": 1.3803623880316986,
+      "diss_q1": 3.2483346187482893,
+      "residual": 8.881784197001252e-16,
+      "relative_residual": 8.370057183141331e-17,
+      "retired_integrated_residual": 1.5363783763433503e-05,
+      "enstrophy0": 93.01883004089945,
+      "enstrophy_t": 80.22316980335646,
+      "max_div": 1.9388380676329823e-15,
+      "energy_check": "instantaneous_inner_product"
+    },
+    {
+      "eps": 0.2,
+      "nu": 0.02,
+      "beta": 0.5,
+      "alpha": 1.0,
+      "n": 16,
+      "t": 0.4,
+      "energy0": 31.006276680299813,
+      "energy_t": 19.135876404471823,
+      "diss_visc": 1.1802135055019354,
+      "diss_q1": 10.69045756694377,
+      "residual": 7.105427357601002e-15,
+      "relative_residual": 3.2293847229503156e-16,
+      "retired_integrated_residual": 0.0002707966177162291,
+      "enstrophy0": 93.01883004089945,
+      "enstrophy_t": 57.99307775708447,
+      "max_div": 2.1368222120632735e-15,
+      "energy_check": "instantaneous_inner_product"
+    }
+  ],
+  "ns_solved": false,
+  "classical_ns_open": true
+}
