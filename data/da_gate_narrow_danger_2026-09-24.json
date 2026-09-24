@@ -1,0 +1,35 @@
+{
+  "title": "DA-GATE narrow danger parameter",
+  "date": "2026-09-24",
+  "packet": "packets/DA-GATE-NARROW-DANGER-2026-09-24.md",
+  "ns_solved": false,
+  "da_ns_2": "OPEN",
+  "missing_theorem_17": "OPEN",
+  "missing_unsigned_assembly_4": "OPEN",
+  "L1_both_signs": "OPEN",
+  "middle_region_payable": false,
+  "universal_threshold_kappa_r_1": "KILLED",
+  "promote_F_het_r_to_assembled": "FORBIDDEN",
+  "unsigned_assembly_as_close": "FORBIDDEN",
+  "local_estimate_5_reproved_here": false,
+  "does_not_alter_other_gates": true,
+  "exact": [
+    "(1) T_abc = (c-b)I_p + (a-c)I_q + (b-a)I_r",
+    "(2) |T_abc| <= 2 Delta (|I_p|+|I_q|+|I_r|)",
+    "Delta = Lambda r"
+  ],
+  "algebra_only": [
+    "(6) T_c,loc^+ \u2272 alpha chi r kappa^{7/2} X^{3/2}",
+    "(7) T_c,loc^+ / (nu D_s) \u2272 (alpha chi / nu) X^{1/2} / (kappa^{1/2} r)"
+  ],
+  "definitions": {
+    "D": "alpha_c chi X^{1/2} / (nu kappa^{1/2} r)",
+    "eta_DA": "same as D, exact (8) form",
+    "Q": "T_c,loc^+ / (nu D_s)",
+    "r_crit": "alpha_c chi X^{1/2} / (nu kappa^{1/2})"
+  },
+  "L1_fork": {
+    "L1_nonzero": "need dynamic loss of alpha_c, chi, or persistence",
+    "L1_zero": "gain another radial power and recompute"
+  }
+}
