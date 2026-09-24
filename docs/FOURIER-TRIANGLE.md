@@ -744,4 +744,9 @@ Reset \(\Delta W\) EXACT from
 \(W_K=\mathcal D_s+X(\Lambda-K)^2\).
 Do not evolve a bound that was never
 written. No A2. No prime glue.
+Static sign realizability:
+[`STATIC-SIGN-REALIZABILITY.md`](STATIC-SIGN-REALIZABILITY.md).
+ONE SIGN is the I₃ / Gram
+bridge if it appears.
+NO NEIGHBOR is rigidity.
 NS not solved.

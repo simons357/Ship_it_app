@@ -255,4 +255,8 @@ summability OPEN.
 Low-tail occupancy bill
 **absorbed**.
 Lemma B OPEN.
+This page is frozen. Do not
+alter it. Sign realizability
+is a different gate:
+[`STATIC-SIGN-REALIZABILITY.md`](STATIC-SIGN-REALIZABILITY.md).
 Not DA-NS-2. NS not solved.

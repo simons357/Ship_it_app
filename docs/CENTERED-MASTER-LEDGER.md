@@ -32,7 +32,8 @@ Pointers:
 [`NARROW-HET-RESIDUAL.md`](NARROW-HET-RESIDUAL.md),
 [`CORE-TAIL-SBP.md`](CORE-TAIL-SBP.md),
 [`LOW-TAIL-CAPACITY.md`](LOW-TAIL-CAPACITY.md),
-[`LEMMA-A-SBP.md`](LEMMA-A-SBP.md).
+[`LEMMA-A-SBP.md`](LEMMA-A-SBP.md),
+[`STATIC-SIGN-REALIZABILITY.md`](STATIC-SIGN-REALIZABILITY.md).
 
 ---
 
@@ -67,6 +68,8 @@ Pointers:
 | 25 | Lemma A: \(\Phi_e\le D_e^{\mathrm{frozen}}\); \(C_\kappa\le 1\) | **PROVED** |
 | 26 | Sharp L3/L4: \(\Phi_e\le D_s+X(\Lambda-\lambda_e)^2\) | **EXACT** |
 | 27 | Lemma B: charge/epoch joint budget | **OPEN** |
+| 28 | First-variation \(L_{1,N}\), \(R_{2,N}\) | **EXACT** split; remainder check |
+| 29 | Static sign realizability (BOTH/ONE/ZERO/NO NEIGHBOR) | **OPEN** (run the gate) |
 
 Every new mechanism must eventually
 pay §2. Talking is not that integral.
@@ -728,4 +731,10 @@ D_s+X(\Lambda-\lambda_e)^2\).
 Low tail absorbed. Last mile
 = charge + epoch motion
 (Lemma B OPEN).
+Lemma A unaltered.
+Static frontier:
+[`STATIC-SIGN-REALIZABILITY.md`](STATIC-SIGN-REALIZABILITY.md).
+\(L_{1,N}\) uses \(T^{(0)}\).
+\(R_{2,N}\) is the remainder.
+No new potential. Run the gate.
 NS not solved.

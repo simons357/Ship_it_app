@@ -680,6 +680,19 @@ is the scale-covariant chart;
 summability OPEN. Do not mix
 homochiral loops into this
 charge ledger.
+Lemma A unaltered.
+Static frontier
+(`docs/STATIC-SIGN-REALIZABILITY.md`):
+arithmetic sign realizability.
+\(L_{1,N}=\Lambda_N\langle\delta_N,T_N^{(0)}\rangle\),
+\(R_{2,N}=T_{c,N}-L_{1,N}\).
+BOTH SIGNS kills one-sided
+narrow depletion; save
+\(\mathcal A_N^{+}\).
+NO NEIGHBOR is not depletion.
+Then dynamic frontier:
+dangerous-state persistence.
+No more potentials. Run the gate.
 
 Two routes, both OPEN, both
 killable. If both die, the leftover
