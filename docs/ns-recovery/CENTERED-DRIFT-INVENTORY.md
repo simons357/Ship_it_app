@@ -169,10 +169,18 @@ in the PDE.
 | First adversarial triad test | `docs/ns-recovery/CENTERED-DRIFT-TRIAD-TEST.md`, `scripts/centered_drift_triad_test.py` |
 | Symmetrized coefficient / channel split | `docs/ns-recovery/CENTERED-DRIFT-TRIAD-SPLIT.md`, `scripts/centered_drift_triad_split.py` |
 | \(K\)-candidate score sheet | `docs/ns-recovery/CENTERED-DRIFT-K-CANDIDATES.md`, `scripts/centered_drift_k_candidates.py` |
+| Centered spectral barycenter | `docs/ns-recovery/CENTERED-SPECTRAL-BARYCENTER.md`, `scripts/centered_spectral_barycenter.py` |
 
 **Score sheet landed.** Uniform energy-class slots die on \(v_n\).
 \(K_{\mathrm{inst}}\) is Young packaging, not a bound. Claimed
 \(16/9\) is restricted-class only. No non-tautological \(K\) or
-\(K_Y\) from admissible data is written. First missing implication
+\(K_Y\) from admissible data is written.
+
+**Barycenter landed.** \(D_s=X\mathrm{Var}_p(\lambda)\) and
+\(T_c=X\mathrm{Cov}_p(\lambda,t)\) sit. Absorption is
+\(\beta_{t\sim\lambda}\le\theta\nu\). Fat \(v_n\) freezes
+\(\sigma_\lambda/\Lambda\approx 0.270\) and stays absorbed at
+\(\theta=1/2\). The face is barycenter collapse with
+\(\lvert\rho_{\lambda,t}\rvert\to 1\). First missing implication
 unchanged. Do not redo K=0, the §4 triad, the \(\varepsilon\)-scan,
-or this score sheet.
+the slot score sheet, or this barycenter page.
