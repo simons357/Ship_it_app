@@ -1,0 +1,132 @@
+{
+  "title": "Centered master ledger",
+  "date": "2026-09-24",
+  "source": "Centered master ledger sent 24 September 2026, consolidated through SAG/JGC",
+  "cited_dossier": "MASTER_DA_SHOWDOWN_DOSSIER_2026-09-07.md",
+  "dossier_in_this_tree": false,
+  "ns_solved": false,
+  "clay_statement_b": "OPEN",
+  "da_ns_2": "OPEN",
+  "section_17": "TRUNCATED",
+  "do_not_complete_truncated_formulas": true,
+  "buckets": {
+    "EXACT": [1, 3, 4, 5, 6, 9, 10, 11, 13, 14, 15],
+    "OPEN": [2, 8, 16],
+    "KILLED": [7, 10, 12],
+    "TRUNCATED": [17]
+  },
+  "items": {
+    "1": {
+      "name": "centered core",
+      "bucket": "EXACT",
+      "boxed": [
+        "Lambda = Y/X",
+        "T_c = M - Lambda N",
+        "D_s = Z - Lambda Y",
+        "Lambda' = (2/X)(T_c - nu D_s)",
+        "(log Lambda)' = (2/Y)(T_c - nu D_s)",
+        "D_s = ||A^{1/2}(A-Lambda)u||_2^2 >= 0"
+      ]
+    },
+    "2": {
+      "name": "frozen endpoint / DA-NS-2",
+      "bucket": "OPEN",
+      "is_the_actual_close": true,
+      "statement": "sup_n int_0^T K_min,theta^{(n)}(t) dt <= F(nu,T,u0) < infinity",
+      "K_min": "[T_c^{(n)} - theta nu D_s^{(n)}]_+/Y^{(n)}"
+    },
+    "3": {
+      "name": "Fourier-triangle structure",
+      "bucket": "EXACT",
+      "flat_kill": "beta = 4 alpha",
+      "k_perp_sq": "beta (1 - beta/(4 alpha))"
+    },
+    "4": {
+      "name": "two-shell centered cancellation",
+      "bucket": "EXACT",
+      "T_c_triangle": "(beta-alpha)(alpha+beta-Lambda) tau_k",
+      "zero_mechanisms": ["beta = alpha", "beta = 4 alpha", "alpha+beta = Lambda"]
+    },
+    "5": {
+      "name": "unequal-length defect",
+      "bucket": "EXACT"
+    },
+    "6": {
+      "name": "equal-input circle identity",
+      "bucket": "EXACT",
+      "da_relative_error": "about 1e-14",
+      "identity": "w_{p,q;k} = 2 sigma (rho x hat k)"
+    },
+    "7": {
+      "name": "static Signed Assembly",
+      "bucket": "KILLED",
+      "killed_as": "power source",
+      "Gamma_star": 1,
+      "mode_reuse_creates_depletion": false,
+      "hierarchy_dead": ["triangle", "circle", "star", "tree"],
+      "remaining_static_candidate": "closed-loop polarization/helical incompatibility"
+    },
+    "8": {
+      "name": "loop gate",
+      "bucket": "OPEN",
+      "loops_automatically_force_phase_frustration": false,
+      "heavy_loop_trend": "lower bounds only",
+      "certified_upper_bound": false,
+      "Gamma_cyc_le_0.7_is_enough": false,
+      "prize": "Gamma_cyc(N)lesssim N^{-delta}"
+    },
+    "9": {
+      "name": "phase-resolved helical network",
+      "bucket": "EXACT",
+      "numerical_match_channels": [176, 4272],
+      "match_is_da_ns_2": false
+    },
+    "10": {
+      "name": "phase twins",
+      "bucket": "EXACT",
+      "orientation_only_payment": "KILLED",
+      "T_c_u": -0.79707557316,
+      "T_c_twin": 0.79707557316
+    },
+    "11": {
+      "name": "heterochiral charge factorization",
+      "bucket": "EXACT",
+      "covariance_structurally_necessary": true
+    },
+    "12": {
+      "name": "charge-only coercivity",
+      "bucket": "KILLED",
+      "also_kills": "static SAG shared-output rescue"
+    },
+    "13": {
+      "name": "cross-radius signed-helicity ledger",
+      "bucket": "EXACT",
+      "surviving_potential": "Psi_lambda^epsilon"
+    },
+    "14": {
+      "name": "moving-center covariance",
+      "bucket": "EXACT",
+      "rho_mov": "-(Lambda - lambda_e) S_Gamma"
+    },
+    "15": {
+      "name": "latest derivative identity",
+      "bucket": "EXACT",
+      "residual": "(Lambda - lambda_e) dS_Gamma/dt",
+      "do_not_pointwise_estimate_S_dot": true,
+      "is_latest_algebraic_frontier": true
+    },
+    "16": {
+      "name": "Joint Gap-Charge Epoch Budget",
+      "bucket": "OPEN",
+      "bounded_charge_per_epoch_sufficient": false,
+      "dissipation_spent_once": true
+    },
+    "17": {
+      "name": "reset / frozen variance",
+      "bucket": "TRUNCATED",
+      "identity_sits": "W_K = D_s + X (Lambda - K)^2",
+      "increment_completed": false,
+      "note": "source cut mid-formula at Delta W / X[(Lambda-K_{e+1})^"
+    }
+  }
+}
