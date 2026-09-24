@@ -189,13 +189,16 @@ the slot score sheet, or this barycenter page.
 
 ---
 
-**Residual board.** After the frozen SBP identity, the residual
-is \(2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\). \(\Phi_e\) takes
-narrow homo + het radial. \(\Phi_e/Y\) is not controlled by
-\(r^2\). Tail leakage remains. Gate:
-`packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md`.
+**Residual board.** After the frozen SBP identity and the
+\(\phi_\kappa/d_\kappa\) comparison, the last mile is
+**low-tail capacity + charge + epoch motion**. Core and high
+tail of \(\Phi_e\) are controlled by frozen variance. The
+low-frequency tail is the enemy (\(\phi_e(0)=\kappa_e^4\)).
+Energy does not pay \(L_e=\kappa_e^4 E_{\mathrm{low}}/Y\).
+Gates: `packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md`,
+`packets/DA-GATE-PHI-VS-FROZEN-VARIANCE-2026-09-24.md`.
 Do not mix live \(\Lambda\) with frozen \(\lambda_e\).
-Taylor–Green \(\Phi_e/Y\) is not run here.
+Taylor–Green \(L_e\) / low-tail share is not run here.
 
 **SAG / JGC ledger filed.** Exact algebra, reported numerics, and
 kills are separated in

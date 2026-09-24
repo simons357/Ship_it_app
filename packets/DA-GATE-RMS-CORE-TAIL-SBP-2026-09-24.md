@@ -127,7 +127,7 @@ Replacing a signed sum by a sum of absolute values stays
 
 ---
 
-## What it costs (all OPEN)
+## What it costs (all OPEN, then localized)
 
 - \(\phi_e(0)=\kappa_e^4\) and \(\phi_e\sim m^4/2\) at high \(k\),
   so \(\Phi_e/Y\) is **not** controlled by \(r^2\). Low-mode
@@ -135,30 +135,46 @@ Replacing a signed sum by a sum of absolute values stays
 - Integrating \(\Phi_e'/Y\) by parts returns \(\Phi_e Y'/Y^2\),
   absorbable only if \(\Phi_e/Y\) is small. Tail leakage
   reappears as the weight of \(\phi_e\) away from the shell.
+- Comparison with frozen \(d_\kappa\) (next packet) localizes
+  that leakage: core and high tail are controlled by frozen
+  variance; the **low-frequency tail** is the enemy.
 - The tail can hold essentially all of \(D_s\) while carrying
   small \(X\)-mass and small \(Y\)-mass. Tail leakage competes
   with \(\nu D_s\) restricted to the tail: the BROAD missing
   estimate again.
 - Viscous part has the good sign. Epoch resets add a jump
   ledger.
-- Residual after the identity:
+- Residual after the identity, sharpened:
 
 \[
-2\kappa_e^3 Q_a
-\qquad\text{and}\qquad
+\textbf{low-tail }\Phi_e/Y,
+\qquad
+2\kappa_e^3 Q_a,
+\qquad
 -(\Lambda-\lambda_e)N.
 \]
 
 Charge is the \(\dot H^{1/2}\) flux.
 
+Weight comparison:
+[`DA-GATE-PHI-VS-FROZEN-VARIANCE-2026-09-24.md`](DA-GATE-PHI-VS-FROZEN-VARIANCE-2026-09-24.md).
+
 ---
 
 ## Taylor–Green \(\Phi_e/Y\) split
 
-A useful next measurement is \(\Phi_e/Y\) split into core, low
-tail, and high tail on the existing \(N=64\) and \(N=96\)
-Taylor–Green runs. **Those data are not on this tree.** The
-split is not run here. Evidence only if and when it is run.
+Do **not** merely return \(\Phi^{\mathrm{low}},\Phi^{\mathrm{high}}\).
+On dangerous epochs calculate
+
+\[
+L_e=\frac{\kappa_e^4 E_{\mathrm{low}}}{Y}
+\]
+
+or the exact \(\phi_e\) low-tail contribution. If \(\Phi_e/Y\)
+spikes, say whether the spike is low-tail dominated.
+Existing \(N=64\) and \(N=96\) Taylor–Green runs are the
+intended interrogation. **Those data are not on this tree.**
+The split is not run here. Evidence only if and when it is run.
 
 ---
 

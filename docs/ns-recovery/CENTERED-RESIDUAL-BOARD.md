@@ -7,15 +7,33 @@ Do not put \(K(t)\) in the PDE.
 Rally point (the only live close-adjacent job):
 
 \[
-\textbf{NARROW HETEROCHIRAL RESIDUAL}
-\qquad
+\textbf{NARROW HETEROCHIRAL LAST MILE}
+=
+\textbf{LOW-TAIL CAPACITY}
++
+\textbf{CHARGE}
++
+\textbf{EPOCH MOTION}.
+\]
+
+Charge + motion remain
+
+\[
 2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N,
 \]
 
 with \(Q_a\) the \(\dot H^{1/2}\) flux. Frozen convention only.
+The capacity leftover after comparing \(\phi_\kappa\) to frozen
+\(d_\kappa\) is **not** a generic tail: it is the
 
-SBP gate (identity only; tail moved, not removed):
+\[
+\textbf{LOW-FREQUENCY TAIL}.
+\]
+
+SBP identity:
 [`../../packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md`](../../packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md).
+Weight comparison (A)(B)(C):
+[`../../packets/DA-GATE-PHI-VS-FROZEN-VARIANCE-2026-09-24.md`](../../packets/DA-GATE-PHI-VS-FROZEN-VARIANCE-2026-09-24.md).
 
 \[
 T_c
@@ -25,9 +43,10 @@ T_c
 -(\Lambda-\lambda_e)N.
 \]
 
-Narrow homo + het radial sit in \(\Phi_e'\). \(\Phi_e/Y\) is not
-controlled by \(r^2\). \(\mathsf B^{\mathrm{prim}}\) on loop
-families is still **not on this tree** and is not invented.
+Narrow homo + het radial sit in \(\Phi_e'\). Core and high tail
+of \(\Phi_e\) are controlled by frozen variance. Low tail is
+**OPEN**. \(\mathsf B^{\mathrm{prim}}\) on loop families is still
+**not on this tree** and is not invented.
 
 Ledger: [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md).
 Width arithmetic: `scripts/centered_width_crossover.py`,
@@ -104,9 +123,11 @@ Schematic (architecture, not a proof):
 \to
 \begin{cases}
 \text{BROAD }(r\gtrsim\kappa^{-1/2}) & \to D_s/\text{viscosity},\\
-\text{NARROW HOMO} & \to\text{cubic radial gap }(x-y)(y-z)(z-x),\\
-\text{NARROW HET RADIAL} & \to\text{linear gap }R_\Lambda-2\kappa^3=O(\kappa^3 r),\\
-\textbf{NARROW HET CHARGE + MOVING CENTER} & \to\textbf{CURRENT RESIDUAL}.
+\text{NARROW HOMO} & \to\text{cubic radial gap, now in }\Phi_e,\\
+\text{NARROW HET RADIAL / CORE} & \to\text{controlled by frozen }d_\kappa,\\
+\text{HIGH TAIL} & \to\text{even stronger variance weight},\\
+\textbf{LOW TAIL} & \to\textbf{OPEN},\\
+\textbf{CHARGE + MOVING EPOCH} & \to\textbf{OPEN}.
 \end{cases}
 \]
 
@@ -143,11 +164,44 @@ T_{c,\Gamma}^{\mathrm{het}}
 The SBP identity (frozen) puts narrow homo + het radial into
 one nonnegative capacity \(\Phi_e\) that vanishes to second
 order at the shell. That is an identity, not a bound.
-The two hard pieces after it are
+
+Comparing \(\phi_\kappa\) to the frozen variance weight
+\(d_\kappa(m)=m^2(m^2-\kappa^2)^2\) splits that capacity:
 
 \[
-2\kappa_e^3 Q_a
-\qquad\text{and}\qquad
+\frac{\phi_\kappa}{d_\kappa}
+=
+\frac{m^2+2\kappa m+2\kappa^2}{2m^2(m+\kappa)^2}
+=
+\frac1{2\kappa^2}\frac{x^2+2x+2}{x^2(x+1)^2},
+\qquad
+x=\frac m\kappa.
+\]
+
+Shell limit \(5/(8\kappa^2)\). On a comparable annulus
+\(a\kappa\le m\le b\kappa\), \(a>0\),
+
+\[
+\Phi_e^{\mathrm{core}}
+\le
+\frac{C(a,b)}{\kappa_e^2}
+D_e^{\mathrm{frozen,core}},
+\qquad
+C(a,b)=\tfrac12 f(a).
+\]
+
+High tail \(\phi/d\sim 1/(2m^2)\) is favorable. Low tail
+\(\phi/d\sim 1/m^2\) blows, in agreement with
+\(\phi_e(0)=\kappa_e^4\). Energy and \(Y_{\mathrm{low}}\) do
+not pay \(L_e=\kappa_e^4 E_{\mathrm{low}}/Y\).
+
+The remaining hard pieces are therefore
+
+\[
+\textbf{low-tail }\Phi_e/Y,
+\qquad
+2\kappa_e^3 Q_a,
+\qquad
 -(\Lambda-\lambda_e)N.
 \]
 
@@ -165,11 +219,11 @@ signed sum by a sum of absolute values.
 
 | Seat | Job | Status here |
 |---|---|---|
-| Heavy | \(\mathsf B^{\mathrm{prim}}w=b\) on existing loop/tree families | **Blocked.** Families not on this tree. SBP \(\Phi_e\) identity filed; \(\Phi_e/Y\) not controlled. |
-| Independent algebra | \(r\sim\kappa^{-1/2}\) conventions | **Arithmetic sits.** Threshold not stamped. |
+| Heavy | \(\mathsf B^{\mathrm{prim}}w=b\) on existing loop/tree families | **Blocked.** Families not on this tree. SBP \(\Phi_e\) identity filed; core/high tail vs \(d_\kappa\) sit; low tail **OPEN**. |
+| Independent algebra | \(r\sim\kappa^{-1/2}\) conventions; \(\phi/d\) comparison | **Arithmetic sits.** Threshold not stamped. (A)(B)(C) sit. |
 | DA | Classify BROAD/NARROW; find an existing primitive for \(S_\Gamma\); no invented bridge | Not this agent |
-| Solver | Adversarial \(J_{\theta,n}(T)\) and \(\alpha_{c,\kappa}^2\chi_\kappa^2\kappa\) | Not this tree |
-| Narrow residual | Charge and moving covariance share a primitive, or prove they cannot | **OPEN** |
+| Solver | On dangerous epochs: \(L_e=\kappa_e^4 E_{\mathrm{low}}/Y\) (or exact \(\phi_e\) low-tail). If \(\Phi/Y\) spikes, is it low-tail dominated? | **Named. TG 64/96 not on this tree.** |
+| Narrow residual | Low-tail persistence under high \(\kappa_e\); charge; epoch motion | **OPEN** |
 
 ---
 
@@ -194,10 +248,11 @@ remains evidence only. Not on this tree.
 control.
 
 **OPEN primary.** DA-NS-2, and immediately upstream
-\(2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\) after the \(\Phi_e\)
-identity. \(\Phi_e/Y\) tail leakage and the BROAD tail-\(D_s\)
-estimate remain open. Taylor–Green \(\Phi_e/Y\) split is named
-and not run (no \(N=64/96\) data on this tree).
+**low-tail capacity** \(+\) \(2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\).
+Core/high-tail \(\Phi_e\) vs frozen \(D_s\) sit as (C). The
+BROAD tail-\(D_s\) estimate remains open. Taylor–Green must
+report whether a \(\Phi/Y\) spike is low-tail dominated via
+\(L_e\); data are not on this tree and are not run.
 
 No new estimate is claimed. No continuation criterion.
 **NS not solved.**

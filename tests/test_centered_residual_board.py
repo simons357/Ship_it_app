@@ -34,7 +34,9 @@ def test_width_conventions_and_v_n_crosses():
 def test_board_is_one_residual_and_does_not_claim_ns():
     page = (ROOT / "docs" / "ns-recovery" / "CENTERED-RESIDUAL-BOARD.md").read_text()
     assert page.startswith("# Centered residual board")
-    assert "NARROW HETEROCHIRAL RESIDUAL" in page
+    assert "NARROW HETEROCHIRAL LAST MILE" in page
+    assert "LOW-TAIL CAPACITY" in page
+    assert "LOW-FREQUENCY TAIL" in page or "low-frequency tail" in page
     assert "not on this tree" in page
     assert "Not a stamped decision theorem" in page or "not a derived decision" in page
     assert "NS is solved" not in page

@@ -2,7 +2,8 @@
 
 **24 September 2026.** Current centered ledger as handed over,
 through today’s SAG / JGC work. Filing only.
-Compressed rally: [`CENTERED-RESIDUAL-BOARD.md`](CENTERED-RESIDUAL-BOARD.md).
+Compressed rally: [`CENTERED-RESIDUAL-BOARD.md`](CENTERED-RESIDUAL-BOARD.md)
+(low-tail capacity + charge + epoch motion).
 **Not a closure theorem.** Ordinary NS is not solved. Soft X silent.
 Do not put \(K(t)\) in the PDE.
 
@@ -58,9 +59,12 @@ The two \(D_s\) writings \(\|(A-\Lambda)A^{1/2}u\|_2^2\) and
 | 17 | Frozen \(W_K=D_s+X(\Lambda-K)^2\) | **EXACT** |
 | 17 | Reset jump \(\Delta W\) at fixed state | **EXACT** (unique corollary of \(W_K\)) |
 | 17 | Cutoff-uniform reset ledger | **OPEN** |
+| 18 | \(\phi_\kappa/d_\kappa\) (A)(B)(C); shell limit \(5/(8\kappa^2)\) | **EXACT** |
+| 18 | Low-tail capacity \(L_e=\kappa_e^4 E_{\mathrm{low}}/Y\) | **OPEN** |
 
 Every new mechanism must eventually pay DA-NS-2. That integral is
-not sitting.
+not sitting. The sharpened last mile is
+[`CENTERED-RESIDUAL-BOARD.md`](CENTERED-RESIDUAL-BOARD.md).
 
 ---
 

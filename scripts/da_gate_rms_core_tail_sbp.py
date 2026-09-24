@@ -110,12 +110,12 @@ def run() -> dict:
         and R_rec["frozen_extra_ok"]
         and R_rec["live_core_is_2k3"]
         and R_rec["grad_ok"],
-        "residual_after_sbp": "charge (Hdot^{1/2} flux) and -(Lambda-lambda_e) N",
+        "residual_after_sbp": "low-tail Phi_e/Y plus charge (Hdot^{1/2} flux) and -(Lambda-lambda_e) N",
         "note": (
             "Elementary phi and R-core facts sit. "
             "The full triad SBP is filed as an identity from the gate, not rebuilt here. "
-            "Phi_e/Y is not controlled by r^2. Tail leakage remains. "
-            "NS not solved."
+            "Core/high tail vs frozen d_kappa sit in the comparison packet. "
+            "Low-frequency tail remains the enemy. NS not solved."
         ),
     }
 

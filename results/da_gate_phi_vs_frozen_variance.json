@@ -1,0 +1,273 @@
+{
+  "ns_solved": false,
+  "convention": "FROZEN_epoch",
+  "do_not_mix_with_live_Lambda": true,
+  "taylor_green_measured": false,
+  "enemy": "LOW-FREQUENCY TAIL",
+  "ratio_identities": {
+    "kappa": 3.0,
+    "samples": [
+      {
+        "m": 0.25,
+        "x": 0.08333333333333333,
+        "phi_over_d": 14.816568047337277,
+        "ratio_A": 14.816568047337277,
+        "ratio_B": 14.816568047337281,
+        "match_A": true,
+        "match_B": true
+      },
+      {
+        "m": 0.5,
+        "x": 0.16666666666666666,
+        "phi_over_d": 3.4693877551020407,
+        "ratio_A": 3.4693877551020407,
+        "ratio_B": 3.4693877551020402,
+        "match_A": true,
+        "match_B": true
+      },
+      {
+        "m": 1.0,
+        "x": 0.3333333333333333,
+        "phi_over_d": 0.78125,
+        "ratio_A": 0.78125,
+        "ratio_B": 0.78125,
+        "match_A": true,
+        "match_B": true
+      },
+      {
+        "m": 2.0,
+        "x": 0.6666666666666666,
+        "phi_over_d": 0.17,
+        "ratio_A": 0.17,
+        "ratio_B": 0.17,
+        "match_A": true,
+        "match_B": true
+      },
+      {
+        "m": 2.9,
+        "x": 0.9666666666666667,
+        "phi_over_d": 0.07482439921011684,
+        "ratio_A": 0.07482439921011667,
+        "ratio_B": 0.07482439921011666,
+        "match_A": true,
+        "match_B": true
+      },
+      {
+        "m": 3.1,
+        "x": 1.0333333333333334,
+        "phi_over_d": 0.06461344770701248,
+        "ratio_A": 0.06461344770701262,
+        "ratio_B": 0.06461344770701262,
+        "match_A": true,
+        "match_B": true
+      },
+      {
+        "m": 6.0,
+        "x": 2.0,
+        "phi_over_d": 0.015432098765432098,
+        "ratio_A": 0.015432098765432098,
+        "ratio_B": 0.015432098765432098,
+        "match_A": true,
+        "match_B": true
+      },
+      {
+        "m": 12.0,
+        "x": 4.0,
+        "phi_over_d": 0.003611111111111111,
+        "ratio_A": 0.003611111111111111,
+        "ratio_B": 0.003611111111111111,
+        "match_A": true,
+        "match_B": true
+      },
+      {
+        "m": 30.0,
+        "x": 10.0,
+        "phi_over_d": 0.0005601469237832875,
+        "ratio_A": 0.0005601469237832875,
+        "ratio_B": 0.0005601469237832874,
+        "match_A": true,
+        "match_B": true
+      }
+    ],
+    "shell_limit": 0.06944444444444445,
+    "shell_limit_pred": 0.06944444444444445,
+    "shell_limit_ok": true,
+    "side_approach": [
+      {
+        "dx": 0.001,
+        "left": 0.06959746909767789,
+        "right": 0.06929191284767791,
+        "abs_err": 0.00015302465323344117
+      },
+      {
+        "dx": 0.0001,
+        "left": 0.06945972468787359,
+        "right": 0.06942916913157095,
+        "abs_err": 1.5280243429144358e-05
+      },
+      {
+        "dx": 1e-05,
+        "left": 0.0694459722469328,
+        "right": 0.06944291669194695,
+        "abs_err": 1.5278024883547126e-06
+      }
+    ],
+    "C_at_shell": 0.625,
+    "C_at_shell_is_5_8": true,
+    "ok": true
+  },
+  "f_decreasing": {
+    "monotone_on_log_grid": true,
+    "bracket_negative": true,
+    "brackets": [
+      {
+        "x": 0.1,
+        "bracket": -2.531,
+        "expand": -2.531,
+        "match": true
+      },
+      {
+        "x": 0.5,
+        "bracket": -5.375,
+        "expand": -5.375,
+        "match": true
+      },
+      {
+        "x": 1.0,
+        "bracket": -11.0,
+        "expand": -11.0,
+        "match": true
+      },
+      {
+        "x": 2.0,
+        "bracket": -32.0,
+        "expand": -32.0,
+        "match": true
+      },
+      {
+        "x": 7.0,
+        "bracket": -527.0,
+        "expand": -527.0,
+        "match": true
+      }
+    ],
+    "C_ab_inner_edge": 4.71938775510204,
+    "C_ab_sampled_max": 4.71938775510204,
+    "C_independent_of_b": true,
+    "ok": true
+  },
+  "asymptotics": {
+    "kappa": 5.0,
+    "high_tail": [
+      {
+        "m": 50.0,
+        "ratio": 0.00020165289256198347,
+        "pred_1_over_2m2": 0.0002,
+        "rel_err": 0.008264462809917328
+      },
+      {
+        "m": 100.0,
+        "ratio": 5.011337868480726e-05,
+        "pred_1_over_2m2": 5e-05,
+        "rel_err": 0.0022675736961450532
+      },
+      {
+        "m": 400.0,
+        "ratio": 3.125476299344612e-06,
+        "pred_1_over_2m2": 3.125e-06,
+        "rel_err": 0.00015241579027591712
+      }
+    ],
+    "high_tail_favorable_1_over_2m2": true,
+    "low_tail": [
+      {
+        "m": 0.05,
+        "ratio": 396.05920988138416,
+        "pred_1_over_m2": 399.99999999999994,
+        "rel_err": 0.009851975296539472
+      },
+      {
+        "m": 0.1,
+        "ratio": 98.05843906189926,
+        "pred_1_over_m2": 99.99999999999999,
+        "rel_err": 0.01941560938100717
+      },
+      {
+        "m": 0.2,
+        "ratio": 24.056952662721883,
+        "pred_1_over_m2": 24.999999999999996,
+        "rel_err": 0.037721893491124536
+      }
+    ],
+    "low_tail_blows_1_over_m2": true,
+    "phi_at_zero": 625.0,
+    "kappa_fourth": 625.0,
+    "phi_zero_is_kappa_fourth": true,
+    "ok": true
+  },
+  "core_bound": {
+    "kappa": 4.0,
+    "a": 0.5,
+    "b": 2.0,
+    "C_ab": 2.888888888888889,
+    "C_pred_from_inner_edge": 2.888888888888889,
+    "uniform_bound": 0.18055555555555555,
+    "samples": [
+      {
+        "x": 0.5,
+        "ratio": 0.18055555555555555,
+        "bound": 0.18055555555555555,
+        "ok": true
+      },
+      {
+        "x": 0.75,
+        "ratio": 0.07369614512471655,
+        "bound": 0.18055555555555555,
+        "ok": true
+      },
+      {
+        "x": 1.0,
+        "ratio": 0.0390625,
+        "bound": 0.18055555555555555,
+        "ok": true
+      },
+      {
+        "x": 1.25,
+        "ratio": 0.023950617283950617,
+        "bound": 0.18055555555555555,
+        "ok": true
+      },
+      {
+        "x": 2.0,
+        "ratio": 0.008680555555555556,
+        "bound": 0.18055555555555555,
+        "ok": true
+      }
+    ],
+    "ok": true
+  },
+  "energy_does_not_pay": {
+    "illustration_only": true,
+    "taylor_green": false,
+    "kappa": 20.0,
+    "E_core": 1.0,
+    "E_low": 0.04,
+    "Y": 160000.04,
+    "Y_low": 0.04,
+    "L_e": 0.0399999900000025,
+    "Phi_low": 6072.02,
+    "Phi_core": 0.0,
+    "Phi_over_Y": 0.03795011551247112,
+    "low_tail_share_of_Phi": 1.0,
+    "Phi_is_low_tail_dominated": true,
+    "kappa4_Y_low": 6400.0,
+    "kappa4_E0_over_Y": 1.039999740000065,
+    "energy_bound_forces_L_e_small": false,
+    "Y_low_bound_useful_at_high_kappa": false,
+    "ok": true
+  },
+  "solver_diagnostic": "L_e = kappa_e^4 E_low / Y (or exact phi_e low-tail / Y)",
+  "rally": "LOW-TAIL CAPACITY + CHARGE + EPOCH MOTION",
+  "all_elementary_ok": true,
+  "note": "phi/d identities (A)(B), shell limit 5/(8 kappa^2), and comparable-annulus bound (C) sit. High tail is favorable (~1/(2m^2)). Low tail blows (~1/m^2). Energy / Y_low do not pay L_e. TG 64/96 not on this tree. NS not solved."
+}
