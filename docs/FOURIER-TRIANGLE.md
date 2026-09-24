@@ -718,6 +718,13 @@ signed bound on the sum.
 That implication is now a gate:
 [`SIGNED-ASSEMBLY-GATE.md`](SIGNED-ASSEMBLY-GATE.md).
 It sits before old Gate 5.
+The assembly blank splits as
+[`SAG-5-COMPATIBILITY.md`](SAG-5-COMPATIBILITY.md):
+shared-input rank (5A) is not
+the partner/output network (5B).
+Do not stamp SAG-5 from rank
+alone. No \(\lvert\sum S\rvert\to\sum\lvert S\rvert\).
+No occupancy bound yet.
 Do not evolve a bound that was never
 written. No A2. No prime glue.
 NS not solved.

@@ -553,6 +553,7 @@ PR #104):
 - `docs/CENTERED-DRIFT.md` — Route B target
 - `docs/FOURIER-TRIANGLE.md` — triad geometry; first missing implication
 - `docs/SIGNED-ASSEMBLY-GATE.md` — gate before old Gate 5; Loss A
+- `docs/SAG-5-COMPATIBILITY.md` — 5A rank / 5B cocycle; \(\Gamma(\mathcal H)\)
 - `docs/SND-TO-REGULARITY.md` — named hole (iii) frequency drift
 - `docs/SND-INSTRUMENT.md` — diagnostics, no persistence
 
@@ -597,11 +598,19 @@ masks do not fill it.
 
 Signed Assembly Gate
 (`docs/SIGNED-ASSEMBLY-GATE.md`, 24 Sep)
-sits before old Gate 5. Next write =
-sum the signed triangle identity
-without \(\lvert\widehat B_k\rvert\)
-early, on a named class — or name
-the death.
+sits before old Gate 5. The blank
+is now SAG-5
+(`docs/SAG-5-COMPATIBILITY.md`):
+global compatibility defect, split
+5A (shared-input rank \(\le 2\))
+and 5B (partner/output cocycle).
+Do not stamp SAG-5 from rank
+alone. Next write = \(\rho_2\) /
+\(\Gamma(\mathcal H)\) on a named
+hypergraph without
+\(\lvert\sum S\rvert\to\sum\lvert S\rvert\)
+and without an occupancy bound —
+or name the death.
 
 Two routes, both OPEN, both
 killable. If both die, the leftover

@@ -360,6 +360,28 @@ moves.
 
 ## Next target
 
+That blank is now split as SAG-5:
+[`SAG-5-COMPATIBILITY.md`](SAG-5-COMPATIBILITY.md).
+
+\[
+\boxed{\text{SAG-5 = GLOBAL COMPATIBILITY DEFECT}}
+\]
+
+\[
+\boxed{\text{5A: shared-input rank defect}}
+\qquad
+\boxed{\text{5B: partner/output cocycle compatibility}}
+\]
+
+Do not stamp SAG-5 from
+\(\mathrm{rank}_{\mathbb{C}}L_p\le 2\)
+alone. One shared input does not
+obstruct two triangles; it can
+obstruct three or more. The
+obstruction that can already
+appear at two triangles is
+output / partner identification.
+
 \[
 \boxed{
 \begin{aligned}
@@ -369,6 +391,11 @@ moves.
 \end{aligned}
 }
 \]
+
+First experiment: \(\rho_2\) on the
+smallest coefficient-sharing pair.
+No \(\lvert\sum S\rvert\to\sum\lvert S\rvert\).
+No occupancy bound.
 
 That is more precise than “close
 Navier–Stokes.” It is the identifiable
@@ -389,8 +416,10 @@ NEW / NUMERICAL, tested on
 \(v_n\), shears, amplitude,
 equal-shell \(v_L\), and mixed swirl.
 
-Until that page exists, talking is
-not the gate.
+SAG-5 is that page’s name, not
+its theorem. Until a signed
+estimate or a named death exists,
+talking is not the gate.
 
 ---
 
@@ -411,6 +440,8 @@ before old Gate 5.
 Need★ = this gate on two shells.
 \(16/9\) = this gate on one shell, CLAIMED.
 Attack 8 = counting probe, not a bound.
+SAG-5 = global compatibility defect
+(5A rank, 5B cocycle). Not stamped.
 CRSPR roles classify; they do not close.
 Do not use \(\lvert\widehat B_k\rvert\) early.
 Do not evolve a bound that was never written.
