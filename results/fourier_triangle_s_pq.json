@@ -1,0 +1,76 @@
+{
+  "ns_solved": false,
+  "source": "packets/FOURIER-TRIANGLES-AUDIT-2026-09-20.md on origin/cursor/fourier-triangles-audit-f37a",
+  "seats_G1_1": true,
+  "alpha_98_432_invented": false,
+  "both_signs_invented": false,
+  "samples": [
+    {
+      "a": 5.0,
+      "b": 8.0,
+      "c": 9.0,
+      "residual_1": 4.596460756922437e-16,
+      "identity_1": true,
+      "div_p": 0.0,
+      "div_q": 0.0,
+      "p_on_shell": true,
+      "q_on_shell": true,
+      "k_norm2": true,
+      "q_dot_up_is_k_dot_up": true,
+      "defect_4": 8.326672684688674e-17,
+      "identity_4": true
+    },
+    {
+      "a": 2.0,
+      "b": 2.0,
+      "c": 2.0,
+      "residual_1": 3.152427400121712e-16,
+      "identity_1": true,
+      "div_p": 1.4530270980566458e-16,
+      "div_q": 1.731475232057912e-17,
+      "p_on_shell": true,
+      "q_on_shell": true,
+      "k_norm2": true,
+      "q_dot_up_is_k_dot_up": true,
+      "defect_4": 3.3993498887762956e-17,
+      "identity_4": true
+    },
+    {
+      "a": 13.0,
+      "b": 5.0,
+      "c": 8.0,
+      "residual_1": 6.684427777288335e-16,
+      "identity_1": true,
+      "div_p": 2.0383188119518625e-16,
+      "div_q": 0.0,
+      "p_on_shell": true,
+      "q_on_shell": true,
+      "k_norm2": true,
+      "q_dot_up_is_k_dot_up": true,
+      "defect_4": 1.6653345369377348e-16,
+      "identity_4": true
+    },
+    {
+      "a": 4.0,
+      "b": 4.0,
+      "c": 4.0,
+      "residual_1": 2.2247786310271853e-16,
+      "identity_1": true,
+      "div_p": 6.132776634817769e-18,
+      "div_q": 1.4874168143337463e-18,
+      "p_on_shell": true,
+      "q_on_shell": true,
+      "k_norm2": true,
+      "q_dot_up_is_k_dot_up": true,
+      "defect_4": 2.4037033579794548e-17,
+      "identity_4": true
+    }
+  ],
+  "equal_length": {
+    "residual_3": 2.7755575615628914e-17,
+    "identity_3": true,
+    "in_plane_cancels": true
+  },
+  "all_identities_ok": true,
+  "note": "Boxed (1)(3)(4) sit. This was the 24 Sep G1.(1) missing input. alpha=98 / 432 realizations remain unstamped. BOTH-SIGNS family remains not on this tree. NS not solved."
+}
