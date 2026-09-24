@@ -468,4 +468,6 @@ Master ledger:
 \(S_\Gamma\) lattice-loop
 primitive: **NO**.
 [`NARROW-HET-RESIDUAL.md`](NARROW-HET-RESIDUAL.md).
+SBP:
+[`CORE-TAIL-SBP.md`](CORE-TAIL-SBP.md).
 NS not solved.

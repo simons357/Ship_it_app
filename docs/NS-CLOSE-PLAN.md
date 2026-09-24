@@ -653,6 +653,16 @@ primitive for \(S_\Gamma\):
 **NO** (holonomy). Do not
 restart circle / star /
 coherence searches.
+Core / tail SBP
+(`docs/CORE-TAIL-SBP.md`,
+`packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md`)
+is EXACT on a frozen epoch
+and moves the tail onto
+\(\Phi_e/Y\). Residual after
+the identity is still
+\(2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\).
+Do not mix live \(\kappa(t)\)
+with frozen \(\kappa_e\).
 
 Two routes, both OPEN, both
 killable. If both die, the leftover

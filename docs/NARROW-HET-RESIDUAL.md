@@ -366,9 +366,18 @@ constraint on the payment:
 nonlinear derivative of a
 quadratic Fourier
 multiplier on those loops.
-Do not invent a bridge.
+The core / tail SBP
+([`CORE-TAIL-SBP.md`](CORE-TAIL-SBP.md))
+is the identity-bridge:
+homo and het-radial land on
+\(\Phi_e'\). It is **not**
+\(\mathsf B^{\mathrm{prim}}w=A\).
+It moves the tail. It does
+not pay \(\int K\).
 Do not pointwise-estimate
 \(\dot S_\Gamma\).
+Do not mix live \(\Lambda\)
+with frozen \(\lambda_e\).
 
 Charge and moving covariance
 cannot share one \(w\) on
@@ -424,5 +433,7 @@ tree primitive: yes,
 Isotropic restriction:
 **NO** on the lattice tree.
 Charge and \(S\) do not share
-one \(w\). Not DA-NS-2.
+one \(w\). SBP EXACT, frozen
+epoch; \(\Phi_e/Y\) OPEN.
+Not DA-NS-2.
 NS not solved.

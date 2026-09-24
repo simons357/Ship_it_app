@@ -29,7 +29,8 @@ Pointers:
 [`SAG-6-LATTICE-CIRCLE.md`](SAG-6-LATTICE-CIRCLE.md),
 [`JOINT-EPOCH-BUDGET.md`](JOINT-EPOCH-BUDGET.md),
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md),
-[`NARROW-HET-RESIDUAL.md`](NARROW-HET-RESIDUAL.md).
+[`NARROW-HET-RESIDUAL.md`](NARROW-HET-RESIDUAL.md),
+[`CORE-TAIL-SBP.md`](CORE-TAIL-SBP.md).
 
 ---
 
@@ -57,6 +58,8 @@ Pointers:
 | 18 | \(r\sim\kappa^{-1/2}\) crossover; BROAD / NARROW map | **EXACT** equivalence; torus units |
 | 19 | Narrow het residual \(2\kappa^3 Q_a-(\Lambda-\kappa_e^2)S_\Gamma\) | **OPEN** |
 | 20 | \(S_\Gamma\) quadratic primitive on lattice loops | **NO** (holonomy); \(L\)-trees yes |
+| 21 | Core / tail SBP \(\mathfrak T_c=\Phi_e'+2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\) | **EXACT** (frozen epoch) |
+| 22 | \(\Phi_e/Y\); charge and moving \(N\) after SBP | **OPEN** |
 
 Every new mechanism must eventually
 pay §2. Talking is not that integral.
@@ -654,6 +657,10 @@ Not a bound on \(\int K\).
   unrestricted \(\star\).
 - Do not estimate \(\dot S_\Gamma\)
   pointwise.
+- Do not mix live
+  \(\kappa(t)=\sqrt\Lambda\) with
+  frozen \(\kappa_e\). The SBP
+  is frozen-epoch only.
 - Do not spend \(\nu\mathcal D_s\)
   twice.
 - Loop \(\Gamma_{\mathrm{cyc}}\)
@@ -699,4 +706,11 @@ Lattice-loop primitive for
 \(\sim 1.7\), \(\lVert w\rVert=O(1)\).
 Isotropic \(w(\lvert k\rvert,s)\)
 fails on the lattice tree.
+Core / tail SBP EXACT,
+frozen epoch
+([`CORE-TAIL-SBP.md`](CORE-TAIL-SBP.md)):
+moves the tail, does not
+remove it. Do not mix live
+\(\kappa(t)\) with frozen
+\(\kappa_e\). \(\Phi_e/Y\) OPEN.
 NS not solved.
