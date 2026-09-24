@@ -2,6 +2,7 @@
 
 **24 September 2026.** Current centered ledger as handed over,
 through today’s SAG / JGC work. Filing only.
+Compressed rally: [`CENTERED-RESIDUAL-BOARD.md`](CENTERED-RESIDUAL-BOARD.md).
 **Not a closure theorem.** Ordinary NS is not solved. Soft X silent.
 Do not put \(K(t)\) in the PDE.
 

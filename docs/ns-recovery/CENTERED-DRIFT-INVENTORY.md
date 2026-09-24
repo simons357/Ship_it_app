@@ -171,6 +171,7 @@ in the PDE.
 | \(K\)-candidate score sheet | `docs/ns-recovery/CENTERED-DRIFT-K-CANDIDATES.md`, `scripts/centered_drift_k_candidates.py` |
 | Centered spectral barycenter | `docs/ns-recovery/CENTERED-SPECTRAL-BARYCENTER.md`, `scripts/centered_spectral_barycenter.py` |
 | SAG / JGC master ledger | `docs/ns-recovery/CENTERED-MASTER-LEDGER.md` |
+| Residual board (one region) | `docs/ns-recovery/CENTERED-RESIDUAL-BOARD.md` |
 
 **Score sheet landed.** Uniform energy-class slots die on \(v_n\).
 \(K_{\mathrm{inst}}\) is Young packaging, not a bound. Claimed
@@ -187,6 +188,13 @@ unchanged. Do not redo K=0, the §4 triad, the \(\varepsilon\)-scan,
 the slot score sheet, or this barycenter page.
 
 ---
+
+**Residual board.** One region:
+narrow heterochiral charge + moving center. DA-NS-2 still the
+endpoint. \(r=\sigma_\lambda/\Lambda\); the \(\kappa^{-1/2}\)
+arithmetic sits and is not stamped.
+\(\mathsf B^{\mathrm{prim}}\) and the loop families are not on
+this tree. Do not invent them.
 
 **SAG / JGC ledger filed.** Exact algebra, reported numerics, and
 kills are separated in

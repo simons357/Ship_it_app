@@ -1,0 +1,139 @@
+{
+  "ns_solved": false,
+  "crossover_stamped": false,
+  "B_prim_constructed": false,
+  "loop_families_on_this_tree": false,
+  "r_definition": "sqrt(D_s / (Lambda Y)) = sigma_lambda / Lambda",
+  "crossover_arithmetic": "r = kappa^{-1/2} => D_s/Y = kappa",
+  "note_triad": {
+    "E": 8.0,
+    "X": 10.0,
+    "Y": 14.0,
+    "Lambda": 1.4,
+    "D_s": 2.3999999999999986,
+    "r": 0.3499271061118825,
+    "r_from_sigma_over_Lambda": 0.3499271061118825,
+    "r_conventions_match": true,
+    "kappa": 1.1832159566199232,
+    "kappa_inv_sqrt": 0.9193227152249185,
+    "Ds_over_Y": 0.17142857142857132,
+    "Lambda_r2": 0.17142857142857135,
+    "Ds_over_Y_matches_Lambda_r2": true,
+    "region": "NARROW"
+  },
+  "separated_L8": {
+    "E": 8.0,
+    "X": 388.0,
+    "Y": 24836.0,
+    "Lambda": 64.01030927835052,
+    "D_s": 8067.958762886701,
+    "r": 0.07123870998501104,
+    "r_from_sigma_over_Lambda": 0.07123870998501104,
+    "r_conventions_match": true,
+    "kappa": 8.000644303951434,
+    "kappa_inv_sqrt": 0.3535391542127825,
+    "Ds_over_Y": 0.3248493623323684,
+    "Lambda_r2": 0.3248493623323684,
+    "Ds_over_Y_matches_Lambda_r2": true,
+    "region": "NARROW"
+  },
+  "growing_layer": [
+    {
+      "n": 1,
+      "E": 12.0,
+      "X": 53.0,
+      "Y": 269.0,
+      "Lambda": 5.0754716981132075,
+      "D_s": 97.69811320754707,
+      "r": 0.26750305304841654,
+      "r_from_sigma_over_Lambda": 0.26750305304841654,
+      "r_conventions_match": true,
+      "kappa": 2.2528807554136563,
+      "kappa_inv_sqrt": 0.6662402974650059,
+      "Ds_over_Y": 0.36319001192396677,
+      "Lambda_r2": 0.36319001192396677,
+      "Ds_over_Y_matches_Lambda_r2": true,
+      "region": "NARROW"
+    },
+    {
+      "n": 2,
+      "E": 20.0,
+      "X": 340.0,
+      "Y": 6696.0,
+      "Lambda": 19.694117647058825,
+      "D_s": 9648.188235294132,
+      "r": 0.27048731164722845,
+      "r_from_sigma_over_Lambda": 0.2704873116472284,
+      "r_conventions_match": true,
+      "kappa": 4.437805499011739,
+      "kappa_inv_sqrt": 0.47469632336071976,
+      "Ds_over_Y": 1.4408883266568298,
+      "Lambda_r2": 1.4408883266568298,
+      "Ds_over_Y_matches_Lambda_r2": true,
+      "region": "NARROW"
+    },
+    {
+      "n": 4,
+      "E": 36.0,
+      "X": 2400.0,
+      "Y": 186000.0,
+      "Lambda": 77.5,
+      "D_s": 1054584.0,
+      "r": 0.2704788215813531,
+      "r_from_sigma_over_Lambda": 0.27047882158135317,
+      "r_conventions_match": true,
+      "kappa": 8.803408430829505,
+      "kappa_inv_sqrt": 0.33703466713294195,
+      "Ds_over_Y": 5.669806451612903,
+      "Lambda_r2": 5.669806451612903,
+      "Ds_over_Y_matches_Lambda_r2": true,
+      "region": "NARROW"
+    },
+    {
+      "n": 8,
+      "E": 68.0,
+      "X": 17952.0,
+      "Y": 5518880.0,
+      "Lambda": 307.42424242424244,
+      "D_s": 123889504.969697,
+      "r": 0.27022325905536476,
+      "r_from_sigma_over_Lambda": 0.2702232590553647,
+      "r_conventions_match": true,
+      "kappa": 17.533517685400223,
+      "kappa_inv_sqrt": 0.23881712848822217,
+      "Ds_over_Y": 22.44830562898577,
+      "Lambda_r2": 22.448305628985775,
+      "Ds_over_Y_matches_Lambda_r2": true,
+      "region": "BROAD"
+    }
+  ],
+  "near_shell": [
+    {
+      "eps": 0.2,
+      "r": 0.0348840558112284,
+      "kappa_inv_sqrt": 0.6697811490673098,
+      "region": "NARROW"
+    },
+    {
+      "eps": 0.1,
+      "r": 0.01777478519475307,
+      "kappa_inv_sqrt": 0.6690059416941362,
+      "region": "NARROW"
+    },
+    {
+      "eps": 0.05,
+      "r": 0.008929983935704638,
+      "kappa_inv_sqrt": 0.6688070621826417,
+      "region": "NARROW"
+    },
+    {
+      "eps": 0.025,
+      "r": 0.004470347815880555,
+      "kappa_inv_sqrt": 0.6687570161729111,
+      "region": "NARROW"
+    }
+  ],
+  "v_n_crosses_to_broad": true,
+  "all_conventions_match": true,
+  "note": "Relative width r is sigma_lambda/Lambda, not absolute sigma_lambda, and Lambda is Y/X, not a single-mode |k|^2. The -1/2 exponent is the unique scale that makes D_s/Y ~ kappa. Not a stamped decision theorem. B_prim not invented. NS not solved."
+}
