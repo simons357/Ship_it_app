@@ -9,16 +9,25 @@ Rally point (the only live close-adjacent job):
 \[
 \textbf{NARROW HETEROCHIRAL RESIDUAL}
 \qquad
-2\kappa^3 Q_a-(\Lambda-\kappa_e^2)S_\Gamma,
-\qquad
-S_\Gamma=\sum_\gamma A_\gamma Q_{a,\gamma}.
+2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N,
 \]
 
-First question: does \(S_\Gamma\) admit a uniformly conditioned
-translation-invariant quadratic primitive on the actual loop
-networks? That test is \(\mathsf B^{\mathrm{prim}}w=b\).
-The matrix and the loop/tree families are **not on this tree**.
-They are not invented here.
+with \(Q_a\) the \(\dot H^{1/2}\) flux. Frozen convention only.
+
+SBP gate (identity only; tail moved, not removed):
+[`../../packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md`](../../packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md).
+
+\[
+T_c
+=
+\Bigl(\frac{d}{dt}\Bigr)_{\mathrm{NL}}\Phi_e
++2\kappa_e^3 Q_a
+-(\Lambda-\lambda_e)N.
+\]
+
+Narrow homo + het radial sit in \(\Phi_e'\). \(\Phi_e/Y\) is not
+controlled by \(r^2\). \(\mathsf B^{\mathrm{prim}}\) on loop
+families is still **not on this tree** and is not invented.
 
 Ledger: [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md).
 Width arithmetic: `scripts/centered_width_crossover.py`,
@@ -131,32 +140,24 @@ T_{c,\Gamma}^{\mathrm{het}}
 \rho_{\Gamma,e}^{\mathrm{mov}}=-(\Lambda-\kappa_e^2)S_\Gamma.
 \]
 
-Radial \(\rho^{\mathrm{rad}}\) has a plausible narrow-width
-payment (linear gap). The two hard pieces are
+The SBP identity (frozen) puts narrow homo + het radial into
+one nonnegative capacity \(\Phi_e\) that vanishes to second
+order at the shell. That is an identity, not a bound.
+The two hard pieces after it are
 
 \[
-2\kappa^3 Q_a
+2\kappa_e^3 Q_a
 \qquad\text{and}\qquad
--(\Lambda-\kappa_e^2)S_\Gamma.
+-(\Lambda-\lambda_e)N.
 \]
 
-Quadratic primitive test for \(S_\Gamma\): a modal capacity
-\(\mathcal H_w=\sum_m w_m\lvert a_m\rvert^2\) whose nonlinear
-derivative produces \(S_\Gamma\) iff
+\(Q_a\) is the flux of \(\|u\|_{\dot H^{1/2}}^2\). Whether that
+is the dossier’s cross-radius helicity primitive is not
+confirmed here.
 
-\[
-\mathsf B^{\mathrm{prim}}w=b.
-\]
-
-Equivalently, every left-null vector satisfies \(c^Tb=0\),
-\(c\in\ker[(\mathsf B^{\mathrm{prim}})^T]\). A failure is an exact
-primitive-holonomy obstruction. No optimizer.
-
-**Heavy on this tree:** \(\mathsf B^{\mathrm{prim}}\) and the
-loop/tree families are missing. Rank, left-nullspace, \(c^Tb\),
-and minimum-norm \(w\) versus \(N\) are **not computed**.
-Do not invent the matrix. Do not substitute a coherence
-optimization.
+\(\mathsf B^{\mathrm{prim}}\) on loop/tree families remains
+missing on this tree. Do not invent it. Do not replace a
+signed sum by a sum of absolute values.
 
 ---
 
@@ -164,7 +165,7 @@ optimization.
 
 | Seat | Job | Status here |
 |---|---|---|
-| Heavy | \(\mathsf B^{\mathrm{prim}}w=b\) on existing loop/tree families | **Blocked.** Families not on this tree. |
+| Heavy | \(\mathsf B^{\mathrm{prim}}w=b\) on existing loop/tree families | **Blocked.** Families not on this tree. SBP \(\Phi_e\) identity filed; \(\Phi_e/Y\) not controlled. |
 | Independent algebra | \(r\sim\kappa^{-1/2}\) conventions | **Arithmetic sits.** Threshold not stamped. |
 | DA | Classify BROAD/NARROW; find an existing primitive for \(S_\Gamma\); no invented bridge | Not this agent |
 | Solver | Adversarial \(J_{\theta,n}(T)\) and \(\alpha_{c,\kappa}^2\chi_\kappa^2\kappa\) | Not this tree |
@@ -192,8 +193,11 @@ remains evidence only. Not on this tree.
 \(\beta\), primitive conditioning, global patching / reset
 control.
 
-**OPEN primary.** DA-NS-2, and immediately upstream the narrow
-heterochiral charge + moving-center payment.
+**OPEN primary.** DA-NS-2, and immediately upstream
+\(2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\) after the \(\Phi_e\)
+identity. \(\Phi_e/Y\) tail leakage and the BROAD tail-\(D_s\)
+estimate remain open. Taylor–Green \(\Phi_e/Y\) split is named
+and not run (no \(N=64/96\) data on this tree).
 
 No new estimate is claimed. No continuation criterion.
 **NS not solved.**

@@ -49,7 +49,7 @@ Natural same-shell (9C), AP fan (9A), and finite 9B \(K_{\alpha,\beta}\) samples
 
 The old Gate-5–7 roadmap is **superseded**. Lineage filing: [`GATE-ROADMAP-LINEAGE.md`](GATE-ROADMAP-LINEAGE.md). It does not overwrite the live board. **REOPEN = recompute only.** Do not invent the missing \(u,m,d,c,+++\) definitions.
 
-Current SAG / JGC consolidation: [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md). Rally: [`CENTERED-RESIDUAL-BOARD.md`](CENTERED-RESIDUAL-BOARD.md). DA-NS-2 remains **OPEN**. The live job is the narrow heterochiral residual \(2\kappa^3 Q_a-(\Lambda-\kappa_e^2)S_\Gamma\). \(\mathsf B^{\mathrm{prim}}\) and the loop/tree families are not on this tree; do not invent them. Do not stamp \(r\sim\kappa^{-1/2}\).
+Current SAG / JGC consolidation: [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md). Rally: [`CENTERED-RESIDUAL-BOARD.md`](CENTERED-RESIDUAL-BOARD.md). DA-NS-2 remains **OPEN**. Frozen SBP identity: [`../../packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md`](../../packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md). Residual after it is \(2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\). Do not mix live \(\Lambda\) with frozen \(\lambda_e\). Do not stamp \(r\sim\kappa^{-1/2}\).
 
 ---
 
@@ -239,7 +239,8 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 | [`CENTERED-SPECTRAL-BARYCENTER.md`](CENTERED-SPECTRAL-BARYCENTER.md) | Enstrophy barycenter: slope \(\beta_{t\sim\lambda}\); collapse is the face |
 | [`GATE-ROADMAP-LINEAGE.md`](GATE-ROADMAP-LINEAGE.md) | Superseded Gate-1–7 recovery; **REOPEN = recompute only**; does not overwrite the live board |
 | [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md) | Current SAG / JGC ledger; DA-NS-2 **OPEN**; \(W_K\) and fixed-state \(\Delta W\) exact |
-| [`CENTERED-RESIDUAL-BOARD.md`](CENTERED-RESIDUAL-BOARD.md) | One residual: narrow het charge + moving center; \(\mathsf B^{\mathrm{prim}}\) not on this tree |
+| [`CENTERED-RESIDUAL-BOARD.md`](CENTERED-RESIDUAL-BOARD.md) | One residual: \(2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\) after \(\Phi_e\) |
+| [`../../packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md`](../../packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md) | SBP identity only; tail moved, not removed; frozen convention |
 | [`PR24-GROW-S-SCORE.md`](PR24-GROW-S-SCORE.md) | PR #24 grow-\(s\): \(\max K\approx 0.456\), not a kill |
 | [`docs/math/ns_attacks/ATTACK_9D_SETUP.md`](../math/ns_attacks/ATTACK_9D_SETUP.md) | 9D: same \(B\) as 9B; no I/O exponent locked |
 | [`SUPERGROK-ABC-LOCK.md`](SUPERGROK-ABC-LOCK.md) | SuperGrok ABC_λ filing: keep evaluator line; **refuse** falsifier stamp |

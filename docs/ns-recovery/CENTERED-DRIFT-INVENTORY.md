@@ -189,12 +189,13 @@ the slot score sheet, or this barycenter page.
 
 ---
 
-**Residual board.** One region:
-narrow heterochiral charge + moving center. DA-NS-2 still the
-endpoint. \(r=\sigma_\lambda/\Lambda\); the \(\kappa^{-1/2}\)
-arithmetic sits and is not stamped.
-\(\mathsf B^{\mathrm{prim}}\) and the loop families are not on
-this tree. Do not invent them.
+**Residual board.** After the frozen SBP identity, the residual
+is \(2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\). \(\Phi_e\) takes
+narrow homo + het radial. \(\Phi_e/Y\) is not controlled by
+\(r^2\). Tail leakage remains. Gate:
+`packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md`.
+Do not mix live \(\Lambda\) with frozen \(\lambda_e\).
+Taylor–Green \(\Phi_e/Y\) is not run here.
 
 **SAG / JGC ledger filed.** Exact algebra, reported numerics, and
 kills are separated in

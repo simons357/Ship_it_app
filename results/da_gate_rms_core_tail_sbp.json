@@ -1,0 +1,93 @@
+{
+  "ns_solved": false,
+  "convention": "FROZEN_epoch",
+  "do_not_mix_with_live_Lambda": true,
+  "sbp_identity_reconstructed_here": false,
+  "taylor_green_measured": false,
+  "phi_checks": {
+    "kappa": 2.0,
+    "phi_at_shell": 0.0,
+    "phi_at_zero": 16.0,
+    "kappa_fourth": 16.0,
+    "second_order_zero": true,
+    "inner_quadratic_min": 4.0,
+    "high_k_leading_half_m4": true,
+    "samples": [
+      {
+        "u": -3.0,
+        "phi": 22.5,
+        "shifted": 22.5,
+        "match": true,
+        "nonneg": true
+      },
+      {
+        "u": -1.0,
+        "phi": 6.5,
+        "shifted": 6.5,
+        "match": true,
+        "nonneg": true
+      },
+      {
+        "u": -0.25,
+        "phi": 0.564453125,
+        "shifted": 0.564453125,
+        "match": true,
+        "nonneg": true
+      },
+      {
+        "u": 0.0,
+        "phi": 0.0,
+        "shifted": 0.0,
+        "match": true,
+        "nonneg": true
+      },
+      {
+        "u": 0.25,
+        "phi": 0.689453125,
+        "shifted": 0.689453125,
+        "match": true,
+        "nonneg": true
+      },
+      {
+        "u": 1.0,
+        "phi": 14.5,
+        "shifted": 14.5,
+        "match": true,
+        "nonneg": true
+      },
+      {
+        "u": 4.0,
+        "phi": 544.0,
+        "shifted": 544.0,
+        "match": true,
+        "nonneg": true
+      }
+    ],
+    "ok": true
+  },
+  "R_core_checks": {
+    "kappa": 2.0,
+    "R_frozen_core": 16.0,
+    "two_kappa_cubed": 16.0,
+    "core_matches_2k3": true,
+    "dR_dLambda_at_core": -4.0,
+    "dR_dLambda_is_minus_2k": true,
+    "frozen_extra": -1.1999999999999993,
+    "frozen_extra_pred": -1.1999999999999993,
+    "frozen_extra_ok": true,
+    "live_core_R": 17.83333956386183,
+    "live_core_is_2k3": true,
+    "grad_i": 19.999999999686935,
+    "grad_j": 19.999999999686935,
+    "grad_o": 2.6645352591003757e-09,
+    "grad_pred": [
+      20.0,
+      20.0,
+      0.0
+    ],
+    "grad_ok": true
+  },
+  "all_elementary_ok": true,
+  "residual_after_sbp": "charge (Hdot^{1/2} flux) and -(Lambda-lambda_e) N",
+  "note": "Elementary phi and R-core facts sit. The full triad SBP is filed as an identity from the gate, not rebuilt here. Phi_e/Y is not controlled by r^2. Tail leakage remains. NS not solved."
+}
