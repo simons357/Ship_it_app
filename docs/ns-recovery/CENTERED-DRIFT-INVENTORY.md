@@ -192,8 +192,10 @@ the slot score sheet, or this barycenter page.
 kills are separated in
 [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md).
 DA-NS-2 is the named integral of tautological \(K_Y\). It is
-**OPEN**. Frozen \(W_K=D_s+X(\Lambda-K)^2\) sits. The reset jump
-\(\Delta W\) was truncated in the paste and is not completed.
+**OPEN**. Frozen \(W_K=D_s+X(\Lambda-K)^2\) sits. At fixed
+physical state the reset jump is the unique corollary
+\(\Delta W=X[(\Lambda-K_{e+1})^2-(\Lambda-K_e)^2]\).
+Cutoff-uniform summability of resets stays **OPEN**.
 Static SAG triangle / circle / star / tree are dead as the missing
 power. Charge-only coercivity and orientation-only payment stay
 killed. Loop gate and the Joint Gap–Charge Epoch Budget stay

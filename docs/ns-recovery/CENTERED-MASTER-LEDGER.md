@@ -18,7 +18,7 @@ How to read the tags:
 | **REPORTED** | Numerical / SAG result in the paste; not recomputed here |
 | **KILLED** | Named mechanism is dead |
 | **OPEN** | Named target, not obtained |
-| **TRUNCATED** | Paste broke; do not complete it |
+| **TRUNCATED** | Paste broke; completed only if it is a unique corollary of a boxed identity |
 
 Live instruments on this PR stay:
 [`CENTERED-EQUATION.md`](CENTERED-EQUATION.md),
@@ -55,7 +55,8 @@ The two \(D_s\) writings \(\|(A-\Lambda)A^{1/2}u\|_2^2\) and
 | 15 | \(\dot T_c^{\mathrm{het}}\) residual \((\Lambda-\lambda_e)\dot S_\Gamma\) | **EXACT**; latest algebraic frontier |
 | 16 | Joint Gap–Charge Epoch Budget | **OPEN** |
 | 17 | Frozen \(W_K=D_s+X(\Lambda-K)^2\) | **EXACT** |
-| 17 | Reset jump \(\Delta W\) | **TRUNCATED** in the paste |
+| 17 | Reset jump \(\Delta W\) at fixed state | **EXACT** (unique corollary of \(W_K\)) |
+| 17 | Cutoff-uniform reset ledger | **OPEN** |
 
 Every new mechanism must eventually pay DA-NS-2. That integral is
 not sitting.
@@ -485,7 +486,7 @@ If the last line of a write is \(\int D_s/Y\), \(\sup\Lambda\),
 
 ---
 
-## 17. Frozen variance — EXACT; reset jump TRUNCATED
+## 17. Frozen variance and reset jump — EXACT; ledger OPEN
 
 Recorded complete identity:
 
@@ -494,18 +495,27 @@ W_K=D_s+X(\Lambda-K)^2
 =\|A^{1/2}(A-K)u\|_2^2.
 \]
 
-Algebra lock: `scripts/centered_wk_identity.py`,
-`results/centered_wk_identity.json`.
-
-The paste then breaks at the chart reset
-\(K_e\to K_{e+1}\) with physical state fixed:
+The paste broke at the chart reset \(K_e\to K_{e+1}\) with the
+physical state fixed. **REOPEN = recompute only.** The unique
+corollary of the boxed \(W_K\) at fixed \(X,\Lambda,D_s\) is
 
 \[
 \Delta W
-\quad\text{(formula cut mid-box)}.
+=
+W_{K_{e+1}}-W_{K_e}
+=
+X\Bigl[(\Lambda-K_{e+1})^2-(\Lambda-K_e)^2\Bigr].
 \]
 
-Do not complete \(\Delta W\) from memory. **REOPEN = recompute only.**
+That matches the cut fragment
+\(\Delta W\ldots X[(\Lambda-K_{e+1})^2\ldots\)
+and nothing else. It is not a bound and not a summable ledger.
+
+Algebra lock: `scripts/centered_wk_identity.py`,
+`results/centered_wk_identity.json`.
+
+Cutoff-uniform control of the reset jumps in DA-NS-2 remains
+**OPEN**.
 
 ---
 
@@ -516,7 +526,7 @@ It does not restore unrestricted ★.
 It does not certify the loop gate.
 It does not reopen Gate 5.
 It does not splice SND, Theorem H, Soft X, or five fingers.
-It does not invent the missing reset jump.
+It does not turn \(\Delta W\) into a cutoff-uniform ledger.
 
 No new estimate is claimed. No continuation criterion.
 **NS not solved.**

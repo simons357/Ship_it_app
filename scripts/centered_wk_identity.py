@@ -1,6 +1,8 @@
 """Frozen-chart identity W_K = D_s + X (Lambda - K)^2.
 
-Equals ||A^{1/2}(A-K)u||_2^2. Algebra only. Not the truncated reset jump.
+Equals ||A^{1/2}(A-K)u||_2^2. At fixed physical state the reset jump is
+Delta W = X[(Lambda-K_{e+1})^2 - (Lambda-K_e)^2]. That is the unique
+corollary of W_K. It is not a cutoff-uniform reset ledger.
 NS is not solved.
 """
 
@@ -23,6 +25,11 @@ import ns_lemma_star_core as core  # noqa: E402
 def W_from_moments(X: float, Y: float, Z: float, Lam: float, K: float) -> float:
     Ds = Z - Lam * Y
     return Ds + X * (Lam - K) ** 2
+
+
+def delta_W_fixed_state(X: float, Lam: float, K_old: float, K_new: float) -> float:
+    """Physical state fixed: X, Lambda, D_s unchanged. Only the chart center moves."""
+    return X * ((Lam - K_new) ** 2 - (Lam - K_old) ** 2)
 
 
 def W_direct(field: core.Field, K: float) -> float:
@@ -52,6 +59,11 @@ def check_field(field: core.Field, shifts: tuple = (0.0, 1.0, -2.5)) -> dict:
                 "match": match,
             }
         )
+    K0, K1 = 1.0, -2.5
+    w0 = W_from_moments(X, Y, Z, Lam, K0)
+    w1 = W_from_moments(X, Y, Z, Lam, K1)
+    jump = delta_W_fixed_state(X, Lam, K0, K1)
+    jump_ok = abs((w1 - w0) - jump) <= 1e-9 * max(1.0, abs(jump))
     return {
         "E": E,
         "X": X,
@@ -60,7 +72,10 @@ def check_field(field: core.Field, shifts: tuple = (0.0, 1.0, -2.5)) -> dict:
         "Lambda": Lam,
         "D_s": Ds,
         "rows": rows,
-        "identities_ok": ok,
+        "identities_ok": ok and jump_ok,
+        "delta_W": jump,
+        "delta_W_from_W": w1 - w0,
+        "delta_W_ok": jump_ok,
     }
 
 
@@ -69,18 +84,21 @@ def run() -> dict:
     vn = check_field(gl.growing_layer(2))
     return {
         "ns_solved": False,
-        "reset_jump_completed": False,
+        "reset_jump_is_wk_corollary": True,
+        "reset_ledger_uniform": False,
         "identity": "W_K = D_s + X (Lambda - K)^2 = ||A^{1/2}(A-K)u||_2^2",
+        "delta_W": "X*((Lambda-K_new)^2 - (Lambda-K_old)^2) at fixed physical state",
         "note_triad": note,
         "growing_layer_n2": {
             "identities_ok": vn["identities_ok"],
+            "delta_W_ok": vn["delta_W_ok"],
             "Lambda": vn["Lambda"],
             "D_s": vn["D_s"],
         },
         "all_identities_ok": note["identities_ok"] and vn["identities_ok"],
         "note": (
-            "Frozen-chart variance identity only. "
-            "The Delta W reset jump was truncated in the paste and is not written. "
+            "W_K and the fixed-state reset jump are algebra. "
+            "Cutoff-uniform summability of resets is not obtained. "
             "NS not solved."
         ),
     }

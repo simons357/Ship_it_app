@@ -1,7 +1,9 @@
 {
   "ns_solved": false,
-  "reset_jump_completed": false,
+  "reset_jump_is_wk_corollary": true,
+  "reset_ledger_uniform": false,
   "identity": "W_K = D_s + X (Lambda - K)^2 = ||A^{1/2}(A-K)u||_2^2",
+  "delta_W": "X*((Lambda-K_new)^2 - (Lambda-K_old)^2) at fixed physical state",
   "note_triad": {
     "E": 8.0,
     "X": 10.0,
@@ -29,13 +31,17 @@
         "match": true
       }
     ],
-    "identities_ok": true
+    "identities_ok": true,
+    "delta_W": 150.5,
+    "delta_W_from_W": 150.5,
+    "delta_W_ok": true
   },
   "growing_layer_n2": {
     "identities_ok": true,
+    "delta_W_ok": true,
     "Lambda": 19.694117647058825,
     "D_s": 9648.188235294132
   },
   "all_identities_ok": true,
-  "note": "Frozen-chart variance identity only. The Delta W reset jump was truncated in the paste and is not written. NS not solved."
+  "note": "W_K and the fixed-state reset jump are algebra. Cutoff-uniform summability of resets is not obtained. NS not solved."
 }

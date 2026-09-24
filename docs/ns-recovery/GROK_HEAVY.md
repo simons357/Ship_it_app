@@ -49,7 +49,7 @@ Natural same-shell (9C), AP fan (9A), and finite 9B \(K_{\alpha,\beta}\) samples
 
 The old Gate-5–7 roadmap is **superseded**. Lineage filing: [`GATE-ROADMAP-LINEAGE.md`](GATE-ROADMAP-LINEAGE.md). It does not overwrite the live board. **REOPEN = recompute only.** Do not invent the missing \(u,m,d,c,+++\) definitions.
 
-Current SAG / JGC consolidation: [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md). DA-NS-2 remains **OPEN**. Every new mechanism must pay that integral. Do not complete the truncated reset jump from memory.
+Current SAG / JGC consolidation: [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md). DA-NS-2 remains **OPEN**. Every new mechanism must pay that integral. Fixed-state \(\Delta W\) is the \(W_K\) corollary; cutoff-uniform resets stay open.
 
 ---
 
@@ -238,7 +238,7 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 | [`CENTERED-DRIFT-K-CANDIDATES.md`](CENTERED-DRIFT-K-CANDIDATES.md) | Comparable / near-shell \(K\) score sheet; uniform slots die; no proved \(K\) |
 | [`CENTERED-SPECTRAL-BARYCENTER.md`](CENTERED-SPECTRAL-BARYCENTER.md) | Enstrophy barycenter: slope \(\beta_{t\sim\lambda}\); collapse is the face |
 | [`GATE-ROADMAP-LINEAGE.md`](GATE-ROADMAP-LINEAGE.md) | Superseded Gate-1–7 recovery; **REOPEN = recompute only**; does not overwrite the live board |
-| [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md) | Current SAG / JGC ledger; DA-NS-2 **OPEN**; \(W_K\) exact; reset jump truncated |
+| [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md) | Current SAG / JGC ledger; DA-NS-2 **OPEN**; \(W_K\) and fixed-state \(\Delta W\) exact |
 | [`PR24-GROW-S-SCORE.md`](PR24-GROW-S-SCORE.md) | PR #24 grow-\(s\): \(\max K\approx 0.456\), not a kill |
 | [`docs/math/ns_attacks/ATTACK_9D_SETUP.md`](../math/ns_attacks/ATTACK_9D_SETUP.md) | 9D: same \(B\) as 9B; no I/O exponent locked |
 | [`SUPERGROK-ABC-LOCK.md`](SUPERGROK-ABC-LOCK.md) | SuperGrok ABC_λ filing: keep evaluator line; **refuse** falsifier stamp |
