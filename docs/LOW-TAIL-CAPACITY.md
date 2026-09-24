@@ -197,41 +197,36 @@ low-tail estimate.
 \]
 
 \[
-\boxed{\textbf{LOW TAIL}\to\textbf{OPEN}}
+\boxed{\textbf{LOW TAIL}\to\textbf{absorbed: }C_\kappa\le 1}
 \]
 
-plus charge and epoch motion.
+See [`LEMMA-A-SBP.md`](LEMMA-A-SBP.md).
+The torus gap stops the
+\(1/m^2\) blow-up.
+\(\Phi_e\le D_e^{\mathrm{frozen}}\).
+Ordinary energy was never the
+estimate; frozen variance was.
 
 \[
 \boxed{
-\textbf{NARROW HETEROCHIRAL LAST MILE}
+\textbf{LAST MILE}
 =
-\textbf{LOW-TAIL CAPACITY}
-+
 \textbf{CHARGE}
 +
 \textbf{EPOCH MOTION}.
 }
 \]
 
-The 64/96 question is no
-longer generic LH bounds.
-It is:
-
-\[
-\boxed{
-\text{can an NSE trajectory keep enough low-mode mass
-under a high }\kappa_e
-\text{ that }
-\kappa_e^4 E_{\mathrm{low}}/Y
-\text{ is large on dangerous time?}
-}
-\]
-
-If \(\Phi/Y\) spikes, say
-whether the spike is
-low-tail dominated. If not,
-this diagnosis is wrong.
+That question is now
+answered at the weight
+level: \(C_\kappa\le 1\), so
+a low reservoir is already
+inside \(D_s+\zeta_e^2\).
+64/96 should split
+\(\Phi_e/Y\) into
+\(D_s/Y\) vs \(\zeta_e^2\)
+vs charge, not hunt a
+separate low-tail theorem.
 
 ---
 
@@ -241,10 +236,11 @@ this diagnosis is wrong.
 EXACT. (C) EXACT on a
 comparable annulus.
 High tail favorable.
-Low tail OPEN.
-\(L_e=\kappa_e^4 E_{\mathrm{low}}/Y\)
-is the diagnostic.
-Energy does not pay it.
-Last mile = low tail +
-charge + epoch motion.
+Low-tail occupancy bill
+**absorbed** by Lemma A
+(\(C_\kappa\le 1\), \(m\ge 1\)).
+\(L_e\) remains a solver
+diagnostic, not a missing
+theorem. Last mile = charge
++ epoch motion.
 Not DA-NS-2. NS not solved.

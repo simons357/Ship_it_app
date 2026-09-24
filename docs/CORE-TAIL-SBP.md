@@ -187,8 +187,10 @@ SBP EXACT, frozen epoch.
 Do not mix live and frozen.
 (4) remains forbidden.
 Tail can hold \(\mathcal D_s\).
-\(\Phi_e/Y\) OPEN, and the
-enemy is the **low** tail.
-Last mile = low-tail capacity
-+ charge + epoch motion.
+Lemma A PROVED
+([`LEMMA-A-SBP.md`](LEMMA-A-SBP.md)):
+\(\Phi_e\le D_s+X(\Lambda-\lambda_e)^2\).
+Low tail absorbed. Last mile
+= charge + epoch motion
+(Lemma B OPEN).
 Not DA-NS-2. NS not solved.

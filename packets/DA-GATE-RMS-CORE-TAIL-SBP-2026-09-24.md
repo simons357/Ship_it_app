@@ -219,17 +219,13 @@ its heterochiral part.
   charge (\(\dot H^{1/2}\) flux)
   and \(-(\Lambda-\lambda_e)N\).
 
-Before 64/96: compare
-\(\phi_\kappa\) to \(d_\kappa\).
-Core is controlled by frozen
-variance (C). High tail is
-favorable (\(\sim 1/(2m^2)\)).
-Low tail blows up
-(\(\sim 1/m^2\)). Return
-\(L_e=\kappa_e^4 E_{\mathrm{low}}/Y\)
-and whether a \(\Phi/Y\) spike
-is low-tail dominated.
-[`docs/LOW-TAIL-CAPACITY.md`](../docs/LOW-TAIL-CAPACITY.md).
+Lemma A PROVED
+([`docs/LEMMA-A-SBP.md`](../docs/LEMMA-A-SBP.md)).
+\(C_\kappa\le 1\) on \(m\ge 1\).
+\(\Phi_e\le D_e^{\mathrm{frozen}}
+=D_s+X(\Lambda-\lambda_e)^2\).
+Low tail absorbed. Last mile
+= charge + epoch motion.
 
 ---
 
@@ -244,8 +240,7 @@ core-radius comparison EXACT.
 (4) stays the forbidden
 absolute-sum step.
 Tail can hold \(\mathcal D_s\).
-\(\Phi_e/Y\) OPEN; the enemy
-is the **low** tail.
-Last mile = low-tail capacity
-+ charge + epoch motion.
+Lemma A PROVED. Low tail
+absorbed. Sharp L3/L4.
+Lemma B OPEN.
 Not DA-NS-2. NS not solved.

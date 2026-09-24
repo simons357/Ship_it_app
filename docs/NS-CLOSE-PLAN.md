@@ -669,11 +669,17 @@ Low-tail capacity
 core (C) EXACT; high tail
 favorable; \(L_e=\kappa_e^4
 E_{\mathrm{low}}/Y\) OPEN.
-Last mile = low tail +
-charge + epoch motion.
-Do not read 64/96 without
-saying whether a \(\Phi/Y\)
-spike is low-tail dominated.
+Lemma A PROVED
+(`docs/LEMMA-A-SBP.md`):
+\(\Phi_e\le D_s+X(\Lambda-\lambda_e)^2\).
+Low tail absorbed. Last mile
+= charge + epoch motion
+(Lemma B OPEN). RESET at
+\(\lvert\Lambda-\lambda_e\rvert=c\sqrt\Lambda\)
+is the scale-covariant chart;
+summability OPEN. Do not mix
+homochiral loops into this
+charge ledger.
 
 Two routes, both OPEN, both
 killable. If both die, the leftover

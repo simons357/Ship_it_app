@@ -31,7 +31,8 @@ Pointers:
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md),
 [`NARROW-HET-RESIDUAL.md`](NARROW-HET-RESIDUAL.md),
 [`CORE-TAIL-SBP.md`](CORE-TAIL-SBP.md),
-[`LOW-TAIL-CAPACITY.md`](LOW-TAIL-CAPACITY.md).
+[`LOW-TAIL-CAPACITY.md`](LOW-TAIL-CAPACITY.md),
+[`LEMMA-A-SBP.md`](LEMMA-A-SBP.md).
 
 ---
 
@@ -62,7 +63,10 @@ Pointers:
 | 21 | Core / tail SBP \(\mathfrak T_c=\Phi_e'+2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\) | **EXACT** (frozen epoch) |
 | 22 | \(\Phi_e/Y\); charge and moving \(N\) after SBP | **OPEN** |
 | 23 | \(\phi_\kappa/d_\kappa\); core (C), high tail favorable | **EXACT** |
-| 24 | Low-tail capacity \(L_e=\kappa_e^4 E_{\mathrm{low}}/Y\) | **OPEN** |
+| 24 | Low-tail capacity \(L_e=\kappa_e^4 E_{\mathrm{low}}/Y\) | **absorbed** (Lemma A) |
+| 25 | Lemma A: \(\Phi_e\le D_e^{\mathrm{frozen}}\); \(C_\kappa\le 1\) | **PROVED** |
+| 26 | Sharp L3/L4: \(\Phi_e\le D_s+X(\Lambda-\lambda_e)^2\) | **EXACT** |
+| 27 | Lemma B: charge/epoch joint budget | **OPEN** |
 
 Every new mechanism must eventually
 pay §2. Talking is not that integral.
@@ -719,6 +723,9 @@ remove it. Do not mix live
 Low tail OPEN; high tail
 favorable
 ([`LOW-TAIL-CAPACITY.md`](LOW-TAIL-CAPACITY.md)).
-Last mile = low-tail capacity
-+ charge + epoch motion.
+Lemma A PROVED: \(\Phi_e\le
+D_s+X(\Lambda-\lambda_e)^2\).
+Low tail absorbed. Last mile
+= charge + epoch motion
+(Lemma B OPEN).
 NS not solved.

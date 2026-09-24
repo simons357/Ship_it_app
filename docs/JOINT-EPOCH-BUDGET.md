@@ -470,4 +470,8 @@ primitive: **NO**.
 [`NARROW-HET-RESIDUAL.md`](NARROW-HET-RESIDUAL.md).
 SBP:
 [`CORE-TAIL-SBP.md`](CORE-TAIL-SBP.md).
+Lemma A:
+[`LEMMA-A-SBP.md`](LEMMA-A-SBP.md).
+Low tail absorbed. Lemma B
+(charge/epoch) OPEN.
 NS not solved.

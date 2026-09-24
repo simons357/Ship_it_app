@@ -51,13 +51,16 @@ immediately upstream is
 \boxed{
 \textbf{NARROW HETEROCHIRAL LAST MILE}
 =
-\textbf{LOW-TAIL CAPACITY}
-+
 \textbf{CHARGE}
 +
 \textbf{EPOCH MOTION}.
 }
 \]
+
+Lemma A
+([`LEMMA-A-SBP.md`](LEMMA-A-SBP.md))
+absorbed the low tail:
+\(\Phi_e\le D_s+X(\Lambda-\lambda_e)^2\).
 
 Charge / motion still sit in
 
@@ -447,9 +450,8 @@ Isotropic restriction:
 Charge and \(S\) do not share
 one \(w\). SBP EXACT, frozen
 epoch; \(\Phi_e/Y\) OPEN.
-Low tail OPEN; high tail
-favorable. Last mile =
-low-tail capacity + charge
-+ epoch motion.
+Low tail **absorbed**
+(Lemma A). Last mile =
+charge + epoch motion.
 Not DA-NS-2.
 NS not solved.
