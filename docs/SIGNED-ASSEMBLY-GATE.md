@@ -417,9 +417,15 @@ NEW / NUMERICAL, tested on
 equal-shell \(v_L\), and mixed swirl.
 
 SAG-5 is that page’s name, not
-its theorem. Until a signed
-estimate or a named death exists,
-talking is not the gate.
+its theorem. SAG-6
+([`SAG-6-LATTICE-CIRCLE.md`](SAG-6-LATTICE-CIRCLE.md))
+ran the one-output equal-input
+circle. The \(N^{1/2}\) test is
+**OBSTRUCTED** by hemisphere
+alignment. Until a signed
+estimate or a named death exists
+on a **different** gain, talking
+is not the gate.
 
 ---
 
@@ -442,6 +448,8 @@ Need★ = this gate on two shells.
 Attack 8 = counting probe, not a bound.
 SAG-5 = global compatibility defect
 (5A rank, 5B cocycle). Not stamped.
+SAG-6 \(N^{1/2}\) on the equal-input
+circle = **OBSTRUCTED**.
 CRSPR roles classify; they do not close.
 Do not use \(\lvert\widehat B_k\rvert\) early.
 Do not evolve a bound that was never written.

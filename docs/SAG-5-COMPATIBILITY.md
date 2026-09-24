@@ -529,6 +529,17 @@ the parent gate, plus:
 
 ---
 
+The assembly blank after this page
+is the one-output equal-input
+circle, SAG-6:
+[`SAG-6-LATTICE-CIRCLE.md`](SAG-6-LATTICE-CIRCLE.md).
+That test asked for
+\(\|\Sigma\|\lesssim N^{1/2}w_{\mathrm{nat}}\).
+Hemisphere alignment kills it.
+Do not massage.
+
+---
+
 ## Lock
 
 5A: \(\mathrm{rank}_{\mathbb{C}}L_p\le 2\) EXACT.

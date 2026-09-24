@@ -725,6 +725,13 @@ the partner/output network (5B).
 Do not stamp SAG-5 from rank
 alone. No \(\lvert\sum S\rvert\to\sum\lvert S\rvert\).
 No occupancy bound yet.
+SAG-6
+([`SAG-6-LATTICE-CIRCLE.md`](SAG-6-LATTICE-CIRCLE.md)):
+one output, equal-input circle.
+\(N^{1/2}\) vector-sum test
+**OBSTRUCTED** by hemisphere
+alignment. Centered prefactor
+stays off that sum.
 Do not evolve a bound that was never
 written. No A2. No prime glue.
 NS not solved.

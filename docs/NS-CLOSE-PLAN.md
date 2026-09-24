@@ -554,6 +554,7 @@ PR #104):
 - `docs/FOURIER-TRIANGLE.md` — triad geometry; first missing implication
 - `docs/SIGNED-ASSEMBLY-GATE.md` — gate before old Gate 5; Loss A
 - `docs/SAG-5-COMPATIBILITY.md` — 5A rank / 5B cocycle; \(\Gamma(\mathcal H)\)
+- `docs/SAG-6-LATTICE-CIRCLE.md` — one-output equal-input circle; \(N^{1/2}\) **OBSTRUCTED**
 - `docs/SND-TO-REGULARITY.md` — named hole (iii) frequency drift
 - `docs/SND-INSTRUMENT.md` — diagnostics, no persistence
 
@@ -605,12 +606,17 @@ global compatibility defect, split
 5A (shared-input rank \(\le 2\))
 and 5B (partner/output cocycle).
 Do not stamp SAG-5 from rank
-alone. Next write = \(\rho_2\) /
-\(\Gamma(\mathcal H)\) on a named
-hypergraph without
-\(\lvert\sum S\rvert\to\sum\lvert S\rvert\)
-and without an occupancy bound —
-or name the death.
+alone. SAG-6
+(`docs/SAG-6-LATTICE-CIRCLE.md`)
+ran the one-output equal-input
+circle with the centered weight
+kept off. Hemisphere alignment
+kills \(\|\Sigma\|\lesssim N^{1/2}
+w_{\mathrm{nat}}\). That test is
+**OBSTRUCTED**. Do not massage it
+into \(16/9\) or into occupancy.
+A later write must name a
+different gain.
 
 Two routes, both OPEN, both
 killable. If both die, the leftover
