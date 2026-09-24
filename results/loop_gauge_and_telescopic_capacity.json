@@ -1,0 +1,1575 @@
+{
+  "strike": "polarization holonomy + telescopic capacity",
+  "date": "2026-09-24",
+  "loop": {
+    "star": {
+      "family": "two_triad_star_witness",
+      "loop_gauge": {
+        "n_triads": 2,
+        "n_modes": 5,
+        "modes": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            -1,
+            -1,
+            -1
+          ],
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            -1,
+            -1,
+            0
+          ]
+        ],
+        "triads": [
+          [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              -1,
+              -1,
+              -1
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              -1,
+              -1,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ]
+          ]
+        ],
+        "B": [
+          [
+            1,
+            1,
+            -1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            -1,
+            1,
+            1
+          ]
+        ],
+        "dim_ker_BT": 0,
+        "ker_BT": [],
+        "dim_ker_B": 3,
+        "tree_combinatorial": true,
+        "gauge": {
+          "translation_in_right_kernel": true,
+          "constant_gives_all_ones": true,
+          "residuals": {
+            "xi_x": [
+              0.0,
+              0.0
+            ],
+            "xi_y": [
+              0.0,
+              0.0
+            ],
+            "xi_z": [
+              0.0,
+              0.0
+            ],
+            "phi_0": [
+              1.0,
+              1.0
+            ]
+          },
+          "boxed": "loop topology by itself does not force phase frustration"
+        },
+        "targets": [
+          {
+            "triad": [
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                0,
+                0
+              ]
+            ],
+            "preferred_sigma": [
+              1,
+              -1,
+              -1
+            ],
+            "abs_g": 0.4231763352100091,
+            "chi": 1.308996938995747,
+            "phi_star": 0.0,
+            "b": -1.308996938995747,
+            "n_ties": 2
+          },
+          {
+            "triad": [
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                -1,
+                -1,
+                0
+              ],
+              [
+                -1,
+                0,
+                0
+              ]
+            ],
+            "preferred_sigma": [
+              1,
+              -1,
+              -1
+            ],
+            "abs_g": 0.4267766952966367,
+            "chi": 1.5707963267948966,
+            "phi_star": 0.0,
+            "b": -1.5707963267948966,
+            "n_ties": 2
+          }
+        ],
+        "cycles": [],
+        "phase_holonomy_vanishes": true,
+        "Gamma_cyc_phase": 1,
+        "loop_gauge": "PASS: independently optimal phases are globally realizable modulo the translation/additive gauge. \u0393_cyc = 1 at the phase level. Only polarization geometry can still defect.",
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "locks": {
+          "topology_alone_is_not_frustration": true,
+          "no_occupancy_bound": true,
+          "not_a_close": true
+        }
+      },
+      "reading": "A star has ker B^T = 0. No cycle test. Phase compatibility is automatic. This is the archive two-triad field under SAG's p+q=\u2212k flip. Stars can realize their couplings; a meaningful loop obstruction has to be a polarization holonomy, not this incidence."
+    },
+    "parallelogram": {
+      "family": "parallelogram_4cycle",
+      "loop_gauge": {
+        "n_triads": 4,
+        "n_modes": 6,
+        "modes": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "triads": [
+          [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        ],
+        "B": [
+          [
+            1,
+            1,
+            -1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            1,
+            -1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            0,
+            -1
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            1,
+            -1
+          ]
+        ],
+        "dim_ker_BT": 1,
+        "ker_BT": [
+          [
+            1,
+            -1,
+            1,
+            -1
+          ]
+        ],
+        "dim_ker_B": 3,
+        "tree_combinatorial": false,
+        "gauge": {
+          "translation_in_right_kernel": true,
+          "constant_gives_all_ones": true,
+          "residuals": {
+            "xi_x": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "xi_y": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "xi_z": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "phi_0": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "boxed": "loop topology by itself does not force phase frustration"
+        },
+        "targets": [
+          {
+            "triad": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                0
+              ]
+            ],
+            "preferred_sigma": [
+              1,
+              -1,
+              1
+            ],
+            "abs_g": 0.3535533905932737,
+            "chi": -1.5707963267948966,
+            "phi_star": 0.0,
+            "b": 1.5707963267948966,
+            "n_ties": 4
+          },
+          {
+            "triad": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                1
+              ]
+            ],
+            "preferred_sigma": [
+              1,
+              -1,
+              1
+            ],
+            "abs_g": 0.3535533905932737,
+            "chi": 0.0,
+            "phi_star": 0.0,
+            "b": 0.0,
+            "n_ties": 4
+          },
+          {
+            "triad": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ],
+            "preferred_sigma": [
+              1,
+              -1,
+              1
+            ],
+            "abs_g": 0.5288387679126025,
+            "chi": -0.7853981633974483,
+            "phi_star": 0.0,
+            "b": 0.7853981633974483,
+            "n_ties": 2
+          },
+          {
+            "triad": [
+              [
+                1,
+                0,
+                1
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ],
+            "preferred_sigma": [
+              1,
+              -1,
+              1
+            ],
+            "abs_g": 0.5288387679126025,
+            "chi": -0.26179938779914946,
+            "phi_star": 0.0,
+            "b": 0.2617993877991496,
+            "n_ties": 2
+          }
+        ],
+        "cycles": [
+          {
+            "c": [
+              1,
+              -1,
+              1,
+              -1
+            ],
+            "Omega": 2.094395102393195,
+            "frustrated": true
+          }
+        ],
+        "phase_holonomy_vanishes": false,
+        "Gamma_cyc_phase": null,
+        "loop_gauge": "FAIL-FAST: some \u03a9_c \u2260 0. Genuine cycle phase frustration. Do not compare an uncertified local max to the tree baseline.",
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "locks": {
+          "topology_alone_is_not_frustration": true,
+          "no_occupancy_bound": true,
+          "not_a_close": true
+        }
+      },
+      "locked_c": [
+        1,
+        -1,
+        1,
+        -1
+      ],
+      "Omega_locked": 2.094395102393195,
+      "certified": {
+        "tree": 1.7647843170117525,
+        "loop": 1.5383669028160916,
+        "Gamma_cyc": 0.8717025009724443,
+        "method": "single-cycle-stationary",
+        "mu": 0.21051303418201273,
+        "thetas": [
+          0.6377892820550899,
+          -0.6377892820550899,
+          0.4094082691414951,
+          -0.4094082691414951
+        ],
+        "reachable": true
+      },
+      "frames": {
+        "per_axis": [
+          {
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "cycles": [
+              {
+                "c": [
+                  1,
+                  -1,
+                  1,
+                  -1
+                ],
+                "Omega": 2.094395102393195,
+                "frustrated": true
+              }
+            ],
+            "pass": false
+          },
+          {
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "cycles": [
+              {
+                "c": [
+                  1,
+                  -1,
+                  1,
+                  -1
+                ],
+                "Omega": 2.0943951023931957,
+                "frustrated": true
+              }
+            ],
+            "pass": false
+          },
+          {
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "cycles": [
+              {
+                "c": [
+                  1,
+                  -1,
+                  1,
+                  -1
+                ],
+                "Omega": 2.094395102393195,
+                "frustrated": true
+              }
+            ],
+            "pass": false
+          }
+        ],
+        "Omega_frame_invariant": true,
+        "reading": "phase holonomy is frame-invariant"
+      },
+      "compare_rule": "Compare only this certified loop maximum against the \u0393=1 tree baseline sum |g_e|. Do not use a local optimizer."
+    }
+  },
+  "polarization": {
+    "star": {
+      "family": "two_triad_star_witness",
+      "test": {
+        "n_triads": 2,
+        "n_modes": 5,
+        "dim_ker_BT": 0,
+        "tree_combinatorial": true,
+        "preferred": [
+          {
+            "triad": [
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                -1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                0,
+                0
+              ]
+            ],
+            "preferred": [
+              1,
+              -1,
+              -1
+            ],
+            "tied_sigmas": [
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                1
+              ]
+            ],
+            "abs_g": 0.4231763352100091,
+            "chi": 1.308996938995747
+          },
+          {
+            "triad": [
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                -1,
+                -1,
+                0
+              ],
+              [
+                -1,
+                0,
+                0
+              ]
+            ],
+            "preferred": [
+              1,
+              -1,
+              -1
+            ],
+            "tied_sigmas": [
+              [
+                1,
+                -1,
+                -1
+              ],
+              [
+                -1,
+                1,
+                1
+              ]
+            ],
+            "abs_g": 0.4267766952966367,
+            "chi": 1.5707963267948966
+          }
+        ],
+        "realized": {
+          "(0, 1, 1)": 1,
+          "(-1, -1, -1)": -1,
+          "(-1, 0, 0)": -1,
+          "(0, 1, 0)": 1,
+          "(-1, -1, 0)": -1
+        },
+        "preferred_realizable": true,
+        "static_loop_defect": false,
+        "local_hub_conflict": false,
+        "reading": "preferred helicity state is globally realizable: no static polarization holonomy on this family",
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "lock": "Stars can. The archive witness is already one globally compatible real field. A star is not a polarization loop."
+    },
+    "parallelogram": {
+      "family": "parallelogram_4cycle",
+      "per_axis": [
+        {
+          "axis": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "test": {
+            "n_triads": 4,
+            "n_modes": 6,
+            "dim_ker_BT": 1,
+            "tree_combinatorial": false,
+            "preferred": [
+              {
+                "triad": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    1,
+                    0
+                  ]
+                ],
+                "preferred": [
+                  1,
+                  -1,
+                  1
+                ],
+                "tied_sigmas": [
+                  [
+                    1,
+                    -1,
+                    1
+                  ],
+                  [
+                    1,
+                    -1,
+                    -1
+                  ],
+                  [
+                    -1,
+                    1,
+                    1
+                  ],
+                  [
+                    -1,
+                    1,
+                    -1
+                  ]
+                ],
+                "abs_g": 0.3535533905932737,
+                "chi": -1.5707963267948966
+              },
+              {
+                "triad": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ],
+                  [
+                    1,
+                    0,
+                    1
+                  ]
+                ],
+                "preferred": [
+                  1,
+                  -1,
+                  1
+                ],
+                "tied_sigmas": [
+                  [
+                    1,
+                    -1,
+                    1
+                  ],
+                  [
+                    1,
+                    -1,
+                    -1
+                  ],
+                  [
+                    -1,
+                    1,
+                    1
+                  ],
+                  [
+                    -1,
+                    1,
+                    -1
+                  ]
+                ],
+                "abs_g": 0.3535533905932737,
+                "chi": 0.0
+              },
+              {
+                "triad": [
+                  [
+                    1,
+                    1,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ],
+                  [
+                    1,
+                    1,
+                    1
+                  ]
+                ],
+                "preferred": [
+                  1,
+                  -1,
+                  1
+                ],
+                "tied_sigmas": [
+                  [
+                    1,
+                    -1,
+                    1
+                  ],
+                  [
+                    -1,
+                    1,
+                    -1
+                  ]
+                ],
+                "abs_g": 0.5288387679126025,
+                "chi": -0.7853981633974483
+              },
+              {
+                "triad": [
+                  [
+                    1,
+                    0,
+                    1
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    1,
+                    1
+                  ]
+                ],
+                "preferred": [
+                  1,
+                  -1,
+                  1
+                ],
+                "tied_sigmas": [
+                  [
+                    1,
+                    -1,
+                    1
+                  ],
+                  [
+                    -1,
+                    1,
+                    -1
+                  ]
+                ],
+                "abs_g": 0.5288387679126025,
+                "chi": -0.26179938779914946
+              }
+            ],
+            "realized": {
+              "(1, 0, 0)": 1,
+              "(0, 1, 0)": -1,
+              "(1, 1, 0)": 1,
+              "(0, 0, 1)": -1,
+              "(1, 0, 1)": 1,
+              "(1, 1, 1)": 1
+            },
+            "preferred_realizable": true,
+            "static_loop_defect": false,
+            "local_hub_conflict": false,
+            "reading": "preferred helicity state is globally realizable: no static polarization holonomy on this family",
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "transport": {
+            "visits": {
+              "(1, 0, 0)": [
+                1,
+                1
+              ],
+              "(0, 1, 0)": [
+                -1,
+                -1
+              ],
+              "(1, 1, 0)": [
+                1,
+                1
+              ],
+              "(0, 0, 1)": [
+                -1,
+                -1
+              ],
+              "(1, 0, 1)": [
+                1,
+                1
+              ],
+              "(1, 1, 1)": [
+                1,
+                1
+              ]
+            },
+            "flips": [],
+            "returns_rotated": false
+          }
+        },
+        {
+          "axis": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "test": {
+            "n_triads": 4,
+            "n_modes": 6,
+            "dim_ker_BT": 1,
+            "tree_combinatorial": false,
+            "preferred": [
+              {
+                "triad": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    1,
+                    0
+                  ]
+                ],
+                "preferred": [
+                  1,
+                  -1,
+                  1
+                ],
+                "tied_sigmas": [
+                  [
+                    1,
+                    -1,
+                    1
+                  ],
+                  [
+                    1,
+                    -1,
+                    -1
+                  ],
+                  [
+                    -1,
+                    1,
+                    1
+                  ],
+                  [
+                    -1,
+                    1,
+                    -1
+                  ]
+                ],
+                "abs_g": 0.3535533905932737,
+                "chi": 3.141592653589793
+              },
+              {
+                "triad": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ],
+                  [
+                    1,
+                    0,
+                    1
+                  ]
+                ],
+                "preferred": [
+                  1,
+                  -1,
+                  1
+                ],
+                "tied_sigmas": [
+                  [
+                    1,
+                    -1,
+                    1
+                  ],
+                  [
+                    1,
+                    -1,
+                    -1
+                  ],
+                  [
+                    -1,
+                    1,
+                    1
+                  ],
+                  [
+                    -1,
+                    1,
+                    -1
+                  ]
+                ],
+                "abs_g": 0.3535533905932737,
+                "chi": -1.5707963267948966
+              },
+              {
+                "triad": [
+                  [
+                    1,
+                    1,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ],
+                  [
+                    1,
+                    1,
+                    1
+                  ]
+                ],
+                "preferred": [
+                  1,
+                  -1,
+                  1
+                ],
+                "tied_sigmas": [
+                  [
+                    1,
+                    -1,
+                    1
+                  ],
+                  [
+                    -1,
+                    1,
+                    -1
+                  ]
+                ],
+                "abs_g": 0.5288387679126025,
+                "chi": -0.26179938779914946
+              },
+              {
+                "triad": [
+                  [
+                    1,
+                    0,
+                    1
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    1,
+                    1
+                  ]
+                ],
+                "preferred": [
+                  1,
+                  -1,
+                  1
+                ],
+                "tied_sigmas": [
+                  [
+                    1,
+                    -1,
+                    1
+                  ],
+                  [
+                    -1,
+                    1,
+                    -1
+                  ]
+                ],
+                "abs_g": 0.5288387679126025,
+                "chi": 0.26179938779914946
+              }
+            ],
+            "realized": {
+              "(1, 0, 0)": 1,
+              "(0, 1, 0)": -1,
+              "(1, 1, 0)": 1,
+              "(0, 0, 1)": -1,
+              "(1, 0, 1)": 1,
+              "(1, 1, 1)": 1
+            },
+            "preferred_realizable": true,
+            "static_loop_defect": false,
+            "local_hub_conflict": false,
+            "reading": "preferred helicity state is globally realizable: no static polarization holonomy on this family",
+            "axis": [
+              1.0,
+              0.0,
+              0.0
+            ]
+          },
+          "transport": {
+            "visits": {
+              "(1, 0, 0)": [
+                1,
+                1
+              ],
+              "(0, 1, 0)": [
+                -1,
+                -1
+              ],
+              "(1, 1, 0)": [
+                1,
+                1
+              ],
+              "(0, 0, 1)": [
+                -1,
+                -1
+              ],
+              "(1, 0, 1)": [
+                1,
+                1
+              ],
+              "(1, 1, 1)": [
+                1,
+                1
+              ]
+            },
+            "flips": [],
+            "returns_rotated": false
+          }
+        },
+        {
+          "axis": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "test": {
+            "n_triads": 4,
+            "n_modes": 6,
+            "dim_ker_BT": 1,
+            "tree_combinatorial": false,
+            "preferred": [
+              {
+                "triad": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    1,
+                    0
+                  ]
+                ],
+                "preferred": [
+                  1,
+                  -1,
+                  1
+                ],
+                "tied_sigmas": [
+                  [
+                    1,
+                    -1,
+                    1
+                  ],
+                  [
+                    1,
+                    -1,
+                    -1
+                  ],
+                  [
+                    -1,
+                    1,
+                    1
+                  ],
+                  [
+                    -1,
+                    1,
+                    -1
+                  ]
+                ],
+                "abs_g": 0.3535533905932737,
+                "chi": 0.0
+              },
+              {
+                "triad": [
+                  [
+                    1,
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ],
+                  [
+                    1,
+                    0,
+                    1
+                  ]
+                ],
+                "preferred": [
+                  1,
+                  -1,
+                  1
+                ],
+                "tied_sigmas": [
+                  [
+                    1,
+                    -1,
+                    1
+                  ],
+                  [
+                    1,
+                    -1,
+                    -1
+                  ],
+                  [
+                    -1,
+                    1,
+                    1
+                  ],
+                  [
+                    -1,
+                    1,
+                    -1
+                  ]
+                ],
+                "abs_g": 0.3535533905932737,
+                "chi": 1.5707963267948966
+              },
+              {
+                "triad": [
+                  [
+                    1,
+                    1,
+                    0
+                  ],
+                  [
+                    0,
+                    0,
+                    1
+                  ],
+                  [
+                    1,
+                    1,
+                    1
+                  ]
+                ],
+                "preferred": [
+                  1,
+                  -1,
+                  1
+                ],
+                "tied_sigmas": [
+                  [
+                    1,
+                    -1,
+                    1
+                  ],
+                  [
+                    -1,
+                    1,
+                    -1
+                  ]
+                ],
+                "abs_g": 0.5288387679126025,
+                "chi": 0.26179938779914946
+              },
+              {
+                "triad": [
+                  [
+                    1,
+                    0,
+                    1
+                  ],
+                  [
+                    0,
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    1,
+                    1
+                  ]
+                ],
+                "preferred": [
+                  1,
+                  -1,
+                  1
+                ],
+                "tied_sigmas": [
+                  [
+                    1,
+                    -1,
+                    1
+                  ],
+                  [
+                    -1,
+                    1,
+                    -1
+                  ]
+                ],
+                "abs_g": 0.5288387679126025,
+                "chi": 0.7853981633974483
+              }
+            ],
+            "realized": {
+              "(1, 0, 0)": 1,
+              "(0, 1, 0)": -1,
+              "(1, 1, 0)": 1,
+              "(0, 0, 1)": -1,
+              "(1, 0, 1)": 1,
+              "(1, 1, 1)": 1
+            },
+            "preferred_realizable": true,
+            "static_loop_defect": false,
+            "local_hub_conflict": false,
+            "reading": "preferred helicity state is globally realizable: no static polarization holonomy on this family",
+            "axis": [
+              0.0,
+              1.0,
+              0.0
+            ]
+          },
+          "transport": {
+            "visits": {
+              "(1, 0, 0)": [
+                1,
+                1
+              ],
+              "(0, 1, 0)": [
+                -1,
+                -1
+              ],
+              "(1, 1, 0)": [
+                1,
+                1
+              ],
+              "(0, 0, 1)": [
+                -1,
+                -1
+              ],
+              "(1, 0, 1)": [
+                1,
+                1
+              ],
+              "(1, 1, 1)": [
+                1,
+                1
+              ]
+            },
+            "flips": [],
+            "returns_rotated": false
+          }
+        }
+      ],
+      "defect_on_some_frame": false,
+      "transport_flip_on_some_frame": false,
+      "defect_frame_invariant": true,
+      "reading": "no static polarization defect on this parallelogram"
+    }
+  },
+  "jgc": {
+    "note_triad_W": {
+      "X": 10.0,
+      "Y": 14.0,
+      "Z": 22.0,
+      "Lambda": 1.4,
+      "D_s": 2.400000000000002,
+      "K": 1.0,
+      "W": 4.000000000000002,
+      "W_expanded": 4.0,
+      "identity_holds": true
+    },
+    "spectral_identity": {
+      "X": 10.0,
+      "Y": 14.0,
+      "Z": 22.0,
+      "Lambda": 1.4,
+      "D_s": 2.400000000000002,
+      "K": 1.0,
+      "W": 4.000000000000002,
+      "W_expanded": 4.0,
+      "identity_holds": true,
+      "W_spectral": 4.0,
+      "spectral_matches": true
+    },
+    "nearest_center_jump": {
+      "X": 10.0,
+      "Lambda": 1.4,
+      "K_from": 2.0,
+      "K_to": 1.0,
+      "dW": -2.0000000000000018,
+      "nonpositive": true,
+      "formula": "X[((\u039b-K_{e+1})^2 - (\u039b-K_e)^2)]",
+      "nearest": true,
+      "design_kills_reset_cost": true
+    },
+    "away_from_center_jump": {
+      "X": 10.0,
+      "Lambda": 1.4,
+      "K_from": 1.0,
+      "K_to": 4.0,
+      "dW": 66.0,
+      "nonpositive": false,
+      "formula": "X[((\u039b-K_{e+1})^2 - (\u039b-K_e)^2)]"
+    },
+    "midpoint_crossings": {
+      "n_switches": 3,
+      "midpoints": [
+        1.5,
+        2.5,
+        3.5
+      ],
+      "path_variation": 3.7,
+      "spacing_min": 1.0,
+      "circular": true,
+      "reason": "the number of nearest-center changes is controlled by how far \u039b travels through spectral scale. (log \u039b)' = 2/Y (T_c \u2212 \u03bd D_s) is the Gate quantity. Counting resets from this path is circular."
+    },
+    "candidates": [
+      {
+        "name": "W_K",
+        "formula": "D_s + X(\u039b-K)^2 = \u03a3 \u03bb(\u03bb-K)^2 e",
+        "reset": "nearest-center \u21d2 \u0394W \u2264 0",
+        "intra_epoch": "K frozen: W' = \u22122\u03bd \u03a3 \u03bb^2 (\u03bb-K)^2 e + 2 \u03a3 \u03bb(\u03bb-K)^2 \u03c4. The nonlinear piece is not T_c and is not absorbed.",
+        "telescopic_at_reset": true,
+        "closes_DA_NS_2": false,
+        "note": "kills center-selection reset cost by design; does not bound #epochs"
+      },
+      {
+        "name": "D_s",
+        "formula": "Z \u2212 \u039b Y",
+        "reset": "independent of K; \u0394D_s = 0 at a chart change",
+        "intra_epoch": "D_s' still carries T_c. Not a bound.",
+        "telescopic_at_reset": true,
+        "closes_DA_NS_2": false,
+        "note": "no chart to reset; the frozen-K estimates are gone"
+      },
+      {
+        "name": "epoch-count",
+        "formula": "#{e : K_e \u2260 K_{e+1}}",
+        "reset": "counts midpoint crossings of \u039b",
+        "intra_epoch": "n/a",
+        "telescopic_at_reset": false,
+        "closes_DA_NS_2": false,
+        "note": "rejected: #epochs < \u221e is the wrong target"
+      },
+      {
+        "name": "sum |\u0394K|",
+        "formula": "\u03a3_e |K_{e+1} \u2212 K_e|",
+        "reset": "controlled by travel of \u039b through the chart",
+        "intra_epoch": "n/a",
+        "telescopic_at_reset": false,
+        "closes_DA_NS_2": false,
+        "note": "rejected unless the variation is already paid independently"
+      }
+    ],
+    "proposals": [
+      {
+        "proposal": "few resets because Lambda cannot move much",
+        "rejected": true,
+        "hits": [
+          "lambda cannot move",
+          "few resets because lambda"
+        ],
+        "rule": "Rejected as circular: a reset estimate that requires prior control of \u039b's total motion. Search for a capacity whose chart change is nonpositive or telescopes at every reset."
+      },
+      {
+        "proposal": "sum |\u0394K_e| \u2264 C int |Lambda'| dt",
+        "rejected": true,
+        "hits": [
+          "int |lambda'|"
+        ],
+        "rule": "Rejected as circular: a reset estimate that requires prior control of \u039b's total motion. Search for a capacity whose chart change is nonpositive or telescopes at every reset."
+      },
+      {
+        "proposal": "Q_{e+1}(u) \u2264 Q_e(u) at every nearest-center reset",
+        "rejected": false,
+        "hits": [],
+        "rule": "Rejected as circular: a reset estimate that requires prior control of \u039b's total motion. Search for a capacity whose chart change is nonpositive or telescopes at every reset."
+      },
+      {
+        "proposal": "nearest-center \u0394W \u2264 0, no motion hypothesis",
+        "rejected": false,
+        "hits": [],
+        "rule": "Rejected as circular: a reset estimate that requires prior control of \u039b's total motion. Search for a capacity whose chart change is nonpositive or telescopes at every reset."
+      }
+    ],
+    "log_lambda": {
+      "identity": "(log \u039b)' = 2/Y (T_c \u2212 \u03bd D_s)",
+      "also": "\u039b' = 2/X (T_c \u2212 \u03bd D_s)",
+      "status": "EXACT. Seated. Not an estimate.",
+      "warning": "this is the Gate quantity. It cannot be used as a hypothesis to bound the number of chart resets."
+    },
+    "locks": {
+      "center_selection_reset_cost_killed_by_design": true,
+      "reset_summability_not_solved": true,
+      "epoch_count_is_the_wrong_target": true,
+      "circular_lambda_motion_rejected": true,
+      "not_a_close": true
+    },
+    "next": "Search for a capacity whose chart change is nonpositive or telescopes at every center/projector/component reset. W_K with nearest-center does the jump. The intra-epoch derivative is still open. DA-NS-2 is not seated."
+  },
+  "locks": {
+    "topology_alone_does_not_force_phase_frustration": true,
+    "additive_gauge_is_translation_invariance": true,
+    "epoch_count_is_the_wrong_target": true,
+    "circular_lambda_motion_rejected": true,
+    "not_a_close": true
+  }
+}

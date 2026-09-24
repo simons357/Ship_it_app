@@ -453,4 +453,10 @@ diagnostic decay is not
 Next Gate = Joint Gap–Charge
 Epoch Budget \(\to\) DA-NS-2.
 Not SAG-6.
+The 24 Sep loop-gauge strike
+is on
+[`LOOP-GAUGE-AND-TELESCOPIC-CAPACITY.md`](LOOP-GAUGE-AND-TELESCOPIC-CAPACITY.md):
+topology is not phase
+frustration; resets must be
+telescopic, not counted.
 NS not solved.
