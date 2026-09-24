@@ -61,6 +61,8 @@ The two \(D_s\) writings \(\|(A-\Lambda)A^{1/2}u\|_2^2\) and
 | 17 | Cutoff-uniform reset ledger | **OPEN** |
 | 18 | \(\phi_\kappa/d_\kappa\) (A)(B)(C); shell limit \(5/(8\kappa^2)\) | **EXACT** |
 | 18 | Low-tail capacity \(L_e=\kappa_e^4 E_{\mathrm{low}}/Y\) | **OPEN** |
+| 18 | \(\phi_\kappa=\kappa^4-\kappa^3 m-\tfrac12\kappa^2 m^2+\tfrac12 m^4\) | **EXACT** |
+| 18 | Snapshot \(L_e\) on \(v_n\) / near-shell / separated triad | **REPORTED**; TG not run |
 
 Every new mechanism must eventually pay DA-NS-2. That integral is
 not sitting. The sharpened last mile is

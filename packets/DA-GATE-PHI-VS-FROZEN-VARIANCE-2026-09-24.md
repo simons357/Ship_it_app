@@ -113,6 +113,19 @@ D_{e}^{\mathrm{frozen,core}}.
 
 This is stronger than merely saying both vanish quadratically.
 
+The boxed weight also expands uniquely as
+
+\[
+\phi_\kappa(m)
+=
+\kappa^4-\kappa^3 m-\tfrac12\kappa^2 m^2+\tfrac12 m^4,
+\]
+
+so \(\Phi_e=\kappa^4 E-\kappa^3 H-\tfrac12\kappa^2 X+\tfrac12 Y\) with
+\(H=\|u\|_{\dot H^{1/2}}^2\). Snapshot of that identity on the
+families already on this tree:
+[`DA-GATE-LOW-TAIL-SNAPSHOT-2026-09-24.md`](DA-GATE-LOW-TAIL-SNAPSHOT-2026-09-24.md).
+
 ---
 
 ## The enemy is the low-frequency tail

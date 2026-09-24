@@ -242,6 +242,7 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 | [`CENTERED-RESIDUAL-BOARD.md`](CENTERED-RESIDUAL-BOARD.md) | Last mile: low-tail capacity + charge + epoch motion |
 | [`../../packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md`](../../packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md) | SBP identity only; tail moved, not removed; frozen convention |
 | [`../../packets/DA-GATE-PHI-VS-FROZEN-VARIANCE-2026-09-24.md`](../../packets/DA-GATE-PHI-VS-FROZEN-VARIANCE-2026-09-24.md) | \(\phi_\kappa/d_\kappa\) (A)(B)(C); enemy is the low-frequency tail; \(L_e\) diagnostic |
+| [`../../packets/DA-GATE-LOW-TAIL-SNAPSHOT-2026-09-24.md`](../../packets/DA-GATE-LOW-TAIL-SNAPSHOT-2026-09-24.md) | Snapshot \(L_e\) on existing families; separated triad \(\to 1/3\); \(v_n\) is not the low-tail enemy |
 | [`PR24-GROW-S-SCORE.md`](PR24-GROW-S-SCORE.md) | PR #24 grow-\(s\): \(\max K\approx 0.456\), not a kill |
 | [`docs/math/ns_attacks/ATTACK_9D_SETUP.md`](../math/ns_attacks/ATTACK_9D_SETUP.md) | 9D: same \(B\) as 9B; no I/O exponent locked |
 | [`SUPERGROK-ABC-LOCK.md`](SUPERGROK-ABC-LOCK.md) | SuperGrok ABC_λ filing: keep evaluator line; **refuse** falsifier stamp |

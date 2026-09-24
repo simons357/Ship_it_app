@@ -146,6 +146,23 @@ the family crosses into BROAD. That matches absorption at
 \(\theta=1/2\) on \(v_n\). Near-shell stays NARROW. Convention
 check: \(r=\sigma_\lambda/\Lambda\) on every row.
 
+Snapshot \(L_e\) on the same fields (freeze \(\kappa_e=\sqrt{\Lambda}\);
+not mixed into the SBP identity; not Taylor–Green):
+[`../../packets/DA-GATE-LOW-TAIL-SNAPSHOT-2026-09-24.md`](../../packets/DA-GATE-LOW-TAIL-SNAPSHOT-2026-09-24.md).
+
+| Field | \(\min m/\kappa\) | \(L_e\) | \(\Phi_e/Y\) | low-tail share |
+|---|---:|---:|---:|---:|
+| note triad | \(0.845\) | \(0\) | \(0.075\) | \(0\) |
+| near-shell \(\varepsilon=0.025\) | \(0.895\) | \(0\) | \(\sim10^{-5}\) | \(0\) |
+| \(v_8\) | \(0.456\) | \(0.060\) | \(0.113\) | \(0.23\) |
+| separated \(L=16\) | \(0.0625\) | \(0.332\) | \(0.311\) | \(1\) |
+
+\(v_n\) is a comparable annulus (\(\min m=n\)). The \(a=\tfrac12\)
+cut nicks its inner edge; at \(a=0.4\), \(L_e=0\). Separated
+triad is the on-tree high-core + \(m=1\) reservoir:
+\(L_e\to 1/3\) and \(\Phi_e\) is low-tail dominated. Static
+arithmetic, not a trajectory.
+
 ---
 
 ## Residual (EXACT factorization; payment OPEN)
@@ -222,7 +239,7 @@ signed sum by a sum of absolute values.
 | Heavy | \(\mathsf B^{\mathrm{prim}}w=b\) on existing loop/tree families | **Blocked.** Families not on this tree. SBP \(\Phi_e\) identity filed; core/high tail vs \(d_\kappa\) sit; low tail **OPEN**. |
 | Independent algebra | \(r\sim\kappa^{-1/2}\) conventions; \(\phi/d\) comparison | **Arithmetic sits.** Threshold not stamped. (A)(B)(C) sit. |
 | DA | Classify BROAD/NARROW; find an existing primitive for \(S_\Gamma\); no invented bridge | Not this agent |
-| Solver | On dangerous epochs: \(L_e=\kappa_e^4 E_{\mathrm{low}}/Y\) (or exact \(\phi_e\) low-tail). If \(\Phi/Y\) spikes, is it low-tail dominated? | **Named. TG 64/96 not on this tree.** |
+| Solver | On dangerous epochs: \(L_e=\kappa_e^4 E_{\mathrm{low}}/Y\) (or exact \(\phi_e\) low-tail). If \(\Phi/Y\) spikes, is it low-tail dominated? | **Named. TG 64/96 not on this tree.** On-tree snapshot: separated triad is low-tail dominated (\(L_e\to 1/3\)); \(v_n\) is not. |
 | Narrow residual | Low-tail persistence under high \(\kappa_e\); charge; epoch motion | **OPEN** |
 
 ---

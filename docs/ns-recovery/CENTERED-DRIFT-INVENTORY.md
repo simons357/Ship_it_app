@@ -199,6 +199,12 @@ Gates: `packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md`,
 `packets/DA-GATE-PHI-VS-FROZEN-VARIANCE-2026-09-24.md`.
 Do not mix live \(\Lambda\) with frozen \(\lambda_e\).
 Taylor–Green \(L_e\) / low-tail share is not run here.
+On-tree snapshot (not mixed into the SBP identity):
+`packets/DA-GATE-LOW-TAIL-SNAPSHOT-2026-09-24.md`.
+\(\phi=\kappa^4-\kappa^3 m-\tfrac12\kappa^2 m^2+\tfrac12 m^4\) sits.
+Separated triad is low-tail dominated with \(L_e\to 1/3\).
+\(v_n\) is a comparable annulus (\(\min m=n\)), not an \(O(1)\)
+reservoir.
 
 **SAG / JGC ledger filed.** Exact algebra, reported numerics, and
 kills are separated in
