@@ -715,6 +715,9 @@ First missing implication:
 per-triangle geometry \(\not\Rightarrow\)
 signed bound on the sum.
 
+That implication is now a gate:
+[`SIGNED-ASSEMBLY-GATE.md`](SIGNED-ASSEMBLY-GATE.md).
+It sits before old Gate 5.
 Do not evolve a bound that was never
 written. No A2. No prime glue.
 NS not solved.

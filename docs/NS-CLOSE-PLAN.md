@@ -556,9 +556,13 @@ missing implication is the signed
 sum, not the time integral. Prime
 masks do not fill it.
 
-Next write = Route B snapshot:
-non-tautological \(\mathcal I_\Lambda\),
-or a named death of that CS.
+Signed Assembly Gate
+(`docs/SIGNED-ASSEMBLY-GATE.md`, 24 Sep)
+sits before old Gate 5. Next write =
+sum the signed triangle identity
+without \(\lvert\widehat B_k\rvert\)
+early, on a named class — or name
+the death.
 
 Two routes, both OPEN, both
 killable. If both die, the leftover
