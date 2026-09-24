@@ -20,6 +20,8 @@ Relative width:
 [`WIDTH.md`](WIDTH.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
+Finite-\(N\) run:
+[`SIGN-RUN.md`](SIGN-RUN.md).
 Machine: `python3 scripts/sign_gate.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.
@@ -28,8 +30,6 @@ Do not cash B★ as G5.
 Do not seat JGC.
 Do not invent a bridge.
 Do not run Taylor–Green.
-Do not run a Heavy search
-on this desk.
 Do not mix scalene
 homochiral loops into this
 heterochiral sign question.
@@ -55,10 +55,13 @@ The four outcome buckets.
 The seed schema \(\mathcal A_N^{+}\).
 
 **Not on this desk.**
-A Heavy print. BOTH SIGNS.
+Persistence \(N\to\infty\).
+A seated death of
+one-sided depletion.
 ONE SIGN as a seated
 \(I_3\) bridge. Vandermonde
 as a remainder. Lemma B.
+Heavy scalene loops.
 
 ---
 
@@ -249,6 +252,7 @@ Lemma B stays OPEN.
 ## Lock
 
 The gate is \(L_{1,N}\). Do not put \(T^{(0)}\) in the finite-gap identity.
-No sign verdict sits.
+Finite-\(N\) BOTH SIGNS is on [`SIGN-RUN.md`](SIGN-RUN.md).
+No persistence verdict sits.
 G4 stays OPEN. ★ stays killed.
 NS not solved.

@@ -52,6 +52,8 @@ Lemma B OPEN):
 [`PRESS.md`](PRESS.md).
 Sign gate:
 [`SIGN-GATE.md`](SIGN-GATE.md).
+Finite-\(N\) run:
+[`SIGN-RUN.md`](SIGN-RUN.md).
 
 This page answers the operator’s
 question: how do we beat unforced

@@ -23,6 +23,8 @@ Lemma B OPEN):
 [`PRESS.md`](PRESS.md).
 Sign gate:
 [`SIGN-GATE.md`](SIGN-GATE.md).
+Finite-\(N\) run:
+[`SIGN-RUN.md`](SIGN-RUN.md).
 
 Reproduce the finite checks:
 python3 -m unittest tests.test_centered_barycenter

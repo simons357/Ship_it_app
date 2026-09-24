@@ -50,6 +50,8 @@ Lemma B OPEN):
 [`PRESS.md`](PRESS.md).
 Sign gate:
 [`SIGN-GATE.md`](SIGN-GATE.md).
+Finite-\(N\) run:
+[`SIGN-RUN.md`](SIGN-RUN.md).
 Score:
 [`NS-STATUS.md`](NS-STATUS.md).
 Tape:

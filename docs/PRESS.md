@@ -22,6 +22,8 @@ Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 Sign gate:
 [`SIGN-GATE.md`](SIGN-GATE.md).
+Finite-\(N\) run:
+[`SIGN-RUN.md`](SIGN-RUN.md).
 Machine: `python3 scripts/press.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.

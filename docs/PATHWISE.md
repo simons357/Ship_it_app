@@ -30,6 +30,8 @@ Press:
 [`PRESS.md`](PRESS.md).
 Sign gate:
 [`SIGN-GATE.md`](SIGN-GATE.md).
+Finite-\(N\) run:
+[`SIGN-RUN.md`](SIGN-RUN.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 Machine: `python3 scripts/pathwise.py`.

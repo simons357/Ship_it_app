@@ -43,6 +43,8 @@ Lemma B OPEN):
 [`PRESS.md`](PRESS.md).
 Sign gate:
 [`SIGN-GATE.md`](SIGN-GATE.md).
+Finite-\(N\) run:
+[`SIGN-RUN.md`](SIGN-RUN.md).
 
 This desk is **unaugmented**.
 A is not B. Keep \(1/r^4\).
@@ -251,6 +253,11 @@ The first-variation gate is
 sits. Not a useful \(K\) and
 not a death of G4.
 [`SIGN-GATE.md`](SIGN-GATE.md).
+Finite-\(N\) BOTH SIGNS is
+printed. Persistence OPEN.
+Universal depletion is not
+killed.
+[`SIGN-RUN.md`](SIGN-RUN.md).
 
 Useful \(K\) or a named death.
 Do not restore

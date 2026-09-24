@@ -70,6 +70,8 @@ Lemma B OPEN):
 [`PRESS.md`](PRESS.md).
 Sign gate:
 [`SIGN-GATE.md`](SIGN-GATE.md).
+Finite-\(N\) run:
+[`SIGN-RUN.md`](SIGN-RUN.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 

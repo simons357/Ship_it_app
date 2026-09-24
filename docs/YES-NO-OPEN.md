@@ -104,6 +104,7 @@ stay samples. They are not this kill.
 | SBP rewrite if \((d/dt)_{\mathrm{NL}}H_{1/2}=2Q_a\) | \(T_c=(d/dt)_{\mathrm{NL}}\Phi_e+2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\). Identity, not a payment. Frozen \(\lambda_e\). [`SBP.md`](SBP.md). |
 | Lemma A / \(\Phi_e\le W_{\lambda_e}\) | Unit torus, \(m\ge 1\), \(\kappa\ge 1\). Sharp L3: \(\Phi_e\le\mathcal D_s+X(\Lambda-\lambda_e)^2\). Young L2 is weaker. [`PRESS.md`](PRESS.md). |
 | Discrete \(T_c\) expansion | \(T_c=\Lambda\langle\delta,T\rangle+\sum\delta_m^2 T_m\). Exact. \(T_m\) is the live neighboring transfer. [`SIGN-GATE.md`](SIGN-GATE.md). |
+| Finite-\(N\) BOTH SIGNS on neighboring helical triads | Printed on \(N=2,\dots,8\). \(\lvert\rho\rvert\ge 0.84\). \(\lvert R_2/L_1\rvert\) falls. Persistence OPEN. [`SIGN-RUN.md`](SIGN-RUN.md). |
 
 ---
 
@@ -167,7 +168,7 @@ stay samples. They are not this kill.
 | Lemma A as an \(\mathbb{R}^3\) / scale-invariant bound | Off-torus \(m=0.1\), \(\kappa=0.5\) kills (A). Torus units only. [`PRESS.md`](PRESS.md). |
 | RESET \(\lvert\Lambda-\lambda_e\rvert=c\sqrt{\Lambda}\) as a payment / as JGC | Named chart. \(\zeta_e^2=c^2\) is a choice, not BROAD-scale, not summability. [`PRESS.md`](PRESS.md). |
 | Lemma B / charge–epoch ledger as sitting | Charge is a different bill. \(D_s\) cannot pay \(D_a\) on a narrow annulus. Not written. [`PRESS.md`](PRESS.md). |
-| First-variation sign gate as a seated verdict / as a useful \(K\) | \(L_{1,N}\) is the gate. No Heavy print. BOTH SIGNS / ONE SIGN / ZERO ONLY / NO NEIGHBOR are categories. Do not invent \(\mathcal A_N^{+}\). [`SIGN-GATE.md`](SIGN-GATE.md). |
+| First-variation sign gate as a seated verdict / as a useful \(K\) | \(L_{1,N}\) is the gate. Finite-\(N\) BOTH SIGNS is printed. Persistence OPEN. Universal depletion is not killed. Do not invent a persistent \(\mathcal A_N^{+}\). [`SIGN-GATE.md`](SIGN-GATE.md), [`SIGN-RUN.md`](SIGN-RUN.md). |
 | Substituting \(T^{(0)}\) into the finite-gap identity | Transfer variation is the next order. Keep neighboring \(T_m\) as \(R_{2,N}\). [`SIGN-GATE.md`](SIGN-GATE.md). |
 | ONE SIGN as a seated \(I_3\) bridge | Named question only. Arithmetic rigidity is not sign depletion. [`SIGN-GATE.md`](SIGN-GATE.md). |
 | Switch this line to augmented NS / Theorem A | Track A is a different PDE. A is not B. |
@@ -269,6 +270,8 @@ Lemma B OPEN):
 [`PRESS.md`](PRESS.md).
 Sign gate:
 [`SIGN-GATE.md`](SIGN-GATE.md).
+Finite-\(N\) run:
+[`SIGN-RUN.md`](SIGN-RUN.md).
 
 SND-to-regularity implication is
 **OPEN** as a named hole on the SND/H

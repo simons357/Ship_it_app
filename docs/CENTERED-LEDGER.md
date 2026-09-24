@@ -29,6 +29,8 @@ Lemma B OPEN):
 [`PRESS.md`](PRESS.md).
 Sign gate:
 [`SIGN-GATE.md`](SIGN-GATE.md).
+Finite-\(N\) run:
+[`SIGN-RUN.md`](SIGN-RUN.md).
 Machine: `python3 scripts/centered_ledger.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.
