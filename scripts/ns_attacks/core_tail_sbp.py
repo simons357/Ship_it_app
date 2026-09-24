@@ -37,6 +37,60 @@ def phi_e_poly(m: float, kappa: float) -> float:
     return 0.5 * m**4 - 0.5 * kappa**2 * m**2 - kappa**3 * m + kappa**4
 
 
+def d_kappa(m: float, kappa: float) -> float:
+    """Frozen spectral-variance weight: m²(m²−κ²)²."""
+    return (m * m) * (m * m - kappa * kappa) ** 2
+
+
+def phi_over_d(m: float, kappa: float) -> float:
+    """Exact ratio (A) for m≠κ. Limit 5/(8κ²) at the shell."""
+    if abs(m - kappa) < 1e-14:
+        return 5.0 / (8.0 * kappa * kappa)
+    return (m * m + 2.0 * kappa * m + 2.0 * kappa * kappa) / (
+        2.0 * m * m * (m + kappa) ** 2
+    )
+
+
+def phi_over_d_scaled(x: float) -> float:
+    """(x²+2x+2) / (x²(x+1)²). Then φ/d = this / (2κ²)."""
+    return (x * x + 2.0 * x + 2.0) / (x * x * (x + 1.0) ** 2)
+
+
+def C_annulus(a: float, b: float, n: int = 400) -> float:
+    """C(a,b) = (1/2) max_{[a,b]} (x²+2x+2)/(x²(x+1)²), a>0.
+
+    φ/d ≤ C(a,b)/κ² on aκ ≤ m ≤ bκ. Monotone decreasing in x, so max at a.
+    """
+    if a <= 0 or b < a:
+        raise ValueError("need 0 < a ≤ b")
+    return 0.5 * phi_over_d_scaled(a)
+
+
+def sympy_phi_vs_d() -> dict:
+    m, k, x = sp.symbols("m kappa x", positive=True)
+    phi = sp.Rational(1, 2) * (m - k) ** 2 * (m**2 + 2 * k * m + 2 * k**2)
+    d = m**2 * (m**2 - k**2) ** 2
+    ratio = sp.simplify(phi / d)
+    target_A = (m**2 + 2 * k * m + 2 * k**2) / (2 * m**2 * (m + k) ** 2)
+    scaled = (x**2 + 2 * x + 2) / (x**2 * (x + 1) ** 2)
+    ratio_x = sp.simplify(ratio.subs(m, x * k))
+    target_B = scaled / (2 * k**2)
+    lim = sp.limit(ratio, m, k)
+    g = scaled
+    dg = sp.together(sp.diff(g, x))
+    num, den = sp.fraction(sp.together(dg))
+    # den = x³ (x+1)³ > 0 for x>0; sign(dg)=sign(num).
+    return {
+        "A_identity": bool(sp.simplify(ratio - target_A) == 0),
+        "B_identity": bool(sp.simplify(ratio_x - target_B) == 0),
+        "shell_limit": str(lim),
+        "shell_limit_is_5_over_8k2": bool(sp.simplify(lim - sp.Rational(5, 8) / k**2) == 0),
+        "dg_numerator": str(sp.factor(num)),
+        "dg_numerator_nonpositive": bool(sp.simplify(num).subs(x, 1) < 0),
+        "ratio_A": str(sp.simplify(ratio)),
+    }
+
+
 def sympy_phi_factorization() -> dict:
     m, k = sp.symbols("m kappa", real=True)
     fact = sp.Rational(1, 2) * (m - k) ** 2 * (m**2 + 2 * k * m + 2 * k**2)
@@ -185,23 +239,30 @@ def phi_over_Y_split(
     kappa: float,
     core_halfwidth: float,
 ) -> dict:
-    """Split Φ_e/Y into low tail / core / high tail. Diagnostic, not a bound."""
+    """Split Φ_e/Y and report L_e = κ⁴ E_low / Y. Diagnostic, not a bound."""
     phi = [phi_e(m, kappa) * w for m, w in zip(radii, mass)]
+    dwt = [d_kappa(m, kappa) * w for m, w in zip(radii, mass)]
     y = [m**4 * w for m, w in zip(radii, mass)]
     Y = sum(y)
     Phi = sum(phi)
+    D_fr = sum(dwt)
     low = core = high = 0.0
     y_low = y_core = y_high = 0.0
-    for m, p, yy in zip(radii, phi, y):
+    d_core = 0.0
+    E_low = 0.0
+    for m, w, p, yy, dd in zip(radii, mass, phi, y, dwt):
         if m < kappa - core_halfwidth:
             low += p
             y_low += yy
+            E_low += w
         elif m > kappa + core_halfwidth:
             high += p
             y_high += yy
         else:
             core += p
             y_core += yy
+            d_core += dd
+    L_e = (kappa**4 * E_low / Y) if Y else None
     return {
         "Phi_over_Y": Phi / Y if Y else None,
         "low_share_of_Phi": low / Phi if Phi else None,
@@ -210,10 +271,26 @@ def phi_over_Y_split(
         "low_share_of_Y": y_low / Y if Y else None,
         "core_share_of_Y": y_core / Y if Y else None,
         "high_share_of_Y": y_high / Y if Y else None,
+        "Phi_low_over_Y": low / Y if Y else None,
+        "L_e": L_e,
+        "E_low": E_low,
+        "D_frozen": D_fr,
+        "D_frozen_core": d_core,
         "phi_at_zero": phi_e(0.0, kappa),
         "kappa4": kappa**4,
         "no_TG_data_in_checkout": True,
     }
+
+
+def high_core_low_reservoir(kappa: float = 20.0, e_low: float = 0.02, i_core: float = 1.0) -> dict:
+    """Old adversary: high-frequency core + small low-frequency population."""
+    radii = [1.0, kappa]
+    mass = [e_low, i_core]
+    half = 0.25 * kappa
+    split = phi_over_Y_split(radii, mass, kappa, core_halfwidth=half)
+    split["E_low_over_E"] = e_low / (e_low + i_core)
+    split["low_dominates_Phi"] = (split["low_share_of_Phi"] or 0.0) > 0.5
+    return split
 
 
 def report() -> dict:
@@ -221,6 +298,7 @@ def report() -> dict:
     mass = [0.4, 0.3, 0.2, 0.5, 0.4, 0.05, 0.01]
     return {
         "phi": sympy_phi_factorization(),
+        "phi_vs_d": sympy_phi_vs_d(),
         "R_core": sympy_R_core(),
         "sbp": sympy_modal_sbp(),
         "m_flux": sympy_waleffe_m_flux(),
@@ -228,6 +306,9 @@ def report() -> dict:
         "R_bound": R_linear_bound_sample(),
         "tail_Ds": tail_holds_Ds(),
         "Phi_Y_split": phi_over_Y_split(radii, mass, kappa=3.0, core_halfwidth=0.4),
+        "high_core_low_reservoir": high_core_low_reservoir(),
+        "C_half_to_2": C_annulus(0.5, 2.0),
+        "shell_C": 5.0 / 8.0,
         "conventions": {
             "frozen_epoch_only": True,
             "live_kappa_does_not_telescope": True,
@@ -238,6 +319,7 @@ def report() -> dict:
             "not_a_close": True,
             "not_DA_NS_2": True,
             "moves_tail_does_not_remove_it": True,
+            "low_tail_is_the_enemy": True,
             "no_TG_in_this_checkout": True,
         },
     }

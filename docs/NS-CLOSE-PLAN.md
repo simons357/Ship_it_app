@@ -663,6 +663,17 @@ the identity is still
 \(2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\).
 Do not mix live \(\kappa(t)\)
 with frozen \(\kappa_e\).
+Low-tail capacity
+(`docs/LOW-TAIL-CAPACITY.md`):
+\(\phi_\kappa/d_\kappa\) EXACT;
+core (C) EXACT; high tail
+favorable; \(L_e=\kappa_e^4
+E_{\mathrm{low}}/Y\) OPEN.
+Last mile = low tail +
+charge + epoch motion.
+Do not read 64/96 without
+saying whether a \(\Phi/Y\)
+spike is low-tail dominated.
 
 Two routes, both OPEN, both
 killable. If both die, the leftover

@@ -49,12 +49,24 @@ immediately upstream is
 
 \[
 \boxed{
-\textbf{NARROW HETEROCHIRAL RESIDUAL}
-\quad
-2\kappa^3 Q_a
--(\Lambda-\kappa_e^2)S_\Gamma
+\textbf{NARROW HETEROCHIRAL LAST MILE}
+=
+\textbf{LOW-TAIL CAPACITY}
++
+\textbf{CHARGE}
++
+\textbf{EPOCH MOTION}.
 }
 \]
+
+Charge / motion still sit in
+
+\[
+2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N.
+\]
+
+Low-tail capacity:
+[`LOW-TAIL-CAPACITY.md`](LOW-TAIL-CAPACITY.md).
 
 with
 
@@ -435,5 +447,9 @@ Isotropic restriction:
 Charge and \(S\) do not share
 one \(w\). SBP EXACT, frozen
 epoch; \(\Phi_e/Y\) OPEN.
+Low tail OPEN; high tail
+favorable. Last mile =
+low-tail capacity + charge
++ epoch motion.
 Not DA-NS-2.
 NS not solved.

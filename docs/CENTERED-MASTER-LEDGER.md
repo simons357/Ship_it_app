@@ -30,7 +30,8 @@ Pointers:
 [`JOINT-EPOCH-BUDGET.md`](JOINT-EPOCH-BUDGET.md),
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md),
 [`NARROW-HET-RESIDUAL.md`](NARROW-HET-RESIDUAL.md),
-[`CORE-TAIL-SBP.md`](CORE-TAIL-SBP.md).
+[`CORE-TAIL-SBP.md`](CORE-TAIL-SBP.md),
+[`LOW-TAIL-CAPACITY.md`](LOW-TAIL-CAPACITY.md).
 
 ---
 
@@ -60,6 +61,8 @@ Pointers:
 | 20 | \(S_\Gamma\) quadratic primitive on lattice loops | **NO** (holonomy); \(L\)-trees yes |
 | 21 | Core / tail SBP \(\mathfrak T_c=\Phi_e'+2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\) | **EXACT** (frozen epoch) |
 | 22 | \(\Phi_e/Y\); charge and moving \(N\) after SBP | **OPEN** |
+| 23 | \(\phi_\kappa/d_\kappa\); core (C), high tail favorable | **EXACT** |
+| 24 | Low-tail capacity \(L_e=\kappa_e^4 E_{\mathrm{low}}/Y\) | **OPEN** |
 
 Every new mechanism must eventually
 pay §2. Talking is not that integral.
@@ -713,4 +716,9 @@ moves the tail, does not
 remove it. Do not mix live
 \(\kappa(t)\) with frozen
 \(\kappa_e\). \(\Phi_e/Y\) OPEN.
+Low tail OPEN; high tail
+favorable
+([`LOW-TAIL-CAPACITY.md`](LOW-TAIL-CAPACITY.md)).
+Last mile = low-tail capacity
++ charge + epoch motion.
 NS not solved.

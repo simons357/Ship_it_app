@@ -167,12 +167,15 @@ Charge is the
 the full pairing
 \(\tfrac12 X'_{\mathrm{NL}}\).
 
-Taylor–Green \(\Phi_e/Y\) split
-(core / low / high) is the
-next measurement. No \(N=64\)
-or \(N=96\) data in this
-checkout. The splitter is
-ready.
+Do not read 64/96 until
+[`LOW-TAIL-CAPACITY.md`](LOW-TAIL-CAPACITY.md)
+is used: compare \(\phi_\kappa\)
+to \(d_\kappa\), return
+\(L_e=\kappa_e^4 E_{\mathrm{low}}/Y\),
+and say whether a \(\Phi/Y\)
+spike is low-tail dominated.
+High tail is favorable.
+Low tail is OPEN.
 
 ---
 
@@ -184,6 +187,8 @@ SBP EXACT, frozen epoch.
 Do not mix live and frozen.
 (4) remains forbidden.
 Tail can hold \(\mathcal D_s\).
-\(\Phi_e/Y\) OPEN.
-Charge and moving \(N\) OPEN.
+\(\Phi_e/Y\) OPEN, and the
+enemy is the **low** tail.
+Last mile = low-tail capacity
++ charge + epoch motion.
 Not DA-NS-2. NS not solved.

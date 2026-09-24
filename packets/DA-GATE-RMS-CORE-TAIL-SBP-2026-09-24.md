@@ -219,14 +219,17 @@ its heterochiral part.
   charge (\(\dot H^{1/2}\) flux)
   and \(-(\Lambda-\lambda_e)N\).
 
-Useful next measurement
-(not in this checkout):
-\(\Phi_e/Y\) split into core,
-low tail, high tail, on the
-existing Taylor–Green \(N=64\)
-and \(N=96\) runs. The splitter
-is in `core_tail_sbp.py`.
-Adversarial, not averages.
+Before 64/96: compare
+\(\phi_\kappa\) to \(d_\kappa\).
+Core is controlled by frozen
+variance (C). High tail is
+favorable (\(\sim 1/(2m^2)\)).
+Low tail blows up
+(\(\sim 1/m^2\)). Return
+\(L_e=\kappa_e^4 E_{\mathrm{low}}/Y\)
+and whether a \(\Phi/Y\) spike
+is low-tail dominated.
+[`docs/LOW-TAIL-CAPACITY.md`](../docs/LOW-TAIL-CAPACITY.md).
 
 ---
 
@@ -241,7 +244,8 @@ core-radius comparison EXACT.
 (4) stays the forbidden
 absolute-sum step.
 Tail can hold \(\mathcal D_s\).
-\(\Phi_e/Y\) OPEN.
-Charge and
-\(-(\Lambda-\lambda_e)N\) OPEN.
+\(\Phi_e/Y\) OPEN; the enemy
+is the **low** tail.
+Last mile = low-tail capacity
++ charge + epoch motion.
 Not DA-NS-2. NS not solved.
