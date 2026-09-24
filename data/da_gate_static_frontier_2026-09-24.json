@@ -1,0 +1,76 @@
+{
+  "title": "DA-GATE static frontier: arithmetic sign realizability",
+  "date": "2026-09-24",
+  "packet": "packets/DA-GATE-STATIC-FRONTIER-2026-09-24.md",
+  "ns_solved": false,
+  "da_ns_2": "OPEN",
+  "tail_estimate": "OPEN",
+  "sbp_gate_unaltered": true,
+  "no_more_potentials": true,
+  "no_reinterpretation_of_the_same_clock": true,
+  "rho_N_pm_is_not_ledger_rho_Gamma": true,
+  "I_3_seated_here": false,
+  "predicted_R2_order_invented_here": false,
+  "frontiers": {
+    "static": "arithmetic sign realizability",
+    "dynamic": "dangerous-state persistence"
+  },
+  "locked": [
+    "L_{1,N} = Lambda_N <delta_N, T_N^{(0)}>",
+    "R_{2,N} := T_{c,N} - Lambda_N <delta_N, T_N^{(0)}>",
+    "four-outcome tree",
+    "A_N^+ seed schema"
+  ],
+  "forbidden": [
+    "silently substitute T^{(0)} into the full finite-gap identity",
+    "treat neighboring T_m as frozen under the deformation",
+    "alter the 24 Sep RMS/core/tail/SBP gate",
+    "more potentials",
+    "reinterpretation of the same clock"
+  ],
+  "open": [
+    "predicted higher-order behaviour of R_{2,N}",
+    "sign-realizability search",
+    "Gram/lattice encoding of a one-sign restriction",
+    "DA-NS-2"
+  ],
+  "named_not_evaluated": [
+    "Theta_N = nu kappa_N^2 tau_{U,N}"
+  ],
+  "outcomes": {
+    "BOTH_SIGNS": {
+      "family": "heterochiral",
+      "criterion": "|rho_N^pm| >= c > 0",
+      "verdict": "universal first-order one-sided narrow depletion is false",
+      "next": "stop static closure; positive branch to evolution; keep Theta_N"
+    },
+    "ZERO_ONLY": {
+      "family": "homochiral",
+      "verdict": "consistent with Vandermonde delay",
+      "does_not_rescue_NSE": true
+    },
+    "ONE_SIGN": {
+      "family": "heterochiral",
+      "next": "determine whether the restriction is Gram/lattice realization",
+      "I_3_bridge": "prospective; not seated here"
+    },
+    "NO_NEIGHBOR": {
+      "own_category": true,
+      "arithmetic_rigidity_is_not_sign_depletion": true
+    }
+  },
+  "adversarial_seed": {
+    "name": "A_N^+",
+    "required": [
+      "integer_wavevectors",
+      "helicity_labels",
+      "polarizations",
+      "amplitudes"
+    ],
+    "not_sufficient": [
+      "delta",
+      "T^{(0)}"
+    ],
+    "save_only_if": "BOTH_SIGNS"
+  }
+}
