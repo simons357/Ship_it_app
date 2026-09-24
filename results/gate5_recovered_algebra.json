@@ -1,0 +1,71 @@
+{
+  "ns_solved": false,
+  "reopened": false,
+  "D_plus_is": "4*C0*C2 - C1^2",
+  "D_plus_is_not": "C1^2 - 4*C0*C2",
+  "definitions_of_u_m_d": "missing",
+  "definition_of_c": "missing",
+  "definition_of_plus_plus_plus": "missing",
+  "six_permutation_identity": "missing",
+  "numerical_protocol": "missing",
+  "chamber_search": false,
+  "samples": [
+    {
+      "u": "1/2",
+      "m": "1/2",
+      "C0": "243/16",
+      "C1": "81/8",
+      "C2": "11/2",
+      "D_plus": "14823/64",
+      "z_star": "-81/88",
+      "z_max": "1/4",
+      "vertex_identity": true
+    },
+    {
+      "u": "1",
+      "m": "2",
+      "C0": "1344",
+      "C1": "-392",
+      "C2": "88",
+      "D_plus": "319424",
+      "z_star": "49/22",
+      "z_max": "4",
+      "vertex_identity": true
+    },
+    {
+      "u": "3/2",
+      "m": "1",
+      "C0": "855/2",
+      "C1": "265/4",
+      "C2": "11",
+      "D_plus": "230735/16",
+      "z_star": "-265/88",
+      "z_max": "1",
+      "vertex_identity": true
+    },
+    {
+      "u": "2",
+      "m": "3",
+      "C0": "12888",
+      "C1": "-1527",
+      "C2": "172",
+      "D_plus": "6535215",
+      "z_star": "1527/344",
+      "z_max": "9",
+      "vertex_identity": true
+    },
+    {
+      "u": "1/5",
+      "m": "7/3",
+      "C0": "1817792/2025",
+      "C1": "-547156/1125",
+      "C2": "28324/225",
+      "D_plus": "2454296865776/11390625",
+      "z_star": "136789/70810",
+      "z_max": "91/25",
+      "vertex_identity": true
+    }
+  ],
+  "all_vertex_identities": true,
+  "note": "Transcription lock of recovered Gate-5 algebra only. Does not define u,m,d and does not reopen the roadmap. NS not solved."
+}

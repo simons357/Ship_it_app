@@ -184,3 +184,14 @@ in the PDE.
 \(\lvert\rho_{\lambda,t}\rvert\to 1\). First missing implication
 unchanged. Do not redo K=0, the §4 triad, the \(\varepsilon\)-scan,
 the slot score sheet, or this barycenter page.
+
+---
+
+## 8. Superseded Gate roadmap (audit only)
+
+Recoverable formulas:
+[`GATE-ROADMAP-LINEAGE.md`](GATE-ROADMAP-LINEAGE.md).
+Does **not** overwrite this inventory. **REOPEN = recompute only.**
+\(u,m,d\), \(+++\), \(c\), the six-permutation expansion, and the
+numerical protocol are **missing**. Do not invent them. Do not
+search the recorded danger chamber from this filing.

@@ -47,6 +47,8 @@ Remaining-work lock: [`WHAT-ELSE.md`](WHAT-ELSE.md). Specialist break questions:
 
 Natural same-shell (9C), AP fan (9A), and finite 9B \(K_{\alpha,\beta}\) samples are **not kills**. Do not re-run them as if they were the remaining job.
 
+The old Gate-5–7 roadmap is **superseded**. Lineage filing: [`GATE-ROADMAP-LINEAGE.md`](GATE-ROADMAP-LINEAGE.md). It does not overwrite the live board. **REOPEN = recompute only.** Do not invent the missing \(u,m,d,c,+++\) definitions.
+
 ---
 
 ## Canonical formulas (locked)
@@ -233,6 +235,7 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 | [`GROWING-LAYER-SCORE.md`](GROWING-LAYER-SCORE.md) | Growing-layer family: evaluator kill of uniform \(\mathcal R_\star\) |
 | [`CENTERED-DRIFT-K-CANDIDATES.md`](CENTERED-DRIFT-K-CANDIDATES.md) | Comparable / near-shell \(K\) score sheet; uniform slots die; no proved \(K\) |
 | [`CENTERED-SPECTRAL-BARYCENTER.md`](CENTERED-SPECTRAL-BARYCENTER.md) | Enstrophy barycenter: slope \(\beta_{t\sim\lambda}\); collapse is the face |
+| [`GATE-ROADMAP-LINEAGE.md`](GATE-ROADMAP-LINEAGE.md) | Superseded Gate-1–7 recovery; **REOPEN = recompute only**; does not overwrite the live board |
 | [`PR24-GROW-S-SCORE.md`](PR24-GROW-S-SCORE.md) | PR #24 grow-\(s\): \(\max K\approx 0.456\), not a kill |
 | [`docs/math/ns_attacks/ATTACK_9D_SETUP.md`](../math/ns_attacks/ATTACK_9D_SETUP.md) | 9D: same \(B\) as 9B; no I/O exponent locked |
 | [`SUPERGROK-ABC-LOCK.md`](SUPERGROK-ABC-LOCK.md) | SuperGrok ABC_λ filing: keep evaluator line; **refuse** falsifier stamp |
