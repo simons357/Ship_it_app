@@ -21,6 +21,8 @@ tail; not a useful \(K\)):
 Press (Lemma A sits;
 Lemma B OPEN):
 [`PRESS.md`](PRESS.md).
+Sign gate:
+[`SIGN-GATE.md`](SIGN-GATE.md).
 
 Reproduce the finite checks:
 python3 -m unittest tests.test_centered_barycenter

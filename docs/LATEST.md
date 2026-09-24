@@ -143,6 +143,8 @@ docs/SBP.md
 Press (Lemma A sits;
 Lemma B OPEN):
 docs/PRESS.md
+Sign gate (L_1,N; no verdict):
+docs/SIGN-GATE.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

@@ -20,6 +20,8 @@ Overnight page:
 [`DA-NS-2.md`](DA-NS-2.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
+Sign gate:
+[`SIGN-GATE.md`](SIGN-GATE.md).
 Machine: `python3 scripts/press.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.

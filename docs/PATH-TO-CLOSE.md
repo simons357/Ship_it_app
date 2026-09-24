@@ -41,6 +41,8 @@ SBP / \(\Phi_e\):
 Press (Lemma A sits;
 Lemma B OPEN):
 [`PRESS.md`](PRESS.md).
+Sign gate:
+[`SIGN-GATE.md`](SIGN-GATE.md).
 
 This desk is **unaugmented**.
 A is not B. Keep \(1/r^4\).
@@ -244,6 +246,11 @@ Lemma B stays OPEN. Not a
 useful \(K\) and not a death
 of G4.
 [`PRESS.md`](PRESS.md).
+The first-variation gate is
+\(L_{1,N}\). No sign verdict
+sits. Not a useful \(K\) and
+not a death of G4.
+[`SIGN-GATE.md`](SIGN-GATE.md).
 
 Useful \(K\) or a named death.
 Do not restore

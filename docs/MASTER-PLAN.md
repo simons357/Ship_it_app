@@ -50,6 +50,8 @@ SBP / \(\Phi_e\):
 Press (Lemma A sits;
 Lemma B OPEN):
 [`PRESS.md`](PRESS.md).
+Sign gate:
+[`SIGN-GATE.md`](SIGN-GATE.md).
 
 This page answers the operator’s
 question: how do we beat unforced

@@ -68,6 +68,8 @@ tail; not a useful \(K\)):
 Press (Lemma A sits;
 Lemma B OPEN):
 [`PRESS.md`](PRESS.md).
+Sign gate:
+[`SIGN-GATE.md`](SIGN-GATE.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 

@@ -48,6 +48,8 @@ SBP / \(\Phi_e\):
 Press (Lemma A sits;
 Lemma B OPEN):
 [`PRESS.md`](PRESS.md).
+Sign gate:
+[`SIGN-GATE.md`](SIGN-GATE.md).
 Score:
 [`NS-STATUS.md`](NS-STATUS.md).
 Tape:

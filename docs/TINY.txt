@@ -187,6 +187,8 @@ docs/SBP.md
 Press (Lemma A sits;
 Lemma B OPEN):
 docs/PRESS.md
+Sign gate (L_1,N; no verdict):
+docs/SIGN-GATE.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md

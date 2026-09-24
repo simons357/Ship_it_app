@@ -31,6 +31,8 @@ SBP / \(\Phi_e\):
 [`SBP.md`](SBP.md).
 Press:
 [`PRESS.md`](PRESS.md).
+Sign gate:
+[`SIGN-GATE.md`](SIGN-GATE.md).
 Machine: `python3 scripts/mn_cancel.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.

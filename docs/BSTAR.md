@@ -80,6 +80,8 @@ SBP / \(\Phi_e\):
 [`SBP.md`](SBP.md).
 Press:
 [`PRESS.md`](PRESS.md).
+Sign gate:
+[`SIGN-GATE.md`](SIGN-GATE.md).
 Do not start leftover 1.
 Do not weld \(\star\).
 Do not cash B★ as G5.

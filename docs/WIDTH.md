@@ -20,6 +20,8 @@ SBP / \(\Phi_e\):
 Press (Lemma A sits;
 Lemma B OPEN):
 [`PRESS.md`](PRESS.md).
+Sign gate:
+[`SIGN-GATE.md`](SIGN-GATE.md).
 Machine: `python3 scripts/width.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.

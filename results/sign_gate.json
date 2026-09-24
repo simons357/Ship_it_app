@@ -1,0 +1,130 @@
+{
+  "not_a_close": true,
+  "star_stays_killed": true,
+  "gate_unaltered": true,
+  "identities": {
+    "expansion": "T_c = \u039b\u27e8\u03b4,T\u27e9 + \u03a3 \u03b4_m\u00b2 T_m,  \u03b4_m=\u03bb_m-\u039b",
+    "L1": "L_{1,N}=\u039b_N \u27e8\u03b4_N, T_N^{(0)}\u27e9",
+    "R2": "R_{2,N}=T_{c,N}-\u039b_N \u27e8\u03b4_N, T_N^{(0)}\u27e9"
+  },
+  "expansion_ok": true,
+  "frozen_R2_is_quadratic": true,
+  "shrink": [
+    {
+      "eta": 1.0,
+      "L1": -9.11111111111111,
+      "R2": 0.22222222222222143,
+      "R2_over_gap2": 0.22222222222222143
+    },
+    {
+      "eta": 0.5,
+      "L1": -4.264705882352941,
+      "R2": 0.02941176470588225,
+      "R2_over_gap2": 0.117647058823529
+    },
+    {
+      "eta": 0.25,
+      "L1": -2.0643939393939394,
+      "R2": 0.0037878787878788955,
+      "R2_over_gap2": 0.06060606060606233
+    },
+    {
+      "eta": 0.125,
+      "L1": -1.0158653846153847,
+      "R2": 0.0004807692307693401,
+      "R2_over_gap2": 0.030769230769237765
+    },
+    {
+      "eta": 0.0625,
+      "L1": -0.5039365310077519,
+      "R2": 6.05620155038622e-05,
+      "R2_over_gap2": 0.015503875968988723
+    }
+  ],
+  "shrink_higher_order": true,
+  "hard": [
+    {
+      "eta": 0.5,
+      "R2_over_gap": -6.2941176470588225,
+      "R2_over_gap2": -12.588235294117645
+    },
+    {
+      "eta": 0.25,
+      "R2_over_gap": -6.166666666666666,
+      "R2_over_gap2": -24.666666666666664
+    },
+    {
+      "eta": 0.125,
+      "R2_over_gap": -6.088461538461537,
+      "R2_over_gap2": -48.7076923076923
+    }
+  ],
+  "hard_deformation_not_higher_order": true,
+  "soft": [
+    {
+      "eta": 0.5,
+      "R2_over_gap2": -1.5764705882352956
+    },
+    {
+      "eta": 0.25,
+      "R2_over_gap2": -1.5878787878787932
+    },
+    {
+      "eta": 0.125,
+      "R2_over_gap2": -1.5938461538461297
+    }
+  ],
+  "soft_deformation_higher_order": true,
+  "do_not_sub_T0_into_finite_gap": true,
+  "retain_neighbor_T_as_remainder": true,
+  "outcomes": {
+    "BOTH_SIGNS": "OPEN. Would kill universal first-order one-sided narrow depletion. Not printed.",
+    "ZERO_ONLY_HOMO": "OPEN. Vandermonde delay. Does not rescue heterochiral NSE.",
+    "ONE_SIGN_HET": "OPEN. Gram/lattice question. Not a seated I_3 bridge.",
+    "NO_NEIGHBOR": "OPEN. Arithmetic rigidity. Not sign depletion."
+  },
+  "both_signs_not_printed": true,
+  "one_sign_not_printed": true,
+  "zero_only_not_printed": true,
+  "no_neighbor_not_printed": true,
+  "no_sign_verdict": true,
+  "universal_depletion_not_killed": true,
+  "universal_depletion_not_proved": true,
+  "A_N_plus_not_invented": true,
+  "seed_schema": [
+    "integer wavevectors",
+    "helicity labels",
+    "polarizations",
+    "amplitudes"
+  ],
+  "Theta_N_named_not_computed": true,
+  "Theta_N": "\u03bd \u03ba_N\u00b2 \u03c4_{U,N}",
+  "static_frontier": "arithmetic sign realizability",
+  "dynamic_frontier": "dangerous-state persistence",
+  "no_more_potentials": true,
+  "no_clock_reinterpretation": true,
+  "lemma_A_unaltered": true,
+  "lemma_B_open": true,
+  "i3_bridge_not_seated": true,
+  "vandermonde_not_locked_as_remainder": true,
+  "flux_normalization_not_reproduced": true,
+  "da_ns2_is_not_a_theorem": true,
+  "sits_as_useful_K": false,
+  "sits_as_g4_death": false,
+  "sits_as_da_ns2": false,
+  "sits_as_jgc": false,
+  "sits_as_bprim": false,
+  "g4_stays_open": true,
+  "do_not_invent_a_bridge": true,
+  "do_not_run_taylor_green": true,
+  "do_not_mix_heavy": true,
+  "do_not_glue_to_leftover_1": true,
+  "do_not_run_heavy_search": true,
+  "base_sample": {
+    "Lambda": 7.461538461538462,
+    "T_c": -55.38461538461538,
+    "quad": 19.230769230769234,
+    "L1": -74.61538461538461,
+    "R2": 19.230769230769234
+  }
+}
