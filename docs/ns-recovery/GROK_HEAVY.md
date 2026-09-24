@@ -57,7 +57,7 @@ Current SAG / JGC consolidation: [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-L
 
 Source of lock: `docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md`  
 Fourier expansions: `docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`  
-Shape-form expansion: `docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`  
+Shape-form expansion (2026-09-10 exact lock, formulas only): [`docs/math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md`](../math/ns_attacks/LEMMA_STAR_SHAPE_FORM.md)  
 Same formulas: `five-lane-pack/docs/ns-review/LEMMA-STAR-EXACT-FORMULAS.md`  
 Code: `five-lane-pack/scripts/ns_attacks/stokes_moments.py`
 

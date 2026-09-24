@@ -1,18 +1,21 @@
 # Lemma★ — canonical shape form (exact lock)
 
 **Date:** 2026-09-10  
-**Lock:** Truth only. **NS is NOT solved.** Lemma★ is **OPEN**. This note expands the operator statement; it does not prove ★.
+**Branch:** `cursor/ns-five-lane-lemma-star-1390`  
+**Lock:** Truth only. **NS is NOT solved.** Lemma★ is **OPEN** as a formula lock. This note **locks formulas**; it does not prove ★.
 
 **Working foundation:** [`LEMMA_STAR_CANONICAL.md`](./LEMMA_STAR_CANONICAL.md), [`LEMMA_STAR_EXACT_FORMULAS.md`](./LEMMA_STAR_EXACT_FORMULAS.md).  
 **\(K_{\alpha,\beta}\) is not the lemma.** It tests only a restricted near-shell limiting family.
 
+---
+
 ## Reframe (lock)
 
-**Lemma★ is a shape statement, not a viscosity statement.**
+**Lemma★ is no longer a viscosity statement. It is a shape statement.**
 
-The constant \(C_{\mathrm{geom}}\) depends only on the fixed geometry of \(\mathbb T^3\) and the Fourier normalization — not on amplitude, Fourier support, shell count, or \(\nu\).
+Change only the size of a fixed shape \(v\) via \(u=av\). Optimize over size. Worst size cancels \(\nu\). What remains is pure geometry on the shape.
 
-Scripts: `scripts/ns_attacks/stokes_moments.py` (aliases: \(E=\|v\|_2^2\), `Tc`\(=T_c\), `Ds`\(=D_s\), `ratio_R_star_shape`\(=\mathcal R_\star\)).
+Scripts: `scripts/ns_attacks/stokes_moments.py` (aliases: \(E=\|v\|_2^2\), `Tc`\(=T_c=\mathfrak T_c\), `Ds`\(=\mathcal D_s\), `ratio_R_star_shape`\(=\mathcal R_\star\)).
 
 ---
 
@@ -50,18 +53,17 @@ Z=\|A^{3/2}v\|_2^2=\sum\lambda_k^3|v_k|^2,
 
 ---
 
-## Centered spectral dissipation \(D_s\) (equivalent forms)
+## Centered spectral dissipation \(\mathcal D_s\) (3 equivalent forms)
 
 \[
-D_s
+\mathcal{D}_s
 =Z-\Lambda Y
-=Z-\frac{Y^2}{X}
-=\bigl\|(A-\Lambda)A^{1/2}v\bigr\|_2^2
+=Z-Y^2/X
 =\sum_k\lambda_k(\lambda_k-\Lambda)^2|v_k|^2
 =\frac1{2X}\sum_{k,\ell}\lambda_k\lambda_\ell(\lambda_k-\lambda_\ell)^2|v_k|^2|v_\ell|^2.
 \]
 
-In particular \(D_s\ge 0\). If \(D_s=0\) and \(X>0\), then \(\lambda_k=\Lambda\) whenever \(v_k\neq 0\): **one Stokes shell**, and \(T_c=0\) identically.
+In particular \(\mathcal D_s\ge 0\).
 
 ### Two-eigenvalue shells
 
@@ -96,7 +98,6 @@ M=-\langle AB,Av\rangle=\sum\lambda_k^2 T_k,
 \]
 \[
 T_c
-=-\bigl\langle B(v,v),\,A(A-\Lambda)v\bigr\rangle
 =M-\Lambda N
 =\sum_k\lambda_k(\lambda_k-\Lambda)T_k
 =\sum_{p+q=k}\lambda_k(\lambda_k-\Lambda)\,
@@ -193,7 +194,7 @@ Young / AM–GM on the amplitude line recovers
 T_c\le\theta\nu\mathcal D_s+C_0\nu^{-1}\|v\|_2^2\,Y
 =\theta\nu\mathcal D_s+C_0\nu^{-1}\|v\|_2^2\,X\Lambda,
 \]
-with \(C_{\mathrm{geom}}=4\theta\,C_0(\theta)\).
+with \(C_0(\theta)=C_{\mathrm{geom}}/(4\theta)\).
 
 ---
 
@@ -202,12 +203,12 @@ with \(C_{\mathrm{geom}}=4\theta\,C_0(\theta)\).
 | Outcome | Verdict |
 |---------|---------|
 | Some shapes make \(\mathcal R_\star\) arbitrarily large | no finite \(C_{\mathrm{geom}}\) → **★ dead** |
-| \(D_s=0\) | one shell and \(T_c=0\) — **not a kill** (both sides vanish) |
-| Live kill attempt | a family on which \(\mathcal R_\star\to\infty\); near-shell \(K_{\alpha,\beta}\) is only a **restricted** test of that |
+| \(\mathcal D_s=0\) (one Fourier shell) and \(T_c>0\) | **★ dead** on that field |
+| Pure single shell, both sides vanish (\(T_c=0=\mathcal D_s\)) | vacuous — not a kill |
+| Live kill attempt | almost-single-shell / near two-shell / exact-shell + closing (9B \(K_{\alpha,\beta}\)); designed \(\Theta(m^2)\) locked-phase (9D, stub) |
 | AP packet fan (9A) / fixed-gap natural ensemble (9C) | **Did not kill ★** — 9C: \(\mathcal R_\star\) falls \(0.11\to 0.031\), not \(m^{1/2}\) |
-| Fixed-output \(\Theta(m^2)\) (old 9D screenshot) | **EXCLUDED** — \(K\le 16s\) |
-| Every shape has \(\mathcal R_\star\le C_{\mathrm{geom}}\) | that number is ★ |
-| A list of fields with small \(\mathcal R_\star\), or a bounded \(K_{\alpha,\beta}\) sample | **NOT** the lemma — those shapes did not kill it |
+| Every shape has \(\mathcal R_\star\le K\) | that number is ★ (up to \(4\theta\)) |
+| A list of fields with small \(\mathcal R_\star\) | **NOT** that number — those shapes did not kill it |
 | Failure to find a numerical counterexample | does **NOT** close the kill lane — falsification **LIVE**, proof **LIVE** |
 
 **Retired false claim:** “The kill lane is closed.” — **FALSE.**
@@ -227,15 +228,27 @@ Reason from how **signed** triads add that stretching cannot get large unless sp
 - Status board: [`PROOF_LemmaStar_STATUS.md`](./PROOF_LemmaStar_STATUS.md)
 - Correct record: [`ATTACK_8_CORRECT_RECORD.md`](./ATTACK_8_CORRECT_RECORD.md)
 - Packet fan (9A, did not kill ★): [`ATTACK_9_PACKET_FAN.md`](./ATTACK_9_PACKET_FAN.md), [`ATTACK_9A_AP_PACKET_FAILURE.md`](./ATTACK_9A_AP_PACKET_FAILURE.md)
-- Exact-shell closing (9B): [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md) — **restricted family only**
+- Exact-shell closing (9B): [`ATTACK_9B_EXACT_SHELL_CLOSING.md`](./ATTACK_9B_EXACT_SHELL_CLOSING.md)
   \[
-  K_{\alpha,\beta}=\sup_{Aw=\alpha w}\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\|w\|_2^4}.
+  K_{\alpha,\beta}=\sup_{Aw=\alpha w}\frac{\beta\|\Pi_\beta B(w,w)\|_2^2}{\alpha^2\|w\|_2^4},\quad
+  \lim_{\varepsilon\to0}\mathcal R_\star(w_\alpha+\varepsilon z_\beta)=K_{\alpha,\beta}(w).
   \]
-  The displayed \(\varepsilon\to0\) limit equals \(K_{\alpha,\beta}(w)\) only for an aligned, sign-selected \(z_\beta\parallel\Pi_\beta B(w,w)\). For arbitrary \(z_\beta\) the limit depends on the projection against \(B(w,w)\).
-- Counting exclusion: [`ATTACK_9B_COUNTING_CS_EXCLUSION.md`](./ATTACK_9B_COUNTING_CS_EXCLUSION.md)
-- Fixed-gap spheres (9C, **not** a kill): [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md)
-- Retargeted 9D (growing I/O): [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md)
-- Archive (older proof, NOT a theorem): [`ARCHIVE_OLDER_LEMMA_STAR_PROOF.md`](./ARCHIVE_OLDER_LEMMA_STAR_PROOF.md)
+- Fixed-gap spheres (9C, **not** a kill): [`ATTACK_9C_FIXED_GAP_SPHERES.md`](./ATTACK_9C_FIXED_GAP_SPHERES.md) — \(\mathcal R_\star\) \(0.11\to 0.031\); SoT-only until probe
+- Next falsifier (9D stub): [`ATTACK_9D_THETA_M2_LOCKED_PHASE.md`](./ATTACK_9D_THETA_M2_LOCKED_PHASE.md) — designed \(\Theta(m^2)\) locked-phase closures
 - Synthesis: [`ATTACK_SYNTHESIS_SIMULTANEOUS.md`](./ATTACK_SYNTHESIS_SIMULTANEOUS.md)
 - Archive (NOT ★): [`ARCHIVE_ROUTE_N_Q6_SHELL/`](./ARCHIVE_ROUTE_N_Q6_SHELL/), [`../ARCHIVE_NOT_LEMMA_STAR.md`](../ARCHIVE_NOT_LEMMA_STAR.md)
 - Probe / harness: `scripts/ns_attacks/stokes_moments.py`, `attack5_route2_kill.py`, `lemma_star_near_shell_search.py`, `attack9_packet_fan.py`, `attack9b_exact_shell_K.py` (9C/9D scripts not yet present)
+
+---
+
+## This recovery branch (after 10 Sep 2026) — status only, not a formula change
+
+These identities are unchanged. On `cursor/centered-ns-recovery-b5c1` the **unrestricted** uniform bound \(\sup\mathcal R_\star<\infty\) is already **FALSE** on the growing-layer family \(v_n\). That is the first row of the kill table, later filled. Score: [`../../../../GROWING-LAYER-SCORE.md`](../../../../GROWING-LAYER-SCORE.md). Working status: [`LEMMA_STAR_CANONICAL.md`](./LEMMA_STAR_CANONICAL.md).
+
+On Stokes fields tested here, \(\mathcal D_s=0\) forces \(T_c=0\). So the table row “one shell and \(T_c>0\)” remains a **logical** kill and is **empty** as a Stokes example. Pure single shell (\(T_c=0=\mathcal D_s\)) stays vacuous.
+
+The displayed \(\varepsilon\to0\) limit equals \(K_{\alpha,\beta}(w)\) only for an aligned, sign-selected \(z_\beta\parallel\Pi_\beta B(w,w)\). For arbitrary \(z_\beta\) the limit depends on the projection against \(B(w,w)\). That is a later precision, not a change to \(\mathcal R_\star\).
+
+The locked SBP / \(\phi/d\) / low-tail / sign-realizability gates are a **different** job. They are not altered by this formula lock.
+
+**NS not solved.** Exact-shell 9D is a different statement and is not stamped.
