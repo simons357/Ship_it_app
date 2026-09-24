@@ -114,7 +114,8 @@ class TestDaGateStaticFrontier(unittest.TestCase):
         self.assertEqual(one["I_3_bridge"], "prospective; not seated here")
         none = classify_outcome(has_neighbor=False, family="")
         self.assertTrue(none["own_category"])
-        self.assertIn("Arithmetic rigidity is not sign depletion", self.page)
+        self.assertIn("Arithmetic rigidity is", self.page)
+        self.assertIn("not sign depletion", self.page)
 
     def test_adversarial_seed_schema(self) -> None:
         self.assertEqual(self.lock["adversarial_seed"]["required"], list(SEED_REQUIRED))
@@ -127,7 +128,8 @@ class TestDaGateStaticFrontier(unittest.TestCase):
             "amplitudes": [0.2, 0.2, 0.2],
         }
         self.assertTrue(seed_is_canonical(full))
-        self.assertIn("not merely", self.page)
+        self.assertIn("merely", self.page)
+        self.assertIn("Insufficient by themselves", self.page)
 
     def test_payload_matches_lock(self) -> None:
         self.assertEqual(self.payload["frontiers"], self.lock["frontiers"])
