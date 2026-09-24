@@ -48,6 +48,18 @@ Exploratory TRAIN run (freeze choices before TEST):
 python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 50000 --split train
 ```
 
+## Lemma★ (static \(\mathcal{R}_\star\) bound)
+
+Static uniform \(\sup\mathcal{R}_\star<\infty\) is **dead**. A localized
+divergence-free bump has \(\mathcal{R}_\star\sim\ell^{-3}\). Record:
+[`docs/math/ns_attacks/ATTACK_10_LOCALIZED_BUMP.md`](docs/math/ns_attacks/ATTACK_10_LOCALIZED_BUMP.md).
+**NS is not solved.** The remaining question is dynamical.
+
+```bash
+PYTHONPATH=scripts python3 scripts/ns_attacks/attack10_localized_bump.py --quick
+python -m unittest tests.test_attack10_localized_bump
+```
+
 ## Layout
 
 | Path | Role |
@@ -56,7 +68,9 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 | `nodes.json` | Frozen node families + sigma + default observable |
 | `data/qnm_events.csv` | Per-mode ringdown table with TRAIN/TEST splits |
 | `scripts/build_qnm_table.py` | Rebuild CSV from measured + Kerr-fit sources |
+| `scripts/ns_attacks/attack10_localized_bump.py` | Localized-bump kill of static uniform \(\mathcal{R}_\star\) |
 | `tests/test_hb_ringdown.py` | Unit / smoke tests |
+| `tests/test_attack10_localized_bump.py` | Attack 10 record + scaling / vacuous-shell checks |
 
 ## Tests
 
