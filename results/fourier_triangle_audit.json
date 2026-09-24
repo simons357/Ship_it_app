@@ -1,0 +1,803 @@
+{
+  "I3_primes": {
+    "all_match": true,
+    "criterion": "(a,Delta)_ell (a,-1)_ell (Delta,-1)_ell = 1 for ell | 2a Delta",
+    "even_alpha_2": {
+      "alpha": 2,
+      "detail": {
+        "Delta": 3,
+        "a": 2,
+        "applicable": true,
+        "b": 2,
+        "c": 2,
+        "factors": [
+          {
+            "(Delta,-1)": 1,
+            "(a,-1)": -1,
+            "(a,Delta)": -1,
+            "ell": 2,
+            "passes": true,
+            "product": 1
+          },
+          {
+            "(Delta,-1)": -1,
+            "(a,-1)": 1,
+            "(a,Delta)": -1,
+            "ell": 3,
+            "passes": true,
+            "product": 1
+          }
+        ],
+        "failed_primes": [],
+        "passes": true,
+        "positive_definite": true,
+        "primes": [
+          2,
+          3
+        ],
+        "s": -1
+      },
+      "even_necessary_not_sufficient": true,
+      "even_passes_12": true,
+      "odd_impossible": false
+    },
+    "even_alpha_6": {
+      "alpha": 6,
+      "detail": {
+        "Delta": 27,
+        "a": 6,
+        "applicable": true,
+        "b": 6,
+        "c": 6,
+        "factors": [
+          {
+            "(Delta,-1)": 1,
+            "(a,-1)": -1,
+            "(a,Delta)": 1,
+            "ell": 2,
+            "passes": false,
+            "product": -1
+          },
+          {
+            "(Delta,-1)": -1,
+            "(a,-1)": -1,
+            "(a,Delta)": 1,
+            "ell": 3,
+            "passes": true,
+            "product": 1
+          }
+        ],
+        "failed_primes": [
+          2
+        ],
+        "passes": false,
+        "positive_definite": true,
+        "primes": [
+          2,
+          3
+        ],
+        "s": -3
+      },
+      "even_necessary_not_sufficient": true,
+      "even_passes_12": false,
+      "odd_impossible": false
+    },
+    "locks": {
+      "not_a_census_only": true,
+      "not_a_close": true,
+      "not_time_evolution": true,
+      "wavevectors_not_coefficients": true
+    },
+    "odd_alpha_9": {
+      "alpha": 9,
+      "detail": null,
+      "even_necessary_not_sufficient": false,
+      "even_passes_12": false,
+      "odd_impossible": true
+    },
+    "regressions": [
+      {
+        "a": 96,
+        "b": 96,
+        "expect_fail": [
+          2,
+          3
+        ],
+        "expect_pass": false,
+        "got_fail": [
+          2,
+          3
+        ],
+        "got_pass": false,
+        "match": true,
+        "result": {
+          "Delta": 9216,
+          "a": 96,
+          "applicable": true,
+          "b": 96,
+          "c": 192,
+          "factors": [
+            {
+              "(Delta,-1)": 1,
+              "(a,-1)": -1,
+              "(a,Delta)": 1,
+              "ell": 2,
+              "passes": false,
+              "product": -1
+            },
+            {
+              "(Delta,-1)": 1,
+              "(a,-1)": -1,
+              "(a,Delta)": 1,
+              "ell": 3,
+              "passes": false,
+              "product": -1
+            }
+          ],
+          "failed_primes": [
+            2,
+            3
+          ],
+          "passes": false,
+          "positive_definite": true,
+          "primes": [
+            2,
+            3
+          ],
+          "s": 0
+        },
+        "s": 0
+      },
+      {
+        "a": 2,
+        "b": 3,
+        "expect_fail": [
+          2,
+          5
+        ],
+        "expect_pass": false,
+        "got_fail": [
+          2,
+          5
+        ],
+        "got_pass": false,
+        "match": true,
+        "result": {
+          "Delta": 5,
+          "a": 2,
+          "applicable": true,
+          "b": 3,
+          "c": 7,
+          "factors": [
+            {
+              "(Delta,-1)": 1,
+              "(a,-1)": -1,
+              "(a,Delta)": 1,
+              "ell": 2,
+              "passes": false,
+              "product": -1
+            },
+            {
+              "(Delta,-1)": 1,
+              "(a,-1)": 1,
+              "(a,Delta)": -1,
+              "ell": 5,
+              "passes": false,
+              "product": -1
+            }
+          ],
+          "failed_primes": [
+            2,
+            5
+          ],
+          "passes": false,
+          "positive_definite": true,
+          "primes": [
+            2,
+            5
+          ],
+          "s": 1
+        },
+        "s": 1
+      },
+      {
+        "a": 2,
+        "b": 2,
+        "expect_fail": [],
+        "expect_pass": true,
+        "got_fail": [],
+        "got_pass": true,
+        "match": true,
+        "result": {
+          "Delta": 3,
+          "a": 2,
+          "applicable": true,
+          "b": 2,
+          "c": 2,
+          "factors": [
+            {
+              "(Delta,-1)": 1,
+              "(a,-1)": -1,
+              "(a,Delta)": -1,
+              "ell": 2,
+              "passes": true,
+              "product": 1
+            },
+            {
+              "(Delta,-1)": -1,
+              "(a,-1)": 1,
+              "(a,Delta)": -1,
+              "ell": 3,
+              "passes": true,
+              "product": 1
+            }
+          ],
+          "failed_primes": [],
+          "passes": true,
+          "positive_definite": true,
+          "primes": [
+            2,
+            3
+          ],
+          "s": -1
+        },
+        "s": -1
+      },
+      {
+        "a": 14,
+        "b": 14,
+        "expect_fail": [],
+        "expect_pass": true,
+        "got_fail": [],
+        "got_pass": true,
+        "match": true,
+        "result": {
+          "Delta": 147,
+          "a": 14,
+          "applicable": true,
+          "b": 14,
+          "c": 14,
+          "factors": [
+            {
+              "(Delta,-1)": 1,
+              "(a,-1)": -1,
+              "(a,Delta)": -1,
+              "ell": 2,
+              "passes": true,
+              "product": 1
+            },
+            {
+              "(Delta,-1)": -1,
+              "(a,-1)": 1,
+              "(a,Delta)": -1,
+              "ell": 3,
+              "passes": true,
+              "product": 1
+            },
+            {
+              "(Delta,-1)": 1,
+              "(a,-1)": -1,
+              "(a,Delta)": -1,
+              "ell": 7,
+              "passes": true,
+              "product": 1
+            }
+          ],
+          "failed_primes": [],
+          "passes": true,
+          "positive_definite": true,
+          "primes": [
+            2,
+            3,
+            7
+          ],
+          "s": -7
+        },
+        "s": -7
+      }
+    ]
+  },
+  "board": {
+    "DYNAMIC_FRONTIER": "dangerous-state persistence / scalene budget (17)",
+    "I3": "lattice Gram / Hilbert local-to-global; not energy conservation alone",
+    "NS_solved": false,
+    "STATIC_FRONTIER": "arithmetic sign realizability (already run; not reopened)"
+  },
+  "centered_drift": {
+    "D_s": 537.2307692307695,
+    "D_s_nonneg": true,
+    "Lambda": 10.23076923076923,
+    "Lambda_dot": -20.130177514792912,
+    "T": 24.0,
+    "T_c": 282.4615384615385,
+    "X": 52.0,
+    "Y": 532.0,
+    "identity_residual": 5.684341886080802e-14
+  },
+  "equal_length": {
+    "a": 5.0,
+    "c": 10.0,
+    "equal_formula_err": 1.2412670766236366e-16,
+    "in_plane_component": 3.6188843062238394e-17,
+    "in_plane_inputs_kill_normal": 2.8609792490763984e-17
+  },
+  "exact_sphere": {
+    "F2": 36.0,
+    "alpha": 1,
+    "beta": 2,
+    "bound": 108.0,
+    "holds": true,
+    "sum_L2": 48.0
+  },
+  "geometry": {
+    "S_identity": true,
+    "defect_identity": true,
+    "div_free": true,
+    "rows": [
+      {
+        "S_err": 2.3714374201337736e-16,
+        "defect_err": 4.47545209131181e-16,
+        "p": [
+          2,
+          0,
+          0
+        ],
+        "p_up": 1.159106867033638e-16,
+        "p_uq_is_k_uq": 0.0,
+        "q": [
+          0,
+          3,
+          0
+        ],
+        "q_up_is_k_up": 0.0,
+        "q_uq": 0.0
+      },
+      {
+        "S_err": 1.1443916996305594e-16,
+        "defect_err": 0.0,
+        "p": [
+          1,
+          1,
+          0
+        ],
+        "p_up": 5.551115123125783e-17,
+        "p_uq_is_k_uq": 0.0,
+        "q": [
+          1,
+          -1,
+          1
+        ],
+        "q_up_is_k_up": 1.1102230246251565e-16,
+        "q_uq": 0.0
+      },
+      {
+        "S_err": 0.0,
+        "defect_err": 2.220446049250313e-16,
+        "p": [
+          3,
+          1,
+          1
+        ],
+        "p_up": 6.245004513516506e-17,
+        "p_uq_is_k_uq": 0.0,
+        "q": [
+          -1,
+          2,
+          0
+        ],
+        "q_up_is_k_up": 4.440892098500626e-16,
+        "q_uq": 1.1102230246251565e-16
+      },
+      {
+        "S_err": 4.002966042486721e-16,
+        "defect_err": 2.220446049250313e-16,
+        "p": [
+          1,
+          2,
+          2
+        ],
+        "p_up": 7.850462293418876e-17,
+        "p_uq_is_k_uq": 2.220446049250313e-16,
+        "q": [
+          2,
+          1,
+          -2
+        ],
+        "q_up_is_k_up": 1.1102230246251565e-16,
+        "q_uq": 3.3306690738754696e-16
+      }
+    ],
+    "slot_identities": true
+  },
+  "grouping": {
+    "T_aab": 8.0,
+    "T_aab_expected": 8.0,
+    "T_abc": 8.25,
+    "T_abc_expected": 8.25
+  },
+  "locks": {
+    "I3_regressions": true,
+    "even_output": true,
+    "generated_mode": true,
+    "identity_1": true,
+    "identity_3": true,
+    "identity_4": true,
+    "odd_field": true,
+    "phase_twins": true,
+    "shear": true,
+    "sixteen_ninths": true,
+    "sphere_8": true,
+    "theorem_17_open": true
+  },
+  "missing_theorem": {
+    "S_definition": "S_{K,N}(T) = \u222b_0^T [T_sc(h_{K,N}) \u2212 nu Y_N/4]_+ / X_N dt, h = P_{|k|>K} u_N, T_sc = all-high scalene complete triads.",
+    "conditional_H1": "X_N(t) <= X_N(0) exp[ 6 C_K sqrt(E0)/nu (1-e^{-nu T}) + E0/(4 nu^2) + 2 S_{K,N}(T) ].",
+    "does_not_follow_from_I3_primes": true,
+    "does_not_follow_from_one_episode": true,
+    "fixed_data_S1_reported_not_rerun": {
+      "K": 1,
+      "N2": [
+        6,
+        12,
+        20
+      ],
+      "S1": [
+        0.001337845,
+        0.046918627,
+        0.072599898
+      ],
+      "nu": 1.5,
+      "status": "NUMERICAL-reported-not-rerun",
+      "three_cutoffs_do_not_prove_uniformity": true
+    },
+    "label": "(17)",
+    "not_proved_here": true,
+    "statement": "For every smooth divergence-free u0 and every nu>0 there exists finite K=K(u0,nu) such that for every finite T, sup_N S_{K,N}(T) < infinity.",
+    "status": "OPEN"
+  },
+  "odd_field": {
+    "A": 24.0,
+    "T": 331776.0,
+    "T_expected": 331776.0,
+    "X": 29952.0,
+    "X_dot": 50688.0,
+    "X_dot_expected": 50688.0,
+    "X_expected": 29952.0,
+    "Y": 306432.0,
+    "Y_expected": 306432.0,
+    "nu": 1.0,
+    "phase_need_not_rotate": true,
+    "positive_X_dot": true
+  },
+  "phase_twins": {
+    "energy_sum_zero": true,
+    "generated_mode": {
+      "B": [
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": 3.0,
+          "re": 0.0
+        }
+      ],
+      "k": [
+        3,
+        -2,
+        0
+      ],
+      "matches_3i_e3": true
+    },
+    "quadratic_lock": true,
+    "rows": [
+      {
+        "E": 6.0,
+        "I3": 0.0,
+        "T": 0.0,
+        "T_err": 0.0,
+        "X": 52.0,
+        "Y": 532.0,
+        "Z": 5980.0,
+        "expected_T": 0.0,
+        "f": "cos"
+      },
+      {
+        "E": 6.0,
+        "I3": 0.0,
+        "T": 24.0,
+        "T_err": 0.0,
+        "X": 52.0,
+        "Y": 532.0,
+        "Z": 5980.0,
+        "expected_T": 24.0,
+        "f": "sin"
+      },
+      {
+        "E": 6.0,
+        "I3": 0.0,
+        "T": -24.0,
+        "T_err": 0.0,
+        "X": 52.0,
+        "Y": 532.0,
+        "Z": 5980.0,
+        "expected_T": -24.0,
+        "f": "msin"
+      }
+    ],
+    "sign_lock": true
+  },
+  "polynomials": {
+    "even_output": [
+      {
+        "a": 1,
+        "closed": 0.5,
+        "err": 0.0,
+        "sum": 0.5
+      },
+      {
+        "a": 2,
+        "closed": 6.0,
+        "err": 0.0,
+        "sum": 6.0
+      },
+      {
+        "a": 3,
+        "closed": 22.5,
+        "err": 0.0,
+        "sum": 22.5
+      },
+      {
+        "a": 5,
+        "closed": 112.5,
+        "err": 1.4210854715202004e-14,
+        "sum": 112.49999999999999
+      },
+      {
+        "a": 8,
+        "closed": 480.0,
+        "err": 0.0,
+        "sum": 480.0
+      },
+      {
+        "a": 13,
+        "closed": 2112.5,
+        "err": 0.0,
+        "sum": 2112.5
+      }
+    ],
+    "even_output_exact": true,
+    "sixteen_ninths_float": true,
+    "sixteen_ninths_rational": [
+      {
+        "eq": true,
+        "left": "16/9",
+        "r": "0/1",
+        "right": "16/9"
+      },
+      {
+        "eq": true,
+        "left": "1859/1152",
+        "r": "1/2",
+        "right": "1859/1152"
+      },
+      {
+        "eq": true,
+        "left": "175/144",
+        "r": "1/1",
+        "right": "175/144"
+      },
+      {
+        "eq": true,
+        "left": "833/1152",
+        "r": "3/2",
+        "right": "833/1152"
+      },
+      {
+        "eq": true,
+        "left": "5/18",
+        "r": "2/1",
+        "right": "5/18"
+      },
+      {
+        "eq": true,
+        "left": "0",
+        "r": "8/3",
+        "right": "0"
+      },
+      {
+        "eq": true,
+        "left": "16/9",
+        "r": "4/1",
+        "right": "16/9"
+      }
+    ],
+    "sixteen_ninths_rational_exact": true
+  },
+  "shear": {
+    "E": 1.5,
+    "coeffs": {
+      "(-1, -1, 0)": [
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": 0.25,
+          "re": 0.0
+        }
+      ],
+      "(-1, 0, -1)": [
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": 0.25,
+          "re": 0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        }
+      ],
+      "(-1, 0, 1)": [
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": 0.25,
+          "re": 0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        }
+      ],
+      "(-1, 1, 0)": [
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": -0.25,
+          "re": -0.0
+        }
+      ],
+      "(0, -1, -1)": [
+        {
+          "im": 0.25,
+          "re": 0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        }
+      ],
+      "(0, -1, 1)": [
+        {
+          "im": -0.25,
+          "re": -0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        }
+      ],
+      "(0, 1, -1)": [
+        {
+          "im": 0.25,
+          "re": 0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        }
+      ],
+      "(0, 1, 1)": [
+        {
+          "im": -0.25,
+          "re": -0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        }
+      ],
+      "(1, -1, 0)": [
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": 0.25,
+          "re": 0.0
+        }
+      ],
+      "(1, 0, -1)": [
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": -0.25,
+          "re": -0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        }
+      ],
+      "(1, 0, 1)": [
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": -0.25,
+          "re": -0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        }
+      ],
+      "(1, 1, 0)": [
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": 0.0,
+          "re": 0.0
+        },
+        {
+          "im": -0.25,
+          "re": -0.0
+        }
+      ]
+    },
+    "locks": {
+      "E_3_over_2": true,
+      "output_3_over_4": true,
+      "ratio_2_over_3": true,
+      "twelve_outputs": true
+    },
+    "n_nonzero_output": 12,
+    "normalized_ratio": 0.6666666666666666,
+    "output_norm_sq": 0.75
+  }
+}
