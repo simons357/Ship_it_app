@@ -640,6 +640,19 @@ is Stieltjes; do not estimate
 Loop \(\Gamma_{\mathrm{cyc}}\)
 still needs \(L_N\le M_N\le U_N\)
 and then scale decay.
+Narrow het residual
+(`docs/NARROW-HET-RESIDUAL.md`):
+the live object is
+\(2\kappa^3 Q_a-(\Lambda-\kappa_e^2)S_\Gamma\).
+Crossover
+\(r\gtrsim\kappa^{-1/2}
+\Leftrightarrow\mathcal D_s/Y\gtrsim\kappa\)
+EXACT in torus units.
+Lattice-loop quadratic
+primitive for \(S_\Gamma\):
+**NO** (holonomy). Do not
+restart circle / star /
+coherence searches.
 
 Two routes, both OPEN, both
 killable. If both die, the leftover

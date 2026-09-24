@@ -28,7 +28,8 @@ Pointers:
 [`SAG-5-COMPATIBILITY.md`](SAG-5-COMPATIBILITY.md),
 [`SAG-6-LATTICE-CIRCLE.md`](SAG-6-LATTICE-CIRCLE.md),
 [`JOINT-EPOCH-BUDGET.md`](JOINT-EPOCH-BUDGET.md),
-[`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
+[`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md),
+[`NARROW-HET-RESIDUAL.md`](NARROW-HET-RESIDUAL.md).
 
 ---
 
@@ -53,6 +54,9 @@ Pointers:
 | 15 | \(\dot{\mathfrak T}_{c,\Gamma}^{\mathrm{het}}\); residual \((\Lambda-\lambda_e)\dot S_\Gamma\) | **EXACT** |
 | 16 | Joint Gap–Charge Epoch Budget | **OPEN** |
 | 17 | Frozen \(W_K\); reset \(\Delta W\) | **EXACT** |
+| 18 | \(r\sim\kappa^{-1/2}\) crossover; BROAD / NARROW map | **EXACT** equivalence; torus units |
+| 19 | Narrow het residual \(2\kappa^3 Q_a-(\Lambda-\kappa_e^2)S_\Gamma\) | **OPEN** |
+| 20 | \(S_\Gamma\) quadratic primitive on lattice loops | **NO** (holonomy); \(L\)-trees yes |
 
 Every new mechanism must eventually
 pay §2. Talking is not that integral.
@@ -613,6 +617,31 @@ not a new remainder.
 
 ---
 
+## 18–20. Narrow residual and the primitive — see `NARROW-HET-RESIDUAL.md`
+
+\(r^2=\mathcal D_s/(\Lambda Y)\)
+makes
+\(r\gtrsim\kappa^{-1/2}
+\Leftrightarrow\mathcal D_s/Y\gtrsim\kappa\)
+an identity in torus units.
+\(R-2\kappa^3=O(\kappa^3 r)\)
+linear; Vandermonde cubic.
+The residual is
+\(2\kappa^3 Q_a-(\Lambda-\kappa_e^2)S_\Gamma\).
+On actual lattice het loops,
+\(\mathsf B^{\mathrm{prim}}w=A\)
+has a holonomy obstruction
+(relative residual \(\approx 1\)).
+\(L\)-family trees solve it
+with \(\mathrm{cond}\sim 1.7\)
+and \(\lVert w\rVert=O(1)\).
+Isotropic
+\(w(\lvert k\rvert,s)\) already
+fails on the lattice tree.
+Not a bound on \(\int K\).
+
+---
+
 ## What every later write must respect
 
 - Pay §2, or name a death.
@@ -632,6 +661,12 @@ not a new remainder.
   and then scale decay; a
   constant \(<1\) is not the
   close.
+- Do not treat \(S_\Gamma\) as
+  the derivative of a
+  quadratic Fourier
+  multiplier on lattice
+  loops. That primitive is
+  obstructed.
 
 ---
 
@@ -653,4 +688,15 @@ Loop gate OPEN, no certified
 defect yet.
 Epoch budget OPEN: next Gate.
 \(W_K\) and \(\Delta W\) EXACT.
+Narrow het residual OPEN:
+[`NARROW-HET-RESIDUAL.md`](NARROW-HET-RESIDUAL.md).
+\(r\gtrsim\kappa^{-1/2}
+\Leftrightarrow\mathcal D_s/Y\gtrsim\kappa\)
+EXACT, torus units.
+Lattice-loop primitive for
+\(S_\Gamma\): **NO**.
+\(L\)-family trees: cond
+\(\sim 1.7\), \(\lVert w\rVert=O(1)\).
+Isotropic \(w(\lvert k\rvert,s)\)
+fails on the lattice tree.
 NS not solved.

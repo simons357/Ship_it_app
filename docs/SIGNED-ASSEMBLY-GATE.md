@@ -438,6 +438,8 @@ budget or a named death exists,
 talking is not the gate.
 Seated ledger:
 [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md).
+Residual / primitive test:
+[`NARROW-HET-RESIDUAL.md`](NARROW-HET-RESIDUAL.md).
 
 ---
 

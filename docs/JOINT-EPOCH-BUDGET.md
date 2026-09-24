@@ -19,6 +19,9 @@ Equal-input stack (different object):
 [`SAG-6-LATTICE-CIRCLE.md`](SAG-6-LATTICE-CIRCLE.md).
 Centered master ledger:
 [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md).
+Narrow het residual
+(primitive test for \(S_\Gamma\)):
+[`NARROW-HET-RESIDUAL.md`](NARROW-HET-RESIDUAL.md).
 
 Unaugmented NS on \(\mathbb{T}^3\).
 No \(Q_1\). No \(\Phi\). No SND. No
@@ -462,4 +465,7 @@ EXACT from \(W_K\). Residual
 is Stieltjes.
 Master ledger:
 [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md).
+\(S_\Gamma\) lattice-loop
+primitive: **NO**.
+[`NARROW-HET-RESIDUAL.md`](NARROW-HET-RESIDUAL.md).
 NS not solved.
