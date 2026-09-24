@@ -60,7 +60,23 @@ def hilbert_symbol(a: int, b: int, ell: int) -> int:
     return sign
 
 
+def is_prime(n: int) -> bool:
+    if n < 2:
+        return False
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+    p = 3
+    while p * p <= n:
+        if n % p == 0:
+            return False
+        p += 2
+    return True
+
+
 def primes_dividing(n: int) -> list[int]:
+    """Prime factors of |n|. Never returns a composite."""
     n = abs(n)
     out = []
     if n % 2 == 0:
@@ -76,7 +92,18 @@ def primes_dividing(n: int) -> list[int]:
         p += 2
     if n > 1:
         out.append(n)
+    if any(not is_prime(q) for q in out):
+        raise RuntimeError(f"primes_dividing returned a composite: {out}")
     return out
+
+
+def relevant_primes(a: int, delta: int) -> list[int]:
+    """Primes ℓ | 2aΔ. The product 2aΔ itself is not a prime list.
+
+    The known helper defect was returning composites such as 20 for
+    Gram (2,3,1) where 2aΔ=20. This function factors first.
+    """
+    return primes_dividing(2 * a * delta)
 
 
 def i3_local_product(a: int, delta: int) -> dict[int, int]:
@@ -84,7 +111,7 @@ def i3_local_product(a: int, delta: int) -> dict[int, int]:
     if a <= 0 or delta <= 0:
         raise ValueError("positive-definite place requires a>0 and Δ>0")
     out = {}
-    for ell in primes_dividing(2 * a * delta):
+    for ell in relevant_primes(a, delta):
         out[ell] = (
             hilbert_symbol(a, delta, ell)
             * hilbert_symbol(a, -1, ell)

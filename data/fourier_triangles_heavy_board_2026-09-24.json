@@ -1,0 +1,36 @@
+{
+  "title": "Fourier-triangles Heavy executable-audit board",
+  "date": "2026-09-24",
+  "ns_solved": false,
+  "lemma_star": "OPEN",
+  "missing_theorem_17": "OPEN",
+  "L1_both_signs": "OPEN",
+  "da_ns_2": "OPEN",
+  "heavy_exit_code": 1,
+  "heavy_totals": {
+    "PASS": 27,
+    "FAIL": 1,
+    "OPEN": 2,
+    "MISSING": 1
+  },
+  "groups": {
+    "G1_triangle_geometry": "FAIL_on_heavy_run_G1_1_missing_input",
+    "G2_exact_shell_incidence": "PASS",
+    "G3_arithmetic_realizability": "MISSING_alpha98_unstamped",
+    "G4_signed_centered_transfer": "OPEN"
+  },
+  "equation_1": {
+    "heavy": "MISSING INPUT / FAIL CLOSED",
+    "now_seated": "scripts/fourier_triangle_eq1_S_pq.py",
+    "does_not_prove_17": true
+  },
+  "alpha98": {
+    "stamp": "P=(3,5,-8), Q=(-8,3,5), K=(-5,8,-3), 432 ordered realizations",
+    "in_source": false,
+    "computed_here": false
+  },
+  "schulze_pillot": "BLOCKED-ON-SOURCE",
+  "relevant_primes_must_not_return_composites": true,
+  "sixteen_checks_used_random_not_adversarial": true,
+  "both_signs_fixture_without_checker_fails_closed": true
+}

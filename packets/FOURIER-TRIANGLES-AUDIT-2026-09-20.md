@@ -601,3 +601,8 @@ identities governing each interaction remain usable inputs to that
 proof.
 
 **NS not solved.**
+
+24 September 2026 Heavy board (exit code 1; G1.(1) failed closed for
+missing DA script): [`FOURIER-TRIANGLES-HEAVY-BOARD-2026-09-24.md`](FOURIER-TRIANGLES-HEAVY-BOARD-2026-09-24.md).
+Equation (1) DA script: [`scripts/fourier_triangle_eq1_S_pq.py`](../scripts/fourier_triangle_eq1_S_pq.py).
+α=98 / 432 is **not** computed. L1 / BOTH SIGNS and (17) stay **OPEN**.
