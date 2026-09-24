@@ -206,6 +206,14 @@ Separated triad is low-tail dominated with \(L_e\to 1/3\).
 \(v_n\) is a comparable annulus (\(\min m=n\)), not an \(O(1)\)
 reservoir.
 
+**Sign gate (does not alter the low-tail packets).**
+`packets/DA-GATE-ARITHMETIC-SIGN-REALIZABILITY-2026-09-24.md`.
+Exact split \(T_c=\Lambda\langle\delta,T\rangle+\sum\delta^2 T\) sits.
+First variation is \(L_{1,N}=\Lambda_N\langle\delta_N,T_N^{(0)}\rangle\)
+with live \(T_m\) retained for \(R_{2,N}\). Do not silently
+substitute. Outcome tree BOTH / ZERO / ONE / NO NEIGHBOR is
+armed, not run. Neighboring-shell family is not on this tree.
+
 **SAG / JGC ledger filed.** Exact algebra, reported numerics, and
 kills are separated in
 [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md).

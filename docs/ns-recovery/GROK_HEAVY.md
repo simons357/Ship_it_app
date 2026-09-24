@@ -49,7 +49,7 @@ Natural same-shell (9C), AP fan (9A), and finite 9B \(K_{\alpha,\beta}\) samples
 
 The old Gate-5–7 roadmap is **superseded**. Lineage filing: [`GATE-ROADMAP-LINEAGE.md`](GATE-ROADMAP-LINEAGE.md). It does not overwrite the live board. **REOPEN = recompute only.** Do not invent the missing \(u,m,d,c,+++\) definitions.
 
-Current SAG / JGC consolidation: [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md). Rally: [`CENTERED-RESIDUAL-BOARD.md`](CENTERED-RESIDUAL-BOARD.md). DA-NS-2 remains **OPEN**. Frozen SBP identity: [`../../packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md`](../../packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md). Weight comparison \(\phi_\kappa/d_\kappa\): [`../../packets/DA-GATE-PHI-VS-FROZEN-VARIANCE-2026-09-24.md`](../../packets/DA-GATE-PHI-VS-FROZEN-VARIANCE-2026-09-24.md). Last mile is **low-tail capacity + charge + epoch motion**. Core/high tail vs frozen variance sit; low tail is the enemy. Do not mix live \(\Lambda\) with frozen \(\lambda_e\). Do not stamp \(r\sim\kappa^{-1/2}\).
+Current SAG / JGC consolidation: [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md). Rally: [`CENTERED-RESIDUAL-BOARD.md`](CENTERED-RESIDUAL-BOARD.md). Operational freeze: **static = arithmetic sign realizability**, **dynamic = dangerous-state persistence**. Sign gate: [`../../packets/DA-GATE-ARITHMETIC-SIGN-REALIZABILITY-2026-09-24.md`](../../packets/DA-GATE-ARITHMETIC-SIGN-REALIZABILITY-2026-09-24.md). Do not silently substitute live \(T\) for \(T^{(0)}\). The locked SBP / \(\phi/d\) / low-tail packets are not altered. DA-NS-2 remains **OPEN**. Do not mix live \(\Lambda\) with frozen \(\lambda_e\). Do not stamp \(r\sim\kappa^{-1/2}\).
 
 ---
 
@@ -243,6 +243,7 @@ Natural ensemble is **not a kill**. Remaining packet falsifier = **9D**.
 | [`../../packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md`](../../packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md) | SBP identity only; tail moved, not removed; frozen convention |
 | [`../../packets/DA-GATE-PHI-VS-FROZEN-VARIANCE-2026-09-24.md`](../../packets/DA-GATE-PHI-VS-FROZEN-VARIANCE-2026-09-24.md) | \(\phi_\kappa/d_\kappa\) (A)(B)(C); enemy is the low-frequency tail; \(L_e\) diagnostic |
 | [`../../packets/DA-GATE-LOW-TAIL-SNAPSHOT-2026-09-24.md`](../../packets/DA-GATE-LOW-TAIL-SNAPSHOT-2026-09-24.md) | Snapshot \(L_e\) on existing families; separated triad \(\to 1/3\); \(v_n\) is not the low-tail enemy |
+| [`../../packets/DA-GATE-ARITHMETIC-SIGN-REALIZABILITY-2026-09-24.md`](../../packets/DA-GATE-ARITHMETIC-SIGN-REALIZABILITY-2026-09-24.md) | \(L_{1,N}\) / \(R_{2,N}\); BOTH / ZERO / ONE / NO NEIGHBOR; \(\mathcal A_N^{+}\) seed schema; family not run |
 | [`PR24-GROW-S-SCORE.md`](PR24-GROW-S-SCORE.md) | PR #24 grow-\(s\): \(\max K\approx 0.456\), not a kill |
 | [`docs/math/ns_attacks/ATTACK_9D_SETUP.md`](../math/ns_attacks/ATTACK_9D_SETUP.md) | 9D: same \(B\) as 9B; no I/O exponent locked |
 | [`SUPERGROK-ABC-LOCK.md`](SUPERGROK-ABC-LOCK.md) | SuperGrok ABC_λ filing: keep evaluator line; **refuse** falsifier stamp |

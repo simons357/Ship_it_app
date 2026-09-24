@@ -3,8 +3,26 @@
 **24 September 2026.** Compressed program. One residual region.
 **Not a closure theorem.** Ordinary NS is not solved. Soft X silent.
 Do not put \(K(t)\) in the PDE.
+No more potentials. No more reinterpretation of the same clock.
 
-Rally point (the only live close-adjacent job):
+Operational freeze (the locked low-tail gate is **not** altered):
+
+\[
+\textbf{STATIC FRONTIER: arithmetic sign realizability}
+\qquad\Downarrow\qquad
+\textbf{DYNAMIC FRONTIER: dangerous-state persistence}.
+\]
+
+Sign gate:
+[`../../packets/DA-GATE-ARITHMETIC-SIGN-REALIZABILITY-2026-09-24.md`](../../packets/DA-GATE-ARITHMETIC-SIGN-REALIZABILITY-2026-09-24.md).
+Four categories stay distinct: BOTH SIGNS / ZERO ONLY / ONE SIGN /
+**NO NEIGHBOR** (arithmetic rigidity is not sign depletion).
+Heavy’s neighboring-shell family is **not on this tree**. No
+verdict is stamped. If BOTH SIGNS appears, save
+\(\mathcal A_N^{+}\) (vectors, helicity, polarizations, amplitudes),
+not merely \(\delta\) and \(T^{(0)}\).
+
+Analytic last mile (filed, not reopened):
 
 \[
 \textbf{NARROW HETEROCHIRAL LAST MILE}
@@ -236,7 +254,7 @@ signed sum by a sum of absolute values.
 
 | Seat | Job | Status here |
 |---|---|---|
-| Heavy | \(\mathsf B^{\mathrm{prim}}w=b\) on existing loop/tree families | **Blocked.** Families not on this tree. SBP \(\Phi_e\) identity filed; core/high tail vs \(d_\kappa\) sit; low tail **OPEN**. |
+| Heavy | Neighboring-shell first variation: \(L_{1,N}\) with explicit \(T^{(0)}\); retain live \(T_m\) for \(R_{2,N}\); sign tree BOTH / ZERO / ONE / NO NEIGHBOR. \(\mathsf B^{\mathrm{prim}}\) still not invented. | **Armed.** Family not on this tree. Do not silently substitute live \(T\) for \(T^{(0)}\). |
 | Independent algebra | \(r\sim\kappa^{-1/2}\) conventions; \(\phi/d\) comparison | **Arithmetic sits.** Threshold not stamped. (A)(B)(C) sit. |
 | DA | Classify BROAD/NARROW; find an existing primitive for \(S_\Gamma\); no invented bridge | Not this agent |
 | Solver | On dangerous epochs: \(L_e=\kappa_e^4 E_{\mathrm{low}}/Y\) (or exact \(\phi_e\) low-tail). If \(\Phi/Y\) spikes, is it low-tail dominated? | **Named. TG 64/96 not on this tree.** On-tree snapshot: separated triad is low-tail dominated (\(L_e\to 1/3\)); \(v_n\) is not. |
@@ -264,12 +282,12 @@ remains evidence only. Not on this tree.
 \(\beta\), primitive conditioning, global patching / reset
 control.
 
-**OPEN primary.** DA-NS-2, and immediately upstream
-**low-tail capacity** \(+\) \(2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\).
-Core/high-tail \(\Phi_e\) vs frozen \(D_s\) sit as (C). The
-BROAD tail-\(D_s\) estimate remains open. Taylor–Green must
-report whether a \(\Phi/Y\) spike is low-tail dominated via
-\(L_e\); data are not on this tree and are not run.
+**OPEN primary.** Static: arithmetic sign realizability (armed,
+not run). Dynamic, if BOTH SIGNS: dangerous-state persistence
+and \(\Theta_N=\nu\kappa_N^2\tau_{U,N}\). Analytic last mile
+unchanged: **low-tail capacity** \(+\)
+\(2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\). Taylor–Green and the
+neighboring-shell family are not on this tree.
 
 No new estimate is claimed. No continuation criterion.
 **NS not solved.**

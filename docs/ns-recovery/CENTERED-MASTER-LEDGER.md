@@ -63,6 +63,9 @@ The two \(D_s\) writings \(\|(A-\Lambda)A^{1/2}u\|_2^2\) and
 | 18 | Low-tail capacity \(L_e=\kappa_e^4 E_{\mathrm{low}}/Y\) | **OPEN** |
 | 18 | \(\phi_\kappa=\kappa^4-\kappa^3 m-\tfrac12\kappa^2 m^2+\tfrac12 m^4\) | **EXACT** |
 | 18 | Snapshot \(L_e\) on \(v_n\) / near-shell / separated triad | **REPORTED**; TG not run |
+| 19 | \(T_c=\Lambda\langle\delta,T\rangle+\sum\delta^2 T\) | **EXACT** |
+| 19 | \(L_{1,N}=\Lambda_N\langle\delta_N,T_N^{(0)}\rangle\), \(R_{2,N}\) | **EXACT** protocol; \(T^{(0)}\) not live \(T\) |
+| 19 | Heterochiral sign tree / \(\mathcal A_N^{+}\) | **ARMED**; family not on this tree |
 
 Every new mechanism must eventually pay DA-NS-2. That integral is
 not sitting. The sharpened last mile is
