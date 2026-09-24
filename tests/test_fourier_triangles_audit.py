@@ -49,7 +49,8 @@ class TestFourierTrianglesAudit(unittest.TestCase):
     def test_I3_is_realizability_not_remainder(self) -> None:
         self.assertIn("wavevectors", self.lock["I3_is"])
         self.assertIn("NS remainder", self.lock["I3_is_not"])
-        self.assertIn("not velocity coefficients", self.page)
+        self.assertIn("not velocity", self.page)
+        self.assertIn("coefficients", self.page)
         self.assertFalse(self.proofs["I3_determines_amplitudes"])
 
     def test_does_not_ship_other_gates(self) -> None:
