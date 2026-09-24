@@ -337,6 +337,15 @@ rule, \(\rho_2=1/\sqrt{2}\) is
 **constant** depletion, hence
 not this mechanism.
 
+The old \(Q_a\) counterexample
+is **not** this stack. It is
+scalene, rank three, and
+already globally compatible.
+Static shared-output SAG does
+not kill it
+([`JOINT-EPOCH-BUDGET.md`](JOINT-EPOCH-BUDGET.md)).
+That kill is a different page.
+
 This branch does **not** earn
 another Gate by repairing
 \(\rho_k\). A later write that

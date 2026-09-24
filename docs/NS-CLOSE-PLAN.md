@@ -555,6 +555,7 @@ PR #104):
 - `docs/SIGNED-ASSEMBLY-GATE.md` — gate before old Gate 5; Loss A
 - `docs/SAG-5-COMPATIBILITY.md` — 5A rank / 5B cocycle; \(\Gamma(\mathcal H)\)
 - `docs/SAG-6-LATTICE-CIRCLE.md` — bisector stack; 6D \(\rho_k(N)=1\), not the missing power
+- `docs/JOINT-EPOCH-BUDGET.md` — static SAG rescue KILLED; next Gate = epoch budget
 - `docs/SND-TO-REGULARITY.md` — named hole (iii) frequency drift
 - `docs/SND-INSTRUMENT.md` — diagnostics, no persistence
 
@@ -616,12 +617,17 @@ coherent family has
 depletion on one \(k\) is not
 the missing power. SAG-5
 \(\rho_2=1/\sqrt{2}\) stays
-finite and constant. A later
-write must change the object
-(several outputs, unequal
-length, or Loss B). Do not
-massage \(\rho=1\) into
-\(16/9\).
+finite and constant. The scalene two-triad witness
+already shares \(v_k\) and still
+has \(\mathfrak T_{c,\Gamma}>0\).
+Static shared-output rescue of
+charge-only coercivity is
+**KILLED**. Next Gate =
+Joint Gap–Charge Epoch Budget
+(`docs/JOINT-EPOCH-BUDGET.md`)
+\(\to\) DA-NS-2. Not another
+SAG-6. Do not massage
+\(\rho=1\) into \(16/9\).
 
 Two routes, both OPEN, both
 killable. If both die, the leftover

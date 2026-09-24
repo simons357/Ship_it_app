@@ -555,14 +555,15 @@ the parent gate, plus:
 
 ---
 
-SAG-6 is now the bisector
-**stack**, not one circle:
+SAG-6 is the bisector stack:
 [`SAG-6-LATTICE-CIRCLE.md`](SAG-6-LATTICE-CIRCLE.md).
-6A EXACT. 6B sparse. 6D:
-\(\rho_k(N)=1\) on a legal
-coherent family. Constant
-\(\rho_2=1/\sqrt{2}\) is not
-that mechanism.
+Static shared-output rescue of
+charge-only coercivity is
+**KILLED** on the scalene
+two-triad witness
+([`JOINT-EPOCH-BUDGET.md`](JOINT-EPOCH-BUDGET.md)).
+Next Gate = Joint Gap–Charge
+Epoch Budget, not SAG-6.
 
 ---
 

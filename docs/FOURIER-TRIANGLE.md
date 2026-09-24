@@ -733,6 +733,11 @@ One circle is sparse. The stack
 admits \(\rho_k(N)=1\). Centered
 prefactor factors out of one
 \(k\). Not the missing power.
+The old \(Q_a\) witness is
+scalene, not this stack.
+Static shared-output rescue
+**KILLED**. Next Gate =
+[`JOINT-EPOCH-BUDGET.md`](JOINT-EPOCH-BUDGET.md).
 Do not evolve a bound that was never
 written. No A2. No prime glue.
 NS not solved.

@@ -424,10 +424,18 @@ depletion. SAG-6
 is the bisector stack. 6D:
 \(\rho_k(N)=1\) on a legal
 coherent family. That route is
-not the missing power. Until a
-signed estimate exists on a
-**different** object, talking
-is not the gate.
+not the missing power.
+
+Static shared-output rescue of
+charge-only coercivity is
+**KILLED** by the scalene
+two-triad witness
+([`JOINT-EPOCH-BUDGET.md`](JOINT-EPOCH-BUDGET.md)).
+The next Gate is the Joint
+Gap–Charge Epoch Budget, not
+another SAG-6. Until that
+budget or a named death exists,
+talking is not the gate.
 
 ---
 
@@ -455,6 +463,10 @@ SAG-6A EXACT. 6B sparse. 6D
 \(\rho_k(N)=1\), coherent family.
 One-\(k\) equal-input stack is not
 the missing power.
+Static shared-output rescue of
+charge-only coercivity **KILLED**.
+Next Gate = Joint Gap–Charge
+Epoch Budget.
 CRSPR roles classify; they do not close.
 Do not use \(\lvert\widehat B_k\rvert\) early.
 Do not evolve a bound that was never written.
