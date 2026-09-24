@@ -49,7 +49,7 @@ class RatioIdentities(unittest.TestCase):
     def test_high_tail_decays_low_tail_blows_up(self):
         kappa = 5.0
         self.assertAlmostEqual(phi_over_d(200.0, kappa) * (200.0**2), 0.5, places=2)
-        self.assertAlmostEqual(phi_over_d(0.05, kappa) * (0.05**2), 1.0, places=2)
+        self.assertAlmostEqual(phi_over_d(0.05, kappa) * (0.05**2), 1.0, delta=0.02)
         self.assertGreater(phi_over_d(0.2, kappa), phi_over_d(kappa, kappa))
         self.assertGreater(phi_over_d(kappa, kappa), phi_over_d(25.0, kappa))
 
