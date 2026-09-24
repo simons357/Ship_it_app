@@ -620,4 +620,9 @@ actually kill or certify.
 Neither is certified as a
 regularity close.
 
+The Fourier-triangle audit
+[`FOURIER-TRIANGLE-AUDIT.md`](FOURIER-TRIANGLE-AUDIT.md)
+does not reopen these two
+instructions.
+
 NS not solved.

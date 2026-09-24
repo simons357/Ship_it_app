@@ -289,4 +289,11 @@ verdict**, not as regularity.
 Dynamic frontier:
 dangerous-state persistence.
 
+The Fourier-triangle audit
+[`FOURIER-TRIANGLE-AUDIT.md`](FOURIER-TRIANGLE-AUDIT.md)
+does not reopen this gate. It
+records the seated identities,
+the I3 Gram/Hilbert test, and
+the open scalene budget (17).
+
 NS not solved.

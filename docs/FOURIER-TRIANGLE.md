@@ -5,6 +5,21 @@
 implication. Not a theorem. Not a
 close. NS not solved.**
 
+The 20 September reconstruction and
+audit, including the repeated-radius
+estimate, the I3 Hilbert-symbol
+criterion, and the open scalene
+budget (17), lives at
+[`FOURIER-TRIANGLE-AUDIT.md`](FOURIER-TRIANGLE-AUDIT.md).
+That page does **not** revert the
+September 20 notes to older
+census-only summaries. The §7
+reading of \(I_3\) below as the
+unweighted energy sum is the older
+desk object \(\sum T_k=0\). On the
+audit page, \(I_3\) is the cubic
+lattice and the Gram/Hilbert test.
+
 Unaugmented NS on
 \(\mathbb{T}^3=(\mathbb{R}/2\pi\mathbb{Z})^3\).
 No \(Q_1\). No \(\Phi\)-cancel. No
@@ -412,6 +427,19 @@ Single input shell only. Designed
 ---
 
 ## 7. \(I_3\) and prime restrictions
+
+**Superseded reading.** The
+20 September reconstruction treats
+\(I_3\) as the cubic lattice
+\((\mathbb{Z}^3,x_1^2+x_2^2+x_3^2)\)
+and tests integer-triangle existence
+by the binary Gram and Hilbert
+symbols. That is
+[`FOURIER-TRIANGLE-AUDIT.md`](FOURIER-TRIANGLE-AUDIT.md)
+§7, criterion (12). The paragraphs
+below keep the older desk object
+\(\sum T_k=0\). Do not mix the two
+names.
 
 The later tape does **not** name an
 object \(I_3\). It names \(T_k\),
