@@ -2,7 +2,7 @@
 
 **Audience:** Jonathan + agents who must not green false glue  
 **Purpose:** Field-first card for the swirl \(\Phi\) identity — separate from cosmic essays and from Lemma★.  
-**Honesty lock:** ★ **NOT** proved · NS **NOT** solved · kill lane **LIVE** · RH **NOT** proved.  
+**Honesty lock:** static uniform ★ **KILLED** (Attack 10) · NS **NOT** solved · dynamic persistence **OPEN** · RH **NOT** proved.  
 **Audit (22 Aug 2026):** [`PHI-RENORM-AUDIT-2026-08-22.md`](./PHI-RENORM-AUDIT-2026-08-22.md) — \(\dot H\) relabel only; open barrier \(\|u^r/r\|_\infty\) intact.  
 **TeX SoT:** [`docs/papers/swirl/Simons_PhiRenorm_Swirl_2026-06-30.tex`](../papers/swirl/Simons_PhiRenorm_Swirl_2026-06-30.tex) (June 30 conditional reduction).  
 **DA inventory:** `docs/domain-architect/01-EQUATION-INVENTORY.md` · **NS-Φ** · conflict **C-GLUE-4**
@@ -100,9 +100,10 @@ Language preference: *algebraic identity* / *hypothesis* / *interpretive analogy
 | Setting | Axisymmetric-with-swirl; cylindrical axis | Divergence-free fields on \(\mathbb{T}^3\) |
 | Core move | Change variable so the axis term is non-singular | Bound nonlinear transfer using shape / spectral moments |
 | Danger object | \(1/r^4\) centrifugal / swirl term in wrong variables | Centered cascade \((T_c)_+\) vs spread \(D_s\) |
-| Status | Identity **KEEP**; classical regularity **open** | Packaging **open**; ★ **NOT** proved |
+| Status | Identity **KEEP**; classical regularity **open** | Static uniform \(\sup\mathcal{R}_\star\) **KILLED** (Attack 10); dynamic persistence **OPEN** |
 
-Fundamentals for Lemma★ (field → structures): PR **#65** · `LEMMA-STAR-WHAT-IS-IT.md`.
+Fundamentals for Lemma★ (field → structures): PR **#65** · `LEMMA-STAR-WHAT-IS-IT.md`.  
+Static kill of uniform \(\mathcal{R}_\star\): [`../math/ns_attacks/ATTACK_10_LOCALIZED_BUMP.md`](../math/ns_attacks/ATTACK_10_LOCALIZED_BUMP.md).
 
 **Do not glue:** Φ-renorm identity ≠ Lemma★ closed ≠ Clay Statement B.
 
@@ -110,4 +111,4 @@ Fundamentals for Lemma★ (field → structures): PR **#65** · `LEMMA-STAR-WHAT
 
 ## 5. One-line summary
 
-**Φ-renorm is the wrong-variable story near the swirl axis; Lemma★ is the shape story for nonlinear transfer on the torus.** Keep the algebra. Park the cosmic proof claims. NS is not solved.
+**Φ-renorm is the wrong-variable story near the swirl axis; Lemma★ is the shape story for nonlinear transfer on the torus.** Keep the Φ-renorm algebra. Static uniform \(\mathcal{R}_\star\) is dead (Attack 10). Park the cosmic proof claims. NS is not solved.
