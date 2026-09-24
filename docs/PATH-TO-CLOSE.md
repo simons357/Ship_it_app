@@ -32,6 +32,8 @@ Short interval:
 [`INTERVAL.md`](INTERVAL.md).
 Incoming ledger:
 [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
+Chart reset:
+[`RESET.md`](RESET.md).
 
 This desk is **unaugmented**.
 A is not B. Keep \(1/r^4\).
@@ -208,6 +210,12 @@ Incoming DA-NS-2 is the
 Y-cousin target, not a
 theorem.
 [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
+A chart reset of \(W_K\) is
+exact and does not move
+\(K_{\min,\theta}\). Not a
+useful \(K\) and not a death
+of G4.
+[`RESET.md`](RESET.md).
 
 Useful \(K\) or a named death.
 Do not restore

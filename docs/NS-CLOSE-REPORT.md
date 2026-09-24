@@ -39,6 +39,8 @@ Short interval:
 [`INTERVAL.md`](INTERVAL.md).
 Incoming ledger:
 [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
+Chart reset:
+[`RESET.md`](RESET.md).
 Score:
 [`NS-STATUS.md`](NS-STATUS.md).
 Tape:

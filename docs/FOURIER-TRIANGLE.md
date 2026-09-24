@@ -44,6 +44,8 @@ Incoming ledger (two-shell
 product sits; \(\alpha+\beta=\Lambda\)
 empty on two shells):
 [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
+Chart reset:
+[`RESET.md`](RESET.md).
 
 Do not start leftover 1.
 Do not weld \(\star\).

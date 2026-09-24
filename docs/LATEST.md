@@ -131,6 +131,9 @@ docs/INTERVAL.md
 Incoming ledger (DA-NS-2
 is not a theorem):
 docs/CENTERED-LEDGER.md
+Chart reset (jump sits;
+remainder does not jump):
+docs/RESET.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

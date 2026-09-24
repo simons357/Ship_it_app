@@ -23,6 +23,8 @@ Short interval:
 [`INTERVAL.md`](INTERVAL.md).
 Incoming ledger:
 [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
+Chart reset:
+[`RESET.md`](RESET.md).
 Machine: `python3 scripts/mn_cancel.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.

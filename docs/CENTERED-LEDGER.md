@@ -18,6 +18,8 @@ Triangles:
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
 Short interval:
 [`INTERVAL.md`](INTERVAL.md).
+Chart reset:
+[`RESET.md`](RESET.md).
 Machine: `python3 scripts/centered_ledger.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.
@@ -263,7 +265,8 @@ stop.
 
 ---
 
-## §17 Reset — paste broke
+## §17 Reset — jump now locked
+from sitting \(W_K\)
 
 The frozen variance
 
@@ -273,11 +276,18 @@ W_K=\mathcal D_s+X(\Lambda-K)^2
 \]
 
 is exact and nonnegative.
-Locked today.
+Locked on this page.
 
-The jump \(\Delta W\) at a
-chart reset did not arrive.
-Do not reconstruct it.
+The incoming paste broke at
+the jump. The unique algebra
+that follows from \(W_K\), with
+the physical state fixed, is
+now locked on
+[`RESET.md`](RESET.md).
+That is not a reconstruction
+of their boxed text. The
+remainder does not jump. A
+reset is not a useful \(K\).
 
 ---
 

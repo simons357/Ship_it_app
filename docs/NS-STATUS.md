@@ -56,6 +56,9 @@ keeps \(N=0\); NSE keeps
 Incoming ledger (DA-NS-2
 is not a theorem):
 [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
+Chart reset (jump sits;
+remainder does not jump):
+[`RESET.md`](RESET.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 

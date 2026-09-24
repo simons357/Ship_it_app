@@ -48,6 +48,8 @@ Short interval:
 [`INTERVAL.md`](INTERVAL.md).
 Incoming ledger:
 [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
+Chart reset:
+[`RESET.md`](RESET.md).
 Identities sit. The first
 missing implication is this
 page’s estimate.
@@ -341,6 +343,7 @@ No new 9D sweeps.
 | Short Stokes / NSE interval | **NO** as a useful \(K\). Stokes keeps \(N=0\). NSE keeps \(R_{mn}=1\). Large-amp \(K_{1/2}\) grows. Not a G4 death. [`INTERVAL.md`](INTERVAL.md). |
 | Incoming DA-NS-2 as a theorem | **NO.** Y-cousin target. Tautological \(K\) forbidden. [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
 | Two-shell \(\alpha+\beta=\Lambda\) zero | **NO** as a two-shell zero. \(\Lambda\) is a convex combination. [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
+| Chart reset of \(W_K\) as a useful \(K\) | **NO.** Jump is exact. \(K_{\min,\theta}\) is chart-invariant. Not a G4 death. [`RESET.md`](RESET.md). |
 | Y-remainder cousin (pathwise \(K_Y\)) | **OPEN.** Same circularity test. |
 | Unrestricted \(\star\) | **DEAD.** |
 | C10 \(\Rightarrow\) this estimate | **NO** without an inequality. C10 did not seat (A). |

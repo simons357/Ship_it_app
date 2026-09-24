@@ -96,6 +96,8 @@ stay samples. They are not this kill.
 | NSE interval keeps \(R_{mn}=1\) on \(v_n\) | \(N\) becomes negative, so \(-\Lambda N\) adds to \(T_c\). Instantaneous \(MN\) death persists. [`INTERVAL.md`](INTERVAL.md). |
 | Two-shell product matches the gap formula | \(T_c=(\alpha-\beta)(\alpha+\beta-\Lambda)T_\alpha=(\alpha-\beta)(\alpha\beta E/X)T_\alpha\). [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
 | \(W_K=\mathcal D_s+X(\Lambda-K)^2\) | Exact, nonnegative. [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
+| Reset jump \(\Delta W\) | \(\Delta W=X[(\Lambda-K_{\mathrm{new}})^2-(\Lambda-K_{\mathrm{old}})^2]\). Reset to \(\Lambda\) drops \(W\) by \(X(\Lambda-K_{\mathrm{old}})^2\). \(W_\Lambda=\mathcal D_s\). [`RESET.md`](RESET.md). |
+| \(K_{\min,\theta}\) is chart-invariant | Depends on \((T_c,\mathcal D_s,Y)\) only. [`RESET.md`](RESET.md). |
 
 ---
 
@@ -151,6 +153,7 @@ stay samples. They are not this kill.
 | Incoming DA-NS-2 as a theorem / as leftover 1 | Y-cousin target. Tautological \(K\) forbidden. Living leftover 1 is H1. Living leftover 6 is RH. [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
 | \(\alpha+\beta=\Lambda\) as a two-shell zero | \(\Lambda\) is a convex combination of \(\alpha,\beta\). Empty. [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
 | SAG \(\Gamma_{\mathrm{star}}=1\) / JGC epoch budget as seated | Not reproduced here. JGC stays a target. [`DA-NS-2.md`](DA-NS-2.md), [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
+| Chart reset of \(W_K\) as a useful \(K\) / as a G4 death | Jump sits. Remainder does not jump. Frequent-reset \(\sum\lvert\Delta W\rvert=X\sum(\Delta\Lambda)^2\) is circular for \(\mathrm{TV}(\Lambda)\). [`RESET.md`](RESET.md). |
 | Switch this line to augmented NS / Theorem A | Track A is a different PDE. A is not B. |
 | OpenAI / blowup-search as this line | Forced (C)/(D) if it holds. Not unforced (B). |
 | BKM from assumed spectral decay as the primary | Useful conditional. Does not attack depletion. |
@@ -236,6 +239,9 @@ keeps \(N=0\); NSE keeps
 Incoming ledger (DA-NS-2
 is not a theorem):
 [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
+Chart reset (jump sits;
+remainder does not jump):
+[`RESET.md`](RESET.md).
 
 SND-to-regularity implication is
 **OPEN** as a named hole on the SND/H
