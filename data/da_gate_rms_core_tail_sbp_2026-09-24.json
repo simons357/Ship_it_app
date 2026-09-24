@@ -1,0 +1,35 @@
+{
+  "title": "DA-GATE RMS / core / tail / SBP",
+  "date": "2026-09-24",
+  "packet": "packets/DA-GATE-RMS-CORE-TAIL-SBP-2026-09-24.md",
+  "ns_solved": false,
+  "da_ns_2": "OPEN",
+  "tail_estimate": "OPEN",
+  "convention": "FROZEN_EPOCH",
+  "do_not_mix_with_live_Lambda": true,
+  "proved": [
+    "Chebyshev tail bound",
+    "core-radius bound, factor of two exact",
+    "grad R = (5 kappa^2, 5 kappa^2, 0)",
+    "dR/dLambda = -2 kappa",
+    "|R-2kappa^3| <= 5 kappa^3 L r + O((Lr)^2) at live core",
+    "frozen extra 2 kappa_e |Lambda-lambda_e|",
+    "weight |m| flux 2o(i-j) on het, 0 on hom",
+    "Q_a = (1/2) (d/dt)_NL ||u||_{Hdot^{1/2}}^2",
+    "M_het = sum A H Q",
+    "N_het = sum A Q",
+    "SBP identity for Phi_e"
+  ],
+  "forbidden": [
+    "replace a signed sum by a sum of absolute values"
+  ],
+  "open": [
+    "Phi_e/Y controlled by r^2",
+    "tail leakage vs nu D_s on the tail",
+    "DA-NS-2"
+  ],
+  "unconfirmed": [
+    "Q_a is the dossier cross-radius helicity primitive"
+  ],
+  "n64_n96_in_tree": false
+}
