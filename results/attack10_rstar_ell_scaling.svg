@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="460" viewBox="0 0 720 460" role="img" aria-label="Attack 10: R star grows like ell to the minus three">
+  <rect width="720" height="460" fill="#fffaf3"/>
+  <text x="360" y="36" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#1b1b1b">Attack 10  R · ³ is constant</text>
+  <text x="360" y="58" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#5a4636">N = 64 spectral bump · seed 20260924 · static uniform R dead · NS not solved</text>
+
+  <!-- axes box -->
+  <rect x="80" y="80" width="420" height="300" fill="#fff" stroke="#2b2118" stroke-width="1.2"/>
+
+  <!-- log-log ticks: ell 0.30 .. 0.60, Rstar 4e-7 .. 4e-6 -->
+  <!-- x: log10(ell) from -0.52 to -0.22 mapped to 80..500 -->
+  <!-- y: log10(R) from -6.45 to -5.35 mapped to 380..80 -->
+
+  <g font-family="ui-monospace, monospace" font-size="11" fill="#3d3228">
+    <text x="80" y="400" text-anchor="middle">0.30</text>
+    <text x="185" y="400" text-anchor="middle">0.35</text>
+    <text x="290" y="400" text-anchor="middle">0.40</text>
+    <text x="395" y="400" text-anchor="middle">0.50</text>
+    <text x="500" y="400" text-anchor="middle">0.60</text>
+    <text x="70" y="384" text-anchor="end">4×10{w</text>
+    <text x="70" y="298" text-anchor="end">1×10{v</text>
+    <text x="70" y="212" text-anchor="end">2×10{v</text>
+    <text x="70" y="126" text-anchor="end">4×10{v</text>
+  </g>
+  <text x="290" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#1b1b1b">bump width </text>
+  <text x="24" y="230" transform="rotate(-90 24 230)" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#1b1b1b">R</text>
+
+  <!-- reference line R = C / ell^3 with C = 1.090755e-7 -->
+  <polyline fill="none" stroke="#c46a2b" stroke-width="2" stroke-dasharray="6 4"
+    points="80,122.3 500,351.5"/>
+  <text x="520" y="150" font-family="Georgia, serif" font-size="13" fill="#c46a2b">{³ reference</text>
+
+  <!-- data points
+       x = 80 + (log10(ell)+0.52)/0.30 * 420
+       y = 380 - (log10(R)+6.45)/1.10 * 300
+       ell=0.55, R=6.556e-7 ’ x=458.1, y=307.4
+       ell=0.45, R=1.197e-6 ’ x=348.6, y=236.3
+       ell=0.38, R=1.988e-6 ’ x=257.2, y=176.3
+       ell=0.32, R=3.329e-6 ’ x=165.1, y=116.3
+  -->
+  <g fill="#1f4d7a" stroke="#1f4d7a">
+    <circle cx="458.1" cy="307.4" r="5.5"/>
+    <circle cx="348.6" cy="236.3" r="5.5"/>
+    <circle cx="257.2" cy="176.3" r="5.5"/>
+    <circle cx="165.1" cy="116.3" r="5.5"/>
+  </g>
+  <polyline fill="none" stroke="#1f4d7a" stroke-width="1.6"
+    points="165.1,116.3 257.2,176.3 348.6,236.3 458.1,307.4"/>
+
+  <!-- side table -->
+  <g font-family="ui-monospace, monospace" font-size="12" fill="#1b1b1b">
+    <text x="520" y="210">        R·³</text>
+    <text x="520" y="230">0.55   1.090754e-7</text>
+    <text x="520" y="248">0.45   1.090755e-7</text>
+    <text x="520" y="266">0.38   1.090755e-7</text>
+    <text x="520" y="284">0.32   1.090755e-7</text>
+    <text x="520" y="314" font-family="Georgia, serif" fill="#5a4636">spread 1.4×10{v</text>
+  </g>
+</svg>
