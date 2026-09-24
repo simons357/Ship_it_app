@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 420" role="img" aria-labelledby="title desc">
+  <title id="title">Recovered Gate 17 roadmap seated on the NS close plan</title>
+  <desc id="desc">Lineage board only. Gates 57 later treated superseded. REOPEN equals recompute. NS not solved.</desc>
+  <style>
+    text { font-family: ui-sans-serif, Helvetica, Arial, sans-serif; fill: #102033; }
+    .kicker { font-size: 12px; fill: #4b5d73; }
+    .head { font-size: 20px; font-weight: 700; }
+    .gate { font-size: 13px; font-weight: 700; }
+    .body { font-size: 11px; }
+    .status { font-size: 10px; font-weight: 700; letter-spacing: 0.04em; }
+    .note { font-size: 12px; }
+  </style>
+  <rect width="980" height="420" fill="#f6f1e8"/>
+  <text class="kicker" x="24" y="28">NS close plan ∑ 24 Sep 2026 recovery ∑ lineage, not a reopen</text>
+  <text class="head" x="24" y="54">Roadmap from NavierStokes to a broadband estimate</text>
+
+  <g transform="translate(24,76)">
+    <rect width="124" height="150" rx="8" fill="#e7eef6" stroke="#8aa0b8"/>
+    <text class="gate" x="10" y="22">Gate 1</text>
+    <text class="body" x="10" y="44">Equal-shell</text>
+    <text class="body" x="10" y="60">HH í L</text>
+    <text class="status" x="10" y="132" fill="#6a4b16">CLAIMED</text>
+  </g>
+  <g transform="translate(160,76)">
+    <rect width="124" height="150" rx="8" fill="#dceee0" stroke="#6d9a75"/>
+    <text class="gate" x="10" y="22">Gate 2</text>
+    <text class="body" x="10" y="44">Centered</text>
+    <text class="body" x="10" y="60">f(x)=x(xõ)</text>
+    <text class="body" x="10" y="76">compressed triad</text>
+    <text class="status" x="10" y="132" fill="#1f5d32">CLOSED*</text>
+  </g>
+  <g transform="translate(296,76)">
+    <rect width="124" height="150" rx="8" fill="#dceee0" stroke="#6d9a75"/>
+    <text class="gate" x="10" y="22">Gate 3</text>
+    <text class="body" x="10" y="44">Triangle î</text>
+    <text class="body" x="10" y="60">lengths r,t,s</text>
+    <text class="body" x="10" y="76">» formula only</text>
+    <text class="status" x="10" y="132" fill="#1f5d32">CLOSED*</text>
+  </g>
+  <g transform="translate(432,76)">
+    <rect width="124" height="150" rx="8" fill="#f3ead0" stroke="#b89a4a"/>
+    <text class="gate" x="10" y="22">Gate 4</text>
+    <text class="body" x="10" y="44">L d A</text>
+    <text class="body" x="10" y="60">L, A missing</text>
+    <text class="status" x="10" y="132" fill="#6a4b16">PARTIAL</text>
+  </g>
+  <g transform="translate(568,76)">
+    <rect width="124" height="150" rx="8" fill="#e7eef6" stroke="#8aa0b8"/>
+    <text class="gate" x="10" y="22">Gate 5</text>
+    <text class="body" x="10" y="44">PÄ(z) quadratic</text>
+    <text class="body" x="10" y="60">++ / +++ chamber</text>
+    <text class="body" x="10" y="76">CÄ,CÅ truncated</text>
+    <text class="status" x="10" y="132" fill="#6a4b16">CLAIMED</text>
+  </g>
+  <g transform="translate(704,76)">
+    <rect width="124" height="150" rx="8" fill="#eadfdf" stroke="#b48a8a"/>
+    <text class="gate" x="10" y="22">Gate 6</text>
+    <text class="body" x="10" y="44">Sign chambers</text>
+    <text class="body" x="10" y="60">permutation</text>
+    <text class="body" x="10" y="76">collapse allowed</text>
+    <text class="status" x="10" y="132" fill="#7a3030">NOT STARTED</text>
+  </g>
+  <g transform="translate(840,76)">
+    <rect width="116" height="150" rx="8" fill="#eadfdf" stroke="#b48a8a"/>
+    <text class="gate" x="10" y="22">Gate 7</text>
+    <text class="body" x="10" y="44">Broadband</text>
+    <text class="body" x="10" y="60">(T_c)+ r</text>
+    <text class="body" x="10" y="76">(D_s E Y)</text>
+    <text class="status" x="10" y="132" fill="#7a3030">NOT STARTED</text>
+  </g>
+
+  <rect x="24" y="246" width="932" height="150" rx="8" fill="#fffdf8" stroke="#c8b89a"/>
+  <text class="gate" x="40" y="274">What is left on this older board</text>
+  <text class="note" x="40" y="300">1. Finish Gate 5: exact real-algebra certificate that the bad +++ set is empty, or an exact counterexample.</text>
+  <text class="note" x="40" y="322">2. Gate 6: remaining sign chambers for the three centered shell positions. Not six new proofs if permutation collapse holds.</text>
+  <text class="note" x="40" y="344">3. Gate 7: sum the remaining pointwise triad toward a broadband estimate. Do not splice later T_c, D_s, E, Y.</text>
+  <text class="kicker" x="40" y="374">*Closed means the recovered formula only. Living close-plan order is still Route A, then Route B. REOPEN = recompute. NS not solved.</text>
+</svg>

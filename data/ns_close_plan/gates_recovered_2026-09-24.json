@@ -1,0 +1,116 @@
+{
+  "title": "Recovered Gate 1-7 record",
+  "seated_on": "docs/NS-CLOSE-PLAN.md",
+  "source": "ChatGPT recovery screenshots sent to Ns close plan, 24 September 2026",
+  "rule": "REOPEN = recompute",
+  "superseded": true,
+  "overwrites_current_board": false,
+  "clay_statement_b": "OPEN",
+  "ns_solved": false,
+  "strongest_recoverable": "Gate 5 quadratic P0(z)",
+  "do_not_splice_later_definitions": [
+    "T_c",
+    "D_s",
+    "E",
+    "Y",
+    "u",
+    "m",
+    "d",
+    "++",
+    "c"
+  ],
+  "gates": {
+    "1": {
+      "target": "equal-shell HH -> L",
+      "status": "CLAIMED",
+      "preserved": [
+        "||Pi_beta B(w,w)||_2 <= sqrt(3 beta) ||w||_2^2",
+        "|S_star| <= sqrt(3) (alpha / sqrt(beta)) e_alpha sqrt(e_beta)"
+      ],
+      "missing": ["S_star definition", "c_alpha definition", "e_beta definition"]
+    },
+    "2": {
+      "target": "six-permutation centered identity",
+      "status": "CLOSED",
+      "closed_means": "compressed triad identity only",
+      "preserved": [
+        "f(x) = x(x - Lambda)",
+        "T_pqk = [f(s)-f(t)] X + [f(r)-f(s)] Y + [f(t)-f(r)] Z"
+      ],
+      "missing": ["full six-permutation identity before compression into X,Y,Z"]
+    },
+    "3": {
+      "target": "unequal-shell vertex geometry",
+      "status": "CLOSED",
+      "closed_means": "formula recovered; derivation of sqrt(Delta)/(2 sqrt(r)) not recovered",
+      "r_s_t_are": "lengths",
+      "preserved": [
+        "r = |q|, t = |p|, s = |k|",
+        "Delta = 2(r^2 t^2 + t^2 s^2 + s^2 r^2) - (r^4 + t^4 + s^4)",
+        "psi_Lambda(r,t,s) = sqrt(Delta)/(2 sqrt(r)) |(s-t)(s+t-Lambda)|"
+      ],
+      "missing": ["historical derivation of sqrt(Delta)/(2 sqrt(r))"]
+    },
+    "4": {
+      "target": "L <= A",
+      "status": "PARTIAL",
+      "global": false,
+      "missing": ["formula for L", "formula for A"]
+    },
+    "5": {
+      "target": "++ / +++ chamber quadratic emptiness",
+      "status": "CLAIMED",
+      "independently_reproducible": false,
+      "preserved": {
+        "polynomial": "P0(z) = C0 + C1 z + C2 z^2",
+        "z": "d^2",
+        "D_plus": "4 C0 C2 - C1^2",
+        "D_plus_is_not": "C1^2 - 4 C0 C2",
+        "z_star": "-C1 / (2 C2)",
+        "P0_at_z_star": "D_plus / (4 C2)",
+        "C2_complete": "16 m^2 + 2 m u + 18 m - 4 u^2 - 10 u - 2",
+        "C0_C1": "screenshot-truncated",
+        "z_max": "min(m^2, (1+u)(3+4m-u)/4)",
+        "dangerous_chamber": [
+          "u > 0",
+          "m > 0",
+          "C2 > 0",
+          "C1 < 0",
+          "D_plus < 0",
+          "0 < z_star < z_max"
+        ]
+      },
+      "missing": [
+        "remaining C0 terms",
+        "remaining C1 terms",
+        "exact definitions of u, m, d",
+        "definition of ++ / +++",
+        "definition of parameter c",
+        "Gate 2-3 to Gate 5 derivation",
+        "derivation of the two z_max bounds",
+        "numerical protocol"
+      ]
+    },
+    "6": {
+      "target": "remaining sign chambers for three centered shell positions",
+      "status": "NOT YET STARTED",
+      "missing": ["chamber list", "sign table", "permutation dictionary"]
+    },
+    "7": {
+      "target": "(T_c)_+ ≲ sqrt(D_s E Y)",
+      "status": "NOT YET STARTED",
+      "missing": [
+        "Gate-7 definition of T_c",
+        "Gate-7 definition of D_s",
+        "Gate-7 definition of E",
+        "Gate-7 definition of Y"
+      ],
+      "do_not_splice_later_program_quantities": true
+    }
+  },
+  "what_is_left": [
+    "Finish Gate 5: exact real-algebra certificate that the bad +++ set is empty, or an exact counterexample",
+    "Gate 6: close remaining sign chambers; permutation collapse allowed",
+    "Gate 7: sum remaining pointwise triad toward the broadband estimate"
+  ]
+}
