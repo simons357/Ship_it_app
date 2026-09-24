@@ -2,22 +2,30 @@
   "title": "Fourier-triangles Heavy executable-audit board",
   "date": "2026-09-24",
   "ns_solved": false,
-  "lemma_star": "OPEN",
+  "lemma_star_static_uniform": "claimed_killed_on_attack_10_not_merged_here",
   "missing_theorem_17": "OPEN",
   "L1_both_signs": "OPEN",
   "da_ns_2": "OPEN",
   "heavy_exit_code": 1,
+  "expected_exit_code_after_three_files": 0,
   "heavy_totals": {
     "PASS": 27,
     "FAIL": 1,
     "OPEN": 2,
     "MISSING": 1
   },
-  "groups": {
+  "groups_heavy_run": {
     "G1_triangle_geometry": "FAIL_on_heavy_run_G1_1_missing_input",
     "G2_exact_shell_incidence": "PASS",
     "G3_arithmetic_realizability": "MISSING_alpha98_unstamped",
     "G4_signed_centered_transfer": "OPEN"
+  },
+  "groups_expected_after_three_files": {
+    "G1": "PASS",
+    "G2": "PASS",
+    "G3": "PASS_only_if_alpha98_stamped",
+    "G4": "OPEN",
+    "G5": "PASS_static_uniform_Rstar_kill_on_attack_10"
   },
   "equation_1": {
     "heavy": "MISSING INPUT / FAIL CLOSED",
@@ -30,7 +38,20 @@
     "computed_here": false
   },
   "schulze_pillot": "BLOCKED-ON-SOURCE",
+  "hilbert_gram_source": "scripts/hilbert_gram.py",
   "relevant_primes_must_not_return_composites": true,
+  "relevant_primes_callers": [
+    "scripts/fourier_triangles_audit.py",
+    "tests/test_fourier_triangles_heavy_board.py"
+  ],
+  "sixteen_trajectory_S_was_zero": true,
+  "sixteen_positive_part_untested": true,
+  "sixteen_rerun_on": "nu=3/2, K=1, N^2=12 or 20, Sept 20 S>0",
+  "sixteen_pointwise_slack": 2.65e-6,
   "sixteen_checks_used_random_not_adversarial": true,
+  "G4_odd_closed_form": "8 A^2 (6A - 133)",
+  "G4_odd_factors": "48 A^3 - 1064 A^2",
+  "conventions_agree_with_13": true,
+  "both_signs_fixture_spec": "data/l1_both_signs_fixture_spec.json",
   "both_signs_fixture_without_checker_fails_closed": true
 }

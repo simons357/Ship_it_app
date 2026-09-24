@@ -1,0 +1,27 @@
+{
+  "gate": "L1 / BOTH SIGNS",
+  "status": "OPEN",
+  "no_fixture_here": true,
+  "fixture_without_checker_fails_closed": true,
+  "pre_run_required": [
+    {
+      "id": "R2_scaling",
+      "require": "R_{2,N} scales in epsilon with exponent above about 1.8",
+      "why": "otherwise the deformation is not a first-variation sequence"
+    },
+    {
+      "id": "quotient_trivial_symmetries",
+      "require": "classify signs only after removing u -> -u, phase gauge, and parity",
+      "why": "BOTH SIGNS can be manufactured by u -> -u alone"
+    },
+    {
+      "id": "uniform_exact_signs",
+      "require": "normalization uniform in N; signs decided in exact arithmetic",
+      "why": "floating-point sign flips are not a family"
+    }
+  ],
+  "insufficient": [
+    "delta and T^{(0)} alone",
+    "a sign pair that is the image of u -> -u"
+  ]
+}

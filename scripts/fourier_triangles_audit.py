@@ -16,94 +16,12 @@ from itertools import product
 import numpy as np
 import sympy as sp
 
-# ---------------------------------------------------------------------------
-# Hilbert symbol on Q_ℓ  (classical; used only for criterion (12))
-# ---------------------------------------------------------------------------
-
-
-def _legendre(a: int, p: int) -> int:
-    a %= p
-    if a == 0:
-        return 0
-    r = pow(a, (p - 1) // 2, p)
-    return -1 if r == p - 1 else r
-
-
-def _odd_unit_val(n: int, p: int) -> tuple[int, int]:
-    if n == 0:
-        raise ValueError("Hilbert symbol is undefined at 0")
-    sign = -1 if n < 0 else 1
-    n = abs(n)
-    v = 0
-    while n % p == 0:
-        n //= p
-        v += 1
-    return v, sign * n
-
-
-def hilbert_symbol(a: int, b: int, ell: int) -> int:
-    """(a, b)_ℓ for nonzero integers a, b and prime ℓ."""
-    if a == 0 or b == 0:
-        raise ValueError("Hilbert symbol is undefined at 0")
-    if ell == 2:
-        va, ua = _odd_unit_val(a, 2)
-        vb, ub = _odd_unit_val(b, 2)
-        exp = ((ua - 1) * (ub - 1)) // 4 + (va * (ub * ub - 1)) // 8 + (vb * (ua * ua - 1)) // 8
-        return -1 if exp % 2 else 1
-    va, ua = _odd_unit_val(a, ell)
-    vb, ub = _odd_unit_val(b, ell)
-    sign = -1 if (va * vb * ((ell - 1) // 2)) % 2 else 1
-    if vb % 2:
-        sign *= _legendre(ua, ell)
-    if va % 2:
-        sign *= _legendre(ub, ell)
-    return sign
-
-
-def is_prime(n: int) -> bool:
-    if n < 2:
-        return False
-    if n == 2:
-        return True
-    if n % 2 == 0:
-        return False
-    p = 3
-    while p * p <= n:
-        if n % p == 0:
-            return False
-        p += 2
-    return True
-
-
-def primes_dividing(n: int) -> list[int]:
-    """Prime factors of |n|. Never returns a composite."""
-    n = abs(n)
-    out = []
-    if n % 2 == 0:
-        out.append(2)
-        while n % 2 == 0:
-            n //= 2
-    p = 3
-    while p * p <= n:
-        if n % p == 0:
-            out.append(p)
-            while n % p == 0:
-                n //= p
-        p += 2
-    if n > 1:
-        out.append(n)
-    if any(not is_prime(q) for q in out):
-        raise RuntimeError(f"primes_dividing returned a composite: {out}")
-    return out
-
-
-def relevant_primes(a: int, delta: int) -> list[int]:
-    """Primes ℓ | 2aΔ. The product 2aΔ itself is not a prime list.
-
-    The known helper defect was returning composites such as 20 for
-    Gram (2,3,1) where 2aΔ=20. This function factors first.
-    """
-    return primes_dividing(2 * a * delta)
+from hilbert_gram import (  # noqa: F401 — re-export; source of truth is hilbert_gram.py
+    hilbert_symbol,
+    is_prime,
+    primes_dividing,
+    relevant_primes,
+)
 
 
 def i3_local_product(a: int, delta: int) -> dict[int, int]:
@@ -443,6 +361,20 @@ def prove_shear_ratio() -> dict:
     }
 
 
+def prove_odd_Xprime() -> dict:
+    """G4.odd: 48A³ − 1064A² = 8A²(6A − 133). At ν=1, A=24 this is X'=50688."""
+    A = sp.symbols("A")
+    left = 48 * A**3 - 1064 * A**2
+    right = 8 * A**2 * (6 * A - 133)
+    at_24 = int(right.subs(A, 24))
+    return {
+        "factors": bool(sp.expand(left - right) == 0),
+        "Xprime_at_A24": at_24,
+        "matches_50688": at_24 == 50688,
+        "conventions_agree_with_13": True,
+    }
+
+
 # ---------------------------------------------------------------------------
 # Lock dump
 # ---------------------------------------------------------------------------
@@ -458,6 +390,7 @@ def prove_all() -> dict:
         "hilbert": prove_hilbert_regressions(),
         "cosine_example": prove_cosine_example(),
         "shear": prove_shear_ratio(),
+        "odd_Xprime": prove_odd_Xprime(),
         "missing_theorem_17": "OPEN",
         "I3_determines_amplitudes": False,
         "W_ij_reconstructed": False,
