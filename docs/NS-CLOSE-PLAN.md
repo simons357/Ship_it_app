@@ -235,7 +235,7 @@ other, not in series through H:
 | Lane | Target | Status |
 |---|---|---|
 | **Route A / C10 / leftover 5** | Dynamical \(a_+\) then (A) on the local block | Identities sit. First new arrow (template \(\to a_+\)) is **empty** or BKM-adjacent. (A) not seated. |
-| **Route B / leftover 4** | \(T_c\le\theta\nu\mathcal D_s+K(t)X\) with **useful** \(K\in L^1_{\mathrm{loc}}\) | Identities sit. Estimate OPEN. Unrestricted \(\star\) stays killed. Tautological \(K=(T_c-\theta\nu\mathcal D_s)_+/X\) is not content. |
+| **Route B / leftover 4** | \(T_c\le\theta\nu\mathcal D_s+K(t)X\) with **useful** \(K\in L^1_{\mathrm{loc}}\) | Identities sit. **Loss A first:** Signed Assembly Gate (`SIGNED-ASSEMBLY-GATE.md`) before any \(T_c\) bound. Estimate OPEN. Unrestricted \(\star\) stays killed. Tautological \(K=(T_c-\theta\nu\mathcal D_s)_+/X\) is not content. |
 | **SND** | Instrument | Diagnostic. No persistence. Displayed H withdrawn. |
 
 Exact-shell 9D is a **fourth object**,
@@ -335,6 +335,29 @@ Class: unrestricted smooth
 divergence-free fields on
 \(\mathbb{T}^3\).
 
+**Do not start at the clock.**
+The screenshot canon already seats
+\(\Lambda'=2(T_c-\nu\mathcal D_s)/X\).
+The first missing implication is
+the signed sum. That object is now
+a gate before old Gate 5:
+
+\[
+\boxed{\textbf{SIGNED ASSEMBLY GATE}}
+\]
+
+(`docs/SIGNED-ASSEMBLY-GATE.md`).
+Loss A = assemble
+\(\sum\mathrm{Im}[(q\cdot v_p)(v_q\cdot\overline{v_k})]\)
+while keeping \(k_\perp\), gap-cancel,
+and phase. Loss B = evolve a
+snapshot bound to integrable
+\(K(t)\). Do not write Loss B
+before Loss A has a write or a
+named death. Do not replace the
+product by \(\lvert\widehat B_k\rvert\)
+early.
+
 Target:
 
 \[
@@ -376,9 +399,17 @@ One direction. No converse.
 - centering is lost and the remainder
   is worse than the dead box.
 
-**This is the only Route B write.**
-Test the remainder on \(v_n\),
-amplitude, shears, and single shells.
+**This is the only Route B write,
+and it now has two stacked pages.**
+Page 1 (next): signed assembly on a
+named class, or a named death that
+every sum reintroduces occupancy
+\(s\) or \(\|\nabla u\|_\infty\).
+Page 2 (later): useful integrable
+\(K\) from that snapshot, or a named
+death of the evolution arrow.
+Test both on \(v_n\), amplitude,
+shears, and single shells.
 Do not restore
 \(\sup\mathcal R_\star<\infty\).
 Need★ cannot repair the dead box.
@@ -449,10 +480,17 @@ One person, one row. Do not glue.
    sentence contradicts
    `YES-NO-OPEN.md`.
 
-3. **Route B write-or-kill.**
-   Independent. Centered pairing
-   only. Useful \(K\) or a named
-   death. Same families. Same tape.
+3. **Signed Assembly Gate, then
+   Route B.**
+   Independent of leftover 1.
+   First page: sum the signed
+   triangle identity without
+   \(\lvert\widehat B_k\rvert\)
+   early, on a named class — or
+   name that death. Only then:
+   centered pairing, useful \(K\),
+   or a named evolution death.
+   Same families. Same tape.
 
 4. **Crossover** only if (A) sits.
 
@@ -514,6 +552,7 @@ PR #104):
 - `docs/C10-CHAIN.md` — Route A chain
 - `docs/CENTERED-DRIFT.md` — Route B target
 - `docs/FOURIER-TRIANGLE.md` — triad geometry; first missing implication
+- `docs/SIGNED-ASSEMBLY-GATE.md` — gate before old Gate 5; Loss A
 - `docs/SND-TO-REGULARITY.md` — named hole (iii) frequency drift
 - `docs/SND-INSTRUMENT.md` — diagnostics, no persistence
 
