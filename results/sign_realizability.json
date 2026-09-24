@@ -1,0 +1,510 @@
+{
+  "gate": "arithmetic sign realizability",
+  "date": "2026-09-24",
+  "frozen": "loop-gauge and telescopic-capacity board is not altered",
+  "expansion": "T_c = Lambda <delta, T> + sum delta^2 T   (actual T)",
+  "first_variation": "L_1,N = Lambda_N <delta_N, T_N^{(0)}>",
+  "remainder": "R_2,N = T_c,N - Lambda_N <delta_N, T_N^{(0)}>",
+  "scans": [
+    {
+      "N": 6,
+      "category": "HAS_NEIGHBOR",
+      "reason": null,
+      "n_parents": 24,
+      "n_children": 144,
+      "n_samples": 384,
+      "n_legitimate": 160
+    },
+    {
+      "N": 10,
+      "category": "NO_NEIGHBOR",
+      "reason": "no exact-shell triad p+q=k on this shell",
+      "n_parents": 0,
+      "n_children": 0,
+      "n_samples": 0,
+      "n_legitimate": 0
+    },
+    {
+      "N": 14,
+      "category": "HAS_NEIGHBOR",
+      "reason": null,
+      "n_parents": 48,
+      "n_children": 144,
+      "n_samples": 384,
+      "n_legitimate": 208
+    },
+    {
+      "N": 18,
+      "category": "HAS_NEIGHBOR",
+      "reason": null,
+      "n_parents": 96,
+      "n_children": 144,
+      "n_samples": 384,
+      "n_legitimate": 248
+    },
+    {
+      "N": 26,
+      "category": "HAS_NEIGHBOR",
+      "reason": null,
+      "n_parents": 48,
+      "n_children": 144,
+      "n_samples": 384,
+      "n_legitimate": 280
+    },
+    {
+      "N": 30,
+      "category": "NO_NEIGHBOR",
+      "reason": "no exact-shell triad p+q=k on this shell",
+      "n_parents": 0,
+      "n_children": 0,
+      "n_samples": 0,
+      "n_legitimate": 0
+    },
+    {
+      "N": 42,
+      "category": "HAS_NEIGHBOR",
+      "reason": null,
+      "n_parents": 48,
+      "n_children": 144,
+      "n_samples": 384,
+      "n_legitimate": 288
+    },
+    {
+      "N": 50,
+      "category": "HAS_NEIGHBOR",
+      "reason": null,
+      "n_parents": 168,
+      "n_children": 144,
+      "n_samples": 384,
+      "n_legitimate": 288
+    },
+    {
+      "N": 66,
+      "category": "NO_NEIGHBOR",
+      "reason": "no exact-shell triad p+q=k on this shell",
+      "n_parents": 0,
+      "n_children": 0,
+      "n_samples": 0,
+      "n_legitimate": 0
+    },
+    {
+      "N": 74,
+      "category": "HAS_NEIGHBOR",
+      "reason": null,
+      "n_parents": 48,
+      "n_children": 144,
+      "n_samples": 384,
+      "n_legitimate": 224
+    }
+  ],
+  "remainder_order": [
+    {
+      "N": 6,
+      "median_abs_R2_over_L1": 0.26253559787260133
+    },
+    {
+      "N": 14,
+      "median_abs_R2_over_L1": 0.21089800555488625
+    },
+    {
+      "N": 18,
+      "median_abs_R2_over_L1": 0.23293008690782252
+    },
+    {
+      "N": 26,
+      "median_abs_R2_over_L1": 0.19907072267267475
+    },
+    {
+      "N": 42,
+      "median_abs_R2_over_L1": 0.14991388138092449
+    },
+    {
+      "N": 50,
+      "median_abs_R2_over_L1": 0.13924709128597373
+    },
+    {
+      "N": 74,
+      "median_abs_R2_over_L1": 0.11794667270333684
+    }
+  ],
+  "verdict": {
+    "outcome": "BOTH_SIGNS",
+    "reading": "universal first-order one-sided narrow depletion is FALSE. Stop static closure on this question. Positive branch goes to evolution. \u0398_N = \u03bd \u03ba_N\u00b2 \u03c4_{U,N} is now live.",
+    "n_hetero_plus": 848,
+    "n_hetero_minus": 848,
+    "n_homo_zero": 672,
+    "n_homo_total": 672,
+    "n_homo_nonzero": 0,
+    "live_scales": [
+      6,
+      14,
+      18,
+      26,
+      42,
+      50,
+      74
+    ],
+    "no_neighbor_scales": [
+      10,
+      30,
+      66
+    ],
+    "r2_ratios": [
+      [
+        6,
+        0.47416461536226456
+      ],
+      [
+        6,
+        0.24417282057987244
+      ],
+      [
+        6,
+        0.24417282057987244
+      ],
+      [
+        6,
+        0.47416461536226456
+      ],
+      [
+        6,
+        0.1704048643047049
+      ],
+      [
+        6,
+        0.015419733843190335
+      ],
+      [
+        6,
+        0.015419733843190335
+      ],
+      [
+        6,
+        0.1704048643047049
+      ],
+      [
+        6,
+        0.26253559787260133
+      ],
+      [
+        6,
+        0.26253559787260133
+      ],
+      [
+        6,
+        0.038051635822681874
+      ],
+      [
+        6,
+        0.41411709264521324
+      ],
+      [
+        6,
+        0.41411709264521324
+      ],
+      [
+        6,
+        0.038051635822681874
+      ],
+      [
+        6,
+        0.011000717431532267
+      ],
+      [
+        6,
+        0.011000717431532267
+      ],
+      [
+        6,
+        0.4789026567097634
+      ],
+      [
+        6,
+        0.34443749333294754
+      ],
+      [
+        6,
+        0.34443749333294754
+      ],
+      [
+        6,
+        0.4789026567097634
+      ],
+      [
+        6,
+        0.26253559787260133
+      ],
+      [
+        6,
+        0.26253559787260133
+      ],
+      [
+        6,
+        0.011000717431531925
+      ],
+      [
+        6,
+        0.011000717431531925
+      ],
+      [
+        6,
+        0.47416461536226456
+      ],
+      [
+        6,
+        0.24417282057987244
+      ],
+      [
+        6,
+        0.24417282057987244
+      ],
+      [
+        6,
+        0.47416461536226456
+      ],
+      [
+        6,
+        0.4789026567097634
+      ],
+      [
+        6,
+        0.34443749333294765
+      ],
+      [
+        6,
+        0.34443749333294765
+      ],
+      [
+        6,
+        0.4789026567097634
+      ],
+      [
+        6,
+        0.17040486430470483
+      ],
+      [
+        6,
+        0.015419733843189998
+      ],
+      [
+        6,
+        0.015419733843189998
+      ],
+      [
+        6,
+        0.17040486430470483
+      ],
+      [
+        6,
+        0.038051635822681666
+      ],
+      [
+        6,
+        0.41411709264521335
+      ],
+      [
+        6,
+        0.41411709264521335
+      ],
+      [
+        6,
+        0.038051635822681666
+      ]
+    ],
+    "static_verdict": "universal first-order one-sided narrow depletion is false",
+    "stop_static_closure": true,
+    "seed_A_N_plus": {
+      "tag": "A_N_plus",
+      "parent": [
+        [
+          -7,
+          -3,
+          4
+        ],
+        [
+          3,
+          -4,
+          -7
+        ],
+        [
+          -4,
+          -7,
+          -3
+        ]
+      ],
+      "child": [
+        [
+          -7,
+          -3,
+          4
+        ],
+        [
+          2,
+          -4,
+          -7
+        ],
+        [
+          -5,
+          -7,
+          -3
+        ]
+      ],
+      "integer_vectors": {
+        "p": [
+          -7,
+          -3,
+          4
+        ],
+        "q": [
+          2,
+          -4,
+          -7
+        ],
+        "k": [
+          -5,
+          -7,
+          -3
+        ]
+      },
+      "helicity": [
+        -1,
+        1,
+        1
+      ],
+      "amplitudes": {
+        "a_p": 1.0,
+        "a_q": 1.0,
+        "a_k": 1.0
+      },
+      "polarizations": {
+        "(-7, -3, 4)": [
+          {
+            "re": 0.2785430072655778,
+            "im": -0.3022130242434419
+          },
+          {
+            "re": -0.6499336836196815,
+            "im": -0.12951986753290365
+          },
+          {
+            "re": 0.0,
+            "im": -0.6260126930757011
+          }
+        ],
+        "(7, 3, -4)": [
+          {
+            "re": 0.2785430072655778,
+            "im": 0.3022130242434419
+          },
+          {
+            "re": -0.6499336836196815,
+            "im": 0.12951986753290365
+          },
+          {
+            "re": 0.0,
+            "im": 0.6260126930757011
+          }
+        ],
+        "(2, -4, -7)": [
+          {
+            "re": 0.6324555320336758,
+            "im": 0.2664854456694083
+          },
+          {
+            "re": 0.3162277660168379,
+            "im": -0.5329708913388166
+          },
+          {
+            "re": 0.0,
+            "im": 0.3806934938134405
+          }
+        ],
+        "(-2, 4, 7)": [
+          {
+            "re": 0.6324555320336758,
+            "im": -0.2664854456694083
+          },
+          {
+            "re": 0.3162277660168379,
+            "im": 0.5329708913388166
+          },
+          {
+            "re": 0.0,
+            "im": -0.3806934938134405
+          }
+        ],
+        "(-5, -7, -3)": [
+          {
+            "re": 0.5753964555687504,
+            "im": -0.13533849888470276
+          },
+          {
+            "re": -0.4109974682633932,
+            "im": -0.1894738984385839
+          },
+          {
+            "re": 0.0,
+            "im": 0.6676699278312003
+          }
+        ],
+        "(5, 7, 3)": [
+          {
+            "re": 0.5753964555687504,
+            "im": 0.13533849888470276
+          },
+          {
+            "re": -0.4109974682633932,
+            "im": 0.1894738984385839
+          },
+          {
+            "re": 0.0,
+            "im": -0.6676699278312003
+          }
+        ]
+      },
+      "delta_N": [
+        -1.7787610619469092,
+        -6.778761061946909,
+        7.221238938053091
+      ],
+      "T_0": [
+        6.661338147750939e-16,
+        -5.250565208933471,
+        5.250565208933471
+      ],
+      "T_N": [
+        0.24779825027452906,
+        -5.460484690613669,
+        5.212686440339139
+      ],
+      "Lambda_N": 75.77876106194691,
+      "L_1_N": 11140.677139422343,
+      "R_2_N": 150.78363746970354,
+      "rho_N": 0.9837619835031942,
+      "T_c_N": 11291.460776892047,
+      "N": 74,
+      "note": "exact reproducible neighboring-shell field, statically pointed in the dangerous direction. NSE gets the next move."
+    },
+    "Theta_N": {
+      "formula": "Theta_N = nu * kappa_N^2 * tau_U,N",
+      "nu": 1.0,
+      "kappa_N": 8.70509971579573,
+      "tau_U_N": 0.23325962494623834,
+      "Theta_N": 17.676125384200347,
+      "live_because": "BOTH_SIGNS"
+    },
+    "c": 0.05
+  },
+  "frontiers": {
+    "static": "arithmetic sign realizability",
+    "dynamic": "dangerous-state persistence"
+  },
+  "locks": {
+    "loop_gauge_unaltered": true,
+    "T_neighbor_kept_separate": true,
+    "no_silent_T0_substitution": true,
+    "no_neighbor_is_own_category": true,
+    "phase_twin_is_not_both_signs": true,
+    "not_a_close": true
+  }
+}
