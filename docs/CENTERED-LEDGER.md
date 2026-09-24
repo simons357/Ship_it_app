@@ -24,6 +24,9 @@ Relative width:
 [`WIDTH.md`](WIDTH.md).
 SBP / \(\Phi_e\):
 [`SBP.md`](SBP.md).
+Press (Lemma A sits;
+Lemma B OPEN):
+[`PRESS.md`](PRESS.md).
 Machine: `python3 scripts/centered_ledger.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.

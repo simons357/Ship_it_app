@@ -184,6 +184,9 @@ docs/WIDTH.md
 SBP / Φ_e (moves the tail;
 not a useful K):
 docs/SBP.md
+Press (Lemma A sits;
+Lemma B OPEN):
+docs/PRESS.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md

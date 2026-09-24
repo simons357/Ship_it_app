@@ -17,6 +17,9 @@ Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 SBP / \(\Phi_e\):
 [`SBP.md`](SBP.md).
+Press (Lemma A sits;
+Lemma B OPEN):
+[`PRESS.md`](PRESS.md).
 Machine: `python3 scripts/width.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.

@@ -38,6 +38,9 @@ Relative width:
 [`WIDTH.md`](WIDTH.md).
 SBP / \(\Phi_e\):
 [`SBP.md`](SBP.md).
+Press (Lemma A sits;
+Lemma B OPEN):
+[`PRESS.md`](PRESS.md).
 
 This desk is **unaugmented**.
 A is not B. Keep \(1/r^4\).
@@ -235,6 +238,12 @@ controlled by \(r^2\). Not a
 useful \(K\) and not a death
 of G4.
 [`SBP.md`](SBP.md).
+Lemma A sits on the unit
+torus: \(\Phi_e\le W_{\lambda_e}\).
+Lemma B stays OPEN. Not a
+useful \(K\) and not a death
+of G4.
+[`PRESS.md`](PRESS.md).
 
 Useful \(K\) or a named death.
 Do not restore

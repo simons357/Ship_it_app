@@ -16,6 +16,9 @@ Overnight page:
 [`DA-NS-2.md`](DA-NS-2.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
+Press (Lemma A sits;
+Lemma B OPEN):
+[`PRESS.md`](PRESS.md).
 Machine: `python3 scripts/sbp.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.
@@ -250,7 +253,10 @@ Cauchy–Schwarz:
 on one shell.
 
 \(\Phi_e/Y\) is not controlled
-by \(r^2\).
+by \(r^2\) alone. On the unit
+torus the press bounds it by
+\(W_{\lambda_e}\):
+[`PRESS.md`](PRESS.md).
 
 - At the shell, \(\varphi_e=0\).
   Near the shell,

@@ -47,6 +47,9 @@ Relative width:
 [`WIDTH.md`](WIDTH.md).
 SBP / \(\Phi_e\):
 [`SBP.md`](SBP.md).
+Press (Lemma A sits;
+Lemma B OPEN):
+[`PRESS.md`](PRESS.md).
 
 This page answers the operator’s
 question: how do we beat unforced

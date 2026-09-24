@@ -102,6 +102,7 @@ stay samples. They are not this kill.
 | \(r\gtrsim\kappa^{-1/2}\Leftrightarrow\mathcal D_s/Y\gtrsim\kappa\) | Same comparison, three writings. [`WIDTH.md`](WIDTH.md). |
 | \(\varphi_e\) expand / \(\Phi_e\) capacity / CS \(\Lambda^2 E\ge Y\) | Exact. Zero at the shell. \(\varphi_e(0)=\kappa_e^4\). [`SBP.md`](SBP.md). |
 | SBP rewrite if \((d/dt)_{\mathrm{NL}}H_{1/2}=2Q_a\) | \(T_c=(d/dt)_{\mathrm{NL}}\Phi_e+2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\). Identity, not a payment. Frozen \(\lambda_e\). [`SBP.md`](SBP.md). |
+| Lemma A / \(\Phi_e\le W_{\lambda_e}\) | Unit torus, \(m\ge 1\), \(\kappa\ge 1\). Sharp L3: \(\Phi_e\le\mathcal D_s+X(\Lambda-\lambda_e)^2\). Young L2 is weaker. [`PRESS.md`](PRESS.md). |
 
 ---
 
@@ -162,6 +163,9 @@ stay samples. They are not this kill.
 | Quadratic primitive for \(S_\Gamma\) as sitting | \(W_K\) is variance. \(H^\varepsilon\) is sign-killed. \(\Psi\) is the \(\eta\)-side. No \(\mathsf B^{\mathrm{prim}}\) here. Do not invent a bridge. [`WIDTH.md`](WIDTH.md). |
 | SBP / \(\Phi_e\) as a useful \(K\) / as a G4 death | Moves the tail. \(\Phi_e/Y\) is not controlled by \(r^2\). Residual still \(2\kappa_e^3 Q_a\) and \(-(\Lambda-\lambda_e)N\). Flux normalization not reproduced. [`SBP.md`](SBP.md). |
 | Mixing live \(\Lambda\) and frozen \(\lambda_e\) | Live kills the moving term; \(2\kappa(t)^3 Q_a\) does not telescope. Pick frozen. [`SBP.md`](SBP.md). |
+| Lemma A as an \(\mathbb{R}^3\) / scale-invariant bound | Off-torus \(m=0.1\), \(\kappa=0.5\) kills (A). Torus units only. [`PRESS.md`](PRESS.md). |
+| RESET \(\lvert\Lambda-\lambda_e\rvert=c\sqrt{\Lambda}\) as a payment / as JGC | Named chart. \(\zeta_e^2=c^2\) is a choice, not BROAD-scale, not summability. [`PRESS.md`](PRESS.md). |
+| Lemma B / charge–epoch ledger as sitting | Charge is a different bill. \(D_s\) cannot pay \(D_a\) on a narrow annulus. Not written. [`PRESS.md`](PRESS.md). |
 | Switch this line to augmented NS / Theorem A | Track A is a different PDE. A is not B. |
 | OpenAI / blowup-search as this line | Forced (C)/(D) if it holds. Not unforced (B). |
 | BKM from assumed spectral decay as the primary | Useful conditional. Does not attack depletion. |
@@ -256,6 +260,9 @@ is not a useful \(K\)):
 SBP / \(\Phi_e\) (moves the
 tail; not a useful \(K\)):
 [`SBP.md`](SBP.md).
+Press (Lemma A sits;
+Lemma B OPEN):
+[`PRESS.md`](PRESS.md).
 
 SND-to-regularity implication is
 **OPEN** as a named hole on the SND/H

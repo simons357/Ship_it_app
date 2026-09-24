@@ -45,6 +45,9 @@ Relative width:
 [`WIDTH.md`](WIDTH.md).
 SBP / \(\Phi_e\):
 [`SBP.md`](SBP.md).
+Press (Lemma A sits;
+Lemma B OPEN):
+[`PRESS.md`](PRESS.md).
 Score:
 [`NS-STATUS.md`](NS-STATUS.md).
 Tape:

@@ -65,6 +65,9 @@ is not a useful \(K\)):
 SBP / \(\Phi_e\) (moves the
 tail; not a useful \(K\)):
 [`SBP.md`](SBP.md).
+Press (Lemma A sits;
+Lemma B OPEN):
+[`PRESS.md`](PRESS.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 

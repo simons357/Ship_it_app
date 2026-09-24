@@ -140,6 +140,9 @@ docs/WIDTH.md
 SBP / Φ_e (moves the tail;
 not a useful K):
 docs/SBP.md
+Press (Lemma A sits;
+Lemma B OPEN):
+docs/PRESS.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

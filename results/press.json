@@ -1,0 +1,152 @@
+{
+  "not_a_close": true,
+  "star_stays_killed": true,
+  "lemma_A_sits": true,
+  "lemma_B_open": true,
+  "identities": {
+    "A": "m\u00b2+2\u03bam+2\u03ba\u00b2 \u2264 2m\u00b2(m+\u03ba)\u00b2 on m\u22651, \u03ba\u22651",
+    "L1": "\u03a6_e \u2264 W_{\u03bb_e} on the unit torus",
+    "sharp_L3": "\u03a6_e \u2264 D_s + X(\u039b-\u03bb_e)\u00b2",
+    "L2_young": "W \u2264 (1+\u03b7)D_s + (1+\u03b7^{-1})X(\u039b-\u03bb_e)\u00b2, weaker",
+    "L4": "\u03a6_e/Y \u2264 D_s/Y + \u03b6_e\u00b2 in torus units"
+  },
+  "P_at_one_ok": true,
+  "P_nonneg": true,
+  "P_prime_lower_ok": true,
+  "P_prime_fd_ok": true,
+  "ratio_le_one": true,
+  "C_to_one": true,
+  "C_finite_lt_one": true,
+  "C_rows": [
+    {
+      "kappa": 1.0,
+      "C": 0.625
+    },
+    {
+      "kappa": 1.5,
+      "C": 0.68
+    },
+    {
+      "kappa": 2.0,
+      "C": 0.7222222222222222
+    },
+    {
+      "kappa": 3.0,
+      "C": 0.78125
+    },
+    {
+      "kappa": 8.0,
+      "C": 0.8950617283950617
+    },
+    {
+      "kappa": 20.0,
+      "C": 0.953514739229025
+    }
+  ],
+  "shell_formula_ok": true,
+  "at_shell_check": true,
+  "off_torus_fails": true,
+  "off_torus_P": -0.6028,
+  "zero_mode_is_kappa4": true,
+  "mean_zero_required": true,
+  "unit_torus_only": true,
+  "not_R3": true,
+  "samples": {
+    "low": {
+      "alpha": 1.0,
+      "beta": 16.0,
+      "ke": 4.0,
+      "Phi": 1.845,
+      "W": 2.250000000000929,
+      "Ds": 2.2485946283582052,
+      "W_ok": true,
+      "Phi_le_W": true,
+      "gap": 0.40500000000092906
+    },
+    "high": {
+      "alpha": 4.0,
+      "beta": 10000.0,
+      "ke": 2.0,
+      "Phi": 49.979216,
+      "W": 999200.1599999999,
+      "Ds": 996708.3890274314,
+      "W_ok": true,
+      "Phi_le_W": true,
+      "gap": 999150.180784
+    },
+    "core": {
+      "alpha": 4.0,
+      "beta": 5.0,
+      "ke": 2.1213203435596424,
+      "Phi": 0.31274270182665664,
+      "W": 2.250000000000007,
+      "Ds": 2.2222222222222285,
+      "W_ok": true,
+      "Phi_le_W": true,
+      "gap": 1.9372572981733505
+    }
+  },
+  "samples_Phi_le_W": true,
+  "W_identity_ok": true,
+  "young_ok": true,
+  "young_weaker_than_W": true,
+  "L4_ok": true,
+  "reset_abs_at_c": 2.0,
+  "broad_match_abs": 8.0,
+  "reset_is_not_broad_scale": true,
+  "reset_is_not_a_payment": true,
+  "zeta_not_unique_dimensionless": true,
+  "charge_different_bill": true,
+  "Ds_cannot_pay_Da_narrow": true,
+  "lemma_B_not_seated": true,
+  "identity_is_not_a_payment": true,
+  "da_ns2_is_not_a_theorem": true,
+  "sits_as_useful_K": false,
+  "sits_as_g4_death": false,
+  "sits_as_da_ns2": false,
+  "sits_as_jgc": false,
+  "sits_as_bprim": false,
+  "g4_stays_open": true,
+  "do_not_invent_a_bridge": true,
+  "do_not_run_taylor_green": true,
+  "do_not_mix_heavy": true,
+  "do_not_glue_to_leftover_1": true,
+  "ratio_rows_head": [
+    {
+      "m": 1.2,
+      "kappa": 1.0,
+      "ratio": 0.41896235078053257,
+      "C1": 0.625
+    },
+    {
+      "m": 1.4142135623730951,
+      "kappa": 1.0,
+      "ratio": 0.2928932188134525,
+      "C1": 0.625
+    },
+    {
+      "m": 2.0,
+      "kappa": 1.0,
+      "ratio": 0.1388888888888889,
+      "C1": 0.625
+    },
+    {
+      "m": 3.0,
+      "kappa": 1.0,
+      "ratio": 0.059027777777777776,
+      "C1": 0.625
+    },
+    {
+      "m": 5.0,
+      "kappa": 1.0,
+      "ratio": 0.020555555555555556,
+      "C1": 0.625
+    },
+    {
+      "m": 10.0,
+      "kappa": 1.0,
+      "ratio": 0.005041322314049587,
+      "C1": 0.625
+    }
+  ]
+}
