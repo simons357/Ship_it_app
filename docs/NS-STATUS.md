@@ -59,6 +59,9 @@ is not a theorem):
 Chart reset (jump sits;
 remainder does not jump):
 [`RESET.md`](RESET.md).
+Relative width (crossover
+is not a useful \(K\)):
+[`WIDTH.md`](WIDTH.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 

@@ -20,6 +20,8 @@ Short interval:
 [`INTERVAL.md`](INTERVAL.md).
 Chart reset:
 [`RESET.md`](RESET.md).
+Relative width:
+[`WIDTH.md`](WIDTH.md).
 Machine: `python3 scripts/centered_ledger.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.

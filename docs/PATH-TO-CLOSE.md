@@ -34,6 +34,8 @@ Incoming ledger:
 [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
 Chart reset:
 [`RESET.md`](RESET.md).
+Relative width:
+[`WIDTH.md`](WIDTH.md).
 
 This desk is **unaugmented**.
 A is not B. Keep \(1/r^4\).
@@ -216,6 +218,13 @@ exact and does not move
 useful \(K\) and not a death
 of G4.
 [`RESET.md`](RESET.md).
+Relative width identities
+sit. The \(r\sim\kappa^{-1/2}\)
+crossover is a named
+threshold, not a payment.
+No primitive for \(S_\Gamma\)
+is on this desk.
+[`WIDTH.md`](WIDTH.md).
 
 Useful \(K\) or a named death.
 Do not restore

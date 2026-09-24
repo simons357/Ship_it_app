@@ -41,6 +41,8 @@ Incoming ledger:
 [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
 Chart reset:
 [`RESET.md`](RESET.md).
+Relative width:
+[`WIDTH.md`](WIDTH.md).
 Score:
 [`NS-STATUS.md`](NS-STATUS.md).
 Tape:

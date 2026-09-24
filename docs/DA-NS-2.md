@@ -12,6 +12,9 @@ Today’s incoming ledger scored:
 Chart reset (jump sits;
 remainder does not jump):
 [`RESET.md`](RESET.md).
+Relative width (crossover
+is not a useful \(K\)):
+[`WIDTH.md`](WIDTH.md).
 
 Reproduce the finite checks:
 python3 -m unittest tests.test_centered_barycenter

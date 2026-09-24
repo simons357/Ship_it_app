@@ -134,6 +134,9 @@ docs/CENTERED-LEDGER.md
 Chart reset (jump sits;
 remainder does not jump):
 docs/RESET.md
+Relative width (crossover
+is not a useful K):
+docs/WIDTH.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

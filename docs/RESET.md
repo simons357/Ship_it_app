@@ -15,6 +15,8 @@ Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 Short interval:
 [`INTERVAL.md`](INTERVAL.md).
+Relative width:
+[`WIDTH.md`](WIDTH.md).
 Machine: `python3 scripts/reset.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.

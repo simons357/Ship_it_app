@@ -74,6 +74,8 @@ Incoming ledger:
 [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
 Chart reset:
 [`RESET.md`](RESET.md).
+Relative width:
+[`WIDTH.md`](WIDTH.md).
 Do not start leftover 1.
 Do not weld \(\star\).
 Do not cash B★ as G5.

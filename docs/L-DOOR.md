@@ -23,6 +23,8 @@ Incoming ledger:
 [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
 Chart reset:
 [`RESET.md`](RESET.md).
+Relative width:
+[`WIDTH.md`](WIDTH.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 Machine: `python3 scripts/l_door.py`.

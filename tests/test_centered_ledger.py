@@ -31,6 +31,8 @@ ENERGY = ROOT / "docs" / "ENERGY-K.md"
 LDOOR = ROOT / "docs" / "L-DOOR.md"
 MNC = ROOT / "docs" / "MN-CANCEL.md"
 PATHWISE = ROOT / "docs" / "PATHWISE.md"
+RESET = ROOT / "docs" / "RESET.md"
+WIDTH = ROOT / "docs" / "WIDTH.md"
 ABC = ROOT / "docs" / "CS-REMAINDER.md"
 
 
@@ -107,6 +109,8 @@ class LedgerPageTests(unittest.TestCase):
             LDOOR,
             MNC,
             PATHWISE,
+            RESET,
+            WIDTH,
         ):
             self.assertIn("CENTERED-LEDGER.md", path.read_text(), msg=str(path))
 
