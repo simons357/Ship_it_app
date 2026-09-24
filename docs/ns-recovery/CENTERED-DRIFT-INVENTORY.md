@@ -170,6 +170,7 @@ in the PDE.
 | Symmetrized coefficient / channel split | `docs/ns-recovery/CENTERED-DRIFT-TRIAD-SPLIT.md`, `scripts/centered_drift_triad_split.py` |
 | \(K\)-candidate score sheet | `docs/ns-recovery/CENTERED-DRIFT-K-CANDIDATES.md`, `scripts/centered_drift_k_candidates.py` |
 | Centered spectral barycenter | `docs/ns-recovery/CENTERED-SPECTRAL-BARYCENTER.md`, `scripts/centered_spectral_barycenter.py` |
+| SAG / JGC master ledger | `docs/ns-recovery/CENTERED-MASTER-LEDGER.md` |
 
 **Score sheet landed.** Uniform energy-class slots die on \(v_n\).
 \(K_{\mathrm{inst}}\) is Young packaging, not a bound. Claimed
@@ -184,6 +185,19 @@ in the PDE.
 \(\lvert\rho_{\lambda,t}\rvert\to 1\). First missing implication
 unchanged. Do not redo K=0, the §4 triad, the \(\varepsilon\)-scan,
 the slot score sheet, or this barycenter page.
+
+---
+
+**SAG / JGC ledger filed.** Exact algebra, reported numerics, and
+kills are separated in
+[`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md).
+DA-NS-2 is the named integral of tautological \(K_Y\). It is
+**OPEN**. Frozen \(W_K=D_s+X(\Lambda-K)^2\) sits. The reset jump
+\(\Delta W\) was truncated in the paste and is not completed.
+Static SAG triangle / circle / star / tree are dead as the missing
+power. Charge-only coercivity and orientation-only payment stay
+killed. Loop gate and the Joint Gap–Charge Epoch Budget stay
+**OPEN**. Do not splice this ledger over the barycenter page.
 
 ---
 
