@@ -19,6 +19,10 @@ Equal-input stack (different object):
 [`SAG-6-LATTICE-CIRCLE.md`](SAG-6-LATTICE-CIRCLE.md).
 Centered master ledger:
 [`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md).
+Fourier-triangle 20 Sep audit
+(I₃ = cubic lattice; remaining
+sufficient theorem is (17)):
+[`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
 Narrow het residual
 (primitive test for \(S_\Gamma\)):
 [`NARROW-HET-RESIDUAL.md`](NARROW-HET-RESIDUAL.md).

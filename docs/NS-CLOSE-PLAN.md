@@ -551,7 +551,7 @@ PR #104):
 - `docs/INCOMING-WRITEUPS.md` — who said what
 - `docs/C10-CHAIN.md` — Route A chain
 - `docs/CENTERED-DRIFT.md` — Route B target
-- `docs/FOURIER-TRIANGLE.md` — triad geometry; first missing implication
+- `docs/FOURIER-TRIANGLE.md` — 20 Sep audit: (1)–(16),(18) seated; \(I_3\) is the cubic lattice; remaining sufficient theorem is (17)
 - `docs/SIGNED-ASSEMBLY-GATE.md` — gate before old Gate 5; Loss A
 - `docs/SAG-5-COMPATIBILITY.md` — 5A rank / 5B cocycle; \(\Gamma(\mathcal H)\)
 - `docs/SAG-6-LATTICE-CIRCLE.md` — bisector stack; 6D \(\rho_k(N)=1\), not the missing power
@@ -592,11 +592,29 @@ high-frequency transfer.
 
 Route A1 parked (UNRESOLVED): no
 noncircular \(\int a_+\).
-Fourier triangles reconstructed:
-`docs/FOURIER-TRIANGLE.md`. First
-missing implication is the signed
-sum, not the time integral. Prime
-masks do not fill it.
+Fourier triangles reconstructed
+(20 Sep audit):
+`docs/FOURIER-TRIANGLE.md`.
+Identities (1)–(14), (16), (18)
+and the scoped prime criterion
+(12) sit. \(I_3\) is the cubic
+lattice: Hilbert symbols decide
+existence of integer triangles,
+not amplitudes, phases, or
+signed transfer. The remaining
+sufficient theorem is (17):
+\(\sup_N\mathcal S_{K,N}(T)<\infty\)
+for some finite \(K=K(u_0,\nu)\).
+It is **OPEN**. Do not prove it
+by declaration. The older
+\(I_3:=\sum T_k=0\) reading is
+withdrawn. Prime masks do not
+fill (17). The Signed Assembly
+Gate remains the named assembly
+blank; it is not a substitute
+for (17). The centered \(T_c\)
+criterion is a distinct OPEN
+route.
 
 Signed Assembly Gate
 (`docs/SIGNED-ASSEMBLY-GATE.md`, 24 Sep)

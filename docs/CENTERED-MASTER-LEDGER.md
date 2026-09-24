@@ -34,6 +34,8 @@ Pointers:
 [`LOW-TAIL-CAPACITY.md`](LOW-TAIL-CAPACITY.md),
 [`LEMMA-A-SBP.md`](LEMMA-A-SBP.md),
 [`STATIC-SIGN-REALIZABILITY.md`](STATIC-SIGN-REALIZABILITY.md).
+20 Sep Fourier audit packet:
+[`../packets/FOURIER-TRIANGLE-AUDIT-2026-09-20.md`](../packets/FOURIER-TRIANGLE-AUDIT-2026-09-20.md).
 
 ---
 
@@ -70,6 +72,10 @@ Pointers:
 | 27 | Lemma B: charge/epoch joint budget | **OPEN** |
 | 28 | First-variation \(L_{1,N}\), \(R_{2,N}\) | **EXACT** split; remainder check |
 | 29 | Static sign realizability (BOTH/ONE/ZERO/NO NEIGHBOR) | **OPEN** (run the gate) |
+| 30 | \(S_{pq}\) (1)–(4); \(\mathcal T_{\{a,a,b\}}\) (6); \(\mathcal T_{abc}\) (7) | **EXACT** |
+| 31 | Exact-sphere (8)–(9); \(\lvert\mathcal T_{\mathrm{rep}}\rvert\le(\sqrt3/2)X\sqrt Y\) (11) | working estimate; \(16/9\) **CLAIMED** one shell |
+| 32 | \(I_3\) Hilbert-symbol criterion (12) | **EXACT** existence test; not amplitudes |
+| 33 | Scalene budget \(\mathcal S_{K,N}\) (15); conditional \(X_N\) (16) | (16) conditional **EXACT**; **(17) OPEN** |
 
 Every new mechanism must eventually
 pay §2. Talking is not that integral.
@@ -737,4 +743,9 @@ Static frontier:
 \(L_{1,N}\) uses \(T^{(0)}\).
 \(R_{2,N}\) is the remainder.
 No new potential. Run the gate.
+Fourier-triangle 20 Sep audit:
+[`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
+\(I_3\) is the cubic lattice.
+(17) OPEN. This ledger does not
+prove (17).
 NS not solved.

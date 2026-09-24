@@ -149,18 +149,23 @@ clock. It is control of the **positive
 signed** nonlinear term **after
 assembly**.
 
-\(I_3:=\sum_k T_k=0\) is energy
-conservation of \(B\), if one wants
-that name. It was never a named
-object on the tape. The first
-nontrivial modification is the
-spectral weight
-\(\lambda_k(\lambda_k-\Lambda)\),
-not a prime restriction.
-\(P=\mathbf 1_{\mathbb P}\) may thin
-occupancy. It does not produce
-\(k_\perp\), gap-cancel, \(\mathrm{Im}\)
-control, or integrable \(K(t)\).
+\(I_3\) is the cubic lattice
+\((\mathbb{Z}^3,x_1^2+x_2^2+x_3^2)\),
+not \(\sum_k T_k=0\). The older
+energy-conservation reading is
+withdrawn
+([`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md),
+(12)). Hilbert symbols decide
+which integer triangles exist.
+They do not produce amplitudes,
+phases, \(k_\perp\), gap-cancel,
+\(\mathrm{Im}\) control, or
+integrable \(K(t)\). Energy
+conservation of \(B\) remains
+\(\sum_k T_k=0\), under that
+name. The remaining sufficient
+theorem on the Fourier-triangle
+desk is (17), not this gate.
 
 \(16/9\neq\) global closure, even if
 the one-shell proof later checks.
@@ -477,4 +482,8 @@ CRSPR roles classify; they do not close.
 Do not use \(\lvert\widehat B_k\rvert\) early.
 Do not evolve a bound that was never written.
 Do not reopen a dead route by declaration.
+Fourier-triangle (17) is the
+remaining sufficient scalene
+time estimate; this gate is not
+a substitute for it.
 NS not solved.
