@@ -61,9 +61,17 @@ class CrossoverAuditTests(unittest.TestCase):
 
     def test_dR_dLambda_is_minus_A(self):
         i, j, o, lam = 3.0, 4.0, 2.0, 7.0
-        dlam = 1e-6
-        deriv = (R_of(i, j, o, lam + dlam) - R_of(i, j, o, lam - dlam)) / (2.0 * dlam)
-        self.assertAlmostEqual(deriv, -A_coeff(i, j, o), places=8)
+        # R = A (H − Λ) is linear in Λ, so the derivative is exact.
+        self.assertAlmostEqual(
+            R_of(i, j, o, lam),
+            A_coeff(i, j, o) * (H_ijo(i, j, o) - lam),
+            places=12,
+        )
+        self.assertAlmostEqual(
+            R_of(i, j, o, lam + 1.0) - R_of(i, j, o, lam),
+            -A_coeff(i, j, o),
+            places=12,
+        )
 
     def test_R_gap_is_linear_in_relative_width(self):
         audit = crossover_audit()
