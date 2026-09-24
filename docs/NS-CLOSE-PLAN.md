@@ -554,7 +554,7 @@ PR #104):
 - `docs/FOURIER-TRIANGLE.md` — triad geometry; first missing implication
 - `docs/SIGNED-ASSEMBLY-GATE.md` — gate before old Gate 5; Loss A
 - `docs/SAG-5-COMPATIBILITY.md` — 5A rank / 5B cocycle; \(\Gamma(\mathcal H)\)
-- `docs/SAG-6-LATTICE-CIRCLE.md` — one-output equal-input circle; \(N^{1/2}\) **OBSTRUCTED**
+- `docs/SAG-6-LATTICE-CIRCLE.md` — bisector stack; 6D \(\rho_k(N)=1\), not the missing power
 - `docs/SND-TO-REGULARITY.md` — named hole (iii) frequency drift
 - `docs/SND-INSTRUMENT.md` — diagnostics, no persistence
 
@@ -608,15 +608,20 @@ and 5B (partner/output cocycle).
 Do not stamp SAG-5 from rank
 alone. SAG-6
 (`docs/SAG-6-LATTICE-CIRCLE.md`)
-ran the one-output equal-input
-circle with the centered weight
-kept off. Hemisphere alignment
-kills \(\|\Sigma\|\lesssim N^{1/2}
-w_{\mathrm{nat}}\). That test is
-**OBSTRUCTED**. Do not massage it
-into \(16/9\) or into occupancy.
-A later write must name a
-different gain.
+is the bisector stack. 6A EXACT.
+6B: one circle sparse, not the
+half-power source. 6D: a legal
+coherent family has
+\(\rho_k(N)=1\). Coherence
+depletion on one \(k\) is not
+the missing power. SAG-5
+\(\rho_2=1/\sqrt{2}\) stays
+finite and constant. A later
+write must change the object
+(several outputs, unequal
+length, or Loss B). Do not
+massage \(\rho=1\) into
+\(16/9\).
 
 Two routes, both OPEN, both
 killable. If both die, the leftover

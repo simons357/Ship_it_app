@@ -363,6 +363,32 @@ cannot absorb a single
 \qquad\text{EXACT for this }\mathcal{H}.
 \]
 
+The stamped finite two-vector
+formula, accepted 24 Sep:
+
+\[
+\boxed{
+\rho_2
+=
+\frac{
+\sqrt{w_1^2+w_2^2+2w_1w_2\lvert\cos\varphi\rvert}
+}{
+w_1+w_2
+}
+}
+\]
+
+Orthogonal
+\(\varphi=\pi/2\) gives
+\(\rho_2=1/\sqrt{2}\).
+That is **constant** depletion.
+It is not \(N^{-\delta}\). It is
+not the sought assembly
+mechanism. SAG-6D is the
+scale test; the one-\(k\)
+equal-input stack fails it
+([`SAG-6-LATTICE-CIRCLE.md`](SAG-6-LATTICE-CIRCLE.md)).
+
 This **is** a two-triangle
 coherence defect of type 5B
 (output identification). It is
@@ -529,14 +555,14 @@ the parent gate, plus:
 
 ---
 
-The assembly blank after this page
-is the one-output equal-input
-circle, SAG-6:
+SAG-6 is now the bisector
+**stack**, not one circle:
 [`SAG-6-LATTICE-CIRCLE.md`](SAG-6-LATTICE-CIRCLE.md).
-That test asked for
-\(\|\Sigma\|\lesssim N^{1/2}w_{\mathrm{nat}}\).
-Hemisphere alignment kills it.
-Do not massage.
+6A EXACT. 6B sparse. 6D:
+\(\rho_k(N)=1\) on a legal
+coherent family. Constant
+\(\rho_2=1/\sqrt{2}\) is not
+that mechanism.
 
 ---
 

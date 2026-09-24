@@ -290,8 +290,13 @@ H3_IN: List[Triangle] = [
 ]
 
 
+def rho2_two_vector(w1: float, w2: float, cos_phi: float) -> float:
+    """Stamped finite SAG-5 formula. Constant depletion, not N^{-δ}."""
+    return math.sqrt(w1 * w1 + w2 * w2 + 2.0 * w1 * w2 * abs(cos_phi)) / (w1 + w2)
+
+
 def rho2_in_exact() -> float:
-    return 1.0 / math.sqrt(2.0)
+    return rho2_two_vector(1.0, 1.0, 0.0)
 
 
 def rho2_out_exact() -> float:

@@ -56,6 +56,13 @@ class Sag5Tests(unittest.TestCase):
         self.assertAlmostEqual(independent_denom(H2_IN), 4.0, places=12)
         self.assertAlmostEqual(independent_denom(H2_OUT), 4.0, places=12)
 
+    def test_stamped_two_vector_formula(self):
+        from ns_attacks.sag5_rho2 import rho2_two_vector
+
+        self.assertAlmostEqual(rho2_two_vector(1.0, 1.0, 0.0), 1.0 / math.sqrt(2.0), places=12)
+        self.assertAlmostEqual(rho2_two_vector(3.0, 4.0, 1.0), 1.0, places=12)
+        self.assertAlmostEqual(rho2_two_vector(1.0, 1.0, 1.0), 1.0, places=12)
+
     def test_named_exact_ratios(self):
         self.assertAlmostEqual(rho2_in_exact(), 1.0 / math.sqrt(2.0), places=12)
         self.assertAlmostEqual(rho2_out_exact(), 1.0 / math.sqrt(2.0), places=12)

@@ -1,8 +1,8 @@
-# SAG-6 — one output, equal-input lattice circle
+# SAG-6 — bisector-plane stack
 
 24 September 2026.
-**A named test of signed assembly
-on the full equal-input circle.
+**One output. Equal-input circles
+stacked in the bisector plane.
 Not a \(T_c\) bound. Not a close.
 NS not solved.**
 
@@ -14,335 +14,392 @@ Identities:
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
 
 \[
-\boxed{\text{SAG-6: one output }k\text{, full equal-input lattice circle}}
+\boxed{\text{SAG-6A: bisector-plane decomposition — EXACT}}
 \]
 
 \[
-p_j+q_j=k,
-\qquad
-\lvert p_j\rvert^2=\lvert q_j\rvert^2=\alpha,
-\qquad
-p_j\cdot k=\frac{\lvert k\rvert^2}{2}.
+\boxed{\text{SAG-6B: single-circle arithmetic — sparse; not source of power loss}}
 \]
 
-The centered prefactor
-\(\lambda_k(\lambda_k-\Lambda)\)
-is a **common** factor on this
-circle. It is kept off the sum.
-It cannot create vector-sum
-depletion by itself.
+\[
+\boxed{\text{SAG-6C: inter-circle compatible alignment — OPEN, then seated}}
+\]
+
+\[
+\boxed{\text{SAG-6D: scale-decay or coherent-family adversary — DECISIVE}}
+\]
 
 Unaugmented NS on \(\mathbb{T}^3\).
-No \(Q_1\). No \(\Phi\)-cancel. No
-SND. No Theorem H. No Route A weld.
+No \(Q_1\). No \(\Phi\). No SND. No
+Theorem H. No Route A weld.
 Unrestricted \(\star\) stays
 **KILLED**. Claimed \(K\le 16/9\)
-stays CLAIMED (different
-normalization). No occupancy
+stays CLAIMED. No occupancy
 envelope. No
 \(\lvert\sum S\rvert\to\sum\lvert S\rvert\).
+Do not impose random phase.
 
 ---
 
-## The test
+## SAG-6A — bisector plane (EXACT)
 
-Incoming effective vectors in
-\(k^\perp\), one globally
-compatible divergence-free
-field, unit amplitudes:
+Fix output \(k\), \(\beta=\lvert k\rvert^2\).
+Equal-input pairs are
 
 \[
-w_j
-=(k\cdot v_{p_j})\,P_k v_{q_j},
+p+q=k,
 \qquad
-\Sigma=\sum_j w_j\in k^\perp\otimes\mathbb{C}.
+\lvert p\rvert=\lvert q\rvert,
 \]
 
-Natural size of one ordered
-triangle:
+hence
 
 \[
-w_{\mathrm{nat}}
-=\lvert k_\perp\rvert
-=\sqrt{\beta\bigl(1-\beta/(4\alpha)\bigr)}.
+p=\frac{k}{2}+r,
+\qquad
+q=\frac{k}{2}-r,
+\qquad
+r\cdot k=0.
 \]
 
-\(N=\) number of lattice points
-on the circle \(=\) number of
-ordered equal-input pairs.
+On a fixed shell \(\alpha=\lvert p\rvert^2\),
+
+\[
+\lvert r\rvert^2
+=\alpha-\frac{\beta}{4}.
+\]
 
 \[
 \boxed{
-\|\Sigma\|
-\stackrel{?}{\lesssim}
-N^{1/2}\times w_{\mathrm{nat}}
+\text{bisector plane}
+=
+\bigsqcup_\alpha C_{\alpha,k}.
 }
 \]
 
-or a comparable gain strong
-enough to pay the old half-power
+Modulo \(r\leftrightarrow -r\), each
+physical triangle is counted once.
+The circles partition the
+equal-input lattice. They do
+**not** share input modes.
+
+The seated one-output object is
+
+\[
+\boxed{
+T^{\mathrm{eq}}_{c,k}
+=
+\sum_\alpha
+G_\Lambda(\alpha,\beta)\,
+W_{\alpha,k}.
+}
+\]
+
+\(W_{\alpha,k}\) is the signed,
+globally compatible vector in
+\(k^\perp\) of the **entire**
+\(\alpha\)-circle, not its
+occupancy:
+
+\[
+W_{\alpha,k}
+=\sum_{p\in C_{\alpha,k}}
+(k\cdot v_p)\,P_k v_{k-p}.
+\]
+
+The exact \(T_c\) weight on this
+output is
+
+\[
+G^{T_c}(\alpha,\beta)
+=\beta(\beta-\Lambda).
+\]
+
+It does **not** depend on
+\(\alpha\). It factors out of
+\(\rho_k\). An \(\alpha\)-dependent
+\(G\) is a different pairing and
+must be named. Default \(\rho_k\)
+uses \(G=1\), which is the
+\(T_c\) ratio.
+
+---
+
+## SAG-6B — one circle is not the loss
+
+A single \(\alpha\)-circle is
+arithmetically sparse
+(\(r_2(n)\)). It is not the
+source of the old half-power
 counting loss.
 
-If an aligned legal configuration
-destroys that, **mark the
-obstruction**. Do not massage it.
-If the geometry forces dispersion,
-try to turn that into an exact
-theorem.
+What still sits on one circle,
+from the previous write:
+
+- center \(k/2\), \(r^2=\alpha-\beta/4\),
+  \(k\cdot v_p=-2 r_p\cdot u_p\)
+  EXACT;
+- constant / radial / tangential
+  fields: \(\Sigma=0\) EXACT
+  (\(u_p\parallel u_{k-p}\));
+- hemisphere on one circle:
+  \(\|\Sigma\|\ge(1/(2\pi))
+  \sqrt{\beta/\alpha}\,N\,w_{\mathrm{nat}}\)
+  EXACT;
+- intra-circle
+  \(\|\Sigma\|\lesssim N^{1/2}
+  w_{\mathrm{nat}}\) is
+  **OBSTRUCTED**.
+
+That obstruction is real. It is
+**not** the assembly loss we were
+trying to pay. The meaningful
+object is the **stack**.
 
 ---
 
-## Circle geometry (EXACT)
+## The estimate that matters
 
-\(p\cdot k=\beta/2\) is the plane
-\((p-k/2)\perp k\). Intersecting
-\(\lvert p\rvert^2=\alpha\) gives
-a circle
+For a cutoff with
+\(\alpha\lesssim N^2\),
 
 \[
-\text{center }=k/2,
-\qquad
-r^2=\alpha-\beta/4,
-\]
-
-in the plane \(k^\perp\), provided
-\(\beta\le 4\alpha\). Flat
-\(\beta=4\alpha\) is a point:
-\(k_\perp=0\), nothing transfers.
-
-The partner \(q=k-p\) is the
-antipode: \(q-k/2=-(p-k/2)\).
-Hermitian reality identifies this
-circle with the conjugate circle
-of output \(-k\), not with a
-second copy of the same circle
-(\(-p\) has \(-p\cdot k=-\beta/2\)).
-A real field is legal by setting
-\(v_{-m}=\overline{v_m}\). That
-does **not** constrain the sum
-at this single \(k\).
-
-Write \(p=k/2+r_p\),
-\(u_p=P_k v_p\in k^\perp\otimes\mathbb{C}\).
-Divergence-free forces
-
-\[
-k\cdot v_p
-=-2\,r_p\cdot u_p
-\]
-
-(bilinear, no conjugate). Then
-
-\[
-\Sigma
-=\sum_p(-2\,r_p\cdot u_p)\,u_{k-p}.
-\]
-
-Grouped by antipodal pairs:
-
-\[
-W_{\{p,q\}}
-=2\bigl[(u_q\cdot r_p)\,u_p
--(u_p\cdot r_p)\,u_q\bigr].
-\]
-
-If \(u_p\parallel u_q\), the pair
-cancels.
-
----
-
-## Alignments that disperse (EXACT)
-
-These legal fields give
-\(\Sigma=0\) on every equal-input
-circle:
-
-- **constant** \(u_p\equiv e\in k^\perp\);
-- **radial / saturating**
-  \(u_p\parallel r_p\)
-  (the one-mode maximizer of
-  \(\lvert k\cdot v_p\rvert\);
-  after Leray it is radial in
-  the circle plane);
-- **tangential** \(u_p\parallel k\times r_p\)
-  (then \(k\cdot v_p=0\)).
-
-The geometry **does** kill the
-naive “point every \(k_\perp\)
-the same way” picture. That is
-not yet a theorem that
-\(\|\Sigma\|\lesssim N^{1/2}w_{\mathrm{nat}}\).
-It is pair cancellation for
-fields with \(u_p\parallel u_{k-p}\).
-
----
-
-## The alignment that does not disperse
-
-Split the circle by a plane in
-\(k^\perp\). Choose \(e_1\in k^\perp\)
-maximizing \(\sum_p\lvert r_p\cdot e_1\rvert\),
-\(e_2=\hat k\times e_1\), and set
-
-\[
-u_p
+\boxed{
+\rho_k(N)
 =
-\begin{cases}
-\mu_p e_1 & r_p\cdot e_1\ge 0,\\
-\mu_p e_2 & r_p\cdot e_1<0,
-\end{cases}
-\]
-
-with \(\mu_p\) scaled so
-\(\lvert v_p\rvert=1\). Antipodes
-fall in opposite hemispheres, so
-\(u_p\not\parallel u_q\).
-
-Unit-length forces
-
-\[
-\mu_p^2
-=\frac{1}{1+4(u_p\cdot r_p)^2/\beta}
-\ge
-\frac{\beta}{4\alpha}.
-\]
-
-The pair vectors then share a
-sign on one component of \(k^\perp\).
-Averaging the axis \(e_1\) over
-the circle and taking the max
-gives the EXACT lower bound
-
-\[
-\boxed{
-\|\Sigma_{\mathrm{hem}}\|
-\ge
-\frac{1}{2\pi}\sqrt{\frac{\beta}{\alpha}}\,N\,w_{\mathrm{nat}}.
+\frac{
+\bigl\|
+\sum_{\alpha\lesssim N^2}
+G_\Lambda(\alpha,\beta)\,W_{\alpha,k}
+\bigr\|
+}{
+\sum_{\alpha\lesssim N^2}
+\lvert G_\Lambda(\alpha,\beta)\rvert
+\,\|W_{\alpha,k}\|
+}.
 }
 \]
 
-Hence
+DA’s rule, as asked:
+
+- \(\rho_k(N)\le c<1\) is
+  interesting and **nonclosing**;
+- the sought mechanism is
+
+\[
+\boxed{\rho_k(N)\lesssim N^{-\delta}}
+\]
+
+with \(\delta\) large enough,
+after matching variables, to pay
+the assembly loss.
+
+The objective of this page:
 
 \[
 \boxed{
-\frac{\|\Sigma_{\mathrm{hem}}\|}{N^{1/2}\,w_{\mathrm{nat}}}
-\ge
-\frac{1}{2\pi}\sqrt{N\,\frac{\beta}{\alpha}}.
+\textbf{Does stacking the lattice circles force increasing angular/phase incompatibility?}
 }
 \]
 
-On any family of lattice circles
-with \(N\beta/\alpha\to\infty\)
-(fat, well-populated circles:
-\(\alpha\sim\beta\), \(r_2(\alpha-\beta/4)\)
-large) this ratio is
-**unbounded**. The \(N^{1/2}\)
-test is destroyed.
-
-This is a legal globally
-compatible DF field. Hermitian
-extension to \(-k\) does not
-touch \(\Sigma\) at \(k\).
-Phases were not replaced by
-absolute values. Occupancy was
-not used.
-
----
-
-## Verdict
+The matched adversary:
 
 \[
-\boxed{\text{OBSTRUCTION}}
+\boxed{
+\textbf{Can we construct bisector-plane families with }
+\rho_k(N)\not\to 0?
+}
 \]
 
-Aligned lattice-circle
-configurations destroy
-
-\(\|\Sigma\|\lesssim N^{1/2}w_{\mathrm{nat}}\).
-
-Do not massage this into a
-bound by changing the
-normalization after the fact.
-The energy-normalized size
-\(\|\Sigma\|/E\) with
-\(E=\sum\lvert v_p\rvert^2=N\)
-is a **different object**. It
-is closer to the claimed
-one-shell \(16/9\) lane, and
-it is not a repair of the test
-that was asked.
-
-Naive alignments cancel.
-Hemisphere alignment does not.
-Both statements sit. The second
-one kills the half-power test
-on this circle.
+Do not try to prove cancellation
+first. Try equally hard to build
+the family that defeats it.
+Those \(W_{\alpha,k}\) come from
+one Fourier field. Compatibility
+can help or it can permit
+coherent alignment. Solve the
+extremal problem. Do not
+postulate random phase. Do not
+count \(O(N^2)\) bisector points
+and write \(\sqrt{\#}\).
 
 ---
 
-## Named circles (NUMERICAL check of the EXACT bound)
+## Heavy tape (what is kept)
 
-Code: `scripts/ns_attacks/sag6_lattice_circle.py`.
-Tests: `tests/test_sag6_lattice_circle.py`.
+For every unordered \(\{r,-r\}\):
 
-Frozen \(\lvert v_j\rvert=1\). \(G_\triangle=1\).
+- \(\alpha\), \(r\), \(-r\), \(p\), \(q\);
+- projected / transverse direction
+  \(k_\perp(p)\);
+- triangle-plane normal
+  \(p\times q\);
+- circle id \(\lvert r\rvert^2\);
+- every mode-sharing incidence
+  across circles.
 
-| circle | \(N\) | \(\beta/\alpha\) | hem \(\|\Sigma\|/(N w_{\mathrm{nat}})\) | hem \(\|\Sigma\|/(\sqrt{N} w_{\mathrm{nat}})\) |
+Occupancy is stored. Occupancy
+is not the remainder.
+Code: `scripts/ns_attacks/sag6_bisector.py`.
+
+On every scanned even \(k\),
+cross-circle **input** collisions
+are **zero**. The only coefficient
+shared by every circle is the
+output \(v_k\), and that
+contraction happens **after**
+the vectors \(W_{\alpha,k}\) are
+formed. Hermitian reality
+identifies the \(k\)-plane with
+the \(-k\)-plane, not two
+circles of the same \(k\).
+
+---
+
+## SAG-6C — what compatibility actually does
+
+Because the circles partition
+the input modes, a field may
+be chosen independently on each
+circle (DF on that circle, unit
+amplitudes) and still be one
+globally compatible Fourier
+field on the stack.
+
+A **single** global hemisphere
+in \(k^\perp\) — one axis
+\(e_1\), \(u_p=e_1\) or \(e_2\)
+according to \(\mathrm{sign}
+(r_p\cdot e_1)\) — is legal on
+the whole plane at once.
+
+On that field every circle
+vector is parallel:
+
+\[
+W_{\alpha,k}
+\parallel -e_2
+\qquad\text{for all }\alpha
+\]
+
+(checked on axis \(k\) and on
+tilted even \(k\); \(e_1\)
+components cancel, \(e_2\)
+components add). Therefore
+
+\[
+\rho_k(N)=1
+\]
+
+exactly, for the seated
+\(G=1\) / \(G^{T_c}\) ratio,
+at every cutoff scanned.
+
+Stacking does **not** force
+increasing angular
+incompatibility. It permits
+perfect inter-circle alignment.
+
+SAG-6C is seated as that
+fact, not as a decay theorem.
+
+---
+
+## SAG-6D — decisive
+
+\[
+\boxed{\rho_k(N)\not\to 0.}
+\]
+
+The coherent family exists.
+It is not a random-phase
+fantasy and not an occupancy
+count. \(\rho_k(N)=1\) on
+
+| \(k\) | \(r_{\max}\) | circles | input collisions | \(\rho_k\) |
 |---|---|---|---|---|
-| \(k=(0,0,2)\), \(\alpha=6\) | 8 | \(2/3\) | \(0.260>1/(2\pi)\sqrt{\beta/\alpha}\) | \(0.73\) |
-| \(k=(0,0,10)\), \(\alpha=90\) | 16 | \(10/9\) | \(0.291\) | \(1.16\) |
-| \(k=(0,0,66)\), \(\alpha=2194\) | 32 | \(\sim 2\) | \(0.313\) | \(1.77\) |
-| \(k=(0,0,148)\), \(\alpha=11001\) | 48 | \(\sim 2\) | \(0.311\) | \(2.15\) |
+| \((0,0,2)\) | \(2\ldots 12\) | \(3\ldots 58\) | \(0\) | \(1\) |
+| \((0,0,4)\) | \(2\ldots 8\) | \(3\ldots 29\) | \(0\) | \(1\) |
+| \((2,2,0)\) | \(2\ldots 8\) | \(4\ldots 33\) | \(0\) | \(1\) |
 
-The \(N\)-ratio stays a positive
-fraction of \(\sqrt{\beta/\alpha}\)
-(coherent). The \(\sqrt{N}\)-ratio
-grows. Axis-aligned and 3-D tilted
-circles show the same pair
-cancellation of constant / radial
-/ tangential fields.
+So
+
+\[
+\boxed{
+\text{coherence-depletion on the one-}k\text{ equal-input stack}
+\text{ is not the missing power.}
+}
+\]
+
+SAG-5 remains an exact finite
+phenomenon. Under the board
+rule, \(\rho_2=1/\sqrt{2}\) is
+**constant** depletion, hence
+not this mechanism.
+
+This branch does **not** earn
+another Gate by repairing
+\(\rho_k\). A later write that
+still wants scale-decay must
+change the object:
+
+- several outputs (true mode
+  reuse across different \(k\));
+- unequal-length pairs;
+- an \(\alpha\)-dependent
+  signed \(G\) that is actually
+  forced by \(T_c\) (the seated
+  one is not);
+- time evolution (Loss B).
+
+Do not rename the dead
+one-\(k\) stack test. Do not
+massage \(\rho=1\) into
+\(16/9\).
 
 ---
 
-## What this does not reopen
+## SAG-5 stamp (accepted)
 
-| Object | Status that stays |
-|---|---|
-| \(N^{1/2}\) depletion on this circle | **KILLED** by hemisphere alignment |
-| Claimed \(K\le 16/9\) | **CLAIMED**, other normalization, freeze |
-| Unrestricted \(\star\) | **KILLED** by \(v_n\) |
-| Need★ | **MISSING** |
-| SAG-5A rank | EXACT, local, not this page |
-| SAG-5B \(\Gamma(\mathcal H)\) | OPEN as a growth question |
-| Occupancy \(K\le 16s\) | not used; not restored |
-| Route A / \(\int a_+\) | Parked |
+\[
+\boxed{
+\rho_2
+=
+\frac{
+\sqrt{w_1^2+w_2^2+2w_1w_2\lvert\cos\varphi\rvert}
+}{
+w_1+w_2
+}
+}
+\]
 
-A later write that wants
-depletion on this circle must
-name a **different** gain
-(energy-normalized, mixed
-\(G_\Lambda\) across several
-outputs, or a restriction that
-forbids hemisphere polarization)
-and test it on the same
-adversarial field. Do not
-rename the dead \(N^{1/2}\)
-test.
+Orthogonal case
+\(\varphi=\pi/2\):
+\(\rho_2=1/\sqrt{2}\).
+Constant depletion. Not the
+sought \(N^{-\delta}\).
 
 ---
 
 ## Lock
 
-Circle center \(k/2\), \(r^2=\alpha-\beta/4\),
-\(p\cdot k=\beta/2\) EXACT.
-\(k\cdot v_p=-2 r_p\cdot u_p\) EXACT.
-Constant / radial / tangential
-\(\Sigma=0\) EXACT.
-Hemisphere
-\(\|\Sigma\|\ge(1/(2\pi))\sqrt{\beta/\alpha}\,N\,w_{\mathrm{nat}}\)
-EXACT.
-\(N^{1/2}\) test **OBSTRUCTED**.
-Centered prefactor stays off.
-No \(\lvert\widehat B_k\rvert\) early.
-No occupancy bound.
+6A EXACT: bisector
+\(=\bigsqcup_\alpha C_{\alpha,k}\),
+\(p=k/2+r\), \(r\cdot k=0\),
+\(r\leftrightarrow -r\) once.
+\(G^{T_c}=\beta(\beta-\Lambda)\)
+factors out of one \(k\).
+6B: one circle sparse; intra-circle
+\(N^{1/2}\) still obstructed;
+not the old half-power source.
+6C: input modes disjoint across
+circles; global hemisphere
+aligns every \(W_{\alpha,k}\).
+6D: \(\rho_k(N)=1\), coherent
+family exists, route killed as
+a source of missing power.
+No occupancy remainder.
+No random-phase postulate.
+SAG-5 \(\rho_2=1/\sqrt{2}\)
+stays exact and finite.
 NS not solved.

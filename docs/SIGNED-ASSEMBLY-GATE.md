@@ -417,14 +417,16 @@ NEW / NUMERICAL, tested on
 equal-shell \(v_L\), and mixed swirl.
 
 SAG-5 is that page’s name, not
-its theorem. SAG-6
+its theorem. \(\rho_2=1/\sqrt{2}\)
+is stamped finite constant
+depletion. SAG-6
 ([`SAG-6-LATTICE-CIRCLE.md`](SAG-6-LATTICE-CIRCLE.md))
-ran the one-output equal-input
-circle. The \(N^{1/2}\) test is
-**OBSTRUCTED** by hemisphere
-alignment. Until a signed
-estimate or a named death exists
-on a **different** gain, talking
+is the bisector stack. 6D:
+\(\rho_k(N)=1\) on a legal
+coherent family. That route is
+not the missing power. Until a
+signed estimate exists on a
+**different** object, talking
 is not the gate.
 
 ---
@@ -447,9 +449,12 @@ Need★ = this gate on two shells.
 \(16/9\) = this gate on one shell, CLAIMED.
 Attack 8 = counting probe, not a bound.
 SAG-5 = global compatibility defect
-(5A rank, 5B cocycle). Not stamped.
-SAG-6 \(N^{1/2}\) on the equal-input
-circle = **OBSTRUCTED**.
+(5A rank, 5B cocycle). \(\rho_2=1/\sqrt{2}\)
+stamped, constant, not \(N^{-\delta}\).
+SAG-6A EXACT. 6B sparse. 6D
+\(\rho_k(N)=1\), coherent family.
+One-\(k\) equal-input stack is not
+the missing power.
 CRSPR roles classify; they do not close.
 Do not use \(\lvert\widehat B_k\rvert\) early.
 Do not evolve a bound that was never written.
