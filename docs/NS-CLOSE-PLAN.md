@@ -628,6 +628,18 @@ Joint Gap–Charge Epoch Budget
 \(\to\) DA-NS-2. Not another
 SAG-6. Do not massage
 \(\rho=1\) into \(16/9\).
+Centered master ledger
+(`docs/CENTERED-MASTER-LEDGER.md`)
+seats §§1–17: EXACT / NUMERICAL
+/ OPEN / KILLED. Reset
+\(\Delta W=X\bigl[(\Lambda-K_{e+1})^2-(\Lambda-K_e)^2\bigr]\)
+EXACT. Residual
+\((\Lambda-\lambda_e)\dot S_\Gamma\)
+is Stieltjes; do not estimate
+\(\dot S_\Gamma\) pointwise.
+Loop \(\Gamma_{\mathrm{cyc}}\)
+still needs \(L_N\le M_N\le U_N\)
+and then scale decay.
 
 Two routes, both OPEN, both
 killable. If both die, the leftover

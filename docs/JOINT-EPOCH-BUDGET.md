@@ -17,6 +17,8 @@ SAG parent:
 [`SIGNED-ASSEMBLY-GATE.md`](SIGNED-ASSEMBLY-GATE.md).
 Equal-input stack (different object):
 [`SAG-6-LATTICE-CIRCLE.md`](SAG-6-LATTICE-CIRCLE.md).
+Centered master ledger:
+[`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md).
 
 Unaugmented NS on \(\mathbb{T}^3\).
 No \(Q_1\). No \(\Phi\). No SND. No
@@ -453,4 +455,11 @@ diagnostic decay is not
 Next Gate = Joint Gap–Charge
 Epoch Budget \(\to\) DA-NS-2.
 Not SAG-6.
+Reset \(\Delta W
+=X\bigl[(\Lambda-K_{e+1})^2-(\Lambda-K_e)^2\bigr]\)
+EXACT from \(W_K\). Residual
+\((\Lambda-\lambda_e)\dot S_\Gamma\)
+is Stieltjes.
+Master ledger:
+[`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md).
 NS not solved.

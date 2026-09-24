@@ -738,6 +738,10 @@ scalene, not this stack.
 Static shared-output rescue
 **KILLED**. Next Gate =
 [`JOINT-EPOCH-BUDGET.md`](JOINT-EPOCH-BUDGET.md).
+Master ledger:
+[`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md).
+Reset \(\Delta W\) EXACT from
+\(W_K=\mathcal D_s+X(\Lambda-K)^2\).
 Do not evolve a bound that was never
 written. No A2. No prime glue.
 NS not solved.

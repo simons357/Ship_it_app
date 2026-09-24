@@ -436,6 +436,8 @@ Gap–Charge Epoch Budget, not
 another SAG-6. Until that
 budget or a named death exists,
 talking is not the gate.
+Seated ledger:
+[`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md).
 
 ---
 
@@ -467,6 +469,8 @@ Static shared-output rescue of
 charge-only coercivity **KILLED**.
 Next Gate = Joint Gap–Charge
 Epoch Budget.
+Master ledger:
+[`CENTERED-MASTER-LEDGER.md`](CENTERED-MASTER-LEDGER.md).
 CRSPR roles classify; they do not close.
 Do not use \(\lvert\widehat B_k\rvert\) early.
 Do not evolve a bound that was never written.
