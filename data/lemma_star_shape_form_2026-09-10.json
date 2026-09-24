@@ -1,0 +1,30 @@
+{
+  "title": "Lemma-star canonical shape form",
+  "date": "2026-09-10",
+  "filed": "2026-09-24",
+  "packet": "packets/LEMMA-STAR-SHAPE-FORM-2026-09-10.md",
+  "source_branch": "cursor/ns-five-lane-lemma-star-1390",
+  "ns_solved": false,
+  "lemma_star": "OPEN",
+  "da_ns_2": "OPEN",
+  "kill_lane": "LIVE",
+  "kill_lane_closed": false,
+  "shape_not_viscosity": true,
+  "do_not_replace_Im_by_abs": true,
+  "K_alpha_beta_is_full_lemma": false,
+  "legacy_ratio_star_is_R_star": false,
+  "do_not_compare_legacy_065_073_1p93e-3_unless_same_formula": true,
+  "does_not_alter_other_gates": true,
+  "do_not_splice_into_da_ns_2": true,
+  "do_not_splice_into_scalene_17": true,
+  "C_geom_existence": "OPEN",
+  "R_star": "(T_c)_+^2 / (D_s ||v||_2^2 Y)",
+  "boxed": "(T_c)_+^2 <= C_geom D_s ||v||_2^2 Y",
+  "C_0_of_theta": "C_geom / (4 theta)",
+  "homogeneity": "R_star(av) = R_star(v)",
+  "dilation": "R_star(v(n·)) = R_star(v)",
+  "retired_false": [
+    "The kill lane is closed",
+    "amplitude or frequency makes R_star smaller"
+  ]
+}
