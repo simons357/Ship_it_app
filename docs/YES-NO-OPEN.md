@@ -100,6 +100,8 @@ stay samples. They are not this kill.
 | \(K_{\min,\theta}\) is chart-invariant | Depends on \((T_c,\mathcal D_s,Y)\) only. [`RESET.md`](RESET.md). |
 | Relative width \(r^2=\mathcal D_s/(\Lambda Y)\) | Equals \(\mathcal D_s/(X\Lambda^2)\). \(\mathcal D_s/Y=\Lambda r^2\). [`WIDTH.md`](WIDTH.md). |
 | \(r\gtrsim\kappa^{-1/2}\Leftrightarrow\mathcal D_s/Y\gtrsim\kappa\) | Same comparison, three writings. [`WIDTH.md`](WIDTH.md). |
+| \(\varphi_e\) expand / \(\Phi_e\) capacity / CS \(\Lambda^2 E\ge Y\) | Exact. Zero at the shell. \(\varphi_e(0)=\kappa_e^4\). [`SBP.md`](SBP.md). |
+| SBP rewrite if \((d/dt)_{\mathrm{NL}}H_{1/2}=2Q_a\) | \(T_c=(d/dt)_{\mathrm{NL}}\Phi_e+2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\). Identity, not a payment. Frozen \(\lambda_e\). [`SBP.md`](SBP.md). |
 
 ---
 
@@ -158,6 +160,8 @@ stay samples. They are not this kill.
 | Chart reset of \(W_K\) as a useful \(K\) / as a G4 death | Jump sits. Remainder does not jump. Frequent-reset \(\sum\lvert\Delta W\rvert=X\sum(\Delta\Lambda)^2\) is circular for \(\mathrm{TV}(\Lambda)\). [`RESET.md`](RESET.md). |
 | \(r\sim\kappa^{-1/2}\) as a seated crossover / BROAD as viscosity payment | Threshold equivalence only. \(r\) invariant, \(\kappa^{-1/2}\) not. Growing support is BROAD and still leaves a cubic remainder. [`WIDTH.md`](WIDTH.md). |
 | Quadratic primitive for \(S_\Gamma\) as sitting | \(W_K\) is variance. \(H^\varepsilon\) is sign-killed. \(\Psi\) is the \(\eta\)-side. No \(\mathsf B^{\mathrm{prim}}\) here. Do not invent a bridge. [`WIDTH.md`](WIDTH.md). |
+| SBP / \(\Phi_e\) as a useful \(K\) / as a G4 death | Moves the tail. \(\Phi_e/Y\) is not controlled by \(r^2\). Residual still \(2\kappa_e^3 Q_a\) and \(-(\Lambda-\lambda_e)N\). Flux normalization not reproduced. [`SBP.md`](SBP.md). |
+| Mixing live \(\Lambda\) and frozen \(\lambda_e\) | Live kills the moving term; \(2\kappa(t)^3 Q_a\) does not telescope. Pick frozen. [`SBP.md`](SBP.md). |
 | Switch this line to augmented NS / Theorem A | Track A is a different PDE. A is not B. |
 | OpenAI / blowup-search as this line | Forced (C)/(D) if it holds. Not unforced (B). |
 | BKM from assumed spectral decay as the primary | Useful conditional. Does not attack depletion. |
@@ -249,6 +253,9 @@ remainder does not jump):
 Relative width (crossover
 is not a useful \(K\)):
 [`WIDTH.md`](WIDTH.md).
+SBP / \(\Phi_e\) (moves the
+tail; not a useful \(K\)):
+[`SBP.md`](SBP.md).
 
 SND-to-regularity implication is
 **OPEN** as a named hole on the SND/H

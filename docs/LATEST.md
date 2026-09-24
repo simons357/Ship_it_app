@@ -137,6 +137,9 @@ docs/RESET.md
 Relative width (crossover
 is not a useful K):
 docs/WIDTH.md
+SBP / Φ_e (moves the tail;
+not a useful K):
+docs/SBP.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

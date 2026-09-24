@@ -181,6 +181,9 @@ docs/RESET.md
 Relative width (crossover
 is not a useful K):
 docs/WIDTH.md
+SBP / Φ_e (moves the tail;
+not a useful K):
+docs/SBP.md
 
 What you were told vs what sits:
 docs/WHAT-I-WAS-TOLD.md

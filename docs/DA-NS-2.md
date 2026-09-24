@@ -15,6 +15,9 @@ remainder does not jump):
 Relative width (crossover
 is not a useful \(K\)):
 [`WIDTH.md`](WIDTH.md).
+SBP / \(\Phi_e\) (moves the
+tail; not a useful \(K\)):
+[`SBP.md`](SBP.md).
 
 Reproduce the finite checks:
 python3 -m unittest tests.test_centered_barycenter

@@ -52,6 +52,8 @@ Chart reset:
 [`RESET.md`](RESET.md).
 Relative width:
 [`WIDTH.md`](WIDTH.md).
+SBP / \(\Phi_e\):
+[`SBP.md`](SBP.md).
 Identities sit. The first
 missing implication is this
 page’s estimate.
@@ -347,6 +349,7 @@ No new 9D sweeps.
 | Two-shell \(\alpha+\beta=\Lambda\) zero | **NO** as a two-shell zero. \(\Lambda\) is a convex combination. [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
 | Chart reset of \(W_K\) as a useful \(K\) | **NO.** Jump is exact. \(K_{\min,\theta}\) is chart-invariant. Not a G4 death. [`RESET.md`](RESET.md). |
 | \(r\sim\kappa^{-1/2}\) crossover as a useful \(K\) | **NO.** Equivalence of three writings. \(r\) is scale-invariant; the threshold is not. BROAD is not a payment. No primitive for \(S_\Gamma\). [`WIDTH.md`](WIDTH.md). |
+| SBP / \(\Phi_e\) as a useful \(K\) | **NO.** Elementary rewrite if the \(\dot H^{1/2}\) flux holds. Moves the tail. \(\Phi_e/Y\) is not controlled by \(r^2\). Residual still charge and moving \(N\). [`SBP.md`](SBP.md). |
 | Y-remainder cousin (pathwise \(K_Y\)) | **OPEN.** Same circularity test. |
 | Unrestricted \(\star\) | **DEAD.** |
 | C10 \(\Rightarrow\) this estimate | **NO** without an inequality. C10 did not seat (A). |

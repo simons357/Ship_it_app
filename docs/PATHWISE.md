@@ -24,6 +24,8 @@ Chart reset:
 [`RESET.md`](RESET.md).
 Relative width:
 [`WIDTH.md`](WIDTH.md).
+SBP / \(\Phi_e\):
+[`SBP.md`](SBP.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 Machine: `python3 scripts/pathwise.py`.

@@ -27,6 +27,8 @@ Chart reset:
 [`RESET.md`](RESET.md).
 Relative width:
 [`WIDTH.md`](WIDTH.md).
+SBP / \(\Phi_e\):
+[`SBP.md`](SBP.md).
 Machine: `python3 scripts/mn_cancel.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.

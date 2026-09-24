@@ -1,0 +1,130 @@
+{
+  "not_a_close": true,
+  "star_stays_killed": true,
+  "bstar_not_seated": true,
+  "identities": {
+    "phi_e": "\u03c6_e(m)=\u00bd(m-\u03ba_e)\u00b2(m\u00b2+2\u03ba_e m+2\u03ba_e\u00b2)=\u00bdm\u2074-\u00bd\u03bb_e m\u00b2-\u03ba_e\u00b3 m+\u03bb_e\u00b2",
+    "Phi_e": "\u03a6_e=\u00bdY-\u00bd\u03bb_e X-\u03ba_e\u00b3 H_{1/2}+\u03bb_e\u00b2 E",
+    "sbp_if": "If (d/dt)_NL H_{1/2}=2Q_a then T_c=(d/dt)_NL \u03a6_e+2\u03ba_e\u00b3 Q_a-(\u039b-\u03bb_e)N",
+    "grad_R": "\u2207_{(i,j,o)}R=(5\u03ba\u00b2,5\u03ba\u00b2,0), \u2202R/\u2202\u039b=-2\u03ba at the core",
+    "CS": "\u039b\u00b2 E \u2265 Y, equality on one shell"
+  },
+  "phi_expand_ok": true,
+  "phi_nonneg": true,
+  "phi_zero_at_shell": true,
+  "phi_at_zero_is_kappa4": true,
+  "quadratic_factor_positive": true,
+  "R_core": 31.25,
+  "two_k3": 31.25,
+  "grad_R": {
+    "dRi": 31.249999999261036,
+    "dRj": 31.249999999261036,
+    "dRo": -8.881784197001252e-09,
+    "dRlam": -5.000000001587068
+  },
+  "grad_R_ok": true,
+  "CS_ok": true,
+  "single_shell_equality": true,
+  "cs_rows": [
+    {
+      "E": 2.0,
+      "X": 6.0,
+      "Y": 20.0,
+      "Lambda2_E_minus_Y": 2.222222222222225
+    },
+    {
+      "E": 1.0,
+      "X": 4.0,
+      "Y": 16.0,
+      "Lambda2_E_minus_Y": 0.0
+    },
+    {
+      "E": 3.0,
+      "X": 12.0,
+      "Y": 50.0,
+      "Lambda2_E_minus_Y": 2.083333333333343
+    }
+  ],
+  "tail_sample": {
+    "Ds": 91.93017456359102,
+    "Y": 17.0,
+    "Ds_over_Y": 5.40765732727006,
+    "E": 1.0001
+  },
+  "tail_can_hold_Ds": true,
+  "phi_rows": [
+    {
+      "label": "single",
+      "ke": 2.0,
+      "Lambda": 4.0,
+      "Y": 16.0,
+      "Ds": 0.0,
+      "r2": 0.0,
+      "Phi": 0.0,
+      "Phi_id": 0.0,
+      "Phi_over_Y": 0.0,
+      "identity_ok": true
+    },
+    {
+      "label": "core",
+      "ke": 2.1343747458109497,
+      "Lambda": 4.555555555555555,
+      "Y": 41.0,
+      "Ds": 2.2222222222222285,
+      "r2": 0.011897679952409314,
+      "Phi": 0.3177709482534298,
+      "Phi_id": 0.31777094825343255,
+      "Phi_over_Y": 0.007750510933010483,
+      "identity_ok": true
+    },
+    {
+      "label": "low",
+      "ke": 2.0,
+      "Lambda": 3.9999990000252494,
+      "Y": 16.0000000001,
+      "Ds": 1.5999196030236362e-05,
+      "r2": 2.499875004661779e-07,
+      "Phi": 0.15919800005000004,
+      "Phi_id": 0.1591980000499973,
+      "Phi_over_Y": 0.009949875003062816,
+      "identity_ok": true
+    },
+    {
+      "label": "high",
+      "ke": 2.0,
+      "Lambda": 28.92768079800499,
+      "Y": 116.0,
+      "Ds": 996708.3890274314,
+      "r2": 297.0273959571938,
+      "Phi": 49.979216,
+      "Phi_id": 49.97921600000001,
+      "Phi_over_Y": 0.4308553103448276,
+      "identity_ok": true
+    }
+  ],
+  "phi_capacity_identity_ok": true,
+  "single_shell_Phi_zero": true,
+  "core_Phi_over_Y_small": true,
+  "low_Phi_over_Y_beats_r2": true,
+  "high_Phi_over_Y_order_one": true,
+  "rewrite_ok": true,
+  "live_moving_term_vanishes": true,
+  "flux_normalization_not_reproduced": true,
+  "Phi_is_not_Psi": true,
+  "N_is_not_S_Gamma": true,
+  "gate_file_not_in_repo": true,
+  "chebyshev_not_reproduced": true,
+  "do_not_mix_live_and_frozen": true,
+  "Phi_over_Y_not_controlled_by_r2": true,
+  "identity_is_not_a_payment": true,
+  "da_ns2_is_not_a_theorem": true,
+  "sits_as_useful_K": false,
+  "sits_as_g4_death": false,
+  "sits_as_da_ns2": false,
+  "sits_as_jgc": false,
+  "sits_as_bprim": false,
+  "g4_stays_open": true,
+  "do_not_invent_a_bridge": true,
+  "do_not_run_taylor_green": true,
+  "do_not_glue_to_leftover_1": true
+}

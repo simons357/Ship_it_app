@@ -62,6 +62,9 @@ remainder does not jump):
 Relative width (crossover
 is not a useful \(K\)):
 [`WIDTH.md`](WIDTH.md).
+SBP / \(\Phi_e\) (moves the
+tail; not a useful \(K\)):
+[`SBP.md`](SBP.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 

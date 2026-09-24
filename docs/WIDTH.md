@@ -15,6 +15,8 @@ Overnight page:
 [`DA-NS-2.md`](DA-NS-2.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
+SBP / \(\Phi_e\):
+[`SBP.md`](SBP.md).
 Machine: `python3 scripts/width.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.

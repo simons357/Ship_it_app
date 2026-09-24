@@ -43,6 +43,8 @@ Chart reset:
 [`RESET.md`](RESET.md).
 Relative width:
 [`WIDTH.md`](WIDTH.md).
+SBP / \(\Phi_e\):
+[`SBP.md`](SBP.md).
 Score:
 [`NS-STATUS.md`](NS-STATUS.md).
 Tape:

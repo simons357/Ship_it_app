@@ -36,6 +36,8 @@ Chart reset:
 [`RESET.md`](RESET.md).
 Relative width:
 [`WIDTH.md`](WIDTH.md).
+SBP / \(\Phi_e\):
+[`SBP.md`](SBP.md).
 
 This desk is **unaugmented**.
 A is not B. Keep \(1/r^4\).
@@ -225,6 +227,14 @@ threshold, not a payment.
 No primitive for \(S_\Gamma\)
 is on this desk.
 [`WIDTH.md`](WIDTH.md).
+The SBP rewrite is elementary
+if the \(\dot H^{1/2}\) flux
+holds. It moves the tail into
+\(\Phi_e\). \(\Phi_e/Y\) is not
+controlled by \(r^2\). Not a
+useful \(K\) and not a death
+of G4.
+[`SBP.md`](SBP.md).
 
 Useful \(K\) or a named death.
 Do not restore
