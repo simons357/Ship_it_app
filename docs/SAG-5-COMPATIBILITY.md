@@ -384,10 +384,23 @@ the input coupling of
 \(\triangle_1\) and the output
 of \(\triangle_2\). That is a
 role conflict, not a rank
-count. Status: computed in
-`scripts/ns_attacks/sag5_rho2.py`.
-NUMERICAL unless a later write
-closes it.
+count.
+
+Reduced maximizer (NUMERICAL,
+dense grid on \(v_p\); partners
+aligned in closed form):
+
+\[
+\rho_2^{\mathrm{role}}
+\approx 0.942
+\qquad\text{on this }\mathcal{H}.
+\]
+
+Less of a defect than the
+orthogonal output pair, and
+still \(\rho_2<1\). Not closed
+as a radical. Not a bound on
+every role-conflict pair.
 
 ### H3-in — three triangles, one input
 
@@ -457,7 +470,11 @@ sweep. Not 9D.
    coherence defect (which
    identification: input budget,
    output, role, Hermitian).
-   Do not promote it to
+   H2-out is that defect for
+   output identification:
+   \(\rho_2=1/\sqrt{2}\) on that
+   \(\mathcal{H}\). Do not
+   promote it to
    \(\sup\Gamma<1\).
 6. If \(\rho_2=1\), move to the
    smallest three-triangle

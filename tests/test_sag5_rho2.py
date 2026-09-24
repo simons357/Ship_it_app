@@ -65,22 +65,29 @@ class Sag5Tests(unittest.TestCase):
 
     def test_optimizer_recovers_h2_in(self):
         rng = np.random.Generator(np.random.PCG64(0))
-        row = optimize_rho(H2_IN, rng, n_starts=250, n_refine=60)
-        self.assertGreater(row["rho"], rho2_in_exact() - 0.03)
-        self.assertLessEqual(row["rho"], 1.0 + 1e-9)
+        row = optimize_rho(H2_IN, rng, n_grid=20)
+        self.assertAlmostEqual(row["rho"], rho2_in_exact(), places=6)
+        self.assertEqual(row["kind"], "shared-input reduced")
+
+    def test_optimizer_recovers_h2_out(self):
+        rng = np.random.Generator(np.random.PCG64(3))
+        row = optimize_rho(H2_OUT, rng, n_grid=20)
+        self.assertAlmostEqual(row["rho"], rho2_out_exact(), places=6)
+        self.assertEqual(row["kind"], "shared-output reduced")
 
     def test_optimizer_recovers_h3_in(self):
         rng = np.random.Generator(np.random.PCG64(1))
-        row = optimize_rho(H3_IN, rng, n_starts=250, n_refine=60)
-        self.assertGreater(row["rho"], rho3_in_exact() - 0.04)
-        self.assertLessEqual(row["rho"], 1.0 + 1e-9)
+        row = optimize_rho(H3_IN, rng, n_grid=20)
+        self.assertAlmostEqual(row["rho"], rho3_in_exact(), places=6)
+        self.assertEqual(row["kind"], "shared-input reduced")
 
-    def test_h2_role_is_a_defect_or_saturated(self):
+    def test_h2_role_is_a_defect(self):
         rng = np.random.Generator(np.random.PCG64(2))
-        row = optimize_rho(H2_ROLE, rng, n_starts=500, n_refine=80)
+        row = optimize_rho(H2_ROLE, rng, n_grid=22)
+        self.assertEqual(row["kind"], "role-conflict reduced")
         self.assertGreater(row["denom"], 0.0)
-        self.assertGreaterEqual(row["rho"], 0.0)
-        self.assertLessEqual(row["rho"], 1.0 + 1e-9)
+        self.assertGreater(row["rho"], 0.0)
+        self.assertLess(row["rho"], 1.0 - 1e-6)
 
 
 if __name__ == "__main__":
