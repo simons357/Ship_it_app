@@ -46,6 +46,8 @@ First jet:
 [`PATHWISE.md`](PATHWISE.md).
 Short interval:
 [`INTERVAL.md`](INTERVAL.md).
+Incoming ledger:
+[`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
 Identities sit. The first
 missing implication is this
 page’s estimate.
@@ -337,6 +339,8 @@ No new 9D sweeps.
 | Signed vertices \(R_{\mathrm{sign}}\) | **NO** as a useful \(K\). Saturates \(\sim 0.31\). |
 | \(t=0\) jet of \(N,T_c\) | **NO** as a useful \(K\). Stokes keeps \(N=0\). Euler generates \(N\). \(T_c\) grows. Not a G4 death. [`PATHWISE.md`](PATHWISE.md). |
 | Short Stokes / NSE interval | **NO** as a useful \(K\). Stokes keeps \(N=0\). NSE keeps \(R_{mn}=1\). Large-amp \(K_{1/2}\) grows. Not a G4 death. [`INTERVAL.md`](INTERVAL.md). |
+| Incoming DA-NS-2 as a theorem | **NO.** Y-cousin target. Tautological \(K\) forbidden. [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
+| Two-shell \(\alpha+\beta=\Lambda\) zero | **NO** as a two-shell zero. \(\Lambda\) is a convex combination. [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
 | Y-remainder cousin (pathwise \(K_Y\)) | **OPEN.** Same circularity test. |
 | Unrestricted \(\star\) | **DEAD.** |
 | C10 \(\Rightarrow\) this estimate | **NO** without an inequality. C10 did not seat (A). |

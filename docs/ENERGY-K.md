@@ -21,6 +21,8 @@ First jet:
 [`PATHWISE.md`](PATHWISE.md).
 Short interval:
 [`INTERVAL.md`](INTERVAL.md).
+Incoming ledger:
+[`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 Machine: `python3 scripts/energy_k.py`.

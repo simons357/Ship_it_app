@@ -37,6 +37,8 @@ First jet:
 [`PATHWISE.md`](PATHWISE.md).
 Short interval:
 [`INTERVAL.md`](INTERVAL.md).
+Incoming ledger:
+[`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
 Score:
 [`NS-STATUS.md`](NS-STATUS.md).
 Tape:

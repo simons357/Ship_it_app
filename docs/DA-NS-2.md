@@ -7,6 +7,8 @@ Taken from the September 6–7 showdown
 dossier. Useful parts only. The Joint
 Gap–Charge budget is a target, not a
 theorem.
+Today’s incoming ledger scored:
+[`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
 
 Reproduce the finite checks:
 python3 -m unittest tests.test_centered_barycenter

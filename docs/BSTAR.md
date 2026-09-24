@@ -70,6 +70,8 @@ First jet:
 [`PATHWISE.md`](PATHWISE.md).
 Short interval:
 [`INTERVAL.md`](INTERVAL.md).
+Incoming ledger:
+[`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
 Do not start leftover 1.
 Do not weld \(\star\).
 Do not cash B★ as G5.

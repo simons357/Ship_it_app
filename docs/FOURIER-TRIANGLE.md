@@ -40,6 +40,10 @@ Short interval (Stokes
 keeps \(N=0\); NSE keeps
 \(R_{mn}=1\)):
 [`INTERVAL.md`](INTERVAL.md).
+Incoming ledger (two-shell
+product sits; \(\alpha+\beta=\Lambda\)
+empty on two shells):
+[`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
 
 Do not start leftover 1.
 Do not weld \(\star\).

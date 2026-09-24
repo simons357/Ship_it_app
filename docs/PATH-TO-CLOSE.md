@@ -30,6 +30,8 @@ First jet:
 [`PATHWISE.md`](PATHWISE.md).
 Short interval:
 [`INTERVAL.md`](INTERVAL.md).
+Incoming ledger:
+[`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
 
 This desk is **unaugmented**.
 A is not B. Keep \(1/r^4\).
@@ -202,6 +204,10 @@ bound that is more than a
 short computed path, or a
 named death of G4 that is
 not this interval.
+Incoming DA-NS-2 is the
+Y-cousin target, not a
+theorem.
+[`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
 
 Useful \(K\) or a named death.
 Do not restore

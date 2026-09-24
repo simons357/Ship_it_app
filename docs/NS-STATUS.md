@@ -53,6 +53,9 @@ Short interval (Stokes
 keeps \(N=0\); NSE keeps
 \(R_{mn}=1\)):
 [`INTERVAL.md`](INTERVAL.md).
+Incoming ledger (DA-NS-2
+is not a theorem):
+[`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
 Enough for that plan. Not a close.
 This desk is unaugmented. A is not B.
 

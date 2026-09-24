@@ -94,6 +94,8 @@ stay samples. They are not this kill.
 | Live-triangle Stokes ratio | \(N'_{\mathrm{St}}/T_c=-8/3\), amplitude-flat. [`PATHWISE.md`](PATHWISE.md). |
 | Stokes interval keeps \(N=0\) | On the printed \(v_n\) paths, \(N\) stays working-precision zero and \(R_{mn}=1\). Knife-edge is Stokes-invariant, not only a jet. [`INTERVAL.md`](INTERVAL.md). |
 | NSE interval keeps \(R_{mn}=1\) on \(v_n\) | \(N\) becomes negative, so \(-\Lambda N\) adds to \(T_c\). Instantaneous \(MN\) death persists. [`INTERVAL.md`](INTERVAL.md). |
+| Two-shell product matches the gap formula | \(T_c=(\alpha-\beta)(\alpha+\beta-\Lambda)T_\alpha=(\alpha-\beta)(\alpha\beta E/X)T_\alpha\). [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
+| \(W_K=\mathcal D_s+X(\Lambda-K)^2\) | Exact, nonnegative. [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
 
 ---
 
@@ -146,6 +148,9 @@ stay samples. They are not this kill.
 | Signed vertices \(R_{\mathrm{sign}}\) as a useful \(K\) | Saturates \(\sim 0.31\) on \(v_n\). Absolute vertex sum is cheap CS. Not a remainder. [`MN-CANCEL.md`](MN-CANCEL.md). |
 | \(t=0\) jet of \(N,T_c\) as a useful \(K\) / as a G4 death | Euler generates \(N\). \(T_c\) grows on \(v_n\). A Taylor coefficient is not \(L^1_{\mathrm{loc}}\) and not a death. [`PATHWISE.md`](PATHWISE.md). |
 | Short Stokes / NSE interval as a useful \(K\) / as a G4 death | Stokes keeps \(N=0\). NSE keeps \(R_{mn}=1\). Large-amp \(K_{1/2}\) grows. A short path is not \(L^1_{\mathrm{loc}}\) of a useful \(K\) and not a death. [`INTERVAL.md`](INTERVAL.md). |
+| Incoming DA-NS-2 as a theorem / as leftover 1 | Y-cousin target. Tautological \(K\) forbidden. Living leftover 1 is H1. Living leftover 6 is RH. [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
+| \(\alpha+\beta=\Lambda\) as a two-shell zero | \(\Lambda\) is a convex combination of \(\alpha,\beta\). Empty. [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
+| SAG \(\Gamma_{\mathrm{star}}=1\) / JGC epoch budget as seated | Not reproduced here. JGC stays a target. [`DA-NS-2.md`](DA-NS-2.md), [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
 | Switch this line to augmented NS / Theorem A | Track A is a different PDE. A is not B. |
 | OpenAI / blowup-search as this line | Forced (C)/(D) if it holds. Not unforced (B). |
 | BKM from assumed spectral decay as the primary | Useful conditional. Does not attack depletion. |
@@ -228,6 +233,9 @@ Short interval (Stokes
 keeps \(N=0\); NSE keeps
 \(R_{mn}=1\)):
 [`INTERVAL.md`](INTERVAL.md).
+Incoming ledger (DA-NS-2
+is not a theorem):
+[`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
 
 SND-to-regularity implication is
 **OPEN** as a named hole on the SND/H
