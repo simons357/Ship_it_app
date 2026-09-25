@@ -1,0 +1,180 @@
+{
+  "ns_solved": false,
+  "da_ns_2": "OPEN",
+  "missing_17": "OPEN",
+  "sept20_IC": "MISSING",
+  "sept20_S1_reported_not_reproduced": [
+    0.001337845,
+    0.046918627,
+    0.072599898
+  ],
+  "sixteen_positive_part": {
+    "t0_odd_A24_nu32": {
+      "T_sc": 331776.0,
+      "T_expected": 331776.0,
+      "X": 29952.0,
+      "X_expected": 29952.0,
+      "Y": 306432.0,
+      "Y_expected": 306432.0,
+      "raw": 216864.0,
+      "raw_expected": 216864.0,
+      "S_positive": true,
+      "locks": {
+        "T_match": true,
+        "X_match": true,
+        "Y_match": true,
+        "positive_part_live": true
+      }
+    },
+    "evolved_odd_A9_N2_20": {
+      "S": 0.0010830082200491763,
+      "ever_positive_part": true,
+      "n_rows": 501,
+      "first": {
+        "t": 0.0,
+        "T_sc": 17496.0,
+        "X": 4212.0,
+        "Y": 43092.0,
+        "raw": 1336.5,
+        "positive_part": 1336.5,
+        "integrand": 0.3173076923076923,
+        "S_positive": true,
+        "T_c": 205914.46153846156,
+        "D_s": 43515.69230769237
+      },
+      "last": {
+        "t": 1.0000000000000007,
+        "T_sc": 1.0414810000683505e-12,
+        "X": 0.003981449995068991,
+        "Y": 0.015925801898525674,
+        "raw": -0.0059721757109056466,
+        "positive_part": 0.0,
+        "integrand": 0.0,
+        "S_positive": false,
+        "T_c": 1.874665749944814e-11,
+        "D_s": 9.675692927424429e-09
+      },
+      "is_sept20_datum": false,
+      "field": "locked odd Hermitian triad A=9"
+    }
+  },
+  "loop_certified_upper": {
+    "family": "locked_parallelogram_4cycle",
+    "Omega": 2.0943951023931953,
+    "tree": 1.7647843170117525,
+    "certified_max": 1.5383669028160916,
+    "Gamma_cyc": 0.8717025009724443,
+    "method": "single-cycle-stationary",
+    "is_general_L_N_M_N_U_N": false,
+    "scale_decay_prize": "OPEN",
+    "is_ns_defect": false,
+    "reading": "Certified global max against the \u0393=1 tree baseline on this one family. That is an upper bound for this cosine problem. It is not L_N\u2264M_N\u2264U_N in general, not \u0393_cyc(N)\u2272N^{-\u03b4}, and not a defect of NS."
+  },
+  "eta_DA": {
+    "alpha_c_chi": "UNSTAMPED",
+    "eta_DA": "NOT_EVALUATED",
+    "first": {
+      "t": 0.0,
+      "defined": true,
+      "kappa": 3.198557367121814,
+      "r": 0.3141741716658074,
+      "X": 4212.0,
+      "Y": 43092.0,
+      "D_s": 43515.69230769237,
+      "T_c": 205914.46153846156,
+      "T_c_plus": 205914.46153846156,
+      "Q_actual": 3.154639175257728,
+      "skeleton": 77.00259679155661,
+      "note": "skeleton = sqrt(X)/(nu sqrt(kappa) r) = eta_DA / (alpha_c chi). Q_actual uses [T_c]_+ not the unreproved local envelope (5). alpha_c chi UNSTAMPED, so eta_DA is not evaluated.",
+      "alpha_c_chi": "UNSTAMPED",
+      "eta_DA": "NOT_EVALUATED",
+      "local_envelope_5_reproved": false
+    },
+    "last": {
+      "t": 1.0000000000000007,
+      "defined": true,
+      "kappa": 2.000000120449186,
+      "r": 0.0003897268811815107,
+      "X": 0.003981449995068991,
+      "Y": 0.015925801898525674,
+      "D_s": 9.675692927424429e-09,
+      "T_c": 1.874665749944814e-11,
+      "T_c_plus": 1.874665749944814e-11,
+      "Q_actual": 0.0012916668356511745,
+      "skeleton": 76.32274836001768,
+      "note": "skeleton = sqrt(X)/(nu sqrt(kappa) r) = eta_DA / (alpha_c chi). Q_actual uses [T_c]_+ not the unreproved local envelope (5). alpha_c chi UNSTAMPED, so eta_DA is not evaluated.",
+      "alpha_c_chi": "UNSTAMPED",
+      "eta_DA": "NOT_EVALUATED",
+      "local_envelope_5_reproved": false
+    }
+  },
+  "evolution": {
+    "nu": 1.5,
+    "K": 1.0,
+    "N2": 20,
+    "T": 1.0,
+    "dt": 0.002,
+    "S": 0.0010830082200491763,
+    "ever_positive_part": true,
+    "n_rows": 501,
+    "final": {
+      "t": 1.0000000000000007,
+      "T_sc": 1.0414810000683505e-12,
+      "X": 0.003981449995068991,
+      "Y": 0.015925801898525674,
+      "raw": -0.0059721757109056466,
+      "positive_part": 0.0,
+      "integrand": 0.0,
+      "S_positive": false,
+      "T_c": 1.874665749944814e-11,
+      "D_s": 9.675692927424429e-09
+    },
+    "is_sept20_datum": false,
+    "first": {
+      "t": 0.0,
+      "T_sc": 17496.0,
+      "X": 4212.0,
+      "Y": 43092.0,
+      "raw": 1336.5,
+      "positive_part": 1336.5,
+      "integrand": 0.3173076923076923,
+      "S_positive": true,
+      "T_c": 205914.46153846156,
+      "D_s": 43515.69230769237
+    },
+    "eta_first": {
+      "t": 0.0,
+      "defined": true,
+      "kappa": 3.198557367121814,
+      "r": 0.3141741716658074,
+      "X": 4212.0,
+      "Y": 43092.0,
+      "D_s": 43515.69230769237,
+      "T_c": 205914.46153846156,
+      "T_c_plus": 205914.46153846156,
+      "Q_actual": 3.154639175257728,
+      "skeleton": 77.00259679155661,
+      "note": "skeleton = sqrt(X)/(nu sqrt(kappa) r) = eta_DA / (alpha_c chi). Q_actual uses [T_c]_+ not the unreproved local envelope (5). alpha_c chi UNSTAMPED, so eta_DA is not evaluated.",
+      "alpha_c_chi": "UNSTAMPED",
+      "eta_DA": "NOT_EVALUATED",
+      "local_envelope_5_reproved": false
+    },
+    "eta_last": {
+      "t": 1.0000000000000007,
+      "defined": true,
+      "kappa": 2.000000120449186,
+      "r": 0.0003897268811815107,
+      "X": 0.003981449995068991,
+      "Y": 0.015925801898525674,
+      "D_s": 9.675692927424429e-09,
+      "T_c": 1.874665749944814e-11,
+      "T_c_plus": 1.874665749944814e-11,
+      "Q_actual": 0.0012916668356511745,
+      "skeleton": 76.32274836001768,
+      "note": "skeleton = sqrt(X)/(nu sqrt(kappa) r) = eta_DA / (alpha_c chi). Q_actual uses [T_c]_+ not the unreproved local envelope (5). alpha_c chi UNSTAMPED, so eta_DA is not evaluated.",
+      "alpha_c_chi": "UNSTAMPED",
+      "eta_DA": "NOT_EVALUATED",
+      "local_envelope_5_reproved": false
+    }
+  }
+}
