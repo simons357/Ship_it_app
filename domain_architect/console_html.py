@@ -85,6 +85,14 @@ def _run_card(view: RunView) -> str:
           {_esc(view.process_status.value.upper())}
         </div>
       </header>
+      <footer class="promote-row">
+        <button type="button" class="promote" data-promote="{_esc(run.run_id)}" {promote_disabled}>
+          Promote to evidence
+        </button>
+        <p class="promote-reason" data-promote-reason="{_esc(run.run_id)}">
+          {_esc(view.promotion_reason)}
+        </p>
+      </footer>
       <p class="outcome-note">
         Scientific outcome is stored, not judged:
         <em>{_esc(run.scientific_outcome)}</em>
@@ -109,14 +117,6 @@ def _run_card(view: RunView) -> str:
         <h3>Notes</h3>
         <ul>{notes}</ul>
       </section>
-      <footer class="promote-row">
-        <button type="button" class="promote" data-promote="{_esc(run.run_id)}" {promote_disabled}>
-          Promote to evidence
-        </button>
-        <p class="promote-reason" data-promote-reason="{_esc(run.run_id)}">
-          {_esc(view.promotion_reason)}
-        </p>
-      </footer>
     </article>"""
 
 
@@ -132,7 +132,7 @@ def render_console_html(snapshot: ConsoleSnapshot) -> str:
         f"""
         <figure class="shortcut" data-shortcut-id="{_esc(s.shortcut_id)}">
           <figcaption>Closed shortcut</figcaption>
-          <div class="boxed">{_esc(s.statement)}</div>
+          <div class="boxed">{_esc(s.statement.replace("⇏", "does not imply"))}</div>
           <p class="tex">{_esc(s.boxed)}</p>
           <p>{_esc(s.evidence_role)}</p>
           <p class="origin">{_esc(s.origin)}</p>
@@ -197,11 +197,15 @@ def render_console_html(snapshot: ConsoleSnapshot) -> str:
     .eyebrow {{ font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #6a6358; }}
     .run-card h2 {{ margin: 6px 0 10px; font-size: 22px; }}
     .badge {{
-      display: inline-block;
-      padding: 3px 10px;
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      border: 1px solid currentColor;
+      display: block;
+      width: 100%;
+      margin: 8px 0 12px;
+      padding: 10px 12px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-align: center;
+      border: 2px solid currentColor;
     }}
     .badge-inconclusive {{ color: var(--fail); background: var(--fail-bg); }}
     .badge-prereg {{ color: var(--prereg); background: var(--prereg-bg); }}

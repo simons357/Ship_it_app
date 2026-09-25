@@ -49,11 +49,15 @@
     .eyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #6a6358; }
     .run-card h2 { margin: 6px 0 10px; font-size: 22px; }
     .badge {
-      display: inline-block;
-      padding: 3px 10px;
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      border: 1px solid currentColor;
+      display: block;
+      width: 100%;
+      margin: 8px 0 12px;
+      padding: 10px 12px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-align: center;
+      border: 2px solid currentColor;
     }
     .badge-inconclusive { color: var(--fail); background: var(--fail-bg); }
     .badge-prereg { color: var(--prereg); background: var(--prereg-bg); }
@@ -141,6 +145,14 @@
           INCONCLUSIVE
         </div>
       </header>
+      <footer class="promote-row">
+        <button type="button" class="promote" data-promote="Q4-1-v1" disabled>
+          Promote to evidence
+        </button>
+        <p class="promote-reason" data-promote-reason="Q4-1-v1">
+          INCONCLUSIVE runs cannot be promoted to evidence.
+        </p>
+      </footer>
       <p class="outcome-note">
         Scientific outcome is stored, not judged:
         <em>Do not read. Any apparent positive reading is void: the consistency check failed.</em>
@@ -183,14 +195,6 @@
         <h3>Notes</h3>
         <ul><li>Deliberately retained as a defective historical run.</li><li>Process Console acceptance test: display INCONCLUSIVE.</li><li>Do not promote to evidence.</li><li>Broad spectral state ⇏ pointwise viscous payment of the dangerous term</li></ul>
       </section>
-      <footer class="promote-row">
-        <button type="button" class="promote" data-promote="Q4-1-v1" disabled>
-          Promote to evidence
-        </button>
-        <p class="promote-reason" data-promote-reason="Q4-1-v1">
-          INCONCLUSIVE runs cannot be promoted to evidence.
-        </p>
-      </footer>
     </article>
       </section>
       <section>
@@ -207,6 +211,14 @@
           PREREGISTERED
         </div>
       </header>
+      <footer class="promote-row">
+        <button type="button" class="promote" data-promote="Q4-1-v2" disabled>
+          Promote to evidence
+        </button>
+        <p class="promote-reason" data-promote-reason="Q4-1-v2">
+          Preregistered runs are not evidence until executed under the locked window.
+        </p>
+      </footer>
       <p class="outcome-note">
         Scientific outcome is stored, not judged:
         <em>not_run</em>
@@ -249,14 +261,6 @@
         <h3>Notes</h3>
         <ul><li>Genuinely new preregistered run. Not a continuation of v1 evidence.</li><li>Same decision window as v1 unless DA changes it beforehand.</li><li>Locked hashes must match before the window is opened.</li></ul>
       </section>
-      <footer class="promote-row">
-        <button type="button" class="promote" data-promote="Q4-1-v2" disabled>
-          Promote to evidence
-        </button>
-        <p class="promote-reason" data-promote-reason="Q4-1-v2">
-          Preregistered runs are not evidence until executed under the locked window.
-        </p>
-      </footer>
     </article>
       </section>
     </div>
@@ -267,7 +271,7 @@
       
         <figure class="shortcut" data-shortcut-id="TG-BROAD-NOT-POINTWISE-PAYMENT">
           <figcaption>Closed shortcut</figcaption>
-          <div class="boxed">Broad spectral state ⇏ pointwise viscous payment of the dangerous term</div>
+          <div class="boxed">Broad spectral state does not imply pointwise viscous payment of the dangerous term</div>
           <p class="tex">\boxed{\text{Broad spectral state}\not\Rightarrow \text{pointwise viscous payment of the dangerous term}.}</p>
           <p>Closed negative. Not a proof of regularity. Not a reason to retry the withdrawn 3915/663 fraction as evidence.</p>
           <p class="origin">Q4-1 v1 failed consistency check + Taylor–Green negative result</p>
