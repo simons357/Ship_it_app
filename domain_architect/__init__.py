@@ -15,23 +15,31 @@ has exactly four inputs and one output.
 from .schema import (
     CANONICAL_SFE_STATUS,
     PRODUCT_DESCRIPTION,
+    SCHEMA_VERSION,
     EvidenceLevel,
     PermissionSubtype,
+    ProcessStatus,
     RecoveryKind,
     ScaleResponseSubtype,
+    StampKind,
 )
 from .audit import audit_expression
+from .process_console import ProcessConsole
 from .report import AuditReport
 
 __all__ = [
     "CANONICAL_SFE_STATUS",
     "PRODUCT_DESCRIPTION",
+    "SCHEMA_VERSION",
     "AuditReport",
     "EvidenceLevel",
     "PermissionSubtype",
+    "ProcessConsole",
+    "ProcessStatus",
     "RecoveryKind",
     "ScaleResponseSubtype",
+    "StampKind",
     "audit_expression",
 ]
 
-__version__ = "0.2.0"
+__version__ = "0.5.0"

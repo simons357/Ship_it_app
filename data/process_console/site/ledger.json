@@ -1,0 +1,266 @@
+{
+  "schema_version": "v5",
+  "fx2": {
+    "id": "F-X2",
+    "title": "Relabel opaque DA-STAMPED into typed v5 stamps",
+    "complete": true
+  },
+  "rules": [
+    "An error does not disappear; it produces an erratum, a regression test, a process rule, and a cleaner scientific statement.",
+    "Process Console does not depend on a run's scientific outcome.",
+    "A failed consistency check yields INCONCLUSIVE and cannot be promoted to evidence.",
+    "Opaque DA-STAMPED is not a stamp kind; use PROVED, REPRODUCED, or CONSISTENCY CHECK.",
+    "Withdrawn scientific values may appear only as historical provenance, visibly marked WITHDRAWN.",
+    "A closed shortcut is a scientific result, not bad news.",
+    "Q4-1 v2 does not inherit Q4-1 v1 diagnostics as evidence.",
+    "The decision window stays locked unless DA changes it before the run is opened."
+  ],
+  "runs": [
+    {
+      "schema_version": "v5",
+      "run_id": "Q4-1-v1",
+      "title": "Q4-1 v1 \u2014 historical Taylor\u2013Green diagnostic (defective)",
+      "version": "v1",
+      "lane": "historical",
+      "process_status": "inconclusive",
+      "scientific_outcome": "Do not read. Any apparent positive reading is void: the consistency check failed.",
+      "executed": true,
+      "preregistered": false,
+      "decision_window": {
+        "window_id": "Q4-DECISION-WINDOW-2026-09-25",
+        "admission": {
+          "T_c_positive": true,
+          "alpha_c_near_one": true,
+          "note": "Same window as Q4-0 / Q4-1 v1 unless DA changes it beforehand."
+        },
+        "locked": true,
+        "changed_by_da": false,
+        "change_note": ""
+      },
+      "consistency_checks": [
+        {
+          "check_id": "Q4-1-v1-CC-direct-Ds",
+          "stipulated_formula": "D_s = Z - \u039bY = \u2016A^{1/2}(A-\u039b)u\u2016\u00b2 \u2265 0",
+          "implementation": "count ratio 3915/663 (broad-spectral hits / pointwise viscous hits)",
+          "passed": false,
+          "detail": "Implementation used the withdrawn 3,915/663 diagnostic imbalance as a proxy for T_c/(\u03bd D_s). That is not the stipulated direct D_s form and is not a scale-aware residual."
+        }
+      ],
+      "stamps": [
+        {
+          "kind": "consistency_check",
+          "label": "CONSISTENCY CHECK \u2014 implementation agrees with stipulated formula/assumptions",
+          "statement": "D_s = Z - \u039bY = \u2016A^{1/2}(A-\u039b)u\u2016\u00b2 \u2265 0",
+          "status": "failed",
+          "notes": "Implementation used the withdrawn 3,915/663 diagnostic imbalance as a proxy for T_c/(\u03bd D_s). That is not the stipulated direct D_s form and is not a scale-aware residual."
+        }
+      ],
+      "protocol_hash": "",
+      "code_hashes": {},
+      "diagnostics": {
+        "withdrawn_fraction": {
+          "numerator": 3915,
+          "denominator": 663,
+          "display": "3915/663 WITHDRAWN",
+          "approx": 5.904977375565611,
+          "status": "WITHDRAWN",
+          "role": "historical_provenance_only",
+          "do_not_cite_as_evidence": true,
+          "replaced_by": {
+            "r_squared": 2.2291,
+            "T_c_over_nu_D_s": 1.2259,
+            "latex": "r^2=2.2291,\\qquad \\frac{T_c}{\\nu D_s}=1.2259",
+            "status": "live",
+            "role": "scientific_value"
+          }
+        },
+        "withdrawn_imbalance": {
+          "broad_spectral_counts": 3915,
+          "pointwise_viscous_counts": 663,
+          "status": "WITHDRAWN",
+          "role": "historical_provenance_only",
+          "do_not_cite_as_evidence": true,
+          "note": "Q4-1 v1 treated 3,915 broad-spectral hits versus 663 pointwise viscous hits as if that ratio paid the dangerous term. That imbalance is not evidence and is not inherited by Q4-1 v2."
+        },
+        "used_direct_Ds": false,
+        "used_scale_aware_residual": false
+      },
+      "inherited_evidence_ids": [],
+      "notes": [
+        "Deliberately retained as a defective historical run.",
+        "Process Console acceptance test: display INCONCLUSIVE.",
+        "Do not promote to evidence.",
+        "Broad spectral state \u21cf pointwise viscous payment of the dangerous term"
+      ],
+      "historical": true,
+      "defective": true,
+      "console": {
+        "process_status": "inconclusive",
+        "process_status_display": "INCONCLUSIVE",
+        "promotion": "prohibited",
+        "promotion_reason": "INCONCLUSIVE runs cannot be promoted to evidence.",
+        "failed_consistency_checks": [
+          {
+            "check_id": "Q4-1-v1-CC-direct-Ds",
+            "stipulated_formula": "D_s = Z - \u039bY = \u2016A^{1/2}(A-\u039b)u\u2016\u00b2 \u2265 0",
+            "implementation": "count ratio 3915/663 (broad-spectral hits / pointwise viscous hits)",
+            "passed": false,
+            "detail": "Implementation used the withdrawn 3,915/663 diagnostic imbalance as a proxy for T_c/(\u03bd D_s). That is not the stipulated direct D_s form and is not a scale-aware residual."
+          }
+        ],
+        "scientific_outcome_ignored_for_verdict": true,
+        "schema_version": "v5"
+      }
+    },
+    {
+      "schema_version": "v5",
+      "run_id": "Q4-1-v2",
+      "title": "Q4-1 v2 \u2014 preregistered direct-D_s / scale-aware residual",
+      "version": "v2",
+      "lane": "research",
+      "process_status": "preregistered",
+      "scientific_outcome": "not_run",
+      "executed": false,
+      "preregistered": true,
+      "decision_window": {
+        "window_id": "Q4-DECISION-WINDOW-2026-09-25",
+        "admission": {
+          "T_c_positive": true,
+          "alpha_c_near_one": true,
+          "note": "Same window as Q4-0 / Q4-1 v1 unless DA changes it beforehand."
+        },
+        "locked": true,
+        "changed_by_da": false,
+        "change_note": ""
+      },
+      "consistency_checks": [
+        {
+          "check_id": "Q4-1-v2-CC-direct-Ds-prereg",
+          "stipulated_formula": "D_s = Z - \u039bY = \u2016A^{1/2}(A-\u039b)u\u2016\u00b2 \u2265 0",
+          "implementation": "locked; not executed. Direct D_s form is the only admitted diagnostic.",
+          "passed": true,
+          "detail": "Preregistration locks the formula. No numerical result is claimed. 3915/663 is not an input."
+        }
+      ],
+      "stamps": [
+        {
+          "kind": "consistency_check",
+          "label": "CONSISTENCY CHECK \u2014 implementation agrees with stipulated formula/assumptions",
+          "statement": "Preregistration locks direct D_s and the scale-aware residual.",
+          "status": "locked_not_executed",
+          "notes": "Not a proof. Not a reproduction. Not evidence."
+        }
+      ],
+      "protocol_hash": "19a8a8afdea938a0b1bd17ae8a4375e1b159aafc67de8dbbdac82140b6fcce46",
+      "code_hashes": {
+        "domain_architect/q4_runs.py": "9eed3627b818e650ad9b54cf7ecd793602d6c182c2b7d040c3a22d7b7de9a9bc",
+        "domain_architect/process_schema.py": "ce564094d7ead96905ef8f4fe2477005b9874fc7c557615258102442b69d9007",
+        "direct_Ds": "9a7167c9aef36089d300ce068d2c4dc28fb1829508677f42b98b8aa631303a50",
+        "scale_aware_residual": "c41b92c4834c8277d6c2ad8f1df90b9534d7c47817101b29146a71ba75c40e38"
+      },
+      "diagnostics": {
+        "D_s_form": "D_s = Z - \u039bY = \u2016A^{1/2}(A-\u039b)u\u2016\u00b2 \u2265 0",
+        "residual": "R_\u03ba = (T_c - \u03bd D_s) / (\u03bd D_s)  (scale-aware; not a count ratio)",
+        "live_taylor_green": {
+          "r_squared": 2.2291,
+          "T_c_over_nu_D_s": 1.2259
+        },
+        "inherits_3915_663": false
+      },
+      "inherited_evidence_ids": [],
+      "notes": [
+        "Genuinely new preregistered run. Not a continuation of v1 evidence.",
+        "Same decision window as v1 unless DA changes it beforehand.",
+        "Locked hashes must match before the window is opened."
+      ],
+      "historical": false,
+      "defective": false,
+      "console": {
+        "process_status": "preregistered",
+        "process_status_display": "PREREGISTERED",
+        "promotion": "prohibited",
+        "promotion_reason": "Preregistered runs are not evidence until executed under the locked window.",
+        "failed_consistency_checks": [],
+        "scientific_outcome_ignored_for_verdict": true,
+        "schema_version": "v5"
+      }
+    }
+  ],
+  "atlas": {
+    "schema_version": "v5",
+    "title": "Atlas \u2014 closed shortcuts and live claims",
+    "ns_solved": false,
+    "shortcuts": [
+      {
+        "shortcut_id": "TG-BROAD-NOT-POINTWISE-PAYMENT",
+        "statement": "Broad spectral state \u21cf pointwise viscous payment of the dangerous term",
+        "boxed": "\\boxed{\\text{Broad spectral state}\\not\\Rightarrow \\text{pointwise viscous payment of the dangerous term}.}",
+        "status": "closed_shortcut",
+        "origin": "Q4-1 v1 failed consistency check + Taylor\u2013Green negative result",
+        "evidence_role": "Closed negative. Not a proof of regularity. Not a reason to retry the withdrawn 3915/663 fraction as evidence.",
+        "notes": "Live values: r^2=2.2291, T_c/(\u03bd D_s)=1.2259. Old fraction marked WITHDRAWN."
+      }
+    ],
+    "live_values": {
+      "r_squared": 2.2291,
+      "T_c_over_nu_D_s": 1.2259,
+      "latex": "r^2=2.2291,\\qquad \\frac{T_c}{\\nu D_s}=1.2259",
+      "status": "live",
+      "role": "scientific_value"
+    },
+    "withdrawn_values": {
+      "numerator": 3915,
+      "denominator": 663,
+      "display": "3915/663 WITHDRAWN",
+      "approx": 5.904977375565611,
+      "status": "WITHDRAWN",
+      "role": "historical_provenance_only",
+      "do_not_cite_as_evidence": true,
+      "replaced_by": {
+        "r_squared": 2.2291,
+        "T_c_over_nu_D_s": 1.2259,
+        "latex": "r^2=2.2291,\\qquad \\frac{T_c}{\\nu D_s}=1.2259",
+        "status": "live",
+        "role": "scientific_value"
+      }
+    }
+  },
+  "live_taylor_green": {
+    "r_squared": 2.2291,
+    "T_c_over_nu_D_s": 1.2259,
+    "latex": "r^2=2.2291,\\qquad \\frac{T_c}{\\nu D_s}=1.2259",
+    "status": "live",
+    "role": "scientific_value"
+  },
+  "withdrawn_taylor_green": {
+    "numerator": 3915,
+    "denominator": 663,
+    "display": "3915/663 WITHDRAWN",
+    "approx": 5.904977375565611,
+    "status": "WITHDRAWN",
+    "role": "historical_provenance_only",
+    "do_not_cite_as_evidence": true,
+    "replaced_by": {
+      "r_squared": 2.2291,
+      "T_c_over_nu_D_s": 1.2259,
+      "latex": "r^2=2.2291,\\qquad \\frac{T_c}{\\nu D_s}=1.2259",
+      "status": "live",
+      "role": "scientific_value"
+    }
+  },
+  "stamp_kinds": [
+    {
+      "kind": "proved",
+      "label": "PROVED \u2014 derivation independently checked"
+    },
+    {
+      "kind": "reproduced",
+      "label": "REPRODUCED \u2014 independent computation matched"
+    },
+    {
+      "kind": "consistency_check",
+      "label": "CONSISTENCY CHECK \u2014 implementation agrees with stipulated formula/assumptions"
+    }
+  ],
+  "ns_solved": false
+}

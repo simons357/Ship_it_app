@@ -1,0 +1,383 @@
+{
+  "schema_version": "v5",
+  "live_values": {
+    "r_squared": 2.2291,
+    "T_c_over_nu_D_s": 1.2259,
+    "latex": "r^2=2.2291,\\qquad \\frac{T_c}{\\nu D_s}=1.2259",
+    "status": "live",
+    "role": "scientific_value"
+  },
+  "withdrawn": {
+    "numerator": 3915,
+    "denominator": 663,
+    "display": "3915/663 WITHDRAWN",
+    "approx": 5.904977375565611,
+    "status": "WITHDRAWN",
+    "role": "historical_provenance_only",
+    "do_not_cite_as_evidence": true,
+    "replaced_by": {
+      "r_squared": 2.2291,
+      "T_c_over_nu_D_s": 1.2259,
+      "latex": "r^2=2.2291,\\qquad \\frac{T_c}{\\nu D_s}=1.2259",
+      "status": "live",
+      "role": "scientific_value"
+    }
+  },
+  "hits": [
+    {
+      "path": "tests/test_atlas_and_errata.py",
+      "line": 57,
+      "text": "self.assertIn(\"3915/663\", html)",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "tests/test_atlas_and_errata.py",
+      "line": 61,
+      "text": "classify_hit(\"old fraction 3915/663 WITHDRAWN\"),",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "tests/test_atlas_and_errata.py",
+      "line": 65,
+      "text": "classify_hit(\"the ratio 3915/663 is the answer\"),",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "tests/test_atlas_and_errata.py",
+      "line": 85,
+      "text": "\"Taylor\u2013Green fraction 3915/663 remains the desk value.\\n\",",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "tests/test_process_console.py",
+      "line": 59,
+      "text": "self.assertIn(\"3915/663\", failed[\"implementation\"])",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "tests/test_process_console.py",
+      "line": 62,
+      "text": "self.assertIn(\"3915/663\", html)",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "domain_architect/atlas.py",
+      "line": 46,
+      "text": "\"retry the withdrawn 3915/663 fraction as evidence.\"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "domain_architect/q4_runs.py",
+      "line": 10,
+      "text": "It does not inherit the 3,915/663 diagnostic imbalance as evidence.",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "domain_architect/q4_runs.py",
+      "line": 58,
+      "text": "\"count ratio 3915/663 (broad-spectral hits / pointwise viscous hits)\"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "domain_architect/q4_runs.py",
+      "line": 62,
+      "text": "\"Implementation used the withdrawn 3,915/663 diagnostic imbalance \"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "domain_architect/q4_runs.py",
+      "line": 138,
+      "text": "\"claimed. 3915/663 is not an input.\"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "domain_architect/errata.py",
+      "line": 8,
+      "text": "The withdrawn Taylor\u2013Green fraction 3915/663 is provenance only",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "domain_architect/errata.py",
+      "line": 25,
+      "text": "WITHDRAWN_TG_NUMERATOR = 3915",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "domain_architect/errata.py",
+      "line": 40,
+      "text": "\"display\": \"3915/663 WITHDRAWN\",",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "domain_architect/errata.py",
+      "line": 56,
+      "text": "\"Q4-1 v1 treated 3,915 broad-spectral hits versus 663 \"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "domain_architect/errata.py",
+      "line": 189,
+      "text": "\"Withdrawn fraction 3915/663 is historical provenance only.\"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "domain_architect/console_html.py",
+      "line": 67,
+      "text": "\"<p class='ok-line'>Does not inherit 3,915/663 as evidence.</p>\"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/schema_v5.json",
+      "line": 33,
+      "text": "\"display\": \"3915/663 WITHDRAWN\",",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/atlas/scientific_map.json",
+      "line": 12,
+      "text": "\"evidence_role\": \"Closed negative. Not a proof of regularity. Not a reason to retry the withdrawn 3915/663 fraction as evidence.\",",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/atlas/scientific_map.json",
+      "line": 24,
+      "text": "\"numerator\": 3915,",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/atlas/scientific_map.json",
+      "line": 26,
+      "text": "\"display\": \"3915/663 WITHDRAWN\",",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/errata/taylor_green.json",
+      "line": 10,
+      "text": "\"numerator\": 3915,",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/errata/taylor_green.json",
+      "line": 12,
+      "text": "\"display\": \"3915/663 WITHDRAWN\",",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/errata/taylor_green.json",
+      "line": 25,
+      "text": "\"block\": \"Live Taylor\\u2013Green scientific values (schema v5):\\n\\n    r^2 = 2.2291\\n    T_c / (\\u03bd D_s) = 1.2259\\n\\nWithdrawn fraction 3915/663 is historical provenance only.\"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/index.html",
+      "line": 157,
+      "text": "<div><span class=\"k\">Implementation</span> count ratio 3915/663 (broad-spectral hits / pointwise viscous hits)</div>",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/index.html",
+      "line": 158,
+      "text": "<p>Implementation used the withdrawn 3,915/663 diagnostic imbalance as a proxy for T_c/(\u03bd D_s). That is not the stipulated direct D_s form and is not a scale-aware residual.</p>",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/index.html",
+      "line": 224,
+      "text": "<p>Preregistration locks the formula. No numerical result is claimed. 3915/663 is not an input.</p>",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/index.html",
+      "line": 246,
+      "text": "<p class='ok-line'>Does not inherit 3,915/663 as evidence.</p>",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/index.html",
+      "line": 272,
+      "text": "<p>Closed negative. Not a proof of regularity. Not a reason to retry the withdrawn 3915/663 fraction as evidence.</p>",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/index.html",
+      "line": 288,
+      "text": "<p>Old Taylor\u2013Green fraction 3915/663 WITHDRAWN",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/ledger.json",
+      "line": 44,
+      "text": "\"implementation\": \"count ratio 3915/663 (broad-spectral hits / pointwise viscous hits)\",",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/ledger.json",
+      "line": 46,
+      "text": "\"detail\": \"Implementation used the withdrawn 3,915/663 diagnostic imbalance as a proxy for T_c/(\\u03bd D_s). That is not the stipulated direct D_s form and is not a scale-aware residual.\"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/ledger.json",
+      "line": 55,
+      "text": "\"notes\": \"Implementation used the withdrawn 3,915/663 diagnostic imbalance as a proxy for T_c/(\\u03bd D_s). That is not the stipulated direct D_s form and is not a scale-aware residual.\"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/ledger.json",
+      "line": 62,
+      "text": "\"numerator\": 3915,",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/ledger.json",
+      "line": 64,
+      "text": "\"display\": \"3915/663 WITHDRAWN\",",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/ledger.json",
+      "line": 78,
+      "text": "\"broad_spectral_counts\": 3915,",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/ledger.json",
+      "line": 83,
+      "text": "\"note\": \"Q4-1 v1 treated 3,915 broad-spectral hits versus 663 pointwise viscous hits as if that ratio paid the dangerous term. That imbalance is not evidence and is not inherited by Q4-1 v2.\"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/ledger.json",
+      "line": 106,
+      "text": "\"implementation\": \"count ratio 3915/663 (broad-spectral hits / pointwise viscous hits)\",",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/ledger.json",
+      "line": 108,
+      "text": "\"detail\": \"Implementation used the withdrawn 3,915/663 diagnostic imbalance as a proxy for T_c/(\\u03bd D_s). That is not the stipulated direct D_s form and is not a scale-aware residual.\"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/ledger.json",
+      "line": 142,
+      "text": "\"detail\": \"Preregistration locks the formula. No numerical result is claimed. 3915/663 is not an input.\"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/ledger.json",
+      "line": 200,
+      "text": "\"evidence_role\": \"Closed negative. Not a proof of regularity. Not a reason to retry the withdrawn 3915/663 fraction as evidence.\",",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/ledger.json",
+      "line": 212,
+      "text": "\"numerator\": 3915,",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/ledger.json",
+      "line": 214,
+      "text": "\"display\": \"3915/663 WITHDRAWN\",",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/ledger.json",
+      "line": 236,
+      "text": "\"numerator\": 3915,",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/site/ledger.json",
+      "line": 238,
+      "text": "\"display\": \"3915/663 WITHDRAWN\",",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/runs/Q4-1-v1.json",
+      "line": 26,
+      "text": "\"implementation\": \"count ratio 3915/663 (broad-spectral hits / pointwise viscous hits)\",",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/runs/Q4-1-v1.json",
+      "line": 28,
+      "text": "\"detail\": \"Implementation used the withdrawn 3,915/663 diagnostic imbalance as a proxy for T_c/(\\u03bd D_s). That is not the stipulated direct D_s form and is not a scale-aware residual.\"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/runs/Q4-1-v1.json",
+      "line": 37,
+      "text": "\"notes\": \"Implementation used the withdrawn 3,915/663 diagnostic imbalance as a proxy for T_c/(\\u03bd D_s). That is not the stipulated direct D_s form and is not a scale-aware residual.\"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/runs/Q4-1-v1.json",
+      "line": 44,
+      "text": "\"numerator\": 3915,",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/runs/Q4-1-v1.json",
+      "line": 46,
+      "text": "\"display\": \"3915/663 WITHDRAWN\",",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/runs/Q4-1-v1.json",
+      "line": 60,
+      "text": "\"broad_spectral_counts\": 3915,",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/runs/Q4-1-v1.json",
+      "line": 65,
+      "text": "\"note\": \"Q4-1 v1 treated 3,915 broad-spectral hits versus 663 pointwise viscous hits as if that ratio paid the dangerous term. That imbalance is not evidence and is not inherited by Q4-1 v2.\"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "data/process_console/runs/Q4-1-v2.json",
+      "line": 28,
+      "text": "\"detail\": \"Preregistration locks the formula. No numerical result is claimed. 3915/663 is not an input.\"",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "docs/process-console/README.md",
+      "line": 18,
+      "text": "*beforehand*. It does not inherit the old 3,915/663 diagnostic",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "docs/process-console/README.md",
+      "line": 48,
+      "text": "The old fraction \\(3915/663\\) is **WITHDRAWN**. It may appear only as",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "docs/process-console/TAYLOR-GREEN-ERRATUM.md",
+      "line": 23,
+      "text": "| Old fraction | \\(3915/663\\) |",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "docs/process-console/TAYLOR-GREEN-ERRATUM.md",
+      "line": 24,
+      "text": "| Diagnostic imbalance | 3,915 broad-spectral counts vs 663 pointwise viscous counts |",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "docs/process-console/TAYLOR-GREEN-ERRATUM.md",
+      "line": 39,
+      "text": "\\(3915/663\\) as a scientific value is a regression.",
+      "classification": "historical_withdrawn"
+    },
+    {
+      "path": "docs/ns-review/README.md",
+      "line": 21,
+      "text": "The old fraction \\(3915/663\\) is **WITHDRAWN** (historical provenance",
+      "classification": "historical_withdrawn"
+    }
+  ],
+  "live_artifact_violations": []
+}

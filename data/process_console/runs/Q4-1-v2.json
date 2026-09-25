@@ -1,0 +1,64 @@
+{
+  "schema_version": "v5",
+  "run_id": "Q4-1-v2",
+  "title": "Q4-1 v2 \u2014 preregistered direct-D_s / scale-aware residual",
+  "version": "v2",
+  "lane": "research",
+  "process_status": "preregistered",
+  "scientific_outcome": "not_run",
+  "executed": false,
+  "preregistered": true,
+  "decision_window": {
+    "window_id": "Q4-DECISION-WINDOW-2026-09-25",
+    "admission": {
+      "T_c_positive": true,
+      "alpha_c_near_one": true,
+      "note": "Same window as Q4-0 / Q4-1 v1 unless DA changes it beforehand."
+    },
+    "locked": true,
+    "changed_by_da": false,
+    "change_note": ""
+  },
+  "consistency_checks": [
+    {
+      "check_id": "Q4-1-v2-CC-direct-Ds-prereg",
+      "stipulated_formula": "D_s = Z - \u039bY = \u2016A^{1/2}(A-\u039b)u\u2016\u00b2 \u2265 0",
+      "implementation": "locked; not executed. Direct D_s form is the only admitted diagnostic.",
+      "passed": true,
+      "detail": "Preregistration locks the formula. No numerical result is claimed. 3915/663 is not an input."
+    }
+  ],
+  "stamps": [
+    {
+      "kind": "consistency_check",
+      "label": "CONSISTENCY CHECK \u2014 implementation agrees with stipulated formula/assumptions",
+      "statement": "Preregistration locks direct D_s and the scale-aware residual.",
+      "status": "locked_not_executed",
+      "notes": "Not a proof. Not a reproduction. Not evidence."
+    }
+  ],
+  "protocol_hash": "19a8a8afdea938a0b1bd17ae8a4375e1b159aafc67de8dbbdac82140b6fcce46",
+  "code_hashes": {
+    "domain_architect/q4_runs.py": "9eed3627b818e650ad9b54cf7ecd793602d6c182c2b7d040c3a22d7b7de9a9bc",
+    "domain_architect/process_schema.py": "ce564094d7ead96905ef8f4fe2477005b9874fc7c557615258102442b69d9007",
+    "direct_Ds": "9a7167c9aef36089d300ce068d2c4dc28fb1829508677f42b98b8aa631303a50",
+    "scale_aware_residual": "c41b92c4834c8277d6c2ad8f1df90b9534d7c47817101b29146a71ba75c40e38"
+  },
+  "diagnostics": {
+    "D_s_form": "D_s = Z - \u039bY = \u2016A^{1/2}(A-\u039b)u\u2016\u00b2 \u2265 0",
+    "residual": "R_\u03ba = (T_c - \u03bd D_s) / (\u03bd D_s)  (scale-aware; not a count ratio)",
+    "live_taylor_green": {
+      "r_squared": 2.2291,
+      "T_c_over_nu_D_s": 1.2259
+    },
+    "inherits_3915_663": false
+  },
+  "inherited_evidence_ids": [],
+  "notes": [
+    "Genuinely new preregistered run. Not a continuation of v1 evidence.",
+    "Same decision window as v1 unless DA changes it beforehand.",
+    "Locked hashes must match before the window is opened."
+  ],
+  "historical": false,
+  "defective": false
+}

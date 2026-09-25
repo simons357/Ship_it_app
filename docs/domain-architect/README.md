@@ -29,8 +29,13 @@ Machine-readable provenance (original expressions are immutable):
 ```bash
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
+python -m domain_architect --console
 python -m unittest tests.test_domain_architect_acceptance
 ```
+
+Process Console and schema v5 stamps live in the same package.
+See [`../process-console/README.md`](../process-console/README.md).
+`DA-STAMPED` is not a stamp kind.
 
 Related closed experiment in this repository:
 

@@ -1,0 +1,37 @@
+{
+  "schema_version": "v5",
+  "stamp_kinds": [
+    {
+      "kind": "proved",
+      "label": "PROVED — derivation independently checked"
+    },
+    {
+      "kind": "reproduced",
+      "label": "REPRODUCED — independent computation matched"
+    },
+    {
+      "kind": "consistency_check",
+      "label": "CONSISTENCY CHECK — implementation agrees with stipulated formula/assumptions"
+    }
+  ],
+  "rejected_stamp_labels": ["DA-STAMPED", "DA_STAMPED", "DA STAMPED", "STAMPED", "DA-STAMP"],
+  "process_statuses": [
+    "preregistered",
+    "executed",
+    "inconclusive",
+    "withdrawn",
+    "closed_negative"
+  ],
+  "promotion_default": "prohibited",
+  "scientific_outcome_used_for_verdict": false,
+  "live_taylor_green": {
+    "r_squared": 2.2291,
+    "T_c_over_nu_D_s": 1.2259,
+    "status": "live"
+  },
+  "withdrawn_taylor_green": {
+    "display": "3915/663 WITHDRAWN",
+    "status": "WITHDRAWN",
+    "role": "historical_provenance_only"
+  }
+}

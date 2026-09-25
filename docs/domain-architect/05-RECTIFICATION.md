@@ -52,6 +52,9 @@ known theory.
 | Train / validation / held-out protocol hash | `protocol.py` |
 | Null and counterexample registry | `null_results.json`, `EquationRegistry.record_null` |
 | Confidence taxonomy | `report.ConfidenceTaxonomy` |
+| Schema v5 stamp kinds (PROVED / REPRODUCED / CONSISTENCY CHECK) | `schema.StampKind`, `stamps.py` (F-X2) |
+| Process Console; Q4-1 v1 INCONCLUSIVE; promotion ban | `process_console.py` |
+| Taylor–Green erratum + Atlas closed shortcuts | `errata.py`, `atlas.py` |
 
 ## Canonical SFE
 

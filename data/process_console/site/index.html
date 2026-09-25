@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Process Console v5</title>
+  <style>
+    :root {
+      --ink: #1b1a17;
+      --paper: #f4efe6;
+      --card: #fffdf8;
+      --rule: #d8cfc0;
+      --fail: #8b1e1e;
+      --fail-bg: #f8e4e2;
+      --prereg: #1f4d3a;
+      --prereg-bg: #dcece4;
+      --withdrawn: #6b4a16;
+      --withdrawn-bg: #f3e6c8;
+      --accent: #243f73;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 16px/1.45 "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+      background: var(--paper);
+      color: var(--ink);
+    }
+    header.mast {
+      padding: 28px 32px 18px;
+      border-bottom: 2px solid var(--ink);
+    }
+    header.mast h1 { margin: 0 0 6px; font-size: 32px; letter-spacing: 0.02em; }
+    .sub { color: #4a453c; max-width: 70ch; }
+    main { padding: 24px 32px 64px; }
+    .lanes { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 960px) { .lanes { grid-template-columns: 1fr; } }
+    h2.lane {
+      margin: 0 0 12px;
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .run-card {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      padding: 20px 22px 16px;
+      margin-bottom: 18px;
+    }
+    .eyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #6a6358; }
+    .run-card h2 { margin: 6px 0 10px; font-size: 22px; }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      border: 1px solid currentColor;
+    }
+    .badge-inconclusive { color: var(--fail); background: var(--fail-bg); }
+    .badge-prereg { color: var(--prereg); background: var(--prereg-bg); }
+    .badge-withdrawn { color: var(--withdrawn); background: var(--withdrawn-bg); }
+    .failed-box {
+      background: var(--fail-bg);
+      border-left: 4px solid var(--fail);
+      padding: 8px 12px;
+      margin: 12px 0;
+    }
+    .k { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6a6358; margin-right: 6px; }
+    .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 13px; }
+    .stamps, .checks, .hashes { list-style: none; padding: 0; }
+    .stamp { margin: 6px 0; padding: 8px; border: 1px dashed var(--rule); }
+    .stamp-kind { font-weight: 700; margin-right: 8px; }
+    .promote-row { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--rule); }
+    button.promote {
+      font: inherit;
+      padding: 8px 14px;
+      border: 1px solid var(--ink);
+      background: #eee8dc;
+    }
+    button.promote[disabled] {
+      color: var(--fail);
+      border-color: var(--fail);
+      background: var(--fail-bg);
+      cursor: not-allowed;
+    }
+    .promote-reason { margin: 8px 0 0; font-size: 14px; }
+    .atlas, .errata, .legend, .rules {
+      margin-top: 28px;
+      padding: 18px 20px;
+      border: 1px solid var(--ink);
+      background: var(--card);
+    }
+    .boxed {
+      font-size: 20px;
+      padding: 16px;
+      border: 2px solid var(--ink);
+      text-align: center;
+      margin: 10px 0;
+    }
+    .tex { font-family: ui-monospace, monospace; font-size: 13px; color: #4a453c; }
+    .withdrawn-tag {
+      display: inline-block;
+      background: var(--withdrawn-bg);
+      color: var(--withdrawn);
+      padding: 2px 8px;
+      letter-spacing: 0.1em;
+      font-size: 12px;
+      border: 1px solid var(--withdrawn);
+    }
+    .values { display: flex; gap: 24px; flex-wrap: wrap; }
+    .ok-line { color: var(--prereg); }
+    .toast {
+      position: fixed; right: 18px; bottom: 18px;
+      background: var(--fail); color: white; padding: 10px 14px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="mast">
+    <h1>Process Console</h1>
+    <p class="sub">
+      Schema v5. Engineering lane first: F-X2 relabels
+      are finished. This desk represents Q4 correctly as
+      <strong>INCONCLUSIVE</strong> when the consistency check failed.
+      It does not depend on Q4’s scientific outcome.
+    </p>
+  </header>
+  <main>
+    <div class="lanes">
+      <section>
+        <h2 class="lane">Engineering lane — historical / process</h2>
+        
+    <article class="run-card" id="Q4-1-v1" data-run-id="Q4-1-v1"
+             data-process-status="inconclusive"
+             data-promotion="prohibited"
+             data-scientific-outcome="Do not read. Any apparent positive reading is void: the consistency check failed.">
+      <header>
+        <div class="eyebrow">historical · v1 · schema v5</div>
+        <h2>Q4-1 v1 — historical Taylor–Green diagnostic (defective)</h2>
+        <div class="badge badge-inconclusive" data-status-badge="true">
+          INCONCLUSIVE
+        </div>
+      </header>
+      <p class="outcome-note">
+        Scientific outcome is stored, not judged:
+        <em>Do not read. Any apparent positive reading is void: the consistency check failed.</em>
+      </p>
+      
+        <section class="failed-box" data-failed-checks="true">
+          <h3>Failed consistency check</h3>
+          <ul class="checks">
+        <li class="check fail" data-check-id="Q4-1-v1-CC-direct-Ds">
+          <div class="check-flag">FAILED</div>
+          <div>
+            <div class="mono">Q4-1-v1-CC-direct-Ds</div>
+            <div><span class="k">Stipulated</span> D_s = Z - ΛY = ‖A^{1/2}(A-Λ)u‖² ≥ 0</div>
+            <div><span class="k">Implementation</span> count ratio 3915/663 (broad-spectral hits / pointwise viscous hits)</div>
+            <p>Implementation used the withdrawn 3,915/663 diagnostic imbalance as a proxy for T_c/(ν D_s). That is not the stipulated direct D_s form and is not a scale-aware residual.</p>
+          </div>
+        </li></ul>
+        </section>
+      <section>
+        <h3>Stamps (typed — not DA-STAMPED)</h3>
+        <ul class="stamps">
+        <li class="stamp stamp-consistency_check">
+          <span class="stamp-kind">CONSISTENCY CHECK</span>
+          <span>CONSISTENCY CHECK — implementation agrees with stipulated formula/assumptions</span>
+          <span class="stamp-status">failed</span>
+        </li></ul>
+      </section>
+      <section>
+        <h3>Decision window</h3>
+        <p class="mono">Q4-DECISION-WINDOW-2026-09-25</p>
+        <p>Locked unless DA changes it beforehand.
+           changed_by_da=False</p>
+      </section>
+      <section>
+        <h3>Locked hashes</h3>
+        <p>No locked code hashes.</p>
+        
+      </section>
+      <section>
+        <h3>Notes</h3>
+        <ul><li>Deliberately retained as a defective historical run.</li><li>Process Console acceptance test: display INCONCLUSIVE.</li><li>Do not promote to evidence.</li><li>Broad spectral state ⇏ pointwise viscous payment of the dangerous term</li></ul>
+      </section>
+      <footer class="promote-row">
+        <button type="button" class="promote" data-promote="Q4-1-v1" disabled>
+          Promote to evidence
+        </button>
+        <p class="promote-reason" data-promote-reason="Q4-1-v1">
+          INCONCLUSIVE runs cannot be promoted to evidence.
+        </p>
+      </footer>
+    </article>
+      </section>
+      <section>
+        <h2 class="lane">Research lane — preregistered</h2>
+        
+    <article class="run-card" id="Q4-1-v2" data-run-id="Q4-1-v2"
+             data-process-status="preregistered"
+             data-promotion="prohibited"
+             data-scientific-outcome="not_run">
+      <header>
+        <div class="eyebrow">research · v2 · schema v5</div>
+        <h2>Q4-1 v2 — preregistered direct-D_s / scale-aware residual</h2>
+        <div class="badge badge-prereg" data-status-badge="true">
+          PREREGISTERED
+        </div>
+      </header>
+      <p class="outcome-note">
+        Scientific outcome is stored, not judged:
+        <em>not_run</em>
+      </p>
+      
+        <section>
+          <h3>Consistency checks</h3>
+          <ul class="checks">
+        <li class="check ok" data-check-id="Q4-1-v2-CC-direct-Ds-prereg">
+          <div class="check-flag">locked</div>
+          <div>
+            <div class="mono">Q4-1-v2-CC-direct-Ds-prereg</div>
+            <div><span class="k">Stipulated</span> D_s = Z - ΛY = ‖A^{1/2}(A-Λ)u‖² ≥ 0</div>
+            <div><span class="k">Implementation</span> locked; not executed. Direct D_s form is the only admitted diagnostic.</div>
+            <p>Preregistration locks the formula. No numerical result is claimed. 3915/663 is not an input.</p>
+          </div>
+        </li></ul>
+        </section>
+      <section>
+        <h3>Stamps (typed — not DA-STAMPED)</h3>
+        <ul class="stamps">
+        <li class="stamp stamp-consistency_check">
+          <span class="stamp-kind">CONSISTENCY CHECK</span>
+          <span>CONSISTENCY CHECK — implementation agrees with stipulated formula/assumptions</span>
+          <span class="stamp-status">locked_not_executed</span>
+        </li></ul>
+      </section>
+      <section>
+        <h3>Decision window</h3>
+        <p class="mono">Q4-DECISION-WINDOW-2026-09-25</p>
+        <p>Locked unless DA changes it beforehand.
+           changed_by_da=False</p>
+      </section>
+      <section>
+        <h3>Locked hashes</h3>
+        <ul class='hashes'><li><code>domain_architect/q4_runs.py</code> <span class='mono'>9eed3627b818…</span></li><li><code>domain_architect/process_schema.py</code> <span class='mono'>ce564094d7ea…</span></li><li><code>direct_Ds</code> <span class='mono'>9a7167c9aef3…</span></li><li><code>scale_aware_residual</code> <span class='mono'>c41b92c4834c…</span></li></ul>
+        <p class='ok-line'>Does not inherit 3,915/663 as evidence.</p>
+      </section>
+      <section>
+        <h3>Notes</h3>
+        <ul><li>Genuinely new preregistered run. Not a continuation of v1 evidence.</li><li>Same decision window as v1 unless DA changes it beforehand.</li><li>Locked hashes must match before the window is opened.</li></ul>
+      </section>
+      <footer class="promote-row">
+        <button type="button" class="promote" data-promote="Q4-1-v2" disabled>
+          Promote to evidence
+        </button>
+        <p class="promote-reason" data-promote-reason="Q4-1-v2">
+          Preregistered runs are not evidence until executed under the locked window.
+        </p>
+      </footer>
+    </article>
+      </section>
+    </div>
+
+    <section class="atlas" id="atlas">
+      <h2>Atlas — closed shortcuts</h2>
+      <p>Not bad news. A closed door on the scientific map.</p>
+      
+        <figure class="shortcut" data-shortcut-id="TG-BROAD-NOT-POINTWISE-PAYMENT">
+          <figcaption>Closed shortcut</figcaption>
+          <div class="boxed">Broad spectral state ⇏ pointwise viscous payment of the dangerous term</div>
+          <p class="tex">\boxed{\text{Broad spectral state}\not\Rightarrow \text{pointwise viscous payment of the dangerous term}.}</p>
+          <p>Closed negative. Not a proof of regularity. Not a reason to retry the withdrawn 3915/663 fraction as evidence.</p>
+          <p class="origin">Q4-1 v1 failed consistency check + Taylor–Green negative result</p>
+        </figure>
+    </section>
+
+    <section class="errata" id="errata">
+      <h2>Taylor–Green erratum</h2>
+      <div class="values">
+        <div>
+          <h3>Live scientific value</h3>
+          <p class="boxed">r² = 2.2291<br>
+          T<sub>c</sub>/(ν D<sub>s</sub>) = 1.2259</p>
+        </div>
+        <div>
+          <h3>Historical provenance</h3>
+          <span class="withdrawn-tag">WITHDRAWN</span>
+          <p>Old Taylor–Green fraction 3915/663 WITHDRAWN
+             is not a live scientific value.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="legend">
+      <h2>Stamp kinds — schema, not prose</h2>
+      <ul><li><strong>PROVED</strong> — PROVED — derivation independently checked</li><li><strong>REPRODUCED</strong> — REPRODUCED — independent computation matched</li><li><strong>CONSISTENCY CHECK</strong> — CONSISTENCY CHECK — implementation agrees with stipulated formula/assumptions</li></ul>
+      <p>Opaque <code>DA-STAMPED</code> is rejected by F-X2.</p>
+    </section>
+
+    <section class="rules">
+      <h2>Process rules this error produced</h2>
+      <ul><li>An error does not disappear; it produces an erratum, a regression test, a process rule, and a cleaner scientific statement.</li><li>Process Console does not depend on a run&#x27;s scientific outcome.</li><li>A failed consistency check yields INCONCLUSIVE and cannot be promoted to evidence.</li><li>Opaque DA-STAMPED is not a stamp kind; use PROVED, REPRODUCED, or CONSISTENCY CHECK.</li><li>Withdrawn scientific values may appear only as historical provenance, visibly marked WITHDRAWN.</li><li>A closed shortcut is a scientific result, not bad news.</li><li>Q4-1 v2 does not inherit Q4-1 v1 diagnostics as evidence.</li><li>The decision window stays locked unless DA changes it before the run is opened.</li></ul>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script>
+    const toast = document.getElementById('toast');
+    document.querySelectorAll('[data-promote]').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const id = btn.getAttribute('data-promote');
+        let decision = 'prohibited';
+        let reason = document.querySelector('[data-promote-reason="' + id + '"]').textContent.trim();
+        try {
+          const res = await fetch('/api/promote', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({run_id: id})
+          });
+          const data = await res.json();
+          decision = data.decision || decision;
+          reason = data.reason || reason;
+        } catch (err) {
+          decision = 'prohibited';
+        }
+        toast.textContent = id + ' — promotion ' + decision + '. ' + reason;
+        toast.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
