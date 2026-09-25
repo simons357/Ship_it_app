@@ -41,6 +41,9 @@ No Clay / prize / QED / “solved” language in public output.
 
 Filed on this branch (`cursor/centered-ns-recovery-b5c1`, PR #45).
 NS lemmas on this book: [`ns-recovery/`](ns-recovery/).
+25 Sep working record: [`ns-recovery/WORKING-RECORD-2026-09-25.md`](ns-recovery/WORKING-RECORD-2026-09-25.md)
+(occupation keeps \(\nu\); I3 weighted / \(K,K,L\) not on disk;
+Q4-0 is a plan, not a run).
 QStack / Q6 / E8 stay instruments, not claims.
 Unrestricted Lemma★ stays killed on \(v_n\).
 Exact-shell \(K\le 16/9\) stays CLAIMED, not stamped.

@@ -291,3 +291,19 @@ neighboring-shell family are not on this tree.
 
 No new estimate is claimed. No continuation criterion.
 **NS not solved.**
+
+---
+
+## 25 September 2026 — working record (does not alter this freeze)
+
+Report filed as
+[`WORKING-RECORD-2026-09-25.md`](WORKING-RECORD-2026-09-25.md).
+Occupation integrand keeps \(\nu\):
+[`../../packets/DA-GATE-YOUNG-OCCUPATION-NU-2026-09-25.md`](../../packets/DA-GATE-YOUNG-OCCUPATION-NU-2026-09-25.md).
+I3 weighted and the \(K,K,L\) regrouping file are **not on this
+tree**; neither is proved internally. Separated-scale fiber stays
+**NEUTRAL**. Comparable \(K,K,K\) stays open.
+
+Q4-0 six-mode calibration is a **plan** only. DA must approve
+before anything runs:
+[`../../packets/DA-GATE-Q4-0-SIX-MODE-CALIBRATION-2026-09-25.md`](../../packets/DA-GATE-Q4-0-SIX-MODE-CALIBRATION-2026-09-25.md).
