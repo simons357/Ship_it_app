@@ -1,0 +1,79 @@
+{
+  "schema_version": "v5",
+  "run_id": "Q4-1-v1",
+  "title": "Q4-1 v1 \u2014 historical Taylor\u2013Green diagnostic (defective)",
+  "version": "v1",
+  "lane": "historical",
+  "process_status": "inconclusive",
+  "scientific_outcome": "Do not read. Any apparent positive reading is void: the consistency check failed.",
+  "executed": true,
+  "preregistered": false,
+  "decision_window": {
+    "window_id": "Q4-DECISION-WINDOW-2026-09-25",
+    "admission": {
+      "T_c_positive": true,
+      "alpha_c_near_one": true,
+      "note": "Same window as Q4-0 / Q4-1 v1 unless DA changes it beforehand."
+    },
+    "locked": true,
+    "changed_by_da": false,
+    "change_note": ""
+  },
+  "consistency_checks": [
+    {
+      "check_id": "Q4-1-v1-CC-direct-Ds",
+      "stipulated_formula": "D_s = Z - \u039bY = \u2016A^{1/2}(A-\u039b)u\u2016\u00b2 \u2265 0",
+      "implementation": "count ratio 3915/663 (broad-spectral hits / pointwise viscous hits)",
+      "passed": false,
+      "detail": "Implementation used the withdrawn 3,915/663 diagnostic imbalance as a proxy for T_c/(\u03bd D_s). That is not the stipulated direct D_s form and is not a scale-aware residual."
+    }
+  ],
+  "stamps": [
+    {
+      "kind": "consistency_check",
+      "label": "CONSISTENCY CHECK \u2014 implementation agrees with stipulated formula/assumptions",
+      "statement": "D_s = Z - \u039bY = \u2016A^{1/2}(A-\u039b)u\u2016\u00b2 \u2265 0",
+      "status": "failed",
+      "notes": "Implementation used the withdrawn 3,915/663 diagnostic imbalance as a proxy for T_c/(\u03bd D_s). That is not the stipulated direct D_s form and is not a scale-aware residual."
+    }
+  ],
+  "protocol_hash": "",
+  "code_hashes": {},
+  "diagnostics": {
+    "withdrawn_fraction": {
+      "numerator": 3915,
+      "denominator": 663,
+      "display": "3915/663 WITHDRAWN",
+      "approx": 5.904977375565611,
+      "status": "WITHDRAWN",
+      "role": "historical_provenance_only",
+      "do_not_cite_as_evidence": true,
+      "replaced_by": {
+        "r_squared": 2.2291,
+        "T_c_over_nu_D_s": 1.2259,
+        "latex": "r^2=2.2291,\\qquad \\frac{T_c}{\\nu D_s}=1.2259",
+        "status": "live",
+        "role": "scientific_value"
+      }
+    },
+    "withdrawn_imbalance": {
+      "broad_spectral_counts": 3915,
+      "pointwise_viscous_counts": 663,
+      "status": "WITHDRAWN",
+      "role": "historical_provenance_only",
+      "do_not_cite_as_evidence": true,
+      "note": "Q4-1 v1 treated 3,915 broad-spectral hits versus 663 pointwise viscous hits as if that ratio paid the dangerous term. That imbalance is not evidence and is not inherited by Q4-1 v2."
+    },
+    "used_direct_Ds": false,
+    "used_scale_aware_residual": false
+  },
+  "inherited_evidence_ids": [],
+  "notes": [
+    "Deliberately retained as a defective historical run.",
+    "Process Console acceptance test: display INCONCLUSIVE.",
+    "Do not promote to evidence.",
+    "Broad spectral state \u21cf pointwise viscous payment of the dangerous term"
+  ],
+  "historical": true,
+  "defective": true
+}

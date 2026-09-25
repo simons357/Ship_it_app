@@ -1,0 +1,39 @@
+{
+  "schema_version": "v5",
+  "title": "Atlas \u2014 closed shortcuts and live claims",
+  "ns_solved": false,
+  "shortcuts": [
+    {
+      "shortcut_id": "TG-BROAD-NOT-POINTWISE-PAYMENT",
+      "statement": "Broad spectral state \u21cf pointwise viscous payment of the dangerous term",
+      "boxed": "\\boxed{\\text{Broad spectral state}\\not\\Rightarrow \\text{pointwise viscous payment of the dangerous term}.}",
+      "status": "closed_shortcut",
+      "origin": "Q4-1 v1 failed consistency check + Taylor\u2013Green negative result",
+      "evidence_role": "Closed negative. Not a proof of regularity. Not a reason to retry the withdrawn 3915/663 fraction as evidence.",
+      "notes": "Live values: r^2=2.2291, T_c/(\u03bd D_s)=1.2259. Old fraction marked WITHDRAWN."
+    }
+  ],
+  "live_values": {
+    "r_squared": 2.2291,
+    "T_c_over_nu_D_s": 1.2259,
+    "latex": "r^2=2.2291,\\qquad \\frac{T_c}{\\nu D_s}=1.2259",
+    "status": "live",
+    "role": "scientific_value"
+  },
+  "withdrawn_values": {
+    "numerator": 3915,
+    "denominator": 663,
+    "display": "3915/663 WITHDRAWN",
+    "approx": 5.904977375565611,
+    "status": "WITHDRAWN",
+    "role": "historical_provenance_only",
+    "do_not_cite_as_evidence": true,
+    "replaced_by": {
+      "r_squared": 2.2291,
+      "T_c_over_nu_D_s": 1.2259,
+      "latex": "r^2=2.2291,\\qquad \\frac{T_c}{\\nu D_s}=1.2259",
+      "status": "live",
+      "role": "scientific_value"
+    }
+  }
+}

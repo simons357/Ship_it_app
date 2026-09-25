@@ -11,3 +11,14 @@ Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS p
 **Open barrier (unchanged):** \(\|u^r/r\|_{L^\infty}\) uniform in \(\eps\) — equivalent to axisymmetric-with-swirl global regularity. Paper remains a conditional reduction. Clay is not closed.
 
 **Do not conflate** with Lemma★ PRODUCT-BLOCK packaging.
+
+Live Taylor–Green scientific values (schema v5) are
+
+\[
+r^2=2.2291,\qquad \frac{T_c}{\nu D_s}=1.2259.
+\]
+
+The old fraction \(3915/663\) is **WITHDRAWN** (historical provenance
+only). See [`../process-console/TAYLOR-GREEN-ERRATUM.md`](../process-console/TAYLOR-GREEN-ERRATUM.md).
+Atlas records the closed shortcut: a broad spectral state does not
+imply pointwise viscous payment of the dangerous term.

@@ -17,8 +17,17 @@ to treat representation of a known equation as derivation.
 ```bash
 python -m domain_architect "∇²Φ = 4π G ρ"
 python -m domain_architect --registry
-python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units
+python -m domain_architect --console
+python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units tests.test_process_console tests.test_atlas_and_errata
 ```
+
+Process Console (schema v5) is the engineering desk: typed stamps
+(PROVED / REPRODUCED / CONSISTENCY CHECK), Q4-1 v1 as a defective
+historical **INCONCLUSIVE** run, and Q4-1 v2 as a preregistered
+successor. It does not depend on Q4’s scientific outcome.
+
+- Notes: [`docs/process-console/README.md`](docs/process-console/README.md)
+- Erratum: [`docs/process-console/TAYLOR-GREEN-ERRATUM.md`](docs/process-console/TAYLOR-GREEN-ERRATUM.md)
 
 ## Harmonic Blueprint Experiment 01
 

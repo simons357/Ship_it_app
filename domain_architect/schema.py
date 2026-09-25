@@ -180,6 +180,88 @@ class MathValidationStatus(str, Enum):
     INCONCLUSIVE = "inconclusive"
 
 
+# ---------------------------------------------------------------------------
+# Schema v5 — process stamps, run status, and promotion.
+# These are first-class fields. "DA-STAMPED" is not a stamp kind.
+# ---------------------------------------------------------------------------
+
+SCHEMA_VERSION: Final[str] = "v5"
+
+OPAQUE_STAMP_LABELS: Final[frozenset[str]] = frozenset(
+    {
+        "DA-STAMPED",
+        "DA_STAMPED",
+        "DA STAMPED",
+        "STAMPED",
+        "DA-STAMP",
+    }
+)
+
+
+class StampKind(str, Enum):
+    """What Domain Architect actually did. Not a prestige badge.
+
+    PROVED — a derivation was independently checked.
+    REPRODUCED — an independent computation matched a locked target.
+    CONSISTENCY_CHECK — an implementation agrees with a stipulated
+    formula and its assumptions. That is not a proof and not a
+    reproduction.
+    """
+
+    PROVED = "proved"
+    REPRODUCED = "reproduced"
+    CONSISTENCY_CHECK = "consistency_check"
+
+    @property
+    def label(self) -> str:
+        return {
+            StampKind.PROVED: "PROVED — derivation independently checked",
+            StampKind.REPRODUCED: "REPRODUCED — independent computation matched",
+            StampKind.CONSISTENCY_CHECK: (
+                "CONSISTENCY CHECK — implementation agrees with "
+                "stipulated formula/assumptions"
+            ),
+        }[self]
+
+
+class ProcessStatus(str, Enum):
+    """Process-lane status. Independent of a run's scientific outcome."""
+
+    PREREGISTERED = "preregistered"
+    EXECUTED = "executed"
+    INCONCLUSIVE = "inconclusive"
+    WITHDRAWN = "withdrawn"
+    CLOSED_NEGATIVE = "closed_negative"
+
+
+class PromotionDecision(str, Enum):
+    ALLOWED = "allowed"
+    PROHIBITED = "prohibited"
+
+
+STAMP_KIND_HELP: Final[dict[str, str]] = {
+    StampKind.PROVED.value: StampKind.PROVED.label,
+    StampKind.REPRODUCED.value: StampKind.REPRODUCED.label,
+    StampKind.CONSISTENCY_CHECK.value: StampKind.CONSISTENCY_CHECK.label,
+}
+
+PROCESS_RULES: Final[tuple[str, ...]] = (
+    "An error does not disappear; it produces an erratum, a regression "
+    "test, a process rule, and a cleaner scientific statement.",
+    "Process Console does not depend on a run's scientific outcome.",
+    "A failed consistency check yields INCONCLUSIVE and cannot be "
+    "promoted to evidence.",
+    "Opaque DA-STAMPED is not a stamp kind; use PROVED, REPRODUCED, "
+    "or CONSISTENCY CHECK.",
+    "Withdrawn scientific values may appear only as historical "
+    "provenance, visibly marked WITHDRAWN.",
+    "A closed shortcut is a scientific result, not bad news.",
+    "Q4-1 v2 does not inherit Q4-1 v1 diagnostics as evidence.",
+    "The decision window stays locked unless DA changes it before "
+    "the run is opened.",
+)
+
+
 class PhysicalValidationStatus(str, Enum):
     NONE = "none"
     BENCHMARK_REPRESENTATION = "benchmark_representation"

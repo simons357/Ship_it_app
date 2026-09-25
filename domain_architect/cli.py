@@ -7,8 +7,9 @@ import json
 import sys
 
 from .audit import audit_expression
+from .process_console import ProcessConsole
 from .registry import EquationRegistry
-from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION
+from .schema import CANONICAL_SFE_STATUS, PRODUCT_DESCRIPTION, SCHEMA_VERSION
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -22,7 +23,34 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="print equation provenance and conflict summary",
     )
+    parser.add_argument(
+        "--console",
+        action="store_true",
+        help="emit Process Console v5 snapshot (science-outcome independent)",
+    )
     args = parser.parse_args(argv)
+
+    if args.console:
+        snap = ProcessConsole().snapshot()
+        if args.json:
+            json.dump(snap.to_dict(), sys.stdout, indent=2)
+            sys.stdout.write("\n")
+        else:
+            print(f"Process Console schema {SCHEMA_VERSION}")
+            print(f"F-X2 complete: {snap.fx2.get('complete')}")
+            for view in snap.runs:
+                print(
+                    f"  {view.run.run_id}  {view.process_status.value.upper()}  "
+                    f"promotion={view.promotion.value}"
+                )
+                for check in view.failed_checks:
+                    print(f"    failed {check['check_id']}: {check['detail']}")
+            print(
+                "Live TG: r^2="
+                f"{snap.live_taylor_green['r_squared']}  "
+                f"T_c/(ν D_s)={snap.live_taylor_green['T_c_over_nu_D_s']}"
+            )
+        return 0
 
     if args.registry:
         registry = EquationRegistry.load_default()
