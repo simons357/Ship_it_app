@@ -1,0 +1,24 @@
+{
+  "title": "Three unfinished measurements",
+  "date": "2026-09-25",
+  "ns_solved": false,
+  "da_ns_2": "OPEN",
+  "missing_17": "OPEN",
+  "sept20_IC": "MISSING",
+  "sept20_S1_reproduced": false,
+  "sixteen_positive_part_exercised": true,
+  "sixteen_field": "locked odd Hermitian triad, not the Sept 20 datum",
+  "S_A9_N2_20_T1": 0.0010830082200491763,
+  "loop": {
+    "Gamma_cyc": 0.8717025009724443,
+    "is_general_L_N_M_N_U_N": false,
+    "scale_decay_prize": "OPEN",
+    "is_ns_defect": false
+  },
+  "eta_DA": "NOT_EVALUATED",
+  "alpha_c_chi": "UNSTAMPED",
+  "Q_actual_t0": 3.154639175257728,
+  "Q_actual_t1": 0.0012916668356511745,
+  "skeleton_t0": 77.00259679155661,
+  "skeleton_t1": 76.32274836001768
+}
