@@ -307,3 +307,15 @@ tree**; neither is proved internally. Separated-scale fiber stays
 Q4-0 six-mode calibration is a **plan** only. DA must approve
 before anything runs:
 [`../../packets/DA-GATE-Q4-0-SIX-MODE-CALIBRATION-2026-09-25.md`](../../packets/DA-GATE-Q4-0-SIX-MODE-CALIBRATION-2026-09-25.md).
+
+---
+
+## 26 September 2026 — local exact-shell perturbation ★
+
+Restricted statement only. Proof:
+[`EXACT-SHELL-PERTURBATION-STAR.md`](EXACT-SHELL-PERTURBATION-STAR.md).
+On an exact input shell, \(\|\Pi_\beta B(w,w)\|_2\le\tfrac43\alpha\beta^{-1/2}\|w\|_2^2\)
+and \(K_{\alpha,\beta}\le 16/9\). Extreme satellites are locally
+neutralized. Unrestricted \(\sup\mathcal R_\star<\infty\) stays
+**KILLED**. The \(r\sim\kappa^{-1/2}\) crossover is **not** stamped.
+This addendum does not alter the freeze above.

@@ -1,0 +1,121 @@
+{
+  "ns_solved": false,
+  "unrestricted_star_restored": false,
+  "da_ns_2": "OPEN",
+  "crossover_stamped": false,
+  "local_star_proved": true,
+  "C_beta_inv_half": 1.3333333333333333,
+  "K_ceiling": 1.7777777777777777,
+  "attainment_asserted": false,
+  "incidence_constant_claimed_optimal": false,
+  "polynomial": {
+    "identity_ok": true,
+    "samples": [
+      {
+        "r": 0.25,
+        "gap": 1.7338324652777777,
+        "match": true
+      },
+      {
+        "r": 0.5,
+        "gap": 1.6137152777777777,
+        "match": true
+      },
+      {
+        "r": 1.0,
+        "gap": 1.2152777777777777,
+        "match": true
+      },
+      {
+        "r": 2.0,
+        "gap": 0.2777777777777778,
+        "match": true
+      },
+      {
+        "r": 2.6666666666666665,
+        "gap": 0.0,
+        "match": true
+      },
+      {
+        "r": 3.0,
+        "gap": 0.09027777777777778,
+        "match": true
+      },
+      {
+        "r": 4.0,
+        "gap": 1.7777777777777777,
+        "match": true
+      },
+      {
+        "r": 2.5,
+        "gap": 0.019965277777777776,
+        "match": true
+      }
+    ],
+    "bound_at_8_over_3": 1.7777777777777777,
+    "bound_is_16_over_9": true,
+    "C_beta_inv_half_at_8_over_3": 1.3333333333333335,
+    "C_is_4_over_3": true
+  },
+  "incidence": {
+    "fiber_at_most_two": true,
+    "max_I": 2,
+    "sum_L2_le_3_F2": true,
+    "max_sum_L2_over_F4": 1.3333333333333333,
+    "rows_checked": true,
+    "alpha_max": 13
+  },
+  "three_shear": {
+    "E": 1.5,
+    "Pi_beta_B_sq": 0.75,
+    "K": 0.6666666666666666,
+    "poly_bound": 1.5,
+    "bound9": 1.6875,
+    "covers_9": true,
+    "K_le_poly": true,
+    "K_le_16_over_9": true,
+    "r": 2.0
+  },
+  "extreme_satellites": {
+    "r_near_0": true,
+    "r_at_4": true,
+    "r_at_8_over_3": true,
+    "locally_neutralized": true
+  },
+  "perturbation": {
+    "leading_matches_K": true,
+    "finite_eps_near_K": true,
+    "expect_K": 0.04,
+    "R_lead": 0.04,
+    "R_eps": 0.03999988000044001
+  },
+  "unrestricted": {
+    "unrestricted_star_killed": true,
+    "rows": [
+      {
+        "n": 1,
+        "R_star": 0.0013983596600429915
+      },
+      {
+        "n": 2,
+        "R_star": 0.0025748886886151016
+      },
+      {
+        "n": 4,
+        "R_star": 0.004972851263004261
+      },
+      {
+        "n": 8,
+        "R_star": 0.009787402881363294
+      }
+    ]
+  },
+  "gate_altered": {
+    "sbp": false,
+    "phi_vs_d": false,
+    "low_tail_snapshot": false,
+    "sign_realizability": false,
+    "s_pq": false
+  },
+  "all_identities_ok": true
+}

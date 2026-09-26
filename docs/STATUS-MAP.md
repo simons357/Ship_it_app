@@ -44,6 +44,10 @@ NS lemmas on this book: [`ns-recovery/`](ns-recovery/).
 25 Sep working record: [`ns-recovery/WORKING-RECORD-2026-09-25.md`](ns-recovery/WORKING-RECORD-2026-09-25.md)
 (occupation keeps \(\nu\); I3 weighted / \(K,K,L\) not on disk;
 Q4-0 is a plan, not a run).
+26 Sep local exact-shell perturbation ★:
+[`ns-recovery/EXACT-SHELL-PERTURBATION-STAR.md`](ns-recovery/EXACT-SHELL-PERTURBATION-STAR.md)
+(\(K_{\alpha,\beta}\le 16/9\), \(\beta^{-1/2}\) constant \(4/3\);
+unrestricted ★ stays dead).
 QStack / Q6 / E8 stay instruments, not claims.
 Unrestricted Lemma★ stays killed on \(v_n\).
 Exact-shell \(K\le 16/9\) stays CLAIMED, not stamped.
