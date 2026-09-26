@@ -1,0 +1,665 @@
+{
+  "ns_solved": false,
+  "taylor_green_measured": false,
+  "snapshot_only": true,
+  "do_not_mix_with_sbp_identity": true,
+  "polynomial": {
+    "kappa": 3.0,
+    "samples": [
+      {
+        "m": 0.0,
+        "phi": 81.0,
+        "poly": 81.0,
+        "match": true
+      },
+      {
+        "m": 0.4,
+        "phi": 69.49280000000002,
+        "poly": 69.4928,
+        "match": true
+      },
+      {
+        "m": 1.0,
+        "phi": 50.0,
+        "poly": 50.0,
+        "match": true
+      },
+      {
+        "m": 3.0,
+        "phi": 0.0,
+        "poly": 0.0,
+        "match": true
+      },
+      {
+        "m": 5.0,
+        "phi": 146.0,
+        "poly": 146.0,
+        "match": true
+      },
+      {
+        "m": 12.0,
+        "phi": 9477.0,
+        "poly": 9477.0,
+        "match": true
+      }
+    ],
+    "phi_at_zero_is_kappa_fourth": true,
+    "phi_at_shell_is_zero": true,
+    "ok": true
+  },
+  "note_triad": {
+    "convention": "SNAPSHOT_kappa_eq_sqrt_Lambda",
+    "not_mixed_into_sbp_identity": true,
+    "a": 0.5,
+    "b": 2.0,
+    "E": 8.0,
+    "X": 10.0,
+    "Y": 14.0,
+    "Lambda": 1.4,
+    "kappa": 1.1832159566199232,
+    "H_hdot_half": 8.82842712474619,
+    "Phi": 1.0556898158018222,
+    "Phi_from_moments": 1.0556898158018218,
+    "moments_match": true,
+    "D_frozen": 2.4000000000000026,
+    "min_m": 1.0,
+    "max_m": 1.4142135623730951,
+    "min_x": 0.8451542547285166,
+    "max_x": 1.1952286093343938,
+    "has_low_tail": false,
+    "L_e": 0.0,
+    "Phi_over_Y": 0.07540641541441587,
+    "low_tail_share_of_Phi": 0.0,
+    "Phi_is_low_tail_dominated": false,
+    "low": {
+      "E": 0.0,
+      "Phi": 0.0,
+      "Y": 0.0,
+      "D_frozen": 0.0,
+      "n_modes": 0
+    },
+    "core": {
+      "E": 8.0,
+      "Phi": 1.0556898158018222,
+      "Y": 14.0,
+      "D_frozen": 2.4000000000000026,
+      "n_modes": 6
+    },
+    "high": {
+      "E": 0.0,
+      "Phi": 0.0,
+      "Y": 0.0,
+      "D_frozen": 0.0,
+      "n_modes": 0
+    }
+  },
+  "separated": [
+    {
+      "L": 2,
+      "convention": "SNAPSHOT_kappa_eq_sqrt_Lambda",
+      "not_mixed_into_sbp_identity": true,
+      "a": 0.5,
+      "b": 2.0,
+      "E": 8.0,
+      "X": 28.0,
+      "Y": 116.0,
+      "Lambda": 4.142857142857143,
+      "kappa": 2.0354009783964297,
+      "H_hdot_half": 14.47213595499958,
+      "Phi": 15.271638050911536,
+      "Phi_from_moments": 15.271638050911527,
+      "moments_match": true,
+      "D_frozen": 27.428571428571445,
+      "min_m": 1.0,
+      "max_m": 2.23606797749979,
+      "min_x": 0.4913036844405175,
+      "max_x": 1.0985884360051028,
+      "has_low_tail": true,
+      "L_e": 0.2959183673469389,
+      "Phi_over_Y": 0.13165205216303047,
+      "low_tail_share_of_Phi": 0.9376153663278419,
+      "Phi_is_low_tail_dominated": true,
+      "low": {
+        "E": 2.0,
+        "Phi": 14.31892250553163,
+        "Y": 2.0,
+        "D_frozen": 19.755102040816332,
+        "n_modes": 2
+      },
+      "core": {
+        "E": 6.0,
+        "Phi": 0.9527155453799055,
+        "Y": 114.0,
+        "D_frozen": 7.673469387755112,
+        "n_modes": 4
+      },
+      "high": {
+        "E": 0.0,
+        "Phi": 0.0,
+        "Y": 0.0,
+        "D_frozen": 0.0,
+        "n_modes": 0
+      }
+    },
+    {
+      "L": 4,
+      "convention": "SNAPSHOT_kappa_eq_sqrt_Lambda",
+      "not_mixed_into_sbp_identity": true,
+      "a": 0.5,
+      "b": 2.0,
+      "E": 8.0,
+      "X": 100.0,
+      "Y": 1604.0,
+      "Lambda": 16.04,
+      "kappa": 4.004996878900157,
+      "H_hdot_half": 26.246211251235323,
+      "Phi": 372.1922539278076,
+      "Phi_from_moments": 372.1922539278074,
+      "moments_match": true,
+      "D_frozen": 483.84,
+      "min_m": 1.0,
+      "max_m": 4.123105625617661,
+      "min_x": 0.24968808471946116,
+      "max_x": 1.0294903467565093,
+      "has_low_tail": true,
+      "L_e": 0.32080000000000003,
+      "Phi_over_Y": 0.23204005855848353,
+      "low_tail_share_of_Phi": 0.9969119351872715,
+      "Phi_is_low_tail_dominated": true,
+      "low": {
+        "E": 2.0,
+        "Phi": 371.04290012488303,
+        "Y": 2.0,
+        "D_frozen": 452.40320000000014,
+        "n_modes": 2
+      },
+      "core": {
+        "E": 6.0,
+        "Phi": 1.1493538029245853,
+        "Y": 1602.0,
+        "D_frozen": 31.436799999999845,
+        "n_modes": 4
+      },
+      "high": {
+        "E": 0.0,
+        "Phi": 0.0,
+        "Y": 0.0,
+        "D_frozen": 0.0,
+        "n_modes": 0
+      }
+    },
+    {
+      "L": 8,
+      "convention": "SNAPSHOT_kappa_eq_sqrt_Lambda",
+      "not_mixed_into_sbp_identity": true,
+      "a": 0.5,
+      "b": 2.0,
+      "E": 8.0,
+      "X": 388.0,
+      "Y": 24836.0,
+      "Lambda": 64.01030927835052,
+      "kappa": 8.000644303951434,
+      "H_hdot_half": 50.1245154965971,
+      "Phi": 7108.604396323473,
+      "Phi_from_moments": 7108.604396323477,
+      "moments_match": true,
+      "D_frozen": 8067.958762886593,
+      "min_m": 1.0,
+      "max_m": 8.06225774829855,
+      "min_x": 0.1249899335614896,
+      "max_x": 1.0077010603154404,
+      "has_low_tail": true,
+      "L_e": 0.3299500478265492,
+      "Phi_over_Y": 0.2862217908005908,
+      "low_tail_share_of_Phi": 0.9998279900867335,
+      "Phi_is_low_tail_dominated": true,
+      "low": {
+        "E": 2.0,
+        "Phi": 7107.381645897816,
+        "Y": 2.0,
+        "D_frozen": 7940.5981507067745,
+        "n_modes": 2
+      },
+      "core": {
+        "E": 6.0,
+        "Phi": 1.2227504256580515,
+        "Y": 24834.0,
+        "D_frozen": 127.3606121798197,
+        "n_modes": 4
+      },
+      "high": {
+        "E": 0.0,
+        "Phi": 0.0,
+        "Y": 0.0,
+        "D_frozen": 0.0,
+        "n_modes": 0
+      }
+    },
+    {
+      "L": 16,
+      "convention": "SNAPSHOT_kappa_eq_sqrt_Lambda",
+      "not_mixed_into_sbp_identity": true,
+      "a": 0.5,
+      "b": 2.0,
+      "E": 8.0,
+      "X": 1540.0,
+      "Y": 394244.0,
+      "Lambda": 256.0025974025974,
+      "kappa": 16.000081168625282,
+      "H_hdot_half": 98.0624390837628,
+      "Phi": 122628.77552919721,
+      "Phi_from_moments": 122628.77552919721,
+      "moments_match": true,
+      "D_frozen": 130563.98961038966,
+      "min_m": 1.0,
+      "max_m": 16.0312195418814,
+      "min_x": 0.06249968293666597,
+      "max_x": 1.0019461384556707,
+      "has_low_tail": true,
+      "L_e": 0.3324709057176589,
+      "Phi_over_Y": 0.3110479183683131,
+      "low_tail_share_of_Phi": 0.9999898633213725,
+      "Phi_is_low_tail_dominated": true,
+      "low": {
+        "E": 2.0,
+        "Phi": 122627.5324807092,
+        "Y": 2.0,
+        "D_frozen": 130052.6493641423,
+        "n_modes": 2
+      },
+      "core": {
+        "E": 6.0,
+        "Phi": 1.2430484880039465,
+        "Y": 394242.0,
+        "D_frozen": 511.3402462473614,
+        "n_modes": 4
+      },
+      "high": {
+        "E": 0.0,
+        "Phi": 0.0,
+        "Y": 0.0,
+        "D_frozen": 0.0,
+        "n_modes": 0
+      }
+    }
+  ],
+  "growing_layer": [
+    {
+      "n": 1,
+      "convention": "SNAPSHOT_kappa_eq_sqrt_Lambda",
+      "not_mixed_into_sbp_identity": true,
+      "a": 0.5,
+      "b": 2.0,
+      "E": 12.0,
+      "X": 53.0,
+      "Y": 269.0,
+      "Lambda": 5.0754716981132075,
+      "kappa": 2.2528807554136563,
+      "H_hdot_half": 24.630147397549305,
+      "Phi": 27.493197289630427,
+      "Phi_from_moments": 27.493197289630473,
+      "moments_match": true,
+      "D_frozen": 97.69811320754711,
+      "min_m": 1.0,
+      "max_m": 2.449489742783178,
+      "min_x": 0.4438761339662595,
+      "max_x": 1.0872700372166044,
+      "has_low_tail": true,
+      "L_e": 0.047881808472766095,
+      "Phi_over_Y": 0.10220519438524323,
+      "low_tail_share_of_Phi": 0.22347791103583978,
+      "Phi_is_low_tail_dominated": false,
+      "low": {
+        "E": 0.5,
+        "Phi": 6.14412229798282,
+        "Y": 0.5,
+        "D_frozen": 8.304734781060873,
+        "n_modes": 2
+      },
+      "core": {
+        "E": 11.5,
+        "Phi": 21.349074991647612,
+        "Y": 268.49999999999994,
+        "D_frozen": 89.39337842648625,
+        "n_modes": 16
+      },
+      "high": {
+        "E": 0.0,
+        "Phi": 0.0,
+        "Y": 0.0,
+        "D_frozen": 0.0,
+        "n_modes": 0
+      }
+    },
+    {
+      "n": 2,
+      "convention": "SNAPSHOT_kappa_eq_sqrt_Lambda",
+      "not_mixed_into_sbp_identity": true,
+      "a": 0.5,
+      "b": 2.0,
+      "E": 20.0,
+      "X": 340.0,
+      "Y": 6696.0,
+      "Lambda": 19.694117647058825,
+      "kappa": 4.437805499011739,
+      "H_hdot_half": 80.40924124737762,
+      "Phi": 729.505172432085,
+      "Phi_from_moments": 729.5051724320838,
+      "moments_match": true,
+      "D_frozen": 9648.188235294108,
+      "min_m": 2.0,
+      "max_m": 4.898979485566356,
+      "min_x": 0.45067319882437007,
+      "max_x": 1.1039193778675782,
+      "has_low_tail": true,
+      "L_e": 0.028961937716262983,
+      "Phi_over_Y": 0.10894641165353719,
+      "low_tail_share_of_Phi": 0.12451776511179288,
+      "Phi_is_low_tail_dominated": false,
+      "low": {
+        "E": 0.5,
+        "Phi": 90.83635370873633,
+        "Y": 8.0,
+        "D_frozen": 492.6106574394464,
+        "n_modes": 2
+      },
+      "core": {
+        "E": 19.5,
+        "Phi": 638.6688187233487,
+        "Y": 6688.0,
+        "D_frozen": 9155.577577854669,
+        "n_modes": 28
+      },
+      "high": {
+        "E": 0.0,
+        "Phi": 0.0,
+        "Y": 0.0,
+        "D_frozen": 0.0,
+        "n_modes": 0
+      }
+    },
+    {
+      "n": 4,
+      "convention": "SNAPSHOT_kappa_eq_sqrt_Lambda",
+      "not_mixed_into_sbp_identity": true,
+      "a": 0.5,
+      "b": 2.0,
+      "E": 36.0,
+      "X": 2400.0,
+      "Y": 186000.0,
+      "Lambda": 77.5,
+      "kappa": 8.803408430829505,
+      "H_hdot_half": 286.40686754859763,
+      "Phi": 20819.86098707848,
+      "Phi_from_moments": 20819.86098707847,
+      "moments_match": true,
+      "D_frozen": 1054583.9999999995,
+      "min_m": 4.0,
+      "max_m": 9.797958971132712,
+      "min_x": 0.4543694673976518,
+      "max_x": 1.1129733498244037,
+      "has_low_tail": true,
+      "L_e": 0.0484375,
+      "Phi_over_Y": 0.11193473648966924,
+      "low_tail_share_of_Phi": 0.19556084100425705,
+      "Phi_is_low_tail_dominated": false,
+      "low": {
+        "E": 1.5,
+        "Phi": 4071.549524224789,
+        "Y": 417.0,
+        "D_frozen": 92482.25,
+        "n_modes": 6
+      },
+      "core": {
+        "E": 34.5,
+        "Phi": 16748.311462853693,
+        "Y": 185582.99999999997,
+        "D_frozen": 962101.7499999995,
+        "n_modes": 48
+      },
+      "high": {
+        "E": 0.0,
+        "Phi": 0.0,
+        "Y": 0.0,
+        "D_frozen": 0.0,
+        "n_modes": 0
+      }
+    },
+    {
+      "n": 8,
+      "convention": "SNAPSHOT_kappa_eq_sqrt_Lambda",
+      "not_mixed_into_sbp_identity": true,
+      "a": 0.5,
+      "b": 2.0,
+      "E": 68.0,
+      "X": 17952.0,
+      "Y": 5518880.0,
+      "Lambda": 307.42424242424244,
+      "kappa": 17.533517685400223,
+      "H_hdot_half": 1076.1479516237055,
+      "Phi": 625973.966187805,
+      "Phi_from_moments": 625973.9661878031,
+      "moments_match": true,
+      "D_frozen": 123889504.96969685,
+      "min_m": 8.0,
+      "max_m": 19.595917942265423,
+      "min_x": 0.45626896687488017,
+      "max_x": 1.1176261543102965,
+      "has_low_tail": true,
+      "L_e": 0.059936767406687186,
+      "Phi_over_Y": 0.11342409441549826,
+      "low_tail_share_of_Phi": 0.23450164420989517,
+      "Phi_is_low_tail_dominated": false,
+      "low": {
+        "E": 3.5,
+        "Phi": 146791.9243036296,
+        "Y": 16226.0,
+        "D_frozen": 13625914.714416897,
+        "n_modes": 14
+      },
+      "core": {
+        "E": 64.5,
+        "Phi": 479182.04188417504,
+        "Y": 5502654.0,
+        "D_frozen": 110263590.25527993,
+        "n_modes": 88
+      },
+      "high": {
+        "E": 0.0,
+        "Phi": 0.0,
+        "Y": 0.0,
+        "D_frozen": 0.0,
+        "n_modes": 0
+      }
+    }
+  ],
+  "near_shell": [
+    {
+      "eps": 0.2,
+      "convention": "SNAPSHOT_kappa_eq_sqrt_Lambda",
+      "not_mixed_into_sbp_identity": true,
+      "a": 0.5,
+      "b": 2.0,
+      "E": 1.04,
+      "X": 5.16,
+      "Y": 25.64,
+      "Lambda": 4.9689922480620154,
+      "kappa": 2.229123650240609,
+      "H_hdot_half": 2.31606797749979,
+      "Phi": 0.02459667945453189,
+      "Phi_from_moments": 0.02459667945452715,
+      "moments_match": true,
+      "D_frozen": 0.15503875968992278,
+      "min_m": 2.0,
+      "max_m": 2.23606797749979,
+      "min_x": 0.8972135752918518,
+      "max_x": 1.0031152723441032,
+      "has_low_tail": false,
+      "L_e": 0.0,
+      "Phi_over_Y": 0.000959308871081587,
+      "low_tail_share_of_Phi": 0.0,
+      "Phi_is_low_tail_dominated": false,
+      "low": {
+        "E": 0.0,
+        "Phi": 0.0,
+        "Y": 0.0,
+        "D_frozen": 0.0,
+        "n_modes": 0
+      },
+      "core": {
+        "E": 1.04,
+        "Phi": 0.02459667945453189,
+        "Y": 25.640000000000004,
+        "D_frozen": 0.15503875968992278,
+        "n_modes": 30
+      },
+      "high": {
+        "E": 0.0,
+        "Phi": 0.0,
+        "Y": 0.0,
+        "D_frozen": 0.0,
+        "n_modes": 0
+      }
+    },
+    {
+      "eps": 0.05,
+      "convention": "SNAPSHOT_kappa_eq_sqrt_Lambda",
+      "not_mixed_into_sbp_identity": true,
+      "a": 0.5,
+      "b": 2.0,
+      "E": 1.0025000000000002,
+      "X": 5.01,
+      "Y": 25.04,
+      "Lambda": 4.998003992015968,
+      "kappa": 2.2356216119942944,
+      "H_hdot_half": 2.2410679774997897,
+      "Phi": 0.0015943510240186791,
+      "Phi_from_moments": 0.001594351024017726,
+      "moments_match": true,
+      "D_frozen": 0.009980039920159703,
+      "min_m": 2.0,
+      "max_m": 2.23606797749979,
+      "min_x": 0.894605772850752,
+      "max_x": 1.0001996605790089,
+      "has_low_tail": false,
+      "L_e": 0.0,
+      "Phi_over_Y": 6.367216549595363e-05,
+      "low_tail_share_of_Phi": 0.0,
+      "Phi_is_low_tail_dominated": false,
+      "low": {
+        "E": 0.0,
+        "Phi": 0.0,
+        "Y": 0.0,
+        "D_frozen": 0.0,
+        "n_modes": 0
+      },
+      "core": {
+        "E": 1.0025000000000002,
+        "Phi": 0.0015943510240186791,
+        "Y": 25.04,
+        "D_frozen": 0.009980039920159703,
+        "n_modes": 30
+      },
+      "high": {
+        "E": 0.0,
+        "Phi": 0.0,
+        "Y": 0.0,
+        "D_frozen": 0.0,
+        "n_modes": 0
+      }
+    },
+    {
+      "eps": 0.025,
+      "convention": "SNAPSHOT_kappa_eq_sqrt_Lambda",
+      "not_mixed_into_sbp_identity": true,
+      "a": 0.5,
+      "b": 2.0,
+      "E": 1.000625,
+      "X": 5.0024999999999995,
+      "Y": 25.009999999999998,
+      "Lambda": 4.999500249875062,
+      "kappa": 2.2359562271822457,
+      "H_hdot_half": 2.23731797749979,
+      "Phi": 0.00039932785214189784,
+      "Phi_from_moments": 0.0003993278521416954,
+      "moments_match": true,
+      "D_frozen": 0.002498750624687662,
+      "min_m": 2.0,
+      "max_m": 2.23606797749979,
+      "min_x": 0.8944718933609903,
+      "max_x": 1.0000499787590587,
+      "has_low_tail": false,
+      "L_e": 0.0,
+      "Phi_over_Y": 1.596672739471803e-05,
+      "low_tail_share_of_Phi": 0.0,
+      "Phi_is_low_tail_dominated": false,
+      "low": {
+        "E": 0.0,
+        "Phi": 0.0,
+        "Y": 0.0,
+        "D_frozen": 0.0,
+        "n_modes": 0
+      },
+      "core": {
+        "E": 1.000625,
+        "Phi": 0.00039932785214189784,
+        "Y": 25.01,
+        "D_frozen": 0.002498750624687662,
+        "n_modes": 30
+      },
+      "high": {
+        "E": 0.0,
+        "Phi": 0.0,
+        "Y": 0.0,
+        "D_frozen": 0.0,
+        "n_modes": 0
+      }
+    }
+  ],
+  "v_n_min_x": [
+    0.4438761339662595,
+    0.45067319882437007,
+    0.4543694673976518,
+    0.45626896687488017
+  ],
+  "v_n_min_m_equals_n": true,
+  "v_n_has_no_low_tail_at_a_0p4": true,
+  "v_n_cut_at_a_0p4": [
+    {
+      "n": 1,
+      "has_low_tail": false,
+      "L_e": 0.0,
+      "min_x": 0.4438761339662595
+    },
+    {
+      "n": 2,
+      "has_low_tail": false,
+      "L_e": 0.0,
+      "min_x": 0.45067319882437007
+    },
+    {
+      "n": 4,
+      "has_low_tail": false,
+      "L_e": 0.0,
+      "min_x": 0.4543694673976518
+    },
+    {
+      "n": 8,
+      "has_low_tail": false,
+      "L_e": 0.0,
+      "min_x": 0.45626896687488017
+    }
+  ],
+  "separated_L_ge_4_has_low_tail": true,
+  "separated_Phi_low_tail_dominated": true,
+  "separated_L_e": [
+    0.2959183673469389,
+    0.32080000000000003,
+    0.3299500478265492,
+    0.3324709057176589
+  ],
+  "separated_L_e_approaches_one_third": true,
+  "core_bound_C_holds_on_comparable_band": true,
+  "all_identities_ok": true,
+  "note": "phi = kappa^4 - kappa^3 m - (1/2) kappa^2 m^2 + (1/2) m^4 is exact. Phi_e is therefore a combination of E, Hdot^{1/2}, X, Y. Snapshot freeze is kappa=sqrt(Lambda) of the current field. v_n is a comparable annulus: min_m = n scales with kappa; a=1/2 nicks the inner edge, a=0.4 leaves no low tail. Separated triad is the on-tree high-core + m=1 reservoir; Phi is low-tail dominated and L_e -> 1/3. TG 64/96 not on this tree. NS not solved."
+}

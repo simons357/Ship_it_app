@@ -1,0 +1,35 @@
+triad_B=0.1                  E=6.0000e-02 X=9.2000e-01 Λ=16.4783 Ds=1.6910e+01 Tc=5.9009e-02 Rshape=2.2639e-04 Rpost=6.4873e-02 Rpre=1.5891e-02 Rc*=4.0581e-03 Rk0=3.4897e-03
+triad_B=0.5                  E=1.5000e+00 X=2.3000e+01 Λ=16.4783 Ds=4.2274e+02 Tc=7.3761e+00 Rshape=2.2639e-04 Rpost=1.2975e-02 Rpre=1.5891e-02 Rc*=4.0581e-03 Rk0=1.7448e-02
+triad_B=1.0                  E=6.0000e+00 X=9.2000e+01 Λ=16.4783 Ds=1.6910e+03 Tc=5.9009e+01 Rshape=2.2639e-04 Rpost=6.4873e-03 Rpre=1.5891e-02 Rc*=4.0581e-03 Rk0=3.4897e-02
+triad_B=2.0                  E=2.4000e+01 X=3.6800e+02 Λ=16.4783 Ds=6.7638e+03 Tc=4.7207e+02 Rshape=2.2639e-04 Rpost=3.2437e-03 Rpre=1.5891e-02 Rc*=4.0581e-03 Rk0=6.9793e-02
+triad_B=5.0                  E=1.5000e+02 X=2.3000e+03 Λ=16.4783 Ds=4.2274e+04 Tc=7.3761e+03 Rshape=2.2639e-04 Rpost=1.2975e-03 Rpre=1.5891e-02 Rc*=4.0581e-03 Rk0=1.7448e-01
+triad_B=10.0                 E=6.0000e+02 X=9.2000e+03 Λ=16.4783 Ds=1.6910e+05 Tc=5.9009e+04 Rshape=2.2639e-04 Rpost=6.4873e-04 Rpre=1.5891e-02 Rc*=4.0581e-03 Rk0=3.4897e-01
+triad_B=50.0                 E=1.5000e+04 X=2.3000e+05 Λ=16.4783 Ds=4.2274e+06 Tc=7.3761e+06 Rshape=2.2639e-04 Rpost=1.2975e-04 Rpre=1.5891e-02 Rc*=4.0581e-03 Rk0=1.7448e+00
+triad_B=100.0                E=6.0000e+04 X=9.2000e+05 Λ=16.4783 Ds=1.6910e+07 Tc=5.9009e+07 Rshape=2.2639e-04 Rpost=6.4873e-05 Rpre=1.5891e-02 Rc*=4.0581e-03 Rk0=3.4897e+00
+triad_B=500.0                E=1.5000e+06 X=2.3000e+07 Λ=16.4783 Ds=4.2274e+08 Tc=7.3761e+09 Rshape=2.2639e-04 Rpost=1.2975e-05 Rpre=1.5891e-02 Rc*=4.0581e-03 Rk0=1.7448e+01
+triad_B=1000.0               E=6.0000e+06 X=9.2000e+07 Λ=16.4783 Ds=1.6910e+09 Tc=5.9009e+10 Rshape=2.2639e-04 Rpost=6.4873e-06 Rpre=1.5891e-02 Rc*=4.0581e-03 Rk0=3.4897e+01
+
+=== ATTACK 1 SUMMARY ===
+{
+  "attack": 1,
+  "name": "covariance_LemmaStar",
+  "canonical_form": "shape: R_star_shape = Tc^2/(Ds E Y)",
+  "triad_abs_ratio_preyoung_max": 0.015890638079477146,
+  "triad_abs_ratio_preyoung_min": 0.015890638079477104,
+  "triad_preyoung_amp_spread_factor": 1.0000000000000027,
+  "triad_preyoung_diam": 4.163336342344337e-17,
+  "triad_R_star_shape_max": 0.0002263859306819113,
+  "triad_R_star_shape_amp_spread_factor": 1.000000000000004,
+  "phase_abs_preyoung_max": 0.1591699108069197,
+  "phase_abs_preyoung_diam": 0.15544246454795033,
+  "rand_abs_preyoung_max": 0.03268503066644908,
+  "rand_abs_preyoung_p95": 0.005923954149512909,
+  "n_random": 50,
+  "postYoung_Rstar_falls_as_B_increases": true,
+  "amp_trend_star_low_mean_abs": 0.028111745264748134,
+  "amp_trend_star_high_mean_abs": 2.8111745264748137e-05,
+  "blows_with_amplitude": false,
+  "verdict": "SURVIVE_numeric_NOT_proof",
+  "ns_solved": false
+}
+wrote /opt/cursor/artifacts/ns_five_lane_shape_star/attack1.json

@@ -1,0 +1,97 @@
+{
+  "ns_solved": false,
+  "envelope_proved": false,
+  "occupation_proved": false,
+  "nu_dropped": false,
+  "occupation_condition": "int alpha^2 chi^2 kappa X dt / nu < infinity",
+  "remainder_over_Y": "alpha^2 chi^2 kappa X / (2 nu)",
+  "covers_samples": true,
+  "samples": [
+    {
+      "envelope": 6.000000000000001,
+      "viscous_slot": 0.25,
+      "remainder": 36.0,
+      "Y": 12.0,
+      "remainder_over_Y": 3.0,
+      "expect_half_nu": 3.0,
+      "occupation_density": 6.0,
+      "covers": true,
+      "remainder_identity": true
+    },
+    {
+      "envelope": 37.94733192202056,
+      "viscous_slot": 1.0,
+      "remainder": 360.00000000000006,
+      "Y": 37.5,
+      "remainder_over_Y": 9.600000000000001,
+      "expect_half_nu": 9.600000000000001,
+      "occupation_density": 19.200000000000003,
+      "covers": true,
+      "remainder_identity": true
+    },
+    {
+      "envelope": 3.400080940213042,
+      "viscous_slot": 3.0,
+      "remainder": 0.9633792,
+      "Y": 2.5600000000000005,
+      "remainder_over_Y": 0.37631999999999993,
+      "expect_half_nu": 0.37632,
+      "occupation_density": 0.75264,
+      "covers": true,
+      "remainder_identity": true
+    }
+  ],
+  "equality": {
+    "envelope": 144.00000000000003,
+    "viscous_slot": 72.00000000000001,
+    "remainder": 72.0,
+    "Y": 12.0,
+    "remainder_over_Y": 6.0,
+    "expect_half_nu": 6.0,
+    "occupation_density": 12.0,
+    "covers": true,
+    "remainder_identity": true,
+    "D_s": 288.00000000000006,
+    "equality_gap": 2.842170943040401e-14,
+    "equality_ok": true
+  },
+  "a8r_scaling": {
+    "T_c_over_nu_D_s": 1.9999999999999998,
+    "expect_a_t_inv2": 2.0,
+    "identity_ok": true,
+    "order_one_if_Tc_Ds_is_C_t2": true
+  },
+  "a8r_critical_ratio": {
+    "T_c_over_nu_D_s": 1.9999999999999998,
+    "expect_a_t_inv2": 2.0,
+    "identity_ok": true,
+    "order_one_if_Tc_Ds_is_C_t2": true
+  },
+  "a8r_construction_on_this_tree": false,
+  "a8r_leading_coefficient_proved": false,
+  "missing_sources": {
+    "named_sources": [
+      "I3_WEIGHTED_TARGET_2026-09-20.md",
+      "K,K,L regrouping file",
+      "A8-R construction",
+      "cube-field run",
+      "54/46 quartic test"
+    ],
+    "unexpected_filename_hits": [],
+    "all_named_sources_absent": true
+  },
+  "i3_weighted_proved_internally": false,
+  "kkl_regrouping_proved_internally": false,
+  "fiber_verdict_separated": "NEUTRAL",
+  "comparable_KKK": "OPEN",
+  "q4_0_executed": false,
+  "da_ns_2": "OPEN",
+  "gate_altered": {
+    "sbp": false,
+    "phi_vs_d": false,
+    "low_tail_snapshot": false,
+    "sign_realizability": false,
+    "s_pq": false
+  },
+  "all_identities_ok": true
+}
