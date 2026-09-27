@@ -1,0 +1,296 @@
+{
+  "ns_solved": false,
+  "da_ns_2_open": true,
+  "unrestricted_star_restored": false,
+  "gate": "71E",
+  "outcome": "B",
+  "classification": "isolated_tuned_active",
+  "meaning": "the unequal-length 2x4 patch admits perfect same-time active coherence, but only at tuned polarizations; the certified solution is isolated, not a positive-dimensional family",
+  "n_variables": 8,
+  "n_equations": 11,
+  "n_repeated_outputs": 7,
+  "groups": [
+    {
+      "K": [
+        2,
+        5,
+        5
+      ],
+      "m": 2,
+      "pairs": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "K": [
+        3,
+        3,
+        4
+      ],
+      "m": 2,
+      "pairs": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          4
+        ]
+      ]
+    },
+    {
+      "K": [
+        3,
+        7,
+        8
+      ],
+      "m": 2,
+      "pairs": [
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          6
+        ]
+      ]
+    },
+    {
+      "K": [
+        4,
+        5,
+        7
+      ],
+      "m": 2,
+      "pairs": [
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          6
+        ]
+      ]
+    },
+    {
+      "K": [
+        3,
+        4,
+        5
+      ],
+      "m": 3,
+      "pairs": [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          4
+        ]
+      ]
+    },
+    {
+      "K": [
+        3,
+        6,
+        7
+      ],
+      "m": 3,
+      "pairs": [
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          5
+        ]
+      ]
+    },
+    {
+      "K": [
+        3,
+        5,
+        6
+      ],
+      "m": 4,
+      "pairs": [
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ]
+    }
+  ],
+  "relations": {
+    "A": "4*z0*z5 + 3*z0 - 10*z5 - 1 = 0",
+    "B": "27*z1*z4 - 53*z1 + 53*z4 + 3 = 0",
+    "cubic": "z0*z1*z2 - 3*z0*z1*z3 + 3*z0*z2*z3 - z1*z2*z3 = 0",
+    "first_row_harmonic": "z_j = t/(j+1) satisfies the cubic for every t",
+    "certified_scale": "t = 3",
+    "second_row": "z_{4+j} = (9+6j)/(2j^2+6j+11) at t = 3"
+  },
+  "algebra": {
+    "cubic_matches_handoff": true,
+    "A_factor_matches_handoff": true,
+    "A_at_star": "182/19",
+    "B_at_star": "0",
+    "harmonic_first_row_satisfies_cubic": true,
+    "handoff_second_factor": "45*z1*z4 + 8*z1 - 8*z4 + 5 (different chart; not used)",
+    "this_chart_second_factor": "27*z1*z4 - 53*z1 + 53*z4 + 3"
+  },
+  "exact_star": {
+    "z_star": [
+      "3",
+      "3/2",
+      "1",
+      "3/4",
+      "9/11",
+      "15/19",
+      "21/31",
+      "27/47"
+    ],
+    "n_equations": 11,
+    "n_repeated_outputs": 7,
+    "n_live_pairs": 18,
+    "all_triples_exactly_zero": true,
+    "max_abs_triple": "0",
+    "dead_pairs": 0,
+    "min_W_norm2": "440422/2209",
+    "A": "182/19",
+    "B": "0",
+    "cubic": "0",
+    "on_branch_A": false,
+    "on_branch_B": true,
+    "cubic_holds": true,
+    "fully_active": true
+  },
+  "star_activity": {
+    "min_pair_norm": 14.120063325654968,
+    "min_unit_pair_norm": 0.042481246318169776,
+    "dead_pairs": 0,
+    "n_pairs": 18,
+    "max_abs_collinearity": 1.6653345369377348e-15,
+    "rms_collinearity": 7.871954737126053e-16,
+    "active": true
+  },
+  "isolation": {
+    "t3_machine_zero": true,
+    "nearby_t_not_solutions": true,
+    "quadratic_departure": true,
+    "isolated": true,
+    "t_scan": [
+      {
+        "t": 2.0,
+        "best_cost": 0.003821003936710312,
+        "isolated_gap": true
+      },
+      {
+        "t": 2.5,
+        "best_cost": 0.00019929866587130134,
+        "isolated_gap": true
+      },
+      {
+        "t": 3.0,
+        "best_cost": 6.816443852169744e-30,
+        "isolated_gap": false
+      },
+      {
+        "t": 3.5,
+        "best_cost": 0.0001075613450887723,
+        "isolated_gap": true
+      },
+      {
+        "t": 4.0,
+        "best_cost": 0.0003339310936418512,
+        "isolated_gap": true
+      }
+    ],
+    "singular_values_h1e6": [
+      29.011886125278213,
+      19.20372207471772,
+      14.307893509164225,
+      7.7999125162736345,
+      6.960900086001992,
+      0.2304329394831607,
+      8.277041291671766e-06,
+      1.9650159445181402e-07
+    ],
+    "kernel_walk": [
+      {
+        "direction": 6,
+        "sigma": 8.277041291671766e-06,
+        "max_abs_eps_0.0001": 1.7614016467604188e-08,
+        "max_abs_eps_0.001": 1.7295326256716592e-06,
+        "max_abs_eps_0.01": 0.0001745000055307644
+      },
+      {
+        "direction": 7,
+        "sigma": 1.9650159445181402e-07,
+        "max_abs_eps_0.0001": 1.5088089666548399e-09,
+        "max_abs_eps_0.001": 1.5015730847611763e-07,
+        "max_abs_eps_0.01": 1.5098004897740047e-05
+      }
+    ]
+  },
+  "compact_search": {
+    "starts": 24,
+    "best_cost": 1.0865186599889316e-26,
+    "n_active_hits": 10,
+    "n_near_certified_star": 10
+  },
+  "projected_normal_activity": {
+    "min_pair_norm": 0.9640290665850083,
+    "min_unit_pair_norm": 0.07723284457212325,
+    "dead_pairs": 0,
+    "n_pairs": 18,
+    "max_abs_collinearity": 3.497781025546948,
+    "rms_collinearity": 1.957394842782496,
+    "active": false
+  },
+  "positive_dimensional_active": false,
+  "isolated_active": true,
+  "empty_active": false,
+  "cubic_and_first_factor_matched": true,
+  "handoff_second_factor_matched": false,
+  "locked_gates_unaltered": {
+    "sbp": true,
+    "phi_vs_d": true,
+    "low_tail_snapshot": true,
+    "sign_realizability": true,
+    "s_pq": true,
+    "local_exact_shell_star": true
+  },
+  "all_checks_ok": true
+}

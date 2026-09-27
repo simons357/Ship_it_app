@@ -53,7 +53,7 @@ def main(out_path: Path | None = None) -> Path:
 
     ax2 = fig.add_subplot(1, 2, 2)
     ax2.axis("off")
-    ztxt = r"$z^\star=(3,\ 3/2,\ 1,\ 3/4,\ 9/11,\ 15/19,\ 21/31,\ 27/47)$"
+    ztxt = "z* = (3,  3/2,  1,  3/4,  9/11,  15/19,  21/31,  27/47)"
     lines = [
         "Gate 71E  —  Outcome B",
         "isolated / tuned active coherence",
