@@ -56,6 +56,9 @@ unequal-length patch; not a continuum; NS not solved).
 [`ns-recovery/GATE-83-RADICAL-TRAPPING.md`](ns-recovery/GATE-83-RADICAL-TRAPPING.md)
 (\(\lambda\) radical membership at \(\mathfrak p_{71E}\);
 certificate shape locked; computation on the reduced slice).
+27 Sep Gate 83 minor:
+[`ns-recovery/GATE-83-MINOR-FACTOR.md`](ns-recovery/GATE-83-MINOR-FACTOR.md)
+(\(M\not\equiv 0\) on specimen 1; factorization did not land).
 QStack / Q6 / E8 stay instruments, not claims.
 Unrestricted Lemma★ stays killed on \(v_n\).
 Exact-shell \(K\le 16/9\) stays CLAIMED, not stamped.

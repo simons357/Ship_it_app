@@ -351,3 +351,16 @@ That would not kill detached cubes. Gate 81 census is
 [`GATE-83-RADICAL-TRAPPING.md`](GATE-83-RADICAL-TRAPPING.md).
 This addendum does not alter the freeze above.
 **NS not solved.**
+
+---
+
+## 27 September 2026 — Gate 83 specimen-1 minor (data)
+
+\[
+\boxed{M\not\equiv 0}
+\]
+
+Exact \(8\times 8\) pivot on specimen 1 is nonzero; \(\mathrm{rank}\,J_{\mathcal L}=9\).
+Factorization over \(\mathbb Q[t,r_1,\ldots,d_2]\) did not land.
+[`GATE-83-MINOR-FACTOR.md`](GATE-83-MINOR-FACTOR.md).
+Does not alter the freeze. **NS not solved.**
