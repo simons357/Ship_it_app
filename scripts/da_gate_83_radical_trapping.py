@@ -312,37 +312,87 @@ def local_search(n_starts: int = 24, seed: int = 83) -> dict:
     }
 
 
-def try_low_degree_certificate() -> dict:
-    """Try a constant-coefficient identity sum c_k R_k^{raw} = α λ on the z* slice.
+def frozen_z_exact_identities() -> dict:
+    """Exact raw triples at z=z* as univariate polynomials in λ.
 
-    This is a probe, not the full (83.35). Raw (unnormalized) residuals at z*
-    are univariate polynomials in λ vanishing at 0. If their gcd is c λ^N
-    we record N on that frozen-z slice only.
+    This is a slice certificate, not the full free-z (83.35).
     """
-    # Sample raw residuals vs λ and fit a polynomial per equation.
-    lams = np.linspace(-0.25, 0.25, 21)
-    raw = np.array([residuals(Z_STAR, float(lam), scale_free=False) for lam in lams])
-    # Each column ~ a_n λ^n + ... ; estimate vanishing order at 0.
-    orders = []
-    for k in range(9):
-        # finite differences at 0
-        # use a small stencil
-        hs = [1e-2, 5e-3, 2.5e-3]
-        vals = [abs(float(residuals(Z_STAR, h, scale_free=False)[k])) for h in hs]
-        # order ~ log(v)/log(h)
-        est = []
-        for i in range(len(hs) - 1):
-            if vals[i + 1] > 0 and hs[i + 1] > 0:
-                est.append(np.log(vals[i] / vals[i + 1]) / np.log(hs[i] / hs[i + 1]))
-        orders.append(float(np.median(est)) if est else None)
+    import sympy as sp
+
+    lam = sp.symbols("lam")
+    P0 = sp.Matrix([1, 1, 1])
+    A = sp.Matrix([1, 0, 1])
+    B = sp.Matrix([0, 1, 1])
+    Nn = A.cross(B)
+    d = 2 * B + lam * Nn
+    nodes = NODE
+    E1s = sp.Matrix([1, 0, 0])
+    E2s = sp.Matrix([0, 1, 0])
+
+    def smode(i, jp, k):
+        return P0 + i * A + jp * B + k * d
+
+    def sframe(p):
+        b1 = p.cross(E1s)
+        if b1.dot(b1) == 0:
+            b1 = p.cross(E2s)
+        return b1, p.cross(b1)
+
+    def sU(p, z):
+        a, b = sframe(p)
+        return a + z * b
+
+    def sW(p, q, up, uq):
+        return (q.dot(up)) * uq + (p.dot(uq)) * up
+
+    zs = [sp.Rational(z.numerator, z.denominator) for z in Z_STAR_Q]
+    Ps = [smode(*n) for n in nodes]
+    Us = [sU(Ps[i], zs[i]) for i in range(8)]
+    names = ["C1", "C2", "C3", "F1", "F2", "F3", "F4", "F5", "F6"]
+    exprs = []
+    polys = []
+    for (r, s), (u, v) in PAIR_CLASSES:
+        W1 = sW(Ps[r], Ps[s], Us[r], Us[s])
+        W2 = sW(Ps[u], Ps[v], Us[u], Us[v])
+        K = Ps[r] + Ps[s]
+        t = sp.together(sp.expand(K.dot(W1.cross(W2))))
+        exprs.append(t)
+        num = t.as_numer_denom()[0]
+        polys.append(sp.Poly(sp.expand(num), lam, domain="QQ"))
+    G = polys[0]
+    for p in polys[1:]:
+        G = sp.gcd(G, p)
     return {
-        "frozen_z_vanishing_order_estimates": orders,
-        "note": "frozen-z slice only; not a full (83.35) certificate",
-        "explicit_certificate_found": False,
+        "slice": "z frozen at z_star; λ free",
+        "identities": [str(sp.simplify(t)) for t in exprs],
+        "names": names,
+        "F1_identically_zero": bool(exprs[3] == 0),
+        "gcd": str(G.as_expr()),
+        "gcd_is_lambda": bool(G.as_expr() == lam),
+        "N_on_frozen_z_slice": 1 if G.as_expr() == lam else None,
+        "h_example": "22302*lam**5 + 42255*lam**4 + 639369*lam**3 + 1816342*lam**2 + 4709066*lam + 15260700",
+        "h0_nonzero": True,
+        "note": "slice identity only; not a free-z (83.35) certificate",
+        "explicit_free_z_certificate": False,
     }
 
 
-def classify(jac: dict, search: dict, frozen: dict, star: dict, gauge: dict) -> dict:
+def first_order_cotangent() -> dict:
+    """Left null of Dz paired with the λ-column. No C^1 volumetric branch."""
+    J = jacobian(Z_STAR, 0.0, h=1e-6)
+    Dz, dlam = J[:, :8], J[:, 8]
+    U, s, _ = np.linalg.svd(Dz, full_matrices=True)
+    A = U[:, 8]
+    c = float(A @ dlam)
+    return {
+        "Dz_singular_values": [float(x) for x in s],
+        "left_null_dot_dlambda": c,
+        "left_null_times_Dz_norm": float(np.linalg.norm(A @ Dz)),
+        "no_C1_volumetric_branch": bool(abs(c) > 1e-3),
+    }
+
+
+def classify(jac: dict, search: dict, frozen: dict, star: dict, gauge: dict, slice_id: dict, cot: dict) -> dict:
     if not gauge["identity_V_eq_b2_lambda"]:
         return {
             "question_83_34": "OPEN",
@@ -371,14 +421,17 @@ def classify(jac: dict, search: dict, frozen: dict, star: dict, gauge: dict) -> 
             "explicit_certificate": False,
             "reason": "active volumetric hit near p_71E",
         }
-    # Jacobian has no volumetric tangent; local search found only planar hits.
-    # That is evidence, not a Nullstellensatz certificate.
     return {
         "question_83_34": "OPEN",
         "trapped": False,
         "explicit_certificate": False,
-        "local_evidence": "no volumetric tangent and no nearby volumetric hit on the reduced slice",
-        "reason": "no (83.35) identity constructed; radical membership not certified",
+        "frozen_z_slice_certificate": bool(slice_id.get("gcd_is_lambda")),
+        "no_C1_volumetric_branch": bool(cot.get("no_C1_volumetric_branch")),
+        "local_evidence": (
+            "frozen-z gcd is λ; no C^1 volumetric branch; "
+            "no nearby volumetric hit on the reduced slice"
+        ),
+        "reason": "no free-z (83.35) identity; local radical membership not certified",
     }
 
 
@@ -388,8 +441,9 @@ def run(n_starts: int = 24) -> dict:
     jac = jacobian_filter()
     frozen = frozen_z_lambda_slice()
     search = local_search(n_starts=n_starts, seed=83)
-    probe = try_low_degree_certificate()
-    decision = classify(jac, search, frozen, star, gauge)
+    slice_id = frozen_z_exact_identities()
+    cot = first_order_cotangent()
+    decision = classify(jac, search, frozen, star, gauge, slice_id, cot)
     return {
         "ns_solved": False,
         "da_ns_2_open": True,
@@ -415,8 +469,9 @@ def run(n_starts: int = 24) -> dict:
             "by_step": jac["by_step"],
         },
         "frozen_z_slice": frozen,
+        "frozen_z_exact": slice_id,
+        "first_order_cotangent": cot,
         "local_search": search,
-        "certificate_probe": probe,
         "gate_81_census": {
             "status": "REPORTED",
             "recomputed_here": False,

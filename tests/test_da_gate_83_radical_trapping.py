@@ -70,6 +70,10 @@ def test_run_does_not_invent_a_certificate_or_recompute_81():
     assert payload["decision"]["question_83_34"] in ("OPEN", "YES", "NO")
     if payload["decision"]["question_83_34"] != "YES":
         assert payload["decision"]["explicit_certificate"] is False
+    assert payload["frozen_z_exact"]["gcd_is_lambda"] is True
+    assert payload["frozen_z_exact"]["F1_identically_zero"] is True
+    assert payload["frozen_z_exact"]["explicit_free_z_certificate"] is False
+    assert payload["first_order_cotangent"]["no_C1_volumetric_branch"] is True
     assert payload["locked_gates_unaltered"]["gate_71e"] is True
     assert payload["all_checks_ok"] is True
     out = ROOT / "results" / "da_gate_83_radical_trapping.json"

@@ -39,7 +39,9 @@ relevant and is **REPORTED** (40/40 A), not recomputed here.
 |---|---|
 | 71E planar active point | **exists** (Outcome B) |
 | 81 volumetric census | **REPORTED** 40/40 A |
-| 83.34 radical membership | see JSON after the run |
-| explicit (83.35) | only if an identity is written |
+| 83.34 radical membership | **OPEN** (no free-\(z\) identity) |
+| frozen-\(z\) gcd | \(\lambda\) (slice certificate, \(N=1\)) |
+| \(C^1\) volumetric branch | **none** |
+| explicit free-\(z\) (83.35) | **not written** |
 
 **NS not solved.**

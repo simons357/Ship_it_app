@@ -153,9 +153,52 @@ recomputed here.
 \end{array}
 \]
 
-The numerical/symbolic outcome of the reduced-slice computation
-is recorded in the JSON and restated at the end of this page
-after the run. The formulation (83.34)–(83.35) is the lock.
-It does not, by itself, close (83.34).
+The formulation (83.34)–(83.35) is the lock. It does not, by
+itself, close (83.34).
+
+---
+
+## Compute on the reduced slice
+
+Laboratory: \(a,b\) frozen at 71E, \(d=2b+\lambda n\), eight \(z\)
+free. Nine cube collinearities. The 71E point is an active zero
+of that system (raw triples \(<10^{-14}\), all 16 cube pairs live).
+
+**Frozen-\(z\) identity (exact, this book).** With polarizations
+pinned at \(z^\star\), the nine raw triples are univariate in
+\(\lambda\) over \(\mathbb Q\). Their gcd is \(\lambda\). One
+generator (\(F_1\), the \(\lambda\)-independent bottom \(a+b\)
+face) is identically zero. A representative identity is
+
+\[
+C_1
+=
+\frac{5\lambda}{1034}
+\bigl(22302\lambda^5+42255\lambda^4+639369\lambda^3
++1816342\lambda^2+4709066\lambda+15260700\bigr).
+\]
+
+The parenthesis is \(h(\lambda)\) with \(h(0)=15260700\neq 0\).
+On this slice, \(N=1\) and \(\lambda=0\). That is a checkable
+(83.35) **after freezing \(z=z^\star\)**. It is not the free-\(z\)
+local-ring certificate.
+
+**First-order cotangent.** The \(9\times 8\) \(z\)-Jacobian at
+\(\mathfrak p_{71E}\) has a left null vector \(A\) with
+\(A\cdot\partial_\lambda R\approx 0.492\neq 0\). There is no
+\(C^1\) volumetric branch through the point.
+
+**Local search.** 24 nearby starts: 14 active hits, all planar
+(\(\lvert\lambda\rvert\lesssim 10^{-13}\)), zero volumetric.
+
+**Free-\(z\) (83.35).** Not constructed. So
+
+\[
+(83.34)\qquad\textbf{OPEN}.
+\]
+
+The reduced-slice evidence leans toward trapping and does not
+replace a radical identity in the nine-variable ring. Detached
+cubes remain Gate 81’s job.
 
 **NS not solved.**

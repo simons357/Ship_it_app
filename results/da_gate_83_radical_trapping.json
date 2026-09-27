@@ -1,0 +1,268 @@
+{
+  "ns_solved": false,
+  "da_ns_2_open": true,
+  "unrestricted_star_restored": false,
+  "gate": "83",
+  "question": "lambda in radical of (I_act) localized at p_71E?",
+  "tag": "83.34",
+  "certificate_shape": "83.35",
+  "gauge": {
+    "identity_V_eq_b2_lambda": true,
+    "seated_det_abn": 3.0000000000000004,
+    "n": [
+      -1.0,
+      -1.0,
+      1.0
+    ],
+    "samples_ok": true
+  },
+  "cube_equations": {
+    "n_C": 3,
+    "n_F": 6,
+    "n_I_act": 9,
+    "n_variables_on_reduced_slice": 9,
+    "slice": "a,b frozen; d = 2b + lambda n; eight z free"
+  },
+  "star_on_cube": {
+    "max_abs_residual": 1.6653345369377348e-15,
+    "rms_residual": 8.215030442639223e-16,
+    "vanishes": true,
+    "activity": {
+      "n_pairs": 16,
+      "dead_pairs": 0,
+      "min_pair_norm": 14.120063325654968,
+      "min_unit_pair_norm": 0.042481246318169776,
+      "live": true
+    }
+  },
+  "jacobian": {
+    "stable_rank_estimate": 7,
+    "lambda_in_approximate_kernel": false,
+    "min_sigma": 1.1177831315771672e-07,
+    "lambda_column_norm": 4.937276608247758,
+    "by_step": [
+      {
+        "h": 1e-05,
+        "singular_values": [
+          24.96034475070628,
+          18.644650783752457,
+          10.76537146480262,
+          7.754185130038605,
+          5.6720326475857625,
+          0.752004390281841,
+          0.21709546048470993,
+          4.271707435828535e-05,
+          1.122466990136235e-06
+        ],
+        "rank_1e6": 9,
+        "rank_1e8": 9,
+        "lambda_column_norm": 4.937259073954936,
+        "walks": [
+          {
+            "sigma": 4.271707435828535e-05,
+            "d_lambda": 5.159916017900701e-05,
+            "max_abs_eps_0.0001": 2.2462004696455253e-08,
+            "max_abs_eps_0.001": 1.7760090796103519e-06,
+            "max_abs_eps_0.01": 0.00017476406291144054
+          },
+          {
+            "sigma": 1.122466990136235e-06,
+            "d_lambda": 1.0746692605691614e-06,
+            "max_abs_eps_0.0001": 1.4152620659425505e-09,
+            "max_abs_eps_0.001": 1.3694225127796188e-07,
+            "max_abs_eps_0.01": 1.3569076917341843e-05
+          }
+        ]
+      },
+      {
+        "h": 1e-06,
+        "singular_values": [
+          24.96063137352926,
+          18.644818250355268,
+          10.76547425438278,
+          7.754250165951639,
+          5.67209511896615,
+          0.7519933741121091,
+          0.21712235870206675,
+          4.271885953078778e-06,
+          1.1177831315771672e-07
+        ],
+        "rank_1e6": 8,
+        "rank_1e8": 9,
+        "lambda_column_norm": 4.937276608247758,
+        "walks": [
+          {
+            "sigma": 4.271885953078778e-06,
+            "d_lambda": 5.1604495178249945e-06,
+            "max_abs_eps_0.0001": 1.7733131240531317e-08,
+            "max_abs_eps_0.001": 1.7279650797579571e-06,
+            "max_abs_eps_0.01": 0.00017420788685254575
+          },
+          {
+            "sigma": 1.1177831315771672e-07,
+            "d_lambda": 1.0770065736624689e-07,
+            "max_abs_eps_0.0001": 1.3705994212742334e-09,
+            "max_abs_eps_0.001": 1.365275505741583e-07,
+            "max_abs_eps_0.01": 1.3568110969599918e-05
+          }
+        ]
+      },
+      {
+        "h": 1e-07,
+        "singular_values": [
+          24.960660015320418,
+          18.644834983459553,
+          10.76548454008729,
+          7.7542566746915655,
+          5.672101360541703,
+          0.7519922702502462,
+          0.21712505454957656,
+          4.308332800810241e-07,
+          8.287279607284918e-09
+        ],
+        "rank_1e6": 7,
+        "rank_1e8": 8,
+        "lambda_column_norm": 4.937278334455776,
+        "walks": [
+          {
+            "sigma": 4.308332800810241e-07,
+            "d_lambda": 5.19016133358244e-07,
+            "max_abs_eps_0.0001": 1.7232435183826837e-08,
+            "max_abs_eps_0.001": 1.7203285544648423e-06,
+            "max_abs_eps_0.01": 0.0001738679659059364
+          },
+          {
+            "sigma": 8.287279607284918e-09,
+            "d_lambda": 1.3753469150451784e-08,
+            "max_abs_eps_0.0001": 1.3945791023305939e-09,
+            "max_abs_eps_0.001": 1.3932265690312308e-07,
+            "max_abs_eps_0.01": 1.3850441511852102e-05
+          }
+        ]
+      }
+    ]
+  },
+  "frozen_z_slice": {
+    "n_samples": 41,
+    "residual_at_0": 1.6653345369377348e-15,
+    "min_residual_off_plane": 0.0663796942933059,
+    "frozen_z_only_zero_at_origin": true
+  },
+  "frozen_z_exact": {
+    "slice": "z frozen at z_star; \u03bb free",
+    "identities": [
+      "5*lam*(22302*lam**5 + 42255*lam**4 + 639369*lam**3 + 1816342*lam**2 + 4709066*lam + 15260700)/1034",
+      "2*lam*(-80856*lam**5 + 228774*lam**4 - 462851*lam**3 + 2817672*lam**2 + 9679158*lam - 5209120)/1457",
+      "26*lam*(3210*lam**5 + 23681*lam**4 + 148069*lam**3 + 674052*lam**2 + 1456986*lam + 2986032)/893",
+      "0",
+      "lam*(59778*lam**6 - 470691*lam**5 - 946257*lam**4 - 5822323*lam**3 - 24634845*lam**2 - 31717886*lam - 51692376)/2914",
+      "20*lam*(2943*lam**5 + 927*lam**4 + 47690*lam**3 + 70596*lam**2 + 193240*lam + 389400)/341",
+      "13*lam*(93600*lam**5 - 110469*lam**4 + 2035765*lam**3 - 245528*lam**2 + 10958312*lam + 1469048)/3572",
+      "2*lam*(-102*lam**5 + 131*lam**4 - 484*lam**3 + 2255*lam**2 + 7458*lam + 6426)",
+      "195*lam*(-197460*lam**5 + 1151313*lam**4 - 762502*lam**3 + 24450868*lam**2 + 39617812*lam + 45335264)/304513"
+    ],
+    "names": [
+      "C1",
+      "C2",
+      "C3",
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5",
+      "F6"
+    ],
+    "F1_identically_zero": true,
+    "gcd": "lam",
+    "gcd_is_lambda": true,
+    "N_on_frozen_z_slice": 1,
+    "h_example": "22302*lam**5 + 42255*lam**4 + 639369*lam**3 + 1816342*lam**2 + 4709066*lam + 15260700",
+    "h0_nonzero": true,
+    "note": "slice identity only; not a free-z (83.35) certificate",
+    "explicit_free_z_certificate": false
+  },
+  "first_order_cotangent": {
+    "Dz_singular_values": [
+      24.959449088125034,
+      18.181005766129974,
+      10.50313686061012,
+      7.716082593245538,
+      5.627164880704657,
+      0.2300609780864805,
+      5.784456894588639e-06,
+      1.2690973196511982e-07
+    ],
+    "left_null_dot_dlambda": 0.4915492675626262,
+    "left_null_times_Dz_norm": 3.388028196686439e-15,
+    "no_C1_volumetric_branch": true
+  },
+  "local_search": {
+    "starts": 24,
+    "best_cost": 6.445164956235887e-30,
+    "n_active_hits": 14,
+    "n_planar_active": 14,
+    "n_volumetric_active": 0,
+    "sample_hits": [
+      {
+        "lambda": 1.9328290178111067e-13,
+        "cost": 2.9914083201193184e-26,
+        "min_unit_W": 0.04248160151391662,
+        "dist_z": 2.1612236515615347e-05
+      },
+      {
+        "lambda": 2.018221087081214e-14,
+        "cost": 1.86111148639803e-27,
+        "min_unit_W": 0.04248111066093839,
+        "dist_z": 8.339431227634248e-06
+      },
+      {
+        "lambda": 7.410399907546866e-16,
+        "cost": 2.942326239171576e-28,
+        "min_unit_W": 0.04248129533118838,
+        "dist_z": 3.0473249656816073e-06
+      },
+      {
+        "lambda": 1.8331206129615984e-15,
+        "cost": 6.630407455931015e-29,
+        "min_unit_W": 0.0424812294914122,
+        "dist_z": 1.0554376535340282e-06
+      },
+      {
+        "lambda": 5.276844602946369e-15,
+        "cost": 5.631431538768885e-29,
+        "min_unit_W": 0.042481211809043656,
+        "dist_z": 2.088029513004421e-06
+      },
+      {
+        "lambda": 4.338699027748292e-15,
+        "cost": 5.677931499879164e-29,
+        "min_unit_W": 0.042481285932794585,
+        "dist_z": 2.373398365004795e-06
+      }
+    ]
+  },
+  "gate_81_census": {
+    "status": "REPORTED",
+    "recomputed_here": false,
+    "handoff": "40/40 tested volumetric cubes Outcome A"
+  },
+  "decision": {
+    "question_83_34": "OPEN",
+    "trapped": false,
+    "explicit_certificate": false,
+    "frozen_z_slice_certificate": true,
+    "no_C1_volumetric_branch": true,
+    "local_evidence": "frozen-z gcd is \u03bb; no C^1 volumetric branch; no nearby volumetric hit on the reduced slice",
+    "reason": "no free-z (83.35) identity; local radical membership not certified"
+  },
+  "locked_gates_unaltered": {
+    "sbp": true,
+    "phi_vs_d": true,
+    "low_tail_snapshot": true,
+    "sign_realizability": true,
+    "s_pq": true,
+    "local_exact_shell_star": true,
+    "gate_71e": true
+  },
+  "all_checks_ok": true
+}
