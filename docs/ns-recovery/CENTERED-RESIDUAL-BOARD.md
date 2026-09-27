@@ -319,3 +319,16 @@ and \(K_{\alpha,\beta}\le 16/9\). Extreme satellites are locally
 neutralized. Unrestricted \(\sup\mathcal R_\star<\infty\) stays
 **KILLED**. The \(r\sim\kappa^{-1/2}\) crossover is **not** stamped.
 This addendum does not alter the freeze above.
+
+---
+
+## 27 September 2026 — Gate 71E (does not alter this freeze)
+
+The 2×4 unequal-length additive patch was branched and
+classified. Outcome **B**: isolated/tuned active coherence.
+Certified point \(z^\star=(3,3/2,1,3/4,9/11,15/19,21/31,27/47)\).
+All 11 triples vanish over \(\mathbb Q\); all 18 pairs live.
+Not empty, not a continuum. Not a same-time HH bound.
+[`GATE-71E-BRANCH-ELIMINATE.md`](GATE-71E-BRANCH-ELIMINATE.md).
+This addendum does not alter the freeze above.
+DA-NS-2 stays **OPEN**. **NS not solved.**

@@ -48,6 +48,10 @@ Q4-0 is a plan, not a run).
 [`ns-recovery/EXACT-SHELL-PERTURBATION-STAR.md`](ns-recovery/EXACT-SHELL-PERTURBATION-STAR.md)
 (\(K_{\alpha,\beta}\le 16/9\), \(\beta^{-1/2}\) constant \(4/3\);
 unrestricted ★ stays dead).
+27 Sep Gate 71E:
+[`ns-recovery/GATE-71E-BRANCH-ELIMINATE.md`](ns-recovery/GATE-71E-BRANCH-ELIMINATE.md)
+(Outcome B: isolated/tuned \(z^\star\) on the \(2\times 4\)
+unequal-length patch; not a continuum; NS not solved).
 QStack / Q6 / E8 stay instruments, not claims.
 Unrestricted Lemma★ stays killed on \(v_n\).
 Exact-shell \(K\le 16/9\) stays CLAIMED, not stamped.
