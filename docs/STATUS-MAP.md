@@ -52,6 +52,10 @@ unrestricted ★ stays dead).
 [`ns-recovery/GATE-71E-BRANCH-ELIMINATE.md`](ns-recovery/GATE-71E-BRANCH-ELIMINATE.md)
 (Outcome B: isolated/tuned \(z^\star\) on the \(2\times 4\)
 unequal-length patch; not a continuum; NS not solved).
+27 Sep Gate 83:
+[`ns-recovery/GATE-83-RADICAL-TRAPPING.md`](ns-recovery/GATE-83-RADICAL-TRAPPING.md)
+(\(\lambda\) radical membership at \(\mathfrak p_{71E}\);
+certificate shape locked; computation on the reduced slice).
 QStack / Q6 / E8 stay instruments, not claims.
 Unrestricted Lemma★ stays killed on \(v_n\).
 Exact-shell \(K\le 16/9\) stays CLAIMED, not stamped.

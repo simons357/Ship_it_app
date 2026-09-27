@@ -332,3 +332,22 @@ Not empty, not a continuum. Not a same-time HH bound.
 [`GATE-71E-BRANCH-ELIMINATE.md`](GATE-71E-BRANCH-ELIMINATE.md).
 This addendum does not alter the freeze above.
 DA-NS-2 stays **OPEN**. **NS not solved.**
+
+---
+
+## 27 September 2026 — Gate 83 radical lock (does not alter this freeze)
+
+Volumetric escape through the 71E point is reduced to
+
+\[
+\lambda\in\sqrt{(I_{\mathrm{act}})_{\mathfrak p_{71E}}}\,?
+\tag{83.34}
+\]
+
+After gauge, \(V=b_2\lambda\). A trapping certificate is
+\(h\lambda^N\) in the nine cube generators, \(h\neq 0\) on 71E.
+That would not kill detached cubes. Gate 81 census is
+**REPORTED**, not recomputed.
+[`GATE-83-RADICAL-TRAPPING.md`](GATE-83-RADICAL-TRAPPING.md).
+This addendum does not alter the freeze above.
+**NS not solved.**
