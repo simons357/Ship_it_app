@@ -1,0 +1,2017 @@
+{
+  "stamp": "gamma = (Delta, sigma)",
+  "convention": "k+p+q=0",
+  "sigma_convention": "(s_k, s_p, s_q)",
+  "n_geometric_delta": 4,
+  "n_heterochiral_sigma": 6,
+  "n_channels": 24,
+  "representative": "locked parallelogram rewritten as k+p+q=0",
+  "source": "DA-NS-SPRINT-01-PHASE-LOCK-AND-FULL-HELICAL-FLOW-2026-09-07.md",
+  "U_frame": {
+    "statement": "|g_energy|=|G_0|; U=g_energy/G_0 is unimodular and triangle/frame dependent",
+    "do_not_treat_U_as_1": true,
+    "observed_on_default_axis": {
+      "T1": "arg 0 (+1)",
+      "T2": "arg pi (-1)",
+      "T3": "arg \u00b1pi/2 (\u00b1i)",
+      "T4": "arg \u00b1pi/6, \u00b15pi/6"
+    }
+  },
+  "channels": [
+    {
+      "gamma": {
+        "delta_id": "T1",
+        "k": [
+          -1,
+          -1,
+          0
+        ],
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "q": [
+          0,
+          1,
+          0
+        ],
+        "sigma_kpq": [
+          1,
+          1,
+          -1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "q",
+      "radii": {
+        "i": 1.4142135623730951,
+        "j": 1.0,
+        "o": 1.0
+      },
+      "signed_radii": {
+        "a": 1.4142135623730951,
+        "b": 1.0,
+        "c": -1.0
+      },
+      "A_gamma": 2.414213562373095,
+      "H_ijo": 3.0,
+      "g_frame_G0": {
+        "re": 0.0,
+        "im": -0.3535533905932737,
+        "abs": 0.3535533905932737,
+        "arg": -1.5707963267948966
+      },
+      "g_Delta_sigma": {
+        "re": 0.0,
+        "im": -0.3535533905932737,
+        "abs": 0.3535533905932737,
+        "arg": -1.5707963267948966
+      },
+      "g_ordered": {
+        "re": -0.1035533905932737,
+        "im": 0.0,
+        "abs": 0.1035533905932737,
+        "arg": 3.141592653589793
+      },
+      "G_cross_flip": {
+        "re": 0.0,
+        "im": -0.3535533905932737,
+        "abs": 0.3535533905932737,
+        "arg": -1.5707963267948966
+      },
+      "vandermonde_k_leg": 2.0,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": -1.5707963267948966,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": 0.0,
+        "im": -0.3535533905932737,
+        "abs": 0.3535533905932737,
+        "arg": -1.5707963267948966
+      },
+      "U": {
+        "re": 1.0,
+        "im": -0.0,
+        "abs": 1.0,
+        "arg": -0.0
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T1",
+        "k": [
+          -1,
+          -1,
+          0
+        ],
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "q": [
+          0,
+          1,
+          0
+        ],
+        "sigma_kpq": [
+          -1,
+          -1,
+          1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "q",
+      "radii": {
+        "i": 1.4142135623730951,
+        "j": 1.0,
+        "o": 1.0
+      },
+      "signed_radii": {
+        "a": -1.4142135623730951,
+        "b": -1.0,
+        "c": 1.0
+      },
+      "A_gamma": 2.414213562373095,
+      "H_ijo": 3.0,
+      "g_frame_G0": {
+        "re": 0.0,
+        "im": 0.3535533905932737,
+        "abs": 0.3535533905932737,
+        "arg": 1.5707963267948966
+      },
+      "g_Delta_sigma": {
+        "re": 0.0,
+        "im": 0.3535533905932737,
+        "abs": 0.3535533905932737,
+        "arg": 1.5707963267948966
+      },
+      "g_ordered": {
+        "re": -0.1035533905932737,
+        "im": 0.0,
+        "abs": 0.1035533905932737,
+        "arg": 3.141592653589793
+      },
+      "G_cross_flip": {
+        "re": 0.0,
+        "im": 0.3535533905932737,
+        "abs": 0.3535533905932737,
+        "arg": 1.5707963267948966
+      },
+      "vandermonde_k_leg": -2.0,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": 1.5707963267948966,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": -0.0,
+        "im": 0.3535533905932737,
+        "abs": 0.3535533905932737,
+        "arg": 1.5707963267948966
+      },
+      "U": {
+        "re": 1.0,
+        "im": 0.0,
+        "abs": 1.0,
+        "arg": 0.0
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T1",
+        "k": [
+          -1,
+          -1,
+          0
+        ],
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "q": [
+          0,
+          1,
+          0
+        ],
+        "sigma_kpq": [
+          1,
+          -1,
+          1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "p",
+      "radii": {
+        "i": 1.4142135623730951,
+        "j": 1.0,
+        "o": 1.0
+      },
+      "signed_radii": {
+        "a": 1.4142135623730951,
+        "b": -1.0,
+        "c": 1.0
+      },
+      "A_gamma": 2.414213562373095,
+      "H_ijo": 3.0,
+      "g_frame_G0": {
+        "re": 0.0,
+        "im": -0.3535533905932737,
+        "abs": 0.3535533905932737,
+        "arg": -1.5707963267948966
+      },
+      "g_Delta_sigma": {
+        "re": 0.0,
+        "im": -0.3535533905932737,
+        "abs": 0.3535533905932737,
+        "arg": -1.5707963267948966
+      },
+      "g_ordered": {
+        "re": 0.6035533905932736,
+        "im": 0.0,
+        "abs": 0.6035533905932736,
+        "arg": 0.0
+      },
+      "G_cross_flip": {
+        "re": 0.0,
+        "im": -0.3535533905932737,
+        "abs": 0.3535533905932737,
+        "arg": -1.5707963267948966
+      },
+      "vandermonde_k_leg": -2.0,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": -1.5707963267948966,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": -0.0,
+        "im": -0.3535533905932737,
+        "abs": 0.3535533905932737,
+        "arg": -1.5707963267948966
+      },
+      "U": {
+        "re": 1.0,
+        "im": -0.0,
+        "abs": 1.0,
+        "arg": -0.0
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T1",
+        "k": [
+          -1,
+          -1,
+          0
+        ],
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "q": [
+          0,
+          1,
+          0
+        ],
+        "sigma_kpq": [
+          -1,
+          1,
+          -1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "p",
+      "radii": {
+        "i": 1.4142135623730951,
+        "j": 1.0,
+        "o": 1.0
+      },
+      "signed_radii": {
+        "a": -1.4142135623730951,
+        "b": 1.0,
+        "c": -1.0
+      },
+      "A_gamma": 2.414213562373095,
+      "H_ijo": 3.0,
+      "g_frame_G0": {
+        "re": 0.0,
+        "im": 0.3535533905932737,
+        "abs": 0.3535533905932737,
+        "arg": 1.5707963267948966
+      },
+      "g_Delta_sigma": {
+        "re": 0.0,
+        "im": 0.3535533905932737,
+        "abs": 0.3535533905932737,
+        "arg": 1.5707963267948966
+      },
+      "g_ordered": {
+        "re": 0.6035533905932736,
+        "im": 0.0,
+        "abs": 0.6035533905932736,
+        "arg": 0.0
+      },
+      "G_cross_flip": {
+        "re": 0.0,
+        "im": 0.3535533905932737,
+        "abs": 0.3535533905932737,
+        "arg": 1.5707963267948966
+      },
+      "vandermonde_k_leg": 2.0,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": 1.5707963267948966,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": 0.0,
+        "im": 0.3535533905932737,
+        "abs": 0.3535533905932737,
+        "arg": 1.5707963267948966
+      },
+      "U": {
+        "re": 1.0,
+        "im": 0.0,
+        "abs": 1.0,
+        "arg": 0.0
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T1",
+        "k": [
+          -1,
+          -1,
+          0
+        ],
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "q": [
+          0,
+          1,
+          0
+        ],
+        "sigma_kpq": [
+          -1,
+          1,
+          1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "k",
+      "radii": {
+        "i": 1.0,
+        "j": 1.0,
+        "o": 1.4142135623730951
+      },
+      "signed_radii": {
+        "a": -1.4142135623730951,
+        "b": 1.0,
+        "c": 1.0
+      },
+      "A_gamma": 2.060660171779821,
+      "H_ijo": 2.1715728752538097,
+      "g_frame_G0": {
+        "re": 0.0,
+        "im": -0.1464466094067262,
+        "abs": 0.1464466094067262,
+        "arg": -1.5707963267948966
+      },
+      "g_Delta_sigma": {
+        "re": 0.0,
+        "im": -0.1464466094067262,
+        "abs": 0.1464466094067262,
+        "arg": -1.5707963267948966
+      },
+      "g_ordered": {
+        "re": -0.1035533905932737,
+        "im": 0.0,
+        "abs": 0.1035533905932737,
+        "arg": 3.141592653589793
+      },
+      "G_cross_flip": {
+        "re": 0.0,
+        "im": -0.1464466094067262,
+        "abs": 0.1464466094067262,
+        "arg": -1.5707963267948966
+      },
+      "vandermonde_k_leg": 0.0,
+      "vandermonde_zero": true,
+      "channel_phase_invariant": -1.5707963267948966,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T1",
+        "k": [
+          -1,
+          -1,
+          0
+        ],
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "q": [
+          0,
+          1,
+          0
+        ],
+        "sigma_kpq": [
+          1,
+          -1,
+          -1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "k",
+      "radii": {
+        "i": 1.0,
+        "j": 1.0,
+        "o": 1.4142135623730951
+      },
+      "signed_radii": {
+        "a": 1.4142135623730951,
+        "b": -1.0,
+        "c": -1.0
+      },
+      "A_gamma": 2.060660171779821,
+      "H_ijo": 2.1715728752538097,
+      "g_frame_G0": {
+        "re": 0.0,
+        "im": 0.1464466094067262,
+        "abs": 0.1464466094067262,
+        "arg": 1.5707963267948966
+      },
+      "g_Delta_sigma": {
+        "re": 0.0,
+        "im": 0.1464466094067262,
+        "abs": 0.1464466094067262,
+        "arg": 1.5707963267948966
+      },
+      "g_ordered": {
+        "re": -0.1035533905932737,
+        "im": 0.0,
+        "abs": 0.1035533905932737,
+        "arg": 3.141592653589793
+      },
+      "G_cross_flip": {
+        "re": 0.0,
+        "im": 0.1464466094067262,
+        "abs": 0.1464466094067262,
+        "arg": 1.5707963267948966
+      },
+      "vandermonde_k_leg": 0.0,
+      "vandermonde_zero": true,
+      "channel_phase_invariant": 1.5707963267948966,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T2",
+        "k": [
+          -1,
+          0,
+          -1
+        ],
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "q": [
+          0,
+          0,
+          1
+        ],
+        "sigma_kpq": [
+          1,
+          1,
+          -1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "q",
+      "radii": {
+        "i": 1.4142135623730951,
+        "j": 1.0,
+        "o": 1.0
+      },
+      "signed_radii": {
+        "a": 1.4142135623730951,
+        "b": 1.0,
+        "c": -1.0
+      },
+      "A_gamma": 2.414213562373095,
+      "H_ijo": 3.0,
+      "g_frame_G0": {
+        "re": 0.3535533905932737,
+        "im": 0.0,
+        "abs": 0.3535533905932737,
+        "arg": 0.0
+      },
+      "g_Delta_sigma": {
+        "re": 0.3535533905932737,
+        "im": 0.0,
+        "abs": 0.3535533905932737,
+        "arg": 0.0
+      },
+      "g_ordered": {
+        "re": -0.0,
+        "im": -0.10355339059327373,
+        "abs": 0.10355339059327373,
+        "arg": -1.5707963267948966
+      },
+      "G_cross_flip": {
+        "re": 0.3535533905932737,
+        "im": 0.0,
+        "abs": 0.3535533905932737,
+        "arg": 0.0
+      },
+      "vandermonde_k_leg": 2.0,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": 0.0,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": -0.3535533905932736,
+        "im": -0.0,
+        "abs": 0.3535533905932736,
+        "arg": -3.141592653589793
+      },
+      "U": {
+        "re": -0.9999999999999999,
+        "im": 0.0,
+        "abs": 0.9999999999999999,
+        "arg": 3.141592653589793
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T2",
+        "k": [
+          -1,
+          0,
+          -1
+        ],
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "q": [
+          0,
+          0,
+          1
+        ],
+        "sigma_kpq": [
+          -1,
+          -1,
+          1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "q",
+      "radii": {
+        "i": 1.4142135623730951,
+        "j": 1.0,
+        "o": 1.0
+      },
+      "signed_radii": {
+        "a": -1.4142135623730951,
+        "b": -1.0,
+        "c": 1.0
+      },
+      "A_gamma": 2.414213562373095,
+      "H_ijo": 3.0,
+      "g_frame_G0": {
+        "re": 0.3535533905932737,
+        "im": 0.0,
+        "abs": 0.3535533905932737,
+        "arg": 0.0
+      },
+      "g_Delta_sigma": {
+        "re": 0.3535533905932737,
+        "im": 0.0,
+        "abs": 0.3535533905932737,
+        "arg": 0.0
+      },
+      "g_ordered": {
+        "re": 0.0,
+        "im": 0.10355339059327373,
+        "abs": 0.10355339059327373,
+        "arg": 1.5707963267948966
+      },
+      "G_cross_flip": {
+        "re": 0.3535533905932737,
+        "im": 0.0,
+        "abs": 0.3535533905932737,
+        "arg": 0.0
+      },
+      "vandermonde_k_leg": -2.0,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": 0.0,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": -0.3535533905932736,
+        "im": 0.0,
+        "abs": 0.3535533905932736,
+        "arg": 3.141592653589793
+      },
+      "U": {
+        "re": -0.9999999999999999,
+        "im": 0.0,
+        "abs": 0.9999999999999999,
+        "arg": 3.141592653589793
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T2",
+        "k": [
+          -1,
+          0,
+          -1
+        ],
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "q": [
+          0,
+          0,
+          1
+        ],
+        "sigma_kpq": [
+          1,
+          -1,
+          1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "p",
+      "radii": {
+        "i": 1.4142135623730951,
+        "j": 1.0,
+        "o": 1.0
+      },
+      "signed_radii": {
+        "a": 1.4142135623730951,
+        "b": -1.0,
+        "c": 1.0
+      },
+      "A_gamma": 2.414213562373095,
+      "H_ijo": 3.0,
+      "g_frame_G0": {
+        "re": 0.3535533905932736,
+        "im": 0.0,
+        "abs": 0.3535533905932736,
+        "arg": 0.0
+      },
+      "g_Delta_sigma": {
+        "re": 0.3535533905932736,
+        "im": 0.0,
+        "abs": 0.3535533905932736,
+        "arg": 0.0
+      },
+      "g_ordered": {
+        "re": 0.0,
+        "im": 0.6035533905932735,
+        "abs": 0.6035533905932735,
+        "arg": 1.5707963267948966
+      },
+      "G_cross_flip": {
+        "re": 0.3535533905932736,
+        "im": 0.0,
+        "abs": 0.3535533905932736,
+        "arg": 0.0
+      },
+      "vandermonde_k_leg": -2.0,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": 0.0,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": -0.3535533905932736,
+        "im": 0.0,
+        "abs": 0.3535533905932736,
+        "arg": 3.141592653589793
+      },
+      "U": {
+        "re": -1.0,
+        "im": 0.0,
+        "abs": 1.0,
+        "arg": 3.141592653589793
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T2",
+        "k": [
+          -1,
+          0,
+          -1
+        ],
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "q": [
+          0,
+          0,
+          1
+        ],
+        "sigma_kpq": [
+          -1,
+          1,
+          -1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "p",
+      "radii": {
+        "i": 1.4142135623730951,
+        "j": 1.0,
+        "o": 1.0
+      },
+      "signed_radii": {
+        "a": -1.4142135623730951,
+        "b": 1.0,
+        "c": -1.0
+      },
+      "A_gamma": 2.414213562373095,
+      "H_ijo": 3.0,
+      "g_frame_G0": {
+        "re": 0.3535533905932736,
+        "im": 0.0,
+        "abs": 0.3535533905932736,
+        "arg": 0.0
+      },
+      "g_Delta_sigma": {
+        "re": 0.3535533905932736,
+        "im": 0.0,
+        "abs": 0.3535533905932736,
+        "arg": 0.0
+      },
+      "g_ordered": {
+        "re": -0.0,
+        "im": -0.6035533905932735,
+        "abs": 0.6035533905932735,
+        "arg": -1.5707963267948966
+      },
+      "G_cross_flip": {
+        "re": 0.3535533905932736,
+        "im": 0.0,
+        "abs": 0.3535533905932736,
+        "arg": 0.0
+      },
+      "vandermonde_k_leg": 2.0,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": 0.0,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": -0.3535533905932736,
+        "im": -0.0,
+        "abs": 0.3535533905932736,
+        "arg": -3.141592653589793
+      },
+      "U": {
+        "re": -1.0,
+        "im": 0.0,
+        "abs": 1.0,
+        "arg": 3.141592653589793
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T2",
+        "k": [
+          -1,
+          0,
+          -1
+        ],
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "q": [
+          0,
+          0,
+          1
+        ],
+        "sigma_kpq": [
+          -1,
+          1,
+          1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "k",
+      "radii": {
+        "i": 1.0,
+        "j": 1.0,
+        "o": 1.4142135623730951
+      },
+      "signed_radii": {
+        "a": -1.4142135623730951,
+        "b": 1.0,
+        "c": 1.0
+      },
+      "A_gamma": 2.060660171779821,
+      "H_ijo": 2.1715728752538097,
+      "g_frame_G0": {
+        "re": 0.1464466094067261,
+        "im": 0.0,
+        "abs": 0.1464466094067261,
+        "arg": 0.0
+      },
+      "g_Delta_sigma": {
+        "re": 0.1464466094067261,
+        "im": 0.0,
+        "abs": 0.1464466094067261,
+        "arg": 0.0
+      },
+      "g_ordered": {
+        "re": -0.0,
+        "im": -0.10355339059327373,
+        "abs": 0.10355339059327373,
+        "arg": -1.5707963267948966
+      },
+      "G_cross_flip": {
+        "re": 0.1464466094067261,
+        "im": 0.0,
+        "abs": 0.1464466094067261,
+        "arg": 0.0
+      },
+      "vandermonde_k_leg": 0.0,
+      "vandermonde_zero": true,
+      "channel_phase_invariant": 0.0,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T2",
+        "k": [
+          -1,
+          0,
+          -1
+        ],
+        "p": [
+          1,
+          0,
+          0
+        ],
+        "q": [
+          0,
+          0,
+          1
+        ],
+        "sigma_kpq": [
+          1,
+          -1,
+          -1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "k",
+      "radii": {
+        "i": 1.0,
+        "j": 1.0,
+        "o": 1.4142135623730951
+      },
+      "signed_radii": {
+        "a": 1.4142135623730951,
+        "b": -1.0,
+        "c": -1.0
+      },
+      "A_gamma": 2.060660171779821,
+      "H_ijo": 2.1715728752538097,
+      "g_frame_G0": {
+        "re": 0.1464466094067261,
+        "im": 0.0,
+        "abs": 0.1464466094067261,
+        "arg": 0.0
+      },
+      "g_Delta_sigma": {
+        "re": 0.1464466094067261,
+        "im": 0.0,
+        "abs": 0.1464466094067261,
+        "arg": 0.0
+      },
+      "g_ordered": {
+        "re": 0.0,
+        "im": 0.10355339059327373,
+        "abs": 0.10355339059327373,
+        "arg": 1.5707963267948966
+      },
+      "G_cross_flip": {
+        "re": 0.1464466094067261,
+        "im": 0.0,
+        "abs": 0.1464466094067261,
+        "arg": 0.0
+      },
+      "vandermonde_k_leg": 0.0,
+      "vandermonde_zero": true,
+      "channel_phase_invariant": 0.0,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T3",
+        "k": [
+          -1,
+          -1,
+          -1
+        ],
+        "p": [
+          1,
+          1,
+          0
+        ],
+        "q": [
+          0,
+          0,
+          1
+        ],
+        "sigma_kpq": [
+          1,
+          1,
+          -1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "q",
+      "radii": {
+        "i": 1.7320508075688772,
+        "j": 1.4142135623730951,
+        "o": 1.0
+      },
+      "signed_radii": {
+        "a": 1.7320508075688772,
+        "b": 1.4142135623730951,
+        "c": -1.0
+      },
+      "A_gamma": 3.2978770563625748,
+      "H_ijo": 5.303225372841206,
+      "g_frame_G0": {
+        "re": 0.309786577934525,
+        "im": -0.309786577934525,
+        "abs": 0.4381043799561551,
+        "arg": -0.7853981633974483
+      },
+      "g_Delta_sigma": {
+        "re": 0.309786577934525,
+        "im": -0.309786577934525,
+        "abs": 0.4381043799561551,
+        "arg": -0.7853981633974483
+      },
+      "g_ordered": {
+        "re": -0.10566243270259353,
+        "im": -0.10566243270259353,
+        "abs": 0.1494292453613422,
+        "arg": -2.356194490192345
+      },
+      "G_cross_flip": {
+        "re": 0.309786577934525,
+        "im": -0.309786577934525,
+        "abs": 0.4381043799561551,
+        "arg": -0.7853981633974483
+      },
+      "vandermonde_k_leg": 2.414213562373095,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": -0.7853981633974483,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": -0.3097865779345251,
+        "im": -0.3097865779345251,
+        "abs": 0.43810437995615514,
+        "arg": -2.356194490192345
+      },
+      "U": {
+        "re": 0.0,
+        "im": -1.0000000000000002,
+        "abs": 1.0000000000000002,
+        "arg": -1.5707963267948966
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T3",
+        "k": [
+          -1,
+          -1,
+          -1
+        ],
+        "p": [
+          1,
+          1,
+          0
+        ],
+        "q": [
+          0,
+          0,
+          1
+        ],
+        "sigma_kpq": [
+          -1,
+          -1,
+          1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "q",
+      "radii": {
+        "i": 1.7320508075688772,
+        "j": 1.4142135623730951,
+        "o": 1.0
+      },
+      "signed_radii": {
+        "a": -1.7320508075688772,
+        "b": -1.4142135623730951,
+        "c": 1.0
+      },
+      "A_gamma": 3.2978770563625748,
+      "H_ijo": 5.303225372841206,
+      "g_frame_G0": {
+        "re": 0.309786577934525,
+        "im": 0.309786577934525,
+        "abs": 0.4381043799561551,
+        "arg": 0.7853981633974483
+      },
+      "g_Delta_sigma": {
+        "re": 0.309786577934525,
+        "im": 0.309786577934525,
+        "abs": 0.4381043799561551,
+        "arg": 0.7853981633974483
+      },
+      "g_ordered": {
+        "re": -0.10566243270259353,
+        "im": 0.10566243270259353,
+        "abs": 0.1494292453613422,
+        "arg": 2.356194490192345
+      },
+      "G_cross_flip": {
+        "re": 0.309786577934525,
+        "im": 0.309786577934525,
+        "abs": 0.4381043799561551,
+        "arg": 0.7853981633974483
+      },
+      "vandermonde_k_leg": -2.414213562373095,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": 0.7853981633974483,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": -0.3097865779345251,
+        "im": 0.3097865779345251,
+        "abs": 0.43810437995615514,
+        "arg": 2.356194490192345
+      },
+      "U": {
+        "re": 0.0,
+        "im": 1.0000000000000002,
+        "abs": 1.0000000000000002,
+        "arg": 1.5707963267948966
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T3",
+        "k": [
+          -1,
+          -1,
+          -1
+        ],
+        "p": [
+          1,
+          1,
+          0
+        ],
+        "q": [
+          0,
+          0,
+          1
+        ],
+        "sigma_kpq": [
+          1,
+          -1,
+          1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "p",
+      "radii": {
+        "i": 1.7320508075688772,
+        "j": 1.0,
+        "o": 1.4142135623730951
+      },
+      "signed_radii": {
+        "a": 1.7320508075688772,
+        "b": -1.4142135623730951,
+        "c": 1.0
+      },
+      "A_gamma": 2.6855046206667805,
+      "H_ijo": 3.8683475024126035,
+      "g_frame_G0": {
+        "re": 0.19021342206547487,
+        "im": 0.19021342206547487,
+        "abs": 0.2690024012303923,
+        "arg": 0.7853981633974483
+      },
+      "g_Delta_sigma": {
+        "re": 0.19021342206547487,
+        "im": 0.19021342206547487,
+        "abs": 0.2690024012303923,
+        "arg": 0.7853981633974483
+      },
+      "g_ordered": {
+        "re": -0.39433756729740643,
+        "im": 0.39433756729740643,
+        "abs": 0.5576775358252053,
+        "arg": 2.356194490192345
+      },
+      "G_cross_flip": {
+        "re": 0.19021342206547487,
+        "im": 0.19021342206547487,
+        "abs": 0.2690024012303923,
+        "arg": 0.7853981633974483
+      },
+      "vandermonde_k_leg": -2.414213562373095,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": 0.7853981633974483,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": -0.19021342206547492,
+        "im": 0.19021342206547492,
+        "abs": 0.2690024012303924,
+        "arg": 2.356194490192345
+      },
+      "U": {
+        "re": 0.0,
+        "im": 1.0000000000000002,
+        "abs": 1.0000000000000002,
+        "arg": 1.5707963267948966
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T3",
+        "k": [
+          -1,
+          -1,
+          -1
+        ],
+        "p": [
+          1,
+          1,
+          0
+        ],
+        "q": [
+          0,
+          0,
+          1
+        ],
+        "sigma_kpq": [
+          -1,
+          1,
+          -1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "p",
+      "radii": {
+        "i": 1.7320508075688772,
+        "j": 1.0,
+        "o": 1.4142135623730951
+      },
+      "signed_radii": {
+        "a": -1.7320508075688772,
+        "b": 1.4142135623730951,
+        "c": -1.0
+      },
+      "A_gamma": 2.6855046206667805,
+      "H_ijo": 3.8683475024126035,
+      "g_frame_G0": {
+        "re": 0.19021342206547487,
+        "im": -0.19021342206547487,
+        "abs": 0.2690024012303923,
+        "arg": -0.7853981633974483
+      },
+      "g_Delta_sigma": {
+        "re": 0.19021342206547487,
+        "im": -0.19021342206547487,
+        "abs": 0.2690024012303923,
+        "arg": -0.7853981633974483
+      },
+      "g_ordered": {
+        "re": -0.39433756729740643,
+        "im": -0.39433756729740643,
+        "abs": 0.5576775358252053,
+        "arg": -2.356194490192345
+      },
+      "G_cross_flip": {
+        "re": 0.19021342206547487,
+        "im": -0.19021342206547487,
+        "abs": 0.2690024012303923,
+        "arg": -0.7853981633974483
+      },
+      "vandermonde_k_leg": 2.414213562373095,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": -0.7853981633974483,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": -0.19021342206547492,
+        "im": -0.19021342206547492,
+        "abs": 0.2690024012303924,
+        "arg": -2.356194490192345
+      },
+      "U": {
+        "re": 0.0,
+        "im": -1.0000000000000002,
+        "abs": 1.0000000000000002,
+        "arg": -1.5707963267948966
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T3",
+        "k": [
+          -1,
+          -1,
+          -1
+        ],
+        "p": [
+          1,
+          1,
+          0
+        ],
+        "q": [
+          0,
+          0,
+          1
+        ],
+        "sigma_kpq": [
+          -1,
+          1,
+          1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "k",
+      "radii": {
+        "i": 1.4142135623730951,
+        "j": 1.0,
+        "o": 1.7320508075688772
+      },
+      "signed_radii": {
+        "a": -1.7320508075688772,
+        "b": 1.4142135623730951,
+        "c": 1.0
+      },
+      "A_gamma": 2.4813804754348494,
+      "H_ijo": 3.2326730120210403,
+      "g_frame_G0": {
+        "re": 0.098461712529338,
+        "im": 0.098461712529338,
+        "abs": 0.1392458892334707,
+        "arg": 0.7853981633974483
+      },
+      "g_Delta_sigma": {
+        "re": 0.098461712529338,
+        "im": 0.098461712529338,
+        "abs": 0.1392458892334707,
+        "arg": 0.7853981633974483
+      },
+      "g_ordered": {
+        "re": 0.10566243270259353,
+        "im": -0.10566243270259353,
+        "abs": 0.1494292453613422,
+        "arg": -0.7853981633974483
+      },
+      "G_cross_flip": {
+        "re": 0.098461712529338,
+        "im": 0.098461712529338,
+        "abs": 0.1392458892334707,
+        "arg": 0.7853981633974483
+      },
+      "vandermonde_k_leg": 0.41421356237309515,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": 0.7853981633974483,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": -0.09846171252933784,
+        "im": 0.09846171252933784,
+        "abs": 0.13924588923347048,
+        "arg": 2.356194490192345
+      },
+      "U": {
+        "re": 0.0,
+        "im": 0.9999999999999984,
+        "abs": 0.9999999999999984,
+        "arg": 1.5707963267948966
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T3",
+        "k": [
+          -1,
+          -1,
+          -1
+        ],
+        "p": [
+          1,
+          1,
+          0
+        ],
+        "q": [
+          0,
+          0,
+          1
+        ],
+        "sigma_kpq": [
+          1,
+          -1,
+          -1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "k",
+      "radii": {
+        "i": 1.4142135623730951,
+        "j": 1.0,
+        "o": 1.7320508075688772
+      },
+      "signed_radii": {
+        "a": 1.7320508075688772,
+        "b": -1.4142135623730951,
+        "c": -1.0
+      },
+      "A_gamma": 2.4813804754348494,
+      "H_ijo": 3.2326730120210403,
+      "g_frame_G0": {
+        "re": 0.098461712529338,
+        "im": -0.098461712529338,
+        "abs": 0.1392458892334707,
+        "arg": -0.7853981633974483
+      },
+      "g_Delta_sigma": {
+        "re": 0.098461712529338,
+        "im": -0.098461712529338,
+        "abs": 0.1392458892334707,
+        "arg": -0.7853981633974483
+      },
+      "g_ordered": {
+        "re": 0.10566243270259353,
+        "im": 0.10566243270259353,
+        "abs": 0.1494292453613422,
+        "arg": 0.7853981633974483
+      },
+      "G_cross_flip": {
+        "re": 0.098461712529338,
+        "im": -0.098461712529338,
+        "abs": 0.1392458892334707,
+        "arg": -0.7853981633974483
+      },
+      "vandermonde_k_leg": -0.41421356237309515,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": -0.7853981633974483,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": -0.09846171252933784,
+        "im": -0.09846171252933784,
+        "abs": 0.13924588923347048,
+        "arg": -2.356194490192345
+      },
+      "U": {
+        "re": 0.0,
+        "im": -0.9999999999999984,
+        "abs": 0.9999999999999984,
+        "arg": -1.5707963267948966
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T4",
+        "k": [
+          -1,
+          -1,
+          -1
+        ],
+        "p": [
+          1,
+          0,
+          1
+        ],
+        "q": [
+          0,
+          1,
+          0
+        ],
+        "sigma_kpq": [
+          1,
+          1,
+          -1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "q",
+      "radii": {
+        "i": 1.7320508075688772,
+        "j": 1.4142135623730951,
+        "o": 1.0
+      },
+      "signed_radii": {
+        "a": 1.7320508075688772,
+        "b": 1.4142135623730951,
+        "c": -1.0
+      },
+      "A_gamma": 3.2978770563625748,
+      "H_ijo": 5.303225372841206,
+      "g_frame_G0": {
+        "re": 0.423176335210009,
+        "im": -0.113389757275484,
+        "abs": 0.4381043799561551,
+        "arg": -0.26179938779914946
+      },
+      "g_Delta_sigma": {
+        "re": 0.423176335210009,
+        "im": -0.113389757275484,
+        "abs": 0.4381043799561551,
+        "arg": -0.26179938779914946
+      },
+      "g_ordered": {
+        "re": -0.0386751345948129,
+        "im": -0.14433756729740643,
+        "abs": 0.14942924536134225,
+        "arg": -1.8325957145940461
+      },
+      "G_cross_flip": {
+        "re": 0.423176335210009,
+        "im": -0.113389757275484,
+        "abs": 0.4381043799561551,
+        "arg": -0.26179938779914946
+      },
+      "vandermonde_k_leg": 2.414213562373095,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": -0.26179938779914946,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": -0.4231763352100091,
+        "im": -0.113389757275484,
+        "abs": 0.43810437995615514,
+        "arg": -2.879793265790644
+      },
+      "U": {
+        "re": -0.8660254037844387,
+        "im": -0.5000000000000001,
+        "abs": 1.0,
+        "arg": -2.6179938779914944
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T4",
+        "k": [
+          -1,
+          -1,
+          -1
+        ],
+        "p": [
+          1,
+          0,
+          1
+        ],
+        "q": [
+          0,
+          1,
+          0
+        ],
+        "sigma_kpq": [
+          -1,
+          -1,
+          1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "q",
+      "radii": {
+        "i": 1.7320508075688772,
+        "j": 1.4142135623730951,
+        "o": 1.0
+      },
+      "signed_radii": {
+        "a": -1.7320508075688772,
+        "b": -1.4142135623730951,
+        "c": 1.0
+      },
+      "A_gamma": 3.2978770563625748,
+      "H_ijo": 5.303225372841206,
+      "g_frame_G0": {
+        "re": 0.423176335210009,
+        "im": 0.113389757275484,
+        "abs": 0.4381043799561551,
+        "arg": 0.26179938779914946
+      },
+      "g_Delta_sigma": {
+        "re": 0.423176335210009,
+        "im": 0.113389757275484,
+        "abs": 0.4381043799561551,
+        "arg": 0.26179938779914946
+      },
+      "g_ordered": {
+        "re": -0.0386751345948129,
+        "im": 0.14433756729740643,
+        "abs": 0.14942924536134225,
+        "arg": 1.8325957145940461
+      },
+      "G_cross_flip": {
+        "re": 0.423176335210009,
+        "im": 0.113389757275484,
+        "abs": 0.4381043799561551,
+        "arg": 0.26179938779914946
+      },
+      "vandermonde_k_leg": -2.414213562373095,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": 0.26179938779914946,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": -0.4231763352100091,
+        "im": 0.113389757275484,
+        "abs": 0.43810437995615514,
+        "arg": 2.879793265790644
+      },
+      "U": {
+        "re": -0.8660254037844387,
+        "im": 0.5000000000000001,
+        "abs": 1.0,
+        "arg": 2.6179938779914944
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T4",
+        "k": [
+          -1,
+          -1,
+          -1
+        ],
+        "p": [
+          1,
+          0,
+          1
+        ],
+        "q": [
+          0,
+          1,
+          0
+        ],
+        "sigma_kpq": [
+          1,
+          -1,
+          1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "p",
+      "radii": {
+        "i": 1.7320508075688772,
+        "j": 1.0,
+        "o": 1.4142135623730951
+      },
+      "signed_radii": {
+        "a": 1.7320508075688772,
+        "b": -1.4142135623730951,
+        "c": 1.0
+      },
+      "A_gamma": 2.6855046206667805,
+      "H_ijo": 3.8683475024126035,
+      "g_frame_G0": {
+        "re": -0.06962294461673534,
+        "im": -0.2598363666822102,
+        "abs": 0.2690024012303924,
+        "arg": -1.8325957145940461
+      },
+      "g_Delta_sigma": {
+        "re": -0.06962294461673534,
+        "im": -0.2598363666822102,
+        "abs": 0.2690024012303924,
+        "arg": -1.8325957145940461
+      },
+      "g_ordered": {
+        "re": 0.5386751345948129,
+        "im": -0.14433756729740643,
+        "abs": 0.5576775358252053,
+        "arg": -0.2617993877991494
+      },
+      "G_cross_flip": {
+        "re": -0.06962294461673534,
+        "im": -0.2598363666822102,
+        "abs": 0.2690024012303924,
+        "arg": -1.8325957145940461
+      },
+      "vandermonde_k_leg": -2.414213562373095,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": -1.8325957145940461,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": 0.06962294461673534,
+        "im": -0.2598363666822102,
+        "abs": 0.2690024012303924,
+        "arg": -1.308996938995747
+      },
+      "U": {
+        "re": 0.8660254037844386,
+        "im": 0.5000000000000002,
+        "abs": 1.0,
+        "arg": 0.523598775598299
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T4",
+        "k": [
+          -1,
+          -1,
+          -1
+        ],
+        "p": [
+          1,
+          0,
+          1
+        ],
+        "q": [
+          0,
+          1,
+          0
+        ],
+        "sigma_kpq": [
+          -1,
+          1,
+          -1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "p",
+      "radii": {
+        "i": 1.7320508075688772,
+        "j": 1.0,
+        "o": 1.4142135623730951
+      },
+      "signed_radii": {
+        "a": -1.7320508075688772,
+        "b": 1.4142135623730951,
+        "c": -1.0
+      },
+      "A_gamma": 2.6855046206667805,
+      "H_ijo": 3.8683475024126035,
+      "g_frame_G0": {
+        "re": -0.06962294461673534,
+        "im": 0.2598363666822102,
+        "abs": 0.2690024012303924,
+        "arg": 1.8325957145940461
+      },
+      "g_Delta_sigma": {
+        "re": -0.06962294461673534,
+        "im": 0.2598363666822102,
+        "abs": 0.2690024012303924,
+        "arg": 1.8325957145940461
+      },
+      "g_ordered": {
+        "re": 0.5386751345948129,
+        "im": 0.14433756729740643,
+        "abs": 0.5576775358252053,
+        "arg": 0.2617993877991494
+      },
+      "G_cross_flip": {
+        "re": -0.06962294461673534,
+        "im": 0.2598363666822102,
+        "abs": 0.2690024012303924,
+        "arg": 1.8325957145940461
+      },
+      "vandermonde_k_leg": 2.414213562373095,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": 1.8325957145940461,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": 0.06962294461673534,
+        "im": 0.2598363666822102,
+        "abs": 0.2690024012303924,
+        "arg": 1.308996938995747
+      },
+      "U": {
+        "re": 0.8660254037844386,
+        "im": -0.5000000000000002,
+        "abs": 1.0,
+        "arg": -0.523598775598299
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T4",
+        "k": [
+          -1,
+          -1,
+          -1
+        ],
+        "p": [
+          1,
+          0,
+          1
+        ],
+        "q": [
+          0,
+          1,
+          0
+        ],
+        "sigma_kpq": [
+          -1,
+          1,
+          1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "k",
+      "radii": {
+        "i": 1.4142135623730951,
+        "j": 1.0,
+        "o": 1.7320508075688772
+      },
+      "signed_radii": {
+        "a": -1.7320508075688772,
+        "b": 1.4142135623730951,
+        "c": 1.0
+      },
+      "A_gamma": 2.4813804754348494,
+      "H_ijo": 3.2326730120210403,
+      "g_frame_G0": {
+        "re": -0.13450120061519616,
+        "im": -0.03603948808585816,
+        "abs": 0.13924588923347056,
+        "arg": -2.8797932657906444
+      },
+      "g_Delta_sigma": {
+        "re": -0.13450120061519616,
+        "im": -0.03603948808585816,
+        "abs": 0.13924588923347056,
+        "arg": -2.8797932657906444
+      },
+      "g_ordered": {
+        "re": -0.0386751345948129,
+        "im": 0.14433756729740643,
+        "abs": 0.14942924536134225,
+        "arg": 1.8325957145940461
+      },
+      "G_cross_flip": {
+        "re": -0.13450120061519616,
+        "im": -0.03603948808585816,
+        "abs": 0.13924588923347056,
+        "arg": -2.8797932657906444
+      },
+      "vandermonde_k_leg": 0.41421356237309515,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": -2.8797932657906444,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": 0.13450120061519621,
+        "im": -0.036039488085858176,
+        "abs": 0.13924588923347064,
+        "arg": -0.2617993877991489
+      },
+      "U": {
+        "re": -0.8660254037844396,
+        "im": 0.49999999999999933,
+        "abs": 1.0000000000000004,
+        "arg": 2.6179938779914953
+      }
+    },
+    {
+      "gamma": {
+        "delta_id": "T4",
+        "k": [
+          -1,
+          -1,
+          -1
+        ],
+        "p": [
+          1,
+          0,
+          1
+        ],
+        "q": [
+          0,
+          1,
+          0
+        ],
+        "sigma_kpq": [
+          1,
+          -1,
+          -1
+        ],
+        "convention": "k+p+q=0"
+      },
+      "odd_leg": "k",
+      "radii": {
+        "i": 1.4142135623730951,
+        "j": 1.0,
+        "o": 1.7320508075688772
+      },
+      "signed_radii": {
+        "a": 1.7320508075688772,
+        "b": -1.4142135623730951,
+        "c": -1.0
+      },
+      "A_gamma": 2.4813804754348494,
+      "H_ijo": 3.2326730120210403,
+      "g_frame_G0": {
+        "re": -0.13450120061519616,
+        "im": 0.03603948808585816,
+        "abs": 0.13924588923347056,
+        "arg": 2.8797932657906444
+      },
+      "g_Delta_sigma": {
+        "re": -0.13450120061519616,
+        "im": 0.03603948808585816,
+        "abs": 0.13924588923347056,
+        "arg": 2.8797932657906444
+      },
+      "g_ordered": {
+        "re": -0.0386751345948129,
+        "im": -0.14433756729740643,
+        "abs": 0.14942924536134225,
+        "arg": -1.8325957145940461
+      },
+      "G_cross_flip": {
+        "re": -0.13450120061519616,
+        "im": 0.03603948808585816,
+        "abs": 0.13924588923347056,
+        "arg": 2.8797932657906444
+      },
+      "vandermonde_k_leg": -0.41421356237309515,
+      "vandermonde_zero": false,
+      "channel_phase_invariant": 2.8797932657906444,
+      "notes": {
+        "Q_abs_is_sum_pm_abs_m_tau_m": true,
+        "Q3_equals_2_o_tau_o_three_mode": true,
+        "conjugation_essential": true,
+        "operational_g_is_energy_fit": true,
+        "U_is_frame_convention_not_always_1": true
+      },
+      "g_energy": {
+        "re": 0.13450120061519621,
+        "im": 0.036039488085858176,
+        "abs": 0.13924588923347064,
+        "arg": 0.2617993877991489
+      },
+      "U": {
+        "re": -0.8660254037844396,
+        "im": -0.49999999999999933,
+        "abs": 1.0000000000000004,
+        "arg": -2.6179938779914953
+      }
+    }
+  ],
+  "DA_NS_2_open": true,
+  "not_a_close": true,
+  "v2_not_run": true
+}

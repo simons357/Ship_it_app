@@ -1,0 +1,1746 @@
+{
+  "identity": "g_ordered = -i s_p |\u03bc| G_cross",
+  "g_W_identity": "g_W = (1/2)(s_p|p|-s_q|q|) G_cross",
+  "rotation_identity": "(p-hat \u00d7 q) \u00b7 h_p = i s_p (q \u00b7 h_p)",
+  "n_certified": 54,
+  "n_heterochiral_sigma": 6,
+  "n_gW_zero_channels": 8,
+  "max_phase_err": 1.723403450016533e-15,
+  "max_axis_spread_of_mu": 3.980852342307493e-15,
+  "max_gW_recon_err": 0.0,
+  "max_rotation_err": 8.881784197001252e-16,
+  "passed": true,
+  "rows": [
+    {
+      "delta": "T1",
+      "p": [
+        1,
+        0,
+        0
+      ],
+      "q": [
+        0,
+        1,
+        0
+      ],
+      "k": [
+        1,
+        1,
+        0
+      ],
+      "sigma_kpq": [
+        1,
+        1,
+        -1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 0.0,
+      "min_aligned_real": 0.29289321881345237,
+      "axis_spread": 1.1102230246251565e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 0.2928932188134525,
+      "b_minus_c": 2.0,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T1",
+      "p": [
+        1,
+        0,
+        0
+      ],
+      "q": [
+        0,
+        1,
+        0
+      ],
+      "k": [
+        1,
+        1,
+        0
+      ],
+      "sigma_kpq": [
+        -1,
+        -1,
+        1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 0.0,
+      "min_aligned_real": 0.29289321881345237,
+      "axis_spread": 1.1102230246251565e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 0.2928932188134525,
+      "b_minus_c": -2.0,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T1",
+      "p": [
+        1,
+        0,
+        0
+      ],
+      "q": [
+        0,
+        1,
+        0
+      ],
+      "k": [
+        1,
+        1,
+        0
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 0.0,
+      "min_aligned_real": 1.7071067811865472,
+      "axis_spread": 2.220446049250313e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 1.7071067811865472,
+      "b_minus_c": -2.0,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T1",
+      "p": [
+        1,
+        0,
+        0
+      ],
+      "q": [
+        0,
+        1,
+        0
+      ],
+      "k": [
+        1,
+        1,
+        0
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        -1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 0.0,
+      "min_aligned_real": 1.7071067811865472,
+      "axis_spread": 2.220446049250313e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 1.7071067811865472,
+      "b_minus_c": 2.0,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T1",
+      "p": [
+        1,
+        0,
+        0
+      ],
+      "q": [
+        0,
+        1,
+        0
+      ],
+      "k": [
+        1,
+        1,
+        0
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 0.0,
+      "min_aligned_real": 0.7071067811865472,
+      "axis_spread": 7.771561172376096e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 0.7071067811865478,
+      "b_minus_c": 0.0,
+      "gW_vanishes": true
+    },
+    {
+      "delta": "T1",
+      "p": [
+        1,
+        0,
+        0
+      ],
+      "q": [
+        0,
+        1,
+        0
+      ],
+      "k": [
+        1,
+        1,
+        0
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        -1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 0.0,
+      "min_aligned_real": 0.7071067811865472,
+      "axis_spread": 7.771561172376096e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 0.7071067811865478,
+      "b_minus_c": 0.0,
+      "gW_vanishes": true
+    },
+    {
+      "delta": "T2",
+      "p": [
+        1,
+        0,
+        0
+      ],
+      "q": [
+        0,
+        0,
+        1
+      ],
+      "k": [
+        1,
+        0,
+        1
+      ],
+      "sigma_kpq": [
+        1,
+        1,
+        -1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 0.0,
+      "min_aligned_real": 0.29289321881345237,
+      "axis_spread": 1.1102230246251565e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 0.2928932188134525,
+      "b_minus_c": 2.0,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T2",
+      "p": [
+        1,
+        0,
+        0
+      ],
+      "q": [
+        0,
+        0,
+        1
+      ],
+      "k": [
+        1,
+        0,
+        1
+      ],
+      "sigma_kpq": [
+        -1,
+        -1,
+        1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 0.0,
+      "min_aligned_real": 0.29289321881345237,
+      "axis_spread": 1.1102230246251565e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 0.2928932188134525,
+      "b_minus_c": -2.0,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T2",
+      "p": [
+        1,
+        0,
+        0
+      ],
+      "q": [
+        0,
+        0,
+        1
+      ],
+      "k": [
+        1,
+        0,
+        1
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 0.0,
+      "min_aligned_real": 1.7071067811865475,
+      "axis_spread": 0.0,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 1.7071067811865472,
+      "b_minus_c": -2.0,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T2",
+      "p": [
+        1,
+        0,
+        0
+      ],
+      "q": [
+        0,
+        0,
+        1
+      ],
+      "k": [
+        1,
+        0,
+        1
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        -1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 0.0,
+      "min_aligned_real": 1.7071067811865475,
+      "axis_spread": 0.0,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 1.7071067811865472,
+      "b_minus_c": 2.0,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T2",
+      "p": [
+        1,
+        0,
+        0
+      ],
+      "q": [
+        0,
+        0,
+        1
+      ],
+      "k": [
+        1,
+        0,
+        1
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 0.0,
+      "min_aligned_real": 0.7071067811865472,
+      "axis_spread": 7.771561172376096e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 0.7071067811865478,
+      "b_minus_c": 0.0,
+      "gW_vanishes": true
+    },
+    {
+      "delta": "T2",
+      "p": [
+        1,
+        0,
+        0
+      ],
+      "q": [
+        0,
+        0,
+        1
+      ],
+      "k": [
+        1,
+        0,
+        1
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        -1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 0.0,
+      "min_aligned_real": 0.7071067811865472,
+      "axis_spread": 7.771561172376096e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 0.7071067811865478,
+      "b_minus_c": 0.0,
+      "gW_vanishes": true
+    },
+    {
+      "delta": "T3",
+      "p": [
+        1,
+        1,
+        0
+      ],
+      "q": [
+        0,
+        0,
+        1
+      ],
+      "k": [
+        1,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        1,
+        1,
+        -1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 8.970743058303249e-17,
+      "min_aligned_real": 0.3410813774021088,
+      "axis_spread": 6.338530584506511e-17,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 1.1102230246251565e-16,
+      "abs_mu": 0.34108137740210887,
+      "b_minus_c": 2.414213562373095,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T3",
+      "p": [
+        1,
+        1,
+        0
+      ],
+      "q": [
+        0,
+        0,
+        1
+      ],
+      "k": [
+        1,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        -1,
+        -1,
+        1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 8.970743058303249e-17,
+      "min_aligned_real": 0.3410813774021088,
+      "axis_spread": 6.338530584506511e-17,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 1.1102230246251565e-16,
+      "abs_mu": 0.34108137740210887,
+      "b_minus_c": -2.414213562373095,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T3",
+      "p": [
+        1,
+        1,
+        0
+      ],
+      "q": [
+        0,
+        0,
+        1
+      ],
+      "k": [
+        1,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 4.80740671595891e-17,
+      "min_aligned_real": 2.073132184970986,
+      "axis_spread": 8.937526488717022e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 1.1102230246251565e-16,
+      "abs_mu": 2.073132184970986,
+      "b_minus_c": -2.414213562373095,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T3",
+      "p": [
+        1,
+        1,
+        0
+      ],
+      "q": [
+        0,
+        0,
+        1
+      ],
+      "k": [
+        1,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        -1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 4.80740671595891e-17,
+      "min_aligned_real": 2.073132184970986,
+      "axis_spread": 8.937526488717022e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 1.1102230246251565e-16,
+      "abs_mu": 2.073132184970986,
+      "b_minus_c": 2.414213562373095,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T3",
+      "p": [
+        1,
+        1,
+        0
+      ],
+      "q": [
+        0,
+        0,
+        1
+      ],
+      "k": [
+        1,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 5.382445834981948e-16,
+      "min_aligned_real": 1.0731321849709854,
+      "axis_spread": 1.4520907547672945e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 1.1102230246251565e-16,
+      "abs_mu": 1.0731321849709863,
+      "b_minus_c": 0.41421356237309515,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T3",
+      "p": [
+        1,
+        1,
+        0
+      ],
+      "q": [
+        0,
+        0,
+        1
+      ],
+      "k": [
+        1,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        -1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 5.382445834981948e-16,
+      "min_aligned_real": 1.0731321849709854,
+      "axis_spread": 1.4520907547672945e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 1.1102230246251565e-16,
+      "abs_mu": 1.0731321849709863,
+      "b_minus_c": -0.41421356237309515,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T4",
+      "p": [
+        1,
+        0,
+        1
+      ],
+      "q": [
+        0,
+        1,
+        0
+      ],
+      "k": [
+        1,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        1,
+        1,
+        -1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 8.970743058303249e-17,
+      "min_aligned_real": 0.3410813774021088,
+      "axis_spread": 6.338530584506511e-17,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 1.1102230246251565e-16,
+      "abs_mu": 0.34108137740210887,
+      "b_minus_c": 2.414213562373095,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T4",
+      "p": [
+        1,
+        0,
+        1
+      ],
+      "q": [
+        0,
+        1,
+        0
+      ],
+      "k": [
+        1,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        -1,
+        -1,
+        1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 8.970743058303249e-17,
+      "min_aligned_real": 0.3410813774021088,
+      "axis_spread": 6.338530584506511e-17,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 1.1102230246251565e-16,
+      "abs_mu": 0.34108137740210887,
+      "b_minus_c": -2.414213562373095,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T4",
+      "p": [
+        1,
+        0,
+        1
+      ],
+      "q": [
+        0,
+        1,
+        0
+      ],
+      "k": [
+        1,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 9.61481343191782e-17,
+      "min_aligned_real": 2.0731321849709863,
+      "axis_spread": 4.867718098677675e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 1.1102230246251565e-16,
+      "abs_mu": 2.0731321849709867,
+      "b_minus_c": -2.414213562373095,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T4",
+      "p": [
+        1,
+        0,
+        1
+      ],
+      "q": [
+        0,
+        1,
+        0
+      ],
+      "k": [
+        1,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        -1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 9.61481343191782e-17,
+      "min_aligned_real": 2.0731321849709863,
+      "axis_spread": 4.867718098677675e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 1.1102230246251565e-16,
+      "abs_mu": 2.0731321849709867,
+      "b_minus_c": 2.414213562373095,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T4",
+      "p": [
+        1,
+        0,
+        1
+      ],
+      "q": [
+        0,
+        1,
+        0
+      ],
+      "k": [
+        1,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 6.728057293727435e-16,
+      "min_aligned_real": 1.0731321849709854,
+      "axis_spread": 1.5153332074021455e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 1.1102230246251565e-16,
+      "abs_mu": 1.0731321849709863,
+      "b_minus_c": 0.41421356237309515,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "T4",
+      "p": [
+        1,
+        0,
+        1
+      ],
+      "q": [
+        0,
+        1,
+        0
+      ],
+      "k": [
+        1,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        -1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 6.728057293727435e-16,
+      "min_aligned_real": 1.0731321849709854,
+      "axis_spread": 1.5153332074021455e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 1.1102230246251565e-16,
+      "abs_mu": 1.0731321849709863,
+      "b_minus_c": -0.41421356237309515,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe1",
+      "p": [
+        2,
+        -1,
+        0
+      ],
+      "q": [
+        0,
+        2,
+        1
+      ],
+      "k": [
+        2,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        1,
+        1,
+        -1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 2.284091541494575e-16,
+      "min_aligned_real": 1.0113231061082004,
+      "axis_spread": 3.0876014433861333e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 2.220446049250313e-16,
+      "abs_mu": 1.0113231061082006,
+      "b_minus_c": 4.47213595499958,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe1",
+      "p": [
+        2,
+        -1,
+        0
+      ],
+      "q": [
+        0,
+        2,
+        1
+      ],
+      "k": [
+        2,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        -1,
+        -1,
+        1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 2.284091541494575e-16,
+      "min_aligned_real": 1.0113231061082004,
+      "axis_spread": 3.0876014433861333e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 2.220446049250313e-16,
+      "abs_mu": 1.0113231061082006,
+      "b_minus_c": -4.47213595499958,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe1",
+      "p": [
+        2,
+        -1,
+        0
+      ],
+      "q": [
+        0,
+        2,
+        1
+      ],
+      "k": [
+        2,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 4.663131665876563e-17,
+      "min_aligned_real": 3.4608128488913783,
+      "axis_spread": 1.783670195806744e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 2.220446049250313e-16,
+      "abs_mu": 3.460812848891379,
+      "b_minus_c": -4.47213595499958,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe1",
+      "p": [
+        2,
+        -1,
+        0
+      ],
+      "q": [
+        0,
+        2,
+        1
+      ],
+      "k": [
+        2,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        -1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 4.663131665876563e-17,
+      "min_aligned_real": 3.4608128488913783,
+      "axis_spread": 1.783670195806744e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 2.220446049250313e-16,
+      "abs_mu": 3.460812848891379,
+      "b_minus_c": 4.47213595499958,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe1",
+      "p": [
+        2,
+        -1,
+        0
+      ],
+      "q": [
+        0,
+        2,
+        1
+      ],
+      "k": [
+        2,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 4.2314848471532446e-16,
+      "min_aligned_real": 1.224744871391589,
+      "axis_spread": 1.2545582540163925e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 2.220446049250313e-16,
+      "abs_mu": 1.2247448713915894,
+      "b_minus_c": 0.0,
+      "gW_vanishes": true
+    },
+    {
+      "delta": "probe1",
+      "p": [
+        2,
+        -1,
+        0
+      ],
+      "q": [
+        0,
+        2,
+        1
+      ],
+      "k": [
+        2,
+        1,
+        1
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        -1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 4.2314848471532446e-16,
+      "min_aligned_real": 1.224744871391589,
+      "axis_spread": 1.2545582540163925e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 2.220446049250313e-16,
+      "abs_mu": 1.2247448713915894,
+      "b_minus_c": 0.0,
+      "gW_vanishes": true
+    },
+    {
+      "delta": "probe2",
+      "p": [
+        3,
+        1,
+        1
+      ],
+      "q": [
+        -1,
+        2,
+        2
+      ],
+      "k": [
+        2,
+        3,
+        3
+      ],
+      "sigma_kpq": [
+        1,
+        1,
+        -1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 8.657548586100693e-16,
+      "min_aligned_real": 0.8131045152659849,
+      "axis_spread": 1.3492359372445141e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 2.220446049250313e-16,
+      "abs_mu": 0.8131045152659849,
+      "b_minus_c": 6.3166247903554,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe2",
+      "p": [
+        3,
+        1,
+        1
+      ],
+      "q": [
+        -1,
+        2,
+        2
+      ],
+      "k": [
+        2,
+        3,
+        3
+      ],
+      "sigma_kpq": [
+        -1,
+        -1,
+        1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 8.657548586100693e-16,
+      "min_aligned_real": 0.8131045152659849,
+      "axis_spread": 1.3492359372445141e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 2.220446049250313e-16,
+      "abs_mu": 0.8131045152659849,
+      "b_minus_c": -6.3166247903554,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe2",
+      "p": [
+        3,
+        1,
+        1
+      ],
+      "q": [
+        -1,
+        2,
+        2
+      ],
+      "k": [
+        2,
+        3,
+        3
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 1.2224673992790544e-16,
+      "min_aligned_real": 5.503520275089413,
+      "axis_spread": 1.0091811176352153e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 2.220446049250313e-16,
+      "abs_mu": 5.503520275089414,
+      "b_minus_c": -6.3166247903554,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe2",
+      "p": [
+        3,
+        1,
+        1
+      ],
+      "q": [
+        -1,
+        2,
+        2
+      ],
+      "k": [
+        2,
+        3,
+        3
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        -1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 1.2224673992790544e-16,
+      "min_aligned_real": 5.503520275089413,
+      "axis_spread": 1.0091811176352153e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 2.220446049250313e-16,
+      "abs_mu": 5.503520275089414,
+      "b_minus_c": 6.3166247903554,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe2",
+      "p": [
+        3,
+        1,
+        1
+      ],
+      "q": [
+        -1,
+        2,
+        2
+      ],
+      "k": [
+        2,
+        3,
+        3
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 9.275594407810817e-16,
+      "min_aligned_real": 2.503520275089415,
+      "axis_spread": 3.980852342307493e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 2.220446049250313e-16,
+      "abs_mu": 2.5035202750894157,
+      "b_minus_c": 0.3166247903553998,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe2",
+      "p": [
+        3,
+        1,
+        1
+      ],
+      "q": [
+        -1,
+        2,
+        2
+      ],
+      "k": [
+        2,
+        3,
+        3
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        -1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 9.275594407810817e-16,
+      "min_aligned_real": 2.503520275089415,
+      "axis_spread": 3.980852342307493e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 2.220446049250313e-16,
+      "abs_mu": 2.5035202750894157,
+      "b_minus_c": -0.3166247903553998,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe3",
+      "p": [
+        1,
+        2,
+        2
+      ],
+      "q": [
+        2,
+        -1,
+        2
+      ],
+      "k": [
+        3,
+        1,
+        4
+      ],
+      "sigma_kpq": [
+        1,
+        1,
+        -1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 5.086893331333205e-16,
+      "min_aligned_real": 0.45049024320360737,
+      "axis_spread": 3.3390985209007895e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 4.440892098500626e-16,
+      "abs_mu": 0.4504902432036075,
+      "b_minus_c": 6.0,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe3",
+      "p": [
+        1,
+        2,
+        2
+      ],
+      "q": [
+        2,
+        -1,
+        2
+      ],
+      "k": [
+        3,
+        1,
+        4
+      ],
+      "sigma_kpq": [
+        -1,
+        -1,
+        1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 5.086893331333205e-16,
+      "min_aligned_real": 0.45049024320360737,
+      "axis_spread": 3.3390985209007895e-16,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 4.440892098500626e-16,
+      "abs_mu": 0.4504902432036075,
+      "b_minus_c": -6.0,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe3",
+      "p": [
+        1,
+        2,
+        2
+      ],
+      "q": [
+        2,
+        -1,
+        2
+      ],
+      "k": [
+        3,
+        1,
+        4
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 2.391304351411838e-16,
+      "min_aligned_real": 5.549509756796392,
+      "axis_spread": 1.776531672962111e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 4.440892098500626e-16,
+      "abs_mu": 5.549509756796393,
+      "b_minus_c": -6.0,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe3",
+      "p": [
+        1,
+        2,
+        2
+      ],
+      "q": [
+        2,
+        -1,
+        2
+      ],
+      "k": [
+        3,
+        1,
+        4
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        -1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 2.391304351411838e-16,
+      "min_aligned_real": 5.549509756796392,
+      "axis_spread": 1.776531672962111e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 4.440892098500626e-16,
+      "abs_mu": 5.549509756796393,
+      "b_minus_c": 6.0,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe3",
+      "p": [
+        1,
+        2,
+        2
+      ],
+      "q": [
+        2,
+        -1,
+        2
+      ],
+      "k": [
+        3,
+        1,
+        4
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 1.1512373609928077e-15,
+      "min_aligned_real": 2.5495097567963914,
+      "axis_spread": 3.705746257781324e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 4.440892098500626e-16,
+      "abs_mu": 2.549509756796392,
+      "b_minus_c": 0.0,
+      "gW_vanishes": true
+    },
+    {
+      "delta": "probe3",
+      "p": [
+        1,
+        2,
+        2
+      ],
+      "q": [
+        2,
+        -1,
+        2
+      ],
+      "k": [
+        3,
+        1,
+        4
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        -1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 1.1512373609928077e-15,
+      "min_aligned_real": 2.5495097567963914,
+      "axis_spread": 3.705746257781324e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 4.440892098500626e-16,
+      "abs_mu": 2.549509756796392,
+      "b_minus_c": 0.0,
+      "gW_vanishes": true
+    },
+    {
+      "delta": "probe4",
+      "p": [
+        4,
+        1,
+        0
+      ],
+      "q": [
+        1,
+        3,
+        2
+      ],
+      "k": [
+        5,
+        4,
+        2
+      ],
+      "sigma_kpq": [
+        1,
+        1,
+        -1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 1.2880662955618661e-15,
+      "min_aligned_real": 0.5782795399461157,
+      "axis_spread": 1.198758786109993e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 0.5782795399461164,
+      "b_minus_c": 7.864763012391602,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe4",
+      "p": [
+        4,
+        1,
+        0
+      ],
+      "q": [
+        1,
+        3,
+        2
+      ],
+      "k": [
+        5,
+        4,
+        2
+      ],
+      "sigma_kpq": [
+        -1,
+        -1,
+        1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 1.2880662955618661e-15,
+      "min_aligned_real": 0.5782795399461157,
+      "axis_spread": 1.198758786109993e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 0.5782795399461164,
+      "b_minus_c": -7.864763012391602,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe4",
+      "p": [
+        4,
+        1,
+        0
+      ],
+      "q": [
+        1,
+        3,
+        2
+      ],
+      "k": [
+        5,
+        4,
+        2
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 1.5531511826433706e-16,
+      "min_aligned_real": 7.286483472445484,
+      "axis_spread": 3.595039542904958e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 7.286483472445486,
+      "b_minus_c": -7.864763012391602,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe4",
+      "p": [
+        4,
+        1,
+        0
+      ],
+      "q": [
+        1,
+        3,
+        2
+      ],
+      "k": [
+        5,
+        4,
+        2
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        -1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 1.5531511826433706e-16,
+      "min_aligned_real": 7.286483472445484,
+      "axis_spread": 3.595039542904958e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 7.286483472445486,
+      "b_minus_c": 7.864763012391602,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe4",
+      "p": [
+        4,
+        1,
+        0
+      ],
+      "q": [
+        1,
+        3,
+        2
+      ],
+      "k": [
+        5,
+        4,
+        2
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 4.7454009710144045e-16,
+      "min_aligned_real": 3.544826085671542,
+      "axis_spread": 3.155051893203937e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 3.5448260856715437,
+      "b_minus_c": 0.38144823884371926,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe4",
+      "p": [
+        4,
+        1,
+        0
+      ],
+      "q": [
+        1,
+        3,
+        2
+      ],
+      "k": [
+        5,
+        4,
+        2
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        -1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 4.7454009710144045e-16,
+      "min_aligned_real": 3.544826085671542,
+      "axis_spread": 3.155051893203937e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 0.0,
+      "abs_mu": 3.5448260856715437,
+      "b_minus_c": -0.38144823884371926,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe5",
+      "p": [
+        2,
+        3,
+        1
+      ],
+      "q": [
+        -1,
+        1,
+        4
+      ],
+      "k": [
+        1,
+        4,
+        5
+      ],
+      "sigma_kpq": [
+        1,
+        1,
+        -1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 1.723403450016533e-15,
+      "min_aligned_real": 0.7517786877426827,
+      "axis_spread": 1.4244900632618702e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 8.881784197001252e-16,
+      "abs_mu": 0.7517786877426832,
+      "b_minus_c": 7.9842980738932265,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe5",
+      "p": [
+        2,
+        3,
+        1
+      ],
+      "q": [
+        -1,
+        1,
+        4
+      ],
+      "k": [
+        1,
+        4,
+        5
+      ],
+      "sigma_kpq": [
+        -1,
+        -1,
+        1
+      ],
+      "odd_leg": "q",
+      "max_phase_err": 1.723403450016533e-15,
+      "min_aligned_real": 0.7517786877426827,
+      "axis_spread": 1.4244900632618702e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 8.881784197001252e-16,
+      "abs_mu": 0.7517786877426832,
+      "b_minus_c": -7.9842980738932265,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe5",
+      "p": [
+        2,
+        3,
+        1
+      ],
+      "q": [
+        -1,
+        1,
+        4
+      ],
+      "k": [
+        1,
+        4,
+        5
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 7.256241507124304e-17,
+      "min_aligned_real": 7.232519386150543,
+      "axis_spread": 2.702936132119885e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 8.881784197001252e-16,
+      "abs_mu": 7.2325193861505435,
+      "b_minus_c": -7.9842980738932265,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe5",
+      "p": [
+        2,
+        3,
+        1
+      ],
+      "q": [
+        -1,
+        1,
+        4
+      ],
+      "k": [
+        1,
+        4,
+        5
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        -1
+      ],
+      "odd_leg": "p",
+      "max_phase_err": 7.256241507124304e-17,
+      "min_aligned_real": 7.232519386150543,
+      "axis_spread": 2.702936132119885e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 8.881784197001252e-16,
+      "abs_mu": 7.2325193861505435,
+      "b_minus_c": 7.9842980738932265,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe5",
+      "p": [
+        2,
+        3,
+        1
+      ],
+      "q": [
+        -1,
+        1,
+        4
+      ],
+      "k": [
+        1,
+        4,
+        5
+      ],
+      "sigma_kpq": [
+        -1,
+        1,
+        1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 4.3605535956154335e-16,
+      "min_aligned_real": 2.989878699031257,
+      "axis_spread": 3.5922085920160124e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 8.881784197001252e-16,
+      "abs_mu": 2.9898786990312587,
+      "b_minus_c": -0.5009833003453434,
+      "gW_vanishes": false
+    },
+    {
+      "delta": "probe5",
+      "p": [
+        2,
+        3,
+        1
+      ],
+      "q": [
+        -1,
+        1,
+        4
+      ],
+      "k": [
+        1,
+        4,
+        5
+      ],
+      "sigma_kpq": [
+        1,
+        -1,
+        -1
+      ],
+      "odd_leg": "k",
+      "max_phase_err": 4.3605535956154335e-16,
+      "min_aligned_real": 2.989878699031257,
+      "axis_spread": 3.5922085920160124e-15,
+      "max_gW_recon_err": 0.0,
+      "max_rot_err": 8.881784197001252e-16,
+      "abs_mu": 2.9898786990312587,
+      "b_minus_c": 0.5009833003453434,
+      "gW_vanishes": false
+    }
+  ],
+  "stamp_ready": true,
+  "v2_not_run": true,
+  "not_a_close": true
+}
