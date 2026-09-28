@@ -20,7 +20,7 @@ def main() -> None:
         "gate": "P2 / MIN-CYCLE",
         "torus_lemma": "standard/proved",
         "finite_p2_compatibility": "exact integer algebra",
-        "one_cycle_loss_law": "directly testable",
+        "one_cycle_loss_law": "complete (exact branch-enumerated + quadratic + quartic)",
         "min_cycle": "canonical-input gated",
         "scale_rate_defect": "OPEN",
         "acceptance": acc,

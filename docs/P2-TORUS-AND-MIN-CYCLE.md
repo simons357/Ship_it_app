@@ -124,42 +124,190 @@ is the unique primitive generator.
 
 ---
 
-## 3. One-cycle loss law
+## 3. One-cycle loss law (local law, essentially complete)
 
-If the phase errors obey \(\sum_i c_i\varepsilon_i=\delta\)
-and the local objective loss is \(\tfrac12\sum_i w_i\varepsilon_i^2\),
-the constrained minimizer is
+Maximize
+
+\[
+\rho(\varepsilon)
+=
+\frac1W\sum_{i=1}^m w_i\cos\varepsilon_i,
+\qquad
+W=\sum_i w_i,\quad w_i>0,
+\]
+
+subject to the single primitive cycle constraint
+
+\[
+c^T\varepsilon=\delta,
+\qquad
+\delta=\operatorname{wrap}_{(-\pi,\pi]}(c^Tb).
+\]
+
+Channels with \(c_i=0\) align exactly, so every substantive
+sum is over \(\operatorname{supp}c\). Write
+
+\[
+S=\sum_i\frac{c_i^2}{w_i},
+\qquad
+Q=\sum_i\frac{c_i^4}{w_i^3}.
+\]
+
+### Exact stationarity
+
+A multiplier \(\lambda\) gives
+
+\[
+\mathcal L
+=
+\sum_i w_i\cos\varepsilon_i
++\lambda(c^T\varepsilon-\delta),
+\]
+
+hence
+
+\[
+\boxed{w_i\sin\varepsilon_i=\lambda c_i.}
+\]
+
+Necessarily
+
+\[
+\lvert\lambda\rvert
+\le
+\min_{c_i\neq 0}\frac{w_i}{\lvert c_i\rvert}.
+\]
+
+Each equation has branches
 
 \[
 \varepsilon_i
 =
-\frac{\delta\,c_i/w_i}
-{\sum_j c_j^2/w_j}.
+n_i\pi+(-1)^{n_i}
+\arcsin\!\left(\frac{\lambda c_i}{w_i}\right).
 \]
 
-With the TREE objective normalized to \(1\),
+The exact solver **enumerates** admissible short branch
+vectors \(n_i\in\{-1,0,1\}\) (here \(n\) and \(n+2\) differ
+by \(2\pi\) and are the same torus point), imposes
+\(c^T\varepsilon=\delta\), and compares \(\rho\). It does not
+accept the first root. Ties keep the alignment branch.
+Code: `exact_one_cycle_optimum`.
+
+On the alignment-connected branch \(n\equiv 0\),
+
+\[
+\varepsilon_i=\arcsin(\lambda c_i/w_i),
+\qquad
+\delta
+=
+S\lambda+\frac Q6\lambda^3+O(\lambda^5).
+\]
+
+Series inversion:
 
 \[
 \boxed{
-1-\text{objective}
-\;\sim\;
-\frac{\delta^2}
-{2\sum_j c_j^2/w_j}.
+\lambda
+=
+\frac{\delta}{S}
+-\frac{Q}{6S^4}\delta^3
++O(\delta^5).
 }
 \]
 
-The exact nonlinear stationarity of the cosine objective,
+### Quadratic and quartic
 
 \[
-\boxed{w_i\sin\varepsilon_i=\lambda c_i,}
+1-\rho
+=
+\frac1W\sum_i w_i(1-\cos\varepsilon_i).
 \]
 
-is a one-dimensional solve. It is a prediction → measurement
-test for Heavy. It is **not** the big polarization optimizer.
+\[
+\boxed{
+1-\rho_{\max}
+=
+\frac{\delta^2}{2WS}
++O(\delta^4).
+}
+\]
 
-Small-\(\delta\) agreement is required by
-`tests.test_one_cycle_loss`. Finite-cycle agreement is not a
-decay exponent.
+One order farther, still with no numerical work:
+
+\[
+W(1-\rho)
+=
+\frac S2\lambda^2+\frac Q8\lambda^4+O(\lambda^6),
+\]
+
+\[
+\boxed{
+1-\rho_{\max}
+=
+\frac{\delta^2}{2WS}
+-
+\frac{Q}{24WS^4}\delta^4
++O(\delta^6).
+}
+\]
+
+The quartic term is negative: near perfect alignment the
+purely quadratic prediction slightly overestimates the true
+loss. Equivalently
+
+\[
+\boxed{
+\rho_{\max}
+=
+1-\frac{\delta^2}{2WS}
++\frac{Q\,\delta^4}{24WS^4}
++O(\delta^6).
+}
+\]
+
+### Two controls
+
+\[
+c_i=0
+\quad\Rightarrow\quad
+\boxed{\varepsilon_i=0}
+\]
+
+at the maximizing solution (solver / incidence sanity check).
+
+For small \(\lvert\delta\rvert\),
+
+\[
+\boxed{
+\varepsilon_i
+=
+\frac{c_i}{w_i}\frac{\delta}{S}
++O(\delta^3).
+}
+\]
+
+Channel-by-channel: larger \(\lvert c_i\rvert/w_i\) absorbs
+more of the unavoidable mismatch. Not merely a prediction
+for the final \(\rho\).
+
+### What Heavy tests
+
+On every genuine one-cycle instance
+\(r_{\mathrm{cyc}}=m-\operatorname{rank}_{\mathbb Q}M=1\):
+
+1. extract the primitive integer \(c\), compute \(\delta\);
+2. predict \(\varepsilon_i^{(2)}=c_i\delta/(w_i S)\) and
+   \(1-\rho^{(2)}=\delta^2/(2WS)\);
+3. compare to the exact branch-enumerated optimum;
+4. if \(\lvert\delta\rvert\le\pi/2\), also compare
+   \(1-\rho^{(4)}=\delta^2/(2WS)-Q\delta^4/(24WS^4)\);
+5. if \(\lvert\delta\rvert>\pi/2\), report the exact optimum
+   and stamp the expansions
+   **OUTSIDE PREREGISTERED SMALL-HOLONOMY REGIME**.
+
+This is a finite-cycle local law. It is **not** a decay
+exponent. Scale-rate stays **OPEN**.
 
 ---
 
@@ -213,7 +361,9 @@ Canonical input: an integer matrix \(M\).
 | Finite P2 compatibility | exact integer algebra |
 | Algebraic TREE→LOOP control \(r_{\mathrm{cyc}}:0\to 1\) | **accepted** |
 | Unique primitive \(c\) | **accepted** |
-| One-cycle loss law (small \(\delta\)) | **accepted** as a test |
+| One-cycle loss law (exact + quadratic + quartic) | **accepted** as a local test |
+| Branch-enumerated stationarity | **accepted** |
+| Small-holonomy regime \(\lvert\delta\rvert\le\pi/2\) | preregistered |
 | NA-2B assembly / incompatibility | **accepted** as a unit test |
 | Scale-rate defect | **OPEN** |
 | Derived exponent \(0.15\) | **not accepted** |

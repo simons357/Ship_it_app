@@ -16,10 +16,14 @@ are not an acceptance record.
 
 from __future__ import annotations
 
-from typing import List, Sequence
+from typing import List
 
 from ns_attacks.na2b_assembly import na2b_unit_report
-from ns_attacks.one_cycle_loss import prediction_measurement_test, quadratic_minimizer
+from ns_attacks.one_cycle_loss import (
+    heavy_one_cycle_test,
+    prediction_measurement_test,
+    quadratic_minimizer,
+)
 from ns_attacks.torus_p2 import (
     cycle_rank,
     integer_rank,
@@ -60,16 +64,28 @@ def algebraic_tree_to_loop() -> dict:
     delta = 0.1
     loss = quadratic_minimizer(c, w, delta)
     pred = prediction_measurement_test(c, w, delta)
+    heavy = heavy_one_cycle_test(c, w, delta)
     na2b = na2b_unit_report(ctrl["M_loop"], [0.3, -0.2, 0.1])
     return {
         "control": ctrl,
         "one_cycle_loss": loss,
         "prediction_measurement": pred,
+        "heavy": {
+            "stamp": heavy["stamp"],
+            "pass_small_delta": heavy.get("pass_small_delta"),
+            "pass_channels": heavy.get("pass_channels"),
+            "pass_off_cycle": heavy.get("pass_off_cycle"),
+            "one_minus_rho2": heavy["one_minus_rho2"],
+            "one_minus_rho4": heavy["one_minus_rho4"],
+            "measurement": heavy.get("measurement"),
+            "principal_branch": heavy["exact"].get("principal_branch"),
+        },
         "na2b": na2b,
         "accepted": (
             ctrl["r_cyc_before"] == 0
             and ctrl["r_cyc_after"] == 1
             and pred["pass_small_delta"]
+            and heavy.get("pass_small_delta") is True
             and na2b["pass"]
         ),
     }
@@ -101,6 +117,10 @@ def min_cycle_acceptance() -> dict:
         "parallelogram_control": par["acceptance"],
         "na2b_relabel": "exact cancellation/assembly unit test, not optimizer evidence",
         "one_cycle_loss_law": alg["prediction_measurement"]["boxed"],
+        "one_cycle_quartic": "δ²/(2WS) − Q δ⁴/(24 W S⁴) + O(δ⁶)",
+        "heavy_stamp": alg["heavy"]["stamp"],
+        "heavy_channels": alg["heavy"]["pass_channels"],
+        "exact_solver": "branch-enumerated; does not accept the first root",
         "torus_lemma": "standard / proved (Pontryagin duality; Smith form)",
         "finite_p2_compatibility": "exact integer algebra",
         "scale_rate_defect": "OPEN",
@@ -117,6 +137,7 @@ def min_cycle_acceptance() -> dict:
         "algebraic_control_accepted": alg["accepted"],
         "na2b_pass": alg["na2b"]["pass"],
         "prediction_measurement_pass": alg["prediction_measurement"]["pass_small_delta"],
+        "heavy_pass": alg["heavy"].get("pass_small_delta"),
         "ns_solved": False,
         "ker_tree": left_kernel_primitive(CANONICAL_TREE),
         "accepted_on_this_gate": bool(

@@ -34,6 +34,8 @@ class MinCycleGateTests(unittest.TestCase):
         self.assertTrue(acc["algebraic_control_accepted"])
         self.assertTrue(acc["prediction_measurement_pass"])
         self.assertTrue(acc["na2b_pass"])
+        self.assertTrue(acc["heavy_pass"])
+        self.assertIn("branch-enumerated", acc["exact_solver"])
 
     def test_tree_shorthand_is_cycle_rank(self):
         self.assertTrue(is_tree(CANONICAL_TREE))
