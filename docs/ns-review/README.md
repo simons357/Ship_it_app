@@ -2,6 +2,10 @@
 
 Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS packaging.
 
+## Unaugmented 3-D (open)
+
+- [`DA-NS-SPRINT-01-PHASE-CHARGE.md`](../DA-NS-SPRINT-01-PHASE-CHARGE.md) — phase network, 2D3C lock, frozen charge. Finite Galerkin algebra. **DA-NS-2 open. NS not solved.**
+
 ## Φ-renorm (KEEP; conditional)
 
 - [`PHI-RENORM-WHAT-IS-KEPT.md`](./PHI-RENORM-WHAT-IS-KEPT.md) — field-first KEEP / PARK card; separate from Lemma★.
