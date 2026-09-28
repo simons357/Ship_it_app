@@ -1,0 +1,42 @@
+Canonical helical channel γ=(Δ,σ)
+=================================
+
+STAMPED 28 Sep 2026. Not a close. NS not solved. v2 not run.
+
+gamma = (Delta, sigma)
+sigma = (s_k, s_p, s_q) in {±1}^3, heterochiral.
+
+Six signed channels per geometric triangle:
+  three odd-helicity legs × two overall signs
+  {++-, --+, +-+, -+-, -++, +--}
+
+NOT three cyclic output rewrites times two.
+
+On the frozen ordered representative p+q=k:
+
+  g_{Delta,sigma}  = G_cross
+                   = (h_p^{s_p} × h_q^{s_q}) · conj(h_k^{s_k})
+
+  g_ordered        = (q · h_p^{s_p}) (h_q^{s_q} · conj(h_k^{s_k}))
+                   = -i s_p |μ| G_cross,   |μ| > 0
+
+  g_W              = (1/2)(s_p |p| - s_q |q|) G_cross
+                   = k-leg Vandermonde fold, NOT the channel
+
+arg(g_ordered) - arg(G_cross) = - s_p π/2
+g_W / g_ordered = i (b-c) / (2 s_p |μ|)  ∈ iℝ  (when g_W ≠ 0)
+Shape enters |μ| only. Axis does not move the ratio.
+Uniform π/2 drops from every cycle holonomy (c·1 = 0).
+
+Per channel:
+  o = unique odd-helicity radius; i,j the other two
+  A_gamma = (i+o)(j+o)/(2o)
+  chi_gamma = arg G_cross
+  Q_{a,gamma} = 2 o τ_o
+  S_Gamma = sum_gamma A_gamma Q_{a,gamma}
+
+Canonical 24-channel payload:
+  locked parallelogram, 4 geometric Δ × 6 σ = 24
+  generated from scratch; old 24×12 not reused.
+
+Do not run v2 from this lock.
