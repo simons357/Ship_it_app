@@ -66,6 +66,7 @@ with exact \(z_4=p_{100}\) line; rank-8 trap dead; 83.34 open).
 28 Sep Gate 83D:
 [`ns-recovery/GATE-83D-HINGE.md`](ns-recovery/GATE-83D-HINGE.md)
 (polarization rank drop \(\Rightarrow\) branch, by affinity;
+Heavy column identity PROVED/REPORTED; √113 spec filed;
 no new witness; 71E lattice escape still open).
 QStack / Q6 / E8 stay instruments, not claims.
 Unrestricted Lemma★ stays killed on \(v_n\).

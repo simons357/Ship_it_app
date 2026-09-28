@@ -1,0 +1,395 @@
+{
+  "ns_solved": false,
+  "da_ns_2_open": true,
+  "gate": "83D-spec",
+  "purpose": "send the \u221a113 cube to Heavy; not a new witness hunt",
+  "heavy_83D": {
+    "status": "PROVED_REPORTED",
+    "recomputed_here": false,
+    "statement": "Reduced modulo the three radius conditions plus G, the hinge-mode column is exactly zero in all 12 equations. Each hinge equation factors as -r3^3 L^2 (R111-Ri). Saturation removes only r3=0 and six activity factors. No new geometry.",
+    "fifth_radius": "redundant: three radius differences plus 2G"
+  },
+  "fifth_radius_identity": {
+    "G": "b1*d1 + b1 + b2*d2 + d1",
+    "identity": "R111-R000 = (R100-R000)+(R010-R000)+(R001-R000)+2G",
+    "residual": "0",
+    "holds_identically": true
+  },
+  "seated_node_order": [
+    {
+      "index": 0,
+      "ijk": [
+        0,
+        0,
+        0
+      ],
+      "name": "p000"
+    },
+    {
+      "index": 1,
+      "ijk": [
+        0,
+        1,
+        0
+      ],
+      "name": "p010"
+    },
+    {
+      "index": 2,
+      "ijk": [
+        0,
+        0,
+        1
+      ],
+      "name": "p001"
+    },
+    {
+      "index": 3,
+      "ijk": [
+        0,
+        1,
+        1
+      ],
+      "name": "p011"
+    },
+    {
+      "index": 4,
+      "ijk": [
+        1,
+        0,
+        0
+      ],
+      "name": "p100"
+    },
+    {
+      "index": 5,
+      "ijk": [
+        1,
+        1,
+        0
+      ],
+      "name": "p110"
+    },
+    {
+      "index": 6,
+      "ijk": [
+        1,
+        0,
+        1
+      ],
+      "name": "p101"
+    },
+    {
+      "index": 7,
+      "ijk": [
+        1,
+        1,
+        1
+      ],
+      "name": "p111"
+    }
+  ],
+  "binary_i_major_node_order": [
+    {
+      "index": 0,
+      "ijk": [
+        0,
+        0,
+        0
+      ],
+      "name": "p000"
+    },
+    {
+      "index": 1,
+      "ijk": [
+        1,
+        0,
+        0
+      ],
+      "name": "p100"
+    },
+    {
+      "index": 2,
+      "ijk": [
+        0,
+        1,
+        0
+      ],
+      "name": "p010"
+    },
+    {
+      "index": 3,
+      "ijk": [
+        1,
+        1,
+        0
+      ],
+      "name": "p110"
+    },
+    {
+      "index": 4,
+      "ijk": [
+        0,
+        0,
+        1
+      ],
+      "name": "p001"
+    },
+    {
+      "index": 5,
+      "ijk": [
+        1,
+        0,
+        1
+      ],
+      "name": "p101"
+    },
+    {
+      "index": 6,
+      "ijk": [
+        0,
+        1,
+        1
+      ],
+      "name": "p011"
+    },
+    {
+      "index": 7,
+      "ijk": [
+        1,
+        1,
+        1
+      ],
+      "name": "p111"
+    }
+  ],
+  "space_pairs_seated": [
+    [
+      0,
+      7
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      2,
+      5
+    ]
+  ],
+  "face_classes_seated": [
+    [
+      [
+        0,
+        5
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      [
+        6,
+        3
+      ]
+    ],
+    [
+      [
+        0,
+        6
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        5,
+        6
+      ]
+    ]
+  ],
+  "I_act_classes_seated": [
+    [
+      [
+        0,
+        7
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    [
+      [
+        0,
+        7
+      ],
+      [
+        1,
+        6
+      ]
+    ],
+    [
+      [
+        0,
+        7
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        0,
+        5
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    [
+      [
+        2,
+        7
+      ],
+      [
+        6,
+        3
+      ]
+    ],
+    [
+      [
+        0,
+        6
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    [
+      [
+        1,
+        7
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    [
+      [
+        4,
+        7
+      ],
+      [
+        5,
+        6
+      ]
+    ]
+  ],
+  "sqrt113_cube": {
+    "field": "Q(sqrt(113))",
+    "gauge": {
+      "a": [
+        "1",
+        "0",
+        "0"
+      ],
+      "b3": "0",
+      "d3": "lam"
+    },
+    "r": [
+      "-1/2",
+      "6/5",
+      "6/5"
+    ],
+    "b": [
+      "1/2",
+      "1/10"
+    ],
+    "d": [
+      "-1/4 - 3*sqrt(113)/452",
+      "-5/4 + 45*sqrt(113)/452"
+    ],
+    "lam": "-12/5",
+    "delta": "-6/25",
+    "companion_root_u": "(13 + 15*sqrt(113))/82",
+    "ten_scaled_circle": "X^2 + Y^2 = 169, A=(-5,12), C=(0,13)",
+    "radii_squared": {
+      "R000": "169/100",
+      "R100": "169/100",
+      "R010": "169/100",
+      "R001": "169/100",
+      "R111": "169/100"
+    },
+    "G": "0",
+    "five_radii_equal": true,
+    "G_zero": true,
+    "polarization_chart": "U(p,z)=(p\u00d7e1)+z(p\u00d7(p\u00d7e1)); fallback e2 if p\u00d7e1=0",
+    "W": "W(p,q;Up,Uq)=(q\u00b7Up)Uq+(p\u00b7Uq)Up  (raw, no Leray)",
+    "z_pinned_z4_eq_0_float": [
+      0.21923899233928215,
+      0.8625902592484509,
+      0.2988522288763246,
+      0.4520727758956118,
+      0.0,
+      0.3002609304859156,
+      0.23756176088855308,
+      0.30050381395823705
+    ],
+    "z_order_for_pinned": "seated 000,010,001,011,100,110,101,111",
+    "free_node_on_I_act": "seated z4 = p100",
+    "I_act_vanishes_at_pinned": true,
+    "G12_space_C12_C13_C23_do_not_vanish_at_pinned": true
+  },
+  "what_heavy_should_run": "Instantiate G1..G12 on this lattice. Reduce the z-column of the hinge mode modulo (R100-R000, R010-R000, R001-R000, G). Report which seated index is the hinge (p100 vs p111). Do not search for another cube.",
+  "all_checks_ok": true
+}

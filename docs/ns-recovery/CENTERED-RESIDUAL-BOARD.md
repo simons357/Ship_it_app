@@ -390,3 +390,15 @@ lattice kernels. No new witness is required. (83.34) stays
 **OPEN**.
 [`GATE-83D-HINGE.md`](GATE-83D-HINGE.md).
 Does not alter the freeze. **NS not solved.**
+
+---
+
+## 28 September 2026 — Heavy 83D gated; √113 spec filed
+
+Heavy’s hinge-column identity is **PROVED / REPORTED**
+(internal derivation, no factors removed). Fifth radius is
+redundant by a generic identity proved on this tree. The
+√113 cube spec is filed for Heavy to instantiate. Not a new
+witness. (83.34) stays **OPEN**.
+[`GATE-83D-HINGE.md`](GATE-83D-HINGE.md).
+Does not alter the freeze. **NS not solved.**

@@ -190,4 +190,74 @@ Do not spend a search on a second cocircular column. The next
 object that can change the board is a lattice direction, not
 another polarization.
 
+---
+
+## 28 September 2026 — Heavy’s exact derivation (DA gated)
+
+Heavy proved 83D as an **internal derivation**, exact, no
+factors removed. Reduced modulo the three radius conditions
+and \(\mathcal G\), the hinge-mode column is identically zero
+in all 12 equations. Each equation that sees the hinge mode
+factors as
+
+\[
+-r_3^3\,L^2\,(R_{111}-R_i),
+\]
+
+with \(L\) a pair-activity factor. Saturation removes only
+\(r_3=0\) and six of those activity factors. There is no new
+geometry.
+
+The fifth-radius condition is redundant. On this tree that
+is a generic identity, not a specimen check:
+
+\[
+R_{111}-R_{000}
+=
+(R_{100}-R_{000})
++(R_{010}-R_{000})
++(R_{001}-R_{000})
++2\mathcal G,
+\]
+
+\[
+\mathcal G
+=
+a_h\cdot b_h+a_h\cdot d_h+b_h\cdot d_h
+=
+b_1+d_1+b_1 d_1+b_2 d_2
+\]
+
+in the seated \(\lambda\)-chart \(a_h=(1,0)\). So three
+radius differences plus \(\mathcal G=0\) already force the
+fifth equal radius.
+
+This tree did **not** re-run Heavy’s 12-equation saturation.
+It gates that derivation as PROVED / REPORTED, proves the
+redundancy identity, and files the √113 specimen Heavy did
+not have.
+
+Spec: [`../../results/da_gate_83d_sqrt113_spec.json`](../../results/da_gate_83d_sqrt113_spec.json).
+Desk card:
+[`../../packets/DA-GATE-83D-SQRT113-SPEC-2026-09-28.md`](../../packets/DA-GATE-83D-SQRT113-SPEC-2026-09-28.md).
+
+On the seated \(I_{\mathrm{act}}\) Jacobian the vanishing
+column of that specimen is \(z_4=p_{100}\), not seated
+\(z_7=p_{111}\). Heavy should match the hinge index against
+the seated / binary dictionary in the spec. Instantiating
+the specimen is not a new witness hunt.
+
+```
+GATE 83D + HEAVY
+──────────────────────────────────────────
+hinge                    (83.40)–(83.42) ✓
+Heavy column identity    PROVED / REPORTED
+factorization            -r3³ L² (R111-Ri)
+saturation               r3=0 and activity only
+fifth radius             REDUNDANT (proved here)
+√113 spec                FILED
+new witness              NOT REQUIRED
+(83.34)                  OPEN
+```
+
 **NS not solved.**
