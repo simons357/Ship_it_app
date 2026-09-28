@@ -378,3 +378,27 @@ polarization line. Global rank-8 trap is dead. This is a
 detached cube, not a 71E lattice branch. (83.34) stays **OPEN**.
 [`GATE-83B2B-CURVATURE.md`](GATE-83B2B-CURVATURE.md).
 Does not alter the freeze. **NS not solved.**
+
+---
+
+## 28 September 2026 — Gate 83D hinge (does not alter this freeze)
+
+Raw \(F\) is affine in each \(z_i\) on every cube. A rank drop
+in a coordinate polarization is therefore an exact line
+(83.40)–(83.42). That is the hinge. It does not cover mixed or
+lattice kernels. No new witness is required. (83.34) stays
+**OPEN**.
+[`GATE-83D-HINGE.md`](GATE-83D-HINGE.md).
+Does not alter the freeze. **NS not solved.**
+
+---
+
+## 28 September 2026 — Heavy 83D gated; √113 spec filed
+
+Heavy’s hinge-column identity is **PROVED / REPORTED**
+(internal derivation, no factors removed). Fifth radius is
+redundant by a generic identity proved on this tree. The
+√113 cube spec is filed for Heavy to instantiate. Not a new
+witness. (83.34) stays **OPEN**.
+[`GATE-83D-HINGE.md`](GATE-83D-HINGE.md).
+Does not alter the freeze. **NS not solved.**
