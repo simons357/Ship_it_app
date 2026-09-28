@@ -59,6 +59,10 @@ certificate shape locked; computation on the reduced slice).
 27 Sep Gate 83 minor:
 [`ns-recovery/GATE-83-MINOR-FACTOR.md`](ns-recovery/GATE-83-MINOR-FACTOR.md)
 (\(M\not\equiv 0\) on specimen 1; factorization did not land).
+28 Sep Gate 83B-2b:
+[`ns-recovery/GATE-83B2B-CURVATURE.md`](ns-recovery/GATE-83B2B-CURVATURE.md)
+(cocircular \(13/10\) cube, \(\Delta=-6/25\); \(D_zF\) rank 7
+with exact \(z_4=p_{100}\) line; rank-8 trap dead; 83.34 open).
 QStack / Q6 / E8 stay instruments, not claims.
 Unrestricted Lemma★ stays killed on \(v_n\).
 Exact-shell \(K\le 16/9\) stays CLAIMED, not stamped.
