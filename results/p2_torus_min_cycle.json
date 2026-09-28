@@ -1,0 +1,233 @@
+{
+  "gate": "P2 / MIN-CYCLE",
+  "torus_lemma": "standard/proved",
+  "finite_p2_compatibility": "exact integer algebra",
+  "one_cycle_loss_law": "complete (exact branch-enumerated + quadratic + quartic)",
+  "min_cycle": "canonical-input gated",
+  "scale_rate_defect": "OPEN",
+  "acceptance": {
+    "gate": "MIN-CYCLE",
+    "canonical_input": "integer matrix M, not a picture of triangles",
+    "tree_definition": "r_cyc = m - rank M; TREE iff r_cyc = 0",
+    "one_cycle_definition": "r_cyc : 0 \u2192 1 with rank_Z ker M^T = 1",
+    "positive_control": "TREE\u2192LOOP control accepted: r_cyc : 0 \u2192 1, rank_Z ker M^T = 1, unique primitive compatibility vector c.",
+    "parallelogram_control": "TREE\u2192LOOP control accepted: r_cyc : 0 \u2192 1, rank_Z ker M^T = 1, unique primitive compatibility vector c.",
+    "na2b_relabel": "exact cancellation/assembly unit test, not optimizer evidence",
+    "one_cycle_loss_law": "1 \u2212 \u03c1_max = \u03b4\u00b2 / (2 W S) + O(\u03b4\u2074)",
+    "one_cycle_quartic": "\u03b4\u00b2/(2WS) \u2212 Q \u03b4\u2074/(24 W S\u2074) + O(\u03b4\u2076)",
+    "heavy_stamp": "SMALL-HOLONOMY REGIME",
+    "heavy_channels": true,
+    "exact_solver": "branch-enumerated; does not accept the first root",
+    "torus_lemma": "standard / proved (Pontryagin duality; Smith form)",
+    "finite_p2_compatibility": "exact integer algebra",
+    "scale_rate_defect": "OPEN",
+    "threshold_015": "0.15 is a threshold/convention, not a derived exponent, until provenance establishes otherwise",
+    "finite_size_does_not_imply_scale_decay": true,
+    "rho_less_than_one_is_not_a_rate": true,
+    "tree_ok": true,
+    "parallelogram_loop_rank": 3,
+    "parallelogram_r_cyc": 1,
+    "parallelogram_c": [
+      1,
+      -1,
+      1,
+      -1
+    ],
+    "algebraic_control_accepted": true,
+    "na2b_pass": true,
+    "prediction_measurement_pass": true,
+    "heavy_pass": true,
+    "ns_solved": false,
+    "ker_tree": [],
+    "accepted_on_this_gate": true,
+    "not_accepted": [
+      "scale-decaying defect",
+      "derived exponent 0.15",
+      "optimizer \u03c1 < 1 as a rate",
+      "Gate-C novelty for the torus lemma",
+      "TREE/LOOP inferred from a drawing"
+    ]
+  },
+  "snf_tree": {
+    "U": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "S": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "V": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "invariants": [
+      1,
+      1,
+      1
+    ],
+    "reconstructs": true,
+    "novelty": false,
+    "cite": "Smith normal form over Z; Pontryagin dual of T^n."
+  },
+  "snf_parallelogram": {
+    "U": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        -1,
+        1,
+        -1,
+        1
+      ]
+    ],
+    "S": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "V": [
+      [
+        1,
+        -1,
+        -1,
+        1,
+        1,
+        -1
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        -1,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        -1,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "invariants": [
+      1,
+      1,
+      1
+    ],
+    "reconstructs": true,
+    "novelty": false,
+    "cite": "Smith normal form over Z; Pontryagin dual of T^n."
+  },
+  "ns_solved": false
+}
