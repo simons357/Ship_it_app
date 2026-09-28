@@ -1,20 +1,20 @@
 # Canonical channel: γ = (Δ, σ)
 
 28 September 2026.
-**Coefficient identity, then the channel stamp.
-Not a close. NS is not solved. v2 not run.**
+**Sprint 01 source of truth. Coefficient identities certified.
+Not a close. NS is not solved. v2 not run. DA-NS-2 open.**
 
-Exact full-flow source of the three-transfer identity:
-the 7 September helical write-up (phase-lock and full
-helical flow). Definitions Lock heterochiral split
-remains: homochiral is a different object.
+Exact full-flow source: [`DA-NS-SPRINT-01-PHASE-LOCK-AND-FULL-HELICAL-FLOW-2026-09-07.md`](DA-NS-SPRINT-01-PHASE-LOCK-AND-FULL-HELICAL-FLOW-2026-09-07.md).
+Definitions Lock heterochiral split remains: homochiral is a different object.
 
 Code:
 
 - `scripts/ns_attacks/helical.py` — helical frame, Waleffe \(g_W\)
-- `scripts/ns_attacks/channel_coefficient.py` — identity and 24-channel catalog
+- `scripts/ns_attacks/channel_coefficient.py` — \(p+q=k\) identity onto `g_ordered`
+- `scripts/ns_attacks/full_flow.py` — official \(k+p+q=0\) algebra, conjugation, charge
 - `scripts/run_channel_coefficient_identity.py` — runner
 - `results/channel_coefficient_identity.json`
+- `results/full_flow_identity.json`
 - `results/canonical_24_channel_payload.json`
 
 ---
@@ -28,9 +28,9 @@ The object
 \]
 
 with three cyclic “output channels” is **not** the
-physical helical channel. The older exact derivation
-writes every energy transfer of a real geometric triad
-\(\Delta=(k,p,q)\) at once:
+physical helical channel. Sprint 01 writes every energy
+transfer of a real geometric triad \(\Delta=(k,p,q)\)
+with \(k+p+q=0\) at once:
 
 \[
 \boxed{
@@ -58,12 +58,14 @@ independently phased ones.
 
 ## 2. Frozen channel rule
 
-For a geometric triangle \(\Delta\), choose its
-deterministic ordered representative **once**,
-\(p+q=k\). Then
-
 \[
 \boxed{\gamma=(\Delta,\sigma)}
+\]
+
+\[
+\boxed{
+k+p+q=0
+}
 \]
 
 \[
@@ -87,24 +89,40 @@ namely
 Those are six **signed helical channels**, not
 three cyclic output rewrites times two.
 
+Frames are consistent under \(k\mapsto -k\):
+
+\[
+h_s(-k):=\overline{h_s(k)}
+\]
+
+on a lexicographic hemisphere. Independent frames on
+\(\pm k\) break mixed-amplitude \(\Theta\) reconstruction.
+
 On each \(\gamma\):
 
 * \(o\) is the unique odd-helicity radius, \(i,j\) the other two,
 * \(\displaystyle A_\gamma=\frac{(i+o)(j+o)}{2o}\),
-* one channel coefficient \(g_{\Delta,\sigma}:=G_{\mathrm{cross}}\),
-* one phase invariant \(\chi_\gamma=\arg G_{\mathrm{cross}}\),
-* \(Q_{a,\gamma}=2o\,\tau_o\),
+* one channel coefficient \(g_{\Delta,\sigma}\),
+* \(\displaystyle
+  \Theta_{\Delta,\sigma}
+  =\operatorname{Re}\bigl(g_{\Delta,\sigma}\,
+  \overline{a_k^{s_k}a_p^{s_p}a_q^{s_q}}\bigr)\),
+* \(Q_3=2o\,\tau_o\) is the **three-mode reduction**,
+* \(\displaystyle
+  Q_{\mathrm{abs}}
+  =\sum_{m\in\Delta,\,\pm}\lvert m\rvert\,\tau_m
+  =2Q_3\)
+  is the six-mode charge of Sprint 01 §7,
 * \(\displaystyle S_\Gamma=\sum_\gamma A_\gamma Q_{a,\gamma}\).
 
 The old “one geometric representative plus all six
 heterochiral sign triples” architecture matches this
 ontology. Its old \(24\times 12\) numerics are **not**
-rehabilitated. This page only freezes the channel
-object and the coefficient map.
+rehabilitated.
 
 ---
 
-## 3. Three kernels on the frozen representative
+## 3. Three kernels, two representatives
 
 Helical frame (already locked in `helical.py`):
 
@@ -114,15 +132,27 @@ h_k^s=\frac{e_1+is\,e_2}{\sqrt{2}},\qquad
 i\,k\times h_k^s=s\lvert k\rvert\,h_k^s.
 \]
 
+On the official \(k+p+q=0\) representative,
+
+\[
+G_0
+=
+\bigl(h_p^{s_p}\times h_q^{s_q}\bigr)\cdot h_k^{s_k}.
+\]
+
+On the flipped \(p+q=k'\) representative \(k'=-k\),
+\(s_{k'}=s_k\),
+
 \[
 \begin{aligned}
-G_{\mathrm{cross}}
+G_{\mathrm{cross}}(p,q,k')
 &=
-\bigl(h_p^{s_p}\times h_q^{s_q}\bigr)\cdot\overline{h_k^{s_k}},\\
+\bigl(h_p^{s_p}\times h_q^{s_q}\bigr)\cdot\overline{h_{k'}^{s_k}}
+=G_0,\\
 g_{\mathrm{ordered}}
 &=
 (q\cdot h_p^{s_p})
-\bigl(h_q^{s_q}\cdot\overline{h_k^{s_k}}\bigr),\\
+\bigl(h_q^{s_q}\cdot\overline{h_{k'}^{s_k}}\bigr),\\
 g_W
 &=
 \tfrac12(s_p\lvert p\rvert-s_q\lvert q\rvert)\,
@@ -135,21 +165,13 @@ G_{\mathrm{cross}}.
 it already contains the Vandermonde factor \(b-c\).
 When \(\lvert p\rvert=\lvert q\rvert\) and the odd
 leg is \(k\), \(b-c=0\) so \(g_W=0\) while the
-channel is still live (\(G_{\mathrm{cross}}\neq 0\),
-transfers on the \(p\) and \(q\) legs). That is why
-\(g_W\) cannot be \(g_{\Delta,\sigma}\).
-
-The full-flow coefficient is the common scalar in
-\(\Theta_{\Delta,\sigma}\). On the frozen
-representative that scalar is \(G_{\mathrm{cross}}\).
-
-\[
-\boxed{g_{\Delta,\sigma}=G_{\mathrm{cross}}}
-\]
+channel is still live (\(G_0\neq 0\), transfers on the
+\(p\) and \(q\) legs). That is why \(g_W\) cannot be
+\(g_{\Delta,\sigma}\).
 
 ---
 
-## 4. The last identity
+## 4. The last identity, still exact
 
 **EXACT** (90° rotation in the \(p\)-plane):
 
@@ -161,20 +183,17 @@ i\,s_p\,(q\cdot h_p^{s_p})
 }
 \]
 
-because \(\hat p\times h_p^{s_p}=-i s_p h_p^{s_p}\).
-Hence \(q\cdot h_p^{s_p}\) carries a universal factor
-\(-i s_p\) relative to the rotated real pairing.
-
 **EXACT, certified** on the parallelogram plus five
 scalene probes, six heterochiral \(\sigma\), three
-reference axes (54 samples × 3 axes):
+reference axes (54 samples × 3 axes) on \(p+q=k\),
+and independently on the \(k+p+q=0\) flip:
 
 \[
 \boxed{
 g_{\mathrm{ordered}}
 =
 -i\,s_p\,\lvert\mu\rvert\,
-G_{\mathrm{cross}}
+G_0
 }
 \]
 
@@ -189,7 +208,7 @@ Consequently
 \boxed{
 \arg g_{\mathrm{ordered}}
 -
-\arg G_{\mathrm{cross}}
+\arg G_0
 =
 -\,s_p\,\frac{\pi}{2}
 }
@@ -205,69 +224,111 @@ and, whenever \(g_W\neq 0\),
 \]
 
 The imaginary sign is \(\mathrm{sign}((b-c)/s_p)\), a label
-times Vandermonde sign, not a triangle phase. The earlier
-“always \(+i\)” reading was a sample bias (it holds when
-\((b-c)/s_p>0\), and fails when the odd-\(k\) legs have
-\(\lvert p\rvert<\lvert q\rvert\)).
-
-The map from the full-flow coefficient onto
-`g_ordered(p,q,k,s_p,s_q,s_k)` is therefore a
-**known** element of \(i\mathbb{R}\), labelled by
-the frozen \(p\)-helicity, not a triangle-dependent
-geometric phase.
+times Vandermonde sign, not a triangle phase.
 
 ---
 
-## 5. What this does to \(b_\gamma\)
+## 5. Operational \(g\) versus the frame kernel \(G_0\)
 
-Loop-gauge targets use \(\chi_e=\arg g_e\).
-Incidence \(B\) has rows \(e_p+e_q-e_k\), so
-\(B\mathbf{1}_{\mathrm{modes}}=\mathbf{1}_{\mathrm{edges}}\).
-For every cycle \(c\in\ker(B^T)\),
+The scalar that actually enters \(\Theta=\operatorname{Re}(g\,\overline{aaa})\)
+is the energy-fitted \(g\). Two samples (\(aaa=1\) and
+\(aaa=-i\)) determine \(\operatorname{Re}g\) and
+\(\operatorname{Im}g\).
 
-\[
-\boxed{c^T\mathbf{1}=0}.
-\]
-
-A **uniform** \(\pi/2\) shift of every channel
-argument drops out of every holonomy \(\Omega_c=c^T b\).
-
-A **swap** \(\arg g_{\mathrm{ordered}}\leftrightarrow
-\arg G_{\mathrm{cross}}\) without the label correction
-shifts
+Certified on the seed plus the four parallelogram triads:
 
 \[
-\Delta\Omega_c
-=
--\frac\pi2\sum_e c_e s_{p_e}.
+\lvert g_{\mathrm{energy}}\rvert=\lvert G_0\rvert.
 \]
 
-That is a known helicity-label convention, not a new
-shape defect. On this catalog a common \(\sigma\)-slot
-around the parallelogram has \(s_{p_e}\) constant, so
-\(\sum c_e s_{p_e}=s_p\sum c_e=0\) and \(\Omega_c\)
-does not move. Mixed-\(\sigma\) loops must apply the
-correction explicitly.
+The unimodular ratio
 
-Nothing here injects an unexpected geometric phase
-into \(b_\gamma\), provided one kernel is used
-consistently (this page: \(G_{\mathrm{cross}}\)) or
-the \(-s_p\pi/2\) translation is kept when reading
-`g_ordered`.
+\[
+U=\frac{g_{\mathrm{energy}}}{G_0}
+\]
+
+is a **frame/triangle convention**, not identically \(+1\).
+On the default axis \((0,0,1)\) with consistent frames:
+
+| \(\Delta\) | \(U\) |
+|---|---|
+| T1 | \(+1\) (\(\arg 0\)) |
+| T2 | \(-1\) (\(\arg\pi\)) |
+| T3 | \(\pm i\) (\(\arg\pm\pi/2\)) |
+| T4 and Sprint 01 seed | \(\arg\in\{\pm\pi/6,\;\pm 5\pi/6\}\) |
+
+T1/T2 odd-\(k\) channels are k-leg Vandermonde zeros:
+energy-fit of the \(k\)-leg is skipped; \(\Theta\) is
+read from the live \(p\) and \(q\) legs.
+
+**Do not treat \(U=1\) as universal.** Loop-gauge
+\(b_\gamma\) must use the energy-fit \(g\), or apply
+\(U\) to \(G_0\) explicitly. A uniform \(\pi/2\) still
+drops from every cycle holonomy because
+\(c\in\ker(B^T)\Rightarrow c^T\mathbf{1}=0\). A
+triangle-dependent \(U\) is a known convention, not a
+new geometric defect, provided one kernel is used
+consistently.
+
+Dropping the conjugation in \(\Theta\) assigns the
+wrong phase to mixed-amplitude channels. The residual
+without conjugation is \(O(1)\) on the mixed test
+sample; with conjugation it is \(\sim 10^{-16}\).
 
 ---
 
-## 6. Canonical 24-channel payload
+## 6. Centered drift and heterochiral charge
+
+On a real six-mode channel,
+
+\[
+\boxed{
+\mathfrak T_{c,\Delta,\sigma}
+=2C_{\Delta,\sigma}\Theta_{\Delta,\sigma}
+}
+\]
+
+\[
+C_{\Delta,\sigma}
+=-(a-b)(b-c)(c-a)
+\bigl(a^2+b^2+c^2+ab+bc+ca-\Lambda\bigr).
+\]
+
+Heterochiral reduction (Sprint 01 §7):
+
+\[
+\boxed{
+\mathfrak T_{c,\Delta}^{\mathrm{het}}
+=R_\Lambda(i,j;o)\,Q_{\mathrm{abs},\Delta}
+}
+\]
+
+\[
+R_\Lambda(i,j;o)
+=\frac{(i+o)(j+o)}{2o}\,(H_{ij\lvert o}-\Lambda),
+\qquad
+H_{ij\lvert o}=i^2+j^2+o^2+ij-o(i+j).
+\]
+
+Reality gives \(\tau_{-m}=\tau_m\), so
+\(Q_{\mathrm{abs}}=2Q_3\). These identities are certified
+on 30 heterochiral samples (seed + parallelogram × 6)
+to \(\sim 10^{-16}\). They certify the finite algebra;
+they do not prove DA-NS-2.
+
+---
+
+## 7. Canonical 24-channel payload
 
 Geometric \(\Delta\): the locked LOOP-GAUGE
-parallelogram, four ordered representatives
+parallelogram, rewritten as \(k+p+q=0\):
 
 \[
 \begin{aligned}
-T_1&: (1,0,0)+(0,1,0)=(1,1,0),\\
-T_2&: (1,0,0)+(0,0,1)=(1,0,1),\\
-T_3&: (1,1,0)+(0,0,1)=(1,1,1),\\
-T_4&: (1,0,1)+(0,1,0)=(1,1,1).
+T_1&: (-1,-1,0)+(1,0,0)+(0,1,0)=0,\\
+T_2&: (-1,0,-1)+(1,0,0)+(0,0,1)=0,\\
+T_3&: (-1,-1,-1)+(1,1,0)+(0,0,1)=0,\\
+T_4&: (-1,-1,-1)+(1,0,1)+(0,1,0)=0.
 \end{aligned}
 \]
 
@@ -277,10 +338,9 @@ T_4&: (1,0,1)+(0,1,0)=(1,1,1).
 
 Generated from scratch in
 `results/canonical_24_channel_payload.json`.
-Each row stores \(A_\gamma\), \(G_{\mathrm{cross}}\),
-`g_ordered`, \(g_W\), \(\lvert\mu\rvert\), the
-phase invariant \(\arg G_{\mathrm{cross}}\), and the
-odd-leg identification.
+Each row stores \(A_\gamma\), \(G_0\), `g_ordered`,
+the energy-fit \(g\) and \(U\) when the k-leg
+Vandermonde is live, and the odd-leg identification.
 
 The old \(24\times 12\) table is not this object and
 is not reused.
@@ -294,12 +354,15 @@ v2 is not run.
 | Claim | Status |
 |---|---|
 | Channel ontology \(\gamma=(\Delta,\sigma)\) | **STAMPED** |
+| Official representative \(k+p+q=0\) | **STAMPED** |
 | Six heterochiral \(\sigma\), not 3×2 cyclic outputs | **STAMPED** |
-| \(g_{\Delta,\sigma}=G_{\mathrm{cross}}\) | **STAMPED** |
-| \(g_{\mathrm{ordered}}=-i s_p\lvert\mu\rvert G_{\mathrm{cross}}\) | **CERTIFIED** |
+| \(\Theta=\operatorname{Re}(g\,\overline{aaa})\), conjugation essential | **CERTIFIED** |
+| \(\mathfrak T_c=2C\Theta\), \(\mathfrak T_c^{\mathrm{het}}=R_\Lambda Q_{\mathrm{abs}}\) | **CERTIFIED** |
+| \(Q_{\mathrm{abs}}=\sum_{\pm}\lvert m\rvert\tau_m=2Q_3\) | **STAMPED** |
+| \(g_{\mathrm{ordered}}=-i s_p\lvert\mu\rvert G_0\) | **CERTIFIED** |
+| \(\lvert g_{\mathrm{energy}}\rvert=\lvert G_0\rvert\); \(U\) not identically \(+1\) | **CERTIFIED** |
 | \(g_W\) is the k-leg fold, not the channel | **STAMPED** |
-| Phase offset does not inject unexpected holonomy | **STAMPED** |
-| Canonical 24-channel payload | **GENERATED** |
-| v2 / primitive test / \(T_c\) bound | **NOT RUN** |
+| Canonical 24-channel payload (\(k+p+q=0\)) | **GENERATED** |
+| DA-NS-2 / v2 / primitive test | **OPEN / NOT RUN** |
 
 NS is not solved.

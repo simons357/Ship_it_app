@@ -31,6 +31,11 @@ arg(G_cross) without the −s_p π/2 correction would shift
 new geometric defect.
 
 Not a close. NS is not solved. Do not run v2 from this page.
+
+The official Sprint 01 representative is k+p+q=0; see
+scripts/ns_attacks/full_flow.py. This module freezes the
+p+q=k coefficient map onto g_ordered. Q_3 = 2 o τ_o is the
+three-mode reduction; Q_abs = ∑_{m ∈ Δ, ±} |m| τ_m = 2 Q_3.
 """
 
 from __future__ import annotations
@@ -299,7 +304,9 @@ def channel_record(
         "notes": {
             "g_gamma_is_G_cross": True,
             "g_W_is_k_leg_fold": True,
-            "Q_a_gamma_is_2_o_tau_o": True,
+            "Q3_equals_2_o_tau_o_three_mode": True,
+            "Q_abs_is_sum_pm_abs_m_tau_m": True,
+            "official_convention": "k+p+q=0 in full_flow.py",
         },
     }
 
