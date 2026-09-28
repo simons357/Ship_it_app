@@ -1,0 +1,176 @@
+{
+  "ns_solved": false,
+  "da_ns_2_open": true,
+  "unrestricted_star_restored": false,
+  "gate": "83B-2b",
+  "node_order": "000,010,001,011,100,110,101,111",
+  "free_node": "z4 = p100",
+  "binary_i_major_name": "z1 = p100 (reflected locus)",
+  "p111_kernel_on_this_lattice": false,
+  "lattice": {
+    "all_five_radius_squared": "169/100",
+    "radii_squared": {
+      "000": "169/100",
+      "100": "169/100",
+      "010": "169/100",
+      "001": "169/100",
+      "111": "169/100"
+    },
+    "cocircular": true,
+    "b": [
+      "1/2",
+      "1/10"
+    ],
+    "d": [
+      "-1/4 - 3*sqrt(113)/452",
+      "-5/4 + 45*sqrt(113)/452"
+    ],
+    "r": [
+      "-1/2",
+      "6/5",
+      "6/5"
+    ],
+    "lam": "-12/5",
+    "delta": "-6/25",
+    "delta_nonzero": true
+  },
+  "affinity": {
+    "max_degree_in_zi": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "second_pure_zi_vanishes": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "D2F_e_zi_e_zi_identically_zero": true
+  },
+  "witness": {
+    "z_pinned_z4_eq_0": [
+      0.21923899233928215,
+      0.8625902592484509,
+      0.2988522288763246,
+      0.4520727758956118,
+      0.0,
+      0.3002609304859156,
+      0.23756176088855308,
+      0.30050381395823705
+    ],
+    "max_abs_raw": 1.5194030940200228e-14,
+    "activity": {
+      "n_pairs": 16,
+      "dead_pairs": 0,
+      "min_pair_norm": 0.45078559553661685,
+      "live": true
+    },
+    "horizontal_lengths": {
+      "000": 1.3,
+      "100": 1.3,
+      "010": 1.3,
+      "001": 1.3,
+      "111": 1.3000000000000003
+    },
+    "cocircular_numeric": true,
+    "delta_numeric": -0.24,
+    "singular_values_9x8": [
+      216.10535439585217,
+      94.90949601576229,
+      50.546215320240414,
+      44.260975017191804,
+      10.776686850359928,
+      3.257624255896408,
+      0.5587545031933923,
+      6.556892937047272e-09
+    ],
+    "rank_9x8": 7,
+    "z4_column_norm": 6.011670877123739e-07,
+    "z7_column_norm": 58.604003557324845,
+    "z4_column_vanishes": true,
+    "z7_column_vanishes": false,
+    "left_kernel": [
+      4.4317368351869887e-07,
+      0.008442985640687831,
+      0.9999643573614384,
+      -1.1001895705866879e-08,
+      2.4949920706794236e-09,
+      1.0273839427668834e-09,
+      -2.7338707014939376e-16,
+      4.648417100279806e-12,
+      8.042035399779288e-09
+    ],
+    "d2F_vv": [
+      -5.125479989168782e-08,
+      0.0,
+      0.0,
+      -1.4988010832439648e-07,
+      0.0,
+      -1.577439398762375e-07,
+      0.0,
+      0.0,
+      -4.5778096766342593e-07
+    ],
+    "ell_dot_d2": -2.4909367484036177e-14,
+    "obstruction_vanishes": true,
+    "line_in_z4": [
+      {
+        "s": -3.0,
+        "max_abs_raw": 2.1830595464346684e-13,
+        "live": true,
+        "min_pair_norm": 0.45078559553661685
+      },
+      {
+        "s": -1.0,
+        "max_abs_raw": 4.950656848572169e-14,
+        "live": true,
+        "min_pair_norm": 0.45078559553661685
+      },
+      {
+        "s": 0.0,
+        "max_abs_raw": 1.5194030940200228e-14,
+        "live": true,
+        "min_pair_norm": 0.45078559553661685
+      },
+      {
+        "s": 1.0,
+        "max_abs_raw": 9.107469877065142e-14,
+        "live": true,
+        "min_pair_norm": 0.45078559553661685
+      },
+      {
+        "s": 3.0,
+        "max_abs_raw": 2.3958289885342734e-13,
+        "live": true,
+        "min_pair_norm": 0.45078559553661685
+      }
+    ],
+    "line_is_exact_coherent": true
+  },
+  "boxed_obstruction": "\\ell^T D^2F[v,v] = 0",
+  "boxed_branch": "F(x_0+s e_{z_4})=0",
+  "global_rank8_trap": "FALSIFIED",
+  "volumetric_coherent_escape": "ESTABLISHED as a polarization line on a detached \u0394\u22600 cube; not a lattice branch through 71E",
+  "question_83_34": "OPEN",
+  "meaning": "Raw F is affine in each z_i, so the second-order test vanishes identically. On the locked 13/10 cube the z4 column vanishes, all 16 pairs stay live along the line, and rank(Dz F)=7. That integrates the extra kernel. It does not trap or free the 71E thickening.",
+  "locked_gates_unaltered": {
+    "sbp": true,
+    "phi_vs_d": true,
+    "low_tail": true,
+    "sign": true,
+    "s_pq": true,
+    "local_star": true,
+    "gate_71e": true
+  },
+  "all_checks_ok": true
+}

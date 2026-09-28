@@ -364,3 +364,17 @@ Exact \(8\times 8\) pivot on specimen 1 is nonzero; \(\mathrm{rank}\,J_{\mathcal
 Factorization over \(\mathbb Q[t,r_1,\ldots,d_2]\) did not land.
 [`GATE-83-MINOR-FACTOR.md`](GATE-83-MINOR-FACTOR.md).
 Does not alter the freeze. **NS not solved.**
+
+---
+
+## 28 September 2026 — Gate 83B-2b curvature (does not alter this freeze)
+
+Raw \(F\) is affine in each \(z_i\), so
+\(\ell^T D^2F[e_{z_i},e_{z_i}]=0\) is structural.
+On the exact \(13/10\) cocircular cube \(\Delta=-6/25\neq 0\)
+the extra kernel is \(e_{z_4}=e_{p_{100}}\), rank \(D_zF=7\),
+all 16 pairs live, and \(F(x_0+s e_{z_4})=0\) is an exact
+polarization line. Global rank-8 trap is dead. This is a
+detached cube, not a 71E lattice branch. (83.34) stays **OPEN**.
+[`GATE-83B2B-CURVATURE.md`](GATE-83B2B-CURVATURE.md).
+Does not alter the freeze. **NS not solved.**
