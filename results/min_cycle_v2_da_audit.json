@@ -1,0 +1,147 @@
+{
+  "armed": false,
+  "builder_artifacts_in_this_repo": false,
+  "builder_binary_stamped": false,
+  "canonical_Mb_gamma_labels_used": false,
+  "coeff_max_caveat": "coeff_max bounds coordinates in the chosen saturated basis, not ||c||_\u221e. A reported minimum from that enumeration is not automatically a global minimum over integer cycles. Use entry-bounded enumeration if exhaustive minimum-support certification depends on it.",
+  "da_conclusion": "DA-AUDITED (independent reproduction) \u2192 STILL DISARMED \u2192 NEXT: \u03b3=(\u0394,\u03c3) channel identity",
+  "generated_at_utc": "2026-09-28T17:54:52Z",
+  "hashes_sha256": {
+    "bundle": "6382b5edb28430c6017e1849c030abc04a5401a9d06da3b4016af358afc9d696",
+    "files": {
+      "scripts/min_cycle_verifier_v2/__init__.py": "9be149440d24a6c4948e182c85f54ebc53ee0c74e4fa412fc27a8e1ee72e9ff8",
+      "scripts/min_cycle_verifier_v2/enumerate.py": "b23df23daf3ec7c41a9d2e6075fea1a2046e48ed1f8a565c7660e9834f1ad4c8",
+      "scripts/min_cycle_verifier_v2/exceptions.py": "772ebb40221df2bbe9fe186c1bb5fbec112072490c2b248b2cc9767579d31ab2",
+      "scripts/min_cycle_verifier_v2/hnf.py": "cba3f6f6f75b2483bdb30121a871272702fca75ab1b253f5f396fbe713be6b3b",
+      "scripts/min_cycle_verifier_v2/index.py": "3305131e886a9a5bb6f48cecd57850175f1d824e55d86ea267f5fe128399a72b",
+      "scripts/min_cycle_verifier_v2/kernel.py": "9d4c3383edd9764811e93c75e1a843185d0e35e056e8c864c85317f7df38d59b",
+      "scripts/min_cycle_verifier_v2/rational_sublattice.py": "81154975dde42753b1e100b126eaa5269b16d4e16ad9519dbc2441caa09ca50c",
+      "scripts/min_cycle_verifier_v2/status.py": "5c7ec06018373cbd83adaa58e29f7987f595cdf98793e4c93fbef881562dd897",
+      "scripts/min_cycle_verifier_v2/validate.py": "0af479d1298860227a2aee7ac88d14bf4daf37dc90b29a00a39ddddcb0570fa1"
+    }
+  },
+  "independent_211_regression": {
+    "H": [
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "H_equals_MU": true,
+    "M": [
+      [
+        2,
+        1,
+        1
+      ]
+    ],
+    "U": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        -2,
+        -1
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "builder_reported_basis": [
+      [
+        0,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        -1
+      ]
+    ],
+    "constraint_column_211T": true,
+    "det_U": -1,
+    "every_op_unimodular": true,
+    "index_old_gcd_minors": 2,
+    "index_saturated_gcd_minors": 1,
+    "n_ops": 3,
+    "old_q_cleared_basis": [
+      [
+        1,
+        -2,
+        0
+      ],
+      [
+        1,
+        0,
+        -2
+      ]
+    ],
+    "ops": [
+      "swap columns 0 and 1",
+      "column 1 += -2 * column 0",
+      "column 2 += -1 * column 0"
+    ],
+    "primitive_cycle": [
+      0,
+      1,
+      -1
+    ],
+    "primitive_in_builder_basis": true,
+    "primitive_in_old_lattice": false,
+    "primitive_in_saturated": true,
+    "primitive_saturated_coeffs": [
+      1,
+      0
+    ],
+    "relative_index_old_in_saturated": 2,
+    "repair": "search is over a saturated integer kernel, not a finite-index lattice from a rational nullspace",
+    "running_det_sign": -1,
+    "same_lattice_as_builder": true,
+    "saturated_basis": [
+      [
+        0,
+        1,
+        -1
+      ],
+      [
+        1,
+        -2,
+        0
+      ]
+    ]
+  },
+  "independent_malformed_refusal": {
+    "exception": "MalformedInputError",
+    "message": "M[0][2]: expected a Python int, got 'float'=1.0",
+    "refused": true,
+    "sample": "[[2, 1, 1.0]]"
+  },
+  "note": "This is DA's independent reproduction of the v2 repair. SPEC-MIN-CYCLE-VERIFIER-V2-2026-09-28.txt was cited but is not present in this repository; the builder's code and hashes were not deposited here. DA does not stamp an unseen binary. P2 remains disarmed.",
+  "p2_data_used": false,
+  "research_chain": "DA audit v2 \u2192 \u03b3=(\u0394,\u03c3) channel identity \u2192 canonical M,b,labels \u2192 Jonathan GO \u2192 first real MIN-CYCLE run",
+  "status": {
+    "armed": false,
+    "coeff_max_caveat": "coeff_max bounds coordinates in the chosen saturated basis, not ||c||_\u221e. A reported minimum from that enumeration is not automatically a global minimum over integer cycles. Use entry-bounded enumeration if exhaustive minimum-support certification depends on it.",
+    "da_conclusion": "DA-AUDITED (independent reproduction) \u2192 STILL DISARMED \u2192 NEXT: \u03b3=(\u0394,\u03c3) channel identity",
+    "first_real_min_cycle_run_permitted": false,
+    "p2_armed": false,
+    "research_chain": "DA audit v2 \u2192 \u03b3=(\u0394,\u03c3) channel identity \u2192 canonical M,b,labels \u2192 Jonathan GO \u2192 first real MIN-CYCLE run",
+    "scope": "A live MIN-CYCLE run, a P2 evaluation, and any canonical (M, b, \u03b3) labels are out of scope for this package.",
+    "status_frozen": "MIN-CYCLE v2: BUILT \u2192 SELF-TESTED \u2192 DISARMED \u2192 AWAITING DA REVIEW"
+  },
+  "status_frozen": "MIN-CYCLE v2: BUILT \u2192 SELF-TESTED \u2192 DISARMED \u2192 AWAITING DA REVIEW",
+  "unittest": {
+    "errors": 0,
+    "failures": 0,
+    "passed": true,
+    "skipped": 0,
+    "testsRun": 66
+  }
+}
