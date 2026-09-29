@@ -1,0 +1,403 @@
+{
+  "note": "B42",
+  "date": "2026-09-29",
+  "title": "Exact first-order capacity coefficient on the T2 starvation ray",
+  "limit": "lim_{t\u21930} (1\u2212\u0393(t))/t = m_J(C)/C_K",
+  "exact_coefficient_if_identities_and_yA": "D_A/C_K",
+  "D_A": "[C_14+C_15+C_18+C_19+3(C_16+C_17)]/2",
+  "independent_analysis": {
+    "first_order_limit_synthetic": {
+      "m_J": 0.4999999999999999,
+      "C_K": 3.0,
+      "C_2": 2.0,
+      "target": 0.16666666666666663,
+      "samples": [
+        {
+          "t": 0.01,
+          "deficit": 0.0016432739405444641,
+          "deficit_over_t": 0.1643273940544464,
+          "abs_err_to_target": 0.0023392726122202223
+        },
+        {
+          "t": 0.001,
+          "deficit": 0.00016643080822021812,
+          "deficit_over_t": 0.1664308082202181,
+          "abs_err_to_target": 0.0002358584464485225
+        },
+        {
+          "t": 0.0001,
+          "deficit": 1.6664399913846587e-05,
+          "deficit_over_t": 0.16664399913846586,
+          "abs_err_to_target": 2.2667528200764897e-05
+        },
+        {
+          "t": 1e-05,
+          "deficit": 1.666655555629629e-06,
+          "deficit_over_t": 0.16666555556296286,
+          "abs_err_to_target": 1.111103703765881e-06
+        }
+      ],
+      "max_abs_err_smallest_t": 1.111103703765881e-06,
+      "ok": true
+    },
+    "four_cycle_two_row_bound": {
+      "formula": "C15+C16-sqrt(C15^2+C16^2+C15 C16)",
+      "relative_phase": "pi/3",
+      "checks": [
+        {
+          "C15": 1.0,
+          "C16": 1.0,
+          "exact": 0.2679491924311228,
+          "numeric": 0.26794920192815375,
+          "abs_err": 9.497030939442652e-09,
+          "positive": true
+        },
+        {
+          "C15": 2.0,
+          "C16": 1.0,
+          "exact": 0.3542486889354093,
+          "numeric": 0.35424871877624087,
+          "abs_err": 2.984083158352746e-08,
+          "positive": true
+        },
+        {
+          "C15": 5.0,
+          "C16": 3.0,
+          "exact": 1.0,
+          "numeric": 1.0000000491442318,
+          "abs_err": 4.9144231795139603e-08,
+          "positive": true
+        },
+        {
+          "C15": 3.141592653589793,
+          "C16": 2.718281828459045,
+          "exact": 0.7806624641573254,
+          "numeric": 0.7806624642092552,
+          "abs_err": 5.1929793798422e-11,
+          "positive": true
+        }
+      ],
+      "ok": true
+    },
+    "cosine_and_D_A": {
+      "pi12_errors": [
+        20,
+        -4,
+        16,
+        8,
+        4,
+        4
+      ],
+      "cosines": [
+        0.5,
+        0.5,
+        -0.5,
+        -0.5,
+        0.5,
+        0.5
+      ],
+      "deficits": [
+        0.5,
+        0.5,
+        1.5,
+        1.5,
+        0.5,
+        0.5
+      ],
+      "cosines_match": true,
+      "deficits_match": true,
+      "D_A": 87.5,
+      "D_A_from_deficits": 87.5,
+      "D_A_agrees": true,
+      "two_row_lower": 4.416788144087096,
+      "exact_strictly_above_two_row": true,
+      "ok": true
+    },
+    "identity_implication_on_synthetic_M": {
+      "identities_on_synthetic_M": true,
+      "Z_K_nonempty_by_construction": true,
+      "residues_match_identity": true,
+      "F_J_at_certificate": 5.000000000000002,
+      "D_A": 5.0,
+      "F_J_equals_D_A": "True",
+      "ok": true
+    },
+    "ok": true
+  },
+  "json_row_identities": {
+    "claimed": {
+      "14": {
+        "1": -1,
+        "3": 1,
+        "12": 1
+      },
+      "15": {
+        "0": 1,
+        "1": -1,
+        "2": -1,
+        "3": 1,
+        "5": -1,
+        "7": 1,
+        "10": 1
+      },
+      "16": {
+        "0": 1,
+        "1": -1,
+        "2": -1,
+        "4": 1,
+        "5": -1,
+        "7": 1,
+        "10": 1
+      },
+      "17": {
+        "0": -1,
+        "3": 1,
+        "12": 1
+      },
+      "18": {
+        "0": -1,
+        "4": 1,
+        "12": 1
+      },
+      "19": {
+        "2": -1,
+        "4": 1,
+        "5": -1,
+        "7": 1,
+        "10": 1
+      }
+    },
+    "library_sha256": "87745b3cb585e138b6768ab5b9e330f3f045ff4d4ad82ba6f71f0b6fe86be898",
+    "verified_on_hashed_json_or_locked_tsv": false
+  },
+  "parallelogram_reconstruction": {
+    "shape": [
+      20,
+      12
+    ],
+    "convention": "Sprint 01 parallelogram p+q=k, 6 heterochiral \u03c3, drop T1/T2 odd-k Vandermonde zeros, columns=(mode,helicity), K=T1 live+T2 live+T3, J=T4",
+    "identities_hold": false,
+    "mismatches": [
+      {
+        "row": 14,
+        "predicted": [
+          1,
+          -1,
+          -1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "got": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "row": 15,
+        "predicted": [
+          3,
+          -3,
+          -2,
+          2,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        "got": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "row": 16,
+        "predicted": [
+          3,
+          -3,
+          -2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "got": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "row": 17,
+        "predicted": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "got": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "row": 18,
+        "predicted": [
+          0,
+          0,
+          0,
+          -1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "got": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "row": 19,
+        "predicted": [
+          2,
+          -2,
+          -1,
+          0,
+          0,
+          2,
+          -1,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        "got": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ]
+      }
+    ],
+    "note": "A natural 20-row live parallelogram quotient does not reproduce the six JSON identities. Do not identify that incidence with the Library JSON until the hashed file or locked TSVs are compared."
+  },
+  "lock_status": {
+    "library_json": {
+      "sha256": "87745b3cb585e138b6768ab5b9e330f3f045ff4d4ad82ba6f71f0b6fe86be898",
+      "found": false,
+      "paths": [],
+      "json_files_scanned": 21
+    },
+    "locked_tsvs": {
+      "M_tsv": null,
+      "b_exact_tsv": null,
+      "both_present": false
+    },
+    "matrix_row_check": {
+      "performed": false,
+      "ok": false,
+      "reason": "Library JSON and locked TSVs are absent from this checkout"
+    },
+    "canonical_r2_identity": "unverified",
+    "symmetrized_coefficient_convention": "unverified",
+    "classical_NS": "open"
+  },
+  "scope": {
+    "fixed_positive_channel_coefficients": true,
+    "one_instantaneous_amplitude_ray": true,
+    "rationalized_JSON_quotient": true,
+    "trajectory_follows_the_ray": false,
+    "drag_reduction": false,
+    "classical_NS_closed": false,
+    "canonical_r2_identity": false
+  },
+  "all_independent_checks_ok": true,
+  "canonical_statement_ready": false,
+  "not_a_close": true
+}

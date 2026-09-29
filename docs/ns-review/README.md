@@ -2,6 +2,10 @@
 
 Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS packaging.
 
+## Unaugmented 3-D (open)
+
+- [`B42-T2-STARVATION-FIRST-ORDER-COEFFICIENT.md`](../B42-T2-STARVATION-FIRST-ORDER-COEFFICIENT.md) — exact first-order coefficient \(D_A/C_K\) on one T2 amplitude ray of the rationalized 20-row quotient, **if** the JSON integer identities hold. Locked `M.tsv` / `b_exact.tsv` not in this checkout. **NS not solved.**
+
 ## Φ-renorm (KEEP; conditional)
 
 - [`PHI-RENORM-WHAT-IS-KEPT.md`](./PHI-RENORM-WHAT-IS-KEPT.md) — field-first KEEP / PARK card; separate from Lemma★.
