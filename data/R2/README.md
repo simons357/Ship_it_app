@@ -8,7 +8,8 @@ B42 asked for a comparison against locked
 - `M.tsv` — integer 20×12 row matrix
 - `b_exact.tsv` — exact rational target phases
 
-Those lock files were not in this repository. This folder holds a
+Those lock files were not in this repository. Search record:
+[`ORIGINAL-SEARCH.md`](ORIGINAL-SEARCH.md). This folder holds a
 synthetic pair so the read-only verifier has something to load.
 
 ## What is in these files
