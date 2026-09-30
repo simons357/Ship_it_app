@@ -1,9 +1,9 @@
 # data/R2/b_exact.tsv
+# SYNTHETIC FIXTURE — not Library JSON, not a canonical lock.
 # Exact rational target phases β_γ as fractions of a turn.
 # One row per channel (20). Tab-separated, comments start with #.
 # Strong rows 0–13: 0 at certificate y_A = 0.
 # Weak rows 14–19: set so phase errors match (20,-4,16,8,4,4) π/12.
-# Provenance: reconstructed from B40 residues, not Library JSON.
 0
 0
 0

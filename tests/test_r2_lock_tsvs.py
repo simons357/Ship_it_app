@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""R2 folder lock pair: M.tsv and b_exact.tsv."""
+"""R2 synthetic fixture + read-only verifier: M.tsv and b_exact.tsv."""
 
 from __future__ import annotations
 
+import json
 import sys
 import unittest
 from fractions import Fraction
@@ -18,6 +19,7 @@ from r2_lock_tsvs import (  # noqa: E402
     N_COLS,
     N_ROWS,
     PI12_ERRORS,
+    PROVENANCE_JSON,
     R2_DIR,
     WEAK_IDENTITIES,
     build_M,
@@ -25,8 +27,10 @@ from r2_lock_tsvs import (  # noqa: E402
     check_identities,
     check_weak_residues,
     load_tsv_matrix,
-    write_all,
+    sha256_file,
+    verify,
 )
+from r2_read_only_verifier import verify as readonly_verify  # noqa: E402
 
 
 class TestR2FilesExist(unittest.TestCase):
@@ -51,7 +55,7 @@ class TestMatrixShapeAndIdentities(unittest.TestCase):
         rec = check_identities(load_tsv_matrix(M_TSV))
         self.assertTrue(rec["ok"], rec)
 
-    def test_builder_matches_committed_file(self):
+    def test_builder_matches_committed_M(self):
         built = [[Fraction(v) for v in row] for row in build_M()]
         loaded = load_tsv_matrix(M_TSV)
         self.assertEqual(built, loaded)
@@ -82,21 +86,59 @@ class TestBExact(unittest.TestCase):
         self.assertTrue(rec["ok"], rec)
         self.assertEqual(list(PI12_ERRORS), [20, -4, 16, 8, 4, 4])
 
-    def test_builder_matches_committed_file(self):
+    def test_builder_matches_committed_b_exact(self):
         beta = build_b_exact(build_M())
         loaded = [row[0] for row in load_tsv_matrix(B_EXACT_TSV)]
         self.assertEqual(beta, loaded)
 
 
-class TestWriterRoundTrip(unittest.TestCase):
-    def test_write_all_is_idempotent_on_committed_pair(self):
-        before_M = M_TSV.read_text()
-        before_b = B_EXACT_TSV.read_text()
-        rec = write_all()
-        self.assertTrue(rec["identities"]["ok"], rec)
-        self.assertTrue(rec["weak_residues"]["ok"], rec)
-        self.assertEqual(M_TSV.read_text(), before_M)
-        self.assertEqual(B_EXACT_TSV.read_text(), before_b)
+class TestSyntheticFixture(unittest.TestCase):
+    def test_provenance_is_synthetic_fixture(self):
+        rec = json.loads(PROVENANCE_JSON.read_text())
+        self.assertEqual(rec["provenance"], "synthetic_fixture")
+        self.assertEqual(rec.get("verifier"), "read-only")
+        self.assertTrue(rec["not_library_json"])
+
+    def test_readme_identifies_synthetic_fixture(self):
+        text = (R2_DIR / "README.md").read_text()
+        self.assertIn("synthetic fixture", text.lower())
+        self.assertIn("read-only", text.lower())
+
+    def test_tsv_headers_say_synthetic_fixture(self):
+        self.assertIn("SYNTHETIC FIXTURE", M_TSV.read_text())
+        self.assertIn("SYNTHETIC FIXTURE", B_EXACT_TSV.read_text())
+
+    def test_sha256_matches_provenance(self):
+        rec = json.loads(PROVENANCE_JSON.read_text())
+        self.assertEqual(rec["sha256"]["M.tsv"], sha256_file(M_TSV))
+        self.assertEqual(rec["sha256"]["b_exact.tsv"], sha256_file(B_EXACT_TSV))
+
+
+class TestReadOnlyVerifier(unittest.TestCase):
+    def test_verify_report_is_read_only(self):
+        rec = verify()
+        self.assertTrue(rec["read_only"])
+        self.assertTrue(rec["synthetic_fixture"])
+        self.assertTrue(rec["ok"], rec)
+        self.assertEqual(rec["canonical_r2_identity"], "unverified")
+        self.assertEqual(rec["classical_NS"], "open")
+
+    def test_verifier_does_not_write(self):
+        before = {
+            "M": M_TSV.read_bytes(),
+            "b": B_EXACT_TSV.read_bytes(),
+            "p": PROVENANCE_JSON.read_bytes(),
+        }
+        rec = readonly_verify()
+        self.assertTrue(rec["read_only"])
+        self.assertEqual(M_TSV.read_bytes(), before["M"])
+        self.assertEqual(B_EXACT_TSV.read_bytes(), before["b"])
+        self.assertEqual(PROVENANCE_JSON.read_bytes(), before["p"])
+
+    def test_canonical_r2_unverified(self):
+        rec = verify()
+        self.assertEqual(rec["canonical_r2_identity"], "unverified")
+        self.assertFalse(rec.get("canonical_statement_ready", False))
 
 
 if __name__ == "__main__":

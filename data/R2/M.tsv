@@ -1,7 +1,7 @@
 # data/R2/M.tsv
+# SYNTHETIC FIXTURE — not Library JSON, not a canonical lock.
 # Integer 20×12 row matrix for the B42 T2-starvation quotient.
 # Tab-separated. Rows 0–13 strong (K); rows 14–19 weak (J).
-# Provenance: reconstructed from B42 identities, not Library JSON.
 # Columns: phase coordinates y_0 … y_11.
 1	0	0	0	0	0	0	0	0	0	0	0
 0	1	0	0	0	0	0	0	0	0	0	0

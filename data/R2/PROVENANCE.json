@@ -4,7 +4,8 @@
     "M.tsv": "integer 20\u00d712 row matrix",
     "b_exact.tsv": "exact rational target phases \u03b2_\u03b3 (turn fractions)"
   },
-  "provenance": "reconstructed_from_B42_identities",
+  "provenance": "synthetic_fixture",
+  "verifier": "read-only",
   "not_library_json": true,
   "library_json_sha256_absent": "87745b3cb585e138b6768ab5b9e330f3f045ff4d4ad82ba6f71f0b6fe86be898",
   "canonical_r2_identity": "unverified",
@@ -75,7 +76,7 @@
   ],
   "strong_row_convention": "rows 0-11 = I_12; row 12 = all ones; row 13 = alternating \u00b11",
   "sha256": {
-    "M.tsv": "3c88794cf0b48e0fb262f6e7d164751badc778bce132665805cad9a13b2401cc",
-    "b_exact.tsv": "089ac7bcd26b2499ac4debd68a343907038570f8f2451d6b4de5e0b2bbe2b6d7"
+    "M.tsv": "fe9d7948c11473912305c7adbd2db5533692d4ac1761748a570006f1f27d2734",
+    "b_exact.tsv": "ee18cf607d66e0051ee588893a07add690bb05ffc3d61e07d872077568761245"
   }
 }

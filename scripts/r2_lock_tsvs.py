@@ -1,19 +1,14 @@
 #!/usr/bin/env python3
-"""Write and load the R2-folder lock pair: M.tsv and b_exact.tsv.
+"""Read-only verifier for the R2 synthetic TSV fixture.
 
-These files were never in the repository. The pair here is reconstructed
-from the B42 integer-row identities and the B40 π/12 weak residues so
-the T2-starvation verifier has a loadable 20×12 matrix and a 20-vector
-of exact rational target phases.
-
-This is not the missing Library JSON
+`data/R2/M.tsv` and `data/R2/b_exact.tsv` are a synthetic fixture built
+from the B42 integer-row identities and the B40 π/12 weak residues.
+They are not the missing Library JSON
 (SHA-256 87745b3cb585e138b6768ab5b9e330f3f045ff4d4ad82ba6f71f0b6fe86be898)
-and it is not a canonical locked-r2 identity. Classical Navier–Stokes
-remains open.
+and they are not a canonical locked-r2 identity.
 
-Replace both TSV files in data/R2/ if the original lock pair becomes
-available. The loader accepts tab- or comma-separated numeric rows and
-ignores # comments.
+The default CLI only reads. It never writes the fixture. Classical
+Navier–Stokes remains open.
 """
 
 from __future__ import annotations
@@ -135,9 +130,9 @@ def sha256_file(path: Path) -> str:
 def write_M_tsv(M: Sequence[Sequence[int]], path: Path = M_TSV) -> None:
     lines = [
         "# data/R2/M.tsv",
+        "# SYNTHETIC FIXTURE — not Library JSON, not a canonical lock.",
         "# Integer 20×12 row matrix for the B42 T2-starvation quotient.",
         "# Tab-separated. Rows 0–13 strong (K); rows 14–19 weak (J).",
-        "# Provenance: reconstructed from B42 identities, not Library JSON.",
         "# Columns: phase coordinates y_0 … y_11.",
     ]
     for row in M:
@@ -149,11 +144,11 @@ def write_M_tsv(M: Sequence[Sequence[int]], path: Path = M_TSV) -> None:
 def write_b_exact_tsv(beta: Sequence[Fraction], path: Path = B_EXACT_TSV) -> None:
     lines = [
         "# data/R2/b_exact.tsv",
+        "# SYNTHETIC FIXTURE — not Library JSON, not a canonical lock.",
         "# Exact rational target phases β_γ as fractions of a turn.",
         "# One row per channel (20). Tab-separated, comments start with #.",
         "# Strong rows 0–13: 0 at certificate y_A = 0.",
         "# Weak rows 14–19: set so phase errors match (20,-4,16,8,4,4) π/12.",
-        "# Provenance: reconstructed from B40 residues, not Library JSON.",
     ]
     for value in beta:
         lines.append(format_fraction(value))
@@ -168,7 +163,8 @@ def write_provenance(M_path: Path = M_TSV, b_path: Path = B_EXACT_TSV) -> Dict[s
             "M.tsv": "integer 20×12 row matrix",
             "b_exact.tsv": "exact rational target phases β_γ (turn fractions)",
         },
-        "provenance": "reconstructed_from_B42_identities",
+        "provenance": "synthetic_fixture",
+        "verifier": "read-only",
         "not_library_json": True,
         "library_json_sha256_absent": LIBRARY_JSON_SHA256,
         "canonical_r2_identity": "unverified",
@@ -234,6 +230,7 @@ def check_weak_residues(
 
 
 def write_all() -> Dict[str, Any]:
+    """Regenerate the synthetic fixture. Not used by the read-only CLI."""
     M = build_M()
     beta = build_b_exact(M)
     write_M_tsv(M)
@@ -251,15 +248,46 @@ def write_all() -> Dict[str, Any]:
     }
 
 
+def verify() -> Dict[str, Any]:
+    """Read-only check of the committed synthetic fixture. Does not write."""
+    loaded_M = load_tsv_matrix(M_TSV)
+    loaded_b = [row[0] for row in load_tsv_matrix(B_EXACT_TSV)]
+    ident = check_identities(loaded_M)
+    residues = check_weak_residues(loaded_M, loaded_b)
+    provenance = None
+    if PROVENANCE_JSON.is_file():
+        provenance = json.loads(PROVENANCE_JSON.read_text())
+    return {
+        "read_only": True,
+        "synthetic_fixture": True,
+        "files": {
+            "M.tsv": str(M_TSV.relative_to(ROOT)),
+            "b_exact.tsv": str(B_EXACT_TSV.relative_to(ROOT)),
+        },
+        "identities": ident,
+        "weak_residues": residues,
+        "sha256": {
+            "M.tsv": sha256_file(M_TSV),
+            "b_exact.tsv": sha256_file(B_EXACT_TSV),
+        },
+        "provenance": provenance,
+        "canonical_r2_identity": "unverified",
+        "classical_NS": "open",
+        "ok": bool(ident.get("ok") and residues.get("ok")),
+    }
+
+
 def main() -> None:
-    rec = write_all()
+    rec = verify()
     print(json.dumps(
         {
-            "wrote": rec["wrote"],
+            "read_only": rec["read_only"],
+            "synthetic_fixture": rec["synthetic_fixture"],
             "identities_ok": rec["identities"]["ok"],
             "weak_residues_ok": rec["weak_residues"]["ok"],
-            "canonical_r2_identity": "unverified",
-            "classical_NS": "open",
+            "canonical_r2_identity": rec["canonical_r2_identity"],
+            "classical_NS": rec["classical_NS"],
+            "ok": rec["ok"],
         },
         indent=2,
     ))
