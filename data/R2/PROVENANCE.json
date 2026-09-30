@@ -1,0 +1,81 @@
+{
+  "folder": "data/R2",
+  "files": {
+    "M.tsv": "integer 20\u00d712 row matrix",
+    "b_exact.tsv": "exact rational target phases \u03b2_\u03b3 (turn fractions)"
+  },
+  "provenance": "reconstructed_from_B42_identities",
+  "not_library_json": true,
+  "library_json_sha256_absent": "87745b3cb585e138b6768ab5b9e330f3f045ff4d4ad82ba6f71f0b6fe86be898",
+  "canonical_r2_identity": "unverified",
+  "classical_NS": "open",
+  "identities": {
+    "14": {
+      "1": -1,
+      "3": 1,
+      "12": 1
+    },
+    "15": {
+      "0": 1,
+      "1": -1,
+      "2": -1,
+      "3": 1,
+      "5": -1,
+      "7": 1,
+      "10": 1
+    },
+    "16": {
+      "0": 1,
+      "1": -1,
+      "2": -1,
+      "4": 1,
+      "5": -1,
+      "7": 1,
+      "10": 1
+    },
+    "17": {
+      "0": -1,
+      "3": 1,
+      "12": 1
+    },
+    "18": {
+      "0": -1,
+      "4": 1,
+      "12": 1
+    },
+    "19": {
+      "2": -1,
+      "4": 1,
+      "5": -1,
+      "7": 1,
+      "10": 1
+    }
+  },
+  "pi12_errors_rows_14_19": [
+    20,
+    -4,
+    16,
+    8,
+    4,
+    4
+  ],
+  "certificate_y_A": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "strong_row_convention": "rows 0-11 = I_12; row 12 = all ones; row 13 = alternating \u00b11",
+  "sha256": {
+    "M.tsv": "3c88794cf0b48e0fb262f6e7d164751badc778bce132665805cad9a13b2401cc",
+    "b_exact.tsv": "089ac7bcd26b2499ac4debd68a343907038570f8f2451d6b4de5e0b2bbe2b6d7"
+  }
+}
