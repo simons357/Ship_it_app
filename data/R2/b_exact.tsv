@@ -1,26 +1,25 @@
 # data/R2/b_exact.tsv
-# SYNTHETIC FIXTURE — not Library JSON, not a canonical lock.
-# Exact rational target phases β_γ as fractions of a turn.
-# One row per channel (20). Tab-separated, comments start with #.
-# Strong rows 0–13: 0 at certificate y_A = 0.
-# Weak rows 14–19: set so phase errors match (20,-4,16,8,4,4) π/12.
+# G3-corrected-channel-quotient. COMPUTED_EVIDENCE_ONLY.
+# Exact target phases as fractions of a turn: b/(2π).
+# Source b = π/2 − arg(g_sym). Not Library JSON. Not a canonical lock.
+# Verifier is read-only.
+-1/2
+0
+-3/8
+-3/8
+1/8
+-1/2
+0
+3/8
+-1/8
+-1/8
+-1/2
+-1/2
 0
 0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-1/6
-1/6
-1/3
-2/3
-5/6
-5/6
+-5/24
+1/24
+-7/24
+-5/24
+11/24
+-7/24

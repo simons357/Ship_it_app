@@ -12,8 +12,10 @@ looked. It does not invent the files.
 | Locked `M.tsv` | Integer 20×12 row matrix |
 | Locked `b_exact.tsv` | Exact rational target phases |
 
-`data/R2/M.tsv` and `data/R2/b_exact.tsv` on this branch are a
-**synthetic fixture**. They are not those originals.
+`data/R2/M.tsv` and `data/R2/b_exact.tsv` were first a synthetic
+I₁₂ fixture. They have since been **replaced by a transcription** of
+the G3-corrected-channel-quotient paste (`COMPUTED_EVIDENCE_ONLY`).
+That paste is still **not** the hashed Library JSON.
 
 ## Searched — not found
 

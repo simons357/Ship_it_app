@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Read-only verifier for the R2 synthetic TSV fixture.
+"""Read-only verifier for the R2 G3 TSV pair.
 
-Does not write M.tsv, b_exact.tsv, or PROVENANCE.json.
+Does not write M.tsv, b_exact.tsv, the G3 JSON, or PROVENANCE.json.
 """
 
 from __future__ import annotations

@@ -1,38 +1,22 @@
-# R2 folder — synthetic TSV fixture
+# R2 folder — G3 computed-evidence TSV pair
 
-`M.tsv` and `b_exact.tsv` live here. They are a **synthetic fixture**,
-not a locked Library JSON pair. The verifier is **read-only**.
+`M.tsv` and `b_exact.tsv` are transcribed from
+`g3_corrected_channel_quotient.json`.
 
-B42 asked for a comparison against locked
-
-- `M.tsv` — integer 20×12 row matrix
-- `b_exact.tsv` — exact rational target phases
-
-Those lock files were not in this repository. Search record:
-[`ORIGINAL-SEARCH.md`](ORIGINAL-SEARCH.md). This folder holds a
-synthetic pair so the read-only verifier has something to load.
-
-## What is in these files
-
-The committed pair is a **synthetic fixture** built from the B42
-integer-row identities and the B40 π/12 weak residues:
+**Status: `COMPUTED_EVIDENCE_ONLY`.** The verifier is **read-only**.
+This is not the missing Library JSON
+(`87745b3cb585e138b6768ab5b9e330f3f045ff4d4ad82ba6f71f0b6fe86be898`)
+and not a canonical locked-r2 identity. No integer kernel, holonomy,
+MIN-CYCLE, Q-orbit, or return-time was computed.
 
 | File | Shape | Content |
 |---|---|---|
-| `M.tsv` | 20×12 integers | Strong rows 0–13 as `I_12` plus two extra integer rows; weak rows 14–19 from the six B42 identities |
-| `b_exact.tsv` | 20×1 rationals | Target phases β_γ as fractions of a turn, at certificate `y_A = 0` |
+| `g3_corrected_channel_quotient.json` | gate payload | Source paste: 20 Γ rows, 12 (mode, helicity) columns, targets `b=π/2−arg(g_sym)` |
+| `M.tsv` | 20×12 integers | Γ rows in that order |
+| `b_exact.tsv` | 20 rationals | Exact `b/(2π)` as fractions of a turn |
 
-This is **not** a claim that the Library JSON has been opened. Canonical
-locked-r2 identity remains unverified. Classical Navier–Stokes remains
-open.
-
-`PROVENANCE.json` records hashes and the synthetic-fixture convention.
-The verifier reads those files; it does not write them.
-
-## Format
-
-Tab-separated values. Lines starting with `#` are comments. Fractions
-are `p/q` in lowest terms. The loader also accepts commas.
+The six B42 weak-row identities hold on this Γ. That does not promote
+the pair to a Library JSON lock. Classical Navier–Stokes remains open.
 
 ```bash
 python3 scripts/r2_read_only_verifier.py

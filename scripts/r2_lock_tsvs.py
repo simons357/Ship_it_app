@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Read-only verifier for the R2 synthetic TSV fixture.
+"""Read-only verifier for the R2 G3 channel-quotient TSV pair.
 
-`data/R2/M.tsv` and `data/R2/b_exact.tsv` are a synthetic fixture built
-from the B42 integer-row identities and the B40 π/12 weak residues.
+`data/R2/M.tsv` and `data/R2/b_exact.tsv` are transcribed from the
+G3-corrected-channel-quotient payload (COMPUTED_EVIDENCE_ONLY).
 They are not the missing Library JSON
 (SHA-256 87745b3cb585e138b6768ab5b9e330f3f045ff4d4ad82ba6f71f0b6fe86be898)
 and they are not a canonical locked-r2 identity.
 
-The default CLI only reads. It never writes the fixture. Classical
-Navier–Stokes remains open.
+The default CLI only reads. It never writes the files. Classical
+Navier–Stokes remains open. No kernel or holonomy was computed.
 """
 
 from __future__ import annotations
@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 R2_DIR = ROOT / "data" / "R2"
 M_TSV = R2_DIR / "M.tsv"
 B_EXACT_TSV = R2_DIR / "b_exact.tsv"
+G3_JSON = R2_DIR / "g3_corrected_channel_quotient.json"
 PROVENANCE_JSON = R2_DIR / "PROVENANCE.json"
 
 LIBRARY_JSON_SHA256 = (
@@ -248,32 +249,70 @@ def write_all() -> Dict[str, Any]:
     }
 
 
+def load_g3() -> Dict[str, Any]:
+    return json.loads(G3_JSON.read_text())
+
+
+def g3_turns() -> List[Fraction]:
+    """Exact b/(2π) as multiples of 1/24."""
+    import math
+
+    out = []
+    for item in load_g3()["Gamma"]:
+        turn = float(item["b"]) / (2.0 * math.pi)
+        best = min(range(-48, 49), key=lambda k: abs(turn - k / 24.0))
+        out.append(Fraction(best, 24))
+    return out
+
+
+def match_g3(M: Sequence[Sequence[Any]], beta: Sequence[Any]) -> Dict[str, Any]:
+    g3 = load_g3()
+    rows = [list(map(int, item["row"])) for item in g3["Gamma"]]
+    loaded_rows = [[int(Fraction(x)) for x in row] for row in M]
+    turns = g3_turns()
+    loaded_b = [Fraction(x) for x in beta]
+    return {
+        "ok": loaded_rows == rows and loaded_b == turns,
+        "rows_match": loaded_rows == rows,
+        "b_match": loaded_b == turns,
+        "gate": g3.get("gate"),
+        "status": g3.get("status"),
+        "kernel_or_holonomy_computed": g3.get("kernel_or_holonomy_computed"),
+        "conflicts": g3.get("same_row_different_target_conflicts"),
+    }
+
+
 def verify() -> Dict[str, Any]:
-    """Read-only check of the committed synthetic fixture. Does not write."""
+    """Read-only check of the G3 TSV pair. Does not write."""
     loaded_M = load_tsv_matrix(M_TSV)
     loaded_b = [row[0] for row in load_tsv_matrix(B_EXACT_TSV)]
     ident = check_identities(loaded_M)
-    residues = check_weak_residues(loaded_M, loaded_b)
+    g3 = match_g3(loaded_M, loaded_b)
     provenance = None
     if PROVENANCE_JSON.is_file():
         provenance = json.loads(PROVENANCE_JSON.read_text())
     return {
         "read_only": True,
-        "synthetic_fixture": True,
+        "synthetic_fixture": False,
+        "computed_evidence_only": True,
+        "gate": "G3-corrected-channel-quotient",
         "files": {
             "M.tsv": str(M_TSV.relative_to(ROOT)),
             "b_exact.tsv": str(B_EXACT_TSV.relative_to(ROOT)),
+            "g3_json": str(G3_JSON.relative_to(ROOT)),
         },
         "identities": ident,
-        "weak_residues": residues,
+        "g3_match": g3,
         "sha256": {
             "M.tsv": sha256_file(M_TSV),
             "b_exact.tsv": sha256_file(B_EXACT_TSV),
+            "g3_json": sha256_file(G3_JSON),
         },
         "provenance": provenance,
         "canonical_r2_identity": "unverified",
+        "kernel_or_holonomy_computed": False,
         "classical_NS": "open",
-        "ok": bool(ident.get("ok") and residues.get("ok")),
+        "ok": bool(ident.get("ok") and g3.get("ok")),
     }
 
 
@@ -283,9 +322,12 @@ def main() -> None:
         {
             "read_only": rec["read_only"],
             "synthetic_fixture": rec["synthetic_fixture"],
+            "computed_evidence_only": rec["computed_evidence_only"],
+            "gate": rec["gate"],
             "identities_ok": rec["identities"]["ok"],
-            "weak_residues_ok": rec["weak_residues"]["ok"],
+            "g3_match_ok": rec["g3_match"]["ok"],
             "canonical_r2_identity": rec["canonical_r2_identity"],
+            "kernel_or_holonomy_computed": rec["kernel_or_holonomy_computed"],
             "classical_NS": rec["classical_NS"],
             "ok": rec["ok"],
         },
