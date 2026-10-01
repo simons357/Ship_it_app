@@ -37,6 +37,10 @@ Related closed experiment in this repository:
 - Protocol: [`docs/HB-RINGDOWN-EXPERIMENT-01.md`](../HB-RINGDOWN-EXPERIMENT-01.md)
 - Report: [`docs/HB-RINGDOWN-EXPERIMENT-01-REPORT.md`](../HB-RINGDOWN-EXPERIMENT-01-REPORT.md)
 
+Separate arithmetic book (not FRA):
+
+- Möbius–GCD / Mertens identity: [`docs/arith-qn/README.md`](../arith-qn/README.md)
+
 Primary sources named in the handoff but **not present in this repository**:
 
 - `The_Audited_Harmonic_Blueprint.{pdf,docx,md}`

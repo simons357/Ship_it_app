@@ -107,6 +107,8 @@ These are real research objects in this repo family. They are **not** UHF, SFE, 
 | NS-Φ | \(\Gamma=ru_\theta\), \(\Phi=\Gamma/r^2=u_\theta/r\), \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) | axisymmetric swirl algebra; June 30 conditional paper under `docs/papers/swirl/` | **KEEP** algebra. Open barrier \(\|u^r/r\|_\infty\) (see `PHI-RENORM-AUDIT-2026-08-22.md`). **Do not reuse \(\Phi\)** as the FRA output symbol; **not** Clay |
 | ARITH-H | \(H_N=D^{-1/2}\widetilde Q_N D^{-1/2}\) | inverse-GCD / spectral floor | Separate arithmetic book. \(H_N\) is not coupling \(H\) |
 | ARITH-B | Bridge* pair Rayleigh \(R(e_p-e_q)>-1/2\) | pair vectors only | Keep only as arithmetic, if at all. Not a fluids or SFE input |
+| ARITH-Q | \(Q_N(i,j)=\mu(\gcd(i,j))/\gcd(i,j)\) | Möbius–GCD kernel | **Different matrix** from \(\widetilde Q_N=1/\gcd\). See [`docs/arith-qn/`](../arith-qn/README.md) |
+| ARITH-M | \(M(N)=\operatorname{Tr}(D_NQ_N)=\sum_j\lambda_j w_j\) | exact Mertens identity | **RETAIN** as arithmetic. Cancellation \(O(N^{1/2+\varepsilon})\) is **OPEN**. Not RH, not SFE |
 
 ---
 

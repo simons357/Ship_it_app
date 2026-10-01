@@ -38,5 +38,13 @@
     "evidence": "DHFA-H001 unknown_definitions",
     "source": "Domain Architect rectification 2026-08",
     "created_at": "2026-08-22T00:00:00Z"
+  },
+  {
+    "null_id": "NULL-ARITH-OPNORM",
+    "kind": "method failed to transfer",
+    "statement": "The crude bound |M(N)| ≤ ||Q_N||_op N(N+1)/2 does not yield N^{1/2+ε} cancellation. The first column of Q_N is all ones, so ||Q_N||_op ≥ √N and the bound is ≳ N^{5/2}, weaker than the trivial |M(N)| ≤ N. A spectral floor or gap does not repair this. The candidate weighted-sum estimate remains OPEN and is not a completed bridge.",
+    "evidence": "docs/arith-qn/03-BOUNDS.md; tests/test_mertens_spectral.py; results/mertens_spectral/SUMMARY.md",
+    "source": "arith_qn spectral Mertens laboratory 2026-10-01",
+    "created_at": "2026-10-01T00:00:00Z"
   }
 ]

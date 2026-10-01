@@ -108,6 +108,7 @@ Full IDs: [01 — Equation inventory](01-EQUATION-INVENTORY.md).
 | **Retain as architecture** | FRA-1–FRA-8; UHF/SFE/DHFA as recursive *layers*; prime selector as one optional \(P\) |
 | **Retain as benchmark** | Newtonian Poisson and its modal solution; linearized gravity after signature/gauge/units are declared; GRA role map with \(P_n=1\) |
 | **Retain as closed null** | Experiment 01 protocol, freeze, and held-out TEST result. Do not retune `nodes.json` |
+| **Retain as arithmetic (separate book)** | \(Q_N=\mu(\gcd)/\gcd\), \(M(N)=\operatorname{Tr}(D_NQ_N)\). Cancellation estimate OPEN. See `docs/arith-qn/` |
 | **Revise before reuse** | Gravity \(S\) vs \(S\psi\) split; \(\lambda\) vs \(\lambda^2\) vs inverse Laplacian; linearized-equation display; Domain Architect vocabulary in PR #24 (“slot”) |
 | **Retire** | SFE-PUB as unifier; SFE-QM / SFE-HAM as current SFE; GCD-attractor SFE; SFE-as-flux-estimate; Triple Lock; full-spectrum \(\lambda_{\min}(Q_N)>-1/2\); Millennium-from-SFE claims; dimensional prime labels; exoplanet prime-height as HB evidence; informal method nicknames |
 | **Unresolved — do not invent** | A canonical SFE, a UHF PDE, a DHFA evolution equation |
