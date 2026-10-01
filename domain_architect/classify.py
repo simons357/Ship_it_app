@@ -22,10 +22,12 @@ from .lab_cases import (
     BOTH_BOOKS_WARNING,
     Q6_HN_WARNINGS,
     RING_SND_WARNINGS,
+    SHELL_REMAINDER_WARNINGS,
     SIMPLEX_LEFTOVER_WARNINGS,
     SWIRL_LEFTOVER_WARNINGS,
     tokens_look_like_q6_hn,
     tokens_look_like_ring_snd,
+    tokens_look_like_shell_remainder,
     tokens_look_like_simplex_leftover,
     tokens_look_like_swirl_leftover,
 )
@@ -115,6 +117,7 @@ def _book_collision_warnings(tokens: list[str]) -> list[str]:
     q6 = tokens_look_like_q6_hn(tokens)
     swirl_left = tokens_look_like_swirl_leftover(tokens)
     simplex = tokens_look_like_simplex_leftover(tokens)
+    shell = tokens_look_like_shell_remainder(tokens)
     if ring:
         warnings.extend(RING_SND_WARNINGS)
     if q6:
@@ -125,7 +128,9 @@ def _book_collision_warnings(tokens: list[str]) -> list[str]:
         warnings.extend(SWIRL_LEFTOVER_WARNINGS)
     if simplex:
         warnings.extend(SIMPLEX_LEFTOVER_WARNINGS)
-    n_books = sum([ring, q6, swirl_left, simplex])
+    if shell:
+        warnings.extend(SHELL_REMAINDER_WARNINGS)
+    n_books = sum([ring, q6, swirl_left, simplex, shell])
     if ring and q6:
         warnings.append(BOTH_BOOKS_WARNING)
     elif n_books >= 2:

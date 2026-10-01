@@ -48,7 +48,9 @@ It is about the **Zenodo “implies” manuscript** (DOI `10.5281/zenodo.2027254
 
 **Leftover (the kink):** Lemma 6.1, uniform-in-time simplex / SND stability, **OPEN**.
 
-**Even after a repair of 6.1:** the manuscript still owes an explicit continuation criterion from spectral gap to Leray–Hopf smoothness. Spectral stability under SND is not unconditional regularity.
+**Even after a repair of 6.1:** the manuscript still owes an explicit continuation criterion from spectral gap to Leray–Hopf smoothness. Spectral stability under SND is **not** unconditional regularity and **not** generic 3-D. Clay **NOT CLAIMED**.
+
+**13 Sept 2026 label (not a close).** Paper2 leftover stays simplex / steps **7–8**. That is the SND leftover on this book. It is **not** \(T_{j\leftarrow j}\), not estimate Step 6, not WRITE (6)/H1, not Q6. Route J stays separate. Missing T2 Gronwall TeX stays missing. Card: [`docs/domain-architect/SND-AND-SIX.md`](../../domain-architect/SND-AND-SIX.md).
 
 Stale bibliography: `10.5281/zenodo.19842060` is a superseded Ring/SND record, not GCD Paper 1. `10.5281/zenodo.19842061` is unrelated.
 
