@@ -18,7 +18,7 @@ Read this page first. Then read the original files. Do not treat this guide as a
 | Packaging branch | `cursor/ns-audit-package-ac6d` |
 | Existing research PR | https://github.com/simons357/Ship_it_app/pull/24 |
 | Packaging rule | Original research paths and contents are unchanged. This guide, the manifest, and `_chatgpt_audit/` are packaging only. |
-| Independent-audit status (T2 / Routes / Ring) | `_chatgpt_audit/AUDIT-STATUS-T2-ROUTES.md` (alias `T2-ROUTE-AUDIT-CHRONOLOGY.md`) — auditor reading only; screenshots are reported status, not verified math. Research sources unchanged. |
+| Independent-audit status (T2 / Ring / Route A–B) | `_chatgpt_audit/AUDIT-STATUS-T2-ROUTES.md` (aliases `T2-RING-ROUTE-AUDIT-STATUS.md`, `T2-ROUTE-AUDIT-CHRONOLOGY.md`) — auditor reading only; screenshots are reported status, not verified math. Research sources unchanged. |
 
 The live tree at the root **is** the 24 Sep unaugmented snapshot: documents, mathematical scripts, tests, data, results, and unchanged supporting files.
 
@@ -113,7 +113,7 @@ Do not start leftover H1 from these pages. Do not restore unrestricted Lemma★.
 3. `docs/LATEST.md` — desk pointer.
 4. `docs/ESTIMATE-AUDIT.md` — filter for what may be used as an estimate.
 5. `docs/LEMMA-STAR-CORRECTIONS.md` — corrections to ★ packaging.
-6. `_chatgpt_audit/AUDIT-STATUS-T2-ROUTES.md` — packaging-only independent-audit reading for T2 / Routes / Ring (screenshots = reported status, not verified).
+6. `_chatgpt_audit/AUDIT-STATUS-T2-ROUTES.md` — packaging-only independent-audit reading for T2 / Ring / Route A–B (aliases `T2-RING-ROUTE-AUDIT-STATUS.md`, `T2-ROUTE-AUDIT-CHRONOLOGY.md`; screenshots = reported status, not verified).
 
 ### B. Centered argument
 
@@ -344,7 +344,7 @@ Five-lane printed record: `results/ns_five_lane_2026-09-10/`.
 | `data/qnm_events.csv` | HB ringdown table only (supporting; not NS). |
 | `jonathan-handoff/` | Duplicate five-lane handoff copy. |
 | `apps/`, `assets/`, `tex/` | Unchanged supporting files. |
-| `_chatgpt_audit/` | Packaging only: labeled snapshots from other branches; includes `AUDIT-STATUS-T2-ROUTES.md`. |
+| `_chatgpt_audit/` | Packaging only: labeled snapshots from other branches; includes `AUDIT-STATUS-T2-ROUTES.md` (+ Ring/Route aliases). |
 
 Excluded from this ZIP: `.git/`, credentials, `.env*`, virtualenvs, `node_modules/`, `__pycache__/`, build caches.
 

@@ -15,7 +15,7 @@ Classical 3D NSE only. Track A / Q1 is a different PDE.
 NS is not claimed solved. Clay B is not claimed.
 
 Auditor status (packaging only; not math verification):
-  _chatgpt_audit/AUDIT-STATUS-T2-ROUTES.md  (alias: T2-ROUTE-AUDIT-CHRONOLOGY.md)
+  _chatgpt_audit/AUDIT-STATUS-T2-ROUTES.md  (aliases: T2-RING-ROUTE-AUDIT-STATUS.md, T2-ROUTE-AUDIT-CHRONOLOGY.md)
   T2 Lemma 1 retained; T2-under-SND conditional retained; Lemma 2 rejected as circular.
   Ring REPAIR. Screenshots = reported status, not verified math.
 

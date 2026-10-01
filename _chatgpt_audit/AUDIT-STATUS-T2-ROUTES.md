@@ -34,9 +34,10 @@ These screenshots document reported status; they don’t independently verify th
 
 ---
 
-## Historical bridge packet (precedence)
+## Related prior notes already filed
 
-The May 19 `SIMONS_BRIDGE_PACKET` is historical. Later corrections take precedence. Already filed at `packets/SIMONS_BRIDGE_PACKET_v1.AUDIT-NOTE.md` on PR #146 (`cursor/simons-bridge-packet-c3ed`).
+- Bridge packet (historical-only): `packets/SIMONS_BRIDGE_PACKET_v1.AUDIT-NOTE.md` on PR #146 / `cursor/simons-bridge-packet-c3ed`. Later corrections take precedence over the May 19 packet.
+- This NS audit package: PR #145 / `cursor/ns-audit-package-ac6d` (this note lives here for ChatGPT audit packaging).
 
 ---
 
@@ -45,4 +46,4 @@ The May 19 `SIMONS_BRIDGE_PACKET` is historical. Later corrections take preceden
 - Original research files and paths are unchanged by this note.
 - Prefer later correction / honesty records over screenshot summaries when claims conflict.
 - Prefer later correction records over the May 19 bridge packet when claims conflict.
-- Alias filename for discovery: see also `T2-ROUTE-AUDIT-CHRONOLOGY.md` (same content pointer).
+- Discovery aliases (same content pointer): `T2-RING-ROUTE-AUDIT-STATUS.md`, `T2-ROUTE-AUDIT-CHRONOLOGY.md`.

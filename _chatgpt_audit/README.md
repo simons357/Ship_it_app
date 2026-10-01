@@ -2,8 +2,8 @@
 
 Packaging only. Not research.
 
-- `AUDIT-STATUS-T2-ROUTES.md` — independent-audit status note (Jonathan’s T2 / Routes / Ring reading). Screenshots = reported status, not math verification. Does not rewrite research.
-- `T2-ROUTE-AUDIT-CHRONOLOGY.md` — short pointer to the same auditor status note (discovery alias).
+- `AUDIT-STATUS-T2-ROUTES.md` — independent-audit status note (Jonathan’s T2 / Ring / Route A–B reading). Screenshots = reported status, not math verification. Does not rewrite research.
+- `T2-RING-ROUTE-AUDIT-STATUS.md` / `T2-ROUTE-AUDIT-CHRONOLOGY.md` — short pointers to the same auditor status note (discovery aliases).
 - `SOURCE-MAP.md` — which later/original files were copied here, and from which branch.
 - `source-snapshots/<branch>/…` — unmodified files with their original in-repo paths under the branch prefix.
 
