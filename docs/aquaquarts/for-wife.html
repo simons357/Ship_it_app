@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AquaQuartz — For us · plain plan</title>
+  <meta name="description" content="Plain-language AquaQuartz plan: order, cost, money, investor ask, Lithia Springs first, and how Jon stays protected." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a2220;
+      --muted: #5a6662;
+      --paper: #f3f0e8;
+      --panel: #ebe6db;
+      --line: #c9c2b4;
+      --lithia: #3d6f6a;
+      --clay: #8b5a3c;
+      --display: "Cormorant Garamond", Georgia, serif;
+      --body: "Source Sans 3", "Segoe UI", sans-serif;
+      --pad: clamp(1.25rem, 4vw, 2.75rem);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: var(--body);
+      font-weight: 300;
+      line-height: 1.55;
+      background:
+        radial-gradient(ellipse 80% 50% at 100% 0%, rgba(61, 111, 106, 0.12), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 0% 80%, rgba(139, 90, 60, 0.08), transparent 50%),
+        linear-gradient(180deg, #f7f4ec 0%, var(--paper) 40%, #e8e3d6 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+    .bar {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+      padding: 0.7rem var(--pad);
+      background: rgba(247, 244, 236, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.85rem;
+    }
+    .bar strong { font-family: var(--display); font-size: 1.25rem; font-weight: 600; }
+    .bar button, .bar a {
+      font: 600 0.72rem var(--body);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      padding: 0.45rem 0.85rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .wrap { width: min(820px, 100%); margin: 0 auto; padding: 2rem var(--pad) 4rem; }
+    h1 {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: clamp(2.4rem, 6vw, 3.4rem);
+      line-height: 1.05;
+      margin: 0 0 0.35rem;
+      letter-spacing: -0.02em;
+    }
+    .lede { font-size: 1.15rem; color: var(--muted); max-width: 38rem; margin: 0 0 1.75rem; }
+    .hero-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      margin: 0 0 2rem;
+    }
+    h2 {
+      font-family: var(--display);
+      font-size: 1.65rem;
+      font-weight: 600;
+      margin: 2.25rem 0 0.65rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--line);
+    }
+    h2:first-of-type { border-top: 0; padding-top: 0; }
+    p, li { font-size: 1.02rem; }
+    .note {
+      background: var(--panel);
+      border-left: 3px solid var(--lithia);
+      padding: 1rem 1.15rem;
+      margin: 1.25rem 0;
+    }
+    .note p { margin: 0; }
+    .note .q { font-family: var(--display); font-style: italic; font-size: 1.2rem; color: var(--ink); margin-bottom: 0.65rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      margin: 0.75rem 0 1.25rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.55rem 0.5rem;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th { font-weight: 600; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+    .money { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .phase {
+      background: rgba(255,255,255,0.45);
+      border: 1px solid var(--line);
+      padding: 1rem 1.15rem;
+      margin: 0.75rem 0;
+    }
+    .phase h3 {
+      font-family: var(--display);
+      font-size: 1.25rem;
+      margin: 0 0 0.4rem;
+      font-weight: 600;
+    }
+    .phase .cost { color: var(--lithia); font-weight: 600; font-size: 0.9rem; }
+    ol.steps { padding-left: 1.2rem; }
+    ol.steps li { margin: 0.35rem 0; }
+    .ask {
+      background: var(--ink);
+      color: #f3f0e8;
+      padding: 1.35rem 1.4rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .ask p { margin: 0 0 0.75rem; }
+    .ask p:last-child { margin-bottom: 0; }
+    .ask strong { color: #c5e0dc; }
+    .footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    @media print {
+      .bar { position: static; }
+      .bar button, .no-print { display: none !important; }
+      body { background: white; }
+      .ask { break-inside: avoid; }
+      h2 { break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <strong>AquaQuartz</strong>
+    <span class="no-print">
+      <button type="button" onclick="window.print()">Print / PDF</button>
+      <a href="investor-brochure.html">Full brochure</a>
+    </span>
+  </div>
+
+  <main class="wrap">
+    <h1>AquaQuartz</h1>
+    <p class="lede">
+      Plain plan for us — order, cost, what you can make, the investor ask,
+      start in Lithia Springs, and how Jon stays in the deal.
+    </p>
+
+    <img
+      class="hero-img"
+      src="renders/aquaquarts-place-lithia-neckbook.png"
+      alt="AquaQuartz Lithia Springs place edition with neck book"
+    />
+
+    <div class="note">
+      <p class="q">“It looks great — but maybe they’d say yeah that’s a great idea, but we don’t need Jon.”</p>
+      <p>
+        An <em>idea</em> is not property. <strong>AquaQuartz</strong> can be.
+        If the name, vessel designs, booklet, website, and Lithia / restaurant contracts
+        live inside <strong>Jon’s LLC</strong>, and he keeps founder control,
+        they cannot run the real business without him — unless he sells them the company.
+        We trademark and contract early so “we don’t need Jon” is legally false.
+      </p>
+    </div>
+
+    <h2>What it is</h2>
+    <p>
+      Restaurants serve water from a <strong>named place</strong> (start: Lithia Springs)
+      in a <strong>stone-and-glass decanter</strong> with a <strong>little book on the neck</strong>.
+      Guest <strong>takes the decanter home</strong>. The book opens a website — spring story,
+      blessing or poem, give-back to water causes. <strong>No plastic bottle.</strong>
+      Later: Finland and other Place Editions.
+    </p>
+    <p>
+      Not medical “structured water.” <strong>Art + ritual + place + stewardship.</strong>
+    </p>
+
+    <h2>Why they still need Jon</h2>
+    <table>
+      <thead>
+        <tr><th>What he brings</th><th>Why they can’t just take the idea</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vessel designs</td>
+          <td>Copyright; possible design patent; makers under his contracts</td>
+        </tr>
+        <tr>
+          <td>Name AquaQuartz + logos</td>
+          <td><strong>Trademark</strong> owned by his LLC</td>
+        </tr>
+        <tr>
+          <td>Neck book, site, ritual story</td>
+          <td>Copyright in words, photos, film</td>
+        </tr>
+        <tr>
+          <td>Lithia + restaurants + makers</td>
+          <td>Signed to the company he controls</td>
+        </tr>
+        <tr>
+          <td>Ownership</td>
+          <td>Investors buy shares — Jon keeps majority or blocking control</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      You cannot trademark “nice water in a pretty bottle.”
+      You <strong>can</strong> own the brand, the look, the kit, and the deals.
+    </p>
+
+    <h2>Protect it early (small money)</h2>
+    <table>
+      <thead>
+        <tr><th>Step</th><th>What</th><th class="money">Rough $</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>LLC owns everything (assignment from Jon)</td><td class="money">$0–500</td></tr>
+        <tr><td>2</td><td>Trademark search + file AquaQuartz (+ logo)</td><td class="money">$1–3k</td></tr>
+        <tr><td>3</td><td>Keep dated designs / booklet / site (optional copyright register)</td><td class="money">$0–few hundred</td></tr>
+        <tr><td>4</td><td>Design patent on final lead vessel (after shape locked)</td><td class="money">$2–5k+</td></tr>
+        <tr><td>5</td><td>Maker / spring / restaurant contracts + NDA</td><td class="money">$1–3k</td></tr>
+        <tr><td>6</td><td>Investor terms: Jon stays creative lead; don’t sell 100%</td><td class="money">Counsel on raise</td></tr>
+      </tbody>
+    </table>
+    <p><em>Not legal advice — use a real Georgia IP attorney.</em></p>
+
+    <h2>Order — what we do first</h2>
+
+    <div class="phase">
+      <h3>Phase 0 — Protect &amp; decide</h3>
+      <p class="cost">~$1–4k</p>
+      <ol class="steps">
+        <li>Lock name AquaQuartz; start Lithia Springs.</li>
+        <li>LLC owns IP; Jon = founder.</li>
+        <li>File trademark; pick one logo.</li>
+        <li>No full maker packs without NDA.</li>
+      </ol>
+    </div>
+
+    <div class="phase">
+      <h3>Phase 1 — Lithia + samples</h3>
+      <p class="cost">~$10–25k</p>
+      <ol class="steps" start="5">
+        <li>Deal with Lithia Spring Water / well — water + story rights in writing.</li>
+        <li>Quote 2–3 makers (Georgia ceramic + glass accent).</li>
+        <li>Make 10–20 sample decanters + neck book + simple webpage.</li>
+        <li>Photograph real samples.</li>
+      </ol>
+    </div>
+
+    <div class="phase">
+      <h3>Phase 2 — First restaurant pilot</h3>
+      <p class="cost">~$15–40k more</p>
+      <ol class="steps" start="9">
+        <li>Approach 1–2 fine-dining rooms (Atlanta / Savannah / Charleston).</li>
+        <li>Place pilot kits; learn real guest price; fix costs.</li>
+        <li>Pay Lithia + makers every unit. Give-back only as a written % after math works.</li>
+      </ol>
+    </div>
+
+    <div class="phase">
+      <h3>Phase 3 — Scale or raise</h3>
+      <p class="cost">See ask below</p>
+      <ol class="steps" start="12">
+        <li>If pilots work: 100–200 units, insurance, labels.</li>
+        <li>Optional Nordic. Place Editions only after Lithia works.</li>
+      </ol>
+    </div>
+    <p><strong>Do not start with 50 countries. Lithia first.</strong></p>
+
+    <h2>What it costs</h2>
+    <table>
+      <thead>
+        <tr><th>Path</th><th class="money">Low</th><th class="money">High</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Lean path to first pilots</td><td class="money">~$20k</td><td class="money">~$40k</td></tr>
+        <tr><td>Full pilot + inventory</td><td class="money">~$40k</td><td class="money">~$120k</td></tr>
+        <tr><td><strong>Comfortable investor ask</strong></td><td class="money" colspan="2"><strong>$100k–$200k</strong></td></tr>
+      </tbody>
+    </table>
+    <p>
+      Inside that: trademark/legal, samples, Lithia deal, site/booklet, insurance,
+      first production run, restaurant support, +15% contingency.
+    </p>
+
+    <h2>How much you can make</h2>
+    <p>
+      Example night: guest pays <strong>~$280</strong> (keeps decanter).
+      Restaurant ~45% (~$126). Brand ~$154. Making the kit goal ~$110.
+      Tens of dollars left per kit before overhead and give-back.
+      Refills (guest already owns decanter) = better margin.
+    </p>
+    <table>
+      <thead>
+        <tr><th>Scale</th><th>Kits / year</th><th>Brand revenue (ballpark)</th><th>Reality check</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Pilot</td><td>50–80</td><td>~$8–15k</td><td>Learning; often a loss year</td></tr>
+        <tr><td>Early</td><td>200–400</td><td>~$30–60k</td><td>Still thin after costs</td></tr>
+        <tr><td>Working brand</td><td>750–1,500</td><td>~$100–250k+</td><td>Possible living product line</td></tr>
+        <tr><td>Place licenses</td><td>—</td><td>Fees / royalties</td><td>Upside later</td></tr>
+      </tbody>
+    </table>
+    <p>Not a promise of riches. Year one is usually <strong>proof</strong>, not profit.</p>
+
+    <h2>The ask</h2>
+    <div class="ask">
+      <p>We’re raising <strong>$100,000 to $200,000</strong> for AquaQuartz under Prime Field Technologies, LLC (or a dedicated subsidiary).</p>
+      <p><strong>Use:</strong> trademark and contracts, Lithia Springs water rights, sample and first-run decanters, neck books and site, insurance, 2–3 restaurant pilots in Georgia / nearby.</p>
+      <p><strong>Start:</strong> Lithia Springs only. <strong>Later:</strong> Nordic and Place Editions.</p>
+      <p><strong>Investor gets:</strong> equity in the company that owns the trademark, designs, and contracts — not a free idea.</p>
+      <p><strong>Founder keeps:</strong> creative control and enough ownership that the brand still needs Jon.</p>
+      <p><strong>Not asking for:</strong> Millennium research money, medical claims, or a desalination plant.</p>
+    </div>
+    <p>
+      No investor yet? Do Phase 0–1 with ~$20–40k lean until one restaurant says yes — then raise on proof.
+    </p>
+
+    <h2>Yes — start in Lithia Springs</h2>
+    <ul>
+      <li>Real named spring and history — story without inventing a country deal.</li>
+      <li>Local to Georgia — visit, photograph, negotiate.</li>
+      <li>Well can be paid fairly as a source partner.</li>
+      <li>One vessel line first (Cherokee-country craft look already designed).</li>
+      <li>Prove neck book + take-home before 50 editions.</li>
+    </ul>
+
+    <h2>Jon vs money</h2>
+    <table>
+      <thead>
+        <tr><th>Jon</th><th>Investor money</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Designs vessels &amp; brand</td><td>Pays makers &amp; molds</td></tr>
+        <tr><td>Writes ritual / booklet</td><td>Pays printing, site, insurance</td></tr>
+        <tr><td>Talks to Lithia &amp; restaurants</td><td>Pays inventory before sales</td></tr>
+        <tr><td>Protects taste and story</td><td>Gets equity if it grows</td></tr>
+        <tr><td>Artist face of the brand</td><td>Does <strong>not</strong> get to erase him from his IP</td></tr>
+      </tbody>
+    </table>
+
+    <h2>The water recipe</h2>
+    <div class="note">
+      <p class="q">Does the quartz lining bring anything? Can we tweak pH to be world-class?</p>
+      <p>
+        <strong>Quartz:</strong> yes for beauty, brand name, and story —
+        Lithia water already formed through quartz-bearing granite.
+        The vessel echoes the rock. It does <em>not</em> meaningfully change pH
+        or “charge” the water. Don’t sell quartz-chemistry miracles.
+      </p>
+      <p style="margin-top:0.75rem">
+        <strong>Best sip in the world:</strong> possible for a separate
+        <em>House Sip</em> water — moderate minerals (TDS ~150–400),
+        calcium / magnesium / bicarbonate, low sodium, pH about 7.2–7.8, served cold.
+        That is a soft spring or carefully remineralized purified water.
+        <strong>Lithia stays untouched</strong> (~2,300 TDS, pH ~7.4) —
+        rich heritage mineral character, not Evian. Two products; honest labels.
+      </p>
+    </div>
+    <p>Full freeze (browser): <a href="complete-brochure.html">complete-brochure.html</a> · map of files: <a href="index.html">index.html</a></p>
+
+    <h2>This week</h2>
+    <ol class="steps">
+      <li>Decide: raise vs lean self-fund for Lithia samples.</li>
+      <li>Call a trademark attorney / filing service for <strong>AquaQuartz</strong>.</li>
+      <li>Email Lithia Spring Water + one Georgia ceramic studio (NDA + two renders).</li>
+    </ol>
+
+    <p class="footer">
+      The art is the product. We put a fence around it so it stays ours.<br />
+      Everything lives in <code>docs/aquaquarts/</code> — start at <a href="index.html">index.html</a>.
+    </p>
+  </main>
+</body>
+</html>
