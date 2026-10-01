@@ -452,10 +452,12 @@ def class_spectral_gap(
 def class_alignment_theta(
     *, theta_star: float = 0.05, n_trials: int = 100, seed: int = 26
 ) -> dict[str, Any]:
-    """Conditional class: geometric factor θ ≤ θ_*.
+    """Conditional lab class: geometric factor θ ≤ θ_*.
 
-    Already have disk template |T_near|≤θ C √D Z. Class {θ≤θ_*} inherits it.
-    Bridging to palinstrophy (A) still missing. Not seated for unrestricted data.
+    Disk template |T_near|≤θ C √D Z uses energy Z and non-palinstrophy D.
+    Three unresolved parts (Jonathan honesty lock): wrong quantities;
+    assumed cancellation (no NSE invariance); unproved template C.
+    Not (A). Does not supply WRITE (6)/H1.
     """
     run = maximize_same_scale_ratio(
         disk="axisym_swirl_slice", n_trials=n_trials, seed=seed
@@ -475,7 +477,6 @@ def class_alignment_theta(
             n_in += 1
             shell_field = {m: field[m] for m in shell if m in field}
             z = energy_z(shell_field)
-            d = dissipation_proxy(shell_field)
             t_near = same_scale_transfer(field, near)
             if z > 1e-30:
                 max_ratio_in = max(max_ratio_in, abs(t_near) / (z**1.5))
@@ -487,12 +488,34 @@ def class_alignment_theta(
             f"θ = |signed|/∑|contrib| satisfies θ ≤ θ_* = {theta_star}"
         ),
         "verdict_door1_chain": "KEEP-CONDITIONAL",
+        "material_kind": "conditional laboratory material",
         "A_seats": False,
-        "Tjj_controlled": True,
+        "bridges_to_A": False,
+        "supplies_WRITE_6_H1": False,
+        "Tjj_controlled": False,
         "control_kind": (
-            "conditional disk template |T_near|≤θ_* C_young √D Z; "
-            "NOT (A); bridge to εν P_j missing"
+            "lab disk template |T_near|≤θ_* C_young √D Z only; "
+            "D is NOT palinstrophy; NOT (A); NOT WRITE (6); "
+            "no proved NSE invariance; no cutoff-uniform C"
         ),
+        "three_unresolved_parts": {
+            "wrong_quantities": (
+                "template uses shell energy Z and D=Σ|k|²|û|²; D ≠ palinstrophy"
+            ),
+            "assumed_cancellation": (
+                "θ measures tested-transfer cancellation; class {θ≤θ_*} "
+                "does not prove NSE keeps solutions in that class"
+            ),
+            "unproved_template_constant": (
+                "conditional_theta_bound() calculates a proposed RHS; "
+                "does not establish cutoff-uniform C"
+            ),
+        },
+        "missing_mathematics": [
+            "enstrophy transfer estimate",
+            "dynamical mechanism that maintains depletion",
+            "cross-scale assembly",
+        ],
         "numeric": {
             "theta_star": theta_star,
             "fraction_trials_in_class": n_in / max(n_trials, 1),
@@ -503,17 +526,17 @@ def class_alignment_theta(
         },
         "analytic": (
             "By definition of θ, |T_near| ≤ θ ∑|contrib|. Young/Bernstein on the "
-            "disk diagnostic upgrades to |T_near|≤θ C √D Z under [θ]. This plugs "
-            "a Door-1 remainder *shape* into a Gronwall-ready bound only after "
-            "palinstrophy normalization and ε<1 absorption — not seated. "
-            "No class mechanism forces θ≤θ_* on unrestricted axisym data "
-            f"(recorded α≈{THREE_D_FACTS['alignment_alpha']} is not θ-control)."
+            "disk diagnostic upgrades to |T_near|≤θ C √D Z under [θ] as a proposed "
+            "lab shape only. D is not palinstrophy. No class mechanism forces "
+            "θ≤θ_* under NSE evolution "
+            f"(recorded α≈{THREE_D_FACTS['alignment_alpha']} is not θ-control). "
+            "Does not supply WRITE (6)/H1 bad-pair cylinder."
         ),
         "millennium_relevant": False,
         "uses_edot_zdot_lambda": False,
         "sharpest_surviving_note": (
-            "Strongest conditional geometric candidate still open for a full "
-            "proof: seat θ_* on a natural subclass OR bridge template → (A)"
+            "Conditional laboratory material only. Three unresolved parts. "
+            "Do not claim bridge to (A) or WRITE (6)/H1."
         ),
     }
 
@@ -652,9 +675,9 @@ def run_class_hunt_battery() -> dict[str, Any]:
         {
             "class_id": "enforced_alignment_theta",
             "why": (
-                "Only conditional geometric handle that targets the actual "
-                "Door-1 near-scale remainder without pretending b=0 energy "
-                "zero is depletion; still needs θ_* seating + bridge to (A)"
+                "Conditional laboratory material only; D ≠ palinstrophy; "
+                "no NSE invariance of {θ≤θ_*}; no cutoff-uniform C; "
+                "not a bridge to (A); does not supply WRITE (6)/H1"
             ),
         },
         {
@@ -685,7 +708,8 @@ def run_class_hunt_battery() -> dict[str, Any]:
         "mission": (
             "Find or falsify a class where (A) seats or near-scale Tjj admits "
             "a class-uniform bound usable in conditional Gronwall — without "
-            "ė_j/Ż/Λ′ recycling"
+            "ė_j/Ż/Λ′ recycling. Same-scale route only; does NOT supply "
+            "WRITE (6)/H1."
         ),
         "classes": by_id,
         "summary_table": [
@@ -702,18 +726,29 @@ def run_class_hunt_battery() -> dict[str, Any]:
         "killed_or_not_seating": killed,
         "sharpest_surviving_candidates": sharpest,
         "still_missing_for_full_proof": [
-            "Class control of θ_* (or other depletion) on a natural large-data subclass",
-            "Bridge from θ-template / energy gap to palinstrophy (A): |Tjj|≤εν P_j+R",
+            "Enstrophy transfer estimate (not energy-disk Z,D template)",
+            "Dynamical mechanism that maintains depletion / small θ under NSE",
+            "Cross-scale assembly / summability",
             "Non-circular path to (A) without ė_j/Ż/Λ′",
-            "Enstrophy same-scale control (energy b=0 identity does not transfer)",
-            "Cross-scale bounds/summability (separate gap)",
+            "WRITE (6)/H1 bad-pair cylinder estimate — still OPEN (separate leftover)",
         ],
+        "what_this_is_not": {
+            "bridges_to_A": False,
+            "supplies_WRITE_6_H1": False,
+            "D_is_palinstrophy": False,
+            "three_unresolved_parts": [
+                "wrong_quantities_D_not_palinstrophy",
+                "assumed_cancellation_no_NSE_invariance",
+                "unproved_template_constant",
+            ],
+        },
         "overall": (
             "No Millennium-scaling large-data class found that seats (A) or "
-            "kills near-scale Tjj uniformly. Survivors are conditional "
-            "(θ≤θ_*, spectral gap, small data, fixed K_max) or instantaneous "
-            "(pure swirl / sparse). OOE KILLED as seating. (A) not seated for "
-            "unaugmented axisymmetric-with-swirl. NS not solved."
+            "kills near-scale Tjj uniformly. Sharpest survivor "
+            "enforced_alignment_theta is conditional laboratory material "
+            "(D ≠ palinstrophy; no NSE invariance; no cutoff-uniform C). "
+            "Class hunt does not supply WRITE (6)/H1. (A) not seated. "
+            "NS not solved. Clay NOT CLAIMED."
         ),
     }
 

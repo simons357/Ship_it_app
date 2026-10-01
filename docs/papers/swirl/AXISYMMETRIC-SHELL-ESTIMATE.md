@@ -2,8 +2,8 @@
 
 **Filter:** [`docs/domain-architect/AXISYMMETRIC-SHELL-AUDIT.md`](../../domain-architect/AXISYMMETRIC-SHELL-AUDIT.md)  
 **Predecessor (11 Sept, not this HEAD):** `origin/cursor/tjj-estimate-chain-e5c5` — `docs/ESTIMATE-AUDIT.md`, `docs/AXISYM-SHELL.md`, `docs/TJJ-ESTIMATE.md`, `docs/AXISYM-SWIRL-PROBE.md`.  
-**Date:** 2026-09-12 (same-scale attack + class hunt: 2026-09-16)  
-**Status:** OPEN. Remainder \(T_{j\leftarrow j}\) is still open. Far-shell Young sits. The requested local Young is **REFUSED**. Compact-sample ratios are not a class \(\rho_j\). Same-scale attack: conditional \(\theta\)-template only; (A) **not** seated. Class hunt: no Millennium-scaling large-data seat of (A) / near-scale \(T_{j\leftarrow j}\); survivors are conditional or instantaneous only. Clay is **NOT CLAIMED**. Unconditional 3-D regularity is **NOT CLAIMED**. DA-VC-01 stays **FAIL**.
+**Date:** 2026-09-12 (same-scale + class hunt: 2026-09-16; θ lab honesty lock: 2026-10-01)  
+**Status:** OPEN. Remainder \(T_{j\leftarrow j}\) is still open. Far-shell Young sits. The requested local Young is **REFUSED**. Compact-sample ratios are not a class \(\rho_j\). Same-scale attack: conditional \(\theta\)-template only — **conditional laboratory material**, **not** a bridge to (A). Class hunt concerns the **same-scale route**; it does **not** supply WRITE (6)/H1. (A) **not** seated. **WRITE (6)/H1** (bad-pair cylinder) stays **PARK / OPEN**. Clay is **NOT CLAIMED**. Unconditional 3-D regularity is **NOT CLAIMED**. DA-VC-01 stays **FAIL**.
 
 Class: unaugmented axisymmetric Navier–Stokes with swirl. Quantity: dyadic shell block \(Z_j\). Remainder after the Door-1 budget: intra-shell transfer \(T_{j\leftarrow j}\). Assumed, in brackets: [smooth compactly supported divergence-free axisymmetric-with-swirl solutions of classical NS; no added field; unaugmented normalization; pairing identity closed only when the stepper and the diagnostic agree to \(10^{-16}\)].
 
@@ -435,7 +435,7 @@ This is **not** condition (A). Bridging to (A) needs palinstrophy normalization,
 
 **What is left for (A).** A depletion or geometric lemma that yields \(\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu P_j+R\) on the **near-scale / enstrophy** remainder (not the sharp \(b=0\) energy identity), with \(R\) controlled by energy / known quantities, without \(\dot e_j/\dot Z/\Lambda'\), and without treating occupancy as depletion. Cross-scale summability remains a separate gap.
 
-**DA class-hunt (routes, not a close).** Ranked usable-CLASS hunt for Door-1 / (A): see § Class hunt below and harness `scripts/axisym_class_hunt.py`. Best next: \(\theta\)-class bridge to palinstrophy (A). Sparse support and pure-swirl/small-data/extra-symmetry stay conditional. **(A) not seated.** DA-VC-01 stays **FAIL**.
+**DA class-hunt (routes, not a close).** Ranked usable-CLASS hunt for Door-1 / (A): see § Class hunt below and harness `scripts/axisym_class_hunt.py`. Rank-1 \(\theta\)-template is **conditional laboratory material** only — **not** a bridge to (A); see § What this is not (`scripts/axisym_theta_bridge.py` = lab diagnostics). Sparse support and pure-swirl/small-data/extra-symmetry stay conditional. Class hunt does **not** supply WRITE (6)/H1. **(A) not seated.** DA-VC-01 stays **FAIL**.
 
 ### C. Honesty locks (unchanged)
 
@@ -458,7 +458,7 @@ Mission: find a usable subclass where (A) seats without circularity, or near-sca
 | Small data (critical/subcritical) | \(\|u_0\|_X\le\varepsilon_\ast\) in a critical/subcritical \(X\) | **KEEP-CONDITIONAL** | Yes under smallness (cubic absorbed) | Yes by smallness | Different theorem path; not large-data Door-1 geometry |
 | Odd-odd-even / extra reflections | Axisym + discrete meridional parity | **KILL** as general seat | No | No in general | Live parity (\(k_x,k_z\) even) keeps \(O(1)\) near-scale max; empty-triad parities reduce to sparse, not “OOE magic” |
 | Spectral gap / decaying tails | No (or Gevrey-small) mass in the \(b\)-neighborhood outside the shell | **KEEP-CONDITIONAL**; **KILL** evolutionary | No (enstrophy open) | Energy Door-1 yes under hard gap (\(T_{\mathrm{near}}\equiv 0\)) | Soft tails perturbative; NS fills gaps |
-| Enforced alignment \(\theta\le\theta_\ast\) (`enforced_alignment_theta`) | Near-scale geometric factor \(\theta=\lvert\mathrm{signed}\rvert/\sum\lvert\mathrm{contrib}\rvert\le\theta_\ast\) | **KEEP-CONDITIONAL** | **No** (bridge missing) | Yes — disk template \(\lvert T_{\mathrm{near}}\rvert\le\theta_\ast C\sqrt{D}\,Z\) | Sharpest geometric survivor; \(\theta_\ast\) not seated on unrestricted data; not (A) |
+| Enforced alignment \(\theta\le\theta_\ast\) (`enforced_alignment_theta`) | Near-scale geometric factor \(\theta=\lvert\mathrm{signed}\rvert/\sum\lvert\mathrm{contrib}\rvert\le\theta_\ast\) | **KEEP-CONDITIONAL** (lab template only) | **No** | Disk template \(\lvert T_{\mathrm{near}}\rvert\le\theta_\ast C\sqrt{D}\,Z\) uses energy \(Z\) and \(D=\sum\lvert k\rvert^2\lvert\hat u\rvert^2\) — **\(D\) is not palinstrophy**; **not** (A) | Three unresolved parts (§ What this is not); scaling probe also KILLs ν-independent absorption — lab only |
 | Sparse / no near-scale triads | Support admits no feeder triad into shell \(j\) | **KEEP-CONDITIONAL**; **KILL** evolutionary | No | Yes instantaneously (\(T_{\mathrm{near}}=0\)) | Support constraint, not depletion; overlaps fixed-disk triviality when fully finite |
 | Pure meridional (no swirl) | \(u^\theta\equiv 0\) | **KEEP-CONDITIONAL** (different classical path) | No via Door-1 | No — disk near-scale can be \(O(1)\) | Do not smuggle “no swirl \(\Rightarrow T\equiv 0\)”; with-swirl remains the hard class |
 
@@ -472,25 +472,78 @@ Mission: find a usable subclass where (A) seats without circularity, or near-sca
 
 ### What survives (sharpest)
 
-1. **Enforced \(\theta\le\theta_\ast\)** — only conditional geometric handle aimed at the actual near-scale remainder; still needs natural seating of \(\theta_\ast\) and a bridge to palinstrophy (A).
+1. **Enforced \(\theta\le\theta_\ast\)** — conditional **laboratory** disk template only. Wrong RHS quantities for (A) (\(D\neq\) palinstrophy); no dynamical invariance; no cutoff-uniform \(C\). Natural \(\theta_\ast\) seating still missing. See § What this is not.
 2. **Pure swirl** — instantaneous identity KEEP; evolutionary KILL for mixed Door-1 data.
 3. **Spectral gap / sparse support** — energy Door-1 can vanish under the constraint; enstrophy same-scale and evolutionary invariance remain open / killed.
 4. **Small data / fixed \(K_{\max}\)** — conditional seats by smallness or finite-dimensionality; labeled **not** Millennium-scaling.
 
 ### Still missing for a full proof
 
+- An **enstrophy transfer** estimate (same-scale for the enstrophy/palinstrophy letters of (A) — not the energy-disk \(Z,D\) template).
+- A **dynamical mechanism** that maintains depletion / small \(\theta\) under NSE evolution.
+- **Cross-scale assembly** / summability (separate gap).
 - Non-circular seating of (A) on a natural large-data subclass (no \(\dot e_j/\dot Z/\Lambda'\)).
-- Bridge \(\theta\)-template (or energy-gap zero) \(\to\) \(\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu P_j+R\).
-- Enstrophy same-scale control (sharp \(b=0\) energy identity does **not** transfer).
-- Cross-scale bounds / summability (separate gap).
+- **WRITE (6)/H1** bad-pair cylinder estimate — **still open** (separate leftover; [`SND-AND-SIX.md`](../../domain-architect/SND-AND-SIX.md); `docs/WRITE_6.md` on `origin/cursor/tjj-estimate-chain-e5c5`). Neither this template nor its tests prove it.
 
-**Overall.** No Millennium-scaling large-data class found that seats (A) or kills near-scale \(T_{j\leftarrow j}\) uniformly for unaugmented axisymmetric-with-swirl. (A) remains **not seated** for that class. Leftover stays **OPEN**.
+**Overall.** No Millennium-scaling large-data class found that seats (A) or kills near-scale \(T_{j\leftarrow j}\) uniformly for unaugmented axisymmetric-with-swirl. (A) remains **not seated** for that class. Class hunt does **not** supply WRITE (6)/H1. Leftover stays **OPEN**.
+
+---
+
+## What this is not (θ / class-hunt honesty lock)
+
+**Locked 2026-10-01 (Jonathan).** Near-verbatim standing language. **NS not solved. Clay NOT CLAIMED.** Artifact: `/opt/cursor/artifacts/theta_lab_honesty/LOCK.md`.
+
+The class hunt concerns the **same-scale route**. It does **not** supply **WRITE (6)/H1**.
+
+The sharpest survivor (`enforced_alignment_theta`) has **three unresolved parts**:
+
+1. **Wrong quantities for the desired bridge.** The disk template uses shell energy \(Z\) and \(D=\sum\lvert k\rvert^2\lvert\hat u_k\rvert^2\). That \(D\) is **not** palinstrophy. A line \(\lvert T_{\mathrm{near}}\rvert\le\theta C\sqrt{D}\,Z\) is therefore **not** a rewrite toward \(\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu P_j+R\).
+2. **Assumed cancellation.** \(\theta=\lvert\sum c_\triangle\rvert/\sum\lvert c_\triangle\rvert\) measures cancellation in the tested transfers. Defining a class by small \(\theta\) does **not** prove NSE keeps solutions in that class.
+3. **Unproved template constant.** `conditional_theta_bound()` calculates the proposed RHS; it does **not** establish a cutoff-uniform constant for the transfer bound.
+
+So this is useful **conditional laboratory material**. The missing mathematics remains:
+
+- an **enstrophy transfer** estimate,
+- a **dynamical mechanism** that maintains its depletion,
+- and **cross-scale assembly**.
+
+For **WRITE (6)**, we still need the separate **bad-pair cylinder estimate**
+\[
+A_{\mathrm{bad}}(Q_r)
+\le
+\tfrac\nu8\iint_{Q_r}\lvert\nabla\omega\rvert^2\phi
++C r^{-2}\iint_{Q_r}\lvert\omega\rvert^2
+\]
+(H1 = WRITE (6) = Lemma I on the ball; status **PARK / not proved**; see [`SND-AND-SIX.md`](../../domain-architect/SND-AND-SIX.md)). Neither the θ-template nor its passing tests proves that estimate. Do **not** set θ-lab = (A) = WRITE (6) = estimate Step 6 = SND leftover = Q6.
+
+---
+
+## θ lab diagnostics (not a bridge to (A); not WRITE (6))
+
+Class: unaugmented axisymmetric-with-swirl ∩ enforced \([\theta\le\theta_\ast]\) (brackets mandatory). Quantity: near-scale / Door-1 energy-disk diagnostic. Remainder: \(T_{j\leftarrow j}\) still **OPEN**. Assumed: [disk template \(\lvert T_{\mathrm{near}}\rvert\le\theta_\ast C\sqrt{D}Z\) with energy \(Z\) and **non-palinstrophy** \(D\); no \(\dot e_j/\dot Z/\Lambda'\); spectral-shift ≠ Lemma★]. Harness: `python3 scripts/axisym_theta_bridge.py` · `domain_architect.axisym_theta_bridge` · `tests/test_axisym_theta_bridge.py`. Artifacts: `/opt/cursor/artifacts/axisym_theta_bridge/` · `/opt/cursor/artifacts/theta_lab_honesty/LOCK.md`.
+
+**Status of the attempted rewrite.** **PARTIAL / KILL as bridge.** Quantity mismatch (\(D\neq\) palinstrophy) stops any honest claim that the template bridges to (A). Lab scaling probes below are **diagnostics only** — they do not repair the wrong letters.
+
+**Lab scaling probes (diagnostics; wrong letters acknowledged).** Even if one pretends \(D\sim\lambda^2 Z\) and a Poincaré hinge \(P\sim\lambda^4 Z\), forcing \(\theta C\sqrt{D}Z\le\varepsilon\nu P+R\) still demands \(\theta_\ast=O(\nu)\) (direct) or \(O(\sqrt{\nu})\) (Young + ν-uniform \(R\)). That is viscosity smallness, not a geometric seat of (A). Mixed-disk \(\theta\sim 10^{-2}\) stays independent of \(\nu\); natural \(E_{\mathrm{mer}}/E\) proxy **KILL**.
+
+| Probe | Move | Required \(\theta_\ast\) | Lab verdict |
+|---|---|---|---|
+| Direct absorption (\(R=0\)) | pretend Poincaré \(P\sim\lambda^4 Z\) | \(O(\nu)\) | **KILL** as large-data geometry |
+| Young + palinstrophy-shaped weights | same pretend letters | \(O(\sqrt{\nu})\) for ν-uniform \(R\) | **KILL** (viscosity-tied) |
+| Disk \(P_{\mathrm{proxy}}=\sum\lvert k\rvert^4\lvert\hat u\rvert^2\) | print \(\lvert T\rvert/P\), \(\varepsilon_{\mathrm{implied}}\) | Observed \(\theta\) indep. of \(\nu\) | Supports lab KILL as \(\nu\to 0\) |
+| Natural \(\theta\) proxy | \(E_{\mathrm{mer}}/E\), unrestricted \(\theta\) | Must stay small on mixed class | **KILL** — both \(O(1)\) |
+
+**What survives.** The conditional disk inequality under *enforced* \([\theta]\) as a **lab object** — still **not** (A); still wrong quantities; still no dynamical invariance; still no cutoff-uniform \(C\).
+
+**Do not reopen as:** “θ-class bridges to palinstrophy (A)” or “θ-lab supplies WRITE (6)/H1.”
+
+**Locks.** (A) **not seated.** WRITE (6)/H1 **still open.** DA-VC-01 **FAIL.** Clay **NOT CLAIMED.** NS not solved.
 
 ---
 
 ## 11. Gap (send the work with the gap visible)
 
-The leftover is still \(T_{j\leftarrow j}\) and still **OPEN**. Far-shell Young templates sit; precise cross-scale bounds and summability are not established by this note. The requested local Young is **REFUSED**. There is no class leftover ratio. Palinstrophy \(\rho_j<\nu\) is not energy-budget absorption. Occupancy 1 with \(\alpha\approx 1/2\) is not depletion. Same-scale attack (§ Same-scale transfer attack): conditional \(\theta\)-template only; (A) not seated; axisym slice does not kill mixed same-scale transfer on exact disks. Class hunt (§ Class hunt): no large-data Millennium-scaling seat; survivors conditional/instantaneous only.
+The leftover is still \(T_{j\leftarrow j}\) and still **OPEN**. Far-shell Young templates sit; precise cross-scale bounds and summability are not established by this note. The requested local Young is **REFUSED**. There is no class leftover ratio. Palinstrophy \(\rho_j<\nu\) is not energy-budget absorption. Occupancy 1 with \(\alpha\approx 1/2\) is not depletion. Same-scale attack (§ Same-scale transfer attack): conditional \(\theta\)-template only — lab material; (A) not seated; axisym slice does not kill mixed same-scale transfer on exact disks. Class hunt (§ Class hunt): no large-data Millennium-scaling seat; survivors conditional/instantaneous only; **does not supply WRITE (6)/H1**. θ lab (§ What this is not / § θ lab diagnostics): wrong quantities (\(D\neq\) palinstrophy); no dynamical class; no cutoff-uniform \(C\); scaling probe KILL under pretend letters. **WRITE (6)** bad-pair cylinder still **OPEN**.
 
 Modified / hyperviscous / Q1-augmented equations stay **separate** from classical NS. A close of another PDE is not a close of NS.
 

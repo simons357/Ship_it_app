@@ -608,9 +608,11 @@ def conditional_theta_bound(
     d_proxy: float,
     c_young: float = 1.0,
 ) -> dict[str, Any]:
-    """Conditional template: if geometric factor ≤ θ then |T| ≤ θ C √D Z.
+    """Conditional lab template: if geometric factor ≤ θ then |T| ≤ θ C √D Z.
 
-    Not (A) unless rewritten in palinstrophy and ε ν seated. No ė_j/Ż/Λ'.
+    Honesty lock: d_proxy is Σ|k|²|û|²-style dissipation — NOT palinstrophy.
+    This calculates a proposed RHS only; it does NOT establish a cutoff-uniform
+    constant C for a transfer bound. Not (A). Not WRITE (6). No ė_j/Ż/Λ'.
     """
     theta = float(theta)
     if not (0.0 <= theta <= 1.0):
@@ -623,16 +625,23 @@ def conditional_theta_bound(
     return {
         "status": "conditional_template",
         "claimed": False,
+        "material_kind": "conditional laboratory material",
         "hypothesis": "[θ] geometric_factor_theta(field) ≤ θ on the disk",
         "form": "|T_same| ≤ θ · C_young · √D · Z",
         "theta": theta,
         "C_young": float(c_young),
         "rhs": rhs,
+        "rhs_is_cutoff_uniform_constant": False,
+        "D_is_palinstrophy": False,
+        "D_note": "d_proxy is energy×k² style; not palinstrophy P_j",
         "is_condition_A": False,
+        "bridges_to_A": False,
+        "supplies_WRITE_6_H1": False,
         "why_not_A": (
             "denominator is energy×√D_proxy, not ε ν palinstrophy P_j; "
-            "bridging to (A) needs a named Poincaré/palinstrophy step "
-            "and class control of θ — not supplied"
+            "D_proxy is not palinstrophy; RHS is a proposed number on this "
+            "disk, not a proved cutoff-uniform C; class {θ≤θ_*} is not "
+            "shown NSE-invariant — not supplied"
         ),
         "uses_edot_zdot_lambda": False,
     }

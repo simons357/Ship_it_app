@@ -13,7 +13,25 @@
 
 **This is not a close.** DA-VC-01 stays **FAIL** until (A) seats (and even then NS-open / Clay stay separate scoreboards).
 
+**Scope lock (Jonathan, 2026-10-01).** This class hunt concerns the **same-scale route**. It does **not** supply **WRITE (6)/H1**. See § What this is not.
+
 Cross-link only to five-lane / Lemma★ (`cursor/ns-five-lane-lemma-star-1390`, PR #48). **Do not merge stacks.**
+
+---
+
+## What this is not
+
+**Locked near-verbatim from Jonathan (2026-10-01).** Artifact: `/opt/cursor/artifacts/theta_lab_honesty/LOCK.md`.
+
+The sharpest survivor (`enforced_alignment_theta`) has **three unresolved parts**:
+
+1. **Wrong quantities for the desired bridge.** The disk template uses shell energy \(Z\) and \(D=\sum\lvert k\rvert^2\lvert\hat u_k\rvert^2\). That \(D\) is **not** palinstrophy.
+2. **Assumed cancellation.** \(\theta=\lvert\sum c_\triangle\rvert/\sum\lvert c_\triangle\rvert\) measures cancellation in the tested transfers. Defining a class by small \(\theta\) does **not** prove NSE keeps solutions in that class.
+3. **Unproved template constant.** `conditional_theta_bound()` calculates the proposed RHS; it does **not** establish a cutoff-uniform constant for the transfer bound.
+
+So this is useful **conditional laboratory material**. The missing mathematics remains: an **enstrophy transfer** estimate, a **dynamical mechanism** that maintains its depletion, and **cross-scale assembly**.
+
+For **WRITE (6)**, we still need the separate **bad-pair cylinder estimate**. Neither this template nor its passing tests proves that estimate. Cross-link: [`SND-AND-SIX.md`](SND-AND-SIX.md) (WRITE (6)/H1 = Bad-pair / \(A_{\mathrm{bad}}\) on \(Q_r\); **PARK / not proved**; SoT on `origin/cursor/tjj-estimate-chain-e5c5` `docs/WRITE_6.md`). Estimate Step 6 ≠ WRITE (6).
 
 ---
 
@@ -105,28 +123,24 @@ So “class (C) = axisymmetric-with-swirl” is the right *plant*, not a seated 
 
 Marks: **KEEP** (in the program), **TRY** (next experiment / proof move), **KILL** (do not spend cycles as if they seat (A)).
 
-### Rank 1 — Conditional \(\theta\)-class → bridge to (A)  ·  **TRY** (best next)
+### Rank 1 — Conditional \(\theta\)-class  ·  **KEEP-CONDITIONAL** (lab only) · **KILL** as bridge to (A)
 
 **Class card.** \(\mathcal C_\theta=\{\)axisym-with-swirl fields with near-scale geometric factor \(\theta=\lvert\mathrm{signed}\rvert/\sum\lvert\mathrm{contrib}\rvert\le\theta_\ast\}\).
 
-**What already sits.** Disk template (estimate § Same-scale): if \(\theta\le\theta_\ast\) then \(\lvert T_{\mathrm{near}}\rvert\le\theta_\ast C_{\mathrm{young}}\sqrt{D}\,Z\). Not (A).
+**What already sits.** Disk template (estimate § Same-scale): if \(\theta\le\theta_\ast\) then \(\lvert T_{\mathrm{near}}\rvert\le\theta_\ast C_{\mathrm{young}}\sqrt{D}\,Z\). **Not (A).** Letters are energy \(Z\) and \(D=\sum\lvert k\rvert^2\lvert\hat u\rvert^2\) — **\(D\) is not palinstrophy** (§ What this is not §1).
 
-**Next move (one experiment).**
+**Lab status** (`scripts/axisym_theta_bridge.py` · estimate § What this is not / § θ lab diagnostics).
 
-1. On the existing harness `scripts/axisym_same_scale_tjj.py`, print \(\theta\) vs \(\lvert T_{\mathrm{near}}\rvert/P_j\) (palinstrophy-normalized) on axisym disks — same signed Im object, **new normalization**.
-2. Search for a **named** geometric proxy for \(\theta\) that is *not* occupancy and *not* \(1-\lvert\alpha\rvert\) (both killed / insufficient): e.g. meridional/swirl energy ratio \(E_{\mathrm{mer}}/E\), near-scale feeder count density, or a structure-constant cancellation score \(C=\lvert\sum\tau\rvert/\sum\lvert\tau\rvert\) restricted to \(b\ge 1\) legs.
-3. Attempt the absorption rewrite: Young \(\sqrt{D}\,Z\) against palinstrophy via Poincaré-shell \(P_j\ge c\,4^j Z_j\) — only if \(\theta_\ast\) is small enough that \(\varepsilon=\theta_\ast C'/\nu\) (or the correct scaling) stays \(<1\). If the \(\nu\)-scaling fails, **record the failure mode** (likely: \(\theta\) must be \(O(\nu)\) — too strong for a class, becomes small-data).
+1. Quantity mismatch stops any honest claim of a bridge to (A) — **PARTIAL/KILL as bridge**.
+2. Lab probes under pretend Poincaré letters still need \(\theta_\ast=O(\nu)\) or \(O(\sqrt{\nu})\) — **KILL** as large-data geometry.
+3. Natural proxy hunt: \(E_{\mathrm{mer}}/E\), unrestricted \(\theta\) — neither stays small on nonempty mixed class (**KILL**).
+4. Defining \(\mathcal C_\theta\) by small \(\theta\) does **not** prove NSE invariance (§2). `conditional_theta_bound()` does **not** prove cutoff-uniform \(C\) (§3).
 
-**Seating criterion.** Class control of \(\theta_\ast\) **plus** \(\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu P_j+R\) with named \(\varepsilon,R\). Disk-only \(\theta\) prints are not seating.
+**Seating criterion.** Class control of \(\theta_\ast\) **plus** \(\lvert T_{j\leftarrow j}\rvert\le\varepsilon\nu P_j+R\) with named \(\varepsilon,R\) on **palinstrophy** letters. **Not met.** Wrong quantities alone already fail the criterion.
 
-**Failure modes.**
-
-- \(\theta\sim O(1)\) on every mixed axisym disk ⇒ \(\mathcal C_\theta\) empty of interesting mixed data; route collapses to small-data / extra symmetry.
-- Bridge needs \(\theta=O(\nu)\) ⇒ not a geometric class; rename as smallness hypothesis.
-- Absolute-value Young sneaks back ⇒ **OUT** (audit DISCARD).
-
-**KEEP.** The \(\theta\)-template as a *conditional* object.  
-**KILL.** Treating the present \(\theta C\sqrt{D}\,Z\) line as (A).
+**KEEP.** The \(\theta\)-template as *conditional laboratory material* under enforced \([\theta]\).  
+**KILL.** Treating \(\theta C\sqrt{D}\,Z\) as (A) or as a bridge to (A).  
+**KILL.** Claiming this hunt supplies WRITE (6)/H1.
 
 ---
 
@@ -162,7 +176,7 @@ Marks: **KEEP** (in the program), **TRY** (next experiment / proof move), **KILL
 | **Pure swirl** \(u^r=u^z=0\) | \(T_{j\leftarrow j}=0\) exactly on that field | **KEEP** as a class statement / unit check. **KILL** as a bound on mixed fields (estimate §7). |
 | **Small data** | Classical regularity by smallness in critical/subcritical norms | **TRY** as a *different* theorem path: seats smoothness without seating geometric (A). Does not unlock mixed large-data Door-1. Write [small data] in brackets. |
 | **Extra symmetry** (e.g. reflection \(z\mapsto -z\), odd/even swirl, Beltrami-like alignment forced) | May kill \(T^{\mathrm{mm}}\) or force \(\theta\) small | **TRY** only with a **named** symmetry and a printed kill of the bulk term. Do not invent a symmetry that is not in the plant. |
-| **θ-bound conditional** (Rank 1) | Conditional geometric class | Best bridge toward (A) if \(\theta_\ast\) is class-controlled. |
+| **θ-bound conditional** (Rank 1) | Conditional lab class | KEEP-CONDITIONAL lab only; **not** (A); \(D\neq\) palinstrophy; WRITE (6) untouched |
 | **Full axisym-with-swirl (no extra)** | Removes free HHH; leaves \(T^{\mathrm{mm}}\) + near-scale | **KEEP** as the plant. **KILL** as “already seats (A).” |
 
 **Small-data honesty.** Small data can make \(\lvert T_{j\leftarrow j}\rvert\) absorbable because everything is small — that is **not** a depletion lemma and must not be sold as (B)⇒(A) on large data.
@@ -171,24 +185,24 @@ Marks: **KEEP** (in the program), **TRY** (next experiment / proof move), **KILL
 
 ---
 
-## DA-VC / route card — best next move
+## DA-VC / route card — Rank 1 θ lab (not a bridge; WRITE (6) untouched)
 
 | Field | Value |
 |---|---|
-| **ID** | `DA-VC-ROUTE-θ→(A)` |
+| **ID** | `DA-VC-ROUTE-θ-lab` |
 | **Parent** | DA-VC-01 (unaugmented NS) — status **FAIL** |
 | **Class** | Axisym-with-swirl ∩ \([\theta\le\theta_\ast]\) (brackets mandatory) |
-| **Quantity** | Near-scale / enstrophy \(T_{j\leftarrow j}\) (not sharp \(b=0\) energy zero) |
-| **Remainder** | Still \(T_{j\leftarrow j}\) until (A) seats |
-| **Experiment** | Palinstrophy-normalize the existing \(\theta\)-diagnostic; hunt a named proxy for \(\theta\) ≠ occupancy / \(\alpha\); attempt \(\varepsilon\nu P_j\) absorption with one \(\nu\) |
-| **Pass for route** | Printed lemma-shaped (A) on \(\mathcal C_\theta\) with named \(\varepsilon,R\), no recycling |
-| **Fail (expected default)** | \(\theta\) stays \(O(1)\) on mixed disks, or absorption demands \(\theta=O(\nu)\) |
-| **DA-VC-01** | Remains **FAIL** until seating (A) *and* the lab gates (A5 \(T\), etc.) — seating (A) alone does not pass DA-VC-01 |
-| **NS / Clay** | **NOT CLAIMED** even if the route passes |
+| **Quantity** | Energy-disk near-scale diagnostic (\(Z\), non-palinstrophy \(D\)) — **not** (A) letters |
+| **Remainder** | Still \(T_{j\leftarrow j}\) — (A) **not** seated; WRITE (6)/H1 **still open** |
+| **Experiment** | Lab only: quantity mismatch filed; scaling probes under pretend letters; \(E_{\mathrm{mer}}/E\) proxy |
+| **Pass for route** | Would need enstrophy transfer + dynamical depletion + cross-scale assembly — **not** disk \(\theta C\sqrt{D}Z\) |
+| **Fail (recorded)** | Wrong quantities (\(D\neq\) palinstrophy); assumed cancellation; unproved template \(C\); pretend-letter absorption still \(O(\nu)\)/\(O(\sqrt{\nu})\) |
+| **DA-VC-01** | Remains **FAIL** |
+| **NS / Clay** | **NOT CLAIMED** |
 
-**Status of this route card:** **OPEN / not seated.** Likely remains FAIL until (A) seats.
+**Status of this route card:** **PARTIAL/KILL as bridge to (A).** Template KEEP-CONDITIONAL as **lab material only**. Do not reopen as large-data (A). Does **not** touch WRITE (6).
 
-**Parallel TRY (do not block Rank 1):** sparse-support census (Rank 2) as a kill/search — either produces a thin invariant class or documents that near-scale fill-in is immediate.
+**Next:** Missing math is enstrophy transfer, dynamical depletion mechanism, cross-scale assembly — **or** the separate bad-pair cylinder for WRITE (6). Do not recycle \(\dot e_j/\dot Z/\Lambda'\).
 
 ---
 
@@ -202,10 +216,12 @@ Sibling class-hunt / same-scale work lives on this branch tip (`72913ae` and lat
 
 | Field | Value |
 |---|---|
-| Dream-team verdict | Rank 1 = \(\theta\)-class bridge to (A); Rank 2 = sparse support; Rank 3 = pure-swirl / small-data / extra symmetry as **conditional** only |
-| Executed KEEP/KILL | Estimate § Class hunt; harness `scripts/axisym_class_hunt.py` / `domain_architect.axisym_class_hunt` |
+| Dream-team verdict | Rank 1 θ = **lab only** (not (A); \(D\neq\) palinstrophy); Rank 2 sparse evolutionary **KILL** as mixed close; Rank 3 pure-swirl / small-data / extra symmetry **conditional** only |
+| Executed KEEP/KILL | Estimate § Class hunt + § What this is not; `scripts/axisym_class_hunt.py`; `scripts/axisym_theta_bridge.py` (lab) |
 | OOE / extra reflection | **KILL** as general seat (live parity keeps \(O(1)\) near-scale); empty-triad parities → sparse |
 | Spectral gap | **KEEP-CONDITIONAL** energy Door-1 under hard gap; evolutionary **KILL**; enstrophy open |
+| θ status | Conditional laboratory material; three unresolved parts; **not** a bridge to (A) |
+| WRITE (6)/H1 | **Still open** (bad-pair cylinder); class hunt does **not** supply it |
 | (A) seated? | **No** (only on trivial/conditional subclasses: pure-swirl identity, small data, fixed \(K_{\max}\)) |
 | DA-VC-01 | **FAIL** |
 | Clay | **NOT CLAIMED** |

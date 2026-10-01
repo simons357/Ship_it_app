@@ -23,7 +23,7 @@ SND leftover is **not** \(T_{j\leftarrow j}\). Route J stays separate.
 | Which 6 | Remainder name | Status |
 |---|---|---|
 | **Estimate Step 6** (moved this week onto the Door-1 note) | proposed closure **IF (A)** (or depletion implying (A)); remainder of that program is still \(T_{j\leftarrow j}\) | **PARK** / not claimed. Do not write the proof. |
-| **WRITE (6) / H1** | Bad-pair / \(A_{\mathrm{bad}}\) on \(Q_r\) (Lemma I on the ball) | **PARK.** Named geometric leftover. Not proved. Not this Door-1 remainder. Lives on `origin/cursor/tjj-estimate-chain-e5c5` `docs/WRITE_6.md`. |
+| **WRITE (6) / H1** | Bad-pair / \(A_{\mathrm{bad}}\) on \(Q_r\) (Lemma I on the ball) | **PARK.** Named geometric leftover. Not proved. Not this Door-1 remainder. Lives on `origin/cursor/tjj-estimate-chain-e5c5` `docs/WRITE_6.md`. The **bad-pair cylinder estimate** is still needed. Class-hunt / θ-lab does **not** supply it (2026-10-01 honesty lock). |
 | **Statement-B table Step 6** | conditional \(H^1\) **IF [SND]** (program row NS-7/NS-8) | Different object. Leftover of **that** chain is **7–8**, still **OPEN**. Not Clay. Not “SND implies generic 3-D.” |
 | **Leftover-split item #6** | — | **Does not exist.** The list is three: (1) swirl strain, (2) Ring SND, (3) Paper2 simplex. |
 | **OPEN-board math slot 6** | — | **Does not exist.** Math list is 1 GAP1, 2 Route J, 3 NS-open, 4 \(T_{j\leftarrow j}\). Software id `e8-nav42-product` is REJECTED Track C, not Step 6. |
@@ -40,3 +40,4 @@ SND leftover is **not** \(T_{j\leftarrow j}\). Route J stays separate.
 - It does not merge. It does not touch PR #30.
 - It does not invent missing T2 Gronwall TeX.
 - It does not treat Q6 as Step 6.
+- It does not treat the θ / class-hunt same-scale laboratory as WRITE (6)/H1 or as a seated bridge to (A).

@@ -93,8 +93,12 @@ class TestThetaClass(unittest.TestCase):
         r = class_alignment_theta(theta_star=0.05, n_trials=40, seed=7)
         self.assertEqual(r["verdict_door1_chain"], "KEEP-CONDITIONAL")
         self.assertFalse(r["A_seats"])
-        self.assertTrue(r["Tjj_controlled"])
+        self.assertFalse(r["bridges_to_A"])
+        self.assertFalse(r["supplies_WRITE_6_H1"])
+        self.assertFalse(r["Tjj_controlled"])  # lab shape only; D ≠ palinstrophy
         self.assertFalse(r["numeric"]["template"]["is_condition_A"])
+        self.assertFalse(r["numeric"]["template"]["D_is_palinstrophy"])
+        self.assertIn("wrong_quantities", r["three_unresolved_parts"])
 
 
 class TestSparse(unittest.TestCase):
