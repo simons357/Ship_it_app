@@ -42,10 +42,16 @@ Because the weights are nonnegative,
 The first column of \(Q_N\) is the all-ones vector: \(Q_N(i,1)=\mu(\gcd(i,1))/\gcd(i,1)=1\). Hence
 
 \[
-\|Q_N\|_{\mathrm{op}}\ge\|Q_Ne_1\|_2=\sqrt{N},
+\|Q_N\|_{\mathrm{op}}\ge\|Q_Ne_1\|_2=\sqrt{N}.
 \]
 
-and the crude bound is at least on the order of \(N^{5/2}\). That is weaker than the trivial estimate \(|M(N)|\le N\) coming from \(|\mu|\le 1\). It supplies **no** useful square-root cancellation.
+A sharper visible property: \(Q_N(i,j)=1\) on every coprime pair, and the density of those pairs is \(6/\pi^2\). The survey measures \(\|Q_N\|_{\mathrm{op}}/N\approx 6/\pi^2\), so
+
+\[
+\|Q_N\|_{\mathrm{op}}=\Theta(N)
+\]
+
+and the crude bound is \(\Theta(N^3)\). That is weaker than the trivial estimate \(|M(N)|\le N\) coming from \(|\mu|\le 1\). It supplies **no** useful square-root cancellation. The leading eigenmode is a delocalized coprime-ones vector; its index weight stays \(\Theta(N)\), so the large eigenvalue is not hidden by \(w_j\).
 
 The congruence packaging \(A_N=D_N^{1/2}Q_ND_N^{1/2}\) does not repair this: \(|M(N)|\le N\|A_N\|_{\mathrm{op}}\) still needs an independent bound on \(\|A_N\|_{\mathrm{op}}\) that already encodes the same cancellation.
 

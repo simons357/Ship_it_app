@@ -32,9 +32,11 @@ Dense eigendecomposition is \(O(N^3)\). The list is a laboratory, not an asympto
 
 ## Reading the table
 
+- `‖Q‖/N` tracks \(6/\pi^2\), the density of coprime pairs, where \(Q_N=1\). This is an independently visible property of the kernel and still only produces a cubic crude bound.
 - `crude/|M|` is \(\|Q_N\|_{\mathrm{op}}N(N+1)/(2|M(N)|)\). Large values mean the spectral-norm estimate is vacuous.
 - `|M|/√N` is an empirical size ratio. On this range it stays moderate. That is **not** an independent derivation of the candidate bound.
 - `cancel. ratio` is \(\sum|\lambda_j w_j|/|\sum\lambda_j w_j|\). Values \(\gg 1\) show that the signed spectral sum cancels relative to the unsigned mass — the cancellation that still needs a proof.
+- `lead w` is the index weight of the eigenvalue of largest modulus. It stays \(\Theta(N)\), so the coprime-ones mode is not weight-suppressed.
 - `|λ|–w corr` is the Pearson correlation of \(|\lambda_j|\) with \(w_j\). A stable, independently proved anti-correlation would be a candidate transfer input. A numerical correlation on \(N\le 512\) is not.
 
 ## Rule

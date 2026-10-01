@@ -7,7 +7,7 @@ import unittest
 
 import numpy as np
 
-from arith_qn.experiment import q6_record, survey_row
+from arith_qn.experiment import SIX_OVER_PI_SQUARED, q6_record, survey_row
 from arith_qn.identity import (
     BRIDGE_COMPLETE,
     CANCELLATION_STATUS,
@@ -158,6 +158,11 @@ class TestCrudeBoundAndTransferRule(unittest.TestCase):
         row = survey_row(32)
         self.assertGreater(row.crude_bound, 32)  # trivial |M| ≤ N
         self.assertGreater(row.crude_over_abs_m, 10.0)
+
+    def test_op_norm_tracks_coprime_density(self):
+        row = survey_row(96)
+        self.assertAlmostEqual(row.op_norm_over_n, SIX_OVER_PI_SQUARED, delta=0.03)
+        self.assertGreater(row.leading_weight, 10.0)
 
     def test_bridge_stays_open(self):
         self.assertFalse(BRIDGE_COMPLETE)

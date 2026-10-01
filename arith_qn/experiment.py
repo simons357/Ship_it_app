@@ -10,9 +10,12 @@ from __future__ import annotations
 import json
 from dataclasses import asdict, dataclass
 from pathlib import Path
+from math import pi
 from typing import Iterable
 
 import numpy as np
+
+SIX_OVER_PI_SQUARED: float = 6.0 / pi**2
 
 from .identity import mertens, mobius_table, q6_explicit, trace_identity
 from .spectral import (
@@ -65,9 +68,12 @@ class SurveyRow:
     weight_sum_target: float
     abs_mass: float
     cancellation_ratio: float
-    abs_lambda_weight_corr: float
+    abs_lambda_weight_corr: float | None
     cluster_count: int
     max_multiplicity: int
+    op_norm_over_n: float
+    six_over_pi_squared: float
+    leading_weight: float
 
 
 def survey_row(n: int, mu: np.ndarray | None = None) -> SurveyRow:
@@ -77,6 +83,8 @@ def survey_row(n: int, mu: np.ndarray | None = None) -> SurveyRow:
     diag = cancellation_diagnostics(decomp)
     clusters = group_spectral_weights(decomp)
     alpha = congruence_eigenvalues(n, table)
+    lead = int(np.argmax(np.abs(decomp.eigenvalues)))
+    corr = diag["abs_lambda_weight_corr"]
     return SurveyRow(
         n=n,
         mertens=identity.mertens,
@@ -94,9 +102,12 @@ def survey_row(n: int, mu: np.ndarray | None = None) -> SurveyRow:
         weight_sum_target=decomp.weight_sum_target,
         abs_mass=diag["abs_mass"],
         cancellation_ratio=diag["cancellation_ratio"],
-        abs_lambda_weight_corr=diag["abs_lambda_weight_corr"],
+        abs_lambda_weight_corr=corr if corr == corr else None,  # NaN → None
         cluster_count=len(clusters),
         max_multiplicity=max(c.multiplicity for c in clusters),
+        op_norm_over_n=decomp.op_norm / n,
+        six_over_pi_squared=SIX_OVER_PI_SQUARED,
+        leading_weight=float(decomp.weights[lead]),
     )
 
 
@@ -174,21 +185,26 @@ def format_summary(payload: dict[str, object]) -> str:
         "",
         "For an orthonormal eigenbasis, `1 ≤ w_j ≤ N` and `Σ w_j = N(N+1)/2`.",
         "Therefore `|M(N)| ≤ ||Q_N||_op N(N+1)/2`. The first column of `Q_N`",
-        "is the all-ones vector, so `||Q_N||_op ≥ √N` and the crude bound is",
-        "at least on the order of `N^{5/2}`. That is weaker than the trivial",
-        "`|M(N)| ≤ N`, and it supplies no `N^{1/2+ε}` information.",
+        "is the all-ones vector, so `||Q_N||_op ≥ √N`. The coprime pairs, where",
+        f"`Q_N=1`, have density `6/π² ≈ {SIX_OVER_PI_SQUARED:.5f}`, and the",
+        "measured `||Q_N||_op` is `Θ(N)`. The crude bound is then `Θ(N³)` —",
+        "weaker than the trivial `|M(N)| ≤ N`, with no `N^{1/2+ε}` information.",
         "",
         "## Survey table",
         "",
-        "| N | M(N) | ‖Q‖_op | crude/|M| | |M|/√N | cancel. ratio | min w | max w | |λ|–w corr |",
-        "|---|------|--------|-----------|-------|---------------|-------|-------|-----------|",
+        "| N | M(N) | ‖Q‖_op | ‖Q‖/N | crude/|M| | |M|/√N | cancel. ratio | min w | max w | lead w | |λ|–w corr |",
+        "|---|------|--------|-------|-----------|-------|---------------|-------|-------|--------|-----------|",
     ]
     for raw in rows:
+        corr = raw["abs_lambda_weight_corr"]
+        corr_s = "—" if corr is None else f"{corr:.3g}"
+        cancel_s = "∞" if raw["mertens"] == 0 else f"{raw['cancellation_ratio']:.3g}"
         lines.append(
-            "| {n} | {mertens} | {op_norm:.4g} | {crude_over_abs_m:.3g} | "
-            "{abs_m_over_sqrt_n:.3g} | {cancellation_ratio:.3g} | "
-            "{weight_min:.3g} | {weight_max:.3g} | {abs_lambda_weight_corr:.3g} |".format(
-                **raw
+            "| {n} | {mertens} | {op_norm:.4g} | {op_norm_over_n:.3g} | "
+            "{crude_over_abs_m:.3g} | {abs_m_over_sqrt_n:.3g} | "
+            "{cancel} | {weight_min:.3g} | {weight_max:.3g} | "
+            "{leading_weight:.3g} | {corr} |".format(
+                cancel=cancel_s, corr=corr_s, **raw
             )
         )
     lines.extend(
@@ -225,6 +241,16 @@ def format_summary(payload: dict[str, object]) -> str:
             "",
             "See `q6.json`. `M(6) = −1 = Tr(D_6 Q_6)`. The 6×6 matrix is the",
             "stated Möbius–GCD kernel, not the inverse-GCD matrix `1/gcd`.",
+            "",
+            "## Coprime-density note",
+            "",
+            f"`Q_N(i,j)=1` whenever `gcd(i,j)=1`. The density of coprime pairs is "
+            f"`6/π² ≈ {SIX_OVER_PI_SQUARED:.5f}`. The measured `‖Q_N‖_op / N` "
+            "tracks that constant, so the leading eigenvalue is a delocalized "
+            "coprime-ones mode of size `Θ(N)`. The crude bound is then "
+            "`Θ(N³)`, which is still not a square-root estimate. The leading "
+            "weight stays `Θ(N)` rather than `O(1)`, so the large eigenvalue "
+            "is not suppressed by the index weights.",
             "",
         ]
     )
