@@ -3,16 +3,15 @@
 # primary_branch: cursor/unaugmented-r4-vorticity-f80e
 # primary_commit: a5a97019eb6b890607538ea43496a1abf7551948
 # file_count: 910
-# byte_total: 27695978
+# byte_total: 27696802
 # format: sha256  bytes  path
 # this manifest file is excluded from its own listing
-# ZIP archives are excluded from this listing (see AUDIT-PROVENANCE.json archives + ARCHIVE-INDEX.txt)
 
 4557bd8c3a5a4c58652ca3ffd794a09c3fc97d2d0ac7347b4607841a4b76057d            73  .gitignore
-7bc91cd0ff6cde0d85a9e27ab23c18fc3b0766a3e50c3adc0bff10738a7d44f4          3765  AUDIT-PROVENANCE.json
+e8e79f50a9b273af28db25c0b8f392ca04a62b3872f3229ca65fb63f82d90eeb          4629  AUDIT-PROVENANCE.json
 982a6d8dec3129a3ce47114fe43e8126862b1180dea7f862604d5bb10df2cc7f          4648  README.md
 36c7e400f1f69081efecab25e8921828feaddbc925e0add58ac1d23bb1b23f33         17631  START-HERE.md
-34389636b66301158d68da622ff10b0de59609c7046a469aee4c49602456b408          2757  _chatgpt_audit/ARCHIVE-INDEX.txt
+37e3b9ff727a3bdec7a93fda1a85cf5350b5a03a5e54aac8e2245aa4926c5943          2697  _chatgpt_audit/ARCHIVE-INDEX.txt
 dfb003ce3055039128a27ce170b9ead8b8565bb197d85c70c7b67fad3719dd82           354  _chatgpt_audit/README.md
 67d6b76a6bb31e92691c250ed585f8e143f1d824118d1baba9e9ec339cf2a83a          1616  _chatgpt_audit/SOURCE-MAP.md
 a523bc6906260460da0b6424ff6585ddc4b863f3610e372720fd4980a43054f1         81847  _chatgpt_audit/plain-text/CHATGPT-PATHWAY-A.txt

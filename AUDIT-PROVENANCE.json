@@ -1,7 +1,7 @@
 {
   "package_name": "NS-Audit-Package",
   "repository": "https://github.com/simons357/Ship_it_app",
-  "generated_utc": "2026-10-01T11:24:37Z",
+  "generated_utc": "2026-10-01T11:26:26Z",
   "primary_snapshot": {
     "branch": "cursor/unaugmented-r4-vorticity-f80e",
     "commit": "a5a97019eb6b890607538ea43496a1abf7551948",
@@ -10,8 +10,68 @@
   },
   "packaging_branch": {
     "branch": "cursor/ns-audit-package-ac6d",
-    "role": "Adds START-HERE, manifest, full+split ZIPs, plain-text pathway dumps, ChatGPT pathway pack, and labeled extras only.",
-    "commit": "a2b8dfb8dea6d2825c4a4545620f9fe7ad8250a1"
+    "role": "Adds START-HERE, manifest, full+split ZIP archives, plain-text pathway dumps, ChatGPT pathway pack, and labeled extras only.",
+    "commit": "d4eebe05860265948b0faad8ed24d2c1cd43eaf8"
+  },
+  "archives": {
+    "full": {
+      "path": "NS-Audit-Package.zip",
+      "note": "Full tree under NS-Audit-Package/; under 25 MB"
+    },
+    "core_math": {
+      "path": "NS-Audit-Package-core-math.zip",
+      "paths": [
+        "docs/",
+        "results/",
+        "jonathan-handoff/",
+        "scripts/",
+        "data/",
+        "tests/",
+        "tex/"
+      ]
+    },
+    "splits": [
+      {
+        "path": "NS-Audit-Package-docs.zip",
+        "paths": [
+          "docs/"
+        ]
+      },
+      {
+        "path": "NS-Audit-Package-results.zip",
+        "paths": [
+          "results/"
+        ]
+      },
+      {
+        "path": "NS-Audit-Package-jonathan-handoff.zip",
+        "paths": [
+          "jonathan-handoff/"
+        ]
+      },
+      {
+        "path": "NS-Audit-Package-math-code.zip",
+        "paths": [
+          "scripts/",
+          "data/",
+          "tests/",
+          "tex/"
+        ]
+      }
+    ],
+    "plain_text_under_5mb": [
+      "_chatgpt_audit/plain-text/NS-Audit-Text-01.txt",
+      "_chatgpt_audit/plain-text/NS-Audit-Text-02.txt",
+      "_chatgpt_audit/plain-text/NS-Audit-Text-BINARIES.txt"
+    ],
+    "artifacts_dir": "/opt/cursor/artifacts/ns-audit-package/",
+    "chatgpt_pathway": [
+      "_chatgpt_audit/plain-text/CHATGPT-WHAT-YOU-HAVE.txt",
+      "_chatgpt_audit/plain-text/CHATGPT-PATHWAY-INDEX.txt",
+      "_chatgpt_audit/plain-text/CHATGPT-PATHWAY-A.txt",
+      "_chatgpt_audit/plain-text/CHATGPT-PATHWAY-B.txt",
+      "_chatgpt_audit/plain-text/CHATGPT-PATHWAY-C.txt"
+    ]
   },
   "labeled_snapshots": [
     {
@@ -56,36 +116,14 @@
     "credentials / tokens",
     ".env* files",
     "virtualenvs, node_modules, __pycache__, build caches",
-    "NS-Audit-Package*.zip (the archive itself)"
+    "NS-Audit-Package*.zip (archives themselves; sibling downloads)"
   ],
-  "note": "Root files are the unaugmented r4 snapshot. _chatgpt_audit/source-snapshots/ holds unmodified extras with original paths under each branch prefix.",
+  "note": "Root files are the unaugmented r4 snapshot. _chatgpt_audit/source-snapshots/ holds unmodified extras with original paths under each branch prefix. Research contents are not rewritten. This package does not claim a completed mathematical audit or that ordinary 3D NSE is solved.",
   "file_count": 910,
-  "byte_total": 27695978,
+  "byte_total": 27696802,
   "verification": {
     "priority_unittests": "64 passed, 1 pre-existing fail: tests.test_lemma_star_statement.LemmaStarStatementTests.test_quotes_boxed_claim_and_stays_open",
     "energy_k_json_reproduced": true,
     "centered_ledger_keys_match": true
-  },
-  "archives": {
-    "full": "NS-Audit-Package.zip",
-    "core_math": "NS-Audit-Package-core-math.zip",
-    "splits": [
-      "NS-Audit-Package-docs.zip",
-      "NS-Audit-Package-results.zip",
-      "NS-Audit-Package-jonathan-handoff.zip",
-      "NS-Audit-Package-math-code.zip"
-    ],
-    "plain_text_under_5mb": [
-      "_chatgpt_audit/plain-text/NS-Audit-Text-01.txt",
-      "_chatgpt_audit/plain-text/NS-Audit-Text-02.txt",
-      "_chatgpt_audit/plain-text/NS-Audit-Text-BINARIES.txt"
-    ],
-    "chatgpt_pathway": [
-      "_chatgpt_audit/plain-text/CHATGPT-WHAT-YOU-HAVE.txt",
-      "_chatgpt_audit/plain-text/CHATGPT-PATHWAY-INDEX.txt",
-      "_chatgpt_audit/plain-text/CHATGPT-PATHWAY-A.txt",
-      "_chatgpt_audit/plain-text/CHATGPT-PATHWAY-B.txt",
-      "_chatgpt_audit/plain-text/CHATGPT-PATHWAY-C.txt"
-    ]
   }
 }
