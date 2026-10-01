@@ -34,6 +34,21 @@ If ZIP download fails, use the numbered plain-text dumps (each under 5 MB):
 - `_chatgpt_audit/plain-text/NS-Audit-Text-BINARIES.txt` — PDF/image/binary index only
 
 
+## Unsiloed ChatGPT feed (use this, not the 4.5 MB dump)
+
+The 4.5 MB `NS-Audit-Text-01.txt` still mixes the pathway with hundreds of supporting files. That is the silo problem.
+
+Give ChatGPT this short linear pack instead:
+
+- `_chatgpt_audit/plain-text/CHATGPT-PATHWAY-INDEX.txt`
+- `_chatgpt_audit/plain-text/CHATGPT-PATHWAY-A.txt` — locks, centered, energy/K, CS remainder
+- `_chatgpt_audit/plain-text/CHATGPT-PATHWAY-B.txt` — Ring / SND
+- `_chatgpt_audit/plain-text/CHATGPT-PATHWAY-C.txt` — unaugmented chain + honesty cards
+
+Those four files are the argument. The big dumps are the archive.
+
+
+
 ---
 
 ## 1. Classical NSE versus any augmented model

@@ -1,0 +1,2086 @@
+CHATGPT-PATHWAY-A.txt
+Unsiloed linear argument. Original files, original paths.
+Classical 3D NSE only. NS not claimed solved.
+See CHATGPT-PATHWAY-INDEX.txt for the map.
+
+
+# WHY THIS FILE IS HERE
+Packaging guide. Not a research rewrite.
+
+================================================================================
+ORIGINAL PATH: START-HERE.md
+PATHWAY FILE: 1 of 7
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# START HERE — ChatGPT audit package for the unaugmented Navier–Stokes pathway
+
+This folder is a **review packet**, not a new proof and not a merge of later work into the research.
+
+**Ordinary 3D Navier–Stokes is not claimed solved. Clay Statement B is not claimed.**
+
+Read this page first. Then read the original files. Do not treat this guide as a substitute for those files.
+
+---
+
+## 0. What this package is
+
+| Item | Value |
+|---|---|
+| Repository | `https://github.com/simons357/Ship_it_app` |
+| Primary research snapshot | branch `cursor/unaugmented-r4-vorticity-f80e` |
+| Snapshot commit | `a5a97019eb6b890607538ea43496a1abf7551948` (2026-09-24) |
+| Packaging branch | `cursor/ns-audit-package-ac6d` |
+| Existing research PR | https://github.com/simons357/Ship_it_app/pull/24 |
+| Packaging rule | Original research paths and contents are unchanged. This guide, the manifest, and `_chatgpt_audit/` are packaging only. |
+
+The live tree at the root **is** the 24 Sep unaugmented snapshot: documents, mathematical scripts, tests, data, results, and unchanged supporting files.
+
+Later Ring/SND papers and later honesty cards that were **not** on that snapshot are filed under `_chatgpt_audit/source-snapshots/<branch>/…` with **their original paths preserved under that prefix**. They are not copied over the snapshot.
+
+Hashes: `AUDIT-MANIFEST.sha256`. Provenance: `_chatgpt_audit/SOURCE-MAP.md` and `AUDIT-PROVENANCE.json`.
+
+Download: `NS-Audit-Package.zip` (single archive, 11.65 MB; no split). Same file is attached as a walkthrough artifact.
+
+If ZIP download fails, use the numbered plain-text dumps (each under 5 MB):
+
+- `_chatgpt_audit/plain-text/NS-Audit-Text-01.txt` — START-HERE, centered, energy/K, remainder, Ring/SND, unaugmented chain, and their scripts/tests/results
+- `_chatgpt_audit/plain-text/NS-Audit-Text-02.txt` — remaining original text files
+- `_chatgpt_audit/plain-text/NS-Audit-Text-BINARIES.txt` — PDF/image/binary index only
+
+
+---
+
+## 1. Classical NSE versus any augmented model
+
+Keep these as **different PDEs**. Do not weld them.
+
+### Classical / unaugmented (this review)
+
+\[
+\partial_t u+(u\cdot\nabla)u=-\nabla p+\nu\Delta u,\qquad \nabla\cdot u=0
+\]
+
+on \(\mathbb{T}^3\) or \(\mathbb{R}^3\). Only viscosity \(\nu\Delta u\). No extra field, no force, no \(Q\)-operator, no \(K(t)\) inserted into the PDE.
+
+Primary faces:
+
+- `docs/UNAUGMENTED-NS-CHAIN.md`
+- `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md` (keep the axis weight \(1/r^4\); do not cancel it as the main path)
+- `docs/NS-PROOF-CHAIN.md`
+
+### Augmented / other PDE (out of scope for a classical close)
+
+Track A is \(Q_1\)-augmented NS, \(\varepsilon>0\). That is **Theorem A / another equation**.
+
+- `docs/AUGMENTED-NS-PROOF-CHAIN.md`
+- `docs/A-CHAIN.md`
+- `docs/A-PROOF-CHAIN.md`
+- `scripts/augmented_ns_verify.py`
+
+**YES as Theorem A. NO as ordinary NS.** See `docs/YES-NO-OPEN.md`.
+
+### Φ-renorm / swirl algebra (identity, not a close)
+
+The identity \(\frac{1}{r^4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) is algebra. It does not remove work; it moves the estimate onto \(\|\Phi\|_\infty\). The unaugmented plan **keeps** \(1/r^4\).
+
+Original swirl papers (labeled snapshot, not on the r4 root):
+
+- `_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/papers/` is for Ring/SND. Swirl Φ-renorm faces on later mainline notes are not this close.
+
+---
+
+## 2. Read this order (priority arguments)
+
+Do not start leftover H1 from these pages. Do not restore unrestricted Lemma★. Do not treat numerics as a theorem.
+
+### A. Status locks (read before any estimate)
+
+1. `docs/YES-NO-OPEN.md` — binding tape: YES / NO / OPEN. Wins if a later sentence contradicts it.
+2. `docs/ISSUES-SHEET.md` — named leftovers for collaborators.
+3. `docs/LATEST.md` — desk pointer.
+4. `docs/ESTIMATE-AUDIT.md` — filter for what may be used as an estimate.
+5. `docs/LEMMA-STAR-CORRECTIONS.md` — corrections to ★ packaging.
+
+### B. Centered argument
+
+| File | Role |
+|---|---|
+| `docs/CENTERED-LEDGER.md` | Incoming ledger, scored 24 Sep. §1 identities sit. DA-NS-2 is a target, not a theorem. |
+| `docs/CENTERED-DRIFT.md` | Target: frequency / spectral-center drift. |
+| `docs/RESET.md` | Chart reset of frozen variance \(W_K\). Remainder does not jump. |
+| `docs/WIDTH.md` | Relative width. \(r\sim\kappa^{-1}\) is not a payment. |
+| `docs/SBP.md` | SBP / \(\Phi_e\). |
+| `docs/PRESS.md` | Lemma A sits; Lemma B OPEN. |
+| `docs/SIGN-GATE.md`, `docs/SIGN-RUN.md` | First-variation sign gate. Persistence OPEN. |
+| `docs/FOURIER-TRIANGLE.md`, `docs/TRIANGLE-LIFT.md` | Triangle geometry for \(T_c\). |
+| `docs/DA-NS-2.md` | Y-cousin / barycenter sibling. Not this close. |
+| `scripts/centered_ledger.py`, `scripts/centered_drift.py`, `scripts/centered_barycenter.py` | Machines. |
+| `tests/test_centered_ledger.py`, `tests/test_centered_barycenter.py` | Locks. |
+| `results/centered_ledger.json` | Printed score. |
+
+Later centered recovery (labeled; do not overwrite the snapshot):
+
+- `_chatgpt_audit/source-snapshots/centered-ns-recovery-b5c1/docs/ns-recovery/`
+- `_chatgpt_audit/source-snapshots/centered-master-ledger-62ec/docs/CENTERED-MASTER-LEDGER.md`
+
+### C. Energy / \(K\) estimates
+
+| File | Role |
+|---|---|
+| `docs/ENERGY-K.md` | Energy-class remainder ladder. Only \(K\sim\sqrt{E}\) and \(K_Y\sim\sqrt{E}\) are amplitude-legal. Both die on \(v_n\). |
+| `scripts/energy_k.py` | Closed forms and amplitude doors. Writes `results/energy_k.json`. |
+| `tests/test_energy_k.py` | Arithmetic + status-string locks. |
+| `results/energy_k.json` | Recorded run. |
+| `docs/L-DOOR.md`, `docs/MN-CANCEL.md`, `docs/PATHWISE.md`, `docs/INTERVAL.md` | Adjacent doors. Instantaneous \(M-\Lambda N\) cancel dies (\(N=0\) on \(v_n\)). |
+
+Claimed on this face: homogeneity is exact; unique amplitude-legal power is \(p=1/2\); the three energy-class doors die on the growing-layer family. **Not a close. Catalog B open stays 1.**
+
+### D. Remainder estimates
+
+| File | Role |
+|---|---|
+| `docs/CS-REMAINDER.md` | Localized ABC evaluator. Not a proof. Largest printed FFT \(\mathcal R_\star(-v)=0.327\) at \(\lambda=8\) is **not** a kill. |
+| `docs/ns-recovery/CS-REMAINDER-VS-DA-REJECT.md` | Comparison / reject notes. |
+| `scripts/ns_attacks/cs_remainder_bump.py` | FFT / bump evaluator. |
+| `scripts/ns_attacks/cs_remainder_exact_check.py` | Exact-core jobs (\(\lambda=2,3,4\) only). |
+| `tests/test_cs_remainder_bump.py` | Locks. |
+| `results/cs_remainder_bump/` | Printed tables. |
+
+Principal named remainders on the unaugmented chain:
+
+- Same-scale transfer \(T_{j\leftarrow j}\) — OPEN.
+- \(A_{\mathrm{bad}}\) / H1 (Lemma I on the ball) — written, not a theorem.
+- H2 (annulus flux) a priori from energy — OPEN.
+- H3 (exterior Biot–Savart) a priori from energy — OPEN.
+- G4 / useful \(K\) after energy-class death — OPEN.
+
+### E. Ring Lemma / SND and dependencies
+
+**Name hygiene (do not call both SND):**
+
+- **Concentration.** \(J/X\ge c_*\). Dominant shell. Ring-Lemma regime.
+- **Spread.** \(\max_j X_j/X\le\rho_0<1\). Viscosity / T2 regime.
+
+| File | Role |
+|---|---|
+| `docs/SND-TO-REGULARITY.md` | Implication is **not** a bound on \(X\). Theorem G dead. Ring is REPAIR. Displayed Theorem H not established even with \(X\le M\). |
+| `docs/SND-H-PLAIN.md` | Closing SND does not close NS. |
+| `docs/SND-H-REVIEW.md` | Specialist H review: viscous tail, shear kill, valid \(F_j\). |
+| `docs/SND-H-REPAIR.md` | Repaired \(F_j\) is a Dini ceiling, not a floor. Theorem H withdrawn. |
+| `docs/SND-INSTRUMENT.md` | SND is an instrument, not a closer. |
+| `docs/UNAUGMENTED-R4-VORTICITY-PLAN.md` §§8–10 | Dictionary for Ring / T2 / occupation. |
+| `docs/C10-CHAIN.md` | Named local-block candidate beside leftover 5. Failed arrow recorded. |
+| `docs/TRACK-B-BONY-T.md`, `docs/TRACK-B-CLIMB-LAW.md` | Bony \(T\) and climb-from-the-field. |
+| `scripts/snd_h_review.py`, `scripts/snd_h_repair.py`, `scripts/snd_instrument.py` | Machines. |
+| `tests/test_snd_to_regularity.py`, `tests/test_snd_h_review.py`, `tests/test_snd_h_repair.py` | Locks. |
+
+Original Ring Lemma and Paper2 SND manuscripts (not rewritten; not on the r4 root):
+
+- `_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/papers/ring/RingLemma_Simons_June19_2026.tex`
+- `_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/papers/ring/RingLemma_Final.tex`
+- `_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/papers/ring/02_ring_lemma_snd_conditional.pdf`
+- `_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/papers/ring/README.md`
+- `_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/papers/ns-snd/NS_UNAUGMENTED_PROOF_CHAIN.md`
+- `_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/papers/ns-snd/README.md`
+- `_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/papers/ns-snd/FACES.md`
+- `_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/papers/ns-snd/NS_PAPER2_CONDITIONAL_AUDIT_AUG1_2026.md`
+
+Later honesty cards (spectral-shift identity ≠ Lemma★ bound):
+
+- `_chatgpt_audit/source-snapshots/unaug-proof-chain-honesty-6df4/docs/ns-review/UNAUG-PROOF-CHAIN.md`
+- `_chatgpt_audit/source-snapshots/unaug-generic-3d-chain-4e04/docs/ns-review/UNAUG-GENERIC-3D-PROOF-CHAIN.md`
+
+Paper2 PDFs are **not** compiles of the TeX in the same folder. Diff them via `FACES.md`. GNC / Goldbach / Bridge glue is retired.
+
+---
+
+## 3. Claimed results versus known gaps
+
+### Sitting (do not take back) — classical bookkeeping / criteria / identities
+
+From `docs/YES-NO-OPEN.md` and the unaugmented chain:
+
+- Energy identity / Leray class while smooth.
+- Local existence (Fujita–Kato). Continuation is the question.
+- Serrin / LPS and ESS as **criteria**, not a priori bounds.
+- Enstrophy identity \(\tfrac12\dot E+\nu\|D^2u\|_2^2=S_{\mathrm{tot}}\). Cubic Young bound does **not** give \(\int E^2\).
+- Lemma C (CF / BdVB): good-pair **if**. Not an H.
+- Local enstrophy identity on a cylinder. Does not bound \(A_{\mathrm{bad}}\).
+- Far-shell Young on the axisymmetric shell budget. Remainder \(T_{j\leftarrow j}\) still OPEN.
+- Spectral-shift / barycenter identity \(\Lambda'=2(T_c-\nu D_s)/X\) as **bookkeeping**. Not a bound on \(T_c\).
+- Two-shell product identity for \(T_c\). \(\alpha+\beta=\Lambda\) is empty on two positive shells.
+- Frozen variance \(W_K=\mathcal D_s+X(\Lambda-K)^2\) exact and nonnegative.
+- Growing-layer family \(v_n\) admissible; unrestricted \(\sup\mathcal R_\star<\infty\) **killed**.
+- Energy-class \(K\sim\sqrt{E}\) / \(K_Y\sim\sqrt{E}\) / mid door **dead** on \(v_n\).
+- Theorem A sits for the **augmented** PDE only.
+
+### Corrections already locked (do not revive)
+
+- Occupation-decays detector: **withdrawn**.
+- Designed Attack 9D as a live closer: **NO**.
+- Finite samples \(0.327\), \(0.641\), \(0.610\), grow-\(s\) \(0.456\), three-shear \(2/3\): **samples**, not a kill and not \(16/9\).
+- Ring “sits”: **NO**. Direction bound is REPAIR.
+- SND sitting \(\Rightarrow\) bound on \(X\): **NO**. Theorem G dead. Displayed Theorem H withdrawn.
+- Unrestricted Lemma★ bound: **killed** by \(v_n\). Not a singular NSE solution. Replacement closure OPEN.
+- Φ-cancel / \(Q_1\) / \(K(t)\) in the PDE: **not** the unaugmented path.
+- Spectral-shift identity \(\Rightarrow\) Lemma★ ratio bound: **false**.
+- \(\rho_j<\nu\) as shell-energy absorption into \(\nu Z_j\): **false**. That comparison lives in (A).
+- Restricted-disk numerics \(\Rightarrow\) depletion / \(K_{\max}\to\infty\): **false**.
+- `tests/test_lemma_star_statement.py` still looks for the old banner `**OPEN. Not a proof. NS not solved.**` in `docs/LEMMA-STAR-STATEMENT.md`. The page already records that the unrestricted box is **killed** by \(v_n\) and that only the replacement closure is OPEN. That mismatch is pre-existing on the snapshot. Do not “repair” either file for this package.
+
+### Still OPEN on the unaugmented face
+
+- Global regularity of classical 3D NSE.
+- \(T_{j\leftarrow j}\) (principal same-scale remainder).
+- H1 / \(A_{\mathrm{bad}}\) as a theorem (leftover 1).
+- H2-from-energy and H3-from-energy.
+- Useful remainder \(K\) after energy-class death (G4).
+- Lemma B (press). Sign-gate persistence.
+- DA-NS-2 / JGC epoch budget / SAG seating.
+- Dynamic SND for general Leray–Hopf data.
+- PRODUCT-BLOCK \(\sup_v\mathcal R_\star(v)<\infty\) as a replacement (old unrestricted form is dead).
+- Axisymmetric-with-swirl global regularity; \(\|u^r/r\|_\infty\) barrier if anyone returns to Φ-renorm.
+
+---
+
+## 4. How to reproduce calculations
+
+Python 3. The snapshot `requirements.txt` is:
+
+```
+numpy>=1.24
+pandas>=2.0
+```
+
+Some later extras use only the standard library. Install once:
+
+```bash
+python3 -m pip install -r requirements.txt
+```
+
+### Priority locks (run these first)
+
+```bash
+python3 -m unittest \
+  tests.test_energy_k \
+  tests.test_centered_ledger \
+  tests.test_centered_barycenter \
+  tests.test_cs_remainder_bump \
+  tests.test_snd_to_regularity \
+  tests.test_snd_h_review \
+  tests.test_snd_h_repair \
+  tests.test_ns_lemma_star_core \
+  tests.test_lemma_star_corrections \
+  tests.test_lemma_star_statement \
+  tests.test_track_b_lemmas \
+  tests.test_track_b_bony_t \
+  tests.test_track_b_climb_law
+```
+
+### Regenerating printed JSON (does not rewrite the markdown)
+
+```bash
+python3 scripts/energy_k.py
+python3 scripts/centered_ledger.py
+python3 scripts/centered_barycenter.py
+python3 scripts/centered_drift.py
+python3 scripts/snd_h_review.py
+python3 scripts/snd_h_repair.py
+python3 scripts/snd_instrument.py
+python3 scripts/ns_attacks/cs_remainder_exact_check.py
+```
+
+Compare new JSON to the committed files under `results/`. A changed number is a measurement, not a theorem.
+
+### Broader Track B / five-lane machines
+
+```bash
+python3 -m unittest tests.test_attack9b_exact_shell tests.test_attack9b_grow_s tests.test_attack9d_two_thirds
+python3 scripts/ns_attacks/run_all_five.py
+```
+
+Five-lane printed record: `results/ns_five_lane_2026-09-10/`.
+
+### What not to run as a closer
+
+- `scripts/augmented_ns_verify.py` is Track A (other PDE).
+- `hb_ringdown_test.py` is the closed HB Experiment 01 null. Do not retune `nodes.json`.
+- Domain Architect `scripts/da_*.py` routers are honesty / classification machines, not NS estimates.
+- Do not treat occupancy \(\approx 1\) or alignment \(\approx 1/2\) as depletion.
+
+### Later extras (optional; separate trees)
+
+```bash
+# These tests expect their own snapshot layout. Run from the labeled snapshot
+# only if you copy that subtree to a working root. Do not overlay onto this root.
+```
+
+---
+
+## 5. File map
+
+| Path | What it is |
+|---|---|
+| `docs/` | Working notes. Priority pages listed above. |
+| `docs/math/ns_attacks/` | Canonical ★ formulas and older-attempt archive. |
+| `docs/five-lane-export/` | Exported five-lane pack. |
+| `scripts/`, `scripts/ns_attacks/` | Mathematical scripts. |
+| `tests/` | Unit / lock tests (many assert phrases in the markdown). |
+| `results/` | Committed numerical output. |
+| `data/qnm_events.csv` | HB ringdown table only (supporting; not NS). |
+| `jonathan-handoff/` | Duplicate five-lane handoff copy. |
+| `apps/`, `assets/`, `tex/` | Unchanged supporting files. |
+| `_chatgpt_audit/` | Packaging only: labeled snapshots from other branches. |
+
+Excluded from this ZIP: `.git/`, credentials, `.env*`, virtualenvs, `node_modules/`, `__pycache__/`, build caches.
+
+---
+
+## 6. Reviewer instructions
+
+1. Treat this as an **open proof chain**, not a submitted close.
+2. Quote the original file when judging a claim. If this guide and a lock page disagree, the lock page wins (`docs/YES-NO-OPEN.md` first).
+3. Separate: (i) exact identities, (ii) numerical samples, (iii) proposed closures.
+4. If a step uses \(Q_1\), \(\Phi\)-cancel as the main path, \(K(t)\) in the PDE, GNC/Goldbach/Bridge, or SFE/HB, mark it **out of the classical face**.
+5. Do not “repair” Theorem H, unrestricted ★, or SND\(\Rightarrow X\) in this packet. Those are recorded deaths.
+6. The leftover to name, if you find one, is a **useful remainder** or a gap in a named OPEN row — not a new Clay claim.
+
+---
+
+## 7. One-line status
+
+**Unaugmented 3D NSE: OPEN. Energy-class \(K\) dead on \(v_n\). Unrestricted ★ killed. Ring/SND do not bound \(X\). Centered identities sit; DA-NS-2 and \(T_{j\leftarrow j}\) remain. Augmented Track A is a different PDE.**
+================================================================================
+END OF FILE: START-HERE.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+Binding YES / NO / OPEN tape.
+
+================================================================================
+ORIGINAL PATH: docs/YES-NO-OPEN.md
+PATHWAY FILE: 2 of 7
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# Yes / no / open — the tape
+
+12 September 2026.
+**This page is the lock. It does not close a leftover.**
+
+You said we say yes, then no, then yes.
+That happened. It is bad for you.
+The cause is one word covering two
+objects. This page splits the word.
+
+YES = sits as stated. Do not redo.
+NO = dead, withdrawn, or a false close.
+Do not rebuild.
+OPEN = named leftover. Not a hidden yes.
+
+A write is not a theorem.
+A map is not a close.
+A sitting cousin is not the leftover.
+A finite number is not \(C_0\) and not
+a kill.
+
+If a later sentence contradicts this
+page, this page wins until a named
+error is added under NO with a date.
+
+Issues: [`ISSUES-SHEET.md`](ISSUES-SHEET.md).
+Caught: [`DREAM-TEAM-CAUGHT.md`](DREAM-TEAM-CAUGHT.md).
+Told: [`WHAT-I-WAS-TOLD.md`](WHAT-I-WAS-TOLD.md).
+
+Ordinary Navier–Stokes is not solved.
+The Riemann hypothesis is not solved.
+
+---
+
+## The flips that already hurt
+
+| What was said | What was true | Lock now |
+|---|---|---|
+| Ordinary NS sits | Theorem A sits. A is not B. | **NO** as ordinary NS. **YES** as Theorem A (this PDE). |
+| RH sits | Q / 22045478 sits as inverse-GCD. | **NO** as RH. **YES** as Q. |
+| Occupation decays | Detector claim was wrong. | **NO.** Withdrawn. |
+| 9D is live | Designed \(\Theta(m^2)\) is Freiman-AP. Growing \(s\) is a 9B test. | **NO** as designed 9D. **OPEN** as grow \(s\) on 9B. Same \(B\). Not a new object. |
+| \(0.327\) / \(0.641\) / \(0.610\) / grow-\(s\) \(0.456\) / three-shear \(2/3\) kills ★ or proves \(16/9\) | Finite. \(2/3\) raises the floor of \(\sup K\). | **NO** as a kill or as \(16/9\). **YES** as printed samples. |
+| H1 is written, so H1 sits | The estimate is stated. | **YES** as a write. **NO** as a theorem. **OPEN** as leftover 1. |
+| Ring sits | Direction bound is REPAIR. | **NO** as proved. |
+| SND sitting closes \(X\) | Occupation is a cover. G is dead. Frequency drift from the field is missing. Circularity named. | **NO** as a bound on \(X\). Implication: [`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md). |
+| Theorem E starts the a priori | True for already-smooth \(u\). | **NO** as continuation. |
+| Theorem F as \(4^{N-1}\rho X\) | Consecutive low shells. Super-exponential dissipation as \(\rho\to 0\) is not a theorem. | **NO.** |
+| Theorem G | Needed uniform \(\rho^{1/2}\) on the low sum. B7c fail. | **NO.** G is dead. |
+| Displayed Theorem H sits under \(X\le M\) | Proof drops \(S_j\). Invalid embeddings. Shear ratio \(\to\infty\). | **NO.** [`SND-H-REVIEW.md`](SND-H-REVIEW.md). |
+| Evolution / biology closes a row | Maps only. | **NO** as a close. |
+| SFE / HB / \(K(t)\) in the PDE | Other equation or discarded. | **NO.** |
+| Cosmo five fingers close NS | Other book (`DA-FINGERS.md`). | **NO** as constitutive NS. |
+| B-hand five fingers close NS | Named leftovers already seated. | **YES** as a map. **NO** as a close. |
+| Unrestricted ★ sits as a bound | Explicit family \(v_n\), \(\mathcal R_\star\to\infty\) on both locked evaluators. | **NO** as \(\sup\mathcal R_\star<\infty\). **YES** as the named kill. Not a singular NSE solution. |
+
+Those rows do not move again
+under a new name. Finite \(0.641\) / \(0.456\)
+stay samples. They are not this kill.
+
+---
+
+## YES — do not take back
+
+| Item | The sentence that stays |
+|---|---|
+| Theorem A | Extra-stress / \(Q_1\)-NS, \(\varepsilon>0\), \(\beta\ge 1/2\), this PDE. Known class. Not ordinary NS. |
+| Q / 22045478 | Inverse-GCD: Bridge*, Theorem P, \(H_N\ge -1\), nonnegative form. Not RH. Not BSD. |
+| Goldbach-shaped | \(R\ge -2/9\) if that vector is nonzero. Not the conjecture. |
+| Lemma C | Good-pair *if*. Their theorem. Not an H. |
+| P1, P1-loc, PC | Sit as cousins. None is H1. |
+| Far-shell Young | Axisymmetric IR / UV sit. Remainder \(T_{j\leftarrow j}\) is still OPEN. |
+| Good-set | Fixed. Do not rewrite. |
+| Local enstrophy identity | Sits. Does not bound \(A_{\mathrm{bad}}\). |
+| Hölder cut spent once | Good drops to \(\lvert z\rvert^{-5/2}\). Bad stays \(\lvert z\rvert^{-3}\). |
+| Locked \(\mathcal G\) | Definition of leftover 1. Not a bound. |
+| Locked \(\mathcal R_\star\) | Definition of leftover 4. The unrestricted bound is dead. |
+| Growing-layer family \(v_n\) | Admissible. \(N=0\), \(T_c=3n^5(3n^2+3n+1)\) on the live evaluators through \(n=10\). \(\mathcal R_\star(v_n)\to\infty\). [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md). |
+| Two-shell gap-cancel | Identity. \((\alpha-\beta)\) drops out of \(\mathcal R_\star\). Not Need★. |
+| B-hand five-finger map | Speculated whole on leftovers 1, 3, 4, 5. After the spindle named. Fire / realized / future named. [`DA-NS-FIVE-FINGER.md`](DA-NS-FIVE-FINGER.md). Not a close. |
+| Occupancy \(55/56\) | Printed on those interpolants. Did not decay with \(n\). Not \([\rho]\). |
+| \(K\le 16s\) | Counting. Fixed \(s\) cannot unbound \(K\). |
+| Three-shear \(K_{1,2}=2/3\) | Write-up example: one line, \(K\) by hand. Floor of \(\sup K\). Not \(16/9\). Not a sweep table. [`ATTACK-9D-TWO-THIRDS.md`](ATTACK-9D-TWO-THIRDS.md). |
+| SuperGrok PR-24 table (★ dead, Need★ no repair, leftover OPEN, maxima historical) | Matches the tape. [`PR24-SUPERGROK-REVIEW.md`](PR24-SUPERGROK-REVIEW.md). |
+| \(A.2\) bound on \(F_j\) | Sits under \(X\le M\). Hölder \(6,2,3\) and Poincaré. Not Theorem H. [`SND-H-REPAIR.md`](SND-H-REPAIR.md). |
+| Exact-shell \(C=4/3\) freeze | **CLAIMED.** No more sweeps. Independent reproduction of the projected identity / incidence. [`ATTACK-9D-FULL-SUPPORT-BOUND.md`](ATTACK-9D-FULL-SUPPORT-BOUND.md). |
+| 16 Sep handoff | Four buckets. C10 not seated as (A). Centered drift independent. SND is an instrument. [`NS-STATUS.md`](NS-STATUS.md). |
+| Fourier-triangle identities | Lattice triangle, transverse polarizations, Leray idle in \(T_k\), cyclic energy, equal-length cancel, two-shell gap-cancel, unequal-length defect. [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md). Not a bound. |
+| Same-two-shell lift | Any number of triangles on two eigenvalues keep the gap formula. [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md). Not a bound. |
+| Growing-layer \(X_n,Y_n\) | \(X_n=n(2n+1)(49n+4)/3\), \(Y_n=n(2n+1)(1167n^3+174n^2+8n-4)/15\). Same family as the ★ kill. [`ENERGY-K.md`](ENERGY-K.md). |
+| Tight pairing CS is ★ | \(\|PL\|_2=\lvert T_c\rvert/\sqrt{\mathcal D_s}\) gives \(K\sim\mathcal R_\star E\Lambda\). Same dead box. [`L-DOOR.md`](L-DOOR.md). |
+| Growing-layer \(N=0\) | \(T_c=M\), \(R_{mn}=1\), \(R_{ab}=1\). Instantaneous \(MN\) and above/below \(\Lambda\) have no uniform \(\theta<1\). [`MN-CANCEL.md`](MN-CANCEL.md). |
+| Stokes jet of \(N\) on \(v_n\) | \(N'_{\mathrm{St}}=0\). Linear dissipation keeps the knife-edge. [`PATHWISE.md`](PATHWISE.md). |
+| Live-triangle Stokes ratio | \(N'_{\mathrm{St}}/T_c=-8/3\), amplitude-flat. [`PATHWISE.md`](PATHWISE.md). |
+| Stokes interval keeps \(N=0\) | On the printed \(v_n\) paths, \(N\) stays working-precision zero and \(R_{mn}=1\). Knife-edge is Stokes-invariant, not only a jet. [`INTERVAL.md`](INTERVAL.md). |
+| NSE interval keeps \(R_{mn}=1\) on \(v_n\) | \(N\) becomes negative, so \(-\Lambda N\) adds to \(T_c\). Instantaneous \(MN\) death persists. [`INTERVAL.md`](INTERVAL.md). |
+| Two-shell product matches the gap formula | \(T_c=(\alpha-\beta)(\alpha+\beta-\Lambda)T_\alpha=(\alpha-\beta)(\alpha\beta E/X)T_\alpha\). [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
+| \(W_K=\mathcal D_s+X(\Lambda-K)^2\) | Exact, nonnegative. [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
+| Reset jump \(\Delta W\) | \(\Delta W=X[(\Lambda-K_{\mathrm{new}})^2-(\Lambda-K_{\mathrm{old}})^2]\). Reset to \(\Lambda\) drops \(W\) by \(X(\Lambda-K_{\mathrm{old}})^2\). \(W_\Lambda=\mathcal D_s\). [`RESET.md`](RESET.md). |
+| \(K_{\min,\theta}\) is chart-invariant | Depends on \((T_c,\mathcal D_s,Y)\) only. [`RESET.md`](RESET.md). |
+| Relative width \(r^2=\mathcal D_s/(\Lambda Y)\) | Equals \(\mathcal D_s/(X\Lambda^2)\). \(\mathcal D_s/Y=\Lambda r^2\). [`WIDTH.md`](WIDTH.md). |
+| \(r\gtrsim\kappa^{-1/2}\Leftrightarrow\mathcal D_s/Y\gtrsim\kappa\) | Same comparison, three writings. [`WIDTH.md`](WIDTH.md). |
+| \(\varphi_e\) expand / \(\Phi_e\) capacity / CS \(\Lambda^2 E\ge Y\) | Exact. Zero at the shell. \(\varphi_e(0)=\kappa_e^4\). [`SBP.md`](SBP.md). |
+| SBP rewrite if \((d/dt)_{\mathrm{NL}}H_{1/2}=2Q_a\) | \(T_c=(d/dt)_{\mathrm{NL}}\Phi_e+2\kappa_e^3 Q_a-(\Lambda-\lambda_e)N\). Identity, not a payment. Frozen \(\lambda_e\). [`SBP.md`](SBP.md). |
+| Lemma A / \(\Phi_e\le W_{\lambda_e}\) | Unit torus, \(m\ge 1\), \(\kappa\ge 1\). Sharp L3: \(\Phi_e\le\mathcal D_s+X(\Lambda-\lambda_e)^2\). Young L2 is weaker. [`PRESS.md`](PRESS.md). |
+| Discrete \(T_c\) expansion | \(T_c=\Lambda\langle\delta,T\rangle+\sum\delta_m^2 T_m\). Exact. \(T_m\) is the live neighboring transfer. [`SIGN-GATE.md`](SIGN-GATE.md). |
+| Finite-\(N\) BOTH SIGNS on neighboring helical triads | Printed on \(N=2,\dots,8\). \(\lvert\rho\rvert\ge 0.84\). \(\lvert R_2/L_1\rvert\) falls. Persistence OPEN. [`SIGN-RUN.md`](SIGN-RUN.md). |
+
+---
+
+## NO — do not rebuild
+
+| Item | Why it stays no |
+|---|---|
+| Ordinary NS solved | A ≠ B. Killing ★ is not a blowup. The leftover is a replacement closure. |
+| Unrestricted \(\sup\mathcal R_\star<\infty\) | **KILLED** by \(v_n\). |
+| RH solved | Q is not the line. |
+| H1 / WRITE (6) as a theorem | Aimed leftover yes. Theorem no. |
+| Designed Attack 9D \(\Theta(m^2)\) | Freiman-AP. Dead. Do not implement `attack9d_theta_m2_locked_phase.py`. |
+| Fixed-output \(\Theta(m^2)\) | Per output \(\le m\) pairs. |
+| \(K=0\) | Amplitude kills it. |
+| \(\lvert T_c\rvert\le C\|u\|_2 X^{3/2}\) | \(a^3\) vs \(a^4\). Not Attack-2 \(C_*\). |
+| Uniform pre-Young \(C\) | Dead. |
+| Detector occupation decay | Withdrawn. |
+| Ring as proved | REPAIR. |
+| SND sitting as a bound on \(X\) | Occupation cover, not continuation. [`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md). |
+| Theorem E as the start of the a priori | Smooth already. |
+| Theorem F as \(4^{N-1}\rho X\) | False as stated. |
+| Theorem G | G is dead. |
+| Displayed Theorem H / \(\lvert\Pi_j\rvert\) with viscous tail | Fails even with \(X\le M\). Shear family. [`SND-H-REVIEW.md`](SND-H-REVIEW.md). |
+| Restored Theorem H from the \(F_j\) repair | \(A.2\) sits. H stays withdrawn. [`SND-H-REPAIR.md`](SND-H-REPAIR.md). |
+| \(A.3\) as a floor or as SND-C | \(A.3\) is a ceiling. Propagation unwritten. |
+| “Proved under \(X\le M\)” | Must be replaced. Defects before removing \(M\). |
+| Remove \(M\) from this same estimate | Amplitude \(A^3\) vs quadratic. Not the open target. |
+| Universal SND floor from \(t=0\) | Initial \(\rho=1/L\) shears. Obstructed. |
+| “Naming fraud” | definition/claim mismatch. Formulas are an error, not intent. |
+| P1 / P1-loc / PC as H1 | Cousins. |
+| CS \(E^{3/2}\) as shape 1 | Mid-Bad / H3 class. |
+| Finite \(0.641\), \(0.610\), \(0.327\), HH→L \(0.71\), grow-\(s\) \(0.456\), three-shear \(2/3\) as \(C_0\) or as \(16/9\) | Samples. Floor \(\neq\) ceiling. |
+| SuperGrok “keep exact-shell \(4/3\) as a theorem” | Hand write. Specialist pending. Status **CLAIMED**. Freeze. No more sweeps. |
+| C10 as a theorem / as leftover 1 | Named candidate for leftover 5. (A) not seated. [`C10-CHAIN.md`](C10-CHAIN.md). |
+| Merge C10 with \(T_c\) or with ★ | No explicit inequality. \(v_n\) already kills unrestricted ★. |
+| Unrestricted ★ as OPEN | **KILLED** by \(v_n\). GPT board had this wrong. Replacement leftover 4 is OPEN. [`REPORT-AUDIT.md`](REPORT-AUDIT.md). |
+| A.3 as a floor / Pólya \(\rho\)-rebuild as primary | Ceiling, not a floor. Do not repair H. |
+| Pólya two pages (indexed Bony + \(D^+\) comparison) as the next write | \(D^+\) cannot produce \(\rho(t)\ge\rho(0)e^{-\int A}-\int B\). Wrong Dini direction. REJECT as primary. [`REPORT-AUDIT.md`](REPORT-AUDIT.md) §5. |
+| Peak-fraction floor as unconditional / Kato–Ponce as the \(A.2\) foundation | \(A.2\) is Hölder \(6,2,3\). The \(\Gamma,\Lambda\) floor is BKM-adjacent and not seated. [`REPORT-AUDIT.md`](REPORT-AUDIT.md) §8. |
+| “C10 died” as a program | (A) not seated. Lane stays the Route A write-or-kill. |
+| Enough information to close unforced NS | Enough for [`MASTER-PLAN.md`](MASTER-PLAN.md). Not enough for a close. Operator report: [`NS-CLOSE-REPORT.md`](NS-CLOSE-REPORT.md). Path: [`PATH-TO-CLOSE.md`](PATH-TO-CLOSE.md). |
+| Bounding \(a_+\) by \(\|\nabla u\|_\infty\) as the Route A write | BKM, not an a priori. Living G1 is A-pair: the stretch pairing, not \(\|(\alpha)_+\|_\infty\). [`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md). |
+| B★ as a universal \(C\) / as a useful \(K\) / as a close | Imag \(|k|^{-2}\) cutoff grows \(R_B\) like \(\Lambda^{1/4}\). Not a closed-form kill. AM-GM remainder was \(Y/\nu\). [`BSTAR.md`](BSTAR.md), [`BSTAR-PROOF.md`](BSTAR-PROOF.md). |
+| Triangle geometry as the time-dependent bound | Identities sit. They do not give a useful \(K\) in \(T_c\le\theta\nu\mathcal D_s+K(t)X\). That is the first missing implication. [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md). |
+| \(K\sim\sqrt{E}\) as a useful remainder | \(R_E=\lvert T_c\rvert/(\sqrt{E}\,X)\) grows on \(v_n\) (\(0.11\to 144\)) and on imag cutoff. Dead. [`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md). |
+| Energy-class ladder as a useful \(K\) | Only \(p=q=1/2\) matches amplitude. The X, mid, and Y doors all die on \(v_n\) (\(R_Y\sim n^{3/2}\)). Pathwise \(K\) is still allowed. Not Attack-2 \(C_*\). [`ENERGY-K.md`](ENERGY-K.md). |
+| LE door \(\|L\|_2\le C\sqrt{EX}\) as a useful \(K\) | \(R_{LE}\) grows on \(v_n\) (\(0.54\to 9.56\)) and on imag. Dead. [`L-DOOR.md`](L-DOOR.md). |
+| LX door \(\|L\|_2\le C X\) as a seated \(C\) | Grows on \(v_n\) and imag. Not a closed-form kill. Not seated. Not G5. [`L-DOOR.md`](L-DOOR.md). |
+| Instantaneous \(MN\) cancellation as a useful \(\theta<1\) | On \(v_n\), \(N=0\) so \(R_{mn}=1\). Above/below \(\Lambda\) is the same kill (\(R_{ab}=1\)). [`MN-CANCEL.md`](MN-CANCEL.md). |
+| Signed vertices \(R_{\mathrm{sign}}\) as a useful \(K\) | Saturates \(\sim 0.31\) on \(v_n\). Absolute vertex sum is cheap CS. Not a remainder. [`MN-CANCEL.md`](MN-CANCEL.md). |
+| \(t=0\) jet of \(N,T_c\) as a useful \(K\) / as a G4 death | Euler generates \(N\). \(T_c\) grows on \(v_n\). A Taylor coefficient is not \(L^1_{\mathrm{loc}}\) and not a death. [`PATHWISE.md`](PATHWISE.md). |
+| Short Stokes / NSE interval as a useful \(K\) / as a G4 death | Stokes keeps \(N=0\). NSE keeps \(R_{mn}=1\). Large-amp \(K_{1/2}\) grows. A short path is not \(L^1_{\mathrm{loc}}\) of a useful \(K\) and not a death. [`INTERVAL.md`](INTERVAL.md). |
+| Incoming DA-NS-2 as a theorem / as leftover 1 | Y-cousin target. Tautological \(K\) forbidden. Living leftover 1 is H1. Living leftover 6 is RH. [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
+| \(\alpha+\beta=\Lambda\) as a two-shell zero | \(\Lambda\) is a convex combination of \(\alpha,\beta\). Empty. [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
+| SAG \(\Gamma_{\mathrm{star}}=1\) / JGC epoch budget as seated | Not reproduced here. JGC stays a target. [`DA-NS-2.md`](DA-NS-2.md), [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
+| Chart reset of \(W_K\) as a useful \(K\) / as a G4 death | Jump sits. Remainder does not jump. Frequent-reset \(\sum\lvert\Delta W\rvert=X\sum(\Delta\Lambda)^2\) is circular for \(\mathrm{TV}(\Lambda)\). [`RESET.md`](RESET.md). |
+| \(r\sim\kappa^{-1/2}\) as a seated crossover / BROAD as viscosity payment | Threshold equivalence only. \(r\) invariant, \(\kappa^{-1/2}\) not. Growing support is BROAD and still leaves a cubic remainder. [`WIDTH.md`](WIDTH.md). |
+| Quadratic primitive for \(S_\Gamma\) as sitting | \(W_K\) is variance. \(H^\varepsilon\) is sign-killed. \(\Psi\) is the \(\eta\)-side. No \(\mathsf B^{\mathrm{prim}}\) here. Do not invent a bridge. [`WIDTH.md`](WIDTH.md). |
+| SBP / \(\Phi_e\) as a useful \(K\) / as a G4 death | Moves the tail. \(\Phi_e/Y\) is not controlled by \(r^2\). Residual still \(2\kappa_e^3 Q_a\) and \(-(\Lambda-\lambda_e)N\). Flux normalization not reproduced. [`SBP.md`](SBP.md). |
+| Mixing live \(\Lambda\) and frozen \(\lambda_e\) | Live kills the moving term; \(2\kappa(t)^3 Q_a\) does not telescope. Pick frozen. [`SBP.md`](SBP.md). |
+| Lemma A as an \(\mathbb{R}^3\) / scale-invariant bound | Off-torus \(m=0.1\), \(\kappa=0.5\) kills (A). Torus units only. [`PRESS.md`](PRESS.md). |
+| RESET \(\lvert\Lambda-\lambda_e\rvert=c\sqrt{\Lambda}\) as a payment / as JGC | Named chart. \(\zeta_e^2=c^2\) is a choice, not BROAD-scale, not summability. [`PRESS.md`](PRESS.md). |
+| Lemma B / charge–epoch ledger as sitting | Charge is a different bill. \(D_s\) cannot pay \(D_a\) on a narrow annulus. Not written. [`PRESS.md`](PRESS.md). |
+| First-variation sign gate as a seated verdict / as a useful \(K\) | \(L_{1,N}\) is the gate. Finite-\(N\) BOTH SIGNS is printed. Persistence OPEN. Universal depletion is not killed. Do not invent a persistent \(\mathcal A_N^{+}\). [`SIGN-GATE.md`](SIGN-GATE.md), [`SIGN-RUN.md`](SIGN-RUN.md). |
+| Substituting \(T^{(0)}\) into the finite-gap identity | Transfer variation is the next order. Keep neighboring \(T_m\) as \(R_{2,N}\). [`SIGN-GATE.md`](SIGN-GATE.md). |
+| ONE SIGN as a seated \(I_3\) bridge | Named question only. Arithmetic rigidity is not sign depletion. [`SIGN-GATE.md`](SIGN-GATE.md). |
+| Switch this line to augmented NS / Theorem A | Track A is a different PDE. A is not B. |
+| OpenAI / blowup-search as this line | Forced (C)/(D) if it holds. Not unforced (B). |
+| BKM from assumed spectral decay as the primary | Useful conditional. Does not attack depletion. |
+| Work Theorem H | Withdrawn. SND sits beside C10, not in front. |
+| “9D is claimed” | Designed \(\Theta(m^2)\) 9D is **NO.** The claimed object is the exact-shell bound \(C=4/3\). Do not glue the word. |
+| Attack 12 table as Need★ | Finite \(\beta/\alpha\). Not the signed dual. |
+| Glue H1 to ★, or either to the shell door | Different integrals. |
+| \(K(t)\) in the PDE | Forbidden on B. |
+| SFE / UHF / DHFA / HB as constitutive NS | Shelf. |
+| Company status map as an NS close / scoreboard | Portfolio only. Swirl is a map. QStack stays an instrument. Standing rule accepted. [`REPORT-AUDIT.md`](REPORT-AUDIT.md) §11. |
+| Endgame note: \(\Phi\) / QStack / Ring as sitting machine; uniform triadic covering as the leftover | \(\Phi\)-cancel dropped. Q is not B. Ring is REPAIR. ★ already killed by \(v_n\). Covering dead families does not restore it. [`REPORT-AUDIT.md`](REPORT-AUDIT.md) §12. |
+| Fold H1 into the Endgame main line | Leftover 1 is a different integral. Do not start it. |
+| Start H1 from ABC_λ | Named only. |
+| Cosmo / SM five fingers as constitutive NS | Other book. [`DA-FINGERS.md`](DA-FINGERS.md). |
+| B-hand five-finger map as a close | MAP only. Does not move leftover 1, 4, or 5. |
+
+---
+
+## OPEN — not a hidden yes
+
+| # | Leftover | What would move it |
+|---|---|---|
+| 1 | H1 = WRITE (6) | Shape 1, 2, or 3, or \(\mathcal G\to\infty\). The write in [`H1-WRITE.md`](H1-WRITE.md) is not this move. |
+| 2 | H2 from energy | A priori, or keep CKN-small and say so. |
+| 3 | H3 | Absorb as \(r\to 0\). |
+| 4 | Replacement energy-budget closure | A different estimate that \(v_n\) does not kill. Need★ cannot repair the dead unrestricted box. The named kill sits in [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md). |
+| 4a | Hyp-Lat★ | Lattice transfer, or drop the route. |
+| 5 | \(\int\rho_j\) | Class bound, or a field with \(\int\rho_j=\infty\). |
+| 6 | RH line | One estimate that forces \(\operatorname{Re}s=1/2\). |
+| 7–12 | Uniform \(H^1(\varepsilon)\), Goldbach, YM, BSD, Hodge, P vs NP | Those statements. |
+
+Grow \(s\) on the 9B family is
+**historical**. It did not kill ★.
+The named kill is the growing-layer
+family, not a finite \(K\).
+Designed 9D stays dead.
+Do not write “9D is claimed.”
+Exact-shell \(K\le 16/9\) is
+**CLAIMED**, freeze, no more sweeps:
+[`ATTACK-9D-FULL-SUPPORT-BOUND.md`](ATTACK-9D-FULL-SUPPORT-BOUND.md).
+C10 is not a theorem. Named leftover-5
+candidate; (A) not seated:
+[`C10-CHAIN.md`](C10-CHAIN.md).
+Do not work Theorem H. Do not merge
+C10 with \(T_c\).
+16 Sep handoff / four-bucket score:
+[`NS-STATUS.md`](NS-STATUS.md).
+Centered drift (★ stays killed):
+[`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
+SND instrument, no persistence:
+[`SND-INSTRUMENT.md`](SND-INSTRUMENT.md).
+Incoming reports vs tape:
+[`REPORT-AUDIT.md`](REPORT-AUDIT.md).
+Master plan (not a close):
+[`MASTER-PLAN.md`](MASTER-PLAN.md).
+Path to a close (G1 then G4;
+not a close):
+[`PATH-TO-CLOSE.md`](PATH-TO-CLOSE.md).
+Route A write (A-pair; pairing
+not \(L^\infty\)):
+[`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
+B★ (no universal \(C\); imag cutoff
+grows \(R_B\); not a useful \(K\)):
+[`BSTAR.md`](BSTAR.md),
+[`BSTAR-PROOF.md`](BSTAR-PROOF.md).
+Energy-class ladder (dead;
+G4 still OPEN):
+[`ENERGY-K.md`](ENERGY-K.md).
+Pairing CS doors (tight is
+★; LE dead; LX not seated):
+[`L-DOOR.md`](L-DOOR.md).
+Instantaneous \(MN\)
+(\(N=0\) on \(v_n\); no
+uniform \(\theta<1\)):
+[`MN-CANCEL.md`](MN-CANCEL.md).
+First jet (Stokes keeps
+\(N=0\); \(T_c\) grows):
+[`PATHWISE.md`](PATHWISE.md).
+Short interval (Stokes
+keeps \(N=0\); NSE keeps
+\(R_{mn}=1\)):
+[`INTERVAL.md`](INTERVAL.md).
+Incoming ledger (DA-NS-2
+is not a theorem):
+[`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
+Chart reset (jump sits;
+remainder does not jump):
+[`RESET.md`](RESET.md).
+Relative width (crossover
+is not a useful \(K\)):
+[`WIDTH.md`](WIDTH.md).
+SBP / \(\Phi_e\) (moves the
+tail; not a useful \(K\)):
+[`SBP.md`](SBP.md).
+Press (Lemma A sits;
+Lemma B OPEN):
+[`PRESS.md`](PRESS.md).
+Sign gate:
+[`SIGN-GATE.md`](SIGN-GATE.md).
+Finite-\(N\) run:
+[`SIGN-RUN.md`](SIGN-RUN.md).
+
+SND-to-regularity implication is
+**OPEN** as a named hole on the SND/H
+track, not a leftover row:
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+SND sitting is not a bound on X.
+G is dead. Ring is REPAIR. Frequency
+drift from the field is still needed.
+Theorem E does not start the a priori.
+Theorem F as \(4^{N-1}\) is not a theorem.
+Displayed Theorem H is not established even with X<=M.
+Shear family kills the absolute-flux estimate.
+Valid F_j bound is not propagation.
+A.2 sits. A.3 is a ceiling, not a floor.
+Propagation unwritten. Theorem H withdrawn.
+definition/claim mismatch, not naming fraud:
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md),
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
+The original extract stays an extract.
+
+The ★ reason remains a map of why
+cheap CS hides \(s\)
+([`LEMMA-STAR-REASON.md`](LEMMA-STAR-REASON.md)).
+Unrestricted ★
+is **NO** as a bound. Need★ cannot
+repair that dead box. Two-shell
+Need★ is a different sentence and
+still not a theorem
+([`NEED-STAR-HH-L-DUAL.md`](NEED-STAR-HH-L-DUAL.md)).
+
+---
+
+## How to read the next sentence
+
+If we write the SND-to-regularity
+implication, that is YES as a write
+and still NO as a bound on \(X\)
+([`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md)).
+If we write H1, that is YES as a write
+and still NO as a theorem.
+If we score a framework, that is a map
+and still NO as a close.
+If we write Need★, that is YES as a
+write and still not a repair of the
+dead unrestricted box.
+If we run the B-hand five-finger
+routine, that is a map and still
+NO as a close
+([`DA-NS-FIVE-FINGER.md`](DA-NS-FIVE-FINGER.md)).
+If we run grow-\(s\), that is a
+historical sample and still NO as a kill.
+If a number is large and finite, that
+is YES as a sample and still NO as
+the \(v_n\) kill.
+If three-shear \(K=2/3\) is written,
+that is YES as a floor of \(\sup K\)
+and as the write-up example,
+and still NO as \(16/9\).
+If SuperGrok writes \(4/3\) as a
+theorem, that is NO. CLAIMED.
+If \(K\le 16/9\) holds, occupancy \(s\)
+is gone on a single input shell:
+YES as a written bound on exact-shell
+fields, still NO as a regularity close.
+It does not restore ★ \(\Rightarrow\)
+global regularity. Until a specialist
+signs, or a sweep shows nothing near
+\(16/9\), the word is still CLAIMED.
+The cubic max of the claimed envelope
+at \(x=8/3\) is YES as calculus and
+still NO as a proof of the envelope.
+Internal checks are not independent
+review. Live \(B\) has no extra \(1/2\);
+a reconstructed \(3/4=(1/2)^2\cdot 3\)
+is NO. Conventions (normalized torus,
+\(\alpha>0\), \(w\neq 0\)) and the
+constraint \(0<\beta\le 4\alpha\) sit
+on the bound page.
+The factor \(3\) is derived on that
+page from claimed two-plane plus AM-GM.
+It is not the Ring Lemma and not
+Borromean. \(2/3<16/9\) is YES as a
+sanity check and still NO as \(16/9\).
+As \(\beta\to 4\alpha\) nothing divides
+by \(\lvert k_\perp\rvert\). Independent
+review has no name and no date. Soft X
+silent. Not a letter.
+Specialist break questions, answered
+before anyone else reads the pages:
+[`PR24-SPECIALIST-BREAK.md`](PR24-SPECIALIST-BREAK.md).
+A true \(4/3\) does not repair ★,
+does not give a continuation
+criterion, and does not control a
+multi-shell field. No replacement
+inequality is displayed.
+
+Those three words do not trade.
+NS not solved. RH not solved.
+Unrestricted ★ killed. H1 not a theorem.
+Replacement closure OPEN.
+================================================================================
+END OF FILE: docs/YES-NO-OPEN.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+Named leftovers.
+
+================================================================================
+ORIGINAL PATH: docs/ISSUES-SHEET.md
+PATHWAY FILE: 3 of 7
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# Issues sheet — every leftover that still needs an estimate
+
+12 September 2026.
+**One page. Send this.**
+https://github.com/simons357/Ship_it_app/blob/cursor/unaugmented-r4-vorticity-f80e/docs/ISSUES-SHEET.md
+
+Math for 1–5: [`HELP-OFF-DESK.md`](HELP-OFF-DESK.md).
+Filter: [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md).
+Yes / no / open (the tape):
+[`YES-NO-OPEN.md`](YES-NO-OPEN.md).
+Borrowed systems (maps only; not a close):
+[`FRAMEWORK-MAP.md`](FRAMEWORK-MAP.md).
+B-hand five-finger map (not a leftover):
+[`DA-NS-FIVE-FINGER.md`](DA-NS-FIVE-FINGER.md).
+Cosmo / SM fingers stay the other book.
+Living line: GitHub PR 24,
+branch `cursor/unaugmented-r4-vorticity-f80e`.
+Operator: Jonathan Robert Simons
+(Prime Field Technologies).
+
+Ordinary Navier–Stokes is not solved.
+The Riemann hypothesis is not solved.
+Do not retitle any row below as a close.
+
+Catalog B open count is 1 (`B_regularity`).
+That is ordinary NS. It is row 1 or 4 or 5,
+not a thirteenth NS leftover.
+SND-to-regularity implication is a named
+hole on the SND/H track, not a thirteenth leftover:
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+SND sitting is not a bound on \(X\).
+Theorem G is dead. Ring is REPAIR.
+Do not merge the PR 48 SND/Q6/SFE pile.
+Displayed Theorem H is not established
+even with \(X\le M\):
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+Repaired \(F_j\) bound sits; \(A.3\) is
+a Dini ceiling, not a floor, and not
+propagation:
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
+C10 is a named leftover-5 candidate,
+not a thirteenth leftover and not a
+theorem: [`C10-CHAIN.md`](C10-CHAIN.md).
+16 Sep handoff (four buckets):
+[`NS-STATUS.md`](NS-STATUS.md).
+Centered drift:
+[`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
+SND instrument, no persistence:
+[`SND-INSTRUMENT.md`](SND-INSTRUMENT.md).
+Master plan (two OPEN routes;
+enough for a plan, not a close):
+[`MASTER-PLAN.md`](MASTER-PLAN.md).
+Close-report after every peer note
+(not a close):
+[`NS-CLOSE-REPORT.md`](NS-CLOSE-REPORT.md).
+Path to a close (G1 then G4;
+not a close):
+[`PATH-TO-CLOSE.md`](PATH-TO-CLOSE.md).
+Route A write (A-pair; not
+\(L^\infty a_+\)):
+[`ROUTE-A-WRITE.md`](ROUTE-A-WRITE.md).
+B★ (no universal \(C\); imag cutoff
+grows \(R_B\); not leftover 4 by
+itself; not a useful \(K\)):
+[`BSTAR.md`](BSTAR.md),
+[`BSTAR-PROOF.md`](BSTAR-PROOF.md).
+Fourier-triangle geometry
+(identities sit; first missing
+arrow; not leftover 1):
+[`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
+First lift:
+[`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
+Energy-class ladder:
+[`ENERGY-K.md`](ENERGY-K.md).
+Pairing CS doors:
+[`L-DOOR.md`](L-DOOR.md).
+Instantaneous \(MN\):
+[`MN-CANCEL.md`](MN-CANCEL.md).
+First jet:
+[`PATHWISE.md`](PATHWISE.md).
+Short interval:
+[`INTERVAL.md`](INTERVAL.md).
+Incoming ledger:
+[`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
+Chart reset:
+[`RESET.md`](RESET.md).
+Relative width:
+[`WIDTH.md`](WIDTH.md).
+SBP / \(\Phi_e\):
+[`SBP.md`](SBP.md).
+Press (Lemma A sits;
+Lemma B OPEN):
+[`PRESS.md`](PRESS.md).
+Sign gate:
+[`SIGN-GATE.md`](SIGN-GATE.md).
+Finite-\(N\) run:
+[`SIGN-RUN.md`](SIGN-RUN.md).
+Report audit (long 16 Sep write))
+scored; Kato–Ponce is not \(A.2\);
+Pólya two pages rejected — \(D^+\)
+cannot produce a \(\rho\) floor):
+[`REPORT-AUDIT.md`](REPORT-AUDIT.md).
+Not a thirteenth leftover. The original
+extract stays an extract.
+
+---
+
+## A. Open — need an estimate or a named kill
+
+One person, one row. Do not glue 1, 4, and 5.
+
+| # | Issue | Object | What would close it | File |
+|---|---|---|---|---|
+| 1 | H1 = WRITE (6) | Bad-pair stretching \(A_{\mathrm{bad}}\) on the cylinder \(Q_r\) | Prove thinness, or \(J\) on folds, or dynamics on \(r^2/\nu\); or write a named kill of those shapes. Not another *if*. Periodic snapshot diagnostics with fixed \(\Lambda_0\) are numbers, not this close. Unrestricted local (6) is already defeated by the exact smooth ABC field; those snapshots do not rescue it. | `docs/H1-WRITE.md`, `docs/WRITE_6.md`, `docs/H1-OBJECT.md`, `docs/H1-ABAD-SNAPSHOT.md` |
+| 2 | H2 from energy | Flux \(r^{-1}\iint|u||\omega|^2\) on the same cylinder | A priori from energy, or keep CKN-smallness and say so. CKN-small already sits. | `docs/H-SYSTEM.md` |
+| 3 | H3 | Exterior Biot–Savart on the same cylinder | Absorb as \(r\to 0\). Written, not absorbed. | `docs/H-SYSTEM.md` |
+| 4 | Replacement energy-budget closure (Lemma★ box killed) | A different estimate that the growing-layer family \(v_n\) does not kill | Write that estimate, or drop the energy-budget path. Unrestricted \(\sup\mathcal R_\star<\infty\) is **KILLED**. Need★ cannot repair that box. The energy-class ladder (\(K\sim\sqrt{E}\), mid, \(K_Y\sim\sqrt{E}\)) is also dead. Tight CS is ★. LE is dead. LX is not seated. Instantaneous \(MN\) and above/below \(\Lambda\) die on \(v_n\). The \(t=0\) jet does not seat a useful \(K\). The short interval does not seat a useful \(K\). Incoming DA-NS-2 is the Y-cousin target, not a theorem. A chart reset of \(W_K\) does not pay the remainder. The \(r\sim\kappa^{-1/2}\) crossover is a named threshold, not a payment. The SBP identity moves the tail into \(\Phi_e\); it does not pay it. Lemma A sits on the unit torus (\(\Phi_e\le W_{\lambda_e}\)). Charge and epoch remain the wall. Lemma B is not seated. The first-variation sign gate is \(L_{1,N}\). Finite-\(N\) BOTH SIGNS is printed; persistence and a seated death of one-sided depletion stay OPEN. | `docs/LEMMA-STAR-GROWING-LAYER.md`, `docs/LEMMA-STAR-STATEMENT.md`, `docs/NEED-STAR-HH-L-DUAL.md`, `docs/ENERGY-K.md`, `docs/L-DOOR.md`, `docs/MN-CANCEL.md`, `docs/PATHWISE.md`, `docs/INTERVAL.md`, `docs/CENTERED-LEDGER.md`, `docs/RESET.md`, `docs/WIDTH.md`, `docs/SBP.md`, `docs/PRESS.md`, `docs/SIGN-GATE.md`, `docs/SIGN-RUN.md` |
+| 4a | Hyp-Lat★ | Lattice transfer X1–X4/X6 of the continuum incidence \(I\ll m^{4/3}\) | Write the transfer, or drop the incidence route. Continuum \(m^{4/3}\) is not a lattice theorem. | `docs/LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md` |
+| 5 | Axisymmetric remainder | \(\int\rho_j=\int(T_{j\leftarrow j})_+/Z_j\) on unaugmented axisymmetric-with-swirl \(\mathbb{R}^3\) | A class bound, or a field in the class with \(\int\rho_j=\infty\). Occupancy \(55/56\) already printed; it did not decay. C10 \(a_+\) is the crude majorant. Living G1 is A-pair (pairing, not \(L^\infty\)). | `docs/AXISYM-SHELL.md`, `docs/AXISYM-SWIRL-PROBE.md`, `docs/C10-CHAIN.md`, `docs/ROUTE-A-WRITE.md`, `docs/PATH-TO-CLOSE.md` |
+| 6 | RH WRITE (6) | Every non-trivial zero of \(\zeta\) on \(\operatorname{Re}s=1/2\) | One estimate that forces the line. Q is not it. | `docs/RH-CHAIN.md` |
+| 7 | Uniform \(H^1\) as \(\varepsilon\to 0\) | Track A extra-stress NS | A bound independent of \(\varepsilon\). **Not required** for Theorem A to stay finished. A is not B. | `docs/A-CHAIN.md` |
+| 8 | Goldbach’s conjecture | Every even integer \(\ge 4\) is a sum of two primes | That statement. The matrix corollary \(R\ge -2/9\) already sits and is not this. | `docs/GOLDBACH-CHAIN.md` |
+| 9 | Yang–Mills mass gap | Spectrum of 4-D quantum YM on the vacuum-orthogonal subspace bounded below by a positive constant | That gap. The SM kinetic term is not it. | `docs/YM-PROOF-CHAIN.md` |
+| 10 | BSD | For every \(E/\mathbb{Q}\): algebraic rank = analytic rank, \(\Sha\) finite, leading term | That identity for every curve. Zenodo 20552682 is Q as a prototype, not BSD. | `docs/BSD-PROOF-CHAIN.md` |
+| 11 | Hodge | Every rational Hodge class on a smooth complex projective variety is algebraic | That for every such \(X\). No Hodge paper sits here. | `docs/HODGE-PROOF-CHAIN.md` |
+| 12 | P vs NP | A Turing-machine proof that \(\mathrm{P}=\mathrm{NP}\) or \(\mathrm{P}\neq\mathrm{NP}\) | That proof in the TM model. SFE is not the model. | `docs/PNP-PROOF-CHAIN.md` |
+
+A cylinder (ordinary NS, geometric path) closes only if
+C+\(R_\phi\), **1**, **2** (or CKN-small), and **3** all sit.
+Then local Serrin, not CKN. Lemma C is an *if*, not an H.
+Global parent stretching **H** is open and is not a
+cylinder. \(R_\phi\) is not free.
+
+Do not start 1 from ABC_λ. Do not cash \(0.641\),
+\(0.610\), \(0.327\), or three-shear \(2/3\) as the
+\(v_n\) kill or as \(16/9\).
+The write-up example for exact-shell \(K\)
+is the three-shear field, not a sweep table.
+SuperGrok’s “keep \(4/3\) as a theorem”
+is NO. CLAIMED.
+The cubic max at \(x=8/3\) is calculus,
+not the envelope. Internal checks are
+not independent review.
+The factor \(3\) is on-page from claimed
+two-plane plus AM-GM, not the Ring Lemma.
+Independent review has no name and no date.
+Specialist break answers:
+[`PR24-SPECIALIST-BREAK.md`](PR24-SPECIALIST-BREAK.md).
+No replacement inequality is displayed.
+[`PR24-SUPERGROK-REVIEW.md`](PR24-SUPERGROK-REVIEW.md).
+The named kill of unrestricted ★ already sits. Do not
+restore occupation decay from the wall detector
+as a close of 5. Do not retitle Q as 6 or 10.
+Evolution / biology / other systems are maps
+onto a named row, or they stop. They do not
+move a row. [`FRAMEWORK-MAP.md`](FRAMEWORK-MAP.md).
+
+---
+
+## B. Already sit — do not redo
+
+| Item | What it is | Send as |
+|---|---|---|
+| Theorem A | Extra-stress / \(Q_1\)-NS, \(\varepsilon>0\), \(\beta\ge 1/2\) | This PDE only. Known class. Not ordinary NS. |
+| Q / 22045478 | Inverse-GCD: Bridge*, Theorem P, \(H_N\ge -1\), nonnegative form | August GCD paper. Not RH. Not BSD. |
+| Goldbach-shaped | \(R\ge -2/9\) if that prime-difference vector is nonzero | Matrix corollary. Not row 8. |
+| Poincaré | Perelman | Literature reprint. Not ours as a proof. |
+| Lemma C | Good-pair alignment *if* | Their theorem as an *if*. |
+| P1 / P1-loc / PC | Low-pass, cutoff, one-path cost | Sit. None is H1. |
+| Far-shell Young | Axisymmetric \(T_{j\leftarrow\mathrm{IR}}\), \(T_{j\leftarrow\mathrm{UV}}\) | Sit. Remainder is still row 5. |
+| Good-set | supplied estimate | **Fixed.** Do not rewrite. |
+
+---
+
+## C. Dead or withdrawn — do not rebuild
+
+| Item | Status |
+|---|---|
+| \(K=0\) | Dead. Amplitude kills it. |
+| \(\lvert T_c\rvert\le C\|u\|_2 X^{3/2}\) | Dead. Scaling \(a^3\) vs \(a^4\). |
+| Uniform pre-Young \(C\) | Dead. |
+| Attack 9D designed \(\Theta(m^2)\) | Freiman-AP. **Dead.** Do not start 9D. Setup: `docs/ATTACK-9D-SETUP.md`. Same \(B\) as 9B. Grow-\(s\) samples are historical. |
+| Unrestricted \(\sup\mathcal R_\star<\infty\) | **Killed** by the growing-layer family \(v_n\). `docs/LEMMA-STAR-GROWING-LAYER.md`. Not a singular NSE solution. |
+| Fixed-output \(\Theta(m^2)\) | Counting error. \(K\le 16s\). |
+| Detector occupation | 5-D occupation from the swirl wall. **Withdrawn.** |
+| Full Q floor \(>-1/2\), \(H_N\ge -3/14\) | Taken back. Stay back. |
+| \(\Phi\)-cancel as ordinary NS | Dropped. |
+| HB as a unifier | Thrown out. |
+| SFE / UHF / DHFA as constitutive NS | Shelved. |
+| Ring Lemma \(\|\nabla\xi\|_{L^\infty(E_c)}\le C\,2^{j^*}\) | **REPAIR.** Do not quote as proved. |
+
+---
+
+## D. What Monday can close without closing A
+
+Operator page (cover paste, file list):
+[`MONDAY-PACKET.md`](MONDAY-PACKET.md).
+These clear the *pile*. They do not close rows 1–12.
+
+1. Zenodo the swirl paper as a **map**.
+   Paste: [`SWIRL-DEPOSIT.md`](SWIRL-DEPOSIT.md).
+   PDF: `docs/SWIRL-PAPER.pdf`.
+2. Theorem A, honest title, class credited.
+   `docs/THEOREM-A-Q1.pdf`.
+3. Leave 22045478 as the GCD paper.
+4. Send **this sheet** to everyone who worked
+   the project. Attach [`HELP-OFF-DESK.md`](HELP-OFF-DESK.md)
+   if they are taking a row in 1–5.
+5. Tape: “ordinary NS solved” and
+   “RH solved” stay false.
+
+**Do not send.** A theft letter. WRITE (6) as a
+theorem. Theorem A as unaugmented NS.
+Axisymmetric-with-swirl as finished.
+A cold letter as a close. Attack 9D as live.
+
+---
+
+## E. Attachments if they take a row
+
+- This sheet.
+- [`HELP-OFF-DESK.md`](HELP-OFF-DESK.md) (rows 1–5).
+- [`WRITE_6.md`](WRITE_6.md).
+- [`LEMMA-STAR-STATEMENT.md`](LEMMA-STAR-STATEMENT.md).
+- [`AXISYM-SHELL.md`](AXISYM-SHELL.md),
+  [`AXISYM-SWIRL-PROBE.md`](AXISYM-SWIRL-PROBE.md),
+  [`SWIRL-WALL-CORRECTION.md`](SWIRL-WALL-CORRECTION.md).
+- [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md).
+- `docs/SWIRL-PAPER.pdf`, `docs/THEOREM-A-Q1.pdf`.
+
+Do not send the PR 48 SND/SFE pile as this leftover.
+Do not overwrite `scripts/ns_attacks/stokes_moments.py`.
+
+NS not solved. RH not solved.
+The door is named. The last line is not written.
+================================================================================
+END OF FILE: docs/ISSUES-SHEET.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+Centered target. Drift estimate OPEN.
+
+================================================================================
+ORIGINAL PATH: docs/CENTERED-DRIFT.md
+PATHWAY FILE: 4 of 7
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# Centered spectral drift — DA-NS-1 target
+
+16 September 2026.
+**Independent of C10. Independent of
+SND persistence. Unrestricted \(\star\)
+stays killed. Replacement leftover 4
+stays OPEN. NS not solved.**
+
+Not leftover 1. Do not start H1.
+Do not weld the dead box.
+Do not add \(K(t)\) to the PDE.
+The \(K(t)\) below is a remainder
+coefficient in an estimate, not a
+forcing or a modified viscosity.
+
+Handoff: [`NS-STATUS.md`](NS-STATUS.md).
+Killed box:
+[`LEMMA-STAR.md`](LEMMA-STAR.md),
+[`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
+Identities:
+[`math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md).
+Arithmetic: `python3 scripts/centered_drift.py`.
+
+C10 did not seat (A). There is no
+crossover inequality on this page.
+
+B★
+\([T_c]_+\le C X\Lambda^{1/2}\mathcal D_s^{1/2}\):
+[`BSTAR.md`](BSTAR.md),
+[`BSTAR-PROOF.md`](BSTAR-PROOF.md).
+No universal \(C\). Imag
+\(|k|^{-2}\) cutoff grows \(R_B\)
+like \(\Lambda^{1/4}\). Not a
+useful \(K\).
+Triangle reconstruction:
+[`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
+First lift:
+[`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
+Energy-class ladder:
+[`ENERGY-K.md`](ENERGY-K.md).
+Pairing CS doors:
+[`L-DOOR.md`](L-DOOR.md).
+Instantaneous \(MN\):
+[`MN-CANCEL.md`](MN-CANCEL.md).
+First jet:
+[`PATHWISE.md`](PATHWISE.md).
+Short interval:
+[`INTERVAL.md`](INTERVAL.md).
+Incoming ledger:
+[`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
+Chart reset:
+[`RESET.md`](RESET.md).
+Relative width:
+[`WIDTH.md`](WIDTH.md).
+SBP / \(\Phi_e\):
+[`SBP.md`](SBP.md).
+Press (Lemma A sits;
+Lemma B OPEN):
+[`PRESS.md`](PRESS.md).
+Sign gate:
+[`SIGN-GATE.md`](SIGN-GATE.md).
+Finite-\(N\) run:
+[`SIGN-RUN.md`](SIGN-RUN.md).
+Identities sit. The first
+missing implication is this
+page’s estimate.
+\(K\sim\sqrt{E}\) is dead.
+\(K_Y\sim\sqrt{E}\) and the
+mid door die on \(v_n\) by
+closed form.
+
+---
+
+## Target
+
+Preserve centering.
+
+\[
+X=\|A^{1/2}u\|_2^2,\qquad
+Y=\|Au\|_2^2,\qquad
+Z=\|A^{3/2}u\|_2^2,\qquad
+\Lambda=\frac{Y}{X},
+\]
+
+\[
+T_c=M-\Lambda N
+=-\langle B(u,u),A(A-\Lambda)u\rangle,
+\qquad
+\mathcal D_s=Z-\Lambda Y
+=\|(A-\Lambda)A^{1/2}u\|_2^2\ge 0.
+\]
+
+**Drift estimate (OPEN).** There exist
+\(\theta\in[0,1)\) and a coefficient
+\(K\in L^1_{\mathrm{loc}}(0,T)\) such
+that, along the classical solution,
+
+\[
+T_c
+\le
+\theta\nu\mathcal D_s
++K(t)X.
+\]
+
+A Y-remainder cousin is
+
+\[
+T_c
+\le
+\theta\nu\mathcal D_s
++K_Y(t)Y.
+\]
+
+Either form is useful only if the
+coefficient is controlled by
+quantities already known from the
+energy inequality, or by a named
+dynamical bound that does not assume
+the desired \(H^1\) ceiling, \(L^\infty\),
+or BKM.
+
+---
+
+## What is not this target
+
+**Unrestricted Lemma★** used a
+*uniform geometric* remainder
+
+\[
+T_c
+\le
+\theta\nu\mathcal D_s
++C_0\nu^{-1}\|u\|_2^2 X\Lambda.
+\]
+
+That box is **KILLED** by the
+growing-layer family \(v_n\):
+\(\mathcal R_\star(v_n)\to\infty\)
+on the live evaluators. Instantaneous
+admissible class, not a trajectory,
+not a blowup.
+
+Need★ cannot repair that box.
+Do not restore \(\sup\mathcal R_\star<\infty\).
+
+The \(K(t)X\) form is a different
+sentence. \(v_n\) does not
+automatically kill a *pathwise*
+integrable remainder. It does kill
+any remainder that is a uniform
+function of energy-class norms of
+the same scaling as
+\(C_0\nu^{-1}\|u\|_2^2\Lambda\).
+
+**Tautology warning.** Defining
+
+\[
+K(t)=\frac{(T_c-\theta\nu\mathcal D_s)_+}{X}
+\]
+
+makes the estimate an identity.
+The content then collapses to
+\(\int K<\infty\), which is the
+original regularity question in
+other units. That is not a proof.
+
+---
+
+## Identities (EXACT)
+
+**Spectral Cauchy.** EXACT.
+\[
+X^2\le\|u\|_2^2\,Y
+\qquad\Rightarrow\qquad
+X\le\|u\|_2^2\Lambda.
+\]
+
+**Dissipative spread.** EXACT.
+\[
+\mathcal D_s=\sum_m a_m(a_m-\Lambda)^2 m_m\ge 0.
+\]
+
+**Log-center motion.** EXACT.
+\[
+(\log\Lambda)'
+=\frac{2}{Y}\bigl(T_c-\nu\mathcal D_s\bigr).
+\]
+
+Work \(T_c-\theta\nu\mathcal D_s\).
+Splitting \(M\) and \(\Lambda N\) by
+coarse Sobolev estimates is how the
+centering is lost. Do not do that
+as the first move.
+
+---
+
+## Formal differential inequality
+
+**STANDARD LEMMA** (algebra from the
+identities; the estimate is not
+granted).
+
+Assume the X-remainder form with
+\(\theta<1\). Then
+
+\[
+(\log\Lambda)'
+\le
+\frac{2}{Y}\bigl((\theta-1)\nu\mathcal D_s+K X\bigr)
+\le
+\frac{2KX}{Y}
+=\frac{2K}{\Lambda},
+\]
+
+hence
+
+\[
+\Lambda'\le 2K.
+\]
+
+If \(K\in L^1(0,T)\), then
+\(\Lambda(t)\le\Lambda(0)+2\int_0^t K\)
+stays finite, and
+\(X\le\|u\|_2^2\Lambda\) stays finite.
+
+Assume instead the Y-remainder form.
+Then
+
+\[
+(\log\Lambda)'
+\le 2K_Y,
+\]
+
+so \(\log\Lambda\) stays finite if
+\(K_Y\in L^1(0,T)\). That also
+closes *if* the estimate sits with a
+useful \(K_Y\).
+
+Both implications are one direction.
+They are not the estimate.
+
+---
+
+## Dependency graph
+
+```
+smooth NSE, A, spectral measure     EXACT defs
+        |
+        v
+T_c = M − Λ N,  D_s = Z − Λ Y      EXACT
+        |
+        v
+(log Λ)' = 2/Y (T_c − ν D_s)       EXACT
+        |
+        +---- X ≤ E Λ              EXACT
+        |
+        v
+T_c ≤ θν D_s + K(t) X              NEW CLAIM; OPEN
+        |
+        v
+Λ' ≤ 2K,  K ∈ L¹ ⇒ X bound         STANDARD; after the claim
+        |
+        x  not  x
+        v
+unrestricted ★ / uniform C_0       DEAD (v_n). Do not restore.
+C10 a_+ sum                        NO seated inequality.
+```
+
+---
+
+## Circularity test
+
+Does the claim secretly assume
+\(\|u\|_{H^1}\le C\),
+\(\|\nabla u\|_\infty\le C\),
+BKM, or a spectral tail already
+known to imply regularity?
+
+- If \(K\) is bounded by energy
+  only: **false.** The unique
+  amplitude-legal energy
+  remainders die on \(v_n\).
+  [`ENERGY-K.md`](ENERGY-K.md).
+  The older \(a^4\) line
+  \(\lvert T_c\rvert\le C\|u\|_2 X^{3/2}\)
+  is a different death.
+- If \(K\) is bounded by
+  \(\|\nabla u\|_\infty\): **BKM.**
+  Sufficient, not an attack on the
+  dynamics.
+- If \(K\) is defined as
+  \((T_c-\theta\nu\mathcal D_s)_+/X\):
+  **tautological.**
+- A non-circular write must produce
+  \(K\) from cancellation in
+  \(T_c=M-\Lambda N\) itself
+  (near-scale structure, or a
+  monotone quantity), without
+  embedding the unknown field into
+  a supercritical norm.
+  Instantaneous \(MN\) and
+  above/below \(\Lambda\) are
+  already dead as uniform
+  \(\theta<1\).
+  [`MN-CANCEL.md`](MN-CANCEL.md).
+
+---
+
+## Adversarial families
+
+No new 9D sweeps.
+
+1. **Growing-layer \(v_n\).** Kills
+   every uniform \(C_0\) of ★
+   scaling. Does not, by itself,
+   kill a pathwise \(K(t)\) that is
+   allowed to grow with \(n\) at a
+   snapshot. It does forbid selling
+   that snapshot family as a
+   bounded remainder.
+2. **Amplitude \(u=Av\).**
+   \(T_c\sim A^3\), \(X\sim A^2\),
+   \(\mathcal D_s\sim A^2\).
+   The remainder \(K X\) must scale
+   at least like \(A^3\) unless
+   centering cancels the leading
+   term. Energy-linear \(K\) fails.
+3. **Single shell.** \(T_c=0\) and
+   \(\mathcal D_s=0\). Holds as
+   \(0\le 0\). Does not test the
+   claim.
+4. **Shears.** Nonlinear term
+   vanishes. \(T_c=0\). Same
+   \(0\le 0\).
+5. **C10 quantities.** No seated
+   \(T_c\le C\sum a_+ Z_j\). Do not
+   write one from language.
+
+---
+
+## Verdict
+
+| Claim | Status |
+|---|---|
+| Spectral identities | **PROVED** (exact). |
+| Formal DI: estimate \(\Rightarrow\) \(\Lambda'\le 2K\) | **PROVED** as algebra. |
+| Drift estimate with useful \(K\) | **OPEN.** Pathwise, not energy-class. |
+| Energy-class \(K\sim\sqrt{E}\) / \(K_Y\sim\sqrt{E}\) / mid | **DEAD** on \(v_n\). [`ENERGY-K.md`](ENERGY-K.md). |
+| Tight CS / LE door | **DEAD.** Tight is ★. LE dies on \(v_n\). [`L-DOOR.md`](L-DOOR.md). |
+| LX door \(\|L\|_2\le C X\) | **NO** as a seated \(C\). Not a boxed kill. |
+| Instantaneous \(MN\) / above-below \(\Lambda\) | **DEAD** as a uniform \(\theta<1\). \(N=0\) on \(v_n\). [`MN-CANCEL.md`](MN-CANCEL.md). |
+| Signed vertices \(R_{\mathrm{sign}}\) | **NO** as a useful \(K\). Saturates \(\sim 0.31\). |
+| \(t=0\) jet of \(N,T_c\) | **NO** as a useful \(K\). Stokes keeps \(N=0\). Euler generates \(N\). \(T_c\) grows. Not a G4 death. [`PATHWISE.md`](PATHWISE.md). |
+| Short Stokes / NSE interval | **NO** as a useful \(K\). Stokes keeps \(N=0\). NSE keeps \(R_{mn}=1\). Large-amp \(K_{1/2}\) grows. Not a G4 death. [`INTERVAL.md`](INTERVAL.md). |
+| Incoming DA-NS-2 as a theorem | **NO.** Y-cousin target. Tautological \(K\) forbidden. [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
+| Two-shell \(\alpha+\beta=\Lambda\) zero | **NO** as a two-shell zero. \(\Lambda\) is a convex combination. [`CENTERED-LEDGER.md`](CENTERED-LEDGER.md). |
+| Chart reset of \(W_K\) as a useful \(K\) | **NO.** Jump is exact. \(K_{\min,\theta}\) is chart-invariant. Not a G4 death. [`RESET.md`](RESET.md). |
+| \(r\sim\kappa^{-1/2}\) crossover as a useful \(K\) | **NO.** Equivalence of three writings. \(r\) is scale-invariant; the threshold is not. BROAD is not a payment. No primitive for \(S_\Gamma\). [`WIDTH.md`](WIDTH.md). |
+| SBP / \(\Phi_e\) as a useful \(K\) | **NO.** Elementary rewrite if the \(\dot H^{1/2}\) flux holds. Moves the tail. Residual still charge and moving \(N\). [`SBP.md`](SBP.md). |
+| Lemma A / \(\Phi_e\le W_{\lambda_e}\) as a useful \(K\) | **NO** as a \(K\). **YES** as a unit-torus weight bound. Lemma B stays OPEN. [`PRESS.md`](PRESS.md). |
+| First-variation sign gate as a useful \(K\) / as a verdict | **NO.** \(L_{1,N}\) is the gate. Finite-\(N\) BOTH SIGNS is printed. Persistence OPEN. Universal depletion is not killed. [`SIGN-GATE.md`](SIGN-GATE.md), [`SIGN-RUN.md`](SIGN-RUN.md). |
+| Y-remainder cousin (pathwise \(K_Y\)) | **OPEN.** Same circularity test. |
+| Unrestricted \(\star\) | **DEAD.** |
+| C10 \(\Rightarrow\) this estimate | **NO** without an inequality. C10 did not seat (A). |
+| Theorem H as a bridge | **DEAD.** Do not work it. |
+
+---
+
+## What this does not do
+
+It does not restore \(\star\).
+It does not close leftover 1 or 5.
+It does not run a 9D sweep.
+It does not merge with C10.
+It does not put \(K(t)\) in the PDE.
+
+NS not solved.
+
+---
+
+## Lock
+
+T_c = M − Λ N. D_s = Z − Λ Y.
+Keep the centering.
+Target T_c ≤ θν D_s + K(t) X, θ<1,
+K useful and in L¹_loc.
+If that estimate sits, Lambda' <= 2K.
+Unrestricted ★ stays killed.
+C10 did not seat (A). No crossover.
+NS not solved.
+================================================================================
+END OF FILE: docs/CENTERED-DRIFT.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+Scored incoming ledger. Identities sit.
+
+================================================================================
+ORIGINAL PATH: docs/CENTERED-LEDGER.md
+PATHWAY FILE: 5 of 7
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# Incoming centered ledger — scored
+
+24 September 2026.
+**§1 identities already sit.
+DA-NS-2 is the Y-cousin target,
+not a theorem.
+α+β=Λ is empty on two shells.
+SAG / JGC are not seated here.
+Paste truncated at §17.
+Not a close. ★ stays killed.
+Catalog B open stays 1.**
+
+Overnight page:
+[`DA-NS-2.md`](DA-NS-2.md).
+Target:
+[`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
+Triangles:
+[`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
+Short interval:
+[`INTERVAL.md`](INTERVAL.md).
+Chart reset:
+[`RESET.md`](RESET.md).
+Relative width:
+[`WIDTH.md`](WIDTH.md).
+SBP / \(\Phi_e\):
+[`SBP.md`](SBP.md).
+Press (Lemma A sits;
+Lemma B OPEN):
+[`PRESS.md`](PRESS.md).
+Sign gate:
+[`SIGN-GATE.md`](SIGN-GATE.md).
+Finite-\(N\) run:
+[`SIGN-RUN.md`](SIGN-RUN.md).
+Machine: `python3 scripts/centered_ledger.py`.
+Does not overwrite `stokes_moments.py`.
+Do not start leftover 1.
+Do not weld \(\star\).
+Do not cash B★ as G5.
+Do not glue DA-NS-2 to H1.
+
+---
+
+## Three kinds of sentence
+
+**Exact.** Algebra already on
+this desk, or locked today
+against the sitting gap
+formula.
+
+**Numerical.** Their printed
+networks and optimizations.
+Finite is not \(C\).
+
+**Not on this desk.** SAG
+static assembly, loop
+certification, helical
+176 / 4272 match, JGC
+epoch budget as a write.
+
+---
+
+## §1 Centered core — already
+PROVED here
+
+\(X,Y,Z,\Lambda=Y/X\),
+\(T_c=M-\Lambda N\),
+\(\mathcal D_s=Z-\Lambda Y\ge 0\),
+\(\Lambda'=2(T_c-\nu\mathcal D_s)/X\),
+\((\log\Lambda)'=2(T_c-\nu\mathcal D_s)/Y\).
+
+Their \(\tfrac12 X'+\nu Y=\mathcal N\)
+is our \(X'=-2\nu Y+2N\).
+Same object.
+[`CENTERED-DRIFT.md`](CENTERED-DRIFT.md),
+[`DA-NS-2.md`](DA-NS-2.md).
+
+An identity is not a close.
+
+---
+
+## §2 Frozen endpoint — OPEN,
+not a theorem
+
+They write
+
+\[
+K_{\min,\theta}^{(n)}
+=
+\frac{[T_c^{(n)}-\theta\nu\mathcal D_s^{(n)}]_{+}}{Y^{(n)}}
+\]
+
+and box
+
+\[
+\sup_n\int_0^T K_{\min,\theta}^{(n)}\,dt
+\le F(\nu,T,u_0)<\infty.
+\]
+
+That is the Y-remainder cousin
+already named on
+[`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
+If it sits noncircularly and
+cutoff-uniform, \(\Lambda\) stays
+finite. That is G5-shaped.
+
+It does **not** sit.
+Defining \(K\) as that ratio is
+tautological. Forbidden as a
+proof.
+
+This desk’s Route B packaging
+uses \(K X\), not only \(K Y\).
+Same hole.
+
+**Numbering lock.** Old
+[`DA-NS-2.md`](DA-NS-2.md)
+called this leftover 6 / WRITE
+(6). Living leftover 6 is RH.
+Living leftover 1 is H1. This
+integral is leftover 4 / G4.
+Do not start H1 from this
+page. Do not weld \(\star\).
+
+Energy-class \(K_Y\sim\sqrt{E}\)
+is already dead on \(v_n\).
+
+---
+
+## §3–§5 Triangle algebra
+
+**Equal-input \(|k_\perp|^2\).**
+\(\lvert k_\perp\rvert^2=\beta(1-\beta/(4\alpha))\).
+\(\beta=4\alpha\) kills the
+vertex. Exact. Already on the
+exact-shell page.
+
+**Two-shell product.**
+\(T_c=(f(\beta)-f(\alpha))\tau_k\)
+with \(f(\lambda)=\lambda(\lambda-\Lambda)\)
+and \(\tau_p+\tau_q+\tau_k=0\)
+is
+
+\[
+T_c=(\beta-\alpha)(\alpha+\beta-\Lambda)\tau_k.
+\]
+
+This **matches** the sitting
+gap formula: on two shells
+\(\alpha+\beta-\Lambda=\alpha\beta E/X\),
+so
+
+\[
+T_c=(\alpha-\beta)(\alpha+\beta-\Lambda)T_\alpha
+=
+(\alpha-\beta)\frac{\alpha\beta E}{X}\,T_\alpha.
+\]
+
+Locked today.
+
+**Three named zeros.**
+\(\beta=\alpha\) is equal-length,
+vacuous (\(T_c=0=\mathcal D_s\)).
+\(\beta=4\alpha\) is flat, a
+vertex zero, not a remainder.
+\(\alpha+\beta=\Lambda\) is
+**empty on two positive
+shells**: \(\Lambda\) is a
+convex combination of
+\(\alpha,\beta\), so
+\(\Lambda\le\max(\alpha,\beta)<\alpha+\beta\).
+On many shells it can zero
+one triangle. It does not
+zero \(T_c\). Do not sell
+three zeros as a useful \(K\).
+
+**Unequal-length defect.**
+\(T_c=[f(a)-f(c)]\tau_p+[f(b)-f(c)]\tau_q\)
+is exact. Already the
+three-eigenvalue stop on
+[`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
+
+---
+
+## §6 Circle identity
+
+\(w_{p,q;k}=2\rho\times(x\times y)\)
+is not locked on this desk.
+Their \(10^{-14}\) is a
+sample. Not a remainder.
+
+---
+
+## §7 Static assembly — not
+adopted here
+
+Triangle / circle / star /
+tree as sources of the
+missing power: they report
+dead, including
+\(\Gamma_{\mathrm{star}}=1\).
+No machine on this branch
+reproduces SAG-6′.
+Do not seat \(\Gamma=1\).
+Do not write “mode reuse is
+the leftover.”
+The leftover is still a
+useful \(K\), or a named
+death of G4.
+
+---
+
+## §8 Loop gate — OPEN
+elsewhere
+
+Gauge \(\phi_k=\xi\cdot k\)
+kills automatic frustration.
+The prize
+\(\Gamma_{\mathrm{cyc}}(N)\lesssim N^{-\delta}\)
+is not a bound here.
+A trend from optimization
+is a lower bound. Not \(U_N\).
+Even \(\Gamma\le 0.7\) would
+not be a useful \(K\).
+
+---
+
+## §9–§15 Helical / charge
+
+**Phase twins / orientation-only.**
+Already killed on
+[`DA-NS-2.md`](DA-NS-2.md):
+quadratic data do not fix
+\(\operatorname{sign} T_c\).
+
+**Charge-only coercivity.**
+Already killed: two-triad
+witness \(Q_{a,1}+Q_{a,2}=0\)
+and \(T_c^{\mathrm{het}}>0\).
+Machine:
+`scripts/centered_barycenter.py`.
+
+**Heterochiral split, moving
+center \(S_\Gamma\), residual
+\((\Lambda-\lambda_e)\dot S_\Gamma\).**
+Algebra on their network,
+not a remainder. Do not
+pointwise-estimate
+\(\dot S_\Gamma\). They say
+that. Keep it. It is not
+G4.
+
+Helical 176 / 4272 match is
+**not reproduced** here.
+
+---
+
+## §16 JGC epoch budget —
+still a target
+
+Already named on
+[`DA-NS-2.md`](DA-NS-2.md):
+charge, radial, moving
+center, homochiral, cross,
+rotation/far, one-use
+dissipation, summable
+resets. All together,
+cutoff-uniform.
+
+Not sitting. A bounded
+charge on one epoch is
+not enough. If the last
+line is \(\int\mathcal D_s/Y\),
+\(\sup\Lambda\), \(\int Y\),
+or a continuation norm,
+stop.
+
+---
+
+## §17 Reset — jump now locked
+from sitting \(W_K\)
+
+The frozen variance
+
+\[
+W_K=\mathcal D_s+X(\Lambda-K)^2
+=Z-2KY+K^2 X
+\]
+
+is exact and nonnegative.
+Locked on this page.
+
+The incoming paste broke at
+the jump. The unique algebra
+that follows from \(W_K\), with
+the physical state fixed, is
+now locked on
+[`RESET.md`](RESET.md).
+That is not a reconstruction
+of their boxed text. The
+remainder does not jump. A
+reset is not a useful \(K\).
+
+---
+
+## What this page is not
+
+- A close. Catalog B open
+  stays 1.
+- A seating of DA-NS-2.
+- A restoration of ★.
+- A seating of B★, LX, SAG,
+  or JGC.
+- Leftover 1. Do not start
+  H1.
+- [`PATH-TO-CLOSE.md`](PATH-TO-CLOSE.md).
+
+---
+
+## Lock
+
+§1 sits. DA-NS-2 is OPEN.
+The two-shell product sits.
+α+β=Λ is empty on two shells.
+Charge-only stays dead.
+SAG / JGC are not seated.
+G4 stays OPEN. ★ stays killed.
+NS not solved.
+================================================================================
+END OF FILE: docs/CENTERED-LEDGER.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+Energy-class K ladder dead on v_n.
+
+================================================================================
+ORIGINAL PATH: docs/ENERGY-K.md
+PATHWAY FILE: 6 of 7
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# Energy-class remainder ladder — dead
+
+23 September 2026.
+**The only amplitude-legal energy
+remainders are \(K\sim\sqrt{E}\)
+and \(K_Y\sim\sqrt{E}\).
+Both die on \(v_n\). The mid
+door dies with them.
+Not a close. ★ stays killed.
+Catalog B open stays 1.**
+
+Geometry:
+[`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
+First lift:
+[`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
+Pairing CS doors:
+[`L-DOOR.md`](L-DOOR.md).
+Instantaneous \(MN\):
+[`MN-CANCEL.md`](MN-CANCEL.md).
+First jet:
+[`PATHWISE.md`](PATHWISE.md).
+Short interval:
+[`INTERVAL.md`](INTERVAL.md).
+Incoming ledger:
+[`CENTERED-LEDGER.md`](CENTERED-LEDGER.md).
+Chart reset:
+[`RESET.md`](RESET.md).
+Relative width:
+[`WIDTH.md`](WIDTH.md).
+SBP / \(\Phi_e\):
+[`SBP.md`](SBP.md).
+Press:
+[`PRESS.md`](PRESS.md).
+Sign gate:
+[`SIGN-GATE.md`](SIGN-GATE.md).
+Finite-\(N\) run:
+[`SIGN-RUN.md`](SIGN-RUN.md).
+Target:
+[`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
+Machine: `python3 scripts/energy_k.py`.
+Does not overwrite `stokes_moments.py`.
+Do not start leftover 1.
+Do not weld \(\star\).
+Do not cash B★ as G5.
+Do not cash Attack-2 \(C_*\)
+as this death.
+
+---
+
+## Three kinds of sentence
+
+**Exact.** Homogeneity, and the
+closed forms for \(E_n,X_n,Y_n,T_c\)
+on the growing-layer family.
+
+**Numerical.** Printed ratios on
+named fields. Imag cutoff is a
+reading, not the boxed kill.
+
+**Illustrative.** None. Amplitude
+is exact scaling, not a cartoon.
+
+---
+
+## Homogeneity (exact)
+
+\(T_c\) is cubic. \(E,X,Y,\mathcal D_s\)
+are quadratic. \(\Lambda\) is
+scale-invariant.
+
+An X-remainder
+\(\lvert T_c\rvert\le C E^p X\)
+is amplitude-legal only at
+\(p=1/2\):
+\[
+\lvert T_c\rvert
+\le
+C\sqrt{E}\,X
+\qquad\Rightarrow\qquad
+K\sim\sqrt{E}.
+\]
+If that \(C\) sat,
+\(\Lambda'\le 2C\sqrt{E}\)
+and \(X\) would close on the
+torus.
+
+A Y-remainder
+\(\lvert T_c\rvert\le C E^q Y\)
+is amplitude-legal only at
+\(q=1/2\):
+\[
+\lvert T_c\rvert
+\le
+C\sqrt{E}\,Y
+\qquad\Rightarrow\qquad
+K_Y\sim\sqrt{E}.
+\]
+If that \(C\) sat,
+\((\log\Lambda)'\le 2C\sqrt{E}\)
+and \(\log\Lambda\) would close.
+
+The unique amplitude-matched
+interpolation is
+\[
+\lvert T_c\rvert
+\le
+C\sqrt{EXY}
+\qquad\Rightarrow\qquad
+K\sim\sqrt{E}\,\Lambda^{1/2}.
+\]
+If that \(C\) sat,
+\((\sqrt{\Lambda})'\le C\sqrt{E}\).
+
+Locked on the live \(2,2,4\)
+triangle: \(R_E\), \(R_Y\), and
+\(R_{\mathrm{mid}}\) stay flat
+from amplitude \(0.05\) to \(4\).
+The illegal doors do not:
+\(p=1\) blows as \(A\to 0\);
+\(p=0\) blows as \(A\to\infty\).
+
+The already-dead line
+\(\lvert T_c\rvert\le C\|u\|_2 X^{3/2}\)
+is \(a^3\) versus \(a^4\). It is
+not this ladder and not
+Attack-2 \(C_*\).
+
+---
+
+## The X-door is already dead
+
+\(R_E=\lvert T_c\rvert/(\sqrt{E}\,X)\)
+grows on \(v_n\)
+(\(0.114\to 144\)) and on imag
+cutoff. Locked in
+[`TRIANGLE-LIFT.md`](TRIANGLE-LIFT.md).
+No other \(p\) is amplitude-legal.
+The X-ladder has one rung, and
+it is gone.
+
+---
+
+## The Y-door and the mid door
+
+Closed forms on \(v_n\), same
+family that killed ★:
+
+\[
+E_n=4(2n+1),
+\quad
+T_c=3n^5(3n^2+3n+1),
+\]
+
+\[
+X_n=\frac{n(2n+1)(49n+4)}{3},
+\]
+
+\[
+Y_n=\frac{n(2n+1)}{15}
+\bigl(1167n^3+174n^2+8n-4\bigr).
+\]
+
+Then
+\[
+R_Y
+=\frac{\lvert T_c\rvert}{\sqrt{E}\,Y}
+\sim c\,n^{3/2}\to\infty,
+\qquad
+R_{\mathrm{mid}}
+=\frac{\lvert T_c\rvert}{\sqrt{EXY}}
+\sim c\,n^{5/2}\to\infty.
+\]
+
+Printed:
+
+| Family | \(R_E\) | \(R_{\mathrm{mid}}\) | \(R_Y\) |
+|---|---|---|---|
+| \(v_1\) | \(0.114\) | \(0.051\) | \(0.0225\) |
+| \(v_4\) | \(13.0\) | \(1.48\) | \(0.168\) |
+| \(v_8\) | \(144\) | \(8.22\) | \(0.469\) |
+| imag \(K=4\) | \(5.90\) | \(1.70\) | \(0.489\) |
+| imag \(K=6\) | \(28.3\) | \(5.77\) | \(1.17\) |
+| imag \(K=8\) | \(86.7\) | \(13.6\) | \(2.15\) |
+
+\(v_n\) kills both remaining
+doors. Same quality as the ★
+kill: closed form, not a
+finite sample. Imag climbs
+too. Separated triads do
+**not** kill \(R_Y\) (it
+falls). Different family.
+That family did **not** kill
+B★. Different box. Do not
+glue.
+
+Finite \(0.469\) is not \(C\).
+The arrow is \(n^{3/2}\).
+
+---
+
+## What this does not kill
+
+Pathwise \(K(t)\) that is not
+a function of energy-class
+norms of the snapshot. The
+tautological coefficient is
+still forbidden.
+B★ is a \(\mathcal D_s\)
+door and still not a
+universal \(C\).
+Attack-2 \(C_*\) is
+\(\lvert T_c\rvert\le C_* X^{3/2}\Lambda\),
+amp-invariant, not this
+ladder.
+
+G4 stays OPEN. G5 is not
+this page. The energy-class
+door for a useful \(K\) is
+closed. A later write must
+produce cancellation in
+\(T_c=M-\Lambda N\) itself,
+or a named death of G4
+that is not this ladder.
+Instantaneous \(MN\):
+[`MN-CANCEL.md`](MN-CANCEL.md).
+
+---
+
+## What this page is not
+
+- A close. Catalog B open
+  stays 1.
+- A seating of B★.
+- A restoration of ★.
+- A death of Attack-2 \(C_*\).
+- Leftover 1. Do not start
+  H1.
+- An NSE trajectory.
+
+---
+
+## Lock
+
+Only \(p=q=1/2\) matches
+amplitude. \(K\sim\sqrt{E}\)
+was already dead. \(K_Y\sim\sqrt{E}\)
+and the mid door die on \(v_n\)
+by closed form,
+\(R_Y\sim n^{3/2}\).
+The energy-class ladder is
+dead. G4 stays OPEN.
+★ stays killed.
+NS not solved.
+================================================================================
+END OF FILE: docs/ENERGY-K.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+ABC evaluator. 0.327 is not a kill.
+
+================================================================================
+ORIGINAL PATH: docs/CS-REMAINDER.md
+PATHWAY FILE: 7 of 7
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# Localized ABC — evaluator, not a proof. ★ still OPEN.
+
+10 September 2026. **NS not solved.** Exact core ≠ proof.
+H1 is a different integral and was **not** run on ABC_λ.
+Augmented / Q-stack is out of this book.
+
+Score vs SuperGrok and DA:
+`docs/ns-recovery/CS-REMAINDER-VS-DA-REJECT.md`
+(PR 45 comparison: https://github.com/simons357/Ship_it_app/pull/45).
+
+This book’s kill rule: \(\mathcal R_\star\to\infty\) kills ★.
+One large finite value only raises \(C_{\mathrm{geom}}\).
+Largest FFT number on the gate table is **0.327 at λ=8**
+(after reverse). That is not a falsifier. Do not stamp
+Target A / CS / ★-as-closer. Do not stop patching Lemma★.
+
+## Same \(\mathcal R_\star\) (Claude 1)
+
+Write-up: \(\mathcal R_\star=(T_c)_+^2/(\mathcal D_s E Y)\).
+JSON `R_star` is that object and is **0** here (\(T_c<0\)).
+The published climb is `R_star_signed` \(=T_c^2/(\mathcal D_s E Y)\)
+= canonical \(\mathcal R_\star(-v)\). Not an ABC-only variant.
+
+## H1 on ABC_λ (Claude 2)
+
+**Untested.** Named only. Do not start H1 from this page.
+
+## Exact script — four jobs, already ran
+
+`scripts/ns_attacks/cs_remainder_exact_check.py`
+
+1. 3-mode triad vs `probe` (on that field \(T_c=0\); \(\mathcal D_s\) matches).
+2. Export 99% energy modes and sum the triad — **λ=2, 3, 4 only**.
+3. Same truncated field on a grid: FFT \(T_c\) = triad to \(10^{-13}\).
+4. \(v(n\cdot)\) leaves \(\mathcal R_\star\) flat.
+
+It never ran λ=8 or 16. More finite rows would not close a kill.
+
+## FFT table (full field; different from the cutoff)
+
+| λ | CS \(\|A^{1/2}B\|_2/\sqrt{EY}\) | \(\mathcal R_\star(-v)\) |
+|---|---|---|
+| 2 | 2.492 | 0.00517 |
+| 3 | 4.607 | 0.0173 |
+| 4 | 7.104 | 0.0409 |
+| 5 | 9.934 | 0.0798 |
+| 6 | 13.062 | 0.138 |
+| 8 | 20.114 | **0.327** |
+
+Fit on six grids: CS \(\sim 0.88\lambda^{3/2}\),
+\(\mathcal R_\star\sim 6.47\times 10^{-4}\lambda^3\).
+A fit is not \(\mathcal R_\star\to\infty\).
+
+## Exact-core table (99% cutoff — a different field)
+
+| λ | modes | \(\mathcal R_\star(-v)\) | \(T_c\) rel vs full FFT |
+|---|---|---|---|
+| 2 | 836 | 0.001748 | 0.535 |
+| 3 | 2820 | 0.005181 | 0.565 |
+| 4 | 6672 | 0.013669 | 0.542 |
+
+N-shell max saturates. This family does not on the grids
+they ran. That is a live kill-lane clue. It is not a
+logged reject of ★.
+
+Stay in this chat.
+================================================================================
+END OF FILE: docs/CS-REMAINDER.md
+================================================================================

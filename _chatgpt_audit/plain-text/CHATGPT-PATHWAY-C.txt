@@ -1,0 +1,2424 @@
+CHATGPT-PATHWAY-C.txt
+Unsiloed linear argument. Original files, original paths.
+Classical 3D NSE only. NS not claimed solved.
+See CHATGPT-PATHWAY-INDEX.txt for the map.
+
+
+# WHY THIS FILE IS HERE
+Live unaugmented chain.
+
+================================================================================
+ORIGINAL PATH: docs/UNAUGMENTED-NS-CHAIN.md
+PATHWAY FILE: 1 of 8
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# Unaugmented 3D Navier–Stokes — working packet
+
+**Date.** 10 September 2026  
+**Use.** This is the live unaugmented-chain document.  
+**Status.** Proof *chain*. Last estimate open. No augmentation, no \(K(t)\), no Q-stack. Only \(\nu\Delta u\).
+
+Axisymmetric-with-swirl shell estimate (unaugmented, \(\mathbb{R}^3\); quantity \(Z_j\); remainder \(T_{j\leftarrow j}\); identity and far-shell Young sit; [ρ] not measured; not a close): [`AXISYM-SHELL.md`](AXISYM-SHELL.md). Class samples of that remainder (local-remainder occupancy printed; not a class bound): [`AXISYM-SWIRL-PROBE.md`](AXISYM-SWIRL-PROBE.md). Wall / dictionary correction (occupation from the detector withdrawn): [`SWIRL-WALL-CORRECTION.md`](SWIRL-WALL-CORRECTION.md). Filter: [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md). SND-to-regularity implication (shell condition, frequency drift, circularity; SND sitting is not a bound on \(X\)): [`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md). Displayed Theorem H fails even with \(X\le M\): [`SND-H-REVIEW.md`](SND-H-REVIEW.md). Repaired \(F_j\) bound sits; \(D^+\rho\) assembly is a ceiling, not a floor: [`SND-H-REPAIR.md`](SND-H-REPAIR.md). 16 Sep status handoff (four-bucket score; C10 not seated; SND is an instrument): [`NS-STATUS.md`](NS-STATUS.md), [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md), [`SND-INSTRUMENT.md`](SND-INSTRUMENT.md). Handoff for collaborators (one-page sheet, then four named jobs; not a close): [`ISSUES-SHEET.md`](ISSUES-SHEET.md), [`HELP-OFF-DESK.md`](HELP-OFF-DESK.md). Desk: leftover WRITE (6) on the geometric path is **H1 = Lemma I on the ball** (\(A_{\mathrm{bad}}\) a priori). Energy-budget writing of the same leftover class: **Lemma★** (boxed unrestricted \(\sup\mathcal R_\star<\infty\) **killed** by \(v_n\); not a singular NSE solution; replacement closure open; K=0 dead; the \(a^4\) missing inequality dead; uniform pre-Young \(C\) dead; lattice packets including HH→L fan did not kill; grow-\(s\) samples historical). [`LEMMA-STAR.md`](LEMMA-STAR.md), [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md), [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md), [`math/ns_attacks/LEMMA_STAR_CANONICAL.md`](math/ns_attacks/LEMMA_STAR_CANONICAL.md), [`LEMMA-STAR-CORRECTIONS.md`](LEMMA-STAR-CORRECTIONS.md). Original five-lane JSON: [`five-lane-export/COMPUTE.md`](five-lane-export/COMPUTE.md). Attack 9B: [`five-lane-export/ATTACK_9B.md`](five-lane-export/ATTACK_9B.md). Counting lock: [`LEMMA-STAR-9B-COUNTING.md`](LEMMA-STAR-9B-COUNTING.md). Growing cube (named, computed; not a kill): [`LEMMA-STAR-CUBE.md`](LEMMA-STAR-CUBE.md). Analytic review (files absent; \(M_0\) not locked): [`LEMMA-STAR-CUBE-REVIEW.md`](LEMMA-STAR-CUBE-REVIEW.md). Do not merge ★ with H1, and do not merge either with global **H**. Lemma C is an if, not an H. **H2** a priori from energy is also open. **H3** (\(A_{\mathrm{ext}}\)) is a named remainder; a priori from energy is open. \(R_\phi\) is not free. If H1 sits and H2-from-energy does not, the cylinder is still open. Theorem A is a different PDE. DA-NS-2 and the old \(\int\mathcal R\) line are other writings of the same leftover. Keep Biot–Savart at \(1/r^4\). Do not add \(Q_1\). Do not add \(K(t)\) to the PDE. Glossary: [`H-SYSTEM.md`](H-SYSTEM.md).
+
+Machine write-up: [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md).  
+Barycenter sibling (not this path): [`DA-NS-2.md`](DA-NS-2.md).  
+Augmented (other PDE): [`A-CHAIN.md`](A-CHAIN.md).
+
+---
+
+## 0. Equation and notation
+
+\[
+\partial_t u+(u\cdot\nabla)u=-\nabla p+\nu\Delta u,\qquad\nabla\cdot u=0
+\]
+
+on \(\mathbb{R}^3\) or \(\mathbb{T}^3\), \(\nu>0\), \(f\equiv 0\), smooth divergence-free finite-energy data.
+
+\[
+\mathcal{E}(t)=\tfrac12\|u\|_{L^2}^2,\qquad
+E(t)=\|\nabla u\|_{L^2}^2,\qquad
+\omega=\nabla\times u,\qquad
+\xi=\omega/|\omega|\ \ (\omega\neq 0),
+\]
+
+\[
+\alpha=\xi\cdot S_{\mathrm{strain}}\xi,\qquad
+S_{\mathrm{tot}}=\int\alpha|\omega|^2\,dx,\qquad
+\varphi(x,y)=\angle(\omega(x),\omega(y)).
+\]
+
+Parabolic cylinder: \(Q_r(x_0,t_0)=B_r(x_0)\times(t_0-r^2,t_0]\).
+
+H-system (do not merge letters): [`H-SYSTEM.md`](H-SYSTEM.md). **H** = global stretching (parent, open). **Lemma C** = Good pairs, an if, not an H. **H1 = WRITE (6) = Lemma I on the ball** = Bad pairs on \(Q_r\) (the request). **H2** = annulus flux. **H3** = exterior Biot–Savart. A cylinder closes only if \(\mathrm{C}+R_\phi\), H1, H2-a priori (or CKN-small), and H3 all sit. Local Serrin then, not CKN. If H1 sits and H2-from-energy does not, the cylinder is still open.
+
+---
+
+## 1. Proved floor
+
+**Energy (while smooth).**
+\[
+\frac{d}{dt}\mathcal{E}+\nu E=0
+\qquad\Rightarrow\qquad
+\int_0^T E(t)\,dt\le\mathcal{E}(0)/\nu.
+\]
+Leray–Hopf weak solutions: inequality instead of equality. Budget only on the smooth interval.
+
+**Energy class.** \(u\in L^\infty_t L^2\cap L^2_t\dot H^1\).
+
+**Sobolev.** \(\|u\|_{L^6}\lesssim E^{1/2}\), so \(u\in L^2_t L^6\). This is the floor.
+
+**Local existence.** Fujita–Kato: strong solution on a short interval. Question is continuation.
+
+**Serrin / LPS (criterion).** If \(u\in L^p_t L^q_x\) with \(2/p+3/q=1\), \(q>3\), then smooth on \([0,T]\).  
+At \(q=6\): need \(L^4_t L^6\). Sobolev is one-sided:
+\[
+\int E^2\,dt<\infty\quad\Longrightarrow\quad\int\|u\|_{L^6}^4\,dt<\infty.
+\]
+
+**ESS (criterion).** \(u\in L^\infty_t L^3\Rightarrow\) regular.
+
+**Enstrophy identity.**
+\[
+\tfrac12\dot E+\nu\|D^2 u\|_2^2=S_{\mathrm{tot}}.
+\]
+
+**Cubic bound.** \(|S_{\mathrm{tot}}|\le C E^3\) after Young. Allows \(E\sim(T_*-t)^{-1/2}\). Does not give \(\int E^2\). The 1934 wall.
+
+**No Leray backward self-similar profile.** Nečas–Růžička–Šverák 1996. Not a blanket Type-I theorem.
+
+**CKN.** Singular set of a suitable weak solution has parabolic 1-measure zero. Set not proved empty.
+
+**Interpolation used later.**
+\[
+E^2\le 2\mathcal{E}\,\|D^2 u\|_2^2.
+\]
+So a bound on \(\int\|D^2 u\|_2^2\) gives \(\int E^2\).
+
+---
+
+## 2. Lemma C — good pairs (theorem)
+
+**CF 1993.** If \(|\sin\varphi(x,y)|\le|x-y|/\rho\) whenever both \(|\omega|\ge\Lambda\), then the solution is strong on \([0,T]\).  
+**BdVB 2002.** Hölder \(1/2\) suffices: \(|\sin\varphi|\le C|x-y|^{1/2}\).
+
+Mechanism: strain is a \(|z|^{-3}\) kernel of \(\omega\). Alignment puts \(|\sin\varphi|\) in the numerator and drops the kernel to \(|z|^{-2}\) (Lipschitz) or \(|z|^{-5/2}\) (Hölder \(1/2\)). That is absorbable into \(\nu\|\nabla\omega\|_2^2+CE\).
+
+Cutoff used below: **Hölder \(1/2\)** — weakest alignment that still absorbs, smallest leftover. Lipschitz is the same line with a stricter cut.
+
+Lemma C does not prove alignment. It assumes it.
+
+---
+
+## 3. Partition
+
+High-vorticity set \(H=\{|\omega|\ge\Lambda\}\). Pairs in \(H\times H\) with \(|x-y|<\delta\):
+
+- **Good:** \(|\sin\varphi|\le C_*|x-y|^{1/2}\). Contribution \(A_{\mathrm{good}}\) absorbed by Lemma C.
+- **Bad:** \(|\sin\varphi|>C_*|x-y|^{1/2}\). Contribution \(A_{\mathrm{bad}}\). Open.
+- **Low vorticity** \(|\omega|<\Lambda\): stretching \(\le C\Lambda E\). Harmless.
+
+A bad pair is one of three pictures: fold (dissipation spread in a ball), reconnection (thin bridge), two blobs (gap with \(\omega\approx 0\)).
+
+---
+
+## 4. Local enstrophy on a cylinder
+
+Cutoff \(\phi\equiv 1\) on \(B_{r/2}\), supported in \(B_r\), \(|\nabla\phi|\lesssim 1/r\). Vorticity form — pressure drops.
+
+\[
+\tfrac12\frac{d}{dt}\int|\omega|^2\phi+\nu\int|\nabla\omega|^2\phi
+=
+\int\alpha|\omega|^2\phi
++\tfrac12\int|\omega|^2(\partial_t\phi+u\cdot\nabla\phi)
++\tfrac\nu2\int|\omega|^2\Delta\phi.
+\]
+
+Time-integrate on \(Q_r\):
+
+\[
+\nu\iint_{Q_r}|\nabla\omega|^2\phi
+\le
+\text{bottom data}
++A_{\mathrm{good}}+A_{\mathrm{bad}}+A_{\mathrm{far}}+A_{\mathrm{low}}
++F_{\mathrm{adv}}+F_{\nu}.
+\]
+
+Moved with justification:
+
+- \(A_{\mathrm{low}}\): \(\le C\Lambda\iint|\omega|^2\).
+- \(F_{\nu}\): \(\le C\nu r^{-2}\iint_{\mathrm{annulus}}|\omega|^2\).
+
+Not free, named in §11:
+
+- \(A_{\mathrm{good}}\): interior Good pairs only. Whole-space Lemma C does not give this for free. Cutoff error \(R_\phi\) remains.
+- \(A_{\mathrm{far}}\) inside \(B_r\times B_r\) if \(r<\delta\): empty. Exterior Biot–Savart \(\alpha_{\mathrm{ext}}\) is **not** empty. That is H3.
+- Closed budget \(\Rightarrow\) smooth: local Serrin, not CKN. §11 Gap (iii).
+
+Left (names, not a closed estimate):
+
+\[
+\nu\iint_{Q_r}|\nabla\omega|^2\phi
+\le
+\text{bottom}
++A_{\mathrm{good}}^{\mathrm{loc}}+R_\phi
++A_{\mathrm{bad}}(Q_r)
++A_{\mathrm{ext}}(Q_r)
++F_{\mathrm{adv}}
++C r^{-2}\iint_{Q_r}|\omega|^2.
+\]
+
+---
+
+## 5. Last line — named halves
+
+**H1**
+\[
+A_{\mathrm{bad}}(Q_r)
+\le
+\frac\nu8\iint_{Q_r}|\nabla\omega|^2\phi
++C r^{-2}\iint_{Q_r}|\omega|^2.
+\]
+
+**H2**
+\[
+F_{\mathrm{adv}}(Q_r)
+\le
+\frac\nu8\iint_{Q_r}|\nabla\omega|^2\phi
++C r^{-2}\iint_{Q_r}|\omega|^2,
+\]
+where \(F_{\mathrm{adv}}=\tfrac12\iint|\omega|^2(\partial_t\phi+u\cdot\nabla\phi)\) lives on the annulus, and the dangerous piece is \(r^{-1}\iint|u||\omega|^2\).
+
+**H3.** Exterior remainder, bound named in §11:
+\[
+|\alpha_{\mathrm{ext}}(x)|\le C r^{-3/2}E(t)^{1/2},
+\qquad
+A_{\mathrm{ext}}(Q_r)\le C r^{-3/2}\int_{t_0-r^2}^{t_0} E(t)^{1/2}E_{\mathrm{loc}}(t)\,dt.
+\]
+A priori from \(\int E<\infty\): open.
+
+If H1, H2-a-priori, H3, and \(R_\phi\) all hold for all small \(r\), the local Serrin hypothesis of §11 Gap (iii) is met, hence smoothness on \(Q_{\theta r}\). Those four bounds are not all known from the energy class.
+
+**H2.** True as a *smallness* criterion (CKN 1982: small scaled \(\iint|\nabla u|^2\)). Not proved as an a priori bound from \(\int E<\infty\). Remainder after Young is local \(\int E^2\). CKN is the wrong citation for “closed enstrophy budget \(\Rightarrow\) smooth.”
+
+**H1.** Open. This is the CF leftover. Equivalent to the remaining problem on this path.
+
+CF stretching kernel (for reference):
+\[
+\alpha(x)=\mathrm{P.V.}\int D(\hat z,\xi(x),\xi(y))\frac{|\omega(y)|}{|z|^3}\,dy,
+\qquad
+|D|\le C|\sin\varphi|.
+\]
+On Bad, \(|\sin\varphi|\) is large, so the kernel is not improved.
+
+---
+
+## 6. Attempts already made (do not repeat as proofs)
+
+- HLS on all pairs: recovers \(\int E^3\). No gain.
+- Path-cost of \(\nabla\xi\): lower bound is on a segment, not in \(L^2(B_r)\). Fails on reconnection / two-blobs. Lemma PC sits as that segment bound ([`H1-PC.md`](H1-PC.md)). Still fail as H1.
+- Lemma J (pointwise pair paid by \(\fint|\nabla\omega|^2\)): false for generic fields; Biot–Savart averages \(\omega\), not \(\nabla\omega\); \(\xi\)-equation has no sign and is degenerate at \(\omega=0\).
+- Signed kernel \(D\): no cancelation for an isolated pair (fixed spherical harmonic in \(\hat z\)).
+- Thinness of Bad: not known. Assuming it is Lemma C again.
+- Persistence for time \(r^2/\nu\): filter on which cylinders to use. Waiting time imposed, not derived. Pathwise enstrophy does not produce \(\int|\nabla\omega|^2\).
+- Bony LP split of stretching: LLH needs \(\|\omega_{\mathrm{low}}\|_\infty\) (BKM); LHH remainder \(\|\omega_{\mathrm{low}}\|_\infty^2 E_{\mathrm{high}}\); HHH remainder is pieces of \(\int E^2\).
+- Swirl ODE / fading \(K(t)\) / Q-stack: not unaugmented NSE. Out of this packet.
+
+---
+
+## 7. Ledger
+
+| Item | Status |
+|---|---|
+| Energy, \(\int E<\infty\) | Proved |
+| \(L^2_t L^6\) | Proved |
+| Serrin / ESS as criteria | Proved |
+| \(\int E^2\Rightarrow L^4_t L^6\) | Proved (one-sided) |
+| Cubic bound \(\dot E\le CE^3\) | Proved, too weak |
+| No Leray self-similar profile (NRS) | Proved |
+| CKN measure of singular set | Proved |
+| Lemma C (good pairs) | Proved (conditional theorem) |
+| H2 as smallness criterion | Proved (CKN 1982) |
+| H1 / \(A_{\mathrm{bad}}\) a priori | **Open** (attempted §12; Morrey wall) |
+| H2 a priori from energy | **Open** |
+| H3 / \(A_{\mathrm{ext}}\) a priori | **Open** (bound named) |
+| \(R_\phi\) cutoff error | Annulus support sits. A priori absorb: **open** (H2-class) |
+| Type-II Liouville | Open, separate |
+
+---
+
+## 8. What to do next
+
+WRITE (6) was attempted on one cylinder (§12). It did not close. H1 as a holdable object, and the only three shapes that still look like it, are §13. Arithmetic of those shapes: [`H1-SHAPES.md`](H1-SHAPES.md). CS-summable volume thinness is still \(E^{3/2}\), not H1. Lookups: all miss ([`LOOKUP-H1.md`](LOOKUP-H1.md)). Locator: [`WHERE-H1.md`](WHERE-H1.md). Literature check: §14. H1 is not in the record under another name.
+
+Next work is still **prove 1, 2, or 3 on one cylinder** — not a new name. The estimates are written. They are not theorems. Do not reprove Lemma C. Do not add \(K(t)\). Keep **H1, H2, H3, \(R_\phi\)** separate.
+
+Work H1. Keep H2 and H3 labeled. Lemma C stays an if. If H1 sits and H2-from-energy does not, the cylinder is still open. Glossary: [`H-SYSTEM.md`](H-SYSTEM.md).
+
+DA will not emit H1 and call it proved.
+
+---
+
+## 9. One paragraph for the top of a paper / note
+
+Unaugmented 3D NSE has a complete chain from energy to Serrin except control of stretching from misaligned high-vorticity pairs. Constantin–Fefferman / Beirão da Veiga–Berselli absorb pairs whose direction turns at most like Hölder \(1/2\), on whole space, as an if. Localizing that if leaves a cutoff error \(R_\phi\). The leftover integral \(A_{\mathrm{bad}}\) on a parabolic cylinder is H1. The advective flux \(F_{\mathrm{adv}}\) is H2 (CKN as smallness; a priori from energy open). Exterior Biot–Savart \(A_{\mathrm{ext}}\) is H3 (bound named; a priori from energy open). None of H1, H2-from-energy, or H3-from-energy is known from \(\int E<\infty\) alone.
+
+---
+
+## 10. Desk score (10 September 2026)
+
+The packet is a **good map**. It is not a proof of ordinary NS.
+
+**Floor (§1).** Correct literature: energy, \(L^2_t L^6\), Fujita–Kato, Serrin/LPS, ESS as a criterion, enstrophy identity, cubic \(E^3\) wall, CKN measure, interpolation \(E^2\le 2\mathcal{E}\|D^2u\|_2^2\). “No Type-I self-similar” is the NRS 1996 Leray profile, not every Type-I statement in the later literature.
+
+**Lemma C.** CF 1993 / BdVB 2002 sit as **if**. Hölder \(1/2\) is the right cut for this path. Lemma C does not prove alignment. That sentence is the whole point.
+
+**H1.** The right leftover on this path. Holdable object: the Bad-pair integral versus local dissipation plus \(r^{-2}\iint|\omega|^2\) (§13). WRITE (6) was written on one cylinder in §12. Mid-Bad is named. Near-Bad is still open. The only remaining shapes are thinness, J on folds, and dynamics. Arithmetic: [`H1-SHAPES.md`](H1-SHAPES.md). CS-thinness is still \(E^{3/2}\), not H1. Lookups: all miss. Literature: not under another name (§14). The aimed estimate is **not** proved. Physical-space rewrite on one vortex tube (same leftover class, different integral): [`H1-SOT.md`](H1-SOT.md). First numbers: [`H1-TUBE.md`](H1-TUBE.md). Packet attacks on \(\mathcal R_\star\) are exhausted as lattice objects. Do not quote the Ring Lemma as proved. Do not glue H1 to \(H_N\).
+
+**H2.** Smallness criterion is true. A priori from \(\int E<\infty\) is not. After Young the remainder is local \(\int E^2\). So even if H1 sits, H2-from-energy is a second wall. Keep them separate.
+
+**Gaps in the cylinder write (10 Sep morning).** Localizing Lemma C is not free. Exterior Biot–Savart is not empty. H1+H2 \(\Rightarrow\) smooth is not CKN \(\varepsilon\)-regularity. Those *writing* holes are repaired in §11. The leftover names stay.
+
+**Refuse list (§6).** Sound. Do not rerun HLS, Lemma J, signed \(D\), thin-Bad-as-Lemma-C, imposed waiting time, or \(K(t)\)/Q-stack as a close.
+
+**Not equivalent to DA-NS-2.** Spectral-barycenter integral is another writing of leftover (6). This packet’s WRITE (6) attempt is §12. It did not close.
+
+**Verdict.** Use this as the unaugmented chain. H1 was attempted. Do not emit H1. Theorem A stays a different equation.
+
+---
+
+## 11. Three writing gaps, closed as write
+
+The leftover names stay. What is destroyed is sloppiness: each gap is a cited theorem, an explicit remainder, or a labeled open estimate.
+
+### Gap (iii) — citation
+
+**Theorem (local Serrin from a closed enstrophy budget).**
+Let \(u\) be a suitable weak solution of NSE on \(Q_{2r}\). Suppose
+
+\[
+\omega\in L^\infty(t_0-r^2,t_0;L^2(B_r))
+\cap
+L^2(t_0-r^2,t_0;H^1(B_r)).
+\]
+Then \(u\in L^4(t_0-r^2,t_0;L^6(B_r))\) up to cutoff / Poincaré corrections on the ball, hence \(u\) is smooth on \(Q_{\theta r}\) for some universal \(\theta\in(0,1)\).
+
+**Citations.** Serrin, *Arch. Rational Mech. Anal.* 9 (1962), local \(L^p_t L^q_x\). Sobolev on the ball: \(\|u\|_{L^6(B_r)}\lesssim\|\nabla u\|_{L^2(B_r)}+r^{-1}\|u\|_{L^2(B_r)}\). \(H^1\) on \(u\) is \(L^2\) on \(\omega\). Bootstrap: local regularity chapter, Tao NS notes or Lemarié-Rieusset.
+
+**Not cited for this implication:** Caffarelli–Kohn–Nirenberg 1982. That is energy-level \(\varepsilon\)-regularity (small scaled \(\iint|\nabla u|^2\)). Right citation for H2 as a *smallness* criterion. Wrong citation for “closed enstrophy budget \(\Rightarrow\) smooth.”
+
+If H1, H2-a-priori, and H3 all hold (and \(R_\phi\) is absorbed), the hypothesis above is met. Those bounds are still open.
+
+NRS 1996 = no Leray backward self-similar profile. Not a blanket Type-I theorem.
+
+### Gap (ii) — exterior remainder H3
+
+For \(x\in B_{r/2}\),
+
+\[
+\alpha(x)=\alpha_{\mathrm{in}}(x)+\alpha_{\mathrm{ext}}(x),
+\]
+
+\[
+\alpha_{\mathrm{ext}}(x)
+=
+\mathrm{P.V.}\int_{\mathbb{R}^3\setminus B_r}
+D(\hat z,\xi(x),\xi(y))\frac{|\omega(y)|}{|x-y|^3}\,dy.
+\]
+
+If \(r<\delta\), interior far pairs die. \(\alpha_{\mathrm{ext}}\) remains. For \(x\in B_{r/2}\) and \(y\notin B_r\), \(|x-y|\ge r/2\). Dyadic shells \(A_k=\{2^k r\le|y-x|<2^{k+1}r\}\):
+
+\[
+|\alpha_{\mathrm{ext}}(x)|
+\le
+C\sum_{k\ge 0}(2^k r)^{-3/2}\|\omega\|_{L^2(A_k)}
+\le
+C r^{-3/2} E(t)^{1/2}.
+\]
+
+\[
+A_{\mathrm{ext}}(Q_r)
+:=
+\iint_{Q_r}|\alpha_{\mathrm{ext}}|\,|\omega|^2\phi
+\le
+C r^{-3/2}\int_{t_0-r^2}^{t_0} E(t)^{1/2}\|\omega(t)\|_{L^2(B_r)}^2\,dt.
+\]
+
+This is H3. Not absorbed into \(r^{-2}\iint|\omega|^2\) as \(r\to 0\) without extra smallness or extra time integrability. Young returns a piece of \(\int E_{\mathrm{loc}}^2\) or needs \(\sup E<\infty\). A priori from \(\int E<\infty\): **not** proved.
+
+### Gap (i) — no free localization of Lemma C
+
+Whole-space Lemma C is over \(\mathbb{R}^3\times\mathbb{R}^3\). On \(Q_r\), for \(x\in\operatorname{supp}\phi\),
+
+\[
+\alpha_{\mathrm{in}}
+=
+\alpha_{\mathrm{good}}^{\mathrm{loc}}
++
+\alpha_{\mathrm{bad}}^{\mathrm{loc}}
++
+\alpha_{\partial}.
+\]
+
+- \(\alpha_{\mathrm{good}}^{\mathrm{loc}}\): both in \(B_r\), Good. Kernel drop \(|z|^{-5/2}\) on that double integral. Cutoff \(\phi(x)\) (not \(\phi(y)\)) leaves
+  \[
+  R_\phi
+  =
+  \iint_{\mathrm{Good}\cap(B_r\times B_r)}
+  \frac{|\omega(y)|}{|x-y|^{5/2}}|\omega(x)|^2|\phi(x)-\eta(y)|\,dx\,dy.
+  \]
+  Same class as \(F_{\mathrm{adv}}/F_{\nu}\) after Young, **or** an extra open term. Not automatic from whole-space CF.
+- \(\alpha_{\mathrm{bad}}^{\mathrm{loc}}\): H1 / WRITE (6).
+- \(\alpha_{\partial}\): this is \(\alpha_{\mathrm{ext}}\), H3.
+
+Grujić et al. localize the *hypothesis* (Hölder \(1/2\) in a region). BdVB 2009/2013 assume a direction condition in the region of interest. They do not prove \(A_{\mathrm{bad}}(Q_r)\) small.
+
+### Balance
+
+\[
+\nu\iint_{Q_r}|\nabla\omega|^2\phi
+\le
+\text{bottom}
++
+A_{\mathrm{good}}^{\mathrm{loc}}+R_\phi
++
+A_{\mathrm{bad}}(Q_r)
++
+A_{\mathrm{ext}}(Q_r)
++
+F_{\mathrm{adv}}
++
+C r^{-2}\iint_{Q_r}|\omega|^2.
+\]
+
+| Term | Status |
+|---|---|
+| \(A_{\mathrm{good}}^{\mathrm{loc}}\) | CF/BdVB on interior Good pairs |
+| \(R_\phi\) | Annulus support sits. A priori absorb: open (H2-class) |
+| \(A_{\mathrm{bad}}\) | H1 / WRITE (6). Open |
+| \(A_{\mathrm{ext}}\) | H3. Bound named. Open a priori |
+| \(F_{\mathrm{adv}}\) | H2. Smallness: CKN 1982. A priori from \(\int E\): open |
+| Lower order / bottom | Closed |
+
+**What is not claimed.** H1 is not proved. H2-from-energy is not proved. H3-from-energy is not proved. The three *writing* gaps are gone. The last estimate is still WRITE (6).
+
+**Desk score of this repair.** Gap (iii) is the right implication (local Serrin, not CKN). Gap (ii) is a valid crude bound; H3 is a real extra term. Gap (i) stops a free move; \(R_\phi\) lives on the annulus (tried §12). A priori absorb of \(R_\phi\) is H2-class, still open. H1, H2-from-energy, and H3-from-energy are not proved.
+
+Phone copy of this section: [`GAPS_DESTROYED.md`](GAPS_DESTROYED.md).
+
+---
+
+## 12. WRITE (6) — H1 on one cylinder (attempted; still open)
+
+Asked: write leftover (6). Then: try the possibilities and see which is successful. Object: one cylinder \(Q_r\). Do not add \(K(t)\). Do not emit H1.
+
+### Which succeeded
+
+| Item | Successful? | As what |
+|---|---|---|
+| \(A_{\mathrm{good}}^{\mathrm{loc}}\) | **yes** | CF/BdVB kernel drop \(\lvert z\rvert^{-5/2}\) on interior Good pairs (zero extension). Lemma C’s mechanism, not alignment. |
+| Mid-Bad \(A_{\mathrm{bad}}^{\ge\rho}\) | **yes** as a bound | CS on shells \(\lvert z\rvert\ge\rho\): \(\le C\rho^{-3/2}\int E_{\mathrm{loc}}^{3/2}\,dt\). Named remainder. **Not** absorbed from \(\int E<\infty\). |
+| Direction energy | **yes** as an identity | \(\lvert\nabla\omega\rvert^2=\lvert\nabla\lvert\omega\rvert\rvert^2+\lvert\omega\rvert^2\lvert\nabla\xi\rvert^2\) on \(\{\omega\neq 0\}\). Does **not** give Hölder \(1/2\). |
+| \(R_\phi\) support | **yes** as localization | \(\lvert\phi(x)-\phi(y)\rvert=0\) on \(B_{r/2}\times B_{r/2}\). Error lives on the annulus. Kernel \(\lvert z\rvert^{-3/2}/r\) is locally integrable. A priori absorb: **open** (H2-class). |
+| H3 exterior bound | **yes** as a bound | Already §11. A priori from energy: **open**. |
+| Local Serrin from a closed budget | **yes** as a theorem | Serrin 1962, not CKN. Needs the budget. |
+| H2 as CKN smallness | **yes** as a criterion | CKN 1982. A priori from energy: **open**. |
+| Aimed H1 (near-Bad absorbed) | **no** | Morrey wall: \(W^{1,2}\not\subset C^{0,1/2}\) in 3D. |
+| HLS, path-cost, Lemma J, signed \(D\), thin Bad, fold-only, waiting time, Bony, \(K(t)\) | **no** | Fail or refuse. §6 and below. |
+
+**Successful close of WRITE (6): none.**
+**Successful named pieces: Good-local, mid-Bad bound, direction identity, \(R_\phi\) on the annulus, H3 bound, local Serrin, H2-smallness.**
+
+
+**Aimed estimate.**
+\[
+A_{\mathrm{bad}}(Q_r)
+\le
+\frac\nu8\iint_{Q_r}|\nabla\omega|^2\phi
++C r^{-2}\iint_{Q_r}|\omega|^2.
+\]
+
+**Object.**
+\[
+A_{\mathrm{bad}}(Q_r)
+:=
+\iint_{Q_r}|\alpha_{\mathrm{bad}}^{\mathrm{loc}}|\,|\omega|^2\phi,
+\]
+\[
+\alpha_{\mathrm{bad}}^{\mathrm{loc}}(x)
+=
+\mathrm{P.V.}\int_{\substack{y\in B_r\\(x,y)\ \mathrm{Bad}}}
+D(\hat z,\xi(x),\xi(y))\frac{|\omega(y)|}{|x-y|^3}\,dy.
+\]
+On Bad, \(|\sin\varphi|>C_*|x-y|^{1/2}\), so \(|D|\) does not drop the kernel to \(|z|^{-5/2}\). The kernel stays order \(|z|^{-3}\).
+
+### Split (valid)
+
+Fix \(\rho\in(0,r)\). Bad \(=\) Bad\(^{\ge\rho}\cup\) Bad\(^{<\rho}\).
+
+**Mid.** Worked bound. For \(x\in B_{r/2}\) and \(y\in B_r\) with \(|x-y|\ge\rho\), shells \(A_k=\{2^k\rho\le|x-y|<2^{k+1}\rho\}\):
+
+\[
+\int_{A_k\cap B_r}\frac{|\omega(y)|}{|z|^3}\,dy
+\le
+\Bigl(\int_{A_k}|z|^{-6}\,dy\Bigr)^{1/2}\|\omega\|_{L^2(A_k\cap B_r)}.
+\]
+The first factor is \(\lesssim(2^k\rho)^{-3/2}\). Sum in \(k\ge 0\) is geometric, so
+\[
+|\alpha_{\mathrm{bad}}^{\ge\rho}(x)|
+\le
+C\rho^{-3/2}\|\omega\|_{L^2(B_r)}.
+\]
+\[
+A_{\mathrm{bad}}^{\ge\rho}(Q_r)
+\le
+C\rho^{-3/2}\int_{t_0-r^2}^{t_0} E_{\mathrm{loc}}(t)^{3/2}\,dt.
+\]
+**Succeeds as a bound.** Not absorbed into \(r^{-2}\iint|\omega|^2\) as \(r\to 0\) from \(\int E<\infty\). Same class as H3. **Not H1.**
+
+**Near.** Pairs with \(|x-y|<\rho\). This is the core of WRITE (6).
+
+### \(R_\phi\) tried
+
+Take the companion cutoff \(\eta=\phi\). Then \(\phi\equiv 1\) on \(B_{r/2}\), so
+\[
+|\phi(x)-\phi(y)|=0\qquad\text{on }B_{r/2}\times B_{r/2}.
+\]
+The integrand of \(R_\phi\) vanishes unless at least one of \(x,y\) lies in the annulus \(A=B_r\setminus B_{r/2}\). On the remaining pairs,
+\[
+|\phi(x)-\phi(y)|\le\min\bigl(2,C|x-y|/r\bigr),
+\]
+and the Good kernel times that factor is \(\lesssim r^{-1}|z|^{-3/2}\). In 3D, \(|z|^{-3/2}\) is locally integrable.
+
+**Succeeds as localization:** \(R_\phi\) is an annulus term.
+**Does not succeed as a priori absorb:** the potential \(I_{3/2}|\omega|\) on \(L^2\) is an HLS endpoint. Young returns a piece of local \(\int E^2\) or needs extra smallness — the same class as H2, not a closed estimate from \(\int E<\infty\).
+
+
+### Possibilities scored
+
+| Try | What it is | Verdict |
+|---|---|---|
+| HLS / CZ on Bad, kernel \(\lvert z\rvert^{-3}\) | Recovers the cubic \(E^3\) bound, or the original stretching | **fail** as H1. Already §6 |
+| \(R_\phi\) annulus support | \(\lvert\phi(x)-\phi(y)\rvert=0\) on the inner ball | **pass** as localization. **fail** as a priori absorb (H2-class) |
+| Dyadic CS on near shells \(2^{-k}\) | Factor \(2^{3k/2}\) blows up as \(k\to\infty\) | **fail** at small scales. Mid (\(\lvert z\rvert\ge\rho\)) is the row above |
+| Direction energy | On \(\{\omega\neq 0\}\): \(\lvert\nabla\omega\rvert^2=\lvert\nabla\lvert\omega\rvert\rvert^2+\lvert\omega\rvert^2\lvert\nabla\xi\rvert^2\). Hence \(\int_H\lvert\nabla\xi\rvert^2\le\Lambda^{-2}\int\lvert\nabla\omega\rvert^2\) | **pass** as identity. **fail** as Hölder \(1/2\) |
+| Morrey / Sobolev | In 3D, \(W^{1,p}\subset C^{0,1-3/p}\) needs \(p>3\). Hölder \(1/2\) needs \(p=6\). Energy gives \(\nabla\xi\in L^2(H)\). Even if \(H\) were a ball, \(W^{1,2}\not\subset C^{0,1/2}\) | **wall**. This is why energy does not empty near-Bad |
+| Path-cost of \(\nabla\xi\) | Segment lower bound \(\lvert\xi(x)-\xi(y)\rvert\lesssim\int_\gamma\lvert\nabla\xi\rvert\) | **pass** as Lemma PC (1-D). **fail** as H1. Reconnection / two-blobs leave \(H\). Already §6. [`H1-PC.md`](H1-PC.md) |
+| Lemma J (pair paid by \(\fint\lvert\nabla\omega\rvert^2\)) | Pointwise | **fail**. Biot–Savart averages \(\omega\), not \(\nabla\omega\). Already §6 |
+| Signed \(D\) | Cancelation in the kernel | **fail** for an isolated pair. Already §6 |
+| Thin Bad | Measure of Bad small | **fail** as proof. Assuming it is Lemma C. Already §6 |
+| Empty near-Bad if \(\xi\in C^{0,\gamma}\), \(\gamma\ge 1/2\) | Then Bad\(^{<\rho}=\emptyset\) for \(\rho\) small (or \(C\le C_*\)) | **pass** as Lemma C on the ball. **fail** as a priori. The if is the leftover |
+| Fold picture only | Spread dissipation in a ball | **fail** as H1. A direction sheet with \(\nabla\xi\in L^2\) still makes Bad pairs. Two other pictures remain |
+| CKN-small cylinder | Scaled \(\iint\lvert\nabla u\rvert^2\) small \(\Rightarrow\) \(A_{\mathrm{bad}}\) small | **pass** as smallness. **fail** as a priori from \(\int E<\infty\). That is H2’s class, not H1 |
+| Local interpolation \(E_{\mathrm{loc}}^2\le C\mathcal{E}_{\mathrm{loc}}\lVert\nabla\omega\rVert_2^2\) | Would give \(\int E_{\mathrm{loc}}^2\) from a closed enstrophy budget | **circular**. The budget is what H1 is for |
+| Waiting time \(r^2/\nu\) | Filter which cylinders | **fail**. Imposed, not derived. Already §6 |
+| Bony LP split | LLH / LHH / HHH | **fail**. Needs \(\lVert\omega_{\mathrm{low}}\rVert_\infty\) or pieces of \(\int E^2\). Already §6 |
+| \(K(t)\) / Q-stack / \(\Phi\) | Different PDE | **refuse**. Not unaugmented NSE |
+
+**Successful as write, not as close.** Good-local, mid-Bad CS, direction identity, \(R_\phi\) on the annulus. The Morrey gap is the named wall for the near piece.
+
+**Not successful.** No row proves the aimed estimate from \(\int E<\infty\).
+
+### Remainder after the attempt
+
+\[
+A_{\mathrm{bad}}(Q_r)
+=
+A_{\mathrm{bad}}^{\ge\rho}(Q_r)
++
+A_{\mathrm{bad}}^{<\rho}(Q_r).
+\]
+
+First term: bound above, H3-class, a priori open.
+Second term: stretching from misaligned pairs at scales \(<\rho\). Empty if \(\xi\) is Hölder \(1/2\) on \(H\cap B_r\) with constant \(\le C_*\). That is Lemma C localized. Energy does not give it, because \(W^{1,2}(H)\not\subset C^{0,1/2}\).
+
+**Verdict.** WRITE (6) **open**. H1 is not proved. Do not cash this section as a close.
+
+**Next line.** Not a new name. One of the three shapes in §13, on one cylinder. DA will not emit it.
+
+---
+
+## 13. H1 as an object; three remaining shapes
+
+You need H1. Here it is as an object you can hold. It is not in hand as a theorem. Phone copy: [`H1-OBJECT.md`](H1-OBJECT.md).
+
+On \(Q_r\), only pairs with \(|\omega|\ge\Lambda\) and \(|\sin\varphi|>C_*|x-y|^{1/2}\):
+
+\[
+\iint\!\!\int_{\mathrm{Bad}}
+\frac{|\omega(x)|^2|\omega(y)|}{|x-y|^3}\,\phi
+\le
+\frac\nu8\iint_{Q_r}|\nabla\omega|^2\phi
++C r^{-2}\iint_{Q_r}|\omega|^2.
+\]
+
+That is the whole request. Good pairs are already gone. Flux is H2. Exterior is H3.
+
+**Why the last passes did not give it.** The kernel on Bad is still \(|z|^{-3}\). HLS turns that into local \(E^3\). The Hölder cut does not change the exponent; it only changes the set. A thin set would save it. A path jump in \(\xi\) does not prove the set is thin. Morrey (\(W^{1,2}\not\subset C^{0,1/2}\)) is why energy does not empty the set.
+
+**The only shapes that still look like H1.** Prove one of these, and you have H1. Arithmetic written: [`H1-SHAPES.md`](H1-SHAPES.md). None of them is a theorem. P1-lowpass (frequency localization of \(\omega\)) sits on a stated class and is not shape 1: [`H1-P1.md`](H1-P1.md). P1-loc cutoff sits with \(\nabla u\) kept and is not shape 1: [`H1-P1-LOC.md`](H1-P1-LOC.md).
+
+1. **Thinness.** Bad-pair measure in each \(B_r\) is small enough that HLS picks up a factor that turns \(E^3\) into \(E^2\) or into dissipation. CS-summable volume thinness only recovers the \(E^{3/2}\) (mid-Bad) class.
+2. **J on folds only.** Every persistent-bad pair in \(Q_r\) sits in a fold (geometry A), not a sheet or a gap, so \(\displaystyle\int_{B_{2\rho}}|\nabla\omega|^2\gtrsim\Lambda^2\rho^2\) and a Vitali sum closes.
+3. **Dynamics.** NSE forbids 2’s alternatives on the time scale \(r^2/\nu\).
+
+1 is thinness. 2 is J on folds only. 3 is dynamics.
+
+**Not a new leftover name.** These are writings of H1. §6 still stands as refuse of *fake closes*: assuming thinness is Lemma C; Lemma J on generic fields is false; an imposed waiting time is not derived. The shapes still have to be *proved*.
+
+**Status.** None of 1, 2, 3 sits. Lemma P1 sits and is not 1. Lookups all miss. Next work is still prove 1, 2, or 3 on one cylinder, or NSE membership in the P1 class.
+
+---
+
+## 14. Literature versus the H-system
+
+Checked against the papers, not against slogans. H1 is not sitting in the literature under another name.
+
+### Floor — matches the record
+
+| Claim in the packet | Paper | Match? |
+|---|---|---|
+| Energy / Leray–Hopf | Leray, *Acta Math.* 63 (1934) | Yes |
+| Serrin / LPS \(2/p+3/q=1\), \(q>3\) | Serrin, *ARMA* 9 (1962); Prodi 1959; Ladyzhenskaya | Yes. Local form exists |
+| ESS \(L^\infty_t L^3\) | Escauriaza–Seregin–Šverák, *Uspekhi* 2003 | Yes |
+| Cubic wall \(\dot E\le C E^3\) | Leray; standard | Yes |
+| NRS: no Leray self-similar blowup | Nečas–Růžička–Šverák, *Acta Math.* 176 (1996) | Yes. Leray profiles only |
+| CKN: \(\mathcal{P}^1(\mathrm{sing})=0\); \(\varepsilon\)-regularity at energy level | Caffarelli–Kohn–Nirenberg, *CPAM* 35 (1982) | Yes. Not enstrophy-level |
+
+### Lemma C — the if
+
+| Packet | Paper | Match? |
+|---|---|---|
+| Lipschitz direction \(\Rightarrow\) regular | Constantin–Fefferman, *IUMJ* 42 (1993) | Yes. Whole space. High-vorticity set |
+| Hölder \(1/2\) \(\Rightarrow\) regular | Beirão da Veiga–Berselli, *Diff. Int. Eq.* 15 (2002) | Yes. Whole space |
+| \(\beta<1/2\) in that argument | Beirão da Veiga, arXiv:1604.08083 (2016) | Open in that framework. Cut at \(1/2\) is the literature cut |
+| Bounded domain / slip / Green | BdVB, *JDE* 246 (2009); BdV, *J. Math. Fluid Mech.* 15 (2013) | Yes. Still an alignment hypothesis |
+| Localized to a cylinder | Grujić, *Comm. Math. Phys.* 290 (2009), “Localization and Geometric Depletion of Vortex-Stretching” | Yes. Localizes the *condition*. Does **not** remove it |
+
+**Verdict.** Lemma C is real. Localization of Lemma C is real if you already have local alignment. Neither estimates \(A_{\mathrm{bad}}\).
+
+### Closest to H1 — still criteria
+
+- **Grujić–Guberović, *CMP* 298 (2010).** Coherence of \(\xi\) as a weight on \(\int|\omega|^q\). Assume some coherence, conclude regularity. If coherence fails on a thick set, the class does not fire.
+- **Bradshaw–Grujić (arXiv:1309.2519).** Mild geometry on \(\xi\) \(\Rightarrow\) \(L\log L\) on \(\omega\). Still a hypothesis on direction.
+- **Grujić, *Nonlinearity* 26 (2013).** 1-D sparseness of intense regions \(\Rightarrow\) no blowup. Assumes sparseness; does not prove Bad is sparse. Cousin of shape 1, not a proof of shape 1.
+- **Beirão da Veiga, *DCDS-S* 2019 / follow-ups.** Perturb \(\beta\) below \(1/2\); integrability of \(\omega\) degrades. Below the cut, CF does not give \(L^\infty_t L^2\) on \(\omega\).
+
+**No hit.** No paper found that bounds
+\[
+\iint_{\{|\sin\varphi|>C|x-y|^{1/2}\}}\frac{|\omega(x)|^2|\omega(y)|}{|x-y|^3}
+\]
+by local dissipation plus \(r^{-2}\iint|\omega|^2\) from the energy class alone. That integral is H1 / WRITE (6) / Lemma I on the ball. It is not in the record as a theorem.
+
+Paste copy: [`LITERATURE-H.md`](LITERATURE-H.md).
+
+### H2 and H3 versus the record
+
+H2-smallness = CKN. H2-a priori from \(\int E<\infty\) is not in the record (that would be local \(\int E^2\), i.e. local Serrin, i.e. the problem).
+
+H3: exterior stretching is why Grujić 2009 exists. That paper controls the exterior piece *under local coherence*. Without it, \(r^{-3/2}E^{1/2}E_{\mathrm{loc}}\) is the crude bound, and it is not absorbed in the literature either.
+
+### What the literature does not give
+
+An a priori H1. An a priori H2. Alignment of \(\xi\) on the high-vorticity set. Thinness of Bad. A Liouville theorem that kills all Type-II ancient solutions.
+
+What it does give, and what the packet already uses: energy, Serrin/ESS as criteria, CKN measure, NRS on Leray profiles, CF/BdVB as *if*, Grujić as *local if*.
+
+The H-split matches the map of the field. The leftover they left is the leftover we named.
+
+**Dream-team read of tonight’s map.** Papers, not a phone call. They would sign the map. They would not sign (6). CF/BdVB: the Hölder \(1/2\) cut is theirs; Bad pairs are the pairs they refused; (6) is the right name for what they left; they would not bound it. Grujić: 2009 localizes the condition, not \(A_{\mathrm{bad}}\); 2010 weights coherence; 2013 assumes sparseness; H3 is why 2009 exists; none of those papers is (6). CKN: H2-smallness is theirs, energy level; reject “H1+H2 \(\Rightarrow\) empty singular set” unless local Serrin after a closed enstrophy budget; a CKN-small cylinder never needed H1. ESS/Serrin: criteria; local Serrin after the budget, not a substitute for (6). NRS: Leray profiles only. Unanimous: do not merge letters; (6) is the request and is not in the record; if (6) sits and H2-from-energy does not, the cylinder still does not close; next work is (6) on one cylinder, or a new wall — not another criterion paper. File: [`DREAM-TEAM-H.md`](DREAM-TEAM-H.md).
+
+---
+
+## 15. Citation list
+
+1. J. Leray, *Acta Math.* 63 (1934).
+2. J. Serrin, *Arch. Rational Mech. Anal.* 9 (1962).
+3. L. Caffarelli, R. Kohn, L. Nirenberg, *Comm. Pure Appl. Math.* 35 (1982), 771–831.
+4. P. Constantin, C. Fefferman, *Indiana Univ. Math. J.* 42 (1993), 775–789.
+5. H. Beirão da Veiga, L. C. Berselli, *Diff. Int. Eq.* 15 (2002), 345–356.
+6. J. Nečas, M. Růžička, V. Šverák, *Acta Math.* 176 (1996).
+7. L. Escauriaza, G. Seregin, V. Šverák, *Uspekhi Mat. Nauk* 58 (2003).
+8. Z. Grujić, *Comm. Math. Phys.* 290 (2009), 861–870.
+9. Z. Grujić, R. Guberović, *Comm. Math. Phys.* 298 (2010), 407–418.
+10. H. Beirão da Veiga, arXiv:1604.08083 (2016).
+
+H1 is not on this list as a theorem. Closest cousins are 8 and 9, both still *if*.
+
+
+
+================================================================================
+END OF FILE: docs/UNAUGMENTED-NS-CHAIN.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+Keep 1/r^4. Classical PDE.
+
+================================================================================
+ORIGINAL PATH: docs/UNAUGMENTED-R4-VORTICITY-PLAN.md
+PATHWAY FILE: 2 of 8
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# Unaugmented vorticity plan, keeping \(1/r^4\)
+
+Working note. Fluids only. No augmentation. Do not cancel the axis weight.
+
+SFE, Harmonic Blueprint, and Millennium-packaged notes are shelved (`docs/SHELF.md`). They are not inputs here.
+
+Sources used: August Phi note (22045467), August Ring+SND (22045474), June T2 (20552080), August Q6 hygiene (22045478). Older bundled closures are not used as load-bearing steps.
+
+---
+
+## 1. What you already have on vorticity
+
+### Full 3D, periodic box
+
+Vorticity form of the classical system:
+
+\[
+\partial_t\omega+(u\cdot\nabla)\omega=(\omega\cdot\nabla)u+\nu\Delta\omega,\qquad
+\omega=\nabla\times u,\qquad \nabla\cdot u=0.
+\]
+
+Stretching identity (from the Gemini screenshots and the strain eigenframe):
+
+\[
+\omega\cdot S\omega=|\omega|^2\sum_{i=1}^3\lambda_i\cos^2\alpha_i,\qquad
+\lambda_1+\lambda_2+\lambda_3=0.
+\]
+
+Littlewood–Paley shell energies (August Ring note):
+
+\[
+X_j=2^{2j}\|\Delta_j u\|_2^2,\qquad
+X=\sum_j X_j=\|\nabla u\|_2^2=\|\omega\|_2^2,\qquad
+J=\max_j X_j,\qquad
+\rho=J/X.
+\]
+
+### Axisymmetric-with-swirl
+
+Cylindrical field \(u=u_r\hat r+u_\theta\hat\theta+u_z\hat z\). Angular momentum
+
+\[
+\Gamma:=r u_\theta.
+\]
+
+The meridional vorticity equation carries the centrifugal source
+
+\[
+\frac1{r^4}\partial_z(\Gamma^2).
+\]
+
+That is the term you canceled by setting \(\Phi=\Gamma/r^2=u_\theta/r\). This note keeps it.
+
+### Mechanisms already written down
+
+| Mechanism | Where | What it actually is |
+|---|---|---|
+| Ring Lemma | 22045474 | One-shell Fourier support \(\Rightarrow\) \(\|\nabla\xi_0\|_{L^\infty(E_c)}\le C\,2^{j_*}\) |
+| SND (August) | 22045474 | \(\inf_t J/X\ge c_*>0\): a dominant shell holds a fixed enstrophy fraction |
+| SND (June T2) | 20552080 | \(\sup_t\rho(t)\le\rho_0<1\): **no** shell holds almost all enstrophy |
+| T2 flux | 20552080 | Low-frequency self-flux vanishes by \(\nabla\cdot u=0\); remaining flux from high shells |
+| Viscosity / shell-spread | 20552080 Thm 1 | If energy is spread, Poincaré / Bernstein give extra \(H^1\) damping |
+| \(Q_1\) extra dissipation | 22045467 | **Not used here** |
+| \(\Phi\) cancel | 22045467 Thm 2.2 | **Not used as the main path** |
+| Inverse-GCD / Bridge\(^*\) | 22045478 | Matrix note only. Not a bound on \((u\cdot\nabla)u\) |
+
+**Hygiene first.** August SND and June SND are opposite statements. Freeze two names:
+
+- **Concentration.** \(J/X\ge c_*\). Dominant shell. Ring Lemma regime.
+- **Spread.** \(\max_j X_j/X\le\rho_0<1\). Viscosity / T2 regime.
+
+Do not call both SND. The two-regime argument needs both, under different names.
+
+---
+
+## 2. Why canceling \(1/r^4\) may have been the wrong first move
+
+The identity
+
+\[
+\frac1{r^4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)
+\]
+
+is true. It does not remove work. It moves the work onto \(\|\Phi\|_\infty\):
+
+\[
+\|\partial_z(\Phi^2)\|_2\le 2\|\Phi\|_\infty\|\partial_z\Phi\|_2.
+\]
+
+That is a stronger norm than the weighted \(L^2\) you started with. So the cancel can make the a priori estimate harder, not easier, unless you already have axis smoothness.
+
+Keeping \(1/r^4\) has three structural advantages:
+
+1. The weight is large only in a thin tube \(r<\delta\). Off the axis it is bounded.
+2. The Stokes operator on the swirl component is also stronger in that same tube (the \(1/r^2\) angular terms). Danger and dissipation sit in the same place.
+3. That is a concentration-versus-viscosity contest, which is the language of your Ring / T2 notes.
+
+If the field is already smooth, \(u_\theta=O(r)\) on the axis, \(\Gamma=O(r^2)\), and \(r^{-4}\partial_z(\Gamma^2)\) is bounded. The issue is only the a priori estimate from \(H^1\), not a literal infinite source.
+
+---
+
+## 3. Unaugmented system (no \(Q_1\))
+
+\[
+\partial_t u+(u\cdot\nabla)u=-\nabla p+\nu\Delta u,\qquad\nabla\cdot u=0.
+\]
+
+Axisymmetric-with-swirl class, or the full 3D vorticity form. No extra \(\varepsilon^\alpha P\mathrm{div}(|\nabla u|^\beta\nabla u)\).
+
+Kinetic energy (unconditional, Leray):
+
+\[
+\frac12\|u(T)\|_2^2+\nu\int_0^T\|\nabla u\|_2^2\,dt\le\frac12\|u_0\|_2^2.
+\]
+
+Enstrophy is the object to close:
+
+\[
+\frac12\frac{d}{dt}\|\omega\|_2^2+\nu\|\nabla\omega\|_2^2
+=\int(\omega\cdot S\omega)\,dx.
+\]
+
+In the swirl class the right-hand side contains the axis source. Split it.
+
+---
+
+## 4. Suggested proof architecture
+
+### Step A — Keep \(\Gamma\). Do not pass to \(\Phi\) as the primary unknown
+
+Write the meridional / swirl coupling in \(\Gamma\) and \(\omega^\theta\) (or \(\omega^r,\omega^z\)). \(\Phi\) may be recorded as a dual variable for comparison. It is not the estimate variable.
+
+### Step B — Split the axis source at a tube radius \(\delta(t)\)
+
+\[
+\int\frac1{r^4}\partial_z(\Gamma^2)\,\omega^r\,r\,dr\,dz
+=I_{\mathrm{off}}(\delta)+I_{\mathrm{tube}}(\delta).
+\]
+
+Off-axis, \(r\ge\delta\):
+
+\[
+\Bigl|\frac1{r^4}\partial_z(\Gamma^2)\Bigr|\le\delta^{-4}\,|\partial_z(\Gamma^2)|.
+\]
+
+This is a standard Sobolev term. Absorb part in \(\nu\|\nabla\omega\|_2^2\), leave a remainder depending on \(\delta^{-C}X\).
+
+### Step C — Tube estimate, keep the weight
+
+On \(r<\delta\),
+
+\[
+\frac1{r^4}\partial_z(\Gamma^2)=\frac{2\Gamma\,\partial_z\Gamma}{r^4}.
+\]
+
+Use \(\Gamma=r u_\theta\) and a Poincaré / Hardy inequality **localized to the tube**, not a global \(r^{-4}\) Hardy on all of \(\mathbb{R}^3\). Typical shape:
+
+\[
+|I_{\mathrm{tube}}|
+\le C\nu\|\nabla\omega\|_2^2
++C_\nu\,\delta^{-\alpha}\|\Gamma/r\|_{L^2(\mathrm{tube})}^2\,X^\beta.
+\]
+
+The leftover should be controlled by kinetic energy of swirl in the tube plus viscosity. This is the estimate you avoided by canceling. It is also the estimate that matches the geometry: only the tube can be bad.
+
+If this localized Hardy fails at the endpoint, lower \(\delta\) or add an angular Poincaré from the \(1/r^2\) swirl dissipation. Do not change variables to \(\Phi\) to escape it.
+
+### Step D — Choose \(\delta\) from the dominant shell (concentration regime)
+
+Let \(j_*(t)=\mathrm{argmax}_j X_j(t)\) and set
+
+\[
+\delta(t)\sim 2^{-j_*(t)}.
+\]
+
+That is the viscous scale of the concentrated enstrophy.
+
+If **concentration** holds (\(J\ge c_* X\)):
+
+1. Most of \(X\) lives in shell \(j_*\).
+2. Approximate that piece by a band-limited field (your Ring Lemma hypothesis).
+3. On \(E_c=\{|\omega|\ge c\|\omega\|_2\}\) you get \(\|\nabla\xi_0\|_\infty\le C 2^{j_*}\).
+4. Feed that into a Constantin–Fefferman-type bound on \(\sum\lambda_i\cos^2\alpha_i\) **inside the tube and on \(E_c\)**.
+5. Off \(E_c\), vorticity is small in \(L^2\) by definition; stretching is lower order.
+
+The Ring Lemma as written is for exact one-shell support. You need a quantitative “almost one-shell” version: if \(X_{j_*}\ge c_* X\), control the leakage from neighboring shells \(j_*\pm 1\). That is a real lemma to write. Bernstein constants will produce a factor \(c_*^{-1}\).
+
+### Step E — Spread regime: use T2 / viscosity, not geometry
+
+If **spread** holds (\(\max_j X_j/X\le\rho_0<1\)):
+
+1. Keep T2 Lemma 1 only: \(\int(u_{\le j}\cdot\nabla)\Delta_j u\cdot\Delta_j u=0\) by \(\nabla\cdot u=0\). That is unconditional and correct.
+2. Use shell-spread Poincaré / extra dissipation: energy in many shells cannot all sit at the highest \(j\), so
+
+\[
+\|\nabla\omega\|_2^2\gtrsim \lambda(\rho_0)\,X
+\]
+
+with \(\lambda(\rho_0)\) larger than the single-shell worst case.
+
+3. Do **not** use T2 Lemma 2 as written. It assumes an \(H^{2.3}\) absorbing ball. That is already a regularity assumption. For the unaugmented large-data problem it is circular. Rebuild the flux bound from Bony + energy class only, even if the decay in \(j\) is weaker than \(2^{-0.8j}\).
+
+4. Drop every GNC / inverse-GCD line from T2. They do not enter \(\omega\cdot S\omega\).
+
+### Step F — Glue the two regimes
+
+On each time interval the solution is either concentrated or spread (or switching).
+
+- Concentrated: Ring + tube \(1/r^4\) + viscosity at scale \(2^{-j_*}\).
+- Spread: T2 Lemma 1 + enhanced dissipation.
+
+Occupation time is broken out in [`TRACK-B-OCCUPATION.md`](TRACK-B-OCCUPATION.md). One threshold \(\sigma=1/2\), no gap. The clock **passes**. High \(j_*\) hot time **passes** on the packet ODE. Leray \(\Rightarrow\) short CONC **fails**.
+
+The two-regime glue is broken out in [`TRACK-B-GLUE.md`](TRACK-B-GLUE.md). Increments add. High \(j_*\) CONC sits. Switching high \(j_*\) sits. Low \(j_*\) CONC **fails** on the model ODE. The sketch is **not** an a priori bound for classical \(X\).
+
+Frozen low-\(j_*\) is hygiene, not a retune of the PDE. Packet support \(|k|\le K\) gives \(X\le K^2 E\). That write lives in [`TRACK-B-LOW-J.md`](TRACK-B-LOW-J.md). The B9b unbounded path is **not** NS-legal. The ceiling does **not** follow a climbing \(j_*\).
+
+Climbing CONC is broken out in [`TRACK-B-CLIMB.md`](TRACK-B-CLIMB.md). The knob is \(c=\mathrm{d}j_*/\mathrm{d}t\) on the estimate. Slow climb still blows. Fast climb sits.
+
+The field climb is broken out in [`TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md). Instantaneous \(t=0\) on random CONC packets does **not** produce the saving \(c=8\). Viscosity pulls \(j_{\mathrm{bar}}\) down. A short evolution is written in [`TRACK-B-EVOLVE.md`](TRACK-B-EVOLVE.md): still no saving climb on \(n=32\).
+
+Packet geometry is written in [`TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md). The strain identity on \(E_c\) **passes**. 3-CONC does **not** force depleted \(\cos\alpha_3\). Ring Lipschitz is **not** alignment. Constantin–Fefferman holds as a **conditional** (small \(\lvert\cos\alpha_3\rvert\) stretches less). That does not close \(X\).
+
+The stretching budget is written in [`TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md). Stretch-weighted \(\lvert\cos\alpha_3\rvert\) sits near \(0.81\) against an unweighted mean near \(0.50\). A majority of \((\omega\cdot S\omega)_+\) on \(E_c\) comes from the aligned cap. A short run does **not** deplete the median and does **not** empty that share. The share is **not** an a priori ([`TRACK-B-PAYERS.md`](TRACK-B-PAYERS.md)).
+
+Fluids look at the net in [`TRACK-B-BALANCE.md`](TRACK-B-BALANCE.md). The identity \(\dot X=2\int\omega\cdot S\omega-2\nu\|\nabla\omega\|_2^2\) **passes**. On the same random-phase packets, plus and minus stretch **cancel** and viscosity owns the net. That is **not** BKM, and **not** every 3-CONC field.
+
+Leray’s \(\int X\,dt<\infty\) limits how long a high-\(j_*\) concentrated spike can last, but it does **not** by itself stop \(\dot X\sim X^3\). A spike \(X\sim(T_*-t)^{-1/2}\) is compatible with integrable \(X\). Viscosity or geometric depletion has to supply the extra decay. Do not close with energy integrability alone. All-data geometric depletion is **not** what the packets gave. An aligned *budget* is also not a depleted *field*. A cancelled *net* is also not every CONC packet.
+
+### Step G — What would finish the unaugmented statement
+
+A closed estimate of the form
+
+\[
+\frac{d}{dt}X+\nu\|\nabla\omega\|_2^2
+\le \varepsilon\nu\|\nabla\omega\|_2^2
++C_\varepsilon X\cdot\mathcal{R}(t),
+\]
+
+where \(\mathcal{R}(t)\) is integrable on \([0,T]\) from:
+
+- tube Hardy + swirl dissipation, and/or
+- Ring control of \(\cos\alpha_i\) on \(E_c\), and/or
+- spread Poincaré.
+
+Then Gronwall keeps \(X\in L^\infty([0,T])\). Continuation in \(H^1\) does the rest.
+
+No BKM-from-\(L^2\) implication is required. No Biot–Savart slogan that \(\cos\alpha_3\to 0\) for all data.
+
+---
+
+## 5. Concrete lemmas (DA-scored; regularity still open)
+
+Scored in [`docs/TRACK-B-LEMMAS.md`](TRACK-B-LEMMAS.md). `python3 scripts/da_machine.py trackb`.
+
+1. **Localized tube Hardy for \(\Gamma\)**, radius \(\delta\), no \(\Phi\). Hardy + wall term **pass**. All-data \(I_{\mathrm{tube}}\) domination **fail**. Packet class at \(\delta\sim 2^{-j_*}\) **pass**. Write: [`TRACK-B-HARDY-TUBE.md`](TRACK-B-HARDY-TUBE.md).
+2. **Almost-band-limited Ring Lemma** (three shells). Bernstein **pass**. All-data depletion **fail**. Strain identity on \(E_c\) **pass**. CONC \(\Rightarrow\) depleted \(\cos\alpha_3\) **fail**. CF as a conditional **pass**. Stretching budget: CF weights it **pass**; majority from aligned cap **pass**; short run does not empty it **fail** of depletion. Enstrophy balance: identity **pass**; visc owns this ensemble **pass**; \(P_+\) as a net cubic **fail**. Coherent CONC: signed-strain blob nets **pass**; working-box cubic live **fail**; \(z\)-independent tube also nets **fail**. Writes: [`TRACK-B-GEOMETRY.md`](TRACK-B-GEOMETRY.md), [`TRACK-B-STRETCH.md`](TRACK-B-STRETCH.md), [`TRACK-B-BALANCE.md`](TRACK-B-BALANCE.md), [`TRACK-B-COHERENT.md`](TRACK-B-COHERENT.md).
+3. **One-threshold regime split** 3-CONC \(\sigma\ge 1/2\) vs SPREAD \(\sigma\le 1/2\). Cover **pass**.
+4. **Energy-class T2 flux.** Lemma 1 **pass**. Lemma 2 dropped (**fail** as input). Low Bony \(T\): split **pass**, energy-class **pass**, uniform \(\rho^{1/2}\) **fail**. Write: [`TRACK-B-BONY-T.md`](TRACK-B-BONY-T.md).
+5. **Swirl dissipation identity** in the tube. \((\Delta u)_\theta\) **pass**. Angular \(1/r^2\) vs \(I_{\mathrm{tube}}\) **fail** (\(R_{\mathrm{ang}}\) climbs with \(j_*\)). Full \(D_{\mathrm{tube}}\) still budgets the packet (B4c). Do not cancel to \(\Phi\). Write: [`TRACK-B-ANGULAR.md`](TRACK-B-ANGULAR.md).
+
+Item 5 was the reason to keep \(1/r^4\). The extra angular piece, alone, does **not** dominate the tube source at packet scale. The cancel-to-\(\Phi\) path was not the missing absorption — full \(\nabla\omega\) dissipation (B4c) is. Domain B does not pass.
+
+---
+
+## 6. What not to carry over
+
+- \(Q_1\). That is a different PDE.
+- Inverse-GCD, Bridge\(^*\), GNC. Separate arithmetic note.
+- June T2 corollaries that leave fluids.
+- “Almost one-shell” treated as exact one-shell.
+- Closing the cubic enstrophy ODE from \(\int X\,dt<\infty\) alone.
+
+---
+
+## 7. Status of this plan
+
+| Piece | Status |
+|---|---|
+| Keep \(1/r^4\), split tube / off-axis | Setup, not proved |
+| Localized tube Hardy | **pass** as Hardy + wall; all-data domination **fail**; packet class **pass** (`docs/TRACK-B-HARDY-TUBE.md`) |
+| Angular \(1/r^2\) vs \(I_{\mathrm{tube}}\) | **fail** of domination on packets; \(R_{\mathrm{ang}}\) climbs; B4c still budgets (`docs/TRACK-B-ANGULAR.md`) |
+| Ring Lemma, exact one shell | Upgraded to 3-shell Bernstein check; depletion **fail** as a slogan |
+| Concentration \(\Rightarrow\) geometric control | Identity **pass**; CONC not depleted; CF conditional **pass**; stretching budget aligned, net cubic cancels; coherent blob nets, working-box cubic not live; field occupation stays CONC (`docs/TRACK-B-GEOMETRY.md`, `docs/TRACK-B-STRETCH.md`, `docs/TRACK-B-BALANCE.md`, `docs/TRACK-B-COHERENT.md`, `docs/TRACK-B-FIELD-OCC.md`) |
+| Spread \(\Rightarrow\) extra dissipation | T2 Lemma 1 **pass**; Lemma 2 dropped; energy-class \(T\) **pass**; uniform \(\rho^{1/2}\) **fail** |
+| Unaugmented global \(H^1\) bound | Open |
+
+The live question is no longer “does \(\Phi\) cancel the axis?” and no longer “does the extra \(1/r^2\) piece, alone, beat \(I_{\mathrm{tube}}\)?” B4c still budgets packets. Coherent CONC is scored. Field occupation is scored. Field glue is scored: typed \(j_*=2\) grows; the NS packet falls. NS climb law is scored: the field did not force \(c=8\). Climb sketch is scored: prescribed \(c=8\) is not this window. Longer \(n=32\) past the room time did not produce \(c=8\). DNS is not an a priori (B13f). Finer stays B22e. Do not spawn \(n=64\).
+
+---
+
+## 8. Theorem H and the SND dictionary
+
+The implication from the shell condition
+to ordinary regularity is written exactly
+in [`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md):
+what \(\sigma\) controls, what frequency
+drift is still needed, and where the
+argument assumes the bound. SND sitting
+is not a bound on \(X\). Theorem G is
+dead. Ring is REPAIR. Do not start H1
+from that page.
+Displayed Theorem H is not established
+even with \(X\le M\). The original
+§8.1 extract is the object under review:
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+Repaired \(F_j\) bound sits. The
+assembled \(D^+\rho\) inequality is a
+ceiling, not a floor:
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
+16 Sep handoff and four-bucket score:
+[`NS-STATUS.md`](NS-STATUS.md).
+SND instrument (no persistence):
+[`SND-INSTRUMENT.md`](SND-INSTRUMENT.md).
+
+Source for H: May T³ note (20405526, archive). Fluids content only. The old closure packaging is ignored.
+
+### 8.1 What Theorem H actually says
+
+Shell flux into the dominant block:
+
+\[
+\Pi_{j_*}=\int_{\mathbb{T}^3}\Delta_{j_*}\bigl[(u\cdot\nabla)u\bigr]\cdot\Delta_{j_*}u\,dx.
+\]
+
+**(SND-C).** There is \(C_*<\infty\) such that whenever \(X\ge\delta_*/4\) and \(\rho=J/X\le\rho_0\) (spread),
+
+\[
+|\Pi_{j_*}|\le C_*\bigl(\nu\,2^{2j_*}X_{j_*}+X^{1/2}\mathcal{D}^{1/2}\bigr),
+\qquad
+\mathcal{D}=\nu\|\Delta u\|_2^2.
+\]
+
+**Theorem H (as written).** SND-C holds in that spread class, by a Bony split \(\Pi_{j_*}=T+T^*+R\):
+
+- diagonal \(R\): Bernstein + Theorem F + Young
+- high \(T^*\): Kato–Ponce + \(X_k\le\rho X\)
+- low \(T\): CCFS locality + “spread makes low shells small”
+
+**Theorem G (as written).** SND-C \(\Rightarrow\) concentration \(\inf J/X\ge c_*\), because if \(\rho(t_k)\to 0\) then F makes \(\mathcal{D}\) explode and SND-C forces \(\dot\rho>0\).
+
+H is a **Cartesian, periodic, velocity-paraproduct** statement. It never sees \(r\), \(\Gamma\), or \(\Phi\).
+
+This §8.1 extract is the object under review.
+Displayed absolute-flux estimate FAILS
+even with \(X\le M\) when \(\Pi_j=F_j-S_j\):
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+Living \(\Pi_j\) here was written as \(F_j\)
+only. Do not quote this block as proved.
+\(F_j\) bound sits; \(D^+\rho\) ceiling is
+not SND-C:
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
+
+### 8.2 Where the \(\Phi\) cancel actually hits H
+
+The cancel does not change the Bony algebra on \(\mathbb{T}^3\). It breaks the **glue**.
+
+In the May note the chain was:
+
+\[
+Q_1\ \xrightarrow{\ A\ }\ \text{smooth }u^\varepsilon
+\ \xrightarrow{\ B,\ C\ }\ \Phi\text{-cancel, no Gronwall}
+\ \xrightarrow{\ I\ }\ \text{uniform }H^1\text{ as }\varepsilon\to 0
+\ \xrightarrow{\ H,\ G\ }\ \text{SND-C on the limit }u.
+\]
+
+Three collisions:
+
+1. **Wrong manifold.** \(\Phi=\Gamma/r^2\) lives in cylindrical swirl. H lives in Fourier shells on \(\mathbb{T}^3\). After the cancel, the nonlinearity you are estimating is \(\partial_z(\Phi^2)\), not \(\Delta_{j_*}[(u\cdot\nabla)u]\). H’s \(T+T^*+R\) does not apply to that term unless you rebuild LP in cylindrical modes.
+
+2. **Hidden \(\|\Phi\|_\infty\).** Theorem C uses the cancel to kill Gronwall. The cancel is free only if \(\|\Phi\|_\infty\) is already controlled. That bound is what you do not have. So C does not deliver a uniform \(H^1\) family, and I cannot pass H to an unaugmented limit.
+
+3. **H never needed B.** The commutator estimate is supposed to be a spread-regime bound on \(\Pi_{j_*}\) for Leray–Hopf \(u\) on \(\mathbb{T}^3\). Putting Phi in front of it makes H look dependent on a swirl identity it does not use. That is why H feels broken after you drop the cancel: the **package** broke, not the paraproduct.
+
+**Reconcile:** delete B, C, and I from the H track. State H only for the classical velocity on \(\mathbb{T}^3\), spread class, no \(\varepsilon\), no \(\Phi\). Keep the \(1/r^4\) tube work on a **separate swirl track**.
+
+### 8.3 What is still open inside H itself
+
+Even after the glue is cut, H is not finished.
+
+- **Theorem F is too strong.** \(\mathcal{D}\ge\nu\cdot 4^{N-1}\cdot\rho\cdot X\) with \(N=\lceil X/J\rceil\) treats “\(N\) active shells” as if they sat at exponentially higher frequency. They can be \(N\) consecutive low shells. Super-exponential dissipation as \(\rho\to 0\) is not a theorem. The diagonal step that writes \(2^{j_*}\le(\mathcal{D}/(\nu X_{j_*}))^{1/2}\) from F inherits this.
+- **Low Bony term \(T\).** “Each low shell is \(\le\rho X\)” is true under spread. The **sum** of many low shells need not be small in \(L^\infty\). CCFS locality does not turn that sum into \(O(\rho^{1/2}X^{1/2})\) uniformly as \(\rho\to 0\), which is exactly the limit G uses.
+- **G needs uniformity down to \(\rho\to 0\).** H assumes \(\rho\le\rho_0\). If \(C_*\) blows up as \(\rho_0\to 0\), G’s contradiction fails.
+
+So: cut Phi from H, then the remaining job is a **uniform energy-class bound on the low paraproduct** in the spread class. That is the real Theorem H.
+
+### 8.4 Every SND re-iteration, named so they can be used
+
+Do not use one symbol. Five different statements were all called SND.
+
+| Name to use now | Old label | Formula | Job |
+|---|---|---|---|
+| **CONC** | August SND, May Def, Thm D/G | \(\inf J/X\ge c_*\) | Dominant shell. Ring Lemma. Geometry. |
+| **SPREAD** | June T2 “SND”, May H hypothesis | \(\rho=J/X\le\rho_0<1\) | Extra dissipation. T2 Lemma 1. H’s class. |
+| **SIMPLEX** | May Paper 2 | \(\|a-\mu\|_{\ell^1}\le 0.039\) | Not used. Relied on GCD arithmetic. |
+| **SND-C** | May Def before H | the \(\Pi_{j_*}\) bound above | Commutator in SPREAD only. |
+| **T2-ODE** | June Thm 2–3 | \(\frac{d}{dt}\|a-\mu\|_1\le-\alpha\|a-\mu\|_1+\beta\) | Quantitative SPREAD, if rebuilt without \(H^{2.3}\). |
+
+August CONC and June SPREAD are opposites. That is useful, not a contradiction, once they have two names.
+
+**Two-regime machine (how to mobilize them):**
+
+\[
+\begin{align*}
+\rho&\ge\tfrac14 &&\text{CONC}\ \to\ \text{almost-band-limited Ring}\ \to\ \text{direction on }E_c\\
+\rho&\le\tfrac14 &&\text{SPREAD}\ \to\ \text{T2 Lemma 1 + attempted SND-C (H without Phi)}.
+\end{align*}
+\]
+
+One threshold. No gap. G, if it can be made uniform, is the statement “you cannot stay in deep SPREAD,” i.e. CONC eventually returns. That is optional. The unaugmented bound only needs **each** regime controlled while you are in it.
+
+Drop SIMPLEX. Drop any identification of CONC/SPREAD with inverse-GCD.
+
+### 8.5 How H and the \(1/r^4\) track sit side by side
+
+```
+                classical u, no Q1
+                     /          \
+                    /            \
+            T³ Cartesian                    swirl, keep 1/r^4
+         CONC | SPREAD                      tube | off-axis
+              |                                  |
+     Ring (3-shell / EQ3)               localized Hardy +
+     SND-C / H (spread only)            angular viscosity
+              \                                  /
+               \                                /
+                 glue by occupation time of each regime
+```
+
+No arrow from \(\Phi\) into \(\Pi_{j_*}\). No arrow from inverse-GCD into either column.
+
+---
+
+## 9. Three-shell equidistribution
+
+This is the older Ring / Borromean object: not one shell, and not all shells. Three consecutive dyadic blocks around the peak.
+
+### 9.1 Definitions
+
+Let \(j_*=\mathrm{argmax}_j X_j\) and write the **triad packet**
+
+\[
+P_{j_*}:=X_{j_*-1}+X_{j_*}+X_{j_*+1},\qquad
+\sigma:=\frac{P_{j_*}}{X}\in(0,1].
+\]
+
+**Packet mass.** \(\sigma\) is the enstrophy fraction in the three adjacent shells.
+
+**Equidistribution on the packet.** There is \(\kappa\ge 1\) such that
+
+\[
+\max_{|k-j_*|\le 1}X_k
+\le\kappa\min_{|k-j_*|\le 1}X_k.
+\]
+
+The clean case is \(\kappa=1\): \(X_{j_*-1}=X_{j_*}=X_{j_*+1}=P_{j_*}/3\), hence
+
+\[
+\rho=\frac{J}{X}=\frac{\sigma}{3}.
+\]
+
+A fully occupied, equidistributed triad (\(\sigma=1\)) has \(\rho=1/3\).
+
+Do not confuse this with strain-axis equidistribution \(\cos^2\alpha_i=1/3\), which would send \(\sum\lambda_i\cos^2\alpha_i=0\). That is a different “three.” Here “shell” means \(\Delta_j\).
+
+### 9.2 Why three, not one
+
+Local NS / Bony interactions that feed \(\Pi_{j_*}\) live on frequencies \(|k|\sim 2^{j_*}\). A product of two dyadic pieces is supported in a bounded number of neighboring shells. The diagonal remainder \(R\) in Theorem H is exactly \(|k-j_*|\le 2\) or \(\le 4\). The smallest packet that can host a local triad is three consecutive shells.
+
+The August Ring Lemma used **one** shell. That makes Bernstein clean and makes CONC look like \(\rho\ge c_*\approx 1\). It is also narrower than the interaction. Three-shell support is the natural Ring hypothesis.
+
+**Almost-band-limited Ring (3-shell).** If \(\mathrm{supp}\,\hat u\subset S_{j_*-1}\cup S_{j_*}\cup S_{j_*+1}\), Bernstein still gives
+
+\[
+\|\nabla\omega\|_\infty\lesssim 2^{2(j_*+1)}\|\omega\|_2\lesssim 4\cdot 2^{2j_*}\|\omega\|_2,
+\]
+
+so on \(E_c=\{|\omega|\ge c\|\omega\|_2\}\)
+
+\[
+\|\nabla\xi_0\|_{L^\infty(E_c)}\le C(c)\,2^{j_*}.
+\]
+
+One extra octave costs a fixed factor, not a derivative. So 3-shell Ring is the same lemma, not a weaker theory.
+
+If only a fraction \(\sigma\) of the enstrophy sits in the packet, apply Ring to the band-limited piece \(u_{\mathrm{pkt}}=\sum_{|k-j_*|\le 1}\Delta_k u\) and treat \(u-u_{\mathrm{pkt}}\) as a remainder of size \((1-\sigma)^{1/2}X^{1/2}\). That is the quantitative “almost 3-shell” statement.
+
+### 9.3 Where it sits in CONC / SPREAD
+
+The one-threshold split \(\rho\gtrless 1/4\) was a placeholder. The 3-shell packet is the right concentrated object.
+
+| Regime | Test | Tools |
+|---|---|---|
+| **3-shell CONC** | \(\sigma\ge 1/2\) | 3-shell Ring on the packet; remainder \(\le X/2\) |
+| **equidistributed 3-shell** | \(\sigma\ge 1/2\) and \(\kappa\le 2\) | same Ring; \(\rho=\sigma/3\in[1/6,1/3]\) |
+| **1-shell spike** | \(X_{j_*}\ge\sigma/2\) inside a heavy packet | August Ring, special case |
+| **SPREAD** | \(\sigma\le 1/2\) (mass outside every triad) | T2 Lemma 1; attempted SND-C / H |
+
+An equidistributed full triad has \(\rho=1/3>1/4\), so it was already on the CONC side of the old split. Good: the phenomenology you care about (local cascade in a triad) is concentrated, not spread.
+
+SPREAD now means: **no three consecutive shells hold half the enstrophy.** That is stronger than “no single shell holds almost everything,” and it matches H’s need that the diagonal neighborhood is not the whole field.
+
+### 9.4 What equidistribution does for H
+
+Helps **only the diagonal** \(R\).
+
+If the three shells around \(j_*\) are comparable, Bernstein constants on \(\Delta_{j_*-1},\Delta_{j_*},\Delta_{j_*+1}\) are of the same order. You do not have one neighbor hiding a much larger \(L^\infty\) piece. That is the right setup for the \(R\) estimate, without Theorem F’s \(4^{N-1}\).
+
+Does **not** help the low paraproduct \(T\) (\(k\le j_*-4\)). Those shells are outside the triad by definition. Equidistribution inside the packet says nothing about the far infrared. That remains the open piece of H.
+
+T2 Lemma 1 still kills the low self-flux into each \(\Delta_j\). Keep that.
+
+### 9.5 What it does not do
+
+- It does not follow from \(\nabla\cdot u=0\) or from Leray. It is a regime, like CONC.
+- It does not cancel \(\omega\cdot S\omega\). Frequency equidistribution is not alignment equidistribution.
+- It does not replace viscosity in the \(1/r^4\) tube. The swirl track is unchanged: \(\delta\sim 2^{-j_*}\) is still the packet scale.
+- Borromean “linkage forces localization” is a picture, not an estimate, until it is rewritten as the 3-shell Bernstein bound above.
+
+### 9.6 Freeze these as the SND re-iterations that matter
+
+\[
+\sigma=\frac{X_{j_*-1}+X_{j_*}+X_{j_*+1}}{X},\qquad
+\rho=\frac{\max_j X_j}{X}.
+\]
+
+- **3-CONC:** \(\sigma\ge 1/2\). Mobilize Ring on three shells.
+- **EQ3:** 3-CONC plus \(\kappa\le 2\). Mobilize the clean diagonal \(R\).
+- **SPREAD:** \(\sigma\le 1/2\). Mobilize T2 Lemma 1 and the open low term of H.
+
+One-shell August SND is the special case \(X_{j_*}\approx P_{j_*}\). June “no shell above \(\rho_0\)” is implied by SPREAD if \(\rho_0\ge 1/2\), but SPREAD is the better name because H’s diagonal is a three-shell object.
+
+---
+
+## 10. Which spectral pieces might apply
+
+Filter: can it enter an estimate for \(\Pi_{j_*}\), \(\omega\cdot S\omega\), or the \(1/r^4\) tube, on the classical system, no \(Q_1\).
+
+### Use now
+
+| Tool | Role |
+|---|---|
+| LP shells \(X_j\), \(X\), \(J\), \(\rho\), \(j_*\) | Language of every estimate |
+| Triad packet \(P_{j_*}\), \(\sigma\), EQ3 | 3-CONC / SPREAD split |
+| 3-shell Ring (Bernstein on \(E_c\)) | Direction bound in 3-CONC |
+| Bony \(T+T^*+R\) | Split of \(\Pi_{j_*}\) |
+| T2 Lemma 1 (\(\nabla\cdot u=0\) kills low self-flux) | Unconditional, keep |
+| CCFS locality (as a *target* for \(T\)) | Only if restated in energy class |
+| Kato–Ponce on high \(T^*\) | Standard; use in SPREAD |
+| Strain identity \(\sum\lambda_i\cos^2\alpha_i\) | Geometry after Ring, not a spectral closer |
+| Leray \(\int X<\infty\), \(\nu\|\nabla\omega\|_2^2\) | Viscosity budget |
+| Tube split of \(1/r^4\) at \(\delta\sim 2^{-j_*}\) | Swirl track; packet scale |
+
+### Regime hypotheses only (do not treat as proved)
+
+| Tool | Why it is only a regime |
+|---|---|
+| August SND / CONC | \(\inf J/X\ge c_*\) is an assumption |
+| 3-CONC \(\sigma\ge 1/2\), EQ3 | Same |
+| June SND / SPREAD | Opposite of CONC; useful as the other side |
+| SND-C / Theorem H | Displayed absolute-flux estimate FAILS even with \(X\le M\). [`SND-H-REVIEW.md`](SND-H-REVIEW.md). \(F_j\) bound sits; \(D^+\rho\) assembly is a ceiling, not SND-C: [`SND-H-REPAIR.md`](SND-H-REPAIR.md). |
+| Theorem G | Needs uniform H as \(\rho\to 0\) |
+| T2-ODE / \(\alpha=2\nu^2 4^{1/\rho_0}\rho_0\) | Rebuild without \(H^{2.3}\) and without F’s \(4^{N-1}\) |
+| “SND on smooth intervals” (Thm E) | True for already-smooth \(u\); does not start the a priori estimate |
+| Small-data / bounded-\(H^2\) pigeonhole | Separate small or subcritical classes |
+
+### Do not put on this track
+
+| Tool | Why |
+|---|---|
+| \(Q_1\) / coherence operator | Different PDE |
+| \(\Phi\) cancel as input to H | Wrong manifold; hidden \(\|\Phi\|_\infty\) |
+| Theorem C / I (\(\varepsilon\to 0\) uniform \(H^1\)) | Glue that fed H; drop |
+| Theorem F as \(4^{N-1}\rho X\) | False as stated |
+| SIMPLEX \(\|a-\mu\|_1\le 0.039\) | Used GCD arithmetic |
+| Inverse-GCD \(Q_N\), \(\widetilde Q_N\), \(H_N\) | Matrix. Not a bound on \((u\cdot\nabla)u\) |
+| Bridge\(^*\) | Single prime-pair Rayleigh; keep in the arithmetic note only |
+| Full-spectrum \(\lambda_{\min}>-1/2\) | False |
+| Triple Lock / GNC / SND \(\equiv\) Bridge | Identification withdrawn |
+| Route C, \(\lambda_{\min}/\log N\), Montgomery–Dyson Q6 | Other equations. Stale “Gap 1 complete” logs are false against the Aug 2026 Q6 audit: spectral-limit, normalization (\(Q_N\) vs \(\widetilde Q_N\) vs \(H_N\)), and operator-to-Mertens are still open. Use the corrected 2026 drafts only; no submission until an independent proof/numeric pass. |
+| “\(Q_6\) with \(\gamma>3/2\) enforces SND” | Not a fluid mechanism |
+| HB / prime node families (ringdown) | Different spectral test; not a commutator |
+| Quantum Lens / prime-manifold Hamiltonian | Off-track |
+
+### How to load the usable spectral stack
+
+```
+classical u
+    LP {X_j}
+        σ = P_{j*}/X
+        σ ≥ 1/2  →  3-shell Ring → ∇ξ on E_c → stretching
+        σ ≤ 1/2  →  T2 Lemma 1 + Bony
+                      R  (EQ3 helps)
+                      T* (Kato–Ponce)
+                      T  (open)
+    swirl: keep 1/r^4, δ ~ 2^{-j*}
+```
+
+Nothing else from the spectral stack needs to sit on those arrows.
+
+---
+
+## 11. Triple lock vs Bridge\(^*\)
+
+June drafts asserted \(\mathrm{SND}\equiv\mathrm{GNC}\equiv\mathrm{Bridge}\) (20552400 and clones). That triple is withdrawn. Your memory is right that **Bridge was the vertex that had to come out**. What remains is a smaller theorem with the same name family.
+
+### 11.1 What “Bridge” used to mean (withdrawn)
+
+\[
+\lambda_{\min}(Q_N)>-\tfrac12
+\quad\text{for all }N\ge 1
+\]
+
+(or the same floor on \(\widetilde Q_N\) or \(H_N\)). That was the third leg of the triple: one matrix inequality supposed to be SND and GNC. It is **false**. Already \(\lambda_{\min}(Q_{10})\approx-1.90\) and \(\lambda_{\min}(\widetilde Q_{20})\approx-0.505\). So the triple cannot be repaired by putting that floor back.
+
+GNC (dark-state / prime-indicator difference) is also withdrawn as a detector: \(v_k(j)=1_P(j)-1_P(k-j)\) **vanishes** on an actual Goldbach pair. On raw \(Q_N\), \(\langle e_p-e_q,Q_N(e_p-e_q)\rangle=1/p+1/q-2\) is typically \(<-1/2\). So GNC \(\Leftrightarrow\) Bridge was wrong on both sides.
+
+SND (fluids) was never the same statement as a Rayleigh quotient on \(1/\gcd\). That identification is the part that must stay walked back.
+
+### 11.2 What still works: Bridge\(^*\) (single pair)
+
+August note 22045478, Theorem 3.1. On \(\widetilde Q_N(i,j)=1/(\gcd(i,j)\sqrt{ij})\), for distinct primes \(p,q\) and \(v=e_p-e_q\),
+
+\[
+R(v)=\frac{v^\top\widetilde Q_N v}{\|v\|_2^2}
+=\frac12\Big(\frac1{p^2}+\frac1{q^2}\Big)-\frac1{\sqrt{pq}}
+>-\frac12,
+\]
+
+because \(pq\ge 6\) so \(1/\sqrt{pq}\le 1/\sqrt6<1/2\). Two-line identity. Also: \(v\ge 0\Rightarrow v^\top\widetilde Q_N v\ge 0\).
+
+This is a **restricted** floor on one pair of standard-basis vectors, not \(\lambda_{\min}\). \(R\) can be negative (\((2,3)\approx-0.228\)) and still sit above \(-1/2\).
+
+### 11.3 Do not put Bridge\(^*\) back in a triple
+
+| Statement | Status |
+|---|---|
+| \(\mathrm{SND}\equiv\mathrm{GNC}\equiv\mathrm{Bridge}\) (full floor) | Withdrawn, and the floor is false |
+| Bridge\(^*\) on \(e_p-e_q\) | Proved, arithmetic note only |
+| Multi-rep Bridge\(^*\) on \(\sum(e_p-e_{k-p})\) | Open (numeric through \(N=200\) is not a proof) |
+| Bridge\(^*\Rightarrow\) 3-CONC / H / tube | No. Remark 1.4 and §5.3 of that note: no map onto \(\|(u\cdot\nabla)u\|\) |
+| T2-ODE \(\Leftrightarrow\) SPREAD | Fluids-only, separate; not a third vertex |
+
+Keep Bridge\(^*\) as the public claim for the inverse-GCD matrix. Do not reattach it to SND or GNC. The fluids equivalences you can still *try* are T2 Lemma 1 (unconditional) and, later, a rebuilt T2-ODE \(\Leftrightarrow\) SPREAD — both without \(Q_N\).
+
+A later scan (`docs/SPECTRAL-FLOOR-EXPLORATION.md`) keeps that split. Two arithmetic floors stand: \(\lambda_{\min}(H_N)\ge-1\) on the full index, and \(\lambda_{\min}(\widetilde Q\big|_P)\ge-1/4\) on primes. Neither is a fluids input.
+
+### 8.6 Next writes, in order, for the H track
+
+1. Restate SND-C with frozen SPREAD (\(\rho\le 1/4\)), no Phi, no \(\varepsilon\).
+2. Prove the diagonal and high Bony pieces from Bernstein + T2 Lemma 1 only. Do not quote F’s \(4^{N-1}\).
+3. Isolate the low paraproduct as the single open estimate.
+4. Only then ask whether G can push you out of deep SPREAD.
+
+The swirl track stays the tube lemmas in §5. That is how H is reconciled with dropping the cancel: **H never used the cancel, so stop feeding it through Theorem C.**
+================================================================================
+END OF FILE: docs/UNAUGMENTED-R4-VORTICITY-PLAN.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+What may be used as an estimate.
+
+================================================================================
+ORIGINAL PATH: docs/ESTIMATE-AUDIT.md
+PATHWAY FILE: 3 of 8
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# Estimate audit — axisymmetric shell filter
+
+11 September 2026. This is the filter.
+**Not a proof. NS not solved.
+Class is axisymmetric with swirl.
+Remainder is \(T_{j\leftarrow j}\).
+Do not start H1. Do not stamp ★.
+Do not add a field to the PDE.**
+
+Anything written next uses this page.
+KEEP may enter the estimate.
+DISCARD does not enter the identity,
+the Young step, or the claim sentence.
+PARK lives in another stack.
+
+Probe: `python3 scripts/estimate_audit.py`
+
+The estimate this filter wrote:
+[`AXISYM-SHELL.md`](AXISYM-SHELL.md).
+Identity and far-shell Young sit.
+Remainder \(T_{j\leftarrow j}\) is open.
+Class samples of that remainder
+(local-remainder occupancy printed;
+not a class bound):
+[`AXISYM-SWIRL-PROBE.md`](AXISYM-SWIRL-PROBE.md).
+Wall / dictionary correction (occupation
+from the detector withdrawn; not a close
+of \(T_{j\leftarrow j}\)):
+[`SWIRL-WALL-CORRECTION.md`](SWIRL-WALL-CORRECTION.md).
+Handoff (one-page sheet, then four jobs):
+[`ISSUES-SHEET.md`](ISSUES-SHEET.md),
+[`HELP-OFF-DESK.md`](HELP-OFF-DESK.md).
+Borrowed systems (maps only):
+[`FRAMEWORK-MAP.md`](FRAMEWORK-MAP.md).
+
+---
+
+## The estimate this filter is for
+
+First sentence, every time:
+
+Axisymmetric-with-swirl Navier–Stokes,
+unaugmented, one named manifold;
+quantity is the shell budget (named
+\(Z_j\) or the exact stand-in in the
+first line); remainder is
+\(T_{j\leftarrow j}\); extra hypotheses
+in brackets, in the open.
+
+That is a restricted class. It is not
+unrestricted 3-D regularity. It is not
+Lemma★. It is not H1 / WRITE (6).
+Do not glue those three.
+
+Pick \(\mathbb{T}^3\) or \(\mathbb{R}^3\)
+in that first sentence and stay there.
+
+---
+
+## KEEP — method
+
+These may enter.
+
+- Write the exact identity first. Name
+  the one term that can grow the
+  quantity. Never bound that term by a
+  copy of the time derivative you are
+  estimating.
+- State extra hypotheses in brackets,
+  in the open, the way [SND] was
+  stated. A conditional theorem is a
+  theorem. A hidden hypothesis is not.
+- Prefer a restricted class with real
+  geometry (axisymmetric with swirl)
+  over a modified PDE that is no
+  longer classical NS.
+- Measure before closing: signed
+  triads, cancellation \(C\),
+  \(\lvert T_c\rvert/\mathcal D_s\),
+  shell block \(T_{j\leftarrow j}/Z_j\),
+  occupancy, alignment \(\alpha\).
+  If a number can come out the other
+  way, it is allowed in.
+- Unaugmented normalization. Do not
+  add a field to help the estimate.
+- Galerkin / truncation theorems with
+  every constant named, scope in the
+  first sentence.
+- Energy conservation of the pairing
+  as a check (\(10^{-16}\) residual).
+  If the stepper and the diagnostic
+  disagree, the identity is not closed.
+
+---
+
+## KEEP — objects that may enter
+
+Bookkeeping that already sits:
+
+\[
+\Lambda'=\frac{2}{X}(T_c-\nu\mathcal D_s).
+\]
+
+Identity check. Not the final
+left-hand side. Already on disk:
+[`math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md).
+If the identity is not closed in the
+time series, do not quote the sign
+of \(\Lambda'\).
+
+Seated as identities in
+[`AXISYM-SHELL.md`](AXISYM-SHELL.md)
+(not as bounds):
+
+- Closed-triad rewrite
+  \(\tau=(\omega(p)-\omega(r))J_p+(\omega(q)-\omega(r))J_q\).
+- Shift by a lattice constant
+  \(\omega_*\), not by \(\Lambda\).
+
+Still named, not closed:
+
+- Audit Door 1: shell budget. The
+  only remainder is \(T_{j\leftarrow j}\).
+  This is **not** Attack-6 “Door 1”
+  (uniform pre-Young \(C\)), which is
+  off.
+- Door 3 as a **criterion to test**:
+  vorticity-direction alignment
+  \(\alpha\), kept separate from
+  triad-phase occupancy.
+- Swirl geometry as the class that
+  removes free helical HHH. Class,
+  not a close. Map:
+  [`SWIRL-PAPER.md`](SWIRL-PAPER.md).
+
+Samples named in the audit, **2-D
+stays 2-D, 3-D stays 3-D**:
+
+- 2-D: adversary
+  \(\lvert T_c\rvert/\mathcal D_s\sim 0.017\),
+  occupancy \(\sim 0.15\).
+- 3-D: random-phase ratio still
+  \(O(10^{-2})\), HHH occupancy 1 on
+  the orbits that were run,
+  \(\alpha\approx 0.5\).
+
+Those numbers are allowed in as
+printed measurements of those orbits.
+They are not regenerated here.
+Do not import the 2-D pair into 3-D.
+Do not import occupancy 1 into
+Constantin–Fefferman.
+
+---
+
+## KEEP — habits
+
+- Send work with the gap visible.
+- Refuse “visibility of cancellation
+  \(=\) uniform smallness.”
+- Separate modified equations from
+  classical NS. Theorem A is a
+  different PDE. It stays there.
+
+---
+
+## DISCARD — not in this program
+
+If a paragraph needs one of these to
+move, the paragraph is out. Not as
+motivation inside the proof either.
+
+- SFE, coherence viscosity, \(Q_1\)–\(Q_6\)
+  as constitutive laws of classical NS.
+  Other PDEs. A close of another PDE
+  is not a close of NS.
+- Any bound of the bad term by
+  \(\Lambda'\), \(\dot Z_j\), or a new
+  symbol of the same size.
+- [SND] in its large form (“assume the
+  dangerous interactions are not
+  dangerous”) as if it were a
+  smallness you measured.
+- GCD spectral attractor, E8 cathedral,
+  prime-harmonic lock, Borromean
+  coherence as mechanisms that force
+  \(T_{j\leftarrow j}\) small.
+- Base 44 / gematria / letter-number
+  maps as estimates. They do not
+  bound a flux.
+- Q6-Kabbalah, Lightning Flash,
+  syncretic narrative inside the
+  proof. Opinion stack only.
+- Importing 2-D \(\rho=0.02\) into 3-D,
+  or occupancy 1 into CFM.
+- FFT-aliased orbits used as if
+  \(\dot\Lambda=2(T_c-\nu\mathcal D_s)\)
+  held.
+- “Clay is solved,” “unconditional
+  3-D regularity,” or any sentence
+  that drops the class and the
+  measured \(\rho_j\).
+- Treating a Tao-positive reply as
+  certification of a proof.
+- Coherence-floor / extra memory /
+  prime gates added to NS and then
+  described as the Millennium
+  problem.
+
+Already off the live desk for the
+same reason: [`SHELF.md`](SHELF.md).
+SND is a named hole, not this
+remainder: [`SND-H-PLAIN.md`](SND-H-PLAIN.md).
+Implication (not a bound on \(X\)):
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+H review (displayed estimate fails even
+with \(X\le M\)):
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+Repaired \(F_j\) bound; Dini ceiling:
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
+C10 candidate for the local block
+(not a theorem):
+[`C10-CHAIN.md`](C10-CHAIN.md).
+16 Sep handoff:
+[`NS-STATUS.md`](NS-STATUS.md).
+
+---
+
+## PARK — other stacks
+
+Not this estimate.
+
+- Harmonic Blueprint / SFE as a
+  standalone field model.
+- Apps (Prime Breath, GCD Shells viz,
+  Swirl publishing, FIELD MAPPER).
+  Engineering and exposition. Not
+  lemmas. The swirl *map* may be
+  cited; the apps may not close a
+  flux.
+- Base 44 as an optional partition
+  experiment: relabel existing
+  triads; keep the label only if
+  \(\rho_j\) drops. Until that test
+  is run, parked.
+- Defense / TITAN-X / HarborSafe.
+- RH / Goldbach / “Three in One.”
+
+---
+
+## Standing orders
+
+1. First sentence: class, quantity,
+   remainder, what is assumed.
+2. Remainder is \(T_{j\leftarrow j}\)
+   (axisymmetric if that is the class).
+3. Smallness is a printed ratio or an
+   explicit integral of
+   \(\|\omega\|_\infty\), not a story.
+4. No object from the discard list
+   appears in the identity, the Young
+   step, or the claim.
+5. If the identity is not closed in
+   the time series, do not quote the
+   sign of \(\Lambda'\).
+
+---
+
+## Score against this book
+
+| id | Verdict | What it is |
+|---|---|---|
+| EAud_filter_seated | **pass** | KEEP / DISCARD / PARK is the writing rule |
+| EAud_class_named | **pass** | axisymmetric with swirl, not all data |
+| EAud_lambda_bookkeeping | **pass** | \(\Lambda'\) sits as an identity, not the LHS |
+| EAud_remainder_named | **pass** | \(T_{j\leftarrow j}\) is the named hole |
+| EAud_tau_seated | **pass** | Proposition AS-τ: rewrite, not a bound |
+| EAud_omega_star_seated | **pass** | Proposition AS-ω\*: constant shift, not \(\Lambda\) |
+| EAud_door1_closed | **fail** | shell budget remainder is open |
+| EAud_door3_closed | **fail** | \(\alpha\) is a criterion to test, not a bound |
+| EAud_discard_in_claim | **fail** | discard list does not enter the claim |
+| EAud_ns_solved | **fail** | class and \(\rho_j\) stay in the sentence |
+
+The axisymmetric shell estimate is
+**OPEN**. Filter: this page.
+Estimate: [`AXISYM-SHELL.md`](AXISYM-SHELL.md).
+Identity and far-shell Young sit.
+The remainder does not.
+
+Do not start H1 from this page.
+Do not cash a cube family or
+ABC_λ table as \(T_{j\leftarrow j}\).
+Do not weld ★ to this door.
+
+NS not solved.
+================================================================================
+END OF FILE: docs/ESTIMATE-AUDIT.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+Corrections to star packaging.
+
+================================================================================
+ORIGINAL PATH: docs/LEMMA-STAR-CORRECTIONS.md
+PATHWAY FILE: 4 of 8
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# Lemma★ — four corrections
+
+10 September 2026. Phone lock. **Not a proof. NS not solved.**
+
+Working foundation:
+[`math/ns_attacks/LEMMA_STAR_CANONICAL.md`](math/ns_attacks/LEMMA_STAR_CANONICAL.md),
+[`math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md).
+Older attempt:
+[`math/ns_attacks/LEMMA_STAR_OLDER_ATTEMPT_ARCHIVE.md`](math/ns_attacks/LEMMA_STAR_OLDER_ATTEMPT_ARCHIVE.md).
+
+The central target sits:
+\[
+(T_c)_+^2
+\le
+C_{\mathrm{geom}}\,\mathcal D_s\,E\,Y.
+\]
+Amplitude reduction, spectral identities, and viscosity
+packaging agree. Four corrections:
+
+1. \(|T_c(u)|\le C\|u\|_2 X^{3/2}\) is false as a
+   universal estimate. Under \(u=av\), left side \(a^3\),
+   right side \(a^4\). Discarded by algebra. Not an open
+   gap toward ★. Do not apply this death to Attack-2
+   \(C_*\) in \(|T_c|\le C_* X^{3/2}\Lambda\).
+
+2. ★ \(\Rightarrow\) global regularity in this packaging
+   is supported. “Equivalent to global regularity” is
+   not. No converse is written.
+
+3. \(T_c(-v)=-T_c(v)\) while \(\mathcal D_s,E,Y\) stay
+   even. A universal bound on \((T_c)_+^2\) is the same
+   as a universal bound on \(T_c^2\). A large negative
+   value deserves attention: reverse the field.
+
+4. Section 4 of the older proof attempt does not
+   establish its advertised theorem. Archive it.
+   Do not label that opening claim proved.
+
+Near-shell: \(\mathcal R_\star\to K_{\alpha,\beta}(w)\)
+only for aligned, sign-selected \(z_\beta\). Arbitrary
+\(z_\beta\) sees the projection against \(B(w,w)\).
+
+Remaining job: uniform \(\mathcal R_\star\), or a family
+that diverges. One large finite value is not a kill.
+
+Stay in this chat.
+================================================================================
+END OF FILE: docs/LEMMA-STAR-CORRECTIONS.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+Boxed unrestricted claim; killed.
+
+================================================================================
+ORIGINAL PATH: docs/LEMMA-STAR-STATEMENT.md
+PATHWAY FILE: 5 of 8
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# Lemma★ — statement from the lock, not a reconstruction
+
+12 September 2026. Phone.
+**The boxed unrestricted claim is killed
+by the growing-layer family.**
+Replacement closure **OPEN.** Not a proof.
+NS not solved.
+This page still quotes the claim that died.
+It is not a reconstruction.
+The kill: [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md).
+
+Sources (in this order):
+
+- Boxed claim: [`math/ns_attacks/LEMMA_STAR_CANONICAL.md`](math/ns_attacks/LEMMA_STAR_CANONICAL.md)
+- Identities: [`math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md)
+- Viscous line first: [`LEMMA-STAR.md`](LEMMA-STAR.md)
+- Ratio: [`LEMMA-STAR-R.md`](LEMMA-STAR-R.md)
+- Four corrections: [`LEMMA-STAR-CORRECTIONS.md`](LEMMA-STAR-CORRECTIONS.md)
+- ABC_λ score: [`ns-recovery/CS-REMAINDER-VS-DA-REJECT.md`](ns-recovery/CS-REMAINDER-VS-DA-REJECT.md)
+
+Evaluator ≠ proof. Exact core ≠ proof.
+H1 / WRITE (6) is a different integral.
+
+---
+
+## The boxed claim (this is Lemma★)
+
+One line, every symbol below:
+no finite \(C_{\mathrm{geom}}\) satisfies
+\((T_c)_+^2\le C_{\mathrm{geom}}\,\mathcal D_s E Y\)
+on the class written here. That line is
+**killed** by \(v_n\).
+
+On divergence-free fields on \(\mathbb{T}^3\),
+\(E=\|v\|_2^2\), \(Y=\|Av\|_2^2\),
+\(\mathcal D_s=Z-\Lambda Y\), \(T_c=M-\Lambda N\):
+
+\[
+\bigl(T_c(v)_+\bigr)^2
+\le
+C_{\mathrm{geom}}\,
+\mathcal D_s(v)\,
+E(v)\,
+Y(v).
+\]
+
+Equivalent, when \(\mathcal D_s>0\):
+
+\[
+\mathcal R_\star(v)
+=
+\frac{\bigl(T_c(v)_+\bigr)^2}{\mathcal D_s(v)\,E(v)\,Y(v)},
+\qquad
+\sup_v\mathcal R_\star<\infty.
+\]
+
+Viscosity packaging (Young on the same inequality):
+
+\[
+T_c
+\le
+\theta\nu\mathcal D_s
++C_0\nu^{-1}E\,Y,
+\qquad
+C_0(\theta)=C_{\mathrm{geom}}/(4\theta).
+\]
+
+Phone lock writes the same line as
+\(T_c\le\theta\nu(Z-\Lambda Y)+C_0\nu^{-1}\|u\|_2^2 X\Lambda\).
+Those agree: \(X\Lambda=Y\), \(\mathcal D_s=Z-\Lambda Y\).
+
+Equivalent trilinear form (\(C_{\star}^2=4\theta C_0\)):
+
+\[
+\bigl[-\langle B(v,v),A(A-\Lambda)v\rangle\bigr]_+
+\le
+C_{\star}\,
+\|v\|_2\,\|Av\|_2\,
+\bigl\|(A-\Lambda)A^{1/2}v\bigr\|_2.
+\]
+
+This \(C_{\star}\) is ★. It is not Attack-2 \(C_*\).
+
+---
+
+## Setup that sits (algebra + Fourier)
+
+\[
+A=-P\Delta,\qquad B(v,v)=P[(v\cdot\nabla)v].
+\]
+
+\[
+E=\|v\|_2^2,\quad
+X=\|A^{1/2}v\|_2^2,\quad
+Y=\|Av\|_2^2,\quad
+Z=\|A^{3/2}v\|_2^2,\quad
+\Lambda=Y/X.
+\]
+
+\[
+\mathcal D_s
+=Z-\frac{Y^2}{X}
+=\bigl\|(A-\Lambda)A^{1/2}v\bigr\|_2^2.
+\]
+
+\[
+T_c
+=-\langle B(v,v),A(A-\Lambda)v\rangle
+=\sum_k\lambda_k(\lambda_k-\Lambda)T_k.
+\]
+
+If \(\mathcal D_s=0\), the field is one shell,
+\(T_c=0\), and the claim is vacuous. Not a kill.
+If \(\mathcal D_s=0\) and \(T_c>0\), ★ is dead
+immediately. A pure shell does not do that.
+
+Amplitude: \(T_c\sim a^3\), \(\mathcal D_s,E,Y\sim a^2\).
+\(\mathcal R_\star(av)=\mathcal R_\star(v)\).
+Uniform Fourier dilation \(v(n\cdot)\) is invariant.
+
+---
+
+## What a proof of ★ would have to be
+
+A uniform bound on \(\mathcal R_\star\) over
+\(C^\infty_{\mathrm{div},0}(\mathbb{T}^3)\setminus\{0\}\).
+Not a bound on one family (ABC_λ, \(K_{\alpha,\beta}\),
+N-shell, …). A sample bound on a restricted family
+does not prove ★. Finite computed values only raise
+a candidate \(C_{\mathrm{geom}}\).
+
+Kill rule (this book): \(\mathcal R_\star\to\infty\)
+along some sequence. One large finite number does not.
+
+---
+
+## If ★ closed (locked implication)
+
+Correction 2, quoted: ★ \(\Rightarrow\) global
+regularity **in this packaging**. One direction.
+No converse. Do not write “★ equivalent to GR.”
+
+The inequality is the hole. The implication is the
+skeleton. The boxed claim is dead, so this packaging
+does not give unaugmented regularity.
+That is not a singular NSE solution.
+
+DA-NS-2: if ★ sits, DA-NS-2 sits. The integral
+does not sit yet. Do not add \(K(t)\) to the PDE.
+
+---
+
+## What is proved vs open (from the lock)
+
+| Item | Status |
+|---|---|
+| \(A,B,E,X,Y,Z,\Lambda,\mathcal D_s,T_c,\mathcal R_\star\) | closed (algebra + triad) |
+| One shell: \(\mathcal D_s=0\Rightarrow T_c=0\) | closed |
+| \(T_c(-v)=-T_c(v)\); reverse to test stretching | closed (correction 3) |
+| \(\sup\mathcal R_\star<\infty\) | **NO.** Killed by \(v_n\) |
+| Bound on \(C_{\mathrm{geom}}\) | **NO.** No finite constant |
+| Kill of that box | sits. [`LEMMA-STAR-GROWING-LAYER.md`](LEMMA-STAR-GROWING-LAYER.md) |
+| Replacement energy-budget closure | **open** |
+| Unaugmented NSE solved by ★ | no (the box is dead) |
+| H1 / WRITE (6) | different integral; outside this statement |
+
+K=0 dead. Uniform pre-Young \(C\) dead. Older
+\(|T_c|\le C\|u\|_2 X^{3/2}\) dead by scaling
+(\(a^3\) vs \(a^4\)). Not Attack-2 \(C_*\).
+
+---
+
+## ABC_λ relative to this lemma
+
+Evaluator for the quotient. ABC_λ did not
+kill ★. Largest gate-table number after
+reverse: \(0.327\) at λ=8. A finite climb,
+not the \(v_n\) family.
+
+H1 was not run on ABC_λ. Do not start it here.
+
+Explore-boundedness score (SuperGrok 19:08):
+[`LEMMA-STAR-EXPLORE.md`](LEMMA-STAR-EXPLORE.md).
+Family check vs lock (that paste; not a kill):
+[`LEMMA-STAR-FAMILY-CHECK.md`](LEMMA-STAR-FAMILY-CHECK.md).
+Cube family (named, computed; not a kill):
+[`LEMMA-STAR-CUBE.md`](LEMMA-STAR-CUBE.md).
+Cube analytic review (files absent; \(M_0\) not locked):
+[`LEMMA-STAR-CUBE-REVIEW.md`](LEMMA-STAR-CUBE-REVIEW.md).
+Two-shell \(D_s\) already sits. \(T_c\) is not
+shell energies alone. Spatial \(v(\mu x)\) is
+not Fourier dilation. Do not stop patching.
+
+---
+
+## Score of the incoming explanation
+
+Keep: evaluator ≠ proof; exact boxed ratio; one-shell
+vacuous; the unrestricted claim had to be uniform;
+finite samples are not a kill; the named kill is
+\(\mathcal R_\star\to\infty\); H1 outside this statement.
+
+The unrestricted box is dead. The leftover is a
+different energy-budget estimate that \(v_n\)
+does not kill. Need★ cannot repair this box.
+If a different estimate holds, GR in this
+packaging is a separate implication. No converse.
+
+Stay in this chat.
+================================================================================
+END OF FILE: docs/LEMMA-STAR-STATEMENT.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+OTHER PDE. Do not weld.
+
+================================================================================
+ORIGINAL PATH: docs/AUGMENTED-NS-PROOF-CHAIN.md
+PATHWAY FILE: 6 of 8
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# Q1-augmented Navier–Stokes: proof chain (Track A)
+
+Draft. Augmented system only. This is a different PDE from the classical (unaugmented) equations.
+
+Does **not** close Track B. No inverse-GCD, no Bridge, no Route C. SFE, Harmonic Blueprint, and Millennium-packaged notes are shelved (`docs/SHELF.md`).
+
+The extra dissipation is the Ladyzhenskaya / \(p\)-Laplacian term already known to give global regularity in three dimensions when the power is large enough. The chain below records that fact in your \(Q_1\) notation and lists numerical checks.
+
+---
+
+## Status dashboard
+
+| Claim | Status |
+|---|---|
+| Energy identity for \(Q_1\) | Proved below |
+| Global weak solutions, \(\beta\ge 1/2\) | Standard (Ladyzhenskaya class) |
+| Uniqueness / strong solutions, \(\beta\ge 1/2\) | Standard in that class |
+| \(C^\infty\) bootstrap for \(\varepsilon>0\) | Standard once \(H^1\) is uniform |
+| \(\Phi\) identity \(\frac1{r^4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) | Algebra only; **not used** here |
+| Uniform \(H^1\) as \(\varepsilon\to 0\) | Open (old C/I; do not reuse) |
+| Classical unaugmented regularity | Not claimed |
+
+Lemma catalog: [`TRACK-A-LEMMAS.md`](TRACK-A-LEMMAS.md).  
+Gap: [`TRACK-A-GAP.md`](TRACK-A-GAP.md).  
+Print: `python3 scripts/da_machine.py tracka`  
+Write the chain: `python3 scripts/da_machine.py proof --problem A`  
+or `next --ask "track A write"`
+
+DA emit: [`A-PROOF-CHAIN.md`](A-PROOF-CHAIN.md).
+
+---
+
+## 0. The system
+
+On \(\mathbb{T}^3\times[0,T]\), \(\nu>0\), \(\varepsilon>0\), \(\alpha>0\), \(\beta\ge 1/2\):
+
+\[
+\partial_t u+(u\cdot\nabla)u
+=-\nabla p+\nu\Delta u
++\varepsilon^\alpha\,\mathbb{P}\,\mathrm{div}\bigl(|\nabla u|^\beta\nabla u\bigr),
+\qquad
+\nabla\cdot u=0.
+\]
+
+\(\mathbb{P}\) is the Leray projector. Initial data \(u_0\in H^1(\mathbb{T}^3)\), \(\nabla\cdot u_0=0\).
+
+Write \(p=\beta+2\), so \(\beta\ge 1/2\) is \(p\ge 5/2\). The extra term is the variational derivative of \(\frac1p\int|\nabla u|^p\). This is the Ladyzhenskaya modification (Ladyzhenskaya 1968; Málek–Nečas–Růžička). It is **not** the scalar \(-\varepsilon^\alpha|\nabla u|^\beta\Delta u\) from an older draft. Use the divergence form so the energy identity is exact.
+
+Effective viscosity in the stress is at least \(\nu\). The system is uniformly parabolic for each fixed \(\varepsilon>0\).
+
+---
+
+## 1. Energy identity
+
+Test the equation against \(u\). The convective term and the pressure vanish.
+
+**Lemma 1.** For a smooth solution,
+
+\[
+\frac12\frac{d}{dt}\|u\|_2^2
++\nu\|\nabla u\|_2^2
++\varepsilon^\alpha\|\nabla u\|_{L^{\beta+2}}^{\beta+2}
+=0.
+\]
+
+Hence for every \(T>0\),
+
+\[
+\frac12\|u(T)\|_2^2
++\nu\int_0^T\|\nabla u\|_2^2\,dt
++\varepsilon^\alpha\int_0^T\|\nabla u\|_{L^{\beta+2}}^{\beta+2}\,dt
+=\frac12\|u_0\|_2^2.
+\]
+
+**Proof.** \(\int(u\cdot\nabla)u\cdot u=\frac12\int u\cdot\nabla(|u|^2)=0\).  
+\(\int\mathbb{P}\mathrm{div}(|\nabla u|^\beta\nabla u)\cdot u=-\int|\nabla u|^{\beta+2}\).  
+The Stokes term is \(-\nu\|\nabla u\|_2^2\).
+
+This is the only energy law used below. No Gronwall, no \(\Phi\).
+
+---
+
+## 2. Galerkin existence
+
+Let \(P_n\) be the projection onto the first \(n\) Stokes eigenfunctions.
+
+**Lemma 2.** The Galerkin system has a global-in-time solution \(u_n\). The bounds of Lemma 1 are uniform in \(n\).
+
+**Proof.** Finite-dimensional ODE. The same energy identity holds for \(u_n\). The right-hand side is independent of \(n\) and of \(T\). No finite-time blowup of \(\|u_n\|_2\).
+
+**Lemma 3.** There is a subsequence \(u_n\rightharpoonup u\) with
+
+\[
+u\in L^\infty(0,\infty;L^2)\cap L^2(0,\infty;H^1),
+\qquad
+\nabla u\in L^{\beta+2}(0,\infty;L^{\beta+2}),
+\]
+
+and \(u\) is a weak solution of the \(Q_1\) system.
+
+**Proof.** Banach–Alaoglu on the bounds of Lemma 1. Aubin–Lions for strong \(L^2\) compactness of the convective term (the extra dissipation only helps). Monotonicity of \(v\mapsto\mathrm{div}(|\nabla v|^\beta\nabla v)\) passes to the limit (Minty–Browder). Details: Málek–Nečas–Růžička, *Weak and Measure-valued Solutions to Evolutionary PDEs*, Ch. 5.
+
+---
+
+## 3. Why \(\beta\ge 1/2\) closes in 3D
+
+The obstruction in the classical system is the stretching integral \(\int(\omega\cdot S\omega)\). After one derivative, you need something like \(u\in L^s_t L^r_x\) with \(2/s+3/r=1\), \(r>3\).
+
+Here \(\nabla u\in L^{\beta+2}_t L^{\beta+2}_x\). Sobolev on \(\mathbb{T}^3\) gives
+
+\[
+\|u\|_{L^{3(\beta+2)/(\beta+1)}}\lesssim \|\nabla u\|_{L^{\beta+2}}
+\]
+
+(up to the mean-zero / Poincaré convention). For \(\beta\ge 1/2\) one has \(\beta+2\ge 5/2\) and the pair \((s,r)\) built from these integrabilities meets the Ladyzhenskaya–Prodi–Serrin line (or the Ladyzhenskaya \(p\ge 5/2\) criterion for the modified stress). That is the whole gain: **extra integrability of \(\nabla u\)**, not a geometric cancel.
+
+**Lemma 4.** For \(\beta\ge 1/2\) and \(\varepsilon>0\), the weak solution of Lemma 3 is unique and lies in \(L^\infty(0,\infty;H^1)\cap L^2(0,\infty;H^2)\).
+
+**Proof.** Standard difference-of-two-solutions estimate in this class: the extra term produces a monotone remainder that absorbs the convective difference. See Ladyzhenskaya (1968) and Málek–Nečas–Růžička. The constant depends on \(\varepsilon,\alpha,\beta,\nu,\|u_0\|_{H^1}\). It **blows up** as \(\varepsilon\to 0\). That is why this lemma does not pass to Track B.
+
+---
+
+## 4. Smoothness bootstrap
+
+**Lemma 5.** The unique strong solution of Lemma 4 is \(C^\infty(\mathbb{T}^3\times(0,\infty))\).
+
+**Proof.** Frozen \(\varepsilon>0\), the linearized operator is a uniformly elliptic Stokes operator with continuous coefficients (after Lemma 4). Difference quotients give \(H^k\) bounds for all \(k\). Sobolev embedding: \(C^\infty\) in space. Time regularity from the equation. No new idea.
+
+---
+
+## 5. Theorem (Track A)
+
+**Theorem A.** Let \(\nu>0\), \(\varepsilon>0\), \(\alpha>0\), \(\beta\ge 1/2\), and let \(u_0\in H^1(\mathbb{T}^3)\) be divergence-free. The \(Q_1\) system has a unique solution
+
+\[
+u\in C^\infty(\mathbb{T}^3\times(0,\infty))\cap L^\infty(0,\infty;H^1).
+\]
+
+No finite-time singularity occurs **for this PDE**.
+
+**Proof.** Lemma 2 \(\to\) Lemma 3 \(\to\) Lemma 4 \(\to\) Lemma 5.
+
+Data need not be axisymmetric. The \(\Phi\) identity is not used.
+
+---
+
+## 6. What this chain does not do
+
+- It does not send \(\varepsilon\to 0\). The \(H^1\) bound of Lemma 4 depends on \(\varepsilon^{-\,c(\beta)}\).
+- It does not prove anything about \(\frac1{r^4}\partial_z(\Gamma^2)\) in the classical swirl equations.
+- It does not prove SND-C, 3-CONC, or Ring.
+- It does not use \(Q_N\) or Bridge\(^*\).
+
+Track B stays the other note.
+
+---
+
+## 7. Numerical checks (verification, not a proof)
+
+The script `scripts/augmented_ns_verify.py` runs a Fourier–Galerkin Taylor–Green flow on \(\mathbb{T}^3\).
+
+| Check | What would support the chain |
+|---|---|
+| **E1** energy residual | \(\bigl|\frac12\|u(T)\|_2^2+\nu\int\|\nabla u\|_2^2+\varepsilon^\alpha\int|\nabla u|^{\beta+2}-\frac12\|u_0\|_2^2\bigr|\) small |
+| **E2** extra dissipation positive | \(\int|\nabla u|^{\beta+2}>0\) whenever \(\varepsilon>0\) and \(\nabla u\not\equiv 0\) |
+| **E3** enstrophy bounded for \(\varepsilon>0\) | \(X(t)=\|\omega(t)\|_2^2\) stays finite on a fixed window where the \(\varepsilon=0\) run is already straining the grid |
+| **E4** \(\varepsilon\)-dependence | peak \(X\) grows as \(\varepsilon\) decreases (consistent with Lemma 4 not being uniform) |
+| **E5** divergence | \(\|\nabla\cdot u\|_\infty\) at roundoff after projection |
+
+Failure of E1 means the discretization is wrong, not that Theorem A is wrong. Success of E3 is consistency, not a proof.
+
+Suggested first run: \(N=24\) modes, \(\nu=0.01\), \(\beta=1/2\), \(\alpha=1\), \(\varepsilon\in\{0,0.05,0.2\}\), \(T=2\), Taylor–Green amplitude 1.
+
+### First verification run
+
+Fourier–Galerkin Taylor–Green, \(N=16\), \(\nu=0.02\), \(\beta=1/2\), \(\alpha=1\), \(T=0.4\), \(\Delta t=0.01\), 2/3 dealias, RK2, trapezoidal dissipation integral. Output: `results/augmented_ns_verify.json`.
+
+| \(\varepsilon\) | \(E(0)\) | \(E(T)\) | \(\nu\int\|\nabla u\|_2^2\) | \(\varepsilon^\alpha\int|\nabla u|^{5/2}\) | residual | \(X(0)\) | \(X(T)\) | \(\|\nabla\cdot u\|_\infty\) |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 0 | 31.0063 | 29.5456 | 1.4607 | 0 | \(4.6\times10^{-6}\) | 93.02 | 90.04 | \(1.9\times10^{-15}\) |
+| 0.05 | 31.0063 | 26.3776 | 1.3804 | 3.2483 | \(4.4\times10^{-6}\) | 93.02 | 80.22 | \(1.6\times10^{-15}\) |
+| 0.20 | 31.0063 | 19.1359 | 1.1802 | 10.6898 | \(3.4\times10^{-4}\) | 93.02 | 57.99 | \(1.7\times10^{-15}\) |
+
+Reading against the checklist:
+
+- **E1** holds. Residual is \(10^{-6}\) at \(\varepsilon=0\) and \(3\times10^{-4}\) at \(\varepsilon=0.2\) (RK2 + trapezoid, not a conserved discrete energy).
+- **E2** holds. The \(Q_1\) integral is strictly positive for \(\varepsilon>0\).
+- **E3** holds on this window. Enstrophy stays finite; larger \(\varepsilon\) damps it faster.
+- **E4** is consistent with Lemma 4 not being uniform: \(X(T)\) grows as \(\varepsilon\) decreases (\(58\to80\to90\)).
+- **E5** holds at roundoff after Leray projection.
+
+This is a consistency check of Lemma 1 on a smooth periodic field. It is not a proof of Theorem A and says nothing about Track B.
+
+Reproduce:
+
+```
+python3 scripts/augmented_ns_verify.py --n 16 --t 0.4 --dt 0.01 --nu 0.02 --eps 0.0 0.05 0.2 --out results/augmented_ns_verify.json
+python3 -m unittest tests/test_augmented_ns_verify.py
+```
+================================================================================
+END OF FILE: docs/AUGMENTED-NS-PROOF-CHAIN.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+Honesty: identity != Lemma-star bound.
+
+================================================================================
+ORIGINAL PATH: _chatgpt_audit/source-snapshots/unaug-proof-chain-honesty-6df4/docs/ns-review/UNAUG-PROOF-CHAIN.md
+PATHWAY FILE: 7 of 8
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# Unaugmented 3D NS — proof-chain honesty card
+
+**Face:** unaugmented classical 3D Navier–Stokes (no \(Q\)-stack, no added field).  
+**Status:** **OPEN** at same-scale transfer \(T_{j\leftarrow j}\); Lemma★ packaging still **OPEN** at PRODUCT-BLOCK (\(\sup\mathcal{R}_\star\)).  
+**Clay Statement B / NS closed:** **NOT claimed.**  
+**Authoritative lock (Jonathan R. Simons):** the five paragraphs below are binding for this face.  
+**Companions:** [`PROOF-CHAIN-CLEAN.md`](./PROOF-CHAIN-CLEAN.md) · [`SCIENTIFIC-REPORT.md`](./SCIENTIFIC-REPORT.md) · [`CREDIT-BODY-OF-WORK.md`](./CREDIT-BODY-OF-WORK.md)
+
+Mac source `UNAUG_3D_NS_PROOF_CHAIN.md` was not mirrored in this environment; terminology and honesty below are taken from the locked paste.
+
+---
+
+## Honesty card (locked)
+
+**Terminology.** We call the exact bookkeeping relation the **spectral-shift identity**. It is distinct from the **Lemma★ ratio bound** discussed in earlier attack notes. Establishing the identity does not establish that bound or control nonlinear transfer.
+
+**Dissipation threshold.** Because \(\rho_j\) is normalized by palinstrophy \(P_j\), the comparison \(\rho_j<\nu\) belongs to the enstrophy–palinstrophy estimate in (A). It is not an absorption criterion for the displayed shell-energy budget, whose viscous term is \(\nu Z_j\).
+
+**Cross-scale terms.** This program proposes to handle cross-scale interactions using standard estimates. Their precise bounds and summability remain to be supplied within this chain; they are not established by this note.
+
+**Remaining closure.** Conditions (A)–(C) describe candidate routes for completing this particular proof chain. The principal unresolved term is the same-scale transfer \(T_{j\leftarrow j}\). Step 6 describes a proposed closure mechanism: it requires (A), or a depletion estimate implying (A), without using \(\dot e_j\), \(\dot Z\) or \(\Lambda'\) to reintroduce the quantity being bounded.
+
+**Scope of computations.** The reported measurements concern small exact disks and the stated restricted classes. They establish no uniform conclusion as \(K_{\max}\to\infty\) or for generic data. Observed occupancy 1 alongside alignment approximately \(1/2\) does not establish the depletion required for closure.
+
+---
+
+## Reading rules (do not green)
+
+| Claim | Status on this face |
+| --- | --- |
+| Spectral-shift identity (\(\Lambda'=2(T_c-\nu D_s)/X\) bookkeeping, or the shell Door-1 partition) | Algebra / bookkeeping only |
+| Identity \(\Rightarrow\) Lemma★ ratio bound / uniform \(\mathcal{R}_\star\) | **False** — refuse |
+| Identity \(\Rightarrow\) regularity / Clay B | **False** — refuse |
+| \(\rho_j<\nu\) as shell-energy absorption into \(\nu Z_j\) | **False** — that comparison lives in (A), not the shell-energy viscous term |
+| Cross-scale bounds + summability | **Not supplied** in this chain |
+| \(T_{j\leftarrow j}\) controlled | **OPEN** (principal remainder) |
+| Numerics (occupancy \(\approx 1\), alignment \(\approx 1/2\)) \(\Rightarrow\) depletion / closure | **False** — refuse |
+| PRODUCT-BLOCK \(\sup_v\mathcal{R}_\star(v)<\infty\) | **OPEN** (Lemma★ hinge; separate packaging) |
+
+Do not bound \(T_{j\leftarrow j}\) by \(\dot e_j\), \(\dot Z\), or \(\Lambda'\). Do not treat restricted-disk samples as a uniform theorem.
+
+---
+
+## One-line status
+
+**Unaugmented 3D face: OPEN at \(T_{j\leftarrow j}\). Lemma★ packaging: OPEN at PRODUCT-BLOCK. Spectral-shift identity ≠ Lemma★ bound. Numerics ≠ depletion. NS / Clay B not claimed.**
+================================================================================
+END OF FILE: _chatgpt_audit/source-snapshots/unaug-proof-chain-honesty-6df4/docs/ns-review/UNAUG-PROOF-CHAIN.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+Generic 3-D chain. T_j<-j OPEN.
+
+================================================================================
+ORIGINAL PATH: _chatgpt_audit/source-snapshots/unaug-generic-3d-chain-4e04/docs/ns-review/UNAUG-GENERIC-3D-PROOF-CHAIN.md
+PATHWAY FILE: 8 of 8
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# Unaugmented generic 3-D Navier–Stokes — proof chain
+
+Jonathan Simons  
+11 September 2026
+
+**Scope.** Classical incompressible Navier–Stokes only. No extra field. No force. No \(Q\)-operator.
+
+**This is a chain of reductions. It is not a proof of global regularity.**
+
+---
+
+## Claim line
+
+Lemma Star is in the generic 3-D chain and is finished.  
+The remainder is \(T_{j\leftarrow j}\).  
+Generic unaugmented 3-D regularity is not claimed.
+
+---
+
+## PDE
+
+\[
+\partial_t u+(u\cdot\nabla)u=-\nabla p+\nu\Delta u,
+\qquad
+\nabla\cdot u=0
+\quad\text{on }\mathbb{T}^3\text{ or }\mathbb{R}^3.
+\]
+
+Finite energy \(X=\|u\|_{L^2}^2\). Vorticity \(\omega=\nabla\times u\). Enstrophy \(Z=\|\omega\|_{L^2}^2\). Palinstrophy \(P=\|\nabla\omega\|_{L^2}^2\).
+
+The frequency weight in Step 1 is also written \(\omega(k)=|k|\). That is not vorticity.
+
+---
+
+## Step 0 — energy (closed)
+
+\[
+\tfrac12\dot X=-\nu\|\nabla u\|_{L^2}^2\le 0.
+\]
+
+No remainder. Keep.
+
+---
+
+## Step 1 — spectral center and Lemma Star (\(\Lambda_\ast\), \(\omega_\ast\))
+
+Define the energy-weighted barycenter of the spectrum
+
+\[
+\Lambda=\frac1X\sum_k\omega(k)\,|u_k|^2,
+\qquad
+\omega(k)=|k|.
+\]
+
+The exact organizing identity is
+
+\[
+\Lambda'=\frac2X\bigl(T_c-\nu D_s\bigr),
+\qquad
+T_c=\sum_k\omega(k)\,J_k,
+\qquad
+\sum_k J_k=0.
+\]
+
+\(D_s\ge 0\) is the viscous spread in the same weighting. The identity names it. \(J_k\) is the modal energy flux; the nonlinear piece sums to zero. Lemma Star does not bound \(D_s\) or \(T_c\).
+
+**Lemma Star.** Fix any constant \(\omega_\ast\in\mathbb{R}\). Because \(\sum J_k=0\),
+
+\[
+T_c=\sum_k\bigl(\omega(k)-\omega_\ast\bigr)J_k.
+\]
+
+The unknown \(\Lambda\) does not appear on the right. This is bookkeeping. It is not a bound on \(T_c\). It forbids the circular move “bound \(T_c\) by a copy of \(\Lambda'\).”
+
+Keep Lemma Star in every later identity. Do not claim it controls \(\Lambda\).
+
+---
+
+## Step 2 — triad decomposition of \(T_c\) (closed as an identity)
+
+Nonlinear transfer factors through closed triads \(p+q+k=0\) (or \(p+q=k\)). Write
+
+\[
+T_c=\sum_{\text{triads}}\tau(p,q,k).
+\]
+
+Each triad conserves energy: the three modal fluxes sum to zero. Signed cancellation
+
+\[
+C=\frac{\sum_{\tau>0}\tau}{\sum|\tau|}
+\]
+
+is a diagnostic, not an estimate.
+
+Keep the decomposition. Do not bound \(\sum_{\tau>0}\tau\) by \(\Lambda'\).
+
+---
+
+## Step 3 — shell budget (Door 1)
+
+Dyadic shells \(S_j=\{k:|k|\sim 2^j\}\), shell energy \(e_j\), shell enstrophy \(Z_j\), shell palinstrophy \(P_j\).
+
+\[
+\tfrac12\dot e_j = T_{j\leftarrow j}+\sum_{\ell\neq j}T_{j\leftarrow\ell}-\nu Z_j.
+\]
+
+- Cross-scale blocks \(T_{j\leftarrow\ell}\), \(\ell\neq j\): Young / paraproduct. Treat as standard. Constants exist; they are not the obstruction. Precise bounds and summability are **not supplied** by this note.
+- Same-scale block \(T_{j\leftarrow j}\): three waves of comparable wavelength (HHH). This is the remainder.
+
+Define
+
+\[
+\rho_j=\frac{\lvert T_{j\leftarrow j}\rvert}{P_j}.
+\]
+
+Because \(\rho_j\) is normalized by palinstrophy \(P_j\), the comparison \(\rho_j<\nu\) belongs to the enstrophy–palinstrophy estimate in (A). **It is not an absorption criterion for the displayed shell-energy budget, whose viscous term is \(\nu Z_j\).** If \(\rho_j<\nu\) held on every shell, the same-scale block would be absorbed by palinstrophy in (A). That comparison is not proved for generic data, and it does not close \(\dot e_j\).
+
+Lemma Star still applies inside each shell: shift the shell weight by a constant before summing fluxes.
+
+---
+
+## Step 4 — measured facts (not theorems)
+
+On exact (non-aliased) Galerkin pairings:
+
+- 2-D / 2.5-D disks: identity residual \(10^{-16}\). Adversarial \(\rho\) parks near \(0.02\) and relaxes under evolution. Growing \(K_{\max}\) to \(O(10^2)\) modes did not produce an \(O(1)\) leak on the restricted class.
+- 3-D helical snapshots at small \(K_{\max}\): cancellation \(C\sim 1/2\), snapshot \(\rho=O(10^{-2})\), sign of HHH flips with phases.
+- 3-D helical orbits that were run: triad-phase occupancy on HHH sat at \(1\). Vorticity-direction alignment stayed \(\approx 1/2\). Phase lock and geometric depletion are different facts.
+- 32-mode exact 3-D disk, \(\nu=0.03\): \(\lvert T_c\rvert/D_s\) fell from \(0.021\) to \(0.002\).
+
+These support the organization. They do not pass to \(K_{\max}\to\infty\) or to generic data.
+
+Recorded separately: [`NS3D_PROGRESS_NOTE.md`](../NS3D_PROGRESS_NOTE.md).
+
+---
+
+## Step 5 — where the generic 3-D chain stops
+
+To close generic unaugmented 3-D NS one still needs one of the following, with no copy of \(\dot e_j\), \(\dot Z\), or \(\Lambda'\):
+
+**(A)** A bound
+
+\[
+\lvert T_{j\leftarrow j}\rvert \le \varepsilon\nu P_j +R(X,Z)
+\qquad\text{with \(R\) controlled by energy and known quantities.}
+\]
+
+**(B)** Depletion: a factor \(\sin\phi\) or \(1-\alpha\) from vorticity-direction mismatch on HHH that makes (A) true. Occupancy \(1\) on small orbits means phase rotation is not supplying this by itself.
+
+**(C)** A restriction of the data (axisymmetry, etc.). That is a different theorem, written in the swirl note, not here.
+
+None of (A)–(B) is proved for generic 3-D in this chain.
+
+---
+
+## Step 6 — what would finish the chain (not claimed)
+
+Assume (A) with \(\varepsilon<1\). Sum on shells, absorb, use energy from Step 0 and standard Sobolev interpolation. Then \(Z\) stays finite on any finite interval, BKM applies, the solution stays smooth. That last paragraph is the shape of a proof. The missing hypothesis is (A) or (B).
+
+Lemma Star is used before (A), not instead of (A).
+
+---
+
+## Relation to the swirl paper
+
+The swirl note is not a step in this chain. It is a subclass:
+
+- axisymmetric with swirl, unaugmented;
+- bulk pairing as in Steps 2–4;
+- axial remainder \(T_{\mathrm{ax}}=\int_{r<\delta}G\,\partial_z(F^2)\,dm\);
+- Young: \(\int_0^T\|F\|_{L^4(B_\delta)}^4\,dt<\infty\) prevents blow-up from the swirl source.
+
+Deposit swirl separately. Do not insert it as “Step 7 of generic 3-D.”
+
+Subclass note: [`SWIRL_AXIAL_REDUCTION.md`](../SWIRL_AXIAL_REDUCTION.md). Existing Φ-renorm faces: [`docs/papers/swirl/`](../papers/swirl/).
+
+---
+
+## Files this chain uses
+
+| File | Role |
+| --- | --- |
+| [`SWIRL_AXIAL_REDUCTION.md`](../SWIRL_AXIAL_REDUCTION.md) | subclass only — not Step 7 |
+| [`NS3D_PROGRESS_NOTE.md`](../NS3D_PROGRESS_NOTE.md) | measurements — not theorems |
+| [`PROGRESS_POST.md`](../PROGRESS_POST.md) | public language of the claim line |
+| [`UNAUG-PROOF-CHAIN.md`](./UNAUG-PROOF-CHAIN.md) | honesty card — dissipation threshold and refuse list |
+
+Machine lock: [`data/ns_proof_chain/2026-09-11.json`](../../data/ns_proof_chain/2026-09-11.json).
+
+---
+
+## Terminology lock (do not upgrade)
+
+This document’s **Lemma Star** is the \(\omega_\ast\) centering identity in Step 1. It is finished as bookkeeping. It does **not** bound \(T_c\), control \(\Lambda\), or close regularity.
+
+It is **not** the later unrestricted ratio bound \(\sup\mathcal{R}_\star<\infty\) discussed on other branches. Establishing the identity does not establish that bound.
+
+Do not:
+
+- bound \(T_c\) or \(\sum_{\tau>0}\tau\) by a copy of \(\Lambda'\);
+- bound \(T_{j\leftarrow j}\) by \(\dot e_j\), \(\dot Z\), or \(\Lambda'\);
+- treat \(\rho_j<\nu\) as shell-energy absorption into \(\nu Z_j\);
+- treat \(\rho_j<\nu\) as a proved theorem for generic data;
+- treat occupancy \(1\) and alignment \(\approx 1/2\) as depletion;
+- insert swirl, \(Q\), or an extra field as a later step of this chain;
+- claim Clay Statement B / generic 3-D regularity from this page.
+
+---
+
+## Status map
+
+```
+Step 0  energy                 CLOSED
+Step 1  Lemma Star (ω_* shift) FINISHED as bookkeeping — not a bound
+Step 2  triad decomposition    CLOSED as an identity
+Step 3  shell budget (Door 1)  ORGANIZED — remainder named
+Step 4  measurements           FACTS on finite exact disks — not theorems
+Step 5  (A) or (B)             NOT PROVED for generic 3-D
+Step 6  absorb + BKM           SHAPE of a proof — hypothesis missing
+swirl                          SEPARATE subclass — not Step 7
+```
+
+**One line.** Lemma Star finished. Remainder \(T_{j\leftarrow j}\). Generic unaugmented 3-D regularity not claimed.
+================================================================================
+END OF FILE: _chatgpt_audit/source-snapshots/unaug-generic-3d-chain-4e04/docs/ns-review/UNAUG-GENERIC-3D-PROOF-CHAIN.md
+================================================================================

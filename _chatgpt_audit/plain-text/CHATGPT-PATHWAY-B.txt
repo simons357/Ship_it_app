@@ -1,0 +1,1612 @@
+CHATGPT-PATHWAY-B.txt
+Unsiloed linear argument. Original files, original paths.
+Classical 3D NSE only. NS not claimed solved.
+See CHATGPT-PATHWAY-INDEX.txt for the map.
+
+
+# WHY THIS FILE IS HERE
+SND is not a bound on X.
+
+================================================================================
+ORIGINAL PATH: docs/SND-TO-REGULARITY.md
+PATHWAY FILE: 1 of 5
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# SND-to-regularity implication
+
+15 September 2026.
+**The implication is not a bound on X.
+SND sitting is not a bound on X.
+Theorem G is dead. Ring is REPAIR.
+Displayed Theorem H is not established
+even with X<=M.
+Ordinary NS is not solved.**
+
+Not leftover 1. Not leftover 4. Not \(\star\).
+Catalog B open stays 1 (`B_regularity`).
+Do not merge PR 48 SND / Q6 / SFE pile.
+Do not start H1 from this page.
+Do not weld \(\star\).
+No more numerical sweeps on this write.
+
+Specialist H review (viscous tail,
+shear kill, valid \(F_j\) bound):
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+Repaired \(F_j\) assembly (Dini ceiling,
+not a floor; Theorem H withdrawn):
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
+SND sits **beside** leftover 5, not in
+front of it. C10 is the named local-block
+candidate, not this implication:
+[`C10-CHAIN.md`](C10-CHAIN.md).
+Do not work Theorem H from this page.
+
+Plain page (closing SND does not close NS):
+[`SND-H-PLAIN.md`](SND-H-PLAIN.md).
+Dictionary: [`UNAUGMENTED-R4-VORTICITY-PLAN.md`](UNAUGMENTED-R4-VORTICITY-PLAN.md)
+§8–§10. Low Bony \(T\):
+[`TRACK-B-BONY-T.md`](TRACK-B-BONY-T.md).
+Climb from the field:
+[`TRACK-B-CLIMB-LAW.md`](TRACK-B-CLIMB-LAW.md).
+Tape: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).
+
+---
+
+## What was asked
+
+Write down exactly:
+
+1. what the shell condition controls,
+2. what additional information about
+   frequency drift is needed,
+3. whether the proof assumes the desired
+   bound anywhere.
+
+Three answers. In that order.
+
+The claimed May-note chain, after the
+\(\Phi\) / \(Q_1\) glue is cut, is
+
+\[
+\text{SND-C in SPREAD}
+\xrightarrow{\ H\ }
+\text{Bony }T+T^*+R
+\xrightarrow{\ G\ }
+\inf J/X\ge c_*
+\xrightarrow{\ \mathrm{Ring}\ }
+\|\nabla\xi\|_{L^\infty(E_c)}\le C\,2^{j_*}
+\xrightarrow{\ \mathrm{CF}\ }
+\text{stretching control}.
+\]
+
+The last arrow is not regularity.
+Occupation is not a bound on \(X\).
+The three answers below say why the
+arrow from the shell condition to
+ordinary NS does not sit.
+
+---
+
+## 1. What the shell condition controls
+
+The living objects are Littlewood–Paley
+enstrophy shells on \(\mathbb{T}^3\):
+
+\[
+X_j=2^{2j}\|\Delta_j u\|_2^2,\qquad
+X=\sum_j X_j=\|\omega\|_2^2,\qquad
+J=\max_j X_j,\qquad
+\rho=J/X,
+\]
+
+\[
+j_*=\mathrm{argmax}_j X_j,\qquad
+P_{j_*}=X_{j_*-1}+X_{j_*}+X_{j_*+1},\qquad
+\sigma=\frac{P_{j_*}}{X}\in(0,1].
+\]
+
+The **shell condition** is an instantaneous
+occupation cut on those masses. One
+threshold, no gap (B2, pass as a cover
+of fractions, not as dynamics):
+
+- **3-CONC:** \(\sigma\ge 1/2\). Some triad
+  around the peak holds at least half the
+  enstrophy. Licenses 3-shell Ring /
+  Bernstein on the packet
+  \(u_{\mathrm{pkt}}=\sum_{|k-j_*|\le 1}\Delta_k u\),
+  with remainder size \((1-\sigma)^{1/2}X^{1/2}\).
+- **SPREAD:** \(\sigma\le 1/2\). No three
+  consecutive shells hold half the
+  enstrophy. Licenses T2 Lemma 1 (the
+  self-flux
+  \(\int(u_{\le j}\cdot\nabla)\Delta_j u\cdot\Delta_j u=0\))
+  and the attempted packaging of the
+  peak-shell flux
+  \[
+  \Pi_{j_*}=\int\Delta_{j_*}\bigl[(u\cdot\nabla)u\bigr]\cdot\Delta_{j_*}u
+  \]
+  as SND-C:
+  \[
+  |\Pi_{j_*}|\le C_*\bigl(\nu\,2^{2j_*}X_{j_*}+X^{1/2}\mathcal D^{1/2}\bigr)
+  \]
+  in the class \(X\ge\delta_*/4\), \(\rho\le\rho_0\).
+- **EQ3:** 3-CONC plus comparable neighbors
+  \(\kappa\le 2\). Helps **only the diagonal
+  Bony remainder \(R\)** (Bernstein constants
+  of the same order on \(j_*-1,j_*,j_*+1\)).
+  Does **not** help the low paraproduct
+  \(T\) (\(k\le j_*-4\)). Those shells sit
+  outside the triad by definition.
+
+August one-shell “SND” is the special case
+\(X_{j_*}\approx P_{j_*}\). June “no shell
+above \(\rho_0\)” is implied by SPREAD if
+\(\rho_0\ge 1/2\). Do not call both SND.
+Concentration and spread are opposite
+cuts. They are two jobs.
+
+What the cut does control:
+
+- which Bony pieces are “near” the peak
+  (diagonal \(R\) versus far infrared \(T\));
+- which estimate is licensed this instant
+  (Ring on a packet, or T2 Lemma 1 plus
+  attempted SND-C);
+- the packet scale \(\delta\sim 2^{-j_*}\)
+  used as a tube radius on the swirl
+  column — a scale, not an absorption.
+
+What the cut does not control:
+
+- \(\|\omega\|_\infty\);
+- \(\int X\,dt\) (Leray already has that);
+- a bound on \(X\) itself;
+- alignment \(\omega\cdot S\omega\), or
+  \(\lvert\cos\alpha_3\rvert\) on \(E_c\)
+  (B14a: 3-CONC does not deplete the
+  median; frequency occupation is not
+  strain-axis equidistribution);
+- the \(1/r^4\) tube remainder
+  \(I_{\mathrm{tube}}\) for all data
+  (B4b fail; B4c is a packet class);
+- leakage of mass to \(j_*\pm 1\) as a
+  dynamical law, or to the far infrared.
+
+A cover of hats is not a continuation
+criterion. B8 partitions time
+(\(\tau_{\mathrm{C}}+\tau_{\mathrm{S}}=T\)).
+B8c fails as a bound on \(X\).
+
+---
+
+## 2. Frequency drift still needed
+
+The shell condition is a photograph of
+the mass. Regularity needs a law for
+where the photograph goes.
+
+The missing object is a climb law for
+the peak scale **from the field**, not a
+prescribed rate written into the estimate:
+
+\[
+c=\frac{\mathrm{d}j_*}{\mathrm{d}t}
+\quad\text{or}\quad
+c=\frac{\mathrm{d}j_{\mathrm{bar}}}{\mathrm{d}t},\qquad
+j_{\mathrm{bar}}=\frac{\sum_j j\,X_j}{X}.
+\]
+
+What is already scored, and what is
+still absent:
+
+- **Prescribed climb is not NS.** On the
+  glue ODE, slow climb \(c=1\) dies in
+  the fat room; fast climb \(c=8\) sits
+  (B11b fail / B11c pass on the model).
+  Classical NS did not hand \(c=8\)
+  (B11d, B11e fail). Writing \(c=8\)
+  into the estimate assumes the saving
+  rate.
+- **Instantaneous drift is not a law.**
+  The vorticity RHS makes \(c\) readable
+  (B12, B12a pass). Random CONC packets
+  at \(t=0\) do not produce \(c\ge 8\):
+  Euler drift \(\sim 10^{-4}\) even at
+  \(X=40\); viscous drift \(\sim-1.4\)
+  (B12b). Viscosity is not a ladder:
+  high shells damp first, so
+  \(j_{\mathrm{bar}}\) falls (B12c).
+  A short evolution does not write a
+  saving climb (B12d). The \(t=0\)
+  reading is not an a priori (B12e).
+- **Frozen support is the case still
+  left.** Packet support \(|k|\le K\)
+  gives \(X\le K^2 E\) (B10 pass). Frozen
+  \(j_*\) freezes \(K\). If \(j_*\)
+  climbs, \(K\) climbs, the ceiling
+  lifts (B10b fail). The implication
+  must still handle a moving peak.
+  DNS of a window is not that law
+  (B13f).
+- **Occupation time is a clock, not a
+  bound.** Leray \(\int X<\infty\) does
+  not shorten CONC: the spike
+  \(X\sim(T_*-t)^{-1/2}\) stays CONC
+  the whole interval and \(X\) is
+  unbounded (B8b fail; same as B6).
+- **Leakage is the open H piece.** Mass
+  outside the triad is exactly the low
+  paraproduct \(T\). EQ3 says nothing
+  about it. Energy-class
+  \(\|u_{\le j-N}\|_\infty\lesssim
+  2^{(j-N)/2}X^{1/2}\) sits (B7b). The
+  uniform hope
+  \(\|u_{\mathrm{low}}\|_\infty\lesssim
+  \rho^{1/2}X^{1/2}\) as \(\rho\to 0\)
+  fails on stacked low modes (B7c).
+- **Glue is a sketch.** CONC cubic versus
+  SPREAD quadratic, switched by the
+  clock, adds increments (B9 pass as
+  bookkeeping). Low \(j_*=2\) CONC grows
+  on the model; high \(j_*\) viscosity
+  owns the cubic. B9d fails as an
+  a priori for classical \(X\).
+
+Needed, and not supplied by \(\sigma\ge 1/2\)
+or by \(\sigma\le 1/2\):
+
+1. a field-derived bound on \(c\), or a
+   proof that \(j_*\) cannot run to
+   infinity on a smooth interval while
+   \(X\) stays large;
+2. a quantitative leakage estimate from
+   the triad into \(j_*\pm 1\) and into
+   \(k\le j_*-4\), in energy class, without
+   a \(\rho^{1/2}\) upgrade as \(\rho\to 0\);
+3. control of the moving-support ceiling
+   \(X\le K(t)^2 E\) when \(K(t)=2^{j_*(t)+1}\)
+   is allowed to climb.
+
+Until those three sit, the shell condition
+does not run in time.
+
+---
+
+## 3. Whether the proof assumes the desired bound
+
+Yes. Several load-bearing steps assume
+the bound they are supposed to produce,
+or a stronger cousin of it.
+
+| Step | What it assumes | Why that is circular |
+|---|---|---|
+| **Theorem E** (“SND on smooth intervals”) | \(u\) is already smooth | True for a smooth field. Does not start the a priori. Continuation is the leftover. |
+| **Theorem F** \(\mathcal D\ge\nu\cdot 4^{N-1}\cdot\rho\cdot X\), \(N=\lceil X/J\rceil\) | “\(N\) active shells” sit at exponentially higher frequency | Consecutive low shells kill that. Super-exponential dissipation as \(\rho\to 0\) is not a theorem. The diagonal step \(2^{j_*}\le(\mathcal D/(\nu X_{j_*}))^{1/2}\) inherits F. |
+| **Theorem G** (SND-C \(\Rightarrow\) \(\inf J/X\ge c_*\)) | uniform \(C_*\) as \(\rho\to 0\), via F exploding \(\mathcal D\) | H assumes \(\rho\le\rho_0\). If \(C_*\) blows as \(\rho_0\to 0\), the contradiction fails. The \(\rho^{1/2}\) hope for \(\|u_{\mathrm{low}}\|_\infty\) fails (B7c). **G is dead.** |
+| **H at frozen \(\rho\le 1/4\)** | a smaller class, like \(\varepsilon>0\) | Legal energy-class \(T\) there is not the limit G uses. Ladyzhenskaya: frozen spread is not the limit. |
+| **Ring** \(\|\nabla\xi\|_{L^\infty(E_c)}\le C\,2^{j_*}\) | the direction bound it wants | Status **REPAIR**. Not quoted as proved. H1 is that claim restricted to one cylinder; still not a theorem. |
+| **Prescribed \(c=8\)** | the saving climb | Sits on the model ODE. NS did not pick it (B11d/e). |
+| **Frozen-support ceiling \(X\le K^2 E\)** | \(j_*\) does not move | The case the implication must still handle is the moving peak (B10b). |
+| **T2 Lemma 2 / \(H^{2.3}\) ball** | a subcritical a priori | Circular for large-data continuation (B1b fail). Dropped. |
+| **Constantin–Fefferman after Ring** | small \(\lvert\cos\alpha_3\rvert\) | Conditional. 3-CONC does not force depletion (B14a). Ring Lipschitz is not alignment (B14b). |
+
+The diagonal / high Bony pieces can be
+attempted from Bernstein plus T2 Lemma 1
+without F. The low term \(T\) cannot.
+G needed the low term uniformly as
+\(\rho\to 0\). That uniformity assumed
+the dissipation Theorem F was written
+to supply. F assumed a spectral gap the
+spread class does not have. E assumed
+smoothness. Ring assumes the Lipschitz
+bound on \(\xi\). Climb assumes \(c=8\).
+The ceiling assumes frozen \(j_*\).
+
+Each of those is the desired bound, or
+a bound that implies it, used as an
+input. The implication is not an
+a priori.
+
+---
+
+## Even if SND-C sat
+
+A two-regime estimate that controls
+\(\Pi_{j_*}\) in SPREAD and licenses Ring
+in 3-CONC is still not:
+
+- integrable leftover stretching
+  \(\int\mathcal R\);
+- all-data alignment (A1);
+- all-data middle-strain integral (A2);
+- a field that kills the stretch;
+- leftover 1 (\(A_{\mathrm{bad}}\) on
+  \(Q_r\));
+- leftover 4 (replacement energy-budget
+  after \(v_n\) killed unrestricted
+  \(\sup\mathcal R_\star\)).
+
+SND sitting is not a bound on X.
+Closing SND does not close ordinary NS.
+Catalog B open remains 1.
+Do not retitle this page as leftover 1
+or as \(\star\).
+
+T2 Lemma 1 sits (B1). The occupation
+cover sits (B2). Energy-class low
+\(L^\infty\) sits (B7b). The clock
+partitions (B8). Those are identities
+and covers. They are not regularity.
+
+---
+
+## Lock
+
+Shell condition: occupation sigma
+and rho. Not ||omega||_infty.
+Not a bound on X.
+
+Frequency drift: a law for
+dj*/dt from the field is still needed.
+Prescribed c=8 is not that law.
+
+Circularity: Theorem E, Theorem F,
+Theorem G, Ring REPAIR, prescribed
+climb, frozen-support ceiling.
+Theorem E does not start the a priori.
+
+G is dead. Ring is REPAIR.
+SND sitting is not a bound on X.
+NS not solved.
+================================================================================
+END OF FILE: docs/SND-TO-REGULARITY.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+Closing SND does not close NS.
+
+================================================================================
+ORIGINAL PATH: docs/SND-H-PLAIN.md
+PATHWAY FILE: 2 of 5
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# SND and H are not the key to ordinary NS
+
+6 September 2026. Plain English.
+
+The claim: if SND and H are figured out,
+ordinary NS falls into place.
+
+That claim is wrong. Checked: fail.
+Closing SND does not close ordinary NS.
+The two things called H are not one thing.
+
+---
+
+## Two different H’s
+
+**Fluids H.** A size of one piece in the
+“spread” regime of your SND notes.
+Still not proved in the form you need.
+
+**Matrix H.** \(H_N\) on the GCD paper.
+A floor \(H_N\ge-1\) already sits. That is
+a matrix fact. It is not a fluid. It is
+not RH.
+
+Do not add them. Figuring out one does
+not figure out the other.
+
+---
+
+## Two different SND stories
+
+In these notes SND split into two opposite
+regimes (concentrated vs spread). Those
+are two jobs, not one brand. Even if both
+jobs were done, you would still need the
+ordinary-NS missing step: one bound that
+works for every starting fluid
+(integrable leftover, or alignment for
+every fluid, or the middle-strain integral
+for every fluid, or a field that kills
+the stretch).
+
+SND sitting is not that bound.
+
+The live estimate filter discards [SND] in
+its large form as if it were measured
+smallness: [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md).
+The estimate that filter wrote:
+[`AXISYM-SHELL.md`](AXISYM-SHELL.md).
+Remainder there is \(T_{j\leftarrow j}\),
+not SND.
+
+---
+
+## What your discussions got right
+
+SND and H are holes you can name.
+They are worth naming as themselves.
+
+What those discussions got wrong:
+“then everything else falls in place.”
+That is glue. DA’s job is to stop it.
+
+Ordinary NS stays the same missing step
+whether SND is open or closed.
+
+The implication itself (what the shell
+condition controls; frequency drift
+still needed; circularity named):
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+SND sitting is not a bound on \(X\).
+Theorem G is dead. Ring is REPAIR.
+Do not start leftover 1 from that page.
+
+Specialist review of Theorem H
+(displayed estimate fails even with
+\(X\le M\); viscous tail dropped;
+valid \(F_j\) bound is not SND
+propagation):
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+The original extract stays an extract.
+Repaired \(F_j\) bound sits; the
+\(\rho\)-evolution argument is a Dini
+ceiling, not a floor, and not
+propagation:
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
+16 Sep handoff: [`NS-STATUS.md`](NS-STATUS.md).
+Instrument, no persistence:
+[`SND-INSTRUMENT.md`](SND-INSTRUMENT.md).
+================================================================================
+END OF FILE: docs/SND-H-PLAIN.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+Theorem H review.
+
+================================================================================
+ORIGINAL PATH: docs/SND-H-REVIEW.md
+PATHWAY FILE: 3 of 5
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# SND reviewer packet — mathematical corrections
+
+15 September 2026.
+**Addendum to the historical August verdict
+and to the current Theorem H commentary.
+The original extract stays an extract.
+It is the object under review.**
+
+Displayed Theorem H is not established
+even with \(X\le M\).
+The absolute-flux estimate fails on
+smooth shear fields with fixed enstrophy
+and a fixed spread ratio.
+A valid \(M\)-dependent bound for the
+nonlinear shell term sits separately.
+It does not give dominant-shell
+propagation.
+SND sitting is not a bound on \(X\).
+Ordinary NS is not solved.
+
+Not leftover 1. Not leftover 4. Not \(\star\).
+Catalog B open stays 1 (`B_regularity`).
+Do not merge PR 48 SND / Q6 / SFE pile.
+Do not start H1 from this page.
+Do not weld \(\star\).
+Do not write “naming fraud.”
+The formulas establish an error. They
+do not establish intent. Say
+definition/claim mismatch.
+
+Implication (what \(\sigma\) controls;
+frequency drift; circularity):
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+Plain: [`SND-H-PLAIN.md`](SND-H-PLAIN.md).
+Living extract (object under review):
+[`UNAUGMENTED-R4-VORTICITY-PLAN.md`](UNAUGMENTED-R4-VORTICITY-PLAN.md)
+§8.1. Arithmetic lock:
+`python3 scripts/snd_h_review.py`.
+Tape: [`YES-NO-OPEN.md`](YES-NO-OPEN.md).
+
+Underlying GitHub / Zenodo KEEP files
+were not re-fetched for this addendum.
+The calculations address the formulas
+as supplied in the specialist packet.
+
+---
+
+## Replacement wording
+
+> In the supplied extract, Theorem H is
+> not established even with \(X\le M\).
+> Its proof drops a viscous tail, uses
+> invalid Sobolev embeddings and does
+> not provide a complete Bony
+> decomposition. The displayed
+> absolute-flux estimate fails on
+> smooth fixed-enstrophy shear fields.
+> A valid \(M\)-dependent bound for the
+> nonlinear shell term can be proved
+> separately, but its usefulness for
+> SND propagation remains to be shown.
+> Any SND floor asserted from time zero
+> must respect the initial spectral
+> distribution. Retain the spectral
+> toolkit and rebuild the required
+> estimate from the exact shell
+> evolution.
+
+Use this as the cover-sheet correction.
+Preserve the original manuscript extract
+as an extract, clearly marked.
+
+Repaired \(F_j\) assembly and Dini
+ceiling (not a floor; Theorem H stays
+withdrawn):
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
+
+---
+
+## Two names for two quantities
+
+The packet under review and the living
+dictionary on this branch used the same
+letter \(\Pi_j\) for different objects.
+Freeze the names.
+
+\[
+F_j=\bigl\langle(u\cdot\nabla)u,\Delta_j^2 u\bigr\rangle,\qquad
+S_j=\nu\sum_{k>j}2^{2k}\|\Delta_k\nabla u\|_2^2.
+\]
+
+For real self-adjoint Fourier multipliers,
+
+\[
+F_j=\bigl\langle\Delta_j[(u\cdot\nabla)u],\Delta_j u\bigr\rangle.
+\]
+
+**Packet \(\Pi_j\).** \(\Pi_j=F_j-S_j\).
+
+**Living extract \(\Pi_j\).** Plan §8.1 wrote
+only the nonlinear pairing
+\(\int\Delta_j[(u\cdot\nabla)u]\cdot\Delta_j u\).
+That is \(F_j\). It is not \(F_j-S_j\).
+
+The first line of the purported proof
+identifies packet \(\Pi_j\) with \(F_j\).
+That drops \(S_j\). A Bony split of \(F_j\)
+cannot by itself bound \(\lvert F_j-S_j\rvert\).
+
+The sign matters. \(S_j\ge 0\), so an
+upper bound on \(F_j\) gives an upper
+bound on packet \(\Pi_j\). It does not
+give the displayed absolute-value bound.
+
+---
+
+## Displayed estimate fails with \(X\le M\)
+
+Work on \((\mathbb{R}/2\pi\mathbb{Z})^3\) with
+normalized volume, so
+\(\lvert\sin(ny)\rvert_2^2=1/2\). Smooth
+radial cutoffs that isolate frequency
+\(2^j\) in block \(j\). Mean-zero fields.
+
+Fix \(q>0\), \(\nu>0\), \(0<\rho_0<1\). Choose
+an integer \(N\) large enough that
+\(2/(N+2)\le\rho_0\). Set
+
+\[
+a=\frac{2q}{N+2},\qquad b=\frac{q}{N+2}.
+\]
+
+For an integer \(K>N\), the shear
+
+\[
+u_K=\Biggl(
+\sqrt{2a}\,\sin y
++\sqrt{2b}\sum_{j=1}^{N-1}2^{-j}\sin(2^j y)
++\sqrt{2b}\,2^{-K}\sin(2^K y),\;
+0,\;0
+\Biggr)
+\]
+
+is smooth, periodic, mean zero and
+divergence free. Velocity points in
+\(x\) and depends only on \(y\), so
+\((u_K\cdot\nabla)u_K=0\). Shells:
+
+\[
+X_0=a,\qquad
+X_1=\cdots=X_{N-1}=X_K=b,\qquad
+X=a+Nb=q,\qquad
+J=a,\qquad j_*=0,\qquad
+\rho=\frac{2}{N+2}.
+\]
+
+Independent of \(K\). Taking
+\(\delta_*=M=q\) meets the stated
+enstrophy cuts. Write
+
+\[
+S_K=\nu b\Bigl(\sum_{j=1}^{N-1}4^j+4^K\Bigr).
+\]
+
+Then \(\mathcal D=\nu a+S_K\) and
+packet \(\Pi_{j_*}(u_K)=-S_K\). The
+displayed estimate would need a finite
+\(C_*(\nu,\delta_*,M,\rho_0,C_S)\) with
+
+\[
+S_K\le C_*\bigl(\nu a+\sqrt{q(\nu a+S_K)}\bigr).
+\]
+
+The ratio tends to infinity:
+
+\[
+\frac{S_K}{\nu a+\sqrt{q(\nu a+S_K)}}
+\sim\sqrt{\frac{\nu b}{q}}\,2^K
+\longrightarrow\infty.
+\]
+
+Every allowed argument of \(C_*\) is
+fixed. No such finite constant exists
+for the displayed estimate on these
+standard blocks. Overlapping dyadic
+partitions do not stop the
+quadratic-versus-linear frequency
+growth.
+
+Packet table, \(\nu=q=M=\delta_*=1\),
+\(N=20\), \(\rho_0=0.1\), so \(J=\rho=1/11\):
+
+| \(K\) | \(\lvert\Pi_{j_*}\rvert/(\nu 4^{j_*}J+\sqrt{X\mathcal D})\) |
+|---:|---:|
+| 24 | \(3.57924234\times 10^6\) |
+| 28 | \(5.72307770\times 10^7\) |
+| 32 | \(9.15690113\times 10^8\) |
+
+Locked by `scripts/snd_h_review.py`.
+The asymptotic proves unboundedness.
+The table checks the arithmetic.
+
+These are also initial states of
+explicit global unforced NS solutions:
+multiply each sine coefficient by
+\(e^{-\nu 4^j t}\). The example is not
+excluded by asking for genuine NS
+states. For small positive times the
+failure persists whenever the initial
+ratio sits beyond a proposed bound.
+
+“Proved under X<=M” must be replaced. These are defects **before**
+the proposed removal of \(M\).
+
+---
+
+## Valid conditional bound for \(F_j\) only
+
+Let \(u\) be mean-zero, divergence-free
+and smooth on a fixed torus. Real
+self-adjoint dyadic multipliers with
+uniformly bounded symbols.
+\(X=\lvert\nabla u\rvert_2^2\).
+
+Hölder with exponents \(6,2,3\):
+
+\[
+\lvert F_j\rvert
+\le\lvert u\rvert_6\,\lvert\nabla u\rvert_2\,\lvert\Delta_j^2 u\rvert_3
+\le C X^{3/2}.
+\]
+
+Mean-zero Sobolev / Poincaré and the
+uniform \(H^1\) multiplier bound. The
+constant is independent of \(j\).
+\(H^1\) controls \(L^6\), not \(L^\infty\).
+
+Let \(\lambda_1>0\) be the first nonzero
+eigenvalue of \(-\Delta\). For \(u\in H^2\),
+
+\[
+\mathcal D=\nu\lvert\Delta u\rvert_2^2\ge\nu\lambda_1 X.
+\]
+
+If \(X\le M\),
+
+\[
+\lvert F_j\rvert
+\le
+C\sqrt{\frac{M}{\nu\lambda_1}}\,
+X^{1/2}\mathcal D^{1/2}.
+\]
+
+Needs neither spread nor a dominant
+shell. Extends to the Sobolev class by
+approximation. Legitimate consequences:
+
+\[
+\Pi_j^{\mathrm{packet}}\le
+C\sqrt{\frac{M}{\nu\lambda_1}}\,X^{1/2}\mathcal D^{1/2},
+\]
+
+\[
+\bigl\lvert\Pi_j^{\mathrm{packet}}\bigr\rvert
+\le
+S_j
++
+C\sqrt{\frac{M}{\nu\lambda_1}}\,X^{1/2}\mathcal D^{1/2}.
+\]
+
+These are different estimates from
+Theorem H. They do not supply a new
+propagation theorem. Usefulness for
+SND still requires the actual
+evolution inequality in Theorem G.
+
+---
+
+## Invalid embeddings in the supplied proof
+
+The supplied proof asserts
+
+\[
+\lvert u\rvert_\infty\lesssim M^{1/2},\qquad
+\lvert\nabla u\rvert_\infty\lesssim\lvert\Delta u\rvert_2.
+\]
+
+Neither is a general three-dimensional
+Sobolev inequality. Mean-zero \(H^1\)
+controls \(L^6\), not \(L^\infty\). \(H^2\)
+does not control \(\nabla u\) in \(L^\infty\).
+The peak-fraction condition supplies
+no demonstrated replacement. Without
+mean-zero, a constant velocity already
+disproves the first assertion while
+leaving \(X\) and \(\rho\) unchanged.
+
+A legitimate mean-zero interpolation is
+
+\[
+\lvert u\rvert_\infty
+\le C\lvert\nabla u\rvert_2^{1/2}\lvert\Delta u\rvert_2^{1/2}
+=C\nu^{-1/4}X^{1/4}\mathcal D^{1/4}.
+\]
+
+Using it changes subsequent powers.
+It does not repair the missing viscous
+tail.
+
+---
+
+## Removing \(M\) fails an amplitude check
+
+Even after replacing packet \(\Pi_j\) by
+\(F_j\), the proposed right-hand side is
+quadratic in amplitude while \(F_j\) is
+cubic. For \(u=Aw\), \(A>0\):
+
+\[
+X(Aw)=A^2 X(w),\quad
+\mathcal D(Aw)=A^2\mathcal D(w),\quad
+\rho(Aw)=\rho(w),\quad
+F_j(Aw)=A^3 F_j(w).
+\]
+
+For any admissible spread field with
+\(F_{j_*}(w)\ne 0\), an
+amplitude-independent quadratic bound
+fails as \(A\to\infty\). A lower
+enstrophy threshold does not stop the
+rescaling.
+
+Explicit spread fields exist. Embed
+the 2-D stream function
+\(\psi=\alpha\cos x+\beta\cos(2y)+\gamma\cos(x+2y)\)
+as \(w=(\partial_y\psi,-\partial_x\psi,0)\).
+The low block of frequency \((1,0,0)\)
+has \(F_0=\alpha\beta\gamma/2\). Choose
+\(\alpha=2\) and \(\beta=\gamma\) small.
+Add modes \(c_m\sin(2^m y)\,e_1\),
+\(m\ge 3\), one unit of enstrophy per
+block. The original low block stays
+dominant while its fraction becomes
+arbitrarily small. The added modes do
+not change \(F_0\).
+
+So “remove \(M\) from this same estimate
+for every spread field” is not an
+appropriate open target. A revised
+estimate needs compatible amplitude
+powers, another justified restriction,
+or a dynamical / time-integrated
+formulation.
+
+---
+
+## No universal SND floor from \(t=0\)
+
+For any fixed \(q>0\) and integer \(L\ge 1\),
+
+\[
+v_L(y)=\sqrt{\frac{2q}{L}}
+\sum_{j=0}^{L-1}2^{-j}\sin(2^j y)\,e_1
+\]
+
+has \(X(0)=q\), \(X_j(0)=q/L\),
+\(\rho(0)=1/L\). Smooth shear data.
+Exact unforced NS evolutions are
+global and satisfy \(X(t)\le q\). The
+initial peak fraction can be
+arbitrarily small while \(\nu\),
+\(M=q\), a lower enstrophy threshold
+and the dyadic convention stay fixed.
+
+No common positive bound
+\(c_*(\nu,\delta_*,M,C_S)\) can hold from
+\(t=0\) for every such datum. The same
+obstruction applies if the infimum
+excludes \(0\) but includes arbitrarily
+small positive times, by continuity.
+
+This rules out a uniform conclusion
+with those quantifiers. It does not
+rule out a positive lower bound that
+depends on the particular initial
+spectrum. Solution-by-solution SND
+is not a uniform theorem across all
+data.
+
+Making a field arbitrarily small in
+amplitude leaves \(\rho\) unchanged.
+Small-data existence cannot supply a
+universal initial spectral fraction.
+
+An argument showing \(\dot\rho>0\) below
+a threshold produces a barrier
+involving \(\min\{\rho(0),\text{threshold}\}\).
+It cannot force an initially smaller
+ratio above that threshold at time
+zero.
+
+---
+
+## Additional corrections before circulation
+
+| Packet location | Correction |
+|---|---|
+| August verdict \(X\ge c_* J\) | \(J/X\ge c_*\) means \(J\ge c_* X\), equivalently \(X\le J/c_*\). Printed \(X\ge c_* J\) is not equivalent. For \(0<c_*\le 1\) it already follows from \(J\le X\). If the August text is preserved, attach an erratum. |
+| “\(H^1\) is supercritical” / “a derivative short” | Under \(u_\lambda(x,t)=\lambda u(\lambda x,\lambda^2 t)\), \(\lvert u_\lambda\rvert_{\dot H^s}=\lambda^{s-1/2}\lvert u\rvert_{\dot H^s}\) in 3-D. Velocity \(\dot H^{1/2}\) is critical. \(H^1\) is **subcritical**. The available energy control is supercritical. |
+| “Energy class” | Leray–Hopf is \(L^\infty_t L^2_x\cap L^2_t H^1_x\). It is not a uniform-in-time \(H^1\) ceiling. |
+| Exact LP equalities | Usually \(\sum_j 2^{2j}\lvert\Delta_j u\rvert_2^2\asymp\lvert\nabla u\rvert_2^2\), not equality. Freeze the partition and use equivalence constants, or define exact Fourier-weighted shells. |
+| Theorem H for every \(H^1\) field | \(\mathcal D\) need not be finite. Prove any finite estimate for smooth or \(H^2\) fields first, then state the limit. |
+| Displayed Bony split | \(j'\) unquantified; neighboring output blocks not fully specified; supposed high–low term uses the whole \(u\). High–high-to-low must be assigned. Not a complete indexed decomposition. |
+| Ring Lemma labeled KEEP | A KEEP label is not verification. Ring is **REPAIR** on this desk. An elementary band-limited bound on \(E_c^\infty=\{\lvert\omega\rvert\ge c\lvert\omega\rvert_\infty\}\) gives \(\lvert\nabla\xi\rvert_{L^\infty(E_c^\infty)}\le C\lambda/c\). That changes the threshold and must not silently replace the manuscript set. |
+| Requested \(M=M(\lvert u_0\rvert_{H^1})\) | Include viscosity and fixed-domain dependence. A bound finite on each finite interval, allowed to depend on its endpoint \(T\), can suffice for continuation; an all-time constant is stronger. |
+| Official Statement (B) | Fefferman: smooth periodic divergence-free initial data. An \(H^1\) theory may be a route. It is not the literal official initial-data assumption. |
+| “Naming fraud” | Replace with definition/claim mismatch or mislabeling. |
+
+---
+
+## First equation to write
+
+For smooth unforced NS, fixed \(j\), and
+\(X_j=2^{2j}\lvert\Delta_j u\rvert_2^2\),
+
+\[
+\frac12\dot X_j
++\nu\,2^{2j}\lvert\nabla\Delta_j u\rvert_2^2
+=-2^{2j}F_j.
+\]
+
+Apply \(\Delta_j\), test against
+\(\Delta_j u\), multiply by \(2^{2j}\).
+Incompressibility removes pressure.
+This specifies the nonlinear quantity,
+the sign, the derivative weight and
+the viscous term **before** any
+estimate.
+
+Derive the desired \(J/X\) evolution
+from this equation. Handle switches of
+the maximizing shell by comparison.
+Only then select the estimate the
+propagation proof actually needs.
+Test it against:
+
+1. the high-tail shear family above;
+2. amplitude rescaling;
+3. many equal-enstrophy shells.
+
+Retain the spectral toolkit. Replace
+the failed statement.
+
+---
+
+## Public-status (packet §9)
+
+OpenAI’s 8 September announcement is
+Fefferman (C)/(D) if it holds: a forced
+finite-time singularity. It is not
+unforced Statement (B). Record:
+[`OPENAI-NS-CLAIM.md`](OPENAI-NS-CLAIM.md).
+Clay’s 11 September note describes an
+evaluation process. It is not an award
+notice. This addendum does not examine
+the announced proof or a Lean
+formalization. Track B stays unforced.
+
+---
+
+## What this does not do
+
+It does not close leftover 1.
+It does not restore unrestricted \(\star\).
+It does not make Ring a theorem.
+It does not give a bound on \(X\).
+Closing a correct \(F_j\) estimate
+still would not close ordinary NS:
+[`SND-H-PLAIN.md`](SND-H-PLAIN.md).
+
+NS not solved.
+
+---
+
+## Lock
+
+Displayed Theorem H is not established
+even with X<=M. Packet Pi_j drops S_j.
+Shear family: (u_K·∇)u_K=0 and the
+ratio grows like 2^K. Valid
+M-dependent bound for F_j only.
+H^1 controls L^6, not L^infty.
+H^1 is subcritical. Velocity
+Ḣ^{1/2} is critical. Printed
+X>= c_* J is not equivalent.
+Remove M from this same estimate
+is not the open target. No universal
+SND floor from t=0. First equation:
+(1/2)Ẋ_j + ν 2^{2j}|∇Δ_j u|_2^2
+= -2^{2j} F_j.
+definition/claim mismatch.
+NS not solved.
+================================================================================
+END OF FILE: docs/SND-H-REVIEW.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+Theorem H withdrawn.
+
+================================================================================
+ORIGINAL PATH: docs/SND-H-REPAIR.md
+PATHWAY FILE: 4 of 5
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# Repaired SND nonlinear-term estimate — addendum
+
+15 September 2026.
+**Addendum to the 15 September audit
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+Distribute alongside that audit and the
+original extract, not in place of them.**
+
+Theorem H stays withdrawn as stated.
+\(A.2\) (the \(M\)-dependent bound on
+\(F_j\)) already sits in the audit.
+This page assembles that bound with the
+exact shell budget and a Dini treatment
+of peak-shell crossings.
+
+It does **not** prove SND propagation.
+It does **not** prove a floor on \(\rho\).
+Catalog B open stays 1 (`B_regularity`).
+Not leftover 1. Not leftover 4. Not \(\star\).
+Do not start H1 from this page.
+Do not weld \(\star\).
+Do not merge PR 48.
+Ring stays **REPAIR**.
+\(\Phi\)-cancel stays dropped on Track B.
+This desk does not send mail to a panel.
+
+Plain: [`SND-H-PLAIN.md`](SND-H-PLAIN.md).
+Implication: [`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+Living extract (object under review):
+[`UNAUGMENTED-R4-VORTICITY-PLAN.md`](UNAUGMENTED-R4-VORTICITY-PLAN.md)
+§8.1.
+Arithmetic: `python3 scripts/snd_h_repair.py`.
+
+---
+
+## Cover-sheet erratum (circulation)
+
+Supersedes the 15 September cover-sheet
+wording **as a circulation paragraph**.
+The audit page stays the audit.
+
+> In the previously circulated extract,
+> Theorem H was not established, even
+> under \(X\le M\): its proof conflated
+> the flux quantity \(\Pi_j\) with the
+> nonlinear term \(F_j\) alone, dropping
+> a non-negative viscous tail; it relied
+> on two three-dimensional Sobolev
+> embeddings that do not hold in general
+> — \(H^1\) does not control \(L^\infty\);
+> \(H^2\) does not control \(\nabla u\) in
+> \(L^\infty\) — and it did not supply a
+> complete Bony decomposition. The
+> displayed absolute-flux estimate fails
+> explicitly on smooth, fixed-enstrophy
+> shear fields with a fixed spread ratio
+> — see Part 2 of the 15 September audit.
+>
+> A corrected, fully proved conditional
+> bound for \(F_j\) (\(M\)-dependent,
+> uniform in \(j\)) sits in the audit
+> (Part 3 / \(A.2\) below). It is derived
+> from Hölder and Poincaré, not from
+> \(\Pi_j\). Assembling it with the exact
+> per-shell enstrophy budget gives a
+> proposed one-sided differential
+> inequality for the peak fraction
+> \(\rho\) (\(A.3\)). That assembly is an
+> **upper** bound on the upper Dini
+> derivative \(D^+\rho\). It is a
+> comparison ceiling, not a floor. It
+> has been checked against the shear,
+> amplitude, and equal-shell families
+> that falsified the prior version, in
+> the sense of Part B below. It does not
+> establish forward-in-time SND
+> propagation or an initial-time spectral
+> floor. Those remain open and require a
+> separate comparison argument in the
+> **lower** Dini direction, Bernstein
+> constants frozen on a fixed partition,
+> and an initial-data-dependent (not
+> universal) hypothesis, consistent with
+> Part 6 of the audit.
+>
+> The spectral shell toolkit is retained
+> as research tools. \(\Phi\)-cancel stays
+> dropped on unaugmented Track B. Ring
+> stays REPAIR, not a theorem. Theorem H
+> is withdrawn as stated. The SND
+> propagation claim is open, with a
+> validated bound on \(F_j\) in hand and
+> the \(\rho\)-evolution argument still
+> unwritten. The original manuscript
+> extract is preserved as the object
+> under review, unmodified.
+
+---
+
+## A.1 Exact shell budget
+
+Do not start from packet \(\Pi_j=F_j-S_j\).
+For smooth unforced NS, fixed \(j\), and
+\(X_j=2^{2j}\lvert\Delta_j u\rvert_2^2\),
+
+\[
+\frac12\dot X_j
++\nu\,2^{2j}\lvert\nabla\Delta_j u\rvert_2^2
+=-2^{2j}F_j,
+\]
+
+with \(F_j=\langle\Delta_j[(u\cdot\nabla)u],\Delta_j u\rangle\).
+Write \(\widetilde D_j:=\nu 2^{2j}\lvert\nabla\Delta_j u\rvert_2^2\).
+Then
+
+\[
+\dot X_j=-2\widetilde D_j-2\cdot 4^j F_j.
+\]
+
+On a frozen dyadic partition, Bernstein
+gives comparability \(\widetilde D_j\asymp\nu 4^j X_j\),
+not automatic equality. Any coefficient
+\(\lambda_j\) in what follows is a
+partition-dependent constant of order
+\(4^j\), with a lower constant
+\(\kappa\in(0,1]\) in
+\(\widetilde D_j\ge\kappa\nu 4^j X_j\).
+Exact Fourier-weighted shells make
+\(\kappa=1\) on the shear family of the
+audit.
+
+---
+
+## A.2 Sitting bound on \(F_j\)
+
+Already proved in the audit, for smooth
+mean-zero divergence-free \(u\) with
+\(X\le M\):
+
+\[
+\lvert F_j\rvert
+\le
+C\sqrt{\frac{M}{\nu\lambda_1}}\,
+X^{1/2}\mathcal D^{1/2},
+\]
+
+uniformly in \(j\). Hölder \((6,2,3)\),
+mean-zero Sobolev / Poincaré, and
+\(\mathcal D\ge\nu\lambda_1 X\).
+Needs neither spread nor a dominant
+shell. This is the only nonlinear-term
+estimate from the original packet that
+survives the counterexamples.
+
+Legitimate packet consequences, already
+recorded:
+
+\[
+\Pi_j^{\mathrm{packet}}\le
+C\sqrt{\frac{M}{\nu\lambda_1}}\,X^{1/2}\mathcal D^{1/2},
+\qquad
+\bigl\lvert\Pi_j^{\mathrm{packet}}\bigr\rvert
+\le
+S_j
++
+C\sqrt{\frac{M}{\nu\lambda_1}}\,X^{1/2}\mathcal D^{1/2}.
+\]
+
+Neither is Theorem H. Neither is
+propagation.
+
+---
+
+## A.3 Peak fraction: Dini assembly
+
+Let \(j_*(t)\in\mathrm{argmax}_j X_j(t)\)
+and \(J(t)=X_{j_*(t)}\), \(\rho=J/X\).
+\(J\) is a maximum of finitely many
+smooth functions, hence Lipschitz, not
+everywhere differentiable. Envelope /
+Danskin:
+
+\[
+D^+J(t)\le\max_{j\in\mathrm{argmax}(t)}\dot X_j(t).
+\]
+
+On a smooth unforced trajectory, \(X\) is
+\(C^1\) wherever \(X>0\), so the quotient
+rule holds with Dini on the numerator:
+
+\[
+D^+\rho
+=\frac{D^+J}{X}-\rho\frac{\dot X}{X}.
+\]
+
+On an active peak shell, using \(A.2\)
+and the Bernstein lower bound on
+\(\widetilde D_{j_*}\),
+
+\[
+\dot X_{j_*}
+\le
+-2\kappa\nu 4^{j_*}J
++
+2\cdot 4^{j_*}
+C\sqrt{\frac{M}{\nu\lambda_1}}\,
+X^{1/2}\mathcal D^{1/2}.
+\]
+
+Hence the proposed assembly
+
+\[
+D^+\rho
+\le
+-2\kappa\nu 4^{j_*}\rho
++
+2\cdot 4^{j_*}
+C\sqrt{\frac{M}{\nu\lambda_1}}\,
+X^{-1/2}\mathcal D^{1/2}
+-\rho\frac{\dot X}{X}.
+\]
+
+**Direction lock.** This is an **upper**
+bound on \(D^+\rho\). Comparison against
+an ODE \(\dot r=f(r)\) with this \(f\)
+gives a **ceiling** \(\rho(t)\le r(t)\).
+It does not by itself stop \(\rho\) from
+falling. A floor, or the original G idea
+that spread forces \(\dot\rho>0\), needs
+a **lower** bound on a Dini derivative
+of \(\rho\) in the spread regime. That
+argument is not written here.
+
+**Last term, without Bony.** The full
+enstrophy identity is
+
+\[
+\frac12\dot X
+=-\mathcal D-\langle(u\cdot\nabla)u,\Delta u\rangle,
+\]
+
+and the same Hölder bound gives
+\(\lvert\langle(u\cdot\nabla)u,\Delta u\rangle\rvert\le C X^{3/2}\).
+So
+
+\[
+\dot X\ge -2\mathcal D-2C X^{3/2}.
+\]
+
+For an **upper** bound on
+\(-\rho\dot X/X\) one uses this lower
+bound on \(\dot X\). That step does not
+need a Bony split. Summing shell
+equations to rebuild \(X\) would
+re-introduce LP equivalence and the
+incompletely indexed Bony gap from the
+audit table. Do not take that route
+for this term.
+
+The remaining named gaps in any
+propagation theorem on top of \(A.3\)
+are therefore: (1) the missing lower
+Dini bound / comparison barrier;
+(2) frozen Bernstein \(\kappa\);
+(3) handling of \(j_*\) jumps already
+allowed by Danskin, but not yet turned
+into a reference trajectory.
+
+---
+
+## A.4 What this does and does not establish
+
+Does: a legitimate \(M\)-dependent
+upper bound on \(D^+\rho\), free of the
+\(\Pi_j\) defect and the false
+\(L^\infty\) embeddings, once \(X\le M\)
+and a frozen partition are assumed.
+
+Does not: a floor \(\rho(t)\ge\rho_0\);
+SND-C; Theorem H; Theorem G; a bound
+on \(X\); Ring; leftover 1.
+
+The gap is relocated correctly from
+“the proof of Theorem H is wrong” to
+“the input estimate on \(F_j\) sits;
+the propagation argument is still
+unwritten.”
+
+---
+
+## Part B — three families
+
+### B.1 High-tail shears (audit §2)
+
+On \(u_K\), \((u_K\cdot\nabla)u_K\equiv 0\),
+so every \(F_j=0\). The original Theorem H
+failed because it tracked \(\Pi_j=F_j-S_j\)
+and dropped \(S_j\ne 0\). \(A.2\) is
+vacuous on this family (\(0\le\) a positive
+right-hand side).
+
+\(A.3\) is **not** \(0\le 0\). The
+dissipative and quotient terms remain.
+On exact Fourier-weighted shells
+(\(\kappa=1\)) with unique peak \(j_*=0\),
+
+\[
+\dot\rho
+=-2\nu\rho-\rho\frac{\dot X}{X},
+\]
+
+which **equals** the \(F_j=0\) right-hand
+side of \(A.3\). Locked at the audit
+weights by `scripts/snd_h_repair.py`.
+High shells die faster, so \(\rho\)
+rises toward 1. The \(K\to\infty\) table
+does not recur, because the quantity
+being estimated is \(F_j\), not
+\(\lvert F_j-S_j\rvert\).
+
+Result: \(A.2\) and the \(F_j=0\) case of
+\(A.3\) hold. They no longer answer the
+question that broke.
+
+### B.2 Amplitude (audit §5)
+
+Under \(u=Aw\): \(X\to A^2 X\),
+\(\mathcal D\to A^2\mathcal D\),
+\(F_j\to A^3 F_j\). The \(A.2\)
+right-hand side at **fixed** \(M\) is
+quadratic in \(A\). That is compatible
+only while \(A^2 X(w)\le M\). Sending
+\(A\to\infty\) leaves the hypothesis,
+which is the audit §5 obstruction to
+an \(M\)-free quadratic bound.
+
+If the ceiling is scaled,
+\(M=A^2 M(w)\), then \(\sqrt{M}\)
+supplies the missing factor of \(A\)
+and the bound is cubic, matching
+\(F_j\). Locked in the script.
+
+Result: \(A.2\) passes by not claiming
+the \(M\)-free estimate §5 killed.
+
+### B.3 Equal shells / floor at \(t=0\) (audit §6)
+
+For \(v_L\), \(\rho(0)=1/L\to 0\) at
+fixed \(X=q\). No universal
+\(c_*(\nu,\delta_*,M,C_S)\) from time
+zero. \(A.3\) bounds a Dini derivative.
+It makes no claim about \(\rho(0)\).
+A small initial peak fraction is
+outside what a forward-rate inequality
+can repair. Any later SND theorem must
+be conditioned on \(\rho(0)\), not
+asserted uniformly over all data.
+
+Result: consistent with §6. Not a
+counterexample to \(A.2\) or \(A.3\).
+
+---
+
+## Part C — verdict
+
+| Claim | Status |
+|---|---|
+| Displayed Theorem H, even with \(X\le M\) | **Withdrawn.** Audit stands. |
+| \(A.2\) bound on \(F_j\) | **Sits.** |
+| Packet \(\lvert\Pi_j\rvert\) estimate | **Fails** (shear table). |
+| \(A.3\) as upper bound on \(D^+\rho\) | **Proposed assembly.** Holds with equality on exact-mode shears when \(F_j=0\) and \(j_*\) is unique. Not a floor. |
+| SND propagation \(\rho(t)\ge\rho_0\) | **OPEN.** Needs a lower Dini / barrier argument. |
+| Universal floor from \(t=0\) | **NO.** Audit §6. |
+| Remove \(M\) from the same quadratic bound | **NO.** Audit §5. |
+| Ring / \(\Phi\)-cancel / leftover 1 | Unchanged. REPAIR / dropped / open. |
+
+---
+
+## Standing corrections (carried)
+
+| Location | Correction |
+|---|---|
+| August \(X\ge c_* J\) | \(J/X\ge c_*\) means \(J\ge c_* X\), i.e. \(X\le J/c_*\). |
+| “\(H^1\) is supercritical” | Velocity \(\dot H^{1/2}\) is critical. \(H^1\) is subcritical. Energy control is supercritical. |
+| “Energy class” | Leray–Hopf is \(L^\infty_t L^2_x\cap L^2_t H^1_x\), not a uniform-in-time \(H^1\) ceiling. |
+| LP shell identities | \(\asymp\), not equality, unless exact Fourier weights are used. |
+| Bony split | Still not fully indexed. Not used for the last term of \(A.3\) if the global enstrophy identity is used. |
+| \(M=M(\lvert u_0\rvert_{H^1})\) | Carry \(\nu\) and the domain; \(T\)-dependence can suffice for continuation. |
+| Official Statement (B) | Smooth periodic divergence-free data. An \(H^1\) route is not the literal wording. |
+| “Naming fraud” | definition/claim mismatch. |
+
+---
+
+## What this does not do
+
+It does not restore Theorem H.
+It does not close leftover 1.
+It does not restore unrestricted \(\star\).
+It does not make Ring a theorem.
+It does not put \(\Phi\)-cancel back on B.
+It does not give a bound on \(X\).
+Closing \(F_j\) still would not close
+ordinary NS: [`SND-H-PLAIN.md`](SND-H-PLAIN.md).
+
+NS not solved.
+
+---
+
+## Lock
+
+Theorem H withdrawn.
+A.2 sits: |F_j| ≤ C √(M/νλ_1) X^{1/2} D^{1/2}.
+A.3 is D+ρ ≤ −2κν 4^{j*} ρ + driving − ρ Ẋ/X.
+D+ is a ceiling, not a floor.
+Last term from the global enstrophy
+identity, not from Bony.
+Shears: F_j=0, A.3 holds with equality
+on exact modes, not 0≤0.
+Amplitude: M caps A; scaled M is cubic.
+Equal shells: no universal floor from t=0.
+Propagation unwritten.
+definition/claim mismatch.
+NS not solved.
+================================================================================
+END OF FILE: docs/SND-H-REPAIR.md
+================================================================================
+
+# WHY THIS FILE IS HERE
+SND is an instrument.
+
+================================================================================
+ORIGINAL PATH: docs/SND-INSTRUMENT.md
+PATHWAY FILE: 5 of 5
+SOURCE: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+CONTENTS UNCHANGED. Equations and code are not summarized.
+================================================================================
+
+# SND instrument — diagnostics, not persistence
+
+16 September 2026.
+**Instrument first. No theorem.
+No persistence claim. Not leftover 1.
+Catalog B open stays 1.**
+
+Handoff: [`NS-STATUS.md`](NS-STATUS.md).
+Implication (still not a bound on
+\(X\)):
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+Theorem H stays withdrawn:
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+Partition dictionary:
+[`UNAUGMENTED-R4-VORTICITY-PLAN.md`](UNAUGMENTED-R4-VORTICITY-PLAN.md)
+§8.1 (object under review, not a
+proved estimate).
+
+Arithmetic:
+`python3 scripts/snd_instrument.py`.
+
+---
+
+## Frozen partition
+
+Littlewood–Paley enstrophy shells on
+\(\mathbb{T}^3\) (or a listed discrete
+mass vector with the same labels):
+
+\[
+X_j=2^{2j}\|\Delta_j u\|_2^2,\qquad
+X=\sum_j X_j=\|\omega\|_2^2.
+\]
+
+The instrument never changes this
+definition. Dyadic labels \(j\) are
+integers. Empty shells are stored as
+zero, not dropped from a listed
+support, so \(\operatorname{argmax}\)
+is well-defined.
+
+---
+
+## Exact diagnostics
+
+On a frozen mass vector
+\((X_j)_{j\in\mathcal J}\):
+
+\[
+J=\max_j X_j,\qquad
+\rho=\frac{J}{X}\quad(X>0),\qquad
+j_*=\min\operatorname{argmax}_j X_j.
+\]
+
+The left-most peak is the tie-break.
+That is a convention, not a dynamical
+claim.
+
+Packet and occupation:
+
+\[
+P_{j_*}=X_{j_*-1}+X_{j_*}+X_{j_*+1},
+\qquad
+\sigma=\frac{P_{j_*}}{X}\in(0,1].
+\]
+
+Missing neighbors count as zero.
+
+Barycenter and tail:
+
+\[
+\bar j=\frac{\sum_j j\,X_j}{X},\qquad
+\tau=\frac{1}{X}\sum_{j>j_*}X_j.
+\]
+
+**Tail profile.** For \(j>j_*\) set
+\(r_j=X_j/J\). The diagnostic envelope
+parameter is the largest \(\gamma\ge 0\)
+such that
+
+\[
+X_j\le J\,2^{-\gamma(j-j_*)}\qquad
+\text{for every listed }j>j_*,
+\]
+
+or \(\gamma=0\) if some listed tail
+shell exceeds \(J\) (it cannot, by
+definition of \(J\)) or if the only
+constraint is the trivial \(X_j\le J\).
+If a tail shell is positive at
+arbitrarily large \(j\) with
+\(X_j/J\) not decaying, the recorded
+\(\gamma\) is \(0\).
+
+This \(\gamma\) is a number attached
+to a snapshot. It is not a regularity
+assumption and not a BKM criterion.
+
+**Flux \(F_j\).** If a flux vector is
+supplied, it is recorded shell by
+shell. On the audit shear family
+\(F_j=0\) identically. The instrument
+does not invent a flux from
+occupation.
+
+**Peak migration.** Given two
+snapshots, record
+
+\[
+\Delta j_*=j_*(t_2)-j_*(t_1),\qquad
+\Delta\bar j=\bar j(t_2)-\bar j(t_1).
+\]
+
+A nonzero \(\Delta j_*\) is a
+diagnostic. It is not a climb law
+and not prescribed \(c=8\).
+
+---
+
+## What the instrument refuses
+
+It does not assert \(\rho\ge\rho_*\).
+It does not assert \(j_*\le J_0\).
+It does not assert a uniform tail.
+It does not restore Theorem H.
+It does not close leftover 1, 4, or 5.
+It does not merge with C10 or \(T_c\).
+
+The audit already showed why
+\(\rho\) plus a bounded peak are not
+enough: the remaining \(1-\rho\) can
+sit at arbitrarily high frequency.
+The instrument prints that split. It
+does not repair it.
+
+---
+
+## Locked samples
+
+1. **Packet shear** (SND-H review).
+   Unique peak at \(j_*=0\),
+   \(\rho=2/(N+2)\), high tail of
+   weight \(Nb\), \(F\equiv 0\).
+2. **Equal-enstrophy \(v_L\).**
+   \(\rho=1/L\), every listed shell
+   is a peak; left-most \(j_*\) is
+   the convention. No universal
+   floor.
+3. **High-tail one-peak.** Peak at
+   a low \(j_*\) with a single far
+   shell of mass \((1-\rho)X\).
+   \(\rho\) can be large while the
+   tail frequency is arbitrary.
+   Prints the missing piece: tail
+   location, not only \(\rho\).
+
+---
+
+## Verdict
+
+| Claim | Status |
+|---|---|
+| Partition and diagnostics | **PROVED** as definitions / arithmetic. |
+| Persistence of \(\rho\) | **Not claimed.** |
+| Theorem H / SND-C | **DEAD** as a bridge. |
+| BKM from assumed \(\gamma\) | Useful later. **Not** the primary. |
+
+---
+
+## Lock
+
+Frozen X_j, J, ρ, j_*, P, σ, τ,
+γ_diag, F_j, j_bar, Δj_*.
+Instrument, not a theorem.
+Do not assert persistence.
+NS not solved.
+================================================================================
+END OF FILE: docs/SND-INSTRUMENT.md
+================================================================================

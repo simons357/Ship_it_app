@@ -1,0 +1,49 @@
+CHATGPT-PATHWAY — unsiloed linear argument
+
+This is the pathway ChatGPT should read. It is NOT the 4.5 MB dump.
+The big dumps still exist for completeness. They bury the argument.
+
+Repository: https://github.com/simons357/Ship_it_app
+Snapshot: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+Packaging: cursor/ns-audit-package-ac6d
+PR: https://github.com/simons357/Ship_it_app/pull/145
+
+Classical 3D NSE only. Track A / Q1 is a different PDE.
+NS is not claimed solved. Clay B is not claimed.
+
+Give ChatGPT these files in order:
+  1. CHATGPT-PATHWAY-INDEX.txt   (this file)
+  2. CHATGPT-PATHWAY-A.txt       locks + centered + energy/K + remainder
+  3. CHATGPT-PATHWAY-B.txt       Ring / SND
+  4. CHATGPT-PATHWAY-C.txt       unaugmented chain + honesty cards
+
+Reading order (original paths, unchanged contents):
+
+01. START-HERE.md  (16300 bytes)  Packaging guide. Not a research rewrite.
+02. docs/YES-NO-OPEN.md  (24953 bytes)  Binding YES / NO / OPEN tape.
+03. docs/ISSUES-SHEET.md  (12257 bytes)  Named leftovers.
+04. docs/CENTERED-DRIFT.md  (10171 bytes)  Centered target. Drift estimate OPEN.
+05. docs/CENTERED-LEDGER.md  (6399 bytes)  Scored incoming ledger. Identities sit.
+06. docs/ENERGY-K.md  (4949 bytes)  Energy-class K ladder dead on v_n.
+07. docs/CS-REMAINDER.md  (2302 bytes)  ABC evaluator. 0.327 is not a kill.
+08. docs/SND-TO-REGULARITY.md  (11304 bytes)  SND is not a bound on X.
+09. docs/SND-H-PLAIN.md  (2380 bytes)  Closing SND does not close NS.
+10. docs/SND-H-REVIEW.md  (14294 bytes)  Theorem H review.
+11. docs/SND-H-REPAIR.md  (11880 bytes)  Theorem H withdrawn.
+12. docs/SND-INSTRUMENT.md  (3870 bytes)  SND is an instrument.
+13. docs/UNAUGMENTED-NS-CHAIN.md  (35727 bytes)  Live unaugmented chain.
+14. docs/UNAUGMENTED-R4-VORTICITY-PLAN.md  (34397 bytes)  Keep 1/r^4. Classical PDE.
+15. docs/ESTIMATE-AUDIT.md  (8424 bytes)  What may be used as an estimate.
+16. docs/LEMMA-STAR-CORRECTIONS.md  (1670 bytes)  Corrections to star packaging.
+17. docs/LEMMA-STAR-STATEMENT.md  (5917 bytes)  Boxed unrestricted claim; killed.
+18. docs/AUGMENTED-NS-PROOF-CHAIN.md  (9458 bytes)  OTHER PDE. Do not weld.
+19. _chatgpt_audit/source-snapshots/unaug-proof-chain-honesty-6df4/docs/ns-review/UNAUG-PROOF-CHAIN.md  (3527 bytes)  Honesty: identity != Lemma-star bound.
+20. _chatgpt_audit/source-snapshots/unaug-generic-3d-chain-4e04/docs/ns-review/UNAUG-GENERIC-3D-PROOF-CHAIN.md  (8208 bytes)  Generic 3-D chain. T_j<-j OPEN.
+
+Already pasted in the agent chat: docs/CENTERED-DRIFT.md, docs/CENTERED-LEDGER.md.
+Next paste targets: docs/ENERGY-K.md, docs/CS-REMAINDER.md, docs/SND-TO-REGULARITY.md.
+
+Do not start leftover H1 from these pages.
+Do not restore unrestricted Lemma-star.
+Do not treat numerics as a theorem.
+
