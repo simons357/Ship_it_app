@@ -11,3 +11,8 @@ Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS p
 **Open barrier (unchanged):** \(\|u^r/r\|_{L^\infty}\) uniform in \(\eps\) — equivalent to axisymmetric-with-swirl global regularity. Paper remains a conditional reduction. Clay is not closed.
 
 **Do not conflate** with Lemma★ PRODUCT-BLOCK packaging.
+
+## Centered flux / q=3 (1 Oct 2026)
+
+- [`CENTERED-FLUX-Q3-2026-10-01.md`](./CENTERED-FLUX-Q3-2026-10-01.md) — independent \(\mathbb{Q}[i]\) check of the ChatGPT centered-flux note.
+- Near-shell kills \(T_c\le C\nu D_s\). Universal \(|T_c|\le C\|\nabla u\|_3\sqrt{D_s}\) is killed by amplitude. ★ and \(\int\|\nabla u\|_3^2\) stay **OPEN**. NS not solved.

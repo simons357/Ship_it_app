@@ -1,0 +1,158 @@
+{
+  "harness": "centered_flux_q3_exact_rational",
+  "date": "2026-10-01",
+  "source_note": "ChatGPT Work / Centered Flux progress screenshots",
+  "ns_solved": false,
+  "lemma_star_proved": false,
+  "kill_lane": "LIVE",
+  "identities": {
+    "energy_cancellation_sum_Tk": "0",
+    "boundary_term_Lambda_sum_Tk": "0",
+    "N_equals_centered": true,
+    "Tc_NM_equals_direct": true,
+    "Tc_NM_equals_quad": true,
+    "Ds_variance": true,
+    "Ds_double": true,
+    "Lambda_prime_matches": true
+  },
+  "near_shell_rows": [
+    {
+      "eps": "1/2",
+      "Tc": "288/5",
+      "Ds": "256/5",
+      "Ds_closed": "256/5",
+      "Tc_closed": "288/5",
+      "Tc_over_eps": "576/5",
+      "Ds_over_eps2": "1024/5",
+      "abs_Tc_over_Ds": "9/8",
+      "abs_Tc_over_sqrt_Ds": "8.049844718999e+00",
+      "E": "9/2",
+      "Y": "96",
+      "Lambda": "24/5",
+      "grad_L3": 4.644217217405742,
+      "rho_q3": 1.7333049558555926,
+      "rho_q3Y": 0.17690469627014685,
+      "R_star": 0.15
+    },
+    {
+      "eps": "1/4",
+      "Tc": "528/17",
+      "Ds": "256/17",
+      "Ds_closed": "256/17",
+      "Tc_closed": "528/17",
+      "Tc_over_eps": "2112/17",
+      "Ds_over_eps2": "4096/17",
+      "abs_Tc_over_Ds": "33/16",
+      "abs_Tc_over_sqrt_Ds": "8.003675626199e+00",
+      "E": "33/8",
+      "Y": "72",
+      "Lambda": "72/17",
+      "grad_L3": 4.261980660085359,
+      "rho_q3": 1.8779239664683722,
+      "rho_q3Y": 0.22131546187375412,
+      "R_star": 0.21568627450980393
+    },
+    {
+      "eps": "1/8",
+      "Tc": "1032/65",
+      "Ds": "256/65",
+      "Ds_closed": "256/65",
+      "Tc_closed": "1032/65",
+      "Tc_over_eps": "8256/65",
+      "Ds_over_eps2": "16384/65",
+      "abs_Tc_over_Ds": "129/32",
+      "abs_Tc_over_sqrt_Ds": "8.000240381004e+00",
+      "E": "129/32",
+      "Y": "66",
+      "Lambda": "264/65",
+      "grad_L3": 4.1610214064667845,
+      "rho_q3": 1.9226626348450169,
+      "rho_q3Y": 0.23666341037332547,
+      "R_star": 0.24055944055944056
+    },
+    {
+      "eps": "1/16",
+      "Tc": "2052/257",
+      "Ds": "256/257",
+      "Ds_closed": "256/257",
+      "Tc_closed": "2052/257",
+      "Tc_over_eps": "32832/257",
+      "Ds_over_eps2": "65536/257",
+      "abs_Tc_over_Ds": "513/64",
+      "abs_Tc_over_sqrt_Ds": "8.000015199402e+00",
+      "E": "513/128",
+      "Y": "129/2",
+      "Lambda": "1032/257",
+      "grad_L3": 4.135435905779331,
+      "rho_q3": 1.9345034916928028,
+      "rho_q3Y": 0.2408738535490961,
+      "R_star": 0.24757940457877115
+    },
+    {
+      "eps": "1/32",
+      "Tc": "4098/1025",
+      "Ds": "256/1025",
+      "Ds_closed": "256/1025",
+      "Tc_closed": "4098/1025",
+      "Tc_over_eps": "131136/1025",
+      "Ds_over_eps2": "262144/1025",
+      "abs_Tc_over_Ds": "2049/128",
+      "abs_Tc_over_sqrt_Ds": "8.000000952744e+00",
+      "E": "2049/512",
+      "Y": "513/8",
+      "Lambda": "4104/1025",
+      "grad_L3": 4.129022859917767,
+      "rho_q3": 1.9375046407234404,
+      "rho_q3Y": 0.24195191418336823,
+      "R_star": 0.24939095706746542
+    }
+  ],
+  "abs_Tc_over_Ds_increases_as_eps_falls": true,
+  "linear_viscosity_bound_T_c_le_C_nu_Ds": "KILLED_by_near_shell",
+  "stated_q3_bound_universal_C": "KILLED_by_amplitude_scaling",
+  "square_root_Ds_leading_order": "CONFIRMED_on_locked_triad",
+  "closed_forms": {
+    "Ds": "256 \u03b5\u00b2 / (1+\u03b5\u00b2)",
+    "Tc": "64 \u03b5 (2+\u03b5\u00b2) / (1+\u03b5\u00b2)",
+    "Tc_over_Ds": "(2+\u03b5\u00b2) / (4\u03b5)",
+    "Tc_over_sqrt_Ds": "4 (2+\u03b5\u00b2) / \u221a(1+\u03b5\u00b2)  \u2192  8"
+  },
+  "homogeneous_repair_candidates": [
+    "|T_c| \u2264 C ||\u2207u||_3 \u221a(Y D_s)",
+    "|T_c| \u2264 C ||\u2207u||_3\u00b2 \u221aD_s"
+  ],
+  "amplitude_scaling": [
+    {
+      "amp": 1,
+      "Tc": "1032/65",
+      "Ds": "256/65",
+      "grad_L3": 4.1610214064667845,
+      "rho_q3": 1.9226626348450169,
+      "rho_q3_over_amp": 1.9226626348450169
+    },
+    {
+      "amp": 2,
+      "Tc": "8256/65",
+      "Ds": "1024/65",
+      "grad_L3": 8.322042812933569,
+      "rho_q3": 3.8453252696900337,
+      "rho_q3_over_amp": 1.9226626348450169
+    },
+    {
+      "amp": 4,
+      "Tc": "66048/65",
+      "Ds": "4096/65",
+      "grad_L3": 16.644085625867138,
+      "rho_q3": 7.6906505393800675,
+      "rho_q3_over_amp": 1.9226626348450169
+    }
+  ],
+  "conditional_am_gm": "IF |T_c| \u2264 C ||\u2207u||_3 \u221aD_s THEN T_c \u2212 \u03bd D_s \u2264 C\u00b2 ||\u2207u||_3\u00b2 / (4\u03bd). Hypothesis false as a universal bound; algebra of the implication is correct.",
+  "open": [
+    "Lemma\u2605 / sup R_\u2605 < \u221e",
+    "any homogeneous replacement of the q=3 target",
+    "control of \u222b ||\u2207u||_3\u00b2 dt",
+    "DA-NS-2"
+  ],
+  "caution": "Exact convolution verifies identities and the near-shell obstruction. It does not prove \u2605 and does not close Clay Statement B."
+}
