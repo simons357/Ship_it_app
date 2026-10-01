@@ -1,0 +1,18 @@
+=== T_{j←j} SURVIVORS HARD RUN ===
+NS not solved. No Clay claim. Forbidden slots empty. C1–C5 not revived.
+
+C10 PRINCIPAL: SURVIVES — collapses=['alpha_plus_integrable', 'Tmm_structure_axisym', 'near_shell_cancel_to_depletion']
+C6  α/Door-3: WEAKENED — αZ/(EZ) growth=1.05e+06
+C11 T^mm:     WEAKENED — mm_dom=True energyR growth=13
+C9  τ triad:  WEAKENED — ω* invariance=True
+C7  HH:       SURVIVES — HH mean=0.0925562698885492 p90=0.5055589290413259
+C8  near-shell:SURVIVES — killed=False maxR*=0.00023259683384665292
+C8  attack9b: ok=True
+
+BEST NEXT THEOREM-SHAPED TARGET:
+Prove depletion ⇒ (A) by controlling (α_loc,j)_+ (or an integrable substitute) so stretch enters θν P_j + allowed R, without ė_j / Ż / Λ' and without Bernstein cubic wall.
+
+NS / Clay B not solved. T_{j←j} still OPEN. Hard run: C10 SURVIVES as principal empty door (sketches collapse to C6/C11/C8). C6/C11/C9 WEAKENED (criterion / bulk-target / identity-only). C7 SURVIVES as live HH bottleneck (naive product killed). C8 SURVIVES as lab only. Best next theorem target: non-circular α_+ (or integrable) control feeding depletion⇒(A).
+
+Wrote /opt/cursor/artifacts/tj-survivors-hard-run/tj_survivors_hard_run.json
+Wrote /workspace/results/tj-survivors-hard-run/tj_survivors_hard_run_summary.json

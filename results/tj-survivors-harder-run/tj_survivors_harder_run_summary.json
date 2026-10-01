@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-01",
+  "prior_hard_run": "2026-09-16",
+  "honesty": {
+    "ns_solved": false,
+    "clay_claimed": false,
+    "spectral_shift_is_lemma_star": false,
+    "numerics_are_depletion": false,
+    "forbidden_slots": [
+      "\\dot e_j",
+      "\\dot Z",
+      "\\dot Z_j",
+      "\\Lambda'"
+    ],
+    "do_not_revive": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5"
+    ]
+  },
+  "ranking": [
+    {
+      "id": "C10",
+      "hard_verdict": "SURVIVES",
+      "note": "Principal door still empty. New kills: Sobolev-against-P_j, BKM-as-shortcut, CZ pointwise, \u03a6-as-depletion. Every remaining non-circular sketch collapses onto C6 (\u03b1_+ geometric/hyp), C11 (T^mm axisym), or C8-upgrade (blocked by category gap). No standalone depletion theorem seated.",
+      "new_kills": [
+        "young_against_P_j_only",
+        "biot_savart_cz_pointwise",
+        "phi_renorm_as_depletion"
+      ]
+    },
+    {
+      "id": "C7",
+      "hard_verdict": "SURVIVES",
+      "note": "Naive energy-only and Agmon-style HH products killed. Bernstein saturates without absorption margin. HH frac mean=0.060808127595975425, p90=0.282325334532432; high_triad_HH_dominates=True. No geometric HH product seated.",
+      "new_kills": [
+        "energy_only",
+        "agmon_style"
+      ]
+    },
+    {
+      "id": "C8",
+      "hard_verdict": "SURVIVES",
+      "note": "Still lab/evidence for \u2605 packaging only. As a C10 feeder into shell (A), WEAKENED: no seated theorem converts near-shell K_\u03b1\u03b2 / finite R_\u2605 samples into \u03c1_j < \u03bd. Occupancy 1 \u2260 depletion.",
+      "feeds_C10": "WEAKENED_CATEGORY_GAP"
+    },
+    {
+      "id": "C6",
+      "hard_verdict": "WEAKENED",
+      "note": "Identities still sit (transport vanish; stretch=\u03b1). Absolute \u03b1_+ bound remains false: sharp for T (\u03b1Z/T~1), escapes EZ (\u03bb^{5/2}), and newly escapes \u03bdP (\u03bb^{1/2}). Bernstein commutator still escapes D. Door-3 = printed criterion / named \u03b1-hypothesis only.",
+      "new": [
+        "NEW: \u03b1Z/(\u03bdP) ~ \u03bb^{1/2}\u2192\u221e \u2014 escapes the (A)-normalized comparison itself"
+      ]
+    },
+    {
+      "id": "C11",
+      "hard_verdict": "WEAKENED",
+      "note": "T^mm remains the mixed-sample bulk. Energy-linear and palinstrophy-linear Sobolev R both escape. \u03a6-identity rewrites T^ss bookkeeping only. Lane feeds C10 only as axisym-conditional structure target.",
+      "new": [
+        "\u03a6-renorm KEEP algebra does not cancel T^mm (explicit non-feeder kill)",
+        "T^mm vs \u03bdP also escapes ~\u03bb^{1/2} (same as total T)"
+      ]
+    },
+    {
+      "id": "C9",
+      "hard_verdict": "WEAKENED",
+      "note": "AS-\u03c4 / AS-\u03c9* invariance holds; cannot manufacture allowed R. Does not feed C10 as a bound route.",
+      "feeds_C10": false
+    }
+  ],
+  "new_kills_or_weakens": {
+    "C10_draft_kills": [
+      "young_against_P_j_only",
+      "biot_savart_cz_pointwise",
+      "phi_renorm_as_depletion"
+    ],
+    "C6_new": "\u03b1Z/(\u03bdP)~\u03bb^{1/2} escape \u2014 Sobolev against palinstrophy dies",
+    "C7_new": "Agmon HH killed; Bernstein saturates with no absorption margin",
+    "C8_new": "WEAKENED as C10 feeder (category gap); still SURVIVES as \u2605 lab",
+    "C11_new": "\u03a6-renorm \u2260 T^mm bound; T vs P escapes",
+    "C9_new": "Confirmed non-feeder to C10",
+    "C1_to_C5": "not revived"
+  },
+  "best_next_theorem_shaped_target": "Prove depletion \u21d2 (A) by a geometric (or explicitly conditional) bound on (\u03b1_loc,j)_+ so \u222b(\u03b1_+)|\u03c9_j|\u00b2 \u2264 \u03b8 \u03bd P_j + R_allowed, without \u0117_j/\u017b/\u039b', without Bernstein cubic wall, and without treating BKM ||\u03c9||_\u221e or near-shell \u2605 samples as the bound. Absolute Sobolev control by P_j is false (\u03bb^{1/2} escape).",
+  "blunt_bottom_line": "NS / Clay B not solved. T_{j\u2190j} still OPEN. Harder pass: C10 SURVIVES principal (new draft kills: Sobolev-vs-P, BKM shortcut, CZ pointwise, \u03a6-as-depletion). C7 SURVIVES HH bottleneck (Agmon killed; Bernstein no margin). C8 SURVIVES lab but WEAKENED as C10 feeder (category gap). C6 further WEAKENED (\u03b1 escapes \u03bdP). C11/C9 stay WEAKENED. Best next theorem: geometric/conditional \u03b1_+ \u21d2 depletion\u21d2(A).",
+  "C10": {
+    "hard_verdict": "SURVIVES",
+    "killed_this_pass": [
+      "young_against_P_j_only",
+      "biot_savart_cz_pointwise",
+      "phi_renorm_as_depletion"
+    ],
+    "alpha_Z_over_P_growth": 16.0
+  },
+  "C6": {
+    "hard_verdict": "WEAKENED",
+    "alpha_Z_over_P_growth": 16.0
+  },
+  "C7": {
+    "hard_verdict": "SURVIVES",
+    "HH_frac_mean": 0.060808127595975425,
+    "HH_frac_p90": 0.282325334532432,
+    "high_triad_HH_dominates": true,
+    "agmon_ratio_growth": 256.0
+  },
+  "C8": {
+    "hard_verdict": "SURVIVES",
+    "LemmaStar_killed": false,
+    "max_R_star": 0.00022638593068191097,
+    "feeds_C10": "WEAKENED_CATEGORY_GAP",
+    "attack9b_ok": true
+  },
+  "C11": {
+    "hard_verdict": "WEAKENED",
+    "phi_renorm_closes_Tmm": false,
+    "T_over_P_growth": 8.0
+  },
+  "C9": {
+    "hard_verdict": "WEAKENED",
+    "feeds_C10": false,
+    "invariance_holds": true
+  },
+  "rstar_max_finite": 0.002050452110622109
+}
