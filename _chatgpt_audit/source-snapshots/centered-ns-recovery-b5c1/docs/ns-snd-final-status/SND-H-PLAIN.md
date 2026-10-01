@@ -1,0 +1,89 @@
+# SND and H are not the key to ordinary NS
+
+6 September 2026. Plain English.
+
+The claim: if SND and H are figured out,
+ordinary NS falls into place.
+
+That claim is wrong. Checked: fail.
+Closing SND does not close ordinary NS.
+The two things called H are not one thing.
+
+---
+
+## Two different H’s
+
+**Fluids H.** A size of one piece in the
+“spread” regime of your SND notes.
+Still not proved in the form you need.
+
+**Matrix H.** \(H_N\) on the GCD paper.
+A floor \(H_N\ge-1\) already sits. That is
+a matrix fact. It is not a fluid. It is
+not RH.
+
+Do not add them. Figuring out one does
+not figure out the other.
+
+---
+
+## Two different SND stories
+
+In these notes SND split into two opposite
+regimes (concentrated vs spread). Those
+are two jobs, not one brand. Even if both
+jobs were done, you would still need the
+ordinary-NS missing step: one bound that
+works for every starting fluid
+(integrable leftover, or alignment for
+every fluid, or the middle-strain integral
+for every fluid, or a field that kills
+the stretch).
+
+SND sitting is not that bound.
+
+The live estimate filter discards [SND] in
+its large form as if it were measured
+smallness: [`ESTIMATE-AUDIT.md`](ESTIMATE-AUDIT.md).
+The estimate that filter wrote:
+[`AXISYM-SHELL.md`](AXISYM-SHELL.md).
+Remainder there is \(T_{j\leftarrow j}\),
+not SND.
+
+---
+
+## What your discussions got right
+
+SND and H are holes you can name.
+They are worth naming as themselves.
+
+What those discussions got wrong:
+“then everything else falls in place.”
+That is glue. DA’s job is to stop it.
+
+Ordinary NS stays the same missing step
+whether SND is open or closed.
+
+The implication itself (what the shell
+condition controls; frequency drift
+still needed; circularity named):
+[`SND-TO-REGULARITY.md`](SND-TO-REGULARITY.md).
+SND sitting is not a bound on \(X\).
+Theorem G is dead. Ring is REPAIR.
+Do not start leftover 1 from that page.
+
+Specialist review of Theorem H
+(displayed estimate fails even with
+\(X\le M\); viscous tail dropped;
+valid \(F_j\) bound is not SND
+propagation):
+[`SND-H-REVIEW.md`](SND-H-REVIEW.md).
+The original extract stays an extract.
+Repaired \(F_j\) bound sits; the
+\(\rho\)-evolution argument is a Dini
+ceiling, not a floor, and not
+propagation:
+[`SND-H-REPAIR.md`](SND-H-REPAIR.md).
+16 Sep handoff: [`NS-STATUS.md`](NS-STATUS.md).
+Instrument, no persistence:
+[`SND-INSTRUMENT.md`](SND-INSTRUMENT.md).

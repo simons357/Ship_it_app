@@ -1,0 +1,63 @@
+{
+  "package_name": "NS-Audit-Package",
+  "repository": "https://github.com/simons357/Ship_it_app",
+  "generated_utc": "2026-10-01T09:47:20Z",
+  "primary_snapshot": {
+    "branch": "cursor/unaugmented-r4-vorticity-f80e",
+    "commit": "a5a97019eb6b890607538ea43496a1abf7551948",
+    "role": "Root tree. Original paths and contents.",
+    "pr": "https://github.com/simons357/Ship_it_app/pull/24"
+  },
+  "packaging_branch": {
+    "branch": "cursor/ns-audit-package-ac6d",
+    "role": "Adds START-HERE, manifest, and labeled extras only."
+  },
+  "labeled_snapshots": [
+    {
+      "dir": "_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b",
+      "branch": "cursor/ns-learning-pack-9d6b",
+      "commit": "cbfbad256f77bda4d164ba13477aba21e33e5910",
+      "why": "Original Ring Lemma TeX/PDF and Paper2 SND manuscripts"
+    },
+    {
+      "dir": "_chatgpt_audit/source-snapshots/unaug-generic-3d-chain-4e04",
+      "branch": "cursor/unaug-generic-3d-chain-4e04",
+      "commit": "5c5f4147d2a2a5fb9472ce13c308d6c59c80a9fc",
+      "why": "11 Sep generic 3-D chain; dissipation-threshold lock"
+    },
+    {
+      "dir": "_chatgpt_audit/source-snapshots/unaug-proof-chain-honesty-6df4",
+      "branch": "cursor/unaug-proof-chain-honesty-6df4",
+      "commit": "4cc2fa007dd1c399c9e1086b63e03d4e81ecb0c0",
+      "why": "Spectral-shift identity != Lemma-star honesty card"
+    },
+    {
+      "dir": "_chatgpt_audit/source-snapshots/unaug-ns-unified-status-a7a2",
+      "branch": "cursor/unaug-ns-unified-status-a7a2",
+      "commit": "15a456afc3fbe787e0aacc3f7ce9521197c553e0",
+      "why": "Unified unaugmented status / incoming SND report"
+    },
+    {
+      "dir": "_chatgpt_audit/source-snapshots/centered-ns-recovery-b5c1",
+      "branch": "cursor/centered-ns-recovery-b5c1",
+      "commit": "fa0a41c7fe12bdf5db47ef7f991638796c1585b9",
+      "why": "Later centered-recovery docs, scripts, tests, results"
+    },
+    {
+      "dir": "_chatgpt_audit/source-snapshots/centered-master-ledger-62ec",
+      "branch": "cursor/centered-master-ledger-62ec",
+      "commit": "7a0652e5e13d4c2c8b96d410a33c0170c01b60e9",
+      "why": "Later centered master ledger"
+    }
+  ],
+  "exclusions": [
+    ".git/",
+    "credentials / tokens",
+    ".env* files",
+    "virtualenvs, node_modules, __pycache__, build caches",
+    "NS-Audit-Package*.zip (the archive itself)"
+  ],
+  "note": "Root files are the unaugmented r4 snapshot. _chatgpt_audit/source-snapshots/ holds unmodified extras with original paths under each branch prefix.",
+  "file_count": 900,
+  "byte_total": 20121677
+}
