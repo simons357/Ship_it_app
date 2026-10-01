@@ -8,7 +8,7 @@
 # this manifest file is excluded from its own listing
 
 4557bd8c3a5a4c58652ca3ffd794a09c3fc97d2d0ac7347b4607841a4b76057d            73  .gitignore
-e8e79f50a9b273af28db25c0b8f392ca04a62b3872f3229ca65fb63f82d90eeb          4629  AUDIT-PROVENANCE.json
+6bc5b3cee7a9be3722f4e49bab0282649983972ee932f7b6eea18c55ef42ae33          4629  AUDIT-PROVENANCE.json
 982a6d8dec3129a3ce47114fe43e8126862b1180dea7f862604d5bb10df2cc7f          4648  README.md
 36c7e400f1f69081efecab25e8921828feaddbc925e0add58ac1d23bb1b23f33         17631  START-HERE.md
 37e3b9ff727a3bdec7a93fda1a85cf5350b5a03a5e54aac8e2245aa4926c5943          2697  _chatgpt_audit/ARCHIVE-INDEX.txt

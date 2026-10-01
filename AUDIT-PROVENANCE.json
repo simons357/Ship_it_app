@@ -1,7 +1,7 @@
 {
   "package_name": "NS-Audit-Package",
   "repository": "https://github.com/simons357/Ship_it_app",
-  "generated_utc": "2026-10-01T11:26:26Z",
+  "generated_utc": "2026-10-01T11:27:07Z",
   "primary_snapshot": {
     "branch": "cursor/unaugmented-r4-vorticity-f80e",
     "commit": "a5a97019eb6b890607538ea43496a1abf7551948",
@@ -11,7 +11,7 @@
   "packaging_branch": {
     "branch": "cursor/ns-audit-package-ac6d",
     "role": "Adds START-HERE, manifest, full+split ZIP archives, plain-text pathway dumps, ChatGPT pathway pack, and labeled extras only.",
-    "commit": "d4eebe05860265948b0faad8ed24d2c1cd43eaf8"
+    "commit": "0791d9a6ad746e3b08b528887bd5aee4dc9267b7"
   },
   "archives": {
     "full": {
