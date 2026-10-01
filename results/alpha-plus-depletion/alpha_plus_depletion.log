@@ -1,0 +1,16 @@
+=== α₊ DEPLETION ⇒ (A) — C10 through C6 (2026-10-01) ===
+NS not solved. No Clay claim. C1–C5 not revived. Forbidden slots empty.
+
+Sobolev αZ/(νP): KILLED growth=16
+CZ substitute Z^{3/4}D^{3/4}/(νD): KILLED_AS_ABSOLUTE growth=16 Z3/D growth=6.55e+04
+Axisym scaling repair: NO_REPAIR (changes_ledger=False)
+Forbidden checklist ok: True
+[α_θ] packaging: CONDITIONAL_PROVED_AS_PACKAGING (dynamics⇒hyp=OPEN_EMPTY)
+[G_δ] CF: ABSENT
+Axisym α-split: IDENTITY_ONLY_NO_BOUND
+
+BLUNT: OPEN_absolute__CONDITIONAL_best
+Under explicit [α_θ], main stretch enters (A). CZ integrable substitute avoids ||α₊||_∞ but hits cubic wall and λ^{1/2} escape — not absolute (A). Geometric CF and axisym mixed-α still open. Commutators open. NS not solved.
+
+Wrote /opt/cursor/artifacts/alpha-plus-depletion/alpha_plus_depletion_results.json
+Wrote /workspace/results/alpha-plus-depletion/alpha_plus_depletion_results.json

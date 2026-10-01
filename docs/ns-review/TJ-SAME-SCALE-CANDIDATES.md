@@ -179,15 +179,45 @@ without \(\dot e_j/\dot Z/\Lambda'\), without Bernstein cubic wall, and without 
 
 ---
 
-## 7. Score (honesty)
+## 7. \(\alpha_+\) depletion attack (C10 through C6) — 2026-10-01
+
+Jonathan: hard-run outcome points at controlling \((\alpha_{\mathrm{loc},j})_+\) (or integrable substitute) so stretch enters \(\theta\nu P_j+R_{\mathrm{allowed}}\).  
+Branch: `cursor/alpha-plus-depletion-0cc5`. Full note: [`ALPHA-PLUS-DEPLETION.md`](./ALPHA-PLUS-DEPLETION.md).  
+Command: `python3 scripts/ns_attacks/alpha_plus_depletion_probes.py`  
+Artifacts: `/opt/cursor/artifacts/alpha-plus-depletion/` · `results/alpha-plus-depletion/`  
+**C1–C5 not revived.** Dead shortcuts from §6 not revived.
+
+### 7.1 What was attacked
+
+| Route | Result |
+| --- | --- |
+| CZ–Sobolev integrable substitute \(\int\alpha_+\lvert\omega\rvert^2\lesssim Z^{3/4}D^{3/4}\le\varepsilon D+C_\varepsilon Z^3\) | **STANDARD sketch seated**; **KILLED as absolute (A)** — cubic wall + \(\lambda^{1/2}\) escape (same rate as \(\alpha Z/\nu P\)) |
+| Explicit hypothesis \([\alpha_\theta]\) ⇒ stretch enters (A) | **CONDITIONAL PROVED** (packaging only; dynamics ⇒ hyp still **EMPTY**) |
+| Geometric CF-style \([G_\delta]\) | **ABSENT** in-repo; named conditional only |
+| Axisym \(\alpha=\alpha^{\mathrm{mm}}+\alpha^{\mathrm{ss}}+\alpha^{\mathrm{cross}}\) | **IDENTITY**; Φ / 2D-transfer / SO(2) myths stay dead; mixed-\(\alpha\) **OPEN** *(axisym-conditional)* |
+| Commutators into \(R_{\mathrm{allowed}}\) | **OPEN** (Bernstein wall unchanged) |
+
+### 7.2 Blunt
+
+- **Absolute unaugmented \(\alpha_+\) ⇒ (A):** **OPEN** (empty; concentration kills Sobolev and CZ-substitute alike).
+- **Best seated statement:** **CONDITIONAL** — under \([\alpha_\theta]\), main stretch enters (A); commutators still open.
+- **C10** remains principal and empty of absolute depletion; **C6** hinge clarified, not closed.
+- **NS / Clay B:** **not solved.** \(T_{j\leftarrow j}\) **OPEN**.
+
+---
+
+## 8. Score (honesty)
 
 | Claim | Status |
 | --- | --- |
 | Same-scale \(T_{j\leftarrow j}\) controlled | **OPEN** |
 | Path to (A) without circular recycling | **OPEN** (C10 empty; collapses to geometric/conditional C6, axisym C11; C8 feeder gap) |
-| Absolute \(\alpha_+\) bound (unaugmented) | **WEAKENED / not seated** — also fails vs \(P_j\) (\(\lambda^{1/2}\)) |
+| Absolute \(\alpha_+\) bound (unaugmented) | **OPEN / not seated** — fails vs \(P_j\) and vs CZ-substitute (\(\lambda^{1/2}\)) |
 | Sobolev \(\alpha_+ Z\le\theta\nu P_j+\cdots\) | **KILLED** (harder run) |
+| CZ integrable substitute ⇒ absolute (A) | **KILLED** (§7; cubic wall) |
+| \([\alpha_\theta]\) ⇒ stretch enters (A) | **CONDITIONAL** (packaging; §7) |
+| Dynamics ⇒ \([\alpha_\theta]\) | **OPEN / EMPTY** |
 | Spectral-shift ⇒ ★ / regularity | **Refuse** |
 | Near-shell lab ⇒ shell (A) | **Not seated** (category gap) |
 | NS / Clay B solved | **Not claimed** |
-| This note as a proof | **No** — candidate filter + two hard-run pressure passes only |
+| This note as a proof | **No** — candidate filter + hard-runs + α₊ hinge attack only |

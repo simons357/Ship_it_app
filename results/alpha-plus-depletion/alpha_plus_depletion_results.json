@@ -1,0 +1,171 @@
+{
+  "title": "alpha_plus_depletion_C10_through_C6",
+  "date": "2026-10-01",
+  "branch": "cursor/alpha-plus-depletion-0cc5",
+  "parent": "cursor/tj-candidates-9083 / PR #102",
+  "ns_solved": false,
+  "clay_claim": false,
+  "forbidden_slots": [
+    "\\dot e_j",
+    "\\dot Z",
+    "\\dot Z_j",
+    "\\Lambda'"
+  ],
+  "not_revived": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "sobolev_alpha_vs_P",
+    "cz_pointwise_Linf",
+    "phi_as_depletion",
+    "bkm_shortcut",
+    "naive_energy_HH"
+  ],
+  "probes": {
+    "absolute_sobolev": {
+      "name": "sobolev_alpha_Z_vs_nu_P",
+      "verdict": "KILLED",
+      "note": "Absolute Sobolev \u03b1\u208aZ \u2264 \u03b8\u03bdP + \u2026 still escapes (\u03bb^{1/2}). Not revived.",
+      "ratio": [
+        2.0,
+        4.0,
+        8.0,
+        16.0,
+        32.0
+      ],
+      "growth": 16.0,
+      "expected_growth": 16.0
+    },
+    "cz_integrable": {
+      "name": "cz_sobolev_integrable_substitute",
+      "verdict": "KILLED_AS_ABSOLUTE",
+      "survives_as": "STANDARD_sketch_plus_cubic_wall",
+      "note": "Avoids ||\u03b1\u208a||_\u221e for the main stretch, but Z^{3/4}D^{3/4}/(\u03bdD)~\u03bb^{1/2} and Young remainder Z^3/D~\u03bb^2 \u2192 \u221e. Classical enstrophy cubic wall; not allowed R for closing (A).",
+      "cz_over_nu_D": [
+        2.0,
+        4.0,
+        8.0,
+        16.0,
+        32.0
+      ],
+      "cz_over_nu_D_growth": 16.0,
+      "Z3_over_D": [
+        16.0,
+        256.0,
+        4096.0,
+        65536.0,
+        1048576.0
+      ],
+      "Z3_over_D_growth": 65536.0,
+      "same_escape_as_alpha_Z_over_P": true
+    },
+    "axisym_scaling": {
+      "name": "axisym_compatible_concentration",
+      "label": "AXISYM-CONDITIONAL_CLASS_BUT_SCALING_UNCHANGED",
+      "verdict": "NO_REPAIR",
+      "note": "Restricting \u03c6 to axisymmetric-with-swirl does not change the \u03bb-powers of Z, D, \u03b1, T. Axisym alone does not kill the \u03bb^{1/2} escape.",
+      "alpha_Z_over_P_growth": 16.0,
+      "axisym_changes_ledger": false
+    },
+    "forbidden": {
+      "name": "forbidden_and_dead_shortcuts",
+      "forbidden_slots": [
+        "\\dot e_j",
+        "\\dot Z",
+        "\\dot Z_j",
+        "\\Lambda'"
+      ],
+      "drafts": [
+        {
+          "name": "smuggle_Zdot",
+          "claim": "(T)_+ \u2264 |\u017b_j| + \u03bd D_j",
+          "verdict": "REFUSED",
+          "slot": "\\dot Z_j"
+        },
+        {
+          "name": "smuggle_Lambda",
+          "claim": "sign(\u039b') \u21d2 \u03b1\u208a depletion",
+          "verdict": "REFUSED",
+          "slot": "\\Lambda'"
+        },
+        {
+          "name": "smuggle_ej_dot",
+          "claim": "|T| \u2264 C|\u0117_j|",
+          "verdict": "REFUSED",
+          "slot": "\\dot e_j"
+        },
+        {
+          "name": "bkm_shortcut",
+          "claim": "BKM ||\u03c9||_\u221e \u21d2 (A) free",
+          "verdict": "REFUSED_STRONGER_OBJECT",
+          "slot": "\\|\\omega\\|_\\infty"
+        },
+        {
+          "name": "phi_as_depletion",
+          "claim": "\u03a6-renorm \u21d2 \u03b1\u208a controlled",
+          "verdict": "KILLED_AS_STANDALONE",
+          "note": "KEEP algebra; not \u03b1\u208a / T^mm bound"
+        },
+        {
+          "name": "pointwise_cz_Linf",
+          "claim": "|\u03b1|\u2272|\u03c9| pointwise \u21d2 L^\u221e from L\u00b2",
+          "verdict": "KILLED",
+          "note": "Not revived from harder-run"
+        }
+      ],
+      "all_refused_or_killed": true
+    },
+    "conditional_alpha_theta": {
+      "name": "conditional_alpha_theta_packaging",
+      "hypothesis": "[\u03b1_\u03b8]: \u222b(\u03b1_loc,j)_+ |\u0394_j \u03c9|\u00b2 \u2264 \u03b8 \u03bd D_j + R(E,{Z_k},direction) a.e. t",
+      "theorem": "Under [\u03b1_\u03b8], main stretch enters (A). Commutators still open (Bernstein / ||u_loc||_\u221e).",
+      "verdict": "CONDITIONAL_PROVED_AS_PACKAGING",
+      "dynamics_produce_hypothesis": "OPEN_EMPTY",
+      "geometric_CF_fill": "ABSENT_IN_REPO",
+      "ns_solved": false,
+      "clay_claim": false,
+      "note": "Honest C6 hinge. Conditional theorem \u2260 absolute depletion from NS."
+    },
+    "geometric_G_delta": {
+      "name": "geometric_G_delta_CF_style",
+      "verdict": "ABSENT",
+      "status": "CONDITIONAL_PACKAGING_ONLY",
+      "note": "Constantin\u2013Fefferman-style direction hypothesis is named as [G_\u03b4] but not seated as a theorem on this shell face. Import+line-match not done. Do not claim CF \u21d2 (A).",
+      "fills_alpha_theta_if_imported": true,
+      "imported": false
+    },
+    "axisym_alpha_split": {
+      "name": "axisym_alpha_mm_ss_cross",
+      "label": "AXISYM-CONDITIONAL",
+      "verdict": "IDENTITY_ONLY_NO_BOUND",
+      "proved": [
+        "TJJ-pure: pure swirl \u21d2 T=0 (subclass)",
+        "bilinear \u03b1 = \u03b1^mm + \u03b1^ss + \u03b1^cross (identity-level)"
+      ],
+      "killed_or_false": [
+        "\u03a6-renorm controls \u03b1_+ / T^mm",
+        "2D regularity frees \u03b1^mm on mixed fields",
+        "SO(2) \u21d2 \u03b1_+ small as class bound"
+      ],
+      "open_remainder": "mixed swirl+meridional \u03b1^mm / T^mm geometric control",
+      "ns_solved": false
+    }
+  },
+  "blunt_verdict": "OPEN_absolute__CONDITIONAL_best",
+  "best_statement": "Under explicit [\u03b1_\u03b8], main stretch enters (A). CZ integrable substitute avoids ||\u03b1\u208a||_\u221e but hits cubic wall and \u03bb^{1/2} escape \u2014 not absolute (A). Geometric CF and axisym mixed-\u03b1 still open. Commutators open. NS not solved.",
+  "scoreboard": {
+    "TJJ_identities": "PROVED",
+    "C10_implication_tautology": "PROVED",
+    "alpha_CZ_sketch": "STANDARD_seated_not_a_close",
+    "absolute_alpha_plus": "OPEN_false_on_concentration",
+    "cz_as_absolute_A": "KILLED",
+    "conditional_alpha_theta": "CONDITIONAL_PROVED_packaging",
+    "dynamics_to_alpha_theta": "OPEN_EMPTY",
+    "geometric_CF": "ABSENT",
+    "commutators_allowed_R": "OPEN",
+    "axisym_mixed_alpha": "OPEN_axisym_conditional",
+    "T_j_controlled": "OPEN"
+  }
+}
