@@ -9,7 +9,7 @@
 # ZIP archives are excluded from this listing (see AUDIT-PROVENANCE.json archives + ARCHIVE-INDEX.txt)
 
 4557bd8c3a5a4c58652ca3ffd794a09c3fc97d2d0ac7347b4607841a4b76057d            73  .gitignore
-30cce68d8489a601eee712d5527a037089ab547fbbb2b4a5ac76fea72f9f88a2          3745  AUDIT-PROVENANCE.json
+7bc91cd0ff6cde0d85a9e27ab23c18fc3b0766a3e50c3adc0bff10738a7d44f4          3765  AUDIT-PROVENANCE.json
 982a6d8dec3129a3ce47114fe43e8126862b1180dea7f862604d5bb10df2cc7f          4648  README.md
 36c7e400f1f69081efecab25e8921828feaddbc925e0add58ac1d23bb1b23f33         17631  START-HERE.md
 34389636b66301158d68da622ff10b0de59609c7046a469aee4c49602456b408          2757  _chatgpt_audit/ARCHIVE-INDEX.txt

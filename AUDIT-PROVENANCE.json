@@ -11,7 +11,7 @@
   "packaging_branch": {
     "branch": "cursor/ns-audit-package-ac6d",
     "role": "Adds START-HERE, manifest, full+split ZIPs, plain-text pathway dumps, ChatGPT pathway pack, and labeled extras only.",
-    "commit": "PENDING_AFTER_COMMIT"
+    "commit": "a2b8dfb8dea6d2825c4a4545620f9fe7ad8250a1"
   },
   "labeled_snapshots": [
     {
