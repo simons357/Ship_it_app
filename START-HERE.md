@@ -27,6 +27,13 @@ Hashes: `AUDIT-MANIFEST.sha256`. Provenance: `_chatgpt_audit/SOURCE-MAP.md` and 
 
 Download: `NS-Audit-Package.zip` (single archive, 11.65 MB; no split). Same file is attached as a walkthrough artifact.
 
+If ZIP download fails, use the numbered plain-text dumps (each under 5 MB):
+
+- `_chatgpt_audit/plain-text/NS-Audit-Text-01.txt` — START-HERE, centered, energy/K, remainder, Ring/SND, unaugmented chain, and their scripts/tests/results
+- `_chatgpt_audit/plain-text/NS-Audit-Text-02.txt` — remaining original text files
+- `_chatgpt_audit/plain-text/NS-Audit-Text-BINARIES.txt` — PDF/image/binary index only
+
+
 ---
 
 ## 1. Classical NSE versus any augmented model

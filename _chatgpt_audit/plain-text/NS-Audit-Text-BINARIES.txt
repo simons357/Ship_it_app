@@ -1,0 +1,44 @@
+NS-Audit-Text-BINARIES.txt
+PDFs, images, and other binary files are NOT inlined here.
+They remain at their original paths in NS-Audit-Package.zip and on the packaging branch.
+
+binary_count: 37
+
+path  bytes  sha256
+_chatgpt_audit/source-snapshots/centered-ns-recovery-b5c1/docs/ns-recovery/five-lane-pack/results/ns_five_lane_2026-09-10/attack9b_exact_shell/K_by_ab_pair.png  43466  db7d63c0add0d9e632d5a173010a8bfb90aa26d988a25760e8fa66e8338f0101
+_chatgpt_audit/source-snapshots/centered-ns-recovery-b5c1/docs/ns-recovery/five-lane-pack/results/ns_five_lane_2026-09-10/attack9b_exact_shell/R_star_eps_limit.png  40796  06754279fb40ec500ea6343207c4418a11b781f92ce74360bd65362015356130
+_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/learn/navier-stokes/figures/control_volume.png  350868  1fcdd8de140c805b85ac2d714d19fe977a7901565e31539d1e1ef18d199392d7
+_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/learn/navier-stokes/figures/control_volume_plot.png  41593  065f03b4f7564437b9167fbdb50f8ea83188e6690de948d833e3efab9b6f8e27
+_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/learn/navier-stokes/figures/energy_cascade.png  1082288  66730da524760156957fd43e70e3e93e8b1e47d2e7f587ffe870ec972cc22100
+_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/learn/navier-stokes/figures/energy_spectrum_plot.png  81534  5f07997d6986ca4a95bbfbd7600ca341177da8431593efa3e84c69055761d7ad
+_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/learn/navier-stokes/figures/laminar_vs_turbulent.png  528308  54f5c18b2075e33383ff8facae20a4a43c2edf69b54a1de27ff468f0064ebad7
+_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/learn/navier-stokes/figures/laminar_vs_turbulent_plot.png  117340  189d20a579801c68a8ed59035d9de2aa3d760919ebff2eaf69f9b1b9e42a4036
+_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/learn/navier-stokes/figures/vortex.png  707440  f5de445d39aee3072325a0d242c07d43b65d7a3de3dbd95e9117f4b90e057cde
+_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/learn/navier-stokes/figures/vortex_plot.png  492706  8d5f022b2983997cfb27c4d0b4506c87c0b7c1c473060f4375f09ebd5364c000
+_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/papers/ns-snd/00a14f6d9_NS_Simons_2026_CLEAN.pdf  19393  8b4cff04c308b77e9ec5837f5a27c1c82fefadf141465f67fc0e4c4236caf4d4
+_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/papers/ns-snd/NS_Regularity_v7_ArXiv.docx  34637  ca055da6db23aa58ed04747c2e9ea505ada3d373054f74ac3dd8d841c796046e
+_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/papers/ns-snd/Paper2_NS_Regularity_SND.pdf  561297  9e53d6640cc3808696afbcbec8f78c08de860b4816680ff43cdc816ce5c60cb0
+_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/papers/ns-snd/Paper2_NS_Regularity_SND_FIXED.pdf  309576  7de9444d18054fc8f49a52c3fd7ed2f086a7c7d7d6d1e95bad350c378535c41b
+_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/papers/ns-snd/shell-stress/Simons_NS_Shell_Stress_Test.xlsx  287973  ddba329536ee6bf6148c495813347725b7658b2bd33a0d4f47685543f980f3d7
+_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/papers/ns-snd/zenodo-20272545/Paper2_NS_Regularity_SND.pdf  360856  87610856449007e7bdca3b87d82683e463b299484b3906a0dda27a18bec416a3
+_chatgpt_audit/source-snapshots/ns-learning-pack-9d6b/docs/papers/ring/02_ring_lemma_snd_conditional.pdf  241673  0304f039406c7a95868b326b62f6c9ed4ea6b8c8386dc86ebd088a1a2ab114a3
+apps/the-object/stills/object_aligned.png  54952  f60427b3653f004c4a4c671ad7732a00873e88083401acd51c226be0ccd3c1d5
+apps/the-object/stills/object_quotient.png  29253  66cb32050853e7a709f024084f8aed4b981a81d1e35dbbad7ec62ac21596964a
+apps/the-object/stills/object_samples.png  40024  c408115491f00b758d2cd5786dd61ab7d77f41fb63e092ebd4ee1b44e4e26519
+apps/the-object/stills/object_shells.png  342878  103839ca0cba28be4b69eb5709bd05b0070324e76fa8b4ed58e82752a4d07e6c
+assets/shipit_final_apple_icon.png  2373874  751dfb1f93b0f46a8883ea26dc454ae2621dc820a5151c8229ef1ff83bc22d0c
+assets/shipit_final_desktop_wallpaper.png  3940499  16a78a35c5dac5fc6972bd19c6f09518696dc463d0812a7a2907a927fe29a17a
+docs/SWIRL-PAPER.pdf  59470  8daf220e139984a6834bcd95753e847dcf591a0671ee4fa0e45566410c2517b8
+docs/THEOREM-A-Q1.pdf  60953  c4a82911351ca275104743cf12c9592eccbe99a5aef3fe6c5b74ec833f6e7262
+docs/TRACK-B-CHAIN.pdf  48205  6688be3c9ad8639470762f706ce512bd96a9b487c9beb46c30ebefa5ad39b615
+docs/assets/da-brute-visual.png  163991  b8b7f628bdfc1d5e2e4f801298edc78ac058215d31656a80c3475fd10920c152
+docs/figures/da-four-slots.png  197516  b1a69041fe76c640fa18f6ab083671b8292ad07afd85225e1575ece2429d91eb
+docs/figures/da-radial-hub.png  208699  af6eb5feb0c55da4ec7297a8376e60633153d25db8f9f6a68f80806b23c9bf79
+results/ns_five_lane_2026-09-10/amp_ratios_triad.png  95578  1d09ada66834581a8ba3db56bba35e8c1c992feecaf1e436cffb421d2d7909c5
+results/ns_five_lane_2026-09-10/attack5_bounds.png  34739  da35557f3a871cd0bf700c5b9eeb47b643c660f8a2c5c1dfd39cd2f875ee2067
+results/ns_five_lane_2026-09-10/attack9b_exact_shell/K_by_ab_pair.png  36081  5c2b562e88d29468820d36c658faf0d742a88a0d9d61e7c62e7f5b710dd45509
+results/ns_five_lane_2026-09-10/attack9b_exact_shell/R_star_eps_limit.png  39263  4e2b83d2ba12f5c4f108190be8b4746c5720e214b7982d6a35950057d322cb86
+results/the_object/object_aligned.png  54952  f60427b3653f004c4a4c671ad7732a00873e88083401acd51c226be0ccd3c1d5
+results/the_object/object_quotient.png  29253  66cb32050853e7a709f024084f8aed4b981a81d1e35dbbad7ec62ac21596964a
+results/the_object/object_samples.png  40024  c408115491f00b758d2cd5786dd61ab7d77f41fb63e092ebd4ee1b44e4e26519
+results/the_object/object_shells.png  342878  103839ca0cba28be4b69eb5709bd05b0070324e76fa8b4ed58e82752a4d07e6c
