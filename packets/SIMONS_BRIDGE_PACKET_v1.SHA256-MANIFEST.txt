@@ -1,0 +1,12 @@
+# SIMONS_BRIDGE_PACKET_v1 packaging manifest
+# packaging-only; packet contents not rewritten
+# Auditor status note (historical only; later corrections take precedence):
+#   SIMONS_BRIDGE_PACKET_v1.AUDIT-NOTE.md
+
+repo: https://github.com/simons357/Ship_it_app
+source_path: uploads/SIMONS_BRIDGE_PACKET_v1_e638.md (original: SIMONS_BRIDGE_PACKET_v1.md)
+packaged_as: SIMONS_BRIDGE_PACKET_v1.md
+sha256: c92968146faac9e8e56bcca47851d3db0a4b3bb415bea4b95c65e08beef8d051
+packaged_at_utc: 2026-10-01T11:21:41Z
+audit_note: SIMONS_BRIDGE_PACKET_v1.AUDIT-NOTE.md
+audit_note_sha256: 3a7f5974f1fd8beb71d688db95c574306fbc426671e7171f0df8473b674c268f
