@@ -3,7 +3,7 @@
 # primary_branch: cursor/unaugmented-r4-vorticity-f80e
 # primary_commit: a5a97019eb6b890607538ea43496a1abf7551948
 # file_count: 900
-# byte_total: 20124238
+# byte_total: 20124919
 # format: sha256  bytes  path
 # this manifest file is excluded from its own listing
 
@@ -207,7 +207,7 @@ c408115491f00b758d2cd5786dd61ab7d77f41fb63e092ebd4ee1b44e4e26519         40024  
 f3618795173fbc834f7df901b40d99daf8a03dcf72a11420a61c14c4930d27cf        359745  assets/46fb5932-9b74-4d0e-acc4-7685bcf3187c_1 3.JPG
 751dfb1f93b0f46a8883ea26dc454ae2621dc820a5151c8229ef1ff83bc22d0c       2373874  assets/shipit_final_apple_icon.png
 16a78a35c5dac5fc6972bd19c6f09518696dc463d0812a7a2907a927fe29a17a       3940499  assets/shipit_final_desktop_wallpaper.png
-3f23284e2af0e26b97a2ef0b34a4c9bd08f7ea4e2db1afc68cf843c16a8d1cf2          2561  AUDIT-PROVENANCE.json
+3aebfdc757c26d536b18513d5491f47d5af8be795e04baba5f766702b819e16f          2877  AUDIT-PROVENANCE.json
 ab28be262f8d2a8a5a733c06472e79dd2f550f7c756ae6760f8d0581abafa4e8          2627  data/qnm_events.csv
 b4d5ecc4ce5d6154f1af0fe6f25d8c05fe26ec4a66a4aac73ab8b0eb3db437bf          4059  docs/A-CHAIN.md
 e4ebd2cfd3958b6f6895d6e9f60bdbab6dae4a22b93d2eecca3abbb287fc9551          3627  docs/A-PROOF-CHAIN.md
@@ -751,7 +751,7 @@ dab2baa75056589492a40d4e37d77121c2e72d56e25788cf79e867ac0665cffa         19396  
 ade4588af7b7c68c4b64c38c61bef98e085247ebc18c9e71533c1b7d332d53c1          6258  scripts/unifier_combo.py
 7b16601db846acf7f94a49cd0a5ace5cd9f070a81cf24af3364e0bbf4a3d280f          7914  scripts/unifier_exercise.py
 6b0ca89ec73574c95f63d8bd6ec67e96a536a4ce13ef5fa71573df2ae0aade5a          6024  scripts/width.py
-1fc8dfdfdee129b553c1359b794150bb0d1113a1f1338c71c858a1168e059349         15523  START-HERE.md
+2acc6a5f24f14e758caf06526850f5ec32305e6aa85d2a80c328cbe3b2f69a8d         15888  START-HERE.md
 3c29ad6e0c9a65aa106f6d3d35590984bdb4d6a3e0c7dcac2059a1c310021452          2373  tests/test_attack10_same_shell.py
 187ddd344065206977a4c1365ebaa28622da8cafe3bf614268dd6670df5d19fb          1818  tests/test_attack11_adjacent_spheres.py
 be3c4fa3c6b3646229afb22f30f8db027acdbbc4f5b9be7c48473b97256e966e          1545  tests/test_attack12_hh_l_fan.py

@@ -205,6 +205,7 @@ From `docs/YES-NO-OPEN.md` and the unaugmented chain:
 - Spectral-shift identity \(\Rightarrow\) Lemma★ ratio bound: **false**.
 - \(\rho_j<\nu\) as shell-energy absorption into \(\nu Z_j\): **false**. That comparison lives in (A).
 - Restricted-disk numerics \(\Rightarrow\) depletion / \(K_{\max}\to\infty\): **false**.
+- `tests/test_lemma_star_statement.py` still looks for the old banner `**OPEN. Not a proof. NS not solved.**` in `docs/LEMMA-STAR-STATEMENT.md`. The page already records that the unrestricted box is **killed** by \(v_n\) and that only the replacement closure is OPEN. That mismatch is pre-existing on the snapshot. Do not “repair” either file for this package.
 
 ### Still OPEN on the unaugmented face
 
