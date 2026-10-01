@@ -25,9 +25,19 @@ Later Ring/SND papers and later honesty cards that were **not** on that snapshot
 
 Hashes: `AUDIT-MANIFEST.sha256`. Provenance: `_chatgpt_audit/SOURCE-MAP.md` and `AUDIT-PROVENANCE.json`.
 
-Download: `NS-Audit-Package.zip` (single archive, 13.35 MB; no split). Same file is attached as a walkthrough artifact.
+Download (all archives under 25 MB; original paths preserved):
 
-If ZIP download fails, use the numbered plain-text dumps (each under 5 MB):
+- `NS-Audit-Package.zip` — full package (~13.4 MB), paths under `NS-Audit-Package/`
+- `NS-Audit-Package-core-math.zip` — `docs/` + `results/` + `jonathan-handoff/` + `scripts/` + `data/` + `tests/` + `tex/` (~2.8 MB)
+- Split topical ZIPs (use these if the full ZIP download fails):
+  - `NS-Audit-Package-docs.zip`
+  - `NS-Audit-Package-results.zip`
+  - `NS-Audit-Package-jonathan-handoff.zip`
+  - `NS-Audit-Package-math-code.zip` — `scripts/`, `data/`, `tests/`, `tex/`
+
+Same files are under `/opt/cursor/artifacts/ns-audit-package/` and listed in `_chatgpt_audit/ARCHIVE-INDEX.txt`.
+
+If ZIP download still fails, use the numbered plain-text dumps (each under 5 MB):
 
 - `_chatgpt_audit/plain-text/NS-Audit-Text-01.txt` — START-HERE, centered, energy/K, remainder, Ring/SND, unaugmented chain, and their scripts/tests/results
 - `_chatgpt_audit/plain-text/NS-Audit-Text-02.txt` — remaining original text files

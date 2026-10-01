@@ -1,0 +1,35 @@
+# NS Audit bulk export — artifact index
+
+Repository: https://github.com/simons357/Ship_it_app
+Primary research snapshot: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+Packaging branch: cursor/ns-audit-package-ac6d
+Research PR: https://github.com/simons357/Ship_it_app/pull/24
+Packaging PR: https://github.com/simons357/Ship_it_app/pull/145
+
+ZIP downloads have been unreliable — prefer smaller split ZIPs or plain-text parts if the full ZIP fails.
+
+## Archives (all under 25 MB)
+
+- NS-Audit-Package.zip  (14000984 bytes)  sha256=7e8600a5ee5387322dcf2322a3b2606d4dc414640562d640f3e48d31f837f193
+- NS-Audit-Package-core-math.zip  (2978322 bytes)  sha256=af6e2779d3a35acede69685cc849c1adedc884abe8fa3113c77e170cb5b8a624
+- NS-Audit-Package-docs.zip  (1346621 bytes)  sha256=be72fa5827a59befb8ea4e36d7fa4143453489b3c06936f0545f9cb5103cb767
+- NS-Audit-Package-results.zip  (886471 bytes)  sha256=02654366a9f30e7677dfb99cad721bfbb4bcfca8a52d12f61d58fc7ff28f89f9
+- NS-Audit-Package-jonathan-handoff.zip  (44919 bytes)  sha256=f5f795fd4df70ff2bad669a03d561df7627a10bcf902adf31ad293773d698cd1
+- NS-Audit-Package-math-code.zip  (700377 bytes)  sha256=60de29738650b1a8aeb22f49d25d57b5bfba050ab20abbe4e74655263fa7a82d
+- AUDIT-MANIFEST.sha256  (112233 bytes)  sha256=80866272faa974d76facd6998788a7e434c9900e3d8dfa03f872172b4a6e6d65
+- AUDIT-PROVENANCE.json  (2925 bytes)  sha256=231b52e4e09e9993c0ebc336fb3b036e52a21f883dcf1edfe881c0962971a26d
+- START-HERE.md  (17091 bytes)  sha256=7b0d0c23f61b1749494cb3653965ca81cbd29845118c6b477e8233198b7e100a
+- NS-Audit-Text-01.txt  (4699148 bytes)  sha256=7a94ec152756adf67098838d5615eec61f0b9dd5bdfbb6e9a7e12bd38b5c5c55
+- NS-Audit-Text-02.txt  (2609930 bytes)  sha256=afa70f0facec7734da1317eb5717b65ae81b93bf605e8ee7445295d9814ed5c5
+- NS-Audit-Text-BINARIES.txt  (5691 bytes)  sha256=527101c8fca0b68272b6bf4e4aa076229fa2d14a5169757d803b64581ed58b1b
+- CHATGPT-WHAT-YOU-HAVE.txt  (5222 bytes)  sha256=6981364ebf1328995c242644f0545e552e56c24e5a4b9df48c998612f45a5bf3
+- CHATGPT-PATHWAY-INDEX.txt  (2995 bytes)  sha256=b94bb8a4ea4adf801200eaf3c92c7fb40719a31d3ade9942fa8dd34e69c812a2
+- CHATGPT-PATHWAY-A.txt  (81847 bytes)  sha256=a523bc6906260460da0b6424ff6585ddc4b863f3610e372720fd4980a43054f1
+- CHATGPT-PATHWAY-B.txt  (46972 bytes)  sha256=b6adde214578a403417a4f2018bb2b8a8a3026cda09be42c3f474e2917149a6d
+- CHATGPT-PATHWAY-C.txt  (112896 bytes)  sha256=c58dfa656450808d33c6be8525c07f72feb5296b89a76bc1d6f96813a80a3b3c
+
+## Notes
+- Full ZIP preserves original paths under NS-Audit-Package/.
+- Split topical ZIPs use original repo-relative paths (docs/, results/, jonathan-handoff/, scripts/, …).
+- Research contents are unchanged; this is packaging only.
+- Ordinary 3D NSE is not claimed solved.
