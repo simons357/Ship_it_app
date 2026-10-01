@@ -3,7 +3,7 @@
 One page to see **what this repo is about** and **where each thread lives**.
 
 Update this file when a subject changes status (merge, park, abandon, or rename).  
-Last reviewed: **2026-10-01**.
+Last reviewed: **2026-10-01** (transfer-lemma kill lock filed).
 
 ---
 
@@ -70,6 +70,16 @@ Last reviewed: **2026-10-01**.
 | **Status** | **Active drafts** |
 | **Start here** | [#136](https://github.com/simons357/Ship_it_app/pull/136) · [#135](https://github.com/simons357/Ship_it_app/pull/135) |
 
+### 7. RH / Q₆ / transfer lemma (Mertens bridge)
+
+| | |
+| --- | --- |
+| **What** | Inverse-GCD / Möbius–GCD \(Q_6\) arithmetic is real. The arrow from a locked spectrum to \(M(x)=O(x^{1/2+\varepsilon})\) is **not**. |
+| **Status** | **OPEN** — kill lock filed 14 Sep 2026. **Not an RH proof.** |
+| **Start here** | [`docs/rh/TRANSFER_LEMMA_OPEN.md`](rh/TRANSFER_LEMMA_OPEN.md) |
+| **Calc draft** | [#86](https://github.com/simons357/Ship_it_app/pull/86) (`Q6_MERTENS_TRANSFER.md`) |
+| **Do not** | Paste SFE / Explorer cosine sums / Route C “RH proved” language into this lane |
+
 ---
 
 ## Other threads (draft / judgment)
@@ -103,6 +113,8 @@ These are **not** the main science stack. Review only if you still care:
 3. Papers already filed → **Phi-renorm / swirl** under `docs/papers/`  
 4. Closed null experiment → **HB Experiment 01**  
 5. Deposits list → **Zenodo**  
+6. RH status (bridge still missing) → **Transfer lemma OPEN** kill lock  
+
 
 To refresh the open-PR pile yourself:
 
