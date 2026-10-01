@@ -14,6 +14,11 @@ PR: https://github.com/simons357/Ship_it_app/pull/145
 Classical 3D NSE only. Track A / Q1 is a different PDE.
 NS is not claimed solved. Clay B is not claimed.
 
+Auditor status (packaging only; not math verification):
+  _chatgpt_audit/AUDIT-STATUS-T2-ROUTES.md  (alias: T2-ROUTE-AUDIT-CHRONOLOGY.md)
+  T2 Lemma 1 retained; T2-under-SND conditional retained; Lemma 2 rejected as circular.
+  Ring REPAIR. Screenshots = reported status, not verified math.
+
 Give ChatGPT these files in order:
   0. CHATGPT-WHAT-YOU-HAVE.txt   inventory: what exists vs what to read
   1. CHATGPT-PATHWAY-INDEX.txt   (this file)

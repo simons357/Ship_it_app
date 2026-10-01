@@ -18,7 +18,7 @@ Read this page first. Then read the original files. Do not treat this guide as a
 | Packaging branch | `cursor/ns-audit-package-ac6d` |
 | Existing research PR | https://github.com/simons357/Ship_it_app/pull/24 |
 | Packaging rule | Original research paths and contents are unchanged. This guide, the manifest, and `_chatgpt_audit/` are packaging only. |
-| Independent-audit status (T2 / Routes / Ring) | `_chatgpt_audit/AUDIT-STATUS-T2-ROUTES.md` — auditor reading only; screenshots are reported status, not verified math. Research sources unchanged. |
+| Independent-audit status (T2 / Routes / Ring) | `_chatgpt_audit/AUDIT-STATUS-T2-ROUTES.md` (alias `T2-ROUTE-AUDIT-CHRONOLOGY.md`) — auditor reading only; screenshots are reported status, not verified math. Research sources unchanged. |
 
 The live tree at the root **is** the 24 Sep unaugmented snapshot: documents, mathematical scripts, tests, data, results, and unchanged supporting files.
 
