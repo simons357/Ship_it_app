@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AquaQuarts — Complete Business Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --deep: #0a1216; --foam: #e7efed; --mist: #9aaeb4; --lithia: #5f9a96;
+      --amethyst: #6b5a7a; --quartz: #c4b8a8; --line: rgba(231,239,237,.16);
+      --display: "Cormorant Garamond", Georgia, serif; --body: "Outfit", system-ui, sans-serif;
+      --pad: clamp(1.2rem, 4vw, 2.75rem);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; color: var(--foam); font-family: var(--body); font-weight: 300; line-height: 1.55;
+      background: linear-gradient(165deg, #070d10, #0a1216 40%, #142028);
+    }
+    a { color: var(--lithia); }
+    .bar {
+      position: sticky; top: 0; z-index: 10; display: flex; justify-content: flex-end; gap: .5rem;
+      padding: .6rem var(--pad); background: rgba(7,13,16,.8); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .bar button {
+      font: 500 .75rem var(--body); letter-spacing: .06em; text-transform: uppercase;
+      border: 1px solid var(--line); background: transparent; color: var(--foam);
+      padding: .4rem .8rem; cursor: pointer;
+    }
+    .wrap { width: min(960px, 100%); margin: 0 auto; padding: 2rem var(--pad) 4rem; }
+    .brand { font-family: var(--display); font-size: clamp(2.8rem, 8vw, 4.5rem); font-weight: 600; margin: 0; line-height: .95; }
+    .tag { font-family: var(--display); font-style: italic; color: var(--quartz); font-size: 1.35rem; margin: .75rem 0 1.25rem; }
+    .lede { color: var(--mist); max-width: 52ch; }
+    h2 { font-family: var(--display); font-size: 1.85rem; margin: 2.5rem 0 .75rem; font-weight: 600; }
+    h3 { font-family: var(--display); font-size: 1.25rem; margin: 1.25rem 0 .4rem; }
+    p, li { color: var(--mist); }
+    .eyebrow { font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--lithia); margin: 0 0 .35rem; }
+    table { width: 100%; border-collapse: collapse; font-size: .9rem; margin: 1rem 0; }
+    th, td { border-top: 1px solid var(--line); padding: .55rem .4rem; text-align: left; vertical-align: top; }
+    th { color: var(--quartz); font-weight: 500; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin: 1.25rem 0; }
+    .gallery figure { margin: 0; }
+    .gallery img { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
+    .gallery figcaption { font-size: .78rem; color: var(--mist); margin-top: .4rem; }
+    .wide { margin: 1.25rem 0; }
+    .wide img { width: 100%; border: 1px solid var(--line); }
+    blockquote {
+      margin: 1.25rem 0; padding: 1rem 1.25rem; border-left: 2px solid var(--amethyst);
+      color: var(--foam); font-family: var(--display); font-style: italic; font-size: 1.15rem;
+    }
+    .callout { border: 1px solid var(--line); padding: 1rem 1.15rem; margin: 1.25rem 0; }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: .8rem; color: rgba(154,174,180,.75); }
+    @media print {
+      .bar { display: none; }
+      body { background: #fff; color: #111; }
+      .brand, h2, h3, blockquote { color: #111; }
+      p, li, td, .lede, .gallery figcaption, footer { color: #333; }
+      a { color: #000; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <button type="button" onclick="window.print()">Print / PDF</button>
+  </div>
+  <div class="wrap">
+    <p class="eyebrow">Prime Field Technologies, LLC · Complete business plan</p>
+    <h1 class="brand">AquaQuarts</h1>
+    <p class="tag">Intentional water. Forever vessel. Place pride. No plastic.</p>
+    <p class="lede">
+      Natural place-water in an heirloom stone and purple-glass decanter. A little book tied to the neck
+      carries the source, a blessing or poem, and a promise to protect and celebrate the environment.
+      The guest takes it home. Cities and countries can show off their best water.
+    </p>
+
+    <h2>1. Executive summary</h2>
+    <p>
+      AquaQuarts is a luxury tableside ritual — not a science claim, not a plastic bottle brand.
+      Revenue from restaurant kits, refills, DTC heirlooms, and Place Edition licenses.
+      Pilot capital roughly <strong>$40k–$120k</strong>; year one is proof, not profit.
+    </p>
+    <div class="callout">
+      <strong>One line:</strong> Sell intentional place-water in forever vessels; pay the spring and the stewardship story;
+      scale by letting the world put its best water in the ritual.
+    </div>
+
+    <h2>2. Design gallery</h2>
+    <p class="eyebrow">Hero lines</p>
+    <div class="gallery">
+      <figure>
+        <img src="renders/aquaquarts-cherokee-lithia-decanter.png" alt="Lithia Cherokee-country decanter" />
+        <figcaption>Lithia / Cherokee-country craft line</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-scandinavian-decanter.png" alt="Scandinavian decanter" />
+        <figcaption>Scandinavian / Nordic line</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-place-lithia-neckbook.png" alt="Lithia with neck book" />
+        <figcaption>Lithia — neck book on</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-place-nordic-neckbook.png" alt="Nordic with neck book" />
+        <figcaption>Nordic — neck book on</figcaption>
+      </figure>
+    </div>
+
+    <p class="eyebrow">Shape candidates</p>
+    <div class="gallery">
+      <figure>
+        <img src="renders/aquaquarts-candidate-amphora-sandstone.png" alt="Amphora candidate" />
+        <figcaption>Amphora</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-candidate-cylinder-basalt.png" alt="Cylinder candidate" />
+        <figcaption>Cylinder</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-candidate-pebble-pitcher.png" alt="Pebble pitcher" />
+        <figcaption>Pebble pitcher</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-candidate-hourglass-charcoal.png" alt="Hourglass" />
+        <figcaption>Hourglass</figcaption>
+      </figure>
+    </div>
+
+    <p class="eyebrow">Place pride editions — neck book always</p>
+    <div class="gallery">
+      <figure>
+        <img src="renders/aquaquarts-place-nyc.png" alt="NYC edition" />
+        <figcaption>A3 · New York City</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-place-iceland.png" alt="Iceland edition" />
+        <figcaption>B2 · Iceland</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-place-japan.png" alt="Japan edition" />
+        <figcaption>D1 · Japan</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-place-andes.png" alt="Andes edition" />
+        <figcaption>E1 · Chile / Andes</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-place-kenya.png" alt="Kenya edition" />
+        <figcaption>C4 · Kenya highlands</figcaption>
+      </figure>
+      <figure>
+        <img src="renders/aquaquarts-place-desert-neckbook.png" alt="Desert edition" />
+        <figcaption>C1 · Desert / Jordan mood</figcaption>
+      </figure>
+    </div>
+    <figure class="wide">
+      <img src="renders/aquaquarts-place-palette-five.png" alt="Five place editions in a row" />
+      <figcaption>Campaign: many places, one ritual — each with neck book</figcaption>
+    </figure>
+
+    <h2>3. The neck book</h2>
+    <blockquote>
+      Water is life made visible. This vessel holds a place’s best water — and a promise: we protect springs, rivers, and oceans, celebrate the source, and refuse the throwaway bottle. May you remember this night — and the living world that made it possible.
+    </blockquote>
+    <p>Then: local blessing or poem · source film via QR · published give-back % · makers credited.</p>
+
+    <h2>4. 5×10 Place Edition palette (50)</h2>
+    <p>
+      Full descriptions (water hook, vessel cue, poem/blessing): 
+      <a href="PLACE-EDITION-PALETTE.md">PLACE-EDITION-PALETTE.md</a>
+    </p>
+    <table>
+      <thead><tr><th>Row</th><th>Region</th><th>Editions (examples)</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>North America</td><td>Lithia, Savannah, NYC, Portland, Denver, Montreal, Vancouver, Mexico City, Oaxaca, Banff</td></tr>
+        <tr><td>B</td><td>Europe</td><td>Finland, Iceland, Norway, Scotland, Ireland, Alps FR/IT, Switzerland, Portugal, Georgia (country)</td></tr>
+        <tr><td>C</td><td>MENA &amp; Africa</td><td>Jordan, Morocco, Egypt, Kenya, Cape, Ethiopia, UAE, Israel, Lebanon, Ghana</td></tr>
+        <tr><td>D</td><td>Asia–Pacific</td><td>Japan, Korea, Taiwan, NZ, Tasmania, Singapore, Himalayan foothills*, Thailand, Indonesia, Fiji-style*</td></tr>
+        <tr><td>E</td><td>LatAm &amp; Caribbean</td><td>Chile, Patagonia AR, Peru, Colombia, Brazil, Costa Rica, Yucatán*, Cuba, Jamaica, Patagonia shared</td></tr>
+      </tbody>
+    </table>
+    <p>*Trademarked or sacred sources need real licenses / partner-led blessings only.</p>
+
+    <h2>5. Manufacturers</h2>
+    <table>
+      <thead><tr><th>Source</th><th>Role</th><th>Signal</th></tr></thead>
+      <tbody>
+        <tr><td>SE US / Nordic studios</td><td>Prototypes</td><td>5–50 units · ~$40–$250/u</td></tr>
+        <tr><td>Hospitality stone/ceramic OEM</td><td>Hotel-grade mineral look</td><td>Quote (BAFA-class)</td></tr>
+        <tr><td>Anfora (Mexico)</td><td>Food-grade ceramic bottles</td><td>MOQ ~5k · molds ~$2.7k+</td></tr>
+        <tr><td>Asia stoneware OEM</td><td>Volume Place runs</td><td>MOQ ~1k–3k</td></tr>
+        <tr><td>Studio glass</td><td>Purple / local glass accent</td><td>~$8–$40 insert</td></tr>
+        <tr><td>Local artisans</td><td>Pride editions</td><td>Fair project quotes</td></tr>
+      </tbody>
+    </table>
+    <p>Detail: <a href="MANUFACTURERS-AND-FINANCIALS.md">MANUFACTURERS-AND-FINANCIALS.md</a></p>
+
+    <h2>6. Financials (planning)</h2>
+    <table>
+      <thead><tr><th>Metric</th><th>Base</th></tr></thead>
+      <tbody>
+        <tr><td>COGS / kit</td><td>~$110 mid ($70–$220)</td></tr>
+        <tr><td>Guest ritual ASP</td><td>~$280 (keep 1 decanter)</td></tr>
+        <tr><td>Brand after ~45% venue</td><td>~$154</td></tr>
+        <tr><td>Stewardship example</td><td>20% of brand net — after COGS works</td></tr>
+        <tr><td>Pilot capital</td><td><strong>~$40k–$120k</strong></td></tr>
+        <tr><td>Year-1 (2 restaurants)</td><td>Investment loss by design</td></tr>
+        <tr><td>Steady-state break-even</td><td>~750 kits/yr if ~$40 contribution</td></tr>
+      </tbody>
+    </table>
+
+    <h2>7. 12-month path</h2>
+    <ol>
+      <li>Lock designs + quote studios / glass</li>
+      <li>Lithia (or alt) water + story rights</li>
+      <li>Prototype 10–20 units with neck books</li>
+      <li>Pilot 1–2 SE fine-dining rooms</li>
+      <li>Nordic edition</li>
+      <li>First city/country Place MOU</li>
+    </ol>
+
+    <h2>8. Guardrails</h2>
+    <p>
+      No medical claims · no fake tribal endorsements · no charity promises without contracts ·
+      no trademarked spring names without license · local water default · plastic-free pour story only for this vessel.
+    </p>
+
+    <h2>9. Country / city ask</h2>
+    <blockquote>
+      Your best water. Your poem or blessing. Your pride in the vessel. Guests keep the decanter;
+      the neck book sends them to your source film and a promise to protect water.
+    </blockquote>
+
+    <footer>
+      AquaQuarts complete business plan · Markdown master: AQUAQUARTS-COMPLETE-BUSINESS-PLAN.md ·
+      50 editions: PLACE-EDITION-PALETTE.md · Contact: js@primefieldtechnologies.com · Savannah / Lithia Springs, Georgia
+    </footer>
+  </div>
+</body>
+</html>
