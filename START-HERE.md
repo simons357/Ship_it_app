@@ -25,7 +25,7 @@ Later Ring/SND papers and later honesty cards that were **not** on that snapshot
 
 Hashes: `AUDIT-MANIFEST.sha256`. Provenance: `_chatgpt_audit/SOURCE-MAP.md` and `AUDIT-PROVENANCE.json`.
 
-Download: `NS-Audit-Package.zip` (single archive, 11.65 MB; no split). Same file is attached as a walkthrough artifact.
+Download: `NS-Audit-Package.zip` (single archive, 13.35 MB; no split). Same file is attached as a walkthrough artifact.
 
 If ZIP download fails, use the numbered plain-text dumps (each under 5 MB):
 

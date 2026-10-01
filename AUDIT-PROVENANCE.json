@@ -1,7 +1,7 @@
 {
   "package_name": "NS-Audit-Package",
   "repository": "https://github.com/simons357/Ship_it_app",
-  "generated_utc": "2026-10-01T09:48:34Z",
+  "generated_utc": "2026-10-01T11:21:39Z",
   "primary_snapshot": {
     "branch": "cursor/unaugmented-r4-vorticity-f80e",
     "commit": "a5a97019eb6b890607538ea43496a1abf7551948",
@@ -10,8 +10,8 @@
   },
   "packaging_branch": {
     "branch": "cursor/ns-audit-package-ac6d",
-    "role": "Adds START-HERE, manifest, and labeled extras only.",
-    "commit": "486ee374bed76ee490074a722b265bad071f1567"
+    "role": "Adds START-HERE, manifest, plain-text pathway dumps, and labeled extras only.",
+    "commit": "PENDING_REFRESH"
   },
   "labeled_snapshots": [
     {
@@ -59,8 +59,8 @@
     "NS-Audit-Package*.zip (the archive itself)"
   ],
   "note": "Root files are the unaugmented r4 snapshot. _chatgpt_audit/source-snapshots/ holds unmodified extras with original paths under each branch prefix.",
-  "file_count": 900,
-  "byte_total": 20122042,
+  "file_count": 909,
+  "byte_total": 27691814,
   "verification": {
     "priority_unittests": "64 passed, 1 pre-existing fail: tests.test_lemma_star_statement.LemmaStarStatementTests.test_quotes_boxed_claim_and_stays_open",
     "energy_k_json_reproduced": true,
