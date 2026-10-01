@@ -11,3 +11,8 @@ Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS p
 **Open barrier (unchanged):** \(\|u^r/r\|_{L^\infty}\) uniform in \(\eps\) — equivalent to axisymmetric-with-swirl global regularity. Paper remains a conditional reduction. Clay is not closed.
 
 **Do not conflate** with Lemma★ PRODUCT-BLOCK packaging.
+
+## STTP normal-form diagnostic (not a close)
+
+- [`STTP-NORMAL-FORM.md`](./STTP-NORMAL-FORM.md) — fixed-λ Stokes primitive, moving-λ term, vacuous ratio-2 cubelet, fail-fast tests.
+- Evaluator: `scripts/ns_attacks/sttp_normal_form.py`. Centered drift remains **OPEN**.
