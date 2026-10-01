@@ -143,13 +143,51 @@ Artifacts: `/opt/cursor/artifacts/tj-survivors-hard-run/` · repo mirror `result
 
 ---
 
-## 6. Score (honesty)
+## 6. Harder run (survivors again) — 2026-10-01
+
+Jonathan: “run survivors hard” again. Alive set only (**C10, C7, C8** primary; **C6 / C11 / C9** only as C10 feeders). **C1–C5 not revived.**  
+Command: `python3 scripts/ns_attacks/tj_survivors_harder_run.py`  
+Artifacts: `/opt/cursor/artifacts/tj-survivors-harder-run/` · repo mirror `results/tj-survivors-harder-run/`
+
+### 6.1 Harder-run verdicts
+
+| ID | Harder verdict | NEW pressure / kill | Evidence |
+| --- | --- | --- | --- |
+| **C10** | **SURVIVES** (principal, empty) | **NEW KILLS:** Sobolev-against-\(P_j\) (\(\alpha Z/(\nu P)\sim\lambda^{1/2}\to\infty\)); Biot–Savart/CZ pointwise \(\lvert\alpha\rvert\lesssim\lvert\omega\rvert\); Φ-renorm as standalone depletion. **REFUSED:** BKM \(\|\omega\|_\infty\) as stronger/circular object. Remaining sketches still collapse to C6 / C11 / C8-gap. | \(\alpha Z/P\) growth \(16\) over \(\lambda=4\to1024\); draft checklist in harder JSON |
+| **C7** | **SURVIVES** | **NEW KILLS:** Agmon-style HH product (\(\sim\lambda\to\infty\)); Bernstein high-mode saturates \(T\) scale with **no** \(\theta\nu P\) absorption margin. `high_triad` HH-dominates by construction. | Agmon ratio growth \(256\); HH mean \(\approx 0.061\), p90 \(\approx 0.28\); `high_triad_HH_dominates=true` |
+| **C8** | **SURVIVES** *(★ lab)* / **WEAKENED** *(as C10 feeder)* | **NEW WEAKEN:** category gap — near-shell ★ / \(K_{\alpha\beta}\) lab ≠ shell-budget depletion ⇒ (A). Single-shell \(T_c=D_s=0\) vacuity underscores the gap. | `LemmaStar_killed=false`; max \(\mathcal{R}_\star\approx 2.3\times 10^{-4}\); Attack 9B light `ok` |
+| **C6** | **WEAKENED** *(further)* | **NEW:** \(\alpha_+ Z/(\nu P)\sim\lambda^{1/2}\to\infty\) — escapes the actual (A)-normalized comparison, not just \(EZ\). | \(\alpha Z/P\) growth \(16\); identities still sit |
+| **C11** | **WEAKENED** | **NEW:** Φ-renorm KEEP algebra does **not** cancel \(T^{\mathrm{mm}}\); \(T/P\sim\lambda^{1/2}\) escape. | \(\Phi\Rightarrow T^{\mathrm{mm}}=\mathrm{false}\); \(T/P\) growth \(8\) |
+| **C9** | **WEAKENED** | Confirmed **non-feeder** to C10; rewrite-only. | \(\omega_*\) invariance holds |
+
+### 6.2 Ranking (blunt)
+
+1. **C10 SURVIVES** — principal door; emptier of false shortcuts (Sobolev-\(P_j\), BKM, CZ, Φ).
+2. **C7 SURVIVES** — HH live; Agmon dead; Bernstein saturates without margin.
+3. **C8 SURVIVES (lab) / WEAKENED (C10 feeder)** — ★ evidence only; do not sell as shell (A).
+4. **C6 WEAKENED** — Door-3 / α-hypothesis; absolute \(\alpha_+\) vs \(P_j\) false.
+5. **C11 WEAKENED** — axisym \(T^{\mathrm{mm}}\) bulk target; Φ ≠ cancel.
+6. **C9 WEAKENED** — rewrite tool; not a C10 feeder.
+
+**NEW kills / weakens this pass:** Sobolev-\(\alpha\) vs palinstrophy; CZ/Biot–Savart pointwise; Φ-as-depletion; BKM-as-shortcut (refuse); Agmon HH; Bernstein-no-margin; C8 category gap as C10 feeder; C6 further weaken via \(\nu P\); C11 Φ≠\(T^{\mathrm{mm}}\).
+
+**Single best next theorem-shaped target:** prove **depletion ⇒ (A)** by a **geometric** (or explicitly **conditional**) bound on \((\alpha_{\mathrm{loc},j})_+\) so
+\(\int(\alpha_+)\lvert\omega_j\rvert^2\le\theta\nu P_j+R_{\mathrm{allowed}}\),
+without \(\dot e_j/\dot Z/\Lambda'\), without Bernstein cubic wall, and without treating BKM \(\|\omega\|_\infty\) or near-shell ★ samples as the bound. Absolute Sobolev control by \(P_j\) is **false** (\(\lambda^{1/2}\) escape).
+
+**NS / Clay B:** **not solved.** Same-scale \(T_{j\leftarrow j}\) remains **OPEN**.
+
+---
+
+## 7. Score (honesty)
 
 | Claim | Status |
 | --- | --- |
 | Same-scale \(T_{j\leftarrow j}\) controlled | **OPEN** |
-| Path to (A) without circular recycling | **OPEN** (C10 empty; collapses to C6/C11/C8) |
-| Absolute \(\alpha_+\) bound (unaugmented) | **WEAKENED / not seated** (Door-3 criterion) |
+| Path to (A) without circular recycling | **OPEN** (C10 empty; collapses to geometric/conditional C6, axisym C11; C8 feeder gap) |
+| Absolute \(\alpha_+\) bound (unaugmented) | **WEAKENED / not seated** — also fails vs \(P_j\) (\(\lambda^{1/2}\)) |
+| Sobolev \(\alpha_+ Z\le\theta\nu P_j+\cdots\) | **KILLED** (harder run) |
 | Spectral-shift ⇒ ★ / regularity | **Refuse** |
+| Near-shell lab ⇒ shell (A) | **Not seated** (category gap) |
 | NS / Clay B solved | **Not claimed** |
-| This note as a proof | **No** — candidate filter + hard-run pressure tests only |
+| This note as a proof | **No** — candidate filter + two hard-run pressure passes only |

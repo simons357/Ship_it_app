@@ -1,0 +1,33 @@
+=== T_{j←j} SURVIVORS HARDER RUN (pass 2, 2026-10-01) ===
+NS not solved. No Clay claim. Forbidden slots empty. C1–C5 not revived.
+
+C10 PRINCIPAL: SURVIVES — new kills=['young_against_P_j_only', 'biot_savart_cz_pointwise', 'phi_renorm_as_depletion'] — αZ/P growth=16
+C6  α/Door-3: WEAKENED — αZ/(νP) growth=16
+C11 T^mm:     WEAKENED — Φ⇒Tmm=False T/P growth=8
+C9  τ triad:  WEAKENED — feeds_C10=False invariance=True
+C7  HH:       SURVIVES — HH mean=0.060808127595975425 p90=0.282325334532432 high_triad_HH=True agmon_growth=256
+C8  near-shell:SURVIVES — killed=False maxR*=0.00022638593068191097 feeds_C10=WEAKENED_CATEGORY_GAP
+C8  attack9b: ok=True
+
+NEW KILLS / WEAKENS:
+{
+  "C10_draft_kills": [
+    "young_against_P_j_only",
+    "biot_savart_cz_pointwise",
+    "phi_renorm_as_depletion"
+  ],
+  "C6_new": "\u03b1Z/(\u03bdP)~\u03bb^{1/2} escape \u2014 Sobolev against palinstrophy dies",
+  "C7_new": "Agmon HH killed; Bernstein saturates with no absorption margin",
+  "C8_new": "WEAKENED as C10 feeder (category gap); still SURVIVES as \u2605 lab",
+  "C11_new": "\u03a6-renorm \u2260 T^mm bound; T vs P escapes",
+  "C9_new": "Confirmed non-feeder to C10",
+  "C1_to_C5": "not revived"
+}
+
+BEST NEXT THEOREM-SHAPED TARGET:
+Prove depletion ⇒ (A) by a geometric (or explicitly conditional) bound on (α_loc,j)_+ so ∫(α_+)|ω_j|² ≤ θ ν P_j + R_allowed, without ė_j/Ż/Λ', without Bernstein cubic wall, and without treating BKM ||ω||_∞ or near-shell ★ samples as the bound. Absolute Sobolev control by P_j is false (λ^{1/2} escape).
+
+NS / Clay B not solved. T_{j←j} still OPEN. Harder pass: C10 SURVIVES principal (new draft kills: Sobolev-vs-P, BKM shortcut, CZ pointwise, Φ-as-depletion). C7 SURVIVES HH bottleneck (Agmon killed; Bernstein no margin). C8 SURVIVES lab but WEAKENED as C10 feeder (category gap). C6 further WEAKENED (α escapes νP). C11/C9 stay WEAKENED. Best next theorem: geometric/conditional α_+ ⇒ depletion⇒(A).
+
+Wrote /opt/cursor/artifacts/tj-survivors-harder-run/tj_survivors_harder_run.json
+Wrote /workspace/results/tj-survivors-harder-run/tj_survivors_harder_run_summary.json
