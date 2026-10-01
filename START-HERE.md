@@ -40,12 +40,13 @@ The 4.5 MB `NS-Audit-Text-01.txt` still mixes the pathway with hundreds of suppo
 
 Give ChatGPT this short linear pack instead:
 
+- `_chatgpt_audit/plain-text/CHATGPT-WHAT-YOU-HAVE.txt` — inventory: what exists vs what to read (~244 KB argument)
 - `_chatgpt_audit/plain-text/CHATGPT-PATHWAY-INDEX.txt`
 - `_chatgpt_audit/plain-text/CHATGPT-PATHWAY-A.txt` — locks, centered, energy/K, CS remainder
 - `_chatgpt_audit/plain-text/CHATGPT-PATHWAY-B.txt` — Ring / SND
 - `_chatgpt_audit/plain-text/CHATGPT-PATHWAY-C.txt` — unaugmented chain + honesty cards
 
-Those four files are the argument. The big dumps are the archive.
+Those five files are the argument plus the inventory. The big dumps are the archive. Do not start a review from `NS-Audit-Text-01.txt`.
 
 
 

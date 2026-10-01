@@ -1,0 +1,127 @@
+CHATGPT — WHAT EXISTS (read this first)
+
+There is a lot of data. You were not given it before. Do not hunt the 4.5 MB dump.
+The argument is four small files. Upload those four. Ignore the archive until asked.
+
+Repository: https://github.com/simons357/Ship_it_app
+Research snapshot: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
+Packaging branch: cursor/ns-audit-package-ac6d
+Packaging PR: https://github.com/simons357/Ship_it_app/pull/145
+Research PR: https://github.com/simons357/Ship_it_app/pull/24
+
+Classical 3D NSE only:
+  ∂t u + (u·∇)u = −∇p + νΔu,  ∇·u = 0
+Track A / Q1-augmented NS is a different PDE. Do not weld.
+Ordinary NS is not claimed solved. Clay Statement B is not claimed.
+Do not start leftover H1 from these pages.
+Do not restore unrestricted Lemma-star.
+Do not treat numerics as a theorem.
+
+
+================================================================================
+READ ONLY THESE FOUR FILES  (~244 KB total)
+================================================================================
+
+  1. CHATGPT-PATHWAY-INDEX.txt     2.7 KB   map + reading order
+  2. CHATGPT-PATHWAY-A.txt          80 KB   locks + centered + energy/K + CS remainder
+  3. CHATGPT-PATHWAY-B.txt          46 KB   Ring / SND
+  4. CHATGPT-PATHWAY-C.txt         111 KB   unaugmented chain + honesty cards
+
+Those four files contain the original pages, unchanged, with ORIGINAL PATH markers.
+Equations and code are exact. Nothing is summarized.
+
+PATHWAY-A pages:
+  START-HERE.md
+  docs/YES-NO-OPEN.md
+  docs/ISSUES-SHEET.md
+  docs/CENTERED-DRIFT.md
+  docs/CENTERED-LEDGER.md
+  docs/ENERGY-K.md
+  docs/CS-REMAINDER.md
+
+PATHWAY-B pages:
+  docs/SND-TO-REGULARITY.md
+  docs/SND-H-PLAIN.md
+  docs/SND-H-REVIEW.md
+  docs/SND-H-REPAIR.md
+  docs/SND-INSTRUMENT.md
+
+PATHWAY-C pages:
+  docs/UNAUGMENTED-NS-CHAIN.md
+  docs/UNAUGMENTED-R4-VORTICITY-PLAN.md
+  docs/ESTIMATE-AUDIT.md
+  docs/LEMMA-STAR-CORRECTIONS.md
+  docs/LEMMA-STAR-STATEMENT.md
+  docs/AUGMENTED-NS-PROOF-CHAIN.md          OTHER PDE. Do not weld.
+  .../UNAUG-PROOF-CHAIN.md                  honesty: identity ≠ Lemma-star bound
+  .../UNAUG-GENERIC-3D-PROOF-CHAIN.md       T_j←j OPEN
+
+
+================================================================================
+ONE-LINE STATUS
+================================================================================
+
+Unaugmented 3D NSE: OPEN.
+Energy-class K dead on v_n.
+Unrestricted Lemma-star killed.
+Ring / SND do not bound X.
+Centered identities sit; DA-NS-2 and T_j←j remain.
+Augmented Track A is a different PDE.
+
+
+================================================================================
+WHAT ELSE EXISTS (archive — do not start here)
+================================================================================
+
+Full research tree on the packaging branch: ~712 files from the 24 Sep snapshot,
+plus labeled later snapshots under _chatgpt_audit/source-snapshots/.
+Those later snapshots are not merged onto the research root.
+
+  NS-Audit-Package.zip              11.65 MB   complete ZIP (901 entries)
+  NS-Audit-Text-01.txt               4.48 MB   519 text files (argument buried)
+  NS-Audit-Text-02.txt               2.49 MB   345 remaining text files
+  NS-Audit-Text-BINARIES.txt         5.6 KB    37 PDFs / images / binaries listed
+  AUDIT-MANIFEST.sha256                        SHA-256 of packaged files
+  AUDIT-PROVENANCE.json                        repo / SHA / snapshot labels
+
+Single-page copies of the priority originals (also inside A/B/C):
+  00-YES-NO-OPEN.md
+  01-CENTERED-DRIFT.md
+  02-CENTERED-LEDGER.md
+  03-ENERGY-K.md
+  04-CS-REMAINDER.md
+  05-SND-TO-REGULARITY.md
+  06-SND-H-PLAIN.md
+  07-UNAUGMENTED-NS-CHAIN.md
+
+The 4.5 MB dump mixed the pathway with Domain Architect notes, Track B
+scripts, and supporting files. That is why a previous review missed the
+argument. Use A/B/C.
+
+
+================================================================================
+LOCKED CORRECTIONS (do not revive)
+================================================================================
+
+- Unrestricted sup R_star < ∞: killed by growing-layer family v_n
+- Energy-class K ~ √E / K_Y ~ √E / mid door: dead on v_n
+- CS remainder 0.327 at λ=8: sample, not a kill
+- Spectral-shift Λ' = 2(T_c − ν D_s)/X: bookkeeping, not a Lemma-star bound
+- SND sitting ⇒ bound on X: NO. Theorem G dead. Theorem H withdrawn. Ring REPAIR
+- Concentration J/X ≥ c* and spread max X_j/X ≤ ρ0 are opposite cuts. Do not call both SND
+- Φ-renorm 1/r^4 ∂z(Γ²) = ∂z(Φ²) is algebra. Unaugmented plan keeps 1/r^4
+- Tautological K := (T_c − θν D_s)_+/X is forbidden
+- Leftover H1 / A_bad on Q_r: written, not a theorem. Do not start it from these pages
+
+
+================================================================================
+STILL OPEN ON THE UNAUGMENTED FACE
+================================================================================
+
+- Global regularity of classical 3D NSE
+- Drift target T_c ≤ θν D_s + K(t)X with useful K ∈ L¹_loc
+- Same-scale transfer T_j←j
+- H1 / A_bad as a theorem
+- H2-from-energy and H3-from-energy
+- Useful pathwise K after energy-class death (G4)
+- Dynamic SND for general Leray–Hopf data

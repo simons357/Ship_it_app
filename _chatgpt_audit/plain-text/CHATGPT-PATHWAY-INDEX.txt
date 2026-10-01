@@ -3,6 +3,9 @@ CHATGPT-PATHWAY — unsiloed linear argument
 This is the pathway ChatGPT should read. It is NOT the 4.5 MB dump.
 The big dumps still exist for completeness. They bury the argument.
 
+If ChatGPT does not know what exists, give it CHATGPT-WHAT-YOU-HAVE.txt first.
+That one page lists every artifact and says which four files are the argument.
+
 Repository: https://github.com/simons357/Ship_it_app
 Snapshot: cursor/unaugmented-r4-vorticity-f80e @ a5a97019eb6b890607538ea43496a1abf7551948
 Packaging: cursor/ns-audit-package-ac6d
@@ -12,6 +15,7 @@ Classical 3D NSE only. Track A / Q1 is a different PDE.
 NS is not claimed solved. Clay B is not claimed.
 
 Give ChatGPT these files in order:
+  0. CHATGPT-WHAT-YOU-HAVE.txt   inventory: what exists vs what to read
   1. CHATGPT-PATHWAY-INDEX.txt   (this file)
   2. CHATGPT-PATHWAY-A.txt       locks + centered + energy/K + remainder
   3. CHATGPT-PATHWAY-B.txt       Ring / SND
