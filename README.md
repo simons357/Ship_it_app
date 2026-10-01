@@ -30,6 +30,21 @@ Cross-event spectral selection test on black-hole ringdown modes.
 - Protocol: [`docs/HB-RINGDOWN-EXPERIMENT-01.md`](docs/HB-RINGDOWN-EXPERIMENT-01.md)
 - Numeric summary: [`results/SUMMARY.md`](results/SUMMARY.md)
 
+## Arithmetic book: Möbius–GCD / Mertens
+
+Exact identity \(M(N)=\operatorname{Tr}(D_NQ_N)\) for
+\(Q_N(i,j)=\mu(\gcd(i,j))/\gcd(i,j)\). The spectral cancellation
+estimate is **OPEN**. This is not FRA, not SFE, and not a Riemann proof.
+
+- Notes: [`docs/arith-qn/README.md`](docs/arith-qn/README.md)
+- Package: `arith_qn/`
+
+```bash
+python -m arith_qn --identity 6
+python -m arith_qn --survey --max-n 512 --out results/mertens_spectral
+python -m unittest tests.test_mertens_spectral
+```
+
 ## Quick start
 
 ```bash
@@ -52,6 +67,7 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 
 | Path | Role |
 |------|------|
+| `arith_qn/` | Möbius–GCD matrix, exact Mertens identity, open cancellation survey |
 | `hb_ringdown_test.py` | Spectral proximity statistic, MC null, BH-FDR, leave-one-event-out |
 | `nodes.json` | Frozen node families + sigma + default observable |
 | `data/qnm_events.csv` | Per-mode ringdown table with TRAIN/TEST splits |

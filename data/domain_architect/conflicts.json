@@ -102,5 +102,13 @@
     "evidence": "No justified canonical formula exists to compare against SFE-H001.",
     "status": "unresolved",
     "notes": "Canonical SFE status remains unresolved."
+  },
+  {
+    "left_id": "ARITH-H001",
+    "right_id": "SFE-H003",
+    "relation": "INCOMPATIBLE",
+    "evidence": "ARITH-H001 is the Möbius–GCD kernel μ(gcd)/gcd. SFE-H003 uses occupation interactions 1/gcd and maps that matrix onto FRA letters. No checked transformation identifies them, and the FRA role inversion remains retired.",
+    "status": "recorded",
+    "notes": "Keep the arithmetic identity. Do not revive SFE-HAM as a realization of Q_N."
   }
 ]

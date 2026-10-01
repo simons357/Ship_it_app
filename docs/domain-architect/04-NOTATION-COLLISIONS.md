@@ -32,6 +32,9 @@ Functional Role Analysis reuses short letters that already have other meanings i
 | \(H_g=4\pi G\) | Newtonian coupling in the gravity benchmark | — |
 | \(H_N\) | — | degree-normalized inverse-GCD matrix |
 | \(\hat H_{\mathrm{SFE}}\) | — | retired Fock operator from prize-packaged drafts |
+| \(Q_N\) | — | Möbius–GCD matrix \(\mu(\gcd(i,j))/\gcd(i,j)\); arithmetic book only |
+| \(\widetilde Q_N\) | — | inverse-GCD matrix \(1/\gcd(i,j)\); **not** \(Q_N\) |
+| \(D_N\) | — | \(\operatorname{diag}(1,\ldots,N)\) in the Mertens identity; **not** the degree matrix of \(H_N\) |
 
 ## Scale response
 
@@ -50,7 +53,7 @@ Functional Role Analysis reuses short letters that already have other meanings i
 | \(g\) | geometry / metric / domain | coupling \(g\) in retired SFE-HAM; metric \(g_{ij}\) is fine when geometry is the role |
 | \(F\) | external forcing | Flux \(\Pi_j\) in Littlewood–Paley notes (use \(\Pi_j\)) |
 | \(\mathcal B\) | boundary and initial conditions | — |
-| \(D\) | transformation / evolution operator | degree matrix in \(H_N=D^{-1/2}\widetilde Q D^{-1/2}\) |
+| \(D\) | transformation / evolution operator | degree matrix in \(H_N=D^{-1/2}\widetilde Q D^{-1/2}\); also \(D_N=\operatorname{diag}(1,\ldots,N)\) in the Mertens identity — different objects |
 
 ## Guard for software
 
