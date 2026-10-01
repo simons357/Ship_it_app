@@ -2,9 +2,10 @@
 
 **Branch:** `cursor/alpha-plus-depletion-0cc5`  
 **Base:** `main` (tip ancestry: `cursor/tj-candidates-9083` / [PR #102](https://github.com/simons357/Ship_it_app/pull/102))  
-**Compare:** https://github.com/simons357/Ship_it_app/compare/main...cursor/alpha-plus-depletion-0cc5  
+**Tip:** `a559e2eb`  
+**Compare / open PR:** https://github.com/simons357/Ship_it_app/compare/main...cursor/alpha-plus-depletion-0cc5?expand=1  
 
-> **PR create/update status:** `gh` integration returns 403; ManagePullRequest tool is **not** available in this agent run. Paste Title + Body below into GitHub if dashboard sync does not open/update a PR. Prefer updating PR #102 or opening a new PR from this branch.
+> **PR create/update status:** `gh` integration returns 403 on `createPullRequest` / `addComment`; ManagePullRequest tool is **not** available in this agent run. Branch is **pushed**. Open the compare link (or paste Title + Body below) to file the PR; optionally comment on PR #102 with the compare URL.
 
 ## Title
 
