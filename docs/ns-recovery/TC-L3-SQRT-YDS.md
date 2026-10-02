@@ -39,10 +39,9 @@ Status: **attack**. Not proved. No \(C\) is stamped. Homogeneous of
 degree 3, same as \(T_c(av)=a^3T_c(v)\). Inserting \((\dagger)\) into
 the centered equation is a different sentence from the equation.
 
-The near-shell obstruction **motivates** \((\dagger)\) and does
-**not** establish it. A successful script run verifies the tested
-identities. The uniform inequality and its time budget remain
-separate proof obligations.
+The near-shell obstruction **motivates** \((\dagger)\) and does not establish
+it. A successful script run verifies the tested identities. The uniform
+inequality and its time budget remain separate proof obligations.
 
 Unrestricted ★ used \(\sqrt{D_sEY}\). The new factor replaces
 \(\sqrt{E}\) by \(\|\nabla u\|_3/\sqrt{Y}\). On a volume-1 torus
@@ -107,8 +106,8 @@ ratio invariant.
 
 **Certification.** \(T_c\), \(Y\), \(D_s\) are exact Fourier
 arithmetic (direct triad sum). \(\|\nabla u\|_2=\sqrt{X}\) is
-Parseval. Sampled quadrature of \(\|\nabla u\|_3\) **cannot
-certify a counterexample**: \(|\nabla u|^3\) is not a trig
+Parseval. Sampled quadrature of \(\|\nabla u\|_3\) **cannot certify
+a counterexample**: \(|\nabla u|^3\) is not a trig
 polynomial. The certified sandwich on volume 1 is
 
 \[
