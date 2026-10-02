@@ -1,0 +1,83 @@
+{
+  "ns_solved": false,
+  "gate_altered": {
+    "sbp": false,
+    "phi_vs_d": false,
+    "low_tail_snapshot": false
+  },
+  "heavy_neighboring_family_on_this_tree": false,
+  "B_prim_constructed": false,
+  "both_signs_obtained": false,
+  "A_N_plus_saved": false,
+  "seed_schema": {
+    "name": "A_N^+",
+    "required": [
+      "integer_wavevectors",
+      "helicity_labels",
+      "polarizations",
+      "amplitudes",
+      "delta",
+      "T_live",
+      "T_0",
+      "Lambda",
+      "T_c",
+      "L_1",
+      "R_2",
+      "rho_plus",
+      "rho_minus"
+    ],
+    "saved": false,
+    "reason": "BOTH SIGNS not obtained; neighboring-shell family not on this tree"
+  },
+  "exact_split": {
+    "note_triad": {
+      "Lambda": 1.4,
+      "T_c": 3.2,
+      "inner_delta_T_live": 2.0,
+      "sum_delta_sq_T_live": 0.40000000000000036,
+      "reconstructed": 3.2,
+      "identity_ok": true,
+      "silent_R2_equals_quadratic": true,
+      "n_modes": 6
+    },
+    "separated_L8": {
+      "Lambda": 64.01030927835052,
+      "T_c": 1442.7635814515293,
+      "inner_delta_T_live": 11.44585095124132,
+      "sum_delta_sq_T_live": 710.1111221086699,
+      "reconstructed": 1442.7635814515293,
+      "identity_ok": true,
+      "silent_R2_equals_quadratic": true,
+      "n_modes": 6
+    },
+    "growing_layer_n4": {
+      "Lambda": 77.5,
+      "T_c": 187392.0,
+      "inner_delta_T_live": 0.0,
+      "sum_delta_sq_T_live": 187392.0,
+      "reconstructed": 187392.0,
+      "identity_ok": true,
+      "silent_R2_equals_quadratic": true,
+      "n_modes": 54
+    }
+  },
+  "notation_trap": {
+    "L1_with_live_T": 2.8,
+    "R2_with_live_T": 0.40000000000000036,
+    "quadratic_live": 0.40000000000000036,
+    "L1_with_T0_zero": 0.0,
+    "R2_with_T0_zero": 3.2,
+    "silent_substitution_is_not_first_variation": true
+  },
+  "outcomes": {
+    "BOTH_SIGNS": "ARMED_not_run",
+    "ZERO_ONLY_homochiral": "ARMED_not_run",
+    "ONE_SIGN_heterochiral": "ARMED_not_run",
+    "NO_NEIGHBOR": "own_category_not_sign_depletion"
+  },
+  "static_frontier": "arithmetic sign realizability",
+  "dynamic_frontier": "dangerous-state persistence",
+  "Theta_N": "nu * kappa_N^2 * tau_U,N  (named; not constructed here)",
+  "all_identities_ok": true,
+  "note": "Exact T_c = Lambda <delta,T> + sum delta^2 T sits. L_1 requires an explicit T^{(0)}; silent live-T substitution only recovers the quadratic remainder. Neighboring-shell sign search is not on this tree and is not invented. NO NEIGHBOR is not sign depletion. NS not solved."
+}

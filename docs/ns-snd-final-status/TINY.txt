@@ -1,0 +1,296 @@
+Stay here. This chat is DA.
+
+Unrestricted Lemma★ is killed by the
+growing-layer family. Not a blowup.
+Replacement closure is the leftover:
+docs/LEMMA-STAR-GROWING-LAYER.md
+scripts/ns_attacks/verify_pr24_closure_review.py
+Specialist break questions, answered:
+docs/PR24-SPECIALIST-BREAK.md
+Exact-shell bound CLAIMED
+(C=4/3, specialist pending;
+designed 9D is dead, not claimed;
+cubic max at x=8/3 is calculus,
+not the envelope; factor 3 is
+on-page, not Ring; internal check
+is not independent review;
+no named reviewer, Soft X silent;
+good as exact-shell if it sits,
+not a regularity close):
+docs/ATTACK-9D-FULL-SUPPORT-BOUND.md
+Three-shear write-up example K=2/3
+(floor, not the ceiling):
+docs/ATTACK-9D-TWO-THIRDS.md
+SuperGrok review scored (4/3
+stays CLAIMED, not a theorem):
+docs/PR24-SUPERGROK-REVIEW.md
+scripts/ns_attacks/attack9d_two_thirds.py
+Need★ cannot repair the dead box.
+B-hand map (not a close):
+docs/DA-NS-FIVE-FINGER.md
+Grow-s samples are historical.
+Soft X silent.
+Yes / no / open (the tape; a write is
+not a theorem):
+docs/YES-NO-OPEN.md
+H1 write (the estimate, not the theorem;
+locked G; machine refuses a fake close):
+docs/H1-WRITE.md
+scripts/h1_machine.py
+Snapshot A_bad, Lambda=Lambda0 fixed
+(ABC and Taylor–Green; periodic snapshot
+diagnostics; not leftover 1; does not
+rescue unrestricted local (6)):
+docs/H1-ABAD-SNAPSHOT.md
+scripts/h1_abad_snapshot.py
+Framework map (endpoint first;
+specialty out; leftover stays open):
+docs/FRAMEWORK-MAP.md
+Attack 9D setup (do not start 9D):
+docs/ATTACK-9D-SETUP.md
+Monday packet (pile, not leftovers):
+docs/MONDAY-PACKET.md
+Every leftover on one sheet (send this):
+docs/ISSUES-SHEET.md
+Math for rows 1–5:
+docs/HELP-OFF-DESK.md
+Swirl wall correction (F=u^θ/r,
+G=ω^θ/r; time-window if; occupation
+from the detector withdrawn):
+docs/SWIRL-WALL-CORRECTION.md
+Axisymmetric shell estimate (identity
+and far-shell Young sit; remainder
+T_{j←j} open; [ρ] not measured):
+docs/AXISYM-SHELL.md
+Swirl probe of that remainder
+(pairing closed; local-remainder
+occupancy printed; not a close):
+docs/AXISYM-SWIRL-PROBE.md
+Filter (KEEP / DISCARD / PARK):
+docs/ESTIMATE-AUDIT.md
+
+Words I should have defined:
+
+  desk = this project’s pile of notes and
+  checks. Not furniture. Not a job.
+
+  scored = checked (already proved / wrong /
+  still missing). The check is not the proof.
+
+You do not need to already know the missing
+step. DA will not invent it and call it proved.
+
+DA can: keep the map, name the hole, stop a
+fake close, check a sentence if one appears.
+
+DA cannot: finish ordinary NS or RH by talking.
+
+You may send Tao / Albritton an honest package:
+Theorem A (different equation), the named holes,
+and this limit. You may not send a close.
+
+Plain page: docs/WHAT-DA-CAN.md
+
+Dream-team look (already ran, did not finish):
+docs/DREAM-TEAM-PLAIN.md
+Tonight’s ★ / ABC_λ desk (map yes, kill no):
+docs/DREAM-TEAM-ABC.md
+Errors already caught (not a close):
+docs/DREAM-TEAM-CAUGHT.md
+
+SND and H are not the key to ordinary NS:
+docs/SND-H-PLAIN.md
+SND-to-regularity implication (shell
+condition, frequency drift, circularity;
+not a bound on X; G dead; Ring REPAIR):
+docs/SND-TO-REGULARITY.md
+SND-H review (Theorem H not established
+even with X<=M; shear kill; F_j bound
+is not propagation):
+docs/SND-H-REVIEW.md
+SND-H repair (A.2 sits; A.3 is a Dini
+ceiling, not a floor; Theorem H stays
+withdrawn; not leftover 1):
+docs/SND-H-REPAIR.md
+C10 chain (depletion via a_+ to (A);
+named leftover-5 candidate, not a
+theorem; freeze exact-shell 9D):
+docs/C10-CHAIN.md
+16 Sep handoff (four buckets; C10
+not seated; do not repair H):
+docs/NS-STATUS.md
+Centered drift (T_c vs D_s; star
+stays killed; K(t) is a remainder,
+not a term in the PDE):
+docs/CENTERED-DRIFT.md
+SND instrument (diagnostics only;
+no persistence):
+docs/SND-INSTRUMENT.md
+Report audit (GPT board vs tape;
+star is KILLED not OPEN):
+docs/REPORT-AUDIT.md
+Master plan (two routes; both
+OPEN; NS not solved):
+docs/MASTER-PLAN.md
+Unified status after the peer
+ingest (enough for a score, not
+a close; C10 not seated; H
+withdrawn):
+docs/UNAUG-NS-UNIFIED.md
+
+What you were told vs what sits:
+docs/WHAT-I-WAS-TOLD.md
+
+What sits and what you can take home:
+docs/TAKE-HOME.md
+
+All of it in one pile (chains, equations,
+constants, papers):
+docs/ALL-I-DID.md
+
+What you can send to publish:
+docs/PUBLISH-LIST.md
+
+This week — swirl paper (map, not a proof):
+docs/SWIRL-DEPOSIT.md
+docs/SWIRL-PAPER.pdf
+docs/SWIRL-MAGAZINE.md
+OpenAI C/D is not your leftover:
+docs/OPENAI-NS-CLAIM.md
+
+How to put the maps online:
+docs/SHARE-MAPS.md
+
+Overnight NS score (DA-NS-2 is leftover 6):
+docs/DA-NS-2.md
+
+Live unaug packet (H1 open; do not merge letters):
+docs/H-SYSTEM.md
+docs/H1-OBJECT.md
+docs/H1-SOT.md
+docs/H1-TUBE.md
+docs/DOOR-B-H1-ESTIMATE-PLAN.md
+docs/DOOR-B-H1-B5-LINFTY-SKETCH.md
+docs/UNAUGMENTED-NS-CHAIN.md
+Writing gaps: docs/GAPS_DESTROYED.md
+Literature vs H-system: docs/LITERATURE-H.md
+Dream-team read of tonight’s map
+(they would sign the map, not (6)):
+docs/DREAM-TEAM-H.md
+H1 shapes (not proved): docs/H1-SHAPES.md
+P1 low-pass Biot–Savart (sits; not H1):
+docs/H1-P1.md
+P1-loc cutoff (sits, ∇u kept; not H1):
+docs/H1-P1-LOC.md
+Path-cost of one pair (sits as 1-D; not H1):
+docs/H1-PC.md
+Lookups: all miss. docs/LOOKUP-H1.md
+Where H1 is (named leftover, not a paper):
+docs/WHERE-H1.md
+WRITE (6) alone: docs/WRITE_6.md
+WRITE (6) plus data: docs/WRITE_6_SUPPORTED.md
+
+Unrestricted ★ killed. Evaluator matched
+the family. Exact core matched.
+Replacement closure open. Evaluator ≠ NS.
+Exact core ≠ proof. NS not solved.
+Finite ABC_λ climb is not a falsifier.
+H1 untested on ABC_λ. Q-stack out.
+docs/CS-REMAINDER.md
+docs/ns-recovery/CS-REMAINDER-VS-DA-REJECT.md
+N-shell samples still saturate:
+docs/RSTAR-SHELL-CLIMB.md
+Locked packaging (unrestricted box killed;
+replacement OPEN):
+docs/LEMMA-STAR.md
+Statement from the lock (not a reconstruction):
+docs/LEMMA-STAR-STATEMENT.md
+Explore-boundedness score (not a close):
+docs/LEMMA-STAR-EXPLORE.md
+Family check vs lock (not a kill):
+docs/LEMMA-STAR-FAMILY-CHECK.md
+Cube family (named, computed; not a kill):
+docs/LEMMA-STAR-CUBE.md
+Cube analytic review (files absent; not a kill):
+docs/LEMMA-STAR-CUBE-REVIEW.md
+Working claim + identities:
+docs/math/ns_attacks/LEMMA_STAR_CANONICAL.md
+docs/math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md
+Four corrections (a^4 missing inequality dead;
+star implies GR, not equivalent; test both signs;
+Section 4 not proved):
+docs/LEMMA-STAR-CORRECTIONS.md
+Boxed ratio R★ is the exact form of ★:
+docs/LEMMA-STAR-R.md
+Three-key family (Attack 8):
+docs/LEMMA-STAR-E.md
+Two Fourier keys is the wrong test, not
+two shells. Wide AP: Tc grew, Ds faster.
+Adjacent spheres: landings O(m). Fan:
+R★ ~ β/α, no blow. Freiman-AP dead.
+The m^{1/2} heuristic has no lattice home.
+Route A incidence: conditional m^{4/3} in
+the continuum model. Lattice transfer
+MISSING. docs/LEMMA-STAR-STRUCTURE-ROUTE-A-INCIDENCE.md
+H1 on one cylinder is the other writing.
+Tube SoT: docs/H1-SOT.md
+Estimate package OPEN, not a GR close.
+Outside-E identity blocked.
+Unrestricted ★ killed by v_n.
+Replacement closure open.
+docs/LEMMA-STAR-PACKET.md
+Samples are evidence only.
+Uniform pre-Young C is dead.
+K=0 dead. Lattice fan did not kill.
+NS not solved.
+Five-lane drill: GitHub PR 48.
+Independent Lemma★ core (evaluator, not a proof;
+unrestricted ★ killed; live Stokes not overwritten):
+docs/LEMMA-STAR-CORE.md
+scripts/ns_lemma_star_core.py
+Object app (pictures; bound still open):
+docs/THE-OBJECT-APP.md
+apps/the-object/
+R★ maximizer N=2,3,4,5 vs |k|_max:
+docs/RSTAR-SHELL-CLIMB.md
+N-shell does not climb. ABC_λ is a
+finite clue, not a logged reject.
+Five-lane pack (ffe858c, full folder plus tests):
+docs/FIVE-LANE-PACK.md
+jonathan-handoff/GROK-HEAVY/01-swirl-publishing/five-lane-pack/
+Live stokes_moments.py was not overwritten.
+Original five lanes (not 9A–9D):
+docs/FIVE-LANE-DISCUSSION.md
+docs/five-lane-export/FIVE_LANES.md
+1 covariance, 2 triad/K=0/C*, 3 Bony HH→L,
+4 Stokes, 5 Route 2. Do not substitute
+packet attacks 9A–9D.
+Export (defs + HH→L map):
+docs/five-lane-export/INDEX.md
+Original JSON (10 Sep run):
+docs/five-lane-export/COMPUTE.md
+results/ns_five_lane_2026-09-10/
+Attack 9B exact-shell K (finite max, not a kill):
+docs/five-lane-export/ATTACK_9B.md
+results/ns_five_lane_2026-09-10/attack9b_exact_shell/
+Fixed-output Θ(m²) is a counting error:
+docs/LEMMA-STAR-9B-COUNTING.md
+K ≤ 16s. Growing s is historical.
+
+Latest three chains plus the others:
+docs/LATEST.md
+docs/A-CHAIN.md
+docs/UNAUGMENTED-NS-CHAIN.md
+docs/RH-CHAIN.md
+
+CV lines if you want to teach:
+docs/CV-LINES.md
+
+What to do with the rest of the pile:
+docs/SQUEEZE.md
+
+Plain page for my wife:
+docs/FOR-MY-WIFE.md
+
+Plain page for the family:
+docs/FOR-MY-FAMILY.md

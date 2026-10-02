@@ -1,0 +1,26 @@
+{
+  "ns_solved": false,
+  "executed": false,
+  "da_approved": false,
+  "alpha_c_proxy_stamped": false,
+  "quartic_named_from_disk": false,
+  "quartic_54_46_on_this_tree": false,
+  "admission": {
+    "alpha_c_near_one": true,
+    "T_c_positive": true,
+    "six_mode_only": true
+  },
+  "measures": "nonlinear-force rotation against viscosity",
+  "plan_says_do_not_run": true,
+  "plan_keeps_nu": true,
+  "i3_weighted_imported": false,
+  "kkl_regrouping_imported": false,
+  "fiber_moved_off_neutral": false,
+  "gate_altered": {
+    "sbp": false,
+    "phi_vs_d": false,
+    "low_tail_snapshot": false,
+    "sign_realizability": false
+  },
+  "da_ns_2": "OPEN"
+}
