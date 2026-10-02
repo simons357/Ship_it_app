@@ -8,6 +8,7 @@ Strictly scientific package (no campaign / outreach framing):
 
 - [`UNAUG-PROOF-CHAIN.md`](./UNAUG-PROOF-CHAIN.md) — locked unaugmented-face honesty / terminology (spectral-shift ≠ ★; \(T_{j\leftarrow j}\) **OPEN**; numerics ≠ depletion)
 - [`TJ-SAME-SCALE-CANDIDATES.md`](./TJ-SAME-SCALE-CANDIDATES.md) — narrow-first attack shortlist for \(T_{j\leftarrow j}\) / (A); DEAD vs TRY; hard-run (§5) + harder-run (§6); NS / Clay B not solved, \(T_{j\leftarrow j}\) **OPEN**
+- [`C10-DEPLETION-TO-A.md`](./C10-DEPLETION-TO-A.md) — C10 theorem-shaped target (depletion ⇒ (A) / \(\alpha_+\) control); **OPEN**; not Clay
 - [`PR-DRAFT-TJ-SAME-SCALE-CANDIDATES.md`](./PR-DRAFT-TJ-SAME-SCALE-CANDIDATES.md) — paste-ready title/body for [PR #102](https://github.com/simons357/Ship_it_app/pull/102) (branch `cursor/tj-candidates-9083`)
 - [`SCIENTIFIC-REPORT.md`](./SCIENTIFIC-REPORT.md) — problem statement, objects, Lemma★ / PRODUCT-BLOCK status, proved vs hypothesized vs parked
 - [`CREDIT-BODY-OF-WORK.md`](./CREDIT-BODY-OF-WORK.md) — KEEP shelf vs named open doors (no Clay claim)

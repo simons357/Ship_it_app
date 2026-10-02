@@ -139,6 +139,8 @@ Artifacts: `/opt/cursor/artifacts/tj-survivors-hard-run/` · repo mirror `result
 
 **Single best next theorem-shaped target:** prove **depletion ⇒ (A)** by controlling \((\alpha_{\mathrm{loc},j})_+\) (or an integrable substitute) so the main stretch enters \(\theta\nu P_j + R_{\mathrm{allowed}}\), without \(\dot e_j/\dot Z/\Lambda'\) and without the Bernstein cubic wall. (That is C10 instantiated through the honest C6 hinge — possibly under an explicit axisym / geometric hypothesis if absolute control fails.)
 
+**C10 target card:** [`C10-DEPLETION-TO-A.md`](./C10-DEPLETION-TO-A.md) — theorem-shaped target only; **OPEN**; no proof claimed.
+
 **NS / Clay B:** **not solved.** Same-scale \(T_{j\leftarrow j}\) remains **OPEN**.
 
 ---
@@ -174,6 +176,8 @@ Artifacts: `/opt/cursor/artifacts/tj-survivors-harder-run/` · repo mirror `resu
 **Single best next theorem-shaped target:** prove **depletion ⇒ (A)** by a **geometric** (or explicitly **conditional**) bound on \((\alpha_{\mathrm{loc},j})_+\) so
 \(\int(\alpha_+)\lvert\omega_j\rvert^2\le\theta\nu P_j+R_{\mathrm{allowed}}\),
 without \(\dot e_j/\dot Z/\Lambda'\), without Bernstein cubic wall, and without treating BKM \(\|\omega\|_\infty\) or near-shell ★ samples as the bound. Absolute Sobolev control by \(P_j\) is **false** (\(\lambda^{1/2}\) escape).
+
+**C10 target card:** [`C10-DEPLETION-TO-A.md`](./C10-DEPLETION-TO-A.md) — theorem-shaped target only; **OPEN**; no proof claimed. (NS-10 OPEN · NS-11 NOT CLAIMED · DA-NS-2 OPEN.)
 
 **NS / Clay B:** **not solved.** Same-scale \(T_{j\leftarrow j}\) remains **OPEN**.
 

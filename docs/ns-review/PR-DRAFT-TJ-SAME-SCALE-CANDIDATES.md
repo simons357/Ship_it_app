@@ -4,9 +4,9 @@
 **Base:** `main`  
 **PR:** https://github.com/simons357/Ship_it_app/pull/102  
 **Compare:** https://github.com/simons357/Ship_it_app/compare/main...cursor/tj-candidates-9083  
-**Tip (verify):** `ea66bd05` (includes hard-run `3fbf3b0` + harder-run)
+**Tip (verify):** refresh after C10 target-card commit on this branch
 
-> **PR title/body update status:** `gh` integration returns 403 on `updatePullRequest`; ManagePullRequest tool is **not** available in this agent run. Paste the Title + Body below into the GitHub PR UI if the dashboard sync does not apply them.
+> **PR title/body update status:** Prefer ManagePullRequest when available. If `gh` returns 403 on `updatePullRequest`, paste Title + Body below into the GitHub PR UI.
 
 ## Title
 
@@ -23,6 +23,7 @@ Narrow-first candidate filter for same-scale \(T_{j\leftarrow j}\) / path to (A)
 ### Files
 
 - `docs/ns-review/TJ-SAME-SCALE-CANDIDATES.md` (§5 hard-run, §6 harder-run)
+- `docs/ns-review/C10-DEPLETION-TO-A.md` — C10 theorem-shaped target (OPEN; no proof)
 - `scripts/ns_attacks/tj_same_scale_candidate_probes.py`
 - `scripts/ns_attacks/tj_survivors_hard_run.py`
 - `scripts/ns_attacks/tj_survivors_harder_run.py`
@@ -54,6 +55,8 @@ Narrow-first candidate filter for same-scale \(T_{j\leftarrow j}\) / path to (A)
 ### Best next theorem-shaped target
 
 Prove **depletion ⇒ (A)** by controlling \((\alpha_{\mathrm{loc},j})_+\) (or an integrable substitute) so stretch enters \(\theta\nu P_j + R_{\mathrm{allowed}}\), without \(\dot e_j/\dot Z/\Lambda'\) and without the Bernstein cubic wall. That is **C10 through the honest C6 hinge**. Absolute Sobolev control by \(P_j\) is false (\(\lambda^{1/2}\)). No BKM / near-shell-sample shortcuts.
+
+**Filed target card:** [`C10-DEPLETION-TO-A.md`](./C10-DEPLETION-TO-A.md) — **OPEN**; not Clay; NS-10 OPEN / NS-11 NOT CLAIMED / DA-NS-2 OPEN.
 
 ### Honesty
 
