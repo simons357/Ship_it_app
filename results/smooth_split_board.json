@@ -1,0 +1,593 @@
+{
+  "lower_bound_witness": "prior exact witness C>0.4 remains necessary; not optimized here",
+  "regularity": "NOT established",
+  "six_mode": {
+    "Ds_lead_check": [
+      {
+        "4j_Ds_over_Lambda_Y": "30321/28322",
+        "j": 3
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "1123840/1048383",
+        "j": 4
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "10336500/9690769",
+        "j": 5
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "163453248/154132225",
+        "j": 6
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "33019924/31304025",
+        "j": 7
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "1469878272/1400031889",
+        "j": 8
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "910418940/870663049",
+        "j": 9
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "8226328000/7894500201",
+        "j": 10
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "76941117/74060000",
+        "j": 11
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "33918303744/32733855625",
+        "j": 12
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "15829481668/15311835081",
+        "j": 13
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "112980248640/109507384561",
+        "j": 14
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "12116817000/11765523961",
+        "j": 15
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "321506541568/312687864225",
+        "j": 16
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "129344806476/125978854225",
+        "j": 17
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "115806770496/112940341087",
+        "j": 18
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "38756196485/37841655618",
+        "j": 19
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "1857086784000/1815219984601",
+        "j": 20
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "681852349332/667137736225",
+        "j": 21
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "3935660179264/3854213136225",
+        "j": 22
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "349288727292/342345520609",
+        "j": 23
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "7819830374400/7670290881841",
+        "j": 24
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "385525562500/378423045567",
+        "j": 25
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "14716400407488/14454861822025",
+        "j": 26
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "619759191807/609120993800",
+        "j": 27
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "26441503094272/26002625922729",
+        "j": 28
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "8725783742820/8585585633689",
+        "j": 29
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "45645567336000/44934914629201",
+        "j": 30
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "3698546930128/3642696702225",
+        "j": 31
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "10870803136512/10711442771575",
+        "j": 32
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "24276175321068/23930401880641",
+        "j": 33
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "123023958420160/121320069382521",
+        "j": 34
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "4837688249625/4772486588018",
+        "j": 35
+      },
+      {
+        "4j_Ds_over_Lambda_Y": "193552834411008/191012439525625",
+        "j": 36
+      }
+    ],
+    "all_N_match_claim": true,
+    "claimed_N": "N=-2(2j+1)",
+    "family": "p=(1,0,0), q=(j,j,0), k=p+q; u_p=e2, u_q=j^{-1/2}e3, u_k=i j^{-1/2}e3",
+    "fx_ingredients": [
+      {
+        "D_s": "35120/11",
+        "L4_fourth": "24947/8",
+        "Lambda": "387/11",
+        "X": "77/2",
+        "Y": "2709/2",
+        "g_lb_sq": "77/2",
+        "g_ub_sixth": "1920919/16",
+        "j": 4,
+        "note": "F_X=2(Cs g sqrt(Lambda)-nu Lambda)_+ is a proved implication, not a paid budget. Atlas can plot F_X(Cs,nu) from these ingredients."
+      },
+      {
+        "D_s": "2809935/44",
+        "L4_fourth": "360548/27",
+        "Lambda": "29507/176",
+        "X": "704/9",
+        "Y": "118028/9",
+        "g_lb_sq": "704/9",
+        "g_ub_sixth": "253825792/243",
+        "j": 9,
+        "note": "F_X=2(Cs g sqrt(Lambda)-nu Lambda)_+ is a proved implication, not a paid budget. Atlas can plot F_X(Cs,nu) from these ingredients."
+      },
+      {
+        "D_s": "627942464/1073",
+        "L4_fourth": "5092355/128",
+        "Lambda": "559185/1073",
+        "X": "1073/8",
+        "Y": "559185/8",
+        "g_lb_sq": "1073/8",
+        "g_ub_sixth": "5464096915/1024",
+        "j": 16,
+        "note": "F_X=2(Cs g sqrt(Lambda)-nu Lambda)_+ is a proved implication, not a paid budget. Atlas can plot F_X(Cs,nu) from these ingredients."
+      },
+      {
+        "D_s": "154210225/46",
+        "L4_fourth": "59064556/625",
+        "Lambda": "232509/184",
+        "X": "5152/25",
+        "Y": "6510252/25",
+        "g_lb_sq": "5152/25",
+        "g_ub_sixth": "304300592512/15625",
+        "j": 25,
+        "note": "F_X=2(Cs g sqrt(Lambda)-nu Lambda)_+ is a proved implication, not a paid budget. Atlas can plot F_X(Cs,nu) from these ingredients."
+      },
+      {
+        "D_s": "74673161424/5293",
+        "L4_fourth": "41701585/216",
+        "Lambda": "13820725/5293",
+        "X": "5293/18",
+        "Y": "13820725/18",
+        "g_lb_sq": "5293/18",
+        "g_ub_sixth": "220726489405/3888",
+        "j": 36,
+        "note": "F_X=2(Cs g sqrt(Lambda)-nu Lambda)_+ is a proved implication, not a paid budget. Atlas can plot F_X(Cs,nu) from these ingredients."
+      }
+    ],
+    "square_j_rows": [
+      {
+        "D_s": "35120/11",
+        "Ds_over_Lambda_Y": "70240/1048383",
+        "Lambda": "387/11",
+        "Lambda_N_over_sqrt_YDs": "31347/338030",
+        "N": "-18",
+        "N_matches_claim": true,
+        "Q_lb_display": 0.04660557708577388,
+        "Q_ub_display": 0.05275606201433306,
+        "T_c": "-7488/11",
+        "claimed_N": "-18",
+        "claimed_lead": "1/16",
+        "identities_ok": true,
+        "j": 4
+      },
+      {
+        "D_s": "2809935/44",
+        "Ds_over_Lambda_Y": "25289415/870663049",
+        "Lambda": "29507/176",
+        "Lambda_N_over_sqrt_YDs": "10652027/219799360",
+        "N": "-38",
+        "N_matches_claim": true,
+        "Q_lb_display": 0.022857721801727442,
+        "Q_ub_display": 0.02603291381230401,
+        "T_c": "-586359/88",
+        "claimed_N": "-38",
+        "claimed_lead": "1/36",
+        "identities_ok": true,
+        "j": 9
+      },
+      {
+        "D_s": "627942464/1073",
+        "Ds_over_Lambda_Y": "5023539712/312687864225",
+        "Lambda": "559185/1073",
+        "Lambda_N_over_sqrt_YDs": "608952465/21055695746",
+        "N": "-66",
+        "N_matches_claim": true,
+        "Q_lb_display": 0.013228117061614884,
+        "Q_ub_display": 0.015098932196870451,
+        "T_c": "-37948416/1073",
+        "claimed_N": "-66",
+        "claimed_lead": "1/64",
+        "identities_ok": true,
+        "j": 16
+      },
+      {
+        "D_s": "154210225/46",
+        "Ds_over_Lambda_Y": "3855255625/378423045567",
+        "Lambda": "232509/184",
+        "Lambda_N_over_sqrt_YDs": "604755909/31779643168",
+        "N": "-102",
+        "N_matches_claim": true,
+        "Q_lb_display": 0.008568034680046164,
+        "Q_ub_display": 0.009789873681981353,
+        "T_c": "-12080625/92",
+        "claimed_N": "-102",
+        "claimed_lead": "1/100",
+        "identities_ok": true,
+        "j": 25
+      },
+      {
+        "D_s": "74673161424/5293",
+        "Ds_over_Lambda_Y": "1344116905632/191012439525625",
+        "Lambda": "13820725/5293",
+        "Lambda_N_over_sqrt_YDs": "73650643525/5489514491906",
+        "N": "-146",
+        "N_matches_claim": true,
+        "Q_lb_display": 0.005986951557447781,
+        "Q_ub_display": 0.006844563384281408,
+        "T_c": "-2044668096/5293",
+        "claimed_N": "-146",
+        "claimed_lead": "1/144",
+        "identities_ok": true,
+        "j": 36
+      }
+    ],
+    "status": "six-mode identities only; finite C is the smooth-split theorem, not this family. Time budget remains OPEN."
+  },
+  "small_case": {
+    "candidate": "|T_c| <= C ||\u2207u||_3 sqrt(Y D_s)",
+    "cases": [
+      {
+        "D_s": "27000/19",
+        "E": "174/5",
+        "Q_lb_display": 0.029190080869754886,
+        "Q_lb_sixth": "5808821494140625/9390230256296107865751552",
+        "Q_ub_display": 0.03271050547442007,
+        "Q_ub_sq": "21025/19649952",
+        "T_c": "-14500/19",
+        "X": "228",
+        "Y": "1680",
+        "family": "near_shell_triads",
+        "identities_ok": true,
+        "name": "eps=1/1/phase0",
+        "note": "several shell-5 triads closing onto shell 10",
+        "vacuous": false
+      },
+      {
+        "D_s": "27000/49",
+        "E": "267/10",
+        "Q_lb_display": 0.04936425939214726,
+        "Q_lb_sixth": "4853332919541015625/335400981322346774414336736",
+        "Q_ub_display": 0.05409184557855087,
+        "Q_ub_sq": "198025/67679388",
+        "T_c": "-22250/49",
+        "X": "147",
+        "Y": "870",
+        "family": "near_shell_triads",
+        "identities_ok": true,
+        "name": "eps=1/2/phase0",
+        "note": "several shell-5 triads closing onto shell 10",
+        "vacuous": false
+      },
+      {
+        "D_s": "27000/169",
+        "E": "987/40",
+        "Q_lb_display": 0.06150298788520807,
+        "Q_lb_sixth": "24768826254717207031250/457644384635120675622889436619",
+        "Q_ub_display": 0.06618827422358067,
+        "Q_ub_sq": "2706025/617688747",
+        "T_c": "-41125/169",
+        "X": "507/4",
+        "Y": "1335/2",
+        "family": "near_shell_triads",
+        "identities_ok": true,
+        "name": "eps=1/4/phase0",
+        "note": "several shell-5 triads closing onto shell 10",
+        "vacuous": false
+      },
+      {
+        "D_s": "27000/649",
+        "E": "3867/160",
+        "Q_lb_display": 0.065713114690244,
+        "Q_lb_sixth": "5733601659068654701250000000/71205772456379097219601696072867803",
+        "Q_ub_display": 0.0702436604304167,
+        "Q_ub_sq": "166152100/33673756347",
+        "T_c": "-161125/1298",
+        "X": "1947/16",
+        "Y": "4935/8",
+        "family": "near_shell_triads",
+        "identities_ok": true,
+        "name": "eps=1/8/phase0",
+        "note": "several shell-5 triads closing onto shell 10",
+        "vacuous": false
+      },
+      {
+        "D_s": "18868858/111",
+        "E": "1136/37",
+        "Q_lb_display": 0.02011061903426374,
+        "Q_lb_sixth": "5871197436063455519776026655284574289651769/88751162616459967252367920864097442141342537396234098",
+        "Q_ub_display": 0.022277940509016207,
+        "Q_ub_sq": "86728411470481/174747637140668927",
+        "T_c": "74502472/1369",
+        "X": "888",
+        "Y": "39532",
+        "family": "separated_amplitudes",
+        "identities_ok": true,
+        "name": "high_amp=1",
+        "note": "shells 1\u20132 vs 36\u201372 plus HL cross outputs",
+        "vacuous": false
+      },
+      {
+        "D_s": "7495001/267",
+        "E": "3343/296",
+        "Q_lb_display": 0.013895027470100912,
+        "Q_lb_sixth": "130822200402084271558098630345726492326969472/18177116529112514131053983752954264416551536579913145619",
+        "Q_ub_display": 0.015482170982850006,
+        "Q_ub_sq": "193702985669284/808113935419855607",
+        "T_c": "6958861/6586",
+        "X": "267/4",
+        "Y": "9943/4",
+        "family": "separated_amplitudes",
+        "identities_ok": true,
+        "name": "high_amp=1/4",
+        "note": "shells 1\u20132 vs 36\u201372 plus HL cross outputs",
+        "vacuous": false
+      },
+      {
+        "D_s": "8345969096/3507",
+        "E": "12626/37",
+        "Q_lb_display": 0.02161457564172662,
+        "Q_lb_sixth": "1533844375163790433106478937051522557421356559082805855780864/15041841818043217029909412049132335028304346410624885186615094249004813",
+        "Q_ub_display": 0.023886353439908525,
+        "Q_ub_sq": "44005091765773753472/77126428812377619800461",
+        "T_c": "150101988608/43253",
+        "X": "14028",
+        "Y": "632272",
+        "family": "separated_amplitudes",
+        "identities_ok": true,
+        "name": "high_amp=4",
+        "note": "shells 1\u20132 vs 36\u201372 plus HL cross outputs",
+        "vacuous": false
+      },
+      {
+        "D_s": "89707901/15792",
+        "E": "47743/4736",
+        "Q_lb_display": 0.013292098296505015,
+        "Q_lb_sixth": "486444513646810415775238167585858554378507933731968/88200702444567031391936498378235853142806039352928047818937191",
+        "Q_ub_display": 0.014389338364941823,
+        "Q_ub_sq": "30009143584212676/144934558271709379187",
+        "T_c": "86615737/1558144",
+        "X": "987/64",
+        "Y": "10903/64",
+        "family": "separated_amplitudes",
+        "identities_ok": true,
+        "name": "high_amp=1/16",
+        "note": "shells 1\u20132 vs 36\u201372 plus HL cross outputs",
+        "vacuous": false
+      },
+      {
+        "D_s": "264/5",
+        "E": "56",
+        "Q_lb_display": 0.0407181151481661,
+        "Q_lb_sixth": "122978496247489/26983804465275863040000",
+        "Q_ub_display": 0.04402199976601956,
+        "Q_ub_sq": "49729/25660800",
+        "T_c": "892/15",
+        "X": "120",
+        "Y": "288",
+        "family": "dense_box_packet",
+        "identities_ok": true,
+        "name": "width=1",
+        "note": "3\u00d73\u00d73 minus origin, common phase i (helical lock cancels)",
+        "vacuous": false
+      },
+      {
+        "D_s": "301208/63",
+        "E": "2704/99",
+        "Q_lb_display": 0.010360157672497733,
+        "Q_lb_sixth": "16788941560356805916179113443459072/13577666187509681696859627728470688160184316631",
+        "Q_ub_display": 0.012224454131308285,
+        "Q_ub_sq": "161307456032/1079432503845003",
+        "T_c": "4543936/6237",
+        "X": "252",
+        "Y": "2948",
+        "family": "dense_affine_packet",
+        "identities_ok": true,
+        "name": "n=2/sat=1",
+        "note": "coordinated P/Q packet with occupied cross outputs",
+        "vacuous": false
+      },
+      {
+        "D_s": "38177/42",
+        "E": "1823/198",
+        "Q_lb_display": 0.09559376939004632,
+        "Q_lb_sixth": "766325735750703713943549583879103236/1004236241265855379241723927634324217798473",
+        "Q_ub_display": 0.10919507177489547,
+        "Q_ub_sq": "576480303169/48347987034501",
+        "T_c": "759263/2079",
+        "X": "42",
+        "Y": "293",
+        "family": "dense_affine_packet",
+        "identities_ok": true,
+        "name": "n=2/sat=1/4",
+        "note": "coordinated P/Q packet with occupied cross outputs",
+        "vacuous": false
+      },
+      {
+        "D_s": "3090680/97",
+        "E": "161336/5643",
+        "Q_lb_display": 0.010121677327137845,
+        "Q_lb_sixth": "1498524381695247020661381362082441106668564736000/1393634486093661666838302035665650714331333089068542633718733",
+        "Q_ub_display": 0.012805386118955861,
+        "Q_ub_sq": "7208882398070440/43962520545379314153",
+        "T_c": "2147948960/547371",
+        "X": "388",
+        "Y": "7596",
+        "family": "dense_affine_packet",
+        "identities_ok": true,
+        "name": "n=3/sat=1/2",
+        "note": "coordinated P/Q packet with occupied cross outputs",
+        "vacuous": false
+      }
+    ],
+    "identities_verified": true,
+    "identity_failures": [],
+    "kill_claim": "none \u2014 existence of C is the smooth-split theorem; this board is sharpness / identities only",
+    "max_Q_lb_display": 0.09559376939004632,
+    "max_Q_ub_display": 0.10919507177489547,
+    "nabla_u_3": "certified L2 lower / Riesz\u2013Thorin L4 interpolation upper; sampled quadrature is not used and cannot certify a counterexample",
+    "near_shell_obstruction": [
+      {
+        "D_s": "27000/19",
+        "E": "174/5",
+        "Q_lb_display": 0.029190080869754886,
+        "Q_lb_sixth": "5808821494140625/9390230256296107865751552",
+        "Q_ub_display": 0.03271050547442007,
+        "Q_ub_sq": "21025/19649952",
+        "T_c": "-14500/19",
+        "T_c_sq_over_D_s": "210250/513",
+        "T_c_sq_over_D_s_sq": "841/2916",
+        "X": "228",
+        "Y": "1680",
+        "eps": "1",
+        "family": "near_shell_obstruction",
+        "identities_ok": true,
+        "name": "eps=1/1",
+        "note": "motivates sqrt(D_s); does not prove the candidate",
+        "two_shell_D_s_check": "27000/19",
+        "vacuous": false
+      },
+      {
+        "D_s": "27000/49",
+        "E": "267/10",
+        "Q_lb_display": 0.04936425939214726,
+        "Q_lb_sixth": "4853332919541015625/335400981322346774414336736",
+        "Q_ub_display": 0.05409184557855087,
+        "Q_ub_sq": "198025/67679388",
+        "T_c": "-22250/49",
+        "T_c_sq_over_D_s": "990125/2646",
+        "T_c_sq_over_D_s_sq": "7921/11664",
+        "X": "147",
+        "Y": "870",
+        "eps": "1/2",
+        "family": "near_shell_obstruction",
+        "identities_ok": true,
+        "name": "eps=1/2",
+        "note": "motivates sqrt(D_s); does not prove the candidate",
+        "two_shell_D_s_check": "27000/49",
+        "vacuous": false
+      },
+      {
+        "D_s": "27000/169",
+        "E": "987/40",
+        "Q_lb_display": 0.06150298788520807,
+        "Q_lb_sixth": "24768826254717207031250/457644384635120675622889436619",
+        "Q_ub_display": 0.06618827422358067,
+        "Q_ub_sq": "2706025/617688747",
+        "T_c": "-41125/169",
+        "T_c_sq_over_D_s": "13530125/36504",
+        "T_c_sq_over_D_s_sq": "108241/46656",
+        "X": "507/4",
+        "Y": "1335/2",
+        "eps": "1/4",
+        "family": "near_shell_obstruction",
+        "identities_ok": true,
+        "name": "eps=1/4",
+        "note": "motivates sqrt(D_s); does not prove the candidate",
+        "two_shell_D_s_check": "27000/169",
+        "vacuous": false
+      },
+      {
+        "D_s": "27000/649",
+        "E": "3867/160",
+        "Q_lb_display": 0.065713114690244,
+        "Q_lb_sixth": "5733601659068654701250000000/71205772456379097219601696072867803",
+        "Q_ub_display": 0.0702436604304167,
+        "Q_ub_sq": "166152100/33673756347",
+        "T_c": "-161125/1298",
+        "T_c_sq_over_D_s": "207690125/560736",
+        "T_c_sq_over_D_s_sq": "1661521/186624",
+        "X": "1947/16",
+        "Y": "4935/8",
+        "eps": "1/8",
+        "family": "near_shell_obstruction",
+        "identities_ok": true,
+        "name": "eps=1/8",
+        "note": "motivates sqrt(D_s); does not prove the candidate",
+        "two_shell_D_s_check": "27000/649",
+        "vacuous": false
+      },
+      {
+        "D_s": "27000/2569",
+        "E": "15387/640",
+        "Q_lb_display": 0.0668705971899581,
+        "Q_lb_sixth": "1456418481590415850617680000000000/16288270430129147586955007324097324813339",
+        "Q_ub_display": 0.07134589576300995,
+        "Q_ub_sq": "10522656400/2067223338747",
+        "T_c": "-641125/10276",
+        "T_c_sq_over_D_s": "3288330125/8878464",
+        "T_c_sq_over_D_s_sq": "26306641/746496",
+        "X": "7707/64",
+        "Y": "19335/32",
+        "eps": "1/16",
+        "family": "near_shell_obstruction",
+        "identities_ok": true,
+        "name": "eps=1/16",
+        "note": "motivates sqrt(D_s); does not prove the candidate",
+        "two_shell_D_s_check": "27000/2569",
+        "vacuous": false
+      }
+    ],
+    "status": "FINITE C PROVED (smooth split, 2 Oct 2026); time budget OPEN; NSE regularity NOT established",
+    "time_budget": "OPEN \u2014 not a consequence of finite C alone",
+    "uniform_inequality": "PROVED (smooth split; existence of finite C, not an optimized decimal)"
+  },
+  "status": "FINITE C PROVED (smooth split, fixed 2pi torus, instantaneous); time budget OPEN; NSE regularity NOT established",
+  "theorem": "|Lambda N| <= (4+6 Mmult) Cs g sqrt(Y Ds); |Tc| <= (7+6 Mmult) Cs g sqrt(Y Ds)",
+  "time_budget": "OPEN \u2014 (log Lambda)' <= C^2 g^2 / (2 nu) is not a paid integral of g^2"
+}

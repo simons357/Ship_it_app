@@ -12,6 +12,7 @@ Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS p
 
 **Do not conflate** with Lemma★ PRODUCT-BLOCK packaging.
 
-## Square-root candidate (UNPROVED)
+## Centered square-root estimate (finite \(C\) proved; budget OPEN)
 
-- [`SQRT-ESTIMATE-SMALL-CASE.md`](./SQRT-ESTIMATE-SMALL-CASE.md) — small-case attack on \(|T_c|\le C\|\nabla u\|_3\sqrt{YD_s}\). Exact Fourier identities for \(T_c,Y,D_s\); certified \(\|\nabla u\|_3\) bounds, no sampled quadrature. The near-shell obstruction motivates the square-root and does not establish it. Uniform inequality and time budget remain separate.
+- [`SMOOTH-SPLIT-CENTERED-CONSTANT.md`](./SMOOTH-SPLIT-CENTERED-CONSTANT.md) — 2 Oct 2026 smooth-split derivation of \(|T_c|\le(7+6M_{\mathrm{mult}})C_s g\sqrt{YD_s}\) on finite Fourier fields on the fixed \(2\pi\) torus. Instantaneous; time budget and NSE regularity remain open.
+- [`SQRT-ESTIMATE-SMALL-CASE.md`](./SQRT-ESTIMATE-SMALL-CASE.md) — identity / sharpness board (exact \(T_c,Y,D_s\); certified \(\|\nabla u\|_3\) bounds; six-mode family). Not a regularity proof.

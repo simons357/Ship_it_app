@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
-"""Small-case attack on the unproved square-root candidate
+"""Small-case identity / sharpness board for the centered square-root estimate
 
     |T_c|  ≤  C  ||∇u||_3  √(Y D_s).
+
+Finite C is the 2 Oct 2026 smooth-split theorem
+(docs/ns-review/SMOOTH-SPLIT-CENTERED-CONSTANT.md).  This script does not
+re-prove that theorem.
 
 What a successful run certifies
 -------------------------------
@@ -10,12 +14,9 @@ What a successful run certifies
 
 What a successful run does *not* certify
 ----------------------------------------
-* The uniform inequality (existence of a finite C for all fields).
+* A numerical value of C_s or M_mult.
 * Any time-budget / occupation integral that would feed a Gronwall close.
 * Lemma★ / PRODUCT-BLOCK / Navier–Stokes regularity.
-
-The exact near-shell obstruction (T_c / D_s blows while T_c / √D_s stays
-finite) motivates the square-root, and does not establish it.
 """
 
 from __future__ import annotations
@@ -52,7 +53,10 @@ from ns_attacks.exact_fourier import (  # noqa: E402
 )
 
 CANDIDATE = "|T_c| <= C ||∇u||_3 sqrt(Y D_s)"
-STATUS = "UNPROVED CANDIDATE"
+STATUS = (
+    "FINITE C PROVED (smooth split, 2 Oct 2026); "
+    "time budget OPEN; NSE regularity NOT established"
+)
 
 
 def _int_vec(k: KVec) -> Vec3:
@@ -350,8 +354,10 @@ def run_board() -> Dict:
         "status": STATUS,
         "identities_verified": identities_ok,
         "identity_failures": identity_failures,
-        "uniform_inequality": "SEPARATE PROOF OBLIGATION",
-        "time_budget": "SEPARATE PROOF OBLIGATION",
+        "uniform_inequality": (
+            "PROVED (smooth split; existence of finite C, not an optimized decimal)"
+        ),
+        "time_budget": "OPEN — not a consequence of finite C alone",
         "nabla_u_3": (
             "certified L2 lower / Riesz–Thorin L4 interpolation upper; "
             "sampled quadrature is not used and cannot certify a counterexample"
@@ -359,8 +365,8 @@ def run_board() -> Dict:
         "max_Q_lb_display": max_Q_lb,
         "max_Q_ub_display": max_Q_ub,
         "kill_claim": (
-            "none — finite certified Q_lb on a finite board does not kill "
-            "the candidate; a kill requires Q_lb → ∞ along a family"
+            "none — existence of C is the smooth-split theorem; "
+            "this board is sharpness / identities only"
         ),
         "cases": rows,
         "near_shell_obstruction": obstruction,
@@ -388,7 +394,7 @@ def _print_table(payload: Dict) -> None:
             f"{rec['T_c']:>16} {qlb:>10} {qub:>10}"
         )
     print()
-    print("Near-shell obstruction (motivates √D_s; does not prove the candidate):")
+    print("Near-shell obstruction (motivates √D_s; finiteness is the smooth-split theorem):")
     for rec in payload["near_shell_obstruction"]:
         print(
             f"  {rec['name']}: T_c^2/D_s={rec['T_c_sq_over_D_s']}  "

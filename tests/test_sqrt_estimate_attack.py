@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Exact identities and small-case board for the unproved square-root candidate.
+"""Exact identities and sharpness board for the centered square-root estimate.
 
 A passing suite certifies the tested Fourier identities and the certified
-||∇u||_3 bookkeeping.  It does not prove the uniform estimate.
+||∇u||_3 bookkeeping.  Finite C is the smooth-split theorem, not this suite.
 """
 
 from __future__ import annotations
@@ -177,9 +177,9 @@ class TestFamiliesAndScript(unittest.TestCase):
     def test_board_and_cli_verify_identities_only(self):
         payload = run_board()
         self.assertTrue(payload["identities_verified"], payload["identity_failures"])
-        self.assertEqual(payload["status"], "UNPROVED CANDIDATE")
-        self.assertEqual(payload["uniform_inequality"], "SEPARATE PROOF OBLIGATION")
-        self.assertEqual(payload["time_budget"], "SEPARATE PROOF OBLIGATION")
+        self.assertIn("FINITE C PROVED", payload["status"])
+        self.assertIn("PROVED", payload["uniform_inequality"])
+        self.assertIn("OPEN", payload["time_budget"])
         families = {rec["family"] for rec in payload["cases"]}
         self.assertIn("near_shell_triads", families)
         self.assertIn("separated_amplitudes", families)

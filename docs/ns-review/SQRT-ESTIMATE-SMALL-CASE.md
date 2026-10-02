@@ -1,46 +1,41 @@
-# Square-root candidate — small-case attack
+# Square-root estimate — small-case board (sharpness)
 
-**Candidate (UNPROVED):**
+**Estimate (finite \(C\) proved, 2 Oct 2026):**
 
 \[
 |T_c|
 \le
-C\,\|\nabla u\|_3\sqrt{Y\,D_s}.
+C\,\|\nabla u\|_3\sqrt{Y\,D_s},
+\qquad
+C=(7+6M_{\mathrm{mult}})C_s.
 \]
 
-**Honesty lock.** The exact near-shell obstruction motivates the square-root
-in \(D_s\). It does **not** establish the estimate. A successful script run
-verifies the tested Fourier identities. The uniform inequality and its
-required time budget remain **separate proof obligations**. Lemma★ /
-PRODUCT-BLOCK / Navier–Stokes regularity are **not** closed here.
+Derivation: [`SMOOTH-SPLIT-CENTERED-CONSTANT.md`](./SMOOTH-SPLIT-CENTERED-CONSTANT.md).
 
-Code: `scripts/ns_attacks/exact_fourier.py`, `scripts/ns_attacks/sqrt_estimate_attack.py`.  
-Tests: `tests/test_sqrt_estimate_attack.py`.
+**Honesty lock.** This board verifies Fourier identities and records certified quotient intervals. It does **not** evaluate \(C_s\) or \(M_{\mathrm{mult}}\), does **not** pay the cutoff-uniform time budget, and does **not** prove Navier–Stokes regularity. A prior exact witness \(C>0.4\) remains a necessary lower bound; no optimized decimal \(C\) is claimed here.
+
+Code: `scripts/ns_attacks/exact_fourier.py`, `scripts/ns_attacks/sqrt_estimate_attack.py`, `scripts/ns_attacks/six_mode_family.py`.  
+Tests: `tests/test_sqrt_estimate_attack.py`, `tests/test_smooth_split_constant.py`.
 
 ---
 
-## What is certified, and what is not
+## What a green run certifies
 
-| Object | How | Status after a green run |
+| Object | How | Status |
 | --- | --- | --- |
-| \(Y=\sum\lambda_k^2\|v_k\|^2\) | exact \(Q\)-arithmetic on finite support | **identity** |
-| \(D_s=Z-Y^2/X\) and the two equivalent sums | exact, cross-checked | **identity** |
-| \(T_c=M-\Lambda N=\sum\lambda_k(\lambda_k-\Lambda)T_k\) | complete signed triad sum, never \(|\mathrm{Im}|\) | **identity** |
-| \(\sum_k T_k=0\) | energy conservation on mean-zero fields | **identity** |
+| \(Y,D_s,T_c=M-\Lambda N,\sum T_k=0\) | exact \(Q(i)\) Fourier arithmetic | **identity** |
 | \(\widehat{|\nabla u|^2}(0)=X\) | exact convolution | **identity** |
-| \(\|\nabla u\|_3\) | certified \(L^2\) lower / Riesz–Thorin \(L^4\) upper | **bounds**, not a value |
-| Quotient \(Q=\|T_c\|/(\|\nabla u\|_3\sqrt{YD_s})\) | \(Q_{\mathrm{lb}}\) from the \(L^3\) upper bound; \(Q_{\mathrm{ub}}\) from \(\|\nabla u\|_3\ge\sqrt{X}\) | **interval** |
-| \(\exists C<\infty\) for every field | — | **OPEN** |
-| Time budget / occupation integral | — | **OPEN** |
+| \(\|\nabla u\|_3\) interval | \(L^2\) lower / Riesz–Thorin \(L^4\) upper | **bounds** |
+| Quotient interval for sharpness | \(Q_{\mathrm{lb}}\) uses the \(L^3\) upper bound | **interval** |
+| Existence of finite \(C\) | smooth-split theorem | **proved** (not by this board) |
+| Time budget / \(\int g^2\) | — | **OPEN** |
+| Global NSE regularity | — | **NOT established** |
 
-Sampled physical-space quadrature **cannot** certify a counterexample:
-an uncertified \(\|\nabla u\|_3\) in the denominator does not produce a
-rigorous \(Q_{\mathrm{lb}}\). This board never uses a grid sample for
-\(\|\nabla u\|_3\).
+Sampled physical-space quadrature is not used for \(\|\nabla u\|_3\).
 
 ---
 
-## Near-shell obstruction (motivation only)
+## Near-shell obstruction (why \(\sqrt{D_s}\))
 
 On a main shell plus satellite amplitude \(\varepsilon\),
 
@@ -48,25 +43,18 @@ On a main shell plus satellite amplitude \(\varepsilon\),
 T_c\sim\varepsilon,\qquad D_s\sim\varepsilon^2,
 \]
 
-so \(T_c/D_s\) blows up while \(T_c/\sqrt{D_s}\) stays ordered. That kills a
-linear-in-\(D_s\) same-time bound and is why the square-root is the candidate.
-It is not a proof of any \(L^3\) estimate.
+so \(T_c/D_s\) blows up while \(T_c/\sqrt{D_s}\) stays ordered. That kills a linear-in-\(D_s\) same-time bound. The smooth split is what upgrades the motivation into a finite-\(C\) estimate.
 
 ---
 
-## Small-case priorities
+## Families (sharpness, not existence)
 
-1. **Nearly single-shell states with several interacting triads.**
-   Shell 5 parents with three independent closings onto shell 10.
-2. **Widely separated frequencies with varied amplitudes.**
-   Shells \(1\)–\(2\) versus \(36\)–\(72\), plus occupied HL cross outputs.
-3. **Dense packets with coordinated phases.**
-   Common-phase box packet (a helical \(i^{k_1+k_2+k_3}\) lock cancels
-   \(T_c\) on this box), and a P/Q affine packet with occupied cross
-   outputs (contributions added, not overwritten).
+1. Nearly single-shell states with several interacting triads (shell 5 → 10).
+2. Widely separated frequencies with varied amplitudes (shells 1–2 vs 36–72).
+3. Dense packets with coordinated phases (common-phase box; P/Q affine packet).
+4. DA six-mode family \(p=(1,0,0)\), \(q=(j,j,0)\), \(k=p+q\): \(N=-2(2j+1)\), \(D_s/(\Lambda Y)\sim 1/(4j)\), normalized \(\Lambda N\) quotient decreases with \(j\).
 
-Finite certified \(Q_{\mathrm{lb}}\) on this board is **not** a kill.
-A kill requires \(Q_{\mathrm{lb}}\to\infty\) along a family.
+Finite certified \(Q_{\mathrm{lb}}\) on this board is compatible with the theorem. It is not a kill and not an optimized \(C\).
 
 ---
 
@@ -74,18 +62,14 @@ A kill requires \(Q_{\mathrm{lb}}\to\infty\) along a family.
 
 ```bash
 python3 scripts/ns_attacks/sqrt_estimate_attack.py
-python3 -m unittest tests.test_sqrt_estimate_attack -v
+python3 scripts/ns_attacks/smooth_split_board.py
+python3 -m unittest tests.test_sqrt_estimate_attack tests.test_smooth_split_constant -v
 ```
-
-Display columns \(Q_{\mathrm{lb}}\sim\) / \(Q_{\mathrm{ub}}\sim\) are
-floating-point renderings of exact sixth / square powers. Comparisons
-in the tests stay in \(\mathbb{Q}\).
 
 ---
 
 ## Do not glue
 
 - Φ-renorm swirl algebra is a different book.
-- Lemma★ shape form \(\mathcal{R}_\star=(T_c)_+^2/(D_s\,E\,Y)\) is a
-  different quotient. This note does not green ★.
+- Lemma★ shape form \(\mathcal{R}_\star=(T_c)_+^2/(D_s\,E\,Y)\) is a different quotient.
 - Clay Statement B remains open.
