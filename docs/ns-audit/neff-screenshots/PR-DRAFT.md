@@ -1,7 +1,8 @@
 # Draft PR — \(N_{\mathrm{eff},j}\) screenshot archive
 
 **Branch:** `cursor/neff-screenshot-archive-c3ed` (from `main`)  
-**SHA:** `03dc991652c97d1637e41ab2970cbb4fe4a157a8`  
+**Archive commit:** `03dc991652c97d1637e41ab2970cbb4fe4a157a8` (images + AUDIT note)  
+**Branch tip:** see `git rev-parse origin/cursor/neff-screenshot-archive-c3ed`  
 **Related:** [PR #154](https://github.com/simons357/Ship_it_app/pull/154) (HH / \(N_{\mathrm{eff}}\) honesty audit — refuse Leray-gap overclaim)  
 **PR create:** `gh pr create` / ManagePullRequest returned **403** (`Resource not accessible by integration`). Open manually:  
 https://github.com/simons357/Ship_it_app/pull/new/cursor/neff-screenshot-archive-c3ed  
