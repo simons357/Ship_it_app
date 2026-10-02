@@ -615,6 +615,16 @@ blank; it is not a substitute
 for (17). The centered \(T_c\)
 criterion is a distinct OPEN
 route.
+The \(\lVert u\rVert_3\) form
+(`docs/L3-BUDGET-GATES.md`) is
+classical Hölder plus Sobolev
+at the LPS \(L^3\) endpoint.
+(L3-5) is (17) after that
+estimate. It is not weaker than
+Escauriaza–Seregin–Šverák and
+is not a new mechanism. Attack
+(L3-5), not the algebra of
+(L3-1).
 
 Signed Assembly Gate
 (`docs/SIGNED-ASSEMBLY-GATE.md`, 24 Sep)

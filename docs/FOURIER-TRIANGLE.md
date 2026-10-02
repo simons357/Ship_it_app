@@ -49,6 +49,9 @@ Lemma A stays unaltered:
 The first-variation sign gate stays
 frozen:
 [`STATIC-SIGN-REALIZABILITY.md`](STATIC-SIGN-REALIZABILITY.md).
+\(\lVert u\rVert_3\) three-gate
+score:
+[`L3-BUDGET-GATES.md`](L3-BUDGET-GATES.md).
 
 Four kinds of sentence, never mixed:
 
@@ -1035,4 +1038,9 @@ gate unaltered. ONE SIGN, if it
 appears, is the Gram / \(I_3\)
 bridge into dynamics — existence
 still does not supply amplitudes.
+\(\lVert u\rVert_3\) form:
+[`L3-BUDGET-GATES.md`](L3-BUDGET-GATES.md).
+(L3-1) classical. (L3-5) OPEN,
+equivalent to (17), not beyond
+ESS. No novelty.
 NS not solved.
