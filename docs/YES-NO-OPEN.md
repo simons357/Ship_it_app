@@ -105,7 +105,7 @@ stay samples. They are not this kill.
 | Lemma A / \(\Phi_e\le W_{\lambda_e}\) | Unit torus, \(m\ge 1\), \(\kappa\ge 1\). Sharp L3: \(\Phi_e\le\mathcal D_s+X(\Lambda-\lambda_e)^2\). Young L2 is weaker. [`PRESS.md`](PRESS.md). |
 | Discrete \(T_c\) expansion | \(T_c=\Lambda\langle\delta,T\rangle+\sum\delta_m^2 T_m\). Exact. \(T_m\) is the live neighboring transfer. [`SIGN-GATE.md`](SIGN-GATE.md). |
 | Finite-\(N\) BOTH SIGNS on neighboring helical triads | Printed on \(N=2,\dots,8\). \(\lvert\rho\rvert\ge 0.84\). \(\lvert R_2/L_1\rvert\) falls. Persistence OPEN. [`SIGN-RUN.md`](SIGN-RUN.md). |
-| Energy-class \(L^4_t L^3\) / Serrin index \(3/2\) | Ladyzhenskaya interpolation from \(L^\infty_t L^2\) and \(L^2_t L^6\). Owned. Not Serrin. [`U3-AUDIT.md`](U3-AUDIT.md). |
+| Energy-class \(L^4_t L^3\) / Serrin index \(3/2\) | Ladyzhenskaya interpolation from \(L^\infty_t L^2\) and \(L^2_t L^6\). Owned. Not Serrin. [`U3-DERIV.md`](U3-DERIV.md), [`U3-AUDIT.md`](U3-AUDIT.md). |
 
 ---
 
@@ -170,7 +170,7 @@ stay samples. They are not this kill.
 | RESET \(\lvert\Lambda-\lambda_e\rvert=c\sqrt{\Lambda}\) as a payment / as JGC | Named chart. \(\zeta_e^2=c^2\) is a choice, not BROAD-scale, not summability. [`PRESS.md`](PRESS.md). |
 | Lemma B / charge–epoch ledger as sitting | Charge is a different bill. \(D_s\) cannot pay \(D_a\) on a narrow annulus. Not written. [`PRESS.md`](PRESS.md). |
 | First-variation sign gate as a seated verdict / as a useful \(K\) | \(L_{1,N}\) is the gate. Finite-\(N\) BOTH SIGNS is printed. Persistence OPEN. Universal depletion is not killed. Do not invent a persistent \(\mathcal A_N^{+}\). [`SIGN-GATE.md`](SIGN-GATE.md), [`SIGN-RUN.md`](SIGN-RUN.md). |
-| \(\|u\|_3\) derivation as sitting / as beyond ESS / as a useful \(K\) | Not on this desk. Energy owns \(L^4_t L^3\). ESS is a criterion. PRESS L3 is \(\Phi_e\le W_{\lambda_e}\), not \(\|u\|_3\). [`U3-AUDIT.md`](U3-AUDIT.md). |
+| \(\|u\|_3\) derivation as sitting / as beyond ESS / as a useful \(K\) | Owned interpolation sits. NSE \(L^3\) remainder not paid. Not beyond ESS. Not a useful \(K\). PRESS L3 is \(\Phi_e\le W_{\lambda_e}\), not \(\|u\|_3\). [`U3-DERIV.md`](U3-DERIV.md), [`U3-AUDIT.md`](U3-AUDIT.md). |
 | Substituting \(T^{(0)}\) into the finite-gap identity | Transfer variation is the next order. Keep neighboring \(T_m\) as \(R_{2,N}\). [`SIGN-GATE.md`](SIGN-GATE.md). |
 | ONE SIGN as a seated \(I_3\) bridge | Named question only. Arithmetic rigidity is not sign depletion. [`SIGN-GATE.md`](SIGN-GATE.md). |
 | Switch this line to augmented NS / Theorem A | Track A is a different PDE. A is not B. |
@@ -274,7 +274,9 @@ Sign gate:
 [`SIGN-GATE.md`](SIGN-GATE.md).
 Finite-\(N\) run:
 [`SIGN-RUN.md`](SIGN-RUN.md).
-\(\|u\|_3\) audit:
+\(\|u\|_3\) derivation:
+[`U3-DERIV.md`](U3-DERIV.md).
+Audit:
 [`U3-AUDIT.md`](U3-AUDIT.md).
 
 SND-to-regularity implication is

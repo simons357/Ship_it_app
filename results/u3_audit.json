@@ -1,12 +1,18 @@
 {
   "not_a_close": true,
   "star_stays_killed": true,
-  "derivation_not_on_desk": true,
+  "derivation_on_desk": true,
+  "derivation_page": "docs/U3-DERIV.md",
+  "owned_interpolation_sits": true,
+  "nse_L3_identity_while_smooth": true,
+  "nse_L3_closed_cutoff_uniform": false,
+  "pressure_remainder_paid": false,
+  "galerkin_commutator_sits_as_obstruction": true,
   "press_L3_is_not_u3": true,
   "gates": {
-    "derivation": "cutoff-uniform, constants, no hidden higher norm. Not written.",
-    "regularity_value": "Serrin 2/p+3/q\u22641, q>3; ESS is L^\u221e_t L^3. Implication chain, not just algebra.",
-    "novelty": "exact inequality or algebraic reduction to energy / H_{1/2} / a known criterion."
+    "derivation": "(D1)-(D3) cutoff-uniform, named constants, no hidden higher norm. (D4) identity while smooth. Closed Galerkin pressure payment does not sit.",
+    "regularity_value": "Owned L^4_t L^3 index 3/2, or high piece L^2_t L^3 index 2. Neither weaker than Serrin in the useful direction. Not beyond ESS.",
+    "novelty": "(D1) Ladyzhenskaya interpolation. (D2) Sobolev+CS / \u039b-weighted H_{1/2}. (D4) standard L^p identity, closed for p>3, not p=3."
   },
   "serrin_line": "2/p + 3/q = 1, q>3",
   "ess": "L^\u221e_t L^3_x. Escauriaza\u2013Seregin\u2013\u0160ver\u00e1k, Uspekhi 2003. Criterion, not an a priori.",
@@ -14,6 +20,7 @@
   "energy_L2_L6_index": 1.5,
   "serrin_L4_L6_index": 1.0,
   "ess_index": 1.0,
+  "high_piece_L2_L3_index": 2.0,
   "finite_p_L3_index": {
     "2": 2.0,
     "3": 1.6666666666666665,
@@ -27,22 +34,39 @@
   "L2_L6_is_energy_floor": true,
   "L4_L6_is_Serrin": true,
   "finite_p_L3_is_supercritical": true,
+  "high_piece_L2_L3_is_supercritical": true,
   "H12_embeds_L3": true,
   "L3_embeds_H12": false,
   "SBP_charge_is_H12_flux": true,
   "u3_is_not_automatically_H12": true,
+  "D2cs_is_energy_interpolation": true,
+  "optimized_split_recovers_interpolation": true,
+  "cs_sharp_on_single_shell": true,
+  "L4_bound_formula_ok": true,
+  "optimized_split_sample": {
+    "kappa": 2.0,
+    "Lambda": 4.0,
+    "low": 2.8284271247461903,
+    "high": 2.82842712474619,
+    "scale": 2.8284271247461903,
+    "low_over_scale": 1.0,
+    "high_over_scale": 0.9999999999999999
+  },
   "interesting_outcome": "cutoff-uniform NSE budget on the growth-capable portion of L^3 without first assuming a Serrin/ESS quantity is finite",
+  "interesting_outcome_sits": false,
   "reformulation_if_implies_Serrin_or_ESS": true,
   "literature": {
     "Prodi_1959": "criterion",
     "Serrin_ARMA_1962": "criterion",
-    "Ladyzhenskaya": "criterion / uniqueness in Serrin class",
+    "Ladyzhenskaya": "interpolation / uniqueness in Serrin class. (D1).",
     "ESS_2003": "L^\u221e_t L^3 criterion. Not an a priori on X.",
     "Tao_2019": "quantitative ESS. Still assumes the L^3 bound.",
+    "Giga_1986": "local L^p, p>3.",
+    "Robinson_Sadowski_Silva_2014": "L^p identity closes for p>3, not p=3.",
     "energy_L4_L3": "Ladyzhenskaya interpolation from L^\u221e_t L^2 and L^2_t L^6. Owned.",
-    "exact_u3_budget_from_NSE": "not found as an a priori on this desk or as a seated theorem"
+    "exact_u3_budget_from_NSE_beyond_D1_D2": "not found as an a priori"
   },
-  "when_derivation_returns": "score implication chain, not only algebra",
+  "implication_chain": "I1-I7 on docs/U3-DERIV.md. Attack that, not only algebra.",
   "lemma_A_unaltered": true,
   "lemma_B_open": true,
   "sign_gate_unaltered": true,
@@ -55,9 +79,10 @@
   "sits_as_bprim": false,
   "sits_as_ess_a_priori": false,
   "sits_as_beyond_ess": false,
+  "sits_as_new_mechanism": false,
   "g4_stays_open": true,
   "do_not_invent_a_bridge": true,
   "do_not_run_taylor_green": true,
   "do_not_glue_to_leftover_1": true,
-  "do_not_invent_the_u3_inequality": true
+  "do_not_invent_a_new_mechanism": true
 }

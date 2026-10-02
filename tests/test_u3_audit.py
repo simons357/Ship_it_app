@@ -1,7 +1,8 @@
-"""||u||_3 derivation is not on the desk; three gates; not a useful K."""
+"""||u||_3 derivation sits as owned interpolation; three gates; not a useful K."""
 
 from __future__ import annotations
 
+import math
 import sys
 import unittest
 from pathlib import Path
@@ -9,9 +10,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from u3_audit import record, serrin_index  # noqa: E402
+from u3_audit import (  # noqa: E402
+    h12_cs,
+    interpolation_L4_bound,
+    optimized_split,
+    record,
+    serrin_index,
+    split_pieces,
+)
 
 PAGE = ROOT / "docs" / "U3-AUDIT.md"
+DERIV = ROOT / "docs" / "U3-DERIV.md"
 PRESS = ROOT / "docs" / "PRESS.md"
 SBP = ROOT / "docs" / "SBP.md"
 WIDTH = ROOT / "docs" / "WIDTH.md"
@@ -55,15 +64,36 @@ class U3AuditArithmeticTests(unittest.TestCase):
         self.assertAlmostEqual(serrin_index(4.0, 3.0), 1.5)
         self.assertAlmostEqual(serrin_index(None, 3.0), 1.0)
         self.assertAlmostEqual(serrin_index(4.0, 6.0), 1.0)
+        self.assertAlmostEqual(serrin_index(2.0, 3.0), 2.0)
         self.assertTrue(self.row["energy_L4_L3_owned_by_energy"])
         self.assertTrue(self.row["energy_L4_L3_is_not_Serrin"])
         self.assertTrue(self.row["ess_is_the_only_Serrin_L3"])
         self.assertTrue(self.row["finite_p_L3_is_supercritical"])
+        self.assertTrue(self.row["high_piece_L2_L3_is_supercritical"])
         self.assertTrue(self.row["H12_embeds_L3"])
         self.assertFalse(self.row["L3_embeds_H12"])
 
+    def test_derivation_algebra(self):
+        self.assertAlmostEqual(interpolation_L4_bound(2.0, 0.5, 1.0), 4.0)
+        self.assertAlmostEqual(h12_cs(2.0, 8.0), 4.0)
+        opt = optimized_split(4.0, 16.0, 1.0, 1.0)
+        self.assertAlmostEqual(opt["kappa"], 2.0)
+        self.assertAlmostEqual(opt["low_over_scale"], 1.0)
+        self.assertAlmostEqual(opt["high_over_scale"], 1.0)
+        pieces = split_pieces(4.0, 16.0, 4.0, 1.0, 1.0)
+        self.assertAlmostEqual(pieces["low"], 4.0)
+        self.assertAlmostEqual(pieces["high"], 2.0)
+        self.assertTrue(self.row["optimized_split_recovers_interpolation"])
+        self.assertTrue(self.row["cs_sharp_on_single_shell"])
+        self.assertTrue(self.row["L4_bound_formula_ok"])
+        self.assertAlmostEqual(math.sqrt(4.0 * 16.0), 8.0)
+
     def test_locks(self):
-        self.assertTrue(self.row["derivation_not_on_desk"])
+        self.assertTrue(self.row["derivation_on_desk"])
+        self.assertTrue(self.row["owned_interpolation_sits"])
+        self.assertFalse(self.row["nse_L3_closed_cutoff_uniform"])
+        self.assertFalse(self.row["pressure_remainder_paid"])
+        self.assertFalse(self.row["interesting_outcome_sits"])
         self.assertTrue(self.row["press_L3_is_not_u3"])
         self.assertTrue(self.row["lemma_A_unaltered"])
         self.assertTrue(self.row["lemma_B_open"])
@@ -71,8 +101,9 @@ class U3AuditArithmeticTests(unittest.TestCase):
         self.assertFalse(self.row["sits_as_g4_death"])
         self.assertFalse(self.row["sits_as_ess_a_priori"])
         self.assertFalse(self.row["sits_as_beyond_ess"])
+        self.assertFalse(self.row["sits_as_new_mechanism"])
         self.assertTrue(self.row["g4_stays_open"])
-        self.assertTrue(self.row["do_not_invent_the_u3_inequality"])
+        self.assertTrue(self.row["do_not_invent_a_new_mechanism"])
         self.assertTrue(self.row["do_not_invent_a_bridge"])
         self.assertTrue(self.row["do_not_run_taylor_green"])
         self.assertTrue(self.row["do_not_glue_to_leftover_1"])
@@ -83,10 +114,11 @@ class U3AuditPageTests(unittest.TestCase):
         raw = PAGE.read_text()
         text = _plain(PAGE)
         self.assertIn("Not a close", raw)
-        self.assertIn("is not on this desk", raw)
+        self.assertIn("U3-DERIV.md", raw)
+        self.assertIn("Owned interpolation sits", raw)
         self.assertIn("G4 stays", raw)
         self.assertIn("Do not start leftover 1", raw)
-        self.assertIn("Do not invent the inequality", raw)
+        self.assertIn("Do not invent a new mechanism", raw)
         self.assertIn("PRESS.md", raw)
         self.assertIn("SBP.md", raw)
         self.assertIn("Escauriaza", raw)
@@ -96,8 +128,24 @@ class U3AuditPageTests(unittest.TestCase):
         self.assertNotIn("9D is claimed", raw)
         self.assertNotIn("DA-NS-2 sits", raw)
         self.assertNotIn("the primitive is seated", text.lower())
-        self.assertNotIn("the derivation sits", text.lower())
         self.assertNotIn("ESS sits as an a priori", raw)
+        self.assertNotIn("new regularity mechanism sits", text.lower())
+
+    def test_deriv_page(self):
+        raw = DERIV.read_text()
+        text = _plain(DERIV)
+        self.assertIn("Not a close", raw)
+        self.assertIn("Implication chain", raw)
+        self.assertIn("D1", raw)
+        self.assertIn("D3hi", raw)
+        self.assertIn("Galerkin commutator", raw)
+        self.assertIn("growth-capable", raw)
+        self.assertIn("Escauriaza", raw)
+        self.assertIn("I6", raw)
+        self.assertNotIn("NS is solved", text)
+        self.assertNotIn("almost proved", text.lower())
+        self.assertNotIn("ESS sits as an a priori", raw)
+        self.assertIn("U3-AUDIT.md", raw)
 
     def test_not_the_abc_page(self):
         self.assertIn("ABC", ABC.read_text())
@@ -108,6 +156,9 @@ class U3AuditPageTests(unittest.TestCase):
         self.assertIn("U3-AUDIT.md", SIGN.read_text())
         self.assertIn("U3-AUDIT.md", RUN.read_text())
         self.assertIn("U3-AUDIT.md", CHAIN.read_text())
+        self.assertIn("U3-DERIV.md", CHAIN.read_text())
+        self.assertIn("U3-DERIV.md", TAPE.read_text())
+        self.assertIn("U3-DERIV.md", DRIFT.read_text())
         for path in (
             SBP,
             WIDTH,
@@ -134,6 +185,7 @@ class U3AuditPageTests(unittest.TestCase):
             PATHWISE,
         ):
             self.assertIn("U3-AUDIT.md", path.read_text(), msg=str(path))
+            self.assertIn("U3-DERIV.md", path.read_text(), msg=str(path))
 
 
 if __name__ == "__main__":

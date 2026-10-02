@@ -45,7 +45,9 @@ Sign gate:
 [`SIGN-GATE.md`](SIGN-GATE.md).
 Finite-\(N\) run:
 [`SIGN-RUN.md`](SIGN-RUN.md).
-\(\|u\|_3\) audit:
+\(\|u\|_3\) derivation:
+[`U3-DERIV.md`](U3-DERIV.md).
+Audit:
 [`U3-AUDIT.md`](U3-AUDIT.md).
 
 This desk is **unaugmented**.
@@ -261,10 +263,13 @@ Universal depletion is not
 killed.
 [`SIGN-RUN.md`](SIGN-RUN.md).
 The \(\|u\|_3\) derivation
-is not on this desk.
-Three gates. If it implies
-Serrin or ESS, it is a
+is owned interpolation.
+NSE \(L^3\) remainder not
+paid. Not beyond ESS.
+If it implies Serrin or
+ESS, it is a
 reformulation.
+[`U3-DERIV.md`](U3-DERIV.md),
 [`U3-AUDIT.md`](U3-AUDIT.md).
 
 Useful \(K\) or a named death.

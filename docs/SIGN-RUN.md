@@ -14,7 +14,9 @@ The gate (unaltered):
 [`SIGN-GATE.md`](SIGN-GATE.md).
 Lemma A (unaltered):
 [`PRESS.md`](PRESS.md).
-\(\|u\|_3\) audit:
+\(\|u\|_3\) derivation:
+[`U3-DERIV.md`](U3-DERIV.md).
+Audit:
 [`U3-AUDIT.md`](U3-AUDIT.md).
 Triangles:
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
