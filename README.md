@@ -20,6 +20,10 @@ python -m domain_architect --registry
 python -m unittest tests.test_domain_architect_acceptance tests.test_domain_architect_units
 ```
 
+## Claim ledger
+
+Governing July 23 claim ledger (communication baseline) and Sep 2 package companion: [`docs/CLAIM-LEDGER-README.md`](docs/CLAIM-LEDGER-README.md). **NS-11 / RH-11 NOT CLAIMED**; RH program not active yet.
+
 ## Harmonic Blueprint Experiment 01
 
 Cross-event spectral selection test on black-hole ringdown modes.
