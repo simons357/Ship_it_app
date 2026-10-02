@@ -394,3 +394,24 @@ are exact. Localized bump is not on this tree. No \(C\) is stamped.
 [`TC-L3-SQRT-YDS.md`](TC-L3-SQRT-YDS.md).
 This addendum does not alter the freeze above.
 DA-NS-2 stays **OPEN**. **NS not solved.**
+
+---
+
+## 2 October 2026 — smooth-split finite \(C\) (does not alter this freeze)
+
+Instantaneous estimate on finite Fourier fields:
+
+\[
+\lvert T_c\rvert
+\le
+(7+6M_{\mathrm{mult}})C_s\,g\sqrt{YD_s}.
+\]
+
+Written derivation:
+[`SMOOTH-SPLIT-CENTERED-CONSTANT.md`](SMOOTH-SPLIT-CENTERED-CONSTANT.md).
+Coefficient inequalities, six-mode \(N=-2(2j+1)\), and AM-GM
+packaging sit. No optimized decimal \(C\). Witness \(C>0.4\) is
+**REPORTED**, not recovered on seated families. The
+cutoff-uniform \(g^2\) / \(F_X\) budget stays **OPEN**.
+Unrestricted ★ stays **KILLED**. This addendum does not alter
+the freeze above. DA-NS-2 stays **OPEN**. **NS not solved.**

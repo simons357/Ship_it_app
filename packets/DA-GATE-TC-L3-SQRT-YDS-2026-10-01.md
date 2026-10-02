@@ -84,7 +84,9 @@ required time budget remain separate proof obligations.
 | \(v_n\) \(n=1..8\) | \(\sqrt{\mathcal R_\star}\) grows; new slot **falls**; cert upper \(0.018\to 0.006\) |
 | Localized bump | **not on this tree** |
 
-The candidate is **not proved**. The near-shell obstruction
-motivates it and does not establish it. Unrestricted ★ stays dead.
+The 1 Oct scoring record is **not** the existence proof. The
+near-shell obstruction motivates the square-root scale and does
+not establish the prefactor. See the 2 Oct smooth-split page for
+the written estimate. Unrestricted ★ stays dead.
 
 **NS not solved.**

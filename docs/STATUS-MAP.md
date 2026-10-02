@@ -61,11 +61,11 @@ certificate shape locked; computation on the reduced slice).
 (\(M\not\equiv 0\) on specimen 1; factorization did not land).
 1 Oct half-spread candidate:
 [`ns-recovery/TC-L3-SQRT-YDS.md`](ns-recovery/TC-L3-SQRT-YDS.md)
-(\(|T_c|\le C\|\nabla u\|_3\sqrt{YD_s}\), OPEN, not proved;
-near-shell obstructs linear-in-\(D_s\) and does not establish
-the bound; three-lane small-case sweep has no certified
-counterexample; \(v_n\) does not kill the new slot on the
-seated sample; unrestricted ★ stays dead).
+(\(|T_c|\le C\|\nabla u\|_3\sqrt{YD_s}\), 1 Oct scoring record;
+2 Oct smooth-split existence proof
+[`ns-recovery/SMOOTH-SPLIT-CENTERED-CONSTANT.md`](ns-recovery/SMOOTH-SPLIT-CENTERED-CONSTANT.md),
+\(C=(7+6M_{\mathrm{mult}})C_s\), not an optimized decimal;
+time budget **OPEN**; unrestricted ★ stays dead).
 QStack / Q6 / E8 stay instruments, not claims.
 Unrestricted Lemma★ stays killed on \(v_n\).
 Exact-shell \(K\le 16/9\) stays CLAIMED, not stamped.

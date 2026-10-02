@@ -35,13 +35,19 @@ C\,\|\nabla u\|_3\sqrt{YD_s}.
 \tag{\(\dagger\)}
 \]
 
-Status: **attack**. Not proved. No \(C\) is stamped. Homogeneous of
-degree 3, same as \(T_c(av)=a^3T_c(v)\). Inserting \((\dagger)\) into
-the centered equation is a different sentence from the equation.
+Status: the 1 Oct scoring below remains the attack record. On
+2 October the estimate is proved for finite Fourier fields by
+the smooth split:
+[`SMOOTH-SPLIT-CENTERED-CONSTANT.md`](SMOOTH-SPLIT-CENTERED-CONSTANT.md),
+with \(C=(7+6M_{\mathrm{mult}})C_s\). No optimized decimal \(C\).
+Homogeneous of degree 3, same as \(T_c(av)=a^3T_c(v)\). Inserting
+\((\dagger)\) into the centered equation is a different sentence
+from the equation.
 
-The near-shell obstruction **motivates** \((\dagger)\) and does not establish
-it. A successful script run verifies the tested identities. The uniform
-inequality and its time budget remain separate proof obligations.
+The near-shell obstruction **motivates** the \(\sqrt{D_s}\) power
+and does not establish the prefactor by itself. The 2 Oct
+derivation is the existence proof. The cutoff-uniform time budget
+remains a separate, **OPEN** obligation.
 
 Unrestricted ★ used \(\sqrt{D_sEY}\). The new factor replaces
 \(\sqrt{E}\) by \(\|\nabla u\|_3/\sqrt{Y}\). On a volume-1 torus
@@ -213,7 +219,8 @@ proof obligations.
 - Unrestricted ★: still **dead**.
 - New slot on \(v_n\) (n=1,2,4,8): **not growing**.
 - Largest seated ratio: note triad \(\approx 0.168\).
-- Uniform \(C\) on all divergence-free fields: **not proved**.
+- Uniform \(C\) on finite Fourier fields: **proved 2 Oct** (smooth
+  split; not an optimized decimal). Time budget still **OPEN**.
 - Localized bump: **not scored** (not on this tree).
 - DA-NS-2 / Need★ / \(K\in L^1_{\mathrm{loc}}\): still **OPEN**.
 - \(r\sim\kappa^{-1/2}\): **not stamped**.

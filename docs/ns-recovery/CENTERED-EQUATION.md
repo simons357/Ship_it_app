@@ -39,7 +39,7 @@ and \(D_s=Z-Y^2/X\), \(T_c=M-\Lambda N\), \(\Lambda=Y/X\).
 
 This is not (4). Inserting \(T_c\le C\sqrt{D_s EY}\) is a different sentence.
 Inserting \(\lvert T_c\rvert\le C\|\nabla u\|_3\sqrt{YD_s}\) is also a
-different sentence (1 Oct candidate; OPEN, not this identity).
+different sentence (2 Oct smooth-split estimate; not this identity).
 This is not Young. This is not Need★.
 
 Defs: [`../math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md`](../math/ns_attacks/LEMMA_STAR_EXACT_FORMULAS.md).
