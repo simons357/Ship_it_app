@@ -51,4 +51,9 @@ Audit of ~9 SuperGrok / ChatGPT / Base44 screenshots on spectral concentration, 
 
 ### Note on PR create
 
-If GitHub `gh pr create` returns 403 in this environment, paste this title/body manually (same pattern as α₊ depletion draft).
+`gh pr create` / `gh pr comment` returned **403** (`Resource not accessible by integration`) in this environment. ManagePullRequest tool was not available. Branch is pushed:
+
+- Compare: https://github.com/simons357/Ship_it_app/compare/main...cursor/hh-concentration-audit-4792  
+- New-PR URL: https://github.com/simons357/Ship_it_app/pull/new/cursor/hh-concentration-audit-4792  
+
+Paste this title/body manually. Optional: comment the honesty refuse on [PR #102](https://github.com/simons357/Ship_it_app/pull/102) (sibling audit; does not change C10/C7 ranking there).
