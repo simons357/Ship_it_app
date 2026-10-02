@@ -62,8 +62,10 @@ certificate shape locked; computation on the reduced slice).
 1 Oct half-spread candidate:
 [`ns-recovery/TC-L3-SQRT-YDS.md`](ns-recovery/TC-L3-SQRT-YDS.md)
 (\(|T_c|\le C\|\nabla u\|_3\sqrt{YD_s}\), OPEN, not proved;
-near-shell obstructs linear-in-\(D_s\); \(v_n\) does not kill
-the new slot on the seated sample; unrestricted ★ stays dead).
+near-shell obstructs linear-in-\(D_s\) and does not establish
+the bound; three-lane small-case sweep has no certified
+counterexample; \(v_n\) does not kill the new slot on the
+seated sample; unrestricted ★ stays dead).
 QStack / Q6 / E8 stay instruments, not claims.
 Unrestricted Lemma★ stays killed on \(v_n\).
 Exact-shell \(K\le 16/9\) stays CLAIMED, not stamped.

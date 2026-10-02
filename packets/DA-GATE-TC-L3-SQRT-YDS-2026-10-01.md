@@ -51,20 +51,40 @@ proof obligations.
 
 ---
 
+## Small-case attack — three lanes
+
+Exact Fourier arithmetic certifies \(T_c\), \(Y\), \(D_s\), and
+\(\|\nabla u\|_2=\sqrt{X}\). Sampled quadrature of
+\(\|\nabla u\|_3\) cannot certify a counterexample. The kill
+number is the certified lower bound; the “this field does not
+kill” number is the certified upper bound
+\(\lvert T_c\rvert/(\sqrt{X}\sqrt{YD_s})\).
+
+| Lane | Max cert lower | Max cert upper | Certified kill |
+|---|---:|---:|---|
+| Nearly single-shell, several triads | \(0.0888\) | \(0.0920\) | no |
+| Separated frequencies, varied amps | \(0.00516\) | \(0.00551\) | no |
+| Dense coordinated packets | \(0.0484\) | \(0.0533\) | no |
+
+Strongest small-case row: fat closer \((5,6)\). Note triad remains
+larger (\(0.166\le\cdot\le 0.175\)). No certified counterexample.
+A script run verifies identities. The uniform inequality and its
+required time budget remain separate proof obligations.
+
 ## On-tree score
 
 | Family | Verdict |
 |---|---|
 | Near-shell \((5,4)\) | \(T_c/D_s=\Theta(\varepsilon^{-1})\); new ratio \(\approx 0.042\), flat |
-| Note triad | ratio \(\approx 0.168\), cert \(0.166\le\cdot\le 0.175\) (largest seated) |
-| Fat near-shell \((9,10)\) | ratio \(\approx 0.046\) |
-| Clustered aligned triads | ratio \(\approx 0.049\) |
-| Separated, varied amps | ratios \(4\cdot10^{-4}\) to \(1.4\cdot10^{-3}\) |
+| Note triad | largest seated, cert \(0.166\le\cdot\le 0.175\) |
+| Fat closer \((5,6)\) | strongest small-case, cert \(0.089\le\cdot\le 0.092\) |
+| Clustered aligned triads | cert \(0.048\le\cdot\le 0.053\) |
+| Separated, varied amps | cert upper \(\le 0.0055\) |
 | Same-helicity box | \(T_c=0\) (Beltrami; not a kill) |
-| \(v_n\) \(n=1..8\) | \(\sqrt{\mathcal R_\star}\) grows; new ratio **falls** \(0.015\to 0.0039\) |
+| \(v_n\) \(n=1..8\) | \(\sqrt{\mathcal R_\star}\) grows; new slot **falls**; cert upper \(0.018\to 0.006\) |
 | Localized bump | **not on this tree** |
 
-The candidate is **not proved**. \(v_n\) does not kill the slot on
-the seated sample. Unrestricted ★ stays dead.
+The candidate is **not proved**. The near-shell obstruction
+motivates it and does not establish it. Unrestricted ★ stays dead.
 
 **NS not solved.**

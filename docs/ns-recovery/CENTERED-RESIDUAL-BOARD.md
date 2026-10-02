@@ -385,9 +385,12 @@ on \((5,4)\)). Unrestricted ★ stays **KILLED** on \(v_n\). The new
 slot does **not** grow on the seated \(v_n\) sample (it falls).
 Largest seated ratio is the note triad \(\approx 0.168\)
 (certified sandwich \(0.166\le\cdot\le 0.175\)).
-\(\|\nabla u\|_3\) quadrature cannot certify a kill; \(T_c,Y,D_s\)
-and \(\|\nabla u\|_2=\sqrt{X}\) are exact. Localized bump is not
-on this tree. No \(C\) is stamped.
+Small-case attack, three lanes, no certified counterexample:
+fat closer \((5,6)\) is the strongest small-case row
+(\(0.089\le\cdot\le 0.092\)); separated varied-amp and
+coordinated packets sit lower. \(\|\nabla u\|_3\) quadrature
+cannot certify a kill; \(T_c,Y,D_s\) and \(\|\nabla u\|_2=\sqrt{X}\)
+are exact. Localized bump is not on this tree. No \(C\) is stamped.
 [`TC-L3-SQRT-YDS.md`](TC-L3-SQRT-YDS.md).
 This addendum does not alter the freeze above.
 DA-NS-2 stays **OPEN**. **NS not solved.**

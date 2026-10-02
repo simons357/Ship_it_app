@@ -170,24 +170,39 @@ the layer concentrates the gradient, and \(L^3\) pays it.
 This is a sample, not \(n\to\infty\). The certified \(L^2\) upper
 on the ratio also falls (\(0.0178\to 0.0061\)). Do not stamp a \(C\).
 
-**Small-case attack (priority list).** Nearly single-shell with
-several triads; widely separated frequencies with varied
-amplitudes; dense packets with coordinated phases.
+**Small-case attack (priority list).** Three lanes. \(T_c\), \(Y\),
+\(D_s\), and \(\|\nabla u\|_2=\sqrt{X}\) are exact Fourier
+arithmetic. The displayed bounds are the certified sandwich.
+Quadrature is not used to claim a kill.
 
-| Field | \(T_c\) | quad ratio | cert lower | cert upper |
-|---|---:|---:|---:|---:|
-| fat near-shell \((9,10)\), \(\varepsilon=0.05\) | \(0.203\) | \(0.0463\) | \(0.0460\) | \(0.0474\) |
-| two-shell \((5,6)\), \(e_\beta=1/4\) | \(0.057\) | \(0.00449\) | \(0.00446\) | \(0.00459\) |
-| separated \(L=8\), amps \((1,0.1,1)\) | \(144\) | \(0.00140\) | \(0.00139\) | \(0.00149\) |
-| separated \(L=8\), amps \((1,4,0.25)\) | \(1.44\cdot10^3\) | \(0.00046\) | \(0.00046\) | \(0.00049\) |
-| separated \(L=16\), amps \((1,0.25,1)\) | \(2.89\cdot10^3\) | \(0.00079\) | \(0.00046\) | \(0.00086\) |
-| clustered aligned triads | \(363\) | \(0.0493\) | \(0.0484\) | \(0.0533\) |
-| same-helicity box (Beltrami) | \(0\) | \(0\) | \(0\) | \(0\) |
+1. Nearly single-shell states with several interacting triads.
+2. Widely separated frequencies with varied amplitudes.
+3. Dense packets with coordinated phases.
 
-None of these seated small cases exceed the note-triad sandwich.
-A same-helicity box is Beltrami: \(B(u,u)=0\), so \(T_c=0\). That
-is cancellation, not a kill. The live coordinated packet on this
-tree is the clustered aligned-triad bundle (and \(v_n\)).
+| Lane | Field | cert lower | cert upper |
+|---|---|---:|---:|
+| near-shell | fat closer \((5,6)\), \(\varepsilon=0.05\) | \(0.0888\) | \(0.0920\) |
+| near-shell | fat closer \((9,10)\), \(\varepsilon=0.05\) | \(0.0460\) | \(0.0474\) |
+| near-shell | two-shell \((5,6)\), \(e_\beta=0.1,0.25,0.5\) | \(\le 0.00519\) | \(\le 0.00534\) |
+| near-shell | two-shell \((9,10)\), \(e_\beta=0.25\) | \(0.00656\) | \(0.00677\) |
+| separated | \(L=4\), amps \((1,0.1,1)\) | \(0.00516\) | \(0.00551\) |
+| separated | \(L=4\), amps \((1,4,0.25)\) | \(0.00192\) | \(0.00205\) |
+| separated | \(L=8\), four amplitude mixes | \(\le 0.00139\) | \(\le 0.00149\) |
+| separated | \(L=16\), amps \((1,0.25,1)\) | \(0.00046\) | \(0.00086\) |
+| packet | clustered aligned triads | \(0.0484\) | \(0.0533\) |
+| packet | \(v_2\), \(v_4\) (coordinated layer) | \(\le 0.00942\) | \(\le 0.0123\) |
+| packet | same-helicity box (Beltrami) | \(0\) | \(0\) |
+
+No certified counterexample. The strongest small-case certified
+upper is fat \((5,6)\) at \(0.092\), still below the note-triad
+upper \(0.175\). A same-helicity box is Beltrami: \(B(u,u)=0\),
+so \(T_c=0\). That is cancellation, not a kill. The live
+coordinated packets on this tree are the clustered aligned-triad
+bundle and \(v_n\).
+
+A successful script run verifies the tested identities. The
+uniform inequality and its required time budget remain separate
+proof obligations.
 
 ---
 

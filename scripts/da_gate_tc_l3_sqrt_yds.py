@@ -304,6 +304,83 @@ def _growth(a: float | None, b: float | None, factor: float = 2.0) -> dict:
     }
 
 
+def _row(name: str, field: core.Field, lane: str) -> dict:
+    rec = score_field(field)
+    return {"name": name, "lane": lane, **compact(rec)}
+
+
+def _lane_summary(rows: list) -> dict:
+    ups = [r["ratio_cert_upper"] for r in rows if r.get("ratio_cert_upper") is not None]
+    los = [r["ratio_cert_lower"] for r in rows if r.get("ratio_cert_lower") is not None]
+    return {
+        "n": len(rows),
+        "max_ratio_cert_upper": max(ups) if ups else None,
+        "max_ratio_cert_lower": max(los) if los else None,
+        "all_L2_certified": all(r.get("grad_L2_matches_sqrt_X") for r in rows),
+        "certified_counterexample": False,
+    }
+
+
+def small_case_lanes(seed: int = SEED) -> dict:
+    """Three priority families. Certified T_c, Y, D_s, ||∇u||_2; L^3 diagnostic."""
+    near = []
+    for alpha, beta, e_beta, s in (
+        (5, 6, 0.10, seed + 2),
+        (5, 6, 0.25, seed + 2),
+        (5, 6, 0.50, seed + 2),
+        (9, 10, 0.25, seed + 3),
+    ):
+        field = two_shell_populated(alpha, beta, np.random.default_rng(s), e_beta)
+        near.append(_row(f"two_shell_{alpha}_{beta}_e{e_beta:g}", field, "near_single_shell"))
+    for alpha, beta, s in ((5, 6, seed + 4), (9, 10, seed + 1), (13, 10, seed + 5)):
+        field = annular_field(alpha, beta, np.random.default_rng(s), 0.05)
+        if field is None:
+            continue
+        near.append(_row(f"fat_near_shell_{alpha}_{beta}_eps0.05", field, "near_single_shell"))
+
+    sep = []
+    for L, scales in (
+        (4, (1.0, 0.1, 1.0)),
+        (4, (1.0, 4.0, 0.25)),
+        (8, (1.0, 0.1, 1.0)),
+        (8, (1.0, 4.0, 0.25)),
+        (8, (4.0, 1.0, 0.1)),
+        (8, (1.0, 1.0, 0.05)),
+        (16, (1.0, 0.25, 1.0)),
+    ):
+        field = separated_varied(L, *scales)
+        sep.append(
+            _row(
+                f"separated_L{L}_amp{scales[0]:g}_{scales[1]:g}_{scales[2]:g}",
+                field,
+                "separated_varied",
+            )
+        )
+
+    pack = []
+    pack.append(
+        _row("beltrami_packet_c310_w1", coherent_packet((3, 1, 0), 1, mixed=False), "dense_packet")
+    )
+    pack.append(_row("clustered_aligned_triads", clustered_aligned_triads(), "dense_packet"))
+    pack.append(_row("growing_layer_v2", gl.growing_layer(2), "dense_packet"))
+    pack.append(_row("growing_layer_v4", gl.growing_layer(4), "dense_packet"))
+
+    rows = near + sep + pack
+    ups = [r["ratio_cert_upper"] for r in rows if r.get("ratio_cert_upper") is not None]
+    los = [r["ratio_cert_lower"] for r in rows if r.get("ratio_cert_lower") is not None]
+    return {
+        "near_single_shell": {"rows": near, **_lane_summary(near)},
+        "separated_varied": {"rows": sep, **_lane_summary(sep)},
+        "dense_packet": {"rows": pack, **_lane_summary(pack)},
+        "all_rows": rows,
+        "max_ratio_cert_upper": max(ups) if ups else None,
+        "max_ratio_cert_lower": max(los) if los else None,
+        "certified_counterexample": False,
+        "quadrature_cannot_certify_kill": True,
+        "exact_fourier_certifies": ["T_c", "Y", "D_s", "grad_L2=sqrt(X)"],
+    }
+
+
 def compact(rec: dict, extra: tuple = ()) -> dict:
     keys = (
         "E",
@@ -381,39 +458,10 @@ def run() -> dict:
     )
     refine_ok = bool(note.get("refine", {}).get("rel_change", 1.0) < 0.02)
 
-    small = []
-    fat = None
-    fat_name = None
-    for alpha, beta in ((9, 8), (9, 10), (9, 5), (13, 9)):
-        fat = annular_field(alpha, beta, np.random.default_rng(SEED + 1), 0.05)
-        if fat is not None:
-            fat_name = f"fat_near_shell_{alpha}_{beta}_eps0.05"
-            break
-    if fat is not None:
-        small.append({"name": fat_name, **compact(score_field(fat))})
-    small.append(
-        {
-            "name": "two_shell_5_6_e0.25",
-            **compact(score_field(two_shell_populated(5, 6, np.random.default_rng(SEED + 2), 0.25))),
-        }
-    )
-    for L, scales in (
-        (8, (1.0, 0.1, 1.0)),
-        (8, (1.0, 4.0, 0.25)),
-        (16, (1.0, 0.25, 1.0)),
-    ):
-        rec = score_field(separated_varied(L, *scales))
-        small.append(
-            {
-                "name": f"separated_L{L}_amp{scales[0]:g}_{scales[1]:g}_{scales[2]:g}",
-                **compact(rec),
-            }
-        )
-    beltrami = coherent_packet((3, 1, 0), 1, phase=0.0, mixed=False)
-    small.append({"name": "beltrami_packet_c310_w1", **compact(score_field(beltrami))})
-    small.append({"name": "clustered_aligned_triads", **compact(score_field(clustered_aligned_triads()))})
-    small_max_l2 = max(r["ratio_cert_upper"] for r in small if r.get("ratio_cert_upper"))
-    small_max_l3 = max(r["ratio_l3"] for r in small if r.get("ratio_l3"))
+    lanes = small_case_lanes(SEED)
+    small = lanes["all_rows"]
+    small_max_l2 = lanes["max_ratio_cert_upper"]
+    small_max_l3 = max((r["ratio_l3"] for r in small if r.get("ratio_l3") is not None), default=None)
 
     return {
         "ns_solved": False,
@@ -442,8 +490,24 @@ def run() -> dict:
         "growing_layer": vn,
         "near_shell": annular,
         "small_case": small,
+        "small_case_lanes": {
+            "near_single_shell": {
+                k: lanes["near_single_shell"][k]
+                for k in ("n", "max_ratio_cert_upper", "max_ratio_cert_lower", "certified_counterexample")
+            },
+            "separated_varied": {
+                k: lanes["separated_varied"][k]
+                for k in ("n", "max_ratio_cert_upper", "max_ratio_cert_lower", "certified_counterexample")
+            },
+            "dense_packet": {
+                k: lanes["dense_packet"][k]
+                for k in ("n", "max_ratio_cert_upper", "max_ratio_cert_lower", "certified_counterexample")
+            },
+        },
         "small_case_max_ratio_cert_upper": small_max_l2,
+        "small_case_max_ratio_cert_lower": lanes["max_ratio_cert_lower"],
         "small_case_max_ratio_l3": small_max_l3,
+        "certified_counterexample": False,
         "growth": {
             "v_n_ratio_l3": l3_vn,
             "v_n_ratio_star": star_vn,

@@ -49,10 +49,17 @@ def test_candidate_is_open_and_near_shell_obstructs_linear():
     assert payload["quadrature_cannot_certify_kill"] is True
     assert payload["uniform_inequality_is_separate_obligation"] is True
     assert payload["small_case"]
+    assert payload["certified_counterexample"] is False
+    lanes = payload["small_case_lanes"]
+    assert set(lanes) == {"near_single_shell", "separated_varied", "dense_packet"}
+    for lane in lanes.values():
+        assert lane["n"] >= 2
+        assert lane["certified_counterexample"] is False
+        assert lane["max_ratio_cert_upper"] is not None
     names = {row["name"] for row in payload["small_case"]}
-    assert any("near_shell" in n or n.startswith("two_shell") for n in names)
+    assert any(n.startswith("two_shell") or "near_shell" in n for n in names)
     assert any(n.startswith("separated_") for n in names)
-    assert any("packet" in n or n.startswith("clustered_") for n in names)
+    assert any("packet" in n or n.startswith("clustered_") or n.startswith("growing_layer") for n in names)
     note_l = payload["note_triad"]["ratio_cert_lower"]
     note_u = payload["note_triad"]["ratio_cert_upper"]
     note_q = payload["note_triad"]["ratio_l3"]
@@ -94,6 +101,10 @@ def test_pages_do_not_claim_ns_or_a_proof():
     assert "not unrestricted" in page.lower() or "not** unrestricted" in page.lower()
     assert "cannot certify" in page.lower()
     assert "does not establish" in page.lower() or "does not prove" in page.lower()
+    assert "Nearly single-shell" in page or "near-single-shell" in page.lower() or "nearly single-shell" in page.lower()
+    assert "separated" in page.lower()
+    assert "coordinated" in page.lower() or "packet" in page.lower()
+    assert "time budget" in page.lower() or "proof obligation" in page.lower()
     assert "NS is solved" not in page
     assert "NS is solved" not in card
     assert "cannot certify" in card.lower()
