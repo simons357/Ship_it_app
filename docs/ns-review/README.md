@@ -11,3 +11,7 @@ Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS p
 **Open barrier (unchanged):** \(\|u^r/r\|_{L^\infty}\) uniform in \(\eps\) — equivalent to axisymmetric-with-swirl global regularity. Paper remains a conditional reduction. Clay is not closed.
 
 **Do not conflate** with Lemma★ PRODUCT-BLOCK packaging.
+
+## Centered flux / \(T_c\) candidates (OPEN)
+
+- [`TC-SQRT-YDS-2026-10-01.md`](./TC-SQRT-YDS-2026-10-01.md) — near-shell kills linear absorption; stated \(q=3\) dies on amplitude; \(\lvert T_c\rvert\le C\|\nabla u\|_3^2\sqrt{D_s}\) dies on a bump; the homogeneous candidate \(\lvert T_c\rvert\le C\|\nabla u\|_3\sqrt{YD_s}\) remains **OPEN**. Not a close.
