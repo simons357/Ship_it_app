@@ -1,0 +1,361 @@
+{
+  "title": "T_{j\u2190j} survivors HARD RUN",
+  "date": "2026-09-16",
+  "honesty": {
+    "ns_solved": false,
+    "clay_claimed": false,
+    "spectral_shift_is_lemma_star": false,
+    "numerics_are_depletion": false,
+    "forbidden_slots": [
+      "\\dot e_j",
+      "\\dot Z",
+      "\\dot Z_j",
+      "\\Lambda'"
+    ],
+    "do_not_revive": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5"
+    ]
+  },
+  "analytic_hard": {
+    "C10": {
+      "id": "C10",
+      "name": "noncircular_depletion_to_A",
+      "hard_verdict": "SURVIVES",
+      "strength": "PRINCIPAL_OPEN",
+      "weakening": "Every non-circular concrete sketch collapses onto C6 / C11 / C8-upgrade; no standalone depletion theorem seated. Door stays principal and empty.",
+      "forbidden_slots": [
+        "\\dot e_j",
+        "\\dot Z",
+        "\\dot Z_j",
+        "\\Lambda'"
+      ],
+      "drafts": [
+        {
+          "name": "smuggle_Zdot",
+          "claim": "(T)_+ \u2264 |\u017b_j| + \u03bd D_j  \u21d2 (A)",
+          "forbidden": true,
+          "slot": "\\dot Z_j",
+          "verdict": "REFUSED"
+        },
+        {
+          "name": "smuggle_Lambda",
+          "claim": "depletion from sign(\u039b') or |\u039b'| control",
+          "forbidden": true,
+          "slot": "\\Lambda'",
+          "verdict": "REFUSED"
+        },
+        {
+          "name": "smuggle_ej_dot",
+          "claim": "|T| \u2264 C|\u0117_j| \u21d2 depletion",
+          "forbidden": true,
+          "slot": "\\dot e_j",
+          "verdict": "REFUSED"
+        },
+        {
+          "name": "occupancy_alignment_samples",
+          "claim": "occupancy\u22481 + alignment\u22481/2 \u21d2 depletion \u21d2 (A)",
+          "forbidden": false,
+          "slot": null,
+          "verdict": "REFUSED_HONESTY",
+          "note": "samples \u2260 depletion; no K_max\u2192\u221e"
+        },
+        {
+          "name": "alpha_plus_integrable",
+          "claim": "\u222b(\u03b1_loc,j)_+ |\u03c9_j|^2 \u2264 \u03b8 \u03bd P_j + R_E,Z  \u21d2 (A)",
+          "forbidden": false,
+          "slot": null,
+          "verdict": "COLLAPSES_TO_C6",
+          "note": "\u03b1_+ control is exactly Door-3; not seated unaugmented"
+        },
+        {
+          "name": "Tmm_structure_axisym",
+          "claim": "|T^mm| \u2264 \u03b8 \u03bd P_j + R_geom under SO(2) \u21d2 (A) on axisym face",
+          "forbidden": false,
+          "slot": null,
+          "verdict": "COLLAPSES_TO_C11",
+          "note": "axisym-conditional; T^mm bulk still uncontrolled"
+        },
+        {
+          "name": "near_shell_cancel_to_depletion",
+          "claim": "near-shell / K_\u03b1\u03b2 cancel \u21d2 \u03c1_j < \u03bd uniformly",
+          "forbidden": false,
+          "slot": null,
+          "verdict": "COLLAPSES_TO_C8_UPGRADE",
+          "note": "lab evidence only; no uniform depletion theorem"
+        },
+        {
+          "name": "standalone_geometric_depletion",
+          "claim": "new geometric depletion not reducing to C6/C8/C11",
+          "forbidden": false,
+          "slot": null,
+          "verdict": "ABSENT",
+          "note": "no independent sketch found that stays non-circular and seated"
+        }
+      ],
+      "refused": [
+        "smuggle_Zdot",
+        "smuggle_Lambda",
+        "smuggle_ej_dot",
+        "occupancy_alignment_samples"
+      ],
+      "collapses_onto": [
+        "alpha_plus_integrable",
+        "Tmm_structure_axisym",
+        "near_shell_cancel_to_depletion"
+      ],
+      "absent_independent": [
+        "standalone_geometric_depletion"
+      ],
+      "theorem_shaped_target": "Prove depletion \u21d2 (A) by controlling (\u03b1_loc,j)_+ (or an integrable substitute) so stretch enters \u03b8\u03bd P_j + allowed R, without \u0117_j / \u017b / \u039b' and without Bernstein cubic wall.",
+      "ns_solved": false
+    },
+    "C6": {
+      "id": "C6",
+      "name": "alpha_door3",
+      "hard_verdict": "WEAKENED",
+      "strength": "CONDITIONAL_CRITERION_ONLY",
+      "weakening": "\u03b1_+ Z_j is sharp for main stretch (ratio \u03b1Z/T ~ 1) and escapes every energy-linear R (\u03b1Z/(E Z) ~ \u03bb^{5/2}\u2192\u221e). Bernstein commutator proxy also escapes \u03bdD (~\u03bb\u2192\u221e). Door-3 remains a printed criterion / \u03b1-hypothesis, not an unaugmented bound.",
+      "identities_still_sit": [
+        "TJJ-Trans: transport main vanishes",
+        "TJJ-\u03b1: main stretch = \u222b \u03b1 |\u03c9_j|^2",
+        "TJJ-template inequality sits; remainder not allowed R"
+      ],
+      "ledger": {
+        "lambdas": [
+          4.0,
+          16.0,
+          64.0,
+          256.0,
+          1024.0
+        ],
+        "alpha_Z_over_T": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "alpha_Z_over_E_Z": [
+          32.0,
+          1024.0,
+          32768.0,
+          1048576.0,
+          33554432.0
+        ],
+        "comm_proxy_over_D": [
+          4.0,
+          16.0,
+          64.0,
+          256.0,
+          1024.0
+        ],
+        "ratio_energy_growth": 1048576.0,
+        "comm_growth": 256.0
+      },
+      "survives_as": "TRY_CONDITIONAL_if_alpha_hypothesis_named",
+      "killed_as": "unaugmented_absolute_alpha_plus_bound",
+      "ns_solved": false
+    },
+    "C11": {
+      "id": "C11",
+      "name": "meridional_Tmm_cancel",
+      "axisym_conditional": true,
+      "hard_verdict": "WEAKENED",
+      "strength": "NAMED_BULK_TARGET_OPEN",
+      "weakening": "Energy-linear R for T^mm is false (ratio growth ~\u03bb^{1/2}). 2D/no-swirl transfer myths killed. SO(2) restriction \u2260 cancel. Lane survives only as the named bulk structure target under axisym.",
+      "recorded_mm_frac_of_abs_split": [
+        0.9668999881361965,
+        0.7213465134918514,
+        0.9489575844716032
+      ],
+      "mm_dominates": true,
+      "myth_kills": [
+        {
+          "myth": "no-swirl regularity \u21d2 |T^mm| controlled on mixed fields",
+          "verdict": "KILLED",
+          "why": "meridional piece of mixed field is not a no-swirl solution"
+        },
+        {
+          "myth": "T^mm \u2264 C E Z + \u03b5\u03bd D (energy-linear R)",
+          "verdict": "KILLED",
+          "why": "same \u03bb^{1/2} blowup as Prop. TJJ-E-false; T_mm carries the bulk",
+          "ratio_growth": 12.998016660055535
+        },
+        {
+          "myth": "T^ss (centrifugal) is the leftover after T^mm free",
+          "verdict": "KILLED",
+          "why": "C2 already DEAD; T_mm dominates abs on recorded shells"
+        },
+        {
+          "myth": "SO(2) alone cancels T^mm",
+          "verdict": "NOT_SEATED",
+          "why": "axisym kills free helical HHH but is not a bound on T^mm"
+        }
+      ],
+      "energy_R_ratio_growth": 12.998016660055535,
+      "survives_as": "TRY_axisym_conditional_structure_route",
+      "ns_solved": false
+    },
+    "C9": {
+      "id": "C9",
+      "name": "triad_tau_structure",
+      "hard_verdict": "WEAKENED",
+      "strength": "IDENTITY_ONLY",
+      "weakening": "AS-\u03c4 rewrite + AS-\u03c9* shift invariance confirmed (max |\u03c4\u2212\u03c4_shift| ~ 0). Shift cannot manufacture an allowed R. Small frequency gaps with large J still produce large |\u03c4|. Standalone bound route is dead; rewrite survives only as structure under C6/C10/C11.",
+      "omega_star_invariance_max_abs_drift": 2.4424906541753444e-15,
+      "invariance_holds": true,
+      "large_J_small_gap_example_|tau|": 100000.0,
+      "survives_as": "rewrite_tool_not_bound",
+      "killed_as": "standalone_estimate_producing_allowed_R",
+      "ns_solved": false
+    },
+    "C7_analytic": {
+      "id": "C7",
+      "name": "HH_only_budget",
+      "analytic_note": "Concentration family sends |T_HH| / (E^{1/2} X^{3/2}) ~ \u03bb^{3/2}\u2192\u221e if HH carries bulk same-scale transfer. Energy-only HH product is false as uniform bound; geometry-only Agmon also loses control. Lane survives as the live Bony bottleneck needing a geometric HH product.",
+      "naive_HH_product_ratio_growth": 512.0,
+      "naive_form_killed": true,
+      "ns_solved": false
+    }
+  },
+  "light_numerics": {
+    "rstar": {
+      "rows": [
+        {
+          "family": "two_shell_1_2",
+          "T_c": -0.0323960591650882,
+          "D_s": 0.2753258733588524,
+          "R_star": 0.0
+        },
+        {
+          "family": "two_shell_2_5",
+          "T_c": -0.08697492072280688,
+          "D_s": 3.5811737883389725,
+          "R_star": 0.0
+        },
+        {
+          "family": "two_shell_3_6",
+          "T_c": 0.0,
+          "D_s": 9.071854513254976,
+          "R_star": 0.0
+        },
+        {
+          "family": "two_shell_4_7",
+          "T_c": 0.0,
+          "D_s": 0.0,
+          "R_star": 0.0
+        }
+      ],
+      "max_R_star_finite": 0.0,
+      "note": "Finite samples \u2260 sup; no kill of C8 lab"
+    },
+    "C7": {
+      "id": "C7",
+      "harness": "attack3_bony_hh_l.py",
+      "ok": true,
+      "hard_verdict": "SURVIVES",
+      "verdict_script": "HH_CHANNEL_LIVE_BOTTLENECK_no_closure",
+      "random_HH_frac_mean": 0.0925562698885492,
+      "random_HH_frac_p90": 0.5055589290413259,
+      "naive_product_killed": true,
+      "strength": "LIVE_BONY_BOTTLENECK",
+      "weakening": "Naive energy-only HH product killed by concentration (ratio growth 512). Channel still live; no geometric HH product seated."
+    },
+    "C8": {
+      "id": "C8",
+      "harness": "lemma_star_near_shell_search.py",
+      "ok": true,
+      "hard_verdict": "SURVIVES",
+      "LemmaStar_killed": false,
+      "max_R_star": 0.00023259683384665292,
+      "verdict_script": "SURVIVE_numeric_gap_remains",
+      "strength": "LAB_ONLY",
+      "weakening": "Still lab/evidence: no upgrade to uniform depletion \u21d2 (A). Finite-sample R_\u2605 stays small on tested families; not a supremum."
+    },
+    "C8_attack9b": {
+      "harness": "attack9b_exact_shell_K.py",
+      "ok": true,
+      "stdout_hint": "\"max_K_beta_lt_alpha\": {",
+      "artifact": "attack9b.json",
+      "max_K": {
+        "K": 0.49421003091963533,
+        "alpha": 1,
+        "beta": 2,
+        "n_modes_pos": 3,
+        "PiB_L2": 0.49709658564490017
+      },
+      "max_K_beta_gt_alpha": {
+        "K": 0.49421003091963533,
+        "alpha": 1,
+        "beta": 2,
+        "n_modes_pos": 3,
+        "PiB_L2": 0.49709658564490017,
+        "n_pairs": 21
+      },
+      "max_K_beta_lt_alpha": {
+        "K": 0.01055876380385515,
+        "alpha": 5,
+        "beta": 2,
+        "n_modes_pos": 8,
+        "PiB_L2": 0.3632967761323919,
+        "n_pairs": 3
+      }
+    }
+  },
+  "subprocess": {
+    "attack3": {
+      "ok": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    "near_shell": {
+      "ok": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    "attack9b": {
+      "ok": true,
+      "returncode": 0,
+      "stdout_tail": "limit_ok=True\n  optimizing K(\u03b1=2, \u03b2=8), n_pos=6 ...\n    K=0.000000e+00  PiB_L2=0.000000e+00  Ds0=None  limit_ok=None\n  optimizing K(\u03b1=3, \u03b2=12), n_pos=4 ...\n    K=3.226138e-33  PiB_L2=4.918946e-17  Ds0=-1.4210854715202004e-14  limit_ok=True\n  optimizing K(\u03b1=1, \u03b2=3), n_pos=3 ...\n    K=0.000000e+00  PiB_L2=0.000000e+00  Ds0=None  limit_ok=None\n  optimizing K(\u03b1=1, \u03b2=5), n_pos=3 ...\n    K=0.000000e+00  PiB_L2=0.000000e+00  Ds0=None  limit_ok=None\n  optimizing K(\u03b1=1, \u03b2=6), n_pos=3 ...\n    K=0.000000e+00  PiB_L2=0.000000e+00  Ds0=None  limit_ok=None\n  optimizing K(\u03b1=1, \u03b2=8), n_pos=3 ...\n    K=0.000000e+00  PiB_L2=0.000000e+00  Ds0=None  limit_ok=None\n{\n  \"max_K\": {\n    \"K\": 0.49421003091963533,\n    \"alpha\": 1,\n    \"beta\": 2,\n    \"n_modes_pos\": 3,\n    \"PiB_L2\": 0.49709658564490017\n  },\n  \"max_K_beta_gt_alpha\": {\n    \"K\": 0.49421003091963533,\n    \"alpha\": 1,\n    \"beta\": 2,\n    \"n_modes_pos\": 3,\n    \"PiB_L2\": 0.49709658564490017,\n    \"n_pairs\": 21\n  },\n  \"max_K_beta_lt_alpha\": {\n    \"K\": 0.01055876380385515,\n    \"alpha\": 5,\n    \"beta\": 2,\n    \"n_modes_pos\": 8,\n    \"PiB_L2\": 0.3632967761323919,\n    \"n_pairs\": 3\n  },\n  \"controls_all_pass\": true,\n  \"eps_limit_all_pass\": true,\n  \"n_pairs\": 24\n}\n",
+      "stderr_tail": ""
+    }
+  },
+  "ranking": [
+    {
+      "id": "C10",
+      "hard_verdict": "SURVIVES",
+      "note": "Every non-circular concrete sketch collapses onto C6 / C11 / C8-upgrade; no standalone depletion theorem seated. Door stays principal and empty."
+    },
+    {
+      "id": "C6",
+      "hard_verdict": "WEAKENED",
+      "note": "\u03b1_+ Z_j is sharp for main stretch (ratio \u03b1Z/T ~ 1) and escapes every energy-linear R (\u03b1Z/(E Z) ~ \u03bb^{5/2}\u2192\u221e). Bernstein commutator proxy also escapes \u03bdD (~\u03bb\u2192\u221e). Door-3 remains a printed criterion / \u03b1-hypothesis, not an unaugmented bound."
+    },
+    {
+      "id": "C11",
+      "hard_verdict": "WEAKENED",
+      "note": "Energy-linear R for T^mm is false (ratio growth ~\u03bb^{1/2}). 2D/no-swirl transfer myths killed. SO(2) restriction \u2260 cancel. Lane survives only as the named bulk structure target under axisym."
+    },
+    {
+      "id": "C7",
+      "hard_verdict": "SURVIVES",
+      "note": "Naive energy-only HH product killed by concentration (ratio growth 512). Channel still live; no geometric HH product seated."
+    },
+    {
+      "id": "C8",
+      "hard_verdict": "SURVIVES",
+      "note": "Still lab/evidence: no upgrade to uniform depletion \u21d2 (A). Finite-sample R_\u2605 stays small on tested families; not a supremum."
+    },
+    {
+      "id": "C9",
+      "hard_verdict": "WEAKENED",
+      "note": "AS-\u03c4 rewrite + AS-\u03c9* shift invariance confirmed (max |\u03c4\u2212\u03c4_shift| ~ 0). Shift cannot manufacture an allowed R. Small frequency gaps with large J still produce large |\u03c4|. Standalone bound route is dead; rewrite survives only as structure under C6/C10/C11."
+    }
+  ],
+  "best_next_theorem_shaped_target": "Prove depletion \u21d2 (A) by controlling (\u03b1_loc,j)_+ (or an integrable substitute) so stretch enters \u03b8\u03bd P_j + allowed R, without \u0117_j / \u017b / \u039b' and without Bernstein cubic wall.",
+  "blunt_bottom_line": "NS / Clay B not solved. T_{j\u2190j} still OPEN. Hard run: C10 SURVIVES as principal empty door (sketches collapse to C6/C11/C8). C6/C11/C9 WEAKENED (criterion / bulk-target / identity-only). C7 SURVIVES as live HH bottleneck (naive product killed). C8 SURVIVES as lab only. Best next theorem target: non-circular \u03b1_+ (or integrable) control feeding depletion\u21d2(A)."
+}
