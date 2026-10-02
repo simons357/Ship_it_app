@@ -8,7 +8,9 @@ Strictly scientific package (no campaign / outreach framing):
 
 - [`UNAUG-PROOF-CHAIN.md`](./UNAUG-PROOF-CHAIN.md) — locked unaugmented-face honesty / terminology (spectral-shift ≠ ★; \(T_{j\leftarrow j}\) **OPEN**; numerics ≠ depletion)
 - [`TJ-SAME-SCALE-CANDIDATES.md`](./TJ-SAME-SCALE-CANDIDATES.md) — narrow-first attack shortlist for \(T_{j\leftarrow j}\) / (A); DEAD vs TRY; hard-run (§5) + harder-run (§6); NS / Clay B not solved, \(T_{j\leftarrow j}\) **OPEN**
+- [`HH-SPECTRAL-CONCENTRATION-AUDIT.md`](./HH-SPECTRAL-CONCENTRATION-AUDIT.md) — screenshot audit (IPR / \(N_{\mathrm{eff}}\) / HH triad heuristics / \(N=32\) Lemma 5.3 probes); ChatGPT “closes Leray gap” **OVERCLAIM refuse**; maps to C7/C10/C12
 - [`PR-DRAFT-TJ-SAME-SCALE-CANDIDATES.md`](./PR-DRAFT-TJ-SAME-SCALE-CANDIDATES.md) — paste-ready title/body for [PR #102](https://github.com/simons357/Ship_it_app/pull/102) (branch `cursor/tj-candidates-9083`)
+- [`PR-DRAFT-HH-SPECTRAL-CONCENTRATION-AUDIT.md`](./PR-DRAFT-HH-SPECTRAL-CONCENTRATION-AUDIT.md) — paste-ready draft for `cursor/hh-concentration-audit-4792`
 - [`SCIENTIFIC-REPORT.md`](./SCIENTIFIC-REPORT.md) — problem statement, objects, Lemma★ / PRODUCT-BLOCK status, proved vs hypothesized vs parked
 - [`CREDIT-BODY-OF-WORK.md`](./CREDIT-BODY-OF-WORK.md) — KEEP shelf vs named open doors (no Clay claim)
 - [`DA-AUDIT.md`](./DA-AUDIT.md) — Domain Architect check + language sanitize (CONDITIONAL PASS)
