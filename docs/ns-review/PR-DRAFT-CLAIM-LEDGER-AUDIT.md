@@ -3,7 +3,7 @@
 **Branch:** `cursor/claim-ledger-audit-0cc5`  
 **Base:** `main` (or current scientific tip if auto-retargeted)  
 **Compare:** https://github.com/simons357/Ship_it_app/compare/main...cursor/claim-ledger-audit-0cc5  
-**PR create:** `gh` integration may 403; no ManagePullRequest tool in this run. Open the compare link to file a **draft** PR if the environment does not auto-open one.
+**PR create:** blocked here (`gh` integration 403; no ManagePullRequest tool in this run). Open the compare link to file the draft PR if the environment does not auto-open one.
 
 ## Title
 
