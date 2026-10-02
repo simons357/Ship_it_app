@@ -171,6 +171,8 @@ class TestFamiliesAndScript(unittest.TestCase):
             report = verify_identities(f)
             self.assertTrue(report.ok, report.failures)
             self.assertGreater(f.energy(), 0)
+        box = dense_coordinated_packet(1)
+        self.assertNotEqual(cascade(box, moments(box).Lambda).T_c, 0)
 
     def test_board_and_cli_verify_identities_only(self):
         payload = run_board()

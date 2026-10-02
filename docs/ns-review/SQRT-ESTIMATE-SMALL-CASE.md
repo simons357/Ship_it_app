@@ -61,7 +61,8 @@ It is not a proof of any \(L^3\) estimate.
 2. **Widely separated frequencies with varied amplitudes.**
    Shells \(1\)–\(2\) versus \(36\)–\(72\), plus occupied HL cross outputs.
 3. **Dense packets with coordinated phases.**
-   Phase-locked box packet, and a P/Q affine packet with occupied cross
+   Common-phase box packet (a helical \(i^{k_1+k_2+k_3}\) lock cancels
+   \(T_c\) on this box), and a P/Q affine packet with occupied cross
    outputs (contributions added, not overwritten).
 
 Finite certified \(Q_{\mathrm{lb}}\) on this board is **not** a kill.

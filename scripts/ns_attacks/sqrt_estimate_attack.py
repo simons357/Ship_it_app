@@ -44,7 +44,6 @@ from ns_attacks.exact_fourier import (  # noqa: E402
     gq_vec,
     iterate_phase_locks,
     project_perp,
-    lam,
     moments,
     shell_energy,
     two_shell_D_s,
@@ -155,9 +154,9 @@ def dense_coordinated_packet(width: int, phase: GQ = ONE) -> Field:
                 first_nz = next(x for x in k if x != 0)
                 if first_nz < 0:
                     continue
-                s = (a + b + c) % 4
-                lock = (ONE, I, -ONE, -I)[s]
-                _put(f, k, Fraction(1), phase * lock)
+                # Uniform lock i: a helical i^{k1+k2+k3} lock cancels T_c on
+                # this box. Coordinated (common) phase is the live packet.
+                _put(f, k, Fraction(1), phase * I)
     return f
 
 
@@ -307,7 +306,7 @@ def build_cases() -> List[Tuple[CaseRow, IdentityReport]]:
                 "dense_box_packet",
                 f"width={width}",
                 field,
-                note="3×3×3 minus origin, phase i^{k1+k2+k3}",
+                    note="3×3×3 minus origin, common phase i (helical lock cancels)",
             )
         )
     for n, sat in ((2, Fraction(1)), (2, Fraction(1, 4)), (3, Fraction(1, 2))):
