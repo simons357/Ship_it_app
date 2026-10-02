@@ -11,3 +11,8 @@ Working notes for the axisymmetric-with-swirl / Φ-renorm book and adjacent NS p
 **Open barrier (unchanged):** \(\|u^r/r\|_{L^\infty}\) uniform in \(\eps\) — equivalent to axisymmetric-with-swirl global regularity. Paper remains a conditional reduction. Clay is not closed.
 
 **Do not conflate** with Lemma★ PRODUCT-BLOCK packaging.
+
+## Centered square-root estimate (finite \(C\) proved; budget OPEN)
+
+- [`SMOOTH-SPLIT-CENTERED-CONSTANT.md`](./SMOOTH-SPLIT-CENTERED-CONSTANT.md) — 2 Oct 2026 smooth-split derivation of \(|T_c|\le(7+6M_{\mathrm{mult}})C_s g\sqrt{YD_s}\) on finite Fourier fields on the fixed \(2\pi\) torus. Instantaneous; time budget and NSE regularity remain open.
+- [`SQRT-ESTIMATE-SMALL-CASE.md`](./SQRT-ESTIMATE-SMALL-CASE.md) — identity / sharpness board (exact \(T_c,Y,D_s\); certified \(\|\nabla u\|_3\) bounds; six-mode family). Not a regularity proof.

@@ -57,9 +57,10 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 | `data/qnm_events.csv` | Per-mode ringdown table with TRAIN/TEST splits |
 | `scripts/build_qnm_table.py` | Rebuild CSV from measured + Kerr-fit sources |
 | `tests/test_hb_ringdown.py` | Unit / smoke tests |
+| `scripts/ns_attacks/` | Exact Fourier identities and the 2 Oct 2026 smooth-split estimate board |
 
 ## Tests
 
 ```bash
-python -m unittest tests/test_hb_ringdown.py
+python -m unittest tests/test_hb_ringdown.py tests.test_sqrt_estimate_attack tests.test_smooth_split_constant
 ```
