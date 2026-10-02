@@ -45,6 +45,8 @@ Sign gate:
 [`SIGN-GATE.md`](SIGN-GATE.md).
 Finite-\(N\) run:
 [`SIGN-RUN.md`](SIGN-RUN.md).
+\(\|u\|_3\) audit:
+[`U3-AUDIT.md`](U3-AUDIT.md).
 
 This desk is **unaugmented**.
 A is not B. Keep \(1/r^4\).
@@ -258,6 +260,12 @@ printed. Persistence OPEN.
 Universal depletion is not
 killed.
 [`SIGN-RUN.md`](SIGN-RUN.md).
+The \(\|u\|_3\) derivation
+is not on this desk.
+Three gates. If it implies
+Serrin or ESS, it is a
+reformulation.
+[`U3-AUDIT.md`](U3-AUDIT.md).
 
 Useful \(K\) or a named death.
 Do not restore

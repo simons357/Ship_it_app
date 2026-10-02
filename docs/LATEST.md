@@ -147,6 +147,8 @@ Sign gate (L_1,N; no verdict):
 docs/SIGN-GATE.md
 Finite-N run (BOTH SIGNS; persistence OPEN):
 docs/SIGN-RUN.md
+||u||_3 audit (derivation not on desk):
+docs/U3-AUDIT.md
 Framework map (endpoint first; maps only):
 docs/FRAMEWORK-MAP.md
 Monday packet (pile, not leftovers):

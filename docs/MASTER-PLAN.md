@@ -54,6 +54,8 @@ Sign gate:
 [`SIGN-GATE.md`](SIGN-GATE.md).
 Finite-\(N\) run:
 [`SIGN-RUN.md`](SIGN-RUN.md).
+\(\|u\|_3\) audit:
+[`U3-AUDIT.md`](U3-AUDIT.md).
 
 This page answers the operator’s
 question: how do we beat unforced

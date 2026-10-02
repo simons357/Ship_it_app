@@ -38,6 +38,8 @@ Sign gate:
 [`SIGN-GATE.md`](SIGN-GATE.md).
 Finite-\(N\) run:
 [`SIGN-RUN.md`](SIGN-RUN.md).
+\(\|u\|_3\) audit:
+[`U3-AUDIT.md`](U3-AUDIT.md).
 Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 Machine: `python3 scripts/triangle_lift.py`.

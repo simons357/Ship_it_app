@@ -31,6 +31,8 @@ Sign gate:
 [`SIGN-GATE.md`](SIGN-GATE.md).
 Finite-\(N\) run:
 [`SIGN-RUN.md`](SIGN-RUN.md).
+\(\|u\|_3\) audit:
+[`U3-AUDIT.md`](U3-AUDIT.md).
 Machine: `python3 scripts/bstar_symmetrize.py`.
 Do not overwrite `stokes_moments.py`.
 Do not start leftover 1.

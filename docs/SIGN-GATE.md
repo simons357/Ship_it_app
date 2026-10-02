@@ -22,6 +22,8 @@ Target:
 [`CENTERED-DRIFT.md`](CENTERED-DRIFT.md).
 Finite-\(N\) run:
 [`SIGN-RUN.md`](SIGN-RUN.md).
+\(\|u\|_3\) audit:
+[`U3-AUDIT.md`](U3-AUDIT.md).
 Machine: `python3 scripts/sign_gate.py`.
 Does not overwrite `stokes_moments.py`.
 Do not start leftover 1.

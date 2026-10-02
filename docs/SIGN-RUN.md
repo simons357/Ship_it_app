@@ -14,6 +14,8 @@ The gate (unaltered):
 [`SIGN-GATE.md`](SIGN-GATE.md).
 Lemma A (unaltered):
 [`PRESS.md`](PRESS.md).
+\(\|u\|_3\) audit:
+[`U3-AUDIT.md`](U3-AUDIT.md).
 Triangles:
 [`FOURIER-TRIANGLE.md`](FOURIER-TRIANGLE.md).
 Machine: `python3 scripts/sign_run.py`.
