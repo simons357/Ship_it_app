@@ -237,3 +237,12 @@ Does **not** overwrite this inventory. **REOPEN = recompute only.**
 \(u,m,d\), \(+++\), \(c\), the six-permutation expansion, and the
 numerical protocol are **missing**. Do not invent them. Do not
 search the recorded danger chamber from this filing.
+
+---
+
+## 9. 1 October 2026 — half-spread candidate (pointer only)
+
+Attack, not a proof, not this inventory's identities:
+[`TC-L3-SQRT-YDS.md`](TC-L3-SQRT-YDS.md).
+\(\lvert T_c\rvert\le C\|\nabla u\|_3\sqrt{YD_s}\) is OPEN.
+Unrestricted ★ stays dead. No new proof is claimed here.

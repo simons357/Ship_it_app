@@ -59,6 +59,11 @@ certificate shape locked; computation on the reduced slice).
 27 Sep Gate 83 minor:
 [`ns-recovery/GATE-83-MINOR-FACTOR.md`](ns-recovery/GATE-83-MINOR-FACTOR.md)
 (\(M\not\equiv 0\) on specimen 1; factorization did not land).
+1 Oct half-spread candidate:
+[`ns-recovery/TC-L3-SQRT-YDS.md`](ns-recovery/TC-L3-SQRT-YDS.md)
+(\(|T_c|\le C\|\nabla u\|_3\sqrt{YD_s}\), OPEN, not proved;
+near-shell obstructs linear-in-\(D_s\); \(v_n\) does not kill
+the new slot on the seated sample; unrestricted ★ stays dead).
 QStack / Q6 / E8 stay instruments, not claims.
 Unrestricted Lemma★ stays killed on \(v_n\).
 Exact-shell \(K\le 16/9\) stays CLAIMED, not stamped.

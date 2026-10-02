@@ -364,3 +364,30 @@ Exact \(8\times 8\) pivot on specimen 1 is nonzero; \(\mathrm{rank}\,J_{\mathcal
 Factorization over \(\mathbb Q[t,r_1,\ldots,d_2]\) did not land.
 [`GATE-83-MINOR-FACTOR.md`](GATE-83-MINOR-FACTOR.md).
 Does not alter the freeze. **NS not solved.**
+
+---
+
+## 1 October 2026 — half-spread candidate (does not alter this freeze)
+
+Strongest next target after the local exact-shell perturbation ★:
+
+\[
+\lvert T_c\rvert
+\le
+C\,\|\nabla u\|_3\sqrt{YD_s}.
+\]
+
+**OPEN / attack, not proved.** The near-shell obstruction
+motivates the square-root scale and does not establish the
+bound. Near-shell: \(T_c/D_s=\Theta(\varepsilon^{-1})\) while
+\(T_c/\sqrt{D_s}\) and the new ratio stay finite (\(\approx 0.042\)
+on \((5,4)\)). Unrestricted ★ stays **KILLED** on \(v_n\). The new
+slot does **not** grow on the seated \(v_n\) sample (it falls).
+Largest seated ratio is the note triad \(\approx 0.168\)
+(certified sandwich \(0.166\le\cdot\le 0.175\)).
+\(\|\nabla u\|_3\) quadrature cannot certify a kill; \(T_c,Y,D_s\)
+and \(\|\nabla u\|_2=\sqrt{X}\) are exact. Localized bump is not
+on this tree. No \(C\) is stamped.
+[`TC-L3-SQRT-YDS.md`](TC-L3-SQRT-YDS.md).
+This addendum does not alter the freeze above.
+DA-NS-2 stays **OPEN**. **NS not solved.**

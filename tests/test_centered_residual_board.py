@@ -45,6 +45,8 @@ def test_board_is_one_residual_and_does_not_claim_ns():
     assert "Not a stamped decision theorem" in page or "not a derived decision" in page
     assert "NS is solved" not in page
     assert "Clay is solved" not in page
+    assert "half-spread" in page
+    assert r"\sqrt{YD_s}" in page or r"\sqrt{Y D_s}" in page
     data = json.loads((ROOT / "results" / "centered_width_crossover.json").read_text())
     assert data["ns_solved"] is False
     assert data["B_prim_constructed"] is False
