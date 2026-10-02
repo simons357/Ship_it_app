@@ -150,9 +150,9 @@
   "conditional_am_gm": "IF |T_c| \u2264 C ||\u2207u||_3 \u221aD_s THEN T_c \u2212 \u03bd D_s \u2264 C\u00b2 ||\u2207u||_3\u00b2 / (4\u03bd). Hypothesis false as a universal bound; algebra of the implication is correct.",
   "open": [
     "Lemma\u2605 / sup R_\u2605 < \u221e",
-    "any homogeneous replacement of the q=3 target",
     "control of \u222b ||\u2207u||_3\u00b2 dt",
     "DA-NS-2"
   ],
+  "homogeneous_repair_status": "|T_c| \u2264 C g \u221a(Y D_s) CLAIMED 2026-10-02 (smooth-split existence; see smooth_split_constant.py). Not Lemma\u2605. Budget still OPEN.",
   "caution": "Exact convolution verifies identities and the near-shell obstruction. It does not prove \u2605 and does not close Clay Statement B."
 }

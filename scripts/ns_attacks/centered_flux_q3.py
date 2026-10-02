@@ -497,10 +497,14 @@ def run_reproduction(n_grid: int = 32) -> dict:
         ),
         "open": [
             "Lemma★ / sup R_★ < ∞",
-            "any homogeneous replacement of the q=3 target",
             "control of ∫ ||∇u||_3² dt",
             "DA-NS-2",
         ],
+        "homogeneous_repair_status": (
+            "|T_c| ≤ C g √(Y D_s) CLAIMED 2026-10-02 "
+            "(smooth-split existence; see smooth_split_constant.py). "
+            "Not Lemma★. Budget still OPEN."
+        ),
         "caution": (
             "Exact convolution verifies identities and the near-shell obstruction. "
             "It does not prove ★ and does not close Clay Statement B."

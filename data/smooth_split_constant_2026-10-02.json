@@ -1,0 +1,208 @@
+{
+  "harness": "smooth_split_centered_constant",
+  "date": "2026-10-02",
+  "ns_solved": false,
+  "lemma_star_proved": false,
+  "global_regularity": false,
+  "kill_lane": "LIVE",
+  "claimed_estimate": "|T_c| \u2264 (7+6 M_mult) C_s g \u221a(Y D_s)",
+  "claimed_Lambda_N": "|\u039b N| \u2264 (4+6 M_mult) C_s g \u221a(Y D_s)",
+  "status": "CLAIMED_existence_of_finite_C",
+  "optimized_decimal_C": null,
+  "identities": {
+    "product_rule_near_shell": {
+      "lhs": 7.753846153846154,
+      "rhs": 7.753846153846155,
+      "abs_err": 8.881784197001252e-16,
+      "ok": true
+    },
+    "product_rule_spread": {
+      "lhs": 0.0,
+      "rhs": 0.0,
+      "abs_err": 0.0,
+      "ok": true
+    },
+    "F_equals_N_near": {
+      "N": 2.0,
+      "F": 2.0,
+      "abs_err": 0.0,
+      "ok": true
+    },
+    "F_equals_N_spread": {
+      "N": 0.0,
+      "F": -0.0,
+      "abs_err": 0.0,
+      "ok": true
+    },
+    "F_grouping_spread": {
+      "N_minus_Nh": 0.0,
+      "grouped": -0.0,
+      "abs_err": 0.0,
+      "ok": true
+    },
+    "F_grouping_six_j4": {
+      "N_minus_Nh": -18.0,
+      "grouped": -18.0,
+      "abs_err": 0.0,
+      "ok": true
+    }
+  },
+  "split_bounds": {
+    "near_shell_eps1": {
+      "Lambda": 6.0,
+      "Ds": 128.0,
+      "Y": 192.0,
+      "Lambda_grad_v": 0.0,
+      "two_sqrt_Ds": 22.627416997969522,
+      "Lambda_h": 14.696938456699067,
+      "four_sqrt_Y": 55.42562584220407,
+      "Ah": 13.856406460551018,
+      "sqrt_Y": 13.856406460551018,
+      "grad_ALh": 11.313708498984761,
+      "sqrt_Ds": 11.313708498984761,
+      "hold": true
+    },
+    "spread_triad": {
+      "Lambda": 13.0,
+      "Ds": 864.0,
+      "Y": 676.0,
+      "Lambda_grad_v": 18.38477631085024,
+      "two_sqrt_Ds": 58.787753826796276,
+      "Lambda_h": 26.0,
+      "four_sqrt_Y": 104.0,
+      "Ah": 25.96150997149434,
+      "sqrt_Y": 26.0,
+      "grad_ALh": 24.0,
+      "sqrt_Ds": 29.393876913398138,
+      "hold": true
+    },
+    "six_mode_j5": {
+      "Lambda": 53.67241379310343,
+      "Ds": 7128.6206896551885,
+      "Y": 2490.3999999999996,
+      "Lambda_grad_v": 75.90425551150766,
+      "two_sqrt_Ds": 168.86231894244716,
+      "Lambda_h": 48.00606630315064,
+      "four_sqrt_Y": 199.6156306505079,
+      "Ah": 49.883865126912525,
+      "sqrt_Y": 49.90390766262698,
+      "grad_ALh": 39.747381549875044,
+      "sqrt_Ds": 84.43115947122358,
+      "hold": true
+    }
+  },
+  "degenerate_single_shell": {
+    "Ds": "0",
+    "N": "0",
+    "Tc": "0"
+  },
+  "six_mode_rows": [
+    {
+      "j": 3,
+      "N": -13.999999999999993,
+      "N_claimed": -14.0,
+      "N_abs_err": 7.105427357601002e-15,
+      "Lambda": 20.695652173913043,
+      "Ds": 1171.8260869565202,
+      "Y": 634.6666666666666,
+      "E": 3.333333333333334,
+      "Tc": -312.26086956521766,
+      "g": 6.148204077521307,
+      "rho_q3Y": 0.05889316092933044,
+      "rho_Lambda_N": 0.054645506047487816,
+      "Ds_over_Lambda_Y": 0.0892150978038273,
+      "R_star": 0.0,
+      "Lambda_N_over_j": -96.57971014492749
+    },
+    {
+      "j": 4,
+      "N": -18.0,
+      "N_claimed": -18.0,
+      "N_abs_err": 0.0,
+      "Lambda": 35.18181818181818,
+      "Ds": 3192.727272727272,
+      "Y": 1354.5,
+      "E": 3.0,
+      "Tc": -680.7272727272727,
+      "g": 6.915835906754378,
+      "rho_q3Y": 0.04733234863237048,
+      "rho_Lambda_N": 0.04403273779021003,
+      "Ds_over_Lambda_Y": 0.06699841565534731,
+      "R_star": 0.0,
+      "Lambda_N_over_j": -158.3181818181818
+    },
+    {
+      "j": 5,
+      "N": -21.999999999999993,
+      "N_claimed": -22.0,
+      "N_abs_err": 7.105427357601002e-15,
+      "Lambda": 53.67241379310343,
+      "Ds": 7128.6206896551885,
+      "Y": 2490.3999999999996,
+      "E": 2.8000000000000007,
+      "Tc": -1261.2068965517249,
+      "g": 7.610889434272049,
+      "rho_q3Y": 0.039329064557946616,
+      "rho_Lambda_N": 0.03682146705831208,
+      "Ds_over_Lambda_Y": 0.05333168090169122,
+      "R_star": 0.0,
+      "Lambda_N_over_j": -236.15862068965504
+    },
+    {
+      "j": 6,
+      "N": -25.99999999999997,
+      "N_claimed": -26.0,
+      "N_abs_err": 2.842170943040401e-14,
+      "Lambda": 76.16564417177914,
+      "Ds": 13927.509202454006,
+      "Y": 4138.333333333333,
+      "E": 2.666666666666666,
+      "Tc": -2101.6932515337458,
+      "g": 8.249828903310116,
+      "rho_q3Y": 0.033556366298526666,
+      "rho_Lambda_N": 0.03161826712175223,
+      "Ds_over_Lambda_Y": 0.04418642499970405,
+      "R_star": 0.0,
+      "Lambda_N_over_j": -330.0511247443759
+    },
+    {
+      "j": 8,
+      "N": -34.0,
+      "N_claimed": -34.0,
+      "N_abs_err": 0.0,
+      "Lambda": 133.15658362989325,
+      "Ds": 40866.27758007101,
+      "Y": 9354.250000000002,
+      "E": 2.5,
+      "Tc": -4754.676156583622,
+      "g": 9.401137688618231,
+      "rho_q3Y": 0.025867443090030813,
+      "rho_Lambda_N": 0.02463055064382341,
+      "Ds_over_Lambda_Y": 0.03280903553761824,
+      "R_star": 0.0,
+      "Lambda_N_over_j": -565.9154804270463
+    }
+  ],
+  "six_mode_Lambda_N_quotient_decreases": true,
+  "near_shell_rho_q3Y": 0.23666341037332547,
+  "witness_lower_bound_note": "Earlier exact witness C>0.4 is a necessary lower bound. Near-shell \u03b5=1/8 gives |T_c|/(g\u221a(Y D_s))\u22480.24; six-mode rows below.",
+  "Mmult_illustration": {
+    "n": 48,
+    "xi_max": 1.6,
+    "K_L1_estimate": 6.358492121825451,
+    "Mmult_estimate": 7.358492121825451,
+    "note": "cubic C\u00b9 cutoff; illustration of finiteness only"
+  },
+  "budget": {
+    "log_Lambda_prime": "(log \u039b)' = 2(T_c\u2212\u03bd D_s)/Y \u2264 C\u00b2 g\u00b2/(2\u03bd)  (if the estimate holds)",
+    "F_X": "F_X=2(C_s g \u221a\u039b \u2212 \u03bd \u039b)_+ ; (log X)' \u2264 F_X",
+    "cutoff_uniform_integral": "OPEN"
+  },
+  "does_not_imply": [
+    "Lemma\u2605 / sup R_\u2605 < \u221e",
+    "cutoff-uniform \u222b g\u00b2 dt",
+    "global NSE regularity",
+    "Clay Statement B"
+  ],
+  "caution": "Machine checks identities and witnesses. They do not replace the analytic argument and they do not close the time budget."
+}

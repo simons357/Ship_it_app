@@ -23,6 +23,7 @@ Do **not** splice this into Φ-renorm, DA-NS-2, or Clay Statement B.
 | Near-shell: \(T_c\) linear in \(\varepsilon\), \(D_s\) quadratic; no uniform \(T_c\le C\nu D_s\) | **CONFIRMED** at five exact \(\varepsilon\) |
 | Proposed \(q=3\) bound: stated *conditional* AM-GM consequence | **EXACT** as an implication |
 | Proposed \(q=3\) bound \(\lvert T_c\rvert\le C\|\nabla u\|_3\sqrt{D_s}\) as a universal \(C\) | **KILLED** by amplitude scaling |
+| Homogeneous repair \(\lvert T_c\rvert\le C\|\nabla u\|_3\sqrt{Y D_s}\) | **CLAIMED** 2 Oct — see [`SMOOTH-SPLIT-CENTERED-CONSTANT-2026-10-02.md`](./SMOOTH-SPLIT-CENTERED-CONSTANT-2026-10-02.md) |
 | Square-root \(D_s\) is the right leading near-shell order | **CONFIRMED** on this family |
 | Lemma★ / \(\sup\mathcal R_\star<\infty\) | **OPEN** |
 | Control of \(\int\|\nabla u\|_3^2\,\mathrm{d}t\) | **OPEN**, and a separate task |
@@ -194,7 +195,7 @@ The stated ratio grows like \(a\). Machine check at amplitudes
 \(1,2,4\) on \(\varepsilon=1/8\): the ratio doubles when \(a\) doubles.
 No field-independent \(C\) exists.
 
-### 5.3 Homogeneous repairs (OPEN, not claimed)
+### 5.3 Homogeneous repairs
 
 Two amplitude-homogeneous replacements that still have \(\sqrt{D_s}\)
 in the near-shell limit:
@@ -205,8 +206,14 @@ in the near-shell limit:
 \lvert T_c\rvert\le C\|\nabla u\|_3^2\sqrt{D_s}.
 \]
 
-The first is invariant on \(u=av\) for this triad (machine). Neither
-is proved. Do not promote either to Lemma★. The shape quotient remains
+The first is invariant on \(u=av\) for this triad (machine). As of
+2 October 2026 the first estimate is a **proved existence statement**
+for finite Fourier fields on the fixed torus: see
+[`SMOOTH-SPLIT-CENTERED-CONSTANT-2026-10-02.md`](./SMOOTH-SPLIT-CENTERED-CONSTANT-2026-10-02.md).
+That argument produces a finite \(C=(7+6M_{\mathrm{mult}})C_s\). It
+does **not** compute an optimized decimal, does **not** prove Lemma★,
+and does **not** pay \(\int g^2\,\mathrm{d}t\). The second replacement
+is unused. The shape quotient remains
 
 \[
 \mathcal R_\star
