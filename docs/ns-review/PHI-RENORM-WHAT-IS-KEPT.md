@@ -106,6 +106,8 @@ Fundamentals for Lemma★ (field → structures): PR **#65** · `LEMMA-STAR-WHAT
 
 **Do not glue:** Φ-renorm identity ≠ Lemma★ closed ≠ Clay Statement B.
 
+The 11 September generic chain files swirl as route (C) only: [`SWIRL_AXIAL_REDUCTION.md`](../SWIRL_AXIAL_REDUCTION.md). Do not insert Φ-renorm as Step 7 of [`UNAUG-GENERIC-3D-PROOF-CHAIN.md`](./UNAUG-GENERIC-3D-PROOF-CHAIN.md).
+
 ---
 
 ## 5. One-line summary
