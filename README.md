@@ -13,9 +13,10 @@ Generic regularity is not claimed. Swirl is a subclass, not Step 7.
 - Honesty: [`docs/ns-review/UNAUG-PROOF-CHAIN.md`](docs/ns-review/UNAUG-PROOF-CHAIN.md)
 - Lock: [`data/ns_proof_chain/2026-09-11.json`](data/ns_proof_chain/2026-09-11.json)
 - Subclass: [`docs/SWIRL_AXIAL_REDUCTION.md`](docs/SWIRL_AXIAL_REDUCTION.md)
+- \(\|u\|_3\) gates: [`docs/ns-review/U3-THREE-GATE-AUDIT.md`](docs/ns-review/U3-THREE-GATE-AUDIT.md) (derivation not back)
 
 ```bash
-python3 -m unittest tests.test_unaug_generic_3d_chain
+python3 -m unittest tests.test_unaug_generic_3d_chain tests.test_u3_three_gate_audit
 ```
 
 ## Domain Architect
@@ -77,5 +78,5 @@ python hb_ringdown_test.py --csv data/qnm_events.csv --nodes nodes.json --mc 500
 
 ```bash
 python -m unittest tests/test_hb_ringdown.py
-python3 -m unittest tests.test_unaug_generic_3d_chain
+python3 -m unittest tests.test_unaug_generic_3d_chain tests.test_u3_three_gate_audit
 ```

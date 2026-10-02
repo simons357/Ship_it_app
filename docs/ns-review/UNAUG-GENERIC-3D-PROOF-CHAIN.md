@@ -184,6 +184,7 @@ Subclass note: [`SWIRL_AXIAL_REDUCTION.md`](../SWIRL_AXIAL_REDUCTION.md). Existi
 | [`NS3D_PROGRESS_NOTE.md`](../NS3D_PROGRESS_NOTE.md) | measurements — not theorems |
 | [`PROGRESS_POST.md`](../PROGRESS_POST.md) | public language of the claim line |
 | [`UNAUG-PROOF-CHAIN.md`](./UNAUG-PROOF-CHAIN.md) | honesty card — dissipation threshold and refuse list |
+| [`U3-THREE-GATE-AUDIT.md`](./U3-THREE-GATE-AUDIT.md) | \(\|u\|_3\) gates — derivation not back |
 
 Machine lock: [`data/ns_proof_chain/2026-09-11.json`](../../data/ns_proof_chain/2026-09-11.json).
 

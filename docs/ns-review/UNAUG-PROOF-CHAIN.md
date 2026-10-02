@@ -40,6 +40,12 @@ Do not bound \(T_{j\leftarrow j}\) by \(\dot e_j\), \(\dot Z\), or \(\Lambda'\).
 
 ---
 
+## \(\|u\|_3\) face
+
+Three gates locked in [`U3-THREE-GATE-AUDIT.md`](./U3-THREE-GATE-AUDIT.md). Derivation not back. Do not invent it. Existing \(\|\nabla u\|_3\) is a different object.
+
+---
+
 ## One-line status
 
 **Lemma Star finished as bookkeeping. Remainder \(T_{j\leftarrow j}\). \(\rho_j<\nu\) is (A), not \(\nu Z_j\). Generic unaugmented 3-D regularity not claimed.**

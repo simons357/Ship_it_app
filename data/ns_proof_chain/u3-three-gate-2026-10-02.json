@@ -1,0 +1,68 @@
+{
+  "id": "u3_three_gate_audit",
+  "date": "2026-10-02",
+  "headline": false,
+  "scoreboard": false,
+  "closes_regularity": false,
+  "clay_b": "not_claimed",
+  "u3_derivation_present": false,
+  "do_not_invent_u3_derivation": true,
+  "attack_surface_when_back": "implication_chain_not_just_algebra",
+  "gates": {
+    "1_derivation": {
+      "required": [
+        "cutoff_uniform",
+        "named_finite_constants",
+        "no_hidden_higher_norm"
+      ],
+      "forbidden_in_constant": [
+        "R_cutoff",
+        "grad_u_infinity",
+        "BKM",
+        "dot_e_j",
+        "dot_Z",
+        "Lambda_prime",
+        "assumed_Serrin_or_ESS"
+      ]
+    },
+    "2_regularity_value": {
+      "prodi_serrin": "2/p + 3/q = 1, q > 3",
+      "ess_endpoint": "L^infty_t L^3_x",
+      "ess_citation": "Escauriaza-Seregin-Sverak 2003 RM 58:211-250",
+      "q3_forces_p_infinity": true,
+      "beirao_da_veiga": "2/p + 3/q = 2 on nabla u, q > 3/2",
+      "nabla_u_3_in_L2_t_is_bdv_2_3": true,
+      "assuming_known_class_is_new_mechanism": false
+    },
+    "3_novelty": {
+      "check_reduction_to": [
+        "Leray_energy",
+        "Kato_1984_L3_mild",
+        "Prodi_Serrin_Ladyzhenskaya",
+        "ESS_2003",
+        "Beirao_da_Veiga_1995",
+        "energy_interpolation_L3_from_L2_L6"
+      ]
+    }
+  },
+  "microscope": {
+    "target": "cutoff_uniform_NSE_budget_on_growth_capable_L3_only",
+    "without_assuming": [
+      "Serrin_class",
+      "ESS_Linfty_t_L3",
+      "Beirao_da_Veiga_int_g2"
+    ]
+  },
+  "existing_nabla_u_3": {
+    "is_the_u3_derivation": false,
+    "universal_Tc_le_C_g_sqrt_Ds": "killed_by_amplitude",
+    "instantaneous_C_for_Tc_le_C_g_sqrt_YDs": "claimed_on_other_branches",
+    "int_g2_dt": "open",
+    "int_g2_if_assumed": "Beirao_da_Veiga_2_3_reformulation"
+  },
+  "companions": {
+    "audit": "docs/ns-review/U3-THREE-GATE-AUDIT.md",
+    "chain": "docs/ns-review/UNAUG-GENERIC-3D-PROOF-CHAIN.md",
+    "honesty": "docs/ns-review/UNAUG-PROOF-CHAIN.md"
+  }
+}
