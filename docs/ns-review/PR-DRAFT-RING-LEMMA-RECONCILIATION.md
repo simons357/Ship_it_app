@@ -1,9 +1,9 @@
 # Draft PR — Ring Lemma reconciliation (Oct 2 uploads)
 
-**Branch:** `cursor/ring-lemma-reconcile-0cc5`  
+**Branch:** `cursor/ring-lemma-recon-0cc5`  
 **Base:** `main`  
-**Compare:** https://github.com/simons357/Ship_it_app/compare/main...cursor/ring-lemma-reconcile-0cc5  
-**PR create:** blocked here (`gh` GraphQL 403 / no ManagePullRequest tool). Open the compare link to file the draft PR if the environment does not auto-open one.  
+**Compare:** https://github.com/simons357/Ship_it_app/compare/main...cursor/ring-lemma-recon-0cc5  
+**PR create:** blocked here if `gh` GraphQL returns 403 / ManagePullRequest unavailable. Open the compare link to file the draft PR if the environment does not auto-open one.
 
 ## Title
 
@@ -17,8 +17,9 @@ Ingest Jonathan’s three Oct 2 Ring Lemma files and reconcile them against the 
 
 New / updated:
 
-- `docs/ns-review/RING-LEMMA-RECONCILIATION-2026-10.md` — proved vs conditional vs open; overclaim flags
+- `docs/ns-review/RING-LEMMA-RECONCILIATION-2026-10.md` — locations, proved vs open, ledger row actions, overclaim flags
 - `docs/ns-review/ring-lemma/` — TeX + reconciliation text copies + README
+- `docs/ns-review/archives/ring-lemma` — pointer to ingested sources
 - `docs/ns-review/README.md` — pointer
 - `docs/ns-review/HH-SPECTRAL-CONCENTRATION-AUDIT.md` — note that corrected TeX is now on disk
 
@@ -29,10 +30,14 @@ New / updated:
 | Oct 2 corrected note (RL-G1…G3) | **KEEP** spatial geometry SoT |
 | June 19 Ring \(\|\nabla\xi\|\lesssim 2^{j^*}\) on \(E_c\) | **SUPERSEDED / WITHDRAWN** |
 | Ring ⇒ Clay / classical NS | **REFUSE** |
-| Classical SND | **OPEN** (texture) |
+| Classical SND | **OPEN** (texture / C12) |
 | NS-10 / \(T_{j\leftarrow j}\) / PRODUCT-BLOCK | **OPEN** |
 | NS-11 | **NOT CLAIMED** |
-| July NS-6 three-shell \(H_N\) vs vorticity Ring | **Distinct claims** — do not swap |
+| July NS-6 | **Split:** NS-6a = RL-G1…G3 PROVED spatial; NS-6b three-shell \(H_N\) SOURCE MISSING |
+
+### Ledger row to update
+
+**NS-6** — primary surgery (scoped spatial PROVED + missing \(H_N\) source). Keep NS-10 OPEN and NS-11 NOT CLAIMED.
 
 ### Honesty
 

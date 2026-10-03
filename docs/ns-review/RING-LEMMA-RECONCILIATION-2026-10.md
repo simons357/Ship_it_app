@@ -1,7 +1,7 @@
 # Ring Lemma reconciliation — three Oct 2 uploads vs July ledger / Oct locks
 
 **Date:** 2026-10-03  
-**Branch:** `cursor/ring-lemma-reconcile-0cc5`  
+**Branch:** `cursor/ring-lemma-recon-0cc5` (tip includes claim-ledger audit + TJ candidates)  
 **Sources ingested:** [`ring-lemma/`](./ring-lemma/) (from Jonathan’s Oct 2 uploads)  
 **Governing locks:** [`CLAIM-LEDGER-AUDIT-2026-10.md`](./CLAIM-LEDGER-AUDIT-2026-10.md) · [`SCIENTIFIC-REPORT.md`](./SCIENTIFIC-REPORT.md) · [`UNAUG-PROOF-CHAIN.md`](./UNAUG-PROOF-CHAIN.md) · [`TJ-SAME-SCALE-CANDIDATES.md`](./TJ-SAME-SCALE-CANDIDATES.md)
 
@@ -9,7 +9,25 @@
 
 ---
 
-## 0. Plain English (for Jonathan)
+## 0. File locations (search result)
+
+| Named file | Status | Where found |
+| --- | --- | --- |
+| `RingLemma_Ledger_Reconciliation_2026-10-02.txt` | **FOUND** (upload basename `…_72fe.txt`) | Uploads + [`ring-lemma/RingLemma_Ledger_Reconciliation_2026-10-02_72fe.txt`](./ring-lemma/RingLemma_Ledger_Reconciliation_2026-10-02_72fe.txt) |
+| `RingLemma_Corrected_Geometric_Note_2026-10-02.tex` | **FOUND** (upload `…_f623.tex`) | Uploads + [`ring-lemma/RingLemma_Corrected_Geometric_Note_2026-10-02.tex`](./ring-lemma/RingLemma_Corrected_Geometric_Note_2026-10-02.tex) |
+| `RingLemma_Simons_June19_2026.tex` | **FOUND** (upload `…_740b.tex`) | Uploads + [`ring-lemma/RingLemma_Simons_June19_2026.tex`](./ring-lemma/RingLemma_Simons_June19_2026.tex) |
+
+**Also searched:** `/workspace`, `/home/ubuntu`, `/opt/cursor`, uploads, `/tmp/claim-ledger-pkg/…/04_ring_t2_snd/` (older `RingLemma_FINAL_SUBMIT.tex` / Overleaf faces — not the Oct 2 trio), Google Drive (`title contains 'RingLemma'`).
+
+**Drive:** Oct 2 trio **not** on Drive under those names. Related older faces **are** on Drive (`RingLemma_Final.tex` 21 KB April-size; `RingLemma_FINAL_SUBMIT.tex` / `RingLemma_Final_Jonathan_Simons_2026-06-14.tex` 44 KB June-size). Do not treat Drive June-14 as the Oct 2 geometric SoT.
+
+**Byte check:** repo copies SHA256-match the Oct 2 uploads (corrected note `7a7fd28e…`, ledger recon `1321ea38…`, June 19 `a73d949f…`).
+
+**Missing:** none of the three named files.
+
+---
+
+## 0b. Plain English (for Jonathan)
 
 **What the Ring Lemma is now.** A **spatial** bound on how fast the vorticity direction \(\xi=\omega/|\omega|\) can vary, for **band-limited** (single-shell / frequency-cutoff) fields on \(\mathbb{T}^3\). The Oct 2 corrected note proves: on the \(L^2\)-threshold set \(E_c=\{|\omega|\ge c\|\omega\|_2\}\), \(\|\nabla\xi\|_{L^\infty(E_c)}\lesssim L^{5/2}/c\), and that power is sharp. Under an extra amplitude hypothesis (\(|\omega|\) comparable to \(\|\omega\|_\infty\), or \(\|\omega\|_\infty\lesssim A\|\omega\|_2\)), the bound drops to order \(L\). That is geometry. It is **not** a Navier–Stokes theorem.
 
@@ -142,14 +160,32 @@ These are vorticity-geometry IDs. They sit under the SND/Ring **texture** shelf.
 
 ---
 
-## 6. One-line verdict
+## 6. Ledger row to update (actionable)
+
+| Row | Action |
+| --- | --- |
+| **NS-6** (primary) | **Split / RELABEL.** Do **not** keep “Ring PROVED standalone.” Write: **NS-6a / RL-G1…G3** = spatial band-limited vorticity-direction bounds **PROVED** (Oct 2 note); **NS-6b** three-shell \(H_N\) = **SOURCE MISSING / OPEN** until a real \(H_N\) source appears. Status tag: **CONDITIONAL texture**, not Clay. |
+| **NS-7** | **RELABEL → OPEN** (finite dangerous duration not established by April/June Ring sources). |
+| **NS-8** | Keep **CONDITIONAL** only if a valid classical \(H^1\) budget exists; do not sell as SND-alone close. |
+| **NS-10** | **KEEP OPEN.** Map to \(T_{j\leftarrow j}\) / PRODUCT-BLOCK / \(\alpha_+\) / classical SND (C12 texture). De-augmentation still blocks “SND ⇒ classical.” |
+| **NS-11** | **KEEP NOT CLAIMED.** |
+| **NS-4** | Stay **WITHDRAWN** (Aug ↔ SND exact equivalence) — Ring uploads do not restore it. |
+| **NS-9** | Stay **scoped / conflict** with June “Main Theorem proved” packaging — do not green from Ring geometry. |
+
+**TJ / C12:** Ring/SND remains **C12 — TRY (conditional only)**. Same-scale \(T_{j\leftarrow j}\) stays **OPEN**. Survivors C10/C6/C11 are unrelated to the Oct 2 geometric fix.
+
+**Clay path?** **No.** Ring/SND ≠ unconditional NS.
+
+---
+
+## 7. One-line verdict
 
 **Ring Lemma (honest): band-limited vorticity-direction gradient bounds of order \(L^{5/2}\) (sharp), or order \(L\) under amplitude control — spatial only. June 19 linear Ring + “SND is the last door to classical” are dead as outreach. Classical SND, \(T_{j\leftarrow j}\), and PRODUCT-BLOCK remain open; no Clay.**
 
 ---
 
-## 7. Companions
+## 8. Companions
 
-- Source tree: [`ring-lemma/README.md`](./ring-lemma/README.md)  
+- Source tree: [`ring-lemma/README.md`](./ring-lemma/README.md) (also linked from [`archives/ring-lemma`](./archives/ring-lemma))  
 - Claim ledger audit: [`CLAIM-LEDGER-AUDIT-2026-10.md`](./CLAIM-LEDGER-AUDIT-2026-10.md)  
 - PR paste: [`PR-DRAFT-RING-LEMMA-RECONCILIATION.md`](./PR-DRAFT-RING-LEMMA-RECONCILIATION.md)
