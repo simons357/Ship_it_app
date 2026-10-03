@@ -1,0 +1,4 @@
+PLACEHOLDER — not real media.
+Drop the real file here as: media/patient-care-module-exterior.jpg
+See ../MEDIA-NEEDED.md
+Do not attach this placeholder to any email.

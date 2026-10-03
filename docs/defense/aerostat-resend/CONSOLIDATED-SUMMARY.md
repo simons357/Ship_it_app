@@ -5,6 +5,7 @@
 **Entity:** Prime Field Technologies LLC
 
 **This re-send pack:** short refresh = [`IDEAS-ONE-PAGER.md`](IDEAS-ONE-PAGER.md) · primary PDF = [`TITAN-X-FINAL-Investor-Plan.pdf`](TITAN-X-FINAL-Investor-Plan.pdf).  
+**Focused adds:** [`ANTI-DRONE-PAYLOAD.md`](ANTI-DRONE-PAYLOAD.md) (modular Raptor-class and/or laser) · [`DISASTER-HOSPITAL.md`](DISASTER-HOSPITAL.md) (earthquake + multi-bed persistent hospital concept).  
 Longer HTML/PDF variants (if needed) live on PR #20 / `cursor/titan-x-business-plan-7465` — not duplicated here.
 
 Planning estimates for discussion with qualified parties. Not guarantees of future performance.
@@ -68,13 +69,15 @@ Smaller aerostats or derivative platforms cover secondary roles that do not requ
 ## Key Mission Areas
 
 - Disaster response and wildfire support
+- Earthquake rescue with a floating persistent hospital module (several beds — planning concept; see [`DISASTER-HOSPITAL.md`](DISASTER-HOSPITAL.md))
 - Critical infrastructure monitoring
 - Emergency and temporary communications
 - Maritime domain awareness and ship support
 - Public-safety airborne threat awareness (especially low-cost drones)
+- Modular anti-drone payload options — Raptor-class interceptor/effector and/or laser effector; outsource/integrate (see [`ANTI-DRONE-PAYLOAD.md`](ANTI-DRONE-PAYLOAD.md))
 - Scientific and high-altitude observation
 - Rockoon launch services
-- Selected dual-use defense configurations (persistent ISR, communications relay, forward logistics, responsive access)
+- Selected dual-use defense configurations (persistent ISR, communications relay, forward logistics, responsive access, modular C-UAS bay)
 
 ---
 
@@ -96,9 +99,9 @@ Capital is staged: pathfinder validation → first full-scale hull → initial o
 
 TITAN-X provides persistent, high-payload capability in the altitude band between aircraft and satellites. The regional deployment model — one (or two) full-size units near major cities, a concentrated firefighting layer in California, and smaller complementary platforms — turns the platform into practical infrastructure rather than a surge-only asset.
 
-The same modular architecture supports disaster response, infrastructure protection, public safety, scientific observation, rockoon launch, and selected defense options while sharing a common cost base.
+The same modular architecture supports disaster response (including earthquake care / multi-bed hospital module), infrastructure protection, public safety, scientific observation, rockoon launch, and selected defense options (including modular anti-drone payloads) while sharing a common cost base.
 
-**Bottom line:** Indefinite endurance. 20,000 lb modular payload. Near-zero operational carbon for persistent missions. Pre-positioned regional coverage with a California firefighting emphasis. Dual-use economics that allow civil and defense needs to share the same platforms.
+**Bottom line:** Indefinite endurance. 20,000 lb modular payload. Near-zero operational carbon for persistent missions. Pre-positioned regional coverage with a California firefighting emphasis. Dual-use economics that allow civil and defense needs — including anti-drone bay options and persistent disaster care — to share the same platforms. Anti-drone effectors and medical fit-out can be outsourced; this summary does not claim a finished C-UAS product or a certified hospital.
 
 ---
 

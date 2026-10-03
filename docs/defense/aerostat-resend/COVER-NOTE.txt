@@ -3,22 +3,27 @@ TITAN-X aerostat re-send — paste-ready cover note
 Entity: Prime Field Technologies LLC · Savannah, GA
 Contact: js@primefieldtechnologies.com
 Use when a defense unit asks for ideas again. Lead TITAN-X only.
+Adds: modular anti-drone (Raptor-class and/or laser) + earthquake / floating hospital dual-use.
 
 -------- SUBJECT (pick one) --------
-TITAN-X aerostat concept — materials again
-Re-send: TITAN-X stratospheric aerostat (ideas refresh)
+TITAN-X aerostat — anti-drone bay + disaster hospital concepts
+Re-send: TITAN-X stratospheric aerostat (military + rescue refresh)
 
 -------- BODY (paste) --------
 Sharing again our TITAN-X concept — a free-flight stratospheric aerostat (helium + solar, modular ~20,000 lb payload) intended for persistent coverage in the band between aircraft and satellites.
 
-Public materials lead with civil utility (disaster / wildfire / communications / observation), with selected dual-use configurations (persistent ISR, relay, forward logistics) on the same hull family.
+Public materials lead with civil utility (disaster / wildfire / communications / observation), including an earthquake-rescue framing with a floating persistent hospital module (several beds onboard to stabilize and treat victims — planning concept, not a certified hospital).
+
+For military interest on the same hull family: a modular anti-drone payload bay — Raptor-class interceptor/effector and/or a laser effector as drop-in options. Anti-drone capability is the point; the effector itself can be outsourced and integrated. We are not claiming a finished C-UAS product in this pack.
 
 Attached:
 1) TITAN-X-FINAL-Investor-Plan.pdf — primary plan pack
 2) IDEAS-ONE-PAGER.md — short refresh for this re-touch
-3) titan-x-stratosphere.jpg — concept visual (optional)
+3) ANTI-DRONE-PAYLOAD.md — Raptor-class and/or laser modular bay (outsource OK)
+4) DISASTER-HOSPITAL.md — earthquake rescue + persistent multi-bed hospital module
+5) titan-x-stratosphere.jpg — platform concept visual (optional)
 
-Planning estimates only — not a claim of contracted performance or an active DoD award. Happy to walk the one-pager / PDF and open deeper architecture under NDA if useful.
+Planning estimates only — not a claim of contracted performance, demonstrated TRL, or an active DoD award. A patent is not required to build; we are happy to walk architecture and integrator options under NDA if useful.
 
 Jonathan Simons
 Prime Field Technologies LLC
@@ -27,12 +32,18 @@ js@primefieldtechnologies.com
 -------- ATTACH ORDER (this re-send) --------
 REQUIRED
   1. TITAN-X-FINAL-Investor-Plan.pdf
-  2. IDEAS-ONE-PAGER.md   (or paste its body into the email if .md is awkward)
+  2. IDEAS-ONE-PAGER.md          (or paste its body into the email if .md is awkward)
+  3. ANTI-DRONE-PAYLOAD.md       (military interest — modular anti-drone)
+  4. DISASTER-HOSPITAL.md        (civil / dual-use — earthquake + hospital)
 
 OPTIONAL
-  3. renders/titan-x-stratosphere.jpg
-  4. renders/titan-x-formation.jpg
-  5. CONSOLIDATED-SUMMARY.md   (longer civil/regional summary; trim CA-only emphasis if the room is defense-first)
+  5. renders/titan-x-stratosphere.jpg
+  6. renders/titan-x-formation.jpg
+  7. CONSOLIDATED-SUMMARY.md     (longer civil/regional summary; trim CA-only emphasis if the room is defense-first)
+
+INTERNAL ONLY (Jonathan — do not attach by default)
+  - MEDIA-NEEDED.md             (Raptor/hospital media checklist — vault has none yet)
+  - media/*.PLACEHOLDER.txt     (empty drop targets — never email these)
 
 DO NOT ATTACH (default re-send)
   - source-notes/OMEN-excerpt.md     (separate tethered concept — mention only if they ask)
@@ -42,3 +53,6 @@ DO NOT ATTACH (default re-send)
 
 -------- ONE-LINE OMEN SEPARATION (only if asked) --------
 OMEN is a separate tethered spectral-surveillance aerostat concept in the portfolio; this re-send is TITAN-X (free-flight stratospheric) only. Detail under NDA if useful.
+
+-------- ONE-LINE IP (only if asked) --------
+We have not filed claims in this pack — you do not need a patent to make something; useful systems come out of building. Formal IP review later if useful.
