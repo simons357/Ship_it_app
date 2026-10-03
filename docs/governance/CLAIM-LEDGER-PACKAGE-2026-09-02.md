@@ -1,17 +1,20 @@
 > **Companion face (not the July 23 Governing Document).**  
 > Reconstructed **2026-09-02** package ledger from Drive `Q6_NS_Energy_Budget_Package_2026-10-02/00_governance/CLAIM_LEDGER.md`.  
-> July 23 governing slot: [`CLAIM-LEDGER-2026-07-23.md`](./CLAIM-LEDGER-2026-07-23.md). When a later audited correction conflicts on a specific bridge, that correction wins for that bridge. **NS-11 / RH-11 NOT CLAIMED. RH program not active yet.**
+> July 23 governing slot (live): [`CLAIM-LEDGER-2026-07-23.md`](./CLAIM-LEDGER-2026-07-23.md).  
+> July wording pin: [`archive/CLAIM-LEDGER-2026-07-23.verbatim.md`](./archive/CLAIM-LEDGER-2026-07-23.verbatim.md).  
+> Oct 2026 audited corrections: [`CLAIM-LEDGER-CORRECTIONS-2026-10.md`](./CLAIM-LEDGER-CORRECTIONS-2026-10.md).  
+> **Authority:** this companion is a **package face only**. It is **not** the sole authority. Status labels must not exceed the July governing document as amended by later audited bridge corrections (PR #155). When a later audited correction conflicts on a specific bridge, that correction wins for that bridge. **NS-11 / RH-11 NOT CLAIMED. RH program not active yet.**
 
 ---
 
 # CLAIM_LEDGER.md
 
-**Authoritative research-status ledger**  
+**Package-face research-status ledger (subordinate)**  
 **Owner:** Jonathan Robert Simons  
 **Affiliation:** Prime Field Technologies LLC, Savannah, Georgia  
 **Reconstructed:** 2026-09-02  
 
-This ledger is the sole authority for public and submission-facing research-status labels. A result must not be described more strongly than its entry here. Internal framework results must be distinguished from solutions to classical problems.
+This companion summarizes package-scoped labels for the Oct-2 Q6/NS research bundle. It does **not** override the July governing document or later audited bridge corrections. A result must not be described more strongly than the governing face as amended. Internal framework results must be distinguished from solutions to classical problems.
 
 ## Status labels
 
@@ -36,6 +39,7 @@ This ledger is the sole authority for public and submission-facing research-stat
 - **OPEN:** matching analytic lower bound needed to establish the corresponding full-limit theorem.
 - **CONJECTURAL:** convergence of the full sequence to the prime-local candidate, unless separately closed by an all-\\(N\\) proof.
 - **NOT CLAIMED:** a completed universal spectral theorem, a proof of the Riemann Hypothesis, or a solution to a Millennium Prize problem.
+- **ID lock:** governing July IDs `Q6-1`…`Q6-9` remain the numbered SoT; do not reuse those IDs for different claims.
 
 ### G3 corrected-channel quotient
 
@@ -52,15 +56,18 @@ This ledger is the sole authority for public and submission-facing research-stat
 - **WITHDRAWN:** fixed spectral-floor identification \\(C=\\pi/2-\\log 2\\).
 - **WITHDRAWN:** logarithmic limit candidate \\(-1/(2\\pi)\\).
 - **WITHDRAWN:** any wording that treats the former constants as current conclusions.
+- **WITHDRAWN as RH vehicles:** Forward Bridge / biconditional rows that take those withdrawn constants as antecedents (governing **RH-4** / **RH-6**).
 
 ### Ring Lemma
 
-- **OPEN / REVIEW REQUIRED:** the Ring Lemma flagship manuscript requires a claim-by-claim audit against the final proof text before journal submission.
+- **OPEN / REVIEW REQUIRED:** the Ring Lemma flagship manuscript requires a claim-by-claim audit against the final proof text before journal submission (governing **NS-6**).
 - **NOT CLAIMED:** a classical 3D Navier–Stokes regularity proof.
 - Any component shown complete after audit may receive **PROVED** only at its explicitly bounded scope; otherwise use **CONDITIONAL**, **NUMERICAL**, **CONJECTURAL**, or **OPEN**.
 
 ### Navier–Stokes work
 
+- **WITHDRAWN:** exact equivalence “augmented NS ↔ SND” (governing **NS-4**).
+- **PROVED (narrow):** fixed-\\(\\varepsilon\\) Lions-augmented global regularity only (governing **NS-9**); classical / \\(\\|u^r/r\\|_\\infty\\) barrier **OPEN**.
 - **CONDITIONAL / OPEN:** structural exclusion mechanism and related reductions, only under their stated hypotheses.
 - **NUMERICAL:** any finite-range computational evidence unless independently upgraded by a complete analytic argument.
 - **NOT CLAIMED:** classical global regularity or resolution of the 3D Navier–Stokes problem.
@@ -78,6 +85,11 @@ This ledger is the sole authority for public and submission-facing research-stat
 - **CONDITIONAL / OPEN:** the framework statement \\(\\mathrm{SND} \\equiv \\mathrm{GNC} \\equiv \\mathrm{Bridge}\\), pending every required analytical implication being closed at the stated scope.
 - **NOT CLAIMED:** that the framework currently resolves classical Navier–Stokes regularity or the Riemann Hypothesis.
 
+### Black holes / QNM (outreach)
+
+- **WITHDRAWN from outreach:** prime-indexed LIGO QNM structure and “prime modes carry information” packaging (governing **BH-3** / **BH-4**). Experiment 01 is **RETAIN-NULL**.
+- **KEEP:** Perseus B-flat observation / arithmetic coprime ratio (**BH-1** / **BH-2**) as observation + arithmetic only.
+
 ### ExoRatio
 
 - **NUMERICAL — FAILED ROBUSTNESS AUDIT:** historical prime-indexed exoplanet clustering claim.
@@ -85,10 +97,10 @@ This ledger is the sole authority for public and submission-facing research-stat
 
 ## Publication rule
 
-A paper may be prepared for submission when its claims are accurately scoped, its sources and computations are reproducible, and every statement matches this ledger. Publication does not require every hypothesis to be proved, but it requires transparent labeling of **PROVED**, **CONDITIONAL**, **NUMERICAL**, **CONJECTURAL**, **OPEN**, and **WITHDRAWN** material.
+A paper may be prepared for submission when its claims are accurately scoped, its sources and computations are reproducible, and every statement matches the governing ledger as amended by audited bridge corrections. Publication does not require every hypothesis to be proved, but it requires transparent labeling of **PROVED**, **CONDITIONAL**, **NUMERICAL**, **CONJECTURAL**, **OPEN**, and **WITHDRAWN** material.
 
 Domain Architect may perform an internal editorial consistency review. That review is not peer review and cannot upgrade a status label by itself. Human expert verification remains required for formal mathematical or physics submission.
 
 ## Public correction rule
 
-Withdrawn or failed work may remain available as a clearly labeled correction or research-history item. It must state what failed, what remains valid, and what is unresolved. It must never be silently rewritten as successful work.
+Withdrawn or failed work may remain available as a clearly labeled correction or research-history item. It must state what failed, what remains valid, and what is unresolved. It must never be silently rewritten as successful work. July wording for corrected rows is preserved in the verbatim archive pin.

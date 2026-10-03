@@ -22,7 +22,7 @@ python -m unittest tests.test_domain_architect_acceptance tests.test_domain_arch
 
 ## Claim ledger
 
-Governing July 23 claim ledger (communication baseline) and Sep 2 package companion: [`docs/CLAIM-LEDGER-README.md`](docs/CLAIM-LEDGER-README.md). **NS-11 / RH-11 NOT CLAIMED**; RH program not active yet.
+Governing July 23 claim ledger (communication baseline; full I–XI filed) and Sep 2 package companion: [`docs/CLAIM-LEDGER-README.md`](docs/CLAIM-LEDGER-README.md). Oct 2026 audited bridge corrections amend specific bridges (NS-4/NS-6/NS-9, RH-4/RH-6 vehicles, BH-3/BH-4 outreach). **NS-11 / RH-11 NOT CLAIMED**; RH program not active yet.
 
 ## Harmonic Blueprint Experiment 01
 
