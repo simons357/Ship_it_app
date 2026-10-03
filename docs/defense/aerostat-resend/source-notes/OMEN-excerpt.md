@@ -1,3 +1,6 @@
+> **Not for default aerostat re-send.** OMEN is a separate **tethered** concept.
+> Lead with **TITAN-X** (`../TITAN-X-FINAL-Investor-Plan.pdf`). Attach this excerpt only if they ask about tethered / spectral staring. Do not merge OMEN into TITAN-X.
+
 ### OMEN
 **Defense · Dual-Use (commercial + scientific)** · Persistent Spectral Surveillance Aerostat
 

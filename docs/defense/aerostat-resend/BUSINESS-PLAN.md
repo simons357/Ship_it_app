@@ -3,8 +3,9 @@
 **Entity:** Prime Field Technologies LLC  
 **Date:** August 2026  
 **Source lock:** [`CONSOLIDATED-SUMMARY.md`](CONSOLIDATED-SUMMARY.md)  
-**Full VC plan (2026–2030 financials):** [`EXECUTIVE-BUSINESS-PLAN.md`](EXECUTIVE-BUSINESS-PLAN.md) · [`../../TITAN-X-Executive-Business-Plan.pdf`](../../TITAN-X-Executive-Business-Plan.pdf)  
-**Short summary PDF:** [`../../TITAN-X-Consolidated-Summary.pdf`](../../TITAN-X-Consolidated-Summary.pdf)
+**Ideas refresh (re-send):** [`IDEAS-ONE-PAGER.md`](IDEAS-ONE-PAGER.md)  
+**Primary PDF (this pack):** [`TITAN-X-FINAL-Investor-Plan.pdf`](TITAN-X-FINAL-Investor-Plan.pdf)  
+**Full VC plan / short summary PDF:** PR #20 / `cursor/titan-x-business-plan-7465` (not duplicated in this lean pack)
 
 Planning estimates for discussion with qualified parties. Not guarantees of future performance.
 

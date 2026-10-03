@@ -4,7 +4,8 @@
 **Regional Deployment Concept · August 2026**  
 **Entity:** Prime Field Technologies LLC
 
-Visual / print: [`consolidated-summary.html`](consolidated-summary.html) · sendable PDF: [`../../TITAN-X-Consolidated-Summary.pdf`](../../TITAN-X-Consolidated-Summary.pdf)
+**This re-send pack:** short refresh = [`IDEAS-ONE-PAGER.md`](IDEAS-ONE-PAGER.md) · primary PDF = [`TITAN-X-FINAL-Investor-Plan.pdf`](TITAN-X-FINAL-Investor-Plan.pdf).  
+Longer HTML/PDF variants (if needed) live on PR #20 / `cursor/titan-x-business-plan-7465` — not duplicated here.
 
 Planning estimates for discussion with qualified parties. Not guarantees of future performance.
 
@@ -101,12 +102,11 @@ The same modular architecture supports disaster response, infrastructure protect
 
 ---
 
-## Concept Art
+## Concept Art (in this pack)
 
 | Scene | File |
 | --- | --- |
-| Formation / high-altitude ops | `renders/titan-x-formation.png` |
-| Wildfire retardant / water delivery | `renders/titan-x-wildfire-suppress.png` |
-| Stratospheric station-keeping | `renders/titan-x-stratosphere.png` |
+| Formation / high-altitude ops | `renders/titan-x-formation.jpg` |
+| Stratospheric station-keeping | `renders/titan-x-stratosphere.jpg` |
 
-**VC executive plan (financials through 2030):** [`EXECUTIVE-BUSINESS-PLAN.md`](EXECUTIVE-BUSINESS-PLAN.md) · [`../../TITAN-X-Executive-Business-Plan.pdf`](../../TITAN-X-Executive-Business-Plan.pdf)
+Wildfire suppress render and full VC executive plan (financials through 2030) remain on PR #20 / `cursor/titan-x-business-plan-7465` — skip for a lean defense re-touch.
