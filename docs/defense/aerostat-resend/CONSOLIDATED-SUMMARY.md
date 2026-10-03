@@ -68,14 +68,15 @@ Smaller aerostats or derivative platforms cover secondary roles that do not requ
 
 ## Key Mission Areas
 
-- Disaster response and wildfire support
+- Disaster response and wildfire support (overwatch / comms / spotting; retardant or water modules — see [`MISSION-SET.md`](MISSION-SET.md))
 - Earthquake rescue with a floating persistent hospital module (several beds — planning concept; see [`DISASTER-HOSPITAL.md`](DISASTER-HOSPITAL.md))
 - Critical infrastructure monitoring
 - Emergency and temporary communications
 - Maritime domain awareness and ship support
+- Harbor / port protect — persistent coverage + modular anti-drone bay (see [`MISSION-SET.md`](MISSION-SET.md))
 - Public-safety airborne threat awareness (especially low-cost drones)
 - Modular anti-drone payload options — Raptor-class interceptor/effector and/or laser effector; outsource/integrate (see [`ANTI-DRONE-PAYLOAD.md`](ANTI-DRONE-PAYLOAD.md))
-- Scientific and high-altitude observation
+- Scientific and high-altitude observation — atmospheric science and astronomy loft (see [`MISSION-SET.md`](MISSION-SET.md))
 - Rockoon launch services
 - Selected dual-use defense configurations (persistent ISR, communications relay, forward logistics, responsive access, modular C-UAS bay)
 
