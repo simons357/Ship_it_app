@@ -47,9 +47,9 @@ Ingest Jonathan’s 3 Oct 2026 note: exact parallel-shear NSE trajectories with 
 
 ### Note on PR create
 
-If `gh pr create` / ManagePullRequest is unavailable in this environment, open:
+`gh pr create` returned **403** (`Resource not accessible by integration`). ManagePullRequest tool was **not** available in this agent run. Branch is pushed — open draft PR manually:
 
 - Compare: https://github.com/simons357/Ship_it_app/compare/main...cursor/l3-shear-obstruction-0cc5  
 - New-PR URL: https://github.com/simons357/Ship_it_app/pull/new/cursor/l3-shear-obstruction-0cc5  
 
-Paste this title/body; mark draft.
+Paste this title/body; mark draft. If the cloud dashboard auto-opens a PR for the branch, use that instead.
