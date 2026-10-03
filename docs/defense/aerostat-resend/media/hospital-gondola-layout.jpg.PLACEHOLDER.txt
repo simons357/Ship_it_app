@@ -1,0 +1,4 @@
+PLACEHOLDER — not real media.
+Drop the real file here as: media/hospital-gondola-layout.jpg
+See ../MEDIA-NEEDED.md
+Do not attach this placeholder to any email.
