@@ -1,0 +1,298 @@
+L3-5: EXACT SHEAR OBSTRUCTION TO AN ENERGY-ONLY BUDGET
+
+First-principles attack, 3 October 2026
+
+RESULT
+
+An explicit family of smooth, unforced, mean-zero, divergence-free solutions
+of the full three-dimensional periodic Navier–Stokes equations has fixed
+initial energy and viscosity, zero nonlinearity, and arbitrarily large
+Lambda-weighted high-frequency L3 excess on every fixed positive time horizon.
+Each solution is also an exact full Galerkin solution whenever the cutoff
+contains its support. This is an integrated dynamical counterfamily, not just
+an instantaneous admissible state.
+
+It disproves a universal bound F(E0,nu,K,T) for the L3 budget, including a
+choice K depending only on E0 and nu. It DOES NOT disprove L3-5 as written,
+which fixes one smooth datum and allows K and the budget bound to depend on
+that datum. It also does not refute the repeated-radius estimate, equation
+(17), or global regularity. The original signed scalene budget is identically
+zero on these examples.
+
+1. SOURCE AND CONVENTIONS
+
+Read directly from PR #153 at head:
+ce8b1ee585aa89be77fa41f7a69748cb2a82da5a
+
+https://github.com/simons357/Ship_it_app/pull/153
+
+https://github.com/simons357/Ship_it_app/blob/ce8b1ee585aa89be77fa41f7a69748cb2a82da5a/docs/L3-BUDGET-GATES.md
+
+https://github.com/simons357/Ship_it_app/blob/ce8b1ee585aa89be77fa41f7a69748cb2a82da5a/docs/FOURIER-TRIANGLE.md
+
+Use normalized measure on T^3=(R/2pi Z)^3:
+
+E=||u||_2^2, X=||grad u||_2^2, Y=||Delta u||_2^2,
+Lambda=Y/X, h_{K,N}=P_{|k|>K}u_N, c=1/(8 C_S)>0.
+
+S3_{K,N}(T)=integral_0^T [||h_{K,N}(t)||_3-c nu]_+ Lambda_N(t) dt.
+
+The original signed budget is
+
+S_{K,N}(T)=integral_0^T [T_sc(h_{K,N})-nu Y_N/4]_+/X_N dt.
+
+No change to L3-1 through L3-4 is needed for this attack.
+
+2. EXACT FAMILY
+
+Fix a>0 and nu>0. Let m,L be integers with 1<=L<=m. Define
+
+g_{m,L}(y,t)=(a/sqrt(L)) sum_{r=m}^{m+L-1} exp(-nu r^2 t) exp(i r y),
+
+u_{m,L}(x,y,z,t)=(Re g_{m,L}(y,t), 0, Im g_{m,L}(y,t)).
+
+This is a real trigonometric-polynomial velocity. It has zero spatial mean
+and divergence zero. Crucially,
+
+(u dot grad)u=(Re g) partial_x u + (Im g) partial_z u=0.
+
+Each component obeys partial_t u=nu partial_yy u. With constant pressure,
+this proves the full unforced NSE exactly for every t>=0. There are no
+generated modes. For every N>=m+L-1 it solves the full Galerkin ODE as well.
+
+The Fourier coefficients are, for r=m,...,m+L-1,
+
+u_(0,r,0)=(a/(2sqrt(L))) exp(-nu r^2t) (1,0,-i),
+
+u_(0,-r,0)=conjugate(u_(0,r,0)).
+
+For any two support modes p,q, q dot u_p=0. Thus every ordered interaction
+vanishes before any summation or cancellation. All transfer blocks,
+including repeated-radius and scalene blocks, vanish individually.
+
+3. EXACT MOMENTS AND DISSIPATION
+
+Since |u|=|g|, Parseval gives
+
+E(t)=(a^2/L) sum_r exp(-2nu r^2t),
+
+X(t)=(a^2/L) sum_r r^2 exp(-2nu r^2t),
+
+Y(t)=(a^2/L) sum_r r^4 exp(-2nu r^2t).
+
+In particular,
+
+E(0)=a^2,
+
+E'(t)=-2nu X(t),
+
+X'(t)=-2nu Y(t),
+
+integral_0^T X(t)dt=(a^2-E(T))/(2nu)<=a^2/(2nu),
+
+m^2<=Lambda(t)<4m^2.
+
+Initial energy and the total available energy-dissipation budget do not
+increase with m or L. The spectral clock Lambda does increase with m.
+Initial X and higher smoothness norms are NOT fixed across the family.
+
+4. ANALYTIC L3 LOWER BOUND THROUGH A VISCOUS TIME INTERVAL
+
+Put tau_m=1/(16nu m^2). For 0<=t<=tau_m and all support r<2m,
+
+exp(-nu r^2t)>=exp(-1/4).
+
+For |y|<=1/(2L), factor out the carrier exp(i m y):
+
+Re(exp(-i m y)g(y,t))
+  =(a/sqrt(L)) sum_{j=0}^{L-1} exp(-nu(m+j)^2t) cos(j y)
+  >= (a/2) exp(-1/4) sqrt(L).
+
+The inequality uses |j y|<1/2 and cos(j y)>=1/2. Carrier rotation does not
+alter |g|, which is why two real velocity components are used.
+
+The interval in y has normalized measure 1/(2pi L). Integration yields
+
+||u(t)||_3 >= d a L^(1/6),
+
+d=exp(-1/4)/(2(2pi)^(1/3))>0,
+
+0<=t<=tau_m.
+
+This is an analytic lower bound, not a numerical scaling fit.
+
+5. INTEGRATED COUNTERFAMILY
+
+For any fixed finite K, take m>K. Then h_{K,N}=u_{m,L} for all
+N>=m+L-1. Whenever T>=tau_m, the preceding bounds give
+
+S3_{K,N}(T)
+ >= integral_0^{tau_m} [d a L^(1/6)-c nu]_+ m^2 dt
+ = (1/(16nu)) [d a L^(1/6)-c nu]_+.
+
+Fix a,nu,K,T>0. Choose L=m and let m tend to infinity. For sufficiently
+large m, all hypotheses hold and the right side tends to infinity.
+Consequently there is no finite universal F(a^2,nu,K,T) bounding S3 for
+all smooth data of energy a^2 and all Galerkin cutoffs.
+
+The time interval shrinks like m^(-2), but Lambda grows like m^2, so those
+factors cancel exactly in the lower bound. L3 concentration survives that
+cancellation. The same conclusion holds if the integral is restricted to
+[tau_m/2,tau_m], with 1/32 in place of 1/16: no isolated-time pathology is
+being exploited.
+
+For these very same trajectories,
+
+T_sc(h)=T_rep(h)=T(u)=0 and S_{K,N}(T)=0.
+
+Therefore no uniform reverse comparison
+
+S3_{K,N}(T)<=C S_{K,N}(T)+F(E0,nu,K,T)
+
+can hold either. The seated direction S<=C_S S3+controlled is unaffected.
+
+6. STRESS TESTS
+
+Growing layer / frequency-localized case:
+
+  L=m. All support lies in m<=|k|<2m. Energy is a^2, and the lower bound
+  grows as a m^(1/6)/(16nu), up to fixed constants and the threshold.
+
+Relative near-shell case:
+
+  Let m=j^2 and L=j, with j tending to infinity. Relative radius width
+  (L-1)/m tends to zero. Relative squared-radius width also tends to zero:
+  ((m+L-1)^2-m^2)/m^2=O(1/j).
+  Nevertheless S3 grows at least as a j^(1/6)/(16nu), up to constants.
+  This is NOT a fixed absolute squared-radius strip; its absolute width
+  grows. No claim against a fixed absolute-strip estimate follows.
+
+Relative radial variance:
+
+  If D_s=Z-Y^2/X with Z=||A^(3/2)u||_2^2, the enstrophy-weighted
+  distribution of squared radii has support in [m^2,(m+L-1)^2]. Hence
+  0<=D_s/(X Lambda^2)
+    <=[((m+L-1)^2-m^2)/m^2]^2.
+  This dimensionless variance tends to zero in the relative near-shell
+  case, even while S3 diverges. This statement does not bound absolute D_s.
+
+Single exact shell / pure carrier test:
+
+  L=1 gives |u(t)|=a exp(-nu m^2t), Lambda=m^2 and E0=a^2.
+  Set b=c nu. If a<=b, S3(T)=0. If a>b, set
+  s=min(nu m^2T, log(a/b)). Direct integration gives
+  S3(T)=[a(1-exp(-s))-b s]/nu.
+  Thus S3(infinity)=[a-b-b log(a/b)]/nu, independent of m.
+  High frequency alone does not cause divergence; growing occupancy does.
+
+Amplitude test:
+
+  The preceding exact formula grows with a/nu when a/nu grows. That does
+  not by itself refute an energy-dependent bound, since E0=a^2 also grows.
+  The main counterfamily fixes a and instead grows L.
+
+Repeated-radius geometry:
+
+  Every ordered nonlinear factor is zero throughout every trajectory.
+  The repeated-radius bound holds trivially with zero on the left.
+  Its validity cannot supply the missing universal energy-only S3 estimate.
+  These collinear shear supports are admissible in the unrestricted claim;
+  an estimate restricted to nondegenerate active transfer is a different
+  statement and is not refuted here.
+
+7. QUANTIFIER BOUNDARY -- WHAT IS AND IS NOT KILLED
+
+FALSIFIED:
+
+  For fixed E0,nu,K,T, a bound on S3 uniform over all smooth data of that
+  energy and all N. Also falsified if finite K is selected only from E0,nu
+  (or E0,nu,T): choose m larger than that K.
+
+NOT FALSIFIED:
+
+  For each fixed smooth u0 and nu, there exists K(u0,nu) such that for every
+  finite T, sup_N S3_{K,N}(T)<infinity.
+
+The family changes u0 as m,L change. For each one of its data, taking
+K>=m+L-1 annihilates the high tail forever, so S3=0. Even with a smaller
+fixed K, the solution is explicit and smooth and its individual budget is
+finite. For cutoffs below the full support, the projected data are still
+shears and have the same heat evolution.
+
+No single smooth datum with diverging Galerkin budgets has been constructed.
+No uniform initial-H1 counterfamily has been constructed. A bound depending
+on initial X, higher datum norms, initial spectral tails, or other detailed
+datum information is not excluded by this result.
+
+Thus the precise conclusion is: the energy-only strengthening of L3-5 is
+false. A datum-sensitive proof of L3-5 remains open. It would be an overclaim
+to say all possible energy/geometry arguments have been ruled out.
+
+8. RELATION TO THE CLAIMED EQUIVALENCE
+
+L3-4 supplies a one-way quantitative comparison. It is not a two-way
+comparison between the budgets, as the shear family demonstrates exactly.
+
+The original criterion (17), combined with its conditional continuation
+argument, may imply L3-5 through a uniform X bound and standard estimates.
+That is a qualitative implication through the regularity conclusion, not
+an algebraic interchangeability of the two integrands or energy-only bounds.
+Nothing in this counterfamily contradicts such criterion-level equivalence.
+
+9. EVIDENCE AND NOVELTY STATUS
+
+STANDARD BACKGROUND:
+
+  Parallel shear solutions reduce NSE to heat evolution. For an external
+  primary teaching source, see the author's MEK4300 lecture notes:
+  https://mikaem.github.io/MEK4300/content/chapter3/couette.html
+  The torus family above is verified directly and does not rely on channel
+  boundary conditions from that source.
+
+EXACT IDENTITIES:
+
+  Full/Galerkin solution, zero nonlinearity, Fourier coefficients, E,X,Y,
+  dissipation identities, vanishing signed budgets, single-shell integral.
+
+ANALYTIC RESULT DERIVED IN THIS ATTACK:
+
+  Explicit uniform-in-time L3 lower bound and divergent integrated budget
+  at fixed energy, including the relative near-shell subfamily. These have
+  complete elementary proofs above. Independent review is still appropriate.
+  No claim of first discovery in the literature or publication novelty is made.
+
+FINITE COMPUTATIONAL CHECKS:
+
+  Checked (m,L)=(1,1),(4,4),(25,5),(100,10), with a^2=L to keep Fourier
+  coefficients rational, against divergence freedom and every ordered
+  nonlinear dot factor. All vanish. Exact moment checks at t=0 returned:
+    (1,1): E=1, X=1, Y=1, Lambda=1.
+    (4,4): E=4, X=126, Y=4578, Lambda=109/3.
+    (25,5): E=5, X=3655, Y=2700979, Lambda=2700979/3655.
+    (100,10): E=10, X=109285, Y=1197925333,
+              Lambda=108902303/9935.
+  These sample amplitudes are solely implementation checks; the analytic
+  counterfamily above fixes a across its sequence.
+
+NUMERICAL EVIDENCE:
+
+  No numerical ODE evolution or fitted growth exponent is used as evidence
+  for the obstruction. Its proof is the explicit trajectory and lower bound.
+
+10. CONSEQUENCE FOR THE NEXT ATTACK
+
+The L3 replacement assigns a large positive cost to flows with no nonlinear
+growth whatsoever. Return priority to the original signed scalene budget
+(17), or seek an independently estimated refinement that retains the
+vanishing of actual nonlinear production on shears. A replacement that merely
+renames the unknown positive-transfer remainder would not be progress.
+
+Any continued L3-5 proof must explicitly state which datum-sensitive input
+controls the initial high-frequency concentration, and then control subsequent
+nonlinear regeneration without presupposing a uniform solution H1 or ESS bound.
+The present attack supplies an exact rejection test for proposed energy-only
+budgets, not that missing regenerative estimate.
+
+STATUS: ENERGY-ONLY L3-BUDGET STRENGTHENING FALSIFIED BY EXACT TRAJECTORIES.
+        L3-5 AS QUANTIFIED IN PR #153 REMAINS OPEN.
+        ORIGINAL SIGNED SCALENE ROUTE (17) NOT REFUTED.
