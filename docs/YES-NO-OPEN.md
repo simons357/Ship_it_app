@@ -170,7 +170,7 @@ stay samples. They are not this kill.
 | RESET \(\lvert\Lambda-\lambda_e\rvert=c\sqrt{\Lambda}\) as a payment / as JGC | Named chart. \(\zeta_e^2=c^2\) is a choice, not BROAD-scale, not summability. [`PRESS.md`](PRESS.md). |
 | Lemma B / charge–epoch ledger as sitting | Charge is a different bill. \(D_s\) cannot pay \(D_a\) on a narrow annulus. Not written. [`PRESS.md`](PRESS.md). |
 | First-variation sign gate as a seated verdict / as a useful \(K\) | \(L_{1,N}\) is the gate. Finite-\(N\) BOTH SIGNS is printed. Persistence OPEN. Universal depletion is not killed. Do not invent a persistent \(\mathcal A_N^{+}\). [`SIGN-GATE.md`](SIGN-GATE.md), [`SIGN-RUN.md`](SIGN-RUN.md). |
-| \(\|u\|_3\) derivation as sitting / as beyond ESS / as a useful \(K\) | Owned interpolation sits. NSE \(L^3\) remainder not paid. Not beyond ESS. Not a useful \(K\). PRESS L3 is \(\Phi_e\le W_{\lambda_e}\), not \(\|u\|_3\). [`U3-DERIV.md`](U3-DERIV.md), [`U3-AUDIT.md`](U3-AUDIT.md). |
+| \(\|u\|_3\) derivation as sitting / as beyond ESS / as a useful \(K\) | D1–D3 retained at stated scope. \(L^4_t L^3\) is not Serrin. \(\int X^2\) supplies \(L^4_t L^6\). No cutoff-uniform budget derived in this audit. Not an impossibility theorem. PRESS L3 is \(\Phi_e\le W_{\lambda_e}\), not \(\|u\|_3\). [`U3-DERIV.md`](U3-DERIV.md), [`U3-AUDIT.md`](U3-AUDIT.md). |
 | Substituting \(T^{(0)}\) into the finite-gap identity | Transfer variation is the next order. Keep neighboring \(T_m\) as \(R_{2,N}\). [`SIGN-GATE.md`](SIGN-GATE.md). |
 | ONE SIGN as a seated \(I_3\) bridge | Named question only. Arithmetic rigidity is not sign depletion. [`SIGN-GATE.md`](SIGN-GATE.md). |
 | Switch this line to augmented NS / Theorem A | Track A is a different PDE. A is not B. |

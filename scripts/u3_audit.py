@@ -96,9 +96,20 @@ def record() -> dict:
         "derivation_on_desk": True,
         "derivation_page": "docs/U3-DERIV.md",
         "owned_interpolation_sits": True,
+        "d1_d2_d3_retained_at_stated_scope": True,
+        "subject_to_source_constant_domain_check": True,
+        "correction_from_screenshots_not_fresh_verification": True,
         "nse_L3_identity_while_smooth": True,
         "nse_L3_closed_cutoff_uniform": False,
         "pressure_remainder_paid": False,
+        "d4_is_unresolved_pressure": True,
+        "d5_remainder_must_be_cutoff_uniform": True,
+        "d5_does_not_prove_every_estimate_needs_higher_norm": True,
+        "L4_L3_stays_outside_Serrin": True,
+        "int_X2_supplies_L4_L6_not_L4_L3": True,
+        "L3_direction_not_proved_impossible": True,
+        "no_budget_derived_in_this_audit": True,
+        "no_new_mechanism_is_a_search_result": True,
         "galerkin_commutator_sits_as_obstruction": True,
         "press_L3_is_not_u3": True,
         "gates": {
@@ -107,8 +118,9 @@ def record() -> dict:
                 "(D4) identity while smooth. Closed Galerkin pressure payment does not sit."
             ),
             "regularity_value": (
-                "Owned L^4_t L^3 index 3/2, or high piece L^2_t L^3 index 2. "
-                "Neither weaker than Serrin in the useful direction. Not beyond ESS."
+                "Owned L^4_t L^3 index 3/2 is not Serrin. "
+                "int X^2 with energy and Sobolev supplies L^4_t L^6, index 1. "
+                "Not beyond ESS."
             ),
             "novelty": (
                 "(D1) Ladyzhenskaya interpolation. (D2) Sobolev+CS / Λ-weighted H_{1/2}. "
@@ -144,6 +156,7 @@ def record() -> dict:
             "without first assuming a Serrin/ESS quantity is finite"
         ),
         "interesting_outcome_sits": False,
+        "int_X2_gives_Serrin_via_L4_L6": True,
         "reformulation_if_implies_Serrin_or_ESS": True,
         "literature": {
             "Prodi_1959": "criterion",

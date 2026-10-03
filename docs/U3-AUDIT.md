@@ -1,13 +1,22 @@
 # \(\|u\|_3\) audit — three gates
 
 2 October 2026.
+Corrected 3 October 2026
+from the historical audit
+screenshots. Not a fresh
+verification of the full
+source.
 **The derivation is
 [`U3-DERIV.md`](U3-DERIV.md).
-Owned interpolation sits.
-NSE \(L^3\) does not close.
-Not beyond ESS.
-Not a useful \(K\).
-Not a close. ★ stays killed.
+D1–D3 retained at
+stated scope.
+\(L^4_t L^3\) is not Serrin.
+\(\int X^2\) supplies
+\(L^4_t L^6\).
+No budget derived here.
+Not an impossibility
+theorem. Not a close.
+★ stays killed.
 Catalog B open stays 1.**
 
 Sign run:
@@ -69,8 +78,9 @@ without first
 assuming a
 Serrin / ESS
 quantity is finite.
-That outcome
-does not sit.
+That budget was not
+derived in this
+audit.
 
 **Not on this desk.**
 A new regularity
@@ -85,17 +95,28 @@ remainder.
 ## Three gates
 
 **Derivation.**
-(D1)–(D3) sit,
-cutoff-uniformly,
-with named constants
-and no hidden higher
-norm. (D4) sits as
-an identity on the
-smooth interval.
+(D1)–(D3) are
+retained as reusable
+estimates at the
+stated scope, subject
+to verification of
+source, constants,
+and domain. (D4) is
+an unresolved
+pressure contribution
+on the smooth
+interval. (D5) is a
+projection remainder
+that must be estimated
+uniformly in the
+cutoff. Appearance
+alone does not prove
+that every estimate
+needs a higher norm.
 A closed Galerkin
-inequality paying
-the pressure does
-not sit. (D5).
+payment of the
+pressure was not
+derived.
 
 **Regularity value.**
 The owned time-space
@@ -104,11 +125,16 @@ condition is
 \(3/2>1\), or the
 high piece in
 \(L^2_t L^3\), index \(2\).
-Neither is weaker
-than Prodi–Serrin
-in the useful
-direction. Neither
-is beyond
+\(L^4_t L^3\) stays
+outside Serrin
+however the bound is
+obtained. \(\int X^2<\infty\)
+with energy and
+Sobolev supplies
+\(L^4_t L^6\), index \(1\),
+a different space.
+Neither owned
+condition is beyond
 \(u\in L^\infty_t L^3_x\)
 of Escauriaza–Seregin–Šverák
 (Uspekhi 58, 2003).
@@ -121,6 +147,8 @@ interpolation.
 (D2) is Sobolev plus
 CS. A \(\Lambda\)-weighted
 form is \(H_{1/2}\) again.
+Do not reverse
+\(\dot H^{1/2}\hookrightarrow L^3\).
 (D4) is the standard
 \(L^p\) testing identity,
 closed in the
@@ -128,8 +156,12 @@ literature for
 \(p>3\), not at \(p=3\).
 No exact a priori
 \(\|u\|_3\) budget from
-NSE was found that
-is not one of these.
+NSE was found in this
+audit beyond (D1)
+and (D2). That is a
+search result, not
+an impossibility
+theorem.
 
 ---
 
@@ -169,14 +201,18 @@ finite \(p\) is still
 above the line
 (\(1+2/p>1\)).
 
-If a new budget
-requires something
-already strong enough
-to imply Serrin or
-ESS, that is a useful
-reformulation, not a
+If a new writing
+already assumes a
+Serrin or ESS
+quantity, it is a
+reformulation of a
+known criterion. A
+reformulation may
+still be useful. A
 new regularity
-mechanism.
+conclusion requires
+an independently
+established estimate.
 
 ---
 
@@ -204,9 +240,19 @@ Energy pays it in
 does not pay it in
 \(L^4_t L^3\) or
 \(L^\infty_t L^3\).
+A bound in
+\(L^4_t L^3\) is still
+index \(3/2\), not
+Serrin. \(\int X^2\)
+would pay Serrin
+through \(L^4_t L^6\).
 (D4) does not pay
-it. The interesting
-outcome does not sit.
+the pressure. The
+missing
+cutoff-uniform
+budget was not
+derived in this
+audit.
 
 Common reductions
 already scored:
@@ -234,8 +280,13 @@ already scored:
   \(\|\nabla u\|_\infty\),
   or other higher norm
   inside the constant.
-  That is how (D4)
-  fails to close.
+  That is one way a
+  pressure estimate
+  can fail to close.
+  It is not a theorem
+  that every estimate
+  needs a higher
+  norm.
 - PRESS “sharp L3” is
   \(\Phi_e\le W_{\lambda_e}\)
   on the unit torus.
@@ -291,9 +342,13 @@ already scored:
 No seated a priori
 \(\|u\|_3\) budget from
 unaugmented NSE was
-found that is not
-(D1), (D2), or a
-criterion.
+found in this audit
+that is not (D1),
+(D2), or a
+criterion. Search
+result, not an
+impossibility
+theorem.
 
 ---
 
@@ -313,8 +368,8 @@ criterion.
 
 ## Lock
 
-Three gates. Owned interpolation sits.
-NSE \(L^3\) remainder not paid.
-If it implies Serrin or ESS, it is a reformulation.
-G4 stays OPEN. ★ stays killed.
+Three gates. D1–D3 retained at stated scope.
+\(L^4_t L^3\) is not Serrin. \(\int X^2\) supplies \(L^4_t L^6\).
+No cutoff-uniform a priori budget was derived in this audit.
+Not an impossibility theorem. G4 stays OPEN. ★ stays killed.
 NS not solved.

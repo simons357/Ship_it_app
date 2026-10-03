@@ -8,7 +8,7 @@ Axisymmetric-with-swirl shell estimate (unaugmented, \(\mathbb{R}^3\); quantity 
 
 Machine write-up: [`NS-PROOF-CHAIN.md`](NS-PROOF-CHAIN.md).  
 Barycenter sibling (not this path): [`DA-NS-2.md`](DA-NS-2.md).  
-\(\|u\|_3\) derivation (owned interpolation sits; NSE \(L^3\) remainder not paid; not beyond ESS): [`U3-DERIV.md`](U3-DERIV.md). Three-gate audit: [`U3-AUDIT.md`](U3-AUDIT.md).
+\(\|u\|_3\) derivation (D1–D3 retained at stated scope; \(L^4_t L^3\) is not Serrin; \(\int X^2\) supplies \(L^4_t L^6\); no budget derived in this audit): [`U3-DERIV.md`](U3-DERIV.md). Three-gate audit: [`U3-AUDIT.md`](U3-AUDIT.md).
 Augmented (other PDE): [`A-CHAIN.md`](A-CHAIN.md).
 
 ---

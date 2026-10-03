@@ -363,7 +363,7 @@ No new 9D sweeps.
 | SBP / \(\Phi_e\) as a useful \(K\) | **NO.** Elementary rewrite if the \(\dot H^{1/2}\) flux holds. Moves the tail. Residual still charge and moving \(N\). [`SBP.md`](SBP.md). |
 | Lemma A / \(\Phi_e\le W_{\lambda_e}\) as a useful \(K\) | **NO** as a \(K\). **YES** as a unit-torus weight bound. Lemma B stays OPEN. [`PRESS.md`](PRESS.md). |
 | First-variation sign gate as a useful \(K\) / as a verdict | **NO.** \(L_{1,N}\) is the gate. Finite-\(N\) BOTH SIGNS is printed. Persistence OPEN. Universal depletion is not killed. [`SIGN-GATE.md`](SIGN-GATE.md), [`SIGN-RUN.md`](SIGN-RUN.md). |
-| \(\|u\|_3\) budget as a useful \(K\) / as beyond ESS | **NO.** Owned interpolation sits. NSE \(L^3\) remainder not paid. Not beyond ESS. [`U3-DERIV.md`](U3-DERIV.md), [`U3-AUDIT.md`](U3-AUDIT.md). |
+| \(\|u\|_3\) budget as a useful \(K\) / as beyond ESS | **NO.** D1–D3 retained at stated scope. \(L^4_t L^3\) is not Serrin. \(\int X^2\) supplies \(L^4_t L^6\). No budget derived in this audit. Not an impossibility theorem. [`U3-DERIV.md`](U3-DERIV.md), [`U3-AUDIT.md`](U3-AUDIT.md). |
 | Y-remainder cousin (pathwise \(K_Y\)) | **OPEN.** Same circularity test. |
 | Unrestricted \(\star\) | **DEAD.** |
 | C10 \(\Rightarrow\) this estimate | **NO** without an inequality. C10 did not seat (A). |

@@ -147,7 +147,7 @@ Sign gate (L_1,N; no verdict):
 docs/SIGN-GATE.md
 Finite-N run (BOTH SIGNS; persistence OPEN):
 docs/SIGN-RUN.md
-||u||_3 derivation (owned interpolation; not beyond ESS):
+||u||_3 derivation (D1–D3 retained; L^4_t L^3 is not Serrin; int X^2 supplies L^4_t L^6):
 docs/U3-DERIV.md
 Three-gate audit:
 docs/U3-AUDIT.md

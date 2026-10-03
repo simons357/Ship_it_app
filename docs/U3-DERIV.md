@@ -1,12 +1,23 @@
 # \(\|u\|_3\) derivation
 
 2 October 2026.
-**Owned interpolation sits.
-The NSE \(L^3\) identity
-does not close cutoff-uniformly.
-Not beyond ESS.
-Not a useful \(K\).
-Not a close. ★ stays killed.
+Corrected 3 October 2026
+from the historical audit
+screenshots. Not a fresh
+verification of the full
+source, constants, or
+domain hypotheses.
+**D1–D3 retained at
+stated scope.
+\(L^4_t L^3\) is not Serrin.
+\(\int X^2\) supplies
+\(L^4_t L^6\).
+D4 pressure unpaid.
+D5 remainder unnamed.
+No budget derived here.
+Not an impossibility
+theorem. Not a close.
+★ stays killed.
 Catalog B open stays 1.**
 
 Three-gate score:
@@ -34,6 +45,103 @@ No more potentials.
 The implication chain is
 below. Attack that, not
 only the algebra.
+
+---
+
+## Correction — 3 October 2026
+
+Recorded from the
+screenshots. Not a
+re-derivation.
+
+**Serrin.** The sentence
+that the high piece
+“is Serrin in
+\(L^4_t L^3\) only after
+\(\int X^2<\infty\)”
+is withdrawn. For
+\(L^4_t L^3\),
+\(2/4+3/3=3/2>1\).
+That space stays
+outside the classical
+Serrin range no matter
+how the bound is
+obtained. If
+\(X=\|\nabla u\|_2^2\),
+the extra assumption
+\(\int X^2<\infty\),
+with the energy bound
+and Sobolev, gives
+\(u\in L^4_t L^6\),
+and \(2/4+3/6=1\).
+Serrin arrives through
+that different space.
+Deriving the extra
+control from the
+unaugmented equations
+stays the unresolved
+task.
+
+**Scope.** D1, D2, D3
+stay as reusable
+estimates at the
+stated scope, subject
+to verification of the
+full source, constants,
+and domain assumptions.
+Do not reverse
+\(\dot H^{1/2}\hookrightarrow L^3\).
+An \(L^3\) bound alone
+does not give
+\(\dot H^{1/2}\).
+
+**Obstacles.** D4 is
+an unresolved pressure
+contribution in the
+\(L^3\) testing identity.
+D5 is a projection
+remainder when the
+spectral Galerkin
+equation is tested
+with \(\lvert u^N\rvert u^N\).
+The remainder must be
+estimated uniformly
+in the cutoff. Its
+appearance alone does
+not prove that every
+possible estimate
+requires a higher
+norm.
+
+**Negative conclusion.**
+The estimates reviewed
+here do not establish
+the missing
+cutoff-uniform a priori
+budget. No such budget
+was derived in this
+audit. “No new
+mechanism was found”
+is a search result,
+not an impossibility
+theorem. A
+reformulation may
+still be useful. A
+new regularity
+conclusion requires
+an independently
+established estimate.
+
+This correction does
+not close the remaining
+gap and does not
+revive a previously
+rejected estimate.
+Historical OPEN and
+KILLED labels keep
+their statements,
+hypotheses, and
+evidence.
 
 ---
 
@@ -226,8 +334,25 @@ that piece alone:
   Energy. Index \(2/2+3/3=2>1\).
 - \(L^4_t L^3\):
   \(\int\|u_{\ge\kappa_e}\|_3^4\le C_*^{4}\kappa_e^{-2}\int X^2\).
-  Needs \(\int X^2\), which is
-  Serrin \(L^4_t L^6\).
+  Index \(2/4+3/3=3/2>1\).
+  Still not Serrin,
+  however the bound is
+  obtained.
+- The same extra
+  assumption
+  \(\int X^2<\infty\),
+  with energy and
+  Sobolev
+  \(\|u\|_6\lesssim X^{1/2}\),
+  gives
+  \(u\in L^4_t L^6\).
+  Index \(2/4+3/6=1\).
+  That is Serrin, in a
+  different space.
+  Deriving \(\int X^2\)
+  from the unaugmented
+  equations is the
+  unresolved task.
 - \(L^\infty_t L^3\):
   needs \(\sup X/\kappa_e<\infty\).
   Enstrophy bound, or ESS
@@ -304,29 +429,33 @@ The left viscous form
 does not absorb the
 right-hand side from
 energy-class quantities
-alone. Closing it by
-Hölder + CZ returns a
-factor of \(\|u\|_3\) against
-a derivative of \(u\),
-which is critical at
-\(p=3\). Robinson–Sadowski–Silva
-close the same identity
-for \(p>3\), not at \(p=3\).
+alone. D4 therefore
+identifies an
+unresolved pressure
+contribution in the
+\(L^3\) testing identity.
+Robinson–Sadowski–Silva
+close a related
+identity for \(p>3\),
+not at \(p=3\).
 Giga local existence is
 \(L^p\), \(p>3\). von Wahl
 is continuity in \(L^3\),
 a criterion.
 
 No hidden higher norm
-was put in (D4). The
-hidden norm appears
-the moment one tries
-to pay the pressure.
+was put in (D4). Paying
+the pressure was not
+derived here. That is
+not a theorem that
+every closing attempt
+inserts a hidden
+higher norm.
 
 ---
 
 ## D5 — Galerkin commutator
-(why cutoff-uniform fails)
+(projection remainder)
 
 The Galerkin equation
 is tested in the finite
@@ -353,23 +482,32 @@ R_N
 
 \(P_N\) is bounded on \(L^3\)
 uniformly in \(N\) (Mihlin,
-\(1<p<\infty\)). Boundedness
-is not enough to send
-\(R_N\to 0\) without extra
-regularity of \(\varphi\).
-That extra regularity
-is a higher norm.
+\(1<p<\infty\)). The
+remainder \(R_N\) must
+be estimated uniformly
+in the cutoff. Its
+appearance alone does
+not prove that every
+possible estimate
+requires a higher
+norm.
 
 So: (D1)–(D3) are
-cutoff-uniform.
-(D4) is exact on the
-smooth interval.
+written as
+cutoff-uniform
+comparisons at the
+stated scope, subject
+to source, constant,
+and domain checks.
+(D4) is an identity on
+the smooth interval.
 A closed Galerkin
 \(L^3\) inequality with
 constants independent
 of \(N\) and with the
-pressure paid does
-**not sit**.
+pressure paid was
+**not derived** in
+this audit.
 
 ---
 
@@ -397,23 +535,39 @@ Freeze \(\kappa=\kappa_e\):
 the low piece is owned
 in \(L^\infty_t L^3\);
 the high piece is owned
-in \(L^2_t L^3\) (index \(2\))
-and is Serrin in
-\(L^4_t L^3\) only after
-\(\int X^2<\infty\).
+in \(L^2_t L^3\) (index \(2\)).
+A bound of that piece
+in \(L^4_t L^3\) still has
+index \(3/2>1\). It is
+not Serrin. The extra
+assumption
+\(\int X^2<\infty\)
+supplies Serrin through
+\(L^4_t L^6\), not through
+\(L^4_t L^3\). Deriving
+that extra control
+from the unaugmented
+equations is open.
 The growth-capable
 portion is named.
-It is not paid.
+It is not paid by
+energy alone.
 
 **I4.** NSE \(L^3\) identity:
 convection dies,
-pressure is the bill.
-Closing the bill
-requires a Serrin /
-ESS-class quantity
-or a hidden higher
-norm. Galerkin does
-not remove the bill.
+pressure is an
+unresolved
+contribution.
+A cutoff-uniform
+payment of that
+contribution was not
+derived. The Galerkin
+remainder in D5 must
+be estimated uniformly
+in \(N\). Its appearance
+alone is not a proof
+that every estimate
+needs a higher norm.
 
 **I5.** ESS: if
 \(u\in L^\infty_t L^3\),
@@ -425,33 +579,40 @@ quantifies the same
 hypothesis. Neither
 is an a priori on \(X\).
 
-**I6.** Therefore the
-owned cutoff-uniform
-budgets are I1 and
-the \(L^2_t\) high piece.
-Both lie above the
-Serrin line. There is
-no cutoff-uniform
-NSE-derived budget
-on this desk that
-controls only the
-growth-capable \(L^3\)
-without first assuming
-a Serrin / ESS
-quantity is finite.
+**I6.** The estimates
+reviewed here do not
+establish the missing
+cutoff-uniform a priori
+budget. No such budget
+was derived in this
+audit. That is not an
+impossibility theorem
+for the \(L^3\)
+direction.
 
 **I7.** PRESS “sharp L3”
 is \(\Phi_e\le W_{\lambda_e}\),
 not \(\|u\|_3\). Do not weld.
 
 If a later writing
-requires something
-already strong enough
-for Serrin or ESS,
-it is a reformulation,
-not a new regularity
-mechanism. That is
-the comparison.
+already assumes a
+Serrin or ESS
+quantity, it is a
+reformulation of a
+known criterion, not
+by itself a new
+regularity conclusion.
+A reformulation may
+still be useful. A
+new regularity
+conclusion requires
+an independently
+established estimate.
+“No new mechanism
+was found” is a
+search result, not
+an impossibility
+theorem.
 
 ---
 
@@ -474,8 +635,8 @@ the comparison.
 
 ## Lock
 
-Owned interpolation sits.
-NSE \(L^3\) remainder not paid.
-Not beyond ESS. Not a useful \(K\).
-G4 stays OPEN. ★ stays killed.
+D1–D3 retained at stated scope.
+\(L^4_t L^3\) is not Serrin. \(\int X^2\) supplies \(L^4_t L^6\).
+No cutoff-uniform a priori budget was derived in this audit.
+Not an impossibility theorem. G4 stays OPEN. ★ stays killed.
 NS not solved.

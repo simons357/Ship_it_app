@@ -263,12 +263,14 @@ Universal depletion is not
 killed.
 [`SIGN-RUN.md`](SIGN-RUN.md).
 The \(\|u\|_3\) derivation
-is owned interpolation.
-NSE \(L^3\) remainder not
-paid. Not beyond ESS.
-If it implies Serrin or
-ESS, it is a
-reformulation.
+retains D1–D3 at stated
+scope. \(L^4_t L^3\) is
+not Serrin. \(\int X^2\)
+supplies \(L^4_t L^6\).
+No cutoff-uniform
+budget was derived in
+this audit. Not an
+impossibility theorem.
 [`U3-DERIV.md`](U3-DERIV.md),
 [`U3-AUDIT.md`](U3-AUDIT.md).
 
