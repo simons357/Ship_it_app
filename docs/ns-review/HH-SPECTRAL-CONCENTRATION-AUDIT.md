@@ -198,15 +198,16 @@ Leray energy already known \(\neq\) concentration control \(\neq\) same-scale tr
 
 ## 4. Ring Lemma note — search + honesty check
 
-**Search result:** `RingLemma_Corrected_Geometric_Note_2026-10-02.tex` was **not** found under Downloads, workspace mirrors, or uploads in this environment. No new corrected geometric note could be summarized from source TeX.
+**Update (2026-10-03):** Corrected note and companions are now ingested under [`ring-lemma/`](./ring-lemma/). Full reconcile: [`RING-LEMMA-RECONCILIATION-2026-10.md`](./RING-LEMMA-RECONCILIATION-2026-10.md).
 
-**Existing program stance (unchanged):**
+**Geometry (Oct 2 note):** band-limited \(\|\nabla\xi\|_{L^\infty(E_c)}\lesssim L^{5/2}/c\) **PROVED** and sharp; linear-in-\(L\) only under amplitude / peak-set hypotheses. **No** dynamical NS claim in that note. June 19 linear Ring on \(E_c\) is **superseded**.
+
+**Program stance (unchanged by ingest):**
 
 - Ring Lemma / SND = **conditional shell-concentration texture** (C12; KEEP DOIs `22050976` / `22050965` as conditional).  
 - Not a substitute for PRODUCT-BLOCK / HH product on the main trunk ([`PROOF-CHAIN-CLEAN.md`](./PROOF-CHAIN-CLEAN.md) §7; [`SCIENTIFIC-REPORT.md`](./SCIENTIFIC-REPORT.md)).  
 - Unconditional Statement B / “SND for all Leray data” remains **PARK**.
-
-If the corrected note is later uploaded: audit it against the same refuse list (no greening of SND hypothesis; no glue into unaugmented Clay; no \(N=32\Rightarrow\) theorem).
+- Same refuse list: no greening of SND hypothesis; no glue into unaugmented Clay; no \(N=32\Rightarrow\) theorem.
 
 ---
 

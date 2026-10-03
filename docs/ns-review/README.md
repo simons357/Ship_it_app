@@ -44,5 +44,8 @@ Campaign / outreach materials (if present under `docs/campaign/`) are **not** pa
 - [`CLAIM-LEDGER-AUDIT-2026-10.md`](./CLAIM-LEDGER-AUDIT-2026-10.md) — July 23 numbered CLAIM LEDGER vs Oct 2026 honesty locks (KEEP / RELABEL / CONFLICT).
 - [`CLAIM-LEDGER-DRAFT-NS-RH-Q6-2026-10.md`](./CLAIM-LEDGER-DRAFT-NS-RH-Q6-2026-10.md) — optional draft excerpt (NS + RH + Q6 only).
 - [`PR-DRAFT-CLAIM-LEDGER-AUDIT.md`](./PR-DRAFT-CLAIM-LEDGER-AUDIT.md) — paste-ready draft PR.
+- [`RING-LEMMA-RECONCILIATION-2026-10.md`](./RING-LEMMA-RECONCILIATION-2026-10.md) — Oct 2 Ring uploads vs July NS-6/7/8/10; June 19 geometry superseded; RL-G1…G3 spatial SoT.
+- [`ring-lemma/`](./ring-lemma/) — ingested TeX + ledger reconciliation text.
+- [`PR-DRAFT-RING-LEMMA-RECONCILIATION.md`](./PR-DRAFT-RING-LEMMA-RECONCILIATION.md) — paste-ready draft PR.
 
-**Dangerous July PROVED rows:** NS-4 (Aug↔SND equivalence), unscopeed NS-9 (augmented \(C^\infty\)). **KEEP:** NS-10 OPEN, NS-11 NOT CLAIMED.
+**Dangerous July PROVED rows:** NS-4 (Aug↔SND equivalence), unscopeed NS-9 (augmented \(C^\infty\)). **KEEP:** NS-10 OPEN, NS-11 NOT CLAIMED. **NS-6 Ring:** scoped spatial PROVED (RL-G1…G3) only — not Clay; June linear Ring withdrawn.

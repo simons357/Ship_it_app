@@ -1,0 +1,94 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\title{Band-limited Vorticity Direction: Corrected Estimates and a Sharpness Obstruction}
+\author{Working correction for Jonathan Robert Simons\\Prime Field Technologies LLC}
+\date{October 2, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+This note replaces the geometric estimate in the recovered June 19 Ring Lemma manuscript. For a three-dimensional band-limited vorticity field, a threshold relative to its $L^2$ norm gives a direction-gradient bound of order frequency to the power $5/2$. An explicit divergence-free family shows that this power cannot be reduced at a fixed threshold. A threshold relative to the $L^\infty$ norm instead gives a bound linear in frequency. These are spatial estimates; no dynamical preservation or Navier--Stokes regularity theorem is asserted. Novelty has not been audited.
+\end{abstract}
+
+Work on $\mathbb T^3=(\mathbb R/2\pi\mathbb Z)^3$ with normalized measure $dx/(2\pi)^3$. All norms below use this measure. Let $u$ be a real, mean-zero, divergence-free trigonometric polynomial, $\omega=\nabla\times u\not\equiv0$, and $\xi=\omega/|\omega|$ where $\omega\ne0$. Suppose its Fourier support lies in $|k|\le L$, $L\ge1$.
+
+\begin{proposition}[$L^2$-threshold estimate]
+For $0<c<1$, set $E_c=\{x:|\omega(x)|\ge c\|\omega\|_2\}$. Then $|E_c|>0$, and
+\[
+ \|\nabla\xi\|_{L^\infty(E_c)}\le \frac{C}{c}L^{5/2}.
+\]
+The constant depends only on the torus normalization and the frequency cutoff convention.
+\end{proposition}
+\begin{proof}
+At nonzero vorticity,
+\[
+ \partial_\ell\xi=\frac{(I-\xi\otimes\xi)\partial_\ell\omega}{|\omega|},
+ \qquad |\nabla\xi|\le\frac{|\nabla\omega|}{|\omega|}.
+\]
+Fourier Cauchy--Schwarz and Parseval give
+\[
+ \|\nabla\omega\|_\infty
+ \le\Big(\sum_{|k|\le L}|k|^2\Big)^{1/2}\|\omega\|_2
+ \le C L^{5/2}\|\omega\|_2.
+\]
+Dividing on $E_c$ proves the derivative bound. Also,
+\[
+ \|\omega\|_2^2\le c^2\|\omega\|_2^2+\|\omega\|_\infty^2|E_c|,
+\]
+so $|E_c|\ge(1-c^2)\|\omega\|_2^2/\|\omega\|_\infty^2>0$. This lower bound need not be uniform in $L$.
+\end{proof}
+
+\begin{proposition}[Fixed-threshold sharpness]
+There are real, smooth, divergence-free velocity fields supported in a single dyadic annulus for which
+\[
+ \|\nabla\xi\|_{L^\infty(E_{1/2})}\ge a L^{5/2}
+\]
+with $a>0$ independent of $L$. Consequently a uniform $CL$ bound on the original $L^2$-threshold set is false.
+\end{proposition}
+\begin{proof}
+Let $n\ge4$ be a power of two and define
+\[
+ K_n=\{(k_1,k_2,k_3):n\le k_1\le2n-1,\ 0\le k_2,k_3\le n/4\},
+ \quad M=|K_n|=n(n/4+1)^2.
+\]
+With $P_k=I-k\otimes k/|k|^2$ and the coordinate vectors $e_2,e_3$, put
+\[
+ \omega_n(x)=e_3\cos(nx_1)+M^{-1/2}\sum_{k\in K_n}P_ke_2\sin(k\cdot x).
+\]
+This field is divergence-free and mean-zero. It is a curl: define
+$\widehat u_n(k)=i k\times\widehat\omega_n(k)/|k|^2$ for $k\ne0$.
+All frequencies satisfy $n\le|k|<4n$, a fixed dyadic annulus; take $L=4n$.
+Orthogonality of the sine modes and the cosine gives
+\[
+ \|\omega_n\|_2^2=\frac12+\frac1{2M}\sum_{k\in K_n}|P_ke_2|^2\le1.
+\]
+At the origin, $\omega_n(0)=e_3$, so the origin lies strictly inside $E_{1/2}$. Moreover
+\[
+ e_2\cdot\partial_1\xi_n(0)
+ =M^{-1/2}\sum_{k\in K_n}k_1\left(1-\frac{k_2^2}{|k|^2}\right)
+ \ge\frac{15}{16}n\sqrt M
+ \ge\frac{15}{64}n^{5/2}.
+\]
+Continuity on a neighborhood of the origin makes this a lower bound for the essential supremum on $E_{1/2}$. Replacing $n$ by $L/4$ gives the stated absolute constant.
+\end{proof}
+
+\begin{proposition}[Linear estimate under an additional amplitude condition]
+For $0<a\le1$, define $F_a=\{x:|\omega(x)|\ge a\|\omega\|_\infty\}$. Then
+\[
+ \|\nabla\xi\|_{L^\infty(F_a)}\le\frac{C}{a}L.
+\]
+Alternatively, if $\|\omega\|_\infty\le A\|\omega\|_2$, then
+\[
+ \|\nabla\xi\|_{L^\infty(E_c)}\le\frac{CA}{c}L.
+\]
+\end{proposition}
+\begin{proof}
+The band-limited Bernstein estimate $\|\nabla\omega\|_\infty\le CL\|\omega\|_\infty$, combined with the direction derivative identity, gives both conclusions. It follows, for example, by convolving with a smooth Fourier cutoff equal to one on $|k|\le L$, whose differentiated kernel has $L^1$ norm at most $CL$.
+\end{proof}
+
+\begin{remark}[Scope]
+The additional ratio $A$ is a spatial amplitude-control hypothesis. Frequency localization alone gives only $A\le CL^{3/2}$. Neither this hypothesis nor a bound on $F_a$ is shown here to propagate under Navier--Stokes evolution. Single-shell support is generally not invariant under nonlinear convolution. Bounds on a moving high-vorticity subset must be matched to the exact hypotheses of a geometric regularity criterion before drawing a PDE conclusion.
+\end{remark}
+\end{document}
