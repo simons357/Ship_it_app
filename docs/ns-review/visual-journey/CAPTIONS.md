@@ -1,0 +1,189 @@
+# Captions — visual journey
+
+Accessible captions with expert-accurate math. No solved / unsolved stamps.
+
+---
+
+## 01 — Proof chain map
+
+**File:** `figures/proof-chain.png` (also `.svg`, `.mmd`)
+
+The main trunk runs classical Navier–Stokes on \(\mathbb{T}^3\) through spectral moments \(E,X,Y,Z\) and scale \(\Lambda=Y/X\), through the identities for spread \(D_s\) and centered cascade \(T_c\), into Lemma★ packaging and five-lane diagnostics, then through a product bound on \(T_c\) into continuation.
+
+Dashed warm nodes are **open estimates** named as math objects (product bound on \(T_c\); \(\|u^r/r\|_\infty\) integrability on the Φ-renorm branch). The muted side node is optional SND / Ring Lemma texture — conditional shell bookkeeping, not a substitute for the product step.
+
+---
+
+## 02 — Chain status card
+
+**File:** `figures/chain-status-card.png`
+
+Same information as a status strip: colors mark whether a node is classical, an identity, packaging, an open estimate, or optional texture. Not a report card of grades. Not a verdict board.
+
+---
+
+## 03 — Barycenter map
+
+**File:** `assets/lemma-star-barycenter.png` (alias `00-barycenter-map.png`)
+
+Frequency-space picture of the shape packaging: spectral scale \(\Lambda\), spread \(D_s\), and the centered stretch \(T_c\) that feeds \(\mathcal{R}_\star=(T_c)_+^2/(D_s E Y)\). Neighborhood probes sit as orbits around that center; the center claim is the uniform shape bound.
+
+---
+
+## 04 — Stretch versus spread
+
+**File:** `assets/03-tug-of-war-stretch-vs-spread.png`
+
+Intuition for the shape quotient: upward cascade \((T_c)_+\) pulls against spectral spread \(D_s\). Lemma★ packaging says the dimensionless score stays geometrically controlled for all smooth shapes.
+
+---
+
+## 05 — Shape is not size
+
+**File:** `assets/02-shape-ne-size.png`
+
+Under \(v\mapsto a v\), numerator and denominator of \(\mathcal{R}_\star\) scale the same way — amplitude cancels. Uniform Fourier dilation likewise leaves the quotient unchanged. What remains is relative geometry among shells and triads.
+
+---
+
+## 06 — Viscosity wrapper
+
+**File:** `assets/06-viscosity-melts-wrapper.png`
+
+Energy-budget form places \(\nu\) in an outer Young wrapper:
+
+\[
+T_c\le\theta\nu D_s+C_0(\theta)\nu^{-1} E Y.
+\]
+
+After size optimization, the hard geometric content is the shape bound on \(\mathcal{R}_\star\).
+
+---
+
+## 07 — Nested shells
+
+**File:** `assets/fig_three_spheres.png`
+
+Shell nesting → triad transfer → vorticity geometry. Visual vocabulary for the spectral moments and for Ring Lemma / shell texture notes.
+
+---
+
+## 08 — Triad ring
+
+**File:** `assets/fig_star_david_ring_lemma.png`
+
+Finite triad geometry from the Ring Lemma spectral line. Useful atmosphere for the optional SND texture branch; not a claim that SND closes the product estimate.
+
+---
+
+## 09 — Torus atmosphere
+
+**File:** `assets/t3_torus_shape_render.png`
+
+The domain of the main trunk: divergence-free fields on \(\mathbb{T}^3\).
+
+---
+
+## 10 — Triad amplitude diagnostic
+
+**File:** `assets/amp_ratios_triad.png`
+
+Amplitude ratios on an explicit triad. Documents that pure viscous absorption \(T_c\le\theta\nu D_s\) cannot hold uniformly (ratio grows with amplitude). Separate from the open product estimate on the main chain.
+
+---
+
+## 11 — Ring Lemma hardware card
+
+**File:** `figures/ring-hardware-what-it-is-card.png`
+
+Plain-English card: Ring is spatial hardware on band-limited vorticity direction. Lists what it does (bounds \(\nabla\xi\) on \(E_c\) / \(F_a\)) and what it does not (no NS evolution, no Clay).
+
+---
+
+## 12 — Ring Fourier ball
+
+**File:** `figures/ring-hardware-fourier-ball.png`
+
+3D lattice of Fourier modes inside \(|k|\le L\), plus the gradient ceilings the shell forces: \(L^{5/2}\) from \(L^2\) mass, and Bernstein’s linear-in-\(L\) bound from \(L^\infty\).
+
+---
+
+## 13 — Ring strong-set direction field
+
+**File:** `figures/ring-hardware-strong-set-xi.png`
+
+Synthetic band-limited vorticity on a \(\mathbb{T}^3\) slice: \(|\omega|\) heatmap, direction arrows \(\xi=\omega/|\omega|\) only on the strong set \(E_c\), and measured \(|\nabla\xi|\) on that set. Snapshot geometry — not dynamics.
+
+---
+
+## 14 — Ring sharpness scaling
+
+**File:** `figures/ring-hardware-sharpness-scaling.png`
+
+Log-log plot of the Oct 2 shear-family lower bound forcing \(L^{5/2}\) at fixed \(L^2\) threshold. The plain \(CL\) hope is false for RL-G1’s set.
+
+---
+
+## 15 — Ring on the map
+
+**File:** `figures/ring-hardware-on-the-map.png`
+
+Installed Ring hardware (done) → optional SND texture → live gate still open (\(T_{j\leftarrow j}\), \(\alpha_+\), product / \(\mathcal{R}_\star\)).
+
+---
+
+## 16 — Ring 2D slice gallery
+
+**File:** `figures/ring-geom-2d-slice-gallery.png`
+
+Four successive \(\mathbb{T}^3\) cuts: \(|\omega|\) with \(E_c\) contour, then \(\xi\) arrows on that set. How the strong geometry changes through the torus.
+
+---
+
+## 17 — Ring 2D twist close-up
+
+**File:** `figures/ring-geom-2d-twist-closeup.png`
+
+One mid-plane: dense direction field on \(E_c\), and the measured twist rate \(|\nabla\xi|\) Ring bounds.
+
+---
+
+## 18 — Ring 3D strong set
+
+**File:** `figures/ring-geom-3d-strong-set.png`
+
+Point cloud of \(E_c\) colored by \(|\omega|\), plus 3D direction sticks \(\xi=\omega/|\omega|\).
+
+---
+
+## 19 — Ring 3D Fourier shell
+
+**File:** `figures/ring-geom-3d-fourier-shell.png`
+
+Frequency-space annulus (the literal “ring” of modes) and a cutaway view of the same shell.
+
+---
+
+## 20 — Ring 3D direction ribbons
+
+**File:** `figures/ring-geom-3d-direction-ribbons.png`
+
+Integral curves of \(\xi\) inside \(E_c\). Band-limit ⇒ these ribbons cannot kink arbitrarily sharply.
+
+---
+
+## 21 — Ring 2D/3D combo
+
+**File:** `figures/ring-geom-2d3d-combo.png`
+
+Same geometry twice: a 2D torus cut with arrows, and the full 3D strong set with the cut plane marked.
+
+---
+
+## Φ-renorm callout (text figure)
+
+Keep visible in any slide that shows the side branch:
+
+- Identity: \(r^{-4}\partial_z(\Gamma^2)=\partial_z(\Phi^2)\) — KEEP algebra.
+- Dissipation label: \(\dot H^{1.3}\) (relabeled from the incorrect \(\dot H^{2.6}\) energy-norm reading).
+- Open estimate: uniform \(\|u^r/r\|_{L^\infty}\) control.

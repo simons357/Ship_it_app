@@ -1,0 +1,88 @@
+RING LEMMA AND JULY LEDGER: SOURCE RECONCILIATION
+Prepared October 2, 2026
+
+This is a proposed correction record for Jonathan's review, not a replacement of the governing ledger. Original sources and claim IDs are preserved. Conclusions below concern the exact attached source, not every manuscript in the wider research program.
+
+FILES CHECKED
+
+492e0654f_RingLemma_Final.tex
+Internal date: April 2026. Size: 21,216 bytes.
+SHA256: 4602065ef68a6eb8402e2c99d708d7be888c4b959122ff8ba4dafbc073440157
+
+CURRENT_CLAIM_LEDGER_JULY23_FULL.md
+Size: 18,540 bytes.
+SHA256: 8c913608e599848e611ad85165a87e5a0b146571252573ac0c7a12799ff51f44
+This is byte-identical to all three ledger copies previously supplied. Its 'FULL' filename introduces no new content. The July header does not document the dates of later edits appearing within it.
+
+PRIMARY FINDING
+
+The ledger's cited source does not contain the statement recorded in NS-6. NS-6 is a three-shell static operator inequality involving H_N and spectral projections. The uploaded April source instead states a single-shell vorticity-direction gradient estimate. It contains no H_N or Q_N definition or three-shell lower-bound proof. These are distinct claims and require distinct identifiers and source references.
+
+ROW-BY-ROW RECONCILIATION
+
+NS-1 -- SOURCE MISMATCH / PROOF REQUIRED.
+The ledger writes Q1=-epsilon |grad u|^beta Delta u. The manuscript writes Q1=-alpha1 P div(|grad u|^beta grad u). These are different operators; the divergence form includes derivatives of the coefficient. The manuscript's right-hand-side divergence-form operator injects L2 energy: <Q1,u>=+alpha1 integral |grad u|^(beta+2). The claimed dissipation is false for that displayed sign. This does not automatically resolve the different ledger operator.
+
+NS-2 -- SOURCE NOT FOUND IN THE CITED FILE.
+No axisymmetric Phi=u_theta/r renormalization derivation appears in this manuscript. Keep the row identified, but obtain its actual proof source before validating its PROVED label.
+
+NS-3 -- SOURCE NOT FOUND IN THE CITED FILE.
+The stated epsilon^(4/(beta+2)) dissipation-rate result and its derivation are absent. Its exact norm, constants, and epsilon regime need an actual source.
+
+NS-4 -- NOT ESTABLISHED BY THIS SOURCE.
+The source asserts enforcement of SND by fractional damping Q6. It does not prove an exact equivalence between Q1 dynamics and SND. High-frequency damping does not by itself prove the relative finite-band concentration in SND2. The proof of such a statement is needed.
+
+NS-5 -- SOURCE MISMATCH / DEFINITION SCOPE.
+The source's main argument splits into spread and concentrated regimes. It does not establish the ledger's three-way classification as a proved dynamical estimate. A classification definition must be distinguished from a theorem controlling each regime.
+
+NS-6 -- DISTINCT STATIC CLAIM; PROOF NOT PRESENT.
+Do not replace this row with the corrected vorticity lemma and do not mark the three-shell inequality disproved merely because the vorticity lemma fails. Obtain definitions of H_N, its domain, the three shells, the admissible f, and whether C is independent of N. The current file is not evidence for this ledger row.
+
+NS-7 -- NOT ESTABLISHED BY THIS SOURCE.
+The ledger records finite dangerous-regime duration. The source's Global Summation Lemma records a different instantaneous error-absorption inequality; finite spread-regime duration is asserted in its separate shell-spread theorem without a proof. These quantities and regimes must not be identified by name alone.
+
+NS-8 -- DOWNSTREAM PROOF NOT ESTABLISHED.
+The Gronwall step is correct if a valid H1 budget with integrable coefficient is supplied. In this source, the preceding summation estimate and dissipation identity do not establish that budget. This is not a proof from SND alone, and the source explicitly uses augmentation.
+
+NS-9 -- PROOF NOT ESTABLISHED FOR THE DISPLAYED PDE.
+Its two-regime proof relies on the false geometric bound, an unproved spread-duration assertion, unsupported SND enforcement, and incorrect nonlinear-viscosity sign/identity. The proof does not establish the displayed global augmented-regularity theorem. This is a verdict on the supplied proof, not a general nonexistence result for every corrected augmented system.
+
+NS-10 -- OPEN, WITH THE CONSEQUENCE ALSO REQUIRING REPAIR.
+Even proving SND for classical solutions would not automatically remove the augmented dissipation used in this source. The manuscript itself states a de-augmentation obstruction. Repair the classical conditional implication before describing dynamic SND as the sole remaining gap.
+
+NS-11 -- CLASSICAL REGULARITY REMAINS OPEN; NOT ESTABLISHED HERE.
+The audited source supplies no unconditional classical regularity proof.
+
+APRIL SOURCE: VERSION-SPECIFIC MATHEMATICAL FINDINGS
+
+1. Geometric threshold.
+The source uses E_c={|omega|>=c 2^j ||u||_2}. On an annulus, for divergence-free u, ||omega||_2 is comparable to 2^j||u||_2. Its asserted Bernstein inequality ||grad omega||_infinity<=C 2^(2j)||u||_2 omits the three-dimensional L2-to-L-infinity factor 2^(3j/2). The valid general estimate has exponent 7j/2 before division, hence 5j/2 for grad xi on E_c.
+
+The corrected note's explicit family also refutes this version for sufficiently small fixed c. With n=2^(j-1), ||u_n||_2<=||omega_n||_2/n<=1/n, so c 2^j||u_n||_2<=2c. At the origin |omega_n|=1, hence the origin lies strictly in this original E_c for c<1/2, while the direction gradient grows as n^(5/2).
+
+2. Q3 pairing.
+For the displayed sign, <Q3,-Delta u> equals
+alpha3 sum_l integral [|grad u|^2 |partial_l grad u|^2 + 2(grad u:partial_l grad u)^2].
+It is not alpha3 integral |grad u|^4. With this positive quantity on the equation's right-hand side, it is growth, not dissipation. Correcting the sign requires a new PDE analysis.
+
+3. Summation differs from the June source.
+The April lemma explicitly ASSUMES an E_j^2 error bound; the June proof uses E_j^(3/2). The June missing E_j^(-1/2) factor must not be attributed verbatim to April. In April the band absorption calculation is valid at sufficiently high j*, under its assumed shell bounds. The proof leaves low-band cases and the off-band contribution uncontrolled and never derives those shell hypotheses from the displayed PDE. SND3/4 are not smallness estimates as written.
+
+4. Main regularity proof.
+Concentrated shell mass is not exact single-shell support. A finite time measure of spread events is not a bound on growth during those events. A finite-T estimate exp(C_M T) is not a uniform-in-time H1 bound. The claimed effective viscosity has the wrong sign for the displayed Q1. Smooth bootstrapping also needs the regularity of the nonlinear coefficients treated explicitly.
+
+5. No zeta-clock section in this version.
+The April file does not contain the June manuscript's zeta-clock and spacetime sections. Their errors belong to the June audit and must not be reported as content of this April file.
+
+PROPOSED NEW GEOMETRIC CLAIM IDENTIFIERS
+
+RL-G1: L2-threshold bound ||grad xi||_infinity(E_c)<=C L^(5/2)/c for nonzero band-limited vorticity on the normalized torus. PROVED IN THE CORRECTED NOTE.
+RL-G2: Explicit single-annulus divergence-free family attains order L^(5/2) on E_(1/2), and in fact on E_c for every fixed 0<c<1. PROVED IN THE CORRECTED CONSTRUCTION.
+RL-G3: On {|omega|>=a||omega||_infinity}, the bound is CL/a; under ||omega||_infinity<=A||omega||_2 it is CAL/c on E_c. PROVED SPATIAL ESTIMATES; use 0<a<1 for a nontrivial positive-measure peak-relative set.
+RL-G4: Dynamical amplitude control and a PDE regularity consequence. OPEN / NOT ESTABLISHED BY THESE ESTIMATES.
+
+These proposed IDs concern vorticity geometry and do not replace NS-6. Novelty and publication readiness are not asserted.
+
+NEXT SOURCE REQUEST
+
+The missing three-shell operator statement is the only Ring-related source still needed for NS-6. A source excerpt containing its exact definitions and proof is enough; do not resend a vorticity-direction manuscript under another filename. For the energy-budget route, the diffuse-cascade paper/code and exact restarted heat-flow derivation remain the next inputs.
