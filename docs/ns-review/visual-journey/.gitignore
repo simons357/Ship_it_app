@@ -1,0 +1,5 @@
+# Generated copies of lemma-campaign figures (regenerate with the script)
+assets/
+*.aux
+*.log
+*.out
